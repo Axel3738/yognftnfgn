@@ -55,8 +55,8 @@
   "form": "uppvärmd vattenhink — 24 V-system (Isobar/Willab)",
   "arketyp": "E_VADER_SASONG",
   "deadline": "isläggning (10,6 v)",
-  "korningsvecka": 39,
-  "orsak": "2026-09-12 lins I: ankare Willab 20 L 1 299 kr (Hööks/Börjes) skrivet i objekt.json, men AliExpress gav bara 930-dollarstankar och drickskålar — ingen listning. · 2026-09-13 lins L: åtta fraser utan listning; svenska hagar kör 24 V (Isobar/Willab 1 299–1 349), 230 V avråds — sök bara '24V bucket heater / trough de-icer 24V'."
+  "korningsvecka": 41,
+  "orsak": "2026-09-12 lins I: ankare Willab 20 L 1 299 kr (Hööks/Börjes) skrivet i objekt.json, men AliExpress gav bara 930-dollarstankar och drickskålar — ingen listning. · 2026-09-13 lins L: åtta fraser utan listning; svenska hagar kör 24 V (Isobar/Willab 1 299–1 349), 230 V avråds — sök bara '24V bucket heater / trough de-icer 24V'. · 2026-09-15 lins S: fyra fraser till (24V bucket heater horse, trough de-icer 24V …) — bara DC-doppvärmarpatroner. Tolv fraser på tre dagar utan listning: STÄNGD för AliExpress, kräver annan leverantörskälla."
  },
  {
   "objekt": "Igelkotten i trädgården",
@@ -89,5 +89,13 @@
   "deadline": "isfiske (säker is 20 jan)",
   "korningsvecka": 2,
   "orsak": "2026-09-14 lins O: EARLY 18 v — parkerad enligt protokollet; muffen (K0268) täcker isfiske när fönstret öppnar."
+ },
+ {
+  "objekt": "Rosor, rhododendron, buxbom i rabatten",
+  "form": "roskrage (rose collar)",
+  "arketyp": "E_VADER_SASONG",
+  "deadline": "vintertäckning 8 v",
+  "korningsvecka": 39,
+  "orsak": "2026-09-15 lins U: 1005010106095970 (7,55 USD) — produktsidan svarade tomt två gånger, ingen annan listning i kragform; värd nytt försök."
  }
 ]

@@ -1,0 +1,1322 @@
+{
+ "datum": "2026-09-15",
+ "antal": 9,
+ "per_slot": {
+  "exploitation": 5,
+  "exploration": 1,
+  "sasong": 3
+ },
+ "under_minimum": {
+  "exploration": 1
+ },
+ "batch": [
+  {
+   "koncept_id": "K0275",
+   "namn_sv": "Husbilens cykelhållarskydd 2 cyklar",
+   "objekt": "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H01",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn / Termoskyddet för Husbil",
+    "delade_variabler": [
+     "samma ägare som V1 och Termoskyddet (husbil/husvagn 55+, bevisad köpare)",
+     "objekt ute, dyr > 10 tkr (två elcyklar 40–60 tkr på hållaren)",
+     "formsydd överdrag; improvisation i dag (sopsäck/presenning med spännband)",
+     "väderhot nu: höstregn + vägsmuts 10 okt–15 nov, uppställning 10–31 okt",
+     "fackhandelsankare 707–799 kr (Fiamma, 30 thansen-butiker), inget kedjegolv (Jula/Biltema saknar formen i sökutdragen)"
+    ],
+    "avvikelser": [
+     "datumet är svagare än takets — vid uppställning tar en del av cyklarna",
+     "Fiamma-skyddet är ett känt tillbehör bland campare — 'sett innan'-risk"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012440559009",
+    "url": "https://www.aliexpress.com/item/1005012440559009.html",
+    "pris_usd": 17.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:19:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005012440559009.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'For 1 Or 2 Bikes', 210D Oxford, en storlek enligt titel; alternativ listning 1005010428291230 (15,25 USD, 1–2 cyklar) öppnad och hero sedd (collage med text); 3-cykelvarianter finns på 37–40 USD (1005006030156306)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: skyddet över två cyklar på hållaren bak på en husbil, stege och bakljus i bild — textfri, rätt kontext, färdig att köra"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Campingvaruhuset — Fiamma Bikecover 2-3 cyklar (färre än 5 i lager)",
+     "pris_sek": 707,
+     "url": "https://www.campingvaruhuset.se/sv/fiamma-bikecover-2-3-cyklar",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Fiamma BikeCover S 2-3 cyklar (thansen.se, 30 butiker)",
+     "pris_sek": 799,
+     "url": "https://www.thansen.se/bil/biltillbehor/transportutrustning/cykelhaallare/till-campingvagn/cykelskydd-2-3-cyklar-fiamma-bikecover-s/n-585258067/pn-585137135",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "thansen.se (Fiamma BikeCover S 799 kr, 30 butiker — läst 2026-09-15)",
+     "campingvaruhuset.se (Fiamma Bikecover 2-3 cyklar 707 kr, < 5 i lager — läst 2026-09-15)",
+     "camping4u.se (Fiamma Bike Cover Premium S 1 170 kr, sökutdrag)",
+     "thule.com Bike Cover 3-4 cyklar (finns, pris ej sett)",
+     "jula.se/biltema.se: cykelhållare men inget hållarskydd i sökutdragen",
+     "husvagnsbranschen.se/cision: ca 300 000 husbilar + 425 000 husvagnar (sökutdrag); andel med cykelhållare ej mätt"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     224,
+     274
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     325,
+     375
+    ],
+    "be_cpa_sek": [
+     325,
+     375
+    ],
+    "be_roas": 1.71,
+    "flerkop": false,
+    "returrisk": "låg — universal 1–2 cyklar med spännband; 3-cykelägare behöver större variant"
+   },
+   "meta_tanke": {
+    "hook": "Hänger cyklarna bak i regnet?",
+    "objekt_i_bild": "två elcyklar på husbilens bakre hållare, skyddet dras över, vägsmuts/regn",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "lerstänk på display och sadel utan — torra cyklar under skyddet med, varningsskylten i fickan"
+   },
+   "varfor": "Samma köpare som V1/Termoskyddet, dyrare objekt än husvagnstaket (två elcyklar 40–60 tkr), formsydd form, fackhandel 707–799 kr och kedjan saknar formen. Heron är textfri och i kontext. Aldrig sökt (koncept.py: 0 på cykelhållare; bike-träffarna är MC/barncykel).",
+   "huvudrisk": "'Sett innan' — Fiamma-skyddet är ett vanligt tillbehör hos campare och Axel kan säga 'alla har den'; datumet är svagare än takets.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep cykel/bike: Cykelshorts 259, Stänkskärm MTB 219 — annan form)",
+     "koncept.py sok cykelhållare (0) / bike (K0088, K0145–K0189 = MC-, ATV- och barncykelkapell — annat objekt) / cykel (K0118, K0134 = elcykelbatterihylsa, K0162 = universalkapell på elcykel under skärmtak — annat objekt/form)",
+     "fynd.json 09-11…09-14 (inget)",
+     "kontot 7 d: ej kollat — linsen rör inte Meta"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012440559009.html",
+    "https://www.aliexpress.com/item/1005010428291230.html",
+    "https://www.thansen.se/bil/biltillbehor/transportutrustning/cykelhaallare/till-campingvagn/cykelskydd-2-3-cyklar-fiamma-bikecover-s/n-585258067/pn-585137135",
+    "https://www.campingvaruhuset.se/sv/fiamma-bikecover-2-3-cyklar",
+    "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-fiamma-bike-cover-s-2-3-cyklar.html",
+    "https://www.thule.com/sv-se/rv-racks/rv-rack-accessories/thule-bike-cover-_-307335"
+   ],
+   "_kalla": "kandidater-T.json",
+   "rank_poang": 16.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 3 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); deadline_typ=uppställning 4V/0F (+1.0); prisband=500–999 8V/2F (+0.6)] = 16.0",
+   "asymmetrisk": false,
+   "rank": 1
+  },
+  {
+   "koncept_id": "K0276",
+   "namn_sv": "Husbilens tak-AC-huv",
+   "objekt": "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)",
+   "form": "huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "Termoskyddet för Husbil 211 × 171 cm / Taköverdraget för Husvagn",
+    "delade_variabler": [
+     "exakt samma ägare som Termoskyddet och Taköverdraget (husbil 55+, bevisad köpare i kontot)",
+     "objekt ute, dyr > 10 tkr (AC 15–26 tkr på taket)",
+     "formsydd huv i stället för ingenting/presenning (old way: ingenting — som Termoskyddet)",
+     "hårt datum: uppställning 10–31 okt (NOW 3,6 v)",
+     "fackhandelsankare 795–865 kr (Hindermann/Dometic hos camping4u), inget kedjegolv"
+    ],
+    "avvikelser": [
+     "bara husbilar med tak-AC (andel ej mätt)",
+     "listningen är amerikansk (Coleman/Dometic US-mått) — passform mot Truma Aventa/Dometic FreshJet måste bekräftas"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "uppstallning_husvagn",
+    "deadline_typ": "uppställning",
+    "veckor_kvar": 3.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010545161282",
+    "url": "https://www.aliexpress.com/item/1005010545161282.html",
+    "pris_usd": 17.36,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:21:03Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005010545161282.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "fyra färger (grå/brun/beige/svart) i heron; storlek ej angiven i titel — en storlek, mått måste hämtas från leverantören; alternativ listning 1005013149612512 (18,75 USD) öppnad, packshot med måttpilar utan kontext",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: huven på AC:n uppe på husbilstaket i ösregn, takluckan bredvid — rätt kontext; texten 'RV Air Conditioner Cover' och färgraden nertill måste beskäras bort"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "camping4u.se — Hindermann Skyddsöverdrag AC Dometic Freshjet 1100/1700/2200 och Truma Aventa Comfort/Eco",
+     "pris_sek": 795,
+     "url": "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-ac-dometic.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Dometic Skyddsöverdrag FJX/FJZ7 3000 (camping4u)",
+     "pris_sek": 865,
+     "url": "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-fjx-fjz7-3000-dometic.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "camping4u.se/tillbehor-klimat (Hindermann 795 kr × 4 varianter, Dometic 865 kr — läst 2026-09-15)",
+     "dometic.com FreshJet 1700 26 299 kr (objektets pris, sökutdrag)",
+     "jula.se/biltema.se: ingen tak-AC-huv i sökutdragen (kedjan saknar formen)",
+     "husvagnsbranschen.se/cision: ca 300 000 husbilar + 425 000 husvagnar i Sverige (sökutdrag); andel med tak-AC ej mätt"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     226,
+     276
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     323,
+     373
+    ],
+    "be_cpa_sek": [
+     323,
+     373
+    ],
+    "be_roas": 1.72,
+    "flerkop": false,
+    "returrisk": "medel — en storlek mot Truma/Dometic-mått; storlekstabell mot de tre vanligaste aggregaten krävs"
+   },
+   "meta_tanke": {
+    "hook": "Står husbilens AC ute i vinter?",
+    "objekt_i_bild": "AC-aggregatet på husbilstaket, huven dras på, regn/snö på taket runt om",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "is och löv i AC-gallret utan — torr huv med snö ovanpå med; samma bildspråk som Termoskyddet"
+   },
+   "varfor": "Termoskyddets exakta struktur en meter upp på samma husbil: dyr sak ute, uppställning om 3,6 v, formsydd huv, fackhandel tar 795–865 kr och kedjan saknar formen. Objektet har aldrig sökts i rutinen (koncept.py: 0 träffar på AC/klimat/Dometic).",
+   "huvudrisk": "Listningen är gjord för amerikanska aggregat — passar den inte Truma Aventa/Dometic FreshJet blir returerna höga; andelen husbilar med tak-AC är inte mätt.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep AC/klimat/Dometic: 0 träffar; Termoskydd Husbil 559 = annat objekt, vindrutan)",
+     "koncept.py sok AC/luftkondition/klimat/Dometic (0 relevanta träffar)",
+     "fynd.json 09-11…09-14 (inget AC-objekt; husbilsraderna är tak, vindruta, fönster, stödben)",
+     "kontot 7 d: ej kollat — linsen rör inte Meta"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010545161282.html",
+    "https://www.aliexpress.com/item/1005013149612512.html",
+    "https://www.camping4u.se/sv/artiklar/husbil-husvagn/ac-ventilation/tillbehor-klimat/index.html",
+    "https://www.camping4u.se/sv/artiklar/skyddsoverdrag-ac-dometic.html",
+    "https://epi.dometic.com/sv-se/outdoor/fritidsfordon-and-skapbilar/luftkonditionering-for-fritidsfordon/dometic-freshjet-1700-151912",
+    "https://news.cision.com/se/husvagnsbranschens-riksforbund/r/antal-husbilar-och-husvagnar-fortsatter-oka,c9405676"
+   ],
+   "_kalla": "kandidater-T.json",
+   "rank_poang": 15.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); deadline_typ=uppställning 4V/0F (+1.0); prisband=500–999 8V/2F (+0.6)] = 15.0",
+   "asymmetrisk": false,
+   "rank": 2
+  },
+  {
+   "koncept_id": "K0277",
+   "namn_sv": "Vattenskoterkapellet 600D",
+   "objekt": "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)",
+   "form": "överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "slot": "exploitation",
+   "hypotes_id": "H02",
+   "vinnarlikhet": {
+    "likast": "MC-Kapellet / Båtmotorskyddet 420D",
+    "delade_variabler": [
+     "objekt ute, dyr > 10 tkr (80–250 tkr)",
+     "formsydd överdrag (kapell) över hela farkosten",
+     "hårt datum: upptagning 10–31 okt (NOW 3,6 v)",
+     "improvisation i dag (presenning + spännband)",
+     "fackhandelsankare 1 120–1 560 kr (Oceansouth hos Marindelen), Motorbiten universal i tre storlekar"
+    ],
+    "avvikelser": [
+     "ägaren är yngre än kontots 55+-avatar (ej mätt, men vattenskoter är 30–55-segment)",
+     "liten bas: ca 30 000 skotrar (SOU 2022), 'fördubblats på fem år' enligt sökutdrag maj 2026 utan siffra",
+     "golv i annan form: SeaSea Covy Line universal båtkapell 300–360 cm 515 kr"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "batupptagning",
+    "deadline_typ": "upptagning",
+    "veckor_kvar": 3.6,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012610141247",
+    "url": "https://www.aliexpress.com/item/1005012610141247.html",
+    "pris_usd": 31.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:19:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005012610141247.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "600D PU1000, tvåfärgad; storlekar ej i titeln (troligen L/XL som systerlistningarna: 1005005622616914 39,99 USD L 360×250 / XL 380×260 cm — öppnad, hero sedd; 1005013089962401 29,23 USD L/XL — öppnad, hero sedd med text)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: kapellet på en skoter på Karavan-trailer, vit bakgrund, helt textfri — packshot i halv kontext; 1005013089962401 har strandkontext men inbränd rubrik"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "SeaSea Båtkapell Covy Line 300–360 cm (universal båtkapell, nylon 300D — passar vattenskoter men är inte skoterformat)",
+     "pris_sek": 515,
+     "url": "https://www.seasea.se/uppl%C3%A4ggning/presenning/b%C3%A5tkapell-covy-line",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Oceansouth Jet Ski Cover 2-tone 2,9–3,4 m (Marindelen; 2,5–2,9 m 1 120 kr, 3,4–3,7 m 1 560 kr — 'snart i lager igen', levtid 1–2 v)",
+     "pris_sek": 1340,
+     "url": "https://marindelen.se/fritid-outdoor/vattenskoter-jetski/kapell/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.49,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "marindelen.se (Oceansouth 1 120 / 1 340 / 1 560 kr — läst 2026-09-15)",
+     "seasea.se (Covy Line 300–360 cm 515 kr, sökutdrag)",
+     "hjertmans.se (Båtöverdrag/kapell 7988-0 300–360 cm 'jetski/jolle', 300D — slut i webblager, pris ej visat)",
+     "motorbiten.com (universal vattenskoterkapell i tre storlekar 2,5–3,7 m, pris ej visat)",
+     "toplift.se/hanseriksson.se (skräddarsydda/Sea-Doo-original — 403/verifieringssida, pris ej sett; sökutdrag anger 2 990–3 865 kr)",
+     "riksdagen.se SOU 2022:49: ca 30 000 vattenskotrar, nypris 80–250 tkr; 124 716 förarbevis utfärdade t.o.m. 2026-07-13 (sökutdrag)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     409,
+     499
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     400,
+     490
+    ],
+    "be_cpa_sek": [
+     400,
+     490
+    ],
+    "be_roas": 2.02,
+    "flerkop": false,
+    "returrisk": "medel — L/XL mot skoterns längd; ägaren vet modellen, storlekstabell per märke krävs"
+   },
+   "meta_tanke": {
+    "hook": "Står vattenskotern ute i vinter?",
+    "objekt_i_bild": "skotern på trailern på uppfarten, kapellet dras över, spännbanden under skrovet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vatten i sitsen och blekt skrov utan — torrt, spänt kapell med snö ovanpå med"
+   },
+   "varfor": "MC-kapellets och båtmotorskyddets struktur på ett objekt rutinen aldrig sökt: 80–250 tkr på trailern, upptagning om 3,6 v, fackhandel tar 1 120–1 560 kr för samma tvåfärgade form och kedjan saknar den. Prisutrymmet är det största i linsen (BE-CPA 400–490).",
+   "huvudrisk": "Basen är liten (ca 30 000 skotrar, yngre ägare än kontots avatar) och SeaSea säljer ett universalkapell för 515 kr som funkar 'nästan'.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 0,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep vattenskoter/jet: bara Jetfläkt Makita 709 — annat objekt; Båtskydd uppblåsbar 1 049 och MC-Kapell 349 = andra objekt)",
+     "koncept.py sok vattenskoter (0) / jetski (0)",
+     "fynd.json 09-11…09-14 (Båthuven 17–19 fot 09-12 = annat objekt)",
+     "kontot 7 d: ej kollat — linsen rör inte Meta"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012610141247.html",
+    "https://www.aliexpress.com/item/1005005622616914.html",
+    "https://www.aliexpress.com/item/1005013089962401.html",
+    "https://marindelen.se/fritid-outdoor/vattenskoter-jetski/kapell/",
+    "https://www.seasea.se/uppl%C3%A4ggning/presenning/b%C3%A5tkapell-covy-line",
+    "https://www.hjertmans.se/sv/produkt/vinterforvaring/batoverdrag-kapell-5",
+    "https://www.motorbiten.com/butik/products/vattenskoter-kapell-universal",
+    "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/statens-offentliga-utredningar/andrade-regler-for-vattenskotrar_hab349/html/"
+   ],
+   "_kalla": "kandidater-T.json",
+   "rank_poang": 15.0,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 2 + säsong 2 + creative 2 + lucka 1 + signalbonus +2.0 [arketyp=B_SKYDDA_DYRT 8V/1F (+0.8); form=överdrag 8V/1F (+0.8); prisband=500–999 8V/2F (+0.6)] = 15.0",
+   "asymmetrisk": false,
+   "rank": 3
+  },
+  {
+   "koncept_id": "K0278",
+   "namn_sv": "Krukbärremmen — olivträdet in, 90 kg",
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "form": "sele",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "exploration",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Axelbältet (trimmersele) / Fiskespöhållaren",
+    "delade_variabler": [
+     "ägare 55+ småhus",
+     "kroppen i säsongsjobbet (bära in 40–60 kg-krukor före frosten)",
+     "improvisation (två personer + ryggen, eller släpa krukan)",
+     "pris < 300–349",
+     "hårt datum (första frost)"
+    ],
+    "avvikelser": [
+     "form sele/annat utanför vinnarformerna",
+     "objektet är älskat, inte dyrt",
+     "SmartaSaker säljer exakt formen (PotLifter 395 kr)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.3,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012384664996",
+    "url": "https://www.aliexpress.com/item/1005012384664996.html",
+    "pris_usd": 6.25,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:25:02Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005012384664996.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, universal (justerbar rem med krokar); maxvikt ej mätt i listningen — PotLifter-ankaret anger 90 kg",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri hero: två händer lyfter en stor svart kruka i remmen, krokarna över kanten syns — mekanismen på 1 s; alternativ 1005009228859073 (11,82 USD) har text 'Attached hook' i heron"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "SmartaSaker — Potlifter, bärrem för tunga saker (90 kg, i lager 62 st)",
+     "pris_sek": 395,
+     "url": "https://www.smartasaker.se/sv/barrem-for-tunga-saker",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "SmartaSaker — Potlifter 90 kg",
+     "pris_sek": 395,
+     "url": "https://www.smartasaker.se/sv/barrem-for-tunga-saker",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.2,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "smartasaker.se (produktsida läst 2026-09-15)",
+     "amazon.se (PotLifter B002ECFFJ8 finns, pris gick inte att läsa)",
+     "plantagen.se/blomsterlandet.se/biltema.se (bara rullbrädor 45–80 kg, annan form)",
+     "clasohlson.se/jula.se (ingen träff på bärrem för krukor)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     81,
+     99
+    ],
+    "pris_sek": 329,
+    "brutto_sek": [
+     230,
+     248
+    ],
+    "be_cpa_sek": [
+     230,
+     248
+    ],
+    "be_roas": 1.38,
+    "flerkop": false,
+    "returrisk": "låg — universal, justerbar; enda måttet är krukans omkrets (PotLifter: max 2,1 m)"
+   },
+   "meta_tanke": {
+    "hook": "Vem bär in olivträdet i år?",
+    "objekt_i_bild": "olivträdet/citronen i 50 kg-krukan på altanen, remmen runt krukan, två par händer",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "krukan som inte gick att rubba lyfts i remmen och bärs in genom altandörren"
+   },
+   "varfor": "Ren H10-rad: en form ingen sett i svenskt flöde (bara SmartaSaker 395 kr), textfri hero som förklarar sig själv, på ett älskat objekt med hårt datum (citrus/oliv/fikon ska in före första frosten, 4–5 v) — kroppsligt i säsongsjobbet som axelbältet och värmesulorna (tre ja i rad). Landad 81–99 kr ger BE-CPA 230–248 trots pris under ankaret.",
+   "huvudrisk": "Form 'annat/sele' och 'köpt produkt som fungerar' är förlorarsignaler; ankaret 395 kr ligger bara 1,2× över och sätter pristaket — under 300 kr-bandet vann 4 av 12.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok"
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep kruk/vagn/bär: bara Axelbälte/Trimmersele — annat objekt)",
+     "koncept.py sok krukväxt/vagn (K0251 krukväxthuven = annan form; K0270 utombordarvagnen nej = annat objekt)",
+     "fynd.json 09-11…09-14"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012384664996.html",
+    "https://www.smartasaker.se/sv/barrem-for-tunga-saker",
+    "https://www.amazon.se/PotLifter-krukv%C3%A4xtmover-n%C3%B6dv%C3%A4ndigt-lyftverktyg-tr%C3%A4dg%C3%A5rdsblomkrukor/dp/B002ECFFJ8",
+    "https://www.wexthuset.com/fakta-och-rad/om-odling-och-skotsel-av-tradgard-och-vaxter/overvintring-av-vaxter/vinterskydd-av-kansliga-vaxter"
+   ],
+   "_kalla": "kandidater-U.json",
+   "rank_poang": 13,
+   "rank_forklaring": "exploration: hypotesvärde 3×2 + nyhet 3 + creative 3 + ekonomi 1 = 13",
+   "asymmetrisk": false,
+   "rank": 4
+  },
+  {
+   "koncept_id": "K0279",
+   "namn_sv": "Buskjackan med dragkedja, 2-pack",
+   "objekt": "Rosor, rhododendron, buxbom i rabatten",
+   "form": "huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Krukväxthuven 3-pack (ja 09-12) / Kranskydd Frost",
+    "delade_variabler": [
+     "objekt_ute",
+     "ägare 55+ småhus",
+     "huv/överdrag formsydd",
+     "hårt datum (vintertäckning)",
+     "improvisation (fiberduk + snöre)",
+     "flerköp (rhododendron + rosor + unga träd)"
+    ],
+    "avvikelser": [
+     "objektet är älskat men billigt (< 1 tkr)",
+     "kedjan har exakt formen (Bauhaus Videx 349 kr)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vintertackning_vaxter",
+    "deadline_typ": "vintertäckning",
+    "veckor_kvar": 8.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009881212347",
+    "url": "https://www.aliexpress.com/item/1005009881212347.html",
+    "pris_usd": 23.59,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:17:33Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005009881212347.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1/2/4 pcs enligt titeln — vilken variant 23,59 USD avser är ej mätt (sökträffen visar lägsta); mått ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot med fyra gröna huvar över stammar och liten text '4pcs' uppe — måste beskäras; alternativ listning 1005010041889010 (8,24 USD) har hero med inklippt gubbe och ikoner, sämre"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "jem & fix — Växtskydd Fleece XXL 190×240 (utan dragkedja)",
+     "pris_sek": 99,
+     "url": "https://www.jemfix.se/vaextskydd-vinterskydd/130610/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Bauhaus — Videx Garden Fleece med dragkedja 240×200 cm",
+     "pris_sek": 349,
+     "url": "https://www.bauhaus.se/vaxter-krukor/vaxter/vaxtskydd/vinterskydd",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.18,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se (kategorisida läst 2026-09-15)",
+     "jemfix.se (kategorisida läst 2026-09-15)",
+     "amazon.se (SCCS 2-pack 240×200 i sökträff, pris ej läst)",
+     "hornbach.se (sidan laddade inte)",
+     "plantagen.se (ingen träff i sökutdrag)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     307,
+     375
+    ],
+    "pris_sek": 589,
+    "brutto_sek": [
+     214,
+     282
+    ],
+    "be_cpa_sek": [
+     214,
+     282
+    ],
+    "be_roas": 2.37,
+    "flerkop": true,
+    "returrisk": "medel — storleken måste passa busken (mått ej mätt i listningen)"
+   },
+   "meta_tanke": {
+    "hook": "Hur täcker du rhododendronen i år?",
+    "objekt_i_bild": "rhododendronen/rosen i rabatten under huven, dragkedjan öppen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "huven dras ner över busken och dragkedjan stängs — mot fiberduk som blåser upp"
+   },
+   "varfor": "Samma struktur som krukväxthuven (ja 09-12) men på rabattens älskade buskar: formsydd huv med dragkedja mot fiberduk-och-snöre, 2-pack för ägaren med flera buskar, hårt datum 8 v bort (H02+H08). Ankaret Bauhaus 349 kr per huv gör 589 kr för två läsbart.",
+   "huvudrisk": "BE-CPA hamnar 214–282 om 23,59 USD gäller 2-packet — gäller priset 1 st blir ekonomin negativ; kedjan har exakt formen (Bauhaus 349) och fleece för 99 kr.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok"
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep huv/träd/rhodo/ros: bara Kranskydd, Trädband, Trädgårdssäck)",
+     "koncept.py sok rhododendron/fruktträd/krukväxt (bara K0251 krukväxthuven — annat objekt)",
+     "fynd.json 09-11…09-14"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009881212347.html",
+    "https://www.bauhaus.se/vaxter-krukor/vaxter/vaxtskydd/vinterskydd",
+    "https://www.jemfix.se/vaextskydd-vinterskydd/130610/",
+    "https://weibulls.com/information/artiklar/skydda-rosorna-infor-vintern-att"
+   ],
+   "_kalla": "kandidater-U.json",
+   "rank_poang": 12.9,
+   "rank_forklaring": "exploitation: vinnarlikhet 3×2 + ekonomi 1 + säsong 3 + creative 1 + lucka 1 + signalbonus +0.9 [arketyp=E_VADER_SASONG 2V/1F (+0.3); prisband=500–999 8V/2F (+0.6)] = 12.9",
+   "asymmetrisk": true,
+   "rank": 5
+  },
+  {
+   "koncept_id": "K0280",
+   "namn_sv": "Sorkkorgarna i rostfritt, 15-pack",
+   "objekt": "NYTT: Höstplanteringen — lökar, rosor och unga fruktträd under jord (sorken äter rötterna nov–mars)",
+   "form": "nät",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "slot": "exploitation",
+   "hypotes_id": "H08",
+   "vinnarlikhet": {
+    "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+    "delade_variabler": [
+     "objekt_ute",
+     "ägare 55+ småhus",
+     "flerköp — många växter per trädgård",
+     "improvisation (hönsnät, tomma krukor, kejsarkronor)",
+     "pris 500–999",
+     "hårt datum (planteras före tjälen)"
+    ],
+    "avvikelser": [
+     "form nät (inte klämma/överdrag)",
+     "effekten syns först i vår — latent bevis",
+     "kedjan (Lantkompaniet) har formen styckvis i galvaniserat"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 4.3,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010368324954",
+    "url": "https://www.aliexpress.com/item/1005010368324954.html",
+    "pris_usd": 28.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:17:47Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005010368324954.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "15 st i fyra storlekar enligt heron (6 små, 3+4 mellan, 2 stora); mått ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri hero: 15 korgar utlagda + en kruka med planta i korg och en sork som gnager utanpå nätet — mekanismen syns utan ord; alternativ styck-listning 1005012611499532 (9,95 USD) är ren packshot"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Lantkompaniet / VOSS.farming — Nätkorg mot sork Ø 35 cm, galvaniserad, 1 st",
+     "pris_sek": 113,
+     "url": "https://www.lantkompaniet.se/naetkorg-mot-rotskador-orsakade-av-sork-finmaskigt-naet-mot-sork-o-35cm.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Lantkompaniet / VOSS.farming — Nätkorg mot sork Ø 60 cm, 1 st",
+     "pris_sek": 151,
+     "url": "https://www.lantkompaniet.se/naetkorg-mot-rotskador-orsakade-av-sork-finmaskigt-naet-mot-sork-o-60-cm.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.42,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "lantkompaniet.se (två produktsidor lästa 2026-09-15)",
+     "amazon.se (8-pack/15-pack i sökträff, pris ej läst)",
+     "granngarden.se (bara krukor i sökutdrag, ingen sorkkorg)",
+     "plantagen.se (ingen träff)",
+     "odla.nu + viivilla.se (behovet: nätkorg är standardrådet mot sork)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     370,
+     452
+    ],
+    "pris_sek": 699,
+    "brutto_sek": [
+     247,
+     329
+    ],
+    "be_cpa_sek": [
+     247,
+     329
+    ],
+    "be_roas": 2.43,
+    "flerkop": true,
+    "returrisk": "låg — ingen mätning, korgen formas runt rotklumpen"
+   },
+   "meta_tanke": {
+    "hook": "Åt sorken upp tulpanerna i våras?",
+    "objekt_i_bild": "rosens/lökarnas rotklump i nätkorgen i planteringsgropen",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "korgen i gropen, rotklumpen ner, jord på — sorken gnager utanpå stålnätet"
+   },
+   "varfor": "Höstplanteringen pågår nu (lökar, rosor, fruktträd före tjälen) och sorken är trädgårdsägarens mest hatade fiende — kedjan säljer korgen styckvis för 113–151 kr i galvaniserat som ruttnar; 15 st rostfritt för 699 kr (47 kr/st) är flerköp inbyggt (H08, ankare per styck 2,4×). Effekten är kaoset i våras: tomma hål där tulpanerna stod.",
+   "huvudrisk": "Payoffen (inga uppätna rötter) syns först i vår — creativen måste bära skadan (sorkgångar, uppätna lökar), inte produkten; storlekarna i 15-packet är ej mätta.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok"
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (grep sork/rotskydd/nät: inget)",
+     "koncept.py sok sork/lök (0 träffar)",
+     "fynd.json 09-11…09-14"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010368324954.html",
+    "https://www.lantkompaniet.se/naetkorg-mot-rotskador-orsakade-av-sork-finmaskigt-naet-mot-sork-o-35cm.html",
+    "https://www.lantkompaniet.se/naetkorg-mot-rotskador-orsakade-av-sork-finmaskigt-naet-mot-sork-o-60-cm.html",
+    "https://www.odla.nu/blogs/inspiration/radda-varlokarna-fran-glupska-sorkar",
+    "https://viivilla.se/tradgard/mullvad-eller-sork-i-tradgarden-det-har-ska-du-gora/"
+   ],
+   "_kalla": "kandidater-U.json",
+   "rank_poang": 11.9,
+   "rank_forklaring": "exploitation: vinnarlikhet 2×2 + ekonomi 1 + säsong 2 + creative 2 + lucka 2 + signalbonus +0.9 [arketyp=E_VADER_SASONG 2V/1F (+0.3); prisband=500–999 8V/2F (+0.6)] = 11.9",
+   "asymmetrisk": false,
+   "rank": 6
+  },
+  {
+   "koncept_id": "K0281",
+   "namn_sv": "Hundgårdsskålen, uppvärmd och hängande",
+   "objekt": "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)",
+   "form": "annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "sasong",
+   "hypotes_id": "H09",
+   "vinnarlikhet": {
+    "likast": "Isolerade Utekattkojan / Uppvärmd Vattenskål 2,2 L (butiken, K0232 ja)",
+    "delade_variabler": [
+     "objekt ute (gårdshunden)",
+     "ägare 55+ småhus",
+     "deadline första frost / utedjur stänger",
+     "golv under nej (Lundhs 1 294, Sulavesi 1 690)",
+     "ankare 1,2–1,6× (1,44)",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "form 'annat' (0 vinnare / 13 förlorare i facit)",
+     "elektronik med sladd ute",
+     "hero är packshot utan kontext"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "utedjur_stanger",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 8.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013124440291",
+    "url": "https://www.aliexpress.com/item/1005013124440291.html",
+    "pris_usd": 25.88,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:17:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005013124440291.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (hängande, grå); volym står inte i titeln — ej mätt; spänning ej i titeln (troligen 230 V-adapter, ej mätt)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 0,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: grå D-formad skål med rak rygg (hängs mot nät/vägg) och stålarmerad, tuggsäker sladd — textfri men helt utan hund eller hundgård; kräver egen kontextbild"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Hylte Jakt & Lantman — Lundhs vattenskål eluppvärmd 3 L, 24 V/30 W inkl transformator, med monteringsring (kategori Hundgård)",
+     "pris_sek": 1294,
+     "url": "https://www.hylte-lantman.com/vattenskal-eluppvarmd-inkl-50w-transformator",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Sulavesi uppvärmd vattenskål utomhus 2,6 L (betong, 40 W) — Arken Zoo/VetZoo, i lager",
+     "pris_sek": 1690,
+     "url": "https://www.arkenzoo.se/sulavesi-uppvarmd-vattenskal-for-utomhusbruk-26-liter",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.44,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hylte-lantman.com (läst 2026-09-15: 1 294 kr, webblager)",
+     "arkenzoo.se (läst 2026-09-15: 1 690 kr, i lager)",
+     "djurslottet.se (läst 2026-09-15: eluppvärmd golvskål 3,2 L 1 499 kr)",
+     "jaktmarken.se 'Vattenskål 3L värmd 30w' (503 — pris ej läst)",
+     "granngarden.se/zoo.se (sökutdrag: elvattenkoppar, inga hundgårdsskålar med värme)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     337,
+     412
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     487,
+     562
+    ],
+    "be_cpa_sek": [
+     487,
+     562
+    ],
+    "be_roas": 1.71,
+    "flerkop": false,
+    "returrisk": "medel — volym och spänning ej verifierade; hängfästet måste passa nätet"
+   },
+   "meta_tanke": {
+    "hook": "Fryser hundens vatten i gården?",
+    "objekt_i_bild": "skålen hängd på hundgårdens nät, rimfrost runt om, hunden dricker",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "isskorpan i den gamla skålen bredvid, öppet vatten i den hängda"
+   },
+   "varfor": "Samma sak som kattens uppvärmda vattenskål (Axel ja, K0232, i butiken) men i hundgårdens form — hängd på nätet, tuggsäker sladd — där svenska golvet är 1 294–1 690 kr och vi kan ligga på 899 med BE-CPA ≥ 487. Rent H09-test: djur ute + första frost + ny form på nytt djur.",
+   "huvudrisk": "Volym och spänning står inte i titeln (kan vara mindre än Lundhs 3 L); form 'annat' är 0/13 i facit och heron saknar kontext — nära butikens 2,2 L-skål i funktion, skild bara i montering och djur.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-15: 'Uppvärmd Vattenskål För Vinterfåglar – 2,2 Liter' 849 kr = golvskål för fåglar/katt — annan montering (hängande) och annat djur; närheten är markerad i huvudrisken",
+     "koncept.py sok hund — K0209 plastkoja nej, K0210–K0223 kojor/kapell; sok vattenskål — K0232 kattens 2,2 L (ja)",
+     "fynd 09-11…09-14: ingen hundskål"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013124440291.html",
+    "https://www.hylte-lantman.com/vattenskal-eluppvarmd-inkl-50w-transformator",
+    "https://www.arkenzoo.se/sulavesi-uppvarmd-vattenskal-for-utomhusbruk-26-liter",
+    "https://djurslottet.se/products/eluppvarmd-vattenskal"
+   ],
+   "_kalla": "kandidater-S.json",
+   "rank_poang": 11,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 3 = 11",
+   "asymmetrisk": false,
+   "rank": 7
+  },
+  {
+   "koncept_id": "K0282",
+   "namn_sv": "Fågelholken med WiFi-kamera",
+   "objekt": "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)",
+   "form": "hus",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Övervakningskameran (PTZ) / Fågelmataren med kamera (K0242 ja, i butiken 1 659 kr)",
+    "delade_variabler": [
+     "elektronik ute med app",
+     "ankare ≥ 1,6× (Vivara kamera 3 399,90)",
+     "prisband ≥ 1 000 med bevisad syster i butiken",
+     "objekt ute"
+    ],
+    "avvikelser": [
+     "montering = ja (holk sätts upp, kamera kopplas — 1/6 i facit)",
+     "nyttan syns först i häckningen (april–maj) — köps som gåva nu",
+     "hero har text- och app-overlays"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "fars_dag",
+    "deadline_typ": "fars dag",
+    "veckor_kvar": 7.7,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005009894758144",
+    "url": "https://www.aliexpress.com/item/1005009894758144.html",
+    "pris_usd": 46.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:19:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005009894758144.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (träholk + 4MP Tuya-kamera, SD-kort, natt-IR); strömförsörjning ej i titeln (systerlistningen 1005010688265389 samma hus, 46,19 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron: träholken på en trädstam med talgoxe i bild och mobilvy med ungar i boet — i kontext och svensk-relevant art; men 'PATENTED', Tuya-loggor och kamerainset ligger ovanpå och måste beskäras"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "SmartaSaker — Fågelholk med webbkamera (holk + WiFi-kamera, 20 m strömkabel)",
+     "pris_sek": 1545,
+     "url": "https://www.smartasaker.se/sv/fagelholk-med-webbkamera",
+     "exakt_samma_form": true,
+     "kommentar": "slutsåld (lagersaldo 0) läst 2026-09-15"
+    },
+    "premium_ankare": {
+     "namn": "Vivara Fågelholks WiFi-kamera (bara kameran, 10 m kabel) 3 399,90 kr; solcellsdriven 3 399,90 kr — båda i lager",
+     "pris_sek": 3399.9,
+     "url": "https://www.vivara.se/fagelholks-kamera",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.84,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "smartasaker.se (läst 2026-09-15: 1 545 kr, slutsåld)",
+     "vivara.se/fagelholks-kamera (läst 2026-09-15: 3 399,90 kr, kamera utan holk)",
+     "vivara.se/fagelholks-kamera-solcellsdriven (läst: 3 399,90 kr)",
+     "green-backyard.com (paket finns, sidan svarade tomt — pris ej läst)",
+     "letsbuyit.se (guide: 'ofta 1 000–1 500 kr', Amazon.se-produkter utan pris)",
+     "granngarden.se (sökutdrag: holkar utan kamera)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     601,
+     735
+    ],
+    "pris_sek": 1199,
+    "brutto_sek": [
+     464,
+     598
+    ],
+    "be_cpa_sek": [
+     464,
+     598
+    ],
+    "be_roas": 2.26,
+    "flerkop": false,
+    "returrisk": "medel — WiFi-räckvidd till holken och strömförsörjning måste stämma; app (Tuya) krävs"
+   },
+   "meta_tanke": {
+    "hook": "Vem bor i holken i år?",
+    "objekt_i_bild": "holken på stammen, mobilen med ungarna i boet",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "mobilvyn: fem gapande ungar i boet inifrån holken"
+   },
+   "varfor": "Fågelmataren med kamera (1 659 kr) står i butiken och fick ja — holken är samma ägare, samma mekanism (kamera + app) i en form ingen svensk kedja säljer i lager (SmartaSaker slutsåld, Vivara tar 3 400 för bara kameran). Fars dag 7,7 v: gåvan som packas upp nu och betalar av sig i april.",
+   "huvudrisk": "Payoffen (ungarna) kommer först i häckningen — köpet måste bäras som gåva, och montering/app/WiFi-räckvidd är förlorarsignaler i facit.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-15: 'Fågelmatare Med Kamera Och Solcellspanel' 1 659 kr = matare, annan sak; grep holk = 0",
+     "koncept.py sok holk = 0, sok kamera = K0242 (mataren)",
+     "fynd 09-11…09-14: ingen holk; 09-13 strök 'fågelholksbyggsats 1–5 USD' och 'övernattningsholk' — annan form"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009894758144.html",
+    "https://www.aliexpress.com/item/1005010688265389.html",
+    "https://www.smartasaker.se/sv/fagelholk-med-webbkamera",
+    "https://www.vivara.se/fagelholks-kamera",
+    "https://www.vivara.se/fagelholks-kamera-solcellsdriven",
+    "https://www.letsbuyit.se/fagelholk-med-kamera/"
+   ],
+   "_kalla": "kandidater-S.json",
+   "rank_poang": 11,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 3 = 11",
+   "asymmetrisk": false,
+   "rank": 8
+  },
+  {
+   "koncept_id": "K0283",
+   "namn_sv": "Husbilskalendern, 24 retrobussar",
+   "objekt": "Mannen med husbilen — kalendern (fars dag, jul)",
+   "form": "kalenderlåda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "24 synliga saker bakom luckor",
+     "hårt datum 1 december",
+     "mottagare i relation (partnern med husbilen)",
+     "svikande default = chokladkalendern",
+     "prisband 300–499"
+    ],
+    "avvikelser": [
+     "mottagaren är vuxen, inte barnbarnet",
+     "delarna är skiktad akryl (2,5D), inte 3D-leksaker",
+     "identitetsköp — F_HOBBY_IDENTITET är 0/1 i kontot"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "advent_1_december",
+    "deadline_typ": "1 december",
+    "veckor_kvar": 10.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013149476732",
+    "url": "https://www.aliexpress.com/item/1005013149476732.html",
+    "pris_usd": 16.33,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-15T07:14:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-15/v3/bilder/1005013149476732.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant (2026-upplagan, 24 delar) enligt titel; sökträffen 2026-09-15 visar samma 16,33 USD som 2026-09-13",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "omverifierad i dag: heron är ren packshot — orange låda med tryckt titel + alla 24 delar (18 bussar, 2 campingstolar, kylbox, lykta, 2 muggar, 2 surfbrädor, ljusslinga) uppradade; ingen överlagrad text utöver lådans eget tryck"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i denna körning — svensk sökning 2026-09-15 gav Otego (bilar/traktor/lastbil-kalender), Tradera (24 bilar) och Walmart.com; ingen husbils-/campervan-kalender i SEK",
+     "pris_sek": null,
+     "url": "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Days-Christmas-Countdown-Retro-Van-Ornaments-Acrylic-Blind-Box-Vehicles-Collectible-Mystery-Gift-Set-Kids-Adults/20883750195",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "ej hittat — närmast CDON 'Adventskalender för män, 24 presenter' 519 kr (sökutdrag 2026-09-15, annan form) och Otego bil/traktor-kalender (pris ej läst)",
+     "pris_sek": 519,
+     "url": "https://cdon.se/jul/adventskalendrar",
+     "i_sortiment": true
+    },
+    "ankare_kvot": null,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "otego.se (sökutdrag)",
+     "tradera.com (sökutdrag)",
+     "cdon.se/jul/adventskalendrar (sökutdrag)",
+     "walmart.com (finns, ingen SEK)",
+     "09-13: adventskalenderguiden.se, husbilhusvagn.se, leksaksbilar.se"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     212,
+     260
+    ],
+    "pris_sek": 499,
+    "brutto_sek": [
+     239,
+     287
+    ],
+    "be_cpa_sek": [
+     239,
+     287
+    ],
+    "be_roas": 1.9,
+    "flerkop": false,
+    "returrisk": "låg — en variant, ingen storlek"
+   },
+   "meta_tanke": {
+    "hook": "Har han husbilen? Här är hans kalender.",
+    "objekt_i_bild": "lådan på husbilens bord, bussarna uppradade på hyllkanten",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "lucka öppnas, en folkabuss med pop-up-tak kommer ut och ställs bredvid de andra"
+   },
+   "varfor": "Kontots största bevisade ägargrupp (husvagn/husbil, ägare 55+) får racingbilarnas form — 24 synliga saker + 1 december — och ingen svensk aktör säljer den; klarade grinden 09-13 och föll bara på plats. Frun köper till mannen: hårt datum + relation är exakt H05.",
+   "huvudrisk": "Delarna är platt akryl — upplevt värde kan landa under 499 kr i bild; kalendern i butiken tappade vid skalning (ROAS 1,88 → pausad).",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 3,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": null,
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt 2026-09-15 (kalender: bara Fiskedrag + Racingbilar — annan sak)",
+     "koncept.py sok kalender — 13 träffar, ingen husbil",
+     "fynd 09-11…09-14: ingen husbilskalender (raden låg i backlog v38 som 'först i kön')"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013149476732.html",
+    "https://www.walmart.com/ip/Campervan-Advent-Calendar-2026-24-Days-Christmas-Countdown-Retro-Van-Ornaments-Acrylic-Blind-Box-Vehicles-Collectible-Mystery-Gift-Set-Kids-Adults/20883750195",
+    "https://otego.se/produkt/adventskalender-bilar-traktor-lastbil-julkalender-2023/",
+    "https://cdon.se/jul/adventskalendrar"
+   ],
+   "_kalla": "kandidater-S.json",
+   "rank_poang": 10,
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 3 + ekonomi 1 = 10",
+   "asymmetrisk": true,
+   "rank": 9
+  }
+ ],
+ "skyddsformer_i_batch": 4,
+ "strukna": [],
+ "utanfor_batch": []
+}

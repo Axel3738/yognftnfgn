@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 275,
+ "nasta": 284,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -16180,6 +16180,738 @@
     }
    ],
    "namn_sv": "Big Foot-stödbensplattorna, 4-pack"
+  },
+  "K0275": {
+   "id": "K0275",
+   "skapad": "2026-09-15",
+   "namn": "Husbilens cykelhållarskydd 2 cyklar",
+   "objekt": "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)",
+   "form": "överdrag",
+   "sak": "nytt: elcyklarna på husbilens/husvagnens bakre cykelhållare+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012440559009",
+     "url": "https://www.aliexpress.com/item/1005012440559009.html",
+     "bild": null,
+     "pris_usd": 17.19,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:19:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 16.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 249,
+     "be_cpa": 350,
+     "hook": "Hänger cyklarna bak i regnet?",
+     "varfor": "Samma köpare som V1/Termoskyddet, dyrare objekt än husvagnstaket (två elcyklar 40–60 tkr), formsydd form, fackhandel 707–799 kr och kedjan saknar formen. Heron är textfri och i kontext. Aldrig sökt (koncept.py: 0 på cykelhållare; bike-träffarna är MC/barncykel).",
+     "huvudrisk": "'Sett innan' — Fiamma-skyddet är ett vanligt tillbehör hos campare och Axel kan säga 'alla har den'; datumet är svagare än takets.",
+     "hypotes_id": "H01",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Husbilens cykelhållarskydd 2 cyklar"
+  },
+  "K0276": {
+   "id": "K0276",
+   "skapad": "2026-09-15",
+   "namn": "Husbilens tak-AC-huv",
+   "objekt": "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)",
+   "form": "huv",
+   "sak": "nytt: husbilens takklimatanläggning+huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010545161282",
+     "url": "https://www.aliexpress.com/item/1005010545161282.html",
+     "bild": null,
+     "pris_usd": 17.36,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:21:03Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 15.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 251,
+     "be_cpa": 348,
+     "hook": "Står husbilens AC ute i vinter?",
+     "varfor": "Termoskyddets exakta struktur en meter upp på samma husbil: dyr sak ute, uppställning om 3,6 v, formsydd huv, fackhandel tar 795–865 kr och kedjan saknar formen. Objektet har aldrig sökts i rutinen (koncept.py: 0 träffar på AC/klimat/Dometic).",
+     "huvudrisk": "Listningen är gjord för amerikanska aggregat — passar den inte Truma Aventa/Dometic FreshJet blir returerna höga; andelen husbilar med tak-AC är inte mätt.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Husbilens tak-AC-huv"
+  },
+  "K0277": {
+   "id": "K0277",
+   "skapad": "2026-09-15",
+   "namn": "Vattenskoterkapellet 600D",
+   "objekt": "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)",
+   "form": "överdrag",
+   "sak": "nytt: vattenskotern på trailern+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012610141247",
+     "url": "https://www.aliexpress.com/item/1005012610141247.html",
+     "bild": null,
+     "pris_usd": 31.39,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:19:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 15.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 0,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 454,
+     "be_cpa": 445,
+     "hook": "Står vattenskotern ute i vinter?",
+     "varfor": "MC-kapellets och båtmotorskyddets struktur på ett objekt rutinen aldrig sökt: 80–250 tkr på trailern, upptagning om 3,6 v, fackhandel tar 1 120–1 560 kr för samma tvåfärgade form och kedjan saknar den. Prisutrymmet är det största i linsen (BE-CPA 400–490).",
+     "huvudrisk": "Basen är liten (ca 30 000 skotrar, yngre ägare än kontots avatar) och SeaSea säljer ett universalkapell för 515 kr som funkar 'nästan'.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Vattenskoterkapellet 600D"
+  },
+  "K0278": {
+   "id": "K0278",
+   "skapad": "2026-09-15",
+   "namn": "Krukbärremmen — olivträdet in, 90 kg",
+   "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+   "form": "sele",
+   "sak": "krukväxter+sele",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012384664996",
+     "url": "https://www.aliexpress.com/item/1005012384664996.html",
+     "bild": null,
+     "pris_usd": 6.25,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:25:02Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 329,
+     "landad": 90,
+     "be_cpa": 239,
+     "hook": "Vem bär in olivträdet i år?",
+     "varfor": "Ren H10-rad: en form ingen sett i svenskt flöde (bara SmartaSaker 395 kr), textfri hero som förklarar sig själv, på ett älskat objekt med hårt datum (citrus/oliv/fikon ska in före första frosten, 4–5 v) — kroppsligt i säsongsjobbet som axelbältet och värmesulorna (tre ja i rad). Landad 81–99 kr ger BE-CPA 230–248 trots pris under ankaret.",
+     "huvudrisk": "Form 'annat/sele' och 'köpt produkt som fungerar' är förlorarsignaler; ankaret 395 kr ligger bara 1,2× över och sätter pristaket — under 300 kr-bandet vann 4 av 12.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok"
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Krukbärremmen — olivträdet in, 90 kg"
+  },
+  "K0279": {
+   "id": "K0279",
+   "skapad": "2026-09-15",
+   "namn": "Buskjackan med dragkedja, 2-pack",
+   "objekt": "Rosor, rhododendron, buxbom i rabatten",
+   "form": "huv",
+   "sak": "rosor, rhododendron, buxbom i rabatten+huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009881212347",
+     "url": "https://www.aliexpress.com/item/1005009881212347.html",
+     "bild": null,
+     "pris_usd": 23.59,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:17:33Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 12.9,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 589,
+     "landad": 341,
+     "be_cpa": 248,
+     "hook": "Hur täcker du rhododendronen i år?",
+     "varfor": "Samma struktur som krukväxthuven (ja 09-12) men på rabattens älskade buskar: formsydd huv med dragkedja mot fiberduk-och-snöre, 2-pack för ägaren med flera buskar, hårt datum 8 v bort (H02+H08). Ankaret Bauhaus 349 kr per huv gör 589 kr för två läsbart.",
+     "huvudrisk": "BE-CPA hamnar 214–282 om 23,59 USD gäller 2-packet — gäller priset 1 st blir ekonomin negativ; kedjan har exakt formen (Bauhaus 349) och fleece för 99 kr.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok"
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Buskjackan med dragkedja, 2-pack"
+  },
+  "K0280": {
+   "id": "K0280",
+   "skapad": "2026-09-15",
+   "namn": "Sorkkorgarna i rostfritt, 15-pack",
+   "objekt": "NYTT: Höstplanteringen — lökar, rosor och unga fruktträd under jord (sorken äter rötterna nov–mars)",
+   "form": "nät",
+   "sak": "nytt: höstplanteringen+nät",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010368324954",
+     "url": "https://www.aliexpress.com/item/1005010368324954.html",
+     "bild": null,
+     "pris_usd": 28.39,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:17:47Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 6,
+     "rank_poang": 11.9,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 411,
+     "be_cpa": 288,
+     "hook": "Åt sorken upp tulpanerna i våras?",
+     "varfor": "Höstplanteringen pågår nu (lökar, rosor, fruktträd före tjälen) och sorken är trädgårdsägarens mest hatade fiende — kedjan säljer korgen styckvis för 113–151 kr i galvaniserat som ruttnar; 15 st rostfritt för 699 kr (47 kr/st) är flerköp inbyggt (H08, ankare per styck 2,4×). Effekten är kaoset i våras: tomma hål där tulpanerna stod.",
+     "huvudrisk": "Payoffen (inga uppätna rötter) syns först i vår — creativen måste bära skadan (sorkgångar, uppätna lökar), inte produkten; storlekarna i 15-packet är ej mätta.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok"
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Sorkkorgarna i rostfritt, 15-pack"
+  },
+  "K0281": {
+   "id": "K0281",
+   "skapad": "2026-09-15",
+   "namn": "Hundgårdsskålen, uppvärmd och hängande",
+   "objekt": "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)",
+   "form": "annat",
+   "sak": "gårdshundens vatten+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013124440291",
+     "url": "https://www.aliexpress.com/item/1005013124440291.html",
+     "bild": null,
+     "pris_usd": 25.88,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:17:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 374,
+     "be_cpa": 524,
+     "hook": "Fryser hundens vatten i gården?",
+     "varfor": "Samma sak som kattens uppvärmda vattenskål (Axel ja, K0232, i butiken) men i hundgårdens form — hängd på nätet, tuggsäker sladd — där svenska golvet är 1 294–1 690 kr och vi kan ligga på 899 med BE-CPA ≥ 487. Rent H09-test: djur ute + första frost + ny form på nytt djur.",
+     "huvudrisk": "Volym och spänning står inte i titeln (kan vara mindre än Lundhs 3 L); form 'annat' är 0/13 i facit och heron saknar kontext — nära butikens 2,2 L-skål i funktion, skild bara i montering och djur.",
+     "hypotes_id": "H09",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Hundgårdsskålen, uppvärmd och hängande"
+  },
+  "K0282": {
+   "id": "K0282",
+   "skapad": "2026-09-15",
+   "namn": "Fågelholken med WiFi-kamera",
+   "objekt": "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)",
+   "form": "hus",
+   "sak": "fågelholken på tomten+hus",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009894758144",
+     "url": "https://www.aliexpress.com/item/1005009894758144.html",
+     "bild": null,
+     "pris_usd": 46.19,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:19:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 11,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1199,
+     "landad": 668,
+     "be_cpa": 531,
+     "hook": "Vem bor i holken i år?",
+     "varfor": "Fågelmataren med kamera (1 659 kr) står i butiken och fick ja — holken är samma ägare, samma mekanism (kamera + app) i en form ingen svensk kedja säljer i lager (SmartaSaker slutsåld, Vivara tar 3 400 för bara kameran). Fars dag 7,7 v: gåvan som packas upp nu och betalar av sig i april.",
+     "huvudrisk": "Payoffen (ungarna) kommer först i häckningen — köpet måste bäras som gåva, och montering/app/WiFi-räckvidd är förlorarsignaler i facit.",
+     "hypotes_id": "H05",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Fågelholken med WiFi-kamera"
+  },
+  "K0283": {
+   "id": "K0283",
+   "skapad": "2026-09-15",
+   "namn": "Husbilskalendern, 24 retrobussar",
+   "objekt": "Mannen med husbilen — kalendern (fars dag, jul)",
+   "form": "kalenderlåda",
+   "sak": "mannen med husbilen+kalenderlåda",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013149476732",
+     "url": "https://www.aliexpress.com/item/1005013149476732.html",
+     "bild": null,
+     "pris_usd": 16.33,
+     "forst_sedd": "2026-09-15",
+     "verifieringar": [
+      {
+       "datum": "2026-09-15",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-15T07:14:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-15",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 236,
+     "be_cpa": 263,
+     "hook": "Har han husbilen? Här är hans kalender.",
+     "varfor": "Kontots största bevisade ägargrupp (husvagn/husbil, ägare 55+) får racingbilarnas form — 24 synliga saker + 1 december — och ingen svensk aktör säljer den; klarade grinden 09-13 och föll bara på plats. Frun köper till mannen: hårt datum + relation är exakt H05.",
+     "huvudrisk": "Delarna är platt akryl — upplevt värde kan landa under 499 kr i bild; kalendern i butiken tappade vid skalning (ROAS 1,88 → pausad).",
+     "hypotes_id": "H05",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-15",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Husbilskalendern, 24 retrobussar"
   }
  }
 }
