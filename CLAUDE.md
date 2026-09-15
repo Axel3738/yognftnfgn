@@ -793,7 +793,9 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
 | `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
 | `tools/notion-fil-upp.mjs` | Laddar upp en LOKAL fil till en rads `Filer och media` via REST (File Upload API, max 20 MiB) — befintliga filer behålls, tillbakaläsning före statusbyte. Ingen Notion-MCP behövs |
-| `factory/ops-bild.mjs` | OPS-butikens bildmotor: Draft-bildrader med IMAGE PROMPT → kie.ai → Notion (Draft kvar), `--godkann`/`--underkann` efter granskning, `--namn` för lediga AD-ID:n |
+| `factory/ops-bild.mjs` | OPS-butikens bildmotor: Draft-bildrader med IMAGE PROMPT → kie.ai → **textlagret** → Notion (Draft kvar), `--godkann`/`--underkann` efter granskning, `--namn` för lediga AD-ID:n |
+| `factory/bild-text.py` | Textlagret (Pillow): briefens exakta rader — rubrik, underrad, pris/jämförpris/rabatt, badge, etiketter, citat, botten — som vektortext ovanpå fotot, brandets färger. Bildmodellen ritar aldrig text. *(Byggt 2026-09-15: CaraShells fyra bildannonser gick live utan rubrik och pris)* |
+| `tools/ops-byt-bild.mjs` | Byter bilden i en annons som redan är live (ny creative, samma spec, annonsen pekas om) — utan paus, namnbyte eller nytt adset |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |

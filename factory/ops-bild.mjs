@@ -36,7 +36,7 @@
 // (planen + utfallet, committas) och bilderna i factory/output/<butik>/bild-<datum>/
 // (gitignorerat — bilagan i Notion är enda kopian).
 
-import { mkdirSync, existsSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';
+import { mkdirSync, existsSync, writeFileSync, readFileSync, readdirSync, renameSync } from 'node:fs';
 import { join } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
@@ -130,10 +130,12 @@ export function byggJobb(rader, { bara = null, igen = false, fallbackReferens = 
     let referens_bilder = block.referenser;
     let referens_kalla = referens_bilder.length ? 'brief' : 'ingen';
     if (!referens_bilder.length && fallbackReferens) { referens_bilder = [fallbackReferens]; referens_kalla = 'produktfil'; }
+    const { element: text, okanda: text_okanda } = textUrBrief(rad.lokal?.text ?? rad.brieftext);
     jobb.push({
       namn, typ: TILLATEN_TYP, hub: hubTitel, notion_url: rad.url ?? null, page_id: rad.id,
       prompt: block.prompt, bildformat: block.bildformat, referens_bilder, referens_kalla,
       prompt_kalla: rad.lokal ? 'repo' : 'notion',
+      text, text_okanda,
     });
   }
   if (urval) {
@@ -161,6 +163,106 @@ export function lokalBrief(butik, namn, rot = ROT) {
   if (!traffar.length) return null;
   const fil = traffar.at(-1);
   return { fil, text: readFileSync(fil, 'utf8') };
+}
+
+// ------------------------------------------------------------ textlagret
+// En bildannons är två steg: kie.ai gör fotot, factory/bild-text.py lägger
+// briefens exakta rader ovanpå som vektortext. Utan steg två gick CaraShells
+// fyra bildannonser live 2026-09-14 utan rubrik, pris och badge — prompten
+// sa "leave clean space for a headline in post", och "post" fanns inte.
+
+/** Elementtyp ur briefens elementnamn ("On-image headline", "Badge", "Left label" …).
+ *  Okänt namn ⇒ null (rapporteras, ritas aldrig som gissning). */
+export function elementtyp(namn, text = '') {
+  const n = String(namn ?? '').toLowerCase();
+  const t = String(text ?? '').trim();
+  if (/^[−-]\s?\d+\s?%$/.test(t)) return 'rabatt';   // "−23 %" är rabattchipen även om den heter Badge
+  if (/^(rubrik|underrad|badge|pris|jamforpris|rabatt|botten|etikett_vanster|etikett_hoger|citat|namn|stjarnor)$/.test(n)) return n;
+  if (/struck|överstruk|jämförpris|jamforpris|compare|was\b/.test(n)) return 'jamforpris';
+  if (/discount|rabatt/.test(n)) return 'rabatt';
+  if (/badge|chip/.test(n)) return 'badge';
+  if (/price|pris/.test(n)) return 'pris';
+  if (/headline|rubrik|title/.test(n)) return 'rubrik';
+  if (/sub-?line|subline|underrad|subhead/.test(n)) return 'underrad';
+  if (/bottom|botten|footer|terms/.test(n)) return 'botten';
+  if (/left label|vänster|vanster/.test(n)) return 'etikett_vanster';
+  if (/right label|höger|hoger/.test(n)) return 'etikett_hoger';
+  if (/quote|citat/.test(n)) return 'citat';
+  if (/attribution|namn|name|author/.test(n)) return 'namn';
+  if (/star|stjärn|stjarn/.test(n) || /^[★☆ ]+$/.test(t)) return 'stjarnor';
+  if (/label|etikett/.test(n)) return 'badge';
+  return null;
+}
+
+/**
+ * Plockar textlagret ur en brief (markdown eller Notions textdump). Två källor,
+ * i ordning:
+ *   1. ett `TEXT LAYER`-block: rader `typ: text` fram till END TEXT LAYER
+ *   2. tabellen "Exact text" (Element | Swedish (use this) | English meaning)
+ * Returnerar { element:[{typ, text, kalla}], okanda:[{namn, text}] }.
+ * Inget hittat ⇒ { element: [], okanda: [] } — då är annonsen ett rent foto.
+ */
+export function textUrBrief(text) {
+  const rader = String(text ?? '').split(/\r?\n/);
+  const element = [];
+  const okanda = [];
+  const start = rader.findIndex((r) => /^\s*(#+\s*)?(\d+[.)]\s*)?TEXT LAYER\b/i.test(r));
+  if (start !== -1) {
+    for (const rad of rader.slice(start + 1)) {
+      const r = rad.trim();
+      if (/^END TEXT LAYER\b/i.test(r)) break;
+      const m = r.match(/^[-*]?\s*([a-zåäö_]+)\s*:\s*(.+)$/i);
+      if (!m) continue;
+      const typ = elementtyp(m[1], m[2]);
+      if (typ) element.push({ typ, text: m[2].trim(), kalla: 'text-layer' });
+      else okanda.push({ namn: m[1], text: m[2].trim() });
+    }
+    return { element, okanda };
+  }
+  // Tabellen: markdown "| Element | Swedish … |" eller Notion-dump "Element | Swedish …".
+  const celler = (r) => r.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map((c) => c.trim());
+  const huvud = rader.findIndex((r) => /swedish\s*\(use this\)/i.test(r) && /\|/.test(r));
+  if (huvud === -1) return { element, okanda };
+  for (const rad of rader.slice(huvud + 1)) {
+    const r = rad.trim();
+    if (!r || /^#/.test(r) || /^\d+[.)]\s+\S/.test(r) || !/\|/.test(r)) { if (element.length || okanda.length) break; continue; }
+    const c = celler(r);
+    if (c.length < 2 || /^-+$/.test(c[0])) continue;
+    const [namn, sv] = c;
+    const svensk = sv.replace(/^\*\*|\*\*$/g, '').trim();
+    if (!svensk) continue;
+    const typ = elementtyp(namn, svensk);
+    if (typ) element.push({ typ, text: svensk, kalla: 'exact-text' });
+    else okanda.push({ namn, text: svensk });
+  }
+  return { element, okanda };
+}
+
+/** Färgerna ur butikens brandfil (factory/butiker/<id>.yaml → branding.farger). */
+export function textFarger(butikYaml) {
+  const f = butikYaml?.branding?.farger ?? {};
+  return {
+    mork: f.mork, accent: f.accent, text: f.text, yta: f.yta, accent_text: f.accent_text,
+    text_pa_mork: f.text_pa_mork, dampad: f.linje_stark,
+  };
+}
+
+/** Kör factory/bild-text.py. Installerar Pillow om den saknas (rutinernas
+ *  containrar startar tomma). Kastar med klartext om inget kunde ritas. */
+export function laggTextlager({ bas, ut, element, farger, python = 'python3' }) {
+  const specfil = `${ut}.spec.json`;
+  writeFileSync(specfil, JSON.stringify({ farger, element }, null, 2));
+  const kor = () => spawnSync(python, [join(ROT, 'factory', 'bild-text.py'), '--bas', bas, '--ut', ut, '--spec', specfil, '--json'], { encoding: 'utf8' });
+  let r = kor();
+  if (r.status === 3) {
+    spawnSync('pip3', ['install', '--quiet', 'pillow'], { encoding: 'utf8' });
+    r = kor();
+  }
+  if (r.status !== 0) throw new Error(`textlagret misslyckades: ${(r.stderr || r.stdout || '').trim().split('\n').at(-1)}`);
+  const rad = String(r.stdout ?? '').trim().split('\n').at(-1);
+  const info = JSON.parse(rad);
+  if (!info.placerade?.length) throw new Error('textlagret ritade ingenting — inga kända element.');
+  return info;
 }
 
 /** Nästa lediga nummer för ett koncept ur en namnlista: PD_14 om PD_13 är högst. */
@@ -266,7 +368,7 @@ export async function laddaKo(nyckel, { logg = (...a) => console.error(...a) } =
   const rader = [];
   for (const r of raa) rader.push({ ...r, brieftext: (await sidText(r.id)).join('\n'), lokal: lokalBrief(butik.post.butik, r.namn) });
   const fallback = butik.produkt?.media?.bilder?.find?.((b) => /^https?:\/\//.test(String(b))) ?? null;
-  return { butik, hub, rader, fallbackReferens: fallback, datum: svenskDatum(), butiksmapp: join(ROT, 'factory', 'output', butik.post.butik) };
+  return { butik, hub, rader, fallbackReferens: fallback, farger: textFarger(butik.butik), datum: svenskDatum(), butiksmapp: join(ROT, 'factory', 'output', butik.post.butik) };
 }
 
 async function main() {
@@ -320,7 +422,7 @@ async function main() {
   const { jobb, hoppade } = byggJobb(ko.rader, { bara: lista(flagga('bara')), igen: finns('igen'), fallbackReferens: ko.fallbackReferens, hubTitel: ko.hub.titel });
   logg(`Kö: ${ko.rader.length} Draft-bildrader · ${jobb.length} att generera · ${hoppade.length} hoppade`);
   for (const h of hoppade) logg(`  ⏭️  ${h.namn} — ${h.skal}`);
-  for (const j of jobb) logg(`  · ${j.namn} · ${j.bildformat} · ${j.referens_bilder.length} ref (${j.referens_kalla}) · prompt ${j.prompt.length} tecken (${j.prompt_kalla})`);
+  for (const j of jobb) logg(`  · ${j.namn} · ${j.bildformat} · ${j.referens_bilder.length} ref (${j.referens_kalla}) · prompt ${j.prompt.length} tecken (${j.prompt_kalla}) · text ${j.text.length ? `${j.text.length} element (${j.text.map((e) => e.typ).join(', ')})` : 'ingen — rent foto'}${j.text_okanda.length ? ` ⚠ okända: ${j.text_okanda.map((o) => o.namn).join(', ')}` : ''}`);
 
   const torr = finns('torr');
   const planfil = join(ko.butiksmapp, `bild-${ko.datum}.json`);
@@ -344,6 +446,21 @@ async function main() {
     r.page_id = j.page_id;
     logg(`  ${r.status === 'ok' ? '✓' : '✗'} genererad: ${r.namn}${r.fel ? ` — ${r.fel}` : ''}`);
     if (r.status !== 'ok') return r;
+    // Textlagret: kräver briefen text ska den SITTA på bilden innan något
+    // laddas upp — ett rent foto i Notion går live 13:40 som en halvfärdig annons.
+    if (j.text.length) {
+      const bas = r.fil.replace(/\.(\w+)$/, '.bas.$1');
+      renameSync(r.fil, bas);
+      try {
+        const info = laggTextlager({ bas, ut: r.fil, element: j.text, farger: ko.farger });
+        r.textlager = { bas, placerade: info.placerade, okanda: j.text_okanda };
+        logg(`  ✓ textlager: ${r.namn} (${info.placerade.join(', ')})`);
+      } catch (e) {
+        r.status = 'fel'; r.fel = `fotot klart (${bas}) men textlagret misslyckades: ${e.message} — laddar INTE upp ett foto utan briefens text`;
+        logg(`  ✗ textlager: ${r.namn} — ${e.message}`);
+        return r;
+      }
+    }
     try {
       const upp = await laddaUppTillRad({ pageId: j.page_id, fil: r.fil, ersatt: finns('igen'), logg: () => {} });
       r.notion = { file_upload_id: upp.file_upload_id, falt: upp.falt };
