@@ -541,3 +541,69 @@ samma metod som 09-06. 799 kr / jämförpris 1 000 kr, oförändrat.
 ROAS 3,02 > 1,57) men kartan säger `test` — `/rond-auto`:s sak, inte `/cs`:s.
 `CS_3`:s marginal-CPA-signal (519,93 kr, över break-even) måste läsas av igen
 nästa körning innan den får skrivas in som en trend.
+
+---
+
+## Batch — 2026-09-15 (`/rond-auto` steg 4b, `brief_runda`, `rundaAntal: 4` + 3 BOF)
+### Fokus ur behovsraden: "ersätt det som pausats i trappan"
+
+**Kampanjstatus före batchen:** ACTIVE (läst direkt före). Axel startade om
+kampanjen efter avstängningen 2026-09-14. Domen i dag är `VANTA_KADENS` —
+budgeten rörs inte, den ändrades för nyligen.
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 38 130,85 kr spend, 82 köp, ROAS 2,53. AOV 1 177 kr →
+**break-even-CPA 750 kr**.
+
+| Annons | Format | Spend | Köp | CPA | ROAS | Status | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|
+| `Overvakningskamera_SP_2` | video | 18 321 | 39 | 470 | 2,41 | **PAUSED** | **10 920 kr** |
+| `Overvakningskamera_CS_3` | video | 8 267 | 17 | 486 | 2,58 | **PAUSED** | 4 488 kr |
+| `Overvakningskamera_CS_2` | video | 6 463 | 12 | 539 | 2,07 | **PAUSED** | 2 532 kr |
+
+**Hela kampanjens bevisade bärkraft är pausad.** De tre annonserna ovan står för
+85 % av livstidsspenden och varenda krona bevisat vinstbidrag — och ingen av dem
+kör. Det som kör är annonser som ännu inte kan dömas: `SP_2_1` (769 kr, 2 köp),
+`CS_4_1` (676 kr, 2 köp), `CS_2_1` (627 kr, 2 köp), `LI_1_1` (491 kr, 0 köp),
+`CO_2_1` (462 kr, 1 köp). Det syns direkt i dygnsserien: **2026-09-11 spenderade
+kampanjen 3 273,98 kr utan ett enda köp**, och 12 september 3 669,51 kr på
+ROAS 1,88. Livstids-ROAS 2,53 döljer att motorn är avstängd.
+
+Det gör den här brief-rundan till kampanjens viktigaste: uppdraget är inte att
+hitta en ny vinkel, utan att **bygga tillbaka det bevisade mönstret** innan
+budgeten bränns på oprövat material.
+
+Bevisat mönster ur `SP_2` (n = 39 köp): hooken är ett citat i jag-form som
+beskriver en **känsloeffekt**, inte en produktegenskap.
+
+### ⚠️ Recensioner — fortfarande inga review-bilder (tredje bekräftelsen)
+
+Judge.me lästes om 2026-09-15 med produktens egna id (2097104891). Samtliga 10
+recensioner har fortfarande `source: "wizard"` och `verified: "not-yet"`.
+Regeln från 2026-09-06 står fast: **review-bilder kan inte byggas.** Batchen har
+0 review-bilder i stället för 2.
+
+Metodanteckning värd att spara: Judge.me:s `product_id`/`product_external_id`
+mot **Shopify-id** ignoreras tyst av API:t och returnerar hela butikens senaste
+recensioner — samma lista för fem olika produkter. Rätt väg är
+`GET /api/v1/products` → mappa `external_id` → använd Judge.me:s **egna** `id`.
+
+### Batchen — 7 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Overvakningskamera_SP_12_H1` | video | SP_2:s bevisade jag-form-mönster återuppbyggt — **direkt ersättare för kampanjens bärare** | ny situation, mönstret låst |
+| `Overvakningskamera_SP_13_H1` | video | Samma mönster i annan livssituation (bortrest i stället för hemma på natten) | situationen |
+| `Overvakningskamera_CS_5_H1` | video | CS_3:s erbjudandemekanism återuppbyggd, 799 kr mot äkta jämförpris 1 000 kr | direkt ersättare för pausad CS_3 |
+| `Overvakningskamera_PD_4_1` | statisk | AI-spårningen som ett enda stillbildsbevis ur riktig inspelning | produktfunktion som visat bevis, statiskt |
+| `Overvakningskamera_BOF_3_1` | statisk, BOF | 799 kr / ord. 1 000 kr / spara 201 kr | — |
+| `Overvakningskamera_BOF_4_1` | statisk, BOF | garanti och frakt | — |
+| `Overvakningskamera_BOF_5_1` | statisk, BOF | invändning "behöver den sladd och wifi?" | — |
+
+**Hubbfynd:** produktkartan pekar på `BÄVER Övervakningskameran`
+(`collection://2f7270ab-908c-83f7-a989-87456507e37b`), som är **helt tom** — all
+historik (23 drafts) ligger kvar i den gamla `Surveillance Camera creative hub`.
+Briefarna läggs enligt kommandots regel i BÄVER-hubben.
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent.

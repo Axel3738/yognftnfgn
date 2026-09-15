@@ -264,3 +264,76 @@ statuskolumnen igen innan fler videokoncept läggs till, annars växer kön av
 obearbetade briefer utan att någon ny data kommer in. PD_3:s vändning till
 förlust bör läsas av igen om 3+ dygn (signifikansgrind för marginal-CPA,
 ANALYSMETOD 2b) innan den skrivs in som bevisad Losing DNA.
+
+---
+
+## Batch #4 — 2026-09-15 (`/rond-auto` steg 4b, `brief_runda`, `rundaAntal: 4` + 3 BOF)
+
+**Kampanjstatus före batchen:** ACTIVE. Budgeten skalades samma morgon
+500 → 600 kr/dag (ROAS 2,90 på 3 dagar mot break-even 1,49).
+**Hubben skrevs in i `agent/produktkarta.json` samma dag** — den saknades där
+helt, vilket är skälet till att tidigare brief-rundor inte haft en anvisad
+plats: "Motorcycle Cover creative hub"
+(`collection://632270ab-908c-8307-a318-873192ba664a`), inte arkiverad.
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 16 376,26 kr spend, 76 köp, ROAS 2,01. Break-even-CPA räknas **per
+annons på dess egen AOV** (`(intäkt/köp)/1,49`) — regeln från 2026-09-08 gäller
+fortfarande och är fortfarande det som avgör domen:
+
+| Annons | Format | Spend | Köp | CPA | ROAS | Egen AOV | Egen BE-CPA | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| `MC-Kapell_PD_1` (top spender = benchmark) | video | 7 872 | 39 | 202 | 2,30 | 464 | 311 | **4 251 kr** |
+| `MC-Kapell_CS_2_1` | statisk | 3 089 | 23 | 134 | 3,07 | 413 | 277 | **3 289 kr** |
+| `MC-Kapell_PD_3` | video | 2 540 | 8 | 318 | 1,20 | 379 | 254 | **−512 kr** |
+
+**`PD_3` har vänt till negativt vinstbidrag.** Den var 2026-09-08 på gränsen
+(ROAS 1,34); nu ligger den på 1,20 mot break-even 1,49. Det är den enda
+bedömbara förloraren i kampanjen och batchens första uppgift är att ersätta den.
+
+Under domgränsen, ingen dom: `PD_2` (732 kr, 1 köp, ROAS 0,48 — samma
+varningstecken som i batch #1, fortfarande utan tillräckligt med köp),
+`OF_1_1` (392 kr, 2 köp).
+
+**`CS_2_1` är fortfarande produktens effektivaste annons (CPA 134 kr) OCH den
+som bär den overifierbara brådskan.** Det isolerade testet från batch #2
+(`CS_4_1`) har aldrig fått mätbar spend — CBO:n har svält det. Batchen kör
+testet igen som `CS_7_1`, för frågan är fortfarande obesvarad och den är värd
+pengar: om det är den djärva typografin och inte lögnen som säljer kan
+kampanjens bästa format användas utan risk.
+
+### ⚠️ Recensionsfyndet — inga review-bilder i den här batchen
+
+Judge.me lästes om 2026-09-15 med produktens egna id (2107144758). **Samtliga
+10 recensioner har `source: "wizard"` och `verified: "not-yet"`** — seedade,
+inte kundröster. Noll organiska recensioner finns.
+
+Review-bilder kan därför inte byggas, samma regel som för Övervakningskameran.
+Batchen har 0 review-bilder i stället för 2. ⚠️ Konsekvens bakåt: `RE_1_1`,
+`RE_2_1`, `RE_3_1`, `RE_4_1` och `SP_4_1` från batch #1–#3 bygger alla på
+wizard-citat och namnen (Johan Nilsson, Andreas Holm, Anna Larsson, Mikael
+Andersson, Linda Berg) kommer ur samma seedade uppsättning. De rörs inte, men
+Axel bör känna till det.
+
+### Batchen — 7 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `MC-Kapell_PD_9_H1` | video | PD_1:s mekanism med ny öppning som visar kostnaden av att låta bli (blekt sadel i sekund 0) — ersätter PD_3 | öppningen |
+| `MC-Kapell_CS_6_H1` | video | CS_2_1:s prismekanism i rörlig bild, uttalat pris, noll brådska | falsk brådska borttagen |
+| `MC-Kapell_OB_3_H1` | video | Invändningen "blåser den inte av?" löst i bild med resårkanten | ny vinkel, bevisad struktur |
+| `MC-Kapell_CS_7_1` | statisk | CS_2_1:s exakta typografi, enbart sanna påståenden — **batchens viktigaste test** | djärv layout isolerad från falsk brådska |
+| `MC-Kapell_OF_4_1` | statisk, BOF | 349 kr / ord. 582 kr / spara 233 kr, genomstruket jämförpris | — |
+| `MC-Kapell_GA_4_1` | statisk, BOF | garanti och frakt | — |
+| `MC-Kapell_OB_4_1` | statisk, BOF | "passar den min hoj?" löst med 218×118 cm som storleksgrafik | — |
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent via
+Agent-verktyget (till skillnad från batch #1, där verktyget saknades).
+Tre-frågorstestet redovisas rad för rad i varje brief.
+
+> ⚠️ **Namnkrock 2026-09-15:** flera av batchens föreslagna AD-ID:n var redan
+> upptagna av rader som låg i hubben (inte i Meta-kontot — där fanns de inte).
+> Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
+> i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
+> briefer som aldrig nått kontot, och de äger sitt nummer ändå.

@@ -185,3 +185,73 @@ i sidan — verifierat med notion-fetch på PD_16_H1). Ingen Drive-mapp skapad
 denna runda (utanför uppdragets scope denna gång — briefer levererade i
 Notion only). `CS_BATCH_KLAR` loggas i `agent/budgetlogg.jsonl` av
 huvudsessionen.
+
+---
+
+## Batch #5 — 2026-09-15 (`/rond-auto` steg 4b, `brief_runda`, `rundaAntal: 4` + 3 BOF)
+
+**Kampanjstatus före batchen:** ACTIVE (läst med `ads_get_ad_entities` direkt
+före). Budgeten skalades samma morgon 900 → 1 600 kr/dag av raketregeln
+(ROAS 5,75 på 3 dagar mot break-even 1,73).
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 30 610,25 kr spend, 74 köp, ROAS 2,40. AOV 991 kr →
+**break-even-CPA 573 kr**. Rangordnat på vinstbidrag `(573 − CPA) × köp`:
+
+| Annons | Format | Spend | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| `Balteslipmaskin_PD_3` | video | 4 572 | 13 | 352 | 2,82 | **2 873 kr** |
+| `Balteslipmaskin_PD_2` (top spender = benchmark) | video | 11 030 | 24 | 460 | 2,19 | 2 712 kr |
+| `Beltgrinder_PD_19_1` | **statisk** | 1 049 | 6 | **175** | 5,38 | **2 388 kr** |
+| `Balteslipmaskin_PD_2_1` | statisk | 2 485 | 7 | 355 | 2,93 | 1 526 kr |
+| `Balteslipmaskin_CS_2_1` (PAUSED) | statisk | 4 571 | 10 | 457 | 2,11 | 1 160 kr |
+| `Balteslipmaskin_PD_1` | video | 2 295 | 6 | 383 | 2,34 | 1 140 kr |
+
+**Fyndet som styr batchen:** `Beltgrinder_PD_19_1` från batch #4 har **lägst CPA
+i hela kampanjen — 175 kr mot benchmarkens 460 kr**, alltså 2,6× effektivare per
+krona. Den är statisk. Det bekräftar mönster 1 i `dna.md` (statiskt prisformat
+prekvalificerar bäst) en tredje gång, och batchen pressar just den upptäckten
+i stället för att leta ny vinkel.
+
+Under domgränsen, ingen dom: `G_1` (1 052 kr, 1 köp, ROAS 0,86 — blöder men
+saknar köp för en dom), `CS_3` (850 kr, 2 köp), `CS_1` (705 kr, 1 köp).
+`Beltgrinder_REV_2_1` står fortfarande **DISAPPROVED** i Meta.
+
+### ⚠️ Recensionsfyndet — inga review-bilder i den här batchen
+
+Judge.me lästes om 2026-09-15 med produktens egna id (2097110324; API:ts
+`product_id`/`product_external_id`-filter mot Shopify-id ignoreras tyst och ger
+hela butikens senaste 50 — den fällan kostade fyra anrop). Resultat: **11
+recensioner, varav 10 med `source: "wizard"` och `verified: "not-yet"`** —
+seedade, inte kundröster. Den **enda** organiska (`source: "web"`) är
+**1 stjärna**: "För liten. Svag motor. Kraftig vibration." (Björn Henriksson).
+
+Samma regel som redan gäller för Övervakningskameran (dna.md 2026-09-06)
+tillämpas därför här: **review-bilder kan inte byggas** förrän en riktig kund
+skrivit något. Batchen innehåller 0 review-bilder i stället för 2, och det är
+ett avsteg med skäl, inte en miss. ⚠️ Konsekvens bakåt: `Beltgrinder_REV_1_1`
+och `REV_2_1` från batch #3 bygger på wizard-citat — de rörs inte (de lever),
+men Axel bör känna till det.
+
+### Batchen — 7 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Beltgrinder_PD_22_H1` | video | PD_19_1:s vinnarkomposition överförd till rörlig bild | kompositionen, inte budskapet |
+| `Beltgrinder_PD_23_H1` | video | 10-sekunderslöftet som nedräknande timer i bild i stället för påstående | bevisform: visa i stället för säg |
+| `Beltgrinder_SP_8_H1` | video | SP-serien har aldrig fått budget — första riktiga UGC-testet (kökslådetestet) | talare/format |
+| `Beltgrinder_PD_24_1` | statisk | PD_19_1:s exakta layout, nytt motiv (yxa/mejsel) | motivet, layouten låst |
+| `Beltgrinder_BOF_1_1` | statisk, BOF | pris 909 kr / ord. 1 182 kr / spara 273 kr, ärligt | — |
+| `Beltgrinder_BOF_2_1` | statisk, BOF | garanti och frakt | — |
+| `Beltgrinder_BOF_3_1` | statisk, BOF | invändning "jag köper hellre nya knivar" som räknestycke | — |
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent via
+Agent-verktyget, med `docs/copy-regler.md` + DNA + hypotes i uppdraget.
+Tre-frågorstestet redovisas rad för rad i varje brief.
+
+> ⚠️ **Namnkrock 2026-09-15:** flera av batchens föreslagna AD-ID:n var redan
+> upptagna av rader som låg i hubben (inte i Meta-kontot — där fanns de inte).
+> Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
+> i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
+> briefer som aldrig nått kontot, och de äger sitt nummer ändå.

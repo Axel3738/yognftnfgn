@@ -220,3 +220,43 @@ försöket). Mönster 6 (fabricerad urgency hjälper/skadar) — helt otestat in
   (519,93 kr). Nästa `/cs`-körning måste läsa av om det upprepas — om ja är
   det en trend (samma mönster som `SP_2` visade två körningar tidigare), om
   nej var det brus på en 4-dygnsperiod.
+
+---
+
+## Uppdatering 2026-09-15 (`/rond-auto` steg 4b, brief-runda)
+
+Se `batch-log.md` för hela feedbackloopen och batchens hypoteser.
+
+### ⚠️ Recensionsregeln gäller nu hela Bäverbutiken, inte bara kameran
+
+Judge.me lästes om för alla fem rond-produkter denna dag, med **Judge.me:s egna
+produkt-id** (inte Shopify-id — se metodfyndet nedan). Utfallet:
+
+| Produkt | Recensioner | Organiska (`source: web`) |
+|---|---|---|
+| Båtmotorskyddet 420D | 8 | **8** ✅ |
+| Bälteslipmaskinen | 11 | 1 — och den är 1 stjärna |
+| Fiskespöhållaren | 8 | 1 — och den är 1 stjärna ("220:- för 8 på Fyndiq.se") |
+| MC-Kapellet | 10 | 0 |
+| Övervakningskameran | 10 | 0 |
+
+Allt annat är `source: "wizard"`, `verified: "not-yet"` — seedat, inte kundröst.
+Regeln som skrevs för Övervakningskameran 2026-09-06 gäller därför alla:
+**review-bilder byggs bara på organiska recensioner.** Fyra av fem produkter
+fick 0 review-bilder i stället för 2 denna runda; Båtmotorskyddet fick sina två.
+
+Konsekvens bakåt: befintliga `REV_`/`RE_`/`SP_`-review-annonser på de fyra
+produkterna bygger på seedade citat. De rörs inte — men det är känt nu.
+
+### ⚠️ Metodfynd: Judge.me ignorerar Shopify-id TYST
+
+`GET /api/v1/reviews?product_id=<Shopify-id>` och samma anrop med
+`product_external_id` returnerar **hela butikens senaste recensioner** utan
+felmeddelande — identisk lista för fem olika produkter. Rätt väg:
+`GET /api/v1/products` → mappa `external_id` → använd Judge.me:s **egna** `id`.
+
+### ⚠️ Namnkonventionen: läs av BÅDA källorna
+
+Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
+men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
+hubben äger sina nummer också.

@@ -225,3 +225,70 @@ Nya: SP_1_H7/H8, FM_2_H1/FM_3_1, GT_4_H1, CS_7_1, BF_7–9_1, RV_6_1/RV_7_1.
 - `products/batmotorskyddet-420d/dna.md` och `backlog.md` uppdaterade i samma
   körning. Commit/push görs av huvudsessionen mot
   `claude/daily-agent-discussion-uos5df`.
+
+---
+
+## Batch — 2026-09-15 (`/rond-auto` steg 4b, `brief_runda`, `rundaAntal: 4` + 3 BOF + 2 review)
+### Fokus ur behovsraden: "mata vinnaren — skalats 3 gånger på en vecka"
+
+**Kampanjstatus före batchen:** ACTIVE. Budgeten skalades samma morgon
+800 → 950 kr/dag (ROAS 4,27 på 3 dagar mot break-even 1,62).
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 21 807,36 kr spend, 95 köp, ROAS 2,69. AOV 618 kr →
+**break-even-CPA 381 kr**. Rangordnat på vinstbidrag `(381 − CPA) × köp`:
+
+| Annons | Format | Spend | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| `Batmotor_SP_1_H1` | video | 2 516 | 17 | **148** | 4,44 | **3 961 kr** |
+| `Batmotor_CS_2_1` | statisk | 2 883 | 16 | 180 | 3,42 | 3 216 kr |
+| `Batmotor_SP_1_H5` | video | 1 921 | 10 | 192 | 3,01 | 1 890 kr |
+| `Batmotor_BF_3_1` | statisk | 2 067 | 10 | 207 | 2,90 | 1 740 kr |
+| `Batmotor_RV_1_H1` | video | 675 | 5 | 135 | 4,29 | 1 230 kr |
+| `Batmotor_SP_1_H3` (top spender = benchmark) | video | 4 935 | 16 | 308 | 2,27 | 1 168 kr |
+| `Batmotor_FM_1_H1` | video | 798 | 5 | 160 | 3,34 | 1 105 kr |
+
+**Fyndet som styr batchen: hook-testet är färdigläst.** `SP_1`-serien är samma
+manus med olika öppningar, och spridningen är entydig — H1 (CPA 148) vinner
+klart, H5 (192) följer, H3 bär volymen men dyrare (308), och H2 är seriens enda
+fall (1 127 kr, 2 köp, ROAS 0,82 — under köpgränsen, ingen dom, men mönstret
+kopieras inte). Rundan slutar därför testa fler slumpmässiga hookar och pressar
+i stället vidare på **H1:s öppning** med nya bevis under den.
+
+Under domgränsen, ingen dom: `SP_1_H2`, `PD_1_H3` (972 kr, 2 köp), `UG_1_H1`
+(814 kr, 2 köp).
+
+### ✅ Recensioner — den enda av dagens fem produkter med riktiga kundröster
+
+Judge.me lästes om 2026-09-15 med produktens egna id (2110322043). **Alla 8
+recensionerna har `source: "web"`** med riktiga namn — alltså organiska, till
+skillnad från de fyra andra produkterna i dagens rond, vars recensioner
+genomgående är `source: "wizard"` (seedade). Två review-bilder byggs därför här,
+på citat som inte använts förut:
+
+| Citat (ordagrant) | Reviewer | Används i |
+|---|---|---|
+| "Skyddet passar bra och håller motorn ren." | Anders Nilsson | `Batmotor_RV_8_1` |
+| "Känns starkt och sitter bra på motorn." | Mikael Svensson | `Batmotor_RV_9_1` |
+
+Kvar obrukade efter denna batch: Peter Andersson, Thomas Eriksson,
+Lars Johansson. ⚠️ Rättelse mot `dna.md`: reviewern bakom "Bra skydd mot regn
+och smuts. Jag är nöjd." heter i Judge.me i dag **kaimana Karlsson**, inte
+Johan Karlsson. Citatet är oförändrat.
+
+### Batchen — 9 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder, 2 review-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Batmotor_SP_1_H9` | video | H1:s vinnande öppning ord för ord, hårdare mätbart bevis under (spolslang mot tyget) | beviset, hooken låst |
+| `Batmotor_SP_3_H1` | video | H1:s öppning sagd av en riktig båtägare vid bryggan | talaren |
+| `Batmotor_PD_6_H1` | video | "täcker ner över riggen" visat som jämförelse mot ett kapell som bara täcker toppen | produktargumentet som jämförelse |
+| `Batmotor_CS_8_1` | statisk | CS_2_1:s prisformat (CPA 180) med ny uppställning, samma äkta 579/965 kr | layouten, erbjudandet låst |
+| `Batmotor_BF_10_1` | statisk, BOF | 579 kr / ord. 965 kr / spara 386 kr | — |
+| `Batmotor_BF_11_1` | statisk, BOF | 30 dagars öppet köp, Klarna | — |
+| `Batmotor_BF_12_1` | statisk, BOF | "passar den min motor?" löst med 9 storlekar och hk-spannet | — |
+| `Batmotor_RV_8_1` | statisk, review | ordagrant citat, Anders Nilsson | — |
+| `Batmotor_RV_9_1` | statisk, review | ordagrant citat, Mikael Svensson | — |
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent.

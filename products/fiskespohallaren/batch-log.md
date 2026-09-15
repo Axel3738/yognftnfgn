@@ -259,3 +259,76 @@ i den schemalagda `/rond-auto`-miljön snarare än ett enskilt undantag.
 **Utfall:** ej avläst ännu (annonserna är briefer, inte launchade — nästa
 `/cs`-körning läser av dessa OCH de fortfarande olästa batch #3/#4 när
 redigerarna levererat och de gått live).
+
+---
+
+## Batch #6 — 2026-09-15 (`/rond-auto` steg 4b, `brief_runda`, `rundaAntal: 4` + 3 BOF)
+
+**Kampanjstatus före batchen:** ACTIVE (läst direkt före). Domen i dag är
+`VANTA_KADENS` — budgeten rörs inte (750 kr/dag). 3-dagars-ROAS är 1,35 mot
+break-even 1,50, alltså **under break-even**, medan livstiden ligger på 2,17.
+
+### Feedbackloop — livstid avläst 2026-09-15 (`date_preset: maximum`)
+
+Kampanjen: 75 308,73 kr spend, 377 köp, ROAS 2,17. Vinstbidrag räknas
+`spend × (ROAS − 1,50)` (AOV skiljer sig mellan annonser och priset har inget
+jämförpris att räkna emot):
+
+| Annons | Format | Spend | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| `Fiskespöhållare_CS_1_H1` | video | 6 977 | 51 | 137 | 3,16 | **11 610 kr** |
+| `Fiskespöhållare_PD_EXTRA` (top spender = benchmark) | video | 15 714 | 79 | 199 | 2,13 | 9 978 kr |
+| `Fiskespöhållare_PD_EXTRA` (tredje varianten) | video | 4 709 | 33 | 143 | 2,85 | 6 381 kr |
+| `Fiskespöhållare_PD_1_H1` | video | 15 296 | 61 | 251 | 1,85 | 5 369 kr |
+| `Rodholder_PD_6_1` | statisk | 3 213 | 20 | 161 | 2,63 | 3 627 kr |
+| `Fiskespöhållare_CS_1_H3` | video | 442 | 8 | **55** | 7,84 | 2 804 kr |
+| `Rodholder_PD_16_H1` | video | 2 974 | 11 | 270 | 1,47 | **−80 kr** |
+
+**Två fynd styr batchen.**
+
+1. **CS-vinkeln är produktens starkaste per krona** — `CS_1_H1` ger mest
+   vinstbidrag i hela kampanjen och `CS_1_H3` har kampanjens lägsta CPA
+   (55 kr på 8 köp, alltså bedömbar). Men CS-annonsernas kraft ligger i
+   "40 % RABATT – IDAG ENDAST", och **Shopify har inget `compare_at_price`
+   för produkten** (omkontrollerat live 2026-09-15: pris 289 kr,
+   `compare_at_price` tomt). Rabatten går alltså inte att belägga. Rundan
+   flyttar därför över CS-vinkelns *energi och tempo* till argument som håller.
+2. `PD_16_H1` har passerat under break-even (ROAS 1,47) — första gången en
+   PD-video gör det. Den är inte en kandidat att kopiera.
+
+⚠️ **Integritetsflaggan står kvar och är nu omkontrollerad:** `CS_1_H1` och
+`CS_2_1` kör rabattpåståenden utan jämförpris i butiken. De rörs inte (de
+lever och `CS_1_H1` är kampanjens bästa annons), men Axel bör känna till det —
+det är andra gången det skrivs ner.
+
+### ⚠️ Recensionsfyndet — inga review-bilder i den här batchen
+
+Judge.me lästes om 2026-09-15 med produktens egna id (1968785816). **7 av 8
+recensioner har `source: "wizard"` och `verified: "not-yet"`** — seedade. Den
+enda organiska (`source: "web"`) är **1 stjärna** och lyder
+"220:- för 8 på Fyndiq.se" (reviewer "Fyndiq.se"), alltså en prisjämförelse mot
+en konkurrent, inte en produktröst.
+
+Review-bilder kan därför inte byggas. Batchen har 0 i stället för 2.
+⚠️ Konsekvens bakåt: `Rodholder_SP_3_1` och `SP_4_1` från batch #3 bygger på
+wizard-citat.
+
+### Batchen — 7 briefer (3 video + 1 statisk i rundan, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Rodholder_PD_35_H1` | video | CS_1_H3:s tempo i sekund 0, men med trasselsmärtan visad i stället för ett erbjudande | argumentet byts, tempot låst |
+| `Rodholder_PD_39_H1` | video | Värdeargument utan rabatt: 289 kr delat på fyra klämmor, visat som räknestycke | värde utan rabatt |
+| `Rodholder_GT_5_H1` | video | Gåvovinkeln har aldrig fått budget (0 bedömbara på en månad) — eget nytt material | helt nytt manus |
+| `Rodholder_PD_37_1` | statisk | PD_6_1 bevisar att statiskt bär PD-budskapet — andra oberoende vinkel, före/efter i samma bild | ny visuell vinkel |
+| `Rodholder_SO_8_1` | statisk, BOF | 289 kr för 4-pack, värdet byggt på styckpriset — ingen procent, inget jämförpris | — |
+| `Rodholder_GA_2_1` | statisk, BOF | 30 dagars garanti, fri frakt över 300 kr, Klarna | — |
+| `Rodholder_JF_4_1` | statisk, BOF | "passar de mina spön?" | — |
+
+**Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent.
+
+> ⚠️ **Namnkrock 2026-09-15:** flera av batchens föreslagna AD-ID:n var redan
+> upptagna av rader som låg i hubben (inte i Meta-kontot — där fanns de inte).
+> Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
+> i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
+> briefer som aldrig nått kontot, och de äger sitt nummer ändå.
