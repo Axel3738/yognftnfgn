@@ -1,0 +1,176 @@
+{
+  "agent": "X — det som fryser sönder första frostnatten (H02/H03)",
+  "datum": "2026-09-16",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Slangboxhuven isolerad 55 cm",
+      "objekt": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+      "form": "huv",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Kranskydd Frost 420D",
+        "delade_variabler": ["objekt_ute", "deadline första frost", "old way ingenting/improvisation", "form överdrag/huv", "arketyp_sekundar E_VADER_SASONG", "villaägare 55+"],
+        "avvikelser": ["objektet är dyrare (1–3 tkr mot en kran)", "ingen svensk fackhandelsankare i formen"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 4.1, "timing": "NOW", "kommentar": "NYTT objekt — fönstret satt ur SASONG.md första frostnatt Svealand 4,1 v (Norrland NU 0,3 v, Götaland 4,7 v); sasong.py --objekt ger EVERGREEN på 'Trädgårdsslangen' eftersom raden saknas i objekt.json"},
+      "listning": {
+        "product_id": "1005008743247722",
+        "url": "https://www.aliexpress.com/item/1005008743247722.html",
+        "pris_usd": 16.49,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:46:38Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "titel_live": "Insulated Hose Reel Cover 21.6x21.6x11.8inch Black",
+          "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005008743247722.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en storlek 55 × 55 × 30 cm (21.6 × 21.6 × 11.8 tum), svart; syskonlistningar 1005008319880437 (21,22 USD, samma vara) och 1005012956861720 (420D, 19,42 USD)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "Hero: huven på slangboxen mot tegelvägg, man vattnar i bakgrunden, två packshots under (dragsko + isolerat silverfoder). Textfri. Sommarbild — frostbilden (rimfrost/is på boxen) måste vi göra själva."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "amazon.se (Skydd för slangvinda, 420D Oxford, 60×45×60 cm)", "pris_sek": "ej mätt — sidan svarade 503 två gånger 2026-09-16", "url": "https://www.amazon.se/Skydd-Tr%C3%A4dsslangrulle-Vattent%C3%A4t-Skadet%C3%A5lig-Skydds%C3%B6verdrag/dp/B0G3WTL3D1", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "saknas — Gardena säljer ingen huv till slangboxen; deras råd är att lyfta ner boxen och förvara frostfritt (gardena.com/se)", "pris_sek": null, "url": "https://www.gardena.com/se/produkter/bevattning/slangboxar-slangvindor/vaggmonterad-slangvinda-35-med-automatisk-inrullning/967169501.html", "i_sortiment": false},
+        "objekt_varde": {"namn": "Gardena slangboxar väggmonterade", "pris_sek": "955–3 049 kr (Bygghemma sökutdrag 2026-09-16)", "url": "https://www.bygghemma.se/tradgard-och-utemiljo/bevattning-och-vattenpump/slangvinda-och-slangvagn/"},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["gardena.com/se", "bygghemma.se", "clasohlson.com", "amazon.se (503)", "prisjakt.nu (blockerad)", "pricerunner.se (tom sida)"]
+      },
+      "ekonomi": {
+        "landad_sek": [214, 262],
+        "pris_sek": 549,
+        "brutto_sek": [287, 335],
+        "be_cpa_sek": [287, 335],
+        "be_roas": 1.77,
+        "flerkop": false,
+        "returrisk": "låg — en storlek täcker Gardena RollUp S/M/L (ca 45–55 cm); kunden behöver inte mäta"
+      },
+      "meta_tanke": {
+        "hook": "Sitter slangboxen kvar på väggen i oktober?",
+        "objekt_i_bild": "Gardena-boxen på husväggen, rimfrost på slangen — sedan huven på",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "sprucken slang/spricka i boxen efter frostnatt bredvid boxen under huven"
+      },
+      "varfor": "Samma struktur som Kranskydd Frost (REAL WINNER) men på ett 10× dyrare objekt som nästan varje villa med Gardena-box lämnar ute: vatten kvar i slangen fryser, boxens plast spricker, och Gardenas eget råd är 'lyft ner den' — vilket ingen gör. Första frost Svealand om 4,1 v, Götaland 4,7 v.",
+      "huvudrisk": "Amazon.se har en look-alike i exakt samma form vars pris inte gick att läsa (503) — och heron är en sommarbild, frostberättelsen måste byggas i creativen.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 2, "lucka": 1, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 14, "K3": 12, "K4": 8, "K5": 8, "K6": 8, "K7": 4, "K8": 7, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (slang: bara 4-vägs krananslutning, slang-/sladdhållare 5-pack — annan form)", "koncept.py sok slang → 0 träffar", "fynd.json 09-11…09-15 (ingen slangbox)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005008743247722.html",
+        "https://www.gardena.com/se/produkter/bevattning/slangboxar-slangvindor/vaggmonterad-slangvinda-35-med-automatisk-inrullning/967169501.html",
+        "https://www.bygghemma.se/tradgard-och-utemiljo/bevattning-och-vattenpump/slangvinda-och-slangvagn/",
+        "https://www.amazon.se/Skydd-Tr%C3%A4dsslangrulle-Vattent%C3%A4t-Skadet%C3%A5lig-Skydds%C3%B6verdrag/dp/B0G3WTL3D1"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Regntunnehuven 200 L med dragsko",
+      "objekt": "Regntunna vid stupröret",
+      "form": "huv",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "B_SKYDDA_DYRT",
+      "slot": "exploitation",
+      "hypotes_id": "H03",
+      "vinnarlikhet": {
+        "likast": "IBC-Tanköverdraget",
+        "delade_variabler": ["objekt_ute", "form överdrag/huv", "old way improvisation (tunnan vänds upp och ner / presenning)", "deadline första frost (IBC-radens vinterfas)", "villaägare 55+", "en variant"],
+        "avvikelser": ["objektet är billigare (599–1 999 kr mot IBC 1–10 tkr)", "huven hindrar påfyllning och UV — den hindrar inte frost i en full tunna; tunnan måste tömmas först"]
+      },
+      "sasong": {"fonster_id": "forsta_frost_mellan", "deadline_typ": "första frost", "veckor_kvar": 4.1, "timing": "NOW", "kommentar": "sasong.py --objekt 'Regntunna vid stupröret' → forsta_frost_norr NOW 0,3 v / mellan 4,1 v / syd 4,7 v"},
+      "listning": {
+        "product_id": "1005006151587411",
+        "url": "https://www.aliexpress.com/item/1005006151587411.html",
+        "pris_usd": 14.30,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:47:31Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "titel_live": "55 Gallon Drum Cover, Water Storage Barrel Outdoor Waterproof Rain Snow Bucket Cover with Drawstring, UV Protection, Anti Dust",
+          "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005006151587411.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "55 gallon (208 L) — passar svenska 200–240 L-tunnor Ø 60–70 cm × 85–95 cm; en variant i sökträffen (storleksval ej läsbart i containern)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": true,
+        "hero_i_kontext": false,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "Hero: svart cylinderhuv med dragsko mot vit bakgrund — ren packshot, ingen tunna, ingen trädgård. Kontextbild måste göras."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "amazon.se (AYYDS regntunna skyddsfodral 200 L Ø65 × 95 cm, Oxford, dragsko)", "pris_sek": "ej mätt — sidan gav bara metadata utan pris 2026-09-16", "url": "https://www.amazon.se/AYYDS-regnvattentunna-v%C3%A4derbest%C3%A4ndigt-skyddsfodral-regnbottenskydd/dp/B09Y913422", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "saknas i fackhandeln — Jula/Wexthuset säljer hårda lock (Jula lock Ø70 cm ca 60 kr inkl moms ur sökutdrag), ingen tyghuv; Bauhaus/Granngården/Plantagen: inget överdrag för regntunna hittat", "pris_sek": null, "url": "https://www.jula.se/catalog/tradgard/bevattning/vattenslangar-och-tillbehor/vattentunnor/lock-for-vattentunna-023890/", "i_sortiment": false},
+        "objekt_varde": {"namn": "Garantia regntunna 210 L / övriga", "pris_sek": "599 / 829 / 1 999 kr (Hornbach sökutdrag 2026-09-16)", "url": "https://www.hornbach.se/c/tradgard/bevattning/vattentunnor-tillbehor/regntunnor/S31005/"},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["hornbach.se", "jula.se (403 på produktsidan, pris ur sökutdrag)", "wexthuset.com", "bauhaus.se", "granngarden.se", "amazon.se", "prisjakt.nu (blockerad)"]
+      },
+      "ekonomi": {
+        "landad_sek": [186, 228],
+        "pris_sek": 449,
+        "brutto_sek": [221, 263],
+        "be_cpa_sek": [221, 263],
+        "be_roas": 1.86,
+        "flerkop": false,
+        "returrisk": "låg–medel — dragskon tar upp Ø 60–70 cm, men trätunnor med bredare topp och 300 L-tunnor faller utanför"
+      },
+      "meta_tanke": {
+        "hook": "Tömde du regntunnan — eller ska den spricka?",
+        "objekt_i_bild": "regntunnan vid stupröret, spricka i sidan vid vattenlinjen",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "tömd tunna under huven, is på grannens öppna tunna"
+      },
+      "varfor": "Tunnan spricker vid vattenlinjen eller vid plastkranen när regnet fyllt den igen efter tömningen (regnvattentunna.se, byggahus-tråd) — dagens default är 'vänd den upp och ner' eller en presenning; ingen svensk kedja säljer en huv i tyg, bara hårda lock. Första frost Svealand 4,1 v.",
+      "huvudrisk": "Ekonomin är tunn (BE-CPA 221–263 kr, prisband 300–499 är en svag signal) och amazon.se har exakt samma form till oläst pris — plus att huven inte i sig hindrar frost, bara påfyllningen.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 2, "lucka": 1, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 10, "K3": 12, "K4": 8, "K5": 6, "K6": 8, "K7": 3, "K8": 5, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (tunna: ingen; IBC-kranadapter är annan form/objekt)", "koncept.py sok regntunn → 0 träffar", "fynd.json 09-11…09-15 (ingen regntunna)", "IBC-Tanköverdraget i kontot är annat objekt (IBC-tank)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005006151587411.html",
+        "https://www.hornbach.se/c/tradgard/bevattning/vattentunnor-tillbehor/regntunnor/S31005/",
+        "https://www.jula.se/catalog/tradgard/bevattning/vattenslangar-och-tillbehor/vattentunnor/lock-for-vattentunna-023890/",
+        "https://www.amazon.se/AYYDS-regnvattentunna-v%C3%A4derbest%C3%A4ndigt-skyddsfodral-regnbottenskydd/dp/B09Y913422",
+        "http://regnvattentunna.se/vinterforvaring-och-avstangning/",
+        "https://www.byggahus.se/forum/threads/vinterloesning-foer-regnvattentunna.322917/"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Vinterkudden för pool (1005012521191744, 13,33 USD, LIVE — hero sedd)", "skal": "Golv i exakt samma form under vårt pris: Hornbach vinterkudde 122×122×44 cm 99 kr (sökutdrag 2026-09-16), Fyndiq/Amazon-kopior därtill. Landad 193 kr → omöjligt."},
+    {"namn": "Hönsvattnarens värmeplatta (1005012983603210, 22,55 USD, LIVE)", "skal": "Golv i exakt samma form under vårt pris: VOSS.farming värmeplatta VH20 279 kr / VH25 340 kr (lantkompaniet.se), Kerbl-plattor hos Granngården, Bonden, Zooplus. Landad 326 kr — kedjan ligger under landad."},
+    {"namn": "Skimmerlocket för poolstängning (Aquador-typ)", "skal": "Bara modellspecifika listningar (Hayward 1005012717424531); den generiska 'wide mouth'-listningen 1005012996628110 svarade tomt. Variantrisk 'måste mäta' + fackhandel (Folkpool/Svenska Pool & Spa) säljer frysplugg/Gizzmo billigt."},
+    {"namn": "Elstängselaggregatets skyddslåda", "skal": "Ingen listning i formen på AliExpress — sökningen gav bara aggregat och en elmätarlåda i PVC."},
+    {"namn": "Igelkottshuset (1005012478438462, 67,94 USD)", "skal": "Landad ~982 kr mot Granngårdens igelkottshus 549 kr (sökutdrag). Dessutom utanför tesen (inget fryser sönder)."},
+    {"namn": "Dräneringsvärmaren för luftvärmepump", "skal": "AliExpress har bara lös självreglerande kabel per meter (4–12 USD) som kräver kabeländning; Clas Ohlson/Klimatshoppen säljer färdiga kit med termostat 639–695 kr. Kedjan har formen."},
+    {"namn": "Isolerad hästhink (non-elektrisk)", "skal": "AliExpress ger bara hushållsbyttor i rostfritt (1005012275405874); Hööks ThermoBar 30 ISO och Granngården Isobar finns i fackhandeln. Objektraden säger redan 'ingen listning under taket' (09-12)."},
+    {"namn": "Krukfötter (frost lyfter krukan)", "skal": "Lågt upplevt värde (Axels signal 09-09) och kedjeform hos Plantagen/Jula — ej mätt, ej sökt."},
+    {"namn": "Uppvärmd hästbalja / vattenkarvärmare (de-icer)", "skal": "AliExpress-sökningen gav bara akvarievärmare och 1 007 USD-kar; ingen 230 V flytande de-icer i formen."}
+  ],
+  "status": "2 kandidater (båda skyddsform, LIVE_VERIFIED) — ingen tredje rad i annan form klarade grindarna; hellre 2 som håller än en LÅG-rad."
+}
