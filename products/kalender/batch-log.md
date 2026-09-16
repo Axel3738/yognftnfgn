@@ -486,3 +486,15 @@ NO-kampanjen fortfarande PAUSED med spend (3 211 kr livstid, +54 kr eftersläpan
 sedan 13/9), Axels paus 13/9 11:05. Kön: 1 rad (`FM_1_H1`) hålls. Inget översatt, inget
 renderat, 0 HeyGen-krediter, ingen Notion-status ändrad, kontot orört. Discord-rapport i
 `#annons-uppladdning`, ingen ping. Kontoläsningen gick utan rate limit (471 annonser, 19 kampanjer).
+
+---
+
+## LP lagerrensning (Bäverbutiken) byggd 2026-09-16
+
+`/lagerrensning` byggde en obrandad lagerrensnings-listicle för samma produkt på
+källbutiken, live på https://baverbutiken.se/pages/adventskalender-racingbilar-lagerrensning
+(499 kr / 649 kr, fem punkter på chokladkonflikten, copy + bildplan i
+`listicle/output/lagerrensning/adventskalender-racingbilar-24-bilar-bakom-24-luckor/`).
+Obrandad och relativa knappar: samma sida går att lägga i adventlane.se med
+`--butik kalender` — men då gäller 14 dagars ångerrätt, inte källsidans 30 dagars
+öppet köp, så riskfritt-blocket måste skrivas om först.

@@ -1,0 +1,26 @@
+{
+  "_kommentar": "Bildplan för racingkalenderns lagerrensningssida, 2026-09-16. Produktsidan har tre bilder (tittade): 1 = kartongen stående med alla 24 bilar uppradade framför, vit bakgrund (kartongens eget tryck 'ADVENT CALENDAR' är produktens, inte pålagd text); 2 = kalendern öppen med bilar i luckorna, vit bakgrund; 3 = kartongen med bilarna i julmiljö (gran, ljusslinga, snö). Inga människor. Scenbilderna för punkt 1–2 (den tomma chokladkalendern, pralinkalendern) genereras utan produkt och utan människor; punkt 4 (bilarna på golvet) genereras med produktbild 1 som referens så bilarna liknar de riktiga; produkten visas i produktbilderna 2 (punkt 3), 3 (punkt 5) och 1 (lyckas).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A cheap cardboard chocolate advent calendar lying flat on a wooden kitchen table in soft grey December morning light from a window, most of its small perforated doors torn open and hanging, the moulded plastic tray inside completely empty, a bowl of porridge and a glass of milk beside it, photo-realistic, muted natural colours, no people, no hands, no text, no numbers, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A large expensive-looking chocolate praline advent calendar box standing open on a kitchen counter, the first rows of compartments already empty with only brown paper cups left, a few crumpled pieces of gold foil next to it, a second unopened calendar box leaning behind it, warm kitchen light, photo-realistic, no people, no hands, no text, no numbers, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": { "kalla": "produkt", "index": 2 },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "Small die-cast toy racing cars in the same style, colours and size as the cars in the reference image, about twenty of them lined up in neat rows on a wooden living-room floor in front of a decorated Christmas tree with warm fairy lights, one car parked apart near a sofa leg, cosy evening light, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": ["https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png"],
+      "format": "1:1"
+    },
+    "punkt5": { "kalla": "produkt", "index": 3 },
+    "lyckas": { "kalla": "produkt", "index": 1 }
+  }
+}

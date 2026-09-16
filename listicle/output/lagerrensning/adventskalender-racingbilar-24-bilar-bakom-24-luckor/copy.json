@@ -1,0 +1,96 @@
+{
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 enligt kommandots regel 3. Fakta enbart ur produktsidan baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor (läst 2026-09-16: 24 bilar bakom 24 luckor, egen modell och färg, hjul som rullar, håller för golvlek, färdig presentkartong, små delar/från 3 år, 30 dagars öppet köp) + products/kalender/dna.md (samma produkt, ärvt minne: chokladkonflikten är den bevisade vinkeln, kunden är en förälder eller mor-/farförälder som säger 'alternativ till godis', tonen är varm och lugn — inga utropstecken, ingen nedräkning). Priser 499 kr / 649 kr avlästa ur /products/<handle>.json samma dag. Obrandad. Aldrig påstått: betyg, recensioner, paketpriser, bonus.",
+  "hero": {
+    "rubrik": "Vi beställde för många racingkalendrar till december, så din kostar 499 kr istället för 649 kr så länge lagret räcker",
+    "ingress": "Beställningen lades i våras för att hinna hem till advent, och den blev större än vi tänkt. Det är morgnarna i december som tjänar på det.",
+    "knapp": "Se kalendern → 499 kr",
+    "sammanfattning": [
+      "Vi beställde ett större parti racingkalendrar än vi hinner sälja före december, och nu står pallarna på lagret. Därför rear vi ut dem: 499 kr istället för ordinarie 649 kr, så länge lagret räcker.",
+      "Om chokladkalendern hemma brukar vara uppäten före frukost, och du helst vill ha något som finns kvar när dagen är slut, är det här lösningen. En kalender med en liten racingbil bakom varje lucka, alla olika, med hjul som rullar på riktigt. Tjugofyra morgnar som blir ett garage på golvet till julafton."
+    ]
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Chokladen är slut till frukost. Resten av dagen är en vanlig dag.",
+      "text": "Ingen köper en chokladkalender för att den ska vara meningslös. Man tar den i förbifarten i november, för så har det alltid varit, och första december blir precis som vanligt: luckan rivs upp, chokladen är borta på några sekunder och sen är det gröt och skor på som vilken tisdag som helst. Nästa morgon samma sak. Det som skulle göra december till något annat än november är över **innan klockan är halv åtta**, tjugofyra dagar i rad. Du märker det inte den första dagen. Du märker det runt den tionde, när luckan öppnas utan att någon ens tittar på vad som låg bakom.",
+      "knapp": "Ge december något som räcker hela dagen →"
+    },
+    {
+      "rubrik": "2. En finare choklad löser inte problemet",
+      "text": "Nästa år gör man som de flesta: köper den dyrare kalendern, den med praliner i stället för små figurer, eller två kalendrar så att det finns en till eftermiddagen. I affären känns det som en förbättring. Men hemma händer exakt samma sak. Luckan öppnas, chokladen försvinner på samma sekunder som förut, och det enda som blivit annorlunda är vad den kostade. En finare choklad är fortfarande en choklad. Problemet var aldrig smaken eller storleken. Problemet är att det som ligger bakom luckan är **gjort för att ätas upp**, och något som äts upp kan inte finnas kvar till lunch, hur gott det än var.",
+      "knapp": "Byt det som äts upp mot något som står kvar →"
+    },
+    {
+      "rubrik": "3. December går att fylla. Den går inte att göra om.",
+      "text": "Det finns tjugofyra morgnar mellan första december och julafton, och de kommer en gång om året. Den kalender som hänger på väggen den första bestämmer hur alla tjugofyra blir, för ingen byter kalender mitt i. Blev det chokladen är det chokladens december: några sekunder per morgon, och sen ingenting. Går det upp för dig den femtonde att luckorna inte längre är något att längta till, finns det inget att göra åt det förrän nästa år. Därför sker valet i november, inte i december. En december med något att leka med hela dagen går att ordna **i förväg**. Den går inte att rätta till i efterhand.",
+      "knapp": "Bestäm december nu, medan det går →"
+    },
+    {
+      "rubrik": "4. Kalendern är inte morgonen. Den är resten av dagen. (det här missar nästan alla)",
+      "text": "Det här är det som nästan alla missar när de väljer kalender: man tittar på ögonblicket när luckan öppnas, och det ögonblicket är ungefär lika kort oavsett vad som ligger bakom. Skillnaden kommer efteråt. Chokladen är borta, och dagen fortsätter utan den. Bilen körs runt grötskålen på köksbordet, följer med i fickan till förskolan, står i hallen på eftermiddagen och parkeras bredvid de andra på kvällen. Nästa morgon kommer en till. Efter en vecka står sju bilar på rad på golvet, och på julafton är det ett helt garage som barnet själv har öppnat, en bil per dag. Det är inte luckan som är värdet. Det är allt som ligger kvar på golvet när luckan är öppnad.",
+      "knapp": "Se bilarna som blir kvar på golvet →"
+    },
+    {
+      "rubrik": "**5. Den billiga leksakskalendern som blir en låda med skräp**",
+      "text": "Många som väl bestämt sig för något annat än choklad tar den första leksakskalendern som dyker upp. Bakom luckorna ligger klistermärken, sudd, små plastfigurer som inte går att göra något med, och en bil vars hjul sitter fast. Barnet tittar, lägger det på bordet och glömmer det. Den femte december ligger halva innehållet under soffan, och på julafton har kalendern blivit en låda med smågrejer som ingen vill ha. Det var inte bättre än chokladen, bara skräpigare. En leksakskalender fungerar bara om det som ligger bakom luckan **går att leka med på riktigt**: bilar som rullar, som är olika i färg och modell, och som tål att köras på golvet varje dag fram till jul.",
+      "knapp": "Se kalendern med 24 bilar som rullar → 499 kr"
+    }
+  ],
+  "lyckas": {
+    "rubrik": "Så vad gör de som får december att räcka hela december?",
+    "stycken": [
+      "De byter ut det som äts upp mot något som står kvar. Bakom varje lucka i den här kalendern står en liten racingbil, och varje bil har sin egen modell och sin egen färg, så ingen morgon är den andra lik. Hjulen rullar på riktigt, vilket betyder att bilen körs runt köksbordet redan innan gröten är slut, och sen på golvet resten av dagen. Den tjugofjärde ställer sig bredvid de tjugotre andra. Det som började som en morgonrutin i december har blivit ett garage på golvet till julafton.",
+      "Kalendern kommer i en färdig presentkartong, så den fungerar som julklapp i sig, till ett barnbarn lika väl som till ett eget barn. Bilarna innehåller små delar och passar inte barn under tre år. Du har 30 dagars öppet köp, så gillar du den inte får du pengarna tillbaka. Skillnaden märks redan första morgonen: luckan öppnas lika snabbt som förut, men den här gången finns det något kvar när frukosten är slut."
+    ],
+    "knapp": "Gör som dem → ta en kalender för 499 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "vi beställde för många. Kalendrarna måste beställas på våren för att hinna hem till advent, och när vi räknade blev partiet större än vi någonsin tagit hem. Nu står pallarna på lagret med hela hösten kvar till december. I stället för att sitta på dem gör vi det enkelt: 499 kr istället för ordinarie 649 kr, tills partiet är slut.",
+      "Det är hela skälet till det lägre priset. Ingen jätterabatt som någon hittat på och ingen klocka som räknar ner på sidan. Vi har fler kalendrar än vi behöver, och ett köksbord i december har mer nytta av en av dem än vårt lager har.",
+      "Priset är ärligt åt andra hållet också. I vanliga fall kostar kalendern 649 kr hos oss, och när partiet är slut går den tillbaka dit."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Därför kan du testa helt riskfritt.",
+    "text": "Vill du ha en trycker du på knappen här nedanför. Kommer den hem och känns fel har du 30 dagars öppet köp och får pengarna tillbaka, så du riskerar ingenting. Men priset gäller bara så länge lagret räcker.",
+    "knapp": "Ja tack, en kalender för 499 kr → 30 dagars öppet köp"
+  },
+  "tre_fragor": [
+    { "rad": "Vi beställde för många racingkalendrar till december, så din kostar 499 kr istället för 649 kr så länge lagret räcker", "visualisera": "✅ pallar med kalendrar, två priser", "falsifiera": "✅ båda priserna står på produktsidan", "ingen_annan_kan_saga": "✅ vårt parti, vårt pris" },
+    { "rad": "Beställningen lades i våras för att hinna hem till advent, och den blev större än vi tänkt.", "visualisera": "✅ vårbeställningen, pallarna", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vårt lager" },
+    { "rad": "Se kalendern → 499 kr", "visualisera": "✅ kalendern, priset", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "1. Chokladen är slut till frukost. Resten av dagen är en vanlig dag.", "visualisera": "✅ tom lucka, gröt, skor på", "falsifiera": "✅ chokladen är uppäten före frukost eller inte", "ingen_annan_kan_saga": "✅ DNA:ts bevisade konflikt (choklad 10 sekunder mot hela december), i vår form" },
+    { "rad": "Ingen köper en chokladkalender för att den ska vara meningslös.", "visualisera": "✅ kalendern i förbifarten i november", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår öppning" },
+    { "rad": "Ge december något som räcker hela dagen →", "visualisera": "✅ hela dagen, inte bara morgonen", "falsifiera": "✅ finns kvar på kvällen eller inte", "ingen_annan_kan_saga": "✅ pekar på det som står kvar (produktsidan)" },
+    { "rad": "2. En finare choklad löser inte problemet", "visualisera": "✅ pralinkalendern", "falsifiera": "✅ den äts också upp", "ingen_annan_kan_saga": "✅ ingen chokladsäljare skriver under" },
+    { "rad": "Nästa år gör man som de flesta: köper den dyrare kalendern, den med praliner i stället för små figurer, eller två kalendrar så att det finns en till eftermiddagen.", "visualisera": "✅ praliner, två kalendrar", "falsifiera": "✅ beteendet går att observera", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Byt det som äts upp mot något som står kvar →", "visualisera": "✅ äts upp mot står kvar", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "3. December går att fylla. Den går inte att göra om.", "visualisera": "✅ tjugofyra morgnar, en gång om året", "falsifiera": "✅ december kommer en gång om året", "ingen_annan_kan_saga": "✅ förebygg-mot-reparera i kalenderns egna villkor" },
+    { "rad": "Det finns tjugofyra morgnar mellan första december och julafton, och de kommer en gång om året.", "visualisera": "✅ morgnarna på rad", "falsifiera": "✅ räkna", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är punktens faktum, resten av stycket är vårt" },
+    { "rad": "Bestäm december nu, medan det går →", "visualisera": "✅ valet i november", "falsifiera": "✅ före eller efter första december", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "4. Kalendern är inte morgonen. Den är resten av dagen. (det här missar nästan alla)", "visualisera": "✅ bilen i fickan, i hallen, på golvet", "falsifiera": "✅ bilen finns kvar på kvällen eller inte", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om resten av dagen" },
+    { "rad": "Det här är det som nästan alla missar när de väljer kalender: man tittar på ögonblicket när luckan öppnas, och det ögonblicket är ungefär lika kort oavsett vad som ligger bakom.", "visualisera": "✅ ögonblicket vid luckan", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Se bilarna som blir kvar på golvet →", "visualisera": "✅ bilar på golvet", "falsifiera": "✅ produktsidan: håller för golvlek", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "**5. Den billiga leksakskalendern som blir en låda med skräp**", "visualisera": "✅ lådan med smågrejer på julafton", "falsifiera": "✅ leks med eller inte", "ingen_annan_kan_saga": "✅ ingen billig leksakskalender skriver under" },
+    { "rad": "Många som väl bestämt sig för något annat än choklad tar den första leksakskalendern som dyker upp.", "visualisera": "✅ den första i sökresultatet", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår konflikt typ A (produktsidan: hjul som rullar, håller för golvlek)" },
+    { "rad": "Se kalendern med 24 bilar som rullar → 499 kr", "visualisera": "✅ 24 bilar, hjul, pris", "falsifiera": "✅ allt står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de som får december att räcka hela december?", "visualisera": "✅ december som räcker", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De byter ut det som äts upp mot något som står kvar.", "visualisera": "✅ bilen som står kvar", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "Kalendern kommer i en färdig presentkartong, så den fungerar som julklapp i sig, till ett barnbarn lika väl som till ett eget barn.", "visualisera": "✅ presentkartongen", "falsifiera": "✅ produktsidan: färdig presentkartong", "ingen_annan_kan_saga": "✅ vår kalender" },
+    { "rad": "Gör som dem → ta en kalender för 499 kr", "visualisera": "✅ en kalender, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi beställde för många.", "visualisera": "✅ pallarna på lagret", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela skälet till det lägre priset.", "visualisera": "✅ priset, lagret", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Priset är ärligt åt andra hållet också.", "visualisera": "✅ prislappen 649 kr i nästa mening", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Därför kan du testa helt riskfritt.", "visualisera": "❌ abstrakt — behålls ordagrant, mallens fasta rubrik", "falsifiera": "✅ 30 dagars öppet köp står på produktsidan", "ingen_annan_kan_saga": "❌" },
+    { "rad": "Vill du ha en trycker du på knappen här nedanför.", "visualisera": "✅ knappen nedanför", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, en kalender för 499 kr → 30 dagars öppet köp", "visualisera": "✅ kalendern, priset, 30 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel, kommandots sex punkter: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, ett stycke = en tanke som rör sig framåt, ord man säger vid köksbordet (luckan, gröten, skor på, förskolan, hallen, soffan, garage), och hela sidan läst uppifrån och ner: punkt 1 (chokladen är slut till frukost) → 2 (finare choklad äts också upp) → 3 (december går inte att göra om) → 4 (värdet är resten av dagen) → 5 (den billiga leksakskalendern blir skräp) → lyckas (bilar som rullar och står kvar, garage till julafton). Tonen ur DNA:t hålls: inga utropstecken, ingen nedräkning.",
+    "omskrivna_stycken": "Punkt 1: 'barnet öppnar luckan utan att ens titta på den' blev 'luckan öppnas utan att någon ens tittar' — sidan ska inte låsa sig vid ett visst barn (DNA: målgruppen får inte låsas). Punkt 2: 'hur bra det än smakade' blev 'hur gott det än var' — så säger man. Punkt 3: 'barnet slutat bry sig om luckorna' blev 'luckorna inte längre är något att längta till'; 'Det är därför valet sker' blev 'Därför sker valet' (kortare, tar vid). Punkt 4: hade två 'Det här är…'-öppningar i rad med punkt 3 — punkt 3 öppnar nu med 'Det finns tjugofyra morgnar'. Punkt 5: 'som ingen vill ha' står kvar men 'Det var inte bättre än chokladen, bara skräpigare' fick vara styckets enda korta slag. Ärlig: 'tre månader kvar till december' (fel, det är mitten av september) blev 'hela hösten kvar'. Riskfritt: 'Passar den inte' passar inte en kalender — 'Kommer den hem och känns fel'.",
+    "kvar_att_lyssna_pa": "Punkt 3:s rubrik 'December går att fylla. Den går inte att göra om.' — den enda rubriken som bygger på en tanke i stället för en sak man kan se. Hakar den högt: byt till 'Kalendern du väljer i november är december du får.'"
+  }
+}

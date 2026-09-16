@@ -1,0 +1,50 @@
+{
+  "hamtat": "2026-09-16T14:42:36.831Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "Adventskalender Racingbilar – 24 Bilar Bakom 24 Luckor",
+    "kortTitel": "Adventskalender Racingbilar",
+    "handle": "adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+    "url": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+    "typ": "",
+    "pris": 499,
+    "jamforpris": 649,
+    "prisText": "499 kr",
+    "jamforprisText": "649 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image10.png",
+        "width": 1050,
+        "height": 1050
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-oppen.jpg",
+        "width": 1050,
+        "height": 1050
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/racing-jul.jpg",
+        "width": 2048,
+        "height": 2048
+      }
+    ],
+    "beskrivning": "Chokladkalendern är slut den andra december\nKalendern öppnas på trettio sekunder, chokladen är uppäten före frukost, och resten av dagen finns inget kvar av den. Nästa morgon är det samma sak igen. Tjugofyra dagar, tjugofyra saker som försvinner direkt.\nNågot som ligger kvar på golvet efteråt\nBakom varje lucka står en bil. Den första körs runt på köksbordet medan gröten äts, och den tjugofjärde ställer sig bredvid de tjugotre andra. Det som började som en morgonrutin har blivit ett garage vid julafton.\nFunktioner\nNågot att leka med, inte bara äta upp – 24 bilar bakom 24 luckor\nSamlingen växer hela december – varje bil är sin egen modell och färg\nHåller för golvlek, inte bara uppackning – hjul som rullar på riktigt\nFungerar som julklapp i sig – kommer i en färdig presentkartong\nInnehåller små delar. Inte lämplig för barn under 3 år.\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "adventskalender-racingbilar-lagerrensning"
+}
