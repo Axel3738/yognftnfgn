@@ -1,0 +1,32 @@
+{
+  "_kommentar": "Bildplan för MC-kapellets lagerrensningssida, 2026-09-16. Produktsidan har sju bilder (tittade): 1 = svart kapell på en hoj på en stenlagd gård; 2 = svart kapell i regn med vattendroppar på; 3 = måttskiss med text ('MÅTTSKISS', 218 cm, 118,5 cm) — text, används inte; 4 = närbild på resårkanten; 5 = ljusgrått kapell på gården; 6 = blommönstrat kapell; 7 = drakmönstrat kapell. Inga människor. Scenbilderna för punkt 1–4 (hojen bar i gryningen, söndagstvätten, den matta tanken och det rostiga kromet, parkeringen om natten) finns inte bland produktbilderna och genereras utan produkt och utan människor — produkten visas i produktbilderna 2 (punkt 5, kapellet i regn) och 1 (lyckas).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A complete naked-style motorcycle, seen from the side, with both wheels, frame, engine, exhaust, handlebars, fuel tank and seat all visible, standing on its side stand in a gravel yard beside a red wooden Swedish house at early morning, heavy dew beading on the tank and seat, a couple of white bird droppings on the seat, low sun just starting to hit the tank, photo-realistic, plain dark paint with no readable lettering, no people, no hands, no text, no logos",
+      "_igen": "Första bilden (2026-09-16) blev bara en tank och en sadel som svävade över gruset utan motorcykel — 'completely unbranded with no badges' fick modellen att ta bort hela hojen. Prompten skärpt: hela hojen beskrivs del för del.",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A motorcycle on its side stand on a paved driveway in Sunday afternoon sun, a bucket of soapy water, a yellow sponge and a microfibre cloth on the ground beside it, water drops drying on the tank, a bottle of wax standing next to the bucket, photo-realistic, completely unbranded motorcycle with no badges, lettering or decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Close-up of an older motorcycle's fuel tank and chrome exhaust pipe in a garage: the paint on top of the tank faded and matte where the sun has hit it while the sides are still glossy, small rust pits spreading across the chrome, a polishing cloth and an open tin of polish lying on the seat, soft daylight from an open garage door, photo-realistic, no badges or lettering on the tank, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "A row of motorcycles parked uncovered along a residential street at night in light rain, wet asphalt reflecting the street lights, rain beading on the tanks and seats, a few wet leaves on the ground, photo-realistic, unbranded motorcycles with no visible badges or lettering, no people, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": { "kalla": "produkt", "index": 2 },
+    "lyckas": { "kalla": "produkt", "index": 1 }
+  }
+}

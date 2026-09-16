@@ -1,0 +1,181 @@
+{
+  "byggd": "2026-09-16T14:50:54.277Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "MC-Kapell 218×118 cm – Regn, Damm & UV",
+    "kortTitel": "MC-Kapell 218×118 cm",
+    "handle": "mc-kapell-220-120-regn-damm-uv",
+    "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+    "typ": "Fordon",
+    "pris": 349,
+    "jamforpris": 582,
+    "prisText": "349 kr",
+    "jamforprisText": "582 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Color",
+        "varden": [
+          "Svart",
+          "Frosted Dragon",
+          "Transparent Dragon",
+          "Frosted Flower",
+          "transparent flower",
+          "Light Gray"
+        ]
+      }
+    ],
+    "antalVarianter": 6,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-regn.jpg",
+        "width": 2000,
+        "height": 1670
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-matt-sv.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-resar.jpg",
+        "width": 800,
+        "height": 605
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cloud_black.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 6,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e72240c7-0dfd-4199-9c4c-ddad1a851fc7.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 7,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/White_Dragon_Motif_Frosted_and_Transparent.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Lacken tar stryk varje natt din hoj står ute\nRegn, fågelspillning och sol jobbar på hojen dygnet runt. Efter en säsong utomhus syns det – matt lack, rost på kromet.\nEtt skal som tar vädret i stället\nKapellet dras över på en minut och täcker hela hojen, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och UV-strålningen bleker kapellet i stället för lacken.\nFunktioner\nLacken slipper regn och sol – vattenavvisande material med UV-skydd\nPå och av på en minut – lätt material, inga spännen att kränga med\nSitter kvar i blåst – resårkant runt nederkanten\nTäcker hela hojen – 218 × 118,5 cm, passar de flesta motorcyklar och elcyklar\nFöljer med på resan – viker ihop till en liten packe\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/mc-kapell-220-120-regn-damm-uv",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1ba17c8ddfa73d80f2e2db337ecd35b8_1789570232829.png?v=1789570242",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/63b670fba04e5f40731fb53128096d19_1789570056588.png?v=1789570071",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3b941f6f64688bac6963bcbfb08121a8_1789570080060.png?v=1789570088",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8ff0b4a6a247ed5a409d88d02e25683d_1789570097914.png?v=1789570107",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-regn.jpg",
+      "width": 2000,
+      "height": 1670,
+      "kalla": "produkt #2"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #1"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/mc-kapell-218-118-cm-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/mc-kapell-218-118-cm-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "638336441047975865",
+    "namn": "MC-Kapell 218×118 cm – Lagerrensning (listicle)",
+    "handle": "mc-kapell-218-118-cm-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/mc-kapell-218-118-cm-lagerrensning",
+    "sidaId": "gid://shopify/Page/728860623197",
+    "skapad": false,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/mc-kapell-218-118-cm-lagerrensning",
+      "tecken": 108451
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1ba17c8ddfa73d80f2e2db337ecd35b8_1789570232829.png?v=1789570242",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/63b670fba04e5f40731fb53128096d19_1789570056588.png?v=1789570071",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3b941f6f64688bac6963bcbfb08121a8_1789570080060.png?v=1789570088",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8ff0b4a6a247ed5a409d88d02e25683d_1789570097914.png?v=1789570107",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-regn.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

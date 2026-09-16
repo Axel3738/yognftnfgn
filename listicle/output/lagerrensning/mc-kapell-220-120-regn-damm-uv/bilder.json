@@ -1,0 +1,46 @@
+{
+  "punkt1": {
+    "nyckel": "252137bff334",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1ba17c8ddfa73d80f2e2db337ecd35b8_1789570232829.png?v=1789570242",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/1ba17c8ddfa73d80f2e2db337ecd35b8_1789570232829.png",
+    "taskId": "1ba17c8ddfa73d80f2e2db337ecd35b8",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/bilder/punkt1.png",
+    "datum": "2026-09-16"
+  },
+  "punkt2": {
+    "nyckel": "0768e7050182",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/63b670fba04e5f40731fb53128096d19_1789570056588.png?v=1789570071",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/63b670fba04e5f40731fb53128096d19_1789570056588.png",
+    "taskId": "63b670fba04e5f40731fb53128096d19",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/bilder/punkt2.png",
+    "datum": "2026-09-16"
+  },
+  "punkt3": {
+    "nyckel": "a481c9bfe314",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3b941f6f64688bac6963bcbfb08121a8_1789570080060.png?v=1789570088",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/3b941f6f64688bac6963bcbfb08121a8_1789570080060.png",
+    "taskId": "3b941f6f64688bac6963bcbfb08121a8",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/bilder/punkt3.png",
+    "datum": "2026-09-16"
+  },
+  "punkt4": {
+    "nyckel": "6fb4a3fab325",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8ff0b4a6a247ed5a409d88d02e25683d_1789570097914.png?v=1789570107",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/8ff0b4a6a247ed5a409d88d02e25683d_1789570097914.png",
+    "taskId": "8ff0b4a6a247ed5a409d88d02e25683d",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/mc-kapell-220-120-regn-damm-uv/bilder/punkt4.png",
+    "datum": "2026-09-16"
+  }
+}

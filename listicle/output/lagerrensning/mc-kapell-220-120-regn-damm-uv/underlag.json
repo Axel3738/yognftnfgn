@@ -1,0 +1,79 @@
+{
+  "hamtat": "2026-09-16T14:50:25.447Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "MC-Kapell 218×118 cm – Regn, Damm & UV",
+    "kortTitel": "MC-Kapell 218×118 cm",
+    "handle": "mc-kapell-220-120-regn-damm-uv",
+    "url": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+    "typ": "Fordon",
+    "pris": 349,
+    "jamforpris": 582,
+    "prisText": "349 kr",
+    "jamforprisText": "582 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Color",
+        "varden": [
+          "Svart",
+          "Frosted Dragon",
+          "Transparent Dragon",
+          "Frosted Flower",
+          "transparent flower",
+          "Light Gray"
+        ]
+      }
+    ],
+    "antalVarianter": 6,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu3-mc-kapell-1.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-regn.jpg",
+        "width": 2000,
+        "height": 1670
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-matt-sv.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/mc-resar.jpg",
+        "width": 800,
+        "height": 605
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cloud_black.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 6,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e72240c7-0dfd-4199-9c4c-ddad1a851fc7.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 7,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/White_Dragon_Motif_Frosted_and_Transparent.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Lacken tar stryk varje natt din hoj står ute\nRegn, fågelspillning och sol jobbar på hojen dygnet runt. Efter en säsong utomhus syns det – matt lack, rost på kromet.\nEtt skal som tar vädret i stället\nKapellet dras över på en minut och täcker hela hojen, 218 × 118,5 cm. Regnet rinner av, dammet stannar utanpå och UV-strålningen bleker kapellet i stället för lacken.\nFunktioner\nLacken slipper regn och sol – vattenavvisande material med UV-skydd\nPå och av på en minut – lätt material, inga spännen att kränga med\nSitter kvar i blåst – resårkant runt nederkanten\nTäcker hela hojen – 218 × 118,5 cm, passar de flesta motorcyklar och elcyklar\nFöljer med på resan – viker ihop till en liten packe\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "mc-kapell-218-118-cm-lagerrensning"
+}

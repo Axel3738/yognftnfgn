@@ -1,0 +1,96 @@
+{
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 enligt kommandots regel 3. Fakta enbart ur produktsidan baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv (läst 2026-09-16: regn, fågelspillning och sol dygnet runt → matt lack, rost på kromet efter en säsong; vattenavvisande med UV-skydd; på och av på en minut, inga spännen; resårkant runt nederkanten så det sitter kvar i blåst; 218 × 118,5 cm, de flesta motorcyklar och elcyklar; viks ihop till en liten packe; sex utföranden: svart, ljusgrå, fyra mönster; 30 dagars öppet köp). Inget minne i products/ för den här produkten. Priser 349 kr / 582 kr avlästa ur /products/<handle>.json samma dag. Obrandad. Aldrig påstått: betyg, recensioner, hur länge vax håller, tygets vikt, vinterförvaring.",
+  "hero": {
+    "rubrik": "Lagret är fullt av MC-kapell i sex färger, så ditt kostar 349 kr istället för 582 kr så länge lagret räcker",
+    "ingress": "Vi tog hem kapellet i alla sex utföranden, och partiet blev större än vi säljer på en säsong. Det är lacken på din hoj som tjänar på det.",
+    "knapp": "Se MC-kapellet → 349 kr",
+    "sammanfattning": [
+      "Vi tog hem MC-kapellet i sex färger och mönster, och partiet blev större än vi säljer på en hel säsong. Nu står kartongerna på lagret. Därför rear vi ut dem: 349 kr istället för ordinarie 582 kr, så länge lagret räcker.",
+      "Om din hoj står ute om nätterna, på gården, på parkeringen eller under ett halvöppet tak, och du vill att lacken ska se ut som den gör nu även nästa vår, är det här lösningen. Ett kapell som täcker hela hojen, dras över på en minut och sitter kvar i blåst tack vare resårkanten runt nederkanten."
+    ]
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Hojen ser fin ut i kväll. Det är natten som sliter.",
+      "text": "Ingen tänker att gården ska slita på hojen. Man kör hem, ställer den på sidostödet, tar av hjälmen och går in, och i morgon bitti står den där lika fin. Det är därför skyddet aldrig blir av. Men medan du sover lägger sig daggen på tanken, i gryningen börjar solen på samma ställe, och någon gång under dagen sätter sig fågelspillning på sadeln och får sitta kvar till helgen. Regnet rinner ner i reglagen och stannar där. Efter en natt syns ingenting. Efter en säsong syns allt: **matt lack** där solen legat på, och **rost på kromet** där vattnet stått kvar. Hojen har inte blivit gammal. Den har stått ute.",
+      "knapp": "Täck hojen i kväll, innan natten börjar →"
+    },
+    {
+      "rubrik": "2. En tvätt på söndagen tar inte bort veckans sju nätter",
+      "text": "De flesta sköter sin hoj som man ska: tvätt när det behövs, vax någon gång per säsong, en trasa över tanken innan en tur. Sen ställs den på gården igen, och där står den varje natt fram till nästa tvätt. Det är sju nätter med dagg och sju morgnar med sol mellan varje gång du gör något åt saken, hela säsongen igenom. Vaxet lägger du på en gång. Solen lägger sig på tanken varje dag. Fågelspillningen som sätter sig på tisdagen får fyra dagar på sig innan du ens ser den. En omsorg i veckan mot väder dygnet runt räcker inte långt. Det som avgör hur lacken ser ut till våren är inte hur ofta du tvättar. Det är hur många nätter hojen står bar.",
+      "knapp": "Ge hojen ett skydd som sitter på varje natt →"
+    },
+    {
+      "rubrik": "3. Blank lack går att behålla. Matt lack får du inte blank igen.",
+      "text": "Det här är skillnaden som ingen ser förrän det är för sent. Smuts är inget problem, den försvinner med en hink vatten och en svamp. Lack som blivit matt av solen är ett annat slags problem. Ytan är inte smutsig, den är sliten, och slitage går inte att tvätta bort. Du står där en lördag med polish och trasa, gnuggar tanken blank i en vinkel och ser den bli matt igen i nästa, och kromet på avgasröret har fått fläckar som sitter kvar hur du än gnider. Polermedlet är inte problemet. Problemet är att glans bara går att behålla, aldrig hämta tillbaka, och att **rost på krom aldrig blir krom igen**. Det enda som fungerar är att solen och vattnet aldrig når dit från början.",
+      "knapp": "Håll lacken blank i stället för att jaga den →"
+    },
+    {
+      "rubrik": "4. Det syns inte efter en natt. Det syns efter hundra. (det här missar nästan alla)",
+      "text": "Det här är kostnaden som ingen räknar med, för den kommer aldrig på en gång. En natt i dagg är ingenting, och en dag i solen på parkeringen är ingenting du kan se när du kommer tillbaka. Men hojen står där natt efter natt, en hel säsong, och det som inte syns efter en natt syns tydligt efter hundra: en tank som tappat djupet i färgen, krom med små prickar som inte går bort, en sadel som blivit grå på den sida som vetter mot solen. Hojen är inte äldre än i våras, den ser bara ut så, och det är det som räknas den dag någon annan ska köpa den. Skadan kommer inte från ett oväder. Den kommer från hundra vanliga nätter, en i taget.",
+      "knapp": "Se till att det aldrig syns att den stått ute →"
+    },
+    {
+      "rubrik": "**5. Presenningen med spännen används i en vecka**",
+      "text": "Det finns rejälare alternativ: en presenning, eller ett tungt kapell med spännen och remmar som ska under hojen och hakas i på andra sidan. Det ser ut som ett bättre skydd. I praktiken tar det fem minuter varje kväll att få på, lika lång tid på morgonen när du ska iväg, och det är fem minuter för mycket när det regnar och du redan är sen. Efter en vecka ligger det ihoprullat i förrådet, och hojen står bar igen. Skyddet du inte orkar ta på skyddar ingenting. Ett kapell fungerar bara om det är lätt att dra över och sitter kvar av sig självt: **resårkant runt nederkanten** i stället för spännen att kränga med, så att det tar en minut på kvällen och en minut på morgonen.",
+      "knapp": "Se kapellet med resårkant → 349 kr"
+    }
+  ],
+  "lyckas": {
+    "rubrik": "Så vad gör de vars hoj ser ny ut även efter en säsong ute?",
+    "stycken": [
+      "De slutar tänka på det och täcker hojen varje kväll, för det tar en minut. Kapellet dras över från framhjulet och bakåt, resårkanten drar ihop sig runt nederkanten, och sen sitter det kvar där även när det blåser på gården. Regnet rinner av, dammet stannar på utsidan, och solen bleker kapellet i stället för lacken. På morgonen drar du av det och viker ihop det till en liten packe, så följer det med på resan. En minut på kvällen, en på morgonen. Det är hela rutinen.",
+      "Det här MC-kapellet är gjort i ett lätt, vattenavvisande material med UV-skydd, täcker hela hojen med sina 218 × 118,5 cm och passar de flesta motorcyklar och elcyklar. Det finns i svart, ljusgrått och fyra mönster, så du väljer själv om det ska synas eller inte. Du har 30 dagars öppet köp, så gillar du det inte får du pengarna tillbaka. Skillnaden ser du första gången du drar av det en morgon efter regn: torr sadel, blank tank och reglage utan vatten i."
+    ],
+    "knapp": "Gör som dem → ta ett kapell för 349 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "vi tog hem för många. Kapellet finns i sex utföranden, och när vi beställde in alla sex blev partiet mycket större än vad vi säljer på en säsong. Nu står kartongerna på lagret medan höstregnen redan har börjat. I stället för att låta dem stå där gör vi det enkelt: 349 kr istället för ordinarie 582 kr, tills partiet är slut.",
+      "Det är hela orsaken till priset. Ingen rabatt vi hittat på för att det ska se bra ut, och ingen nedräkning. Kapellen tar plats på lagret, och de gör mer nytta över en hoj än på en pall.",
+      "Priset är lika ärligt åt andra hållet. 582 kr är vad kapellet kostar hos oss i vanliga fall, och när det här partiet är slut går det tillbaka dit."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Därför kan du testa helt riskfritt.",
+    "text": "Vill du ha ett trycker du på knappen här nedanför. Passar det inte din hoj, eller gillar du det inte, har du 30 dagars öppet köp och får pengarna tillbaka. Du riskerar alltså ingenting. Men priset gäller bara så länge lagret räcker.",
+    "knapp": "Ja tack, ett MC-kapell för 349 kr → 30 dagars öppet köp"
+  },
+  "tre_fragor": [
+    { "rad": "Lagret är fullt av MC-kapell i sex färger, så ditt kostar 349 kr istället för 582 kr så länge lagret räcker", "visualisera": "✅ fullt lager, sex färger, två priser", "falsifiera": "✅ priserna och de sex utförandena står på produktsidan", "ingen_annan_kan_saga": "✅ vårt lager, vårt pris" },
+    { "rad": "Vi tog hem kapellet i alla sex utföranden, och partiet blev större än vi säljer på en säsong.", "visualisera": "✅ sex utföranden på pall", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vårt lager" },
+    { "rad": "Se MC-kapellet → 349 kr", "visualisera": "✅ kapellet, priset", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "1. Hojen ser fin ut i kväll. Det är natten som sliter.", "visualisera": "✅ hojen på gården i kväll, daggen i natt", "falsifiera": "✅ produktsidan: regn, fågelspillning och sol dygnet runt", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om natten" },
+    { "rad": "Ingen tänker att gården ska slita på hojen.", "visualisera": "✅ gården, hojen på sidostödet", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår öppning" },
+    { "rad": "Täck hojen i kväll, innan natten börjar →", "visualisera": "✅ kvällen, kapellet på", "falsifiera": "✅ täckt eller inte", "ingen_annan_kan_saga": "✅ pekar på kapellets jobb" },
+    { "rad": "2. En tvätt på söndagen tar inte bort veckans sju nätter", "visualisera": "✅ söndagstvätten, sju nätter", "falsifiera": "✅ nätterna kommer oavsett", "ingen_annan_kan_saga": "✅ ingen konkurrent argumenterar mot tvätten" },
+    { "rad": "De flesta sköter sin hoj som man ska: tvätt när det behövs, vax någon gång per säsong, en trasa över tanken innan en tur.", "visualisera": "✅ tvätt, vax, trasa", "falsifiera": "✅ beteendet går att observera", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Ge hojen ett skydd som sitter på varje natt →", "visualisera": "✅ kapellet på varje natt", "falsifiera": "✅ produktsidan: sitter kvar i blåst", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "3. Blank lack går att behålla. Matt lack får du inte blank igen.", "visualisera": "✅ blank tank mot matt tank", "falsifiera": "✅ matt lack går inte att tvätta blank", "ingen_annan_kan_saga": "✅ förebygg-mot-reparera i hojens ord" },
+    { "rad": "Det här är skillnaden som ingen ser förrän det är för sent.", "visualisera": "✅ skillnaden som syns för sent", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Håll lacken blank i stället för att jaga den →", "visualisera": "✅ blank lack nu, polish sen", "falsifiera": "✅ ordningen går att kontrollera", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "4. Det syns inte efter en natt. Det syns efter hundra. (det här missar nästan alla)", "visualisera": "✅ en natt mot hundra", "falsifiera": "✅ produktsidan: efter en säsong syns det", "ingen_annan_kan_saga": "✅ ingen konkurrent räknar per natt" },
+    { "rad": "Det här är kostnaden som ingen räknar med, för den kommer aldrig på en gång.", "visualisera": "✅ kostnaden som kommer sakta", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Se till att det aldrig syns att den stått ute →", "visualisera": "✅ hojen som inte ser ute-stådd ut", "falsifiera": "✅ syns eller inte", "ingen_annan_kan_saga": "✅ vårt löfte ur produktsidan (kapellet tar vädret i stället)" },
+    { "rad": "**5. Presenningen med spännen används i en vecka**", "visualisera": "✅ den ihoprullade presenningen i förrådet", "falsifiera": "✅ används eller inte", "ingen_annan_kan_saga": "✅ ingen presenningssäljare skriver under" },
+    { "rad": "Det finns rejälare alternativ: en presenning, eller ett tungt kapell med spännen och remmar som ska under hojen och hakas i på andra sidan.", "visualisera": "✅ spännen, remmar under hojen", "falsifiera": "✅ går att kontrollera", "ingen_annan_kan_saga": "✅ vår konflikt typ A (produktsidan: inga spännen att kränga med, resårkant)" },
+    { "rad": "Se kapellet med resårkant → 349 kr", "visualisera": "✅ resårkanten, priset", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de vars hoj ser ny ut även efter en säsong ute?", "visualisera": "✅ en hoj som ser ny ut i höst", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De slutar tänka på det och täcker hojen varje kväll, för det tar en minut.", "visualisera": "✅ kapellet på, en minut", "falsifiera": "✅ produktsidan: på och av på en minut", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "Det här MC-kapellet är gjort i ett lätt, vattenavvisande material med UV-skydd, täcker hela hojen med sina 218 × 118,5 cm och passar de flesta motorcyklar och elcyklar.", "visualisera": "✅ kapellet över hela hojen", "falsifiera": "✅ fakta ur produktsidan", "ingen_annan_kan_saga": "✅ vårt kapell" },
+    { "rad": "Gör som dem → ta ett kapell för 349 kr", "visualisera": "✅ ett kapell, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi tog hem för många.", "visualisera": "✅ kartongerna på lagret", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela orsaken till priset.", "visualisera": "✅ priset, lagret", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Priset är lika ärligt åt andra hållet.", "visualisera": "✅ prislappen 582 kr i nästa mening", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Därför kan du testa helt riskfritt.", "visualisera": "❌ abstrakt — behålls ordagrant, mallens fasta rubrik", "falsifiera": "✅ 30 dagars öppet köp står på produktsidan", "ingen_annan_kan_saga": "❌" },
+    { "rad": "Vill du ha ett trycker du på knappen här nedanför.", "visualisera": "✅ knappen nedanför", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, ett MC-kapell för 349 kr → 30 dagars öppet köp", "visualisera": "✅ kapellet, priset, 30 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel, kommandots sex punkter: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, ett stycke = en tanke som rör sig framåt, ord man säger i garaget (hojen, sidostödet, tanken, sadeln, reglagen, kromet, polish, kränga med spännen), och hela sidan läst uppifrån och ner: punkt 1 (natten sliter) → 2 (söndagstvätten räcker inte mot sju nätter) → 3 (matt lack går inte att få blank igen) → 4 (hundra vanliga nätter) → 5 (presenningen med spännen hamnar i förrådet) → lyckas (en minut på kvällen, resårkanten håller det kvar).",
+    "omskrivna_stycken": "Punkt 1: rubriken var först 'Hojen står fin på gården. Lacken jobbar natten på.' — inte svenska; 'Regnet letar sig in i varje reglage' var för nära mallens 'letar sig in i varje skarv' och blev 'rinner ner i reglagen och stannar där'. Punkt 2: 'Vaxet från maj är borta i juli' påstod hur länge vax håller — står ingenstans, byttes mot 'Vaxet lägger du på en gång. Solen lägger sig på tanken varje dag.' Punkt 3: slutet 'Sen tänker du att du nog behöver ett bättre polermedel. Men det är inte medlet.' var mallens grepp ordagrant i form — blev 'Polermedlet är inte problemet. Problemet är…'; knappen 'Bevara glansen medan den finns kvar' var mallens och byttes. Punkt 4: 'En regnskur gör ingenting' (mallens 'En regnskur märks inte') och köparen som 'drar av tusenlappar' (mallens mening) ströks; två 'Inte X. Y.'-grepp blev ett. Punkt 5: mallens öppning 'Många som väl bestämmer sig' byttes mot 'Det finns rejälare alternativ'. Lyckas: 'lägger det under sadeln' ströks (står inte på sidan). Ärlig: andra stycket skrevs om så det inte är mallens mening med bytt substantiv.",
+    "kvar_att_lyssna_pa": "Punkt 5:s 'fem minuter varje kväll' — en uppskattning av hur lång tid en presenning med spännen tar, ingen siffra från sidan. Låter den påhittad högt: byt till 'en stund varje kväll'."
+  }
+}
