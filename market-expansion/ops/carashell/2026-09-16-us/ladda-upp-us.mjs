@@ -16,7 +16,7 @@ import { spawnSync } from 'node:child_process';
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..', '..', '..', '..');
 const TORR = process.argv.includes('--torr');
-const BARA = (process.argv.find((a) => a.startsWith('--bara=')) || '').slice(7);
+const BARA = (process.argv.find((a) => a.startsWith('--bara=')) || '').slice(7).split(',').filter(Boolean);   // --bara=CS_1_H1,CS_2_H1
 const KAMPANJ = '120251436741400435';                       // CARASHELL_US_Taköverdrag … (Magiborsten UK)
 const LANK = 'https://carashell.com/products/takskyddet?country=US';   // opsmarknader.marknadslank, egen US-domän
 const NYCKEL = 'carashell/takskyddet';
@@ -32,7 +32,7 @@ const namn = BILDER
   ? ['CS_2_1', 'GT_2_1', 'PD_2_1', 'SP_2_1']
   : ['CS_1_H1', 'CS_2_H1', 'CS_3_H1', 'GT_1_H1', 'GT_2_H1', 'GT_3_H1', 'PD_1_H1', 'PD_2_H1', 'PD_3_H1', 'SP_1_H1', 'SP_2_H1', 'SP_3_H1'];
 for (const n of namn) {
-  if (BARA && n !== BARA) continue;
+  if (BARA.length && !BARA.includes(n)) continue;
   const mal = `CaraShellRoof_US_${n}`;
   const koncept = n.split('_')[0];
   if (resultat[mal]?.resultat?.ok && !TORR) { console.log(`— ${mal}: redan uppladdad (${resultat[mal].resultat.annons?.id})`); continue; }

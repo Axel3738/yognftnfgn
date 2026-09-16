@@ -1,0 +1,29 @@
+✅ CaraShellRoof_US_SP_1_H1.mp4
+     ⚠️ sista repliken ligger 0.04s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-27.8 mot -14.5 dB) — inte avhugget
+
+1 av 1 klarade röstkollen.
+{
+ "CaraShellRoof_US_SP_1_H1.mp4": {
+  "fel": [],
+  "noteringar": [
+   "sista repliken ligger 0.04s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-27.8 mot -14.5 dB) — inte avhugget"
+  ],
+  "matvarden": {
+   "langd_ny": 23.36,
+   "medel_db": -17.2,
+   "max_db": -1.3,
+   "langd_kalla": 23.55,
+   "langddrift": 0.008,
+   "tal_ny": 22.621,
+   "sista_replik_slut": 23.32,
+   "slutenergi_ny": -27.8,
+   "slutenergi_kalla": -14.5,
+   "slutenergi_diff": -13.4,
+   "tal_kalla": 22.621,
+   "taltapp": 0.0
+  }
+ }
+}
+
+⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.
+   Lyssna själv på den video som ska bära mest spend.

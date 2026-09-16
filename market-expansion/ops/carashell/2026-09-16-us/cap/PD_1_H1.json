@@ -12,7 +12,34 @@
   "standard_cy": 1018,
   "x0": 50,
   "x1": 670,
-  "bredd_max": 600
+  "bredd_max": 600,
+  "fyll": [
+   {
+    "rect": [
+     150,
+     980,
+     570,
+     1058
+    ],
+    "t": [
+     23.6,
+     23.96
+    ]
+   },
+   {
+    "rect": [
+     150,
+     980,
+     570,
+     1058
+    ],
+    "t": [
+     24.48,
+     24.76
+    ]
+   }
+  ]
  },
- "qa": "../cap/qa-PD_1_H1"
+ "qa": "../cap/qa-PD_1_H1",
+ "_fyll_skal": "pillret st\u00e5r mot ljus/vit kaross och hittas inte per frame (m\u00e4tt 2026-09-16, qa/luckor*-ark.png) \u2014 manuell vit platta + tvingad caption i f\u00f6nstret"
 }

@@ -455,3 +455,50 @@ koden togs bort vid mergen. Discord-rapporten från den här sessionen (11:5x, "
 uploaded") skrevs FÖRE de fyra uppladdningarna och är överspelad. Samma eftermiddag
 fick USA egen domän (carashell.com), 90-dagars garanti på /en och termoskyddet sin
 US-kampanj — se `factory/PROCESS.md` punkt 19–20 och termoskyddets batch-log.
+
+---
+
+## USA-runda 2 2026-09-16 (Axels order: "Fixa alla till engelska och lägg in dom i den amerikanska kampanjen") — 12 videor + 4 batch #1-bilder
+
+**Uppdraget:** allt i `CARASHELL_SE_Taköverdraget` utom de fyra bildannonser
+som redan låg i US-kampanjen (`_4_1`). Det var **12 ärvda videor** (CS/GT/PD/SP
+× H1, brand-swappade från Bäverbutiken 2026-09-11) och **4 ärvda batch #1-bilder**
+(`_2_1`). Batchmapp `market-expansion/ops/carashell/2026-09-16-us/` (samma som
+bildrundan tidigare på dagen). Lärdomarna i `factory/FAS2.md` → "USA — videorna
+följer efter bilderna".
+
+**Videorna (HeyGen, "English (United States)"):** 12 proofreads → sonnet-subagent
+skrev om alla 107 block till amerikansk engelska ur US-faktalistan (`video/srt-us/`,
+ändringslogg `ANDRINGAR.md`): $199 / $249 / $50 off, free shipping in the US,
+90-day guarantee, "RV"/"trailer", tal i ord. Bort: "bara idag", "medan kampanjen
+pågår", "14 dagars ångerrätt enligt svensk lag", "kronor". Regexgrinden
+`verify-srt.mjs` grön på alla 12 (byte-identiska timecodes, tempo relativt
+källblocket). Render 12/12, **852 HeyGen-krediter (6 849 → 5 997)**. Captions:
+`no-precis.py` byter de svenska ordcaption-pillren mot engelska cues i samma ruta —
+fem fönster där pillret står mot vit kaross (GT_1 start/slut, GT_2 slut, PD_1 och
+PD_3 "blåser rejält") krävde manuella vita plattor (`captions.fyll` i `cap/*.json`),
+hittade i frame-QA (`qa/luckor*-ark.png`). Röstkoll 12/12 gröna (längddrift
+≤ 1 %, taltapp 0). "Lyssnat" med ElevenLabs Scribe på GT_2, PD_2, CS_2, SP_2
+(`qa/lyssna/scribe.mjs`): 0 tappade ord i GT_2/SP_2, bara siffror-som-tal i de
+andra. Talet i PD-videorna behåller källans "storage bag"/"drawstring" — det är
+källans påståenden, inte tillagda (dna.md: aldrig i CaraShells egen copy).
+
+**Bilderna (`_2_1`, text på fotot):** Kie `nano-banana-edit` rensade PD (himmel)
+och GT (rum); CS vitmålades på originalet (Kie byggde om layouten); SP:s
+crème-band byggdes om i PIL. Engelska rader från sonnet (`textlager-us-batch1.json`),
+ritade av `rendera-batch1.py`, QA sida vid sida i `qa/batch1-*.png`.
+
+**Copy (sonnet, `adcopy-US-video.json`, tre-frågorstestet i `adcopy-US-video.md`):**
+en copy per koncept, samma på konceptets tre videor och batch #1-bild. CS
+"RV Roof Cover: $199, Save $50", GT "He Talks To His RV Like It's Family", PD "You
+Won't Check It. Winter Will.", SP "Fits Well, Protects the Roof – Lars". Länk
+`https://carashell.com/products/takskyddet?country=US` (egen US-domän).
+
+**Inga Notion-rader:** de ärvda annonserna finns bara i kontot (hubben bär batch
+#2/#3 + tre videobriefer). Kampanjen `CARASHELL_US_Taköverdrag …` står fortfarande
+PAUSED — annonserna är ACTIVE inne i den och spenderar inget förrän Axel slår på.
+
+⚠️ **De fyra `_4_1`-bilderna som redan låg där** (uppladdade förmiddagen, före
+Axels 90-dagarsbeslut) bär copyn "14-day right of withdrawal" — den engelska sidan
+säger 90-day guarantee. Axel sa "hoppa över dem"; de rördes inte, men claimen står
+kvar tills någon byter creative.

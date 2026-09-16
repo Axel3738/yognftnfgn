@@ -52,8 +52,8 @@ if [[ "$steg" == allt || "$steg" == rostkoll ]]; then
   node -e '
     const fs=require("fs"); const B=process.argv[1]; const ut={};
     for (const f of fs.readdirSync(B+"/cap").filter(f=>f.startsWith("rostkoll-")&&f.endsWith(".json"))) {
-      const n=f.slice(9,-5); const t=fs.readFileSync(B+"/cap/"+f,"utf8"); const i=t.indexOf("{");
-      let j=null; try { j=JSON.parse(t.slice(i)); } catch {}
+      const n=f.slice(9,-5); const t=fs.readFileSync(B+"/cap/"+f,"utf8"); const i=t.indexOf("{"), jj=t.lastIndexOf("}");
+      let j=null; try { j=JSON.parse(t.slice(i,jj+1)); } catch {}
       const post=j?Object.values(j)[0]:null;
       ut["CaraShellRoof_US_"+n]={ ok: Boolean(post && post.fel.length===0), fel: post?post.fel:["ingen json"], noteringar: post?post.noteringar:[], matvarden: post?post.matvarden:null };
     }
