@@ -47,6 +47,15 @@ ekonomi:
     - valuta: NOK
       pris: 1106
       jamforpris: 1382.50
+    # USD — Axels pris 2026-09-16 (/ny-marknad carashell US --pris 199), INTE
+    # en kursomräkning (1 129 kr × 0,10235 = 115,55 USD, ECB 2026-09-15).
+    # Jämförpriset följer samma regel som NOK: 25 % över priset (248,75 → 249).
+    # Fast pris i prislistan gid://shopify/PriceList/33459372364 (prislista.mjs,
+    # 2026-09-16 efter att USD blivit marknadens basvaluta i admin) —
+    # tillbakaläst som amerikansk kund: $199.00 / $249.00.
+    - valuta: USD
+      pris: 199
+      jamforpris: 249
 
 varianter:
 media:

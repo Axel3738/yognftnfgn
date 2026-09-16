@@ -143,3 +143,10 @@ target-ROAS 2,70 · target-CPA 207 kr**, räknat **UTAN moms**
 
 Första riktiga briefronden blir en **kallstart ur ärvd DNA** enligt mönster 1–4, och
 den viktigaste briefen är ett **sant CS-manus** — källans köp sitter där.
+
+## Marknader
+
+| Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |
+|---|---|---|---|---|---|---|
+| 2026-09-16 | NO | nb | NOK (fast pris, satt av ops-produkt-sessionen) | 548 NOK / jämförpris 685 | 5–10 virkedager | NO-kampanj PAUSED tills Axel skriver "Launch" |
+| 2026-09-16 | **US** | en | **USD, Shopifys egen omräkning** (mätt 07:05 som amerikansk kund: $59.00, jämförpris $98.00 — kurs 0,1044, avrundat av Shopify; inget fast pris) | **⚠️ INGET FAST USD-PRIS ÄNNU — Axels beslut.** `/ny-marknad carashell US --pris 199` gav ETT pris och ett bart `carashell` betyder takskyddet. Förslag: 59 USD (kursen 559 × 0,10235 = 57,21 → x9) eller 99 USD (samma påslag som takskyddet, 1,72×). Skrivs in som `- valuta: USD` under `ekonomi.marknadspriser` i `factory/produkter/termoskyddet.yaml` + `--igen prislista` | 5–10 business days | `/en/products/termoskyddet` svarar 200 som amerikansk kund, 0 svenska markörer; prislista-steget säger 🖐 "saknar USD-rad — kunden ser då SEK" tills raden finns. Ingen US-kampanj byggd (termoskyddets annonser är fortfarande PAUSED även i SE/NO) |

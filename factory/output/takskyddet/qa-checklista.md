@@ -21,6 +21,7 @@
 - [x] ✅ kundvy-produktsida: 11 strukturpunkter gröna
 - [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 15
+- [x] ✅ markörer /en: 0 svenska markörer av 15
 
 ## Varningar
 

@@ -156,6 +156,10 @@ test('byggUnderlagObjekt: testbutiken ger stabila nycklar för produkt, metafäl
   assert.equal('metafalt.nackmagneten.opf.gif_problem' in ut, false); // url-fält översätts aldrig
   assert.equal(ut['sida.returpolicy.title'], 'Returpolicy');
   assert.equal(ut['sida.contact.title'], 'Kontakt');
+  // Shopifys egen sida "Dina integritetsval" (skapas av Shopify med en
+  // USA-marknad, CaraShell 2026-09-16) — utan nyckel läckte den på /en OCH /nb.
+  assert.equal(ut['sida.data-sharing-opt-out.title'], 'Dina integritetsval');
+  assert.ok(ut['sida.data-sharing-opt-out.body'].includes('pc--optOutFormContainer'));
   // Samma rader som meny.mjs huvudmenyRader: Hem först, sedan produkten —
   // "Hem" saknade nyckel i underlaget till 2026-09-16 och läckte på /nb.
   assert.equal(ut['meny.main-menu.0'], 'Hem');

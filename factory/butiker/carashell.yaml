@@ -37,6 +37,20 @@ butik:
     - land: NO
       locale: nb
       valuta: SEK
+    # USA sedan 2026-09-16 (/ny-marknad carashell US — Axels fråga "husbils-
+    # grejerna i USA"). Engelska på /en. USD slogs på som marknadens valuta i
+    # admin samma förmiddag (Inställningar → Marknader → USA → Valuta — inte
+    # av sessionen; mätt 06:44 SEK, 06:58 USD) och --igen prislista,paket satte
+    # de fasta USD-priserna. Leveranstiden är Axels argument
+    # (--leveranstid 5–10) och styr BARA den engelska leveransraden. Den
+    # svenska fraktraden nämner inte USA (i_fraktraden: false): sv-texterna
+    # är orörda, den norska filen matchar fortfarande, engelskan säger sitt
+    # ("Free shipping to the US") i output/carashell/oversattning-en.json.
+    - land: US
+      locale: en
+      valuta: USD
+      leveranstid: "5–10 arbetsdagar"
+      i_fraktraden: false
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika

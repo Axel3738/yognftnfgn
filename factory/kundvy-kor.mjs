@@ -90,6 +90,23 @@ export function sidvag(vag, locale = null) {
   return v === '/' ? `/${loc}/` : `/${loc}${v}`;
 }
 
+// Vilket LAND varje vy ska läsas som: huvudspråket = butikens eget land,
+// varje locale = marknaden som bär den (butik.marknader). Shopify väljer
+// annars marknad efter besökarens IP: containern står i Ohio, och när
+// CaraShell fick USA med USD (2026-09-16) svarade `/` med Shopify.country
+// "US" och priser i dollar — huvudspråkets priskoll ("1129 syns inte") blev
+// röd fast butiken var rätt. curl utan browser-huvuden fick SE hela tiden,
+// så felet syns bara i verktyget. Vyn läses därför som kund i RÄTT land.
+export function landPerLocale(butik) {
+  const b = butik?.butik ?? {};
+  const ut = { '': String(b.land ?? 'SE').toUpperCase() };
+  for (const m of Array.isArray(b.marknader) ? b.marknader : []) {
+    const loc = String(m?.locale ?? '').trim();
+    if (loc && m?.land) ut[loc] = String(m.land).toUpperCase();
+  }
+  return ut;
+}
+
 // preview_theme_id: numret ur ett gid, ett tal eller ett temaobjekt. MAIN
 // (publicerat) ger null — då är preview onödig och kunden ser temat ändå.
 export function previewTemaId(tema) {
@@ -116,6 +133,25 @@ async function hamtaMedTalamod(url, init) {
     await vantaMs(15000 * (f + 1));
   }
   return fetch(url, init);
+}
+
+// Läser butiken som kund i ett visst land + språk: POST /localization
+// (API-GRANSER.md: form_type=localization, _method=put — utan _method svarar
+// Shopify 404). 302 = satt, kakan `localization` följer med i burken.
+export async function sattLokalisering(ctx, land, sprak) {
+  const bas = byggBas(ctx.shop, ctx.bas);
+  const b = burk(ctx);
+  const svar = await fetch(new URL('/localization', bas), {
+    method: 'POST',
+    headers: { ...HUVUD, cookie: b.header(), 'content-type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ form_type: 'localization', _method: 'put', country_code: land, language_code: sprak, return_to: '/' }),
+    redirect: 'manual',
+  });
+  b.ta(svar);
+  if (svar.status < 300 || svar.status >= 400) {
+    throw new Error(`POST /localization ${land}/${sprak} svarade ${svar.status} — finns landet som marknad och språket som locale?`);
+  }
+  ctx.lokalisering = `${land}/${sprak}`;
 }
 
 // Postar storefront-lösenordet och behåller kakan i ctx.burk.
@@ -178,6 +214,16 @@ export async function hamtaSida(ctx, vag, { locale = null, losenord = null, tema
     }
     if (!ctx.inloggad) await loggaInLosenord(ctx, losen);
     svar = await hamtaSidaRa(ctx, vag, { locale, temaId });
+  }
+  // Marknaden sätts UTTRYCKLIGEN (landPerLocale) — efter inloggningen, så
+  // kakan landar i samma session. En gång per land/språk, sedan sitter den.
+  const land = ctx.landPerLocale?.[locale ?? ''] ?? null;
+  if (land && svar.status === 200) {
+    const sprak = locale ?? ctx.primarsprak ?? 'sv';
+    if (ctx.lokalisering !== `${land}/${sprak}`) {
+      await sattLokalisering(ctx, land, sprak);
+      svar = await hamtaSidaRa(ctx, vag, { locale, temaId });
+    }
   }
   if (svar.status === 429 || /Verifying your connection/i.test(svar.html)) {
     const e = new Error(`${svar.url}: Shopify svarade med en bot-kontroll (HTTP ${svar.status}). Sidan gick inte att läsa som en kund.`);
@@ -308,7 +354,7 @@ async function huvud() {
 
   const shop = await kontrolleraAnslutning();
   console.log(`Connected: ${shop.myshopifyDomain} ✓`);
-  const ctx = { shop, bas: flagga('--url') };
+  const ctx = { shop, bas: flagga('--url'), landPerLocale: landPerLocale(butik) };
   const state = lasState(butik.butik.id, '_butik');
   const arbetstemaId = state.arbetstemaId ?? state.steg?.['tema-upload']?.arbetstemaId ?? state.steg?.['tema-upload']?.temaId ?? null;
   const tema = flagga('--tema') ? { id: flagga('--tema'), role: 'UNPUBLISHED' } : await hamtaArbetstema(arbetstemaId);

@@ -354,11 +354,20 @@ export async function kodkoll(ctx, produkt, butik) {
       { kod: k.kod }
     );
     const cd = d.codeDiscountNodeByCode?.codeDiscount;
-    const belopp = Number(cd?.customerGets?.value?.amount?.amount);
+    // En kod är antingen PROCENT (paket.mjs: procent satt ⇒ Shopify bär
+    // percentage 0–1) eller BELOPP. Kollen läste bara beloppet och dömde
+    // varje procentkod som "−NaN kr" (CaraShell 2026-09-16: fyra röda rader
+    // på koder som stämde). Jämför med samma slag som planen skrev.
+    const varde = cd?.customerGets?.value;
+    const belopp = Number(varde?.amount?.amount);
+    const procent = varde?.percentage === undefined || varde?.percentage === null ? NaN : Math.round(Number(varde.percentage) * 100);
     const minst = Number(cd?.minimumRequirement?.greaterThanOrEqualToQuantity);
-    const ok = cd?.status === 'ACTIVE' && belopp === Number(k.belopp) && minst === Number(k.minstAntal);
+    const stammer = k.procent ? procent === Number(k.procent) : belopp === Number(k.belopp);
+    const ok = cd?.status === 'ACTIVE' && stammer && minst === Number(k.minstAntal);
     const kundpris = plan.poster.find((x) => x.kod === k.kod)?.kundpris;
-    ut.push([`${k.kod}: −${k.belopp} kr vid minst ${k.minstAntal} varor ⇒ ${kundpris} kr i kassan`, ok, cd ? `admin: ${cd.status}, −${belopp} kr, minst ${minst}` : 'koden finns inte']);
+    const planerat = k.procent ? `−${k.procent} %` : `−${k.belopp} kr`;
+    const iAdmin = k.procent ? (Number.isNaN(procent) ? 'inget procenttal' : `−${procent} %`) : (Number.isNaN(belopp) ? 'inget belopp' : `−${belopp} kr`);
+    ut.push([`${k.kod}: ${planerat} vid minst ${k.minstAntal} varor ⇒ ${kundpris} kr i kassan`, ok, cd ? `admin: ${cd.status}, ${iAdmin}, minst ${minst}` : 'koden finns inte']);
   }
   return ut;
 }

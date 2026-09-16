@@ -57,12 +57,31 @@
       "klar": true,
       "status": "ACTIVE",
       "publicerad": true
+    },
+    "prislista": {
+      "klar": true,
+      "prislistor": [
+        {
+          "valuta": "NOK",
+          "land": "NO",
+          "id": "gid://shopify/PriceList/33455505740",
+          "skapad": false,
+          "varianter": 1
+        },
+        {
+          "valuta": "USD",
+          "land": "US",
+          "id": "gid://shopify/PriceList/33459372364",
+          "skapad": false,
+          "varianter": 1
+        }
+      ]
     }
   },
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T04:21:05.456Z"
+    "tid": "2026-09-16T07:02:21.231Z"
   },
-  "uppdaterad": "2026-09-16T04:21:05.457Z"
+  "uppdaterad": "2026-09-16T07:02:21.231Z"
 }

@@ -602,9 +602,21 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `factory/prislista.mjs`: prislista + marknadskatalog + fast pris/jämförpris
    per variant ur `ekonomi.marknadspriser`, idempotent, med tillbakaläsning.
    🖐 tills valutan är marknadens basvaluta i admin — då med klicket i
-   klartext, inte Shopifys userError. ⚠️ Nätdelen är skriven ur receptet,
-   inte körd från sessionen som skrev den (ingen butikstoken där) — första
-   riktiga körningen är mätningen; skriv utfallet här.
+   klartext, inte Shopifys userError. **Första riktiga körningen 2026-09-16
+   (CaraShell, `/ny-marknad carashell US`):** steget körde utan fel, läste
+   `market.currencySettings.baseCurrency` på den nyskapade marknaden USA och
+   fick **null** ("basvalutan är okänd") — en marknad som API:t just skapat
+   har ingen basvaluta förrän klicket är gjort. Utfallet blev exakt det
+   avsedda: 🖐 med klicket i klartext, noll prislisteanrop skickade, NOK-raden
+   (redan FIXED) orörd. Produkt 2 utan USD-rad (termoskyddet) gav sin egen
+   🖐 "kunden ser då SEK" — inte ett stopp. **Femton minuter senare var USD
+   påslagen i admin** (mätt 06:58: `Shopify.currency` USD, kurs 0,1044 —
+   klicket gjordes utanför sessionen), och `--igen prislista,paket` gick då
+   hela vägen: prislistan `PriceList/33459372364` fick 199/249 fast, paket-
+   nivåerna sina USD-rader, och som amerikansk kund stod **$199.00 /
+   $249.00 / paket $338.30, $477.60**. Produkten utan USD-rad visas med
+   Shopifys egen omräkning ($59.00 för 559 kr) — läsbart, men inte ett pris
+   ägaren valt.
 6. ⚙️ Kundvyn känner igen "Add to cart"/"Buy now" som köpknapp. `sprakkoll.mjs`
    är fortfarande bokmål-only — engelskan läses av markörskanningen
    (`markorer_sv`) och ett öga.
@@ -639,6 +651,51 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
 9. ⚠️ Juridiken översätts, byts inte: den engelska policyn säger "under
    Swedish law" och behåller EU-tvistplattformen. Om amerikanska kunder ska ha
    en egen returpolicy är Axels beslut — rapporten flaggar det varje gång.
+10. ⚙️ **Shopify skapar en sida själv när USA läggs till** (mätt CaraShell
+   2026-09-16 06:42:53Z, samma minut som `marknad`-steget): "Dina
+   integritetsval" (handle `data-sharing-opt-out`, amerikanska delstaters
+   "Do not sell or share") + en sidfotslänk med samma titel, på butikens
+   primärspråk. Ingen kod i repot skrev den, och den låg som **3 läckor på
+   BÅDE /en och /nb** (titel, body, menylänk) — den norska sidan hade alltså
+   fått en svensk sida utan att någon rört norskan. Sedan samma dag bär
+   `factory/shopify-sidor.mjs` Shopifys text byte för byte, `oversattning.mjs`
+   lägger nyckeln `sida.data-sharing-opt-out.*` i underlaget, och varje
+   `oversattning-<locale>.json` ska ha den ifylld (en + nb skrivna av
+   subagent). Med nyckeln ifylld: `--igen oversatt` ⇒ **0 läckor på /en och
+   /nb**, `/en/pages/data-sharing-opt-out` svarar "Your privacy choices" och
+   `/nb/…` "Dine personvernvalg" (mätt samma dag). Ändrar Shopify sin
+   formulering syns sidan som läcka igen — läs om den med
+   `page(id:…) { title body }` och byt texten i modulen. Sidan tas aldrig
+   bort: den är USA-kundens lagstadgade opt-out.
+11. ⚙️ **Enheter i engelskan är en substansfråga, inte en översättning.**
+   Subagentens första version skrev "thirty degrees warmer" för "trettio
+   grader varm" — för en amerikan är 30° kallt. Rättat till "86 °F (30 °C)".
+   Ge subagenten de imperiala måtten färdigräknade i briefen (6,5 × 3 m =
+   21.3 × 9.8 ft, 211 cm = 83 in …) och läs varje siffra i den engelska
+   filen en gång själv; modellen räknar inte om enheter av sig själv.
+12. ⚙️ **Kundvyn som amerikansk kund** (mätt 2026-09-16): `POST /localization`
+   med `country_code=US`, `language_code=en`, `_method=put` → 302, sedan GET
+   `/en/products/<handle>` → `Shopify.country = "US"`, `lang="en"`, "Add to
+   cart"/"Buy now" — och `Shopify.currency = SEK` tills USD är påslagen
+   (punkt 7). Tre svenska rester som kundvyn inte räknar men ögat ser:
+   Judge.me-recensionerna (svenska tills VA:n importerat
+   `output/<produkt>/judgeme-import-en.csv`), bildernas alt-texter (media-alt
+   ligger inte i underlaget — samma lucka på /nb) och Judge.me-widgetens
+   knapp "Köp nu" (appinställning, inte temat).
+13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
+   läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
+   rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
+   mot procent, belopp mot belopp, samma slag som `paket.mjs` skrev.
+14. ⚙️ **Shopify väljer marknad efter besökarens IP — och containern står i
+   USA.** Så fort USD var påslagen svarade `/` (svenska vyn) med
+   `Shopify.country = "US"` och dollarpriser för kundvy-verktyget, och
+   huvudspråkets priskoll blev röd ("1129 syns inte") fast butiken var rätt;
+   curl utan browser-huvuden fick SE hela tiden, så felet syntes bara i
+   verktyget (mätt 2026-09-16 07:0x). `kundvy-kor.landPerLocale` +
+   `sattLokalisering` läser nu varje vy som kund i RÄTT land (`/` = butikens
+   land, `/nb` = NO, `/en` = US) — deterministiskt oavsett var koden körs,
+   och det är dessutom exakt vad `/ny-marknad` steg 7 vill se. Gäller QA:n i
+   `ops.mjs` också (samma kctx).
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och

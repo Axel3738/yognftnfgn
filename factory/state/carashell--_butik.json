@@ -43,7 +43,8 @@
         "sections/header-group.json",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
-        "snippets/ms-head.liquid"
+        "snippets/ms-head.liquid",
+        "snippets/ms-paket.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": "termoskyddet"
@@ -161,22 +162,29 @@
           "marknad": "Norge",
           "status": "ACTIVE",
           "localeSkapad": false
+        },
+        {
+          "land": "US",
+          "locale": "en",
+          "marknad": "USA",
+          "status": "ACTIVE",
+          "localeSkapad": true
         }
       ]
     },
     "oversatt": {
       "klar": true,
-      "underlag": 149,
+      "underlag": 151,
       "utfall": {
         "nb": {
-          "registrerade": 4,
+          "registrerade": 2,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 0,
-            "menylänk": 4,
+            "sida": 1,
+            "menylänk": 1,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
@@ -184,7 +192,25 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4339/4370"
+          "granskning": "4342/4373"
+        },
+        "en": {
+          "registrerade": 5,
+          "saknade": 0,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 2,
+            "menylänk": 1,
+            "paket": 0,
+            "policy": 0,
+            "kollektion": 0,
+            "temamall": 1,
+            "sektionsgrupp": 1,
+            "temainställning": 0
+          },
+          "granskning": "4349/4373"
         }
       }
     },
@@ -215,7 +241,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T04:20:59.353Z"
+    "tid": "2026-09-16T07:02:10.388Z"
   },
-  "uppdaterad": "2026-09-16T04:20:59.353Z"
+  "uppdaterad": "2026-09-16T07:02:10.388Z"
 }

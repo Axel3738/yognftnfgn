@@ -57,6 +57,16 @@ ekonomi:
     - valuta: NOK
       pris: 548
       jamforpris: 685
+    # ⚠️ USD SAKNAS MED FLIT (2026-09-16): /ny-marknad carashell US fick ETT
+    # pris (--pris 199) och ett bart "carashell" betyder takskyddet. Termo-
+    # skyddets USD-pris är ägarens beslut (CLAUDE.md regel 12) — förslagen
+    # står i rapporten: 59 USD (kursen 559 × 0,10235 = 57,21, avrundat till
+    # x9) eller 99 USD (samma påslag som takskyddet, 199 / 115,55 = 1,72×).
+    # Tills raden finns säger prislista-steget 🖐 och en amerikansk kund ser
+    # SEK (eller Shopifys egen omräkning när USD slagits på). Lägg raden:
+    #   - valuta: USD
+    #     pris: <Axels tal>
+    #     jamforpris: <pris × 1,25>
 
 varianter:
 media:

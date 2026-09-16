@@ -47,12 +47,25 @@
     "recensioner": {
       "klar": false,
       "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/termoskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+    },
+    "prislista": {
+      "klar": false,
+      "manuell": "termoskyddet: marknaden US har valutan USD men ekonomi.marknadspriser saknar en USD-rad — kunden ser då SEK",
+      "prislistor": [
+        {
+          "valuta": "NOK",
+          "land": "NO",
+          "id": "gid://shopify/PriceList/33455505740",
+          "skapad": false,
+          "varianter": 1
+        }
+      ]
     }
   },
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T04:21:11.535Z"
+    "tid": "2026-09-16T07:02:32.255Z"
   },
-  "uppdaterad": "2026-09-16T04:21:11.535Z"
+  "uppdaterad": "2026-09-16T07:02:32.255Z"
 }

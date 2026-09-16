@@ -94,7 +94,7 @@ import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad 
 import { byggPrislistplan, sakerstallPrislistor } from './prislista.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
-import { hamtaStartsida, hamtaProduktsida } from './kundvy-kor.mjs';
+import { hamtaStartsida, hamtaProduktsida, landPerLocale } from './kundvy-kor.mjs';
 import { kontrolleraKundvy, strukturkoll, produktkoll, svenskaMarkorer, lasMarkorer, filtreraMarkorer } from './kundvy.mjs';
 import { samlaLage } from './trippelkoll.mjs';
 import { byggJudgeMeCsv, byggJudgeMeAppCsv, byggJudgeMeCsvOversatt } from './judgeme.mjs';
@@ -1260,7 +1260,9 @@ async function korButiksQa(ctx) {
   } catch (e) {
     punkter.push({ namn: 'arbetstema', utfall: 'kritisk', detalj: e.message });
   }
-  const kctx = { shop: ctx.shop };
+  // Varje vy läses som kund i RÄTT land (kundvy-kor.landPerLocale) — annars
+  // väljer Shopify marknad efter containerns IP (USA ⇒ USD på svenska sidan).
+  const kctx = { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   const start = await hamtaEllerNull(() => hamtaStartsida(kctx, { temaId: tema }));
   punkter.push(...kundvyPunkter({ html: start.html, felmeddelande: start.fel, losenordSatt, butik: ctx.butik, produkt: ctx.p, vad: 'startsida' }));
 
@@ -1298,7 +1300,7 @@ async function korProduktQa(ctx, pk, butiksQa) {
   const kontroll = kontrolleraLaunch(medHandleSomId(pk.p), { shop: ctx.shop, produkt, policyer: ctx.shop?.shopPolicies ?? null });
   const punkter = [...kontroll.punkter];
   const losenordSatt = Boolean(process.env.SHOPIFY_STOREFRONT_PASSWORD);
-  const kctx = butiksQa.kctx ?? { shop: ctx.shop };
+  const kctx = butiksQa.kctx ?? { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   await sov(2500);
   const sida = await hamtaEllerNull(() => hamtaProduktsida(kctx, pk.handle, { temaId: butiksQa.tema }));
   punkter.push(...kundvyPunkter({ html: sida.html, felmeddelande: sida.fel, losenordSatt, butik: ctx.butik, produkt: pk.p, vad: 'produktsida' }));
