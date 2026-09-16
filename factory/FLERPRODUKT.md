@@ -207,3 +207,19 @@ Läs köp per produkt ur Shopify innan någon annons i CaraShell döms.
 databasrader — `notion-hub.mjs --foralder` har ingen förälder att skapa under. En hub för
 produkt 2 är därför Axels klick (duplicera "Carashell creative hub", döp om), sedan
 `node factory/register.mjs notion carashell/termoskyddet <id>` och `/notionscalercs setup`.
+
+## Köfilen krockar mellan produkterna (mätt 2026-09-16)
+
+`/ops-leverans` skriver `factory/output/<butik>/leverans-$IDAG.json`, och **butiken
+är mappen** — så takskyddets runda (14:05) och termoskyddets (14:15) skrev samma
+fil samma dag. Den som pushade sist skrev över den andra, och rebasen blev en
+konflikt på en fil ingen hade rört för hand.
+
+Rätt namn i en flerproduktsbutik bär **produktnyckeln**:
+`leverans-<produkt>-$IDAG.json` (t.ex. `leverans-takskyddet-2026-09-16.json`).
+Filen från 2026-09-16 som saknar produktdel i namnet är termoskyddets — den
+lämnades som den var för att inte skriva om historik.
+
+Samma sak gäller varje utfil per körning i en butik med fler än en produkt:
+sätt produktnyckeln i namnet innan rutinerna hinner krocka. Det syns aldrig som
+ett fel i rutinen — bara som en försvunnen fil eller en konflikt i nästa push.
