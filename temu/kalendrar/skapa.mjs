@@ -52,7 +52,8 @@ for (const [id, f] of Object.entries(FAKTA)) {
   if (!skarp) {
     console.log(`+ ${id}: ${t.titel}`);
     console.log(`    ${f.pris} / ${f.jamfor} kr · cogs ${cogs(id)} · ${t.checkmarks.length} ✓ · ${(t.specar || []).length} specar · ${(t.faq || []).length} FAQ`);
-    console.log(`    bilder: ${galleri.join(', ') || 'INGA ⚠️'} · i texten: ${t.losningBild || galleri[1] || galleri[0] || '—'}`);
+    console.log(`    bilder: ${galleri.map((n, i) => `${n} → kalender-${id.replace(/_/g, '-')}-${i + 1}${n.slice(n.lastIndexOf('.'))}`).join(', ') || 'INGA ⚠️'}`);
+    console.log(`    i texten: ${t.losningBild || galleri[1] || galleri[0] || '—'}`);
     console.log(`    taggar: ${t.taggar.join(', ')}`);
     continue;
   }
@@ -66,10 +67,12 @@ for (const [id, f] of Object.entries(FAKTA)) {
     'productCreate');
   const pid = skapad.product.id;
 
-  // 2. media — originalfilerna från Adventlanes CDN, oförändrade
+  // 2. media — bildfilerna, omdöpta. Källfilerna heter adventlane-*, och det namnet hamnar
+  //    annars i bäverbutikens egen CDN-URL och i sidans HTML. Innehållet är oförändrat.
+  const nyttNamn = (n, i) => `kalender-${id.replace(/_/g, '-')}-${i + 1}${n.slice(n.lastIndexOf('.'))}`;
   const st = await b.mutera(
     `mutation s($input:[StagedUploadInput!]!){stagedUploadsCreate(input:$input){stagedTargets{url resourceUrl} userErrors{field message}}}`,
-    { input: galleri.map((n) => ({ filename: n, mimeType: n.endsWith('.png') ? 'image/png' : 'image/jpeg',
+    { input: galleri.map((n, i) => ({ filename: nyttNamn(n, i), mimeType: n.endsWith('.png') ? 'image/png' : 'image/jpeg',
         httpMethod: 'PUT', resource: 'IMAGE', fileSize: String(readFileSync(bildfil(n)).length) })) },
     'stagedUploadsCreate');
   for (let i = 0; i < galleri.length; i++) {
