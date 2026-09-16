@@ -543,3 +543,46 @@ NO-kampanjens status lästes FÖRE det och är mätta; hubbens statusfördelning
 läst direkt mot Notions API i samma körning. Med tom kö spelar pris och ärvd länk
 ingen roll — inget skulle laddats upp ändå. Mätningen ligger i
 `market-expansion/ops/carashell/2026-09-16/ko-NO.json`.
+
+⚠️ **Rättelse samma kväll:** de två kampanjerna är INTE dubbletter (Axels besked
+2026-09-16: "det är inte 2 stycken samma, den ena går ju till en listicle").
+Kopian pekar på `/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning`,
+originalet på `/products/takskyddet` — avläst i kontot. De sju annonserna gick
+live i originalet samma kväll med `--kampanj`, se nästa avsnitt. Norge-kön är
+alltså tom i den här körningen men fylld efteråt; nästa NO-runda tar dem.
+
+---
+
+## Leveransrunda 2026-09-16 (`/ops-leverans carashell/takskyddet`)
+
+Sju bildannonser live i `CARASHELL_SE_Taköverdraget` (120249050544990172):
+
+| Annons | Adset | Ad-ID |
+|---|---|---|
+| `CaraShellRoof_SP_5_1` | SP | 120249122698370172 |
+| `CaraShellRoof_SP_6_1` | SP | 120249122718510172 |
+| `CaraShellRoof_SP_7_1` | SP | 120249122729920172 |
+| `CaraShellRoof_CS_5_1` | CS | 120249123060760172 |
+| `CaraShellRoof_CS_6_1` | CS | 120249122887210172 |
+| `CaraShellRoof_PD_6_1` | PD | 120249122897700172 |
+| `CaraShellRoof_PD_7_1` | PD | 120249123047960172 |
+
+Alla ACTIVE/ACTIVE, priset 1 129 kr / 1 469 kr / 340 kr kollat mot butiken på
+var och en. **Textlagret (`factory/bild-text.py`) syns i alla sju** — rubrik,
+underrad, prisblock och botten står skarpt i bilden, till skillnad från
+batch #2:s fyra som gick ut nakna.
+
+⚠️ **TVÅ ACTIVE SE-kampanjer är rätt, inte ett fel** (Axels besked 2026-09-16:
+"det är inte 2 stycken samma, den ena går ju till en listicle"). Avläst i kontot
+samma dag:
+
+| Kampanj | Landningssida | Spend | Köp | ROAS |
+|---|---|---|---|---|
+| `…| 2026-09-11` (120249050544990172) | `/products/takskyddet` | 9 646 kr | 23 | 2,76 |
+| `… – kopia` (120249121867590172) | `/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning` | 35 kr | 0 | — |
+
+Kön (`ops-leveranskon`) stoppar på "2 ACTIVE SE-kampanjer" eftersom den bara
+ser namnen, och namnen är identiska sånär som på " – kopia". **Rätt åtgärd är
+`--kampanj <id>` på `ops-till-meta`, aldrig att pausa den ena.** Vilken som
+gäller avgörs av briefens `Destination:` — dessa sju sa produktsidan.
+Nästa gång kommer samma stopp: det är en verktygsbegränsning, inte en incident.
