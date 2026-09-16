@@ -1,0 +1,15 @@
+{
+  "_kommentar": "Konceptet bakom /vi-testade — 'Vi testade PRODUKTEN i N dagar'. Perioden väljs efter produkten (kommandofilen har regeln: skydd/överdrag = en säsong eller en vinter, förbrukningsvaror = 14–30 dagar, redskap = en sommar/ett antal pass). Rubriken måste bära perioden. Inga påhittade mätvärden: bara priset som siffra.",
+  "id": "vi-testade",
+  "namn": "Vi testade",
+  "kommando": "/vi-testade",
+  "suffix": "vi-testade",
+  "sidnamn": "{kortTitel} – Vi testade (listicle)",
+  "sidtitel": "Vi testade {kortTitel}",
+  "punkter": [5],
+  "forfattare_obrandad": "Anders, som testade den själv",
+  "rubrik": { "period": true },
+  "jamforpris_behovs": false,
+  "arlig_rubrik": "Jag ska vara ärlig:",
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt."
+}

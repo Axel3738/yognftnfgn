@@ -494,3 +494,22 @@ Adseten CS/GT/PD/SP slogs PÅ inne i den fortfarande PAUSADE kampanjen
 `G` är tomt och står kvar pausat. HeyGen: 7 017 → 6 653 före render, ~570
 till för renderingarna. Ingen har lyssnat på dubbarna med öron — röstkollen
 mäter bara det mätbara; lyssna på topspendern innan skalning.
+
+---
+
+## LP lagerrensning live 2026-09-16 (`/lagerrensning https://carashell.se/products/takskyddet --butik carashell`)
+
+**https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning** —
+publicerad direkt i butiken via `listicle/butik.mjs` (ingen GemPages): tre
+temafiler på det publicerade temat "CaraShell – CRO v1" (`layout/listicle.liquid`
+utan header/footer, `templates/page.listicle.liquid`, `assets/listicle.css`),
+sidan skapad med mallen `page.listicle`, läst tillbaka som kund utan header,
+footer eller meny. Copyn och bildplanen är från sessionen som byggde
+`.gempages`-filen samma dag (gren `claude/upbeat-hawking-8eacfe`, aldrig
+mergad): **obrandad**, "Anders på lagret", pris **1 129 / 1 469 kr** lästa ur
+`/products/takskyddet.json`, 14 dagars ångerrätt (riskfritt-blocket heter
+"Om det inte känns rätt"), punkt 1–4 kie.ai-bilder på Bäverbutikens CDN
+(`lp-bildarkiv`), punkt 5 och lyckas produktbilderna 1 och 2. Knapparna
+länkar relativt till `/products/takskyddet`. Filerna ligger i
+`listicle/output/lagerrensning/takskyddet/`. Ingen annons pekar dit ännu —
+sidan mäts som LP, aldrig som creative.

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // forhandsvisning.mjs — sidan som skärmdumpar, utan nät i webbläsaren.
 //
-//   node lagerrensning/forhandsvisning.mjs <handle>            # output/<handle>/forhandsvisning/{index.html,desktop.png,mobil.png}
-//   node lagerrensning/forhandsvisning.mjs <handle> --bara-html  # bygg bara den lokala kopian, ingen skärmdump
+//   node listicle/forhandsvisning.mjs <handle>            # output/<handle>/forhandsvisning/{index.html,desktop.png,mobil.png}
+//   node listicle/forhandsvisning.mjs <handle> --bara-html  # bygg bara den lokala kopian, ingen skärmdump
 //
 // Varför lokalt: claude.ai-containerns Chromium litar inte på proxyns
 // certifikat (mätt 2026-09-16: ERR_CERT_AUTHORITY_INVALID mot baverbutiken.se
@@ -127,11 +127,11 @@ export function skarmdump(indexFil, utFil, { bredd, hojd, chrome = CHROME }) {
   return { ok: true };
 }
 
-export async function forhandsvisa(handle, { baraHtml = false, logg = console.log, htmlFil = null } = {}) {
-  const mapp = join(HAR, 'output', handle);
-  // Utan angiven fil: källbutikens (<slug>-lagerrensning.html). En --lank-byggd fil har butikens värd som suffix.
-  const fil = htmlFil ?? (() => { const f = readdirSync(mapp).find((x) => x.endsWith('-lagerrensning.html')); return f ? join(mapp, f) : null; })();
-  if (!fil) throw new Error(`Ingen *-lagerrensning.html i ${mapp} — kör bygg.mjs först.`);
+export async function forhandsvisa(handle, { baraHtml = false, logg = console.log, htmlFil = null, mapp = null, koncept = 'lagerrensning' } = {}) {
+  mapp = mapp ?? join(HAR, 'output', koncept, handle);
+  // Utan angiven fil: den nyaste förhandsvisnings-HTML:en i mappen (inte *.sida.html — det är butikens body utan CSS).
+  const fil = htmlFil ?? (() => { const f = readdirSync(mapp).filter((x) => x.endsWith('.html') && !x.endsWith('.sida.html')).sort().pop(); return f ? join(mapp, f) : null; })();
+  if (!fil) throw new Error(`Ingen *.html i ${mapp} — kör bygg.mjs först.`);
   const fragment = readFileSync(fil, 'utf8');
   const fvMapp = join(mapp, 'forhandsvisning');
   logg(`Förhandsvisning: ${fvMapp}`);
@@ -159,6 +159,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   }
   const argv = process.argv.slice(2);
   const handle = argv.find((a) => !a.startsWith('--'));
-  if (!handle) { console.error('Användning: node lagerrensning/forhandsvisning.mjs <handle> [--bara-html]'); process.exit(1); }
+  if (!handle) { console.error('Användning: node listicle/forhandsvisning.mjs <handle> [--bara-html]'); process.exit(1); }
   forhandsvisa(handle, { baraHtml: argv.includes('--bara-html') }).catch((e) => { console.error(`\n❌ ${e.message}\n`); process.exit(1); });
 }

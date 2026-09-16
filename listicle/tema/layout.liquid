@@ -1,0 +1,32 @@
+{%- comment -%}
+  layout/listicle.liquid — skrivs av listicle/butik.mjs (repot yognftnfgn), ändra inte här.
+
+  En ren sida utan header, footer och meny: listicle-landningssidorna ska se ut
+  som en fristående artikel (Axels beslut 2026-09-16, ersätter GemPages).
+  {{ content_for_header }} behålls — där ligger Shopifys egna skript: pixlarna
+  (Meta via Facebook-kanalen), kundens integritetsval och analytics. Temats
+  CSS och JS laddas INTE; sidans egen stil ligger i assets/listicle.css.
+{%- endcomment -%}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+  {%- endif -%}
+  <title>{{ page_title }}</title>
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap">
+  {{ 'listicle.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+</head>
+<body class="listicle-sida">
+  {{ content_for_layout }}
+</body>
+</html>

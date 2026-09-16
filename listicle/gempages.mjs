@@ -1,7 +1,7 @@
 // gempages.mjs — ren logik för att göra en ny lagerrensningssida ur mallen.
 //
 // Mallen är GemPages-exporten av "Motorhölje – Lagerrensning (listicle)"
-// (lagerrensning/mall/sida.json, orörd). Platskartan (mall/platser.json) säger
+// (listicle/mall/sida.json, orörd). Platskartan (mall/platser.json) säger
 // vilka element som byts. Den här modulen rör aldrig nätet — den läser mall +
 // copy + bildlista och svarar med en färdig sida och en .gempages-zip.
 //
@@ -38,36 +38,187 @@ export const BRAND_MAPP = join(HAR, 'brand');
 // ställen — författarraden, sidfotens logga och kontaktraden — och alla tre
 // styrs av en brandprofil. Utan profil: "Anders på lagret", loggan och strecket
 // döljs, kontaktraden blir bara "OBS: Detta är reklam." Med `--brand
-// baverbutiken` (lagerrensning/brand/baverbutiken.json) blir sidan exakt som
+// baverbutiken` (listicle/brand/baverbutiken.json) blir sidan exakt som
 // mallen igen. Lagerbilden i ärlig-blocket visar anonyma kartonger (tittad
 // 2026-09-16) och behöver inte bytas.
 
-export const OBRANDAD = Object.freeze({ id: null, namn: null, forfattare: 'Anders på lagret', support: null, doman: null, logga: null });
+export const OBRANDAD = Object.freeze({ id: null, namn: null, obrandad: true, forfattare: 'Anders på lagret', support: null, doman: null, logga: null });
 
-/** Brandprofilerna som finns: filnamnen i lagerrensning/brand/ utan .json. */
+/** Brandprofilerna som finns: filnamnen i listicle/brand/ utan .json. */
 export function kandaBrand() {
   if (!existsSync(BRAND_MAPP)) return [];
   return readdirSync(BRAND_MAPP).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).sort();
 }
 
-/** null/undefined → obrandad; "baverbutiken" → brand/baverbutiken.json; ett objekt → kontrollerat som det är. */
-export function brandProfil(brand) {
-  if (!brand) return { ...OBRANDAD };
+/**
+ * null/undefined → obrandad; "baverbutiken" → brand/baverbutiken.json; ett objekt →
+ * kontrollerat som det är. `forfattareObrandad` är konceptets författarrad för
+ * den obrandade sidan ("Anders, som testade den själv" på /vi-testade).
+ */
+export function brandProfil(brand, { forfattareObrandad = null } = {}) {
+  if (!brand) return { ...OBRANDAD, ...(forfattareObrandad ? { forfattare: String(forfattareObrandad) } : {}) };
   // En redan upplöst obrandad profil (t.ex. från bygg.mjs) går igenom oförändrad.
-  if (typeof brand === 'object' && brand.namn == null && brand.id == null && brand.forfattare === OBRANDAD.forfattare && !brand.logga && !brand.support && !brand.doman) return { ...OBRANDAD };
+  if (typeof brand === 'object' && brand.obrandad === true) return { ...OBRANDAD, forfattare: brand.forfattare || OBRANDAD.forfattare };
   let p = brand;
   if (typeof brand === 'string') {
     const fil = join(BRAND_MAPP, `${brand}.json`);
-    if (!/^[a-z0-9-]+$/.test(brand) || !existsSync(fil)) throw new Error(`Okänt brand "${brand}" — profiler: ${kandaBrand().join(', ') || 'inga'} (lagerrensning/brand/<id>.json).`);
+    if (!/^[a-z0-9-]+$/.test(brand) || !existsSync(fil)) throw new Error(`Okänt brand "${brand}" — profiler: ${kandaBrand().join(', ') || 'inga'} (listicle/brand/<id>.json).`);
     p = { id: brand, ...JSON.parse(readFileSync(fil, 'utf8')) };
   }
   if (!p.namn) throw new Error('Brandprofilen saknar "namn".');
   if (p.logga && !(p.logga.src && p.logga.width > 0 && p.logga.height > 0)) throw new Error(`Brandprofilen ${p.id ?? p.namn}: loggan behöver src, width och height.`);
   return {
-    id: p.id ?? null, namn: String(p.namn), forfattare: p.forfattare ? String(p.forfattare) : `Anders från ${p.namn}`,
+    id: p.id ?? null, namn: String(p.namn), obrandad: false, forfattare: p.forfattare ? String(p.forfattare) : `Anders från ${p.namn}`,
     support: p.support ? String(p.support) : null, doman: p.doman ? String(p.doman) : null,
     logga: p.logga ? { src: p.logga.src, width: p.logga.width, height: p.logga.height } : null,
   };
+}
+
+// ------------------------------------------------------------ koncept
+
+// Tre koncept delar samma mall och samma motor: lagerrensning (mallen är den
+// sidan), vi-testade ("Vi testade PRODUKTEN i N dagar") och anledningar ("N
+// anledningar till att …", 5 eller 7 punkter). Konceptet styr sidnamn, handle,
+// författarraden på en obrandad sida, vilka punktantal som är tillåtna och
+// vilka rubrikkontroller som görs. Copy-STRATEGIN per koncept står i
+// .claude/commands/<koncept>.md — inte här.
+
+export const KONCEPT_MAPP = join(HAR, 'koncept');
+export const STANDARD_KONCEPT = 'lagerrensning';
+
+export function kandaKoncept() {
+  if (!existsSync(KONCEPT_MAPP)) return [];
+  return readdirSync(KONCEPT_MAPP).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).sort();
+}
+
+/** "lagerrensning" → konceptobjektet (koncept/<id>.json); ett objekt går igenom kontrollerat. */
+export function lasKoncept(koncept = STANDARD_KONCEPT) {
+  let k = koncept;
+  if (typeof koncept === 'string' || koncept == null) {
+    const id = String(koncept ?? STANDARD_KONCEPT).trim().toLowerCase();
+    const fil = join(KONCEPT_MAPP, `${id}.json`);
+    if (!/^[a-z0-9-]+$/.test(id) || !existsSync(fil)) throw new Error(`Okänt koncept "${id}" — finns: ${kandaKoncept().join(', ')} (listicle/koncept/<id>.json).`);
+    k = { id, ...JSON.parse(readFileSync(fil, 'utf8')) };
+  }
+  if (!k.id || !k.suffix || !k.sidnamn) throw new Error('Konceptet behöver id, suffix och sidnamn.');
+  const punkter = Array.isArray(k.punkter) && k.punkter.length ? k.punkter.map(Number) : [5];
+  if (punkter.some((n) => !Number.isInteger(n) || n < 5 || n > 7)) throw new Error(`Konceptet ${k.id}: punkter får vara 5–7, är ${punkter.join(',')}.`);
+  return {
+    id: k.id, namn: k.namn ?? k.id, kommando: k.kommando ?? `/${k.id}`, suffix: k.suffix, sidnamn: k.sidnamn, sidtitel: k.sidtitel ?? k.sidnamn,
+    punkter, forfattare_obrandad: k.forfattare_obrandad ?? OBRANDAD.forfattare, rubrik: k.rubrik ?? {}, jamforpris_behovs: k.jamforpris_behovs !== false,
+    arlig_rubrik: k.arlig_rubrik ?? 'Jag ska vara ärlig:', riskfritt_rubrik: k.riskfritt_rubrik ?? 'Därför kan du testa helt riskfritt.',
+  };
+}
+
+/** Antalet punkter för en körning: önskat (flaggan) eller konceptets första; stoppar på otillåtet. */
+export function valjPunkter(koncept, onskat = null) {
+  const k = lasKoncept(koncept);
+  if (onskat == null || onskat === '') return k.punkter[0];
+  const n = Number(onskat);
+  if (!k.punkter.includes(n)) throw new Error(`${k.kommando} tillåter ${k.punkter.join(' eller ')} punkter, inte "${onskat}".`);
+  return n;
+}
+
+/** Mallsträng med {kortTitel} {slug} {n}: "{kortTitel} – {n} anledningar (listicle)". */
+export function konceptText(mall, { produkt = {}, n = 5 } = {}) {
+  return String(mall ?? '').replace(/\{kortTitel\}/g, produkt.kortTitel ?? '').replace(/\{slug\}/g, produkt.slug ?? '').replace(/\{n\}/g, String(n));
+}
+
+/** Sidans handle: "<slug>-<suffix>" — suffixet kan bära {n} ("5-anledningar"). */
+export const konceptHandle = (koncept, produkt, n = 5) => `${produkt.slug}-${konceptText(lasKoncept(koncept).suffix, { produkt, n })}`;
+
+/** Platskartans textnycklar för n punkter (punkt6/7 får samma form som punkt4/5; cid/uid sätts vid kloningen). */
+export function platserForPunkter(platser, n) {
+  if (n <= 5) return platser;
+  const ut = structuredClone(platser);
+  for (let i = 6; i <= n; i += 1) {
+    const kalla = i % 2 === 0 ? 'punkt4' : 'punkt5';
+    for (const falt of ['rubrik', 'text', 'knapp']) ut.text[`punkt${i}.${falt}`] = { ...platser.text[`${kalla}.${falt}`], cid: '(klonas)', uid: '(klonas)' };
+    ut.bilder[`punkt${i}`] = { ...platser.bilder[kalla], cid: '(klonas)', uids: ['(klonas)'], roll: `Punkt ${i} (klon av ${kalla}-sektionen): ${platser.bilder[kalla]?.roll ?? ''}` };
+    ut.bilder_som_byts = [...(ut.bilder_som_byts ?? []), `punkt${i}`];
+  }
+  return ut;
+}
+
+// Ikonerna i mallen är Phosphor "number-circle-N" (light) inbakade som SVG i
+// Icon-elementets settings.iconSvg. 6 och 7 finns inte i mallen — hämtade ur
+// @phosphor-icons/core@2 (assets/light) 2026-09-16, samma viewBox och stil.
+export const IKON_STIG = {
+  6: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm0-104a34.5,34.5,0,0,0-5.6.47l18.75-31.39a6,6,0,0,0-10.3-6.16l-32.24,54A34,34,0,1,0,128,114Zm0,56a22,22,0,1,1,22-22A22,22,0,0,1,128,170Z',
+  7: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM156.91,84.56a6,6,0,0,1,.73,5.49l-32,88A6,6,0,0,1,120,182a6.15,6.15,0,0,1-2-.36,6,6,0,0,1-3.59-7.69L143.43,94H104a6,6,0,0,1,0-12h48A6,6,0,0,1,156.91,84.56Z',
+};
+const IKON_NAMN = { 6: 'six', 7: 'seven' };
+
+export function ikonSvg(n) {
+  const d = IKON_STIG[n];
+  if (!d) throw new Error(`Ingen ikon för punkt ${n}.`);
+  return `<svg height="20" width="20" data-name="number-circle-${IKON_NAMN[n]}-light" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="${talText(nyttId())}">\n              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="${d}" /></svg>`;
+}
+
+const UID_TECKEN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-';
+/** Nytt element-/sektions-id i GemPages egen stil: "g" + 9 tecken. */
+export function nyUid() {
+  let s = 'g';
+  while (s.length < 10) s += UID_TECKEN[randomInt(0, UID_TECKEN.length)];
+  return s;
+}
+
+/**
+ * Fler än fem punkter: klonar mallens sektioner för punkt 4 (bild till höger)
+ * och punkt 5 (bild till vänster) till punkt 6, 7 … med nya sektions-id:n,
+ * nya cid:n, nya uids på VARJE element (så inget krockar med originalen),
+ * rätt sifferikon, och lägger dem efter punkt 5 i sectionPosition.
+ * Muterar `sida`; svarar med den utökade platskartan (riktiga cid/uid).
+ * Checksummorna räknas inte här — byggSida gör det för alla sektioner.
+ */
+export function utokaPunkter(sida, platser, n, { nyUidFn = nyUid, nyttIdFn = nyttId, nu = new Date().toISOString() } = {}) {
+  if (n <= 5) return platser;
+  const ut = structuredClone(platser);
+  const perNyckel = (nyckel) => platser.text[nyckel];
+  const sektion = (cid) => {
+    const s = (sida.pageSections ?? []).find((x) => x.cid === cid);
+    if (!s) throw new Error(`utokaPunkter: sektionen ${cid} finns inte.`);
+    return s;
+  };
+  let efterId = talText(sektion(perNyckel('punkt5.rubrik').cid).id);
+  for (let i = 6; i <= n; i += 1) {
+    const kalla = i % 2 === 0 ? 'punkt4' : 'punkt5';
+    const kallaCid = perNyckel(`${kalla}.rubrik`).cid;
+    const orig = sektion(kallaCid);
+    const c = JSON.parse(orig.component);
+    // Alla uids i trädet får nya värden — karta gammal → ny.
+    const karta = new Map();
+    const bytUid = (o) => {
+      if (Array.isArray(o)) { o.forEach(bytUid); return; }
+      if (!o || typeof o !== 'object') return;
+      if (typeof o.uid === 'string') { if (!karta.has(o.uid)) karta.set(o.uid, nyUidFn()); o.uid = karta.get(o.uid); }
+      for (const v of Object.values(o)) if (v && typeof v === 'object') bytUid(v);
+    };
+    bytUid(c);
+    // Sifferikonen.
+    for (const el of allaElement(c)) if (el.tag === 'Icon' && el.settings?.iconSvg) el.settings.iconSvg = ikonSvg(i);
+    const nyId = nyttIdFn();
+    const nyCid = nyUidFn();
+    const ny = { ...structuredClone(orig), id: nyId, cid: nyCid, name: `Section ${c.uid}`, component: JSON.stringify(c), checksum: '', createdAt: nu, updatedAt: nu };
+    sida.pageSections.push(ny);
+    const pos = sida.sectionPosition.map(talText);
+    const idx = pos.indexOf(efterId);
+    if (idx === -1) throw new Error(`utokaPunkter: hittar inte sektionen ${efterId} i sectionPosition.`);
+    pos.splice(idx + 1, 0, talText(nyId));
+    sida.sectionPosition = pos;
+    efterId = talText(nyId);
+    // Platskartan för den nya punkten.
+    const mappa = (uid) => { const ny2 = karta.get(uid); if (!ny2) throw new Error(`utokaPunkter: uid ${uid} fanns inte i ${kalla}-sektionen.`); return ny2; };
+    for (const falt of ['rubrik', 'text', 'knapp']) {
+      const p = perNyckel(`${kalla}.${falt}`);
+      ut.text[`punkt${i}.${falt}`] = { ...p, cid: nyCid, uid: mappa(p.uid) };
+    }
+    const b = platser.bilder[kalla];
+    ut.bilder[`punkt${i}`] = { ...b, cid: nyCid, uids: b.uids.map(mappa), roll: `Punkt ${i} (klon av ${kalla}-sektionen): ${b.roll ?? ''}` };
+    ut.bilder_som_byts = [...(ut.bilder_som_byts ?? []), `punkt${i}`];
+    ut.knappar = [...(ut.knappar ?? []), mappa(perNyckel(`${kalla}.knapp`).uid)];
+  }
+  return ut;
 }
 
 /** Ord som avslöjar ett brand i copyn: namnet (även utan å/ä/ö) och domänen. */
@@ -80,6 +231,24 @@ export function brandOrd(b) {
     ut.add(l.replace(/å|ä/g, 'a').replace(/ö/g, 'o'));
   }
   return [...ut];
+}
+
+/**
+ * Ord som avslöjar KÄLLBUTIKEN i copyn, ur produktlänken: "https://carashell.se/products/x"
+ * → ["carashell.se", "carashell"]. En obrandad sida ska funka i vilken butik som
+ * helst, och källbutiken är sällan en brandprofil (OPS-butikerna har ingen) —
+ * utan det här släppte granskningen "hos CaraShell" rakt igenom (mätt av
+ * sessionen som byggde takskyddets sida 2026-09-16, porterat därifrån).
+ */
+export function butiksOrd(url) {
+  let vard = '';
+  try { vard = new URL(String(url ?? '')).hostname.toLowerCase().replace(/^www\./, ''); } catch { return []; }
+  if (!vard) return [];
+  const delar = vard.split('.');
+  const namn = delar.length >= 2 ? delar[delar.length - 2] : '';
+  const ut = [vard];
+  if (namn.length >= 5 && namn !== 'myshopify') ut.push(namn);
+  return ut;
 }
 
 /** Författarraden i hero: samma HTML som mallen bär. */
@@ -308,18 +477,26 @@ export function priserI(text) {
  * och brandnamn: en obrandad sida får inte nämna någon känd butik i copyn
  * (skriv "vi"/"hos oss"), en brandad får nämna sitt eget brand.
  *
- *   granskaCopy(copy, produkt, platser, { brand: null | 'baverbutiken' | profil, forbjudnaBrand: [profiler] })
+ *   granskaCopy(copy, produkt, platser, { brand: null | 'baverbutiken' | profil, forbjudnaBrand: [profiler],
+ *                                        koncept: 'lagerrensning' | objekt, punkter: 5 | 7 })
  */
-export function granskaCopy(copy, produkt, platser, { brand = null, forbjudnaBrand = null } = {}) {
+export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudnaBrand = null, koncept = STANDARD_KONCEPT, punkter = null } = {}) {
   const fel = [];
   const varningar = [];
+  const k = lasKoncept(koncept);
+  const n = valjPunkter(k, punkter);
+  const platser = platserForPunkter(basPlatser, n);
   const tillatna = [produkt.pris, produkt.jamforpris].filter((x) => x != null && Number.isFinite(Number(x))).map(Number);
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
-  const b = brandProfil(brand);
+  const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const egnaOrd = new Set(brandOrd(b));
-  const stoppord = (forbjudnaBrand ?? kandaBrand().map((id) => brandProfil(id)))
-    .flatMap((p) => brandOrd(p).map((ord) => ({ ord, namn: p.namn, id: p.id })))
-    .filter((x) => !egnaOrd.has(x.ord));
+  // Kända brandprofiler + källbutikens eget namn ur produktlänken (en uttrycklig
+  // forbjudnaBrand-lista vinner och stänger av källbutiksordet också).
+  const kallbutik = forbjudnaBrand == null ? butiksOrd(produkt?.url) : [];
+  const stoppord = [
+    ...(forbjudnaBrand ?? kandaBrand().map((id) => brandProfil(id))).flatMap((p) => brandOrd(p).map((ord) => ({ ord, namn: p.namn, id: p.id }))),
+    ...kallbutik.map((ord) => ({ ord, namn: `källbutiken ${kallbutik[0]}`, id: null })),
+  ].filter((x) => !egnaOrd.has(x.ord));
 
   for (const [nyckel, plats] of Object.entries(platser.text)) {
     const v = lasCopy(copy, nyckel);
@@ -338,11 +515,20 @@ export function granskaCopy(copy, produkt, platser, { brand = null, forbjudnaBra
     if ((plats.form === 'p' || plats.form === 'p-flera') && text.length < 120) varningar.push(`${nyckel}: bara ${text.length} tecken — mallens stycken är 400–900`);
   }
 
-  if (!Array.isArray(copy?.punkter) || copy.punkter.length !== 5) fel.push(`punkter: ska vara exakt 5, är ${Array.isArray(copy?.punkter) ? copy.punkter.length : 0}`);
+  if (!Array.isArray(copy?.punkter) || copy.punkter.length !== n) fel.push(`punkter: ska vara exakt ${n} (${k.kommando}${k.punkter.length > 1 ? `, --punkter ${k.punkter.join('|')}` : ''}), är ${Array.isArray(copy?.punkter) ? copy.punkter.length : 0}`);
   const rubrik = String(copy?.hero?.rubrik ?? '');
   const rubrikPriser = priserI(rubrik);
-  if (produkt.pris != null && !rubrikPriser.includes(Number(produkt.pris))) varningar.push(`hero.rubrik nämner inte priset ${produkt.prisText ?? produkt.pris}`);
-  if (produkt.jamforpris != null && !rubrikPriser.includes(Number(produkt.jamforpris))) varningar.push(`hero.rubrik nämner inte jämförpriset ${produkt.jamforprisText ?? produkt.jamforpris}`);
+  if (k.rubrik.pris && produkt.pris != null && !rubrikPriser.includes(Number(produkt.pris))) varningar.push(`hero.rubrik nämner inte priset ${produkt.prisText ?? produkt.pris}`);
+  if (k.rubrik.jamforpris && produkt.jamforpris != null && !rubrikPriser.includes(Number(produkt.jamforpris))) varningar.push(`hero.rubrik nämner inte jämförpriset ${produkt.jamforprisText ?? produkt.jamforpris}`);
+  if (k.rubrik.period && !/\b(dag|dagar|dygn|vecka|veckor|månad|månader|vinter|sommar|höst|vår|säsong|år)\b/i.test(rubrik)) varningar.push('hero.rubrik saknar testperioden (dagar/veckor/en vinter/en säsong …) — "Vi testade X i N dagar" är hela konceptet');
+  if (k.rubrik.antal) {
+    const ord = { 5: 'fem', 7: 'sju' }[n];
+    if (!new RegExp(`\\b(${n}|${ord})\\b`, 'i').test(rubrik)) varningar.push(`hero.rubrik nämner inte antalet (${n}/${ord}) — "${n} anledningar …" är konceptet`);
+  }
+  for (let i = 1; i <= n; i += 1) {
+    const r = String(copy?.punkter?.[i - 1]?.rubrik ?? '');
+    if (r && !new RegExp(`^\\**\\s*${i}\\.`).test(r)) varningar.push(`punkt${i}.rubrik börjar inte med "${i}." — numreringen är mallens grepp`);
+  }
 
   const tf = copy?.tre_fragor;
   if (!Array.isArray(tf) || tf.length === 0) varningar.push('tre_fragor saknas — tre-frågorstestet ska redovisas (docs/copy-regler.md)');
@@ -396,17 +582,22 @@ export function bytIdn(sida, { nytt = nyttId } = {}) {
  * saknas — hellre stopp än en sida med motorhöljets text kvar i ett hörn.
  *
  *   byggSida({ mall, platser, produkt: { url, kortTitel, slug }, copy, bilder: { punkt1: { src, width, height } … },
- *              datum: 'YYYY-MM-DD', brand: null | 'baverbutiken' | profil, nyaIdn: false, nu: ISO-tid })
+ *              datum: 'YYYY-MM-DD', brand: null | 'baverbutiken' | profil, koncept: 'lagerrensning' | objekt,
+ *              punkter: 5 | 7, nyaIdn: false, nu: ISO-tid })
  *   → { sida, rapport }
  *
  * `brand` utelämnat = obrandad sida (standard). Knapparna pekar på produkt.url —
  * för en annan butik skickar anroparen den butikens produktlänk som url.
+ * `koncept` styr sidnamn/handle/författarrad; `punkter` > 5 klonar sektioner.
  */
-export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = idag(), brand = null, nyaIdn = false, nu = new Date().toISOString() }) {
+export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}, datum = idag(), brand = null, koncept = STANDARD_KONCEPT, punkter = null, nyaIdn = false, nu = new Date().toISOString() }) {
   if (!produkt?.url || !produkt?.kortTitel || !produkt?.slug) throw new Error('byggSida: produkten behöver url, kortTitel och slug.');
-  const b = brandProfil(brand);
+  const k = lasKoncept(koncept);
+  const n = valjPunkter(k, punkter);
+  const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const sida = structuredClone(mall);
-  const rapport = { texter: [], bilder: [], lankar: 0, namn: null, handle: null, brand: { id: b.id, namn: b.namn, forfattare: b.forfattare, logga: !!b.logga } };
+  const platser = utokaPunkter(sida, basPlatser, n, { nu });
+  const rapport = { texter: [], bilder: [], lankar: 0, namn: null, handle: null, koncept: k.id, punkter: n, brand: { id: b.id, namn: b.namn, forfattare: b.forfattare, logga: !!b.logga } };
   const alla = (sida.pageSections ?? []).map((s) => ({ s, c: JSON.parse(s.component) }));
   const perCid = new Map(alla.map(({ s, c }) => [s.cid, c]));
   const element = (cid, uid, tag = null) => {
@@ -438,9 +629,9 @@ export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = id
   const f = platser.fasta?.['hero.forfattare'];
   if (!f) throw new Error('Platskartan saknar fasta["hero.forfattare"].');
   for (const el of element(f.cid, f.uid)) el.settings.text = forfattarHtml(b);
-  const k = platser.fasta?.['sidfot.text'];
-  if (!k) throw new Error('Platskartan saknar fasta["sidfot.text"].');
-  for (const el of element(k.cid, k.uid)) el.settings.text = sidfotHtml(b);
+  const kontakt = platser.fasta?.['sidfot.text'];
+  if (!kontakt) throw new Error('Platskartan saknar fasta["sidfot.text"].');
+  for (const el of element(kontakt.cid, kontakt.uid)) el.settings.text = sidfotHtml(b);
   const logga = platser.bilder?.sidfot;
   if (!logga) throw new Error('Platskartan saknar bilder.sidfot (loggan).');
   for (const uid of logga.uids) for (const el of element(logga.cid, uid, 'Image')) {
@@ -482,8 +673,8 @@ export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = id
     s.updatedAt = nu;
   }
 
-  sida.name = `${produkt.kortTitel} – Lagerrensning (listicle)`;
-  sida.handle = `${produkt.slug}-lagerrensning`;
+  sida.name = konceptText(k.sidnamn, { produkt, n });
+  sida.handle = konceptHandle(k, produkt, n);
   for (const m of sida.meta ?? []) {
     if (m.key === 'global-meta-title') m.value = sida.name;
     if (/^capture_page/.test(String(m.key))) m.value = null;

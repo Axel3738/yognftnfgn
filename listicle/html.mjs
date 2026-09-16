@@ -20,7 +20,7 @@
 // Texterna skrivs med samma regler som .gempages-vägen: htmlAv() escapar allt
 // och gör **fet** till <strong>. Ingen annan HTML släpps igenom från copyn.
 
-import { htmlAv, styckenAv, svensktDatum, lasCopy, allaElement, brandProfil } from './gempages.mjs';
+import { htmlAv, styckenAv, svensktDatum, lasCopy, allaElement, brandProfil, lasKoncept, IKON_STIG } from './gempages.mjs';
 
 const IKONER = {
   1: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM138,80v96a6,6,0,0,1-12,0V91.21L111.33,101a6,6,0,0,1-6.66-10l24-16A6,6,0,0,1,138,80Z',
@@ -28,6 +28,8 @@ const IKONER = {
   3: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm30-66a34,34,0,0,1-58.29,23.79,6,6,0,0,1,8.58-8.39A22,22,0,1,0,124,130a6,6,0,0,1-4.92-9.44L140.48,90H104a6,6,0,0,1,0-12h48a6,6,0,0,1,4.92,9.44l-22.53,32.18A34.06,34.06,0,0,1,158,152Z',
   4: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm32-72H150V80a6,6,0,0,0-10.74-3.68l-56,72A6,6,0,0,0,88,158h50v18a6,6,0,0,0,12,0V158h10a6,6,0,0,0,0-12Zm-22,0H100.27L138,97.49Z',
   5: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM117.08,86l-5,30A36,36,0,0,1,124,114a34,34,0,0,1,0,68,33.6,33.6,0,0,1-24.29-9.8,6,6,0,1,1,8.58-8.4A21.65,21.65,0,0,0,124,170a22,22,0,0,0,0-44,21.65,21.65,0,0,0-15.71,6.2A6,6,0,0,1,98.08,127l6.2-37A6,6,0,0,1,110.2,85H152a6,6,0,0,1,0,12H115.24Z',
+  6: IKON_STIG[6],
+  7: IKON_STIG[7],
 };
 
 const ikon = (n) => `<svg class="lr-ikon" viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="${IKONER[n] ?? IKONER[1]}"/></svg>`;
@@ -112,11 +114,14 @@ export function mallBilder(mall, platser) {
  * fylls: `bilder` (produktens) vinner, `fasta` (mallens) är reserv. Loggan
  * kommer ur brandprofilen, aldrig ur `fasta` — obrandad sida har ingen.
  *
- *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum, brand })
+ *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum, brand, koncept, stil })
+ *   stil: 'inline' (standard — <style> + fragment, för förhandsvisningen) eller
+ *         'ingen' (bara fragmentet — sidans body i butiken, CSS:en ligger i assets/listicle.css)
  */
-export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null }) {
+export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null, koncept = 'lagerrensning', stil = 'inline' }) {
   if (!produkt?.url) throw new Error('renderaHtml: produkten saknar url.');
-  const b = brandProfil(brand);
+  const k = lasKoncept(koncept);
+  const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const bild = (plats) => {
     const b = bilder[plats]?.src ? bilder[plats] : fasta[plats];
     if (!b?.src) throw new Error(`renderaHtml: ingen bild för platsen "${plats}".`);
@@ -153,12 +158,12 @@ export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, bra
 </section>`;
   }).join('\n');
 
-  const html = `<!-- Lagerrensnings-sida: ${htmlAv(namn)} · genererad ${datum} av lagerrensning/bygg.mjs · HTML-version för förhandsvisning; leveransen är .gempages-filen -->
-<style>
+  const html = `<!-- Listicle (${htmlAv(k.id)}): ${htmlAv(namn)} · byggd ${datum} av listicle/bygg.mjs (repot yognftnfgn) -->
+${stil === 'ingen' ? '' : `<style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
 ${CSS}
 </style>
-<div class="lr">
+`}<div class="lr">
 <div class="lr-topp"></div>
 <section class="lr-hero">
   <div class="lr-inre">
