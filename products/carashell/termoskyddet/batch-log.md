@@ -126,11 +126,22 @@ efter ElevenLabs-bytet. Kontroller före: butiken svarade 200 utan `/password`
 `last_fired_time` 2026-09-16 02:58. Sedan sattes **kampanj `120249115376140172`,
 4 adsets (`CARASHELL_SE_PD/G/CS/SP`) och 16 annonser ACTIVE** — namngiven lista,
 alla PAUSED med 0 kr före, tillbakaläst ACTIVE på tre nivåer efter (8 annonser
-`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag. **NO-kampanjen
-`120249115382210172` står kvar PAUSED** — inget "Launch: CARASHELL_NO_…" än.
-Från och med nu: nattvakten (00:57) har något att döma, leveransrundan (14:15)
-laddar upp i SE-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp
-per annons (regel 3).
+`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag.
+
+### LAUNCH NO — 2026-09-16 ~10:50 UTC (12:50 svensk tid)
+
+Axel skrev **"Launch: CARASHELL_NO_Termoskydd Husbil 211 × 171 cm"** en halvtimme
+senare. Kontroll före: `/nb/products/termoskyddet?country=NO` svarar 200 och visar
+548 / 685 NOK med NOK-paketnivåer. Sedan **kampanj `120249115382210172`, 4 adsets
+(`CARASHELL_NO_PD/G/CS/SP`, geo NO) och 16 annonser ACTIVE**, tillbakaläst ACTIVE på
+tre nivåer. CBO 1 000 kr/dag (kontovaluta SEK). ⚠️ Meta rate-limitade kontot
+("User request limit reached", code 17) mitt i — efter uppladdningar + SE-launch
+samma förmiddag; aktiveringen väntade in gränsen (90 s × 5) och gick igenom.
+
+Båda marknaderna live. Från och med nu: nattvakten (00:57) har något att döma,
+leveransrundan (14:15) laddar upp i SE-kampanjen, NO-översättningen (16:15) i
+NO-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp per
+annons (regel 3).
 
 ### Att läsa av första briefdagen
 
