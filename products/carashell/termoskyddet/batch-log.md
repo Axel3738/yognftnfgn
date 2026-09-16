@@ -138,3 +138,67 @@ per annons (regel 3).
 2. Replikerar bilden (PD_2_1) som SP_2_1 gjorde i källan?
 3. Prioritet i briefronden: ett **sant CS-manus** (pris/jämförpris/villkor, ingen
    brådska) och ett **SP-manus med riktigt citat** ur Judge.me-underlaget.
+
+---
+
+## USA-runda 2026-09-16 (`/ny-annonser carashell/termoskyddet` + Axels tillägg "fixa alla till engelska och lägg in dom i den amerikanska kampanjen, i Magiborsten UK") — hela SE-kampanjen på amerikansk engelska
+
+**Källan var Meta, inte Notion.** Hubben "Termoskyddet" har 0 rader (SE-annonserna
+byggdes av `/ny-annonser` direkt ur Bäverbutikens kampanj), så `/ops-oversatt … --marknad
+US` hade inget att läsa. Kön blev SE-kampanjen `120249115376140172` i OPS-kontot: 16
+annonser (12 videor + 4 bilder), alla ACTIVE. Målet: `CARASHELL_US_Termoskydd Husbil
+211 × 171 cm | BE-ROAS 1.61 | 2026-09-16` (`120251442339640435`) i **Magiborsten UK
+`1107817401910319`**, byggd tom och PAUSED av den andra sessionen kl 12:03, CBO 1 000
+kr/dag, adseten `CARASHELL_US_CS/G/PD/SP` (geo US, pixel `28589207184025756`).
+Batchen: `market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` (JSON + skripten
+committade, media dör med containern). `register.mjs annonsmarknader carashell/termoskyddet
+NO,US` inskrivet.
+
+**Butiken som amerikansk kund:** `carashell.com/products/termoskyddet` (USA-marknadens
+egen domän — `carashell.se/en/…?country=US` svarar 301 dit) ger 200, titel "Windshield
+Thermal Cover for Motorhome 211 × 171 cm (83 × 67 in)", **$99.00 / jämförpris $124.00**.
+Annonserna länkar dit direkt.
+
+**Texterna** (Sonnet-subagent ur `docs/copy-regler.md`, produktfilen, butiksfilen och de
+12 svenska manusen; en revisionsrunda): 12 engelska manus med SE-videons cue-tider och
+samma cue-antal, copy per vinkel, bildtexter per bild. Tre-frågorstestet ✅ på alla
+rubriker utom G (falsifierbarheten svag — samma som svenskan). Struket: "5,0 av 5 –
+10 omdömen" (US-antalet overifierat — sidan visar "20 reviews" men Judge.me-importen
+är VA:ns klick), alla emoji, "right of withdrawal" (EU-juridik → "14-day return window").
+Pris bara där svenskan hade pris (CS): "$99, compare at $124". Recensionerna citeras
+med förnamn (Sofia, Per, Lars, Karin) — riktiga rader ur källans Judge.me.
+
+**Videorna:** `dubba.mjs` → `pipeline/omdubb/elevenlabs-omdubb.mjs` med ElevenLabs
+**"Chris - Charming, Down-to-Earth"** (amerikansk, eleven_v3), källa = OPS-kontots
+SE-videor (Bäverbutikens original ger `(#10) permission` på `source`), repliken styr
+klipplängden, engelska captions i bandet 940:1084 (CS_3 880:1084), `rostkoll.py
+--omtajmad` ✅ 12/12, uttalet mätt med Scribe per cue: "CaraShell" skrivs **"Cara Shell"**
+och "Per" **"Pair"** i VO-manuset (captions behåller skriftformen), och `rost-brand.mjs`
+genererade om varje brand-/Per-cue tills Scribe hörde rätt (SP_3 tog fyra försök).
+Engelskan är 15–20 % kortare än svenskan ⇒ videorna 13–19 s, klippen upp till 135 %
+(G_3 två segment 137/142 %). PD-videornas "text ovanför bandet" ögonlästes som det
+silvriga täcket, inte text (`qa/pd-remsor.png`).
+
+**Bilderna:** kie.ai `nano-banana-edit` tog bort källtexten ur tre foton (CS/SP delar
+foto), `rendera.mjs` lade textlagret (`factory/bild-text.py`): CS_2_1 "$99 instead of
+$124" + priskort $99/~~$124~~/−20 % + "Free shipping · 14-day returns"; SP_2_1 Sofias
+citat + ★★★★★; PD_2_1 "No more hot cab, dark in seconds"; G_2_1 "The RV gift they'll
+actually use". QA-bilder tittade på: ingen svenska, rätt siffror.
+
+**Kostnad:** 0 HeyGen-krediter · 3 kie.ai-redigeringar · ElevenLabs ≈ 6 000 tecken
+(inkl. omgenererade cues; kontot 46 924 → 53 245 av 100 022) · Scribe ~40 anrop.
+
+**Meta:** `ladda-upp.mjs` → `tools/ops-till-meta.mjs … --marknad US --kampanj
+120251442339640435 --lank https://carashell.com/products/termoskyddet`, en annons i
+taget (Metas anropstak i UK-kontot: 8 min för första, sedan 30 s, sedan 7–8 min igen).
+Kampanjen rörs aldrig — den står PAUSED tills Axel slår på den; annonserna ACTIVE inuti.
+
+**hypotes (USA-rundan):** samma 16 creatives som SE, samma vinklar, ny marknad och nytt
+pris ($99 ≈ 1,72× SE-priset i kurs). Frågan är inte "vilken vinkel" utan **"köper en
+amerikansk husbilsägare ett 83 × 67-tums skydd från en svensk butik för $99 med
+5–10 dagars frakt?"** — CS bär priset, PD bär mekaniken, SP bär namngivna citat. Första
+avläsning tidigast vid 300 kr spend eller 3 köp per annons (regel 3), och köpen läses ur
+Shopify per produkt (pixeln är delad med takskyddet).
+
+### Räkningen (US) — `node market-expansion/ops/carashell/2026-09-16-us-termoskyddet/tabell.mjs`
+

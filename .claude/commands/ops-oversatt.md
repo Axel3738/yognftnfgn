@@ -27,7 +27,7 @@ beslut 2026-09-11). Byggs av `/notionscalercs setup <butik>`.
 |---|---|---|
 | Konto | MagiBorsten DK `915422744950975` | **Magiborsten UK `1107817401910319`** (Axels beslut 2026-09-16, kontovaluta SEK) |
 | Kampanj | `<PREFIX>_NO_…` | `<PREFIX>_US_…` |
-| Länk | `/nb/products/<handle>?country=NO` | `/en/products/<handle>?country=US` |
+| Länk | `/nb/products/<handle>?country=NO` | `/en/products/<handle>?country=US` — ⚠️ har marknaden en EGEN domän i Shopify Markets (CaraShell: `carashell.com`, mätt 2026-09-16 — `.se/en/…?country=US` svarar 301 dit) ska annonsen peka på den domänen direkt (`--lank`), och priskollen läsas där; kön känner inte domänen än (`factory/FAS2.md`, US-rundan för termoskyddet) |
 | HeyGen | Norwegian Bokmål (Norway) | English (United States) |
 | Språk i copy | bokmål | amerikansk engelska |
 | Pris | `ekonomi.marknadspriser` NOK, annars utan pris | `ekonomi.marknadspriser` USD, annars utan pris |

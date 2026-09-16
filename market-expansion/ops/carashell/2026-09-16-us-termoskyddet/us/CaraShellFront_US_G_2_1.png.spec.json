@@ -1,0 +1,21 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "The RV gift they'll actually use"
+    },
+    {
+      "typ": "underrad",
+      "text": "Picture their face the moment they unwrap it."
+    }
+  ]
+}

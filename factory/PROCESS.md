@@ -784,6 +784,19 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
     två gånger (dubblettspärren mot kontot håller också). Textlager-bilder
     ritas om från basfotot — se `.claude/commands/ops-oversatt.md` steg 3.
 
+19. ⚙️ **USA-marknaden får en egen domän, och pixeln är delad** (mätt 2026-09-16,
+    termoskyddets US-runda). `carashell.com` är USA-marknadens domän i Shopify
+    Markets: `carashell.se/en/products/<handle>?country=US` svarar 301 dit, och
+    `carashell.com/products/<handle>.json` ger USD-priset. Annonserna ska peka
+    på `.com` direkt (`ops-till-meta --lank`), annars går varje klick genom en
+    omdirigering; `lankFor` (`opsmarknader.mjs`) och kön `ops-leveranskon`
+    känner inte domänen än — kön stoppar på "omdirigerar" i priskollen. Lägg
+    marknadens domän i butiksfilen och lär båda den innan `/ops-oversatt …
+    --marknad US` körs på riktigt. Pixeln (punkt 17) är delad: `adspixels` i
+    UK-kontot listar CaraShell, och `issues_info` är tomt på takskyddets fyra
+    US-annonser. Termoskyddets 16 SE-annonser gick till engelska utan Notion —
+    hela vägen står i `factory/FAS2.md` (samma dag, "16 annonser till USA").
+
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
   visar SVENSKA priser för norska kunder.** Fixen i Fas 4 (webbnärvaro +

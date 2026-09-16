@@ -853,3 +853,68 @@ Lärdomarna från de 18 videorna:
   filerna i `bildfix/`, kör `media-upload` + `kampanj.mjs --cbo` — idempotensen på
   namn gör att bara de 9 saknade byggs per marknad. Metas rate limit efter 9
   annonser: kampanjstegets räkning väntar 30 s → 5 min innan den läser tillbaka.
+
+### Samma dag, `/ny-annonser carashell/termoskyddet` med Axels tillägg "fixa alla till engelska och lägg in dom i den amerikanska kampanjen, i Magiborsten UK" — 16 annonser till USA utan Notion-kö (2026-09-16)
+
+Termoskyddets 16 SE-annonser (12 videor + 4 bilder) byggdes av `/ny-annonser` direkt ur
+Meta, så hubben "Termoskyddet" har 0 rader och `/ops-oversatt … --marknad US` hade
+ingenting att läsa. Källan blev **SE-kampanjen i OPS-kontot** (`120249115376140172`,
+läst via Graph), målet den tomma `CARASHELL_US_Termoskydd …` (`120251442339640435`) i
+Magiborsten UK med adseten `CARASHELL_US_CS/G/PD/SP`. Batchen:
+`market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` — `jobb.json` (kön ur
+Meta), `oversatt-output.json` (12 engelska manus med SE-videons cue-tider),
+`adcopy-US.json`, `textlager-us.json`, `dubba.mjs`, `rost-brand.mjs`, `rendera.mjs`,
+`ladda-upp.mjs`, `resultat-*.json`. Lärdomarna:
+
+- **Bäverbutikens originalvideor går inte att hämta** — `GET /<video_id>?fields=source`
+  i MagiBorsten svarar `(#10) Application does not have permission`. OPS-kontots egna
+  videor (SE-versionerna, 720 × 1280) ger `source`. De duger som bildkälla: ElevenLabs-
+  omdubben kastar ljudet och tajmar om klippen, och captionbandet (`940:1084`) täcker
+  SE-versionens vita captionruta. Cue-tiderna tas ur `bildfix-el/<namn>.mp4.srt`
+  (SE-videons tider), inte ur HeyGens `-ny.srt` (källans tider).
+- **Amerikansk röst:** `Chris - Charming, Down-to-Earth` (ElevenLabs, `accent: american`,
+  `use_case: conversational`), eleven_v3. Engelskan är 15–20 % kortare än svenskan, så
+  videon går i **upp till 135 %** (SE-omgången gick i 70 %); G_3 låg två segment över
+  taket (137/142 %) — synligt snabbare klipp, inte ett fel. Skriv engelska manus något
+  längre än svenskan nästa gång, inte kortare.
+- **Uttal mäts med Scribe, och Scribe är också slumpmässigt.** "CaraShell" lästes som
+  "Caroshell"; **"Cara Shell"** i två ord hördes som "Carashell" 8 av 8 i test. Namnet
+  "Per" läses "pur" — **"Pair"** ger det svenska uttalet. `dubba-text.mjs` bär båda
+  formerna: `voText` för rösten, `captionText` tillbaka för captions. Men samma mp3
+  hördes som "Carashell" i ett anrop och "Caroshell"/"Car Shop"/"Carousel" i nästa —
+  därför `rost-brand.mjs`: varje cue med brandet eller "Pair" godkänns först när Scribe
+  hör ordet, annars genereras den om (max 5; SP_3:s fyra-citats-cue tog 4 försök,
+  12 av 12 gröna). Digits ("$99", "83 by 67") och "Sophia"/"rights" är Scribe-stavning,
+  inte fel — filtrerade i jämförelsen.
+- **Röstcachen är nycklad på cue-INDEX, inte på texten.** `--torr` genererar ändå alla
+  mp3:or (kostar tecken), och en textrevision efteråt ger stale cues utan varning. Flytta
+  undan mappen (`mv`, `rm -rf` nekas i sandlådan) innan omkörning.
+- **`no-captions.py`:s "text ovanför bandet" är ett silvertäcke, inte text, på PD.**
+  Flaggan flyttade med bandet (940 → rad 880–936 i 29 % av frames; 860 → rad 800–856 i
+  61 %): det silvriga quiltade skyddet fyller bilden. Ögonläst i `qa/pd-remsor.png`
+  (rad 820–1100 var 1,2 s) — ingen text, `GRANSKAD_OK` i `dubba.mjs`. CS_3 var däremot
+  äkta: SE-versionen fick 885:1084 (tvåradiga källcaptions), så US får `880:1084`.
+- **Bilder:** kie.ai `nano-banana-edit` tog bort källtexten på tre foton (0 fel, ~1 min
+  per bild); CS_2_1 och SP_2_1 delar foto (den rena CS-varianten bär båda, som i SE).
+  `rendera.mjs` lägger `textlager-us.json` med `bild-text.py`; `$99 / $124 / −20%`,
+  "14-day returns" (inte "right of withdrawal" — EU-juridik som en amerikan läser som
+  "utländsk butik"). Siffror ÄR tillåtna i rubriken ("$99 instead of $124") — första
+  briefen förbjöd dem och gav en jargongrubrik ("Below the compare-at price").
+- **US-marknadens domän är `carashell.com`** (Shopify Markets, mätt 10:30 UTC):
+  `carashell.se/en/products/termoskyddet?country=US` svarar **301** dit, och
+  `carashell.com/products/termoskyddet.json` ger 99.00 / 124.00 i USD. Länken i
+  annonserna pekas dit direkt (`--lank`); `lankFor` i `opsmarknader.mjs` bygger
+  fortfarande `.se/en/…?country=US`, och kön `ops-leveranskon` skulle stoppa på
+  "omdirigerar" i priskollen. ⚠️ Nästa körning av `/ops-oversatt carashell/… --marknad
+  US` ärver `.com`-länken ur kampanjens annonser (plockaLank), men priskollen läser
+  fortfarande `.se`-länken — lär kön marknadens egen domän (en rad per marknad i
+  butiksfilen) innan den rutinen körs på riktigt.
+- **Pixeln är delad nu:** `act_1107817401910319/adspixels` listar CaraShell
+  `28589207184025756` (owner_business MagiBorsten), och takskyddets fyra US-annonser
+  har tomt `issues_info` (PENDING_REVIEW) — PROCESS.md punkt 17 är avklarad.
+- **Metas anropstak i UK-kontot:** första uppladdningen tog 8 min (backoff 30 s → 4 min),
+  de två nästa 30 s, den fjärde 7 min igen. Räkna med ~1 h för 16 annonser och kör dem
+  i bakgrunden; kör aldrig två uppladdare parallellt mot samma app.
+- **Räkningen:** `factory/rakning.mjs` känner bara SE/NO (källdomar ur brand-detektorn).
+  För US är facit `jobb.json` (16 rader ur SE-kampanjen) mot `resultat-meta.json` +
+  tillbakaläsning ur kontot — se `products/carashell/termoskyddet/batch-log.md`.
