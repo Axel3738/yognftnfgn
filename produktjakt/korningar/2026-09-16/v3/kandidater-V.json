@@ -1,0 +1,144 @@
+{
+  "agent": "V — ny form på hus och tomt (H10)",
+  "datum": "2026-09-16",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Stenlocket — döljer brunnslocket",
+      "objekt": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+      "form": "dekor",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": null,
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_dekor", "old_way_ingenting", "latent_behov_nej", "noll_friktion (ställs över locket, lyfts av med ett grepp)"],
+        "avvikelser": ["999 kr i stället för 199", "en sten per lock — flerköp bara vid flera brunnar", "stor volym i frakt"]
+      },
+      "sasong": {"fonster_id": null, "deadline_typ": "ingen", "veckor_kvar": null, "timing": "EVERGREEN"},
+      "listning": {
+        "product_id": "1005010672730085",
+        "url": "https://www.aliexpress.com/item/1005010672730085.html",
+        "pris_usd": 36.40,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:46:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010672730085.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "storlek och färg ej läsbara ur titel/sökträff (titeln: 'SucceBuy Faux Rock Cover … Well Pump Cover') — mått ej mätt; syskonlistning 1005012021370312 (USD 58,19, 'Fake Rock Faux Stone … Pump Cover') ej öppnad",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en textfri packshot av en sandfärgad sten mot vit bakgrund — ren men utan gräsmatta/brunnslock; kontextbild måste tas eller genereras (sten på gräs, locket skymtar när den lyfts)"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "gartendek.se (Ihålig falsk konstgjord sten S-01 / S-04, sökutdrag 2026-09-16 — sidan svarade ENOTFOUND i containern)", "pris_sek": 1250, "url": "https://gartendek.se/falsk-sten/", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "gartendek.se Ihålig falsk konstgjord sten S-04 (sökutdrag; M/XL-storlekar har pris som inte gick att läsa)", "pris_sek": 1450, "url": "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-s-04", "i_sortiment": true},
+        "ankare_kvot": 1.45,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["gartendek.se (specialist: S-01 1 250, S-04 1 450 — ur sökutdrag, sidan onåbar)", "amazon.se B09Z5PY146 Backyard X-Scapes 76×71×33 cm (sidan öppnad, pris ej synligt)", "instantgarden.se/collections/sten (bara dekorgrus/singel, ingen falsk sten)", "jula/biltema/clas ohlson/rusta/bauhaus/plantagen/granngården: 0 träffar på konstgjord sten för brunnslock i sökningen"]
+      },
+      "ekonomi": {"landad_sek": [474, 579], "pris_sek": 999, "brutto_sek": [420, 525], "be_cpa_sek": [420, 525], "be_roas": 2.11, "flerkop": false, "returrisk": "medel — kunden måste veta lockets diameter; stenens mått ej mätt"},
+      "meta_tanke": {
+        "hook": "Vad gömmer du under stenen?",
+        "objekt_i_bild": "gräsmattan med brunnslocket — stenen lyfts av och locket syns under",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "en hand lyfter stenen, brunnslocket under — hela produkten är bilden"
+      },
+      "varfor": "Renaste H10-testet i dag: objekt som nästan varje småhus har (brunnslock i gräsmattan), formen finns inte hos någon kedja — bara en specialist (gartendek 1 250–1 450) och Amazon — och heron förstås utan ett ord. Samma struktur som klistermärkena (dekor, ingen friktion, ingenting i dag) men med upplevt värde: stenen ser ut som sitt pris.",
+      "huvudrisk": "Volymfrakt — ihålig glasfibersten är stor och lätt, ×1,5-antagandet för landad kan vara för lågt (ej mätt); mått saknas i titeln så passform mot svenska lock (Ø 40–60 cm) måste bekräftas med leverantören.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 0, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (brunn/sten: 0 träffar)", "koncept.py sok brunn: 0", "fynd.json 09-11…09-15: ej med", "kandidater-K 09-13: ej med"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010672730085.html",
+        "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-s-04",
+        "https://gartendek.se/falsk-sten/ihalig-falsk-konstgjord-sten-for-tradgard-m04",
+        "https://www.amazon.se/Konstgjord-brunnspumpskydd-landskapsdesign-dekoration-glasfiberklippa/dp/B09Z5PY146",
+        "https://instantgarden.se/collections/sten"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Regnfisken vid stupröret",
+      "objekt": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+      "form": "dekor",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_dekor", "latent_behov_nej", "flerkop_ja (ett stuprör per hushörn)"],
+        "avvikelser": ["899 kr i stället för 199", "old way = köpt plåtutkastare som fungerar (250 kr hos kedjan) — inte ingenting", "resin: upplevt värde måste bäras av storleken"]
+      },
+      "sasong": {"fonster_id": "hostregn", "deadline_typ": "höstregn", "veckor_kvar": 3.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010043603476",
+        "url": "https://www.aliexpress.com/item/1005010043603476.html",
+        "pris_usd": 26.19,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:55:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010043603476.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant (grå koi i resin) enligt titel/hero — mått ej mätt; syskonlistning 1005013107770248 (USD 45,59, LIVE, hero: fisken i handen, vit/grå, gapet öppet) är samma koncept i troligen större format",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är ett fabriksgolvsfoto av tre gråa koi-fiskar — textfri men oanvändbar som annons; syskonlistningen 1005013107770248 har en ren packshot i hand (korningar/2026-09-16/v3/bilder/1005013107770248.jpg). Kontextbild krävs: fisken under stuprörets utkast med vatten ur munnen"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Bauhaus/Byggmax/Hornbach (plåtutkastare till stuprör, standardform — inte samma form)", "pris_sek": 250, "url": "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/utkastare/", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — vattenliv.se säljer bronsmålad fisk som springbrunnsfigur (annan användning, pris ej läst); ingen svensk aktör hittad med dekorativ stuprörsutkastare i fiskform", "pris_sek": null, "url": "https://vattenliv.se/produkt-kategori/springbrunnar/figurer-springbrunn", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["bygghemma.se/bauhaus.se/byggmax.se/hornbach.se (utkastare: bara plåt, från ~250 kr)", "vattenliv.se (springbrunnsfigurer, annan funktion)", "websök 'regnfisk / stuprör fisk / koi stuprör dekorativ utkastare': 0 svenska träffar 2026-09-16", "jula/biltema/clas ohlson/rusta/plantagen: 0 träffar i sökningen"]
+      },
+      "ekonomi": {"landad_sek": [341, 417], "pris_sek": 899, "brutto_sek": [482, 558], "be_cpa_sek": [482, 558], "be_roas": 1.73, "flerkop": true, "returrisk": "låg — ställs på marken under utkastet, ingen mätning; passar alla stuprörsdimensioner"},
+      "meta_tanke": {
+        "hook": "Vad gör fisken under stupröret?",
+        "objekt_i_bild": "stuprörets utkast vid husgrunden, fisken under, regnvatten ur munnen",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "vattnet rinner in bak och ut genom gapet — rörelsen är hela annonsen"
+      },
+      "varfor": "H10 på ett objekt varje småhus har (stuprörets utkast) i en form som inte finns i svenskt flöde alls — kedjan har bara plåtutkastaren för 250 kr, som fisken ersätter. Höstregn NOW (3,4 v) ger demon gratis, och flerköp är inbyggt (ett stuprör per hörn).",
+      "huvudrisk": "Upplevt värde: 899 kr för resin (Axels signal 09-09) — priset följer protokollet (landad × 2,4 utan ankare) och kan behöva sänkas till 699 (BE-CPA 282–358); heron i listningen är oanvändbar och mått är ej mätt.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (stuprör/utkast/fisk: 0 träffar)", "koncept.py sok gutter: K0021 stuprörsförlängare (annan form), hängränn: 0", "fynd.json 09-11…09-15: regnkedjan levererad 09-13 (samma objektfamilj, annan form: kedja i rännans utlopp — fisken står under befintligt utkast)", "kandidater-K 09-13: stuprörsförlängare struken (kedjeform) — ej samma sak"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010043603476.html",
+        "https://www.aliexpress.com/item/1005013107770248.html",
+        "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/utkastare/",
+        "https://vattenliv.se/produkt-kategori/springbrunnar/figurer-springbrunn"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Roskragen (vinterkrage för rosor)", "skal": "Enda listningen 1005010106095970 (USD 7,55 i sökträffen) svarade tomt för tredje gången; fyra andra fraser gav bara hund-/kattkragar, snigelkragar och frostdukar. Ingen levande listning."},
+    {"namn": "Solcellslampa till flaggstången (42 LED, 1005011724067658, LIVE, hero sedd)", "skal": "Golv i exakt samma form under vårt pris: Flaggstångsexperten 'Solcellsbelysning' 598,75 kr (läst 2026-09-16); landad 421–515 kräver ≥ 699 för BE-CPA ≥ 190 och ingen billigare listning fanns (fem fraser). Även Amazon.se (Brubaker, Lixada, Gutyan) och Fyndiq har formen."},
+    {"namn": "Belyst husnummer med solcell", "skal": "Kedjan/marknaden har den: megabilligt.se 249 kr (i lager), Fyndiq, SolarSwe, Solhaga, Kivero, Gardora (NordicSign) — sett i svenskt flöde."},
+    {"namn": "Ekorrspärr för fågelmataren (wrap-around, 1005012988291851 LIVE)", "skal": "Fyndiq säljer exakt samma plastform för 238 kr (läst 2026-09-16), plus 2-pack och 14-tums varianter; Amazon.se har kupolformen. Landad 110–153 kräver ≥ 349 — golv under."},
+    {"namn": "Infartsmarkör med solcell och reflex (1005012633782614, LIVE, hero sedd)", "skal": "Kedjan täcker funktionen: Clas Ohlson stolplykta solcell 36-5190, Rusta/Biltema solcellspinnar under 100 kr, reflexsnökäppar hos Jula — formen skiljer bara i reflexen."},
+    {"namn": "Solcellslampor som kläms på hängrännan", "skal": "Clas Ohlson 'Solcellsbelysning för hängrännor' 36-9412 och Biltema 'Solcellslampa staket' 2000054535 — kedjeform."},
+    {"namn": "Extrahandtag för snöskyffeln", "skal": "Har stått på Julas hylla (Hard Head extrahandtag 006343, nu utgången) — sett innan, och verktygstillbehör."},
+    {"namn": "Postlådans snöhuv / mekanisk postflagga / solcellslampa", "skal": "AliExpress gav bara dörrdraperier, bilkapell och reservflaggor till amerikanska brevlådor — ingen listning för svenska postlådor."},
+    {"namn": "Muslist till garageporten", "skal": "AliExpress har bara dörrlister för innerdörrar; kedjan har garageportslist (Jula 024671, Hornbach Tesa) och aluminiumlist med mösskydd finns hos porttillbehörshandeln."},
+    {"namn": "Kinetisk vindsnurra i metall", "skal": "Jula Hard Head vindsnurra 029991 + Fyndiq kinetiska vindskulpturer — sett på hyllan."},
+    {"namn": "Skottkärrepåse för löv", "skal": "Sökningen gav bara trädgårdssäckar (kedjeform, och Trädgårdssäck finns i katalogen)."},
+    {"namn": "Slangkruka (hose hideaway)", "skal": "Ingen AliExpress-listning i frasen; kedjan täcker slangförvaring (Clas Ohlson slanghållare 31-6899, Gardena slangboxar hos Bauhaus)."},
+    {"namn": "Parkeringslaser för garaget", "skal": "US-kontakt/230 V-elektronik, form elektronik 1 vinnare/1 förlorare, och parkeringshjälp finns i elektronikkedjan — inte verifierad vidare."}
+  ]
+}
