@@ -811,3 +811,45 @@ Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är
   Kollen "text ovanför bandet" är en OCR-flagga, inte en dom: titta på `qa-*.png`.
 - **Krediter mätt 2026-09-16:** 7 631 → 7 057 för 21 renderingar à 15–18 s ≈ 27 per
   video (inte 40 som gissat ovan efter de sex första).
+
+### Samma kväll — HeyGen-rösten utbytt mot ElevenLabs med omtajmad video (2026-09-16)
+
+Axel lyssnade på HeyGen-klonen och dömde ut den: "ElevenLabs är bättre — klipp,
+snabbspola eller långsamma ner videoklippen något och klipp bort tomrum i
+voiceovern." Verktyget är `pipeline/omdubb/elevenlabs-omdubb.mjs` (README i mappen).
+Lärdomarna från de 18 videorna:
+
+- **Repliken styr klipplängden, ovillkorligt.** Varje cue får T = replik + 0,25 s
+  (0,6 s sist), och källfilmen fördelas om mellan segmenten inom 70–135 % — ett klipp
+  som är för kort för sin replik **lånar bildrutor av grannklippet**. Första versionen
+  lät videon gå ner till 60 % och rösten fortsätta in i nästa segment: G_1 cue 3
+  (1,7 s klipp, 3,7 s replik) gav två repliker ovanpå varandra. Fångat i torrkörningen,
+  aldrig renderat.
+- **eleven_v3 lägger 0,8–1,3 s paus mellan meningar.** SP_3 cue 1 (fyra citat) blev
+  16,5 s tal för 9,4 s film. Luckor ≥ 0,3 s inne i repliken kläms till ≈ 0,35 s med
+  `silenceremove=stop_periods=-1` (ger 13,5 s). Utan det hade SP-videorna blivit 25 s.
+- **Vad tidslinjen gav:** 83 segment i 18 videor; 32 låg mot gränsen (70 % eller
+  135 %), rösten snabbades 4–12 % i 29 segment. CS/G blev 14–19 s, SP 20–23 s (källan
+  15–17 s). SP-manusen är för långa för sina filmer — hela filmen går i 70–76 %.
+  Nästa gång: max tre citat per SP-manus, eller längre källklipp.
+- **Kolla uttalet med Scribe, inte med örat.** `POST /v1/speech-to-text`
+  (`scribe_v1`, `language_code=sv|no`) per cue-mp3 och ordjämförelse mot manuset
+  fångade fyra riktiga feluttal på 83 cues: "Jämförpris" → "jämför please",
+  "CaraShell" → "Karusell"/"Carakell" (SE, slumpvis — omgenererad cue blev rätt), och
+  **norska sammanskrivna tal:** `hundreogsyttien` (171) lästes som 117 i alla tre SP,
+  `tohundreogelleve` en gång som 220. Skriv norska tal med mellanrum och bindestreck
+  i tiotal+ental: `hundre og sytti-en`, `to hundre og elleve` — provat mot Scribe,
+  rätt tre av tre. Svenska sammanskrivna tal ("femhundrafemtionio") lästes rätt.
+- **`rostkoll.py --omtajmad`:** längddriften är förväntad när videon är omklippt med
+  flit och blir en notering med siffran; tyst spår, avhugget slut och tappat tal mäts
+  som vanligt (`--kallsrt` = HeyGen-cue-filen ger taltappet). 18 av 18 gröna.
+- **Kostnad:** 0 HeyGen-krediter. ElevenLabs ≈ 4 800 tecken för de 18 manusen plus
+  ≈ 900 för omgenererade cues (kontot stod på 46 924 av 100 022 efteråt, tier
+  creator); Scribe-anropen är gratis i tid men räknas på kontots STT-kvot. En
+  omrendering ur cachen kostar 0 tecken — mp3:orna ligger i `bildfix-el/vo/<namn>/`,
+  radera en cue-fil så genereras bara den om.
+- **Byte i Meta utan ny kampanj:** radera de gamla annonserna (PAUSED, 0 kr — spend
+  läst före varje `DELETE`), ta bort posterna ur `media-i-malkontot*.json`, lägg
+  filerna i `bildfix/`, kör `media-upload` + `kampanj.mjs --cbo` — idempotensen på
+  namn gör att bara de 9 saknade byggs per marknad. Metas rate limit efter 9
+  annonser: kampanjstegets räkning väntar 30 s → 5 min innan den läser tillbaka.

@@ -79,6 +79,45 @@ Röstkoll: 19 av 19 renderingar gröna efter en omrendering (SE CS_1). ⚠️ Gr
 mätbara fel" — ingen människa har lyssnat. CS_3 och CS_2 (SE) bär källans köp och ska
 lyssnas på före Launch.
 
+### Omgång 3 samma dag — ElevenLabs-röst i stället för HeyGen-klonen (2026-09-16 kväll)
+
+Axel lyssnade på HeyGen-rösten och dömde ut den: *"ElevenLabs är bättre — klipp,
+snabbspola eller långsamma ner videoklippen något och klipp bort tomrum i voiceovern."*
+De 18 CS/G/SP-videorna (9 SE + 9 NO) dubbades om med
+`pipeline/omdubb/elevenlabs-omdubb.mjs`: samma 18 manus som HeyGen-omgången
+(`factory/output/termoskyddet/omdubb/heygen-cues/*-ny.srt`, texten orörd — bara två
+norska siffror omstavade, se nedan), en ElevenLabs-replik per cue, luckorna inne i
+repliken ihopklämda, och **videon omtajmad per klipp (70–135 %) så repliken styr
+klipplängden**. Ingen musik — källans ljud kastades. PD-videorna och bilderna rördes inte.
+
+| | SE | NO |
+|---|---|---|
+| Röst (eleven_v3) | `Martin - Warm, Confident and Relatable` (repots "Svensk Martin") | `Martin - Clear and Comforting` (norsk, Oslo — fanns redan på kontot) |
+| CS_1 / CS_2 / CS_3 | 16,5 / 17,5 / 19,1 s (källa 15,9 / 16,0 / 15,7) | 16,2 / 19,0 / 17,9 s (källa 16,2 / 16,2 / 16,0) |
+| G_1 / G_2 / G_3 | 16,7 / 18,6 / 19,5 s (källa 15,3 / 15,4 / 16,2) | 14,4 / 17,1 / 17,5 s (källa 15,6 / 15,8 / 16,5) |
+| SP_1 / SP_2 / SP_3 | 21,6 / 22,8 / 23,2 s (källa 16,4 / 16,9 / 16,7) | 20,3 / 21,8 / 22,8 s (källa 16,7 / 17,2 / 17,0) |
+
+SP-videorna blev längst: manusen bär tre–fyra citat och ElevenLabs läser dem i
+~14 tecken/s, så hela filmen går i 70–76 % även med ihopklämda luckor. CS/G ligger
+16–19 s.
+
+**Kontroller:** `rostkoll.py --omtajmad` grönt på 18 av 18 (längddriften är förväntad
+och blir en notering). Varje cue transkriberades dessutom med ElevenLabs Scribe och
+jämfördes med manuset — det fångade fyra riktiga feluttal som genererades om: SE CS_1
+"Jämförpris" (hördes "jämför please") och "CaraShell" ("Karusell"), SE SP_1
+"CaraShell" ("Carakell"), och i alla tre norska SP: "hundreogsyttien" lästes som 117
+och "tohundreogelleve" en gång som 220 — omstavade till `hundre og sytti-en` /
+`to hundre og elleve` i de tre `-ny.srt` (samma tal, säkert uttal). Captions med
+`no-captions.py` (band 956:1084 automatiskt; SE CS_3 885:1084), QA-bilder tittade
+på: ingen svensk/norsk text kvar utanför bandet.
+
+**Meta:** de 18 gamla HeyGen-annonserna raderade (alla PAUSED, 0 kr spend, läst
+före varje radering), 18 nya laddade upp och byggda i **samma** kampanjer.
+`rakning.mjs` KLART 16/16 + 16/16, trippelkoll 0 avvikelser (konto
+`915422744950975`, sida `1381171778405935`, pixel `28589207184025756`, CBO 1 000 kr,
+alla 32 annonser PAUSED). ⚠️ Fortfarande ingen människa som lyssnat på alla —
+CS_3 skickades till Axel i chatten, CS_2 ska också lyssnas på före Launch.
+
 ### Att läsa av första briefdagen
 
 1. Får PD köp alls när den slipper konkurrera med CS i en CBO?

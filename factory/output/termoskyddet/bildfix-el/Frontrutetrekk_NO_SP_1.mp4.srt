@@ -1,15 +1,15 @@
 1
-00:00:00,179 --> 00:00:02,019
+00:00:00,000 --> 00:00:09,536
 Sofia skriver: beskytter godt og mørklegger fint. Frontrutetrekket sitter utenpå ruta og holder kulden ute. Kjøligere inne, ingen innsyn, mørkt hele natten.
 
 2
-00:00:02,440 --> 00:00:07,779
+00:00:09,786 --> 00:00:11,916
 Per skriver: veldig fornøyd.
 
 3
-00:00:07,819 --> 00:00:09,319
+00:00:12,166 --> 00:00:17,210
 Anders skriver: god kvalitet og lett å bruke. Passer to hundre og elleve ganger hundre og sytti-en centimeter.
 
 4
-00:00:09,380 --> 00:00:16,139
+00:00:17,460 --> 00:00:19,680
 Frontrutetrekk til bobil fra CaraShell.

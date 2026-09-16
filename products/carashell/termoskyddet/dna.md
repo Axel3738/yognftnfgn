@@ -120,8 +120,14 @@ bör bygga på den raden, inte på "prisfall".
 4. **De nio CS/SP/G-videorna per marknad omdubbades samma kväll** (HeyGen, nytt manus
    per vinkel av sonnet-subagent med copy-reglerna, proofread → apply-srt → render,
    `rostkoll.py` grönt på alla, ny captionbana med `no-captions.py`). Manusen ligger i
-   `factory/output/termoskyddet/omdubb/{se,no}/`. Rösten är HeyGens klon av källans —
-   ingen människa har lyssnat.
+   `factory/output/termoskyddet/omdubb/{se,no}/`.
+   **Samma kväll bytt till ElevenLabs** (Axel lyssnade på HeyGen-klonen och dömde ut
+   den): samma manus (`omdubb/heygen-cues/*-ny.srt`), rösten `Martin - Warm, Confident
+   and Relatable` (SE) resp. `Martin - Clear and Comforting` (NO, norsk), ingen musik,
+   och **videon omtajmad per klipp** med `pipeline/omdubb/elevenlabs-omdubb.mjs` så
+   repliken styr klipplängden. Videorna är 0–7 s längre än källan (SP 20–23 s, CS/G
+   16–19 s). Alla 18 är annonserna som ligger i kampanjerna nu (de 18 HeyGen-annonserna
+   raderades, PAUSED/0 kr). Uttalet är maskinkollat (Scribe mot manus), inte lyssnat.
 5. **Copyn (PD, G) kopierades ordagrant** — bara länken byttes.
 6. **Priset rördes inte.** 559 / 932 kr. Norge: 548 / 685 NOK (fast pris i prislistan).
 
