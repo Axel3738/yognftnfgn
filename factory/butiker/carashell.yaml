@@ -73,6 +73,9 @@ butik:
     - "vindrutan"
     - "imma"
     - "rastplats"
+    # Varumärkesstrippen under köpknappen — stod kvar på svenska på /en
+    # 2026-09-16 utan att kundvyn såg det (ordet fanns inte i listan).
+    - "Svenskt varumärke"
     # "taket" och "fukt" stavas lika på norska — som markörer ger de bara
     # falska larm (mätt 2026-09-10 på /nb: "Beskytt taket", "fukttesten").
   # Sortimentskollektionen — butiken bär TVÅ produkter sedan 2026-09-16

@@ -314,6 +314,32 @@ test('hårdkodad icon-with-text plockas bort ur produktmallen', () => {
   assert.deepEqual(ut.sections.main.block_order, ['price', 'opf_svensk']);
 });
 
+test('opf_svensk skrivs om ur dagens språk även när blocket redan finns (CaraShell /en 2026-09-16)', () => {
+  // Ett block byggt när butiken bara hade nb: ingen en-gren.
+  const gammal = "{% if request.locale.iso_code == 'nb' %}<div>Svensk merkevare</div>{% else %}<div>Svenskt varumärke</div>{% endif %}";
+  const original = JSON.stringify({
+    sections: {
+      main: {
+        type: 'main-product',
+        blocks: {
+          price: { type: 'price', settings: {} },
+          opf_svensk: { type: 'custom_liquid', settings: { custom_liquid: gammal } },
+          ms_delivery: { type: 'custom_liquid', settings: { custom_liquid: '' } },
+        },
+        block_order: ['price', 'opf_svensk', 'ms_delivery'],
+        settings: {},
+      },
+    },
+    order: ['main'],
+  });
+  const ut = JSON.parse(byggProduktTemplate(original));
+  const liquid = ut.sections.main.blocks.opf_svensk.settings.custom_liquid;
+  assert.ok(liquid.includes("== 'en' %}") && liquid.includes('Swedish brand'), 'en-grenen ska finnas efter omskrivningen');
+  assert.ok(liquid.includes('Svensk merkevare') && liquid.includes('Svenskt varumärke'));
+  // Platsen behålls — blocket flyttar inte när det redan finns.
+  assert.deepEqual(ut.sections.main.block_order, ['price', 'opf_svensk', 'ms_delivery']);
+});
+
 // --- Köprutans JS: varukorgsbuggen 2026-09-09 ------------------------------
 // Buggen kostade riktiga pengar på två butiker som stod live. Testerna finns
 // för att den inte ska kunna smyga tillbaka via en ny bas-zip eller en klon.

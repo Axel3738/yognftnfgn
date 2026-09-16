@@ -730,6 +730,41 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    land, `/nb` = NO, `/en` = US) — deterministiskt oavsett var koden körs,
    och det är dessutom exakt vad `/ny-marknad` steg 7 vill se. Gäller QA:n i
    `ops.mjs` också (samma kctx).
+15. ⚙️ **Varumärkesstrippen (`opf_svensk`) fick aldrig sin en-gren.** Blocket
+   var "idempotent — finns det rörs inget", så en butik som fick ett språk i
+   efterhand behöll bara nb-grenen: `/en/products/takskyddet` visade
+   "🇸🇪 Svenskt varumärke – framtaget för svenska hem" (läst som amerikansk
+   kund 2026-09-16, efter att Axel bett mig läsa sidan som amerikan).
+   Kundvyn såg det inte — orden stod inte i `markorer_sv`. Rättat: blocket
+   skrivs om ur dagens språk varje `--igen tema` (platsen behålls), test i
+   `tema.test.mjs`, "Svenskt varumärke" som markör i CaraShells butiksfil.
+   Engelskan byttes samtidigt till "Swedish brand – designed for Scandinavian
+   conditions" — "Scandinavian homes" lät fel för ett taköverdrag.
+16. 🖐 **Amerikanens tvekan — läst 2026-09-16 på `/en` som US-kund, Axels
+   fråga "vad hade fått dig att tveka".** Kvar efter fixarna ovan, i
+   fallande ordning; alla är ägarbeslut:
+   - **Domänen `.se` och `hello@carashell.se`** — det första en amerikan ser.
+     `carashell.com` var ledigt 2026-09-10 (BRAND.md); Shopify Markets kan
+     ge USA-marknaden en egen domän.
+   - **"14-day right of withdrawal under Swedish law"** står fem gånger
+     (USP-rad, marquee, FAQ, garanti). EU-juridiska ord; amerikanen läser
+     "utländsk butik, krångligt". Samma substans går att säga som "14-day
+     return policy" i USP/marquee och behålla "under Swedish law" på
+     policysidorna. Returfrakt till Sverige på kundens bekostnad står i
+     returpolicyn — dyrt för en amerikan.
+   - **Storleken:** 21.3 × 9.8 ft "covers the whole roof surface" — de flesta
+     amerikanska travel trailers och motorhomes är 25–40 ft. Titeln lovar
+     mer än måtten håller; "for rigs up to 21 ft" i titel/USP är sant och
+     spar returer.
+   - **Tull:** "Ships from Sweden" + "Free shipping to the US" — USA tog
+     bort tullfriheten för småpaket 2025, så kunden kan få en avgift vid
+     dörren om frakten inte är DDP. Fråga leverantören vem som betalar och
+     skriv det på sidan.
+   - **Recensionerna:** svenska namn + svensk/norsk text tills Judge.me
+     översatt (48 h); "16 recensioner" i badgen är Judge.mes egen text och
+     byter språk när widgeten synkat.
+   - Bara mejl, inget telefonnummer; "Taxes included" är ovanligt i USA men
+     inte fel (Axels beslut: inget påslag).
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och

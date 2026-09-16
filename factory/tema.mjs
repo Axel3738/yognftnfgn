@@ -34,7 +34,10 @@ const TEMAORD = {
   svensk_signal: {
     sv: '<strong>Svenskt varumärke</strong> – framtaget för svenska hem',
     nb: '<strong>Svensk merkevare</strong> – laget for nordiske hjem',
-    en: '<strong>Swedish brand</strong> – designed for Scandinavian homes',
+    // "designed for Scandinavian homes" lät fel på en amerikansk sida för ett
+    // taköverdrag (CaraShell /en 2026-09-16) — "conditions" är sant för varje
+    // OPS-produkt (såld för nordiskt klimat) och läses som kvalitet i USA.
+    en: '<strong>Swedish brand</strong> – designed for Scandinavian conditions',
   },
   leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery' },
   leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days' },
@@ -723,16 +726,23 @@ export function byggProduktTemplate(befintlig, { produkt = null, produkter = [],
   }
 
   // Svenskt varumärke-signalen in efter trust-raden (eller sist bland
-  // blocken om trust-raden saknas). Idempotent — finns blocket rörs inget.
+  // blocken om trust-raden saknas). Blocket är helt fabriksägt, så dess
+  // Liquid skrivs om VARJE gång ur dagens språk — platsen behålls. Till
+  // 2026-09-16 rördes ett befintligt block aldrig: CaraShell fick USA i
+  // efterhand och strippen på /en stod kvar med bara nb-grenen, alltså
+  // "Svenskt varumärke – framtaget för svenska hem" på engelska sidan (läst
+  // som amerikansk kund). Samma läxa som ms-paket (patchaMsPaket).
   const huvud = sektioner.main;
-  if (huvud?.blocks && !huvud.blocks.opf_svensk) {
+  if (huvud?.blocks) {
     const blocks = {
       ...huvud.blocks,
-      opf_svensk: { type: 'custom_liquid', settings: { custom_liquid: SVENSK_SIGNAL } },
+      opf_svensk: { ...(huvud.blocks.opf_svensk ?? {}), type: 'custom_liquid', settings: { ...(huvud.blocks.opf_svensk?.settings ?? {}), custom_liquid: SVENSK_SIGNAL } },
     };
     const ordningMain = [...(huvud.block_order ?? [])];
-    const efterTrust = ordningMain.indexOf('ms_trust');
-    ordningMain.splice(efterTrust === -1 ? ordningMain.length : efterTrust + 1, 0, 'opf_svensk');
+    if (!ordningMain.includes('opf_svensk')) {
+      const efterTrust = ordningMain.indexOf('ms_trust');
+      ordningMain.splice(efterTrust === -1 ? ordningMain.length : efterTrust + 1, 0, 'opf_svensk');
+    }
     sektioner.main = { ...huvud, blocks, block_order: ordningMain };
   }
 

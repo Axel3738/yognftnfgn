@@ -43,8 +43,7 @@
         "sections/header-group.json",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
       "upsell": "termoskyddet"
@@ -241,7 +240,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T09:05:51.104Z"
+    "tid": "2026-09-16T09:47:24.470Z"
   },
-  "uppdaterad": "2026-09-16T09:05:51.104Z"
+  "uppdaterad": "2026-09-16T09:47:24.470Z"
 }
