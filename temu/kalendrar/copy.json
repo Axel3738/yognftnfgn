@@ -325,7 +325,7 @@
     "losningOgonbryn": "Lösningen",
     "losningH": "En cocktailkalender, inte en barnkalender",
     "losningP": "Kalenderaskens 24 numrerade luckor hör ihop med 24 platta cocktailflaskor i akryl – Martini, Mojito, Negroni och fler namn tryckta på var och en. Alla har en liten metallögla, så de går rakt upp i granen, fönstret eller hemmabaren. Helt utan alkohol: det är ren dekoration, inget att dricka, så den funkar lika bra som kontorspynt som hemma i vardagsrummet.",
-    "losningBild": "adventlane-cocktail-2.jpg",
+    "losningBild": null,
     "funktionerH": "Det här får du",
     "checkmarks": [
       "En ny cocktailflaska att hänga upp varje dag fram till julafton – 24 olika namn, från Martini till Negroni.",
@@ -373,12 +373,10 @@
       "julklapp"
     ],
     "galleri": [
-      "adventlane-cocktail-1.png",
-      "adventlane-cocktail-2.jpg"
+      "adventlane-cocktail-1.png"
     ],
     "alt": {
-      "adventlane-cocktail-1.png": "Cocktailkalender: mörkblå ask med ett grönt cocktailglas på framsidan, tolv flaskor till vänster om asken och tolv i en rad under den",
-      "adventlane-cocktail-2.jpg": "Kalenderasken med luckorna numrerade 1–24 bredvid de tjugofyra flaskorna, upphängda i sex rader om fyra"
+      "adventlane-cocktail-1.png": "Cocktailkalender: mörkblå ask med ett grönt cocktailglas på framsidan, tolv flaskor till vänster om asken och tolv i en rad under den"
     }
   },
   "ishockey": {
