@@ -127,17 +127,22 @@ export function skarmdump(indexFil, utFil, { bredd, hojd, chrome = CHROME }) {
   return { ok: true };
 }
 
-export async function forhandsvisa(handle, { baraHtml = false, logg = console.log, htmlFil = null, mapp = null, koncept = 'lagerrensning' } = {}) {
+/**
+ * `undermapp` = var skärmdumparna hamnar (standard "forhandsvisning"; en
+ * marknadsversion får "forhandsvisning-en" så den svenska inte skrivs över),
+ * `lang` = dokumentets språk (html lang).
+ */
+export async function forhandsvisa(handle, { baraHtml = false, logg = console.log, htmlFil = null, mapp = null, koncept = 'lagerrensning', undermapp = 'forhandsvisning', lang = 'sv' } = {}) {
   mapp = mapp ?? join(HAR, 'output', koncept, handle);
   // Utan angiven fil: den nyaste förhandsvisnings-HTML:en i mappen (inte *.sida.html — det är butikens body utan CSS).
   const fil = htmlFil ?? (() => { const f = readdirSync(mapp).filter((x) => x.endsWith('.html') && !x.endsWith('.sida.html')).sort().pop(); return f ? join(mapp, f) : null; })();
   if (!fil) throw new Error(`Ingen *.html i ${mapp} — kör bygg.mjs först.`);
   const fragment = readFileSync(fil, 'utf8');
-  const fvMapp = join(mapp, 'forhandsvisning');
+  const fvMapp = join(mapp, undermapp);
   logg(`Förhandsvisning: ${fvMapp}`);
   const lokal = await lokalisera(fragment, fvMapp, { logg });
   const index = join(fvMapp, 'index.html');
-  writeFileSync(index, somDokument(lokal, { titel: basename(fil) }));
+  writeFileSync(index, somDokument(lokal, { titel: basename(fil), lang }));
   const ut = { index, desktop: null, mobil: null };
   if (baraHtml) return ut;
   const pw = await medPlaywright(index, fvMapp, { logg });

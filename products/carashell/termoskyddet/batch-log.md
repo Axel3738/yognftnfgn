@@ -251,3 +251,15 @@ popup 2026-08-28". Läst tillbaka som kund utan header/footer/meny. Filerna:
 Regeln, som för takskyddet: en produkt i två butiker får två sidor med varsin
 produktlänk. OPS-kontots annonser pekar på CaraShell-sidan, MagiBorstens på
 Bäverbutikens — aldrig korsvis, då bokförs köpen på fel pixel.
+
+**USA-versionen på carashell.com, 2026-09-16 sent på kvällen:**
+**https://carashell.com/pages/termoskydd-husbil-211-171-cm-lagerrensning?country=US**
+— samma sida med en engelsk översättning (`--marknad US`), inte en ny sida.
+Copyn `copy.en.json` mot den engelska produktsidan: **$99 / $124** (USD ur
+carashell.com), "windshield thermal cover", 86 °F i stället för trettio grader
+(sidans egen siffra), four a.m., rest area, flaps clip into the door frame,
+90-day guarantee, free shipping to the US. Samma bilder, noll credits.
+Knapparna → `https://carashell.com/products/termoskyddet?country=US`. Läst
+tillbaka på carashell.com på engelska; carashell.se `?country=SE` svenska.
+Den svenska CaraShell-sidans filer ligger nu också på `main`-grenen härifrån
+(hämtade från `claude/dreamy-carson-rejnmn`, samma innehåll).

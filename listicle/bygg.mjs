@@ -13,6 +13,9 @@
 // Flaggor: --koncept lagerrensning|vi-testade|anledningar (standard lagerrensning)
 //          --punkter 5|7           bara /anledningar tillåter 7 (sektionerna klonas)
 //          --butik <id>            baverbutiken (standard när länken är baverbutiken.se) eller ett OPS-id (carashell …)
+//          --marknad <KOD>         samma sida på en annan MARKNAD i samma butik (US = carashell.com, engelska, USD):
+//                                  copyn ur copy.<locale>.json, priset ur marknadens egen produktsida, sidan får en
+//                                  ÖVERSÄTTNING (Translations API) — ingen dubblettsida. Kräver att den svenska sidan finns.
 //          --opublicerad           sidan skapas men visas inte för kunder
 //          --lank <url|/products/x> knapparnas länk (standard: /products/<handle> i butiken — OPS-handlen slås upp ur factory/produkter/)
 //          --brand <id>            brandad sida (listicle/brand/<id>.json) — standard är OBRANDAD
@@ -34,17 +37,18 @@ import { join, dirname, resolve } from 'node:path';
 import { hamtaProdukt } from './produkt.mjs';
 import {
   lasMall, byggSida, granskaCopy, copyUrMall, tillGempages, urGempages, granskaChecksummor, lasAvSida, idag,
-  brandProfil, kandaBrand, lasKoncept, valjPunkter, konceptText, konceptHandle, platserForPunkter, kandaKoncept,
+  brandProfil, kandaBrand, lasKoncept, valjPunkter, konceptText, konceptHandle, platserForPunkter, kandaKoncept, htmlAv, styckenAv,
 } from './gempages.mjs';
 import { granskaBildplan, losBilder } from './bilder.mjs';
 import { renderaHtml, mallBilder } from './html.mjs';
 import { forhandsvisa } from './forhandsvisning.mjs';
-import { arBaverbutiken, BAVERBUTIKEN } from './butik.mjs';
+import { arBaverbutiken, BAVERBUTIKEN, marknadForButik, marknadsProduktLank, marknadsSidlank } from './butik.mjs';
+import { sprakFor, konceptForSprak } from './sprak.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..');
 export const OUTPUT_MAPP = join(HAR, 'output');
-const FLAGGOR_MED_VARDE = ['--copy', '--bildplan', '--ut', '--datum', '--igen', '--kolla', '--brand', '--lank', '--koncept', '--punkter', '--butik'];
+const FLAGGOR_MED_VARDE = ['--copy', '--bildplan', '--ut', '--datum', '--igen', '--kolla', '--brand', '--lank', '--koncept', '--punkter', '--butik', '--marknad'];
 
 function arg(argv, namn) {
   const i = argv.indexOf(namn);
@@ -107,39 +111,77 @@ export function valjButik(argv, produktUrl) {
   try { return /(^|\.)baverbutiken\.se$/.test(new URL(produktUrl).host) ? BAVERBUTIKEN : null; } catch { return null; }
 }
 
-async function underlag(lank, { torr = false, koncept, n } = {}) {
+const produktSammandrag = (p) => ({
+  titel: p.titel, kortTitel: p.kortTitel, handle: p.handle, url: p.url, typ: p.typ, valuta: p.valuta,
+  pris: p.pris, jamforpris: p.jamforpris, prisText: p.prisText, jamforprisText: p.jamforprisText,
+  flerPriser: p.flerPriser, alternativ: p.alternativ, antalVarianter: p.varianter.length,
+  bilder: p.bilder.map((b, i) => ({ index: i + 1, src: b.src, width: b.width, height: b.height })),
+  beskrivning: p.beskrivning,
+});
+
+/**
+ * Produktfakta ur butiken → underlag.json (svenska) eller underlag.<locale>.json
+ * (en marknad). Med `marknad` läses produkten DESSUTOM från marknadens egen
+ * adress (carashell.com/products/x?country=US → USD-priser, engelsk text) —
+ * det är den copyn skrivs mot. Spärr: svarar marknadens adress med samma tal
+ * som den svenska sidan i en annan valuta är domänen inte kopplad till
+ * marknaden, och priset på sidan hade blivit fel.
+ */
+async function underlag(lank, { torr = false, koncept, n, marknad = null } = {}) {
   const produkt = await hamtaProdukt(lank);
   const mapp = join(OUTPUT_MAPP, koncept.id, produkt.handle);
   const dna = hittaDna(produkt.handle);
   const ut = {
     hamtat: new Date().toISOString(),
     koncept: koncept.id, kommando: koncept.kommando, punkter: n,
-    produkt: {
-      titel: produkt.titel, kortTitel: produkt.kortTitel, handle: produkt.handle, url: produkt.url, typ: produkt.typ,
-      pris: produkt.pris, jamforpris: produkt.jamforpris, prisText: produkt.prisText, jamforprisText: produkt.jamforprisText,
-      flerPriser: produkt.flerPriser, alternativ: produkt.alternativ, antalVarianter: produkt.varianter.length,
-      bilder: produkt.bilder.map((b, i) => ({ index: i + 1, src: b.src, width: b.width, height: b.height })),
-      beskrivning: produkt.beskrivning,
-    },
+    produkt: produktSammandrag(produkt),
     dna,
     sidhandle: konceptHandle(koncept, produkt, n),
   };
+  let marknadsProdukt = null;
+  if (marknad) {
+    const mLank = marknadsProduktLank(marknad, produkt.handle);
+    marknadsProdukt = await hamtaProdukt(mLank, { valuta: marknad.valuta });
+    if (marknad.valuta !== produkt.valuta && marknadsProdukt.pris === produkt.pris && (marknadsProdukt.jamforpris ?? null) === (produkt.jamforpris ?? null)) {
+      throw new Error(`${mLank} gav samma tal som den svenska sidan (${produkt.prisText}) — marknaden ${marknad.kod} svarar inte i ${marknad.valuta}. Är ${marknad.doman} kopplad till marknaden ${marknad.namn} i Shopify (Inställningar → Marknader)?`);
+    }
+    ut.marknad = { kod: marknad.kod, locale: marknad.locale, valuta: marknad.valuta, doman: marknad.doman, lank: mLank, sidlank: marknadsSidlank(marknad, ut.sidhandle), produkt: produktSammandrag(marknadsProdukt) };
+  }
   if (!torr) {
     mkdirSync(mapp, { recursive: true });
-    writeFileSync(join(mapp, 'underlag.json'), JSON.stringify(ut, null, 2) + '\n');
+    writeFileSync(join(mapp, marknad ? `underlag.${marknad.locale}.json` : 'underlag.json'), JSON.stringify(ut, null, 2) + '\n');
   }
-  return { produkt, ut, mapp };
+  return { produkt, marknadsProdukt, ut, mapp };
+}
+
+/** --marknad <KOD> → marknaden ur butiksfilen, eller null. Kräver en butik (OPS-id). */
+function valjMarknad(argv, butik) {
+  const kod = arg(argv, '--marknad');
+  if (!kod) return null;
+  if (!butik) throw new Error(`--marknad ${kod} kräver en butik med marknader: skriv --butik carashell (eller ett annat OPS-id).`);
+  return marknadForButik(butik, kod);
 }
 
 async function bygg(lank, argv) {
   const torr = argv.includes('--torr');
   const koncept = lasKoncept(arg(argv, '--koncept') ?? undefined);
   const n = valjPunkter(koncept, arg(argv, '--punkter'));
-  const { produkt, ut: underlagObj, mapp } = await underlag(lank, { torr, koncept, n });
+  // Butiken ur flaggan eller länken — före underlaget, för marknaden hänger på butiken.
+  const butik = valjButik(argv, lank);
+  const marknad = valjMarknad(argv, butik);
+  const locale = marknad?.locale ?? 'sv';
+  const sprak = sprakFor(locale);
+  const kSprak = konceptForSprak(koncept, locale);
+  const { produkt, marknadsProdukt, ut: underlagObj, mapp } = await underlag(lank, { torr, koncept, n, marknad });
+  // Sidan byggs ur marknadens produkt (pris i marknadens valuta, titel på marknadens
+  // språk) men med den svenska sidans handle/slug — det är samma sida som översätts.
+  const sidProduktBas = marknad ? { ...marknadsProdukt, handle: produkt.handle, slug: produkt.slug } : produkt;
   const { mall, platser: basPlatser, manifest } = lasMall();
   const platser = platserForPunkter(basPlatser, n);
-  const copyFil = arg(argv, '--copy') ?? join(mapp, 'copy.json');
-  const planFil = arg(argv, '--bildplan') ?? join(mapp, 'bildplan.json');
+  const sprakFil = (namn, ext) => join(mapp, marknad ? `${namn}.${locale}.${ext}` : `${namn}.${ext}`);
+  const copyFil = arg(argv, '--copy') ?? sprakFil('copy', 'json');
+  // Bildplanen delas med den svenska sidan om marknaden inte har en egen (bildplan.<locale>.json).
+  const planFil = arg(argv, '--bildplan') ?? (marknad && existsSync(sprakFil('bildplan', 'json')) ? sprakFil('bildplan', 'json') : join(mapp, 'bildplan.json'));
   const cacheFil = join(mapp, 'bilder.json');
   const datum = arg(argv, '--datum') ?? idag();
   const igen = (arg(argv, '--igen') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -147,17 +189,18 @@ async function bygg(lank, argv) {
   const utanPublicering = argv.includes('--utan-publicering');
 
   // Butiken och knapparna. Obrandad sida som standard (Axels beslut 2026-09-16).
-  const brand = brandProfil(arg(argv, '--brand'), { forfattareObrandad: koncept.forfattare_obrandad });
-  const butik = valjButik(argv, produkt.url);
+  const brand = brandProfil(arg(argv, '--brand'), { forfattareObrandad: kSprak.forfattare_obrandad });
   const publicera = !torr && !utanPublicering;
   if (publicera && !butik) throw new Error(`Länken är inte Bäverbutikens — säg vilken butik sidan ska in i: --butik baverbutiken | carashell | … (eller --utan-publicering).`);
   // Knapparna: relativa i butiken. En Bäverbutiks-länk som ska in i en OPS-butik
   // får OPS-handlen ur factory/produkter/; en länk till OPS-butikens egen
   // produktsida (carashell.se/products/takskyddet) är redan rätt handle.
+  // På en marknad: marknadens egen produktlänk (?country= pekar ut marknaden).
   let knapparTill = arg(argv, '--lank');
   let opsHandle = null;
   if (!knapparTill) {
-    if (!butik) knapparTill = produkt.url;
+    if (marknad) knapparTill = marknadsProduktLank(marknad, produkt.handle);
+    else if (!butik) knapparTill = produkt.url;
     else if (butik === BAVERBUTIKEN || !arBaverLank(produkt.url)) knapparTill = `/products/${produkt.handle}`;
     else {
       opsHandle = opsHandleForKalla(produkt.handle);
@@ -168,35 +211,43 @@ async function bygg(lank, argv) {
   if (butik === BAVERBUTIKEN && !arBaverLank(produkt.url)) throw new Error(`Länken ${produkt.url} är inte Bäverbutikens men sidan skulle in i Bäverbutiken — ange rätt butik med --butik.`);
   if (!/^(https:\/\/[^/\s]+\/.+|\/products\/[a-z0-9-]+)/.test(knapparTill)) throw new Error(`--lank ska vara /products/<handle> eller en https-länk, fick "${knapparTill}".`);
   const suffix = konceptText(koncept.suffix, { produkt, n });
-  const filBas = `${produkt.slug}-${suffix}`;
+  const filBas = `${produkt.slug}-${suffix}${marknad ? `.${locale}` : ''}`;
   const utFil = arg(argv, '--ut') ?? join(mapp, `${filBas}.gempages`);
+  const sidhandle = konceptHandle(koncept, produkt, n);
 
-  console.log(`Koncept: ${koncept.kommando} (${koncept.namn}) · ${n} punkter · datumrad ${datum}`);
+  console.log(`Koncept: ${koncept.kommando} (${koncept.namn}) · ${n} punkter · datumrad ${datum}${marknad ? ` · språk ${sprak.namn} (${locale})` : ''}`);
   console.log(`Produkt: ${produkt.titel}`);
   console.log(`   ${produkt.url}`);
   console.log(`   pris ${produkt.prisText}${produkt.jamforprisText ? ` · jämförpris ${produkt.jamforprisText}` : ' · INGET jämförpris på sidan'}${produkt.flerPriser ? ` · ⚠ flera priser (${produkt.flerPriser.join(', ')}), lägsta används` : ''}`);
   console.log(`   ${produkt.bilder.length} produktbilder · dna: ${underlagObj.dna?.fil ?? 'saknas'}`);
-  if (koncept.jamforpris_behovs && !produkt.jamforpris) console.log('   ⚠ Utan jämförpris finns inget "istället för" — sätt compare-at i Shopify eller skriv copyn utan.');
-  console.log(`Brand: ${brand.namn ? `${brand.namn} (--brand ${brand.id})` : `OBRANDAD — "Av ${brand.forfattare}.", ingen logga, bara "OBS: Detta är reklam." i sidfoten.${kandaBrand().length ? ` Brandad: --brand ${kandaBrand().join(' | ')}` : ''}`}`);
-  console.log(`Butik: ${butik ?? '— (ingen publicering)'}${publicera ? ` → sidan läggs upp som /pages/${konceptHandle(koncept, produkt, n)}` : utanPublicering ? ' (--utan-publicering)' : torr ? ' (torr)' : ''}`);
+  if (marknad) {
+    console.log(`Marknad: ${marknad.kod} ${marknad.namn} · ${marknad.doman} · ${sprak.namn} · ${marknad.valuta}`);
+    console.log(`   ${underlagObj.marknad.lank}`);
+    console.log(`   ${marknadsProdukt.titel}`);
+    console.log(`   pris ${marknadsProdukt.prisText}${marknadsProdukt.jamforprisText ? ` · jämförpris ${marknadsProdukt.jamforprisText}` : ' · INGET jämförpris på marknadens sida'} (läst ur marknadens egen produktsida — copyn skrivs mot den)`);
+  }
+  if (kSprak.jamforpris_behovs && !sidProduktBas.jamforpris) console.log('   ⚠ Utan jämförpris finns inget "istället för" — sätt compare-at i Shopify eller skriv copyn utan.');
+  console.log(`Brand: ${brand.namn ? `${brand.namn} (--brand ${brand.id})` : `OBRANDAD — "${sprak.av} ${brand.forfattare}.", ingen logga, bara "${sprak.reklam}" i sidfoten.${kandaBrand().length ? ` Brandad: --brand ${kandaBrand().join(' | ')}` : ''}`}`);
+  if (marknad) console.log(`Butik: ${butik} → ÖVERSÄTTNING (${locale}) av /pages/${sidhandle} (ingen ny sida) · läses av kunden på ${marknadsSidlank(marknad, sidhandle)}${torr ? ' (torr)' : utanPublicering ? ' (--utan-publicering)' : ''}`);
+  else console.log(`Butik: ${butik ?? '— (ingen publicering)'}${publicera ? ` → sidan läggs upp som /pages/${sidhandle}` : utanPublicering ? ' (--utan-publicering)' : torr ? ' (torr)' : ''}`);
   console.log(`Knappar: → ${knapparTill}${opsHandle ? ` (OPS-handlen ur factory/produkter/)` : ''}`);
 
   if (!existsSync(copyFil)) {
-    console.log(`\n❌ Copyn saknas: ${copyFil}\n   Skriv den själv (se .claude/commands/${koncept.id}.md), formen finns i listicle/mall/exempel-copy.json (${n} punkter).`);
+    console.log(`\n❌ Copyn saknas: ${copyFil}\n   Skriv den själv (se .claude/commands/${koncept.id}.md), formen finns i listicle/mall/exempel-copy.json (${n} punkter)${marknad ? ` — på ${sprak.namn}, mot marknadens produktsida (${underlagObj.marknad.lank}), priserna som ${marknadsProdukt.prisText}${marknadsProdukt.jamforprisText ? ` / ${marknadsProdukt.jamforprisText}` : ''}` : ''}.`);
     process.exit(1);
   }
   const copy = lasJsonFil(copyFil);
-  const g = granskaCopy(copy, produkt, basPlatser, { brand, koncept, punkter: n });
+  const g = granskaCopy(copy, sidProduktBas, basPlatser, { brand, koncept, punkter: n, locale, valuta: sidProduktBas.valuta });
   console.log(`\nCopy: ${copyFil}`);
   for (const v of g.varningar) console.log(`   ⚠ ${v}`);
   for (const f of g.fel) console.log(`   ❌ ${f}`);
   if (g.fel.length) { console.log(`\n❌ ${g.fel.length} fel i copyn — rätta och kör igen.`); process.exit(1); }
-  console.log(`   ✓ priser, procent, fraser, brandnamn och alla ${Object.keys(platser.text).length} textplatser kontrollerade`);
+  console.log(`   ✓ priser (${sidProduktBas.valuta}), procent, fraser, brandnamn och alla ${Object.keys(platser.text).length} textplatser kontrollerade`);
 
   let plan = {};
   if (existsSync(planFil)) plan = lasJsonFil(planFil);
   else console.log(`\n⚠ Ingen bildplan (${planFil}) — alla ${platser.bilder_som_byts.length} bildplatser måste stå där.`);
-  const gb = granskaBildplan(plan, produkt, platser);
+  const gb = granskaBildplan(plan, sidProduktBas, platser);
   console.log(`\nBildplan: ${existsSync(planFil) ? planFil : '—'}`);
   for (const v of gb.varningar) console.log(`   ⚠ ${v}`);
   for (const f of gb.fel) console.log(`   ❌ ${f}`);
@@ -219,7 +270,7 @@ async function bygg(lank, argv) {
   const sparaLokalt = (plats, buf) => { mkdirSync(bildMapp, { recursive: true }); const f = join(bildMapp, `${plats}.png`); writeFileSync(f, buf); return f; };
 
   console.log('\nBilder:');
-  const { bilder, cache: nyCache } = await losBilder(gb.poster, produkt, {
+  const { bilder, cache: nyCache } = await losBilder(gb.poster, sidProduktBas, {
     cache, igen, torr, generera, laddaUpp, hamta, sparaLokalt, logg: (r) => console.log(r), filnamnBas: filBas,
   });
   if (!torr) writeFileSync(cacheFil, JSON.stringify(nyCache, null, 2) + '\n');
@@ -227,12 +278,13 @@ async function bygg(lank, argv) {
   // GemPages-sidan byggs alltid (den är gratis och ger --kolla-läsningen), men
   // filen skrivs bara med --gempages. Nya sid-id:n som standard.
   const nyaIdn = !argv.includes('--behall-idn');
-  const sidProdukt = { ...produkt, url: knapparTill };
+  const sidProdukt = { ...sidProduktBas, url: knapparTill };
   const bilderKlara = torr ? Object.fromEntries(Object.entries(bilder).filter(([, b]) => b.src && b.width > 0)) : bilder;
-  const { sida, rapport } = byggSida({ mall, platser: basPlatser, produkt: sidProdukt, copy, bilder: bilderKlara, datum, brand, koncept, punkter: n, nyaIdn });
+  const { sida, rapport } = byggSida({ mall, platser: basPlatser, produkt: sidProdukt, copy, bilder: bilderKlara, datum, brand, koncept, punkter: n, nyaIdn, locale });
+  if (rapport.handle !== sidhandle) throw new Error(`Sidans handle blev ${rapport.handle}, väntat ${sidhandle}.`);
 
   console.log(`\nSida: "${rapport.namn}" · handle ${rapport.handle} · ${rapport.punkter} punkter · ${rapport.brand.namn ? `brand ${rapport.brand.namn}` : 'obrandad'}`);
-  console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${knapparTill}, ${rapport.bilder.length} bilder bytta, författarrad "Av ${rapport.brand.forfattare}.", logga ${rapport.brand.logga ? 'visas' : 'dold'}`);
+  console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${knapparTill}, ${rapport.bilder.length} bilder bytta, författarrad "${sprak.av} ${rapport.brand.forfattare}.", logga ${rapport.brand.logga ? 'visas' : 'dold'}`);
   const kvarMotor = lasAvSida(sida).filter((r) => /motorhölje|motorhöljen|kåpa|utombordare|båtägar/i.test(String(r.text ?? '')));
   if (kvarMotor.length && produkt.handle !== 'marin-motorholje-420d-universellt-skydd') {
     console.log(`\n⚠ ${kvarMotor.length} text(er) nämner fortfarande motorhöljet/båtar — läs copyn igen:`);
@@ -244,9 +296,9 @@ async function bygg(lank, argv) {
   for (let i = 6; i <= n; i += 1) fasta[`punkt${i}`] = fasta[`punkt${i}`] ?? fasta[i % 2 === 0 ? 'punkt4' : 'punkt5'];
   const htmlFil = join(mapp, `${filBas}.html`);
   const bodyFil = join(mapp, `${filBas}.sida.html`);
-  const htmlArgs = { copy, produkt: sidProdukt, bilder: bilderKlara, fasta, datum, brand, koncept };
+  const htmlArgs = { copy, produkt: sidProdukt, bilder: bilderKlara, fasta, datum, brand, koncept, locale };
   if (torr) {
-    console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven, butiken orörd. Skulle skriva ${htmlFil}${medGempages ? ` och ${utFil}` : ''}${butik ? ` och lägga upp /pages/${rapport.handle} i ${butik}` : ''}. Texterna som skulle sättas:`);
+    console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven, butiken orörd. Skulle skriva ${htmlFil}${medGempages ? ` och ${utFil}` : ''}${butik ? (marknad ? ` och lägga översättningen (${locale}) på /pages/${rapport.handle} i ${butik}` : ` och lägga upp /pages/${rapport.handle} i ${butik}`) : ''}. Texterna som skulle sättas:`);
     for (const rad of lasAvSida(sida)) if (rad.tag !== 'Image') console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 90)}${rad.link ? `  → ${rad.link}` : ''}`);
     return;
   }
@@ -272,34 +324,49 @@ async function bygg(lank, argv) {
   let fv = null;
   if (!argv.includes('--utan-forhandsvisning')) {
     try {
-      fv = await forhandsvisa(produkt.handle, { logg: (r) => console.log(r), htmlFil, mapp });
+      fv = await forhandsvisa(produkt.handle, { logg: (r) => console.log(r), htmlFil, mapp, undermapp: marknad ? `forhandsvisning-${locale}` : 'forhandsvisning', lang: sprak.lang });
     } catch (e) {
       console.log(`   ⚠ förhandsvisningen misslyckades: ${e.message}`);
     }
   }
 
-  // Butiken: temafilerna (en gång), sidan, trippelkollen.
+  // Butiken: temafilerna (en gång), sidan, trippelkollen — eller, på en marknad,
+  // översättningen av den befintliga sidan och tillbakaläsning på marknadens domän.
   let publicerat = null;
   if (publicera) {
     console.log('\nButiken:');
-    const { publicera: publiceraIButik } = await import('./butik.mjs');
-    publicerat = await publiceraIButik({
-      butik, handle: rapport.handle, titel: konceptText(koncept.sidtitel, { produkt, n }), body,
-      publicerad: !argv.includes('--opublicerad'), logg: (r) => console.log(r),
-    });
-    console.log(`\n✅ ${publicerat.sida.url} — ${publicerat.sida.skapad ? 'ny sida' : 'sidan uppdaterad'} i ${publicerat.butik.namn}, läst tillbaka som kund utan header/footer.`);
+    const titel = konceptText(kSprak.sidtitel, { produkt: sidProduktBas, n });
+    // Sidans hero-rubrik MÅSTE synas när sidan läses tillbaka — samma handle bär
+    // flera språk, så en strukturellt riktig sida på fel språk är ändå fel.
+    const rubrikHtml = (c) => htmlAv(styckenAv(c?.hero?.rubrik ?? '').join(' '));
+    if (marknad) {
+      const { publiceraMarknad } = await import('./butik.mjs');
+      const svenskCopyFil = join(mapp, 'copy.json');
+      const svensk = existsSync(svenskCopyFil) ? lasJsonFil(svenskCopyFil) : null;
+      const farInte = svensk && rubrikHtml(svensk) && rubrikHtml(svensk) !== rubrikHtml(copy) ? [rubrikHtml(svensk)] : [];
+      publicerat = await publiceraMarknad({ butik, marknad, handle: rapport.handle, titel, body, maste: [rubrikHtml(copy)], farInte, logg: (r) => console.log(r) });
+      console.log(`\n✅ ${publicerat.sida.url} — översättningen (${locale}) ligger på sidan i ${publicerat.butik.namn}, läst tillbaka på ${marknad.doman} på rätt språk utan header/footer.`);
+    } else {
+      const { publicera: publiceraIButik } = await import('./butik.mjs');
+      publicerat = await publiceraIButik({
+        butik, handle: rapport.handle, titel, body, maste: [rubrikHtml(copy)],
+        publicerad: !argv.includes('--opublicerad'), logg: (r) => console.log(r),
+      });
+      console.log(`\n✅ ${publicerat.sida.url} — ${publicerat.sida.skapad ? 'ny sida' : 'sidan uppdaterad'} i ${publicerat.butik.namn}, läst tillbaka som kund utan header/footer.`);
+    }
   }
 
+  const planFilUt = sprakFil('plan', 'json');
   const planObj = {
-    byggd: new Date().toISOString(), koncept: koncept.id, punkter: n, datumrad: datum, produkt: underlagObj.produkt, copy: copyFil, bildplan: planFil,
+    byggd: new Date().toISOString(), koncept: koncept.id, punkter: n, datumrad: datum, locale, produkt: underlagObj.produkt, marknad: underlagObj.marknad ?? null, copy: copyFil, bildplan: planFil,
     brand: rapport.brand, knappar: knapparTill, butik: butik ?? null,
     bilder: rapport.bilder, html: htmlFil, body: bodyFil, gempages: gempagesFil, forhandsvisning: fv,
     sida: { id: String(sida.id).replace(/^__stort_tal__:/, ''), namn: rapport.namn, handle: rapport.handle },
-    publicerat: publicerat ? { url: publicerat.sida.url, sidaId: publicerat.sida.id, skapad: publicerat.sida.skapad, tema: publicerat.tema, kontroll: publicerat.kontroll } : null,
+    publicerat: publicerat ? { url: publicerat.sida.url, sidaId: publicerat.sida.id, skapad: publicerat.sida.skapad ?? false, tema: publicerat.tema ?? null, oversattning: publicerat.oversattning ?? null, kontroll: publicerat.kontroll } : null,
     bildUrler: [...new Set(lasAvSida(sida).filter((r) => r.tag === 'Image').map((r) => r.src))],
   };
-  writeFileSync(join(mapp, 'plan.json'), JSON.stringify(planObj, null, 2) + '\n');
-  console.log(`   plan: ${join(mapp, 'plan.json')}`);
+  writeFileSync(planFilUt, JSON.stringify(planObj, null, 2) + '\n');
+  console.log(`   plan: ${planFilUt}`);
   if (fv?.desktop) console.log(`   titta: ${fv.desktop} och ${fv.mobil ?? '(ingen mobil-skärmdump)'}`);
 }
 
@@ -331,15 +398,17 @@ async function huvud(argv) {
   if (kollaFil) return kolla(kollaFil);
   const lank = argv.find((a) => !a.startsWith('--') && !FLAGGOR_MED_VARDE.includes(argv[argv.indexOf(a) - 1]));
   if (!lank) {
-    console.error(`Användning: node listicle/bygg.mjs <produktlänk> [--underlag | --torr] [--koncept ${kandaKoncept().join('|')}] [--punkter 5|7] [--butik baverbutiken|<ops-id>] [--gempages] [--utan-publicering] [--opublicerad] [--lank /products/x] [--brand id] [--copy fil] [--bildplan fil] [--datum YYYY-MM-DD] [--igen plats,…] [--behall-idn] [--utan-forhandsvisning]\n           node listicle/bygg.mjs --kolla <fil.gempages> | --exempel`);
+    console.error(`Användning: node listicle/bygg.mjs <produktlänk> [--underlag | --torr] [--koncept ${kandaKoncept().join('|')}] [--punkter 5|7] [--butik baverbutiken|<ops-id>] [--marknad US] [--gempages] [--utan-publicering] [--opublicerad] [--lank /products/x] [--brand id] [--copy fil] [--bildplan fil] [--datum YYYY-MM-DD] [--igen plats,…] [--behall-idn] [--utan-forhandsvisning]\n           node listicle/bygg.mjs --kolla <fil.gempages> | --exempel`);
     process.exit(1);
   }
   if (argv.includes('--underlag')) {
     const koncept = lasKoncept(arg(argv, '--koncept') ?? undefined);
     const n = valjPunkter(koncept, arg(argv, '--punkter'));
-    const { produkt, ut, mapp } = await underlag(lank, { koncept, n });
-    console.log(`✓ ${join(mapp, 'underlag.json')}`);
+    const marknad = valjMarknad(argv, valjButik(argv, lank));
+    const { produkt, marknadsProdukt, ut, mapp } = await underlag(lank, { koncept, n, marknad });
+    console.log(`✓ ${join(mapp, marknad ? `underlag.${marknad.locale}.json` : 'underlag.json')}`);
     console.log(`   ${koncept.kommando} · ${n} punkter · ${produkt.titel} · ${produkt.prisText}${produkt.jamforprisText ? ` (jämförpris ${produkt.jamforprisText})` : ''} · ${produkt.bilder.length} bilder · dna: ${ut.dna?.fil ?? 'saknas'} · blivande adress /pages/${ut.sidhandle}`);
+    if (marknad) console.log(`   marknad ${marknad.kod}: ${marknadsProdukt.titel} · ${marknadsProdukt.prisText}${marknadsProdukt.jamforprisText ? ` (jämförpris ${marknadsProdukt.jamforprisText})` : ''} · ${ut.marknad.lank} · sidan läses på ${ut.marknad.sidlank} · copyn skrivs i copy.${marknad.locale}.json`);
     return;
   }
   await bygg(lank, argv);

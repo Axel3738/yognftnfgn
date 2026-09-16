@@ -22,6 +22,11 @@ import { createHash, randomInt } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { skrivZip, lasZip } from './zip.mjs';
+import { svensktDatum, priserI, sprakFor, konceptForSprak, formateraPris, SPRAK } from './sprak.mjs';
+
+// Språket (sv/en), valutorna och datumen bor i sprak.mjs sedan 2026-09-16
+// (marknadsversionerna). Re-exporterade här så äldre anropare inte märker det.
+export { svensktDatum, priserI };
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 export const MALL_MAPP = join(HAR, 'mall');
@@ -107,6 +112,8 @@ export function lasKoncept(koncept = STANDARD_KONCEPT) {
     id: k.id, namn: k.namn ?? k.id, kommando: k.kommando ?? `/${k.id}`, suffix: k.suffix, sidnamn: k.sidnamn, sidtitel: k.sidtitel ?? k.sidnamn,
     punkter, forfattare_obrandad: k.forfattare_obrandad ?? OBRANDAD.forfattare, rubrik: k.rubrik ?? {}, jamforpris_behovs: k.jamforpris_behovs !== false,
     arlig_rubrik: k.arlig_rubrik ?? 'Jag ska vara ärlig:', riskfritt_rubrik: k.riskfritt_rubrik ?? 'Därför kan du testa helt riskfritt.',
+    // Texterna på andra språk (sidnamn, sidtitel, författare …) — sprak.mjs konceptForSprak.
+    sprak: k.sprak && typeof k.sprak === 'object' ? k.sprak : {},
   };
 }
 
@@ -251,17 +258,17 @@ export function butiksOrd(url) {
   return ut;
 }
 
-/** Författarraden i hero: samma HTML som mallen bär. */
-export function forfattarHtml(b) {
-  return `<p>Av <strong>${htmlAv(b.forfattare)}.</strong></p>`;
+/** Författarraden i hero: samma HTML som mallen bär. "Av"/"By" följer språket. */
+export function forfattarHtml(b, locale = 'sv') {
+  return `<p>${sprakFor(locale).av} <strong>${htmlAv(b.forfattare)}.</strong></p>`;
 }
 
 /** Sidfotens kontaktrad: mejl + domän + reklammärkning, eller bara märkningen när sidan är obrandad. */
-export function sidfotHtml(b) {
+export function sidfotHtml(b, locale = 'sv') {
   const rader = [];
   if (b.support) rader.push(`<a href="mailto:${htmlAv(b.support)}">${htmlAv(b.support)}</a>`);
   if (b.doman) rader.push(htmlAv(b.doman));
-  rader.push('OBS: Detta är reklam.');
+  rader.push(sprakFor(locale).reklam);
   return `<p>${rader.length > 1 ? '<br>' : ''}${rader.join('<br>')}</p>`;
 }
 
@@ -350,15 +357,7 @@ export function allaElement(o, acc = []) {
   return acc;
 }
 
-const MANADER = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
-
-/** "2026-09-16" → "16 september 2026". */
-export function svensktDatum(iso) {
-  const [y, m, d] = String(iso).slice(0, 10).split('-').map(Number);
-  if (!y || !m || !d) throw new Error(`Ogiltigt datum "${iso}" — skriv YYYY-MM-DD.`);
-  return `${d} ${MANADER[m - 1]} ${y}`;
-}
-
+// svensktDatum (och engelsktDatum) ligger i sprak.mjs.
 export const idag = () => new Date().toISOString().slice(0, 10);
 
 // ------------------------------------------------------------ text ↔ html
@@ -460,17 +459,8 @@ export function copyUrMall(mall, platser) {
 
 // ------------------------------------------------------------ granskning
 
-export const FORBJUDNA_FRASER = ['innan lagret tar slut', 'innan det tar slut', 'sista chansen'];
-
-/** Alla priser i en text: "299 kr", "1 129 kr", "367:-" → [299, 1129, 367]. */
-export function priserI(text) {
-  const ut = [];
-  for (const m of String(text ?? '').matchAll(/(\d[\d   ]*(?:[.,]\d{1,2})?)\s?(?:kr\b|:-)/gi)) {
-    const n = Number(m[1].replace(/[   ]/g, '').replace(',', '.'));
-    if (Number.isFinite(n)) ut.push(n);
-  }
-  return ut;
-}
+// De svenska förbjudna fraserna (sprak.mjs bär dem per språk). Kvar som export för äldre anropare.
+export const FORBJUDNA_FRASER = SPRAK.sv.forbjudna;
 
 /**
  * Fel stoppar bygget; varningar visas. Priser, procent, HTML, förbjudna fraser —
@@ -478,15 +468,21 @@ export function priserI(text) {
  * (skriv "vi"/"hos oss"), en brandad får nämna sitt eget brand.
  *
  *   granskaCopy(copy, produkt, platser, { brand: null | 'baverbutiken' | profil, forbjudnaBrand: [profiler],
- *                                        koncept: 'lagerrensning' | objekt, punkter: 5 | 7 })
+ *                                        koncept: 'lagerrensning' | objekt, punkter: 5 | 7,
+ *                                        locale: 'sv' | 'en', valuta: produktens (SEK/USD …) })
+ * Språket styr vilka fraser som är förbjudna och vilka ord rubrikkontrollerna
+ * letar efter; valutan hur priserna i copyn läses ("1 129 kr" / "$199").
  */
-export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudnaBrand = null, koncept = STANDARD_KONCEPT, punkter = null } = {}) {
+export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudnaBrand = null, koncept = STANDARD_KONCEPT, punkter = null, locale = 'sv', valuta = null } = {}) {
   const fel = [];
   const varningar = [];
-  const k = lasKoncept(koncept);
+  const sprak = sprakFor(locale);
+  const val = valuta ?? produkt?.valuta ?? 'SEK';
+  const k = konceptForSprak(lasKoncept(koncept), locale);
   const n = valjPunkter(k, punkter);
   const platser = platserForPunkter(basPlatser, n);
   const tillatna = [produkt.pris, produkt.jamforpris].filter((x) => x != null && Number.isFinite(Number(x))).map(Number);
+  const pris = (t) => formateraPris(t, val);
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const egnaOrd = new Set(brandOrd(b));
@@ -503,26 +499,26 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
     const tom = v == null || (typeof v === 'string' && !v.trim()) || (Array.isArray(v) && styckenAv(v).length === 0);
     if (tom) { fel.push(`${nyckel}: saknas i copyn`); continue; }
     const text = nyckelText(v);
-    if (/<[a-z/!]/i.test(text)) fel.push(`${nyckel}: innehåller HTML — skriv **fet** i stället för taggar`);
+    if (/<[a-z/!]/i.test(text)) fel.push(`${nyckel}: innehåller HTML — ${sprak.fetTips}`);
     const traff = stoppord.find((x) => text.toLowerCase().includes(x.ord));
     if (traff) fel.push(`${nyckel}: nämner "${traff.namn}" — sidan är ${b.namn ? `brandad som ${b.namn}` : 'obrandad och ska funka i vilken butik som helst'}; skriv "vi"/"hos oss"${traff.id && !b.namn ? ` (eller bygg med --brand ${traff.id})` : ''}`);
-    for (const p of priserI(text)) {
-      if (!tillatna.includes(p)) fel.push(`${nyckel}: priset ${p} kr finns inte på produktsidan (tillåtet: ${tillatna.map((t) => `${t} kr`).join(' / ') || 'inget'})`);
+    for (const p of priserI(text, val)) {
+      if (!tillatna.includes(p)) fel.push(`${nyckel}: priset ${pris(p)} finns inte på produktsidan (tillåtet: ${tillatna.map(pris).join(' / ') || 'inget'})`);
     }
-    if (/\d\s?%/.test(text)) fel.push(`${nyckel}: procentsats — sidan lovar "ingen påhittad jätterabatt", skriv kronor`);
-    for (const f of FORBJUDNA_FRASER) if (text.toLowerCase().includes(f)) fel.push(`${nyckel}: "${f}" är förbjuden — skriv "så länge lagret räcker"`);
+    if (/\d\s?%/.test(text)) fel.push(`${nyckel}: procentsats — sidan lovar "ingen påhittad jätterabatt", skriv priset i ${val}`);
+    for (const f of sprak.forbjudna) if (text.toLowerCase().includes(f)) fel.push(`${nyckel}: "${f}" är förbjuden — ${sprak.forbjudnaTips}`);
     if (plats.form === 'ren' && text.length > 180) varningar.push(`${nyckel}: rubriken är ${text.length} tecken — lång för en rubrik`);
     if ((plats.form === 'p' || plats.form === 'p-flera') && text.length < 120) varningar.push(`${nyckel}: bara ${text.length} tecken — mallens stycken är 400–900`);
   }
 
   if (!Array.isArray(copy?.punkter) || copy.punkter.length !== n) fel.push(`punkter: ska vara exakt ${n} (${k.kommando}${k.punkter.length > 1 ? `, --punkter ${k.punkter.join('|')}` : ''}), är ${Array.isArray(copy?.punkter) ? copy.punkter.length : 0}`);
   const rubrik = String(copy?.hero?.rubrik ?? '');
-  const rubrikPriser = priserI(rubrik);
-  if (k.rubrik.pris && produkt.pris != null && !rubrikPriser.includes(Number(produkt.pris))) varningar.push(`hero.rubrik nämner inte priset ${produkt.prisText ?? produkt.pris}`);
-  if (k.rubrik.jamforpris && produkt.jamforpris != null && !rubrikPriser.includes(Number(produkt.jamforpris))) varningar.push(`hero.rubrik nämner inte jämförpriset ${produkt.jamforprisText ?? produkt.jamforpris}`);
-  if (k.rubrik.period && !/\b(dag|dagar|dygn|vecka|veckor|månad|månader|vinter|sommar|höst|vår|säsong|år)\b/i.test(rubrik)) varningar.push('hero.rubrik saknar testperioden (dagar/veckor/en vinter/en säsong …) — "Vi testade X i N dagar" är hela konceptet');
+  const rubrikPriser = priserI(rubrik, val);
+  if (k.rubrik.pris && produkt.pris != null && !rubrikPriser.includes(Number(produkt.pris))) varningar.push(`hero.rubrik nämner inte priset ${produkt.prisText ?? pris(produkt.pris)}`);
+  if (k.rubrik.jamforpris && produkt.jamforpris != null && !rubrikPriser.includes(Number(produkt.jamforpris))) varningar.push(`hero.rubrik nämner inte jämförpriset ${produkt.jamforprisText ?? pris(produkt.jamforpris)}`);
+  if (k.rubrik.period && !sprak.periodOrd.test(rubrik)) varningar.push('hero.rubrik saknar testperioden (dagar/veckor/en vinter/en säsong …) — "Vi testade X i N dagar" är hela konceptet');
   if (k.rubrik.antal) {
-    const ord = { 5: 'fem', 7: 'sju' }[n];
+    const ord = sprak.antalOrd[n];
     if (!new RegExp(`\\b(${n}|${ord})\\b`, 'i').test(rubrik)) varningar.push(`hero.rubrik nämner inte antalet (${n}/${ord}) — "${n} anledningar …" är konceptet`);
   }
   for (let i = 1; i <= n; i += 1) {
@@ -589,10 +585,12 @@ export function bytIdn(sida, { nytt = nyttId } = {}) {
  * `brand` utelämnat = obrandad sida (standard). Knapparna pekar på produkt.url —
  * för en annan butik skickar anroparen den butikens produktlänk som url.
  * `koncept` styr sidnamn/handle/författarrad; `punkter` > 5 klonar sektioner.
+ * `locale` (sv/en) styr de fasta texterna: författarraden, datumraden, sidfoten.
  */
-export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}, datum = idag(), brand = null, koncept = STANDARD_KONCEPT, punkter = null, nyaIdn = false, nu = new Date().toISOString() }) {
+export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}, datum = idag(), brand = null, koncept = STANDARD_KONCEPT, punkter = null, nyaIdn = false, nu = new Date().toISOString(), locale = 'sv' }) {
   if (!produkt?.url || !produkt?.kortTitel || !produkt?.slug) throw new Error('byggSida: produkten behöver url, kortTitel och slug.');
-  const k = lasKoncept(koncept);
+  const sprak = sprakFor(locale);
+  const k = konceptForSprak(lasKoncept(koncept), locale);
   const n = valjPunkter(k, punkter);
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const sida = structuredClone(mall);
@@ -621,17 +619,17 @@ export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}
     rapport.texter.push({ nyckel, tecken: html.length });
   }
 
-  // Datumraden.
+  // Datumraden (på sidans språk).
   const d = platser.fasta?.['hero.datum'];
-  if (d) for (const el of element(d.cid, d.uid)) el.settings.text = `<p>Senast uppdaterad ${svensktDatum(datum)}.</p>`;
+  if (d) for (const el of element(d.cid, d.uid)) el.settings.text = `<p>${sprak.datumrad(datum)}</p>`;
 
   // Brandet: författarraden, sidfotens kontaktrad, loggan + strecket bredvid.
   const f = platser.fasta?.['hero.forfattare'];
   if (!f) throw new Error('Platskartan saknar fasta["hero.forfattare"].');
-  for (const el of element(f.cid, f.uid)) el.settings.text = forfattarHtml(b);
+  for (const el of element(f.cid, f.uid)) el.settings.text = forfattarHtml(b, locale);
   const kontakt = platser.fasta?.['sidfot.text'];
   if (!kontakt) throw new Error('Platskartan saknar fasta["sidfot.text"].');
-  for (const el of element(kontakt.cid, kontakt.uid)) el.settings.text = sidfotHtml(b);
+  for (const el of element(kontakt.cid, kontakt.uid)) el.settings.text = sidfotHtml(b, locale);
   const logga = platser.bilder?.sidfot;
   if (!logga) throw new Error('Platskartan saknar bilder.sidfot (loggan).');
   for (const uid of logga.uids) for (const el of element(logga.cid, uid, 'Image')) {

@@ -6,7 +6,10 @@ flera länkar (en sida per länk, i tur och ordning — reglerna i
 `--butik <id>` (standard: Bäverbutiken när länken är baverbutiken.se; annars
 ett OPS-id som `carashell`), `--torr` (visa planen, bygg inget, rör inte
 butiken), `--igen <plats>` (generera om en bild), `--gempages` (dessutom en
-.gempages-fil), `--brand baverbutiken` (brandad — BARA om Axel ber om det).
+.gempages-fil), `--brand baverbutiken` (brandad — BARA om Axel ber om det),
+`--marknad <KOD>` (samma sida på en annan marknad, t.ex. `US` — reglerna i
+`/lagerrensning` → "Samma sida på en annan marknad"; copyn heter
+`copy.en.json`, författarraden blir "Anders, who tested it himself").
 
 ```
 /vi-testade https://baverbutiken.se/products/satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford

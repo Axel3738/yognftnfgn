@@ -20,7 +20,8 @@
 // Texterna skrivs med samma regler som .gempages-vägen: htmlAv() escapar allt
 // och gör **fet** till <strong>. Ingen annan HTML släpps igenom från copyn.
 
-import { htmlAv, styckenAv, svensktDatum, lasCopy, allaElement, brandProfil, lasKoncept, IKON_STIG } from './gempages.mjs';
+import { htmlAv, styckenAv, lasCopy, allaElement, brandProfil, lasKoncept, IKON_STIG } from './gempages.mjs';
+import { sprakFor, konceptForSprak } from './sprak.mjs';
 
 const IKONER = {
   1: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM138,80v96a6,6,0,0,1-12,0V91.21L111.33,101a6,6,0,0,1-6.66-10l24-16A6,6,0,0,1,138,80Z',
@@ -114,13 +115,16 @@ export function mallBilder(mall, platser) {
  * fylls: `bilder` (produktens) vinner, `fasta` (mallens) är reserv. Loggan
  * kommer ur brandprofilen, aldrig ur `fasta` — obrandad sida har ingen.
  *
- *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum, brand, koncept, stil })
+ *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum, brand, koncept, stil, locale })
  *   stil: 'inline' (standard — <style> + fragment, för förhandsvisningen) eller
  *         'ingen' (bara fragmentet — sidans body i butiken, CSS:en ligger i assets/listicle.css)
+ *   locale: 'sv' (standard) eller 'en' — de fasta texterna (Av/By, datumraden,
+ *           Sammanfattning/Summary, reklammärkningen) följer språket (sprak.mjs).
  */
-export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null, koncept = 'lagerrensning', stil = 'inline' }) {
+export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null, koncept = 'lagerrensning', stil = 'inline', locale = 'sv' }) {
   if (!produkt?.url) throw new Error('renderaHtml: produkten saknar url.');
-  const k = lasKoncept(koncept);
+  const s = sprakFor(locale);
+  const k = konceptForSprak(lasKoncept(koncept), locale);
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const bild = (plats) => {
     const b = bilder[plats]?.src ? bilder[plats] : fasta[plats];
@@ -137,9 +141,9 @@ export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, bra
   const namn = produkt.kortTitel ?? '';
 
   const sammanfattning = (() => {
-    const st = styckenAv(text('hero.sammanfattning')).map((s) => s.replace(/^\**\s*Sammanfattning:\s*\**\s*/i, ''));
+    const st = styckenAv(text('hero.sammanfattning')).map((x) => x.replace(/^\**\s*(Sammanfattning|Summary):\s*\**\s*/i, ''));
     const [a, ...rest] = st;
-    return `<p><strong>Sammanfattning:</strong> ${htmlAv(a)}${rest.length ? `<br>${rest.map(htmlAv).join('<br>')}` : ''}</p>`;
+    return `<p><strong>${htmlAv(s.sammanfattning)}</strong> ${htmlAv(a)}${rest.length ? `<br>${rest.map(htmlAv).join('<br>')}` : ''}</p>`;
   })();
 
   const punkter = (copy.punkter ?? []).map((p, i) => {
@@ -148,7 +152,7 @@ export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, bra
     return `
 <section class="lr-punkt${n % 2 === 0 ? ' lr-omvand' : ''}" id="lr-punkt-${n}">
   <div class="lr-inre">
-    <div class="lr-media">${bildTag(b, `${namn} – punkt ${n}`)}</div>
+    <div class="lr-media">${bildTag(b, `${namn} – ${s.punkt} ${n}`)}</div>
     <div class="lr-kropp">
       <h2 class="lr-h2">${ikon(n)}<span>${rubrik(`punkt${n}.rubrik`)}</span></h2>
       <div class="lr-text">${stycken(text(`punkt${n}.text`))}</div>
@@ -175,8 +179,8 @@ ${CSS}
         <div class="lr-forfattare">
           ${bildTag(bild('hero'), b.forfattare)}
           <div>
-            <p>Av <strong>${htmlAv(b.forfattare)}.</strong></p>
-            <p class="lr-datum">Senast uppdaterad ${svensktDatum(datum)}.</p>
+            <p>${htmlAv(s.av)} <strong>${htmlAv(b.forfattare)}.</strong></p>
+            <p class="lr-datum">${htmlAv(s.datumrad(datum))}</p>
           </div>
         </div>
       </div>
@@ -197,7 +201,7 @@ ${punkter}
       </div>
       <div class="lr-block">
         <h2 class="lr-h2">${rubrik('arlig.rubrik')}</h2>
-        <div class="lr-media">${bildTag(bild('arlig'), 'Lagret')}</div>
+        <div class="lr-media">${bildTag(bild('arlig'), s.lagret)}</div>
         <div class="lr-text">${stycken(text('arlig.stycken'))}</div>
       </div>
       <div class="lr-block">
@@ -219,7 +223,7 @@ ${b.logga ? `    <div class="lr-logga">
     <p class="lr-kontakt">${[
       b.support ? `<a href="mailto:${htmlAv(b.support)}">${htmlAv(b.support)}</a>` : null,
       b.doman ? htmlAv(b.doman) : null,
-      'OBS: Detta är reklam.',
+      htmlAv(s.reklam),
     ].filter(Boolean).join('<br>')}</p>
   </div>
 </footer>
@@ -228,9 +232,9 @@ ${b.logga ? `    <div class="lr-logga">
 }
 
 /** Ett komplett dokument runt fragmentet — för förhandsvisning och för att öppna filen lokalt. */
-export function somDokument(fragment, { titel = 'Lagerrensning' } = {}) {
+export function somDokument(fragment, { titel = 'Lagerrensning', lang = 'sv' } = {}) {
   return `<!doctype html>
-<html lang="sv">
+<html lang="${htmlAv(lang)}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

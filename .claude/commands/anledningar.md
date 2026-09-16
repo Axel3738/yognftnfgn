@@ -6,7 +6,9 @@ flera länkar: en sida per länk, i tur och ordning, enligt `/lagerrensning` →
 följt av `7` (sju punkter; standard är fem). Valfritt `--butik <id>`
 (standard: Bäverbutiken när länken är baverbutiken.se; annars ett OPS-id),
 `--torr`, `--igen <plats>`, `--gempages`, `--brand baverbutiken` (bara om
-Axel ber om det).
+Axel ber om det), `--marknad <KOD>` (samma sida på en annan marknad, t.ex.
+`US` — reglerna i `/lagerrensning` → "Samma sida på en annan marknad";
+rubriken bär antalet på engelska: "five"/"seven" eller siffran).
 
 ```
 /anledningar https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor
