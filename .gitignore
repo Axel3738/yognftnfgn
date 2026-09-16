@@ -23,6 +23,8 @@ market-expansion/ops/**/*.srt
 factory/output/*/leverans-*/
 factory/output/*/bild-*/
 factory/output/*/*.logg
+# Lagerrensnings-sidorna: kie-bildernas lokala kopior dör med containern — bilderna ligger på Shopifys CDN
+lagerrensning/output/*/bilder/
 kundtjanst/jobb/
 # Fixturkörningens utdata (`--fixtur kundtjanst/test/fixturer/demo`). Den skriver
 # brandet "demobutiken" som en riktig körning — men den är demodata och ska

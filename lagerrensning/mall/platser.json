@@ -1,0 +1,50 @@
+{
+  "_kommentar": "Platskartan: vilka element i mallen (lagerrensning/mall/sida.json) som byts per produkt. Nyckel → sektionens cid + elementets uid. `form` styr hur texten skrivs: ren = utan taggar (Heading), p = <p>…</p>, p-flera = flera stycken med <p>&nbsp;</p> emellan, sammanfattning = mallens fet-etikett + två stycken, knapp = <p>…</p> i både text och label. Bildplatser byter src + bredd/höjd i ALLA listade uids (mallen har en desktop- och en mobilbild per punkt). Fasta element (författarfoto, lagerbild, logga, sidfot, författarrad) byts aldrig av motorn — datumraden byts till körningens datum.",
+  "text": {
+    "hero.rubrik":          { "cid": "gKDLMvyzHn", "uid": "gQqOoPJHpx", "form": "ren" },
+    "hero.ingress":         { "cid": "gKDLMvyzHn", "uid": "gcRx4s-HQ4", "form": "p" },
+    "hero.knapp":           { "cid": "gKDLMvyzHn", "uid": "gyK8xEtS-K", "form": "knapp" },
+    "hero.sammanfattning":  { "cid": "gKDLMvyzHn", "uid": "g2IYKbMYPZ", "form": "sammanfattning" },
+    "punkt1.rubrik":        { "cid": "gFUogNLoms", "uid": "gPDY2CMjIb", "form": "ren" },
+    "punkt1.text":          { "cid": "gFUogNLoms", "uid": "gso_0gGOT3", "form": "p" },
+    "punkt1.knapp":         { "cid": "gFUogNLoms", "uid": "ctaPunkt2",  "form": "knapp" },
+    "punkt2.rubrik":        { "cid": "gczQ124MUD", "uid": "g3g8HZ9t2b", "form": "ren" },
+    "punkt2.text":          { "cid": "gczQ124MUD", "uid": "g12G0kUpIa", "form": "p" },
+    "punkt2.knapp":         { "cid": "gczQ124MUD", "uid": "ctaPunkt3",  "form": "knapp" },
+    "punkt3.rubrik":        { "cid": "gNtZOEiSzZ", "uid": "gQ4xMGzK7h", "form": "ren" },
+    "punkt3.text":          { "cid": "gNtZOEiSzZ", "uid": "gj1ylP6WCi", "form": "p" },
+    "punkt3.knapp":         { "cid": "gNtZOEiSzZ", "uid": "ctaPunkt4",  "form": "knapp" },
+    "punkt4.rubrik":        { "cid": "gpAnhUOKAB", "uid": "g42Me8D_t5", "form": "ren" },
+    "punkt4.text":          { "cid": "gpAnhUOKAB", "uid": "gnhVRgAr0d", "form": "p" },
+    "punkt4.knapp":         { "cid": "gpAnhUOKAB", "uid": "ctaPunkt5",  "form": "knapp" },
+    "punkt5.rubrik":        { "cid": "gzr7fcjOKR", "uid": "gp87Wb3FFa", "form": "ren" },
+    "punkt5.text":          { "cid": "gzr7fcjOKR", "uid": "gdcYl02jms", "form": "p" },
+    "punkt5.knapp":         { "cid": "gzr7fcjOKR", "uid": "ctaPunkt6",  "form": "knapp" },
+    "lyckas.rubrik":        { "cid": "gZwRqjNDfR", "uid": "gTwyUYIMS-", "form": "ren" },
+    "lyckas.stycken":       { "cid": "gZwRqjNDfR", "uid": "gE0Of2nzzd", "form": "p-flera" },
+    "lyckas.knapp":         { "cid": "gZwRqjNDfR", "uid": "gSEQOPz2mc", "form": "knapp" },
+    "arlig.rubrik":         { "cid": "gZwRqjNDfR", "uid": "g_OCFIZ6yH", "form": "ren" },
+    "arlig.stycken":        { "cid": "gZwRqjNDfR", "uid": "gLlHC2m_lq", "form": "p-flera" },
+    "riskfritt.rubrik":     { "cid": "gZwRqjNDfR", "uid": "gf8M6PJSWG", "form": "ren" },
+    "riskfritt.text":       { "cid": "gZwRqjNDfR", "uid": "gMiwhJTm6r", "form": "p" },
+    "riskfritt.knapp":      { "cid": "gZwRqjNDfR", "uid": "gfXRqAKCQz", "form": "knapp" }
+  },
+  "fasta": {
+    "hero.forfattare":      { "cid": "gKDLMvyzHn", "uid": "g5knyehVEx", "form": "p" },
+    "hero.datum":           { "cid": "gKDLMvyzHn", "uid": "gyzO0V7arV", "form": "p" },
+    "sidfot.text":          { "cid": "gFr4QMkKJc", "uid": "gePKcDJ1a3", "form": "p" }
+  },
+  "knappar": ["gyK8xEtS-K", "ctaPunkt2", "ctaPunkt3", "ctaPunkt4", "ctaPunkt5", "ctaPunkt6", "gSEQOPz2mc", "gfXRqAKCQz"],
+  "bilder": {
+    "hero":   { "cid": "gKDLMvyzHn", "uids": ["ghBWMjoA6E"], "roll": "Författarfotot (Anders). Byts aldrig — samma persona på alla sidor." },
+    "punkt1": { "cid": "gFUogNLoms", "uids": ["gC0xmYDikw", "g5HKHt_pbr"], "roll": "Problemet som smyger: så här ser det ut när skyddet uteblivit (mallen: blekt motorkåpa)." },
+    "punkt2": { "cid": "gczQ124MUD", "uids": ["imgMob3", "glGdc5Sduj"], "roll": "Den otillräckliga insatsen (mallen: vax och polish på bryggan)." },
+    "punkt3": { "cid": "gNtZOEiSzZ", "uids": ["gzJY0t-gH4", "gdzeecRZdG"], "roll": "Före/efter — bevarat mot förstört (mallen: blank och blekt kåpa sida vid sida)." },
+    "punkt4": { "cid": "gpAnhUOKAB", "uids": ["imgMob5", "g8FQhJxsPM"], "roll": "Värdet/sammanhanget (mallen: marina full av båtar)." },
+    "punkt5": { "cid": "gzr7fcjOKR", "uids": ["gkk6_gC4qd", "g1Lydu5nRs"], "roll": "Produkten i bruk, i sin miljö (mallen: höljet på motorn vid bryggan)." },
+    "lyckas": { "cid": "gZwRqjNDfR", "uids": ["gzVoxbhYOT"], "roll": "Produktbilden: hela sortimentet/varianterna på vit bakgrund (mallen: fem färger)." },
+    "arlig":  { "cid": "gZwRqjNDfR", "uids": ["g8FQhJxsPM"], "roll": "Lagret fullt av Bäverbutiken-kartonger. Byts normalt inte." },
+    "sidfot": { "cid": "gFr4QMkKJc", "uids": ["gwJwnj2Az7"], "roll": "Bäverbutikens logga. Byts aldrig." }
+  },
+  "bilder_som_byts": ["punkt1", "punkt2", "punkt3", "punkt4", "punkt5", "lyckas"]
+}

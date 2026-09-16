@@ -243,6 +243,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/kundtjanst [--alla\|--brand <id>] [--discord]` | **Måndag 07:00, alla brands:** supportmejlen (Loopia/IMAP) + Shopify → återkommande toppärenden, chargeback-varningar, ranking 0–100 per brand, VA:ns lista på engelska. Läs-bara. `kundtjanst/README.md` |
 | `/tvistkoll [--alla] [--discord]` | **Varje dag 07:00, alla brands:** bara Shopify-tvisterna → larm i Discord om någon har evidence-deadline inom 3 dagar. Sekunder, inga mejl, inga filer. Täpper luckan mellan veckorapporterna |
 | `/mejl` | **Bäverbutikens kundmejl** (orderbekräftelse, leverans, återbetalning …) med erbjudandet "köp igen → välj en gratisprodukt" — bygger mallarna ur Shopify, publicerar sidan Axel klistrar från. `mejl/README.md` |
+| `/lagerrensning <produktlänk>` | **Kopiera lagerrensnings-sidan (listicle) till en ny produkt:** motorhöljets GemPages-export (`lagerrensning/mall/`) → ny copy via sonnet-subagent, produktens riktiga pris/jämförpris ur produktsidan, produktbilder eller kie.ai-bilder (läggs på Shopifys CDN) → `lagerrensning/output/<handle>/<slug>-lagerrensning.gempages` som Axel importerar i GemPages (Pages → Import page). Prisspärr: inga andra siffror än produktsidans, inga procent. `lagerrensning/README.md` |
 
 ### Nattrutinerna
 
