@@ -465,6 +465,36 @@ omsparning av adsetens `promoted_object` försvann HARD_ERROR 1815045 på alla f
 Videorna (12 st, batch #1) körs genom HeyGen → engelska ordcaptions
 (`pipeline/no-precis.py`, konfig i `cap/`) i samma batchmapp.
 
+## USA-runda 2 samma dag (videor) — hela SE-kampanjen speglad, 20 annonser i US-kampanjen
+
+Axels order 12:1x: "alla annonser i nuvarande kampanj räcker för ett produkttest"
++ "jag vill ha videosarna på engelska". SE-kampanjens 12 videor (batch #1)
+kördes genom HeyGen (English (United States), röstklon + lip-sync):
+proofread → sonnet-lokaliserade SRT:er (`video/srt-us/`, regexgrind
+`kolla-srt.py`: samma block/timecodes, inga kronor/åäö/"Swedish law",
+±35 % längd) → apply → render → download → **engelska ordcaptions** med
+`pipeline/no-precis.py` (alla 12 källvideor har Carl Vicentes vita piller,
+mätt till y 988–1049 på 720×1280; konfig i `cap/`, GT_1 fick `fyll` 0–0,7 s
+där detektorn missade pillret mot STERLING-logotypen) → `rostkoll.py` grön
+på alla 12 → kontaktark tittade per video.
+
+**Två sessioner på samma produkt.** Medan den här sessionen renderade laddade
+Axels andra konto upp batch #1:s fyra bilder (11:10–11:26 UTC) och tio av de
+tolv videorna (12:01–12:06) med exakt samma namn; den här hann med
+`CS_1_H1` (120251443679590435) och `CS_2_H1` (120251443854310435). Dubblett-
+spärren i `ops-till-meta.mjs` stoppade varje andra försök — **noll dubbletter,
+20 annonser** (12 video + 8 bild), alla mot
+`https://carashell.com/products/takskyddet?country=US`. Stickprov på två av
+den andra sessionens videor (GT_1_H1, SP_3_H1): engelska captions, inget
+svenskt kvar. Ordval skiljer: den här sessionen "camper", den andra "RV" /
+"trailer" — harmoniseras i nästa brief.
+
+Adseten CS/GT/PD/SP slogs PÅ inne i den fortfarande PAUSADE kampanjen
+(byggda av `--tom` samma morgon, aldrig spenderat) så Axel har ett klick.
+`G` är tomt och står kvar pausat. HeyGen: 7 017 → 6 653 före render, ~570
+till för renderingarna. Ingen har lyssnat på dubbarna med öron — röstkollen
+mäter bara det mätbara; lyssna på topspendern innan skalning.
+
 ---
 
 ## LP lagerrensning live 2026-09-16 (`/lagerrensning https://carashell.se/products/takskyddet --butik carashell`)

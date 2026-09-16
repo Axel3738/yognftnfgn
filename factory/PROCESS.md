@@ -783,6 +783,15 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
     `klar_i` dömer per rad vilka marknader som saknas, så inget laddas upp
     två gånger (dubblettspärren mot kontot håller också). Textlager-bilder
     ritas om från basfotot — se `.claude/commands/ops-oversatt.md` steg 3.
+19. ⚠️ **Två konton på samma produkt samma dag = samma jobb två gånger.**
+    Mätt 2026-09-16 på CaraShell US: den här sessionen och Axels andra konto
+    körde `/ops-oversatt … --marknad US` parallellt, båda renderade alla tolv
+    videor i HeyGen (dubbla krediter), och bara dubblettspärren i
+    `tools/ops-till-meta.mjs` (annonsnamn mot kontots alla annonser) hindrade
+    att kampanjen fick 24 videor. Innan en manuell körning: läs kontot
+    (`ops-leveranskon … --status Approved`) — `finns_i_meta` säger vad som
+    redan ligger uppe — och kolla `git log origin/main` för samma batchmapp.
+    Rutinerna kolliderar inte (en fast session per butik och marknad).
 
 19. ⚙️ **Egen domän per marknad — carashell.com för USA (Axels beslut
    2026-09-16, "domänen?").** Axel kopplade carashell.com + www i Shopify

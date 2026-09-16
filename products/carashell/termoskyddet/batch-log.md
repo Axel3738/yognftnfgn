@@ -162,3 +162,16 @@ annons (regel 3).
   alls än; de 16 SE-annonserna byggdes ur källan och går inte via hubben.
 - **Läge: hållen** (PAUSED utan spend). Ingen US-rutin finns för den här nyckeln —
   `/notionscalercs setup carashell/termoskyddet` på claude5-kontot bygger 17:15-rutinen.
+
+## 2026-09-16 — `/ops-leverans carashell/termoskyddet` (första leveransrundan)
+
+- Kön: 0 rader i hubben "Termoskyddet" (`3dd270ab-…`) — varken `To be Reviewed`
+  eller `Creative strat review`; hubben är helt tom (0 rader totalt). Inget laddades upp.
+- SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115376140172`) står nu **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G) — var PAUSED vid bygget i förmiddags. Ärvd länk
+  `https://carashell.se/products/termoskyddet` ur `CaraShellFront_G_3`.
+  Rundan kan alltså leverera så fort något hamnar i `To be Reviewed`.
+- Pris ur butiken: 559 SEK (jämförpris 932).
+- Nästa: nattvakten 00:57 producerar första briefronden (7 st, ingen redigerare).
+  Rader når leveransrundan först när en redigerare levererar eller `/ops-bild` körs.
