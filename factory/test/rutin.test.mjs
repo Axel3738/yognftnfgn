@@ -261,11 +261,34 @@ test('butikernas tider: fast plats per butik ur register.json, aldrig samma star
   assert.deepEqual(ny, { plats: 5, ny: true, id: 'carashell' });
   assert.equal(platsFor('kalender/adventskalender-racingbilar', platser).plats, 3);
   assert.equal(platsFor('ny', { a: 0, b: 2 }).plats, 1, 'luckor fylls');
-  const t = tiderFor('kalender', { platser, datum: SOMMAR });
-  assert.equal(t.length, Object.keys(BUTIKSRUTINER).length);
+  const t = tiderFor('kalender', { platser, datum: SOMMAR, annonsmarknader: ['NO'] });
+  // Rutiner med `kraver` (US-översättningen) byggs bara för butiker med den marknaden.
+  assert.equal(t.length, Object.values(BUTIKSRUTINER).filter((r) => !r.kraver).length);
   assert.equal(t[0].tid, '00:25');
   assert.equal(t[0].cron, '25 22 * * *');
+  assert.ok(!t.some((x) => x.kommando.includes('--marknad US')));
+  // USA-butiken (Axels beslut 2026-09-16): en fjärde rutin, en timme efter NO, eget kommando.
+  const us = tiderFor('carashell', { platser: { ...platser, carashell: 5 }, datum: SOMMAR, annonsmarknader: ['NO', 'US'] });
+  assert.equal(us.length, Object.keys(BUTIKSRUTINER).length);
+  const usRutin = us.find((x) => x.kommando === '/ops-oversatt carashell --marknad US');
+  assert.ok(usRutin, 'US-rutinen finns med eget kommando');
+  assert.equal(usRutin.tid, '17:05');
+  assert.equal(usRutin.cron, '5 15 * * *');
+  assert.equal(us.find((x) => x.kommando === '/ops-oversatt carashell').tid, '16:05');
   assert.throws(() => tidFor('cs', 'drytrek', platser), /ingen butiksrutin/);
+});
+
+test('NO- och US-översättningen för samma butik är två rutiner, inte en dubblett — men två US är det', () => {
+  const katalog = fixturkatalog();
+  const rutiner = [{ id: 'trig_no', name: 'Översättning NO: carashell', prompt: '/ops-oversatt carashell' }];
+  const us = byggForslag({ kommando: '/ops-oversatt carashell --marknad US', tid: '17:05', butik: 'carashell', gren: 'main', datum: SOMMAR, katalog, rutiner });
+  assert.ok(!us.kontroll.hinder.some((h) => /finns redan/.test(h)), us.kontroll.hinder.join(' | '));
+  assert.equal(us.rutinnamn, 'Översättning US: carashell');
+  assert.ok(us.taggar.includes('marknad:US'));
+  const no = byggForslag({ kommando: '/ops-oversatt carashell', tid: '16:05', butik: 'carashell', gren: 'main', datum: SOMMAR, katalog, rutiner });
+  assert.ok(no.kontroll.hinder.some((h) => /finns redan/.test(h)), 'NO igen = dubblett');
+  const usIgen = byggForslag({ kommando: '/ops-oversatt carashell --marknad US', tid: '17:05', butik: 'carashell', gren: 'main', datum: SOMMAR, katalog, rutiner: [...rutiner, { id: 'trig_us', name: 'Översättning US: carashell', prompt: '/ops-oversatt carashell --marknad US' }] });
+  assert.ok(usIgen.kontroll.hinder.some((h) => /finns redan/.test(h)), 'US igen = dubblett');
 });
 
 test('en veckorutin får veckodagsfältet i cronen — kundtjänsten går bara måndagar', () => {

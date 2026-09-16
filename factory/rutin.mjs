@@ -116,7 +116,25 @@ export const BUTIKSRUTINER = Object.freeze({
   notionscalercs: { bas: '00:01', steg: 8, vad: 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)' },
   'ops-leverans': { bas: '13:40', steg: 5, vad: 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)' },
   'ops-oversatt': { bas: '15:40', steg: 5, vad: 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)' },
+  // USA (Axels beslut 2026-09-16, kontot Magiborsten UK): samma kö som NO, en
+  // timme senare så NO:s körning hunnit klart. Byggs bara för butiker vars
+  // registerpost bär US i `annonsmarknader` (kraver).
+  'ops-oversatt-us': { bas: '16:40', steg: 5, vad: 'Översättning US OPS (SE-ACTIVE to be translated → live i US-kampanjen i Magiborsten UK)', kommando: (butik) => `/ops-oversatt ${butik} --marknad US`, kraver: 'US' },
 });
+
+/** Kommandot en butiksrutin körs med. */
+export const butiksrutinKommando = (namn, butik) => (typeof BUTIKSRUTINER[namn]?.kommando === 'function' ? BUTIKSRUTINER[namn].kommando(butik) : `/${namn} ${butik}`);
+
+/** Butikens annonsmarknader ur register.json (drift), standard NO. Läser aldrig nätet. */
+export function annonsmarknaderFor(butik, fil = REGISTERFIL) {
+  try {
+    const drift = JSON.parse(readFileSync(fil, 'utf8'));
+    const hel = String(butik ?? '').trim().toLowerCase();
+    const post = drift.poster?.[hel] ?? Object.entries(drift.poster ?? {}).find(([k]) => k.toLowerCase().startsWith(`${hel}/`))?.[1] ?? null;
+    const lista = Array.isArray(post?.annonsmarknader) ? post.annonsmarknader.map((k) => String(k).toUpperCase()) : [];
+    return lista.length ? lista : ['NO'];
+  } catch { return ['NO']; }
+}
 
 /** OPS-butikerna i bokstavsordning (testbutiken är en fixtur). */
 export function opsButiker(rot = ROT) {
@@ -213,13 +231,16 @@ export function minutkrockar(nyckel, andra = [], platser = lasPlatser(), opt = {
 }
 
 /** Alla tre tiderna för en butik, med cron för båda halvåren. */
-export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false } = {}) {
+export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false, annonsmarknader = null } = {}) {
   const p = platsFor(butik, platser, { flerprodukt });
-  return Object.keys(BUTIKSRUTINER).map((namn) => {
-    const tid = tidFor(namn, butik, platser, { flerprodukt });
-    const c = tillCron(tid, { datum });
-    return { kommando: `/${namn} ${butik}`, tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
-  });
+  const marknader = (annonsmarknader ?? annonsmarknaderFor(butik)).map((k) => String(k).toUpperCase());
+  return Object.keys(BUTIKSRUTINER)
+    .filter((namn) => !BUTIKSRUTINER[namn].kraver || marknader.includes(BUTIKSRUTINER[namn].kraver))
+    .map((namn) => {
+      const tid = tidFor(namn, butik, platser, { flerprodukt });
+      const c = tillCron(tid, { datum });
+      return { kommando: butiksrutinKommando(namn, butik), tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
+    });
 }
 
 // ------------------------------------------------------------------ spärrarna
@@ -256,10 +277,17 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
   //    butik A:s nattvakt är ingen dubblett av butik B:s.
   const ordgrans = namn ? new RegExp(`(^|\\s|/)${escapeRegex(namn)}(\\s|$)`) : null;
   const butiksgrans = butik ? new RegExp(`(^|[\\s:/])${escapeRegex(butik)}(\\s|$)`, 'i') : null;
+  // Samma kommando + samma butik men ANNAN marknad (`--marknad US`) är en
+  // annan rutin: NO-översättningen 15:40 och US-översättningen 16:40 för samma
+  // butik är två jobb, inte en dubblett (2026-09-16).
+  const marknadAv = (t) => (/--marknad\s+([A-Za-z]{2})/.exec(String(t ?? ''))?.[1] ?? 'NO').toUpperCase();
+  const minMarknad = marknadAv(kommando);
   const likadana = rutiner.filter((r) => {
     const text = `${r.prompt || ''} ${r.name || ''}`;
     if (!ordgrans || !ordgrans.test(text)) return false;
-    return butiksgrans ? butiksgrans.test(text) : true;
+    if (butiksgrans && !butiksgrans.test(text)) return false;
+    if (namn === 'ops-oversatt' && marknadAv(r.prompt) !== minMarknad) return false;
+    return true;
   });
   if (likadana.length) {
     hinder.push(
@@ -346,11 +374,12 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
   // läsa utan att veta vad "notionscalercs" betyder.
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
-  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': 'Översättning NO' };
+  const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
+  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO' };
   const butiksrutin = butik ? BUTIKSRUTINER[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
-  const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean);
+  const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null, marknadIKommando ? `marknad:${marknadIKommando}` : null].filter(Boolean);
 
   return {
     ...tider,

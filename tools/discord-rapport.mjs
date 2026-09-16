@@ -48,6 +48,7 @@ import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { granskaSprak, serUtSomSvenska, stoppText } from './lib/engelska.mjs';
+import { OPS_MARKNADER } from '../factory/opsmarknader.mjs';
 
 /** Discords tak för ett meddelande. */
 export const MAXLANGD = 2000;
@@ -67,6 +68,14 @@ const LAGEN = {
   oversatt: { emoji: '🇳🇴', rubrik: 'Norway translation' },
   bild: { emoji: '🖼️', rubrik: 'image ads' },
 };
+// Översättningsrundan rapporterar per marknad: jobb.marknad (NO, US …) byter
+// flagga och rubrik ur factory/opsmarknader.mjs; utan fältet gäller Norge.
+export function lageFor(jobb) {
+  const bas = LAGEN[jobb?.lage] ?? LAGEN.budget;
+  if (jobb?.lage !== 'oversatt' || !jobb?.marknad) return bas;
+  const m = OPS_MARKNADER[String(jobb.marknad).toUpperCase()];
+  return m ? { emoji: m.emoji ?? bas.emoji, rubrik: m.rubrik_en ?? bas.rubrik } : bas;
+}
 
 /** Fält som måste finnas för att mallen ska gå att rendera alls. */
 export function saknadeFalt(jobb) {
@@ -158,7 +167,7 @@ export function renderaRapport(jobb, { axelId = null } = {}) {
   const saknade = saknadeFalt(jobb);
   if (saknade.length > 0) throw new Error(`Rapporten vägrar: saknade fält — ${saknade.join(', ')}`);
 
-  const lage = LAGEN[jobb.lage];
+  const lage = lageFor(jobb);
   const rubrik = `${lage.emoji} ${String(jobb.brand).toUpperCase()} ${lage.rubrik} — ${jobb.datum}`;
   const action = actionSektion(jobb, { axelId });
   const nasta = String(jobb.nasta_korning ?? '').trim();
