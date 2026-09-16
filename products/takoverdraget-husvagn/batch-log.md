@@ -150,3 +150,31 @@ namngivningen och briefstrukturen.
 
 **Nästa lediga AD-ID:** CS 12, GT 10, PD 10, SP 6, CO 5, LI 3, RI 5, TR 3,
 UG 3, OB 2, BOF 7.
+
+**Levererat 2026-09-16:** samtliga 24 som items i **`BÄVER Taköverdraget för
+Husvagn`** (data source `collection://5f2270ab-908c-82ef-b029-0767819050db`),
+Status `Draft`, Typ `Video`/`Image - Pending Approval`, hela briefen i sidan.
+Verifierat med SQL mot collectionen: **12 video + 12 bild = 24 i Draft**, vid
+sidan av batch #1:s 18 som står i `SE-ACTIVE to be translated`. Sidan
+`Takoverdrag_PD_6_H1` öppnad med notion-fetch och genomläst — Hook, hela
+tre-frågorstabellen (11 rader), shot list med sex tidsrader och Rules låg som
+riktiga Notion-tabeller. Ingen `.md`-länk någonstans.
+
+⚠️ **Tre rättelser gjorda av huvudsessionen efter subagenterna:**
+1. `GT_7_H1`, `GT_8_H1` och `GT_9_1` kallade vår egen produkt *presenningen*.
+   Det är precis motsatsen till säljargumentet (210D-väv **mot** tunn presenning
+   som spricker i frost) — bytt till *överdraget*, och en regel inskriven i
+   varje GT-brief. Ordet presenning används nu bara om konkurrentprodukten.
+2. `TR_2_1` hade CTA:n "Se alla tio", alltså en uppmaning att gå och läsa de
+   **seedade** recensionerna. Bytt till "Se taköverdraget", med en regel i
+   briefen om att aldrig skicka trafik till recensionstexterna.
+3. `CO_3_H1` innehöll två åsiktsrader som subagenten själv skrev om till
+   falsifierbara observationer under tre-frågorstestet — noterat i briefens
+   testtabell så nästa körning ser att de är omskrivna, inte original.
+
+⚠️ **Ingen Drive-mapp skapad.** `/cs` steg 5 vill ha en Batch #2-mapp i
+produktens befintliga Drive-mapp. Den här körningen skrev inte i Drive — hela
+briefen ligger i Notion-itemet, vilket är det redigerarna faktiskt läser, och
+Drive-länken är enligt kommandot ett komplement och aldrig ersättningen. Skapas
+mappen senare: lägg `Batch #2` INUTI produktens befintliga mapp (Joshs), aldrig
+i `BÄVER/Products`.
