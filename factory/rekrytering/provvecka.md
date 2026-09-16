@@ -33,7 +33,44 @@ Välj bara en om platserna faktiskt är färre än kandidaterna.
 
 ---
 
-## Betalningen: bryt inte annonsens löfte
+## ⚠️ Upplägget ändrades 2026-09-16 — läs detta först
+
+Avsnittet nedan skrevs mot det gamla upplägget (månadslön $520 enligt
+`anstallningsavtal.md`). **Axel har sedan dess lagt om redigerarjobbet till
+paketbetalning**, och de nuvarande redigerarna kör redan så:
+
+- **Ett paket = en produkt:** 12 videoannonser (4 bodys × 3 hooks) +
+  4 bildannonser + recensioner + ad copy.
+- **$15 USD per färdigt paket** + 0,4 % commission på svensk adspend från de
+  egna annonserna (`/commission`, satsen `SATS` i `commission/berakning.mjs`).
+- Nuvarande redigerare landar på **~$400+/mån** när de jobbar konsekvent
+  (Axels tal 2026-09-16).
+
+Det betyder att varningen nedan inte längre gäller som "gör inte det här" —
+den gäller som **vad du måste kompensera för**. Styckbetalning har två kända
+svagheter, och båda är hanterbara:
+
+1. **Cherry-picking finns inte här**, för paketet är hela produkten. Man kan
+   inte plocka de lätta bitarna ur ett paket — det är klart först när alla 16
+   creatives + recensioner + copy är inne. Det är styckbetalningens stora
+   konstruktionsfel, och paketformatet stänger det.
+2. **Risken att jobbet tar slut** är det kandidaten faktiskt är rädd för.
+   Motmedlet är volym, och den finns: tre butiker utan redigerare. Säg det
+   i erbjudandet — det är det starkaste argumentet du har.
+
+Meddelandet till kandidater om omläggningen:
+`utskick/meddelande-nytt-upplagg.txt`. Det säger rakt ut att jobbet skiljer
+sig från annonsen, innan de tackar ja. Behåll den ärligheten i varje ny
+version — annonsen lovar månadslön, och en kandidat som upptäcker skillnaden
+efteråt skriver om det i arbetsgivaromdömena på OnlineJobs.ph.
+
+**Gör om annonsen inför nästa utskick** så den beskriver paketupplägget från
+början. Så länge annonsen lovar $520/mån behövs det här meddelandet varje gång,
+och varje kandidat får ett sämre första intryck än nödvändigt.
+
+---
+
+## Betalningen (gamla upplägget): bryt inte annonsens löfte
 
 Annonsen de sökte på säger ordagrant:
 
