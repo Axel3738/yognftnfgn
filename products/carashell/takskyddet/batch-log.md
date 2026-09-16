@@ -586,3 +586,52 @@ ser namnen, och namnen är identiska sånär som på " – kopia". **Rätt åtg�
 `--kampanj <id>` på `ops-till-meta`, aldrig att pausa den ena.** Vilken som
 gäller avgörs av briefens `Destination:` — dessa sju sa produktsidan.
 Nästa gång kommer samma stopp: det är en verktygsbegränsning, inte en incident.
+
+---
+
+## USA-runda 3 2026-09-16 (`/ops-oversatt carashell/takskyddet --marknad US`) — batch #3:s sju bildannonser upp i US-kampanjen
+
+**Kön:** 7 rader i `SE-ACTIVE to be translated` (batch #3, live i SE samma kväll).
+`--status Approved`-kollen: batch #2:s fyra rader bär redan US-annonser — inget
+eftersläpande. Kampanjen `CARASHELL_US_Taköverdrag …` (`120251436741400435`,
+Magiborsten UK) fortfarande PAUSED utan spend ⇒ annonserna laddas upp, kampanjen
+rörs inte. Batchen: `market-expansion/ops/carashell/2026-09-16-us-3/`.
+
+| SE | US | Adset | Ad-ID | Tillbakaläst |
+|---|---|---|---|---|
+| `SP_5_1` | `CaraShellRoof_US_SP_5_1` | `CARASHELL_US_SP` | 120251447567460435 | ACTIVE/ACTIVE |
+| `SP_6_1` | `CaraShellRoof_US_SP_6_1` | `CARASHELL_US_SP` | 120251447548410435 | ACTIVE/ACTIVE |
+| `SP_7_1` | `CaraShellRoof_US_SP_7_1` | `CARASHELL_US_SP` | 120251447531970435 | ACTIVE/ACTIVE |
+| `CS_5_1` | `CaraShellRoof_US_CS_5_1` | `CARASHELL_US_CS` | 120251447435050435 | ACTIVE/ACTIVE |
+| `CS_6_1` | `CaraShellRoof_US_CS_6_1` | `CARASHELL_US_CS` | 120251447430630435 | ACTIVE/ACTIVE |
+| `PD_6_1` | `CaraShellRoof_US_PD_6_1` | `CARASHELL_US_PD` | 120251447347010435 | ACTIVE/ACTIVE |
+| `PD_7_1` | `CaraShellRoof_US_PD_7_1` | `CARASHELL_US_PD` | 120251447338360435 | ACTIVE/ACTIVE |
+
+Länk `https://carashell.com/products/takskyddet?country=US` (ärvd ur kampanjen).
+Priset läst live: $199 / $249 (`ekonomi.marknadspriser` USD stämmer). Copy av
+sonnet-subagent, tre-frågorstestet redovisat per rad: 23 % → **20 %**, "spara
+340 kr" → **Save $50**, 14 dagars ångerrätt → **90-day guarantee** (det sidan
+säger), "Sverige och Norge" → "in the US", carashell.se → carashell.com,
+6,5 × 3 m → 21.3 × 9.8 ft, 30–40 cm → 12–16 in. 0 HeyGen-krediter, 0 kie.ai.
+US-kampanjen bär nu **27 annonser**.
+
+**Basfotona var borta för sex av sju.** `/ops-bild` sparar det rena fotot bara
+som `.bas.png` i containern och laddar upp enbart textversionen till Notion;
+nattvaktens planfil `bild-2026-09-16.json` skrevs dessutom över av
+`SP_6_1`-omkörningen, så bara dess kie.ai-länk fanns kvar (den svarade fortfarande
+→ `SP_6_1` ritades om från grunden med textlagret, som batch #2). De andra sex
+fick **textbyte i samma rutor** (`oversatt-us.py` i batchmappen): SE-layouten räknas
+om exakt med `bild-text.py`:s egen `Duk`, den svenska texten suddas radvis inuti
+bandet/chipen (plattan behåller fotot bakom), och den amerikanska texten ritas i
+samma ruta med samma typsnitt, storlek, färg och justering. Chips som behöver bli
+bredare ritas bredare i samma hörn. QA-bild läst per annons. Bara priskortet
+(pris + jämförpris) saknas i den vägen — ingen bild i batch #3 har det.
+⚠️ **Nästa NO-runda (15:45 i morgon) tar samma sju rader och har samma problem** —
+kopiera `oversatt-us.py`-vägen, försök inte OCR-vägen (`oversatt-batch.py`
+matchar formerna automatiskt och tar husvagnsväggar för plattor på de här fotona).
+Rotorsaken hör hemma i `/ops-bild`: ladda upp basfotot till Notion också, eller
+spara kie.ai-länken i planfilen utan att skriva över — noterat i `dna.md`.
+
+Notion: kommentar + `Translated url` på alla sju; **status orörd** (`flytta_till_approved`
+falskt — Norge bär dem inte än). Discord `#annons-uppladdning` postat, Axel
+pingad under ACTION NEEDED (slå på kampanjen).

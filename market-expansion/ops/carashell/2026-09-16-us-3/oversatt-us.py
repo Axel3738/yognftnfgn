@@ -300,7 +300,7 @@ def main():
             continue
         mal = namn.replace("CaraShellRoof_", "CaraShellRoof_US_")
         se_el = se[namn]["element"]
-        us_el = us.get(namn, {}).get("element")
+        us_el = (us.get(namn) or us.get(mal) or {}).get("element")  # subagenten nycklar på US-namnet
         if not us_el:
             resultat[namn] = {"status": "FEL", "skal": "saknas i textlager-us.json"}; continue
         if [e["typ"] for e in se_el] != [e["typ"] for e in us_el]:

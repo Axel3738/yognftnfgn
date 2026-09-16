@@ -1,0 +1,87 @@
+{
+  "CaraShellRoof_SP_5_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_SP_5_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_SP_5_1.png",
+    "placerade": [
+      "botten",
+      "citat",
+      "namn",
+      "stjarnor",
+      "badge"
+    ]
+  },
+  "CaraShellRoof_SP_6_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_SP_6_1",
+    "vag": "basfoto + textlager",
+    "fil": "us/CaraShellRoof_US_SP_6_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "badge"
+    ],
+    "okanda": []
+  },
+  "CaraShellRoof_SP_7_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_SP_7_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_SP_7_1.png",
+    "placerade": [
+      "botten",
+      "citat",
+      "namn",
+      "stjarnor",
+      "badge"
+    ]
+  },
+  "CaraShellRoof_CS_5_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_CS_5_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_CS_5_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "underrad",
+      "pris"
+    ]
+  },
+  "CaraShellRoof_CS_6_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_CS_6_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_CS_6_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "pris"
+    ]
+  },
+  "CaraShellRoof_PD_6_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_PD_6_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_PD_6_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "etikett_vanster",
+      "etikett_hoger"
+    ]
+  },
+  "CaraShellRoof_PD_7_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_PD_7_1",
+    "vag": "in-place (basfoto saknas)",
+    "fil": "us/CaraShellRoof_US_PD_7_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "etikett_vanster",
+      "etikett_hoger"
+    ]
+  }
+}
