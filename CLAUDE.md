@@ -556,6 +556,19 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   kvarglömda `<!-- GIF … -->`-platshållare på 6 produkter i SE/NO/FI. Svepen körs
   med `temu/klistermarken/fartsvep.mjs` och `kommentarsvep.mjs`.
   Tas en platshållare bort ur butiken ska TODO:n den bar skrivas in i repot först.
+- **Rippar du en produktsida från en annan butik: bilderna är ofta inte produktbilder.**
+  Adventlanes galleri visade sig innehålla Amazon-skärmdumpar med hjärt- och delaikon och
+  "Click to see full view", en `1688.com`-vattenstämpel, en kinesisk spec-tabell och engelsk
+  reklamtext ovanpå fotot. Ladda ner varje bild och **titta på den i ett kontaktark** innan
+  något laddas upp. *(2026-09-16: 7 av 13 kalenderbilder behövde städas.)*
+  Skilj på **överlägg** (säljtext, tabeller, sajtadresser, gränssnitt → beskärs bort) och
+  **produktens eget tryck** ("GOLF ADVENT CALENDAR", "3+", "1008 PIECES" → står kvar, det är
+  så varan ser ut). Går en vattenstämpel tvärs över produkten: använd inte bilden.
+  Döp också om filerna — källbutikens namn hamnar annars i bäverbutikens egen CDN-URL.
+- **En ripp ärver källans villkor, och de gäller inte här.** Adventlane lovade "5–10
+  arbetsdagar", "fri frakt till alla länder" och "14 dagars ångerrätt". Bäverbutiken lovar
+  aldrig hastighet och har 30 dagars öppet köp. Stryk källans garanti-, frakt- och
+  returtexter (även i FAQ och i meta-beskrivningen) och sätt `GARANTI4` i stället.
 - **Repot är PUBLIKT** (github.com/Axel3738/yognftnfgn, verifierat 2026-09-07).
   Allt som committas kan läsas av vem som helst. Skriv aldrig en riktig nyckel,
   token, hemlighet eller kunduppgift i en fil — inte ens som "exempel".
