@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 22024.24,
-    "kop": 100,
-    "roas": 5.1961,
-    "cpa": 220.24,
+    "spend": 28852.52,
+    "kop": 122,
+    "roas": 4.889,
+    "cpa": 236.5,
     "be": 1.63,
-    "be_cpa": 702.08,
-    "vinstbidrag": 48184.0,
+    "be_cpa": 709.35,
+    "vinstbidrag": 57687.7,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -212,18 +212,18 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 8387.66,
-    "kop": 26,
-    "roas": 1.8,
-    "cpa": 322.6,
+    "spend": 8804.63,
+    "kop": 27,
+    "roas": 1.7714,
+    "cpa": 326.1,
     "be": 1.62,
-    "be_cpa": 358.44,
-    "vinstbidrag": 931.84,
+    "be_cpa": 356.58,
+    "vinstbidrag": 822.96,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -1936,7 +1936,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2336,7 +2336,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11178,7 +11178,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11231,18 +11231,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 5498.91,
-    "kop": 32,
-    "roas": 3.3242,
-    "cpa": 171.84,
+    "spend": 7053.82,
+    "kop": 40,
+    "roas": 3.2254,
+    "cpa": 176.35,
     "be": 1.61,
-    "be_cpa": 354.8,
-    "vinstbidrag": 5854.72,
+    "be_cpa": 353.28,
+    "vinstbidrag": 7077.2,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-15",
+    "last": "2026-09-16",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -14318,6 +14318,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:11:39Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14416,6 +14421,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:11:39Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14514,6 +14524,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:11:39Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14612,6 +14627,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:17:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14696,6 +14716,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:15:40Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14780,6 +14805,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:15:50Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14864,6 +14894,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:07:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -14962,6 +14997,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:15:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -15060,6 +15100,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:10:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -15144,6 +15189,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:10:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -15228,6 +15278,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-13T19:10:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-15",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-15/fynd-sida.json"
       }
      ]
     }
@@ -16191,7 +16246,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Fiamma BikeCover S 2-3 cyklar (thansen.se, 30 butiker)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16281,7 +16344,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)",
+    "form": "huv",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "uppställning",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Dometic Skyddsöverdrag FJX/FJZ7 3000 (camping4u)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16371,7 +16442,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "upptagning",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Oceansouth Jet Ski Cover 2-tone 2,9–3,4 m (Marindelen; 2,5–2,9 m 1 120 kr, 3,4–3,7 m 1 560 kr — 'snart i lager igen', levtid 1–2 v)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16461,7 +16540,15 @@
    "arketyp": "A_AGARE_FRIKTION",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Krukväxter — citrus, oliv, fikon, pelargon",
+    "form": "sele",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "SmartaSaker — Potlifter 90 kg"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16539,7 +16626,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Rosor, rhododendron, buxbom i rabatten",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "vintertäckning",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Bauhaus — Videx Garden Fleece med dragkedja 240×200 cm"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16617,7 +16712,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Höstplanteringen — lökar, rosor och unga fruktträd under jord (sorken äter rötterna nov–mars)",
+    "form": "nät",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Lantkompaniet / VOSS.farming — Nätkorg mot sork Ø 60 cm, 1 st"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16695,7 +16798,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Sulavesi uppvärmd vattenskål utomhus 2,6 L (betong, 40 W) — Arken Zoo/VetZoo, i lager"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16771,7 +16882,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "H_VISUELL_NYHET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)",
+    "form": "hus",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "fars dag",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Vivara Fågelholks WiFi-kamera (bara kameran, 10 m kabel) 3 399,90 kr; solcellsdriven 3 399,90 kr — båda i lager"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -16847,7 +16966,15 @@
    "arketyp": "G_Q4_GAVA",
    "arketyp_sekundar": "F_HOBBY_IDENTITET",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Mannen med husbilen — kalendern (fars dag, jul)",
+    "form": "kalenderlåda",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "1 december",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej hittat — närmast CDON 'Adventskalender för män, 24 presenter' 519 kr (sökutdrag 2026-09-15, annan form) och Otego bil/traktor-kalender (pris ej läst)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {

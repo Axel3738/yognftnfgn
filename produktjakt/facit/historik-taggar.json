@@ -2623,6 +2623,64 @@
    "prisband": "okänd",
    "kalla": "produktjakt V3-batch 09-11 (lins F) + katalog-live 2026-09-15",
    "anteckning": "Forskningsprodukt lagd i butiken 2026-09-15; pris läses ur katalogen när kampanjen finns."
+  },
+  {
+   "nyckel": "sittkappen",
+   "namn": "Sittkäppen Hopfällbar",
+   "kampanj_monster": [
+    "Sittkäppen"
+   ],
+   "pris_sek": 949,
+   "be_roas": null,
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "objekt": "jägaren/vandraren",
+   "objekt_varde_band": "inget",
+   "objekt_ute": true,
+   "form": "verktyg",
+   "agare_55plus_smahus": true,
+   "old_way": "köpt produkt som fungerar",
+   "latent_behov": false,
+   "deadline_typ": "jaktstart",
+   "timing_vid_launch": "ingen säsong",
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": false,
+   "variant_risk": "en variant",
+   "flerkop": false,
+   "prisband": "500–999",
+   "kalla": "kampanjnamnet i kontot 2026-09-16 (Axels egen launch 09-15, ej researchad)",
+   "anteckning": "Axels egen launch — inte ur produktjakten. BE-ROAS ur kampanjnamnet."
+  },
+  {
+   "nyckel": "infartslarmet",
+   "namn": "Infartslarmet Trådlöst",
+   "kampanj_monster": [
+    "Infartslarmet"
+   ],
+   "pris_sek": 489,
+   "be_roas": null,
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "objekt": "uppfarten/tomten",
+   "objekt_varde_band": "inget",
+   "objekt_ute": true,
+   "form": "elektronik",
+   "agare_55plus_smahus": true,
+   "old_way": "ingenting",
+   "latent_behov": true,
+   "deadline_typ": "ingen",
+   "timing_vid_launch": "ingen säsong",
+   "kedjegolv_under_vart_pris": null,
+   "markesankare_kvot": null,
+   "material_klass": null,
+   "montering_app": true,
+   "variant_risk": "en variant",
+   "flerkop": false,
+   "prisband": "300–499",
+   "kalla": "kampanjnamnet i kontot 2026-09-16 (Axels egen launch 09-15, ej researchad)",
+   "anteckning": "Axels egen launch — inte ur produktjakten. BE-ROAS ur kampanjnamnet."
   }
  ]
 }
