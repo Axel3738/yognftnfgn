@@ -220,7 +220,10 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
     let seAdsets = [];
     if (!vinkelflagga) {
       const seKampanjer = await api(`act_${MALKONTO.id}/campaigns`, { params: { fields: 'id,name,status', limit: 200 } });
-      const se = (seKampanjer.data ?? []).filter((k) => new RegExp(`^${brand}_SE_`, 'i').test(k.name));
+      // PRODUKTENS SE-kampanj, inte butikens alla (CaraShell bär två produkter
+      // sedan 2026-09-16 — termoskyddets adsets ska inte in i takskyddets US).
+      const seBas = kampanjnamnFor({ brand, marknad: 'SE', produkt: p, datum: '' }).split(' | ')[0].toUpperCase();
+      const se = (seKampanjer.data ?? []).filter((k) => String(k.name).toUpperCase().startsWith(seBas));
       for (const k of se) seAdsets.push(...((await api(`${k.id}/adsets`, { params: { fields: 'id,name,status', limit: 100 } })).data ?? []));
     }
     const vinklar = vinklarFor({ flagga: vinkelflagga, seAdsets });
