@@ -23,5 +23,15 @@
     "typ": "image_hash",
     "id": "eaa8cb47984a056b9cbd2c66dd4b2f9e",
     "namn": "CARASHELL_Frontrutetrekk_NO_G_2_1"
+  },
+  "Frontrutetrekk_NO_SP_2_1": {
+    "typ": "image_hash",
+    "id": "8cd73abfee5b64bddb36f4fb88656e17",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_2_1"
+  },
+  "Frontrutetrekk_NO_CS_2_1": {
+    "typ": "image_hash",
+    "id": "7487f998069bbfffb4a6095c309f3a4f",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_2_1"
   }
 }

@@ -11,7 +11,12 @@
   ],
   "vinklar": {
     "PD": {
-      "annonser": ["Frontrutetrekk_NO_PD_1", "Frontrutetrekk_NO_PD_2", "Frontrutetrekk_NO_PD_3", "Frontrutetrekk_NO_PD_2_1"],
+      "annonser": [
+        "Frontrutetrekk_NO_PD_1",
+        "Frontrutetrekk_NO_PD_2",
+        "Frontrutetrekk_NO_PD_3",
+        "Frontrutetrekk_NO_PD_2_1"
+      ],
       "utfall_i_kallan": "under grinden — 24 NOK och 0 köp över fyra annonser",
       "rattad_efter_granskning": false,
       "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
@@ -20,13 +25,47 @@
       "andringar": []
     },
     "G": {
-      "annonser": ["Frontrutetrekk_NO_G_2_1"],
+      "annonser": [
+        "Frontrutetrekk_NO_G_2_1"
+      ],
       "utfall_i_kallan": "under grinden — 1 NOK och 0 köp",
       "rattad_efter_granskning": false,
       "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
       "headline": "Gaven bobileiere elsker",
       "description": "Gi en gave de faktisk kommer til å bruke.",
       "andringar": []
+    },
+    "CS": {
+      "annonser": [
+        "Frontrutetrekk_NO_CS_2_1"
+      ],
+      "utfall_i_kallan": "källans NO_CS_1 (video) 1 880 NOK / 5 köp på falsk brådska; bilden NO_CS_2_1 273 NOK / 0",
+      "rattad_efter_granskning": true,
+      "message": "Kjølig om sommeren, varmt om vinteren, mørkt når du sover. 🌙\nFrontrutetrekk til bobil 548 kr – førpris 685 kr.\n✅ Fri frakt i Norge\n✅ 14 dagers angrerett\nMål bobilen din før du bestiller (211 × 171 cm).",
+      "headline": "Fra 685 kr til 548 kr",
+      "description": "548 kr, fri frakt og 14 dagers angrerett.",
+      "andringar": [
+        {
+          "vad": "Hela källcopyn (40 % rabatt – kun i dag) ersatt",
+          "varfor": "Ingen tidsbegränsad kampanj; NOK-priser ur prislistan. Subagent (sonnet) 2026-09-16."
+        }
+      ]
+    },
+    "SP": {
+      "annonser": [
+        "Frontrutetrekk_NO_SP_2_1"
+      ],
+      "utfall_i_kallan": "källans NO_SP_2_1 (bild): 797 NOK, 3 köp",
+      "rattad_efter_granskning": true,
+      "message": "\"Beskytter godt og mørklegger fint.\" – Sofia\n5,0 av 5 – 10 omtaler\n✅ Beskytter mot sol og varme\n✅ Enkelt å montere selv\n✅ God passform, kjennes stabilt\nFrontrutetrekk til bobil, 211 × 171 cm.",
+      "headline": "5,0 av 5 hos 10 bobileiere",
+      "description": "Ekte omtaler av frontrutetrekk til bobil.",
+      "andringar": [
+        {
+          "vad": "Påhittat citat ersatt med Sofias omdöme i butikens norska Judge.me-underlag",
+          "varfor": "Samma citat som bildannonsen; subagent (sonnet) 2026-09-16, huvudsessionen bytte Eriks svenska citat mot den norska översättningen av Sofias."
+        }
+      ]
     }
   }
 }

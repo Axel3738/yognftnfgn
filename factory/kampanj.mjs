@@ -298,32 +298,60 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
 
   if (torr) { console.log('\n(torrkörning — inget skapades i Meta)'); process.exit(0); }
 
-  // --- kampanjen. INGEN kampanjbudget: budgeten bor i adseten (ABO).
-  const kampanj = await api(`act_${act}/campaigns`, {
-    form: {
-      name: kampanjnamn,
-      objective: 'OUTCOME_SALES',
-      status: 'PAUSED',
-      special_ad_categories: '[]',
-      buying_type: 'AUCTION',
-      // ⚠️ Meta KRÄVER det här fältet så fort kampanjen saknar egen budget.
-      // FALSKT med flit: sant låter adseten låna 20 % av varandras budget,
-      // och då är budgeten inte längre lika per annons — hela poängen med
-      // ett test-ABO faller (regel 11).
-      is_adset_budget_sharing_enabled: 'false',
-    },
-  });
-  console.log(`\n✅ Kampanj ${kampanj.id} (PAUSED, ABO utan budgetdelning)`);
+  // --- kampanjen. IDEMPOTENT på namn sedan 2026-09-16: finns kampanjen redan
+  // fylls DEN (/ny-annonser steg 8: "aldrig en ny bredvid"). Förut skapades en
+  // ny kampanj vid varje körning, så en andra omgång annonser (bildfixar,
+  // omdubbade videor) hade blivit en dubblettkampanj.
+  //
+  // Budgetmodell: `--cbo` = budgeten på kampanjen (den låsta OPS-strukturen i
+  // /ny-annonser steg 8, Axels beslut 2026-09-10). Utan flaggan ABO: budgeten
+  // bor i adseten, lika per adset (regel 11, test-ABO). En BEFINTLIG kampanj
+  // avgör själv: har den daily_budget är den CBO och adseten får ingen budget.
+  const cbo = arg.includes('--cbo');
+  const befintliga = await api(`act_${act}/campaigns`, { params: { fields: 'id,name,daily_budget,status', limit: 200 } });
+  let kampanj = (befintliga.data ?? []).find((k) => k.name === kampanjnamn) ?? null;
+  if (kampanj) {
+    console.log(`\n♻️  Kampanj ${kampanj.id} finns redan (${kampanj.status}${kampanj.daily_budget ? `, CBO ${kampanj.daily_budget / 100} kr/dag` : ', ABO'}) — fyller den, skapar ingen ny.`);
+  } else {
+    kampanj = await api(`act_${act}/campaigns`, {
+      form: {
+        name: kampanjnamn,
+        objective: 'OUTCOME_SALES',
+        status: 'PAUSED',
+        special_ad_categories: '[]',
+        buying_type: 'AUCTION',
+        ...(cbo
+          ? { daily_budget: String(budget), bid_strategy: 'LOWEST_COST_WITHOUT_CAP' }
+          // ⚠️ Meta KRÄVER det här fältet så fort kampanjen saknar egen budget.
+          // FALSKT med flit: sant låter adseten låna 20 % av varandras budget,
+          // och då är budgeten inte längre lika per annons — hela poängen med
+          // ett test-ABO faller (regel 11).
+          : { is_adset_budget_sharing_enabled: 'false' }),
+      },
+    });
+    kampanj.daily_budget = cbo ? String(budget) : null;
+    console.log(`\n✅ Kampanj ${kampanj.id} (PAUSED, ${cbo ? `CBO ${budget / 100} kr/dag` : 'ABO utan budgetdelning'})`);
+  }
+  const kampanjArCbo = Boolean(kampanj.daily_budget);
 
   // --- adseten, ett per vinkel. Targeting sätts EXPLICIT — ingen fallback-geo.
+  // Återanvänds på namn inom kampanjen.
   const adsetAv = new Map();
+  const befintligaAdsets = await api(`${kampanj.id}/adsets`, { params: { fields: 'id,name', limit: 100 } });
   for (const v of vinklar) {
+    const adsetnamn = `${brand.toUpperCase()}_${marknad}_${v}`;
+    const redan = (befintligaAdsets.data ?? []).find((a) => a.name === adsetnamn);
+    if (redan) {
+      adsetAv.set(v, redan.id);
+      console.log(`♻️  Adset ${v}: ${redan.id} finns redan`);
+      continue;
+    }
     const adset = await api(`act_${act}/adsets`, {
       form: {
-        name: `${brand.toUpperCase()}_${marknad}_${v}`,
+        name: adsetnamn,
         campaign_id: kampanj.id,
         status: 'PAUSED',
-        daily_budget: String(perAdset),
+        ...(kampanjArCbo ? {} : { daily_budget: String(perAdset) }),
         billing_event: 'IMPRESSIONS',
         optimization_goal: 'OFFSITE_CONVERSIONS',
         bid_strategy: 'LOWEST_COST_WITHOUT_CAP',
@@ -341,17 +369,26 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
     console.log(`✅ Adset ${v}: ${adset.id} (PAUSED, geo ${marknaden.geo.join(',')}, ${perAdset / 100} ${marknaden.kontovaluta}/dag)`);
   }
 
-  // --- annonserna
+  // --- annonserna. En annons som redan finns i kampanjen (samma namn) hoppas
+  // över — så en andra omgång media (bildfixar, omdubbade videor) kan köras
+  // genom samma kommando utan dubbletter.
   const byggda = [];
   const misslyckade = [];
+  const redanUppe = new Set(((await api(`${kampanj.id}/ads`, { params: { fields: 'name', limit: 200 } })).data ?? []).map((x) => x.name));
+  let hoppade = 0;
   for (const a of attBygga) {
     const copy = copyblock[a.vinkel].slutlig ?? copyblock[a.vinkel];
     const adsetId = adsetAv.get(a.vinkel);
+    const annonsnamn = annonsnamnAv(p, a.namn, kallprefix, marknad);
+    if (redanUppe.has(annonsnamn)) {
+      console.log(`   ♻️  ${annonsnamn} finns redan i kampanjen`);
+      hoppade += 1;
+      continue;
+    }
     try {
       const m = { id: a.id };
       if (a.typ === 'video') m.thumb = await väntaPåThumb(a.id);
       const spec = byggSpec({ typ: a.typ, media: m, copy, pageId, igId: null, lank });
-      const annonsnamn = annonsnamnAv(p, a.namn, kallprefix, marknad);
       const creative = await api(`act_${act}/adcreatives`, {
         form: {
           name: annonsnamn,
@@ -380,6 +417,7 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   console.log('\n─── RÄKNING ───');
   console.log(`  media i målkontot   : ${attBygga.length}`);
   console.log(`  annonser byggda     : ${byggda.length}`);
+  console.log(`  fanns redan         : ${hoppade}`);
   console.log(`  misslyckade         : ${misslyckade.length}`);
   console.log(`  annonser i kampanjen: ${(iKontot.data ?? []).length}  ← läst ur Meta`);
   for (const m of misslyckade) console.log(`     ❌ ${m.namn}: ${m.fel}`);

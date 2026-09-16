@@ -23,5 +23,15 @@
     "typ": "image_hash",
     "id": "d16e75453cd94270c8fc56beb5b501b4",
     "namn": "CARASHELL_Termoskydd_PD_2_1"
+  },
+  "Termoskydd_SP_2_1": {
+    "typ": "image_hash",
+    "id": "5de7cedd4eaba509b32e8c9e69fbf7ee",
+    "namn": "CARASHELL_Termoskydd_SP_2_1"
+  },
+  "Termoskydd_CS_2_1": {
+    "typ": "image_hash",
+    "id": "69bb2c851d020a814ea9c345a1368352",
+    "namn": "CARASHELL_Termoskydd_CS_2_1"
   }
 }
