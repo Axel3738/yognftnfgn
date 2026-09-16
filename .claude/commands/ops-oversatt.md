@@ -92,6 +92,15 @@ ingen rad flyttas, ingen status ändras i Notion, inget renderas i HeyGen.
 Raderna ligger kvar tills kampanjen är ACTIVE igen — se
 `factory/PROCESS.md`, "Marknaden är pausad av ägaren".
 
+**Marknad tillagd i efterhand (USA på CaraShell 2026-09-16):** rader som
+redan flyttats till `Approved` när bara NO fanns kommer aldrig tillbaka i
+`SE-ACTIVE to be translated`. Kör därför kön EN gång till med
+`--status Approved` (utan `--ut` först): varje rad med `finns_i_meta: false`
+för marknaden är eftersläpande och översätts precis som de andra (hämta
+filen med `--ut` för just dem). Statusen rörs inte — raden är redan
+Approved; kommentaren i steg 6 skrivs utan `--status`. Är kön tom i BÅDA
+statusarna säger rapporten det, aldrig bara "0 rader".
+
 Raden bär `mal_namn` (`HeimGuard_SP_2_1` → `HeimGuard_<M>_SP_2_1`), typ,
 fil (`--ut` hämtade den ur Notion), `finns_i_meta` (redan uppe ⇒ bara
 statusflytt), `klar_i` (de andra marknaderna) och `flytta_till_approved`.

@@ -176,13 +176,13 @@
       "underlag": 151,
       "utfall": {
         "nb": {
-          "registrerade": 2,
+          "registrerade": 1,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 1,
+            "sida": 0,
             "menylänk": 1,
             "paket": 0,
             "policy": 0,
@@ -194,19 +194,19 @@
           "granskning": "4342/4373"
         },
         "en": {
-          "registrerade": 5,
+          "registrerade": 1,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 2,
+            "sida": 0,
             "menylänk": 1,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
-            "temamall": 1,
-            "sektionsgrupp": 1,
+            "temamall": 0,
+            "sektionsgrupp": 0,
             "temainställning": 0
           },
           "granskning": "4349/4373"
@@ -240,7 +240,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T09:47:24.470Z"
+    "tid": "2026-09-16T10:21:50.286Z"
   },
-  "uppdaterad": "2026-09-16T09:47:24.470Z"
+  "uppdaterad": "2026-09-16T10:21:50.286Z"
 }

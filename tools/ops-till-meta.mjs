@@ -361,7 +361,7 @@ async function huvud() {
   if (!länk) {
     try {
       const handle = butik.produkt?.produkt?.handle || butik.produkt?.produkt?.id || post.id;
-      länk = lankFor({ doman: domanUrButik(butik.butik), handle, kod: marknad });
+      länk = marknadslank(butik.butik, { handle, kod: marknad });
       lankKalla = `standardlänk för ${marknad}`;
     } catch { /* stoppet nedan säger vad som saknas */ }
   }

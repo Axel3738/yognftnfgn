@@ -369,7 +369,11 @@
       "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "annonsmarknader": [
+        "NO",
+        "US"
+      ]
     }
   },
   "rutinplatser": {

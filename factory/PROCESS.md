@@ -740,6 +740,36 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `tema.test.mjs`, "Svenskt varumärke" som markör i CaraShells butiksfil.
    Engelskan byttes samtidigt till "Swedish brand – designed for Scandinavian
    conditions" — "Scandinavian homes" lät fel för ett taköverdrag.
+17. ⚙️ **Egen domän per marknad — carashell.com för USA (Axels beslut
+   2026-09-16, "domänen?").** Axel kopplade carashell.com + www i Shopify
+   (Settings → Domains); den låg som 301 → carashell.se tills marknaden fick
+   den. API:t KAN: `webPresenceCreate({ domainId, defaultLocale: "en",
+   alternateLocales: [] })` + `marketUpdate(USA, { webPresencesToAdd: [ny],
+   webPresencesToDelete: [.se-närvaron, myshopify-närvaron] })` — mätt samma
+   dag, tillbakaläst `USA → carashell.com/en`, och `carashell.com/products/
+   takskyddet` svarar 200 med `Shopify.locale en`, `Shopify.country US`, USD.
+   `carashell.com/en/…` ger 404 (språket är standard på domänen — ingen
+   mapp), `carashell.se/en/…` svarar fortfarande. Därför bär marknadsraden
+   `doman: carashell.com` och `opsmarknader.marknadslank` bygger länken utan
+   /en/ när raden har egen domän (`kampanj.mjs`, `ops-leveranskon`,
+   `ops-till-meta` går alla den vägen). Mejlen på /en: hello@carashell.com.
+   ⚠️ www.carashell.com svarar bara över IPv4 (301 → carashell.com); över
+   IPv6 tog anslutningen inte — containerns nät, inte butiken.
+18. 🖐→⚙️ **Axels USA-beslut 2026-09-16 efter tvekan-listan:** 90-dagars
+   garanti ("90-day guarantee" / "Try it risk-free for 90 days") ersätter
+   "14-day right of withdrawal" i HELA den engelska texten, inklusive
+   returpolicy och köpvillkor — ett uttryckligt undantag från regeln "alltid
+   svensk lag, aldrig egna köplöften" (2026-09-08), för USA-marknaden enbart;
+   svenska och norska sidorna säger fortfarande 14 dagar. Returpolicyn
+   säger INTE vem som betalar returfrakten till Sverige — det är fortfarande
+   öppet (fråga till Axel i rapporten). "Ships from Sweden" struken ur
+   marquee:n, "🇺🇸 Free shipping to the US" i stället. Titeln "Roof Cover
+   for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)". Storleken,
+   sales tax (av), telefon (inget) var hans övriga svar.
+   ⚠️ Sidfotens "Ångra köp"-länk (Shopifys självbetjänade ångring,
+   `angerratt.mjs`) stod som "Contact" i en-filen och "Kontakt" i nb-filen —
+   subagenterna hade tappat en rad i sidfotsmenyn. Rättat: "Return an order"
+   / "Angre kjøp". Läs sidfoten på varje /<locale> när menyn ändras.
 16. 🖐 **Amerikanens tvekan — läst 2026-09-16 på `/en` som US-kund, Axels
    fråga "vad hade fått dig att tveka".** Kvar efter fixarna ovan, i
    fallande ordning; alla är ägarbeslut:

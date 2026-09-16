@@ -6,7 +6,17 @@ import assert from 'node:assert/strict';
 import {
   OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, kontoFor, arOpsMarknad, oversattningsmarknader,
   marknadsNamn, lankFor, domanUrButik, skaFlyttasTillApproved, annonsmarknaderUr,
+  domanForMarknad, marknadslank,
 } from '../opsmarknader.mjs';
+
+test('domanForMarknad + marknadslank: marknadens egen domän utan språkmapp, annars butikens med /locale/ (carashell.com för USA 2026-09-16)', () => {
+  const butik = { butik: { supportmail: 'hello@carashell.se', marknader: [{ land: 'NO', locale: 'nb' }, { land: 'US', locale: 'en', doman: 'https://carashell.com/' }] } };
+  assert.deepEqual(domanForMarknad(butik, 'US'), { doman: 'carashell.com', egen: true });
+  assert.deepEqual(domanForMarknad(butik, 'NO'), { doman: 'carashell.se', egen: false });
+  assert.equal(marknadslank(butik, { handle: 'takskyddet', kod: 'US' }), 'https://carashell.com/products/takskyddet?country=US');
+  assert.equal(marknadslank(butik, { handle: 'takskyddet', kod: 'NO' }), 'https://carashell.se/nb/products/takskyddet?country=NO');
+  assert.equal(marknadslank(butik, { handle: 'takskyddet', kod: 'SE' }), 'https://carashell.se/products/takskyddet');
+});
 import { annonskontoFor, OPS_ANNONSKONTO } from '../register.mjs';
 import { MARKNADSKODER, marknadskoderI, filtreraPaMarknad } from '../skalning.mjs';
 

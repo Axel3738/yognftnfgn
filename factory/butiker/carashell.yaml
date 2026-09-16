@@ -51,6 +51,10 @@ butik:
       valuta: USD
       leveranstid: "5–10 arbetsdagar"
       i_fraktraden: false
+      # Egen domän för USA (Axel 2026-09-16: ".se säger utländsk butik";
+      # carashell.com kopplad i Shopify samma dag, hello@carashell.com).
+      # Annonslänkarna byggs då utan /en/-mapp: https://carashell.com/products/…
+      doman: carashell.com
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika

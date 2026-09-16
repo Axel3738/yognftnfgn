@@ -397,3 +397,19 @@ Två fynd som gäller framåt står i `dna.md`: `elementtyp()`-buggen (rättad i
    PD-vinkeln alltid fel publik?
 4. Har batch #2:s fyra bildannonser hämtat sig när de fått en hel vecka med rätt
    creative — och vad säger det om mönster 10?
+
+## 2026-09-16 — `/ops-oversatt carashell/takskyddet --marknad US` (första US-körningen)
+
+- **Läge: hållen.** Kön `SE-ACTIVE to be translated`: 0 rader. `Approved`: 4 bildrader
+  (`CaraShellRoof_US_GT/PD/CS/SP_4_1`) som saknas i USA — eftersläpande sedan marknaden
+  lades till i efterhand (PD/CS/SP finns redan i NO). US-kampanjen `120251436741400435`
+  i Magiborsten UK står PAUSED utan spend ⇒ inget översatt, inget uppladdat, 0 HeyGen.
+- Verktygsfel hittat: kön sa "ingen US-kampanj" om en kampanj som fanns men var tom
+  (inga annonser med prefixet). Rättat (`kandidaterViaKampanjnamn`), nu säger den
+  "PAUSED utan spend — VA:n slår på kampanjen först".
+- Länkarna för USA går sedan i dag till `https://carashell.com/products/takskyddet?country=US`
+  (egen domän för marknaden) — de adsets som byggdes 2026-09-16 förmiddag bär ingen länk,
+  så inget behöver skrivas om.
+- Nästa: Axel slår på kampanjen → 17:05-rutinen översätter de 4 raderna. De 16 SE-annonserna
+  (kopierade ur källan) går aldrig via hubben — de behöver ett eget översättningsjobb
+  (HeyGen-dubb till amerikansk engelska, som NO-batchen) om USA ska ha dem.

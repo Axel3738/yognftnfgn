@@ -8,6 +8,7 @@ import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
   handleUr, produktJsonUrl, prisUr, leveransText, prefixAvviker, STANDARD_STATUS,
+  kandidaterViaKampanjnamn,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -87,6 +88,20 @@ test('valjMalkampanj: exakt en ACTIVE → kampanj med bas', () => {
   const v = valjMalkampanj([{ id: '10', name: 'HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11', status: 'ACTIVE' }], 'SE');
   assert.equal(v.skal, null);
   assert.deepEqual(v.kampanj, { id: '10', namn: 'HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11', bas: 'HEIMGUARD_SE_Övervakningskameran', status: 'ACTIVE', utfall: 'ACTIVE' });
+});
+
+test('kandidaterViaKampanjnamn: en tom kampanj hittas på produktens bas, inte på prefix eller annonser (CaraShell US 2026-09-16)', () => {
+  const kampanjer = [
+    { id: '1', name: 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16', status: 'PAUSED' },
+    { id: '2', name: 'CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16', status: 'PAUSED' },
+    { id: '3', name: 'Bäverbutiken DK | something', status: 'ACTIVE' },
+  ];
+  const tak = kandidaterViaKampanjnamn(kampanjer, 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m');
+  assert.deepEqual(tak.map((k) => k.id), ['1']);
+  // Skiftläge spelar ingen roll; termoskyddets bas träffar aldrig takskyddets.
+  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, 'carashell_us_termoskydd husbil 211 × 171 cm').map((k) => k.id), ['2']);
+  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, ''), []);
+  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, 'CARASHELL_US_'), []);
 });
 
 test('valjMalkampanj: noll kampanjer → null med "/ny-annonser bygger den"', () => {

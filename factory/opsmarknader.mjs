@@ -84,12 +84,15 @@ export function marknadsNamn(seNamn, kod) {
  * på huvuddomänen, vars marknad är Sverige — utan parametern får kunden
  * marknadens språk men SVENSKA priser (DryTrek 2026-09-10, 16 annonser en dag).
  */
-export function lankFor({ doman, handle, kod }) {
+export function lankFor({ doman, handle, kod, egenDoman = false }) {
   const m = marknadFor(kod);
   const d = String(doman ?? '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
   const h = String(handle ?? '').trim();
   if (!d || !h) throw new Error('lankFor: både doman och handle krävs.');
   if (!m.locale) return `https://${d}/products/${h}`;
+  // Marknadens EGEN domän (carashell.com för USA, 2026-09-16) bär språket som
+  // standard — ingen /en/-mapp. ?country= behålls: den pekar ut marknaden.
+  if (egenDoman) return `https://${d}/products/${h}?country=${m.country}`;
   return `https://${d}/${m.locale}/products/${h}?country=${m.country}`;
 }
 
@@ -99,6 +102,26 @@ export function domanUrButik(butik) {
   const d = mail.split('@')[1];
   if (!d) throw new Error('Butikens domän går inte att härleda ur supportmail.');
   return d;
+}
+
+/**
+ * Domänen för EN marknad: raden i butik.marknader kan bära `doman`
+ * (carashell.com för US — Axel köpte den 2026-09-16, ".se säger utländsk
+ * butik"), annars butikens egen ur supportmailen. Returnerar { doman, egen }
+ * så länken byggs utan språkmapp på en egen domän.
+ */
+export function domanForMarknad(butik, kod) {
+  const k = String(kod ?? '').toUpperCase();
+  const rad = (Array.isArray(butik?.butik?.marknader) ? butik.butik.marknader : []).find((m) => String(m?.land ?? '').toUpperCase() === k);
+  const egen = String(rad?.doman ?? '').trim().replace(/^https?:\/\//, '').replace(/\/+$/, '');
+  if (egen) return { doman: egen, egen: true };
+  return { doman: domanUrButik(butik), egen: false };
+}
+
+/** Marknadens produktlänk ur butiken — egen domän när raden bär en. */
+export function marknadslank(butik, { handle, kod }) {
+  const { doman, egen } = domanForMarknad(butik, kod);
+  return lankFor({ doman, handle, kod, egenDoman: egen });
 }
 
 /**

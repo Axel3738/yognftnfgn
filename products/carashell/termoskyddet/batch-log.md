@@ -85,3 +85,16 @@ lyssnas på före Launch.
 2. Replikerar bilden (PD_2_1) som SP_2_1 gjorde i källan?
 3. Prioritet i briefronden: ett **sant CS-manus** (pris/jämförpris/villkor, ingen
    brådska) och ett **SP-manus med riktigt citat** ur Judge.me-underlaget.
+
+## 2026-09-16 — `/ops-oversatt carashell/termoskyddet --marknad US` (första US-körningen)
+
+- Ingen US-kampanj fanns och `annonsmarknader` var SE,NO. Körningen skrev in NO,US i
+  registret och byggde en TOM kampanj: `CARASHELL_US_Termoskydd Husbil 211 × 171 cm |
+  BE-ROAS 1.61 | 2026-09-16` (`120251442339640435`, Magiborsten UK, CBO 1 000 kr/dag,
+  PAUSED, adsets CS/G/PD/SP, 0 annonser). ⚠️ `kampanj.mjs --tom` hade återanvänt
+  takskyddets US-kampanj (matchade på `CARASHELL_US_`) — rättat till produktens bas
+  före bygget.
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 i `Approved` — hubben har inga rader
+  alls än; de 16 SE-annonserna byggdes ur källan och går inte via hubben.
+- **Läge: hållen** (PAUSED utan spend). Ingen US-rutin finns för den här nyckeln —
+  `/notionscalercs setup carashell/termoskyddet` på claude5-kontot bygger 17:15-rutinen.

@@ -136,6 +136,17 @@ export function ommarkt(namn, butiksPrefix) {
  *  "HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08" → "HEIMGUARD_SE_Övervakningskameran". */
 export const kampanjBas = (kampanjnamn) => String(kampanjnamn ?? '').split(' | ')[0].trim();
 
+/** En TOM kampanj (kampanj.mjs --tom, USA 2026-09-16) bär inga annonser med
+ *  prefixet och heter BRAND_M_Produkt …, inte Prefix_… — valjKampanjer ser den
+ *  aldrig, och kön sa "ingen US-kampanj" om en kampanj som fanns (CaraShell
+ *  2026-09-16). Kandidat på KAMPANJNAMN: basen (före " | ") lika produktens
+ *  kampanjbas för marknaden. Ren funktion. */
+export function kandidaterViaKampanjnamn(kampanjer, produktBas) {
+  const bas = String(produktBas ?? '').trim().toUpperCase();
+  if (!bas) return [];
+  return (kampanjer ?? []).filter((k) => kampanjBas(k?.name).toUpperCase() === bas);
+}
+
 /** Adsetnamn per OPS-konventionen (pipeline/waves/se-heimguard-image.config.mjs:38):
  *  "<kampanjbas> - <KONCEPT>". Utan koncept: null. */
 export const adsetNamn = (bas, koncept) => (bas && koncept ? `${bas} - ${koncept}` : null);
@@ -381,7 +392,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   let lank_standard = null;
   try {
     const handle = butik.produkt?.produkt?.handle || butik.produkt?.produkt?.id || butik.post.id;
-    lank_standard = lankFor({ doman: domanUrButik(butik.butik), handle, kod: m });
+    lank_standard = marknadslank(butik.butik, { handle, kod: m });
   } catch (e) { varningar.push(`standardlänk: ${e.message}`); }
 
   // 2. Hubben + raderna.
@@ -407,7 +418,13 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
   const val = valjKampanjer(kampanjer, butik.prefix, butikens);
-  const perMarknad = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), m);
+  // En tom kampanj (första marknadsannonsen kommer härifrån) hittas bara på
+  // namnet — produktens kampanjbas för marknaden (kampanj.mjs kampanjnamnFor).
+  const { kampanjnamnFor } = await import('../factory/kampanj.mjs');
+  const produktBas = butik.produkt ? kampanjBas(kampanjnamnFor({ brand: butik.post.brand, marknad: m, produkt: butik.produkt, datum: '' })) : '';
+  const viaNamn = kandidaterViaKampanjnamn(kampanjer, produktBas).filter((k) => !val.butikens.some((x) => String(x.id) === String(k.id)));
+  if (viaNamn.length) logg(`Kampanj via namnet (inga annonser med prefixet än): ${viaNamn.map((k) => `${k.name} [${k.status}]`).join(' · ')}`);
+  const perMarknad = filtreraPaMarknad([...val.butikens, ...viaNamn].map((k) => ({ ...k, campaign_name: k.name })), m);
   const kandidater = [];
   for (const k of perMarknad.behall) {
     if (k.status === 'ACTIVE') { kandidater.push({ ...k, utfall: 'ACTIVE', spend: null }); continue; }
