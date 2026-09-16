@@ -36,7 +36,7 @@ const varningar = [
 ];
 if (inte.length) varningar.push(`Not uploaded: ${inte.map((r) => `${r.mal_namn} (${meta[r.mal_namn]?.hoppad ?? meta[r.mal_namn]?.fel ?? 'no result'})`).join(', ')}.`);
 const action_axel = [
-  `Switch on the campaign when you want US traffic: Ads Manager -> account Magiborsten UK -> campaign "${jobb.kampanj.namn.split(' | ')[0]}" -> toggle ON. Nothing else is needed - pixel access is confirmed (no Meta issues on the ads).`,
+  `Switch on when you want US traffic: Ads Manager -> account Magiborsten UK -> campaign "${jobb.kampanj.namn.split(' | ')[0]}" -> toggle ON the campaign AND its four ad sets (CARASHELL_US_CS, _G, _PD, _SP - they were built PAUSED and the upload never touches existing ad sets). The 16 ads are already ACTIVE. Pixel access is confirmed (no Meta issues on any ad).`,
 ];
 const jobbfil = {
   brand: 'CaraShell', butik: 'carashell', datum: new Date().toISOString().slice(0, 10), lage: 'oversatt', marknad: 'US',
