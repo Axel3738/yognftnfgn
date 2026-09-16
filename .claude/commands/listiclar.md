@@ -1,6 +1,9 @@
 # /listiclar – alla tre listiclarna för en produkt, in i butiken, i ett svep
 
-Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken. Valfritt
+Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken, eller
+flera länkar (produkt för produkt: alla tre sidor för den första, sedan
+nästa; commit efter varje produkt — se `/lagerrensning` → "Flera produkter
+i samma kommando"). Valfritt
 `7` (anledningar-sidan får sju punkter — standard fem; skriv `5 7` för att
 bygga båda), `--butik <id>` (standard Bäverbutiken; annars ett OPS-id),
 `--torr`.

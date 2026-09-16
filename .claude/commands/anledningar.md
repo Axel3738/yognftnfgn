@@ -1,6 +1,8 @@
 # /anledningar – "N anledningar till att …" (listicle) för en produkt, 5 eller 7 punkter
 
-Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken, valfritt
+Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken (eller
+flera länkar: en sida per länk, i tur och ordning, enligt `/lagerrensning` →
+"Flera produkter i samma kommando"), valfritt
 följt av `7` (sju punkter; standard är fem). Valfritt `--butik <id>`
 (standard: Bäverbutiken när länken är baverbutiken.se; annars ett OPS-id),
 `--torr`, `--igen <plats>`, `--gempages`, `--brand baverbutiken` (bara om
