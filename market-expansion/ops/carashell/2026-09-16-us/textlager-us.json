@@ -1,0 +1,39 @@
+{
+  "CaraShellRoof_GT_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "A gift he installs all by himself" },
+      { "typ": "underrad", "text": "RV & camper roof cover – blocks winter moisture" },
+      { "typ": "badge", "text": "$199 (was $249) – save 20%" }
+    ],
+    "noter": "Price/discount swapped to verified US price ($199 vs $249, 20% off, not Swedish 23%). 'husvagn & husbil' rendered as 'RV & camper' per US terminology. No SE/NO claims carried over."
+  },
+  "CaraShellRoof_CS_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "RV & Camper Roof Cover · 21.3 × 9.8 ft" },
+      { "typ": "pris", "text": "$199" },
+      { "typ": "jamforpris", "text": "$249" },
+      { "typ": "rabatt", "text": "−20%" },
+      { "typ": "botten", "text": "Free shipping · 5–10 business days" }
+    ],
+    "noter": "Dimension shown ft/in-first on the image (21.3 × 9.8 ft; metric follows only in the primary text). Price/compare/discount are the verified US figures ($199/$249/20%, not 1129/1469 kr/23%). 'Fri frakt' kept as free shipping — US store confirms free shipping, so unlike the NO version no downgrade was needed."
+  },
+  "CaraShellRoof_PD_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "November decides April's moisture test." },
+      { "typ": "etikett_vanster", "text": "WITHOUT – water sits by the hatch all winter" },
+      { "typ": "etikett_hoger", "text": "WITH – 21×10 ft cover, hooked under the edge" },
+      { "typ": "botten", "text": "Roof only. One person. $199." }
+    ],
+    "noter": "Headline compressed to keep both named months while staying under ~40 characters ('Fukttestet i april börjar i november.' localized in spirit, not word-for-word, to fit the on-image limit). Right label converts the 6.5 × 3 m dimension to rounded ft/in for on-image brevity. Botten keeps the three-beat rhythm with the verified US price ($199, not 1129 kr)."
+  },
+  "CaraShellRoof_SP_4_1": {
+    "element": [
+      { "typ": "citat", "text": "\"Protects the RV well against rain and dirt.\"" },
+      { "typ": "namn", "text": "– Anders" },
+      { "typ": "stjarnor", "text": "★★★★★" },
+      { "typ": "botten", "text": "One of 16 reviews – all five stars" },
+      { "typ": "pris", "text": "$199 (was $249)" }
+    ],
+    "noter": "Anders' quote translated faithfully (rain/dirt kept concrete, not paraphrased). Review count (16) and star rating are the verified US-page figures, unchanged from SE since Judge.me reviews are shared. Price swapped to $199 (was $249)."
+  }
+}

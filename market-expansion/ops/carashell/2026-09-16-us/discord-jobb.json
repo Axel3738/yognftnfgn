@@ -1,0 +1,28 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "First US round for the roof cover: 4 image ads translated to American English and uploaded to CARASHELL_US_Taköverdrag in Magiborsten UK (act 1107817401910319), one ad per concept ad set.",
+    "CaraShellRoof_GT_4_1 -> CaraShellRoof_US_GT_4_1 (ad set CARASHELL_US_GT), ad 120251442457940435",
+    "CaraShellRoof_PD_4_1 -> CaraShellRoof_US_PD_4_1 (ad set CARASHELL_US_PD), ad 120251442471980435",
+    "CaraShellRoof_CS_4_1 -> CaraShellRoof_US_CS_4_1 (ad set CARASHELL_US_CS), ad 120251442481670435",
+    "CaraShellRoof_SP_4_1 -> CaraShellRoof_US_SP_4_1 (ad set CARASHELL_US_SP), ad 120251442617450435",
+    "Images re-rendered from the clean base photos with the US text layer: $199 (was $249, -20%), free shipping, 5-10 business days, 16 reviews - all read from the live US store page. No Swedish text left.",
+    "Landing link https://carashell.se/en/products/takskyddet?country=US, price on the page 199 USD (compare 249).",
+    "HeyGen credits used: 0 (image ads only, no video). The three video briefs from batch #2 are still Draft with no editor assigned - nothing to translate yet.",
+    "Notion: comment + Translated url on all four rows; rows stay Approved (Norway already carries them)."
+  ],
+  "varningar": [
+    "The US campaign is PAUSED (built 2026-09-16, never run). Ads are ACTIVE inside it, so nothing spends until the owner switches the campaign on.",
+    "A second US campaign, CARASHELL_US_Termoskydd Husbil 211 x 171 cm, was created 12:03 Swedish time today by the other session - it is the thermal cover's own campaign, PAUSED and empty. Not a duplicate of the roof cover's."
+  ],
+  "action_axel": [
+    "Meta flags all four ads with a HARD error: ad account 1107817401910319 (Magiborsten UK) has no access to pixel 28589207184025756 (CaraShell's pixel). The campaign cannot run until the pixel is shared with that ad account: Business Settings -> Data sources -> Pixels -> CaraShell pixel -> Assigned assets -> Add assets -> ad account Magiborsten UK. Then switch the campaign on."
+  ],
+  "nasta_korning": "2026-09-17 17:05"
+}

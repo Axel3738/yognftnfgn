@@ -765,6 +765,24 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
      byter språk när widgeten synkat.
    - Bara mejl, inget telefonnummer; "Taxes included" är ovanligt i USA men
      inte fel (Axels beslut: inget påslag).
+17. 🖐 **Pixeln måste delas med marknadens annonskonto** (mätt 2026-09-16,
+    CaraShells första US-runda). Butikens pixel skapades i OPS-kontots
+    business; `kampanj.mjs --tom` skrev in den i US-adsetens
+    `promoted_object` och Meta accepterade bygget — men varje annons som
+    laddas upp får HARD_ERROR 1815045 "Kontot har inte åtkomst till pixeln"
+    (konto `1107817401910319` mot pixel `28589207184025756`), och kampanjen
+    kan inte köra. Felet syns först på annonsnivå, aldrig vid kampanjbygget.
+    Axels klick, en gång per butik: Business Settings → Data sources →
+    Pixels → butikens pixel → Assigned assets → Add assets → annonskontot
+    Magiborsten UK. Adsetens `promoted_object` behöver inte röras efteråt.
+    Rutinen `/ops-oversatt … --marknad US` lägger raden under ACTION NEEDED
+    tills den försvinner ur `issues_info`.
+18. ⚙️ **Första US-annonserna för en produkt ligger ofta redan i `Approved`.**
+    Raderna översattes till NO innan US fanns, och rutinen läser bara
+    `SE-ACTIVE to be translated`. Kör kön en gång med `--status Approved`:
+    `klar_i` dömer per rad vilka marknader som saknas, så inget laddas upp
+    två gånger (dubblettspärren mot kontot håller också). Textlager-bilder
+    ritas om från basfotot — se `.claude/commands/ops-oversatt.md` steg 3.
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
