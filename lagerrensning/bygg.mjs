@@ -3,14 +3,16 @@
 //
 //   node lagerrensning/bygg.mjs <produktlänk> --underlag              # produktfakta till copy-subagenten → output/<handle>/underlag.json
 //   node lagerrensning/bygg.mjs <produktlänk> --torr                  # planen: copy-granskning, bildplan, inget nät mot kie/Shopify
-//   node lagerrensning/bygg.mjs <produktlänk>                         # skarpt: bilder → Shopify, .gempages skriven och kollad
+//   node lagerrensning/bygg.mjs <produktlänk>                         # skarpt: bilder → Shopify, HTML (klistras in i GemPages) + .gempages (reserv) + förhandsvisning
 //   node lagerrensning/bygg.mjs <produktlänk> --igen punkt2,punkt5    # generera om vissa kie-bilder
 //   node lagerrensning/bygg.mjs --kolla <fil.gempages>                # läs en byggd fil: texter, länkar, bilder, checksummor
 //   node lagerrensning/bygg.mjs --exempel                             # mallens copy som JSON (formen subagenten ska följa)
 //
-// Flaggor: --copy <fil> --bildplan <fil> --ut <fil> --datum YYYY-MM-DD --nya-idn
+// Flaggor: --copy <fil> --bildplan <fil> --ut <fil> --datum YYYY-MM-DD --nya-idn --utan-forhandsvisning
 // Standardfiler: lagerrensning/output/<handle>/{underlag,copy,bildplan,bilder,plan}.json
-//                lagerrensning/output/<handle>/<slug>-lagerrensning.gempages
+//                lagerrensning/output/<handle>/<slug>-lagerrensning.html       ← huvudleveransen (HTML-element i GemPages)
+//                lagerrensning/output/<handle>/<slug>-lagerrensning.gempages   ← reserv (Pages → Import page)
+//                lagerrensning/output/<handle>/forhandsvisning/{desktop,mobil}.png (gitignorerat)
 //
 // Stoppar (exit 1) på: pris i copyn som inte står på produktsidan, procentsats,
 // HTML i copyn, förbjuden fras, saknad text- eller bildplats. Skriver aldrig
@@ -22,6 +24,8 @@ import { join, dirname, resolve } from 'node:path';
 import { hamtaProdukt } from './produkt.mjs';
 import { lasMall, byggSida, granskaCopy, copyUrMall, tillGempages, urGempages, granskaChecksummor, lasAvSida, skrivJson, idag } from './gempages.mjs';
 import { granskaBildplan, losBilder } from './bilder.mjs';
+import { renderaHtml, mallBilder } from './html.mjs';
+import { forhandsvisa } from './forhandsvisning.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..');
@@ -136,8 +140,9 @@ async function bygg(lank, argv) {
   console.log(`\nSida: "${rapport.namn}" · handle ${rapport.handle} · datumrad ${datum}`);
   console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${produkt.url}, ${rapport.bilder.length} bilder bytta`);
 
+  const htmlFil = join(mapp, `${produkt.slug}-lagerrensning.html`);
   if (torr) {
-    console.log('\n[--torr] Ingen bild genererad, ingen fil skriven. Texterna som skulle sättas:');
+    console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven. Skulle skriva ${htmlFil} (huvudleveransen) och ${utFil} (reserv). Texterna som skulle sättas:`);
     for (const rad of lasAvSida(sida)) if (rad.tag !== 'Image') console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 90)}${rad.link ? `  → ${rad.link}` : ''}`);
     return;
   }
@@ -155,16 +160,34 @@ async function bygg(lank, argv) {
     console.log(`\n⚠ ${kvarMotor.length} text(er) nämner fortfarande motorhöljet/båtar — läs copyn igen:`);
     for (const r of kvarMotor) console.log(`   ${r.uid}: ${String(r.text).slice(0, 100)}`);
   }
-  const mallBilder = lasAvSida(tillbaka.sidor[0]).filter((r) => r.tag === 'Image').map((r) => r.src);
+  const sidBilder = lasAvSida(tillbaka.sidor[0]).filter((r) => r.tag === 'Image').map((r) => r.src);
+
+  // HUVUDLEVERANSEN: HTML-fragmentet Axel klistrar in i ett HTML-element i
+  // GemPages (Axels beslut 2026-09-16). Samma copy, samma bilder, samma datum.
+  const html = renderaHtml({ copy, produkt, bilder, fasta: mallBilder(mall, platser), datum });
+  writeFileSync(htmlFil, html);
+  console.log(`\n✅ ${htmlFil} (${Buffer.byteLength(html)} byte) — HTML att klistra in i GemPages.`);
+  console.log(`✅ ${utFil} (${zip.length} byte) — .gempages som reserv, läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
+
+  let fv = null;
+  if (!argv.includes('--utan-forhandsvisning')) {
+    try {
+      fv = await forhandsvisa(produkt.handle, { logg: (r) => console.log(r) });
+    } catch (e) {
+      console.log(`   ⚠ förhandsvisningen misslyckades: ${e.message}`);
+    }
+  }
+
   const planObj = {
     byggd: new Date().toISOString(), datumrad: datum, produkt: underlagObj.produkt, copy: copyFil, bildplan: planFil,
-    bilder: rapport.bilder, fil: utFil, sida: { id: String(tillbaka.sidor[0].id).replace(/^__stort_tal__:/, ''), namn: rapport.namn, handle: rapport.handle },
+    bilder: rapport.bilder, html: htmlFil, fil: utFil, forhandsvisning: fv,
+    sida: { id: String(tillbaka.sidor[0].id).replace(/^__stort_tal__:/, ''), namn: rapport.namn, handle: rapport.handle },
     checksummor: tillbaka.sidor[0].pageSections.map((s) => ({ cid: s.cid, checksum: s.checksum })),
-    bildUrler: [...new Set(mallBilder)],
+    bildUrler: [...new Set(sidBilder)],
   };
   writeFileSync(join(mapp, 'plan.json'), JSON.stringify(planObj, null, 2) + '\n');
-  console.log(`\n✅ ${utFil} (${zip.length} byte) — läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
   console.log(`   plan: ${join(mapp, 'plan.json')}`);
+  if (fv?.desktop) console.log(`   titta: ${fv.desktop} och ${fv.mobil ?? '(ingen mobil-skärmdump)'}`);
 }
 
 function kolla(fil) {

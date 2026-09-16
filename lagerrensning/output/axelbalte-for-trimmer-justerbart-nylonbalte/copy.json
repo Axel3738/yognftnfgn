@@ -1,247 +1,95 @@
 {
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 efter Axels beslut samma dag: ingen sonnet-subagent, läsbarheten först. Fakta enbart ur produktsidan + products/axelbaltet/dna.md. Priser: 599 kr / 789 kr avlästa på produktsidan 2026-09-16.",
   "hero": {
     "rubrik": "Vi beställde in för många axelbälten och nu får du ditt för 599 kr istället för 789 kr så länge lagret räcker",
-    "ingress": "Vår senaste beställning blev större än planerat och lagret är fullpackat med axelbälten. Dina axlar, din nacke och din rygg tjänar på det.",
+    "ingress": "Vår senaste beställning blev större än planerat och lagret är fullt. Det är dina axlar och din rygg som tjänar på det.",
     "knapp": "Visa lagerrensningen → 599 kr",
     "sammanfattning": [
-      "Vår senaste beställning blev större än planerat och lagret är helt fullpackat med axelbälten. Därför rear vi ut dem: 599 kr istället för ordinarie 789 kr, så länge lagret räcker.",
-      "Om armarna redan är trötta efter några minuter med trimmern, eller om du vill slippa att de någonsin blir det, är det här lösningen. Ett justerbart axelbälte som fördelar vikten över axlar och rygg istället för att lägga allt i armarna, så du orkar klippa hela tomten utan att stanna för att skaka ut armarna."
+      "Vår senaste beställning blev större än planerat och lagret är fullt med axelbälten. Därför rear vi ut dem: 599 kr istället för ordinarie 789 kr, så länge lagret räcker.",
+      "Om du blir trött i armarna efter en stund med trimmern, eller helst vill slippa bli det, är det här lösningen. Ett justerbart axelbälte som lägger trimmerns vikt på axlar och rygg i stället för i armarna, så att du orkar hela tomten i ett svep."
     ]
   },
   "punkter": [
     {
-      "rubrik": "1. Trötta armar smyger sig på",
-      "text": "De första minuterna med trimmern känns helt okej. Du håller redskapet, går längs kanten, klipper undan gräset vid rabatten. Men medan du håller på flyttar sig vikten: från händerna till underarmarna, från axlarna till nacken. Ingen bestämmer sig för att bära hela trimmerns tyngd i armarna – man bara flyttar den aldrig. Redskapet hänger i händerna från start och stannar där hela passet. Kvällen efteråt känns det i axlarna. Nästa morgon känns det i nacken. Det är tecknet på att vikten aldrig flyttades någon annanstans – den låg i armarna från första sekunden till sista.",
+      "rubrik": "1. Det känns bra de första minuterna. Sen inte.",
+      "text": "Ingen tänker på vikten när trimmern startar. Du lyfter den, går ut mot kanten och börjar klippa, och de första minuterna känns det ingenting alls. Men trimmern väger lika mycket hela tiden, och det är armarna som håller upp den. Efter en stund blir underarmarna stumma, sen axlarna, och till slut sitter det i nacken. Det är inget du har bestämt dig för. Du har bara aldrig bestämt något annat, så vikten har hängt i armarna från första sekunden till sista. På kvällen känner du det i axlarna. Morgonen efter känner du det i nacken.",
       "knapp": "Sluta bära hela vikten i armarna →"
     },
     {
-      "rubrik": "2. Det vanliga fixet tar inte bort vikten",
-      "text": "Du gör det du kan: tar en paus, byter hand, håller trimmern närmre kroppen, försöker ta det lugnt över den sista biten gräsmatta. Det hjälper i stunden, men vikten är fortfarande kvar i armarna varje sekund motorn går. En kort paus mot en hel eftermiddags klippning är en ojämn match – pausen tar slut, gräsmattan gör det inte. Byter du hand flyttar du bara var värken sitter, du tar inte bort den. Håller du redskapet närmre kroppen minskar du hävarmen, men tyngden vilar fortfarande i axlar och armar, bara några centimeter närmre. Inget av knepen bär vikten åt dig. De hjälper dig bara stå ut lite längre med att bära den själv.",
-      "knapp": "Sluta kompensera – låt selen bära →"
+      "rubrik": "2. En paus tar inte bort vikten",
+      "text": "De flesta gör som man brukar. Man tar en paus när det börjar kännas, byter hand ett tag, håller trimmern lite närmare kroppen och försöker ta det lugnt över den sista biten. Allt det hjälper i stunden. Men så fort motorn går igen hänger vikten i armarna precis som förut. Byter du hand flyttar du bara värken till andra sidan, och håller du redskapet närmare kroppen kortar du hävarmen några centimeter utan att tyngden försvinner. En paus mot en hel eftermiddag är ingen jämn match, för pausen tar slut och gräsmattan gör det inte. Knepen hjälper dig att stå ut lite längre. De bär inte vikten åt dig.",
+      "knapp": "Låt selen bära i stället →"
     },
     {
-      "rubrik": "3. Går att förebygga. Går inte att jobba bort efteråt.",
-      "text": "När axlarna och ryggen väl är slutkörda för dagen är passet över, oavsett hur mycket gräs som är kvar. Vila på kvällen ger dig inte tillbaka eftermiddagen du redan klippte med ont i ryggen. Tröttheten är redan ett faktum innan du ens lagt ifrån dig trimmern. Det enda som faktiskt fungerar är att ta bort belastningen innan den hinner landa i kroppen, inte att försöka massera bort den efteråt. Ett axelbälte gör precis det: det tar emot trimmerns vikt vid axlarna och ryggen, innan den någonsin hinner ner i armarna. Du förebygger tröttheten samma sekund du sätter selen på dig – du reparerar den inte i efterhand.",
-      "knapp": "Förebygg tröttheten innan den kommer →"
+      "rubrik": "3. Trötthet går att förebygga. Inte att jobba bort efteråt.",
+      "text": "När axlarna och ryggen är slut för dagen är passet över, hur mycket gräs som än står kvar. Att vila på kvällen ger dig inte tillbaka eftermiddagen, och ingen dusch i världen gör att kanterna blir klippta. Det enda som fungerar är att vikten aldrig hamnar i armarna från början. Det är precis vad ett axelbälte gör. Kroken hakas i trimmern, remmarna tar emot tyngden vid axlarna och fördelar den över ryggen, och armarna får bara styra. Du förebygger tröttheten i samma sekund som du spänner fast selen, i stället för att försöka vila bort den efteråt.",
+      "knapp": "Låt bältet ta vikten innan armarna gör det →"
     },
     {
-      "rubrik": "4. Den dolda kostnaden räknas per pass, inte per dag",
-      "text": "Varje gång du tar ut trimmern tar passet längre tid än det borde, för armarna orkar inte hålla jämnt tempo hela vägen. Kanterna vid rabatten får vänta till nästa gång. Gräset vid staketet står kvar en vecka till. Det är inte en enda tung dag som är problemet – det är att varje enskilt trimmerpass bär samma extra kostnad, och en säsong har många såna pass. Lägg ihop alla gånger du avbrutit i förtid, alla kanter du sköt upp, alla gånger du tänkte 'det får bli nästa helg' – det är samma vikt i armarna som upprepar sig, pass efter pass, hela säsongen igenom.",
-      "knapp": "Gör varje pass kortare, inte längre →"
+      "rubrik": "4. Det kostar inte en dag. Det kostar varje gång.",
+      "text": "Ett enda trimmerpass med trötta armar är inget att prata om. Problemet är att det inte är ett pass. Varje gång du tar fram trimmern tar det längre tid än det borde, för armarna orkar inte hålla samma tempo hela vägen. Kanterna vid rabatten får vänta till nästa gång, gräset vid staketet står kvar en vecka till, och hörnet bakom förrådet blir aldrig riktigt gjort. En säsong är många såna pass. Lägg ihop alla gånger du avbrutit i förtid och allt du sköt upp, så ser du vad vikten i armarna egentligen kostar. Inte en tung dag, utan lite varje gång, hela sommaren.",
+      "knapp": "Gör varje pass kortare →"
     },
     {
-      "rubrik": "**5. En billig sele är dyrare än ingen**",
-      "text": "Många som väl bestämmer sig köper reflexmässigt det billigaste bältet som dyker upp. Det kommer hem som ett smalt band som skär in i axeln, en krok som glider av mitt i klippningen, ett spänne som aldrig sitter där det ska. Efter ett par pass hänger det på en spik i förrådet bredvid alla andra prylar som 'skulle lösa det'. Du löste aldrig problemet med armarna – du betalade för att bekräfta att bältet var billigt. Ett axelbälte fungerar bara om det faktiskt är ett justerbart nylonbälte med en stadig metallkrok, byggt för att bära vikten på både axlar och rygg.",
+      "rubrik": "5. En billig sele är dyrare än ingen",
+      "text": "Många som väl bestämmer sig tar det billigaste bältet som dyker upp. Det kommer hem som ett smalt band som skär in i axeln, med en krok som glider ur mitt i klippningen och ett spänne som aldrig riktigt sitter där det ska. Efter ett par pass hänger det på en spik i förrådet, bredvid alla andra prylar som skulle lösa det. Problemet med armarna är kvar, och det enda du fått för pengarna är beviset på att bältet var billigt. Ett axelbälte gör bara nytta om det är byggt för att bära: ett justerbart nylonbälte med en stadig metallkrok, som lägger vikten på både axlar och rygg och sitter kvar där hela passet.",
       "knapp": "Se axelbältet i justerbart nylon → 599 kr"
     }
   ],
   "lyckas": {
-    "rubrik": "Så vad gör de som lyckas trimma hela tomten utan att bli trötta?",
+    "rubrik": "Så vad gör de som orkar klippa hela tomten i ett svep?",
     "stycken": [
-      "De slutar bära trimmern i armarna och låter selen göra jobbet i stället. Det justerbara nylonbältet läggs över axlarna, den röda metallkroken hakas i redskapet, och på några sekunder är vikten flyttad från armarna till axlar och rygg. Bältet justeras efter kroppen, inte tvärtom, så det sitter lika bra oavsett vem som bär det. Sen är det bara att klippa, kant efter kant, utan att stanna för att skaka ut armarna.",
-      "Bäverbutikens axelbälte är sytt i justerbart nylon och passar de flesta grästrimmrar och röjsågar, med en stadig metallkrok för snabb på- och avtagning. Det backas av 30 dagars nöjd-kund-garanti så du inte riskerar något. Skillnaden märks redan på första passet: axlarna och nacken slipper hela tyngden, armarna orkar hela vägen ut, och du är klar med tomten innan du normalt hade tagit första pausen."
+      "De slutar bära trimmern i armarna och låter selen göra jobbet. Bältet läggs över axlarna, den röda metallkroken hakas i trimmern, och på några sekunder ligger vikten på axlar och rygg i stället för i armarna. Remmarna justeras efter dig, inte tvärtom, så det sitter lika bra på en lång som på en kort person. Sen är det bara att klippa kant efter kant, utan att stanna för att skaka liv i armarna.",
+      "Bäverbutikens axelbälte är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur. Det passar de flesta grästrimmrar och röjsågar, och det backas av 30 dagars nöjd-kund-garanti så att du inte riskerar något. Skillnaden märks redan första passet: armarna orkar hela vägen, nacken slipper tyngden, och du är klar innan du normalt hade tagit första pausen."
     ],
     "knapp": "Gör som dem → ta ett axelbälte för 599 kr"
   },
   "arlig": {
     "rubrik": "Jag ska vara ärlig:",
     "stycken": [
-      "vi köpte in för mycket. Inför säsongen tog vi hem ett större parti axelbälten än vi någonsin beställt, och nu står pallarna kvar på lagret medan gräset fortsätter växa. Istället för att låta dem samla damm gör vi det enkelt: 599 kr istället för ordinarie 789 kr, tills partiet är slut.",
-      "Ingen påhittad jätterabatt ligger bakom priset, och ingen klocka räknar ner. Vi har helt enkelt fler bälten än hyllplats, och dina axlar har mer nytta av ett av dem än vårt lager har.",
+      "vi köpte in för mycket. Inför säsongen tog vi hem ett större parti axelbälten än vi någonsin beställt, och nu står pallarna kvar på lagret medan gräset fortsätter växa. I stället för att låta dem samla damm gör vi det enkelt: 599 kr istället för ordinarie 789 kr, tills partiet är slut.",
+      "Det är hela anledningen till priset. Ingen påhittad jätterabatt och ingen klocka som räknar ner. Vi har helt enkelt fler bälten än hyllplats, och dina axlar har mer nytta av ett av dem än vårt lager har.",
       "Och priset är ärligt åt andra hållet också: 789 kr är vad axelbältet kostar hos oss i vanliga fall. När partiet är slut går det tillbaka dit."
     ]
   },
   "riskfritt": {
     "rubrik": "Därför kan du testa helt riskfritt.",
-    "text": "Vill du ha ett är det bara att trycka på knappen här nedanför. Passar det inte dig eller din trimmer har du 30 dagar på dig att ångra köpet, så du riskerar ingenting. Men det gäller bara så länge lagret räcker.",
+    "text": "Vill du ha ett är det bara att trycka på knappen här nedanför. Passar det inte dig eller din trimmer har du 30 dagar på dig att skicka tillbaka det, så du riskerar ingenting. Men det gäller bara så länge lagret räcker.",
     "knapp": "Ja tack, ett axelbälte för 599 kr → 30 dagars garanti"
   },
   "tre_fragor": [
-    {
-      "rad": "Vi beställde in för många axelbälten och nu får du ditt för 599 kr istället för 789 kr så länge lagret räcker",
-      "visualisera": "✅ Konkret bild av pallar i ett fullt lager och en prisskylt som byts.",
-      "falsifiera": "✅ Priserna 599/789 kr går att kontrollera mot butiken.",
-      "ingen_annan_kan_saga": "✅ Exakta priser + produktnamnet 'axelbälten' gör raden specifik för just denna produkt och butik."
-    },
-    {
-      "rad": "1. Trötta armar smyger sig på",
-      "visualisera": "✅ Man ser bilden av armar som blir tyngre minut för minut.",
-      "falsifiera": "✅ Går att pröva: kommer tröttheten smygande eller kommer den direkt.",
-      "ingen_annan_kan_saga": "✅ Pekar specifikt på HUR problemet uppstår (smygande, inte plötsligt) – en konkret iakttagelse, inte allmänt reklamspråk."
-    },
-    {
-      "rad": "2. Det vanliga fixet tar inte bort vikten",
-      "visualisera": "✅ Bilden av att byta hand eller ta en paus är konkret.",
-      "falsifiera": "✅ Går att testa om en paus eller ett bytt grepp faktiskt tar bort vikten.",
-      "ingen_annan_kan_saga": "✅ Namnger och avfärdar specifika, kända knep (paus, byta hand) i stället för att bara säga 'det finns ett bättre sätt'."
-    },
-    {
-      "rad": "3. Går att förebygga. Går inte att jobba bort efteråt.",
-      "visualisera": "✅ Bilden av vila på kvällen som inte ger tillbaka eftermiddagen är konkret.",
-      "falsifiera": "✅ Påståendet 'vila ger inte tillbaka tiden' går att pröva mot verkligheten.",
-      "ingen_annan_kan_saga": "✅ Bygger på produktens faktiska mekanism (tar emot vikten innan den landar), inte en allmän hälsofras."
-    },
-    {
-      "rad": "4. Den dolda kostnaden räknas per pass, inte per dag",
-      "visualisera": "✅ 'Per pass, inte per dag' går att räkna på konkret.",
-      "falsifiera": "✅ Går att kontrollera: är kostnaden knuten till varje pass eller bara enstaka tunga dagar.",
-      "ingen_annan_kan_saga": "✅ Den specifika tidsramen (pass, inte dag) är en ovanlig, distinkt vinkel de flesta konkurrenter inte använder."
-    },
-    {
-      "rad": "**5. En billig sele är dyrare än ingen**",
-      "visualisera": "✅ Bilden av en billig sele som ligger oanvänd i förrådet är konkret.",
-      "falsifiera": "✅ Går att pröva: kostar en billig, oanvänd sele mer i slutändan än att aldrig köpa en.",
-      "ingen_annan_kan_saga": "✅ Ordet 'sele' är produktens egna vardagsnamn, och kontrasten löses upp med produktens faktiska egenskaper (justerbart nylon, metallkrok)."
-    },
-    {
-      "rad": "Så vad gör de som lyckas trimma hela tomten utan att bli trötta?",
-      "visualisera": "✅ Bilden av att bli klar med hela tomten utan att bli trött är konkret och specifik.",
-      "falsifiera": "✅ Går att avgöra om de som lyckas faktiskt gör något annorlunda eller inte.",
-      "ingen_annan_kan_saga": "✅ Resultatet är specifikt formulerat (hela tomten, utan att bli trött) i stället för ett vagt 'lyckas bättre'."
-    },
-    {
-      "rad": "Jag ska vara ärlig:",
-      "visualisera": "❌ Ren inledningsfras utan konkret bild.",
-      "falsifiera": "❌ Ett löfte om ärlighet, inget kontrollerbart påstående i sig.",
-      "ingen_annan_kan_saga": "❌ Vem som helst kan skriva exakt samma rad. Behålls ändå ordagrant enligt uppdragets instruktion (fast rubrik som inte ska skrivas om) – går inte att göra bättre utan att bryta formatet."
-    },
-    {
-      "rad": "Därför kan du testa helt riskfritt.",
-      "visualisera": "❌ 'Riskfritt' är ett abstrakt ord utan bild att peka på.",
-      "falsifiera": "✅ Påståendet går att pröva mot de faktiska garantivillkoren (30 dagar).",
-      "ingen_annan_kan_saga": "❌ Vilken butik som helst med öppet köp kan säga exakt samma sak. Behålls ordagrant enligt uppdragets instruktion (fast rubrik) – går inte att göra bättre utan att bryta formatet."
-    },
-    {
-      "rad": "Visa lagerrensningen → 599 kr",
-      "visualisera": "✅ Priset gör knappen konkret.",
-      "falsifiera": "✅ Går att kontrollera att priset stämmer vid klick.",
-      "ingen_annan_kan_saga": "✅ Exakt pris kopplat till just denna lagerrensning av axelbälten."
-    },
-    {
-      "rad": "Sluta bära hela vikten i armarna →",
-      "visualisera": "✅ Konkret handling: sluta bära vikten.",
-      "falsifiera": "✅ Går att avgöra om vikten flyttas bort från armarna efter klick.",
-      "ingen_annan_kan_saga": "✅ Kopplar direkt till produktens faktiska funktion (flyttar vikten från armarna till axlar/rygg)."
-    },
-    {
-      "rad": "Sluta kompensera – låt selen bära →",
-      "visualisera": "✅ Bilden av att selen bär i stället för armarna är konkret.",
-      "falsifiera": "✅ Går att pröva om selen faktiskt tar över vikten.",
-      "ingen_annan_kan_saga": "✅ 'Selen' är produktens eget vardagsnamn, inte ett generiskt köpord."
-    },
-    {
-      "rad": "Förebygg tröttheten innan den kommer →",
-      "visualisera": "✅ Konkret handling: agera innan tröttheten hinner infinna sig.",
-      "falsifiera": "✅ Går att pröva om tröttheten kommer senare eller uteblir.",
-      "ingen_annan_kan_saga": "✅ Bygger vidare på punktens specifika mekanism (belastningen tas bort innan den landar i kroppen)."
-    },
-    {
-      "rad": "Gör varje pass kortare, inte längre →",
-      "visualisera": "✅ 'Kortare pass' är mätbart och konkret.",
-      "falsifiera": "✅ Går att jämföra passets längd före och efter.",
-      "ingen_annan_kan_saga": "✅ Samma distinkta per-pass-vinkel som rubriken ovan, en ovanlig formulering."
-    },
-    {
-      "rad": "Se axelbältet i justerbart nylon → 599 kr",
-      "visualisera": "✅ Materialet (nylon) och priset går att se framför sig.",
-      "falsifiera": "✅ Går att kontrollera materialet och priset på produktsidan.",
-      "ingen_annan_kan_saga": "✅ Specifikt material och specifikt pris knutet till just denna produkt."
-    },
-    {
-      "rad": "Gör som dem → ta ett axelbälte för 599 kr",
-      "visualisera": "✅ Produkten och priset är konkreta.",
-      "falsifiera": "✅ Priset går att kontrollera.",
-      "ingen_annan_kan_saga": "✅ Exakt pris och exakt produktnamn."
-    },
-    {
-      "rad": "Ja tack, ett axelbälte för 599 kr → 30 dagars garanti",
-      "visualisera": "✅ Pris och garantitid är konkreta.",
-      "falsifiera": "✅ Går att kontrollera både pris och garantivillkor.",
-      "ingen_annan_kan_saga": "✅ Exakt pris och exakt garantitid knutet till just denna produkt."
-    },
-    {
-      "rad": "Vår senaste beställning blev större än planerat och lagret är fullpackat med axelbälten.",
-      "visualisera": "✅ Ett fullpackat lager med bälten går att se framför sig.",
-      "falsifiera": "✅ Går att kontrollera mot det faktiska lagersaldot.",
-      "ingen_annan_kan_saga": "✅ Namnger den specifika produkten (axelbälten) som fyller lagret, inte en vag varureferens."
-    },
-    {
-      "rad": "Vår senaste beställning blev större än planerat och lagret är helt fullpackat med axelbälten.",
-      "visualisera": "✅ Samma konkreta bild av ett fullt lager med bälten.",
-      "falsifiera": "✅ Går att kontrollera mot det faktiska lagersaldot.",
-      "ingen_annan_kan_saga": "✅ Namnger den specifika produkten (axelbälten)."
-    },
-    {
-      "rad": "Om armarna redan är trötta efter några minuter med trimmern, eller om du vill slippa att de någonsin blir det, är det här lösningen.",
-      "visualisera": "✅ Trötta armar efter bara några minuter är en konkret, tidsatt bild.",
-      "falsifiera": "✅ Går att pröva om armarna blir trötta efter just några minuter.",
-      "ingen_annan_kan_saga": "✅ Den specifika tidsramen ('några minuter') och kopplingen till just trimmern gör raden konkret, inte ett vagt hälsopåstående."
-    },
-    {
-      "rad": "De första minuterna med trimmern känns helt okej.",
-      "visualisera": "✅ Ett konkret ögonblick: de första minuterna.",
-      "falsifiera": "✅ Går att pröva om de första minuterna faktiskt känns okej.",
-      "ingen_annan_kan_saga": "✅ Den exakta tidslinjen (bra i början, sen inte) är en specifik iakttagelse, inte en allmän klagan."
-    },
-    {
-      "rad": "Du gör det du kan: tar en paus, byter hand, håller trimmern närmre kroppen, försöker ta det lugnt över den sista biten gräsmatta.",
-      "visualisera": "✅ Fyra konkreta, namngivna handlingar går att se framför sig.",
-      "falsifiera": "✅ Går att kontrollera om dessa knep faktiskt är vad folk gör.",
-      "ingen_annan_kan_saga": "✅ Uppräkningen av specifika, vardagsnära knep är för detaljerad för att vara generiskt reklamspråk."
-    },
-    {
-      "rad": "När axlarna och ryggen väl är slutkörda för dagen är passet över, oavsett hur mycket gräs som är kvar.",
-      "visualisera": "✅ Bilden av ett avbrutet pass med gräs kvar är konkret.",
-      "falsifiera": "✅ Går att pröva: stoppar passet när axlar/rygg är slut, oavsett hur mycket som är ogjort.",
-      "ingen_annan_kan_saga": "✅ Kopplar direkt till den specifika situationen (gräs kvar, kroppen slut) snarare än ett vagt trötthetspåstående."
-    },
-    {
-      "rad": "Varje gång du tar ut trimmern tar passet längre tid än det borde, för armarna orkar inte hålla jämnt tempo hela vägen.",
-      "visualisera": "✅ Bilden av ett pass som drar ut på tiden är konkret.",
-      "falsifiera": "✅ Går att mäta om passet faktiskt tar längre tid när armarna blir trötta.",
-      "ingen_annan_kan_saga": "✅ Kopplar orsak (armarnas uthållighet) till effekt (längre pass) på ett specifikt, kontrollerbart sätt."
-    },
-    {
-      "rad": "Många som väl bestämmer sig köper reflexmässigt det billigaste bältet som dyker upp.",
-      "visualisera": "✅ Bilden av ett reflexmässigt köp av det billigaste alternativet är konkret.",
-      "falsifiera": "✅ Går att pröva om det faktiskt är vanligt att välja billigast utan eftertanke.",
-      "ingen_annan_kan_saga": "✅ Beskriver ett specifikt köpbeteende, inte ett vagt påstående om kvalitet."
-    },
-    {
-      "rad": "De slutar bära trimmern i armarna och låter selen göra jobbet i stället.",
-      "visualisera": "✅ Bilden av att lägga över arbetet på selen i stället för armarna är konkret.",
-      "falsifiera": "✅ Går att pröva om vikten faktiskt flyttas från armarna till selen.",
-      "ingen_annan_kan_saga": "✅ Använder produktens eget vardagsnamn ('selen') och beskriver den faktiska mekanismbytet."
-    },
-    {
-      "rad": "Bäverbutikens axelbälte är sytt i justerbart nylon och passar de flesta grästrimmrar och röjsågar, med en stadig metallkrok för snabb på- och avtagning.",
-      "visualisera": "✅ Material, kompatibilitet och kroken går att se framför sig.",
-      "falsifiera": "✅ Varje del av påståendet (material, kompatibilitet, krok) går att kontrollera mot produkten.",
-      "ingen_annan_kan_saga": "✅ Namnger butiken och exakta produktfakta (material, krok) som är specifika för just detta bälte."
-    },
-    {
-      "rad": "vi köpte in för mycket.",
-      "visualisera": "✅ Bilden av pallar med bälten som står kvar är konkret.",
-      "falsifiera": "✅ Går att kontrollera mot det faktiska lagersaldot.",
-      "ingen_annan_kan_saga": "❌ Vilken butik som helst med för mycket lager kan säga exakt samma sak – men meningen krävs av uppdraget (rubriken 'Jag ska vara ärlig' ska fortsätta med just detta erkännande) och går inte att göra mer unik utan att hitta på siffror vi inte har."
-    },
-    {
-      "rad": "Ingen påhittad jätterabatt ligger bakom priset, och ingen klocka räknar ner.",
-      "visualisera": "✅ Bilden av att INTE ha en nedräkningsklocka eller en påhittad rabattstämpel är konkret.",
-      "falsifiera": "✅ Går att kontrollera: finns det en nedräkning eller en påhittad rabatt på sidan? Nej.",
-      "ingen_annan_kan_saga": "✅ Ett specifikt, falsifierbart löfte om vad som INTE finns på sidan, inte en allmän ärlighetsfras."
-    },
-    {
-      "rad": "Och priset är ärligt åt andra hållet också: 789 kr är vad axelbältet kostar hos oss i vanliga fall.",
-      "visualisera": "✅ Prisskylten som säger 789 kr i vanliga fall går att se framför sig.",
-      "falsifiera": "✅ Går att kontrollera det ordinarie priset i butiken när partiet är slut.",
-      "ingen_annan_kan_saga": "✅ Exakt pris knutet till just denna produkt och butik."
-    },
-    {
-      "rad": "Vill du ha ett är det bara att trycka på knappen här nedanför.",
-      "visualisera": "✅ Handlingen (trycka på knappen) är konkret.",
-      "falsifiera": "✅ Går att kontrollera att knappen finns och gör det den lovar.",
-      "ingen_annan_kan_saga": "❌ En standardformulering för att peka mot köpknappen som i princip vilken e-handelssida som helst kan använda – men den fyller en nödvändig, ren instruktionsroll i riskfritt-blocket och skrivs medvetet enkelt så den inte konkurrerar med garantivillkoren som kommer direkt efter."
-    }
-  ]
+    { "rad": "Vi beställde in för många axelbälten och nu får du ditt för 599 kr istället för 789 kr så länge lagret räcker", "visualisera": "✅ pallar med bälten, ett pris", "falsifiera": "✅ beställningen och båda priserna går att kontrollera", "ingen_annan_kan_saga": "✅ vår beställning, vårt lager, våra priser" },
+    { "rad": "Visa lagerrensningen → 599 kr", "visualisera": "✅ knappen leder till priset", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vår rea, vårt pris" },
+    { "rad": "1. Det känns bra de första minuterna. Sen inte.", "visualisera": "✅ första minuterna med trimmern, sen tunga armar", "falsifiera": "✅ antingen känns det eller inte efter en stund", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om att det känns bra först" },
+    { "rad": "Ingen tänker på vikten när trimmern startar.", "visualisera": "✅ trimmern som startar", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ ovanlig öppning" },
+    { "rad": "Sluta bära hela vikten i armarna →", "visualisera": "✅ armar som håller upp trimmern", "falsifiera": "✅ vikten bärs antingen i armarna eller inte", "ingen_annan_kan_saga": "✅ pekar på selens enda jobb" },
+    { "rad": "2. En paus tar inte bort vikten", "visualisera": "✅ pausen, trimmern på marken", "falsifiera": "✅ trimmern väger lika mycket efter pausen", "ingen_annan_kan_saga": "✅ ingen konkurrent argumenterar mot pausen" },
+    { "rad": "De flesta gör som man brukar.", "visualisera": "✅ paus, byta hand, hålla närmare", "falsifiera": "✅ beteendet går att observera", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Låt selen bära i stället →", "visualisera": "✅ selen på axlarna", "falsifiera": "✅ antingen bär selen eller inte", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "3. Trötthet går att förebygga. Inte att jobba bort efteråt.", "visualisera": "✅ trötta axlar på kvällen", "falsifiera": "✅ vila återställer inte passet", "ingen_annan_kan_saga": "✅ ovanlig vinkel i kategorin" },
+    { "rad": "När axlarna och ryggen är slut för dagen är passet över, hur mycket gräs som än står kvar.", "visualisera": "✅ gräs som står kvar", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Låt bältet ta vikten innan armarna gör det →", "visualisera": "✅ bältet tar vikten först", "falsifiera": "✅ ordningen går att kontrollera", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "4. Det kostar inte en dag. Det kostar varje gång.", "visualisera": "✅ varje pass med trimmern", "falsifiera": "✅ antingen per gång eller inte", "ingen_annan_kan_saga": "✅ ingen konkurrent räknar per pass" },
+    { "rad": "Ett enda trimmerpass med trötta armar är inget att prata om.", "visualisera": "✅ ett pass, trötta armar", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Gör varje pass kortare →", "visualisera": "✅ kortare pass", "falsifiera": "✅ tiden går att mäta", "ingen_annan_kan_saga": "✅ vårt löfte ur produktsidan (jobbar längre utan att bli trött)" },
+    { "rad": "5. En billig sele är dyrare än ingen", "visualisera": "✅ den billiga selen på spiken i förrådet", "falsifiera": "✅ jämförelsen går att pröva", "ingen_annan_kan_saga": "✅ ingen billig konkurrent kan skriva under" },
+    { "rad": "Många som väl bestämmer sig tar det billigaste bältet som dyker upp.", "visualisera": "✅ det billigaste i sökresultatet", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Se axelbältet i justerbart nylon → 599 kr", "visualisera": "✅ nylonbältet, priset", "falsifiera": "✅ materialet och priset står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de som orkar klippa hela tomten i ett svep?", "visualisera": "✅ hela tomten klippt", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De slutar bära trimmern i armarna och låter selen göra jobbet.", "visualisera": "✅ selen tar över", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "Bäverbutikens axelbälte är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur.", "visualisera": "✅ remmar, höftplatta, krok", "falsifiera": "✅ fakta ur produktsidan och bilderna", "ingen_annan_kan_saga": "✅ vårt bälte" },
+    { "rad": "Gör som dem → ta ett axelbälte för 599 kr", "visualisera": "✅ ett bälte, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi köpte in för mycket.", "visualisera": "✅ pallarna på lagret", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela anledningen till priset.", "visualisera": "✅ priset, lagret", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Och priset är ärligt åt andra hållet också: 789 kr är vad axelbältet kostar hos oss i vanliga fall.", "visualisera": "✅ prislappen 789 kr", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Därför kan du testa helt riskfritt.", "visualisera": "❌ abstrakt — behålls ordagrant, mallens fasta rubrik", "falsifiera": "✅ 30 dagar går att kontrollera", "ingen_annan_kan_saga": "❌" },
+    { "rad": "Vill du ha ett är det bara att trycka på knappen här nedanför.", "visualisera": "✅ knappen nedanför", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, ett axelbälte för 599 kr → 30 dagars garanti", "visualisera": "✅ bältet, priset, 30 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, inga fragment, inga tankstreck som lim.",
+    "omskrivna_stycken": "hela copyn — subagentens version från samma dag byttes ut i sin helhet (klumpiga övergångar i punkt 1, 3 och 4)",
+    "kvar_att_lyssna_pa": "punkt 1:s 'Du har bara aldrig bestämt något annat' är mallens grepp och står bara där, ingen annanstans"
+  }
 }

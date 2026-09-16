@@ -18,8 +18,11 @@ publika HTTPS-anrop. Använd ALDRIG `mcp__Notion__*` eller `mcp__Shopify__*`.
 `lagerrensning/mall/`) och gör exakt samma sida för en annan produkt — samma
 struktur, samma Anders, samma lagerbild och logga — med ny copy, produktens
 riktiga pris och jämförpris, nya bilder (produktsidans egna, annars kie.ai) —
-och lämnar en `.gempages`-fil som Axel importerar med ett klick. Motorn är
-`lagerrensning/bygg.mjs`, formatet står i `lagerrensning/README.md`.
+och lämnar **en HTML-fil som Axel klistrar in i ett HTML-element i GemPages**
+(Axels beslut 2026-09-16: "det blir ofta fel när du genererar en
+GemPages-fil — skicka kopierbar HTML i stället"). `.gempages`-filen byggs
+också, men bara som reserv. Motorn är `lagerrensning/bygg.mjs`, formatet står
+i `lagerrensning/README.md`.
 
 ## Järnregler
 
@@ -27,29 +30,58 @@ och lämnar en `.gempages`-fil som Axel importerar med ett klick. Motorn är
    (rubrik + ingress + knapp + sammanfattning), fem numrerade punkter (rubrik +
    text + knapp), "Så vad gör de som lyckas?", "Jag ska vara ärlig:", "Därför kan
    du testa helt riskfritt." Antalet punkter är alltid fem. Ingen mening ur
-   motorhöljets copy får återanvändas — bara formen.
+   motorhöljets copy får återanvändas — bara formen. (Ärlig-blocket och
+   riskfritt-blocket får ligga nära mallen: det är sidans premiss.)
 2. **Priset kommer från produktsidan, vid varje körning.** Motorn läser
    `/products/<handle>.json` själv och **vägrar** varje pris i copyn som inte är
    produktens pris eller jämförpris, varje procentsats och frasen "innan lagret
    tar slut" (bara "så länge lagret räcker"). Saknar produkten jämförpris finns
    inget "istället för" — skriv copyn utan, eller be Axel sätta compare-at.
-3. **Copy via subagent** (regel 6 i CLAUDE.md): Agent-verktyget med
-   `model: "sonnet"`, `docs/copy-regler.md` i prompten, tre-frågorstestet
-   redovisat i `tre_fragor`. Vilka fem teman punkterna bär bestämmer
-   huvudsessionen (steg 2) — subagenten skriver bara text.
+3. **Copyn skrivs av huvudsessionen (Fable), inte av en subagent** — Axels
+   beslut 2026-09-16, ett uttryckligt undantag från regel 6 i CLAUDE.md: "jag
+   tror vi ska använda oss av dig eller Fable att skriva copyn". Två test på
+   varje rad: tre-frågorstestet i `docs/copy-regler.md` **och läsbarhetstestet
+   nedan**. Axels återkommande klagomål är att texten inte låter naturlig och
+   att övergångarna mellan meningarna hackar — läsbarheten går före allt annat.
 4. **Bilder:** produktsidans egna bilder först (de ligger redan på Shopifys
    CDN), kie.ai bara där ingen passar rollen. Inga människor eller ansikten
    (hook-visual-regeln 2026-08-04), ingen text/pris/logga i genererade bilder.
    Författarfotot (Anders), lagerbilden och loggan byts aldrig — de är
    Bäverbutikens, inte produktens.
-5. **Sessionen tittar på bilderna, aldrig Axel** (Axels beslut 2026-09-13).
-   En bild blir aldrig ACTION NEEDED.
+5. **Sessionen tittar på bilderna OCH på sidan, aldrig Axel** (Axels beslut
+   2026-09-13). Bygget tar skärmdumpar av HTML:en (desktop + mobil) utan nät
+   i webbläsaren — läs dem med Read-verktyget innan något levereras.
 6. **Shopify rörs bara för att lägga bilder på CDN:et.** Med `write_files`:
    Innehåll → Filer. Utan (appen "Bäver uppladdare" saknar det, mätt
    2026-09-16): DRAFT-produkten `lp-bildarkiv` bär bilderna — kunden ser den
    aldrig. Motorn väljer själv och säger vilket. Produkten, priset och sidorna
-   rörs aldrig. **GemPages har inget import-API** — importen är Axels klick.
+   rörs aldrig. **GemPages har inget API** — inklistringen är Axels klick.
 7. Kör klart utan att fråga. Axels uppgifter sist, numrerade.
+
+## Läsbarhetstestet (obligatoriskt på varje stycke)
+
+Läs stycket som om du läste det högt för Axel. Sedan, punkt för punkt:
+
+1. **Varje mening tar vid där den förra slutade.** Samma subjekt, eller ett ord
+   som pekar bakåt ("den", "det", "sen", "men", "så"). Måste läsaren backa för
+   att förstå vad en mening syftar på: skriv om.
+2. **Blanda meningslängd.** En kort mening får följa på en lång. Aldrig tre
+   korta i rad (staccato), aldrig tre långa i rad (gröt).
+3. **Max ett "Inte X. Y."-grepp per stycke**, och aldrig som stycket enda
+   rytm. Inga tankstreck som lim mellan två halva meningar.
+4. **Ett stycke är en tanke som rör sig framåt:** läget → vad som händer → vad
+   det betyder för läsaren. Inga uppräkningar av fragment, inga listor
+   förklädda till prosa.
+5. **Orden är sådana Axel skulle säga på bryggan eller i trädgården:** "trött i
+   armarna", inte "belastningen landar i kroppen". Ett ord som ingen säger
+   högt byts.
+6. **Läs hela sidan uppifrån och ner en sista gång.** Hero → punkt 1 → … →
+   riskfritt ska hänga ihop som en berättelse av en person, inte som fem
+   annonser efter varandra. Punkt 1 ska leda till punkt 2, och "lyckas"-blocket
+   ska svara på punkterna.
+
+Redovisa i copyn (`lasbarhetstest` i `copy.json`) och i rapporten: vilka
+stycken som skrevs om, och vilken rad du är minst säker på.
 
 ## Gör i ordning
 
@@ -64,8 +96,10 @@ beskrivningen som ren text, sökväg till `products/<id>/dna.md` om produkten ha
 minne). Läs den, läs `dna.md` (avsnitten BEHÅLL ALLTID / VAD BUTIKSDATAN SÄGER
 / Winning DNA) och `docs/copy-regler.md`. **Fakta som får användas är bara det
 som står där.** Inga påhittade recensioner, siffror, studier eller kunder.
+Ett betyg (Judge.me) skrivs aldrig in — det ändras varje vecka och sidan
+ligger i månader (axelbältets DNA sa 4,75/8, sidan visade 4,50/12 samma dag).
 
-### 2. Strategi — de fem punkternas teman (huvudsessionen)
+### 2. Strategi — de fem punkternas teman
 Mallens skelett, per punkt. Anpassa temat till produkten, behåll formen:
 
 | Punkt | Skelett (motorhöljet) | Vad punkten ska göra |
@@ -78,33 +112,31 @@ Mallens skelett, per punkt. Anpassa temat till produkten, behåll formen:
 
 Passar ett skelett inte produkten (en toffel har inget andrahandsvärde): byt
 till närmaste **sanna** fakta ur produktsidan/DNA — men behåll fem punkter,
-numrerade "1. …". Skriv temalistan med, per punkt, vilka fakta den får luta
-sig på. Det är subagentens uppdrag — inte en färdig text.
+numrerade "1. …". Skriv ner temana med, per punkt, vilka fakta den lutar sig på.
 
 "Lyckas"-blocket = lösningen: vad de som lyckas gör + produkten med
 produktsidans fakta (material, passform, garanti). "Ärlig"-blocket = varför
 priset: överlager, `X kr istället för Y kr`, priset går tillbaka till Y när
 partiet är slut. "Riskfritt" = 30 dagars garanti (står på produktsidan).
 
-### 3. Copy via subagent (model `sonnet`)
-Prompten till subagenten innehåller, i den här ordningen:
-- produktfakta ur `underlag.json` (titel, `prisText`, `jamforprisText`,
-  beskrivningen, varianter) + DNA-utdraget — **"use ONLY these facts"**
-- temalistan från steg 2
-- `lagerrensning/mall/exempel-copy.json` som **formexempel**: samma nycklar,
-  samma ungefärliga längder (rubriker ≤ 120 tecken, punkttexter 400–900 tecken,
-  knappar ≤ 60), men ny text — ingen mening får kopieras
-- `docs/copy-regler.md` i sin helhet + hårda regler: svenska; bara priset och
-  jämförpriset som siffror; inga procent; "så länge lagret räcker"; `**fet**` är
-  den enda formateringen (ingen HTML); exakt 5 punkter; hero.rubrik ska bära
-  både priset och jämförpriset; `tre_fragor` med en rad per rubrik, knapp och
-  första mening i varje stycke (✅/❌ + skäl)
-- var filen ska skrivas: `lagerrensning/output/<handle>/copy.json`
+### 3. Copy — skriv den själv
+Formen är `lagerrensning/mall/exempel-copy.json` (samma nycklar, ungefär
+samma längder: rubriker ≤ 120 tecken, punkttexter 400–900 tecken, knappar
+≤ 60). Hårda regler: svenska med rätt å/ä/ö; bara priset och jämförpriset som
+siffror; inga procent; "så länge lagret räcker"; `**fet**` är den enda
+formateringen (ingen HTML); exakt fem punkter; hero.rubrik bär både priset
+och jämförpriset; inga betyg, inga påhittade kunder.
 
-Subagenten skriver filen. Har den ❌ i testet: be den skriva om raden (max två
-varv), sedan stryk raden till den bästa versionen och säg det i rapporten.
+Skriv först alla stycken rakt igenom som en text. Kör sedan läsbarhetstestet
+på varje stycke och skriv om det som hakar — räkna med 20 varv, det är
+normalt (`docs/copy-regler.md`). Kör sist tre-frågorstestet på varje rubrik,
+varje knapp och första meningen i varje stycke; skriv `tre_fragor` med
+✅/❌ + skäl. Rader du **måste** behålla (mallens fasta rubriker "Jag ska vara
+ärlig:", "Därför kan du testa helt riskfritt.") får ha ❌ med den motiveringen.
+Skriv `lasbarhetstest` (metod, omskrivna stycken, osäkraste raden). Spara som
+`lagerrensning/output/<handle>/copy.json`.
 
-### 4. Bildplan (huvudsessionen)
+### 4. Bildplan
 Ladda ner produktbilderna (`underlag.json` → `bilder[].src`) och TITTA på dem.
 Per plats i `lagerrensning/mall/platser.json` → `bilder` (`roll` säger vad
 bilden ska visa): välj `{ "kalla": "produkt", "index": N }` när en produktbild
@@ -135,50 +167,63 @@ tills det bara finns ⚠ du kan stå för.
 node lagerrensning/bygg.mjs <länk>
 ```
 kie genererar → bilderna hämtas till `output/<handle>/bilder/` (gitignorerat)
-och läggs på Shopifys CDN → sidan byggs → filen skrivs → **läses tillbaka och
-varje checksumma räknas om** (trippelkollen är inbyggd; ett fel = ingen fil).
-Kör aldrig skarpt två gånger för att "vara säker" — cachen i `bilder.json`
-återanvänder genererade bilder, `--igen <plats>` byter en.
+och läggs på Shopifys CDN → **HTML-filen** `<slug>-lagerrensning.html` skrivs
+(huvudleveransen) → `.gempages` skrivs som reserv och läses tillbaka med
+omräknade checksummor → **förhandsvisningen** byggs offline
+(`output/<handle>/forhandsvisning/`: lokala bilder + typsnitt, skärmdumpar
+`desktop.png` 1280 px och `mobil.png` 390 px via headless Chrome). Kör aldrig
+skarpt två gånger för att "vara säker" — cachen i `bilder.json` återanvänder
+genererade bilder, `--igen <plats>` byter en. Bara HTML:en igen efter en
+copyändring: kör om utan `--igen`, det kostar inga credits.
 
-### 7. Titta — varje genererad bild, med Read-verktyget
-Tre frågor (Axels beslut 2026-09-13, lätt kontroll): är det rätt produkt/miljö
-för rollen? inga människor, ansikten, text, priser, påhittade loggor? ser den ut
-som ett foto och inte som ett fel? Underkänd: skärp prompten i `bildplan.json`,
-kör `--igen <plats>` **en** gång. Underkänd igen: byt till en produktbild och
-säg det i rapporten. Kolla också att `--kolla <fil>` visar rätt pris i alla
-knappar och att ingen text nämner motorhöljet.
+### 7. Titta — bilderna och sidan, med Read-verktyget
+- Varje genererad bild (`bilder/<plats>.png`), tre frågor: rätt produkt/miljö
+  för rollen? inga människor, ansikten, text, priser, påhittade loggor? ser den
+  ut som ett foto och inte som ett fel? Underkänd: skärp prompten i
+  `bildplan.json`, `--igen <plats>` **en** gång. Underkänd igen: byt till en
+  produktbild och säg det i rapporten.
+- **Skärmdumparna** `forhandsvisning/desktop.png` och `mobil.png`: rubrikerna i
+  Anton, orange knappar, bilderna på rätt plats (punkt 2 och 4 har bilden till
+  höger på desktop), ingen text som hänger utanför, författarfotot runt,
+  loggan i sidfoten. Ser något fel ut är det HTML:en som ska rättas
+  (`lagerrensning/html.mjs`), inte Axels problem.
+- `--kolla <fil.gempages>` visar rätt pris i alla knappar och ingen text
+  nämner motorhöljet.
 
 ### 8. Logga, committa, leverera
 - Har produkten `products/<id>/batch-log.md`: en rad "LP lagerrensning byggd
-  `IDAG`, fil `lagerrensning/output/<handle>/<slug>-lagerrensning.gempages`".
+  `IDAG`, HTML `lagerrensning/output/<handle>/<slug>-lagerrensning.html`".
 - Commit + push: `lagerrensning/output/<handle>/` (underlag, copy, bildplan,
-  bilder.json, plan.json, .gempages). Aldrig `bilder/`. Svenskt commit-meddelande.
-- Skicka `.gempages`-filen till Axel i chatten (SendUserFile).
+  bilder.json, plan.json, .html, .gempages). Aldrig `bilder/` eller
+  `forhandsvisning/`. Svenskt commit-meddelande.
+- Skicka **HTML-filen** till Axel i chatten (SendUserFile). `.gempages`-filen
+  bara om han ber om den.
 
 ## Rapport till Axel (kort, svenska)
 - Produkten, priset och jämförpriset som sidan bär, datumraden.
 - Bilderna: vilka platser fick produktbilder, vilka kie, var de ligger (Filer
   eller `lp-bildarkiv`).
-- Copyn: fem rubriker, tre-frågorstestet (antal rader, antal ❌).
-- Filen (länk i chatten) och sidans blivande adress `/pages/<handle>`.
+- Copyn: fem rubriker, läsbarhetstestet (vad som skrevs om, osäkraste raden),
+  tre-frågorstestet (antal rader, antal ❌ och varför).
+- Filen (i chatten) och sidans blivande adress.
 
 **Axels uppgifter, sist, numrerade** (GemPages saknar API):
-1. Öppna GemPages i Shopify-admin → **Pages** → knappen **Import page** uppe till höger.
-2. **Add file** → välj `<slug>-lagerrensning.gempages` → **Import**. Sidan hamnar som Draft med namnet "<Produkt> – Lagerrensning (listicle)".
-3. Öppna sidan, scrolla igenom en gång, klicka **Publish**.
-4. Peka annonserna på `https://baverbutiken.se/pages/<handle>` (står i rapporten).
+1. Ladda ner `<slug>-lagerrensning.html` och öppna den i en textredigerare (eller Anteckningar). Markera allt, kopiera.
+2. GemPages → **Pages** → **Create new page** (typ Landing page) → döp den "<Produkt> – Lagerrensning".
+3. I editorn: dra in elementet **HTML/Liquid** (sök "HTML" i elementlistan) på sidan → klistra in allt i kodrutan → **Save**.
+4. Sätt sidans URL till `/pages/<slug>-lagerrensning` (Page settings) → **Publish**.
+5. Peka annonserna på `https://baverbutiken.se/pages/<slug>-lagerrensning`.
 
-Går importen inte igenom: klistra felmeddelandet i nästa session. Första
-knappen att prova är `--nya-idn` (nya sid- och sektions-id:n) — id:na är
-annars motorhöljets, vilket GemPages normalt hanterar vid import.
+Vill Axel hellre importera: `.gempages`-filen ligger bredvid HTML:en
+(Pages → Import page). Avvisas den: prova `--nya-idn`.
 
 ## DEFINITION OF DONE
-- [ ] Underlag hämtat ur butiken; pris och jämförpris lästa där, aldrig ur minnet
-- [ ] Fem teman satta av huvudsessionen med fakta per punkt
-- [ ] Copy skriven av sonnet-subagent; tre-frågorstestet redovisat; inga ❌ kvar utan motivering
+- [ ] Underlag hämtat ur butiken; pris och jämförpris lästa där, aldrig ur minnet; inget betyg i copyn
+- [ ] Fem teman satta med fakta per punkt
+- [ ] Copy skriven av huvudsessionen; läsbarhetstestet gjort på varje stycke och redovisat; tre-frågorstestet redovisat, ❌ bara med motivering
 - [ ] Bildplan med alla sex platser; produktbilder där de passar, kie annars; inga människor/text
 - [ ] `--torr` utan ❌ före skarp körning
-- [ ] Skarp körning: bilder på Shopifys CDN, `.gempages` skriven och läst tillbaka med rätt checksummor
-- [ ] Varje kie-bild tittad på; `--kolla` visar rätt priser och ingen motorhölje-text
-- [ ] batch-log uppdaterad om produkten har minne; committat och pushat; filen skickad i chatten
-- [ ] Rapport + Axels fyra klick sist, numrerade
+- [ ] Skarp körning: bilder på Shopifys CDN, HTML-filen skriven, `.gempages` läst tillbaka med rätt checksummor
+- [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på; `--kolla` visar rätt priser
+- [ ] batch-log uppdaterad om produkten har minne; committat och pushat; HTML-filen skickad i chatten
+- [ ] Rapport + Axels klick sist, numrerade

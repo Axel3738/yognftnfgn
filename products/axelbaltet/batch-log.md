@@ -610,12 +610,15 @@ Citatstatiken med recensionstexter är fortfarande blockerad. Bundle-vinkeln for
 
 ## Lagerrensnings-LP byggd — 2026-09-16 (`/lagerrensning`)
 
-Motorhöljets listicle-sida kopierad till axelbältet: copy via sonnet-subagent
-(31 rader i tre-frågorstestet, 4 ❌ på fasta strukturrader), tre kie-bilder
-(punkt 1, 2, 4 — scener utan människor) + produktbilderna 4, 5, 1, pris **599 kr
-istället för 789 kr** avläst på produktsidan samma dag. Betyget 4,75 ströks ur
-copyn — sidan visar 4,50/12 i dag. Fil:
-`lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages`
-→ Axel importerar i GemPages (Pages → Import page). Blivande adress
+Motorhöljets listicle-sida kopierad till axelbältet. Copyn skrevs först av en
+sonnet-subagent och byttes samma dag ut i sin helhet av huvudsessionen (Fable)
+efter Axels besked att texten ska låta naturlig — 28 rader i tre-frågorstestet,
+4 ❌ på fasta strukturrader. Tre kie-bilder (punkt 1, 2, 4 — scener utan
+människor) + produktbilderna 4, 5, 1, pris **599 kr istället för 789 kr**
+avläst på produktsidan samma dag. Inget betyg i copyn — sidan visar 4,50/12
+medan DNA:t sa 4,75/8. Leverans: HTML att klistra in i ett HTML-element i
+GemPages (Axels beslut: inte .gempages-import):
+`lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.html`
+(`.gempages` bredvid som reserv). Blivande adress
 `baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning`. Annonser som
 bär överlager-/lagerrensningsvinkeln pekas dit när sidan är publicerad.

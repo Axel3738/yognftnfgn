@@ -1,5 +1,5 @@
 {
-  "byggd": "2026-09-16T05:44:51.005Z",
+  "byggd": "2026-09-16T06:15:27.181Z",
   "datumrad": "2026-09-16",
   "produkt": {
     "titel": "Axelbälte för Trimmer – Justerbart Nylonbälte",
@@ -101,7 +101,23 @@
       "kalla": "produkt #1"
     }
   ],
+  "html": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.html",
   "fil": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages",
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-sidfot.png"
+  },
   "sida": {
     "id": "631451887748514611",
     "namn": "Axelbälte för Trimmer – Lagerrensning (listicle)",
@@ -118,23 +134,23 @@
     },
     {
       "cid": "gzr7fcjOKR",
-      "checksum": "12438721cf32ca697de64128458585a9a4555e7dc4022e22a92daf9b7daab194"
+      "checksum": "7a774d8c910e48cd627eac125b4cd572ea3836749374bfb7efa9bb44c79f0c54"
     },
     {
       "cid": "gFUogNLoms",
-      "checksum": "f4b68b98eb3b4c68065151f0d94f0a4d2dffa5b7c3e857d7065e13c51e39fb0c"
+      "checksum": "5633b7ddac8fd89686666faef3912fbfc2d4383fe2017e7d4239ab9b4e46c387"
     },
     {
       "cid": "gKDLMvyzHn",
-      "checksum": "36179797074170812ce52ed38b2845bb4c535c8c04e856d6057f411ee0a46f37"
+      "checksum": "228d5492385bb1db322da149d06634b9ec0fed2848f2c10ae7dab395aaba0f60"
     },
     {
       "cid": "gpAnhUOKAB",
-      "checksum": "67c6e3ce97f7d4ee01f1fc198a1747343fdd8ecadec8113bf0a6db0ad79fd0af"
+      "checksum": "a7e4735229d6f96bfc4e8c55a37f07effa6c962b7cc965c004971735dd6673b6"
     },
     {
       "cid": "gZwRqjNDfR",
-      "checksum": "355abc69a25db0521d5dda87518612a571b462e10c54cfd6cb0ca214437aa547"
+      "checksum": "61e8d393b3d7d3fcf3ae5e18759d3bd1a6cfa74aef0e0e35540b56fce64440d4"
     },
     {
       "cid": "gFr4QMkKJc",
@@ -142,11 +158,11 @@
     },
     {
       "cid": "gczQ124MUD",
-      "checksum": "262b16821d8c3708f2485802d2559a009e3ae21d045b6a167a373bd1d515c1c8"
+      "checksum": "98e61cf00094d59eb3d6fc2b001b7734b455373253970b3d7250f185c9760b20"
     },
     {
       "cid": "gNtZOEiSzZ",
-      "checksum": "424b317dfd6428faf0f92aef774a8a80dc6bbe11966d4532ac2c9cd9e7571206"
+      "checksum": "f3271e2d616e44f77b0ad7b97292bda9b7f0f5f494b2723c4f84306a04a59332"
     }
   ],
   "bildUrler": [

@@ -88,6 +88,11 @@ inte röras utan att Axel ber om det.
    tre-frågorstestet i copy-reglerna (visualisera / falsifiera / ingen annan kan
    säga det) och testet redovisas i leveransen. Strategi, analys, klassificering
    och briefstruktur görs alltid av huvudsessionen. Aldrig tvärtom.
+   ⚠️ **Undantag, Axels beslut 2026-09-16: landningssidornas copy
+   (`/lagerrensning`) skrivs av huvudsessionen själv** ("jag tror vi ska
+   använda oss av dig eller Fable att skriva copyn"), med läsbarhetstestet i
+   kommandot utöver tre-frågorstestet — Axels återkommande klagomål är att
+   texten inte låter naturlig och att övergångarna mellan meningarna hackar.
 7. **Produktminnet ligger i repot, inte i chatten:** `products/<id>/dna.md`
    (Creative DNA), `products/<id>/batch-log.md` (batcher + hypoteser + utfall),
    `products/<id>/backlog.md` (koncept som väntar). Läs dem innan du agerar,
@@ -243,7 +248,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/kundtjanst [--alla\|--brand <id>] [--discord]` | **Måndag 07:00, alla brands:** supportmejlen (Loopia/IMAP) + Shopify → återkommande toppärenden, chargeback-varningar, ranking 0–100 per brand, VA:ns lista på engelska. Läs-bara. `kundtjanst/README.md` |
 | `/tvistkoll [--alla] [--discord]` | **Varje dag 07:00, alla brands:** bara Shopify-tvisterna → larm i Discord om någon har evidence-deadline inom 3 dagar. Sekunder, inga mejl, inga filer. Täpper luckan mellan veckorapporterna |
 | `/mejl` | **Bäverbutikens kundmejl** (orderbekräftelse, leverans, återbetalning …) med erbjudandet "köp igen → välj en gratisprodukt" — bygger mallarna ur Shopify, publicerar sidan Axel klistrar från. `mejl/README.md` |
-| `/lagerrensning <produktlänk>` | **Kopiera lagerrensnings-sidan (listicle) till en ny produkt:** motorhöljets GemPages-export (`lagerrensning/mall/`) → ny copy via sonnet-subagent, produktens riktiga pris/jämförpris ur produktsidan, produktbilder eller kie.ai-bilder (läggs på Shopifys CDN) → `lagerrensning/output/<handle>/<slug>-lagerrensning.gempages` som Axel importerar i GemPages (Pages → Import page). Prisspärr: inga andra siffror än produktsidans, inga procent. `lagerrensning/README.md` |
+| `/lagerrensning <produktlänk>` | **Kopiera lagerrensnings-sidan (listicle) till en ny produkt:** motorhöljets GemPages-export (`lagerrensning/mall/`) → ny copy **skriven av huvudsessionen (Fable), med läsbarhetstest** (Axels beslut 2026-09-16 — undantag från regel 6), produktens riktiga pris/jämförpris ur produktsidan, produktbilder eller kie.ai-bilder (läggs på Shopifys CDN) → **`lagerrensning/output/<handle>/<slug>-lagerrensning.html` som Axel klistrar in i ett HTML-element i GemPages** (`.gempages`-filen byggs bara som reserv — "det blir ofta fel när du genererar en GemPages-fil"). Skärmdumpar desktop + mobil tas offline och tittas på av sessionen. Prisspärr: inga andra siffror än produktsidans, inga procent. `lagerrensning/README.md` |
 
 ### Nattrutinerna
 
