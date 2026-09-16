@@ -616,7 +616,10 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    nivåerna sina USD-rader, och som amerikansk kund stod **$199.00 /
    $249.00 / paket $338.30, $477.60**. Produkten utan USD-rad visas med
    Shopifys egen omräkning ($59.00 för 559 kr) — läsbart, men inte ett pris
-   ägaren valt.
+   ägaren valt. Axel svarade "99 dollar" på rapportens fråga samma
+   förmiddag; raden skrevs in och `--igen prislista,paket` gav **$99.00 /
+   $124.00 / paket $168.30, $237.60** — samma prislista, en produkt till.
+   Frågan-med-alternativ i rapporten fungerade: ett tal tillbaka, ett steg.
 6. ⚙️ Kundvyn känner igen "Add to cart"/"Buy now" som köpknapp. `sprakkoll.mjs`
    är fortfarande bokmål-only — engelskan läses av markörskanningen
    (`markorer_sv`) och ett öga.
