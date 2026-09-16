@@ -75,16 +75,24 @@ png, srt) är gitignoretat där, JSON-filerna committas.
 ```
 node tools/ops-leveranskon.mjs <nyckel> --marknad <M> --status "SE-ACTIVE to be translated" --json --ut <batch>/se > <batch>/jobb.json
 ```
-Kräver exakt en ACTIVE kampanj för marknaden i marknadens konto. Tre olika
-lägen, och de får **inte** rapporteras likadant (rättat 2026-09-13 efter att
-HeimGuard fick fel råd):
+Kräver exakt en kampanj för marknaden i marknadens konto: ACTIVE, eller
+**PAUSED utan spend** (nybyggd — en ägare pausar inget som aldrig spenderat).
+Kön hittar den på kampanjnamnets bas (`kampanjbasFor`,
+`CARASHELL_US_Taköverdrag …`) även när den är tom; mätt 2026-09-16 före
+rättningen: kön sa "ingen US-kampanj" om en färdigbyggd `--tom`-kampanj, för
+den hade inga annonser att kännas igen på. Fyra olika lägen, och de får
+**inte** rapporteras likadant (rättat 2026-09-13 efter att HeimGuard fick fel
+råd):
 
 | Läge | Rapportera | Rör |
 |---|---|---|
 | Ingen kampanj för marknaden i kontot | `no <M> campaign — run: node factory/kampanj.mjs <produkt> --marknad <M> --tom` | inget |
 | Kampanjen finns men är **PAUSED med spend** | `<M> paused by owner since <tid>, N rows held` + vad pausen kostar/ger | inget |
-| Kampanjen finns, PAUSED **utan** spend (nybyggd) | `<M> campaign built but not switched on — waiting for owner` | inget |
-| Flera ACTIVE kampanjer | lista namnen, be om besked | inget |
+| Kampanjen finns, PAUSED **utan** spend (nybyggd) | **annonserna laddas upp i den** — `<M> campaign is PAUSED (never run): N ads uploaded, nothing spends until the owner switches it on` under ACTION NEEDED | annonserna; kampanjen och dess status rörs ALDRIG |
+| Flera ACTIVE, eller flera PAUSED utan spend | lista namnen, be om besked | inget |
+
+Uppladdaren får kampanjen ur kön: skicka `--kampanj <jobb.kampanj.id>` i
+steg 5, så kan verktyget aldrig välja en annan kampanj än den kön dömde.
 
 ⚠️ **Föreslå ALDRIG `/ny-annonser` eller `--tom` för en kampanj ägaren själv
 har pausat.** PAUSED med spend är hans beslut. Kön **hålls** i det läget:
@@ -114,6 +122,18 @@ varje `<mal_namn>.jpg.qa.png`, rätta `overrides.json` vid MISMATCH. Aldrig
 leverera en bild med fel. (Utmappen heter `no/` av historiska skäl — den är
 marknadens, oavsett kod.)
 
+**Undantag — bilder med textlagret (`factory/bild-text.py`):** en OPS-bild
+vars text lades på som vektortext ur briefens "Exact text" (CaraShell batch
+#2, alla `/ops-bild`-bilder sedan 2026-09-15) översätts INTE med OCR-vägen.
+Rita om från det rena basfotot med marknadens spec: subagenten skriver
+`<batch>/textlager-<m>.json` (samma typ-lista och ordning som SE-specen —
+`se-texter.json` ur briefens tabell), och `ops-bild.laggTextlager` lägger
+den på basfotot. Basfotot finns i Notion-raden (första bilagan innan
+textversionen bytts in) eller som `image_hash` i den gamla Meta-creativen
+(`act_<konto>/adimages?hashes=[…]` ger `url`). Mall:
+`market-expansion/ops/carashell/2026-09-16-us/rendera.mjs`. Titta på varje
+färdig bild innan uppladdning — samma lätta granskning som `/ops-bild`.
+
 ### 4. Video — exakt `/oversatt` Fas 4
 `translate-batch.mjs … --lang="<heygen_sprak ur kön>" --marknad=<M>`.
 Proofread → SRT lokaliseras av subagenten (samma blockantal/timecodes) →
@@ -123,8 +143,8 @@ Tom `.orig.srt` = inget tal = ingen render.
 
 ### 5. Uppladdning — live i marknadens kampanj
 ```
-node tools/ops-till-meta.mjs <nyckel> --marknad <M> --namn <mal_namn> --fil <batch>/no/<fil> --primar "<message>" --rubrik "<headline>" [--beskrivning "<text>"] --torr
-node tools/ops-till-meta.mjs <nyckel> --marknad <M> --namn <mal_namn> --fil <batch>/no/<fil> --primar "<message>" --rubrik "<headline>" [--beskrivning "<text>"] --json
+node tools/ops-till-meta.mjs <nyckel> --marknad <M> --kampanj <jobb.kampanj.id> --namn <mal_namn> --fil <batch>/no/<fil> --primar "<message>" --rubrik "<headline>" [--beskrivning "<text>"] --torr
+node tools/ops-till-meta.mjs <nyckel> --marknad <M> --kampanj <jobb.kampanj.id> --namn <mal_namn> --fil <batch>/no/<fil> --primar "<message>" --rubrik "<headline>" [--beskrivning "<text>"] --json
 ```
 Länken ärvs ur kampanjens befintliga annonser; en tom kampanj (första
 US-annonsen) får marknadens standardlänk och produktfilens sida — det står i
@@ -152,7 +172,7 @@ Pusha till `main`.
 
 ## DEFINITION OF DONE
 
-- [ ] Färsk `main`; marknadens kampanj hittad i marknadens konto (exakt en ACTIVE) eller stoppet redovisat med rätt läge
+- [ ] Färsk `main`; marknadens kampanj hittad i marknadens konto (exakt en ACTIVE, eller exakt en PAUSED utan spend som då INTE slås på) eller stoppet redovisat med rätt läge
 - [ ] Butiken redo för marknaden (priset läst på marknadens sida) — annars kön hållen och rapporterad
 - [ ] Varje rad i kön redovisad: översatt + uppladdad / hoppad med skäl / redan uppe
 - [ ] Bilder: QA-bild läst per bild, inget svenskt kvar, siffror rätt

@@ -108,6 +108,19 @@ export function kampanjnamnFor({ brand, marknad, produkt, datum }) {
   return `${String(brand).toUpperCase()}_${String(marknad).toUpperCase()}_${namn} | BE-ROAS ${be} | ${datum}`;
 }
 
+/**
+ * Ren: kampanjnamnets BAS för produkten på marknaden — `CARASHELL_US_Taköverdrag …`
+ * utan `| BE-ROAS | datum`. Det är så en TOM kampanj (noll annonser) känns igen
+ * som butikens: `valjKampanjer` hittar annars kampanjer bara via annonsprefixet
+ * eller via annonserna i dem, och en nybyggd US-kampanj har inga. Mätt
+ * 2026-09-16: kön sa "ingen US-kampanj — /ny-annonser bygger den" medan
+ * `CARASHELL_US_…` låg färdig i Magiborsten UK. Produktnamnet ingår, så
+ * termoskyddets kampanjer matchar aldrig takskyddets bas.
+ */
+export function kampanjbasFor({ brand, marknad, produkt }) {
+  return kampanjnamnFor({ brand, marknad, produkt, datum: '' }).split(' | ')[0].trim();
+}
+
 /** Ren: vinklarna för en TOM kampanj — ur --vinklar, annars ur SE-kampanjens adsets (" - PD" / "_PD"). */
 export function vinklarFor({ flagga = null, seAdsets = [] } = {}) {
   const urFlagga = String(flagga ?? '').split(/[,\s]+/).map((v) => v.trim().toUpperCase()).filter((v) => /^[A-Z]{1,4}[0-9]?$/.test(v));
@@ -222,7 +235,7 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
       const seKampanjer = await api(`act_${MALKONTO.id}/campaigns`, { params: { fields: 'id,name,status', limit: 200 } });
       // PRODUKTENS SE-kampanj, inte butikens alla (CaraShell bär två produkter
       // sedan 2026-09-16 — termoskyddets adsets ska inte in i takskyddets US).
-      const seBas = kampanjnamnFor({ brand, marknad: 'SE', produkt: p, datum: '' }).split(' | ')[0].toUpperCase();
+      const seBas = kampanjbasFor({ brand, marknad: 'SE', produkt: p }).toUpperCase();
       const se = (seKampanjer.data ?? []).filter((k) => String(k.name).toUpperCase().startsWith(seBas));
       for (const k of se) seAdsets.push(...((await api(`${k.id}/adsets`, { params: { fields: 'id,name,status', limit: 100 } })).data ?? []));
     }

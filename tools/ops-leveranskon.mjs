@@ -182,10 +182,24 @@ export function valjMalkampanj(kandidater, marknad = 'SE') {
       kandidater: lista,
     };
   }
-  if (pausadeTomma.length) {
+  // Exakt en PAUSED kampanj UTAN spend är nybyggd, inte ett beslut (en
+  // ägare pausar inget som aldrig spenderat). Den får ta emot annonser —
+  // kampanjen själv rörs aldrig, så inget spenderar förrän ägaren slår på
+  // den. Så blir en ny marknad (US 2026-09-16) klar med ett klick i stället
+  // för att kön hålls tills någon slår på en tom kampanj.
+  if (pausadeTomma.length === 1) {
+    const k = pausadeTomma[0];
+    return {
+      kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'PAUSAD_TOM' },
+      skal: null,
+      varning: `"${k.namn}" är PAUSED utan spend (nybyggd) — annonserna laddas upp, kampanjen rörs inte; inget spenderar förrän ägaren slår på den${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
+      kandidater: lista,
+    };
+  }
+  if (pausadeTomma.length > 1) {
     return {
       kampanj: null,
-      skal: `ingen ACTIVE ${m}-kampanj — ${pausadeTomma.map((k) => `"${k.namn}" är PAUSED utan spend`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}. VA:n slår på kampanjen först.`,
+      skal: `ingen ACTIVE ${m}-kampanj och ${pausadeTomma.length} PAUSED utan spend — gissar aldrig vilken: ${pausadeTomma.map((k) => `${k.namn} (${k.id})`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
       kandidater: lista,
     };
   }
@@ -406,7 +420,15 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const butikens = annonser
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
-  const val = valjKampanjer(kampanjer, butik.prefix, butikens);
+  // Kampanjnamnets bas (kampanjbasFor) fångar en TOM kampanj utan annonser —
+  // den första US-kampanjen är alltid tom (byggd med --tom).
+  let kampanjbaser = [];
+  try {
+    const { kampanjbasFor } = await import('../factory/kampanj.mjs');
+    if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: butik.post.brand, marknad: m, produkt: butik.produkt })];
+  } catch (e) { varningar.push(`kampanjbas: ${e.message}`); }
+  const val = valjKampanjer(kampanjer, butik.prefix, butikens, kampanjbaser);
+  if (val.baraViaBas?.length) logg(`  via kampanjnamnet (tom kampanj): ${val.baraViaBas.join(' · ')}`);
   const perMarknad = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), m);
   const kandidater = [];
   for (const k of perMarknad.behall) {
@@ -414,9 +436,10 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const u = await kampanjUtfall(k.id);
     kandidater.push({ ...k, utfall: u.utfall, spend: u.spend ?? null });
   }
-  const { kampanj, skal: kampanjSkal } = valjMalkampanj(kandidater, m);
+  const { kampanj, skal: kampanjSkal, varning: kampanjVarning } = valjMalkampanj(kandidater, m);
   if (kampanj) logg(`Kampanj (${m}): ${kampanj.namn} [${kampanj.status}] · bas "${kampanj.bas}"`);
   else { logg(`Kampanj (${m}): INGEN — ${kampanjSkal}`); varningar.push(`kampanj: ${kampanjSkal}`); }
+  if (kampanjVarning) { logg(`  ⚠️  ${kampanjVarning}`); varningar.push(`kampanj: ${kampanjVarning}`); }
   for (const k of kandidater.filter((x) => x.utfall === 'AVVECKLAD')) {
     if (!kampanj || k.id !== kampanj.id) varningar.push(`"${k.name}" är PAUSED med ${Math.round(k.spend)} kr spend — avvecklad, aldrig mål`);
   }

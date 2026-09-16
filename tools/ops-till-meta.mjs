@@ -185,14 +185,21 @@ export function byggSpec({ typ, pageId, igId = null, media, primär, rubrik, bes
  *   marknad      SE | NO | …
  * Returnerar { kampanj, kandidater, skal }: kampanj är null när valet inte är entydigt.
  */
-export function valjEnKampanj({ kampanjer, prefix, annonsrader = [], marknad }) {
-  const val = valjKampanjer(kampanjer ?? [], prefix, annonsrader);
+export function valjEnKampanj({ kampanjer, prefix, annonsrader = [], marknad, kampanjbaser = [] }) {
+  const val = valjKampanjer(kampanjer ?? [], prefix, annonsrader, kampanjbaser);
   const m = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), marknad);
   const paMarknad = m.behall;
   const aktiva = paMarknad.filter((k) => k.status === 'ACTIVE');
   const lista = (l) => l.map((k) => `${k.name} (${k.id}, ${k.status})`).join(' · ');
   if (aktiva.length === 1) {
     return { kampanj: aktiva[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null };
+  }
+  if (aktiva.length === 0 && paMarknad.length === 1) {
+    // Exakt en kampanj och den är PAUSED: utfallet läses live efteråt —
+    // spend > 0 är avvecklad och stoppar; utan spend är den nybyggd och
+    // får annonsen (kampanjen rörs aldrig, inget spenderar förrän ägaren
+    // slår på den). Samma regel som valjMalkampanj i ops-leveranskon.
+    return { kampanj: paMarknad[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null, pausad: true };
   }
   if (aktiva.length === 0) {
     const skal = paMarknad.length
@@ -291,19 +298,26 @@ async function huvud() {
   //    ut kampanjen i flerproduktsbutiker, och hela listan är dubblettspärren.
   const allaAnnonser = await alla(`act_${konto}/ads`, { fields: 'id,name,campaign_id,effective_status' });
   const butikens = allaAnnonser.filter((a) => tillhorButiken(a.name, butik.prefix));
+  // Kampanjnamnets bas (kampanjbasFor) fångar en TOM kampanj utan annonser —
+  // den första US-annonsen går alltid in i en sådan.
+  let kampanjbaser = [];
+  try {
+    const { kampanjbasFor } = await import('../factory/kampanj.mjs');
+    if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: post.brand, marknad, produkt: butik.produkt })];
+  } catch (e) { logg(`   ⚠ kampanjbas: ${e.message}`); }
   let kampanj;
   if (args.kampanj) {
     kampanj = await api(String(args.kampanj), { params: { fields: KAMPANJFÄLT } });
     if (String(kampanj.account_id) !== konto) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte marknadens konto ${konto} (${marknaden.kontonamn}). Avbryter.`);
-    const v = valjKampanjer([kampanj], butik.prefix, butikens);
-    if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar inte med ${butik.prefix.join(' / ')} och ingen annons med prefixet ligger där.`);
+    const v = valjKampanjer([kampanj], butik.prefix, butikens, kampanjbaser);
+    if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar varken med ${butik.prefix.join(' / ')} eller kampanjbasen ${kampanjbaser.join(' / ') || '(saknas)'}, och ingen annons med prefixet ligger där.`);
     const m = filtreraPaMarknad([{ ...kampanj, campaign_name: kampanj.name }], marknad);
     if (!m.behall.length) stopp(`Kampanj "${kampanj.name}" ligger på marknad ${Object.keys(m.bortfiltrerade).join('/')}, inte ${marknad}.`);
     logg(`2. Kampanj (--kampanj): "${kampanj.name}" (${kampanj.id}) ${kampanj.status}/${kampanj.effective_status}${v.baraViaAnnons.length ? ' — matchar via annonserna, inte namnet' : ''}`);
   } else {
     const kampanjer = await alla(`act_${konto}/campaigns`, { fields: KAMPANJFÄLT });
-    const val = valjEnKampanj({ kampanjer, prefix: butik.prefix, annonsrader: butikens, marknad });
-    logg(`2. Kampanjer: ${kampanjer.length} i kontot · ${val.butikens.length} är ${post.brand}s · ${val.kandidater.length} på marknad ${marknad}${val.baraViaAnnons.length ? ` · via annonserna: ${val.baraViaAnnons.join(' · ')}` : ''}`);
+    const val = valjEnKampanj({ kampanjer, prefix: butik.prefix, annonsrader: butikens, marknad, kampanjbaser });
+    logg(`2. Kampanjer: ${kampanjer.length} i kontot · ${val.butikens.length} är ${post.brand}s · ${val.kandidater.length} på marknad ${marknad}${val.baraViaAnnons.length ? ` · via annonserna: ${val.baraViaAnnons.join(' · ')}` : ''}${val.pausad ? ' · enda kandidaten är PAUSED (utfallet läses live nedan)' : ''}`);
     for (const k of val.kandidater) logg(`   ${k.status === 'ACTIVE' ? '▶' : '⏸'} ${k.name} (${k.id}) ${k.status}/${k.effective_status}`);
     if (!val.kampanj) stopp(val.skal);
     kampanj = val.kampanj;
