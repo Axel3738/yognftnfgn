@@ -626,6 +626,11 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
 7. 🖐 **Det API:t inte kan, i ordning:** USD som marknadens valuta (Inställningar
    → Marknader → USA → Valuta), sales tax (Skatter och tullar → USA), Shopify
    Payments accepterar USD, fraktpriset till USA bekräftat hos leverantören.
+   **Axels svar 2026-09-16 (CaraShell):** sales tax ska vara AV — "det löser
+   jag i efterhand med min revisor, kunderna ska inte få något påslag", så
+   köpvillkorens "prices include any applicable tax" står kvar som de är;
+   Shopify Payments i USD är fixat; leverantören skickar till USA på 5–10
+   arbetsdagar. Skriv aldrig in sales tax som ett klick igen för CaraShell.
 8. ⚙️ **Annonserna — byggda samma dag (Axels beslut: "Detta blir Magiborsten
    UK till för").** Kontot är PER MARKNAD i `factory/opsmarknader.mjs`: SE/NO
    i OPS-kontot, **US i Magiborsten UK `1107817401910319`** (SEK, tidszon GB,
@@ -685,6 +690,25 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `output/<produkt>/judgeme-import-en.csv`), bildernas alt-texter (media-alt
    ligger inte i underlaget — samma lucka på /nb) och Judge.me-widgetens
    knapp "Köp nu" (appinställning, inte temat).
+   **Recensionerna på /en — läst i Judge.mes hjälpcenter 2026-09-16 efter
+   Axels fråga "går det inte att den auto-translatear?":** ja, men det är en
+   betalfunktion. *Multi-language widgets* (knappar, rubriker, formulär på
+   kundens språk) är gratis: Settings → Language → Widgets and translations →
+   "Enable multi-language widgets". *Review translations* (själva
+   recensionstexten översätts till språket kunden surfar på, med "Show
+   original") kräver **Awesome-planen**: samma sida → "Enable review
+   translations" → "Translate reviews automatically"; kräver nya Review
+   Widget, språket publicerat i Shopify (en är det), upp till 48 h innan
+   språket känns igen. ⚠️ Norska: widgetspråket triggas bara av locale `no`,
+   inte `nb` — våra butiker har `nb`, så på /nb faller widgeten tillbaka på
+   svenska även med funktionen på. Mätt samma dag på carashell.se: 10
+   svenska recensioner live på både `/products/takskyddet` och `/en/…`,
+   widgetknappen "Skriv en recension" även på /en ⇒ inget av detta var
+   påslaget. **Alternativet i repot** (`judgeme.mjs byggJudgeMeAppCsv`) är
+   att importera de översatta raderna som EGNA recensioner — då ser varje
+   kund alla språk blandade (10 sv + 6 nb + 6 en på samma sida), vilket är
+   precis det Axel inte vill ha. Vägvalet (Awesome eller blandad import) är
+   Axels; tills det är gjort är en-CSV:n bara en fil.
 13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
    läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
    rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
