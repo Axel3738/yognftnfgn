@@ -148,15 +148,18 @@ människa i en webbläsare — skriv "inte testad", aldrig "testad".
 node factory/register.mjs skriv-in
 node factory/register.mjs <butik>/<ny-produkt-id>
 ```
-⚠️ **Så fort butiken bär två produkter kastar ett bart butiks-id.**
-`hittaPost('carashell')` svarar "matchar 2 poster — ange produktens nyckel".
-Det betyder att butikens BEFINTLIGA tre rutiner slutar fungera samma natt:
-deras prompt är `/notionscalercs <butik>`. Skriv om dem med `update_trigger`
-till `<butik>/<gamla-produkten>` **innan** den nya produkten får en state-fil,
-och rapportera det under Axels uppgifter om det inte hinns med. ⚠️ Rutinerna
-ligger ofta på ett ANNAT Claude-konto än sessionen (CaraShell: `list_triggers`
-här var tomt 2026-09-16) — då är det Axels klick i Routines-vyn, inte ett
-verktygsanrop.
+⚠️ **Så fort butiken bär två produkter kastar ett bart butiks-id** — om inte
+butiksfilen pekar ut vilken produkt det betyder. Butikens BEFINTLIGA tre
+rutiner har prompten `/notionscalercs <butik>` och ligger ofta på ett ANNAT
+Claude-konto än sessionen (CaraShell: `list_triggers` här var tomt
+2026-09-16), så de går inte att skriva om härifrån. Därför, **i samma steg**:
+sätt `butik.huvudprodukt: <gamla-produktens-id>` i `factory/butiker/<butik>.yaml`
+(Axels beslut 2026-09-16: de gamla rutinerna är den gamla produktens, den nya
+får egna). `hittaPost('<butik>')` löser då upp till den gamla produkten och
+rutinerna fortsätter gå orörda; den nya produkten nås bara på
+`<butik>/<ny-produkt-id>`. Kontrollera med `node factory/register.mjs <butik>`
+— raden `Huvudprodukt: ja` ska stå på den gamla produkten. Utan fältet kastar
+uppslagningen med ett tips om fältet, och rutinerna stannar samma natt.
 
 Egen rutinplats åt produkt 2: `node factory/rutin.mjs --tider <butik>/<ny-produkt-id>
 --flerprodukt --skriv-in`. Utan `--flerprodukt` ärver nyckeln butikens minut och

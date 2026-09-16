@@ -15,9 +15,16 @@ Varje mapp har `dna.md` (Creative DNA), `batch-log.md` (batcher + hypoteser +
 utfall), `backlog.md` (koncept som väntar). Läs dem innan du agerar,
 uppdatera dem efter, committa och pusha.
 
-⚠️ **Ett bart `carashell` kastar i registret** sedan 2026-09-16
-(`hittaPost` → "matchar 2 poster"). Rutiner med prompten `/notionscalercs
-carashell` slutar fungera — de ska skrivas om till `carashell/takskyddet`.
+**Ett bart `carashell` betyder takskyddet** (Axels beslut 2026-09-16: de tre
+befintliga rutinerna är takskyddets, termoskyddet får egna). Det står som
+`butik.huvudprodukt: takskyddet` i `factory/butiker/carashell.yaml`, och
+`register.mjs hittaPost` löser upp butiks-id:t (och brandet) till den
+produkten. Rutinerna på `claude5@stonebite.org` med prompten
+`/notionscalercs carashell` fortsätter alltså gå orörda; `carashell/takskyddet`
+fungerar också. Termoskyddet nås ALDRIG via butiks-id:t — bara på
+`carashell/termoskyddet`. En session som slår upp `carashell` ska läsa raden
+`Huvudprodukt:` i registrets utskrift och använda minnet
+`products/carashell/takskyddet/`, inte `products/carashell/`.
 
 ⚠️ **Pixeln är delad.** Metas Purchase-event bär ingen produkt, och de två
 produkterna ligger 2× isär i pris (1 129 mot 559 kr). Döm aldrig en annons i

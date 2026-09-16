@@ -17,6 +17,11 @@
 butik:
   id: carashell
   brand: "CaraShell"
+  # Butiken bär två produkter sedan 2026-09-16. Ett bart "carashell" i
+  # registret (rutinernas prompt `/notionscalercs carashell` på
+  # claude5@stonebite.org) betyder takskyddet — de rutinerna är takskyddets.
+  # Termoskyddet får egna rutiner på nyckeln carashell/termoskyddet.
+  huvudprodukt: takskyddet
   # Butiksadressen ur prompten är facit över id:t — anslutningen letar upp
   # miljösuffixet som bär den (ops.mjs onskadDomanUr).
   myshopify: "yitrbk-m3.myshopify.com"

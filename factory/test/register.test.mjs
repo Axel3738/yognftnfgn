@@ -420,11 +420,40 @@ test('hittaPost slår upp på nyckel, produkt-id, butiks-id och brand', () => {
   assert.throws(() => hittaPost('finns-inte'), /Okänd butik\/produkt/);
 });
 
-test('en flerproduktsbutik slås ALDRIG upp på butiks-id — den kastar', () => {
-  // Två produkter i TackleBay. Att gissa vilken hade gett en rond mot fel
-  // break-even, och det syns inte som ett fel.
+test('en flerproduktsbutik utan huvudprodukt slås ALDRIG upp på butiks-id — den kastar', () => {
+  // Två produkter i TackleBay, ingen `butik.huvudprodukt`. Att gissa vilken
+  // hade gett en rond mot fel break-even, och det syns inte som ett fel.
   assert.throws(() => hittaPost('tacklebay'), /matchar 2 poster/);
+  assert.throws(() => hittaPost('tacklebay'), /butik\.huvudprodukt/);
   assert.equal(hittaPost('tacklebay/fiskespohallare-4-pack').id, 'fiskespohallare-4-pack');
+});
+
+test('butik.huvudprodukt låter ett bart butiks-id (och brandet) betyda EN produkt', () => {
+  // CaraShell 2026-09-16: takskyddets tre rutiner säger `/notionscalercs
+  // carashell` och ligger på ett annat Claude-konto. Butiksfilen pekar ut
+  // takskyddet, så prompten fortsätter fungera utan att någon rör rutinerna.
+  for (const nyckel of ['carashell', 'CaraShell', 'carashell/takskyddet', 'takskyddet']) {
+    assert.equal(hittaPost(nyckel).nyckel, 'carashell/takskyddet', nyckel);
+  }
+  assert.equal(hittaPost('carashell').huvudprodukt, true);
+  assert.equal(hittaPost('carashell').enprodukt, false);
+  // Produkt 2 nås bara på sin egen nyckel — aldrig via butiks-id:t.
+  assert.equal(hittaPost('carashell/termoskyddet').huvudprodukt, false);
+  assert.equal(hittaPost('termoskyddet').nyckel, 'carashell/termoskyddet');
+});
+
+test('huvudprodukt är ren logik: två butiker med samma brand löses inte upp', () => {
+  const register = { produkter: [
+    { nyckel: 'a/x', id: 'x', butik: 'a', brand: 'Samma', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+    { nyckel: 'b/y', id: 'y', butik: 'b', brand: 'Samma', huvudprodukt: true, butiksfil: 'factory/butiker/b.yaml' },
+  ] };
+  assert.throws(() => hittaPost('Samma', register), /matchar 2 poster/);
+  // …och en butik med två huvudprodukter (felkonfig) kastar också.
+  const dubbel = { produkter: [
+    { nyckel: 'a/x', id: 'x', butik: 'a', brand: 'A', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+    { nyckel: 'a/y', id: 'y', butik: 'a', brand: 'A', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+  ] };
+  assert.throws(() => hittaPost('a', dubbel), /matchar 2 poster/);
 });
 
 test('laddaButik ger butikens egna linjer, räknade ur produktfilen — båda momsvägarna', () => {

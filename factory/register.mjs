@@ -163,6 +163,9 @@ export function upptackOps(rot = ROT) {
       id: y?.butik?.id ?? f.replace(/\.yaml$/, ''),
       brand: y?.butik?.brand ?? '',
       valuta: y?.butik?.valuta ?? 'SEK',
+      // Produkten ett bart butiks-id betyder i en flerproduktsbutik (se
+      // hittaPost). Tomt = butiks-id:t kastar så fort butiken bär två produkter.
+      huvudprodukt: normalisera(y?.butik?.huvudprodukt ?? ''),
       fil: `factory/butiker/${f}`,
       ra: y,
     };
@@ -208,6 +211,9 @@ export function upptackOps(rot = ROT) {
     // flerproduktsbutik matchar brandet båda produkternas annonser, och då
     // rangordnas grannens creatives mot den här produktens break-even.
     enprodukt: (antalPerButik.get(butik.id) ?? 0) === 1,
+    // true på den produkt butiksfilen pekar ut med `butik.huvudprodukt`. Bara
+    // den får svara på ett bart butiks-id i en flerproduktsbutik (hittaPost).
+    huvudprodukt: finns(butik.huvudprodukt) && butik.huvudprodukt === normalisera(produkt.id),
     daily_budget_sek: produkt.daily_budget_sek,
     byggd,
     kopplingskalla: kalla,
@@ -235,6 +241,7 @@ export function upptackTest(rot = ROT) {
       annonsprefix: p.creative_prefix ?? '',
       kampanjprefix: '',
       enprodukt: false,
+      huvudprodukt: false,
       daily_budget_sek: p.daily_budget_sek ?? null,
       byggd: true,
       kopplingskalla: 'products.json',
@@ -462,11 +469,21 @@ export function hittaPost(nyckel, register = lasRegister()) {
     throw new Error(`Okänd butik/produkt: "${nyckel}". Registret innehåller: ${lista || '(tomt)'}`);
   }
   if (traffar.length > 1) {
-    // En flerproduktsbutik slås upp på butiks-id och ger två träffar. Gissa
-    // aldrig vilken — en rond mot fel produkt dömer mot fel break-even.
+    // En flerproduktsbutik slås upp på butiks-id (eller brand) och ger två
+    // träffar. Gissa aldrig vilken — en rond mot fel produkt dömer mot fel
+    // break-even. Men butiksfilen får PEKA UT en: `butik.huvudprodukt`.
+    // Det är ett beslut i en versionerad fil, inte en gissning, och det håller
+    // butikens gamla rutiner (`/notionscalercs carashell`) i gång när
+    // produkt 2 kommer in — rutinerna ligger ofta på ett annat Claude-konto
+    // än sessionen och går inte att skriva om härifrån (CaraShell 2026-09-16).
+    const butiker = new Set(traffar.map((p) => p.butik));
+    const huvud = traffar.filter((p) => p.huvudprodukt === true);
+    if (butiker.size === 1 && huvud.length === 1) return huvud[0];
+    const tips = butiker.size === 1
+      ? ` Ange produktens nyckel (butik/produkt), eller sätt \`butik.huvudprodukt: <produkt-id>\` i ${traffar[0].butiksfil ?? 'butiksfilen'} så betyder ett bart "${nyckel}" den produkten.`
+      : ' Ange produktens nyckel (butik/produkt) i stället.';
     throw new Error(
-      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}. `
-      + 'Ange produktens nyckel (butik/produkt) i stället.'
+      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}.${tips}`
     );
   }
   return traffar[0];
@@ -880,6 +897,11 @@ export function loggaLaunch(nyckel, antal, datum) {
 function skrivPost(post, idag) {
   const kord = arKordag(post, idag);
   console.log(`\n${post.namn}  ·  ${post.nyckel}  ·  LÄGE ${post.lage.toUpperCase()}`);
+  if (post.huvudprodukt && !post.enprodukt) {
+    // Rutinen kan ha slagit upp bara butiks-id:t. Säg vilken produkt det blev
+    // och var minnet ligger — mappen products/<butik>/ bär inte längre dna.md.
+    console.log(`  Huvudprodukt: ja — ett bart "${post.butik}" betyder den här produkten (butik.huvudprodukt). Minnet: products/${post.nyckel}/`);
+  }
   console.log(`  Annonskonto:  ${post.ad_account_id}${post.lage === 'test' ? ' (Bäverbutiken — LÄSES bara)' : ' (delat OPS-konto, filtrera på prefix)'}`);
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);

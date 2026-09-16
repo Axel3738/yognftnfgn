@@ -138,10 +138,13 @@ fällorna, men **löser inte pixelproblemet** — det står kvar nedan.
    av dem en andra produkt måste prefixet göras produktskopat FÖRST, annars
    matchar brandprefixet båda produkternas annonser.
 3. **Ett bart butiks-id kastar** så fort butiken bär två produkter
-   (`register.mjs hittaPost`). Butikens tre befintliga rutiner har butiks-id i
-   sin prompt och slutar då gå. De måste skrivas om till `<butik>/<produkt>`
-   med `update_trigger` **innan** produkt 2 får en state-fil. Högljutt fel,
-   men det inträffar på natten.
+   (`register.mjs hittaPost`) — **utom när butiksfilen pekar ut en
+   huvudprodukt.** Butikens tre befintliga rutiner har butiks-id i sin prompt
+   och ligger ofta på ett annat Claude-konto, så de går inte att skriva om
+   från sessionen. Lösningen sedan 2026-09-16: `butik.huvudprodukt:
+   <gamla-produktens-id>` i butiksfilen ⇒ butiks-id:t (och brandet) betyder
+   den produkten, rutinerna går orörda, och produkt 2 nås bara på sin egen
+   nyckel. Utan fältet: högljutt fel, men det inträffar på natten.
 4. **Adsetnamnen saknar produkt** (`kampanj.mjs`: `{BRAND}_{MARKNAD}_{vinkel}`).
    Två produkter får identiskt namngivna adsets i var sin kampanj. Inte fel i
    dag — adsetuppslaget går på kampanjen — men det gör en manuell avläsning i
@@ -170,9 +173,15 @@ aldrig får egen annonsering med full kraft.
 
 **Höll:** `ops-produkt.mjs` (utkast, prefixkrock, körrad med alla filer), bygget med
 `--igen kollektion,startsida,meny,tema` (takskyddet kvar i meny + startsida, kollektionen
-skapad, korg-upsellen pekar på produkt 2), `register.mjs skriv-in` (ett bart `carashell`
-kastar nu som det ska), egen kampanj per produkt, `budgetrond` dömer mot produktfilens
-egen break-even.
+skapad, korg-upsellen pekar på produkt 2), `register.mjs skriv-in`, egen kampanj per
+produkt, `budgetrond` dömer mot produktfilens egen break-even.
+
+**Rutinerna, samma kväll:** ett bart `carashell` kastade "matchar 2 poster", och
+takskyddets tre rutiner (prompt `/notionscalercs carashell`) ligger på
+`claude5@stonebite.org` — osynliga från sessionen. Axels beslut: de befintliga
+rutinerna är takskyddets, termoskyddet får egna. Löst med `butik.huvudprodukt:
+takskyddet` i butiksfilen + `hittaPost` som löser upp butiks-id:t till huvudprodukten.
+Ingen rutin behövde röras.
 
 **Lagat samma dag:**
 - `rutin.mjs` saknade CLI-flaggan `--flerprodukt` — `--tider carashell/termoskyddet
