@@ -1,0 +1,35 @@
+{
+  "punkt1": {
+    "nyckel": "343ec822af26",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bc0ff7a6882a2088b0a78c20b2a16f56_1789537336812.png?v=1789537344",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/bc0ff7a6882a2088b0a78c20b2a16f56_1789537336812.png",
+    "taskId": "bc0ff7a6882a2088b0a78c20b2a16f56",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/bilder/punkt1.png",
+    "datum": "2026-09-16"
+  },
+  "punkt2": {
+    "nyckel": "42d86f963364",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4ae9d205043a956c003c9bd73904e12b_1_1789537372_9636.png?v=1789537379",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/p/4ae9d205043a956c003c9bd73904e12b_1_1789537372_9636.png",
+    "taskId": "4ae9d205043a956c003c9bd73904e12b",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/bilder/punkt2.png",
+    "datum": "2026-09-16"
+  },
+  "punkt4": {
+    "nyckel": "7f1c095ee18a",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bba75d4dcbcf15fcd36214ffe1db01c8_1_1789537407_4747.png?v=1789537414",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/p/bba75d4dcbcf15fcd36214ffe1db01c8_1_1789537407_4747.png",
+    "taskId": "bba75d4dcbcf15fcd36214ffe1db01c8",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/bilder/punkt4.png",
+    "datum": "2026-09-16"
+  }
+}

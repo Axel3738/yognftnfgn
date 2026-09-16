@@ -11,6 +11,8 @@ Uppdaterad: **2026-08-12 (/cs-körning nr 5, enligt ANALYSMETOD.md)**. Kampanj 1
 Produktfakta (omverifierat i Shopify 2026-08-09): **599 kr, jämförpris 678 kr = spara 79 kr (11,65 %)**, fri frakt, 30 dagars öppet köp, 4,75/5 (8 recensioner).
 **PRISÄNDRING 2026-08-05: 509 → 599 kr.** Siffrorna 509 kr, 636 kr och "20 %" är FÖRBJUDNA i all ny copy och creative.
 LP: baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
+⚠️ **Avläst på produktsidan 2026-09-16 (`/lagerrensning`):** pris 599 kr, **jämförpris 789 kr** (inte 678), betyg **4,50 av 5 (12 recensioner)** i Judge.me — inte 4,75/8. Raderna ovan är från 2026-08-09. Läs alltid sidan, aldrig den här filen, innan en siffra går ut.
+Lagerrensnings-LP (listicle, samma mall som motorhöljets, HTML att klistra in i GemPages): `lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/` → blivande `baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning` när Axel importerat filen i GemPages.
 
 Kampanjtotal livstid: **37 459 kr spend · 127 köp · CPA 295 kr · ROAS 1,98 · frekvens 3,09**.
 ⚠️ Target-CPA 185 och break-even 326 är räknade på gamla priset 509 kr — båda

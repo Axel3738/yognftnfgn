@@ -1,0 +1,26 @@
+{
+  "_kommentar": "Bildplan för axelbältets lagerrensningssida, 2026-09-16. Produktbilderna 2 och 3 har ett ansikte (Temu-montage) och används inte. Scenbilderna (punkt 1, 2, 4) genereras utan produkt och utan människor — produkten visas i produktbilderna 4, 5 och 1.",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A petrol grass trimmer lying on the lawn beside a half-trimmed edge along a wooden fence, the job left unfinished, Swedish villa garden in late afternoon summer light, shallow depth of field, photo-realistic, natural colours, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A grass trimmer leaning against the wall of a red wooden garden shed, a water bottle and a pair of work gloves on the grass beside it, a pause in the work, soft overcast Nordic daylight, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": { "kalla": "produkt", "index": 4 },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "Overgrown grass edges along a stone garden path and around a wooden mailbox post, the lawn itself freshly mowed but the edges left tall, Swedish house garden, warm evening light, photo-realistic, no people, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": { "kalla": "produkt", "index": 5 },
+    "lyckas": { "kalla": "produkt", "index": 1 }
+  }
+}
