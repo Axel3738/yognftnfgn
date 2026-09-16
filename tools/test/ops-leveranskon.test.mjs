@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
-  handleUr, produktJsonUrl, prisUr, leveransText, prefixAvviker, STANDARD_STATUS,
+  handleUr, produktJsonUrl, prisUr, prisUrJsonLd, leveransText, prefixAvviker, STANDARD_STATUS,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -282,4 +282,23 @@ test('tolkaNamn + hittaAdset: DryTreks tvådelade namn ger koncept PD och hittar
   const adsets = [{ id: '1', name: 'DRYTREK_SE_SP', status: 'ACTIVE' }, { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' }];
   assert.deepEqual(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - PD', 'PD'), { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' });
   assert.equal(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - FO', 'FO'), null);
+});
+
+test('prisUrJsonLd: läser MARKNADENS pris och valuta ur produktsidan', () => {
+  // Riktig avläsning 2026-09-16 på drytrek.se/nb/products/damasker?country=NO.
+  // Basvalutans .json gav 389 — sidan visar 379 NOK. Det gamla verktyget
+  // stämplade "NOK" på 389:an och rapporterade ett pris som inte finns.
+  const html = '"price":"379.00","priceCurrency":"NOK" … "price":"633.00","priceCurrency":"NOK"';
+  assert.deepEqual(prisUrJsonLd(html, 'NOK'), { pris: 379, min: 379, max: 633, valuta: 'NOK', skal: null });
+});
+
+test('prisUrJsonLd: fel valuta eller ingen JSON-LD ger null MED skäl — aldrig ett tal', () => {
+  const html = '"price":"379.00","priceCurrency":"NOK"';
+  const fel = prisUrJsonLd(html, 'USD');
+  assert.equal(fel.pris, null);
+  assert.match(fel.skal, /prissätts i NOK, inte USD/);
+  const tom = prisUrJsonLd('<html>ingen strukturerad data</html>', 'NOK');
+  assert.equal(tom.pris, null);
+  assert.match(tom.skal, /ingen JSON-LD/);
+  assert.equal(prisUrJsonLd(null, 'NOK').pris, null);
 });

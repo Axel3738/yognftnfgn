@@ -1,0 +1,24 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "konto": "915422744950975",
+  "marknad": "NO",
+  "datum": "2026-09-16",
+  "status": "SE-ACTIVE to be translated",
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub"
+  },
+  "kampanj": {
+    "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
+    "status": "ACTIVE"
+  },
+  "rader": [],
+  "hubben_per_status": {
+    "Approved": ["CaraShellRoof_CS_4_1", "CaraShellRoof_GT_4_1", "CaraShellRoof_PD_4_1", "CaraShellRoof_SP_4_1"],
+    "Draft": ["CaraShellRoof_PD_4_H1", "CaraShellRoof_PD_5_H1", "CaraShellRoof_SP_4_H1"],
+    "To be Reviewed": ["CaraShellRoof_CS_5_1", "CaraShellRoof_CS_6_1", "CaraShellRoof_PD_6_1", "CaraShellRoof_PD_7_1", "CaraShellRoof_SP_5_1", "CaraShellRoof_SP_6_1", "CaraShellRoof_SP_7_1"]
+  },
+  "skal_tom_ko": "Leveransrundan 13:40 stoppade på två ACTIVE SE-kampanjer, så dagens sju bildannonser står kvar i To be Reviewed och nådde aldrig översättningskön.",
+  "anmarkning": "Metas rate limit bröt kötoolets pris- och länkläsning efter kampanjuppslaget, så verktygets egen jobb.json blev aldrig skriven. Radantalet (0 i SE-ACTIVE to be translated) och NO-kampanjens ACTIVE-status lästes FÖRE det och är mätta, inte antagna; hubbens statusfördelning är läst direkt mot Notions API i samma körning. Pris och ärvd länk spelar ingen roll med tom kö."
+}

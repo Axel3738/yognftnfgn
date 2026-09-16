@@ -9,7 +9,7 @@
     "NO",
     "US"
   ],
-  "lank_standard": "https://carashell.se/en/products/termoskyddet?country=US",
+  "lank_standard": "https://carashell.com/products/termoskyddet?country=US",
   "valuta": "USD",
   "heygen_sprak": "English (United States)",
   "sprak": "amerikansk engelska",
@@ -20,24 +20,52 @@
     "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
     "titel": "Termoskyddet"
   },
-  "kampanj": null,
-  "kampanj_skal": "ingen ACTIVE US-kampanj — \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED utan spend. VA:n slår på kampanjen först.",
-  "kampanjer_bort": 8,
-  "lank_arvd": null,
+  "kampanj": {
+    "id": "120251442339640435",
+    "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+    "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm",
+    "status": "PAUSED",
+    "utfall": "PAUSAD_TOM",
+    "adsets": [
+      {
+        "id": "120251442347460435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251442344700435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251442342940435",
+        "name": "CARASHELL_US_G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251442341240435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 7,
+  "lank_arvd": "https://carashell.com/products/termoskyddet",
   "pris_butik": {
     "pris": 99,
     "min": 99,
     "max": 99,
-    "jamforpris": 124,
     "valuta": "USD",
-    "titel": "Windshield Thermal Cover for Motorhome 211 × 171 cm (83 × 67 in)",
-    "handle": "termoskyddet",
-    "kalla": "https://carashell.se/en/products/termoskyddet.json"
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://carashell.com/products/termoskyddet?country=US"
   },
   "pris_skal": null,
   "rader": [],
   "varningar": [
-    "kampanj: ingen ACTIVE US-kampanj — \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED utan spend. VA:n slår på kampanjen först."
+    "kampanj: \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED utan spend (nybyggd) — annonserna laddas upp, kampanjen rörs inte; inget spenderar förrän ägaren slår på den."
   ],
-  "hamtad": "2026-09-16T10:12:24.303Z"
+  "hamtad": "2026-09-16T15:17:19.591Z"
 }

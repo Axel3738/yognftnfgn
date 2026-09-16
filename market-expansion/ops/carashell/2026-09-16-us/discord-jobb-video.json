@@ -1,0 +1,24 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round 2 (videos): the roof cover's whole Swedish campaign is now mirrored in CARASHELL_US_Taköverdrag (Magiborsten UK) - 20 ads: 12 dubbed videos + 8 images, one ad set per concept (CS/GT/PD/SP).",
+    "12 videos dubbed to American English with HeyGen (voice cloned, lip-synced), Swedish word captions replaced by English ones frame by frame. Voice check (rostkoll) green on all 12. HeyGen credits: 7017 -> 6653 before render, ~570 more for the 12 renders.",
+    "Two sessions worked in parallel on the same product today: this one uploaded CS_1_H1 and CS_2_H1 (11:41, 11:55 UTC), the other account uploaded the remaining 10 videos (12:01-12:06 UTC) and the 4 batch #1 images. The duplicate guard stopped every second attempt, so no ad exists twice.",
+    "All 20 ads link to https://carashell.com/products/takskyddet?country=US ($199, was $249). Pixel access for Magiborsten UK confirmed - no Meta issues on any ad.",
+    "Ad sets CS/GT/PD/SP switched ON inside the still-PAUSED campaign, so one click on the campaign starts everything. The empty G ad set stays paused."
+  ],
+  "varningar": [
+    "Wording differs slightly between the two sessions' videos: this session says 'camper', the other says 'RV' / 'trailer'. Both are correct American terms; harmonize when the next batch is briefed.",
+    "Nobody has listened to the 12 dubs with human ears yet - rostkoll only measures silence, length drift and cut-off endings. Listen to the top spender before scaling."
+  ],
+  "action_axel": [
+    "Switch on CARASHELL_US_Taköverdrag in Magiborsten UK when you want US spend to start. Budget is set to 1000 SEK/day (CBO)."
+  ],
+  "nasta_korning": "2026-09-17 17:05"
+}

@@ -257,12 +257,17 @@ meta:
   testbudget_per_dag: 1000
   # Launch: Axel skrev "Launch: CARASHELL_SE_Termoskydd Husbil 211 × 171 cm" 2026-09-16.
   # SE-kampanjen 120249115376140172 sattes ACTIVE 10:20 UTC (kampanj + 4 adsets +
-  # 16 annonser, tillbakaläst). NO-kampanjen 120249115382210172 står kvar PAUSED.
+  # 16 annonser, tillbakaläst). NO: "Launch: CARASHELL_NO_Termoskydd Husbil 211 × 171 cm"
+  # samma dag, kampanjen 120249115382210172 ACTIVE ~10:50 UTC på samma sätt.
   launch:
     SE:
       datum: "2026-09-16"
       budget_per_dag: 1000
       kampanj_id: "120249115376140172"
+    NO:
+      datum: "2026-09-16"
+      budget_per_dag: 1000
+      kampanj_id: "120249115382210172"
   vinklar:
     - "Imman som lägger sig på insidan varje morgon, och skyddet som sitter utanpå rutan och håller glaset från att bli kallt."
     - "Trettio grader i kupén innan frukosten är klar, tills ett tätt skydd utanpå rutan stoppar värmen innan den kommer in."

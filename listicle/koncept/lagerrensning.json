@@ -1,0 +1,15 @@
+{
+  "_kommentar": "Konceptet bakom /lagerrensning — det första, och det mallen (motorhöljets sida) faktiskt är. Sidnamn, handle och copy-spärrar per koncept; strukturen (hero, punkter, lyckas, ärlig, riskfritt) är samma för alla tre koncept.",
+  "id": "lagerrensning",
+  "namn": "Lagerrensning",
+  "kommando": "/lagerrensning",
+  "suffix": "lagerrensning",
+  "sidnamn": "{kortTitel} – Lagerrensning (listicle)",
+  "sidtitel": "{kortTitel} – lagerrensning",
+  "punkter": [5],
+  "forfattare_obrandad": "Anders på lagret",
+  "rubrik": { "pris": true, "jamforpris": true },
+  "jamforpris_behovs": true,
+  "arlig_rubrik": "Jag ska vara ärlig:",
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt."
+}

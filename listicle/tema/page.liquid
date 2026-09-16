@@ -1,0 +1,7 @@
+{%- comment -%}
+  templates/page.listicle.liquid — skrivs av listicle/butik.mjs, ändra inte här.
+  Sidmallen "listicle": använder layouten utan header/footer och skriver ut
+  sidans innehåll (hela listiclen ligger i sidans body, inga sektioner).
+{%- endcomment -%}
+{% layout 'listicle' %}
+{{ page.content }}

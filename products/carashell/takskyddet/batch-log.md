@@ -455,3 +455,183 @@ koden togs bort vid mergen. Discord-rapporten från den här sessionen (11:5x, "
 uploaded") skrevs FÖRE de fyra uppladdningarna och är överspelad. Samma eftermiddag
 fick USA egen domän (carashell.com), 90-dagars garanti på /en och termoskyddet sin
 US-kampanj — se `factory/PROCESS.md` punkt 19–20 och termoskyddets batch-log.
+
+**Tillägg samma dag, 12:40:** de fyra US-bildannonserna pekades om från
+`carashell.se/en/…?country=US` till **`https://carashell.com/products/takskyddet?country=US`**
+(Axels beslut via den andra sessionen: ".se säger utländsk butik", domänen kopplad i
+Shopify) — ny creative med samma spec, annonsen ompekad, tillbakaläst ACTIVE
+(`resultat-lankbyte.json`). Pixeln delades med Magiborsten UK 12:20; efter en
+omsparning av adsetens `promoted_object` försvann HARD_ERROR 1815045 på alla fyra.
+Videorna (12 st, batch #1) körs genom HeyGen → engelska ordcaptions
+(`pipeline/no-precis.py`, konfig i `cap/`) i samma batchmapp.
+
+## USA-runda 2 samma dag (videor) — hela SE-kampanjen speglad, 20 annonser i US-kampanjen
+
+Axels order 12:1x: "alla annonser i nuvarande kampanj räcker för ett produkttest"
++ "jag vill ha videosarna på engelska". SE-kampanjens 12 videor (batch #1)
+kördes genom HeyGen (English (United States), röstklon + lip-sync):
+proofread → sonnet-lokaliserade SRT:er (`video/srt-us/`, regexgrind
+`kolla-srt.py`: samma block/timecodes, inga kronor/åäö/"Swedish law",
+±35 % längd) → apply → render → download → **engelska ordcaptions** med
+`pipeline/no-precis.py` (alla 12 källvideor har Carl Vicentes vita piller,
+mätt till y 988–1049 på 720×1280; konfig i `cap/`, GT_1 fick `fyll` 0–0,7 s
+där detektorn missade pillret mot STERLING-logotypen) → `rostkoll.py` grön
+på alla 12 → kontaktark tittade per video.
+
+**Två sessioner på samma produkt.** Medan den här sessionen renderade laddade
+Axels andra konto upp batch #1:s fyra bilder (11:10–11:26 UTC) och tio av de
+tolv videorna (12:01–12:06) med exakt samma namn; den här hann med
+`CS_1_H1` (120251443679590435) och `CS_2_H1` (120251443854310435). Dubblett-
+spärren i `ops-till-meta.mjs` stoppade varje andra försök — **noll dubbletter,
+20 annonser** (12 video + 8 bild), alla mot
+`https://carashell.com/products/takskyddet?country=US`. Stickprov på två av
+den andra sessionens videor (GT_1_H1, SP_3_H1): engelska captions, inget
+svenskt kvar. Ordval skiljer: den här sessionen "camper", den andra "RV" /
+"trailer" — harmoniseras i nästa brief.
+
+Adseten CS/GT/PD/SP slogs PÅ inne i den fortfarande PAUSADE kampanjen
+(byggda av `--tom` samma morgon, aldrig spenderat) så Axel har ett klick.
+`G` är tomt och står kvar pausat. HeyGen: 7 017 → 6 653 före render, ~570
+till för renderingarna. Ingen har lyssnat på dubbarna med öron — röstkollen
+mäter bara det mätbara; lyssna på topspendern innan skalning.
+
+---
+
+## LP lagerrensning live 2026-09-16 (`/lagerrensning https://carashell.se/products/takskyddet --butik carashell`)
+
+**https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning** —
+publicerad direkt i butiken via `listicle/butik.mjs` (ingen GemPages): tre
+temafiler på det publicerade temat "CaraShell – CRO v1" (`layout/listicle.liquid`
+utan header/footer, `templates/page.listicle.liquid`, `assets/listicle.css`),
+sidan skapad med mallen `page.listicle`, läst tillbaka som kund utan header,
+footer eller meny. Copyn och bildplanen är från sessionen som byggde
+`.gempages`-filen samma dag (gren `claude/upbeat-hawking-8eacfe`, aldrig
+mergad): **obrandad**, "Anders på lagret", pris **1 129 / 1 469 kr** lästa ur
+`/products/takskyddet.json`, 14 dagars ångerrätt (riskfritt-blocket heter
+"Om det inte känns rätt"), punkt 1–4 kie.ai-bilder på Bäverbutikens CDN
+(`lp-bildarkiv`), punkt 5 och lyckas produktbilderna 1 och 2. Knapparna
+länkar relativt till `/products/takskyddet`. Filerna ligger i
+`listicle/output/lagerrensning/takskyddet/`. Ingen annons pekar dit ännu —
+sidan mäts som LP, aldrig som creative.
+
+---
+
+## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms
+
+Noll rader i `SE-ACTIVE to be translated`. Ingen översättning, ingen uppladdning,
+noll HeyGen-krediter. `CARASHELL_NO_Takovertrekket` är ACTIVE — marknaden går, så
+det här är en **tom kö och inget hållet läge**.
+
+**Skälet står uppströms:** leveransrundan 13:40 stoppade samma dag på **två ACTIVE
+kampanjer med samma namn** `CARASHELL_SE_Taköverdraget` (`120249050544990172`,
+9 646 kr / 23 köp, och kopian `120249121867590172`, 35 kr / 0 köp, skapad 14:54
+CEST) med samma 20 annonser. Dagens sju färdiga bildannonser ligger därför kvar i
+`To be Reviewed` och nådde aldrig hit. Kedjan är seriell: inget går till Norge
+förrän Axel säger vilken SE-kampanj som gäller.
+
+Hubben vid körningen, 14 rader:
+
+| Status | Rader |
+|---|---|
+| `Approved` | `CS_4_1`, `GT_4_1`, `PD_4_1`, `SP_4_1` — live i SE + NO sedan 14/9 |
+| `To be Reviewed` | `CS_5_1`, `CS_6_1`, `PD_6_1`, `PD_7_1`, `SP_5_1`, `SP_6_1`, `SP_7_1` — väntar på kampanjbeskedet |
+| `Draft` | `PD_4_H1`, `PD_5_H1`, `SP_4_H1` — videobriefer ingen levererat, ingen redigerare tilldelad |
+
+⚠️ **Metas rate limit bröt kötoolets pris- och länkläsning** efter kampanj-
+uppslaget, så verktygets egen `jobb.json` skrevs aldrig. Radantalet och
+NO-kampanjens status lästes FÖRE det och är mätta; hubbens statusfördelning är
+läst direkt mot Notions API i samma körning. Med tom kö spelar pris och ärvd länk
+ingen roll — inget skulle laddats upp ändå. Mätningen ligger i
+`market-expansion/ops/carashell/2026-09-16/ko-NO.json`.
+
+⚠️ **Rättelse samma kväll:** de två kampanjerna är INTE dubbletter (Axels besked
+2026-09-16: "det är inte 2 stycken samma, den ena går ju till en listicle").
+Kopian pekar på `/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning`,
+originalet på `/products/takskyddet` — avläst i kontot. De sju annonserna gick
+live i originalet samma kväll med `--kampanj`, se nästa avsnitt. Norge-kön är
+alltså tom i den här körningen men fylld efteråt; nästa NO-runda tar dem.
+
+---
+
+## Leveransrunda 2026-09-16 (`/ops-leverans carashell/takskyddet`)
+
+Sju bildannonser live i `CARASHELL_SE_Taköverdraget` (120249050544990172):
+
+| Annons | Adset | Ad-ID |
+|---|---|---|
+| `CaraShellRoof_SP_5_1` | SP | 120249122698370172 |
+| `CaraShellRoof_SP_6_1` | SP | 120249122718510172 |
+| `CaraShellRoof_SP_7_1` | SP | 120249122729920172 |
+| `CaraShellRoof_CS_5_1` | CS | 120249123060760172 |
+| `CaraShellRoof_CS_6_1` | CS | 120249122887210172 |
+| `CaraShellRoof_PD_6_1` | PD | 120249122897700172 |
+| `CaraShellRoof_PD_7_1` | PD | 120249123047960172 |
+
+Alla ACTIVE/ACTIVE, priset 1 129 kr / 1 469 kr / 340 kr kollat mot butiken på
+var och en. **Textlagret (`factory/bild-text.py`) syns i alla sju** — rubrik,
+underrad, prisblock och botten står skarpt i bilden, till skillnad från
+batch #2:s fyra som gick ut nakna.
+
+⚠️ **TVÅ ACTIVE SE-kampanjer är rätt, inte ett fel** (Axels besked 2026-09-16:
+"det är inte 2 stycken samma, den ena går ju till en listicle"). Avläst i kontot
+samma dag:
+
+| Kampanj | Landningssida | Spend | Köp | ROAS |
+|---|---|---|---|---|
+| `…| 2026-09-11` (120249050544990172) | `/products/takskyddet` | 9 646 kr | 23 | 2,76 |
+| `… – kopia` (120249121867590172) | `/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning` | 35 kr | 0 | — |
+
+Kön (`ops-leveranskon`) stoppar på "2 ACTIVE SE-kampanjer" eftersom den bara
+ser namnen, och namnen är identiska sånär som på " – kopia". **Rätt åtgärd är
+`--kampanj <id>` på `ops-till-meta`, aldrig att pausa den ena.** Vilken som
+gäller avgörs av briefens `Destination:` — dessa sju sa produktsidan.
+Nästa gång kommer samma stopp: det är en verktygsbegränsning, inte en incident.
+
+---
+
+## USA-runda 3 2026-09-16 (`/ops-oversatt carashell/takskyddet --marknad US`) — batch #3:s sju bildannonser upp i US-kampanjen
+
+**Kön:** 7 rader i `SE-ACTIVE to be translated` (batch #3, live i SE samma kväll).
+`--status Approved`-kollen: batch #2:s fyra rader bär redan US-annonser — inget
+eftersläpande. Kampanjen `CARASHELL_US_Taköverdrag …` (`120251436741400435`,
+Magiborsten UK) fortfarande PAUSED utan spend ⇒ annonserna laddas upp, kampanjen
+rörs inte. Batchen: `market-expansion/ops/carashell/2026-09-16-us-3/`.
+
+| SE | US | Adset | Ad-ID | Tillbakaläst |
+|---|---|---|---|---|
+| `SP_5_1` | `CaraShellRoof_US_SP_5_1` | `CARASHELL_US_SP` | 120251447567460435 | ACTIVE/ACTIVE |
+| `SP_6_1` | `CaraShellRoof_US_SP_6_1` | `CARASHELL_US_SP` | 120251447548410435 | ACTIVE/ACTIVE |
+| `SP_7_1` | `CaraShellRoof_US_SP_7_1` | `CARASHELL_US_SP` | 120251447531970435 | ACTIVE/ACTIVE |
+| `CS_5_1` | `CaraShellRoof_US_CS_5_1` | `CARASHELL_US_CS` | 120251447435050435 | ACTIVE/ACTIVE |
+| `CS_6_1` | `CaraShellRoof_US_CS_6_1` | `CARASHELL_US_CS` | 120251447430630435 | ACTIVE/ACTIVE |
+| `PD_6_1` | `CaraShellRoof_US_PD_6_1` | `CARASHELL_US_PD` | 120251447347010435 | ACTIVE/ACTIVE |
+| `PD_7_1` | `CaraShellRoof_US_PD_7_1` | `CARASHELL_US_PD` | 120251447338360435 | ACTIVE/ACTIVE |
+
+Länk `https://carashell.com/products/takskyddet?country=US` (ärvd ur kampanjen).
+Priset läst live: $199 / $249 (`ekonomi.marknadspriser` USD stämmer). Copy av
+sonnet-subagent, tre-frågorstestet redovisat per rad: 23 % → **20 %**, "spara
+340 kr" → **Save $50**, 14 dagars ångerrätt → **90-day guarantee** (det sidan
+säger), "Sverige och Norge" → "in the US", carashell.se → carashell.com,
+6,5 × 3 m → 21.3 × 9.8 ft, 30–40 cm → 12–16 in. 0 HeyGen-krediter, 0 kie.ai.
+US-kampanjen bär nu **27 annonser**.
+
+**Basfotona var borta för sex av sju.** `/ops-bild` sparar det rena fotot bara
+som `.bas.png` i containern och laddar upp enbart textversionen till Notion;
+nattvaktens planfil `bild-2026-09-16.json` skrevs dessutom över av
+`SP_6_1`-omkörningen, så bara dess kie.ai-länk fanns kvar (den svarade fortfarande
+→ `SP_6_1` ritades om från grunden med textlagret, som batch #2). De andra sex
+fick **textbyte i samma rutor** (`oversatt-us.py` i batchmappen): SE-layouten räknas
+om exakt med `bild-text.py`:s egen `Duk`, den svenska texten suddas radvis inuti
+bandet/chipen (plattan behåller fotot bakom), och den amerikanska texten ritas i
+samma ruta med samma typsnitt, storlek, färg och justering. Chips som behöver bli
+bredare ritas bredare i samma hörn. QA-bild läst per annons. Bara priskortet
+(pris + jämförpris) saknas i den vägen — ingen bild i batch #3 har det.
+⚠️ **Nästa NO-runda (15:45 i morgon) tar samma sju rader och har samma problem** —
+kopiera `oversatt-us.py`-vägen, försök inte OCR-vägen (`oversatt-batch.py`
+matchar formerna automatiskt och tar husvagnsväggar för plattor på de här fotona).
+Rotorsaken hör hemma i `/ops-bild`: ladda upp basfotot till Notion också, eller
+spara kie.ai-länken i planfilen utan att skriva över — noterat i `dna.md`.
+
+Notion: kommentar + `Translated url` på alla sju; **status orörd** (`flytta_till_approved`
+falskt — Norge bär dem inte än). Discord `#annons-uppladdning` postat, Axel
+pingad under ACTION NEEDED (slå på kampanjen).

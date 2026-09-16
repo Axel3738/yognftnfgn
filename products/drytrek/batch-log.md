@@ -928,3 +928,114 @@ PD_14 färger 752/2 · SP 685/3 · CI 50 · FO 36 · BOF 12. Kampanjen totalt
 
 Copy-A/B: fable-taggade live-annonser 146 kr / 0 köp, sonnet-taggade 1 175 kr
 / 2 köp (inkl. färgbilderna). 0 bedömbara per modell.
+
+---
+
+## 2026-09-16 — leveransrunda: ingen SE-kampanj att leverera till
+
+Rutinen körde 11:50 UTC. **Ingen uppladdning var möjlig:**
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` står **PAUSED sedan
+2026-09-15 20:52 CEST med 4 657 kr spend** — pausad av Axel för hand. PAUSED med
+spend är ett beslut: kön behandlar kampanjen som avvecklad och vägrar ladda upp
+dit. Nattvakten hade redan konstaterat samma sak natten till 16/9 (commit
+`e515632`) och pausat briefronden i registret.
+
+Kön var dessutom tom: 0 rader i `To be Reviewed`, inga nya leveranser från
+Jasper. Pris läst live ur butiken: 389 kr. Inget rördes i kontot.
+
+### ⚠️ Norge kör vidare och är LÖNSAMT — det saknades i nattens bild
+
+Nattvaktens siffror räknade bara Sverige. Båda kampanjerna, 7 dagar,
+lästa ur Meta 2026-09-16:
+
+| Kampanj | Status | Spend 7d | Köp | ROAS | Mot break-even 1,60 |
+|---|---|---:|---:|---:|---|
+| `DRYTREK_NO_Damasker Vandring` | **ACTIVE, 1 000 kr/dag** | 6 306 kr | 22 | **1,78** | **över — lönsam** |
+| `DRYTREK_SE_Damasker Vandring` | PAUSED 15/9 | 4 657 kr | 8 | 0,73 | under |
+
+Norge har alltså både mer spend och fler köp än Sverige hade, och ligger över
+break-even. Ingen har rört den kampanjen. Det är samma produkt, samma pris och i
+stor utsträckning samma creatives — skillnaden ligger i marknaden, inte i
+materialet. **Skriv aldrig "DryTrek går back" utan att säga vilken marknad som
+avses.**
+
+### ⚠️ Break-even-CPA 243 kr är för lågt satt i alla briefer
+
+Briefarnas `243 kr` kommer ur `389 / 1,60`, alltså antagandet att varje kund
+köper ett par. Verkligt ordervärde, räknat som `spend × ROAS ÷ köp` (metoden
+CLAUDE.md föreskriver, eftersom `omni_purchase_values` är buggig):
+
+| Marknad | Intäkt 7d | Köp | AOV ≈ | Break-even-CPA ≈ (AOV / 1,60) |
+|---|---:|---:|---:|---:|
+| NO | 11 225 kr | 22 | **510 kr** | **319 kr** |
+| SE | 3 400 kr | 8 | **425 kr** | **266 kr** |
+
+Paketnivåerna säljer alltså. Med rätt tal är Norges CPA 287 kr **under** sin
+break-even — samma dom som ROAS 1,78 ger, nu räknad två vägar.
+
+**Ingen tidigare dom ändras av det här:** annonserna ronden pausade låg på
+463 kr och 550 kr per köp, över även den korrigerade nivån. Men 243 kr är en
+för hård grind för kommande annonser, och talet står i varje brief och i
+nattvaktens annonsregel. ⚠️ **Ska in i `dna.md` vid nästa `/cs`** — ROAS är
+avrundad till två decimaler, så AOV-talen är ungefärliga och bör räknas om på
+ett längre fönster innan de skrivs som fasta.
+
+Hubben: 38 Draft, 31 Approved, 0 i översättningskön, 10 parkerade
+`Damasker_*`-rader kvar orörda.
+
+---
+
+## Norge 2026-09-16 — tom kö, men prisavläsningen visade sig ljuga
+
+Rutinen triggade 13:50 UTC. **0 rader** i `SE-ACTIVE to be translated` — inget
+att översätta. Kön har varit tom sedan de två sista gick live i går.
+
+Men en siffra i körloggen hade bytt betydelse över natten. Där det i går stod
+`Pris ur butiken: 389 SEK` stod det i dag `389 NOK` — samma tal, ny valuta.
+
+**Talet 389 NOK finns inte.** Mätt samma dag:
+
+| Källa | Svar |
+|---|---|
+| `/nb/products/damasker.json` | 389 — **basvalutan**, och svaret säger inte vilken |
+| `/nb/products/damasker?country=NO` | **379,00 kr**, `"priceCurrency":"NOK"` i JSON-LD, 18 av 18 |
+| `/nb/products/damasker` utan `?country=NO` | SEK |
+| `/products/damasker` (SE) | SEK |
+
+Shopifys `.json`-endpoint svarar **alltid** i butikens basvaluta och nämner den
+aldrig. Den nya marknadskoden i `tools/ops-leveranskon.mjs` läste det talet och
+**stämplade på marknadens valuta**. Norges riktiga pris är 379 NOK (jämförpris
+633), inte 389.
+
+Samma fel på alla NO-butiker, ~2,5 % i storlek eftersom det är SEK→NOK-kursen:
+
+| Butik | `.json` (bas) | marknadens sida | gammal utskrift |
+|---|---|---|---|
+| DryTrek | 389 SEK | **379 NOK** | 389 NOK |
+| HeimGuard | 799 SEK | **779 NOK** | 799 NOK |
+| TackleBay | 289 SEK | **282 NOK** | 289 NOK |
+| CaraShell US | 199 USD | 199 USD | 199 USD ✅ (carashell.com har USD som basvaluta) |
+
+**Ingen annons stoppades eller släpptes fel av det här.** Stoppregeln går på
+20 % avvikelse och felet är 2,5 %. Skadan är en annan: rule 4 säger att ett
+NOK-pris aldrig får hittas på, och loggraden såg ut som en mätning. En session
+som läst "389 NOK" hade kunnat skriva in det i norsk copy i god tro.
+
+**Lagat:** `hamtaPris` läser marknadens egen sida med `?country=<land>` och
+plockar pris + `priceCurrency` ur JSON-LD:n när marknadens valuta skiljer sig
+från butikens (`prisUrJsonLd`, 2 nya tester). Går det inte rapporteras
+basvalutans tal **med basvalutans namn och skälet** — aldrig marknadens valuta
+på ett omräknat tal. Verifierat mot fyra butiker och två marknader.
+`npm test` 1 288/1 288.
+
+⚠️ **De norska annonser som kör nu säger 389 kr** (de äldre 381/635) medan
+butiken visar **379 kr / 633 kr** för norska kunder. Inbränt i bild och
+inläst i voiceovern — går inte att rätta utan omrendering. Axel har redan
+sagt nej till att skriva om dem för 381/635-avvikelsen (2026-09-13), och
+den här är mindre. Ingen åtgärd, men skrivet så nästa session inte tror
+att 389 är norskt facit.
+
+⚠️ **Lärdomen, samma familj som gårdagens:** ett tal som bär fel etikett ser
+exakt ut som ett mätt tal. `.json`-endpointen svarar villigt med en siffra på
+varje språkprefix — den siffran är bara aldrig marknadens. Läs valutan ur
+samma svar som priset, eller rapportera att du inte kunde.

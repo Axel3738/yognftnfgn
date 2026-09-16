@@ -1,0 +1,15 @@
+{
+  "_kommentar": "Konceptet bakom /anledningar — 'N anledningar till att …'. N är 5 som standard och 7 som val (Axel 2026-09-16: han har alltid kört 5, vännerna kör 7, ingen data avgör — bygg båda och testa). 7 punkter klonar mallens sektioner för punkt 4 och 5 (bild höger/vänster) till punkt 6 och 7 med nya id:n och ikonerna 6/7. Handle och sidnamn bär antalet så båda versionerna kan ligga uppe samtidigt.",
+  "id": "anledningar",
+  "namn": "Anledningar",
+  "kommando": "/anledningar",
+  "suffix": "{n}-anledningar",
+  "sidnamn": "{kortTitel} – {n} anledningar (listicle)",
+  "sidtitel": "{n} anledningar: {kortTitel}",
+  "punkter": [5, 7],
+  "forfattare_obrandad": "Anders på lagret",
+  "rubrik": { "antal": true },
+  "jamforpris_behovs": false,
+  "arlig_rubrik": "Jag ska vara ärlig:",
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt."
+}

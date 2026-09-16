@@ -1,36 +1,48 @@
-# /lagerrensning – Kopiera lagerrensnings-sidan (listicle) till en ny produkt
+# /lagerrensning – Kopiera lagerrensnings-sidan (listicle) till en ny produkt, direkt in i butiken
 
-Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken. Valfritt
-`--torr` (visa planen, bygg inget), `--igen <plats>` (generera om en bild),
-`--brand baverbutiken` (brandad sida — BARA om Axel ber om det) och
-`--lank <produktlänk i en annan butik>` (knapparna dit, egen fil).
+Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken, **eller
+flera länkar** (en per rad eller med mellanslag) — då byggs en sida per
+länk, i tur och ordning, i samma session (se "Flera produkter" nedan).
+Sökfrågor i länken (`?_pos=1&_psq=…`) är ofarliga: motorn läser bara
+handlen. Valfritt
+`--butik <id>` (standard: Bäverbutiken när länken är baverbutiken.se; annars
+ett OPS-id som `carashell` — då slås butikens egen produkthandle upp ur
+`factory/produkter/`), `--torr` (visa planen, bygg inget, rör inte butiken),
+`--igen <plats>` (generera om en bild), `--gempages` (dessutom en
+`.gempages`-fil att importera i GemPages — tillval), `--brand baverbutiken`
+(brandad sida — BARA om Axel ber om det), `--lank <länk>` (knapparnas länk
+om den inte går att härleda), `--opublicerad` (sidan skapas dold).
 
 ```
 /lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 /lagerrensning https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor --torr
 /lagerrensning https://baverbutiken.se/products/satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford --igen punkt2
-/lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte --lank https://heimguard.se/products/axelbalte
+/lagerrensning https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan --butik carashell
 ```
 
-CONNECTORS: inga. Allt går via `KIE_API_KEY` (bilder), `SHOPIFY_SHOP_SE` +
-`SHOPIFY_CLIENT_ID_SE`/`SHOPIFY_CLIENT_SECRET_SE` (eller `_SE_BAVER_SE`) och
-publika HTTPS-anrop. Använd ALDRIG `mcp__Notion__*` eller `mcp__Shopify__*`.
+CONNECTORS: inga. Allt går via `KIE_API_KEY` (bilder), butikens
+Shopify-nycklar (`SHOPIFY_SHOP_SE` + `SHOPIFY_CLIENT_ID_SE`/`_SECRET_SE` för
+Bäverbutiken — appen "Bäver uppladdare" med `write_themes` + `write_content`
+sedan 2026-09-16; OPS-butikernas egna nycklar via `factory/butiker/<id>.yaml`)
+och publika HTTPS-anrop. Använd ALDRIG `mcp__Notion__*` eller `mcp__Shopify__*`.
 
 **Vad kommandot gör, i en mening:** tar motorhöljets lagerrensningssida
-(`baverbutiken.se/pages/motorholje-lagerrensning`, GemPages-exporten i
-`lagerrensning/mall/`) och gör exakt samma sida för en annan produkt — samma
-struktur, samma Anders, samma lagerbild — med ny copy, produktens riktiga
-pris och jämförpris, nya bilder (produktsidans egna, annars kie.ai) — och
-lämnar **en `.gempages`-fil som Axel importerar i GemPages** (Pages → Import
-page). GemPages tar bara sådana filer, inte HTML (Axel 2026-09-16). Filen får
-nya sid-id:n så importen aldrig rör motorhöljets riktiga sida. **Sidan är
-obrandad som standard** (Axels beslut 2026-09-16 kväll: "jag hade verkligen
-uppskattat om listiclen är obrandad så att den funkar om en annan sida skulle
-publicera den också och köra samma produkt") — ingen logga, "Anders på
-lagret", bara "OBS: Detta är reklam." i sidfoten, inget butiksnamn i copyn.
-En HTML-version byggs bredvid — den är bara underlaget för skärmdumparna som
-sessionen tittar på. Motorn är `lagerrensning/bygg.mjs`, formatet står i
-`lagerrensning/README.md`.
+(GemPages-exporten i `listicle/mall/`, `baverbutiken.se/pages/motorholje-lagerrensning`)
+och gör exakt samma sida för en annan produkt — samma struktur, samma
+Anders, samma lagerbild — med ny copy, produktens riktiga pris och
+jämförpris, nya bilder (produktsidans egna, annars kie.ai) — och **lägger
+upp den direkt i butiken som `/pages/<slug>-lagerrensning`, utan header,
+footer eller meny** (Axels beslut 2026-09-16 kväll: "skippa GemPages-delen,
+det är jättedyrt när jag ska installera GemPages på varje enda butik").
+Motorn skriver tre temafiler en gång per butik (en ren layout, en sidmall,
+sidans CSS), skapar sidan via API och läser den tillbaka som kund. **Sidan
+är obrandad som standard** (samma dag: "jag hade verkligen uppskattat om
+listiclen är obrandad så att den funkar om en annan sida skulle publicera
+den också") — ingen logga, "Anders på lagret", bara "OBS: Detta är reklam."
+i sidfoten, inget butiksnamn i copyn. Motorn är `listicle/bygg.mjs`,
+formatet och butiksvägen står i `listicle/README.md`. Syskonen
+`/vi-testade` och `/anledningar` (och `/listiclar` som kör alla tre) bygger
+på samma motor med annat koncept.
 
 ## Järnregler
 
@@ -55,26 +67,34 @@ sessionen tittar på. Motorn är `lagerrensning/bygg.mjs`, formatet står i
    CDN), kie.ai bara där ingen passar rollen. Inga människor eller ansikten
    (hook-visual-regeln 2026-08-04), ingen text/pris/logga i genererade bilder.
    Författarfotot (Anders) och lagerbilden (anonyma kartonger, tittad
-   2026-09-16) byts aldrig — de är sidans, inte produktens.
+   2026-09-16) byts aldrig — de är sidans, inte produktens. Genererade
+   bilder ligger på Bäverbutikens CDN även när sidan läggs i en annan butik
+   (publika adresser, samma som OPS-produkternas egna bilder).
 4b. **Obrandad som standard — brand bara på Axels begäran.** Mallen bär
    Bäverbutiken på tre ställen (författarraden, loggan, kontaktraden i
    sidfoten); alla tre styrs av brandprofilen, och utan `--brand` är de
    neutrala. Copyn nämner **aldrig** butikens namn: skriv "vi", "hos oss",
-   "vårt lager" — motorn stoppar "Bäverbutiken" i en obrandad copy. Knapparna
-   pekar på produktsidan i källbutiken; ska filen in i en annan butik körs
-   bygget om med `--lank https://<butik>/products/<handle>` (egen fil med
-   butikens namn som suffix, copyn och bilderna återanvänds, noll credits).
-   `--brand baverbutiken` (`lagerrensning/brand/baverbutiken.json`) ger exakt
-   mallens brandade sida — använd det bara när Axel säger det. Nytt brand =
-   ny fil i `lagerrensning/brand/` (namn, författare, support, domän, logga).
+   "vårt lager" — motorn stoppar "Bäverbutiken" i en obrandad copy.
+   Knapparna länkar relativt (`/products/<handle>`), så sidan funkar i
+   vilken butik som helst. `--brand baverbutiken`
+   (`listicle/brand/baverbutiken.json`) ger exakt mallens brandade sida —
+   bara när Axel säger det. Nytt brand = ny fil i `listicle/brand/`.
 5. **Sessionen tittar på bilderna OCH på sidan, aldrig Axel** (Axels beslut
    2026-09-13). Bygget tar skärmdumpar av HTML:en (desktop + mobil) utan nät
-   i webbläsaren — läs dem med Read-verktyget innan något levereras.
-6. **Shopify rörs bara för att lägga bilder på CDN:et.** Med `write_files`:
-   Innehåll → Filer. Utan (appen "Bäver uppladdare" saknar det, mätt
-   2026-09-16): DRAFT-produkten `lp-bildarkiv` bär bilderna — kunden ser den
-   aldrig. Motorn väljer själv och säger vilket. Produkten, priset och sidorna
-   rörs aldrig. **GemPages har inget API** — importen är Axels klick.
+   i webbläsaren — läs dem med Read-verktyget. Den riktiga sidan läses
+   dessutom tillbaka som kund av motorn (HTTP 200, listiclen finns, ingen
+   header, ingen footer, ingen meny) — en sida som inte klarar det räknas
+   inte som publicerad.
+6. **Shopify rörs på tre sätt, aldrig fler:** (a) bilder på CDN:et
+   (Innehåll → Filer med `write_files`, annars DRAFT-produkten `lp-bildarkiv`
+   — kunden ser den aldrig); (b) **tre temafiler på det publicerade temat**,
+   `layout/listicle.liquid`, `templates/page.listicle.liquid`,
+   `assets/listicle.css` — skrivs bara när de saknas eller ändrats, gör
+   ingenting förrän en sida använder mallen; (c) **sidan** `/pages/<slug>-
+   lagerrensning` med mallen `page.listicle` — finns handlen redan
+   uppdateras samma sida (samma adress, ny text). Produkten, priset,
+   menyn och temats övriga filer rörs aldrig. Sidan publiceras direkt
+   (kunden når den bara via länk); `--opublicerad` finns för ett utkast.
 7. Kör klart utan att fråga. Axels uppgifter sist, numrerade.
 
 ## Läsbarhetstestet (obligatoriskt på varje stycke)
@@ -102,30 +122,47 @@ Läs stycket som om du läste det högt för Axel. Sedan, punkt för punkt:
 Redovisa i copyn (`lasbarhetstest` i `copy.json`) och i rapporten: vilka
 stycken som skrevs om, och vilken rad du är minst säker på.
 
+## Flera produkter i samma kommando
+
+Axel klistrar gärna in fem länkar på en gång (2026-09-16). Då gäller:
+
+- **En produkt i taget, hela vägen** (steg 1–8) innan nästa börjar — copy,
+  bildplan, torr, skarpt, titta, batch-log. Aldrig fem copyn först och fem
+  publiceringar sen: stannar sessionen halvvägs ska det som är klart ligga
+  uppe i butiken och i repot.
+- **Committa och pusha efter varje produkt**, inte bara sist.
+- Varje produkt får sin egen copy, skriven från sin egen produktsida och sitt
+  eget DNA. Ingen mening får återanvändas mellan produkterna — det är fem
+  olika sidor, inte en mall med bytta substantiv. Läs föregående produkts
+  copy innan du skriver nästa så att rubrikgreppen inte upprepas.
+- Stoppar en produkt (ingen jämförpris, bild som inte går att generera,
+  butiken som avvisar): bygg klart de andra, rapportera stoppet med orsak.
+- Rapporten är EN, med en rad per produkt (adress, rubrik, fem punktrubriker,
+  bilder, testresultat) — och Axels lista sist bär alla adresserna.
+
 ## Gör i ordning
 
-`IDAG` = dagens datum (YYYY-MM-DD). Utdata: `lagerrensning/output/<handle>/`.
+`IDAG` = dagens datum (YYYY-MM-DD). Utdata: `listicle/output/lagerrensning/<handle>/`.
 
 ### 0. Finns sidan redan?
-GemPages har inget API, så sessionen kan inte se vilka sidor som finns. Axel
-bygger sådana här sidor för hand också (axelbältets sida
-`axelbalte-trimmer-listicle` fanns sedan 2026-08-16 när kommandot testades
-på just den produkten 2026-09-16). Skriv i rapporten att importen skapar en
-NY sida, och be Axel hoppa över importen om produkten redan har en. Säger
-Axel i kommandot att sidan finns: bygg ändå (copyn och bilderna är värdet),
-men skriv det överst i rapporten.
+Motorn slår upp handlen `<slug>-lagerrensning` i butiken: finns den
+uppdateras sidan på samma adress (bra — annonserna pekar redan dit). Axel
+bygger också sidor för hand i GemPages med egna adresser (axelbältets
+`axelbalte-trimmer-listicle` sedan 2026-08-16) — de rörs inte. Skriv i
+rapporten om sidan var ny eller uppdaterad; `--torr` säger vilket i förväg.
 
 ### 1. Underlag
 ```
-node lagerrensning/bygg.mjs <länk> --underlag
+node listicle/bygg.mjs <länk> --underlag
 ```
 Skriver `underlag.json` (titel, pris, jämförpris, varianter, bilder med index,
 beskrivningen som ren text, sökväg till `products/<id>/dna.md` om produkten har
-minne). Läs den, läs `dna.md` (avsnitten BEHÅLL ALLTID / VAD BUTIKSDATAN SÄGER
-/ Winning DNA) och `docs/copy-regler.md`. **Fakta som får användas är bara det
-som står där.** Inga påhittade recensioner, siffror, studier eller kunder.
-Ett betyg (Judge.me) skrivs aldrig in — det ändras varje vecka och sidan
-ligger i månader (axelbältets DNA sa 4,75/8, sidan visade 4,50/12 samma dag).
+minne, blivande adress). Läs den, läs `dna.md` (avsnitten BEHÅLL ALLTID / VAD
+BUTIKSDATAN SÄGER / Winning DNA) och `docs/copy-regler.md`. **Fakta som får
+användas är bara det som står där.** Inga påhittade recensioner, siffror,
+studier eller kunder. Ett betyg (Judge.me) skrivs aldrig in — det ändras varje
+vecka och sidan ligger i månader (axelbältets DNA sa 4,75/8, sidan visade
+4,50/12 samma dag).
 
 ### 2. Strategi — de fem punkternas teman
 Mallens skelett, per punkt. Anpassa temat till produkten, behåll formen:
@@ -148,14 +185,14 @@ priset: överlager, `X kr istället för Y kr`, priset går tillbaka till Y när
 partiet är slut. "Riskfritt" = 30 dagars garanti (står på produktsidan).
 
 ### 3. Copy — skriv den själv
-Formen är `lagerrensning/mall/exempel-copy.json` (samma nycklar, ungefär
-samma längder: rubriker ≤ 120 tecken, punkttexter 400–900 tecken, knappar
-≤ 60). **Läs också `lagerrensning/mall/exempel-copy-axelbalte.json`** — Axels
-egen anpassning av samma sida till axelbältet (byggd för hand 2026-08-16).
-Den visar hur punkterna byter tema utan att byta form: "Det gör inte ont
-medan du trimmar", "Du har redan egna knep, och de hjälper nästan", "Sista
-biten blir aldrig klar den här helgen", "Den billiga remmen du redan provat",
-och att riskfritt-blocket får heta "Om det inte känns rätt" när det passar
+Formen är `listicle/mall/exempel-copy.json` (samma nycklar, ungefär samma
+längder: rubriker ≤ 120 tecken, punkttexter 400–900 tecken, knappar ≤ 60).
+**Läs också `listicle/mall/exempel-copy-axelbalte.json`** — Axels egen
+anpassning av samma sida till axelbältet (byggd för hand 2026-08-16). Den
+visar hur punkterna byter tema utan att byta form: "Det gör inte ont medan
+du trimmar", "Du har redan egna knep, och de hjälper nästan", "Sista biten
+blir aldrig klar den här helgen", "Den billiga remmen du redan provat", och
+att riskfritt-blocket får heta "Om det inte känns rätt" när det passar
 bättre. Det är tonen som gäller: vardaglig, konkret, en person som pratar.
 (Axels copy säger "Bäverbutikens axelbälte" — det gjorde man 2026-08-16; nu
 skrivs "det här axelbältet".) Hårda regler: svenska med rätt å/ä/ö; bara
@@ -171,17 +208,17 @@ varje knapp och första meningen i varje stycke; skriv `tre_fragor` med
 ✅/❌ + skäl. Rader du **måste** behålla (mallens fasta rubriker "Jag ska vara
 ärlig:", "Därför kan du testa helt riskfritt.") får ha ❌ med den motiveringen.
 Skriv `lasbarhetstest` (metod, omskrivna stycken, osäkraste raden). Spara som
-`lagerrensning/output/<handle>/copy.json`.
+`listicle/output/lagerrensning/<handle>/copy.json`.
 
 ### 4. Bildplan
 Ladda ner produktbilderna (`underlag.json` → `bilder[].src`) och TITTA på dem.
-Per plats i `lagerrensning/mall/platser.json` → `bilder` (`roll` säger vad
+Per plats i `listicle/mall/platser.json` → `bilder` (`roll` säger vad
 bilden ska visa): välj `{ "kalla": "produkt", "index": N }` när en produktbild
 bär rollen, annars `{ "kalla": "kie", "prompt": "…", "referenser": ["<produktbild-url>"], "format": "1:1" }`.
 Prompten på engelska: motiv, miljö, ljus, "photo-realistic, no text, no people,
 no faces, no logos". `lyckas` ska visa hela produkten/varianterna på ljus
 bakgrund — nästan alltid en produktbild. `arlig` behålls (`{ "kalla": "mall" }`
-behöver inte skrivas). Skriv `lagerrensning/output/<handle>/bildplan.json`:
+behöver inte skrivas). Skriv `listicle/output/lagerrensning/<handle>/bildplan.json`:
 ```json
 { "bilder": {
   "punkt1": { "kalla": "kie", "prompt": "…", "referenser": ["https://cdn.shopify.com/…"], "format": "1:1" },
@@ -194,25 +231,31 @@ skriver du `{ "kalla": "mall" }` — motorn vägrar tystnad.
 
 ### 5. Torrkörning
 ```
-node lagerrensning/bygg.mjs <länk> --torr
+node listicle/bygg.mjs <länk> --torr
 ```
-Läs varje ❌ (pris, procent, HTML, saknad plats) och ⚠. Rätta copy/bildplan
-tills det bara finns ⚠ du kan stå för.
+Läs varje ❌ (pris, procent, HTML, butiksnamn, saknad plats) och ⚠. Rätta
+copy/bildplan tills det bara finns ⚠ du kan stå för. Raden "Butik:" säger
+vilken butik och vilken adress sidan får; "Sida: finns/finns inte" om
+adressen redan är upptagen av en tidigare körning.
 
-### 6. Skarpt
+### 6. Skarpt — bilder, sida, butik
 ```
-node lagerrensning/bygg.mjs <länk>
+node listicle/bygg.mjs <länk>
 ```
-kie genererar → bilderna hämtas till `output/<handle>/bilder/` (gitignorerat)
-och läggs på Shopifys CDN → **`.gempages`-filen** `<slug>-lagerrensning.gempages`
-skrivs med nya id:n och **läses tillbaka med omräknade checksummor**
-(trippelkollen är inbyggd; ett fel = ingen fil) → HTML-versionen skrivs →
-**förhandsvisningen** byggs offline (`output/<handle>/forhandsvisning/`:
-lokala bilder + typsnitt, `desktop.png` 1280 px och `mobil.png` 390 px plus
-ett utsnitt per del, via Playwright). Kör aldrig skarpt två gånger för att
-"vara säker" — cachen i `bilder.json` återanvänder genererade bilder,
-`--igen <plats>` byter en. Bara filerna igen efter en copyändring: kör om
-utan `--igen`, det kostar inga credits.
+kie genererar → bilderna hämtas till `output/lagerrensning/<handle>/bilder/`
+(gitignorerat) och läggs på Shopifys CDN → `<slug>-lagerrensning.html`
+(förhandsvisningens underlag) och `<slug>-lagerrensning.sida.html` (exakt
+det som läggs i butiken) skrivs → **förhandsvisningen** byggs offline
+(`forhandsvisning/`: `desktop.png` 1280 px, `mobil.png` 390 px, utsnitt) →
+**butiken:** temafilerna kontrolleras/skrivs, sidan skapas eller
+uppdateras med mallen `page.listicle`, och **sidan läses tillbaka som kund**
+(ingen header, ingen footer, ingen meny, listiclen på plats). Först då
+skrivs `plan.json` med adressen. Kör aldrig skarpt två gånger för att "vara
+säker" — cachen i `bilder.json` återanvänder genererade bilder, `--igen
+<plats>` byter en. En copyändring: kör om utan `--igen`, det kostar inga
+credits och uppdaterar samma sida. `--gempages` skriver dessutom
+`.gempages`-filen (nya id:n, läst tillbaka med checksummor) om Axel vill ha
+den i GemPages.
 
 ### 7. Titta — bilderna och sidan, med Read-verktyget
 - Varje genererad bild (`bilder/<plats>.png`), tre frågor: rätt produkt/miljö
@@ -226,40 +269,38 @@ utan `--igen`, det kostar inga credits.
   "Av Anders på lagret." i hero, sidfoten utan logga och med bara "OBS: Detta
   är reklam." (obrandad) — eller loggan + kundsupport-raden om `--brand`
   användes. Ser något fel ut är det HTML:en som ska rättas
-  (`lagerrensning/html.mjs`), inte Axels problem.
-- `--kolla <fil.gempages>` visar rätt pris i alla knappar, ingen text som
-  nämner motorhöljet och inget butiksnamn i texterna (bara i knapparnas länk).
+  (`listicle/html.mjs`), inte Axels problem.
+- Kontrollen av den riktiga sidan är inbyggd (raden "svarar som kund …" i
+  utskriften). Vill du se den med egna ögon: hämta HTML:en med Nodes fetch
+  (Chromium litar inte på proxyn) och rendera lokalt som förhandsvisningen.
 
 ### 8. Logga, committa, leverera
-- Har produkten `products/<id>/batch-log.md`: en rad "LP lagerrensning byggd
-  `IDAG`, fil `lagerrensning/output/<handle>/<slug>-lagerrensning.gempages`".
-- Commit + push: `lagerrensning/output/<handle>/` (underlag, copy, bildplan,
-  bilder.json, plan.json, .gempages, .html). Aldrig `bilder/` eller
-  `forhandsvisning/`. Svenskt commit-meddelande.
-- Skicka **`.gempages`-filen** till Axel i chatten (SendUserFile).
+- Har produkten `products/<id>/batch-log.md`: en rad "LP lagerrensning
+  byggd `IDAG`, live på `<adress>`".
+- Commit + push: `listicle/output/lagerrensning/<handle>/` (underlag, copy,
+  bildplan, bilder.json, plan.json, `.html`, `.sida.html`, ev. `.gempages`).
+  Aldrig `bilder/` eller `forhandsvisning/`. Svenskt commit-meddelande.
+- Leveransen är **adressen** i rapporten. Bara med `--gempages`: skicka även
+  filen i chatten (SendUserFile).
 
 ## Rapport till Axel (kort, svenska)
 - Produkten, priset och jämförpriset som sidan bär, datumraden.
-- Obrandad (standard) eller vilket brand — och att knapparna pekar på
-  källbutiken: vill han köra filen i en annan butik behöver sessionen den
-  butikens produktlänk (`--lank`), inget mer.
+- Butiken och adressen; ny sida eller uppdaterad; obrandad (standard) eller
+  vilket brand.
 - Bilderna: vilka platser fick produktbilder, vilka kie, var de ligger (Filer
   eller `lp-bildarkiv`).
 - Copyn: fem rubriker, läsbarhetstestet (vad som skrevs om, osäkraste raden),
   tre-frågorstestet (antal rader, antal ❌ och varför).
-- `.gempages`-filen (i chatten) och sidans blivande adress.
 
-**Axels uppgifter, sist, numrerade** (GemPages saknar API):
-1. Ladda ner `<slug>-lagerrensning.gempages` från chatten.
-2. GemPages → **Pages** → knappen **Import page** uppe till höger → **Add file** → välj filen → **Import**. Sidan hamnar som Draft med namnet "<Produkt> – Lagerrensning (listicle)".
-3. Öppna sidan, scrolla igenom en gång, klicka **Publish**.
-4. Kontrollera att adressen blev `/pages/<slug>-lagerrensning` (Page settings), annars sätt den.
-5. Peka annonserna på `https://baverbutiken.se/pages/<slug>-lagerrensning`.
-6. (Bara om samma sida ska in i en annan butik:) skicka den butikens produktlänk, så byggs en fil med knapparna dit.
+**Axels uppgifter, sist, numrerade** (en rad per sida när det är flera):
+1. Öppna `https://<butik>/pages/<slug>-lagerrensning` och läs igenom en gång.
+2. Peka annonserna med lagerrensnings-vinkeln på den adressen.
+3. (Bara med `--gempages`:) GemPages → **Pages** → **Import page** → **Add file** → filen → **Import** → **Publish**.
 
-Avvisar GemPages filen: klistra in felmeddelandet i nästa session. Första
-knappen att prova är `--behall-idn` (mallens ursprungliga id:n i stället för
-nya), och HTML-versionen bredvid filen visar exakt vad sidan skulle innehålla.
+Stoppar motorn i butikssteget ("saknar write_themes + write_content"):
+appens rättigheter — Axel lägger till dem i appens Access scopes och
+installerar om appen. Stoppar tillbakaläsningen ("header/footer är kvar"):
+temat använder inte mallen — läs `listicle/README.md` → "Butiken".
 
 ## DEFINITION OF DONE
 - [ ] Underlag hämtat ur butiken; pris och jämförpris lästa där, aldrig ur minnet; inget betyg i copyn
@@ -268,7 +309,7 @@ nya), och HTML-versionen bredvid filen visar exakt vad sidan skulle innehålla.
 - [ ] Sidan obrandad (inget butiksnamn i copyn, ingen logga) — eller `--brand` för att Axel bad om det, sagt i rapporten
 - [ ] Bildplan med alla sex platser; produktbilder där de passar, kie annars; inga människor/text
 - [ ] `--torr` utan ❌ före skarp körning
-- [ ] Skarp körning: bilder på Shopifys CDN, `.gempages` skriven med nya id:n och läst tillbaka med rätt checksummor, HTML-versionen skriven
-- [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på; `--kolla` visar rätt priser
-- [ ] batch-log uppdaterad om produkten har minne; committat och pushat; `.gempages`-filen skickad i chatten
-- [ ] Rapport + Axels klick sist, numrerade
+- [ ] Skarp körning: bilder på Shopifys CDN, sidan uppe i butiken med mallen `page.listicle` och läst tillbaka som kund utan header/footer/meny
+- [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på
+- [ ] batch-log uppdaterad om produkten har minne; committat och pushat
+- [ ] Rapport med adressen + Axels klick sist, numrerade

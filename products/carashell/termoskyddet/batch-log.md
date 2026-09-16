@@ -126,11 +126,22 @@ efter ElevenLabs-bytet. Kontroller före: butiken svarade 200 utan `/password`
 `last_fired_time` 2026-09-16 02:58. Sedan sattes **kampanj `120249115376140172`,
 4 adsets (`CARASHELL_SE_PD/G/CS/SP`) och 16 annonser ACTIVE** — namngiven lista,
 alla PAUSED med 0 kr före, tillbakaläst ACTIVE på tre nivåer efter (8 annonser
-`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag. **NO-kampanjen
-`120249115382210172` står kvar PAUSED** — inget "Launch: CARASHELL_NO_…" än.
-Från och med nu: nattvakten (00:57) har något att döma, leveransrundan (14:15)
-laddar upp i SE-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp
-per annons (regel 3).
+`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag.
+
+### LAUNCH NO — 2026-09-16 ~10:50 UTC (12:50 svensk tid)
+
+Axel skrev **"Launch: CARASHELL_NO_Termoskydd Husbil 211 × 171 cm"** en halvtimme
+senare. Kontroll före: `/nb/products/termoskyddet?country=NO` svarar 200 och visar
+548 / 685 NOK med NOK-paketnivåer. Sedan **kampanj `120249115382210172`, 4 adsets
+(`CARASHELL_NO_PD/G/CS/SP`, geo NO) och 16 annonser ACTIVE**, tillbakaläst ACTIVE på
+tre nivåer. CBO 1 000 kr/dag (kontovaluta SEK). ⚠️ Meta rate-limitade kontot
+("User request limit reached", code 17) mitt i — efter uppladdningar + SE-launch
+samma förmiddag; aktiveringen väntade in gränsen (90 s × 5) och gick igenom.
+
+Båda marknaderna live. Från och med nu: nattvakten (00:57) har något att döma,
+leveransrundan (14:15) laddar upp i SE-kampanjen, NO-översättningen (16:15) i
+NO-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp per
+annons (regel 3).
 
 ### Att läsa av första briefdagen
 
@@ -151,3 +162,61 @@ per annons (regel 3).
   alls än; de 16 SE-annonserna byggdes ur källan och går inte via hubben.
 - **Läge: hållen** (PAUSED utan spend). Ingen US-rutin finns för den här nyckeln —
   `/notionscalercs setup carashell/termoskyddet` på claude5-kontot bygger 17:15-rutinen.
+
+## 2026-09-16 — `/ops-leverans carashell/termoskyddet` (första leveransrundan)
+
+- Kön: 0 rader i hubben "Termoskyddet" (`3dd270ab-…`) — varken `To be Reviewed`
+  eller `Creative strat review`; hubben är helt tom (0 rader totalt). Inget laddades upp.
+- SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115376140172`) står nu **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G) — var PAUSED vid bygget i förmiddags. Ärvd länk
+  `https://carashell.se/products/termoskyddet` ur `CaraShellFront_G_3`.
+  Rundan kan alltså leverera så fort något hamnar i `To be Reviewed`.
+- Pris ur butiken: 559 SEK (jämförpris 932).
+- Nästa: nattvakten 00:57 producerar första briefronden (7 st, ingen redigerare).
+  Rader når leveransrundan först när en redigerare levererar eller `/ops-bild` körs.
+
+## 2026-09-16 — `/ops-oversatt carashell/termoskyddet` (första NO-körningen)
+
+- Kön: 0 rader i `SE-ACTIVE to be translated` — hubben "Termoskyddet" är fortfarande
+  tom. Inget översatt, inget renderat (0 HeyGen-credits), inget uppladdat, ingen
+  Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115382210172`, MagiBorsten DK) är **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G). Ärvd länk `https://carashell.se/nb/products/termoskyddet?country=NO`
+  ur `CaraShellFront_NO_G_3`. Rutinen kan alltså leverera så fort en rad når kön.
+- Butiken redo för NO: 548 NOK läst på den norska sidan (= `ekonomi.marknadspriser`).
+  ⚠️ `/nb/products/termoskyddet.json` utan `?country=NO` svarar 559/932 — det är
+  Shopifys basvaluta, inte ett norskt pris; läs alltid med `?country=NO`.
+- Meta rate-limitade fyra gånger i rad (30 → 240 s) under läsningen av kontot —
+  körningen tog ~10 min i stället för sekunder. Inte ett fel, bara långsamt.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549788313140076604`), ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-16-no-termoskyddet/` (jobb.json).
+
+## 2026-09-16 17:15 — `/ops-oversatt carashell/termoskyddet --marknad US` (första schemalagda US-körningen)
+
+- Rutinen `trig_01C9Dfcm5k9wuxPDaQaRNF1r` (plats 7 = 17:15, fast session
+  `session_01Ngpv9kMqf3BM8onpTbMdCt`) fyrade 15:15 UTC — sedd i `list_triggers`
+  samma körning, `last_run` SUCCEEDED.
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 rader i `Approved` (eftersläpningskollen
+  för marknad tillagd i efterhand). Hubben "Termoskyddet" är fortfarande helt tom
+  (0 rader i alla statusar, mätt via `databases/<id>/query`). Inget översatt, inget
+  renderat (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- US-kampanjen `CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
+  (`120251442339640435`, Magiborsten UK) är **PAUSED utan spend** (nybyggd) med 4 ACTIVE
+  adsets (SP/PD/G/CS). Kön hittar den nu på namnets bas (`PAUSAD_TOM`) och skulle ha
+  laddat upp i den — kampanjens status rörs aldrig av rutinen.
+- ⚠️ **Kampanjen bär redan 16 annonser** (`CaraShellFront_US_*`: 12 videor + 4 bilder,
+  alla ACTIVE, effective_status CAMPAIGN_PAUSED, länk `https://carashell.com/products/termoskyddet`,
+  copy med $99) skapade 11:00–12:29 UTC i dag — efter förmiddagens körning som såg
+  0 annonser. Ingen commit i repot (`git log --all`) beskriver uppladdningen; de speglar
+  SE-kampanjens 16 annonser precis som takskyddets US-spegling (`d87ec56`). Inget spenderar
+  förrän Axel slår på kampanjen.
+- Butiken redo för US: 99 USD läst på `carashell.com/products/termoskyddet?country=US`.
+- Ärvd länk ur `CaraShellFront_US_G_3`: `https://carashell.com/products/termoskyddet`.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549802219279486996`), ping till Axel under ACTION NEEDED (slå på kampanjen om US-testet
+  ska starta).
+- Batch: `market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` (jobb.json,
+  jobb-approved.json, discord-jobb.json + köloggarna).
