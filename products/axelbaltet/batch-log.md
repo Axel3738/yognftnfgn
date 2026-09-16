@@ -605,3 +605,27 @@ Citatstatiken med recensionstexter är fortfarande blockerad. Bundle-vinkeln for
   byggas i video också.
 - ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
   Alla vinstsiffror ovan är därmed konservativa. **Ägaren räknar om.**
+
+---
+
+## Lagerrensnings-LP byggd — 2026-09-16 (`/lagerrensning`)
+
+Motorhöljets listicle-sida kopierad till axelbältet. Copyn skrevs först av en
+sonnet-subagent och byttes samma dag ut i sin helhet av huvudsessionen (Fable)
+efter Axels besked att texten ska låta naturlig — 28 rader i tre-frågorstestet,
+4 ❌ på fasta strukturrader. Tre kie-bilder (punkt 1, 2, 4 — scener utan
+människor) + produktbilderna 4, 5, 1, pris **599 kr istället för 789 kr**
+avläst på produktsidan samma dag. Inget betyg i copyn — sidan visar 4,50/12
+medan DNA:t sa 4,75/8. Leverans: **`.gempages`-filen** (GemPages tar bara
+sådana, inte HTML — Axel rättade sig samma dag):
+`lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages`
+(HTML-versionen bredvid är bara förhandsvisningens underlag). **Ombyggd
+obrandad samma kväll** (Axels beslut: sidan ska funka i en annan butik för
+samma produkt): "Anders på lagret", ingen logga, bara "OBS: Detta är reklam."
+i sidfoten, "Bäverbutikens axelbälte" → "det här axelbältet" i lyckas-blocket;
+knapparna pekar fortfarande på Bäverbutikens produktsida (`--lank` för en
+annan butik). ⚠ Axel har redan en egen listicle för produkten sedan
+2026-08-16 (`axelbalte-trimmer-listicle`, exporten ligger som
+`lagerrensning/mall/exempel-axelbalte-2026-08-16.gempages`) — den här
+filen är ett test av kommandot, inte en sida som måste importeras. Blivande
+adress om den importeras: `baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning`.

@@ -1,0 +1,62 @@
+{
+  "hamtat": "2026-09-16T07:00:38.947Z",
+  "produkt": {
+    "titel": "Axelbälte för Trimmer – Justerbart Nylonbälte",
+    "kortTitel": "Axelbälte för Trimmer",
+    "handle": "axelbalte-for-trimmer-justerbart-nylonbalte",
+    "url": "https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte",
+    "typ": "Trädgård",
+    "pris": 599,
+    "jamforpris": 789,
+    "prisText": "599 kr",
+    "jamforprisText": "789 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg",
+        "width": 1240,
+        "height": 1240
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce11fb3c46664abc8db4456e96b34157-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/aec0916f27d24b769d1eef68cff2851c-goods.jpg",
+        "width": 1402,
+        "height": 1402
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7eea073fbd85435080bb8dc76b501b0c-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/15577fcb1cbe416e8dd5f8f7d5e57e06-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      }
+    ],
+    "beskrivning": "Trimma längre – utan att få ont i rygg och axlar\nAtt bära hela trimmerns vikt i armarna gör att du blir trött efter bara några minuter. Axlar, nacke och rygg får ta smällen, och jobbet tar längre tid än det borde.\nLåt selen bära tyngden\nDet justerbara axelbältet fördelar trimmerns vikt över axlar och rygg istället för att belasta armarna. Med rätt inställning känns redskapet lättare och du jobbar bekvämt mycket längre.\nFunktioner\nFördelar vikten över axlar och rygg\nJusterbart nylonbälte som passar de flesta kroppstyper\nAvlastar armar, nacke och handleder\nPassar de flesta grästrimmrar och röjsågar\nStadig metallkrok för snabb på- och avtagning\n30 dagars nöjd-kund-garanti. Inte helt nöjd? Hör av dig inom 30 dagar så löser vi det – utan krångel."
+  },
+  "dna": {
+    "id": "axelbaltet",
+    "fil": "products/axelbaltet/dna.md"
+  },
+  "sidhandle": "axelbalte-for-trimmer-lagerrensning"
+}
