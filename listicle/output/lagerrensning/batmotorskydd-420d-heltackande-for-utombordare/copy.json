@@ -1,0 +1,96 @@
+{
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 enligt kommandots regel 3. Fakta enbart ur produktsidan baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare (läst 2026-09-16: vinterskydd för upplagd båt, regn/snö/frost i sex månader, täcker från kåpa till rigg, rem runt mitten, 420D Oxford mot regn/snö/UV, mindre lockande för tjuven — ingen ser vilken motor som står under, en blank motor är det första en tjuv ser från vägen, nio storlekar 0–5 hk till 250–350 hk med måttguide, inga verktyg, 30 dagars öppet köp). Inget minne i products/ för den här produkten — products/motorholjet/ är SYSTERPRODUKTEN (sommarhöljet för bara kåpan, mallens produkt) och används inte som faktakälla. Priser 579 kr / 965 kr avlästa ur /products/<handle>.json samma dag. Obrandad. Aldrig påstått: betyg, recensioner, att skyddet stoppar stölder, vad som händer inuti motorn, priser på motorer. ⚠ Motorn varnar om orden kåpa/utombordare — de är produktens egna ord, inte mallens copy.",
+  "hero": {
+    "rubrik": "Vår höstbeställning av båtmotorskydd blev för stor, så ditt kostar 579 kr istället för 965 kr så länge lagret räcker",
+    "ingress": "Vi tog hem alla nio storlekarna inför uppläggningen, och partiet blev större än vi säljer på en höst. Det är din utombordare som tjänar på det.",
+    "knapp": "Se motorskyddet → 579 kr",
+    "sammanfattning": [
+      "Vi beställde motorskyddet i alla nio storlekar inför höstens uppläggning, och partiet blev större än vi säljer på en säsong. Nu står pallarna på lagret. Därför rear vi ut dem: 579 kr istället för ordinarie 965 kr, så länge lagret räcker.",
+      "Om din båt snart ska upp på land och motorn ska hänga kvar på akterspegeln till våren, är det här lösningen. Ett heltäckande skydd i 420D Oxford-tyg som dras över hela motorn, från kåpan ner över riggen, och spänns fast med en rem runt mitten. Motorn övervintrar under tak, och ingen som passerar ser vilken motor som står under."
+    ]
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Båten kommer upp i oktober. Motorn står ute till april.",
+      "text": "Ingen ställer upp båten för att motorn ska fara illa. Man drar upp den på vagnen, lägger presenningen över skrovet, surrar fast och går hem nöjd, och sen är det klart för i år. Men motorn hänger kvar på akterspegeln, **utanför presenningen**, och där hänger den i sex månader. Regnet i november rinner över kåpan och ner längs riggen, snön lägger sig på toppen i januari, och frosten går i och ur varje natt fram till april. Det är motorn som är värd mest av allt på vagnen, och den är det enda som står helt bart hela vintern. Presenningen slutade vid akterspegeln, och ingen tänkte på vad som hängde utanför.",
+      "knapp": "Täck motorn samma dag som båten kommer upp →"
+    },
+    {
+      "rubrik": "2. Presenningen över båten slutar där motorn börjar",
+      "text": "Den vanliga vinterrutinen är en presenning över skrovet, spänd med rep och gummiband så att den håller sig kvar. Det är bra för båten. Men presenningen är gjord för skrovet, och motorn hänger utanför den på akterspegeln, så allt väder som presenningen tar hand om åt båten får motorn ta själv. En del av regnet som rinner av presenningen hamnar dessutom precis där, på kåpan och ner längs riggen, hela vintern. Du har alltså täckt skrovet noga och lämnat motorn bar, fast det är motorn som hänger längst ut i vädret. Presenningen gör sitt jobb. Det är bara inte motorns skydd den är.",
+      "knapp": "Ge motorn ett eget skydd som når hela vägen ner →"
+    },
+    {
+      "rubrik": "3. En motor ingen ser är ett tråkigt byte",
+      "text": "Det här är det ingen tänker på förrän det har hänt. En upplagd båt står stilla i månader, ofta nära en väg, ofta utan att någon tittar till den. En blank kåpa på akterspegeln syns från vägen, och den säger allt en tjuv behöver veta: vilket märke, ungefär hur stark, och att ingen är där. En övertäckt motor säger ingenting. Ingen ser vad som står under, och ett byte man inte kan bedöma från bilen är ett **betydligt tråkigare byte**. En motor som redan är borta går inte att få tillbaka, hur många papper som än fylls i efteråt. Det som fungerar är att den aldrig ser lockande ut från vägen från början.",
+      "knapp": "Dölj motorn från vägen →"
+    },
+    {
+      "rubrik": "4. Vintern är inte en natt. Den är sex månader, dygnet runt. (det här missar nästan alla)",
+      "text": "Det här är kostnaden nästan alla räknar fel på, för den kommer inte vid ett tillfälle. I somras sköljde du av motorn efter turerna och tiltade upp riggen när båten låg vid bryggan. Den fick tillsyn varje vecka. Sen kommer båten upp på land, och från den dagen rör ingen motorn på ett halvår. En frostnatt är ingenting, och ett regn i november är ingenting. Men det är inte en natt, det är alla nätter från oktober till april, dygnet runt, utan en enda avspolning emellan. **Sex månader utan tillsyn** är längre än hela säsongen med tillsyn. Det är de månaderna skyddet är till för: när ingen tittar.",
+      "knapp": "Ge motorn skydd de sex månader ingen ser den →"
+    },
+    {
+      "rubrik": "**5. Sopsäcken och silvertejpen håller till första stormen**",
+      "text": "Många löser det på plats, med det som finns i garaget: en sopsäck över kåpan, några varv silvertejp runt, kanske en bit presenning och ett gummiband. Det ser klart ut. Sen kommer första höststormen, säcken spricker i ett hörn, vattnet samlas i vecket vid tejpen och rinner in i stället för av, och en morgon i november ligger den i häcken. Motorn har stått bar sedan dess, du vet bara inte sedan när. Ett skydd du inte litar på över en storm skyddar ingenting över en vinter. Det som fungerar är ett tyg som är gjort för att stå ute till våren, en **rem runt mitten** som håller det kvar när det blåser, och ett skydd som täcker hela motorn, inte bara det som var lätt att nå med tejpen.",
+      "knapp": "Se skyddet i 420D Oxford-tyg → 579 kr"
+    }
+  ],
+  "lyckas": {
+    "rubrik": "Så vad gör de vars motor ser ut som i somras när båten sjösätts?",
+    "stycken": [
+      "De täcker motorn samma dag som båten kommer upp, innan den ens är surrad. Skyddet dras över hela motorn, från kåpan ner över riggen, remmen spänns runt mitten, och sen står den där under tak hela vintern. Regn, snö och frost får jobba på tyget i stället för på motorn, och från vägen syns bara ett svart skydd på en akterspegel, inte vilken motor det är. Inga verktyg, inga knutar. Dra över, spänn remmen, gå hem.",
+      "Det här motorskyddet är gjort i slitstarkt 420D Oxford-tyg mot regn, snö och UV, och finns i nio storlekar från 0–5 hk upp till 250–350 hk. Mät motorn mot måttguiden på produktsidan och välj den som passar. Du har 30 dagars öppet köp, så passar det inte får du pengarna tillbaka. Skillnaden ser du den dag du drar av det i vår: en kåpa som ser ut som när båten kom upp, och en motor som stått där hela vintern utan att någon lagt märke till den."
+    ],
+    "knapp": "Gör som dem → ta ett motorskydd för 579 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "vi beställde för mycket inför uppläggningen. Nio storlekar blev många pallar, och partiet är större än vad vi säljer på en hel höst. Nu står det på lagret medan båtarna redan börjar komma upp. I stället för att låta det stå kvar till nästa höst gör vi det enkelt: 579 kr istället för ordinarie 965 kr, tills partiet är slut.",
+      "Det är hela anledningen. Ingen jätterabatt som är påhittad för sidan och ingen klocka som räknar ner. Skydden står på lagret, och de gör mer nytta på en motor i vinter än på en hylla hos oss.",
+      "Priset är ärligt åt andra hållet också: i vanliga fall kostar skyddet 965 kr hos oss, och när partiet är slut går det tillbaka dit."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Därför kan du testa helt riskfritt.",
+    "text": "Vill du ha ett trycker du på knappen här nedanför och väljer storlek efter din motor. Passar det inte, eller gillar du det inte, har du 30 dagars öppet köp och får pengarna tillbaka. Du riskerar alltså ingenting. Men priset gäller bara så länge lagret räcker.",
+    "knapp": "Ja tack, ett motorskydd för 579 kr → 30 dagars öppet köp"
+  },
+  "tre_fragor": [
+    { "rad": "Vår höstbeställning av båtmotorskydd blev för stor, så ditt kostar 579 kr istället för 965 kr så länge lagret räcker", "visualisera": "✅ höstbeställningen på pall, två priser", "falsifiera": "✅ båda priserna står på produktsidan", "ingen_annan_kan_saga": "✅ vår beställning, vårt pris" },
+    { "rad": "Vi tog hem alla nio storlekarna inför uppläggningen, och partiet blev större än vi säljer på en höst.", "visualisera": "✅ nio storlekar på lagret", "falsifiera": "✅ nio storlekar står på produktsidan", "ingen_annan_kan_saga": "✅ vårt lager" },
+    { "rad": "Se motorskyddet → 579 kr", "visualisera": "✅ skyddet, priset", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "1. Båten kommer upp i oktober. Motorn står ute till april.", "visualisera": "✅ båten på vagnen, motorn bar", "falsifiera": "✅ produktsidan: motorn står oskyddad till våren", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om månaderna" },
+    { "rad": "Ingen ställer upp båten för att motorn ska fara illa.", "visualisera": "✅ uppläggningen", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår öppning" },
+    { "rad": "Täck motorn samma dag som båten kommer upp →", "visualisera": "✅ dagen båten kommer upp", "falsifiera": "✅ täckt eller inte", "ingen_annan_kan_saga": "✅ produktsidan: på innan båten ens är surrad" },
+    { "rad": "2. Presenningen över båten slutar där motorn börjar", "visualisera": "✅ presenningens kant vid akterspegeln", "falsifiera": "✅ motorn hänger utanför eller inte", "ingen_annan_kan_saga": "✅ ingen presenningssäljare skriver under" },
+    { "rad": "Den vanliga vinterrutinen är en presenning över skrovet, spänd med rep och gummiband så att den håller sig kvar.", "visualisera": "✅ presenning, rep, gummiband", "falsifiera": "✅ beteendet går att observera", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Ge motorn ett eget skydd som når hela vägen ner →", "visualisera": "✅ skyddet ner över riggen", "falsifiera": "✅ produktsidan: från kåpa till rigg", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "3. En motor ingen ser är ett tråkigt byte", "visualisera": "✅ den övertäckta motorn från vägen", "falsifiera": "✅ produktsidan: tråkigare byte, ingen ser vilken motor", "ingen_annan_kan_saga": "✅ stöldvinkeln är produktsidans egen" },
+    { "rad": "Det här är det ingen tänker på förrän det har hänt.", "visualisera": "✅ dagen efter stölden", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Dölj motorn från vägen →", "visualisera": "✅ vägen, det svarta skyddet", "falsifiera": "✅ syns från vägen eller inte", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "4. Vintern är inte en natt. Den är sex månader, dygnet runt. (det här missar nästan alla)", "visualisera": "✅ sex månader på land", "falsifiera": "✅ produktsidan: sex månader", "ingen_annan_kan_saga": "✅ ingen konkurrent ställer sommarens tillsyn mot vinterns" },
+    { "rad": "Det här är kostnaden nästan alla räknar fel på, för den kommer inte vid ett tillfälle.", "visualisera": "✅ kostnaden som kommer sakta", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Ge motorn skydd de sex månader ingen ser den →", "visualisera": "✅ sex månader utan tillsyn", "falsifiera": "✅ produktsidan: tål en hel vinter ute", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "**5. Sopsäcken och silvertejpen håller till första stormen**", "visualisera": "✅ sopsäck, silvertejp, häcken", "falsifiera": "✅ håller över stormen eller inte", "ingen_annan_kan_saga": "✅ ingen skriver under på sopsäcken" },
+    { "rad": "Många löser det på plats, med det som finns i garaget: en sopsäck över kåpan, några varv silvertejp runt, kanske en bit presenning och ett gummiband.", "visualisera": "✅ garagets grejer", "falsifiera": "✅ går att observera", "ingen_annan_kan_saga": "✅ vår konflikt typ A (produktsidan: 420D, rem runt mitten, hela motorn)" },
+    { "rad": "Se skyddet i 420D Oxford-tyg → 579 kr", "visualisera": "✅ tyget, priset", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de vars motor ser ut som i somras när båten sjösätts?", "visualisera": "✅ sjösättningen i vår", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De täcker motorn samma dag som båten kommer upp, innan den ens är surrad.", "visualisera": "✅ skyddet på innan surrningen", "falsifiera": "✅ produktsidan: på innan båten ens är surrad", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "Det här motorskyddet är gjort i slitstarkt 420D Oxford-tyg mot regn, snö och UV, och finns i nio storlekar från 0–5 hk upp till 250–350 hk.", "visualisera": "✅ tyget, nio storlekar", "falsifiera": "✅ fakta ur produktsidan", "ingen_annan_kan_saga": "✅ vårt skydd" },
+    { "rad": "Gör som dem → ta ett motorskydd för 579 kr", "visualisera": "✅ ett skydd, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi beställde för mycket inför uppläggningen.", "visualisera": "✅ pallarna på lagret", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela anledningen.", "visualisera": "✅ priset, lagret", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Priset är ärligt åt andra hållet också: i vanliga fall kostar skyddet 965 kr hos oss, och när partiet är slut går det tillbaka dit.", "visualisera": "✅ prislappen 965 kr", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Därför kan du testa helt riskfritt.", "visualisera": "❌ abstrakt — behålls ordagrant, mallens fasta rubrik", "falsifiera": "✅ 30 dagars öppet köp står på produktsidan", "ingen_annan_kan_saga": "❌" },
+    { "rad": "Vill du ha ett trycker du på knappen här nedanför och väljer storlek efter din motor.", "visualisera": "✅ knappen, storleksvalet", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, ett motorskydd för 579 kr → 30 dagars öppet köp", "visualisera": "✅ skyddet, priset, 30 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel, kommandots sex punkter: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, ett stycke = en tanke som rör sig framåt, ord man säger på uppläggningsplatsen (vagnen, akterspegeln, kåpan, riggen, presenning, surra, tilta), och hela sidan läst uppifrån och ner: punkt 1 (motorn hänger utanför presenningen i sex månader) → 2 (presenningen är skrovets skydd, inte motorns) → 3 (en övertäckt motor är ett tråkigt byte) → 4 (sex månader utan tillsyn) → 5 (sopsäcken håller till första stormen) → lyckas (dra över, spänn remmen, gå hem). Sidan är medvetet vinter och stöld — mallens sommarhölje för kåpan är en annan produkt, och ingen av dess meningar om sol, salt och bryggan används.",
+    "omskrivna_stycken": "Punkt 1: slutet 'Inte för att du valt det. Det bara blev så när presenningen tog slut' var takskyddssidans grepp och blev 'Presenningen slutade vid akterspegeln, och ingen tänkte på vad som hängde utanför'; 'den dyraste delen av båten' låg för nära mallens 'det dyraste du hänger på akterspegeln' och blev 'det som är värt mest av allt på vagnen'. Punkt 2: 'skyddat den del som tål vintern bäst' var ett påstående utan källa och blev 'täckt skrovet noga och lämnat motorn bar'. Punkt 4: 'en motor åldras mer på land än på vattnet' ströks (står inte på sidan); två korta 'är ingenting'-meningar i rad slogs ihop. Punkt 5: rubriken var först 'Kåpskyddet som slutar där riggen börjar' — ströks helt, eftersom det hade dissat butikens eget sommarhölje för kåpan; sopsäcken och silvertejpen i stället. Ärlig: 'nio pallar' (påhittad siffra) blev 'många pallar'.",
+    "kvar_att_lyssna_pa": "Punkt 3:s rubrik 'En motor ingen ser är ett tråkigt byte' — 'byte' i betydelsen stöldbyte kan läsas som 'byta ut'. Hakar den högt: byt till 'Tjuven väljer motorn han kan se från vägen'."
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "byggd": "2026-09-16T14:57:53.102Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Båtmotorskydd 420D – Heltäckande för Utombordare",
+    "kortTitel": "Båtmotorskydd 420D",
+    "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+    "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+    "typ": "",
+    "pris": 579,
+    "jamforpris": 965,
+    "prisText": "579 kr",
+    "jamforprisText": "965 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Motorstorlek",
+        "varden": [
+          "0–5 hk",
+          "6–15 hk",
+          "15–20 hk",
+          "20–30 hk",
+          "30–60 hk",
+          "60–100 hk",
+          "100–150 hk",
+          "175–225 hk",
+          "250–350 hk"
+        ]
+      }
+    ],
+    "antalVarianter": 9,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg",
+        "width": 495,
+        "height": 495
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg",
+        "width": 1632,
+        "height": 1632
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-tabell-sv.jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg",
+        "width": 1024,
+        "height": 1024
+      }
+    ],
+    "beskrivning": "Snart står båten på land igen – och motorn står oskyddad till våren\nRegn, snö och frost jobbar på utombordaren i sex månader. Och en blank motor på en upplagd båt är det första en tjuv får syn på från vägen.\nEtt heltäckande vinterskydd för utombordaren\nDra skyddet över hela motorn – från kåpan ner över riggen – och spänn remmen runt mitten. 420D Oxford-tyg håller väder och smuts ute under hela uppläggningen, och en övertäckt motor är ett betydligt tråkigare byte än en öppen.\nFunktioner\nMotorn övervintrar under tak – täcker från kåpa till rigg, inte bara toppen\nTål en hel vinter ute – slitstarkt 420D Oxford-tyg mot regn, snö och UV\nMindre lockande för tjuven – ingen ser vilken motor som står under\nPassar din motor – nio storlekar från 0–5 hk till 250–350 hk, se måttguiden\nPå innan båten ens är surrad – dras över och spänns fast, inga verktyg\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/batmotorskydd-420d-heltackande-for-utombordare",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a5df50a64ca13e5d2ea4367c79890123_1_1789570529_2139.png?v=1789570537",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cb09928b92f5bc5ade0f716e13affa26_1789570393801.png?v=1789570402",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b4d7c9bf14e8c9b31c8fee29e11365b_1789570545828.png?v=1789570555",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "produkt #4"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg",
+      "width": 495,
+      "height": 495,
+      "kalla": "produkt #1"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/batmotorskydd-420d-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/batmotorskydd-420d-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/batmotorskydd-420d-heltackande-for-utombordare/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "636324585332965142",
+    "namn": "Båtmotorskydd 420D – Lagerrensning (listicle)",
+    "handle": "batmotorskydd-420d-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/batmotorskydd-420d-lagerrensning",
+    "sidaId": "gid://shopify/Page/728860721501",
+    "skapad": false,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/batmotorskydd-420d-lagerrensning",
+      "tecken": 108449
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/a5df50a64ca13e5d2ea4367c79890123_1_1789570529_2139.png?v=1789570537",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/cb09928b92f5bc5ade0f716e13affa26_1789570393801.png?v=1789570402",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8b4d7c9bf14e8c9b31c8fee29e11365b_1789570545828.png?v=1789570555",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_181313_69545631-2c76-4489-a389-6f2baa6b7ec1.png?v=1785867263",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

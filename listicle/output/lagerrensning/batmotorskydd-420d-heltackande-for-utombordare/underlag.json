@@ -1,0 +1,64 @@
+{
+  "hamtat": "2026-09-16T14:57:45.177Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "Båtmotorskydd 420D – Heltäckande för Utombordare",
+    "kortTitel": "Båtmotorskydd 420D",
+    "handle": "batmotorskydd-420d-heltackande-for-utombordare",
+    "url": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+    "typ": "",
+    "pris": 579,
+    "jamforpris": 965,
+    "prisText": "579 kr",
+    "jamforprisText": "965 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Motorstorlek",
+        "varden": [
+          "0–5 hk",
+          "6–15 hk",
+          "15–20 hk",
+          "20–30 hk",
+          "30–60 hk",
+          "60–100 hk",
+          "100–150 hk",
+          "175–225 hk",
+          "250–350 hk"
+        ]
+      }
+    ],
+    "antalVarianter": 9,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-svart.jpg",
+        "width": 495,
+        "height": 495
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-pa-bat.jpg",
+        "width": 1632,
+        "height": 1632
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotor-tabell-sv.jpg",
+        "width": 1080,
+        "height": 1080
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/batmotorskydd-vinter-tackt.jpg",
+        "width": 1024,
+        "height": 1024
+      }
+    ],
+    "beskrivning": "Snart står båten på land igen – och motorn står oskyddad till våren\nRegn, snö och frost jobbar på utombordaren i sex månader. Och en blank motor på en upplagd båt är det första en tjuv får syn på från vägen.\nEtt heltäckande vinterskydd för utombordaren\nDra skyddet över hela motorn – från kåpan ner över riggen – och spänn remmen runt mitten. 420D Oxford-tyg håller väder och smuts ute under hela uppläggningen, och en övertäckt motor är ett betydligt tråkigare byte än en öppen.\nFunktioner\nMotorn övervintrar under tak – täcker från kåpa till rigg, inte bara toppen\nTål en hel vinter ute – slitstarkt 420D Oxford-tyg mot regn, snö och UV\nMindre lockande för tjuven – ingen ser vilken motor som står under\nPassar din motor – nio storlekar från 0–5 hk till 250–350 hk, se måttguiden\nPå innan båten ens är surrad – dras över och spänns fast, inga verktyg\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "batmotorskydd-420d-lagerrensning"
+}

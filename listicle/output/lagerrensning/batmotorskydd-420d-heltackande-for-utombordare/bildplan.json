@@ -1,0 +1,38 @@
+{
+  "_kommentar": "Bildplan för båtmotorskyddets lagerrensningssida, 2026-09-16. Produktsidan har fyra bilder (tittade): 1 = det svarta skyddet på en motor, vit bakgrund; 2 = skyddet på en stor utombordare bredvid en BAR motor med stor tillverkarlogga ('MERCURY 150') — loggan gör att den inte används; 3 = storleksguide med text — används inte; 4 = skyddet på en aluminiumbåt på vagn en höstdag med löv i båten, riktigt svenskt foto. Inga människor. Scenbilderna för punkt 1–4 (motorn bar utanför presenningen i frost, presenningskanten vid akterspegeln, båten sedd från vägen, båtupplaget om vintern) genereras utan produkt och utan människor — produkten visas i produktbilderna 4 (punkt 5, i bruk på vagnen) och 1 (lyckas).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A small motorboat on a trailer on a gravel yard beside a red wooden Swedish house at dawn in late autumn, a blue tarpaulin tied over the hull, the outboard motor hanging bare on the stern outside the tarp with a thin layer of frost on its cowl, bare birch trees and a pale grey sky, photo-realistic, no people, no text, the outboard motor has a plain matte dark cowl with absolutely no writing, brand name, model number, badge, sticker or emblem anywhere on it",
+      "referenser": [],
+      "format": "1:1",
+      "_igen": "Första bilden (2026-09-16) fick påhittade märkesbokstäver på kåpan trots \"unbranded\" — prompten säger nu uttryckligen: ingen skrift, inget märke, inget modellnummer, ingen dekal på kåpan."
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "Close view of the stern of a motorboat on a trailer under a tied-down blue tarpaulin, the edge of the tarp ending right at the transom and the outboard motor hanging outside it, rainwater running off the tarp edge and dripping onto the motor cowl and down the leg, ropes and bungee cords holding the tarp, overcast rainy autumn day, photo-realistic, completely unbranded outboard motor with no lettering, badges or logos, no people, no text",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "A motorboat on a trailer parked in a driveway next to a quiet country road, seen from the road at dusk, the hull under a tarpaulin but the shiny black outboard motor clearly visible on the stern catching the last light, a dark house with no lights on behind it, photo-realistic, no people, no text, the outboard motor has a plain matte dark cowl with absolutely no writing, brand name, model number, badge, sticker or emblem anywhere on it",
+      "referenser": [],
+      "format": "1:1",
+      "_igen": "Första bilden (2026-09-16) fick påhittade märkesbokstäver på kåpan trots \"unbranded\" — prompten säger nu uttryckligen: ingen skrift, inget märke, inget modellnummer, ingen dekal på kåpan."
+    },
+    "punkt4": {
+      "kalla": "mall",
+      "_underkand": "Två kie-försök 2026-09-16 (båtupplag i snö) fick båda påhittade märkesbokstäver på motorkåporna, även med uttryckligt förbud i prompten. Enligt kommandot byts platsen då bort från kie: mallens marinabild (båtar vid bryggan i somras) bär platsen — den passar styckets öppning om sommarens tillsyn vid bryggan, och produktbilderna 1 och 4 är redan upptagna av lyckas och punkt 5 (bild 2 bär en Mercury-logga, bild 3 är en måttguide med text).",
+      "_kieprompt_som_inte_holl": "A Swedish boatyard in midwinter with rows of motorboats on trailers and cradles under snow-covered tarpaulins, the outboard motors hanging bare on the sterns with snow piled on their cowls, low winter sun and long shadows, frozen water in the background, photo-realistic, no people, no text, the outboard motors have a plain matte dark cowl with absolutely no writing, brand name, model number, badge, sticker or emblem anywhere on them"
+    },
+    "punkt5": {
+      "kalla": "produkt",
+      "index": 4
+    },
+    "lyckas": {
+      "kalla": "produkt",
+      "index": 1
+    }
+  }
+}
