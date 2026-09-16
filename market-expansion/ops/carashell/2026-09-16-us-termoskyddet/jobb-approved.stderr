@@ -1,8 +1,8 @@
-(node:439) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(node:472) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
 (Use `node --trace-warnings ...` to show where the warning was created)
-Butik: CaraShell (carashell/termoskyddet) · konto 1107817401910319 (Magiborsten UK) · prefix carashellfront_ · carashellfront · marknad US · status "SE-ACTIVE to be translated" · annonsmarknader SE + NO, US
+Butik: CaraShell (carashell/termoskyddet) · konto 1107817401910319 (Magiborsten UK) · prefix carashellfront_ · carashellfront · marknad US · status "Approved" · annonsmarknader SE + NO, US
 OPS-hubb: Termoskyddet (3dd270ab-908c-8018-a927-c2e551f7de8a)
-  0 rader i "SE-ACTIVE to be translated" (Typ ~ pending approval)
+  0 rader i "Approved" (Typ ~ pending approval)
 Läser kontot 1107817401910319 …
   108 annonser · 8 kampanjer i kontot
 Kampanj (US): CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 [PAUSED] · bas "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"

@@ -193,3 +193,30 @@ annons (regel 3).
 - Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
   `1549788313140076604`), ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-16-no-termoskyddet/` (jobb.json).
+
+## 2026-09-16 17:15 — `/ops-oversatt carashell/termoskyddet --marknad US` (första schemalagda US-körningen)
+
+- Rutinen `trig_01C9Dfcm5k9wuxPDaQaRNF1r` (plats 7 = 17:15, fast session
+  `session_01Ngpv9kMqf3BM8onpTbMdCt`) fyrade 15:15 UTC — sedd i `list_triggers`
+  samma körning, `last_run` SUCCEEDED.
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 rader i `Approved` (eftersläpningskollen
+  för marknad tillagd i efterhand). Hubben "Termoskyddet" är fortfarande helt tom
+  (0 rader i alla statusar, mätt via `databases/<id>/query`). Inget översatt, inget
+  renderat (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- US-kampanjen `CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
+  (`120251442339640435`, Magiborsten UK) är **PAUSED utan spend** (nybyggd) med 4 ACTIVE
+  adsets (SP/PD/G/CS). Kön hittar den nu på namnets bas (`PAUSAD_TOM`) och skulle ha
+  laddat upp i den — kampanjens status rörs aldrig av rutinen.
+- ⚠️ **Kampanjen bär redan 16 annonser** (`CaraShellFront_US_*`: 12 videor + 4 bilder,
+  alla ACTIVE, effective_status CAMPAIGN_PAUSED, länk `https://carashell.com/products/termoskyddet`,
+  copy med $99) skapade 11:00–12:29 UTC i dag — efter förmiddagens körning som såg
+  0 annonser. Ingen commit i repot (`git log --all`) beskriver uppladdningen; de speglar
+  SE-kampanjens 16 annonser precis som takskyddets US-spegling (`d87ec56`). Inget spenderar
+  förrän Axel slår på kampanjen.
+- Butiken redo för US: 99 USD läst på `carashell.com/products/termoskyddet?country=US`.
+- Ärvd länk ur `CaraShellFront_US_G_3`: `https://carashell.com/products/termoskyddet`.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549802219279486996`), ping till Axel under ACTION NEEDED (slå på kampanjen om US-testet
+  ska starta).
+- Batch: `market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` (jobb.json,
+  jobb-approved.json, discord-jobb.json + köloggarna).
