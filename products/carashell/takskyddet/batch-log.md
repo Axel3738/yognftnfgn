@@ -513,3 +513,33 @@ mergad): **obrandad**, "Anders på lagret", pris **1 129 / 1 469 kr** lästa ur
 länkar relativt till `/products/takskyddet`. Filerna ligger i
 `listicle/output/lagerrensning/takskyddet/`. Ingen annons pekar dit ännu —
 sidan mäts som LP, aldrig som creative.
+
+---
+
+## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms
+
+Noll rader i `SE-ACTIVE to be translated`. Ingen översättning, ingen uppladdning,
+noll HeyGen-krediter. `CARASHELL_NO_Takovertrekket` är ACTIVE — marknaden går, så
+det här är en **tom kö och inget hållet läge**.
+
+**Skälet står uppströms:** leveransrundan 13:40 stoppade samma dag på **två ACTIVE
+kampanjer med samma namn** `CARASHELL_SE_Taköverdraget` (`120249050544990172`,
+9 646 kr / 23 köp, och kopian `120249121867590172`, 35 kr / 0 köp, skapad 14:54
+CEST) med samma 20 annonser. Dagens sju färdiga bildannonser ligger därför kvar i
+`To be Reviewed` och nådde aldrig hit. Kedjan är seriell: inget går till Norge
+förrän Axel säger vilken SE-kampanj som gäller.
+
+Hubben vid körningen, 14 rader:
+
+| Status | Rader |
+|---|---|
+| `Approved` | `CS_4_1`, `GT_4_1`, `PD_4_1`, `SP_4_1` — live i SE + NO sedan 14/9 |
+| `To be Reviewed` | `CS_5_1`, `CS_6_1`, `PD_6_1`, `PD_7_1`, `SP_5_1`, `SP_6_1`, `SP_7_1` — väntar på kampanjbeskedet |
+| `Draft` | `PD_4_H1`, `PD_5_H1`, `SP_4_H1` — videobriefer ingen levererat, ingen redigerare tilldelad |
+
+⚠️ **Metas rate limit bröt kötoolets pris- och länkläsning** efter kampanj-
+uppslaget, så verktygets egen `jobb.json` skrevs aldrig. Radantalet och
+NO-kampanjens status lästes FÖRE det och är mätta; hubbens statusfördelning är
+läst direkt mot Notions API i samma körning. Med tom kö spelar pris och ärvd länk
+ingen roll — inget skulle laddats upp ändå. Mätningen ligger i
+`market-expansion/ops/carashell/2026-09-16/ko-NO.json`.

@@ -1,0 +1,13 @@
+(node:360) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Butik: CaraShell (carashell/takskyddet) · konto 915422744950975 (MagiBorsten DK) · prefix carashellroof_ · carashellroof · marknad NO · status "SE-ACTIVE to be translated" · annonsmarknader SE + NO, US
+OPS-hubb: Carashell Taköverdrag creative hub (3da270ab-908c-80c4-80d1-fbdb3fefd3b4)
+  0 rader i "SE-ACTIVE to be translated" (Typ ~ pending approval)
+Läser kontot 915422744950975 …
+  ⏳ Meta rate limit (försök 1/8) — väntar 30s
+  ⏳ Meta rate limit (försök 2/8) — väntar 60s
+  200 annonser · 22 kampanjer i kontot
+Kampanj (NO): CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 [ACTIVE] · bas "CARASHELL_NO_Takovertrekket"
+  ⏳ Meta rate limit (försök 1/8) — väntar 30s
+  ⏳ Meta rate limit (försök 2/8) — väntar 60s
+  ⏳ Meta rate limit (försök 3/8) — väntar 120s
