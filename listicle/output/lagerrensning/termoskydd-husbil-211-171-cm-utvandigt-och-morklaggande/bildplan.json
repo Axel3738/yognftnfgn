@@ -1,0 +1,37 @@
+{
+  "_kommentar": "Bildplan för Bäverbutikens kopia av termoskyddets lagerrensningssida, 2026-09-16 — samma plan som CaraShell-sidans. Bäverbutikens produktsida har exakt samma tre bilder i samma ordning (b6-termoskydd-se.jpg, b7-termoskydd-miljo.png, b7-termoskydd-detalj.png — kontrollerat i underlag.json): 1 = skyddet utbrett på vit bakgrund med måtten, 2 = husbil i frostig tallskog med skyddet på (AI-illustration enligt sidans egen text), 3 = inifrån kupén (används inte, läses som invändigt skydd). Scenbilderna för punkt 1–4 är samma prompter som CaraShell-sidan; bilder.json är kopierad därifrån så cachen träffar (samma prompt = samma nyckel) och bilderna, som redan ligger på Bäverbutikens CDN via lp-bildarkiv, återanvänds utan att kie körs igen.",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "Inside the cab of a motorhome at dawn, seen from the passenger seat looking forward: the windscreen and the side window completely fogged with condensation on the inside, water droplets running down the glass, one small wiped patch in the middle of the windscreen showing a grey cold morning outside, a damp grey microfibre cloth lying on the dashboard, cold blue morning light, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "Inside the cab of a motorhome in the morning, seen from the living area looking forward: a grey pleated fabric curtain drawn across the inside of the windscreen, the curtain pulled slightly aside at one edge revealing the glass behind it heavily fogged with condensation and running water droplets, the hem of the curtain visibly damp and darker, soft grey daylight filtering through, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "A plain white motorhome parked on a summer campsite early in the morning, strong low sun shining directly onto the bare uncovered windscreen and cab side windows, bright glare on the glass, the dashboard and cab seats visible through the windscreen in harsh sunlight, both cab doors standing wide open, green grass, pine trees behind, photo-realistic, completely unbranded vehicle with no badges, no lettering, no stickers, no people, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "A plain white motorhome parked overnight at a highway rest area between two large lorries, dawn, the low rising sun shining straight into the uncovered windscreen so the cab interior is lit up by the morning light, wet tarmac, a lamp post, a small rest-area building blurred in the background, Nordic light, photo-realistic, completely unbranded vehicles with no lettering, no badges, no people, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": {
+      "kalla": "produkt",
+      "index": 2
+    },
+    "lyckas": {
+      "kalla": "produkt",
+      "index": 1
+    }
+  }
+}

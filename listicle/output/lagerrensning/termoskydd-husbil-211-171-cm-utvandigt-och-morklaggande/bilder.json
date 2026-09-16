@@ -1,0 +1,46 @@
+{
+  "punkt1": {
+    "nyckel": "44d57e4f5554",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2688665f0908e46dce5696e9ca4da389_1789572093464.png?v=1789572104",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/2688665f0908e46dce5696e9ca4da389_1789572093464.png",
+    "taskId": "2688665f0908e46dce5696e9ca4da389",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskyddet/bilder/punkt1.png",
+    "datum": "2026-09-16"
+  },
+  "punkt2": {
+    "nyckel": "fd11a9474c53",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f360bdc599f9311b76ef48ed2bb4ff76_1789572115250.png?v=1789572130",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/f360bdc599f9311b76ef48ed2bb4ff76_1789572115250.png",
+    "taskId": "f360bdc599f9311b76ef48ed2bb4ff76",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskyddet/bilder/punkt2.png",
+    "datum": "2026-09-16"
+  },
+  "punkt3": {
+    "nyckel": "c690425af272",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/754759e735a039c8b9324ce51d2e575d_1789572138516.png?v=1789572149",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/754759e735a039c8b9324ce51d2e575d_1789572138516.png",
+    "taskId": "754759e735a039c8b9324ce51d2e575d",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskyddet/bilder/punkt3.png",
+    "datum": "2026-09-16"
+  },
+  "punkt4": {
+    "nyckel": "14193b86f1c3",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8cee55766cf52b3759bbcdf3123db87e_1789572160260.png?v=1789572173",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/8cee55766cf52b3759bbcdf3123db87e_1789572160260.png",
+    "taskId": "8cee55766cf52b3759bbcdf3123db87e",
+    "lokal": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskyddet/bilder/punkt4.png",
+    "datum": "2026-09-16"
+  }
+}
