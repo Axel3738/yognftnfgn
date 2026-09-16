@@ -760,3 +760,33 @@ det som är uppe (PD, G) fick aldrig budget i källan — kampanjen är en kalls
 **Bild med text direkt på fotot = ingen gratis fix.** `oversatt-bild.py --analys` hittade
 bara fotoytor (fönster, backspeglar) som "former" på CS_2_1/SP_2_1 — texten ligger på himlen.
 Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är copy.
+
+### Samma dag, `/ny-annonser termoskyddet` — bildfix, omdubb och CBO (mätt 2026-09-16)
+
+- **CBO går att slå på i efterhand på en PAUSED kampanj utan spend:** `POST /<kampanj>`
+  med `daily_budget` + `bid_strategy=LOWEST_COST_WITHOUT_CAP` svarade `success`, och
+  adsetens egna budgetar försvann av sig själva (läs tillbaka: `daily_budget` saknas på
+  adseten). Att sätta adsetbudget till 0 avvisas ("Budgeten är för låg") — gör det inte.
+  `kampanj.mjs --cbo` bygger nya kampanjer så från början; en befintlig CBO-kampanj får
+  adset utan budget automatiskt.
+- **`kampanj.mjs` är idempotent på namn** (kampanj, adset, annons) — en andra omgång
+  media (bildfixar, omdubbade videor) körs genom samma kommando utan dubbletter.
+- **Text direkt på fotot: kie.ai `nano-banana-edit` tar bort den** med prompten "remove
+  ALL text, banners, ribbons, star ratings, badges … fill with matching sky/trees",
+  referensbild = Metas `creative.image_url` (publik). Två av fyra källbilder var samma
+  foto med olika toning — den rena varianten (CS) fick bära alla fyra. Sedan
+  `factory/bild-text.py` med butikens färger (rubrik + underrad, priskort med
+  jämförpris, citatkort med namn, bottenrad). QA före/efter som `<namn>.qa.png`.
+- **HeyGen apply-srt kräver EXAKT HeyGens eget antal segment** ("Number of segments in
+  SRT does not match existing proofread data", HTTP 400). Manus skrivna mot de gamla
+  `.orig.srt` matchade i 4 av 9 fall — resten omfördelades meningsvis över HeyGens cues
+  efter starttid (`heygen-apply-render.mjs` i sessionens scratch, logiken värd att
+  flytta in i `pipeline/localize.mjs`). Ett manus med FÄRRE meningar än HeyGen har cues
+  ger en tom cue på slutet (G_2 SE) — skriv en mening per HeyGen-cue nästa gång.
+- **Renderingen svarar `status: failed` + `failure_message: "video pending moderation by
+  our team"`** direkt efter beställning — det är en väntan, inte ett fel (Kranskydd
+  2026-08-29: släppt efter ~30 min). Ett skript som läser `failed` som slutgiltigt
+  tappar hela batchen. Krediter dras vid beställningen: 7 631 → 7 400 för 6 renderingar
+  à 15–20 s ≈ 40 krediter per video.
+- **Proofread tar 5–6 min per video** sekventiellt (upload + transkribering). Nio per
+  marknad ≈ 50 min. Kör SE och NO som två parallella loopar.
