@@ -32,3 +32,4 @@ kundtjanst/historik/demobutiken.jsonl
 
 # Åtgärdade videor i OPS-flödet (factory/media-upload.mjs bildfix) — ligger i Meta, klipptiderna står i brand-syn.json
 factory/output/*/bildfix/*.mp4
+factory/output/*/bildfix/kie/
