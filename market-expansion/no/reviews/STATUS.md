@@ -3,6 +3,40 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-16 — 10 nya, tre överhoppade, 32 i `sources.json`
+
+Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **en** ny mapp:
+**Infartslarm Trådlöst**. Den importerades.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Trådløs Innkjørselsalarm | 10 | `tradlos-innkjorselsalarm-du-horer-nar-noen-svinger-inn` |
+
+Kartorna: +12 översättningar, 0 nya namn — arkets tio recensenter (Anna, Lars,
+Maria, Johan, Eva, Anders, Sara, Peter, Linda, Mikael) fanns alla redan i
+`names.no.json`. Butiksfeeden står kvar på 201 produkter.
+
+Arket `Infartslarm Trådlöst_REVIEW`
+(`1vrSccEBBiyaBxr7YEo3RX4cNfH_9tCLp85bbGuBv3_E`) var felfritt: riktiga
+rubriker i `title`, betyg på varje rad, rätt `product_handle`.
+
+### Väntelistan är nere på tre
+
+Taköverdrag och Termoskydd ströks 2026-09-15 (se nedan). Kvar:
+
+| Produkt | Läge 2026-09-16 |
+|---|---|
+| Gravstenspenna | bara `TEST – …`-rader, oförändrat sedan 2026-09-04 |
+| Medicinask i Fickformat | bara `Exempel N – EJ KUNDRECENSION`, oförändrat sedan 2026-09-04 |
+| Lövblåsare | beverbutikken.no har fortfarande ingen løvblåser bland sina 201 produkter |
+
+En fjärde mapp dök upp i Drive-huvudmappen den här körningen —
+**`7 Sittkäpp Hopfällbar`** (`1wqicI1NTAUeLehy79d56y_11b2F5lsj4`). Den ligger
+INTE i MAKE TO NORWAY, alltså är den inte lokaliserad ännu och är därmed
+ingen kandidat. Nämns här så nästa körning känner igen namnet.
+
+**Datumen:** 28 produkter / 252 recensioner med importdagens datum.
+
 ## ✅ Taköverdrag och Termoskydd är KLARA — Axel importerade dem för hand 2026-09-15
 
 Axel rättade de två arken och importerade recensionerna själv samma kväll.
