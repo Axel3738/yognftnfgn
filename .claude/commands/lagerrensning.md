@@ -88,6 +88,15 @@ stycken som skrevs om, och vilken rad du är minst säker på.
 
 `IDAG` = dagens datum (YYYY-MM-DD). Utdata: `lagerrensning/output/<handle>/`.
 
+### 0. Finns sidan redan?
+GemPages har inget API, så sessionen kan inte se vilka sidor som finns. Axel
+bygger sådana här sidor för hand också (axelbältets sida
+`axelbalte-trimmer-listicle` fanns sedan 2026-08-16 när kommandot testades
+på just den produkten 2026-09-16). Skriv i rapporten att importen skapar en
+NY sida, och be Axel hoppa över importen om produkten redan har en. Säger
+Axel i kommandot att sidan finns: bygg ändå (copyn och bilderna är värdet),
+men skriv det överst i rapporten.
+
 ### 1. Underlag
 ```
 node lagerrensning/bygg.mjs <länk> --underlag
@@ -123,7 +132,13 @@ partiet är slut. "Riskfritt" = 30 dagars garanti (står på produktsidan).
 ### 3. Copy — skriv den själv
 Formen är `lagerrensning/mall/exempel-copy.json` (samma nycklar, ungefär
 samma längder: rubriker ≤ 120 tecken, punkttexter 400–900 tecken, knappar
-≤ 60). Hårda regler: svenska med rätt å/ä/ö; bara priset och jämförpriset som
+≤ 60). **Läs också `lagerrensning/mall/exempel-copy-axelbalte.json`** — Axels
+egen anpassning av samma sida till axelbältet (byggd för hand 2026-08-16).
+Den visar hur punkterna byter tema utan att byta form: "Det gör inte ont
+medan du trimmar", "Du har redan egna knep, och de hjälper nästan", "Sista
+biten blir aldrig klar den här helgen", "Den billiga remmen du redan provat",
+och att riskfritt-blocket får heta "Om det inte känns rätt" när det passar
+bättre. Det är tonen som gäller: vardaglig, konkret, en person som pratar. Hårda regler: svenska med rätt å/ä/ö; bara priset och jämförpriset som
 siffror; inga procent; "så länge lagret räcker"; `**fet**` är den enda
 formateringen (ingen HTML); exakt fem punkter; hero.rubrik bär både priset
 och jämförpriset; inga betyg, inga påhittade kunder.

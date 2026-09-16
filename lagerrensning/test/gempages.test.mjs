@@ -163,6 +163,34 @@ test('den riktiga exporten går att läsa och har rätt checksummor', () => {
   assert.equal(m.theme_page_count, 1);
 });
 
+test('Axels egen axelbältessida är en kopia av mallen: samma sektioner, samma element, rätt checksummor', () => {
+  // Exporterad av Axel 2026-09-16 (sidan byggd 2026-08-16 genom att duplicera
+  // motorhöljets sida i GemPages). Bevisar att platskartan gäller varje sida
+  // som kopierats från mallen, och att checksumformeln håller på en andra export.
+  const { sidor, manifest: m } = urGempages(readFileSync(new URL('../mall/exempel-axelbalte-2026-08-16.gempages', import.meta.url)));
+  assert.equal(sidor.length, 1);
+  const sida = sidor[0];
+  assert.equal(sida.handle, 'axelbalte-trimmer-listicle');
+  assert.equal(m.image_url_count, 2, 'exporten bär två mobilbilder i image_urls.txt');
+  assert.equal(granskaChecksummor(sida).length, 0);
+  assert.deepEqual(sida.pageSections.map((s) => s.cid).sort(), mall.pageSections.map((s) => s.cid).sort());
+  const uids = (p) => new Set(p.pageSections.flatMap((s) => allaElementUids(JSON.parse(s.component))));
+  const a = uids(sida); const b = uids(mall);
+  assert.equal([...b].filter((u) => a.has(u)).length, b.size, 'alla element-uid ur mallen finns i axelbältessidan');
+  const copy = copyUrMall(sida, platser);
+  assert.equal(copy.punkter.length, 5);
+  assert.match(copy.hero.rubrik, /^Vi beställde av misstag för många axelbälten/);
+  assert.deepEqual(granskaCopy(copy, { pris: 599, jamforpris: 789 }, platser).fel, []);
+});
+
+function allaElementUids(o, acc = []) {
+  if (Array.isArray(o)) { for (const x of o) allaElementUids(x, acc); return acc; }
+  if (!o || typeof o !== 'object') return acc;
+  if (o.uid) acc.push(o.uid);
+  for (const v of Object.values(o)) if (v && typeof v === 'object') allaElementUids(v, acc);
+  return acc;
+}
+
 test('bytIdn håller referenserna ihop', () => {
   const copy = copyUrMall(mall, platser);
   const { sida } = byggSida({ mall, platser, produkt: MOTOR, copy, nyaIdn: true });
