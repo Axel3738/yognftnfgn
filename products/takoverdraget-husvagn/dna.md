@@ -1,14 +1,18 @@
 # Creative DNA — Taköverdrag Husvagn 6,5 × 3 m
 
-Skapad 2026-09-14. Första avläsningen. Kampanj `120250147343350291`,
+Skapad 2026-09-14. **Uppdaterad 2026-09-16 (körning 2, `/cs` på Axels begäran).**
+Kampanj `120250147343350291`,
 `Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09`.
 
-## Verifierade fakta (produktsidan, avläst 2026-09-14)
+## Verifierade fakta (produktsidan, omläst live 2026-09-16)
 
 - URL: https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan
 - **1 129 kr** (jämförpris 1 469 kr) = 340 kr / 23 % rabatt.
-  Verifierat i produktens egen `.json`: `price 1129.00`, `compare_at_price 1469.00`.
+  Omverifierat 2026-09-16 i produktens publika `.json`: `price 1129.00`,
+  `compare_at_price 1469.00`. Oförändrat sedan 2026-09-14.
+- Takytan 6,5 × 3 m = **19,5 m²** (ren multiplikation av sidans egna mått).
 - Fri frakt inom Sverige · 5–10 arbetsdagar · 30 dagars öppet köp · Klarna.
+  ⚠️ Detta är **butikspolicy**, inte produktfakta — se butiksneutralitetsregeln nedan.
 - Rubrik: "Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan"
 - Sidans egna formuleringar (använd dessa, hitta aldrig på nya):
   - "Vattnet blir aldrig stående kring takluckorna – täcker hela takytan, 6,5 × 3 m"
@@ -18,69 +22,145 @@ Skapad 2026-09-14. Första avläsningen. Kampanj `120250147343350291`,
   - "Ryms i förvaringspåsen som följer med"
   - "Taket är det du aldrig ser – och det som kostar mest att laga"
   - "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern."
-- **Recensionerna får INTE citeras som kundröst.** 10 st, alla 5★, men alla
-  inlagda inom 11 sekunder (2026-09-08 22:48:34–22:48:45 UTC) och innehållslöst
-  generiska ("Bra skydd för taket och lätt att använda"). De klarar inte
-  tre-frågorstestet. Aggregatet **5,0 av 5 på 10 recensioner** står på sidan och
-  får användas.
+- **Recensionerna får INTE citeras som kundröst.** Omkontrollerat 2026-09-16:
+  fortfarande exakt 10 st, betyg 5,00 — oförändrat sedan 2026-09-14, alltså
+  ingen organisk recension har tillkommit på två dygn. De ursprungliga 10 lades
+  in inom 11 sekunder (2026-09-08 22:48:34–22:48:45 UTC) och är innehållslöst
+  generiska. Aggregatet **5,0 av 5 på 10 recensioner** står på sidan och får
+  användas ordagrant. **Noll review-bilder i batch #2** av det skälet.
 
-## Siffrorna (livstid, avläst 2026-09-14)
+## ⚠️ BUTIKSNEUTRALT MATERIAL — Axels beslut 2026-09-16
 
-Kampanj: 15 906 kr spend · 78 köp · ROAS 5,65 · intäkt 89 863 kr.
-**AOV 1 152 kr → break-even-CPA 707 kr.** Totalt vinstbidrag 39 732 kr.
-Kampanjen ligger på budgettaket 4 000 kr/dag och är kontots starkaste produkt.
+Batch #2 och framåt skrivs så att creativsen kan köras i **två olika butiker**.
+Det betyder i varje brief:
 
-| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
-|---|---|---|---|---|---|---|
-| GT_2_H1 (video) | 2 365 kr | 15 % | 18 | 131 kr | 8,59 | **10 357 kr (26 %)** |
-| SP_2_1 (statisk) | 2 965 kr | 19 % | 16 | 185 kr | 6,09 | 8 344 kr (21 %) |
-| CS_2_1 (statisk) | 798 kr | 5 % | 9 | 89 kr | 13,01 | 5 563 kr (14 %) |
-| CS_2_H1 (video) | 2 137 kr | 13 % | 10 | 214 kr | 5,65 | 4 931 kr |
-| PD_2_H1 (video) | 2 665 kr | 17 % | 9 | 296 kr | 3,81 | 3 696 kr |
-| PD_2_1 (statisk) | 601 kr | 4 % | 5 | 120 kr | 9,39 | 2 933 kr |
-| CS_1_H1 (video) | 509 kr | 3 % | 3 | 170 kr | 6,66 | 1 612 kr |
-| PD_1_H1 (video) | 611 kr | 4 % | 3 | 204 kr | 5,55 | 1 510 kr |
-| SP_2_H1 (video) | 2 748 kr | 17 % | 5 | 550 kr | 2,34 | 786 kr (2 %) |
+- Inget butiksnamn, ingen webbadress, ingen logga i bild eller ljud.
+- **Ingen fri frakt, ingen Klarna, inget öppet köp, ingen leveranstid, inga
+  returer.** Det är butikspolicy och skiljer sig mellan butikerna — en rad som
+  är sann i den ena butiken är en lögn i den andra.
+- Priset (1 129 / 1 469 kr) står kvar men är märkt som utbytbar plats i briefen.
+- Kvar att prata om: produkten, problemet, priset. Det räcker — CS-vinkeln som
+  är kampanjens starkaste bygger enbart på pris och produkt.
 
-För tidigt (ingen dom): CS_3_H1 (394 kr, 1 köp), PD_3_H1 (260 kr, 0 köp),
-SP_3_H1, GT_1_H1, SP_1_H1, GT_3_H1, GT_2_1 — alla under 300 kr.
+⚠️ Konsekvens bakåt: batch #1:s `CS_6_1` (fri frakt som huvudargument) och
+`BOF_2_1` (riskavlastning: fri frakt, öppet köp, Klarna) är **inte** återanvändbara
+i den andra butiken. De ligger kvar live i Bäverbutiken och rörs inte.
+
+## Siffrorna (livstid, avläst 2026-09-16)
+
+Kampanj: 29 185 kr spend · 123 köp · ROAS 4,87 · intäkt 142 190 kr.
+**AOV 1 156 kr → break-even-CPA 709 kr.** Budgettaket höjt 4 000 → 8 000 kr/dag.
+Kontots starkaste produkt, och den enda som fördubblat budgeten på två dygn.
+
+⚠️ **Datakvalitet:** annonsnivåns spend summerar till 31 055 kr mot kampanjens
+29 185 kr (106 %). Orsaken är att kampanjraden lästes 05:35 och annonsraderna
+en dryg timme senare samma dag — inte ett trasigt fält. Rangordningen nedan är
+gjord på annonsnivå, som är den färskare läsningen.
+
+### Vinstbidrag = (709 − CPA) × köp. Rangordnat på vinst, aldrig på ROAS.
+
+| Annons | Format | Spend | Sp% | Köp | CPA | ROAS | CTR | Vinstbidrag | Vinst% |
+|---|---|---|---|---|---|---|---|---|---|
+| CS_2_1 | statisk | 4 174 | 14,3 % | 26 | 161 | 7,30 | 2,48 % | **14 266** | 21,8 % |
+| CS_2_H1 | video | 4 069 | 13,9 % | 25 | 163 | 7,34 | 3,71 % | **13 662** | 20,9 % |
+| SP_2_1 | statisk | 6 674 | 22,9 % | 28 | 238 | 4,74 | 8,67 % | 13 184 | 20,2 % |
+| GT_2_H1 | video | 5 029 | 17,2 % | 25 | 201 | 5,84 | 4,35 % | 12 701 | 19,4 % |
+| PD_2_H1 | video | 2 975 | 10,2 % | 9 | 331 | 3,41 | 6,09 % | 3 408 | 5,2 % |
+| PD_2_1 | statisk | 874 | 3,0 % | 6 | 146 | 7,75 | 5,38 % | 3 381 | 5,2 % |
+| PD_1_H1 | video | 746 | 2,6 % | 4 | 186 | 5,20 | 6,66 % | 2 091 | 3,2 % |
+| CS_3_H1 | video | 961 | 3,3 % | 4 | 240 | 4,70 | 3,03 % | 1 876 | 2,9 % |
+| CS_1_H1 | video | 672 | 2,3 % | 3 | 224 | 5,04 | 3,14 % | 1 456 | 2,2 % |
+| **SP_2_H1** | video | 4 881 | 16,7 % | 6 | **814** | 1,55 | 4,52 % | **−626** | −1,0 % |
+
+Summa bedömbara: 65 398 kr vinstbidrag.
+
+**För tidigt (ingen dom, grind 300 kr / 3 köp):** hela batch #1 — PD_4_H1
+(490 kr, 1 köp), SP_4_H1 (307 kr, 1), BOF_2_1 (242 kr, 1), GT_4_H1 (189 kr, 0),
+GT_5_H1 (133 kr, 1), CS_4_1 (126 kr, 0), GT_6_1, BOF_1_1, UG_1_H1, CS_6_1,
+LI_1_1, CO_1_H1, RI_1_H1, TR_1_1, PD_5_1, BOF_3_1, SP_5_1, CO_2_1. Plus
+launchbatchens PD_3_H1, SP_3_H1, GT_1_H1, SP_1_H1, GT_3_H1, GT_2_1.
+
+### Vinstbidrag per vinkel (per spendkrona — det som styr nästa batch)
+
+| Vinkel | Spend | Köp | CPA | Vinstbidrag | Vinst per spendkrona |
+|---|---|---|---|---|---|
+| **CS** (pris/erbjudande) | 9 875 | 58 | 170 | **31 260** | **3,17 kr** |
+| **GT** (present) | 5 029 | 25 | 201 | 12 701 | 2,53 kr |
+| **PD** (demo) | 4 595 | 19 | 242 | 8 880 | 1,93 kr |
+| **SP** (social proof) | 11 556 | 34 | 340 | 12 558 | 1,09 kr |
 
 ## Winning DNA
 
-- **BEVISAT — present-vinkeln är kampanjens bästa.** `GT_2_H1` säger inte att
-  produkten är bra, den beskriver mottagaren: "Han pratar om husvagnen som om
-  den vore ett husdjur." CPA 131 kr på 18 köp. Detta är den enda vinkeln som
-  inte handlar om skydd, och den slår alla som gör det.
-- **BEVISAT — prisankaret är effektivast per krona.** `CS_2_1` (statisk) har
-  CPA 89 kr och ROAS 13,01 på bara 5 % av spenden. ⚠️ Dess live-copy innehåller
-  påhittad brådska ("Lagret är begränsat och priset gäller bara ett tag till")
-  — återanvänd den formuleringen aldrig; testa prisankaret utan den.
-- **BEVISAT — statiskt slår video på den här produkten.** Statiskt: 4 364 kr
-  spend, 30 köp, CPA 145 kr. Video: 11 035 kr, 48 köp, CPA 230 kr.
+- **BEVISAT — CS-vinkeln (prisankaret) är produktens starkaste, och den bär i
+  BÅDA formaten.** `CS_2_1` (statisk) CPA 161 och `CS_2_H1` (video) CPA 163 —
+  två kronor isär. CS står för 48 % av allt vinstbidrag på 34 % av spenden,
+  3,17 kr vinst per spendkrona mot SP:s 1,09. **Detta är nytt sedan 2026-09-14**,
+  då CS_2_H1 låg på CPA 214 och såg medelmåttig ut; den har halverat sin CPA
+  medan den skalat. Prisankaret är alltså inte formatberoende — det är argumentet
+  som bär, inte inpackningen.
+- **BEVISAT — presentvinkeln håller när den skalas.** `GT_2_H1` gick från
+  2 365 kr till 5 029 kr spend och CPA steg 131 → 201, men den ligger kvar som
+  fjärde bästa vinstbidrag. Mekanismen: den beskriver mottagaren i stället för
+  produkten ("Han pratar om husvagnen som om den vore ett husdjur").
+- **BEVISAT — CTR säger ingenting om vinst på den här produkten.** `SP_2_1` har
+  kampanjens klart högsta CTR (8,67 %) och CPA 238. `CS_2_1` har den lägsta
+  (2,48 %) och CPA 161 — 32 % billigare köp på en tredjedel så många klick.
+  Den billiga klicken är fällan: SP drar uppmärksamhet, CS drar köpare.
+  Bedöm aldrig en creative på CTR i den här kampanjen.
 
 ## Losing DNA
 
-- **BEVISAT — SP-vinkeln bär inte som video. Rent A/B, copyn är identisk.**
-  `SP_2_1` (statisk) CPA 185 kr mot `SP_2_H1` (video) CPA 550 kr. Exakt samma
-  brödtext och rubrik i båda creativsen, verifierat i kontot 2026-09-14 — enda
-  skillnaden är formatet. Den enskilt starkaste formatsignalen i hela kontot.
-  Hypotes att testa: SP-copyn måste LÄSAS, den fungerar inte som tittande.
+- **BEVISAT — `SP_2_H1` går nu med förlust och är kampanjens enda annons under
+  break-even.** CPA 814 mot break-even-CPA 709, ROAS 1,55 mot break-even 1,63,
+  vinstbidrag **−626 kr**. Den har ätit 4 881 kr = 16,7 % av kampanjens spend
+  och står fortfarande ACTIVE. Tvillingen `SP_2_1` (statisk, **identisk copy**,
+  verifierat i kontot 2026-09-14) ligger på CPA 238. Samma ord, tre gånger
+  dyrare köp.
+- **BEVISAT — SP-vinkeln är svagast per krona även när den fungerar.** 1,09 kr
+  vinst per spendkrona mot CS:s 3,17. Den drar mest spend av alla vinklar
+  (11 556 kr) och levererar näst minst per krona.
+
+## ⚠️ RÄTTELSE av 2026-09-14 års slutsats — läs den här innan du citerar DNA:t
+
+Den 14:e skrevs "**BEVISAT — statiskt slår video på den här produkten**"
+(statisk CPA 145, video CPA 230). **Den slutsatsen är fel och är struken.**
+
+Med två dygn mer data: statisk CPA 195, video CPA 254. Men drar man bort den
+enda förloraren `SP_2_H1` blir video-CPA **206 kr** mot statiskens 195 — elva
+kronor isär på 70 köp. Formatgapet var aldrig ett formatgap; det var **en enda
+annons** som drog ner hela videosnittet.
+
+Lärdomen är metodisk och gäller hela repot: **en gruppdom (format, vinkel,
+längd) som vilar på ett snitt måste räknas om utan sin extrem innan den skrivs
+som bevisad.** Ett snitt över nio annonser där en står för 17 % av spenden är
+inte en dom om gruppen — det är en dom om den annonsen.
+
+Det som däremot står kvar, och nu är starkare: **SP-copyn fungerar som läsning,
+inte som tittande.** Det är ett copy-fynd, inte ett formatfynd.
 
 ## Öppna frågor
 
-- Bär present-vinkeln som statisk? Den är bäst som video, statiskt är bäst som
-  format — kombinationen är otestad.
-- Går CS_2_1:s siffra att hålla utan den påhittade bristen?
+- Håller CS-vinkelns CPA när den får dubbla budgeten? Den skalar just nu snabbt.
+- Bär presentvinkeln som statisk? `GT_6_1` (batch #1) har bara 87 kr — obesvarad,
+  `GT_9_1` i batch #2 testar om igen.
+- Kronor eller procent i prisankaret? Otestat isolerat. `CS_10_1` mot `CS_11_1`
+  i batch #2 är ett rent A/B med allt annat lika.
+- Vad kostar en takreparation? Backloggen vill ankra priset mot den siffran, men
+  den är fortfarande **inte belagd** och får inte gissas. Tills den finns
+  formuleras vinkeln kvalitativt ur sidans egen rad.
 
-## Batch #1 — levererad 2026-09-14
+## Batch #1 — levererad 2026-09-14, live 2026-09-15
 
-18 briefer (7 video, 11 statiska, varav 3 BOF, inga review-bilder eftersom
-recensionerna inte duger som kundröst) skrivna och lagda som items i hubben
-`BÄVER Taköverdraget för Husvagn`
-(`collection://5f2270ab-908c-82ef-b029-0767819050db`), alla Status `Draft`.
-Verifierat med SQL mot collectionen: 7 video + 11 bild = 18.
-Hypoteser, källor och verifiering per brief står i `batch-log.md`.
+18 briefer (7 video, 11 statiska). Samtliga 18 står nu i `SE-ACTIVE to be
+translated` i hubben — levererade av redigerarna, uppladdade och igång.
+Snabbaste genomloppet i hela systemet: brief → live på ett dygn.
 
-Upptagna AD-ID i kontot före batchen: CS 1–3, GT 1–3, PD 1–3, SP 1–3.
-Nästa lediga efter batch #1: CS 7, GT 7, PD 6, SP 6, CO 3, LI 2, RI 2, TR 2,
-UG 2, BOF 4.
+**Feedbackloop: ingen av de 18 är bedömbar ännu.** Högsta spend är `PD_4_H1`
+på 490 kr med 1 köp — över spendgrinden men under köpgrinden. Ingen dom fälls,
+och hypoteserna i `batch-log.md` står kvar obesvarade till nästa `/cs`.
+Det är förväntat efter ett dygn, inte ett problem.
+
+Upptagna AD-ID i kontot före batch #2: CS 1–4 + 6, GT 1–6, PD 1–5, SP 1–5,
+CO 1–2, LI 1, RI 1, TR 1, UG 1, BOF 1–3.
+**Nästa lediga efter batch #2:** CS 12, GT 10, PD 10, SP 6, CO 5, LI 3, RI 5,
+TR 3, UG 3, OB 2, BOF 7.
