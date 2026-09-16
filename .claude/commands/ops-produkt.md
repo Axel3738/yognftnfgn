@@ -69,27 +69,18 @@ prefixet redan används, eller om länken inte svarar.
 Utskriften listar vad som är ifyllt och vad som återstår. Visa den listan i
 chatten — den är arbetsordern för nästa steg.
 
-### 2. Fyll i resten av produktfilen
-Det maskinen inte kan veta, i den här ordningen:
+### 2. Resten av produktfilen — kör på, fråga inte
+Axels besked 2026-09-16: **COGS och ekonomin sköter han på annat håll.** Fyll i
+`ekonomi.inkopskostnad` med talet han ger (eller det som redan står i källans
+minne) och gå vidare — stanna inte upp för att be om det.
 
-- **`ekonomi.inkopskostnad`** — KRITISKT, stoppar bygget. Axels COGS per styck
-  inklusive frakt in. **Fråga honom om den inte står någonstans; gissa aldrig.**
-  Break-even räknas ur den, och varje kill-beslut mäts mot break-even.
-- **`vinkel.huvudvinkel`, `malgrupp.beskrivning`, `problem`, `benefits`** —
-  KRITISKT. Vinkeln ska peka på en playbook-vinnare, en winning line eller en
-  swipe; kan den inte det märks den `gissning` (CLAUDE.md, "Så lär sig
-  systemet"). Läs källproduktens sida och Bäverbutikens annonser först.
-- **`beskrivning.*`** — block 1 och 3 på produktsidan.
-- **`leverantor.url`** — KRITISKT.
-- **`media.gif_problem` / `media_losning`** — demo-mp4:erna. Krav vid launch.
-- **`meta.page_id` / `pixel_id`** — butikens egna, kopieras ur butikens andra
-  produktfil. **ALDRIG från en annan verksamhet.**
-- **`offer.paket`** — nivåerna 1 / 2 / 4, mitten förvald, källans procent för
-  toppnivån (Axels beslut 2026-09-10). Har produkten varianter får paketet en
-  rullgardin per enhet — det sitter i temat, inget att bygga per produkt.
+Resten skrivs av sessionen utan mellanfrågor: `vinkel.*`, `malgrupp.*`,
+`beskrivning.*`, `leverantor.url`, `media.gif_*`, och `offer.paket` som
+nivåerna 1 / 2 / 4 med mitten förvald. Copyn skrivs av en subagent enligt
+CLAUDE.md regel 6 med `docs/copy-regler.md`.
 
-Copyn skrivs av en subagent enligt CLAUDE.md regel 6 med `docs/copy-regler.md`,
-och tre-frågorstestet redovisas.
+Två fält kopieras alltid ur butikens ANDRA produktfil, aldrig någon annanstans
+ifrån: **`meta.page_id` och `meta.pixel_id`** — de är butikens.
 
 Sedan: `node factory/validera.mjs factory/produkter/<id>.yaml` — grönt innan du
 går vidare.
@@ -141,17 +132,38 @@ deras prompt är `/notionscalercs <butik>`. Skriv om dem med `update_trigger`
 till `<butik>/<gamla-produkten>` **innan** den nya produkten får en state-fil,
 och rapportera det under Axels uppgifter om det inte hinns med.
 
-### 7. Annonserna
-`/ny-annonser <ny-produkt-id>` bygger kampanjen och annonserna ur källans
-creatives. Den bygger EN kampanj per marknad för produkten
-(`{BRAND}_SE_{Produkt}` / `{BRAND}_NO_{Produkt}`), allt PAUSED.
+### 7. Annonserna — det här sköter sig själv, utom EN sak
 
-⚠️ **Pixeln är butikens och Metas köp-event bär ingen produkt.** Två produkter
-med olika pris i samma butik gör att den billigas köpvolym får den dyras
-annonser att se lönsamma ut i CPA och ROAS. Ingen kod i repot delar upp köp
-per produkt (mätt 2026-09-14). Tills den finns: läs köp per produkt ur
-**Shopify**, inte ur pixeln, när en annons ska dömas — och skriv det i
-rapporten varje gång en flerproduktsbutik bedöms.
+`/ny-annonser <ny-produkt-id>` bygger EN kampanj per marknad för just den
+produkten (`{BRAND}_SE_{Produkt}` / `{BRAND}_NO_{Produkt}`) ur källans ACTIVE
+creatives, allt PAUSED. Inget behöver ändras för att det ska funka i en butik
+som redan har en produkt:
+
+- **Spenden delas rätt.** Egen kampanj ⇒ egen spend-rad.
+- **Domen går på rätt produkt.** `budgetrond.mjs` filtrerar kontot på
+  produktens `creative_prefix` (kampanjnamnet, eller annonsnamnen när
+  kampanjen heter något annat) och räknar mot **produktfilens egen**
+  break-even. Produkt 2 döms aldrig mot produkt 1:s tal.
+- **Briefer, leverans och översättning** går på egen hub + egna tre rutiner
+  (steg 8).
+
+⚠️ **Det enda som INTE delar sig: köpen.** Pixeln är butikens, och Metas
+Purchase-event bär ingen produkt. Meta bokför köpet på den kampanj som drev
+klicket — även om kunden klickade på produkt 1:s annons och la produkt 2 i
+korgen. I en enproduktsbutik är det samma sak. I en tvåproduktsbutik är det
+inte det. Ingen kod i repot delar upp köp per produkt (omkollat 2026-09-16:
+`content_ids|product_id` ger noll träffar i `skalning.mjs`, `budgetrond.mjs`,
+`ekonomi.mjs`).
+
+**Hur stort felet blir beror bara på prisavståndet.** Ligger produkterna nära
+varandra i pris och marginal (samma nisch, samma prisklass) är korskrediteringen
+i brus-nivå och domen håller. Skiljer de sig mycket — t.ex. 1 129 kr mot 199 kr
+— subventionerar den billigas köpvolym den dyras annonser, CPA ser bra ut, och
+felet syns aldrig som ett felmeddelande.
+
+**Regel tills Shopify-uppdelningen är byggd:** lägg bara produkter i samma
+OPS-butik om de ligger i samma prisklass. Gör de inte det — läs köp per produkt
+ur **Shopify** innan någon annons döms, och skriv i rapporten att du gjort det.
 
 ### 8. Rutinerna
 ```
@@ -175,7 +187,7 @@ delade OPS-kontot och båda går i Metas rate limit.
 ## DEFINITION OF DONE
 
 - [ ] Butiken fanns och var byggd; produkt-id och prefix lediga
-- [ ] Produktfilen skriven, `validera.mjs` grön, COGS från Axel (aldrig gissad)
+- [ ] Produktfilen skriven, `validera.mjs` grön
 - [ ] Eget `creative_prefix` och eget `kalla:`-block — inget delat med butikens andra produkt
 - [ ] Kollektionsblocket i butiksfilen när butiken går från en till två produkter
 - [ ] Bygget kört med ALLA produktfiler + `--igen kollektion,startsida,meny,tema`
