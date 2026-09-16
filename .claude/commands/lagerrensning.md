@@ -11,7 +11,9 @@ ett OPS-id som `carashell` — då slås butikens egen produkthandle upp ur
 `--igen <plats>` (generera om en bild), `--gempages` (dessutom en
 `.gempages`-fil att importera i GemPages — tillval), `--brand baverbutiken`
 (brandad sida — BARA om Axel ber om det), `--lank <länk>` (knapparnas länk
-om den inte går att härleda), `--opublicerad` (sidan skapas dold).
+om den inte går att härleda), `--opublicerad` (sidan skapas dold),
+**`--marknad <KOD>`** (samma sida på en annan marknad i samma butik, t.ex.
+`--marknad US` för carashell.com — se "Samma sida på en annan marknad").
 
 ```
 /lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
@@ -139,6 +141,56 @@ Axel klistrar gärna in fem länkar på en gång (2026-09-16). Då gäller:
   butiken som avvisar): bygg klart de andra, rapportera stoppet med orsak.
 - Rapporten är EN, med en rad per produkt (adress, rubrik, fem punktrubriker,
   bilder, testresultat) — och Axels lista sist bär alla adresserna.
+
+## Samma sida på en annan marknad (`--marknad US`)
+
+Axels fråga 2026-09-16 kväll: "gör en version som passar för carashell.com
+— det är samma Shopify-butik, bara att vi kör markets och olika språk."
+Marknaden är INTE en ny sida: **samma handle får en översättning på
+marknadens språk** (Shopifys Translations API), och marknadens domän visar
+den (carashell.com → engelska, USD). Stegen:
+
+1. **Den svenska sidan först** (steg 0–8 nedan, utan `--marknad`). Motorn
+   vägrar översätta en sida som inte finns.
+2. `node listicle/bygg.mjs <svensk länk> --butik <id> --marknad US --underlag`
+   → `underlag.en.json` med marknadens produkt: engelsk titel, engelsk
+   beskrivning och **$-priser lästa ur carashell.com** (inte omräknade —
+   USA-priset är Axels eget beslut per produkt).
+3. **Läs marknadens produktsida i webbläsarform** (`underlag.en.json` →
+   `marknad.lank`: FAQ, garanti, frakt, "what you get"). Fakta som får
+   användas är bara det som står DÄR. USA-sidan lovar t.ex. 90 dagars
+   garanti med "return or refund" och "Free shipping to the US", medan den
+   svenska sidan har 14 dagars ångerrätt — riskfritt-blocket följer
+   marknadens löfte. Mått i både cm och tum/fot, som sidan.
+4. **Skriv copyn på marknadens språk** som `copy.en.json` i samma mapp:
+   en amerikansk anpassning av den svenska (samma fem punkter, samma
+   grepp), inte en ordagrann översättning. Läsbarhetstestet gäller — läs
+   högt som en amerikan skulle säga det (windshield, cab, rest area, rig,
+   moisture check, full-body cover). Priserna som `$199` / `$249`; inget
+   butiksnamn (motorn stoppar källbutikens namn ur marknadslänken också);
+   inga procent; "while stock lasts" (motorn stoppar "before stock runs
+   out", "before it's gone", "last chance"). Tre-frågorstestet och
+   `lasbarhetstest` redovisas som vanligt, på engelska. Systersidan i
+   samma butik läses först så hero-greppen inte upprepas.
+5. **Bilderna delas** med den svenska sidan (samma bildplan, samma cache —
+   noll nya credits). Behöver marknaden egna bilder: `bildplan.en.json`.
+6. `--torr`, sedan skarpt. Motorn registrerar `title` + `body_html` på
+   locale `en` på den befintliga sidan, läser tillbaka lika, och läser
+   sedan sidan som kund på **marknadens adress**
+   (`https://carashell.com/pages/<handle>?country=US`): listiclen, ingen
+   header/footer, **den engelska rubriken finns och den svenska finns
+   inte**. Skärmdumparna ligger i `forhandsvisning-en/` — titta.
+7. **Rapporten:** marknadens adress (med `?country=`), priserna i
+   marknadens valuta, och vad som skiljer från den svenska (garanti,
+   frakt, enheter, ord). Axels klick: annonserna för marknaden
+   (Magiborsten UK för USA) pekar på marknadens adress — samma regel som
+   produktlänkarna i `/ops-oversatt`.
+
+⚠️ Containern går ut från USA, och carashell.se skickar amerikanska
+besökare vidare till carashell.com. Läser du en svensk sida själv: lägg på
+`?country=SE`. Motorns svenska kontroll gör det redan.
+⚠️ Ändras den svenska copyn senare: kör marknaden igen, annars ligger en
+gammal översättning kvar (Shopify märker den `outdated` men visar den).
 
 ## Gör i ordning
 
@@ -312,4 +364,5 @@ temat använder inte mallen — läs `listicle/README.md` → "Butiken".
 - [ ] Skarp körning: bilder på Shopifys CDN, sidan uppe i butiken med mallen `page.listicle` och läst tillbaka som kund utan header/footer/meny
 - [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på
 - [ ] batch-log uppdaterad om produkten har minne; committat och pushat
+- [ ] Med `--marknad`: copyn på marknadens språk mot marknadens egen produktsida (priser i dess valuta, dess garanti/frakt); översättningen läst tillbaka på marknadens domän på rätt språk; skärmdumparna i `forhandsvisning-<locale>/` tittade på
 - [ ] Rapport med adressen + Axels klick sist, numrerade

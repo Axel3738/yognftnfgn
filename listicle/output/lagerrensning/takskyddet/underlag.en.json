@@ -1,0 +1,117 @@
+{
+  "hamtat": "2026-09-16T20:12:33.233Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "kortTitel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "handle": "takskyddet",
+    "url": "https://carashell.se/products/takskyddet",
+    "typ": "",
+    "valuta": "SEK",
+    "pris": 1129,
+    "jamforpris": 1469,
+    "prisText": "1 129 kr",
+    "jamforprisText": "1 469 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-hopvikt.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-spanne.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  },
+  "dna": {
+    "id": "carashell/takskyddet",
+    "fil": "products/carashell/takskyddet/dna.md"
+  },
+  "sidhandle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning",
+  "marknad": {
+    "kod": "US",
+    "locale": "en",
+    "valuta": "USD",
+    "doman": "carashell.com",
+    "lank": "https://carashell.com/products/takskyddet?country=US",
+    "sidlank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+    "produkt": {
+      "titel": "Roof Cover for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)",
+      "kortTitel": "Roof Cover for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)",
+      "handle": "takskyddet",
+      "url": "https://carashell.com/products/takskyddet",
+      "typ": "",
+      "valuta": "USD",
+      "pris": 199,
+      "jamforpris": 249,
+      "prisText": "$199",
+      "jamforprisText": "$249",
+      "flerPriser": null,
+      "alternativ": [
+        {
+          "namn": "Title",
+          "varden": [
+            "Default Title"
+          ]
+        }
+      ],
+      "antalVarianter": 1,
+      "bilder": [
+        {
+          "index": 1,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "index": 2,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "index": 3,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-hopvikt.jpg",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "index": 4,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-spanne.jpg",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "beskrivning": "A 6.5 × 3 m (21.3 × 9.8 ft) roof cover — for rigs up to 21 ft — that covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
+    }
+  }
+}

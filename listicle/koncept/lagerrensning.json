@@ -11,5 +11,14 @@
   "rubrik": { "pris": true, "jamforpris": true },
   "jamforpris_behovs": true,
   "arlig_rubrik": "Jag ska vara ärlig:",
-  "riskfritt_rubrik": "Därför kan du testa helt riskfritt."
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt.",
+  "sprak": {
+    "en": {
+      "sidnamn": "{kortTitel} – Clearance sale (listicle)",
+      "sidtitel": "{kortTitel} – clearance sale",
+      "forfattare_obrandad": "Anders from the warehouse",
+      "arlig_rubrik": "I'll be honest:",
+      "riskfritt_rubrik": "That's why you can try it risk-free."
+    }
+  }
 }

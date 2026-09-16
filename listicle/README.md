@@ -101,6 +101,69 @@ därifrån, `hittaDna` hittar minnet i `products/<butik>/<produkt>/dna.md`, och
 knapparna blir `/products/<handle>` direkt. Copyn får då inte heller nämna
 källbutikens namn (`butiksOrd` ur länken — "hos CaraShell" stoppas).
 
+## Marknader — samma sida på ett annat språk (`--marknad US`)
+
+Axels fråga 2026-09-16 kväll: CaraShells två lagerrensningssidor "för
+carashell.com" — USA-marknaden. Det är **samma Shopify-butik** (Shopify
+Markets: egen domän, engelska, USD), så sidan dupliceras inte. Den svenska
+sidan får en **översättning** (Shopifys Translations API, `title` +
+`body_html` på locale `en`), och marknadens domän visar den. Samma handle,
+två språk.
+
+```bash
+node listicle/bygg.mjs https://carashell.se/products/takskyddet --butik carashell --marknad US --underlag
+node listicle/bygg.mjs https://carashell.se/products/takskyddet --butik carashell --marknad US --torr
+node listicle/bygg.mjs https://carashell.se/products/takskyddet --butik carashell --marknad US
+```
+
+- **Marknaden** läses ur `factory/butiker/<id>.yaml` → `butik.marknader`
+  (`land`, `locale`, `valuta`, `doman`) — samma rad `/ny-marknad` skrev
+  (`marknadForButik` i `butik.mjs`). Bäverbutiken har inga marknader.
+- **Produkten** läses från marknadens egen adress
+  (`https://carashell.com/products/takskyddet?country=US` → `$199` / `$249`
+  i USD, engelsk titel och text — `factory/opsmarknader.mjs` `lankFor`).
+  Svarar den adressen med samma tal som den svenska sidan i en annan valuta
+  stoppar bygget: domänen är inte kopplad till marknaden.
+- **Copyn** ligger i `copy.<locale>.json` i samma handle-mapp som den svenska
+  (`output/lagerrensning/takskyddet/copy.en.json`), skriven av
+  huvudsessionen mot marknadens produktsida (dess garanti, frakt, enheter).
+  Bildplanen och bildcachen (`bilder.json`) delas — noll nya credits;
+  `bildplan.<locale>.json` om marknaden behöver egna bilder.
+- **Språklagret `sprak.mjs`** byter de fasta texterna (By / Last updated /
+  Summary: / "Note: this is an advertisement."), valutan i prisspärren
+  (`$199` läses som pris; `1 129 kr` är ingen prisrad på en dollarsida),
+  period-/antalsorden i rubrikkontrollerna och de förbjudna fraserna
+  ("before stock runs out", "last chance" → "while stock lasts"). Konceptets
+  engelska sidnamn, sidtitel och författare står i `koncept/<id>.json` →
+  `sprak.en` (saknas språket stoppar bygget). Ny marknad med nytt språk = en
+  rad i `SPRAK` + `VALUTOR`, inga if-satser.
+- **Knapparna** är marknadens produktlänk med `?country=` — aldrig relativa
+  på en marknad, då tappar kunden marknaden (DryTrek 2026-09-10).
+- **Publiceringen** (`publiceraMarknad`): den svenska sidan MÅSTE finnas
+  (samma handle, mallen `page.listicle`). `oversattSida` hämtar
+  `translatableResource`-digest för `title` och `body_html`, registrerar med
+  `translationsRegister` (kräver `write_translations` — fabrikens app har
+  det) och läser tillbaka lika. Sedan läses sidan som kund på **marknadens
+  domän** (`https://carashell.com/pages/<handle>?country=US`): listiclen,
+  ingen header/footer, **den engelska hero-rubriken finns och den svenska
+  finns inte** (`granskaPublikSida` `maste`/`farInte`).
+- **Filer:** `underlag.en.json`, `copy.en.json`, `<slug>-<suffix>.en.html`,
+  `.en.sida.html`, `plan.en.json`, `forhandsvisning-en/` (gitignorerad).
+- ⚠️ Ändras den svenska sidan (ny copy → `pageUpdate`) märker Shopify
+  översättningen som `outdated` men visar den fortfarande. Kör marknaden
+  igen efter en svensk ändring så texterna följs åt.
+- ⚠️ **Containern går ut på nätet från USA** (mätt 2026-09-16,
+  api.country.is → US). Shopify skickar då en besökare på carashell.se
+  vidare (302) till carashell.com — som visar den engelska översättningen.
+  Därför läser den svenska kontrollen alltid `?country=SE` och kräver den
+  svenska rubriken (`HUVUDLAND` i `butik.mjs`). Läser du en svensk sida
+  själv härifrån: lägg på `?country=SE`, annars ser du engelska och tror
+  att den svenska sidan är borta. Det är den inte.
+
+Första körningen 2026-09-16: takskyddet och termoskyddet →
+https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US
+och https://carashell.com/pages/termoskydd-husbil-211-171-cm-lagerrensning?country=US.
+
 ## Obrandad som standard (Axels beslut 2026-09-16)
 
 "Jag hade verkligen uppskattat om listiclen är obrandad så att den funkar om

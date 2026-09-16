@@ -514,6 +514,40 @@ länkar relativt till `/products/takskyddet`. Filerna ligger i
 `listicle/output/lagerrensning/takskyddet/`. Ingen annons pekar dit ännu —
 sidan mäts som LP, aldrig som creative.
 
+**Samma sida i Bäverbutiken, 2026-09-16 kväll** (Axels fråga: "kan du göra
+så att denna finns på bäverbutiken.se också?"):
+**https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning** —
+knapparna går till Bäverbutikens produktsida
+`/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan`. Samma
+copy och samma bilder (kie-bilderna låg redan på Bäverbutikens CDN, cachen
+träffade på prompten — noll nya credits), samma pris 1 129 / 1 469 kr avläst
+ur Bäverbutikens `/products/<handle>.json`. Två block skrevs om mot
+Bäverbutikens produktsida: lyckas-blocket ("rem och dragsko" i stället för
+CaraShell-sidans plastkrokar och 30–40 cm, 210D-väv "inte tunn presenning",
+förvaringspåse, fri frakt inom Sverige, 5–10 arbetsdagar) och riskfritt-
+blocket (mallens "Därför kan du testa helt riskfritt." med **30 dagars öppet
+köp** — Bäverbutiken lovar det på sidan, CaraShell har 14 dagars ångerrätt).
+Temafilerna fanns redan på "UTKAST utan popup 2026-08-28" sedan axelbältets
+sida. Filerna ligger i
+`listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/`.
+Det är samma produkt i två butiker: en annons per butik pekar på sin egen
+sida, aldrig korsvis (fel pixel).
+
+**USA-versionen på carashell.com, 2026-09-16 sent på kvällen** (Axels
+fråga: "en version som passar för carashell.com"):
+**https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US**
+— samma sida (samma handle) med en engelsk ÖVERSÄTTNING via Translations
+API (`--marknad US`, ny funktion i `listicle/bygg.mjs`), ingen dubblettsida.
+Copyn `copy.en.json` skriven mot den engelska produktsidan: **$199 / $249**
+(USD, avlästa ur carashell.com), 90-day guarantee med return or refund,
+free shipping to the US, 5–10 business days, "up to 21 ft", mått i cm + ft/in,
+"travel trailer or motorhome", "moisture check". Samma bilder (cachen träffade
+— noll credits). Knapparna → `https://carashell.com/products/takskyddet?country=US`.
+Läst tillbaka på carashell.com: engelsk hero, ingen svensk text, ingen
+header/footer; carashell.se `?country=SE` visar fortfarande svenska.
+Annonserna i Magiborsten UK (US-kampanjen) pekar på den här adressen när
+Axel vill testa LP:n i USA.
+
 ---
 
 ## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms

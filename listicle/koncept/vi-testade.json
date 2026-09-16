@@ -11,5 +11,14 @@
   "rubrik": { "period": true },
   "jamforpris_behovs": false,
   "arlig_rubrik": "Jag ska vara ärlig:",
-  "riskfritt_rubrik": "Därför kan du testa helt riskfritt."
+  "riskfritt_rubrik": "Därför kan du testa helt riskfritt.",
+  "sprak": {
+    "en": {
+      "sidnamn": "{kortTitel} – We tested it (listicle)",
+      "sidtitel": "We tested {kortTitel}",
+      "forfattare_obrandad": "Anders, who tested it himself",
+      "arlig_rubrik": "I'll be honest:",
+      "riskfritt_rubrik": "That's why you can try it risk-free."
+    }
+  }
 }

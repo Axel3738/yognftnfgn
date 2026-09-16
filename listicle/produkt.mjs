@@ -10,6 +10,11 @@
 // Har varianterna olika pris tas det LÄGSTA (det som visas som "från") och
 // körningen säger det i planen.
 
+import { prisText, formateraPris } from './sprak.mjs';
+
+// prisText (svenskt pristal) bor i sprak.mjs sedan marknadsversionerna 2026-09-16 — kvar som export här.
+export { prisText };
+
 const BUTIK = 'https://baverbutiken.se';
 
 /** Handle ur en länk eller ett rent handle. Tål query, språkprefix, avslutande slash. */
@@ -31,16 +36,6 @@ export function produktJsonUrl(lank) {
     return `${u}.json`;
   }
   return `${BUTIK}/products/${handle}.json`;
-}
-
-/** Svenskt pristal: 599 → "599 kr", 1129 → "1 129 kr". Hela kronor; ören visas bara om de finns. */
-export function prisText(tal) {
-  const n = Number(tal);
-  if (!Number.isFinite(n)) return '';
-  const hel = Math.trunc(n);
-  const ore = Math.round((n - hel) * 100);
-  const grupp = String(Math.abs(hel)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-  return `${hel < 0 ? '-' : ''}${grupp}${ore ? `,${String(ore).padStart(2, '0')}` : ''} kr`;
 }
 
 /** Titeln före första " – " / " - " / " | ": "Axelbälte för Trimmer – Justerbart…" → "Axelbälte för Trimmer". */
@@ -71,8 +66,12 @@ export function renText(html) {
     .trim();
 }
 
-/** Ren logik: Shopifys produkt-JSON → vår form. Testbar utan nät. */
-export function tolkaProdukt(json, { lank = null } = {}) {
+/**
+ * Ren logik: Shopifys produkt-JSON → vår form. Testbar utan nät.
+ * `valuta` är valutan talen i JSON:en står i (SEK som standard; USD när
+ * länken är marknadens egen domän, t.ex. carashell.com) — prisText följer den.
+ */
+export function tolkaProdukt(json, { lank = null, valuta = 'SEK' } = {}) {
   const p = json?.product ?? json;
   if (!p?.handle || !p?.title) throw new Error('Produkt-JSON saknar handle eller title.');
   const varianter = (p.variants ?? []).map((v) => ({
@@ -95,8 +94,9 @@ export function tolkaProdukt(json, { lank = null } = {}) {
     typ: p.product_type ?? '',
     pris,
     jamforpris,
-    prisText: prisText(pris),
-    jamforprisText: jamforpris != null ? prisText(jamforpris) : null,
+    valuta: String(valuta ?? 'SEK').toUpperCase(),
+    prisText: formateraPris(pris, valuta),
+    jamforprisText: jamforpris != null ? formateraPris(jamforpris, valuta) : null,
     flerPriser: priser.length > 1 ? priser : null,
     varianter,
     alternativ: (p.options ?? []).map((o) => ({ namn: o.name, varden: o.values ?? [] })),
@@ -105,13 +105,13 @@ export function tolkaProdukt(json, { lank = null } = {}) {
   };
 }
 
-/** Hämtar produkten från butiken. Kastar med läsbart skäl. */
-export async function hamtaProdukt(lank, { fetchFn = fetch } = {}) {
+/** Hämtar produkten från butiken. Kastar med läsbart skäl. `valuta` = talens valuta på den adressen. */
+export async function hamtaProdukt(lank, { fetchFn = fetch, valuta = 'SEK' } = {}) {
   const url = produktJsonUrl(lank);
   if (!url) throw new Error(`Kan inte läsa ett produkt-handle ur "${lank}". Ge länken till produktsidan (…/products/<handle>).`);
   const svar = await fetchFn(url, { headers: { accept: 'application/json' } });
   if (svar.status === 404) throw new Error(`Produkten finns inte: ${url} svarade 404. Kontrollera länken.`);
   if (!svar.ok) throw new Error(`Butiken svarade ${svar.status} på ${url}.`);
   const json = await svar.json();
-  return tolkaProdukt(json, { lank });
+  return tolkaProdukt(json, { lank, valuta });
 }

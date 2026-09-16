@@ -1,0 +1,46 @@
+{
+  "punkt1": {
+    "nyckel": "f355e6e09736",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/6af53dfef89f2e57d1111d31804128d6_1789555627620.png",
+    "taskId": "6af53dfef89f2e57d1111d31804128d6",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/bilder/punkt1.png",
+    "datum": "2026-09-16"
+  },
+  "punkt2": {
+    "nyckel": "4b184da8faf6",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/6663e5472b641197077bf170ea1569c2_1789555795833.png",
+    "taskId": "6663e5472b641197077bf170ea1569c2",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/bilder/punkt2.png",
+    "datum": "2026-09-16"
+  },
+  "punkt3": {
+    "nyckel": "ac40681c26bf",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png",
+    "taskId": "266e9f18aaba3f3bb7267aa90943e138",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/bilder/punkt3.png",
+    "datum": "2026-09-16"
+  },
+  "punkt4": {
+    "nyckel": "867c87975162",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/9414240ac7db8a683af267015cee9306_1789555706788.png",
+    "taskId": "9414240ac7db8a683af267015cee9306",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/bilder/punkt4.png",
+    "datum": "2026-09-16"
+  }
+}

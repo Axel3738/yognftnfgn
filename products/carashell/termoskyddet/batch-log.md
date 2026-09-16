@@ -220,3 +220,46 @@ annons (regel 3).
   ska starta).
 - Batch: `market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` (jobb.json,
   jobb-approved.json, discord-jobb.json + köloggarna).
+
+---
+
+## LP lagerrensning 2026-09-16 kväll — samma sida i två butiker
+
+**CaraShell:** https://carashell.se/pages/termoskydd-husbil-211-171-cm-lagerrensning —
+byggd av en annan session samma dag (`/lagerrensning https://carashell.se/products/termoskyddet`,
+commit `64ebdc22` på grenen `claude/dreamy-carson-rejnmn`, inte på `main` när
+det här skrevs). Obrandad, "Anders på lagret", pris **559 / 932 kr**, 14 dagars
+ångerrätt ("Om det inte känns rätt"), punkt 1–4 kie-bilder på Bäverbutikens CDN,
+punkt 5 produktbild 2 (husbilen i tallskogen), lyckas produktbild 1 (skyddet
+med måtten). Filerna: `listicle/output/lagerrensning/termoskyddet/` på den grenen.
+
+**Bäverbutiken:** https://baverbutiken.se/pages/termoskydd-husbil-211-171-cm-lagerrensning —
+Axels fråga ("gör samma sak för denna"), byggd i den här sessionen: samma copy
+och samma bilder (cachen träffade på prompten — noll nya kie-credits; Bäverbutikens
+produktsida har samma tre bilder i samma ordning), knapparna till
+`/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande`, pris 559 / 932 kr
+avläst ur Bäverbutikens `/products/<handle>.json`. Varje faktapåstående i copyn
+står ordagrant på Bäverbutikens sida (imma på insidan, trettio grader, klockan
+fyra, rastplatsen, 211/171/90 cm, flikarna i dörrkarmen, två minuter på utsidan).
+Två ställen omskrivna: fraktmeningen i lyckas-blocket (fri frakt inom Sverige,
+5–10 arbetsdagar, **30 dagars öppet köp**) och riskfritt-blocket (mallens
+"Därför kan du testa helt riskfritt." — Bäverbutiken lovar pengarna tillbaka
+inom 30 dagar, CaraShell gör det inte). Temafilerna fanns redan på "UTKAST utan
+popup 2026-08-28". Läst tillbaka som kund utan header/footer/meny. Filerna:
+`listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/`.
+
+Regeln, som för takskyddet: en produkt i två butiker får två sidor med varsin
+produktlänk. OPS-kontots annonser pekar på CaraShell-sidan, MagiBorstens på
+Bäverbutikens — aldrig korsvis, då bokförs köpen på fel pixel.
+
+**USA-versionen på carashell.com, 2026-09-16 sent på kvällen:**
+**https://carashell.com/pages/termoskydd-husbil-211-171-cm-lagerrensning?country=US**
+— samma sida med en engelsk översättning (`--marknad US`), inte en ny sida.
+Copyn `copy.en.json` mot den engelska produktsidan: **$99 / $124** (USD ur
+carashell.com), "windshield thermal cover", 86 °F i stället för trettio grader
+(sidans egen siffra), four a.m., rest area, flaps clip into the door frame,
+90-day guarantee, free shipping to the US. Samma bilder, noll credits.
+Knapparna → `https://carashell.com/products/termoskyddet?country=US`. Läst
+tillbaka på carashell.com på engelska; carashell.se `?country=SE` svenska.
+Den svenska CaraShell-sidans filer ligger nu också på `main`-grenen härifrån
+(hämtade från `claude/dreamy-carson-rejnmn`, samma innehåll).

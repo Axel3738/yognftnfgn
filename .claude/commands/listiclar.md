@@ -6,7 +6,9 @@ nästa; commit efter varje produkt — se `/lagerrensning` → "Flera produkter
 i samma kommando"). Valfritt
 `7` (anledningar-sidan får sju punkter — standard fem; skriv `5 7` för att
 bygga båda), `--butik <id>` (standard Bäverbutiken; annars ett OPS-id),
-`--torr`.
+`--torr`, `--marknad <KOD>` (alla tre sidorna på en annan marknad i samma
+butik — kräver att de svenska sidorna finns; reglerna i `/lagerrensning` →
+"Samma sida på en annan marknad", en `copy.en.json` per koncept).
 
 ```
 /listiclar https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor
