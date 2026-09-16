@@ -814,6 +814,40 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `angerratt.mjs`) stod som "Contact" i en-filen och "Kontakt" i nb-filen —
    subagenterna hade tappat en rad i sidfotsmenyn. Rättat: "Return an order"
    / "Angre kjøp". Läs sidfoten på varje /<locale> när menyn ändras.
+21. ⚙️ **Cookie-rutan och Judge.me:s knapptexter — mätt 2026-09-16 kväll,
+   inget ändrat (Axels order: vänta).** Två frågor från Axel, båda besvarade
+   med mätningar i stället för gissningar:
+   - **"Stäng av cookie-grejen i USA."** Den är redan av för amerikaner.
+     `privacySettings.banner` är `autoManaged: true`, och Shopifys egen
+     samtyckestabell (`consentPolicy`, 319 rader) säger `consentRequired:
+     false` på alla 52 US-rader — bara `dataSaleOptOutRequired: true` i 15
+     delstater (CA, CO, CT, DE, FL, IA, MT, NE, NH, NJ, OR, TN, TX, UT, VA),
+     vilket ger en "Your privacy choices"-sida, ingen ruta. Renderat i
+     headless Chrome från containerns IP (Ohio): ingen ruta, ingen
+     integritetslänk i sidfoten. **Rutan följer besökarens land, inte
+     domänen** — SE och NO står `consentRequired: true`, så Axel ser den på
+     carashell.com för att han sitter i Sverige. Att ta bort den för honom
+     vore att ta bort den för svenska kunder. Appen har
+     `read_privacy_settings` + `write_privacy_settings` (fler än
+     `KRAVDA_SCOPES`), så `consentPolicyUpdate` GÅR — men det finns inget
+     att göra.
+   - **"Gör engelska till primärspråk så Judge.me funkar."** Judge.me:s
+     egen hjälpartikel (8389840) säger motsatsen: välj i **Settings →
+     Language** det språk som matchar butikens *default published
+     language* (svenska) i "Widget and notification emails language",
+     bocka **"Enable multi-language widgets"** under "Widgets and
+     translations", Spara — sedan översätts knapptexterna automatiskt per
+     Shopify-språk (gratisplanen räcker; "Refresh list" eller upp till 24 h
+     innan språket syns). Sidan bar 2026-09-16 kväll `jdgmSettings` med
+     enbart svenska texter på /en ⇒ rutan är sannolikt inte ibockad.
+     **Byte av primärspråk är dessutom dyrt och farligt:** Shopify raderar
+     befintliga översättningar för språket man byter TILL (de 150 en-raderna),
+     översätter inget själv, tar bort svenska som språk tills det läggs
+     till igen som översättning — och hela fabriken är svensk-först
+     (`oversattning.mjs` läser underlaget ur resurserna, `TEMAORD` med `''`
+     = sv, `kundvy-kor`, alla andra OPS-butiker). Kassan är inget argument:
+     Shopify översätter kassan per publicerat språk oavsett vilket som är
+     primärt. Rekommendation: rutan i Judge.me, aldrig språkbytet.
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
