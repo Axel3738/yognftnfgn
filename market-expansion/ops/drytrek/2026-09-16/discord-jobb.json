@@ -1,0 +1,21 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-16",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "Nothing to translate today: the Norwegian queue is empty. The last two films went live yesterday.",
+  "The Norwegian campaign is unchanged at 47 ads, all ACTIVE."
+ ],
+ "varningar": [
+  "The price line in the run log was wrong, and it is now fixed. It read 389 NOK, which is a figure that exists nowhere.",
+  "Shopify's product JSON always answers in the shop's base currency and never names it. The new market code read that number and stamped the market's currency onto it.",
+  "The real Norwegian price is 379 kr, compare-at 633 kr, read from the product page itself. The same error affected HeimGuard (799 vs 779) and TackleBay (289 vs 282). CaraShell US was correct by luck, because that shop's base currency really is USD.",
+  "No ad was wrongly stopped or wrongly passed by this: the price guard trips at 20% and the error was 2.5%.",
+  "The Norwegian ads now running say 389 kr while the shop shows 379 kr to Norwegian customers. It is burned into the picture and read out in the voice-over, so it cannot be corrected without re-rendering. Left as is, in line with the earlier decision on the 381/635 films."
+ ],
+ "action_axel": [],
+ "nasta_korning": "2026-09-17"
+}

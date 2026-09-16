@@ -263,6 +263,23 @@ export function produktJsonUrl(url) {
   } catch { return null; }
 }
 
+/** Pris + valuta ur produktsidans JSON-LD, som Shopify renderar i MARKNADENS valuta.
+ *
+ *  ⚠️ `/products/<handle>.json` svarar ALLTID i butikens basvaluta och säger inte
+ *  vilken. Mätt 2026-09-16 på drytrek.se: `.json` gav 389, medan `/nb/…?country=NO`
+ *  visade **379,00 kr** med `"priceCurrency":"NOK"` i JSON-LD:n. Att stämpla
+ *  marknadens valuta på basvalutans tal ger "389 NOK" — ett pris som inte finns
+ *  någonstans, och precis det regel 4 i /ops-oversatt förbjuder. */
+export function prisUrJsonLd(html, valuta) {
+  const träffar = [...String(html ?? '').matchAll(/"price":"?([0-9]+(?:\.[0-9]+)?)"?,"priceCurrency":"([A-Z]{3})"/g)];
+  const iValutan = träffar.filter((t) => t[2] === valuta).map((t) => Number(t[1])).filter(Number.isFinite);
+  if (!iValutan.length) {
+    const andra = [...new Set(träffar.map((t) => t[2]))];
+    return { pris: null, skal: andra.length ? `sidan prissätts i ${andra.join('/')}, inte ${valuta}` : 'sidan bär ingen JSON-LD med pris' };
+  }
+  return { pris: iValutan[0], min: Math.min(...iValutan), max: Math.max(...iValutan), valuta, skal: null };
+}
+
 /** Pris ur ett products/<handle>.json-svar: variants[0].price + min/max över varianterna. */
 export function prisUr(svar, valuta = null) {
   const p = svar?.product ?? svar;
@@ -324,7 +341,39 @@ async function hamtaHub(databaseId) {
 }
 
 /** Pris ur butiken. Timeout 10 s. Lösenordsskyddad sida ⇒ null med skäl. */
-async function hamtaPris(lank, valuta) {
+/** Produktsidan i marknadens land, läst som HTML. */
+async function hamtaMarknadspris(lank, valuta, land) {
+  let url;
+  try {
+    const u = new URL(String(lank));
+    u.search = ''; u.hash = '';
+    u.searchParams.set('country', land);
+    url = u.toString();
+  } catch { return { pris_butik: null, skal: `länken "${lank}" går inte att tolka` }; }
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), 15000);
+  try {
+    const res = await fetch(url, { signal: ac.signal, headers: { 'user-agent': 'Mozilla/5.0 (ops-leveranskon)' } });
+    if (!res.ok) return { pris_butik: null, skal: `${url} → HTTP ${res.status}` };
+    const p = prisUrJsonLd(await res.text(), valuta);
+    if (!p.pris) return { pris_butik: null, skal: p.skal };
+    return { pris_butik: { pris: p.pris, min: p.min, max: p.max, valuta, jamforpris: null, titel: null, handle: null, kalla: url }, skal: null };
+  } catch (e) {
+    return { pris_butik: null, skal: e.name === 'AbortError' ? `${url} svarade inte inom 15 s` : `${url}: ${e.message}` };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+async function hamtaPris(lank, valuta, land = null, basvaluta = 'SEK') {
+  // Har marknaden en EGEN valuta måste priset läsas på marknadens sida — se
+  // prisUrJsonLd ovan. Går det inte: rapportera basvalutans tal MED basvalutans
+  // namn och skälet, aldrig marknadens valuta på ett omräknat tal.
+  if (land && valuta !== basvaluta) {
+    const sid = await hamtaMarknadspris(lank, valuta, land);
+    if (sid.pris_butik) return sid;
+    var marknadsskal = sid.skal;
+  }
   const url = produktJsonUrl(lank);
   if (!url) return { pris_butik: null, skal: `länken "${lank}" pekar inte på /products/<handle>` };
   const ac = new AbortController();
@@ -339,9 +388,12 @@ async function hamtaPris(lank, valuta) {
     if (!res.ok) return { pris_butik: null, skal: `${url} → HTTP ${res.status}` };
     const ct = res.headers.get('content-type') || '';
     if (!/json/i.test(ct)) return { pris_butik: null, skal: `${url} gav ${ct || 'okänd typ'}, inte JSON — troligen lösenordsskyddad` };
-    const p = prisUr(await res.json(), valuta);
+    const p = prisUr(await res.json(), marknadsskal ? basvaluta : valuta);
     if (!p) return { pris_butik: null, skal: `${url} har inga varianter med pris` };
-    return { pris_butik: { ...p, kalla: url }, skal: null };
+    return {
+      pris_butik: { ...p, kalla: url, ...(marknadsskal ? { basvaluta: true } : {}) },
+      skal: marknadsskal ? `${valuta}-priset gick inte att läsa (${marknadsskal}) — talet nedan är butikens ${basvaluta}-pris, INTE ${valuta}` : null,
+    };
   } catch (e) {
     return { pris_butik: null, skal: e.name === 'AbortError' ? `${url} svarade inte inom 10 s` : `${url}: ${e.message}` };
   } finally {
@@ -473,7 +525,12 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const prisCache = new Map();
   const prisFor = async (lank) => {
     if (!lank) return { pris_butik: null, skal: 'ingen länk' };
-    if (!prisCache.has(lank)) prisCache.set(lank, await hamtaPris(lank, marknaden.oversatts ? marknaden.valuta : (butik.post.valuta ?? 'SEK')));
+    if (!prisCache.has(lank)) prisCache.set(lank, await hamtaPris(
+      lank,
+      marknaden.oversatts ? marknaden.valuta : (butik.post.valuta ?? 'SEK'),
+      marknaden.oversatts ? marknaden.country : null,
+      butik.post.valuta ?? 'SEK',
+    ));
     return prisCache.get(lank);
   };
   const forstaLandning = raa.map((r) => r.landning).find(Boolean) ?? null;

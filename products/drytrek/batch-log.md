@@ -982,3 +982,60 @@ ett längre fönster innan de skrivs som fasta.
 
 Hubben: 38 Draft, 31 Approved, 0 i översättningskön, 10 parkerade
 `Damasker_*`-rader kvar orörda.
+
+---
+
+## Norge 2026-09-16 — tom kö, men prisavläsningen visade sig ljuga
+
+Rutinen triggade 13:50 UTC. **0 rader** i `SE-ACTIVE to be translated` — inget
+att översätta. Kön har varit tom sedan de två sista gick live i går.
+
+Men en siffra i körloggen hade bytt betydelse över natten. Där det i går stod
+`Pris ur butiken: 389 SEK` stod det i dag `389 NOK` — samma tal, ny valuta.
+
+**Talet 389 NOK finns inte.** Mätt samma dag:
+
+| Källa | Svar |
+|---|---|
+| `/nb/products/damasker.json` | 389 — **basvalutan**, och svaret säger inte vilken |
+| `/nb/products/damasker?country=NO` | **379,00 kr**, `"priceCurrency":"NOK"` i JSON-LD, 18 av 18 |
+| `/nb/products/damasker` utan `?country=NO` | SEK |
+| `/products/damasker` (SE) | SEK |
+
+Shopifys `.json`-endpoint svarar **alltid** i butikens basvaluta och nämner den
+aldrig. Den nya marknadskoden i `tools/ops-leveranskon.mjs` läste det talet och
+**stämplade på marknadens valuta**. Norges riktiga pris är 379 NOK (jämförpris
+633), inte 389.
+
+Samma fel på alla NO-butiker, ~2,5 % i storlek eftersom det är SEK→NOK-kursen:
+
+| Butik | `.json` (bas) | marknadens sida | gammal utskrift |
+|---|---|---|---|
+| DryTrek | 389 SEK | **379 NOK** | 389 NOK |
+| HeimGuard | 799 SEK | **779 NOK** | 799 NOK |
+| TackleBay | 289 SEK | **282 NOK** | 289 NOK |
+| CaraShell US | 199 USD | 199 USD | 199 USD ✅ (carashell.com har USD som basvaluta) |
+
+**Ingen annons stoppades eller släpptes fel av det här.** Stoppregeln går på
+20 % avvikelse och felet är 2,5 %. Skadan är en annan: rule 4 säger att ett
+NOK-pris aldrig får hittas på, och loggraden såg ut som en mätning. En session
+som läst "389 NOK" hade kunnat skriva in det i norsk copy i god tro.
+
+**Lagat:** `hamtaPris` läser marknadens egen sida med `?country=<land>` och
+plockar pris + `priceCurrency` ur JSON-LD:n när marknadens valuta skiljer sig
+från butikens (`prisUrJsonLd`, 2 nya tester). Går det inte rapporteras
+basvalutans tal **med basvalutans namn och skälet** — aldrig marknadens valuta
+på ett omräknat tal. Verifierat mot fyra butiker och två marknader.
+`npm test` 1 288/1 288.
+
+⚠️ **De norska annonser som kör nu säger 389 kr** (de äldre 381/635) medan
+butiken visar **379 kr / 633 kr** för norska kunder. Inbränt i bild och
+inläst i voiceovern — går inte att rätta utan omrendering. Axel har redan
+sagt nej till att skriva om dem för 381/635-avvikelsen (2026-09-13), och
+den här är mindre. Ingen åtgärd, men skrivet så nästa session inte tror
+att 389 är norskt facit.
+
+⚠️ **Lärdomen, samma familj som gårdagens:** ett tal som bär fel etikett ser
+exakt ut som ett mätt tal. `.json`-endpointen svarar villigt med en siffra på
+varje språkprefix — den siffran är bara aldrig marknadens. Läs valutan ur
+samma svar som priset, eller rapportera att du inte kunde.
