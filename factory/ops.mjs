@@ -91,6 +91,7 @@ import { sattContinue } from './lagerpolicy.mjs';
 import { sakerstallBonus } from './bonus.mjs';
 import { byggPaketplan, byggPaket, paketRader } from './paket.mjs';
 import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad } from './marknad.mjs';
+import { byggPrislistplan, sakerstallPrislistor } from './prislista.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
 import { hamtaStartsida, hamtaProduktsida } from './kundvy-kor.mjs';
@@ -117,6 +118,7 @@ import {
   patchaMsPaketValuta,
   msHeadGallerifilter,
   GALLERIFILTER_MARKE,
+  localeMarke,
   byggKorgUpsell,
   byggTillagg,
   harTillagg,
@@ -434,9 +436,9 @@ export const STEG = [
               ? ` (flerprodukt: gemensamma A/B-paketblock under testet "${gemensamtPaketTest(ctx.produkter.map((pk) => pk.p))}", trust/leverans ur butiken, ingen fullpris-kryssruta)`
               : ' (flerprodukt: produkterna har OLIKA paket-test — inga paketblock i den delade mallen, sätt samma offer.paket.test)'),
         'sections/header-group.json: annonsrad + huvudmeny, väljare på när marknader finns',
-        `snippets/ms-head.liquid: gallerifilter [SV]/[NO]${bonus.length > 0 ? ', omhämtning av korgen för upsellen' : ''}`,
+        `snippets/ms-head.liquid: gallerifilter [SV]${lista(ctx.butik.butik?.marknader).map((m) => `/[${localeMarke(m.locale)}]`).join('')}${bonus.length > 0 ? ', omhämtning av korgen för upsellen' : ''}`,
         bonus.length > 0 ? `korg-upsell för ${bonus[0]}` : 'ingen bonusprodukt — ingen korg-upsell',
-        'snippets/ms-paket.liquid: locale-grenar för temats svenska ord',
+        `snippets/ms-paket.liquid + custom_liquid-blocken: en Liquid-gren per marknadsspråk (${lista(ctx.butik.butik?.marknader).map((m) => m.locale).filter(Boolean).join(', ') || 'inga'})`,
         'produktmallen skrivs om tills tillbakaläsningen stämmer (max 3 försök)',
         ...perProdukt,
       ];
@@ -444,7 +446,12 @@ export const STEG = [
     async kor(ctx) {
       const tema = await arbetstema(ctx);
       const las = (f) => hamtaTemafil(tema.id, f);
-      const nb = lasOversattning(ctx.butik.butik.id, 'nb')?.nb ?? {};
+      // Ett marknadsspråk per rad i butik.marknader (nb, en …) — varje språk
+      // får sin egen Liquid-gren i custom_liquid-blocken och snippeten. Saknas
+      // översättningsfilen får språket en tom mapp: svenskan står kvar och
+      // syns som markör i kundvyn, aldrig tyst.
+      const marknadsLocales = [...new Set(lista(ctx.butik.butik?.marknader).map((m) => String(m.locale ?? '').trim()).filter((l) => l && l !== 'sv'))];
+      const oversattningar = Object.fromEntries(marknadsLocales.map((l) => [l, lasOversattning(ctx.butik.butik.id, l)?.nb ?? {}]));
       const produkt = ctx.produkter.length === 1 ? ctx.p : null;
 
       // Fabriksägda filer skrivs alltid över — bas-zip:ens kopia av
@@ -462,21 +469,23 @@ export const STEG = [
         if (msHead && upsell.msHeadTillagg && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${upsell.msHeadTillagg}`;
         if (produkt && harTillagg(produkt)) {
           const sv = tillaggTexter(produkt);
-          Object.assign(filer, byggTillagg(bonusHandle, { sv, nb: { label: nb['liquid.tillagg.label'], info: nb['liquid.tillagg.info'] } }));
+          const perSprak = Object.fromEntries(Object.entries(oversattningar).map(([l, o]) => [l, { label: o['liquid.tillagg.label'], info: o['liquid.tillagg.info'] }]));
+          Object.assign(filer, byggTillagg(bonusHandle, { sv, ...perSprak }));
         }
       }
       if (msHead && !msHead.includes(GALLERIFILTER_MARKE)) {
-        const locales = ['sv', ...lista(ctx.butik.butik?.marknader).map((m) => String(m.locale ?? '').trim()).filter(Boolean)];
-        msHead = `${msHead}\n${msHeadGallerifilter(locales)}`;
+        msHead = `${msHead}\n${msHeadGallerifilter(['sv', ...marknadsLocales])}`;
       }
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;
 
       const msPaket = await las('snippets/ms-paket.liquid');
       if (msPaket) {
-        // Två oberoende, idempotenta patchar: norska ord + paketpris i
-        // kundens valuta (fastpris_valutor). Skrivs bara om något ändrades.
+        // Två oberoende, idempotenta patchar: temats ord per marknadsspråk +
+        // paketpris i kundens valuta (fastpris_valutor). Skrivs bara om något
+        // ändrades. Ordpatchen bygger om grenarna ur butikens språk, så en
+        // butik som får ett nytt språk får sin gren vid nästa `--igen tema`.
         let s = msPaket;
-        for (const patch of [patchaMsPaket, patchaMsPaketValuta]) {
+        for (const patch of [(x) => patchaMsPaket(x, marknadsLocales), patchaMsPaketValuta]) {
           const p = patch(s);
           if (p) s = p;
         }
@@ -492,7 +501,7 @@ export const STEG = [
       for (let forsok = 1; forsok <= 3; forsok++) {
         const befintlig = await las('templates/product.json');
         if (!befintlig) break;
-        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, produkter: ctx.produkter.map((pk) => pk.p), butik: ctx.butik, nb }) };
+        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, produkter: ctx.produkter.map((pk) => pk.p), butik: ctx.butik, oversattningar }) };
         await skrivTemafiler(tema.id, mall);
         const fel = await verifieraSkrivning(tema.id, mall);
         if (fel.length === 0) {
@@ -991,6 +1000,34 @@ export const STEG = [
       }
       if (manuella.length > 0) return { manuell: manuella.join(' · '), underlag: antal, utfall };
       return { underlag: antal, utfall };
+    },
+  },
+  {
+    // Fasta priser i marknadens EGEN valuta (ekonomi.marknadspriser i
+    // produktfilen): prislista + marknadskatalog + pris/jämförpris per
+    // variant. Receptet mättes för hand på CaraShell NOK 2026-09-11
+    // (API-GRANSER.md) men fanns aldrig som steg — NOK-priset sattes med tre
+    // lösa anrop. Efter `marknad` (behöver marknadens id) och efter `paket`
+    // (paketnivåernas fastpris_valutor räknas ur samma marknadspriser).
+    id: 'prislista',
+    namn: 'Prislistor per marknad (fasta priser i marknadens valuta)',
+    niva: 'produkt',
+    modul: 'prislista.mjs',
+    stoppar: false,
+    torrt(ctx, pk) {
+      const plan = byggPrislistplan(pk.p, ctx.butik);
+      if (plan.rader.length === 0 && plan.fel.length === 0) return ['inga ekonomi.marknadspriser i produktfilen — inget att göra (bara butikens valuta)'];
+      return [
+        ...plan.rader.map((r) => `${r.valuta} (${r.land}): pris ${r.pris}${r.jamforpris ? `, jämförpris ${r.jamforpris}` : ''} — prislista "${r.namn}" + katalog kopplad till marknaden + fast pris per variant`),
+        ...plan.fel.map((f) => `🖐 ${f}`),
+        '🖐 kräver att valutan är marknadens basvaluta i admin (Inställningar → Marknader → marknaden → valuta) — API:t kan inte slå på den',
+      ];
+    },
+    async kor(ctx, pk) {
+      const r = await sakerstallPrislistor(ctx, pk.p, { torr: false });
+      const ut = { prislistor: r.prislistor.map((x) => ({ valuta: x.valuta, land: x.land, id: x.id, skapad: x.skapad, varianter: x.varianter })) };
+      if (r.manuella.length > 0) return { manuell: r.manuella.join(' · '), ...ut };
+      return ut;
     },
   },
   // 18 qa, 19 checklista och 20 slutrapport körs ALLTID färskt (aldrig ur

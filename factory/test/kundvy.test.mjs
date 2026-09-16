@@ -119,6 +119,16 @@ test('svenskaMarkorer hittar bara synliga ord ur listan', () => {
   assert.deepEqual(svenskaMarkorer(h, BUTIK.butik.markorer_sv), ['Köp nu']);
 });
 
+test('köpknappen känns igen på svenska, norska OCH engelska (USA-marknaden 2026-09-16)', async () => {
+  const { byggKrav } = await import('../kundvy.mjs');
+  const knapp = byggKrav(BUTIK, { produkt: { namn: 'X' } }).find((k) => k.namn === 'köpknapp');
+  assert.equal(knapp.finns('<button>Add to cart</button>'), true);
+  assert.equal(knapp.finns('<button>Buy now</button>'), true);
+  assert.equal(knapp.finns('<button>Legg i handlekurv</button>'), true);
+  assert.equal(knapp.finns('<button>Köp nu</button>'), true);
+  assert.equal(knapp.finns('<button>Warenkorb</button>'), false, 'tyska finns inte förrän någon lägger till ordet');
+});
+
 test('svenskaMarkorer utan lista ger tomt — aldrig ett hårdkodat ord', () => {
   assert.deepEqual(svenskaMarkorer('<p>överdrag Köp nu Kontakt</p>', []), []);
   assert.deepEqual(svenskaMarkorer('<p>överdrag</p>', undefined), []);

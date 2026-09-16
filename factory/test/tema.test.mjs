@@ -535,6 +535,103 @@ test('ms-paket-snippetens svenska ord locale-branchas en gång', () => {
   assert.equal(patchaMsPaket(patchad), null);
 });
 
+// USA-stödet 2026-09-16: temats småord är en gren PER MARKNADSSPRÅK, inte
+// en if-sats för norska. Nytt språk = en kolumn i TEMAORD + en locale i
+// butik.marknader — ingen if-sats att skriva.
+test('patchaMsPaket med två språk ger if/elsif/else, och avpatchar en gammal nb-snippet innan den bygger om', async () => {
+  const { avpatchaMsPaket } = await import('../tema.mjs');
+  const ra = urZip('snippets/ms-paket.liquid');
+  const tva = patchaMsPaket(ra, ['nb', 'en']);
+  assert.ok(tva.includes("{% if request.locale.iso_code == 'nb' %}Gratis med på kjøpet{% elsif request.locale.iso_code == 'en' %}Free with your order{% else %}Gratis på köpet{% endif %}"), tva.slice(0, 200));
+  assert.ok(tva.includes('aria-label="{% if request.locale.iso_code == \'nb\' %}Velg pakke{% elsif request.locale.iso_code == \'en\' %}Choose a bundle{% else %}Välj paket{% endif %}"'));
+  assert.ok(tva.includes('worth {{ gvarde | money }}'));
+  // Idempotent med samma språk.
+  assert.equal(patchaMsPaket(tva, ['nb', 'en']), null);
+  // En butik som redan bär nb-grenen (byggd före USA) får en-grenen tillagd —
+  // utan att någon rör snippeten för hand.
+  const gammal = patchaMsPaket(ra, ['nb']);
+  const utbyggd = patchaMsPaket(gammal, ['nb', 'en']);
+  assert.ok(utbyggd && utbyggd.includes("== 'en' %}Free with your order"));
+  assert.equal(utbyggd, tva, 'samma resultat oavsett om snippeten var ren eller nb-patchad');
+  // Avpatchningen ger tillbaka exakt den rena zipen.
+  assert.equal(avpatchaMsPaket(tva), ra);
+  assert.equal(avpatchaMsPaket(gammal), ra);
+  // Bara sv ⇒ inget att patcha.
+  assert.equal(patchaMsPaket(ra, ['sv']), null);
+});
+
+test('localeBranch: N språk i ordning, tomma/lika grenar faller bort, sträng = nb (äldre anrop)', async () => {
+  const { localeBranch } = await import('../tema.mjs');
+  assert.equal(localeBranch('SV', { nb: 'NB', en: 'EN' }), "{% if request.locale.iso_code == 'nb' %}NB{% elsif request.locale.iso_code == 'en' %}EN{% else %}SV{% endif %}");
+  assert.equal(localeBranch('SV', 'NB'), "{% if request.locale.iso_code == 'nb' %}NB{% else %}SV{% endif %}");
+  assert.equal(localeBranch('SV', { nb: 'SV', en: '' }), 'SV');
+  assert.equal(localeBranch('SV', {}), 'SV');
+  assert.equal(localeBranch('SV', null), 'SV');
+});
+
+test('sektionernas standardrubriker, upsellen och svensk-signalen har en engelsk gren', async () => {
+  const { SVENSK_SIGNAL, byggKorgUpsell } = await import('../tema.mjs');
+  for (const [fil, en, sv] of [
+    ['sections/opf-problem.liquid', 'Sound familiar?', 'Känner du igen det?'],
+    ['sections/opf-losning.liquid', 'The solution', 'Lösningen'],
+    ['sections/opf-funktioner.liquid', 'What you get', 'Det här får du'],
+    ['sections/opf-faq.liquid', 'FAQ', 'Vanliga frågor'],
+  ]) {
+    const s = SEKTIONER[fil];
+    assert.ok(s.includes(`{%- elsif request.locale.iso_code == 'en' -%}{%- assign`) && s.includes(en), fil);
+    assert.ok(s.includes(`{%- else -%}{%- assign`) && s.includes(sv), `${fil}: svenskan är else-grenen`);
+    assert.ok(s.includes("request.locale.iso_code == 'nb'"), `${fil}: norskan kvar`);
+  }
+  assert.ok(SVENSK_SIGNAL.includes("== 'en' %}") && SVENSK_SIGNAL.includes('Swedish brand'));
+  assert.ok(SVENSK_SIGNAL.includes('Svensk merkevare') && SVENSK_SIGNAL.includes('Svenskt varumärke'));
+  const upsell = JSON.stringify(byggKorgUpsell('bonusen'));
+  assert.ok(upsell.includes('Goes well with') && upsell.includes('Passer til') && upsell.includes('Passar till'));
+});
+
+test('trust- och leveransraden får en gren per marknadsspråk ur oversattningar, med marknadens egen leveranstid', () => {
+  const produkt = { offer: {}, varianter: [], leveranstid: '6–10 arbetsdagar' };
+  const b = butikMedNorge();
+  b.butik.marknader.push({ land: 'US', locale: 'en', valuta: 'SEK', leveranstid: '8–14 arbetsdagar' });
+  const oversattningar = {
+    nb: { 'liquid.trust.0': 'Gratis frakt – Sverige & Norge', 'liquid.delivery.text': 'Beregnet levering' },
+    en: { 'liquid.trust.0': 'Free shipping to the US', 'liquid.delivery.text': 'Estimated delivery' },
+  };
+  const ut = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt, butik: b, oversattningar }));
+  const trust = ut.sections.main.blocks.ms_trust.settings.custom_liquid;
+  assert.ok(trust.includes("{% if request.locale.iso_code == 'nb' %}") && trust.includes("{% elsif request.locale.iso_code == 'en' %}"));
+  assert.ok(trust.includes('truck:Gratis frakt – Sverige & Norge') && trust.includes('truck:Free shipping to the US'));
+  assert.ok(trust.endsWith("{% endif %}"));
+  const lev = ut.sections.main.blocks.ms_delivery.settings.custom_liquid;
+  assert.ok(lev.includes('Beregnet levering') && lev.includes('6–10 virkedager'), 'norskan: butikens dagar');
+  assert.ok(lev.includes('Estimated delivery') && lev.includes('8–14 business days'), 'engelskan: marknadens egna dagar');
+  assert.ok(lev.includes("min_days: 6, max_days: 10"), 'svenskan: temats render');
+  // Ett marknadsspråk UTAN översättningsfil får ändå en egen leveransrad
+  // (svensk JS-datumtext får inte läcka), med temats standardord.
+  const utan = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt, butik: b, oversattningar: { nb: oversattningar.nb } }));
+  const lev2 = utan.sections.main.blocks.ms_delivery.settings.custom_liquid;
+  assert.ok(lev2.includes("== 'en' %}") && lev2.includes('8–14 business days'));
+  // Det gamla anropet med bara `nb` fungerar som förut.
+  const gammal = JSON.parse(byggProduktTemplate(urZip('templates/product.json'), { produkt, butik: butikMedNorge(), nb: oversattningar.nb }));
+  assert.ok(gammal.sections.main.blocks.ms_trust.settings.custom_liquid.includes('Gratis frakt – Sverige & Norge'));
+});
+
+test('byggTillagg branchar kryssrutans texter per språk och faller tillbaka på svenskan', async () => {
+  const { byggTillagg } = await import('../tema.mjs');
+  const filer = byggTillagg('bonusen', { sv: { label: 'Lägg till Bonusen', info: 'Fullpris' }, nb: { label: 'Legg til Bonusen' }, en: { label: 'Add the Bonus', info: 'Full price' } });
+  const s = Object.values(filer).join('\n');
+  assert.ok(s.includes("{% if request.locale.iso_code == 'nb' %}Legg til Bonusen{% elsif request.locale.iso_code == 'en' %}Add the Bonus{% else %}Lägg till Bonusen{% endif %}"));
+  // info: nb saknas ⇒ bara en-gren
+  assert.ok(s.includes("{% if request.locale.iso_code == 'en' %}Full price{% else %}Fullpris{% endif %}"));
+});
+
+test('fraktRad: tre länder blir "Sverige, Norge & USA"; i_fraktraden: false håller ett land utanför den svenska raden', () => {
+  const b = butikMedNorge();
+  b.butik.marknader.push({ land: 'US', locale: 'en' });
+  assert.equal(fraktRad(b), 'Fri frakt – Sverige, Norge & USA');
+  b.butik.marknader[1].i_fraktraden = false;
+  assert.equal(fraktRad(b), 'Fri frakt – Sverige & Norge');
+});
+
 test('gallerifiltret döljer de andra språkens märken per locale, märkt för idempotens', () => {
   const liquid = msHeadGallerifilter(['sv', 'nb']);
   assert.ok(liquid.includes(GALLERIFILTER_MARKE));

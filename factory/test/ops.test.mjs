@@ -60,6 +60,7 @@ const KEDJAN = [
   ['recensioner', 'produkt', false],
   ['marknad', 'butik', true],
   ['oversatt', 'butik', false],
+  ['prislista', 'produkt', false],
 ];
 
 test('STEG är exakt KEDJAN.md:s körordning (id, nivå, stoppar/manuell)', () => {
@@ -76,8 +77,8 @@ test('STEG är exakt KEDJAN.md:s körordning (id, nivå, stoppar/manuell)', () =
   assert.deepEqual(EFTERSTEG.map((s) => s.id), ['qa', 'checklista', 'slutrapport']);
 });
 
-test('de manuella stegen är exakt logga, bonus, paket, recensioner, oversatt', () => {
-  assert.deepEqual(STEG.filter((s) => s.stoppar === false).map((s) => s.id), ['logga', 'bonus', 'paket', 'recensioner', 'oversatt']);
+test('de manuella stegen är exakt logga, bonus, paket, recensioner, oversatt, prislista', () => {
+  assert.deepEqual(STEG.filter((s) => s.stoppar === false).map((s) => s.id), ['logga', 'bonus', 'paket', 'recensioner', 'oversatt', 'prislista']);
 });
 
 // Kontext som ops.mjs bygger, utan nätverk.

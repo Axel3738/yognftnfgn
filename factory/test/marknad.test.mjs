@@ -102,9 +102,10 @@ test('arLacka: tekniska värden, lika ord och Shopifys egna rader är inga läck
   assert.equal(arLacka({ typ: 'temamall', key: 'x', value: 'Vad kunderna säger' }, samma), true);
 });
 
-test('landsnamn: kända koder på svenska, okända som versal kod', () => {
+test('landsnamn: kända koder på svenska (ur lander.mjs, USA med), okända som versal kod', () => {
   assert.equal(landsnamn('no'), 'Norge');
   assert.equal(landsnamn('DK'), 'Danmark');
+  assert.equal(landsnamn('US'), 'USA');
   assert.equal(landsnamn('xx'), 'XX');
 });
 

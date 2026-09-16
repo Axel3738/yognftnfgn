@@ -43,8 +43,14 @@ ekonomi:
   # paket.mjs räknar paketnivåernas tal i valutan (samma procent) → nivåns
   # fastpris_valutor, så sidan visar NOK för norska kunder. Fasta priser
   # följer inte kursen — ändras priset sätts de om. Tomt = bara butikens valuta.
+  # Steget `prislista` (prislista.mjs) skriver dem som fasta priser i Shopify
+  # (prislista + marknadskatalog per marknad i butik.marknader med den valutan).
+  # Priset i en ny valuta är ÄGARENS beslut — /ny-marknad frågar om det saknas.
   marknadspriser:
     # - valuta: NOK
+    #   pris: 0
+    #   jamforpris: 0
+    # - valuta: USD
     #   pris: 0
     #   jamforpris: 0
 

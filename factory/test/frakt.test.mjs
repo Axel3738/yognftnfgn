@@ -36,6 +36,18 @@ test('huvudmarknaden följer konfigen, inte en hårdkodad lista', () => {
   assert.equal(plan[0].metoder[0].valuta, 'NOK');
 });
 
+test('huvudmarknaden USA ger zonen med landskoden US ur lander.mjs — och USA hamnar inte i EU-zonen', () => {
+  const b = rabutik();
+  b.butik.huvudmarknad = 'USA';
+  b.butik.valuta = 'USD';
+  delete b.butik.land;
+  const plan = byggFraktplan(b);
+  assert.deepEqual(plan[0].lander, ['US']);
+  assert.equal(plan[0].metoder[0].valuta, 'USD');
+  assert.ok(!plan[1].lander.includes('US'));
+  assert.ok(plan[1].lander.includes('SE'), 'Sverige är då ett EU-land som vilket som helst');
+});
+
 test('betald frakt ger standardpris och fri frakt-gräns', () => {
   const b = { ...rabutik(), frakt: { fri_globalt: false, standardpris: 49, fri_over: 599 } };
   const plan = byggFraktplan(b);

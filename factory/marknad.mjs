@@ -42,6 +42,7 @@ import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, hamtaArbetstema, kontrolleraAnslutning } from './shopify.mjs';
 import { lasState } from './state.mjs';
 import { lasOversattning, lasUnderlag, byggMinimalKontext } from './oversattning.mjs';
+import { landsnamnSv } from './lander.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -52,8 +53,9 @@ const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 // olik ut.
 export const norm = (s) => String(s ?? '').replace(/\r\n/g, '\n').replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
 
-const LANDSNAMN = { NO: 'Norge', DK: 'Danmark', FI: 'Finland', SE: 'Sverige', DE: 'Tyskland', GB: 'Storbritannien' };
-export const landsnamn = (kod) => LANDSNAMN[String(kod ?? '').toUpperCase()] ?? String(kod ?? '').toUpperCase();
+// Marknadens namn i Shopify = landets svenska namn (lander.mjs); okänd kod
+// blir koden i versaler, aldrig en gissning.
+export const landsnamn = (kod) => landsnamnSv(kod);
 
 // Kartan svensk text → översatt text ur de två underlagsfilerna. Nycklar som
 // börjar med `_` är anteckningar, och värden som inte är strängar hoppas över.

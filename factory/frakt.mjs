@@ -4,6 +4,8 @@
 // `byggFraktatgarder` jämför med hur de ser ut nu och returnerar skillnaden.
 // Ops kör sedan skillnaden mot Shopify. Ingen fraktsiffra står i koden.
 
+import { landskodUrNamn } from './lander.mjs';
+
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
 const tal = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 
@@ -16,13 +18,12 @@ export const EU_LANDER = Object.freeze([
   'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE',
 ]);
 
-// Huvudmarknadens landskod: butik.land först, annars namnet.
-const LANDSKOD = { sverige: 'SE', norge: 'NO', danmark: 'DK', finland: 'FI', tyskland: 'DE', storbritannien: 'GB' };
+// Huvudmarknadens landskod: butik.land först, annars namnet (lander.mjs).
 export function huvudmarknadensLand(butik) {
   const b = butik?.butik ?? {};
   const kod = text(b.land);
   if (kod && /^[A-Za-z]{2}$/.test(kod)) return kod.toUpperCase();
-  return LANDSKOD[String(text(b.huvudmarknad) ?? 'Sverige').toLowerCase()] ?? 'SE';
+  return landskodUrNamn(text(b.huvudmarknad) ?? 'Sverige') ?? 'SE';
 }
 
 // Zonerna butiken ska ha. Huvudmarknaden först — den är hemmamarknad och

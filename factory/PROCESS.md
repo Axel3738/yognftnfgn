@@ -569,6 +569,56 @@ NO-kampanj bevakas alltså inte heller — men en ACTIV gör det inte heller, oc
 det är det farliga fallet. Skriv aldrig i en rapport att butiken är bevakad
 utan att säga vilken marknad som menas.
 
+## Marknad utanför Norden — USA (byggt 2026-09-16, Axels fråga "husbilsgrejerna i USA")
+
+Kommandot är **`/ny-marknad <butik> <LAND>`** (`.claude/commands/ny-marknad.md`):
+Fas 4 körd i efterhand på en butik som redan är live. Det som byggdes för att
+en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
+
+1. ⚙️ **`factory/lander.mjs` — EN landstabell.** Till 2026-09-16 låg samma
+   landskod → namn-karta kopierad i sex moduler (butik, checklista, frakt,
+   marknad, startsida, tema) och ingen kände USA. Nu: `landsnamnSv`, `landEn`,
+   `sprakEn`, `lokalValuta`, `standardLocale`, `landskodUrNamn`, `ochLista`.
+   Nytt land = en rad där. Tre länder skrivs "Sverige, Norge & USA", aldrig
+   "A & B & C"; två länder ser exakt ut som förut.
+2. ⚙️ **Temat är N-språkigt, inte nb-eller-svenska.** `tema.localeBranch(sv,
+   { nb, en })` ger `if/elsif/else`; sektionernas standardrubriker, upsellen,
+   svensk-signalen, trust- och leveransraden och kryssrutan har en gren per
+   språk i `butik.marknader`. Orden står i `TEMAORD` (sv/nb/en) — nytt språk =
+   en kolumn, ingen if-sats. `patchaMsPaket(snippet, locales)` **avpatchar**
+   en snippet som redan bär nb-grenen och bygger om med alla språk, så en
+   butik som får USA i efterhand får sin en-gren vid `--igen tema` utan att
+   någon rör snippeten för hand. `ops.mjs` steg `tema` läser
+   `oversattning-<locale>.json` för VARJE marknadsspråk.
+3. ⚙️ **Leveranstid per marknad.** `leveranstid` på raden i `butik.marknader`
+   styr den översatta leveransraden på produktsidan. USA från Sverige är inte
+   5–10 arbetsdagar — utan raden ärvs butikens tal och löftet blir falskt.
+4. ⚙️ **`i_fraktraden: false`** på en marknadsrad håller landet utanför den
+   SVENSKA fraktraden/startsidan. Standard för ett land utanför Norden: den
+   svenska källtexten ändras då inte, så den norska filen matchar fortfarande
+   och inget läcker på /nb; engelskan säger sitt i sin egen fil.
+5. ⚙️ **Steget `prislista` (17b).** NOK-priset sattes 2026-09-11 med tre
+   lösa anrop (API-GRANSER.md) och fanns aldrig som kod. Nu
+   `factory/prislista.mjs`: prislista + marknadskatalog + fast pris/jämförpris
+   per variant ur `ekonomi.marknadspriser`, idempotent, med tillbakaläsning.
+   🖐 tills valutan är marknadens basvaluta i admin — då med klicket i
+   klartext, inte Shopifys userError. ⚠️ Nätdelen är skriven ur receptet,
+   inte körd från sessionen som skrev den (ingen butikstoken där) — första
+   riktiga körningen är mätningen; skriv utfallet här.
+6. ⚙️ Kundvyn känner igen "Add to cart"/"Buy now" som köpknapp. `sprakkoll.mjs`
+   är fortfarande bokmål-only — engelskan läses av markörskanningen
+   (`markorer_sv`) och ett öga.
+7. 🖐 **Det API:t inte kan, i ordning:** USD som marknadens valuta (Inställningar
+   → Marknader → USA → Valuta), sales tax (Skatter och tullar → USA), Shopify
+   Payments accepterar USD, fraktpriset till USA bekräftat hos leverantören.
+8. ⛔ **Annonserna är inte lösta.** `/ops-oversatt` är norska. USA-annonser
+   kräver Axels beslut om annonskonto (OPS-kontot är SEK) och engelska
+   creatives från grunden — Bäverbutikens källannonser är svenska med svensk
+   röst och går inte att ärva.
+9. ⚠️ Juridiken översätts, byts inte: den engelska policyn säger "under
+   Swedish law" och behåller EU-tvistplattformen. Om amerikanska kunder ska ha
+   en egen returpolicy är Axels beslut — rapporten flaggar det varje gång.
+
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
   visar SVENSKA priser för norska kunder.** Fixen i Fas 4 (webbnärvaro +

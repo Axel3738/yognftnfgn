@@ -62,7 +62,9 @@ export function byggKrav(butik, produkt) {
       fel: `produkten "${produktnamn}" syns inte på startsidan` },
     { namn: 'produktbild', finns: (h) => BILDMONSTER.test(h),
       fel: 'ingen riktig produktbild laddad' },
-    { namn: 'köpknapp', finns: (h) => /Köp|Lägg i varukorg|Kjøp|Legg i handlekurv/i.test(h),
+    // Ett språk per marknad: sv, nb och en (USA/GB). Ett nytt marknadsspråk
+    // utan ord här ger rött på köpknappen — lägg till ordet, inte ta bort kollen.
+    { namn: 'köpknapp', finns: (h) => /Köp|Lägg i varukorg|Kjøp|Legg i handlekurv|Buy now|Add to cart|Shop now/i.test(h),
       fel: 'ingen köpknapp på startsidan' },
   ];
 }
