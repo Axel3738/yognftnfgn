@@ -1,35 +1,31 @@
 1
-00:00:00,000 --> 00:00:05,279
-Etter tre uker kan jeg si: Dette er årets beste kjøp. Jeg bor på landet med en ganske lang oppkjørsel.
+00:00:00,119 --> 00:00:09,679
+Etter tre uker kan jeg si: dette er det beste kjøpet i år. Jeg bor på landet med en ganske lang oppkjørsel. Før visste jeg aldri når noen kom. Måtte løpe til vinduet hver gang jeg hørte noe.
 
 2
-00:00:05,279 --> 00:00:07,079
-Før visste jeg aldri når noen kom.
-
-3
-00:00:07,179 --> 00:00:09,679
-Måtte løpe til vinduet hver gang jeg hørte noe.
-
-4
-00:00:09,800 --> 00:00:11,880
+00:00:09,800 --> 00:00:11,800
 Nå har jeg en trådløs innkjørselsalarm.
 
-5
+3
 00:00:11,979 --> 00:00:14,939
 Sensoren står ved oppkjørselen, mottakeren på kjøkkenet.
 
+4
+00:00:14,979 --> 00:00:19,959
+Med en gang en bil svinger inn, piper det. Leveranser, besøkende, til og med naboens katt.
+
+5
+00:00:20,020 --> 00:00:21,819
+Installasjonen tok to minutter.
+
 6
-00:00:14,979 --> 00:00:17,020
-Med en gang en bil svinger inn, piper det.
+00:00:21,920 --> 00:00:23,299
+Ingen app, ikke noe styr.
 
 7
-00:00:17,079 --> 00:00:19,959
-Leveranser, besøk, til og med naboens katt.
+00:00:23,340 --> 00:00:24,699
+Jeg føler meg tryggere hjemme nå.
 
 8
-00:00:20,020 --> 00:00:23,299
-Installasjonen tok to minutter. Ingen app, ikke noe styr.
-
-9
-00:00:23,340 --> 00:00:28,219
-Jeg føler meg tryggere hjemme nå. Har du lang oppkjørsel eller bor litt avsides? Skaff deg denne
+00:00:24,699 --> 00:00:28,333
+Har du lang oppkjørsel eller bor litt avsides? Skaff deg denne.

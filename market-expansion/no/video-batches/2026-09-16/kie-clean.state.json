@@ -5,12 +5,6 @@
     "klar": true,
     "url": "https://tempfile.aiquickdraw.com/p/071cf50fccdce25a267235af36408d42_1_1789525821_2635.png"
   },
-  "infartslarm_G_2_1": {
-    "taskId": "92c04ae522f9bf35b2eb027891223eeb",
-    "modell": "google/nano-banana-edit",
-    "klar": true,
-    "url": "https://tempfile.aiquickdraw.com/p/92c04ae522f9bf35b2eb027891223eeb_1_1789525835_4121.png"
-  },
   "infartslarm_PD_2_1": {
     "taskId": "086f8ad482098beb2bcf922b12820cf9",
     "modell": "google/nano-banana-edit",
