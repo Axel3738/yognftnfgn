@@ -1,0 +1,320 @@
+{
+  "datum": "2026-09-17",
+  "butik": "carashell/termoskyddet",
+  "hub": "Termoskyddet",
+  "torr": false,
+  "jobb": [
+    {
+      "namn": "CaraShellFront_CS_5_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_CS_5_1-3dd270ab908c8146b829ed41b49a42cb",
+      "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+      "prompt": "A clean photorealistic exterior photograph of a modern white motorhome parked on a bright, open campsite pitch in even daylight, seen from a slightly elevated front three-quarter angle so both the roof and the windscreen are clearly visible. The roof is covered by a taut black fabric roof cover whose edge hangs about 30–40 cm down the sides with elastic straps hooking under the body edge. The windscreen and both front side windows are covered on the OUTSIDE by a dark grey thermal cover, stretched taut, its side flaps tucked into the door frames. Two covers, one vehicle, both clearly readable. Light gravel ground, pale sky, nothing else competing. Product-forward commercial lighting, sharp fabric detail. Leave a large clear, uncluttered area across the top third of the frame for two lines of text, a clean area on the right third for a price block, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers, no price tags, no badges.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg",
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "notion",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "Taköverdraget för vintern. Termoskyddet för resan.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "Termoskyddet sitter på utsidan av framrutan och båda sidorutorna, 211 × 171 cm. Glaset blir aldrig kallt på insidan – ingen imma på morgonen.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "pris",
+          "text": "Termoskyddet 559 kr",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    },
+    {
+      "namn": "CaraShellFront_G_4_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_G_4_1-3dd270ab908c815c9316dc9e95df7528",
+      "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+      "prompt": "A photorealistic exterior photograph in warm late-evening light on a calm campsite: a modern white motorhome seen from the front at a slight three-quarter angle, a dark grey thermal cover fitted on the OUTSIDE of the windscreen and both front side windows, stretched taut with its side flaps tucked into the door frames. Golden low sun from the side, long soft shadows on short grass, a lake or tree line far behind, peaceful mood. Sharp detail on the cover fabric. Leave a large clear, uncluttered area across the top third of the frame for two lines of text, a clean area on the right third for a price block, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers, no price tags, no badges, no ribbons, no gift wrapping.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "notion",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "Ge bort en morgon utan imma att torka.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "Mörkt i kupén, ingen sol klockan fyra.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "pris",
+          "text": "559 kr",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "jamforpris",
+          "text": "932 kr",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    },
+    {
+      "namn": "CaraShellFront_PD_5_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_PD_5_1-3dd270ab908c811b9b0dd59227ab15cc",
+      "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+      "prompt": "A photorealistic exterior photograph at dusk on a motorway rest area: a modern white motorhome parked front-on at a slight three-quarter angle, a dark grey thermal cover fitted on the OUTSIDE of the windscreen and both front side windows, stretched taut and covering the whole front cab so the interior is completely hidden. Blue-hour sky, a tall rest-area lamp casting soft warm light, two or three other parked vehicles far behind, softly out of focus. Sharp detail on the cover fabric, the product clearly readable despite the low light. Leave a large clear, uncluttered area across the top third of the frame for two lines of text, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers, no price tags, no badges.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "notion",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "Rastplatsen ser din framruta. Den ser inte dig – hela framvagnen är mörklagd.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "Mörklägger hela framvagnen från utsidan, 211 × 171 cm. Ingen ser in – och solen väcker dig inte klockan fyra.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    },
+    {
+      "namn": "CaraShellFront_PD_4_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_PD_4_1-3dd270ab908c81b3b7b4e9337c6db203",
+      "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+      "prompt": "A photorealistic exterior photograph at early morning on a quiet campsite: a modern white motorhome seen from the front at a slight angle, a dark grey thermal cover fitted on the OUTSIDE of the windscreen and both front side windows, stretched taut with its side flaps tucked into the door frames. Soft low golden light, dew on short grass and gravel in the foreground, a light mist far behind the vehicle, calm and cool atmosphere. Sharp detail on the cover fabric. Leave a large clear, uncluttered area across the top third of the frame for two lines of text, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers, no price tags, no badges.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "notion",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "Imma på insidan – trots gardinen i kupén.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "CaraShell sitter utanpå rutan – glaset blir aldrig kallt inifrån.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    },
+    {
+      "namn": "CaraShellFront_CS_4_1",
+      "typ": "Image - Pending Approval",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_CS_4_1-3dd270ab908c8151b6fdf0b448caf80e",
+      "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+      "prompt": "A clean photorealistic exterior photograph of a modern white motorhome parked on a quiet campsite pitch in bright, even daylight, seen from the front at a slight three-quarter angle. A dark grey thermal cover is fitted on the OUTSIDE of the windscreen and both front side windows, stretched taut and smooth, its side flaps tucked into the door frames, covering the whole front cab. Light gravel ground, a few pine trees far behind, pale sky. Product-forward commercial lighting, sharp detail on the fabric. Leave a large clear, uncluttered area across the top third of the frame for a headline, a clean area on the right third for a price block, and a clean strip along the bottom edge. No text, no people, no faces, no logos, no numbers, no price tags, no badges.",
+      "bildformat": "4:5",
+      "referens_bilder": [
+        "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+      ],
+      "referens_kalla": "brief",
+      "prompt_kalla": "notion",
+      "text": [
+        {
+          "typ": "rubrik",
+          "text": "Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "underrad",
+          "text": "Utanpå rutan, 211 × 171 cm – klart på två minuter.",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "pris",
+          "text": "559 kr",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "jamforpris",
+          "text": "932 kr",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "rabatt",
+          "text": "40 % under jämförpris",
+          "kalla": "exact-text"
+        },
+        {
+          "typ": "botten",
+          "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt",
+          "kalla": "exact-text"
+        }
+      ],
+      "text_okanda": []
+    }
+  ],
+  "hoppade": [],
+  "resultat": [
+    {
+      "namn": "CaraShellFront_CS_5_1",
+      "status": "ok",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_CS_5_1-3dd270ab908c8146b829ed41b49a42cb",
+      "taskId": "ba9eb863a60529b9f740b0cf7e8f66dc",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/a2/ba9eb863a60529b9f740b0cf7e8f66dc_1789600645182.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_CS_5_1.png",
+      "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_CS_5_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik",
+          "pris"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dd270ab-908c-816d-977e-00b235dc9862",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "CaraShellFront_G_4_1",
+      "status": "ok",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_G_4_1-3dd270ab908c815c9316dc9e95df7528",
+      "taskId": "c9f3e393fad6934312372e35350d6811",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/as/c9f3e393fad6934312372e35350d6811_1789600638502.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_G_4_1.png",
+      "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_G_4_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik",
+          "priskort"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dd270ab-908c-81fd-86a0-00b29915ea93",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "CaraShellFront_PD_5_1",
+      "status": "ok",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_PD_5_1-3dd270ab908c811b9b0dd59227ab15cc",
+      "taskId": "218cab52f641b87aa6f85699d6bdfaa7",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/a2/218cab52f641b87aa6f85699d6bdfaa7_1789600698000.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_PD_5_1.png",
+      "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_PD_5_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dd270ab-908c-81ae-9bcf-00b2842f1825",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "CaraShellFront_PD_4_1",
+      "status": "ok",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_PD_4_1-3dd270ab908c81b3b7b4e9337c6db203",
+      "taskId": "3e73111005f0aab9d3e617a8ab56d54e",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/a2/3e73111005f0aab9d3e617a8ab56d54e_1789600673992.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_PD_4_1.png",
+      "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_PD_4_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dd270ab-908c-8156-9651-00b2673eaa65",
+        "falt": "Filer och media"
+      }
+    },
+    {
+      "namn": "CaraShellFront_CS_4_1",
+      "status": "ok",
+      "hub": "Termoskyddet",
+      "notion_url": "https://app.notion.com/p/CaraShellFront_CS_4_1-3dd270ab908c8151b6fdf0b448caf80e",
+      "taskId": "dcaec2efca8ce3ef395e3ac6ac67526a",
+      "modell": "google/nano-banana-edit",
+      "kalla": "https://tempfile.aiquickdraw.com/a2/dcaec2efca8ce3ef395e3ac6ac67526a_1789600700443.png",
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_CS_4_1.png",
+      "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+      "textlager": {
+        "bas": "/home/user/yognftnfgn/factory/output/carashell/termoskyddet/bild-2026-09-17/CaraShellFront_CS_4_1.bas.png",
+        "placerade": [
+          "botten",
+          "rubrik",
+          "priskort"
+        ],
+        "okanda": []
+      },
+      "notion": {
+        "file_upload_id": "3dd270ab-908c-81b7-aca4-00b24576f7a5",
+        "falt": "Filer och media"
+      }
+    }
+  ]
+}

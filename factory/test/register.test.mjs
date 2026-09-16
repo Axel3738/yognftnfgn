@@ -16,6 +16,7 @@ import {
   OPS_ANNONSKONTO, BAVERBUTIKEN_ANNONSKONTO, CYKEL_DAGAR, TROSKEL,
   BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR,
   briefantal, forbrukaBriefantal, BRIEFANTAL_KADENS, BRIEFANTAL_UTAN_REDIGERARE,
+  utmapp,
 } from '../register.mjs';
 
 const post = (extra = {}) => ({
@@ -604,4 +605,17 @@ test('register.json: CatCabins briefrond är PAUSAD (Axels beslut 2026-09-14) �
   assert.equal(o.engang, false, 'en paus står tills vidare, annars startar brief-kord den tyst igen');
   assert.match(o.motivering, /2026-09-14/);
   assert.equal(briefantal(rad).pausad, true);
+});
+
+// ------------------------------------------------------------------ utmapp
+
+test('utmapp: enproduktsbutik och huvudprodukt skriver i factory/output/<butik>/, andra produkten i <butik>/<produkt>/', () => {
+  const rot = '/r';
+  assert.equal(utmapp(post(), rot), '/r/factory/output/hemvakten');
+  assert.equal(utmapp(post({ enprodukt: false, huvudprodukt: true, id: 'takskyddet', butik: 'carashell' }), rot), '/r/factory/output/carashell');
+  assert.equal(utmapp(post({ enprodukt: false, huvudprodukt: false, id: 'termoskyddet', butik: 'carashell' }), rot), '/r/factory/output/carashell/termoskyddet');
+  // Fixturer/gamla poster utan fälten: butikens mapp, aldrig ett kast på undefined.
+  assert.equal(utmapp({ nyckel: 'drytrek/damasker' }, rot), '/r/factory/output/drytrek');
+  assert.equal(utmapp({ butik: 'hemvakten' }, rot), '/r/factory/output/hemvakten');
+  assert.throws(() => utmapp({}, rot), /saknar butik/);
 });

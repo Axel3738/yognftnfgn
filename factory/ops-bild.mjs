@@ -359,7 +359,7 @@ function aterkoppling(pageId, kommentar, status) {
 // ------------------------------------------------------------ huvudflödet
 
 export async function laddaKo(nyckel, { logg = (...a) => console.error(...a) } = {}) {
-  const { laddaButik, sakerstallKonto, OPS_ANNONSKONTO, svenskDatum } = await import('./register.mjs');
+  const { laddaButik, sakerstallKonto, OPS_ANNONSKONTO, svenskDatum, utmapp } = await import('./register.mjs');
   const butik = laddaButik(nyckel);
   const konto = sakerstallKonto(butik.post);
   if (konto !== OPS_ANNONSKONTO) throw new Error(`STOPP: ${butik.post.nyckel} pekar på konto ${konto}, inte OPS-kontot ${OPS_ANNONSKONTO}. Bäverbutikens bilder görs av /bildannonser.`);
@@ -372,7 +372,7 @@ export async function laddaKo(nyckel, { logg = (...a) => console.error(...a) } =
   const rader = [];
   for (const r of raa) rader.push({ ...r, brieftext: (await sidText(r.id)).join('\n'), lokal: lokalBrief(butik.post.butik, r.namn) });
   const fallback = butik.produkt?.media?.bilder?.find?.((b) => /^https?:\/\//.test(String(b))) ?? null;
-  return { butik, hub, rader, fallbackReferens: fallback, farger: textFarger(butik.butik), datum: svenskDatum(), butiksmapp: join(ROT, 'factory', 'output', butik.post.butik) };
+  return { butik, hub, rader, fallbackReferens: fallback, farger: textFarger(butik.butik), datum: svenskDatum(), butiksmapp: utmapp(butik.post, ROT) };
 }
 
 async function main() {

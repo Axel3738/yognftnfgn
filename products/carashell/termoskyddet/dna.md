@@ -1,6 +1,22 @@
 # Creative DNA — CaraShell (termoskyddet)
 
 Skapad 2026-09-16 av `/ops-produkt carashell` (körning nr 0 — bygget, ingen briefrond).
+**Senast uppdaterad 2026-09-17 av nattvakten, körning nr 1 (första briefronden — KALLSTART).**
+Egen data: 636 kr / 2 köp / ROAS 1,76 på 3 dygn, **0 bedömbara annonser** — inga
+mönster ur egen data än; allt nedan är fortfarande ÄRVT. Batch #2 (7 briefer) i
+`batch-log.md`. Nästa avläsning 2026-09-20.
+
+⚠️ **Utmappen är `factory/output/carashell/termoskyddet/`** (sedan 2026-09-17,
+`utmapp()` i `factory/register.mjs`) — inte `factory/output/carashell/`, som är
+takskyddets. Innan delningen läste `ops-bild --namn` takskyddets analysfil som
+termoskyddets kontonamn, och båda nattvakterna skrev samma `budgetrond-<datum>.json`.
+
+⚠️ **Shopify-nyckel för CaraShell saknas i rutinens miljö** (mätt 2026-09-17:
+inget `SHOPIFY_*_CARASHELL`). Pixelvarningen nedan går därför inte att lösa i
+rutinen förrän nyckeln finns — ingen dom fälls här innan dess.
+
+**A/B fable/sonnet (ställning):** batch #2 = 4 fable / 3 sonnet, 0 bedömbara.
+Avgörs automatiskt när båda har ≥ 5 bedömbara annonser (regel i `/notionscalercs` steg 6).
 Butiks-id `carashell`, nyckel `carashell/termoskyddet`, brand **CaraShell**, carashell.se/products/termoskyddet.
 Annonskonto: **MagiBorsten DK `915422744950975`** (det delade OPS-kontot). Prefix **`CaraShellFront`**.
 Systerprodukt: `carashell/takskyddet` (`CaraShellRoof`) — se `products/carashell/README.md`.
@@ -142,7 +158,17 @@ target-ROAS 2,70 · target-CPA 207 kr**, räknat **UTAN moms**
 
 ---
 
-## Nuläget i CaraShells eget konto (2026-09-16)
+## Nuläget i CaraShells eget konto (2026-09-17, nattvakten körning nr 1)
+
+Båda kampanjerna **ACTIVE sedan 2026-09-16** (Axels "Launch" 12:20 SE / 12:50 NO).
+SE last_14d: 636 kr, 2 köp, ROAS 1,76 — grinden ej passerad av någon annons.
+Spend per adset i CBO:n: G-bilden `G_2_1` tog 232 kr (37 %) utan köp, `CS_2_1`
+96 kr med båda köpen; PD_1–3 sammanlagt 45 kr — mönster 2 (CBO-svälten) är
+redan synligt efter tre dygn, så PD är fortfarande odömd. Budgetronden gjorde
+0 ändringar. Batch #2: 5 bilder till `To be Reviewed` (live 14:15), 2 videor i
+`Draft` utan redigerare.
+
+## Nuläget vid bygget (2026-09-16)
 
 `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
 (`120249115376140172`) — **PAUSED**, **CBO 1 000 kr/dag** (den låsta strukturen,
