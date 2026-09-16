@@ -175,3 +175,21 @@ annons (regel 3).
 - Pris ur butiken: 559 SEK (jämförpris 932).
 - Nästa: nattvakten 00:57 producerar första briefronden (7 st, ingen redigerare).
   Rader når leveransrundan först när en redigerare levererar eller `/ops-bild` körs.
+
+## 2026-09-16 — `/ops-oversatt carashell/termoskyddet` (första NO-körningen)
+
+- Kön: 0 rader i `SE-ACTIVE to be translated` — hubben "Termoskyddet" är fortfarande
+  tom. Inget översatt, inget renderat (0 HeyGen-credits), inget uppladdat, ingen
+  Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115382210172`, MagiBorsten DK) är **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G). Ärvd länk `https://carashell.se/nb/products/termoskyddet?country=NO`
+  ur `CaraShellFront_NO_G_3`. Rutinen kan alltså leverera så fort en rad når kön.
+- Butiken redo för NO: 548 NOK läst på den norska sidan (= `ekonomi.marknadspriser`).
+  ⚠️ `/nb/products/termoskyddet.json` utan `?country=NO` svarar 559/932 — det är
+  Shopifys basvaluta, inte ett norskt pris; läs alltid med `?country=NO`.
+- Meta rate-limitade fyra gånger i rad (30 → 240 s) under läsningen av kontot —
+  körningen tog ~10 min i stället för sekunder. Inte ett fel, bara långsamt.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549788313140076604`), ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-16-no-termoskyddet/` (jobb.json).
