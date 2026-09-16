@@ -1,0 +1,96 @@
+{
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 enligt kommandots regel 3. Fakta enbart ur produktsidan baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv (läst 2026-09-16) + products/tankguard/dna.md (samma produkt, ärvt minne: kundens tre problem i ordning — grönt vatten, skrubbningen som återkommer varje sommar, plasten som blir spröd av UV; sitter på under två minuter). Priser 489 kr / 636 kr avlästa ur /products/<handle>.json samma dag. Obrandad: inget butiksnamn. Aldrig påstått: betyg, recensioner, paketpriser, tankens pris, hur länge tyget håller.",
+  "hero": {
+    "rubrik": "Vi tog hem för många tanköverdrag i somras, så nu får du ditt för 489 kr istället för 636 kr så länge lagret räcker",
+    "ingress": "Partiet blev större än vi kunde sälja på en säsong. Det är regnvattnet i din tank som tjänar på det.",
+    "knapp": "Se tanköverdraget → 489 kr",
+    "sammanfattning": [
+      "Vi tog hem ett större parti tanköverdrag än vi hinner sälja på en sommar, och nu står kartongerna på lagret. Därför rear vi ut dem: 489 kr istället för ordinarie 636 kr, så länge lagret räcker.",
+      "Om vattnet i din IBC-tank blir grönt varje sommar, eller om du helst vill slippa ta reda på hur det ser ut, är det här lösningen. Ett grönt överdrag i 210D-oxfordtyg som stänger ute ljuset så att algerna aldrig kommer igång, och som tar solen i stället för plasten. Klart vatten i kannan, och en tank som håller år efter år."
+    ]
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Vattnet är klart i maj. Det är det inte länge till.",
+      "text": "Vattnet i tanken är som klarast den dag du fyller den. Sen står den där i solen med slangen kopplad, och du tänker att du ska ordna något skydd när du får tid. Det ser ju bra ut. Men tanken är vit och släpper igenom ljuset, så solen går **rakt in i vattnet** varje ljus timme, och alger behöver inte mer än ljus för att komma igång. I juni har vattnet fått en grön ton. I juli luktar det, och du vill inte längre ha det i kannan. Det är inget du har valt. Solen har bara fått stå på i två månader utan att någon stängde av den.",
+      "knapp": "Stäng av solen innan vattnet blir grönt →"
+    },
+    {
+      "rubrik": "2. En presenning ligger kvar tills det blåser",
+      "text": "De flesta har redan provat det enkla: en presenning över tanken, ett par gummiband runt buren och kanske en sten på toppen för säkerhets skull. Det ser ut att fungera i några veckor. Men presenningen ligger bara över toppen, och ljuset går in genom de vita sidorna precis som förut. Vattnet blir grönt ändå, bara lite långsammare. Sen kommer första höststormen, och då ligger presenningen på grannens sida av häcken medan gummibanden hänger kvar i buren. Tanken står bar igen, och nästa vår börjar allt om från början. En presenning på toppen gör inget åt solen som ligger på från sidan. Det som avgör om vattnet håller sig klart är inte vad som ligger på tanken. Det är om ljuset kommer in.",
+      "knapp": "Täck alla fyra sidorna, inte bara toppen →"
+    },
+    {
+      "rubrik": "3. Grönt vatten går att skrubba bort. Spröd plast går inte.",
+      "text": "Det här är jobbet som kommer tillbaka varje sommar. När vattnet väl har blivit grönt tömmer du tanken, skrubbar insidan så långt borsten når och fyller på igen. En hel eftermiddag går åt, och några soliga veckor senare är vattnet på väg att bli grönt igen, för solen står fortfarande på. Ändå är det den lätta delen. Den svåra delen syns inte: samma sol som färgar vattnet gör **plasten sprödare för varje år**, och den skadan går inte att skrubba bort. Grönt vatten kan du få bort igen och igen. En tank som blivit skör i solen får du aldrig tillbaka. Det enda som fungerar är att ljuset aldrig når plasten från början.",
+      "knapp": "Låt tyget ta solen i stället för plasten →"
+    },
+    {
+      "rubrik": "4. Tanken går inte sönder en dag. Den blir sprödare varje dag. (det här missar nästan alla)",
+      "text": "Det här är kostnaden som ingen ser komma, för den kommer inte på en gång. En solig dag gör ingenting med en tank, och en sommar gör knappt något som syns. Men tanken står där ute varje ljus timme, sommar efter sommar, och det som inte syns på ett år är fullt synligt efter några: en plast som gulnat, en yta som blivit matt och kritig, och en dag en spricka vid kranen eller i ett hörn, precis där vattnet trycker som mest. Då är det inte längre ett överdrag du behöver köpa. Det är en ny tank. Solen en enskild dag kostar ingenting. Kostnaden är alla dagarna du inte tänkte på den, lagda på varandra.",
+      "knapp": "Behåll tanken i många år till →"
+    },
+    {
+      "rubrik": "**5. Överdraget du måste ta av hamnar på marken**",
+      "text": "Det finns tunnare och billigare överdrag, och de flesta saknar två saker: en dragkedja och en öppning på toppen. Det låter som småsaker tills det är dags att fylla på. Då drar du av hela överdraget, gör det du ska och försöker få på det igen med buren i vägen på alla fyra sidor. Efter tredje gången blir det liggande på marken bredvid tanken, och där ligger det resten av sommaren. Tanken står lika bar som innan, och det enda du fått för pengarna är en hög tyg vid foten av den. Ett överdrag gör bara nytta så länge det sitter på. Det kräver en **dragkedja**, så att på och av tar ett par minuter, och en **öppning upptill** så att du når locket utan att röra resten.",
+      "knapp": "Se överdraget med dragkedja och öppning upptill → 489 kr"
+    }
+  ],
+  "lyckas": {
+    "rubrik": "Så vad gör de som har klart vatten i kannan hela sommaren?",
+    "stycken": [
+      "De slutar skjuta upp det och stänger ute ljuset helt, från alla fyra sidor och toppen. Överdraget träs över tanken, dragkedjan dras igen, och sen står den där i skugga hela sommaren medan solen ligger på tyget i stället för på plasten. Utan ljus kommer algerna aldrig igång, så vattnet håller sig klart utan att du gör något mer. Behöver du komma åt locket öppnar du luckan upptill, fyller på och stänger igen. Överdraget sitter kvar hela tiden. Under två minuter att sätta på, och sen är solen avstängd så länge du vill.",
+      "Det här tanköverdraget är gjort i grönt 210D-oxfordtyg, med dragkedja på sidan och en öppning upptill så att du når locket utan att ta av något. Måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter, alltså den vanliga IBC-tanken i bur. Du får 30 dagars öppet köp, så gillar du det inte får du pengarna tillbaka. Skillnaden ser du i kannan: klart vatten i augusti, ingen eftermiddag med borsten, och en tank som ser ut som den gjorde när du köpte den."
+    ],
+    "knapp": "Gör som dem → ta ett tanköverdrag för 489 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "vi räknade fel på sommaren. Vi tog hem ett större parti tanköverdrag än vi någonsin gjort, och nu står kartongerna kvar på lagret när säsongen redan vänt mot höst. I stället för att låta dem stå där till nästa vår gör vi det enkelt: 489 kr istället för ordinarie 636 kr, tills partiet är slut.",
+      "Det är hela förklaringen till priset. Ingen påhittad jätterabatt och ingen klocka som räknar ner. Vi har fler överdrag än hyllor, och din tank har mer nytta av ett av dem än vårt lager har.",
+      "Priset är ärligt åt andra hållet också: 636 kr är vad överdraget kostar hos oss i vanliga fall, och dit går det tillbaka när partiet är slut."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Därför kan du testa helt riskfritt.",
+    "text": "Vill du ha ett trycker du på knappen här nedanför. Passar det inte din tank, eller gillar du det inte, har du 30 dagars öppet köp och får pengarna tillbaka. Så du riskerar ingenting. Men priset gäller bara så länge lagret räcker.",
+    "knapp": "Ja tack, ett tanköverdrag för 489 kr → 30 dagars öppet köp"
+  },
+  "tre_fragor": [
+    { "rad": "Vi tog hem för många tanköverdrag i somras, så nu får du ditt för 489 kr istället för 636 kr så länge lagret räcker", "visualisera": "✅ kartonger på lagret, två priser", "falsifiera": "✅ båda priserna står på produktsidan", "ingen_annan_kan_saga": "✅ vårt parti, vårt pris" },
+    { "rad": "Partiet blev större än vi kunde sälja på en säsong.", "visualisera": "✅ ett parti som inte tog slut", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vårt lager" },
+    { "rad": "Se tanköverdraget → 489 kr", "visualisera": "✅ överdraget, priset", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "1. Vattnet är klart i maj. Det är det inte länge till.", "visualisera": "✅ klart vatten i maj, grönt i juli", "falsifiera": "✅ vattnet är klart eller inte", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om månaden det fortfarande är klart" },
+    { "rad": "Vattnet i tanken är som klarast den dag du fyller den.", "visualisera": "✅ dagen tanken fylls", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår öppning" },
+    { "rad": "Stäng av solen innan vattnet blir grönt →", "visualisera": "✅ solen som stängs av, grönt vatten", "falsifiera": "✅ ljuset kommer in eller inte", "ingen_annan_kan_saga": "✅ pekar på överdragets enda jobb" },
+    { "rad": "2. En presenning ligger kvar tills det blåser", "visualisera": "✅ presenningen som blåser av", "falsifiera": "✅ produktsidan: blåser av vid första höststormen", "ingen_annan_kan_saga": "✅ ingen presenningssäljare skriver under" },
+    { "rad": "De flesta har redan provat det enkla: en presenning över tanken, ett par gummiband runt buren och kanske en sten på toppen för säkerhets skull.", "visualisera": "✅ presenning, gummiband, sten", "falsifiera": "✅ beteendet går att observera", "ingen_annan_kan_saga": "✅ vår vinkel (produktsidan: ingen kamp med presenning och gummiband)" },
+    { "rad": "Täck alla fyra sidorna, inte bara toppen →", "visualisera": "✅ fyra sidor mot en topp", "falsifiera": "✅ överdraget täcker sidorna eller inte", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "3. Grönt vatten går att skrubba bort. Spröd plast går inte.", "visualisera": "✅ borsten i tanken, den spröda plasten", "falsifiera": "✅ UV-skadad plast går inte att skrubba tillbaka", "ingen_annan_kan_saga": "✅ förebygg-mot-reparera i tankens egna ord" },
+    { "rad": "Det här är jobbet som kommer tillbaka varje sommar.", "visualisera": "✅ skrubbningen varje sommar (DNA: återkommer varje sommar)", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Låt tyget ta solen i stället för plasten →", "visualisera": "✅ solen på tyget", "falsifiera": "✅ produktsidan: tyget tar UV-strålningen i stället för plasten", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "4. Tanken går inte sönder en dag. Den blir sprödare varje dag. (det här missar nästan alla)", "visualisera": "✅ tanken som blir sprödare för varje dag", "falsifiera": "✅ produktsidan: UV gör plasten spröd år för år", "ingen_annan_kan_saga": "✅ ingen konkurrent räknar per dag" },
+    { "rad": "Det här är kostnaden som ingen ser komma, för den kommer inte på en gång.", "visualisera": "✅ kostnaden som kommer sakta", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Behåll tanken i många år till →", "visualisera": "✅ samma tank om flera år", "falsifiera": "✅ tanken håller eller inte", "ingen_annan_kan_saga": "✅ vårt löfte ur produktsidan (tanken åldras inte i solen)" },
+    { "rad": "**5. Överdraget du måste ta av hamnar på marken**", "visualisera": "✅ tyghögen på marken bredvid buren", "falsifiera": "✅ ligger på tanken eller på marken", "ingen_annan_kan_saga": "✅ ingen säljare av överdrag utan öppning skriver under" },
+    { "rad": "Det finns tunnare och billigare överdrag, och de flesta saknar två saker: en dragkedja och en öppning på toppen.", "visualisera": "✅ dragkedjan, öppningen", "falsifiera": "✅ går att kontrollera på ett överdrag", "ingen_annan_kan_saga": "✅ vår konflikt typ A (produktsidan: dragkedja + öppning upptill)" },
+    { "rad": "Se överdraget med dragkedja och öppning upptill → 489 kr", "visualisera": "✅ dragkedja, öppning, pris", "falsifiera": "✅ allt står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de som har klart vatten i kannan hela sommaren?", "visualisera": "✅ klart vatten i kannan", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De slutar skjuta upp det och stänger ute ljuset helt, från alla fyra sidor och toppen.", "visualisera": "✅ tanken i skugga", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår produkt (täcker hela tanken)" },
+    { "rad": "Det här tanköverdraget är gjort i grönt 210D-oxfordtyg, med dragkedja på sidan och en öppning upptill så att du når locket utan att ta av något.", "visualisera": "✅ grönt tyg, dragkedja, öppning", "falsifiera": "✅ fakta ur produktsidan och bilderna", "ingen_annan_kan_saga": "✅ vårt överdrag" },
+    { "rad": "Gör som dem → ta ett tanköverdrag för 489 kr", "visualisera": "✅ ett överdrag, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi räknade fel på sommaren.", "visualisera": "✅ kartongerna kvar när sommaren är slut", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela förklaringen till priset.", "visualisera": "✅ priset, lagret", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Priset är ärligt åt andra hållet också: 636 kr är vad överdraget kostar hos oss i vanliga fall, och dit går det tillbaka när partiet är slut.", "visualisera": "✅ prislappen 636 kr", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Därför kan du testa helt riskfritt.", "visualisera": "❌ abstrakt — behålls ordagrant, mallens fasta rubrik", "falsifiera": "✅ 30 dagars öppet köp står på produktsidan", "ingen_annan_kan_saga": "❌" },
+    { "rad": "Vill du ha ett trycker du på knappen här nedanför.", "visualisera": "✅ knappen nedanför", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, ett tanköverdrag för 489 kr → 30 dagars öppet köp", "visualisera": "✅ överdraget, priset, 30 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel, kommandots sex punkter: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, ett stycke = en tanke som rör sig framåt, ord man säger vid tanken (kannan, slangen, buren, presenning, gummiband, borsten, kritig), och hela sidan läst uppifrån och ner: punkt 1 (solen står på och vattnet blir grönt) → 2 (presenningen täcker bara toppen och blåser av) → 3 (skrubba går, spröd plast går inte) → 4 (skadan är summan av alla soldagar) → 5 (överdraget utan dragkedja hamnar på marken) → lyckas (stäng ute ljuset från alla sidor, luckan upptill så det sitter kvar).",
+    "omskrivna_stycken": "Punkt 1: öppningen 'Ingen bestämmer sig för…' (mallens och de två tidigare sidornas grepp) byttes mot 'som klarast den dag du fyller den'; slutet skrevs om från mallens 'aldrig bestämt något alls' till 'solen fick stå på utan att någon stängde av den'. Punkt 2: 'ingen jämn match' (mallens fras, återanvänd på båda tidigare sidorna) ströks och blev 'gör inget åt solen som ligger på från sidan'. Punkt 3: första utkastet påstod att algerna 'sitter kvar på insidan och sätter igång igen' — står inte på produktsidan, byttes mot 'solen står fortfarande på', som gör. Punkt 4: hade två 'Inte X. Y.'-grepp i rad; det andra blev 'Solen en enskild dag kostar ingenting. Kostnaden är…'. Punkt 5: mallens öppning 'Många som väl bestämmer sig' byttes mot 'Det finns tunnare och billigare överdrag'; 'en minuts jobb' blev 'ett par minuter' (DNA: sitter på under två minuter). Lyckas: 'sytt i' undveks (vet inte att det är sytt) — 'gjort i'. Ärlig: tredje stycket vänt så det inte är mallens mening ord för ord.",
+    "kvar_att_lyssna_pa": "Punkt 1:s sista mening 'Solen har bara fått stå på i två månader utan att någon stängde av den' — bilden att man 'stänger av' solen bär hela sidan (knappen i punkt 1, lyckas-blocket) och är den enda formuleringen jag inte hört Axel säga själv. Hakar den högt: byt till 'utan att något stod emellan'."
+  }
+}

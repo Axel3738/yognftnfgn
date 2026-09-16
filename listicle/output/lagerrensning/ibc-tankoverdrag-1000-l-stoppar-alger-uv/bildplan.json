@@ -1,0 +1,31 @@
+{
+  "_kommentar": "Bildplan för IBC-tanköverdragets lagerrensningssida, 2026-09-16. Produktsidan har fem bilder (tittade): 1 = överdraget på tanken med ett hörn uppvikt så tanken syns, liten tank som inset, vit bakgrund; 2 = överdraget på en tank utomhus mellan andra tankar, riktigt foto; 3 = måttbild med text (116/120/100 cm, '1000 L IBC') — text, används inte; 4 = före/efter med text 'Före'/'Efter' — text, används inte; 5 = överdraget på en tank på ett stativ mot himlen. Ingen bär människor. Scenbilderna för punkt 1–4 (grönt vatten i solen, presenningen som blåst av, skrubbningen, den spröda gamla tanken) finns inte bland produktbilderna och genereras utan produkt och utan människor — produkten visas i produktbilderna 2 (punkt 5) och 1 (lyckas).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A white translucent 1000-litre IBC tote water tank in a galvanised steel cage standing on a lawn in a Swedish garden in strong midsummer sunlight, the water inside clearly visible through the translucent plastic wall and tinted green with algae, a garden hose connected to the outlet tap at the bottom, flower beds and a wooden fence softly blurred behind, photo-realistic, natural colours, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A white IBC tote water tank in a steel cage on a wet lawn in a Swedish garden on a grey gusty autumn day, a blue plastic tarpaulin that was covering the top has been blown half off and hangs down one side flapping in the wind, a couple of rubber bungee cords still hooked to the cage, a few leaves flying through the air, overcast daylight, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Close view of an emptied white IBC tote water tank in a steel cage, its translucent plastic wall stained green with algae on the inside, the top lid off, a long-handled scrubbing brush and a plastic bucket standing on the grass in front of it, a puddle of drained green water on the ground, overcast summer daylight in a Swedish garden, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "An old sun-damaged white IBC tote water tank in a rusty steel cage standing beside a red wooden garden shed, the plastic yellowed and chalky with a matte weathered surface, a visible crack running up from the bottom corner near the outlet tap with a dark wet patch on the gravel beneath it, warm low evening sunlight, Swedish countryside garden, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": { "kalla": "produkt", "index": 2 },
+    "lyckas": { "kalla": "produkt", "index": 1 }
+  }
+}

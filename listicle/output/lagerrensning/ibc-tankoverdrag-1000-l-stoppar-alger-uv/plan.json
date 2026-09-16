@@ -1,0 +1,164 @@
+{
+  "byggd": "2026-09-16T14:35:50.668Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
+    "kortTitel": "IBC-tanköverdrag 1000 L",
+    "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+    "url": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+    "typ": "",
+    "pris": 489,
+    "jamforpris": 636,
+    "prisText": "489 kr",
+    "jamforprisText": "636 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg",
+        "width": 960,
+        "height": 960
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "beskrivning": "Regnvattnet grönskar innan sommaren ens börjat\nSolljus rakt in i tanken får alger att växa i vattnet, och UV-strålningen gör plasten spröd år för år. Presenningen som skulle skydda blåser av vid första höststormen.\nEtt överdrag som håller ljuset ute och tanken hel\nTrä överdraget över tanken och stäng dragkedjan – det gröna 210D-oxfordtyget stänger ute ljuset så algerna aldrig kommer igång, och tar solen i stället för plasten. Öppningen upptill gör att du kommer åt locket utan att ta av något, och måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter.\nFunktioner\nVattnet håller sig klart – tyget stänger ute ljuset som får alger att växa\nTanken åldras inte i solen – 210D oxfordtyg tar UV-strålningen i stället för plasten\nLocket alltid åtkomligt – öppning upptill, fyll på utan att ta av överdraget\nPå och av med dragkedja – ingen kamp med presenning och gummiband\nPassar standardtanken – 120 × 100 × 116 cm för 1000-liters IBC\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0c2958613b4754cecac8be738c25e76f_1789569257067.png?v=1789569272",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3a8d705a734ef2892292494d32a6219b_1789569282143.png?v=1789569291",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1ea5b06f07d0ec6f4e5fb6daff8ee39f_1789569300569.png?v=1789569316",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0048376530f2968808636c69bd4b2e2b_1789569327526.png?v=1789569335",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #2"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg",
+      "width": 960,
+      "height": 960,
+      "kalla": "produkt #1"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/ibc-tankoverdrag-1000-l-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/ibc-tankoverdrag-1000-l-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "630144587632792526",
+    "namn": "IBC-tanköverdrag 1000 L – Lagerrensning (listicle)",
+    "handle": "ibc-tankoverdrag-1000-l-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/ibc-tankoverdrag-1000-l-lagerrensning",
+    "sidaId": "gid://shopify/Page/728860262749",
+    "skapad": true,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/ibc-tankoverdrag-1000-l-lagerrensning",
+      "tecken": 108460
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0c2958613b4754cecac8be738c25e76f_1789569257067.png?v=1789569272",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3a8d705a734ef2892292494d32a6219b_1789569282143.png?v=1789569291",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/1ea5b06f07d0ec6f4e5fb6daff8ee39f_1789569300569.png?v=1789569316",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/0048376530f2968808636c69bd4b2e2b_1789569327526.png?v=1789569335",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

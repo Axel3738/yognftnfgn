@@ -156,3 +156,14 @@ Kampanjen `TANKGUARD_SE_Tanköverdraget | 2026-09-08` står PAUSED sedan
 när (a) en redigerare tilldelas butiken, (b) någon läser flaggan i Ads Manager
 och sätter kampanjen ACTIVE. Rutinen gör ingetdera. Den norska halvan väntar
 fortfarande på NOK-nivåer.
+
+---
+
+## LP lagerrensning (Bäverbutiken) byggd 2026-09-16
+
+`/lagerrensning` byggde en obrandad lagerrensnings-listicle för samma produkt på
+källbutiken, live på https://baverbutiken.se/pages/ibc-tankoverdrag-1000-l-lagerrensning
+(489 kr / 636 kr, fem punkter, copy + bildplan i
+`listicle/output/lagerrensning/ibc-tankoverdrag-1000-l-stoppar-alger-uv/`).
+Obrandad med flit: knapparna är relativa, så samma sida går att lägga i
+tankguard.se med `--butik tankguard` om Axel vill.

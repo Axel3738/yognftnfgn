@@ -1,0 +1,62 @@
+{
+  "hamtat": "2026-09-16T14:34:09.872Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "IBC-tanköverdrag 1000 L – Stoppar Alger & UV",
+    "kortTitel": "IBC-tanköverdrag 1000 L",
+    "handle": "ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+    "url": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+    "typ": "",
+    "pris": 489,
+    "jamforpris": 636,
+    "prisText": "489 kr",
+    "jamforprisText": "636 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-01.jpg",
+        "width": 960,
+        "height": 960
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-04.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-matt-tankoverdrag.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/klart-forefter-tankoverdrag-sv.jpg",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tankoverdrag-tankoverdrag-05.jpg",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "beskrivning": "Regnvattnet grönskar innan sommaren ens börjat\nSolljus rakt in i tanken får alger att växa i vattnet, och UV-strålningen gör plasten spröd år för år. Presenningen som skulle skydda blåser av vid första höststormen.\nEtt överdrag som håller ljuset ute och tanken hel\nTrä överdraget över tanken och stäng dragkedjan – det gröna 210D-oxfordtyget stänger ute ljuset så algerna aldrig kommer igång, och tar solen i stället för plasten. Öppningen upptill gör att du kommer åt locket utan att ta av något, och måtten 120 × 100 × 116 cm passar en standardtank på 1000 liter.\nFunktioner\nVattnet håller sig klart – tyget stänger ute ljuset som får alger att växa\nTanken åldras inte i solen – 210D oxfordtyg tar UV-strålningen i stället för plasten\nLocket alltid åtkomligt – öppning upptill, fyll på utan att ta av överdraget\nPå och av med dragkedja – ingen kamp med presenning och gummiband\nPassar standardtanken – 120 × 100 × 116 cm för 1000-liters IBC\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "ibc-tankoverdrag-1000-l-lagerrensning"
+}
