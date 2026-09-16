@@ -1,0 +1,15 @@
+1
+00:00:00,079 --> 00:00:09,500
+Infartslarm trådlöst, just nu till kraftigt nedsatt pris. Infartslarm trådlöst, just nu i rea. Bara idag. Hör direkt när någon kör in på uppfarten.
+
+2
+00:00:09,739 --> 00:00:16,459
+Bil, besökare eller leverans. Sensor ute, mottagare inne. Klart på minuter. Just nu till kraftigt nedsatt pris.
+
+3
+00:00:16,479 --> 00:00:19,920
+Men lagret krymper snabbt. När den här omgången är slut går priset upp igen.
+
+4
+00:00:19,979 --> 00:00:21,579
+Beställ nu medan rean gäller.
