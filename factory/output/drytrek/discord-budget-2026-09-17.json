@@ -1,0 +1,27 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-17",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 4641,
+    "kop_7d": 8,
+    "roas_7d": 0.73
+  },
+  "gjort": [
+    "SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep). Nothing activated. Per day before the pause: 09-10 856 SEK/2 · 09-11 788 SEK/0 · 09-12 1123 SEK/3 · 09-13 848 SEK/2 · 09-14 540 SEK/0 · 09-15 487 SEK/1 · 09-16 0 SEK/0. Brief round stays paused (18 batch #3 briefs in Draft).",
+    "NO dry run (nothing written): DRYTREK_NO is ACTIVE at 1 000 SEK/day and profitable — 7 days 7 109 SEK / 26 purchases / ROAS 1.84 vs break-even 1.60; 3 days 2 870 SEK / 10 / ROAS 1.58. The night watch only manages SE today.",
+    "With today's rules the NO round WOULD have: cut 1 000 -> 700 SEK (3-day margin -0.8 % < 16 %), paused DryTrek_Gamasjer_NO_PD_2_1 (2 386 SEK, 8 purchases, CPA 298 vs break-even CPA 243) and paused DryTrek_NO_Damasker_PD_14_15 (469 SEK, 1 purchase). Benchmark: Gamasjer_NO_PD_1 — 2 241 SEK, 11 purchases, CPA 204, 100 % of the profit."
+  ],
+  "briefer": [],
+  "varningar": [
+    "The break-even CPA 243 SEK in the product file assumes one pair per order. Real order value in NO is ~510 SEK (26 orders: spend x ROAS / purchases), so break-even CPA is ~319 SEK there. With 319 the NO round would pause NOTHING — PD_2_1 at CPA 298 is profitable. Do not let the SE-sized number kill Norwegian ads.",
+    "briefs paused: SE campaign paused by the owner, 0 judgeable ads of 42, 18 batch #3 briefs waiting in Draft."
+  ],
+  "action_axel": [
+    "Still open from last night — DRYTREK_SE: (A) keep paused, (B) restart at 500 SEK as is, (C) restart as a 6-ad test ad set with equal budget. Reply A, B or C.",
+    "Norway: should the night watch manage DRYTREK_NO too (budget rules + ad kills, every night)? Reply YES or NO. If YES I first raise the NO break-even CPA to the real order value (~319 SEK) so the rules do not pause profitable ads."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-18 (budget only — briefs paused)"
+}

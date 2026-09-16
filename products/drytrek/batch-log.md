@@ -1039,3 +1039,21 @@ att 389 är norskt facit.
 exakt ut som ett mätt tal. `.json`-endpointen svarar villigt med en siffra på
 varje språkprefix — den siffran är bara aldrig marknadens. Läs valutan ur
 samma svar som priset, eller rapportera att du inte kunde.
+
+---
+
+## Nattvakten 2026-09-17 (körning nr 6, ingen briefdag) — SE pausad, NO torrkörd
+
+SE: `DRYTREK_SE` PAUSED (ägaren 15/9), 0 ändringar. 7d 4 641 kr / 8 köp / 0,73.
+Briefronden pausad (18 batch #3-briefer i Draft).
+
+**NO torrkörd för första gången** (`--marknad NO --torr`, inget skrivet):
+`DRYTREK_NO` ACTIVE 1 000 kr/dag, 7d **7 109 kr / 26 köp / ROAS 1,84** (över
+break-even 1,60), 3d 2 870 kr / 10 köp / 1,58. Reglerna hade gjort 3 ändringar:
+sänkt 1 000 → 700 kr (vinst 3d −0,8 %), pausat `Gamasjer_NO_PD_2_1` (2 386 kr,
+8 köp, CPA 298 mot BE-CPA 243) och `NO_PD_14_15` (469 kr, 1 köp). Benchmark
+`Gamasjer_NO_PD_1`: 2 241 kr, 11 köp, CPA 204 — 100 % av vinstbidraget.
+⚠️ **BE-CPA 243 är fel för NO**: verklig AOV ≈ 510 kr (leveransrundan 16/9,
+26 order) ⇒ BE-CPA ≈ 319 kr. Med 319 hade ronden pausat **ingenting**.
+Rutinen dömer bara SE tills Axel säger annat — frågan ställd i Discord.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-17-NO.json`.
