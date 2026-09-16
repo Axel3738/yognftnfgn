@@ -1,0 +1,22 @@
+{
+ "carashell": {
+  "produkt": "CaraShell roof cover (takskyddet)",
+  "link": "https://carashell.se/en/products/takskyddet?country=US",
+  "pris_nok": null,
+  "pris_usd": 199,
+  "videos": {
+   "CS_1_H1": "lokal",
+   "CS_2_H1": "lokal",
+   "CS_3_H1": "lokal",
+   "GT_1_H1": "lokal",
+   "GT_2_H1": "lokal",
+   "GT_3_H1": "lokal",
+   "PD_1_H1": "lokal",
+   "PD_2_H1": "lokal",
+   "PD_3_H1": "lokal",
+   "SP_1_H1": "lokal",
+   "SP_2_H1": "lokal",
+   "SP_3_H1": "lokal"
+  }
+ }
+}

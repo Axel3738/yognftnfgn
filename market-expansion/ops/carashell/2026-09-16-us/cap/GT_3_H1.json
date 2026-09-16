@@ -1,0 +1,18 @@
+{
+ "in": "../video/render/carashell_GT_3_H1.mp4",
+ "ut": "../us/CaraShellRoof_US_GT_3_H1.mp4",
+ "srt": "../video/srt-us/carashell_GT_3_H1.srt",
+ "captions": {
+  "zon": [
+   938,
+   1094
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 1018,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 600
+ },
+ "qa": "../cap/qa-GT_3_H1"
+}
