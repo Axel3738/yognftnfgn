@@ -1,0 +1,57 @@
+{
+  "punkt1": {
+    "nyckel": "c6c8252944f2",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9fdbd502ecdad1d8a2803206fdb1f1be_1789550498852.png?v=1789550507",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/9fdbd502ecdad1d8a2803206fdb1f1be_1789550498852.png",
+    "taskId": "9fdbd502ecdad1d8a2803206fdb1f1be",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bilder/punkt1.png",
+    "datum": "2026-09-16"
+  },
+  "punkt2": {
+    "nyckel": "68ec110e2636",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/22a547ca9416c19d0d0a1da2298392fd_1789550516653.png?v=1789550527",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/22a547ca9416c19d0d0a1da2298392fd_1789550516653.png",
+    "taskId": "22a547ca9416c19d0d0a1da2298392fd",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bilder/punkt2.png",
+    "datum": "2026-09-16"
+  },
+  "punkt3": {
+    "nyckel": "7dae07ec63bc",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/558428623a5ce7860f8b6d4479d917b6_1789550536251.png?v=1789550544",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/558428623a5ce7860f8b6d4479d917b6_1789550536251.png",
+    "taskId": "558428623a5ce7860f8b6d4479d917b6",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bilder/punkt3.png",
+    "datum": "2026-09-16"
+  },
+  "punkt4": {
+    "nyckel": "5fe0dde5a938",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/c745f271cb1d162a73803ee10dd48da7_1789550553452.png?v=1789550562",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/c745f271cb1d162a73803ee10dd48da7_1789550553452.png",
+    "taskId": "c745f271cb1d162a73803ee10dd48da7",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bilder/punkt4.png",
+    "datum": "2026-09-16"
+  },
+  "punkt5": {
+    "nyckel": "bacf8c934bf9",
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9f857b986a2d6c1c30674e9f5786caed_1789550574063.png?v=1789550580",
+    "width": 1024,
+    "height": 1024,
+    "via": "bildarkiv",
+    "kie_url": "https://tempfile.aiquickdraw.com/as/9f857b986a2d6c1c30674e9f5786caed_1789550574063.png",
+    "taskId": "9f857b986a2d6c1c30674e9f5786caed",
+    "lokal": "/home/user/yognftnfgn/lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bilder/punkt5.png",
+    "datum": "2026-09-16"
+  }
+}

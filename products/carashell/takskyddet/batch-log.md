@@ -397,3 +397,19 @@ Två fynd som gäller framåt står i `dna.md`: `elementtyp()`-buggen (rättad i
    PD-vinkeln alltid fel publik?
 4. Har batch #2:s fyra bildannonser hämtat sig när de fått en hel vecka med rätt
    creative — och vad säger det om mönster 10?
+
+## LP lagerrensning byggd 2026-09-16 (`/lagerrensning`, Bäverbutikens produktsida)
+
+Bäverbutikens lagerrensningssida (listicle) för samma fysiska produkt, fil
+`lagerrensning/output/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/takoverdrag-husvagn-6-5-3-m-lagerrensning.gempages`
+(Axel importerar i GemPages → Pages → Import page). Obrandad, knapparna pekar
+på baverbutiken.se, pris 1 129 / 1 469 kr avläst ur butiken samma dag. Fem
+teman: taket du aldrig ser → hösttvätten räcker inte → fukt tvättas inte bort
+→ köparen med fuktmätaren → presenningen som spricker. Copyn påstår varken
+förvaringspåse eller dragsko (samma regel som dna.md). Fyra kie-bilder utan
+produkt + en med produktbild 2 som referens (husbilen på frostig grusplan),
+alla på Shopifys CDN via `lp-bildarkiv`.
+⚠️ Ska sidan in i CaraShell: `--lank https://carashell.se/products/takskyddet`
+bygger en fil med knapparna dit på noll credits, MEN copyn säger "30 dagars
+öppet köp" (Bäverbutikens villkor) — CaraShell har 14 dagars ångerrätt (dna.md,
+ändring 3), så lyckas-stycke 2 och riskfritt-blocket måste skrivas om först.

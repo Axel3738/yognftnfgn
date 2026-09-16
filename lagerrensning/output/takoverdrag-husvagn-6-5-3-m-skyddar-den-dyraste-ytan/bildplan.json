@@ -1,0 +1,36 @@
+{
+  "_kommentar": "Bildplan för taköverdragets lagerrensningssida, 2026-09-16. Produkten har fyra bilder, alla tittade: 1 = husbil med överdraget, snett framifrån, vit bakgrund (800 px); 2 = samma husbil från andra sidan, vit bakgrund (1200 px); 3 = hopvikt överdrag med tre detaljcirklar (väv, krokar, rulle); 4 = spännbanden med plastkrokarna i närbild. Ingen av dem visar en miljö, så punkt 1–4 genereras utan produkt och utan människor (problemet, hösttvätten, skadan inomhus, försäljningsplatsen). Punkt 5 genereras MED produktbild 2 som referens så husbilen med överdraget hamnar på en vinteruppställning; faller den, byt till produktbild 1. Lyckas = produktbild 2 (hela produkten på vit bakgrund).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "Close-up of the flat white roof of a caravan in late autumn, seen from slightly above, wet after rain, a shallow puddle of rainwater standing around a grey plastic roof hatch and along the sealed seam, a few brown fallen leaves stuck in the water, grey overcast Nordic sky, photo-realistic, natural colours, no text, no people, no faces, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A white caravan parked on a gravel winter storage lot in autumn, freshly washed and still wet, a plastic bucket with a sponge and a folded aluminium ladder standing on the ground beside it, wet gravel, bare trees in the background, soft overcast Nordic daylight, photo-realistic, no text, no people, no hands, no faces, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Interior ceiling of a caravan seen from below, a brown water stain and slightly bubbled wall panel around the frame of a roof hatch, the damage from moisture that has come in through the roof, soft daylight from a side window, photo-realistic, natural colours, no text, no people, no faces, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "A row of used white caravans and motorhomes lined up for sale on a dealer lot in autumn, wet asphalt, low overcast light, seen from the front at an angle, photo-realistic, natural colours, no signs, no text, no people, no faces, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": {
+      "kalla": "kie",
+      "prompt": "The same white motorhome with the black roof cover from the reference image, exactly as in the reference with the black cover over the roof and the straps hooked down the sides, parked on a gravel winter storage lot beside a wooden fence, bare birch trees behind, thin frost on the ground, cold pale morning light, photo-realistic, natural colours, no text, no people, no faces, no logos",
+      "referenser": ["https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg"],
+      "format": "1:1"
+    },
+    "lyckas": { "kalla": "produkt", "index": 2 }
+  }
+}
