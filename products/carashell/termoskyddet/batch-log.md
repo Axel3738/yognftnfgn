@@ -53,8 +53,11 @@ SP_2_1 (4). Det som är uppe är oprövat.
 
 Strukturen byttes till den låsta: **CBO 1 000 kr/dag per kampanj**, fyra adsets
 utan egen budget (`_PD`, `_G`, `_CS`, `_SP`), 16 annonser per marknad, allt PAUSED.
-`node factory/rakning.mjs termoskyddet --marknad SE` → **KLART, 16/16, exit 0.**
-NO: se `rakningen.md` (SP_2/SP_3 + omrenderad CS_2 sist i kön samma kväll).
+`node factory/rakning.mjs termoskyddet` → **KLART på båda marknaderna, 16/16 + 16/16,
+exit 0.** Trippelkoll tillbakaläst ur Meta: konto `915422744950975`, sida
+`1381171778405935`, pixel `28589207184025756`, CBO 100000, inga adsetbudgetar, geo
+SE resp. NO, länk `/products/termoskyddet` resp. `/nb/products/termoskyddet?country=NO`,
+PAUSED på alla 32 annonser, 8 adsets och 2 kampanjer — 0 avvikelser.
 
 | Annons | Typ | Vinkel | Vad den bär nu (nytt manus, HeyGen-röst) | Ärvd förälder | Ändrat |
 |---|---|---|---|---|---|

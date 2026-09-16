@@ -809,5 +809,5 @@ Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är
 - **Captionbandet:** källornas inbrända captions ligger på rad 975–1065 av 1280, men
   CS_3 (SE) och SP_1 (NO) har text upp till rad 885 — `--band=885:1084` täcker.
   Kollen "text ovanför bandet" är en OCR-flagga, inte en dom: titta på `qa-*.png`.
-- **Krediter mätt 2026-09-16:** 7 631 → 7 085 för 20 renderingar à 15–18 s ≈ 27 per
+- **Krediter mätt 2026-09-16:** 7 631 → 7 057 för 21 renderingar à 15–18 s ≈ 27 per
   video (inte 40 som gissat ovan efter de sex första).
