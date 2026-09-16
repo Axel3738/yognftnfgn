@@ -1,0 +1,104 @@
+{
+  "butik": "DryTrek",
+  "nyckel": "drytrek/damasker",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "annonsmarknader": [
+    "NO"
+  ],
+  "lank_standard": "https://drytrek.se/products/damasker",
+  "valuta": "SEK",
+  "heygen_sprak": null,
+  "sprak": "svenska",
+  "locale": null,
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [
+    {
+      "namn": "Damasker_PD_10_H1",
+      "page_id": "3d5270ab-908c-8128-ba9a-ceae374c26fd",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_UG_1_H1",
+      "page_id": "3cf270ab-908c-8119-aaac-d3ee94437d69",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_CI_1_H1",
+      "page_id": "3cf270ab-908c-8124-9db4-f55cf35126f6",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_PD_6_H1",
+      "page_id": "3cf270ab-908c-8129-b351-e784ca29f865",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_PD_4_H1",
+      "page_id": "3cf270ab-908c-8140-8b79-f617f758639f",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_CO_1_H1",
+      "page_id": "3cf270ab-908c-815c-865b-ddc44b8d7c1e",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_PD_5_H1",
+      "page_id": "3cf270ab-908c-8161-bcf0-ee0be9ccda41",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_CS_4_H1",
+      "page_id": "3cf270ab-908c-8169-b149-ff65c2fd12f6",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_MB_1_H1",
+      "page_id": "3cf270ab-908c-81b0-8558-e3bc55ca58f5",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    },
+    {
+      "namn": "Damasker_AU_1_H1",
+      "page_id": "3cf270ab-908c-81d0-81c2-e1da0fab1591",
+      "status": "Creative strat review",
+      "skal": "prefixet \"Damasker\" är inte butikens brand (DryTrek) — parkerad källrad, rörs inte"
+    }
+  ],
+  "hub": {
+    "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+    "titel": "Damasker vandring"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE SE-kampanj — \"DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 4657 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 19,
+  "lank_arvd": null,
+  "pris_butik": {
+    "pris": 389,
+    "min": 389,
+    "max": 389,
+    "jamforpris": 649,
+    "valuta": "SEK",
+    "titel": "Damasker Vandring – Håller Snö, Väta & Grus Ute",
+    "handle": "damasker",
+    "kalla": "https://drytrek.se/products/damasker.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [
+    "kampanj: ingen ACTIVE SE-kampanj — \"DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 4657 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 4657 kr spend — avvecklad, aldrig mål"
+  ],
+  "hamtad": "2026-09-16T11:53:23.415Z"
+}

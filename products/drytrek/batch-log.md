@@ -928,3 +928,57 @@ PD_14 färger 752/2 · SP 685/3 · CI 50 · FO 36 · BOF 12. Kampanjen totalt
 
 Copy-A/B: fable-taggade live-annonser 146 kr / 0 köp, sonnet-taggade 1 175 kr
 / 2 köp (inkl. färgbilderna). 0 bedömbara per modell.
+
+---
+
+## 2026-09-16 — leveransrunda: ingen SE-kampanj att leverera till
+
+Rutinen körde 11:50 UTC. **Ingen uppladdning var möjlig:**
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` står **PAUSED sedan
+2026-09-15 20:52 CEST med 4 657 kr spend** — pausad av Axel för hand. PAUSED med
+spend är ett beslut: kön behandlar kampanjen som avvecklad och vägrar ladda upp
+dit. Nattvakten hade redan konstaterat samma sak natten till 16/9 (commit
+`e515632`) och pausat briefronden i registret.
+
+Kön var dessutom tom: 0 rader i `To be Reviewed`, inga nya leveranser från
+Jasper. Pris läst live ur butiken: 389 kr. Inget rördes i kontot.
+
+### ⚠️ Norge kör vidare och är LÖNSAMT — det saknades i nattens bild
+
+Nattvaktens siffror räknade bara Sverige. Båda kampanjerna, 7 dagar,
+lästa ur Meta 2026-09-16:
+
+| Kampanj | Status | Spend 7d | Köp | ROAS | Mot break-even 1,60 |
+|---|---|---:|---:|---:|---|
+| `DRYTREK_NO_Damasker Vandring` | **ACTIVE, 1 000 kr/dag** | 6 306 kr | 22 | **1,78** | **över — lönsam** |
+| `DRYTREK_SE_Damasker Vandring` | PAUSED 15/9 | 4 657 kr | 8 | 0,73 | under |
+
+Norge har alltså både mer spend och fler köp än Sverige hade, och ligger över
+break-even. Ingen har rört den kampanjen. Det är samma produkt, samma pris och i
+stor utsträckning samma creatives — skillnaden ligger i marknaden, inte i
+materialet. **Skriv aldrig "DryTrek går back" utan att säga vilken marknad som
+avses.**
+
+### ⚠️ Break-even-CPA 243 kr är för lågt satt i alla briefer
+
+Briefarnas `243 kr` kommer ur `389 / 1,60`, alltså antagandet att varje kund
+köper ett par. Verkligt ordervärde, räknat som `spend × ROAS ÷ köp` (metoden
+CLAUDE.md föreskriver, eftersom `omni_purchase_values` är buggig):
+
+| Marknad | Intäkt 7d | Köp | AOV ≈ | Break-even-CPA ≈ (AOV / 1,60) |
+|---|---:|---:|---:|---:|
+| NO | 11 225 kr | 22 | **510 kr** | **319 kr** |
+| SE | 3 400 kr | 8 | **425 kr** | **266 kr** |
+
+Paketnivåerna säljer alltså. Med rätt tal är Norges CPA 287 kr **under** sin
+break-even — samma dom som ROAS 1,78 ger, nu räknad två vägar.
+
+**Ingen tidigare dom ändras av det här:** annonserna ronden pausade låg på
+463 kr och 550 kr per köp, över även den korrigerade nivån. Men 243 kr är en
+för hård grind för kommande annonser, och talet står i varje brief och i
+nattvaktens annonsregel. ⚠️ **Ska in i `dna.md` vid nästa `/cs`** — ROAS är
+avrundad till två decimaler, så AOV-talen är ungefärliga och bör räknas om på
+ett längre fönster innan de skrivs som fasta.
+
+Hubben: 38 Draft, 31 Approved, 0 i översättningskön, 10 parkerade
+`Damasker_*`-rader kvar orörda.
