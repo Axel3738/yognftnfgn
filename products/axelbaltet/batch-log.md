@@ -605,3 +605,17 @@ Citatstatiken med recensionstexter är fortfarande blockerad. Bundle-vinkeln for
   byggas i video också.
 - ⚠️ **Target-CPA 185 och break-even 326 är fortfarande räknade på gamla priset 509 kr.**
   Alla vinstsiffror ovan är därmed konservativa. **Ägaren räknar om.**
+
+---
+
+## Lagerrensnings-LP byggd — 2026-09-16 (`/lagerrensning`)
+
+Motorhöljets listicle-sida kopierad till axelbältet: copy via sonnet-subagent
+(31 rader i tre-frågorstestet, 4 ❌ på fasta strukturrader), tre kie-bilder
+(punkt 1, 2, 4 — scener utan människor) + produktbilderna 4, 5, 1, pris **599 kr
+istället för 789 kr** avläst på produktsidan samma dag. Betyget 4,75 ströks ur
+copyn — sidan visar 4,50/12 i dag. Fil:
+`lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages`
+→ Axel importerar i GemPages (Pages → Import page). Blivande adress
+`baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning`. Annonser som
+bär överlager-/lagerrensningsvinkeln pekas dit när sidan är publicerad.

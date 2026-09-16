@@ -1,0 +1,163 @@
+{
+  "byggd": "2026-09-16T05:44:51.005Z",
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Axelbälte för Trimmer – Justerbart Nylonbälte",
+    "kortTitel": "Axelbälte för Trimmer",
+    "handle": "axelbalte-for-trimmer-justerbart-nylonbalte",
+    "url": "https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte",
+    "typ": "Trädgård",
+    "pris": 599,
+    "jamforpris": 789,
+    "prisText": "599 kr",
+    "jamforprisText": "789 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg",
+        "width": 1240,
+        "height": 1240
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/ce11fb3c46664abc8db4456e96b34157-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/aec0916f27d24b769d1eef68cff2851c-goods.jpg",
+        "width": 1402,
+        "height": 1402
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7eea073fbd85435080bb8dc76b501b0c-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "index": 5,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/15577fcb1cbe416e8dd5f8f7d5e57e06-goods.jpg",
+        "width": 1500,
+        "height": 1500
+      }
+    ],
+    "beskrivning": "Trimma längre – utan att få ont i rygg och axlar\nAtt bära hela trimmerns vikt i armarna gör att du blir trött efter bara några minuter. Axlar, nacke och rygg får ta smällen, och jobbet tar längre tid än det borde.\nLåt selen bära tyngden\nDet justerbara axelbältet fördelar trimmerns vikt över axlar och rygg istället för att belasta armarna. Med rätt inställning känns redskapet lättare och du jobbar bekvämt mycket längre.\nFunktioner\nFördelar vikten över axlar och rygg\nJusterbart nylonbälte som passar de flesta kroppstyper\nAvlastar armar, nacke och handleder\nPassar de flesta grästrimmrar och röjsågar\nStadig metallkrok för snabb på- och avtagning\n30 dagars nöjd-kund-garanti. Inte helt nöjd? Hör av dig inom 30 dagar så löser vi det – utan krångel."
+  },
+  "copy": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/copy.json",
+  "bildplan": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/bildplan.json",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bc0ff7a6882a2088b0a78c20b2a16f56_1789537336812.png?v=1789537344",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4ae9d205043a956c003c9bd73904e12b_1_1789537372_9636.png?v=1789537379",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7eea073fbd85435080bb8dc76b501b0c-goods.jpg",
+      "width": 1500,
+      "height": 1500,
+      "kalla": "produkt #4"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bba75d4dcbcf15fcd36214ffe1db01c8_1_1789537407_4747.png?v=1789537414",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/15577fcb1cbe416e8dd5f8f7d5e57e06-goods.jpg",
+      "width": 1500,
+      "height": 1500,
+      "kalla": "produkt #5"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg",
+      "width": 1240,
+      "height": 1240,
+      "kalla": "produkt #1"
+    }
+  ],
+  "fil": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages",
+  "sida": {
+    "id": "631451887748514611",
+    "namn": "Axelbälte för Trimmer – Lagerrensning (listicle)",
+    "handle": "axelbalte-for-trimmer-lagerrensning"
+  },
+  "checksummor": [
+    {
+      "cid": "gUmta52rzP",
+      "checksum": "b9ea6d50df945a02637043429f4bf5504ba553afa8e30bb75d6cd088461bbb05"
+    },
+    {
+      "cid": "gMXzSEKTKF",
+      "checksum": "ad4e1d6afe4b494e59fd5fd94d14aaa24378ea6fe2b4f964700be54c9ff1d6a9"
+    },
+    {
+      "cid": "gzr7fcjOKR",
+      "checksum": "12438721cf32ca697de64128458585a9a4555e7dc4022e22a92daf9b7daab194"
+    },
+    {
+      "cid": "gFUogNLoms",
+      "checksum": "f4b68b98eb3b4c68065151f0d94f0a4d2dffa5b7c3e857d7065e13c51e39fb0c"
+    },
+    {
+      "cid": "gKDLMvyzHn",
+      "checksum": "36179797074170812ce52ed38b2845bb4c535c8c04e856d6057f411ee0a46f37"
+    },
+    {
+      "cid": "gpAnhUOKAB",
+      "checksum": "67c6e3ce97f7d4ee01f1fc198a1747343fdd8ecadec8113bf0a6db0ad79fd0af"
+    },
+    {
+      "cid": "gZwRqjNDfR",
+      "checksum": "355abc69a25db0521d5dda87518612a571b462e10c54cfd6cb0ca214437aa547"
+    },
+    {
+      "cid": "gFr4QMkKJc",
+      "checksum": "606812419320969e0408f647e2543981993529e7d6848936b74907c9eda8a1f5"
+    },
+    {
+      "cid": "gczQ124MUD",
+      "checksum": "262b16821d8c3708f2485802d2559a009e3ae21d045b6a167a373bd1d515c1c8"
+    },
+    {
+      "cid": "gNtZOEiSzZ",
+      "checksum": "424b317dfd6428faf0f92aef774a8a80dc6bbe11966d4532ac2c9cd9e7571206"
+    }
+  ],
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bc0ff7a6882a2088b0a78c20b2a16f56_1789537336812.png?v=1789537344",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/4ae9d205043a956c003c9bd73904e12b_1_1789537372_9636.png?v=1789537379",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/7eea073fbd85435080bb8dc76b501b0c-goods.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/bba75d4dcbcf15fcd36214ffe1db01c8_1_1789537407_4747.png?v=1789537414",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/15577fcb1cbe416e8dd5f8f7d5e57e06-goods.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}
