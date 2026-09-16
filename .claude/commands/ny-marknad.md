@@ -179,11 +179,13 @@ engelska produktsidan själv, hela vägen ner, en gång.
    faktiskt skickar dit till det priset, annars sätt `frakt.fri_globalt:
    false` + `standardpris` och kör `--igen frakt`.
 
-### 9. Annonserna — INTE i det här kommandot
-USA-annonser kräver två beslut från Axel som inte är tagna (2026-09-16):
-vilket annonskonto (OPS-kontot MagiBorsten DK är i SEK) och engelska
-creatives (Bäverbutikens källannonser är svenska med svensk röst — de går inte
-att ärva). Skriv det i rapporten som nästa steg; bygg ingenting i Meta.
+### 9. Annonserna — ett eget kommando, men säg hur
+Annonskontot per marknad står i `factory/opsmarknader.mjs` (USA = Magiborsten
+UK, Axels beslut 2026-09-16). Kampanjen byggs TOM av `/ny-annonser` steg 8b
+(`node factory/kampanj.mjs <produkt> --marknad US --tom`) och fylls varje dag
+av `/ops-oversatt <butik> --marknad US` (byggs av `/notionscalercs setup`).
+Rapportera: finns kampanjen redan (kön säger det) står den PAUSED tills Axel
+slår på den — och det ska han göra FÖRST när `/en`-sidan svarar (steg 7).
 
 ### 10. Minnet, rapporten, pushen
 - `products/<butik>/dna.md`: en rad under "Marknader" med datum, valuta,

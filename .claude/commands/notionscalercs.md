@@ -129,6 +129,7 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    | Nattvakten | 00:01 + 8 min × butikens plats | `/notionscalercs <nyckel>` |
    | Leveransrundan | 13:40 + 5 min × plats | `/ops-leverans <nyckel>` |
    | Översättning NO | 15:40 + 5 min × plats | `/ops-oversatt <nyckel>` |
+   | Översättning US (bara butiker med US i `annonsmarknader`, register.json) | 16:40 + 5 min × plats | `/ops-oversatt <nyckel> --marknad US` |
 
    **Tiderna räknas av skriptet, aldrig i huvudet:**
    ```

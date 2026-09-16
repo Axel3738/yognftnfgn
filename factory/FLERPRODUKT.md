@@ -179,9 +179,12 @@ produkt, `budgetrond` dömer mot produktfilens egen break-even.
 **Rutinerna, samma kväll:** ett bart `carashell` kastade "matchar 2 poster", och
 takskyddets tre rutiner (prompt `/notionscalercs carashell`) ligger på
 `claude5@stonebite.org` — osynliga från sessionen. Axels beslut: de befintliga
-rutinerna är takskyddets, termoskyddet får egna. Löst med `butik.huvudprodukt:
-takskyddet` i butiksfilen + `hittaPost` som löser upp butiks-id:t till huvudprodukten.
-Ingen rutin behövde röras.
+rutinerna är takskyddets, termoskyddet får egna. Löst från två håll samma dag:
+`butik.huvudprodukt: takskyddet` i butiksfilen + `hittaPost` som löser upp butiks-id:t
+till huvudprodukten (så ett bart `carashell` fungerar), OCH en session på claude5 som
+byggde om de fyra rutinerna med `carashell/takskyddet` i prompten. Lärdom därifrån:
+`update_trigger` kan inte byta prompt på en rutin bunden till en annan sessions
+container — det blev nya trigger-id:n på samma fasta sessioner, de gamla raderade.
 
 **Lagat samma dag:**
 - `rutin.mjs` saknade CLI-flaggan `--flerprodukt` — `--tider carashell/termoskyddet

@@ -160,6 +160,10 @@ rutinerna fortsätter gå orörda; den nya produkten nås bara på
 `<butik>/<ny-produkt-id>`. Kontrollera med `node factory/register.mjs <butik>`
 — raden `Huvudprodukt: ja` ska stå på den gamla produkten. Utan fältet kastar
 uppslagningen med ett tips om fältet, och rutinerna stannar samma natt.
+Når du rutinerna (samma konto): byt även deras prompt till produktnyckeln.
+⚠️ `update_trigger` kan inte byta prompt på en rutin bunden till en annan
+sessions container — bygg nya triggers på samma fasta sessioner och radera de
+gamla, verifierat med `list_triggers` (CaraShell 2026-09-16, fyra rutiner).
 
 Egen rutinplats åt produkt 2: `node factory/rutin.mjs --tider <butik>/<ny-produkt-id>
 --flerprodukt --skriv-in`. Utan `--flerprodukt` ärver nyckeln butikens minut och

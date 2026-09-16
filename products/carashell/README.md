@@ -19,9 +19,11 @@ uppdatera dem efter, committa och pusha.
 befintliga rutinerna är takskyddets, termoskyddet får egna). Det står som
 `butik.huvudprodukt: takskyddet` i `factory/butiker/carashell.yaml`, och
 `register.mjs hittaPost` löser upp butiks-id:t (och brandet) till den
-produkten. Rutinerna på `claude5@stonebite.org` med prompten
-`/notionscalercs carashell` fortsätter alltså gå orörda; `carashell/takskyddet`
-fungerar också. Termoskyddet nås ALDRIG via butiks-id:t — bara på
+produkten. Takskyddets fyra rutiner på `claude5@stonebite.org` byggdes
+dessutom om samma dag med `carashell/takskyddet` i prompten (annan session,
+se CLAUDE.md rutintabellen) — huvudprodukten är säkerhetsnätet så att ett bart
+`carashell` ändå fungerar, i en prompt eller när Axel skriver det för hand.
+Termoskyddet nås ALDRIG via butiks-id:t — bara på
 `carashell/termoskyddet`. En session som slår upp `carashell` ska läsa raden
 `Huvudprodukt:` i registrets utskrift och använda minnet
 `products/carashell/takskyddet/`, inte `products/carashell/`.

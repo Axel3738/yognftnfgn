@@ -325,7 +325,11 @@
           "count": 7
         }
       ],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "annonsmarknader": [
+        "NO",
+        "US"
+      ]
     },
     "catcabin/utekattkojan": {
       "lage": "skala",

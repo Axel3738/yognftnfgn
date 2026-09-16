@@ -195,7 +195,8 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
    Bäverbutikens creatives går inte att referera. Ladda ner filen, brand-swappa,
    och ladda upp på nytt till `act_915422744950975` (`advideos`/`adimages`).
 
-8. **Bygg TVÅ kampanjer — en svensk och en norsk.**
+8. **Bygg TVÅ kampanjer — en svensk och en norsk.** (USA är en tredje, se
+   8b — den byggs TOM, för det finns inga engelska källannonser att ärva.)
    `pipeline/no-video-launch.mjs` + `no-image-launch.mjs` med en vågkonfig per
    marknad. Allt Graph-anrop går genom `tools/meta-lib.mjs` — skriv aldrig egna
    anrop, spärrarna där är dyrköpta.
@@ -301,6 +302,25 @@ Gör i ordning, utan att invänta godkännande mellan stegen:
       den svenska och säg det.
     - Skriv startdatum + budget i `factory/produkter/<id>.yaml` (`meta.launch`)
       och i `products/<butik>/batch-log.md`. Committa och pusha.
+
+8b. **USA — tom kampanj i Magiborsten UK** (Axels beslut 2026-09-16: "Detta
+    blir Magiborsten UK till för", kontot `1107817401910319`, SEK). Bäverbutiken
+    har inga engelska annonser, så det finns inget att brand-swappa. Kampanjen
+    byggs TOM med samma låsta struktur (CBO, ett adset per koncept ur
+    SE-kampanjen, geo US, pixel ur produktfilen, länk
+    `/en/products/<handle>?country=US`), allt PAUSED:
+    ```
+    node factory/register.mjs annonsmarknader <butik>/<produkt> NO,US
+    node factory/kampanj.mjs <produkt> --marknad US --tom --torr
+    node factory/kampanj.mjs <produkt> --marknad US --tom
+    ```
+    Annonserna fylls sedan på en om dagen av `/ops-oversatt <butik> --marknad US`
+    (17:05-rutinen, byggd av `/notionscalercs setup`): varje SE-annons som gått
+    live översätts till amerikansk engelska (HeyGen "English (United States)",
+    bildtexterna ritas om, USD-pris ur `ekonomi.marknadspriser` eller inget
+    pris). Kampanjen slås på av Axel när butiken har `/en` (`/ny-marknad`).
+    ⚠️ Pixeln och sidan måste vara delade till UK-kontot i Business Manager —
+    första bygget mäter det (mätt 2026-09-16: CaraShell, se PROCESS.md).
 
 12. **Dokumentera.** `factory/state/<butik>--<produkt>.json`, ärvd historik in i
     `products/<butik>/batch-log.md` (de brand-swappade annonserna bär med sig

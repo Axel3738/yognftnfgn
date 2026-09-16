@@ -330,7 +330,9 @@ export const INSIGHTS_FALT = [
 // Marknadskoderna som kan stå i ett kampanj- eller annonsnamn (`_NO_`, `…_NO`).
 // ⚠️ Listan är sluten med flit: ett generellt `_XX_`-mönster hade läst vinkel-
 // koderna (`_TR_`, `_PD_`, `_SP_`) som länder.
-export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE'];
+// US lades till 2026-09-16 (OPS-butikernas USA-annonser i Magiborsten UK,
+// factory/opsmarknader.mjs). "US" är ingen vinkelkod i namnkonventionen.
+export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE', 'US'];
 export const STANDARDMARKNAD = 'SE';
 
 /** Marknadskoderna ett namn bär, t.ex. "TANKGUARD_NO_SALES" → ["NO"]. Skiftlägesokänsligt. */

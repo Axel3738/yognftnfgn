@@ -611,10 +611,31 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
 7. 🖐 **Det API:t inte kan, i ordning:** USD som marknadens valuta (Inställningar
    → Marknader → USA → Valuta), sales tax (Skatter och tullar → USA), Shopify
    Payments accepterar USD, fraktpriset till USA bekräftat hos leverantören.
-8. ⛔ **Annonserna är inte lösta.** `/ops-oversatt` är norska. USA-annonser
-   kräver Axels beslut om annonskonto (OPS-kontot är SEK) och engelska
-   creatives från grunden — Bäverbutikens källannonser är svenska med svensk
-   röst och går inte att ärva.
+8. ⚙️ **Annonserna — byggda samma dag (Axels beslut: "Detta blir Magiborsten
+   UK till för").** Kontot är PER MARKNAD i `factory/opsmarknader.mjs`: SE/NO
+   i OPS-kontot, **US i Magiborsten UK `1107817401910319`** (SEK, tidszon GB,
+   avläst ur Meta 2026-09-16). Kedjan: `register.mjs annonsmarknader
+   <nyckel> NO,US` → `kampanj.mjs <produkt> --marknad US --tom` (tom CBO-kampanj
+   + ett adset per vinkel ur SE-kampanjen, geo US, länk `/en/products/<handle>?
+   country=US`, allt PAUSED) → `/ops-oversatt <butik> --marknad US` varje dag
+   17:05 (plats 5) fyller den ur samma kö som NO (`SE-ACTIVE to be translated`),
+   HeyGen "English (United States)", USD-pris ur `ekonomi.marknadspriser`.
+   Raden går till `Approved` först när ALLA butikens annonsmarknader bär
+   annonsen (`klar_i` / `flytta_till_approved` i kön). **Mätt på CaraShell
+   2026-09-16:** kampanj `120251436741400435` i UK-kontot, 5 adsets (CS, G,
+   GT, PD, SP), 0 annonser; CaraShells pixel `28589207184025756` GODTOGS som
+   promoted_object i UK-kontot utan delning i BM (adspixels-listan visade den
+   inte, men anropet gick igenom). Rutin `trig_014kMRzqVj2yFArGEvGs3d9R`,
+   fast session `session_01V7x9YoFdr4ph1PnTs8dno3`, cron `5 15 * * *`.
+   ⚠️ **CBO-lärdom:** en kampanj skapad med `daily_budget` men UTAN
+   `bid_strategy` får `LOWEST_COST_WITH_BID_CAP` av Meta, och varje adset
+   svarar då 400 "bid_amount krävs" — strategin ska sättas på KAMPANJEN
+   (`LOWEST_COST_WITHOUT_CAP`), aldrig på adsetet. `--tom` är idempotent och
+   rättar det på en återanvänd kampanj. Kampanjen står PAUSED utan spend tills
+   Axel slår på den — och det ska ske först när `/en` svarar (`/ny-marknad`);
+   kön hålls annars av rutinen (priset läses på marknadens sida). Nattvakten
+   ser fortfarande bara SE (`STANDARDMARKNAD`) — US-kampanjen bevakas inte av
+   budgetronden.
 9. ⚠️ Juridiken översätts, byts inte: den engelska policyn säger "under
    Swedish law" och behåller EU-tvistplattformen. Om amerikanska kunder ska ha
    en egen returpolicy är Axels beslut — rapporten flaggar det varje gång.

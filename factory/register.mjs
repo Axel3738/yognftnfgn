@@ -45,6 +45,7 @@ import { lasYaml } from './yaml.mjs';
 import { sammanfoga } from './butik.mjs';
 import { ekonomiForProdukt, linjetext } from './ekonomi.mjs';
 import { VIDEOR_PER_DAG, RONDDAGAR } from './kadens.mjs';
+import { annonsmarknaderUr, kontoFor, marknadFor } from './opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
@@ -427,6 +428,11 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // fast redigeraren inte är bestämd). Skräp räknas som ingen överstyrning.
       briefantal_override: giltigOverride(d?.briefantal_override) ? d.briefantal_override : null,
       notion: d?.notion ?? post.notion ?? null,
+      // Marknaderna butikens SE-annonser översätts till (utöver SE). Standard
+      // NO; USA läggs till per butik (`register.mjs annonsmarknader <nyckel> NO,US`).
+      // Styr vilka översättningsrutiner setup bygger och när en rad i
+      // SE-ACTIVE to be translated får flyttas till Approved (alla klara).
+      annonsmarknader: annonsmarknaderUr(d?.annonsmarknader),
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
       // Briefdagarna: posten får överstyra, annars toppnivån i register.json,
@@ -522,6 +528,34 @@ export function sakerstallKonto(post) {
 
 /** Bakåtkompatibelt namn: samma spärr, men bara för läge skala. */
 export const sakerstallOpsKonto = (post) => sakerstallKonto({ ...post, lage: 'skala' });
+
+/**
+ * Annonskontot för en OPS-post PÅ EN MARKNAD. Kontot är per marknad, inte per
+ * butik (factory/opsmarknader.mjs): SE och NO ligger i OPS-kontot, US i
+ * Magiborsten UK. Postens eget konto måste ändå vara OPS-kontot — det är
+ * butikens identitet — så kontospärren körs först. Läge test har ingen
+ * marknadsväg alls.
+ */
+export function annonskontoFor(post, marknad = 'SE') {
+  const bas = sakerstallKonto(post);
+  if (post?.lage === 'test') return bas;
+  return kontoFor(marknad);
+}
+
+/** Sätter butikens annonsmarknader ("NO,US"). SE är alltid med och skrivs aldrig. */
+export function sattAnnonsmarknader(nyckel, lista) {
+  const marknader = annonsmarknaderUr(lista);
+  for (const k of marknader) marknadFor(k);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.annonsmarknader = marknader;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, annonsmarknader: marknader };
+}
 
 /**
  * Prefixen som en läsning av det DELADE kontot ska filtreras på.
@@ -906,6 +940,7 @@ function skrivPost(post, idag) {
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') console.log(`  Annonsmarknader: SE + ${(post.annonsmarknader ?? []).map((k) => `${k} (${marknadFor(k).kontonamn} ${kontoFor(k)})`).join(', ')}`);
   if (post.lage !== 'test') {
     const b = briefantal(post);
     console.log(`  Briefrond:    ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
@@ -973,6 +1008,12 @@ function huvud() {
     if (!arg[2]) throw new Error('Ange database_id eller Notion-url: notion <butik> <id|url> [namn…]');
     const post = sattNotion(arg[1], arg[2], arg.slice(3).join(' '));
     console.log(`Notion-hub på ${post.namn}: ${post.notion.name || '(namnlös)'} (${post.notion.database_id})`);
+    return;
+  }
+  if (arg[0] === 'annonsmarknader') {
+    if (!arg[2]) throw new Error('Ange marknaderna: annonsmarknader <nyckel> NO,US');
+    const post = sattAnnonsmarknader(arg[1], arg[2]);
+    console.log(`Annonsmarknader på ${post.namn}: SE + ${post.annonsmarknader.join(', ')} (${post.annonsmarknader.map((k) => `${k} → ${marknadFor(k).kontonamn} ${kontoFor(k)}`).join(' · ')})`);
     return;
   }
   if (arg[0] === 'redigerare') {
