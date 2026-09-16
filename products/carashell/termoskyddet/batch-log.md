@@ -193,3 +193,20 @@ annons (regel 3).
 - Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
   `1549788313140076604`), ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-16-no-termoskyddet/` (jobb.json).
+
+## LP lagerrensning live 2026-09-16 (`/lagerrensning https://carashell.se/products/termoskyddet`, butik carashell)
+
+**https://carashell.se/pages/termoskydd-husbil-211-171-cm-lagerrensning** — ny sida,
+publicerad direkt i butiken via `listicle/butik.mjs` på temat "CaraShell – CRO v1"
+(temafilerna fanns redan sedan takskyddets sida samma dag, 0 skrivna), mallen
+`page.listicle`, läst tillbaka som kund utan header, footer eller meny. **Obrandad**,
+"Anders på lagret", pris **559 / 932 kr** lästa ur `/products/termoskyddet.json`,
+14 dagars ångerrätt (riskfritt-blocket heter "Om det inte känns rätt", ingen "gratis
+retur"). Copyn skriven av huvudsessionen (Fable): fem punkter imma-vanan → gardinen på
+fel sida av glaset → solen stoppas utanför glaset → klockan fyra varje morgon → det tunna
+skyddet utan fäste; annat hero-grepp än takskyddets sida så de två sidorna i butiken inte
+öppnar likadant. Punkt 1–4 kie.ai-bilder på Bäverbutikens CDN (`lp-bildarkiv`), punkt 5
+produktbild 2 (husbilen i frostig skog, AI-illustration enligt produktsidan), lyckas
+produktbild 1 (skyddet med måtten). Knapparna länkar relativt till `/products/termoskyddet`.
+Filerna ligger i `listicle/output/lagerrensning/termoskyddet/`. Ingen annons pekar dit
+ännu — sidan mäts som LP, aldrig som creative.

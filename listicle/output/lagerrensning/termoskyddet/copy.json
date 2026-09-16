@@ -1,0 +1,96 @@
+{
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 enligt kommandots regel 3 (Axels beslut samma dag). Fakta enbart ur produktsidan carashell.se/products/termoskyddet (läst 2026-09-16: 'Utvändigt termoskydd, 211 × 171 cm, som håller kylan och solen borta från vindruta och sidorutor och mörklägger framvagnen när du sover i bilen') + products/carashell/termoskyddet/dna.md (flikarna kläms fast i dörrkarmen, dörrarna behöver inte öppnas, håller i blåst, 90 cm sidflikar; grundkonflikten invändig gardin mot utvändigt skydd — imman sitter på insidan därför att glaset blir kallt; scenerna imma varje morgon, trettio grader före frukost, insyn på rastplatsen, morgonsolen klockan fyra). Priser 559 kr / 932 kr avlästa ur /products/termoskyddet.json samma dag. Obrandad: inget butiksnamn, bara 'vi'/'hos oss'. Butikens villkor är 14 dagars ångerrätt enligt svensk lag och kunden betalar returfrakten — INTE mallens 30 dagars garanti, inte 'gratis retur' — därför heter riskfritt-blocket 'Om det inte känns rätt' (Axels egen axelbältessida och takskyddets sida i samma butik). Aldrig påstått (dna.md): material, vikt, isolervärde, förvaringspåse, betyg, 'tusentals', 'idag'. Systersidan i butiken (takskyddet) läst först — ingen mening delad, annat hero-grepp.",
+  "hero": {
+    "rubrik": "Vi har fler termoskydd på lagret än vi räknat med, så nu kostar ditt 559 kr istället för 932 kr så länge lagret räcker",
+    "ingress": "Beställningen inför hösten blev större än vi behövde. Den som tjänar på det är du som sover i husbilen när nätterna blir kalla.",
+    "knapp": "Till lagerrensningen → 559 kr",
+    "sammanfattning": [
+      "Vi tog hem ett större parti termoskydd inför hösten än vi behövde, och nu står kartongerna på lagret. Därför säljer vi dem för 559 kr istället för ordinarie 932 kr, så länge lagret räcker.",
+      "Sover du i husbilen och vaknar med imma på insidan av framrutan, är det här sidan för dig. Ett termoskydd som sitter utanpå vindrutan och båda sidorutorna, så att glaset inte hinner bli kallt under natten. Och ett glas som inte blir kallt är det som gör att imman aldrig kommer."
+    ]
+  },
+  "punkter": [
+    {
+      "rubrik": "1. Du torkar rutan varje morgon. Du har slutat tänka på det.",
+      "text": "Ingen bestämmer sig för att börja varje morgon på resan med en trasa i handen. Första natten på ställplatsen vaknar du, framrutan är grå av **imma på insidan**, och du torkar en glugg så att du ser ut. Nästa morgon gör du samma sak. Efter en vecka hör det till, som att sätta på kaffet, och trasan hänger på tork över ratten. Det du inte tänker på är varför imman kommer tillbaka varje natt. Där du sover finns väggar och tak. Där du kör finns glas, och framrutan är den största ytan på hela husbilen som ingenting täcker när natten blir kall. Glaset kyls ner, fukten i kupén lägger sig på det, och på morgonen står du där med trasan igen. Det är inte du som vädrar för lite. Det är att glaset står **bart mot natten, varje natt**, och att ingen morgon har känts som rätt tillfälle att göra något åt det.",
+      "knapp": "Slipp trasan på morgonen →"
+    },
+    {
+      "rubrik": "2. Gardinen hänger på fel sida av glaset",
+      "text": "De flesta har redan gjort något åt det. En gardin i framvagnen, ett vikbart solskydd i rutan, en filt över instrumentbrädan de kallaste nätterna. Det känns som en lösning, och det hjälper mot en sak: ingen ser in. Men imman bryr sig inte om gardinen. Den sitter på glaset, och glaset blir lika kallt oavsett vad som hänger innanför det. Det enda som ändras är var fukten hamnar. Nu lägger den sig mellan gardinen och rutan i stället, där du inte kommer åt den utan att dra undan allt, och gardinen blir fuktig i nederkanten. På morgonen har du samma ruta att torka, fast med ett extra moment innan du kommer åt den. Det som avgör om rutan är torr när du vaknar är inte vad som hänger på insidan. Det är om glaset fick bli kallt under natten eller inte.",
+      "knapp": "Sätt skyddet på rätt sida av glaset →"
+    },
+    {
+      "rubrik": "3. Solen går att stoppa utanför glaset. Inte att vädra ut efteråt.",
+      "text": "Kylan är ena halvan av problemet. Solen är den andra, och den glömmer man när det är höst. Men tänk på en sommarmorgon på campingen. Solen går upp bakom träden, träffar framrutan, och kupén blir ett växthus medan du fortfarande sover. När värmen väcker dig är det redan **trettio grader** där framme. Då står du med båda framdörrarna öppna och väntar på att det ska gå att sitta där, medan kaffet svalnar på bordet. I november är det tvärtom: rutan är kall, imman är där, och du står med trasan. Två olika morgnar, samma orsak. Glaset fick ta emot vädret utan något emellan. Ett skydd som sitter **utanpå** rutan stoppar solen innan den når glaset, och håller kylan borta från det på natten. Det går att hindra att kupén blir varm. Det går inte att vädra ut trettio grader innan kaffet är klart.",
+      "knapp": "Stoppa solen innan den når glaset →"
+    },
+    {
+      "rubrik": "4. Solen väcker dig klockan fyra. Varje morgon på resan. (det här missar nästan alla)",
+      "text": "Det här är kostnaden som inte står på någon prislapp. En morgon när ljuset genom framrutan väcker dig **klockan fyra** är ingen katastrof. Du vänder dig om och somnar kanske igen. En morgon med trasan är inte heller något att prata om. Men du sover inte i husbilen en natt, du sover där hela resan, och varje morgon börjar på samma sätt: gryningen rakt in genom glaset, kylan från rutan, fukten på insidan. Det som är småsaker en enskild natt blir efter en vecka anledningen till att du är trött redan på eftermiddagen. Har du inget för rutan alls är rastplatsen värre. Där står husbilen mellan lastbilarna, och alla som går förbi ser rakt in i kupén där du ligger. Ingen av de här sakerna får någon att avbryta resan. De gör bara resan lite sämre, varje dag, så att du kommer hem tröttare än du åkte. Det är inte en dålig natt som är problemet. Det är att den kommer tillbaka nästa natt också.",
+      "knapp": "Sov mörkt, hela resan →"
+    },
+    {
+      "rubrik": "**5. Det tunna skyddet som ligger på gräset nästa morgon**",
+      "text": "Många som till slut bestämmer sig för att sätta något utanpå rutan tar det första billiga som dyker upp: ett tunt skydd som läggs över framrutan och kläms fast under torkarbladen. På bilden ser det rätt ut. Sen kommer första natten med vind. Skyddet lyfter i ena hörnet, smäller mot rutan i timmar, och på morgonen ligger det på gräset bredvid bilen, blött och med grus på insidan. Sidorutorna täckte det aldrig, så där kom både ljuset och kylan in ändå. Efter andra gången hamnar det i garaget, och du kör vidare utan. Då är du tillbaka med trasan, fast nu med ett skydd i garaget som du redan betalat för. Det som håller en framruta varm är inte det som är billigast. Det är det som täcker vindrutan och båda sidorutorna, kläms fast i dörrkarmen och **ligger kvar när det blåser**.",
+      "knapp": "Se skyddet som sitter fast i dörrkarmen → 559 kr"
+    }
+  ],
+  "lyckas": {
+    "rubrik": "Så vad gör de som vaknar med torr ruta?",
+    "stycken": [
+      "De slutar jaga fukten på insidan och sätter skyddet där kylan kommer ifrån: utanpå glaset. Termoskyddet läggs över vindrutan, sidflikarna viks runt båda sidorutorna och kläms fast i dörrkarmen. Dörrarna behöver inte öppnas, och det är flikarna som håller skyddet på plats när det blåser. Ett par minuter på utsidan på kvällen, det är allt. Sen står glaset skyddat hela natten. Kylan når det inte, solen når det inte på morgonen, och hela framvagnen är mörk så att ingen ser in och gryningen inte väcker dig.",
+      "Det här termoskyddet är 211 cm brett, 171 cm över mitten och har sidflikar på 90 cm som täcker sidorutorna. Mät din framruta och jämför med måtten innan du beställer, så vet du att det passar. Skyddet håller kylan och solen borta från glaset, mörklägger framvagnen och sitter kvar i blåst. Frakten är fri, du har 14 dagars ångerrätt enligt svensk lag, och paketet kommer inom 5–10 arbetsdagar. Skillnaden märker du första morgonen: du vaknar när du vill, inte när solen vill, och rutan är torr när du sätter dig bakom ratten."
+    ],
+    "knapp": "Ett termoskydd till din husbil → 559 kr"
+  },
+  "arlig": {
+    "rubrik": "Jag ska vara ärlig:",
+    "stycken": [
+      "vi räknade fel på hösten. Vi tog hem ett större parti termoskydd än vi någonsin beställt, med tanken att alla som sover i husbilen när nätterna blir kalla skulle vilja ha ett. Partiet blev större än efterfrågan, och nu står kartongerna kvar på lagret medan de kalla nätterna redan har börjat. Så i stället för att låta dem stå där sänker vi priset: 559 kr istället för ordinarie 932 kr, tills partiet är slut.",
+      "Det är hela förklaringen. Ingen påhittad rabatt, ingen nedräkning och ingen som säger att det är sista dagen. Vi har fler termoskydd än vi har plats för, och de gör mer nytta på en framruta än på en lagerhylla.",
+      "Åt andra hållet gäller samma ärlighet: 932 kr är det ordinarie priset hos oss, och dit går priset tillbaka när det sista skyddet i partiet är sålt."
+    ]
+  },
+  "riskfritt": {
+    "rubrik": "Om det inte känns rätt",
+    "text": "Beställ med knappen här nedanför. Passar skyddet inte din framruta, eller känns det fel när paketet kommer, har du 14 dagars ångerrätt enligt svensk lag: hör av dig inom 14 dagar och skicka tillbaka det. Det enda som inte väntar är priset. Det gäller så länge lagret räcker.",
+    "knapp": "Ja tack, ett termoskydd för 559 kr → 14 dagars ångerrätt"
+  },
+  "tre_fragor": [
+    { "rad": "Vi har fler termoskydd på lagret än vi räknat med, så nu kostar ditt 559 kr istället för 932 kr så länge lagret räcker", "visualisera": "✅ kartonger på lagret, två prislappar", "falsifiera": "✅ lagret och båda priserna går att kontrollera på produktsidan", "ingen_annan_kan_saga": "✅ vårt lager, vårt pris" },
+    { "rad": "Beställningen inför hösten blev större än vi behövde.", "visualisera": "✅ en för stor beställning", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår beställning" },
+    { "rad": "Till lagerrensningen → 559 kr", "visualisera": "✅ knappen leder till priset", "falsifiera": "✅ priset står på produktsidan", "ingen_annan_kan_saga": "✅ vår rea" },
+    { "rad": "1. Du torkar rutan varje morgon. Du har slutat tänka på det.", "visualisera": "✅ trasan mot rutan", "falsifiera": "✅ antingen torkar man eller inte", "ingen_annan_kan_saga": "✅ ingen konkurrent skriver om vanan, bara om produkten" },
+    { "rad": "Ingen bestämmer sig för att börja varje morgon på resan med en trasa i handen.", "visualisera": "✅ trasan i handen", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår öppning" },
+    { "rad": "Slipp trasan på morgonen →", "visualisera": "✅ trasan som inte behövs", "falsifiera": "✅ imma eller inte", "ingen_annan_kan_saga": "✅ pekar på skyddets enda jobb" },
+    { "rad": "2. Gardinen hänger på fel sida av glaset", "visualisera": "✅ gardinen innanför rutan", "falsifiera": "✅ innanför eller utanpå går att se", "ingen_annan_kan_saga": "✅ grundkonflikten ur DNA:t — en gardinsäljare kan inte skriva under" },
+    { "rad": "De flesta har redan gjort något åt det.", "visualisera": "✅ gardinen, solskyddet, filten", "falsifiera": "✅ går att observera", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Sätt skyddet på rätt sida av glaset →", "visualisera": "✅ utanpå rutan", "falsifiera": "✅ utanpå eller innanför", "ingen_annan_kan_saga": "✅ vår mekanism (utvändigt)" },
+    { "rad": "3. Solen går att stoppa utanför glaset. Inte att vädra ut efteråt.", "visualisera": "✅ solen mot rutan, dörrarna öppna", "falsifiera": "✅ värmen inne går inte att vädra ut på minuten", "ingen_annan_kan_saga": "✅ förebygg-mot-reparera är vår vinkel" },
+    { "rad": "Kylan är ena halvan av problemet.", "visualisera": "✅ kall ruta", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår uppdelning (kyla + sol, ur produktsidan)" },
+    { "rad": "Stoppa solen innan den når glaset →", "visualisera": "✅ skyddet mellan sol och glas", "falsifiera": "✅ ordningen går att kontrollera", "ingen_annan_kan_saga": "✅ vår mekanism" },
+    { "rad": "4. Solen väcker dig klockan fyra. Varje morgon på resan. (det här missar nästan alla)", "visualisera": "✅ gryningen genom framrutan", "falsifiera": "✅ tiden går att kontrollera med klockan", "ingen_annan_kan_saga": "✅ ur DNA:ts problemlista, ingen konkurrent räknar per morgon" },
+    { "rad": "Det här är kostnaden som inte står på någon prislapp.", "visualisera": "✅ prislappen utan siffran", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår vinkel" },
+    { "rad": "Sov mörkt, hela resan →", "visualisera": "✅ mörk framvagn", "falsifiera": "✅ mörklägger eller inte (produktsidan: mörklägger framvagnen)", "ingen_annan_kan_saga": "✅ vår produkt" },
+    { "rad": "**5. Det tunna skyddet som ligger på gräset nästa morgon**", "visualisera": "✅ skyddet på gräset", "falsifiera": "✅ ligger kvar eller inte", "ingen_annan_kan_saga": "✅ ingen som säljer det billiga skyddet kan skriva under" },
+    { "rad": "Många som till slut bestämmer sig för att sätta något utanpå rutan tar det första billiga som dyker upp: ett tunt skydd som läggs över framrutan och kläms fast under torkarbladen.", "visualisera": "✅ skyddet under torkarbladen", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår konflikt typ A (DNA: flikarna i dörrkarmen, håller i blåst)" },
+    { "rad": "Se skyddet som sitter fast i dörrkarmen → 559 kr", "visualisera": "✅ fliken i dörrkarmen, priset", "falsifiera": "✅ fästet och priset står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
+    { "rad": "Så vad gör de som vaknar med torr ruta?", "visualisera": "✅ torr ruta på morgonen", "falsifiera": "✅ torr eller immig", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
+    { "rad": "De slutar jaga fukten på insidan och sätter skyddet där kylan kommer ifrån: utanpå glaset.", "visualisera": "✅ skyddet utanpå glaset", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår produkt (USP: utvändigt)" },
+    { "rad": "Det här termoskyddet är 211 cm brett, 171 cm över mitten och har sidflikar på 90 cm som täcker sidorutorna.", "visualisera": "✅ måtten på skyddet", "falsifiera": "✅ fakta ur produktsidan", "ingen_annan_kan_saga": "✅ vårt skydd, våra mått" },
+    { "rad": "Ett termoskydd till din husbil → 559 kr", "visualisera": "✅ ett skydd, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
+    { "rad": "vi räknade fel på hösten.", "visualisera": "✅ kartongerna som blev över", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },
+    { "rad": "Det är hela förklaringen.", "visualisera": "✅ lagret, priset", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår anledning" },
+    { "rad": "Åt andra hållet gäller samma ärlighet: 932 kr är det ordinarie priset hos oss, och dit går priset tillbaka när det sista skyddet i partiet är sålt.", "visualisera": "✅ prislappen 932 kr", "falsifiera": "✅ jämförpriset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
+    { "rad": "Om det inte känns rätt", "visualisera": "✅ känslan när paketet kommit och det inte passar", "falsifiera": "✅ ångerrätten står på produktsidan", "ingen_annan_kan_saga": "❌ generisk rubrik — vald med flit (Axels egen axelbältessida, takskyddets sida i samma butik): butiken har 14 dagars ångerrätt, inte 30 dagars garanti, så mallens 'helt riskfritt' vore osant" },
+    { "rad": "Beställ med knappen här nedanför.", "visualisera": "✅ knappen nedanför", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "❌ generisk anvisning — behålls, den ska vara enkel" },
+    { "rad": "Ja tack, ett termoskydd för 559 kr → 14 dagars ångerrätt", "visualisera": "✅ skyddet, priset, 14 dagar", "falsifiera": "✅ båda står på produktsidan", "ingen_annan_kan_saga": "✅ vårt erbjudande" }
+  ],
+  "lasbarhetstest": {
+    "metod": "Varje stycke läst som högläsning för Axel, sex punkter ur kommandot: varje mening tar vid där den förra slutade, blandad meningslängd, max ett 'Inte X. Y.'-grepp per stycke, ett stycke = en tanke som rör sig framåt, ord man säger på ställplatsen (trasan, framrutan, kupén, ställplatsen, rastplatsen, imma), och hela sidan läst uppifrån och ner som en berättelse: punkt 1 (trasan varje morgon har blivit vana) → 2 (gardinen innanför hjälper mot insyn, inte mot kallt glas) → 3 (solen stoppas utanför glaset, värmen vädras inte ut) → 4 (kostnaden är att det upprepas varje natt på resan) → 5 (det billiga skyddet utan fäste ligger på gräset) → lyckas (skyddet utanpå, flikarna i dörrkarmen, ett par minuter på kvällen).",
+    "omskrivna_stycken": "Hero: första utkastets rubrik var mallens mening med bytt substantiv (samma som takskyddets sida i butiken) — skrevs om till 'fler … än vi räknat med' så de två sidorna i samma butik inte öppnar likadant. Punkt 1: 'Hela husbilen är isolerad' ströks (ett påstående om läsarens bil) och blev 'Där du sover finns väggar och tak. Där du kör finns glas'; 'sätena är fuktiga där vattnet runnit ner' ströks (påhittad detalj); slutraden 'Inte för att du valt det. Det bara blev så' var takskyddets och byttes. Punkt 2: första utkastet lät gardinen vara helt värdelös — osant, den stoppar insyn; nu står det rakt ut ('det hjälper mot en sak: ingen ser in') och punkt 4 tar insyn bara för den som inget har för rutan, så blocken inte säger emot varandra. Punkt 3: 'Det tar en timme att komma upp i trettio grader' ströks (påhittad tid); tre långa meningar i rad (växthuset, värmen väcker dig, dörrarna öppna) bröts med en kort 'När värmen väcker dig är det redan trettio grader där framme.' Punkt 4: 'tar det på den som kör' ströks (hackade); 'man kommer hem tröttare än man åkte' blev 'du' — resten av sidan säger du. Punkt 5: 'kör vidare utan, för det är faktiskt mindre jobb så' låg för nära axelbältets egen rad och kortades; 'klockan två' i första utkastet av rubriken var en påhittad tid, blev 'nästa morgon'. Lyckas: 'gjort för husbilar med framruta och två sidorutor' (tautologi) blev måtten ur produktsidan + FAQ:ns 'mät din framruta och jämför'; knappen 'Gör som dem → ta ett …' var mallens/takskyddets och byttes. Ärlig: 'Många gjorde det' (påstående om försäljning) ströks, 'de första frostnätterna är redan här' blev 'de kalla nätterna har börjat'; tredje stycket skrevs om från mallens 'ärligt åt andra hållet också'. Riskfritt: mallens 30 dagars garanti → butikens 14 dagars ångerrätt; ingen 'gratis retur' (kunden betalar returfrakten); texten skrevs om från takskyddets så meningarna inte delas.",
+    "kvar_att_lyssna_pa": "Punkt 3:s öppning 'Kylan är ena halvan av problemet. Solen är den andra, och den glömmer man när det är höst.' — den byter årstid mitt på sidan (höst → sommarminne → november) och är den rad jag är minst säker på att den flyter högt. Hackar den: byt till 'Det är inte bara kylan. På sommaren är det solen som gör samma sak, fast åt andra hållet.'"
+  }
+}
