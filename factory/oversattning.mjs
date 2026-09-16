@@ -18,7 +18,8 @@
 //                                            ("[\"a\",\"b\"]") — översätt inuti, behåll formen
 //   bonus.<handle>.title | body_html | meta_title   bonusprodukten (offer.bonus_produkt)
 //   kollektion.<handle>.title | body_html    flerproduktsbutikens kollektion
-//   sida.<handle>.title | body               policysidor + kontakt
+//   sida.<handle>.title | body               policysidor + kontakt + Shopifys egna sidor
+//                                            (shopify-sidor.mjs: data-sharing-opt-out)
 //   meny.main-menu.<i> | meny.footer.<i>     menyradernas titlar, i ordning
 //   index.sections.<sid>[.blocks.<bid>].settings.<key>    startsidan (templates/index.json)
 //   header.sections.… | footer.sections.…   sektionsgrupperna
@@ -48,11 +49,13 @@ import { sammanfoga, arNischbutik } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
+import { huvudmenyRader } from './meny.mjs';
 import * as buildStore from './build-store.mjs';
 import * as startsida from './startsida.mjs';
 import * as tema from './tema.mjs';
 import * as paket from './paket.mjs';
 import * as bonus from './bonus.mjs';
+import { SHOPIFY_SIDOR } from './shopify-sidor.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
@@ -190,6 +193,13 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   }
   ut['sida.contact.title'] = 'Kontakt';
   if (ps[0]) ut['sida.contact.body'] = kontaktsida(ctx.p ?? ps[0]);
+  // Sidor Shopify skapar själv (shopify-sidor.mjs): "Dina integritetsval"
+  // dyker upp med en USA-marknad och läcker annars på varje /<locale>. Har
+  // butiken inte sidan matchar värdet ingenting — nyckeln är då bara ledig.
+  for (const s of SHOPIFY_SIDOR) {
+    ut[`sida.${s.handle}.title`] = s.titel;
+    ut[`sida.${s.handle}.body`] = s.body;
+  }
   const huvudmeny = ctx.huvudmenylankar ?? [
     ...(arNischbutik(butik, ps) && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
     ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn })),
@@ -283,11 +293,12 @@ export function byggMinimalKontext(butik, rader) {
     produkter: ps.map((p) => ({ p, plan: krav(buildStore, 'build-store', 'byggPlan')(p, butik), metafalt: byggMetafalt(p, { kundUnderrubrik }) })),
     policyer,
     kollektion,
-    huvudmenylankar: [
-      ...(arNischbutik(butik, ps) ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
-      ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn, url: `/products/${p.produkt.id}` })),
-      { titel: 'Kontakt', url: '/pages/contact' },
-    ],
+    // Samma byggare som meny-steget (meny.mjs huvudmenyRader): Hem /
+    // [kollektion] / produkter / Frakt & retur / Kontakt. Listan här byggdes
+    // förut för hand utan Hem och Frakt & retur, så "Hem" fick aldrig någon
+    // nyckel i underlaget och stod kvar på /nb som en läcka (CaraShell
+    // 2026-09-16, när produkt 2 skrev om menyn).
+    huvudmenylankar: huvudmenyRader(butik, ps),
     menylankar: [...policyer.map((x) => ({ titel: x.namn, url: `/pages/${x.handle}` })), { titel: 'Kontakt', url: '/pages/contact' }],
     shop: null,
   };

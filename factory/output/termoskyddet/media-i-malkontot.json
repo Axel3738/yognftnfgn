@@ -1,0 +1,82 @@
+{
+  "Termoskydd_PD_2": {
+    "typ": "video_id",
+    "id": "1832555357741127",
+    "namn": "CARASHELL_Termoskydd_PD_2"
+  },
+  "Termoskydd_G_2_1": {
+    "typ": "image_hash",
+    "id": "f25dbdf5e08d4a678f0000465711aadd",
+    "namn": "CARASHELL_Termoskydd_G_2_1"
+  },
+  "Termoskydd_PD_1": {
+    "typ": "video_id",
+    "id": "1425585236378151",
+    "namn": "CARASHELL_Termoskydd_PD_1"
+  },
+  "Termoskydd_PD_3": {
+    "typ": "video_id",
+    "id": "1702822294775277",
+    "namn": "CARASHELL_Termoskydd_PD_3"
+  },
+  "Termoskydd_PD_2_1": {
+    "typ": "image_hash",
+    "id": "d16e75453cd94270c8fc56beb5b501b4",
+    "namn": "CARASHELL_Termoskydd_PD_2_1"
+  },
+  "Termoskydd_SP_2_1": {
+    "typ": "image_hash",
+    "id": "5de7cedd4eaba509b32e8c9e69fbf7ee",
+    "namn": "CARASHELL_Termoskydd_SP_2_1"
+  },
+  "Termoskydd_CS_2_1": {
+    "typ": "image_hash",
+    "id": "69bb2c851d020a814ea9c345a1368352",
+    "namn": "CARASHELL_Termoskydd_CS_2_1"
+  },
+  "Termoskydd_CS_3": {
+    "typ": "video_id",
+    "id": "1564053738804664",
+    "namn": "CARASHELL_Termoskydd_CS_3"
+  },
+  "Termoskydd_CS_2": {
+    "typ": "video_id",
+    "id": "1488739003024257",
+    "namn": "CARASHELL_Termoskydd_CS_2"
+  },
+  "Termoskydd_G_1": {
+    "typ": "video_id",
+    "id": "1794708561546860",
+    "namn": "CARASHELL_Termoskydd_G_1"
+  },
+  "Termoskydd_SP_1": {
+    "typ": "video_id",
+    "id": "2065294224089750",
+    "namn": "CARASHELL_Termoskydd_SP_1"
+  },
+  "Termoskydd_G_2": {
+    "typ": "video_id",
+    "id": "1439160548083142",
+    "namn": "CARASHELL_Termoskydd_G_2"
+  },
+  "Termoskydd_G_3": {
+    "typ": "video_id",
+    "id": "3556229931214848",
+    "namn": "CARASHELL_Termoskydd_G_3"
+  },
+  "Termoskydd_SP_2": {
+    "typ": "video_id",
+    "id": "1571643491668254",
+    "namn": "CARASHELL_Termoskydd_SP_2"
+  },
+  "Termoskydd_CS_1": {
+    "typ": "video_id",
+    "id": "1109039404856895",
+    "namn": "CARASHELL_Termoskydd_CS_1"
+  },
+  "Termoskydd_SP_3": {
+    "typ": "video_id",
+    "id": "1072676112217885",
+    "namn": "CARASHELL_Termoskydd_SP_3"
+  }
+}

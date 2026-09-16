@@ -54,9 +54,12 @@ test('noNamn: prefix + _NO_ + resten', () => {
   assert.equal(noNamn('HeimGuard_SP_2_1 – COPY ONLY'), 'HeimGuard_NO_SP_2_1');
 });
 
-test('malNamn: SE = namnet självt, NO = noNamn', () => {
+test('malNamn: SE = namnet självt, NO = noNamn, US = _US_ (2026-09-16)', () => {
   assert.equal(malNamn('HeimGuard_SP_2_1', 'SE'), 'HeimGuard_SP_2_1');
   assert.equal(malNamn('HeimGuard_SP_2_1', 'no'), 'HeimGuard_NO_SP_2_1');
+  assert.equal(malNamn('CaraShellRoof_PD_4_1', 'US'), 'CaraShellRoof_US_PD_4_1');
+  assert.equal(STANDARD_STATUS.US, 'SE-ACTIVE to be translated');
+  assert.equal(STANDARD_STATUS.SE, 'To be Reviewed');
 });
 
 // ------------------------------------------------------------ kampanj + adset

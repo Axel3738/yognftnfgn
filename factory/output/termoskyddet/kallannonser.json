@@ -1,0 +1,1332 @@
+{
+  "SE": {
+    "konto": {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    "annonser": [
+      {
+        "id": "120250175770080291",
+        "namn": "Termoskydd_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175763960291",
+          "namn": "Termoskydd Husbil | CS | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1123010200658532",
+          "image_hash": "a190aac99ef1de7d0082d6b712208c4c",
+          "image_url": null,
+          "video_id": "1819607612715450",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/804725490_1819607656048779_2008199285727313938_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=XU4XQMQ2Hq0Q7kNvwF9ze2A&_nc_oc=Adoi-eCeghKce3ZOOmaG_x8cntsW83pPjD6LGSfAZxoLgcbqRj0uHEh1cHsGGzvkYIY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQK-G9xb4FI7A-nJGMZ36cqhxYYXId9RIvHVYo1N28H--ylezhoPKXVQH0As-FaI9nlpoxSGhq-2Rg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJjHrSWk0qdHUm2Jq4VRxScz9e5yBdaGUVXLuoyQu5y4g&oe=6AAFF1E2",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan beställt inför sommaren.\nMissa inte chansen – priset gäller bara idag. 👇",
+          "headline": "40% RABATT – ENDAST IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4431.63,
+          "kop": 21,
+          "roas": 2.73721
+        },
+        "med": true
+      },
+      {
+        "id": "120250175789240291",
+        "namn": "Termoskydd_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175785100291",
+          "namn": "Termoskydd Husbil | SP | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1528827875674750",
+          "image_hash": "e75e8daa289c9142a1d69d8348e9e586",
+          "image_url": null,
+          "video_id": "1072712121802094",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/803825822_1072712138468759_5940012385760272331_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=-Dnz858GrXMQ7kNvwEMjaj9&_nc_oc=Adran3kRRsNtb5Su4vmw5xgR4R9o6r3z9YE6RTxpxMtXjQyoVMfrmNp44Q8aLGVNsYA&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQKtnlDx6AncmkAIAXVEB-TvYJBTwPO6782ul7DvtzxaF6aNzK5qjCEalnKDIFnR9Pekt47ho8EO3Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL5WO1O4BWHERLLk9bB-PP9RSkzDQFN93ROUT0FrhJ6kw&oe=6AAFE173",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Vi sover mycket bättre nu\" – det hör vi om och om igen. ⭐⭐⭐⭐⭐\nTusentals husbilsägare har redan bytt till Termoskydd Husbil.\n✅ Svalare på sommaren\n✅ Mörkt hela natten\n✅ Enkelt att montera själv\nSe varför så många väljer det inför sommaren – beställ nu.",
+          "headline": "Sov skönt, natt efter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 755.44,
+          "kop": 5,
+          "roas": 3.699831
+        },
+        "med": true
+      },
+      {
+        "id": "120250175768000291",
+        "namn": "Termoskydd_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175763960291",
+          "namn": "Termoskydd Husbil | CS | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2222015602047543",
+          "image_hash": "0ee76b7aed32c6c5bb52dc413ac2cfa2",
+          "image_url": null,
+          "video_id": "1831237161573131",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803196833_1831237221573125_5685396979399726382_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=odsHNBq7Mp0Q7kNvwGokC3_&_nc_oc=AdpWJHVjlV_PC2F9jneBoU37Bq29dPMQJOwKeh5ZSK7wNWZd73CUp1joJGsIaxLErpA&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJsC_uA3vfadzu0idVzhxXcd6Pwz2uRfXkT3K5-u4eMqKXtHQcfQ3DxfMbaMBQitAVMlNppVWWlLQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIqR7xHRLap2sENrZ_ISg2CngGslr1gD-5_92hIIZ7MgA&oe=6AAFE927",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan beställt inför sommaren.\nMissa inte chansen – priset gäller bara idag. 👇",
+          "headline": "40% RABATT – ENDAST IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 549.91,
+          "kop": 8,
+          "roas": 8.13224
+        },
+        "med": true
+      },
+      {
+        "id": "120250175792410291",
+        "namn": "Termoskydd_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175785100291",
+          "namn": "Termoskydd Husbil | SP | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "935329762426779",
+          "image_hash": "553612549431553d4e2b39c3c223324c",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/802700437_2058460198200906_8856585661758811076_n.png?stp=dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=ff4730&_nc_ohc=MYmsgDHuqSIQ7kNvwHga_m5&_nc_oc=Adr3PiGzkoAO2ATrks09bJGqedGiqK2MyzT7u1g-yiyS5HbD0Pd20fbt1wc6acMjVXA&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQK7LB8zP7ko-KA2aIaPjZg5luv0-OH8nnAbaCRcNbqXRbWUySzwnn5xlxkkyxqLjrZxVjCYAgq_ew&oh=00_AQINzu1AAgk4YJFpJO-2LNZtKURG_YQRtoR0lfj7Xqx-vg&oe=6AAFDC6A",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7458356956945884834?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLmkS2B17GJhtz1wCp8Io6mAnSgSpfgV4ToPRsNuD4tC_0PIQ2pCqwcqAy2Pbb9rCu_BKxLzNpkYp_zoMwcRJLdiZe3YetBJsKvWXpzRgGHfpccMYuMXl0g-ZGA7gsyBFnCxqJFIqjpQXjGSjeKwg6b&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKBhJElkah8-YihZu1Dv6egZed_fUN11deG-QofeBO_xqXljW1AabwgSXJsiCFnfE_LCOZ0Pw8T2Q&oh=06_Q3_DAVMUFFaG4zkYOs3oWhPFmlbykFaTWbbUZlZSC-hwTWPB&oe=6AABF129",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Vi sover mycket bättre nu\" – det hör vi om och om igen. ⭐⭐⭐⭐⭐\nTusentals husbilsägare har redan bytt till Termoskydd Husbil.\n✅ Svalare på sommaren\n✅ Mörkt hela natten\n✅ Enkelt att montera själv\nSe varför så många väljer det inför sommaren – beställ nu.",
+          "headline": "Sov skönt, natt efter natt",
+          "description": "Betrodd av husbilsägare över hela Sverige.",
+          "link": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 519.9,
+          "kop": 4,
+          "roas": 4.300827
+        },
+        "med": true
+      },
+      {
+        "id": "120250175770610291",
+        "namn": "Termoskydd_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175763960291",
+          "namn": "Termoskydd Husbil | CS | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "4470622656529818",
+          "image_hash": "c8e39809766a293efa521fd8bba04d97",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/793902379_2058457208201205_4594527221124500808_n.png?stp=dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=ff4730&_nc_ohc=eVU6Sb54apEQ7kNvwGMrrO6&_nc_oc=AdoswA70MV-cVyUyUiNbGgDBTyPPGwwIq3lTLyTr7rA3EpZJC6Fvw1X1dtjjWASlXYo&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQIYf3V1L64Tva_VXpy55aRizZWVEHnsV8Qhf8bw8DKqj2JHQjQ1uwMfmcNVBBHyRCLjUwHWw0tFBA&oh=00_AQKPaYE96p0YiPWbO14P3ihxEw5OFg9urYBUEnsx0mQ4SQ&oe=6AAFEE5B",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/1054582310553255559?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQIVtsCXcG8Z7wdwyDBcxNJp_gsP8af_I77Hnb1WZzMf2IM9MBDmKmwyFWkHP4MkTwAQYwK9V41ZjAjwjAeF7lgz6Ef62ZVMcSMJOq0opdeojIssa132Ir0cl7wVJDEg93gMHhASYG4FpN3ioLyJOvUi&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQI6tw-LAq4mA7ARwKJjQYwu7Zf24iaulfmFkM7J_bBvaOUH9t1SXDxc5SIc_63b713kXs_wuMVwiQ&oh=06_Q3_DAbnsbR3FzAlaRaYGTQyd1htQgjkt2zIRQ1KadKHvRn7r&oe=6AABE245",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan beställt inför sommaren.\nMissa inte chansen – priset gäller bara idag. 👇",
+          "headline": "40% RABATT – ENDAST IDAG",
+          "description": "Få kvar i lager. Erbjudandet slutar snart.",
+          "link": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 470.71,
+          "kop": 2,
+          "roas": 2.375135
+        },
+        "med": true
+      },
+      {
+        "id": "120250175772560291",
+        "namn": "Termoskydd_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175770830291",
+          "namn": "Termoskydd Husbil | G | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1106330738417478",
+          "image_hash": "df4aabb23e04742385dd5de7fa8873c6",
+          "image_url": null,
+          "video_id": "2387143218358165",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/802899098_2387143255024828_1629948010529353336_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=jx4W-l09QdYQ7kNvwELD2lR&_nc_oc=Adp-rTHbz4LqZVFUQloEff4eO7goZQ39wCaNX2F9FuC0tK7yctTti5CzckGQm87N0Dg&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJVHhFtp70VRwC8PCs_UBZwgVigEKhbs35uumTUsehCEvuMF71LroQnZgSeiLf6J5EEgqkhC9REhA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKyKoXmcsOMNZAEi5WAJz-sxGWKq5aqGPwG92VcNPOGSg&oe=6AAFD01E",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+          "headline": "Presenten husbilsägare älskar",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 91.4,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175765500291",
+        "namn": "Termoskydd_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175763960291",
+          "namn": "Termoskydd Husbil | CS | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1622313806223226",
+          "image_hash": "72124c50ce22b8c1928ba01c84577468",
+          "image_url": null,
+          "video_id": "1979558586066907",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805218527_1979558636066902_152086575288646906_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=LyKKerxM5lwQ7kNvwGbRnct&_nc_oc=AdqFJKxYox_KVBji_e3V4s5SFPW0CLWs3UOl_pk6y8YL9DJg1nr0ATkff8GwmY6H1Pw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQIdeZAwRHErV1ZC4QYu72MSN_r5SsZl_kegGg0MlDyGB7ROoAZ67H-O-U-T7V0PzuuRQnOTZlZX-Q&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKbfhpLCUwiX_aKt9c0pnt4_LSIfvrwyC5JkgUuVBA9Uw&oe=6AAFFD77",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan beställt inför sommaren.\nMissa inte chansen – priset gäller bara idag. 👇",
+          "headline": "40% RABATT – ENDAST IDAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 78.12,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175787180291",
+        "namn": "Termoskydd_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175785100291",
+          "namn": "Termoskydd Husbil | SP | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1412625964165225",
+          "image_hash": "85de7aa0f35a7138854355cd2f2005c8",
+          "image_url": null,
+          "video_id": "4552753184963019",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804445237_4552753198296351_4093321581435521361_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=X1D7XV3ldwQQ7kNvwGAcJGE&_nc_oc=Adp3BRafoZtwFgHhqEgyp4O-3ttLqyuWgjbDlnquBNnDIaZ-8YmFuYxuXGcAL_rIhAw&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQIBPyJSx3_1m2ITp9bAkiXpTjPpl3jdqgjKes31umJ37cNACAu18ev7aGa_eSS3lcbIwGg_YFKzAg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKjuxR2WkbF_P1TQ_bHWObhFZjuibWnlMdLLBB3P_4_CQ&oe=6AAFD79E",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Vi sover mycket bättre nu\" – det hör vi om och om igen. ⭐⭐⭐⭐⭐\nTusentals husbilsägare har redan bytt till Termoskydd Husbil.\n✅ Svalare på sommaren\n✅ Mörkt hela natten\n✅ Enkelt att montera själv\nSe varför så många väljer det inför sommaren – beställ nu.",
+          "headline": "Sov skönt, natt efter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 35.87,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175782280291",
+        "namn": "Termoskydd_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175777300291",
+          "namn": "Termoskydd Husbil | PD | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3286686014836162",
+          "image_hash": "538c06e63fed900954a9242840b88e37",
+          "image_url": null,
+          "video_id": "1632142478243368",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805313782_1632142508243365_5276324105394822403_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=b6SfVQ6fAm0Q7kNvwGkcPsH&_nc_oc=Adr_xHwiHheHWZjsgejay0c67wXtT1nS5P66cmMA_A77gSTcoTCiUW5U53defIirHkQ&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQI0XTcIVFaLUFo-OF0OxvJaf83TiOZ20_mPgawegTEva7gi2ld8g0LbCrvYOmN8AVi1xDkIiIb8-w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJImjswmZ2iJJVats-4oNoMsMpHz57uRK7-6OklBdE-wQ&oe=6AB00206",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+          "headline": "Sval husbil, oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 33.41,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175791070291",
+        "namn": "Termoskydd_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175785100291",
+          "namn": "Termoskydd Husbil | SP | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "3129336630604875",
+          "image_hash": "288fd2b242dbe022b5f9a3f3f24749cc",
+          "image_url": null,
+          "video_id": "1785448465822217",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803635159_1785448482488882_8013969339294247507_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=0TjUkDM76tsQ7kNvwFZfS7f&_nc_oc=AdplXhJLlJi93Ju-ZQ0ZTmonq6QV3aB_Mo9qoPvSM2w-y0-LvmyJUderZ9hFKXR_Tk4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQKPMIHCAldIkl8vizSx3Qmod8eNdu0enYrdyjGzpl99EhUJKKwSr0v290lmYZItZwXGqgPgWYD6oA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJ39mFiinhd3FJr35tlJX1TX9Y4sRb7j8GvjSsi1HhzMg&oe=6AAFFBF4",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "\"Vi sover mycket bättre nu\" – det hör vi om och om igen. ⭐⭐⭐⭐⭐\nTusentals husbilsägare har redan bytt till Termoskydd Husbil.\n✅ Svalare på sommaren\n✅ Mörkt hela natten\n✅ Enkelt att montera själv\nSe varför så många väljer det inför sommaren – beställ nu.",
+          "headline": "Sov skönt, natt efter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 27.75,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175775340291",
+        "namn": "Termoskydd_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175770830291",
+          "namn": "Termoskydd Husbil | G | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1750312289545819",
+          "image_hash": "24f3c1e6dc10d20bef677dd240d0e87d",
+          "image_url": null,
+          "video_id": "1063666862952515",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/805405427_1063666926285842_5593718126057968907_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=jA6tVUdUj8YQ7kNvwFRUxFp&_nc_oc=Adq9UZLfMD4HYxwMYrVYFF8CxNIl7IGCBx0ESqwARyNP2g0mEaRB2rrZAiwS05jr4Gg&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJe6Yrvk8lGJqKuuiQe1fKDGgv3UYisT9Q0C35TZMjWoNFkphAozWxM3anLMHO-skPJtsJzZXGyRA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJxSSDJ1Q_2GPV-hKwafeQukzIEADMETvZJMDA68kZUpg&oe=6AAFE0E9",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+          "headline": "Presenten husbilsägare älskar",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 9.28,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175776660291",
+        "namn": "Termoskydd_G_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175770830291",
+          "namn": "Termoskydd Husbil | G | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1308957917839595",
+          "image_hash": "19336691c4e84741912875611dbd2d58",
+          "image_url": null,
+          "video_id": "1613556956793089",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/802641143_1613557010126417_6157227178068798337_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=bC-FsSTFuvMQ7kNvwGv6A0z&_nc_oc=Ado4tPa7taSbTB3zFU5ot28Y4UkUQyCoXfxuqNt-BXq-_Bx9AhYcXGyMq8f3Gdv1oi8&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJLMjDx7WKwNdKIS8QN0PQPp4jTzO9ZFt9U6I__DcYPJ8QYgI80xp8zaup4UgiA9NBpN9lF5q44og&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJhlS2yggdQ93Xo1Jo_lM0HikIX3U05iwUwfXP3DbXHNw&oe=6AAFFC1A",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+          "headline": "Presenten husbilsägare älskar",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 7.32,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175777000291",
+        "namn": "Termoskydd_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175770830291",
+          "namn": "Termoskydd Husbil | G | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1042958551902239",
+          "image_hash": "0571a4766f6160d8439e753df1b53627",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/803989838_2058458171534442_5022605236621066374_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=cysvs5cHamkQ7kNvwEuI8hA&_nc_oc=AdorGC-Vh4sx_8pIfyUAVRDUXKrTlMU30c8TpphBLvKxpKWLUA_3GJ68ATjv6-DU-RA&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJz6OAJbsvjdeBOfXvilAv8XPnI40BqgcCB0GYBaSw_2xDiSjIOvRWC28uUnFVKh16lNqatE0xd6w&oh=00_AQLVxcEjwkfD2NAMCtP9xZ_sHGXWeNVt7mW7FxAEKRtSiA&oe=6AAFFE7E",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/9948604142993592291?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLp0R28shB7RS1Iv-AhWYKVg67aEXmsJWRvQ3Rh8ShBdJDewv9hvjhPPCT6bt_Uj2c_2ZusI8MH4bU-3LqR4IEzK-ZZXjsi8T0mSR3rt8IzOY5mEQojUjzMLxEZm0r8YvvPGMewd1tugFh-v-KyVR5-&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQLsLX69w1RASp_IzcH9vLayD2_2OTxHge4CUMagOQiAcGtPDagsGGWS4AOah7OQOG40NO-jfHKJsw&oh=06_Q3_DAQ-Pwm19ch-C4FRRLOkxrzyQNYI_wGGB_pXHTR0o9UcR&oe=6AABFFB6",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+          "headline": "Presenten husbilsägare älskar",
+          "description": "Ge en present de faktiskt kommer använda.",
+          "link": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.92,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175778960291",
+        "namn": "Termoskydd_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175777300291",
+          "namn": "Termoskydd Husbil | PD | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "27259781023697717",
+          "image_hash": "737d8f904f993666064ac49fc5417e83",
+          "image_url": null,
+          "video_id": "2591775087912110",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/804230061_2591775111245441_2122221321435585871_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=1oTQHAgNCosQ7kNvwFdbjZX&_nc_oc=Adoig3PTLCtNTqBprzY06nvrbJI5H1I8C5uWqYyaD7CGLTdkcn1aSdoGO5DYEClQON4&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQIufX9pKvVB5tIz2sNhXUTRjPC9MMsnHZmDNz06rGwvYmI8kucrAp0SwGw9grKJ6oUngUKn-9-8hQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQK_NcqgP3Cze0o1ESr-ZUMNqNnMGR8o7lsp7ch2IDdSiQ&oe=6AAFDC22",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+          "headline": "Sval husbil, oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 6.44,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175783720291",
+        "namn": "Termoskydd_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175777300291",
+          "namn": "Termoskydd Husbil | PD | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1032021023224462",
+          "image_hash": "634ad64b59f456522cd6d46a5bc0db1d",
+          "image_url": null,
+          "video_id": "1010129662096524",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/803049868_1010129688763188_541891234855700661_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=QkSAYwsfB5MQ7kNvwHB55vF&_nc_oc=Adq5GItIZIFb_c5kIS6QG3MZYJ0U4QvAeoaCOgc2W_ofr-j2ZP3G8q38coYH9F8B29A&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQJ2CNaMcAU-qyb11Hj65awZSudtLHfMn3Bg7t-AMI0Wu9Nebi71AkhThQt3BHkoVICGVzaaab5fZg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI-GgyiIjBF7-sLh3IqbsjPZdskTQTjT4khxObWXYVGLQ&oe=6AAFFF15",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+          "headline": "Sval husbil, oavsett väder",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 4.62,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120250175784790291",
+        "namn": "Termoskydd_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120250175777300291",
+          "namn": "Termoskydd Husbil | PD | 2026-09-11",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120250175763810291",
+          "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "978121845301147",
+          "image_hash": "a9b303cb5467115db42e256e09207a89",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/804524355_2058459271534332_6301674874355929906_n.png?stp=dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=ff4730&_nc_ohc=6Pr-CMtqwm4Q7kNvwGKQgrn&_nc_oc=AdpQr-bD7p8qm9keznCVHmCwi6mwtj3E4jQdWIKQ4eHXinpTdrtRmvv1jhSn6y5mdhE&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&_nc_tpa=Q5bMBQLLZSrK88ewfQCYwbbOEVmKDWOsiSODx6gY8UL1viNAB5WpGs8F-OdWkz-1TN8cLsiw3L34ZRdXqQ&oh=00_AQI_3br5Rjm0ka_qQk-a0XESElewGrIU368Tzkx_19Qz4A&oe=6AAFF5B2",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/8817661256608274079?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJc73JEq6YiOYmU6K3KhI_wFUUEF9h4zAZ2m0ZEk3g8l5vUbcEnKRxAInb7myeL0A1bYF622pfQb3EWkPSilY0-zxh9Pkfd0mA7mWlX17GhUU4Yaj9Bqc1HhQ8XEk33OwmLRa_aHYvocWLIyhLrp-ot&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=BDcgfpWsIUmMdbpH0U7B3w&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQI23lEZdNs6e1O3wKVDtHZeH2ZOG8vkfDARYAx7vP6hh_LL-JwBxpiod3uASP5khvM_ZS-neyutqg&oh=06_Q3_DAUe8u5t1XxN3Pk1pwhNDkFnWeasGMY_EmHlon6ABaa5z&oe=6AAC04C3",
+          "page_id": "678639638662543",
+          "instagram_actor_id": "17841474144960111"
+        },
+        "copy": {
+          "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+          "headline": "Sval husbil, oavsett väder",
+          "description": "Termiskt skydd som kyler, värmer och mörklägger.",
+          "link": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.15,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  },
+  "NO": {
+    "konto": {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "NOK"
+    },
+    "annonser": [
+      {
+        "id": "120252202545560233",
+        "namn": "Frontrutetrekk_NO_CS_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202544200233",
+          "namn": "Frontrutetrekk til Bobil NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1570621881411513",
+          "image_hash": "b878ad347741afa93db7991300cf0478",
+          "image_url": null,
+          "video_id": "1045033611765195",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806415535_1045033651765191_3475900468314953538_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=MXOFfiaf2N4Q7kNvwHEvwpR&_nc_oc=AdqSqfCyL3pELpv_BEQbnhLeJWFVnT-hT2Z-3B3O22f8riIBy1xqAH1Obp_Avn0TI2A&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKJyDcSWn8QGgi3wony_MnTfSy5FW4Bje4SXMJw9xnvkAjHe59COZqA0ikUMbLMvTbxp8vz-Rne6g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJYC-JNF5lH9CTlOjAGDaOHXYJx23qDIoB7IwmBGqzq7g&oe=6AAFFDD0",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har allerede bestilt før sommeren.\nIkke gå glipp av sjansen – prisen gjelder kun i dag. 👇",
+          "headline": "40% RABATT – KUN I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 1879.79,
+          "kop": 5,
+          "roas": 1.413599
+        },
+        "med": true
+      },
+      {
+        "id": "120252203082450233",
+        "namn": "Frontrutetrekk_NO_SP_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202639360233",
+          "namn": "Frontrutetrekk til Bobil NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "3329479720567379",
+          "image_hash": "7e46ecc22da6e5030b5437c4b633d112",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/808102918_2059688398078086_375029449298364513_n.png?stp=dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=ff4730&_nc_ohc=W09MTC2XWokQ7kNvwHgOE8F&_nc_oc=AdrQ929F6BvH4kSaprYFzy_9kzNt9C3XDPCCG_IyqwlRP295dFoUvop2nZyv-nsMyp0&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKcbV_eFpZlLNLmpMvkOyQpHBW2UPcDo01bpCy-UODWXidUPEsgTvKAkhaK_vu2XWCVNdoWukDnqQ&oh=00_AQLwy9MTNwOKPQyx-M_8wlhYsrRzhtxv4MYKq_cLvKLdDg&oe=6AAFF877",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/5662373797357129899?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLzd5pEeOJ5CdI_QUtDA4Z5YZzjD5Fp5ZDYmlfo9wk2gPW-XSmKgPymSbQOHSrBsG-qxDGZtHx1UdxLBP6dYxvuZLSGzrfewuZZQDBV4lvwDB3AqzyRJhk9OxdfHVVjjS3Ah7oGp3dZ_X6ffnGK7egu&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQKrg81zFwYNuCBgEy3d16b_afSNWa4l0R_U8f-34YzAdGWwVacMo_re0E4OaLX2mZyvfAd0ysIsow&oh=06_Q3_DAX9L3DBCIT3P6nEVeoJZ3POpnBPohGYyrguz_B5YhTLB&oe=6AAC1042",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Vi sover mye bedre nå» – det hører vi om og om igjen. ⭐⭐⭐⭐⭐\nTusenvis av bobileiere har allerede byttet til dette frontrutetrekket.\n✅ Kjøligere om sommeren\n✅ Mørkt hele natten\n✅ Enkelt å montere selv\nSe hvorfor så mange velger det før sommeren – bestill nå.",
+          "headline": "Sov godt, natt etter natt",
+          "description": "Betrodd av bobileiere.",
+          "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 796.63,
+          "kop": 3,
+          "roas": 2.000603
+        },
+        "med": true
+      },
+      {
+        "id": "120252202942570233",
+        "namn": "Frontrutetrekk_NO_CS_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202544200233",
+          "namn": "Frontrutetrekk til Bobil NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1291183999686424",
+          "image_hash": "73d17d00d96a3953c94f7363382d7593",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/807838039_2059678151412444_4718963794119059096_n.png?stp=dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=ff4730&_nc_ohc=zFEwb2lteoQQ7kNvwE-0FDF&_nc_oc=AdqTzbXAIb4z-Epcr0iNdE3VaQSUGso2X-dD1sTSqHTHT1cPsgnuhIdgAHYpuGBwvlg&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKx1HPNYW2FHStKHudKf_oV64LiYPSR3RGIJyCt6AYKrV09o9ZXfwYd-neigqWx1fOjeLzGmhDn6Q&oh=00_AQLexV67V3ngxAi6q-x6jBayTb_E78_fB8gHXf1KK87XnQ&oe=6AAFD0FF",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7647596796754749310?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQJlv6PbgL2kV6k6sKo-to0Y-LbUoDIPmhHzuUEGbKg-VDd7YZwiBq9KNqY69CcZSApcj5BTDHaaqx2yUAe-hWSwXiWQHvX5hibVv2K98BRgEKKWNR4rW2mLeZtz5jteJalEIJ9PouQIX0cNvyLp98Zj&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQJGsYy1kw8qenTP4g07wadeQLRPIm0uYT_H3KgEwmIFmQFtnBdLsrQWYiOmuHIOjMwHwcVS9CS-JQ&oh=06_Q3_DAa3d1erMS0wSJ_n9ZZFx17ZSOd_3SB7tichv6-YAPXfY&oe=6AABFB60",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har allerede bestilt før sommeren.\nIkke gå glipp av sjansen – prisen gjelder kun i dag. 👇",
+          "headline": "40% RABATT – KUN I DAG",
+          "description": "Få igjen på lager. Tilbudet avsluttes snart.",
+          "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 273.24,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202545970233",
+        "namn": "Frontrutetrekk_NO_CS_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202544200233",
+          "namn": "Frontrutetrekk til Bobil NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "945143581964710",
+          "image_hash": "e0b9ceab1877ce4a415f5bd9c7d5e1c5",
+          "image_url": null,
+          "video_id": "2288904098540919",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806235451_2288904141874248_3123448723655060887_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=ikfX2yMUtwcQ7kNvwFPREUI&_nc_oc=AdpMA9drHcJ9bYGAR9t2gpiEYJ_FrOgUkcsWg2Ax44Ywhlw9F8L1S2jgVa-VgDa3k_s&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQLVrL90W4UWPkZgUNVtj6VaiIIt7-xCGSQcAcbh9ctvid1hFCazrXlhjvSkSqW4hr_-h9E_Iot_8g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJjTVrgA3uunhfDRnS9DKyWMcA6Fbg-kYCwHu3v3R1kjQ&oe=6AB0007A",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har allerede bestilt før sommeren.\nIkke gå glipp av sjansen – prisen gjelder kun i dag. 👇",
+          "headline": "40% RABATT – KUN I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 108.23,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202546200233",
+        "namn": "Frontrutetrekk_NO_CS_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202544200233",
+          "namn": "Frontrutetrekk til Bobil NO - CS",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1013678741692458",
+          "image_hash": "465225620c74aabce0fc49ef7e9141c9",
+          "image_url": null,
+          "video_id": "1769837580998896",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/807682603_1769837624332225_2463818399799811581_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=hq_gTp-w6g8Q7kNvwFovPLs&_nc_oc=Adp2uzFjuo6c047Jl6zq88aUJM4pz9yLTbkAbA69gQBH_Qet2ZZi2LQC_JOrA2a50kU&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQLkelTpOVBIrDBNq-BSs65x2EhXXrWfbaehDv7fQ8pQH8poZypIC1Sw-v1hRtTlgnCa7xVFSW9tSA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL1_uPKY7ypxkrfZXajJxUfkBhyKzVs237o45QHUcHFVg&oe=6AAFE834",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har allerede bestilt før sommeren.\nIkke gå glipp av sjansen – prisen gjelder kun i dag. 👇",
+          "headline": "40% RABATT – KUN I DAG",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 79.32,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202670640233",
+        "namn": "Frontrutetrekk_NO_SP_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202639360233",
+          "namn": "Frontrutetrekk til Bobil NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1076887651601017",
+          "image_hash": "5f4a588e49660d137cb38e86a284addd",
+          "image_url": null,
+          "video_id": "980461341120635",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/806453080_980461371120632_2107721621741442759_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=fMPMoeC0ulkQ7kNvwFnfIQj&_nc_oc=Adp3w2Cgbf9t0kWSc7uHFJnMm4k4eLcUx6TR4odaXHaMRKH04Pq8SqGUdYyKF12tgsQ&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQJFM2pDRQKBHwdD1dlMsf6aYnem0ssyO4rr4myqekpLZ86Gt_xCN5-XRUDJZJAV_sy0Zzw7ZN-Z2g&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJ3ZkRFpS22B0fAyDPGLTKqhRB3KfmHzGmzB5i6GrfGrA&oe=6AAFF58C",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Vi sover mye bedre nå» – det hører vi om og om igjen. ⭐⭐⭐⭐⭐\nTusenvis av bobileiere har allerede byttet til dette frontrutetrekket.\n✅ Kjøligere om sommeren\n✅ Mørkt hele natten\n✅ Enkelt å montere selv\nSe hvorfor så mange velger det før sommeren – bestill nå.",
+          "headline": "Sov godt, natt etter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 47.41,
+          "kop": 1,
+          "roas": 26.89285
+        },
+        "med": true
+      },
+      {
+        "id": "120252203014500233",
+        "namn": "Frontrutetrekk_NO_PD_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202577380233",
+          "namn": "Frontrutetrekk til Bobil NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1614515796813771",
+          "image_hash": "fb7523b383c802a5e2186f73843f6e42",
+          "image_url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/807851261_2059684828078443_1147123045419549747_n.png?stp=dst-jpg_tt6&_nc_cat=106&ccb=1-7&_nc_sid=ff4730&_nc_ohc=ZQBsXVKF-ZcQ7kNvwG3CpQF&_nc_oc=AdocW09yBzY2rzpPZDUB3m9duHJor4fnuwkpgBn3ut2bSetGn21yS0RXb5AmSzgxEsk&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQLEmDguXoTnTZuRHaxEeFRh5ruNVmS6RaNUnLBeP0GzcfsTey2fd2GAXY1nJ1_D8_PTWBiuxZ7a6w&oh=00_AQJk_ZzofcptWLLMuWG-sls56Rux8kMsGUt5_8wGm6kaKw&oe=6AAFF88B",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/2143622664034113328?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLjSa2LVyAvNCy8WxVDeh3SS3_kbSK7NayfTKMMJ7dJWgdSLji8U0kAoPf-2HD3WLSEJZwNPa0I8cpqSlftllXnTJEHlEnoksX-9z1Ftm23c79d89EQYqq9xuzsUWVE6eVa6XsMFBBN8konlO9zGZSi&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQIRotMc4OcsT-Wj-s6_a9x65YZLeZzEVQyJK9f0NUtyGtyZwypqMEATHXj95lM3DX3JpyB6JF_tHw&oh=06_Q3_DARO5Nwp3xoUFxiVwQ2E1wDjPOx2pN-yedl1GQ85QeVHX&oe=6AABE967",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
+          "headline": "Kjølig bobil, uansett vær",
+          "description": "Termisk trekk som kjøler, varmer og mørklegger.",
+          "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 13.21,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202671510233",
+        "namn": "Frontrutetrekk_NO_SP_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202639360233",
+          "namn": "Frontrutetrekk til Bobil NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2168360470761263",
+          "image_hash": "487659bc9904aeb0e5289fb6633d9866",
+          "image_url": null,
+          "video_id": "1116012947844575",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806235601_1116012981177905_2135804360972827680_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=1g4ShZHkg88Q7kNvwGybx4m&_nc_oc=AdoM926hdoyKxCddPBe6cvq4qzYtSfmYvIchfayFuvd5o1PRsN_QMGhzvY20ub9gvf8&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQLcgtIttQSukvnbHng48bjnpo7_r8rBzuhlmIFAJN6GjIw6yYMPh4lqUsHJ2YZw5QbqnPu0EFK99w&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKBFYLzDQYz_DPekwk36NcDiSBubpl4PN_TSUIY9E6JLQ&oe=6AAFDFC0",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Vi sover mye bedre nå» – det hører vi om og om igjen. ⭐⭐⭐⭐⭐\nTusenvis av bobileiere har allerede byttet til dette frontrutetrekket.\n✅ Kjøligere om sommeren\n✅ Mørkt hele natten\n✅ Enkelt å montere selv\nSe hvorfor så mange velger det før sommeren – bestill nå.",
+          "headline": "Sov godt, natt etter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 8.68,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202672400233",
+        "namn": "Frontrutetrekk_NO_SP_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202639360233",
+          "namn": "Frontrutetrekk til Bobil NO - SP",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "28492792787017924",
+          "image_hash": "6cb4a907cf7593a9be567e4666780dec",
+          "image_url": null,
+          "video_id": "1552574399427543",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/806235723_1552574436094206_5908586185304902854_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=IqgUly2dvEwQ7kNvwEpFUgm&_nc_oc=Adr5sCirB1rOxfNKT_WCqtnTv9jI4MaMF3v96oiS1bFY8HWsyYGDvc2y3uP2TRfdfeQ&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQL4qjzI9tSRTFPJdwyuVVfdVaoR7RKiw6DBfHJz5O1IvZYqfnfPUSfm75-wHNIBszlj1n7ez59iIQ&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL_Q9GtXHNZGBZQBydr1uU912QQq1Sp0y-uSt85DNYAcg&oe=6AAFFA5E",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "«Vi sover mye bedre nå» – det hører vi om og om igjen. ⭐⭐⭐⭐⭐\nTusenvis av bobileiere har allerede byttet til dette frontrutetrekket.\n✅ Kjøligere om sommeren\n✅ Mørkt hele natten\n✅ Enkelt å montere selv\nSe hvorfor så mange velger det før sommeren – bestill nå.",
+          "headline": "Sov godt, natt etter natt",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 5.42,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202638660233",
+        "namn": "Frontrutetrekk_NO_PD_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202577380233",
+          "namn": "Frontrutetrekk til Bobil NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1774138677202019",
+          "image_hash": "337496787a4a1149b7e1dd7b1ce305fa",
+          "image_url": null,
+          "video_id": "882293544819149",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806365608_882293581485812_3547346717707924427_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=rhGoHMhB028Q7kNvwFaq-x1&_nc_oc=AdqTG4cjhiO0AHjvKRtwui84y_Wd2itqT0jUFQu3__aYf0EO-BKzk1zwHX-SUuQs6XM&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQK13wxU7bjnr3DxxP6uipMl8tyt69-rcV4ghTVgAowsb3-Sx3SRYiTXoR6wcJdVVUSFwRxbcsL_jw&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLDEC5WUvAWtQ8Tyw_v67CWfSYUSMxuQBKyXOdEXhUUJQ&oe=6AAFF045",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
+          "headline": "Kjølig bobil, uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.82,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202639240233",
+        "namn": "Frontrutetrekk_NO_PD_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202577380233",
+          "namn": "Frontrutetrekk til Bobil NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1965792254109747",
+          "image_hash": "634ad64b59f456522cd6d46a5bc0db1d",
+          "image_url": null,
+          "video_id": "2538357939964434",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/807727271_2538357969964431_8480604737486939629_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=9rdKTFfrWOgQ7kNvwGlOfGy&_nc_oc=AdqB0DZl9lKLeZ-2WUWUCqS2yALjkoOIJE5DtaXIf2VXnB6NQpJt454NiJrZXG7d7Do&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKSvyhvJFCKT4oVfIqzBaSaH1RetEnr6OxNRbNQD7YV2TNkwjNlbyy_5iK0R_zJOE2lZldQoBYLsA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIN__EKWvBDgWIJTyP2HMfGP5HGUS8lDJV1YEirY3Tgrg&oe=6AAFF42B",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
+          "headline": "Kjølig bobil, uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.41,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202638990233",
+        "namn": "Frontrutetrekk_NO_PD_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202577380233",
+          "namn": "Frontrutetrekk til Bobil NO - PD",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1621996442893472",
+          "image_hash": "763e7a3385ba202643c4b139f9ac76ff",
+          "image_url": null,
+          "video_id": "1782434466220147",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/806397180_1782434492886811_1849018370993580337_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=poMxsYtQE0UQ7kNvwH745TT&_nc_oc=AdooOearlwdn4I6Llc96XsWGnB8QDcuY1xyQX2VNTfE-yX1xiBMpbmcBsEdigUYZFLY&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKIEvEcB6Edbt3kqiC3DuOsCk-hzVlWKUc2AoA9cntUlR1Lz1aFIeXoihTwWf58vgbyBdklRU0feA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKgLFzNC2YhojNZY1275O9_JfRA8kYEwAu4UnXXIC-Vew&oe=6AAFDB1B",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
+          "headline": "Kjølig bobil, uansett vær",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 3.24,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202576410233",
+        "namn": "Frontrutetrekk_NO_G_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202546600233",
+          "namn": "Frontrutetrekk til Bobil NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "2274016103454138",
+          "image_hash": "5d589240819f69d246a4e0661dd821d3",
+          "image_url": null,
+          "video_id": "1403193471250284",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806235578_1403193487916949_7955989631489668384_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=9-EJO8GSh4QQ7kNvwHKIWys&_nc_oc=AdoJwrrQgTdBsM4oquCWkc-ju5eBTbgk-s6OXVqUgIflSdxNyEC4lcDRu1smtfSqAyo&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKn_5nnYCVpAwaYZBHQkRromzHpXVhxggPTORNJlNw0oxDuX4waMe9bwaoOaUxs8Z0_7kRifpXpUg&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKOfz0vRorHoTIHdJuLwDMLHmmbi4pr5obxul6IEA_AFw&oe=6AAFEC73",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
+          "headline": "Gaven bobileiere elsker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 2.58,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202576930233",
+        "namn": "Frontrutetrekk_NO_G_2",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202546600233",
+          "namn": "Frontrutetrekk til Bobil NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "1603061914603244",
+          "image_hash": "a52fb6824100f7efe4eddba3b129b983",
+          "image_url": null,
+          "video_id": "1731951371344246",
+          "thumbnail": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/806212669_1731951421344241_4778939877171692066_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=ZK1sXctY33IQ7kNvwGDvpPV&_nc_oc=Adp6X6Tq2cHEDgOEPyt2YVuxoOt4-Rsx1jD8HVw5iIrAYXHWgGB0XfjVer5i2MrQ8pc&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQI1ZafdJwEaU9UXb6EF2RO5JtfSvLOf3F64Sm_0qiFQ7Wsmzl2YEyQeqhLxLiFHNiGwMW71N3hXPA&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIMzFsbC3yRieKZDZkpv2g70R0qmCXCdDt0m_jhNiG0xw&oe=6AAFEA58",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
+          "headline": "Gaven bobileiere elsker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.95,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202981840233",
+        "namn": "Frontrutetrekk_NO_G_2_1",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202546600233",
+          "namn": "Frontrutetrekk til Bobil NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "bild",
+        "creative": {
+          "id": "1827613625133836",
+          "image_hash": "104b6df1804e0bdcdbab1af95041c455",
+          "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/808102991_2059681488078777_5086427574507320866_n.png?stp=dst-jpg_tt6&_nc_cat=110&ccb=1-7&_nc_sid=ff4730&_nc_ohc=7ox8f_C683UQ7kNvwHEZ_92&_nc_oc=Adrkih3eN0bbZjYD52dbxEQRizv4jYsaoIw7VKO3z2Qnq3YeczKY0ypT6J60WFMhTdQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQIiUM8i_OxC3HxcXqSDhAEhCXdPyuAZgDbFbvj5Nn4BTKufGH-g3JQ3zR53DP5RV83uZgxHuw0z1g&oh=00_AQJw-f7RDKY-lOBRk6VSZMVOip3G3hORmpzorIcr4FwasQ&oe=6AAFFEC5",
+          "video_id": null,
+          "thumbnail": "https://external-ord5-2.xx.fbcdn.net/emg1/v/t13/7799456050862186264?url=https%3A%2F%2Fwww.facebook.com%2Fads%2Fimage%2F%3Fd%3DAQLsaLYg901tBaub80mUIpSI1KWPKSXfW9pjfa8_CczIMU9pfusv-WSoSvr18R9Ydmdpw88syRZelJZ_fGQdg4Qjw_9UWq1Xyb_jPUzIMMwx8uIDsCwaK4Ki3h9mZ-MS2Hkeg0M8qFutIpwtpQUqIBvo&fb_obo=1&utld=facebook.com&_nc_sid=58080a&_nc_ht=external-ord5-2.xx.fbcdn.net&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ccb=18-1&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&edm=ANIILHsEAAAA&_nc_zt=3&_nc_tpa=Q5bMBQITqvDzyW2G3caNRa0Aa5YSkE2130z_8vWcXpUirK9qeLGnPVm7RrMPd09dphp_1l1gBdbCIjRJ5Q&oh=06_Q3_DAVojwMEbZJDo-I7CdkbkaWOMihEOP8M_lJ6VjAlml_Z9&oe=6AAC0EE7",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
+          "headline": "Gaven bobileiere elsker",
+          "description": "Gi en gave de faktisk kommer til å bruke.",
+          "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0.7,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      },
+      {
+        "id": "120252202577160233",
+        "namn": "Frontrutetrekk_NO_G_3",
+        "status": "ACTIVE",
+        "effektiv": "ACTIVE",
+        "adset": {
+          "id": "120252202546600233",
+          "namn": "Frontrutetrekk til Bobil NO - G",
+          "status": "ACTIVE",
+          "effektiv": "ACTIVE"
+        },
+        "kampanj": {
+          "id": "120252202507830233",
+          "namn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+          "status": "ACTIVE",
+          "mal": "OUTCOME_SALES"
+        },
+        "typ": "video",
+        "creative": {
+          "id": "925108220679791",
+          "image_hash": "189e08d7aafe8f7c4facb93f004f4d0d",
+          "image_url": null,
+          "video_id": "1093468056660409",
+          "thumbnail": "https://scontent-ord5-1.xx.fbcdn.net/v/t15.5256-10/807843554_1093468106660404_4971062192967138695_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=AbPrzlHDpXgQ7kNvwGzfuHh&_nc_oc=AdqVHq61iaNtKEo8x-yb7g02-zcilp81jfiUGNVCmXBwlt2FWt3yZigVV09hr4Uy2iA&_nc_zt=23&_nc_ht=scontent-ord5-1.xx&edm=ANIILHsEAAAA&_nc_gid=CWZYmYbHszUv2vN5EUq0XQ&_nc_tpa=Q5bMBQKx7NfinamJeRy8Xs5We-F8aHmzyb_gpfZljHd05pfUSqMuMABMvcNVtx-Z3RZOFSd6EtjfS_VV8A&stp=c0.5000x0.5000f_dst-emg0_p64x64_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQL9rq9WB4B1vwV7tlnGC4zibDDlktJUs8qSuSY3TRcHlw&oe=6AAFD157",
+          "page_id": "879054088633562",
+          "instagram_actor_id": null
+        },
+        "copy": {
+          "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
+          "headline": "Gaven bobileiere elsker",
+          "description": null,
+          "link": null,
+          "cta": "SHOP_NOW"
+        },
+        "utfall": {
+          "spend": 0,
+          "kop": 0,
+          "roas": 0
+        },
+        "med": true
+      }
+    ]
+  }
+}

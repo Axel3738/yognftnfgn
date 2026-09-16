@@ -1,0 +1,78 @@
+{
+  "_om": [
+    "Annonscopy för CaraShell termoskyddet (SE), 2026-09-16, /ops-produkt steg 7 (= /ny-annonser).",
+    "",
+    "KOPIERAD ORÖRD ur Bäverbutikens källannonser (MagiBorsten 1867947880635861, kampanj",
+    "120250175763810291) enligt Axels regel 2026-09-10: nämner annonsen varken Bäverbutiken",
+    "eller ett felaktigt pris kopieras den som den är. PD- och G-copyn bär inget brandnamn,",
+    "inget pris och inga villkor — bara länken byts (kampanj.mjs pekar om den till",
+    "carashell.se/products/termoskyddet).",
+    "",
+    "Bara PD och G finns här: det är de två vinklar som har annonser som går att bygga i dag",
+    "(PD_1–3 med brandrepliken bortklippt + PD_2_1 och G_2_1 som är rena bilder). CS och SP",
+    "bär falsk brådska respektive ett påhittat kundvittnesmål i talet och står namngivna i",
+    "output/termoskyddet/uteslutna.json tills de fått nytt manus + omdubb.",
+    "",
+    "Utfall i källan per 2026-09-16 (hela livstiden): PD_2_1 2 kr/0 köp, PD_1 6 kr, PD_2 33 kr,",
+    "PD_3 5 kr, G_2_1 7 kr — alla under grinden. Källans köp ligger i CS (31) och SP (9)."
+  ],
+  "vinklar": {
+    "PD": {
+      "annonser": [
+        "Termoskydd_PD_1",
+        "Termoskydd_PD_2",
+        "Termoskydd_PD_3",
+        "Termoskydd_PD_2_1"
+      ],
+      "utfall_i_kallan": "under grinden — 46 kr och 0 köp över fyra annonser (CBO:n lade pengarna på CS)",
+      "rattad_efter_granskning": false,
+      "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+      "headline": "Sval husbil, oavsett väder",
+      "description": "Termiskt skydd som kyler, värmer och mörklägger.",
+      "andringar": []
+    },
+    "G": {
+      "annonser": [
+        "Termoskydd_G_2_1"
+      ],
+      "utfall_i_kallan": "under grinden — 7 kr och 0 köp",
+      "rattad_efter_granskning": false,
+      "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+      "headline": "Presenten husbilsägare älskar",
+      "description": "Ge en present de faktiskt kommer använda.",
+      "andringar": []
+    },
+    "CS": {
+      "annonser": [
+        "Termoskydd_CS_2_1"
+      ],
+      "utfall_i_kallan": "källans CS bar 31 av 40 köp — men på ett manus med falsk brådska; den här copyn är butikens sanna erbjudande",
+      "rattad_efter_granskning": true,
+      "message": "Svalt på sommaren, varmt på vintern, mörkt när du sover. 🌙\n559 kr – jämförpris 932 kr.\n✅ Fri frakt i Sverige\n✅ 14 dagars ångerrätt\nMät din husbil innan du beställer (211 × 171 cm).",
+      "headline": "Från 932 kr till 559 kr",
+      "description": "559 kr, fri frakt och 14 dagars ångerrätt.",
+      "andringar": [
+        {
+          "vad": "Hela källcopyn (40 % rabatt – endast idag, lagret minskar) ersatt",
+          "varfor": "Butiken kör ingen tidsbegränsad kampanj; jämförpriset är det sanna erbjudandet. Subagent (sonnet) 2026-09-16, tre ✅ på rubriken."
+        }
+      ]
+    },
+    "SP": {
+      "annonser": [
+        "Termoskydd_SP_2_1"
+      ],
+      "utfall_i_kallan": "källans SP_2_1 (bild): 520 kr, 4 köp, CPA 130 kr, bäst CTR i källkontot",
+      "rattad_efter_granskning": true,
+      "message": "\"Skyddar bra och mörklägger fint.\" – Sofia\n5,0 av 5 – 10 omdömen\n✅ Skyddar mot sol och värme\n✅ Enkel att montera\n✅ Bra passform, känns stabilt\nTermoskydd Husbil, 211 × 171 cm.",
+      "headline": "5,0 av 5 hos 10 husbilsägare",
+      "description": "Riktiga omdömen om Termoskydd Husbil.",
+      "andringar": [
+        {
+          "vad": "Påhittat citat + \"tusentals husbilsägare\" ersatt med riktigt citat och riktigt antal",
+          "varfor": "Judge.me-underlaget: 10 omdömen, 5,0. Subagent (sonnet) 2026-09-16."
+        }
+      ]
+    }
+  }
+}

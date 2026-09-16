@@ -138,10 +138,13 @@ fällorna, men **löser inte pixelproblemet** — det står kvar nedan.
    av dem en andra produkt måste prefixet göras produktskopat FÖRST, annars
    matchar brandprefixet båda produkternas annonser.
 3. **Ett bart butiks-id kastar** så fort butiken bär två produkter
-   (`register.mjs hittaPost`). Butikens tre befintliga rutiner har butiks-id i
-   sin prompt och slutar då gå. De måste skrivas om till `<butik>/<produkt>`
-   med `update_trigger` **innan** produkt 2 får en state-fil. Högljutt fel,
-   men det inträffar på natten.
+   (`register.mjs hittaPost`) — **utom när butiksfilen pekar ut en
+   huvudprodukt.** Butikens tre befintliga rutiner har butiks-id i sin prompt
+   och ligger ofta på ett annat Claude-konto, så de går inte att skriva om
+   från sessionen. Lösningen sedan 2026-09-16: `butik.huvudprodukt:
+   <gamla-produktens-id>` i butiksfilen ⇒ butiks-id:t (och brandet) betyder
+   den produkten, rutinerna går orörda, och produkt 2 nås bara på sin egen
+   nyckel. Utan fältet: högljutt fel, men det inträffar på natten.
 4. **Adsetnamnen saknar produkt** (`kampanj.mjs`: `{BRAND}_{MARKNAD}_{vinkel}`).
    Två produkter får identiskt namngivna adsets i var sin kampanj. Inte fel i
    dag — adsetuppslaget går på kampanjen — men det gör en manuell avläsning i
@@ -161,3 +164,46 @@ plus tillbehör i stället för två jämlika produkter. Fabriken klarar det red
 (Q4-bonusen är ju en andra produkt i butiken), och pixelfällan uteblir
 eftersom bara en produkt annonseras. Nackdelen är att den andra produkten
 aldrig får egen annonsering med full kraft.
+
+---
+
+## Läget 2026-09-16 — första riktiga körningen: CaraShell fick termoskyddet
+
+`/ops-produkt carashell <länk>` från Axel. Vad som höll och vad som fick lagas:
+
+**Höll:** `ops-produkt.mjs` (utkast, prefixkrock, körrad med alla filer), bygget med
+`--igen kollektion,startsida,meny,tema` (takskyddet kvar i meny + startsida, kollektionen
+skapad, korg-upsellen pekar på produkt 2), `register.mjs skriv-in`, egen kampanj per
+produkt, `budgetrond` dömer mot produktfilens egen break-even.
+
+**Rutinerna, samma kväll:** ett bart `carashell` kastade "matchar 2 poster", och
+takskyddets tre rutiner (prompt `/notionscalercs carashell`) ligger på
+`claude5@stonebite.org` — osynliga från sessionen. Axels beslut: de befintliga
+rutinerna är takskyddets, termoskyddet får egna. Löst från två håll samma dag:
+`butik.huvudprodukt: takskyddet` i butiksfilen + `hittaPost` som löser upp butiks-id:t
+till huvudprodukten (så ett bart `carashell` fungerar), OCH en session på claude5 som
+byggde om de fyra rutinerna med `carashell/takskyddet` i prompten. Lärdom därifrån:
+`update_trigger` kan inte byta prompt på en rutin bunden till en annan sessions
+container — det blev nya trigger-id:n på samma fasta sessioner, de gamla raderade.
+
+**Lagat samma dag:**
+- `rutin.mjs` saknade CLI-flaggan `--flerprodukt` — `--tider carashell/termoskyddet
+  --skriv-in` hade ärvt plats 5 (takskyddets minut). Nu plats 7 (00:57 / 14:15 / 16:15).
+- `kampanj.mjs` döpte annonser med brandet, inte produktens prefix (FAS2.md 2026-09-16).
+- `oversattning.mjs` byggde huvudmenyn för hand (utan Hem, Frakt & retur) — "Hem" fick
+  aldrig en nyckel och stod kvar på /nb. Nu samma `huvudmenyRader` som meny-steget.
+- `marknad.mjs` räknade paketnivåernas `fastpris_valutor` (NOK-tal) som svenska läckor.
+- `tillagg_kryssruta: true` på produkt 1 gav röd kundvy: fullpris-kryssrutan byggs bara
+  i enproduktsläget (`tema.mjs`), korg-upsellen bär samma sak. Sätt false.
+- NOK-prislistan får inte produkt 2 av sig själv: `priceListFixedPricesAdd` per variant
+  efter bygget (tre rader, API-GRANSER.md). Gjort för hand i sessionen.
+- Norskan för produkt 2 + de omskrivna brandtexterna kräver `--igen oversatt` — körraden
+  ovan tar inte med det steget, och ett grönt state hoppar över det.
+
+**Kvar (oförändrat):** pixeln. Termoskyddet 559 kr mot takskyddet 1 129 kr = 2× — inte brus.
+Läs köp per produkt ur Shopify innan någon annons i CaraShell döms.
+
+**Hubben:** integrationen "Bäverbutiken RUTINER" ser inga SIDOR i Notion, bara
+databasrader — `notion-hub.mjs --foralder` har ingen förälder att skapa under. En hub för
+produkt 2 är därför Axels klick (duplicera "Carashell creative hub", döp om), sedan
+`node factory/register.mjs notion carashell/termoskyddet <id>` och `/notionscalercs setup`.

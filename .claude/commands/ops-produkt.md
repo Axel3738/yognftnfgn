@@ -82,6 +82,18 @@ CLAUDE.md regel 6 med `docs/copy-regler.md`.
 Två fält kopieras alltid ur butikens ANDRA produktfil, aldrig någon annanstans
 ifrån: **`meta.page_id` och `meta.pixel_id`** — de är butikens.
 
+Bevisat 2026-09-16 (CaraShell → termoskyddet), tre saker till i det här steget:
+- **Källans Kaching-nivåer går inte alltid att läsa** — baverbutiken.se svarar med
+  en bot-spärr på produktsidans HTML (`.json` går). Då: `offer.paket.test: "paket"`
+  (standard A/B = källans nivåer för takskyddet) och skriv i filen att de inte lästes.
+- **Butikens första produkt får `offer.bonus_produkt` = den nya** (handle, titel,
+  pris, tom bildlista ⇒ bonus.mjs återanvänder produkten) och
+  **`tillagg_kryssruta: false`** — fullpris-kryssrutan byggs bara i enproduktsläget,
+  med true blir kundvyn röd på en ruta som aldrig ritas. Den nyas block lämnas tomt
+  (temat bär EN korg-upsell per butik, första ifyllda handlet vinner).
+- **`kalla.no_annonsprefix` bär `_NO`** (`Frontrutetrekk_NO`), annars läser
+  `kampanj.mjs` "NO" som vinkel. Sätt `no_kampanjmonster` + `srt_slug` direkt.
+
 Sedan: `node factory/validera.mjs factory/produkter/<id>.yaml` — grönt innan du
 går vidare.
 
@@ -111,6 +123,17 @@ Läs utskriften: den nya produktens sex produktsteg ska köras (`produkt`,
 `metafalt`, `lagerpolicy`, `bonus`, `paket`, `recensioner`), butiksstegen ska
 stå `⏭ redan grönt` utom de fyra.
 
+**Sedan två steg körraden INTE täcker** (bevisat 2026-09-16):
+1. **NOK-priset.** Prislistan "Norge" (`ekonomi.marknadspriser`) får inte produkt 2
+   av sig själv — `priceListFixedPricesAdd` för den nya variantens gid, samma kurs
+   som produkt 1 (API-GRANSER.md), läs tillbaka `originType: FIXED`.
+2. **Norskan.** Kör `node factory/oversattning.mjs <butiksfil> <alla produktfiler>`,
+   jämför nya sv-nycklar mot nb-filen OCH ändrade värden mot `git show
+   HEAD:…/oversattning-sv.json` (hero, berättelse, statement, meny byts när
+   butiken blir tvåprodukts), låt en subagent (sonnet) skriva bokmål för exakt de
+   nycklarna, slå ihop, och kör `--igen oversatt`. Steget är grönt i state och
+   hoppas annars över — och /nb visar svenska på allt nytt.
+
 ### 5. QA på riktig HTML
 ```
 node factory/kundvy-kor.mjs <butik> <ny-produkt-id>
@@ -125,12 +148,26 @@ människa i en webbläsare — skriv "inte testad", aldrig "testad".
 node factory/register.mjs skriv-in
 node factory/register.mjs <butik>/<ny-produkt-id>
 ```
-⚠️ **Så fort butiken bär två produkter kastar ett bart butiks-id.**
-`hittaPost('carashell')` svarar "matchar 2 poster — ange produktens nyckel".
-Det betyder att butikens BEFINTLIGA tre rutiner slutar fungera samma natt:
-deras prompt är `/notionscalercs <butik>`. Skriv om dem med `update_trigger`
-till `<butik>/<gamla-produkten>` **innan** den nya produkten får en state-fil,
-och rapportera det under Axels uppgifter om det inte hinns med.
+⚠️ **Så fort butiken bär två produkter kastar ett bart butiks-id** — om inte
+butiksfilen pekar ut vilken produkt det betyder. Butikens BEFINTLIGA tre
+rutiner har prompten `/notionscalercs <butik>` och ligger ofta på ett ANNAT
+Claude-konto än sessionen (CaraShell: `list_triggers` här var tomt
+2026-09-16), så de går inte att skriva om härifrån. Därför, **i samma steg**:
+sätt `butik.huvudprodukt: <gamla-produktens-id>` i `factory/butiker/<butik>.yaml`
+(Axels beslut 2026-09-16: de gamla rutinerna är den gamla produktens, den nya
+får egna). `hittaPost('<butik>')` löser då upp till den gamla produkten och
+rutinerna fortsätter gå orörda; den nya produkten nås bara på
+`<butik>/<ny-produkt-id>`. Kontrollera med `node factory/register.mjs <butik>`
+— raden `Huvudprodukt: ja` ska stå på den gamla produkten. Utan fältet kastar
+uppslagningen med ett tips om fältet, och rutinerna stannar samma natt.
+Når du rutinerna (samma konto): byt även deras prompt till produktnyckeln.
+⚠️ `update_trigger` kan inte byta prompt på en rutin bunden till en annan
+sessions container — bygg nya triggers på samma fasta sessioner och radera de
+gamla, verifierat med `list_triggers` (CaraShell 2026-09-16, fyra rutiner).
+
+Egen rutinplats åt produkt 2: `node factory/rutin.mjs --tider <butik>/<ny-produkt-id>
+--flerprodukt --skriv-in`. Utan `--flerprodukt` ärver nyckeln butikens minut och
+två nattvakter startar samtidigt mot det delade kontot.
 
 ### 7. Annonserna — det här sköter sig själv, utom EN sak
 
@@ -171,7 +208,13 @@ ur **Shopify** innan någon annons döms, och skriv i rapporten att du gjort det
 ```
 Produkten behöver en **egen creative hub** i Notion (två produkters briefer i
 samma databas laddas upp i fel kampanj av leveransrundan) och sina **egna tre
-rutiner**. Kontrollera i utskriften att den fått en EGEN minut — delar den
+rutiner**. ⚠️ `tools/notion-hub.mjs` kräver en föräldersida som integrationen är
+inbjuden till — 2026-09-16 såg "Bäverbutiken RUTINER" inga sidor alls, bara
+hubbrader, så hubben blev Axels klick (duplicera butikens hub i Notion, döp om
+till `<Brand> <Produkt> creative hub`, `•••` → Connections → Bäverbutiken
+RUTINER), sedan `node factory/register.mjs notion <butik>/<produkt> <id>`.
+Bygg inte rutinerna före hubben: nattvakten larmar "hub saknas" varje natt och
+leveransrundan har inget att läsa. Kontrollera i utskriften att den fått en EGEN minut — delar den
 minut med butikens första produkt startar två nattvakter samtidigt mot det
 delade OPS-kontot och båda går i Metas rate limit.
 

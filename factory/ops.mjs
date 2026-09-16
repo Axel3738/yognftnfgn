@@ -94,7 +94,7 @@ import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad 
 import { byggPrislistplan, sakerstallPrislistor } from './prislista.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
-import { hamtaStartsida, hamtaProduktsida } from './kundvy-kor.mjs';
+import { hamtaStartsida, hamtaProduktsida, landPerLocale } from './kundvy-kor.mjs';
 import { kontrolleraKundvy, strukturkoll, produktkoll, svenskaMarkorer, lasMarkorer, filtreraMarkorer } from './kundvy.mjs';
 import { samlaLage } from './trippelkoll.mjs';
 import { byggJudgeMeCsv, byggJudgeMeAppCsv, byggJudgeMeCsvOversatt } from './judgeme.mjs';
@@ -873,6 +873,9 @@ export const STEG = [
           ? `recensions-CSV ur Drive-mappen ${pk.p.kallor.drive_mapp}`
           : `${antal} recensioner ur produktfilen → output/${pk.p.produkt.id}/judgeme-app-import.csv (Judge.mes mallformat, originaldatum)${utanDatum > 0 ? ` — 🖐 ${utanDatum} saknar datum, app-CSV:n kan inte byggas förrän de finns` : ''}`,
         `API-import med tools/judgeme-import.mjs bara om env ${tokenEnv} finns — annars laddar VA:n upp filen i appen`,
+        ...(ctx.butik.judgeme?.auto_oversattning === true
+          ? ['judgeme.auto_oversattning: true — app-CSV:n bär BARA originalen; Judge.me (Awesome) översätter dem på /<locale>']
+          : []),
       ];
     },
     async kor(ctx, pk) {
@@ -910,8 +913,14 @@ export const STEG = [
         }
         const appfil = join(mapp, 'judgeme-app-import.csv');
         let appCsv = null;
+        // Judge.me översätter själv när butiken har Awesome-planen och
+        // `judgeme.auto_oversattning: true` (CaraShell, Axels beslut 2026-09-16):
+        // då bär app-CSV:n BARA originalen — importeras de översatta raderna
+        // också ser varje kund alla språk blandade på samma sida. De översatta
+        // CSV:erna per locale skrivs ändå, som reserv för en butik utan planen.
+        const autoOversattning = ctx.butik.judgeme?.auto_oversattning === true;
         try {
-          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar });
+          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar: autoOversattning ? {} : oversattningar });
         } catch (e) {
           return { manuell: `App-CSV:n kunde inte byggas: ${e.message}` };
         }
@@ -924,7 +933,8 @@ export const STEG = [
       const tokenEnv = ctx.butik.judgeme?.token_env ?? 'JUDGEME_API_TOKEN';
       const shopDomain = text(ctx.butik.judgeme?.shop_domain) ?? process.env.JUDGEME_SHOP_DOMAIN ?? ctx.shop?.myshopifyDomain ?? null;
       if (!process.env[tokenEnv] || !shopDomain) {
-        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv: ${klick}` };
+        const bara = ctx.butik.judgeme?.auto_oversattning === true ? ' (bara originalen — Judge.me översätter dem på marknadernas språk)' : '';
+        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv${bara}: ${klick}` };
       }
       const produkt = await produktIButiken(pk);
       const arg = [
@@ -1260,7 +1270,9 @@ async function korButiksQa(ctx) {
   } catch (e) {
     punkter.push({ namn: 'arbetstema', utfall: 'kritisk', detalj: e.message });
   }
-  const kctx = { shop: ctx.shop };
+  // Varje vy läses som kund i RÄTT land (kundvy-kor.landPerLocale) — annars
+  // väljer Shopify marknad efter containerns IP (USA ⇒ USD på svenska sidan).
+  const kctx = { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   const start = await hamtaEllerNull(() => hamtaStartsida(kctx, { temaId: tema }));
   punkter.push(...kundvyPunkter({ html: start.html, felmeddelande: start.fel, losenordSatt, butik: ctx.butik, produkt: ctx.p, vad: 'startsida' }));
 
@@ -1298,7 +1310,7 @@ async function korProduktQa(ctx, pk, butiksQa) {
   const kontroll = kontrolleraLaunch(medHandleSomId(pk.p), { shop: ctx.shop, produkt, policyer: ctx.shop?.shopPolicies ?? null });
   const punkter = [...kontroll.punkter];
   const losenordSatt = Boolean(process.env.SHOPIFY_STOREFRONT_PASSWORD);
-  const kctx = butiksQa.kctx ?? { shop: ctx.shop };
+  const kctx = butiksQa.kctx ?? { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   await sov(2500);
   const sida = await hamtaEllerNull(() => hamtaProduktsida(kctx, pk.handle, { temaId: butiksQa.tema }));
   punkter.push(...kundvyPunkter({ html: sida.html, felmeddelande: sida.fel, losenordSatt, butik: ctx.butik, produkt: pk.p, vad: 'produktsida' }));

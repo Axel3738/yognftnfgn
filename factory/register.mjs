@@ -45,6 +45,7 @@ import { lasYaml } from './yaml.mjs';
 import { sammanfoga } from './butik.mjs';
 import { ekonomiForProdukt, linjetext } from './ekonomi.mjs';
 import { VIDEOR_PER_DAG, RONDDAGAR } from './kadens.mjs';
+import { annonsmarknaderUr, kontoFor, marknadFor } from './opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
@@ -163,6 +164,9 @@ export function upptackOps(rot = ROT) {
       id: y?.butik?.id ?? f.replace(/\.yaml$/, ''),
       brand: y?.butik?.brand ?? '',
       valuta: y?.butik?.valuta ?? 'SEK',
+      // Produkten ett bart butiks-id betyder i en flerproduktsbutik (se
+      // hittaPost). Tomt = butiks-id:t kastar så fort butiken bär två produkter.
+      huvudprodukt: normalisera(y?.butik?.huvudprodukt ?? ''),
       fil: `factory/butiker/${f}`,
       ra: y,
     };
@@ -208,6 +212,9 @@ export function upptackOps(rot = ROT) {
     // flerproduktsbutik matchar brandet båda produkternas annonser, och då
     // rangordnas grannens creatives mot den här produktens break-even.
     enprodukt: (antalPerButik.get(butik.id) ?? 0) === 1,
+    // true på den produkt butiksfilen pekar ut med `butik.huvudprodukt`. Bara
+    // den får svara på ett bart butiks-id i en flerproduktsbutik (hittaPost).
+    huvudprodukt: finns(butik.huvudprodukt) && butik.huvudprodukt === normalisera(produkt.id),
     daily_budget_sek: produkt.daily_budget_sek,
     byggd,
     kopplingskalla: kalla,
@@ -235,6 +242,7 @@ export function upptackTest(rot = ROT) {
       annonsprefix: p.creative_prefix ?? '',
       kampanjprefix: '',
       enprodukt: false,
+      huvudprodukt: false,
       daily_budget_sek: p.daily_budget_sek ?? null,
       byggd: true,
       kopplingskalla: 'products.json',
@@ -420,6 +428,11 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // fast redigeraren inte är bestämd). Skräp räknas som ingen överstyrning.
       briefantal_override: giltigOverride(d?.briefantal_override) ? d.briefantal_override : null,
       notion: d?.notion ?? post.notion ?? null,
+      // Marknaderna butikens SE-annonser översätts till (utöver SE). Standard
+      // NO; USA läggs till per butik (`register.mjs annonsmarknader <nyckel> NO,US`).
+      // Styr vilka översättningsrutiner setup bygger och när en rad i
+      // SE-ACTIVE to be translated får flyttas till Approved (alla klara).
+      annonsmarknader: annonsmarknaderUr(d?.annonsmarknader),
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
       // Briefdagarna: posten får överstyra, annars toppnivån i register.json,
@@ -462,11 +475,21 @@ export function hittaPost(nyckel, register = lasRegister()) {
     throw new Error(`Okänd butik/produkt: "${nyckel}". Registret innehåller: ${lista || '(tomt)'}`);
   }
   if (traffar.length > 1) {
-    // En flerproduktsbutik slås upp på butiks-id och ger två träffar. Gissa
-    // aldrig vilken — en rond mot fel produkt dömer mot fel break-even.
+    // En flerproduktsbutik slås upp på butiks-id (eller brand) och ger två
+    // träffar. Gissa aldrig vilken — en rond mot fel produkt dömer mot fel
+    // break-even. Men butiksfilen får PEKA UT en: `butik.huvudprodukt`.
+    // Det är ett beslut i en versionerad fil, inte en gissning, och det håller
+    // butikens gamla rutiner (`/notionscalercs carashell`) i gång när
+    // produkt 2 kommer in — rutinerna ligger ofta på ett annat Claude-konto
+    // än sessionen och går inte att skriva om härifrån (CaraShell 2026-09-16).
+    const butiker = new Set(traffar.map((p) => p.butik));
+    const huvud = traffar.filter((p) => p.huvudprodukt === true);
+    if (butiker.size === 1 && huvud.length === 1) return huvud[0];
+    const tips = butiker.size === 1
+      ? ` Ange produktens nyckel (butik/produkt), eller sätt \`butik.huvudprodukt: <produkt-id>\` i ${traffar[0].butiksfil ?? 'butiksfilen'} så betyder ett bart "${nyckel}" den produkten.`
+      : ' Ange produktens nyckel (butik/produkt) i stället.';
     throw new Error(
-      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}. `
-      + 'Ange produktens nyckel (butik/produkt) i stället.'
+      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}.${tips}`
     );
   }
   return traffar[0];
@@ -505,6 +528,34 @@ export function sakerstallKonto(post) {
 
 /** Bakåtkompatibelt namn: samma spärr, men bara för läge skala. */
 export const sakerstallOpsKonto = (post) => sakerstallKonto({ ...post, lage: 'skala' });
+
+/**
+ * Annonskontot för en OPS-post PÅ EN MARKNAD. Kontot är per marknad, inte per
+ * butik (factory/opsmarknader.mjs): SE och NO ligger i OPS-kontot, US i
+ * Magiborsten UK. Postens eget konto måste ändå vara OPS-kontot — det är
+ * butikens identitet — så kontospärren körs först. Läge test har ingen
+ * marknadsväg alls.
+ */
+export function annonskontoFor(post, marknad = 'SE') {
+  const bas = sakerstallKonto(post);
+  if (post?.lage === 'test') return bas;
+  return kontoFor(marknad);
+}
+
+/** Sätter butikens annonsmarknader ("NO,US"). SE är alltid med och skrivs aldrig. */
+export function sattAnnonsmarknader(nyckel, lista) {
+  const marknader = annonsmarknaderUr(lista);
+  for (const k of marknader) marknadFor(k);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.annonsmarknader = marknader;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, annonsmarknader: marknader };
+}
 
 /**
  * Prefixen som en läsning av det DELADE kontot ska filtreras på.
@@ -880,10 +931,16 @@ export function loggaLaunch(nyckel, antal, datum) {
 function skrivPost(post, idag) {
   const kord = arKordag(post, idag);
   console.log(`\n${post.namn}  ·  ${post.nyckel}  ·  LÄGE ${post.lage.toUpperCase()}`);
+  if (post.huvudprodukt && !post.enprodukt) {
+    // Rutinen kan ha slagit upp bara butiks-id:t. Säg vilken produkt det blev
+    // och var minnet ligger — mappen products/<butik>/ bär inte längre dna.md.
+    console.log(`  Huvudprodukt: ja — ett bart "${post.butik}" betyder den här produkten (butik.huvudprodukt). Minnet: products/${post.nyckel}/`);
+  }
   console.log(`  Annonskonto:  ${post.ad_account_id}${post.lage === 'test' ? ' (Bäverbutiken — LÄSES bara)' : ' (delat OPS-konto, filtrera på prefix)'}`);
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') console.log(`  Annonsmarknader: SE + ${(post.annonsmarknader ?? []).map((k) => `${k} (${marknadFor(k).kontonamn} ${kontoFor(k)})`).join(', ')}`);
   if (post.lage !== 'test') {
     const b = briefantal(post);
     console.log(`  Briefrond:    ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
@@ -951,6 +1008,12 @@ function huvud() {
     if (!arg[2]) throw new Error('Ange database_id eller Notion-url: notion <butik> <id|url> [namn…]');
     const post = sattNotion(arg[1], arg[2], arg.slice(3).join(' '));
     console.log(`Notion-hub på ${post.namn}: ${post.notion.name || '(namnlös)'} (${post.notion.database_id})`);
+    return;
+  }
+  if (arg[0] === 'annonsmarknader') {
+    if (!arg[2]) throw new Error('Ange marknaderna: annonsmarknader <nyckel> NO,US');
+    const post = sattAnnonsmarknader(arg[1], arg[2]);
+    console.log(`Annonsmarknader på ${post.namn}: SE + ${post.annonsmarknader.join(', ')} (${post.annonsmarknader.map((k) => `${k} → ${marknadFor(k).kontonamn} ${kontoFor(k)}`).join(' · ')})`);
     return;
   }
   if (arg[0] === 'redigerare') {

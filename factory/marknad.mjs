@@ -145,6 +145,10 @@ export function arLacka(l, samma = new Set()) {
   // inte uttrycket (AdventLane 2026-09-10).
   if (/^\{\{[^}]*\}\}$/.test(String(l.value).trim())) return false;
   if (/^(handle|product_type|meta_description|ab_variant|rabattkod)$/.test(l.key)) return false;
+  // Paketnivåns fasta priser per valuta ("NOK:1880.20;…") är tal, inte text —
+  // de räknades som åtta läckor på CaraShell 2026-09-16 så fort marknads-
+  // priserna fanns i två produkter.
+  if (l.typ === 'paket' && l.key === 'fastpris_valutor') return false;
   if (l.typ === 'policy' && l.value.includes('{{')) return false;
   if (l.typ === 'menylänk' && /^(Orders|Profile)$/.test(l.value)) return false;
   if (l.typ === 'variant' && l.value === 'Default Title') return false;

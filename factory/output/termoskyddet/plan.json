@@ -1,0 +1,130 @@
+{
+  "input": {
+    "title": "Termoskydd Husbil 211 × 171 cm",
+    "handle": "termoskyddet",
+    "status": "ACTIVE",
+    "descriptionHtml": "<p>Utvändigt termoskydd, 211 × 171 cm, som håller kylan och solen borta från vindruta och sidorutor och mörklägger framvagnen när du sover i bilen.</p>",
+    "vendor": "CaraShell",
+    "seo": {
+      "title": "Termoskydd Husbil 211 × 171 cm – CaraShell",
+      "description": "Ingen imma att torka bort på morgonen. 14 dagars ångerrätt"
+    },
+    "productOptions": [
+      {
+        "name": "Title",
+        "values": [
+          {
+            "name": "Default Title"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Title",
+            "name": "Default Title"
+          }
+        ],
+        "price": "559.00",
+        "compareAtPrice": "932.00",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg",
+        "contentType": "IMAGE",
+        "alt": "CaraShell termoskydd spänt utvändigt över husbilens vindruta och sidorutor"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png",
+        "contentType": "IMAGE",
+        "alt": "Miljöbild (AI-genererad illustration) – husbil med termoskydd över framrutan på en ställplats"
+      },
+      {
+        "originalSource": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-detalj.png",
+        "contentType": "IMAGE",
+        "alt": "Miljöbild (AI-genererad illustration) – sidofliken som kläms fast i dörrkarmen"
+      }
+    ]
+  },
+  "metafalt": [
+    {
+      "namespace": "opf",
+      "key": "problem_rubrik",
+      "type": "single_line_text_field",
+      "value": "Imman sitter kvar mellan gardin och glas"
+    },
+    {
+      "namespace": "opf",
+      "key": "problem_text",
+      "type": "multi_line_text_field",
+      "value": "Fukten från natten lägger sig på insidan av vindrutan, och en gardin gör bara att den blir kvar mellan glaset och tyget. Morgonsolen gör sedan kupén trettio grader varm innan frukosten är klar, och på en rastplats ser alla som går förbi rakt in."
+    },
+    {
+      "namespace": "opf",
+      "key": "gif_problem",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_rubrik",
+      "type": "single_line_text_field",
+      "value": "CaraShell sitter utanpå rutan"
+    },
+    {
+      "namespace": "opf",
+      "key": "losning_text",
+      "type": "multi_line_text_field",
+      "value": "Skyddet spänns utvändigt över vindrutan och båda sidorutorna, så glaset aldrig hinner bli kallt inifrån. Det mörklägger samtidigt hela framvagnen: ingen ser in, och morgonsolen väcker dig inte klockan fyra. Två minuters jobb på utsidan i stället för imma att torka bort varje dag."
+    },
+    {
+      "namespace": "opf",
+      "key": "media_losning",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+    },
+    {
+      "namespace": "opf",
+      "key": "benefits",
+      "type": "list.single_line_text_field",
+      "value": "[\"Ingen imma att torka bort på morgonen\",\"Svalare kupé innan frukosten är klar\",\"Ingen inblick på rastplatsen\",\"Sover ostörd, morgonsolen väcker dig inte klockan fyra\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "features",
+      "type": "list.single_line_text_field",
+      "value": "[\"Spänns utvändigt över vindrutan och båda sidorutorna\",\"Mörklägger hela framvagnen\",\"211 cm bred, 171 cm över mitten, 90 cm sidflikar\",\"Flikarna kläms fast i dörrkarmen utan att dörrarna behöver öppnas\",\"Håller i blåst\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "bild_lifestyle",
+      "type": "url",
+      "value": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-detalj.png"
+    },
+    {
+      "namespace": "opf",
+      "key": "garantier",
+      "type": "list.single_line_text_field",
+      "value": "[\"14 dagars ångerrätt\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "frakt",
+      "type": "list.single_line_text_field",
+      "value": "[\"Leveranstid: 5–10 arbetsdagar\",\"Fri frakt till alla länder\"]"
+    },
+    {
+      "namespace": "opf",
+      "key": "faq",
+      "type": "json",
+      "value": "[{\"fraga\":\"Passar skyddet min husbil?\",\"svar\":\"Måtten är 211 cm bred, 171 cm över mitten och 90 cm sidflikar, och skyddet täcker vindrutan och båda sidorutorna på framvagnen. Mät din framruta och jämför innan du beställer.\"},{\"fraga\":\"Hur monterar jag skyddet?\",\"svar\":\"Skyddet spänns utvändigt över vindrutan och sidorutorna, och flikarna kläms fast i dörrkarmen. Dörrarna behöver inte öppnas.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, flikarna som kläms i dörrkarmen håller skyddet på plats i blåst.\"},{\"fraga\":\"Mörklägger det så ingen ser in?\",\"svar\":\"Ja, skyddet täcker hela framvagnen och mörklägger den, så ingen på rastplatsen ser in och morgonsolen väcker dig inte i gryningen.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
+    }
+  ]
+}

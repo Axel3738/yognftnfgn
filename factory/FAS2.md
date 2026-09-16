@@ -708,3 +708,106 @@ annonser? `FRAMMANDE_MARKNAD`-regexen filtrerar bort varje annonsnamn med
 segmentet `NO`, men SE+NO är standard i varje OPS-butik och det är samma
 redigerare. Frågan blir skarp först när någon anställs — men uppdrag D:s
 commission-fix ska byggas så att svaret bara är en konfigrad.
+
+---
+
+## ⚠️ CaraShell termoskyddet 2026-09-16 — andra produkten i en butik, och fyra fel i annonsflödet
+
+`/ops-produkt carashell <termoskydd-länk>` körde hela `/ny-annonser` som steg 7. Vad som
+gick sönder och lagades, i ordning:
+
+1. **Annonsnamnen bar brandet, inte produktens prefix.** `kampanj.mjs` döpte annonsen
+   `${brand}_${källnamn}` (`CaraShell_Termoskydd_PD_2_1`). I en enproduktsbutik ÄR brandet
+   prefixet, så det höll — i en tvåproduktsbutik matchar registrets prefixfilter
+   (`carashellfront_`) aldrig, och nattvakt, leveranskö och commission hade sett noll
+   annonser. Nu `annonsnamnAv()`: `meta.creative_prefix` + källnamnet utan källprefix,
+   `NO_` på norska marknaden ⇒ `CaraShellFront_PD_2_1`, `CaraShellFront_NO_PD_1`.
+   ⚠️ Byter form även för enproduktsbutiker (`CatCabin_PD_2_1` i stället för
+   `CatCabin_Utekattkoja_PD_2_1`) — prefixfiltret matchar båda.
+2. **`kalla.no_annonsprefix` måste bära `_NO`** (`Frontrutetrekk_NO`, som damasker.yaml).
+   Utan det läser `vinkelAv` "NO" som vinkel och kampanjbyggaren stoppar på
+   "Saknar copy för vinklarna: NO".
+3. **Kampanjnamnets datum var hårdkodat `2026-09-09`** sedan DryTrek. Nu byggdagen.
+4. **Räkningen läste aldrig `brand-detektor-no.json`.** Varje norsk källannons blev
+   "odömd" och de uppladdade norska "övertaliga — ingen dom" — även när NO-rapporten var
+   grön (CatCabins NO-räkning 2026-09-12 visar exakt det). `rakning.mjs` slår nu ihop
+   båda filerna.
+
+**Containern saknade ffmpeg och OCR.** Brand-detektorn körde igenom med "qa-frames.py
+misslyckades" på varje video och "Utan OCR kan yta 3 och 4 inte läsas" på varje bild — och
+gav ändå exit 0 med domar. Kör `pip install imageio-ffmpeg rapidocr-onnxruntime` FÖRST,
+sedan `--hamta` igen; media hämtas inte om (cachen i `.scratch/brand-detektor/`).
+
+**Brandrepliken på slutet: klipp, inte omdubb.** Alla 24 källvideor (SE + NO) slutar med
+"Termoskydd husbil från Bäverbutiken" — uppläst OCH inbränd som ordvis caption på vit
+platta. För de tre PD-videorna per marknad var det enda felet, och repliken sitter sist
+(~2,5 s). ffmpeg-klipp vid cue-starten (SE 16,00 / 16,24 / 17,14 s, NO 16,05 / 16,40 /
+17,30 s — NO-tiderna mättes med frames var 0,4 s, SRT:ns tider stämde inte på 0,2 s) tog
+bort både talet och captionen, kostade noll krediter och rörde inte rösten. Lades i
+`output/<id>/bildfix/<källnamn>.mp4` — `media-upload.mjs` tar den filen före domen.
+Ögonläs sista framen efter klippet (montage av captionbandet), annars sitter första
+ordet i brandrepliken kvar (NO PD_1 första försöket).
+
+**De nio andra per marknad går inte att rädda med ett replikbyte.** CS/G-videorna läser
+upp "rabatterat pris bara idag, lagret minskar snabbt, beställ innan det är slut" och
+SP-videorna ett vittnesmål i vi-form ("vi satte upp … förra sommaren") — hela talet är
+falskt för butiken (samma mönster som TankGuard 2026-09-09). Nytt manus + HeyGen +
+ny captionbana, en session per marknad. Krediter fanns (7 631 = ~90 videominuter), men
+röstkontrollen kräver att någon lyssnar, och en flerproduktsbutiks bygge är inte platsen.
+`uteslutna.json` namnger var och en. ⚠️ Källans 40 köp sitter i just de nio (CS 31, SP 9);
+det som är uppe (PD, G) fick aldrig budget i källan — kampanjen är en kallstart.
+
+**Bild med text direkt på fotot = ingen gratis fix.** `oversatt-bild.py --analys` hittade
+bara fotoytor (fönster, backspeglar) som "former" på CS_2_1/SP_2_1 — texten ligger på himlen.
+Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är copy.
+
+### Samma dag, `/ny-annonser termoskyddet` — bildfix, omdubb och CBO (mätt 2026-09-16)
+
+- **CBO går att slå på i efterhand på en PAUSED kampanj utan spend:** `POST /<kampanj>`
+  med `daily_budget` + `bid_strategy=LOWEST_COST_WITHOUT_CAP` svarade `success`, och
+  adsetens egna budgetar försvann av sig själva (läs tillbaka: `daily_budget` saknas på
+  adseten). Att sätta adsetbudget till 0 avvisas ("Budgeten är för låg") — gör det inte.
+  `kampanj.mjs --cbo` bygger nya kampanjer så från början; en befintlig CBO-kampanj får
+  adset utan budget automatiskt.
+- **`kampanj.mjs` är idempotent på namn** (kampanj, adset, annons) — en andra omgång
+  media (bildfixar, omdubbade videor) körs genom samma kommando utan dubbletter.
+- **Text direkt på fotot: kie.ai `nano-banana-edit` tar bort den** med prompten "remove
+  ALL text, banners, ribbons, star ratings, badges … fill with matching sky/trees",
+  referensbild = Metas `creative.image_url` (publik). Två av fyra källbilder var samma
+  foto med olika toning — den rena varianten (CS) fick bära alla fyra. Sedan
+  `factory/bild-text.py` med butikens färger (rubrik + underrad, priskort med
+  jämförpris, citatkort med namn, bottenrad). QA före/efter som `<namn>.qa.png`.
+- **HeyGen apply-srt kräver EXAKT HeyGens eget antal segment** ("Number of segments in
+  SRT does not match existing proofread data", HTTP 400). Manus skrivna mot de gamla
+  `.orig.srt` matchade i 4 av 9 fall — resten omfördelades meningsvis över HeyGens cues
+  efter starttid (`heygen-apply-render.mjs` i sessionens scratch, logiken värd att
+  flytta in i `pipeline/localize.mjs`). Ett manus med FÄRRE meningar än HeyGen har cues
+  ger en tom cue på slutet (G_2 SE) — skriv en mening per HeyGen-cue nästa gång.
+- **Renderingen svarar `status: failed` + `failure_message: "video pending moderation by
+  our team"`** direkt efter beställning — det är en väntan, inte ett fel (Kranskydd
+  2026-08-29: släppt efter ~30 min). Ett skript som läser `failed` som slutgiltigt
+  tappar hela batchen. Krediter dras vid beställningen: 7 631 → 7 400 för 6 renderingar
+  à 15–20 s ≈ 40 krediter per video.
+- **Proofread tar 5–6 min per video** sekventiellt (upload + transkribering). Nio per
+  marknad ≈ 50 min. Kör SE och NO som två parallella loopar.
+- **`ffprobe` finns inte i claude.ai-containern** (apt tyst, statisk nedladdning 403),
+  bara ffmpeg via `pip install imageio-ffmpeg`. `pipeline/rostkoll.py` gör exakt två
+  ffprobe-anrop (längd + "finns ljudspår") — en 20-raders Python-shim i
+  `/usr/local/bin/ffprobe` som läser `ffmpeg -i` räcker och gav samma svar. Utan den
+  står röstkollen helt still; hoppa aldrig över den för att binären saknas.
+- **Röstkollen fångade ett riktigt fel:** SE CS_1 slutade 5,2 dB högre än källan i
+  sista 100 ms — HeyGen hann inte läsa "Termoskydd husbil från CaraShell." på 2,5 s.
+  Kortad till "Från CaraShell." och omrenderad (≈30 krediter). Alla 18 andra gröna.
+- **Villkorsgrep på de NYA manusen, inte bara källans.** Subagenten skrev "gratis
+  frakt og retur" i NO CS_2 — butiken har `returfrakt_betalas_av: kund`. Brand-detektorn
+  skannar källan, inte det manus som dubbas in. Grep varje `-ny.srt` mot
+  `retur|30 dag|öppet köp|tusen|idag|lager|garanti|Bäver` FÖRE render; hittat efter
+  render kostar en omrendering + en raderad annons (PAUSED, 0 kr — annars aldrig).
+- **`while read` + ett Python-skript i loopen äter stdin:** rostkoll/no-captions
+  läste första tecknet ur nästa rad, så filerna hette `rontrutetrekk_…` och källan
+  "saknades" (falskt ❌). `</dev/null` på varje anrop i loopen.
+- **Captionbandet:** källornas inbrända captions ligger på rad 975–1065 av 1280, men
+  CS_3 (SE) och SP_1 (NO) har text upp till rad 885 — `--band=885:1084` täcker.
+  Kollen "text ovanför bandet" är en OCR-flagga, inte en dom: titta på `qa-*.png`.
+- **Krediter mätt 2026-09-16:** 7 631 → 7 057 för 21 renderingar à 15–18 s ≈ 27 per
+  video (inte 40 som gissat ovan efter de sex första).

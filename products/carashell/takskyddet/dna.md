@@ -10,10 +10,15 @@ per 2026-09-12 **314 kr spend och 0 köp på 16 annonser**. **0 av 16 har passer
 signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp) — butiken är en **KALLSTART**:
 ingen feedback-loop, ingen dom över en enda CaraShell-annons ännu.
 
-⚠️ **En produkt i dag.** Kommer produkt nr 2 (butiken bär nischen, inte
-produkten — se `factory/butiker/carashell.yaml`) ska minnet delas per
-produktnyckel, `products/carashell/<produkt>/`, precis som TackleBay
-(`products/tacklebay/README.md`).
+⚠️ **Två produkter sedan 2026-09-16.** Termoskyddet (`carashell/termoskyddet`,
+prefix `CaraShellFront`) lades till med `/ops-produkt`, och minnet delades då
+per produktnyckel precis som TackleBay: den här mappen är
+`products/carashell/takskyddet/`, systern ligger i
+`products/carashell/termoskyddet/`, kartan i `products/carashell/README.md`.
+⚠️ Pixeln är delad och Metas köp-event bär ingen produkt — ett termoskydd
+(559 kr) kan bokföras på taköverdragets kampanj och tvärtom. Prisavståndet är
+2×, så läs köp per produkt ur Shopify innan en annons döms
+(`factory/FLERPRODUKT.md`).
 
 ---
 
@@ -383,3 +388,16 @@ som del av citatkortet** (citat + namn + stjärnor). En annons med stjärnor men
 utan citat får dem inte ritade, och som `badge` renderas ★ som tomma rutor —
 typsnittet saknar glyfen. `SP_6_1` löstes genom att skriva betyget i ord
 ("5,0 av 5 i snitt"). Gör likadant tills motorn kan rita en fristående stjärnrad.
+
+## Marknader
+
+| Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | NO | nb | NOK (fast pris) | 1 106 NOK / jämförpris 1 382,50 | 5–10 virkedager | live, `CARASHELL_NO_Takovertrekket` ACTIVE |
+| 2026-09-16 | **US** | en | **USD, fast pris** — vid första mätningen 06:44 stod SEK (ingen basvaluta på den nyskapade marknaden); vid 06:58 var USD påslagen i admin (inte av den här sessionen — Axel eller Shopify), och `--igen prislista,paket` satte då 199/249 fast + USD-rader i paketnivåerna. Mätt som amerikansk kund 07:05: **$199.00**, jämförpris $249.00, paket $338.30 / $477.60 | **199 USD / jämförpris 249** (Axels pris ur `/ny-marknad carashell US --pris 199`, inte kursen: 1 129 kr ≈ 115,55 USD) | 5–10 business days (Axels argument `--leveranstid 5–10`; leverantören bekräftar) | marknad USA ACTIVE, `/en/products/takskyddet` svarar 200 som amerikansk kund ("Add to cart"), 0 svenska markörer, `prislista` ✅. Axels svar 2026-09-16: sales tax AV (revisorn, inget påslag för kunden), Shopify Payments USD fixat, leverantören skickar till USA 5–10 arbetsdagar. Recensionerna: Axel köpte Judge.me Awesome och slog på auto-översättning 2026-09-16 (`judgeme.auto_oversattning: true`) — de 10 svenska recensionerna ska visas på engelska på /en inom 48 h; "Write a review" syntes direkt, texterna var svenska vid mätningen. Ingen CSV ska importeras. 🖐 kvar: verifiera /en efter 24–48 h (påminnelse satt). US-kampanjen `120251436741400435` i Magiborsten UK `1107817401910319` står PAUSED (1 000 kr/dag, 5 adsets, 0 annonser) tills Axel slår på den — `/ops-oversatt carashell/takskyddet --marknad US` fyller den 17:05 varje dag |
+
+Körningen 2026-09-16 (`/ny-marknad`) lärde tre saker som står i `factory/PROCESS.md` →
+"Marknad utanför Norden" punkt 10–13: Shopify skapar själv sidan "Dina
+integritetsval" när USA läggs till (den läckte på /nb också), enheter i engelskan
+är substans (86 °F, inte "thirty degrees"), och USD-basvalutan måste klickas i
+admin FÖRE prislistesteget.

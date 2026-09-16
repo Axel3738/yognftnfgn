@@ -78,12 +78,18 @@ export function narText(kvar) {
  */
 export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   const datum = new Date(nu).toISOString().slice(0, 10);
-  const varav = rader.filter((x) => (x.kvar ?? 99) <= 0).length;
-  const rubrik = varav ? '🔴' : '🟡';
+  // Förfallen och "förfaller idag" är INTE samma sak. En tvist med deadline i
+  // dag går fortfarande att vinna — kallar man den "already past the due date"
+  // hoppar VA:n över den och vi förlorar pengar som var räddningsbara.
+  // (Mätt 2026-09-16: #4914 förföll samma dag och räknades som passerad.)
+  const forfallna = rader.filter((x) => (x.kvar ?? 99) < 0).length;
+  const idag = rader.filter((x) => x.kvar === 0).length;
+  const rubrik = forfallna || idag ? '🔴' : '🟡';
+  const brast = [forfallna && `${forfallna} already past the due date`, idag && `${idag} due today`].filter(Boolean).join(', ');
   const ut = [
     `${rubrik} **Dispute deadlines — ${brand} (${datum})**`,
     '',
-    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence within ${grans} day${grans === 1 ? '' : 's'}${varav ? ` — ${varav} already past the due date` : ''}. An unanswered dispute is lost automatically, so this is money, not admin.`,
+    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}. An unanswered dispute is lost automatically, so this is money, not admin.`,
     '',
   ];
   for (const x of rader) {

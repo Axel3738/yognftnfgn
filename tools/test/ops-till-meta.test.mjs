@@ -56,6 +56,11 @@ test('kontrolleraMarknad: NO-namn i SE stoppas, SE-namn i NO stoppas, rätt kod 
   // Vinkelkoder får aldrig läsas som länder.
   assert.equal(kontrolleraMarknad('HeimGuard_TR_1_1', 'SE').ok, true);
   assert.equal(kontrolleraMarknad('HeimGuard_PD_1_1', 'SE').ok, true);
+  // USA (2026-09-16): _US_ är en marknadskod; ett US-namn i NO-kampanjen stoppas.
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'US').ok, true);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'NO').ok, false);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'SE').ok, false);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_PD_4_1', 'US').ok, false, 'ett US-namn måste bära _US_');
 });
 
 test('medietyp: mp4/mov är video, jpg/jpeg/png är bild, allt annat null', () => {

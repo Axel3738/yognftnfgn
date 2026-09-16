@@ -602,22 +602,134 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `factory/prislista.mjs`: prislista + marknadskatalog + fast pris/jämförpris
    per variant ur `ekonomi.marknadspriser`, idempotent, med tillbakaläsning.
    🖐 tills valutan är marknadens basvaluta i admin — då med klicket i
-   klartext, inte Shopifys userError. ⚠️ Nätdelen är skriven ur receptet,
-   inte körd från sessionen som skrev den (ingen butikstoken där) — första
-   riktiga körningen är mätningen; skriv utfallet här.
+   klartext, inte Shopifys userError. **Första riktiga körningen 2026-09-16
+   (CaraShell, `/ny-marknad carashell US`):** steget körde utan fel, läste
+   `market.currencySettings.baseCurrency` på den nyskapade marknaden USA och
+   fick **null** ("basvalutan är okänd") — en marknad som API:t just skapat
+   har ingen basvaluta förrän klicket är gjort. Utfallet blev exakt det
+   avsedda: 🖐 med klicket i klartext, noll prislisteanrop skickade, NOK-raden
+   (redan FIXED) orörd. Produkt 2 utan USD-rad (termoskyddet) gav sin egen
+   🖐 "kunden ser då SEK" — inte ett stopp. **Femton minuter senare var USD
+   påslagen i admin** (mätt 06:58: `Shopify.currency` USD, kurs 0,1044 —
+   klicket gjordes utanför sessionen), och `--igen prislista,paket` gick då
+   hela vägen: prislistan `PriceList/33459372364` fick 199/249 fast, paket-
+   nivåerna sina USD-rader, och som amerikansk kund stod **$199.00 /
+   $249.00 / paket $338.30, $477.60**. Produkten utan USD-rad visas med
+   Shopifys egen omräkning ($59.00 för 559 kr) — läsbart, men inte ett pris
+   ägaren valt. Axel svarade "99 dollar" på rapportens fråga samma
+   förmiddag; raden skrevs in och `--igen prislista,paket` gav **$99.00 /
+   $124.00 / paket $168.30, $237.60** — samma prislista, en produkt till.
+   Frågan-med-alternativ i rapporten fungerade: ett tal tillbaka, ett steg.
 6. ⚙️ Kundvyn känner igen "Add to cart"/"Buy now" som köpknapp. `sprakkoll.mjs`
    är fortfarande bokmål-only — engelskan läses av markörskanningen
    (`markorer_sv`) och ett öga.
 7. 🖐 **Det API:t inte kan, i ordning:** USD som marknadens valuta (Inställningar
    → Marknader → USA → Valuta), sales tax (Skatter och tullar → USA), Shopify
    Payments accepterar USD, fraktpriset till USA bekräftat hos leverantören.
-8. ⛔ **Annonserna är inte lösta.** `/ops-oversatt` är norska. USA-annonser
-   kräver Axels beslut om annonskonto (OPS-kontot är SEK) och engelska
-   creatives från grunden — Bäverbutikens källannonser är svenska med svensk
-   röst och går inte att ärva.
+   **Axels svar 2026-09-16 (CaraShell):** sales tax ska vara AV — "det löser
+   jag i efterhand med min revisor, kunderna ska inte få något påslag", så
+   köpvillkorens "prices include any applicable tax" står kvar som de är;
+   Shopify Payments i USD är fixat; leverantören skickar till USA på 5–10
+   arbetsdagar. Skriv aldrig in sales tax som ett klick igen för CaraShell.
+8. ⚙️ **Annonserna — byggda samma dag (Axels beslut: "Detta blir Magiborsten
+   UK till för").** Kontot är PER MARKNAD i `factory/opsmarknader.mjs`: SE/NO
+   i OPS-kontot, **US i Magiborsten UK `1107817401910319`** (SEK, tidszon GB,
+   avläst ur Meta 2026-09-16). Kedjan: `register.mjs annonsmarknader
+   <nyckel> NO,US` → `kampanj.mjs <produkt> --marknad US --tom` (tom CBO-kampanj
+   + ett adset per vinkel ur SE-kampanjen, geo US, länk `/en/products/<handle>?
+   country=US`, allt PAUSED) → `/ops-oversatt <butik> --marknad US` varje dag
+   17:05 (plats 5) fyller den ur samma kö som NO (`SE-ACTIVE to be translated`),
+   HeyGen "English (United States)", USD-pris ur `ekonomi.marknadspriser`.
+   Raden går till `Approved` först när ALLA butikens annonsmarknader bär
+   annonsen (`klar_i` / `flytta_till_approved` i kön). **Mätt på CaraShell
+   2026-09-16:** kampanj `120251436741400435` i UK-kontot, 5 adsets (CS, G,
+   GT, PD, SP), 0 annonser; CaraShells pixel `28589207184025756` GODTOGS som
+   promoted_object i UK-kontot utan delning i BM (adspixels-listan visade den
+   inte, men anropet gick igenom). Rutin `trig_014kMRzqVj2yFArGEvGs3d9R`,
+   fast session `session_01V7x9YoFdr4ph1PnTs8dno3`, cron `5 15 * * *`.
+   ⚠️ **CBO-lärdom:** en kampanj skapad med `daily_budget` men UTAN
+   `bid_strategy` får `LOWEST_COST_WITH_BID_CAP` av Meta, och varje adset
+   svarar då 400 "bid_amount krävs" — strategin ska sättas på KAMPANJEN
+   (`LOWEST_COST_WITHOUT_CAP`), aldrig på adsetet. `--tom` är idempotent och
+   rättar det på en återanvänd kampanj. Kampanjen står PAUSED utan spend tills
+   Axel slår på den — och det ska ske först när `/en` svarar (`/ny-marknad`);
+   kön hålls annars av rutinen (priset läses på marknadens sida). Nattvakten
+   ser fortfarande bara SE (`STANDARDMARKNAD`) — US-kampanjen bevakas inte av
+   budgetronden.
 9. ⚠️ Juridiken översätts, byts inte: den engelska policyn säger "under
    Swedish law" och behåller EU-tvistplattformen. Om amerikanska kunder ska ha
    en egen returpolicy är Axels beslut — rapporten flaggar det varje gång.
+10. ⚙️ **Shopify skapar en sida själv när USA läggs till** (mätt CaraShell
+   2026-09-16 06:42:53Z, samma minut som `marknad`-steget): "Dina
+   integritetsval" (handle `data-sharing-opt-out`, amerikanska delstaters
+   "Do not sell or share") + en sidfotslänk med samma titel, på butikens
+   primärspråk. Ingen kod i repot skrev den, och den låg som **3 läckor på
+   BÅDE /en och /nb** (titel, body, menylänk) — den norska sidan hade alltså
+   fått en svensk sida utan att någon rört norskan. Sedan samma dag bär
+   `factory/shopify-sidor.mjs` Shopifys text byte för byte, `oversattning.mjs`
+   lägger nyckeln `sida.data-sharing-opt-out.*` i underlaget, och varje
+   `oversattning-<locale>.json` ska ha den ifylld (en + nb skrivna av
+   subagent). Med nyckeln ifylld: `--igen oversatt` ⇒ **0 läckor på /en och
+   /nb**, `/en/pages/data-sharing-opt-out` svarar "Your privacy choices" och
+   `/nb/…` "Dine personvernvalg" (mätt samma dag). Ändrar Shopify sin
+   formulering syns sidan som läcka igen — läs om den med
+   `page(id:…) { title body }` och byt texten i modulen. Sidan tas aldrig
+   bort: den är USA-kundens lagstadgade opt-out.
+11. ⚙️ **Enheter i engelskan är en substansfråga, inte en översättning.**
+   Subagentens första version skrev "thirty degrees warmer" för "trettio
+   grader varm" — för en amerikan är 30° kallt. Rättat till "86 °F (30 °C)".
+   Ge subagenten de imperiala måtten färdigräknade i briefen (6,5 × 3 m =
+   21.3 × 9.8 ft, 211 cm = 83 in …) och läs varje siffra i den engelska
+   filen en gång själv; modellen räknar inte om enheter av sig själv.
+12. ⚙️ **Kundvyn som amerikansk kund** (mätt 2026-09-16): `POST /localization`
+   med `country_code=US`, `language_code=en`, `_method=put` → 302, sedan GET
+   `/en/products/<handle>` → `Shopify.country = "US"`, `lang="en"`, "Add to
+   cart"/"Buy now" — och `Shopify.currency = SEK` tills USD är påslagen
+   (punkt 7). Tre svenska rester som kundvyn inte räknar men ögat ser:
+   Judge.me-recensionerna (svenska tills VA:n importerat
+   `output/<produkt>/judgeme-import-en.csv`), bildernas alt-texter (media-alt
+   ligger inte i underlaget — samma lucka på /nb) och Judge.me-widgetens
+   knapp "Köp nu" (appinställning, inte temat).
+   **Recensionerna på /en — läst i Judge.mes hjälpcenter 2026-09-16 efter
+   Axels fråga "går det inte att den auto-translatear?":** ja, men det är en
+   betalfunktion. *Multi-language widgets* (knappar, rubriker, formulär på
+   kundens språk) är gratis: Settings → Language → Widgets and translations →
+   "Enable multi-language widgets". *Review translations* (själva
+   recensionstexten översätts till språket kunden surfar på, med "Show
+   original") kräver **Awesome-planen**: samma sida → "Enable review
+   translations" → "Translate reviews automatically"; kräver nya Review
+   Widget, språket publicerat i Shopify (en är det), upp till 48 h innan
+   språket känns igen. ⚠️ Norska: widgetspråket triggas bara av locale `no`,
+   inte `nb` — våra butiker har `nb`, så på /nb faller widgeten tillbaka på
+   svenska även med funktionen på. Mätt samma dag på carashell.se: 10
+   svenska recensioner live på både `/products/takskyddet` och `/en/…`,
+   widgetknappen "Skriv en recension" även på /en ⇒ inget av detta var
+   påslaget. **Alternativet i repot** (`judgeme.mjs byggJudgeMeAppCsv`) är
+   att importera de översatta raderna som EGNA recensioner — då ser varje
+   kund alla språk blandade (10 sv + 6 nb + 6 en på samma sida), vilket är
+   precis det Axel inte vill ha. **Axels val samma dag: Awesome.** Han köpte
+   planen och slog på multi-language widgets + "Translate reviews
+   automatically"; Judge.me sa "upp till 48 timmar". Mätt minuter senare på
+   `/en/products/takskyddet`: knappen "Write a review" fanns redan, texterna
+   fortfarande svenska, ingen "Show original" ännu. Butiksfilen bär
+   `judgeme.auto_oversattning: true`, och `ops.mjs` recensioner bygger då
+   app-CSV:n med BARA originalen (de översatta CSV:erna skrivs som reserv).
+   Sätt flaggan i varje ny butik som får planen — annars importerar VA:n
+   blandade språk.
+13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
+   läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
+   rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
+   mot procent, belopp mot belopp, samma slag som `paket.mjs` skrev.
+14. ⚙️ **Shopify väljer marknad efter besökarens IP — och containern står i
+   USA.** Så fort USD var påslagen svarade `/` (svenska vyn) med
+   `Shopify.country = "US"` och dollarpriser för kundvy-verktyget, och
+   huvudspråkets priskoll blev röd ("1129 syns inte") fast butiken var rätt;
+   curl utan browser-huvuden fick SE hela tiden, så felet syntes bara i
+   verktyget (mätt 2026-09-16 07:0x). `kundvy-kor.landPerLocale` +
+   `sattLokalisering` läser nu varje vy som kund i RÄTT land (`/` = butikens
+   land, `/nb` = NO, `/en` = US) — deterministiskt oavsett var koden körs,
+   och det är dessutom exakt vad `/ny-marknad` steg 7 vill se. Gäller QA:n i
+   `ops.mjs` också (samma kctx).
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
@@ -929,3 +1041,21 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
 - **Shopify-MCP:n är förbjuden i `/ny-ops`** (incident 2026-09-07: MCP:n stod
   på HeimGuard och rutinen försökte `switch-shop`). All åtkomst via token i
   `factory/.env`.
+
+---
+
+## Andra produkten i en befintlig butik (bevisat 2026-09-16, CaraShell → termoskyddet)
+
+`/ops-produkt <butik> <källänk>` är rutinen; `.claude/commands/ops-produkt.md` är
+körordningen. Det som bevisades utöver kommandot, i ordning: utkast ur källans
+`/products/<handle>.json` (Kaching-nivåerna gick INTE att läsa — källsidans HTML ligger
+bakom en bot-spärr, `.json` går; standardnivåerna A/B användes) → copy av subagent →
+`kollektion:`-block + brandnivå på startsidan (hero, berättelse, statement får inte låsa
+brandet vid produkt 1) → bygget med ALLA produktfiler + `--igen kollektion,startsida,
+meny,tema` → `priceListFixedPricesAdd` för produkt 2:s variant i NOK-prislistan →
+nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
+`oversattning-sv.json`, inte bara mot nb-filen) → `--igen oversatt` → QA grön →
+`register.mjs skriv-in` + `rutin.mjs --tider <nyckel> --flerprodukt --skriv-in` →
+`/ny-annonser` (FAS2.md 2026-09-16) → minne per produktnyckel (`products/<butik>/README.md`).
+Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
+om till `<butik>/<produkt 1>` på det konto de ligger på.

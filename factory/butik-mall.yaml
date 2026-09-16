@@ -11,6 +11,10 @@ butik:
   # läsbart och uttalbart på både svenska och engelska, aldrig å/ä/ö.
   # Tänk namn som bär i .se, .no, .dk och .com utan att ändras.
   brand: ""                   # KRITISKT — namnet kunden ser
+  # Bara i en FLERPRODUKTSBUTIK: produkt-id:t ett bart butiks-id ska betyda
+  # i registret (rutiner byggda när butiken hade en produkt bär bara
+  # butiks-id:t i sin prompt). Tomt i en enproduktsbutik.
+  huvudprodukt: ""
   bolagsnamn: ""              # KRITISKT — juridiskt namn i köpvillkoren
   orgnr: ""                   # KRITISKT
   adress: ""                  # KRITISKT — postadress i köpvillkoren

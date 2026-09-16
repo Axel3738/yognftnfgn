@@ -16,7 +16,7 @@ import {
   avkodaEntiteter,
   produktkoll,
 } from '../kundvy.mjs';
-import { Kakburk, byggBas, sidvag, previewTemaId } from '../kundvy-kor.mjs';
+import { Kakburk, byggBas, sidvag, previewTemaId, landPerLocale } from '../kundvy-kor.mjs';
 
 const BUTIK = { butik: { brand: 'DryTrek', markorer_sv: ['Köp nu', 'Vanliga frågor', 'Kontakt', 'Lägg i varukorgen'] } };
 const PRODUKT = {
@@ -209,6 +209,13 @@ test('produktkoll godtar pris med tusentalsavstånd (1 129,00 kr) — CaraShell 
 });
 
 // ---- kundvy-kor: rena delar --------------------------------------------------------
+
+test('landPerLocale: huvudspråket läses som butikens land, varje locale som sin marknad', () => {
+  const butik = { butik: { land: 'SE', marknader: [{ land: 'NO', locale: 'nb' }, { land: 'US', locale: 'en', i_fraktraden: false }] } };
+  assert.deepEqual(landPerLocale(butik), { '': 'SE', nb: 'NO', en: 'US' });
+  // Utan marknader: bara hemlandet; utan land: SE (alla OPS-butiker är svenska).
+  assert.deepEqual(landPerLocale({ butik: {} }), { '': 'SE' });
+});
 
 test('Kakburk behåller ALLA kakor, även _shopify_essential', () => {
   const b = new Kakburk();
