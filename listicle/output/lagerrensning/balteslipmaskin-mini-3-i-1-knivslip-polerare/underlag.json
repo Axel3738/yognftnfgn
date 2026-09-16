@@ -1,0 +1,38 @@
+{
+  "hamtat": "2026-09-16T14:57:54.329Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare",
+    "kortTitel": "Bälteslipmaskin Mini 3-i-1",
+    "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+    "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+    "typ": "Verktyg",
+    "pris": 909,
+    "jamforpris": 1182,
+    "prisText": "909 kr",
+    "jamforprisText": "1 182 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "beskrivning": "Slöa knivar, rostiga eggar och en slipning som aldrig blev av\nAtt slipa för hand kräver teknik, tid och tålamod. Resultatet blir därefter – och kniven ligger kvar slö i lådan.\nLösningen: slipbandet gör jobbet, du styr vinkeln\nEn mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Slipa knivar, polera metall och forma trä – tre maskiner i en, kompakt nog för hobbybänken.\nFunktioner\nJämn egg varje gång – 15° bältesvinkel\nTre maskiner i en – slip, polering och buffert\nRätt fart för materialet – 7 hastigheter\nFår plats på minsta arbetsbänk\nFör knivar, trä, metall och smycken\nVår garanti\n30 dagars nöjd-kund-garanti – gillar du den inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "balteslipmaskin-mini-3-i-1-lagerrensning"
+}

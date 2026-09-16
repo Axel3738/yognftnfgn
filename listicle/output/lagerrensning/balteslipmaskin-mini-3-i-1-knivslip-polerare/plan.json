@@ -1,0 +1,140 @@
+{
+  "byggd": "2026-09-16T14:59:39.608Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Bälteslipmaskin Mini 3-i-1 – Knivslip & Polerare",
+    "kortTitel": "Bälteslipmaskin Mini 3-i-1",
+    "handle": "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+    "url": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+    "typ": "Verktyg",
+    "pris": 909,
+    "jamforpris": 1182,
+    "prisText": "909 kr",
+    "jamforprisText": "1 182 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "beskrivning": "Slöa knivar, rostiga eggar och en slipning som aldrig blev av\nAtt slipa för hand kräver teknik, tid och tålamod. Resultatet blir därefter – och kniven ligger kvar slö i lådan.\nLösningen: slipbandet gör jobbet, du styr vinkeln\nEn mini-bälteslipmaskin med 7 hastigheter och 15 graders slipvinkel. Slipa knivar, polera metall och forma trä – tre maskiner i en, kompakt nog för hobbybänken.\nFunktioner\nJämn egg varje gång – 15° bältesvinkel\nTre maskiner i en – slip, polering och buffert\nRätt fart för materialet – 7 hastigheter\nFår plats på minsta arbetsbänk\nFör knivar, trä, metall och smycken\nVår garanti\n30 dagars nöjd-kund-garanti – gillar du den inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/72d9c96a176b6d2cfcbf3a58fee9e7dd_1789570683325.png?v=1789570691",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3208f7ea945b284539bb3fae3a921b15_1789570699581.png?v=1789570709",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8d26438fdbf14350f926641aa1e7d25_1789570718421.png?v=1789570728",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/22126133c5cae4aec16622395dcb0ffb_1789570737001.png?v=1789570746",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5720c3a8ba41ef35d153ece328b40ac5_1789570758255.png?v=1789570765",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #1"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/balteslipmaskin-mini-3-i-1-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/balteslipmaskin-mini-3-i-1-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/balteslipmaskin-mini-3-i-1-knivslip-polerare/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "637605210222020412",
+    "namn": "Bälteslipmaskin Mini 3-i-1 – Lagerrensning (listicle)",
+    "handle": "balteslipmaskin-mini-3-i-1-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/balteslipmaskin-mini-3-i-1-lagerrensning",
+    "sidaId": "gid://shopify/Page/728860787037",
+    "skapad": true,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/balteslipmaskin-mini-3-i-1-lagerrensning",
+      "tecken": 108532
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/72d9c96a176b6d2cfcbf3a58fee9e7dd_1789570683325.png?v=1789570691",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/3208f7ea945b284539bb3fae3a921b15_1789570699581.png?v=1789570709",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b8d26438fdbf14350f926641aa1e7d25_1789570718421.png?v=1789570728",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/22126133c5cae4aec16622395dcb0ffb_1789570737001.png?v=1789570746",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/5720c3a8ba41ef35d153ece328b40ac5_1789570758255.png?v=1789570765",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_kommentar": "Bildplan för bälteslipmaskinens lagerrensningssida, 2026-09-16. Produktsidan har EN bild (tittad): maskinen med tillbehör (slipband, slipskivor, polermedel, sladd och adapter, gul skyddskåpa) på vit bakgrund, ingen text, inga människor. Den bär lyckas-platsen. Scenbilderna för punkt 1–4 (den slöa kniven och tomaten, brynstenen, den ojämna eggen, lådan med slöa verktyg) genereras utan produkt och utan människor; punkt 5 ('produkten i bruk') genereras med produktbilden som referens så maskinen ser ut som den riktiga — blir den fel byts platsen till produktbilden.",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "A worn kitchen chef's knife lying on a wooden cutting board next to a ripe tomato that has been squashed and torn rather than sliced, juice and seeds on the board, a half-cut onion pushed apart beside it, kitchen counter in warm evening light, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A rectangular sharpening whetstone standing in a shallow tray of water on a kitchen counter, a kitchen knife lying beside it, a folded kitchen towel and a few drops of water on the counter, soft daylight from a window, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Extreme close-up of a kitchen knife's cutting edge in raking light on a dark workbench, the ground bevel visibly uneven and wavy along the blade where it has been sharpened by hand at changing angles, fine scratches catching the light, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "An open kitchen drawer seen from above, full of old kitchen knives with dull scratched blades, a pair of scissors, a small wood chisel and a couple of blades with rust spots along the edge, natural daylight, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": {
+      "kalla": "kie",
+      "prompt": "The small belt grinder from the reference image, exactly as it looks there, standing on a small wooden hobby workbench in a home workshop, a kitchen knife lying beside it and a few metal shavings on the bench, warm workshop light, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": ["https://cdn.shopify.com/s/files/1/1013/0322/2621/files/temu2-balteslip.webp"],
+      "format": "1:1"
+    },
+    "lyckas": { "kalla": "produkt", "index": 1 }
+  }
+}
