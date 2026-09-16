@@ -853,3 +853,61 @@ Lärdomarna från de 18 videorna:
   filerna i `bildfix/`, kör `media-upload` + `kampanj.mjs --cbo` — idempotensen på
   namn gör att bara de 9 saknade byggs per marknad. Metas rate limit efter 9
   annonser: kampanjstegets räkning väntar 30 s → 5 min innan den läser tillbaka.
+
+---
+
+## USA — videorna följer efter bilderna (bevisat 2026-09-16, CaraShell takskyddet)
+
+Axels order samma eftermiddag: "Fixa alla till engelska och lägg in dom i den
+amerikanska kampanjen i Magiborsten UK. De 4 bildannonserna ligger redan där, hoppa
+över dem." Det som stod kvar i `CARASHELL_SE_Taköverdraget` utöver de fyra: **12
+ärvda videor** (CS/GT/PD/SP × 3, brand-swappade från Bäverbutiken 2026-09-11) och
+**4 ärvda batch #1-bilder** (`_2_1`). Batchmapp `market-expansion/ops/carashell/
+2026-09-16-us/` — samma som bildrundan, med `video/`, `cap/`, `us/`, `se-bild/`,
+`bas-rensad/`. Lärdomarna, i den ordning de kostade tid:
+
+- **Källvideon hämtas ur kontots `advideos`-kant, på BIBLIOTEKS-id:t.** `GET /{video_id}
+  ?fields=source` svarar `(#10) Application does not have permission` med sessionens
+  token (som brand-detektor.mjs redan varnar för). `act_<konto>/advideos?fields=id,
+  title,source` lämnar ut länken. ⚠️ Annonsens `creative.video_id` är ett ANNAT id än
+  `creative.object_story_spec.video_data.video_id` — bara det senare finns i
+  biblioteket. Första försöket matchade noll av tolv på fel id.
+- **Inbränd text i de ärvda videorna = bara ordcaption-pillret.** Kontaktark 1 fps
+  (`qa/ark-*.jpg`) på alla tolv: pillret bär svenskan (inkl. "1129 kr", "1469
+  kronor"), grafiken "RV ROOF COVER · 5-STAR REVIEW" och etiketten "UV-RESISTANT
+  FABRIC" är redan engelska, inga slutkort, inga prisplattor. `cap/<namn>.json`
+  (no-precis, zon 933–1099, piller x 50–670, mätt ur `pillermatt.json`) räcker.
+- **HeyGens engelska utkast är brittiskt och bär svenska fakta** ("caravan",
+  "autumn", "1,129 kronor", "fourteen-day right of withdrawal"). Utkastet är ett
+  underlag, aldrig ett manus: sonnet-subagenten skrev om alla 107 block mot
+  US-faktalistan ($199/$249, free shipping, 90-day guarantee, "RV"/"trailer", tal i
+  ord), utan brådska ("bara idag", "medan kampanjen pågår" är osanna — $199 är
+  stående pris) och utan Sverige/Klarna/14 dagar. Ändringslogg per video:
+  `video/srt-us/ANDRINGAR.md`.
+- **Tempogrinden är RELATIV källblocket, inte ett absolut tak.** Mätt på de tolv
+  källorna talar svenskan 14–19 tecken/s (GT 19). Ett fast tak på 17 tecken/s
+  flaggade 60 block i alla tolv filer; regeln i `verify-srt.mjs` blev "> 17 OCH mer
+  än 30 % tätare än svenskan i samma cue" — den hittade de sju block som faktiskt
+  rusade (CS_3 prisrepliker, SP_2 "sova gott"). Byte-identiska timecodes och
+  blockantal kontrolleras i samma grind, plus förbjudna ord (kr, 14-day, Sweden,
+  Klarna, brittisk stavning, metriska mått i talet).
+- **Ärvda bilder med text PÅ fotot:** Kie (`nano-banana-edit`, kie-rensa.mjs) tog bort
+  texten rent på PD (himmel) och GT (rum), men **byggde om layouten på CS** (vita
+  paneler med tomma röda ramar i stället för den vita ytan). Text på en enfärgad vit
+  yta vitmålas därför på ORIGINALET (0 krediter, `rendera-batch1.py`), Kie används
+  bara där texten ligger på foto. Halvgenomskinlig knapp (GT): radvis textutbyte
+  lämnade spöktext — fyll knappens inre platt med medianfärgen och behåll kantlinjen.
+  Crème-bandet (SP) byggs om helt i PIL. QA sida vid sida i `qa/batch1-*.png`.
+- **De ärvda annonserna har inga Notion-rader.** Hubben "Carashell Taköverdrag
+  creative hub" bär batch #2/#3 + tre videobriefer; de 12 videorna och 4 bilderna
+  från `/ny-annonser` finns bara i kontot. Ingen Notion-kommentar, ingen statusflytt —
+  kontot är facit (dubblettspärren i `ops-till-meta` håller ändå).
+- **`ops-till-meta` mot Magiborsten UK tar ~4 min per annons** (läser kontots alla
+  annonser + spend, Metas rate limit). 16 annonser ≈ en timme: körs i bakgrunden via
+  `ladda-upp-us.mjs` (videor bara med grön röstkoll ur `rostkoll-us.json`, bilder
+  med `--bilder`), resultatet skrivs efter varje annons i `resultat-meta-video.json`
+  så en avbruten körning fortsätter där den var.
+- **Containern saknar ffmpeg och Pillow:** `pip install numpy pillow imageio-ffmpeg`,
+  symlänk `/usr/local/bin/ffmpeg` → imageio-binären, och en `ffprobe`-shim i
+  `/usr/local/bin` (rostkoll.py frågar `ffprobe` om längd och ljudspår; imageio
+  har ingen). Allt dör med containern — görs om varje session.

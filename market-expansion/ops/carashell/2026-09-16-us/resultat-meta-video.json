@@ -1,0 +1,36 @@
+{
+  "CaraShellRoof_US_CS_2_1": {
+    "exit": 0,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437592600435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251443358740435",
+        "namn": "CaraShellRoof_US_CS_2_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1766083774441289",
+      "media": {
+        "typ": "bild",
+        "hash": "d6b5abc1f5e6c179007447fc5af25f67"
+      },
+      "lank": "https://carashell.com/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  }
+}

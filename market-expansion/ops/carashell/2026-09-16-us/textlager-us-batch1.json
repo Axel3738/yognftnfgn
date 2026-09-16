@@ -1,0 +1,24 @@
+{
+  "CaraShellRoof_CS_2_1": {
+    "headline": "20% OFF ROOF COVER",
+    "compare_price": "$249",
+    "price": "$199",
+    "terms": "Free shipping in the US – 90-day guarantee",
+    "cta": "Protect Your Roof Before Winter"
+  },
+  "CaraShellRoof_PD_2_1": {
+    "lines": ["RAIN SITS AT YOUR", "ROOF SEAMS ALL WINTER", "— COVER IT IN 5 MINUTES"]
+  },
+  "CaraShellRoof_GT_2_1": {
+    "headline": ["HE TALKS ABOUT HIS RV", "LIKE IT'S A FAMILY MEMBER"],
+    "subline": "He won't fake a smile. He'll be genuinely happy.",
+    "button": "[ Give The Gift He Actually Wants ]"
+  },
+  "CaraShellRoof_SP_2_1": {
+    "quote": ["Very happy. Good protection", "when the trailer sits outside."],
+    "attribution": "– Johan · 16 reviews, 5.0 avg",
+    "button": "[ Protect Your Roof ]",
+    "terms": "90-day guarantee"
+  },
+  "noter": "Removed the false urgency in CS's Swedish headline (\"– IDAG\"/today): $199 is the store's standing price, not a countdown, so the English headline states the real, verifiable discount (\"20% OFF ROOF COVER\") with no time pressure — also corrected the Swedish's 23% to the true 20% (save $50 off $249). kr → $ throughout (1469→$249, 1129→$199). 14 dagars ångerrätt (EU right-of-withdrawal) has no US equivalent, so every terms line became the 90-day guarantee instead. GT's headline was rewritten from a literal \"perfect gift for the RV lover\" (generic — any gift ad can say that, and it isn't falsifiable) to the campaign's own proven line, \"He talks about his RV like it's a family member\" — a specific, checkable behavior, matching adcopy-US-video.json's GT hook. PD's headline was grounded in the specific detail \"roof seams\" (used in the video ad copy's PD angle) instead of a generic \"protect the roof\" claim, so it can't be signed by a competitor's roof cover ad. SP's quote is Johan's real review, translated faithfully and re-broken into 2 lines (line lengths run a bit past the ±20% box target because the quote itself can't be shortened)."
+}
