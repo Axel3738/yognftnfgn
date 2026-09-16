@@ -1,6 +1,8 @@
 # /vi-testade – "Vi testade PRODUKTEN i N dagar" (listicle) för en produkt
 
-Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken. Valfritt
+Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken, eller
+flera länkar (en sida per länk, i tur och ordning — reglerna i
+`/lagerrensning` → "Flera produkter i samma kommando" gäller). Valfritt
 `--butik <id>` (standard: Bäverbutiken när länken är baverbutiken.se; annars
 ett OPS-id som `carashell`), `--torr` (visa planen, bygg inget, rör inte
 butiken), `--igen <plats>` (generera om en bild), `--gempages` (dessutom en

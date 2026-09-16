@@ -1,6 +1,10 @@
 # /lagerrensning – Kopiera lagerrensnings-sidan (listicle) till en ny produkt, direkt in i butiken
 
-Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken. Valfritt
+Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken, **eller
+flera länkar** (en per rad eller med mellanslag) — då byggs en sida per
+länk, i tur och ordning, i samma session (se "Flera produkter" nedan).
+Sökfrågor i länken (`?_pos=1&_psq=…`) är ofarliga: motorn läser bara
+handlen. Valfritt
 `--butik <id>` (standard: Bäverbutiken när länken är baverbutiken.se; annars
 ett OPS-id som `carashell` — då slås butikens egen produkthandle upp ur
 `factory/produkter/`), `--torr` (visa planen, bygg inget, rör inte butiken),
@@ -117,6 +121,24 @@ Läs stycket som om du läste det högt för Axel. Sedan, punkt för punkt:
 
 Redovisa i copyn (`lasbarhetstest` i `copy.json`) och i rapporten: vilka
 stycken som skrevs om, och vilken rad du är minst säker på.
+
+## Flera produkter i samma kommando
+
+Axel klistrar gärna in fem länkar på en gång (2026-09-16). Då gäller:
+
+- **En produkt i taget, hela vägen** (steg 1–8) innan nästa börjar — copy,
+  bildplan, torr, skarpt, titta, batch-log. Aldrig fem copyn först och fem
+  publiceringar sen: stannar sessionen halvvägs ska det som är klart ligga
+  uppe i butiken och i repot.
+- **Committa och pusha efter varje produkt**, inte bara sist.
+- Varje produkt får sin egen copy, skriven från sin egen produktsida och sitt
+  eget DNA. Ingen mening får återanvändas mellan produkterna — det är fem
+  olika sidor, inte en mall med bytta substantiv. Läs föregående produkts
+  copy innan du skriver nästa så att rubrikgreppen inte upprepas.
+- Stoppar en produkt (ingen jämförpris, bild som inte går att generera,
+  butiken som avvisar): bygg klart de andra, rapportera stoppet med orsak.
+- Rapporten är EN, med en rad per produkt (adress, rubrik, fem punktrubriker,
+  bilder, testresultat) — och Axels lista sist bär alla adresserna.
 
 ## Gör i ordning
 
@@ -270,7 +292,7 @@ den i GemPages.
 - Copyn: fem rubriker, läsbarhetstestet (vad som skrevs om, osäkraste raden),
   tre-frågorstestet (antal rader, antal ❌ och varför).
 
-**Axels uppgifter, sist, numrerade:**
+**Axels uppgifter, sist, numrerade** (en rad per sida när det är flera):
 1. Öppna `https://<butik>/pages/<slug>-lagerrensning` och läs igenom en gång.
 2. Peka annonserna med lagerrensnings-vinkeln på den adressen.
 3. (Bara med `--gempages`:) GemPages → **Pages** → **Import page** → **Add file** → filen → **Import** → **Publish**.
