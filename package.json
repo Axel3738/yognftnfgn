@@ -16,7 +16,8 @@
     "tema:grind": "npm run tema:check && npm run tema:test",
     "tema:ab": "node theme-matstrumpor/ab/analys.mjs",
     "tema:upp": "node theme-matstrumpor/tools/ladda-upp.mjs",
-    "tema:shop": "node shopify/token.mjs MATSTRUMPOR"
+    "tema:shop": "node shopify/token.mjs MATSTRUMPOR",
+    "tema:one-size": "node theme-matstrumpor/tools/one-size.mjs"
   },
   "engines": {
     "node": ">=20"

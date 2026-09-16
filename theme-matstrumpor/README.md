@@ -111,6 +111,9 @@ npm run tema:grind    # båda — kör den här före uppladdning
 npm run tema:shop            # verifierar att vi är inne på matstrumpor.se
 npm run tema:upp -- teman    # listar temana i butiken
 npm run tema:upp -- allt     # laddar upp: steg 2–7 i docs/uppladdning.md
+
+npm run tema:one-size              # visar vilka strumpor som saknar "Storlek: One Size"
+npm run tema:one-size -- --skarpt  # lägger alternativet på dem och verifierar
 ```
 
 Det finns ingen byggkedja. Filerna laddas upp som de är.
@@ -146,5 +149,15 @@ förbättringen rakt av i stället.
 - Fem produkter: Sushi (3-par 369 kr / 5-par 399 kr), Pizza 449 kr,
   Hamburgare 299 kr, Donut 299 kr, Presentkort 150 kr.
 - Sushi-varianterna heter `"3 - Par"` och `"5 - Par"`. Paketväljaren läser
-  antalet ur variantnamnet — döps de om slutar priset per par att räknas.
+  antalet ur variantnamnets **första ord** — döps de om slutar priset per par att
+  räknas. Efter `tema:one-size` heter de `"3 - Par / One Size"`, vilket fungerar.
+- **Storlek: One Size** (Axel 2026-09-16): kunder blev osäkra på storleken när de
+  bara såg 3/5 par. `tools/one-size.mjs` lägger alternativet `Storlek` med det enda
+  värdet `One Size` på alla strumpor, så Dawns variantväljare visar det under
+  par-valet och det följer med till varukorg och kassa. Variant-id:n rörs inte.
+  Skriptet kunde inte köras 2026-09-16 — se nästa punkt.
+- **Nycklarna till matstrumpor.se saknades i environmentet 2026-09-16.** Miljön
+  hade tretton andra butiker men ingen `SHOPIFY_*_MATSTRUMPOR`. Butiken är
+  `1r46tp-qx.myshopify.com`. Utan de tre variablerna går varken uppladdning
+  eller produktändringar att köra härifrån.
 - Klaviyo är installerat. Rör inte dess kod.

@@ -25,7 +25,12 @@ SHOPIFY_SHOP_MATSTRUMPOR · SHOPIFY_CLIENT_ID_MATSTRUMPOR · SHOPIFY_CLIENT_SECR
 ```
 
 `shopify/token.mjs` växlar dem mot en färsk Admin-token via `client_credentials`
-(giltig 24 h) och `theme-matstrumpor/tools/shopify.mjs` gör anropen.
+(giltig 24 h) och `theme-matstrumpor/tools/shopify.mjs` gör anropen. Butiken är
+`1r46tp-qx.myshopify.com` (`SHOPIFY_SHOP_MATSTRUMPOR=1r46tp-qx`).
+
+⚠️ **2026-09-16 saknades alla tre variablerna i environmentet** — det fanns nycklar
+till tretton andra butiker, men ingen till matstrumpor.se. Kontrollera med
+`npm run tema:shop` innan du lovar något som kräver butiken.
 
 ```bash
 npm run tema:shop     # verifierar kopplingen och visar butiken

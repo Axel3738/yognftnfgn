@@ -6,12 +6,18 @@
 const NYCKEL = 'MATSTRUMPOR';
 const API_VERSION = '2026-07';
 const FÖRVÄNTAD_DOMÄN = 'matstrumpor.se';
+const MYSHOPIFY = '1r46tp-qx.myshopify.com'; // avläst ur live-sajtens Shopify.shop 2026-09-16
 
 const domän = v => (v.includes('.') ? v : `${v}.myshopify.com`);
 
 export function butiksDomän() {
   const v = process.env[`SHOPIFY_SHOP_${NYCKEL}`];
-  if (!v) throw new Error(`SHOPIFY_SHOP_${NYCKEL} saknas i environmentet.`);
+  if (!v) {
+    throw new Error(
+      `SHOPIFY_SHOP_${NYCKEL} saknas i environmentet. Butiken är ${MYSHOPIFY} — lägg in ` +
+      `SHOPIFY_SHOP_${NYCKEL}, SHOPIFY_CLIENT_ID_${NYCKEL} och SHOPIFY_CLIENT_SECRET_${NYCKEL} i environmentet.`,
+    );
+  }
   return domän(v);
 }
 
@@ -20,13 +26,14 @@ let cachadToken = null;
 export async function token() {
   if (cachadToken) return cachadToken;
 
+  const butik = butiksDomän(); // kastar med hela listan på variabler om butiken saknas
   const klientId = process.env[`SHOPIFY_CLIENT_ID_${NYCKEL}`];
   const hemlighet = process.env[`SHOPIFY_CLIENT_SECRET_${NYCKEL}`];
   if (!klientId || !hemlighet) {
-    throw new Error(`SHOPIFY_CLIENT_ID_${NYCKEL} / SHOPIFY_CLIENT_SECRET_${NYCKEL} saknas.`);
+    throw new Error(`SHOPIFY_CLIENT_ID_${NYCKEL} / SHOPIFY_CLIENT_SECRET_${NYCKEL} saknas i environmentet (butiken ${MYSHOPIFY}).`);
   }
 
-  const svar = await fetch(`https://${butiksDomän()}/admin/oauth/access_token`, {
+  const svar = await fetch(`https://${butik}/admin/oauth/access_token`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ client_id: klientId, client_secret: hemlighet, grant_type: 'client_credentials' }),

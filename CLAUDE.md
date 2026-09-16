@@ -471,6 +471,10 @@ kopplingen. Ta den vägen när MCP:n säger `token expired` — den går inte at
 auktorisera om i en icke-interaktiv session. `SHOPIFY_TOKEN_SE` är död
 (`atkn_`-token, ger 401); skriptet märker det och tar klientnyckeln i stället.
 
+⚠️ **2026-09-16 saknades `SHOPIFY_*_MATSTRUMPOR` helt i environmentet** (tretton
+andra butiker fanns, inte den). Butiken är `1r46tp-qx.myshopify.com`. Kontrollera
+med `npm run tema:shop` innan du planerar något mot matstrumpor.se.
+
 ⚠️ **Appen för matstrumpor.se har bara `write_inventory, write_products,
 write_publications`.** Teman, ordrar och rapporter är stängda och kräver att Axel
 kryssar i scopen i adminen. Kör `node theme-matstrumpor/tools/atkomst.mjs` för
