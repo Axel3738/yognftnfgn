@@ -43,3 +43,11 @@ factory/output/*/bildfix/*.mp4.qa-*.png
 factory/output/*/bildfix-el/*.mp4
 factory/output/*/bildfix-el/*.png
 factory/output/*/bildfix-el/vo/
+
+# /oversatt: batchernas media committas aldrig (källor, renderingar, lager)
+market-expansion/*/notion-batches/*/se/
+market-expansion/*/notion-batches/*/no/
+market-expansion/*/notion-batches/*/no-video/
+market-expansion/*/notion-batches/*/out/
+market-expansion/*/notion-batches/*/lager/
+market-expansion/*/notion-batches/*/*/up/
