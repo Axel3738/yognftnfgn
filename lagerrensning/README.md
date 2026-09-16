@@ -4,10 +4,13 @@ Motorn bakom `/lagerrensning` (`.claude/commands/lagerrensning.md`). Tar
 GemPages-exporten av **Motorhölje – Lagerrensning (listicle)**
 (`baverbutiken.se/pages/motorholje-lagerrensning`) och skriver samma sida för
 en annan produkt: samma struktur, ny copy, produktens riktiga pris, nya bilder.
-**Huvudleveransen är en HTML-fil** (`<slug>-lagerrensning.html`, ett fragment
-med scopad CSS) som Axel klistrar in i ett HTML-element i GemPages — Axels
-beslut 2026-09-16, GemPages-importen av genererade filer blir ofta fel.
-`.gempages`-filen byggs fortfarande som reserv. Noll npm-beroenden.
+**Leveransen är `.gempages`-filen** (`<slug>-lagerrensning.gempages`) som Axel
+importerar i GemPages (Pages → Import page) — GemPages tar bara sådana filer,
+inte HTML (Axel 2026-09-16, efter en kort omväg via "klistra in HTML"). Filen
+får **nya sid- och sektions-id:n** som standard så importen aldrig krockar med
+motorhöljets riktiga sida. HTML-versionen (`<slug>-lagerrensning.html`, samma
+sida, scopad CSS) byggs bredvid — den är underlaget för förhandsvisningens
+skärmdumpar, inte en leverans. Noll npm-beroenden.
 
 ```
 node lagerrensning/bygg.mjs <produktlänk> --underlag         # produktfakta → output/<handle>/underlag.json
@@ -41,7 +44,7 @@ av kie-bilderna, för granskning) är gitignorerad.
 | `produkt.mjs` | Produkten ur `/products/<handle>.json` — pris, jämförpris, bilder, beskrivning |
 | `bilder.mjs` | Bildplanen → färdiga URL:er (produktbild / url / kie / mall), cache, `--igen` |
 | `shopify.mjs` | Genererade bilder in på Shopifys CDN: Innehåll → Filer, annars DRAFT-produkten `lp-bildarkiv` |
-| `html.mjs` | HTML-fragmentet (scopad CSS under `.lr`, Anton/Inter via Google Fonts, samma mått och färger som exporten) |
+| `html.mjs` | Sidan som HTML (scopad CSS under `.lr`, Anton/Inter via Google Fonts, samma mått och färger som exporten) — för förhandsvisningen |
 | `forhandsvisning.mjs` | Lokal kopia med nedladdade bilder + typsnitt, skärmdumpar via headless Chrome (`/opt/pw-browsers/chromium-*/chrome-linux/chrome`) |
 | `bygg.mjs` | CLI:t som knyter ihop allt |
 
@@ -62,8 +65,10 @@ av kie-bilderna, för granskning) är gitignorerad.
   genererade bilder på Shopifys CDN innan de skrivs in i sidan.
 - Varje listicle-punkt har **två** Image-element (desktop + mobil) med samma
   bild — platskartan byter båda.
-- Sid- och sektions-id:n behålls från mallen (samma butik). GemPages importerar
-  en export som ny sida (Draft). Avvisas filen: `--nya-idn` ger nya id:n.
+- Sid-, sektions- och meta-id:n byts mot nya 18-siffriga som standard
+  (`bytIdn`, checksummorna räknas efteråt) — mallens id:n tillhör motorhöljets
+  riktiga sida i samma butik. `--behall-idn` behåller dem, bara för felsökning.
+  GemPages importerar filen som en ny sida i Draft.
 
 ## Förhandsvisningen
 

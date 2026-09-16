@@ -3,16 +3,16 @@
 //
 //   node lagerrensning/bygg.mjs <produktlänk> --underlag              # produktfakta till copy-subagenten → output/<handle>/underlag.json
 //   node lagerrensning/bygg.mjs <produktlänk> --torr                  # planen: copy-granskning, bildplan, inget nät mot kie/Shopify
-//   node lagerrensning/bygg.mjs <produktlänk>                         # skarpt: bilder → Shopify, HTML (klistras in i GemPages) + .gempages (reserv) + förhandsvisning
+//   node lagerrensning/bygg.mjs <produktlänk>                         # skarpt: bilder → Shopify, .gempages (importeras i GemPages) + HTML-förhandsvisning med skärmdumpar
 //   node lagerrensning/bygg.mjs <produktlänk> --igen punkt2,punkt5    # generera om vissa kie-bilder
 //   node lagerrensning/bygg.mjs --kolla <fil.gempages>                # läs en byggd fil: texter, länkar, bilder, checksummor
 //   node lagerrensning/bygg.mjs --exempel                             # mallens copy som JSON (formen subagenten ska följa)
 //
-// Flaggor: --copy <fil> --bildplan <fil> --ut <fil> --datum YYYY-MM-DD --nya-idn --utan-forhandsvisning
+// Flaggor: --copy <fil> --bildplan <fil> --ut <fil> --datum YYYY-MM-DD --behall-idn --utan-forhandsvisning
 // Standardfiler: lagerrensning/output/<handle>/{underlag,copy,bildplan,bilder,plan}.json
-//                lagerrensning/output/<handle>/<slug>-lagerrensning.html       ← huvudleveransen (HTML-element i GemPages)
-//                lagerrensning/output/<handle>/<slug>-lagerrensning.gempages   ← reserv (Pages → Import page)
-//                lagerrensning/output/<handle>/forhandsvisning/{desktop,mobil}.png (gitignorerat)
+//                lagerrensning/output/<handle>/<slug>-lagerrensning.gempages   ← leveransen (GemPages → Pages → Import page), nya id:n
+//                lagerrensning/output/<handle>/<slug>-lagerrensning.html       ← samma sida som HTML, bara för förhandsvisningen
+//                lagerrensning/output/<handle>/forhandsvisning/{desktop,mobil}.png + utsnitt (gitignorerat)
 //
 // Stoppar (exit 1) på: pris i copyn som inte står på produktsidan, procentsats,
 // HTML i copyn, förbjuden fras, saknad text- eller bildplats. Skriver aldrig
@@ -135,14 +135,20 @@ async function bygg(lank, argv) {
   });
   if (!torr) writeFileSync(cacheFil, JSON.stringify(nyCache, null, 2) + '\n');
 
-  const { sida, rapport } = byggSida({ mall, platser, produkt, copy, bilder: torr ? Object.fromEntries(Object.entries(bilder).filter(([, b]) => b.src && b.width > 0)) : bilder, datum, nyaIdn: argv.includes('--nya-idn') });
+  // Nya sid- och sektions-id:n som STANDARD: mallens id:n tillhör motorhöljets
+  // riktiga sida i samma butik, och en import som bär dem riskerar att krocka
+  // med eller skriva över den. Ett import från en annan butik bär alltid
+  // främmande id:n, så det är den vanliga vägen för GemPages. `--behall-idn`
+  // finns kvar för att felsöka en avvisad import.
+  const nyaIdn = !argv.includes('--behall-idn');
+  const { sida, rapport } = byggSida({ mall, platser, produkt, copy, bilder: torr ? Object.fromEntries(Object.entries(bilder).filter(([, b]) => b.src && b.width > 0)) : bilder, datum, nyaIdn });
 
   console.log(`\nSida: "${rapport.namn}" · handle ${rapport.handle} · datumrad ${datum}`);
   console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${produkt.url}, ${rapport.bilder.length} bilder bytta`);
 
   const htmlFil = join(mapp, `${produkt.slug}-lagerrensning.html`);
   if (torr) {
-    console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven. Skulle skriva ${htmlFil} (huvudleveransen) och ${utFil} (reserv). Texterna som skulle sättas:`);
+    console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven. Skulle skriva ${utFil} (importfilen) och ${htmlFil} (förhandsvisning). Texterna som skulle sättas:`);
     for (const rad of lasAvSida(sida)) if (rad.tag !== 'Image') console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 90)}${rad.link ? `  → ${rad.link}` : ''}`);
     return;
   }
@@ -162,12 +168,13 @@ async function bygg(lank, argv) {
   }
   const sidBilder = lasAvSida(tillbaka.sidor[0]).filter((r) => r.tag === 'Image').map((r) => r.src);
 
-  // HUVUDLEVERANSEN: HTML-fragmentet Axel klistrar in i ett HTML-element i
-  // GemPages (Axels beslut 2026-09-16). Samma copy, samma bilder, samma datum.
+  // HTML-versionen: samma copy, samma bilder, samma datum — underlaget för
+  // förhandsvisningen (skärmdumparna sessionen tittar på). GemPages tar bara
+  // .gempages-filer (Axel 2026-09-16), så HTML:en är kontroll, inte leverans.
   const html = renderaHtml({ copy, produkt, bilder, fasta: mallBilder(mall, platser), datum });
   writeFileSync(htmlFil, html);
-  console.log(`\n✅ ${htmlFil} (${Buffer.byteLength(html)} byte) — HTML att klistra in i GemPages.`);
-  console.log(`✅ ${utFil} (${zip.length} byte) — .gempages som reserv, läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
+  console.log(`\n✅ ${utFil} (${zip.length} byte) — .gempages att importera (Pages → Import page), ${nyaIdn ? 'nya id:n' : 'mallens id:n'}, läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
+  console.log(`✅ ${htmlFil} (${Buffer.byteLength(html)} byte) — HTML-version för förhandsvisningen.`);
 
   let fv = null;
   if (!argv.includes('--utan-forhandsvisning')) {
@@ -217,7 +224,7 @@ async function huvud(argv) {
   if (kollaFil) return kolla(kollaFil);
   const lank = argv.find((a) => !a.startsWith('--') && !['--copy', '--bildplan', '--ut', '--datum', '--igen', '--kolla'].includes(argv[argv.indexOf(a) - 1]));
   if (!lank) {
-    console.error('Användning: node lagerrensning/bygg.mjs <produktlänk> [--underlag | --torr] [--copy fil] [--bildplan fil] [--ut fil] [--datum YYYY-MM-DD] [--igen plats,…] [--nya-idn]\n           node lagerrensning/bygg.mjs --kolla <fil.gempages> | --exempel');
+    console.error('Användning: node lagerrensning/bygg.mjs <produktlänk> [--underlag | --torr] [--copy fil] [--bildplan fil] [--ut fil] [--datum YYYY-MM-DD] [--igen plats,…] [--behall-idn] [--utan-forhandsvisning]\n           node lagerrensning/bygg.mjs --kolla <fil.gempages> | --exempel');
     process.exit(1);
   }
   if (argv.includes('--underlag')) {

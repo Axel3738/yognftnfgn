@@ -18,11 +18,12 @@ publika HTTPS-anrop. Använd ALDRIG `mcp__Notion__*` eller `mcp__Shopify__*`.
 `lagerrensning/mall/`) och gör exakt samma sida för en annan produkt — samma
 struktur, samma Anders, samma lagerbild och logga — med ny copy, produktens
 riktiga pris och jämförpris, nya bilder (produktsidans egna, annars kie.ai) —
-och lämnar **en HTML-fil som Axel klistrar in i ett HTML-element i GemPages**
-(Axels beslut 2026-09-16: "det blir ofta fel när du genererar en
-GemPages-fil — skicka kopierbar HTML i stället"). `.gempages`-filen byggs
-också, men bara som reserv. Motorn är `lagerrensning/bygg.mjs`, formatet står
-i `lagerrensning/README.md`.
+och lämnar **en `.gempages`-fil som Axel importerar i GemPages** (Pages →
+Import page). GemPages tar bara sådana filer, inte HTML (Axel 2026-09-16).
+Filen får nya sid-id:n så importen aldrig rör motorhöljets riktiga sida. En
+HTML-version byggs bredvid — den är bara underlaget för skärmdumparna som
+sessionen tittar på. Motorn är `lagerrensning/bygg.mjs`, formatet står i
+`lagerrensning/README.md`.
 
 ## Järnregler
 
@@ -55,7 +56,7 @@ i `lagerrensning/README.md`.
    Innehåll → Filer. Utan (appen "Bäver uppladdare" saknar det, mätt
    2026-09-16): DRAFT-produkten `lp-bildarkiv` bär bilderna — kunden ser den
    aldrig. Motorn väljer själv och säger vilket. Produkten, priset och sidorna
-   rörs aldrig. **GemPages har inget API** — inklistringen är Axels klick.
+   rörs aldrig. **GemPages har inget API** — importen är Axels klick.
 7. Kör klart utan att fråga. Axels uppgifter sist, numrerade.
 
 ## Läsbarhetstestet (obligatoriskt på varje stycke)
@@ -167,14 +168,15 @@ tills det bara finns ⚠ du kan stå för.
 node lagerrensning/bygg.mjs <länk>
 ```
 kie genererar → bilderna hämtas till `output/<handle>/bilder/` (gitignorerat)
-och läggs på Shopifys CDN → **HTML-filen** `<slug>-lagerrensning.html` skrivs
-(huvudleveransen) → `.gempages` skrivs som reserv och läses tillbaka med
-omräknade checksummor → **förhandsvisningen** byggs offline
-(`output/<handle>/forhandsvisning/`: lokala bilder + typsnitt, skärmdumpar
-`desktop.png` 1280 px och `mobil.png` 390 px via headless Chrome). Kör aldrig
-skarpt två gånger för att "vara säker" — cachen i `bilder.json` återanvänder
-genererade bilder, `--igen <plats>` byter en. Bara HTML:en igen efter en
-copyändring: kör om utan `--igen`, det kostar inga credits.
+och läggs på Shopifys CDN → **`.gempages`-filen** `<slug>-lagerrensning.gempages`
+skrivs med nya id:n och **läses tillbaka med omräknade checksummor**
+(trippelkollen är inbyggd; ett fel = ingen fil) → HTML-versionen skrivs →
+**förhandsvisningen** byggs offline (`output/<handle>/forhandsvisning/`:
+lokala bilder + typsnitt, `desktop.png` 1280 px och `mobil.png` 390 px plus
+ett utsnitt per del, via Playwright). Kör aldrig skarpt två gånger för att
+"vara säker" — cachen i `bilder.json` återanvänder genererade bilder,
+`--igen <plats>` byter en. Bara filerna igen efter en copyändring: kör om
+utan `--igen`, det kostar inga credits.
 
 ### 7. Titta — bilderna och sidan, med Read-verktyget
 - Varje genererad bild (`bilder/<plats>.png`), tre frågor: rätt produkt/miljö
@@ -192,12 +194,11 @@ copyändring: kör om utan `--igen`, det kostar inga credits.
 
 ### 8. Logga, committa, leverera
 - Har produkten `products/<id>/batch-log.md`: en rad "LP lagerrensning byggd
-  `IDAG`, HTML `lagerrensning/output/<handle>/<slug>-lagerrensning.html`".
+  `IDAG`, fil `lagerrensning/output/<handle>/<slug>-lagerrensning.gempages`".
 - Commit + push: `lagerrensning/output/<handle>/` (underlag, copy, bildplan,
-  bilder.json, plan.json, .html, .gempages). Aldrig `bilder/` eller
+  bilder.json, plan.json, .gempages, .html). Aldrig `bilder/` eller
   `forhandsvisning/`. Svenskt commit-meddelande.
-- Skicka **HTML-filen** till Axel i chatten (SendUserFile). `.gempages`-filen
-  bara om han ber om den.
+- Skicka **`.gempages`-filen** till Axel i chatten (SendUserFile).
 
 ## Rapport till Axel (kort, svenska)
 - Produkten, priset och jämförpriset som sidan bär, datumraden.
@@ -205,17 +206,18 @@ copyändring: kör om utan `--igen`, det kostar inga credits.
   eller `lp-bildarkiv`).
 - Copyn: fem rubriker, läsbarhetstestet (vad som skrevs om, osäkraste raden),
   tre-frågorstestet (antal rader, antal ❌ och varför).
-- Filen (i chatten) och sidans blivande adress.
+- `.gempages`-filen (i chatten) och sidans blivande adress.
 
 **Axels uppgifter, sist, numrerade** (GemPages saknar API):
-1. Ladda ner `<slug>-lagerrensning.html` och öppna den i en textredigerare (eller Anteckningar). Markera allt, kopiera.
-2. GemPages → **Pages** → **Create new page** (typ Landing page) → döp den "<Produkt> – Lagerrensning".
-3. I editorn: dra in elementet **HTML/Liquid** (sök "HTML" i elementlistan) på sidan → klistra in allt i kodrutan → **Save**.
-4. Sätt sidans URL till `/pages/<slug>-lagerrensning` (Page settings) → **Publish**.
+1. Ladda ner `<slug>-lagerrensning.gempages` från chatten.
+2. GemPages → **Pages** → knappen **Import page** uppe till höger → **Add file** → välj filen → **Import**. Sidan hamnar som Draft med namnet "<Produkt> – Lagerrensning (listicle)".
+3. Öppna sidan, scrolla igenom en gång, klicka **Publish**.
+4. Kontrollera att adressen blev `/pages/<slug>-lagerrensning` (Page settings), annars sätt den.
 5. Peka annonserna på `https://baverbutiken.se/pages/<slug>-lagerrensning`.
 
-Vill Axel hellre importera: `.gempages`-filen ligger bredvid HTML:en
-(Pages → Import page). Avvisas den: prova `--nya-idn`.
+Avvisar GemPages filen: klistra in felmeddelandet i nästa session. Första
+knappen att prova är `--behall-idn` (mallens ursprungliga id:n i stället för
+nya), och HTML-versionen bredvid filen visar exakt vad sidan skulle innehålla.
 
 ## DEFINITION OF DONE
 - [ ] Underlag hämtat ur butiken; pris och jämförpris lästa där, aldrig ur minnet; inget betyg i copyn
@@ -223,7 +225,7 @@ Vill Axel hellre importera: `.gempages`-filen ligger bredvid HTML:en
 - [ ] Copy skriven av huvudsessionen; läsbarhetstestet gjort på varje stycke och redovisat; tre-frågorstestet redovisat, ❌ bara med motivering
 - [ ] Bildplan med alla sex platser; produktbilder där de passar, kie annars; inga människor/text
 - [ ] `--torr` utan ❌ före skarp körning
-- [ ] Skarp körning: bilder på Shopifys CDN, HTML-filen skriven, `.gempages` läst tillbaka med rätt checksummor
+- [ ] Skarp körning: bilder på Shopifys CDN, `.gempages` skriven med nya id:n och läst tillbaka med rätt checksummor, HTML-versionen skriven
 - [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på; `--kolla` visar rätt priser
-- [ ] batch-log uppdaterad om produkten har minne; committat och pushat; HTML-filen skickad i chatten
+- [ ] batch-log uppdaterad om produkten har minne; committat och pushat; `.gempages`-filen skickad i chatten
 - [ ] Rapport + Axels klick sist, numrerade

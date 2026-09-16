@@ -1,6 +1,9 @@
-// html.mjs — sidan som ren HTML att klistra in i GemPages (Axels beslut
-// 2026-09-16: "det blir ofta fel när du genererar en GemPages-fil — skicka
-// kopierbar HTML i stället, så lägger jag in den").
+// html.mjs — sidan som ren HTML. Byggdes 2026-09-16 när Axel trodde att
+// GemPages tog HTML att klistra in; samma dag visade det sig att GemPages
+// bara importerar .gempages-filer. HTML:en lever kvar som UNDERLAGET FÖR
+// FÖRHANDSVISNINGEN (forhandsvisning.mjs tar skärmdumpar av den) — det är så
+// sessionen ser sidan innan filen levereras. Skulle GemPages få ett
+// HTML-element som duger går fragmentet att klistra in som det är.
 //
 // Samma innehåll och samma ordning som mallen (mall/platser.json), samma
 // typsnitt (Anton för rubriker, Inter för brödtext), samma färger, knappar och
@@ -105,7 +108,7 @@ export function mallBilder(mall, platser) {
 }
 
 /**
- * Fragmentet som klistras in i GemPages (HTML-elementet). Alla nio bildplatser
+ * Sidan som ett HTML-fragment (<style> + <div class="lr">). Alla nio bildplatser
  * fylls: `bilder` (produktens) vinner, `fasta` (mallens) är reserv.
  *
  *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum })
@@ -148,7 +151,7 @@ export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum }) {
 </section>`;
   }).join('\n');
 
-  const html = `<!-- Lagerrensnings-sida: ${htmlAv(namn)} · genererad ${datum} av lagerrensning/bygg.mjs · klistra in hela blocket i ett HTML-element i GemPages -->
+  const html = `<!-- Lagerrensnings-sida: ${htmlAv(namn)} · genererad ${datum} av lagerrensning/bygg.mjs · HTML-version för förhandsvisning; leveransen är .gempages-filen -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
 ${CSS}
