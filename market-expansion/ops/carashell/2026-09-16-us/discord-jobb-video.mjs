@@ -17,9 +17,8 @@ const jobb = {
   gjort: [
     `Second US round for the roof cover, on Axel's order: every remaining SE ad translated to American English and uploaded to CARASHELL_US_Taköverdrag in Magiborsten UK (act 1107817401910319), one ad set per concept. The 4 image ads already there were skipped as instructed.`,
     `${videor.length} videos dubbed with HeyGen (English US voice clone + lip sync), scripts rewritten for the US: $199 (was $249, $50 off), free US shipping, 90-day guarantee, "RV"/"trailer". No "today only", no Swedish law, no kronor. Swedish word captions replaced by English ones in the same pill.`,
-    ...videor.map(rad),
+    ...['CS', 'GT', 'PD', 'SP'].map((k) => `${k}: ${upp.filter(([n]) => n.includes(`_US_${k}_`)).map(([n]) => n.replace('CaraShellRoof_US_', '')).join(', ')} -> ad set CARASHELL_US_${k}`),
     `${bilder.length} inherited batch #1 image ads redrawn in English (text removed with Kie / repainted, English layer in PIL): $199 / $249 / 20% off, 90-day guarantee, Johan's review.`,
-    ...bilder.map(rad),
     `Voice check 12/12 green (rostkoll.py), and the four top videos were transcribed back with ElevenLabs Scribe against the script: 0 missed words on GT_2 and SP_2.`,
     `HeyGen credits: 6849 -> 5997 (852 used, 12 proofreads + 12 renders, no re-renders).`,
     `Landing link https://carashell.com/products/takskyddet?country=US (own US domain), price on the page $199 (compare $249).`,
@@ -31,7 +30,7 @@ const jobb = {
     ...hoppade.map(([k, v]) => `${k}: not uploaded - ${v?.hoppad || v?.resultat?.fel || 'unknown reason'}`),
   ],
   action_axel: [
-    `Switch on the campaign CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m in Magiborsten UK when you want the US test to start (Ads Manager -> campaign toggle). Everything inside is live and waiting.`,
+    `When you want the US test to start: in Magiborsten UK, switch on the campaign CARASHELL_US_Taköverdrag AND its four ad sets CARASHELL_US_CS / GT / PD / SP (both toggles - the ad sets are paused too; G is empty, leave it). All 20 ads inside are ACTIVE and waiting. Or write "Launch: CARASHELL_US_Taköverdrag" to Claude and it is done for you.`,
   ],
   nasta_korning: '2026-09-17 17:05',
 };

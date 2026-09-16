@@ -1,0 +1,21 @@
+✅ CaraShellRoof_US_CS_1_H1.mp4
+✅ CaraShellRoof_US_CS_2_H1.mp4
+✅ CaraShellRoof_US_CS_3_H1.mp4
+✅ CaraShellRoof_US_GT_1_H1.mp4
+     ⚠️ sista repliken ligger 0.11s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-49.4 mot -12.5 dB) — inte avhugget
+✅ CaraShellRoof_US_GT_2_H1.mp4
+     ⚠️ sista repliken ligger 0.11s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-50.2 mot -14.6 dB) — inte avhugget
+✅ CaraShellRoof_US_GT_3_H1.mp4
+     ⚠️ sista repliken ligger 0.12s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-68.4 mot -12.2 dB) — inte avhugget
+✅ CaraShellRoof_US_PD_1_H1.mp4
+     ⚠️ sista repliken ligger 0.10s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-53.5 mot -11.3 dB) — inte avhugget
+✅ CaraShellRoof_US_PD_2_H1.mp4
+     ⚠️ sista repliken ligger 0.07s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-67.5 mot -9.2 dB) — inte avhugget
+✅ CaraShellRoof_US_PD_3_H1.mp4
+     ⚠️ sista repliken ligger 0.09s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-56.4 mot -12.2 dB) — inte avhugget
+✅ CaraShellRoof_US_SP_1_H1.mp4
+     ⚠️ sista repliken ligger 0.04s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-27.8 mot -14.5 dB) — inte avhugget
+✅ CaraShellRoof_US_SP_2_H1.mp4
+     ⚠️ sista repliken ligger 0.05s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-63.6 mot -16.8 dB) — inte avhugget
+✅ CaraShellRoof_US_SP_3_H1.mp4
+     ⚠️ sista repliken ligger 0.07s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-54.9 mot -29.7 dB) — inte avhugget

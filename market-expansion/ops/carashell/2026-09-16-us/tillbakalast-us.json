@@ -1,0 +1,367 @@
+{
+  "kampanj": {
+    "id": "120251436741400435",
+    "name": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+    "account_id": "1107817401910319",
+    "status": "PAUSED",
+    "effective_status": "PAUSED",
+    "objective": "OUTCOME_SALES",
+    "daily_budget": "100000",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP"
+  },
+  "adsets": [
+    {
+      "id": "120251437594720435",
+      "name": "CARASHELL_US_SP",
+      "status": "PAUSED",
+      "promoted_object": {
+        "pixel_id": "28589207184025756",
+        "custom_event_type": "PURCHASE",
+        "smart_pse_enabled": false
+      },
+      "targeting": {
+        "geo_locations": {
+          "countries": [
+            "US"
+          ],
+          "location_types": [
+            "frequently_in",
+            "home",
+            "recent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "120251437593850435",
+      "name": "CARASHELL_US_PD",
+      "status": "PAUSED",
+      "promoted_object": {
+        "pixel_id": "28589207184025756",
+        "custom_event_type": "PURCHASE",
+        "smart_pse_enabled": false
+      },
+      "targeting": {
+        "geo_locations": {
+          "countries": [
+            "US"
+          ],
+          "location_types": [
+            "frequently_in",
+            "home",
+            "recent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "120251437593250435",
+      "name": "CARASHELL_US_GT",
+      "status": "PAUSED",
+      "promoted_object": {
+        "pixel_id": "28589207184025756",
+        "custom_event_type": "PURCHASE",
+        "smart_pse_enabled": false
+      },
+      "targeting": {
+        "geo_locations": {
+          "countries": [
+            "US"
+          ],
+          "location_types": [
+            "frequently_in",
+            "home",
+            "recent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "120251437592950435",
+      "name": "CARASHELL_US_G",
+      "status": "PAUSED",
+      "promoted_object": {
+        "pixel_id": "28589207184025756",
+        "custom_event_type": "PURCHASE",
+        "smart_pse_enabled": false
+      },
+      "targeting": {
+        "geo_locations": {
+          "countries": [
+            "US"
+          ],
+          "location_types": [
+            "frequently_in",
+            "home",
+            "recent"
+          ]
+        }
+      }
+    },
+    {
+      "id": "120251437592600435",
+      "name": "CARASHELL_US_CS",
+      "status": "PAUSED",
+      "promoted_object": {
+        "pixel_id": "28589207184025756",
+        "custom_event_type": "PURCHASE",
+        "smart_pse_enabled": false
+      },
+      "targeting": {
+        "geo_locations": {
+          "countries": [
+            "US"
+          ],
+          "location_types": [
+            "frequently_in",
+            "home",
+            "recent"
+          ]
+        }
+      }
+    }
+  ],
+  "annonser": [
+    {
+      "name": "CaraShellRoof_US_CS_1_H1",
+      "id": "120251443679590435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_CS",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "Camper Roof, Fully Protected This Winter"
+    },
+    {
+      "name": "CaraShellRoof_US_CS_2_1",
+      "id": "120251443358740435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_CS",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "RV Roof Cover: $199, Save $50"
+    },
+    {
+      "name": "CaraShellRoof_US_CS_2_H1",
+      "id": "120251443854310435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_CS",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "Camper Roof, Fully Protected This Winter"
+    },
+    {
+      "name": "CaraShellRoof_US_CS_3_H1",
+      "id": "120251443924930435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_CS",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "RV Roof Cover: $199, Save $50"
+    },
+    {
+      "name": "CaraShellRoof_US_CS_4_1",
+      "id": "120251442481670435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_CS",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "RV Roof Cover 21×10 ft – $199"
+    },
+    {
+      "name": "CaraShellRoof_US_GT_1_H1",
+      "id": "120251443936870435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_GT",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "He Talks To His RV Like It's Family"
+    },
+    {
+      "name": "CaraShellRoof_US_GT_2_1",
+      "id": "120251443434440435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_GT",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "He Talks To His RV Like It's Family"
+    },
+    {
+      "name": "CaraShellRoof_US_GT_2_H1",
+      "id": "120251443941470435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_GT",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "He Talks To His RV Like It's Family"
+    },
+    {
+      "name": "CaraShellRoof_US_GT_3_H1",
+      "id": "120251443947020435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_GT",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "He Talks To His RV Like It's Family"
+    },
+    {
+      "name": "CaraShellRoof_US_GT_4_1",
+      "id": "120251442457940435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_GT",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "The Gift He Installs Himself"
+    },
+    {
+      "name": "CaraShellRoof_US_PD_1_H1",
+      "id": "120251443952290435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_PD",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "You Won't Check It. Winter Will."
+    },
+    {
+      "name": "CaraShellRoof_US_PD_2_1",
+      "id": "120251443528750435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_PD",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "You Won't Check It. Winter Will."
+    },
+    {
+      "name": "CaraShellRoof_US_PD_2_H1",
+      "id": "120251443958320435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_PD",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "You Won't Check It. Winter Will."
+    },
+    {
+      "name": "CaraShellRoof_US_PD_3_H1",
+      "id": "120251443963930435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_PD",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "You Won't Check It. Winter Will."
+    },
+    {
+      "name": "CaraShellRoof_US_PD_4_1",
+      "id": "120251442471980435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_PD",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "You Won't See It Until the Test."
+    },
+    {
+      "name": "CaraShellRoof_US_SP_1_H1",
+      "id": "120251443973510435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_SP",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "Fits Well, Protects the Roof – Lars"
+    },
+    {
+      "name": "CaraShellRoof_US_SP_2_1",
+      "id": "120251443532820435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_SP",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "Fits Well, Protects the Roof – Lars"
+    },
+    {
+      "name": "CaraShellRoof_US_SP_2_H1",
+      "id": "120251443980060435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_SP",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "Fits Well, Protects the Roof – Lars"
+    },
+    {
+      "name": "CaraShellRoof_US_SP_3_H1",
+      "id": "120251443986910435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_SP",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "video",
+      "issues": "",
+      "rubrik": "Fits Well, Protects the Roof – Lars"
+    },
+    {
+      "name": "CaraShellRoof_US_SP_4_1",
+      "id": "120251442617450435",
+      "status": "ACTIVE",
+      "eff": "ADSET_PAUSED",
+      "adset": "CARASHELL_US_SP",
+      "page": "1381171778405935",
+      "link": "https://carashell.com/products/takskyddet?country=US",
+      "typ": "bild",
+      "issues": "",
+      "rubrik": "Protects Against Rain & Dirt – Anders"
+    }
+  ],
+  "last": "2026-09-16T12:14:16.272Z"
+}

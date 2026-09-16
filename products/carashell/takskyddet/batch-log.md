@@ -502,3 +502,26 @@ PAUSED — annonserna är ACTIVE inne i den och spenderar inget förrän Axel sl
 Axels 90-dagarsbeslut) bär copyn "14-day right of withdrawal" — den engelska sidan
 säger 90-day guarantee. Axel sa "hoppa över dem"; de rördes inte, men claimen står
 kvar tills någon byter creative.
+
+**Tillbakaläst ur Meta 2026-09-16 12:14 UTC** — kampanj `CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16` PAUSED, konto 1107817401910319, CBO 1000 kr/dag, adsets CS/GT/PD/SP PAUSED (geo US, pixel 28589207184025756). 20 annonser i kampanjen, alla ACTIVE/ADSET_PAUSED, sida 1381171778405935, länk carashell.com, 0 issues.
+
+| SE-annons | US-annons | Typ | Adset | Ad-ID |
+|---|---|---|---|---|
+| `CaraShellRoof_CS_1_H1` | `CaraShellRoof_US_CS_1_H1` | video | `CARASHELL_US_CS` | 120251443679590435 |
+| `CaraShellRoof_CS_2_1` | `CaraShellRoof_US_CS_2_1` | bild | `CARASHELL_US_CS` | 120251443358740435 |
+| `CaraShellRoof_CS_2_H1` | `CaraShellRoof_US_CS_2_H1` | video | `CARASHELL_US_CS` | 120251443854310435 |
+| `CaraShellRoof_CS_3_H1` | `CaraShellRoof_US_CS_3_H1` | video | `CARASHELL_US_CS` | 120251443924930435 |
+| `CaraShellRoof_GT_1_H1` | `CaraShellRoof_US_GT_1_H1` | video | `CARASHELL_US_GT` | 120251443936870435 |
+| `CaraShellRoof_GT_2_1` | `CaraShellRoof_US_GT_2_1` | bild | `CARASHELL_US_GT` | 120251443434440435 |
+| `CaraShellRoof_GT_2_H1` | `CaraShellRoof_US_GT_2_H1` | video | `CARASHELL_US_GT` | 120251443941470435 |
+| `CaraShellRoof_GT_3_H1` | `CaraShellRoof_US_GT_3_H1` | video | `CARASHELL_US_GT` | 120251443947020435 |
+| `CaraShellRoof_PD_1_H1` | `CaraShellRoof_US_PD_1_H1` | video | `CARASHELL_US_PD` | 120251443952290435 |
+| `CaraShellRoof_PD_2_1` | `CaraShellRoof_US_PD_2_1` | bild | `CARASHELL_US_PD` | 120251443528750435 |
+| `CaraShellRoof_PD_2_H1` | `CaraShellRoof_US_PD_2_H1` | video | `CARASHELL_US_PD` | 120251443958320435 |
+| `CaraShellRoof_PD_3_H1` | `CaraShellRoof_US_PD_3_H1` | video | `CARASHELL_US_PD` | 120251443963930435 |
+| `CaraShellRoof_SP_1_H1` | `CaraShellRoof_US_SP_1_H1` | video | `CARASHELL_US_SP` | 120251443973510435 |
+| `CaraShellRoof_SP_2_1` | `CaraShellRoof_US_SP_2_1` | bild | `CARASHELL_US_SP` | 120251443532820435 |
+| `CaraShellRoof_SP_2_H1` | `CaraShellRoof_US_SP_2_H1` | video | `CARASHELL_US_SP` | 120251443980060435 |
+| `CaraShellRoof_SP_3_H1` | `CaraShellRoof_US_SP_3_H1` | video | `CARASHELL_US_SP` | 120251443986910435 |
+
+**Att slå på (Axel):** kampanjen OCH de fyra adseten CS/GT/PD/SP är PAUSED — båda nivåerna måste slås på, annars visas inget. `G`-adsetet är tomt och kan förbli av.
