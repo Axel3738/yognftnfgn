@@ -1,12 +1,15 @@
 # /lagerrensning – Kopiera lagerrensnings-sidan (listicle) till en ny produkt
 
 Argument: `$ARGUMENTS` — länken till produktsidan på Bäverbutiken. Valfritt
-`--torr` (visa planen, bygg inget) och `--igen <plats>` (generera om en bild).
+`--torr` (visa planen, bygg inget), `--igen <plats>` (generera om en bild),
+`--brand baverbutiken` (brandad sida — BARA om Axel ber om det) och
+`--lank <produktlänk i en annan butik>` (knapparna dit, egen fil).
 
 ```
 /lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
 /lagerrensning https://baverbutiken.se/products/strandtofflor-for-herr-halkfria-tradgardsskor --torr
 /lagerrensning https://baverbutiken.se/products/satesoverdrag-for-akgrasklippare-slittaligt-600d-oxford --igen punkt2
+/lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte --lank https://heimguard.se/products/axelbalte
 ```
 
 CONNECTORS: inga. Allt går via `KIE_API_KEY` (bilder), `SHOPIFY_SHOP_SE` +
@@ -16,12 +19,16 @@ publika HTTPS-anrop. Använd ALDRIG `mcp__Notion__*` eller `mcp__Shopify__*`.
 **Vad kommandot gör, i en mening:** tar motorhöljets lagerrensningssida
 (`baverbutiken.se/pages/motorholje-lagerrensning`, GemPages-exporten i
 `lagerrensning/mall/`) och gör exakt samma sida för en annan produkt — samma
-struktur, samma Anders, samma lagerbild och logga — med ny copy, produktens
-riktiga pris och jämförpris, nya bilder (produktsidans egna, annars kie.ai) —
-och lämnar **en `.gempages`-fil som Axel importerar i GemPages** (Pages →
-Import page). GemPages tar bara sådana filer, inte HTML (Axel 2026-09-16).
-Filen får nya sid-id:n så importen aldrig rör motorhöljets riktiga sida. En
-HTML-version byggs bredvid — den är bara underlaget för skärmdumparna som
+struktur, samma Anders, samma lagerbild — med ny copy, produktens riktiga
+pris och jämförpris, nya bilder (produktsidans egna, annars kie.ai) — och
+lämnar **en `.gempages`-fil som Axel importerar i GemPages** (Pages → Import
+page). GemPages tar bara sådana filer, inte HTML (Axel 2026-09-16). Filen får
+nya sid-id:n så importen aldrig rör motorhöljets riktiga sida. **Sidan är
+obrandad som standard** (Axels beslut 2026-09-16 kväll: "jag hade verkligen
+uppskattat om listiclen är obrandad så att den funkar om en annan sida skulle
+publicera den också och köra samma produkt") — ingen logga, "Anders på
+lagret", bara "OBS: Detta är reklam." i sidfoten, inget butiksnamn i copyn.
+En HTML-version byggs bredvid — den är bara underlaget för skärmdumparna som
 sessionen tittar på. Motorn är `lagerrensning/bygg.mjs`, formatet står i
 `lagerrensning/README.md`.
 
@@ -47,8 +54,19 @@ sessionen tittar på. Motorn är `lagerrensning/bygg.mjs`, formatet står i
 4. **Bilder:** produktsidans egna bilder först (de ligger redan på Shopifys
    CDN), kie.ai bara där ingen passar rollen. Inga människor eller ansikten
    (hook-visual-regeln 2026-08-04), ingen text/pris/logga i genererade bilder.
-   Författarfotot (Anders), lagerbilden och loggan byts aldrig — de är
-   Bäverbutikens, inte produktens.
+   Författarfotot (Anders) och lagerbilden (anonyma kartonger, tittad
+   2026-09-16) byts aldrig — de är sidans, inte produktens.
+4b. **Obrandad som standard — brand bara på Axels begäran.** Mallen bär
+   Bäverbutiken på tre ställen (författarraden, loggan, kontaktraden i
+   sidfoten); alla tre styrs av brandprofilen, och utan `--brand` är de
+   neutrala. Copyn nämner **aldrig** butikens namn: skriv "vi", "hos oss",
+   "vårt lager" — motorn stoppar "Bäverbutiken" i en obrandad copy. Knapparna
+   pekar på produktsidan i källbutiken; ska filen in i en annan butik körs
+   bygget om med `--lank https://<butik>/products/<handle>` (egen fil med
+   butikens namn som suffix, copyn och bilderna återanvänds, noll credits).
+   `--brand baverbutiken` (`lagerrensning/brand/baverbutiken.json`) ger exakt
+   mallens brandade sida — använd det bara när Axel säger det. Nytt brand =
+   ny fil i `lagerrensning/brand/` (namn, författare, support, domän, logga).
 5. **Sessionen tittar på bilderna OCH på sidan, aldrig Axel** (Axels beslut
    2026-09-13). Bygget tar skärmdumpar av HTML:en (desktop + mobil) utan nät
    i webbläsaren — läs dem med Read-verktyget innan något levereras.
@@ -138,10 +156,13 @@ Den visar hur punkterna byter tema utan att byta form: "Det gör inte ont
 medan du trimmar", "Du har redan egna knep, och de hjälper nästan", "Sista
 biten blir aldrig klar den här helgen", "Den billiga remmen du redan provat",
 och att riskfritt-blocket får heta "Om det inte känns rätt" när det passar
-bättre. Det är tonen som gäller: vardaglig, konkret, en person som pratar. Hårda regler: svenska med rätt å/ä/ö; bara priset och jämförpriset som
-siffror; inga procent; "så länge lagret räcker"; `**fet**` är den enda
-formateringen (ingen HTML); exakt fem punkter; hero.rubrik bär både priset
-och jämförpriset; inga betyg, inga påhittade kunder.
+bättre. Det är tonen som gäller: vardaglig, konkret, en person som pratar.
+(Axels copy säger "Bäverbutikens axelbälte" — det gjorde man 2026-08-16; nu
+skrivs "det här axelbältet".) Hårda regler: svenska med rätt å/ä/ö; bara
+priset och jämförpriset som siffror; inga procent; "så länge lagret räcker";
+`**fet**` är den enda formateringen (ingen HTML); exakt fem punkter;
+hero.rubrik bär både priset och jämförpriset; inga betyg, inga påhittade
+kunder; **inget butiksnamn** ("vi", "hos oss", "vårt lager").
 
 Skriv först alla stycken rakt igenom som en text. Kör sedan läsbarhetstestet
 på varje stycke och skriv om det som hakar — räkna med 20 varv, det är
@@ -202,10 +223,12 @@ utan `--igen`, det kostar inga credits.
 - **Skärmdumparna** `forhandsvisning/desktop.png` och `mobil.png`: rubrikerna i
   Anton, orange knappar, bilderna på rätt plats (punkt 2 och 4 har bilden till
   höger på desktop), ingen text som hänger utanför, författarfotot runt,
-  loggan i sidfoten. Ser något fel ut är det HTML:en som ska rättas
+  "Av Anders på lagret." i hero, sidfoten utan logga och med bara "OBS: Detta
+  är reklam." (obrandad) — eller loggan + kundsupport-raden om `--brand`
+  användes. Ser något fel ut är det HTML:en som ska rättas
   (`lagerrensning/html.mjs`), inte Axels problem.
-- `--kolla <fil.gempages>` visar rätt pris i alla knappar och ingen text
-  nämner motorhöljet.
+- `--kolla <fil.gempages>` visar rätt pris i alla knappar, ingen text som
+  nämner motorhöljet och inget butiksnamn i texterna (bara i knapparnas länk).
 
 ### 8. Logga, committa, leverera
 - Har produkten `products/<id>/batch-log.md`: en rad "LP lagerrensning byggd
@@ -217,6 +240,9 @@ utan `--igen`, det kostar inga credits.
 
 ## Rapport till Axel (kort, svenska)
 - Produkten, priset och jämförpriset som sidan bär, datumraden.
+- Obrandad (standard) eller vilket brand — och att knapparna pekar på
+  källbutiken: vill han köra filen i en annan butik behöver sessionen den
+  butikens produktlänk (`--lank`), inget mer.
 - Bilderna: vilka platser fick produktbilder, vilka kie, var de ligger (Filer
   eller `lp-bildarkiv`).
 - Copyn: fem rubriker, läsbarhetstestet (vad som skrevs om, osäkraste raden),
@@ -229,6 +255,7 @@ utan `--igen`, det kostar inga credits.
 3. Öppna sidan, scrolla igenom en gång, klicka **Publish**.
 4. Kontrollera att adressen blev `/pages/<slug>-lagerrensning` (Page settings), annars sätt den.
 5. Peka annonserna på `https://baverbutiken.se/pages/<slug>-lagerrensning`.
+6. (Bara om samma sida ska in i en annan butik:) skicka den butikens produktlänk, så byggs en fil med knapparna dit.
 
 Avvisar GemPages filen: klistra in felmeddelandet i nästa session. Första
 knappen att prova är `--behall-idn` (mallens ursprungliga id:n i stället för
@@ -238,6 +265,7 @@ nya), och HTML-versionen bredvid filen visar exakt vad sidan skulle innehålla.
 - [ ] Underlag hämtat ur butiken; pris och jämförpris lästa där, aldrig ur minnet; inget betyg i copyn
 - [ ] Fem teman satta med fakta per punkt
 - [ ] Copy skriven av huvudsessionen; läsbarhetstestet gjort på varje stycke och redovisat; tre-frågorstestet redovisat, ❌ bara med motivering
+- [ ] Sidan obrandad (inget butiksnamn i copyn, ingen logga) — eller `--brand` för att Axel bad om det, sagt i rapporten
 - [ ] Bildplan med alla sex platser; produktbilder där de passar, kie annars; inga människor/text
 - [ ] `--torr` utan ❌ före skarp körning
 - [ ] Skarp körning: bilder på Shopifys CDN, `.gempages` skriven med nya id:n och läst tillbaka med rätt checksummor, HTML-versionen skriven

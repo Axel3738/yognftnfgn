@@ -1,0 +1,12 @@
+{
+  "_kommentar": "Bäverbutikens brandprofil — exakt det mallen (motorhöljets sida) bär i författarraden, sidfotens logga och kontaktraden. Används BARA med `--brand baverbutiken`; standard är obrandad (Axels beslut 2026-09-16: sidan ska funka om en annan butik publicerar den för samma produkt). Loggan är mallens egen bild på Bäverbutikens CDN.",
+  "namn": "Bäverbutiken",
+  "forfattare": "Anders från Bäverbutiken",
+  "support": "kundsupport@baverbutiken.se",
+  "doman": "Bäverbutiken.se",
+  "logga": {
+    "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932",
+    "width": 1024,
+    "height": 1024
+  }
+}

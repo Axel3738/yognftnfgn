@@ -21,7 +21,10 @@ test('mallBilder läser alla nio bildplatser ur mallen', () => {
 test('renderaHtml bär varje text, alla åtta knappar och alla bilder ur mallen', () => {
   const copy = copyUrMall(mall, platser);
   const fasta = mallBilder(mall, platser);
-  const html = renderaHtml({ copy, produkt: MOTOR, fasta, datum: '2026-08-04' });
+  const html = renderaHtml({ copy, produkt: MOTOR, fasta, datum: '2026-08-04', brand: 'baverbutiken' });
+  assert.ok(html.includes('<p>Av <strong>Anders från Bäverbutiken.</strong></p>'));
+  assert.ok(html.includes('<a href="mailto:kundsupport@baverbutiken.se">kundsupport@baverbutiken.se</a><br>Bäverbutiken.se<br>OBS: Detta är reklam.'));
+  assert.ok(html.includes('class="lr-logga"'));
   const rader = lasAvSida(mall);
   for (const r of rader) {
     if (r.tag === 'Heading' || r.tag === 'Button') {
@@ -55,6 +58,22 @@ test('renderaHtml byter bilder per plats och escapar copyn', () => {
   assert.throws(() => renderaHtml({ copy, produkt: { url: 'https://x' }, bilder, fasta: {}, datum: '2026-09-16' }), /ingen bild för platsen/);
   const utan = copyUrMall(mall, platser); delete utan.riskfritt.knapp;
   assert.throws(() => renderaHtml({ copy: utan, produkt: MOTOR, fasta, datum: '2026-09-16' }), /riskfritt\.knapp/);
+});
+
+test('renderaHtml utan brand: Anders på lagret, ingen logga, ingen mejl, bara reklammärkningen', () => {
+  const copy = copyUrMall(mall, platser);
+  copy.lyckas.stycken[1] = 'Det marina motorhöljet är sytt i kraftigt tyg.';
+  const fasta = mallBilder(mall, platser);
+  const html = renderaHtml({ copy, produkt: MOTOR, fasta, datum: '2026-08-04' });
+  assert.ok(html.includes('<p>Av <strong>Anders på lagret.</strong></p>'));
+  assert.ok(html.includes('<p class="lr-kontakt">OBS: Detta är reklam.</p>'));
+  assert.ok(!html.includes('class="lr-logga"') && !html.includes(fasta.sidfot.src), 'ingen logga');
+  assert.ok(!/bäverbutiken/i.test(html.replace(new RegExp(MOTOR.url, 'g'), '')), 'inget brandnamn utöver knapparnas produktlänk');
+  assert.ok(html.includes(fasta.arlig.src), 'lagerbilden ligger kvar');
+  // ett annat brand utan logga: namn + domän, ingen mejl
+  const annan = renderaHtml({ copy, produkt: MOTOR, fasta, datum: '2026-08-04', brand: { namn: 'HeimGuard', doman: 'heimguard.se' } });
+  assert.ok(annan.includes('<p>Av <strong>Anders från HeimGuard.</strong></p>'));
+  assert.ok(annan.includes('<p class="lr-kontakt">heimguard.se<br>OBS: Detta är reklam.</p>') && !annan.includes('mailto:'));
 });
 
 test('somDokument och CSS', () => {

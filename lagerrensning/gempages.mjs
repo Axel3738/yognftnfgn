@@ -17,7 +17,7 @@
 //    filen läses med `lasJson` (som taggar stora tal som strängar) och skrivs
 //    med `skrivJson` (som tar bort taggen). Läs den ALDRIG med JSON.parse rakt av.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { createHash, randomInt } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
@@ -28,6 +28,73 @@ export const MALL_MAPP = join(HAR, 'mall');
 export const MALL_FIL = join(MALL_MAPP, 'sida.json');
 export const PLATSER_FIL = join(MALL_MAPP, 'platser.json');
 export const MANIFEST_FIL = join(MALL_MAPP, 'manifest.json');
+export const BRAND_MAPP = join(HAR, 'brand');
+
+// ------------------------------------------------------------ brand
+
+// Sidan är OBRANDAD som standard (Axels beslut 2026-09-16: "jag hade verkligen
+// uppskattat om listiclen är obrandad så att den funkar om en annan sida skulle
+// publicera den också och köra samma produkt"). Mallen bär Bäverbutiken på tre
+// ställen — författarraden, sidfotens logga och kontaktraden — och alla tre
+// styrs av en brandprofil. Utan profil: "Anders på lagret", loggan och strecket
+// döljs, kontaktraden blir bara "OBS: Detta är reklam." Med `--brand
+// baverbutiken` (lagerrensning/brand/baverbutiken.json) blir sidan exakt som
+// mallen igen. Lagerbilden i ärlig-blocket visar anonyma kartonger (tittad
+// 2026-09-16) och behöver inte bytas.
+
+export const OBRANDAD = Object.freeze({ id: null, namn: null, forfattare: 'Anders på lagret', support: null, doman: null, logga: null });
+
+/** Brandprofilerna som finns: filnamnen i lagerrensning/brand/ utan .json. */
+export function kandaBrand() {
+  if (!existsSync(BRAND_MAPP)) return [];
+  return readdirSync(BRAND_MAPP).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5)).sort();
+}
+
+/** null/undefined → obrandad; "baverbutiken" → brand/baverbutiken.json; ett objekt → kontrollerat som det är. */
+export function brandProfil(brand) {
+  if (!brand) return { ...OBRANDAD };
+  // En redan upplöst obrandad profil (t.ex. från bygg.mjs) går igenom oförändrad.
+  if (typeof brand === 'object' && brand.namn == null && brand.id == null && brand.forfattare === OBRANDAD.forfattare && !brand.logga && !brand.support && !brand.doman) return { ...OBRANDAD };
+  let p = brand;
+  if (typeof brand === 'string') {
+    const fil = join(BRAND_MAPP, `${brand}.json`);
+    if (!/^[a-z0-9-]+$/.test(brand) || !existsSync(fil)) throw new Error(`Okänt brand "${brand}" — profiler: ${kandaBrand().join(', ') || 'inga'} (lagerrensning/brand/<id>.json).`);
+    p = { id: brand, ...JSON.parse(readFileSync(fil, 'utf8')) };
+  }
+  if (!p.namn) throw new Error('Brandprofilen saknar "namn".');
+  if (p.logga && !(p.logga.src && p.logga.width > 0 && p.logga.height > 0)) throw new Error(`Brandprofilen ${p.id ?? p.namn}: loggan behöver src, width och height.`);
+  return {
+    id: p.id ?? null, namn: String(p.namn), forfattare: p.forfattare ? String(p.forfattare) : `Anders från ${p.namn}`,
+    support: p.support ? String(p.support) : null, doman: p.doman ? String(p.doman) : null,
+    logga: p.logga ? { src: p.logga.src, width: p.logga.width, height: p.logga.height } : null,
+  };
+}
+
+/** Ord som avslöjar ett brand i copyn: namnet (även utan å/ä/ö) och domänen. */
+export function brandOrd(b) {
+  const ut = new Set();
+  for (const s of [b?.namn, b?.doman]) {
+    if (!s) continue;
+    const l = String(s).toLowerCase();
+    ut.add(l);
+    ut.add(l.replace(/å|ä/g, 'a').replace(/ö/g, 'o'));
+  }
+  return [...ut];
+}
+
+/** Författarraden i hero: samma HTML som mallen bär. */
+export function forfattarHtml(b) {
+  return `<p>Av <strong>${htmlAv(b.forfattare)}.</strong></p>`;
+}
+
+/** Sidfotens kontaktrad: mejl + domän + reklammärkning, eller bara märkningen när sidan är obrandad. */
+export function sidfotHtml(b) {
+  const rader = [];
+  if (b.support) rader.push(`<a href="mailto:${htmlAv(b.support)}">${htmlAv(b.support)}</a>`);
+  if (b.doman) rader.push(htmlAv(b.doman));
+  rader.push('OBS: Detta är reklam.');
+  return `<p>${rader.length > 1 ? '<br>' : ''}${rader.join('<br>')}</p>`;
+}
 
 // ------------------------------------------------------------ stora tal
 
@@ -236,12 +303,23 @@ export function priserI(text) {
   return ut;
 }
 
-/** Fel stoppar bygget; varningar visas. Priser, procent, HTML och förbjudna fraser. */
-export function granskaCopy(copy, produkt, platser) {
+/**
+ * Fel stoppar bygget; varningar visas. Priser, procent, HTML, förbjudna fraser —
+ * och brandnamn: en obrandad sida får inte nämna någon känd butik i copyn
+ * (skriv "vi"/"hos oss"), en brandad får nämna sitt eget brand.
+ *
+ *   granskaCopy(copy, produkt, platser, { brand: null | 'baverbutiken' | profil, forbjudnaBrand: [profiler] })
+ */
+export function granskaCopy(copy, produkt, platser, { brand = null, forbjudnaBrand = null } = {}) {
   const fel = [];
   const varningar = [];
   const tillatna = [produkt.pris, produkt.jamforpris].filter((x) => x != null && Number.isFinite(Number(x))).map(Number);
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
+  const b = brandProfil(brand);
+  const egnaOrd = new Set(brandOrd(b));
+  const stoppord = (forbjudnaBrand ?? kandaBrand().map((id) => brandProfil(id)))
+    .flatMap((p) => brandOrd(p).map((ord) => ({ ord, namn: p.namn, id: p.id })))
+    .filter((x) => !egnaOrd.has(x.ord));
 
   for (const [nyckel, plats] of Object.entries(platser.text)) {
     const v = lasCopy(copy, nyckel);
@@ -249,6 +327,8 @@ export function granskaCopy(copy, produkt, platser) {
     if (tom) { fel.push(`${nyckel}: saknas i copyn`); continue; }
     const text = nyckelText(v);
     if (/<[a-z/!]/i.test(text)) fel.push(`${nyckel}: innehåller HTML — skriv **fet** i stället för taggar`);
+    const traff = stoppord.find((x) => text.toLowerCase().includes(x.ord));
+    if (traff) fel.push(`${nyckel}: nämner "${traff.namn}" — sidan är ${b.namn ? `brandad som ${b.namn}` : 'obrandad och ska funka i vilken butik som helst'}; skriv "vi"/"hos oss"${traff.id && !b.namn ? ` (eller bygg med --brand ${traff.id})` : ''}`);
     for (const p of priserI(text)) {
       if (!tillatna.includes(p)) fel.push(`${nyckel}: priset ${p} kr finns inte på produktsidan (tillåtet: ${tillatna.map((t) => `${t} kr`).join(' / ') || 'inget'})`);
     }
@@ -283,6 +363,12 @@ function sattBild(el, { src, width, height }) {
   }
 }
 
+/** Visar/döljer ett element på alla tre skärmstorlekar — GemPages egen mekanism (`advanced.d`), samma som mobil-/desktopbilderna använder. */
+function visaElement(el, synlig) {
+  el.advanced = el.advanced ?? {};
+  el.advanced.d = { desktop: !!synlig, mobile: !!synlig, tablet: !!synlig };
+}
+
 /** Nytt 18-siffrigt id i samma stil som GemPages egna. */
 export function nyttId() {
   let s = '63';
@@ -310,13 +396,17 @@ export function bytIdn(sida, { nytt = nyttId } = {}) {
  * saknas — hellre stopp än en sida med motorhöljets text kvar i ett hörn.
  *
  *   byggSida({ mall, platser, produkt: { url, kortTitel, slug }, copy, bilder: { punkt1: { src, width, height } … },
- *              datum: 'YYYY-MM-DD', nyaIdn: false, nu: ISO-tid })
+ *              datum: 'YYYY-MM-DD', brand: null | 'baverbutiken' | profil, nyaIdn: false, nu: ISO-tid })
  *   → { sida, rapport }
+ *
+ * `brand` utelämnat = obrandad sida (standard). Knapparna pekar på produkt.url —
+ * för en annan butik skickar anroparen den butikens produktlänk som url.
  */
-export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = idag(), nyaIdn = false, nu = new Date().toISOString() }) {
+export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = idag(), brand = null, nyaIdn = false, nu = new Date().toISOString() }) {
   if (!produkt?.url || !produkt?.kortTitel || !produkt?.slug) throw new Error('byggSida: produkten behöver url, kortTitel och slug.');
+  const b = brandProfil(brand);
   const sida = structuredClone(mall);
-  const rapport = { texter: [], bilder: [], lankar: 0, namn: null, handle: null };
+  const rapport = { texter: [], bilder: [], lankar: 0, namn: null, handle: null, brand: { id: b.id, namn: b.namn, forfattare: b.forfattare, logga: !!b.logga } };
   const alla = (sida.pageSections ?? []).map((s) => ({ s, c: JSON.parse(s.component) }));
   const perCid = new Map(alla.map(({ s, c }) => [s.cid, c]));
   const element = (cid, uid, tag = null) => {
@@ -343,6 +433,22 @@ export function byggSida({ mall, platser, produkt, copy, bilder = {}, datum = id
   // Datumraden.
   const d = platser.fasta?.['hero.datum'];
   if (d) for (const el of element(d.cid, d.uid)) el.settings.text = `<p>Senast uppdaterad ${svensktDatum(datum)}.</p>`;
+
+  // Brandet: författarraden, sidfotens kontaktrad, loggan + strecket bredvid.
+  const f = platser.fasta?.['hero.forfattare'];
+  if (!f) throw new Error('Platskartan saknar fasta["hero.forfattare"].');
+  for (const el of element(f.cid, f.uid)) el.settings.text = forfattarHtml(b);
+  const k = platser.fasta?.['sidfot.text'];
+  if (!k) throw new Error('Platskartan saknar fasta["sidfot.text"].');
+  for (const el of element(k.cid, k.uid)) el.settings.text = sidfotHtml(b);
+  const logga = platser.bilder?.sidfot;
+  if (!logga) throw new Error('Platskartan saknar bilder.sidfot (loggan).');
+  for (const uid of logga.uids) for (const el of element(logga.cid, uid, 'Image')) {
+    if (b.logga) sattBild(el, b.logga);
+    visaElement(el, !!b.logga);
+  }
+  const streck = platser.fasta?.['sidfot.streck'];
+  if (streck) for (const el of element(streck.cid, streck.uid)) visaElement(el, !!b.logga);
 
   // Alla knappar → produktsidan.
   for (const uid of platser.knappar ?? []) {
@@ -402,9 +508,12 @@ export function lasAvSida(sida) {
   for (const cid of ordning) {
     for (const el of allaElement(perCid.get(cid))) {
       const st = el.settings ?? {};
-      if (el.tag === 'Heading' || el.tag === 'Text') ut.push({ cid, uid: el.uid, tag: el.tag, text: avHtml(st.text) });
-      else if (el.tag === 'Button') ut.push({ cid, uid: el.uid, tag: el.tag, text: avHtml(st.text), link: st.btnLink?.link ?? null });
-      else if (el.tag === 'Image') ut.push({ cid, uid: el.uid, tag: el.tag, src: st.image?.src ?? null, width: st.image?.width ?? null, height: st.image?.height ?? null });
+      const d = el.advanced?.d;
+      // dold = gömd på ALLA skärmar (loggan/strecket på en obrandad sida). Mobil-/desktopbilderna är synliga någonstans.
+      const dold = !!d && ['desktop', 'mobile', 'tablet'].every((k) => d[k] === false);
+      if (el.tag === 'Heading' || el.tag === 'Text') ut.push({ cid, uid: el.uid, tag: el.tag, text: avHtml(st.text), dold });
+      else if (el.tag === 'Button') ut.push({ cid, uid: el.uid, tag: el.tag, text: avHtml(st.text), link: st.btnLink?.link ?? null, dold });
+      else if (el.tag === 'Image') ut.push({ cid, uid: el.uid, tag: el.tag, src: st.image?.src ?? null, width: st.image?.width ?? null, height: st.image?.height ?? null, dold });
     }
   }
   return ut;

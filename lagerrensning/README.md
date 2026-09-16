@@ -8,15 +8,18 @@ en annan produkt: samma struktur, ny copy, produktens riktiga pris, nya bilder.
 importerar i GemPages (Pages → Import page) — GemPages tar bara sådana filer,
 inte HTML (Axel 2026-09-16, efter en kort omväg via "klistra in HTML"). Filen
 får **nya sid- och sektions-id:n** som standard så importen aldrig krockar med
-motorhöljets riktiga sida. HTML-versionen (`<slug>-lagerrensning.html`, samma
-sida, scopad CSS) byggs bredvid — den är underlaget för förhandsvisningens
-skärmdumpar, inte en leverans. Noll npm-beroenden.
+motorhöljets riktiga sida. **Sidan är obrandad som standard** (se nedan).
+HTML-versionen (`<slug>-lagerrensning.html`, samma sida, scopad CSS) byggs
+bredvid — den är underlaget för förhandsvisningens skärmdumpar, inte en
+leverans. Noll npm-beroenden.
 
 ```
 node lagerrensning/bygg.mjs <produktlänk> --underlag         # produktfakta → output/<handle>/underlag.json
 node lagerrensning/bygg.mjs <produktlänk> --torr             # planen, inget nät mot kie/Shopify
 node lagerrensning/bygg.mjs <produktlänk>                    # skarpt: bilder → Shopify CDN, .html + .gempages skrivna, förhandsvisning
 node lagerrensning/bygg.mjs <produktlänk> --igen punkt2      # generera om en kie-bild
+node lagerrensning/bygg.mjs <produktlänk> --brand baverbutiken                       # brandad sida (logga, "Anders från Bäverbutiken", kundsupport-raden)
+node lagerrensning/bygg.mjs <produktlänk> --lank https://<butik>/products/<handle>   # samma sida för en annan butik: knapparna dit, egen fil
 node lagerrensning/forhandsvisning.mjs <handle>               # bara skärmdumparna igen (desktop.png + mobil.png)
 node lagerrensning/bygg.mjs --kolla <fil.gempages>           # läs en fil: texter, länkar, bilder, checksummor
 node lagerrensning/bygg.mjs --exempel                        # mallens copy som JSON (mall/exempel-copy.json)
@@ -37,7 +40,8 @@ av kie-bilderna, för granskning) är gitignorerad.
 | `mall/motorholje-lagerrensning.gempages` | Axels export 2026-09-16, orörd. Facit för formatet |
 | `mall/sida.json` | Sidan ur exporten (`1_631451887748514611.json`), orörd |
 | `mall/manifest.json` | Exportens manifest — skrivs tillbaka som det är |
-| `mall/platser.json` | Platskartan: vilka element (sektion `cid` + element `uid`) som byts, textform per plats, bildernas roller |
+| `mall/platser.json` | Platskartan: vilka element (sektion `cid` + element `uid`) som byts, textform per plats, bildernas roller, de fasta raderna (datum, författare, sidfot) |
+| `brand/<id>.json` | Brandprofiler (`baverbutiken.json` = exakt det mallen bär). Utan `--brand` är sidan obrandad |
 | `mall/exempel-copy.json` | Mallens copy i copy.json-form — formexemplet subagenten får |
 | `gempages.mjs` | Ren logik: läs/skriv sidan, applicera copy + bilder, checksummor, zip |
 | `zip.mjs` | Minimal zip-skrivare/läsare (deflate) |
@@ -70,6 +74,30 @@ av kie-bilderna, för granskning) är gitignorerad.
   riktiga sida i samma butik. `--behall-idn` behåller dem, bara för felsökning.
   GemPages importerar filen som en ny sida i Draft.
 
+## Obrandad som standard (Axels beslut 2026-09-16)
+
+"Jag hade verkligen uppskattat om listiclen är obrandad så att den funkar om
+en annan sida skulle publicera den också och köra samma produkt." Mallen bär
+Bäverbutiken på tre ställen, och alla tre styrs av brandprofilen:
+
+| Plats | Obrandad (standard) | `--brand baverbutiken` |
+|---|---|---|
+| Författarraden i hero (`g5knyehVEx`) | "Av **Anders på lagret.**" | "Av **Anders från Bäverbutiken.**" |
+| Loggan + strecket i sidfoten (`gwJwnj2Az7`, `gnjSBAEvhs`) | dolda via `advanced.d` (GemPages egen visa/dölj, samma som mobil-/desktopbilderna) | visas, mallens logga |
+| Kontaktraden (`gePKcDJ1a3`) | "OBS: Detta är reklam." | mejl + Bäverbutiken.se + reklammärkningen |
+
+Lagerbilden i ärlig-blocket visar anonyma kartonger (tittad 2026-09-16) och
+byts inte. Copyn får inte nämna en känd butik när sidan är obrandad —
+`granskaCopy` stoppar namnet och domänen (även utan å/ä/ö); skriv "vi",
+"hos oss". Med `--brand` får copyn nämna det egna brandet.
+
+Knapparna pekar alltid på produktsidan i källbutiken. För en annan butik:
+`--lank https://<butik>/products/<handle>` — då heter filen
+`<slug>-lagerrensning-<butikens-värd>.gempages` (källbutikens fil står kvar),
+copyn och bilderna återanvänds (noll credits). Ett nytt brand = en ny fil i
+`brand/` med `namn`, `forfattare` (valfri, annars "Anders från <namn>"),
+`support`, `doman` och `logga` `{ src, width, height }` (alla valfria).
+
 ## Förhandsvisningen
 
 Containerns Chromium litar inte på proxyns certifikat (mätt 2026-09-16:
@@ -86,7 +114,9 @@ Skärmdumparna är till för att sessionen ska titta, inte för Axel.
 - Procentsats i copyn → stopp (sidan lovar "ingen påhittad jätterabatt").
 - HTML i copyn → stopp (`**fet**` är den enda formateringen).
 - "innan lagret tar slut" → stopp (bara "så länge lagret räcker").
-- Text- eller bildplats som saknas → stopp. `hero`/`sidfot` byts aldrig.
+- Butiksnamn i copyn på en obrandad sida → stopp (skriv "vi"/"hos oss").
+- Text- eller bildplats som saknas → stopp. `hero`/`sidfot` byts aldrig via
+  bildplanen (loggan styrs av brandprofilen).
 - Filen skrivs bara om den går att läsa tillbaka med rätt checksummor.
 
 ## Shopify-behörigheten

@@ -9,6 +9,12 @@
 //   node lagerrensning/bygg.mjs --exempel                             # mallens copy som JSON (formen subagenten ska följa)
 //
 // Flaggor: --copy <fil> --bildplan <fil> --ut <fil> --datum YYYY-MM-DD --behall-idn --utan-forhandsvisning
+//          --brand <id>   brandprofil (lagerrensning/brand/<id>.json). UTAN flaggan är sidan OBRANDAD:
+//                         "Anders på lagret", ingen logga, bara "OBS: Detta är reklam." i sidfoten —
+//                         så samma fil funkar i en annan butik (Axels beslut 2026-09-16).
+//          --lank <url>   knapparnas länk (standard: produktsidan i källbutiken). För en annan butik:
+//                         den butikens produktlänk. Filen får då suffixet -<butikens värd> så den inte
+//                         skriver över källbutikens fil.
 // Standardfiler: lagerrensning/output/<handle>/{underlag,copy,bildplan,bilder,plan}.json
 //                lagerrensning/output/<handle>/<slug>-lagerrensning.gempages   ← leveransen (GemPages → Pages → Import page), nya id:n
 //                lagerrensning/output/<handle>/<slug>-lagerrensning.html       ← samma sida som HTML, bara för förhandsvisningen
@@ -22,7 +28,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname, resolve } from 'node:path';
 import { hamtaProdukt } from './produkt.mjs';
-import { lasMall, byggSida, granskaCopy, copyUrMall, tillGempages, urGempages, granskaChecksummor, lasAvSida, skrivJson, idag } from './gempages.mjs';
+import { lasMall, byggSida, granskaCopy, copyUrMall, tillGempages, urGempages, granskaChecksummor, lasAvSida, idag, brandProfil, kandaBrand } from './gempages.mjs';
 import { granskaBildplan, losBilder } from './bilder.mjs';
 import { renderaHtml, mallBilder } from './html.mjs';
 import { forhandsvisa } from './forhandsvisning.mjs';
@@ -82,27 +88,38 @@ async function bygg(lank, argv) {
   const copyFil = arg(argv, '--copy') ?? join(mapp, 'copy.json');
   const planFil = arg(argv, '--bildplan') ?? join(mapp, 'bildplan.json');
   const cacheFil = join(mapp, 'bilder.json');
-  const utFil = arg(argv, '--ut') ?? join(mapp, `${produkt.slug}-lagerrensning.gempages`);
   const datum = arg(argv, '--datum') ?? idag();
   const igen = (arg(argv, '--igen') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+
+  // Brandet: obrandad som standard. Knapparna: produktsidan i källbutiken, eller
+  // --lank för en annan butik (då får filen ett suffix så källbutikens fil står kvar).
+  const brand = brandProfil(arg(argv, '--brand'));
+  const annanLank = arg(argv, '--lank');
+  if (annanLank && !/^https:\/\/[^/\s]+\/.+/.test(annanLank)) throw new Error(`--lank måste vara en https-länk till produktsidan i den andra butiken, fick "${annanLank}".`);
+  const annanButik = annanLank && new URL(annanLank).host !== new URL(produkt.url).host ? new URL(annanLank).host.replace(/^www\./, '').replace(/[^a-z0-9.-]/gi, '') : null;
+  const knapparTill = annanLank ?? produkt.url;
+  const filBas = `${produkt.slug}-lagerrensning${annanButik ? `-${annanButik.replace(/\./g, '-')}` : ''}`;
+  const utFil = arg(argv, '--ut') ?? join(mapp, `${filBas}.gempages`);
 
   console.log(`Produkt: ${produkt.titel}`);
   console.log(`   ${produkt.url}`);
   console.log(`   pris ${produkt.prisText}${produkt.jamforprisText ? ` · jämförpris ${produkt.jamforprisText}` : ' · INGET jämförpris på sidan'}${produkt.flerPriser ? ` · ⚠ flera priser (${produkt.flerPriser.join(', ')}), lägsta används` : ''}`);
   console.log(`   ${produkt.bilder.length} produktbilder · dna: ${underlagObj.dna?.fil ?? 'saknas'}`);
   if (!produkt.jamforpris) console.log('   ⚠ Utan jämförpris finns inget "istället för" — sätt compare-at i Shopify eller skriv copyn utan.');
+  console.log(`\nBrand: ${brand.namn ? `${brand.namn} (--brand ${brand.id}: "${brand.forfattare}", logga${brand.support ? `, ${brand.support}` : ''})` : `OBRANDAD — "${brand.forfattare}", ingen logga, bara "OBS: Detta är reklam." i sidfoten. Samma fil funkar i en annan butik.${kandaBrand().length ? ` Brandad sida: --brand ${kandaBrand().join(' | ')}` : ''}`}`);
+  console.log(`Knappar: → ${knapparTill}${annanButik ? ` (annan butik: ${annanButik}, filen får suffixet -${annanButik.replace(/\./g, '-')})` : annanLank ? '' : ' (källbutiken — i en annan butik: kör om med --lank https://<butik>/products/<handle>)'}`);
 
   if (!existsSync(copyFil)) {
-    console.log(`\n❌ Copyn saknas: ${copyFil}\n   Skriv den via subagenten (se .claude/commands/lagerrensning.md steg 3), formen finns i lagerrensning/mall/exempel-copy.json.`);
+    console.log(`\n❌ Copyn saknas: ${copyFil}\n   Skriv den själv (se .claude/commands/lagerrensning.md steg 3), formen finns i lagerrensning/mall/exempel-copy.json.`);
     process.exit(1);
   }
   const copy = lasJsonFil(copyFil);
-  const g = granskaCopy(copy, produkt, platser);
+  const g = granskaCopy(copy, produkt, platser, { brand });
   console.log(`\nCopy: ${copyFil}`);
   for (const v of g.varningar) console.log(`   ⚠ ${v}`);
   for (const f of g.fel) console.log(`   ❌ ${f}`);
   if (g.fel.length) { console.log(`\n❌ ${g.fel.length} fel i copyn — rätta och kör igen.`); process.exit(1); }
-  console.log(`   ✓ priser, procent, fraser och alla ${Object.keys(platser.text).length} textplatser kontrollerade`);
+  console.log(`   ✓ priser, procent, fraser, brandnamn och alla ${Object.keys(platser.text).length} textplatser kontrollerade`);
 
   let plan = {};
   if (existsSync(planFil)) plan = lasJsonFil(planFil);
@@ -141,12 +158,13 @@ async function bygg(lank, argv) {
   // främmande id:n, så det är den vanliga vägen för GemPages. `--behall-idn`
   // finns kvar för att felsöka en avvisad import.
   const nyaIdn = !argv.includes('--behall-idn');
-  const { sida, rapport } = byggSida({ mall, platser, produkt, copy, bilder: torr ? Object.fromEntries(Object.entries(bilder).filter(([, b]) => b.src && b.width > 0)) : bilder, datum, nyaIdn });
+  const sidProdukt = { ...produkt, url: knapparTill };
+  const { sida, rapport } = byggSida({ mall, platser, produkt: sidProdukt, copy, bilder: torr ? Object.fromEntries(Object.entries(bilder).filter(([, b]) => b.src && b.width > 0)) : bilder, datum, brand, nyaIdn });
 
-  console.log(`\nSida: "${rapport.namn}" · handle ${rapport.handle} · datumrad ${datum}`);
-  console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${produkt.url}, ${rapport.bilder.length} bilder bytta`);
+  console.log(`\nSida: "${rapport.namn}" · handle ${rapport.handle} · datumrad ${datum} · ${rapport.brand.namn ? `brand ${rapport.brand.namn}` : 'obrandad'}`);
+  console.log(`   ${rapport.texter.length} texter, ${rapport.lankar} knappar → ${knapparTill}, ${rapport.bilder.length} bilder bytta, författarrad "Av ${rapport.brand.forfattare}.", logga ${rapport.brand.logga ? 'visas' : 'dold'}`);
 
-  const htmlFil = join(mapp, `${produkt.slug}-lagerrensning.html`);
+  const htmlFil = join(mapp, `${filBas}.html`);
   if (torr) {
     console.log(`\n[--torr] Ingen bild genererad, ingen fil skriven. Skulle skriva ${utFil} (importfilen) och ${htmlFil} (förhandsvisning). Texterna som skulle sättas:`);
     for (const rad of lasAvSida(sida)) if (rad.tag !== 'Image') console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 90)}${rad.link ? `  → ${rad.link}` : ''}`);
@@ -171,15 +189,15 @@ async function bygg(lank, argv) {
   // HTML-versionen: samma copy, samma bilder, samma datum — underlaget för
   // förhandsvisningen (skärmdumparna sessionen tittar på). GemPages tar bara
   // .gempages-filer (Axel 2026-09-16), så HTML:en är kontroll, inte leverans.
-  const html = renderaHtml({ copy, produkt, bilder, fasta: mallBilder(mall, platser), datum });
+  const html = renderaHtml({ copy, produkt: sidProdukt, bilder, fasta: mallBilder(mall, platser), datum, brand });
   writeFileSync(htmlFil, html);
-  console.log(`\n✅ ${utFil} (${zip.length} byte) — .gempages att importera (Pages → Import page), ${nyaIdn ? 'nya id:n' : 'mallens id:n'}, läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
+  console.log(`\n✅ ${utFil} (${zip.length} byte) — .gempages att importera (Pages → Import page), ${nyaIdn ? 'nya id:n' : 'mallens id:n'}, ${rapport.brand.namn ? `brand ${rapport.brand.namn}` : 'obrandad'}, läst tillbaka, ${tillbaka.sidor[0].pageSections.length} sektioner, alla checksummor stämmer.`);
   console.log(`✅ ${htmlFil} (${Buffer.byteLength(html)} byte) — HTML-version för förhandsvisningen.`);
 
   let fv = null;
   if (!argv.includes('--utan-forhandsvisning')) {
     try {
-      fv = await forhandsvisa(produkt.handle, { logg: (r) => console.log(r) });
+      fv = await forhandsvisa(produkt.handle, { logg: (r) => console.log(r), htmlFil });
     } catch (e) {
       console.log(`   ⚠ förhandsvisningen misslyckades: ${e.message}`);
     }
@@ -187,6 +205,7 @@ async function bygg(lank, argv) {
 
   const planObj = {
     byggd: new Date().toISOString(), datumrad: datum, produkt: underlagObj.produkt, copy: copyFil, bildplan: planFil,
+    brand: rapport.brand, knappar: knapparTill,
     bilder: rapport.bilder, html: htmlFil, fil: utFil, forhandsvisning: fv,
     sida: { id: String(tillbaka.sidor[0].id).replace(/^__stort_tal__:/, ''), namn: rapport.namn, handle: rapport.handle },
     checksummor: tillbaka.sidor[0].pageSections.map((s) => ({ cid: s.cid, checksum: s.checksum })),
@@ -205,8 +224,9 @@ function kolla(fil) {
     const trasiga = granskaChecksummor(sida);
     console.log(`\n"${sida.name}" · handle ${sida.handle} · ${sida.pageSections.length} sektioner · checksummor: ${trasiga.length ? `❌ ${trasiga.length} fel (${trasiga.map((t) => t.cid).join(', ')})` : '✓ alla stämmer'}`);
     for (const rad of lasAvSida(sida)) {
-      if (rad.tag === 'Image') console.log(`   Image   ${rad.width}×${rad.height} ${rad.src}`);
-      else console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 110)}${rad.link ? `  → ${rad.link}` : ''}`);
+      const dold = rad.dold ? ' (DOLD på alla skärmar)' : '';
+      if (rad.tag === 'Image') console.log(`   Image   ${rad.width}×${rad.height} ${rad.src}${dold}`);
+      else console.log(`   ${rad.tag.padEnd(7)} ${String(rad.text ?? '').slice(0, 110)}${rad.link ? `  → ${rad.link}` : ''}${dold}`);
     }
   }
 }
@@ -222,9 +242,9 @@ async function huvud(argv) {
   }
   const kollaFil = arg(argv, '--kolla');
   if (kollaFil) return kolla(kollaFil);
-  const lank = argv.find((a) => !a.startsWith('--') && !['--copy', '--bildplan', '--ut', '--datum', '--igen', '--kolla'].includes(argv[argv.indexOf(a) - 1]));
+  const lank = argv.find((a) => !a.startsWith('--') && !['--copy', '--bildplan', '--ut', '--datum', '--igen', '--kolla', '--brand', '--lank'].includes(argv[argv.indexOf(a) - 1]));
   if (!lank) {
-    console.error('Användning: node lagerrensning/bygg.mjs <produktlänk> [--underlag | --torr] [--copy fil] [--bildplan fil] [--ut fil] [--datum YYYY-MM-DD] [--igen plats,…] [--behall-idn] [--utan-forhandsvisning]\n           node lagerrensning/bygg.mjs --kolla <fil.gempages> | --exempel');
+    console.error('Användning: node lagerrensning/bygg.mjs <produktlänk> [--underlag | --torr] [--brand id] [--lank https://<annan butik>/products/<handle>] [--copy fil] [--bildplan fil] [--ut fil] [--datum YYYY-MM-DD] [--igen plats,…] [--behall-idn] [--utan-forhandsvisning]\n           node lagerrensning/bygg.mjs --kolla <fil.gempages> | --exempel');
     process.exit(1);
   }
   if (argv.includes('--underlag')) {

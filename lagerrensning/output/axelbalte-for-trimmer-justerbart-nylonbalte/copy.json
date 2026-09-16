@@ -1,5 +1,5 @@
 {
-  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 efter Axels beslut samma dag: ingen sonnet-subagent, läsbarheten först. Fakta enbart ur produktsidan + products/axelbaltet/dna.md. Priser: 599 kr / 789 kr avlästa på produktsidan 2026-09-16.",
+  "_kommentar": "Copy skriven av huvudsessionen (Fable) 2026-09-16 efter Axels beslut samma dag: ingen sonnet-subagent, läsbarheten först. Fakta enbart ur produktsidan + products/axelbaltet/dna.md. Priser: 599 kr / 789 kr avlästa på produktsidan 2026-09-16. Obrandad (Axels beslut samma kväll): inget butiksnamn i texten, bara 'vi' och 'hos oss' — 'Bäverbutikens axelbälte' blev 'Det här axelbältet'.",
   "hero": {
     "rubrik": "Vi beställde in för många axelbälten och nu får du ditt för 599 kr istället för 789 kr så länge lagret räcker",
     "ingress": "Vår senaste beställning blev större än planerat och lagret är fullt. Det är dina axlar och din rygg som tjänar på det.",
@@ -40,7 +40,7 @@
     "rubrik": "Så vad gör de som orkar klippa hela tomten i ett svep?",
     "stycken": [
       "De slutar bära trimmern i armarna och låter selen göra jobbet. Bältet läggs över axlarna, den röda metallkroken hakas i trimmern, och på några sekunder ligger vikten på axlar och rygg i stället för i armarna. Remmarna justeras efter dig, inte tvärtom, så det sitter lika bra på en lång som på en kort person. Sen är det bara att klippa kant efter kant, utan att stanna för att skaka liv i armarna.",
-      "Bäverbutikens axelbälte är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur. Det passar de flesta grästrimmrar och röjsågar, och det backas av 30 dagars nöjd-kund-garanti så att du inte riskerar något. Skillnaden märks redan första passet: armarna orkar hela vägen, nacken slipper tyngden, och du är klar innan du normalt hade tagit första pausen."
+      "Det här axelbältet är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur. Det passar de flesta grästrimmrar och röjsågar, och det backas av 30 dagars nöjd-kund-garanti så att du inte riskerar något. Skillnaden märks redan första passet: armarna orkar hela vägen, nacken slipper tyngden, och du är klar innan du normalt hade tagit första pausen."
     ],
     "knapp": "Gör som dem → ta ett axelbälte för 599 kr"
   },
@@ -77,7 +77,7 @@
     { "rad": "Se axelbältet i justerbart nylon → 599 kr", "visualisera": "✅ nylonbältet, priset", "falsifiera": "✅ materialet och priset står på produktsidan", "ingen_annan_kan_saga": "✅ vår produkt, vårt pris" },
     { "rad": "Så vad gör de som orkar klippa hela tomten i ett svep?", "visualisera": "✅ hela tomten klippt", "falsifiera": "✅ går att motsäga", "ingen_annan_kan_saga": "✅ vår fråga, vårt svar" },
     { "rad": "De slutar bära trimmern i armarna och låter selen göra jobbet.", "visualisera": "✅ selen tar över", "falsifiera": "✅ ja/nej", "ingen_annan_kan_saga": "✅ vår produkt" },
-    { "rad": "Bäverbutikens axelbälte är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur.", "visualisera": "✅ remmar, höftplatta, krok", "falsifiera": "✅ fakta ur produktsidan och bilderna", "ingen_annan_kan_saga": "✅ vårt bälte" },
+    { "rad": "Det här axelbältet är ett justerbart nylonbälte med breda axelremmar, en svart höftplatta där kroken sitter och en stadig metallkrok som gör det snabbt att haka i och ur.", "visualisera": "✅ remmar, höftplatta, krok", "falsifiera": "✅ fakta ur produktsidan och bilderna", "ingen_annan_kan_saga": "✅ vårt bälte" },
     { "rad": "Gör som dem → ta ett axelbälte för 599 kr", "visualisera": "✅ ett bälte, ett pris", "falsifiera": "✅ priset står på sidan", "ingen_annan_kan_saga": "✅ vårt pris" },
     { "rad": "Jag ska vara ärlig:", "visualisera": "❌ abstrakt — behålls ordagrant, det är blockets fasta rubrik i mallen", "falsifiera": "❌", "ingen_annan_kan_saga": "❌" },
     { "rad": "vi köpte in för mycket.", "visualisera": "✅ pallarna på lagret", "falsifiera": "✅ lagret går att se", "ingen_annan_kan_saga": "❌ en konkurrent kan säga det — behålls, det är sidans premiss" },

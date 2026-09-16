@@ -9,6 +9,7 @@ import {
   lasMall, goJson, checksum, taggaStoraTal, avtaggaStoraTal, lasJson, skrivJson, talText,
   copyUrMall, byggSida, granskaCopy, granskaChecksummor, tillGempages, urGempages, lasAvSida,
   renderaText, textUrHtml, htmlAv, svensktDatum, priserI, bytIdn, lasCopy, sattCopy, MALL_FIL,
+  brandProfil, kandaBrand, brandOrd, forfattarHtml, sidfotHtml, OBRANDAD, allaElement,
 } from '../gempages.mjs';
 
 const { mall, platser, manifest } = lasMall();
@@ -16,6 +17,8 @@ const MOTOR = {
   url: 'https://baverbutiken.se/products/marin-motorholje-420d-universellt-skydd',
   kortTitel: 'Motorhölje', slug: 'motorholje', pris: 299, jamforpris: 367, prisText: '299 kr', jamforprisText: '367 kr',
 };
+// Mallen ÄR Bäverbutikens sida — rundturen kräver brandprofilen. Standard (utan brand) är obrandad.
+const BAVER = 'baverbutiken';
 
 test('goJson skriver varje sektions component exakt som GemPages (Go) gjorde', () => {
   for (const s of mall.pageSections) assert.equal(goJson(JSON.parse(s.component)), s.component, s.cid);
@@ -41,7 +44,7 @@ test('copy ur mallen → byggSida ger tillbaka exakt samma sida (rundtur)', () =
   assert.match(copy.hero.rubrik, /^Vi beställde in för många motorhöljen/);
   assert.equal(copy.punkter[4].rubrik, '**5. Ett billigt hölje är dyrare än inget**');
   assert.deepEqual(copy.hero.sammanfattning.length, 2);
-  const { sida, rapport } = byggSida({ mall, platser, produkt: MOTOR, copy, datum: '2026-08-04' });
+  const { sida, rapport } = byggSida({ mall, platser, produkt: MOTOR, copy, datum: '2026-08-04', brand: BAVER });
   for (const s of sida.pageSections) {
     const o = mall.pageSections.find((x) => x.cid === s.cid);
     assert.equal(s.component, o.component, s.cid);
@@ -51,7 +54,78 @@ test('copy ur mallen → byggSida ger tillbaka exakt samma sida (rundtur)', () =
   assert.equal(sida.handle, mall.handle);
   assert.equal(rapport.lankar, 8);
   assert.equal(rapport.texter.length, Object.keys(platser.text).length);
-  assert.deepEqual(granskaCopy(copy, MOTOR, platser).fel, []);
+  assert.deepEqual(rapport.brand, { id: 'baverbutiken', namn: 'Bäverbutiken', forfattare: 'Anders från Bäverbutiken', logga: true });
+  assert.deepEqual(granskaCopy(copy, MOTOR, platser, { brand: BAVER }).fel, []);
+});
+
+test('utan brand är sidan obrandad: Anders på lagret, logga + streck dolda, bara reklammärkningen i sidfoten', () => {
+  const copy = copyUrMall(mall, platser);
+  copy.lyckas.stycken[1] = copy.lyckas.stycken[1].replace('Bäverbutikens marina motorhölje', 'Det marina motorhöljet');
+  const { sida, rapport } = byggSida({ mall, platser, produkt: MOTOR, copy, datum: '2026-08-04' });
+  assert.deepEqual(rapport.brand, { id: null, namn: null, forfattare: 'Anders på lagret', logga: false });
+  assert.equal(granskaChecksummor(sida).length, 0);
+  const perCid = new Map(sida.pageSections.map((s) => [s.cid, JSON.parse(s.component)]));
+  const el = (cid, uid) => allaElement(perCid.get(cid)).find((e) => e.uid === uid);
+  assert.equal(el('gKDLMvyzHn', 'g5knyehVEx').settings.text, '<p>Av <strong>Anders på lagret.</strong></p>');
+  assert.equal(el('gFr4QMkKJc', 'gePKcDJ1a3').settings.text, '<p>OBS: Detta är reklam.</p>');
+  assert.deepEqual(el('gFr4QMkKJc', 'gwJwnj2Az7').advanced.d, { desktop: false, mobile: false, tablet: false }, 'loggan dold');
+  assert.deepEqual(el('gFr4QMkKJc', 'gnjSBAEvhs').advanced.d, { desktop: false, mobile: false, tablet: false }, 'strecket dolt');
+  assert.match(el('gFr4QMkKJc', 'gwJwnj2Az7').settings.image.src, /Namnlos_design_3/, 'bilden ligger kvar, bara dold');
+  const dolda = lasAvSida(sida).filter((r) => r.dold).map((r) => r.uid).sort();
+  assert.deepEqual(dolda, ['gnjSBAEvhs', 'gwJwnj2Az7'], 'lasAvSida märker exakt loggan och strecket som dolda');
+  assert.equal(lasAvSida(mall).filter((r) => r.dold).length, 0, 'mallen har inget dolt på alla skärmar');
+  // Ingenting på sidan nämner Bäverbutiken längre — förutom knapparnas länk till källbutiken.
+  const texter = lasAvSida(sida).filter((r) => r.tag !== 'Image').map((r) => r.text).join('\n');
+  assert.ok(!/bäverbutiken|baverbutiken/i.test(texter), 'inga brandnamn i texterna');
+  // Skillnaden mot mallen är exakt hero-sektionen (författarraden) och sidfoten.
+  const andrade = sida.pageSections.filter((s) => s.component !== mall.pageSections.find((x) => x.cid === s.cid).component).map((s) => s.cid).sort();
+  assert.deepEqual(andrade, ['gFr4QMkKJc', 'gKDLMvyzHn', 'gZwRqjNDfR'].sort());
+  // …och gZwRqjNDfR bara för att lyckas-texten skrevs om ovan.
+  const { sida: igen } = byggSida({ mall, platser, produkt: MOTOR, copy: copyUrMall(mall, platser), datum: '2026-08-04' });
+  assert.deepEqual(igen.pageSections.filter((s) => s.component !== mall.pageSections.find((x) => x.cid === s.cid).component).map((s) => s.cid).sort(), ['gFr4QMkKJc', 'gKDLMvyzHn']);
+});
+
+test('brandprofilen: obrandad som standard, baverbutiken ur filen, fel på okänt id och trasig logga', () => {
+  assert.deepEqual(brandProfil(null), { ...OBRANDAD });
+  assert.deepEqual(brandProfil(undefined).forfattare, 'Anders på lagret');
+  assert.deepEqual(brandProfil(brandProfil(null)), { ...OBRANDAD }, 'idempotent: en upplöst obrandad profil går igenom');
+  assert.deepEqual(brandProfil(brandProfil('baverbutiken')), brandProfil('baverbutiken'), 'idempotent: en upplöst brandprofil också');
+  assert.ok(kandaBrand().includes('baverbutiken'));
+  const b = brandProfil('baverbutiken');
+  assert.equal(b.namn, 'Bäverbutiken');
+  assert.equal(b.support, 'kundsupport@baverbutiken.se');
+  assert.equal(b.logga.width, 1024);
+  assert.throws(() => brandProfil('finns-inte'), /Okänt brand "finns-inte"/);
+  assert.throws(() => brandProfil('../mall/sida'), /Okänt brand/);
+  assert.throws(() => brandProfil({ namn: 'X', logga: { src: 'https://x' } }), /loggan behöver/);
+  assert.throws(() => brandProfil({ forfattare: 'X' }), /saknar "namn"/);
+  assert.equal(brandProfil({ namn: 'HeimGuard' }).forfattare, 'Anders från HeimGuard');
+  assert.deepEqual(brandOrd(b).sort(), ['baverbutiken', 'baverbutiken.se', 'bäverbutiken', 'bäverbutiken.se']);
+  assert.deepEqual(brandOrd(OBRANDAD), []);
+  // HTML-raderna ger exakt mallens text för Bäverbutiken
+  assert.equal(forfattarHtml(b), '<p>Av <strong>Anders från Bäverbutiken.</strong></p>');
+  assert.equal(sidfotHtml(b), '<p><br><a href="mailto:kundsupport@baverbutiken.se">kundsupport@baverbutiken.se</a><br>Bäverbutiken.se<br>OBS: Detta är reklam.</p>');
+  assert.equal(sidfotHtml(brandProfil({ namn: 'HeimGuard', doman: 'heimguard.se' })), '<p><br>heimguard.se<br>OBS: Detta är reklam.</p>');
+  assert.equal(sidfotHtml(OBRANDAD), '<p>OBS: Detta är reklam.</p>');
+});
+
+test('granskaCopy stoppar brandnamn i en obrandad copy, släpper det egna brandet', () => {
+  const copy = copyUrMall(mall, platser); // nämner "Bäverbutikens marina motorhölje"
+  const fel = granskaCopy(copy, MOTOR, platser).fel;
+  assert.equal(fel.length, 1);
+  assert.match(fel[0], /lyckas\.stycken: nämner "Bäverbutiken" — sidan är obrandad .* --brand baverbutiken/);
+  assert.deepEqual(granskaCopy(copy, MOTOR, platser, { brand: 'baverbutiken' }).fel, []);
+  assert.deepEqual(granskaCopy(copy, MOTOR, platser, { brand: { namn: 'Bäverbutiken' } }).fel, []);
+  // ett annat brand får inte heller nämna Bäverbutiken; utan å/ä/ö och domänen fångas också
+  assert.match(granskaCopy(copy, MOTOR, platser, { brand: { namn: 'HeimGuard' } }).fel[0], /brandad som HeimGuard/);
+  const c2 = copyUrMall(mall, platser);
+  c2.lyckas.stycken[1] = 'Ett hölje du hittar på baverbutiken.se i vanliga fall, med samma tyg och samma garanti som alltid, sytt för att hålla säsong efter säsong ute på bryggan.';
+  assert.match(granskaCopy(c2, MOTOR, platser).fel[0], /lyckas\.stycken: nämner "Bäverbutiken"/);
+  const c3 = copyUrMall(mall, platser);
+  c3.lyckas.stycken[1] = c3.lyckas.stycken[1].replace('Bäverbutikens marina motorhölje', 'Det marina motorhöljet');
+  assert.deepEqual(granskaCopy(c3, MOTOR, platser).fel, []);
+  // uttrycklig lista vinner över brand-mappen
+  assert.deepEqual(granskaCopy(copy, MOTOR, platser, { forbjudnaBrand: [] }).fel, []);
 });
 
 test('byggSida byter text, länk, datum, bilder och räknar om checksummorna', () => {
@@ -60,6 +134,7 @@ test('byggSida byter text, länk, datum, bilder och räknar om checksummorna', (
   copy.punkter[0].text = 'Första stycket med **fet** text.\n\nAndra stycket.';
   const produkt = { url: 'https://baverbutiken.se/products/axelbalte', kortTitel: 'Axelbälte för Trimmer', slug: 'axelbalte-for-trimmer', pris: 599, jamforpris: 789 };
   const bilder = { punkt1: { src: 'https://cdn.shopify.com/x/a.png', width: 1000, height: 800 }, lyckas: { src: 'https://cdn.shopify.com/x/b.jpg', width: 1500, height: 1500 } };
+  copy.lyckas.stycken[1] = copy.lyckas.stycken[1].replace('Bäverbutikens marina motorhölje', 'Det marina motorhöljet');
   const { sida, rapport } = byggSida({ mall, platser, produkt, copy, bilder, datum: '2026-09-16' });
   assert.equal(sida.name, 'Axelbälte för Trimmer – Lagerrensning (listicle)');
   assert.equal(sida.handle, 'axelbalte-for-trimmer-lagerrensning');
@@ -143,7 +218,7 @@ test('svensktDatum', () => {
 
 test('tillGempages → urGempages ger samma sida med rätt checksummor', () => {
   const copy = copyUrMall(mall, platser);
-  const { sida } = byggSida({ mall, platser, produkt: MOTOR, copy, datum: '2026-08-04' });
+  const { sida } = byggSida({ mall, platser, produkt: MOTOR, copy, datum: '2026-08-04', brand: BAVER });
   const zip = tillGempages(sida, manifest);
   const { manifest: m, info, sidor } = urGempages(zip);
   assert.equal(m.export_version, 'export_v2');
@@ -180,7 +255,8 @@ test('Axels egen axelbältessida är en kopia av mallen: samma sektioner, samma 
   const copy = copyUrMall(sida, platser);
   assert.equal(copy.punkter.length, 5);
   assert.match(copy.hero.rubrik, /^Vi beställde av misstag för många axelbälten/);
-  assert.deepEqual(granskaCopy(copy, { pris: 599, jamforpris: 789 }, platser).fel, []);
+  assert.deepEqual(granskaCopy(copy, { pris: 599, jamforpris: 789 }, platser, { brand: BAVER }).fel, []);
+  assert.equal(granskaCopy(copy, { pris: 599, jamforpris: 789 }, platser).fel.length, 1, 'Axels egen copy nämner Bäverbutiken — stoppas obrandad');
 });
 
 function allaElementUids(o, acc = []) {

@@ -21,7 +21,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { join, dirname, extname } from 'node:path';
+import { join, dirname, extname, basename } from 'node:path';
 import { somDokument } from './html.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
@@ -127,16 +127,17 @@ export function skarmdump(indexFil, utFil, { bredd, hojd, chrome = CHROME }) {
   return { ok: true };
 }
 
-export async function forhandsvisa(handle, { baraHtml = false, logg = console.log } = {}) {
+export async function forhandsvisa(handle, { baraHtml = false, logg = console.log, htmlFil = null } = {}) {
   const mapp = join(HAR, 'output', handle);
-  const htmlFil = readdirSync(mapp).find((f) => f.endsWith('-lagerrensning.html'));
-  if (!htmlFil) throw new Error(`Ingen *-lagerrensning.html i ${mapp} — kör bygg.mjs först.`);
-  const fragment = readFileSync(join(mapp, htmlFil), 'utf8');
+  // Utan angiven fil: källbutikens (<slug>-lagerrensning.html). En --lank-byggd fil har butikens värd som suffix.
+  const fil = htmlFil ?? (() => { const f = readdirSync(mapp).find((x) => x.endsWith('-lagerrensning.html')); return f ? join(mapp, f) : null; })();
+  if (!fil) throw new Error(`Ingen *-lagerrensning.html i ${mapp} — kör bygg.mjs först.`);
+  const fragment = readFileSync(fil, 'utf8');
   const fvMapp = join(mapp, 'forhandsvisning');
   logg(`Förhandsvisning: ${fvMapp}`);
   const lokal = await lokalisera(fragment, fvMapp, { logg });
   const index = join(fvMapp, 'index.html');
-  writeFileSync(index, somDokument(lokal, { titel: htmlFil }));
+  writeFileSync(index, somDokument(lokal, { titel: basename(fil) }));
   const ut = { index, desktop: null, mobil: null };
   if (baraHtml) return ut;
   const pw = await medPlaywright(index, fvMapp, { logg });

@@ -20,7 +20,7 @@
 // Texterna skrivs med samma regler som .gempages-vägen: htmlAv() escapar allt
 // och gör **fet** till <strong>. Ingen annan HTML släpps igenom från copyn.
 
-import { htmlAv, styckenAv, svensktDatum, lasCopy, allaElement } from './gempages.mjs';
+import { htmlAv, styckenAv, svensktDatum, lasCopy, allaElement, brandProfil } from './gempages.mjs';
 
 const IKONER = {
   1: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM138,80v96a6,6,0,0,1-12,0V91.21L111.33,101a6,6,0,0,1-6.66-10l24-16A6,6,0,0,1,138,80Z',
@@ -108,13 +108,15 @@ export function mallBilder(mall, platser) {
 }
 
 /**
- * Sidan som ett HTML-fragment (<style> + <div class="lr">). Alla nio bildplatser
- * fylls: `bilder` (produktens) vinner, `fasta` (mallens) är reserv.
+ * Sidan som ett HTML-fragment (<style> + <div class="lr">). Bildplatserna
+ * fylls: `bilder` (produktens) vinner, `fasta` (mallens) är reserv. Loggan
+ * kommer ur brandprofilen, aldrig ur `fasta` — obrandad sida har ingen.
  *
- *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum })
+ *   renderaHtml({ copy, produkt: { url, kortTitel }, bilder, fasta, datum, brand })
  */
-export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum }) {
+export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null }) {
   if (!produkt?.url) throw new Error('renderaHtml: produkten saknar url.');
+  const b = brandProfil(brand);
   const bild = (plats) => {
     const b = bilder[plats]?.src ? bilder[plats] : fasta[plats];
     if (!b?.src) throw new Error(`renderaHtml: ingen bild för platsen "${plats}".`);
@@ -166,9 +168,9 @@ ${CSS}
       <div class="lr-hero-rad">
         <div>${knapp(text('hero.knapp'), url)}</div>
         <div class="lr-forfattare">
-          ${bildTag(bild('hero'), 'Anders från Bäverbutiken')}
+          ${bildTag(bild('hero'), b.forfattare)}
           <div>
-            <p>Av <strong>Anders från Bäverbutiken.</strong></p>
+            <p>Av <strong>${htmlAv(b.forfattare)}.</strong></p>
             <p class="lr-datum">Senast uppdaterad ${svensktDatum(datum)}.</p>
           </div>
         </div>
@@ -190,7 +192,7 @@ ${punkter}
       </div>
       <div class="lr-block">
         <h2 class="lr-h2">${rubrik('arlig.rubrik')}</h2>
-        <div class="lr-media">${bildTag(bild('arlig'), 'Bäverbutikens lager')}</div>
+        <div class="lr-media">${bildTag(bild('arlig'), 'Lagret')}</div>
         <div class="lr-text">${stycken(text('arlig.stycken'))}</div>
       </div>
       <div class="lr-block">
@@ -204,12 +206,16 @@ ${punkter}
 </section>
 <footer class="lr-sidfot">
   <div class="lr-inre">
-    <div class="lr-logga">
-      ${bildTag(bild('sidfot'), 'Bäverbutiken')}
+${b.logga ? `    <div class="lr-logga">
+      ${bildTag(b.logga, b.namn)}
       <span>|</span>
     </div>
-    <hr>
-    <p class="lr-kontakt"><a href="mailto:kundsupport@baverbutiken.se">kundsupport@baverbutiken.se</a><br>Bäverbutiken.se<br>OBS: Detta är reklam.</p>
+` : ''}    <hr>
+    <p class="lr-kontakt">${[
+      b.support ? `<a href="mailto:${htmlAv(b.support)}">${htmlAv(b.support)}</a>` : null,
+      b.doman ? htmlAv(b.doman) : null,
+      'OBS: Detta är reklam.',
+    ].filter(Boolean).join('<br>')}</p>
   </div>
 </footer>
 </div>`;

@@ -1,5 +1,5 @@
 {
-  "byggd": "2026-09-16T06:36:33.651Z",
+  "byggd": "2026-09-16T07:00:44.615Z",
   "datumrad": "2026-09-16",
   "produkt": {
     "titel": "Axelbälte för Trimmer – Justerbart Nylonbälte",
@@ -57,6 +57,13 @@
   },
   "copy": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/copy.json",
   "bildplan": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte",
   "bilder": [
     {
       "plats": "punkt1",
@@ -119,50 +126,50 @@
     "mobil-sidfot": "/home/user/yognftnfgn/lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/forhandsvisning/mobil-sidfot.png"
   },
   "sida": {
-    "id": "636624770483344701",
+    "id": "635886656256791157",
     "namn": "Axelbälte för Trimmer – Lagerrensning (listicle)",
     "handle": "axelbalte-for-trimmer-lagerrensning"
   },
   "checksummor": [
     {
       "cid": "gUmta52rzP",
-      "checksum": "8f19c5b881e041630120d641608b00f05b324659e84090ced9f76e7122894c04"
+      "checksum": "35109637c3599a8d83f0535d84853d58776e7bd309911b431155cc556efac40c"
     },
     {
       "cid": "gMXzSEKTKF",
-      "checksum": "92e336b7cf995dba51a69fd5facaaf2963857828e16a58d8b77cc09f54315e3c"
+      "checksum": "f2c0c6c5a530b9f98dd81be7cce9e301cff0aed102bcf789e080bdb4662f2526"
     },
     {
       "cid": "gzr7fcjOKR",
-      "checksum": "ca4aaef5baf7b7114a0bf6250ff0c072fd91252482857a8ba96a837aaa8645c7"
+      "checksum": "55631396b6cf2ccd17da55b4dffa08e6468be1c44551fd2142499f817ce87e21"
     },
     {
       "cid": "gFUogNLoms",
-      "checksum": "1eecabd32080da993fc493eae700d6a675f84d7ef5e27e5dddd50a72cce64e48"
+      "checksum": "cb7b86b730d93b20e93afabc81df3a3a77a91d8eeac824b16c06a28e699f125d"
     },
     {
       "cid": "gKDLMvyzHn",
-      "checksum": "cfe441cd9e76e215ff1d0ad8cc9a44726307c6adc979d07a3a6696e7d4975f0b"
+      "checksum": "607aaae8b823eef11364d417fa6390a66fdc83d9f483933cbb73f4e8dd73245c"
     },
     {
       "cid": "gpAnhUOKAB",
-      "checksum": "740f3d5e2fd8fec0db10cf0afbb840591c8beb3aa293249a447a70d37390793a"
+      "checksum": "baba992c5177c1a7fbe992fa6b365a662c566c353e1e482c24509648e8156248"
     },
     {
       "cid": "gZwRqjNDfR",
-      "checksum": "5c50835ca3f4166449b790bcfa3ae0e7700567b8030b65db1b8afa050a36993d"
+      "checksum": "6d3cdbec5d0ebabbf72b85ee4d97e9114b54dc09bc4f92b99af1509e1c2abb98"
     },
     {
       "cid": "gFr4QMkKJc",
-      "checksum": "009005a80b00f623745d1d2b003f4982a5f4c26d1fba1395921cd9b86e3a94c9"
+      "checksum": "c381060ef9eb80f5ca46893e702ea0cc102e48f4d17779dbdfb3f6bea517237b"
     },
     {
       "cid": "gczQ124MUD",
-      "checksum": "9cab493f3fb9d41b8b074b58e08508596d5776b8120d30e927c9402971bf53f1"
+      "checksum": "ad5df3f2c3a9b1efd31133c48c5ae209405c7a2b64aa6d1dcb96cd835d79c800"
     },
     {
       "cid": "gNtZOEiSzZ",
-      "checksum": "a8dae0db795a63aaf52f4e8fdc76ad2da7decae45350d35a7fa2e50a8290b463"
+      "checksum": "07d9e834446464664c6a8723d08e106adebfc3b16b251a7cde26bed3eb88124e"
     }
   ],
   "bildUrler": [

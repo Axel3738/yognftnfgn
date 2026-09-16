@@ -1,5 +1,5 @@
 {
-  "_kommentar": "Platskartan: vilka element i mallen (lagerrensning/mall/sida.json) som byts per produkt. Nyckel → sektionens cid + elementets uid. `form` styr hur texten skrivs: ren = utan taggar (Heading), p = <p>…</p>, p-flera = flera stycken med <p>&nbsp;</p> emellan, sammanfattning = mallens fet-etikett + två stycken, knapp = <p>…</p> i både text och label. Bildplatser byter src + bredd/höjd i ALLA listade uids (mallen har en desktop- och en mobilbild per punkt). Fasta element (författarfoto, lagerbild, logga, sidfot, författarrad) byts aldrig av motorn — datumraden byts till körningens datum.",
+  "_kommentar": "Platskartan: vilka element i mallen (lagerrensning/mall/sida.json) som byts per produkt. Nyckel → sektionens cid + elementets uid. `form` styr hur texten skrivs: ren = utan taggar (Heading), p = <p>…</p>, p-flera = flera stycken med <p>&nbsp;</p> emellan, sammanfattning = mallens fet-etikett + två stycken, knapp = <p>…</p> i både text och label. Bildplatser byter src + bredd/höjd i ALLA listade uids (mallen har en desktop- och en mobilbild per punkt). `fasta` styrs av motorn själv, inte av copyn: datumraden får körningens datum; författarraden, sidfotens kontaktrad, loggan (bilder.sidfot) och strecket bredvid styrs av brandprofilen (lagerrensning/brand/<id>.json) — utan brand är sidan obrandad: 'Anders på lagret', logga + streck dolda via advanced.d, bara 'OBS: Detta är reklam.' i sidfoten. Författarfotot och lagerbilden byts aldrig.",
   "text": {
     "hero.rubrik":          { "cid": "gKDLMvyzHn", "uid": "gQqOoPJHpx", "form": "ren" },
     "hero.ingress":         { "cid": "gKDLMvyzHn", "uid": "gcRx4s-HQ4", "form": "p" },
@@ -32,6 +32,7 @@
   "fasta": {
     "hero.forfattare":      { "cid": "gKDLMvyzHn", "uid": "g5knyehVEx", "form": "p" },
     "hero.datum":           { "cid": "gKDLMvyzHn", "uid": "gyzO0V7arV", "form": "p" },
+    "sidfot.streck":        { "cid": "gFr4QMkKJc", "uid": "gnjSBAEvhs", "form": "p" },
     "sidfot.text":          { "cid": "gFr4QMkKJc", "uid": "gePKcDJ1a3", "form": "p" }
   },
   "knappar": ["gyK8xEtS-K", "ctaPunkt2", "ctaPunkt3", "ctaPunkt4", "ctaPunkt5", "ctaPunkt6", "gSEQOPz2mc", "gfXRqAKCQz"],
@@ -43,8 +44,8 @@
     "punkt4": { "cid": "gpAnhUOKAB", "uids": ["imgMob5", "g8FQhJxsPM"], "roll": "Värdet/sammanhanget (mallen: marina full av båtar)." },
     "punkt5": { "cid": "gzr7fcjOKR", "uids": ["gkk6_gC4qd", "g1Lydu5nRs"], "roll": "Produkten i bruk, i sin miljö (mallen: höljet på motorn vid bryggan)." },
     "lyckas": { "cid": "gZwRqjNDfR", "uids": ["gzVoxbhYOT"], "roll": "Produktbilden: hela sortimentet/varianterna på vit bakgrund (mallen: fem färger)." },
-    "arlig":  { "cid": "gZwRqjNDfR", "uids": ["g8FQhJxsPM"], "roll": "Lagret fullt av Bäverbutiken-kartonger. Byts normalt inte." },
-    "sidfot": { "cid": "gFr4QMkKJc", "uids": ["gwJwnj2Az7"], "roll": "Bäverbutikens logga. Byts aldrig." }
+    "arlig":  { "cid": "gZwRqjNDfR", "uids": ["g8FQhJxsPM"], "roll": "Lagret fullt av kartonger (anonyma, inget läsbart brand — tittad 2026-09-16). Byts normalt inte, funkar obrandad." },
+    "sidfot": { "cid": "gFr4QMkKJc", "uids": ["gwJwnj2Az7"], "roll": "Loggan i sidfoten. Styrs av brandprofilen: dold när sidan är obrandad, brandets logga annars. Aldrig via bildplanen." }
   },
   "bilder_som_byts": ["punkt1", "punkt2", "punkt3", "punkt4", "punkt5", "lyckas"]
 }
