@@ -618,7 +618,7 @@ människor) + produktbilderna 4, 5, 1, pris **599 kr istället för 789 kr**
 avläst på produktsidan samma dag. Inget betyg i copyn — sidan visar 4,50/12
 medan DNA:t sa 4,75/8. Leverans: **`.gempages`-filen** (GemPages tar bara
 sådana, inte HTML — Axel rättade sig samma dag):
-`lagerrensning/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages`
+`listicle/output/axelbalte-for-trimmer-justerbart-nylonbalte/axelbalte-for-trimmer-lagerrensning.gempages`
 (HTML-versionen bredvid är bara förhandsvisningens underlag). **Ombyggd
 obrandad samma kväll** (Axels beslut: sidan ska funka i en annan butik för
 samma produkt): "Anders på lagret", ingen logga, bara "OBS: Detta är reklam."
@@ -626,6 +626,10 @@ i sidfoten, "Bäverbutikens axelbälte" → "det här axelbältet" i lyckas-bloc
 knapparna pekar fortfarande på Bäverbutikens produktsida (`--lank` för en
 annan butik). ⚠ Axel har redan en egen listicle för produkten sedan
 2026-08-16 (`axelbalte-trimmer-listicle`, exporten ligger som
-`lagerrensning/mall/exempel-axelbalte-2026-08-16.gempages`) — den här
-filen är ett test av kommandot, inte en sida som måste importeras. Blivande
-adress om den importeras: `baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning`.
+`listicle/mall/exempel-axelbalte-2026-08-16.gempages`) — den här
+filen är ett test av kommandot. **Samma kväll: GemPages skrotat, sidan
+publicerad direkt i butiken** via `listicle/butik.mjs` (egen sidmall utan
+header/footer, tre temafiler på det publicerade temat "UTKAST utan popup
+2026-08-28"): **https://baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning**
+— live 2026-09-16, läst tillbaka som kund utan header/footer/meny,
+Shopifys pixlar i sidhuvudet. Ingen annons pekar dit ännu.

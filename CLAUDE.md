@@ -89,10 +89,11 @@ inte röras utan att Axel ber om det.
    säga det) och testet redovisas i leveransen. Strategi, analys, klassificering
    och briefstruktur görs alltid av huvudsessionen. Aldrig tvärtom.
    ⚠️ **Undantag, Axels beslut 2026-09-16: landningssidornas copy
-   (`/lagerrensning`) skrivs av huvudsessionen själv** ("jag tror vi ska
-   använda oss av dig eller Fable att skriva copyn"), med läsbarhetstestet i
-   kommandot utöver tre-frågorstestet — Axels återkommande klagomål är att
-   texten inte låter naturlig och att övergångarna mellan meningarna hackar.
+   (`/lagerrensning`, `/vi-testade`, `/anledningar`, `/listiclar`) skrivs av
+   huvudsessionen själv** ("jag tror vi ska använda oss av dig eller Fable
+   att skriva copyn"), med läsbarhetstestet i kommandot utöver
+   tre-frågorstestet — Axels återkommande klagomål är att texten inte låter
+   naturlig och att övergångarna mellan meningarna hackar.
 7. **Produktminnet ligger i repot, inte i chatten:** `products/<id>/dna.md`
    (Creative DNA), `products/<id>/batch-log.md` (batcher + hypoteser + utfall),
    `products/<id>/backlog.md` (koncept som väntar). Läs dem innan du agerar,
@@ -215,7 +216,7 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ## Kommandona (Axels gränssnitt)
 
-20 filer i `.claude/commands/`. Detta är produkten — resten är stödsystem.
+40 filer i `.claude/commands/` (räknade 2026-09-16). Detta är produkten — resten är stödsystem.
 
 | Kommando | Vad |
 |----------|-----|
@@ -248,7 +249,10 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 | `/kundtjanst [--alla\|--brand <id>] [--discord]` | **Måndag 07:00, alla brands:** supportmejlen (Loopia/IMAP) + Shopify → återkommande toppärenden, chargeback-varningar, ranking 0–100 per brand, VA:ns lista på engelska. Läs-bara. `kundtjanst/README.md` |
 | `/tvistkoll [--alla] [--discord]` | **Varje dag 07:00, alla brands:** bara Shopify-tvisterna → larm i Discord om någon har evidence-deadline inom 3 dagar. Sekunder, inga mejl, inga filer. Täpper luckan mellan veckorapporterna |
 | `/mejl` | **Bäverbutikens kundmejl** (orderbekräftelse, leverans, återbetalning …) med erbjudandet "köp igen → välj en gratisprodukt" — bygger mallarna ur Shopify, publicerar sidan Axel klistrar från. `mejl/README.md` |
-| `/lagerrensning <produktlänk>` | **Kopiera lagerrensnings-sidan (listicle) till en ny produkt:** motorhöljets GemPages-export (`lagerrensning/mall/`) → ny copy **skriven av huvudsessionen (Fable), med läsbarhetstest** (Axels beslut 2026-09-16 — undantag från regel 6), produktens riktiga pris/jämförpris ur produktsidan, produktbilder eller kie.ai-bilder (läggs på Shopifys CDN) → **`lagerrensning/output/<handle>/<slug>-lagerrensning.gempages` som Axel importerar i GemPages (Pages → Import page)** — GemPages tar bara sådana filer, inte HTML (Axel 2026-09-16); filen får nya sid-id:n så motorhöljets riktiga sida aldrig rörs. En HTML-version byggs bredvid bara som underlag för skärmdumparna (desktop + mobil, offline) som sessionen tittar på. Prisspärr: inga andra siffror än produktsidans, inga procent. **Obrandad som standard** (Axels beslut 2026-09-16 kväll: sidan ska funka om en annan butik publicerar den för samma produkt) — "Anders på lagret", ingen logga, bara "OBS: Detta är reklam." i sidfoten, inget butiksnamn i copyn (motorn stoppar det); `--brand baverbutiken` bara på Axels begäran, `--lank <annan butiks produktlänk>` för knapparna i en annan butik. `lagerrensning/README.md` |
+| `/lagerrensning <produktlänk>` | **Kopiera lagerrensnings-sidan (listicle) till en ny produkt — direkt in i butiken:** motorhöljets GemPages-export (`listicle/mall/`) → ny copy **skriven av huvudsessionen (Fable), med läsbarhetstest** (Axels beslut 2026-09-16 — undantag från regel 6), produktens riktiga pris/jämförpris ur produktsidan, produktbilder eller kie.ai-bilder (läggs på Shopifys CDN) → **sidan `/pages/<slug>-lagerrensning` i butiken, utan header/footer/meny** (Axels beslut 2026-09-16 kväll: "skippa GemPages-delen, det är jättedyrt när jag ska installera GemPages på varje enda butik"). `listicle/butik.mjs` skriver tre temafiler en gång per butik (`layout/listicle.liquid` — ren layout med `content_for_header` kvar så pixlarna följer med, `templates/page.listicle.liquid`, `assets/listicle.css`), skapar/uppdaterar sidan via API och läser den tillbaka som kund (ingen header, ingen footer, ingen meny). `--butik baverbutiken` (standard för baverbutiken.se-länkar; appen "Bäver uppladdare" fick `write_themes` + `write_content` av Axel 2026-09-16) eller ett OPS-id. `--gempages` ger dessutom `.gempages`-filen (tillval). Skärmdumpar desktop + mobil tas offline och tittas på av sessionen. Prisspärr: inga andra siffror än produktsidans, inga procent. **Obrandad som standard** (sidan ska funka om en annan butik publicerar den för samma produkt) — "Anders på lagret", ingen logga, bara "OBS: Detta är reklam." i sidfoten, inget butiksnamn i copyn (motorn stoppar det), knapparna relativa `/products/<handle>`; `--brand baverbutiken` bara på Axels begäran. Första sidan live 2026-09-16: https://baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning. Utdata `listicle/output/lagerrensning/<handle>/`. `listicle/README.md` |
+| `/vi-testade <produktlänk>` | **"Vi testade PRODUKTEN i N dagar" — samma mall och motor som `/lagerrensning`, koncept `vi-testade`** (`listicle/koncept/vi-testade.json`), sidan `/pages/<slug>-vi-testade`. Perioden väljs efter produkten (Axels regel 2026-09-16: skydd/överdrag = en hel vinter/säsong med jämförelsen "vad hade hänt utan den", redskap = en hel sommar, förbrukning = 14–30 dagar, teknik = 30 dagar) — tabellen står i kommandofilen; motorn varnar om rubriken saknar perioden. Inga påhittade mätvärden: enda siffran är priset. Fem punkter i tidsordning (dag 1 → första gången det spelade roll → utan den → det som förvånade → domen). Författarrad "Anders, som testade den själv". Kommandofilen bär bara det som skiljer — järnregler, läsbarhetstest och stegen är `/lagerrensning`s |
+| `/anledningar <produktlänk> [7]` | **"N anledningar till att …" — samma mall och motor, koncept `anledningar`**, 5 punkter som standard, 7 när Axel skriver `7` (motorn klonar mallens punkt 4/5-sektioner till punkt 6/7 med nya id:n och ikonerna 6/7). Sidan `/pages/<slug>-5-anledningar` eller `-7-anledningar` — båda kan ligga uppe samtidigt. Axels fråga 2026-09-16 (5 eller 7? ingen data avgör): rekommendationen är att bygga båda och låta två annonsgrupper avgöra. Anledningarna = produktens bevisade vinklar i fallande ordning; vid 7 måste punkt 6–7 bära eget problembyggande, annars fem. Motorn varnar om rubriken saknar antalet |
+| `/listiclar <produktlänk> [5 7] [--butik id]` | **Alla tre listiclarna för en produkt i ett svep** (Axels fråga 2026-09-16: "går det bra att skicka alla tre kommandon samtidigt?" — ja): kör `/lagerrensning`, `/vi-testade` och `/anledningar` efter varandra, tre olika copyn (ingen delad mening, tre olika hero-löften), delade bilder (kopiera `bildplan.json` + `bilder.json` mellan koncepten så kie körs en gång), tre sidor i butiken, en commit. Stoppar en sida byggs de andra klart och stoppet rapporteras |
 
 ### Nattrutinerna
 
