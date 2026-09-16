@@ -24,7 +24,7 @@
 // HTML i copyn, förbjuden fras, saknad text- eller bildplats. Skriver aldrig
 // en fil som inte går att läsa tillbaka med rätt checksummor.
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { join, dirname, resolve } from 'node:path';
 import { hamtaProdukt } from './produkt.mjs';
@@ -44,16 +44,29 @@ function arg(argv, namn) {
 
 const lasJsonFil = (fil) => JSON.parse(readFileSync(fil, 'utf8'));
 
-/** Utdrag ur products/<id>/dna.md om produkten har ett minne — subagentens faktakälla nr 2. */
-function hittaDna(handle) {
-  const karta = join(ROT, 'products', 'products.json');
-  if (!existsSync(karta)) return null;
-  const produkter = lasJsonFil(karta).products ?? [];
-  for (const p of produkter) {
-    const dna = join(ROT, 'products', p.id, 'dna.md');
+/**
+ * products/<id>/dna.md om produkten har ett minne — faktakälla nr 2 för copyn.
+ * Bäverbutikens produkter står i products.json; OPS-butikernas minne ligger i
+ * products/<butik>/dna.md eller products/<butik>/<produkt>/dna.md (TackleBay,
+ * CaraShell) och nås inte via products.json — därför läses alla dna.md-filer
+ * två nivåer ner. Träff = filen nämner produktens /products/<handle>.
+ */
+export function hittaDna(handle, rot = ROT) {
+  const mapp = join(rot, 'products');
+  if (!existsSync(mapp)) return null;
+  const kandidater = [];
+  const karta = join(mapp, 'products.json');
+  if (existsSync(karta)) for (const p of lasJsonFil(karta).products ?? []) kandidater.push(p.id);
+  for (const d of readdirSync(mapp, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    kandidater.push(d.name);
+    for (const u of readdirSync(join(mapp, d.name), { withFileTypes: true })) if (u.isDirectory()) kandidater.push(`${d.name}/${u.name}`);
+  }
+  for (const id of [...new Set(kandidater)]) {
+    const dna = join(mapp, id, 'dna.md');
     if (!existsSync(dna)) continue;
     const text = readFileSync(dna, 'utf8');
-    if (text.includes(`/products/${handle}`)) return { id: p.id, fil: `products/${p.id}/dna.md` };
+    if (text.includes(`/products/${handle}`)) return { id, fil: `products/${id}/dna.md` };
   }
   return null;
 }

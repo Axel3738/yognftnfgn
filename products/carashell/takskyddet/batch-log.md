@@ -455,3 +455,26 @@ koden togs bort vid mergen. Discord-rapporten från den här sessionen (11:5x, "
 uploaded") skrevs FÖRE de fyra uppladdningarna och är överspelad. Samma eftermiddag
 fick USA egen domän (carashell.com), 90-dagars garanti på /en och termoskyddet sin
 US-kampanj — se `factory/PROCESS.md` punkt 19–20 och termoskyddets batch-log.
+
+---
+
+## LP lagerrensning byggd 2026-09-16 (`/lagerrensning https://carashell.se/products/takskyddet`)
+
+Fil `lagerrensning/output/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.gempages`
+(Axel importerar i GemPages → Pages → Import page; sidan blir Draft med handle
+`takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning`). **Obrandad** — inget
+butiksnamn i copyn, "Anders på lagret", bara "OBS: Detta är reklam." i sidfoten;
+knapparna pekar på `carashell.se/products/takskyddet`. Pris **1 129 / 1 469 kr**
+lästa ur `/products/takskyddet.json` samma dag. Copyn skriven av huvudsessionen
+(kommandots regel 3), fakta bara ur produktsidan + `dna.md`; **14 dagars
+ångerrätt enligt svensk lag** i stället för mallens 30 dagars garanti, därför
+heter sista blocket "Om det inte känns rätt". De fem punkterna: du ser aldrig
+taket → höstsopningen räcker inte → fukten går inte att torka bort → skadan är
+summan av alla dagar → helöverdraget blir liggande i förrådet. Bilder: punkt 1–4
+kie.ai (taket med löv och pöl vid luckan, husvagnen i regn med sopborste,
+fuktfläcken i innertaket, uppställningsplatsen i frost; punkt 2 genererad om en
+gång — första bilden hade ett påhittat märke på fronten), punkt 5 och lyckas
+produktbilderna 1 och 2. Genererade bilder ligger på Bäverbutikens CDN via
+DRAFT-produkten `lp-bildarkiv` (appen saknar `write_files`). Inte en annons —
+räknas inte mot kvoten. Sidan är ett landningsalternativ till produktsidan för
+befintliga annonser; den mäts som vilken LP som helst, aldrig som creative.

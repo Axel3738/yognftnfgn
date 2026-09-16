@@ -1,0 +1,180 @@
+{
+  "byggd": "2026-09-16T10:50:10.732Z",
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "kortTitel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "handle": "takskyddet",
+    "url": "https://carashell.se/products/takskyddet",
+    "typ": "",
+    "pris": 1129,
+    "jamforpris": 1469,
+    "prisText": "1 129 kr",
+    "jamforprisText": "1 469 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-hopvikt.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-spanne.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  },
+  "copy": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/copy.json",
+  "bildplan": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "https://carashell.se/products/takskyddet",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie → bildarkiv"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #1"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+      "width": 1200,
+      "height": 1200,
+      "kalla": "produkt #2"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.html",
+  "fil": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.gempages",
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/lagerrensning/output/takskyddet/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "635522130338778404",
+    "namn": "Taköverdrag Husvagn & Husbil 6,5 × 3 m – Lagerrensning (listicle)",
+    "handle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning"
+  },
+  "checksummor": [
+    {
+      "cid": "gUmta52rzP",
+      "checksum": "d69f1e47757ae2e5119670eb3c178b5971d3d7cc2ab56ff42f407ec3ebe73272"
+    },
+    {
+      "cid": "gMXzSEKTKF",
+      "checksum": "af1b0c1eb9e9c44aacfc957bd43f8913034a240110c84acbc6fe6d7d16cd0973"
+    },
+    {
+      "cid": "gzr7fcjOKR",
+      "checksum": "25feb8c27caa466ad2f7449653617aebfe50cf7d8addb65f136ec6c950159aeb"
+    },
+    {
+      "cid": "gFUogNLoms",
+      "checksum": "130b5689502de5940dc25981200a00587cc9176a7f483f3f872607324d1e6f45"
+    },
+    {
+      "cid": "gKDLMvyzHn",
+      "checksum": "e4487dc4ca735ef57c73dd5047db89f1240866e7ce693e40aec188ae68e429b6"
+    },
+    {
+      "cid": "gpAnhUOKAB",
+      "checksum": "c6e4c5f735da578e0a1fe7c606534e5d2822dfa365f027777ed5b96c1cccea4c"
+    },
+    {
+      "cid": "gZwRqjNDfR",
+      "checksum": "901992a4d2b3375d65aadd252020fd4ddee3c83cce2e6e2029722f4e70706081"
+    },
+    {
+      "cid": "gFr4QMkKJc",
+      "checksum": "ac1c03b317a24af06ca042b26dd5401e10e166eeec19028c9ac3c689de36d4d6"
+    },
+    {
+      "cid": "gczQ124MUD",
+      "checksum": "56ef4af113ca301bf84a71deb4d06084ffc601a275507be122cab608427caefb"
+    },
+    {
+      "cid": "gNtZOEiSzZ",
+      "checksum": "28a5b5ddf2a1cd75260bd40208f814c0943db0adbdec62cb76a337661e0249b7"
+    }
+  ],
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+    "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+    "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}
