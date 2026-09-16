@@ -911,3 +911,15 @@ amerikanska kampanjen i Magiborsten UK. De 4 bildannonserna ligger redan där, h
   symlänk `/usr/local/bin/ffmpeg` → imageio-binären, och en `ffprobe`-shim i
   `/usr/local/bin` (rostkoll.py frågar `ffprobe` om längd och ljudspår; imageio
   har ingen). Allt dör med containern — görs om varje session.
+- **Metas rate limit (error 17) på Magiborsten UK slog till mitt i batchen** (mätt
+  15:35–16:00 CEST): `ops-till-meta` gör ~12 läsanrop per annons (kontots alla
+  annonser, kampanj, spend, adsets, kampanjens annonser, DSA …) och backoff-trappan
+  30/60/120/240/300 s gjorde att EN dubblettkoll tog 12 minuter — och en avbruten
+  körning hade redan skapat `CaraShellRoof_US_CS_1_H1` (annonsen fanns, PAUSED, utan
+  att wrappern hann skriva resultatet). Två slutsatser: (1) kör aldrig egna läsningar
+  parallellt med uppladdaren, varje anrop förlänger allas backoff; (2) för en batch på
+  >5 annonser i samma kampanj: `ladda-upp-smal.mjs` — EN kontroll av kampanj/adsets/
+  annonser vid start (konto-id, `CARASHELL_US_`-prefix, adsetnamn), sedan bara
+  advideos → thumbnail → creative+annons → aktivera per video via meta-lib. Samma
+  spärrar i sak, en femtedel så många anrop. En annons som "finns redan" men står
+  PAUSED och är körningens egen aktiveras (aldrig adset/kampanj).

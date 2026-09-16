@@ -52,7 +52,13 @@ for (const n of namn) {
   let json = null;
   try { json = JSON.parse(sista); } catch { /* ingen json-rad */ }
   resultat[mal] = { exit: r.status, resultat: json };
-  if (!TORR) writeFileSync(resFil, JSON.stringify(resultat, null, 2));
+  // Flera processer kan köra parallellt (en per koncept): läs om filen och slå
+  // ihop före varje skrivning, annars skriver den ena över den andras rader.
+  if (!TORR) {
+    const nu = existsSync(resFil) ? JSON.parse(readFileSync(resFil, 'utf8')) : {};
+    nu[mal] = resultat[mal];
+    writeFileSync(resFil, JSON.stringify(nu, null, 2));
+  }
   console.log(json ? `→ ${json.ok ? 'OK' : 'FEL'} ${json.annons?.id ?? ''} ${json.annons?.status ?? ''}/${json.annons?.effective_status ?? ''} adset ${json.adset?.namn ?? ''}${json.fel ? ` — ${json.fel}` : ''}` : `→ ingen json (exit ${r.status})`);
   if (!TORR) await new Promise((res) => setTimeout(res, 3000));
 }
