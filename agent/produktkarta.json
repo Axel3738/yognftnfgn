@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-15",
+  "uppdaterad": "2026-09-16",
   "kampanjer": [
     {
       "campaign_id": "120252216935950233",
@@ -829,6 +829,30 @@
       "produkt": "Jetvifte NO",
       "lage": "test",
       "lage_motivering": "startad 2026-09-12 (NO), för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250228612510291",
+      "produkt": "Sittkäppen Hopfällbar",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-15, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto 2026-09-16",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250224018670291",
+      "produkt": "Infartslarmet Trådlöst",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-15, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto 2026-09-16",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252251748460233",
+      "produkt": "Infartslarm NO",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-16 i NO-kontot 1050941584152547, noll data ännu — saknades i kartan, tillagd av /rond-auto 2026-09-16",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
