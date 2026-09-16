@@ -5,7 +5,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   lasMall, copyUrMall, byggSida, granskaCopy, granskaChecksummor, lasAvSida, allaElement, talText,
-  lasKoncept, kandaKoncept, valjPunkter, konceptText, konceptHandle, platserForPunkter, utokaPunkter, ikonSvg, nyUid, brandProfil, OBRANDAD,
+  lasKoncept, kandaKoncept, valjPunkter, konceptText, konceptHandle, platserForPunkter, utokaPunkter, ikonSvg, nyUid, brandProfil, OBRANDAD, butiksOrd,
 } from '../gempages.mjs';
 import { renderaHtml, mallBilder } from '../html.mjs';
 
@@ -152,6 +152,36 @@ test('granskaCopy per koncept: antal punkter, rubrikkontroller, numrering', () =
   assert.equal(brandProfil(null, { forfattareObrandad: 'Anders, som testade den själv' }).forfattare, 'Anders, som testade den själv');
   assert.equal(brandProfil('baverbutiken', { forfattareObrandad: 'X' }).forfattare, 'Anders från Bäverbutiken', 'brandad sida behåller brandets författare');
   assert.deepEqual(brandProfil(brandProfil(null, { forfattareObrandad: 'Y' })), { ...OBRANDAD, forfattare: 'Y' }, 'idempotent med egen författare');
+});
+
+test('granskaCopy stoppar källbutikens eget namn i en obrandad copy (OPS-butik utan brandprofil)', () => {
+  // Porterat från sessionen som byggde takskyddets sida 2026-09-16.
+  const CARA = { ...MOTOR, url: 'https://carashell.se/products/takskyddet', pris: 1129, jamforpris: 1469, prisText: '1 129 kr', jamforprisText: '1 469 kr' };
+  const copy = copyMedPunkter(5);
+  const byt = (s) => String(s).replace(/299 kr/g, '1 129 kr').replace(/367 kr/g, '1 469 kr');
+  copy.hero.rubrik = 'Vi beställde in för många taköverdrag och nu får du ditt för 1 129 kr istället för 1 469 kr så länge lagret räcker';
+  for (const p of copy.punkter) { p.text = byt(p.text); p.knapp = byt(p.knapp); }
+  for (const k of ['hero', 'lyckas', 'riskfritt']) copy[k].knapp = byt(copy[k].knapp);
+  copy.arlig.stycken = copy.arlig.stycken.map(byt);
+  copy.hero.sammanfattning = copy.hero.sammanfattning.map(byt);
+  assert.deepEqual(granskaCopy(copy, CARA, platser).fel, []);
+  copy.lyckas.stycken[1] = 'Överdraget hittar du hos CaraShell, och det passar både husvagn och husbil med sina 6,5 × 3 m så att hela takytan täcks med marginal när vagnen står ute.';
+  const fel = granskaCopy(copy, CARA, platser).fel;
+  assert.equal(fel.length, 1, fel.join('\n'));
+  assert.match(fel[0], /lyckas\.stycken: nämner "källbutiken carashell\.se" — sidan är obrandad/);
+  copy.lyckas.stycken[1] = 'Överdraget hittar du på carashell.se, och det passar både husvagn och husbil med sina 6,5 × 3 m så att hela takytan täcks med marginal när vagnen står ute.';
+  assert.match(granskaCopy(copy, CARA, platser).fel[0], /källbutiken carashell\.se/);
+  // en uttrycklig lista stänger av källbutiksordet också; utan länk finns inget att stoppa
+  assert.deepEqual(granskaCopy(copy, CARA, platser, { forbjudnaBrand: [] }).fel, []);
+  assert.deepEqual(granskaCopy(copy, { ...CARA, url: undefined }, platser).fel, []);
+});
+
+test('butiksOrd läser värd och namn ur produktlänken', () => {
+  assert.deepEqual(butiksOrd('https://carashell.se/products/takskyddet'), ['carashell.se', 'carashell']);
+  assert.deepEqual(butiksOrd('https://www.baverbutiken.se/products/x?y=1'), ['baverbutiken.se', 'baverbutiken']);
+  assert.deepEqual(butiksOrd('https://yitrbk-m3.myshopify.com/products/x'), ['yitrbk-m3.myshopify.com']);
+  assert.deepEqual(butiksOrd('inte en länk'), []);
+  assert.deepEqual(butiksOrd(null), []);
 });
 
 test('byggSida per koncept: författarraden och sidnamnet', () => {

@@ -53,19 +53,36 @@ function arg(argv, namn) {
 
 const lasJsonFil = (fil) => JSON.parse(readFileSync(fil, 'utf8'));
 
-/** Utdrag ur products/<id>/dna.md om produkten har ett minne — faktakälla nr 2. */
-function hittaDna(handle) {
-  const karta = join(ROT, 'products', 'products.json');
-  if (!existsSync(karta)) return null;
-  const produkter = lasJsonFil(karta).products ?? [];
-  for (const p of produkter) {
-    const dna = join(ROT, 'products', p.id, 'dna.md');
+/**
+ * products/<id>/dna.md om produkten har ett minne — faktakälla nr 2 för copyn.
+ * Bäverbutikens produkter står i products.json; OPS-butikernas minne ligger i
+ * products/<butik>/dna.md eller products/<butik>/<produkt>/dna.md (TackleBay,
+ * CaraShell) och nås inte via products.json — därför läses alla dna.md-filer
+ * två nivåer ner. Träff = filen nämner produktens /products/<handle>.
+ * (Porterat från sessionen som byggde takskyddets sida 2026-09-16.)
+ */
+export function hittaDna(handle, rot = ROT) {
+  const mapp = join(rot, 'products');
+  if (!existsSync(mapp)) return null;
+  const kandidater = [];
+  const karta = join(mapp, 'products.json');
+  if (existsSync(karta)) for (const p of lasJsonFil(karta).products ?? []) kandidater.push(p.id);
+  for (const d of readdirSync(mapp, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    kandidater.push(d.name);
+    for (const u of readdirSync(join(mapp, d.name), { withFileTypes: true })) if (u.isDirectory()) kandidater.push(`${d.name}/${u.name}`);
+  }
+  for (const id of [...new Set(kandidater)]) {
+    const dna = join(mapp, id, 'dna.md');
     if (!existsSync(dna)) continue;
     const text = readFileSync(dna, 'utf8');
-    if (text.includes(`/products/${handle}`)) return { id: p.id, fil: `products/${p.id}/dna.md` };
+    if (text.includes(`/products/${handle}`)) return { id, fil: `products/${id}/dna.md` };
   }
   return null;
 }
+
+/** Är produktlänken Bäverbutikens? Annars är den butikens egen produktsida (OPS-butik). */
+export const arBaverLank = (url) => { try { return /(^|\.)baverbutiken\.se$/.test(new URL(url).host); } catch { return false; } };
 
 /**
  * OPS-butikens egen handle för en Bäverbutiks-produkt: factory/produkter/<x>.yaml
@@ -134,16 +151,21 @@ async function bygg(lank, argv) {
   const butik = valjButik(argv, produkt.url);
   const publicera = !torr && !utanPublicering;
   if (publicera && !butik) throw new Error(`Länken är inte Bäverbutikens — säg vilken butik sidan ska in i: --butik baverbutiken | carashell | … (eller --utan-publicering).`);
+  // Knapparna: relativa i butiken. En Bäverbutiks-länk som ska in i en OPS-butik
+  // får OPS-handlen ur factory/produkter/; en länk till OPS-butikens egen
+  // produktsida (carashell.se/products/takskyddet) är redan rätt handle.
   let knapparTill = arg(argv, '--lank');
   let opsHandle = null;
   if (!knapparTill) {
-    if (!butik || butik === BAVERBUTIKEN) knapparTill = butik ? `/products/${produkt.handle}` : produkt.url;
+    if (!butik) knapparTill = produkt.url;
+    else if (butik === BAVERBUTIKEN || !arBaverLank(produkt.url)) knapparTill = `/products/${produkt.handle}`;
     else {
       opsHandle = opsHandleForKalla(produkt.handle);
       if (!opsHandle) throw new Error(`Hittar ingen OPS-produkt med källan ${produkt.handle} i factory/produkter/ — ange knapparnas länk: --lank /products/<handle-i-${butik}>.`);
       knapparTill = `/products/${opsHandle}`;
     }
   }
+  if (butik === BAVERBUTIKEN && !arBaverLank(produkt.url)) throw new Error(`Länken ${produkt.url} är inte Bäverbutikens men sidan skulle in i Bäverbutiken — ange rätt butik med --butik.`);
   if (!/^(https:\/\/[^/\s]+\/.+|\/products\/[a-z0-9-]+)/.test(knapparTill)) throw new Error(`--lank ska vara /products/<handle> eller en https-länk, fick "${knapparTill}".`);
   const suffix = konceptText(koncept.suffix, { produkt, n });
   const filBas = `${produkt.slug}-${suffix}`;

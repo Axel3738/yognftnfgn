@@ -87,11 +87,19 @@ live-butiken. Knapparna länkar relativt (`/products/<handle>`); för en
 OPS-butik slås handlen upp ur `factory/produkter/<x>.yaml` (`kalla.produkt_handle`
 → `produkt.id`), annars `--lank`.
 
-Första skarpa publiceringen 2026-09-16: axelbältets lagerrensning på
+Första skarpa publiceringarna 2026-09-16: axelbältets lagerrensning på
 Bäverbutiken (tema "UTKAST utan popup 2026-08-28", Impulse) —
-https://baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning, läst
-tillbaka utan header/footer/meny, pixelskripten på plats. Bilderna ligger på
-Bäverbutikens CDN oavsett butik (publika URL:er).
+https://baverbutiken.se/pages/axelbalte-for-trimmer-lagerrensning — och
+takskyddets på CaraShell (tema "CaraShell – CRO v1", Dawn-fork) —
+https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.
+Båda lästa tillbaka utan header/footer/meny, pixelskripten på plats.
+Bilderna ligger på Bäverbutikens CDN oavsett butik (publika URL:er).
+
+Produktlänken får vara OPS-butikens egen produktsida
+(`carashell.se/products/takskyddet` med `--butik carashell`): produkten läses
+därifrån, `hittaDna` hittar minnet i `products/<butik>/<produkt>/dna.md`, och
+knapparna blir `/products/<handle>` direkt. Copyn får då inte heller nämna
+källbutikens namn (`butiksOrd` ur länken — "hos CaraShell" stoppas).
 
 ## Obrandad som standard (Axels beslut 2026-09-16)
 

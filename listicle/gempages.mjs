@@ -233,6 +233,24 @@ export function brandOrd(b) {
   return [...ut];
 }
 
+/**
+ * Ord som avslöjar KÄLLBUTIKEN i copyn, ur produktlänken: "https://carashell.se/products/x"
+ * → ["carashell.se", "carashell"]. En obrandad sida ska funka i vilken butik som
+ * helst, och källbutiken är sällan en brandprofil (OPS-butikerna har ingen) —
+ * utan det här släppte granskningen "hos CaraShell" rakt igenom (mätt av
+ * sessionen som byggde takskyddets sida 2026-09-16, porterat därifrån).
+ */
+export function butiksOrd(url) {
+  let vard = '';
+  try { vard = new URL(String(url ?? '')).hostname.toLowerCase().replace(/^www\./, ''); } catch { return []; }
+  if (!vard) return [];
+  const delar = vard.split('.');
+  const namn = delar.length >= 2 ? delar[delar.length - 2] : '';
+  const ut = [vard];
+  if (namn.length >= 5 && namn !== 'myshopify') ut.push(namn);
+  return ut;
+}
+
 /** Författarraden i hero: samma HTML som mallen bär. */
 export function forfattarHtml(b) {
   return `<p>Av <strong>${htmlAv(b.forfattare)}.</strong></p>`;
@@ -472,9 +490,13 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const egnaOrd = new Set(brandOrd(b));
-  const stoppord = (forbjudnaBrand ?? kandaBrand().map((id) => brandProfil(id)))
-    .flatMap((p) => brandOrd(p).map((ord) => ({ ord, namn: p.namn, id: p.id })))
-    .filter((x) => !egnaOrd.has(x.ord));
+  // Kända brandprofiler + källbutikens eget namn ur produktlänken (en uttrycklig
+  // forbjudnaBrand-lista vinner och stänger av källbutiksordet också).
+  const kallbutik = forbjudnaBrand == null ? butiksOrd(produkt?.url) : [];
+  const stoppord = [
+    ...(forbjudnaBrand ?? kandaBrand().map((id) => brandProfil(id))).flatMap((p) => brandOrd(p).map((ord) => ({ ord, namn: p.namn, id: p.id }))),
+    ...kallbutik.map((ord) => ({ ord, namn: `källbutiken ${kallbutik[0]}`, id: null })),
+  ].filter((x) => !egnaOrd.has(x.ord));
 
   for (const [nyckel, plats] of Object.entries(platser.text)) {
     const v = lasCopy(copy, nyckel);
