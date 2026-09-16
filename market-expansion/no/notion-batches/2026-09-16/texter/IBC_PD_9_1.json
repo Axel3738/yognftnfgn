@@ -1,0 +1,68 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   305
+  ],
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "rader": 2,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Stoffet stenger ute lyset som får alger til å vokse."
+ },
+ {
+  "box": [
+   33,
+   305,
+   1047,
+   460
+  ],
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "rader": 2,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Åpning på toppen – kom til lokket uten å ta av trekket."
+ },
+ {
+  "box": [
+   200,
+   1084,
+   880,
+   1136
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "alfa": 120,
+  "radie": 14,
+  "text": "439 kr (ord. 586 kr) · Fri frakt i Norge."
+ },
+ {
+  "form": 1,
+  "text": "Beskytt tanken for 439 kr.",
+  "rad": 0,
+  "se": "Skydda tanken för 489 kr.",
+  "vanster": false
+ }
+]

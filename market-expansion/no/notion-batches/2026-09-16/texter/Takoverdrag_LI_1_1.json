@@ -1,0 +1,139 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   412
+  ],
+  "rader": 3,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Vannet blir aldri stående ved takluken – dekker hele taket, 6,5 × 3 meter."
+ },
+ {
+  "box": [
+   100,
+   432,
+   1047,
+   542
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Sitter fast når det blåser – stropp og strammer holder den på plass."
+ },
+ {
+  "box": [
+   100,
+   542,
+   1047,
+   602
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Én person klarer det selv – bare taket, ikke hele vogna."
+ },
+ {
+  "box": [
+   100,
+   602,
+   1047,
+   704
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Holder en hel vintersesong ute – 210D-vev som ikke sprekker i frost."
+ },
+ {
+  "box": [
+   100,
+   704,
+   1047,
+   762
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Får plass i posen som følger med – tar ingen plass i fortelt-boksen."
+ },
+ {
+  "box": [
+   125,
+   1084,
+   955,
+   1136
+  ],
+  "storlek": 26,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "alfa": 130,
+  "radie": 14,
+  "text": "1 189 kr (ord. 1 549 kr) – fri frakt – 30 dagers åpent kjøp"
+ },
+ {
+  "box": [
+   283,
+   1201,
+   797,
+   1308
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Bestill takovertrekket"
+ }
+]

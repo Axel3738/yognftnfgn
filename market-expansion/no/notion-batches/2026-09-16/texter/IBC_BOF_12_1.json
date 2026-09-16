@@ -1,0 +1,59 @@
+[
+ {
+  "box": [
+   33,
+   50,
+   1047,
+   285
+  ],
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "rader": 2,
+  "text": "Er skygge nok mot UV på IBC-tanken?"
+ },
+ {
+  "box": [
+   33,
+   320,
+   1047,
+   442
+  ],
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "rader": 2,
+  "text": "Nei. 210D-stoffet tar UV-strålingen i stedet for plasten."
+ },
+ {
+  "box": [
+   330,
+   1088,
+   750,
+   1132
+  ],
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "439 kr (ord. 586 kr)"
+ },
+ {
+  "form": 3,
+  "text": "Beskytt tanken – 439 kr",
+  "rad": 0,
+  "se": "Skydda tanken – 489 kr",
+  "vanster": false
+ }
+]

@@ -1,0 +1,698 @@
+{
+ "marknad": "NO",
+ "sprak": "norsk bokmål",
+ "fakta": {
+  "IBC": {
+   "produkt": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+   "pris_nok": 439,
+   "jamforpris_nok": 586,
+   "spar_nok": 147,
+   "rabatt_pct": "25 %",
+   "anmeldelser": 10,
+   "betyg": "4,7 av 5",
+   "material": "210D oxfordstoff",
+   "fri_frakt": "Fri frakt i Norge på ordre over 300 kr (439 kr er over)",
+   "retur": "30 dagers åpent kjøp",
+   "betalning": "Klarna",
+   "OBS": "SE sa '23% rabatt' — i Norge är det 25 % (147/586). Spar-beloppet är 147 kr i BÅDA valutorna, det är en slump men korrekt."
+  },
+  "Takoverdrag": {
+   "produkt": "Takovertrekk til Campingvogn 6,5 × 3 m – Beskytter Den Dyreste Flaten",
+   "pris_nok": 1189,
+   "jamforpris_nok": 1549,
+   "spar_nok": 360,
+   "rabatt_pct": "23 %",
+   "anmeldelser": 10,
+   "betyg": "5,0 av 5",
+   "material": "210D vev",
+   "matt": "6,5 × 3 m",
+   "fri_frakt": "Fri frakt i Norge på ordre over 300 kr",
+   "retur": "30 dagers åpent kjøp",
+   "betalning": "Klarna",
+   "OBS": "SE spar 340 kr → NO spar 360 kr. Betyget 5,0 av 5 på 10 anmeldelser stämmer på NO-sidan och FÅR användas."
+  }
+ },
+ "malnamn": {
+  "IBC_BOF_10_1": "IBC-tanktrekk_NO_BOF_10_1",
+  "IBC_BOF_11_1": "IBC-tanktrekk_NO_BOF_11_1",
+  "IBC_BOF_12_1": "IBC-tanktrekk_NO_BOF_12_1",
+  "IBC_PD_9_1": "IBC-tanktrekk_NO_PD_9_1",
+  "IBC_RV_7_1": "IBC-tanktrekk_NO_RV_7_1",
+  "IBC_RV_8_1": "IBC-tanktrekk_NO_RV_8_1",
+  "Takoverdrag_BOF_1_1": "Takovertrekk_NO_BOF_1_1",
+  "Takoverdrag_BOF_2_1": "Takovertrekk_NO_BOF_2_1",
+  "Takoverdrag_BOF_3_1": "Takovertrekk_NO_BOF_3_1",
+  "Takoverdrag_CO_2_1": "Takovertrekk_NO_CO_2_1",
+  "Takoverdrag_CS_4_1": "Takovertrekk_NO_CS_4_1",
+  "Takoverdrag_CS_6_1": "Takovertrekk_NO_CS_6_1",
+  "Takoverdrag_GT_4_H1": "Takovertrekk_NO_GT_4_H1",
+  "Takoverdrag_GT_5_H1": "Takovertrekk_NO_GT_5_H1",
+  "Takoverdrag_GT_6_1": "Takovertrekk_NO_GT_6_1",
+  "Takoverdrag_LI_1_1": "Takovertrekk_NO_LI_1_1",
+  "Takoverdrag_PD_4_H1": "Takovertrekk_NO_PD_4_H1",
+  "Takoverdrag_PD_5_1": "Takovertrekk_NO_PD_5_1",
+  "Takoverdrag_SP_5_1": "Takovertrekk_NO_SP_5_1",
+  "Takoverdrag_TR_1_1": "Takovertrekk_NO_TR_1_1"
+ },
+ "bilder": {
+  "IBC_BOF_10_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "489 kr – spara 147 kr",
+      "Ord. pris 636 kr (23% rabatt)"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "489 kr inkl. fri frakt i Sverige"
+     ],
+     "varning": "'i Sverige' gäller inte i Norge"
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ tanköverdraget – 489 kr"
+     ]
+    }
+   ]
+  },
+  "IBC_BOF_11_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "IBC-tanken skyddad.",
+      "Pengarna skyddade",
+      "också."
+     ],
+     "block": [
+      [
+       1,
+       2
+      ]
+     ]
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Passar den inte? 30 dagars öppet köp - skicka",
+      "tillbaka och få pengarna."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "Fri frakt till din IBC-tank. Klarna i kassan. 30 dagars öppet köp."
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Testa tanken riskfritt i 30 dagar."
+     ]
+    }
+   ]
+  },
+  "IBC_BOF_12_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Räcker skugga mot UV",
+      "på IBC-tanken?"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Nej. 210D-tyget tar UV-strålningen i stället för",
+      "plasten."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "489 kr (ord. 636 kr)"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Skydda tanken – 489 kr"
+     ]
+    }
+   ]
+  },
+  "IBC_PD_9_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Tyget stänger ute ljuset",
+      "som får alger att växa."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Öppning upptill – kom åt locket utan att ta av",
+      "överdraget."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "489 kr (ord. 636 kr) · Fri frakt inom Sverige."
+     ],
+     "varning": "'inom Sverige' gäller inte i Norge"
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Skydda tanken för 489 kr."
+     ]
+    }
+   ]
+  },
+  "IBC_RV_7_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "”Fungerar precis som jag hade hoppats.",
+      "Bra skydd för min tank utomhus.”"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ],
+     "varning": "svensk recension – citatet får översättas men måste attribueras till baverbutiken.se"
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Karin"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "489 kr (jämförpris 636 kr)"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Handla nu – 489 kr"
+     ]
+    }
+   ]
+  },
+  "IBC_RV_8_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "”Bra produkt för pengarna.",
+      "Passar min IBC-tank och är enkel att",
+      "använda.”"
+     ],
+     "block": [
+      [
+       0,
+       1,
+       2
+      ]
+     ],
+     "varning": "svensk recension – citatet får översättas men måste attribueras till baverbutiken.se"
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Daniel"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "489 kr – jämförpris 636 kr"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ ditt överdrag för 489 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_BOF_1_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "1 469 kr → 1 129 kr",
+      "Täcker taket – inte hela vagnen"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "210D-väv – tål en hel vintersäsong ute"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ nu – spara 340 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_BOF_2_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "1 129 kr i stället för 1 469",
+      "kr – spara 340 kr."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "bock",
+     "rader": [
+      "Fri frakt inom Sverige – ingår i taköverdragets 1 129 kr.",
+      "30 dagars öppet köp på taköverdraget för 1 129 kr: gillar du",
+      "inte det, får du pengarna tillbaka.",
+      "Klarna i kassan – taköverdraget för 1 129 kr."
+     ],
+     "block": [
+      [
+       1,
+       2
+      ]
+     ],
+     "varning": "'inom Sverige' gäller inte i Norge"
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "Taköverdrag Husvagn 6,5 × 3 m – 1 129 kr"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Skydda taket – 1 129 kr, fri frakt."
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_BOF_3_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Räcker det med en vanlig",
+      "presenning?"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "210D-väv tål vintern. Presenning spricker i frost."
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr (ord. 1 469 kr)"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Skydda den dyra ytan"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_CO_2_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Täck taket.",
+      "Inte hela vagnen."
+     ]
+    },
+    {
+     "typ": "etikett",
+     "rader": [
+      "Tungt att få på plats ensam"
+     ]
+    },
+    {
+     "typ": "etikett",
+     "rader": [
+      "Hanteras av en person"
+     ]
+    },
+    {
+     "typ": "etikett",
+     "rader": [
+      "Skaver mot lacken hela vintern"
+     ]
+    },
+    {
+     "typ": "etikett",
+     "rader": [
+      "Skyddar den dyraste ytan"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Handla taköverdraget – 1 129 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_CS_4_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "1 469 kr — 1 129 kr",
+      "Skyddar taket – inte hela vagnen"
+     ],
+     "stryk_del": "1 469 kr"
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr – frakten ingår"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Köp taköverdraget – 1 129 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_CS_6_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Fri frakt på taköverdrag",
+      "för husvagn, 6,5 × 3 m",
+      "1 129 kr (ord. 1 469 kr) – spara 340 kr"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "30 dagars öppet köp – gillar du inte skyddet får du pengarna tillbaka"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ taköverdraget – fri frakt"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_GT_6_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Skydda taket i jul – 1 129",
+      "kr"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Tål vintern ute – inte tunn presenning som spricker i",
+      "frost"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "Ord. 1 469 kr · Fri frakt · 30 dagars öppet köp"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ taköverdraget – 1 129 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_LI_1_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Vattnet blir aldrig stående",
+      "vid takluckorna – täcker",
+      "hela taket, 6,5 × 3 meter."
+     ],
+     "block": [
+      [
+       0,
+       1,
+       2
+      ]
+     ]
+    },
+    {
+     "typ": "bock",
+     "rader": [
+      "Sitter kvar när det blåser – rem och dragsko håller den på",
+      "plats.",
+      "En person klarar det själv – bara taket, inte hela vagnen.",
+      "Håller en hel vintersäsong ute – 210D-väv som inte spricker i",
+      "frost.",
+      "Ryms i påsen som följer med – tar ingen plats i förtältslådan."
+     ],
+     "block": [
+      [
+       0,
+       1
+      ],
+      [
+       3,
+       4
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr (ord. 1 469 kr) – fri frakt – 30 dagars öppet köp"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Beställ taköverdraget"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_PD_5_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "Täck bara taket – inte",
+      "hela vagnen"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ]
+    },
+    {
+     "typ": "bock",
+     "rader": [
+      "Spänns fast med rem",
+      "Dragsko i kanten",
+      "Takluckan hålls torr"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr (ord. 1 469 kr) – fri frakt"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Handla nu – 1 129 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_SP_5_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "5,0 av 5 – 10 recensioner"
+     ],
+     "varning": "stjärnorna är grafik, inte text. 5,0/10 stämmer även på NO-sidan (5,00 av 5, 10 anmeldelser)"
+    },
+    {
+     "typ": "bock",
+     "rader": [
+      "Vattnet blir aldrig stående kring takluckorna – täcker hela",
+      "takytan, 6,5 × 3 m",
+      "Sitter kvar när det blåser – spänns fast med rem och",
+      "dragsko i kanten",
+      "Tål en hel vintersäsong ute – 210D-väv, inte tunn presenning",
+      "som spricker i frost"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       4,
+       5
+      ]
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr – spara 340 kr"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Skydda taket för 1 129 kr"
+     ]
+    }
+   ]
+  },
+  "Takoverdrag_TR_1_1": {
+   "former": [
+    {
+     "typ": "platta",
+     "rader": [
+      "5,0 av 5 på 10",
+      "recensioner"
+     ],
+     "block": [
+      [
+       0,
+       1
+      ]
+     ],
+     "varning": "stjärnorna är grafik. 5,0/10 stämmer även på NO-sidan"
+    },
+    {
+     "typ": "platta",
+     "rader": [
+      "Täck bara taket – inte hela vagnen"
+     ]
+    },
+    {
+     "typ": "fototext",
+     "rader": [
+      "1 129 kr istället för 1 469 kr – spara 340 kr"
+     ]
+    },
+    {
+     "typ": "knapp",
+     "rader": [
+      "Täck taket – 1 129 kr"
+     ]
+    }
+   ]
+  }
+ }
+}

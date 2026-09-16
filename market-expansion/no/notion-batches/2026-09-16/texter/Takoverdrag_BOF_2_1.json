@@ -1,0 +1,109 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   290
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "1 189 kr i stedet for 1 549 kr – spar 360 kr."
+ },
+ {
+  "box": [
+   110,
+   318,
+   1047,
+   376
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Fri frakt i Norge – inkludert i takovertrekkets 1 189 kr."
+ },
+ {
+  "box": [
+   110,
+   376,
+   1047,
+   479
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "30 dagers åpent kjøp på takovertrekket for 1 189 kr: liker du det ikke, får du pengene tilbake."
+ },
+ {
+  "box": [
+   110,
+   479,
+   1047,
+   534
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Klarna i kassen – takovertrekket for 1 189 kr."
+ },
+ {
+  "box": [
+   220,
+   1084,
+   870,
+   1136
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "alfa": 120,
+  "radie": 14,
+  "text": "Takovertrekk Campingvogn 6,5 × 3 m – 1 189 kr"
+ },
+ {
+  "form": 0,
+  "text": "Beskytt taket – 1 189 kr, fri frakt.",
+  "rad": 0,
+  "se": "Skydda taket – 1 129 kr, fri frakt.",
+  "vanster": false
+ }
+]

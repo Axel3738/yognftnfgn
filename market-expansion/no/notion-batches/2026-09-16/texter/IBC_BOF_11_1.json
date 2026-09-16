@@ -1,0 +1,85 @@
+[
+ {
+  "box": [
+   33,
+   40,
+   1047,
+   190
+  ],
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "rader": 1,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "IBC-tanken beskyttet."
+ },
+ {
+  "box": [
+   33,
+   190,
+   1047,
+   420
+  ],
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "rader": 2,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Pengene beskyttet også."
+ },
+ {
+  "box": [
+   33,
+   420,
+   1047,
+   590
+  ],
+  "storlek": 38,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "rader": 2,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Passer den ikke? 30 dagers åpent kjøp – send tilbake og få pengene."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1132
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Fri frakt til din IBC-tank. Klarna i kassen. 30 dagers åpent kjøp."
+ },
+ {
+  "form": 1,
+  "text": "Test tanken risikofritt i 30 dager.",
+  "rad": 0,
+  "se": "Testa tanken riskfritt i 30 dagar.",
+  "vanster": false
+ }
+]

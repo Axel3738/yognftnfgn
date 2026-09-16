@@ -1,0 +1,65 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   292
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Holder det med en vanlig presenning?"
+ },
+ {
+  "box": [
+   33,
+   296,
+   1047,
+   396
+  ],
+  "rader": 1,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "210D-vev tåler vinteren. Presenning sprekker i frost."
+ },
+ {
+  "box": [
+   350,
+   1088,
+   730,
+   1132
+  ],
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr (ord. 1 549 kr)"
+ },
+ {
+  "form": 1,
+  "text": "Beskytt den dyre flaten",
+  "rad": 0,
+  "se": "Skydda den dyra ytan",
+  "vanster": false
+ }
+]

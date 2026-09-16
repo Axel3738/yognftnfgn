@@ -1,0 +1,77 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   172
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Dekk taket."
+ },
+ {
+  "box": [
+   33,
+   172,
+   1047,
+   296
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Ikke hele vogna."
+ },
+ {
+  "form": 0,
+  "text": "Tungt å få på plass alene",
+  "rad": 0,
+  "se": "Tungt att få på plats ensam",
+  "vanster": false
+ },
+ {
+  "form": 1,
+  "text": "Håndteres av én person",
+  "rad": 0,
+  "se": "Hanteras av en person",
+  "vanster": false
+ },
+ {
+  "form": 4,
+  "text": "Skurer mot lakken hele vinteren",
+  "rad": 0,
+  "se": "Skaver mot lacken hela vintern",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Beskytter den dyreste flaten",
+  "rad": 0,
+  "se": "Skyddar den dyraste ytan",
+  "vanster": false
+ },
+ {
+  "form": 6,
+  "text": "Handle takovertrekket – 1 189 kr",
+  "rad": 0,
+  "se": "Handla taköverdraget – 1 129 kr",
+  "vanster": false
+ }
+]
