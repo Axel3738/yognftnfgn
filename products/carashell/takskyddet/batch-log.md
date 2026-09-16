@@ -455,3 +455,12 @@ koden togs bort vid mergen. Discord-rapporten från den här sessionen (11:5x, "
 uploaded") skrevs FÖRE de fyra uppladdningarna och är överspelad. Samma eftermiddag
 fick USA egen domän (carashell.com), 90-dagars garanti på /en och termoskyddet sin
 US-kampanj — se `factory/PROCESS.md` punkt 19–20 och termoskyddets batch-log.
+
+**Tillägg samma dag, 12:40:** de fyra US-bildannonserna pekades om från
+`carashell.se/en/…?country=US` till **`https://carashell.com/products/takskyddet?country=US`**
+(Axels beslut via den andra sessionen: ".se säger utländsk butik", domänen kopplad i
+Shopify) — ny creative med samma spec, annonsen ompekad, tillbakaläst ACTIVE
+(`resultat-lankbyte.json`). Pixeln delades med Magiborsten UK 12:20; efter en
+omsparning av adsetens `promoted_object` försvann HARD_ERROR 1815045 på alla fyra.
+Videorna (12 st, batch #1) körs genom HeyGen → engelska ordcaptions
+(`pipeline/no-precis.py`, konfig i `cap/`) i samma batchmapp.
