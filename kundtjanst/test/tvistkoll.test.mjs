@@ -117,6 +117,24 @@ test('larmet blir rött och säger "past the due date" när något är förfalle
   assert.match(rott, /1 already past the due date/);
 });
 
+test('en tvist som förfaller IDAG kallas aldrig passerad — den går att vinna', () => {
+  // NU är 2026-09-14; deadline samma dag = 0 dagar kvar, inte förfallen.
+  const text = renderaLarm(bradskande([tvist({ evidensSenast: '2026-09-14' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.ok(text.startsWith('🔴'), 'brådskan är verklig, rubriken ska vara röd');
+  assert.match(text, /1 due today/);
+  assert.doesNotMatch(text, /past the due date/);
+  assert.match(text, /due TODAY/);
+});
+
+test('förfallen och förfaller-idag räknas var för sig i samma larm', () => {
+  const text = renderaLarm(bradskande([
+    tvist({ id: 1, evidensSenast: '2026-09-11' }),   // förfallen
+    tvist({ id: 2, evidensSenast: '2026-09-14' }),   // idag
+    tvist({ id: 3, evidensSenast: '2026-09-16' }),   // om 2 dagar
+  ], { nu: NU }), { brand: 'B', nu: NU });
+  assert.match(text, /1 already past the due date, 1 due today/);
+});
+
 test('larmet böjer sig rätt på en enda tvist', () => {
   const text = renderaLarm(bradskande([tvist()], { nu: NU }), { brand: 'B', nu: NU });
   assert.match(text, /1 open dispute needs evidence within 3 days/);
