@@ -20,6 +20,8 @@ market-expansion/ops/**/*.jpg
 market-expansion/ops/**/*.jpeg
 market-expansion/ops/**/*.png
 market-expansion/ops/**/*.srt
+# Röstkollens/Scribe-lyssningens ljudspår (qa/lyssna) — media, dör med containern
+market-expansion/ops/**/*.mp3
 factory/output/*/leverans-*/
 factory/output/*/bild-*/
 factory/output/*/*.logg
