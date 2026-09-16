@@ -1,0 +1,158 @@
+{
+  "byggd": "2026-09-16T19:42:08.457Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan",
+    "kortTitel": "Taköverdrag Husvagn 6,5 × 3 m",
+    "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+    "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+    "typ": "",
+    "pris": 1129,
+    "jamforpris": 1469,
+    "prisText": "1 129 kr",
+    "jamforprisText": "1 469 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Taket är det du aldrig ser – och det som kostar mest att laga\nRegnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, tätmassan mjuknar, och när fukten väl tagit sig in genom taket är det inte en tvätt som krävs utan en reparation.\nTäck bara taket – inte hela vagnen\nEtt helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. Det här täcker den yta som faktiskt tar stryk. Det spänns med rem och dragsko, sitter tight i blåst och går att få på plats utan att någon behöver hålla i andra änden.\nFunktioner\nVattnet blir aldrig stående kring takluckorna – täcker hela takytan, 6,5 × 3 m\nSitter kvar när det blåser – spänns fast med rem och dragsko i kanten\nHanteras av en person – bara taket, inte hela vagnen att kämpa med ensam\nTål en hel vintersäsong ute – 210D-väv, inte tunn presenning som spricker i frost\nRyms i förvaringspåsen som följer med – tar ingen plats i förtältslådan\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #1"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+      "width": 1200,
+      "height": 1200,
+      "kalla": "produkt #2"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/takoverdrag-husvagn-6-5-3-m-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/takoverdrag-husvagn-6-5-3-m-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "637908573928820253",
+    "namn": "Taköverdrag Husvagn 6,5 × 3 m – Lagerrensning (listicle)",
+    "handle": "takoverdrag-husvagn-6-5-3-m-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning",
+    "sidaId": "gid://shopify/Page/728864063837",
+    "skapad": true,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning",
+      "tecken": 108886
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

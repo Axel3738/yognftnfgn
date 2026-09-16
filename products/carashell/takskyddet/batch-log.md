@@ -514,6 +514,25 @@ länkar relativt till `/products/takskyddet`. Filerna ligger i
 `listicle/output/lagerrensning/takskyddet/`. Ingen annons pekar dit ännu —
 sidan mäts som LP, aldrig som creative.
 
+**Samma sida i Bäverbutiken, 2026-09-16 kväll** (Axels fråga: "kan du göra
+så att denna finns på bäverbutiken.se också?"):
+**https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning** —
+knapparna går till Bäverbutikens produktsida
+`/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan`. Samma
+copy och samma bilder (kie-bilderna låg redan på Bäverbutikens CDN, cachen
+träffade på prompten — noll nya credits), samma pris 1 129 / 1 469 kr avläst
+ur Bäverbutikens `/products/<handle>.json`. Två block skrevs om mot
+Bäverbutikens produktsida: lyckas-blocket ("rem och dragsko" i stället för
+CaraShell-sidans plastkrokar och 30–40 cm, 210D-väv "inte tunn presenning",
+förvaringspåse, fri frakt inom Sverige, 5–10 arbetsdagar) och riskfritt-
+blocket (mallens "Därför kan du testa helt riskfritt." med **30 dagars öppet
+köp** — Bäverbutiken lovar det på sidan, CaraShell har 14 dagars ångerrätt).
+Temafilerna fanns redan på "UTKAST utan popup 2026-08-28" sedan axelbältets
+sida. Filerna ligger i
+`listicle/output/lagerrensning/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan/`.
+Det är samma produkt i två butiker: en annons per butik pekar på sin egen
+sida, aldrig korsvis (fel pixel).
+
 ---
 
 ## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms
