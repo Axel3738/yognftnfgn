@@ -33,5 +33,35 @@
     "typ": "image_hash",
     "id": "7487f998069bbfffb4a6095c309f3a4f",
     "namn": "CARASHELL_Frontrutetrekk_NO_CS_2_1"
+  },
+  "Frontrutetrekk_NO_CS_1": {
+    "typ": "video_id",
+    "id": "1354936170044028",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_1"
+  },
+  "Frontrutetrekk_NO_CS_3": {
+    "typ": "video_id",
+    "id": "939934001970742",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_3"
+  },
+  "Frontrutetrekk_NO_SP_1": {
+    "typ": "video_id",
+    "id": "1046960494906012",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_1"
+  },
+  "Frontrutetrekk_NO_G_1": {
+    "typ": "video_id",
+    "id": "1667640264951824",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_1"
+  },
+  "Frontrutetrekk_NO_G_2": {
+    "typ": "video_id",
+    "id": "1128850909580774",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_2"
+  },
+  "Frontrutetrekk_NO_G_3": {
+    "typ": "video_id",
+    "id": "1454676506715286",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_3"
   }
 }

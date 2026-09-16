@@ -790,3 +790,24 @@ Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är
   à 15–20 s ≈ 40 krediter per video.
 - **Proofread tar 5–6 min per video** sekventiellt (upload + transkribering). Nio per
   marknad ≈ 50 min. Kör SE och NO som två parallella loopar.
+- **`ffprobe` finns inte i claude.ai-containern** (apt tyst, statisk nedladdning 403),
+  bara ffmpeg via `pip install imageio-ffmpeg`. `pipeline/rostkoll.py` gör exakt två
+  ffprobe-anrop (längd + "finns ljudspår") — en 20-raders Python-shim i
+  `/usr/local/bin/ffprobe` som läser `ffmpeg -i` räcker och gav samma svar. Utan den
+  står röstkollen helt still; hoppa aldrig över den för att binären saknas.
+- **Röstkollen fångade ett riktigt fel:** SE CS_1 slutade 5,2 dB högre än källan i
+  sista 100 ms — HeyGen hann inte läsa "Termoskydd husbil från CaraShell." på 2,5 s.
+  Kortad till "Från CaraShell." och omrenderad (≈30 krediter). Alla 18 andra gröna.
+- **Villkorsgrep på de NYA manusen, inte bara källans.** Subagenten skrev "gratis
+  frakt og retur" i NO CS_2 — butiken har `returfrakt_betalas_av: kund`. Brand-detektorn
+  skannar källan, inte det manus som dubbas in. Grep varje `-ny.srt` mot
+  `retur|30 dag|öppet köp|tusen|idag|lager|garanti|Bäver` FÖRE render; hittat efter
+  render kostar en omrendering + en raderad annons (PAUSED, 0 kr — annars aldrig).
+- **`while read` + ett Python-skript i loopen äter stdin:** rostkoll/no-captions
+  läste första tecknet ur nästa rad, så filerna hette `rontrutetrekk_…` och källan
+  "saknades" (falskt ❌). `</dev/null` på varje anrop i loopen.
+- **Captionbandet:** källornas inbrända captions ligger på rad 975–1065 av 1280, men
+  CS_3 (SE) och SP_1 (NO) har text upp till rad 885 — `--band=885:1084` täcker.
+  Kollen "text ovanför bandet" är en OCR-flagga, inte en dom: titta på `qa-*.png`.
+- **Krediter mätt 2026-09-16:** 7 631 → 7 085 för 20 renderingar à 15–18 s ≈ 27 per
+  video (inte 40 som gissat ovan efter de sex första).

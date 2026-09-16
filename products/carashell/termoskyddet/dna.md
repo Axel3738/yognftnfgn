@@ -88,9 +88,10 @@ att ha.
 
 **Mönster 2 — CBO-svälten, fjärde gången (BEVISAD, ärvd).** CS fick 79 % av spenden,
 PD 1 %. Källans PD-videor har ren produktmekanik och är de enda som kunde kopieras —
-och de har aldrig spenderat mer än 33 kr. CaraShells kampanj är byggd som **ABO med
-lika budget per adset** (`factory/kampanj.mjs`, regel 11), så PD får sin chans först
-här. Ärvd data säger alltså ingenting om PD.
+och de har aldrig spenderat mer än 33 kr. CaraShells kampanj är **CBO** (den låsta
+OPS-strukturen), så svälten kan upprepas — PD ligger i ett eget adset men får budget
+efter Metas tycke. Läs spend per adset vid varje avläsning; är PD under 300 kr efter
+en vecka är den fortfarande odömd, inte dålig. Ärvd data säger ingenting om PD.
 
 **Mönster 3 — bilden slog videon i SP (HYPOTES, ärvd, 1 annons).** `SP_2_1` (bild) har
 bäst CPC (2,19 kr) och högst CTR (7,04 %) i hela källkontot och CPA 130 kr mot
@@ -112,11 +113,15 @@ bör bygga på den raden, inte på "prisfall".
    beställer." / "Sjekk målene før du bestiller." Ingen brandreplik alls. Axel kan
    välja HeyGen-omdubb med "från CaraShell" i stället (~20 krediter/video).
 2. **Bilderna PD_2_1 och G_2_1 kopierades orörda** (inget brand, pris eller villkor).
-3. **CS_2_1 och SP_2_1 (båda marknader) är INTE byggda** — falsk brådska respektive
-   påhittad attribution + "30 dagars öppet köp" direkt på fotot. Kräver kie.ai +
-   `bildannonser/text.py`. Namngivna i `factory/output/termoskyddet/uteslutna.json`.
-4. **De nio CS/SP/G-videorna per marknad är INTE byggda** — nytt manus + omdubb +
-   ny captionbana krävs. Krediter finns (7 631). Namngivna i samma fil.
+3. **CS_2_1 och SP_2_1 (båda marknader) byggdes om samma kväll:** kie.ai tog bort
+   källans text (falsk brådska, påhittad attribution, "30 dagars öppet köp") och
+   `factory/bild-text.py` lade butikens rubrik, priskort 559/932 (NO 548/685) och
+   citatkort med riktigt namn. QA före/efter i `bildfix/*.qa.png`.
+4. **De nio CS/SP/G-videorna per marknad omdubbades samma kväll** (HeyGen, nytt manus
+   per vinkel av sonnet-subagent med copy-reglerna, proofread → apply-srt → render,
+   `rostkoll.py` grönt på alla, ny captionbana med `no-captions.py`). Manusen ligger i
+   `factory/output/termoskyddet/omdubb/{se,no}/`. Rösten är HeyGens klon av källans —
+   ingen människa har lyssnat.
 5. **Copyn (PD, G) kopierades ordagrant** — bara länken byttes.
 6. **Priset rördes inte.** 559 / 932 kr. Norge: 548 / 685 NOK (fast pris i prislistan).
 
@@ -134,15 +139,22 @@ target-ROAS 2,70 · target-CPA 207 kr**, räknat **UTAN moms**
 ## Nuläget i CaraShells eget konto (2026-09-16)
 
 `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
-(`120249115376140172`) — **PAUSED**, ABO 2 × 500 kr/dag, adsets `CARASHELL_SE_PD`
-(4 annonser: `CaraShellFront_PD_1/2/3` video + `CaraShellFront_PD_2_1` bild) och
-`CARASHELL_SE_G` (1: `CaraShellFront_G_2_1` bild).
+(`120249115376140172`) — **PAUSED**, **CBO 1 000 kr/dag** (den låsta strukturen,
+regel i `/ny-annonser` steg 8 — inte regel 11:s test-ABO), fyra adsets utan egen
+budget: `CARASHELL_SE_PD` (4), `_G` (4), `_CS` (4), `_SP` (4) = **16 annonser**,
+hela källkampanjen. 9 videor omdubbade med nytt manus (HeyGen, 2026-09-16 kväll),
+3 PD-videor med brandrepliken bortklippt, 2 bilder orörda, 2 bilder ombyggda.
 `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
 (`120249115382210172`) — **PAUSED**, samma struktur, `CaraShellFront_NO_*`, länk
 `/nb/products/termoskyddet?country=NO` (NOK 548 verifierat i kundvyn).
+Räkningen per marknad: `factory/output/termoskyddet/rakningen.md`.
 
-Första riktiga briefronden blir en **kallstart ur ärvd DNA** enligt mönster 1–4, och
-den viktigaste briefen är ett **sant CS-manus** — källans köp sitter där.
+**Mönster 1 är redan testbart utan brief:** CS-videorna ligger uppe med sanna
+villkor (pris, jämförpris, fri frakt, 14 dagars ångerrätt) och utan "idag". Första
+avläsningen svarar på om brådskan eller erbjudandet sålde i källan. Mönster 2
+(CBO-svälten) gäller igen — kampanjen är CBO, så läs spendfördelningen per adset
+innan någon vinkel döms. Den viktigaste briefen är fortfarande ett **eget CS-manus**
+byggt på hook-raden i mönster 4, inte på "prisfall".
 
 ## Marknader
 
