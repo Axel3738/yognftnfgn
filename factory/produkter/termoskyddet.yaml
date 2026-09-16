@@ -1,0 +1,251 @@
+# CaraShell — produkt 2: Termoskydd Husbil 211 × 171 cm (utvändigt, mörkläggande).
+# Källa: baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande
+# Tillagd 2026-09-16 med /ops-produkt carashell <källänk> (factory/ops-produkt.mjs
+# skrev utkastet; resten skrevs samma session). Specs, pris och recensioner
+# lästa ur källans /products/<handle>.json + Judge.me 2026-09-16.
+#
+# BILDERNA: bara EN är ett foto (b6-termoskydd-se.jpg, skyddet på en husbil).
+# De två andra är AI-genererade illustrationer — källsidan skriver det själv
+# ("Miljöbilderna är AI-genererade illustrationer"), och det står kvar i
+# alt-texten här så bilden aldrig blir ett påstående. Inget demo-mp4 finns i
+# källan; källans egen sida bär bara de tre bilderna.
+# Okänt och därför aldrig påstått: material, vikt, isolervärde, förvaringspåse.
+#
+# Copyn (svenska) skrevs 2026-09-16 av en subagent (sonnet) ur BRAND.md +
+# docs/copy-regler.md, tre-frågorstestet ✅ på alla rubrikrader; vinkel,
+# målgrupp och struktur är huvudsessionens.
+#
+# ⚠️ ANDRA PRODUKTEN I BUTIKEN. Eget creative_prefix (CaraShellFront), eget
+# kalla:-block, egen kampanj och egen rutinplats — delas ALDRIG med
+# takskyddet (factory/FLERPRODUKT.md). Pixeln är butikens och delad: Metas
+# köp-event bär ingen produkt, så ett köp av takskyddet (1 129 kr) kan
+# bokföras på termoskyddets kampanj och tvärtom. Läs köp per produkt ur
+# Shopify innan en annons döms — prisavståndet är 2×, inte brus.
+
+produkt:
+  namn: "Termoskydd Husbil 211 × 171 cm"
+  id: "termoskyddet"
+  menynamn: "Termoskyddet"
+
+brand:
+  namn: "CaraShell"
+  domanideer:
+    - "carashell.se"
+    - "carashell.no"
+
+ekonomi:
+  # MOMSEN: räknas UTAN moms (Axels besked 2026-09-09, samma regel som
+  # Bäverbutiken och Grillkliniken). Marginalen räknas rakt på priset.
+  moms_antagen: false
+  # ⚠️ HÄRLEDD, inte kvitterad — samma väg som takskyddet: källkampanjens
+  # namn bär "BE ROAS 1.61" och docs/temu-launch-flow.md säger
+  # BE-ROAS = pris / (pris − inköp) ⇒ 559 − 559/1,61 = 212 kr. Axel sköter
+  # COGS på annat håll (besked 2026-09-16) — byt talet när han ger det.
+  inkopskostnad: 212
+  pris: 559
+  jamforpris: 932
+  # Ur källkampanjens namn (MagiBorsten 120250175763810291, läst 2026-09-16).
+  break_even_roas: 1.61
+  # FASTA PRISER PER MARKNADSVALUTA — samma regel som takskyddet (Axels val
+  # 2026-09-11): NOK-priset i takskyddets kurs (1 106 / 1 129 = 0,9796) och
+  # jämförpriset 25 % över priset. 559 × 0,9796 = 548 NOK, 548 × 1,25 = 685.
+  # ⚠️ Prislistan gid://shopify/PriceList/33455505740 ("Norge") får det fasta
+  # priset via priceListFixedPricesAdd EFTER att produkten finns i butiken —
+  # API-GRANSER.md, tre anrop. Ingen fabrikskod gör det; ops-produkt-sessionen
+  # kör anropet och skriver resultatet i kommentaren nedan.
+  marknadspriser:
+    - valuta: NOK
+      pris: 548
+      jamforpris: 685
+
+varianter:
+media:
+  bilder:
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+      alt: "CaraShell termoskydd spänt utvändigt över husbilens vindruta och sidorutor"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png"
+      alt: "Miljöbild (AI-genererad illustration) – husbil med termoskydd över framrutan på en ställplats"
+    - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-detalj.png"
+      alt: "Miljöbild (AI-genererad illustration) – sidofliken som kläms fast i dörrkarmen"
+  videor:
+  # ⚠️ Inget demo finns i källan (varken mp4 eller gif) — källsidan visar bara
+  # de tre bilderna. Blocken bär därför källans egna bilder, i källans ordning:
+  # miljöbild efter problemet, fotot efter lösningen, detaljen som lifestyle.
+  # Två av tre är AI-illustrationer, märkta i alt-texten. Får Axel/redigeraren
+  # fram en riktig demo-mp4: node factory/filer.mjs <mp4> och --igen metafalt.
+  gif_problem: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png"
+  media_losning: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg"
+  bild_lifestyle: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-detalj.png"
+
+beskrivning:
+  problem_rubrik: "Imman sitter kvar mellan gardin och glas"
+  problem_text: "Fukten från natten lägger sig på insidan av vindrutan, och en gardin gör bara att den blir kvar mellan glaset och tyget. Morgonsolen gör sedan kupén trettio grader varm innan frukosten är klar, och på en rastplats ser alla som går förbi rakt in."
+  losning_rubrik: "CaraShell sitter utanpå rutan"
+  losning_text: "Skyddet spänns utvändigt över vindrutan och båda sidorutorna, så glaset aldrig hinner bli kallt inifrån. Det mörklägger samtidigt hela framvagnen: ingen ser in, och morgonsolen väcker dig inte klockan fyra. Två minuters jobb på utsidan i stället för imma att torka bort varje dag."
+
+vinkel:
+  huvudvinkel: "Konflikt typ A – invändig gardin/solskydd mot utvändigt skydd. Imman sitter på insidan därför att glaset blir kallt; ett skydd innanför glaset kan inte ändra det, ett skydd utanpå gör det. Tre konkreta scener: imma att torka bort varje morgon, trettio grader i kupén före frukost, insyn på rastplatsen. Källa: källkampanjen 'Termoskyddet för Husbil 211 × 171 cm' i MagiBorsten (16 annonser, 40 köp på 7 013 kr, ROAS 3,25 per 2026-09-16; bevisad rad 'Svalt på sommaren, varmt på vintern, mörkt när du sover' i CS_2/CS_3, och SP_2:s 'Efter en sommar med det här skulle vi aldrig åka utan') och källsidans egen ingress 'Rutan är immig inifrån varje morgon'."
+  underrubrik: "Utvändigt termoskydd, 211 × 171 cm, som håller kylan och solen borta från vindruta och sidorutor och mörklägger framvagnen när du sover i bilen."
+  usp: "Svalt. Mörkt. Ingen imma."
+
+malgrupp:
+  beskrivning: "Husbilsägare 45–70 som sover i bilen på rastplatser, ställplatser och campingar, vår till höst och gärna vinterresor. Säger 'kupén', 'framrutan', 'ställplats' och 'imma', har provat invändiga gardiner och vet att imman ändå sitter kvar på morgonen."
+
+problem:
+  - "Imma på insidan av vindrutan varje morgon"
+  - "Trettio grader i kupén innan frukosten är klar"
+  - "Insyn på rastplatsen"
+  - "Morgonsolen som väcker klockan fyra"
+
+benefits:
+  - "Ingen imma att torka bort på morgonen"
+  - "Svalare kupé innan frukosten är klar"
+  - "Ingen inblick på rastplatsen"
+  - "Sover ostörd, morgonsolen väcker dig inte klockan fyra"
+
+features:
+  - "Spänns utvändigt över vindrutan och båda sidorutorna"
+  - "Mörklägger hela framvagnen"
+  - "211 cm bred, 171 cm över mitten, 90 cm sidflikar"
+  - "Flikarna kläms fast i dörrkarmen utan att dörrarna behöver öppnas"
+  - "Håller i blåst"
+
+offer:
+  beskrivning: "559 kr (jämförpris 932 kr), fri frakt till Sverige och Norge, 14 dagars ångerrätt enligt svensk lag och leverans på 5–10 arbetsdagar."
+  bundle: "2 st – 15 % rabatt (förvald, 'Mest populär'). 3 st – 20 % rabatt. Fabrikens standard-A (paket.mjs NIVAER.a), samma som takskyddet."
+  # ⚠️ Källans Kaching-nivåer gick INTE att läsa 2026-09-16: baverbutiken.se
+  # svarar med en bot-spärr ("Verifying your connection") på produktsidans HTML,
+  # medan /products/<handle>.json går. Standardnivåerna är identiska med
+  # källans nivåer för takskyddet (output/takskyddet/kalla-kaching-paket.json).
+  paket:
+    test: "paket"
+  # Q4-ramverket: korg-upsellen är butikens ANDRA produkt, och den ligger på
+  # takskyddets fil (offer.bonus_produkt → termoskyddet). Temat bär EN
+  # korg-upsell per butik (tema.mjs byggKorgUpsell tar första ifyllda handlet
+  # i körningen), så det här blocket är tomt med flit — annars hade två
+  # produkter pekat på varandra utan att någon syntes. Paketen utan gratisdel.
+  bonus_produkt:
+    titel: ""
+    handle: ""
+    produkt_id: ""
+    variant_id: ""
+    pris: 0
+    i_paket: ""
+    tillagg_kryssruta: true
+    kortnamn: ""
+    sku: ""
+    bilder:
+      - ""
+
+reviews:
+  # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-16 (snitt 5,00,
+  # output/termoskyddet/kalla-recensioner.json). Namn och texter är källans
+  # egna; alla titlar är tomma i källan. ⚠️ DATUMEN: alla tio har created_at
+  # 2026-09-15 (07:19 UTC, inom 9 sekunder) — källan API-importerade dem samma
+  # minut, så det är källans originaldatum, inte kunddatum. Inget hittas på.
+  - namn: "Erik"
+    betyg: 5
+    text: "Praktiskt skydd mot sol och värme."
+    datum: "2026-09-15"
+  - namn: "Karin"
+    betyg: 5
+    text: "Bra passform och känns stabilt."
+    datum: "2026-09-15"
+  - namn: "Sofia"
+    betyg: 5
+    text: "Skyddar bra och mörklägger fint."
+    datum: "2026-09-15"
+  - namn: "Per"
+    betyg: 5
+    text: "Mycket nöjd. Enkel att montera."
+    datum: "2026-09-15"
+  - namn: "Anders"
+    betyg: 5
+    text: "Bra kvalitet och lätt att använda."
+    datum: "2026-09-15"
+  - namn: "Emma"
+    betyg: 5
+    text: "Enkelt och praktiskt termoskydd."
+    datum: "2026-09-15"
+  - namn: "Lars"
+    betyg: 5
+    text: "Skyddar bra mot sol och värme. Jag är nöjd."
+    datum: "2026-09-15"
+  - namn: "Johan"
+    betyg: 5
+    text: "Bra skydd när husbilen står ute."
+    datum: "2026-09-15"
+  - namn: "Maria"
+    betyg: 5
+    text: "Passar bra och är lätt att sätta på."
+    datum: "2026-09-15"
+  - namn: "Anna"
+    betyg: 5
+    text: "Bra termoskydd som är enkelt att använda."
+    datum: "2026-09-15"
+
+faq:
+  - fraga: "Passar skyddet min husbil?"
+    svar: "Måtten är 211 cm bred, 171 cm över mitten och 90 cm sidflikar, och skyddet täcker vindrutan och båda sidorutorna på framvagnen. Mät din framruta och jämför innan du beställer."
+  - fraga: "Hur monterar jag skyddet?"
+    svar: "Skyddet spänns utvändigt över vindrutan och sidorutorna, och flikarna kläms fast i dörrkarmen. Dörrarna behöver inte öppnas."
+  - fraga: "Sitter det kvar i blåst?"
+    svar: "Ja, flikarna som kläms i dörrkarmen håller skyddet på plats i blåst."
+  - fraga: "Mörklägger det så ingen ser in?"
+    svar: "Ja, skyddet täcker hela framvagnen och mörklägger den, så ingen på rastplatsen ser in och morgonsolen väcker dig inte i gryningen."
+  - fraga: "Vad gäller om jag ångrar mig?"
+    svar: "14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se."
+
+leveranstid: "5–10 arbetsdagar"
+
+garantier:
+leverantor:
+  # ⚠️ Leverantörslänken går INTE att härleda: källans SKU BEVER-B7-TERMOSKYDD
+  # bär inget Temu-artikelnummer alls. Länken nedan är KÄLLPRODUKTEN, inte
+  # leverantören — Axel eller nästa anställd hittar Temu-länken före inköp.
+  # Ledtid och MOQ ej verifierade.
+  url: "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+  anteckning: "PLATSHÅLLARE = källprodukten. Riktig leverantörslänk saknas (SKU BEVER-B7-TERMOSKYDD bär inget Temu-id). Måste hittas innan inköp."
+
+kalla:
+  butik: "baverbutiken.se"
+  produkt_id: "16522215522653"
+  produkt_handle: "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+  produkt_url: "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande"
+  annonskonto: "1867947880635861"
+  # Läst ur kontot 2026-09-16: 16 annonser ACTIVE i fyra adsets (CS, SP, G,
+  # PD), alla "Termoskydd_<vinkel>_<n>[_1]" — 7 013 kr, 40 köp, ROAS 3,25.
+  # ⚠️ Presentvinkeln heter G här, inte GT som hos takskyddet.
+  annonsprefix: "Termoskydd"
+  kampanj_id: "120250175763810291"
+  kampanj: "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11"
+  # Norska källkampanjen i Magiborsten NO 1050941584152547: "Frontrutetrekk til
+  # Bobil NO | BE-ROAS 1,62 | 2026-09-12", 16 annonser ACTIVE, 3 222 NOK, 9 köp
+  # (läst 2026-09-16). Prefixet är Frontrutetrekk_NO_.
+  no_annonskonto: "1050941584152547"
+  no_kampanjmonster: "Frontrutetrekk til Bobil"
+  # Med _NO, som damasker.yaml: kampanj.mjs läser vinkeln som ordet efter
+  # prefixet, och utan _NO blir vinkeln "NO" (mätt 2026-09-16).
+  no_annonsprefix: "Frontrutetrekk_NO"
+  # Svenska transkripten: market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_*.orig.srt
+  srt_slug:
+    - "termoskydd"
+kallor:
+  drive_mapp: ""
+
+meta:
+  # Gemensamt OPS-konto för alla butiker. Förväxla ALDRIG med MagiBorsten
+  # 1867947880635861 (Bäverbutiken, källan).
+  ad_account_id: "915422744950975"
+  # Sidan och pixeln är BUTIKENS — kopierade ur takskyddet.yaml (samma butik),
+  # aldrig från en annan verksamhet.
+  page_id: "1381171778405935"
+  pixel_id: "28589207184025756"
+  # Prefixet är PER PRODUKT, aldrig per brand. "Front" = framrutan (namnregeln:
+  # funkar på svenska och engelska, inga å/ä/ö). Delas aldrig med CaraShellRoof.
+  creative_prefix: "CaraShellFront"
+  testbudget_per_dag: 1000
+  vinklar:
+    - "Imman som lägger sig på insidan varje morgon, och skyddet som sitter utanpå rutan och håller glaset från att bli kallt."
+    - "Trettio grader i kupén innan frukosten är klar, tills ett tätt skydd utanpå rutan stoppar värmen innan den kommer in."
+    - "Ingen ser in på rastplatsen när skyddet mörklägger hela framvagnen, och morgonsolen väcker dig inte klockan fyra."

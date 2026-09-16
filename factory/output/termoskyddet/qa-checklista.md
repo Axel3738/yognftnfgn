@@ -1,9 +1,9 @@
-# QA — Taköverdrag Husvagn & Husbil 6,5 × 3 m
+# QA — Termoskydd Husbil 211 × 171 cm
 
-- [x] ✅ produkt: Taköverdrag Husvagn & Husbil 6,5 × 3 m (takskyddet), status ACTIVE
-- [x] ✅ priser: 1129 SEK på alla varianter, jämförpris 1469
+- [x] ✅ produkt: Termoskydd Husbil 211 × 171 cm (termoskyddet), status ACTIVE
+- [x] ✅ priser: 559 SEK på alla varianter, jämförpris 932
 - [x] ✅ varianter: 1 st
-- [x] ✅ bilder: 4 st, 4 media i butiken
+- [x] ✅ bilder: 3 st, 3 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
 - [x] ✅ beskrivning: problem, lösning och kritisk media (gif + demo) finns
 - [x] ✅ reviews: 10 st i Judge.me-underlaget

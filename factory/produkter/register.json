@@ -349,6 +349,23 @@
         "motivering": "Axels beslut 2026-09-14: kampanjen har 1 köp på 13 annonser och ROAS 0,30 — ingen bedömbar data, alltså ingen feedback-loop att brieffa ur. Låt den samla data i stället för att spamma nya ads. Budgetronden går varje natt och skyddar budgeten. Släpps med briefantal auto när 3 köp finns.",
         "satt": "2026-09-14"
       }
+    },
+    "carashell/termoskyddet": {
+      "lage": "skala",
+      "redigerare": null,
+      "redigerare_discord_id": null,
+      "notion": {
+        "name": "",
+        "database_id": "",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "",
+      "senaste_brief": "",
+      "cycle_start": "",
+      "launches": [],
+      "anteckning": "Upptäckt automatiskt ur state-filen."
     }
   },
   "rutinplatser": {
@@ -358,7 +375,8 @@
     "kalender": 3,
     "tacklebay": 4,
     "carashell": 5,
-    "catcabin": 6
+    "catcabin": 6,
+    "carashell/termoskyddet": 7
   },
   "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt)."
 }

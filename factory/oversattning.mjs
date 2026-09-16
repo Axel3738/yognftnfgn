@@ -48,6 +48,7 @@ import { sammanfoga, arNischbutik } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
+import { huvudmenyRader } from './meny.mjs';
 import * as buildStore from './build-store.mjs';
 import * as startsida from './startsida.mjs';
 import * as tema from './tema.mjs';
@@ -283,11 +284,12 @@ export function byggMinimalKontext(butik, rader) {
     produkter: ps.map((p) => ({ p, plan: krav(buildStore, 'build-store', 'byggPlan')(p, butik), metafalt: byggMetafalt(p, { kundUnderrubrik }) })),
     policyer,
     kollektion,
-    huvudmenylankar: [
-      ...(arNischbutik(butik, ps) ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
-      ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn, url: `/products/${p.produkt.id}` })),
-      { titel: 'Kontakt', url: '/pages/contact' },
-    ],
+    // Samma byggare som meny-steget (meny.mjs huvudmenyRader): Hem /
+    // [kollektion] / produkter / Frakt & retur / Kontakt. Listan här byggdes
+    // förut för hand utan Hem och Frakt & retur, så "Hem" fick aldrig någon
+    // nyckel i underlaget och stod kvar på /nb som en läcka (CaraShell
+    // 2026-09-16, när produkt 2 skrev om menyn).
+    huvudmenylankar: huvudmenyRader(butik, ps),
     menylankar: [...policyer.map((x) => ({ titel: x.namn, url: `/pages/${x.handle}` })), { titel: 'Kontakt', url: '/pages/contact' }],
     shop: null,
   };

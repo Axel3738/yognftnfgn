@@ -41,11 +41,12 @@
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
         "sections/header-group.json",
-        "snippets/ms-head.liquid",
-        "snippets/ms-paket.liquid"
+        "snippets/opf-korg-upsell.liquid",
+        "sections/cart-drawer.liquid",
+        "snippets/ms-head.liquid"
       ],
       "produktmall": "verifierad",
-      "upsell": null
+      "upsell": "termoskyddet"
     },
     "avbrandning": {
       "klar": true,
@@ -75,7 +76,9 @@
     },
     "kollektion": {
       "klar": true,
-      "hoppadOver": "enproduktsbutik"
+      "handle": "sortimentet",
+      "produkter": 2,
+      "publicerad": true
     },
     "startsida": {
       "klar": true,
@@ -88,7 +91,7 @@
         "hero",
         "ms_usp",
         "ms_marquee",
-        "produkt",
+        "sortiment",
         "berattelse",
         "statement",
         "omdomen",
@@ -102,7 +105,8 @@
         "galleri": []
       },
       "produkter": [
-        "takskyddet: ACTIVE"
+        "takskyddet: ACTIVE",
+        "termoskyddet: ACTIVE"
       ]
     },
     "sidor": {
@@ -117,8 +121,8 @@
       "klar": true,
       "huvudmeny": {
         "handle": "main-menu",
-        "orord": true,
-        "rader": 4
+        "orord": false,
+        "rader": 6
       },
       "sidfot": {
         "handle": "footer",
@@ -162,25 +166,25 @@
     },
     "oversatt": {
       "klar": true,
-      "underlag": 106,
+      "underlag": 149,
       "utfall": {
         "nb": {
-          "registrerade": 1,
+          "registrerade": 4,
           "saknade": 0,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
-            "menylänk": 0,
+            "menylänk": 4,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
-            "temainställning": 1
+            "temainställning": 0
           },
-          "granskning": "4317/4339"
+          "granskning": "4339/4370"
         }
       }
     },
@@ -211,7 +215,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-12T03:31:35.140Z"
+    "tid": "2026-09-16T04:20:59.353Z"
   },
-  "uppdaterad": "2026-09-12T03:31:35.140Z"
+  "uppdaterad": "2026-09-16T04:20:59.353Z"
 }

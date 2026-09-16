@@ -29,3 +29,6 @@ kundtjanst/jobb/
 # aldrig blandas ihop med brevlådornas verkliga historik.
 kundtjanst/korningar/demobutiken/
 kundtjanst/historik/demobutiken.jsonl
+
+# Åtgärdade videor i OPS-flödet (factory/media-upload.mjs bildfix) — ligger i Meta, klipptiderna står i brand-syn.json
+factory/output/*/bildfix/*.mp4

@@ -929,3 +929,21 @@ Varje regel en gång, med datum. Koden bär dem; det här är varför.
 - **Shopify-MCP:n är förbjuden i `/ny-ops`** (incident 2026-09-07: MCP:n stod
   på HeimGuard och rutinen försökte `switch-shop`). All åtkomst via token i
   `factory/.env`.
+
+---
+
+## Andra produkten i en befintlig butik (bevisat 2026-09-16, CaraShell → termoskyddet)
+
+`/ops-produkt <butik> <källänk>` är rutinen; `.claude/commands/ops-produkt.md` är
+körordningen. Det som bevisades utöver kommandot, i ordning: utkast ur källans
+`/products/<handle>.json` (Kaching-nivåerna gick INTE att läsa — källsidans HTML ligger
+bakom en bot-spärr, `.json` går; standardnivåerna A/B användes) → copy av subagent →
+`kollektion:`-block + brandnivå på startsidan (hero, berättelse, statement får inte låsa
+brandet vid produkt 1) → bygget med ALLA produktfiler + `--igen kollektion,startsida,
+meny,tema` → `priceListFixedPricesAdd` för produkt 2:s variant i NOK-prislistan →
+nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
+`oversattning-sv.json`, inte bara mot nb-filen) → `--igen oversatt` → QA grön →
+`register.mjs skriv-in` + `rutin.mjs --tider <nyckel> --flerprodukt --skriv-in` →
+`/ny-annonser` (FAS2.md 2026-09-16) → minne per produktnyckel (`products/<butik>/README.md`).
+Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
+om till `<butik>/<produkt 1>` på det konto de ligger på.

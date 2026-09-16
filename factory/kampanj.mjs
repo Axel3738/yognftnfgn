@@ -73,6 +73,24 @@ export function vinkelAv(namn, prefix = '') {
   return kod;
 }
 
+/** Annonsnamnet i OPS-kontot: produktens EGET prefix (meta.creative_prefix,
+ *  brandet som reserv) + källnamnet utan källprefixet, med `NO_` framför på
+ *  den norska marknaden — `CaraShellFront_PD_2_1` / `CaraShellFront_NO_PD_1`.
+ *  Till 2026-09-16 hette annonsen `${brand}_${källnamn}`
+ *  (`CaraShell_Termoskydd_PD_2_1`): i en enproduktsbutik är brandet prefixet,
+ *  så det höll, men i en tvåproduktsbutik matchar registrets prefixfilter
+ *  (`carashellfront_`) aldrig — nattvakten, leveranskön och commission hade
+ *  inte sett en enda annons. docs/naming-convention.md + FLERPRODUKT.md. */
+export function annonsnamnAv(p, kallnamn, kallprefix = '', marknad = 'SE') {
+  const prefix = String(p?.meta?.creative_prefix || p?.brand?.namn || '').replace(/[^A-Za-z0-9]/g, '');
+  if (!prefix) throw new Error('Produktfilen saknar meta.creative_prefix och brand.namn.');
+  let rest = String(kallnamn);
+  if (kallprefix && rest.startsWith(`${kallprefix}_`)) rest = rest.slice(kallprefix.length + 1);
+  else rest = rest.split('_').slice(1).join('_');
+  if (marknad === 'NO' && !/^NO_/.test(rest)) rest = `NO_${rest}`;
+  return `${prefix}_${rest}`;
+}
+
 export function byggSpec({ typ, media, copy, pageId, igId, lank }) {
   const cta = { type: 'SHOP_NOW', value: { link: lank } };
   const gemensamt = {
@@ -148,7 +166,10 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   const copyblock = JSON.parse(readFileSync(copyFil, 'utf8')).vinklar;
 
   const brand = butik.butik.brand;
-  const kampanjnamn = `${brand.toUpperCase()}_${marknad}_${p.produkt.namn.split(/[–—-]/)[0].trim()} | BE-ROAS ${(p.ekonomi.pris / (p.ekonomi.pris - p.ekonomi.inkopskostnad)).toFixed(2)} | 2026-09-09`;
+  // Datumet är byggdagen (svensk tid) — stod hårdkodat "2026-09-09" till
+  // 2026-09-16, så varje kampanj byggd efter DryTrek bar fel datum i namnet.
+  const idag = new Date(Date.now() + 2 * 3600 * 1000).toISOString().slice(0, 10);
+  const kampanjnamn = `${brand.toUpperCase()}_${marknad}_${p.produkt.namn.split(/[–—-]/)[0].trim()} | BE-ROAS ${(p.ekonomi.pris / (p.ekonomi.pris - p.ekonomi.inkopskostnad)).toFixed(2)} | ${idag}`;
   const budget = Math.round((p.meta?.testbudget_per_dag ?? 1000) * 100);
 
   console.log(`Mål: ${MALKONTO.namn} ${act} (${MALKONTO.valuta})`);
@@ -235,16 +256,17 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
       const m = { id: a.id };
       if (a.typ === 'video') m.thumb = await väntaPåThumb(a.id);
       const spec = byggSpec({ typ: a.typ, media: m, copy, pageId, igId: null, lank });
+      const annonsnamn = annonsnamnAv(p, a.namn, kallprefix, marknad);
       const creative = await api(`act_${act}/adcreatives`, {
         form: {
-          name: `${brand.toUpperCase()}_${a.namn}`,
+          name: annonsnamn,
           object_story_spec: JSON.stringify(spec),
           degrees_of_freedom_spec: JSON.stringify(ingaEnhancements()),
         },
       });
       const annons = await api(`act_${act}/ads`, {
         form: {
-          name: `${brand}_${a.namn}`,
+          name: annonsnamn,
           adset_id: adsetId,
           creative: JSON.stringify({ creative_id: creative.id }),
           status: 'PAUSED',

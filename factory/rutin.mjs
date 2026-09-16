@@ -213,10 +213,10 @@ export function minutkrockar(nyckel, andra = [], platser = lasPlatser(), opt = {
 }
 
 /** Alla tre tiderna för en butik, med cron för båda halvåren. */
-export function tiderFor(butik, { platser = lasPlatser(), datum = new Date() } = {}) {
-  const p = platsFor(butik, platser);
+export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false } = {}) {
+  const p = platsFor(butik, platser, { flerprodukt });
   return Object.keys(BUTIKSRUTINER).map((namn) => {
-    const tid = tidFor(namn, butik, platser);
+    const tid = tidFor(namn, butik, platser, { flerprodukt });
     const c = tillCron(tid, { datum });
     return { kommando: `/${namn} ${butik}`, tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
   });
@@ -436,9 +436,14 @@ if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
     // Butikens tre rutiner med egen minut per butik. Setup läser tiderna härifrån.
     const butik = flagga('tider');
     if (!opsButiker().includes(String(butik).split('/')[0].toLowerCase())) { console.error(`✗ Butiken "${butik}" finns inte i factory/butiker/ (${opsButiker().join(', ')}).`); process.exit(1); }
-    const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik) : platsFor(butik);
-    console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''} (svensk tid → cron):\n`);
-    for (const t of tiderFor(butik)) {
+    // --flerprodukt: produkt nr 2 i en butik får en EGEN plats i stället för
+    // att ärva butikens (annars startar två nattvakter samma minut mot det
+    // delade OPS-kontot — FLERPRODUKT.md, lagat 2026-09-14, CLI-flaggan
+    // 2026-09-16 när CaraShell fick sin andra produkt).
+    const flerprodukt = process.argv.includes('--flerprodukt');
+    const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik, undefined, { flerprodukt }) : platsFor(butik, undefined, { flerprodukt });
+    console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''}${p.arvd ? ' (ÄRVD av butiken — produkt nr 2 ska köras med --flerprodukt)' : ''} (svensk tid → cron):\n`);
+    for (const t of tiderFor(butik, { flerprodukt })) {
       console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}`);
       console.log(`         sommar ${t.cronSommar} · vinter ${t.cronVinter}`);
     }

@@ -1,0 +1,86 @@
+{
+  "produkt": "termoskyddet",
+  "datum": "2026-09-16",
+  "metod": "Ögongranskning i /ops-produkt carashell (steg 7 = /ny-annonser): de fyra svenska och fyra norska bildannonserna i full upplösning (1024 × 1024), plus slutframes ur videorna (Termoskydd_CS_3 frame_049, Termoskydd_PD_2 frame_060, Termoskydd_SP_2 frame_030) och captionbanden 15,6–17,9 s i de tre norska PD-videorna (frames var 0,4 s). Samma filer som OCR-passet, samma session.",
+  "varfor": "OCR läste inte de fyra svenska bilderna alls i första passet (rapidocr saknades i containern) och läser aldrig en logotyp. Textytorna på fotona bär det som avgör: en påhittad attribution ('Verifierad kund, 58 år'), ett villkor butiken inte har ('30 dagars öppet köp') och falsk brådska ('IDAG ENDAST', 'Få kvar i lager'). Videornas sista replik 'från Bäverbutiken' är inbränd som caption på vit platta — OCR läste den som 'babebutiken'/'bavobutiken'/'avebutiken' (fuzzy), ögat bekräftar att det är brandnamnet.",
+  "annonser": {
+    "Termoskydd_CS_2_1": {
+      "yta4": {
+        "syns": true,
+        "var": "inbränd text direkt på fotot (himlen) högst upp + röd banderoll under",
+        "ordagrant": "40% RABATT – IDAG ENDAST / Få kvar i lager – beställ innan det är slut!",
+        "fil": "Termoskydd_CS_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "Inget brandnamn, inget pris i kronor. 40 % stämmer mot jämförpriset (559 av 932 kr) men 'IDAG ENDAST' + lagerlarmet är en tidsbegränsad kampanj butiken inte kör. Rubriken ligger på fotot utan platta — oversatt-bild.py fann bara fotoytor som 'former' (analys 2026-09-16), så fixen är kie.ai + bildannonser/text.py. Står i uteslutna.json tills dess."
+      }
+    },
+    "Termoskydd_SP_2_1": {
+      "yta4": {
+        "syns": true,
+        "var": "inbränd text direkt på fotot, vänster överdel (stjärnor, citat, attribution, villkorsrad, knapp)",
+        "ordagrant": "★★★★★ \"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\" – Verifierad kund, 58 år / ✅ 30 dagars öppet köp / Knapp: \"Beställ nu\"",
+        "fil": "Termoskydd_SP_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "Tre fel: attributionen är påhittad för butiken (ingen verifierad kund), '30 dagars öppet köp' mot butikens 14 dagars ångerrätt (OCR fångade den, villkorsregeln gav slutkortsbygge), och en renderingsartefakt 'Knapp: \"Beställ nu\"' står som text i bilden. Text på fotot utan platta ⇒ kie.ai + text.py. Nytt citat finns i Judge.me-underlaget. Står i uteslutna.json."
+      }
+    },
+    "Termoskydd_PD_2_1": {
+      "yta4": {
+        "syns": false,
+        "notis": "Ögonläst: 'SLUT PÅ HETTA I HUSBILEN – MÖRKLÄGGER OCH KYLER PÅ SEKUNDER' vit versaltext på himlen. Inget brandnamn, inget pris, inga villkor, ingen logotyp. Domen ren stämmer."
+      }
+    },
+    "Termoskydd_G_2_1": {
+      "yta4": {
+        "syns": false,
+        "notis": "Ögonläst: 'DEN PERFEKTA PRESENTEN TILL HUSBILSÄGAREN' + 'Se glädjen när de öppnar den – en present de faktiskt kommer använda.' + knapp 'Ge bort perfektion'. Inget brandnamn, inget pris, inga villkor, ingen logotyp. Domen ren stämmer."
+      }
+    },
+    "Termoskydd_PD_1": { "yta3": { "syns": true, "var": "caption på vit platta, y≈1000 av 1280, sista repliken 16,08–18,56 s", "ordagrant": "från bäbebutiken.", "sekund": 16.5, "notis": "Ögonläst ur montage 2026-09-16: captionen före är 'du beställer.' (Kolla måtten innan du beställer). Brandrepliken är BORTKLIPPT i bildfix/Termoskydd_PD_1.mp4 (klipp vid 16,00 s, sista frame visar 'du beställer.'). Inget slutkort, ingen logotyp — bara captionplattan." } },
+    "Termoskydd_PD_2": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken 16,32–18,80 s", "ordagrant": "från bäbebutiken.", "sekund": 17.0, "notis": "Frame_060 ögonläst: 'från bäbebutiken.' på vit platta, produktbild bakom, inget slutkort. Bortklippt i bildfix/Termoskydd_PD_2.mp4 (klipp vid 16,24 s, sista frame 'du beställer.')." } },
+    "Termoskydd_PD_3": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken 17,22–19,70 s", "ordagrant": "från bäbebutiken.", "sekund": 18.0, "notis": "Bortklippt i bildfix/Termoskydd_PD_3.mp4 (klipp vid 17,14 s, sista frame 'du beställer.'). Inget slutkort." } },
+    "Termoskydd_CS_1": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Samma captionmall som alla 12. Talet är dessutom ett CS-manus med falsk brådska — se uteslutna.json." } },
+    "Termoskydd_CS_2": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Se uteslutna.json." } },
+    "Termoskydd_CS_3": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken 13,0–15,5 s", "ordagrant": "från bäbebutiken.", "sekund": 14.5, "notis": "Frame_049 ögonläst: 'från bäbebutiken.' på vit platta över husbilen i snö. Inget slutkort, ingen logotyp. Se uteslutna.json." } },
+    "Termoskydd_G_1": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Se uteslutna.json." } },
+    "Termoskydd_G_2": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Se uteslutna.json." } },
+    "Termoskydd_G_3": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Se uteslutna.json." } },
+    "Termoskydd_SP_1": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäbebutiken.", "notis": "Se uteslutna.json." } },
+    "Termoskydd_SP_2": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bävebutiken.", "notis": "Frame_030 ögonläst mitt i filmen: ordvis caption 'Nu åker vi aldrig' — vittnesmålet i vi-form är inbränt ord för ord, så ett nytt manus kräver ny captionbana. Se uteslutna.json." } },
+    "Termoskydd_SP_3": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken", "ordagrant": "från bäverbutiken.", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_CS_2_1": {
+      "yta4": {
+        "syns": true,
+        "var": "blå platta högst upp + röd banderoll",
+        "ordagrant": "40 % RABATT – KUN I DAG / Få igjen på lager – bestill før det er tomt!",
+        "fil": "Frontrutetrekk_NO_CS_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "Falsk brådska (butiken kör ingen tidsbegränsad kampanj). Plattorna är riktiga former, så oversatt-bild.py kan byta texten — men vad den ska säga är ett CS-beslut utan kampanj. Står i uteslutna.json."
+      }
+    },
+    "Frontrutetrekk_NO_SP_2_1": {
+      "yta4": {
+        "syns": true,
+        "var": "text på mörktonat foto, vänster överdel + grön etikett",
+        "ordagrant": "★★★★★ Sover mye bedre nå – helt mørkt uansett vær! – Verifisert kunde, 58 år / 30 dagers åpent kjøp",
+        "fil": "Frontrutetrekk_NO_SP_2_1.jpg",
+        "logotyp_utan_text": false,
+        "notis": "OCR gav domen ren — villkorsregeln såg inte den norska formen '30 dagers åpent kjøp'. Ögat gör det: påhittad attribution + villkor butiken inte har (14 dagers angrerett). Står i uteslutna.json."
+      }
+    },
+    "Frontrutetrekk_NO_PD_2_1": { "yta4": { "syns": false, "notis": "Ögonläst: 'SLUTT PÅ VARME I BOBILEN – MØRKLEGGER OG KJØLER PÅ SEKUNDER'. Inget brandnamn, pris eller villkor. Domen ren stämmer." } },
+    "Frontrutetrekk_NO_G_2_1": { "yta4": { "syns": false, "notis": "Ögonläst: 'DEN PERFEKTE GAVEN TIL BOBILEIEREN' + 'Se gleden når de åpner den – en gave de faktisk kommer til å bruke.' + knapp 'Gi bort perfeksjon'. Inget brandnamn, pris eller villkor. Domen ren stämmer." } },
+    "Frontrutetrekk_NO_PD_1": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken från ca 16,1 s", "ordagrant": "Termobeskyttelse for bobil fra beverbutikken", "sekund": 16.4, "notis": "Captionband ögonläst var 0,4 s: 'Sjekk målene før du bestiller.' t.o.m. 16,0 s, brandrepliken från 16,2 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_1.mp4 (klipp vid 16,05 s)." } },
+    "Frontrutetrekk_NO_PD_2": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken från ca 16,5 s", "ordagrant": "Termotrekk til bobil fra beverbutikken", "sekund": 16.8, "notis": "'Sjekk målene…' t.o.m. 16,2 s, brand från 16,6 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_2.mp4 (klipp vid 16,40 s, sista frame 'Sjekk målene før du bestiller.')." } },
+    "Frontrutetrekk_NO_PD_3": { "yta3": { "syns": true, "var": "caption på vit platta, sista repliken från ca 17,4 s", "ordagrant": "Termobeskyttelse for bobil fra beverbutikken", "sekund": 17.7, "notis": "'Sjekk målene…' t.o.m. 17,1 s, brand från 17,5 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_3.mp4 (klipp vid 17,30 s, sista frame 'Sjekk målene før du bestiller.')." } },
+    "Frontrutetrekk_NO_CS_1": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_CS_2": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_CS_3": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_G_1": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_G_2": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_G_3": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_SP_1": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_SP_2": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } },
+    "Frontrutetrekk_NO_SP_3": { "yta3": { "syns": true, "var": "caption, sista repliken", "ordagrant": "fra beverbutikken", "notis": "Se uteslutna.json." } }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "Frontrutetrekk_NO_PD_2_1": {
+    "typ": "image_hash",
+    "id": "6c58075b6f567d76fb70f32abb26cbae",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_2_1"
+  },
+  "Frontrutetrekk_NO_PD_1": {
+    "typ": "video_id",
+    "id": "1947494192597723",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_1"
+  },
+  "Frontrutetrekk_NO_PD_3": {
+    "typ": "video_id",
+    "id": "928090836583421",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_3"
+  },
+  "Frontrutetrekk_NO_PD_2": {
+    "typ": "video_id",
+    "id": "4500324783579221",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_2"
+  },
+  "Frontrutetrekk_NO_G_2_1": {
+    "typ": "image_hash",
+    "id": "eaa8cb47984a056b9cbd2c66dd4b2f9e",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_2_1"
+  }
+}

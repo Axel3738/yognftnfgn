@@ -1,0 +1,39 @@
+{
+  "_om": [
+    "Annonscopy för CaraShell termoskyddet (SE), 2026-09-16, /ops-produkt steg 7 (= /ny-annonser).",
+    "",
+    "KOPIERAD ORÖRD ur Bäverbutikens källannonser (MagiBorsten 1867947880635861, kampanj",
+    "120250175763810291) enligt Axels regel 2026-09-10: nämner annonsen varken Bäverbutiken",
+    "eller ett felaktigt pris kopieras den som den är. PD- och G-copyn bär inget brandnamn,",
+    "inget pris och inga villkor — bara länken byts (kampanj.mjs pekar om den till",
+    "carashell.se/products/termoskyddet).",
+    "",
+    "Bara PD och G finns här: det är de två vinklar som har annonser som går att bygga i dag",
+    "(PD_1–3 med brandrepliken bortklippt + PD_2_1 och G_2_1 som är rena bilder). CS och SP",
+    "bär falsk brådska respektive ett påhittat kundvittnesmål i talet och står namngivna i",
+    "output/termoskyddet/uteslutna.json tills de fått nytt manus + omdubb.",
+    "",
+    "Utfall i källan per 2026-09-16 (hela livstiden): PD_2_1 2 kr/0 köp, PD_1 6 kr, PD_2 33 kr,",
+    "PD_3 5 kr, G_2_1 7 kr — alla under grinden. Källans köp ligger i CS (31) och SP (9)."
+  ],
+  "vinklar": {
+    "PD": {
+      "annonser": ["Termoskydd_PD_1", "Termoskydd_PD_2", "Termoskydd_PD_3", "Termoskydd_PD_2_1"],
+      "utfall_i_kallan": "under grinden — 46 kr och 0 köp över fyra annonser (CBO:n lade pengarna på CS)",
+      "rattad_efter_granskning": false,
+      "message": "Trött på en bastu-varm husbil på sommaren? 🥵\nTermoskydd Husbil blockerar solen och håller kupén sval, precis när du behöver det.\n☀️ Kylare på sommaren\n❄️ Varmare på vintern\n🌙 Full mörkläggning när du sover\nKolla att måtten passar din husbil (211 × 171 cm) och beställ idag.",
+      "headline": "Sval husbil, oavsett väder",
+      "description": "Termiskt skydd som kyler, värmer och mörklägger.",
+      "andringar": []
+    },
+    "G": {
+      "annonser": ["Termoskydd_G_2_1"],
+      "utfall_i_kallan": "under grinden — 7 kr och 0 köp",
+      "rattad_efter_granskning": false,
+      "message": "Vet du redan vad du ska ge husbilsägaren i din familj? 🎁\nFöreställ dig ansiktet när de öppnar paketet och förstår vad det är.\nInte bara en present – utan en de faktiskt kommer använda, resa efter resa.\nKolla måtten (211 × 171 cm) och ge presenten som visar att du förstår vad de älskar.",
+      "headline": "Presenten husbilsägare älskar",
+      "description": "Ge en present de faktiskt kommer använda.",
+      "andringar": []
+    }
+  }
+}

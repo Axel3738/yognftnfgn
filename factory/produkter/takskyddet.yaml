@@ -108,22 +108,26 @@ offer:
   # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
   paket:
     test: "paket"
-  # Q4-ramverket: gratis bonus i paketen + betald korg-upsell.
-  # ⚠️ Ingen komplementprodukt hittas på. Kandidat i källbutiken: "Termoskydd
-  # Husbil 211 × 171 cm" 559 kr (BRAND.md) — en hel andra produkt, Axels
-  # beslut. Tills dess är bonus-steget manuellt och paketen körs utan gratisdel.
+  # Q4-ramverket: betald korg-upsell = butikens ANDRA produkt (TackleBay-
+  # modellen, ingen gratis bonus). Kandidaten som stod här sedan BRAND.md
+  # 2026-09-10 — "Termoskydd Husbil 211 × 171 cm", 559 kr — blev en riktig
+  # produkt 2026-09-16 (/ops-produkt carashell). Tom bildlista med flit:
+  # bonus.mjs återanvänder då den befintliga produkten och skriver bara
+  # tillbaka id:n. Paketen körs fortfarande utan gratisdel.
   bonus_produkt:
-    titel: ""
-    handle: ""
-    produkt_id: ""
-    variant_id: ""
-    pris: 0
+    titel: "Termoskydd Husbil 211 × 171 cm"
+    handle: "termoskyddet"
+    produkt_id: "16108121489740"
+    variant_id: "58826594156876"
+    pris: 559
     i_paket: ""
-    tillagg_kryssruta: true
-    kortnamn: ""
+    # false med flit: fullpris-kryssrutan (opf-tillagg) byggs bara i
+    # enproduktsläget (tema.mjs), och i en tvåproduktsbutik bär korg-upsellen
+    # samma sak. Med true blev kundvyn röd på en kryssruta som aldrig ritas.
+    tillagg_kryssruta: false
+    kortnamn: "termoskyddet"
     sku: ""
     bilder:
-      - ""
 
 reviews:
   # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-10 (snitt 5,00).

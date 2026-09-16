@@ -1,0 +1,7347 @@
+{
+ "produkt": "termoskyddet",
+ "datum": "2026-09-16",
+ "tathet": 0.3,
+ "annonser": {
+  "Termoskydd_CS_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Idag stort",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "ldag stort",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "prisfall pa",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "morktnar du sover.",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Bestallnu innan",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.66,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.97
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_CS_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Och kvar i lager",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Och kvar i lager",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "just nu till",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "just nu till",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 1
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "rabatterat pris.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varmtpa vintern",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "morktnar du sover.",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Bestallnu innan",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Bestallnu innan",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.75,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.977
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_CS_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Termoskydd_CS_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "40%RABATT-IDAGENDAST",
+       "konfidens": 0.974
+      },
+      {
+       "text": "Fa kvarilager-bestall innan det är slut!",
+       "konfidens": 0.936
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_CS_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Sista chansen att",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Sista chansen att",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "fixa husbilen",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "fixa husbilen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "innan sasongen.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "innan sasongen.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "rabatterat pris",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "rabatterat pris",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "rabatterat pris",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "bara idag.",
+       "konfidens": 1
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "varmt pa vintern",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.52,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.985
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_G_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Stort prisfall pa",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Stort prisfall pa",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "morktnar du sover.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.05,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.971
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_G_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Dethararpresenten",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "som far dem",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "som far dem",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "att saga antligen.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "att saga antligen.",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Thermoskydd, husbil",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd, husbil",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd, husbil,",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd, husbil,",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd, husbil,",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Bestallnu innan",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Thermoskydd, husibil",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Thermoskydd, husibil",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd, husibil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd, husibil",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.22,
+     "texter": [
+      {
+       "text": "fran avebutiken.",
+       "konfidens": 0.97
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_G_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Termoskydd_G_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "DENPERFEKTAPRESENTEN",
+       "konfidens": 0.991
+      },
+      {
+       "text": "TILLHUSBILSAGAREN",
+       "konfidens": 0.992
+      },
+      {
+       "text": "Se glädjen när de oppnar den - en present de faktiskt kommer använda.",
+       "konfidens": 0.942
+      },
+      {
+       "text": "Gebortperfektion",
+       "konfidens": 0.994
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_G_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Den basta julklappen",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Den basta julklappen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "for nagon som",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "for nagon som",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "alskar sin husbil.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "alskar sin husbil.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "alskar sin husbil.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "alskar sin husbil.",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "rabatterat",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "pris bara idag.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Svalt pa sommaren,",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "varmt pa vintern,",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "morktnar du sover.",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "morkt nar du sover.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Lagret minskar",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "snabbt.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Bestallnu innan",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Bestall nu innan",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "det ar slut.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskyddhusbil",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 15.98,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.985
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_PD_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "sa har skyddar",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "sa har skyddar",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "du husbilen pa",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "du husbilen pa",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "3 sekunder.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "3 sekunder.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.891
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.975
+      },
+      {
+       "text": "Ett utvandigt",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.869
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.976
+      },
+      {
+       "text": "Ett utvandigt",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.881
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.958
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.863
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.95
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.874
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.954
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.89
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.956
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.814
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.957
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.901
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.907
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.96
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.846
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.991
+      },
+      {
+       "text": "Torcd",
+       "konfidens": 0.654
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.923
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.908
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.991
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.93
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.992
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.925
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.993
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.922
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.993
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "FREEOM",
+       "konfidens": 0.948
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.993
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.834
+      },
+      {
+       "text": "ELTE",
+       "konfidens": 0.907
+      },
+      {
+       "text": "J0M",
+       "konfidens": 0.778
+      },
+      {
+       "text": "ELTE",
+       "konfidens": 0.88
+      },
+      {
+       "text": "Fasts enkel",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "DOM",
+       "konfidens": 0.912
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "Fasts enkel",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "EEOOM",
+       "konfidens": 0.88
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.945
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "REEOOM",
+       "konfidens": 0.943
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.96
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.97
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.914
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.979
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.944
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.982
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.905
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.963
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.923
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.981
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.928
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "pa sommaren.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "pa sommaren.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "SE",
+       "konfidens": 0.69
+      },
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "RESTER",
+       "konfidens": 0.925
+      },
+      {
+       "text": "OXFOUESTRIVCR",
+       "konfidens": 0.749
+      },
+      {
+       "text": "5",
+       "konfidens": 0.559
+      },
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "STER",
+       "konfidens": 0.916
+      },
+      {
+       "text": "FOHCSY RIVCA",
+       "konfidens": 0.703
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "TER",
+       "konfidens": 0.817
+      },
+      {
+       "text": "OBESY RIVEA",
+       "konfidens": 0.757
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "ICE",
+       "konfidens": 0.601
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.56,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "fran bavobutiken.",
+       "konfidens": 0.995
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_PD_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Det har ar produkten",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Det har ar produkten",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "alla husbilsagare",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "alla husbilsagare",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "borde ha.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.86
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.963
+      },
+      {
+       "text": "Ett utvandigt",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.88
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.904
+      },
+      {
+       "text": "Ett utvandigt",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.885
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.974
+      },
+      {
+       "text": "Ett utvandigt",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.872
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.962
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.885
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.946
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.899
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.959
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.905
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.959
+      },
+      {
+       "text": "skydd for framutan",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.946
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.927
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.946
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.924
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.944
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.924
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.949
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.758
+      },
+      {
+       "text": "211 ganger",
+       "konfidens": 0.92
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.94
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.927
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.987
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.929
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.931
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.952
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.929
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.993
+      },
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "TLUUN",
+       "konfidens": 0.553
+      },
+      {
+       "text": "JOM",
+       "konfidens": 0.628
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.918
+      },
+      {
+       "text": "Vasts enkel",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "EUOM",
+       "konfidens": 0.759
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.902
+      },
+      {
+       "text": "Vasts enkel",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "EEOOM",
+       "konfidens": 0.89
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.917
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "REEDOM",
+       "konfidens": 0.925
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.974
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.952
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.986
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.938
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.98
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.936
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.918
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.958
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.926
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.972
+      },
+      {
+       "text": "Haller QP:ns val",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.916
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "pa sommaren.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "pa sommaren.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "ESTER",
+       "konfidens": 0.956
+      },
+      {
+       "text": "FOREST RIVER",
+       "konfidens": 0.822
+      },
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "STCER",
+       "konfidens": 0.89
+      },
+      {
+       "text": "TOREEY RIVER",
+       "konfidens": 0.847
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "TCER",
+       "konfidens": 0.874
+      },
+      {
+       "text": "BYFORCSY RIVER",
+       "konfidens": 0.874
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Harmosskydd husbil",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.82,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.978
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_PD_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Termoskydd_PD_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "SLUT PA HETTA I HUSBILEN",
+       "konfidens": 0.946
+      },
+      {
+       "text": "-MORKLAGGER OCH KYLER",
+       "konfidens": 0.957
+      },
+      {
+       "text": "PASEKUNDER",
+       "konfidens": 0.976
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_PD_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Sol, kyla, insyn.",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Sol, kyla, insyn.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Sol, kyla, insyn.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Sol, kyla, insyn.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Ett skydd loser allt.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Ett skydd loser allt.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Ett skydd loser allt.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Ett skydd loser allt.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.852
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.957
+      },
+      {
+       "text": "Ett utvandigt skydd",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.859
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.967
+      },
+      {
+       "text": "Ett utvandigt skydd",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.859
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.97
+      },
+      {
+       "text": "Ett utvandigt skydd",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.859
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.98
+      },
+      {
+       "text": "Ett utvandigt skydd",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.898
+      },
+      {
+       "text": "ELTE",
+       "konfidens": 0.992
+      },
+      {
+       "text": "for framutan.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.9
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.933
+      },
+      {
+       "text": "for framutan.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.921
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.933
+      },
+      {
+       "text": "for framutan.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.924
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.929
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.932
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.929
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.93
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.929
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.936
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.944
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.986
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.892
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "211 ganger 171",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.884
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.923
+      },
+      {
+       "text": "centimeter.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.889
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.904
+      },
+      {
+       "text": "centimeter.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.889
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.986
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.926
+      },
+      {
+       "text": "centimeter.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "10M",
+       "konfidens": 0.72
+      },
+      {
+       "text": "ELTE",
+       "konfidens": 0.975
+      },
+      {
+       "text": "Fasts enkel",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "EUOM",
+       "konfidens": 0.792
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.966
+      },
+      {
+       "text": "Fasts enkel",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "EEOOM",
+       "konfidens": 0.887
+      },
+      {
+       "text": "ELTE",
+       "konfidens": 0.989
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "REEOOM",
+       "konfidens": 0.906
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.968
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.952
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.969
+      },
+      {
+       "text": "pa utsidan.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.934
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.933
+      },
+      {
+       "text": "Haller QP:ens",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.911
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.96
+      },
+      {
+       "text": "Haller QP:ens",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.928
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.974
+      },
+      {
+       "text": "Haller QP:ens",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "FREEOOM",
+       "konfidens": 0.912
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.94
+      },
+      {
+       "text": "val pa sommaren.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "FREEDOM",
+       "konfidens": 0.904
+      },
+      {
+       "text": "ELITE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "val pa sommaren.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "val pa sommaren.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Haller varmen",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "inne pa vintern.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Morklagger helt",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "SD",
+       "konfidens": 0.5
+      },
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "nar du ska sova.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "ESTCER",
+       "konfidens": 0.891
+      },
+      {
+       "text": "FOBEST RIVCR",
+       "konfidens": 0.764
+      },
+      {
+       "text": "Kolla matten innan",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "STCER",
+       "konfidens": 0.836
+      },
+      {
+       "text": "FORESY RIVCR",
+       "konfidens": 0.887
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "TCER",
+       "konfidens": 0.899
+      },
+      {
+       "text": "GXFORESTAIVER",
+       "konfidens": 0.787
+      },
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "du bestaller.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.7,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.976
+      },
+      {
+       "text": "*11",
+       "konfidens": 0.56
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_SP_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Vi trodde inte",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "det skulle gora sa",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "det skulle gora sa",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "SOPEROUE",
+       "konfidens": 0.769
+      },
+      {
+       "text": "stor skillnad.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Vi satte upp",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Morkthela natten.",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "GTS",
+       "konfidens": 0.987
+      },
+      {
+       "text": "OFHRST",
+       "konfidens": 0.814
+      },
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.959
+      },
+      {
+       "text": "JUT",
+       "konfidens": 0.895
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.966
+      },
+      {
+       "text": "SUPERDUTY",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.968
+      },
+      {
+       "text": "SUPER",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Passar 21l ganger",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Passar 21l ganger",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.992
+      },
+      {
+       "text": "B",
+       "konfidens": 0.572
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.22,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.981
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_SP_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "FREEOON",
+       "konfidens": 0.923
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "FREEOOI",
+       "konfidens": 0.937
+      },
+      {
+       "text": "Efterensommarmed",
+       "konfidens": 0.997
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.852
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "FREEOOI",
+       "konfidens": 0.945
+      },
+      {
+       "text": "det har skulle vi",
+       "konfidens": 0.936
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.804
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "FREEOOI",
+       "konfidens": 0.943
+      },
+      {
+       "text": "det har skulle vi",
+       "konfidens": 0.961
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.925
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "FREEOOI",
+       "konfidens": 0.941
+      },
+      {
+       "text": "aldrig aka utan.",
+       "konfidens": 0.997
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.861
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "FREEOO",
+       "konfidens": 0.94
+      },
+      {
+       "text": "aldrig aka utan.",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Ford",
+       "konfidens": 0.913
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vi satte upp",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Vi satte upp",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Morkthelanatten.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "GTS",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "GTS",
+       "konfidens": 0.805
+      },
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.983
+      },
+      {
+       "text": "EROUTY",
+       "konfidens": 0.912
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.984
+      },
+      {
+       "text": "0",
+       "konfidens": 0.746
+      },
+      {
+       "text": "SUPER DUTY",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Passar 21l ganger",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Passar 21l ganger",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.988
+      },
+      {
+       "text": "B",
+       "konfidens": 0.677
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "171 centimeter.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.73,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.981
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_SP_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Termoskydd_SP_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "★★★★",
+       "konfidens": 0.995
+      },
+      {
+       "text": "\"Sover mycket battre nu,",
+       "konfidens": 0.975
+      },
+      {
+       "text": "helt morkt och svalt i",
+       "konfidens": 0.914
+      },
+      {
+       "text": "husbilen!",
+       "konfidens": 0.992
+      },
+      {
+       "text": "-Verifierad kund,58ar",
+       "konfidens": 0.906
+      },
+      {
+       "text": "30 dagars oppet kop",
+       "konfidens": 0.929
+      },
+      {
+       "text": "Knapp:\"Bestall nu\"",
+       "konfidens": 0.94
+      }
+     ]
+    }
+   ]
+  },
+  "Termoskydd_SP_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Tusendals",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "husbilsagare har",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "husbilsagare har",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "redan bytt",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "till det har.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vi satt upp",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "forra sommaren.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Svalare inne.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Ingen insyn.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Morkthelanatten.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "GTS",
+       "konfidens": 0.988
+      },
+      {
+       "text": "FHRRST",
+       "konfidens": 0.897
+      },
+      {
+       "text": "Morkt hela natten.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.917
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Vi sag battre",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "an pa lange.",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.968
+      },
+      {
+       "text": "SUPERDUTY",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.97
+      },
+      {
+       "text": "SUPER",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Nu aker vi aldrig",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "utan det.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Passar 21l ganger",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Passar 2ll ganger",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "171 centimeter",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "171 centimeter",
+       "konfidens": 0.984
+      },
+      {
+       "text": "B",
+       "konfidens": 0.669
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "171 centimeter",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "171 centimeter",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Thermoskydd husbil",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.52,
+     "texter": [
+      {
+       "text": "fran babebutiken.",
+       "konfidens": 0.993
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

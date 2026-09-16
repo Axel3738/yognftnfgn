@@ -1,0 +1,27 @@
+{
+  "Termoskydd_PD_2": {
+    "typ": "video_id",
+    "id": "1832555357741127",
+    "namn": "CARASHELL_Termoskydd_PD_2"
+  },
+  "Termoskydd_G_2_1": {
+    "typ": "image_hash",
+    "id": "f25dbdf5e08d4a678f0000465711aadd",
+    "namn": "CARASHELL_Termoskydd_G_2_1"
+  },
+  "Termoskydd_PD_1": {
+    "typ": "video_id",
+    "id": "1425585236378151",
+    "namn": "CARASHELL_Termoskydd_PD_1"
+  },
+  "Termoskydd_PD_3": {
+    "typ": "video_id",
+    "id": "1702822294775277",
+    "namn": "CARASHELL_Termoskydd_PD_3"
+  },
+  "Termoskydd_PD_2_1": {
+    "typ": "image_hash",
+    "id": "d16e75453cd94270c8fc56beb5b501b4",
+    "namn": "CARASHELL_Termoskydd_PD_2_1"
+  }
+}

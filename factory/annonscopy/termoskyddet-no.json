@@ -1,0 +1,32 @@
+{
+  "_om": [
+    "Annonscopy för CaraShell termoskyddet (NO), 2026-09-16, /ops-produkt steg 7 (= /ny-annonser).",
+    "",
+    "KOPIERAD ORÖRD ur Bäverbutikens norska källannonser (Magiborsten NO 1050941584152547,",
+    "kampanj 120252202507830233 'Frontrutetrekk til Bobil NO'). PD- och G-copyn bär inget",
+    "brandnamn, inget pris och inga villkor — bara länken byts (kampanj.mjs --marknad NO pekar",
+    "om den till carashell.se/nb/products/termoskyddet?country=NO).",
+    "",
+    "Bara PD och G: samma skäl som i termoskyddet-se.json. CS och SP står i uteslutna.json."
+  ],
+  "vinklar": {
+    "PD": {
+      "annonser": ["Frontrutetrekk_NO_PD_1", "Frontrutetrekk_NO_PD_2", "Frontrutetrekk_NO_PD_3", "Frontrutetrekk_NO_PD_2_1"],
+      "utfall_i_kallan": "under grinden — 24 NOK och 0 köp över fyra annonser",
+      "rattad_efter_granskning": false,
+      "message": "Lei av en glovarm bobil om sommeren? 🥵\nFrontrutetrekket blokkerer solen og holder kupeen kjølig, akkurat når du trenger det.\n☀️ Kjøligere om sommeren\n❄️ Varmere om vinteren\n🌙 Full mørklegging når du sover\nSjekk at målene passer bobilen din (211 × 171 cm) og bestill i dag.",
+      "headline": "Kjølig bobil, uansett vær",
+      "description": "Termisk trekk som kjøler, varmer og mørklegger.",
+      "andringar": []
+    },
+    "G": {
+      "annonser": ["Frontrutetrekk_NO_G_2_1"],
+      "utfall_i_kallan": "under grinden — 1 NOK och 0 köp",
+      "rattad_efter_granskning": false,
+      "message": "Vet du allerede hva du skal gi bobileieren i familien? 🎁\nForestill deg ansiktet når de åpner pakken og skjønner hva det er.\nIkke bare en gave – men en de faktisk kommer til å bruke, tur etter tur.\nSjekk målene (211 × 171 cm) og gi gaven som viser at du forstår hva de elsker.",
+      "headline": "Gaven bobileiere elsker",
+      "description": "Gi en gave de faktisk kommer til å bruke.",
+      "andringar": []
+    }
+  }
+}

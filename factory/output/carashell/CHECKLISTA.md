@@ -5,6 +5,7 @@ Do the steps in order, top to bottom. Tick each one.
 the ones above it have to be true first. Sections 1–3 cannot be undone later,
 and section 12 is the check that the rest actually worked.
 Everything not on this list is done by Claude Code.
+This store has several products – it is still ONE store, ONE domain, ONE checklist.
 
 * STORE NAME: **CaraShell**
 * DOMAIN: **carashell.se**
@@ -12,6 +13,7 @@ Everything not on this list is done by Claude Code.
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
 * PRODUCT: **Taköverdrag Husvagn & Husbil 6,5 × 3 m** (takskyddet)
+* PRODUCT: **Termoskydd Husbil 211 × 171 cm** (termoskyddet)
 
 ## 1. Shopify – create the store
 **The address you type here decides the currency, the language and the home
@@ -117,6 +119,7 @@ review with a local name and the original date).
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Taköverdrag Husvagn & Husbil 6,5 × 3 m** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Termoskydd Husbil 211 × 171 cm** → Import
   The upload is yours and stays yours: Judge.me's API overwrites every review
   date with the moment of import (measured 2026-09-08), the app's own file
   keeps the original dates. No file in the chat = say so, do not import

@@ -22,8 +22,13 @@
       "redanRatt": true
     },
     "bonus": {
-      "klar": false,
-      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+      "klar": true,
+      "produkt_id": "16108121489740",
+      "variant_id": "58826594156876",
+      "handle": "termoskyddet",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
     },
     "paket": {
       "klar": true,
@@ -57,7 +62,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-12T03:31:41.291Z"
+    "tid": "2026-09-16T04:21:05.456Z"
   },
-  "uppdaterad": "2026-09-12T03:31:41.291Z"
+  "uppdaterad": "2026-09-16T04:21:05.457Z"
 }

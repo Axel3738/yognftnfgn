@@ -1,0 +1,1857 @@
+{
+ "produkt": "termoskyddet",
+ "marknad": "SE",
+ "datum": "2026-09-16",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16522215522653",
+  "produkt_handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+  "produkt_url": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+  "annonskonto": "1867947880635861",
+  "annonsprefix": "Termoskydd",
+  "kampanj_id": "120250175763810291",
+  "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+  "no_annonskonto": "1050941584152547",
+  "no_kampanjmonster": "Frontrutetrekk til Bobil",
+  "no_annonsprefix": "Frontrutetrekk",
+  "srt_slug": [
+   "termoskydd"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Termoskydd_CS_1",
+   "id": "120250175765500291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | CS | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_CS_1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:13,179 --> 00:00:15,659",
+       "text": "Termoskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.66,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Samma captionmall som alla 12. Talet är dessutom ett CS-manus med falsk brådska — se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "40% RABATT – ENDAST IDAG",
+      "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Termoskydd husbil rabatterat pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "40% RABATT – ENDAST IDAG",
+     "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Termoskydd husbil rabatterat pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:13,179 --> 00:00:15,659: \"Termoskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 14.7–15.66s (5 frames): \"avebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_CS_2",
+   "id": "120250175768000291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | CS | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_CS_2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:13,239 --> 00:00:15,720",
+       "text": "Termoskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.75,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "40% RABATT – ENDAST IDAG",
+      "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Termoskydd husbil, rabatterat pris, bara i dag. Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "40% RABATT – ENDAST IDAG",
+     "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Termoskydd husbil, rabatterat pris, bara i dag. Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:13,239 --> 00:00:15,720: \"Termoskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 14.7–15.75s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_CS_2_1",
+   "id": "120250175770610291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | CS | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": null,
+       "plats": "inbränd text direkt på fotot (himlen) högst upp + röd banderoll under",
+       "ord": "40% RABATT – IDAG ENDAST / Få kvar i lager – beställ innan det är slut!",
+       "form": "syn",
+       "sätt": "ögongranskad"
+      }
+     ],
+     "källa": "syn",
+     "syn": {
+      "syns": true,
+      "var": "inbränd text direkt på fotot (himlen) högst upp + röd banderoll under",
+      "ordagrant": "40% RABATT – IDAG ENDAST / Få kvar i lager – beställ innan det är slut!",
+      "fil": "Termoskydd_CS_2_1.jpg",
+      "logotyp_utan_text": false,
+      "notis": "Inget brandnamn, inget pris i kronor. 40 % stämmer mot jämförpriset (559 av 932 kr) men 'IDAG ENDAST' + lagerlarmet är en tidsbegränsad kampanj butiken inte kör. Rubriken ligger på fotot utan platta — oversatt-bild.py fann bara fotoytor som 'former' (analys 2026-09-16), så fixen är kie.ai + bildannonser/text.py. Står i uteslutna.json tills dess."
+     }
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "40% RABATT – ENDAST IDAG",
+      "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "bildtext",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "40% RABATT – ENDAST IDAG",
+     "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 4 · \"undefined\" → \"40% RABATT – IDAG ENDAST / Få kvar i lager – beställ innan det är slut!\" (ögongranskad)",
+    "yta 4 · ögongranskat (inbränd text direkt på fotot (himlen) högst upp + röd banderoll under): \"40% RABATT – IDAG ENDAST / Få kvar i lager – beställ innan det är slut!\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_CS_3",
+   "id": "120250175770080291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | CS | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_CS_3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:13,039 --> 00:00:15,519",
+       "text": "Termoskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.52,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 49,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken 13,0–15,5 s",
+      "ordagrant": "från bäbebutiken.",
+      "sekund": 14.5,
+      "notis": "Frame_049 ögonläst: 'från bäbebutiken.' på vit platta över husbilen i snö. Inget slutkort, ingen logotyp. Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "40% RABATT – ENDAST IDAG",
+      "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "Sista chansen att",
+      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Sista chansen att fixa husbilen innan säsongen.",
+      "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i copy: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i copy: lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ IDAG ENDAST: 40% rabatt på Termoskydd Husbil.\nLagret minskar snabbt och priset går tillbaka imorgon.\nMånga har redan b",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "40% RABATT – ENDAST IDAG",
+     "fel": "lovar \"endast idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "Sista chansen att",
+     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Sista chansen att fixa husbilen innan säsongen.",
+     "fel": "lovar \"sista chansen\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:13,039 --> 00:00:15,519: \"Termoskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 14.4–15.52s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken 13,0–15,5 s, 14.5): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_G_1",
+   "id": "120250175772560291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | G | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_G_1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:12,579 --> 00:00:15,059",
+       "text": "Termoskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.05,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 48,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Termoskydd husbil, rabatterat pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Termoskydd husbil, rabatterat pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:12,579 --> 00:00:15,059: \"Termoskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 14.1–15.05s (5 frames): \"avebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_G_2",
+   "id": "120250175775340291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | G | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_G_2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:12,681 --> 00:00:15,300",
+       "text": "Termoskydd husbil från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.1,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.22,
+       "plats": "sent i filmen",
+       "ord": "avebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 48,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "tal",
+      "rad": "Det här är presenten som får dem att säga äntligen. Termoskydd husbil rabatterat pris bara i dag. Svalt på sommaren, var",
+      "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i tal: lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "tal",
+     "rad": "Det här är presenten som får dem att säga äntligen. Termoskydd husbil rabatterat pris bara i dag. Svalt på sommaren, var",
+     "fel": "lovar \"bara i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:12,681 --> 00:00:15,300: \"Termoskydd husbil från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 14.1–15.22s (5 frames): \"avebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_G_2_1",
+   "id": "120250175777000291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | G | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "notis": "Ögonläst: 'DEN PERFEKTA PRESENTEN TILL HUSBILSÄGAREN' + 'Se glädjen när de öppnar den – en present de faktiskt kommer använda.' + knapp 'Ge bort perfektion'. Inget brandnamn, inget pris, inga villkor, ingen logotyp. Domen ren stämmer."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Termoskydd_G_3",
+   "id": "120250175776660291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | G | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_G_3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:13,519 --> 00:00:15,980",
+       "text": "Termoskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.98,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris bara idag.",
+      "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text",
+    "tidsbegränsat erbjudande i inbränd: lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris bara idag.",
+     "fel": "lovar \"bara idag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · 00:00:13,519 --> 00:00:15,980: \"Termoskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 15–15.98s (5 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_PD_1",
+   "id": "120250175778960291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | PD | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:16,079 --> 00:00:18,559",
+       "text": "Termosskydd husbil från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 17.4,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.56,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "bavobutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 60,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, y≈1000 av 1280, sista repliken 16,08–18,56 s",
+      "ordagrant": "från bäbebutiken.",
+      "sekund": 16.5,
+      "notis": "Ögonläst ur montage 2026-09-16: captionen före är 'du beställer.' (Kolla måtten innan du beställer). Brandrepliken är BORTKLIPPT i bildfix/Termoskydd_PD_1.mp4 (klipp vid 16,00 s, sista frame visar 'du beställer.'). Inget slutkort, ingen logotyp — bara captionplattan."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:16,079 --> 00:00:18,559: \"Termosskydd husbil från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 17.4–18.6s (6 frames): \"bavobutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, y≈1000 av 1280, sista repliken 16,08–18,56 s, 16.5): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_PD_2",
+   "id": "120250175782280291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | PD | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:16,319 --> 00:00:18,799",
+       "text": "Termosskydd husbil från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 17.7,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.82,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 60,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken 16,32–18,80 s",
+      "ordagrant": "från bäbebutiken.",
+      "sekund": 17,
+      "notis": "Frame_060 ögonläst: 'från bäbebutiken.' på vit platta, produktbild bakom, inget slutkort. Bortklippt i bildfix/Termoskydd_PD_2.mp4 (klipp vid 16,24 s, sista frame 'du beställer.')."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:16,319 --> 00:00:18,799: \"Termosskydd husbil från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 17.7–18.82s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken 16,32–18,80 s, 17): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_PD_2_1",
+   "id": "120250175784790291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | PD | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "notis": "Ögonläst: 'SLUT PÅ HETTA I HUSBILEN – MÖRKLÄGGER OCH KYLER PÅ SEKUNDER' vit versaltext på himlen. Inget brandnamn, inget pris, inga villkor, ingen logotyp. Domen ren stämmer."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Termoskydd_PD_3",
+   "id": "120250175783720291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | PD | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:17,219 --> 00:00:19,700",
+       "text": "Termosskydd husbil från Bäverbutiken"
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 19.5,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 19.7,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 63,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken 17,22–19,70 s",
+      "ordagrant": "från bäbebutiken.",
+      "sekund": 18,
+      "notis": "Bortklippt i bildfix/Termoskydd_PD_3.mp4 (klipp vid 17,14 s, sista frame 'du beställer.'). Inget slutkort."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:17,219 --> 00:00:19,700: \"Termosskydd husbil från Bäverbutiken\"",
+    "yta 3 · sent i filmen, 18.6–19.7s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken 17,22–19,70 s, 18): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_SP_1",
+   "id": "120250175787180291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | SP | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_SP_1.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "Bäbebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:13,819 --> 00:00:16,219",
+       "text": "Termoskydd Husbil från Bäbebutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.22,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 52,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäbebutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:13,819 --> 00:00:16,219: \"Termoskydd Husbil från Bäbebutiken.\"",
+    "yta 3 · sent i filmen, 15–16.22s (6 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäbebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_SP_2",
+   "id": "120250175789240291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | SP | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_SP_2.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "Bävebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(1)"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:09,719 --> 00:00:16,739",
+       "text": "Nu åker vi aldrig utan det. Passar tvåhundraelva gånger hundrasjuttioen centimeter. Termoskydd husbil från Bävebutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.73,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 53,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bävebutiken.",
+      "notis": "Frame_030 ögonläst mitt i filmen: ordvis caption 'Nu åker vi aldrig' — vittnesmålet i vi-form är inbränt ord för ord, så ett nytt manus kräver ny captionbana. Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:09,719 --> 00:00:16,739: \"Nu åker vi aldrig utan det. Passar tvåhundraelva gånger hundrasjuttioen centimeter. Termoskydd husbil från Bävebutiken.\"",
+    "yta 3 · sent i filmen, 15.6–16.73s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bävebutiken.\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_SP_2_1",
+   "id": "120250175792410291",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | SP | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": null,
+       "plats": "inbränd text direkt på fotot, vänster överdel (stjärnor, citat, attribution, villkorsrad, knapp)",
+       "ord": "★★★★★ \"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\" – Verifierad kund, 58 år / ✅ 30 dagars öppet köp / Knapp: \"Beställ nu\"",
+       "form": "syn",
+       "sätt": "ögongranskad"
+      }
+     ],
+     "källa": "syn",
+     "syn": {
+      "syns": true,
+      "var": "inbränd text direkt på fotot, vänster överdel (stjärnor, citat, attribution, villkorsrad, knapp)",
+      "ordagrant": "★★★★★ \"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\" – Verifierad kund, 58 år / ✅ 30 dagars öppet köp / Knapp: \"Beställ nu\"",
+      "fil": "Termoskydd_SP_2_1.jpg",
+      "logotyp_utan_text": false,
+      "notis": "Tre fel: attributionen är påhittad för butiken (ingen verifierad kund), '30 dagars öppet köp' mot butikens 14 dagars ångerrätt (OCR fångade den, villkorsregeln gav slutkortsbygge), och en renderingsartefakt 'Knapp: \"Beställ nu\"' står som text i bilden. Text på fotot utan platta ⇒ kie.ai + text.py. Nytt citat finns i Judge.me-underlaget. Står i uteslutna.json."
+     }
+    },
+    "villkorsfel": [
+     {
+      "regel": "öppet köp",
+      "yta": "inbränd",
+      "rad": "30 dagars oppet kop",
+      "fel": "säger 30 dagar — butiken har 14"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "bildtext",
+    "öppet köp i inbränd: säger 30 dagar — butiken har 14"
+   ],
+   "villkor": [
+    {
+     "namn": "recensioner",
+     "värden": [
+      "Verifierad kund"
+     ]
+    },
+    {
+     "namn": "öppet köp",
+     "värden": [
+      "30 dagars oppet kop"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "öppet köp",
+     "yta": "inbränd",
+     "rad": "30 dagars oppet kop",
+     "fel": "säger 30 dagar — butiken har 14"
+    }
+   ],
+   "belägg": [
+    "yta 4 · \"undefined\" → \"★★★★★ \"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\" – Verifierad kund, 58 år / ✅ 30 dagars öppet köp / Knapp: \"Beställ nu\"\" (ögongranskad)",
+    "yta 4 · ögongranskat (inbränd text direkt på fotot, vänster överdel (stjärnor, citat, attribution, villkorsrad, knapp)): \"★★★★★ \"Sover mycket bättre nu, helt mörkt och svalt i husbilen!\" – Verifierad kund, 58 år / ✅ 30 dagars öppet köp / Knapp: \"Beställ nu\"\""
+   ]
+  },
+  {
+   "annons": "Termoskydd_SP_3",
+   "id": "120250175791070291",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Termoskydd Husbil | SP | 2026-09-11",
+   "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_SP_3.orig.srt",
+     "träff": true,
+     "fynd": [
+      {
+       "ord": "baverbutiken",
+       "form": "baverbutiken",
+       "sätt": "exakt"
+      }
+     ],
+     "repliker": [
+      {
+       "tid": "00:00:14,099 --> 00:00:16,559",
+       "text": "Termoskydd husbil från Bäverbutiken."
+      }
+     ]
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      },
+      {
+       "sekund": 16.52,
+       "plats": "sent i filmen",
+       "ord": "babebutiken.",
+       "form": "baverbutiken",
+       "sätt": "fuzzy(2)"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 53,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken",
+      "ordagrant": "från bäverbutiken.",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-omdubb",
+   "attgöra": [
+    "tal",
+    "inbränd text"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · 00:00:14,099 --> 00:00:16,559: \"Termoskydd husbil från Bäverbutiken.\"",
+    "yta 3 · sent i filmen, 15.6–16.52s (5 frames): \"babebutiken.\" (fuzzy(2))",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken): \"från bäverbutiken.\""
+   ]
+  }
+ ]
+}

@@ -156,7 +156,10 @@ test('byggUnderlagObjekt: testbutiken ger stabila nycklar för produkt, metafäl
   assert.equal('metafalt.nackmagneten.opf.gif_problem' in ut, false); // url-fält översätts aldrig
   assert.equal(ut['sida.returpolicy.title'], 'Returpolicy');
   assert.equal(ut['sida.contact.title'], 'Kontakt');
-  assert.equal(ut['meny.main-menu.0'], 'Nackmagneten');
+  // Samma rader som meny.mjs huvudmenyRader: Hem först, sedan produkten —
+  // "Hem" saknade nyckel i underlaget till 2026-09-16 och läckte på /nb.
+  assert.equal(ut['meny.main-menu.0'], 'Hem');
+  assert.equal(ut['meny.main-menu.1'], 'Nackmagneten');
   assert.equal(ut['meny.footer.3'], 'Kontakt');
   assert.ok(Object.keys(ut).some((k) => k.startsWith('index.sections.')));
   assert.ok(Object.keys(ut).some((k) => k.startsWith('paket.')));
@@ -187,9 +190,10 @@ test('byggUnderlagObjekt: flerproduktsbutik får kollektion, en menyrad per prod
   const ut = byggUnderlagObjekt(byggMinimalKontext(butik, [p1, p2]));
   assert.equal(ut['kollektion.sortimentet.title'], 'Sortimentet');
   assert.equal(ut['kollektion.sortimentet.body_html'], '<p>Allt.</p>');
-  assert.equal(ut['meny.main-menu.0'], 'Sortimentet');
-  assert.equal(ut['meny.main-menu.1'], 'Nackmagneten');
-  assert.equal(ut['meny.main-menu.2'], 'Andra prylen');
+  assert.equal(ut['meny.main-menu.0'], 'Hem');
+  assert.equal(ut['meny.main-menu.1'], 'Sortimentet');
+  assert.equal(ut['meny.main-menu.2'], 'Nackmagneten');
+  assert.equal(ut['meny.main-menu.3'], 'Andra prylen');
   assert.equal(ut['produkt.andra-prylen.title'], 'Andra prylen');
   assert.ok(ut['metafalt.andra-prylen.opf.problem_rubrik']);
 });

@@ -161,3 +161,37 @@ plus tillbehör i stället för två jämlika produkter. Fabriken klarar det red
 (Q4-bonusen är ju en andra produkt i butiken), och pixelfällan uteblir
 eftersom bara en produkt annonseras. Nackdelen är att den andra produkten
 aldrig får egen annonsering med full kraft.
+
+---
+
+## Läget 2026-09-16 — första riktiga körningen: CaraShell fick termoskyddet
+
+`/ops-produkt carashell <länk>` från Axel. Vad som höll och vad som fick lagas:
+
+**Höll:** `ops-produkt.mjs` (utkast, prefixkrock, körrad med alla filer), bygget med
+`--igen kollektion,startsida,meny,tema` (takskyddet kvar i meny + startsida, kollektionen
+skapad, korg-upsellen pekar på produkt 2), `register.mjs skriv-in` (ett bart `carashell`
+kastar nu som det ska), egen kampanj per produkt, `budgetrond` dömer mot produktfilens
+egen break-even.
+
+**Lagat samma dag:**
+- `rutin.mjs` saknade CLI-flaggan `--flerprodukt` — `--tider carashell/termoskyddet
+  --skriv-in` hade ärvt plats 5 (takskyddets minut). Nu plats 7 (00:57 / 14:15 / 16:15).
+- `kampanj.mjs` döpte annonser med brandet, inte produktens prefix (FAS2.md 2026-09-16).
+- `oversattning.mjs` byggde huvudmenyn för hand (utan Hem, Frakt & retur) — "Hem" fick
+  aldrig en nyckel och stod kvar på /nb. Nu samma `huvudmenyRader` som meny-steget.
+- `marknad.mjs` räknade paketnivåernas `fastpris_valutor` (NOK-tal) som svenska läckor.
+- `tillagg_kryssruta: true` på produkt 1 gav röd kundvy: fullpris-kryssrutan byggs bara
+  i enproduktsläget (`tema.mjs`), korg-upsellen bär samma sak. Sätt false.
+- NOK-prislistan får inte produkt 2 av sig själv: `priceListFixedPricesAdd` per variant
+  efter bygget (tre rader, API-GRANSER.md). Gjort för hand i sessionen.
+- Norskan för produkt 2 + de omskrivna brandtexterna kräver `--igen oversatt` — körraden
+  ovan tar inte med det steget, och ett grönt state hoppar över det.
+
+**Kvar (oförändrat):** pixeln. Termoskyddet 559 kr mot takskyddet 1 129 kr = 2× — inte brus.
+Läs köp per produkt ur Shopify innan någon annons i CaraShell döms.
+
+**Hubben:** integrationen "Bäverbutiken RUTINER" ser inga SIDOR i Notion, bara
+databasrader — `notion-hub.mjs --foralder` har ingen förälder att skapa under. En hub för
+produkt 2 är därför Axels klick (duplicera "Carashell creative hub", döp om), sedan
+`node factory/register.mjs notion carashell/termoskyddet <id>` och `/notionscalercs setup`.

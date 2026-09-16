@@ -10,10 +10,15 @@ per 2026-09-12 **314 kr spend och 0 köp på 16 annonser**. **0 av 16 har passer
 signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp) — butiken är en **KALLSTART**:
 ingen feedback-loop, ingen dom över en enda CaraShell-annons ännu.
 
-⚠️ **En produkt i dag.** Kommer produkt nr 2 (butiken bär nischen, inte
-produkten — se `factory/butiker/carashell.yaml`) ska minnet delas per
-produktnyckel, `products/carashell/<produkt>/`, precis som TackleBay
-(`products/tacklebay/README.md`).
+⚠️ **Två produkter sedan 2026-09-16.** Termoskyddet (`carashell/termoskyddet`,
+prefix `CaraShellFront`) lades till med `/ops-produkt`, och minnet delades då
+per produktnyckel precis som TackleBay: den här mappen är
+`products/carashell/takskyddet/`, systern ligger i
+`products/carashell/termoskyddet/`, kartan i `products/carashell/README.md`.
+⚠️ Pixeln är delad och Metas köp-event bär ingen produkt — ett termoskydd
+(559 kr) kan bokföras på taköverdragets kampanj och tvärtom. Prisavståndet är
+2×, så läs köp per produkt ur Shopify innan en annons döms
+(`factory/FLERPRODUKT.md`).
 
 ---
 
