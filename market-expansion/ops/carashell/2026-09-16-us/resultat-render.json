@@ -1,0 +1,46 @@
+{
+  "CaraShellRoof_GT_4_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_GT_4_1",
+    "fil": "us/CaraShellRoof_US_GT_4_1.png",
+    "placerade": [
+      "rubrik",
+      "badge"
+    ],
+    "okanda": []
+  },
+  "CaraShellRoof_CS_4_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_CS_4_1",
+    "fil": "us/CaraShellRoof_US_CS_4_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "priskort"
+    ],
+    "okanda": []
+  },
+  "CaraShellRoof_PD_4_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_PD_4_1",
+    "fil": "us/CaraShellRoof_US_PD_4_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "etikett_vanster",
+      "etikett_hoger"
+    ],
+    "okanda": []
+  },
+  "CaraShellRoof_SP_4_1": {
+    "status": "OK",
+    "mal": "CaraShellRoof_US_SP_4_1",
+    "fil": "us/CaraShellRoof_US_SP_4_1.png",
+    "placerade": [
+      "botten",
+      "citat",
+      "pris"
+    ],
+    "okanda": []
+  }
+}

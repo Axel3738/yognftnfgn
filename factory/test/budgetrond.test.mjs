@@ -59,3 +59,16 @@ test('rader utan campaign_id och tomma listor kraschar inte', () => {
   assert.deepEqual(valjKampanjer([], spo, []).butikens, []);
   assert.deepEqual(valjKampanjer(undefined, spo, []).butikens, []);
 });
+
+test('valjKampanjer: kampanjbaser fångar en TOM kampanj (noll annonser) — rapporterad i baraViaBas, skiftlägesokänsligt', () => {
+  const kampanjer = [
+    { id: '1', name: 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16' },
+    { id: '2', name: 'CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16' },
+    { id: '3', name: 'CaraShellRoof_SE_test' },
+  ];
+  const v = valjKampanjer(kampanjer, ['carashellroof_', 'carashellroof'], [], ['carashell_us_taköverdrag husvagn & husbil 6,5 × 3 m']);
+  assert.deepEqual(v.butikens.map((k) => k.id), ['1', '3']);
+  assert.deepEqual(v.baraViaBas, [kampanjer[0].name]);
+  assert.deepEqual(v.slangda, [kampanjer[1].name]);
+  assert.deepEqual(valjKampanjer(kampanjer, ['carashellroof_', 'carashellroof']).baraViaBas, []);
+});

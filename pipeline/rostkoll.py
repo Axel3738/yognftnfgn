@@ -153,7 +153,10 @@ def srt_tider(fil):
     return sum(b - a for a, b in ihop), ihop[-1][1]
 
 
-def kolla(kalla, ny, srt=None, kall_srt=None):
+def kolla(kalla, ny, srt=None, kall_srt=None, omtajmad=False):
+    """omtajmad=True: videon är omklippt med flit (pipeline/omdubb/elevenlabs-omdubb.mjs
+    tempo-anpassar varje klipp efter repliken), så längddrift mot källan är förväntad
+    och blir en notering med siffran i stället för ett fel. Allt annat mäts som vanligt."""
     fel, noter, m = [], [], {}
 
     if not har_ljudspar(ny):
@@ -174,7 +177,10 @@ def kolla(kalla, ny, srt=None, kall_srt=None):
         if m["langd_kalla"] and m["langd_ny"]:
             drift = abs(m["langd_ny"] - m["langd_kalla"]) / m["langd_kalla"]
             m["langddrift"] = round(drift, 3)
-            if drift > MAX_LANGDDRIFT:
+            if drift > MAX_LANGDDRIFT and omtajmad:
+                noter.append(f"omtajmad med flit: längden ändrades {drift*100:.0f} % "
+                             f"({m['langd_kalla']:.1f}s → {m['langd_ny']:.1f}s) — inte ett fel här")
+            elif drift > MAX_LANGDDRIFT:
                 fel.append(f"längden drev {drift*100:.0f} % "
                            f"({m['langd_kalla']:.1f}s → {m['langd_ny']:.1f}s) — tempot låter fel")
     else:
@@ -260,6 +266,8 @@ def main():
     p.add_argument("--mapp"); p.add_argument("--kallmapp"); p.add_argument("--srtmapp")
     p.add_argument("--kallsrtmapp")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--omtajmad", action="store_true",
+                   help="videon är omklippt med flit (ElevenLabs-omdubb) — längddrift blir notering, inte fel")
     a = p.parse_args()
 
     jobb = []
@@ -279,7 +287,7 @@ def main():
 
     allt, trasiga = {}, 0
     for kalla, ny, srt, ksrt in jobb:
-        fel, noter, m = kolla(kalla, ny, srt, ksrt)
+        fel, noter, m = kolla(kalla, ny, srt, ksrt, omtajmad=a.omtajmad)
         allt[ny.name] = {"fel": fel, "noteringar": noter, "matvarden": m}
         if fel:
             trasiga += 1

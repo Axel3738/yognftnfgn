@@ -1,0 +1,46 @@
+{
+  "kalla": ".scratch/brand-detektor/Frontrutetrekk_NO/media/Frontrutetrekk_NO_G_1.mp4",
+  "srt": "factory/output/termoskyddet/omdubb/heygen-cues/Frontrutetrekk_NO_G_1-ny.srt",
+  "rost": "Martin - Clear and Comforting",
+  "modell": "eleven_v3",
+  "kallaLangd": 15.55,
+  "nyLangd": 14.362857142857141,
+  "segment": [
+    {
+      "i": 0,
+      "text": "En gave uten dugg om morgenen. Frontrutetrekk til bobil, femhundreogførtiåtte. Svalt om sommeren, varmt om vinteren, mørkt når du sover.",
+      "vo": "factory/output/termoskyddet/bildfix-el/vo/Frontrutetrekk_NO_G_1/0.wav",
+      "d": 8.07,
+      "L": 5.7,
+      "paus": 0.25,
+      "tempo": 1.0224434389140271,
+      "dNy": 7.892857142857143,
+      "T": 8.142857142857142,
+      "lo": 5.699999999999999,
+      "hi": 10.992857142857144,
+      "Lny": 6.873,
+      "kStart": 0.28,
+      "kSlut": 7.1530000000000005,
+      "f": 0.8440526315789475,
+      "ut": 0
+    },
+    {
+      "i": 1,
+      "text": "Gratis frakt til Sverige og Norge, og fjorten dagers angrerett. Frontrutetrekk til bobil fra CaraShell.",
+      "vo": "factory/output/termoskyddet/bildfix-el/vo/Frontrutetrekk_NO_G_1/1.wav",
+      "d": 5.62,
+      "L": 9.57,
+      "paus": 0.6,
+      "tempo": 1,
+      "dNy": 5.62,
+      "T": 6.22,
+      "lo": 4.353999999999999,
+      "hi": 8.397,
+      "Lny": 8.397,
+      "kStart": 7.1530000000000005,
+      "kSlut": 15.55,
+      "f": 1.35,
+      "ut": 8.142857142857142
+    }
+  ]
+}

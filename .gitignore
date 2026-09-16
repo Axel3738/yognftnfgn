@@ -37,3 +37,8 @@ kundtjanst/historik/demobutiken.jsonl
 factory/output/*/bildfix/*.mp4
 factory/output/*/bildfix/kie/
 factory/output/*/bildfix/*.mp4.qa-*.png
+# ElevenLabs-omdubb (pipeline/omdubb/elevenlabs-omdubb.mjs): renderingar, röstcache och QA-bilder
+# ligger i Meta; de nya SRT:erna och tidslinjerna (små) committas som facit
+factory/output/*/bildfix-el/*.mp4
+factory/output/*/bildfix-el/*.png
+factory/output/*/bildfix-el/vo/

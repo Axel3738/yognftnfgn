@@ -1,0 +1,33 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "RV & Camper Roof Cover · 21.3 × 9.8 ft"
+    },
+    {
+      "typ": "pris",
+      "text": "$199"
+    },
+    {
+      "typ": "jamforpris",
+      "text": "$249"
+    },
+    {
+      "typ": "rabatt",
+      "text": "−20%"
+    },
+    {
+      "typ": "botten",
+      "text": "Free shipping · 5–10 business days"
+    }
+  ]
+}

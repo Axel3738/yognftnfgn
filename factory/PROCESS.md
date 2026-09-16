@@ -740,36 +740,6 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    `tema.test.mjs`, "Svenskt varumärke" som markör i CaraShells butiksfil.
    Engelskan byttes samtidigt till "Swedish brand – designed for Scandinavian
    conditions" — "Scandinavian homes" lät fel för ett taköverdrag.
-17. ⚙️ **Egen domän per marknad — carashell.com för USA (Axels beslut
-   2026-09-16, "domänen?").** Axel kopplade carashell.com + www i Shopify
-   (Settings → Domains); den låg som 301 → carashell.se tills marknaden fick
-   den. API:t KAN: `webPresenceCreate({ domainId, defaultLocale: "en",
-   alternateLocales: [] })` + `marketUpdate(USA, { webPresencesToAdd: [ny],
-   webPresencesToDelete: [.se-närvaron, myshopify-närvaron] })` — mätt samma
-   dag, tillbakaläst `USA → carashell.com/en`, och `carashell.com/products/
-   takskyddet` svarar 200 med `Shopify.locale en`, `Shopify.country US`, USD.
-   `carashell.com/en/…` ger 404 (språket är standard på domänen — ingen
-   mapp), `carashell.se/en/…` svarar fortfarande. Därför bär marknadsraden
-   `doman: carashell.com` och `opsmarknader.marknadslank` bygger länken utan
-   /en/ när raden har egen domän (`kampanj.mjs`, `ops-leveranskon`,
-   `ops-till-meta` går alla den vägen). Mejlen på /en: hello@carashell.com.
-   ⚠️ www.carashell.com svarar bara över IPv4 (301 → carashell.com); över
-   IPv6 tog anslutningen inte — containerns nät, inte butiken.
-18. 🖐→⚙️ **Axels USA-beslut 2026-09-16 efter tvekan-listan:** 90-dagars
-   garanti ("90-day guarantee" / "Try it risk-free for 90 days") ersätter
-   "14-day right of withdrawal" i HELA den engelska texten, inklusive
-   returpolicy och köpvillkor — ett uttryckligt undantag från regeln "alltid
-   svensk lag, aldrig egna köplöften" (2026-09-08), för USA-marknaden enbart;
-   svenska och norska sidorna säger fortfarande 14 dagar. Returpolicyn
-   säger INTE vem som betalar returfrakten till Sverige — det är fortfarande
-   öppet (fråga till Axel i rapporten). "Ships from Sweden" struken ur
-   marquee:n, "🇺🇸 Free shipping to the US" i stället. Titeln "Roof Cover
-   for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)". Storleken,
-   sales tax (av), telefon (inget) var hans övriga svar.
-   ⚠️ Sidfotens "Ångra köp"-länk (Shopifys självbetjänade ångring,
-   `angerratt.mjs`) stod som "Contact" i en-filen och "Kontakt" i nb-filen —
-   subagenterna hade tappat en rad i sidfotsmenyn. Rättat: "Return an order"
-   / "Angre kjøp". Läs sidfoten på varje /<locale> när menyn ändras.
 16. 🖐 **Amerikanens tvekan — läst 2026-09-16 på `/en` som US-kund, Axels
    fråga "vad hade fått dig att tveka".** Kvar efter fixarna ovan, i
    fallande ordning; alla är ägarbeslut:
@@ -795,6 +765,55 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
      byter språk när widgeten synkat.
    - Bara mejl, inget telefonnummer; "Taxes included" är ovanligt i USA men
      inte fel (Axels beslut: inget påslag).
+17. 🖐 **Pixeln måste delas med marknadens annonskonto** (mätt 2026-09-16,
+    CaraShells första US-runda). Butikens pixel skapades i OPS-kontots
+    business; `kampanj.mjs --tom` skrev in den i US-adsetens
+    `promoted_object` och Meta accepterade bygget — men varje annons som
+    laddas upp får HARD_ERROR 1815045 "Kontot har inte åtkomst till pixeln"
+    (konto `1107817401910319` mot pixel `28589207184025756`), och kampanjen
+    kan inte köra. Felet syns först på annonsnivå, aldrig vid kampanjbygget.
+    Axels klick, en gång per butik: Business Settings → Data sources →
+    Pixels → butikens pixel → Assigned assets → Add assets → annonskontot
+    Magiborsten UK. Adsetens `promoted_object` behöver inte röras efteråt.
+    Rutinen `/ops-oversatt … --marknad US` lägger raden under ACTION NEEDED
+    tills den försvinner ur `issues_info`.
+18. ⚙️ **Första US-annonserna för en produkt ligger ofta redan i `Approved`.**
+    Raderna översattes till NO innan US fanns, och rutinen läser bara
+    `SE-ACTIVE to be translated`. Kör kön en gång med `--status Approved`:
+    `klar_i` dömer per rad vilka marknader som saknas, så inget laddas upp
+    två gånger (dubblettspärren mot kontot håller också). Textlager-bilder
+    ritas om från basfotot — se `.claude/commands/ops-oversatt.md` steg 3.
+
+19. ⚙️ **Egen domän per marknad — carashell.com för USA (Axels beslut
+   2026-09-16, "domänen?").** Axel kopplade carashell.com + www i Shopify
+   (Settings → Domains); den låg som 301 → carashell.se tills marknaden fick
+   den. API:t KAN: `webPresenceCreate({ domainId, defaultLocale: "en",
+   alternateLocales: [] })` + `marketUpdate(USA, { webPresencesToAdd: [ny],
+   webPresencesToDelete: [.se-närvaron, myshopify-närvaron] })` — mätt samma
+   dag, tillbakaläst `USA → carashell.com/en`, och `carashell.com/products/
+   takskyddet` svarar 200 med `Shopify.locale en`, `Shopify.country US`, USD.
+   `carashell.com/en/…` ger 404 (språket är standard på domänen — ingen
+   mapp), `carashell.se/en/…` svarar fortfarande. Därför bär marknadsraden
+   `doman: carashell.com` och `opsmarknader.marknadslank` bygger länken utan
+   /en/ när raden har egen domän (`kampanj.mjs`, `ops-leveranskon`,
+   `ops-till-meta` går alla den vägen). Mejlen på /en: hello@carashell.com.
+   ⚠️ www.carashell.com svarar bara över IPv4 (301 → carashell.com); över
+   IPv6 tog anslutningen inte — containerns nät, inte butiken.
+20. 🖐→⚙️ **Axels USA-beslut 2026-09-16 efter tvekan-listan:** 90-dagars
+   garanti ("90-day guarantee" / "Try it risk-free for 90 days") ersätter
+   "14-day right of withdrawal" i HELA den engelska texten, inklusive
+   returpolicy och köpvillkor — ett uttryckligt undantag från regeln "alltid
+   svensk lag, aldrig egna köplöften" (2026-09-08), för USA-marknaden enbart;
+   svenska och norska sidorna säger fortfarande 14 dagar. Returpolicyn
+   säger INTE vem som betalar returfrakten till Sverige — det är fortfarande
+   öppet (fråga till Axel i rapporten). "Ships from Sweden" struken ur
+   marquee:n, "🇺🇸 Free shipping to the US" i stället. Titeln "Roof Cover
+   for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)". Storleken,
+   sales tax (av), telefon (inget) var hans övriga svar.
+   ⚠️ Sidfotens "Ångra köp"-länk (Shopifys självbetjänade ångring,
+   `angerratt.mjs`) stod som "Contact" i en-filen och "Kontakt" i nb-filen —
+   subagenterna hade tappat en rad i sidfotsmenyn. Rättat: "Return an order"
+   / "Angre kjøp". Läs sidfoten på varje /<locale> när menyn ändras.
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och

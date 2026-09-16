@@ -1,0 +1,25 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "A gift he installs all by himself"
+    },
+    {
+      "typ": "underrad",
+      "text": "RV & camper roof cover – blocks winter moisture"
+    },
+    {
+      "typ": "badge",
+      "text": "$199 (was $249) – save 20%"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_kalla": "Briefernas tabell 'Exact text' (products/carashell/takskyddet/batch-02/image-ads-briefs/*/brief.md) — textlagret som ligger på SE-bilderna sedan 2026-09-15. Typerna är factory/bild-text.py:s.",
+  "CaraShellRoof_GT_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "En present han klarar helt själv" },
+      { "typ": "underrad", "text": "Taköverdrag för husvagn & husbil – skyddar mot vinterns fukt" },
+      { "typ": "badge", "text": "1 129 kr (ord. 1 469 kr) – spara 23 %" }
+    ]
+  },
+  "CaraShellRoof_CS_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Taköverdrag husvagn & husbil · 6,5 × 3 m" },
+      { "typ": "pris", "text": "1 129 kr" },
+      { "typ": "jamforpris", "text": "1 469 kr" },
+      { "typ": "rabatt", "text": "−23 %" },
+      { "typ": "botten", "text": "Fri frakt · Leverans 5–10 arbetsdagar" }
+    ]
+  },
+  "CaraShellRoof_PD_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Fukttestet i april börjar i november." },
+      { "typ": "etikett_vanster", "text": "UTAN – vattnet står vid takluckan hela vintern" },
+      { "typ": "etikett_hoger", "text": "MED – 6,5 × 3 m svart väv, hakad under kanten" },
+      { "typ": "botten", "text": "Bara taket. En person. 1 129 kr." }
+    ]
+  },
+  "CaraShellRoof_SP_4_1": {
+    "element": [
+      { "typ": "citat", "text": "\"Skyddar husvagnen bra mot regn och smuts.\"" },
+      { "typ": "namn", "text": "– Anders" },
+      { "typ": "stjarnor", "text": "★★★★★" },
+      { "typ": "botten", "text": "Ett av 16 omdömen – alla fem stjärnor" },
+      { "typ": "pris", "text": "1 129 kr (ord. 1 469 kr)" }
+    ]
+  }
+}

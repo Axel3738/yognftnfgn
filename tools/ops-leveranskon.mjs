@@ -39,7 +39,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { valjAdsetForKoncept } from './meta-lib.mjs';
-import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, lankFor, domanUrButik, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
+import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -136,17 +136,6 @@ export function ommarkt(namn, butiksPrefix) {
  *  "HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08" → "HEIMGUARD_SE_Övervakningskameran". */
 export const kampanjBas = (kampanjnamn) => String(kampanjnamn ?? '').split(' | ')[0].trim();
 
-/** En TOM kampanj (kampanj.mjs --tom, USA 2026-09-16) bär inga annonser med
- *  prefixet och heter BRAND_M_Produkt …, inte Prefix_… — valjKampanjer ser den
- *  aldrig, och kön sa "ingen US-kampanj" om en kampanj som fanns (CaraShell
- *  2026-09-16). Kandidat på KAMPANJNAMN: basen (före " | ") lika produktens
- *  kampanjbas för marknaden. Ren funktion. */
-export function kandidaterViaKampanjnamn(kampanjer, produktBas) {
-  const bas = String(produktBas ?? '').trim().toUpperCase();
-  if (!bas) return [];
-  return (kampanjer ?? []).filter((k) => kampanjBas(k?.name).toUpperCase() === bas);
-}
-
 /** Adsetnamn per OPS-konventionen (pipeline/waves/se-heimguard-image.config.mjs:38):
  *  "<kampanjbas> - <KONCEPT>". Utan koncept: null. */
 export const adsetNamn = (bas, koncept) => (bas && koncept ? `${bas} - ${koncept}` : null);
@@ -193,10 +182,24 @@ export function valjMalkampanj(kandidater, marknad = 'SE') {
       kandidater: lista,
     };
   }
-  if (pausadeTomma.length) {
+  // Exakt en PAUSED kampanj UTAN spend är nybyggd, inte ett beslut (en
+  // ägare pausar inget som aldrig spenderat). Den får ta emot annonser —
+  // kampanjen själv rörs aldrig, så inget spenderar förrän ägaren slår på
+  // den. Så blir en ny marknad (US 2026-09-16) klar med ett klick i stället
+  // för att kön hålls tills någon slår på en tom kampanj.
+  if (pausadeTomma.length === 1) {
+    const k = pausadeTomma[0];
+    return {
+      kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'PAUSAD_TOM' },
+      skal: null,
+      varning: `"${k.namn}" är PAUSED utan spend (nybyggd) — annonserna laddas upp, kampanjen rörs inte; inget spenderar förrän ägaren slår på den${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
+      kandidater: lista,
+    };
+  }
+  if (pausadeTomma.length > 1) {
     return {
       kampanj: null,
-      skal: `ingen ACTIVE ${m}-kampanj — ${pausadeTomma.map((k) => `"${k.namn}" är PAUSED utan spend`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}. VA:n slår på kampanjen först.`,
+      skal: `ingen ACTIVE ${m}-kampanj och ${pausadeTomma.length} PAUSED utan spend — gissar aldrig vilken: ${pausadeTomma.map((k) => `${k.namn} (${k.id})`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
       kandidater: lista,
     };
   }
@@ -417,23 +420,26 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const butikens = annonser
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
-  const val = valjKampanjer(kampanjer, butik.prefix, butikens);
-  // En tom kampanj (första marknadsannonsen kommer härifrån) hittas bara på
-  // namnet — produktens kampanjbas för marknaden (kampanj.mjs kampanjnamnFor).
-  const { kampanjnamnFor } = await import('../factory/kampanj.mjs');
-  const produktBas = butik.produkt ? kampanjBas(kampanjnamnFor({ brand: butik.post.brand, marknad: m, produkt: butik.produkt, datum: '' })) : '';
-  const viaNamn = kandidaterViaKampanjnamn(kampanjer, produktBas).filter((k) => !val.butikens.some((x) => String(x.id) === String(k.id)));
-  if (viaNamn.length) logg(`Kampanj via namnet (inga annonser med prefixet än): ${viaNamn.map((k) => `${k.name} [${k.status}]`).join(' · ')}`);
-  const perMarknad = filtreraPaMarknad([...val.butikens, ...viaNamn].map((k) => ({ ...k, campaign_name: k.name })), m);
+  // Kampanjnamnets bas (kampanjbasFor) fångar en TOM kampanj utan annonser —
+  // den första US-kampanjen är alltid tom (byggd med --tom).
+  let kampanjbaser = [];
+  try {
+    const { kampanjbasFor } = await import('../factory/kampanj.mjs');
+    if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: butik.post.brand, marknad: m, produkt: butik.produkt })];
+  } catch (e) { varningar.push(`kampanjbas: ${e.message}`); }
+  const val = valjKampanjer(kampanjer, butik.prefix, butikens, kampanjbaser);
+  if (val.baraViaBas?.length) logg(`  via kampanjnamnet (tom kampanj): ${val.baraViaBas.join(' · ')}`);
+  const perMarknad = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), m);
   const kandidater = [];
   for (const k of perMarknad.behall) {
     if (k.status === 'ACTIVE') { kandidater.push({ ...k, utfall: 'ACTIVE', spend: null }); continue; }
     const u = await kampanjUtfall(k.id);
     kandidater.push({ ...k, utfall: u.utfall, spend: u.spend ?? null });
   }
-  const { kampanj, skal: kampanjSkal } = valjMalkampanj(kandidater, m);
+  const { kampanj, skal: kampanjSkal, varning: kampanjVarning } = valjMalkampanj(kandidater, m);
   if (kampanj) logg(`Kampanj (${m}): ${kampanj.namn} [${kampanj.status}] · bas "${kampanj.bas}"`);
   else { logg(`Kampanj (${m}): INGEN — ${kampanjSkal}`); varningar.push(`kampanj: ${kampanjSkal}`); }
+  if (kampanjVarning) { logg(`  ⚠️  ${kampanjVarning}`); varningar.push(`kampanj: ${kampanjVarning}`); }
   for (const k of kandidater.filter((x) => x.utfall === 'AVVECKLAD')) {
     if (!kampanj || k.id !== kampanj.id) varningar.push(`"${k.name}" är PAUSED med ${Math.round(k.spend)} kr spend — avvecklad, aldrig mål`);
   }

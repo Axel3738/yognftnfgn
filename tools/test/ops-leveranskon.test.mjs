@@ -8,7 +8,6 @@ import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
   handleUr, produktJsonUrl, prisUr, leveransText, prefixAvviker, STANDARD_STATUS,
-  kandidaterViaKampanjnamn,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -90,20 +89,6 @@ test('valjMalkampanj: exakt en ACTIVE → kampanj med bas', () => {
   assert.deepEqual(v.kampanj, { id: '10', namn: 'HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11', bas: 'HEIMGUARD_SE_Övervakningskameran', status: 'ACTIVE', utfall: 'ACTIVE' });
 });
 
-test('kandidaterViaKampanjnamn: en tom kampanj hittas på produktens bas, inte på prefix eller annonser (CaraShell US 2026-09-16)', () => {
-  const kampanjer = [
-    { id: '1', name: 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16', status: 'PAUSED' },
-    { id: '2', name: 'CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16', status: 'PAUSED' },
-    { id: '3', name: 'Bäverbutiken DK | something', status: 'ACTIVE' },
-  ];
-  const tak = kandidaterViaKampanjnamn(kampanjer, 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m');
-  assert.deepEqual(tak.map((k) => k.id), ['1']);
-  // Skiftläge spelar ingen roll; termoskyddets bas träffar aldrig takskyddets.
-  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, 'carashell_us_termoskydd husbil 211 × 171 cm').map((k) => k.id), ['2']);
-  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, ''), []);
-  assert.deepEqual(kandidaterViaKampanjnamn(kampanjer, 'CARASHELL_US_'), []);
-});
-
 test('valjMalkampanj: noll kampanjer → null med "/ny-annonser bygger den"', () => {
   const v = valjMalkampanj([], 'NO');
   assert.equal(v.kampanj, null);
@@ -128,10 +113,30 @@ test('valjMalkampanj: PAUSED med spend = avvecklad, aldrig mål', () => {
   assert.equal(v.kandidater[0].utfall, 'AVVECKLAD');
 });
 
-test('valjMalkampanj: PAUSED utan spend → null, VA:n slår på först', () => {
-  const v = valjMalkampanj([{ id: '1', name: 'HEIMGUARD_NO_Ny', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 }], 'NO');
+test('valjMalkampanj: exakt en PAUSED utan spend (nybyggd) → mål, med varning — kampanjen rörs inte', () => {
+  const v = valjMalkampanj([{ id: '1', name: 'CARASHELL_US_Taköverdrag | BE-ROAS 1.63 | 2026-09-16', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 }], 'US');
+  assert.equal(v.skal, null);
+  assert.deepEqual(v.kampanj, { id: '1', namn: 'CARASHELL_US_Taköverdrag | BE-ROAS 1.63 | 2026-09-16', bas: 'CARASHELL_US_Taköverdrag', status: 'PAUSED', utfall: 'PAUSAD_TOM' });
+  assert.match(v.varning, /PAUSED utan spend \(nybyggd\)/);
+  assert.match(v.varning, /rörs inte/);
+});
+
+test('valjMalkampanj: två PAUSED utan spend → null, gissar aldrig', () => {
+  const v = valjMalkampanj([
+    { id: '1', name: 'HEIMGUARD_NO_A', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+    { id: '2', name: 'HEIMGUARD_NO_B', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+  ], 'NO');
   assert.equal(v.kampanj, null);
-  assert.match(v.skal, /PAUSED utan spend/);
+  assert.match(v.skal, /2 PAUSED utan spend/);
+});
+
+test('valjMalkampanj: PAUSED utan spend bredvid en avvecklad → den tomma är mål, den avvecklade aldrig', () => {
+  const v = valjMalkampanj([
+    { id: '1', name: 'HEIMGUARD_NO_Gammal', status: 'PAUSED', spend: 900 },
+    { id: '2', name: 'HEIMGUARD_NO_Ny', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+  ], 'NO');
+  assert.equal(v.kampanj.id, '2');
+  assert.match(v.varning, /\+ 1 avvecklad/);
 });
 
 test('valjMalkampanj: en ACTIVE bredvid en avvecklad → den aktiva vinner', () => {

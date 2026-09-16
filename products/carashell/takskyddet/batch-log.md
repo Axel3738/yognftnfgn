@@ -398,18 +398,60 @@ Två fynd som gäller framåt står i `dna.md`: `elementtyp()`-buggen (rättad i
 4. Har batch #2:s fyra bildannonser hämtat sig när de fått en hel vecka med rätt
    creative — och vad säger det om mönster 10?
 
-## 2026-09-16 — `/ops-oversatt carashell/takskyddet --marknad US` (första US-körningen)
+---
 
-- **Läge: hållen.** Kön `SE-ACTIVE to be translated`: 0 rader. `Approved`: 4 bildrader
-  (`CaraShellRoof_US_GT/PD/CS/SP_4_1`) som saknas i USA — eftersläpande sedan marknaden
-  lades till i efterhand (PD/CS/SP finns redan i NO). US-kampanjen `120251436741400435`
-  i Magiborsten UK står PAUSED utan spend ⇒ inget översatt, inget uppladdat, 0 HeyGen.
-- Verktygsfel hittat: kön sa "ingen US-kampanj" om en kampanj som fanns men var tom
-  (inga annonser med prefixet). Rättat (`kandidaterViaKampanjnamn`), nu säger den
-  "PAUSED utan spend — VA:n slår på kampanjen först".
-- Länkarna för USA går sedan i dag till `https://carashell.com/products/takskyddet?country=US`
-  (egen domän för marknaden) — de adsets som byggdes 2026-09-16 förmiddag bär ingen länk,
-  så inget behöver skrivas om.
-- Nästa: Axel slår på kampanjen → 17:05-rutinen översätter de 4 raderna. De 16 SE-annonserna
-  (kopierade ur källan) går aldrig via hubben — de behöver ett eget översättningsjobb
-  (HeyGen-dubb till amerikansk engelska, som NO-batchen) om USA ska ha dem.
+## USA-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet --marknad US`, första körningen) — 4 bildannonser upp, kampanjen PAUSAD, pixeln saknar åtkomst
+
+**Kön:** 0 rader i `SE-ACTIVE to be translated` — batch #2:s fyra bildrader
+låg redan i `Approved` (NO tog dem 14–15/9, innan US fanns). Körd med
+`--status Approved`: kön dömer per rad vilka marknader som saknas (`klar_i`),
+så en Approved-rad utan US-annons är fortfarande jobb. Batchen:
+`market-expansion/ops/carashell/2026-09-16-us/`.
+
+**Två fel i flödet, båda rättade samma förmiddag (commit `517b21d`):**
+1. Kön sa "ingen US-kampanj — /ny-annonser bygger den" fast
+   `CARASHELL_US_Taköverdrag …` (`120251436741400435`) låg färdig i
+   Magiborsten UK sedan 06:29. `valjKampanjer` kände bara igen kampanjer via
+   annonsprefixet eller via annonserna i dem — en `--tom`-kampanj har inga.
+   Nu `kampanjbasFor` (brand_marknad_produktnamn) som fjärde väg.
+2. En PAUSED kampanj utan spend gav "VA:n slår på kampanjen först". Nu
+   laddas annonserna upp i den (kampanjen rörs aldrig) — Axel slår på med
+   ett klick när han vill.
+
+**Bilderna:** textlagret ritades om från de rena basfotona (hämtade ur de
+gamla Meta-creatives:ens `image_hash`, 896 × 1152) med amerikansk spec
+(`textlager-us.json`, sonnet): $199 / $249 / −20 %, free shipping, 5–10
+business days, 16 reviews — allt avläst på
+`carashell.se/en/products/takskyddet?country=US` samma dag. Ingen OCR, 0
+krediter. `rendera.mjs` är mallen.
+
+| SE | US | Adset | Ad-ID | Status vid tillbakaläsning |
+|---|---|---|---|---|
+| `GT_4_1` | `CaraShellRoof_US_GT_4_1` | `CARASHELL_US_GT` | 120251442457940435 | ACTIVE/IN_PROCESS |
+| `PD_4_1` | `CaraShellRoof_US_PD_4_1` | `CARASHELL_US_PD` | 120251442471980435 | ACTIVE/IN_PROCESS |
+| `CS_4_1` | `CaraShellRoof_US_CS_4_1` | `CARASHELL_US_CS` | 120251442481670435 | ACTIVE/IN_PROCESS |
+| `SP_4_1` | `CaraShellRoof_US_SP_4_1` | `CARASHELL_US_SP` | 120251442617450435 | ACTIVE/IN_PROCESS |
+
+⚠️ **Pixeln:** Meta flaggar alla fyra med HARD_ERROR 1815045 — kontot
+`1107817401910319` har inte åtkomst till pixel `28589207184025756`
+(CaraShells pixel, skapad i OPS-kontots business). Kampanjbygget accepterade
+pixeln i `promoted_object`, felet syns först på annonsnivå. Kampanjen kan
+inte köra förrän pixeln delats med Magiborsten UK i Business Settings.
+Axels klick, står i Discord-rapporten. Adsetens `promoted_object` behöver
+inte ändras när åtkomsten finns.
+
+**Vad som INTE gjordes:** inga videor — batch #2:s tre videobriefer
+(`PD_4_H1`, `PD_5_H1`, `SP_4_H1`) står i Draft utan redigerare. Termoskyddet
+(produkt 2) har egen US-kampanj `CARASHELL_US_Termoskydd …` sedan 12:03,
+byggd av den andra sessionen, tom och pausad — den fylls av
+`/ops-oversatt carashell/termoskyddet --marknad US` när dess hub och SE-annonser
+finns. Inte en dubblett.
+
+**Tillägg samma eftermiddag (parallell session, `session_0137SoqfSfbKHp1eF8jbkffp`):**
+två sessioner körde `/ops-oversatt carashell/takskyddet --marknad US` samtidigt.
+Den här hittade samma två fel, men `517b21d`:s lösning (`kampanjbasFor` som fjärde
+väg i `valjKampanjer`, uppladdning i PAUSED utan spend) är den som gäller — dubblett-
+koden togs bort vid mergen. Discord-rapporten från den här sessionen (11:5x, "nothing
+uploaded") skrevs FÖRE de fyra uppladdningarna och är överspelad. Samma eftermiddag
+fick USA egen domän (carashell.com), 90-dagars garanti på /en och termoskyddet sin
+US-kampanj — se `factory/PROCESS.md` punkt 19–20 och termoskyddets batch-log.

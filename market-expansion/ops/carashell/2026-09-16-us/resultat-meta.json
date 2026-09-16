@@ -1,0 +1,142 @@
+{
+  "CaraShellRoof_US_GT_4_1": {
+    "exit": 0,
+    "page_id": "3db270ab-908c-81e2-9cfc-d043738a501f",
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437593250435",
+        "namn": "CARASHELL_US_GT",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251442457940435",
+        "namn": "CaraShellRoof_US_GT_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "2069785450332524",
+      "media": {
+        "typ": "bild",
+        "hash": "73098a6a11000ed65a5db87b48fedc33"
+      },
+      "lank": "https://carashell.se/en/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellRoof_US_PD_4_1": {
+    "exit": 0,
+    "page_id": "3db270ab-908c-818c-a6d1-ed75a1e6e61b",
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437593850435",
+        "namn": "CARASHELL_US_PD",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251442471980435",
+        "namn": "CaraShellRoof_US_PD_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "2109132083297633",
+      "media": {
+        "typ": "bild",
+        "hash": "25cd0920a3b0e0e3b47f520a730f086b"
+      },
+      "lank": "https://carashell.se/en/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellRoof_US_CS_4_1": {
+    "exit": 0,
+    "page_id": "3db270ab-908c-8109-a321-dc523c9f0b12",
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437592600435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251442481670435",
+        "namn": "CaraShellRoof_US_CS_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1084928231091845",
+      "media": {
+        "typ": "bild",
+        "hash": "cd1e34ac5d180aba4c6c8b565d8e8c83"
+      },
+      "lank": "https://carashell.se/en/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellRoof_US_SP_4_1": {
+    "exit": 0,
+    "page_id": "3db270ab-908c-81de-8898-e74f811a7e14",
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437594720435",
+        "namn": "CARASHELL_US_SP",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251442617450435",
+        "namn": "CaraShellRoof_US_SP_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "3731940680315052",
+      "media": {
+        "typ": "bild",
+        "hash": "8ddae955fab91b837c9d00b36e50bbfe"
+      },
+      "lank": "https://carashell.se/en/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  }
+}
