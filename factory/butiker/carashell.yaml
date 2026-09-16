@@ -109,6 +109,12 @@ judgeme:
   # miljön är en annan butiks.
   shop_domain: "yitrbk-m3.myshopify.com"
   token_env: "JUDGEME_CARASHELL_TOKEN"
+  # Axel köpte Awesome-planen och slog på "Translate reviews automatically"
+  # 2026-09-16 (svar på USA-frågan "går det inte att den auto-translatear?").
+  # Judge.me översätter då de svenska recensionerna på /en och /nb själv, så
+  # app-CSV:n ska bara bära originalen — annars ser kunden alla språk blandade.
+  # Judge.me sa "upp till 48 timmar" innan det syns; verifieras på /en.
+  auto_oversattning: true
 
 garantier:
   - "14 dagars ångerrätt"

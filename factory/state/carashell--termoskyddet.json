@@ -46,7 +46,7 @@
     },
     "recensioner": {
       "klar": false,
-      "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/termoskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+      "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/termoskyddet/judgeme-app-import.csv (bara originalen — Judge.me översätter dem på marknadernas språk): Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     },
     "prislista": {
       "klar": true,
@@ -71,7 +71,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T08:21:39.897Z"
+    "tid": "2026-09-16T09:06:14.711Z"
   },
-  "uppdaterad": "2026-09-16T08:21:39.897Z"
+  "uppdaterad": "2026-09-16T09:06:14.711Z"
 }

@@ -873,6 +873,9 @@ export const STEG = [
           ? `recensions-CSV ur Drive-mappen ${pk.p.kallor.drive_mapp}`
           : `${antal} recensioner ur produktfilen → output/${pk.p.produkt.id}/judgeme-app-import.csv (Judge.mes mallformat, originaldatum)${utanDatum > 0 ? ` — 🖐 ${utanDatum} saknar datum, app-CSV:n kan inte byggas förrän de finns` : ''}`,
         `API-import med tools/judgeme-import.mjs bara om env ${tokenEnv} finns — annars laddar VA:n upp filen i appen`,
+        ...(ctx.butik.judgeme?.auto_oversattning === true
+          ? ['judgeme.auto_oversattning: true — app-CSV:n bär BARA originalen; Judge.me (Awesome) översätter dem på /<locale>']
+          : []),
       ];
     },
     async kor(ctx, pk) {
@@ -910,8 +913,14 @@ export const STEG = [
         }
         const appfil = join(mapp, 'judgeme-app-import.csv');
         let appCsv = null;
+        // Judge.me översätter själv när butiken har Awesome-planen och
+        // `judgeme.auto_oversattning: true` (CaraShell, Axels beslut 2026-09-16):
+        // då bär app-CSV:n BARA originalen — importeras de översatta raderna
+        // också ser varje kund alla språk blandade på samma sida. De översatta
+        // CSV:erna per locale skrivs ändå, som reserv för en butik utan planen.
+        const autoOversattning = ctx.butik.judgeme?.auto_oversattning === true;
         try {
-          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar });
+          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar: autoOversattning ? {} : oversattningar });
         } catch (e) {
           return { manuell: `App-CSV:n kunde inte byggas: ${e.message}` };
         }
@@ -924,7 +933,8 @@ export const STEG = [
       const tokenEnv = ctx.butik.judgeme?.token_env ?? 'JUDGEME_API_TOKEN';
       const shopDomain = text(ctx.butik.judgeme?.shop_domain) ?? process.env.JUDGEME_SHOP_DOMAIN ?? ctx.shop?.myshopifyDomain ?? null;
       if (!process.env[tokenEnv] || !shopDomain) {
-        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv: ${klick}` };
+        const bara = ctx.butik.judgeme?.auto_oversattning === true ? ' (bara originalen — Judge.me översätter dem på marknadernas språk)' : '';
+        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv${bara}: ${klick}` };
       }
       const produkt = await produktIButiken(pk);
       const arg = [

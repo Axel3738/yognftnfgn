@@ -68,8 +68,12 @@ const betygAv = (r) => Math.max(1, Math.min(5, Number(r.betyg) || 5));
 
 // Den översatta delmängden (PROCESS.md fas 3): recensionerna ur
 // oversattning-<locale>.json (recension.N.titel/text/namn) importeras som
-// EGNA recensioner med lokala namn — Judge.mes auto-översättning köps aldrig.
-// Datumen är källrecensionernas egna, aldrig påhittade.
+// EGNA recensioner med lokala namn. "Judge.mes auto-översättning köps aldrig"
+// var regeln till 2026-09-16 — då köpte Axel Awesome-planen för CaraShell
+// (USA-marknaden: blandade språk på samma sida var precis det han inte ville
+// ha). En butik med `judgeme.auto_oversattning: true` importerar BARA
+// originalen (ops.mjs recensioner); de här filerna är reserven för butiker
+// utan planen. Datumen är källrecensionernas egna, aldrig påhittade.
 export function byggJudgeMeCsvOversatt(p, oversattning) {
   const recensioner = lista(p.reviews);
   const rader = [JUDGEME_KOLUMNER.join(',')];

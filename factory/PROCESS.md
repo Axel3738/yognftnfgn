@@ -707,8 +707,15 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    påslaget. **Alternativet i repot** (`judgeme.mjs byggJudgeMeAppCsv`) är
    att importera de översatta raderna som EGNA recensioner — då ser varje
    kund alla språk blandade (10 sv + 6 nb + 6 en på samma sida), vilket är
-   precis det Axel inte vill ha. Vägvalet (Awesome eller blandad import) är
-   Axels; tills det är gjort är en-CSV:n bara en fil.
+   precis det Axel inte vill ha. **Axels val samma dag: Awesome.** Han köpte
+   planen och slog på multi-language widgets + "Translate reviews
+   automatically"; Judge.me sa "upp till 48 timmar". Mätt minuter senare på
+   `/en/products/takskyddet`: knappen "Write a review" fanns redan, texterna
+   fortfarande svenska, ingen "Show original" ännu. Butiksfilen bär
+   `judgeme.auto_oversattning: true`, och `ops.mjs` recensioner bygger då
+   app-CSV:n med BARA originalen (de översatta CSV:erna skrivs som reserv).
+   Sätt flaggan i varje ny butik som får planen — annars importerar VA:n
+   blandade språk.
 13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
    läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
    rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
