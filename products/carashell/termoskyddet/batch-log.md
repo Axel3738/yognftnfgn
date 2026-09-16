@@ -118,6 +118,20 @@ före varje radering), 18 nya laddade upp och byggda i **samma** kampanjer.
 alla 32 annonser PAUSED). ⚠️ Fortfarande ingen människa som lyssnat på alla —
 CS_3 skickades till Axel i chatten, CS_2 ska också lyssnas på före Launch.
 
+### LAUNCH SE — 2026-09-16 10:20 UTC (12:20 svensk tid)
+
+Axel skrev **"Launch: CARASHELL_SE_Termoskydd Husbil 211 × 171 cm"** i sessionen
+efter ElevenLabs-bytet. Kontroller före: butiken svarade 200 utan `/password`
+(carashell.se/ och /products/termoskyddet), pixeln `28589207184025756` hade
+`last_fired_time` 2026-09-16 02:58. Sedan sattes **kampanj `120249115376140172`,
+4 adsets (`CARASHELL_SE_PD/G/CS/SP`) och 16 annonser ACTIVE** — namngiven lista,
+alla PAUSED med 0 kr före, tillbakaläst ACTIVE på tre nivåer efter (8 annonser
+`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag. **NO-kampanjen
+`120249115382210172` står kvar PAUSED** — inget "Launch: CARASHELL_NO_…" än.
+Från och med nu: nattvakten (00:57) har något att döma, leveransrundan (14:15)
+laddar upp i SE-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp
+per annons (regel 3).
+
 ### Att läsa av första briefdagen
 
 1. Får PD köp alls när den slipper konkurrera med CS i en CBO?
