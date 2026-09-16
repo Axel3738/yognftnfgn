@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 284,
+ "nasta": 290,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -17039,6 +17039,518 @@
     }
    ],
    "namn_sv": "Husbilskalendern, 24 retrobussar"
+  },
+  "K0284": {
+   "id": "K0284",
+   "skapad": "2026-09-16",
+   "namn": "Slangboxhuven isolerad 55 cm",
+   "objekt": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+   "form": "huv",
+   "sak": "nytt: väggmonterad slangbox/slangvinda+huv",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008743247722",
+     "url": "https://www.aliexpress.com/item/1005008743247722.html",
+     "bild": null,
+     "pris_usd": 16.49,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:46:38Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 15.4,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 549,
+     "landad": 238,
+     "be_cpa": 311,
+     "hook": "Sitter slangboxen kvar på väggen i oktober?",
+     "varfor": "Samma struktur som Kranskydd Frost (REAL WINNER) men på ett 10× dyrare objekt som nästan varje villa med Gardena-box lämnar ute: vatten kvar i slangen fryser, boxens plast spricker, och Gardenas eget råd är 'lyft ner den' — vilket ingen gör. Första frost Svealand om 4,1 v, Götaland 4,7 v.",
+     "huvudrisk": "Amazon.se har en look-alike i exakt samma form vars pris inte gick att läsa (503) — och heron är en sommarbild, frostberättelsen måste byggas i creativen.",
+     "hypotes_id": "H02",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 14,
+      "K3": 12,
+      "K4": 8,
+      "K5": 8,
+      "K6": 8,
+      "K7": 4,
+      "K8": 7,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Slangboxhuven isolerad 55 cm"
+  },
+  "K0285": {
+   "id": "K0285",
+   "skapad": "2026-09-16",
+   "namn": "Lövsilarna för stuprören, 6-pack",
+   "objekt": "Hängrännor",
+   "form": "nät",
+   "sak": "hängrännor+nät",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005009285428265",
+     "url": "https://www.aliexpress.com/item/1005009285428265.html",
+     "bild": null,
+     "pris_usd": 7.74,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:46:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 14.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 3,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 349,
+     "landad": 112,
+     "be_cpa": 237,
+     "hook": "Hur många stuprör har huset?",
+     "varfor": "Exakt sorkkorgsmönstret: kedjan säljer EN lövsil för 81–234 kr och villan har 4–8 stuprör — sex för 349 kr ligger under kedjans styckpris × antal (486–1 314 kr) med ankare 3,35× (Mr Flowout/Lindab). Lövfällningen toppar om 4,1 veckor och objektet står ute på vartenda småhus.",
+     "huvudrisk": "Passformen: listningen säger 3 tum (76 mm) expanderbar, svenska stuprör är oftast 87 mm — måste bekräftas hos leverantören före launch, annars blir returerna dyra.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Lövsilarna för stuprören, 6-pack"
+  },
+  "K0286": {
+   "id": "K0286",
+   "skapad": "2026-09-16",
+   "namn": "Regnfisken vid stupröret",
+   "objekt": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+   "form": "dekor",
+   "sak": "nytt: stuprörets utkast+dekor",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010043603476",
+     "url": "https://www.aliexpress.com/item/1005010043603476.html",
+     "bild": null,
+     "pris_usd": 26.19,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:55:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 3,
+     "rank_poang": 14,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 379,
+     "be_cpa": 520,
+     "hook": "Vad gör fisken under stupröret?",
+     "varfor": "H10 på ett objekt varje småhus har (stuprörets utkast) i en form som inte finns i svenskt flöde alls — kedjan har bara plåtutkastaren för 250 kr, som fisken ersätter. Höstregn NOW (3,4 v) ger demon gratis, och flerköp är inbyggt (ett stuprör per hörn).",
+     "huvudrisk": "Upplevt värde: 899 kr för resin (Axels signal 09-09) — priset följer protokollet (landad × 2,4 utan ankare) och kan behöva sänkas till 699 (BE-CPA 282–358); heron i listningen är oanvändbar och mått är ej mätt.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 3, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Regnfisken vid stupröret"
+  },
+  "K0287": {
+   "id": "K0287",
+   "skapad": "2026-09-16",
+   "namn": "Stenlocket — döljer brunnslocket",
+   "objekt": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+   "form": "dekor",
+   "sak": "nytt: brunnslocket i gräsmattan+dekor",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": null,
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010672730085",
+     "url": "https://www.aliexpress.com/item/1005010672730085.html",
+     "bild": null,
+     "pris_usd": 36.4,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:46:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 4,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 0,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 526,
+     "be_cpa": 472,
+     "hook": "Vad gömmer du under stenen?",
+     "varfor": "Renaste H10-testet i dag: objekt som nästan varje småhus har (brunnslock i gräsmattan), formen finns inte hos någon kedja — bara en specialist (gartendek 1 250–1 450) och Amazon — och heron förstås utan ett ord. Samma struktur som klistermärkena (dekor, ingen friktion, ingenting i dag) men med upplevt värde: stenen ser ut som sitt pris.",
+     "huvudrisk": "Volymfrakt — ihålig glasfibersten är stor och lätt, ×1,5-antagandet för landad kan vara för lågt (ej mätt); mått saknas i titeln så passform mot svenska lock (Ø 40–60 cm) måste bekräftas med leverantören.",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Stenlocket — döljer brunnslocket"
+  },
+  "K0288": {
+   "id": "K0288",
+   "skapad": "2026-09-16",
+   "namn": "Regntunnehuven 200 L med dragsko",
+   "objekt": "Regntunna vid stupröret",
+   "form": "huv",
+   "sak": "regntunna vid stupröret+huv",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005006151587411",
+     "url": "https://www.aliexpress.com/item/1005006151587411.html",
+     "bild": null,
+     "pris_usd": 14.3,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:47:31Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 12.0,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 449,
+     "landad": 207,
+     "be_cpa": 242,
+     "hook": "Tömde du regntunnan — eller ska den spricka?",
+     "varfor": "Tunnan spricker vid vattenlinjen eller vid plastkranen när regnet fyllt den igen efter tömningen (regnvattentunna.se, byggahus-tråd) — dagens default är 'vänd den upp och ner' eller en presenning; ingen svensk kedja säljer en huv i tyg, bara hårda lock. Första frost Svealand 4,1 v.",
+     "huvudrisk": "Ekonomin är tunn (BE-CPA 221–263 kr, prisband 300–499 är en svag signal) och amazon.se har exakt samma form till oläst pris — plus att huven inte i sig hindrar frost, bara påfyllningen.",
+     "hypotes_id": "H03",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 10,
+      "K3": 12,
+      "K4": 8,
+      "K5": 6,
+      "K6": 8,
+      "K7": 3,
+      "K8": 5,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Regntunnehuven 200 L med dragsko"
+  },
+  "K0289": {
+   "id": "K0289",
+   "skapad": "2026-09-16",
+   "namn": "Elcykelbatteriets vinterjacka, 2-pack",
+   "objekt": "Elcykel under skärmtak",
+   "form": "överdrag",
+   "sak": "elcykel under skärmtak+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010029349245",
+     "url": "https://www.aliexpress.com/item/1005010029349245.html",
+     "bild": null,
+     "pris_usd": 7.85,
+     "forst_sedd": "2026-09-16",
+     "verifieringar": [
+      {
+       "datum": "2026-09-16",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-16T04:57:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-16",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 1,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 227,
+     "be_cpa": 272,
+     "hook": "Står elcyklarna ute i höst?",
+     "varfor": "Skyddar det dyraste på en ägd sak ute (batteriet, 4–8 tkr) inför höstregn och första frost, i formsydd form med fackhandelsankare 349 kr/st (Wheelyshop) — 2-pack för 499 kr ger 'hans och hennes' och testar H08:s 2-packsklausul rent. Fönstret är NOW (3,4 v), objektet är ute och ägaren är 55+ i småhus.",
+     "huvudrisk": "Passar bara ramskenebatterier — pakethållarbatterier (vanliga på svenska dam-elcyklar) faller utanför, och look-alikes finns redan på Amazon.se/Fyndiq.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-16",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-16",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack"
   }
  }
 }

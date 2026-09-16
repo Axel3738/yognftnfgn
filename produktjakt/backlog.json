@@ -96,6 +96,15 @@
   "arketyp": "E_VADER_SASONG",
   "deadline": "vintertäckning 8 v",
   "korningsvecka": 39,
-  "orsak": "2026-09-15 lins U: 1005010106095970 (7,55 USD) — produktsidan svarade tomt två gånger, ingen annan listning i kragform; värd nytt försök."
+  "orsak": "2026-09-15 lins U: 1005010106095970 (7,55 USD) — produktsidan svarade tomt två gånger, ingen annan listning i kragform; värd nytt försök.",
+  "lost": "2026-09-16 lins V: produktsidan tom tredje gången, fyra andra fraser gav inga kragar — stängd."
+ },
+ {
+  "objekt": "Båtens fendrar",
+  "form": "fenderskydd 4-pack (fenderstrumpa)",
+  "arketyp": "A_AGARE_FRIKTION",
+  "deadline": "sjösättning (EARLY 32 v)",
+  "korningsvecka": 10,
+  "orsak": "2026-09-16 lins W: verklig lucka — Watski säljer fenderstrumpa 240–336 kr styck, 4-pack 24,06 USD → landad 348, pris 909 möjligt; men fönstret är sjösättning i maj. Sök om v 10–12 (mars)."
  }
 ]

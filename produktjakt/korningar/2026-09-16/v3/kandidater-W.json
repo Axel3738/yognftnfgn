@@ -1,0 +1,127 @@
+{
+  "agent": "W — flerköp där kedjan säljer styckvis (H08/H11)",
+  "datum": "2026-09-16",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Lövsilarna för stuprören, 6-pack",
+      "objekt": "Hängrännor",
+      "form": "nät",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploitation",
+      "hypotes_id": "H08",
+      "vinnarlikhet": {
+        "likast": "Fiskespöhållaren (spöklämma 4-pack)",
+        "delade_variabler": ["objekt ute (husets stuprör)", "flerköp inbyggt — villan har 4–8 stuprör, kedjan säljer en i taget", "< 500 kr", "improvisation i dag (hönsnät i röret / ingenting → rännan svämmar över och stupröret fryser)", "ägare 55+ i småhus", "material klass 1"],
+        "avvikelser": ["hårt datum finns här (lövfällning) — spöklämman hade inget", "kedjan har formen styckvis (Wijo/Plannja renstratt 81–234 kr, Mr Flowout 219, Lindab självrensande 195)", "passform 87 mm ej mätt (listningen säger 3 tum = 76 mm, expanderbar)"]
+      },
+      "sasong": {"fonster_id": "lovfallning", "deadline_typ": "lövfällning", "veckor_kvar": 4.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005009285428265",
+        "url": "https://www.aliexpress.com/item/1005009285428265.html",
+        "pris_usd": 7.74,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:46:00Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005009285428265.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "6-pack (titel); aluminium, expanderbar, '3 inch' (76 mm) — passform mot svenska 87/100 mm stuprör ej mätt; syskonlistning 1005012955083310 (4/6 st 'universal expandable', 9,65 USD) som reserv om 3 tum inte spänner ut", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri packshot på mörk botten: två expanderade aluminiumsilar, konstruktionen syns — eget foto/klipp med silen som trycks ner i stupröret och löven som stannar ovanpå behövs"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Bygghemma (Renstratt Wijo, plåttratt, kampanjpris)", "pris_sek": 81, "url": "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/lovsil/", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Bauhaus Lövavskiljare Mr Flowout 70–100 mm (styck, endast webblager) / Hornbach Lindab självrensande lövsil 195 kr", "pris_sek": 219, "url": "https://www.bauhaus.se/lovavskiljare-mr-flowout-svart-plast-70-100-mm", "i_sortiment": true},
+        "ankare_kvot": 3.35,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["bygghemma.se lövsil-kategorin (Wijo fr. 81, Plannja fr. 120, Lövis Wijo fr. 142, Mr Flowout 199, Plannja Lövis 234 — alla per styck, läst 2026-09-16)", "bauhaus.se Mr Flowout svart 219 kr (Ø70–100 mm, lagerförs inte i varuhus)", "hornbach.se sökutdrag: Lindab SLS självrensande lövsil 195 kr", "byggmax.se Mr Flowout (sidan gav bara meny — pris ej läst)", "jula.se lövavskiljare 353441 (403 — pris ej läst)", "biltema.se renstratt (403 — pris ej läst)", "pricerunner.se lövavskiljare (tom sida)"]
+      },
+      "ekonomi": {"landad_sek": [101, 123], "pris_sek": 349, "brutto_sek": [226, 248], "be_cpa_sek": [226, 248], "be_roas": 1.47, "flerkop": true, "returrisk": "medel — kunden bör veta rördiametern (75/87/100 mm); expanderbar sil minskar risken men 87 mm-passform är inte verifierad"},
+      "meta_tanke": {
+        "hook": "Hur många stuprör har huset?",
+        "objekt_i_bild": "stuprörets överkant fullt av löv — och sex silar i rad på trappan",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "före: rännan svämmar över vid stupröret i regnet — efter: silen sitter i, löven ligger ovanpå, vattnet rinner igenom"
+      },
+      "varfor": "Exakt sorkkorgsmönstret: kedjan säljer EN lövsil för 81–234 kr och villan har 4–8 stuprör — sex för 349 kr ligger under kedjans styckpris × antal (486–1 314 kr) med ankare 3,35× (Mr Flowout/Lindab). Lövfällningen toppar om 4,1 veckor och objektet står ute på vartenda småhus.",
+      "huvudrisk": "Passformen: listningen säger 3 tum (76 mm) expanderbar, svenska stuprör är oftast 87 mm — måste bekräftas hos leverantören före launch, annars blir returerna dyra.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 3, "lucka": 2, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('sil', 'stuprör', 'lövsil', 'ränna' = 0 träffar; Regnkedjan är levererad 09-15 på 'stupröret' — annan form, annan funktion)", "koncept.py sok 'lövavsk' = 0, 'sil' = bara ord-träffar i titlar, 'stuprör' = K0260 regnkedjan (annan form)", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005009285428265.html",
+        "https://www.aliexpress.com/item/1005012955083310.html",
+        "https://www.bygghemma.se/hus-och-bygg/tak/takavvattning/stupror/lovsil/",
+        "https://www.bauhaus.se/lovavskiljare-mr-flowout-svart-plast-70-100-mm",
+        "https://www.hornbach.se/c/byggmaterial-tra-fonster-dorrar/tak/takavvattning/stupror-tillbehor/S26888/"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack",
+      "objekt": "Elcykel under skärmtak",
+      "form": "överdrag",
+      "arketyp": "B_SKYDDA_DYRT",
+      "arketyp_sekundar": "I_FLERKOP",
+      "slot": "exploration",
+      "hypotes_id": "H08",
+      "vinnarlikhet": {
+        "likast": "Termoskyddet för Husbil 211 × 171 cm / Motorhöljet",
+        "delade_variabler": ["objekt ute (elcykeln under skärmtaket/carporten)", "dyr > 10 tkr (elcykel 15–35 tkr, batteriet 4–8 tkr)", "formsydd överdragsform med kardborre", "deadline första frost/höstregn (kyla tar räckvidden, regn tar kontakterna)", "ägare 55+ i småhus — paret köper två cyklar", "fackhandelsankare 1,2–1,6× (Wheelyshop 349 kr/st)"],
+        "avvikelser": ["flerköpet är 2, inte 4–20 (H08:s '2-pack under fri-fraktgränsen' — otestat i kontot)", "passar bara ramskenebatterier (down tube), inte pakethållarbatterier", "look-alikes finns på Amazon.se/Fyndiq (pris ej läst)"]
+      },
+      "sasong": {"fonster_id": "hostregn", "deadline_typ": "höstregn", "veckor_kvar": 3.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010029349245",
+        "url": "https://www.aliexpress.com/item/1005010029349245.html",
+        "pris_usd": 7.85,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-16T04:57:00Z",
+        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-16/v3/bilder/1005010029349245.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en variant, universal med kardborre för ramskenebatterier ('adjustable & secure for most down tube batteries' i heron); neopren, orange insida; 7,85 USD per styck — 2-packet är vårt erbjudande", "video": "ej tillgänglig i containern"}
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en textig featurebild (NEOPRENE / COLD-PROOF / UNIVERSAL) med liten inset av jackan på ramen — insetten är kontexten; eget foto med två cyklar under skärmtaket i regn behövs"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "Wheelyshop (Batteriskydd ram elcykel, neopren, i lager)", "pris_sek": 349, "url": "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Wheelyshop batteriskydd ram elcykel (neopren 53 × 37 cm, 'frost, vatten och sol')", "pris_sek": 349, "url": "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel", "i_sortiment": true},
+        "ankare_kvot": 1.4,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["wheelyshop.se 349 kr/st (läst 2026-09-16)", "cykelhub.se PRO batteriskydd (503 — pris ej läst)", "fyndiq.se batteriskydd universell (403 — pris ej läst)", "amazon.se: två neoprenskydd i sökutdraget (pris ej läst)", "batteridoktorn.se regntäcke/skyddsväska (sökutdrag, pris ej läst)", "jula/biltema/clas: inget batteriskydd i sökutdragen"]
+      },
+      "ekonomi": {"landad_sek": [204, 250], "pris_sek": 499, "brutto_sek": [249, 295], "be_cpa_sek": [249, 295], "be_roas": 1.83, "flerkop": true, "returrisk": "medel — universal kardborre på ramskenebatteri; kunder med pakethållarbatteri (Ecoride/Crescent-typ) måste stoppas i texten"},
+      "meta_tanke": {
+        "hook": "Står elcyklarna ute i höst?",
+        "objekt_i_bild": "två elcyklar under skärmtaket i regnet, batterierna i svarta jackor",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "jackan dras på batteriet med två kardborreband; regnet rinner av; räckviddssiffran i displayen mot kall morgon"
+      },
+      "varfor": "Skyddar det dyraste på en ägd sak ute (batteriet, 4–8 tkr) inför höstregn och första frost, i formsydd form med fackhandelsankare 349 kr/st (Wheelyshop) — 2-pack för 499 kr ger 'hans och hennes' och testar H08:s 2-packsklausul rent. Fönstret är NOW (3,4 v), objektet är ute och ägaren är 55+ i småhus.",
+      "huvudrisk": "Passar bara ramskenebatterier — pakethållarbatterier (vanliga på svenska dam-elcyklar) faller utanför, och look-alikes finns redan på Amazon.se/Fyndiq.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 1, "lucka": 1, "ekonomi": 1, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": null, "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt ('elcykel', 'batteri' = bara Makita/jumpstart/solcell — inget batteriskydd)", "koncept.py sok 'elcykel' = K0118/K0134 (batteriskydd, status 'kandidat' — aldrig levererade till Axel, inget nej), K0162 cykelöverdrag", "kontot 7 d: ej läst (rör inte Meta)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010029349245.html",
+        "https://www.aliexpress.com/item/1005006296543277.html",
+        "https://www.wheelyshop.se/products/batteriskydd-ram-elcykel",
+        "https://www.amazon.se/batteri-skyddsk%C3%A5pa-universal-omkrets-skyddstillbeh%C3%B6r/dp/B0BPGQ8QSC"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Krukfötterna 12-pack (frostsprängning)", "skal": "Kedjan säljer i paket, billigt: Plantagen 4-pack kork 69,90 / Rasmus keramik 99,90 (17–25 kr/st) — 12 st hos kedjan = 210–300 kr, under vårt 399. Golv i samma form (paket) under vårt pris."},
+    {"namn": "Stolphattarna 12-pack (staketstolpar)", "skal": "Byggmax listar 29 stolphattar 'från 10,00 kr' styck (kategorisidan i sökutdraget); 12 st ≈ 120–600 kr mot vår landad 245 (16,95 USD). Kedjegolv i pack-ekvivalent under oss + passform 95×95 vs US 4x4 = mätrisk."},
+    {"namn": "Snökäpparna/uppfartsmarkörerna 10-pack", "skal": "Granngården säljer Millarco bambu 10-pack och Bergman 25-pack med reflex (pack, ej styckvis); AliExpress fiberglas 48\" 34,20 USD → landad 495. Golv i samma paketform under oss."},
+    {"namn": "Krukvagnarna 4-pack (krukan in före frosten)", "skal": "Rusta blomvagn akacia 58 kr, Biltema blomvagn (pris ej läst) — kedjegolv styckvis långt under oss; Plantagen 399,90 är ankaret men Rusta dödar luckan. Dessutom samma problem som Krukbärremmen (levererad 09-15)."},
+    {"namn": "Utestolsöverdragen 4-pack", "skal": "AliExpress 4-pack 39–55 USD → landad 570–790 (pris ≥ 999 krävs); kedjan (Rusta/Jula/Bauhaus) säljer stapelbara-stolar-överdrag och styckskydd 79–149. Ingen ekonomi och formtak."},
+    {"namn": "Soptunnelocksremmen 2-pack (vind/skator)", "skal": "2-pack 8,19 USD → landad 118; vid 299 kr blir BE-CPA 181 (< 190), vid 349 kr räcker inte flerköpet (Fyndiq säljer en för 209 → 2 × 209 = 418 < 1,3 × 349). Lågt upplevt värde (gummisnodd med krokar)."},
+    {"namn": "Fenderskydden 4-pack (båtens fendrar)", "skal": "Watski säljer fenderstrumpa 240–336 kr styck (sökutdrag) — luckan finns (4-pack 24,06 USD → landad 348, pris 699, BE 351, ankare 960/909 ✔) MEN fönstret är sjösättning (EARLY, 32 v). Parkera till mars; raden skulle bli LÅG på säsong i dag."},
+    {"namn": "Åtelkamerafästena 3-pack (älgjakt)", "skal": "CS15 3-pack 7,07 USD är en böjd ståltråd med skruv (hero sedd) — lågt upplevt värde mot HuntElite träfäste 299 kr (Jaktmagasinet); alu-360°-fästet (9,29 USD) i 3-pack landar 403 och klarar inte 1,3×-regeln mot 3 × 299. Form hållare = lins G:s lärdom."},
+    {"namn": "Bikupsbanden / musgallren i pack (invintring)", "skal": "Skogens Biredskap spännband från 45 kr, Bonden.se spännrem bikupa (pris ej läst) — billigt styckvis; ägarbasen (hobbybiodlare) är liten och Bikupans vinterjacka är redan ja 09-13 på samma objekt."},
+    {"namn": "Husbilens spegelskydd 2-pack (uppställning)", "skal": "AliExpress har bara bilstorlek (1,70–5,23 USD, 2 st) — husbilsform saknas; Milenc 1 369 kr är ett kollisionsskydd, annan form. Inget att sälja."},
+    {"namn": "Ljusslinge-/tegelklämmorna för fasaden", "skal": "Bauhaus Tegelkrok Universal 100 st i ett paket; AliExpress 20–100 st för 2,88–4,99 USD. Kedjan säljer redan i storpack, billigt."},
+    {"namn": "Stolskydd/kapell-, däck- och hjulhållare-varianter", "skal": "Inte sökta: däckpåsar, takrännekrokar, solcellsspotlights, stängselisolatorer, talgbollshållare, stamskydd är alla kedjepack under 100 kr enligt orderns egen förhandsdom — ingen mätning gjord, ingen rad."}
+  ]
+}

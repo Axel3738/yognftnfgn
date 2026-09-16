@@ -38,3 +38,68 @@ Oförändrad (208 aktiva).
 | X | Det som fryser sönder första frostnatten — slang, pump, regntunna, elstängselaggregat, husvagnens vatten | exploitation | H02/H03 |
 
 Liten batch med flit: 20 kort står obesvarade på sidan.
+
+## Steg 1–4 — tre linser, 6 kandidater → 6 klarade grindarna → batch 6
+
+| Lins | Sökt | Levererat | Strukna (skäl) |
+|---|---|---|---|
+| V (H10, ny form på hus/tomt) | 26 fraser, 13 produktsidor, ~20 golvkontroller | 2: Stenlocket över brunnslocket (gartendek 1 250–1 450, ingen kedja), Regnfisken vid stupröret (ingen svensk aktör) | **golv i exakt form under oss:** flaggstångslampa (Flaggstångsexperten 599), husnummer (megabilligt 249), ekorrspärr (Fyndiq 238), hängrännelampor (Clas 36-9412), infartsmarkör (kedjans solcellspinnar) · **ingen levande listning:** roskragen (tredje gången tom — stängd), postlådan (alla former), muslist · **sett på hyllan:** extrahandtag snöskyffel (Jula), vindsnurra (Jula) · parkeringslaser (230 V-elektronik) |
+| W (H08/H11, flerköp) | 14 fraser, 9 produktsidor, 4 heron | 2: Lövsilarna för stuprören 6-pack (kedjan säljer EN 81–234 kr; villan har 4–8 rör), Elcykelbatteriets vinterjacka 2-pack (Wheelyshop 349/st) | **kedjan säljer redan i pack:** krukfötter (Plantagen 4-pack 69,90), stolphattar (Byggmax från 10 kr/st), snökäppar (Granngården 10/25-pack), tegelklämmor (Bauhaus 100-pack), krukvagnar (Rusta 58) · utestolsöverdrag (landad 570–790) · soptunnerem (BE 181) · åtelkamerafäste (böjd ståltråd) · bikupsband (45 kr/st, liten bas) · husbilsspeglar (bara bilstorlek) · **fenderskydd 4-pack: verklig lucka (Watski 240–336/st) men sjösättning EARLY 32 v → backlog mars** |
+| X (H02/H03, fryser sönder) | 12 fraser, 8 produktsidor | 2: Slangboxhuven isolerad 55 cm (Gardena-box 955–3 049, ingen huv hos Gardena), Regntunnehuven 200 L (ingen svensk tyghuv, bara hårda lock) | **golv i exakt form:** poolkudde (Hornbach 99), hönsvärmeplatta (VOSS 279) · **ingen listning:** skimmerlock (bara Hayward), elstängsellåda, hästkar-de-icer 230 V, isolerad hästhink · **kedjan:** dräneringsvärmare (Clas/Klimatshoppen kit), krukfötter · igelkottshus (landad 982 > Granngården 549) |
+
+**Utfall: 6 (3 exploitation / 3 exploration / 0 säsong)** — alla MEDEL, alla LIVE_VERIFIED, inga LÅG, inga kollisioner, 3 skyddsformer (50 % av 6 — under taket räknat på max 15). Exploitation och säsong under minimum — inte utfyllt; "räcker det till 7: leverera 7" — i dag räckte det till 6. Regeln "golv i exakt form under oss = struken" fällde 12 av dagens ~30 prövade — det är nu den vassaste grinden.
+
+## Batchen (sida v21 = 6 nya + 20 obesvarade kort från 13/9 och 15/9; ark `Leverantorsoffert-2026-09-16.xlsx` bär dagens 6, prisfälten tomma)
+
+| # | Produkt | Slot | Objekt · form · arketyp | Pris · BE-CPA | Säsong | Ankare / golv | Största risken |
+|---|---|---|---|---|---|---|---|
+| 1 | Slangboxhuven isolerad 55 cm (K0284) | exploit | NYTT väggmonterad slangbox · huv · B (H02) | 549 · 287–335 | första frost 4,1 v | Gardena-box 955–3 049 som objekt; ingen huv i kedjan / Amazon look-alike ej prisläst | look-alike på Amazon.se |
+| 2 | Lövsilarna för stuprören, 6-pack (K0285) | exploit | hängrännor · nät · E (H08) | 349 · 226–248 | lövfällning 4,1 v | Lindab/Plannja 195–219/st (3,35×) / Wijo 81 | 3 tum (76 mm) mot svenska 87 mm — passform ej mätt |
+| 3 | Regnfisken vid stupröret (K0286) | explore | NYTT stuprörets utkast · dekor · H (H10) | 899 · 482–558 | höstregn 3,4 v | ingen svensk / plåtutkast 250 | upplevt värde för resin; listningshero oanvändbar (syskonlistning packshot) |
+| 4 | Stenlocket — döljer brunnslocket (K0287) | explore | NYTT brunnslocket i gräsmattan · dekor · H (H10) | 999 · 420–525 | evergreen | gartendek 1 250–1 450 (1,45×) / — | volymfrakt, mått ej mätt |
+| 5 | Regntunnehuven 200 L (K0288) | exploit ASYM | regntunnan · huv · E (H03) | 449 · 221–263 | första frost 4,1 v | ingen tyghuv / Jula hårt lock ~60 | tunn ekonomi; packshot-hero |
+| 6 | Elcykelbatteriets vinterjacka, 2-pack (K0289) | explore ASYM | elcykel under skärmtak · överdrag · B (H08) | 499 · 249–295 | höstregn 3,4 v | Wheelyshop 349/st (1,4×) / 349 | bara ramskenebatterier; look-alikes ej prislästa |
+
+K0 mot `v3/katalog-live.txt` (208 aktiva), `koncept.py sok`, kontot — ingen dubblett.
+
+## Parkerade (`backlog.json`)
+
+Fenderskydden 4-pack → mars (sjösättning EARLY, luckan finns: Watski 240–336/st) · roskragen — stängd (tre tomma produktsidor, inga alternativ) · hästhink (v 41, annan källa) · igelkott (v 42) · isfiske (v 2).
+
+## Metodfynd i dag
+
+1. **"Golv i exakt form under oss" är den grind som bär.** 12 av ~30 prövade föll där i dag, innan ekonomi eller hero ens räknades. Linserna ska läsa golvet FÖRE ali.py — det sparar halva sökbudgeten.
+2. **Flerköpsluckan finns i fackhandeln, inte i byggvaruhuset** (lins W): Byggmax/Rusta/Plantagen säljer redan i pack; Wheelyshop/Watski/Lantkompaniet/Lindab säljer styckvis och dyrt. Nästa H08-lins söker objekt vars tillbehör bor i fackhandeln.
+3. **H10 ger 2 per lins, inte 4** — kategorinyhet är sällsynt på riktigt; två av tre dagar har H10-linsen levererat under målet. Rätt förväntan: 1–2 rader, aldrig fler.
+4. **Sittkäppen är H07:s tredje test** (Axels verktygslauncher: 734 kr / 1 köp dag 1). Läses 09-19.
+5. 20 kort obesvarade i två dagar — Axel har inte öppnat sidan sedan söndag. Batchen hålls liten tills svaren kommer.
+
+## Tio kontrollfrågor (MASTERPROMPT §9)
+
+1. Kattkojan: ingen djurlins i dag; kojan K0 (bekräftad, pausad). Ja.
+2. Taköverdraget: bekräftad, 28 853 / 122 / 4,89; inget pristak dödade någon rad (stenlocket 999 levererat). Ja.
+3. Adventskalendern: aktiv, 1,77 — glider; ingen kalenderlins i dag (två obesvarade på sidan). Ja.
+4. Verktygen: inga verktygsrader i dag; sittkäppen (Axels) mäts i facit. Ja.
+5. Verktyg levererat: nej. Ja.
+6. Deadline per rad: 5 av 6 NOW (3,4–4,1 v), stenlocket evergreen (märkt). Ja.
+7. Ankare per rad: 4 mätta med URL; slangboxhuven och regntunnehuven "ingen svensk aktör i formen" med kollade källor (Gardena, Jula, Clas). Ja.
+8. Hero per rad: alla 6 sedda; regnfisken (oanvändbar, syskonlistning) och regntunnehuven (packshot) anmärkta. Ja.
+9. K0 på SAK: katalog-live 09-16, koncept.py sok, kontot. Ja.
+10. Taggar + per_kriterium + koncept-id (K0284–K0289); vikter (41 lyft) och LEARNING_STATE omräknade FÖRE sökningen; LEARNING_STATE-raden skriven. Ja.
+
+## Definition of done
+
+- [x] 0A inga nya svar (55); 20 kort följer med på sidan
+- [x] 0B Metas facit hämtat (`facit/snapshots/2026-09-16.json`); två nya kampanjer taggade (sittkäppen, infartslarmet); utfall.json + koncept.json
+- [x] 0C LEARNING_STATE.md omskriven och läst; hypoteser.json oförändrad
+- [x] 0D SASONG.md skriven; bara NOW-fönster jagade (fenderskydd EARLY → backlog)
+- [x] Discovery ägare → objekt → friktion, 3 linser (V/W/X), 3/3/0 — under minimum, inte utfyllt
+- [x] Varje rad LIVE_VERIFIED i dag med UTC-stämpel, hero sedd
+- [x] Svenska golvet läst med URL per rad (två "ingen svensk aktör", utskrivet)
+- [x] Materialklass per rad
+- [x] Ekonomi som intervall, BE-CPA ≥ 190 på varje rad
+- [x] Batch 6, per slot enligt rank.py, ingen utfyllnad, inga LÅG
+- [x] Ark byggt (prisfälten tomma) + sida publicerad mot samma URL, v21, downloads + db, med 20 obesvarade kort
+- [x] koncept.json bär K0284–K0289
+- [x] LEARNING_STATE-raden + STATUS.md + RUTIN-KVITTO.md; committat och pushat
+- [x] Discord-rapport skickad
