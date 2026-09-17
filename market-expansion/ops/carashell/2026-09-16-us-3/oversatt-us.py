@@ -17,8 +17,13 @@ Två vägar, per bild:
                               behöver bli bredare ritas om bredare (samma hörn);
                               en som blir smalare behåller SE-bredden.
     python3 market-expansion/ops/carashell/2026-09-16-us-3/oversatt-us.py [--bara <SE-namn>]
-Läser se-texter.json, textlager-us.json, se/<n>/<n>.png, ev. bas/<n>.png.
-Skriver us/<US-namn>.png, us/<US-namn>.png.qa.png (SE | US), resultat-render.json.
+    python3 …/oversatt-us.py --batch <annan batchmapp> --marknad NO
+Läser <batch>/se-texter.json, <batch>/textlager-<m>.json (samma elementformat:
+{ "<namn>": { "element": [ {typ, text}, … ] } }, nycklat på SE- eller målnamn),
+<batch>/se/<n>/<n>.png, ev. <batch>/bas/<n>.png.
+Skriver <batch>/<m>/<målnamn>.png + .qa.png (SE | mål), resultat-render.json.
+Marknaden styr bara namnet (`_US_` / `_NO_`) och filnamnen — texten kommer ur
+textlagerfilen, priset ur den (regel 4 i kommandot: aldrig ett påhittat belopp).
 """
 import argparse
 import importlib.util
@@ -289,37 +294,46 @@ def qa(se_fil, us_fil, ut):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--bara")
+    p.add_argument("--batch", help="batchmapp (standard: skriptets egen)")
+    p.add_argument("--marknad", default="US", help="US (standard) eller NO — styr målnamn och utmapp")
     a = p.parse_args()
+    global HAR
+    HAR = Path(a.batch).resolve() if a.batch else HAR
+    M = a.marknad.upper()
+    m = M.lower()
     se = json.loads((HAR / "se-texter.json").read_text(encoding="utf-8"))
-    us = json.loads((HAR / "textlager-us.json").read_text(encoding="utf-8"))
+    us = json.loads((HAR / f"textlager-{m}.json").read_text(encoding="utf-8"))
     farger = butiksfarger()
-    (HAR / "us").mkdir(exist_ok=True)
+    (HAR / m).mkdir(exist_ok=True)
     resultat = {}
     for namn in [k for k in se if not k.startswith("_")]:
         if a.bara and namn != a.bara:
             continue
-        mal = namn.replace("CaraShellRoof_", "CaraShellRoof_US_")
+        mal = namn.replace("CaraShellRoof_", f"CaraShellRoof_{M}_")
         se_el = se[namn]["element"]
         us_el = (us.get(namn) or us.get(mal) or {}).get("element")  # subagenten nycklar på US-namnet
         if not us_el:
             resultat[namn] = {"status": "FEL", "skal": "saknas i textlager-us.json"}; continue
         if [e["typ"] for e in se_el] != [e["typ"] for e in us_el]:
             resultat[namn] = {"status": "FEL", "skal": f"typordning: SE {[e['typ'] for e in se_el]} ≠ US {[e['typ'] for e in us_el]}"}; continue
-        kvar = [e["text"] for e in us_el if e["typ"] != "stjarnor" and __import__("re").search(r"\bkr\b|1 129|1 469|23 %|340|[åäöÅÄÖ]|carashell\.se", e["text"])]
+        # Grinden mot kvarglömd svenska: för US inga kr/åäö alls; för NO bara de
+        # svenska talen (1 129 / 1 469 / 23 % / 340) — bokmål har å/ø och NOK heter kr.
+        monster = r"\bkr\b|1 129|1 469|23 %|340|[åäöÅÄÖ]|carashell\.se" if M == "US" else r"1 129|1 469|23 %|\b340\b|carashell\.se"
+        kvar = [e["text"] for e in us_el if e["typ"] != "stjarnor" and __import__("re").search(monster, e["text"])]
         if kvar:
             resultat[namn] = {"status": "FEL", "skal": f"svenska/kr kvar: {' | '.join(kvar)}"}; continue
         se_fil = HAR / "se" / namn / f"{namn}.png"
-        ut = HAR / "us" / f"{mal}.png"
+        ut = HAR / m / f"{mal}.png"
         bas = HAR / "bas" / f"{namn}.png"
         try:
             if bas.exists():
                 spec = {"farger": farger, "element": us_el}
-                (HAR / "us" / f"{mal}.png.spec.json").write_text(json.dumps(spec, ensure_ascii=False, indent=2), encoding="utf-8")
+                (HAR / m / f"{mal}.png.spec.json").write_text(json.dumps(spec, ensure_ascii=False, indent=2), encoding="utf-8")
                 info = bt.rita(str(bas), str(ut), spec)
-                resultat[namn] = {"status": "OK", "mal": mal, "vag": "basfoto + textlager", "fil": f"us/{mal}.png", "placerade": info["placerade"], "okanda": info["okanda_typer"]}
+                resultat[namn] = {"status": "OK", "mal": mal, "vag": "basfoto + textlager", "fil": f"{m}/{mal}.png", "placerade": info["placerade"], "okanda": info["okanda_typer"]}
             else:
                 placerade = in_place(se_fil, ut, se_el, us_el, farger)
-                resultat[namn] = {"status": "OK", "mal": mal, "vag": "in-place (basfoto saknas)", "fil": f"us/{mal}.png", "placerade": placerade}
+                resultat[namn] = {"status": "OK", "mal": mal, "vag": "in-place (basfoto saknas)", "fil": f"{m}/{mal}.png", "placerade": placerade}
             qa(se_fil, ut, str(ut) + ".qa.png")
         except Exception as e:
             resultat[namn] = {"status": "FEL", "skal": f"{type(e).__name__}: {e}"}

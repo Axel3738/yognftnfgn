@@ -726,3 +726,30 @@ Hela diagnosen med föreslagen rotorsak: `market-expansion/ops/carashell/2026-09
 **Det som är klart och återanvänds:** `adcopy-NO.json` (primary/headline/
 description för alla sju), `bildtexter-NO.json` (bildtexterna rad för rad) och
 tre-frågorstestet i `oversatt-output.json`. Copyn behöver inte skrivas om.
+
+---
+
+## USA-runda 4 2026-09-17 (`/ops-oversatt carashell/takskyddet --marknad US`) — inget att ladda upp, kampanjen påslagen + kopia
+
+**Kön:** 7 rader i `SE-ACTIVE to be translated` (batch #3), alla `finns_i_meta: true`
+i US sedan runda 3 — inget nytt. `--status Approved`: batch #2:s fyra rader bär US.
+0 HeyGen-krediter. Batch: `market-expansion/ops/carashell/2026-09-17-us/`.
+
+**Kampanjen är PÅ.** Kön stoppade på "2 ACTIVE US-kampanjer", avläst i kontot:
+
+| Kampanj | Skapad (UTC) | Landningssida | Spend | Köp |
+|---|---|---|---|---|
+| `CARASHELL_US_Taköverdrag …` (120251436741400435) | 2026-09-16 04:29 | `carashell.com/products/takskyddet?country=US` | 1 471 kr | 1 |
+| `1 … – kopia` (120251451415500435) | 2026-09-16 20:20 | `carashell.com/pages/takoverdrag-…-lagerrensning?country=US` | 1 118 kr | 3 |
+
+Samma mönster som SE: kopian är listicle-spåret, inte en dubblett. Båda 1 000 kr/dag,
+27 annonser var (kopian togs efter runda 3, så batch #3 ligger i båda). Under
+300 kr/annons och 3 köp — ingen dom. `tools/lib/sidokampanjer.mjs` känner bara igen
+spåret på ordet LISTICLE i namnet ⇒ **Axel döper om kopian**, annars stoppar nästa
+US-runda med nya rader. Rörde ingen kampanj.
+
+**Norge står still på samma sju rader** — NO-rundan 2026-09-17 tog OCR-vägen
+(`oversatt-bild.py`) och fick spökskrift; slutsatsen i `BILDSTOPP.md` att bilderna
+inte går att översätta är rättad där: `oversatt-us.py` (in-place-vägen från runda 3)
+tar nu `--batch … --marknad NO`. NO-copyn från 2026-09-17 återanvänds.
+`GT_4_1` (batch #2) saknar fortfarande NO-annons (`klar_i.NO: false` i Approved).

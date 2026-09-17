@@ -60,3 +60,28 @@ automatiskt.
   340 / 23 %) hör inte hemma i norsk copy — rabattprocenten skiljer sig.
   Det upphäver anteckningen i `dna.md` från 2026-09-14 ("skrivs utan pris
   tills det är utrett"): det är utrett nu.
+
+---
+
+## Rättelse 2026-09-17 kväll (US-rundan)
+
+Slutsatsen "tills det är gjort kan ingen OPS-bildannons med inbränd text
+översättas automatiskt" stämmer inte. **Samma sju bilder översattes till
+amerikansk engelska 2026-09-16 kväll och gick live i US-kampanjen**, granskade
+sida vid sida, utan spökskrift — med en annan väg än `oversatt-bild.py`:
+
+`market-expansion/ops/carashell/2026-09-16-us-3/oversatt-us.py` räknar om
+SE-layouten exakt med `factory/bild-text.py`:s egen `Duk` (ingen formdetektor),
+suddar den svenska texten radvis inuti bandet/chipen och ritar den nya texten i
+samma ruta med samma typsnitt, storlek, färg och justering. Chips som behöver
+bli bredare ritas bredare i samma hörn. Sedan 2026-09-17 tar skriptet
+`--batch <mapp> --marknad NO`.
+
+**Nästa NO-runda gör så här:** skriv `textlager-no.json` i elementformatet
+(`se-texter.json` i US-batchen är facit för typ och ordning per bild — kopiera den
+till NO-batchen; texterna finns redan i `bildtexter-NO.json`, bara att lägga in
+per `typ`: topprubrik → `rubrik`, underrad → `underrad`, prisbricka → `pris`,
+bottenband → `botten`, citat/namn/stjärnor/badge som i SE), kör
+`python3 market-expansion/ops/carashell/2026-09-16-us-3/oversatt-us.py --batch <NO-batch> --marknad NO`,
+läs varje `.qa.png`, ladda upp med `--kampanj`. Ingen kodändring i
+`oversatt-bild.py` behövs för det här.
