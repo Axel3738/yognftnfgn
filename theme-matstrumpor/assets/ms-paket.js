@@ -59,6 +59,9 @@
       this.fel = this.querySelector('[data-ms-paket-fel]');
       try { this.priser = JSON.parse(this.dataset.varianter || '{}'); }
       catch (e) { this.priser = {}; }
+      // Sidans egna varianter — de lådor som får ätpinnar i mixläget.
+      this.egna = {};
+      (this.dataset.egna || '').split(',').forEach(function (id) { if (id) this.egna[String(id)] = true; }, this);
 
       this.onChange = this.onChange.bind(this);
       this.rita = this.rita.bind(this);
@@ -72,6 +75,19 @@
       }
 
       this.kopplaKnapp();
+
+      // Mixläget: byter kunden sort i en låda räknas kortet om, och kortet
+      // vars låda rördes blir det valda.
+      var self = this;
+      Array.prototype.forEach.call(this.querySelectorAll('.ms-paket__sort'), function (sel) {
+        sel.addEventListener('change', function () {
+          var label = sel.closest('.ms-paket__opt');
+          var input = label && label.querySelector('.ms-paket__input');
+          if (input && !input.checked) input.checked = true;
+          if (input) self.onChange({ target: input }); else self.rita();
+        });
+      });
+
       var vald = this.inputs.filter(function (i) { return i.checked; })[0] || this.inputs[0];
       vald.checked = true;
       this.onChange({ target: vald });
@@ -101,6 +117,56 @@
       if (vald) this.onChange({ target: vald });
     }
 
+    /* --- mixläget (test "sortval") ------------------------------------
+       Varje låda i ett paket har en egen sort. Kassan tar betalt för de
+       dyraste lådorna och ger de billigaste gratis (så räknar Shopifys
+       köp-X-få-Y), så det är exakt så vi räknar här. Ätpinnar följer
+       bara med sushilådor — 1 par per låda. */
+    mix() { return this.dataset.mix === '1'; }
+
+    formVariantId() {
+      var f = this.form && this.form.querySelector('select[name="id"], input[name="id"]');
+      return f && f.value ? String(f.value) : Object.keys(this.priser)[0];
+    }
+
+    lador(i) {
+      var label = i.closest('.ms-paket__opt');
+      var val = label ? label.querySelectorAll('.ms-paket__sort') : [];
+      var egen = this.formVariantId();
+      var ut = [];
+      for (var k = 0; k < val.length; k++) ut.push(val[k].value === 'egen' ? egen : String(val[k].value));
+      return ut;
+    }
+
+    mixRakna(i) {
+      var self = this;
+      var ids = this.lador(i);
+      var priser = ids.map(function (id) { return Number(self.priser[id] || 0); })
+        .sort(function (a, b) { return b - a; });
+      var antal = ids.length;
+      var bogo = Number(i.dataset.bogo || 0);
+      var betala = priser.slice(0, Math.max(0, antal - bogo)).reduce(function (a, b) { return a + b; }, 0);
+      var brutto = priser.reduce(function (a, b) { return a + b; }, 0);
+      var sushi = ids.filter(function (id) { return self.egna[id]; }).length;
+      var pinnar = sushi * Number(i.dataset.pinnarPer || 0);
+      var gvarde = pinnar * Number(i.dataset.pinnePris || 0);
+      return { ids: ids, nu: betala, ordinarie: brutto + gvarde, rabatt: brutto + gvarde - betala, pinnar: pinnar, gvarde: gvarde };
+    }
+
+    ritaMix(i, format) {
+      var r = this.mixRakna(i);
+      var label = i.closest('.ms-paket__opt');
+      function satt(sel, v) { var el = label && label.querySelector(sel); if (el) el.textContent = v; }
+      satt('[data-ms-paket-nu]', money(r.nu, format));
+      satt('[data-ms-paket-forr]', money(r.ordinarie, format));
+      satt('[data-ms-paket-gava-antal]', String(r.pinnar));
+      satt('[data-ms-paket-gava-varde]', money(r.gvarde, format));
+      var spar = label && label.querySelector('[data-ms-paket-spar]');
+      if (spar && r.rabatt > 0) spar.textContent = 'Du sparar ' + money(r.rabatt, format);
+      var gava = label && label.querySelector('.ms-paket__gava');
+      if (gava) gava.classList.toggle('ms-paket__gava--tom', r.pinnar === 0);
+    }
+
     styckpris() {
       var p = this.priser[this.variantId()];
       if (typeof p === 'number') return p;
@@ -125,10 +191,14 @@
        0 kr — ett fel som ser ut som en rea och inte som en krasch. Hellre
        priser som står stilla vid variantbyte än priser som är påhittade. */
     rita() {
-      var styck = this.styckpris();
-      if (!styck) return;
       var format = this.dataset.moneyFormat;
       var self = this;
+      if (this.mix()) {
+        this.inputs.forEach(function (i) { self.ritaMix(i, format); });
+        return;
+      }
+      var styck = this.styckpris();
+      if (!styck) return;
       this.inputs.forEach(function (i) {
         var antal = Number(i.dataset.antal || 1);
         var rabatt = self.rabattFor(i, styck);
@@ -167,17 +237,19 @@
       this.rita();
       this.direktkop(!this.vald.dataset.kod);
 
-      var styck = this.styckpris();
       var antal = Number(this.vald.dataset.antal || 1);
-      var gvarde = Number(this.vald.dataset.gratisVarde || 0);
-      var rabatt = this.rabattFor(this.vald, styck);
+      var pris, forr;
+      if (this.mix()) {
+        var m = this.mixRakna(this.vald);
+        pris = m.nu; forr = m.ordinarie;
+      } else {
+        var styck = this.styckpris();
+        var gvarde = Number(this.vald.dataset.gratisVarde || 0);
+        var rabatt = this.rabattFor(this.vald, styck);
+        pris = Math.max(0, styck * antal + gvarde - rabatt); forr = styck * antal + gvarde;
+      }
       document.dispatchEvent(new CustomEvent('ms:variant', {
-        detail: {
-          id: this.variantId(),
-          quantity: antal,
-          price: Math.max(0, styck * antal + gvarde - rabatt),
-          compareAtPrice: styck * antal + gvarde
-        }
+        detail: { id: this.variantId(), quantity: antal, price: pris, compareAtPrice: forr }
       }));
     }
 
@@ -238,8 +310,18 @@
       var gvariant = this.vald.dataset.gratisVariant;
       var gantal = Number(this.vald.dataset.gratisAntal || 0);
 
-      var varor = [{ id: Number(this.variantId()), quantity: antal }];
-      if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
+      var varor;
+      if (this.mix()) {
+        // En rad per sort, ätpinnar bara för sushilådorna.
+        var m = this.mixRakna(this.vald);
+        var grupp = {};
+        m.ids.forEach(function (id) { grupp[id] = (grupp[id] || 0) + 1; });
+        varor = Object.keys(grupp).map(function (id) { return { id: Number(id), quantity: grupp[id] }; });
+        if (gvariant && m.pinnar > 0) varor.push({ id: Number(gvariant), quantity: m.pinnar });
+      } else {
+        varor = [{ id: Number(this.variantId()), quantity: antal }];
+        if (gvariant && gantal > 0) varor.push({ id: Number(gvariant), quantity: gantal });
+      }
 
       var self = this;
       var knapp = this.knapp;
@@ -334,61 +416,4 @@
 
   if (!customElements.get('ms-paket')) customElements.define('ms-paket', MsPaket);
 
-  /* --- <ms-sortval> -------------------------------------------------------
-     B-varianten i testet "sortval": fyra sortkort ovanför paketnivåerna på
-     sushisidan. Varje sort har sin egen <ms-paket> (egna nivåer, egna
-     koder). Vi visar den valda och gömmer resten; den valda aktiveras så
-     antal, sticky-pris och köp följer sorten. Sidans egen sort (sushin)
-     använder temats variantväljare som vanligt; för de andra sorterna göms
-     den, eftersom Par/Storlek-pillren tillhör sushin.                        */
-  class MsSortval extends HTMLElement {
-    connectedCallback() {
-      this.inputs = Array.prototype.slice.call(this.querySelectorAll('.ms-sortval__input'));
-      if (!this.inputs.length) return;
-      this.sektion = this.closest('[id^="shopify-section"]') || document;
-      this.valj = this.valj.bind(this);
-      this.inputs.forEach(function (i) { i.addEventListener('change', this.valj); }, this);
-
-      // Dawns pris överst på sidan: kom ihåg sushins, så det går att sätta
-      // tillbaka när kunden väljer sushin igen.
-      var pris = this.sektion.querySelector('.price .price-item--regular, .price__regular .price-item');
-      this.prisEl = pris;
-      this.prisOriginal = pris ? pris.textContent : '';
-
-      // Kör först när A/B-motorn hunnit avgöra om vi visas alls.
-      var self = this;
-      var start = function () { if (!self.inaktiv()) self.valj(); };
-      if (document.readyState === 'complete') setTimeout(start, 0);
-      else window.addEventListener('load', function () { setTimeout(start, 0); });
-    }
-
-    inaktiv() { return this.hidden || this.closest('[hidden]') !== null; }
-
-    valj() {
-      var vald = this.inputs.filter(function (i) { return i.checked; })[0] || this.inputs[0];
-      if (!vald) return;
-      var handle = vald.dataset.handle;
-      var egen = vald.dataset.egen === 'true';
-
-      var paketen = this.querySelectorAll('.ms-sortval__paket');
-      Array.prototype.forEach.call(paketen, function (el) {
-        if (el.dataset.handle === handle) el.removeAttribute('hidden');
-        else el.setAttribute('hidden', '');
-      });
-
-      // Par/Storlek-pillren är sushins; för de andra sorterna finns inget att välja.
-      var picker = this.sektion.querySelector('variant-selects, variant-radios');
-      if (picker) { if (egen) picker.removeAttribute('hidden'); else picker.setAttribute('hidden', ''); }
-
-      // Priset överst ska vara den valda sortens, inte sushins.
-      if (this.prisEl) {
-        this.prisEl.textContent = egen ? this.prisOriginal : money(Number(vald.dataset.price || 0), this.dataset.moneyFormat);
-      }
-
-      var aktiv = this.querySelector('.ms-sortval__paket:not([hidden]) ms-paket');
-      if (aktiv && aktiv.aktivera) aktiv.aktivera();
-    }
-  }
-
-  if (!customElements.get('ms-sortval')) customElements.define('ms-sortval', MsSortval);
 })();

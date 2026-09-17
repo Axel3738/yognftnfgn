@@ -21,9 +21,14 @@
     product       (obligatorisk)
     variant       nuvarande A/B-variant, 'a' | 'b' | tom
     section_id    för unika fältnamn
-    fast_variant  variant-id att köpa när produkten INTE är sidans egen
-                  (sortvalet i testet "sortval") — då läses inte formulärets
-                  variantfält, som tillhör en annan produkt
+    fast_variant  variant-id att köpa när produkten INTE är sidans egen —
+                  då läses inte formulärets variantfält, som tillhör en annan produkt
+    mix           true = testet "sortval": varje låda i ett paket får en
+                  dropdown med alla sorter (mixa och matcha). Visar då BARA
+                  nivåer märkta med samma A/B-variant som `variant` (mix-
+                  nivåerna bär de kollektionsvida koderna STRUMPOR-K1F1/K2F2).
+                  Ätpinnarna följer bara med sushilådor: 1 par per sushilåda.
+    sorter        handles till sorterna i dropdownen, kommaseparerade
 {%- endcomment -%}
 {%- liquid
   assign p = product
@@ -42,13 +47,47 @@
     styckpriset 0 — hela köprutan visar 0 kr. Sidan ser rätt ut tills
     JavaScript hinner köra.
   {%- endcomment -%}
-  {%- capture priskarta -%}
-    { {%- for x in p.variants -%}"{{ x.id }}":{{ x.price }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }
+  {%- liquid
+    assign sort_handles = sorter | default: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' | split: ','
+  -%}
+  {%- capture priskarta_inre -%}
+    {%- for x in p.variants -%},"{{ x.id }}":{{ x.price }}{%- endfor -%}
+    {%- if mix -%}
+      {%- for h in sort_handles -%}
+        {%- assign hh = h | strip -%}
+        {%- assign sp = all_products[hh] -%}
+        {%- if sp != blank and sp.id != p.id -%}
+          {%- for x in sp.variants -%},"{{ x.id }}":{{ x.price }}{%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
   {%- endcapture -%}
+  {%- assign priskarta = priskarta_inre | strip | remove_first: ',' | prepend: '{' | append: '}' -%}
+  {%- capture egna_inre -%}{%- for x in p.variants -%},{{ x.id }}{%- endfor -%}{%- endcapture -%}
+  {%- assign egna = egna_inre | strip | remove_first: ',' -%}
+  {%- if mix -%}
+    {%- comment -%} Dropdown-alternativen: sidans egen sort först (värdet "egen" = det som är valt i variantväljaren), sen de andra. {%- endcomment -%}
+    {%- capture sort_options -%}
+      {%- for h in sort_handles -%}
+        {%- assign hh = h | strip -%}
+        {%- assign sp = all_products[hh] -%}
+        {%- if sp != blank and sp.available -%}
+          {%- assign namn = sp.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', '' -%}
+          {%- if sp.id == p.id -%}
+            <option value="egen" selected>{{ namn }}</option>
+          {%- else -%}
+            <option value="{{ sp.selected_or_first_available_variant.id }}">{{ namn }} · {{ sp.selected_or_first_available_variant.price | money }}</option>
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+  {%- endif -%}
 
-  <ms-paket class="ms-scope ms-paket"
+  <ms-paket class="ms-scope ms-paket{% if mix %} ms-paket--mix{% endif %}"
     data-money-format="{{ shop.money_format | strip_html | escape }}"
     {% if fast_variant != blank %}data-variant-id="{{ fast_variant }}"{% endif %}
+    {% if mix %}data-mix="1"{% endif %}
+    data-egna="{{ egna }}"
     data-varianter="{{ priskarta | strip | escape }}">
 
     <div class="ms-paket__lista" role="radiogroup" aria-label="Välj paket">
@@ -62,6 +101,9 @@
 
           assign nivans_ab = niva.ab_variant.value | default: '' | strip | downcase
           if nivans_ab != '' and nivans_ab != ab
+            assign hor_hit = false
+          endif
+          if mix and nivans_ab != ab
             assign hor_hit = false
           endif
         -%}
@@ -128,6 +170,7 @@
               data-gratis-variant="{{ gvar.id }}"
               data-gratis-antal="{{ gantal }}"
               data-gratis-varde="{{ gvarde }}"
+              {%- if mix and gvar and antal > 0 %} data-pinnar-per="{{ gantal | divided_by: antal }}" data-pinne-pris="{{ gvar.price }}"{% endif %}
               {% if vald %}checked{% endif %}>
             <span class="ms-paket__kort">
               <span class="ms-paket__dot" aria-hidden="true"></span>
@@ -144,7 +187,33 @@
                 {%- endif -%}
               </span>
             </span>
-            {%- if gantal > 0 and niva.gratis_text.value != blank -%}
+            {%- if mix -%}
+              {%- comment -%}
+                Mixläget: en dropdown per låda, synliga bara på det valda kortet.
+                "egen" = sidans egen sort i den variant som är vald ovanför
+                (5 eller 3 par); de andra sorterna bär sitt variant-id.
+              {%- endcomment -%}
+              <span class="ms-paket__lador">
+                {%- for n in (1..antal) -%}
+                  <span class="ms-paket__lada">
+                    <span class="ms-paket__lada-etikett">Låda {{ n }}{% if n > antal | minus: bogo %} · gratis{% endif %}</span>
+                    <select class="ms-paket__sort" data-lada="{{ n }}" aria-label="Sort i låda {{ n }}">{{ sort_options }}</select>
+                  </span>
+                {%- endfor -%}
+              </span>
+              {%- if gvar and gantal > 0 -%}
+                <span class="ms-paket__gava">
+                  {%- if niva.gratis_produkt.value.featured_image -%}
+                    <img class="ms-paket__gava-bild" src="{{ niva.gratis_produkt.value.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+                  {%- endif -%}
+                  <span class="ms-paket__gava-text">
+                    <span class="ms-paket__gava-etikett">{% render 'ms-icon', name: 'gift' %} Gratis på köpet</span>
+                    <span>Äkta ätpinnar i trä · <span data-ms-paket-gava-antal>{{ gantal }}</span> par (1 par per sushilåda)</span>
+                  </span>
+                  <span class="ms-paket__gava-varde">värde <span data-ms-paket-gava-varde>{{ gvarde | money }}</span></span>
+                </span>
+              {%- endif -%}
+            {%- elsif gantal > 0 and niva.gratis_text.value != blank -%}
               {%- comment -%}
                 Gåvan hänger under kortet som en egen remsa, utanför ramen —
                 den ska läsas som något EXTRA man får, inte som en rad i

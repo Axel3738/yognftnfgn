@@ -57,7 +57,7 @@
         "ms_paket": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div data-ms-ab=\"sortval:a\">{% render 'ms-paket', product: product, section_id: section.id %}</div>"
+            "custom_liquid": "<div data-ms-ab=\"sortval:a\">{% render 'ms-paket', product: product, section_id: section.id, variant: 'a' %}</div>"
           }
         },
         "judgeme_stjarnor": {
@@ -73,7 +73,7 @@
         "ms_sortval": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<div data-ms-ab=\"sortval:b\" hidden>{% render 'ms-sortval', product: product, section_id: section.id, sorter: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' %}</div>"
+            "custom_liquid": "<div data-ms-ab=\"sortval:b\" hidden>{% render 'ms-paket', product: product, section_id: section.id, variant: 'b', mix: true, sorter: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' %}</div>"
           }
         }
       },
