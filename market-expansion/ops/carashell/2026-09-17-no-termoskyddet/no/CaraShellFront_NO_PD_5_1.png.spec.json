@@ -1,0 +1,25 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "Rasteplassen ser frontruten din. Den ser ikke deg – hele fronten er mørklagt."
+    },
+    {
+      "typ": "underrad",
+      "text": "Mørklegger hele fronten utenfra, 211 × 171 cm. Ingen ser inn – og solen vekker deg ikke klokken fire."
+    },
+    {
+      "typ": "botten",
+      "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+    }
+  ]
+}
