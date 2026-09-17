@@ -121,7 +121,7 @@ Två fynd stärkte kandidater. Susanne Jonsson: inga skandaler, inget SVT-progra
 
 ## 13. Färdiga mail per person (rakt på sak, skicka från din egen adress i dag)
 
-Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i något mail, och ingen inställsam öppning. Mailet säger vad vi vill köpa, varför just henne, att det är ett arvode som täcker stories och annonsrätt (be henne dela upp summan i mötet), och föreslår ett möte. Priset tas i mötet.
+Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i något mail, och ingen inställsam öppning. Mailet säger vad vi vill köpa, varför just henne, att det är ett arvode som täcker stories och annonsrätt, och föreslår ett möte. Antal dagar, pris och uppdelning tas i mötet, utifrån vad de svarar (se "Beroende på svaret" nedan).
 
 **Nina Hermansen** (hej@proad.se, ProAd Sweden, ange "samarbete Nina Hermansen / Niiinis")
 
@@ -129,11 +129,11 @@ Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i n�
 
 Hej,
 
-jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Nina i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra egna annonser.
+jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Nina i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra egna annonser.
 
 Skälet att vi vänder oss till just Nina är att hennes publik är samma som vår köpare, kvinnor 45–54, och att hon gör julklappstips varje år. Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder.
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Nina kan avgöra om det är något hon vill stå bakom innan vi pratar pris. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Nina kan avgöra om det är något hon vill stå bakom innan vi pratar pris. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -144,11 +144,11 @@ Axel Odhner, Matstrumpor.se, [mobil]
 
 Hej Susanne,
 
-jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames där du öppnar lådan, plus 30 dagars rätt för oss att använda videon i våra annonser.
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames där du öppnar lådan, plus rätt för oss att använda videon i våra annonser.
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik är samma som våra köpare, kvinnor över 50, och du är en av få de litar på i köket.
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -159,11 +159,11 @@ Axel Odhner, Matstrumpor.se, [mobil]
 
 Hej Karin och Agnes,
 
-jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av Karin i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser. Jag vet att ni mest bokar föreläsningar, så säg direkt om det här inte är något ni gör.
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av Karin i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser. Jag vet att ni mest bokar föreläsningar, så säg direkt om det här inte är något ni gör.
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Vi vänder oss till Karin för att humorn och ärligheten i hennes kanal är exakt den ton vi vill ha.
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att Karin kan avgöra om hon vill stå bakom det. Har ni tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att Karin kan avgöra om hon vill stå bakom det. Har ni tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -174,11 +174,11 @@ Axel Odhner, Matstrumpor.se, [mobil]
 
 Hej Margareta,
 
-jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser.
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik, kvinnor över 50, är exakt de som köper den.
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -189,14 +189,16 @@ Axel Odhner, Matstrumpor.se, [mobil]
 
 Hej,
 
-jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Agneta i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
+jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Agneta i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser.
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Agnetas publik är samma som våra köpare, kvinnor 45–65.
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Agneta kan avgöra om det är något hon vill stå bakom. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna prisnivå för stories och annonsrättigheter samtidigt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Agneta kan avgöra om det är något hon vill stå bakom. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna prisnivå för stories och annonsrättigheter samtidigt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
+
+**Beroende på svaret.** Byrån skickar prislista med rättighetsnivåer (ofta 30/60/90 dagar): välj 30, be dem dela upp story och rättigheter, och säg att ni kan förlänga efter två veckor om det säljer. Kreatören frågar "vad menar du med annonsrätt?": svara i en mening att ni vill köra hennes story-video som er egen annons på Meta under en begränsad period, 30 dagar, och att det betalas utöver storyn. De svarar att de bara gör inlägg eller reels: säg att ni bara köper stories, det är där köpen sker, och gå vidare till en reserv om de inte viker. De vill ha exklusivitet eller långtidsavtal: nej i första rundan, det kommer efter att första omgången sålt. De svarar inte på fyra dagar: uppföljningen nedan, sedan nästa reserv.
 
 **Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail kom fram. Frågan står kvar: betalt story-samarbete inför jul, två lådor på väg om du vill testa först. /Axel"
 
@@ -208,11 +210,11 @@ Ur kursen behåller vi det som är affärsmässigt: säg direkt att det är ett 
 
 Hej [Förnamn],
 
-jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser.
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. [En rad om varför just henne: publiken, kanalen, eller något hon gör som passar.]
 
-Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
