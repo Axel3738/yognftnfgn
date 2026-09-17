@@ -25,8 +25,11 @@
                   då läses inte formulärets variantfält, som tillhör en annan produkt
     mix           true = testet "sortval": varje låda i ett paket får en
                   dropdown med alla sorter (mixa och matcha). Visar då BARA
-                  nivåer märkta med samma A/B-variant som `variant` (mix-
-                  nivåerna bär de kollektionsvida koderna STRUMPOR-K1F1/K2F2).
+                  nivåer märkta med samma A/B-variant som `variant`. Mix-
+                  nivåernas rabattkod är en BAS (STRUMPOR-K1F1 / STRUMPOR-K2F2);
+                  JS lägger till -P<antal ätpinnar> vid köpet, för koden måste
+                  ge exakt så många varor gratis som vagnen rymmer utöver de
+                  betalda lådorna (Shopify ger de billigaste gratis först).
                   Ätpinnarna följer bara med sushilådor: 1 par per sushilåda.
     sorter        handles till sorterna i dropdownen, kommaseparerade
 {%- endcomment -%}

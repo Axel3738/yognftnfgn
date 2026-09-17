@@ -307,6 +307,11 @@
       var rutt = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
       var antal = Number(this.vald.dataset.antal || 1);
       var kod = this.vald.dataset.kod || '';
+      // Mixläget: koden bär antalet ätpinnar (-P0 … -P4). Shopify ger de
+      // billigaste varorna gratis först, så gratisantalet i koden måste vara
+      // exakt vagnen minus det som ska betalas — annars äter gratisdelen upp
+      // de betalda lådorna och koden blir "ej tillämplig".
+      if (this.mix() && kod) kod = kod + '-P' + this.mixRakna(this.vald).pinnar;
       var gvariant = this.vald.dataset.gratisVariant;
       var gantal = Number(this.vald.dataset.gratisAntal || 0);
 
