@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "marknadstabell-v90", db });
+  return json({ ok: true, build: "marknadstackning-v91", db });
 }

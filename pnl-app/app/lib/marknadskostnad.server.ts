@@ -136,3 +136,30 @@ export async function taBortMarknadskostnad(
   ops.push(prisma.costTier.deleteMany({ where: { shop, market: m, variantGid: { in: [...malSet] } } }));
   await prisma.$transaction(ops);
 }
+
+/**
+ * Tar bort en hel marknad ur kostnadsläggningen: alla dess kostnadsposter och
+ * flerpacksteg, och kampanjmärkningen mot den i alla annonskonton. Så tas en
+ * felskriven landskod ("SW" för Sverige) bort — utan det låg kolumnen kvar
+ * för alltid och räknade produkterna som "saknar kostnad".
+ */
+export async function taBortMarknad(shop: string, market: string): Promise<void> {
+  const m = marknadskod(market);
+  if (!m) return;
+  const konton = await prisma.metaAdAccount.findMany({ where: { shop } });
+  await prisma.$transaction(async (tx) => {
+    await tx.costChange.deleteMany({ where: { shop, market: m } });
+    await tx.costTier.deleteMany({ where: { shop, market: m } });
+    for (const k of konton) {
+      const karta = (k.campaignMarkets as Record<string, string> | null) ?? {};
+      if (!Object.values(karta).includes(m)) continue;
+      const ny = Object.fromEntries(Object.entries(karta).filter(([, v]) => v !== m));
+      await tx.metaAdAccount.update({
+        where: { shop_accountId: { shop, accountId: k.accountId } },
+        data: { campaignMarkets: ny },
+      });
+      /* Kontots cachade annonskostnad är delad på den gamla märkningen. */
+      await tx.dailySpend.deleteMany({ where: { shop, account: k.accountId } });
+    }
+  });
+}

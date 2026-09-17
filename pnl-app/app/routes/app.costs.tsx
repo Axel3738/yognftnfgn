@@ -36,8 +36,8 @@ import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } f
 import { importCostCsv } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
-import { kandaMarknader } from "../lib/daily.server";
-import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
+import { kandaMarknader, marknaderMedOrdrar } from "../lib/daily.server";
+import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { asLang, localeOf, t } from "../lib/texts";
 
@@ -78,11 +78,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
   /* Marknadsväljaren: ?market=NO visar och skriver Norges kostnader. Tom =
      standard (Shopifys unitCost), som förut. */
   const market = marknadskod(new URL(request.url).searchParams.get("market"));
-  const [costs, tierRows, marknader] = await Promise.all([
+  const [costs, tierRows, marknader, saljMarknader] = await Promise.all([
     loadCatalog(admin, session.shop, prisma),
     prisma.costTier.findMany({ where: { shop: session.shop, market: "" }, orderBy: { units: "asc" } }),
     kandaMarknader(session.shop, hemlandAv(settings.currency)),
+    marknaderMedOrdrar(session.shop),
   ]);
+  /* Marknaderna en variant MÅSTE ha kostnad för: de butiken sålt till. Utan
+     ordrar än (ny butik) gäller alla kända marknader. */
+  const kravMarknader = saljMarknader.length ? saljMarknader : marknader;
   /* Kostnaderna för VARJE känd marknad läses, inte bara den valda: tabellen
      längst ner visar hela upplägget på en gång — standard i en kolumn och
      varje land i sin — så man ser vad som är inlagt utan att byta i listan. */
@@ -120,11 +124,18 @@ export async function loader({ request }: LoaderFunctionArgs) {
     /* Egen kostnad per marknad (null = ingen egen, ärver standard). */
     const perMarknad: Record<string, number | null> = {};
     for (const m of marknader) perMarknad[m] = allaMk.get(m)?.unitCost.get(v.variantGid) ?? null;
+    /* Täckt = standard finns, ELLER varje marknad butiken säljer till har en
+       egen kostnad. Att kräva standard när Sverige, Norge och USA alla har
+       sina egna tal gjorde att sidan skrek "saknar kostnad" på allt. */
+    const tackt =
+      v.unitCost != null ||
+      (kravMarknader.length > 0 && kravMarknader.every((m) => perMarknad[m] != null));
     return {
       ...v,
       /* Standardkostnaden (Shopify) behålls alltid — under en marknad är
          det den som står som förslag i fältet när landet saknar egen. */
       standardCost: v.unitCost,
+      tackt,
       unitCost,
       egen: mk ? egen != null : v.unitCost != null,
       arvd: Boolean(mk) && egen == null && v.unitCost != null,
@@ -139,7 +150,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
     };
   }).sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
-    if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
+    const as = market ? a.unitCost == null : !a.tackt;
+    const bs = market ? b.unitCost == null : !b.tackt;
+    if (as !== bs) return as ? -1 : 1;
     return a.productTitle.localeCompare(b.productTitle, lang === "sv" ? "sv" : "en");
   });
   return json({
@@ -147,7 +160,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
     market,
     marknader,
     rows,
-    missing: rows.filter((r) => r.unitCost == null).length,
+    /* Under en marknad: saknar landet kostnad (egen eller ärvd). Standard:
+       saknar täckning — varken standard eller alla säljmarknader. */
+    missing: rows.filter((r) => (market ? r.unitCost == null : !r.tackt)).length,
+    saljMarknader,
     total: rows.length,
     tariffPerOrder: Number(settings.tariffPerOrder),
     feeRate: Number(settings.feeRate),
@@ -205,6 +221,12 @@ export async function action({ request }: ActionFunctionArgs) {
     invalidateVariantCosts(session.shop);
     await invalidateCatalog(session.shop, prisma);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
+  }
+  /* Ta bort en hel marknad (felskriven landskod, land man slutat sälja till). */
+  if (intent === "remove-market") {
+    if (!market) return json({ ok: false, message: "invalid" }, { status: 400 });
+    await taBortMarknad(session.shop, market);
+    return json({ ok: true, message: "" });
   }
   /* Ta bort kostnaden. Standard: Shopifys fält rensas (varianten "saknar
      kostnad" igen, den kostar inte noll) och standardstegen försvinner.
@@ -405,7 +427,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
@@ -498,6 +520,22 @@ export default function Costs() {
   };
   const marknadsnamnet = marknadsnamn(market, lang, "");
   const arvda = rows.filter((r) => r.arvd).length;
+  /* "Ta bort marknaden": tar bort alla kostnader och kampanjmärkningar för
+     landet. Sidan går sedan tillbaka till Standard. */
+  const taBortMarknadFetcher = useFetcher<typeof action>();
+  useEffect(() => {
+    if (taBortMarknadFetcher.state === "idle" && (taBortMarknadFetcher.data as { ok?: boolean } | undefined)?.ok) byMarknad("");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [taBortMarknadFetcher.state, taBortMarknadFetcher.data]);
+  const marknadUtanOrdrar = Boolean(market) && !saljMarknader.includes(market);
+  /* TB och break-even i tabellen: på vald marknad rakt av. I Standard-läget
+     utan standardkostnad men med marknadskostnader visas SPANNET över
+     marknaderna — inte "saknas", för kostnaden finns, bara per land. */
+  const spann = (r: (typeof rows)[number]) => {
+    const kostnader = marknader.map((m) => r.perMarknad[m]).filter((k): k is number => k != null);
+    if (!kostnader.length) return null;
+    return { min: Math.min(...kostnader), max: Math.max(...kostnader) };
+  };
 
   /* Mallen byggs i webbläsaren av datan som redan finns på sidan.
      En serverrutt hade varit renare, men en vanlig länknavigering inifrån
@@ -585,8 +623,21 @@ export default function Costs() {
                     <Button variant="plain" onClick={() => setVisaNyMarknad(true)}>{T.costs.market.addToggle}</Button>
                   )}
                 </InlineStack>
-                {market && arvda ? (
-                  <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.inherited(arvda)}</Text>
+                {market ? (
+                  <InlineStack gap="300" blockAlign="center" wrap>
+                    {arvda ? <Text as="span" variant="bodySm" tone="subdued">{T.costs.market.inherited(arvda)}</Text> : null}
+                    <Button
+                      variant="plain"
+                      tone="critical"
+                      loading={taBortMarknadFetcher.state !== "idle"}
+                      onClick={() => taBortMarknadFetcher.submit({ intent: "remove-market", market }, { method: "POST" })}
+                    >
+                      {T.costs.market.removeMarket(marknadsnamnet)}
+                    </Button>
+                    {marknadUtanOrdrar ? (
+                      <Text as="span" variant="bodySm" tone="subdued">{T.costs.market.noOrders}</Text>
+                    ) : null}
+                  </InlineStack>
                 ) : null}
               </BlockStack>
             </Card>
@@ -939,7 +990,7 @@ export default function Costs() {
                 T.costs.thProduct,
                 T.costs.thVariant,
                 T.costs.thPrice,
-                marknader.length ? T.costs.market.standardShort : T.costs.thCost,
+                marknader.length ? T.costs.market.standardCol : T.costs.thCost,
                 ...marknader.map((m) => (m === market ? `▸ ${marknadsnamn(m, lang, m)}` : marknadsnamn(m, lang, m))),
                 T.costs.thCmPerUnit(currency),
                 T.costs.thBeRoas,
@@ -961,7 +1012,18 @@ export default function Costs() {
                 }),
                 (() => {
                   const k = perStyck(r.price, r.unitCost);
-                  if (!k) return <Badge key={`tb${r.variantGid}`} tone="critical">{T.costs.missingBadge}</Badge>;
+                  if (!k) {
+                    const sp = market ? null : spann(r);
+                    if (sp) {
+                      const hi = perStyck(r.price, sp.min)!, lo = perStyck(r.price, sp.max)!;
+                      return (
+                        <Text key={`tb${r.variantGid}`} as="span" tone={lo.tb > 0 ? undefined : "critical"}>
+                          {lo.tb === hi.tb ? nf.format(lo.tb) : `${nf.format(lo.tb)}–${nf.format(hi.tb)}`}
+                        </Text>
+                      );
+                    }
+                    return <Badge key={`tb${r.variantGid}`} tone="critical">{T.costs.missingBadge}</Badge>;
+                  }
                   return (
                     <Text key={`tb${r.variantGid}`} as="span" tone={k.tb > 0 ? undefined : "critical"}>
                       {nf.format(k.tb)}
@@ -970,7 +1032,13 @@ export default function Costs() {
                 })(),
                 (() => {
                   const k = perStyck(r.price, r.unitCost);
-                  if (!k) return "—";
+                  if (!k) {
+                    const sp = market ? null : spann(r);
+                    if (!sp) return "—";
+                    const a = perStyck(r.price, sp.min)!.beRoas, b = perStyck(r.price, sp.max)!.beRoas;
+                    if (a == null || b == null) return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
+                    return <Text key={`be${r.variantGid}`} as="span">{a === b ? `${dec(a.toFixed(2))}×` : `${dec(a.toFixed(2))}–${dec(b.toFixed(2))}×`}</Text>;
+                  }
                   if (k.beRoas == null)
                     return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
                   return (
@@ -1007,6 +1075,8 @@ type Rad = {
   standardCost?: number | null;
   /** Egen kostnad per marknad; null = ärver standard. */
   perMarknad?: Record<string, number | null>;
+  /** Har kostnad där det behövs: standard, eller egen på varje säljmarknad. */
+  tackt?: boolean;
 };
 
 /** "1 st 88,34 kr · 2 st 134,22 kr totalt (67,11/st)" — vad appen räknar med. */
@@ -1279,7 +1349,17 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
             disabled={!lika && alla && !open}
           />
         </div>
-        {saknas ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : sparat || fetcher.state !== "idle" ? <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge> : grupp.every((r) => r.arvd) ? <Badge>{T.costs.market.inheritedBadge}</Badge> : null}
+        {saknas ? (
+          !market && grupp.every((r) => r.tackt) ? (
+            <Badge tone="info">{T.costs.market.perMarketBadge}</Badge>
+          ) : (
+            <Badge tone="critical">{T.costs.missingBadge}</Badge>
+          )
+        ) : sparat || fetcher.state !== "idle" ? (
+          <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge>
+        ) : grupp.every((r) => r.arvd) ? (
+          <Badge>{T.costs.market.inheritedBadge}</Badge>
+        ) : null}
         {harKostnad && !(grupp.length > 1 && !lika && !open) ? (
           <Button variant="plain" size="slim" tone="critical" onClick={() => taBort(grupp.map((r) => r.inventoryItemGid))}>
             {T.costs.quick.remove}
@@ -1333,7 +1413,9 @@ function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<type
         <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
           <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={arvdText || T.costs.quick.placeholder} suffix={currency} />
         </div>
-        {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
+        {r.unitCost == null && !v ? (
+          !market && r.tackt ? <Badge tone="info">{T.costs.market.perMarketBadge}</Badge> : <Badge tone="critical">{T.costs.missingBadge}</Badge>
+        ) : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
         {r.unitCost != null && !r.arvd ? (
           <Button variant="plain" size="slim" tone="critical" onClick={taBort}>{T.costs.quick.remove}</Button>
         ) : null}

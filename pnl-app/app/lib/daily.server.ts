@@ -232,6 +232,24 @@ const utanProdukter = (d: MarknadsDel): Omit<MarknadsDel, "products"> => {
  * börjat annonsera mot går att välja innan första ordern kommit.
  * Butikens hemland (ur valutan, grovt) först, sedan alfabetiskt.
  */
+/**
+ * Bara marknaderna butiken faktiskt SÅLT till de senaste 90 dagarna — det är
+ * dem en variant måste ha kostnad för. En felskriven landskod ("SW") som
+ * bara finns som kostnadspost ska inte få en produkt att räknas som
+ * "saknar kostnad".
+ */
+export async function marknaderMedOrdrar(shop: string): Promise<string[]> {
+  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
+  const rader = await prisma.dailyPnl.findMany({ where: { shop, day: { gte: sedan } }, select: { markets: true } });
+  const koder: string[] = [];
+  for (const r of rader) {
+    const per = r.markets as unknown as Record<string, MarknadsDel> | null;
+    if (!per) continue;
+    for (const [m, del] of Object.entries(per)) if (m && del.orders > 0) koder.push(m);
+  }
+  return sorteraMarknader(koder);
+}
+
 export async function kandaMarknader(shop: string, hemland = ""): Promise<string[]> {
   const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
   const [rader, kostnader, steg, konton] = await Promise.all([
