@@ -13,7 +13,7 @@
 import { useEffect, useState } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Link, useFetcher, useLoaderData } from "@remix-run/react";
+import { Link, useFetcher, useLoaderData, useSearchParams } from "@remix-run/react";
 import {
   Badge,
   BlockStack,
@@ -36,6 +36,9 @@ import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } f
 import { importCostCsv } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
+import { kandaMarknader } from "../lib/daily.server";
+import { lasMarknadskostnad, skrivMarknadskostnad } from "../lib/marknadskostnad.server";
+import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { asLang, localeOf, t } from "../lib/texts";
 
 /**
@@ -72,10 +75,17 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
   const lang = asLang(settings.language);
-  const [costs, tierRows] = await Promise.all([
+  /* Marknadsväljaren: ?market=NO visar och skriver Norges kostnader. Tom =
+     standard (Shopifys unitCost), som förut. */
+  const market = marknadskod(new URL(request.url).searchParams.get("market"));
+  const [costs, tierRows, marknader] = await Promise.all([
     loadCatalog(admin, session.shop, prisma),
-    prisma.costTier.findMany({ where: { shop: session.shop }, orderBy: { units: "asc" } }),
+    prisma.costTier.findMany({ where: { shop: session.shop, market: "" }, orderBy: { units: "asc" } }),
+    kandaMarknader(session.shop, hemlandAv(settings.currency)),
   ]);
+  const mk = market
+    ? await lasMarknadskostnad(session.shop, market, costs.all.map((v) => ({ variantGid: v.variantGid, productGid: v.productGid })))
+    : null;
   /* Mallen ska gå att skicka runt och släppa tillbaka utan att tappa
      flerpacken — därför följer stegen med i kostnadskolumnen: 88.34|134.22. */
   const tiersByVariant = new Map<string, string[]>();
@@ -92,25 +102,37 @@ export async function loader({ request }: LoaderFunctionArgs) {
     list.push({ units: t.units, totalCost: Number(t.totalCost) });
     stegByVariant.set(t.variantGid, list);
   }
-  const rows = [...costs.all].map((v) => ({
-    ...v,
-    tiers: stegByVariant.get(v.variantGid) ?? [],
-    /* Antalet MÅSTE med: ett 50-pack som exporteras som bara ett tal lästes
-       tillbaka som ett tvåpack, och en order med 2 st fick 50-packets pris. */
-    costCell:
-      v.unitCost == null
-        ? ""
-        : [
-            v.unitCost.toFixed(2),
-            ...(stegByVariant.get(v.variantGid) ?? []).map((s) => `${s.units}:${s.totalCost.toFixed(2)}`),
-          ].join("|"),
-  })).sort((a, b) => {
+  const rows = [...costs.all].map((v) => {
+    /* Under en marknad: marknadens egen kostnad om den finns, annars
+       standarden — märkt som ärvd, så det syns vad som faktiskt är inlagt
+       för landet och vad som bara följer med. */
+    const egen = mk?.unitCost.get(v.variantGid);
+    const egnaSteg = mk?.tiers.get(v.variantGid);
+    const unitCost = mk ? egen ?? v.unitCost : v.unitCost;
+    /* Samma regel som räknemotorn (tiersFor): marknadens egna steg om de
+       finns, annars standardens — så listan visar exakt det som räknas. */
+    const tiers = egnaSteg ?? stegByVariant.get(v.variantGid) ?? [];
+    return {
+      ...v,
+      unitCost,
+      arvd: Boolean(mk) && egen == null && v.unitCost != null,
+      tiers,
+      /* Antalet MÅSTE med: ett 50-pack som exporteras som bara ett tal lästes
+         tillbaka som ett tvåpack, och en order med 2 st fick 50-packets pris. */
+      costCell:
+        unitCost == null
+          ? ""
+          : [unitCost.toFixed(2), ...tiers.map((s) => `${s.units}:${s.totalCost.toFixed(2)}`)].join("|"),
+    };
+  }).sort((a, b) => {
     // Saknade kostnader först — det är dem man är här för att fixa.
     if ((a.unitCost == null) !== (b.unitCost == null)) return a.unitCost == null ? -1 : 1;
     return a.productTitle.localeCompare(b.productTitle, lang === "sv" ? "sv" : "en");
   });
   return json({
     lang,
+    market,
+    marknader,
     rows,
     missing: rows.filter((r) => r.unitCost == null).length,
     total: rows.length,
@@ -129,6 +151,13 @@ export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const form = await request.formData();
   const intent = String(form.get("intent") ?? "");
+  /* Vald marknad följer med varje skrivning. Tom = standard → Shopify.
+     Satt = marknadskostnad → bara vår egen tabell, Shopify rörs inte. */
+  const market = marknadskod(form.get("market"));
+  const katalogFor = async (inv: string[]) => {
+    const kat = await loadCatalog(admin, session.shop, prisma);
+    return kat.all.filter((v) => inv.includes(v.inventoryItemGid) || inv.includes(v.variantGid));
+  };
   if (intent === "juicy-dismiss") {
     await prisma.shopSettings.update({ where: { shop: session.shop }, data: { juicyCardDismissedAt: new Date() } });
     return json({ ok: true, message: "" });
@@ -149,6 +178,11 @@ export async function action({ request }: ActionFunctionArgs) {
     const targets = String(form.get("targets") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     if (!Number.isFinite(cost) || cost < 0 || !targets.length) {
       return json({ ok: false, message: "invalid" }, { status: 400 });
+    }
+    if (market) {
+      const mal = await katalogFor(targets);
+      await skrivMarknadskostnad(session.shop, market, mal, cost, null, `${market}: ${cost.toFixed(2)}`);
+      return json({ ok: true, message: "" });
     }
     const fel: string[] = [];
     for (const gid of targets) {
@@ -183,6 +217,11 @@ export async function action({ request }: ActionFunctionArgs) {
     if (!Number.isFinite(cost) || cost < 0 || !inv.length) {
       return json({ ok: false, message: "invalid" }, { status: 400 });
     }
+    if (market) {
+      const mal = await katalogFor(inv);
+      await skrivMarknadskostnad(session.shop, market, mal, cost, rena, `${market}: ${cost.toFixed(2)}`);
+      return json({ ok: true, message: "" });
+    }
     const fel: string[] = [];
     for (const gid of inv) {
       const r = await setUnitCost(admin, gid, cost);
@@ -194,9 +233,9 @@ export async function action({ request }: ActionFunctionArgs) {
           /* Radera och skriv i SAMMA transaktion: ett fel mitt emellan hade
              lämnat varianten helt utan packpriser. */
           await prisma.$transaction([
-            prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid } }),
+            prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid, market: "" } }),
             prisma.costTier.createMany({
-              data: rena.map((s) => ({ shop: session.shop, variantGid, units: s.units, totalCost: s.totalCost })),
+              data: rena.map((s) => ({ shop: session.shop, variantGid, units: s.units, totalCost: s.totalCost, market: "" })),
             }),
           ]);
         } catch (e) {
@@ -305,7 +344,7 @@ export async function action({ request }: ActionFunctionArgs) {
         currency: settings?.currency ?? "SEK",
       });
       const csv = tillCsv(svar);
-      const res = csv ? await importCostCsv(admin, session.shop, prisma, csv, "", T) : { ok: true, message: "", applied: [], skipped: [] };
+      const res = csv ? await importCostCsv(admin, session.shop, prisma, csv, "", T, market) : { ok: true, message: "", applied: [], skipped: [] };
       const unmatched = [...svar.unmatched, ...res.skipped];
       const currencyNote =
         svar.currency_seen && svar.currency_seen.toUpperCase() !== (settings?.currency ?? "SEK").toUpperCase()
@@ -326,12 +365,13 @@ export async function action({ request }: ActionFunctionArgs) {
   const csv = String(form.get("csv") ?? "").replace(/^\ufeff/, "");
   const effectiveFrom = String(form.get("effectiveFrom") ?? "");
 
-  const res = await importCostCsv(admin, session.shop, prisma, csv, effectiveFrom, T);
+  const res = await importCostCsv(admin, session.shop, prisma, csv, effectiveFrom, T, market);
   return json({ ok: res.ok, message: res.message }, { status: res.ok ? 200 : 400 });
 }
 
 export default function Costs() {
-  const { lang, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
   const estimateFetcher = useFetcher<typeof action>();
@@ -407,6 +447,21 @@ export default function Costs() {
   const [effectiveFrom, setEffectiveFrom] = useState("");
   const [visaMall, setVisaMall] = useState(false);
   const T = t(lang);
+  /* Marknadsväljaren. Alla skrivningar på sidan följer valet: standard går
+     till Shopify, en marknad går till vår egen tabell. */
+  const marknadsval = [
+    { label: T.costs.market.standard, value: "" },
+    ...marknader.map((m) => ({ label: `${marknadsnamn(m, lang, m)} (${m})`, value: m })),
+  ];
+  const [nyMarknad, setNyMarknad] = useState("");
+  const byMarknad = (m: string) => {
+    const nya = new URLSearchParams(params);
+    if (m) nya.set("market", m);
+    else nya.delete("market");
+    setParams(nya);
+  };
+  const marknadsnamnet = marknadsnamn(market, lang, "");
+  const arvda = rows.filter((r) => r.arvd).length;
 
   /* Mallen byggs i webbläsaren av datan som redan finns på sidan.
      En serverrutt hade varit renare, men en vanlig länknavigering inifrån
@@ -452,10 +507,46 @@ export default function Costs() {
   };
 
   return (
-    <Page title={T.costs.title} subtitle={T.costs.subtitle(total - missing, total)}>
+    <Page
+      title={market ? `${T.costs.title} · ${marknadsnamnet}` : T.costs.title}
+      subtitle={T.costs.subtitle(total - missing, total)}
+    >
       <Layout>
         <Layout.Section>
           <BlockStack gap="400">
+            {/* Marknad: samma produkt kostar olika att få till Sverige, Norge
+                och USA. Väljaren styr vad tabellen visar och vart varje
+                skrivning på sidan går. */}
+            <Card>
+              <BlockStack gap="200">
+                <Text as="h2" variant="headingMd">{T.costs.market.title}</Text>
+                <Text as="p" tone="subdued">{T.costs.market.body}</Text>
+                <InlineStack gap="300" blockAlign="end" wrap>
+                  <div style={{ minWidth: 260 }}>
+                    <Select label={T.costs.market.label} options={marknadsval} value={market} onChange={byMarknad} />
+                  </div>
+                  <div style={{ width: 150 }}>
+                    <TextField
+                      label={T.costs.market.addLabel}
+                      value={nyMarknad}
+                      onChange={setNyMarknad}
+                      autoComplete="off"
+                      placeholder="JP"
+                      maxLength={2}
+                    />
+                  </div>
+                  <Button disabled={!marknadskod(nyMarknad)} onClick={() => byMarknad(marknadskod(nyMarknad))}>
+                    {T.costs.market.add}
+                  </Button>
+                </InlineStack>
+                {market ? (
+                  <Banner tone="info">
+                    {T.costs.market.activeNote(marknadsnamnet)}
+                    {arvda ? ` ${T.costs.market.inherited(arvda)}` : ""}
+                  </Banner>
+                ) : null}
+              </BlockStack>
+            </Card>
             {visaJuicy ? (
               <Card background="bg-surface-secondary">
                 <BlockStack gap="200">
@@ -531,7 +622,7 @@ export default function Costs() {
                       loading={aiFetcher.state !== "idle"}
                       onClick={() =>
                         aiFetcher.submit(
-                          { intent: "ai-import", bilder: JSON.stringify(aiBilder.map(({ mediaType, base64 }) => ({ mediaType, base64 }))), text: aiText },
+                          { intent: "ai-import", bilder: JSON.stringify(aiBilder.map(({ mediaType, base64 }) => ({ mediaType, base64 }))), text: aiText, market },
                           { method: "POST" },
                         )
                       }
@@ -630,6 +721,7 @@ export default function Costs() {
                             currency={currency}
                             valuta={offertValuta}
                             kurser={quoteData?.quote?.kurser ?? {}}
+                            market={market}
                           />
                         ))}
                       </BlockStack>
@@ -674,7 +766,7 @@ export default function Costs() {
                 <Text as="p" tone="subdued">{T.costs.quick.body}</Text>
                 <BlockStack gap="200">
                   {produkter.map((grupp) => (
-                    <Produktrad key={grupp[0].productGid} grupp={grupp} T={T} nf={nf} currency={currency} />
+                    <Produktrad key={grupp[0].productGid} grupp={grupp} T={T} nf={nf} currency={currency} market={market} />
                   ))}
                 </BlockStack>
               </BlockStack>
@@ -769,9 +861,9 @@ export default function Costs() {
                   variant="primary"
                   disabled={!csv.trim()}
                   loading={fetcher.state !== "idle"}
-                  onClick={() => fetcher.submit({ csv, effectiveFrom }, { method: "POST" })}
+                  onClick={() => fetcher.submit({ csv, effectiveFrom, market }, { method: "POST" })}
                 >
-                  {T.costs.writeToShopify}
+                  {market ? T.costs.market.writeFor(marknadsnamnet) : T.costs.writeToShopify}
                 </Button>
                 {fetcher.data ? (
                   <Banner tone={fetcher.data.ok ? "success" : "critical"}>
@@ -802,7 +894,7 @@ export default function Costs() {
                 </Link>,
                 r.variantTitle === "Default Title" ? "—" : r.variantTitle,
                 nf.format(r.price),
-                r.unitCost == null ? "—" : nf.format(r.unitCost),
+                r.unitCost == null ? "—" : r.arvd ? `${nf.format(r.unitCost)} *` : nf.format(r.unitCost),
                 (() => {
                   const k = perStyck(r.price, r.unitCost);
                   if (!k) return <Badge key={`tb${r.variantGid}`} tone="critical">{T.costs.missingBadge}</Badge>;
@@ -843,6 +935,8 @@ type Rad = {
   unitCost: number | null;
   /** Packpriser: totalkostnad för `units` stycken i samma orderrad. */
   tiers: { units: number; totalCost: number }[];
+  /** Under en marknad: kostnaden är standardens, ingen egen post för landet. */
+  arvd?: boolean;
 };
 
 /** "1 st 88,34 kr · 2 st 134,22 kr totalt (67,11/st)" — vad appen räknar med. */
@@ -886,7 +980,7 @@ type OffertItem = {
  * 2 st för 15 är 15 totalt och inte 2 × 10.
  */
 function OffertRad({
-  it, rows, T, nf, currency, valuta, kurser,
+  it, rows, T, nf, currency, valuta, kurser, market,
 }: {
   it: OffertItem;
   rows: Rad[];
@@ -895,6 +989,7 @@ function OffertRad({
   currency: string;
   valuta: string;
   kurser: Record<string, number | null>;
+  market: string;
 }) {
   const fetcher = useFetcher<typeof action>();
   const produkter = (() => {
@@ -966,6 +1061,7 @@ function OffertRad({
         inv: mal.map((r) => r.inventoryItemGid).join(","),
         variants: mal.map((r) => r.variantGid).join(","),
         tiers: stegButik.map((s) => `${s.units}:${s.total}`).join(","),
+        market,
       },
       { method: "POST" },
     );
@@ -1033,7 +1129,7 @@ function OffertRad({
  * till alla varianter (så ser en leverantörsprislista oftast ut); "Sätt per
  * variant" fäller ut ett fält per variant. Enter eller lämna fältet sparar.
  */
-function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string }) {
+function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string; market: string }) {
   const fetcher = useFetcher<typeof action>();
   const [open, setOpen] = useState(false);
   const kostnader = grupp.map((r) => r.unitCost);
@@ -1045,7 +1141,7 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
 
   const spara = (targets: string[], value: string) => {
     if (!value.trim()) return;
-    fetcher.submit({ intent: "set-cost", cost: value, targets: targets.join(",") }, { method: "POST" });
+    fetcher.submit({ intent: "set-cost", cost: value, targets: targets.join(","), market }, { method: "POST" });
     setSparat(true);
     setTimeout(() => setSparat(false), 2500);
   };
@@ -1093,7 +1189,7 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
             disabled={!lika && alla && !open}
           />
         </div>
-        {saknas ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : sparat || fetcher.state !== "idle" ? <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge> : null}
+        {saknas ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : sparat || fetcher.state !== "idle" ? <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge> : grupp.every((r) => r.arvd) ? <Badge>{T.costs.market.inheritedBadge}</Badge> : null}
         {grupp.length > 1 ? (
           <Button variant="plain" size="slim" onClick={() => setOpen((o) => !o)}>
             {open ? T.costs.quick.hideVariants : T.costs.quick.showVariants}
@@ -1110,7 +1206,7 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
       {open ? (
         <div style={{ paddingLeft: 16, paddingTop: 6 }}>
           <BlockStack gap="100">
-            {grupp.map((r) => <Variantrad key={r.variantGid} r={r} T={T} currency={currency} nf={nf} />)}
+            {grupp.map((r) => <Variantrad key={r.variantGid} r={r} T={T} currency={currency} nf={nf} market={market} />)}
           </BlockStack>
         </div>
       ) : null}
@@ -1118,12 +1214,12 @@ function Produktrad({ grupp, T, nf, currency }: { grupp: Rad[]; T: ReturnType<ty
   );
 }
 
-function Variantrad({ r, T, currency, nf }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat }) {
+function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat; market: string }) {
   const fetcher = useFetcher<typeof action>();
   const [v, setV] = useState(r.unitCost != null ? String(r.unitCost) : "");
   const spara = () => {
     if (!v.trim() || String(r.unitCost ?? "") === v) return;
-    fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid }, { method: "POST" });
+    fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid, market }, { method: "POST" });
   };
   const steg = stegText(r.unitCost, r.tiers, T, nf, currency);
   return (

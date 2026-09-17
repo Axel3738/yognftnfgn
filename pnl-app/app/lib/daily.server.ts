@@ -15,9 +15,10 @@
 
 import prisma from "../db.server";
 import { fetchOrderData, mergeProductRows } from "./shopify-data.server";
-import type { ProductRow, SalesDay } from "./pnl.server";
+import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
 import { decrypt } from "./crypto.server";
 import { butikensScope, harKundScope, skrivKundOrdrar, tillKundOrderRader } from "./kundorder.server";
+import { marknadskod, sorteraMarknader } from "./marknad";
 
 const API_VERSION = "2026-07";
 
@@ -64,6 +65,10 @@ export async function refreshDaily(
         totalSales: s.totalSales,
         shippingCharges: s.shippingCharges,
         products,
+        /* Uppdelningen per marknad skrivs bredvid totalen. Gick landet inte
+           att läsa lämnas fältet orört — en gammal uppdelning är bättre än
+           att radera den, och null betyder "exportera om under filter". */
+        ...(data.marketsByDay ? { markets: (data.marketsByDay[s.day] ?? {}) as any } : {}),
         fetchedAt: now,
       };
       return prisma.dailyPnl.upsert({
@@ -77,9 +82,11 @@ export async function refreshDaily(
   /* KundOrder-raderna EFTER dagsraderna, ur samma hämtning: misslyckas
      hämtningen har vi redan kastat, och ingenting skrivs någonstans. */
   if (kund && data.kundOrdrar.length) {
+    /* Kundvärdet räknas på standardkostnaden — bara standardens steg. Ett
+       norskt tvåpackspris i den här listan hade prissatt svenska ordrar. */
     const [settings, tierRows] = await Promise.all([
       prisma.shopSettings.findUnique({ where: { shop } }),
-      prisma.costTier.findMany({ where: { shop } }),
+      prisma.costTier.findMany({ where: { shop, market: "" } }),
     ]);
     const rader = tillKundOrderRader(
       shop,
@@ -100,10 +107,43 @@ export interface DailyReadResult {
   oldestFetchedAt: Date | null;
   /** Hämtningstid för intervallets sista dag (den som rör sig). */
   lastDayFetchedAt: Date | null;
+  /**
+   * Under ett marknadsfilter: dagar som finns men saknar uppdelning per
+   * marknad även efter en färsk hämtning (Shopify nekade landet). De räknas
+   * inte som saknade — då hade varje sidladdning exporterat om dem — utan
+   * rapporteras här så panelen kan säga att marknadsvyn är ofullständig.
+   */
+  daysWithoutMarkets: number;
 }
 
+export interface ReadDailyOpts {
+  /**
+   * Marknad (landskod) att läsa. Tom/undefined = hela butiken. Med filter
+   * läses dagens del för just den marknaden; en dag som saknar uppdelning
+   * (skriven före 2026-09-17) räknas som ohämtad och exporteras om.
+   */
+  market?: string;
+  /**
+   * Utan filter: dela produktmixen per marknad när uppdelningen finns, så
+   * att räknemotorn kan använda marknadens egen kostnad per rad. Dagar utan
+   * uppdelning bidrar med sin sammanslagna mix (standardkostnad). Panelen och
+   * gruppsumman sätter den; andra läsare får den gamla, sammanslagna listan.
+   */
+  perMarknad?: boolean;
+}
+
+const tomDel = (): MarknadsDel => ({
+  orders: 0, grossSales: 0, discounts: 0, returns: 0, netSales: 0, totalSales: 0, shippingCharges: 0, products: [],
+});
+
 /** Läser dagsrader ur databasen. Ingen nätverkstrafik — det är poängen. */
-export async function readDaily(shop: string, from: string, to: string): Promise<DailyReadResult> {
+export async function readDaily(
+  shop: string,
+  from: string,
+  to: string,
+  opts: ReadDailyOpts = {},
+): Promise<DailyReadResult> {
+  const market = marknadskod(opts.market);
   const rows = await prisma.dailyPnl.findMany({
     where: { shop, day: { gte: from, lte: to } },
     orderBy: { day: "asc" },
@@ -114,6 +154,53 @@ export async function readDaily(shop: string, from: string, to: string): Promise
 
   let oldest: Date | null = null;
   for (const r of rows) if (!oldest || r.fetchedAt < oldest) oldest = r.fetchedAt;
+
+  const uppdelning = (r: (typeof rows)[number]) =>
+    (r.markets as unknown as Record<string, MarknadsDel> | null) ?? null;
+
+  if (market) {
+    /* Marknadsfilter: bara den marknadens del av varje dag. Dagar utan
+       uppdelning läggs till de saknade — de finns i databasen, men inte i
+       den form filtret behöver, och att servera totalen som om den vore
+       Norges hade varit en lögn i rätt valuta. */
+    const sales: SalesDay[] = [];
+    const products: ProductRow[] = [];
+    let utanUppdelning = 0;
+    /* En rad som hämtades för mindre än en timme sedan och ÄNDÅ saknar
+       uppdelning kommer inte att få en av en ny hämtning (landet nekades).
+       Att markera den saknad hade startat en ny export på varje sidladdning. */
+    const NYSS_MS = 60 * 60 * 1000;
+    for (const r of rows) {
+      const per = uppdelning(r);
+      if (per == null) {
+        if (Date.now() - r.fetchedAt.getTime() > NYSS_MS) missingDays.push(r.day);
+        else utanUppdelning++;
+        continue;
+      }
+      const del = per[market] ?? tomDel();
+      sales.push({ day: r.day, ...utanProdukter(del) });
+      products.push(...del.products.map((p) => ({ ...p, market })));
+    }
+    missingDays.sort();
+    return {
+      sales,
+      products: mergeProductRows(products),
+      missingDays,
+      oldestFetchedAt: oldest,
+      lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
+      daysWithoutMarkets: utanUppdelning,
+    };
+  }
+
+  const products: ProductRow[] = [];
+  for (const r of rows) {
+    const per = opts.perMarknad ? uppdelning(r) : null;
+    if (per) {
+      for (const [m, del] of Object.entries(per)) products.push(...del.products.map((p) => ({ ...p, market: m })));
+    } else {
+      products.push(...(((r.products as unknown as ProductRow[]) ?? []).map((p) => ({ ...p, market: "" }))));
+    }
+  }
 
   return {
     sales: rows.map((r) => ({
@@ -126,11 +213,46 @@ export async function readDaily(shop: string, from: string, to: string): Promise
       totalSales: r.totalSales,
       shippingCharges: r.shippingCharges,
     })),
-    products: mergeProductRows(rows.flatMap((r) => (r.products as unknown as ProductRow[]) ?? [])),
+    products: mergeProductRows(products),
     missingDays,
     oldestFetchedAt: oldest,
     lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
+    daysWithoutMarkets: 0,
   };
+}
+
+const utanProdukter = (d: MarknadsDel): Omit<MarknadsDel, "products"> => {
+  const { products: _p, ...rest } = d;
+  return rest;
+};
+
+/**
+ * Marknaderna butiken faktiskt sålt till de senaste 90 dagarna, plus dem som
+ * redan har en egen kostnad eller en märkt kampanj — så en marknad man just
+ * börjat annonsera mot går att välja innan första ordern kommit.
+ * Butikens hemland (ur valutan, grovt) först, sedan alfabetiskt.
+ */
+export async function kandaMarknader(shop: string, hemland = ""): Promise<string[]> {
+  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
+  const [rader, kostnader, steg, konton] = await Promise.all([
+    prisma.dailyPnl.findMany({ where: { shop, day: { gte: sedan } }, select: { markets: true } }),
+    prisma.costChange.findMany({ where: { shop }, select: { market: true }, distinct: ["market"] }),
+    prisma.costTier.findMany({ where: { shop }, select: { market: true }, distinct: ["market"] }),
+    prisma.metaAdAccount.findMany({ where: { shop }, select: { campaignMarkets: true } }),
+  ]);
+  const koder: string[] = [];
+  for (const r of rader) {
+    const per = r.markets as unknown as Record<string, MarknadsDel> | null;
+    if (!per) continue;
+    for (const [m, del] of Object.entries(per)) if (m && del.orders > 0) koder.push(m);
+  }
+  for (const k of kostnader) koder.push(k.market);
+  for (const s of steg) koder.push(s.market);
+  for (const k of konton) {
+    const map = (k.campaignMarkets as unknown as Record<string, string> | null) ?? {};
+    for (const m of Object.values(map)) koder.push(m);
+  }
+  return sorteraMarknader(koder, hemland);
 }
 
 /**

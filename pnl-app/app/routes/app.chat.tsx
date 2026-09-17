@@ -74,7 +74,7 @@ async function byggKontext(admin: any, shop: string, settings: { currency: strin
     readDaily(shop, fran, till),
     prisma.dailySpend.aggregate({ where: { shop, day: { gte: new Date(fran), lte: new Date(till) } }, _sum: { spend: true }, _count: true }),
     prisma.fixedCost.findMany({ where: { shop } }),
-    prisma.costTier.findMany({ where: { shop } }),
+    prisma.costTier.findMany({ where: { shop, market: "" } }),
     loadCatalog(admin, shop, prisma),
     lasPlan(admin, shop).catch(() => ({ plan: "okand" as const })),
   ]);

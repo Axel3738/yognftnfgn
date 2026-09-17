@@ -37,6 +37,21 @@ export interface SpendDay {
   clicks: number;
 }
 
+/**
+ * En dags försäljning och produktmix för EN marknad (landskod). Summan av
+ * alla marknaders delar är dagens totalrad. Bor i DailyPnl.markets.
+ */
+export interface MarknadsDel {
+  orders: number;
+  grossSales: number;
+  discounts: number;
+  returns: number;
+  netSales: number;
+  totalSales: number;
+  shippingCharges: number;
+  products: ProductRow[];
+}
+
 export interface ProductRow {
   productGid: string;
   variantGid: string | null;
@@ -46,6 +61,12 @@ export interface ProductRow {
   netSales: number;
   /** Nuvarande unitCost från Shopify. Null = kostnad saknas. */
   unitCost: number | null;
+  /**
+   * Marknaden (landskod) raden såldes på. Sätts när dagsraderna bär en
+   * uppdelning per marknad; då räknas COGS med marknadens egen kostnad.
+   * Saknas/"" = okänd marknad eller sammanslagen rad → standardkostnaden.
+   */
+  market?: string;
   /**
    * Antal orderrader per antal i raden: { "1": 40, "2": 6, "3": 1 }.
    * Det är vad flerpackskostnaden räknas på — en rad med tre stycken kostar
@@ -60,6 +81,8 @@ export interface CostTierRow {
   variantGid: string;
   units: number;
   totalCost: number;
+  /** Marknad (landskod) steget gäller. Tom/saknas = standard. */
+  market?: string;
 }
 
 /**
@@ -108,6 +131,12 @@ export interface CostChangeRow {
   unitCost: number;
   effectiveFrom: string; // YYYY-MM-DD
   note?: string | null;
+  /**
+   * Marknad (landskod) kostnaden gäller. Tom/saknas = standard, den som
+   * används för marknader utan egen post. Frakten till USA och till Sverige
+   * är två helt olika tal — därför finns den här dimensionen.
+   */
+  market?: string;
 }
 
 export interface Settings {
@@ -225,26 +254,49 @@ const div = (a: number, b: number) => (b > 0 ? a / b : null);
 
 /**
  * Vilken kostnadsändring gäller för en variant vid ett givet datum?
- * Variantspecifik slår produktbred. Senaste giltiga datum vinner.
+ *
+ * Radens MARKNAD går först: finns en post för just det landet vinner den,
+ * oavsett datum — den beskriver vad varan kostar att få dit. Först därefter
+ * standardposterna (market ""). Inom samma marknad: senaste giltiga datum
+ * vinner, och på samma datum slår variantspecifik produktbred.
  */
-function resolveChange(
+export function resolveChange(
   changes: CostChangeRow[],
   row: ProductRow,
   onOrAfter: string,
 ): CostChangeRow | null {
+  const marknad = row.market ?? "";
   const candidates = changes.filter(
     (c) =>
       c.productGid === row.productGid &&
       (c.variantGid === null || c.variantGid === row.variantGid) &&
-      c.effectiveFrom <= onOrAfter,
+      c.effectiveFrom <= onOrAfter &&
+      ((c.market ?? "") === "" || (c.market ?? "") === marknad),
   );
   if (!candidates.length) return null;
   candidates.sort((a, b) => {
+    const am = (a.market ?? "") === marknad && marknad !== "" ? 1 : 0;
+    const bm = (b.market ?? "") === marknad && marknad !== "" ? 1 : 0;
+    if (am !== bm) return bm - am;
     if (a.effectiveFrom !== b.effectiveFrom) return a.effectiveFrom < b.effectiveFrom ? 1 : -1;
     // samma datum: variantspecifik vinner över produktbred
     return (b.variantGid ? 1 : 0) - (a.variantGid ? 1 : 0);
   });
   return candidates[0];
+}
+
+/**
+ * Flerpackstegen för en rad: marknadens egna om den har några, annars
+ * standardens. Blandas aldrig — ett norskt tvåpackspris bredvid ett svenskt
+ * trepackspris hade gett en trappa som inte finns hos någon leverantör.
+ */
+export function tiersFor(tiers: CostTierRow[], variantGid: string, market: string): CostTierRow[] {
+  const mina = tiers.filter((t) => t.variantGid === variantGid);
+  if (market) {
+    const egna = mina.filter((t) => (t.market ?? "") === market);
+    if (egna.length) return egna;
+  }
+  return mina.filter((t) => (t.market ?? "") === "");
 }
 
 export function compute(input: ComputeInput): ComputeResult {
@@ -278,12 +330,7 @@ export function compute(input: ComputeInput): ComputeResult {
   };
 
   const appliedNotes = new Map<string, number>();
-  const tiersByVariant = new Map<string, CostTierRow[]>();
-  for (const t of input.costTiers ?? []) {
-    const list = tiersByVariant.get(t.variantGid) ?? [];
-    list.push(t);
-    tiersByVariant.set(t.variantGid, list);
-  }
+  const allaTiers = input.costTiers ?? [];
   let cogs = 0;
   let unitsWithoutCost = 0;
 
@@ -304,7 +351,7 @@ export function compute(input: ComputeInput): ComputeResult {
         }
       }
 
-      const tiers = row.variantGid ? tiersByVariant.get(row.variantGid) ?? [] : [];
+      const tiers = row.variantGid ? tiersFor(allaTiers, row.variantGid, row.market ?? "") : [];
       const rowCogs = cost != null ? rowCost(row, cost, tiers) : null;
       if (rowCogs != null) cogs += rowCogs;
       else unitsWithoutCost += row.units;
@@ -406,6 +453,44 @@ export function compute(input: ComputeInput): ComputeResult {
     totals,
     appliedCostChanges: [...appliedNotes].map(([note, weight]) => ({ note, weight })),
   };
+}
+
+/**
+ * Slår ihop produktresultat som bara skiljer sig på marknad till en rad per
+ * variant — för produkttabellen i vyn "alla marknader". COGS och TB summeras
+ * (de är redan räknade med rätt kostnad per marknad); kostnad per styck och
+ * multipel räknas om ur summorna. Blend-noten behålls bara när alla delar
+ * har samma.
+ */
+export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
+  const by = new Map<string, ProductResult>();
+  for (const r of rows) {
+    const key = r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`;
+    const a = by.get(key);
+    if (!a) {
+      by.set(key, { ...r, market: undefined, lines: r.lines ? { ...r.lines } : undefined });
+      continue;
+    }
+    a.units += r.units;
+    a.netSales += r.netSales;
+    if (r.lines) {
+      a.lines = { ...(a.lines ?? {}) };
+      for (const [q, n] of Object.entries(r.lines)) a.lines[q] = (a.lines[q] ?? 0) + n;
+    }
+    /* Saknar någon del kostnad saknar summan det — en halv COGS är ingen COGS. */
+    a.cogs = a.cogs != null && r.cogs != null ? a.cogs + r.cogs : null;
+    a.contribution = a.cogs != null ? a.netSales - a.cogs : null;
+    a.margin = a.cogs != null && a.netSales > 0 ? (a.contribution as number) / a.netSales : null;
+    a.effectiveCost = a.cogs != null && a.units > 0 ? a.cogs / a.units : null;
+    a.multiple =
+      a.effectiveCost != null && a.effectiveCost > 0 && a.units > 0 ? a.netSales / a.units / a.effectiveCost : null;
+    if (a.unitCost == null) a.unitCost = r.unitCost;
+    if (a.blendNote !== r.blendNote) {
+      a.blend = null;
+      a.blendNote = null;
+    }
+  }
+  return [...by.values()].sort((a, b) => b.netSales - a.netSales);
 }
 
 /** Datumfönster för de förvalda intervallen, relativt en ankardag. */

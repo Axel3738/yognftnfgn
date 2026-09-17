@@ -153,7 +153,10 @@ async function summeraButik(
      02:00 svensk tid, vilket gjorde både färskhetsfönstret och Metas
      dagsklassning en dag för generösa. */
   const idag = dayInTz(new Date(), m.timezone ?? "UTC");
-  let daily = await readDaily(m.shop, from, to);
+  /* perMarknad: COGS räknas med marknadens egen kostnad per rad även i
+     summan — en USA-order ska inte räknas på svensk frakt bara för att den
+     summeras ihop med andra butiker. */
+  let daily = await readDaily(m.shop, from, to, { perMarknad: true });
   if (daily.missingDays.length) {
     const first = daily.missingDays[0];
     const last = daily.missingDays[daily.missingDays.length - 1];
@@ -167,7 +170,7 @@ async function summeraButik(
     let hamtningOk = true;
     if (spann <= 7) {
       hamtningOk = await refreshShopDaily(m.shop, first, last, { force: true });
-      if (hamtningOk) daily = await readDaily(m.shop, from, to);
+      if (hamtningOk) daily = await readDaily(m.shop, from, to, { perMarknad: true });
     } else {
       /* Lång lucka: sondera nyckeln synkront med luckans sista dagar
          (pagineringsvägen, ett par sekunder) innan resten lovas bort till
@@ -177,7 +180,7 @@ async function summeraButik(
       hamtningOk = await refreshShopDaily(m.shop, probeFrom, last, { force: true });
       if (hamtningOk) {
         void refreshShopDaily(m.shop, first, last);
-        daily = await readDaily(m.shop, from, to);
+        daily = await readDaily(m.shop, from, to, { perMarknad: true });
       }
     }
     /* Skillnaden syns i UI:t: "hämtas just nu" är sant bara när en hämtning
@@ -204,7 +207,7 @@ async function summeraButik(
       const senasteFrom = from > shiftIso(to, -2) ? from : shiftIso(to, -2);
       const ok = await refreshShopDaily(m.shop, senasteFrom, to, { force: true });
       if (ok) {
-        daily = await readDaily(m.shop, from, to);
+        daily = await readDaily(m.shop, from, to, { perMarknad: true });
       } else {
         /* Misslyckad uppdatering av den dag som fortfarande rör sig får INTE
            serveras tyst. Raden som ligger kvar är antingen morgongammal eller
@@ -304,8 +307,9 @@ async function summeraButik(
       unitCost: Number(c.unitCost),
       effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10),
       note: c.note,
+      market: c.market ?? "",
     })),
-    costTiers: costTiers.map((c) => ({ variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost) })),
+    costTiers: costTiers.map((c) => ({ variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost), market: c.market ?? "" })),
     settings: {
       tariffPerOrder: Number(m.tariffPerOrder),
       feeRate: Number(m.feeRate),

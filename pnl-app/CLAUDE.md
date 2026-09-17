@@ -397,6 +397,81 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Marknader — kostnad, annonser och vinst per land (2026-09-17, build marknader-v88)
+
+Axels ask, i röstmeddelandeform: samma Shopify-butik säljer till Sverige,
+Norge och USA med *"väldigt varierande cogs"*; han vill sätta kostnad per
+marknad, se hur varje marknad gått, filtrera vinsthjulet på land, och märka
+i Inställningar vilka kampanjer (i vilka annonskonton) som hör till vilken
+marknad. *"Fixa allt det där."* Allt nedan är byggt; inget är prövat i drift.
+
+**Vad en marknad ÄR:** ISO-landskoden i orderns leveransadress
+(`shippingAddress.countryCodeV2`, reserv `billingAddress`). **Inte Shopify
+Markets** — att läsa dem kräver scopen `read_markets`, och en ny scope
+tvingar varje installerad butik genom en omauktorisering (se varningen i
+`shopify.app.toml`). Landet följer med `read_orders`. Hjälparna bor i
+`lib/marknad.ts` (klientsäker): `marknadskod`, `marknadsnamn`
+(Intl.DisplayNames), `sorteraMarknader`, `hemlandAv`.
+
+⚠ **Osäkert tills det mätts:** om Shopify räknar `countryCodeV2` som ett
+skyddat kundfält nekas HELA orderfrågan för butiker utan rätt PCD-nivå.
+Därför har `doFetchOrderData` en reserv: nekas adressfältet (`arAdressNekad`)
+hämtas ordrarna om utan land, `marketsByDay` blir null och ingen uppdelning
+skrivs. Panelen fungerar då som förut, marknadsvyn säger "X dagar gick inte
+att dela per marknad" (`daysWithoutMarkets`). **Läs loggarna efter deploy:**
+raden "Leveransadressen nekades för …" betyder att reserven slog till.
+
+**Datamodellen — allt har default `""` = standard/alla, så befintliga
+butiker ser exakt samma siffror tills de själva lägger in något:**
+- `DailyPnl.markets Json?` — samma dag uppdelad per land:
+  `{ "SE": {orders, …, products:[…]}, "NO": {…} }`. Totalraden är facit;
+  det här är bara en uppdelning. Null = skriven före v88.
+- `CostChange.market`, `CostTier.market` (unik nyckel nu med `market`).
+- `DailySpend.market` (unik nyckel `(shop, day, account, market)`).
+- `MetaAdAccount.campaignMarkets Json?` — `{ "<kampanj-id>": "NO" }`.
+- Migration `20260917150000_marknader`.
+
+**Räknevägen:**
+- `readDaily(shop, from, to, { market, perMarknad })`. Med `market`: bara
+  den marknadens del; dagar utan uppdelning räknas som **ohämtade** och
+  exporteras om (en gång — sedan bär de uppdelningen för alltid). Spärr: en
+  rad hämtad för < 1 h sedan som ändå saknar uppdelning markeras INTE
+  saknad, annars hade en butik med nekat adressfält exporterat om 90 dagar
+  på varje sidladdning. Med `perMarknad` (utan filter): produktmixen delas
+  per marknad så motorn kan räkna rätt kostnad per rad; panelen och
+  gruppsumman sätter den, chatten får den gamla listan.
+- `pnl.server`: `ProductRow.market`; `resolveChange` föredrar radens
+  marknad **oavsett datum**, sedan standard; `tiersFor` tar marknadens steg
+  om några finns, annars standardens — **aldrig blandat**.
+  `slaIhopMarknader` slår ihop resultatraderna per variant för tabellen
+  (COGS summeras, kostnad/styck räknas om). 9 tester i `test/marknad.test.mjs`.
+- `meta.server`: minst en märkt kampanj ⇒ kampanjnivå mot Meta och en
+  DailySpend-rad per (dag, marknad); omärkta kampanjer på `""`. Dagens
+  rader skrivs om i sin helhet (radera + createMany i en transaktion) så en
+  kampanj som flyttats till en annan marknad inte räknas två gånger.
+  `getSpend(…, { market })` filtrerar på raderna.
+- Panelen: `?market=NO`. Under filter måste minst en kampanj vara märkt
+  landet, annars är annonskostnaden noll utan att något är fel —
+  `spendReliable` sätts false och bannern
+  `dashboard.market.noCampaigns` visas. Gruppsumman döljs under filter.
+
+**UI:t:** Kostnader har kortet "Marknad" överst (väljare + fält för ny
+landskod); allt som sparas med en marknad vald går till CostChange/CostTier
+med `market`, **aldrig till Shopify** (`lib/marknadskostnad.server.ts`).
+Ärvda kostnader märks `*`. Produktsidan har "Marknad" i formuläret för ny
+post och för flerpacksteg, plus en marknadskolumn i tabellerna.
+Inställningar → kontot → "Välj kampanjer" har en Select "Marknad" per
+kampanj (visas även i läget "alla kampanjer") och ett fält för att lägga
+till en landskod som inte sålt än.
+
+⚠ **Kundvärdet (LTV) och chatten räknar bara på standardkostnaden** —
+`costTier.findMany({ where: { shop, market: "" } })`. Ett norskt
+tvåpackspris i den listan hade prissatt svenska ordrar.
+
+⚠ **CSV-mallen exporterar fortfarande standardkostnaden** även när en
+marknad är vald på sidan; importen skriver däremot till vald marknad. Att
+exportera marknadens kostnader i mallen är kvar att göra.
+
 ### Flera annonskonton per butik (2026-09-17, build flera-annonskonton-v87)
 
 Axels ask, med skärmbild av Inställningar: *"Jag vill kunna göra så att man

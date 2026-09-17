@@ -14,7 +14,12 @@
 
 import prisma from "../db.server";
 import { kontoId } from "./meta-login";
+import { marknadskod } from "./marknad";
 import type { MetaConfig } from "./meta.server";
+
+/** Nycklarna i stabil ordning, så två lika kartor jämförs lika. */
+const sorterat = (o: Record<string, string>) =>
+  Object.fromEntries(Object.entries(o).sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0)));
 
 export interface Annonskontorad {
   accountId: string;
@@ -22,6 +27,19 @@ export interface Annonskontorad {
   currency: string | null;
   campaignMode: string;
   campaignIds: string | null;
+  /** Kampanj → marknad (landskod). Tomt objekt = ingen märkning. */
+  campaignMarkets: Record<string, string>;
+}
+
+/** Städar en märkning: bara giltiga landskoder, bara icke-tomma kampanj-id:n. */
+export function stadaMarknader(ra: unknown): Record<string, string> {
+  const ut: Record<string, string> = {};
+  if (!ra || typeof ra !== "object") return ut;
+  for (const [id, m] of Object.entries(ra as Record<string, unknown>)) {
+    const kod = marknadskod(m);
+    if (id.trim() && kod) ut[id.trim()] = kod;
+  }
+  return ut;
 }
 
 /** Butikens konton i den ordning de kopplades. Tom lista = inget kopplat. */
@@ -36,6 +54,7 @@ export async function hamtaKonton(shop: string): Promise<Annonskontorad[]> {
     currency: r.currency,
     campaignMode: r.campaignMode ?? "all",
     campaignIds: r.campaignIds,
+    campaignMarkets: stadaMarknader(r.campaignMarkets),
   }));
 }
 
@@ -54,6 +73,7 @@ export function konfigurationer(konton: Annonskontorad[], token: string | null):
       campaignMode: k.campaignMode,
       campaignIds: k.campaignIds,
       spendCurrency: k.currency,
+      campaignMarkets: k.campaignMarkets,
     }));
 }
 
@@ -108,12 +128,18 @@ export async function taBortKonto(shop: string, raaId: string): Promise<void> {
   await speglaForstaKontot(shop);
 }
 
-/** Sparar kampanjfiltret för ETT konto. Returnerar om något faktiskt ändrades. */
+/**
+ * Sparar kampanjfiltret och kampanjernas marknadsmärkning för ETT konto.
+ * Returnerar om något faktiskt ändrades. Marknaderna sparas som en hel karta:
+ * det handlaren ser i formuläret är sanningen, en kampanj som tagits bort ur
+ * kartan är omärkt.
+ */
 export async function sparaKampanjfilter(
   shop: string,
   raaId: string,
   lage: string,
   ids: string | null,
+  marknader?: Record<string, string>,
 ): Promise<boolean> {
   const accountId = kontoId(raaId);
   if (!accountId) return false;
@@ -121,11 +147,13 @@ export async function sparaKampanjfilter(
     where: { shop_accountId: { shop, accountId } },
   });
   if (!fore) return false;
-  const bytt = (fore.campaignMode ?? "all") !== lage || (fore.campaignIds ?? null) !== ids;
+  const nyaMarknader = marknader ? stadaMarknader(marknader) : stadaMarknader(fore.campaignMarkets);
+  const marknadBytt = JSON.stringify(sorterat(nyaMarknader)) !== JSON.stringify(sorterat(stadaMarknader(fore.campaignMarkets)));
+  const bytt = (fore.campaignMode ?? "all") !== lage || (fore.campaignIds ?? null) !== ids || marknadBytt;
   if (!bytt) return false;
   await prisma.metaAdAccount.update({
     where: { shop_accountId: { shop, accountId } },
-    data: { campaignMode: lage, campaignIds: ids },
+    data: { campaignMode: lage, campaignIds: ids, campaignMarkets: nyaMarknader },
   });
   /* Cachade rader är räknade på det gamla filtret och är fel nu — men bara
      det här kontots rader. */

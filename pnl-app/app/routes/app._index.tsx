@@ -19,6 +19,7 @@ import {
   InlineStack,
   Layout,
   Page,
+  Select,
   Spinner,
   Text,
   TextField,
@@ -26,17 +27,19 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { compute, rangeWindow } from "../lib/pnl.server";
+import { compute, rangeWindow, slaIhopMarknader } from "../lib/pnl.server";
 import { applyCurrentCosts, dayInTz, fetchShopInfo, loadCatalog } from "../lib/shopify-data.server";
 import {
   bakgrundPagar,
   farStartaBakgrund,
+  kandaMarknader,
   markeraPagaende,
   readDaily,
   refreshDaily,
   refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
+import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { getSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -89,16 +92,24 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     to: url.searchParams.get("to") ?? today,
   });
 
+  /* Marknadsfiltret: ?market=NO visar bara Norges försäljning, Norges COGS
+     och kampanjerna märkta Norge. Tom = hela butiken, där COGS ändå räknas
+     per marknad när uppdelningen finns (perMarknad). */
+  const market = marknadskod(url.searchParams.get("market"));
+  const lasDagar = (f: string, tt: string) => readDaily(shop, f, tt, { market, perMarknad: true });
+
   /* Dagslagret: intervallet läses som färdiga dagsrader ur databasen —
      millisekunder oavsett datumval, det är hela snabbhetsmodellen. Bara dagar
      som ALDRIG hämtats exporteras synkront: första besöket ever, och morgonens
-     nya dag (som tar snabbvägen via paginering, ett par sekunder). */
-  let daily = await readDaily(shop, from, to);
+     nya dag (som tar snabbvägen via paginering, ett par sekunder). Under ett
+     marknadsfilter räknas även dagar utan uppdelning som ohämtade — de
+     exporteras om en gång, sedan bär de uppdelningen för alltid. */
+  let daily = await lasDagar(from, to);
   if (daily.missingDays.length) {
     const first = daily.missingDays[0];
     const last = daily.missingDays[daily.missingDays.length - 1];
     await refreshDaily(admin, shop, timezone, first, last);
-    daily = await readDaily(shop, from, to);
+    daily = await lasDagar(from, to);
   }
 
   /* Färskhet: intervallets sista dag är den som rör sig — äldre än 10 min
@@ -130,7 +141,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   if (gruppvy && forAldrad) {
     const senasteFrom = from > shiftIso(today, -2) ? from : shiftIso(today, -2);
     if (await refreshShopDaily(shop, senasteFrom, today, { force: true })) {
-      daily = await readDaily(shop, from, to);
+      daily = await lasDagar(from, to);
     }
   } else if (forAldrad && farStartaBakgrund(shop)) {
     refreshBg(from > shiftIso(today, -2) ? from : shiftIso(today, -2), today);
@@ -139,7 +150,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   }
   /* Allt nedan är oberoende av varandra — sekventiellt blev det fyra
      väntningar i rad där en räcker. */
-  const [costChanges, costTierRows, fixedRows, catalog, groupSize] = await Promise.all([
+  const [costChanges, costTierRows, fixedRows, catalog, groupSize, marknader] = await Promise.all([
     prisma.costChange.findMany({ where: { shop } }),
     prisma.costTier.findMany({ where: { shop } }),
     prisma.fixedCost.findMany({ where: { shop } }),
@@ -147,10 +158,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     settings.groupId
       ? prisma.shopSettings.count({ where: { groupId: settings.groupId } })
       : Promise.resolve(1),
+    kandaMarknader(shop, hemlandAv(settings.currency)),
   ]);
   const fixedMonthlyTotal = fixedRows.reduce((a, r) => a + Number(r.monthlyAmount), 0);
   const costTiers = costTierRows.map((c) => ({
-    variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost),
+    variantGid: c.variantGid, units: c.units, totalCost: Number(c.totalCost), market: c.market ?? "",
   }));
 
   /* Kostnaden läses om ur katalogen (5 min minnescache) istället för att tas
@@ -193,10 +205,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     to,
     today,
     settings.currency,
-    { tokenExpired },
+    { tokenExpired, market },
   );
 
   const metaConfigured = metaKonton.length > 0;
+  /* Under ett marknadsfilter måste minst en kampanj vara märkt med landet —
+     annars är annonskostnaden noll utan att något är fel, och vinsten för
+     Norge ser bättre ut än den är. Sägs rakt ut i stället. */
+  const marknadMarkt =
+    !market || metaKonton.some((k) => Object.values(k.campaignMarkets ?? {}).includes(market));
   /* Inloggad via Facebook men inget annonskonto valt än — halva steget. */
   const metaPending = Boolean(settings.metaAccessToken && !metaKonton.length);
   const metaLoginSource = settings.metaTokenSource === "login";
@@ -207,6 +224,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const spendTexter = t(lang).dashboard.spendErrors;
   const spendError: string | null = metaPending
     ? spendTexter[metaLoginSource ? "no-account" : "no-account-manual"]
+    : metaConfigured && !marknadMarkt
+      ? t(lang).dashboard.market.noCampaigns(marknadsnamn(market, lang, market))
     : spend.errorCode === "fetch-failed"
       ? spendTexter["fetch-failed"](spend.error?.replace(/^Could not fetch ad spend: /, "") ?? "")
       : spend.errorCode
@@ -228,22 +247,24 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     settings: Boolean(settings.settingsSavedAt),
   };
 
+  const costChangeRows = costChanges.map((c) => ({
+    productGid: c.productGid,
+    variantGid: c.variantGid,
+    unitCost: Number(c.unitCost),
+    effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10),
+    note: c.note,
+    market: c.market ?? "",
+  }));
   const result = compute({
     from,
     to,
-    spendReliable: metaConfigured && !spend.error,
+    spendReliable: metaConfigured && !spend.error && marknadMarkt,
     fixedMonthlyTotal,
     sales,
     sessions,
     spend: spend.days,
     products,
-    costChanges: costChanges.map((c) => ({
-      productGid: c.productGid,
-      variantGid: c.variantGid,
-      unitCost: Number(c.unitCost),
-      effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10),
-      note: c.note,
-    })),
+    costChanges: costChangeRows,
     costTiers,
     settings: {
       tariffPerOrder: Number(settings.tariffPerOrder),
@@ -251,6 +272,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       targetMargin: Number(settings.targetMargin),
     },
   });
+  /* Raderna är räknade per marknad (rätt kostnad per land) men visas per
+     variant — tabellen ska inte ha tre rader för samma motorhölje. */
+  result.products = slaIhopMarknader(result.products);
 
   /* Jämförelse: samma antal dagar direkt före perioden. Hämtas EFTER huvud-
      perioden (bulk-kön är en i taget) och får misslyckas tyst — en panel utan
@@ -260,7 +284,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     const dayCount = result.days.length;
     const prevTo = shiftIso(from, -1);
     const prevFrom = shiftIso(prevTo, -(dayCount - 1));
-    const prevData = await readDaily(shop, prevFrom, prevTo);
+    const prevData = await lasDagar(prevFrom, prevTo);
     /* Bara databasen — saknas jämförelsedagar fylls de i bakgrunden och syns
        vid nästa besök. De får aldrig kosta en synlig sekund. */
     if (prevData.missingDays.length) {
@@ -274,18 +298,15 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       throw new Error("jämförelsen fylls i bakgrunden");
     }
     const prevSpend = await getSpend(
-      shop, metaKonton, prevFrom, prevTo, today, settings.currency, { tokenExpired },
+      shop, metaKonton, prevFrom, prevTo, today, settings.currency, { tokenExpired, market },
     );
     const prev = compute({
       from: prevFrom, to: prevTo,
-      spendReliable: metaConfigured && !prevSpend.error,
+      spendReliable: metaConfigured && !prevSpend.error && marknadMarkt,
       fixedMonthlyTotal,
       sales: prevData.sales, sessions: [], spend: prevSpend.days,
       products: applyCurrentCosts(prevData.products, catalog),
-      costChanges: costChanges.map((c) => ({
-        productGid: c.productGid, variantGid: c.variantGid, unitCost: Number(c.unitCost),
-        effectiveFrom: c.effectiveFrom.toISOString().slice(0, 10), note: c.note,
-      })),
+      costChanges: costChangeRows,
       costTiers,
       settings: {
         tariffPerOrder: Number(settings.tariffPerOrder),
@@ -307,7 +328,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
      summan kostar ett antal databasfrågor och de flesta vill se sin egen
      butik. Antalet medlemmar räknas alltid, för kryssrutan ska bara finnas
      när det faktiskt finns något att summera. */
-  const visaAlla = gruppvy && groupSize > 1;
+  const visaAlla = gruppvy && groupSize > 1 && !market;
   const group = visaAlla
     ? await summeraGrupp(settings.groupId!, from, to, settings.currency, lang)
     : null;
@@ -345,6 +366,11 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     refreshing,
     result,
     rangeKey,
+    market,
+    marknader,
+    /* Dagar i fönstret som saknar uppdelning per marknad (landet nekades av
+       Shopify). Bara under filter — då är marknadens siffror för låga. */
+    daysWithoutMarkets: daily.daysWithoutMarkets,
     currency: settings.currency,
     /* Dagar kvar på Meta-token (null = okänd). Visas som varning i god tid —
        en token som dör tyst ger saknad annonskostnad och en vinst som ser
@@ -389,6 +415,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       refreshing: false,
       result: null as ReturnType<typeof compute> | null,
       rangeKey,
+      market: "",
+      marknader: [] as string[],
+      daysWithoutMarkets: 0,
       currency: "SEK",
       metaTokenDagar: null as number | null,
       spendError: null as string | null,
@@ -1064,7 +1093,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
+  const { fatal, result, rangeKey, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1171,7 +1200,7 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
 
   return (
     <Page
-      title={T.dashboard.title}
+      title={market ? `${T.dashboard.title} · ${marknadsnamn(market, lang, market)}` : T.dashboard.title}
       subtitle={`${result.from} – ${result.to}`}
       primaryAction={{
         content: T.dashboard.refresh,
@@ -1182,22 +1211,51 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
       <Layout>
         <Layout.Section>
           <BlockStack gap="400">
-            <InlineStack gap="200">
-              {/* Knappen omsluter badgen (inte tvärtom): Badge tar bara text
-                  som barn, och samma utseende fås med knappen utanpå. */}
-              {ranges.map(([k, label]) => (
-                <button
-                  key={k}
-                  type="button"
-                  style={{ all: "unset", cursor: "pointer" }}
-                  onClick={() => setParams({ range: k })}
-                >
-                  <Badge tone={k === rangeKey ? "info" : undefined}>{label}</Badge>
-                </button>
-              ))}
+            <InlineStack gap="300" blockAlign="center" wrap>
+              <InlineStack gap="200">
+                {/* Knappen omsluter badgen (inte tvärtom): Badge tar bara text
+                    som barn, och samma utseende fås med knappen utanpå.
+                    Marknaden följer med i adressen när datumet byts. */}
+                {ranges.map(([k, label]) => (
+                  <button
+                    key={k}
+                    type="button"
+                    style={{ all: "unset", cursor: "pointer" }}
+                    onClick={() => {
+                      const nya = new URLSearchParams(params);
+                      nya.set("range", k);
+                      setParams(nya);
+                    }}
+                  >
+                    <Badge tone={k === rangeKey ? "info" : undefined}>{label}</Badge>
+                  </button>
+                ))}
+              </InlineStack>
+              {/* Marknadsfiltret: bara Norge, bara USA. Visas när butiken sålt
+                  till mer än ett land (eller märkt en kampanj/kostnad med ett). */}
+              {marknader.length > 0 ? (
+                <div style={{ minWidth: 200 }}>
+                  <Select
+                    label={T.dashboard.market.label}
+                    labelHidden
+                    options={[
+                      { label: T.dashboard.market.all, value: "" },
+                      ...marknader.map((m) => ({ label: `${marknadsnamn(m, lang, m)} (${m})`, value: m })),
+                    ]}
+                    value={market}
+                    onChange={(v) => {
+                      const nya = new URLSearchParams(params);
+                      if (v) nya.set("market", v);
+                      else nya.delete("market");
+                      nya.delete("all");
+                      setParams(nya);
+                    }}
+                  />
+                </div>
+              ) : null}
             </InlineStack>
 
-            {groupSize > 1 ? (
+            {groupSize > 1 && !market ? (
               <Card background="bg-surface-secondary">
                 <BlockStack gap="300">
                   <Checkbox
@@ -1283,6 +1341,10 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
               <Text as="span" variant="bodySm" tone="subdued">
                 {T.dashboard.updatedAgo(dataAgeMin, refreshing)}
               </Text>
+            ) : null}
+
+            {market && daysWithoutMarkets > 0 ? (
+              <Banner tone="warning">{T.dashboard.market.daysWithout(daysWithoutMarkets)}</Banner>
             ) : null}
 
             {setup && !setup.dismissed && !setupAllDone ? (

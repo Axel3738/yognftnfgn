@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "flera-annonskonton-v87", db });
+  return json({ ok: true, build: "marknader-v88", db });
 }

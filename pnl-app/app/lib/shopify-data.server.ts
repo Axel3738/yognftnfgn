@@ -12,7 +12,8 @@
  */
 
 import type { AdminApiContext } from "@shopify/shopify-app-remix/server";
-import type { ProductRow, SalesDay } from "./pnl.server";
+import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
+import { marknadskod } from "./marknad";
 
 const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -87,6 +88,13 @@ export interface OrderData {
   products: ProductRow[];
   /** Mixen per dag — grunden för dagsraderna i DailyPnl. */
   productsByDay: Record<string, ProductRow[]>;
+  /**
+   * Samma dagar uppdelade per marknad (landskod ur leveransadressen):
+   * { "2026-09-17": { "SE": {...}, "NO": {...} } }. Ordrar utan land ligger
+   * under "". Null när landet inte gick att läsa (fältet nekades) — då
+   * skrivs ingen uppdelning, hellre än en där allt ligger under "okänt".
+   */
+  marketsByDay: Record<string, Record<string, MarknadsDel>> | null;
   /** Per order med kund — tom när frågan ställdes utan kundfältet. */
   kundOrdrar: KundOrderRa[];
 }
@@ -142,11 +150,26 @@ async function doFetchOrderData(
      upptar inte butikens enda bulk-plats. Långa fönster stryps av API:ts
      kostnadsmodell och måste ta bulk-vägen. */
   const dayCount = (Date.parse(to) - Date.parse(from)) / 86_400_000 + 1;
-  const jsonl =
-    dayCount <= 7
-      ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund)
-      : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund);
-  const data = parseOrderLines(jsonl, from, to, timezone);
+  /* Landet i leveransadressen ger marknaden. Skulle Shopify neka just det
+     fältet (skyddade kundfält) får ordrarna ändå hämtas — utan land, hellre
+     en panel utan marknadsuppdelning än ingen panel alls. */
+  let medLand = true;
+  let jsonl: any[];
+  try {
+    jsonl =
+      dayCount <= 7
+        ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund, true)
+        : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund, true);
+  } catch (e) {
+    if (!arAdressNekad(e)) throw e;
+    console.error(`Leveransadressen nekades för ${shopKey || "butiken"} — hämtar utan marknad:`, (e as Error).message);
+    medLand = false;
+    jsonl =
+      dayCount <= 7
+        ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund, false)
+        : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund, false);
+  }
+  const data = parseOrderLines(jsonl, from, to, timezone, medLand);
 
   const costs = await fetchVariantCosts(admin, shopKey);
   /* Kostnaden per orderrad sätts här, med samma katalog som produktmixen —
@@ -166,9 +189,23 @@ async function doFetchOrderData(
     productsByDay: Object.fromEntries(
       Object.entries(data.productsByDay).map(([d, rows]) => [d, applyCurrentCosts(rows, costs)]),
     ),
+    marketsByDay: data.marketsByDay
+      ? Object.fromEntries(
+          Object.entries(data.marketsByDay).map(([d, perMarknad]) => [
+            d,
+            Object.fromEntries(
+              Object.entries(perMarknad).map(([m, del]) => [m, { ...del, products: applyCurrentCosts(del.products, costs) }]),
+            ),
+          ]),
+        )
+      : null,
     kundOrdrar,
   };
 }
+
+/** Shopify nekade adressfältet (skyddad kunddata) — inte ett allmänt fel. */
+const arAdressNekad = (e: unknown) =>
+  /ACCESS_DENIED|not approved|protected customer|shippingAddress|billingAddress/i.test(String((e as Error)?.message ?? e));
 
 /** Bygger dags- och produktaggregat ur JSONL-rader (ordrar + radartiklar). */
 function parseOrderLines(
@@ -176,6 +213,7 @@ function parseOrderLines(
   from: string,
   to: string,
   timezone: string,
+  medLand = true,
 ): OrderData {
   const salesBy = new Map<string, SalesDay>();
   for (let d = from; d <= to; d = shiftIso(d, 1)) {
@@ -191,6 +229,39 @@ function parseOrderLines(
      (avbruten/test/utanför fönstret) ska inte in i mixen. */
   const counted = new Map<string, string>();
   const productByDay = new Map<string, Map<string, Agg>>();
+  /* Per marknad: samma aggregat en gång till, nyckel dag → land. Landet är
+     leveransadressens; saknas den (digital vara, upphämtning) tas fakturans.
+     Ordrar utan något land alls hamnar under "". */
+  const landPerOrder = new Map<string, string>();
+  const salesByMarknad = new Map<string, Map<string, SalesDay>>();
+  const productByDayMarknad = new Map<string, Map<string, Map<string, Agg>>>();
+  const marknadsHink = (day: string, land: string): SalesDay => {
+    const perLand = salesByMarknad.get(day) ?? new Map<string, SalesDay>();
+    salesByMarknad.set(day, perLand);
+    const hink = perLand.get(land) ?? {
+      day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
+      netSales: 0, totalSales: 0, shippingCharges: 0,
+    };
+    perLand.set(land, hink);
+    return hink;
+  };
+  const laggPaMix = (dayMap: Map<string, Agg>, key: string, line: any) => {
+    const agg = dayMap.get(key) ?? {
+      productGid: line.product?.id ?? "",
+      variantGid: line.variant?.id ?? null,
+      title: line.title,
+      variantTitle: line.variantTitle === "Default Title" ? null : line.variantTitle,
+      units: 0,
+      netSales: 0,
+      lines: {} as Record<string, number>,
+    };
+    agg.units += line.quantity ?? 0;
+    /* Hur många stycken låg i just den här raden? Det avgör flerpacks-
+       kostnaden — tre i en rad delar frakten, tre i tre ordrar gör det inte. */
+    if (line.quantity > 0) agg.lines[String(line.quantity)] = (agg.lines[String(line.quantity)] ?? 0) + 1;
+    agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
+    dayMap.set(key, agg);
+  };
   /* Per order, för kundvärdet. Fylls för alla räknade ordrar; anroparen
      avgör om kundfältet fanns med i frågan (customer saknas ⇒ gästorder). */
   const kundOrdrar = new Map<string, KundOrderRa>();
@@ -217,35 +288,39 @@ function parseOrderLines(
         lines: [],
       });
 
-      bucket.orders += 1;
-      bucket.grossSales += subtotal + discounts;
-      bucket.discounts += -discounts;
-      bucket.returns += -refunded;
-      bucket.netSales += subtotal - refunded;
-      bucket.totalSales += num(line.totalPriceSet?.shopMoney?.amount) - refunded;
-      bucket.shippingCharges += num(line.totalShippingPriceSet?.shopMoney?.amount);
+      const total = num(line.totalPriceSet?.shopMoney?.amount) - refunded;
+      const frakt = num(line.totalShippingPriceSet?.shopMoney?.amount);
+      const fyll = (b: SalesDay) => {
+        b.orders += 1;
+        b.grossSales += subtotal + discounts;
+        b.discounts += -discounts;
+        b.returns += -refunded;
+        b.netSales += subtotal - refunded;
+        b.totalSales += total;
+        b.shippingCharges += frakt;
+      };
+      fyll(bucket);
+      if (medLand) {
+        const land = marknadskod(line.shippingAddress?.countryCodeV2 ?? line.billingAddress?.countryCodeV2);
+        landPerOrder.set(line.id, land);
+        fyll(marknadsHink(day, land));
+      }
     } else {
       // Orderrad-artikel
       const day = counted.get(line.__parentId);
       if (!day) continue;
       const key = line.variant?.id ?? `${line.title}|${line.variantTitle ?? ""}`;
       const dayMap = productByDay.get(day) ?? new Map<string, Agg>();
-      const agg = dayMap.get(key) ?? {
-        productGid: line.product?.id ?? "",
-        variantGid: line.variant?.id ?? null,
-        title: line.title,
-        variantTitle: line.variantTitle === "Default Title" ? null : line.variantTitle,
-        units: 0,
-        netSales: 0,
-        lines: {} as Record<string, number>,
-      };
-      agg.units += line.quantity ?? 0;
-      /* Hur många stycken låg i just den här raden? Det avgör flerpacks-
-         kostnaden — tre i en rad delar frakten, tre i tre ordrar gör det inte. */
-      if (line.quantity > 0) agg.lines[String(line.quantity)] = (agg.lines[String(line.quantity)] ?? 0) + 1;
-      agg.netSales += num(line.discountedTotalSet?.shopMoney?.amount);
-      dayMap.set(key, agg);
+      laggPaMix(dayMap, key, line);
       productByDay.set(day, dayMap);
+      if (medLand) {
+        const land = landPerOrder.get(line.__parentId) ?? "";
+        const perLand = productByDayMarknad.get(day) ?? new Map<string, Map<string, Agg>>();
+        const landMap = perLand.get(land) ?? new Map<string, Agg>();
+        laggPaMix(landMap, key, line);
+        perLand.set(land, landMap);
+        productByDayMarknad.set(day, perLand);
+      }
       kundOrdrar.get(line.__parentId)?.lines.push({
         variantGid: line.variant?.id ?? null,
         quantity: line.quantity ?? 0,
@@ -256,19 +331,43 @@ function parseOrderLines(
 
   const productsByDay: Record<string, ProductRow[]> = {};
   for (const [day, m] of productByDay) productsByDay[day] = [...m.values()] as ProductRow[];
+
+  /* Uppdelningen per marknad. Dagar utan ordrar får ett tomt objekt — det
+     skiljer "uppdelad, men inget sålt" från "aldrig uppdelad" (null). */
+  let marketsByDay: OrderData["marketsByDay"] = null;
+  if (medLand) {
+    marketsByDay = {};
+    for (const d of salesBy.keys()) {
+      const perLand: Record<string, MarknadsDel> = {};
+      for (const [land, s] of salesByMarknad.get(d) ?? []) {
+        const { day: _dag, ...rest } = s;
+        perLand[land] = {
+          ...rest,
+          products: [...(productByDayMarknad.get(d)?.get(land)?.values() ?? [])] as ProductRow[],
+        };
+      }
+      marketsByDay[d] = perLand;
+    }
+  }
+
   return {
     sales: [...salesBy.values()],
     products: mergeProductRows(Object.values(productsByDay).flat()),
     productsByDay,
+    marketsByDay,
     kundOrdrar: [...kundOrdrar.values()],
   };
 }
 
-/** Slår ihop produktrader (samma variant över flera dagar) till en per variant. */
+/**
+ * Slår ihop produktrader (samma variant över flera dagar) till en per variant.
+ * Bär raderna en marknad hålls marknaderna isär — samma variant såld till
+ * Sverige och Norge blir två rader, för de ska räknas på olika kostnad.
+ */
 export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
   const by = new Map<string, ProductRow>();
   for (const r of rows) {
-    const key = r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`;
+    const key = `${r.market ?? ""} ${r.variantGid ?? `${r.title}|${r.variantTitle ?? ""}`}`;
     const agg = by.get(key);
     if (agg) {
       agg.units += r.units;
@@ -293,12 +392,18 @@ export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
 /* Kundfältet är det ENDA fältet i orderfrågorna som kräver en extra scope
    (read_customers). Det får bara med när anroparen vet att scopen finns. */
 const kundFalt = (kund: boolean) => (kund ? "customer { id }" : "");
+/* Landet i leveransadressen = marknaden. Bara landskoden begärs — inga namn,
+   gator eller postnummer, som är skyddade kundfält. Faktureringsadressen är
+   reserv för ordrar utan leverans (digitalt, upphämtning). */
+const landFalt = (land: boolean) =>
+  land ? "shippingAddress { countryCodeV2 } billingAddress { countryCodeV2 }" : "";
 
 async function runOrdersPaginated(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
   kund = false,
+  land = true,
 ): Promise<any[]> {
   const lines: any[] = [];
   let after: string | null = null;
@@ -311,6 +416,7 @@ async function runOrdersPaginated(
            nodes {
              id createdAt cancelledAt test
              ${kundFalt(kund)}
+             ${landFalt(land)}
              totalPriceSet { shopMoney { amount } }
              subtotalPriceSet { shopMoney { amount } }
              totalDiscountsSet { shopMoney { amount } }
@@ -386,12 +492,14 @@ async function runOrdersBulk(
   fromExclusive: string,
   toInclusive: string,
   kund = false,
+  land = true,
 ): Promise<any[]> {
   const inner = `{
     orders(query: "created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'") {
       edges { node {
         id createdAt cancelledAt test
         ${kundFalt(kund)}
+        ${landFalt(land)}
         totalPriceSet { shopMoney { amount } }
         subtotalPriceSet { shopMoney { amount } }
         totalDiscountsSet { shopMoney { amount } }

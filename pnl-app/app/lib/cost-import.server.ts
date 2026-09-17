@@ -8,6 +8,7 @@
 
 import type { Texts } from "./texts";
 import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, setUnitCost } from "./shopify-data.server";
+import { marknadskod } from "./marknad";
 
 export interface ImportResult {
   ok: boolean;
@@ -23,7 +24,16 @@ export async function importCostCsv(
   csv: string,
   effectiveFrom: string,
   T: Texts,
+  /**
+   * Marknad (landskod) kostnaderna gäller. Tom = standard: skrivs till
+   * Shopifys unitCost som förut. Satt = marknadskostnad: skrivs BARA till
+   * CostChange/CostTier med market — Shopify har inget fält för "kostnad till
+   * Norge", och att skriva dit hade skrivit över standarden för alla länder.
+   */
+  market = "",
 ): Promise<ImportResult> {
+  const marknad = marknadskod(market);
+  const datum = effectiveFrom || new Date().toISOString().slice(0, 10);
   /* Tålig radtolkning: semikolon är formatet, men text som passerat Excel
      kommer med tabbar och kommadecimaler. Sista kolumnen är alltid kostnaden. */
   const parseLine = (line: string) => {
@@ -104,34 +114,40 @@ export async function importCostCsv(
     }
 
     for (const target of targets) {
-      const res = await setUnitCost(admin, target.inventoryItemGid, row.cost);
-      if (!res.ok) {
-        skipped.push(`${target.productTitle} · ${target.variantTitle}: ${res.error}`);
-        continue;
+      if (!marknad) {
+        const res = await setUnitCost(admin, target.inventoryItemGid, row.cost);
+        if (!res.ok) {
+          skipped.push(`${target.productTitle} · ${target.variantTitle}: ${res.error}`);
+          continue;
+        }
       }
       applied.push(`${target.productTitle} · ${target.variantTitle}`);
 
-      /* Stegen ersätter variantens tidigare steg — filen är sanningen. En rad
-         utan steg rör dem inte, så en vanlig prislista raderar inga flerpack. */
+      /* Stegen ersätter variantens tidigare steg PÅ SAMMA MARKNAD — filen är
+         sanningen. En rad utan steg rör dem inte, så en vanlig prislista
+         raderar inga flerpack. */
       if (row.tiers.length) {
-        await prisma.costTier.deleteMany({ where: { shop: shop, variantGid: target.variantGid } });
+        await prisma.costTier.deleteMany({ where: { shop: shop, variantGid: target.variantGid, market: marknad } });
         await prisma.costTier.createMany({
           data: row.tiers.map((t) => ({
-            shop: shop, variantGid: target.variantGid, units: t.units, totalCost: t.totalCost,
+            shop: shop, variantGid: target.variantGid, units: t.units, totalCost: t.totalCost, market: marknad,
           })),
         });
       }
 
-      // Historik, så att äldre perioder räknas på den kostnad som gällde då.
-      if (effectiveFrom) {
+      /* Historik, så att äldre perioder räknas på den kostnad som gällde då.
+         För en marknad är posten dessutom SJÄLVA kostnaden (Shopify rörs
+         inte), så där skrivs den alltid — daterad idag om inget datum gavs. */
+      if (effectiveFrom || marknad) {
         await prisma.costChange.create({
           data: {
             shop: shop,
             productGid: target.productGid,
             variantGid: row.variant ? target.variantGid : null,
             unitCost: row.cost,
-            effectiveFrom: new Date(effectiveFrom),
-            note: T.costs.costNote(effectiveFrom),
+            effectiveFrom: new Date(datum),
+            note: T.costs.costNote(datum),
+            market: marknad,
           },
         });
       }

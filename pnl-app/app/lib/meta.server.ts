@@ -17,6 +17,7 @@ import prisma from "../db.server";
 import { sparaKontovaluta } from "./meta-konton.server";
 import { summeraDagar } from "./spend-summa";
 import { GRAPH_VERSION, kontoId } from "./meta-login";
+import { marknadskod } from "./marknad";
 
 const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
 
@@ -45,6 +46,23 @@ export interface MetaConfig {
    * mycket väl redovisa i SEK respektive USD.
    */
   spendCurrency?: string | null;
+  /**
+   * Kampanj → marknad (landskod): { "<kampanj-id>": "NO" }. Med minst en
+   * märkning hämtas kostnaden på kampanjnivå och skrivs som en rad per
+   * marknad och dag, så panelen kan filtrera "bara Norge". Omärkta kampanjer
+   * hamnar på marknaden "". Null/tomt = hela kontot på "".
+   */
+  campaignMarkets?: Record<string, string> | null;
+}
+
+/** Marknaden en kampanj är märkt med. "" = omärkt. */
+function kampanjMarknad(cfg: MetaConfig, campaignId: string): string {
+  return marknadskod(cfg.campaignMarkets?.[campaignId]);
+}
+
+/** Finns någon marknadsmärkning alls? Då måste svaret komma per kampanj. */
+function harMarknader(cfg: MetaConfig): boolean {
+  return Object.values(cfg.campaignMarkets ?? {}).some((m) => marknadskod(m));
 }
 
 /** ID:n som filtret faktiskt gäller. Tom lista = inget filter. */
@@ -141,32 +159,35 @@ async function hamtaInsightSpann(
   since: string,
   until: string,
   filtering: string | null,
+  kampanjniva: boolean,
 ): Promise<Insight[]> {
   const url = new URL(`${GRAPH}/${kontoNamn(cfg.adAccountId)}/insights`);
-  /* Utan filter: kontonivå, en rad per dag — oförändrat sedan v1 och det
-     billigaste Meta kan svara. Med filter: kampanjnivå, för då måste svaret
-     gå att kontrollera rad för rad (och summeras per dag här nere). */
+  /* Kontonivå: en rad per dag — oförändrat sedan v1 och det billigaste Meta
+     kan svara. Kampanjnivå krävs av två skäl: ett kampanjfilter (svaret ska
+     kontrolleras rad för rad) eller en marknadsmärkning (kostnaden ska delas
+     per land). Summeras per dag här nere i båda fallen. */
   url.searchParams.set(
     "fields",
-    filtering ? "campaign_id,spend,impressions,clicks,account_currency" : "spend,impressions,clicks,account_currency",
+    kampanjniva ? "campaign_id,spend,impressions,clicks,account_currency" : "spend,impressions,clicks,account_currency",
   );
   url.searchParams.set("time_range", JSON.stringify({ since, until }));
   url.searchParams.set("time_increment", "1");
-  url.searchParams.set("level", filtering ? "campaign" : "account");
+  url.searchParams.set("level", kampanjniva ? "campaign" : "account");
   if (filtering) url.searchParams.set("filtering", filtering);
   url.searchParams.set("limit", "500");
 
   /* Timeout: det här anropet awaitas numera även i gruppsummeringen — utan
      gräns blir ett hängt Meta-svar en panel som aldrig laddar. */
-  return graphSidor(url, cfg.accessToken, filtering ? 40 : 3, 15_000) as Promise<Insight[]>;
+  return graphSidor(url, cfg.accessToken, kampanjniva ? 40 : 3, 15_000) as Promise<Insight[]>;
 }
 
-/** Månadsbitar när filtret är på — annars spränger radantalet sidtaket. */
+/** Månadsbitar när svaret är per kampanj — annars spränger radantalet sidtaket. */
 const SPANN_DAGAR = 31;
 
 async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
   const filtering = filterParam(cfg);
-  if (!filtering) return hamtaInsightSpann(cfg, since, until, null);
+  const kampanjniva = Boolean(filtering) || harMarknader(cfg);
+  if (!kampanjniva) return hamtaInsightSpann(cfg, since, until, null, false);
 
   /* Kampanjnivå ger dagar × kampanjer rader: 90 dagar och 200 kampanjer är
      18 000 rader, långt bortom vad ett anrop orkar paginera. Spannet delas
@@ -177,7 +198,7 @@ async function fetchInsights(cfg: MetaConfig, since: string, until: string): Pro
   while (start <= until) {
     const kant = shiftIso(start, SPANN_DAGAR - 1);
     const slut = kant < until ? kant : until;
-    ut.push(...(await hamtaInsightSpann(cfg, start, slut, filtering)));
+    ut.push(...(await hamtaInsightSpann(cfg, start, slut, filtering, true)));
     start = shiftIso(slut, 1);
   }
   return ut;
@@ -316,6 +337,7 @@ const iso = (d: Date) => d.toISOString().slice(0, 10);
 interface SpendRad {
   day: Date;
   account: string;
+  market: string;
   spend: unknown;
   spendRaw: unknown;
   fxRate: unknown;
@@ -329,6 +351,7 @@ const summerbara = (rader: SpendRad[]) =>
   rader.map((r) => ({
     day: iso(r.day),
     account: r.account,
+    market: r.market,
     spend: Number(r.spend),
     impressions: r.impressions,
     clicks: r.clicks,
@@ -376,8 +399,11 @@ export async function getSpend(
       stället för att servera gamla rader och hämta i bakgrunden (panelen).
       tokenExpired: anroparen VET att token gått ut (metaTokenExpiresAt har
       passerat) — då görs inget dömt anrop, och den dag som fortfarande rör
-      sig serveras inte som om den vore färdig. */
-  opts?: { syncFresh?: boolean; tokenExpired?: boolean },
+      sig serveras inte som om den vore färdig.
+      market: bara raderna märkta med den marknaden (landskod). Kampanjer
+      utan märkning ligger på "" och räknas då inte med — de syns bara i
+      vyn för alla marknader. */
+  opts?: { syncFresh?: boolean; tokenExpired?: boolean; market?: string },
 ): Promise<{
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
@@ -420,7 +446,8 @@ export async function getSpend(
   }
 
   const kopplade = new Set(alla.map((c) => c.adAccountId));
-  const fresh = (await las()).filter((r) => kopplade.has(r.account));
+  const marknad = marknadskod(opts?.market);
+  const fresh = (await las()).filter((r) => kopplade.has(r.account) && (!marknad || r.market === marknad));
 
   /* Facit är raderna som serveras: ligger det en oomräknad rad med belopp kvar
      för ett konto ska varningen visas, oavsett vilken väg dit vi tog. */
@@ -467,7 +494,10 @@ async function hamtaEttKonto(
 ): Promise<Kontoutfall> {
   const konto = cfg.adAccountId;
   const mina = cached.filter((r) => r.account === konto);
-  const byDay = new Map(mina.map((r) => [iso(r.day), r]));
+  /* Flera marknadsrader per dag skrivs alltid i samma vända, så färskheten
+     kan läsas ur vilken som helst av dem. */
+  const byDay = new Map<string, SpendRad>();
+  for (const r of mina) if (!byDay.has(iso(r.day))) byDay.set(iso(r.day), r);
 
   /* Valutan lagras första gången den är känd och jämförs sedan vid varje
      laddning. Utan lagringen syntes krocken bara de gånger panelen råkade
@@ -644,48 +674,57 @@ async function refreshSpend(
      id betyder att filtret inte tillämpades, och då är hela kontots kostnad
      på väg in i butikens vinst. Hellre ett fel i panelen än en tyst lögn. */
   const tillat = kampanjPredikat(cfg);
-  const perDag = new Map<string, { raw: number; impressions: number; clicks: number }>();
+  const marknader = harMarknader(cfg);
+  /* Per dag OCH marknad. Utan märkning finns bara marknaden "" och det blir
+     exakt en rad per dag, som förut. */
+  const perDag = new Map<string, Map<string, { raw: number; impressions: number; clicks: number }>>();
   for (const r of rows) {
-    if (tillat) {
+    if (tillat || marknader) {
       if (!r.campaign_id) {
         throw new MetaError("Meta returned ad spend without campaign id — the campaign filter could not be applied.");
       }
-      if (!tillat(String(r.campaign_id))) continue;
+      if (tillat && !tillat(String(r.campaign_id))) continue;
     }
-    const dag = perDag.get(r.date_start) ?? { raw: 0, impressions: 0, clicks: 0 };
-    dag.raw += Number(r.spend ?? 0) || 0;
-    dag.impressions += parseInt(r.impressions ?? "0", 10) || 0;
-    dag.clicks += parseInt(r.clicks ?? "0", 10) || 0;
-    perDag.set(r.date_start, dag);
+    const marknad = marknader ? kampanjMarknad(cfg, String(r.campaign_id)) : "";
+    const dagens = perDag.get(r.date_start) ?? new Map();
+    const hink = dagens.get(marknad) ?? { raw: 0, impressions: 0, clicks: 0 };
+    hink.raw += Number(r.spend ?? 0) || 0;
+    hink.impressions += parseInt(r.impressions ?? "0", 10) || 0;
+    hink.clicks += parseInt(r.clicks ?? "0", 10) || 0;
+    dagens.set(marknad, hink);
+    perDag.set(r.date_start, dagens);
   }
 
   /* Raden hör till ETT konto. Utan kontot i nyckeln skrev butikens andra
      annonskonto över det förstas dag, och hälften av annonskostnaden försvann
-     utan att något såg fel ut. */
+     utan att något såg fel ut. Dagens rader skrivs om i sin helhet (radera +
+     skriv i en transaktion): en kampanj som flyttats till en annan marknad
+     ska inte lämna sin gamla marknadsrad kvar och räknas två gånger. */
   const konto = kontoId(cfg.adAccountId);
-  for (const [day, v] of perDag) {
-    const rate = needsFx ? rateFor(rates, day) : undefined;
-    const rec = {
-      spend: rate ? v.raw * rate : v.raw,
-      spendRaw: needsFx ? v.raw : null,
-      fxRate: rate ?? null,
-      impressions: v.impressions,
-      clicks: v.clicks,
-    };
-    await prisma.dailySpend.upsert({
-      where: { shop_day_account: { shop, day: new Date(day), account: konto } },
-      create: { shop, day: new Date(day), account: konto, ...rec },
-      update: { ...rec, fetchedAt: new Date() },
-    });
-  }
+  const nu = new Date();
   const nollrad = { spend: 0, spendRaw: null, fxRate: null, impressions: 0, clicks: 0 };
   for (const day of stale) {
-    if (perDag.has(day)) continue;
-    await prisma.dailySpend.upsert({
-      where: { shop_day_account: { shop, day: new Date(day), account: konto } },
-      create: { shop, day: new Date(day), account: konto, ...nollrad },
-      update: { fetchedAt: new Date() },
-    });
+    const dagens = perDag.get(day);
+    const rate = needsFx ? rateFor(rates, day) : undefined;
+    const nya = dagens
+      ? [...dagens.entries()].map(([market, v]) => ({
+          shop,
+          day: new Date(day),
+          account: konto,
+          market,
+          spend: rate ? v.raw * rate : v.raw,
+          spendRaw: needsFx ? v.raw : null,
+          fxRate: rate ?? null,
+          impressions: v.impressions,
+          clicks: v.clicks,
+          fetchedAt: nu,
+        }))
+      : /* Ingen leverans den dagen: en NOLLRAD, annars jagas dagen för evigt. */
+        [{ shop, day: new Date(day), account: konto, market: "", ...nollrad, fetchedAt: nu }];
+    await prisma.$transaction([
+      prisma.dailySpend.deleteMany({ where: { shop, account: konto, day: new Date(day) } }),
+      prisma.dailySpend.createMany({ data: nya }),
+    ]);
   }
   return fxOk;
 }

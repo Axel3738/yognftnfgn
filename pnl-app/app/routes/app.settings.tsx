@@ -59,6 +59,8 @@ import {
   taBortKonto,
 } from "../lib/meta-konton.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
+import { kandaMarknader } from "../lib/daily.server";
+import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader } from "../lib/marknad";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
@@ -107,10 +109,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
       saknasIListan: Boolean(konton && !live),
       campaignMode: k.campaignMode ?? "all",
       campaignIds: (k.campaignIds ?? "").split(",").map((x) => x.trim()).filter(Boolean),
+      campaignMarkets: k.campaignMarkets,
     };
   });
+  /* Marknaderna butiken sålt till (plus dem som redan har kostnad eller
+     märkt kampanj) — valen i "Marknad" per kampanj. */
+  const marknader = await kandaMarknader(session.shop, hemlandAv(s.currency));
 
   return json({
+    marknader,
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
     feeRate: Number(s.feeRate),
@@ -216,9 +223,18 @@ export async function action({ request }: ActionFunctionArgs) {
        menar, och en tyst nolla är den dyraste lögnen panelen kan berätta. */
     const lage = (onskatLage === "include" || onskatLage === "exclude") && valda.length ? onskatLage : "all";
     const ids = lage === "all" ? null : valda.join(",");
+    /* Marknad per kampanj: { "<kampanj-id>": "NO" }. Skräp filtreras i
+       sparaKampanjfilter; ett trasigt JSON räknas som "ingen ändring". */
+    let marknader: Record<string, string> | undefined;
+    try {
+      const ra = JSON.parse(String(f.get("campaignMarkets") ?? "null"));
+      if (ra && typeof ra === "object") marknader = ra as Record<string, string>;
+    } catch {
+      marknader = undefined;
+    }
     /* Cachade DailySpend-rader för DET HÄR kontot är räknade på det gamla
        filtret och är fel nu — de andra kontonas rader rörs inte. */
-    if (await sparaKampanjfilter(session.shop, konto, lage, ids)) glomMetaFel(session.shop);
+    if (await sparaKampanjfilter(session.shop, konto, lage, ids, marknader)) glomMetaFel(session.shop);
     return json({ ok: true, message: T.settings.campaigns.saved });
   }
 
@@ -658,6 +674,7 @@ export default function Settings() {
                       butiksValuta={d.currency}
                       lang={d.lang}
                       kanTaBort={d.hasMetaToken}
+                      marknader={d.marknader}
                     />
                   ))}
                 </BlockStack>
@@ -796,6 +813,7 @@ type KopplatKonto = {
   saknasIListan: boolean;
   campaignMode: string;
   campaignIds: string[];
+  campaignMarkets: Record<string, string>;
 };
 
 /**
@@ -808,11 +826,14 @@ function KontoRad({
   butiksValuta,
   lang,
   kanTaBort,
+  marknader,
 }: {
   konto: KopplatKonto;
   butiksValuta: string;
   lang: Lang;
   kanTaBort: boolean;
+  /** Kända marknader (landskoder) att välja bland per kampanj. */
+  marknader: string[];
 }) {
   const T = t(lang);
   const kampanjFetcher = useFetcher<typeof action>();
@@ -821,6 +842,24 @@ function KontoRad({
   const [oppen, setOppen] = useState(false);
   const [lage, setLage] = useState<string>(konto.campaignMode);
   const [valda, setValda] = useState<string[]>(konto.campaignIds);
+  /* Marknad per kampanj. Listan kan utökas med en landskod som inte sålt än
+     ("JP" innan första japanska ordern) — annars går kampanjen inte att märka
+     förrän det finns data, och då är det för sent att ha delat kostnaden. */
+  const [marknadPer, setMarknadPer] = useState<Record<string, string>>(konto.campaignMarkets);
+  const [nyMarknad, setNyMarknad] = useState("");
+  const [extraMarknader, setExtraMarknader] = useState<string[]>([]);
+  const allaMarknader = sorteraMarknader([...marknader, ...extraMarknader, ...Object.values(marknadPer)]);
+  const marknadsval = [
+    { label: T.settings.campaigns.marketNone, value: "" },
+    ...allaMarknader.map((m) => ({ label: `${marknadsnamn(m, lang, m)} (${m})`, value: m })),
+  ];
+  const laggTillMarknad = () => {
+    const kod = marknadskod(nyMarknad);
+    if (!kod) return;
+    setExtraMarknader((x) => [...x, kod]);
+    setNyMarknad("");
+  };
+  const antalMarkta = Object.values(marknadPer).filter(Boolean).length;
 
   const svar = kampanjFetcher.data as unknown as { ok?: boolean; kampanjer?: Kampanj[] } | undefined;
   const kampanjer = svar?.kampanjer ?? [];
@@ -860,6 +899,7 @@ function KontoRad({
         accountId: konto.accountId,
         campaignMode: lage,
         campaignIds: lage === "all" ? "" : valda.join(","),
+        campaignMarkets: JSON.stringify(marknadPer),
       },
       { method: "POST" },
     );
@@ -907,7 +947,10 @@ function KontoRad({
             butik ska aldrig se sin annonskostnad ändras för att funktionen kom
             till. */}
         <InlineStack gap="300" blockAlign="center" wrap>
-          <Text as="span" variant="bodySm">{sammanfattning}</Text>
+          <Text as="span" variant="bodySm">
+            {sammanfattning}
+            {antalMarkta ? ` · ${T.settings.campaigns.marketsSummary(antalMarkta)}` : ""}
+          </Text>
           <Button variant="plain" disclosure={oppen ? "up" : "down"} onClick={vaxla}>
             {oppen ? T.settings.campaigns.close : T.settings.campaigns.open}
           </Button>
@@ -931,33 +974,88 @@ function KontoRad({
                 {T.settings.campaigns.failed}
               </Banner>
             ) : null}
-            {lage === "all" ? null : laddar ? (
+            {/* Marknad per kampanj: vilket land kampanjen annonserar mot. Med
+                märkningen delas kontots kostnad per land, och panelen kan visa
+                "bara Norge". Visas alltid — även i läget "alla kampanjer". */}
+            <BlockStack gap="100">
+              <Text as="h4" variant="headingSm">{T.settings.campaigns.marketTitle}</Text>
+              <Text as="p" variant="bodySm" tone="subdued">{T.settings.campaigns.marketBody}</Text>
+              <InlineStack gap="200" blockAlign="end" wrap>
+                <div style={{ width: 200 }}>
+                  <TextField
+                    label={T.settings.campaigns.marketAddLabel}
+                    value={nyMarknad}
+                    onChange={setNyMarknad}
+                    autoComplete="off"
+                    placeholder="JP"
+                    maxLength={2}
+                  />
+                </div>
+                <Button disabled={!marknadskod(nyMarknad)} onClick={laggTillMarknad}>
+                  {T.settings.campaigns.marketAdd}
+                </Button>
+              </InlineStack>
+            </BlockStack>
+            {laddar ? (
               <Text as="p" tone="subdued">{T.settings.campaigns.loading}</Text>
             ) : rader.length ? (
-              <BlockStack gap="150">
-                <InlineStack gap="300">
-                  <Button variant="plain" onClick={() => setValda(rader.map((k) => k.id))}>
-                    {T.settings.campaigns.selectAll}
-                  </Button>
-                  <Button variant="plain" onClick={() => setValda([])}>
-                    {T.settings.campaigns.selectNone}
-                  </Button>
-                </InlineStack>
+              <BlockStack gap="200">
+                {lage === "all" ? null : (
+                  <InlineStack gap="300">
+                    <Button variant="plain" onClick={() => setValda(rader.map((k) => k.id))}>
+                      {T.settings.campaigns.selectAll}
+                    </Button>
+                    <Button variant="plain" onClick={() => setValda([])}>
+                      {T.settings.campaigns.selectNone}
+                    </Button>
+                  </InlineStack>
+                )}
                 {rader.map((k) => (
-                  <Checkbox
-                    key={k.id}
-                    label={k.name}
-                    checked={valda.includes(k.id)}
-                    onChange={(kryssad) =>
-                      setValda((v) => (kryssad ? [...v, k.id] : v.filter((x) => x !== k.id)))
-                    }
-                    helpText={
-                      (k.spend30 > 0
-                        ? T.settings.campaigns.spend30(nf.format(k.spend30), konto.currency)
-                        : T.settings.campaigns.noSpend) +
-                      (k.status && k.status !== "ACTIVE" ? ` · ${k.status}` : "")
-                    }
-                  />
+                  <InlineStack key={k.id} gap="300" blockAlign="center" wrap>
+                    <div style={{ flex: "1 1 260px", minWidth: 220 }}>
+                      {lage === "all" ? (
+                        <BlockStack gap="050">
+                          <Text as="span" variant="bodyMd">{k.name}</Text>
+                          <Text as="span" variant="bodySm" tone="subdued">
+                            {(k.spend30 > 0
+                              ? T.settings.campaigns.spend30(nf.format(k.spend30), konto.currency)
+                              : T.settings.campaigns.noSpend) +
+                              (k.status && k.status !== "ACTIVE" ? ` · ${k.status}` : "")}
+                          </Text>
+                        </BlockStack>
+                      ) : (
+                        <Checkbox
+                          label={k.name}
+                          checked={valda.includes(k.id)}
+                          onChange={(kryssad) =>
+                            setValda((v) => (kryssad ? [...v, k.id] : v.filter((x) => x !== k.id)))
+                          }
+                          helpText={
+                            (k.spend30 > 0
+                              ? T.settings.campaigns.spend30(nf.format(k.spend30), konto.currency)
+                              : T.settings.campaigns.noSpend) +
+                            (k.status && k.status !== "ACTIVE" ? ` · ${k.status}` : "")
+                          }
+                        />
+                      )}
+                    </div>
+                    <div style={{ width: 210 }}>
+                      <Select
+                        label={T.settings.campaigns.marketLabel}
+                        labelHidden
+                        options={marknadsval}
+                        value={marknadPer[k.id] ?? ""}
+                        onChange={(v) =>
+                          setMarknadPer((m) => {
+                            const ny = { ...m };
+                            if (v) ny[k.id] = v;
+                            else delete ny[k.id];
+                            return ny;
+                          })
+                        }
+                      />
+                    </div>
+                  </InlineStack>
                 ))}
               </BlockStack>
             ) : fel ? null : (

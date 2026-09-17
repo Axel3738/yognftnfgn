@@ -33,6 +33,8 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
+import { kandaMarknader } from "../lib/daily.server";
+import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { asLang, localeOf, t } from "../lib/texts";
 
 const gid = (id: string) => `gid://shopify/Product/${id}`;
@@ -57,9 +59,11 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
       orderBy: { units: "asc" },
     }),
   ]);
+  const marknader = await kandaMarknader(session.shop, hemlandAv(settings?.currency));
 
   return json({
     lang: asLang(settings?.language),
+    marknader,
     title: variants[0].productTitle,
     variants: variants.map((v) => ({
       variantGid: v.variantGid,
@@ -72,10 +76,12 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
       variantGid: r.variantGid,
       units: r.units,
       totalCost: Number(r.totalCost),
+      market: r.market ?? "",
     })),
     history: history.map((h) => ({
       id: h.id,
       variantGid: h.variantGid,
+      market: h.market ?? "",
       unitCost: Number(h.unitCost),
       productCost: h.productCost == null ? null : Number(h.productCost),
       shippingCost: h.shippingCost == null ? null : Number(h.shippingCost),
@@ -106,6 +112,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
     const units = Math.round(num(form.get("units")));
     const totalCost = num(form.get("totalCost"));
     const forVariant = String(form.get("variantGid") ?? "");
+    const market = marknadskod(form.get("market"));
     if (!(units >= 2) || !Number.isFinite(totalCost) || totalCost < 0) {
       return json({ ok: false, message: T.costDetail.tierInvalid }, { status: 400 });
     }
@@ -116,8 +123,8 @@ export async function action({ request, params }: ActionFunctionArgs) {
     await prisma.$transaction(
       targets.map((v) =>
         prisma.costTier.upsert({
-          where: { shop_variantGid_units: { shop: session.shop, variantGid: v.variantGid, units } },
-          create: { shop: session.shop, variantGid: v.variantGid, units, totalCost },
+          where: { shop_variantGid_units_market: { shop: session.shop, variantGid: v.variantGid, units, market } },
+          create: { shop: session.shop, variantGid: v.variantGid, units, totalCost, market },
           update: { totalCost },
         }),
       ),
@@ -136,6 +143,9 @@ export async function action({ request, params }: ActionFunctionArgs) {
   const shippingCost = num(form.get("shippingCost"));
   const effectiveFrom = String(form.get("effectiveFrom") ?? "");
   const variantGid = String(form.get("variantGid") ?? "");
+  /* Marknad: tom = standard, skrivs även till Shopify. Satt = bara vår post,
+     Shopify har inget fält för "kostnad till Norge". */
+  const market = marknadskod(form.get("market"));
 
   if (!Number.isFinite(productCost) || !Number.isFinite(shippingCost)) {
     return json({ ok: false, message: T.costDetail.fillBoth }, { status: 400 });
@@ -151,9 +161,11 @@ export async function action({ request, params }: ActionFunctionArgs) {
   );
 
   const failed: string[] = [];
-  for (const t of targets) {
-    const res = await setUnitCost(admin, t.inventoryItemGid, total);
-    if (!res.ok) failed.push(`${t.variantTitle}: ${res.error}`);
+  if (!market) {
+    for (const t of targets) {
+      const res = await setUnitCost(admin, t.inventoryItemGid, total);
+      if (!res.ok) failed.push(`${t.variantTitle}: ${res.error}`);
+    }
   }
 
   await prisma.costChange.create({
@@ -166,6 +178,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
       shippingCost,
       effectiveFrom: new Date(effectiveFrom),
       note: T.costDetail.costNote(productCost.toFixed(2), shippingCost.toFixed(2)),
+      market,
     },
   });
 
@@ -180,10 +193,10 @@ export async function action({ request, params }: ActionFunctionArgs) {
 }
 
 export default function ProductCost() {
-  const { lang, title, variants, history, tiers } = useLoaderData<typeof loader>();
+  const { lang, marknader, title, variants, history, tiers } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const tierFetcher = useFetcher<typeof action>();
-  const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "" });
+  const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "", market: "" });
   const setTierField = (k: keyof typeof tier) => (val: string) => setTier((s) => ({ ...s, [k]: val }));
   const today = new Date().toISOString().slice(0, 10);
   const [v, setV] = useState({
@@ -191,9 +204,15 @@ export default function ProductCost() {
     shippingCost: "",
     effectiveFrom: today,
     variantGid: "",
+    market: "",
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(lang);
+  const marknadsval = [
+    { label: T.costs.market.standard, value: "" },
+    ...marknader.map((m) => ({ label: `${marknadsnamn(m, lang, m)} (${m})`, value: m })),
+  ];
+  const marknadsetikett = (m: string) => (m ? `${marknadsnamn(m, lang, m)} (${m})` : T.costs.market.standardShort);
 
   const nf = new Intl.NumberFormat(localeOf(lang), { minimumFractionDigits: 2 });
   const dec = (s: string) => (lang === "sv" ? s.replace(".", ",") : s);
@@ -231,17 +250,30 @@ export default function ProductCost() {
                 </div>
               </InlineStack>
 
-              {variants.length > 1 ? (
-                <Select
-                  label={T.costDetail.appliesTo}
-                  options={[
-                    { label: T.costDetail.allVariants(variants.length), value: "" },
-                    ...variants.map((x) => ({ label: x.variantTitle, value: x.variantGid })),
-                  ]}
-                  value={v.variantGid}
-                  onChange={set("variantGid")}
-                />
-              ) : null}
+              <InlineStack gap="300" wrap>
+                {variants.length > 1 ? (
+                  <div style={{ minWidth: 200, flex: 1 }}>
+                    <Select
+                      label={T.costDetail.appliesTo}
+                      options={[
+                        { label: T.costDetail.allVariants(variants.length), value: "" },
+                        ...variants.map((x) => ({ label: x.variantTitle, value: x.variantGid })),
+                      ]}
+                      value={v.variantGid}
+                      onChange={set("variantGid")}
+                    />
+                  </div>
+                ) : null}
+                <div style={{ minWidth: 200, flex: 1 }}>
+                  <Select
+                    label={T.costs.market.label}
+                    options={marknadsval}
+                    value={v.market}
+                    onChange={set("market")}
+                    helpText={v.market ? T.costs.market.entryHelpMarket : T.costs.market.entryHelpStandard}
+                  />
+                </div>
+              </InlineStack>
 
               <Banner tone={p + f > 0 ? "info" : undefined}>
                 {p + f > 0
@@ -311,6 +343,9 @@ export default function ProductCost() {
                     />
                   </div>
                 ) : null}
+                <div style={{ minWidth: 180 }}>
+                  <Select label={T.costs.market.label} options={marknadsval} value={tier.market} onChange={setTierField("market")} />
+                </div>
                 <Button variant="primary" loading={tierFetcher.state !== "idle"}
                   onClick={() => tierFetcher.submit({ ...tier, intent: "tier" }, { method: "POST" })}>
                   {T.costDetail.tierAdd}
@@ -323,16 +358,17 @@ export default function ProductCost() {
 
               {tiers.length ? (
                 <DataTable
-                  columnContentTypes={["text", "numeric", "numeric", "numeric", "text"]}
-                  headings={[T.costDetail.thVariant, T.costDetail.thUnits, T.costDetail.thTotal, T.costDetail.thPerUnit, ""]}
+                  columnContentTypes={["text", "text", "numeric", "numeric", "numeric", "text"]}
+                  headings={[T.costDetail.thVariant, T.costs.market.label, T.costDetail.thUnits, T.costDetail.thTotal, T.costDetail.thPerUnit, ""]}
                   rows={variants.flatMap((x) => {
                     const mine = tiers.filter((r) => r.variantGid === x.variantGid);
                     if (!mine.length) return [];
                     return [
-                      [x.variantTitle, T.costDetail.oneUnit, x.unitCost == null ? "—" : nf.format(x.unitCost),
+                      [x.variantTitle, T.costs.market.standardShort, T.costDetail.oneUnit, x.unitCost == null ? "—" : nf.format(x.unitCost),
                         x.unitCost == null ? "—" : nf.format(x.unitCost), ""],
                       ...mine.map((r) => [
                         x.variantTitle,
+                        marknadsetikett(r.market),
                         String(r.units),
                         nf.format(r.totalCost),
                         nf.format(r.totalCost / r.units),
@@ -358,10 +394,11 @@ export default function ProductCost() {
             </div>
             {history.length ? (
               <DataTable
-                columnContentTypes={["text", "text", "numeric", "numeric", "numeric", "text"]}
+                columnContentTypes={["text", "text", "text", "numeric", "numeric", "numeric", "text"]}
                 headings={[
                   T.costDetail.thEffectiveFrom,
                   T.costDetail.thApplies,
+                  T.costs.market.label,
                   T.costDetail.thGoods,
                   T.costDetail.thShipping,
                   T.costDetail.thTotal,
@@ -372,6 +409,7 @@ export default function ProductCost() {
                   h.variantGid
                     ? variants.find((x) => x.variantGid === h.variantGid)?.variantTitle ?? T.costDetail.aVariant
                     : T.costDetail.allVariantsShort,
+                  marknadsetikett(h.market),
                   h.productCost == null ? "—" : nf.format(h.productCost),
                   h.shippingCost == null ? "—" : nf.format(h.shippingCost),
                   nf.format(h.unitCost),

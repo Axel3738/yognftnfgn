@@ -50,7 +50,14 @@ HISTORIK: ändrar man kostnaden på produktsidan med ett "från och med"-datum r
 
 ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto. Utan koppling är annonskostnaden 0 och panelen är gulmarkerad "Annonskostnad saknas". Det finns en exempelvideo vid knappen.
 
-FLERA BUTIKER I SAMMA ANNONSKONTO: Inställningar → Meta-kortet → "Vilka kampanjer ska räknas?" → "Välj kampanjer". Där väljer man antingen "Alla kampanjer i kontot" (standard), "Bara kampanjerna jag väljer" eller "Alla utom kampanjerna jag väljer", kryssar i kampanjerna (varje rad visar kostnaden senaste 30 dagarna i annonskontots valuta) och klickar "Spara valet". Annonskostnaden räknas då om från grunden; siffrorna kan ta en stund att fyllas på igen. Byter man annonskonto nollställs valet.
+FLERA ANNONSKONTON TILL SAMMA BUTIK: Inställningar → Meta-kortet → "+ Lägg till ett annonskonto till" → välj kontot. Annonskostnaden är summan av alla kopplade konton. Varje konto har eget kampanjfilter och "Ta bort".
+
+FLERA BUTIKER I SAMMA ANNONSKONTO: Inställningar → Meta-kortet → på kontot → "Välj kampanjer". Där väljer man antingen "Alla kampanjer i kontot" (standard), "Bara kampanjerna jag väljer" eller "Alla utom kampanjerna jag väljer", kryssar i kampanjerna (varje rad visar kostnaden senaste 30 dagarna i annonskontots valuta) och klickar "Spara valet". Annonskostnaden räknas då om från grunden; siffrorna kan ta en stund att fyllas på igen.
+
+MARKNADER (flera länder i samma butik, t.ex. Sverige, Norge och USA): marknad = landet i orderns leveransadress. Tre ställen:
+- Kostnader → kortet "Marknad" överst: välj land i listan (eller skriv en landskod, t.ex. JP, och klicka "Lägg till"). Allt man sparar på sidan med en marknad vald (snabbfältet, offerten, AI-läsningen, filen) blir den marknadens kostnad och sparas bara i StonePNL — Shopifys kostnad är "Standard" och gäller alla länder utan egen kostnad. Kostnader märkta * är ärvda från standard. På produktsidan finns "Marknad" i formuläret för ny post och för flerpacksteg.
+- Inställningar → annonskontot → "Välj kampanjer" → "Vilken marknad säljer varje kampanj till?": välj land per kampanj och klicka "Spara valet". Då delas annonskostnaden per land. Kampanjer utan marknad räknas bara i vyn för alla marknader.
+- Vinst-panelen: rullistan "Alla marknader" bredvid datumknapparna. Välj ett land → försäljning, COGS (med landets kostnad) och annonskostnad (kampanjer märkta landet) bara för det landet. Saknas märkta kampanjer säger panelen det och vinsten är då för hög. Första gången ett land väljs exporteras äldre dagar om (kan ta en halv minut). Gruppsumman över flera butiker visas inte under ett marknadsfilter.
 
 JUICY → STONEPNL: Har Juicy skrivit kostnaderna i Shopifys fält finns de redan här utan klick (kortet "Kommer du från Juicy?" visar täckningen). Annars: skärmbild av Juicys kostnadstabell → AI-kortet.
 

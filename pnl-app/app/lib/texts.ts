@@ -60,6 +60,15 @@ const en = {
     unknownError: "unknown error",
     fatalHelp: "Send a screenshot of this message — it points out exactly where it stops.",
     refresh: "Refresh",
+    market: {
+      label: "Market",
+      all: "All markets",
+      unknown: "Unknown country",
+      daysWithout: (n: number) =>
+        `${n} ${n === 1 ? "day" : "days"} in this period could not be split by market (Shopify did not return the shipping country) — the figures for this market are incomplete.`,
+      noCampaigns: (name: string) =>
+        `No campaigns are marked for ${name} in Settings — its ad spend is not included, so profit reads too high. Open Settings → the ad account → Choose campaigns and pick a market per campaign.`,
+    },
     ranges: {
       today: "Today",
       yesterday: "Yesterday",
@@ -195,6 +204,21 @@ const en = {
   },
 
   costs: {
+    market: {
+      title: "Market",
+      body: "Shipping to Sweden, Norway and the US costs very different amounts. Pick a market to see and set the cost for that country. Standard is what's in Shopify and applies to every market without its own cost.",
+      label: "Market",
+      standard: "Standard (all markets)",
+      standardShort: "Standard",
+      addLabel: "New country code",
+      add: "Add",
+      activeNote: (name: string) => `You are editing costs for ${name}. They are stored in StonePNL only — Shopify keeps the standard cost.`,
+      inherited: (n: number) => `${n} ${n === 1 ? "variant uses" : "variants use"} the standard cost (marked *).`,
+      inheritedBadge: "Standard cost",
+      writeFor: (name: string) => `Save costs for ${name}`,
+      entryHelpMarket: "Saved for this market only. Shopify's cost is not changed.",
+      entryHelpStandard: "Written to Shopify and used for every market without its own cost.",
+    },
     title: "Costs",
     subtitle: (have: number, total: number) => `${have} of ${total} variants have a cost`,
     missingBannerTitle: (n: number) => `${n} variants are missing a cost`,
@@ -520,6 +544,13 @@ const en = {
     chooseAccountButton: "+ Choose ad account",
     allAccountsAdded: "Every ad account you can see is already added.",
     campaigns: {
+      marketTitle: "Which market does each campaign sell to?",
+      marketBody: "Pick a country per campaign. Ad spend is then split per market, so the dashboard can show Norway or the US on its own. Campaigns without a market only count in the all-markets view.",
+      marketLabel: "Market",
+      marketNone: "— no market",
+      marketAddLabel: "Add a country code",
+      marketAdd: "Add",
+      marketsSummary: (n: number) => (n === 1 ? "1 campaign has a market" : `${n} campaigns have a market`),
       title: "Which campaigns count?",
       body: "Running more than one store from the same ad account? Pick the campaigns that belong to this store — the rest is left out of your profit.",
       all: "All campaigns in the account",
@@ -778,6 +809,15 @@ const sv: Texts = {
     unknownError: "okänt fel",
     fatalHelp: "Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.",
     refresh: "Uppdatera",
+    market: {
+      label: "Marknad",
+      all: "Alla marknader",
+      unknown: "Okänt land",
+      daysWithout: (n: number) =>
+        `${n} ${n === 1 ? "dag" : "dagar"} i perioden gick inte att dela per marknad (Shopify lämnade inte ut leveranslandet) — siffrorna för den här marknaden är ofullständiga.`,
+      noCampaigns: (name: string) =>
+        `Inga kampanjer är märkta ${name} i Inställningar — annonskostnaden dit räknas inte med, så vinsten ser för hög ut. Öppna Inställningar → annonskontot → Välj kampanjer och sätt marknad per kampanj.`,
+    },
     ranges: {
       today: "Idag",
       yesterday: "Igår",
@@ -913,6 +953,21 @@ const sv: Texts = {
   },
 
   costs: {
+    market: {
+      title: "Marknad",
+      body: "Frakten till Sverige, Norge och USA kostar helt olika. Välj en marknad för att se och sätta kostnaden för det landet. Standard är det som står i Shopify och gäller alla marknader utan egen kostnad.",
+      label: "Marknad",
+      standard: "Standard (alla marknader)",
+      standardShort: "Standard",
+      addLabel: "Ny landskod",
+      add: "Lägg till",
+      activeNote: (name: string) => `Du redigerar kostnader för ${name}. De sparas bara i StonePNL — Shopify behåller standardkostnaden.`,
+      inherited: (n: number) => `${n} ${n === 1 ? "variant använder" : "varianter använder"} standardkostnaden (märkta *).`,
+      inheritedBadge: "Standardkostnad",
+      writeFor: (name: string) => `Spara kostnader för ${name}`,
+      entryHelpMarket: "Sparas bara för den här marknaden. Shopifys kostnad ändras inte.",
+      entryHelpStandard: "Skrivs till Shopify och gäller alla marknader utan egen kostnad.",
+    },
     title: "Kostnader",
     subtitle: (have: number, total: number) => `${have} av ${total} varianter har inköpspris`,
     missingBannerTitle: (n: number) => `${n} varianter saknar inköpspris`,
@@ -1238,6 +1293,13 @@ const sv: Texts = {
     chooseAccountButton: "+ Välj annonskonto",
     allAccountsAdded: "Alla annonskonton du ser är redan tillagda.",
     campaigns: {
+      marketTitle: "Vilken marknad säljer varje kampanj till?",
+      marketBody: "Välj land per kampanj. Annonskostnaden delas då per marknad, så panelen kan visa Norge eller USA för sig. Kampanjer utan marknad räknas bara i vyn för alla marknader.",
+      marketLabel: "Marknad",
+      marketNone: "— ingen marknad",
+      marketAddLabel: "Lägg till en landskod",
+      marketAdd: "Lägg till",
+      marketsSummary: (n: number) => (n === 1 ? "1 kampanj har marknad" : `${n} kampanjer har marknad`),
       title: "Vilka kampanjer ska räknas?",
       body: "Kör du flera butiker i samma annonskonto? Välj kampanjerna som hör till den här butiken — resten hålls utanför din vinst.",
       all: "Alla kampanjer i kontot",

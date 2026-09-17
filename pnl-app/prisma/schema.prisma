@@ -218,6 +218,11 @@ model CostChange {
   /// Gäller från och med detta datum (inklusive).
   effectiveFrom DateTime @db.Date
   note          String?
+  /// Marknad (ISO-landskod ur orderns leveransadress, t.ex. "SE", "NO", "US")
+  /// som kostnaden gäller. Tom sträng = standard, gäller alla marknader som
+  /// inte har en egen post. Frakten skiljer sig kraftigt mellan länder, så
+  /// samma produkt kan kosta 60 kr att få till Sverige och 140 kr till USA.
+  market        String   @default("")
   createdAt     DateTime @default(now())
 
   settings ShopSettings @relation(fields: [shop], references: [shop], onDelete: Cascade)
@@ -236,6 +241,11 @@ model DailySpend {
   /// får en egen rad per dag och panelen summerar dem. Tom sträng = rader
   /// från tiden före flerkontostödet (2026-09-17), bakfyllda vid migrationen.
   account     String   @default("")
+  /// Marknaden kampanjerna på raden är märkta med i Inställningar (ISO-
+  /// landskod). Tom sträng = kampanjer utan marknad, eller kontot saknar
+  /// märkning helt (då är raden hela kontots kostnad). Summan över alla
+  /// marknader för en dag är alltid kontots hela kostnad den dagen.
+  market      String   @default("")
   /// Alltid i BUTIKENS valuta. Är annonskontot i en annan valuta har beloppet
   /// räknats om med dagskursen nedan. Konton i olika valutor kan därför
   /// summeras rakt av.
@@ -248,7 +258,7 @@ model DailySpend {
   clicks      Int      @default(0)
   fetchedAt   DateTime @default(now())
 
-  @@unique([shop, day, account])
+  @@unique([shop, day, account, market])
   @@index([shop, day])
 }
 
@@ -271,6 +281,11 @@ model MetaAdAccount {
   campaignMode String   @default("all")
   /// Kampanj-ID:n filtret gäller, kommaseparerade. Null/tomt = inget filter.
   campaignIds  String?
+  /// Vilken marknad varje kampanj annonserar mot: { "<kampanj-id>": "NO" }.
+  /// Null/tomt = ingen märkning, kontots kostnad läggs på marknaden "".
+  /// Med märkning hämtas kostnaden på kampanjnivå och delas per marknad, så
+  /// panelen kan visa vinsten för Norge för sig och USA för sig.
+  campaignMarkets Json?
   createdAt    DateTime @default(now())
 
   @@id([shop, accountId])
@@ -295,6 +310,14 @@ model DailyPnl {
   shippingCharges Float  @default(0)
   /// Dagens produktmix: [{productGid, variantGid, title, variantTitle, units, netSales, unitCost}]
   products        Json
+  /// Samma dag uppdelad per marknad (ISO-landskod ur leveransadressen):
+  /// { "SE": { orders, grossSales, discounts, returns, netSales, totalSales,
+  ///   shippingCharges, products: [...] }, "NO": {...} }. Ordrar utan land
+  /// ligger under "". Fälten ovan är alltid TOTALEN och förblir facit; det
+  /// här är bara en uppdelning av dem. Null = raden skrevs före 2026-09-17
+  /// och saknar uppdelning — under ett marknadsfilter räknas dagen då som
+  /// ohämtad och exporteras om.
+  markets         Json?
   fetchedAt       DateTime @default(now())
 
   @@id([shop, day])
@@ -343,8 +366,10 @@ model CostTier {
   units      Int
   /// Totalkostnad för hela antalet, vara + frakt, utan tull.
   totalCost  Decimal  @db.Decimal(10, 2)
+  /// Marknad, som CostChange.market. Tom sträng = standard.
+  market     String   @default("")
   createdAt  DateTime @default(now())
 
-  @@unique([shop, variantGid, units])
+  @@unique([shop, variantGid, units, market])
   @@index([shop])
 }
