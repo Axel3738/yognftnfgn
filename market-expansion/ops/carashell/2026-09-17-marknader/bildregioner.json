@@ -1,0 +1,177 @@
+{
+  "_om": [
+    "Var priset står inbränt i takskyddets nio US-bildannonser, och vad som ska stå i stället.",
+    "Koordinaterna är uppmätta 2026-09-17 ur bilderna i market-expansion/ops/carashell/2026-09-17-marknader/kalla/",
+    "(rutnät + zoom + programmatisk bbox-mätning, qa/rutnat-*.png och qa/zoom*.png).",
+    "Regionen ska omsluta HELA raden med luft och ligga inom den enfärgade plattan/bandet;",
+    "byt-text.py mäter själv bakgrund, textfärg, vikt, storlek och justering inom regionen.",
+    "{pris} {jamforpris} {spar} {land} ersätts per marknad ur marknader.mjs.",
+    "De sex bilder som INTE står här (GT_2_1, PD_2_1, PD_7_1, SP_2_1, SP_5_1, SP_7_1) bär",
+    "inget pris inbränt och återanvänds orörda — bara annonstexten byts.",
+    "Regionerna för de fyra prischipsen är satta innanför plattans UPPMÄTTA x-gränser (SP_4_1 581..851, CS_5_1 538..851, CS_6_1 537..851, CS_4_1 494..895) — en region som är bredare än plattan låter texten spilla ut över fotot."
+  ],
+  "CaraShellRoof_US_CS_2_1": [
+    {
+      "etikett": "jämförpris + pris (en rad, strykning på det första)",
+      "region": [
+        40,
+        178,
+        620,
+        245
+      ],
+      "text": "{jamforpris}  {pris}",
+      "genomstruken": true,
+      "genomstruken_tecken": "{jamforpris_langd}",
+      "fet": true
+    },
+    {
+      "etikett": "fraktrad",
+      "region": [
+        40,
+        250,
+        900,
+        296
+      ],
+      "text": "Free shipping to {land} – 90-day guarantee",
+      "fet": false
+    }
+  ],
+  "CaraShellRoof_US_CS_4_1": [
+    {
+      "etikett": "pris (priskortet)",
+      "region": [
+        510,
+        535,
+        838,
+        642
+      ],
+      "text": "{pris}",
+      "fet": true
+    },
+    {
+      "etikett": "jämförpris",
+      "region": [
+        500,
+        655,
+        760,
+        707
+      ],
+      "text": "{jamforpris}",
+      "fet": true
+    }
+  ],
+  "CaraShellRoof_US_CS_5_1": [
+    {
+      "etikett": "prischip",
+      "region": [
+        548,
+        962,
+        841,
+        1012
+      ],
+      "text": "{jamforpris} → {pris}"
+    }
+  ],
+  "CaraShellRoof_US_CS_6_1": [
+    {
+      "etikett": "rubrik",
+      "region": [
+        38,
+        44,
+        460,
+        110
+      ],
+      "text": "Save {spar}"
+    },
+    {
+      "etikett": "prischip",
+      "region": [
+        547,
+        962,
+        841,
+        1008
+      ],
+      "text": "{jamforpris} → {pris}"
+    },
+    {
+      "etikett": "bottenband",
+      "region": [
+        60,
+        1082,
+        860,
+        1124
+      ],
+      "text": "Free shipping to {land}. 90-day guarantee."
+    }
+  ],
+  "CaraShellRoof_US_GT_4_1": [
+    {
+      "etikett": "badge",
+      "region": [
+        422,
+        1068,
+        846,
+        1118
+      ],
+      "text": "{pris} (was {jamforpris}) – save 20%"
+    }
+  ],
+  "CaraShellRoof_US_PD_4_1": [
+    {
+      "etikett": "bottenband",
+      "region": [
+        160,
+        1082,
+        760,
+        1124
+      ],
+      "text": "Roof only. One person. {pris}."
+    }
+  ],
+  "CaraShellRoof_US_PD_6_1": [
+    {
+      "etikett": "rubrik rad 2",
+      "region": [
+        40,
+        112,
+        860,
+        190
+      ],
+      "text": "One of them costs {pris}."
+    },
+    {
+      "etikett": "etikett rad 2",
+      "region": [
+        472,
+        968,
+        846,
+        1010
+      ],
+      "text": "9.8 ft. One person. {pris}."
+    }
+  ],
+  "CaraShellRoof_US_SP_4_1": [
+    {
+      "etikett": "prischip",
+      "region": [
+        591,
+        962,
+        841,
+        1016
+      ],
+      "text": "{pris} (was {jamforpris})"
+    }
+  ],
+  "CaraShellRoof_US_SP_6_1": [
+    {
+      "etikett": "bottenband",
+      "region": [
+        150,
+        1082,
+        780,
+        1124
+      ],
+      "text": "{pris} (was {jamforpris}) · Free shipping"
+    }
+  ]
+}

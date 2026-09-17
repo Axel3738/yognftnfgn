@@ -1,0 +1,240 @@
+{
+  "_om": [
+    "Manus för de TRE videor som säger priset högt. Cue-tiderna är originalets egna,",
+    "hämtade med ElevenLabs Scribe (ordnivå) ur ljudet i kalla/ 2026-09-17 — se srt/*.scribe.json.",
+    "Texten är originalets, ord för ord, med ENDAST prisorden och fraktlandet utbytta.",
+    "{pris_tal} {jamforpris_tal} {spar_tal} {land} fylls per marknad ur marknader.mjs.",
+    "De nio andra videorna (GT_1/2/3, PD_1/2/3, SP_1/2/3) nämner inget pris i talet och",
+    "återanvänds ORÖRDA — varken ljud eller bild rörs, bara annonstexten byts.",
+    "band 952:1084 = originalets vita captionruta, uppmätt till y=968..1066 i alla tre (720×1280). no-captions.py:s automatiska zon (1250–1650) gäller 1080×1920 och ger negativ höjd här.",
+    "caption = samma mening som talet men med priset som SIFFRA och måtten i siffror — precis som originalets captions ('Regular price is $249.'). Talet står kvar i ord i text-fältet, annars läser ElevenLabs siffrorna fel."
+  ],
+  "CaraShellRoof_US_CS_1_H1": {
+    "langd": 28.5,
+    "band": "952:1084",
+    "cues": [
+      {
+        "start": 0.4,
+        "slut": 3.7,
+        "text": "Today, the camper roof cover is just {pris_tal}.",
+        "original": "Today, the camper roof cover is just $199.",
+        "caption": "Today, the camper roof cover is just {pris}."
+      },
+      {
+        "start": 5.06,
+        "slut": 6.36,
+        "text": "Tomorrow, we don't know.",
+        "original": "Tomorrow, we don't know.",
+        "caption": "Tomorrow, we don't know."
+      },
+      {
+        "start": 6.96,
+        "slut": 10.38,
+        "text": "Right now, this cover fits a twenty-one by ten foot camper.",
+        "original": "Right now, this cover fits a twenty-one by ten foot camper.",
+        "caption": "Right now, this cover fits a 21 by 10 foot camper."
+      },
+      {
+        "start": 11.02,
+        "slut": 13.6,
+        "text": "Regular price is {jamforpris_tal}.",
+        "original": "Regular price is two hundred and forty-nine dollars.",
+        "caption": "Regular price is {jamforpris}."
+      },
+      {
+        "start": 14.34,
+        "slut": 16.02,
+        "text": "Today, just {pris_tal}.",
+        "original": "Today, just a hundred and ninety-nine dollars.",
+        "caption": "Today, just {pris}."
+      },
+      {
+        "start": 16.52,
+        "slut": 19.46,
+        "text": "That's {spar_tal} off while the sale lasts.",
+        "original": "That's fifty dollars off while the sale lasts.",
+        "caption": "That's {spar} off while the sale lasts."
+      },
+      {
+        "start": 20.1,
+        "slut": 22.36,
+        "text": "Rain can pool around roof vents and seams.",
+        "original": "Rain can pool around roof vents and seams.",
+        "caption": "Rain can pool around roof vents and seams."
+      },
+      {
+        "start": 22.84,
+        "slut": 23.98,
+        "text": "Free shipping is included.",
+        "original": "Free shipping is included.",
+        "caption": "Free shipping is included."
+      },
+      {
+        "start": 24.34,
+        "slut": 25.52,
+        "text": "Ninety-day guarantee.",
+        "original": "Ninety-day guarantee.",
+        "caption": "Ninety-day guarantee."
+      },
+      {
+        "start": 25.88,
+        "slut": 28.14,
+        "text": "Protect your roof before fall rains set in.",
+        "original": "Protect your roof before fall rains set in",
+        "caption": "Protect your roof before fall rains set in."
+      }
+    ]
+  },
+  "CaraShellRoof_US_CS_2_H1": {
+    "langd": 26.6,
+    "band": "952:1084",
+    "cues": [
+      {
+        "start": 0.56,
+        "slut": 2.76,
+        "text": "Twenty percent off your camper roof cover.",
+        "original": "20% off your camper roof cover.",
+        "caption": "Twenty percent off your camper roof cover."
+      },
+      {
+        "start": 3.52,
+        "slut": 4.06,
+        "text": "Today only.",
+        "original": "Today only.",
+        "caption": "Today only."
+      },
+      {
+        "start": 4.7,
+        "slut": 8.36,
+        "text": "This roof cover fits a twenty-one by ten foot camper.",
+        "original": "This roof cover fits a 21 by 10 foot camper.",
+        "caption": "This roof cover fits a 21 by 10 foot camper."
+      },
+      {
+        "start": 9.0,
+        "slut": 11.2,
+        "text": "Regular price is {jamforpris_tal}.",
+        "original": "Regular price is $249.",
+        "caption": "Regular price is {jamforpris}."
+      },
+      {
+        "start": 12.32,
+        "slut": 14.42,
+        "text": "Today, just {pris_tal}.",
+        "original": "Today, just $199.",
+        "caption": "Today, just {pris}."
+      },
+      {
+        "start": 14.9,
+        "slut": 17.7,
+        "text": "That's {spar_tal} off while the sale lasts.",
+        "original": "That's $50 off while the sale lasts.",
+        "caption": "That's {spar} off while the sale lasts."
+      },
+      {
+        "start": 18.48,
+        "slut": 20.72,
+        "text": "Rain can pool around roof vents and seams.",
+        "original": "Rain can pool around roof vents and seams.",
+        "caption": "Rain can pool around roof vents and seams."
+      },
+      {
+        "start": 21.12,
+        "slut": 22.28,
+        "text": "Free shipping is included.",
+        "original": "Free shipping is included.",
+        "caption": "Free shipping is included."
+      },
+      {
+        "start": 22.66,
+        "slut": 23.76,
+        "text": "Ninety-day guarantee.",
+        "original": "Ninety-day guarantee.",
+        "caption": "Ninety-day guarantee."
+      },
+      {
+        "start": 24.06,
+        "slut": 26.1,
+        "text": "Protect your roof before fall rains set in.",
+        "original": "Protect your roof before fall rains set in.",
+        "caption": "Protect your roof before fall rains set in."
+      }
+    ]
+  },
+  "CaraShellRoof_US_CS_3_H1": {
+    "langd": 29.4,
+    "band": "952:1084",
+    "cues": [
+      {
+        "start": 0.46,
+        "slut": 5.22,
+        "text": "Regular price {jamforpris_tal}, right now {pris_tal}.",
+        "original": "Regular price $249, right now $199.",
+        "caption": "Regular price {jamforpris}, right now {pris}."
+      },
+      {
+        "start": 6.44,
+        "slut": 6.9,
+        "text": "Fall is here.",
+        "original": "Fall is here.",
+        "caption": "Fall is here."
+      },
+      {
+        "start": 7.58,
+        "slut": 11.52,
+        "text": "Right now, an RV roof cover sized twenty-one by ten feet.",
+        "original": "Right now, an RV roof cover sized twenty-one by ten feet.",
+        "caption": "Right now, an RV roof cover sized 21 by 10 feet."
+      },
+      {
+        "start": 11.94,
+        "slut": 14.42,
+        "text": "Regular price {jamforpris_tal}.",
+        "original": "Regular price $249.",
+        "caption": "Regular price {jamforpris}."
+      },
+      {
+        "start": 15.32,
+        "slut": 17.16,
+        "text": "Now {pris_tal}.",
+        "original": "Now $199.",
+        "caption": "Now {pris}."
+      },
+      {
+        "start": 17.76,
+        "slut": 20.38,
+        "text": "That's {spar_tal} off the regular price.",
+        "original": "That's fifty dollars off the regular price.",
+        "caption": "That's {spar} off the regular price."
+      },
+      {
+        "start": 21.18,
+        "slut": 23.82,
+        "text": "Moisture can seep in through roof hatches and seams during fall.",
+        "original": "Moisture can seep in through roof hatches and seams during fall.",
+        "caption": "Moisture can seep in through roof hatches and seams during fall."
+      },
+      {
+        "start": 24.1,
+        "slut": 25.12,
+        "text": "Free shipping to {land}.",
+        "original": "Free shipping in the US.",
+        "caption": "Free shipping to {land}."
+      },
+      {
+        "start": 25.46,
+        "slut": 26.5,
+        "text": "Ninety days risk-free.",
+        "original": "Ninety days risk-free.",
+        "caption": "Ninety days risk-free."
+      },
+      {
+        "start": 26.8,
+        "slut": 28.9,
+        "text": "Protect your RV before the fall rains hit.",
+        "original": "Protect your RV before the fall rains hit",
+        "caption": "Protect your RV before the fall rains hit."
+      }
+    ]
+  }
+}

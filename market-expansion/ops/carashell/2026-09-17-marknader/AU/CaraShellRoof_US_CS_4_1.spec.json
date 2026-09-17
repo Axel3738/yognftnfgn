@@ -1,0 +1,26 @@
+[
+ {
+  "region": [
+   510,
+   535,
+   838,
+   642
+  ],
+  "text": "A$286",
+  "genomstruken": false,
+  "_etikett": "pris (priskortet)",
+  "fet": true
+ },
+ {
+  "region": [
+   500,
+   655,
+   760,
+   707
+  ],
+  "text": "A$358",
+  "genomstruken": false,
+  "_etikett": "jämförpris",
+  "fet": true
+ }
+]

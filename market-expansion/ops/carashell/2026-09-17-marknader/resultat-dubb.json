@@ -1,0 +1,204 @@
+{
+  "NZ": {
+    "CaraShellRoof_US_CS_1_H1": {
+      "status": "OK",
+      "langd_kalla": 28.59,
+      "langd_ny": 28.4,
+      "repliker": [
+        {
+          "i": 1,
+          "text": "Today, the camper roof cover is just three hundred fifty-five dollars.",
+          "sek": 3.25,
+          "fonster": 4.659999999999999,
+          "tempo": 1
+        },
+        {
+          "i": 2,
+          "text": "Tomorrow, we don't know.",
+          "sek": 1.96,
+          "fonster": 1.9000000000000004,
+          "tempo": 1.032
+        },
+        {
+          "i": 3,
+          "text": "Right now, this cover fits a twenty-one by ten foot camper.",
+          "sek": 3.15,
+          "fonster": 4.06,
+          "tempo": 1
+        },
+        {
+          "i": 4,
+          "text": "Regular price is four hundred forty-four dollars.",
+          "sek": 2.89,
+          "fonster": 3.3200000000000003,
+          "tempo": 1
+        },
+        {
+          "i": 5,
+          "text": "Today, just three hundred fifty-five dollars.",
+          "sek": 2.64,
+          "fonster": 2.1799999999999997,
+          "tempo": 1.15
+        },
+        {
+          "i": 6,
+          "text": "That's eighty-nine dollars off while the sale lasts.",
+          "sek": 2.48,
+          "fonster": 3.580000000000002,
+          "tempo": 1
+        },
+        {
+          "i": 7,
+          "text": "Rain can pool around roof vents and seams.",
+          "sek": 2.24,
+          "fonster": 2.7399999999999984,
+          "tempo": 1
+        },
+        {
+          "i": 8,
+          "text": "Free shipping is included.",
+          "sek": 1.25,
+          "fonster": 1.5,
+          "tempo": 1
+        },
+        {
+          "i": 9,
+          "text": "Ninety-day guarantee.",
+          "sek": 1.6,
+          "fonster": 1.5399999999999991,
+          "tempo": 1.039
+        },
+        {
+          "i": 10,
+          "text": "Protect your roof before fall rains set in.",
+          "sek": 2.42,
+          "fonster": 2.2600000000000016,
+          "tempo": 1.071
+        }
+      ],
+      "varningar": [],
+      "captions": {
+        "exit": 0,
+        "utskrift": "  QA-bilder att titta på: CaraShellRoof_US_CS_1_H1.mp4.qa-1.png, CaraShellRoof_US_CS_1_H1.mp4.qa-2.png, CaraShellRoof_US_CS_1_H1.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+      },
+      "rostkoll": {
+        "exit": 0,
+        "resultat": {
+          "CaraShellRoof_US_CS_1_H1.mp4": {
+            "fel": [],
+            "noteringar": [],
+            "matvarden": {
+              "langd_ny": 28.4,
+              "medel_db": -22,
+              "max_db": -3,
+              "langd_kalla": 28.59,
+              "langddrift": 0.007,
+              "tal_ny": 23.14,
+              "sista_replik_slut": 28.14
+            }
+          }
+        }
+      }
+    },
+    "CaraShellRoof_US_CS_2_H1": {
+      "status": "OK",
+      "langd_kalla": 26.71,
+      "langd_ny": 26.48,
+      "repliker": [
+        {
+          "i": 1,
+          "text": "Twenty percent off your camper roof cover.",
+          "sek": 1.75,
+          "fonster": 2.96,
+          "tempo": 1
+        },
+        {
+          "i": 2,
+          "text": "Today only.",
+          "sek": 0.77,
+          "fonster": 1.1800000000000002,
+          "tempo": 1
+        },
+        {
+          "i": 3,
+          "text": "This roof cover fits a twenty-one by ten foot camper.",
+          "sek": 2.67,
+          "fonster": 4.3,
+          "tempo": 1
+        },
+        {
+          "i": 4,
+          "text": "Regular price is four hundred forty-four dollars.",
+          "sek": 2.69,
+          "fonster": 3.3200000000000003,
+          "tempo": 1
+        },
+        {
+          "i": 5,
+          "text": "Today, just three hundred fifty-five dollars.",
+          "sek": 2.31,
+          "fonster": 2.58,
+          "tempo": 1
+        },
+        {
+          "i": 6,
+          "text": "That's eighty-nine dollars off while the sale lasts.",
+          "sek": 2.69,
+          "fonster": 3.58,
+          "tempo": 1
+        },
+        {
+          "i": 7,
+          "text": "Rain can pool around roof vents and seams.",
+          "sek": 2.2,
+          "fonster": 2.6400000000000006,
+          "tempo": 1
+        },
+        {
+          "i": 8,
+          "text": "Free shipping is included.",
+          "sek": 1.15,
+          "fonster": 1.5399999999999991,
+          "tempo": 1
+        },
+        {
+          "i": 9,
+          "text": "Ninety-day guarantee.",
+          "sek": 1.16,
+          "fonster": 1.3999999999999986,
+          "tempo": 1
+        },
+        {
+          "i": 10,
+          "text": "Protect your roof before fall rains set in.",
+          "sek": 2.09,
+          "fonster": 2.200000000000003,
+          "tempo": 1
+        }
+      ],
+      "varningar": [],
+      "captions": {
+        "exit": 0,
+        "utskrift": "  QA-bilder att titta på: CaraShellRoof_US_CS_2_H1.mp4.qa-1.png, CaraShellRoof_US_CS_2_H1.mp4.qa-2.png, CaraShellRoof_US_CS_2_H1.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+      },
+      "rostkoll": {
+        "exit": 0,
+        "resultat": {
+          "CaraShellRoof_US_CS_2_H1.mp4": {
+            "fel": [],
+            "noteringar": [],
+            "matvarden": {
+              "langd_ny": 26.48,
+              "medel_db": -22.4,
+              "max_db": -3.1,
+              "langd_kalla": 26.71,
+              "langddrift": 0.009,
+              "tal_ny": 19.479999999999997,
+              "sista_replik_slut": 26.15
+            }
+          }
+        }
+      }
+    }
+  }
+}

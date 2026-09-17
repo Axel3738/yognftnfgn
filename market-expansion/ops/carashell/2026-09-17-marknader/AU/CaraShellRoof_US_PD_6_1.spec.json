@@ -1,0 +1,24 @@
+[
+ {
+  "region": [
+   40,
+   112,
+   860,
+   190
+  ],
+  "text": "One of them costs A$286.",
+  "genomstruken": false,
+  "_etikett": "rubrik rad 2"
+ },
+ {
+  "region": [
+   472,
+   968,
+   846,
+   1010
+  ],
+  "text": "9.8 ft. One person. A$286.",
+  "genomstruken": false,
+  "_etikett": "etikett rad 2"
+ }
+]

@@ -1,0 +1,27 @@
+[
+ {
+  "region": [
+   40,
+   178,
+   620,
+   245
+  ],
+  "text": "A$358  A$286",
+  "genomstruken": true,
+  "_etikett": "jämförpris + pris (en rad, strykning på det första)",
+  "fet": true,
+  "genomstruken_tecken": 5
+ },
+ {
+  "region": [
+   40,
+   250,
+   900,
+   296
+  ],
+  "text": "Free shipping to Australia – 90-day guarantee",
+  "genomstruken": false,
+  "_etikett": "fraktrad",
+  "fet": false
+ }
+]

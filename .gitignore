@@ -20,6 +20,8 @@ market-expansion/ops/**/*.jpg
 market-expansion/ops/**/*.jpeg
 market-expansion/ops/**/*.png
 market-expansion/ops/**/*.srt
+market-expansion/ops/**/*.mp3
+market-expansion/ops/**/*.wav
 factory/output/*/leverans-*/
 factory/output/*/bild-*/
 factory/output/*/*.logg

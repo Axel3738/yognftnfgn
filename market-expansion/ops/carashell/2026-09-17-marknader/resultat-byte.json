@@ -1,0 +1,20 @@
+{
+  "120251464399510435": {
+    "CaraShellRoof_US_CS_4_1": {
+      "ok": true,
+      "torr": true,
+      "typ": "bild",
+      "nytt_media": true,
+      "lank": "https://carashell.com/products/takskyddet?country=NZ",
+      "rubrik": "RV Roof Cover 21×10 ft – NZ$355"
+    },
+    "CaraShellRoof_US_SP_5_1": {
+      "ok": true,
+      "torr": true,
+      "typ": "bild",
+      "nytt_media": false,
+      "lank": "https://carashell.com/products/takskyddet?country=NZ",
+      "rubrik": "16 Reviews, All 5 Stars – in the Rain"
+    }
+  }
+}
