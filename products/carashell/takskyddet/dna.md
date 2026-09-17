@@ -442,3 +442,26 @@ Samma dag: **rullgardin per överdrag i varje paketnivå** (2-pack = två rullga
 rabattkoden räknar antal per produkt och gäller oavsett mix. Etiketten "Överdrag 1/2/3"
 (nb "Trekk", en "Cover"). Inte klickat i webbläsare av en människa.
 
+
+---
+
+## Produktfakta ändrat 2026-09-18 — vagnlängderna står nu i butikens egen titel
+
+Produkttiteln är **"Taköverdrag Husvagn & Husbil 5,5–13,5 m"** (var "6,5 × 3 m").
+Mätt samma natt på `carashell.se/products/takskyddet.json`:
+
+- **Titeln** bär numera vagnlängderna: passar ekipage 5,5–13,5 m.
+- **Beskrivningen** säger fortfarande **"Taköverdrag 6,5 × 3 m"** — dukens eget mått.
+- Priset orört: 1 129 / 1 469 kr.
+
+De två talen mäter olika saker och motsäger inte varandra. **Batch #3:s sju
+live-annonser säger "6,5 × 3 m" och är alltså korrekta** — ingen åtgärd, inget
+att pausa.
+
+⚠️ Men avsnittet "Produkten och kunden" ovan säger **"Aldrig påstå: … exakta
+vagnlängder"**, och det skrevs när längderna inte gick att verifiera. Nu påstår
+butiken dem själv i produkttiteln. Regeln gäller därför inte längre som absolut
+förbud: **5,5–13,5 m får användas i copy så länge butikens titel bär talen**,
+och ska läsas av på nytt varje briefdag i stället för att citeras härifrån.
+Ändra inte "6,5 × 3 m" till längderna i befintlig copy — de säger olika saker,
+och dukens mått är det som bevisar att den täcker taket.
