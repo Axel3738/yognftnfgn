@@ -16,17 +16,26 @@ Rör aldrig `MATSTRUMP_SALES_20260826` (CBO:n) med de här — regel 11: nya tes
 | Länk | `https://matstrumpor.se/products/sushi-strumpor`, CTA Köp nu |
 | Status | Skapa PAUSED, aktivera när alla Tier 1-filer ligger inne så de startar samtidigt |
 
+## ✅ Bilderna är redan gjorda (2026-09-17, av sessionen)
+
+Alla tio bildannonser (029–038) är genererade i kie.ai med produktfotona som referens
+(`bild-kor.mjs`), textlagret lagt med `lager.py`, granskade av sessionen och uppladdade i
+Notion (4:5 + 1:1 i `Filer och media`, status **To be Reviewed**). Redigerarna behöver inte
+bygga dem. ⚠️ Scenerna är AI-genererade — kryssa i Metas AI-märkning när annonserna skapas
+(037 är ett riktigt foto, ingen märkning). Ingen fingertopp, inget ansikte, ingen text från
+modellen: all text är typografi. 031 visar fötter i jeans.
+
 ## Tier 1 — launchas först (8 adsets)
 
 | Adset | Annons | Produktion |
 |---|---|---|
-| `…_029` | `MATSTRUMP_sushi_curiosity_product_029_v1` | redigerare (bild) |
-| `…_030` | `MATSTRUMP_sushi_curiosity_beforeafter_030_v1` | redigerare (bild) |
-| `…_031` | `MATSTRUMP_sushi_pain_lifestyle_031_v1` | redigerare (bild) |
-| `…_032` | `MATSTRUMP_sushi_conflict_comparison_032_v1` | redigerare (bild) |
-| `…_035` | `MATSTRUMP_sushi_offer_product_035_v1` | redigerare (bild, d3:s bas) |
+| `…_029` | `MATSTRUMP_sushi_curiosity_product_029_v1` | **klar i Notion** |
+| `…_030` | `MATSTRUMP_sushi_curiosity_beforeafter_030_v1` | **klar i Notion** (bild) |
+| `…_031` | `MATSTRUMP_sushi_pain_lifestyle_031_v1` | **klar i Notion** (bild) |
+| `…_032` | `MATSTRUMP_sushi_conflict_comparison_032_v1` | **klar i Notion** (bild) |
+| `…_035` | `MATSTRUMP_sushi_offer_product_035_v1` | **klar i Notion** (bild, d3:s bas) |
 | `…_037` | `MATSTRUMP_sushi_curiosity_product_037_v1` | **ingen** — produktfoto pdp_03 som det är, ingen text |
-| `…_038` | `MATSTRUMP_sushi_curiosity_product_038_v1` | redigerare (bild) |
+| `…_038` | `MATSTRUMP_sushi_curiosity_product_038_v1` | **klar i Notion** (bild) |
 | `…_d1v2` | `MATSTRUMP_sushi_offer_static_d1_v2` | **ingen** — samma creative som `…_d1_v1` i mediebiblioteket (aldrig testad: 69 kr) |
 
 Copy per annons står i respektive `BRIEF.md` (primärtext A, rubrik 1, beskrivning).
@@ -36,9 +45,9 @@ För d1_v2: primärtext D1 ur `reference/bogo-copy-2026-08-27.md`.
 
 | Adset | Annons | Produktion |
 |---|---|---|
-| `…_033` | `MATSTRUMP_sushi_social_textheavy_033_v1` | redigerare (bild, jul ok) |
-| `…_034` | `MATSTRUMP_sushi_identity_product_034_v1` | redigerare (bild) |
-| `…_036` | `MATSTRUMP_sushi_gift_product_036_v1` | redigerare (bild, jul) |
+| `…_033` | `MATSTRUMP_sushi_social_textheavy_033_v1` | **klar i Notion** (bild, jul ok) |
+| `…_034` | `MATSTRUMP_sushi_identity_product_034_v1` | **klar i Notion** (bild) |
+| `…_036` | `MATSTRUMP_sushi_gift_product_036_v1` | **klar i Notion** (bild, jul) |
 | `…_d2v2` | `MATSTRUMP_sushi_offer_static_d2_v2` | ingen — befintlig creative (64 kr, 1 köp) |
 | `…_d4v2` | `MATSTRUMP_sushi_offer_static_d4_v2` | ingen — befintlig creative (202 kr) |
 | `…_039` | `MATSTRUMP_sushi_curiosity_ugc_039h1_v1` | redigerare (video, VO) |

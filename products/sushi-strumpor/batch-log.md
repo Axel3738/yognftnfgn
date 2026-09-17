@@ -86,6 +86,8 @@ Briefer: `products/sushi-strumpor/batch-03/`. Kvot: 2 per 3-dagarscykel → 18 a
 | `MATSTRUMP_sushi_offer_anim_042_v1` | 2 | Format transfer: vinnarbilden d3 som 6 s motion static | Winning DNA 2 | — |
 | `MATSTRUMP_sushi_pain_comparison_043_v1` | 2 | Byrålådan: skämtpresenter som glöms vs strumpan som används, utan tal | Winning DNA 3 | — |
 
+**Bildannonserna 029–038 genererades av sessionen samma dag** (kie.ai nano-banana-edit med produktfoton som referens + eget textlager, `batch-03/bild-kor.mjs` + `lager.py`, manifest i `bild-manifest.json`), granskades visuellt (031, 034, 035, 030 kördes om: bara ben utan byxor, en fingertopp, sex lådor i stället för fyra, letterbox) och ligger i Notion som `To be Reviewed` med 4:5 + 1:1. Videorna 039–043 är hos redigerarna.
+
 Hook-varianter (h2/h3 på 039 och 041) är skrivna men ligger i backloggen tills h1 fått data —
 Axels tak: max 5 videor i första ronden.
 
