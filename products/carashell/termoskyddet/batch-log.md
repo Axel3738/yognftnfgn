@@ -319,3 +319,23 @@ i respektive brief.
 första riktiga feedback-loopen; (2) bild mot video inom CS (CS_4_1 mot CS_4_H1 finns
 bara om videon gjorts — utan redigerare är bildhälften det enda som får data);
 (3) A/B-ställningen fable/sonnet: 4 fable / 3 sonnet i den här ronden, 0 bedömbara.
+
+## 2026-09-17 — `/ops-leverans carashell/termoskyddet` — batch #2 live (5 bildannonser)
+
+- Kön: 5 bildrader i `To be Reviewed` (nattvaktens briefrond 16→17/9, bilder genererade
+  23:16 UTC). Alla fem gick live i `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm`
+  (`120249115376140172`, CBO 1 000 kr/dag), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_CS_5_1` — tvåproduktsraden (tak + termo), adset CS, ad `120249137080570172`
+  - `CaraShellFront_CS_4_1` — "Svalt på sommaren, varmt på vintern", 559/932/−40 %, adset CS, ad `120249137196990172`
+  - `CaraShellFront_G_4_1` — presenten "en morgon utan imma", 559/932, adset G, ad `120249137085810172`
+  - `CaraShellFront_PD_5_1` — rastplatsen, utan pris, adset PD, ad `120249137109590172`
+  - `CaraShellFront_PD_4_1` — imma trots gardinen, utan pris, adset PD, ad `120249137190450172`
+- Pris: 559 kr på varje annons med pris = butikens 559 (läst live), jämförpris 932, −40 % exakt.
+- Tillbakaläst: 3/5 ACTIVE/ACTIVE, 2 ACTIVE/IN_PROCESS (Metas granskning minuter efter uppladdning).
+- Anmärkning (ingen stopp): PD_5_1 och CS_4_1 har ett vitt band mellan foto och bottenrad —
+  fotot fyllde inte canvasen. Kosmetiskt, till nästa version av textlagret (`factory/bild-text.py`).
+- Notion: alla fem → `SE-ACTIVE to be translated`. NO-rutinen 16:15 och US-rutinen 17:15 tar dem.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550123118687944789`.
+- Meta rate limit slog till på rad 3 (30 s + 60 s väntan) — uppladdaren backade själv, inget förlorat.
+- Läsregel för utvärderingen: delad pixel med takskyddet, och CS_5_1 visar takskyddet i bild —
+  köp per produkt i Shopify före dom. Ingen dom före 300 kr / 3 köp per annons.
