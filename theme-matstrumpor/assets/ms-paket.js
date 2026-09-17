@@ -81,6 +81,15 @@
       var self = this;
       Array.prototype.forEach.call(this.querySelectorAll('.ms-paket__sort'), function (sel) {
         sel.addEventListener('change', function () {
+          // Raden visar det valda: namn (och pris) + sortens bild.
+          var rad = sel.closest('.ms-paket__lada');
+          var opt = sel.options[sel.selectedIndex];
+          if (rad && opt) {
+            var val = rad.querySelector('[data-ms-lada-val]');
+            if (val) val.textContent = opt.textContent.trim();
+            var bild = rad.querySelector('[data-ms-lada-bild]');
+            if (bild && opt.dataset.bild) bild.src = opt.dataset.bild;
+          }
           var label = sel.closest('.ms-paket__opt');
           var input = label && label.querySelector('.ms-paket__input');
           if (input && !input.checked) input.checked = true;

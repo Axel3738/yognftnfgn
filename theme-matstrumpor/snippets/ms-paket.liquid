@@ -77,9 +77,9 @@
         {%- if sp != blank and sp.available -%}
           {%- assign namn = sp.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', '' -%}
           {%- if sp.id == p.id -%}
-            <option value="egen" selected>{{ namn }}</option>
+            <option value="egen" selected data-bild="{{ sp.featured_image | image_url: width: 120 }}">{{ namn }}</option>
           {%- else -%}
-            <option value="{{ sp.selected_or_first_available_variant.id }}">{{ namn }} · {{ sp.selected_or_first_available_variant.price | money }}</option>
+            <option value="{{ sp.selected_or_first_available_variant.id }}" data-bild="{{ sp.featured_image | image_url: width: 120 }}">{{ namn }} · {{ sp.selected_or_first_available_variant.price | money }}</option>
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
@@ -197,10 +197,21 @@
                 (5 eller 3 par); de andra sorterna bär sitt variant-id.
               {%- endcomment -%}
               {%- assign betalda = antal | minus: bogo -%}
+              {%- assign egen_namn = p.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', '' -%}
               <span class="ms-paket__lador">
                 {%- for n in (1..antal) -%}
+                  {%- comment -%}
+                    Hela raden är dropdownen: den riktiga <select> ligger osynlig
+                    ovanpå, så mobilens egen väljare öppnas vid tryck. Bild, etikett
+                    och valt värde uppdateras av JS när valet ändras.
+                  {%- endcomment -%}
                   <span class="ms-paket__lada">
-                    <span class="ms-paket__lada-etikett">Låda {{ n }}{% if n > betalda %} · gratis{% endif %}</span>
+                    <img class="ms-paket__lada-bild" data-ms-lada-bild src="{{ p.featured_image | image_url: width: 120 }}" alt="" width="44" height="44" loading="lazy">
+                    <span class="ms-paket__lada-text">
+                      <span class="ms-paket__lada-etikett">Låda {{ n }}{% if n > betalda %} · gratis{% endif %}</span>
+                      <span class="ms-paket__lada-val" data-ms-lada-val>{{ egen_namn }}</span>
+                    </span>
+                    <span class="ms-paket__lada-pil" aria-hidden="true">{% render 'ms-icon', name: 'chevron' %}</span>
                     <select class="ms-paket__sort" data-lada="{{ n }}" aria-label="Sort i låda {{ n }}">{{ sort_options }}</select>
                   </span>
                 {%- endfor -%}
