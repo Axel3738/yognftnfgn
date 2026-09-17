@@ -716,6 +716,31 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    app-CSV:n med BARA originalen (de översatta CSV:erna skrivs som reserv).
    Sätt flaggan i varje ny butik som får planen — annars importerar VA:n
    blandade språk.
+   ✅ **Verifierat 2026-09-17 09:10–09:40 UTC (påminnelsen), ~26 h efter
+   påslaget, i headless Chrome från containerns amerikanska IP:**
+   `carashell.com/products/takskyddet` — "Customer Reviews", "16 reviews",
+   knappen "Write a review", rubriken "Reviews in Other Languages", texterna
+   på engelska ("Simple solution and good fit.") med länken "Show original
+   (Swedish)". `carashell.com/products/termoskyddet` — samma, "20 reviews",
+   en rad med "Show original (Norwegian)" (en norsk originalrecension).
+   `carashell.se/nb/products/takskyddet?country=NO` — "Kundeanmeldelser",
+   "Skriv en anmeldelse", norska texter med "Vis original (svensk)".
+   ⚠️ **Varningen ovan om `nb` var fel:** widgeten översätts till norska
+   med locale `nb` också, både knappar och recensionstext. Stryk den ur
+   huvudet. ⚠️ **Ny sak på /nb:** `/no-recensioner` importerade norska
+   KOPIOR av de svenska recensionerna (Linda "Enkel løsning og god
+   passform." ligger som egen norsk rad), och auto-översättningen visar
+   nu den svenska originalraden på norska under "Anmeldelser på andre
+   språk" — samma recension två gånger på sidan. För en butik med Awesome
+   är den norska importen alltså överflödig; beslut om `/no-recensioner`
+   ska hoppa över sådana butiker är Axels (fråga ställd 2026-09-17).
+   ⚠️ Mätmetod: recensionslistan laddas lazy — `--dump-dom` och Judge.mes
+   `reviews_for_widget` gav 0 kroppar; det som fungerade var
+   `--screenshot` med `--window-size=1280,9000` och en beskärning av
+   widgetområdet (Pillow), sedan titta. curl ser bara `jdgmSettings`
+   (knapptexterna), aldrig översättningen. `carashell.se/nb/…` utan
+   `?country=NO` skickas från amerikansk IP om till carashell.com, och
+   `/localization`-cookien gav 429 tre gånger — parametern räcker.
 13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
    läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
    rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
