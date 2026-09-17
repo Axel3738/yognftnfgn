@@ -488,6 +488,15 @@ export const TEMAFILER = {
   // språk- och valutapatcharna ovanpå den här basen, aldrig tvärtom.
   'snippets/ms-paket.liquid': readFileSync(new URL('./tema/snippets/ms-paket.liquid', import.meta.url), 'utf8'),
   'assets/ms-paket.css': readFileSync(new URL('./tema/assets/ms-paket.css', import.meta.url), 'utf8'),
+  // Kundens land i texten (Axels beslut 2026-09-17: EN flagga, inte fem):
+  // ms-landtext byter [[flagga]]/[[land]] mot localization.country, och de
+  // tre ställen som visar fraktraden — trust-raden (USP + köprutan),
+  // marquee-sektionen och Dawns annonsrad — renderar genom den. Texterna
+  // utan hakparenteser (sv, nb) passerar orörda.
+  'snippets/ms-landtext.liquid': readFileSync(new URL('./tema/snippets/ms-landtext.liquid', import.meta.url), 'utf8'),
+  'snippets/ms-trust-row.liquid': readFileSync(new URL('./tema/snippets/ms-trust-row.liquid', import.meta.url), 'utf8'),
+  'sections/ms-marquee.liquid': readFileSync(new URL('./tema/sections/ms-marquee.liquid', import.meta.url), 'utf8'),
+  'sections/announcement-bar.liquid': readFileSync(new URL('./tema/sections/announcement-bar.liquid', import.meta.url), 'utf8'),
 };
 
 // Ordet för en enhet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2"),

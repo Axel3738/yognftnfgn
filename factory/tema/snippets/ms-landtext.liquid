@@ -1,0 +1,40 @@
+{%- comment -%}
+  ms-landtext — kundens land i en textrad (fabriksägd, factory/tema/snippets/).
+  Parametrar: text — en rad som får bära [[flagga]] och [[land]].
+  Byter [[flagga]] mot landets flagga och [[land]] mot landets namn så som
+  det sägs i en mening ("the UK", "Canada"), ur localization.country — det
+  land Shopify valt för kunden (IP, ?country= eller landväljaren).
+  Axels beslut 2026-09-17: EN flagga för kundens land, inte fem i rad.
+  En rad utan hakparenteser passerar orörd. Utdata escapas alltid.
+  Okänt land: 🌍 + Shopifys landsnamn på sidans språk.
+{%- endcomment -%}
+{%- liquid
+  assign t = text | default: ''
+  assign flagga = '🌍'
+  assign land = localization.country.name
+  case localization.country.iso_code
+    when 'US'
+      assign flagga = '🇺🇸'
+      assign land = 'the US'
+    when 'GB'
+      assign flagga = '🇬🇧'
+      assign land = 'the UK'
+    when 'CA'
+      assign flagga = '🇨🇦'
+      assign land = 'Canada'
+    when 'AU'
+      assign flagga = '🇦🇺'
+      assign land = 'Australia'
+    when 'NZ'
+      assign flagga = '🇳🇿'
+      assign land = 'New Zealand'
+    when 'SE'
+      assign flagga = '🇸🇪'
+      assign land = 'Sweden'
+    when 'NO'
+      assign flagga = '🇳🇴'
+      assign land = 'Norway'
+  endcase
+  assign t = t | replace: '[[flagga]]', flagga | replace: '[[land]]', land
+  echo t | escape
+-%}

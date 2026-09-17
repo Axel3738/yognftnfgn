@@ -950,6 +950,26 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    Klarna i kassan per land (inte mätbart härifrån).
    Kvar hos den andra sessionen: optionens NAMN ("Variant"/"Title") saknar
    en/nb-översättning — rubriken över storleksväljaren står "Variant" på /en.
+   ⚙️ **EN flagga för kundens land, inte fem (Axels order samma eftermiddag:
+   "märk vilket land kunden kommer ifrån och visa bara den flaggan").**
+   Ny fabriksägd snippet `snippets/ms-landtext.liquid` byter `[[flagga]]` och
+   `[[land]]` i en textrad mot kundens land ur `localization.country`
+   (US → "🇺🇸 … the US", GB → "🇬🇧 … the UK", CA/AU/NZ namnet, SE/NO
+   engelska namnet, okänt land 🌍 + Shopifys landsnamn) och escapar utdata.
+   De tre ställen som visar fraktraden renderar genom den och är därför
+   fabriksägda kopior i `factory/tema/` (TEMAFILER + bas-zip:en, testade
+   lika): `snippets/ms-trust-row.liquid` (USP-raden + köprutans trust),
+   `sections/ms-marquee.liquid` och Dawns `sections/announcement-bar.liquid`.
+   Engelskan bär tokens: "[[flagga]] Free shipping to [[land]]" (marquee,
+   annonsrad, `liquid.trust.0`) och "truck:Free shipping to [[land]]" (USP);
+   sv/nb har inga hakparenteser och passerar orörda. Mätt 2026-09-17 ~16:00
+   UTC som kund per land: US "🇺🇸 Free shipping to the US" (3 träffar på
+   startsidan, 2 på produktsidan), CA "🇨🇦 … Canada", AU "🇦🇺 … Australia",
+   NZ "🇳🇿 … New Zealand", GB "🇬🇧 … the UK"; SE-sidan oförändrad
+   ("Fri frakt – Sverige & Norge"). ⚠️ Shopify slår på botkontrollen
+   ("Verifying your connection…", 9 kB) efter ~8 snabba curl-anrop från
+   containern — vänta 10 s mellan sidor, eller ta headless Chrome.
+   `[[` i sidkällan är Shopifys egna JS-arrayer, inte tokens.
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och

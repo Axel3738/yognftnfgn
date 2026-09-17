@@ -42,6 +42,10 @@
         "assets/ms-paket.js",
         "snippets/ms-paket.liquid",
         "assets/ms-paket.css",
+        "snippets/ms-landtext.liquid",
+        "snippets/ms-trust-row.liquid",
+        "sections/ms-marquee.liquid",
+        "sections/announcement-bar.liquid",
         "sections/header-group.json",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
@@ -219,7 +223,7 @@
           "granskning": "4372/4416"
         },
         "en": {
-          "registrerade": 0,
+          "registrerade": 3,
           "saknade": 4,
           "perTyp": {
             "variant": 0,
@@ -230,8 +234,8 @@
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
-            "temamall": 0,
-            "sektionsgrupp": 0,
+            "temamall": 2,
+            "sektionsgrupp": 1,
             "temainställning": 0
           },
           "granskning": "4392/4416"
@@ -265,7 +269,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-17T13:00:57.391Z"
+    "tid": "2026-09-17T13:43:12.615Z"
   },
-  "uppdaterad": "2026-09-17T13:00:57.391Z"
+  "uppdaterad": "2026-09-17T13:43:12.615Z"
 }

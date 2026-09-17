@@ -122,8 +122,10 @@ radens marknad:
 Landet ska finnas i `lander.mjs`. Ingen prisfråga: priserna är Shopifys
 omräkning av radens fasta priser (+ ~2–3 %, hela tal) — fasta x9-priser per
 valuta kräver egna marknader med egna subdomäner, och det är ett eget beslut.
-Den engelska filen är EN för alla länderna: byt "Free shipping to the US" mot
-en text som är sann för alla (flaggorna 🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿), och rapportera
+Den engelska filen är EN för alla länderna: skriv fraktraden med tokens —
+"[[flagga]] Free shipping to [[land]]" — så visar temat kundens EGEN flagga
+och land (`snippets/ms-landtext.liquid`, Axels beslut 2026-09-17: en
+flagga, inte fem), och rapportera
 leveranstid + garanti som substansfrågor. Skatt/tull per land går i rapporten
 (PROCESS.md punkt 22). Annonslänkarna bär LANDETS egen kod
 (`?country=GB`), aldrig USA:s — en kampanj per land.
