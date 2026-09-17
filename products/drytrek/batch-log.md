@@ -1057,3 +1057,29 @@ sänkt 1 000 → 700 kr (vinst 3d −0,8 %), pausat `Gamasjer_NO_PD_2_1` (2 386 
 26 order) ⇒ BE-CPA ≈ 319 kr. Med 319 hade ronden pausat **ingenting**.
 Rutinen dömer bara SE tills Axel säger annat — frågan ställd i Discord.
 Underlag: `factory/output/drytrek/budgetrond-2026-09-17-NO.json`.
+
+---
+
+## 2026-09-17 — leveransrunda: oförändrat läge, men Norge fortsätter uppåt
+
+Andra dagen utan SE-kampanj att leverera till. `DRYTREK_SE_Damasker Vandring`
+står kvar PAUSED sedan 15/9 20:52, orörd. Kön var tom. Inget laddades upp,
+inget rördes i kontot. Pris läst live: 389 kr.
+
+**Norge stärks, andra avläsningen i rad över break-even:**
+
+| Mätdag | Spend 7d | Köp | ROAS | Mot break-even 1,60 |
+|---|---:|---:|---:|---|
+| 2026-09-16 | 6 306 kr | 22 | 1,78 | över |
+| 2026-09-17 | 7 113 kr | 26 | **1,84** | **över, och stigande** |
+
+Sverige samma fönster 2026-09-17: 4 641 kr, 8 köp, ROAS 0,73. Det talet ändrar
+sig inte längre — kampanjen är avstängd, siffran rullar bara ut ur fönstret.
+
+Två avläsningar är inte ett bevis, men riktningen är entydig och den håller
+även när spenden ökar. Det här är det enda stället i DryTreks historik där en
+marknad ligger över break-even. **Skrivs in i `dna.md` vid nästa `/cs`**, med
+den tidigare noteringen om att break-even-CPA 243 kr är för lågt satt.
+
+Ägarfrågan om omstart av Sverige står obesvarad i Discord `#ads-to-do` sedan
+15/9. Ingenting här väntar på den — rutinen rapporterar tyst tills den besvaras.

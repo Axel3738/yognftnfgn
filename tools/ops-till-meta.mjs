@@ -40,6 +40,7 @@ import {
 } from './meta-lib.mjs';
 import { laddaButik, sakerstallKonto, annonskontoFor, tillhorButiken, OPS_ANNONSKONTO } from '../factory/register.mjs';
 import { valjKampanjer } from '../factory/budgetrond.mjs';
+import { utanSidospar } from './lib/sidokampanjer.mjs';
 import { filtreraPaMarknad, marknadskoderI, MARKNADSKODER } from '../factory/skalning.mjs';
 import { OPS_MARKNADSKODER, marknadFor, marknadslank } from '../factory/opsmarknader.mjs';
 
@@ -189,10 +190,15 @@ export function valjEnKampanj({ kampanjer, prefix, annonsrader = [], marknad, ka
   const val = valjKampanjer(kampanjer ?? [], prefix, annonsrader, kampanjbaser);
   const m = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), marknad);
   const paMarknad = m.behall;
-  const aktiva = paMarknad.filter((k) => k.status === 'ACTIVE');
+  // Samma sidospårsregel som i ops-leveranskon: en kampanj vars namn bär
+  // LISTICLE är ett eget spår med egen landningssida, inte standardmålet.
+  const { kvar: aktiva, bortsallade: sidospar } = utanSidospar(paMarknad.filter((k) => k.status === 'ACTIVE'));
   const lista = (l) => l.map((k) => `${k.name} (${k.id}, ${k.status})`).join(' · ');
   if (aktiva.length === 1) {
-    return { kampanj: aktiva[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null };
+    return {
+      kampanj: aktiva[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null,
+      ...(sidospar.length ? { sidospar } : {}),
+    };
   }
   if (aktiva.length === 0 && paMarknad.length === 1) {
     // Exakt en kampanj och den är PAUSED: utfallet läses live efteråt —

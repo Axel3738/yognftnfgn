@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-17",
+  "lage": "leverans",
+  "gjort": [
+    "Thermal cover (termoskyddet), batch #2 from last night's brief round: 5 static image ads live in CARASHELL_SE_Termoskydd Husbil 211 × 171 cm",
+    "CaraShellFront_CS_5_1 (two products, one motorhome — roof cover + thermal cover) live, adset CARASHELL_SE_CS, ad 120249137080570172",
+    "CaraShellFront_CS_4_1 (Svalt på sommaren, varmt på vintern — 559 kr / 932 kr / −40 %) live, adset CARASHELL_SE_CS, ad 120249137196990172",
+    "CaraShellFront_G_4_1 (gift angle: a morning without imma — 559 kr / 932 kr) live, adset CARASHELL_SE_G, ad 120249137085810172",
+    "CaraShellFront_PD_5_1 (rest-area scene, whole front cab blacked out — no price on image) live, adset CARASHELL_SE_PD, ad 120249137109590172",
+    "CaraShellFront_PD_4_1 (imma despite the curtain — no price on image) live, adset CARASHELL_SE_PD, ad 120249137190450172",
+    "Price check: 559 kr on every ad that shows a price, matches carashell.se/products/termoskyddet (read live, compare price 932 kr, −40 % is exact)",
+    "All 5 Notion rows moved to \"SE-ACTIVE to be translated\" — the 16:15 Norway run and the 17:15 US run take them",
+    "Existing adsets reused (one per concept), no new adset, campaign stays CBO at 1 000 kr/day; nothing paused was touched"
+  ],
+  "varningar": [
+    "PD_5_1 and CS_4_1 have a plain white band between the photo and the terms strip (the photo did not fill the canvas). Cosmetic, both went live; noted for the next version of the text layer.",
+    "Read back from the account right after upload: 3 of 5 ads fully live, 2 still in Meta review (IN_PROCESS) — normal minutes after upload.",
+    "Shared pixel with the roof cover, and CS_5_1 shows the roof cover in the picture: read purchases per product in Shopify before judging any of these."
+  ],
+  "action_axel": []
+}

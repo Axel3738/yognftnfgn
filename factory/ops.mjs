@@ -478,18 +478,21 @@ export const STEG = [
       }
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;
 
-      const msPaket = await las('snippets/ms-paket.liquid');
+      // Basen är fabrikens egen snippet (TEMAFILER) sedan 2026-09-17 — inte
+      // den kopia butiken råkar ha (CaraShell låg på bas-zip:ens äldre köpruta
+      // utan rullgardin per enhet). Patcharna läggs ovanpå basen.
+      const msPaket = filer['snippets/ms-paket.liquid'] ?? (await las('snippets/ms-paket.liquid'));
       if (msPaket) {
         // Två oberoende, idempotenta patchar: temats ord per marknadsspråk +
-        // paketpris i kundens valuta (fastpris_valutor). Skrivs bara om något
-        // ändrades. Ordpatchen bygger om grenarna ur butikens språk, så en
-        // butik som får ett nytt språk får sin gren vid nästa `--igen tema`.
+        // paketpris i kundens valuta (fastpris_valutor). Ordpatchen bygger om
+        // grenarna ur butikens språk, så en butik som får ett nytt språk får
+        // sin gren vid nästa `--igen tema`.
         let s = msPaket;
         for (const patch of [(x) => patchaMsPaket(x, marknadsLocales), patchaMsPaketValuta]) {
           const p = patch(s);
           if (p) s = p;
         }
-        if (s !== msPaket) filer['snippets/ms-paket.liquid'] = s;
+        filer['snippets/ms-paket.liquid'] = s;
       }
 
       await skrivOchVerifiera(tema.id, filer);

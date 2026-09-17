@@ -13,9 +13,16 @@
 # målgrupp och struktur är huvudsessionens. Underlaget: output/carashell/BRAND.md.
 
 produkt:
-  namn: "Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+  namn: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"
   id: "takskyddet"
   menynamn: "Taköverdraget"
+  # Ordet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2") — sedan
+  # 2026-09-17 när produkten fick nio storlekar. Kunden kan blanda storlekar
+  # i ett paket (Axels beslut samma dag).
+  enhet:
+    sv: "överdrag"
+    nb: "trekk"
+    en: "cover"
 
 brand:
   namn: "CaraShell"
@@ -58,6 +65,29 @@ ekonomi:
       jamforpris: 249
 
 varianter:
+  # Nio storlekar, Axels besked 2026-09-17 ur leverantörens svar ("3*5.5 …
+  # 3*13.5 meters"). Namnet är längd × bredd som butiken skrivit sedan start.
+  # SAMMA PRIS PÅ ALLA tills Axels quotes per storlek kommer — då byts priset
+  # per variant (kräver pris per variant i fabriken, finns inte 2026-09-17).
+  # SKU-stammen är källans (TEMU-5050206311352) + längden i dm.
+  - namn: "5,5 × 3 m"
+    sku: "TEMU-5050206311352-055"
+  - namn: "6,5 × 3 m"
+    sku: "TEMU-5050206311352-065"
+  - namn: "7,5 × 3 m"
+    sku: "TEMU-5050206311352-075"
+  - namn: "8,5 × 3 m"
+    sku: "TEMU-5050206311352-085"
+  - namn: "9,5 × 3 m"
+    sku: "TEMU-5050206311352-095"
+  - namn: "10,5 × 3 m"
+    sku: "TEMU-5050206311352-105"
+  - namn: "11,5 × 3 m"
+    sku: "TEMU-5050206311352-115"
+  - namn: "12,5 × 3 m"
+    sku: "TEMU-5050206311352-125"
+  - namn: "13,5 × 3 m"
+    sku: "TEMU-5050206311352-135"
 media:
   bilder:
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
@@ -104,9 +134,13 @@ benefits:
   - "Lacken slipper skava mot ett tungt helöverdrag"
 
 features:
-  - "Mått 6,5 × 3 m, täcker hela takytan"
-  - "Svart väv, 210D"
-  - "Elastiska spännband med plastkrokar som hakar under karossens kant"
+  # Leverantörens svar 2026-09-17 (Axel): band ca 2,5 m, 210D Oxford
+  # vattentät och soltålig, band på 4 sidor, justerbar längd, krok i nederkant,
+  # två 10,5 m förstärkta band medföljer, storlekar 3×5,5 till 3×13,5 m.
+  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak"
+  - "Svart 210D Oxford-väv, vattentät och tål sol"
+  - "Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant"
+  - "Två extra förstärkta band på 10,5 m följer med"
   - "Sätts på av en person"
   - "Kanten hänger ner ca 30–40 cm över sidorna"
 
@@ -117,6 +151,38 @@ offer:
   # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
   paket:
     test: "paket"
+    # Samma steg som fabrikens standard-A/B (paket.mjs NIVAER) — utskrivna
+    # här bara för att TA BORT brickan "Bäst pris" på 3-packet (Axels order
+    # 2026-09-17). Rabatt, koder (CARASHELLROO2A …) och handles är oförändrade.
+    nivaer:
+      - variant: a
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: a
+        antal: 2
+        rabatt: 0.15
+        rubrik: "2 st"
+        bricka: "Mest populär"
+      - variant: a
+        antal: 3
+        rabatt: 0.2
+        rubrik: "3 st"
+        bricka: ""
+      - variant: b
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: b
+        antal: 2
+        rabatt: 0.2
+        rubrik: "2 st"
+        bricka: "Mest populär"
+      - variant: b
+        antal: 3
+        rabatt: 0.25
+        rubrik: "3 st"
+        bricka: ""
   # Q4-ramverket: betald korg-upsell = butikens ANDRA produkt (TackleBay-
   # modellen, ingen gratis bonus). Kandidaten som stod här sedan BRAND.md
   # 2026-09-10 — "Termoskydd Husbil 211 × 171 cm", 559 kr — blev en riktig

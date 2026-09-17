@@ -481,7 +481,44 @@ const MS_PAKET_JS = readFileSync(
 // klonen råkade ha med sig. Bas-zip:en är en startpunkt, inte facit.
 export const TEMAFILER = {
   'assets/ms-paket.js': MS_PAKET_JS,
+  // Snippeten och CSS:en ägs också av fabriken sedan 2026-09-17: CaraShell
+  // (byggd 2026-09-10) låg kvar på bas-zip:ens ÄLDRE köpruta utan rullgardin
+  // per enhet, medan ms-paket.js var ny — takskyddet fick nio storlekar och
+  // kunden kunde inte välja olika storlekar i ett 2-pack. ops.mjs lägger
+  // språk- och valutapatcharna ovanpå den här basen, aldrig tvärtom.
+  'snippets/ms-paket.liquid': readFileSync(new URL('./tema/snippets/ms-paket.liquid', import.meta.url), 'utf8'),
+  'assets/ms-paket.css': readFileSync(new URL('./tema/assets/ms-paket.css', import.meta.url), 'utf8'),
 };
+
+// Ordet för en enhet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2"),
+// per språk ur produktfilen (`produkt.enhet: { sv, nb, en }` eller en sträng).
+// Tomt ⇒ snippetens default 'st'.
+// Produktmallen delas av alla produkter i butiken, så ordet väljs i Liquid på
+// product.handle: `prelude` sätter opf_enhet/_nb/_en, `args` skickar dem till
+// snippeten. Tom sträng när ingen produkt har `enhet`.
+export function enhetLiquid(produkter) {
+  const q = (s) => `'${String(s).replaceAll("'", '')}'`;
+  const rader = [];
+  for (const p of lista(produkter)) {
+    const e = p?.produkt?.enhet;
+    const ord = typeof e === 'string' ? { sv: e } : (e && typeof e === 'object' ? e : {});
+    if (!text(ord.sv)) continue;
+    const handle = text(p?.produkt?.handle) ?? text(p?.produkt?.id);
+    if (!handle) continue;
+    rader.push(
+      `{% if product.handle == ${q(handle)} %}` +
+        `{% assign opf_enhet = ${q(text(ord.sv))} %}` +
+        `{% assign opf_enhet_nb = ${q(text(ord.nb) ?? text(ord.sv))} %}` +
+        `{% assign opf_enhet_en = ${q(text(ord.en) ?? text(ord.sv))} %}` +
+        `{% endif %}`
+    );
+  }
+  if (rader.length === 0) return { prelude: '', args: '' };
+  return {
+    prelude: `{% assign opf_enhet = 'st' %}{% assign opf_enhet_nb = 'stk' %}{% assign opf_enhet_en = 'pc' %}${rader.join('')}`,
+    args: ', enhet: opf_enhet, enhet_nb: opf_enhet_nb, enhet_en: opf_enhet_en',
+  };
+}
 
 // ---------------------------------------------------------------------------
 // Hjälpare ur konfigen (förenade ur tema-mall.mjs 2026-09-09, KEDJAN.md).
@@ -562,16 +599,18 @@ export function annonsrader(butik, p = null) {
 // Två paketblock (A synligt, B hidden tills ms-ab.js lottar) — samma
 // custom_liquid som temats egna ms_paket-block, plus test-attributet.
 // section_id får en suffix så A och B inte delar radioknappsnamn.
-export function paketBlock(test, produktUttryck = 'product', { tillagg = false } = {}) {
+export function paketBlock(test, produktUttryck = 'product', { tillagg = false, enhet = null } = {}) {
+  const pre = enhet?.prelude ?? '';
+  const arg = enhet?.args ?? '';
   const rad = (variant) =>
-    `{% assign sid = section.id | append: '-${variant}' %}` +
+    `${pre}{% assign sid = section.id | append: '-${variant}' %}` +
     `<div {% render 'ms-ab-attrs', test: '${test}', variant: '${variant}' %}>` +
-    `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid %}</div>`;
+    `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid${arg} %}</div>`;
   // Fullpris-kryssrutan (snippets/opf-tillagg, byggTillagg) ligger som eget
   // block direkt efter paketblocken och hakar i alla ms-paket i sektionen.
   const tillaggBlock = tillagg ? { opf_tillagg: { type: 'custom_liquid', settings: { custom_liquid: "{% render 'opf-tillagg' %}" } } } : {};
   if (!text(test)) {
-    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id %}` } }, ...tillaggBlock };
+    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `${pre}{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id${arg} %}` } }, ...tillaggBlock };
   }
   return {
     ms_paket_a: { type: 'custom_liquid', settings: { custom_liquid: rad('a') } },
@@ -635,7 +674,10 @@ function patchaKoprutan(main, { produkt, produkter = [], butik, nb, oversattning
   // för fullpris är produktbunden och byggs bara i enproduktsläget.
   const test = produkt ? paketTest(produkt) : gemensamtPaketTest(produkter);
   if (produkt || test !== null) {
-    const nya = paketBlock(test, 'product', { tillagg: produkt ? harTillagg(produkt) : false });
+    const nya = paketBlock(test, 'product', {
+      tillagg: produkt ? harTillagg(produkt) : false,
+      enhet: enhetLiquid(produkt ? [produkt] : produkter),
+    });
     // Första paketblockets plats — räknad FÖRE filtreringen, så det måste
     // vara det lägsta indexet (annars glider blocken vid varje nytt varv).
     const platser = PAKETBLOCK_IDN.map((id) => order.indexOf(id)).filter((i) => i >= 0);

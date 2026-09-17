@@ -302,3 +302,34 @@ test('prisUrJsonLd: fel valuta eller ingen JSON-LD ger null MED skäl — aldrig
   assert.match(tom.skal, /ingen JSON-LD/);
   assert.equal(prisUrJsonLd(null, 'NOK').pris, null);
 });
+
+test('valjMalkampanj: LISTICLE-kampanjen är eget spår — produktsidans kampanj vinner', () => {
+  // Mätt 2026-09-16 i CaraShells konto: två ACTIVE SE-kampanjer med nästan
+  // samma namn. Rundan stoppade och sju färdiga annonser blev stående.
+  // Axel: "det är inte 2 stycken samma, den ena går ju till en listicle" —
+  // kopian pekade på /pages/…-lagerrensning, originalet på produktsidan.
+  const val = valjMalkampanj([
+    { id: '120249121867590172', name: 'CARASHELL_SE_Taköverdraget LISTICLE', status: 'ACTIVE' },
+    { id: '120249050544990172', name: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj?.id, '120249050544990172');
+  assert.equal(val.skal, null);
+  assert.match(val.varning, /LISTICLE/);
+});
+
+test('valjMalkampanj: bär ALLA aktiva LISTICLE sållas ingen bort — stoppet står kvar', () => {
+  // Spärren får sålla, aldrig avgöra ensam: tar den sista kampanjen blir
+  // "inget att ladda upp i" ett tyst fel i stället för ett läsbart stopp.
+  const val = valjMalkampanj([
+    { id: '1', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' },
+    { id: '2', name: 'X_SE_Produkten LISTICLE 2', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj, null);
+  assert.match(val.skal, /2 ACTIVE SE-kampanjer/);
+});
+
+test('valjMalkampanj: en ensam LISTICLE-kampanj tas emot som vanligt', () => {
+  const val = valjMalkampanj([{ id: '9', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' }], 'SE');
+  assert.equal(val.kampanj?.id, '9');
+  assert.equal(val.skal, null);
+});

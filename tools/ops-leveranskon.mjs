@@ -39,6 +39,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { valjAdsetForKoncept } from './meta-lib.mjs';
+import { utanSidospar } from './lib/sidokampanjer.mjs';
 import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -161,10 +162,18 @@ export function valjMalkampanj(kandidater, marknad = 'SE') {
     utfall: k.utfall ?? (k.status === 'ACTIVE' ? 'ACTIVE' : (Number(k.spend) > 0 ? 'AVVECKLAD' : (k.status ? 'PAUSAD_TOM' : null))),
     spend: k.spend ?? null,
   }));
-  const aktiva = lista.filter((k) => k.status === 'ACTIVE');
+  // Sidospårskampanjer (namnet bär LISTICLE) är egna spår med egen
+  // landningssida, inte standardmålet — se tools/lib/sidokampanjer.mjs.
+  // Sållningen tar aldrig bort den sista.
+  const { kvar: aktiva, bortsallade: sidospar } = utanSidospar(lista.filter((k) => k.status === 'ACTIVE'));
   if (aktiva.length === 1) {
     const k = aktiva[0];
-    return { kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'ACTIVE' }, skal: null, kandidater: lista };
+    return {
+      kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'ACTIVE' },
+      skal: null,
+      kandidater: lista,
+      ...(sidospar.length ? { varning: `${sidospar.map((s) => `"${s.namn}"`).join(' · ')} är eget spår (namnet bär LISTICLE) och tog inte emot annonserna.` } : {}),
+    };
   }
   if (aktiva.length > 1) {
     return {

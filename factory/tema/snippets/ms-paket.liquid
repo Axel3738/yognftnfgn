@@ -1,0 +1,264 @@
+{%- comment -%}
+  ms-paket — paketnivåer i köpblocket ("1-pack / 2-pack / 4-pack").
+
+  Samma sorts erbjudande som Kaching Bundles, men vi äger både widgeten och
+  rabatten. Det är hela poängen: en widget som bara ritar kort kan visa ett
+  paketpris som kassan inte ger, och det upptäcker kunden i sista steget.
+
+  VAR INNEHÅLLET BOR
+  Nivåerna redigeras i Shopify-adminen under Innehåll → Metaobjekt →
+  Paketnivå. En post per nivå och produkt. Inget här i koden behöver röras
+  för att ändra ett erbjudande.
+
+  ÄRLIGHETSSPÄRREN
+  Ett rabatterat pris visas BARA om nivån har både ett totalpris OCH en
+  rabattkod. Saknas koden vet vi inte att kassan ger priset, och då visar vi
+  fullpris. Rabatten är ett belopp (inte en procent), precis som Shopifys
+  rabattkod fungerar — därför räknas den av från det verkliga variantpriset,
+  vilket gör att den blir rätt även när kunden byter variant.
+
+  VARIANTVAL PER ENHET (Axels beslut 2026-09-10, DryTrek):
+  Temats pill-väljare visas inte. I stället får varje paketnivå lika många
+  rullgardiner som antalet — 1 par = 1 rullgardin, 2 par = 2, 4 par = 4 —
+  med en liten bild per färg i listan, precis som Kaching. Kunden väljer
+  färg per enhet, och köpet lägger varje vald variant i vagnen för sig.
+  Rabattkoderna räknar antal per PRODUKT, så koden gäller oavsett färgmix.
+
+  Parametrar:
+    product     (obligatorisk)
+    variant     nuvarande A/B-variant, 'a' | 'b' | tom
+    section_id  för unika fältnamn
+    enhet       ordet för en enhet i rullgardinernas etikett ('par', 'st' …)
+{%- endcomment -%}
+{%- liquid
+  assign p = product
+  assign v = p.selected_or_first_available_variant
+  assign uid = section_id | default: 'ms'
+  assign ab = variant | default: ''
+  assign alla = shop.metaobjects.ms_paketniva.values
+  assign enhet = enhet | default: 'st'
+  if request.locale.iso_code == 'nb' and enhet_nb != blank
+    assign enhet = enhet_nb
+  endif
+  if request.locale.iso_code == 'en' and enhet_en != blank
+    assign enhet = enhet_en
+  endif
+  assign flera_varianter = false
+  unless p.has_only_default_variant
+    assign flera_varianter = true
+  endunless
+-%}
+
+{%- if p and p.available and alla.size > 0 -%}
+  {%- comment -%}
+    Variantpriserna som JSON, så JS kan räkna om vid variantbyte.
+
+    MÅSTE köras genom `escape`. JSON:ens citattecken avslutar annars
+    HTML-attributet, JSON.parse felar, och då räknar JS varje nivå på
+    styckpriset 0 — hela köprutan visar 0 kr. Sidan ser rätt ut tills
+    JavaScript hinner köra.
+  {%- endcomment -%}
+  {%- capture priskarta -%}
+    { {%- for x in p.variants -%}"{{ x.id }}":{{ x.price }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }
+  {%- endcapture -%}
+
+  <ms-paket class="ms-scope ms-paket"
+    data-money-format="{{ shop.money_format | strip_html | escape }}"
+    data-enhet="{{ enhet | escape }}"
+    {% if flera_varianter %}data-egen-val="1"{% endif %}
+    data-varianter="{{ priskarta | strip | escape }}">
+
+    <div class="ms-paket__lista" role="radiogroup" aria-label="Välj paket">
+      {%- assign visade = 0 -%}
+      {%- for niva in alla -%}
+        {%- liquid
+          assign hor_hit = false
+          if niva.produkt.value.id == p.id
+            assign hor_hit = true
+          endif
+
+          assign nivans_ab = niva.ab_variant.value | default: '' | strip | downcase
+          if nivans_ab != '' and nivans_ab != ab
+            assign hor_hit = false
+          endif
+        -%}
+        {%- if hor_hit -%}
+          {%- liquid
+            assign antal = niva.antal.value | plus: 0
+            if antal < 1
+              assign antal = 1
+            endif
+
+            assign gvar = niva.gratis_produkt.value.selected_or_first_available_variant
+            assign gantal = niva.gratis_antal.value | default: 0 | plus: 0
+            assign gvarde = 0
+            if gvar and gantal > 0
+              assign gvarde = gvar.price | times: gantal
+            endif
+
+            assign kod = niva.rabattkod.value | default: '' | strip
+            assign bogo = niva.bogo_gratis.value | default: 0 | plus: 0
+            assign rabatt = 0
+            if bogo > 0 and kod != ''
+              comment
+                BOGO-läge: koden är en köp-X-få-Y-rabatt som ger `bogo` varor
+                och gåvan till 100 %. Rabatten SKALAR därför med variantpriset —
+                3-par-lådan ger mindre avdrag än 5-par-lådan, precis som kassan
+                räknar. Ett fast belopp här hade visat fel pris på 3-par.
+              endcomment
+              assign rabatt = v.price | times: bogo | plus: gvarde
+            else
+              comment
+                Två sätt att uttrycka samma rabatt, i den här ordningen:
+
+                PROCENTLÄGE (rabatt_procent): koden är en procentrabatt, så
+                avdraget skalar med priset — och därmed också med VALUTAN. Det
+                är enda sättet att få rätt siffra på den norska sidan: ett fast
+                belopp är alltid skrivet i en valuta, och Shopify översätter
+                inte tal (fastpris är number_decimal och saknar translatable
+                capability). Mätt 2026-09-09 på DryTrek: 661,30 stod kvar som
+                661,30 på /nb trots att varan kostar 381 NOK.
+
+                FASTPRISLÄGE (fastpris): rabatten är ett BELOPP räknat mot
+                standardvarianten, för det är så en beloppsrabattkod fungerar.
+                Samma belopp dras vilken variant kunden än väljer.
+              endcomment
+              assign standard = p.selected_or_first_available_variant.price
+              assign ordinarie_standard = standard | times: antal | plus: gvarde
+              assign fast = niva.fastpris.value
+              assign procent = niva.rabatt_procent.value | default: 0 | plus: 0
+              if kod != '' and procent > 0 and gvarde == 0
+                assign rabatt = v.price | times: antal | times: procent | divided_by: 100.0 | round
+              elsif kod != '' and fast != blank
+                assign fast_ore = fast | times: 100 | round
+                assign rabatt = ordinarie_standard | minus: fast_ore
+                if rabatt < 0
+                  assign rabatt = 0
+                endif
+              endif
+            endif
+
+            assign ordinarie = v.price | times: antal | plus: gvarde
+            assign kundpris = ordinarie | minus: rabatt
+            assign vald = niva.forvald.value
+          -%}
+          <div class="ms-paket__opt">
+          <label class="ms-paket__huvud">
+            {%- if niva.bricka.value != blank -%}
+              <span class="ms-paket__bricka">{{ niva.bricka.value }}</span>
+            {%- endif -%}
+            <input
+              class="ms-paket__input"
+              type="radio"
+              name="ms-paket-{{ uid }}"
+              value="{{ niva.system.handle }}"
+              data-antal="{{ antal }}"
+              data-rabatt="{{ rabatt }}"
+              data-procent="{{ procent | default: 0 }}"
+              data-bogo="{{ bogo }}"
+              data-kod="{{ kod | escape }}"
+              data-gratis-variant="{{ gvar.id }}"
+              data-gratis-antal="{{ gantal }}"
+              data-gratis-varde="{{ gvarde }}"
+              {% if vald %}checked{% endif %}>
+            <span class="ms-paket__kort">
+              <span class="ms-paket__dot" aria-hidden="true"></span>
+              <span class="ms-paket__text">
+                <span class="ms-paket__rubrik">{{ niva.rubrik.value }}</span>
+                {%- if antal > 1 -%}
+                  {%- comment -%}
+                    Styckpriset räknas här och i JS, aldrig ur en text i
+                    metaobjektet: en hårdkodad "330,65 kr per par" följer inte
+                    med valutan (mätt 2026-09-10: NOK-siffra bredvid SEK-total
+                    på /nb utan land).
+                  {%- endcomment -%}
+                  {%- assign per_enhet = kundpris | divided_by: antal -%}
+                  <span class="ms-paket__under" data-ms-paket-styck>{{ per_enhet | money }} per {{ enhet }}</span>
+                {%- elsif niva.underrubrik.value != blank -%}
+                  <span class="ms-paket__under">{{ niva.underrubrik.value }}</span>
+                {%- endif -%}
+              </span>
+              <span class="ms-paket__pris">
+                <span class="ms-paket__nu" data-ms-paket-nu>{{ kundpris | money }}</span>
+                {%- if rabatt > 0 -%}
+                  <span class="ms-paket__forr" data-ms-paket-forr>{{ ordinarie | money }}</span>
+                {%- endif -%}
+              </span>
+            </span>
+            {%- if gantal > 0 and niva.gratis_text.value != blank -%}
+              {%- comment -%}
+                Gåvan hänger under kortet som en egen remsa, utanför ramen —
+                den ska läsas som något EXTRA man får, inte som en rad i
+                erbjudandet. Samma grepp som Kaching Bundles använder.
+              {%- endcomment -%}
+              <span class="ms-paket__gava">
+                {%- if niva.gratis_produkt.value.featured_image -%}
+                  <img class="ms-paket__gava-bild" src="{{ niva.gratis_produkt.value.featured_image | image_url: width: 80 }}" alt="" width="40" height="40" loading="lazy">
+                {%- endif -%}
+                <span class="ms-paket__gava-text">
+                  <span class="ms-paket__gava-etikett">{% render 'ms-icon', name: 'gift' %} Gratis på köpet</span>
+                  <span>{{ niva.gratis_text.value }}</span>
+                </span>
+                <span class="ms-paket__gava-varde">värde {{ gvarde | money }}</span>
+              </span>
+            {%- endif -%}
+          </label>
+          {%- if flera_varianter -%}
+            {%- comment -%}
+              En rullgardin per enhet. Alternativen är produktens köpbara
+              varianter med variantbilden som miniatyr. Förvalt: den variant
+              sidan öppnades med, i alla rutor — kunden ändrar de hen vill.
+              Bara den valda nivåns rutor visas (JS växlar `hidden`).
+            {%- endcomment -%}
+            <div class="ms-paket__val" data-ms-val {% unless vald %}hidden{% endunless %}>
+              {%- for e in (1..antal) -%}
+                <div class="ms-val" data-ms-val-enhet="{{ e }}">
+                  <button type="button" class="ms-val__knapp" data-ms-val-knapp data-id="{{ v.id }}" aria-haspopup="listbox" aria-expanded="false">
+                    {%- if v.featured_image -%}
+                      <img class="ms-val__bild" data-ms-val-bild src="{{ v.featured_image | image_url: width: 80 }}" alt="" width="34" height="34">
+                    {%- else -%}
+                      <span class="ms-val__bild ms-val__bild--tom" data-ms-val-bild aria-hidden="true"></span>
+                    {%- endif -%}
+                    <span class="ms-val__text">
+                      <span class="ms-val__etikett">{{ enhet | capitalize }} {{ e }}</span>
+                      <span class="ms-val__namn" data-ms-val-namn>{{ v.title }}</span>
+                    </span>
+                    <span class="ms-val__pil" aria-hidden="true">{% render 'ms-icon', name: 'chevron' %}</span>
+                  </button>
+                  <ul class="ms-val__lista" role="listbox" aria-label="{{ enhet | capitalize }} {{ e }}" hidden>
+                    {%- for x in p.variants -%}
+                      {%- if x.available -%}
+                        <li class="ms-val__alt{% if x.id == v.id %} is-vald{% endif %}" role="option" tabindex="-1"
+                            data-id="{{ x.id }}" data-namn="{{ x.title | escape }}"
+                            data-bild="{% if x.featured_image %}{{ x.featured_image | image_url: width: 80 }}{% endif %}"
+                            aria-selected="{% if x.id == v.id %}true{% else %}false{% endif %}">
+                          {%- if x.featured_image -%}
+                            <img src="{{ x.featured_image | image_url: width: 80 }}" alt="" width="34" height="34" loading="lazy">
+                          {%- else -%}
+                            <span class="ms-val__bild ms-val__bild--tom" aria-hidden="true"></span>
+                          {%- endif -%}
+                          <span>{{ x.title }}</span>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          </div>
+          {%- assign visade = visade | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if visade == 0 and request.design_mode -%}
+      <div class="ms-video__tom">
+        Inga paketnivåer för den här produkten ännu. Lägg till dem under
+        <strong>Innehåll → Metaobjekt → Paketnivå</strong> i Shopify-adminen.
+      </div>
+    {%- endif -%}
+
+    <p class="ms-paket__fel" data-ms-paket-fel hidden role="alert"></p>
+  </ms-paket>
+{%- endif -%}

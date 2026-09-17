@@ -669,3 +669,26 @@ spara kie.ai-länken i planfilen utan att skriva över — noterat i `dna.md`.
 Notion: kommentar + `Translated url` på alla sju; **status orörd** (`flytta_till_approved`
 falskt — Norge bär dem inte än). Discord `#annons-uppladdning` postat, Axel
 pingad under ACTION NEEDED (slå på kampanjen).
+
+---
+
+## Leveransrunda 2026-09-17 — tom kö, och kampanjstoppet lagat
+
+Noll rader i hubben. Gårdagens sju bildannonser lever i
+`CARASHELL_SE_Taköverdraget`.
+
+**Stoppet från 16/9 är åtgärdat i koden.** Axel döpte om listicle-kampanjen
+till `CARASHELL_SE_Taköverdraget LISTICLE`, och sedan i dag sållar både
+`ops-leveranskon` och `ops-till-meta` bort kampanjer vars namn bär ett
+sidospårsord (`tools/lib/sidokampanjer.mjs`, `SIDOSPAR = ['LISTICLE']`).
+Verifierat mot kontot samma körning: rundan väljer produktsidans kampanj
+själv, utan `--kampanj`.
+
+Två spärrar i regeln, båda testade:
+- **Den sista kampanjen sållas aldrig bort.** Bär alla aktiva ordet lämnas
+  listan orörd och det läsbara stoppet står kvar — annars blir "inget att
+  ladda upp i" ett tyst fel i stället för ett larm.
+- **Namnet får sålla, aldrig avgöra ensam.** `--kampanj <id>` styr fortfarande.
+
+Nya spår som föds (fler landningssidetyper) läggs till i `SIDOSPAR` med datum
+och skäl — listan är inte en gissning om framtiden, den är en logg.

@@ -223,3 +223,31 @@ lämnades som den var för att inte skriva om historik.
 Samma sak gäller varje utfil per körning i en butik med fler än en produkt:
 sätt produktnyckeln i namnet innan rutinerna hinner krocka. Det syns aldrig som
 ett fel i rutinen — bara som en försvunnen fil eller en konflikt i nästa push.
+
+## Storleksvarianter på en levande produkt (mätt 2026-09-17, CaraShell takskyddet)
+
+- `varianter:` i produktfilen + `--igen produkt,metafalt,lagerpolicy,oversatt,prislista`
+  räcker: `productSet` byter "Default Title" mot de nya varianterna på samma produkt
+  (handle och id kvar, status kvar), lagerpolicyn skrivs per variant, prislistorna
+  sätter det fasta NOK/USD-priset på varje ny variant, och `oversatt` registrerar
+  variantvärdena på /en (nb behöver inget när namnet är samma som svenskan).
+- Översättningsnycklarna heter `produkt.<id>.variant.<namn>` och byggs ur planen —
+  skriv nb/en-raderna INNAN steget körs, annars läcker svenskan.
+- ⚠️ Olika pris per variant finns inte: `build-store.mjs` sätter `ekonomi.pris` på
+  alla varianter och `prislista.mjs` samma belopp per valuta. Nästa steg när Axel
+  ger priser per storlek: `varianter[].pris/jamforpris` + `marknadspriser` per variant.
+- Fyra `sida.*`-strängar (två sidor, title + body) registreras inte på nb/en —
+  matchningen sker på VÄRDE och butikens sidor har glidit från underlaget. Fanns
+  före den här körningen; rör inte varianterna.
+- **Rullgardin per enhet i paketen (Axels beslut 2026-09-17: "man vill kunna köpa två
+  olika storlekar"):** koden fanns redan i `ms-paket.js` (variantval per enhet sedan
+  2026-09-10), men CaraShells tema bar bas-zip:ens ÄLDRE `snippets/ms-paket.liquid`
+  och `assets/ms-paket.css` utan rullgardinerna — bara JS:en var fabriksägd. Sedan
+  2026-09-17 äger fabriken alla tre (`TEMAFILER` i `tema.mjs`, källfiler i
+  `factory/tema/snippets/` + `factory/tema/assets/`), och `--igen tema` skriver dem
+  till varje butik med språk- och valutapatcharna ovanpå. Ordet i etiketten
+  ("Överdrag 1 / Trekk 1 / Cover 1") kommer ur `produkt.enhet: { sv, nb, en }` och
+  väljs i Liquid på `product.handle` (`enhetLiquid`), eftersom produktmallen delas av
+  butikens alla produkter. Mätt live på takskyddet: 1 + 2 + 3 rullgardiner per A/B-block
+  med nio alternativ var, noll Liquid-fel, termoskyddet (en variant) orört.
+
