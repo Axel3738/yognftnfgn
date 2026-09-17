@@ -76,6 +76,7 @@ det är det som gör datan grupperbar. Ny variant = bumpa `v{N}`. Ny idé = nytt
 | `collage` | Flera bilder/feature-callouts |
 | `static` | Stillbild (när ingen av ovanstående passar bättre) *(tillagd 2026-08-25)* |
 | `slideshow` | Bildspel av stillbilder med musik *(tillagd 2026-08-25, Matstrumpor)* |
+| `anim` | AI-genererad animation (claymation/stop motion-känsla), figurer i stället för människor *(tillagd 2026-09-17, Matstrumpor brief 026)* — kräver Metas AI-märkning vid uppladdning |
 
 ### HOOK — den primära kroken (kort slug, fritt men konsekvent)
 Det första ögat/hjärnan fastnar på. Håll det till 1–2 ord: `stains`, `2sec`,
