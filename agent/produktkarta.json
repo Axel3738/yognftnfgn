@@ -9,8 +9,48 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-16",
+  "uppdaterad": "2026-09-17",
   "kampanjer": [
+    {
+      "campaign_id": "120250252311730291",
+      "produkt": "Taköverdraget LISTICLE LAGERRENSNING",
+      "lage": "test",
+      "lage_motivering": "listicle-landningssidans egen kampanj, startad 2026-09-16 — saknades i kartan, tillagd av /rond-auto. Kampanjnamnet bär inget BE-tal, så domen blir SAKNAR_BREAK_EVEN tills ett tal skrivs in. Gissa aldrig.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250252442610291",
+      "produkt": "Termoskyddet LISTICLE LAGERRENSNING",
+      "lage": "test",
+      "lage_motivering": "listicle-landningssidans egen kampanj, startad 2026-09-16 — saknades i kartan, tillagd av /rond-auto. Kampanjnamnet bär inget BE-tal, så domen blir SAKNAR_BREAK_EVEN tills ett tal skrivs in. Gissa aldrig.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250253867730291",
+      "produkt": "Fågelmataren med Kamera",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-17, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250253948980291",
+      "produkt": "Solcellslampan med Rörelsesensor 210 LED",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-17, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250254068910291",
+      "produkt": "Dinosauriekalendern 24 Dinosaurier",
+      "lage": "test",
+      "lage_motivering": "startad 2026-09-17, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120252216935950233",
       "produkt": "Gjerdestolpebøyle NO",
