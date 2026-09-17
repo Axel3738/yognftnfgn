@@ -1,0 +1,136 @@
+{
+ "hamtad": "2026-09-17T07:54:30.719Z",
+ "kalla": "https://www.skool.com/lodestar/classroom/4ddcb1f2",
+ "grupp": "lodestar",
+ "kurs_id": "4ddcb1f2",
+ "titel": "The Celebrity Code - English",
+ "beskrivning": "Welcome to The Celebrity Code.\n\nThis course gives you a behind-the-scenes look at the exact framework we use to build high-performing celebrity and influencer campaigns. You'll learn how to identify the right talent, evaluate partnerships, negotiate with confidence, and create collaborations that drive real business results.\n\nEvery lesson is practical and based on real experience.\n\nBut knowledge alone changes nothing — execution is everything. Take action and apply what you learn.\n",
+ "moduler": [
+  {
+   "nr": 1,
+   "id": "4d30536d300f40139b0b42e021cd5ff4",
+   "titel": "Welcome to The Celebrity Code",
+   "djup": 1,
+   "fil": "01-welcome-to-the-celebrity-code",
+   "text_tecken": 635,
+   "video": null,
+   "undertext": null,
+   "bilagor": [],
+   "noteringar": []
+  },
+  {
+   "nr": 2,
+   "id": "af3ec69c988d4e29b24930eea6977e95",
+   "titel": "🎥 The Celebrity Code Masterclass",
+   "djup": 1,
+   "fil": "02-the-celebrity-code-masterclass",
+   "text_tecken": 931,
+   "video": null,
+   "undertext": null,
+   "bilagor": [],
+   "noteringar": []
+  },
+  {
+   "nr": 3,
+   "id": "8eebce84941747fd8088f61a32e29fa5",
+   "titel": "1️⃣ The HappyFlops Story 🟢",
+   "djup": 1,
+   "fil": "03-1-the-happyflops-story",
+   "text_tecken": 389,
+   "video": {
+    "videoId": "293a08e1926e4be6bc997bcab1d87182",
+    "playbackId": "lOFlnyTFRl02bBAa77RORdikmsHFtdN001Bw1fvP4CXU4",
+    "duration_ms": 1837266,
+    "status": "ready"
+   },
+   "undertext": {
+    "sprak": "en",
+    "cues": 446,
+    "ord": 3545
+   },
+   "bilagor": [],
+   "noteringar": []
+  },
+  {
+   "nr": 4,
+   "id": "e563b776163049a399f9fb00ac3e1bad",
+   "titel": "2️⃣ Research & Risk 🟢",
+   "djup": 1,
+   "fil": "04-2-research-and-risk",
+   "text_tecken": 357,
+   "video": {
+    "videoId": "8edc68ea73b34a6bb843af4a2560a7af",
+    "playbackId": "94mf02ZXblZK8ZqJH9mI8x02m5n9BDVPwRTYz84YpcX00g",
+    "duration_ms": 4343242,
+    "status": "ready"
+   },
+   "undertext": {
+    "sprak": "en",
+    "cues": 913,
+    "ord": 7817
+   },
+   "bilagor": [
+    {
+     "titel": "HappyFlops Brain - AI Prompt",
+     "fil": "Prompt - Influencer Brain HappyFlops.pdf",
+     "typ": "application/pdf"
+    }
+   ],
+   "noteringar": []
+  },
+  {
+   "nr": 5,
+   "id": "66d4983613ab4e15a61ae8df2179c8fb",
+   "titel": "3️⃣ Outreach & Setup 🟢",
+   "djup": 1,
+   "fil": "05-3-outreach-and-setup",
+   "text_tecken": 412,
+   "video": {
+    "videoId": "a40a0f1ae9cc458c8b2e44fadb381726",
+    "playbackId": "00cYCR5H7jFlAaoR200zulGKXV00HW7ANVhPaqjTyZ00Fbs",
+    "duration_ms": 1789133,
+    "status": "ready"
+   },
+   "undertext": {
+    "sprak": "en",
+    "cues": 429,
+    "ord": 4187
+   },
+   "bilagor": [],
+   "noteringar": []
+  },
+  {
+   "nr": 6,
+   "id": "863cf3493da141a69635fb08ec4c6f93",
+   "titel": "4️⃣ Launch & Relationship 🟢",
+   "djup": 1,
+   "fil": "06-4-launch-and-relationship",
+   "text_tecken": 397,
+   "video": {
+    "videoId": "7b77c09e75c742b0acfd828f58899f6b",
+    "playbackId": "5Rxd01wXOEVjW76bxbMicRnXoTjJyPlwbquV00X3yU4Ek",
+    "duration_ms": 1493533,
+    "status": "ready"
+   },
+   "undertext": {
+    "sprak": "en",
+    "cues": 241,
+    "ord": 3005
+   },
+   "bilagor": [],
+   "noteringar": []
+  },
+  {
+   "nr": 7,
+   "id": "e32cd021a249499aaf3014876cf98668",
+   "titel": "✦ Work With Us Directly",
+   "djup": 1,
+   "fil": "07-work-with-us-directly",
+   "text_tecken": 608,
+   "video": null,
+   "undertext": null,
+   "bilagor": [],
+   "noteringar": []
+  }
+ ]
+}

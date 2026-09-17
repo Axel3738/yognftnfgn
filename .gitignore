@@ -52,3 +52,6 @@ market-expansion/*/notion-batches/*/no-video/
 market-expansion/*/notion-batches/*/out/
 market-expansion/*/notion-batches/*/lager/
 market-expansion/*/notion-batches/*/*/up/
+
+# Skool-transkribering: ljudspår laddas ner bara för Whisper, committas aldrig
+skool/output/*/*/ljud/
