@@ -175,4 +175,13 @@ förbättringen rakt av i stället.
   innan). `tools/shopify.mjs` läser både det namnet och `MATSTRUMPOR`. Butiken är
   `1r46tp-qx.myshopify.com`. Appen installerades på butiken 2026-09-17 och har
   sedan dess produkter, teman, ordrar och rapporter öppna (`npm run tema:shop`).
+- **A/B-testet "sortval"** (Axel 2026-09-17): alla annonser till sushisidan, B-besökare
+  får fyra sortkort (sushi, pizza, hamburgare, donut) ovanför paketnivåerna och
+  köper vald sort med dess egna nivåer och K1F1/K2F2-kod; A ser sidan som förut.
+  Bygge: `snippets/ms-sortval.liquid` + `ms-paket.liquid` (`fast_variant`) +
+  `ms-paket.js` (`inaktiv()`/`aktivera()`/`<ms-sortval>`) + `ms-paket.css`. Mallen:
+  `ms_paket` i `data-ms-ab="sortval:a"`, nytt block `ms_sortval` i `sortval:b`;
+  `ms_ab_tests = sortval`. Ligger i kopian `207180890451`, förhandsvisas med
+  `?ms_ab=sortval:a` / `:b`. Inga produkter ihopslagna, inga koder ändrade. Känt:
+  galleriet visar sushins bilder även när en annan sort valts (v1).
 - Klaviyo är installerat. Rör inte dess kod.

@@ -189,7 +189,8 @@
             "color_scheme": "scheme-1"
           }
         }
-      }
+      },
+      "ms_ab_tests": "sortval"
     }
   }
 }

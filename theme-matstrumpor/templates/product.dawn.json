@@ -57,7 +57,7 @@
         "ms_paket": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "{% render 'ms-paket', product: product, section_id: section.id %}"
+            "custom_liquid": "<div data-ms-ab=\"sortval:a\">{% render 'ms-paket', product: product, section_id: section.id %}</div>"
           }
         },
         "judgeme_stjarnor": {
@@ -69,6 +69,12 @@
           "settings": {
             "custom_liquid": "<p class=\"ms-storlek\">Passar strl 36–44 · stretchigt material</p>"
           }
+        },
+        "ms_sortval": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div data-ms-ab=\"sortval:b\" hidden>{% render 'ms-sortval', product: product, section_id: section.id, sorter: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' %}</div>"
+          }
         }
       },
       "block_order": [
@@ -78,6 +84,7 @@
         "price",
         "variant_picker",
         "ms_storlek",
+        "ms_sortval",
         "ms_paket",
         "buy_buttons",
         "ms_trust",

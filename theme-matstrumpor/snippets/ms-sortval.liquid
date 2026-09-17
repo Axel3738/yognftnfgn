@@ -1,0 +1,79 @@
+{%- comment -%}
+  ms-sortval — B-varianten i testet "sortval": alla fyra strumpsorter på
+  samma produktsida. Fyra kort (sushi, pizza, hamburgare, donut) ovanför
+  paketnivåerna; väljer kunden en annan sort byts paketkorten till DEN
+  produktens nivåer, priser och rabattkod, och köpet lägger den produktens
+  variant i vagnen. Inga produkter slås ihop, inga koder byggs om — varje
+  sort behåller sina egna metaobjekt-nivåer och sina egna K1F1/K2F2-koder.
+
+  Ärlighetsregeln gäller oförändrad: priset i kortet är variantens riktiga
+  pris, rabatten är nivåns riktiga kod. Vi visar aldrig ett pris som kassan
+  inte ger.
+
+  Parametrar:
+    product     sidans produkt (hjälten — sushin)
+    sorter      handles, kommaseparerade, i visningsordning
+    section_id  för unika fältnamn
+{%- endcomment -%}
+{%- liquid
+  assign handles = sorter | default: 'sushi-strumpor,pizza-strumpor,hamburger-strumpor,donut-strumpor' | split: ','
+  assign uid = section_id | default: 'ms'
+  assign egen = product
+-%}
+<ms-sortval class="ms-scope ms-sortval" data-money-format="{{ shop.money_format | strip_html | escape }}">
+  <p class="ms-h3 ms-sortval__rubrik">Välj sort</p>
+  <div class="ms-sortval__lista" role="radiogroup" aria-label="Välj sort">
+    {%- for h in handles -%}
+      {%- assign handle = h | strip -%}
+      {%- assign sp = all_products[handle] -%}
+      {%- if sp != blank and sp.available -%}
+        {%- liquid
+          assign sv = sp.selected_or_first_available_variant
+          assign ar_egen = false
+          if sp.id == egen.id
+            assign ar_egen = true
+            assign sv = egen.selected_or_first_available_variant
+          endif
+          assign namn = sp.title | replace: '-Strumpor', '' | replace: '-strumpor', '' | replace: ' Strumpor', '' | replace: ' strumpor', ''
+        -%}
+        <label class="ms-sortval__opt">
+          <input class="ms-sortval__input" type="radio"
+            name="ms-sortval-{{ uid }}"
+            value="{{ sp.handle }}"
+            data-handle="{{ sp.handle }}"
+            data-variant-id="{{ sv.id }}"
+            data-price="{{ sv.price }}"
+            {% if ar_egen %}data-egen="true" checked{% endif %}>
+          <span class="ms-sortval__kort">
+            {%- if sp.featured_image -%}
+              <img class="ms-sortval__bild" src="{{ sp.featured_image | image_url: width: 160 }}" alt="" width="64" height="64" loading="lazy">
+            {%- endif -%}
+            <span class="ms-sortval__namn">{{ namn }}</span>
+            <span class="ms-sortval__pris">{{ sv.price | money }}</span>
+          </span>
+        </label>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- for h in handles -%}
+    {%- assign handle = h | strip -%}
+    {%- assign sp = all_products[handle] -%}
+    {%- if sp != blank and sp.available -%}
+      {%- liquid
+        assign paket_id = uid | append: '-' | append: sp.handle
+        assign ar_egen = false
+        if sp.id == egen.id
+          assign ar_egen = true
+        endif
+      -%}
+      <div class="ms-sortval__paket" data-handle="{{ sp.handle }}" {% unless ar_egen %}hidden{% endunless %}>
+        {%- if ar_egen -%}
+          {% render 'ms-paket', product: sp, section_id: paket_id %}
+        {%- else -%}
+          {% render 'ms-paket', product: sp, section_id: paket_id, fast_variant: sp.selected_or_first_available_variant.id %}
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</ms-sortval>

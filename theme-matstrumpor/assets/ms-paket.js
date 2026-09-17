@@ -78,8 +78,27 @@
     }
 
     variantId() {
+      // Sortvalet (test "sortval"): en paketnivå för en ANNAN produkt än
+      // sidans egen bär sitt variant-id själv — formulärets fält tillhör
+      // sidans produkt och vore fel vara att lägga i vagnen.
+      if (this.dataset.variantId) return String(this.dataset.variantId);
       var f = this.form && this.form.querySelector('select[name="id"], input[name="id"]');
       return f && f.value ? String(f.value) : Object.keys(this.priser)[0];
+    }
+
+    /* Ligger elementet gömt — i en A/B-variant kunden inte fick, eller i en
+       sort som inte är vald — får det varken skriva i formuläret, skicka
+       prishändelser eller lägga i vagnen. Annars kör fyra paketväljare på
+       samma köpknapp och kunden får fyra sorter i vagnen. */
+    inaktiv() {
+      return this.hidden || this.closest('[hidden]') !== null;
+    }
+
+    /* Anropas när sortvalet visar den här paketväljaren: skriv antalet i
+       formuläret och berätta för sticky-knappen vad som gäller nu. */
+    aktivera() {
+      var vald = this.vald || this.inputs.filter(function (i) { return i.checked; })[0] || this.inputs[0];
+      if (vald) this.onChange({ target: vald });
     }
 
     styckpris() {
@@ -131,6 +150,7 @@
 
     onChange(ev) {
       this.vald = ev.target;
+      if (this.inaktiv()) return;
 
       // Antalet skrivs in i temats EGET formulär, så temats köpknapp fungerar
       // som vanligt även om vår egen kod skulle utebli.
@@ -208,7 +228,7 @@
        vanliga köpknapp går. Finns ingen låda (butiken kan vara inställd på
        kundvagnssida) laddar vi om till /cart som förr. */
     kop(ev) {
-      if (ev.target !== this.form || !this.vald) return;
+      if (ev.target !== this.form || !this.vald || this.inaktiv()) return;
       ev.preventDefault();
       ev.stopPropagation();
 
@@ -313,4 +333,62 @@
   }
 
   if (!customElements.get('ms-paket')) customElements.define('ms-paket', MsPaket);
+
+  /* --- <ms-sortval> -------------------------------------------------------
+     B-varianten i testet "sortval": fyra sortkort ovanför paketnivåerna på
+     sushisidan. Varje sort har sin egen <ms-paket> (egna nivåer, egna
+     koder). Vi visar den valda och gömmer resten; den valda aktiveras så
+     antal, sticky-pris och köp följer sorten. Sidans egen sort (sushin)
+     använder temats variantväljare som vanligt; för de andra sorterna göms
+     den, eftersom Par/Storlek-pillren tillhör sushin.                        */
+  class MsSortval extends HTMLElement {
+    connectedCallback() {
+      this.inputs = Array.prototype.slice.call(this.querySelectorAll('.ms-sortval__input'));
+      if (!this.inputs.length) return;
+      this.sektion = this.closest('[id^="shopify-section"]') || document;
+      this.valj = this.valj.bind(this);
+      this.inputs.forEach(function (i) { i.addEventListener('change', this.valj); }, this);
+
+      // Dawns pris överst på sidan: kom ihåg sushins, så det går att sätta
+      // tillbaka när kunden väljer sushin igen.
+      var pris = this.sektion.querySelector('.price .price-item--regular, .price__regular .price-item');
+      this.prisEl = pris;
+      this.prisOriginal = pris ? pris.textContent : '';
+
+      // Kör först när A/B-motorn hunnit avgöra om vi visas alls.
+      var self = this;
+      var start = function () { if (!self.inaktiv()) self.valj(); };
+      if (document.readyState === 'complete') setTimeout(start, 0);
+      else window.addEventListener('load', function () { setTimeout(start, 0); });
+    }
+
+    inaktiv() { return this.hidden || this.closest('[hidden]') !== null; }
+
+    valj() {
+      var vald = this.inputs.filter(function (i) { return i.checked; })[0] || this.inputs[0];
+      if (!vald) return;
+      var handle = vald.dataset.handle;
+      var egen = vald.dataset.egen === 'true';
+
+      var paketen = this.querySelectorAll('.ms-sortval__paket');
+      Array.prototype.forEach.call(paketen, function (el) {
+        if (el.dataset.handle === handle) el.removeAttribute('hidden');
+        else el.setAttribute('hidden', '');
+      });
+
+      // Par/Storlek-pillren är sushins; för de andra sorterna finns inget att välja.
+      var picker = this.sektion.querySelector('variant-selects, variant-radios');
+      if (picker) { if (egen) picker.removeAttribute('hidden'); else picker.setAttribute('hidden', ''); }
+
+      // Priset överst ska vara den valda sortens, inte sushins.
+      if (this.prisEl) {
+        this.prisEl.textContent = egen ? this.prisOriginal : money(Number(vald.dataset.price || 0), this.dataset.moneyFormat);
+      }
+
+      var aktiv = this.querySelector('.ms-sortval__paket:not([hidden]) ms-paket');
+      if (aktiv && aktiv.aktivera) aktiv.aktivera();
+    }
+  }
+
+  if (!customElements.get('ms-sortval')) customElements.define('ms-sortval', MsSortval);
 })();

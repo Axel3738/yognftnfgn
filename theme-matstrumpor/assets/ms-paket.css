@@ -142,3 +142,36 @@
   color: var(--ms-good);
 }
 .ms-paket__fel { margin: 10px 0 0; color: var(--ms-warn); font-size: var(--ms-fs-sm); }
+
+/* 3.21 Sortvalet (test "sortval", B-varianten) ------------------------ */
+/* Fyra små kort i rad — bild, namn, pris. Samma kortspråk som paketnivåerna
+   så det läses som steg 1 (sort) före steg 2 (paket), inte som en ny modul. */
+.ms-sortval { display: block; margin: 18px 0 0; }
+.ms-sortval__rubrik { margin: 0 0 8px; }
+.ms-sortval__lista { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+/* Dawns mobilbrytpunkt är 749 px — under den ligger korten två och två. */
+@media (max-width: 749px) { .ms-sortval__lista { grid-template-columns: repeat(2, 1fr); } }
+.ms-sortval__opt { position: relative; margin: 0; display: block; }
+.ms-sortval__input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.ms-sortval__kort {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px 6px 9px;
+  border: 2px solid var(--ms-line);
+  border-radius: var(--ms-radius-sm);
+  background: var(--ms-surface);
+  text-align: center;
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+.ms-sortval__input:hover + .ms-sortval__kort { border-color: var(--ms-line-strong); }
+.ms-sortval__input:checked + .ms-sortval__kort {
+  border-color: var(--ms-accent);
+  background: color-mix(in srgb, var(--ms-accent) 6%, var(--ms-surface));
+  box-shadow: var(--ms-shadow);
+}
+.ms-sortval__input:focus-visible + .ms-sortval__kort { box-shadow: var(--ms-ring); }
+.ms-sortval__bild { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; background: var(--ms-surface-2); }
+.ms-sortval__namn { font-size: var(--ms-fs-sm); font-weight: 700; line-height: 1.15; }
+.ms-sortval__pris { font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); }
+.ms-sortval__paket .ms-paket { margin-top: 12px; }

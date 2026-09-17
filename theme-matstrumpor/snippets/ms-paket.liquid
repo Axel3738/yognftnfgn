@@ -18,9 +18,12 @@
   vilket gör att den blir rätt även när kunden byter variant.
 
   Parametrar:
-    product     (obligatorisk)
-    variant     nuvarande A/B-variant, 'a' | 'b' | tom
-    section_id  för unika fältnamn
+    product       (obligatorisk)
+    variant       nuvarande A/B-variant, 'a' | 'b' | tom
+    section_id    för unika fältnamn
+    fast_variant  variant-id att köpa när produkten INTE är sidans egen
+                  (sortvalet i testet "sortval") — då läses inte formulärets
+                  variantfält, som tillhör en annan produkt
 {%- endcomment -%}
 {%- liquid
   assign p = product
@@ -45,6 +48,7 @@
 
   <ms-paket class="ms-scope ms-paket"
     data-money-format="{{ shop.money_format | strip_html | escape }}"
+    {% if fast_variant != blank %}data-variant-id="{{ fast_variant }}"{% endif %}
     data-varianter="{{ priskarta | strip | escape }}">
 
     <div class="ms-paket__lista" role="radiogroup" aria-label="Välj paket">
