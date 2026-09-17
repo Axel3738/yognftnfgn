@@ -123,6 +123,16 @@ ROAS 0,94 — förlust före COGS i alla tre. Utanför den här filens uppdrag, 
    hjärtans dag edition`). *Instruktion:* bygg statics med utbytbart badge-/säsongslager.
    Julbatchen får köras från mitten av september (Q4-playbook).
 
+## Axels regler för den här produkten (skiljer sig från Bäverbutiken)
+
+- **Nya bildannonser läggs i den kampanj som redan kör, i ett adset, utan adset-budget** (Axels beslut
+  2026-09-17: "inte en ny kampanj, inga jävla adsetbudgetar, alla i ett adset"). Regel 11:s test-ABO
+  gäller alltså inte här. Bygg aldrig en ny kampanj för sushistrumporna utan att Axel ber om det.
+  Läs spendfördelningen som Metas val, inte som testresultat.
+- Bildannonserna genereras av sessionen (kie.ai + `batch-03/lager.py`), granskas av sessionen,
+  läggs i Notion som `To be Reviewed`; Axel ger revision som kommentar på raden. Leverans:
+  `batch-03/leverans.mjs` → `To be translated`.
+
 ## Losing DNA / förbjudet
 
 - **Story-hook i stället för vändningen** (`haikuh3`: "Jag gav min mamma den ultimata

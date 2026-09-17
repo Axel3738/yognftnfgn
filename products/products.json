@@ -182,7 +182,12 @@
       "target_cpa_status": "PLATSHALLARE = kampanjens livstids-CPA 2026-09-17 (25 834 kr / 65 kop). Inget agarbeslut finns. Anvands bara for kvotberakningen.",
       "cycle_start": "2026-09-17",
       "status": "aktiv",
-      "launches": [],
+      "launches": [
+        {
+          "date": "2026-09-17",
+          "count": 10
+        }
+      ],
       "break_even_cpa_sek": null,
       "break_even_roas": null,
       "break_even_status": "SAKNAS. Axel 2026-09-17: 'fuck cogsen'. Ingen COGS dokumenterad. Kill-golv = ROAS 1,0 (forlust oavsett COGS). Vinstbidrag kan inte raknas.",

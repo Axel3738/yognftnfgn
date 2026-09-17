@@ -1,3 +1,12 @@
+# ⚠️ ÖVERSPELAD 2026-09-17 — Axels beslut: ingen ny kampanj, inga adsetbudgetar
+
+Bilderna 029–038 ligger sedan 2026-09-17 i **`MATSTRUMP_SALES_20260826`** (den kampanj som redan kör), adset
+`broad_advplus_purchase_batch03_bilder` (`120251589956160023`), utan egen budget. Se `batch-log.md` Batch #3.
+Test-ABO-planen nedan står kvar som referens för videorna 039–043 och för andra produkter, men gäller inte
+sushistrumporna. Videorna läggs i samma adset när de är klara (eller ett eget videoadset i samma kampanj — Axels val).
+
+---
+
 # LAUNCH — batch #3, Sushi-Strumpor (till Axel, svenska)
 
 Konto: **nya kungen `730973156224390`**. Sida `820358954504320`. Pixel `1785935302094082`.

@@ -63,8 +63,35 @@ Beslut ur avläsningen (Axels att verkställa — sessionen rör inte kontot):
 
 ## Batch #3 — 2026-09-17, `/forsta-batch` (denna körning) — 10 statics + 5 videor + 3 retest
 
-Struktur: **separat test-ABO** `MATSTRUMP_SALES_<launchdatum>`, ett adset per annons, lika
-budget (förslag 100 kr/dag), broad SE, Advantage+, purchase. Tier 1 launchas först.
+Struktur — **Axels beslut 2026-09-17 vid leveransen:** *"inte en ny kampanj, inga adsetbudgetar, alla
+bildannonser i ett adset"* — ett uttryckligt undantag från regel 11 för den här produkten (samma slags
+undantag som `/notionkorning` har för Bäverbutiken). Bilderna ligger därför i den kampanj som redan kör,
+`MATSTRUMP_SALES_20260826` (CBO 1 000 kr/dag), i **ett** nytt adset utan egen budget:
+`broad_advplus_purchase_batch03_bilder` (`120251589956160023`), samma inställningar som `_bilder`-adsetet
+(broad SE 18–65, Advantage+ audience, purchase mot pixeln, 7d klick/1d visning). Det ursprungliga test-ABO-
+upplägget i `LAUNCH.md` är därmed överspelat. ⚠️ Konsekvens för avläsningen: CBO:n fördelar budgeten själv,
+så spendfördelningen mellan de tio är Metas dom, inte ett lika-villkor-test — döm på CPA/ROAS per annons vid
+≥300 kr och 3 köp, och läs "fick ingen spend" som "Meta valde bort", inte som "förlorare".
+
+**Levererat 2026-09-17 ~11:00 UTC** (`batch-03/leverans.mjs`, tillbakaläst: 10 annonser, `IN_PROCESS` = Metas granskning):
+
+| Annons | Ad-id | Creative |
+|---|---|---|
+| `MATSTRUMP_sushi_curiosity_product_029_v1` | `120251589957430023` | `2091142081608902` |
+| `MATSTRUMP_sushi_curiosity_beforeafter_030_v1` | `120251589958430023` | `4664896003744282` |
+| `MATSTRUMP_sushi_pain_lifestyle_031_v1` | `120251589960880023` | `2483259182171159` |
+| `MATSTRUMP_sushi_conflict_comparison_032_v1` | `120251589966640023` | `1781663849694644` |
+| `MATSTRUMP_sushi_social_textheavy_033_v1` | `120251589972050023` | `2151691862446925` |
+| `MATSTRUMP_sushi_identity_product_034_v1` | `120251589975090023` | `1101324635630532` |
+| `MATSTRUMP_sushi_offer_product_035_v1` | `120251589976510023` | `2372947590202927` |
+| `MATSTRUMP_sushi_gift_product_036_v1` | `120251589978040023` | `28906720585634819` |
+| `MATSTRUMP_sushi_curiosity_product_037_v1` | `120251589982120023` | `1072125045691767` |
+| `MATSTRUMP_sushi_curiosity_product_038_v1` | `120251589988840023` | `3639209349560123` |
+
+Notion: raderna flyttade till `To be translated` (hubbens namn på översättningskön) med ad-id i kommentar.
+Kvot loggad: `quota log sushi-strumpor 10 2026-09-17` → +8 före plan. Ett tomt dubblett-adset
+(`120251589951910023`, skapat av ett felat första försök) raderades — det var körningens eget.
+Retesten d1/d2/d4 gjordes INTE: originalen ligger redan live i `_bilder`-adsetet, kopior hade konkurrerat med sig själva.
 Briefer: `products/sushi-strumpor/batch-03/`. Kvot: 2 per 3-dagarscykel → 18 annonser = 9 cykler.
 
 | Annons | Tier | Hypotes (isolerad variabel) | Källa | Utfall |
