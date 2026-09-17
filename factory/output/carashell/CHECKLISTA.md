@@ -12,7 +12,7 @@ This store has several products – it is still ONE store, ONE domain, ONE check
 * STORE EMAIL: **hello@carashell.se**
 * FORWARD TO: **subscriptions@stonebite.org**
 * OWNER (hand over to): **axelodhner.business@gmail.com**
-* PRODUCT: **Taköverdrag Husvagn & Husbil 6,5 × 3 m** (takskyddet)
+* PRODUCT: **Taköverdrag Husvagn & Husbil 5,5–13,5 m** (takskyddet)
 * PRODUCT: **Termoskydd Husbil 211 × 171 cm** (termoskyddet)
 
 ## 1. Shopify – create the store
@@ -119,7 +119,7 @@ review with a local name and the original date).
 - [ ] Apps → search "Judge.me" → Install (free plan)
 - [ ] Judge.me → Settings → Language → **Swedish**
 - [ ] Judge.me → Settings → Review Widget → star color: **00B77F**
-- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Taköverdrag Husvagn & Husbil 6,5 × 3 m** → Import
+- [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Taköverdrag Husvagn & Husbil 5,5–13,5 m** → Import
 - [ ] Judge.me → Settings → Import reviews → Import from apps → **Judge.me format** → upload the reviews file Claude gives you for **Termoskydd Husbil 211 × 171 cm** → Import
   The upload is yours and stays yours: Judge.me's API overwrites every review
   date with the moment of import (measured 2026-09-08), the app's own file

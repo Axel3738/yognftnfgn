@@ -1,20 +1,44 @@
 {
   "input": {
-    "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
     "handle": "takskyddet",
     "status": "ACTIVE",
     "descriptionHtml": "<p>Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
     "vendor": "CaraShell",
     "seo": {
-      "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m – CaraShell",
+      "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – CaraShell",
       "description": "Torrt tak fram till våren. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
-        "name": "Title",
+        "name": "Variant",
         "values": [
           {
-            "name": "Default Title"
+            "name": "5,5 × 3 m"
+          },
+          {
+            "name": "6,5 × 3 m"
+          },
+          {
+            "name": "7,5 × 3 m"
+          },
+          {
+            "name": "8,5 × 3 m"
+          },
+          {
+            "name": "9,5 × 3 m"
+          },
+          {
+            "name": "10,5 × 3 m"
+          },
+          {
+            "name": "11,5 × 3 m"
+          },
+          {
+            "name": "12,5 × 3 m"
+          },
+          {
+            "name": "13,5 × 3 m"
           }
         ]
       }
@@ -23,12 +47,133 @@
       {
         "optionValues": [
           {
-            "optionName": "Title",
-            "name": "Default Title"
+            "optionName": "Variant",
+            "name": "5,5 × 3 m"
           }
         ],
         "price": "1129.00",
         "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-055",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "6,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-065",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "7,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-075",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "8,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-085",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "9,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-095",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "10,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-105",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "11,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-115",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "12,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-125",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Variant",
+            "name": "13,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-135",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
           "tracked": false
@@ -105,7 +250,7 @@
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"Mått 6,5 × 3 m, täcker hela takytan\",\"Svart väv, 210D\",\"Elastiska spännband med plastkrokar som hakar under karossens kant\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
+      "value": "[\"Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak\",\"Svart 210D Oxford-väv, vattentät och tål sol\",\"Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant\",\"Två extra förstärkta band på 10,5 m följer med\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
     },
     {
       "namespace": "opf",
