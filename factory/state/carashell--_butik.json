@@ -167,23 +167,45 @@
           "locale": "en",
           "marknad": "USA",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false,
+          "lander": {
+            "onskade": [
+              "GB",
+              "CA",
+              "AU",
+              "NZ"
+            ],
+            "tillagda": [
+              "GB",
+              "CA",
+              "AU",
+              "NZ"
+            ],
+            "redan": [],
+            "torr": []
+          },
+          "lokalaValutor": {
+            "pa": true,
+            "redan": false,
+            "bas": "USD"
+          }
         }
       ]
     },
     "oversatt": {
-      "klar": true,
+      "klar": false,
+      "manuell": "nb: 16 svenska texter saknar översättning (läckor på /nb): variant name, variant name, variant name, variant name, variant name, variant name, variant name, variant name … — komplettera oversattning-nb.json och kör --igen oversatt · en: 16 svenska texter saknar översättning (läckor på /en): variant name, variant name, variant name, variant name, variant name, variant name, variant name, variant name … — komplettera oversattning-en.json och kör --igen oversatt",
       "underlag": 151,
       "utfall": {
         "nb": {
-          "registrerade": 1,
-          "saknade": 0,
+          "registrerade": 0,
+          "saknade": 16,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
-            "menylänk": 1,
+            "menylänk": 0,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
@@ -191,25 +213,25 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4342/4373"
+          "granskning": "4372/4416"
         },
         "en": {
-          "registrerade": 1,
-          "saknade": 0,
+          "registrerade": 8,
+          "saknade": 16,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 0,
-            "menylänk": 1,
+            "sida": 1,
+            "menylänk": 0,
             "paket": 0,
-            "policy": 0,
+            "policy": 1,
             "kollektion": 0,
-            "temamall": 0,
-            "sektionsgrupp": 0,
+            "temamall": 5,
+            "sektionsgrupp": 1,
             "temainställning": 0
           },
-          "granskning": "4349/4373"
+          "granskning": "4392/4416"
         }
       }
     },
@@ -238,9 +260,11 @@
   "arbetstemaId": "gid://shopify/OnlineStoreTheme/205487636812",
   "arbetstemaNamn": "CaraShell – CRO v1",
   "qa": {
-    "gron": true,
-    "kritiska": [],
-    "tid": "2026-09-16T10:21:50.286Z"
+    "gron": false,
+    "kritiska": [
+      "kundvy-startsida"
+    ],
+    "tid": "2026-09-17T12:52:13.679Z"
   },
-  "uppdaterad": "2026-09-16T10:21:50.286Z"
+  "uppdaterad": "2026-09-17T12:52:13.679Z"
 }

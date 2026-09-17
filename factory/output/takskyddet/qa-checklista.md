@@ -1,8 +1,8 @@
 # QA — Taköverdrag Husvagn & Husbil 6,5 × 3 m
 
-- [x] ✅ produkt: Taköverdrag Husvagn & Husbil 6,5 × 3 m (takskyddet), status ACTIVE
+- [x] ✅ produkt: Taköverdrag Husvagn & Husbil 5,5–13,5 m (takskyddet), status ACTIVE
 - [x] ✅ priser: 1129 SEK på alla varianter, jämförpris 1469
-- [x] ✅ varianter: 1 st
+- [ ] ❌ varianter: Butiken har 9 varianter, produktfilen 1.
 - [x] ✅ bilder: 4 st, 4 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
 - [x] ✅ beskrivning: problem, lösning och kritisk media (gif + demo) finns
@@ -19,7 +19,7 @@
 - [x] ✅ checkout: valuta SEK
 - [ ] 🖐 checkout-betalning: Gör ett testköp och bekräfta att betalleverantören är aktiv.
 - [x] ✅ kundvy-produktsida: 11 strukturpunkter gröna
-- [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
+- [ ] ❌ kundvy-produkttext: "Taköverdrag Husvagn & Husbil 6,5 × 3 m" syns inte i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 16
 - [x] ✅ markörer /en: 0 svenska markörer av 16
 
