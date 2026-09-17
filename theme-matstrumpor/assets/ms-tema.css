@@ -50,6 +50,18 @@
 /* Paketnivåerna är sidans viktigaste val — de får andas mer än resten. */
 .product__info-container > * + .ms-paket { margin-top: 1.8rem; }
 
+/* Storleksraden under variantväljaren är en HJÄLPTEXT, inte ett stycke.
+   Första versionen (2026-09-17) var ett Dawn-textblock i brödtextstorlek och
+   blev en hel paragraf mitt i köpflödet — Axel: "vi behöver inte skriva en
+   bibel om storlekarna". Liten, dämpad, och hängande tätt under pillret. */
+.ms-storlek {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #5c5750;
+}
+.product__info-container > div:has(> .ms-storlek) { margin-top: .4rem; }
+
 /* Titeln får inte konkurrera med sektionsrubrikerna längre ner. */
 .product__title h1,
 .product__title .h1 { line-height: 1.15; }

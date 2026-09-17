@@ -65,10 +65,9 @@
           "settings": {}
         },
         "ms_storlek": {
-          "type": "text",
+          "type": "custom_liquid",
           "settings": {
-            "text": "Passar strl 36–44 – materialet är stretchigt och ger lite extra åt båda hållen.",
-            "text_style": "subtitle"
+            "custom_liquid": "<p class=\"ms-storlek\">Passar strl 36–44 · stretchigt material</p>"
           }
         }
       },
