@@ -175,13 +175,25 @@ förbättringen rakt av i stället.
   innan). `tools/shopify.mjs` läser både det namnet och `MATSTRUMPOR`. Butiken är
   `1r46tp-qx.myshopify.com`. Appen installerades på butiken 2026-09-17 och har
   sedan dess produkter, teman, ordrar och rapporter öppna (`npm run tema:shop`).
-- **A/B-testet "sortval"** (Axel 2026-09-17): alla annonser till sushisidan, B-besökare
-  får fyra sortkort (sushi, pizza, hamburgare, donut) ovanför paketnivåerna och
-  köper vald sort med dess egna nivåer och K1F1/K2F2-kod; A ser sidan som förut.
-  Bygge: `snippets/ms-sortval.liquid` + `ms-paket.liquid` (`fast_variant`) +
-  `ms-paket.js` (`inaktiv()`/`aktivera()`/`<ms-sortval>`) + `ms-paket.css`. Mallen:
-  `ms_paket` i `data-ms-ab="sortval:a"`, nytt block `ms_sortval` i `sortval:b`;
-  `ms_ab_tests = sortval`. Ligger i kopian `207180890451`, förhandsvisas med
-  `?ms_ab=sortval:a` / `:b`. Inga produkter ihopslagna, inga koder ändrade. Känt:
-  galleriet visar sushins bilder även när en annan sort valts (v1).
+- **A/B-testet "sortval"** (Axel 2026-09-17): alla annonser till sushisidan. B-besökare
+  får mixa och matcha inne i paketkorten: en dropdown per låda (två i Köp 1 – Få 1,
+  fyra i Köp 2 – Få 2) med sushi/pizza/hamburgare/donut, synliga på det valda kortet.
+  Kassan tar betalt för de dyraste lådorna och ger de billigaste gratis, korten
+  räknar likadant. Ätpinnar följer bara med sushilådor (1 par per låda). A ser sidan
+  som förut. Bygge: `ms-paket.liquid` (`mix`, `sorter`) + `ms-paket.js`
+  (`mixRakna`, `inaktiv()`, koden får `-P<pinnar>`) + `ms-paket.css`. Mallen:
+  `ms_paket` i `data-ms-ab="sortval:a"` med `variant: 'a'`, block `ms_sortval` i
+  `sortval:b` med `variant: 'b', mix: true`; `ms_ab_tests = sortval`.
+  **Shopify-sidan:** metaobjekten `mix-2`/`mix-4` (ab_variant b, måste vara ACTIVE —
+  API-skapade hamnar som DRAFT) med koderna `STRUMPOR-K1F1`/`STRUMPOR-K2F2` som BAS;
+  de riktiga koderna är `STRUMPOR-K1F1-P0…P2` och `STRUMPOR-K2F2-P0…P4` (en per antal
+  ätpinnar), för Shopify ger de billigaste varorna gratis först och gratisantalet
+  måste vara exakt vagnen minus de betalda lådorna — en kod med fast Y=3 blev "ej
+  tillämplig" så fort lådorna var av olika sort. `sushi-2`/`sushi-4` står omärkta
+  (ab tom) med flit: den publicerade sidan skickar ingen variant och skulle annars
+  bli tom. Verifierat i Chromium 2026-09-17 (`scratchpad/e2e-mix.mjs`): pizza+sushi
+  449 kr, pizza+donut 449 kr, 2 pizza+sushi+donut 898 kr, A-kontroll 399 kr — rätt
+  kod på varje. Nyskapade koder tar ett par minuter innan butiken godtar dem.
+  Ligger i kopian `207180890451`; förhandsvisa med `?ms_ab=sortval:a` / `:b`.
+  Känt: galleriet visar sushins bilder oavsett sort.
 - Klaviyo är installerat. Rör inte dess kod.
