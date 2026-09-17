@@ -1,0 +1,247 @@
+{
+  "sprak": "nb",
+  "marknad": "NO",
+  "modell": "sonnet",
+  "datum": "2026-09-17",
+  "vag": "basfoto (kie.ai-länk ur factory/output/carashell/termoskyddet/bild-2026-09-17.json) + factory/bild-text.py; huvudsessionen rättade PD_4_1:s bildrubrik, 'normalpris' → 'sammenligningspris' och CS_5_1:s rubrik",
+  "pris": {
+    "pris": 548,
+    "jamforpris": 685,
+    "rabatt": "−20 %",
+    "valuta": "NOK",
+    "kalla": "ekonomi.marknadspriser + butikens /nb-sida ?country=NO"
+  },
+  "bildtexter": {
+    "CaraShellFront_CS_4_1": [
+      {
+        "typ": "rubrik",
+        "text": "Kjølig om sommeren, varmt om vinteren, mørkt når du sover."
+      },
+      {
+        "typ": "underrad",
+        "text": "Utenpå ruten, 211 × 171 cm – klart på to minutter."
+      },
+      {
+        "typ": "pris",
+        "text": "548 kr"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "685 kr"
+      },
+      {
+        "typ": "rabatt",
+        "text": "−20 %"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "CaraShellFront_CS_5_1": [
+      {
+        "typ": "rubrik",
+        "text": "Taktrekket for vinteren. Termotrekket for reisen."
+      },
+      {
+        "typ": "underrad",
+        "text": "Termotrekket sitter utenpå frontruten og begge sideruter foran, 211 × 171 cm. Glasset blir aldri kaldt innvendig – ingen dugg om morgenen."
+      },
+      {
+        "typ": "pris",
+        "text": "Termotrekket 548 kr"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "CaraShellFront_G_4_1": [
+      {
+        "typ": "rubrik",
+        "text": "Gi bort en morgen uten dugg å tørke."
+      },
+      {
+        "typ": "underrad",
+        "text": "Mørkt i kupeen, ingen sol klokken fire."
+      },
+      {
+        "typ": "pris",
+        "text": "548 kr"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "685 kr"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "CaraShellFront_PD_4_1": [
+      {
+        "typ": "rubrik",
+        "text": "Dugg på innsiden – til tross for gardinen i kupeen."
+      },
+      {
+        "typ": "underrad",
+        "text": "CaraShell sitter utenpå ruten – glasset blir aldri kaldt innenfra."
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "CaraShellFront_PD_5_1": [
+      {
+        "typ": "rubrik",
+        "text": "Rasteplassen ser frontruten din. Den ser ikke deg – hele fronten er mørklagt."
+      },
+      {
+        "typ": "underrad",
+        "text": "Mørklegger hele fronten utenfra, 211 × 171 cm. Ingen ser inn – og solen vekker deg ikke klokken fire."
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ]
+  },
+  "annonser": [
+    {
+      "namn": "CaraShellFront_NO_CS_5_1",
+      "se_namn": "CaraShellFront_CS_5_1",
+      "message": "Taktrekket for vinteren. Termotrekket for reisen.\n\nSamme bobil, to beskyttelser. Taktrekket (1 106 kr) tar hånd om taket når bilen står stille. Termotrekket tar hånd om kupeen når du sover i den: 211 × 171 cm på utsiden av frontruten og begge sideruter foran, flikene klemt fast i dørkarmen. Glasset blir aldri kaldt innvendig – ingen dugg om morgenen, mørkt i hele fronten.\n\nTermotrekket 548 kr, sammenligningspris 685 kr. Fri frakt til Norge, 14 dagers angrerett.",
+      "headline": "Taket for vinteren. Ruten for reisen.",
+      "description": "Termotrekket 548 kr · 211 × 171 cm · fri frakt.",
+      "tre_fragor": [
+        {
+          "rad": "Taktrekket for vinteren. Termotrekket for reisen. (rubrik/headline)",
+          "visualisera": "✅ to konkrete produkter, to konkrete situasjoner (vinter stillestående / reise)",
+          "falsifiera": "✅ hvert produkts funksjon kan sjekkes hver for seg",
+          "bara_vi": "✅ bare CaraShell selger nettopp denne kombinasjonen av tak- og frontrutetrekk til samme bobil"
+        },
+        {
+          "rad": "Samme bobil, to beskyttelser. Taktrekket tar hånd om taket når bilen står stille. Termotrekket tar hånd om kupeen når du sover i den. (primærtekst)",
+          "visualisera": "✅ man ser for seg de to ulike situasjonene (parkert vs. i bruk)",
+          "falsifiera": "✅ påstanden om hva hvert produkt dekker er etterprøvbar",
+          "bara_vi": "✅ den doble bruken er spesifikk for CaraShells to produkter sammen"
+        },
+        {
+          "rad": "211 × 171 cm på utsiden av frontruten og begge sideruter foran, flikene klemt fast i dørkarmen. (primærtekst)",
+          "visualisera": "✅ eksakt mål og festemetode, konkret bilde",
+          "falsifiera": "✅ mål og festepunkt kan kontrolleres på produktet",
+          "bara_vi": "✅ det spesifikke målet og festemetoden er unike for denne varen"
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellFront_NO_G_4_1",
+      "se_namn": "CaraShellFront_G_4_1",
+      "message": "Gi bort en morgen uten dugg å tørke.\n\nSitter utenpå frontruten og begge sideruter foran, 211 × 171 cm, klart på to minutter. Mørkt i kupeen – solen vekker deg ikke klokken fire.\n\n548 kr (ord. 685 kr), 20 % under sammenligningspris. Fri frakt til Norge, 14 dagers angrerett.",
+      "headline": "Gi bort en morgen uten dugg",
+      "description": "Mørkt i kupeen, ingen sol klokken fire. 548 kr.",
+      "tre_fragor": [
+        {
+          "rad": "Gi bort en morgen uten dugg å tørke. (rubrik/headline)",
+          "visualisera": "✅ konkret bilde av morgenen uten dugg å tørke bort",
+          "falsifiera": "✅ etterprøvbart – tørker man dugg eller ikke",
+          "bara_vi": "❌ en konkurrent kan love det samme resultatet"
+        },
+        {
+          "rad": "Mørkt i kupeen, ingen sol klokken fire. (underrad/description)",
+          "visualisera": "✅ konkret klokkeslett og mørke, lett å se for seg",
+          "falsifiera": "✅ klokkeslettet gjør påstanden etterprøvbar (våkner man kl. 4 eller ikke)",
+          "bara_vi": "✅ det konkrete klokkeslettet 'fire' gjør raden vanskeligere å kopiere ord for ord enn en generisk 'mørklegger godt'"
+        },
+        {
+          "rad": "Sitter utenpå frontruten og begge sideruter foran, 211 × 171 cm, klart på to minutter. (primærtekst)",
+          "visualisera": "✅ eksakt plassering og mål",
+          "falsifiera": "✅ målet og monteringstiden kan sjekkes",
+          "bara_vi": "✅ det eksakte målet er spesifikt for denne varen"
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellFront_NO_PD_5_1",
+      "se_namn": "CaraShellFront_PD_5_1",
+      "message": "På rasteplassen går alle forbi frontruten. Og alle kikker inn.\n\nCaraShell termotrekk sitter på utsiden av glasset – 211 × 171 cm over frontruten og begge sideruter foran – og mørklegger hele fronten. Ingen ser inn. Solen vekker deg ikke klokken fire. Flikene klemmes fast i dørkarmen, dørene forblir lukket, to minutter.\n\n548 kr, fri frakt til Norge, 14 dagers angrerett.",
+      "headline": "Mørklegger hele fronten utenfra",
+      "description": "211 × 171 cm. 548 kr, fri frakt, 14 dagers angrerett.",
+      "tre_fragor": [
+        {
+          "rad": "På rasteplassen går alle forbi frontruten. Og alle kikker inn. (primærtekst-åpning)",
+          "visualisera": "✅ konkret scene fra en rasteplass",
+          "falsifiera": "✅ observasjon om at folk går forbi og kikker inn kan bekreftes eller avkreftes",
+          "bara_vi": "❌ enhver skjerm-/gardinleverandør kan beskrive samme situasjon på en rasteplass"
+        },
+        {
+          "rad": "Mørklegger hele fronten utenfra (rubrik/headline)",
+          "visualisera": "✅ konkret bilde av en mørklagt front",
+          "falsifiera": "✅ etterprøvbart – dekker trekket hele fronten eller ikke",
+          "bara_vi": "❌ 'mørklegger fronten' er et resultat flere skjermprodukter kan love"
+        },
+        {
+          "rad": "211 × 171 cm over frontruten og begge sideruter foran – og mørklegger hele fronten. Ingen ser inn. Solen vekker deg ikke klokken fire. (primærtekst)",
+          "visualisera": "✅ eksakt mål, plassering og klokkeslett",
+          "falsifiera": "✅ målet, dekningen og klokkeslettet er alle etterprøvbare",
+          "bara_vi": "✅ det eksakte målet 211 × 171 cm over nettopp disse tre rutene er spesifikt for produktet"
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellFront_NO_PD_4_1",
+      "se_namn": "CaraShellFront_PD_4_1",
+      "message": "Dugg på innsiden – til tross for gardinen i kupeen.\n\nGardinen sitter innenfor glasset. Duggen blir likevel liggende, for glasset blir kaldt innenfra. CaraShell sitter i stedet utenpå ruten – på frontruten og begge sideruter foran – så glasset aldri blir kaldt innenfra.\n\nSideflikene klemmes fast i dørkarmen, dørene forblir lukket. Klart på to minutter. Fri frakt til Norge, 14 dagers angrerett.",
+      "headline": "Dugg på innsiden, tross gardinen",
+      "description": "Sitter utenpå ruten – glasset blir aldri kaldt innenfra.",
+      "tre_fragor": [
+        {
+          "rad": "Dugg på innsiden – til tross for gardinen i kupeen. (rubrik/headline)",
+          "visualisera": "✅ konkret bilde av dugg på innsiden av glasset",
+          "falsifiera": "✅ etterprøvbart – er det dugg der eller ikke, selv med gardin",
+          "bara_vi": "✅ observasjonen om at gardinen ikke løser duggproblemet er en konkret innsikt konkurrenten sjelden sier høyt om sitt eget alternativ"
+        },
+        {
+          "rad": "Gardinen sitter innenfor glasset. Duggen blir likevel liggende, for glasset blir kaldt innenfra. (primærtekst)",
+          "visualisera": "✅ konkret årsak-virkning, lett å se for seg",
+          "falsifiera": "✅ fysisk etterprøvbar påstand om hvorfor duggen oppstår",
+          "bara_vi": "✅ forklarer mekanismen bak konkurrerende løsningers svakhet – spesifikt for denne sammenligningen"
+        },
+        {
+          "rad": "CaraShell sitter i stedet utenpå ruten – på frontruten og begge sideruter foran – så glasset aldri blir kaldt innenfra. (primærtekst)",
+          "visualisera": "✅ konkret plassering på tre ruter",
+          "falsifiera": "✅ plasseringen og temperaturpåstanden kan kontrolleres",
+          "bara_vi": "✅ den nøyaktige plasseringen (frontrute + begge sideruter) er spesifikk for produktet"
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellFront_NO_CS_4_1",
+      "se_namn": "CaraShellFront_CS_4_1",
+      "message": "Kjølig om sommeren, varmt om vinteren, mørkt når du sover.\n\nTermotrekket sitter utenpå ruten – glasset blir aldri kaldt innenfra, ingen dugg å tørke bort om morgenen. 211 × 171 cm, klart på to minutter.\n\n548 kr (ord. 685 kr), 20 % under sammenligningspris. Fri frakt til Norge, 14 dagers angrerett.",
+      "headline": "Kjølig om sommeren, varmt om vinteren",
+      "description": "Utenpå ruten, 211 × 171 cm – klart på to minutter.",
+      "tre_fragor": [
+        {
+          "rad": "Kjølig om sommeren, varmt om vinteren, mørkt når du sover. (rubrik/headline)",
+          "visualisera": "✅ konkret bilde av temperatur og mørke i kupeen",
+          "falsifiera": "✅ testbart – er kupeen faktisk kjøligere/varmere/mørkere med trekket på",
+          "bara_vi": "❌ en hvilken som helst konkurrerende frontrutetrekk kan si det samme"
+        },
+        {
+          "rad": "Utenpå ruten, 211 × 171 cm – klart på to minutter. (underrad/description)",
+          "visualisera": "✅ eksakt mål og tidsbruk, lett å se for seg",
+          "falsifiera": "✅ målet og monteringstiden er etterprøvbare",
+          "bara_vi": "✅ det eksakte målet 211 × 171 cm er spesifikt for denne varen"
+        },
+        {
+          "rad": "Termotrekket sitter utenpå ruten – glasset blir aldri kaldt innenfra, ingen dugg å tørke bort om morgenen. (primærtekst)",
+          "visualisera": "✅ man ser for seg glasset og duggen som uteblir",
+          "falsifiera": "✅ mekanismen (utenpå → ikke kaldt innenfra → ingen dugg) kan sjekkes",
+          "bara_vi": "✅ beskriver den konkrete mekanismen ved akkurat denne plasseringen, ikke en generisk fordel"
+        }
+      ]
+    }
+  ]
+}

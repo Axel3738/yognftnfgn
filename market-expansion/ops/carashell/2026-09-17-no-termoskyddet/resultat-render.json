@@ -1,0 +1,60 @@
+{
+  "CaraShellFront_CS_4_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_NO_CS_4_1",
+    "vag": "basfoto + textlager",
+    "fil": "no/CaraShellFront_NO_CS_4_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "priskort"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_CS_5_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_NO_CS_5_1",
+    "vag": "basfoto + textlager",
+    "fil": "no/CaraShellFront_NO_CS_5_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "pris"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_G_4_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_NO_G_4_1",
+    "vag": "basfoto + textlager",
+    "fil": "no/CaraShellFront_NO_G_4_1.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "priskort"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_PD_4_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_NO_PD_4_1",
+    "vag": "basfoto + textlager",
+    "fil": "no/CaraShellFront_NO_PD_4_1.png",
+    "placerade": [
+      "botten",
+      "rubrik"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_PD_5_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_NO_PD_5_1",
+    "vag": "basfoto + textlager",
+    "fil": "no/CaraShellFront_NO_PD_5_1.png",
+    "placerade": [
+      "botten",
+      "rubrik"
+    ],
+    "okanda": []
+  }
+}

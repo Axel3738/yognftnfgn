@@ -339,3 +339,37 @@ bara om videon gjorts — utan redigerare är bildhälften det enda som får dat
 - Meta rate limit slog till på rad 3 (30 s + 60 s väntan) — uppladdaren backade själv, inget förlorat.
 - Läsregel för utvärderingen: delad pixel med takskyddet, och CS_5_1 visar takskyddet i bild —
   köp per produkt i Shopify före dom. Ingen dom före 300 kr / 3 köp per annons.
+
+## 2026-09-17 — `/ops-oversatt carashell/termoskyddet` (NO) — batch #2 live i Norge (5 bildannonser)
+
+- Kön: 5 bildrader i `SE-ACTIVE to be translated` (leveransrundans batch #2 samma dag). Alla
+  fem översatta till bokmål och **live** i `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm`
+  (`120249115382210172`, MagiBorsten DK), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_NO_CS_4_1` — adset CS, ad `120249139476950172`, priskort 548 / 685 kr / −20 %
+  - `CaraShellFront_NO_CS_5_1` — adset CS, ad `120249138960400172`, chip "Termotrekket 548 kr"
+  - `CaraShellFront_NO_G_4_1` — adset G, ad `120249138996830172`, 548 / 685 kr
+  - `CaraShellFront_NO_PD_4_1` — adset PD, ad `120249139126570172`, utan pris
+  - `CaraShellFront_NO_PD_5_1` — adset PD, ad `120249139118320172`, utan pris
+- Länk ärvd ur `CaraShellFront_NO_G_3`: `https://carashell.se/nb/products/termoskyddet?country=NO`.
+  Tillbakaläst ACTIVE/IN_PROCESS på alla fem (Metas granskning).
+- **Bildvägen:** basfotona fanns kvar bakom kie.ai-länkarna i
+  `factory/output/carashell/termoskyddet/bild-2026-09-17.json` (svarade 14:18 UTC) ⇒ det
+  norska textlagret ritades rent med `factory/bild-text.py` på originalfotot — samma band,
+  priskort och typsnitt som SE, ingen suddning. Skriptet: `<batch>/oversatt-no.py`.
+  Lärdom: planfilen i `factory/output/` är basfotots enda spår — committa den alltid
+  (nattvakten gjorde det i dag; takskyddets US-runda 16/9 fick suddvägen för att den saknades).
+- Pris ur `ekonomi.marknadspriser`: 548 NOK, jämförpris 685 ⇒ −20 % (inte SE:s −40 %).
+  Läst live på `/nb/products/termoskyddet?country=NO` = 548.
+- Copy: Sonnet-subagent (`textlager-no.json`, `adcopy-NO.json`, tre-frågorstestet i
+  `oversatt-output.json`). Huvudsessionen rättade tre saker: PD_4_1:s bildrubrik hade
+  kortats mot Ads Managers 40-teckensgräns (återställd till hela raden), "normalpris" →
+  "sammenligningspris", CS_5_1:s rubrik "for vinter" → "for vinteren". Johans svenska
+  recension struken ur PD_5_1:s norska copy (går inte att verifiera i Norge).
+- Notion: kommentar + `Translated url` på alla fem; **status orörd** (`flytta_till_approved`
+  falskt — US-rutinen 17:15 ska hitta dem). Kända luckan: de norska filerna ligger inte i
+  Notion-raden.
+- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping. Meta rate-limitade under
+  uppladdningen — fem annonser tog ~12 min.
+- Anmärkning: CS_4_1, PD_4_1, PD_5_1 bär samma vita band som SE-originalen (basfotot fyller
+  inte canvasen). Kosmetiskt, till nästa version av textlagret.
+- Läsregel: samma som SE — delad pixel med takskyddet, ingen dom före 300 kr / 3 köp.
