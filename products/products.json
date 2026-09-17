@@ -160,6 +160,42 @@
         "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
       },
       "creative_prefix": "Seatcover_"
+    },
+    {
+      "id": "sushi-strumpor",
+      "name": "Sushi-Strumpor (Matstrumpor.se)",
+      "brand": "Matstrumpor",
+      "shop": "1r46tp-qx.myshopify.com",
+      "shop_domain": "matstrumpor.se",
+      "product_url": "https://matstrumpor.se/products/sushi-strumpor",
+      "ad_account_id": "730973156224390",
+      "ad_account_name": "nya kungen",
+      "ad_account_note": "Kontonamnet ar 'nya kungen' i Meta (businessen Matstrumpor.se). CLAUDE.md:s 'Matstrumpor.se 730973156224390 UNSETTLED' ar samma konto - ACTIVE och lasbart sedan 2026-08-24. Fjolarets julvinnare (SUSHISTRUMPOR, 301 260 kr, 1 972 kop) ligger i SnarkLos 1346450049878358 - PAUSED, ror aldrig.",
+      "page_id": "820358954504320",
+      "pixel_id": "1785935302094082",
+      "campaign_ids": [
+        "120251217860260023"
+      ],
+      "campaign_note": "MATSTRUMP_SALES_20260826, CBO 1 000 kr/dag, Axels skalningskampanj. Nya tester i separat test-ABO (regel 11).",
+      "daily_budget_sek": 1000,
+      "target_cpa_sek": 397,
+      "target_cpa_status": "PLATSHALLARE = kampanjens livstids-CPA 2026-09-17 (25 834 kr / 65 kop). Inget agarbeslut finns. Anvands bara for kvotberakningen.",
+      "cycle_start": "2026-09-17",
+      "status": "aktiv",
+      "launches": [],
+      "break_even_cpa_sek": null,
+      "break_even_roas": null,
+      "break_even_status": "SAKNAS. Axel 2026-09-17: 'fuck cogsen'. Ingen COGS dokumenterad. Kill-golv = ROAS 1,0 (forlust oavsett COGS). Vinstbidrag kan inte raknas.",
+      "aov_sek": 397,
+      "aov_kalla": "Meta SE-kampanjen lifetime 2026-09-17: 30 953 kr intakt / 78 kop (spend x ROAS). Shopify Q1 2026: 370 kr.",
+      "scaling": false,
+      "notion": {
+        "name": "Matstrumpor creative hub",
+        "database_id": "3a7270ab-908c-80d2-9f35-e73e51e457ff",
+        "note": "Delad med integrationen 'Baverbutiken RUTINER' 2026-09-17. Items namnges med numret (001-028 upptagna) - nasta lediga: 044."
+      },
+      "creative_prefix": "MATSTRUMP_sushi_",
+      "memory": "products/sushi-strumpor/ (dna.md, batch-log.md, backlog.md). Aldre minne pa grenen claude/build-shrinepro-like-theme-pfalsx: docs/matstrumpor-*.md"
     }
   ]
 }

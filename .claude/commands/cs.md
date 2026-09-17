@@ -22,7 +22,7 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 - **Chatthistoriken:** hitta briefarna/manusen från de senaste CS-rundorna i
   denna chatt — vilka annonser byggdes, med vilken hypotes, vilken vinkel,
   vilket manus, vilken designbrief. Detta är underlaget för creative-teardownet.
-- Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA, break-even-CPA).
+- Produktens rad i `products/products.json` (`ad_account_id` — MagiBorsten `1867947880635861` för Bäverbutiken, andra verksamheter har sitt eget konto på raden, t.ex. `sushi-strumpor` → "nya kungen" `730973156224390`; kampanjer, budget, target-CPA, break-even-CPA).
 - `products/<id>/dna.md`, `batch-log.md`, `backlog.md` om de finns — de är
   komplement till chatten, inte ersättning för den.
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
@@ -32,7 +32,7 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 Gäller bara när `/cs` körs i en **ny** chatt utan CS-historik. Kör då en
 upphämtning först — hoppa aldrig över det och bygg aldrig en batch på tom historik:
 
-- Hämta **alla** annonser för produkten i MagiBorsten (hela livstiden) med spend,
+- Hämta **alla** annonser för produkten i produktens annonskonto (`ad_account_id` i products.json; hela livstiden) med spend,
   köp, CPA, ROAS, CTR, hook rate, hold + creatives (copy, rubrik, format,
   bild-/video-ID). Granska de statiska bilderna visuellt.
 - Gruppera i batcher efter launchdatum och namngivning, skriv `batch-log.md`

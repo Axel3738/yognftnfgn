@@ -47,8 +47,11 @@ Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga
 | Sida / pixel | `678639638662543` / `1554276343018184` | står inte i `main` — läs den ur en SnarkLös-vågkonfig |
 
 Kontonamnet är aldrig samma som brandnamnet. Kolla `ad_account_id` innan du rör
-något i Meta. Övriga konton finns men används inte: Matstrumpor.se
-`730973156224390` (⚠️ UNSETTLED).
+något i Meta. **Matstrumpor.se** (sushistrumporna, butik `1r46tp-qx`) kör i kontot
+**"nya kungen" `730973156224390`** — ACTIVE och läsbart sedan 2026-08-24 (den gamla
+noteringen "UNSETTLED" är inaktuell); fjolårets sushikampanjer ligger PAUSED i SnarkLös.
+Produkten är `sushi-strumpor` i `products/products.json`, minnet i
+`products/sushi-strumpor/` (första CS-rundan 2026-09-17).
 
 **Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
 bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett

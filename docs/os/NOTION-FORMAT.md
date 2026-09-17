@@ -12,7 +12,7 @@ Brieferna ligger som items i Pending Approval-vyn.
 |------|-------|
 | **Namn** | Annonsnamnet exakt enligt naming-strukturen, t.ex. `Enginecover_SP_6_H1` |
 | **Status** | `Draft` |
-| **Tag** | `Video - Pending Approval` — **ALLTID denna tag, även för bildannonser** |
+| **Tag** | `Video - Pending Approval` för video, **`Image - Pending Approval` för bildannonser** (Axels beslut 2026-09-17, sushi-batch #3: "bilderna kan ha Image - Pending approval" — den gamla regeln "alltid Video-taggen" gäller inte längre; `/bildannonser` har krävt Image-taggen hela tiden) |
 | **Innehåll** | Hela briefen ska vara tillgänglig inne i itemet: klistra in briefen som sidinnehåll OCH länka till brief-filen i Drive (editor-behörighet) |
 | Produkt / Batch | Ifyllt |
 | Deadline / Ansvarig redigerare | Lämnas tomt (sätts av managern) |
