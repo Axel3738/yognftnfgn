@@ -1083,3 +1083,16 @@ den tidigare noteringen om att break-even-CPA 243 kr är för lågt satt.
 
 Ägarfrågan om omstart av Sverige står obesvarad i Discord `#ads-to-do` sedan
 15/9. Ingenting här väntar på den — rutinen rapporterar tyst tills den besvaras.
+
+---
+
+## Norge 2026-09-17 — tom kö, andra dagen
+
+**0 rader** i `SE-ACTIVE to be translated`. NO-kampanjen orörd: 47 annonser,
+samtliga ACTIVE (PD 27, SP 8, CS 4, G 4, FO 2, CI 1, BOF 1). Ingenting når den
+här kön förrän leveransrundan har något att skicka vidare.
+
+Gårdagens prisfix bevisade sig direkt: butiken läses i dag till **382 NOK** mot
+379 i går. Kursen rörde sig, och siffran följde med — för att den hämtas ur den
+norska sidan vid varje körning i stället för att räknas om eller antas. Med det
+gamla verktyget hade det stått 389 båda dagarna.

@@ -1,0 +1,83 @@
+{
+  "butik": "DryTrek",
+  "nyckel": "drytrek/damasker",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO"
+  ],
+  "lank_standard": "https://drytrek.se/nb/products/damasker?country=NO",
+  "valuta": "NOK",
+  "heygen_sprak": "Norwegian Bokmål (Norway)",
+  "sprak": "norsk bokmål",
+  "locale": "nb",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+    "titel": "Damasker vandring"
+  },
+  "kampanj": {
+    "id": "120249020611450172",
+    "namn": "DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09",
+    "bas": "DRYTREK_NO_Damasker Vandring",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249089726760172",
+        "name": "DRYTREK_NO_CI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249089595210172",
+        "name": "DRYTREK_NO_BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249078373780172",
+        "name": "DRYTREK_NO_FO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020612580172",
+        "name": "DRYTREK_NO_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020612300172",
+        "name": "DRYTREK_NO_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020611960172",
+        "name": "DRYTREK_NO_G",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249020611560172",
+        "name": "DRYTREK_NO_CS",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 20,
+  "lank_arvd": "https://drytrek.se/nb/products/damasker?country=NO",
+  "pris_butik": {
+    "pris": 382,
+    "min": 382,
+    "max": 382,
+    "valuta": "NOK",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://drytrek.se/nb/products/damasker?country=NO"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-17T13:52:12.840Z"
+}
