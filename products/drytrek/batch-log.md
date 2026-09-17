@@ -1096,3 +1096,31 @@ Gårdagens prisfix bevisade sig direkt: butiken läses i dag till **382 NOK** mo
 379 i går. Kursen rörde sig, och siffran följde med — för att den hämtas ur den
 norska sidan vid varje körning i stället för att räknas om eller antas. Med det
 gamla verktyget hade det stått 389 båda dagarna.
+
+---
+
+## 2026-09-18 — nattvakten, körning nr 7 (ingen briefdag att köra: ronden pausad)
+
+SE: `DRYTREK_SE_Damasker Vandring` PAUSED sedan 15/9 20:52, **0 ändringar**,
+inget aktiverat. 7d-fönstret bär bara spend före pausen: 3 785 kr, 6 köp,
+ROAS 0,69 — rullar ut dag för dag. Registret sa "briefdag JA — ikappkörning"
+(senaste brief 13/9), men `Briefrond:` står på PAUS ⇒ noll briefer, ingen
+`brief-kord`. Hubben oförändrad: 19 batch #3-rader i Draft (skapade 12/9),
+10 videor i Creative strat review, 31 Approved.
+
+**Norge, torrkörning (inget skrivet) — första dippen:**
+
+| Mätdag | Spend 7d | Köp | ROAS 7d | ROAS 3d |
+|---|---:|---:|---:|---:|
+| 2026-09-16 | 6 306 kr | 22 | 1,78 | — |
+| 2026-09-17 | 7 109 kr | 26 | 1,84 | 1,58 |
+| 2026-09-18 | 6 957 kr | 24 | **1,65** | **1,37** |
+
+Reglerna hade i natt sänkt 1 000 → 700 kr (vinst 3d −10,6 %) och pausat
+`Gamasjer_NO_PD_2_1` (2 485 kr, 8 köp, CPA 311), `NO_Damasker_PD_14_14`
+(702 kr, 1 köp) och `PD_14_15` (558 kr, 1 köp). Benchmark `Gamasjer_NO_PD_1`:
+2 590 kr, 12 köp, CPA 216, 100 % av vinstbidraget. Med BE-CPA ≈ 319 kr
+(verklig NO-AOV ≈ 510) hade bara de två PD_14-bilderna pausats — PD_2_1 är
+lönsam på det talet. Rutinen dömer fortfarande bara SE; frågan (YES/NO) och
+A/B/C-frågan om SE står obesvarade i Discord `#ads` sedan 15/9 resp. 17/9.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-18{,-NO}.json`.
