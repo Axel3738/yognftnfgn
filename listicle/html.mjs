@@ -21,7 +21,7 @@
 // och gör **fet** till <strong>. Ingen annan HTML släpps igenom från copyn.
 
 import { htmlAv, styckenAv, lasCopy, allaElement, brandProfil, lasKoncept, IKON_STIG } from './gempages.mjs';
-import { sprakFor, konceptForSprak } from './sprak.mjs';
+import { sprakFor, konceptForSprak, ersattPrisTokens } from './sprak.mjs';
 
 const IKONER = {
   1: 'M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM138,80v96a6,6,0,0,1-12,0V91.21L111.33,101a6,6,0,0,1-6.66-10l24-16A6,6,0,0,1,138,80Z',
@@ -120,9 +120,15 @@ export function mallBilder(mall, platser) {
  *         'ingen' (bara fragmentet — sidans body i butiken, CSS:en ligger i assets/listicle.css)
  *   locale: 'sv' (standard) eller 'en' — de fasta texterna (Av/By, datumraden,
  *           Sammanfattning/Summary, reklammärkningen) följer språket (sprak.mjs).
+ *   prisTokens: 'ersatt' (standard — [[PRIS]]/[[JAMFORPRIS]] byts mot produktens
+ *           pristext, för förhandsvisningen) eller 'behall' (sidans body i butiken:
+ *           platserna lämnas kvar och byts av templates/page.listicle.liquid vid
+ *           varje visning, i besökarens valuta). Rotens data-lp-produkt bär
+ *           handlen mallen slår upp.
  */
-export function renderaHtml({ copy, produkt, bilder = {}, fasta = {}, datum, brand = null, koncept = 'lagerrensning', stil = 'inline', locale = 'sv' }) {
+export function renderaHtml({ copy: copyIn, produkt, bilder = {}, fasta = {}, datum, brand = null, koncept = 'lagerrensning', stil = 'inline', locale = 'sv', prisTokens = 'ersatt' }) {
   if (!produkt?.url) throw new Error('renderaHtml: produkten saknar url.');
+  const copy = prisTokens === 'behall' ? copyIn : ersattPrisTokens(copyIn, produkt);
   const s = sprakFor(locale);
   const k = konceptForSprak(lasKoncept(koncept), locale);
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
@@ -167,7 +173,7 @@ ${stil === 'ingen' ? '' : `<style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap');
 ${CSS}
 </style>
-`}<div class="lr">
+`}<div class="lr"${produkt.handle ? ` data-lp-produkt="${htmlAv(produkt.handle)}"` : ''}>
 <div class="lr-topp"></div>
 <section class="lr-hero">
   <div class="lr-inre">

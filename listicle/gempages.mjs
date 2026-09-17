@@ -22,7 +22,7 @@ import { createHash, randomInt } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { skrivZip, lasZip } from './zip.mjs';
-import { svensktDatum, priserI, sprakFor, konceptForSprak, formateraPris, SPRAK } from './sprak.mjs';
+import { svensktDatum, priserI, sprakFor, konceptForSprak, formateraPris, SPRAK, ersattPrisTokens, harPrisTokens, JAMFORPRIS_TOKEN, PRIS_TOKEN } from './sprak.mjs';
 
 // Språket (sv/en), valutorna och datumen bor i sprak.mjs sedan 2026-09-16
 // (marknadsversionerna). Re-exporterade här så äldre anropare inte märker det.
@@ -485,6 +485,11 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
   const pris = (t) => formateraPris(t, val);
   const nyckelText = (v) => (Array.isArray(v) ? v.join('\n') : String(v ?? ''));
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
+  // Prisplatserna [[PRIS]]/[[JAMFORPRIS]] räknas som produktens pris — de byts av
+  // butiken vid visning. Utan jämförpris på produktsidan finns inget att byta mot.
+  if (harPrisTokens(copy) && /\[\[JAMFORPRIS\]\]/.test(JSON.stringify(copy)) && produkt.jamforpris == null) fel.push(`copyn använder ${JAMFORPRIS_TOKEN} men produktsidan har inget jämförpris — sätt compare-at i Shopify eller skriv utan`);
+  const produktMedText = { ...produkt, prisText: produkt.prisText ?? (produkt.pris != null ? pris(produkt.pris) : PRIS_TOKEN), jamforprisText: produkt.jamforprisText ?? (produkt.jamforpris != null ? pris(produkt.jamforpris) : JAMFORPRIS_TOKEN) };
+  copy = ersattPrisTokens(copy, produktMedText);
   const egnaOrd = new Set(brandOrd(b));
   // Kända brandprofiler + källbutikens eget namn ur produktlänken (en uttrycklig
   // forbjudnaBrand-lista vinner och stänger av källbutiksordet också).
@@ -586,12 +591,17 @@ export function bytIdn(sida, { nytt = nyttId } = {}) {
  * för en annan butik skickar anroparen den butikens produktlänk som url.
  * `koncept` styr sidnamn/handle/författarrad; `punkter` > 5 klonar sektioner.
  * `locale` (sv/en) styr de fasta texterna: författarraden, datumraden, sidfoten.
+ * `handle` sätter sidans handle uttryckligen (annars <slug>-<suffix>) — en sida
+ * som redan ligger uppe behåller sin adress även när produkttiteln ändrats.
+ * Prisplatserna [[PRIS]]/[[JAMFORPRIS]] byts här mot produktens pristext:
+ * GemPages har ingen Liquid som kan göra det vid visning.
  */
-export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}, datum = idag(), brand = null, koncept = STANDARD_KONCEPT, punkter = null, nyaIdn = false, nu = new Date().toISOString(), locale = 'sv' }) {
+export function byggSida({ mall, platser: basPlatser, produkt, copy: copyIn, bilder = {}, datum = idag(), brand = null, koncept = STANDARD_KONCEPT, punkter = null, nyaIdn = false, nu = new Date().toISOString(), locale = 'sv', handle = null }) {
   if (!produkt?.url || !produkt?.kortTitel || !produkt?.slug) throw new Error('byggSida: produkten behöver url, kortTitel och slug.');
   const sprak = sprakFor(locale);
   const k = konceptForSprak(lasKoncept(koncept), locale);
   const n = valjPunkter(k, punkter);
+  const copy = ersattPrisTokens(copyIn, produkt);
   const b = brandProfil(brand, { forfattareObrandad: k.forfattare_obrandad });
   const sida = structuredClone(mall);
   const platser = utokaPunkter(sida, basPlatser, n, { nu });
@@ -672,7 +682,7 @@ export function byggSida({ mall, platser: basPlatser, produkt, copy, bilder = {}
   }
 
   sida.name = konceptText(k.sidnamn, { produkt, n });
-  sida.handle = konceptHandle(k, produkt, n);
+  sida.handle = handle ? String(handle) : konceptHandle(k, produkt, n);
   for (const m of sida.meta ?? []) {
     if (m.key === 'global-meta-title') m.value = sida.name;
     if (/^capture_page/.test(String(m.key))) m.value = null;

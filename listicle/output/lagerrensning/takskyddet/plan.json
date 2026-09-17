@@ -1,14 +1,17 @@
 {
-  "byggd": "2026-09-16T12:05:06.597Z",
+  "byggd": "2026-09-17T21:14:23.589Z",
   "koncept": "lagerrensning",
   "punkter": 5,
-  "datumrad": "2026-09-16",
+  "datumrad": "2026-09-17",
+  "locale": "sv",
+  "prisplatser": false,
   "produkt": {
-    "titel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
-    "kortTitel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "kortTitel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
     "handle": "takskyddet",
     "url": "https://carashell.se/products/takskyddet",
     "typ": "",
+    "valuta": "SEK",
     "pris": 1129,
     "jamforpris": 1469,
     "prisText": "1 129 kr",
@@ -16,13 +19,21 @@
     "flerPriser": null,
     "alternativ": [
       {
-        "namn": "Title",
+        "namn": "Variant",
         "varden": [
-          "Default Title"
+          "5,5 × 3 m",
+          "6,5 × 3 m",
+          "7,5 × 3 m",
+          "8,5 × 3 m",
+          "9,5 × 3 m",
+          "10,5 × 3 m",
+          "11,5 × 3 m",
+          "12,5 × 3 m",
+          "13,5 × 3 m"
         ]
       }
     ],
-    "antalVarianter": 1,
+    "antalVarianter": 9,
     "bilder": [
       {
         "index": 1,
@@ -51,6 +62,7 @@
     ],
     "beskrivning": "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
   },
+  "marknad": null,
   "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/copy.json",
   "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/bildplan.json",
   "brand": {
@@ -124,28 +136,27 @@
     "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning/mobil-sidfot.png"
   },
   "sida": {
-    "id": "633238779819177232",
-    "namn": "Taköverdrag Husvagn & Husbil 6,5 × 3 m – Lagerrensning (listicle)",
+    "id": "631712875973780435",
+    "namn": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – Lagerrensning (listicle)",
     "handle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning"
   },
   "publicerat": {
     "url": "https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning",
     "sidaId": "gid://shopify/Page/735556829516",
-    "skapad": true,
+    "skapad": false,
     "tema": {
       "id": "gid://shopify/OnlineStoreTheme/205487636812",
       "namn": "CaraShell – CRO v1",
       "skrivna": [
-        "layout/listicle.liquid",
-        "templates/page.listicle.liquid",
-        "assets/listicle.css"
+        "templates/page.listicle.liquid"
       ]
     },
+    "oversattning": null,
     "kontroll": {
       "ok": true,
       "fel": [],
-      "url": "https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning",
-      "tecken": 100286
+      "url": "https://carashell.se/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=SE",
+      "tecken": 100829
     }
   },
   "bildUrler": [

@@ -1,14 +1,15 @@
 {
-  "hamtat": "2026-09-16T12:04:51.829Z",
+  "hamtat": "2026-09-17T21:14:13.008Z",
   "koncept": "lagerrensning",
   "kommando": "/lagerrensning",
   "punkter": 5,
   "produkt": {
-    "titel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
-    "kortTitel": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "kortTitel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
     "handle": "takskyddet",
     "url": "https://carashell.se/products/takskyddet",
     "typ": "",
+    "valuta": "SEK",
     "pris": 1129,
     "jamforpris": 1469,
     "prisText": "1 129 kr",
@@ -16,13 +17,21 @@
     "flerPriser": null,
     "alternativ": [
       {
-        "namn": "Title",
+        "namn": "Variant",
         "varden": [
-          "Default Title"
+          "5,5 × 3 m",
+          "6,5 × 3 m",
+          "7,5 × 3 m",
+          "8,5 × 3 m",
+          "9,5 × 3 m",
+          "10,5 × 3 m",
+          "11,5 × 3 m",
+          "12,5 × 3 m",
+          "13,5 × 3 m"
         ]
       }
     ],
-    "antalVarianter": 1,
+    "antalVarianter": 9,
     "bilder": [
       {
         "index": 1,
@@ -55,5 +64,6 @@
     "id": "carashell/takskyddet",
     "fil": "products/carashell/takskyddet/dna.md"
   },
-  "sidhandle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning"
+  "sidhandle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning",
+  "sidhandle_kalla": "plan.json"
 }

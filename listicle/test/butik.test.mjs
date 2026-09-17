@@ -35,7 +35,9 @@ test('temafiler: layout utan header/footer, sidmall med layout-taggen, CSS:en ä
   assert.ok(layout.includes('{{ content_for_header }}') && layout.includes('{{ content_for_layout }}'));
   assert.ok(!/sections\s+'header|sections\s+'footer|section\s+'header|section\s+'footer/.test(layout), 'ingen header/footer i layouten');
   assert.ok(layout.includes("'listicle.css' | asset_url | stylesheet_tag") && layout.includes('fonts.googleapis.com/css2?family=Anton'));
-  assert.ok(f['templates/page.listicle.liquid'].includes("{% layout 'listicle' %}") && f['templates/page.listicle.liquid'].includes('{{ page.content }}'));
+  // Sidmallen läser page.content, byter prisplatserna (data-lp-produkt → all_products) och skriver ut resultatet.
+  const sidmall = f['templates/page.listicle.liquid'];
+  assert.ok(sidmall.includes("{% layout 'listicle' %}") && sidmall.includes('assign lp_innehall = page.content') && sidmall.trim().endsWith('{{ lp_innehall }}'));
   assert.ok(f['assets/listicle.css'].includes(CSS) && f['assets/listicle.css'].includes('body.listicle-sida{margin:0'));
   assert.equal(MALLSUFFIX, 'listicle');
 });

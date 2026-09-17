@@ -17,8 +17,30 @@
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
   {%- endif -%}
   <title>{{ page_title }}</title>
-  {%- if page_description -%}
-    <meta name="description" content="{{ page_description | escape }}">
+  {%- comment -%}
+    Meta-beskrivningen härleder Shopify ur sidans innehåll, så prisplatserna
+    [[PRIS]]/[[JAMFORPRIS]] följer med hit (mätt 2026-09-17 på carashell.com:
+    kroppen var bytt av sidmallen, beskrivningen inte). Samma uppslag som i
+    templates/page.listicle.liquid: handlen ur data-lp-produkt i innehållet.
+  {%- endcomment -%}
+  {%- assign lp_beskrivning = page_description -%}
+  {%- if lp_beskrivning contains '[[PRIS]]' or lp_beskrivning contains '[[JAMFORPRIS]]' -%}
+    {%- assign lp_delar = page.content | split: 'data-lp-produkt="' -%}
+    {%- if lp_delar.size > 1 -%}
+      {%- assign lp_handle = lp_delar[1] | split: '"' | first -%}
+      {%- assign lp_produkt = all_products[lp_handle] -%}
+      {%- if lp_produkt.price -%}
+        {%- assign lp_pris = lp_produkt.price | money_without_trailing_zeros -%}
+        {%- assign lp_beskrivning = lp_beskrivning | replace: '[[PRIS]]', lp_pris -%}
+        {%- if lp_produkt.compare_at_price > lp_produkt.price -%}
+          {%- assign lp_jmf = lp_produkt.compare_at_price | money_without_trailing_zeros -%}
+          {%- assign lp_beskrivning = lp_beskrivning | replace: '[[JAMFORPRIS]]', lp_jmf -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if lp_beskrivning -%}
+    <meta name="description" content="{{ lp_beskrivning | escape }}">
   {%- endif -%}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
