@@ -44,7 +44,9 @@ export async function token() {
     body: JSON.stringify({ client_id: klientId, client_secret: hemlighet, grant_type: 'client_credentials' }),
   });
   const text = await svar.text();
-  if (!svar.ok) throw new Error(`OAuth ${svar.status}: ${text.slice(0, 300)}`);
+  // Shopify svarar med en hel HTML-sida vid OAuth-fel — behåll bara meningen.
+  const ren = text.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!svar.ok) throw new Error(`OAuth ${svar.status}: ${ren.slice(0, 300)}`);
 
   const data = JSON.parse(text);
   if (!data.access_token) throw new Error(`Inget access_token i svaret: ${text.slice(0, 300)}`);
