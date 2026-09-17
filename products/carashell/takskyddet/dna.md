@@ -416,3 +416,24 @@ Körningen 2026-09-16 (`/ny-marknad`) lärde tre saker som står i `factory/PROC
 integritetsval" när USA läggs till (den läckte på /nb också), enheter i engelskan
 är substans (86 °F, inte "thirty degrees"), och USD-basvalutan måste klickas i
 admin FÖRE prislistesteget.
+
+## Storlekar — nio varianter sedan 2026-09-17
+
+Axels order 2026-09-17 ("lägg in alla varianter så det funkar för alla marknader,
+ASAP"): leverantören har nio storlekar, 3 m breda, 5,5 till 13,5 m långa. Produkten
+`takskyddet` bär sedan dess **9 varianter** (`5,5 × 3 m` … `13,5 × 3 m`, SKU
+`TEMU-5050206311352-055` … `-135`), titeln är "Taköverdrag Husvagn & Husbil
+5,5–13,5 m" (nb "Taktrekk campingvogn & bobil 5,5–13,5 m", en "Roof Cover for Travel
+Trailers & Motorhomes 18–44 ft (5.5–13.5 m)", varianterna på /en som "21 × 10 ft
+(6.5 × 3 m)"). Features bär leverantörens fakta (210D Oxford, vattentät/soltålig,
+band på fyra sidor, justerbara, krokar, två 10,5 m band medföljer).
+
+**Priset är SAMMA på alla nio tills Axels quotes per storlek kommer:** 1 129 kr /
+1 106 NOK / 199 USD (fasta priser i prislistorna, tillbakalästa som kund i alla tre
+marknaderna). ⚠️ Fabriken kan inte olika pris per variant (`build-store.mjs` sätter
+`ekonomi.pris` på alla, `prislista.mjs` samma belopp per valuta) — det byggs när
+priserna finns. Paketnivåerna (2 st −15 %, 3 st −20 %) räknar per vald storlek i
+temat. Korg-upsellen på termoskyddets sida visar takskyddets FÖRSTA variant (5,5 m).
+Annonserna rördes inte — de länkar till `/products/takskyddet` och kunden väljer
+storlek på sidan.
+
