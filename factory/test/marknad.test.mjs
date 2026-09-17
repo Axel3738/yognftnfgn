@@ -4,7 +4,27 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn } from '../marknad.mjs';
+import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn, landerAttLaggaTill } from '../marknad.mjs';
+import { lokalValuta, standardLocale, landsnamnSv } from '../lander.mjs';
+
+// ---- lander: fler länder i samma marknad (CaraShell 2026-09-17) ----------------
+
+test('landerAttLaggaTill: bara de länder marknaden saknar läggs till, dubbletter och skiftläge städas', () => {
+  const r = landerAttLaggaTill({ land: 'US', lander: ['gb', 'CA', 'AU', 'NZ', 'ca'] }, ['US', 'GB']);
+  assert.deepEqual(r.onskade, ['GB', 'CA', 'AU', 'NZ']);
+  assert.deepEqual(r.saknas, ['CA', 'AU', 'NZ']);
+  assert.deepEqual(r.redan, ['GB']);
+  assert.deepEqual(landerAttLaggaTill({ land: 'NO' }, ['NO']), { onskade: [], saknas: [], redan: [] });
+  assert.deepEqual(landerAttLaggaTill({ lander: ['GB'] }, undefined).saknas, ['GB']);
+});
+
+test('lander.mjs känner de engelsktalande länderna med egen valuta och locale en', () => {
+  for (const [kod, valuta, namn] of [['GB', 'GBP', 'Storbritannien'], ['CA', 'CAD', 'Kanada'], ['AU', 'AUD', 'Australien'], ['NZ', 'NZD', 'Nya Zeeland']]) {
+    assert.equal(lokalValuta(kod), valuta);
+    assert.equal(standardLocale(kod), 'en');
+    assert.equal(landsnamnSv(kod), namn);
+  }
+});
 import { malltexter, produktTexter, byggUnderlagObjekt, byggMinimalKontext, underlagsfil } from '../oversattning.mjs';
 import { granskaNoder, filtreraPaTema, arMaskinvarde, arAppcache, digestFor } from '../oversattning-granska.mjs';
 import { rabutik, raprodukt } from './hjalp.mjs';

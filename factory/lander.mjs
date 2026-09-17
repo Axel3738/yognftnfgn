@@ -24,6 +24,11 @@ const RADER = [
   ['DE', 'Tyskland',       'Germany',       'German',     'EUR', 'de'],
   ['GB', 'Storbritannien', 'United Kingdom', 'English',   'GBP', 'en'],
   ['US', 'USA',            'United States', 'English',    'USD', 'en'],
+  // Engelsktalande länder i samma marknadsblock som USA (CaraShell 2026-09-17,
+  // Axels beslut: "Nya Zeeland, Kanada, UK och Australien, samma annonser").
+  ['CA', 'Kanada',         'Canada',        'English',    'CAD', 'en'],
+  ['AU', 'Australien',     'Australia',     'English',    'AUD', 'en'],
+  ['NZ', 'Nya Zeeland',    'New Zealand',   'English',    'NZD', 'en'],
 ];
 
 const kodAv = (v) => String(v ?? '').trim().toUpperCase();

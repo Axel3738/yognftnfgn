@@ -163,7 +163,8 @@ export async function hamtaLage() {
     markets(first: 50) {
       nodes {
         id name handle status primary
-        conditions { regionsCondition { regions(first: 20) { nodes { ... on MarketRegionCountry { code } } } } }
+        conditions { regionsCondition { regions(first: 30) { nodes { ... on MarketRegionCountry { code } } } } }
+        currencySettings { baseCurrency { currencyCode } localCurrencies }
       }
     }
     webPresences(first: 20) {
@@ -180,6 +181,19 @@ export async function hamtaLage() {
 // Länderna en marknad täcker, ur hamtaLage()-formen (regions → koder).
 const marknadensLander = (m) =>
   (m?.conditions?.regionsCondition?.regions?.nodes ?? []).map((r) => String(r?.code ?? '').toUpperCase()).filter(Boolean);
+
+/**
+ * `lander:` på en marknadsrad = FLER länder i SAMMA Shopify-marknad. Vilka av
+ * dem saknas i marknaden just nu? Ren logik över radens lista och marknadens
+ * regionkoder. (CaraShell 2026-09-17: en egen domän — carashell.com — hör
+ * till EN marknad, mätt: `webPresencesToAdd` från en annan marknad svarar
+ * RESOURCE_NOT_FOUND. Engelsktalande länder delar därför USA:s block.)
+ */
+export function landerAttLaggaTill(rad, befintligaKoder) {
+  const har = new Set((befintligaKoder ?? []).map((k) => String(k ?? '').trim().toUpperCase()).filter(Boolean));
+  const onskade = [...new Set((Array.isArray(rad?.lander) ? rad.lander : []).map((k) => String(k ?? '').trim().toUpperCase()).filter(Boolean))];
+  return { onskade, saknas: onskade.filter((k) => !har.has(k)), redan: onskade.filter((k) => har.has(k)) };
+}
 
 /**
  * Är butikens primärmarknad rätt land? Ren logik över hamtaLage().marknader.
@@ -275,18 +289,91 @@ export async function sakerstallMarknad(marknad, { torr = false } = {}) {
     skapad = true;
   }
   if (mk.status && mk.status !== 'ACTIVE' && !torr) mk = { ...mk, ...(await aktiveraMarknad(mk.id)) };
-  return { id: mk.id, namn: mk.name ?? namn, skapad, status: mk.status ?? null };
+
+  // Fler länder i samma marknad (`lander:`) — läggs till via conditionsToAdd
+  // och läses tillbaka. Ett land som redan ligger i en ANNAN marknad avvisas
+  // av Shopify (userErrors) — det är rätt: ett land kan bara ha en marknad.
+  const lander = landerAttLaggaTill(marknad, marknadensLander(mk));
+  let tillagda = [];
+  if (lander.saknas.length > 0 && !torr) {
+    const d = await graphql(
+      `mutation opsFactoryMarknadLander($id: ID!, $input: MarketUpdateInput!) {
+        marketUpdate(id: $id, input: $input) {
+          market { id conditions { regionsCondition { regions(first: 30) { nodes { ... on MarketRegionCountry { code } } } } } }
+          userErrors { field message }
+        }
+      }`,
+      { id: mk.id, input: { conditions: { conditionsToAdd: { regionsCondition: { regions: lander.saknas.map((countryCode) => ({ countryCode })) } } } } }
+    );
+    userErrors(d.marketUpdate, `Länder i marknaden ${namn}`);
+    const nu = marknadensLander(d.marketUpdate.market);
+    const kvar = lander.saknas.filter((k) => !nu.includes(k));
+    if (kvar.length > 0) throw new Error(`Marknaden ${namn} tog inte emot ${kvar.join(', ')} — tillbakaläsningen saknar dem.`);
+    tillagda = lander.saknas;
+  }
+
+  // Lokala valutor i blocket (`lokala_valutor: true`): varje land i marknaden
+  // betalar i sin egen valuta, omräknad från marknadens basvaluta (de fasta
+  // priserna i prislistan). Slås på via currencySettings.localCurrencies.
+  let lokalaValutor = null;
+  if (marknad?.lokala_valutor === true) {
+    const redan = mk.currencySettings?.localCurrencies === true;
+    if (!redan && !torr) {
+      const d = await graphql(
+        `mutation opsFactoryMarknadValutor($id: ID!, $input: MarketUpdateInput!) {
+          marketUpdate(id: $id, input: $input) {
+            market { id currencySettings { baseCurrency { currencyCode } localCurrencies } }
+            userErrors { field message }
+          }
+        }`,
+        { id: mk.id, input: { currencySettings: { localCurrencies: true } } }
+      );
+      userErrors(d.marketUpdate, `Lokala valutor i ${namn}`);
+      const cs = d.marketUpdate.market?.currencySettings ?? {};
+      lokalaValutor = { pa: cs.localCurrencies === true, redan: false, bas: cs.baseCurrency?.currencyCode ?? null };
+    } else {
+      lokalaValutor = { pa: redan, redan, bas: mk.currencySettings?.baseCurrency?.currencyCode ?? null, torr };
+    }
+  }
+
+  return {
+    id: mk.id, namn: mk.name ?? namn, skapad, status: mk.status ?? null,
+    lander: { onskade: lander.onskade, tillagda, redan: lander.redan, torr: torr && lander.saknas.length > 0 ? lander.saknas : [] },
+    lokalaValutor,
+  };
 }
 
 // Locale:n som alternateLocale på VARJE webbnärvaro (domänen + myshopify) —
 // webPresenceUpdate, INTE market-varianten (PROCESS.md fas 4 steg 13).
-export async function laggTillAlternateLocale(locale, { torr = false } = {}) {
+// `hoppaOver`: värdar som är en ANNAN marknads egna domän (carashell.com är
+// USA:s) — dit ska inte NO:s nb hakas (CaraShell 2026-09-17: en `--igen
+// marknad` la nb på carashell.com och .se på USA-marknaden, tvärtemot
+// domänbeslutet dagen innan).
+export async function laggTillAlternateLocale(locale, { torr = false, hoppaOver = [] } = {}) {
   const lage = await hamtaLage();
   if (lage.webPresences.length === 0) return { manuell: 'Butiken har ingen webPresence att haka språket på ännu.', presences: [] };
   const presences = [];
+  const undantag = new Set((hoppaOver ?? []).map((h) => String(h ?? '').toLowerCase()).filter(Boolean));
   for (const wp of lage.webPresences) {
     const har = (wp.alternateLocales ?? []).map((l) => l.locale);
     const host = wp.domain?.host ?? wp.id;
+    if (undantag.has(String(host).toLowerCase())) {
+      // En annan marknads egna domän: språket ska INTE ligga där. Ligger det
+      // där sedan en tidigare körning tas det bort (idempotent städning).
+      if (har.includes(locale) && wp.defaultLocale?.locale !== locale && !torr) {
+        const u = await graphql(
+          `mutation opsFactoryWebPresenceBort($id: ID!, $input: WebPresenceUpdateInput!) {
+            webPresenceUpdate(id: $id, input: $input) { webPresence { id alternateLocales { locale } } userErrors { field message } }
+          }`,
+          { id: wp.id, input: { alternateLocales: har.filter((l) => l !== locale) } }
+        );
+        userErrors(u.webPresenceUpdate, `webPresence ${host} (bort med ${locale})`);
+        presences.push({ id: wp.id, host, hoppad: true, borttagen: true });
+        continue;
+      }
+      presences.push({ id: wp.id, host, hoppad: true });
+      continue;
+    }
     if (har.includes(locale) || wp.defaultLocale?.locale === locale) { presences.push({ id: wp.id, host, redan: true }); continue; }
     if (torr) { presences.push({ id: wp.id, host, redan: false, torr: true }); continue; }
     const u = await graphql(
@@ -307,12 +394,32 @@ export async function laggTillAlternateLocale(locale, { torr = false } = {}) {
 // väljer Shopify NOK på norsk IP; huvudmarknaden förblir default för andra.
 // marketUpdate(webPresencesToAdd) med ALLA webPresence-id:n — "already" i
 // userErrors betyder redan kopplad, och det är rätt läge, inte ett fel.
-export async function kopplaPresence(marketId, { torr = false } = {}) {
+//
+// `doman`: marknadens EGNA domän (raden `doman:` i butik.marknader) — då
+// kopplas BARA den närvaron, och andra som hänger på marknaden kopplas loss
+// (så .se inte serverar USA i USD). `hoppaOver`: andra marknaders egna
+// domäner, som aldrig ska kopplas hit. Mätt 2026-09-17: en egen domän kan
+// bara sitta på EN marknad (RESOURCE_NOT_FOUND från en annan).
+export async function kopplaPresence(marketId, { torr = false, doman = null, hoppaOver = [] } = {}) {
   const lage = await hamtaLage();
-  const ids = lage.webPresences.map((w) => w.id);
-  const hosts = lage.webPresences.map((w) => w.domain?.host ?? w.id);
+  const undantag = new Set((hoppaOver ?? []).map((h) => String(h ?? '').toLowerCase()).filter(Boolean));
+  const egen = doman ? String(doman).toLowerCase() : null;
+  const valda = lage.webPresences.filter((w) => {
+    const host = String(w.domain?.host ?? '').toLowerCase();
+    if (egen) return host === egen;
+    return !undantag.has(host);
+  });
+  const ids = valda.map((w) => w.id);
+  const hosts = valda.map((w) => w.domain?.host ?? w.id);
+  if (egen && ids.length === 0) return { manuell: `Domänen ${doman} har ingen webPresence ännu — koppla domänen i Settings → Domains först.`, hosts: [] };
   if (ids.length === 0) return { manuell: 'Ingen webPresence att koppla ännu.', hosts: [] };
   if (torr || !marketId) return { hosts, redan: false, torr: true };
+  // Det som INTE ska sitta på marknaden (bara när raden har egen domän).
+  let bort = [];
+  if (egen) {
+    const nu = await graphql(`query opsFactoryMarknadPresenceNu($id: ID!) { market(id: $id) { webPresences(first: 10) { nodes { id domain { host } } } } }`, { id: marketId });
+    bort = (nu.market?.webPresences?.nodes ?? []).filter((w) => !ids.includes(w.id)).map((w) => w.id);
+  }
   const d = await graphql(
     `mutation opsFactoryMarknadPresence($id: ID!, $input: MarketUpdateInput!) {
       marketUpdate(id: $id, input: $input) {
@@ -320,7 +427,7 @@ export async function kopplaPresence(marketId, { torr = false } = {}) {
         userErrors { field message }
       }
     }`,
-    { id: marketId, input: { webPresencesToAdd: ids } }
+    { id: marketId, input: { webPresencesToAdd: ids, ...(bort.length > 0 ? { webPresencesToDelete: bort } : {}) } }
   );
   const fel = d.marketUpdate?.userErrors ?? [];
   const redan = fel.length > 0 && fel.every((f) => /already/i.test(f.message));
@@ -336,11 +443,14 @@ export async function sakerstallMarknader(butik, { torr = false } = {}) {
   const rader = Array.isArray(butik?.butik?.marknader) ? butik.butik.marknader : [];
   if (rader.length === 0) throw new Error('butik.marknader är tom — SE + NO är standard i varje OPS.');
   const ut = [];
+  const egnaDomaner = rader.map((r) => String(r?.doman ?? '').trim().toLowerCase()).filter(Boolean);
   for (const m of rader) {
     const marknad = await sakerstallMarknad(m, { torr });
     const locale = await sakerstallLocale(String(m.locale), { torr });
-    const wp = await laggTillAlternateLocale(String(m.locale), { torr });
-    const koppling = await kopplaPresence(marknad.id, { torr });
+    const egen = String(m?.doman ?? '').trim().toLowerCase() || null;
+    const andras = egnaDomaner.filter((d) => d !== egen);
+    const wp = await laggTillAlternateLocale(String(m.locale), { torr, hoppaOver: andras });
+    const koppling = await kopplaPresence(marknad.id, { torr, doman: egen, hoppaOver: andras });
     ut.push({ land: String(m.land).toUpperCase(), locale: String(m.locale), valuta: m.valuta ?? null, marknad, localeLage: locale, webPresence: wp, koppling });
   }
   return ut;

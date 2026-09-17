@@ -958,12 +958,19 @@ export const STEG = [
     torrt(ctx) {
       const rader = lista(ctx.butik.butik?.marknader);
       if (rader.length === 0) return ['❌ butik.marknader är tom — steget stoppar (SE + NO är standard i varje OPS)'];
-      return rader.map((m) => `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence (valuta ${m.valuta ?? '?'} — lokal valuta slås på i admin)`);
+      return rader.map((m) => {
+        const extra = lista(m.lander).length > 0 ? ` + länderna ${lista(m.lander).join(', ')} i SAMMA marknad${m.lokala_valutor === true ? ' med lokala valutor' : ''}` : '';
+        return `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence (valuta ${m.valuta ?? '?'} — lokal valuta slås på i admin)${extra}`;
+      });
     },
     async kor(ctx) {
       const r = await sakerstallMarknader(ctx.butik, { torr: false });
       const manuella = r.filter((x) => x.webPresence?.manuell).map((x) => `${x.land}: ${x.webPresence.manuell}`);
-      const ut = r.map((x) => ({ land: x.land, locale: x.locale, marknad: x.marknad?.namn ?? null, status: x.marknad?.status ?? null, localeSkapad: x.localeLage?.skapad === true }));
+      const ut = r.map((x) => ({
+        land: x.land, locale: x.locale, marknad: x.marknad?.namn ?? null, status: x.marknad?.status ?? null, localeSkapad: x.localeLage?.skapad === true,
+        ...(x.marknad?.lander?.onskade?.length > 0 ? { lander: x.marknad.lander } : {}),
+        ...(x.marknad?.lokalaValutor ? { lokalaValutor: x.marknad.lokalaValutor } : {}),
+      }));
       if (manuella.length > 0) return { manuell: manuella.join(' · '), marknader: ut };
       return { marknader: ut };
     },

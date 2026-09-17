@@ -55,6 +55,19 @@ butik:
       # carashell.com kopplad i Shopify samma dag, hello@carashell.com).
       # Annonslänkarna byggs då utan /en/-mapp: https://carashell.com/products/…
       doman: carashell.com
+      # Engelskt marknadsblock (Axels beslut 2026-09-17: "Nya Zeeland, Kanada,
+      # UK och Australien — samma annonser"). carashell.com hör till EN
+      # marknad (mätt 2026-09-17: en annan marknad får RESOURCE_NOT_FOUND på
+      # presencen), så de fyra länderna ligger i USA-marknaden med lokala
+      # valutor: kunden betalar i GBP/CAD/AUD/NZD omräknat från de fasta
+      # USD-priserna. Fasta priser per valuta kräver egna marknader med egna
+      # (sub)domäner — inte gjort. Leveransraden (5–10) delas av alla fem.
+      lander:
+        - GB
+        - CA
+        - AU
+        - NZ
+      lokala_valutor: true
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika
