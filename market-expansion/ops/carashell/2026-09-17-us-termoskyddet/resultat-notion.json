@@ -1,0 +1,67 @@
+{
+  "CaraShellFront_US_CS_5_1": {
+    "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+    "ad_id": "120251465899090435",
+    "status": "Approved",
+    "exit": 0,
+    "skarpt": true,
+    "logg": [
+      "Statusbyte: SE-ACTIVE to be translated → Approved",
+      "✓ Kommentar skriven.",
+      "✓ Translated url satt.",
+      "✓ Status: SE-ACTIVE to be translated → Approved"
+    ]
+  },
+  "CaraShellFront_US_G_4_1": {
+    "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+    "ad_id": "120251465907780435",
+    "status": "Approved",
+    "exit": 0,
+    "skarpt": true,
+    "logg": [
+      "Statusbyte: SE-ACTIVE to be translated → Approved",
+      "✓ Kommentar skriven.",
+      "✓ Translated url satt.",
+      "✓ Status: SE-ACTIVE to be translated → Approved"
+    ]
+  },
+  "CaraShellFront_US_PD_5_1": {
+    "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+    "ad_id": "120251465920930435",
+    "status": "Approved",
+    "exit": 0,
+    "skarpt": true,
+    "logg": [
+      "Statusbyte: SE-ACTIVE to be translated → Approved",
+      "✓ Kommentar skriven.",
+      "✓ Translated url satt.",
+      "✓ Status: SE-ACTIVE to be translated → Approved"
+    ]
+  },
+  "CaraShellFront_US_PD_4_1": {
+    "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+    "ad_id": "120251466048000435",
+    "status": "Approved",
+    "exit": 0,
+    "skarpt": true,
+    "logg": [
+      "Statusbyte: SE-ACTIVE to be translated → Approved",
+      "✓ Kommentar skriven.",
+      "✓ Translated url satt.",
+      "✓ Status: SE-ACTIVE to be translated → Approved"
+    ]
+  },
+  "CaraShellFront_US_CS_4_1": {
+    "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+    "ad_id": "120251466053980435",
+    "status": "Approved",
+    "exit": 0,
+    "skarpt": true,
+    "logg": [
+      "Statusbyte: SE-ACTIVE to be translated → Approved",
+      "✓ Kommentar skriven.",
+      "✓ Translated url satt.",
+      "✓ Status: SE-ACTIVE to be translated → Approved"
+    ]
+  }
+}

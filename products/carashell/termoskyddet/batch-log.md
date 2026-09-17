@@ -373,3 +373,43 @@ bara om videon gjorts — utan redigerare är bildhälften det enda som får dat
 - Anmärkning: CS_4_1, PD_4_1, PD_5_1 bär samma vita band som SE-originalen (basfotot fyller
   inte canvasen). Kosmetiskt, till nästa version av textlagret.
 - Läsregel: samma som SE — delad pixel med takskyddet, ingen dom före 300 kr / 3 köp.
+
+## 2026-09-17 — `/ops-oversatt carashell/termoskyddet --marknad US` — batch #2 live i USA (5 bildannonser)
+
+- Kön: 5 bildrader i `SE-ACTIVE to be translated` (NO klar på alla, `flytta_till_approved`
+  sant). `Approved`-kön kollad för eftersläpande rader: 0. Alla fem översatta till amerikansk
+  engelska och **live** i `CARASHELL_US_Termoskydd Husbil 211 × 171 cm` (`120251442339640435`,
+  Magiborsten UK — kampanjen **ACTIVE** sedan Axel slog på den; 16 speglade annonser låg där
+  redan), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_US_CS_4_1` — adset CS, ad `120251466053980435`, priskort $99 / $124 / −20%
+  - `CaraShellFront_US_CS_5_1` — adset CS, ad `120251465899090435`, chip "Thermal cover $99"
+  - `CaraShellFront_US_G_4_1` — adset G, ad `120251465907780435`, $99 / $124
+  - `CaraShellFront_US_PD_4_1` — adset PD, ad `120251466048000435`, utan pris
+  - `CaraShellFront_US_PD_5_1` — adset PD, ad `120251465920930435`, utan pris
+- Länk ärvd ur `CaraShellFront_US_G_3`: `https://carashell.com/products/termoskyddet` (US-domänen).
+  Tillbakaläst: 3/5 ACTIVE/ACTIVE, 2 ACTIVE/IN_PROCESS (Metas granskning).
+- **Bildvägen:** samma som NO samma dag — basfotona (kie.ai-länkarna i
+  `bas/urls.txt`, svarade 15:18 UTC) + det engelska textlagret ritat rent med
+  `factory/bild-text.py`. Skriptet `<batch>/oversatt-us.py` är NO-skriptets med US-namn och en
+  hårdare spärr (SE/NO-priser, nordiska bokstäver, `kr`, brittisk stavning). Utmapp `us/`.
+- Pris ur `ekonomi.marknadspriser`: 99 USD, jämförpris 124 ⇒ −20 % (inte SE:s −40 %). Läst live
+  på `carashell.com/products/termoskyddet?country=US` = $99 / $124. Måttet tum först på bilden
+  (83 × 67 in), cm i parentes i primärtexten. Villkorsraden ur US-sidan: "Free shipping ·
+  5–10 business days · 90-day guarantee" (90-dagarsgarantin är Axels US-undantag, inte
+  14 dagars ångerrätt). Taköverdragets US-pris $199 i CS_5_1:s primärtext.
+- Copy: Sonnet-subagent (`textlager-us.json`, `adcopy-US.json`, tre-frågorstestet i
+  `adcopy-US.json`). Huvudsessionen rättade: "at four" → "at 4 a.m." (G_4_1, PD_5_1),
+  PD_5_1:s Ads Manager-rubrik "… front outside" → "… front from outside" (39 tecken), dubbla
+  punkter efter "a.m.", och en felaktig not (SE:s −40 % var rätt för 559/932). Johans svenska
+  recension struken ur PD_5_1 (går inte att verifiera i USA). Kvarvarande ❌ i tre-frågorstestet:
+  CS_4_1:s och G_4_1:s rubriker samt PD_5_1:s öppning och rubrik faller på "ingen annan kan säga
+  det" — ärvt från SE-raderna, som spenderar; inte ändrat.
+- Notion: kommentar + `Translated url` på alla fem, **status → Approved** (NO + US bär annonsen).
+  Kända luckan: US-filerna ligger inte i Notion-raden.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550168790082392225`, ingen ping.
+  Meta rate-limitade under uppladdningen — fem annonser tog ~11 min (11:26→11:36 UTC + väntan).
+- Anmärkning: CS_4_1 och PD_5_1 bär samma vita band som SE-originalen. Kosmetiskt, till nästa
+  version av textlagret. Pillow saknades i containern (`pip install pillow`) — det installeras
+  inte av repot.
+- Läsregel: delad pixel med takskyddet, kampanjen delar konto med takskyddets US-kampanj —
+  ingen dom före 300 kr / 3 köp per annons.

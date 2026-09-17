@@ -1,0 +1,25 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "The rest area sees your windshield. It doesn't see you – the whole front is blacked out."
+    },
+    {
+      "typ": "underrad",
+      "text": "Blacks out the whole front from the outside, 83 × 67 in (211 × 171 cm). No one sees in – and the sun won't wake you at 4 a.m."
+    },
+    {
+      "typ": "botten",
+      "text": "Free shipping · 5–10 business days · 90-day guarantee"
+    }
+  ]
+}
