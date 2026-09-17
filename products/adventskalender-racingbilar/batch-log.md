@@ -155,3 +155,73 @@ uttryckligen pekade ut. Skapa aldrig en tredje.
 **Modellpolicy:** följd denna gång — en sonnet-subagent per brief skrev copyn
 och körde tre-frågorstestet per rad. (Avvikelsen i batch #1 berodde på att
 Agent-verktyget saknades i den körningen.)
+
+---
+
+## Batch #3 — 2026-09-17 (`/cs`, rond-auto steg 4b, behov `brief_runda`, fokus "ersätt det som pausats i trappan")
+
+**Underlag:** livstidsdata ur Meta 2026-09-17 — 9 232 kr spend, 28 köp,
+ROAS 1,78, intäkt 16 445 kr. AOV 587 kr → **break-even-CPA 363 kr**
+(BE-ROAS 1,62 ur kampanjnamnet). Grind 300 kr OCH 3 köp.
+
+| Annons | Status | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|---|
+| PD_2_H1 (video) | PAUSED | 4 243 kr | 46,0 % | 11 | 386 kr | 1,40 | **−250 kr** |
+| PD_2_1 (statisk) | PAUSED | 2 973 kr | 32,2 % | 10 | 297 kr | 2,12 | **+657 kr** |
+| GT_1_H1 (video) | ACTIVE | 1 115 kr | 12,1 % | 4 | 279 kr | 2,10 | +337 kr |
+
+**Feedbackloop på batch #2:** ingen av de elva är bedömbar. `BF_6_1` är live
+med 117 kr och 1 köp, `RV_3_1` 56 kr, `RV_4_1` 31 kr, `PD_9_1` 27 kr — resten
+under 20 kr. Hela batch #2:s hypoteser står kvar obesvarade, inklusive
+`PD_9_H1` (videon på stillbildens komposition), som är det test den här
+batchen ställer om.
+
+**Det som avgjorde batchens innehåll:** de två annonser som bar 78 % av
+spenden är avstängda sedan 2026-09-14, båda av spendtjuvsspärren. Det var rätt
+för `PD_2_H1` men fel för `PD_2_1`, som över hela livstiden är kampanjens
+enda riktiga vinnare (+657 kr). Kampanjen kör nu i praktiken bara på
+`GT_1_H1`. Batch #3 bygger därför om chokladkonflikten i båda formaten.
+Se `dna.md` 2026-09-17 för hela resonemanget och den metodiska lärdomen.
+
+**Briefer i denna batch — 9 st (3 video, 6 statiska):**
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Adventskalender_PD_10_1 | Statisk | Chokladkonflikten återuppbyggd med nya rader på samma helscen — ersätter den pausade vinnaren | PD_2_1 |
+| Adventskalender_PD_10_H1 | Video 20–25 s | Samma konflikt som video, men filmad på STILLBILDENS komposition i stället för täta handnärbilder. Avgör om det var formatet eller regin som sänkte PD_2_H1 | PD_2_1 + PD_2_H1 |
+| Adventskalender_CO_3_H1 | Video 20–25 s | Konflikten som direkt jämförelse i split-screen: 24 chokladbitar mot 24 bilar, och vad som står kvar den 25:e | Chokladkonflikten, ny mekanism |
+| Adventskalender_FM_2_H1 | Video 20–25 s | Morgonritualen som mekanism, dag 1 → dag 24, samma hand och samma bord | Daniels recension nämner exakt detta |
+| Adventskalender_BF_7_1 | Statisk | BOF: bara siffran. 499 kr, var 649 kr, 23 % | Produktsidan |
+| Adventskalender_BF_8_1 | Statisk | BOF-riskavlastning: 30 dagars öppet köp, Klarna. INGEN fraktclaim — produktsidan har ingen | Produktsidan |
+| Adventskalender_BF_9_1 | Statisk | BOF-invändning: åldern, ärligt. 3 år och uppåt, innehåller små delar | Produktsidan |
+| Adventskalender_RV_5_1 | Statisk | Recensionsbild, Eriks rad handlar om hans DOTTER — vidgar målgruppen bortom "sonen" | Verifierad recension, ordagrant |
+| Adventskalender_RV_6_1 | Statisk | Recensionsbild, Daniels rad namnger morgonritualen | Verifierad recension, ordagrant |
+
+**Backlog:** konkurrentsignalen Familjebutiken Calimero ("gör årets
+adventskalender lite ROLIGARE", kalendern som tillägg i stället för
+ersättning) ligger kvar oanvänd — den motsäger produktens bevisade
+ersättningsvinkel och plockas inte förrän konflikten slutar fungera.
+
+**De tre kvalitetsflaggorna på LIVE-annonser står kvar oåtgärdade**
+(`CS_2_1` påhittad brådska, `GT_2_1` fel åldersgräns "under 2 years" + stavfel
+"smail", `SP_2_1` recensionscitat som inte finns bland de 10 verifierade).
+Ronden rör aldrig en live annons i efterhand — men varje ny brief i den här
+batchen bär en regel som förbjuder samma fel, och `BF_9_1` säger åldersgränsen
+rätt i klartext.
+
+**Levererat:** samtliga 9 som items i **`BÄVER Adventskalendern Racingbilar`**
+(data source `collection://efe270ab-908c-83ef-aa11-87c98e87f5b0`), Status
+`Draft`, Typ `Video`/`Image - Pending Approval`, hela briefen i sidan.
+Verifierat med SQL mot collectionen: 3 video + 6 bild = 9 i Draft (hubben var
+tom före körningen).
+
+**Ingen Drive-mapp skapad.** Hela briefen ligger i Notion-itemet. Skapas mappen
+senare: `Batch #3` INUTI produktens befintliga mapp (Joshs,
+`1OHOLPsPIHqnY7-4n5tR3MUGeRAn2LJvE`), aldrig i `BÄVER/Products`.
+
+**Modellpolicy:** följd. En sonnet-subagent skrev all svensk copy och körde
+tre-frågorstestet rad för rad; huvudsessionen gjorde analysen, hypoteserna,
+namngivningen och briefstrukturen.
+
+**Nästa lediga AD-ID:** PD 11, CS 6, GT 4, SP 4, CO 4, AU 2, UG 2, FM 3, TR 3,
+RI 2, LI 2, BF 10, RV 7.

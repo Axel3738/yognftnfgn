@@ -411,3 +411,68 @@ batch #5 i `BÄVER IBC-Tanköverdraget`
 **Modellpolicy följd denna gång** (första gången för den här produkten): en
 sonnet-subagent per brief skrev copyn och körde tre-frågorstestet rad för rad.
 Agent-verktyget med `model`-parameter fanns i den här miljön.
+
+---
+
+## Uppdatering 2026-09-17 (`/cs`-körning, batch #6, rond-auto steg 4b, behov `brief_runda`)
+
+**Källa:** MagiBorsten `1867947880635861`, kampanj `120250001079150291`, ad-nivå,
+`date_preset: maximum`, hämtat 2026-09-17 05:45 UTC. `amount_spent × purchase_roas`
+använt genomgående (aldrig `omni_purchase_values`, känd bugg i kontot).
+
+**Livstid:** 36 206,85 kr spend · 131 köp · ROAS 2,378 · intäkt 86 104 kr.
+**AOV 657 kr → break-even-CPA 435 kr** (BE-ROAS 1,51 ur kampanjnamnet).
+Dagsbudget 500 kr — oförändrad, domen i dag var `VANTA_KADENS` (ändrad för 1 dag
+sedan).
+
+### Vinstbidrag = (435 − CPA) × köp. Rangordnat på vinst, aldrig på ROAS.
+
+| Annons | Format | Spend | Sp% | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|---|
+| **PD_1_H1** (benchmark) | video | 28 880 kr | 79,8 % | 110 | 263 | 2,53 | **18 971 kr** |
+| PD_Extra | video | 1 530 kr | 4,2 % | 8 | 191 | 2,78 | 1 950 kr |
+| CS_1_H3 | statisk | 1 083 kr | 3,0 % | 6 | 181 | 3,66 | 1 527 kr |
+
+**För tidigt (grind 300 kr OCH 3 köp):** SP_3_H1 (969 kr, 2 köp), CO_1_1
+(824 kr, 1 köp), PD_2_1 (589 kr, 0 köp), PD_1_H2 (363 kr, 0 köp) — de två
+sista har passerat spendgrinden men inte köpgrinden. Plus hela batch #5 och
+resten av svältraderna.
+
+### Det som är nytt sedan 2026-09-14
+
+1. **BEVISAD, nu på tre avläsningar: den KORTA klippningen ger billigare köp.**
+   `PD_Extra` har ordagrant samma copy som `PD_1_H1` men en kortare video, och
+   ligger på CPA 191 kr mot vinnarens 263 kr — 27 % billigare köp. Den 14:e
+   var talen 172 mot 256 på 8 respektive 102 köp; nu 191 mot 263 på 8 mot 110.
+   Gapet har hållit i sig genom hela skalningen. Det som fortfarande INTE är
+   avgjort är *varför*: klipplängden och makro-öppningen ändrades samtidigt.
+   Batch #6:s `PD_10_H1` (lång) och `PD_10_H2` (12–15 s, ordagrant samma rader)
+   isolerar längden och ingenting annat.
+2. **BEVISAD: prisvinkeln är kampanjens billigaste köp per krona.** `CS_1_H3`
+   har nu 6 köp och CPA 181 kr — bäst av de tre bedömbara, och 31 % billigare
+   än benchmarken. Hypotesen "CS är svagare än PD" är motbevisad för tredje
+   gången. Den har ändå bara fått 3,0 % av spenden.
+   ⚠️ Kvarstår: den live-copyn innehåller påhittad brådska ("IDAG ENDAST").
+   Annonsen rörs inte (den är live och lönsam — CLAUDE.md:s regel att en live
+   annons aldrig stängs av i efterhand), men all ny CS-copy byggs på det
+   riktiga priset 489/636 kr utan en enda påhittad rad. `CS_8_H1` i batch #6 är
+   vinkelns första riktiga video.
+3. **Benchmarkens CPA fortsätter krypa uppåt vid skalning:** 173 → 205 → 208 →
+   256 → 263 kr över fem avläsningar. Fortfarande 40 % under break-even-CPA
+   435 kr, alltså inget larm — men riktningen är entydig och är skälet att
+   batch #6 lägger tre av fyra rundplatser på att hitta en billigare bärare.
+
+### Produktionsflaskhalsen har släppt
+
+Fyra batcher i rad noterade att redigerarna inte producerade videorna. Det
+stämmer inte längre: hubben `BÄVER IBC-Tanköverdraget` är **helt tom på
+drafts** (mätt 2026-09-17). Batch #5:s elva briefer är alla upplockade — 2
+video In progress, 2 video + 1 bild To be Reviewed, 6 bild Translation in
+review. `PD_9_1` är redan live med 124 kr och 1 köp. Flaskhalsen ska inte
+längre skrivas som produktens huvudsakliga hinder.
+
+### Recensioner omlästa 2026-09-17
+
+Samtliga 10 lästa ordagrant från produktsidan, alla 5 stjärnor. Använda
+hittills: Maria + Lena (batch #2), Karin + Daniel (batch #5), Johan + Sofia
+(batch #6). Kvar oanvända: Emma, Magnus, Peter, Anders.

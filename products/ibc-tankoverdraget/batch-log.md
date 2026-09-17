@@ -382,3 +382,82 @@ läggs som rader i en av dessa två.
 **Modellpolicy:** följd. En sonnet-subagent per brief skrev all copy och körde
 tre-frågorstestet per rad; huvudsessionen gjorde analys, hypoteser och
 briefstruktur.
+
+---
+
+## Batch #6 — 2026-09-17 (`/cs`, rond-auto steg 4b, behov `brief_runda`, 3 dygn sedan batch #5)
+
+**Underlag:** livstidsdata ur Meta 2026-09-17 — 36 207 kr spend, 131 köp,
+ROAS 2,38, intäkt 86 104 kr. AOV 657 kr → **break-even-CPA 435 kr**
+(BE-ROAS 1,51 ur kampanjnamnet). Rangordning på vinstbidrag enligt
+`docs/os/ANALYSMETOD.md`, grind 300 kr OCH 3 köp.
+
+| Annons | Spend | Andel | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| PD_1_H1 (video, benchmark) | 28 880 kr | 79,8 % | 110 | 263 kr | 2,53 | **18 971 kr** |
+| PD_Extra (video) | 1 530 kr | 4,2 % | 8 | 191 kr | 2,78 | 1 950 kr |
+| CS_1_H3 (statisk) | 1 083 kr | 3,0 % | 6 | 181 kr | 3,66 | 1 527 kr |
+
+**Feedbackloop på batch #5:** ingen av de elva är bedömbar. `PD_9_1` är live
+med 124 kr och 1 köp (över spendgrinden, under köpgrinden). `BOF_10_1`,
+`BOF_11_1`, `BOF_12_1`, `RV_7_1`, `RV_8_1` är live men svälter (2–20 kr).
+`PD_8_H1`, `PD_8_H2`, `CO_2_H1`, `SP_5_H1` och `CS_7_1` syns inte i kontot än
+— de ligger i hubben som In progress / To be Reviewed, alltså under arbete.
+Alla hypoteser från batch #5 står kvar obesvarade.
+
+**Två hypoteser stärktes i stället av gammal data:**
+1. Den korta klippningen (PD_Extra) håller sitt CPA-försprång mot vinnaren för
+   tredje avläsningen i rad — 191 mot 263 kr. Batch #6 isolerar längden.
+2. Prisvinkeln (CS_1_H3) har nu 6 köp och kampanjens lägsta CPA, 181 kr.
+
+**Briefer i denna batch — 9 st (3 video, 6 statiska):**
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| IBC_PD_10_H1 | Video 20–25 s | Vinnarens struktur konstant, ENDA variabeln bytt: blixtlåset + topplocket i stället för 210D Oxford. Avgör om det är strukturen eller den specifika specen som bär | PD_1_H1, isolerad variabel |
+| IBC_PD_10_H2 | Video 12–15 s | Ordagrant samma rader som PD_10_H1, tätare klipp — isolerar LÄNGDEN och ingenting annat | PD_Extra-gapet, tredje avläsningen |
+| IBC_CS_8_H1 | Video 20–25 s | Prisvinkelns första rena video: 489/636 kr, 23 %, noll påhittad brådska | CS_1_H3 (bäst CPA) + produktsidan |
+| IBC_PD_10_1 | Statisk | Statisk tvilling till PD_10_H1 — formattest där videon bär 86 % av vinsten | PD_10_H1 |
+| IBC_BOF_13_1 | Statisk | BOF-invändning: hur kommer jag åt locket? Blixtlåset och topp-öppningen | Produktsidan |
+| IBC_BOF_14_1 | Statisk | BOF-invändning: passar den min tank? 120 × 100 × 116 cm | Produktsidan |
+| IBC_BOF_15_1 | Statisk | BOF: bara siffran. 489 kr, var 636 kr, 23 % (= 147 kr) | CS-vinkeln |
+| IBC_RV_9_1 | Statisk | Recensionsbild, Johans rad pekar på passformen | Verifierad recension, ordagrant |
+| IBC_RV_10_1 | Statisk | Recensionsbild, Sofias rad pekar på solskyddet | Verifierad recension, ordagrant |
+
+**Backlog:** tom, dubbelkollad. Batch #6 byggdes på isolerade variabler ur
+DNA:t, inte på väntande koncept.
+
+⚠️ **Rättelse gjord av huvudsessionen efter subagenten:** båda
+recensionsbilderna hade en aggregatrad ("5,0 av 5 — 10 recensioner, alla 5
+stjärnor"). Den är struken. Min läsning av produktsidan 2026-09-17 gav 10
+recensioner à 5 stjärnor, men `dna.md` från 2026-09-04 säger 7×5★ + 3×4★ —
+två läsningar som inte går ihop. Ett aggregat som kan vara fel får inte tryckas
+i en annons, så briefen bär nu bara den enskilda recensentens egna 5 stjärnor,
+och en rad i Rules förbjuder aggregatet. **Öppen fråga till nästa körning:**
+läs stjärnfördelningen igen och skriv in vilken som gäller.
+
+**Levererat:** samtliga 9 som items i **`BÄVER IBC-Tanköverdraget`**
+(data source `collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2`), Status
+`Draft`, Typ `Video`/`Image - Pending Approval`, hela briefen i sidan.
+Verifierat med SQL mot collectionen: 3 video + 6 bild = 9 i Draft (hubben var
+tom före körningen). Sidan `IBC_CS_8_H1` öppnad med notion-fetch och läst —
+Hook, hela tre-frågorstabellen (7 rader), shot list med fem tidsrader och Rules
+låg som riktiga Notion-tabeller. Ingen `.md`-länk någonstans.
+
+⚠️ **Observation att kolla:** `notion-fetch` på det skapade itemet visar
+`ancestor-2-database` med titeln **"Hiking Gaiters creative hub"**, medan
+`parent-data-source` korrekt är `BÄVER IBC-Tanköverdraget`. Raderna hamnade
+alltså rätt (verifierat mot collection-id:t i produktkartan), men databasens
+egen titel matchar inte data source-namnet. Rör ingenting — men värt att Axel
+tittar på det i Notion.
+
+**Ingen Drive-mapp skapad.** Hela briefen ligger i Notion-itemet, vilket är
+det redigerarna läser. Skapas mappen senare: `Batch #6` INUTI produktens
+befintliga mapp (Joshs, `1EL7qjxDtCeKTUJPuCY7Asp2FshiD0nDO`), aldrig i
+`BÄVER/Products`.
+
+**Modellpolicy:** följd. En sonnet-subagent skrev all svensk copy och körde
+tre-frågorstestet rad för rad; huvudsessionen gjorde analysen, hypoteserna,
+namngivningen, briefstrukturen och rättelsen ovan.
+
+**Nästa lediga AD-ID:** PD 11, CS 9, GT 6, SP 6, CO 3, BOF 16, RV 11.

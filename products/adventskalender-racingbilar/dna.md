@@ -208,3 +208,62 @@ hubben från 2026-09-10 (`c19270ab-908c-834c-bf90-874ce69e0381`); batch #2 i
 **Modellpolicy följd denna gång** — avvikelsen ovan gällde batch #1, där
 Agent-verktyget saknades. I den här körningen fanns det: en sonnet-subagent per
 brief skrev copyn och körde tre-frågorstestet rad för rad.
+
+---
+
+## Uppdatering 2026-09-17 (`/cs`-körning, batch #3, rond-auto steg 4b, fokus "ersätt det som pausats i trappan")
+
+**Källa:** MagiBorsten `1867947880635861`, kampanj `120250134672020291`, ad-nivå,
+`date_preset: maximum`, hämtat 2026-09-17 05:45 UTC.
+
+**Livstid:** 9 232,18 kr spend · 28 köp · ROAS 1,781 · intäkt 16 445 kr.
+**AOV 587 kr → break-even-CPA 363 kr** (BE-ROAS 1,62 ur kampanjnamnet).
+Dagsbudget 500 kr. Domen i dag: `RAKNA_BACKDAGAR` — 3-dagars-ROAS 1,35 ligger
+under break-even, men livstids-ROAS 1,78 ligger över, så livstidsspärren håller
+kampanjen vid liv. 0 back-dygn i rad, 5 kvar innan den stängs av.
+
+### Vinstbidrag = (363 − CPA) × köp
+
+| Annons | Format | Status | Spend | Sp% | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|---|---|
+| PD_2_H1 | video | **PAUSED** | 4 243 kr | 46,0 % | 11 | 386 | 1,40 | **−250 kr** |
+| PD_2_1 | statisk | **PAUSED** | 2 973 kr | 32,2 % | 10 | 297 | 2,12 | **+657 kr** |
+| GT_1_H1 | video | ACTIVE | 1 115 kr | 12,1 % | 4 | 279 | 2,10 | +337 kr |
+
+**För tidigt:** PD_1_H1 (138 kr, 2 köp), BF_6_1 (117 kr, 1 köp), CS_2_1
+(92 kr, 1 köp) och resten av batch #2 — ren svält.
+
+### ⚠️ Viktigaste fyndet: spendtjuvsspärren pausade också vinnaren
+
+Den 14:e pausade spendtjuvsspärren **båda** PD_2-annonserna. Det var rätt för
+`PD_2_H1` (livstidsvinstbidrag −250 kr, den enda annonsen under break-even).
+För `PD_2_1` var det fel: mätt över hela livstiden ligger den på CPA 297 kr mot
+break-even-CPA 363 kr, alltså **+657 kr vinstbidrag — kampanjens största**.
+Den såg ut som en tjuv bara i det 3-dagarsfönster spärren läser (ROAS 0,97 där).
+
+**Lärdom, metodisk och gäller hela repot:** spendtjuvsspärren dömer på ett
+3-dagarsfönster. På en produkt med ojämn dygnsprestanda kan en annons som gått
+plus hela sin livstid falla in i fönstret som tjuv. **Läs alltid `roas_livstid`
+bredvid 3-dagarstalet innan en annons pausas** — fältet skickas redan in i
+jobbfilen, men det dömer ingenting i dag. Det är ett förslag till Axel, inte en
+ändring: ronden startar aldrig om något den pausat, och rör inte heller det
+som redan är pausat.
+
+Kampanjen kör nu i praktiken på `GT_1_H1` plus batch #2:s svältande rader. Det
+är hela förklaringen till att 3-dagars-ROAS ligger på 1,35: de två annonserna
+som bar 78 % av spenden är avstängda.
+
+### Winning DNA — oförändrat, men underbyggt en gång till
+
+Chokladkonflikten är fortfarande produktens enda bevisade mekanism, och den
+bärs av den **statiska** helscenen. Videotvillingen på samma budskap gick back.
+Batch #3 gör om båda: `PD_10_1` bygger om den statiska vinnaren med nya rader,
+och `PD_10_H1` bygger videon på stillbildens komposition i stället för de täta
+handnärbilderna — det testet ställdes i batch #2 (`PD_9_H1`) och är fortfarande
+obesvarat, för raden svälter.
+
+### Recensioner omlästa 2026-09-17
+
+Samtliga 10 lästa ordagrant från produktsidan, alla 5 stjärnor. Använda:
+Anna + Johan (batch #1), Sara + Emma (batch #2), Erik + Daniel (batch #3).
+Kvar oanvända: Peter, Sofia, Maria, Linda.
