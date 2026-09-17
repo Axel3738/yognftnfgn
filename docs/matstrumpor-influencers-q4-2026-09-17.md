@@ -237,6 +237,38 @@ Axel Odhner, Matstrumpor.se, [mobil]
 | Anna Bennich | Formuläret på annabennich.se | Din publik är samma som våra köpare, och de litar på dig. | |
 | Mia Törnblom | michael@mtledarskap.se eller mtgruppen.com/kontakt | Din publik är samma som våra köpare, kvinnor 45–60. | Säg direkt om det här inte är något du gör. |
 
+**Copy-paste-versionerna (inget att fylla i).** Till henne direkt:
+
+Ämne: Betalt story-samarbete inför jul
+
+Hej!
+
+Jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser.
+
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik är samma som våra köpare, och de lyssnar på dig.
+
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se
+
+Till byrå (skriv hennes namn i ämnesraden, inget annat ändras):
+
+Ämne: Betalt story-samarbete inför jul, gäller [namn]
+
+Hej!
+
+Jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med profilen i ämnesraden i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra egna annonser.
+
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Vår köpare är kvinnor 45 och uppåt, och profilens publik matchar den.
+
+Vi betalar arvode för stories och annonsrätt, och skickar gärna två lådor som prov innan ni tar ställning. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt, och säg vem hos er som sköter profilens samarbeten.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se
+
 **I mötet:** två minuter om brandet, resten frågor om henne och hennes följare. Priset sist, och först efter att hon fått lådan.
 
 ## 15. Alla 29 scorecards (viktad poäng enligt prompten, före den fällande granskningen)
