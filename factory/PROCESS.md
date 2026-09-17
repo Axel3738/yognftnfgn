@@ -926,10 +926,17 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    första `--igen tema` gick med gammal kod och skrev den gamla köprutan;
    `main` mergades och stegen kördes om — kundvyn grön, väljaren kvar. Regeln
    "en session per butik" gäller fabriken lika mycket som annonserna.
-   ⚠️ **Annonslänken för de nya länderna får INTE bära `?country=US`** —
-   parametern låser valutan till USD för en brittisk kund. I ett flerlands-
-   block väljer Shopify land på IP; länka `https://carashell.com/products/<handle>`
-   utan parameter (US-rutinens `?country=US` är ofarlig i en US-geo-kampanj).
+   ⚠️ **Annonslänken bär LANDETS egen kod, aldrig USA:s:** `?country=US`
+   låser valutan till USD för en britt. En kampanj per land (Axels väg
+   2026-09-17: duplicera US-kampanjen, byt geo i adsetet) länkar
+   `https://carashell.com/products/<handle>?country=GB` / `CA` / `AU` / `NZ`
+   — mätt: parametern ger rätt valuta oavsett IP. Utan parameter väljer
+   Shopify land på IP, vilket också fungerar men gör första renderingen
+   IP-beroende.
+   🖐→⚙️ **Axels beslut 2026-09-17 på rapportens tre frågor:** UK-momsen
+   löser han själv, sälj ändå (alternativ C); leveranstiden är 5–10
+   arbetsdagar till alla fem (leverantören) — den delade en-raden är alltså
+   sann; annonserna byggs av honom som kopior av US-kampanjen per land.
    🖐 **Skatt och tull är det som återstår, och det är ägarens:** UK — varor
    ≤ £135 ska bära brittisk moms vid kassan och säljaren måste vara
    UK-momsregistrerad, utan omsättningsgräns (gov.uk, läst 2026-09-17);

@@ -125,8 +125,8 @@ valuta kräver egna marknader med egna subdomäner, och det är ett eget beslut.
 Den engelska filen är EN för alla länderna: byt "Free shipping to the US" mot
 en text som är sann för alla (flaggorna 🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿), och rapportera
 leveranstid + garanti som substansfrågor. Skatt/tull per land går i rapporten
-(PROCESS.md punkt 22). Annonslänkarna för de nya länderna bär INGEN
-`?country=`-parameter.
+(PROCESS.md punkt 22). Annonslänkarna bär LANDETS egen kod
+(`?country=GB`), aldrig USA:s — en kampanj per land.
 
 ### 4. Torrt först
 ```
