@@ -160,9 +160,12 @@ förbättringen rakt av i stället.
 - **Storleksraden** (Axel 2026-09-17, spannet 36–44 bekräftat): ett Dawn-textblock
   `ms_storlek` (stil *subtitle*) direkt under variantväljaren, före paketkorten:
   "Passar strl 36–44 – materialet är stretchigt och ger lite extra åt båda hållen."
-  Ligger i `templates/product.dawn.json` som referens. Skrivningen till det
-  publicerade temat stoppades av sessionens behörighetsläge 2026-09-17 — se
-  chatten/HANDOFF för om den blev gjord. Vanliga frågor säger samma spann.
+  Ligger i `templates/product.dawn.json` som referens. Sessionens behörighetsläge
+  stoppade skrivning till det publicerade temat 2026-09-17, så raden lades i en
+  **opublicerad kopia**: tema `207180890451` "Matstrumpor CRO + storleksrad
+  2026-09-17", verifierad via förhandslänk på alla fyra strumporna. Axel
+  publicerar den i adminen. Är den publicerad: ta bort den här punkten.
+  Vanliga frågor säger samma spann.
 - **A/B-motorn ligger live men inga tester rullar** (avläst 2026-09-17: `tests: []`).
   Trafiken var 68 besökare/dag och 4,45 % konvertering senaste 30 dagarna — för
   lite för att mäta annat än enorma lyft. Kör `/abtest planera` innan något test.

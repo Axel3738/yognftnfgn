@@ -115,7 +115,7 @@ async function duplicera(bas) {
   const d = await gql(
     `mutation($id: ID!, $name: String!) {
        themeDuplicate(id: $id, name: $name) {
-         theme { id name role }
+         newTheme { id name role }
          userErrors { field message }
        }
      }`,
@@ -124,7 +124,7 @@ async function duplicera(bas) {
   const fel = d.themeDuplicate.userErrors;
   if (fel?.length) throw new Error(fel.map(f => f.message).join('; '));
 
-  const tema = d.themeDuplicate.theme;
+  const tema = d.themeDuplicate.newTheme; // hette `theme` före API 2026-07
   if (tema.role === 'MAIN') throw new Error('Kopian blev PUBLICERAD. Avbryter innan något skrivs.');
 
   // Duplicering är asynkron: temat finns men filerna kan dröja några sekunder.
