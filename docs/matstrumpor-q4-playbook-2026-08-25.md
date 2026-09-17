@@ -80,3 +80,7 @@ till den som letar present, aldrig "unna dig".
 2. Katalog/DPA-bygget — go? (kräver katalog i Business Manager)
 3. Presentväljar-sektion + Q4-banner på sajten — go?
 4. Ev. fri frakt-tröskel för AOV-lyft (i dag fri frakt rakt av) — vill du ens?
+
+## Tillägg 2026-09-17: influencers inför Q4
+
+Influencerspåret ligger i `docs/matstrumpor-influencers-q4-2026-09-17.md` (topp 3 att kontakta, topp 10, dealupplägg enligt The Celebrity Code, färdiga mail, kalender v.44) och prompten i `docs/matstrumpor-influencer-brain-prompt.md`. Regeln från kursen: tre går live samma vecka, bara stories, 30 dagars annonsrätt, och samma dag som influencervideon ska minst tre andra format ligga i kontot.
