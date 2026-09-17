@@ -436,4 +436,8 @@ priserna finns. Paketnivåerna (2 st −15 %, 3 st −20 %) räknar per vald sto
 temat. Korg-upsellen på termoskyddets sida visar takskyddets FÖRSTA variant (5,5 m).
 Annonserna rördes inte — de länkar till `/products/takskyddet` och kunden väljer
 storlek på sidan.
+Samma dag: **rullgardin per överdrag i varje paketnivå** (2-pack = två rullgardiner,
+3-pack = tre) så kunden kan blanda storlekar. Köpet lägger en rad per vald storlek,
+rabattkoden räknar antal per produkt och gäller oavsett mix. Etiketten "Överdrag 1/2/3"
+(nb "Trekk", en "Cover"). Inte klickat i webbläsare av en människa.
 

@@ -40,6 +40,8 @@
         "sections/opf-garanti.liquid",
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
+        "snippets/ms-paket.liquid",
+        "assets/ms-paket.css",
         "sections/header-group.json",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
@@ -177,12 +179,12 @@
       "underlag": 160,
       "utfall": {
         "nb": {
-          "registrerade": 3,
+          "registrerade": 0,
           "saknade": 4,
           "perTyp": {
             "variant": 0,
-            "produkt": 2,
-            "metafält": 1,
+            "produkt": 0,
+            "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
@@ -195,12 +197,12 @@
           "granskning": "4374/4418"
         },
         "en": {
-          "registrerade": 12,
+          "registrerade": 0,
           "saknade": 4,
           "perTyp": {
-            "variant": 9,
-            "produkt": 2,
-            "metafält": 1,
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
@@ -241,7 +243,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-17T11:23:54.996Z"
+    "tid": "2026-09-17T11:43:56.423Z"
   },
-  "uppdaterad": "2026-09-17T11:23:54.996Z"
+  "uppdaterad": "2026-09-17T11:43:56.423Z"
 }

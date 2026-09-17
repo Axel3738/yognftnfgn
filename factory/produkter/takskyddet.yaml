@@ -16,6 +16,13 @@ produkt:
   namn: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"
   id: "takskyddet"
   menynamn: "Taköverdraget"
+  # Ordet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2") — sedan
+  # 2026-09-17 när produkten fick nio storlekar. Kunden kan blanda storlekar
+  # i ett paket (Axels beslut samma dag).
+  enhet:
+    sv: "överdrag"
+    nb: "trekk"
+    en: "cover"
 
 brand:
   namn: "CaraShell"
