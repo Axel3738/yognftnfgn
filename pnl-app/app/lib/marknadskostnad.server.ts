@@ -91,3 +91,48 @@ export async function skrivMarknadskostnad(
   }
   await prisma.$transaction(ops);
 }
+
+/**
+ * Tar bort marknadskostnaden för varianterna, så de åter ärver standarden.
+ * Ligger kostnaden som en PRODUKTBRED post (variantGid null) och bara några
+ * av produktens varianter ska rensas, skrivs den om som variantspecifika
+ * poster för de syskon som ska behålla den — annars hade "ta bort på röd"
+ * tagit bort blå också.
+ */
+export async function taBortMarknadskostnad(
+  shop: string,
+  market: string,
+  mal: { variantGid: string; productGid: string }[],
+  allaIProdukt: { variantGid: string; productGid: string }[],
+): Promise<void> {
+  const m = marknadskod(market);
+  if (!m || !mal.length) return;
+  const malSet = new Set(mal.map((v) => v.variantGid));
+  const produkter = [...new Set(mal.map((v) => v.productGid))];
+  const breda = await prisma.costChange.findMany({
+    where: { shop, market: m, variantGid: null, productGid: { in: produkter } },
+    orderBy: { effectiveFrom: "desc" },
+  });
+  const ops = [];
+  for (const produkt of produkter) {
+    const syskon = allaIProdukt.filter((v) => v.productGid === produkt && !malSet.has(v.variantGid));
+    const senaste = breda.find((b) => b.productGid === produkt);
+    if (senaste && syskon.length) {
+      for (const v of syskon) {
+        ops.push(
+          prisma.costChange.create({
+            data: {
+              shop, productGid: produkt, variantGid: v.variantGid, unitCost: senaste.unitCost,
+              productCost: senaste.productCost, shippingCost: senaste.shippingCost,
+              effectiveFrom: senaste.effectiveFrom, note: senaste.note, market: m,
+            },
+          }),
+        );
+      }
+    }
+    ops.push(prisma.costChange.deleteMany({ where: { shop, market: m, variantGid: null, productGid: produkt } }));
+  }
+  ops.push(prisma.costChange.deleteMany({ where: { shop, market: m, variantGid: { in: [...malSet] } } }));
+  ops.push(prisma.costTier.deleteMany({ where: { shop, market: m, variantGid: { in: [...malSet] } } }));
+  await prisma.$transaction(ops);
+}

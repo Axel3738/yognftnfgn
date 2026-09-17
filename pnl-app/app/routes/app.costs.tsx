@@ -37,7 +37,7 @@ import { importCostCsv } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
 import { kandaMarknader } from "../lib/daily.server";
-import { lasMarknadskostnad, skrivMarknadskostnad } from "../lib/marknadskostnad.server";
+import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { asLang, localeOf, t } from "../lib/texts";
 
@@ -189,6 +189,28 @@ export async function action({ request }: ActionFunctionArgs) {
       const r = await setUnitCost(admin, gid, cost);
       if (!r.ok) fel.push(r.error ?? gid);
     }
+    invalidateVariantCosts(session.shop);
+    await invalidateCatalog(session.shop, prisma);
+    return json({ ok: fel.length === 0, message: fel.join("; ") });
+  }
+  /* Ta bort kostnaden. Standard: Shopifys fält rensas (varianten "saknar
+     kostnad" igen, den kostar inte noll) och standardstegen försvinner.
+     Marknad: bara marknadens egna poster tas bort — varianten ärver standarden. */
+  if (intent === "remove-cost") {
+    const targets = String(form.get("targets") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+    if (!targets.length) return json({ ok: false, message: "invalid" }, { status: 400 });
+    const kat = await loadCatalog(admin, session.shop, prisma);
+    const mal = kat.all.filter((v) => targets.includes(v.inventoryItemGid) || targets.includes(v.variantGid));
+    if (market) {
+      await taBortMarknadskostnad(session.shop, market, mal, kat.all);
+      return json({ ok: true, message: "" });
+    }
+    const fel: string[] = [];
+    for (const v of mal) {
+      const r = await setUnitCost(admin, v.inventoryItemGid, null);
+      if (!r.ok) fel.push(r.error ?? v.variantGid);
+    }
+    await prisma.costTier.deleteMany({ where: { shop: session.shop, market: "", variantGid: { in: mal.map((v) => v.variantGid) } } });
     invalidateVariantCosts(session.shop);
     await invalidateCatalog(session.shop, prisma);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
@@ -454,6 +476,7 @@ export default function Costs() {
     ...marknader.map((m) => ({ label: `${marknadsnamn(m, lang, m)} (${m})`, value: m })),
   ];
   const [nyMarknad, setNyMarknad] = useState("");
+  const [visaNyMarknad, setVisaNyMarknad] = useState(false);
   const byMarknad = (m: string) => {
     const nya = new URLSearchParams(params);
     if (m) nya.set("market", m);
@@ -519,31 +542,38 @@ export default function Costs() {
                 skrivning på sidan går. */}
             <Card>
               <BlockStack gap="200">
-                <Text as="h2" variant="headingMd">{T.costs.market.title}</Text>
-                <Text as="p" tone="subdued">{T.costs.market.body}</Text>
                 <InlineStack gap="300" blockAlign="end" wrap>
                   <div style={{ minWidth: 260 }}>
-                    <Select label={T.costs.market.label} options={marknadsval} value={market} onChange={byMarknad} />
-                  </div>
-                  <div style={{ width: 150 }}>
-                    <TextField
-                      label={T.costs.market.addLabel}
-                      value={nyMarknad}
-                      onChange={setNyMarknad}
-                      autoComplete="off"
-                      placeholder="JP"
-                      maxLength={2}
+                    <Select
+                      label={T.costs.market.label}
+                      options={marknadsval}
+                      value={market}
+                      onChange={byMarknad}
+                      helpText={market ? T.costs.market.activeNote(marknadsnamnet) : T.costs.market.help}
                     />
                   </div>
-                  <Button disabled={!marknadskod(nyMarknad)} onClick={() => byMarknad(marknadskod(nyMarknad))}>
-                    {T.costs.market.add}
-                  </Button>
+                  {visaNyMarknad ? (
+                    <>
+                      <div style={{ width: 130 }}>
+                        <TextField
+                          label={T.costs.market.addLabel}
+                          value={nyMarknad}
+                          onChange={setNyMarknad}
+                          autoComplete="off"
+                          maxLength={2}
+                          autoFocus
+                        />
+                      </div>
+                      <Button disabled={!marknadskod(nyMarknad)} onClick={() => byMarknad(marknadskod(nyMarknad))}>
+                        {T.costs.market.add}
+                      </Button>
+                    </>
+                  ) : (
+                    <Button variant="plain" onClick={() => setVisaNyMarknad(true)}>{T.costs.market.addToggle}</Button>
+                  )}
                 </InlineStack>
-                {market ? (
-                  <Banner tone="info">
-                    {T.costs.market.activeNote(marknadsnamnet)}
-                    {arvda ? ` ${T.costs.market.inherited(arvda)}` : ""}
-                  </Banner>
+                {market && arvda ? (
+                  <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.inherited(arvda)}</Text>
                 ) : null}
               </BlockStack>
             </Card>
@@ -1145,6 +1175,14 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
     setSparat(true);
     setTimeout(() => setSparat(false), 2500);
   };
+  /* Ta bort: kostnaden försvinner (Shopify-fältet rensas, eller marknadens
+     post tas bort så standarden gäller igen). Tömmer man fältet och lämnar
+     det händer samma sak — ett tomt fält ska betyda "ingen kostnad". */
+  const taBort = (targets: string[]) => {
+    fetcher.submit({ intent: "remove-cost", targets: targets.join(","), market }, { method: "POST" });
+    setV("");
+  };
+  const harKostnad = kostnader.some((k) => k != null);
   const onKey = (targets: string[], value: string) => (e: React.KeyboardEvent) => {
     if (e.key === "Enter") spara(targets, value);
   };
@@ -1182,7 +1220,10 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
             labelHidden
             value={v}
             onChange={setV}
-            onBlur={() => { if (v && String(kostnader[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v); }}
+            onBlur={() => {
+              if (v && String(kostnader[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v);
+              else if (!v && lika && harKostnad) taBort(grupp.map((r) => r.inventoryItemGid));
+            }}
             autoComplete="off"
             placeholder={!alla ? T.costs.quick.placeholder : !lika ? T.costs.quick.mixed : ""}
             suffix={currency}
@@ -1190,6 +1231,11 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
           />
         </div>
         {saknas ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : sparat || fetcher.state !== "idle" ? <Badge tone="success">{fetcher.state !== "idle" ? T.costs.quick.saving : T.costs.quick.saved}</Badge> : grupp.every((r) => r.arvd) ? <Badge>{T.costs.market.inheritedBadge}</Badge> : null}
+        {harKostnad && !(grupp.length > 1 && !lika && !open) ? (
+          <Button variant="plain" size="slim" tone="critical" onClick={() => taBort(grupp.map((r) => r.inventoryItemGid))}>
+            {T.costs.quick.remove}
+          </Button>
+        ) : null}
         {grupp.length > 1 ? (
           <Button variant="plain" size="slim" onClick={() => setOpen((o) => !o)}>
             {open ? T.costs.quick.hideVariants : T.costs.quick.showVariants}
@@ -1217,8 +1263,13 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
 function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat; market: string }) {
   const fetcher = useFetcher<typeof action>();
   const [v, setV] = useState(r.unitCost != null ? String(r.unitCost) : "");
+  const taBort = () => fetcher.submit({ intent: "remove-cost", targets: r.inventoryItemGid, market }, { method: "POST" });
   const spara = () => {
-    if (!v.trim() || String(r.unitCost ?? "") === v) return;
+    if (!v.trim()) {
+      if (r.unitCost != null && !r.arvd) taBort();
+      return;
+    }
+    if (String(r.unitCost ?? "") === v) return;
     fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid, market }, { method: "POST" });
   };
   const steg = stegText(r.unitCost, r.tiers, T, nf, currency);
@@ -1233,6 +1284,9 @@ function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<type
           <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={T.costs.quick.placeholder} suffix={currency} />
         </div>
         {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
+        {r.unitCost != null && !r.arvd ? (
+          <Button variant="plain" size="slim" tone="critical" onClick={taBort}>{T.costs.quick.remove}</Button>
+        ) : null}
       </InlineStack>
       {steg ? <Text as="p" tone="subdued" variant="bodySm">{steg}</Text> : null}
     </BlockStack>

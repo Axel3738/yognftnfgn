@@ -723,11 +723,15 @@ export async function fetchVariantCosts(
   return cat;
 }
 
-/** Skriver unitCost på en variant. Kostnaden ska vara vara + frakt, utan tull. */
+/**
+ * Skriver unitCost på en variant. Kostnaden ska vara vara + frakt, utan tull.
+ * `null` RENSAR fältet — det är så en felinlagd kostnad tas bort, så att
+ * varianten åter räknas som "saknar kostnad" i stället för att kosta noll.
+ */
 export async function setUnitCost(
   admin: AdminApiContext,
   inventoryItemGid: string,
-  cost: number,
+  cost: number | null,
 ): Promise<{ ok: boolean; error?: string }> {
   const res = await admin.graphql(
     `#graphql
@@ -737,7 +741,7 @@ export async function setUnitCost(
          userErrors { field message }
        }
      }`,
-    { variables: { id: inventoryItemGid, input: { cost: cost.toFixed(2) } } },
+    { variables: { id: inventoryItemGid, input: { cost: cost == null ? null : cost.toFixed(2) } } },
   );
   const body = await res.json();
   const errs = body?.data?.inventoryItemUpdate?.userErrors ?? [];
