@@ -20,7 +20,8 @@ import prisma from "../db.server";
 import { compute, type SalesDay, type SpendDay } from "./pnl.server";
 import { dailyRates, latestRateDay, rateOn, type DailyRates } from "./fx.server";
 import { fyllButiksnamn, readDaily, refreshShopDaily, shiftIso } from "./daily.server";
-import { getSpend, kampanjFilter } from "./meta.server";
+import { getSpend } from "./meta.server";
+import { hamtaKonton, konfigurationer } from "./meta-konton.server";
 import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
 import { dagarKvar, VARNA_DAGAR } from "./meta-login";
@@ -229,17 +230,16 @@ async function summeraButik(
      annonskostnad blev tyst för låg. Nu fylls luckor på plats och färskheten
      sköts i bakgrunden, precis som för dagsraderna. */
   const metaToken = m.metaAccessToken ? decrypt(m.metaAccessToken) : null;
-  const metaCfg =
-    m.metaAdAccountId && metaToken
-      ? { adAccountId: m.metaAdAccountId, accessToken: metaToken, ...kampanjFilter(m) }
-      : null;
+  /* Butiken kan ha flera annonskonton — summan av dem alla är butikens
+     annonskostnad. */
+  const metaKonton = konfigurationer(await hamtaKonton(m.shop), metaToken);
 
   /* Token sparad men inget annonskonto valt (flera konton i listan, eller
      inklistrad token utan konto): ingen annonskostnad går att hämta, och
      butikens egen panel säger "för hög". Summan får inte räkna in samma
      butik som noll annonskostnad — uteslut och namnge, som en utgången
      inloggning. */
-  if (m.metaAccessToken && !m.metaAdAccountId) {
+  if (m.metaAccessToken && !metaKonton.length) {
     return { ok: false, shop: m.shop, reason: T.group.accountNotChosen };
   }
   /* Känd utgång (inloggning eller inklistrad token med känt datum): getSpend
@@ -252,7 +252,7 @@ async function summeraButik(
     /* syncFresh: även annonskostnadens färskhet väntas in — dagens spend är
        halva vinstkalkylen, och en bakgrundshämtning hade lämnat samma lucka
        som dagssiffrorna nyss hade. */
-    getSpend(m.shop, metaCfg, from, to, idag, m.currency, m.spendCurrency, {
+    getSpend(m.shop, metaKonton, from, to, idag, m.currency, {
       syncFresh: true,
       tokenExpired: utgangsDagar != null && utgangsDagar < 0,
     }),
@@ -270,7 +270,7 @@ async function summeraButik(
       reason: T.group.fxUnavailable(spendData.currencyMismatch.spend, spendData.currencyMismatch.shop),
     };
   }
-  if (metaCfg && spendData.error) {
+  if (metaKonton.length && spendData.error) {
     /* Utgången Facebook-inloggning får ett eget skäl: åtgärden är ett klick
        i DEN butikens Settings, inte "öppna panelen en gång". */
     return {
@@ -292,7 +292,7 @@ async function summeraButik(
 
   const r = compute({
     from, to,
-    spendReliable: Boolean(!metaCfg || !spendData.error),
+    spendReliable: Boolean(!metaKonton.length || !spendData.error),
     fixedMonthlyTotal: fixedRows.reduce((a, x) => a + Number(x.monthlyAmount), 0),
     sales: daily.sales,
     sessions: [],

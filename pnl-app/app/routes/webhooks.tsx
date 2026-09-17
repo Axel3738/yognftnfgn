@@ -28,6 +28,7 @@ export async function action({ request }: ActionFunctionArgs) {
       await prisma.$transaction([
         ...(s?.metaAccessToken ? [prisma.shopSettings.update({ where: { shop }, data: META_TOMT })] : []),
         prisma.dailySpend.deleteMany({ where: { shop } }),
+        prisma.metaAdAccount.deleteMany({ where: { shop } }),
         prisma.metaLoginState.deleteMany({ where: { shop } }),
       ]);
       if (token && aterkalla) void aterkallaToken(token, 3_000);
@@ -64,6 +65,7 @@ export async function action({ request }: ActionFunctionArgs) {
          intygat i dataskyddsdeklarationen. */
       await prisma.$transaction([
         prisma.dailySpend.deleteMany({ where: { shop } }),
+        prisma.metaAdAccount.deleteMany({ where: { shop } }),
         prisma.costChange.deleteMany({ where: { shop } }),
         prisma.costTier.deleteMany({ where: { shop } }),
         prisma.pnlCache.deleteMany({ where: { shop } }),

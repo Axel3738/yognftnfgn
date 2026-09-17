@@ -37,7 +37,8 @@ import {
   refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
-import { getSpend, kampanjFilter } from "../lib/meta.server";
+import { getSpend } from "../lib/meta.server";
+import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
@@ -177,26 +178,27 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
   const metaTokenDagar = dagarKvar(settings.metaTokenExpiresAt);
   const tokenExpired = metaTokenDagar != null && metaTokenDagar < 0;
 
+  /* Butiken kan ha flera annonskonton kopplade — annonskostnaden är summan av
+     dem alla. Listan är sanningen; ShopSettings.metaAdAccountId är bara en
+     spegel av det första och får inte styra något här. */
+  const metaKonton = konfigurationer(
+    await hamtaKonton(shop),
+    settings.metaAccessToken ? decrypt(settings.metaAccessToken) : null,
+  );
+
   const spend = await getSpend(
     shop,
-    settings.metaAdAccountId && settings.metaAccessToken
-      ? {
-          adAccountId: settings.metaAdAccountId,
-          accessToken: decrypt(settings.metaAccessToken)!,
-          ...kampanjFilter(settings),
-        }
-      : null,
+    metaKonton,
     from,
     to,
     today,
     settings.currency,
-    settings.spendCurrency,
     { tokenExpired },
   );
 
-  const metaConfigured = Boolean(settings.metaAdAccountId && settings.metaAccessToken);
+  const metaConfigured = metaKonton.length > 0;
   /* Inloggad via Facebook men inget annonskonto valt än — halva steget. */
-  const metaPending = Boolean(settings.metaAccessToken && !settings.metaAdAccountId);
+  const metaPending = Boolean(settings.metaAccessToken && !metaKonton.length);
   const metaLoginSource = settings.metaTokenSource === "login";
 
   /* Annonskostnadens fel som EN översatt text per läge. Koden kommer från
@@ -272,16 +274,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       throw new Error("jämförelsen fylls i bakgrunden");
     }
     const prevSpend = await getSpend(
-      shop,
-      metaConfigured
-        ? {
-            adAccountId: settings.metaAdAccountId!,
-            accessToken: decrypt(settings.metaAccessToken)!,
-            ...kampanjFilter(settings),
-          }
-        : null,
-      prevFrom, prevTo, today, settings.currency, settings.spendCurrency,
-      { tokenExpired },
+      shop, metaKonton, prevFrom, prevTo, today, settings.currency, { tokenExpired },
     );
     const prev = compute({
       from: prevFrom, to: prevTo,

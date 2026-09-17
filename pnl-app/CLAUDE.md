@@ -397,6 +397,62 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Flera annonskonton per butik (2026-09-17, build flera-annonskonton-v87)
+
+Axels ask, med skärmbild av Inställningar: *"Jag vill kunna göra så att man
+kan koppla mer än ett ad account … för jag kör ads från flera olika ad
+accounts till samma butik."* Det är normalläget för en dropshippare som
+testar mycket: ett konto blir avstängt, ett nytt öppnas, ett tredje delas
+med en partner. Före det här bygget räknades bara ETT konto — resten av
+annonskostnaden saknades, och vinsten såg för hög ut.
+
+**Datamodellen:** ny tabell `MetaAdAccount` (`shop` + `accountId` som
+primärnyckel) med namn, valuta och **kampanjfilter per konto**. Filtret
+MÅSTE ligga per konto: kampanj-ID:n är kontospecifika, så ett delat filter
+hade betytt "inga kampanjer alls" i alla konton utom ett.
+`DailySpend` fick kolumnen `account`, och unikheten flyttades från
+`(shop, day)` till `(shop, day, account)`.
+
+⚠ **Utan kontot i unikheten skriver konto B över konto A:s dag** och halva
+annonskostnaden försvinner utan att något ser trasigt ut. Det är hela
+poängen med migrationen `20260917090000_flera_annonskonton` — den droppar
+det gamla indexet FÖRST och skapar det nya sedan.
+
+**Token ligger kvar på `ShopSettings`.** En Facebook-inloggning ger EN
+nyckel som når alla konton personen har tillgång till; kontona är bara en
+lista över vilka av dem som ska räknas för butiken.
+
+⚠ **`ShopSettings.metaAdAccountId`, `spendCurrency`, `campaignMode` och
+`campaignIds` är LEGACY.** De skrivs som en spegel av det första kontot
+(`speglaForstaKontot`) för att `/meta/callback`-spärren jämför mot dem.
+**Läs aldrig annonskostnad ur dem** — en butik med tre konton har tre rader
+i `MetaAdAccount`, och spegeln ser ut som om den hade ett.
+
+**Räknevägen:** `getSpend(shop, konton[], …)` går igenom ett konto i taget,
+med egen cache, egen valutaomräkning och eget filter, och summerar sedan per
+dag (`lib/spend-summa.ts`, 6 tester). Ett konto som krånglar stoppar inte de
+andra — men dagen det saknas på **döljs helt**: att servera de övriga
+kontonas kostnad som om den vore hela dagens är en för låg annonskostnad,
+och därmed en för hög vinst.
+
+**UI:t:** Inställningar visar ett kort per kopplat konto (namn, valuta,
+kampanjfilter, "Ta bort") och en plain-knapp **"+ Lägg till ett annonskonto
+till"** som fäller ut väljaren med de konton som inte redan är kopplade.
+Konto läggs till i samma sekund det väljs — ingen Spara-knapp längst ner.
+
+⚠ **Oprövat i drift.** Typecheck, `npm run build` och 24 tester är gröna,
+men migrationen har inte körts mot en riktig databas i den här sessionen
+(ingen Postgres gick att starta i containern) och ingen butik har kopplat
+två konton skarpt. Kontrollera efter deploy att `/healthz` svarar
+`flera-annonskonton-v87` och att en butiks annonskostnad är oförändrad
+innan ett andra konto läggs till.
+
+⚠ **Under själva deployen** kan de sex tjänsterna ligga på var sin sida av
+migrationen i ett par minuter. En gammal instans som skriver `DailySpend`
+efter att det gamla unika indexet droppats får ett fel på sin
+annonshämtning tills den rullat över. Inget data går förlorat — dagen
+hämtas om vid nästa laddning.
+
 ### LTV-tillägget (2026-09-08, build ltv-v67) — kundvärde, Pro-plan, tips
 
 Byggt efter `docs/ltv-tillagg.md` (designen) på Axels uppdrag samma dag

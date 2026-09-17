@@ -4,11 +4,19 @@
  * Dagar som redan är stängda ändrar sig inte, så de cachas i DailySpend och
  * hämtas aldrig om. Bara dagens (och gårdagens, som kan efterjusteras) hämtas
  * på nytt. Det håller oss långt under rate limits.
+ *
+ * En butik kan ha FLERA annonskonton kopplade (2026-09-17). Varje konto
+ * hämtas, cachas och räknas om för sig — de kan ligga i olika valutor och ha
+ * olika kampanjfilter — och panelen får summan per dag. Ett konto som
+ * krånglar stoppar inte de andra, men dagen det saknas på visas aldrig som
+ * färdig: en för låg annonskostnad är en för hög vinst.
  */
 
 import { createHash } from "node:crypto";
 import prisma from "../db.server";
-import { GRAPH_VERSION } from "./meta-login";
+import { sparaKontovaluta } from "./meta-konton.server";
+import { summeraDagar } from "./spend-summa";
+import { GRAPH_VERSION, kontoId } from "./meta-login";
 
 const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
 
@@ -31,14 +39,12 @@ export interface MetaConfig {
   campaignMode?: string | null;
   /** Kampanj-ID:n, kommaseparerade. Tomt = inget filter, oavsett läge. */
   campaignIds?: string | null;
-}
-
-/** ShopSettings-fälten som styr filtret, i den form MetaConfig vill ha dem. */
-export function kampanjFilter(s: {
-  campaignMode?: string | null;
-  campaignIds?: string | null;
-}): Pick<MetaConfig, "campaignMode" | "campaignIds"> {
-  return { campaignMode: s.campaignMode ?? null, campaignIds: s.campaignIds ?? null };
+  /**
+   * Annonskontots valuta som den är lagrad. Null = okänd, läses då från Meta
+   * en gång och sparas. Ligger per konto: två konton på samma butik kan
+   * mycket väl redovisa i SEK respektive USD.
+   */
+  spendCurrency?: string | null;
 }
 
 /** ID:n som filtret faktiskt gäller. Tom lista = inget filter. */
@@ -303,27 +309,69 @@ async function fetchAccountCurrency(cfg: MetaConfig): Promise<string | undefined
   }
 }
 
+const UTGANGEN_MSG = "The Meta token has expired — reconnect under Settings.";
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+
+/** En DailySpend-rad, så mycket som summeringen bryr sig om. */
+interface SpendRad {
+  day: Date;
+  account: string;
+  spend: unknown;
+  spendRaw: unknown;
+  fxRate: unknown;
+  impressions: number;
+  clicks: number;
+  fetchedAt: Date;
+}
+
+/** Databasraderna i den form den rena summeringen vill ha dem. */
+const summerbara = (rader: SpendRad[]) =>
+  rader.map((r) => ({
+    day: iso(r.day),
+    account: r.account,
+    spend: Number(r.spend),
+    impressions: r.impressions,
+    clicks: r.clicks,
+  }));
+
+/** Vad ETT konto kom fram till under en körning. */
+interface Kontoutfall {
+  konto: string;
+  error?: string;
+  errorCode?: SpendErrorCode;
+  needsFx: boolean;
+  fxOk: boolean;
+  /** Kontots valuta, när den är känd. */
+  fran?: string | null;
+  /**
+   * Dagar som inte får serveras: kontot har en död token och dagen skulle ha
+   * hämtats om. Att servera de ÖVRIGA kontonas kostnad för den dagen vore att
+   * visa en för låg annonskostnad som om den vore hela sanningen.
+   */
+  doldaDagar: string[];
+}
+
 /**
- * Returnerar spend per dag för fönstret. Cachade dagar läses från databasen;
- * bara det som saknas eller kan ha ändrats hämtas från Meta.
+ * Returnerar spend per dag för fönstret, summerad över butikens ALLA
+ * annonskonton. Cachade dagar läses från databasen; bara det som saknas eller
+ * kan ha ändrats hämtas från Meta, per konto.
  *
  * Kastar aldrig — ett fel returneras istället som `error` så att panelen kan
  * visa försäljningen ändå och flagga att TB är ofullständigt. Att tyst visa
  * noll annonskostnad vore värre än att visa ingenting.
  *
- * ⚠ NY ANROPARE: skicka ALLTID med `...kampanjFilter(settings)` i cfg.
+ * ⚠ NY ANROPARE: bygg listan med `konfigurationer()` i meta-konton.server.ts.
  * `DailySpend` har ingen kampanjdimension — en anropare som glömmer filtret
  * skriver ofiltrerad spend över de filtrerade raderna i den delade tabellen,
  * och siffran hoppar beroende på vilken sida som laddades sist.
  */
 export async function getSpend(
   shop: string,
-  cfg: MetaConfig | null,
+  konton: MetaConfig[] | null,
   from: string,
   to: string,
   today: string,
   shopCurrency?: string,
-  storedSpendCurrency?: string | null,
   /** syncFresh: vänta in även rena färskhetsuppdateringar (gruppsumman) i
       stället för att servera gamla rader och hämta i bakgrunden (panelen).
       tokenExpired: anroparen VET att token gått ut (metaTokenExpiresAt har
@@ -334,48 +382,103 @@ export async function getSpend(
   days: { day: string; spend: number; impressions: number; clicks: number }[];
   error?: string;
   errorCode?: SpendErrorCode;
-  /* Sätts när annonskontot redovisar i en annan valuta än butiken OCH
+  /* Sätts när ett annonskonto redovisar i en annan valuta än butiken OCH
      omräkningen misslyckades. Beloppen räknas då ihop som om de vore samma
      valuta — fel, och det måste synas. */
   currencyMismatch?: { spend: string; shop: string };
   /* Sätts när omräkningen lyckades. Informerar, varnar inte. */
   converted?: { from: string; to: string };
 }> {
-  const cached = await prisma.dailySpend.findMany({
-    where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
-    orderBy: { day: "asc" },
-  });
+  const alla = (konton ?? [])
+    .filter((c) => c && kontoId(c.adAccountId) && c.accessToken)
+    .map((c) => ({ ...c, adAccountId: kontoId(c.adAccountId) }));
 
-  const iso = (d: Date) => d.toISOString().slice(0, 10);
-  const byDay = new Map(cached.map((r) => [iso(r.day), r]));
+  const las = (): Promise<SpendRad[]> =>
+    prisma.dailySpend.findMany({
+      where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
+      orderBy: { day: "asc" },
+    }) as unknown as Promise<SpendRad[]>;
 
-  if (!cfg?.adAccountId || !cfg?.accessToken) {
+  const cached = await las();
+
+  if (!alla.length) {
+    /* Ingen koppling: servera historiken som den är. Att filtrera på kopplade
+       konton här hade raderat panelen för en butik som just kopplat bort. */
     return {
-      days: cached.map((r) => ({
-        day: iso(r.day),
-        spend: Number(r.spend),
-        impressions: r.impressions,
-        clicks: r.clicks,
-      })),
+      days: summeraDagar(summerbara(cached)),
       ...(cached.length
         ? {}
         : { error: "Meta is not connected — ad spend is missing.", errorCode: "no-connection" as const }),
     };
   }
 
+  /* Konto för konto, i tur och ordning. Parallellt hade bara gjort det
+     lättare att slå i Metas rate limit, och kontona är sällan fler än tre. */
+  const utfall: Kontoutfall[] = [];
+  for (const cfg of alla) {
+    utfall.push(await hamtaEttKonto(shop, cfg, cached, from, to, today, shopCurrency, opts));
+  }
+
+  const kopplade = new Set(alla.map((c) => c.adAccountId));
+  const fresh = (await las()).filter((r) => kopplade.has(r.account));
+
+  /* Facit är raderna som serveras: ligger det en oomräknad rad med belopp kvar
+     för ett konto ska varningen visas, oavsett vilken väg dit vi tog. */
+  for (const u of utfall) {
+    if (!u.needsFx) continue;
+    const mina = fresh.filter((r) => r.account === u.konto);
+    if (mina.some((r) => r.fxRate == null && Number(r.spend) !== 0)) u.fxOk = false;
+  }
+
+  const dolda = new Set(utfall.flatMap((u) => u.doldaDagar));
+  /* Utgången token väger tyngst: den kräver en handling av handlaren, medan
+     "försöker igen" går över av sig självt. */
+  const varst =
+    utfall.find((u) => u.errorCode === "expired") ?? utfall.find((u) => u.error);
+
+  const behover = utfall.filter((u) => u.needsFx);
+  const valutor = (rader: Kontoutfall[]) => [...new Set(rader.map((u) => u.fran).filter(Boolean))].join(" + ");
+  const misslyckade = behover.filter((u) => !u.fxOk);
+
+  return {
+    days: summeraDagar(summerbara(fresh), dolda),
+    ...(varst?.error ? { error: varst.error, errorCode: varst.errorCode } : {}),
+    ...(behover.length && shopCurrency
+      ? misslyckade.length
+        ? { currencyMismatch: { spend: valutor(misslyckade), shop: shopCurrency } }
+        : { converted: { from: valutor(behover), to: shopCurrency } }
+      : {}),
+  };
+}
+
+/**
+ * Ett kontos del av körningen: avgör vad som saknas, hämtar det som behövs och
+ * rapporterar tillbaka. Skriver bara DailySpend-rader för sitt eget konto.
+ */
+async function hamtaEttKonto(
+  shop: string,
+  cfg: MetaConfig,
+  cached: SpendRad[],
+  from: string,
+  to: string,
+  today: string,
+  shopCurrency: string | undefined,
+  opts: { syncFresh?: boolean; tokenExpired?: boolean } | undefined,
+): Promise<Kontoutfall> {
+  const konto = cfg.adAccountId;
+  const mina = cached.filter((r) => r.account === konto);
+  const byDay = new Map(mina.map((r) => [iso(r.day), r]));
+
   /* Valutan lagras första gången den är känd och jämförs sedan vid varje
      laddning. Utan lagringen syntes krocken bara de gånger panelen råkade
      hämta färska dagar — och försvann så fort allt låg i cachen. */
-  let spendCurrency = storedSpendCurrency;
+  let spendCurrency = cfg.spendCurrency ?? null;
   if (!spendCurrency) {
-    spendCurrency = await fetchAccountCurrency(cfg);
-    if (spendCurrency) {
-      await prisma.shopSettings
-        .update({ where: { shop }, data: { spendCurrency } })
-        .catch(() => {});
-    }
+    spendCurrency = (await fetchAccountCurrency(cfg)) ?? null;
+    if (spendCurrency) await sparaKontovaluta(shop, konto, spendCurrency);
   }
   const needsFx = Boolean(spendCurrency && shopCurrency && spendCurrency !== shopCurrency);
+  const bas = { konto, needsFx, fran: spendCurrency };
 
   /* Vad behöver hämtas om?
      - Dagar utan rad har aldrig hämtats (eller hade noll leverans — de får en
@@ -410,14 +513,7 @@ export async function getSpend(
     }
   }
 
-  /* fxOk speglar det som faktiskt SERVERAS: sant tills en rad i fönstret
-     visar sig vara oomräknad. Tidigare startade den på false så fort valuta-
-     omräkning behövdes och sattes bara av den synkrona hämtningen — så varje
-     sidladdning som serverade cachen direkt (bakgrundsvägen, eller inget att
-     hämta alls) visade "kunde inte räknas om"-bannern trots att allt var väl. */
-  let fxOk = true;
-
-  /* Backoff: en butik vars Meta-anrop nyss misslyckades (död token, rate
+  /* Backoff: ett konto vars Meta-anrop nyss misslyckades (död token, rate
      limit) ska inte betala ett nytt dömt anrop på varje sidladdning. Cachen
      serveras och `error` sätts så anroparen vet att spend är ofullständig. */
   const felKey = felNyckel(shop, cfg);
@@ -429,8 +525,7 @@ export async function getSpend(
      den i svaret listar compute() dagen som saknad, och panelen säger "för
      hög — annonsdata saknas" i stället för grönt. */
   const dod = Boolean(opts?.tokenExpired) || (nyligenFel && fel?.utgangen === true);
-  const UTGANGEN_MSG = "The Meta token has expired — reconnect under Settings.";
-  const rorlig = (day: string) => day >= today && stale.includes(day);
+  const rorligaStale = () => stale.filter((d) => d >= today);
   const minnesFel = (e: unknown) => ({ at: Date.now(), utgangen: e instanceof MetaError && e.needsReauth });
 
   if (stale.length && !radSaknas && !opts?.syncFresh) {
@@ -439,84 +534,56 @@ export async function getSpend(
        en panel som svarar omedelbart. Säger minutspärren nej pågår (eller
        gjordes nyss) redan en hämtning — då serveras cachen som den är, den
        får INTE trilla ner i den synkrona grenen och blockera panelen. */
-    if (!dod && !nyligenFel && farUppdateraMeta(shop)) {
+    if (!dod && !nyligenFel && farUppdateraMeta(shop, konto)) {
       void refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency).catch((e) => {
         senasteMetaFel.set(felKey, minnesFel(e));
-        console.error(`Meta-bakgrundshämtning för ${shop} misslyckades:`, e);
+        console.error(`Meta-bakgrundshämtning för ${shop} (konto ${konto}) misslyckades:`, e);
       });
     }
-  } else if (stale.length && nyligenFel) {
+    return { ...bas, fxOk: true, doldaDagar: [] };
+  }
+
+  if (stale.length && nyligenFel) {
     /* Senaste försöket small nyss: servera det som finns och FLAGGA — alltid.
        Hit kommer bara den som saknar rader eller väntar in färskhet
        (gruppsumman); utan flaggan räknade den in en butik vars annonskostnad
        stod stilla, och summan blev tyst för hög. */
     const utg = fel?.utgangen ?? false;
     return {
-      days: cached
-        .filter((r) => !(utg && rorlig(iso(r.day))))
-        .map((r) => ({
-          day: iso(r.day),
-          spend: Number(r.spend),
-          impressions: r.impressions,
-          clicks: r.clicks,
-        })),
+      ...bas,
+      fxOk: !mina.some((r) => r.fxRate == null && Number(r.spend) !== 0),
       error: utg ? UTGANGEN_MSG : "Ad spend could not be fetched just now — retrying in a few minutes.",
       errorCode: utg ? ("expired" as const) : ("retrying" as const),
-      ...fxStatus(
-        needsFx,
-        !cached.some((r) => r.fxRate == null && Number(r.spend) !== 0),
-        spendCurrency,
-        shopCurrency,
-      ),
+      doldaDagar: utg ? rorligaStale() : [],
     };
-  } else if (stale.length && !dod) {
+  }
+
+  if (stale.length && !dod) {
     try {
-      fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
+      const fxOk = await refreshSpend(shop, cfg, stale, needsFx, spendCurrency, shopCurrency);
       senasteMetaFel.delete(felKey);
+      return { ...bas, fxOk, doldaDagar: [] };
     } catch (e) {
       senasteMetaFel.set(felKey, minnesFel(e));
       const utgangen = e instanceof MetaError && e.needsReauth;
-      const msg = utgangen ? UTGANGEN_MSG : `Could not fetch ad spend: ${(e as Error).message}`;
-      const cachadOomräknad =
-        needsFx &&
-        [...byDay.values()].some((r) => r.fxRate == null && Number(r.spend) !== 0);
       return {
-        days: [...byDay.values()].map((r: any) => ({
-          day: typeof r.day === "string" ? r.day : iso(r.day),
-          spend: Number(r.spend),
-          impressions: r.impressions,
-          clicks: r.clicks,
-        })),
-        error: msg,
+        ...bas,
+        fxOk: !(needsFx && mina.some((r) => r.fxRate == null && Number(r.spend) !== 0)),
+        error: utgangen ? UTGANGEN_MSG : `Could not fetch ad spend: ${(e as Error).message}`,
         errorCode: utgangen ? ("expired" as const) : ("fetch-failed" as const),
-        ...fxStatus(needsFx, !cachadOomräknad, spendCurrency, shopCurrency),
+        doldaDagar: utgangen ? rorligaStale() : [],
       };
     }
   }
 
-  const fresh = await prisma.dailySpend.findMany({
-    where: { shop, day: { gte: new Date(from), lte: new Date(to) } },
-    orderBy: { day: "asc" },
-  });
-  /* Facit är raderna som serveras: ligger det en oomräknad rad med belopp
-     kvar i fönstret ska varningen visas, oavsett vilken väg hit vi tog. */
-  if (needsFx && fresh.some((r) => r.fxRate == null && Number(r.spend) !== 0)) {
-    fxOk = false;
-  }
   /* Känd död token med dagar som skulle behövt hämtas om: den rörliga dagen
      hålls utanför svaret och felet sägs rakt ut. */
   const dodMedLuckor = dod && stale.length > 0;
   return {
-    days: fresh
-      .filter((r) => !(dodMedLuckor && rorlig(iso(r.day))))
-      .map((r) => ({
-        day: iso(r.day),
-        spend: Number(r.spend),
-        impressions: r.impressions,
-        clicks: r.clicks,
-      })),
+    ...bas,
+    fxOk: true,
     ...(dodMedLuckor ? { error: UTGANGEN_MSG, errorCode: "expired" as const } : {}),
-    ...fxStatus(needsFx, fxOk, spendCurrency, shopCurrency),
+    doldaDagar: dodMedLuckor ? rorligaStale() : [],
   };
 }
 
@@ -533,12 +600,15 @@ export function glomMetaFel(shop: string): void {
   for (const k of [...senasteMetaFel.keys()]) if (k.startsWith(`${shop}:`)) senasteMetaFel.delete(k);
 }
 
-/* Bakgrundshämtningar mot Meta: högst en per butik och minut. */
+/* Bakgrundshämtningar mot Meta: högst en per KONTO och minut. Nyckeln bär
+   kontot, annars fick bara det första kontot uppdateras och butikens andra
+   konto låg kvar på gamla siffror tills någon råkade ladda om vid rätt minut. */
 const senasteMeta = new Map<string, number>();
-function farUppdateraMeta(shop: string): boolean {
-  const t = senasteMeta.get(shop) ?? 0;
+function farUppdateraMeta(shop: string, konto: string): boolean {
+  const nyckel = `${shop}:${konto}`;
+  const t = senasteMeta.get(nyckel) ?? 0;
   if (Date.now() - t < 60_000) return false;
-  senasteMeta.set(shop, Date.now());
+  senasteMeta.set(nyckel, Date.now());
   return true;
 }
 
@@ -589,6 +659,10 @@ async function refreshSpend(
     perDag.set(r.date_start, dag);
   }
 
+  /* Raden hör till ETT konto. Utan kontot i nyckeln skrev butikens andra
+     annonskonto över det förstas dag, och hälften av annonskostnaden försvann
+     utan att något såg fel ut. */
+  const konto = kontoId(cfg.adAccountId);
   for (const [day, v] of perDag) {
     const rate = needsFx ? rateFor(rates, day) : undefined;
     const rec = {
@@ -599,8 +673,8 @@ async function refreshSpend(
       clicks: v.clicks,
     };
     await prisma.dailySpend.upsert({
-      where: { shop_day: { shop, day: new Date(day) } },
-      create: { shop, day: new Date(day), ...rec },
+      where: { shop_day_account: { shop, day: new Date(day), account: konto } },
+      create: { shop, day: new Date(day), account: konto, ...rec },
       update: { ...rec, fetchedAt: new Date() },
     });
   }
@@ -608,20 +682,12 @@ async function refreshSpend(
   for (const day of stale) {
     if (perDag.has(day)) continue;
     await prisma.dailySpend.upsert({
-      where: { shop_day: { shop, day: new Date(day) } },
-      create: { shop, day: new Date(day), ...nollrad },
+      where: { shop_day_account: { shop, day: new Date(day), account: konto } },
+      create: { shop, day: new Date(day), account: konto, ...nollrad },
       update: { fetchedAt: new Date() },
     });
   }
   return fxOk;
-}
-
-/** Omräkning lyckad → informera. Behövdes men gick inte → varna. */
-function fxStatus(needsFx: boolean, ok: boolean, from?: string, to?: string) {
-  if (!needsFx || !from || !to) return {};
-  return ok
-    ? { converted: { from, to } }
-    : { currencyMismatch: { spend: from, shop: to } };
 }
 
 function shiftIso(iso: string, days: number): string {

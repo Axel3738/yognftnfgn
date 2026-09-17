@@ -25,7 +25,7 @@ import {
   sparaInloggadToken,
   tomNonceCookie,
 } from "../lib/meta-login.server";
-import { kontoId } from "../lib/meta-login";
+import { hamtaKonton } from "../lib/meta-konton.server";
 import { GRANSKNING, granskningsResultat } from "../lib/meta-granska.server";
 import { metaLoginSida, type LoginSignal } from "../lib/meta-login-sida.server";
 import { asLang, t } from "../lib/texts";
@@ -100,31 +100,36 @@ export async function loader({ request }: LoaderFunctionArgs) {
       return fel(T.metaLogin.declined, 200, { ok: false, reason: "declined" });
     }
 
-    const sparat = kontoId(inst?.metaAdAccountId);
-    /* Med ett sparat konto är listan en SPÄRR, inte en bekvämlighet: går den
+    /* Butiken kan ha flera annonskonton kopplade. Alla räknas som "sparade" —
+       en ny inloggning som inte ser något av dem byter en fungerande koppling
+       mot en trasig. */
+    const sparade = (await hamtaKonton(shop)).map((k) => k.accountId);
+    const sparat = sparade[0] ?? "";
+    /* Med sparade konton är listan en SPÄRR, inte en bekvämlighet: går den
        inte att hämta kan vi inte veta att kopplingen förblir hel — då sparas
        inget (yttre catch → "försök igen"). Utan sparat konto är null ofarligt:
        token sparas och Settings visar textfältet. */
-    const konton = sparat
+    const konton = sparade.length
       ? await listaAnnonskonton(token, inst?.currency)
       : await listaAnnonskonton(token, inst?.currency).catch(() => null);
 
-    /* Butiken har redan ett konto (kanske via en systemanvändar-token som
-       ser mer än den här personen). Ser inte den nya inloggningen kontot ska
-       en fungerande koppling inte bytas ut mot en trasig — inget ändras. */
-    if (sparat && konton && !konton.some((k) => k.accountId === sparat)) {
+    /* Ser den nya inloggningen INGET av butikens konton (kanske via en
+       systemanvändar-token som såg mer än den här personen) ändras inget. Ser
+       den några men inte alla sparas token ändå: de kvarvarande fortsätter
+       fungera, och Settings visar de andra som osynliga för den här nyckeln. */
+    if (sparade.length && konton && !konton.some((k) => sparade.includes(k.accountId))) {
       return fel(T.metaLogin.accountNotVisible(sparat), 200, { ok: false, reason: "account-not-visible" });
     }
 
     /* Inget konto valt och inga att välja på: att spara token vore att låsa
        fast butiken i "välj annonskonto" med en tom lista. */
-    if (!sparat && konton && konton.length === 0) {
+    if (!sparade.length && konton && konton.length === 0) {
       return fel(T.metaLogin.noAccounts, 200, { ok: false, reason: "no-accounts" });
     }
 
     const [anvandare, expiresAt] = await Promise.all([hamtaAnvandare(token), bestamUtgang(cfg, token, bytt.expiresAt)]);
     /* Exakt ett konto att välja på: välj det. Handlaren är klar utan Settings. */
-    const valjs = !sparat && konton && konton.length === 1 ? konton[0] : null;
+    const valjs = !sparade.length && konton && konton.length === 1 ? konton[0] : null;
     await sparaInloggadToken(shop, cfg, token, expiresAt, anvandare, valjs?.accountId);
 
     return metaLoginSida(lang, {

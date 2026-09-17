@@ -42,9 +42,13 @@ model ShopSettings {
   feeRate         Decimal  @default(0.029) @db.Decimal(6, 4)
   /// Målmarginal som max-CPA räknas mot.
   targetMargin    Decimal  @default(0.25) @db.Decimal(6, 4)
+  /// ⚠ LEGACY sedan 2026-09-17: annonskontona bor i MetaAdAccount, en rad per
+  /// konto. Fältet skrivs fortfarande som en spegel av det FÖRSTA kontot, för
+  /// kod som ännu bara känner till ett konto (Meta-inloggningens spärr). Läs
+  /// aldrig annonskostnad ur det — en butik med tre konton har tre rader.
   metaAdAccountId String?
-  /// Annonskontots valuta, läst från Meta. Lagras för att kunna jämföras mot
-  /// butikens valuta vid varje sidladdning utan att kosta ett API-anrop.
+  /// ⚠ LEGACY sedan 2026-09-17 — valutan bor på MetaAdAccount.currency, för
+  /// två konton kan redovisa i olika valutor. Spegel av det första kontot.
   spendCurrency   String?
   /// Long-lived Meta-token. Kryptera i produktion — se lib/crypto.server.ts.
   metaAccessToken String?
@@ -69,13 +73,10 @@ model ShopSettings {
   /// Meta-appen som utfärdade token. Tokenvakten förnyar bara med samma
   /// app — sex tjänster med handskrivna variabler kan glida isär.
   metaAppId       String?
-  /// Kampanjfilter för annonskostnaden: "all" (hela kontot), "include" (bara
-  /// kampanjerna i campaignIds) eller "exclude" (alla utom dem). Finns för att
-  /// flera butiker kan dela ETT annonskonto — utan filtret räknar varje butik
-  /// in de andras kostnad. "all" är standard: befintliga butiker ändras inte.
+  /// ⚠ LEGACY sedan 2026-09-17 — kampanjfiltret är per ANNONSKONTO och bor på
+  /// MetaAdAccount. Kampanj-ID:n är kontospecifika: ett filter från ett konto
+  /// matchar ingenting i ett annat. Speglar det första kontots filter.
   campaignMode    String   @default("all")
-  /// Kampanj-ID:n som filtret gäller, kommaseparerade. Null/tomt = inget
-  /// filter, oavsett läge.
   campaignIds     String?
   currency        String   @default("SEK")
   /// Butikens tidszon. Cachad för att slippa ett GraphQL-anrop per sidladdning
@@ -230,8 +231,14 @@ model DailySpend {
   id          String   @id @default(cuid())
   shop        String
   day         DateTime @db.Date
+  /// Vilket annonskonto raden kommer från, siffrorna utan act_-prefix. En
+  /// butik kan köra annonser från flera konton till samma butik; varje konto
+  /// får en egen rad per dag och panelen summerar dem. Tom sträng = rader
+  /// från tiden före flerkontostödet (2026-09-17), bakfyllda vid migrationen.
+  account     String   @default("")
   /// Alltid i BUTIKENS valuta. Är annonskontot i en annan valuta har beloppet
-  /// räknats om med dagskursen nedan.
+  /// räknats om med dagskursen nedan. Konton i olika valutor kan därför
+  /// summeras rakt av.
   spend       Decimal  @db.Decimal(12, 2)
   /// Ursprungsbeloppet i annonskontots valuta, sparat för spårbarhet.
   spendRaw    Decimal? @db.Decimal(12, 2)
@@ -241,8 +248,33 @@ model DailySpend {
   clicks      Int      @default(0)
   fetchedAt   DateTime @default(now())
 
-  @@unique([shop, day])
+  @@unique([shop, day, account])
   @@index([shop, day])
+}
+
+/// Ett annonskonto kopplat till en butik. Flera rader = flera konton, och
+/// annonskostnaden är summan av dem alla.
+///
+/// Token ligger kvar på ShopSettings: en Facebook-inloggning ger EN nyckel som
+/// når alla konton personen har tillgång till. Kampanjfiltret däremot bor här,
+/// för kampanj-ID:n är kontospecifika — samma filter på två konton skulle
+/// betyda "inga kampanjer" i det ena.
+model MetaAdAccount {
+  shop         String
+  /// Siffrorna utan act_-prefix, samma form som DailySpend.account.
+  accountId    String
+  /// Kontots namn hos Meta, cachat så listan går att läsa utan API-anrop.
+  name         String?
+  /// Kontots valuta, läst från Meta. Null = inte läst ännu.
+  currency     String?
+  /// "all" | "include" | "exclude" — se MetaConfig i lib/meta.server.ts.
+  campaignMode String   @default("all")
+  /// Kampanj-ID:n filtret gäller, kommaseparerade. Null/tomt = inget filter.
+  campaignIds  String?
+  createdAt    DateTime @default(now())
+
+  @@id([shop, accountId])
+  @@index([shop])
 }
 
 /// Färdigräknade aggregat per (butik, intervall). Bulk-exporten tar 20–60 s;

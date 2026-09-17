@@ -8,6 +8,11 @@
  * finns på servern) som öppnar Metas dialog i ett eget fönster och sedan
  * låter handlaren välja annonskonto ur en lista — och den gamla vägen med
  * inklistrad token, som finns kvar som reserv för systemanvändare.
+ *
+ * FLERA ANNONSKONTON (2026-09-17): en butik kan ha hur många konton som helst
+ * kopplade, och annonskostnaden är summan av dem. Varje konto har sitt EGET
+ * kampanjfilter — kampanj-ID:n är kontospecifika, så ett delat filter hade
+ * betytt "inga kampanjer alls" i alla utom ett konto.
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -46,8 +51,15 @@ import {
   skapaInloggning,
 } from "../lib/meta-login.server";
 import { glomMetaFel, listaKampanjer } from "../lib/meta.server";
+import {
+  hamtaKonton,
+  laggTillKonto,
+  sparaKampanjfilter,
+  taBortAllaKonton,
+  taBortKonto,
+} from "../lib/meta-konton.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
-import { asLang, localeOf, t } from "../lib/texts";
+import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
     meta.server.ts — typen får inte importeras hit, en klientkomponent som
@@ -82,12 +94,28 @@ export async function loader({ request }: LoaderFunctionArgs) {
     }
   }
 
+  /* Butikens kopplade konton — listan, inte ett enda ID. Namnet tas helst från
+     Metas färska lista (kontot kan ha döpts om) och annars ur vår egen cache. */
+  const kopplade = (await hamtaKonton(session.shop)).map((k) => {
+    const live = konton?.find((x) => x.accountId === k.accountId);
+    return {
+      accountId: k.accountId,
+      name: live?.name ?? k.name ?? k.accountId,
+      currency: live?.currency ?? k.currency ?? "",
+      /* Kontot syns inte för den sparade nyckeln: visas ändå, med etikett, så
+         handlaren kan ta bort det i stället för att undra var kostnaden tog vägen. */
+      saknasIListan: Boolean(konton && !live),
+      campaignMode: k.campaignMode ?? "all",
+      campaignIds: (k.campaignIds ?? "").split(",").map((x) => x.trim()).filter(Boolean),
+    };
+  });
+
   return json({
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
     feeRate: Number(s.feeRate),
     targetMargin: Number(s.targetMargin),
-    metaAdAccountId: kontoId(s.metaAdAccountId),
+    kopplade,
     hasMetaToken: Boolean(s.metaAccessToken),
     metaLogin: metaLoginAvailable(),
     metaUserName: s.metaUserName,
@@ -95,11 +123,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
     metaTokenDagar: dagarKvar(s.metaTokenExpiresAt),
     /* Snapshot för pollningen: ändras värdet efter klicket är inloggningen klar. */
     metaTokenSavedAt: s.metaTokenSavedAt?.toISOString() ?? null,
-    /* Kampanjfiltret. Själva kampanjlistan hämtas först när handlaren öppnar
-       kortet — Inställningar ska inte bli långsammare för alla andra. */
-    campaignMode: s.campaignMode ?? "all",
-    campaignIds: (s.campaignIds ?? "").split(",").map((x) => x.trim()).filter(Boolean),
-    spendCurrency: s.spendCurrency,
     konton,
     kontoFel,
     krypteringPa: encryptionAvailable(),
@@ -132,49 +155,58 @@ export async function action({ request }: ActionFunctionArgs) {
     const token = s?.metaTokenSource === "login" && s.metaAccessToken ? decrypt(s.metaAccessToken) : null;
     const aterkalla = token ? await farAterkallas(session.shop, s?.metaUserId ?? null) : false;
     await prisma.shopSettings.update({ where: { shop: session.shop }, data: META_TOMT });
+    await taBortAllaKonton(session.shop);
     await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
     glomMetaFel(session.shop);
     if (token && aterkalla) await aterkallaToken(token);
     return json({ ok: true, message: T.settings.disconnected });
   }
 
-  /* Kontovalet sparas i samma sekund det görs — Spara-knappen längst ner
-     under två andra kort var ett steg som inte blev gjort. */
-  if (intent === "meta-account") {
-    const nyttKonto = kontoId(String(f.get("metaAdAccountId") ?? "")) || null;
+  /* Kontot kopplas i samma sekund det väljs — Spara-knappen längst ner under
+     två andra kort var ett steg som inte blev gjort. Det LÄGGS TILL: en butik
+     som kör annonser från tre konton ska se summan av alla tre. */
+  if (intent === "meta-account-add") {
+    const nyttKonto = kontoId(String(f.get("accountId") ?? "")) || null;
     if (!nyttKonto) return json({ ok: false, message: T.settings.unknownError });
-    const kontoBytt = kontoId(s?.metaAdAccountId) !== nyttKonto;
-    await prisma.shopSettings.update({
-      where: { shop: session.shop },
-      data: {
-        metaAdAccountId: nyttKonto,
-        /* Nytt konto = nya kampanj-ID:n. Ett filter från det gamla kontot
-           matchar ingenting här och skulle tysta hela annonskostnaden. */
-        ...(kontoBytt ? { spendCurrency: null, campaignMode: "all", campaignIds: null } : {}),
-      },
-    });
-    if (kontoBytt) await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
-    /* Kontobyte: det gamla kontots backoff får inte ärvas — samma regel som Spara. */
-    if (kontoBytt) glomMetaFel(session.shop);
-    return json({ ok: true, message: T.settings.accountSaved(String(f.get("name") ?? nyttKonto)) });
+    const namn = String(f.get("name") ?? "").trim() || null;
+    const valuta = String(f.get("currency") ?? "").trim() || null;
+    const nytt = await laggTillKonto(session.shop, nyttKonto, namn, valuta);
+    /* Nytt konto: en gammal backoff från ett dött konto får inte hindra
+       hämtningen av det här. */
+    if (nytt) glomMetaFel(session.shop);
+    return json({ ok: true, message: T.settings.accountAdded(namn ?? nyttKonto) });
+  }
+
+  if (intent === "meta-account-remove") {
+    const konto = kontoId(String(f.get("accountId") ?? "")) || null;
+    if (!konto) return json({ ok: false, message: T.settings.unknownError });
+    await taBortKonto(session.shop, konto);
+    glomMetaFel(session.shop);
+    return json({ ok: true, message: T.settings.accountRemoved });
   }
 
   /* Kampanjlistan: hämtas på klick, inte i loadern. Två Graph-anrop (namn +
      spend 30 dagar) ska inte ligga på varje sidladdning för alla som aldrig
-     rör filtret. */
-  if (intent === "meta-campaigns") {
-    const token = s?.metaAccessToken ? decrypt(s.metaAccessToken) : null;
-    const konto = kontoId(s?.metaAdAccountId);
-    if (!token || !konto) return json({ ok: false, message: T.settings.campaigns.failed }, { status: 400 });
-    try {
-      return json({ ok: true, kampanjer: await listaKampanjer({ adAccountId: konto, accessToken: token }) });
-    } catch (e) {
-      console.error(`Kampanjlistan för ${session.shop} misslyckades:`, e);
-      return json({ ok: false, message: T.settings.campaigns.failed }, { status: 500 });
+     rör filtret. Kontot måste vara ett av butikens — sidan ska inte gå att
+     använda för att bläddra i konton butiken inte kopplat. */
+  if (intent === "meta-campaigns" || intent === "meta-campaigns-save") {
+    const konto = kontoId(String(f.get("accountId") ?? ""));
+    const mina = await hamtaKonton(session.shop);
+    if (!konto || !mina.some((k) => k.accountId === konto)) {
+      return json({ ok: false, message: T.settings.campaigns.failed }, { status: 400 });
     }
-  }
 
-  if (intent === "meta-campaigns-save") {
+    if (intent === "meta-campaigns") {
+      const token = s?.metaAccessToken ? decrypt(s.metaAccessToken) : null;
+      if (!token) return json({ ok: false, message: T.settings.campaigns.failed }, { status: 400 });
+      try {
+        return json({ ok: true, kampanjer: await listaKampanjer({ adAccountId: konto, accessToken: token }) });
+      } catch (e) {
+        console.error(`Kampanjlistan för ${session.shop} (konto ${konto}) misslyckades:`, e);
+        return json({ ok: false, message: T.settings.campaigns.failed }, { status: 500 });
+      }
+    }
+
     const onskatLage = String(f.get("campaignMode") ?? "all");
     const valda = [
       ...new Set(String(f.get("campaignIds") ?? "").split(",").map((x) => x.trim()).filter(Boolean)),
@@ -184,28 +216,14 @@ export async function action({ request }: ActionFunctionArgs) {
        menar, och en tyst nolla är den dyraste lögnen panelen kan berätta. */
     const lage = (onskatLage === "include" || onskatLage === "exclude") && valda.length ? onskatLage : "all";
     const ids = lage === "all" ? null : valda.join(",");
-    const bytt = (s?.campaignMode ?? "all") !== lage || (s?.campaignIds ?? null) !== ids;
-    await prisma.shopSettings.update({
-      where: { shop: session.shop },
-      data: { campaignMode: lage, campaignIds: ids },
-    });
-    /* Cachade DailySpend-rader är räknade på det gamla filtret och är fel nu.
-       De raderas och hämtas om per fönster nästa gång panelen öppnas — samma
-       regel som vid kontobyte. */
-    if (bytt) {
-      await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
-      glomMetaFel(session.shop);
-    }
+    /* Cachade DailySpend-rader för DET HÄR kontot är räknade på det gamla
+       filtret och är fel nu — de andra kontonas rader rörs inte. */
+    if (await sparaKampanjfilter(session.shop, konto, lage, ids)) glomMetaFel(session.shop);
     return json({ ok: true, message: T.settings.campaigns.saved });
   }
 
   const dec = (k: string) => parseFloat(String(f.get(k) ?? "").replace(",", "."));
   const token = String(f.get("metaAccessToken") ?? "").trim();
-  const nyttKonto = kontoId(String(f.get("metaAdAccountId") ?? "")) || null;
-  /* Cachad annonskostnad hör till ett konto. Bara ett KONTOBYTE gör den
-     ogiltig — en språkändring eller en ny token för samma konto ska inte
-     kasta 90 dagars hämtade rader och tvinga fram en ny Meta-export. */
-  const kontoBytt = kontoId(s?.metaAdAccountId) !== (nyttKonto ?? "");
 
   /* En inklistrad användartoken dör också efter 60 dagar — utan varning om
      vi inte frågar Meta när den går ut. Går bara att fråga om token kommer
@@ -220,7 +238,6 @@ export async function action({ request }: ActionFunctionArgs) {
       tariffPerOrder: dec("tariffPerOrder"),
       feeRate: dec("feeRate") / 100,
       targetMargin: dec("targetMargin") / 100,
-      metaAdAccountId: nyttKonto,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
       ...(token
         ? {
@@ -236,16 +253,9 @@ export async function action({ request }: ActionFunctionArgs) {
         : {}),
       // Kvitterar kom igång-checklistans steg om tull och avgifter.
       settingsSavedAt: new Date(),
-      // Nytt konto kan ha annan valuta — läs om den istället för att lita på
-      // den gamla, annars jämförs butiken mot fel valuta. Kampanjfiltret
-      // pekar på det gamla kontots kampanjer och nollställs av samma skäl.
-      ...(kontoBytt ? { spendCurrency: null, campaignMode: "all", campaignIds: null } : {}),
     },
   });
-  if (kontoBytt) {
-    await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
-  }
-  if (token || kontoBytt) glomMetaFel(session.shop);
+  if (token) glomMetaFel(session.shop);
   return json({ ok: true, message: T.settings.saved });
 }
 
@@ -262,62 +272,10 @@ export default function Settings() {
     tariffPerOrder: String(d.tariffPerOrder),
     feeRate: String((d.feeRate * 100).toFixed(2)),
     targetMargin: String(Math.round(d.targetMargin * 100)),
-    metaAdAccountId: d.metaAdAccountId,
     metaAccessToken: "",
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
-
-  /* ---- Kampanjfiltret ----
-     Flera butiker kan dela ETT annonskonto; utan filtret räknar var och en in
-     de andras annonskostnad. Listan hämtas först när kortet öppnas — två
-     Graph-anrop ska inte ligga på varje sidladdning för alla andra. */
-  const kampanjFetcher = useFetcher<typeof action>();
-  const kampanjSparaFetcher = useFetcher<typeof action>();
-  const [kampanjOppen, setKampanjOppen] = useState(false);
-  const [kampanjLage, setKampanjLage] = useState<string>(d.campaignMode);
-  const [valdaKampanjer, setValdaKampanjer] = useState<string[]>(d.campaignIds);
-  const kampanjSvar = kampanjFetcher.data as unknown as { ok?: boolean; kampanjer?: Kampanj[] } | undefined;
-  const kampanjer = kampanjSvar?.kampanjer ?? [];
-  const kampanjLaddar = kampanjFetcher.state !== "idle";
-  const kampanjFel = !kampanjLaddar && Boolean(kampanjSvar) && !kampanjSvar?.ok;
-  /* En sparad kampanj som inte längre finns i listan (arkiverad, borttagen)
-     visas ändå — annars går valet inte att ångra utan att byta läge. */
-  const kampanjRader: Kampanj[] = kampanjSvar?.ok
-    ? [
-        ...kampanjer,
-        ...valdaKampanjer
-          .filter((id) => !kampanjer.some((k) => k.id === id))
-          .map((id) => ({ id, name: id, status: "", spend30: 0 })),
-      ]
-    : kampanjer;
-  /* Spenden är i ANNONSKONTOTS valuta, aldrig butikens — den måste skrivas ut
-     med sin valuta, annars läser man 5 000 som kronor när det är dollar. */
-  const spendValuta =
-    d.spendCurrency ?? d.konton?.find((k) => k.accountId === d.metaAdAccountId)?.currency ?? "";
-  const kampanjNf = new Intl.NumberFormat(localeOf(d.lang), { maximumFractionDigits: 0 });
-  const kampanjSammanfattning =
-    d.campaignMode === "include"
-      ? T.settings.campaigns.summaryInclude(d.campaignIds.length)
-      : d.campaignMode === "exclude"
-        ? T.settings.campaigns.summaryExclude(d.campaignIds.length)
-        : T.settings.campaigns.summaryAll;
-  const hamtaKampanjer = () => kampanjFetcher.submit({ intent: "meta-campaigns" }, { method: "POST" });
-  const vaxlaKampanjer = () => {
-    const oppnas = !kampanjOppen;
-    setKampanjOppen(oppnas);
-    if (oppnas && !kampanjSvar && kampanjFetcher.state === "idle") hamtaKampanjer();
-  };
-  const sparaKampanjval = () =>
-    kampanjSparaFetcher.submit(
-      {
-        intent: "meta-campaigns-save",
-        campaignMode: kampanjLage,
-        campaignIds: kampanjLage === "all" ? "" : valdaKampanjer.join(","),
-      },
-      { method: "POST" },
-    );
-  const kampanjvalSaknas = kampanjLage === "include" && valdaKampanjer.length === 0;
 
   /* ---- Logga in med Facebook ----
      Klick → fönstret öppnas SYNKRONT (annars stoppar webbläsaren det som en
@@ -458,54 +416,71 @@ export default function Settings() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  /* Loader-datan byts efter inloggning/bortkoppling — formulärets lokala
-     kopia måste följa med, annars sparar nästa Spara ett gammalt konto-ID.
-     Token-fältet töms bara när servern faktiskt sparat eller tagit bort en
-     token — inte när kontovalet sparas, annars försvinner en inklistrad men
+  /* Token-fältet töms bara när servern faktiskt sparat eller tagit bort en
+     token — inte när ett konto kopplas, annars försvinner en inklistrad men
      osparad token under fingrarna på handlaren. */
-  useEffect(() => {
-    setV((s) => ({ ...s, metaAdAccountId: d.metaAdAccountId }));
-  }, [d.metaAdAccountId]);
   useEffect(() => {
     setV((s) => ({ ...s, metaAccessToken: "" }));
   }, [d.metaTokenSavedAt, d.hasMetaToken]);
 
+  /* ---- Annonskontona ----
+     Flera konton kan höra till samma butik; annonskostnaden är summan av dem.
+     Väljaren visar bara de konton som INTE redan är kopplade — att kunna välja
+     ett konto som redan står i listan gör bara knappen förvirrande. */
+  const [laggTillOppen, setLaggTillOppen] = useState(false);
+  const [manuelltKonto, setManuelltKonto] = useState("");
+  const kopplade = d.kopplade;
+  const kopplat = new Set(kopplade.map((k) => k.accountId));
+  const lediga = (d.konton ?? []).filter((k) => !kopplat.has(k.accountId));
+
+  const laggTill = (id: string, namn?: string, valuta?: string) => {
+    if (!kontoId(id)) return;
+    kontoFetcher.submit(
+      { intent: "meta-account-add", accountId: id, name: namn ?? "", currency: valuta ?? "" },
+      { method: "POST" },
+    );
+    setLaggTillOppen(false);
+    setManuelltKonto("");
+  };
   const valjKonto = (id: string) => {
-    set("metaAdAccountId")(id);
-    const namn = d.konton?.find((k) => k.accountId === id)?.name ?? id;
-    if (id) kontoFetcher.submit({ intent: "meta-account", metaAdAccountId: id, name: namn }, { method: "POST" });
+    const k = d.konton?.find((x) => x.accountId === id);
+    laggTill(id, k?.name, k?.currency);
   };
 
   const loginMisslyckades =
     loginFetcher.state === "idle" && loginFetcher.data && !(loginFetcher.data as { ok: boolean }).ok;
 
-  const valdKontoIListan = d.konton?.some((k) => k.accountId === v.metaAdAccountId) ?? false;
-  const kontoAlternativ = d.konton
-    ? [
-        ...(v.metaAdAccountId && !valdKontoIListan
-          ? [{ label: T.settings.accountNotInList(v.metaAdAccountId), value: v.metaAdAccountId }]
-          : []),
-        ...d.konton.map((k) => ({
-          label:
-            `${k.name} · ${k.currency} · ${k.accountId}` +
-            (k.status === 1 ? "" : ` (${T.settings.accountStatus(k.status)})`),
-          value: k.accountId,
-        })),
-      ]
-    : [];
+  const kontoAlternativ = lediga.map((k) => ({
+    label:
+      `${k.name} · ${k.currency} · ${k.accountId}` +
+      (k.status === 1 ? "" : ` (${T.settings.accountStatus(k.status)})`),
+    value: k.accountId,
+  }));
   const visaLista = Boolean(d.konton && d.konton.length > 0);
-  const valtKonto = d.konton?.find((k) => k.accountId === v.metaAdAccountId);
   const utgangen = (d.metaTokenDagar != null && d.metaTokenDagar < 0) || Boolean(d.kontoFel?.utgangen);
   const snartSlut = !utgangen && d.metaTokenDagar != null && d.metaTokenDagar <= VARNA_DAGAR;
 
+  /* Textfältet är reservvägen: en systemanvändar-token vars kontolista inte
+     går att hämta måste ändå kunna peka ut ett konto. */
   const kontoFalt = (
-    <TextField
-      label={T.settings.adAccountLabel}
-      value={v.metaAdAccountId}
-      onChange={set("metaAdAccountId")}
-      autoComplete="off"
-      helpText={T.settings.adAccountHelp}
-    />
+    <InlineStack gap="200" blockAlign="end" wrap>
+      <div style={{ minWidth: 220, flex: "1 1 220px" }}>
+        <TextField
+          label={T.settings.adAccountLabel}
+          value={manuelltKonto}
+          onChange={setManuelltKonto}
+          autoComplete="off"
+          helpText={T.settings.adAccountHelp}
+        />
+      </div>
+      <Button
+        disabled={!kontoId(manuelltKonto)}
+        loading={kontoFetcher.state !== "idle"}
+        onClick={() => laggTill(manuelltKonto)}
+      >
+        {T.settings.addAccountButton}
+      </Button>
+    </InlineStack>
   );
   const tokenFalt = (
     <TextField
@@ -663,31 +638,63 @@ export default function Settings() {
                 <Banner tone="warning">{T.settings.expiresSoon(d.metaTokenDagar!)}</Banner>
               ) : null}
 
-              {d.hasMetaToken && !d.metaAdAccountId && !utgangen ? (
+              {d.hasMetaToken && !kopplade.length && !utgangen ? (
                 <Banner tone="warning">{T.settings.pickAccountReminder}</Banner>
               ) : null}
 
-              {/* Kontovalet: lista när Meta gav en, annars skälet. Textfältet
-                  för ID ligger i den manuella sektionen — ett ID skrivet för
-                  hand fungerar ändå bara om token ser kontot. */}
+              {/* De kopplade kontona, ett kort per konto. Annonskostnaden är
+                  summan av dem alla — därför är listan, inte ett enda val,
+                  det handlaren ser. */}
+              {kopplade.length ? (
+                <BlockStack gap="300">
+                  <Text as="h3" variant="headingSm">{T.settings.accountsTitle}</Text>
+                  {kopplade.length > 1 ? (
+                    <Text as="p" variant="bodySm" tone="subdued">{T.settings.accountsSummed}</Text>
+                  ) : null}
+                  {kopplade.map((k) => (
+                    <KontoRad
+                      key={k.accountId}
+                      konto={k}
+                      butiksValuta={d.currency}
+                      lang={d.lang}
+                      kanTaBort={d.hasMetaToken}
+                    />
+                  ))}
+                </BlockStack>
+              ) : null}
+
+              {/* Plusknappen: väljaren visas först när den trycks, så kortet
+                  inte ser ut som ett formulär att fylla i varje gång. */}
               {visaLista ? (
-                <BlockStack gap="100">
-                  <Select
-                    label={T.settings.accountSelectLabel}
-                    options={kontoAlternativ}
-                    placeholder={T.settings.accountSelectPlaceholder}
-                    value={v.metaAdAccountId}
-                    onChange={valjKonto}
-                    helpText={T.settings.accountSelectHelp}
-                  />
+                <BlockStack gap="200">
+                  {laggTillOppen && lediga.length ? (
+                    <Select
+                      label={T.settings.accountSelectLabel}
+                      options={kontoAlternativ}
+                      placeholder={T.settings.accountSelectPlaceholder}
+                      value=""
+                      onChange={valjKonto}
+                      helpText={T.settings.accountSelectHelp}
+                    />
+                  ) : (
+                    <div>
+                      <Button
+                        variant="plain"
+                        loading={kontoFetcher.state !== "idle"}
+                        disabled={!lediga.length}
+                        onClick={() => setLaggTillOppen(true)}
+                      >
+                        {kopplade.length
+                          ? lediga.length
+                            ? T.settings.addAnotherAccount
+                            : T.settings.allAccountsAdded
+                          : T.settings.chooseAccountButton}
+                      </Button>
+                    </div>
+                  )}
                   {kontoFetcher.data?.ok && kontoFetcher.state === "idle" ? (
                     <Text as="p" variant="bodySm" tone="success">
                       {(kontoFetcher.data as { message?: string }).message}
-                    </Text>
-                  ) : null}
-                  {valtKonto && valtKonto.currency && valtKonto.currency !== d.currency ? (
-                    <Text as="p" variant="bodySm" tone="subdued">
-                      {T.dashboard.convertedNote(valtKonto.currency, d.currency)}
                     </Text>
                   ) : null}
                 </BlockStack>
@@ -700,102 +707,6 @@ export default function Settings() {
                 >
                   {T.settings.accountsUnavailableRetry}
                 </Banner>
-              ) : null}
-
-              {/* Vilka kampanjer i kontot som räknas. Standard är alla — en
-                  befintlig butik ska aldrig se sin annonskostnad ändras för
-                  att funktionen kom till. */}
-              {d.hasMetaToken && d.metaAdAccountId ? (
-                <BlockStack gap="200">
-                  <Text as="h3" variant="headingSm">{T.settings.campaigns.title}</Text>
-                  <Text as="p" variant="bodySm" tone="subdued">{T.settings.campaigns.body}</Text>
-                  <InlineStack gap="300" blockAlign="center" wrap>
-                    <Text as="span" variant="bodySm">{kampanjSammanfattning}</Text>
-                    <Button
-                      variant="plain"
-                      disclosure={kampanjOppen ? "up" : "down"}
-                      onClick={vaxlaKampanjer}
-                    >
-                      {kampanjOppen ? T.settings.campaigns.close : T.settings.campaigns.open}
-                    </Button>
-                  </InlineStack>
-                  <Collapsible open={kampanjOppen} id="meta-kampanjer">
-                    <BlockStack gap="300">
-                      <ChoiceList
-                        title={T.settings.campaigns.modeLabel}
-                        choices={[
-                          { label: T.settings.campaigns.all, value: "all" },
-                          { label: T.settings.campaigns.include, value: "include" },
-                          { label: T.settings.campaigns.exclude, value: "exclude" },
-                        ]}
-                        selected={[kampanjLage]}
-                        onChange={(val) => setKampanjLage(val[0] ?? "all")}
-                      />
-                      {kampanjFel ? (
-                        <Banner
-                          tone="warning"
-                          action={{ content: T.settings.tryAgain, onAction: hamtaKampanjer }}
-                        >
-                          {T.settings.campaigns.failed}
-                        </Banner>
-                      ) : null}
-                      {kampanjLage === "all" ? null : kampanjLaddar ? (
-                        <Text as="p" tone="subdued">{T.settings.campaigns.loading}</Text>
-                      ) : kampanjRader.length ? (
-                        <BlockStack gap="150">
-                          <InlineStack gap="300">
-                            <Button variant="plain" onClick={() => setValdaKampanjer(kampanjRader.map((k) => k.id))}>
-                              {T.settings.campaigns.selectAll}
-                            </Button>
-                            <Button variant="plain" onClick={() => setValdaKampanjer([])}>
-                              {T.settings.campaigns.selectNone}
-                            </Button>
-                          </InlineStack>
-                          {kampanjRader.map((k) => (
-                            <Checkbox
-                              key={k.id}
-                              label={k.name}
-                              checked={valdaKampanjer.includes(k.id)}
-                              onChange={(kryssad) =>
-                                setValdaKampanjer((v) =>
-                                  kryssad ? [...v, k.id] : v.filter((x) => x !== k.id),
-                                )
-                              }
-                              helpText={
-                                (k.spend30 > 0
-                                  ? T.settings.campaigns.spend30(kampanjNf.format(k.spend30), spendValuta)
-                                  : T.settings.campaigns.noSpend) +
-                                (k.status && k.status !== "ACTIVE" ? ` · ${k.status}` : "")
-                              }
-                            />
-                          ))}
-                        </BlockStack>
-                      ) : kampanjFel ? null : (
-                        <Text as="p" tone="subdued">{T.settings.campaigns.empty}</Text>
-                      )}
-                      <InlineStack gap="300" blockAlign="center" wrap>
-                        <Button
-                          variant="primary"
-                          loading={kampanjSparaFetcher.state !== "idle"}
-                          disabled={kampanjvalSaknas}
-                          onClick={sparaKampanjval}
-                        >
-                          {T.settings.campaigns.save}
-                        </Button>
-                        {kampanjvalSaknas ? (
-                          <Text as="span" variant="bodySm" tone="subdued">
-                            {T.settings.campaigns.pickOne}
-                          </Text>
-                        ) : null}
-                        {kampanjSparaFetcher.data && kampanjSparaFetcher.state === "idle" ? (
-                          <Text as="span" variant="bodySm" tone="success">
-                            {(kampanjSparaFetcher.data as { message?: string }).message}
-                          </Text>
-                        ) : null}
-                      </InlineStack>
-                    </BlockStack>
-                  </Collapsible>
-                </BlockStack>
               ) : null}
 
               {d.metaLogin ? (
@@ -844,7 +755,8 @@ export default function Settings() {
                     variant="plain"
                     loading={fetcher.state !== "idle"}
                     onClick={() => {
-                      setV((s) => ({ ...s, metaAdAccountId: "", metaAccessToken: "" }));
+                      setV((s) => ({ ...s, metaAccessToken: "" }));
+                      setManuelltKonto("");
                       fetcher.submit({ intent: "meta-disconnect" }, { method: "POST" });
                     }}
                   >
@@ -873,5 +785,207 @@ export default function Settings() {
         </Layout.Section>
       </Layout>
     </Page>
+  );
+}
+
+/** Ett kopplat annonskonto: namn, valuta, kampanjfilter och "ta bort". */
+type KopplatKonto = {
+  accountId: string;
+  name: string;
+  currency: string;
+  saknasIListan: boolean;
+  campaignMode: string;
+  campaignIds: string[];
+};
+
+/**
+ * Ett konto i listan. Kampanjfiltret bor här för att kampanj-ID:n är
+ * kontospecifika — varje konto måste kunna kryssas för sig, annars hade ett
+ * filter satt på konto A tystat hela konto B.
+ */
+function KontoRad({
+  konto,
+  butiksValuta,
+  lang,
+  kanTaBort,
+}: {
+  konto: KopplatKonto;
+  butiksValuta: string;
+  lang: Lang;
+  kanTaBort: boolean;
+}) {
+  const T = t(lang);
+  const kampanjFetcher = useFetcher<typeof action>();
+  const sparaFetcher = useFetcher<typeof action>();
+  const taBortFetcher = useFetcher<typeof action>();
+  const [oppen, setOppen] = useState(false);
+  const [lage, setLage] = useState<string>(konto.campaignMode);
+  const [valda, setValda] = useState<string[]>(konto.campaignIds);
+
+  const svar = kampanjFetcher.data as unknown as { ok?: boolean; kampanjer?: Kampanj[] } | undefined;
+  const kampanjer = svar?.kampanjer ?? [];
+  const laddar = kampanjFetcher.state !== "idle";
+  const fel = !laddar && Boolean(svar) && !svar?.ok;
+  /* En sparad kampanj som inte längre finns i listan (arkiverad, borttagen)
+     visas ändå — annars går valet inte att ångra utan att byta läge. */
+  const rader: Kampanj[] = svar?.ok
+    ? [
+        ...kampanjer,
+        ...valda
+          .filter((id) => !kampanjer.some((k) => k.id === id))
+          .map((id) => ({ id, name: id, status: "", spend30: 0 })),
+      ]
+    : kampanjer;
+  /* Spenden är i ANNONSKONTOTS valuta, aldrig butikens — den måste skrivas ut
+     med sin valuta, annars läser man 5 000 som kronor när det är dollar. */
+  const nf = new Intl.NumberFormat(localeOf(lang), { maximumFractionDigits: 0 });
+  const sammanfattning =
+    konto.campaignMode === "include"
+      ? T.settings.campaigns.summaryInclude(konto.campaignIds.length)
+      : konto.campaignMode === "exclude"
+        ? T.settings.campaigns.summaryExclude(konto.campaignIds.length)
+        : T.settings.campaigns.summaryAll;
+
+  const hamta = () =>
+    kampanjFetcher.submit({ intent: "meta-campaigns", accountId: konto.accountId }, { method: "POST" });
+  const vaxla = () => {
+    const oppnas = !oppen;
+    setOppen(oppnas);
+    if (oppnas && !svar && kampanjFetcher.state === "idle") hamta();
+  };
+  const spara = () =>
+    sparaFetcher.submit(
+      {
+        intent: "meta-campaigns-save",
+        accountId: konto.accountId,
+        campaignMode: lage,
+        campaignIds: lage === "all" ? "" : valda.join(","),
+      },
+      { method: "POST" },
+    );
+  const valSaknas = lage === "include" && valda.length === 0;
+
+  return (
+    <Card>
+      <BlockStack gap="200">
+        <InlineStack gap="300" blockAlign="center" align="space-between" wrap>
+          <BlockStack gap="050">
+            <Text as="p" variant="bodyMd" fontWeight="semibold">{konto.name}</Text>
+            <Text as="p" variant="bodySm" tone="subdued">
+              {[konto.currency, konto.accountId].filter(Boolean).join(" · ")}
+            </Text>
+          </BlockStack>
+          {kanTaBort ? (
+            <Button
+              variant="plain"
+              tone="critical"
+              loading={taBortFetcher.state !== "idle"}
+              onClick={() =>
+                taBortFetcher.submit(
+                  { intent: "meta-account-remove", accountId: konto.accountId },
+                  { method: "POST" },
+                )
+              }
+            >
+              {T.settings.removeAccount}
+            </Button>
+          ) : null}
+        </InlineStack>
+
+        {konto.saknasIListan ? (
+          <Text as="p" variant="bodySm" tone="caution">
+            {T.settings.accountNotInList(konto.accountId)}
+          </Text>
+        ) : null}
+        {konto.currency && konto.currency !== butiksValuta ? (
+          <Text as="p" variant="bodySm" tone="subdued">
+            {T.dashboard.convertedNote(konto.currency, butiksValuta)}
+          </Text>
+        ) : null}
+
+        {/* Vilka kampanjer i kontot som räknas. Standard är alla — en befintlig
+            butik ska aldrig se sin annonskostnad ändras för att funktionen kom
+            till. */}
+        <InlineStack gap="300" blockAlign="center" wrap>
+          <Text as="span" variant="bodySm">{sammanfattning}</Text>
+          <Button variant="plain" disclosure={oppen ? "up" : "down"} onClick={vaxla}>
+            {oppen ? T.settings.campaigns.close : T.settings.campaigns.open}
+          </Button>
+        </InlineStack>
+
+        <Collapsible open={oppen} id={`meta-kampanjer-${konto.accountId}`}>
+          <BlockStack gap="300">
+            <Text as="p" variant="bodySm" tone="subdued">{T.settings.campaigns.body}</Text>
+            <ChoiceList
+              title={T.settings.campaigns.modeLabel}
+              choices={[
+                { label: T.settings.campaigns.all, value: "all" },
+                { label: T.settings.campaigns.include, value: "include" },
+                { label: T.settings.campaigns.exclude, value: "exclude" },
+              ]}
+              selected={[lage]}
+              onChange={(val) => setLage(val[0] ?? "all")}
+            />
+            {fel ? (
+              <Banner tone="warning" action={{ content: T.settings.tryAgain, onAction: hamta }}>
+                {T.settings.campaigns.failed}
+              </Banner>
+            ) : null}
+            {lage === "all" ? null : laddar ? (
+              <Text as="p" tone="subdued">{T.settings.campaigns.loading}</Text>
+            ) : rader.length ? (
+              <BlockStack gap="150">
+                <InlineStack gap="300">
+                  <Button variant="plain" onClick={() => setValda(rader.map((k) => k.id))}>
+                    {T.settings.campaigns.selectAll}
+                  </Button>
+                  <Button variant="plain" onClick={() => setValda([])}>
+                    {T.settings.campaigns.selectNone}
+                  </Button>
+                </InlineStack>
+                {rader.map((k) => (
+                  <Checkbox
+                    key={k.id}
+                    label={k.name}
+                    checked={valda.includes(k.id)}
+                    onChange={(kryssad) =>
+                      setValda((v) => (kryssad ? [...v, k.id] : v.filter((x) => x !== k.id)))
+                    }
+                    helpText={
+                      (k.spend30 > 0
+                        ? T.settings.campaigns.spend30(nf.format(k.spend30), konto.currency)
+                        : T.settings.campaigns.noSpend) +
+                      (k.status && k.status !== "ACTIVE" ? ` · ${k.status}` : "")
+                    }
+                  />
+                ))}
+              </BlockStack>
+            ) : fel ? null : (
+              <Text as="p" tone="subdued">{T.settings.campaigns.empty}</Text>
+            )}
+            <InlineStack gap="300" blockAlign="center" wrap>
+              <Button
+                variant="primary"
+                loading={sparaFetcher.state !== "idle"}
+                disabled={valSaknas}
+                onClick={spara}
+              >
+                {T.settings.campaigns.save}
+              </Button>
+              {valSaknas ? (
+                <Text as="span" variant="bodySm" tone="subdued">
+                  {T.settings.campaigns.pickOne}
+                </Text>
+              ) : null}
+              {sparaFetcher.data && sparaFetcher.state === "idle" ? (
+                <Text as="span" variant="bodySm" tone="success">
+                  {(sparaFetcher.data as { message?: string }).message}
+                </Text>
+              ) : null}
+            </InlineStack>
+          </BlockStack>
+        </Collapsible>
+      </BlockStack>
+    </Card>
   );
 }

@@ -20,6 +20,7 @@ import { createHash, randomBytes } from "node:crypto";
 import prisma from "../db.server";
 import { encrypt, encryptionAvailable } from "./crypto.server";
 import { glomMetaFel } from "./meta.server";
+import { laggTillKonto } from "./meta-konton.server";
 import { GRAPH_VERSION, type Annonskonto } from "./meta-login";
 
 const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
@@ -456,13 +457,16 @@ export async function sparaInloggadToken(
     metaUserName: anvandare.name,
     metaUserId: anvandare.id,
     metaAppId: cfg.appId,
-    ...(adAccountId ? { metaAdAccountId: adAccountId, spendCurrency: null } : {}),
   };
   await prisma.shopSettings.upsert({
     where: { shop },
     create: { shop, ...data },
     update: data,
   });
+  /* Kontot läggs till i listan, aldrig som ersättning: en butik kan ha flera
+     annonskonton, och en ny inloggning ska inte tysta de andra. Redan kopplat
+     konto ger ingen ändring — och därmed ingen raderad annonshistorik. */
+  if (adAccountId) await laggTillKonto(shop, adAccountId);
   /* Den gamla tokens 5-minutersbackoff får inte ärvas av den nya — annars
      säger panelen "kunde inte hämtas" i fem minuter efter en lyckad inloggning. */
   glomMetaFel(shop);
