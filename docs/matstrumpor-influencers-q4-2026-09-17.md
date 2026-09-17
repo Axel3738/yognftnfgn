@@ -121,7 +121,7 @@ Två fynd stärkte kandidater. Susanne Jonsson: inga skandaler, inget SVT-progra
 
 ## 13. Färdiga mail per person (rakt på sak, skicka från din egen adress i dag)
 
-Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i något mail, och ingen inställsam öppning. Mailet säger vad vi vill köpa, varför just henne, att det är arvode och inte produkt mot inlägg, och föreslår ett möte. Priset tas i mötet.
+Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i något mail, och ingen inställsam öppning. Mailet säger vad vi vill köpa, varför just henne, att det är ett arvode som täcker stories och annonsrätt (be henne dela upp summan i mötet), och föreslår ett möte. Priset tas i mötet.
 
 **Nina Hermansen** (hej@proad.se, ProAd Sweden, ange "samarbete Nina Hermansen / Niiinis")
 
@@ -133,7 +133,7 @@ jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbe
 
 Skälet att vi vänder oss till just Nina är att hennes publik är samma som vår köpare, kvinnor 45–54, och att hon gör julklappstips varje år. Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder.
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten. Lådorna är bara ett prov: jag skickar gärna två så att Nina kan avgöra om det är något hon vill stå bakom innan vi pratar pris. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Nina kan avgöra om det är något hon vill stå bakom innan vi pratar pris. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -148,7 +148,7 @@ jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarb
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik är samma som våra köpare, kvinnor över 50, och du är en av få de litar på i köket.
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -163,7 +163,7 @@ jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarb
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Vi vänder oss till Karin för att humorn och ärligheten i hennes kanal är exakt den ton vi vill ha.
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att Karin kan avgöra om hon vill stå bakom det. Har ni tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att Karin kan avgöra om hon vill stå bakom det. Har ni tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -178,7 +178,7 @@ jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarb
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik, kvinnor över 50, är exakt de som köper den.
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -193,7 +193,7 @@ jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbe
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Agnetas publik är samma som våra köpare, kvinnor 45–65.
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten. Lådorna är bara ett prov: jag skickar gärna två så att Agneta kan avgöra om det är något hon vill stå bakom. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna prisnivå för stories och annonsrättigheter samtidigt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt. Lådorna är bara ett prov: jag skickar gärna två så att Agneta kan avgöra om det är något hon vill stå bakom. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna prisnivå för stories och annonsrättigheter samtidigt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
@@ -212,7 +212,7 @@ jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarb
 
 Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. [En rad om varför just henne: publiken, kanalen, eller något hon gör som passar.]
 
-Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+Det här är ett betalt uppdrag med ett arvode som täcker både stories och 30 dagars annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
