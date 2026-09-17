@@ -29,10 +29,10 @@ SHOPIFY_SHOP_MATSTRUMPOR · SHOPIFY_CLIENT_ID_MATSTRUMPOR · SHOPIFY_CLIENT_SECR
 `1r46tp-qx.myshopify.com` (`SHOPIFY_SHOP_MATSTRUMPOR=1r46tp-qx`).
 
 Sedan 2026-09-17 heter de i stället `SHOPIFY_*_1r46tp_qx` (butikens id med
-understreck) — `tools/shopify.mjs` läser båda namnen. Samma dag svarade Shopify
-`app_not_installed`: appen måste installeras på butiken i Dev Dashboard innan
-något går att köra. Kontrollera med `npm run tema:shop` innan du lovar något
-som kräver butiken.
+understreck) — `tools/shopify.mjs` läser båda namnen. Appen installerades på
+butiken samma dag; `npm run tema:shop` visade därefter produkter, teman, ordrar
+och rapporter öppna. Kontrollera ändå med `npm run tema:shop` innan du lovar
+något som kräver butiken.
 
 ```bash
 npm run tema:shop     # verifierar kopplingen och visar butiken

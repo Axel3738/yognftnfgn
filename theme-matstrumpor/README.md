@@ -150,17 +150,17 @@ förbättringen rakt av i stället.
   Hamburgare 299 kr, Donut 299 kr, Presentkort 150 kr.
 - Sushi-varianterna heter `"3 - Par"` och `"5 - Par"`. Paketväljaren läser
   antalet ur variantnamnets **första ord** — döps de om slutar priset per par att
-  räknas. Efter `tema:one-size` heter de `"3 - Par / One Size"`, vilket fungerar.
+  räknas. Sedan 2026-09-17 heter de `"3 - Par / One Size"`, vilket fungerar.
 - **Storlek: One Size** (Axel 2026-09-16): kunder blev osäkra på storleken när de
   bara såg 3/5 par. `tools/one-size.mjs` lägger alternativet `Storlek` med det enda
   värdet `One Size` på alla strumpor, så Dawns variantväljare visar det under
   par-valet och det följer med till varukorg och kassa. Variant-id:n rörs inte.
-  Skriptet kunde inte köras 2026-09-16 — se nästa punkt.
+  **Kört skarpt 2026-09-17:** Sushi-Strumpor, Pizza, Hamburgare, Donut och den
+  opublicerade dubbletten "Sushistrumpor" fick alternativet; verifierat på sajten.
 - **Nycklarna till matstrumpor.se** ligger i environmentet som
   `SHOPIFY_SHOP_1r46tp_qx`, `SHOPIFY_CLIENT_ID_1r46tp_qx` och
   `SHOPIFY_CLIENT_SECRET_1r46tp_qx` (Axel 2026-09-17; de saknades helt dagen
   innan). `tools/shopify.mjs` läser både det namnet och `MATSTRUMPOR`. Butiken är
-  `1r46tp-qx.myshopify.com`. **2026-09-17 svarade Shopify `app_not_installed`:**
-  appen som nycklarna tillhör är inte installerad på butiken. Det görs i Shopifys
-  Dev Dashboard av Axel — kör `npm run tema:shop` för att se om det är gjort.
+  `1r46tp-qx.myshopify.com`. Appen installerades på butiken 2026-09-17 och har
+  sedan dess produkter, teman, ordrar och rapporter öppna (`npm run tema:shop`).
 - Klaviyo är installerat. Rör inte dess kod.

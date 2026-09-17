@@ -473,14 +473,14 @@ auktorisera om i en icke-interaktiv session. `SHOPIFY_TOKEN_SE` är död
 
 ⚠️ **matstrumpor.se ligger som `SHOPIFY_*_1r46tp_qx`** (butikens id med
 understreck, inlagt 2026-09-17), inte som `MATSTRUMPOR`. `theme-matstrumpor/tools/
-shopify.mjs` läser båda. Butiken är `1r46tp-qx.myshopify.com`. 2026-09-17 svarade
-Shopify `app_not_installed` — appen måste installeras på butiken i Dev Dashboard
-innan något går att köra. Kontrollera med `npm run tema:shop` först.
+shopify.mjs` läser båda. Butiken är `1r46tp-qx.myshopify.com`. Appen installerades
+på butiken 2026-09-17 och `npm run tema:shop` visade produkter, teman, ordrar och
+rapporter öppna. Kontrollera med `npm run tema:shop` först ändå.
 
-⚠️ **Appen för matstrumpor.se har bara `write_inventory, write_products,
-write_publications`.** Teman, ordrar och rapporter är stängda och kräver att Axel
-kryssar i scopen i adminen. Kör `node theme-matstrumpor/tools/atkomst.mjs` för
-att se läget innan du planerar något som behöver dem.
+Appen för matstrumpor.se hade länge bara `write_inventory, write_products,
+write_publications`; sedan 2026-09-17 är även teman, ordrar och rapporter öppna.
+Kör `node theme-matstrumpor/tools/atkomst.mjs` för att se läget innan du planerar
+något som behöver dem — scopen kan ändras utan att repot får veta det.
 
 ---
 
