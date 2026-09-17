@@ -64,7 +64,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/pages/din-gratisprodukt{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}?produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
+                    <a href="https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;utm_medium=levererad&amp;utm_campaign=tackigen{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}&amp;produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
                   </td>
                 </tr>
               </table>

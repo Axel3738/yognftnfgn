@@ -805,6 +805,7 @@
     "testmejl_aktuell_version": null,
     "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. v4-testmejlet 2026-09-14 gav Gmail-PDF:en som avslöjade fyra fel (se inklistrade_aldre_comment); v5-testmejlet är inte skickat. Testmejlet visar det som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja), klockslaget (ska stämma med svensk tid) och hur mejlet ser ut på mobilen.",
     "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
-    "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel."
+    "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
+    "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5."
   }
 }

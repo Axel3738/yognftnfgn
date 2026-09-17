@@ -41,10 +41,10 @@ INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
 Stämmer det inte: kopiera om, spara inte.
 
 **Börja med att kolla vad som redan sitter.** Öppna Orderbekräftelse →
-Redigera kod. Innehåller brödtexten redan texten `tz_skift` är den nya
-versionen inklistrad sedan tidigare — hoppa då över tabellen helt och gå
-direkt till **B** längre ner. Saknas den (den gamla versionen innehåller
-`/pages/din-gratisprodukt` men inte `tz_skift`): gör tabellen.
+Redigera kod. Innehåller brödtexten redan texten `utm_source=mejl` är den
+nya versionen inklistrad sedan tidigare — hoppa då över tabellen helt och gå
+direkt till **B** längre ner. Saknas den (äldre versioner innehåller
+`/pages/din-gratisprodukt` men inte `utm_source=mejl`): gör tabellen.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
@@ -77,11 +77,11 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 - `/pages/din-gratisprodukt`
 - `tz_skift`
-- `max-width: 480px`
+- `utm_source=mejl`
 - `plus: 604800`
 
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
-**83 177**, Leveransbekräftelse **76 381**, Levererad **75 578**. Shopifys
+**83 256**, Leveransbekräftelse **76 460**, Levererad **75 650**. Shopifys
 redigerare visar **ett tecken mindre** än källan (filens avslutande
 radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
 fel innehåll i urklippet.

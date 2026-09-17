@@ -148,7 +148,9 @@ test('erbjudandet ligger i rätt mallar och bär hjullänk, vinsterna och komple
     assert.equal(har, meta.erbjudande, `${meta.id}: erbjudande ${meta.erbjudande ? 'saknas' : 'ska inte vara med'}`);
     if (meta.erbjudande) {
       const rad = meta.id === 'orderbekraftelse' ? 'line' : 'line.line_item';
-      assert.ok(m.html.includes(`?produkt={{ ${rad}.product.handle }}`), `${meta.id}: produktparametern`);
+      assert.ok(m.html.includes(`&amp;produkt={{ ${rad}.product.handle }}`), `${meta.id}: produktparametern`);
+      // UTM per mall så mejl/matning.mjs kan räkna ordrar per mejl.
+      assert.ok(m.html.includes(`?utm_source=mejl&amp;utm_medium=${meta.id}&amp;utm_campaign=${e.kod.toLowerCase()}`), `${meta.id}: utm-parametrarna`);
       assert.ok(!m.html.includes('redirect=%2Fcollections%2F'), `${meta.id}: gamla kollektionslänken kvar`);
     }
     assert.equal(m.html.includes(copy.komplement.rubrik), meta.erbjudande, `${meta.id}: komplementblocket`);

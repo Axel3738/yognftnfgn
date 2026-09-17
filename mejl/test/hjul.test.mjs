@@ -191,6 +191,7 @@ test('förhandsvisningen är ett helt dokument och har autoklicket', () => {
 test('mejlets knapp pekar på hjulet, inte på kollektionen', { skip: !existsSync(join(ROT, 'output', 'orderbekraftelse.liquid')) }, () => {
   const m = readFileSync(join(ROT, 'output', 'orderbekraftelse.liquid'), 'utf8');
   assert.ok(m.includes(`/pages/${konfig.hjul.handle}`), 'mejlet ska länka till hjulsidan');
-  assert.ok(m.includes('?produkt={{ line.product.handle }}'), 'mejlet ska skicka med produkten kunden köpte');
+  assert.ok(m.includes('&amp;produkt={{ line.product.handle }}'), 'mejlet ska skicka med produkten kunden köpte');
+  assert.ok(m.includes('?utm_source=mejl&amp;utm_medium=orderbekraftelse'), 'länken ska bära UTM så matning.mjs kan räkna per mall');
   assert.ok(!m.includes(`?redirect=%2Fcollections%2F${konfig.erbjudande.kollektion_handle}`), 'den gamla kollektionslänken ska vara borta');
 });

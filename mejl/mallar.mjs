@@ -589,7 +589,7 @@ export function komplementBlock(k, s, copy, komplement, lage = 'liquid', kalla =
 // och komplementen till det kunden köpte. Statisk HTML utom komplementen —
 // Shopifys notis-Liquid når inte butikens produkter, så bygg.mjs bakar in
 // dem vid varje körning.
-export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 'order') {
+export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 'order', mallId = kalla) {
   const e = k.erbjudande;
   const u = {
     ...copy.upsell,
@@ -603,11 +603,15 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
   // odokumenterat, och hjulets kassaknapp lägger på koden när den behövs.
   const radNyckel = kalla === 'order' ? 'line' : 'line.line_item';
   const loop = kalla === 'order' ? 'line_items' : 'fulfillment.fulfillment_line_items';
-  const hjulUrl = `${k.butik.url}/pages/${k.hjul.handle}`;
+  // UTM på länken (2026-09-17): Shopify sparar kundresan per order
+  // (utm_source/medium/campaign), så mejl/matning.mjs kan räkna ordrar som
+  // kom från mejlet — och per mall, via utm_medium. Utan UTM syns bara
+  // landningssidan, som inte skiljer orderbekräftelsen från fraktmejlet.
+  const hjulUrl = `${k.butik.url}/pages/${k.hjul.handle}?utm_source=mejl&amp;utm_medium=${mallId}&amp;utm_campaign=${encodeURIComponent(e.kod.toLowerCase())}`;
   const lank =
     lage === 'liquid'
-      ? `${hjulUrl}{% for line in ${loop} limit: 1 %}{% if ${radNyckel}.product.handle != blank %}?produkt={{ ${radNyckel}.product.handle }}{% endif %}{% endfor %}`
-      : `${hjulUrl}?produkt=${EXEMPEL.rader[0].handle}`;
+      ? `${hjulUrl}{% for line in ${loop} limit: 1 %}{% if ${radNyckel}.product.handle != blank %}&amp;produkt={{ ${radNyckel}.product.handle }}{% endif %}{% endfor %}`
+      : `${hjulUrl}&amp;produkt=${EXEMPEL.rader[0].handle}`;
   // Samma-paket-raden: bara när konfigen har timmar > 0 och copyn en rad.
   // I Liquid döljs den när deadline passerat (paket_passerat).
   const paketRad =
@@ -785,7 +789,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   EXEMPEL.paketdeadline = exempelPaketdeadline(k.erbjudande.samma_paket_timmar ?? 18);
   // Komplementen läser orderns rader i orderbekräftelsen, fraktens rader i
   // frakt- och leveransmejlen (där heter produkten line.line_item).
-  const erbj = meta.erbjudande ? erbjudandeBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt') : '';
+  const erbj = meta.erbjudande ? erbjudandeBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt', id) : '';
   const ordUrl = lage === 'liquid' ? '{{ order_status_url }}' : SPARNING_EXEMPEL;
   const sparUrl = lage === 'liquid' ? SPARNING_LIQUID : SPARNING_EXEMPEL;
   let rader = sidhuvud(k, s) + rubrikOchIntro(k, s, c.rubrik, c.intro, lage);

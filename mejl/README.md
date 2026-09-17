@@ -287,6 +287,43 @@ med komplementkartan renderas bort vid utskick. Det färdiga mejlet är
 som byggs ur samma kod). Gmail klipper vid ~102 kB, så marginalen är stor.
 Shopify dokumenterar **ingen** storleksgräns för notismallar.
 
+## Mäta om det gör något
+
+```bash
+node mejl/matning.mjs                 # sedan koden skapades
+node mejl/matning.mjs --fran 2026-09-14
+```
+
+Läs-bara mot Shopify. Skriver `mejl/matning.json` och skriver ut fyra tal,
+från hårdast till mjukast:
+
+1. **Ordrar med koden** — kunden fick gåvan. Det enda som bevisar köp.
+2. **Ordrar via hjulet** — orderraden bär egenskapen `_gratishjul`, satt av
+   hjulsidan när vinsten läggs i korgen. Fångar köp där koden föll bort.
+3. **Ordrar som kom från mejlet** — Shopify sparar kundresan per order:
+   landningssida + UTM. Mejlens länkar bär `utm_source=mejl`,
+   `utm_medium=<mall>`, `utm_campaign=tackigen` sedan 2026-09-17, så talet
+   går att dela per mall. Klick utan köp syns i admin: Analys → Rapporter →
+   "Sessioner efter UTM-kampanj" (kampanj `tackigen`).
+4. **Återköp per månad** — grundlinjen. Andel av månadens ordrar från någon
+   som handlat förut (per e-post, sedan årsskiftet). Stiger den efter
+   launch gör erbjudandet jobbet.
+
+Nämnaren är antalet ordrar sedan startdatumet — varje order ger en
+orderbekräftelse med erbjudandet. **Öppningar, klick utan köp och antal
+snurr går inte att mäta härifrån:** Shopifys notiser saknar spårning och
+hjulet har ingen server att rapportera till. Klicken finns bara i
+Shopify-admins UTM-rapport.
+
+Första mätningen 2026-09-17 (koden skapad 12/9, hjulmejlet uppe sedan
+14/9): 434 ordrar sedan start, **0 med koden, 0 via hjulet, 0 från mejlet.**
+Mätningen är inte blind — 80 av de 100 senaste ordrarna bär en kundresa
+(Facebook, Instagram, Google). Grundlinjen för återköp: juli 2 %, augusti
+2 %, september 3,5 % (38 av 1 093). Med 7 dagars giltighet och den takten
+väntas under en återköpsorder per dygn totalt, så nollan efter tre dagar
+säger "för tidigt", inte "trasigt". Nästa avläsning: efter 21/9, när första
+batchens fönster stängt.
+
 ## Inklistringen via Cowork
 
 `mejl/COWORK-PROMPT.md` är den färdiga prompten till Cowork (Claude i
@@ -356,7 +393,7 @@ bokfört i `konfig.json → lage`:
   mäter skillnaden själv och lägger på den (`tz_skift`); (4) mallen var inte
   mobilanpassad — `<style>` med media query ≤ 480 px (`bb-kort` två i bredd,
   `bb-vinst` tre i bredd, knappen full bredd, mindre rubrik). Teckenantal
-  83 177 / 76 381 / 75 578. Kollektionssidans text är omskriven till
+  83 256 / 76 460 / 75 650 (efter UTM-länkarna 2026-09-17). Kollektionssidans text är omskriven till
   hjulflödet (länk till hjulet, 299 kr-regeln, "samma e-postadress") och
   uppdaterad i Shopify samma dag. **Inte inklistrad ännu** — Cowork-prompten
   är uppdaterad (kontrollsträngen är `tz_skift`; steg A är borttaget, redan

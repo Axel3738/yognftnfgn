@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-15 01:53 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-17 18:59 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
@@ -273,7 +273,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/pages/din-gratisprodukt{% for line in line_items limit: 1 %}{% if line.product.handle != blank %}?produkt={{ line.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
+                    <a href="https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;utm_medium=orderbekraftelse&amp;utm_campaign=tackigen{% for line in line_items limit: 1 %}{% if line.product.handle != blank %}&amp;produkt={{ line.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
                   </td>
                 </tr>
               </table>
@@ -600,11 +600,11 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 19:53 den 15 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;amp;utm_medium=orderbekraftelse&amp;amp;utm_campaign=tackigen&amp;amp;produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -612,7 +612,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 22 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1000,7 +1000,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/pages/din-gratisprodukt{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}?produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
+                    <a href="https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;utm_medium=fraktbekraftelse&amp;utm_campaign=tackigen{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}&amp;produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
                   </td>
                 </tr>
               </table>
@@ -1254,11 +1254,11 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 19:53 den 15 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;amp;utm_medium=fraktbekraftelse&amp;amp;utm_campaign=tackigen&amp;amp;produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1266,7 +1266,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 22 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1990,7 +1990,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="https://baverbutiken.se/pages/din-gratisprodukt{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}?produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
+                    <a href="https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;utm_medium=levererad&amp;utm_campaign=tackigen{% for line in fulfillment.fulfillment_line_items limit: 1 %}{% if line.line_item.product.handle != blank %}&amp;produkt={{ line.line_item.product.handle }}{% endif %}{% endfor %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Snurra hjulet</a>
                   </td>
                 </tr>
               </table>
@@ -2238,11 +2238,11 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 19:53 den 15 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/din-gratisprodukt?utm_source=mejl&amp;amp;utm_medium=levererad&amp;amp;utm_campaign=tackigen&amp;amp;produkt=axelbalte-for-trimmer-justerbart-nylonbalte&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Snurra hjulet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -2250,7 +2250,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 22 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
