@@ -202,9 +202,11 @@ Axel Odhner, Matstrumpor.se, [mobil]
 
 **Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail kom fram. Frågan står kvar: betalt story-samarbete inför jul, två lådor på väg om du vill testa först. /Axel"
 
-## 14. Outreach-mallen (generell)
+## 14. Mallen för de sju reserverna (och alla nya namn)
 
-Ur kursen behåller vi det som är affärsmässigt: säg direkt att det är ett betalt uppdrag, erbjud produkten så hon kan testa innan hon svarar, be om ett kort möte, och ta priset i mötet. Det vi stryker på Axels order är den inställsamma öppningen och alla påståenden om hur mycket vi sålt. Under 100 ord.
+Samma ton som de tre första: vad vi vill köpa, varför henne, att det är arvode och inte produkt mot inlägg, ett möte. Inga säljsiffror, inga dagar, ett arvode. Under 100 ord.
+
+**Direkt till henne**
 
 Ämne: Betalt story-samarbete inför jul
 
@@ -212,12 +214,28 @@ Hej [Förnamn],
 
 jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus rätt för oss att använda videon i våra annonser.
 
-Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. [En rad om varför just henne: publiken, kanalen, eller något hon gör som passar.]
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. [VARFÖR HENNE]
 
 Det här är ett betalt uppdrag med ett arvode som täcker både stories och annonsrätt, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
+
+**Till byrå:** samma text, men "Hej," utan namn, hon omnämns i tredje person, och sista stycket slutar med "Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt."
+
+**Kort DM-variant** när ingen mailadress finns: "Hej [Förnamn], Axel på Matstrumpor.se här. Jag vill köpa ett betalt story-samarbete av dig inför jul, stories plus rätt att köra videon som vår annons. Vart kan jag maila detaljerna, och får jag skicka två lådor som prov?"
+
+**Raden och adressen per person**
+
+| Person | Skicka till | [VARFÖR HENNE] | Extra rad |
+|---|---|---|---|
+| Margareta Hallin | 50something.se/pages/kontakt eller DM @50something.se | Din publik, kvinnor över 50, är exakt de som köper den. | |
+| Agneta Sjödin | Byråvariant: hello@frontagency.se + formuläret på agnetasjodin.com | Agnetas publik är samma som våra köpare, kvinnor 45–65. | |
+| Sofia Åhman | Formuläret på sofiaahman.se | Din publik, kvinnor över 50, är exakt de som köper den. | Vi känner till SVT:s regler om reklam runt sändningar, säg direkt om det stoppar det här i höst. |
+| Helena Lyth | Byråvariant: hej@proad.se, ange "samarbete Helena Lyth" | Helenas publik matchar våra köpare, kvinnor 45–54, och hon är den som kan december. | |
+| Josefin Crafoord | DM @josefincrafoord, i andra hand info@kvinnligatalare.se | Tonen i din kanal passar lådan, och du pratar med precis dem som köper den. | |
+| Anna Bennich | Formuläret på annabennich.se | Din publik är samma som våra köpare, och de litar på dig. | |
+| Mia Törnblom | michael@mtledarskap.se eller mtgruppen.com/kontakt | Din publik är samma som våra köpare, kvinnor 45–60. | Säg direkt om det här inte är något du gör. |
 
 **I mötet:** två minuter om brandet, resten frågor om henne och hennes följare. Priset sist, och först efter att hon fått lådan.
 
