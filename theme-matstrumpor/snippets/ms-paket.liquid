@@ -193,10 +193,11 @@
                 "egen" = sidans egen sort i den variant som är vald ovanför
                 (5 eller 3 par); de andra sorterna bär sitt variant-id.
               {%- endcomment -%}
+              {%- assign betalda = antal | minus: bogo -%}
               <span class="ms-paket__lador">
                 {%- for n in (1..antal) -%}
                   <span class="ms-paket__lada">
-                    <span class="ms-paket__lada-etikett">Låda {{ n }}{% if n > antal | minus: bogo %} · gratis{% endif %}</span>
+                    <span class="ms-paket__lada-etikett">Låda {{ n }}{% if n > betalda %} · gratis{% endif %}</span>
                     <select class="ms-paket__sort" data-lada="{{ n }}" aria-label="Sort i låda {{ n }}">{{ sort_options }}</select>
                   </span>
                 {%- endfor -%}
