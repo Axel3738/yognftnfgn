@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-17",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: no change, and that is the rule working. CARASHELL_SE_Taköverdraget stays at 3 400 kr/day — 3-day profit 23.2 % sits in the 16–25 % hold band, which is exactly where we want it after two nights of raises (2 400 → 2 850 → 3 400 kr)",
+    "The new CARASHELL_SE_Taköverdraget LISTICLE campaign is too early to judge: 511 kr and 2 purchases on its first day, ROAS 4.42. The gate is 300 kr AND 3 purchases, so no verdict — but that ROAS is above the main campaign's 2.62 and worth watching tomorrow",
+    "Nothing paused, nothing activated, no ad killed. SP_2_1 is still the benchmark (1 131 kr, 5 purchases, CPA 226 kr, 36 % of profit contribution); CS_1_H1 and SP_4_1 now also clear the gate as winners",
+    "All seven image ads from Wednesday's batch #3 are live and spending — the 14:05 delivery run took them. PD_6_1 and CS_5_1 already have a purchase each",
+    "No brief day (Thursday). Next brief day: Sunday 2026-09-20"
+  ],
+  "siffror": { "spend_7d": 10882, "kop_7d": 27, "roas_7d": 2.86, "vinstbidrag_7d": 6440 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-18",
+  "varningar": [
+    "Profit is drifting down as the budget climbs: 29 % three days ago, 23.2 % now. That is normal when scaling and the rules handle it — the budget holds until profit goes back above 25 %, and drops 30 % if it falls under 16 %",
+    "Still no editor assigned to CaraShell. The three video briefs from batch #2 have been sitting in Draft since 14 September"
+  ]
+}
