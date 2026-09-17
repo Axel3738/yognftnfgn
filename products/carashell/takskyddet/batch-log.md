@@ -692,3 +692,37 @@ Två spärrar i regeln, båda testade:
 
 Nya spår som föds (fler landningssidetyper) läggs till i `SIDOSPAR` med datum
 och skäl — listan är inte en gissning om framtiden, den är en logg.
+
+---
+
+## Norge-runda 2026-09-17 (`/ops-oversatt carashell/takskyddet`) — STOPP på bilderna
+
+Sju rader i `SE-ACTIVE to be translated` (batch #3: `PD_6_1`, `PD_7_1`, `CS_5_1`,
+`CS_6_1`, `SP_5_1`, `SP_6_1`, `SP_7_1`, alla bild). Leveransrundan kom igenom i
+dag sedan `tools/lib/sidokampanjer.mjs` lärt kön att sålla bort LISTICLE-kampanjen.
+**Ingen laddades upp.** Noll HeyGen-krediter.
+
+✅ **Norska priset är utrett** — det upphäver anteckningen från 2026-09-14.
+Mätt live samma dag mot `carashell.se/nb/products/takskyddet?country=NO`:
+`"price":110600`, `"compare_at_price":138250`, `"currencyCode":"NOK"`. Alltså
+**1 106 kr / 1 382,50 kr / spar 276,50 kr / 20 %**, lika för alla nio storlekar.
+⚠️ **Rabattprocenten skiljer sig mellan marknaderna** — 23 % i Sverige, 20 % i
+Norge. Översätt aldrig den svenska procenten; räkna alltid ur NOK-talen.
+
+⛔ **Stoppet:** sedan textlagret (`factory/bild-text.py`) togs i drift 2026-09-15
+bär OPS-bildannonserna inbränd svensk text och SEK-priser.
+`pipeline/oversatt-bild.py` får inte bort den texten — den nya norska ritas
+ovanpå den gamla svenska, som syns kvar. Mätt på tre av sju: `SP_6_1`
+dubbelexponerad rubrik, `CS_5_1` och `CS_6_1` med `1 129 kr` kvar bakom det nya
+priset (och `CS_5_1` tappade underraden helt). Felet sitter i suddsteget som är
+gemensamt för alla sju. Formdetektorn missar dessutom band och etiketter:
+`PD_7_1` hittar 3 former av 5, och citatkortet i `SP_7_1`/`SP_5_1` får fler rader
+än det har så Lars citat blir kvar på svenska.
+
+En prisbricka som visar både 1 129 kr och 1 106 kr för en norsk kund är värre än
+ingen annons. Raderna ligger därför kvar i kön, ingen Notion-status ändrades.
+Hela diagnosen med föreslagen rotorsak: `market-expansion/ops/carashell/2026-09-17/BILDSTOPP.md`.
+
+**Det som är klart och återanvänds:** `adcopy-NO.json` (primary/headline/
+description för alla sju), `bildtexter-NO.json` (bildtexterna rad för rad) och
+tre-frågorstestet i `oversatt-output.json`. Copyn behöver inte skrivas om.

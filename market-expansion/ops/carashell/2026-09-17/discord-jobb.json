@@ -1,0 +1,21 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-17",
+  "lage": "oversatt",
+  "server": "CaraShell",
+  "gjort": [
+    "Norway round for the roof cover: 7 rows in the queue, Norwegian copy written for all 7, but NOTHING was uploaded.",
+    "The Norwegian price is now settled and verified live: 1 106 kr, was 1 382,50 kr, save 276,50 kr = 20 percent. The Swedish numbers do not carry over - the discount is 23 percent in Sweden and 20 percent in Norway.",
+    "HeyGen credits used: 0 before -> 0 after. Image queue only."
+  ],
+  "varningar": [
+    "STOPPED on the images. Since 2026-09-15 the OPS image ads carry burned-in Swedish text and prices, and the image translator cannot erase that text - it draws the Norwegian text on top and the Swedish stays visible underneath. Checked three of seven, same fault in all three: SP_6_1 has a double-exposed headline, CS_5_1 and CS_6_1 show the old 1 129 kr behind the new 1 106 kr.",
+    "A price badge showing both 1 129 kr and 1 106 kr to a Norwegian customer is worse than no ad, so nothing went live and no Notion row was moved. The 7 rows stay in SE-ACTIVE to be translated.",
+    "The detector also misses shapes on these images: PD_7_1 loses its bottom band and left label, and the quote card on SP_7_1 and SP_5_1 keeps Lars's review in Swedish.",
+    "This needs a code fix in pipeline/oversatt-bild.py so it recognises how factory/bild-text.py renders text. Until then no OPS image ad with burned-in text can be translated automatically. The written details are in market-expansion/ops/carashell/2026-09-17/BILDSTOPP.md.",
+    "The Norwegian copy and image texts are saved and will be reused - none of that work is lost."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-18"
+}
