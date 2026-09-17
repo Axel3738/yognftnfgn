@@ -156,8 +156,11 @@ förbättringen rakt av i stället.
   värdet `One Size` på alla strumpor, så Dawns variantväljare visar det under
   par-valet och det följer med till varukorg och kassa. Variant-id:n rörs inte.
   Skriptet kunde inte köras 2026-09-16 — se nästa punkt.
-- **Nycklarna till matstrumpor.se saknades i environmentet 2026-09-16.** Miljön
-  hade tretton andra butiker men ingen `SHOPIFY_*_MATSTRUMPOR`. Butiken är
-  `1r46tp-qx.myshopify.com`. Utan de tre variablerna går varken uppladdning
-  eller produktändringar att köra härifrån.
+- **Nycklarna till matstrumpor.se** ligger i environmentet som
+  `SHOPIFY_SHOP_1r46tp_qx`, `SHOPIFY_CLIENT_ID_1r46tp_qx` och
+  `SHOPIFY_CLIENT_SECRET_1r46tp_qx` (Axel 2026-09-17; de saknades helt dagen
+  innan). `tools/shopify.mjs` läser både det namnet och `MATSTRUMPOR`. Butiken är
+  `1r46tp-qx.myshopify.com`. **2026-09-17 svarade Shopify `app_not_installed`:**
+  appen som nycklarna tillhör är inte installerad på butiken. Det görs i Shopifys
+  Dev Dashboard av Axel — kör `npm run tema:shop` för att se om det är gjort.
 - Klaviyo är installerat. Rör inte dess kod.

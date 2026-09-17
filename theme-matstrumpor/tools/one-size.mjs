@@ -26,7 +26,12 @@ const skarpt = process.argv.includes('--skarpt');
 // Saknad nyckel eller fel butik ska läsas som en mening, inte som en krasch.
 for (const händelse of ['uncaughtException', 'unhandledRejection']) {
   process.on(händelse, fel => {
-    console.error(`❌ ${fel?.message ?? fel}`);
+    const rad = String(fel?.message ?? fel).replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    console.error(`❌ ${rad.slice(0, 300)}`);
+    if (/app_not_installed/.test(rad)) {
+      console.error('   Appen som nycklarna tillhör är inte installerad på matstrumpor.se.');
+      console.error('   Installera den på butiken i Shopifys Dev Dashboard (Apps → appen → Install) och kör igen.');
+    }
     process.exit(1);
   });
 }

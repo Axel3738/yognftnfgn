@@ -3,7 +3,11 @@
 // kör GraphQL. Butiksnyckeln är låst till MATSTRUMPOR med flit — det här
 // verktyget ska aldrig kunna råka peka på Bäverbutiken.
 
-const NYCKEL = 'MATSTRUMPOR';
+// Butiken kan ligga under två namn i environmentet: MATSTRUMPOR (som docs säger)
+// eller butikens myshopify-id med understreck, som Axel la in 2026-09-17.
+// Vilket som än används verifieras primärdomänen i kontrolleraButik().
+const NYCKLAR = ['MATSTRUMPOR', '1r46tp_qx'];
+const nyckel = () => NYCKLAR.find(n => process.env[`SHOPIFY_SHOP_${n}`]);
 const API_VERSION = '2026-07';
 const FÖRVÄNTAD_DOMÄN = 'matstrumpor.se';
 const MYSHOPIFY = '1r46tp-qx.myshopify.com'; // avläst ur live-sajtens Shopify.shop 2026-09-16
@@ -11,14 +15,14 @@ const MYSHOPIFY = '1r46tp-qx.myshopify.com'; // avläst ur live-sajtens Shopify.
 const domän = v => (v.includes('.') ? v : `${v}.myshopify.com`);
 
 export function butiksDomän() {
-  const v = process.env[`SHOPIFY_SHOP_${NYCKEL}`];
-  if (!v) {
+  const n = nyckel();
+  if (!n) {
     throw new Error(
-      `SHOPIFY_SHOP_${NYCKEL} saknas i environmentet. Butiken är ${MYSHOPIFY} — lägg in ` +
-      `SHOPIFY_SHOP_${NYCKEL}, SHOPIFY_CLIENT_ID_${NYCKEL} och SHOPIFY_CLIENT_SECRET_${NYCKEL} i environmentet.`,
+      `Ingen nyckel till matstrumpor.se i environmentet (letade efter SHOPIFY_SHOP_${NYCKLAR.join(' och SHOPIFY_SHOP_')}). ` +
+      `Butiken är ${MYSHOPIFY} — lägg in SHOPIFY_SHOP_, SHOPIFY_CLIENT_ID_ och SHOPIFY_CLIENT_SECRET_ med ett av namnen.`,
     );
   }
-  return domän(v);
+  return domän(process.env[`SHOPIFY_SHOP_${n}`].replace(/\/+$/, ''));
 }
 
 let cachadToken = null;
@@ -27,10 +31,11 @@ export async function token() {
   if (cachadToken) return cachadToken;
 
   const butik = butiksDomän(); // kastar med hela listan på variabler om butiken saknas
-  const klientId = process.env[`SHOPIFY_CLIENT_ID_${NYCKEL}`];
-  const hemlighet = process.env[`SHOPIFY_CLIENT_SECRET_${NYCKEL}`];
+  const n = nyckel();
+  const klientId = process.env[`SHOPIFY_CLIENT_ID_${n}`];
+  const hemlighet = process.env[`SHOPIFY_CLIENT_SECRET_${n}`];
   if (!klientId || !hemlighet) {
-    throw new Error(`SHOPIFY_CLIENT_ID_${NYCKEL} / SHOPIFY_CLIENT_SECRET_${NYCKEL} saknas i environmentet (butiken ${MYSHOPIFY}).`);
+    throw new Error(`SHOPIFY_CLIENT_ID_${n} / SHOPIFY_CLIENT_SECRET_${n} saknas i environmentet (butiken ${MYSHOPIFY}).`);
   }
 
   const svar = await fetch(`https://${butik}/admin/oauth/access_token`, {

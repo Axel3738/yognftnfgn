@@ -6,6 +6,19 @@
 //   node theme-matstrumpor/tools/atkomst.mjs
 import { gql, kontrolleraButik } from './shopify.mjs';
 
+// Saknad nyckel, oinstallerad app eller fel butik ska läsas som en mening.
+for (const händelse of ['uncaughtException', 'unhandledRejection']) {
+  process.on(händelse, fel => {
+    const rad = String(fel?.message ?? fel).replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    console.error(`❌ ${rad.slice(0, 300)}`);
+    if (/app_not_installed/.test(rad)) {
+      console.error('   Appen som nycklarna tillhör är inte installerad på matstrumpor.se.');
+      console.error('   Installera den på butiken i Shopifys Dev Dashboard (Apps → appen → Install) och kör igen.');
+    }
+    process.exit(1);
+  });
+}
+
 const butik = await kontrolleraButik();
 console.log(`Butik: ${butik.name} · ${butik.myshopifyDomain}\n`);
 
