@@ -63,6 +63,13 @@
         "judgeme_stjarnor": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
+        },
+        "ms_storlek": {
+          "type": "text",
+          "settings": {
+            "text": "Passar strl 36–44 – materialet är stretchigt och ger lite extra åt båda hållen.",
+            "text_style": "subtitle"
+          }
         }
       },
       "block_order": [
@@ -71,6 +78,7 @@
         "judgeme_stjarnor",
         "price",
         "variant_picker",
+        "ms_storlek",
         "ms_paket",
         "buy_buttons",
         "ms_trust",

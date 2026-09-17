@@ -157,6 +157,15 @@ förbättringen rakt av i stället.
   par-valet och det följer med till varukorg och kassa. Variant-id:n rörs inte.
   **Kört skarpt 2026-09-17:** Sushi-Strumpor, Pizza, Hamburgare, Donut och den
   opublicerade dubbletten "Sushistrumpor" fick alternativet; verifierat på sajten.
+- **Storleksraden** (Axel 2026-09-17, spannet 36–44 bekräftat): ett Dawn-textblock
+  `ms_storlek` (stil *subtitle*) direkt under variantväljaren, före paketkorten:
+  "Passar strl 36–44 – materialet är stretchigt och ger lite extra åt båda hållen."
+  Ligger i `templates/product.dawn.json` som referens. Skrivningen till det
+  publicerade temat stoppades av sessionens behörighetsläge 2026-09-17 — se
+  chatten/HANDOFF för om den blev gjord. Vanliga frågor säger samma spann.
+- **A/B-motorn ligger live men inga tester rullar** (avläst 2026-09-17: `tests: []`).
+  Trafiken var 68 besökare/dag och 4,45 % konvertering senaste 30 dagarna — för
+  lite för att mäta annat än enorma lyft. Kör `/abtest planera` innan något test.
 - **Nycklarna till matstrumpor.se** ligger i environmentet som
   `SHOPIFY_SHOP_1r46tp_qx`, `SHOPIFY_CLIENT_ID_1r46tp_qx` och
   `SHOPIFY_CLIENT_SECRET_1r46tp_qx` (Axel 2026-09-17; de saknades helt dagen
