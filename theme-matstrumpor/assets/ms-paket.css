@@ -178,7 +178,7 @@
 .ms-paket__lada-etikett { font-size: var(--ms-fs-xs); color: var(--ms-ink-soft); }
 .ms-paket__lada-val { font-size: var(--ms-fs-md); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .ms-paket__lada-pil { display: grid; place-items: center; width: 22px; color: var(--ms-ink-soft); }
-.ms-paket__lada-pil svg { width: 18px; height: 18px; transform: rotate(90deg); }
+.ms-paket__lada-pil svg { width: 18px; height: 18px; }
 .ms-paket__sort {
   position: absolute;
   inset: 0;
