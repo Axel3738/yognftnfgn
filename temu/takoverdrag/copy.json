@@ -1,0 +1,54 @@
+{
+  "enStorlek": {
+    "titel": "Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan",
+    "problemH": "Taket är det du aldrig ser – och det som kostar mest att laga",
+    "problemP": "Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, tätmassan mjuknar, och när fukten väl tagit sig in genom taket är det inte en tvätt som krävs utan en reparation.",
+    "losningH": "Täck bara taket – inte hela vagnen",
+    "losningP": "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. Det här täcker bara den yta som faktiskt tar stryk. Silverskiktet gör att solen tar på ytan i stället för på taket, och regnet rinner av den belagda 210D-oxfordväven i stället för att bli stående. Överdragets egna remmar sitter på alla fyra sidor, är 2,5 m långa, går att justera efter din vagn och hakas fast i en krok i nederkant – och utöver dem följer två förstärkta 10,5 m-spännremmar med, utan extra kostnad.",
+    "bullets": [
+      "<strong>Vattnet rinner av i stället för att bli stående</strong> – silverbelagd 210D-oxfordväv, inte tunn presenning",
+      "<strong>Sitter kvar när det blåser</strong> – remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn",
+      "<strong>Täcker takytan på en normalstor vagn</strong> – 6,5 × 3 m",
+      "<strong>Två extra spännremmar ingår</strong> – förstärkta 10,5 m, utöver överdragets egna, utan extra kostnad",
+      "<strong>Hanteras av en person</strong> – bara taket, inte hela vagnen, ryms i medföljande förvaringspåse"
+    ],
+    "storleksrad": null,
+    "seoTitel": "Taköverdrag Husvagn 6,5 × 3 m – Silverbelagd 210D",
+    "seoText": "Skyddar husvagnens tak mot regn, löv och sol. Silverbelagd 210D-väv, justerbara remmar på fyra sidor och krok. Två förstärkta 10,5 m-remmar ingår.",
+    "taggar": [
+      "Husvagn",
+      "Husbil",
+      "Överdrag",
+      "Camping",
+      "Vinterförvaring"
+    ]
+  },
+  "nioStorlekar": {
+    "titel": "Taköverdrag Husvagn – 9 Längder, 3 m Brett – Skyddar Den Dyraste Ytan",
+    "problemH": "Taket är det du aldrig ser – och det som kostar mest att laga",
+    "problemP": "Regnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, tätmassan mjuknar, och när fukten väl tagit sig in genom taket är det inte en tvätt som krävs utan en reparation.",
+    "losningH": "Täck bara taket – inte hela vagnen",
+    "losningP": "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. Det här täcker bara den yta som faktiskt tar stryk. Silverskiktet gör att solen tar på ytan i stället för på taket, och regnet rinner av den belagda 210D-oxfordväven i stället för att bli stående. Överdragets egna remmar sitter på alla fyra sidor, är 2,5 m långa, går att justera efter din vagn och hakas fast i en krok i nederkant – och utöver dem följer två förstärkta 10,5 m-spännremmar med, utan extra kostnad. Nio längder finns, alla 3 m breda, så du väljer den som matchar ditt tak.",
+    "bullets": [
+      "<strong>Vattnet rinner av i stället för att bli stående</strong> – silverbelagd 210D-oxfordväv, inte tunn presenning",
+      "<strong>Sitter kvar när det blåser</strong> – remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn",
+      "<strong>Matchar taket oavsett vagnens längd</strong> – nio längder, 5,5–13,5 m, alla 3 m breda",
+      "<strong>Två extra spännremmar ingår</strong> – förstärkta 10,5 m, utöver överdragets egna, utan extra kostnad",
+      "<strong>Hanteras av en person</strong> – bara taket, inte hela vagnen, ryms i medföljande förvaringspåse"
+    ],
+    "storleksrad": "Nio längder, alla 3 m breda – mät takets längd från gavel till gavel och välj den storlek som ligger närmast över, inte under.",
+    "seoTitel": "Taköverdrag Husvagn – 9 Längder, 3 m Brett",
+    "seoText": "Skyddar husvagnens tak mot regn, löv och sol. Silverbelagd 210D-väv, justerbara remmar och krok. Nio längder, alla 3 m breda – välj efter din vagn.",
+    "taggar": [
+      "Husvagn",
+      "Husbil",
+      "Överdrag",
+      "Camping",
+      "Vinterförvaring"
+    ],
+    "alt": {
+      "storlekstabell": "Infografik som visar taköverdragets nio längder, 5,5–13,5 meter, alla 3 meter breda"
+    }
+  },
+  "_not": "enStorlek ligger live i dag — bara 6,5 × 3 m går att köpa. nioStorlekar sätts av sida.mjs --nio när varianter.mjs har skapat de nio storlekarna, inte innan: en sida som lovar nio längder men bara säljer en är ett löfte butiken inte kan hålla."
+}
