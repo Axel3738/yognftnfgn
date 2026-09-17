@@ -106,6 +106,14 @@ Källmappen saknar CS_1 och G_2 — de koncepten har två hooks i stället för 
 kvar "GE BORT GLÄDJE" i knappen; en skarpare prompt tog bort den.
 Alla 8 granskade visuellt: rätt priser, rätt stavning, ingen svensk text kvar.
 
+**Launchade i koncept-adseten med `no-image-ads.mjs`** (sekventiellt, ett
+produkt-jobb i taget — kontot rate-limitade hela vägen, fel 17 med sex omförsök
+per adset). **Verifierat mot API:t efter att spärren släppt: 8/8 bildannonser
+ACTIVE.** Slutläge per adset: Fågelmatare CS/GT/PD/SP 4 annonser vardera (3 video
++ 1 bild); Solcellslampa PD/SP 4, CS/G 3 (2 video + 1 bild). Totalt 30 annonser
+live. Skriptet vill ha filnamnet `<slug>_<K>_2_1_NO.png` — kopior med det namnet
+ligger bredvid `NO_<slug>_<K>_2_1.png` i `bilder-no/`.
+
 ## Fas 3.5 — Drive-leverans
 
 MAKE TO NORWAY fick två nya mappar, skapade av rutinen själv:
