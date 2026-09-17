@@ -26,14 +26,20 @@ export function handleUrLank(lank) {
   return null;
 }
 
-/** Sidans JSON-adress. Behåller värd och språkprefix om länken bär dem. */
+/**
+ * Sidans JSON-adress. Behåller värd och språkprefix om länken bär dem, och
+ * `?country=XX` — Shopify svarar då i det landets valuta (mätt 2026-09-17 på
+ * carashell.com: ?country=GB → 152.00 GBP, ?country=CA → 284.00 CAD, utan
+ * parametern → marknadens basvaluta USD). Andra sökparametrar (_pos, _psq …) tas bort.
+ */
 export function produktJsonUrl(lank) {
   const handle = handleUrLank(lank);
   if (!handle) return null;
   const s = String(lank ?? '').trim();
   if (/^https?:\/\//i.test(s)) {
     const u = s.split(/[?#]/)[0].replace(/\/+$/, '');
-    return `${u}.json`;
+    const land = /[?&]country=([A-Za-z]{2})\b/.exec(s)?.[1];
+    return `${u}.json${land ? `?country=${land.toUpperCase()}` : ''}`;
   }
   return `${BUTIK}/products/${handle}.json`;
 }

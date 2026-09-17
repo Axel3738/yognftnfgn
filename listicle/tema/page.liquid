@@ -2,6 +2,30 @@
   templates/page.listicle.liquid — skrivs av listicle/butik.mjs, ändra inte här.
   Sidmallen "listicle": använder layouten utan header/footer och skriver ut
   sidans innehåll (hela listiclen ligger i sidans body, inga sektioner).
+
+  Prisplatserna: bär sidan [[PRIS]] / [[JAMFORPRIS]] byts de här, vid varje
+  visning, mot produktens pris i BESÖKARENS valuta (all_products[handle] +
+  money_without_trailing_zeros — samma pris som produktsidan visar). Handlen
+  står i listiclens rot: <div class="lr" data-lp-produkt="…">. Utan platser
+  eller utan handle skrivs innehållet ut som det är. (Byggt 2026-09-17: en
+  marknad med flera valutor och automatisk kursomräkning gör en inbränd
+  siffra fel nästa dag.)
 {%- endcomment -%}
 {% layout 'listicle' %}
-{{ page.content }}
+{%- assign lp_innehall = page.content -%}
+{%- if lp_innehall contains '[[PRIS]]' or lp_innehall contains '[[JAMFORPRIS]]' -%}
+  {%- assign lp_delar = lp_innehall | split: 'data-lp-produkt="' -%}
+  {%- if lp_delar.size > 1 -%}
+    {%- assign lp_handle = lp_delar[1] | split: '"' | first -%}
+    {%- assign lp_produkt = all_products[lp_handle] -%}
+    {%- if lp_produkt.price -%}
+      {%- assign lp_pris = lp_produkt.price | money_without_trailing_zeros -%}
+      {%- assign lp_innehall = lp_innehall | replace: '[[PRIS]]', lp_pris -%}
+      {%- if lp_produkt.compare_at_price > lp_produkt.price -%}
+        {%- assign lp_jmf = lp_produkt.compare_at_price | money_without_trailing_zeros -%}
+        {%- assign lp_innehall = lp_innehall | replace: '[[JAMFORPRIS]]', lp_jmf -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+{{ lp_innehall }}

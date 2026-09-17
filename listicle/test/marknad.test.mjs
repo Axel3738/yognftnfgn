@@ -8,11 +8,82 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { SPRAK, sprakFor, arKantSprak, konceptForSprak, formateraPris, priserI, prisText, svensktDatum, engelsktDatum, valutaFor } from '../sprak.mjs';
-import { tolkaProdukt } from '../produkt.mjs';
+import { SPRAK, sprakFor, arKantSprak, konceptForSprak, formateraPris, priserI, prisText, svensktDatum, engelsktDatum, valutaFor, ersattPrisTokens, harPrisTokens, PRIS_TOKEN, JAMFORPRIS_TOKEN } from '../sprak.mjs';
+import { tolkaProdukt, produktJsonUrl } from '../produkt.mjs';
 import { lasMall, lasKoncept, granskaCopy, byggSida, lasAvSida, copyUrMall, forfattarHtml, sidfotHtml } from '../gempages.mjs';
 import { renderaHtml, somDokument } from '../html.mjs';
-import { marknadForButik, marknadsProduktLank, marknadsSidlank, oversattSida, granskaPublikSida, publiceraMarknad } from '../butik.mjs';
+import { marknadForButik, landForMarknad, marknadsProduktLank, marknadsSidlank, oversattSida, granskaPublikSida, publiceraMarknad, temafiler } from '../butik.mjs';
+
+// ------------------------------------------------------------ länder inom en marknad + prisplatser
+
+test('dollarvalutorna: CAD/AUD/NZD skrivs "$" som Shopify gör på carashell.com, och läses med eller utan landsbokstav', () => {
+  assert.equal(formateraPris(284, 'CAD'), '$284');
+  assert.equal(formateraPris(355, 'NZD'), '$355');
+  assert.deepEqual(priserI('$284 instead of C$356, or 1,065 NZD', 'CAD'), [284, 356, 1065]);
+  assert.deepEqual(priserI('A$286 today', 'AUD'), [286]);
+  assert.deepEqual(priserI('£152 instead of £191', 'CAD'), []);
+});
+
+test('produktJsonUrl behåller ?country= (marknadens valuta) men inte butikens sökparametrar', () => {
+  assert.equal(produktJsonUrl('https://carashell.com/products/takskyddet?country=GB'), 'https://carashell.com/products/takskyddet.json?country=GB');
+  assert.equal(produktJsonUrl('https://carashell.com/products/takskyddet?country=gb&x=1'), 'https://carashell.com/products/takskyddet.json?country=GB');
+  assert.equal(produktJsonUrl('https://baverbutiken.se/products/x?_pos=1&_psq=tak'), 'https://baverbutiken.se/products/x.json');
+});
+
+test('ersattPrisTokens byter [[PRIS]]/[[JAMFORPRIS]] rekursivt och lämnar objektet orört', () => {
+  const copy = { hero: { rubrik: 'Yours is [[PRIS]] instead of [[JAMFORPRIS]]', sammanfattning: ['[[PRIS]] now', 'later [[JAMFORPRIS]]'] }, punkter: [{ knapp: 'Buy → [[PRIS]]' }] };
+  const ut = ersattPrisTokens(copy, { prisText: '£152', jamforprisText: '£191' });
+  assert.equal(ut.hero.rubrik, 'Yours is £152 instead of £191');
+  assert.deepEqual(ut.hero.sammanfattning, ['£152 now', 'later £191']);
+  assert.equal(ut.punkter[0].knapp, 'Buy → £152');
+  assert.equal(copy.hero.rubrik, 'Yours is [[PRIS]] instead of [[JAMFORPRIS]]', 'originalet orört');
+  assert.ok(harPrisTokens(copy) && !harPrisTokens(ut));
+  assert.equal(ersattPrisTokens('[[PRIS]]', { prisText: null }), PRIS_TOKEN, 'utan pristext lämnas platsen');
+});
+
+test('granskaCopy med prisplatser: räknas som produktens pris, stopp när jämförpris saknas', () => {
+  const { platser } = lasMall();
+  const copy = engelskCopy();
+  copy.hero.rubrik = 'We ordered too many roof covers, so yours is [[PRIS]] instead of [[JAMFORPRIS]] while stock lasts';
+  copy.riskfritt.knapp = 'Yes, a roof cover for [[PRIS]] → 90-day guarantee';
+  const gb = { pris: 152, jamforpris: 191, valuta: 'GBP', prisText: '£152', jamforprisText: '£191', url: 'https://carashell.com/products/takskyddet?country=GB' };
+  const g = granskaCopy(copy, gb, platser, { locale: 'en' });
+  assert.deepEqual(g.fel.filter((f) => /priset|JAMFORPRIS/.test(f)), []);
+  assert.ok(!g.varningar.some((v) => /nämner inte priset|jämförpriset/.test(v)), g.varningar.join('\n'));
+  const utanJmf = granskaCopy(copy, { ...gb, jamforpris: null, jamforprisText: null }, platser, { locale: 'en' });
+  assert.ok(utanJmf.fel.some((f) => /\[\[JAMFORPRIS\]\] men produktsidan har inget jämförpris/.test(f)), utanJmf.fel.join('\n'));
+});
+
+test('byggSida och renderaHtml med prisplatser: GemPages-sidan och förhandsvisningen får dagens pris, butikens body behåller platserna + data-lp-produkt', () => {
+  const { mall, platser } = lasMall();
+  const copy = engelskCopy();
+  copy.hero.rubrik = 'We ordered too many roof covers, so yours is [[PRIS]] instead of [[JAMFORPRIS]] while stock lasts';
+  const produkt = { url: 'https://carashell.com/products/takskyddet?country=GB', handle: 'takskyddet', kortTitel: 'Roof Cover', slug: 'takoverdrag-husvagn-husbil-5-5-13-5-m', valuta: 'GBP', prisText: '£152', jamforprisText: '£191' };
+  const { sida, rapport } = byggSida({ mall, platser, produkt, copy, datum: '2026-09-17', locale: 'en', handle: 'takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb' });
+  assert.equal(rapport.handle, 'takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb', 'handle-flaggan vinner över slugen');
+  const texter = lasAvSida(sida).map((r) => String(r.text ?? ''));
+  assert.ok(texter.some((t) => /£152 instead of £191/.test(t)), 'GemPages-sidan bär dagens pris');
+  assert.ok(!texter.some((t) => /\[\[PRIS\]\]/.test(t)));
+  const fasta = Object.fromEntries(['hero', 'punkt1', 'punkt2', 'punkt3', 'punkt4', 'punkt5', 'lyckas', 'arlig'].map((p) => [p, { src: `https://x/${p}.png`, width: 10, height: 10 }]));
+  const fv = renderaHtml({ copy, produkt, bilder: {}, fasta, datum: '2026-09-17', locale: 'en', stil: 'inline' });
+  assert.match(fv, /£152 instead of £191/);
+  assert.match(fv, /<div class="lr" data-lp-produkt="takskyddet">/);
+  const body = renderaHtml({ copy, produkt, bilder: {}, fasta, datum: '2026-09-17', locale: 'en', stil: 'ingen', prisTokens: 'behall' });
+  assert.match(body, /\[\[PRIS\]\] instead of \[\[JAMFORPRIS\]\]/);
+  assert.ok(!/£152/.test(body));
+  assert.match(body, /data-lp-produkt="takskyddet"/);
+});
+
+test('sidmallen byter prisplatserna med Liquid ur data-lp-produkt', () => {
+  const mall = temafiler()['templates/page.listicle.liquid'];
+  assert.match(mall, /\{% layout 'listicle' %\}/);
+  assert.match(mall, /split: 'data-lp-produkt="'/);
+  assert.match(mall, /all_products\[lp_handle\]/);
+  assert.match(mall, /replace: '\[\[PRIS\]\]', lp_pris/);
+  assert.match(mall, /replace: '\[\[JAMFORPRIS\]\]', lp_jmf/);
+  assert.match(mall, /money_without_trailing_zeros/);
+  assert.match(mall, /\{\{ lp_innehall \}\}\s*$/);
+});
 
 // ------------------------------------------------------------ språk + valuta
 
@@ -227,6 +298,15 @@ test('marknadForButik: USA med egen domän, Norge på butikens domän, okänd ma
   // Raden utan locale/valuta får landets standard (lander.mjs).
   const dt = marknadForButik('drytrek', 'NO', { butikerMapp: mapp });
   assert.deepEqual({ locale: dt.locale, valuta: dt.valuta }, { locale: 'nb', valuta: 'NOK' });
+  // Ett land inom marknaden: egen valuta ur landstabellen, egen ?country=, egen sida.
+  const gb = landForMarknad(us, 'gb');
+  assert.deepEqual({ kod: gb.kod, land: gb.land, valuta: gb.valuta, namn: gb.namn, landEn: gb.landEn, egetLand: gb.egetLand, doman: gb.doman }, { kod: 'US', land: 'GB', valuta: 'GBP', namn: 'Storbritannien', landEn: 'United Kingdom', egetLand: true, doman: 'carashell.com' });
+  assert.equal(marknadsProduktLank(gb, 'takskyddet'), 'https://carashell.com/products/takskyddet?country=GB');
+  assert.equal(marknadsSidlank(gb, 'x-lagerrensning-gb'), 'https://carashell.com/pages/x-lagerrensning-gb?country=GB');
+  assert.equal(landForMarknad(us, 'NZ').valuta, 'NZD');
+  assert.equal(landForMarknad(us, 'CA').namn, 'Kanada');
+  assert.equal(landForMarknad(us, 'US'), us, 'marknadens eget land är marknaden själv');
+  assert.throws(() => landForMarknad(us, 'XX'), /Okänt land "XX"/);
   assert.throws(() => marknadForButik('carashell', 'DK', { butikerMapp: mapp }), /ingen marknad DK .*marknader: NO, US/);
   assert.throws(() => marknadForButik('baverbutiken', 'US', { butikerMapp: mapp }), /Bäverbutiken har inga marknader/);
   assert.throws(() => marknadForButik('okand', 'US', { butikerMapp: mapp }), /ingen factory\/butiker\/okand\.yaml/);

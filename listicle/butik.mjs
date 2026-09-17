@@ -35,7 +35,7 @@ import { NYCKELNAMN } from '../mejl/shopify.mjs';
 import { losNycklar, suffixForDoman, storefrontLosenord, mintaToken, normaliseraDoman } from '../factory/token.mjs';
 import { lasYaml } from '../factory/yaml.mjs';
 import { domanForMarknad, lankFor, arOpsMarknad } from '../factory/opsmarknader.mjs';
-import { standardLocale, lokalValuta, landsnamnSv } from '../factory/lander.mjs';
+import { standardLocale, lokalValuta, landsnamnSv, landEn, arKandLandskod } from '../factory/lander.mjs';
 import { CSS } from './html.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
@@ -120,9 +120,30 @@ export function marknadForButik(butikId, kod, { butikerMapp = join(ROT, 'factory
   return { kod: k, land: k, locale, valuta, doman, egen, namn: landsnamnSv(k), butik: id, annonsmarknad: arOpsMarknad(k) };
 }
 
-/** Marknadens produktlänk för knapparna: egen domän → https://carashell.com/products/x?country=US, annars /en/-mappen. */
+/**
+ * Ett LAND inom en marknad (Shopify: en marknad med flera länder och lokal
+ * valuta). CaraShells marknad "USA" täcker US, GB, CA, AU och NZ på
+ * carashell.com med automatisk kursomräkning (mätt 2026-09-17) — samma
+ * språk, samma domän, men eget pris i egen valuta och egen adress med
+ * `?country=GB`. Landet får därför en EGEN sida (handle + "-gb"), inte en
+ * översättning: översättningen är per språk och marknad, inte per land.
+ *   landForMarknad(marknadForButik('carashell', 'US'), 'GB')
+ *   → { …marknad, land: 'GB', valuta: 'GBP', namn: 'Storbritannien', landEn: 'United Kingdom', egetLand: true }
+ */
+export function landForMarknad(marknad, land) {
+  const k = String(land ?? '').trim().toUpperCase();
+  if (!k || k === marknad.land) return marknad;
+  if (!arKandLandskod(k)) throw new Error(`Okänt land "${land}" — lägg till det i factory/lander.mjs (EN tabell).`);
+  const valuta = lokalValuta(k);
+  if (!valuta) throw new Error(`Landet ${k} saknar valuta i factory/lander.mjs.`);
+  return { ...marknad, land: k, valuta, namn: landsnamnSv(k), landEn: landEn(k), inomMarknad: marknad.kod, egetLand: true };
+}
+
+/** Marknadens produktlänk för knapparna: egen domän → https://carashell.com/products/x?country=US, annars /en/-mappen. Ett land inom marknaden får sin egen ?country=. */
 export function marknadsProduktLank(marknad, handle) {
-  return lankFor({ doman: marknad.doman, handle, kod: marknad.kod, egenDoman: marknad.egen });
+  const bas = lankFor({ doman: marknad.doman, handle, kod: marknad.kod, egenDoman: marknad.egen });
+  if (marknad.egetLand && /[?&]country=[A-Z]{2}$/.test(bas)) return bas.replace(/country=[A-Z]{2}$/, `country=${marknad.land}`);
+  return bas;
 }
 
 /** Marknadens sidlänk (samma regel som produktlänken — ?country= pekar ut marknaden). */
@@ -364,15 +385,17 @@ export const HUVUDLAND = 'SE';
 /**
  * publicera({ butik: 'baverbutiken', handle, titel, body, maste: [svensk hero-rubrik i HTML], torr, logg })
  *   → { butik, tema, sida, kontroll }
+ * `lasBas` + `lasSokvag` läser sidan tillbaka på en annan adress än butikens
+ * egen (ett lands sida: https://carashell.com + /pages/x-gb?country=GB).
  */
-export async function publicera({ butik: butikId, handle, titel, body, maste = [], farInte = [], publicerad = true, torr = false, logg = console.log, env = process.env, fetchFn = fetch }) {
+export async function publicera({ butik: butikId, handle, titel, body, maste = [], farInte = [], publicerad = true, torr = false, lasBas = null, lasSokvag = null, logg = console.log, env = process.env, fetchFn = fetch }) {
   const butik = losButik(butikId, env);
   logg(`Butik: ${butik.id} (${butik.shop}, nycklar ${butik.kalla})`);
   const klient = await skapaKlient(butik, { fetchFn });
   logg(`   ansluten: ${klient.namn} · ${klient.bas} · scopes ok`);
   const tema = await installeraTema(klient, { torr, logg });
   const sida = await publiceraSida(klient, { handle, titel, body, publicerad, torr, logg });
-  const kontroll = torr ? null : await kontrolleraSida(klient, handle, { logg, sokvag: `/pages/${handle}?country=${HUVUDLAND}`, maste, farInte });
+  const kontroll = torr ? null : await kontrolleraSida(klient, handle, { logg, bas: lasBas, sokvag: lasSokvag ?? `/pages/${handle}?country=${HUVUDLAND}`, maste, farInte });
   if (kontroll && !kontroll.ok) throw new Error(`Sidan ligger uppe men ser inte rätt ut: ${kontroll.fel.join('; ')}`);
   return { butik: { id: butik.id, shop: klient.shop, namn: klient.namn, bas: klient.bas }, tema: { id: tema.tema.id, namn: tema.tema.name, skrivna: tema.skrivna }, sida, kontroll };
 }

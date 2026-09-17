@@ -548,6 +548,38 @@ header/footer; carashell.se `?country=SE` visar fortfarande svenska.
 Annonserna i Magiborsten UK (US-kampanjen) pekar på den här adressen när
 Axel vill testa LP:n i USA.
 
+**Fyra länder till, 2026-09-17** (Axels fråga: "en till fast för dessa
+marknader" — UK, Kanada, Australien, Nya Zeeland): de är inte egna marknader i
+Shopify utan **länder i marknaden USA** (en marknad, lokal valuta, automatisk
+kursomräkning — mätt med `markets`-frågan), så varje land fick en **egen sida**
+med engelska i grundspråket, `--marknad US --land <CC>`:
+
+| Land | Adress | Pris i dag (rör sig med kursen) |
+|---|---|---|
+| UK | https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb?country=GB | £152 / £191 |
+| Kanada | https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-ca?country=CA | $284 / $356 CAD |
+| Australien | https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-au?country=AU | $286 / $358 AUD |
+| Nya Zeeland | https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-nz?country=NZ | $355 / $444 NZD |
+
+Priset står INTE i copyn: `[[PRIS]]`/`[[JAMFORPRIS]]` byts av butiken vid
+varje visning i besökarens valuta (Axels skärmdump sa NZ$354 på morgonen,
+sidan $355 på kvällen — därför). Copyn per land: UK säger caravan, autumn,
+damp check; Australien och Nya Zeeland caravan utan månadsnamn (södra
+halvklotet), Australien med solen bredvid regnet; Kanada är US-copyn med
+"Free shipping to Canada". Samma bilder, noll credits. Läst tillbaka per land
+med `?country=`: rätt hero med dagens pris, inga platser kvar, ingen
+header/footer.
+
+⚠️ **Produktsidan ändrades samma dag** (annan session): nio storlekar
+5,5–13,5 m / 18–44 ft, titeln "Taköverdrag Husvagn & Husbil 5,5–13,5 m" /
+"Roof Cover … 18–44 ft (5.5–13.5 m)". SE- och US-copyn på listiclen rättade
+("6,5 × 3 m" / "up to 21 ft" → nio storlekar) och omkörda; handlen behölls
+ur `plan.json` (titeln hade annars gett en ny adress). ⚠️ Bäverbutikens
+produkt har nu också nio storlekar men med **olika pris per storlek**
+(1 129 → 2 239 kr, jämförpris 1 469 på alla) — Bäverbutikens listicle säger
+fortfarande "1 129 kr istället för 1 469 kr", vilket bara gäller de två
+minsta storlekarna. Inte rättad här; Axels beslut.
+
 ---
 
 ## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms

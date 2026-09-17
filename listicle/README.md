@@ -164,6 +164,49 @@ Första körningen 2026-09-16: takskyddet och termoskyddet →
 https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US
 och https://carashell.com/pages/termoskydd-husbil-211-171-cm-lagerrensning?country=US.
 
+### Länder inom en marknad (`--marknad US --land GB`) och prisplatserna
+
+Axels fråga 2026-09-17: samma listicle "för UK, Kanada, Australien och Nya
+Zeeland". I Shopify är de inte egna marknader — marknaden **USA** täcker
+US, GB, CA, AU och NZ på carashell.com med lokal valuta och **automatisk
+kursomräkning** (mätt 2026-09-17 med `markets`-frågan: en marknad,
+`localCurrencies: true`). Två följder:
+
+- **En översättning kan inte skilja länderna åt** (den är per språk och
+  marknad), så ett land får en **egen sida**: `<handle>-gb`, `-ca`, `-au`,
+  `-nz`, engelska i sidans grundspråk, läst av kunden på
+  `https://carashell.com/pages/<handle>-gb?country=GB`. Landet, valutan och
+  det engelska namnet kommer ur `factory/lander.mjs` (`landForMarknad`).
+  Copyn heter `copy.<locale>-<CC>.json` (`copy.en-GB.json`), filerna
+  `<handle>.en-GB.html` osv., skärmdumparna `forhandsvisning-en-GB/`.
+- **Priset rör sig varje dag** (Axels skärmdump sa NZ$354, sidan NZ$355
+  några timmar senare). Därför skrivs priset i copyn som **prisplatser**,
+  `[[PRIS]]` och `[[JAMFORPRIS]]`, som **butiken byter vid varje visning**
+  i besökarens valuta: `templates/page.listicle.liquid` läser handlen ur
+  listiclens rot (`<div class="lr" data-lp-produkt="takskyddet">`), slår
+  upp `all_products[handle]` och byter platserna med
+  `money_without_trailing_zeros` — exakt det pris produktsidan visar samma
+  sekund. `layout/listicle.liquid` gör samma sak i meta-beskrivningen
+  (Shopify härleder den ur innehållet, så platserna följde med dit — mätt
+  vid första körningen). Motorn byter platserna själv bara där ingen
+  Liquid finns: förhandsvisningen och `.gempages`-filen. `granskaCopy`
+  räknar platserna som produktens pris och stoppar `[[JAMFORPRIS]]` när
+  produktsidan saknar jämförpris; tillbakaläsningen kräver dagens pris i
+  hero-rubriken och att ingen `[[`-plats syns.
+- Samma sida sedd **utan** `?country=` visar besökarens eget lands pris
+  (från USA: $199 på UK-sidan). Annonslänken bär därför alltid `?country=`.
+- **Handlen är stabil:** `plan.json` i handle-mappen bär sidans handle, och
+  en ny körning återanvänder den även när produkttiteln (och slugen)
+  ändrats — takskyddet hette "6,5 × 3 m" när sidan byggdes och "5,5–13,5 m"
+  dagen efter. `--handle <x>` sätter den uttryckligen.
+- Dollarvalutorna (USD, CAD, AUD, NZD) skrivs alla som `$` — så visar
+  Shopify dem på carashell.com — och läses med eller utan landsbokstav.
+
+Första körningen 2026-09-17, takskyddet: `…-lagerrensning-gb?country=GB`,
+`-ca?country=CA`, `-au?country=AU`, `-nz?country=NZ` på carashell.com. GB
+och AU/NZ säger caravan, damp check (GB), inga månadsnamn (södra halvklotet);
+CA är US-copyn med Kanada.
+
 ## Obrandad som standard (Axels beslut 2026-09-16)
 
 "Jag hade verkligen uppskattat om listiclen är obrandad så att den funkar om

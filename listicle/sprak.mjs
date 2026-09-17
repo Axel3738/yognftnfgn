@@ -72,15 +72,47 @@ const KR_MONSTER = /(\d[\d \u00a0\u202f]*(?:[.,]\d{1,2})?)\s?(?:kr\b|:-)/gi;
 const krTal = (s) => Number(String(s).replace(/[ \u00a0\u202f]/g, '').replace(',', '.'));
 const punktTal = (s) => Number(String(s).replace(/,/g, ''));
 const teckenMonster = (tecken, kod, ord) => new RegExp(`${tecken}\\s?(\\d[\\d,]*(?:\\.\\d{1,2})?)|(\\d[\\d,]*(?:\\.\\d{1,2})?)\\s?(?:${kod}|${ord})\\b`, 'gi');
+// Alla dollarvalutor delar mönster: "$284", "C$284", "A$286", "NZ$355", "284 CAD".
+// Shopify visar dem alla som "$284" på carashell.com (mätt 2026-09-17: CAD, AUD
+// och NZD renderas "$284.00", "$286.00", "$355.00") — så formatet är "$".
+const DOLLAR_MONSTER = /(?:CA?|AU?|NZ|US)?\$\s?(\d[\d,]*(?:\.\d{1,2})?)|(\d[\d,]*(?:\.\d{1,2})?)\s?(?:USD|CAD|AUD|NZD|dollars?)\b/gi;
+const dollar = (kod, i_copy) => Object.freeze({ kod, format: framforTal('$'), monster: DOLLAR_MONSTER, tolka: punktTal, i_copy });
 
 export const VALUTOR = Object.freeze({
   SEK: Object.freeze({ kod: 'SEK', format: prisText, monster: KR_MONSTER, tolka: krTal, i_copy: '"599 kr", "1 129 kr"' }),
   NOK: Object.freeze({ kod: 'NOK', format: prisText, monster: KR_MONSTER, tolka: krTal, i_copy: '"599 kr", "1 129 kr"' }),
   DKK: Object.freeze({ kod: 'DKK', format: prisText, monster: KR_MONSTER, tolka: krTal, i_copy: '"599 kr", "1 129 kr"' }),
-  USD: Object.freeze({ kod: 'USD', format: framforTal('$'), monster: teckenMonster('\\$', 'USD', 'dollars?'), tolka: punktTal, i_copy: '"$199", "$1,129", "$99.50"' }),
+  USD: dollar('USD', '"$199", "$1,129", "$99.50"'),
+  CAD: dollar('CAD', '"$284" (Shopify visar CAD som "$" på carashell.com)'),
+  AUD: dollar('AUD', '"$286" (Shopify visar AUD som "$" på carashell.com)'),
+  NZD: dollar('NZD', '"$355" (Shopify visar NZD som "$" på carashell.com)'),
   GBP: Object.freeze({ kod: 'GBP', format: framforTal('£'), monster: teckenMonster('£', 'GBP', 'pounds?'), tolka: punktTal, i_copy: '"£199", "£1,129"' }),
   EUR: Object.freeze({ kod: 'EUR', format: framforTal('€'), monster: teckenMonster('€', 'EUR', 'euros?'), tolka: punktTal, i_copy: '"€199", "€1,129"' }),
 });
+
+// ------------------------------------------------------------ prisplatser i copyn
+
+// [[PRIS]] och [[JAMFORPRIS]] i copyn byts av BUTIKEN vid varje sidvisning
+// (templates/page.listicle.liquid → all_products[handle].price | money), inte
+// av motorn. Det är enda sättet att få rätt pris på en sida som visas i flera
+// valutor: CaraShells USA-marknad täcker US, GB, CA, AU och NZ med automatisk
+// kursomräkning, så £152 i dag kan vara £153 i morgon (mätt 2026-09-17:
+// Axels skärmdump sa NZ$354, sidan NZ$355 några timmar senare). En siffra
+// inbränd i copyn hade ljugit nästa dag. Motorn byter platserna själv bara
+// där ingen Liquid finns: förhandsvisningen och .gempages-filen.
+export const PRIS_TOKEN = '[[PRIS]]';
+export const JAMFORPRIS_TOKEN = '[[JAMFORPRIS]]';
+export const harPrisTokens = (v) => /\[\[(PRIS|JAMFORPRIS)\]\]/.test(typeof v === 'string' ? v : JSON.stringify(v ?? ''));
+
+/** Byter prisplatserna mot produktens pristext (prisText/jamforprisText), rekursivt över copy-objektet. Rör inte objektet som skickas in. */
+export function ersattPrisTokens(v, produkt) {
+  if (typeof v === 'string') {
+    return v.split(PRIS_TOKEN).join(produkt?.prisText ?? PRIS_TOKEN).split(JAMFORPRIS_TOKEN).join(produkt?.jamforprisText ?? JAMFORPRIS_TOKEN);
+  }
+  if (Array.isArray(v)) return v.map((x) => ersattPrisTokens(x, produkt));
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, ersattPrisTokens(x, produkt)]));
+  return v;
+}
 
 const valutaKod = (v) => String(v ?? 'SEK').trim().toUpperCase();
 

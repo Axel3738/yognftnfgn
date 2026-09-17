@@ -13,7 +13,10 @@ ett OPS-id som `carashell` — då slås butikens egen produkthandle upp ur
 (brandad sida — BARA om Axel ber om det), `--lank <länk>` (knapparnas länk
 om den inte går att härleda), `--opublicerad` (sidan skapas dold),
 **`--marknad <KOD>`** (samma sida på en annan marknad i samma butik, t.ex.
-`--marknad US` för carashell.com — se "Samma sida på en annan marknad").
+`--marknad US` för carashell.com — se "Samma sida på en annan marknad"),
+**`--land <CC>`** (ett land inom marknaden med egen valuta och egen sida:
+`--marknad US --land GB` — se "Ett land inom marknaden"), `--handle <x>`
+(sidans handle uttryckligen; annars `plan.json`:s).
 
 ```
 /lagerrensning https://baverbutiken.se/products/axelbalte-for-trimmer-justerbart-nylonbalte
@@ -192,6 +195,43 @@ besökare vidare till carashell.com. Läser du en svensk sida själv: lägg på
 ⚠️ Ändras den svenska copyn senare: kör marknaden igen, annars ligger en
 gammal översättning kvar (Shopify märker den `outdated` men visar den).
 
+### Ett land inom marknaden (`--marknad US --land GB`)
+
+Axels fråga 2026-09-17: samma sida för UK, Kanada, Australien och Nya
+Zeeland. De är **länder i marknaden USA** (en marknad, lokal valuta,
+automatisk kursomräkning — mätt i Shopify samma dag), inte egna marknader.
+Då gäller:
+
+1. Landet får en **egen sida**: `/pages/<handle>-gb` (`-ca`, `-au`, `-nz`),
+   engelska i grundspråket, adress med `?country=GB`. Den svenska sidan
+   och US-översättningen måste finnas först.
+2. `node listicle/bygg.mjs <svensk länk> --butik carashell --marknad US --land GB --underlag`
+   → `underlag.en-GB.json` med landets pris i landets valuta (£152 / £191
+   i dag) och adressen.
+3. **Priset skrivs som prisplatser, aldrig som siffra:** `[[PRIS]]` och
+   `[[JAMFORPRIS]]` överallt där copyn annars hade haft $199 / $249.
+   Butiken byter dem vid varje visning i besökarens valuta (sidmallen +
+   layouten) — kursen rör sig dagligen, och en inbränd siffra hade ljugit
+   nästa dag. Motorn varnar om ett lands copy saknar platserna.
+4. **Copyn anpassas till landet**, som `copy.en-GB.json`: UK säger caravan,
+   autumn, damp check, shed; Australien och Nya Zeeland säger caravan och
+   har **inga månadsnamn** (södra halvklotet — oktober/april är fel
+   säsong); Kanada är US-copyn med "Free shipping to Canada". Läs landets
+   egen produktsida (`?country=XX`) — fraktraden ("🇬🇧 Free shipping to the
+   UK") och garantin står där.
+5. `--torr`, sedan skarpt. Tillbakaläsningen läser
+   `https://carashell.com/pages/<handle>-gb?country=GB` och kräver: hero-
+   rubriken med **dagens** pris inskrivet av butiken, inga `[[`-platser
+   kvar (inte heller i meta-beskrivningen), ingen svensk text, ingen
+   header/footer. Skärmdumparna: `forhandsvisning-en-GB/`.
+6. Rapporten: en adress per land med `?country=`, dagens pris per land och
+   att priset följer kursen. Axels klick: annonserna per land pekar på
+   landets adress.
+
+⚠️ **Handlen kommer ur `plan.json`**, inte ur titeln, när sidan redan är
+byggd: produkttiteln ändrades 2026-09-17 ("6,5 × 3 m" → "5,5–13,5 m") och
+utan det hade varje körning skapat en ny sida på en ny adress.
+
 ## Gör i ordning
 
 `IDAG` = dagens datum (YYYY-MM-DD). Utdata: `listicle/output/lagerrensning/<handle>/`.
@@ -365,4 +405,5 @@ temat använder inte mallen — läs `listicle/README.md` → "Butiken".
 - [ ] Varje kie-bild tittad på; skärmdumparna desktop + mobil tittade på
 - [ ] batch-log uppdaterad om produkten har minne; committat och pushat
 - [ ] Med `--marknad`: copyn på marknadens språk mot marknadens egen produktsida (priser i dess valuta, dess garanti/frakt); översättningen läst tillbaka på marknadens domän på rätt språk; skärmdumparna i `forhandsvisning-<locale>/` tittade på
+- [ ] Med `--land`: prisplatser `[[PRIS]]`/`[[JAMFORPRIS]]` i copyn (ingen inbränd siffra), landets ord och säsong, landets egen sida läst tillbaka med `?country=` och dagens pris inskrivet av butiken
 - [ ] Rapport med adressen + Axels klick sist, numrerade
