@@ -61,7 +61,7 @@ Ingen svensk källa publicerar story-priser per nivå för 2025–26, så story-
 
 Köp bara stories: 3–5 frames där de två första är video där hon pratar rakt in i kameran (helst öppnar lådan eller ger bort den), sista framen är en bild med erbjudandet och länken. Inga flödesinlägg, inga reels, inget långtidsavtal i första rundan. Annonsrättigheter: 30 dagar på videon, spridda fritt i fönster (till exempel en vecka vid lansering, en vecka i Black Friday-veckan, två veckor i december). Skriv i avtalet: "30 dagars användning i Matstrumpors egna annonser (Meta/TikTok), dagarna räknas när annonsen är aktiv och kan delas upp i flera perioder inom 2026-10-15 till 2027-01-31." Pris exkl. moms, F-skatt eller fakturering via byrå/Gigapay, betalning efter godkänd video. Rabattkod per person (t.ex. SUSHI-<NAMN>) för att mäta organiskt utfall och som grund för provision om ni vill förlänga.
 
-Brief till influencern (kursens "top 5", inte mer): 1) visa lådan de första tre sekunderna, 2) reaktionen när den öppnas är poängen, låt någon i familjen öppna, 3) säg "två lådor för 399 kr, fri frakt" och att det är julklappen till den som har allt, 4) nämn att det sålde slut i november förra året, 5) märk varje frame "Reklam från Matstrumpor". Be henne skicka tre idéer först, välj den mest säljande.
+Brief till influencern (kursens "top 5", inte mer): 1) visa lådan de första tre sekunderna, 2) reaktionen när den öppnas är poängen, låt någon i familjen öppna, 3) säg "två lådor för 399 kr, fri frakt" och att det är julklappen till den som har allt, 4) håll det till 20–40 sekunder, 5) märk varje frame "Reklam från Matstrumpor". Be henne skicka tre idéer först, välj den mest säljande.
 
 ## 6. Kalender
 
@@ -119,111 +119,105 @@ Fyra fynd var substantiella. Sofia Åhman: SVT:s regel för återkommande progra
 
 Två fynd stärkte kandidater. Susanne Jonsson: inga skandaler, inget SVT-program på gång, och hennes egen text från november 2025 säger att hon behåller sina sociala medier. Nina Hermansen: bloggens samarbetsarkiv visar bara tolv betalda inlägg på fyra år, och hennes "ett foto i timmen"-serie är rått vardagsinnehåll så sent som 13 september 2026.
 
-## 13. Färdiga mail per person (skicka från din egen adress i dag)
+## 13. Färdiga mail per person (rakt på sak, skicka från din egen adress i dag)
 
-**Sofia Åhman** (till kontaktformuläret på sofiaahman.se, eller det mail hon anger där)
-
-Ämne: Grattis till medaljen och tack för hemmagympan
-
-Hej Sofia,
-
-jag heter Axel och driver Matstrumpor.se. Min mamma är en av dem som gympat med dig i vardagsrummet sedan pandemin, så grattis till medaljen, det var välförtjänt.
-
-Jag vill skicka två av våra sushilådor till dig utan några som helst krav. Det är fem par strumpor rullade som sushi i en riktig sushibox, och reaktionen när någon öppnar den är hela grejen. Förra julen sålde vi 15 000 lådor och de tog slut i november.
-
-Jag skriver för att vi vill göra ett betalt samarbete i stories inför jul, om du gillar lådan när du testat den. Får jag skicka ett par till dig? Sedan tar vi gärna tio minuter på video och pratar om hur det skulle kunna se ut.
-
-Vänliga hälsningar
-Axel Odhner, Matstrumpor.se, [mobil]
-
-*(Byt ut "min mamma"-raden mot något som är sant för dig. Kursens regel: ämnesraden ska visa att du faktiskt följt henne.)*
-
-**Karin Adelsköld** (agnes@karinadelskold.se, hennes bokningsassistent)
-
-Ämne: Grattis till Årets talare, och en låda som ser ut som sushi
-
-Hej Karin (och Agnes),
-
-jag heter Axel och driver Matstrumpor.se. Grattis till Årets talare 2025. "Skratta åt eländet" är ungefär vår hela affärsidé, fast med strumpor.
-
-Jag vill skicka två av våra sushilådor till dig utan några som helst krav. Fem par strumpor rullade som sushi i en riktig sushibox. Folk tror det är äkta sushi i tre sekunder, sedan skrattar de, sedan har de strumporna på sig i februari. Förra julen sålde vi 15 000 lådor och de tog slut i november.
-
-Jag skriver för att vi vill göra ett betalt samarbete i stories inför jul, om du gillar lådan när du testat den. Får jag skicka ett par? Sedan tar vi gärna tio minuter på video.
-
-Vänliga hälsningar
-Axel Odhner, Matstrumpor.se, [mobil]
+Axels regel 2026-09-17: inga "sålde slut"- eller antal-sålda-påståenden i något mail, och ingen inställsam öppning. Mailet säger vad vi vill köpa, varför just henne, att det är arvode och inte produkt mot inlägg, och föreslår ett möte. Priset tas i mötet.
 
 **Nina Hermansen** (hej@proad.se, ProAd Sweden, ange "samarbete Nina Hermansen / Niiinis")
 
-Ämne: Julklappstips till Ninas julklappstips
+Ämne: Betalt story-samarbete med Nina Hermansen inför jul
 
 Hej,
 
-jag heter Axel och driver Matstrumpor.se. Jag har läst Ninas julklappstips flera år i rad och vill gärna in i årets.
+jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Nina i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra egna annonser.
 
-Jag vill skicka två av våra sushilådor till Nina utan några som helst krav. Fem par strumpor rullade som sushi i en riktig sushibox, med äkta ätpinnar. Reaktionen när någon öppnar den är hela grejen. Förra julen sålde vi 15 000 lådor och de tog slut i november.
+Skälet att vi vänder oss till just Nina är att hennes publik är samma som vår köpare, kvinnor 45–54, och att hon gör julklappstips varje år. Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder.
 
-Vi vill göra ett betalt samarbete i stories i slutet av oktober eller början av november (3–5 frames plus 30 dagars annonsrättigheter på videon), om Nina gillar lådan. Vart skickar jag lådorna, och kan vi ta tio minuter på video när de kommit fram?
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten. Lådorna är bara ett prov: jag skickar gärna två så att Nina kan avgöra om det är något hon vill stå bakom innan vi pratar pris. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna er prislista för stories och annonsrättigheter samtidigt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
 
-**Reserv: Helena Lyth** (hej@proad.se, ange "samarbete Helena Lyth")
+**Susanne Jonsson** (info@foodie.se, eller formuläret på susannesskafferi.se/kontakt)
 
-Ämne: Novent, decembermys och en låda som ser ut som sushi
-
-Hej,
-
-jag heter Axel och driver Matstrumpor.se. Helenas "Julprassel och decembermys" ligger på köksbordet hemma, så jag vet vem som kan december.
-
-Jag vill skicka två av våra sushilådor till Helena utan några som helst krav. Fem par strumpor rullade som sushi i en riktig sushibox. Förra julen sålde vi 15 000 lådor och de tog slut i november.
-
-Vi vill göra ett betalt samarbete i stories i slutet av oktober eller början av november, om Helena gillar lådan. Vart skickar jag lådorna, och kan vi ta tio minuter på video när de kommit fram?
-
-Vänliga hälsningar
-Axel Odhner, Matstrumpor.se, [mobil]
-
-**Reserv: Susanne Jonsson** (info@foodie.se, eller formuläret på susannesskafferi.se/kontakt)
-
-Ämne: Från en som saknar dig i Go'kväll
+Ämne: Betalt samarbete i stories inför jul
 
 Hej Susanne,
 
-jag heter Axel och driver Matstrumpor.se. Ditt skafferi har varit stående inslag hemma hos oss i många år, så tack för alla år i Go'kväll.
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames där du öppnar lådan, plus 30 dagars rätt för oss att använda videon i våra annonser.
 
-Jag vill skicka två av våra sushilådor till dig utan några som helst krav. Fem par strumpor rullade som sushi i en riktig sushibox. Ser ut som sushi, är strumpor. Förra julen sålde vi 15 000 lådor och de tog slut i november.
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik är samma som våra köpare, kvinnor över 50, och du är en av få de litar på i köket.
 
-Jag skriver för att vi vill göra ett betalt samarbete i stories inför jul, om du gillar lådan när du testat den. Får jag skicka ett par? Sedan tar vi gärna tio minuter på video.
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
 Axel Odhner, Matstrumpor.se, [mobil]
 
-**Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail inte fastnade. Två lådor står packade och väntar på en adress. /Axel"
+**Karin Adelsköld** (agnes@karinadelskold.se, hennes bokningsassistent)
 
-## 14. Outreach-mallen (generell) (kursens regler: personlig ämnesrad, kort, ge före du ber, säg att du vill betala, be om ett möte)
+Ämne: Betalt story-samarbete inför jul
 
-Kursens fem regler i ett mail: ämnesraden gratulerar till något konkret hon just gjort (så hon ser att du kollat), en rad om vem du är och sedan tyst om dig själv, erbjud två lådor utan krav men säg rakt ut att ni vill göra ett betalt samarbete, ett trovärdighetsfaktum om brandet (15 000 lådor förra julen, slut i november), och avsluta med ett förslag om ett kort videomöte. Under 120 ord. Skicka från Axels egen adress, aldrig från en byrå eller "info@".
+Hej Karin och Agnes,
 
-**Mall (byt ut det inom klamrar per person):**
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av Karin i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser. Jag vet att ni mest bokar föreläsningar, så säg direkt om det här inte är något ni gör.
 
-Ämne: Grattis till [det konkreta: farmor-rollen / Guldörat / nya boken / programmet]
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Vi vänder oss till Karin för att humorn och ärligheten i hennes kanal är exakt den ton vi vill ha.
+
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att Karin kan avgöra om hon vill stå bakom det. Har ni tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+
+Vänliga hälsningar
+Axel Odhner, Matstrumpor.se, [mobil]
+
+**Reserv: Margareta Hallin** (formuläret på 50something.se/pages/kontakt, eller DM till @50something.se)
+
+Ämne: Betalt story-samarbete inför jul
+
+Hej Margareta,
+
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
+
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Din publik, kvinnor över 50, är exakt de som köper den.
+
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
+
+Vänliga hälsningar
+Axel Odhner, Matstrumpor.se, [mobil]
+
+**Reserv: Agneta Sjödin** (hello@frontagency.se, och formuläret på agnetasjodin.com)
+
+Ämne: Betalt story-samarbete med Agneta Sjödin inför jul
+
+Hej,
+
+jag heter Axel och driver Matstrumpor.se. Vi vill köpa ett betalt story-samarbete med Agneta i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
+
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. Agnetas publik är samma som våra köpare, kvinnor 45–65.
+
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten. Lådorna är bara ett prov: jag skickar gärna två så att Agneta kan avgöra om det är något hon vill stå bakom. Kan vi ta ett kort videomöte nästa vecka? Skicka gärna prisnivå för stories och annonsrättigheter samtidigt.
+
+Vänliga hälsningar
+Axel Odhner, Matstrumpor.se, [mobil]
+
+**Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail kom fram. Frågan står kvar: betalt story-samarbete inför jul, två lådor på väg om du vill testa först. /Axel"
+
+## 14. Outreach-mallen (generell)
+
+Ur kursen behåller vi det som är affärsmässigt: säg direkt att det är ett betalt uppdrag, erbjud produkten så hon kan testa innan hon svarar, be om ett kort möte, och ta priset i mötet. Det vi stryker på Axels order är den inställsamma öppningen och alla påståenden om hur mycket vi sålt. Under 100 ord.
+
+Ämne: Betalt story-samarbete inför jul
 
 Hej [Förnamn],
 
-jag heter Axel och driver Matstrumpor.se. Grattis till [det konkreta, en rad som visar att du faktiskt följt henne].
+jag heter Axel och driver Matstrumpor.se. Jag vill köpa ett betalt story-samarbete av dig i slutet av oktober eller början av november: 3–5 frames plus 30 dagars rätt att använda videon i våra annonser.
 
-Jag vill skicka två av våra sushilådor till dig utan några som helst krav. Det är fem par strumpor rullade som sushi i en riktig sushibox, och reaktionen när någon öppnar den är hela grejen. Förra julen sålde vi 15 000 lådor och de tog slut i november.
+Produkten är en sushilåda med fem par strumpor rullade som maki, en julklapp som folk skrattar åt först och sedan använder. [En rad om varför just henne: publiken, kanalen, eller något hon gör som passar.]
 
-Jag skriver för att vi vill göra ett betalt samarbete i stories inför jul, om du gillar lådan när du testat den. Får jag skicka ett par till dig och [barnen/barnbarnet/kollegorna]? Sedan tar vi gärna tio minuter på video och pratar om hur det skulle kunna se ut.
+Det här är ett betalt uppdrag med arvode plus separat ersättning för annonsrätten, inte produkt mot inlägg. Lådorna är bara ett prov: jag skickar gärna två så att du kan avgöra om det är något du vill stå bakom. Har du tio minuter på video nästa vecka? Då tar vi pris och upplägg direkt.
 
 Vänliga hälsningar
-Axel Odhner
-Matstrumpor.se
-[mobilnummer]
+Axel Odhner, Matstrumpor.se, [mobil]
 
-**Uppföljning efter fyra dagar utan svar (kursen: du säljer bara ett svar):** "Hej igen [Förnamn], vill bara kolla att mitt mail inte fastnade. Två lådor står packade och väntar på en adress. /Axel"
-
-**I mötet:** presentera brandet i två minuter, resten är frågor om henne, hennes följare och vad de brukar fråga henne om. Målet är att hon ska ha något att berätta i sin story ("jag pratade med grundaren…"). Priset diskuteras sist, och först efter att hon fått lådan.
+**I mötet:** två minuter om brandet, resten frågor om henne och hennes följare. Priset sist, och först efter att hon fått lådan.
 
 ## 15. Alla 29 scorecards (viktad poäng enligt prompten, före den fällande granskningen)
 
