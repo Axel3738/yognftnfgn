@@ -103,6 +103,31 @@ Varje produktfil → `ekonomi.marknadspriser`, en rad till:
 `butik.markorer_sv` ska bära butikens svenska ord — de skannas på /en också.
 Sedan `node factory/validera.mjs factory/produkter/<id>.yaml` per produkt.
 
+**Fler länder med SAMMA språk och SAMMA domän (UK, Kanada, Australien, Nya
+Zeeland efter USA — CaraShell 2026-09-17):** ingen ny rad. En egen domän
+(`doman:`) hör till EN marknad i Shopify, så länderna läggs i den befintliga
+radens marknad:
+```yaml
+    - land: US
+      locale: en
+      valuta: USD
+      doman: carashell.com
+      lander:            # blocklista — yaml-parsern tar inte [GB, CA]
+        - GB
+        - CA
+        - AU
+        - NZ
+      lokala_valutor: true   # GBP/CAD/AUD/NZD omräknade från de fasta USD-priserna
+```
+Landet ska finnas i `lander.mjs`. Ingen prisfråga: priserna är Shopifys
+omräkning av radens fasta priser (+ ~2–3 %, hela tal) — fasta x9-priser per
+valuta kräver egna marknader med egna subdomäner, och det är ett eget beslut.
+Den engelska filen är EN för alla länderna: byt "Free shipping to the US" mot
+en text som är sann för alla (flaggorna 🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿), och rapportera
+leveranstid + garanti som substansfrågor. Skatt/tull per land går i rapporten
+(PROCESS.md punkt 22). Annonslänkarna för de nya länderna bär INGEN
+`?country=`-parameter.
+
 ### 4. Torrt först
 ```
 node factory/ops.mjs factory/butiker/<butik>.yaml <ALLA produktfiler> --resume --igen marknad,tema,oversatt,prislista,recensioner --dry-run

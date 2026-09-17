@@ -882,6 +882,67 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
      = sv, `kundvy-kor`, alla andra OPS-butiker). Kassan är inget argument:
      Shopify översätter kassan per publicerat språk oavsett vilket som är
      primärt. Rekommendation: rutan i Judge.me, aldrig språkbytet.
+22. ⚙️ **Ett ENGELSKT MARKNADSBLOCK — GB, CA, AU, NZ i USA-marknaden (byggt
+   2026-09-17, Axels order "Nya Zeeland, Kanada, UK och Australien, samma
+   annonser, lanserar i dag").** Fem mätningar styrde formen:
+   - **En egen domän hör till EN marknad.** `marketUpdate(webPresencesToAdd:
+     [carashell.com])` från en nyskapad GB-marknad svarade `RESOURCE_NOT_FOUND`
+     på presencen. Egna marknader per land hade alltså krävt `carashell.se/en-gb/`
+     (Axel sa nej till .se för USA) eller fyra subdomäner med DNS-klick. Därför:
+     länderna läggs i USA-marknaden. Raden i `butik.marknader` bär det som
+     `lander: [GB, CA, AU, NZ]` (blocklista — yaml-parsern tar inte `[a, b]`)
+     + `lokala_valutor: true`; `marknad.mjs sakerstallMarknad` lägger till
+     regionerna med `conditions.conditionsToAdd.regionsCondition.regions` och
+     läser tillbaka.
+   - **`currencySettings.localCurrencies: true` via API GÅR — och slog själv
+     på AUD, CAD, GBP och NZD i Shopify Payments** (`enabledPresentmentCurrencies`
+     gick från NOK,SEK,USD till AUD,CAD,GBP,NOK,NZD,SEK,USD i samma sekund).
+     Axels "jag ordnar valutorna" behövdes inte.
+   - **Priserna är Shopifys omräkning av de FASTA USD-priserna** (prislistan i
+     marknadens basvaluta), inte av SEK: takskyddet $199 → £152 / C$285 /
+     A$286 / NZ$354, termoskyddet $99 → £76 / A$143 / NZ$177 (mätt som kund
+     per land med `?country=XX` på carashell.com, 2026-09-17 13:30 UTC; ECB
+     samma dag $199 = £148 — Shopify lägger ~2–3 % och rundar till hela).
+     Fasta x9-priser per valuta kräver en egen marknad per valuta = egna
+     subdomäner. Inte gjort; Axels val.
+   - **Frakten var redan klar:** zonen "Internationell" (`frakt.fri_globalt`)
+     bar AU, CA, GB, NZ med "Fri frakt 0 SEK" sedan bygget.
+   - **Den engelska texten är EN fil för alla fem** (locale en). "Free shipping
+     to the US" / 🇺🇸 byttes av en sonnet-subagent till "🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿 Free
+     shipping", FAQ "Which countries do you ship to?", köpvillkoren "Prices are
+     shown in your local currency (USD, GBP, CAD, AUD or NZD)". Leveransraden
+     (5–10 business days) och 90-dagarsgarantin gäller därmed alla fem —
+     substansfrågor till Axel, inte översättning.
+   ⚠️ **Bugg hittad och rättad samma dag: `--igen marknad` bröt domänbeslutet.**
+   `kopplaPresence` kopplade ALLA presences till varje marknad och
+   `laggTillAlternateLocale` la nb på alla — så USA-marknaden fick .se +
+   myshopify tillbaka och carashell.com fick /nb. Nu respekterar `marknad.mjs`
+   radens `doman:`: bara den presencen på marknaden (andra kopplas loss), och
+   andra marknaders egna domäner hoppas över (befintligt språk tas bort).
+   Mätt efteråt: USA = carashell.com(en), Norge = .se + myshopify (sv+nb/en).
+   ⚠️ **Två sessioner på samma butik samma förmiddag:** medan detta byggdes
+   gjorde en annan session om takskyddet till nio storleksvarianter
+   (5,5–13,5 m) med egen köpruta (`snippets/ms-paket.liquid` + css). Mitt
+   första `--igen tema` gick med gammal kod och skrev den gamla köprutan;
+   `main` mergades och stegen kördes om — kundvyn grön, väljaren kvar. Regeln
+   "en session per butik" gäller fabriken lika mycket som annonserna.
+   ⚠️ **Annonslänken för de nya länderna får INTE bära `?country=US`** —
+   parametern låser valutan till USD för en brittisk kund. I ett flerlands-
+   block väljer Shopify land på IP; länka `https://carashell.com/products/<handle>`
+   utan parameter (US-rutinens `?country=US` är ofarlig i en US-geo-kampanj).
+   🖐 **Skatt och tull är det som återstår, och det är ägarens:** UK — varor
+   ≤ £135 ska bära brittisk moms vid kassan och säljaren måste vara
+   UK-momsregistrerad, utan omsättningsgräns (gov.uk, läst 2026-09-17);
+   termoskyddet £76 faller under, takskyddet £152 över (då tar transportören
+   importmoms + tull + avgift av kunden vid dörren). AU/NZ: GST bara över
+   AUD 75 000 / NZD 60 000 per år, annars inget vid gränsen under
+   AUD/NZD 1 000. CA: tull + GST/HST + transportörens avgift tas av kunden
+   vid leverans (från Sverige gäller CAD 20-gränsen). Shopifys "collect
+   duties at checkout" kräver Advanced-plan. Kvar i admin: Settings → Taxes
+   and duties → United Kingdom (VAT), leveranstiden per land hos leverantören,
+   Klarna i kassan per land (inte mätbart härifrån).
+   Kvar hos den andra sessionen: optionens NAMN ("Variant"/"Title") saknar
+   en/nb-översättning — rubriken över storleksväljaren står "Variant" på /en.
 
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
