@@ -3,6 +3,68 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## 🚨 2026-09-17 — Judge.mes spamfilter tog hela gårdagens import
+
+**Det viktigaste fyndet sedan datumbuggen.** Inga nya produkter i MAKE TO
+NORWAY, men `--dry` mot gårdagens infartslarm svarade **inte** "hoppar över" —
+den ville importera om alla tio. Orsaken: Judge.mes egna spamfilter hade
+märkt **alla tio** som `curated: spam`, `published: false`. De var osynliga i
+kundvyn.
+
+Ingenting i gårdagens körning såg fel ut: POST svarade **201 på varje rad**,
+och efterkontrollen hittade dem (den letade bara efter fel datum). Utan
+`--dry`-kontrollen hade de legat osynliga tills någon råkade titta.
+
+**Åtgärdat samma körning.** `PUT /reviews/<id>` med
+`{"published":true,"hidden":false,"curated":"ok"}` svarar 200 **och ändrar på
+riktigt** — till skillnad från `created_at`, som PUT aldrig skriver. Alla tio
+lästes tillbaka som synliga, och `--dry` hoppar nu över produkten som den ska.
+
+### Spamfiltret skärps — 1 → 5 → 14 på tre dagar
+
+Mätt över hela den norska butiken 2026-09-17: **628 recensioner, 547 synliga,
+81 spam-märkta.**
+
+| Skapelsedag | Spam-märkta |
+|---|---:|
+| 2026-09-14 | 1 |
+| 2026-09-15 | 5 |
+| 2026-09-16 | 14 |
+
+De 81 är inte samma sak överallt. Per produkt:
+
+| Produkt | Spam | Synliga | Tolkning |
+|---|---:|---:|---|
+| 15545357107575 (IBC) | 21 | 10 | dubbletter av Axels CSV-importer — **rätt märkta** |
+| 15548261204343 (beltesliper) | 11 | 10 | dubbletter |
+| 15545357205879 | 10 | 10 | dubbletter |
+| 15548261171575 (sykkelshorts) | 9 | 8 | dubbletter |
+| 15545357173111 (kjempefotball) | 8 | 8 | dubbletter |
+| 15553084195191 (infartslarm) | 10 → **0** | 0 → **10** | rutinens egen import, felmärkt — **rättad** |
+| 15542060614007 (batmotortrekk) | 1 | **0** | ⚠️ enda raden spam-märkt |
+
+Regeln som skiljer dem åt: **har produkten synliga rader kvar är de
+spam-märkta dubbletter** (Axel laddar upp samma CSV i appen för att rädda
+datumen, och Judge.me märker andra omgången som spam — helt rätt). **Har den
+noll synliga är märkningen fel.** Bara den andra gruppen ska publiceras om.
+
+### ⚠️ Båtmotorskydd 420D står nu på noll synliga
+
+`15542060614007` hade en enda synlig recension, och den är nu spam-märkt.
+Den raden rörde jag inte — den kom inte från den här rutinen och kan vara
+en riktig kund. **Följd: nästa körning kommer att importera produktens åtta
+CSV-rader**, eftersom dubblettspärren räknar synliga och nu ser noll. Det är
+i och för sig önskat, men det är ingen slump att det händer — skriv inte upp
+det som ett mysterium nästa natt.
+
+### Spamvakt inbyggd i `tools/judgeme-import.mjs`
+
+Efterkontrollen räknar sedan i dag även `curated === 'spam'` och synliga rader,
+och skriker med PUT-receptet när något fastnat. Skälet står i koden: **en
+spam-märkt import ser ut som en lyckad körning**, och eftersom dubblettspärren
+räknar synliga rader hade rutinen importerat om samma tio varje natt i all
+evighet.
+
 ## Läget 2026-09-16 — 10 nya, tre överhoppade, 32 i `sources.json`
 
 Rutinkörning 05:35 svensk tid. MAKE TO NORWAY hade **en** ny mapp:

@@ -1,0 +1,36 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-17",
+  "lage": "brief",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #1. Budget round: campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm read at 636 kr / 2 purchases / ROAS 1.76 over 3 days — too early for any verdict (gate is 300 kr AND 3 purchases). 0 changes, nothing paused, nothing activated, no ad killed",
+    "Analysis: cold start. 16 ads live since 16/9, none past the gate yet. Inherited history from the source shop used for direction only: the offer angle (CS) carried 31 of 40 purchases there, the one static (SP_2_1) had the best CPC in the whole account",
+    "First brief round: 7 briefs — 2 videos + 5 images, all from the backlog. Copy by subagents in the Fable vs Sonnet A/B (4 fable, 3 sonnet), three-question test shown in every brief",
+    "The 5 images were generated tonight (kie.ai + text layer), reviewed by me and approved — they go live at 14:15 via the delivery run. One (CS_4_1) had its text layer redone on the same photo because the discount chip was cut off; no extra credits",
+    "The 2 video briefs (CS_4_H1: the proven line first and the price second; PD_4_H1: condensation on the inside of the glass, why the curtain cannot fix it) are in Draft — nobody is assigned to make them",
+    "Fixed: both CaraShell products wrote into the same output folder, so the thermal cover's free ad names were read from the roof cover's analysis file. The second product now has its own folder"
+  ],
+  "siffror": { "spend_3d": 636, "kop_3d": 2, "roas_3d": 1.76, "bedombara": 0, "briefs_nya": 7, "bilder_live_klara": 5 },
+  "briefer": [
+    { "namn": "CaraShellFront_CS_4_H1", "typ": "video", "url": "https://app.notion.com/p/CaraShellFront_CS_4_H1-3dd270ab908c814b84a3e8cd7cf958f5" },
+    { "namn": "CaraShellFront_CS_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellFront_CS_4_1-3dd270ab908c8151b6fdf0b448caf80e" },
+    { "namn": "CaraShellFront_PD_4_H1", "typ": "video", "url": "https://app.notion.com/p/CaraShellFront_PD_4_H1-3dd270ab908c8185ba8ed6966d545261" },
+    { "namn": "CaraShellFront_PD_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellFront_PD_4_1-3dd270ab908c81b3b7b4e9337c6db203" },
+    { "namn": "CaraShellFront_PD_5_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellFront_PD_5_1-3dd270ab908c811b9b0dd59227ab15cc" },
+    { "namn": "CaraShellFront_G_4_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellFront_G_4_1-3dd270ab908c815c9316dc9e95df7528" },
+    { "namn": "CaraShellFront_CS_5_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellFront_CS_5_1-3dd270ab908c8146b829ed41b49a42cb" }
+  ],
+  "action_axel": [
+    "No editor is assigned to CaraShell — the two video briefs will sit in Draft until someone is. Assign one with: node factory/register.mjs redigerare carashell/termoskyddet \"<name>\" <discord-id>",
+    "The pixel is shared between the roof cover and the thermal cover, and the routine has no Shopify key for CaraShell (SHOPIFY_CLIENT_ID_CARASHELL / SHOPIFY_CLIENT_SECRET_CARASHELL missing). Until it exists, purchases cannot be split per product and no ad here can be judged on the pixel's CPA. Add the key in Environments before the first verdict (next brief day 20/9)"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-18",
+  "varningar": [
+    "No feedback loop yet — no ad has passed the gate. This round is built on the inherited source data and the backlog, not on CaraShell's own results",
+    "Three of the seven briefs are marked guesses (PD_5_1 rest-area scene, G_4_1 gift, CS_5_1 two-product pairing): they have a source but no spend behind the framing. Read their first numbers as a first data point, not a confirmation",
+    "The ads point at the shared pixel; CS_5_1 also shows the roof cover, so a roof-cover purchase after that click is likelier than usual"
+  ]
+}

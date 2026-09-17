@@ -57,7 +57,7 @@ import { dirname, join } from 'node:path';
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
 import {
   laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag,
-  BAVERBUTIKEN_ANNONSKONTO,
+  BAVERBUTIKEN_ANNONSKONTO, utmapp,
 } from './register.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { formateraStartskott } from './startskott.mjs';
@@ -557,7 +557,7 @@ const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
  * normaliserade rader + period, aldrig råa Graph-svar.
  */
 export function sparaSnapshot(butik, { hamtning, arv = null, datum = new Date().toISOString().slice(0, 10), rot = ROT } = {}) {
-  const katalog = join(rot, 'factory', 'output', butik.post.butik);
+  const katalog = utmapp(butik.post, rot);
   mkdirSync(katalog, { recursive: true });
   const fil = join(katalog, `insights-${datum}.json`);
   const data = {

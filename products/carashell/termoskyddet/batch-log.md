@@ -263,3 +263,59 @@ Knapparna → `https://carashell.com/products/termoskyddet?country=US`. Läst
 tillbaka på carashell.com på engelska; carashell.se `?country=SE` svenska.
 Den svenska CaraShell-sidans filer ligger nu också på `main`-grenen härifrån
 (hämtade från `claude/dreamy-carson-rejnmn`, samma innehåll).
+
+---
+
+## Batch #2 — 2026-09-17, nattvakten `/notionscalercs carashell/termoskyddet` körning nr 1 (första briefronden) — KALLSTART
+
+**Läget vid avläsningen (Meta, last_14d, SE):** kampanjen `CARASHELL_SE_Termoskydd
+Husbil 211 × 171 cm` ACTIVE, CBO 1 000 kr/dag, 636 kr / 2 köp / ROAS 1,76 på 3 dygn
+(launch 2026-09-16 12:20). 16 annonser, **0 bedömbara** (grinden 300 kr OCH 3 köp),
+högst spend `G_2_1` 232 kr / 0 köp, `CS_2_1` 96 kr / 2 köp. Ingen feedback-loop
+— ingen annons i batch #1 har ett utfall att skriva. **Budgetronden: 0 ändringar**
+(kampanjen "för tidigt", ingen annons kill-kandidat, inget pausat, inget aktiverat).
+⚠️ Pixeln delas med takskyddet och CaraShell har inga Shopify-nycklar i rutinens
+miljö (`SHOPIFY_*_CARASHELL` saknas) — köp per produkt gick INTE att läsa ur
+Shopify. Det spelade ingen roll i natt (ingen dom fälldes), men det måste finnas
+före första domen.
+
+**Ronden:** 7 briefer (ingen redigerare ⇒ 7, inte 21). Alla ur backloggen — 2 videor
++ 5 bilder. Bilderna genererade samma natt (kie.ai, 5 st, textlager `bild-text.py`),
+tittade och godkända ⇒ `To be Reviewed` → live 14:15 via `/ops-leverans`.
+Videorna ligger i `Draft` tills en redigerare finns. Copy: A/B fable/sonnet
+(registrets `copy_modell: ab`, standard), varannan brief, via Agent-verktyget
+(Agent fanns — inte API-vägen), tre-frågorstestet i varje brief.
+
+| Annons | Typ | Vinkel | Hypotes | Isolerad variabel / förälder | Källa | copy_model |
+|---|---|---|---|---|---|---|
+| `CaraShellFront_CS_4_H1` | video | CS | Vinnarraden FÖRST, priset sedan, slår CS_2:s prisöppning på CPA | ordningen · förälder `CaraShellFront_CS_2` (ärvd CS_2 550 kr/8 köp) | winning line (dna mönster 1+4), backlog #1 | fable |
+| `CaraShellFront_CS_4_1` | bild | CS | Raden läses, inte tittas — bär som static med priskort | formatet mot CS_4_H1; rubriken mot `CS_2_1` | ärvd SP_2_1 (bild, bäst CPC), backlog #1 | sonnet |
+| `CaraShellFront_PD_4_H1` | video | PD | Imman på insidan + varför gardinen inte hjälper ⇒ första PD som passerar grinden under BE | scenen · ingen förälder (PD_1–3 är mekanik) | butikens huvudvinkel, konflikt typ A, backlog #4 — **hypotes** | fable |
+| `CaraShellFront_PD_4_1` | bild | PD | Rubriken bär konflikten själv, CTR ≥ 4 %, inget pris | formatet mot PD_4_H1 | backlog #4 + takskyddets mönster 6 | sonnet |
+| `CaraShellFront_PD_5_1` | bild | PD | Insynsscenen (rastplatsen) är mer omedelbar än imman | scenen mot PD_4_1 | "mörkt när du sover" (ärvd) + källsidans tredje scen — **gissning** | fable |
+| `CaraShellFront_G_4_1` | bild | G | Konkret morgon i present-raden slår "perfekta presenten" | rubriken · förälder `G_2_1` (7 kr, 0 köp) | backlog #6 — **gissning** | sonnet |
+| `CaraShellFront_CS_5_1` | bild | CS | Två-produktsparet lyfter CTR utan att sänka CVR | rubriken mot CS_4_1 | backlog #7 (sortimentet) — **gissning** | fable |
+
+Namn lästa ur kontot (analys-JSON) + hubben (0 rader före): CS/PD/G/SP 1–3 upptagna ⇒ 4 och 5.
+Notion: 7 rader skapade i "Termoskyddet" (`3dd270ab-908c-8018-a927-c2e551f7de8a`), url per rad i
+`factory/output/carashell/termoskyddet/bild-2026-09-17.json` + Discord-jobbet.
+
+**Bildgranskningen (sessionen, lätta checklistan):** 5 av 5 godkända. `CS_4_1` fick
+textlagret omgjort på samma foto (0 nya credits): rabattchipen "40 % under jämförpris"
+höggs av vid kanten — nu "−40 %", samma fakta. `PD_4_1`:s copy rättad från "immat"
+till "imman" (grammatik, inte omskrivning). Två små huvudsessionsval, båda inskrivna
+i respektive brief.
+
+**Två saker rutinen lärde sig, rättade i samma commit:**
+1. `factory/output/carashell/` delades av takskyddet och termoskyddet — samma
+   `budgetrond-<datum>.json`, `insights-<datum>.json`, `analys-<datum>.json`, och
+   `ops-bild --namn` läste takskyddets analysfil som termoskyddets kontonamn.
+   Ny `utmapp(post)` i `register.mjs`: andra produkten skriver i
+   `factory/output/carashell/termoskyddet/`, huvudprodukten som förut.
+2. Ingen Shopify-nyckel för CaraShell i rutinens miljö ⇒ pixelns delning kan inte
+   läsas isär. Står under Axels uppgifter.
+
+**Att läsa av 2026-09-20 (nästa briefdag):** (1) passerar någon annons grinden — då
+första riktiga feedback-loopen; (2) bild mot video inom CS (CS_4_1 mot CS_4_H1 finns
+bara om videon gjorts — utan redigerare är bildhälften det enda som får data);
+(3) A/B-ställningen fable/sonnet: 4 fable / 3 sonnet i den här ronden, 0 bedömbara.
