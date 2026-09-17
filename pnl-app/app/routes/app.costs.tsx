@@ -83,9 +83,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
     prisma.costTier.findMany({ where: { shop: session.shop, market: "" }, orderBy: { units: "asc" } }),
     kandaMarknader(session.shop, hemlandAv(settings.currency)),
   ]);
-  const mk = market
-    ? await lasMarknadskostnad(session.shop, market, costs.all.map((v) => ({ variantGid: v.variantGid, productGid: v.productGid })))
-    : null;
+  /* Kostnaderna för VARJE känd marknad läses, inte bara den valda: tabellen
+     längst ner visar hela upplägget på en gång — standard i en kolumn och
+     varje land i sin — så man ser vad som är inlagt utan att byta i listan. */
+  const varianter = costs.all.map((v) => ({ variantGid: v.variantGid, productGid: v.productGid }));
+  const allaMk = new Map(
+    await Promise.all(marknader.map(async (m) => [m, await lasMarknadskostnad(session.shop, m, varianter)] as const)),
+  );
+  const mk = market ? allaMk.get(market) ?? (await lasMarknadskostnad(session.shop, market, varianter)) : null;
   /* Mallen ska gå att skicka runt och släppa tillbaka utan att tappa
      flerpacken — därför följer stegen med i kostnadskolumnen: 88.34|134.22. */
   const tiersByVariant = new Map<string, string[]>();
@@ -112,10 +117,18 @@ export async function loader({ request }: LoaderFunctionArgs) {
     /* Samma regel som räknemotorn (tiersFor): marknadens egna steg om de
        finns, annars standardens — så listan visar exakt det som räknas. */
     const tiers = egnaSteg ?? stegByVariant.get(v.variantGid) ?? [];
+    /* Egen kostnad per marknad (null = ingen egen, ärver standard). */
+    const perMarknad: Record<string, number | null> = {};
+    for (const m of marknader) perMarknad[m] = allaMk.get(m)?.unitCost.get(v.variantGid) ?? null;
     return {
       ...v,
+      /* Standardkostnaden (Shopify) behålls alltid — under en marknad är
+         det den som står som förslag i fältet när landet saknar egen. */
+      standardCost: v.unitCost,
       unitCost,
+      egen: mk ? egen != null : v.unitCost != null,
       arvd: Boolean(mk) && egen == null && v.unitCost != null,
+      perMarknad,
       tiers,
       /* Antalet MÅSTE med: ett 50-pack som exporteras som bara ett tal lästes
          tillbaka som ett tvåpack, och en order med 2 st fick 50-packets pris. */
@@ -792,11 +805,15 @@ export default function Costs() {
             {/* Snabbfältet: skriv kostnaden per produkt, Enter sparar. */}
             <Card>
               <BlockStack gap="300">
-                <Text as="h2" variant="headingMd">{T.costs.quick.title}</Text>
-                <Text as="p" tone="subdued">{T.costs.quick.body}</Text>
+                <Text as="h2" variant="headingMd">
+                  {market ? `${T.costs.quick.title} · ${marknadsnamnet}` : T.costs.quick.title}
+                </Text>
+                <Text as="p" tone="subdued">{market ? T.costs.market.quickBody(marknadsnamnet) : T.costs.quick.body}</Text>
                 <BlockStack gap="200">
+                  {/* Nyckeln bär marknaden: byter man land ska fälten börja om
+                      med det landets värden, inte behålla det förra landets. */}
                   {produkter.map((grupp) => (
-                    <Produktrad key={grupp[0].productGid} grupp={grupp} T={T} nf={nf} currency={currency} market={market} />
+                    <Produktrad key={`${grupp[0].productGid}|${market}`} grupp={grupp} T={T} nf={nf} currency={currency} market={market} />
                   ))}
                 </BlockStack>
               </BlockStack>
@@ -908,13 +925,22 @@ export default function Costs() {
 
         <Layout.Section>
           <Card padding="0">
+            {/* Hela upplägget på en gång: standard + en kolumn per marknad.
+                Egen kostnad står rakt; ärvd standard står med * i grått; saknas
+                båda står —. TB och break-even räknas på den valda marknaden. */}
+            {marknader.length ? (
+              <div style={{ padding: "12px 16px 0" }}>
+                <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.tableNote}</Text>
+              </div>
+            ) : null}
             <DataTable
-              columnContentTypes={["text", "text", "numeric", "numeric", "numeric", "numeric"]}
+              columnContentTypes={["text", "text", "numeric", "numeric", ...marknader.map(() => "numeric" as const), "numeric", "numeric"]}
               headings={[
                 T.costs.thProduct,
                 T.costs.thVariant,
                 T.costs.thPrice,
-                T.costs.thCost,
+                marknader.length ? T.costs.market.standardShort : T.costs.thCost,
+                ...marknader.map((m) => (m === market ? `▸ ${marknadsnamn(m, lang, m)}` : marknadsnamn(m, lang, m))),
                 T.costs.thCmPerUnit(currency),
                 T.costs.thBeRoas,
               ]}
@@ -924,7 +950,15 @@ export default function Costs() {
                 </Link>,
                 r.variantTitle === "Default Title" ? "—" : r.variantTitle,
                 nf.format(r.price),
-                r.unitCost == null ? "—" : r.arvd ? `${nf.format(r.unitCost)} *` : nf.format(r.unitCost),
+                r.standardCost == null ? "—" : nf.format(r.standardCost),
+                ...marknader.map((m) => {
+                  const egen = r.perMarknad[m];
+                  if (egen != null) {
+                    return <Text key={`${m}${r.variantGid}`} as="span" fontWeight="semibold">{nf.format(egen)}</Text>;
+                  }
+                  if (r.standardCost == null) return "—";
+                  return <Text key={`${m}${r.variantGid}`} as="span" tone="subdued">{`${nf.format(r.standardCost)} *`}</Text>;
+                }),
                 (() => {
                   const k = perStyck(r.price, r.unitCost);
                   if (!k) return <Badge key={`tb${r.variantGid}`} tone="critical">{T.costs.missingBadge}</Badge>;
@@ -967,6 +1001,12 @@ type Rad = {
   tiers: { units: number; totalCost: number }[];
   /** Under en marknad: kostnaden är standardens, ingen egen post för landet. */
   arvd?: boolean;
+  /** Kostnaden är EGEN för läget (standard i Standard-läget, landets i landets). */
+  egen?: boolean;
+  /** Shopifys standardkostnad, oavsett valt läge. */
+  standardCost?: number | null;
+  /** Egen kostnad per marknad; null = ärver standard. */
+  perMarknad?: Record<string, number | null>;
 };
 
 /** "1 st 88,34 kr · 2 st 134,22 kr totalt (67,11/st)" — vad appen räknar med. */
@@ -1166,8 +1206,15 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
   const alla = kostnader.every((k) => k != null);
   const lika = alla && kostnader.every((k) => k === kostnader[0]);
   const saknas = kostnader.filter((k) => k == null).length;
-  const [v, setV] = useState(lika && kostnader[0] != null ? String(kostnader[0]) : "");
+  /* Under en marknad står bara marknadens EGEN kostnad i fältet. Ärver
+     produkten standarden visas den som förslag (placeholder) — så syns det
+     att landet saknar egen kostnad, och vad som räknas tills den finns. */
+  const egna = grupp.map((r) => (r.egen ? r.unitCost : null));
+  const allaEgna = egna.every((k) => k != null);
+  const likaEgna = allaEgna && egna.every((k) => k === egna[0]);
+  const [v, setV] = useState(likaEgna && egna[0] != null ? String(egna[0]) : "");
   const [sparat, setSparat] = useState(false);
+  const arvdText = market && lika && kostnader[0] != null && !allaEgna ? T.costs.market.inheritedPlaceholder(nf.format(kostnader[0])) : "";
 
   const spara = (targets: string[], value: string) => {
     if (!value.trim()) return;
@@ -1182,7 +1229,9 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
     fetcher.submit({ intent: "remove-cost", targets: targets.join(","), market }, { method: "POST" });
     setV("");
   };
-  const harKostnad = kostnader.some((k) => k != null);
+  /* "Ta bort" bara när det finns något EGET att ta bort — en ärvd standard
+     hör till Standard-läget och tas bort där. */
+  const harKostnad = egna.some((k) => k != null);
   const onKey = (targets: string[], value: string) => (e: React.KeyboardEvent) => {
     if (e.key === "Enter") spara(targets, value);
   };
@@ -1221,11 +1270,11 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
             value={v}
             onChange={setV}
             onBlur={() => {
-              if (v && String(kostnader[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v);
-              else if (!v && lika && harKostnad) taBort(grupp.map((r) => r.inventoryItemGid));
+              if (v && String(egna[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v);
+              else if (!v && likaEgna && harKostnad) taBort(grupp.map((r) => r.inventoryItemGid));
             }}
             autoComplete="off"
-            placeholder={!alla ? T.costs.quick.placeholder : !lika ? T.costs.quick.mixed : ""}
+            placeholder={arvdText || (!alla ? T.costs.quick.placeholder : !lika ? T.costs.quick.mixed : "")}
             suffix={currency}
             disabled={!lika && alla && !open}
           />
@@ -1252,7 +1301,7 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
       {open ? (
         <div style={{ paddingLeft: 16, paddingTop: 6 }}>
           <BlockStack gap="100">
-            {grupp.map((r) => <Variantrad key={r.variantGid} r={r} T={T} currency={currency} nf={nf} market={market} />)}
+            {grupp.map((r) => <Variantrad key={`${r.variantGid}|${market}`} r={r} T={T} currency={currency} nf={nf} market={market} />)}
           </BlockStack>
         </div>
       ) : null}
@@ -1262,8 +1311,9 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
 
 function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat; market: string }) {
   const fetcher = useFetcher<typeof action>();
-  const [v, setV] = useState(r.unitCost != null ? String(r.unitCost) : "");
+  const [v, setV] = useState(r.egen && r.unitCost != null ? String(r.unitCost) : "");
   const taBort = () => fetcher.submit({ intent: "remove-cost", targets: r.inventoryItemGid, market }, { method: "POST" });
+  const arvdText = r.arvd && r.unitCost != null ? T.costs.market.inheritedPlaceholder(nf.format(r.unitCost)) : "";
   const spara = () => {
     if (!v.trim()) {
       if (r.unitCost != null && !r.arvd) taBort();
@@ -1281,7 +1331,7 @@ function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<type
           <Text as="span" variant="bodySm" tone="subdued">{`  · ${nf.format(r.price)} ${currency}`}</Text>
         </div>
         <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
-          <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={T.costs.quick.placeholder} suffix={currency} />
+          <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={arvdText || T.costs.quick.placeholder} suffix={currency} />
         </div>
         {r.unitCost == null && !v ? <Badge tone="critical">{T.costs.missingBadge}</Badge> : fetcher.state !== "idle" ? <Badge tone="success">{T.costs.quick.saving}</Badge> : null}
         {r.unitCost != null && !r.arvd ? (
