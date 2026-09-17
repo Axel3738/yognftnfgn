@@ -413,3 +413,14 @@ bara om videon gjorts — utan redigerare är bildhälften det enda som får dat
   inte av repot.
 - Läsregel: delad pixel med takskyddet, kampanjen delar konto med takskyddets US-kampanj —
   ingen dom före 300 kr / 3 köp per annons.
+
+## 2026-09-18 — nattvakten körning nr 2 (ingen briefdag): −30 % och en paus
+
+SE last_14d: **1 694 kr / 4 köp / ROAS 1,32** på två dygn mot break-even 1,61 —
+vinst −13,6 %. Regeln "vinst < 16 % → −30 %": **CBO 1 000 → 700 kr/dag**, tillbakaläst.
+**`G_2_1` (ärvd presentbild) PAUSAD**: 721 kr, 2 köp, CPA 361 kr över BE 347 kr —
+ny annons-regeln (≥ 3 × target-CPA utan vinst). Två loggrader i `budgetlogg.jsonl`.
+Batch #2:s fem bilder live sedan 14:15: `CS_4_1` 250 kr / 0 köp, övriga < 20 kr —
+för tidigt. `CS_2_1` bär 2 av 4 köp (156 kr). ⚠️ Pixeln delad, ingen Shopify-nyckel:
+köpen gick inte att dela per produkt — ändringarna följer regelboken på pixelns tal.
+Nästa briefdag 2026-09-20.
