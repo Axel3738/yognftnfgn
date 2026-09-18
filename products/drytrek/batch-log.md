@@ -1124,3 +1124,41 @@ Reglerna hade i natt sänkt 1 000 → 700 kr (vinst 3d −10,6 %) och pausat
 lönsam på det talet. Rutinen dömer fortfarande bara SE; frågan (YES/NO) och
 A/B/C-frågan om SE står obesvarade i Discord `#ads` sedan 15/9 resp. 17/9.
 Underlag: `factory/output/drytrek/budgetrond-2026-09-18{,-NO}.json`.
+
+---
+
+## 2026-09-18 — leveransrunda: BÅDA marknaderna pausade, produkten står helt still
+
+`DRYTREK_NO_Damasker Vandring` **pausades för hand 2026-09-18 kl 11:28 CEST**.
+Sverige har stått pausad sedan 15/9. Båda kampanjerna är därmed avstängda med
+spend — beslut, aldrig något att "rätta". Ingen rutin gjorde det: nattvakten
+körde NO **torrt** samma natt (commit `451ff5b`) och ändrade noll.
+
+Leveransrundan har alltså inte bara en tom kö, den har **ingen marknad att
+leverera till alls**. Inget laddades upp, inget rördes i kontot.
+
+### ⚠️ Rättelse: Norge vände nedåt, tvärtemot vad jag skrev igår
+
+Loggposten 2026-09-17 sa "Norge stärks, andra avläsningen i rad över
+break-even" och kallade riktningen entydig. **Det höll inte.**
+
+| Mätdag | Spend 7d | Köp | ROAS 7d |
+|---|---:|---:|---:|
+| 2026-09-16 | 6 306 kr | 22 | 1,78 |
+| 2026-09-17 | 7 113 kr | 26 | 1,84 |
+| **2026-09-18** | **6 966 kr** | **24** | **1,65** |
+
+Nattvakten mätte dessutom **3d-fönstret till ROAS 1,37** samma natt, alltså
+under break-even 1,60. Sverige samma fönster: 3 785 kr, 6 köp, ROAS 0,69.
+
+**Lärdomen, och den är min:** två avläsningar i ett rullande 7-dagarsfönster är
+inte en trend. Fönstret tappar en dag i ena änden och lägger till en i andra, så
+två punkter kan peka uppåt utan att något blivit bättre. Jag skrev ändå
+"riktningen är entydig". Rätt sätt är att läsa det kortare fönstret bredvid det
+långa — 3d mot 7d — eller vänta på tre avläsningar. Det korta fönstret hade
+visat vändningen ett dygn tidigare.
+
+Frågan om omstart av Sverige står fortfarande obesvarad i Discord `#ads-to-do`
+sedan 15/9. Ny fråga ställd i `#annons-uppladdning` idag: ska den här
+leveransrutinen pausas nu när ingen marknad är igång? (HeimGuards NO-rutin
+stängdes av på samma sätt 2026-09-13 när Axel pausade den marknaden.)
