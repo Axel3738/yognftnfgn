@@ -132,7 +132,12 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    | Översättning NO | 15:40 + 5 min × plats | `/ops-oversatt <nyckel>` |
    | Översättning US (bara butiker med US i `annonsmarknader`, register.json) | 16:40 + 5 min × plats | `/ops-oversatt <nyckel> --marknad US` |
    | Speglingen (bara poster med `spegling` i register.json — `register.mjs spegling <nyckel> <bäver-hub-id>`; Axels beslut 2026-09-18, CaraShell) | 16:20 + 5 min × plats | `/ops-spegla <nyckel>` |
-   | Briefgranskningen (Axels beslut 2026-09-18) — **bara måndag + torsdag**, dagen efter briefnätterna; cronen bär veckodagarna (`… * * 1,4`), `rutin.mjs` sätter dem själv | 07:00 + 5 min × plats | `/briefgranskning <nyckel>` |
+
+   ⚠️ **Briefgranskningen är INTE en butiksrutin** (ombyggd 2026-09-18 kväll):
+   `/briefgranskning` går som EN rutin för hela Bäverbutiken (måndag + torsdag
+   07:00) och läser alla Bäver-hubbar, inklusive de speglade produkternas. Setup
+   bygger den inte; finns en gammal `Briefgranskningen: <nyckel>` i
+   `list_triggers` ska den tas bort, inte kompletteras.
 
    **Tiderna räknas av skriptet, aldrig i huvudet:**
    ```
@@ -182,12 +187,14 @@ Börja med färsk `main`: `git fetch origin main && git checkout main && git res
 `node factory/register.mjs <nyckel> --idag $IDAG`. Läs av: konto, prefix,
 hubb (saknas hubben: stoppa briefdelen, gör budgetdelen, larma i rapporten),
 **Briefdag JA/NEJ**, redigerare.
-**Läs `products/<butik>/feedback.md`** — den senaste sektionen `## Rond …`
-är creative director-domen över din förra briefrond (`/briefgranskning`,
-Axels beslut 2026-09-18): vad som var bra, vad som missades och **tre regler
-för nästa rond**. På en briefdag gäller de tre reglerna varje brief du
-skriver i steg 5–7, och rapporten säger vilka de var. Saknas filen är
-produkten aldrig granskad — skriv det i rapporten, inget mer.
+**Läs `products/<nyckel>/feedback.md`** — den senaste sektionen `## Rond …`
+är creative director-domen över den senaste briefronden för produkten
+(`/briefgranskning`, Axels beslut 2026-09-18 — sedan samma kväll EN rutin för
+hela Bäverbutiken som läser de speglade produkternas Bäver-hubbar och skriver
+filen hit): vad som var bra, vad som missades och **tre regler för nästa
+rond**. På en briefdag gäller de tre reglerna varje brief du skriver i steg
+5–7, och rapporten säger vilka de var. Saknas filen är produkten aldrig
+granskad — skriv det i rapporten, inget mer.
 **Svarar registret "Okänd butik" eller står posten i läge `avslutad`**
 (t.ex. TankGuard, avslutad 2026-09-12): butiken körs inte längre. Gör
 INGENTING i kontot, ingen Discord-post, ingen commit. Skriv en rad i
