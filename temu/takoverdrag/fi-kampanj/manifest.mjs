@@ -46,12 +46,26 @@ for (const ad of se) {
     annonser.push({ ...bas, typ: 'bild', fil });
   }
 }
+// A/B-testet Bäver vs CaraShell i Finland (Axels beslut 2026-09-18): samma 34 annonser, en kampanj per butik.
+//   baver     → Magiborsten FI, Majavakauppa-sidan, Bäverbutiken.se-pixeln, majavakauppa.fi
+//   carashell → OPS-kontot MagiBorsten DK, CaraShell-sidan, CaraShell-pixeln, carashell.se/fi (FI-marknaden byggd 2026-09-18)
+// Annonsnamnen är samma i båda armarna (FI_Takoverdrag_…) så de går att jämföra rakt av — och de bär INTE
+// prefixet CaraShell_, så nattvakten (/notionscalercs carashell) rör inte testet.
+const ARMAR = {
+  baver: { konto: 'act_1619718346388201', kontonamn: 'Magiborsten FI', page_id: '1317870104733246', pixel_id: '1554276343018184',
+    link: 'https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan',
+    kampanjnamn: `Kattopeite Asuntovaunu | FI | Launch ${DATUM}`, adsetNamn: (se) => `FI | ${se}` },
+  carashell: { konto: 'act_915422744950975', kontonamn: 'Magiborsten DK', page_id: '1381171778405935', pixel_id: '28589207184025756',
+    link: 'https://carashell.se/fi/products/takskyddet?country=FI',
+    kampanjnamn: `CARASHELL_FI_Kattopeite Asuntovaunu | Launch ${DATUM}`, adsetNamn: (se) => `CARASHELL_FI_Kattopeite - ${se.replace(/^Taköverdrag Husvagn 6,5 × 3 m \| /, '').replace(/ \| Notionrunda /, ' | ').replace(/ \| 2026-09-09$/, '')}` },
+};
+const ARM = ARMAR[args.includes('--arm') ? val('--arm') : 'baver'];
+if (!ARM) throw new Error('--arm baver|carashell');
+for (const a of adsets) a.fi_namn = ARM.adsetNamn(a.se_namn);
 const M = {
-  konto: 'act_1619718346388201',                 // Magiborsten FI — verifierat 2026-09-18 via /me/adaccounts
-  page_id: '1317870104733246',                    // Majavakauppa — samma sida som kontots 70 befintliga FI-annonser
-  pixel_id: '1554276343018184',                   // se FI-KAMPANJ-LOGG.md: kontots enda köp-pixel, används av Axels 19 FI-adsets — FRÅGA till Axel
-  link: 'https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan',
-  kampanjnamn: `Kattopeite Asuntovaunu | FI | Launch ${DATUM}`,
+  arm: args.includes('--arm') ? val('--arm') : 'baver',
+  konto: ARM.konto, kontonamn: ARM.kontonamn, page_id: ARM.page_id, pixel_id: ARM.pixel_id, link: ARM.link,
+  kampanjnamn: ARM.kampanjnamn,
   dagsbudget_ore: 110000,                         // platshållare ≈ 100 €/dag (kontot är i SEK) — sätts av Axel före aktivering
   dsa: dsaFran(se),                                // DSA-annonsör/betalare, lästa ur SE-kampanjens adsets
   // Metas creative-features: kopieras ur SE-kampanjens creatives (alla OPT_OUT). `standard_enhancements`

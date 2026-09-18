@@ -57,9 +57,14 @@ def slutkort(ut, G, namn):
     lager = Image.new('RGBA', (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(lager)
     # Ordmärket "BÄVERBUTIKEN" + svensk flagga (svart platta ~[112,246,614,388]) → MAJAVAKAUPPA
-    d.rounded_rectangle([108, 242, 618, 392], radius=10, fill=(12, 12, 12, 255))
-    fl = passa(G['butik'], FB, 470, 54)
-    d.text((363, 317), G['butik'], font=fl, fill=(255, 255, 255, 255), anchor='mm')
+    # Tomt `butik` = NEUTRALT slutkort (Axels beslut 2026-09-18: samma videor i A/B-testet Bäver vs CaraShell,
+    # ingen logga alls) — plattan målas i kortets egen vita bakgrund i stället för svart med ordmärke.
+    if G.get('butik'):
+        d.rounded_rectangle([108, 242, 618, 392], radius=10, fill=(12, 12, 12, 255))
+        fl = passa(G['butik'], FB, 470, 54)
+        d.text((363, 317), G['butik'], font=fl, fill=(255, 255, 255, 255), anchor='mm')
+    else:
+        d.rectangle([100, 234, 626, 400], fill=(255, 255, 255, 255))
     # vit platta över hela det svenska textblocket
     d.rectangle([40, 846, 700, 1046], fill=(255, 255, 255, 255))
     ftit = ImageFont.truetype(FB, 25)
@@ -86,7 +91,7 @@ if __name__ == '__main__':
     gf, ut = sys.argv[1], sys.argv[2]
     os.makedirs(ut, exist_ok=True)
     G = json.load(open(gf, encoding='utf-8'))
-    G.setdefault('butik', 'MAJAVAKAUPPA')
+    G.setdefault('butik', '')   # standard: neutralt slutkort utan logga
     print(hero(ut, G['pris'], [95, 330, 655, 500], 86, namn='pris'))
     print(hero(ut, G['jamforpris'], [195, 512, 530, 604], 52, stryk=True, namn='jamforpris'))
     print(hero(ut, G['frifrakt'], [90, 330, 655, 500], 86 if len(G['frifrakt']) <= 10 else 62, namn='frifrakt'))

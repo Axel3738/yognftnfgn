@@ -44,7 +44,10 @@ const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 async function main() {
   // ---- spärr 1: rätt konto
   const acct = await get(M.konto, { fields: 'name,account_id,currency,account_status' });
-  if (acct.account_id === '1867947880635861' || !/magiborsten fi/i.test(acct.name)) throw new Error(`STOPP: fel konto ${acct.name} (${acct.account_id}) — bara Magiborsten FI får skrivas.`);
+  // Spärr: kontot måste vara exakt det manifestet pekar på (id + namn) och aldrig SE-kontot. Två armar sedan
+  // A/B-testet 2026-09-18: Magiborsten FI (Bäver-armen) och MagiBorsten DK = OPS-kontot (CaraShell-armen).
+  const vantat = M.kontonamn || 'Magiborsten FI';
+  if (acct.account_id === '1867947880635861' || M.konto !== `act_${acct.account_id}` || acct.name.toLowerCase() !== vantat.toLowerCase()) throw new Error(`STOPP: fel konto ${acct.name} (${acct.account_id}) — manifestet väntar ${vantat} (${M.konto}).`);
   console.log(`Konto: ${acct.name} (${acct.account_id}) ${acct.currency} status ${acct.account_status}`);
   // ---- spärr 2: pixel och sida finns på kontot/token
   const pix = await get(`${M.konto}/adspixels`, { fields: 'id,name' });
