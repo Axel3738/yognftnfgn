@@ -177,6 +177,24 @@ annars komplettera en-filen och kör `--igen oversatt` igen. Med
 `prislista` blir 🖐 tills USD är påslagen i admin (steg 8) — det är rätt, inte
 ett fel.
 
+🖐 **Judge.me måste få veta att språket finns — ett klick, varje ny marknad.**
+Recensionswidgeten upptäcker inte ett nytt Shopify-språk av sig själv. Tills
+den gjort det står den kvar på butikens standardspråk, och kunden möts av
+svenska recensionsrubriker mitt på produktsidan. Klicket:
+**app.judge.me → Settings → Language → "Refresh list"**, sedan upp till
+24 timmar. Judge.mes support, ordagrant 2026-09-18 om CaraShells finska:
+*"After publishing a language in Shopify, it can take up to 24 hours for our
+system to pick it up… your current widget language is set to Swedish, which is
+the fallback when a language isn't detected yet."*
+
+Så här ser det ut i sidans kod, utan webbläsare: Judge.mes konfigblock bär ett
+`"locale"`-fält. Står där marknadens egen kod (`nb`, `en`) är språket upptäckt;
+står där butikens standardspråk är det inte det. Mätt på CaraShell samma dag —
+/nb → `nb` ✅, carashell.com → `en` ✅, /fi → `en` ❌ (fallback).
+⚠️ Den SYNLIGA texten säger ingenting: widgeten ritas av appens JavaScript, och
+råHTML:en bär samma svenska sträng även på en marknad där widgeten är översatt.
+Läs `locale`-fältet, aldrig texten.
+
 ### 7. Kundvyn på riktig HTML — och som amerikansk kund
 ```
 node factory/kundvy-kor.mjs <butik> <handle>
@@ -231,6 +249,9 @@ slår på den — och det ska han göra FÖRST när `/en`-sidan svarar (steg 7).
 - [ ] Bygget kört `--igen marknad,tema,oversatt,prislista,recensioner` med ALLA produktfiler; 0 läckor på /<locale>
 - [ ] Kundvyn grön på `/` och `/<locale>`; produktsidan läst som kund i landet (POST /localization) — valutan rapporterad som den ÄR
 - [ ] `prislista` grön ELLER 🖐 med klicket "USD som marknadens valuta" — aldrig tyst
+- [ ] Judge.me: `locale`-fältet läst på den nya marknadens sida. Står det butikens
+      standardspråk ⇒ klicket "Settings → Language → Refresh list" står i Axels
+      lista, med 24-timmarsväntan utskriven
 - [ ] Inget rört i något annonskonto; annonsfrågan (konto + creatives) står som nästa beslut
 - [ ] Juridikflaggan till Axel: policyn refererar svensk lag och EU-ODR för amerikanska kunder
 - [ ] dna.md uppdaterad, commit + push till `main`

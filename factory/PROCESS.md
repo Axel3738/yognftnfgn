@@ -755,6 +755,17 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    (nytt språk tar upp till 48 h; engelska tog ~26 h). Det fältet duger
    som signal — den synliga texten gör det inte.
 
+   ✅ **Svaret från Judge.mes support 2026-09-18, och lösningen:** finska ÄR
+   ett stött språk. Appen upptäcker bara inte ett nytt Shopify-språk av sig
+   själv — *"After publishing a language in Shopify, it can take up to 24 hours
+   for our system to pick it up… your current widget language is set to
+   Swedish, which is the fallback when a language isn't detected yet."*
+   🖐 **Klicket, en gång per ny marknad: app.judge.me → Settings → Language →
+   "Refresh list"**, sedan upp till 24 timmar. Ligger nu som eget steg i
+   `.claude/commands/ny-marknad.md`. `locale`-fältet var alltså rätt signal
+   hela tiden: det säger om appen känner igen språket, och supporten beskrev
+   exakt samma fallback.
+
    🖐 **Kontrollen kräver en webbläsare, och containern klarar den inte.**
    Headless Chrome mot butiken ger `ERR_CERT_AUTHORITY_INVALID`: Playwrights
    Chromium läser inte proxyns CA-bundle, `certutil` finns inte och
