@@ -24,6 +24,7 @@
 | 2026-09-17 | Alla tio | Mail (copy-paste-versionen) + DM till Nina | Skickat kl. 20:43–21:42 | Vänta på svar, följ upp efter 4 dagar |
 | 2026-09-18 | Margareta Hallin | Mail | **Nej.** "Vilken rolig idé men tyvärr tror jag inte riktigt att den passar på mitt konto." | Tacka med en rad, fråga inte varför. Reserv 2 (Agneta Sjödin) rycker upp. |
 | 2026-09-18 | Nina Hermansen | Instagram-DM | **Positivt.** Hon har lämnat ProAd (tabellen nedan är inaktuell på den punkten). "Tony" sköter alla hennes samarbeten och återkommer. | Vänta på Tony till tisdag 23/9, annars be Nina om hans mail. Starta tvåveckorsobservationen av hennes stories nu. Rättelse: hej@proad.se gäller inte längre för henne. |
+| 2026-09-18 | Alla tio + fem egna fynd | Modash | 15 rapporter exporterade och betygsatta enligt sjusifferskalan. Åhman 9,6, Jonsson 8,0, Sjödin 7,5, Törnblom 7,1, Hermansen 6,0, Adelsköld 5,7. Hallin, Lyth och Crafoord under 4. Fynd: Showbonden 6,6, Annelie Andersson 5,5, Tjockkocken 4,5, Skippasockret 5 (spärr), Malin Jönsson 4 (spärr). | Full tabell i `docs/matstrumpor-modash-score.md`. Åhman går upp till kandidat om SVT-frågan får ett skriftligt svar. |
 
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 
