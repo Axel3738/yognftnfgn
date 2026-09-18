@@ -6,9 +6,13 @@
   "suffix": "vi-testade",
   "sidnamn": "{kortTitel} – Vi testade (listicle)",
   "sidtitel": "Vi testade {kortTitel}",
-  "punkter": [5],
+  "punkter": [
+    5
+  ],
   "forfattare_obrandad": "Anders, som testade den själv",
-  "rubrik": { "period": true },
+  "rubrik": {
+    "period": true
+  },
   "jamforpris_behovs": false,
   "arlig_rubrik": "Jag ska vara ärlig:",
   "riskfritt_rubrik": "Därför kan du testa helt riskfritt.",
@@ -19,6 +23,13 @@
       "forfattare_obrandad": "Anders, who tested it himself",
       "arlig_rubrik": "I'll be honest:",
       "riskfritt_rubrik": "That's why you can try it risk-free."
+    },
+    "fi": {
+      "sidnamn": "{kortTitel} – Testasimme sen (listicle)",
+      "sidtitel": "Testasimme tuotteen {kortTitel}",
+      "forfattare_obrandad": "Anders, joka testasi sen itse",
+      "arlig_rubrik": "Ollaan rehellisiä:",
+      "riskfritt_rubrik": "Siksi voit kokeilla sitä riskittä."
     }
   }
 }

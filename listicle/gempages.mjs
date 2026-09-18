@@ -519,6 +519,26 @@ export function granskaCopy(copy, produkt, basPlatser, { brand = null, forbjudna
   if (!Array.isArray(copy?.punkter) || copy.punkter.length !== n) fel.push(`punkter: ska vara exakt ${n} (${k.kommando}${k.punkter.length > 1 ? `, --punkter ${k.punkter.join('|')}` : ''}), är ${Array.isArray(copy?.punkter) ? copy.punkter.length : 0}`);
   const rubrik = String(copy?.hero?.rubrik ?? '');
   const rubrikPriser = priserI(rubrik, val);
+
+  // Flera priser i butiken = "ditt för X" är sant bara för den billigaste.
+  // Takskyddet fick nio storlekar med nio priser 2026-09-18 (SEK 1 129–2 239,
+  // EUR 126,90–251,90, USD 199–389) medan sidorna sa "yours is $199". Priset
+  // motorn och butiken skriver in är produktens LÄGSTA, precis som
+  // produktsidan visar — så copyn måste säga "från" framför det. Rubriken är
+  // ett fel (det är sidans löfte); övriga platser en varning att läsa om.
+  if (Array.isArray(produkt.flerPriser) && produkt.flerPriser.length > 1) {
+    const franOrd = sprak.franOrd ?? [];
+    const harFran = (t) => franOrd.some((o) => String(t).toLowerCase().includes(o));
+    const namnerPris = (t) => harPrisTokens(t) || priserI(String(t), val).length > 0;
+    const spann = `${pris(Math.min(...produkt.flerPriser))}–${pris(Math.max(...produkt.flerPriser))}`;
+    if (namnerPris(rubrik) && !harFran(rubrik)) {
+      fel.push(`hero.rubrik: produkten har ${produkt.flerPriser.length} olika priser (${spann}) och priset på sidan är det lägsta — skriv "${(franOrd[0] ?? 'från').trim()}" framför det, annars lovar rubriken ett pris som bara gäller den minsta storleken`);
+    }
+    const utan = Object.keys(platser.text)
+      .filter((nyckel) => nyckel !== 'hero.rubrik')
+      .filter((nyckel) => { const t = nyckelText(lasCopy(copy, nyckel)); return namnerPris(t) && !harFran(t); });
+    if (utan.length) varningar.push(`${utan.length} textplats(er) nämner priset utan "${(franOrd[0] ?? 'från').trim()}" fast produkten har ${produkt.flerPriser.length} priser (${spann}): ${utan.join(', ')} — läs dem och avgör om de lovar för mycket`);
+  }
   if (k.rubrik.pris && produkt.pris != null && !rubrikPriser.includes(Number(produkt.pris))) varningar.push(`hero.rubrik nämner inte priset ${produkt.prisText ?? pris(produkt.pris)}`);
   if (k.rubrik.jamforpris && produkt.jamforpris != null && !rubrikPriser.includes(Number(produkt.jamforpris))) varningar.push(`hero.rubrik nämner inte jämförpriset ${produkt.jamforprisText ?? pris(produkt.jamforpris)}`);
   if (k.rubrik.period && !sprak.periodOrd.test(rubrik)) varningar.push('hero.rubrik saknar testperioden (dagar/veckor/en vinter/en säsong …) — "Vi testade X i N dagar" är hela konceptet');

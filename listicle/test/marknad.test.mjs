@@ -113,7 +113,10 @@ test('formateraPris: kr med mellanslag, dollar med komma och punkt', () => {
   assert.equal(formateraPris(1129, 'USD'), '$1,129');
   assert.equal(formateraPris(99.5, 'USD'), '$99.50');
   assert.equal(formateraPris(249, 'GBP'), '£249');
-  assert.equal(formateraPris(249, 'EUR'), '€249');
+  // Euro som butiken skriver den på carashell.se/fi: komma, och centen alltid utsatt.
+  assert.equal(formateraPris(249, 'EUR'), '€249,00');
+  assert.equal(formateraPris(126.9, 'EUR'), '€126,90');
+  assert.equal(formateraPris(1129, 'EUR'), '€1 129,00');
   assert.equal(formateraPris('x', 'USD'), '');
   assert.throws(() => valutaFor('XYZ'), /Okänd valuta "XYZ"/);
 });

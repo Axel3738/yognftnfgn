@@ -1,9 +1,9 @@
 {
-  "byggd": "2026-09-18T10:59:46.966Z",
+  "byggd": "2026-09-18T10:57:28.681Z",
   "koncept": "lagerrensning",
   "punkter": 5,
   "datumrad": "2026-09-18",
-  "locale": "en",
+  "locale": "fi",
   "prisplatser": true,
   "produkt": {
     "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
@@ -72,48 +72,48 @@
     "beskrivning": "Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
   },
   "marknad": {
-    "kod": "US",
-    "land": "CA",
-    "egetLand": true,
-    "locale": "en",
-    "valuta": "CAD",
-    "doman": "carashell.com",
-    "lank": "https://carashell.com/products/takskyddet?country=CA",
-    "sidlank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-ca?country=CA",
+    "kod": "FI",
+    "land": "FI",
+    "egetLand": false,
+    "locale": "fi",
+    "valuta": "EUR",
+    "doman": "carashell.se",
+    "lank": "https://carashell.se/fi/products/takskyddet?country=FI",
+    "sidlank": "https://carashell.se/fi/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=FI",
     "produkt": {
-      "titel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
-      "kortTitel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
+      "titel": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m",
+      "kortTitel": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m",
       "handle": "takskyddet",
-      "url": "https://carashell.com/products/takskyddet",
+      "url": "https://carashell.se/fi/products/takskyddet",
       "typ": "",
-      "valuta": "CAD",
-      "pris": 285,
-      "jamforpris": 356,
-      "prisText": "$285",
-      "jamforprisText": "$356",
+      "valuta": "EUR",
+      "pris": 126.9,
+      "jamforpris": 165.9,
+      "prisText": "€126,90",
+      "jamforprisText": "€165,90",
       "flerPriser": [
-        285,
-        327,
-        370,
-        399,
-        442,
-        485,
-        527,
-        556
+        126.9,
+        144.9,
+        162.9,
+        179.9,
+        197.9,
+        215.9,
+        233.9,
+        251.9
       ],
       "alternativ": [
         {
           "namn": "Variant",
           "varden": [
-            "18 × 10 ft (5.5 × 3 m)",
-            "21 × 10 ft (6.5 × 3 m)",
-            "25 × 10 ft (7.5 × 3 m)",
-            "28 × 10 ft (8.5 × 3 m)",
-            "31 × 10 ft (9.5 × 3 m)",
-            "34 × 10 ft (10.5 × 3 m)",
-            "38 × 10 ft (11.5 × 3 m)",
-            "41 × 10 ft (12.5 × 3 m)",
-            "44 × 10 ft (13.5 × 3 m)"
+            "5,5 × 3 m",
+            "6,5 × 3 m",
+            "7,5 × 3 m",
+            "8,5 × 3 m",
+            "9,5 × 3 m",
+            "10,5 × 3 m",
+            "11,5 × 3 m",
+            "12,5 × 3 m",
+            "13,5 × 3 m"
           ]
         }
       ],
@@ -144,18 +144,18 @@
           "height": 1200
         }
       ],
-      "beskrivning": "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide — it covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
+      "beskrivning": "Kattosuoja on saatavana yhdeksässä pituudessa, 5,5–13,5 metriä, kaikki 3 metriä leveitä – se peittää katon pinnan ja pitää sadeveden poissa kattoluukuista ja saumoista talven yli."
     }
   },
-  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/copy.en-CA.json",
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/copy.fi.json",
   "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/bildplan.json",
   "brand": {
     "id": null,
     "namn": null,
-    "forfattare": "Anders from the warehouse",
+    "forfattare": "Anders varastolta",
     "logga": false
   },
-  "knappar": "https://carashell.com/products/takskyddet?country=CA",
+  "knappar": "https://carashell.se/fi/products/takskyddet?country=FI",
   "butik": "carashell",
   "bilder": [
     {
@@ -201,44 +201,46 @@
       "kalla": "produkt #2"
     }
   ],
-  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.en-CA.html",
-  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.en-CA.sida.html",
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.fi.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.fi.sida.html",
   "gempages": null,
   "forhandsvisning": {
-    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/index.html",
-    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop.png",
-    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil.png",
-    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop-hero.png",
-    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop-punkt1.png",
-    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop-punkt2.png",
-    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop-slut.png",
-    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/desktop-sidfot.png",
-    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil-hero.png",
-    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil-punkt1.png",
-    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil-punkt2.png",
-    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil-slut.png",
-    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-CA/mobil-sidfot.png"
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-fi/mobil-sidfot.png"
   },
   "sida": {
-    "id": "633950114795787035",
-    "namn": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m) – Clearance sale (listicle)",
-    "handle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-ca"
+    "id": "630606673399259120",
+    "namn": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m – Varastonpurku (listicle)",
+    "handle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning"
   },
   "publicerat": {
-    "url": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-ca?country=CA",
-    "sidaId": "gid://shopify/Page/735657787724",
+    "url": "https://carashell.se/fi/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=FI",
+    "sidaId": "gid://shopify/Page/735556829516",
     "skapad": false,
-    "tema": {
-      "id": "gid://shopify/OnlineStoreTheme/205487636812",
-      "namn": "CaraShell – CRO v1",
-      "skrivna": []
+    "tema": null,
+    "oversattning": {
+      "registrerade": [
+        "title",
+        "body_html"
+      ],
+      "torr": false
     },
-    "oversattning": null,
     "kontroll": {
       "ok": true,
       "fel": [],
-      "url": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-ca?country=CA",
-      "tecken": 101660
+      "url": "https://carashell.se/fi/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=FI",
+      "tecken": 101881
     }
   },
   "bildUrler": [

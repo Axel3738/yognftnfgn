@@ -1,5 +1,5 @@
 {
-  "hamtat": "2026-09-17T21:17:03.072Z",
+  "hamtat": "2026-09-18T10:59:38.338Z",
   "koncept": "lagerrensning",
   "kommando": "/lagerrensning",
   "punkter": 5,
@@ -14,7 +14,16 @@
     "jamforpris": 1469,
     "prisText": "1 129 kr",
     "jamforprisText": "1 469 kr",
-    "flerPriser": null,
+    "flerPriser": [
+      1129,
+      1289,
+      1449,
+      1599,
+      1759,
+      1919,
+      2079,
+      2239
+    ],
     "alternativ": [
       {
         "namn": "Variant",
@@ -58,7 +67,7 @@
         "height": 1200
       }
     ],
-    "beskrivning": "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+    "beskrivning": "Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
   },
   "dna": {
     "id": "carashell/takskyddet",
@@ -82,11 +91,20 @@
       "url": "https://carashell.com/products/takskyddet",
       "typ": "",
       "valuta": "CAD",
-      "pris": 284,
+      "pris": 285,
       "jamforpris": 356,
-      "prisText": "$284",
+      "prisText": "$285",
       "jamforprisText": "$356",
-      "flerPriser": null,
+      "flerPriser": [
+        285,
+        327,
+        370,
+        399,
+        442,
+        485,
+        527,
+        556
+      ],
       "alternativ": [
         {
           "namn": "Variant",
@@ -130,7 +148,7 @@
           "height": 1200
         }
       ],
-      "beskrivning": "A 6.5 × 3 m (21.3 × 9.8 ft) roof cover — for rigs up to 21 ft — that covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
+      "beskrivning": "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide — it covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
     }
   }
 }

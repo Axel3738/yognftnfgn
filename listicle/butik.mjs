@@ -34,7 +34,7 @@ import { join, dirname } from 'node:path';
 import { NYCKELNAMN } from '../mejl/shopify.mjs';
 import { losNycklar, suffixForDoman, storefrontLosenord, mintaToken, normaliseraDoman } from '../factory/token.mjs';
 import { lasYaml } from '../factory/yaml.mjs';
-import { domanForMarknad, lankFor, arOpsMarknad } from '../factory/opsmarknader.mjs';
+import { domanForMarknad, arOpsMarknad } from '../factory/opsmarknader.mjs';
 import { standardLocale, lokalValuta, landsnamnSv, landEn, arKandLandskod } from '../factory/lander.mjs';
 import { CSS } from './html.mjs';
 
@@ -139,19 +139,29 @@ export function landForMarknad(marknad, land) {
   return { ...marknad, land: k, valuta, namn: landsnamnSv(k), landEn: landEn(k), inomMarknad: marknad.kod, egetLand: true };
 }
 
-/** Marknadens produktlänk för knapparna: egen domän → https://carashell.com/products/x?country=US, annars /en/-mappen. Ett land inom marknaden får sin egen ?country=. */
+/**
+ * Marknadens bas-URL: egen domän bär språket själv (carashell.com), annars
+ * ligger språket i en mapp på butikens domän (carashell.se/nb, /fi).
+ * ⚠️ Regeln bor HÄR och inte i factory/opsmarknader.mjs: den tabellen är
+ * ANNONSmarknaderna (vilket konto en kampanj hamnar i) och känner bara SE, NO
+ * och US. Butikens marknader står i butiksfilen — Finland finns där sedan
+ * 2026-09-18 utan att vara en annonsmarknad, och en listicle ska kunna
+ * byggas för varje marknad butiken faktiskt säljer i.
+ */
+const marknadsBas = (marknad) => (marknad.egen ? `https://${marknad.doman}` : `https://${marknad.doman}/${marknad.locale}`);
+
+/** Marknadens produktlänk för knapparna. `?country=` är aldrig valfritt — utan den får kunden språket men fel valuta. */
 export function marknadsProduktLank(marknad, handle) {
-  const bas = lankFor({ doman: marknad.doman, handle, kod: marknad.kod, egenDoman: marknad.egen });
-  if (marknad.egetLand && /[?&]country=[A-Z]{2}$/.test(bas)) return bas.replace(/country=[A-Z]{2}$/, `country=${marknad.land}`);
-  return bas;
+  const h = String(handle ?? '').trim();
+  if (!h) throw new Error('marknadsProduktLank: handle saknas.');
+  return `${marknadsBas(marknad)}/products/${h}?country=${marknad.land}`;
 }
 
-/** Marknadens sidlänk (samma regel som produktlänken — ?country= pekar ut marknaden). */
+/** Marknadens sidlänk (samma regel som produktlänken). */
 export function marknadsSidlank(marknad, handle) {
   const h = String(handle ?? '').trim();
   if (!h) throw new Error('marknadsSidlank: handle saknas.');
-  const bas = marknad.egen ? `https://${marknad.doman}` : `https://${marknad.doman}/${marknad.locale}`;
-  return `${bas}/pages/${h}?country=${marknad.land}`;
+  return `${marknadsBas(marknad)}/pages/${h}?country=${marknad.land}`;
 }
 
 // ------------------------------------------------------------ klienten

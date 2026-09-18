@@ -1,11 +1,11 @@
 {
-  "_kommentar": "US-versionen (carashell.com, engelska, USD) av takskyddets lagerrensningssida — Axels fråga 2026-09-16 kväll: 'en version som passar för carashell.com'. Skriven av huvudsessionen (Fable) enligt kommandots regel 3, som en amerikansk anpassning av den svenska copyn (samma fem punkter, samma grepp), inte en ordagrann översättning. Fakta ENBART ur den engelska produktsidan carashell.com/products/takskyddet?country=US (läst 2026-09-16): 6.5 × 3 m (21.3 × 9.8 ft), for rigs up to 21 ft, black 210D fabric, edge hangs 30–40 cm (12–16 in) over the sides, elastic straps with plastic hooks latch under the edge of the body, stays put in wind, one person, no paint scraped by a heavy full-body cover, moisture check, free shipping to the US, 5–10 business days, 'Try it risk-free for 90 days … we'll arrange a return or refund'. Priser $199 / $249 avlästa ur carashell.com/products/takskyddet.json samma dag (USD — inte en omräkning av 1 129 / 1 469 kr). Obrandad: inget butiksnamn, ingen mejladress (sidans FAQ säger hello@…, men sidan ska funka i vilken butik som helst). Aldrig påstått: vikt, förvaringspåse, dragsko, vagnlängder utöver 'up to 21 ft', betyg. ⚠️ Rättad 2026-09-17: produktsidan bär nu NIO storlekar (18–44 ft / 5,5–13,5 m, nio varianter i butiken) och 'Oxford, waterproof and sun-resistant', 'straps on all four sides', 'two extra reinforced straps' — 'up to 21 ft' och '6.5 × 3 m' är borta ur copyn.",
+  "_kommentar": "US-versionen (carashell.com, engelska, USD) av takskyddets lagerrensningssida — Axels fråga 2026-09-16 kväll: 'en version som passar för carashell.com'. Skriven av huvudsessionen (Fable) enligt kommandots regel 3, som en amerikansk anpassning av den svenska copyn (samma fem punkter, samma grepp), inte en ordagrann översättning. Fakta ENBART ur den engelska produktsidan carashell.com/products/takskyddet?country=US (läst 2026-09-16): 6.5 × 3 m (21.3 × 9.8 ft), for rigs up to 21 ft, black 210D fabric, edge hangs 30–40 cm (12–16 in) over the sides, elastic straps with plastic hooks latch under the edge of the body, stays put in wind, one person, no paint scraped by a heavy full-body cover, moisture check, free shipping to the US, 5–10 business days, 'Try it risk-free for 90 days … we'll arrange a return or refund'. Priser $199 / $249 avlästa ur carashell.com/products/takskyddet.json samma dag (USD — inte en omräkning av 1 129 / 1 469 kr). Obrandad: inget butiksnamn, ingen mejladress (sidans FAQ säger hello@…, men sidan ska funka i vilken butik som helst). Aldrig påstått: vikt, förvaringspåse, dragsko, vagnlängder utöver 'up to 21 ft', betyg. ⚠️ Rättad 2026-09-17: produktsidan bär nu NIO storlekar (18–44 ft / 5,5–13,5 m, nio varianter i butiken) och 'Oxford, waterproof and sun-resistant', 'straps on all four sides', 'two extra reinforced straps' — 'up to 21 ft' och '6.5 × 3 m' är borta ur copyn. ⚠️ Rättad 2026-09-18: produkten fick NIO PRISER per marknad samma morgon (SEK 1 129–2 239, EUR 126,90–251,90, USD 199–389, GBP 152–297). Priset på sidan är produktens lägsta — precis det produktsidan visar — så varje pris skrivs nu som prisplats med \"från\"/\"from\" framför, och ärlig-blockets sista stycke förklarar prisstegen. Utan det lovade rubriken ett pris som bara gäller de två minsta storlekarna.",
   "hero": {
-    "rubrik": "We ordered too many roof covers, so right now yours is $199 instead of $249 while stock lasts",
+    "rubrik": "We ordered too many roof covers, so right now yours is from [[PRIS]] instead of [[JAMFORPRIS]] while stock lasts",
     "ingress": "Our last order came in bigger than planned and the warehouse is full. The roof of your travel trailer or motorhome is what gains from it.",
-    "knapp": "See the clearance sale → $199",
+    "knapp": "See the clearance sale → from [[PRIS]]",
     "sammanfattning": [
-      "Our last order came in bigger than planned, and the warehouse is full of roof covers. So we're clearing them out: $199 instead of the regular $249, while stock lasts.",
+      "Our last order came in bigger than planned, and the warehouse is full of roof covers. So we're clearing them out: from [[PRIS]] instead of the regular [[JAMFORPRIS]], while stock lasts.",
       "If your travel trailer or motorhome is going to sit outside this winter, and you'd rather not think about the roof until spring, this is the fix. A cover that covers only the roof, in nine sizes from 18 to 44 ft (5.5–13.5 m), so rain never sits at the roof hatches. And a dry roof is what decides the moisture check when spring comes around."
     ]
   },
@@ -33,7 +33,7 @@
     {
       "rubrik": "**5. The full-body cover that ends up in the garage**",
       "text": "Many who finally decide go for the big one: a full-body cover that wraps the whole trailer from roof to wheels. It sounds like the safe choice. In practice it arrives as a package you need two people to get on, it has to be pulled over the full length without snagging anywhere, and once it's on, it rubs against the paint every time the wind blows. The second winter it stays in the garage, because it was too much work for one person on a cold Saturday. Then the roof is just as uncovered as before, and all you got for your money is a package in the garage. What protects a roof isn't the cover that covers the most. It's the one that actually goes on: a cover that covers only the roof, that one person puts on alone and that stays put in the wind.",
-      "knapp": "See the cover that covers only the roof → $199"
+      "knapp": "See the cover that covers only the roof → from [[PRIS]]"
     }
   ],
   "lyckas": {
@@ -42,24 +42,24 @@
       "They stop putting it off and cover the one surface that actually takes the beating: the roof. The cover goes over the roof surface, with the edge hanging 30–40 cm (12–16 in) down over the sides, so rain runs off instead of sitting at the hatches. Elastic straps on all four sides, with plastic hooks, latch under the edge of the body and hold it in place when the wind picks up. One person puts it on alone, without asking anyone for help. Over the roof, hook the straps, done. Then the trailer or motorhome sits there all winter with a dry roof.",
       "This roof cover is made of black 210D Oxford fabric, waterproof and sun-resistant, and comes in nine sizes: 18 to 44 ft long (5.5–13.5 m) and 10 ft (3 m) wide. Measure your roof and pick the one that covers it, and two extra reinforced straps come in the box. It's made to stay on all winter and come off in the spring without having rubbed the paint, the way a heavy full-body cover does. Shipping to the US is free, delivery takes 5–10 business days, and you have 90 days to try it. The difference shows the day it's time to head out again: a dry roof, intact seals, and a moisture check you don't have to be nervous about."
     ],
-    "knapp": "Do what they do → get a roof cover for $199"
+    "knapp": "Do what they do → get a roof cover from [[PRIS]]"
   },
   "arlig": {
     "rubrik": "I'll be honest:",
     "stycken": [
-      "we bought too many. Ahead of winter we brought in a bigger batch of roof covers than we've ever ordered, and now the pallets are still sitting in the warehouse while the first fall rains have already arrived. Rather than let them sit there, we're keeping it simple: $199 instead of the regular $249, until the batch is gone.",
+      "we bought too many. Ahead of winter we brought in a bigger batch of roof covers than we've ever ordered, and now the pallets are still sitting in the warehouse while the first fall rains have already arrived. Rather than let them sit there, we're keeping it simple: from [[PRIS]] instead of the regular [[JAMFORPRIS]], until the batch is gone.",
       "That's the whole reason for the lower price. No made-up mega discount and no clock counting down. We simply have more covers than shelf space, and your roof gets more use out of one than our warehouse does.",
-      "And the price is honest the other way too: $249 is what the cover normally costs here. When the batch is gone, it goes back to that."
+      "And the price is honest the other way too: [[JAMFORPRIS]] is what the cover normally costs here. When the batch is gone, it goes back to that. The price follows the length: there are nine sizes, and the figure here is the shortest one's. Pick the length that covers your roof and you'll see its own price."
     ]
   },
   "riskfritt": {
     "rubrik": "That's why you can try it risk-free.",
     "text": "If you want one, just hit the button below. You have 90 days to try it: if the cover doesn't fit your trailer or motorhome, or you change your mind, get in touch within 90 days and we'll arrange a return or refund. But the price only holds while stock lasts.",
-    "knapp": "Yes please, a roof cover for $199 → 90-day guarantee"
+    "knapp": "Yes please, a roof cover from [[PRIS]] → 90-day guarantee"
   },
   "tre_fragor": [
     {
-      "rad": "We ordered too many roof covers, so right now yours is $199 instead of $249 while stock lasts",
+      "rad": "We ordered too many roof covers, so right now yours is from [[PRIS]] instead of [[JAMFORPRIS]] while stock lasts",
       "visualisera": "✅ pallets of covers, one price tag",
       "falsifiera": "✅ the order and both prices can be checked on the product page",
       "ingen_annan_kan_saga": "✅ our order, our warehouse, our prices"
@@ -71,7 +71,7 @@
       "ingen_annan_kan_saga": "✅ our warehouse"
     },
     {
-      "rad": "See the clearance sale → $199",
+      "rad": "See the clearance sale → from [[PRIS]]",
       "visualisera": "✅ the button leads to the price",
       "falsifiera": "✅ the price is on the product page",
       "ingen_annan_kan_saga": "✅ our sale, our price"
@@ -161,7 +161,7 @@
       "ingen_annan_kan_saga": "✅ our type A conflict (product page: two people, rubs the paint)"
     },
     {
-      "rad": "See the cover that covers only the roof → $199",
+      "rad": "See the cover that covers only the roof → from [[PRIS]]",
       "visualisera": "✅ only the roof, the price",
       "falsifiera": "✅ the measurements and the price are on the product page",
       "ingen_annan_kan_saga": "✅ our product, our price"
@@ -185,7 +185,7 @@
       "ingen_annan_kan_saga": "✅ our cover"
     },
     {
-      "rad": "Do what they do → get a roof cover for $199",
+      "rad": "Do what they do → get a roof cover from [[PRIS]]",
       "visualisera": "✅ one cover, one price",
       "falsifiera": "✅ the price is on the page",
       "ingen_annan_kan_saga": "✅ our price"
@@ -209,7 +209,7 @@
       "ingen_annan_kan_saga": "✅ our reason"
     },
     {
-      "rad": "And the price is honest the other way too: $249 is what the cover normally costs here.",
+      "rad": "And the price is honest the other way too: [[JAMFORPRIS]] is what the cover normally costs here.",
       "visualisera": "✅ the $249 price tag",
       "falsifiera": "✅ the compare-at price is on the page",
       "ingen_annan_kan_saga": "✅ our price"
@@ -227,7 +227,7 @@
       "ingen_annan_kan_saga": "❌ generic instruction — kept, it should be simple"
     },
     {
-      "rad": "Yes please, a roof cover for $199 → 90-day guarantee",
+      "rad": "Yes please, a roof cover from [[PRIS]] → 90-day guarantee",
       "visualisera": "✅ the cover, the price, 90 days",
       "falsifiera": "✅ both are on the product page",
       "ingen_annan_kan_saga": "✅ our offer"
@@ -235,7 +235,7 @@
   ],
   "lasbarhetstest": {
     "metod": "Every paragraph read aloud as an American RV owner would hear it, the six points from the command: each sentence picks up where the last one left off, mixed sentence length, at most one 'Not X. Y.' device per paragraph, one paragraph = one thought moving forward, words people use on the storage lot (roof hatch, seals, moisture check, meter, awning, full-body cover, rig), and the whole page read top to bottom as one story: point 1 (you never see the roof) → 2 (the fall clean-up isn't enough) → 3 (moisture can't be dried out) → 4 (the damage is the sum of all the days) → 5 (the full-body cover ends up in the garage) → 'so what do they do' (cover only the roof, one person).",
-    "omskrivna_stycken": "Not a word-for-word translation — the Swedish sentences were rewritten as an American would say them. Hero: 'husvagn eller husbil' → 'travel trailer or motorhome' (the US page's own words), 'fukttestet' → 'the moisture check' (the page's term) and 'meter' in the story. Point 1: 'förtältet' (the awning tent) → 'the awning', 'ställa upp' → 'park it for the winter'. Point 2: 'sopborsten' → 'a broom', 'tätmassan' → 'the sealant'. Point 3: 'verkstaden sätter mätaren mot innertaket' → 'the tech at the shop puts the meter to the ceiling'. Point 4: 'köparen räknar ner priset i huvudet' → 'knocking the price down in their head'. Point 5: 'förrådet' → 'the garage' (Americans park it in the garage, not a shed). 'So what do they do': the 30–40 cm became '30–40 cm (12–16 in)' and the measurements got feet as on the US page; 'fri frakt, 14 dagars ångerrätt, 5–10 arbetsdagar' became 'free shipping to the US, 5–10 business days, 90 days to try it' — the US page's own promise. Risk-free block: back to the template heading ('That's why you can try it risk-free.') because the US page promises 90 days with return or refund — on the Swedish CaraShell page it was 14 days' right of withdrawal and a different heading. 'Rätt' words checked against the page: 'roof hatch' (page: roof hatches), 'seams', 'seals', 'body' (page: 'the edge of the body'), 'stays put in wind'. 2026-09-17: sizes — 'up to 21 ft' / '6.5 × 3 m (21.3 × 9.8 ft)' → nine sizes 18–44 ft (5.5–13.5 m), the page's current data; 'two extra reinforced straps' and 'waterproof and sun-resistant' added from the page.",
+    "omskrivna_stycken": "Not a word-for-word translation — the Swedish sentences were rewritten as an American would say them. Hero: 'husvagn eller husbil' → 'travel trailer or motorhome' (the US page's own words), 'fukttestet' → 'the moisture check' (the page's term) and 'meter' in the story. Point 1: 'förtältet' (the awning tent) → 'the awning', 'ställa upp' → 'park it for the winter'. Point 2: 'sopborsten' → 'a broom', 'tätmassan' → 'the sealant'. Point 3: 'verkstaden sätter mätaren mot innertaket' → 'the tech at the shop puts the meter to the ceiling'. Point 4: 'köparen räknar ner priset i huvudet' → 'knocking the price down in their head'. Point 5: 'förrådet' → 'the garage' (Americans park it in the garage, not a shed). 'So what do they do': the 30–40 cm became '30–40 cm (12–16 in)' and the measurements got feet as on the US page; 'fri frakt, 14 dagars ångerrätt, 5–10 arbetsdagar' became 'free shipping to the US, 5–10 business days, 90 days to try it' — the US page's own promise. Risk-free block: back to the template heading ('That's why you can try it risk-free.') because the US page promises 90 days with return or refund — on the Swedish CaraShell page it was 14 days' right of withdrawal and a different heading. 'Rätt' words checked against the page: 'roof hatch' (page: roof hatches), 'seams', 'seals', 'body' (page: 'the edge of the body'), 'stays put in wind'. 2026-09-17: sizes — 'up to 21 ft' / '6.5 × 3 m (21.3 × 9.8 ft)' → nine sizes 18–44 ft (5.5–13.5 m), the page's current data; 'two extra reinforced straps' and 'waterproof and sun-resistant' added from the page. 2026-09-18: priserna blev prisplatser med \"från\"/\"from\" framför (nio priser sedan prisstegen), \"för [[PRIS]]\" blev \"från [[PRIS]]\" i knapparna, och ärlig-blocket fick en mening om att siffran är den kortaste storlekens.",
     "kvar_att_lyssna_pa": "Point 4's heading 'Winter isn't one storm. It's a hundred small rains.' — the only heading that's an image instead of a thing, and the one I'm least sure lands in American English. If it doesn't read naturally aloud: switch to 'The damage doesn't come in a day. It comes every day.' Also 'Yes please' in the last button is slightly British — 'Yes, I want one' is the alternative if Axel prefers."
   }
 }

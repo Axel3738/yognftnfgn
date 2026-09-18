@@ -207,6 +207,47 @@ Första körningen 2026-09-17, takskyddet: `…-lagerrensning-gb?country=GB`,
 och AU/NZ säger caravan, damp check (GB), inga månadsnamn (södra halvklotet);
 CA är US-copyn med Kanada.
 
+### Ett nytt språk (finska, `--marknad FI`)
+
+Finland blev CaraShells tredje marknad 2026-09-18 (carashell.se/fi, EUR,
+ingen egen domän) och listiclen följde samma dag. Ett nytt språk är tre
+saker, inga fler:
+
+1. **En rad i `SPRAK`** (`sprak.mjs`): de fasta texterna (`av`,
+   `sammanfattning`, `reklam`, `lagret`, `punkt`), `datumrad`, orden
+   spärrarna letar efter (`periodOrd`, `antalOrd`, `forbjudna`) och
+   `franOrd` (se nedan). Finskans datum är sitt eget format —
+   `finsktDatum` ger "18. syyskuuta 2026".
+2. **`sprak.<locale>` i varje koncept** (`koncept/*.json`): sidnamn,
+   sidtitel, författarrad, ärlig- och riskfritt-rubrik. Saknas språket
+   stoppar bygget.
+3. **Copyn**, `copy.fi.json`, skriven mot marknadens egen produktsida.
+   ⚠️ Den finska texten är skriven av sessionen och **ingen finsktalande
+   har läst den** — varje fackterm är däremot hämtad ordagrant ur butikens
+   egen finska produktsida (kattoluukku, sauma, tiiviste, kosteustesti,
+   kiristyshihna, korin reuna), så orden är butikens även när idiomen är
+   motorns. Det står i copyns `lasbarhetstest`.
+
+Marknadens länk byggs ur **butiksfilen**, inte ur
+`factory/opsmarknader.mjs` — den tabellen är annonsmarknaderna (vilket
+konto en kampanj hamnar i) och känner bara SE, NO och US. Finland finns i
+butiken utan att vara en annonsmarknad, och en listicle ska kunna byggas
+för varje marknad butiken säljer i.
+
+### Prisstegen: "från" är inte kosmetika
+
+Takskyddet fick **nio priser per marknad** 2026-09-18 (SEK 1 129–2 239,
+EUR 126,90–251,90, USD 199–389, GBP 152–297): priset följer längden.
+Priset butiken skriver in i `[[PRIS]]` är produktens **lägsta** — precis
+det produktsidan visar överst — så en rubrik som säger "ditt för 1 129 kr"
+lovar ett pris som bara gäller de två minsta storlekarna.
+
+`granskaCopy` stoppar därför bygget när produkten har flera priser och
+`hero.rubrik` nämner priset utan språkets `franOrd` ("från", "from",
+"alkaen"), och varnar för övriga textplatser. Ärlig-blockets sista stycke
+är platsen där prisstegen förklaras — "Priset följer längden: storlekarna
+är nio, och siffran här är den kortastes."
+
 ## Obrandad som standard (Axels beslut 2026-09-16)
 
 "Jag hade verkligen uppskattat om listiclen är obrandad så att den funkar om

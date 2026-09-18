@@ -232,6 +232,31 @@ Då gäller:
 byggd: produkttiteln ändrades 2026-09-17 ("6,5 × 3 m" → "5,5–13,5 m") och
 utan det hade varje körning skapat en ny sida på en ny adress.
 
+### En marknad med eget SPRÅK (`--marknad FI`)
+
+Finland (carashell.se/fi, EUR) sedan 2026-09-18. Samma väg som `--marknad
+US`: sidan får en översättning, ingen ny sida. Det som skiljer är att
+språket måste finnas i motorn — `sprak.mjs` + `sprak.<locale>` i konceptet
+(se `listicle/README.md` → "Ett nytt språk"). Copyn skrivs mot marknadens
+egen produktsida, och **varje fackterm hämtas ordagrant därifrån**: den
+sidan är redan översatt och granskad, så listiclen och produktsidan ska
+tala samma språk. Villkoren är marknadens egna — Finland har 14 dagars
+ångerrätt, inte USA:s 90-dagarsgaranti.
+
+⚠️ Skriver du på ett språk du inte behärskar: säg det rakt ut i copyns
+`lasbarhetstest` och i rapporten, och be Axel låta någon läsa igenom före
+annonstrafik. Hitta aldrig på att texten är granskad.
+
+### Priset när produkten har flera priser
+
+Takskyddet fick nio priser per marknad 2026-09-18 (priset följer längden).
+Priset butiken skriver in i `[[PRIS]]` är produktens **lägsta**, så rubriken
+måste säga "från" / "from" / "alkaen" — annars lovar sidan ett pris som
+bara gäller den minsta storleken. Motorn stoppar bygget om rubriken saknar
+ordet och varnar för övriga textplatser. Förklara dessutom stegen i
+ärlig-blockets sista stycke ("Priset följer längden: storlekarna är nio,
+och siffran här är den kortastes").
+
 ## Gör i ordning
 
 `IDAG` = dagens datum (YYYY-MM-DD). Utdata: `listicle/output/lagerrensning/<handle>/`.
@@ -406,4 +431,6 @@ temat använder inte mallen — läs `listicle/README.md` → "Butiken".
 - [ ] batch-log uppdaterad om produkten har minne; committat och pushat
 - [ ] Med `--marknad`: copyn på marknadens språk mot marknadens egen produktsida (priser i dess valuta, dess garanti/frakt); översättningen läst tillbaka på marknadens domän på rätt språk; skärmdumparna i `forhandsvisning-<locale>/` tittade på
 - [ ] Med `--land`: prisplatser `[[PRIS]]`/`[[JAMFORPRIS]]` i copyn (ingen inbränd siffra), landets ord och säsong, landets egen sida läst tillbaka med `?country=` och dagens pris inskrivet av butiken
+- [ ] Har produkten flera priser: "från"/"from"/"alkaen" framför varje pris, och prisstegen förklarad i ärlig-blocket
+- [ ] Nytt språk: `sprak.mjs` + `sprak.<locale>` i konceptet; fackorden hämtade ur marknadens egen produktsida; står det i rapporten om ingen som behärskar språket har läst texten
 - [ ] Rapport med adressen + Axels klick sist, numrerade

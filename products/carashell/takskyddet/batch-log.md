@@ -580,6 +580,33 @@ produkt har nu också nio storlekar men med **olika pris per storlek**
 fortfarande "1 129 kr istället för 1 469 kr", vilket bara gäller de två
 minsta storlekarna. Inte rättad här; Axels beslut.
 
+**Finland + prisstegen, 2026-09-18** (Axels fråga: "Fixa nu listiclen för
+denna finska också"):
+**https://carashell.se/fi/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=FI**
+— samma sida med en finsk översättning (`--marknad FI`, nytt språk i
+motorn). Finland är CaraShells tredje marknad sedan samma morgon
+(carashell.se/fi, EUR, ingen egen domän). Copyn är skriven mot butikens
+egen finska produktsida och varje fackterm är hämtad ordagrant därifrån
+(kattoluukku, sauma, tiiviste, kosteustesti, kiristyshihna, korin reuna,
+kokosuoja). Villkoren är marknadens: **14 päivän peruuttamisoikeus**
+(inte USA:s 90 dagar), "Ilmainen toimitus Suomeen", 5–10 arkipäivää.
+⚠️ **Ingen finsktalande har läst texten** — idiomen är motorns, och tre
+rader är flaggade i copyns `lasbarhetstest`. Låt någon läsa igenom före
+annonstrafik.
+
+⚠️ **Prisstegen (`63f36b2b`, samma morgon) gjorde alla sex befintliga
+sidor missvisande:** produkten har nu nio priser per marknad (SEK
+1 129–2 239, EUR 126,90–251,90, USD 199–389, GBP 152–297), och priset
+butiken skriver in är det **lägsta** — men copyn sa "yours is $199" /
+"ditt för 1 129 kr", vilket bara gäller de två minsta storlekarna. Alla
+sju sidorna skrevs därför om samma dag: varje pris är nu en prisplats med
+**"från" / "from" / "alkaen"** framför, och ärlig-blockets sista stycke
+förklarar stegen ("Priset följer längden … siffran här är den kortastes").
+`granskaCopy` stoppar sedan dess en hero-rubrik som nämner priset utan
+från-ord när produkten har flera priser. Omkörningen visade också varför
+prisplatserna finns: Kanada hade gått 284 → 285, Australien 286 → 285 och
+Nya Zeeland 355 → 356 på ett dygn.
+
 ---
 
 ## Norge-runda 2026-09-16 (`/ops-oversatt carashell/takskyddet`) — tom kö, blockerad uppströms

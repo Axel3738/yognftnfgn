@@ -38,6 +38,14 @@ export function engelsktDatum(iso) {
   return `${MANADER_EN[m - 1]} ${d}, ${y}`;
 }
 
+const MANADER_FI = ['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'];
+
+/** "2026-09-18" → "18. syyskuuta 2026" (finsk form: dagen med punkt, månaden i partitiv). */
+export function finsktDatum(iso) {
+  const [y, m, d] = delarAv(iso);
+  return `${d}. ${MANADER_FI[m - 1]} ${y}`;
+}
+
 // ------------------------------------------------------------ valutor
 
 /** Heltalsdelen grupperad: 1129 → "1 129" (mellanslag) eller "1,129" (komma). */
@@ -58,11 +66,23 @@ export function prisText(tal) {
   return `${t.hel < 0 ? '-' : ''}${grupperat(t.hel, ' ')}${t.ore ? `,${String(t.ore).padStart(2, '0')}` : ''} kr`;
 }
 
-/** Dollar/pund/euro framför talet: 199 → "$199", 1129 → "$1,129", 99.5 → "$99.50". */
+/** Dollar/pund framför talet: 199 → "$199", 1129 → "$1,129", 99.5 → "$99.50". */
 const framforTal = (tecken) => (tal) => {
   const t = delaTal(tal);
   if (!t) return '';
   return `${t.hel < 0 ? '-' : ''}${tecken}${grupperat(t.hel, ',')}${t.ore ? `.${String(t.ore).padStart(2, '0')}` : ''}`;
+};
+
+/**
+ * Euro som butiken skriver den: "€126,90" — tecknet före, komma som decimal,
+ * och centen ALLTID utsatt (avläst på carashell.se/fi 2026-09-18: "€126,90",
+ * "€165,90", "€107,86 per suoja"). Ett europris utan cent ser fel ut i en
+ * finsk kundvy.
+ */
+const euroTal = (tal) => {
+  const t = delaTal(tal);
+  if (!t) return '';
+  return `${t.hel < 0 ? '-' : ''}€${grupperat(t.hel, ' ')},${String(t.ore).padStart(2, '0')}`;
 };
 
 // Prisläsningen: talet som fångas + hur det tolkas. "kr"-valutorna delar
@@ -87,7 +107,14 @@ export const VALUTOR = Object.freeze({
   AUD: dollar('AUD', '"$286" (Shopify visar AUD som "$" på carashell.com)'),
   NZD: dollar('NZD', '"$355" (Shopify visar NZD som "$" på carashell.com)'),
   GBP: Object.freeze({ kod: 'GBP', format: framforTal('£'), monster: teckenMonster('£', 'GBP', 'pounds?'), tolka: punktTal, i_copy: '"£199", "£1,129"' }),
-  EUR: Object.freeze({ kod: 'EUR', format: framforTal('€'), monster: teckenMonster('€', 'EUR', 'euros?'), tolka: punktTal, i_copy: '"€199", "€1,129"' }),
+  // Euro: komma som decimal ("€126,90"), och talet läses lika hur det än skrivs
+  // — "€126,90", "126,90 €" och "126,90 EUR" är samma pris.
+  EUR: Object.freeze({
+    kod: 'EUR', format: euroTal,
+    monster: /€\s?(\d[\d  ]*(?:[.,]\d{1,2})?)|(\d[\d  ]*(?:[.,]\d{1,2})?)\s?(?:€|EUR|euroa?)\b/gi,
+    tolka: (s) => Number(String(s).replace(/[  ]/g, '').replace(',', '.')),
+    i_copy: '"€126,90", "€1 129,00"',
+  }),
 });
 
 // ------------------------------------------------------------ prisplatser i copyn
@@ -152,6 +179,9 @@ export const SPRAK = Object.freeze({
     forbjudna: Object.freeze(['innan lagret tar slut', 'innan det tar slut', 'sista chansen']),
     forbjudnaTips: 'skriv "så länge lagret räcker"',
     fetTips: 'skriv **fet** i stället för taggar',
+    // Orden som gör ett pris sant när produkten har flera (nio storlekar,
+    // nio priser): "från 1 129 kr" är sant, "ditt för 1 129 kr" är det inte.
+    franOrd: Object.freeze(['från ', 'fr.o.m.']),
   }),
   en: Object.freeze({
     locale: 'en', namn: 'engelska', lang: 'en',
@@ -163,6 +193,23 @@ export const SPRAK = Object.freeze({
     forbjudna: Object.freeze(['before stock runs out', 'before it runs out', "before it's gone", 'before they’re gone', "before they're gone", 'last chance']),
     forbjudnaTips: 'write "while stock lasts"',
     fetTips: 'write **bold** instead of tags',
+    franOrd: Object.freeze(['from ', 'starting at']),
+  }),
+  // Finska: CaraShells tredje marknad (carashell.se/fi, EUR, 2026-09-18).
+  // Orden är butikens egna, avlästa på den finska produktsidan samma dag —
+  // kattoluukku, kosteustesti, tiivisteet, asuntovaunu, matkailuauto — så
+  // listiclen och produktsidan talar samma språk.
+  fi: Object.freeze({
+    locale: 'fi', namn: 'finska', lang: 'fi',
+    av: 'Kirjoittanut', sammanfattning: 'Yhteenveto:', reklam: 'HUOM: Tämä on mainos.',
+    lagret: 'Varasto', punkt: 'kohta',
+    datumrad: (iso) => `Päivitetty viimeksi ${finsktDatum(iso)}.`,
+    periodOrd: /(päivä|päivää|viikko|viikkoa|kuukau|talve|talvi|kesä|syks|kevä|kaude|kausi|vuode|vuosi|vuotta)/i,
+    antalOrd: Object.freeze({ 5: 'viisi', 7: 'seitsemän' }),
+    forbjudna: Object.freeze(['ennen kuin varasto loppuu', 'viimeinen mahdollisuus', 'vain tänään', 'kiirehdi']),
+    forbjudnaTips: 'kirjoita "niin kauan kuin tavaraa riittää"',
+    fetTips: 'kirjoita **lihavoitu** tagien sijaan',
+    franOrd: Object.freeze(['alkaen']),
   }),
 });
 

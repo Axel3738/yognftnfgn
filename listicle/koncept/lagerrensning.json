@@ -6,9 +6,14 @@
   "suffix": "lagerrensning",
   "sidnamn": "{kortTitel} – Lagerrensning (listicle)",
   "sidtitel": "{kortTitel} – lagerrensning",
-  "punkter": [5],
+  "punkter": [
+    5
+  ],
   "forfattare_obrandad": "Anders på lagret",
-  "rubrik": { "pris": true, "jamforpris": true },
+  "rubrik": {
+    "pris": true,
+    "jamforpris": true
+  },
   "jamforpris_behovs": true,
   "arlig_rubrik": "Jag ska vara ärlig:",
   "riskfritt_rubrik": "Därför kan du testa helt riskfritt.",
@@ -19,6 +24,13 @@
       "forfattare_obrandad": "Anders from the warehouse",
       "arlig_rubrik": "I'll be honest:",
       "riskfritt_rubrik": "That's why you can try it risk-free."
+    },
+    "fi": {
+      "sidnamn": "{kortTitel} – Varastonpurku (listicle)",
+      "sidtitel": "{kortTitel} – varastonpurku",
+      "forfattare_obrandad": "Anders varastolta",
+      "arlig_rubrik": "Ollaan rehellisiä:",
+      "riskfritt_rubrik": "Siksi voit kokeilla sitä riskittä."
     }
   }
 }

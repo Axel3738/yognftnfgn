@@ -1,5 +1,5 @@
 {
-  "hamtat": "2026-09-18T10:59:57.548Z",
+  "hamtat": "2026-09-18T10:57:16.819Z",
   "koncept": "lagerrensning",
   "kommando": "/lagerrensning",
   "punkter": 5,
@@ -73,51 +73,51 @@
     "id": "carashell/takskyddet",
     "fil": "products/carashell/takskyddet/dna.md"
   },
-  "sidhandle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-nz",
+  "sidhandle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning",
   "sidhandle_kalla": "plan.json",
   "marknad": {
-    "kod": "US",
-    "land": "NZ",
-    "egetLand": true,
-    "locale": "en",
-    "valuta": "NZD",
-    "doman": "carashell.com",
-    "lank": "https://carashell.com/products/takskyddet?country=NZ",
-    "sidlank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-nz?country=NZ",
+    "kod": "FI",
+    "land": "FI",
+    "egetLand": false,
+    "locale": "fi",
+    "valuta": "EUR",
+    "doman": "carashell.se",
+    "lank": "https://carashell.se/fi/products/takskyddet?country=FI",
+    "sidlank": "https://carashell.se/fi/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=FI",
     "produkt": {
-      "titel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
-      "kortTitel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
+      "titel": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m",
+      "kortTitel": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m",
       "handle": "takskyddet",
-      "url": "https://carashell.com/products/takskyddet",
+      "url": "https://carashell.se/fi/products/takskyddet",
       "typ": "",
-      "valuta": "NZD",
-      "pris": 356,
-      "jamforpris": 445,
-      "prisText": "$356",
-      "jamforprisText": "$445",
+      "valuta": "EUR",
+      "pris": 126.9,
+      "jamforpris": 165.9,
+      "prisText": "€126,90",
+      "jamforprisText": "€165,90",
       "flerPriser": [
-        356,
-        409,
-        463,
-        498,
-        552,
-        605,
-        659,
-        695
+        126.9,
+        144.9,
+        162.9,
+        179.9,
+        197.9,
+        215.9,
+        233.9,
+        251.9
       ],
       "alternativ": [
         {
           "namn": "Variant",
           "varden": [
-            "18 × 10 ft (5.5 × 3 m)",
-            "21 × 10 ft (6.5 × 3 m)",
-            "25 × 10 ft (7.5 × 3 m)",
-            "28 × 10 ft (8.5 × 3 m)",
-            "31 × 10 ft (9.5 × 3 m)",
-            "34 × 10 ft (10.5 × 3 m)",
-            "38 × 10 ft (11.5 × 3 m)",
-            "41 × 10 ft (12.5 × 3 m)",
-            "44 × 10 ft (13.5 × 3 m)"
+            "5,5 × 3 m",
+            "6,5 × 3 m",
+            "7,5 × 3 m",
+            "8,5 × 3 m",
+            "9,5 × 3 m",
+            "10,5 × 3 m",
+            "11,5 × 3 m",
+            "12,5 × 3 m",
+            "13,5 × 3 m"
           ]
         }
       ],
@@ -148,7 +148,7 @@
           "height": 1200
         }
       ],
-      "beskrivning": "Nine lengths, 18 to 44 ft (5.5 to 13.5 m), all 10 ft (3 m) wide — it covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
+      "beskrivning": "Kattosuoja on saatavana yhdeksässä pituudessa, 5,5–13,5 metriä, kaikki 3 metriä leveitä – se peittää katon pinnan ja pitää sadeveden poissa kattoluukuista ja saumoista talven yli."
     }
   }
 }
