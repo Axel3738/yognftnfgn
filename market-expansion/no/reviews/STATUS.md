@@ -3,6 +3,73 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-18 — 18 nya på två produkter, 34 i `sources.json`
+
+MAKE TO NORWAY hade **två** nya mappar: **Fågelmatare** och **Solcellslampa
+210 LED Sensor**. Båda importerades.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Fuglemater med kamera | 8 | `fuglemater-med-kamera-og-solcellepanel-se-fuglene-i-appen` |
+| Solcellelampe 210 LED | 10 | `solcellelampe-med-bevegelsessensor-tre-hoder-210-led` |
+
+Kartorna: +22 översättningar, +4 namn. Butiksfeeden står kvar på 201 produkter.
+
+### Spamfiltret tog BÅDA importerna — fjärde dagen i rad
+
+Gårdagens spamvakt i `tools/judgeme-import.mjs` gjorde exakt sitt jobb: den
+larmade direkt efter varje skarp import, i stället för att låta 18 osynliga
+recensioner ligga till någon råkade titta.
+
+| Dag | Spam-märkta |
+|---|---:|
+| 2026-09-14 | 1 |
+| 2026-09-15 | 5 |
+| 2026-09-16 | 14 |
+| 2026-09-18 | 18 (8 + 10, alla rutinens) |
+
+**Rättat i samma körning**, båda produkterna lästes tillbaka som 8/8 och 10/10
+synliga, 0 spam.
+
+### Nytt verktyg: `tools/judgeme-publicera.mjs`
+
+Handgreppet från 2026-09-17 är nu ett verktyg, eftersom det uppenbart är
+återkommande. Kommandofilen kallar på det efter varje skarp import, och det
+står som egen punkt i Definition of done.
+
+Två spärrar, båda medvetna:
+
+1. **En produkt per körning**, angiven med handle — aldrig ett svep över
+   butiken. Samma princip som PAUSED i annonskontot: en rad någon gömt med
+   flit får aldrig plockas fram av en rutin.
+2. **Bara rader med `curated: spam`.** Opublicerade rader utan spam-märkning
+   rörs inte, bara räknas.
+
+Dessutom: **har produkten redan synliga recensioner stannar verktyget**, för
+då är de spam-märkta sannolikt dubbletter av en CSV-import och märkningen är
+rätt (se tabellen 2026-09-17). `--anda` kör förbi den spärren.
+
+### ⚠️ Solcellslampans ark har två svagheter — båda källans, ingen hittad på
+
+- **9 av 10 rader saknar `review_date`.** Importskriptets datumvakt varnade.
+  Spelar ingen roll för API-importen (alla får importdagen ändå), men den
+  CSV Axel laddar upp i appen för att rädda datumen blir bara delvis rätt.
+- **Alla tio har exakt samma rubrik, "Bra lampa".** Det ser konstruerat ut i
+  kundvyn. Rubriker hittas aldrig på — arket får rättas om det ska bli bättre.
+
+Rad 1 bar dessutom mallrester (`john@example.com`, `reply: This is a reply by
+the admin`). Bygget nollade båda automatiskt — reply-strängen låg redan i
+`translations.no.json` mappad till tom sträng sedan en tidigare session.
+
+### Väntelistan står kvar på tre
+
+Gravstenspenna (testrader), Medicinask (exempelrader), Lövblåsare (finns inte
+i butiken — sökt igen 2026-09-18 bland 201 produkter).
+
+En ny mapp i Drive-huvudmappen: **`K Dinosauriekalender`**. Den ligger inte i
+MAKE TO NORWAY, alltså inte lokaliserad ännu och ingen kandidat. Samma sak
+gäller `7 Sittkäpp Hopfällbar` sedan 2026-09-16.
+
 ## 🚨 2026-09-17 — Judge.mes spamfilter tog hela gårdagens import
 
 **Det viktigaste fyndet sedan datumbuggen.** Inga nya produkter i MAKE TO

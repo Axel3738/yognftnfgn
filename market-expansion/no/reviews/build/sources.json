@@ -192,6 +192,18 @@
       "namn": "Infartslarm Trådlöst",
       "drive_sheet": "1vrSccEBBiyaBxr7YEo3RX4cNfH_9tCLp85bbGuBv3_E",
       "no_handle": "tradlos-innkjorselsalarm-du-horer-nar-noen-svinger-inn"
+    },
+    {
+      "id": "fuglemater",
+      "namn": "Fågelmatare med kamera",
+      "drive_sheet": "1cPNOMp7uJdbBNl8UMEBDF0UOM7jkRxVx7Ku3UZAM4ck",
+      "no_handle": "fuglemater-med-kamera-og-solcellepanel-se-fuglene-i-appen"
+    },
+    {
+      "id": "solcellelampe",
+      "namn": "Solcellslampa 210 LED Sensor",
+      "drive_sheet": "1nhfPsVG8b0YfURPSdFftMHxzD12x1CuC6AdjyvqO0kg",
+      "no_handle": "solcellelampe-med-bevegelsessensor-tre-hoder-210-led"
     }
   ]
 }
