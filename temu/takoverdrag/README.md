@@ -10,8 +10,12 @@ så det funkar för Sverige … Ser du alla storleks varianter okej? Vi måste l
 
 **2026-09-18, SE:** Axel skapade de nio varianterna själv i admin (namn "3 × 5.5 Meter",
 SKU `TEMU-5050206311352`…`360`, priser 1129 → 2239 kr). Det är facit — `fakta.mjs` bär det
-som `SE_LIVE`. ⚠️ Jämförpriset är 1469 kr på alla nio, alltså lägre än priset från 9,5 m
-och uppåt. Sidan är fortfarande enstorleksversionen — `sida.mjs --nio --skarp` byter.
+som `SE_LIVE`. Jämförpriset var 1469 kr på alla nio — rättat till nio(pris × 1,3) på Axels OK samma dag
+(1469 / 1469 / 1679 / 1889 / 2079 / 2289 / 2499 / 2709 / 2919). Sidan förblir
+enstorleksversionen — Axel: "strunt i att göra den där tabellen" (2026-09-18).
+
+**FI-kampanjen (Meta):** specen för att översätta hela SE-kampanjen ligger i
+`FI-KAMPANJ.md` — körs i en egen session.
 
 **2026-09-18, FI — LIVE:** Axels beslut: produkten går till majavakauppa.fi trots
 SE+NO-regeln. Skapad med `fi.mjs --skarp` efter Axels OK: 9 varianter, 6 media, 3 kanaler,
