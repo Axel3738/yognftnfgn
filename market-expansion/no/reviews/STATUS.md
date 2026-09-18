@@ -3,6 +3,46 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## 2026-09-18 eftermiddag — Axels fråga: vad kör vi i Norge utan recensioner?
+
+Mätt mot verkligheten i tre led, inte mot `sources.json`:
+
+1. **Vad körs?** De två norska annonskontona (`act_1418612340124566` "Norge" —
+   noll annonser med spend; `act_1050941584152547` "Magiborsten NO" — 711
+   annonser med spend senaste 30 dagarna). Produkten läses ur annonsens
+   **länk** (`/products/<handle>`), inte ur kampanjnamnet: **42 produkter**.
+2. **Vad har recensioner?** Judge.me: 647 recensioner, **61 produkter** med
+   minst en synlig. Butiken har 201 produkter, alltså saknar 141 recensioner
+   — men de flesta av dem kör vi inga annonser på.
+3. **Korsningen:** av de 42 vi kör hade **tre** noll synliga recensioner.
+
+| Produkt | Spend 30 d | Annonser | Läge |
+|---|---:|---:|---|
+| Båtmotortrekk 420D | 20 755 kr | 45 | ✅ **rättad samma stund** |
+| Jetvifte for Makita-batteri | 1 593 kr | 15 | ❌ inget ark finns i Drive |
+| Medisinboks i Lommeformat | 23 kr | 2 | ❌ arket har bara exempelrader |
+
+### Båtmotorskyddet hade en färdig CSV som aldrig kom in
+
+`batmotortrekk.no.csv` (8 rader) har legat byggd i `output/` sedan augusti.
+Dubblettspärren hoppade över produkten varje natt eftersom den hade **1**
+synlig recension — precis nog för att räknas som gjord. Den enda raden
+spam-märktes sedan av Judge.me (noterat 2026-09-17), och först då blev
+produkten synlig i mätningen.
+
+Importerad + publicerad samma körning: **10 synliga** (8 nya + de 2 äldre som
+spamfiltret tagit). Näst dyraste produkten i Norge stod utan ett enda socialt
+bevis på 20 755 kr spend.
+
+**Lärdomen: "har minst en recension" är inte samma sak som "klar".**
+Dubblettspärren är byggd för att inte importera dubbletter, inte för att mäta
+täckning. En produkt med 1 recension ser likadan ut som en med 10 för spärren.
+Kör den här korsningen då och då i stället för att lita på att kön är tom.
+
+Jetviften kör 15 annonser men har **ingen Drive-mapp alls** (sökt i
+huvudmappen, WINNERS och LOSERS) — den har aldrig varit med i
+lokaliseringsflödet.
+
 ## Läget 2026-09-18 — 18 nya på två produkter, 34 i `sources.json`
 
 MAKE TO NORWAY hade **två** nya mappar: **Fågelmatare** och **Solcellslampa
