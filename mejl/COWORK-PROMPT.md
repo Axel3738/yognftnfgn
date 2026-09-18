@@ -19,7 +19,7 @@ står inte i tabellen. Bygger du om mallarna, räkna om dem i TECKEN
 (`python3 -c "print(len(open('mejl/output/fraktbekraftelse.liquid',encoding='utf-8').read()))"`),
 inte byte — Cowork mätte 2026-09-18 att `wc -c` gav byte och stämde inte.
 
-Historik: v4 inklistrad 2026-09-14, v6 (tre erbjudandemallar) 2026-09-18.
+Historik: v4 inklistrad 2026-09-14, v6 (tre erbjudandemallar) 2026-09-18, v8 (fyra fraktmallar) 2026-09-18 kväll. Coworks metod som fungerar: hämta filen direkt i Shopify-sidan, skriv in via kodrutans eget API, verifiera mot serverns mall-data — inget urklipp, inga kortkommandon.
 
 ---
 
@@ -71,8 +71,15 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
    `tracking_company` INTE finns någonstans.
    Fel innehåll: kopiera om från fliken och klistra in igen.
 7. Klicka **Spara**.
-8. **Ladda om sidan** (F5), öppna Redigera kod igen och gör samma kontroll
-   en gång till. Stämmer det inte: säg till, klistra inte om i blindo.
+8. **Kontrollera mot servern, inte mot redigeraren.** Shopify sparar
+   osparade utkast i webbläsaren och lägger tillbaka dem efter F5, så
+   redigeraren kan visa den nya koden fast servern har den gamla (hände
+   2026-09-18 på Levererad). Läs därför mallens innehåll och `updatedAt`
+   ur Shopifys egen mall-data för sidan (samma väg som du hämtar filen)
+   och jämför med källfilen. Stämmer det inte: säg till, klistra inte om
+   i blindo. Klicka aldrig "Ignorera" på raden "Osparade ändringar" utan
+   att först ha läst vad servern har — Ignorera kastade 2026-09-18 tillbaka
+   redigeraren till den gamla versionen.
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|

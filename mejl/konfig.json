@@ -774,18 +774,17 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v6 (leveransfönster 7–14 dagar, UTM-spårning, mobil-CSS, komplementrubriken, ≥299-filtret, klockslaget) inklistrad av Cowork 2026-09-18 i de tre erbjudandemallarna, alla verifierade efter omladdning: fyra kontrollsträngar, teckenantal 85 292 / 79 693 / 75 649 i Shopifys räkning (byte, ett mindre än källfilen), identiska med källfilerna. Ämnesraderna stod redan rätt. De fyra mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak (v6-bygget ger dem bara mobil-CSS, inte inklistrat).",
-    "inklistrade_aldre_comment": "v8 (2026-09-18 kväll): 'Spåra paketet' → Shopifys orderstatussida; fraktbolagets namn borta ur alla mejl (Axel: 'ta bort att det står UPS'); samma-paket-raden bara i orderbekräftelsen (Axel såg den i levererat-testmejlet); levererat-mejlets 7 dagar räknas från leveransdagen. Väntar på Cowork-inklistring av fyra mallar (mejl/COWORK-PROMPT.md). Orderbekräftelsen är oförändrad sedan v6.",
-    "inklistrade_aldre": {
-      "fraktbekraftelse": "2026-09-18 v6 (17track-knapp, fraktbolagets namn)",
-      "fraktuppdatering": "2026-09-12 v2 (17track-knapp, fraktbolagets namn)",
-      "ute_for_leverans": "2026-09-12 v2 (17track-knapp, fraktbolagets namn)",
-      "levererad": "2026-09-18 v6 (fraktbolagets namn, samma-paket-raden, sju dagar från orderdagen)"
-    },
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat).",
+    "inklistrade_aldre_comment": "Tom sedan 2026-09-18 kväll.",
+    "inklistrade_aldre": {},
     "inklistrade": {
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
-      "orderbekraftelse": "2026-09-18 v6"
+      "orderbekraftelse": "2026-09-18 v6",
+      "fraktbekraftelse": "2026-09-18 v8",
+      "fraktuppdatering": "2026-09-18 v8",
+      "ute_for_leverans": "2026-09-18 v8",
+      "levererad": "2026-09-18 v8"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
@@ -811,6 +810,6 @@
     "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
     "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5.",
     "leveranslofte": "2026-09-18: 7–14 dagar från skickdagen (konfig.frakt), räknat i Liquid vid utskick. Inklistrat i Shopify först när v6 klistrats in — tills dess visar mejlen v4:s '5–10 arbetsdagar'.",
-    "testmejl_aktuell_version_gjort": "Skickat av Cowork 2026-09-18 från Orderbekräftelse (v6) till axelodhner.business@gmail.com, bekräftelse 'Testmeddelande skickat'. Vad mejlet visar (Beräknad leverans med två datum, mobilen) läser Axel."
+    "testmejl_aktuell_version_gjort": "Cowork 2026-09-18 kväll: testmejl från Levererad (v8) till axelodhner.business@gmail.com, anropet svarade 200."
   }
 }

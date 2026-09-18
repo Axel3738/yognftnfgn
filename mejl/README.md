@@ -352,6 +352,15 @@ Ur Axels läsning av testmejlkedjan:
   `slutdatumLiquid(dagar, paketTimmar, bas)`.
 - Spårningen in i Shopify (skanningar, "Levererad"-notisen): `sparning/`.
 
+**Inklistrad av Cowork 2026-09-18 kväll**, alla fyra fraktmallarna,
+testmejl från Levererad skickat. ⚠️ **Lärdom som förklarar tidigare
+"såg klart ut men var det inte":** Shopifys redigerare lägger tillbaka
+osparade utkast ur webbläsaren efter F5, så omladdningskontrollen visar
+den nya koden även när servern har den gamla. Cowork läste därför mallens
+innehåll och `updatedAt` ur Shopifys egen mall-data i stället — det står
+nu i prompten, steg 8. "Ignorera" på "Osparade ändringar" återställer
+redigeraren till serverns (gamla) version.
+
 ## Mäta om det gör något
 
 ```bash
