@@ -23,6 +23,7 @@ produkt:
     sv: "överdrag"
     nb: "trekk"
     en: "cover"
+    fi: "suoja"
 
 brand:
   namn: "CaraShell"

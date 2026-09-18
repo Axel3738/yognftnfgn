@@ -43,6 +43,9 @@
   if request.locale.iso_code == 'en' and enhet_en != blank
     assign enhet = enhet_en
   endif
+  if request.locale.iso_code == 'fi' and enhet_fi != blank
+    assign enhet = enhet_fi
+  endif
   assign flera_varianter = false
   unless p.has_only_default_variant
     assign flera_varianter = true
