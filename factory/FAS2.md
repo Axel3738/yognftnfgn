@@ -918,3 +918,57 @@ Meta), `oversatt-output.json` (12 engelska manus med SE-videons cue-tider),
 - **Räkningen:** `factory/rakning.mjs` känner bara SE/NO (källdomar ur brand-detektorn).
   För US är facit `jobb.json` (16 rader ur SE-kampanjen) mot `resultat-meta.json` +
   tillbakaläsning ur kontot — se `products/carashell/termoskyddet/batch-log.md`.
+
+### En kampanj kopierad till en ny marknad bär med sig gamla marknadens PRIS (2026-09-17→18, taköverdraget → UK/CA/AU/NZ)
+
+Axel byggde åtta kampanjer i Magiborsten UK genom att kopiera US-kampanjens creatives
+till fyra nya engelskspråkiga marknader. Språket stämde — **priset gjorde det inte**:
+216 annonser sa `$199 / $249` mot kunder som betalar i GBP, CAD, AUD och NZD. Felet
+syns inte i Meta (samma språk, samma bild) och inte i kundvyn (Shopify räknar om åt
+kunden) — bara i annonsen. Axel såg det själv.
+
+**Regel härifrån: en marknad är inte ett språk.** När en kampanj kopieras till ett nytt
+land ska priset läsas om ur butiken som kund i DET landet (`POST /localization` med
+`country_code`, sedan `/products/<handle>.json`) och bytas i alla tre ytorna — text,
+inbränd bildtext och tal. Engelska till engelska känns som en ren kopia och är det inte.
+
+Verktygen ligger i `market-expansion/ops/carashell/2026-09-17-marknader/` och är byggda
+för att kunna köras om för nästa marknad:
+
+- **`marknader.mjs`** — priser, fraktrad och kampanj-id per marknad, plus `bytPris()` som
+  gör bytet **deterministiskt i kod**. En modell som skriver om texten kan ändra annat;
+  uppdraget var att bara priset skulle bli rätt. `kvarUS()` är kontrollen efteråt (och
+  måste maskera marknadens egna `CA$`/`A$`/`NZ$` innan den letar dollartecken, annars
+  larmar den på varje rätt pris den själv skrivit).
+- **`byt-text.py`** — byter EN rad i en färdig annonsbild. Den mäter bakgrundsfärg,
+  textfärg, fetstil, versalhöjd och justering i regionen och ärver stilen, så basfotot
+  inte behövs. Två saker avgör resultatet: **regionen måste ligga innanför plattans
+  uppmätta gränser** (en region som är bredare än chipet låter texten spilla ut över
+  fotot), och krympningen ska räknas mot REGIONEN, inte mot originaltextens bredd.
+- **`dubba.mjs`** — byter talet utan att röra bilden: cue-tider ur ElevenLabs Scribe
+  (ordnivå), en replik per cue lagd på originalets starttid, `-c:v copy`.
+
+**Fyra fällor, alla mätta den här körningen:**
+1. **`-shortest` i mux klipper VIDEON.** Ljudspåret blev 0,16–0,44 s kortare än bilden och
+   `-shortest` kapade slutet — bilden ändrades alltså fast uppdraget var att inte röra
+   den. Fix: bygg ljudet på en tyst bas (`anullsrc` med `-t <videons längd>`) som första
+   amix-ingång med `duration=first`, och kör mux UTAN `-shortest`. Kontrollera längden
+   efteråt: mer än 50 ms drift är ett fel, inte en avrundning.
+2. **`apad` utan `whole_dur` hänger ffmpeg.** 22 minuter på en 27-sekundersvideo innan
+   den dödades; `atrim` efteråt stoppade inte paddningen.
+3. **Metas `video_data` läses ut med både `image_url` och `image_hash`, men accepteras
+   bara med ett av dem.** Varje video avvisades med 400 tills specen rensades innan den
+   skickades tillbaka.
+4. **Ett torrkörningsresultat får aldrig räknas som gjort.** Idempotensen hoppade över
+   annonser vars enda spår var en `--torr`-post.
+
+**Röstkollen gäller även här:** `rostkoll.py` underkände en video för att sista repliken
+gick ända ut i sista bildrutan (originalet slutar i tystnad). Lämna ≈ 0,45 s tystnad
+i slutet, och låt röstkollens exitkod styra om filen får laddas upp — filen finns på
+disk även när kollen sa ❌, så spärren måste sitta i uppladdaren.
+
+**Bytet i Meta:** `byt-creative.mjs` bygger den nya creativen på annonsens EGEN gamla
+`object_story_spec`, så sida, CTA och **landningslänk** följer med oförändrade; namn,
+adset, kampanj och status rörs aldrig. Varje byte läses tillbaka och jämförs.
+216 annonser på 27 minuter i UK-kontot, 0 fel. `verifiera.mjs` läser sedan tillbaka
+allt en gång till och dömer per annons — 216 av 216 gröna.

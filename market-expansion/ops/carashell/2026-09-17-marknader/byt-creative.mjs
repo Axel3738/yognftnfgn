@@ -43,11 +43,17 @@ const resultat = existsSync(join(HAR, 'resultat-byte.json')) ? JSON.parse(readFi
 const spara = () => { writeFileSync(join(HAR, 'media-uppladdat.json'), JSON.stringify(media, null, 2)); writeFileSync(join(HAR, 'resultat-byte.json'), JSON.stringify(resultat, null, 2)); };
 
 /** Ladda upp marknadens nya fil en gång och återanvänd hashen/id:t i alla kampanjer. */
+const dubb = existsSync(join(HAR, 'resultat-dubb.json')) ? JSON.parse(readFileSync(join(HAR, 'resultat-dubb.json'), 'utf8')) : {};
 async function mediaFor(kod, namn, typ) {
   const nyckel = `${kod}/${namn}`;
   if (media[nyckel]) return media[nyckel];
   const fil = join(HAR, kod, `${namn}.${typ === 'video' ? 'mp4' : 'png'}`);
   if (!existsSync(fil)) throw new Error(`filen saknas: ${fil}`);
+  // En video med ❌ i röstkollen laddas ALDRIG upp (Axels regel 2026-09-08) — filen
+  // finns på disk även när kollen underkände den, så spärren måste sitta här.
+  if (typ === 'video' && dubb[kod]?.[namn] && dubb[kod][namn].status !== 'OK') {
+    throw new Error(`dubben är inte godkänd (röstkoll/captions): ${dubb[kod][namn].status}`);
+  }
   if (TORR) return { torr: true };
   if (typ === 'video') {
     const videoId = await laddaUppVideo(KONTO, fil);
@@ -72,7 +78,11 @@ export function nySpec(gammal, text, nyttMedia) {
     s.video_data.message = text.message;
     s.video_data.title = text.headline;
     if (text.description) s.video_data.link_description = text.description; else delete s.video_data.link_description;
-    if (nyttMedia?.videoId) { s.video_data.video_id = nyttMedia.videoId; s.video_data.image_url = nyttMedia.thumb; delete s.video_data.image_hash; }
+    if (nyttMedia?.videoId) { s.video_data.video_id = nyttMedia.videoId; s.video_data.image_url = nyttMedia.thumb; }
+    // Meta: "Endast ett av image_url och image_hash bör anges i video_data". Metas EGNA
+    // creatives läses ut med båda, så specen måste rensas innan den skickas tillbaka —
+    // annars avvisas varje video med 400 (mätt 2026-09-17 på de nio orörda videorna).
+    if (s.video_data.image_url && s.video_data.image_hash) delete s.video_data.image_hash;
   } else {
     throw new Error('creative saknar både link_data och video_data');
   }
@@ -97,7 +107,9 @@ for (const [kid, kinfo] of kampanjer) {
   resultat[kid] = resultat[kid] ?? {};
   for (const a of annonser) {
     if (BARA && !a.name.includes(BARA)) continue;
-    if (resultat[kid][a.name]?.ok && !TORR) continue;
+    // En torrkörning räknas ALDRIG som gjord — bara ett skarpt byte med grön
+    // tillbakaläsning får hoppas över vid omkörning.
+    if (resultat[kid][a.name]?.ok && !resultat[kid][a.name]?.torr && !TORR) continue;
     const gammal = a.creative?.object_story_spec;
     const text = copy[kod]?.[a.name];
     if (!gammal) { resultat[kid][a.name] = { ok: false, skal: 'ingen object_story_spec' }; continue; }

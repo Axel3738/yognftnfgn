@@ -91,21 +91,24 @@ for (const kod of (MARKNAD ? [MARKNAD] : KODER)) {
       }
       d.dNy = d.d / d.tempo;
     }
-    // 3. Bygg ljudspåret: adelay per replik + amix, klippt till videons längd
-    const inp = delar.flatMap((d) => ['-i', d.wav]);
+    // 3. Bygg ljudspåret. Första ingången är TYSTNAD med exakt videons längd: den sätter
+    //    spårets längd, så resultatet aldrig kan bli kortare än bilden. (Utan den blev
+    //    varje video 0,16–0,44 s kortare än källan — `-shortest` klippte bort slutet,
+    //    och uppdraget var att inte röra bilden alls. Mätt 2026-09-17.)
+    const inp = ['-f', 'lavfi', '-t', vlangd.toFixed(3), '-i', 'anullsrc=r=44100:cl=stereo',
+      ...delar.flatMap((d) => ['-i', d.wav])];
     const filter = delar.map((d, k) => {
       const tempo = d.tempo > 1.001 ? `,atempo=${d.tempo.toFixed(4)}` : '';
-      return `[${k}:a]aresample=44100${tempo},adelay=${Math.round(d.start * 1000)}|${Math.round(d.start * 1000)}[a${k}]`;
-    }).join(';') + `;${delar.map((_, k) => `[a${k}]`).join('')}amix=inputs=${delar.length}:duration=longest:normalize=0,apad=whole_dur=${vlangd.toFixed(3)},atrim=0:${vlangd.toFixed(3)},alimiter=limit=0.95[ut]`;
+      return `[${k + 1}:a]aresample=44100${tempo},adelay=${Math.round(d.start * 1000)}|${Math.round(d.start * 1000)}[a${k}]`;
+    }).join(';') + `;[0:a]${delar.map((_, k) => `[a${k}]`).join('')}amix=inputs=${delar.length + 1}:duration=first:normalize=0,alimiter=limit=0.95[ut]`;
     const ljud = join(vo, 'spar.wav');
-    // -t på outputen också: apad utan whole_dur hängde ffmpeg i 22 minuter (mätt 2026-09-17,
-    // CS_2_H1) — atrim ensam stoppade inte paddningen.
-    const r1 = kor(['ffmpeg', '-y', '-v', 'error', ...inp, '-filter_complex', filter, '-map', '[ut]', '-ar', '44100', '-ac', '2', '-t', vlangd.toFixed(3), ljud], { timeout: 180000 });
+    const r1 = kor(['ffmpeg', '-y', '-v', 'error', ...inp, '-filter_complex', filter, '-map', '[ut]', '-ar', '44100', '-ac', '2', ljud], { timeout: 180000 });
     if (r1.status !== 0) { console.log(`   ✗ ljudbygget: ${(r1.stderr || '').slice(-300)}`); resultat[kod][namn] = { status: 'FEL', steg: 'ljud', skal: (r1.stderr || '').slice(-300) }; continue; }
     // 4. Muxa: VIDEON KOPIERAS BIT FÖR BIT (-c:v copy), bara ljudet är nytt
     const utan = join(HAR, kod, `${namn}.utan-cap.mp4`);
+    // Inget -shortest: videon ska behålla sin exakta längd, ljudet är redan lika långt.
     const r2 = kor(['ffmpeg', '-y', '-v', 'error', '-i', kalla, '-i', ljud, '-map', '0:v:0', '-map', '1:a:0',
-      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', '-shortest', utan]);
+      '-c:v', 'copy', '-c:a', 'aac', '-b:a', '160k', utan]);
     if (r2.status !== 0) { console.log(`   ✗ mux: ${(r2.stderr || '').slice(-300)}`); resultat[kod][namn] = { status: 'FEL', steg: 'mux', skal: (r2.stderr || '').slice(-300) }; continue; }
     // 5. Captions: samma text som talet, på originalets tider
     const srt = join(HAR, kod, `${namn}.srt`);
@@ -121,14 +124,19 @@ for (const kod of (MARKNAD ? [MARKNAD] : KODER)) {
     try { const s = k.stdout; rost = JSON.parse(s.slice(s.indexOf('{'), s.lastIndexOf('}') + 1)); }
     catch { rost = { raw: (k.stdout || k.stderr || '').slice(-400) }; }
     const rostOk = k.status === 0;
+    // Bilden får inte ha ändrat längd: mer än 50 ms drift betyder att något klippte videon.
+    const nyLangd = langd(ut || utan);
+    const langdOk = Math.abs(nyLangd - vlangd) <= 0.05;
     resultat[kod][namn] = {
       // En video med ❌ i röstkollen laddas ALDRIG upp (Axels regel 2026-09-08).
-      status: capOk && rostOk ? 'OK' : 'FEL', langd_kalla: vlangd, langd_ny: langd(ut || utan),
+      status: capOk && rostOk && langdOk ? 'OK' : 'FEL',
+      langd_avvikelse: Number((nyLangd - vlangd).toFixed(3)),
+      langd_kalla: vlangd, langd_ny: nyLangd,
       repliker: delar.map((d, i) => ({ i: i + 1, text: cues[i].text, sek: d.d, fonster: d.fonster, tempo: Number(d.tempo.toFixed(3)) })),
       varningar, captions: { exit: r3.status, utskrift: (r3.stderr || r3.stdout || '').trim().split('\n').slice(-2).join(' | ') },
       rostkoll: { exit: k.status, resultat: rost },
     };
-    console.log(`   ${capOk && rostOk ? '✓' : '✗'} ${vlangd.toFixed(2)} s → ${langd(ut || utan).toFixed(2)} s · captions exit ${r3.status} · röstkoll ${rostOk ? '✅' : `❌ ${(k.stdout || '').split('\n').find((l) => l.includes('dB') || l.includes('tappat')) ?? 'se resultat-dubb.json'}`}${varningar.length ? ` · ⚠ ${varningar.join('; ')}` : ''}`);
+    console.log(`   ${capOk && rostOk && langdOk ? "✓" : "✗"} ${vlangd.toFixed(2)} s → ${nyLangd.toFixed(2)} s · captions exit ${r3.status} · röstkoll ${rostOk ? '✅' : `❌ ${(k.stdout || '').split('\n').find((l) => l.includes('dB') || l.includes('tappat')) ?? 'se resultat-dubb.json'}`}${varningar.length ? ` · ⚠ ${varningar.join('; ')}` : ''}`);
     writeFileSync(join(HAR, 'resultat-dubb.json'), JSON.stringify(resultat, null, 2));
   }
 }

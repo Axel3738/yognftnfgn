@@ -446,3 +446,64 @@ inte ändras när åtkomsten finns.
 byggd av den andra sessionen, tom och pausad — den fylls av
 `/ops-oversatt carashell/termoskyddet --marknad US` när dess hub och SE-annonser
 finns. Inte en dubblett.
+
+---
+
+## Prisrättning UK/CA/AU/NZ 2026-09-17→18 — 216 annonser i åtta kampanjer sa amerikanskt pris
+
+**Vad som var fel.** Axel byggde åtta kampanjer i Magiborsten UK (`1107817401910319`)
+för fyra nya engelskspråkiga marknader — en produktkampanj och en LISTICLE-kampanj per
+marknad — genom att kopiera US-kampanjens creatives. Priset följde med: **varenda annons
+sa `$199` / `$249` (USD)** fast kunden i London, Toronto, Sydney och Auckland betalar i
+sin egen valuta. Axel upptäckte det själv och bad om rättning.
+
+**Butikens riktiga priser, avlästa som kund i varje land 2026-09-17** (`POST /localization`
+→ `GET /products/takskyddet.json` på carashell.com):
+
+| Marknad | Pris | Jämförpris | Rabatt | Kampanjer |
+|---|---|---|---|---|
+| GB | £152 | £191 | 20,4 % | UK Taköverdrag + UK LISTICLE |
+| CA | CA$284 | CA$356 | 20,2 % | CA Taköverdrag + CA LISTICLE |
+| AU | A$286 | A$358 | 20,1 % | AU Taköverdrag + AU LISTICLE |
+| NZ | NZ$355 | NZ$444 | 20,0 % | NZ Taköverdrag + NZ LISTICLE |
+
+⚠️ **Priserna är Shopifys kursomräkning, inte fasta priser i prislistan** (bara USD är
+fast). Rör sig kursen ändras butikens pris och annonserna säger fel igen. Läs om priserna
+innan nästa runda; ett fast pris per marknad är Axels beslut.
+
+**Kartan: 27 unika creatives × 8 kampanjer = 216 annonser.** Tre ytor granskade var för sig:
+
+| Yta | Bär priset | Åtgärd |
+|---|---|---|
+| Annonstext (message/headline/description) | **27 av 27** | deterministiskt byte, 476 byten |
+| Inbränd text i bild | **9 av 15** | prisraden omritad pixelstabilt |
+| Tal + captions i video | **3 av 12** (CS_1/2/3) | nytt tal + nya captions |
+
+De 6 rena bilderna och 9 rena videorna (GT, PD, SP) nämner inget pris i mediet och
+**återanvändes orörda** — samma image_hash respektive video_id som före.
+
+**Så här gjordes det, och varför inget annat kunde ändras:**
+- **Copyn byttes i kod, inte av en modell** (`marknader.mjs → bytPris`): `$199` → marknadens
+  pris, `$249` → jämförpriset, `$50` → besparingen, `free shipping in the US` → butikens
+  egen formulering för landet. Allt annat är tecken för tecken originalet. 0 US-rester
+  i kontrollen (`kvarUS`). Det som INTE byttes, för att det redan stämmer: "20% off"
+  (20,0–20,4 % på alla fyra), "90-day guarantee" och fraktlöftet (butiken skriver båda
+  själv på produktsidan i alla fyra länderna), "16 reviews", måtten.
+- **Bilderna:** `byt-text.py` suddar EN rad och skriver dit en ny — den mäter själv
+  bakgrundsfärg, textfärg, fetstil, versalhöjd och justering i regionen, så den nya
+  raden ärver originalets stil. Regionerna står i `bildregioner.json`.
+- **Videorna:** `dubba.mjs` bygger ett nytt ljudspår på ORIGINALETS tidslinje (cue-tider
+  ur ElevenLabs Scribe, ordnivå) och muxar in det med `-c:v copy`. **Bilden är bit för bit
+  originalets och längden exakt densamma** (0 s avvikelse på alla tolv). Röst: ElevenLabs
+  `Chris - Charming, Down-to-Earth`. Captions ritas om i originalets eget band (952:1084).
+- **Bytet i Meta:** `byt-creative.mjs` ger annonsen en ny creative byggd på dess EGEN
+  gamla `object_story_spec` — samma sida, samma CTA och **samma landningslänk**. Namn,
+  adset, kampanj och status rörs aldrig. Varje byte läses tillbaka.
+
+**Utfallet:** `verifiera.mjs` läste tillbaka alla 216 annonser ur Meta:
+**216 av 216 bär marknadens pris, utan amerikanska spår, med länk och status orörda,
+0 Meta-invändningar.** Räkningen: `market-expansion/ops/carashell/2026-09-17-marknader/rakningen.md`.
+De åtta ursprungliga länkarna (fyra produktsidor, fyra listicle-sidor) är oförändrade.
+
+**Kostnad:** 0 HeyGen-krediter, 0 kie.ai-krediter. ElevenLabs ≈ 4 900 tecken för de
+12 videorna (120 repliker).
