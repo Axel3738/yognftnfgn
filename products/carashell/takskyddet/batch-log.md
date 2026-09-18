@@ -846,3 +846,47 @@ De åtta ursprungliga länkarna (fyra produktsidor, fyra listicle-sidor) är of�
 
 **Kostnad:** 0 HeyGen-krediter, 0 kie.ai-krediter. ElevenLabs ≈ 4 900 tecken för de
 12 videorna (120 repliker).
+
+### Kursdriften — varför de fyra länderna INTE har fasta priser (mätt 2026-09-18)
+
+Axels fråga dagen efter prisrättningen: "varför skulle vi inte ha fasta priser?"
+
+**Svaret är inte att vi valt bort dem — det går inte utan att bygga om marknaden.**
+Mätt i Shopify samma morgon (`markets` + `catalogs` via Admin API):
+
+| Marknad | Valuta | Lokala valutor | Webbnärvaro | Prislista |
+|---|---|---|---|---|
+| Sweden | — | — | — | — |
+| Norge | NOK | false | `/nb/` | Norge (NOK), fasta priser |
+| **USA** | **USD** | **true** | **carashell.com** | **CaraShell USD, fasta priser** |
+
+GB, CA, AU och NZ är **länder inne i USA-marknaden**, inte egna marknader. En prislista
+kopplas till en marknad (`MarketCatalog` → `context.marketIds`), aldrig till ett land —
+så det finns ingen plats att lägga ett fast pundpris. Kunden i UK betalar Shopifys
+omräkning av de fasta 199 USD, och den räknas om på nytt varje dag.
+
+Fasta priser kräver alltså **en egen marknad per land**, och en egen marknad kräver en
+egen webbnärvaro. carashell.com hör redan till USA-marknaden (mätt 2026-09-17:
+`RESOURCE_NOT_FOUND` när en annan marknad försöker ta den), och subfolders hänger på
+butikens PRIMÄRA domän — carashell.se, alltså precis den adress .com köptes för att
+slippa. Vägen dit är fyra domäner (`.co.uk`, `.ca`, `.com.au`, `.co.nz`), fyra
+marknader, fyra prislistor — och **nya landningslänkar i alla 216 annonser**.
+
+**Driften, mätt ett dygn efter bytet** (`prisvakt.mjs`, läs-bar):
+
+| Land | Annonsen säger | Butiken säger | Drift |
+|---|---|---|---|
+| GB | 152 / 191 | 152 / 191 | 0,00 % |
+| CA | 284 / 356 | 284 / 356 | 0,00 % |
+| AU | 286 / 358 | **285 / 357** | 0,35 % |
+| NZ | 355 / 444 | 355 / 444 | 0,00 % |
+
+AU gled isär på ett dygn. Det är hela mekanismen i ett nötskal: annonsen står still,
+sidan följer kursen. `node prisvakt.mjs` läser om priset per land och larmar (exit 1)
+när någon marknad driftat mer än 2 %. Då räcker det att köra om kedjan
+(`byt-text.py` → `dubba.mjs` → `byt-creative.mjs`) med de nya talen i `marknader.mjs` —
+maskineriet finns redan och kostar noll krediter.
+
+**Beslutet är Axels** och ligger öppet: bygga om till egna marknader per land (fasta
+priser + lokal domän, men nya länkar i 216 annonser), eller låta kampanjerna samla
+data först och rätta priserna när vakten larmar.
