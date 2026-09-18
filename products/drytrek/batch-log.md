@@ -1162,3 +1162,37 @@ Frågan om omstart av Sverige står fortfarande obesvarad i Discord `#ads-to-do`
 sedan 15/9. Ny fråga ställd i `#annons-uppladdning` idag: ska den här
 leveransrutinen pausas nu när ingen marknad är igång? (HeimGuards NO-rutin
 stängdes av på samma sätt 2026-09-13 när Axel pausade den marknaden.)
+
+---
+
+## Norge 2026-09-18 — NO-kampanjen PAUSAD av ägaren, kön tom
+
+Rutinen triggade 13:50 UTC. **0 rader** i `SE-ACTIVE to be translated`, och
+`DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` står **PAUSED med
+8 450 kr spend** sedan i dag **11:28 CEST** — alltså knappt två och en halv
+timme före körningen.
+
+Läget är `/ops-oversatt`s andra rad i tabellen: *kampanjen finns men är PAUSED
+med spend*. Ingenting laddades upp, ingen rad rördes, ingen status ändrades.
+Kön är dessutom tom, så pausen håller ingenting kvar.
+
+**Siffrorna stödjer beslutet** — det här var ingen vinnare som stängdes av:
+
+| Fönster | Spend | Köp | ROAS | mot break-even 1,60 |
+|---|---|---|---|---|
+| 3 dygn | 2 829 kr | 9 | **1,36** | UNDER |
+| 7 dygn | 6 966 kr | 24 | 1,65 | precis över |
+| 14 dygn | 8 054 kr | 29 | 1,78 | över |
+| Livstid | 8 450 kr | 31 | 1,82 | över |
+
+CPA rör sig åt fel håll i takt med det: 273 kr livstid → 278 (14d) → 290 (7d)
+→ **314 kr (3d)**, mot en break-even-CPA som priset 389 kr sätter. Trenden pekar
+nedåt genom varje fönster. Att döma på livstidens 1,82 hade varit precis det
+ANALYSMETOD.md varnar för.
+
+⚠️ **Kampanjen får inte slås på igen av någon session eller rutin.** PAUSED med
+spend är ett beslut. `/ny-annonser` ska ALDRIG föreslås här — den hade byggt en
+andra NO-kampanj bredvid den pausade och dubblat spenden.
+
+Priset lästes till **380 NOK** (382 den 17:e, 379 den 16:e). Den levande
+avläsningen fortsätter följa kursen, som den ska.
