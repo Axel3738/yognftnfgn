@@ -1,0 +1,19 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-18",
+  "lage": "oversatt",
+  "server": "CaraShell",
+  "gjort": [
+    "Norway round for the roof cover: 1 of 7 image ads went live. CaraShellRoof_NO_SP_6_1, ad 120249157622590172, ad set SP - checked at full size, all text Norwegian, price 1 106 kr (was 1 382,50 kr), nothing Swedish left.",
+    "CORRECTION to yesterday's report: the image translator does NOT fail at erasing Swedish text. Measured today on the real file - the band is flat outside the text and off by one level of 255 where the text sat, which is invisible. Yesterday's fault was mine: I fed a three-line shape only two of its lines, so the tool re-wrapped and the geometry slipped. With the full text the same image comes out clean.",
+    "HeyGen credits used: 0 before -> 0 after. Image queue only."
+  ],
+  "varningar": [
+    "Six ads are still held, each on a real and named fault in how the translator models the OPS layouts: a full-width headline over a split photo is never detected (PD_6_1 ends up with two headlines), the star row renders as empty boxes because Liberation Sans has no star glyph (SP_5_1, SP_7_1), the price badge inside a white strip is not modelled so the old 1 469 to 1 129 survives (CS_5_1, CS_6_1), and PD_7_1 loses its bottom band and left label.",
+    "The queue now holds 24 rows, 7 of them video. Only 8 rows have a file to work from; the rest are waiting on the editors.",
+    "Shortest fix, written up in BILDSTOPP.md: have /ops-bild save the spec and the base photo next to the ad in Notion. Then Norway never has to erase anything - the text layer redraws the same spec with Norwegian lines on the same photo and the layout matches by construction."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-19"
+}

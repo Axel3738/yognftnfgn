@@ -978,3 +978,36 @@ De två stoppade säger "recensioner på baverbutiken.se" i copyn — brandregel
 review` med en stopp-kommentar. **Axels beslut 2026-09-18 eftermiddag: "lämna"** —
 ingen butiksversion görs, de speglas inte till CaraShell. Rutinen läser bara
 `CaraShell SE ready to be active`, så raderna rörs inte igen om ingen flyttar dem.
+
+---
+
+## Norge-runda 2026-09-18 (`/ops-oversatt carashell/takskyddet`) — 1 av 7 live, gårdagens diagnos rättad
+
+**Live:** `CaraShellRoof_NO_SP_6_1` — annons `120249157622590172`, adset
+`CARASHELL_NO_Takovertrekket - SP`, ACTIVE, länk med `?country=NO`. Bokmål i
+både bild och copy, priset 1 106 kr (ord. 1 382,50 kr). Granskad i full storlek.
+Notion-raden ligger kvar i kön med `Translated url` satt — den ska till USA
+också innan den får bli `Approved` (`annonsmarknader: SE, NO, US`).
+
+⚠️ **Rättelse: gårdagens stopp byggde på en felaktig diagnos.** Jag skrev att
+`pipeline/oversatt-bild.py` inte får bort den svenska texten. Det stämmer inte.
+Mätt i dag på samma fil: bandet är platt (std 0,00) utanför texten och 1,06
+nivåer av 255 där texten satt — osynligt. **Felet var mitt eget**: jag matade en
+form med tre textrader med bara två av dem, så verktyget radbröt om och
+geometrin sköt isär. Med hela formens text blir bilden ren. Lärdomen:
+`oversatt-bild.py` vill ha **all** text som hör till formen, aldrig en delmängd.
+
+**Det som verkligen inte fungerar** är hur verktyget modellerar OPS-layouterna,
+inte suddet. Fyra namngivna fel, ett per hållen annons — fullbred rubrik över
+delad bild (`PD_6_1`), ★ saknas i Liberation Sans så stjärnraden blir fyrkanter
+(`SP_5_1`, `SP_7_1`), prisbrickan inuti den vita remsan modelleras inte så
+`1 469 kr → 1 129 kr` står kvar (`CS_5_1`, `CS_6_1`), och band/etiketter utanför
+formerna (`PD_7_1`). Detaljerna och den kortaste vägen framåt:
+`market-expansion/ops/carashell/2026-09-18/BILDSTOPP.md`.
+
+⚠️ `factory/bild-text.py` duger inte som reserv: den ritar på sina egna
+beräknade platser, inte originalets. Ett försök att måla om prisbrickan gav ett
+nytt priskort mitt i bilden och lämnade det gamla chipet kvar — två priser.
+
+**Kön växer:** 24 rader i `SE-ACTIVE to be translated` (7 video, 17 bild), men
+bara 8 har en fil att jobba med. Resten väntar på redigerarna.
