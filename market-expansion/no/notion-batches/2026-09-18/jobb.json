@@ -1001,7 +1001,12 @@
         "annonsNamn": "IBC-tanktrekk_NO_RV_10_1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
         "prefix": "IBC-tanktrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252291304520233",
+        "creativeId": "1602614307917615",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -1066,7 +1071,12 @@
         "annonsNamn": "IBC-tanktrekk_NO_RV_9_1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
         "prefix": "IBC-tanktrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252291307330233",
+        "creativeId": "1470535518240285",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
@@ -1130,7 +1140,12 @@
         "annonsNamn": "IBC-tanktrekk_NO_SP_5_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
         "prefix": "IBC-tanktrekk",
-        "status": "DRY"
+        "status": "ACTIVE",
+        "annonsId": "120252291311770233",
+        "creativeId": "2088057345417014",
+        "adsetId": "120251996672210233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "439.00",
