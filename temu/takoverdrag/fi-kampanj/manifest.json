@@ -1,0 +1,669 @@
+{
+ "konto": "act_1619718346388201",
+ "page_id": "1317870104733246",
+ "pixel_id": "1554276343018184",
+ "link": "https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan",
+ "kampanjnamn": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
+ "dagsbudget_ore": 110000,
+ "dsa": {
+  "beneficiary": "Axel Odhner",
+  "payor": "Axel Odhner"
+ },
+ "degrees_of_freedom_spec": {
+  "creative_features_spec": {
+   "adapt_to_placement": {
+    "enroll_status": "OPT_OUT"
+   },
+   "add_text_overlay": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ads_with_benefits": {
+    "enroll_status": "OPT_OUT"
+   },
+   "advantage_plus_creative": {
+    "enroll_status": "OPT_OUT"
+   },
+   "app_highlights": {
+    "enroll_status": "OPT_OUT"
+   },
+   "audio": {
+    "enroll_status": "OPT_OUT"
+   },
+   "auto_promotion_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "biz_ai": {
+    "enroll_status": "OPT_OUT"
+   },
+   "carousel_to_video": {
+    "enroll_status": "OPT_OUT"
+   },
+   "catalog_feed_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "creative_stickers": {
+    "enroll_status": "OPT_OUT"
+   },
+   "customize_product_recommendation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "cv_transformation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "description_automation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "dha_optimization": {
+    "enroll_status": "OPT_OUT"
+   },
+   "dynamic_cta_text": {
+    "enroll_status": "OPT_OUT"
+   },
+   "dynamic_partner_content": {
+    "enroll_status": "OPT_OUT"
+   },
+   "enable_ncs_testimonials": {
+    "enroll_status": "OPT_OUT"
+   },
+   "enhance_cta": {
+    "enroll_status": "OPT_OUT"
+   },
+   "fb_feed_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "fb_reels_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "fb_story_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "feed_caption_optimization": {
+    "enroll_status": "OPT_OUT"
+   },
+   "generate_cta": {
+    "enroll_status": "OPT_OUT"
+   },
+   "hide_price": {
+    "enroll_status": "OPT_OUT"
+   },
+   "hyperlink_formatting": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ig_feed_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ig_glados_feed": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ig_reels_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ig_stream_tag": {
+    "enroll_status": "OPT_OUT"
+   },
+   "ig_video_native_subtitle": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_animation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_auto_crop": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_background_gen": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_banner": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_brightness_and_contrast": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_end_card": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_enhancement": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_templates": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_text_translation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_touchups": {
+    "enroll_status": "OPT_OUT"
+   },
+   "image_uncrop": {
+    "enroll_status": "OPT_OUT"
+   },
+   "inline_comment": {
+    "enroll_status": "OPT_OUT"
+   },
+   "local_store_extension": {
+    "enroll_status": "OPT_OUT"
+   },
+   "media_liquidity_animated_image": {
+    "enroll_status": "OPT_OUT"
+   },
+   "media_order": {
+    "enroll_status": "OPT_OUT"
+   },
+   "media_type_automation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "multi_creative_post_carousel": {
+    "enroll_status": "OPT_OUT"
+   },
+   "multi_photo_to_video": {
+    "enroll_status": "OPT_OUT"
+   },
+   "music_generation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "pac_genai_recomposition": {
+    "enroll_status": "OPT_OUT"
+   },
+   "pac_recomposition": {
+    "enroll_status": "OPT_OUT"
+   },
+   "pac_relaxation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "product_browsing": {
+    "enroll_status": "OPT_OUT"
+   },
+   "product_extensions": {
+    "enroll_status": "OPT_OUT"
+   },
+   "product_metadata_automation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "product_tags": {
+    "enroll_status": "OPT_OUT"
+   },
+   "profile_card": {
+    "enroll_status": "OPT_OUT"
+   },
+   "profile_extension": {
+    "enroll_status": "OPT_OUT"
+   },
+   "replace_media_text": {
+    "enroll_status": "OPT_OUT"
+   },
+   "reveal_details_over_time": {
+    "enroll_status": "OPT_OUT"
+   },
+   "show_destination_blurbs": {
+    "enroll_status": "OPT_OUT"
+   },
+   "show_summary": {
+    "enroll_status": "OPT_OUT"
+   },
+   "site_extensions": {
+    "enroll_status": "OPT_OUT"
+   },
+   "standard_enhancements_catalog": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_extraction_for_headline": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_extraction_for_tap_target": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_formatting_optimization": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_generation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_optimizations": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_overlay_translation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "text_translation": {
+    "enroll_status": "OPT_OUT"
+   },
+   "translate_voiceover": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_auto_crop": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_filtering": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_highlight": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_highlights": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_to_image": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_uncrop": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_uncrop_9x16_to_9x18": {
+    "enroll_status": "OPT_OUT"
+   },
+   "video_voiceover": {
+    "enroll_status": "OPT_OUT"
+   },
+   "wa_mm_image_filtering": {
+    "enroll_status": "OPT_OUT"
+   },
+   "wa_mm_text_truncation_length": {
+    "enroll_status": "OPT_OUT"
+   }
+  }
+ },
+ "adsets": [
+  {
+   "se_namn": "CO | Notionrunda 2026-09-15",
+   "fi_namn": "FI | CO | Notionrunda 2026-09-15"
+  },
+  {
+   "se_namn": "RI | Notionrunda 2026-09-16",
+   "fi_namn": "FI | RI | Notionrunda 2026-09-16"
+  },
+  {
+   "se_namn": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "fi_namn": "FI | Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09"
+  },
+  {
+   "se_namn": "UG | Notionrunda 2026-09-16",
+   "fi_namn": "FI | UG | Notionrunda 2026-09-16"
+  },
+  {
+   "se_namn": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "fi_namn": "FI | Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09"
+  },
+  {
+   "se_namn": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "fi_namn": "FI | Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09"
+  },
+  {
+   "se_namn": "BOF | Notionrunda 2026-09-15",
+   "fi_namn": "FI | BOF | Notionrunda 2026-09-15"
+  },
+  {
+   "se_namn": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "fi_namn": "FI | Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09"
+  },
+  {
+   "se_namn": "LI | Notionrunda 2026-09-15",
+   "fi_namn": "FI | LI | Notionrunda 2026-09-15"
+  },
+  {
+   "se_namn": "TR | Notionrunda 2026-09-15",
+   "fi_namn": "FI | TR | Notionrunda 2026-09-15"
+  }
+ ],
+ "annonser": [
+  {
+   "se_namn": "Takoverdrag_CO_1_H1",
+   "fi_namn": "FI_Takoverdrag_CO_1_H1",
+   "adset": "CO | Notionrunda 2026-09-15",
+   "rubrik": "Oikea pinta, ei koko vaunua",
+   "text": "Kokovaunun suoja peittää kaiken, mitä sinulla jo on — tämä peittää vain katon.\nHihna ja kiristin reunassa pitävät sen paikallaan, vesi valuu pois kattoluukkujen ympäriltä.\n126,90 € (norm. 165,90 €), ilmainen toimitus ja 30 päivän palautusoikeus.",
+   "lankbeskrivning": "126,90 €, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CO_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CO_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_RI_1_H1",
+   "fi_namn": "FI_Takoverdrag_RI_1_H1",
+   "adset": "RI | Notionrunda 2026-09-16",
+   "rubrik": "Kun tiiviste pehmenee, pesu ei riitä",
+   "text": "Kattoluukun tiivistemassa kohtaa kosteutta päivä toisensa jälkeen.\nLopulta se pehmenee, ja vesi pääsee suoraan katon läpi.\nSilloin pelkkä pesu ei riitä — vain kattopeite auttaa, 126,90 €.",
+   "lankbeskrivning": "30 päivän palautusoikeus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_RI_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_RI_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_4_H1",
+   "fi_namn": "FI_Takoverdrag_SP_4_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Yksi riittää. 210D-kangas.",
+   "text": "Kokovaunun suoja on raskas asentaa yksin — tämän asentaa yksi henkilö.\n210D-kangas kestää koko talvikauden ulkona, ja vesi valuu pois kattoluukkujen ympäriltä.\nHihnat kaikilla neljällä sivulla. 126,90 € (norm. 165,90 €).",
+   "lankbeskrivning": "126,90 € (norm. 165,90 €)",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_4_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_4_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_UG_1_H1",
+   "fi_namn": "FI_Takoverdrag_UG_1_H1",
+   "adset": "UG | Notionrunda 2026-09-16",
+   "rubrik": "Vain katto. Yksi henkilö riittää.",
+   "text": "Luuletko, että koko vaunu pitää peittää?\nYksi henkilö asentaa sen itse — kokovaunun suoja on raskas asentaa yksin.\nKiinnitetään hihnalla ja koukulla reunassa. 126,90 €, ilmainen toimitus.",
+   "lankbeskrivning": "126,90 €, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_UG_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_UG_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_4_H1",
+   "fi_namn": "FI_Takoverdrag_GT_4_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Hopeapinnoite ottaa auringon vastaan",
+   "text": "Hopeapinnoite ottaa auringon vastaan katon sijaan.\n6,5 × 3 metriä, yksi henkilö asentaa sen itse.\nVesi valuu pois kattoluukkujen ympäriltä.",
+   "lankbeskrivning": "Hopeapinnoitettu 210D-kangas",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_4_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_4_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_4_H1",
+   "fi_namn": "FI_Takoverdrag_PD_4_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Säästä 39 € kattopeitteestä",
+   "text": "126,90 € hintaan 165,90 € sijaan – säästät 39 €.\nHihna ja koukku reunassa pitävät kiinni tuulessa.\nIlmainen toimitus ja 30 päivän palautusoikeus.",
+   "lankbeskrivning": "Säästä 39 €",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_4_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_4_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_5_H1",
+   "fi_namn": "FI_Takoverdrag_GT_5_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "210D-kangas kestää talven ulkona",
+   "text": "210D-kangas kestää koko talvikauden ulkona.\nHihna ja koukku reunassa – pysyy paikallaan tuulessa.\n6,5 × 3 metriä, mahtuu mukana tulevaan säilytyspussiin.",
+   "lankbeskrivning": "210D-kangas, hihna ja koukku",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_5_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_5_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_BOF_2_1",
+   "fi_namn": "FI_Takoverdrag_BOF_2_1",
+   "adset": "BOF | Notionrunda 2026-09-15",
+   "rubrik": "126,90 € – ilmainen toimitus",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nIlmainen toimitus, 30 päivän palautusoikeus ja Klarna.\nEi lisämaksuja, ei yllätyksiä kassalla.",
+   "lankbeskrivning": "Hinta, jonka näet, on hinta",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_BOF_1_1",
+   "fi_namn": "FI_Takoverdrag_BOF_1_1",
+   "adset": "BOF | Notionrunda 2026-09-15",
+   "rubrik": "Kattopeite – vain katto, koko talven",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nPeittää koko katon, 6,5 × 3 metriä, ei koko vaunua.\n210D-kangas kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "165,90 € → 126,90 €",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_1_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CO_2_1",
+   "fi_namn": "FI_Takoverdrag_CO_2_1",
+   "adset": "CO | Notionrunda 2026-09-15",
+   "rubrik": "Yksi henkilö, ei hankausta maaliin",
+   "text": "Kokovaunun suoja on raskas asentaa yksin.\nSe hankaa maalipintaa koko talven, kattopeite ei hankaa.\nYksi henkilö asentaa sen, ja se suojaa kalleimman pinnan: katon.",
+   "lankbeskrivning": "Suojaa katon, ei maalia",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CO_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_BOF_3_1",
+   "fi_namn": "FI_Takoverdrag_BOF_3_1",
+   "adset": "BOF | Notionrunda 2026-09-15",
+   "rubrik": "210D-kangas, ei ohut pressu",
+   "text": "Tavallinen pressu halkeaa pakkasessa yhden kauden jälkeen.\nTämä on 210D-kangas, joka on tehty kestämään talven ulkona.\n126,90 €, kiinnittyy hihnalla ja koukulla reunassa.",
+   "lankbeskrivning": "Kestää pakkasen koko talven",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_3_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_4_1",
+   "fi_namn": "FI_Takoverdrag_CS_4_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "126,90 € – toimitus sisältyy",
+   "text": "165,90 € → 126,90 €, säästät 39 €.\nSuojaa katon, 6,5 × 3 metriä, ei koko asuntovaunua.\nToimitus sisältyy hintaan, ei lisämaksuja kassalla.",
+   "lankbeskrivning": "Ei lisämaksuja kassalla",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_4_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_6_1",
+   "fi_namn": "FI_Takoverdrag_GT_6_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Suojaa katto jouluksi – 126,90 €",
+   "text": "Suojaa katto jouluksi, 126,90 €.\n210D-kangas kestää talven ulkona, toisin kuin ohut pressu, joka halkeaa pakkasessa.\nTaitettuna mukana tulevaan säilytyspussiin.",
+   "lankbeskrivning": "Kangas, joka kestää talven",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_GT_6_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_6_1",
+   "fi_namn": "FI_Takoverdrag_CS_6_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "Ilmainen toimitus – 126,90 €",
+   "text": "Ilmainen toimitus asuntovaunun kattopeitteeseen, 6,5 × 3 metriä.\n126,90 € hintaan 165,90 € sijaan, säästät 39 €.\n30 päivän palautusoikeus, jos se ei sovi.",
+   "lankbeskrivning": "30 päivän palautusoikeus",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_6_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_5_1",
+   "fi_namn": "FI_Takoverdrag_PD_5_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Hihna ja koukku pitävät paikallaan",
+   "text": "Peitä vain katto, ei koko vaunua.\nKiinnitetään hihnalla ja koukulla reunassa.\nKattoluukku pysyy kuivana, vesi valuu pois sen ympäriltä.",
+   "lankbeskrivning": "Kattoluukku pysyy kuivana",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_PD_5_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_LI_1_1",
+   "fi_namn": "FI_Takoverdrag_LI_1_1",
+   "adset": "LI | Notionrunda 2026-09-15",
+   "rubrik": "Vesi valuu pois kattoluukulta",
+   "text": "Peittää koko katon, 6,5 × 3 metriä.\nVesi valuu pois kattoluukkujen ympäriltä sen sijaan että jäisi seisomaan.\nKiinnitetään hihnalla ja koukulla, pysyy paikallaan tuulessa.",
+   "lankbeskrivning": "6,5 × 3 m, pysyy tuulessa",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_LI_1_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_5_1",
+   "fi_namn": "FI_Takoverdrag_SP_5_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Kaksi ylimääräistä hihnaa mukana",
+   "text": "Kaksi vahvistettua 10,5 m hihnaa sisältyy ilman lisäkustannusta.\nVesi ei jää seisomaan kattoluukkujen ympärille.\nPysyy paikallaan tuulessa ja kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "Hihnat sisältyvät jo hintaan",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_SP_5_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_TR_1_1",
+   "fi_namn": "FI_Takoverdrag_TR_1_1",
+   "adset": "TR | Notionrunda 2026-09-15",
+   "rubrik": "126,90 € – ja vain katto",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nPeitä vain katto, ei koko vaunua.\n210D-kangas kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "Vain katto, oikeaan hintaan",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_TR_1_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_2_1",
+   "fi_namn": "FI_Takoverdrag_SP_2_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Hihnat kaikilla neljällä sivulla",
+   "text": "Hihnat kulkevat kaikilla neljällä sivulla ja säätyvät vaunusi mukaan. 🙌\nNiin kattopeite pysyy paikallaan koko talven.\n✅ Suojaa katon sateelta, lumelta ja lialta\n✅ Yksi henkilö asentaa sen itse – ei tarvita apua\n✅ 30 päivän palautusoikeus, jos et ole tyytyväinen\nKatso, miksi tämä kattopeite kannattaa hankkia ennen talvea. 👇",
+   "lankbeskrivning": "Ilmainen toimitus Suomeen",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_SP_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_3_H1",
+   "fi_namn": "FI_Takoverdrag_SP_3_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Hihnat kaikilla neljällä sivulla",
+   "text": "Hihnat kulkevat kaikilla neljällä sivulla ja säätyvät vaunusi mukaan. 🙌\nNiin kattopeite pysyy paikallaan koko talven.\n✅ Suojaa katon sateelta, lumelta ja lialta\n✅ Yksi henkilö asentaa sen itse – ei tarvita apua\n✅ 30 päivän palautusoikeus, jos et ole tyytyväinen\nKatso, miksi tämä kattopeite kannattaa hankkia ennen talvea. 👇",
+   "lankbeskrivning": "Ilmainen toimitus Suomeen",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_3_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_3_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_2_H1",
+   "fi_namn": "FI_Takoverdrag_SP_2_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Hihnat kaikilla neljällä sivulla",
+   "text": "Hihnat kulkevat kaikilla neljällä sivulla ja säätyvät vaunusi mukaan. 🙌\nNiin kattopeite pysyy paikallaan koko talven.\n✅ Suojaa katon sateelta, lumelta ja lialta\n✅ Yksi henkilö asentaa sen itse – ei tarvita apua\n✅ 30 päivän palautusoikeus, jos et ole tyytyväinen\nKatso, miksi tämä kattopeite kannattaa hankkia ennen talvea. 👇",
+   "lankbeskrivning": "Ilmainen toimitus Suomeen",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_2_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_2_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_SP_1_H1",
+   "fi_namn": "FI_Takoverdrag_SP_1_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+   "rubrik": "Hihnat kaikilla neljällä sivulla",
+   "text": "Hihnat kulkevat kaikilla neljällä sivulla ja säätyvät vaunusi mukaan. 🙌\nNiin kattopeite pysyy paikallaan koko talven.\n✅ Suojaa katon sateelta, lumelta ja lialta\n✅ Yksi henkilö asentaa sen itse – ei tarvita apua\n✅ 30 päivän palautusoikeus, jos et ole tyytyväinen\nKatso, miksi tämä kattopeite kannattaa hankkia ennen talvea. 👇",
+   "lankbeskrivning": "Ilmainen toimitus Suomeen",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_2_1",
+   "fi_namn": "FI_Takoverdrag_PD_2_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Asuntovaunun katto suojattuna talveksi",
+   "text": "Asuntovaunun katto on pinta, jota tarkistat harvimmin – ja kallein korjata. 🏕️\n✅ Suojaa sateelta, lumelta ja UV-säteilyltä koko talven\n✅ Kiinnitetään hihnalla ja koukulla reunassa\n✅ Yksi henkilö asentaa sen itse\n✅ Mahtuu omaan säilytyspussiin, kun sitä ei käytetä\nSuojaa asuntovaunun katto ennen kuin talvi tekee siitä kalliin. 👇",
+   "lankbeskrivning": "6,5 × 3 m, ilmainen toimitus",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_PD_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_3_H1",
+   "fi_namn": "FI_Takoverdrag_PD_3_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Asuntovaunun katto suojattuna talveksi",
+   "text": "Asuntovaunun katto on pinta, jota tarkistat harvimmin – ja kallein korjata. 🏕️\n✅ Suojaa sateelta, lumelta ja UV-säteilyltä koko talven\n✅ Kiinnitetään hihnalla ja koukulla reunassa\n✅ Yksi henkilö asentaa sen itse\n✅ Mahtuu omaan säilytyspussiin, kun sitä ei käytetä\nSuojaa asuntovaunun katto ennen kuin talvi tekee siitä kalliin. 👇",
+   "lankbeskrivning": "6,5 × 3 m, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_3_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_3_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_2_H1",
+   "fi_namn": "FI_Takoverdrag_PD_2_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Asuntovaunun katto suojattuna talveksi",
+   "text": "Asuntovaunun katto on pinta, jota tarkistat harvimmin – ja kallein korjata. 🏕️\n✅ Suojaa sateelta, lumelta ja UV-säteilyltä koko talven\n✅ Kiinnitetään hihnalla ja koukulla reunassa\n✅ Yksi henkilö asentaa sen itse\n✅ Mahtuu omaan säilytyspussiin, kun sitä ei käytetä\nSuojaa asuntovaunun katto ennen kuin talvi tekee siitä kalliin. 👇",
+   "lankbeskrivning": "6,5 × 3 m, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_2_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_2_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_PD_1_H1",
+   "fi_namn": "FI_Takoverdrag_PD_1_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+   "rubrik": "Asuntovaunun katto suojattuna talveksi",
+   "text": "Asuntovaunun katto on pinta, jota tarkistat harvimmin – ja kallein korjata. 🏕️\n✅ Suojaa sateelta, lumelta ja UV-säteilyltä koko talven\n✅ Kiinnitetään hihnalla ja koukulla reunassa\n✅ Yksi henkilö asentaa sen itse\n✅ Mahtuu omaan säilytyspussiin, kun sitä ei käytetä\nSuojaa asuntovaunun katto ennen kuin talvi tekee siitä kalliin. 👇",
+   "lankbeskrivning": "6,5 × 3 m, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_2_1",
+   "fi_namn": "FI_Takoverdrag_GT_2_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Lahja, jota hän oikeasti käyttää",
+   "text": "Hän puhuu asuntovaunusta kuin se olisi lemmikki. 😅\nTänä vuonna löysin vihdoin jotain, josta hän oikeasti innostuu.\n🎁 Kattopeite, joka suojaa hänen asuntovaunuaan koko talven\n🎁 Jotain, mitä hän oikeasti käyttää – yhä uudelleen\n🎁 Toimitetaan helposti kotiin, valmis käärittäväksi\nAnna lahja, joka näyttää, että tiedät mistä hän välittää. 👇",
+   "lankbeskrivning": "Lahja, ilmainen toimitus",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_GT_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_3_H1",
+   "fi_namn": "FI_Takoverdrag_GT_3_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Lahja, jota hän oikeasti käyttää",
+   "text": "Hän puhuu asuntovaunusta kuin se olisi lemmikki. 😅\nTänä vuonna löysin vihdoin jotain, josta hän oikeasti innostuu.\n🎁 Kattopeite, joka suojaa hänen asuntovaunuaan koko talven\n🎁 Jotain, mitä hän oikeasti käyttää – yhä uudelleen\n🎁 Toimitetaan helposti kotiin, valmis käärittäväksi\nAnna lahja, joka näyttää, että tiedät mistä hän välittää. 👇",
+   "lankbeskrivning": "Lahja, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_3_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_3_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_2_H1",
+   "fi_namn": "FI_Takoverdrag_GT_2_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Lahja, jota hän oikeasti käyttää",
+   "text": "Hän puhuu asuntovaunusta kuin se olisi lemmikki. 😅\nTänä vuonna löysin vihdoin jotain, josta hän oikeasti innostuu.\n🎁 Kattopeite, joka suojaa hänen asuntovaunuaan koko talven\n🎁 Jotain, mitä hän oikeasti käyttää – yhä uudelleen\n🎁 Toimitetaan helposti kotiin, valmis käärittäväksi\nAnna lahja, joka näyttää, että tiedät mistä hän välittää. 👇",
+   "lankbeskrivning": "Lahja, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_2_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_2_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_GT_1_H1",
+   "fi_namn": "FI_Takoverdrag_GT_1_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+   "rubrik": "Lahja, jota hän oikeasti käyttää",
+   "text": "Hän puhuu asuntovaunusta kuin se olisi lemmikki. 😅\nTänä vuonna löysin vihdoin jotain, josta hän oikeasti innostuu.\n🎁 Kattopeite, joka suojaa hänen asuntovaunuaan koko talven\n🎁 Jotain, mitä hän oikeasti käyttää – yhä uudelleen\n🎁 Toimitetaan helposti kotiin, valmis käärittäväksi\nAnna lahja, joka näyttää, että tiedät mistä hän välittää. 👇",
+   "lankbeskrivning": "Lahja, ilmainen toimitus",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_1_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_2_1",
+   "fi_namn": "FI_Takoverdrag_CS_2_1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "23 % alennus kattopeitteestä",
+   "text": "🔥 23 % ALENNUS ASUNTOVAUNUN KATTOPEITTEESTÄ – TÄNÄÄN 🔥\n165,90 € → 126,90 €\nVarastoa on rajoitetusti, ja hinta on voimassa vain vähän aikaa.\nTalvi tulee joka tapauksessa – varmista, että katto on suojattu ajoissa.\nVarmista omasi ennen kuin varasto loppuu. 👇",
+   "lankbeskrivning": "23 % alennus tänään",
+   "typ": "bild",
+   "fil": "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_2_1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_3_H1",
+   "fi_namn": "FI_Takoverdrag_CS_3_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "23 % alennus kattopeitteestä",
+   "text": "🔥 23 % ALENNUS ASUNTOVAUNUN KATTOPEITTEESTÄ – TÄNÄÄN 🔥\n165,90 € → 126,90 €\nVarastoa on rajoitetusti, ja hinta on voimassa vain vähän aikaa.\nTalvi tulee joka tapauksessa – varmista, että katto on suojattu ajoissa.\nVarmista omasi ennen kuin varasto loppuu. 👇",
+   "lankbeskrivning": "23 % alennus tänään",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_3_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_3_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_2_H1",
+   "fi_namn": "FI_Takoverdrag_CS_2_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "23 % alennus kattopeitteestä",
+   "text": "🔥 23 % ALENNUS ASUNTOVAUNUN KATTOPEITTEESTÄ – TÄNÄÄN 🔥\n165,90 € → 126,90 €\nVarastoa on rajoitetusti, ja hinta on voimassa vain vähän aikaa.\nTalvi tulee joka tapauksessa – varmista, että katto on suojattu ajoissa.\nVarmista omasi ennen kuin varasto loppuu. 👇",
+   "lankbeskrivning": "23 % alennus tänään",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_2_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_2_H1.jpg"
+  },
+  {
+   "se_namn": "Takoverdrag_CS_1_H1",
+   "fi_namn": "FI_Takoverdrag_CS_1_H1",
+   "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+   "rubrik": "23 % alennus kattopeitteestä",
+   "text": "🔥 23 % ALENNUS ASUNTOVAUNUN KATTOPEITTEESTÄ – TÄNÄÄN 🔥\n165,90 € → 126,90 €\nVarastoa on rajoitetusti, ja hinta on voimassa vain vähän aikaa.\nTalvi tulee joka tapauksessa – varmista, että katto on suojattu ajoissa.\nVarmista omasi ennen kuin varasto loppuu. 👇",
+   "lankbeskrivning": "23 % alennus tänään",
+   "typ": "video",
+   "fil": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_1_H1.mp4",
+   "thumb": "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_1_H1.jpg"
+  }
+ ],
+ "saknas": []
+}

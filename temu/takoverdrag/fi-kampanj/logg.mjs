@@ -27,7 +27,10 @@ md += `Spec: \`FI-KAMPANJ.md\`. Byggd av \`fi-kampanj/\` (skripten där, alla te
 md += `**Konto:** Magiborsten FI \`act_1619718346388201\` (valuta SEK — inte EUR som specen antog; budgetar anges i öre). `;
 md += `**Sida:** Majavakauppa \`1317870104733246\`. **Pixel:** \`1554276343018184\` (Bäverbutiken.se — kontots enda köp-pixel, samma som Axels 19 befintliga FI-adsets; majavakauppa.fi skickar i dag ingen Meta-pixel alls — se frågan till Axel i leveransen). `;
 md += `**Kampanj:** \`${M.kampanjnamn}\` → \`${st.kampanj || '—'}\`, CBO ${M.dagsbudget_ore / 100} kr/dag (≈ 100 €) som platshållare, PAUSED.\n\n`;
-if (ver) md += `Verifiering ${DATUM}: kampanj \`${ver.kampanj.effective_status}\`, ${ver.adsets.length} adsets (${ver.adsets.every((a) => a[1] === 'PAUSED') ? 'alla PAUSED' : 'EJ ALLA PAUSED: ' + ver.adsets.filter((a) => a[1] !== 'PAUSED').map((a) => a[0]).join(', ')}), ${ver.annonser.length} annonser (${ver.annonser.every((a) => a[1] === 'PAUSED') ? 'alla PAUSED' : 'EJ ALLA PAUSED'}).\n\n`;
+if (ver) {
+  const pr = ver.annonser.filter((a) => a[1] === 'PENDING_REVIEW').length, ovr = ver.annonser.filter((a) => !['PAUSED', 'PENDING_REVIEW'].includes(a[1]));
+  md += `Verifiering ${DATUM} (\`effective_status\`): kampanj \`${ver.kampanj.effective_status}\`, ${ver.adsets.length} adsets (${ver.adsets.every((a) => a[1] === 'PAUSED') ? 'alla PAUSED' : 'EJ ALLA PAUSED: ' + ver.adsets.filter((a) => a[1] !== 'PAUSED').map((a) => a[0]).join(', ')}), ${ver.annonser.length} annonser: ${ver.annonser.length - pr - ovr.length} PAUSED + ${pr} PENDING_REVIEW (alla skapade med \`status: PAUSED\`; PENDING_REVIEW är Metas granskning av nya annonser och levererar inte medan kampanj och adset är pausade)${ovr.length ? ` — ⚠️ AVVIKER: ${ovr.map((a) => a[0] + '=' + a[1]).join(', ')}` : ''}.\n\n`;
+}
 
 md += `## Adsets\n\n| SE | FI | ID |\n|---|---|---|\n`;
 for (const a of M.adsets) md += `| ${a.se_namn} | ${a.fi_namn} | \`${st.adsets?.[a.se_namn] || '—'}\` |\n`;

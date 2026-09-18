@@ -1,0 +1,367 @@
+{
+ "adsets": {
+  "CO | Notionrunda 2026-09-15": "120251780255390199",
+  "RI | Notionrunda 2026-09-16": "120251780255820199",
+  "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09": "120251780256180199",
+  "UG | Notionrunda 2026-09-16": "120251780256790199",
+  "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09": "120251780257160199",
+  "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09": "120251780257560199",
+  "BOF | Notionrunda 2026-09-15": "120251780258070199",
+  "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09": "120251780258570199",
+  "LI | Notionrunda 2026-09-15": "120251780259140199",
+  "TR | Notionrunda 2026-09-15": "120251780259610199"
+ },
+ "bilder": {
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CO_1_H1.jpg": "888f11f17105d938028f4c0b46b89e15",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_RI_1_H1.jpg": "1b32b07f93878beaf198f50d8d5b89e4",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_4_H1.jpg": "8b1afdbc53911f09862414d80022aa01",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_UG_1_H1.jpg": "571c4c6ba867e30b06a33ac55ef5011d",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_4_H1.jpg": "4ac83fe4b87f9812329d442d4dad9c7d",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_4_H1.jpg": "274e0f0b08a53d07dc44781d8e5eea2b",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_5_H1.jpg": "8e0082233e9a1c99d6cc90a3dfbc222d",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_2_1.jpg": "d4f395dde1efd6cabbecccaa06b23b36",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_1_1.jpg": "34108f34de55cc191a8097481d2a99d4",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CO_2_1.jpg": "f04e634863c14aa56814cac38e3f97b9",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_BOF_3_1.jpg": "e10315be39b193d8d46ffc61277fdfc4",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_4_1.jpg": "12ac26bd66bc00f3fb803882582cb0e9",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_GT_6_1.jpg": "2884f60d0bb846da6ecf565e5e00ae89",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_6_1.jpg": "88cae6d89e440578029faaaa329b6ab9",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_PD_5_1.jpg": "cdd896fdbf181410f35ee7998b05b5b2",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_LI_1_1.jpg": "f4523c0d20d9fe44ee844a66910ca922",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_SP_5_1.jpg": "9334e546ac2500aba35b4cca560a620e",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_TR_1_1.jpg": "730a54f6b6d1d3c4f48ea4b61f57c90f",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_SP_2_1.jpg": "a857c40449a554f8eb4207a820ace3cc",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_PD_2_1.jpg": "da43222d95dacbe31959de9bc2ce78e7",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_3_H1.jpg": "9cdeea39dc04cbd2ad9d8622788e868b",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_2_H1.jpg": "a892b32c97e0ec1d45943bba574c68eb",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_PD_1_H1.jpg": "c762c7199fe965f23317e0ace4ee8d7d",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_GT_2_1.jpg": "98a97a561da394603f9ac502b2d6395f",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_3_H1.jpg": "7446c5a53fd82354d6077c64dd9140ff",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_2_H1.jpg": "84068208b55f176fce39197bbc33b7a9",
+  "/home/user/yognftnfgn/temu/takoverdrag/fi-kampanj/bilder/no/FI_Takoverdrag_CS_2_1.jpg": "9f8f7a709a58436e7fe5fe26c5390109",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_3_H1.jpg": "1813e2555c89b8285bab4edb16e7a462",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_2_H1.jpg": "1b3f7cab9ffa4f1e46de3c6cf8072d09",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CS_1_H1.jpg": "3a8ad1fe2e56ef82a3b76df1a480c9e8",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_3_H1.jpg": "349c8b5a0162beac0dcbe38587c23577",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_2_H1.jpg": "67fc76c9b2b4dc64baac820f8c1515e7",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_SP_1_H1.jpg": "dd63287cf9c2ee24ec8990715ef6a2e3",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_GT_1_H1.jpg": "67d7dfeb314767c8d0bacca70c8c055b"
+ },
+ "videor": {
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CO_1_H1.mp4": "4018397681799081",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_RI_1_H1.mp4": "28908345462105140",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_4_H1.mp4": "1083348357401171",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_UG_1_H1.mp4": "1584050336061271",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_4_H1.mp4": "2461817404310677",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_4_H1.mp4": "1073555315503463",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_5_H1.mp4": "2870928949947205",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_3_H1.mp4": "1992349574794878",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_2_H1.mp4": "1757798705340521",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_PD_1_H1.mp4": "1075129398231762",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_3_H1.mp4": "1087366973693917",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_2_H1.mp4": "1116053010972645",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_3_H1.mp4": "1444057104237516",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_2_H1.mp4": "2159151017967459",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_1_H1.mp4": "1553776836045341",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_3_H1.mp4": "2200769051321893",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_2_H1.mp4": "1799733851472272",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_SP_1_H1.mp4": "1359756845934455",
+  "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_GT_1_H1.mp4": "2210786482816529"
+ },
+ "creatives": {
+  "Takoverdrag_CO_1_H1": "1070468149198444",
+  "Takoverdrag_RI_1_H1": "1090344700377431",
+  "Takoverdrag_SP_4_H1": "4512950702289504",
+  "Takoverdrag_UG_1_H1": "1862649431389922",
+  "Takoverdrag_GT_4_H1": "1848743409904141",
+  "Takoverdrag_PD_4_H1": "2648714532213211",
+  "Takoverdrag_GT_5_H1": "1792791971968825",
+  "Takoverdrag_BOF_2_1": "28067567372939926",
+  "Takoverdrag_BOF_1_1": "1444480020933894",
+  "Takoverdrag_CO_2_1": "2343211756512702",
+  "Takoverdrag_BOF_3_1": "2105940856982490",
+  "Takoverdrag_CS_4_1": "4367427296854620",
+  "Takoverdrag_GT_6_1": "38025045073810786",
+  "Takoverdrag_CS_6_1": "1075990278483333",
+  "Takoverdrag_PD_5_1": "28299257959728395",
+  "Takoverdrag_LI_1_1": "1786912492446456",
+  "Takoverdrag_SP_5_1": "1777788263568836",
+  "Takoverdrag_TR_1_1": "4620898574898692",
+  "Takoverdrag_SP_2_1": "1238100551817910",
+  "Takoverdrag_SP_3_H1": "1073939092268856",
+  "Takoverdrag_SP_2_H1": "1601549368118803",
+  "Takoverdrag_SP_1_H1": "1775671203467408",
+  "Takoverdrag_PD_2_1": "1594081939125477",
+  "Takoverdrag_PD_3_H1": "1828675715236935",
+  "Takoverdrag_PD_2_H1": "1402465552101615",
+  "Takoverdrag_PD_1_H1": "1835413920792457",
+  "Takoverdrag_GT_2_1": "1476049327698582",
+  "Takoverdrag_GT_3_H1": "1406184717513037",
+  "Takoverdrag_GT_2_H1": "1715002672910242",
+  "Takoverdrag_GT_1_H1": "1089472094013776",
+  "Takoverdrag_CS_2_1": "1091576896688558",
+  "Takoverdrag_CS_3_H1": "4584595421814627",
+  "Takoverdrag_CS_2_H1": "2122686641697865",
+  "Takoverdrag_CS_1_H1": "28496276133340807"
+ },
+ "annonser": {
+  "Takoverdrag_CO_1_H1": "120251780304170199",
+  "Takoverdrag_RI_1_H1": "120251780304370199",
+  "Takoverdrag_SP_4_H1": "120251780305300199",
+  "Takoverdrag_UG_1_H1": "120251780305390199",
+  "Takoverdrag_GT_4_H1": "120251780305520199",
+  "Takoverdrag_PD_4_H1": "120251780305880199",
+  "Takoverdrag_GT_5_H1": "120251780306020199",
+  "Takoverdrag_BOF_2_1": "120251780307410199",
+  "Takoverdrag_BOF_1_1": "120251780307920199",
+  "Takoverdrag_CO_2_1": "120251780308140199",
+  "Takoverdrag_BOF_3_1": "120251780308210199",
+  "Takoverdrag_CS_4_1": "120251780308350199",
+  "Takoverdrag_GT_6_1": "120251780310870199",
+  "Takoverdrag_CS_6_1": "120251780312180199",
+  "Takoverdrag_PD_5_1": "120251780312830199",
+  "Takoverdrag_LI_1_1": "120251780313260199",
+  "Takoverdrag_SP_5_1": "120251780313620199",
+  "Takoverdrag_TR_1_1": "120251780313860199",
+  "Takoverdrag_SP_2_1": "120251780314260199",
+  "Takoverdrag_SP_3_H1": "120251780315160199",
+  "Takoverdrag_SP_2_H1": "120251780315800199",
+  "Takoverdrag_SP_1_H1": "120251780316510199",
+  "Takoverdrag_PD_2_1": "120251780316990199",
+  "Takoverdrag_PD_3_H1": "120251780317560199",
+  "Takoverdrag_PD_2_H1": "120251780318190199",
+  "Takoverdrag_PD_1_H1": "120251780318680199",
+  "Takoverdrag_GT_2_1": "120251780319420199",
+  "Takoverdrag_GT_3_H1": "120251780319990199",
+  "Takoverdrag_GT_2_H1": "120251780321250199",
+  "Takoverdrag_GT_1_H1": "120251780321640199",
+  "Takoverdrag_CS_2_1": "120251780322820199",
+  "Takoverdrag_CS_3_H1": "120251780323530199",
+  "Takoverdrag_CS_2_H1": "120251780324380199",
+  "Takoverdrag_CS_1_H1": "120251780325710199"
+ },
+ "kampanj": "120251780248980199",
+ "verifiering": {
+  "kampanj": {
+   "id": "120251780248980199",
+   "name": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
+   "status": "PAUSED",
+   "effective_status": "PAUSED",
+   "daily_budget": "110000"
+  },
+  "adsets": [
+   [
+    "FI | TR | Notionrunda 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "FI | LI | Notionrunda 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "FI | Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+    "PAUSED"
+   ],
+   [
+    "FI | BOF | Notionrunda 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "FI | Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+    "PAUSED"
+   ],
+   [
+    "FI | Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09",
+    "PAUSED"
+   ],
+   [
+    "FI | UG | Notionrunda 2026-09-16",
+    "PAUSED"
+   ],
+   [
+    "FI | Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09",
+    "PAUSED"
+   ],
+   [
+    "FI | RI | Notionrunda 2026-09-16",
+    "PAUSED"
+   ],
+   [
+    "FI | CO | Notionrunda 2026-09-15",
+    "PAUSED"
+   ]
+  ],
+  "annonser": [
+   [
+    "FI_Takoverdrag_CO_2_1",
+    "PAUSED",
+    "120251780308140199"
+   ],
+   [
+    "FI_Takoverdrag_UG_1_H1",
+    "PAUSED",
+    "120251780305390199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_1_1",
+    "PAUSED",
+    "120251780307920199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_2_1",
+    "PAUSED",
+    "120251780307410199"
+   ],
+   [
+    "FI_Takoverdrag_CS_2_H1",
+    "PAUSED",
+    "120251780324380199"
+   ],
+   [
+    "FI_Takoverdrag_CO_1_H1",
+    "PAUSED",
+    "120251780304170199"
+   ],
+   [
+    "FI_Takoverdrag_CS_3_H1",
+    "PAUSED",
+    "120251780323530199"
+   ],
+   [
+    "FI_Takoverdrag_GT_3_H1",
+    "PAUSED",
+    "120251780319990199"
+   ],
+   [
+    "FI_Takoverdrag_PD_1_H1",
+    "PAUSED",
+    "120251780318680199"
+   ],
+   [
+    "FI_Takoverdrag_SP_3_H1",
+    "PAUSED",
+    "120251780315160199"
+   ],
+   [
+    "FI_Takoverdrag_GT_1_H1",
+    "PAUSED",
+    "120251780321640199"
+   ],
+   [
+    "FI_Takoverdrag_CS_1_H1",
+    "PAUSED",
+    "120251780325710199"
+   ],
+   [
+    "FI_Takoverdrag_SP_2_H1",
+    "PAUSED",
+    "120251780315800199"
+   ],
+   [
+    "FI_Takoverdrag_PD_3_H1",
+    "PAUSED",
+    "120251780317560199"
+   ],
+   [
+    "FI_Takoverdrag_CS_2_1",
+    "PAUSED",
+    "120251780322820199"
+   ],
+   [
+    "FI_Takoverdrag_GT_2_1",
+    "PAUSED",
+    "120251780319420199"
+   ],
+   [
+    "FI_Takoverdrag_SP_1_H1",
+    "PAUSED",
+    "120251780316510199"
+   ],
+   [
+    "FI_Takoverdrag_GT_5_H1",
+    "PAUSED",
+    "120251780306020199"
+   ],
+   [
+    "FI_Takoverdrag_PD_4_H1",
+    "PAUSED",
+    "120251780305880199"
+   ],
+   [
+    "FI_Takoverdrag_SP_4_H1",
+    "PAUSED",
+    "120251780305300199"
+   ],
+   [
+    "FI_Takoverdrag_PD_2_H1",
+    "PENDING_REVIEW",
+    "120251780318190199"
+   ],
+   [
+    "FI_Takoverdrag_CS_4_1",
+    "PAUSED",
+    "120251780308350199"
+   ],
+   [
+    "FI_Takoverdrag_GT_2_H1",
+    "PENDING_REVIEW",
+    "120251780321250199"
+   ],
+   [
+    "FI_Takoverdrag_PD_2_1",
+    "PENDING_REVIEW",
+    "120251780316990199"
+   ],
+   [
+    "FI_Takoverdrag_SP_2_1",
+    "PENDING_REVIEW",
+    "120251780314260199"
+   ],
+   [
+    "FI_Takoverdrag_SP_5_1",
+    "PENDING_REVIEW",
+    "120251780313620199"
+   ],
+   [
+    "FI_Takoverdrag_TR_1_1",
+    "PENDING_REVIEW",
+    "120251780313860199"
+   ],
+   [
+    "FI_Takoverdrag_LI_1_1",
+    "PENDING_REVIEW",
+    "120251780313260199"
+   ],
+   [
+    "FI_Takoverdrag_PD_5_1",
+    "PENDING_REVIEW",
+    "120251780312830199"
+   ],
+   [
+    "FI_Takoverdrag_GT_6_1",
+    "PENDING_REVIEW",
+    "120251780310870199"
+   ],
+   [
+    "FI_Takoverdrag_CS_6_1",
+    "PENDING_REVIEW",
+    "120251780312180199"
+   ],
+   [
+    "FI_Takoverdrag_RI_1_H1",
+    "PENDING_REVIEW",
+    "120251780304370199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_3_1",
+    "PENDING_REVIEW",
+    "120251780308210199"
+   ],
+   [
+    "FI_Takoverdrag_GT_4_H1",
+    "PENDING_REVIEW",
+    "120251780305520199"
+   ]
+  ]
+ }
+}
