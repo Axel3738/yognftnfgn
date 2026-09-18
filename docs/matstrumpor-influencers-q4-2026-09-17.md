@@ -86,6 +86,17 @@ Brief till influencern (kursens "top 5", inte mer): 1) visa lådan de första tr
 
 Titta på hennes stories varje dag i 14 dagar och bocka av: pratar hon rakt in i kameran utan smink och utan filter? Är det vardag, familj, motgångar, humor, eller bara reklam och glamour? Svarar hon på följarnas frågor (frågelåda, omröstningar)? Hur många annonser per vecka? Är kommentarerna under inläggen långa och personliga ("det här är precis mitt liv") eller bara hjärtan? Ett enkelt betyg 1–5 per dag räcker. Under 3 i snitt: byt till en reserv.
 
+**Så gör du det i praktiken (Nina från 18/9 till 1/10).** Öppna Instagram en gång om dagen, helst på kvällen när dagens stories ligger uppe, tryck på ringen runt hennes profilbild och titta igenom allt. Det tar tre till fem minuter. Skriv en rad i en anteckning i mobilen enligt mallen nedan. Stories försvinner efter 24 timmar, så en missad dag går inte att ta igen; skriv "missade" i stället för att gissa. Spara två eller tre skärmdumpar av hur hennes betalda samarbeten ser ut, de blir underlag till briefen. Kommentarsräkningen gör du en gång: räkna kommentarerna under hennes fem senaste inlägg och ta snittet, kursens tröskel är 60.
+
+| Dag | Antal stories | Pratar till kameran? (ja/nej) | Vardag eller reklam? | Frågelåda/omröstning/svarar följare? | Reklam den dagen (antal, känns det som hon?) | Betyg 1–5 |
+|---|---|---|---|---|---|---|
+| 1 (18/9) | | | | | | |
+| 2 | | | | | | |
+| … | | | | | | |
+| 14 (1/10) | | | | | | |
+
+Betyg 5: flera stories, hon pratar till kameran om sitt liv, högst en reklam. Betyg 3: bara bilder eller text, inget ansikte. Betyg 1: inget alls, eller bara reklam. Snitt 3,5 eller högre och minst tio dagar med stories: boka. Under 3, eller fyra dagar utan stories: reserv. Observera bara dem som är i dialog, inte alla tio.
+
 ## 8. Modash (30 % av beslutet)
 
 Köp en månad när listan ligger klar. Slå upp topp 10, öppna "full report", spara PDF och ladda upp här. Kursens tröskelvärden: fejkföljare under 15 %, "real people" 75–90 %, minst 70 % av publiken följer under 500 konton, snittkommentarer minst 60 per inlägg, publiken mest 25+ och mest i Sverige. Kör också kursens bio-sökning: Sverige + "mamma", "mormor", "50+", "programledare", "radio".
