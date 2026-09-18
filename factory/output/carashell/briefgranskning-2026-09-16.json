@@ -1,0 +1,398 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "brand": "CaraShell",
+  "annonsprefix": "CaraShellRoof",
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub",
+    "url": "https://app.notion.com/p/3da270ab908c80c480d1fbdb3fefd3b4"
+  },
+  "rond": {
+    "datum": "2026-09-16",
+    "kalla": "registrets senaste_brief",
+    "batch": 3,
+    "batchmapp": "products/carashell/takskyddet/batch-03",
+    "per_dag": {
+      "2026-09-16": 7,
+      "2026-09-14": 7
+    }
+  },
+  "redan_granskad": false,
+  "feedback_fil": "products/carashell/takskyddet/feedback.md",
+  "minnesmapp": "products/carashell/takskyddet",
+  "redigerare": null,
+  "pris_butik": {
+    "pris": 1129,
+    "min": 1129,
+    "max": 2239,
+    "jamforpris": 1469,
+    "valuta": "SEK",
+    "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "handle": "takskyddet",
+    "kalla": "https://carashell.se/products/takskyddet.json"
+  },
+  "pris_skal": null,
+  "break_even_cpa": 693,
+  "copy_modell": "ab",
+  "butiksnamn": [
+    "CaraShell",
+    "carashell.se",
+    "carashell"
+  ],
+  "doda_koncept": [
+    {
+      "koncept": "GT",
+      "citat": "→ Instruktion: GT får inga briefer i batch #3. Innan vinkeln döms ska den"
+    }
+  ],
+  "rader": [
+    {
+      "page_id": "3dc270ab-908c-8144-ab34-d348398094cd",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_7_1-3dc270ab908c8144ab34d348398094cd",
+      "namn": "CaraShellRoof_PD_7_1",
+      "titel": "CaraShellRoof_PD_7_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 6798,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_PD_7_1.md",
+      "fel": [
+        {
+          "kod": "butiksnamn",
+          "text": "the ad text names the store (CaraShell) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+        }
+      ],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "PD",
+        "nummer": 7,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": false,
+        "isolerad": null,
+        "taggar": {
+          "vinkel": "problem/lösning (mekanismen)",
+          "hook-typ": "USP som rubrik",
+          "format": "statisk, enkel canvas med utpekningar",
+          "proof": "inget",
+          "offer-i-creativen": "inget pris",
+          "visuell stil": "exteriör, närbild på spännbandet",
+          "textmängd": "rubrik+två utpekningar+bottenrad",
+          "talare": "ingen",
+          "copy_model": "sonnet (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-8125-b8af-ea9d4e7c2d8f",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_6_1-3dc270ab908c8125b8afea9d4e7c2d8f",
+      "namn": "CaraShellRoof_PD_6_1",
+      "titel": "CaraShellRoof_PD_6_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 7714,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_PD_6_1.md",
+      "fel": [
+        {
+          "kod": "butiksnamn",
+          "text": "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+        }
+      ],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "PD",
+        "nummer": 6,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": false,
+        "isolerad": null,
+        "taggar": {
+          "vinkel": "problem/lösning (fukttestet)",
+          "hook-typ": "valet, två alternativ",
+          "format": "statisk, delad canvas",
+          "proof": "inget",
+          "offer-i-creativen": "pris syns (bärande)",
+          "visuell stil": "split, tak mot överdrag",
+          "textmängd": "rubrik+två etiketter+bottenrad",
+          "talare": "ingen",
+          "copy_model": "fable (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-81b0-9397-fe276d954ca4",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_6_1-3dc270ab908c81b09397fe276d954ca4",
+      "namn": "CaraShellRoof_CS_6_1",
+      "titel": "CaraShellRoof_CS_6_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 5971,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_CS_6_1.md",
+      "fel": [],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "CS",
+        "nummer": 6,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": true,
+        "isolerad": "how the discount is framed",
+        "taggar": {
+          "vinkel": "erbjudandet (rabatt)",
+          "hook-typ": "besparing i kronor",
+          "format": "statisk, enkel canvas",
+          "proof": "inget",
+          "offer-i-creativen": "340 kr + båda priser",
+          "visuell stil": "exteriör, produkten på taket",
+          "textmängd": "rubrik+prisrad+bottenrad",
+          "talare": "ingen",
+          "copy_model": "sonnet (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-81b8-adca-c22fc14b79e7",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_5_1-3dc270ab908c81b8adcac22fc14b79e7",
+      "namn": "CaraShellRoof_CS_5_1",
+      "titel": "CaraShellRoof_CS_5_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 6737,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_CS_5_1.md",
+      "fel": [],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "CS",
+        "nummer": 5,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": true,
+        "isolerad": "the format",
+        "taggar": {
+          "vinkel": "erbjudandet (rabatt)",
+          "hook-typ": "procent + prisfall",
+          "format": "statisk, enkel canvas",
+          "proof": "inget",
+          "offer-i-creativen": "23 % + båda priser",
+          "visuell stil": "exteriör, produkten på taket",
+          "textmängd": "rubrik+prisrad+stödrad+bottenrad",
+          "talare": "ingen",
+          "copy_model": "fable (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-8115-875d-c24c680b9287",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_7_1-3dc270ab908c8115875dc24c680b9287",
+      "namn": "CaraShellRoof_SP_7_1",
+      "titel": "CaraShellRoof_SP_7_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 7039,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_SP_7_1.md",
+      "fel": [
+        {
+          "kod": "butiksnamn",
+          "text": "the ad text names the store (carashell, CaraShell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+        }
+      ],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "SP",
+        "nummer": 7,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": false,
+        "isolerad": null,
+        "taggar": {
+          "vinkel": "social proof (kundomdöme)",
+          "hook-typ": "aggregerat betyg + citat",
+          "format": "statisk, enkel canvas",
+          "proof": "namngivet citat + 16 omdömen",
+          "offer-i-creativen": "inget pris",
+          "visuell stil": "exteriör, helintegrerad husbil",
+          "textmängd": "toppetikett+citat+bottenrad",
+          "talare": "kund (Lars)",
+          "avatar": "husbilsägare",
+          "copy_model": "sonnet (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-812c-9b84-efe6a53f7397",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_6_1-3dc270ab908c812c9b84efe6a53f7397",
+      "namn": "CaraShellRoof_SP_6_1",
+      "titel": "CaraShellRoof_SP_6_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 6819,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_SP_6_1.md",
+      "fel": [
+        {
+          "kod": "butiksnamn",
+          "text": "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+        }
+      ],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "SP",
+        "nummer": 6,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": true,
+        "isolerad": "the type of proof",
+        "taggar": {
+          "vinkel": "social proof (kundomdöme)",
+          "hook-typ": "aggregerat betyg",
+          "format": "statisk, enkel canvas",
+          "proof": "aggregat (16 omdömen, 5,0)",
+          "offer-i-creativen": "pris syns (litet)",
+          "visuell stil": "exteriör, produkten på taket",
+          "textmängd": "rubrik+stjärnrad+stödrad+bottenrad",
+          "talare": "ingen",
+          "copy_model": "fable (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    },
+    {
+      "page_id": "3dc270ab-908c-81be-9251-d0e188804d08",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_5_1-3dc270ab908c81be9251d0e188804d08",
+      "namn": "CaraShellRoof_SP_5_1",
+      "titel": "CaraShellRoof_SP_5_1",
+      "typ_notion": "Image - Pending Approval",
+      "typ": "bild",
+      "status": "SE-ACTIVE to be translated",
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "skapad_dag": "2026-09-16",
+      "tecken": 6703,
+      "fil": "/home/user/yognftnfgn/factory/output/carashell/briefgranskning-2026-09-16/CaraShellRoof_SP_5_1.md",
+      "fel": [
+        {
+          "kod": "butiksnamn",
+          "text": "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+        }
+      ],
+      "anmarkningar": [
+        {
+          "kod": "hardrules",
+          "text": "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+        }
+      ],
+      "fakta": {
+        "koncept": "SP",
+        "nummer": 5,
+        "variant": "1",
+        "typ": "bild",
+        "ar_variant": true,
+        "isolerad": "the setting of the photo",
+        "taggar": {
+          "vinkel": "social proof (kundomdöme)",
+          "hook-typ": "aggregerat betyg + citat",
+          "format": "statisk, enkel canvas",
+          "proof": "namngivet citat + 16 omdömen",
+          "offer-i-creativen": "inget pris",
+          "visuell stil": "exteriör, höstregn",
+          "textmängd": "toppetikett+citat+bottenrad",
+          "talare": "kund (Lars)",
+          "copy_model": "sonnet (Read by the next /cs run to group profit contribution per variable value. Do not change them without changing the creative.)"
+        },
+        "pris_brief": {
+          "pris": 1129,
+          "jamforpris": 1469
+        },
+        "trefragor": true,
+        "image_prompt": true
+      }
+    }
+  ],
+  "speglade": [],
+  "ut": "factory/output/carashell/briefgranskning-2026-09-16",
+  "varningar": [],
+  "stopp": [],
+  "idag": "2026-09-18",
+  "hamtad": "2026-09-18T11:02:31.608Z"
+}

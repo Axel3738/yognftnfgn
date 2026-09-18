@@ -1,0 +1,94 @@
+{
+  "nyckel": "carashell/takskyddet",
+  "rond": "2026-09-16",
+  "bra": [
+    "Every brief carries a full VARIABELTAGGAR line with copy_model, a named parent or source, one isolated variable, a real hypothesis argued on CPA and purchases (never ROAS alone), the live price 1 129 / 1 469 kr and a KPI judged against break-even 693 kr — the analysis method is followed in all seven",
+    "The round respects dna.md: GT gets no briefs, SP gets the most (3 of 7), all seven are images (the format that wins here and the only one the factory can produce without an editor), and the A/B split is 3 fable / 4 sonnet",
+    "The urgency lie is gone: both CS briefs drop the parent's `IDAG` because 1 129 kr is the standing price, and every brief writes 'Never claim' with the facts we do not have (bag, drawstring, weight, lengths, repair cost)",
+    "`CaraShellRoof_PD_6_1` and `CaraShellRoof_CS_5_1`/`CS_6_1` are the strongest thinking in the round: a known price against an unknown one, and a paired framing test that can settle percent vs kronor",
+    "`CaraShellRoof_SP_7_1` marks itself as a guess and says why it rides the strongest angle — exactly how an unsourced concept should be labelled"
+  ],
+  "missat": [
+    "5 of 7 briefs name the store in the ad text: `på carashell.se` in the primary text of `SP_5_1`, `SP_6_1`, `SP_7_1`, `CaraShell` as the subject in `PD_7_1` and `SP_7_1`, and `PD_6_1` burns `carashell.se` into the bottom line of the image itself — the rule is from 2026-09-18, two days after the round, but from now on it is a hard rule in every brief (ads are mirrored between stores)",
+    "None of the seven carries the hard rule 'the ad never names the store'",
+    "`CaraShellRoof_CS_6_1` claims to hold everything but the headline identical to `CS_5_1`, yet its Exact text drops the support line and changes the terms line — the percent-vs-kronor test is contaminated by two extra differences",
+    "`CaraShellRoof_SP_6_1` briefs a star row as glyphs (`★★★★★ 5,0 av 5`) that bild-text.py cannot draw outside a quote card, and adds a price line to the image although the parent `SP_2_1` carries none — its sibling `SP_5_1` says in its own words that a price would be a second variable"
+  ],
+  "regler": [
+    "Never put the store name or the domain in the primary text, headline, description or on the image: write `ett av 16 omdömen` without `på carashell.se`, never use `CaraShell` as the subject of a sentence, and add the hard rule 'the ad never names the store' to every brief",
+    "In a paired test (A against B) the Exact text table, the bottom line and the layout must be identical except for the one variable — if a support line exists in A it exists in B, word for word",
+    "Never brief a ★ glyph outside a quote card (write the rating in words, `5,0 av 5 i snitt`), and never add a price line to a variant whose parent carries no price on the image — that is a second variable"
+  ],
+  "rader": [
+    {
+      "namn": "CaraShellRoof_CS_5_1",
+      "fel": [],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "the description `Ord. 1 469 kr · Fri frakt · 14 dagars ångerrätt` starts with the compare-at price — lead with 1 129 kr, the number the buyer pays"
+      ],
+      "bra": ["the locked headline + price pair is the right fix for an abstract percentage; the three-question test is honest about it"]
+    },
+    {
+      "namn": "CaraShellRoof_CS_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "the paired test is not held constant: `CS_5_1` has a support line (`6,5 × 3 m · Husvagn & husbil · En person sätter på det`) and the terms line `Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt`; this brief has no support line and the terms read `Fri frakt till Sverige och Norge. 14 dagars ångerrätt.` — three differences, not one; the next read cannot attribute the outcome to the framing"
+      ],
+      "bra": ["`Priset gäller oavsett när du handlar – ingen nedräkning` turns the absence of urgency into a claim only an honest store can make"]
+    },
+    {
+      "namn": "CaraShellRoof_PD_6_1",
+      "fel": [
+        "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Here the domain is the bottom line ON THE IMAGE (`carashell.se · Fri frakt · 14 dagars ångerrätt`), so the image itself cannot be mirrored; next version: `Fri frakt · 14 dagars ångerrätt`"
+      ],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+      ],
+      "bra": ["`Taket eller taköverdraget. Ett av dem kostar 1 129 kr.` is the best line in the round — a known price against an unknown one without inventing a repair figure"]
+    },
+    {
+      "namn": "CaraShellRoof_PD_7_1",
+      "fel": [
+        "the ad text names the store (CaraShell) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `CaraShell täcker bara taket` — write `Taköverdraget täcker bara taket`"
+      ],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+      ],
+      "bra": ["the USP finally is the hook, and the brief refuses a minute claim it cannot prove"]
+    },
+    {
+      "namn": "CaraShellRoof_SP_5_1",
+      "fel": [
+        "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `ett av 16 omdömen på carashell.se` — drop `på carashell.se`"
+      ],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+      ],
+      "bra": ["a clean one-variable variant of the account's best ad, with the failure-state draft rejected for the right reason"]
+    },
+    {
+      "namn": "CaraShellRoof_SP_6_1",
+      "fel": [
+        "the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text and headline lead with `16 omdömen på carashell.se` — write `16 omdömen. Snitt 5,00 av 5.`"
+      ],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "the star row `★★★★★ 5,0 av 5` cannot be drawn by bild-text.py outside a quote card (dna.md, run 3) — the image had to be regenerated with the rating in words the same night; brief `5,0 av 5 i snitt` from the start",
+        "`offer-i-creativen=pris syns (litet)` adds a price line to the image while the parent `SP_2_1` carries none — a second variable next to the proof type; `SP_5_1` states that rule itself"
+      ],
+      "bra": ["`16 omdömen. Inte en stjärna under fem.` is a count with a contrast, not a badge"]
+    },
+    {
+      "namn": "CaraShellRoof_SP_7_1",
+      "fel": [
+        "the ad text names the store (carashell, CaraShell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `på carashell.se` and `CaraShell täcker 6,5 × 3 m` — write `Taköverdraget täcker 6,5 × 3 m`"
+      ],
+      "anmarkningar": [
+        "hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18)"
+      ],
+      "bra": ["marked as a guess, rides the strongest angle so the avatar test gets spend, and refuses to attribute Lars's review to a motorhome owner"]
+    }
+  ]
+}
