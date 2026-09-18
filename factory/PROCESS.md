@@ -734,6 +734,29 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    språk" — samma recension två gånger på sidan. För en butik med Awesome
    är den norska importen alltså överflödig; beslut om `/no-recensioner`
    ska hoppa över sådana butiker är Axels (fråga ställd 2026-09-17).
+
+   ⚠️ **Stjärnbadgen högst upp på produktsidan följer INTE multi-language
+   widgets** (mätt 2026-09-18 när Finland lades till och Axel såg
+   "★★★★★ 16 recensioner" på /fi). Den lilla raden — Judge.mes
+   `jdgm-prev-badge__text`, renderad serverside av appens block — står på
+   butikens standardspråk överallt. Mätt samma minut på tre adresser:
+
+   | Sida | Badge | Widgetens locale |
+   |---|---|---|
+   | carashell.com (EN) | "16 recensioner" | en |
+   | /nb | "16 recensioner" | nb |
+   | /fi | "16 recensioner" | en |
+
+   Den engelska raden är beviset: där ÄR widgeten översatt sedan
+   2026-09-17 ("16 reviews", "Write a review", "Show original (Swedish)"),
+   och badgen står ändå på svenska. Den väntar alltså inte på något och
+   blir inte finsk av sig själv. Samma gäller `branding_text`
+   ("Drivs av Judge.me"). Temat kan inte rätta det: butiken har ingen
+   `jdgm`-snippet alls (kollat i temafilerna samma dag) — texten kommer ur
+   Judge.me-appen. **Blanda inte ihop de två:** badgen är appens
+   gränssnittsspråk, den STORA widgeten längre ned är det
+   multi-language/auto-translate gäller, och ett NYTT språk i Shopify tar
+   upp till 48 h innan Judge.me känner igen det (engelska tog ~26 h).
    ⚠️ Mätmetod: recensionslistan laddas lazy — `--dump-dom` och Judge.mes
    `reviews_for_widget` gav 0 kroppar; det som fungerade var
    `--screenshot` med `--window-size=1280,9000` och en beskärning av
