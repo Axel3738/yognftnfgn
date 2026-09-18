@@ -6,7 +6,10 @@
    "kod": 190008,
    "order": "#7430",
    "fulfillment": "gid://shopify/Fulfillment/8406436282717",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708675887": {
    "bolag": "YunExpress",
@@ -15,7 +18,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406410133853",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708674682": {
@@ -25,7 +28,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406436151645",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708870041": {
@@ -35,7 +38,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435823965",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708672397": {
@@ -45,7 +48,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435758429",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708867674": {
@@ -55,7 +58,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435594589",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708871270": {
@@ -63,7 +66,10 @@
    "kod": 190008,
    "order": "#7424",
    "fulfillment": "gid://shopify/Fulfillment/8406409970013",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708674609": {
    "bolag": "YunExpress",
@@ -72,7 +78,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435463517",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708672892": {
@@ -80,14 +86,20 @@
    "kod": 190008,
    "order": "#7422",
    "fulfillment": "gid://shopify/Fulfillment/8406435397981",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708870892": {
    "bolag": "YunExpress",
    "kod": 190008,
    "order": "#7422",
    "fulfillment": "gid://shopify/Fulfillment/8406409871709",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708674583": {
    "bolag": "YunExpress",
@@ -96,7 +108,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435135837",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708674542": {
@@ -106,7 +118,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435103069",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708675572": {
@@ -114,7 +126,10 @@
    "kod": 190008,
    "order": "#7419",
    "fulfillment": "gid://shopify/Fulfillment/8406409838941",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708672330": {
    "bolag": "YunExpress",
@@ -123,7 +138,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406435004765",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708870439": {
@@ -133,7 +148,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434906461",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708674500": {
@@ -143,7 +158,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434808157",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708870777": {
@@ -151,7 +166,10 @@
    "kod": 190008,
    "order": "#7414",
    "fulfillment": "gid://shopify/Fulfillment/8406409773405",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708871239": {
    "bolag": "YunExpress",
@@ -160,7 +178,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434480477",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708877871": {
@@ -170,7 +188,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434414941",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708869878": {
@@ -180,7 +198,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434185565",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708877715": {
@@ -190,7 +208,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406434054493",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708867625": {
@@ -198,14 +216,20 @@
    "kod": 190008,
    "order": "#7409",
    "fulfillment": "gid://shopify/Fulfillment/8406434021725",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708675762": {
    "bolag": "YunExpress",
    "kod": 190008,
    "order": "#7408",
    "fulfillment": "gid://shopify/Fulfillment/8406409707869",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708871148": {
    "bolag": "YunExpress",
@@ -214,7 +238,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406409642333",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708869837": {
@@ -224,7 +248,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406433694045",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708672181": {
@@ -234,7 +258,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406433628509",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "4PX3003174102911CN": {
@@ -244,7 +268,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406409576797",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:28",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708867260": {
@@ -254,7 +278,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406409445725",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708681794": {
@@ -264,7 +288,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406433562973",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708674393": {
@@ -272,7 +296,10 @@
    "kod": 190008,
    "order": "#7402",
    "fulfillment": "gid://shopify/Fulfillment/8406433497437",
-   "registrerad": "2026-09-18"
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
   },
   "YT2626100708678345": {
    "bolag": "YunExpress",
@@ -281,7 +308,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406433399133",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708867559": {
@@ -291,7 +318,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406433235293",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708674252": {
@@ -301,7 +328,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406432973149",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "4PX3003174114280CN": {
@@ -311,7 +338,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406432842077",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100708862212": {
@@ -321,7 +348,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406409314653",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100707138309": {
@@ -331,7 +358,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8405718958429",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "4PX3003173392054CN": {
@@ -341,7 +368,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406432776541",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100706942271": {
@@ -351,7 +378,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8405718827357",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "4PX3003173391965CN": {
@@ -361,7 +388,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8406432711005",
    "registrerad": "2026-09-18",
    "status17": "InfoReceived",
-   "senast": "2026-09-18T13:29",
+   "senast": "2026-09-18T15:17",
    "status": "CONFIRMED"
   },
   "YT2626100706942552": {
@@ -369,15 +396,1503 @@
    "kod": 190008,
    "order": "#7393",
    "fulfillment": "gid://shopify/Fulfillment/8405718532445",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100707138341": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7392",
+   "fulfillment": "gid://shopify/Fulfillment/8405718401373",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100708681729": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7391",
+   "fulfillment": "gid://shopify/Fulfillment/8406432514397",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173391569CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7390",
+   "fulfillment": "gid://shopify/Fulfillment/8406432153949",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173391460CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7389",
+   "fulfillment": "gid://shopify/Fulfillment/8406431990109",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100706942727": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7388",
+   "fulfillment": "gid://shopify/Fulfillment/8405718204765",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100707138184": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7387",
+   "fulfillment": "gid://shopify/Fulfillment/8405717909853",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704534427": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7386",
+   "fulfillment": "gid://shopify/Fulfillment/8405374632285",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731940": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7385",
+   "fulfillment": "gid://shopify/Fulfillment/8405374599517",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003172517823CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7384",
+   "fulfillment": "gid://shopify/Fulfillment/8405374566749",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704534286": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7383",
+   "fulfillment": "gid://shopify/Fulfillment/8405374533981",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100708876832": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7382",
+   "fulfillment": "gid://shopify/Fulfillment/8406431400285",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731775": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7381",
+   "fulfillment": "gid://shopify/Fulfillment/8405374468445",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731692": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7380",
+   "fulfillment": "gid://shopify/Fulfillment/8405374435677",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731577": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7379",
+   "fulfillment": "gid://shopify/Fulfillment/8405374402909",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731486": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7378",
+   "fulfillment": "gid://shopify/Fulfillment/8405374337373",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704739984": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7377",
+   "fulfillment": "gid://shopify/Fulfillment/8405374304605",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704731429": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7376",
+   "fulfillment": "gid://shopify/Fulfillment/8405374271837",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704525771": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7375",
+   "fulfillment": "gid://shopify/Fulfillment/8405374239069",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704739745": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7374",
+   "fulfillment": "gid://shopify/Fulfillment/8405369356637",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704542040": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7373",
+   "fulfillment": "gid://shopify/Fulfillment/8405369291101",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704731262": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7372",
+   "fulfillment": "gid://shopify/Fulfillment/8405374206301",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704723558": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7371",
+   "fulfillment": "gid://shopify/Fulfillment/8405374173533",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704541745": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7370",
+   "fulfillment": "gid://shopify/Fulfillment/8405374140765",
    "registrerad": "2026-09-18"
+  },
+  "YT2626100708876154": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7369",
+   "fulfillment": "gid://shopify/Fulfillment/8406430875997",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704541562": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7368",
+   "fulfillment": "gid://shopify/Fulfillment/8405369160029",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704541380": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7367",
+   "fulfillment": "gid://shopify/Fulfillment/8405374107997",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704728540": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7366",
+   "fulfillment": "gid://shopify/Fulfillment/8405374075229",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704738895": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7365",
+   "fulfillment": "gid://shopify/Fulfillment/8405374042461",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704540978": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7364",
+   "fulfillment": "gid://shopify/Fulfillment/8405368996189",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704723491": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7363",
+   "fulfillment": "gid://shopify/Fulfillment/8405373976925",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704540630": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7362",
+   "fulfillment": "gid://shopify/Fulfillment/8405368897885",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704728383": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7361",
+   "fulfillment": "gid://shopify/Fulfillment/8405373911389",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704530664": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7360",
+   "fulfillment": "gid://shopify/Fulfillment/8405373878621",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173590191CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7359",
+   "fulfillment": "gid://shopify/Fulfillment/8405873000797",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003172512514CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7358",
+   "fulfillment": "gid://shopify/Fulfillment/8405373845853",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003174111623CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7357",
+   "fulfillment": "gid://shopify/Fulfillment/8406430646621",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003174101877CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7357",
+   "fulfillment": "gid://shopify/Fulfillment/8406409118045",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173391354CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7356",
+   "fulfillment": "gid://shopify/Fulfillment/8406430515549",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704540135": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7355",
+   "fulfillment": "gid://shopify/Fulfillment/8405368799581",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704530458": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7354",
+   "fulfillment": "gid://shopify/Fulfillment/8405373780317",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003172511784CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7353",
+   "fulfillment": "gid://shopify/Fulfillment/8405373747549",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704530128": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7352",
+   "fulfillment": "gid://shopify/Fulfillment/8405373714781",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003172510176CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7351",
+   "fulfillment": "gid://shopify/Fulfillment/8405373682013",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704730918": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7350",
+   "fulfillment": "gid://shopify/Fulfillment/8405373649245",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173391187CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7349",
+   "fulfillment": "gid://shopify/Fulfillment/8406429958493",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704733565": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7348",
+   "fulfillment": "gid://shopify/Fulfillment/8405373616477",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704533262": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7347",
+   "fulfillment": "gid://shopify/Fulfillment/8405373583709",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003173390951CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7346",
+   "fulfillment": "gid://shopify/Fulfillment/8406429466973",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003172509675CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7345",
+   "fulfillment": "gid://shopify/Fulfillment/8405373550941",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704733235": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7344",
+   "fulfillment": "gid://shopify/Fulfillment/8405368537437",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704730439": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7343",
+   "fulfillment": "gid://shopify/Fulfillment/8405373518173",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704727559": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7342",
+   "fulfillment": "gid://shopify/Fulfillment/8405373485405",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704730231": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7341",
+   "fulfillment": "gid://shopify/Fulfillment/8405373452637",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704733011": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7340",
+   "fulfillment": "gid://shopify/Fulfillment/8405368373597",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704532355": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7339",
+   "fulfillment": "gid://shopify/Fulfillment/8405373419869",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100704535341": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7338",
+   "fulfillment": "gid://shopify/Fulfillment/8405368308061",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000709138614": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7337",
+   "fulfillment": "gid://shopify/Fulfillment/8403840794973",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000709138598": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7336",
+   "fulfillment": "gid://shopify/Fulfillment/8403840696669",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000709138663": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7335",
+   "fulfillment": "gid://shopify/Fulfillment/8403840565597",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000709138572": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7334",
+   "fulfillment": "gid://shopify/Fulfillment/8403840368989",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774948": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7333",
+   "fulfillment": "gid://shopify/Fulfillment/8403612402013",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774641": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7332",
+   "fulfillment": "gid://shopify/Fulfillment/8403612205405",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708587563": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7331",
+   "fulfillment": "gid://shopify/Fulfillment/8403611582813",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774542": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7330",
+   "fulfillment": "gid://shopify/Fulfillment/8403611320669",
+   "registrerad": "2026-09-18"
+  },
+  "YT2626000708774864": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7329",
+   "fulfillment": "gid://shopify/Fulfillment/8403583500637",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708587928": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7328",
+   "fulfillment": "gid://shopify/Fulfillment/8403583304029",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708774492": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7327",
+   "fulfillment": "gid://shopify/Fulfillment/8403611091293",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774435": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7326",
+   "fulfillment": "gid://shopify/Fulfillment/8403610796381",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774393": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7325",
+   "fulfillment": "gid://shopify/Fulfillment/8403610665309",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003170613978CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7324",
+   "fulfillment": "gid://shopify/Fulfillment/8403610534237",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000709138820": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7323",
+   "fulfillment": "gid://shopify/Fulfillment/8403840336221",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708775093": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7322",
+   "fulfillment": "gid://shopify/Fulfillment/8403583041885",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708774138": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7321",
+   "fulfillment": "gid://shopify/Fulfillment/8403609485661",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003170721604CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7320",
+   "fulfillment": "gid://shopify/Fulfillment/8403840270685",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774781": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7319",
+   "fulfillment": "gid://shopify/Fulfillment/8403583009117",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708774849": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7318",
+   "fulfillment": "gid://shopify/Fulfillment/8403582812509",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774070": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7317",
+   "fulfillment": "gid://shopify/Fulfillment/8403609289053",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774906": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7316",
+   "fulfillment": "gid://shopify/Fulfillment/8403582681437",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708773767": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7315",
+   "fulfillment": "gid://shopify/Fulfillment/8403608994141",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708773627": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7314",
+   "fulfillment": "gid://shopify/Fulfillment/8403608863069",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708587795": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7313",
+   "fulfillment": "gid://shopify/Fulfillment/8403582550365",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000708775028": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7312",
+   "fulfillment": "gid://shopify/Fulfillment/8403608371549",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708586995": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7311",
+   "fulfillment": "gid://shopify/Fulfillment/8403608011101",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708773957": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7310",
+   "fulfillment": "gid://shopify/Fulfillment/8403607945565",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000708774716": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7309",
+   "fulfillment": "gid://shopify/Fulfillment/8403581993309",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000709138796": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7308",
+   "fulfillment": "gid://shopify/Fulfillment/8403840106845",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704755925": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7307",
+   "fulfillment": "gid://shopify/Fulfillment/8402597478749",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704753144": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7306",
+   "fulfillment": "gid://shopify/Fulfillment/8402597183837",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704561463": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7305",
+   "fulfillment": "gid://shopify/Fulfillment/8402597151069",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704755784": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7304",
+   "fulfillment": "gid://shopify/Fulfillment/8402597118301",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704754217": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7303",
+   "fulfillment": "gid://shopify/Fulfillment/8402597085533",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003169251822CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7302",
+   "fulfillment": "gid://shopify/Fulfillment/8402596987229",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003169251761CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7301",
+   "fulfillment": "gid://shopify/Fulfillment/8402596954461",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704561653": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7300",
+   "fulfillment": "gid://shopify/Fulfillment/8402596921693",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704754431": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7299",
+   "fulfillment": "gid://shopify/Fulfillment/8402596888925",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704756246": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7298",
+   "fulfillment": "gid://shopify/Fulfillment/8402596856157",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704753961": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7297",
+   "fulfillment": "gid://shopify/Fulfillment/8402596823389",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753086": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7296",
+   "fulfillment": "gid://shopify/Fulfillment/8402596790621",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704561000": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7295",
+   "fulfillment": "gid://shopify/Fulfillment/8402596757853",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753029": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7294",
+   "fulfillment": "gid://shopify/Fulfillment/8402596659549",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753847": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7293",
+   "fulfillment": "gid://shopify/Fulfillment/8402596626781",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560929": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7292",
+   "fulfillment": "gid://shopify/Fulfillment/8402596594013",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560127": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7291",
+   "fulfillment": "gid://shopify/Fulfillment/8402596528477",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560861": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7290",
+   "fulfillment": "gid://shopify/Fulfillment/8402596495709",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753714": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7289",
+   "fulfillment": "gid://shopify/Fulfillment/8402596430173",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560697": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7288",
+   "fulfillment": "gid://shopify/Fulfillment/8402596331869",
+   "registrerad": "2026-09-18"
+  },
+  "YT2626000704560622": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7287",
+   "fulfillment": "gid://shopify/Fulfillment/8402596299101",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560044": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7286",
+   "fulfillment": "gid://shopify/Fulfillment/8402596266333",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704756055": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7285",
+   "fulfillment": "gid://shopify/Fulfillment/8402596233565",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704752872": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7284",
+   "fulfillment": "gid://shopify/Fulfillment/8402596200797",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704562917": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7283",
+   "fulfillment": "gid://shopify/Fulfillment/8402596168029",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704559889": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7282",
+   "fulfillment": "gid://shopify/Fulfillment/8402596135261",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704563089": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7281",
+   "fulfillment": "gid://shopify/Fulfillment/8402596102493",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704753441": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7280",
+   "fulfillment": "gid://shopify/Fulfillment/8402596069725",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753391": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7279",
+   "fulfillment": "gid://shopify/Fulfillment/8402596004189",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704559822": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7278",
+   "fulfillment": "gid://shopify/Fulfillment/8402595971421",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704563048": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7277",
+   "fulfillment": "gid://shopify/Fulfillment/8402595938653",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704563204": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7276",
+   "fulfillment": "gid://shopify/Fulfillment/8402595905885",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704753359": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7275",
+   "fulfillment": "gid://shopify/Fulfillment/8402595873117",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560499": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7274",
+   "fulfillment": "gid://shopify/Fulfillment/8402595840349",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003169251631CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7273",
+   "fulfillment": "gid://shopify/Fulfillment/8402595807581",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704752708": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7272",
+   "fulfillment": "gid://shopify/Fulfillment/8402595774813",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704560416": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7271",
+   "fulfillment": "gid://shopify/Fulfillment/8402595742045",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626100708680861": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7270",
+   "fulfillment": "gid://shopify/Fulfillment/8406429172061",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000704562305": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7269",
+   "fulfillment": "gid://shopify/Fulfillment/8402595709277",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704562230": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7268",
+   "fulfillment": "gid://shopify/Fulfillment/8402595676509",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626000704559699": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7267",
+   "fulfillment": "gid://shopify/Fulfillment/8402595643741",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709352266": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7266",
+   "fulfillment": "gid://shopify/Fulfillment/8401146773853",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709340667": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7265",
+   "fulfillment": "gid://shopify/Fulfillment/8401146544477",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709332292": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7264",
+   "fulfillment": "gid://shopify/Fulfillment/8401146446173",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709339537": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7263",
+   "fulfillment": "gid://shopify/Fulfillment/8401146315101",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709522488": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7262",
+   "fulfillment": "gid://shopify/Fulfillment/8401146184029",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709339412": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7261",
+   "fulfillment": "gid://shopify/Fulfillment/8401146052957",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709523718": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7260",
+   "fulfillment": "gid://shopify/Fulfillment/8401134944605",
+   "registrerad": "2026-09-18"
+  },
+  "YT2625900709515490": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7259",
+   "fulfillment": "gid://shopify/Fulfillment/8401145889117",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709339271": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7258",
+   "fulfillment": "gid://shopify/Fulfillment/8401145790813",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709516555": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7257",
+   "fulfillment": "gid://shopify/Fulfillment/8401145692509",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709332169": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7256",
+   "fulfillment": "gid://shopify/Fulfillment/8401145626973",
+   "registrerad": "2026-09-18"
+  },
+  "YT2625900709333316": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7255",
+   "fulfillment": "gid://shopify/Fulfillment/8401145528669",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709523676": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7254",
+   "fulfillment": "gid://shopify/Fulfillment/8401134879069",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2625900709515367": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7253",
+   "fulfillment": "gid://shopify/Fulfillment/8401145463133",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2626000702030396": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7252",
+   "fulfillment": "gid://shopify/Fulfillment/8402508349789",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709332011": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7251",
+   "fulfillment": "gid://shopify/Fulfillment/8401145364829",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709333282": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7250",
+   "fulfillment": "gid://shopify/Fulfillment/8401145004381",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709516431": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7249",
+   "fulfillment": "gid://shopify/Fulfillment/8401144938845",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709333175": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7248",
+   "fulfillment": "gid://shopify/Fulfillment/8401144775005",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709340402": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7247",
+   "fulfillment": "gid://shopify/Fulfillment/8401134813533",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
+  },
+  "YT2626100704732617": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7246",
+   "fulfillment": "gid://shopify/Fulfillment/8405373387101",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "4PX3003167395092CN": {
+   "bolag": "4PX",
+   "kod": 190094,
+   "order": "#7245",
+   "fulfillment": "gid://shopify/Fulfillment/8401144709469",
+   "registrerad": "2026-09-18",
+   "status17": "InfoReceived",
+   "senast": "2026-09-18T15:17",
+   "status": "CONFIRMED"
+  },
+  "YT2625900709523585": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#7244",
+   "fulfillment": "gid://shopify/Fulfillment/8401134649693",
+   "registrerad": "2026-09-18",
+   "status17": "InTransit",
+   "senast": "2026-09-18T15:17",
+   "status": "IN_TRANSIT"
   }
  },
  "senaste_korning": {
-  "datum": "2026-09-18T13:29:03.754Z",
+  "datum": "2026-09-18T15:17:55.178Z",
   "ordrar": 932,
   "paket": 940,
-  "registrerade": 40,
-  "skrivna": 30,
+  "registrerade": 150,
+  "skrivna": 155,
   "fel": 0,
   "torr": false
  }
