@@ -534,3 +534,13 @@ i Metas anropstak.
   leveransrundan laddar inte upp dit och aktiverar inget.
 - Konsekvens: nya rader i `To be Reviewed` stannar där tills SE-kampanjen är ACTIVE igen
   (kön säger "ingen ACTIVE SE-kampanj"). NO-kampanjen berörs inte av den här rundan.
+
+## 2026-09-18 — `/ops-oversatt carashell/termoskyddet` (NO) — tom kö
+
+- Kön: 0 rader i `SE-ACTIVE to be translated` (gårdagens fem är `Approved`, live i NO + US).
+  Inget översatt, inget uppladdat, ingen Notion-rad rörd, 0 HeyGen-credits.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` (`120249115382210172`) ACTIVE,
+  4 ACTIVE adsets; ärvd länk ur `CaraShellFront_NO_CS_4_1`. 548 NOK läst på `/nb`-sidan.
+- SE-kampanjen är PAUSED för hand sedan 11:29 CEST (se leveransrundan samma dag) — nya rader
+  når inte den här kön förrän den är ACTIVE igen. NO-kampanjen rörs inte av det.
+- Discord `#annons-uppladdning`, ingen ping. Batch: `market-expansion/ops/carashell/2026-09-18-no-termoskyddet/`.

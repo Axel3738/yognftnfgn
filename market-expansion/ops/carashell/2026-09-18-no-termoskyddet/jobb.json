@@ -1,0 +1,69 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/termoskyddet",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.se/nb/products/termoskyddet?country=NO",
+  "valuta": "NOK",
+  "heygen_sprak": "Norwegian Bokmål (Norway)",
+  "sprak": "norsk bokmål",
+  "locale": "nb",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
+  },
+  "kampanj": {
+    "id": "120249115382210172",
+    "namn": "CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+    "bas": "CARASHELL_NO_Termoskydd Husbil 211 × 171 cm",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249116646030172",
+        "name": "CARASHELL_NO_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249116645200172",
+        "name": "CARASHELL_NO_CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115383480172",
+        "name": "CARASHELL_NO_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115382930172",
+        "name": "CARASHELL_NO_G",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 21,
+  "lank_arvd": "https://carashell.se/nb/products/termoskyddet?country=NO",
+  "pris_butik": {
+    "pris": 548,
+    "min": 548,
+    "max": 548,
+    "valuta": "NOK",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://carashell.se/nb/products/termoskyddet?country=NO"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-18T14:18:10.085Z"
+}
