@@ -1,0 +1,20 @@
+{
+  "brand": "HeimGuard", "butik": "hemvakten", "datum": "2026-09-14", "lage": "budget",
+  "siffror": { "spend_7d": 6338, "kop_7d": 7, "roas_7d": 1.43, "vinstbidrag_7d": -113 },
+  "gjort": [
+    "Budget unchanged at 700 SEK/day: last 3 days are 2 106 SEK / 2 purchases — under the data gate, no verdict.",
+    "Two days in a row with zero purchases (Sept 12: 585 SEK, Sept 13: 726 SEK). 7-day ROAS 1.43 is now under break-even 1.49.",
+    "The script wanted to PAUSE HeimGuard_PD_2 (14d: 2 265 SEK, 4 purchases, CPA 566 vs break-even 538). I did NOT do it: it is the only ad with purchases, the verdict rests on 4 purchases, and the benchmark rule protects it only while its profit is positive. Your call — see below.",
+    "Nothing else changed. Batch #2 and #3 (28 briefs) are with Carl; nothing new is live yet."
+  ],
+  "varningar": [
+    "Rule gap in factory/budgetbeslut.mjs: the benchmark guard uses the share of POSITIVE profit, so the top spender loses its protection the moment its CPA tips over break-even. Proposed fix: also protect the ad that carries the largest share of spend. Not changed tonight — rule changes are yours.",
+    "3 rows still in `Creative strat review` (SP_17_H1, SP_17_H2, CS_11_H1). Nothing goes live until they reach To be Reviewed."
+  ],
+  "action_axel": [
+    "Decide on HeimGuard_PD_2: PAUSE it (script rule: CPA 566 > 538 on 4 purchases, two zero days) or KEEP it running until it has 6+ purchases. Reply `pausa PD_2` or `behåll PD_2`. Until you answer it stays ACTIVE.",
+    "The campaign has no proven ad right now. If PD_2 goes, the 700 SEK/day runs on 38 unproven ads until Carl's first deliveries land."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15 (budget) · 2026-09-16 (briefs)"
+}

@@ -1,9 +1,15 @@
 # /kundtjanst — veckorapporten: toppärenden + chargeback-varningar, alla brands
 
 Argument: `$ARGUMENTS` — normalt `--alla --discord` (rutinen). `--brand <id>` (eller
-`a,b,c`) = bara de brandsen. `--dagar 14` = längre period. `--torr` = läs och
-räkna, skriv ingen fil, posta inget. `--notion` = lägg rapporten som sida i
-brandets Notion-databas. `--kolla` = bara: vilka brands, vilka nycklar saknas.
+`a,b,c`) = bara de brandsen. `--dagar 90` = annan period (standard: brandets
+`arenden_dagar`, 30). `--torr` = läs och räkna, skriv ingen fil, posta inget.
+`--notion` = lägg rapporten som sida i brandets Notion-databas. `--kolla` = bara:
+vilka brands, vilka nycklar saknas.
+
+⚠️ **Perioden är 30 dagar, inte 7** (rättat 2026-09-13). Med 7 dagar föll varje
+obesvarat ärende äldre än en vecka ur rapporten — alltså precis de farligaste.
+Mätt samma dag på Bäverbutiken: 7 dagar gav 45 ärenden / 37 obesvarade, 120 dagar
+gav 321 / 205. Sänk aldrig tillbaka fönstret för att rapporten ser lugnare ut.
 
 ```
 /kundtjanst --alla --discord         rutinen (måndag 07:00)
@@ -80,12 +86,15 @@ utan den vet nästa vecka ingenting.
    Stoppas ett skick (svensk text, exit 3): skriv om på engelska — hoppa aldrig
    över rapporten. Allt i Discord är på engelska (Axels order 2026-09-05).
 
-4. **Uppdatera hemsidan** — Axels sida med alla veckor, alla brands, båda språken:
+4. **Uppdatera hemsidan** — VA:ns arbetsverktyg (engelska), Axels översikt:
    ```bash
    node kundtjanst/rapportsida.mjs
    ```
-   Den bakar rapporterna och historiken till `kundtjanst/rapport-publicerad.html`
-   och skriver ut vilken `url` som gäller. Publicera med Artifact-verktyget
+   Den bakar `korningar/<brand>/<vecka>.json` (skriven av körningen i steg 1) och
+   historiken till `kundtjanst/rapport-publicerad.html` och skriver ut vilken `url`
+   som gäller. Sidan visar läget, **åtgärdsplanen** (`kundtjanst/atgardsplan.mjs`),
+   arbetskön ärende för ärende, tvisterna med deadline, kategorierna med
+   SOP-status och kurvan vecka för vecka. Publicera med Artifact-verktyget
    **mot den länken**:
    ```
    Artifact  file_path: /home/user/yognftnfgn/kundtjanst/rapport-publicerad.html

@@ -1,0 +1,46 @@
+{
+  "kalla": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/se/CaraShellFront_PD_2.mp4",
+  "srt": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_PD_2.srt",
+  "rost": "Chris - Charming, Down-to-Earth",
+  "modell": "eleven_v3",
+  "kallaLangd": 16.37,
+  "nyLangd": 15.52,
+  "segment": [
+    {
+      "i": 0,
+      "text": "This is the product every RV owner should have.",
+      "vo": "/tmp/claude-0/-home-user-yognftnfgn/300cb0d9-2208-5742-9d8d-2cce375a61f0/scratchpad/vo/CaraShellFront_US_PD_2/0.wav",
+      "d": 2.56,
+      "L": 2.98,
+      "paus": 0.25,
+      "tempo": 1,
+      "dNy": 2.56,
+      "T": 2.81,
+      "lo": 1.9669999999999999,
+      "hi": 3.7935000000000003,
+      "Lny": 2.98,
+      "kStart": 0.099,
+      "kSlut": 3.079,
+      "f": 1.0604982206405693,
+      "ut": 0
+    },
+    {
+      "i": 1,
+      "text": "An outdoor cover for the windshield, eighty-three by sixty-seven inches. Attaches easily outside. Keeps the cab cool in summer, keeps the heat in during winter, and fully blacks out when you sleep. Check the measurements before you order.",
+      "vo": "/tmp/claude-0/-home-user-yognftnfgn/300cb0d9-2208-5742-9d8d-2cce375a61f0/scratchpad/vo/CaraShellFront_US_PD_2/1.wav",
+      "d": 12.11,
+      "L": 13.291,
+      "paus": 0.6,
+      "tempo": 1,
+      "dNy": 12.11,
+      "T": 12.709999999999999,
+      "lo": 8.896999999999998,
+      "hi": 17.1585,
+      "Lny": 13.291,
+      "kStart": 3.079,
+      "kSlut": 16.37,
+      "f": 1.0457120377655391,
+      "ut": 2.81
+    }
+  ]
+}

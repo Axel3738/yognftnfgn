@@ -1,0 +1,36 @@
+{
+  "CaraShellRoof_GT_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "En gave han fikser helt selv" },
+      { "typ": "underrad", "text": "Taktrekk for campingvogn og bobil – beskytter mot vinterens fuktighet" },
+      { "typ": "badge", "text": "Fri frakt til Norge" }
+    ],
+    "noter": "badge: pris + rabatt ('1 129 kr (ord. 1 469 kr) – spara 23 %') fjernet, erstattet med fri frakt-budskap."
+  },
+  "CaraShellRoof_CS_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Taktrekk campingvogn og bobil · 6,5 × 3 m" },
+      { "typ": "botten", "text": "Fri frakt til Norge · Levering 5–10 arbeidsdager" }
+    ],
+    "noter": "pris ('1 129 kr'), jamforpris ('1 469 kr') og rabatt ('−23 %') droppet helt – ingen erstatning, siden botten allerede bærer frakt-budskapet ('Fri frakt til Norge'). Rubrik uendret i sak, bare oversatt."
+  },
+  "CaraShellRoof_PD_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Fukttesten i april begynner i november." },
+      { "typ": "etikett_vanster", "text": "UTEN – vannet står ved takluken hele vinteren" },
+      { "typ": "etikett_hoger", "text": "MED – 6,5 × 3 m svart duk, hektet under kanten" },
+      { "typ": "botten", "text": "Kun taket. Én person. Fri frakt til Norge." }
+    ],
+    "noter": "botten: prisen ('1 129 kr') erstattet med 'Fri frakt til Norge', resten av linjen ('Bara taket. En person.') beholdt for samme lengde og tone."
+  },
+  "CaraShellRoof_SP_4_1": {
+    "element": [
+      { "typ": "citat", "text": "«Beskytter campingvognen godt mot regn og smuss.»" },
+      { "typ": "namn", "text": "– Anders" },
+      { "typ": "stjarnor", "text": "★★★★★" },
+      { "typ": "botten", "text": "En av 16 anmeldelser – alle fem stjerner" },
+      { "typ": "pris", "text": "Fri frakt til Norge" }
+    ],
+    "noter": "pris ('1 129 kr (ord. 1 469 kr)') erstattet med 'Fri frakt til Norge'; citatet fra Anders oversatt ordrett med norske anførselstegn «…»."
+  }
+}

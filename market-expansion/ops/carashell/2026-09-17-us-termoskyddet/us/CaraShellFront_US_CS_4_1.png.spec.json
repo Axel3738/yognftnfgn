@@ -1,0 +1,37 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "Cool in summer, warm in winter, dark when you sleep."
+    },
+    {
+      "typ": "underrad",
+      "text": "Outside the glass, 83 × 67 in – ready in two minutes."
+    },
+    {
+      "typ": "pris",
+      "text": "$99"
+    },
+    {
+      "typ": "jamforpris",
+      "text": "$124"
+    },
+    {
+      "typ": "rabatt",
+      "text": "−20%"
+    },
+    {
+      "typ": "botten",
+      "text": "Free shipping · 5–10 business days · 90-day guarantee"
+    }
+  ]
+}

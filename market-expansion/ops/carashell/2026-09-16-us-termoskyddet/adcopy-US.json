@@ -1,0 +1,28 @@
+{
+  "PD": {
+    "message": "A hot RV cab in summer. Condensation on the glass every morning.\nThe windshield thermal cover fits outside your RV's windshield and side windows.\nCooler in summer, warmer in winter, full blackout when you sleep.\nCheck the measurements before you order: 83 x 67 in (211 x 171 cm).",
+    "headline": "No morning fog. No hot cab.",
+    "description": "Outside-mounted windshield cover for your RV."
+  },
+  "G": {
+    "message": "Do you know what to give the RV owner in your life?\nPicture their face when they unwrap it and realize what it is.\nNot just a gift - one they'll actually use, trip after trip.\nCheck the measurements before you order: 83 x 67 in (211 x 171 cm).",
+    "headline": "The gift that blocks sun and cold",
+    "description": "A windshield cover RV owners actually use."
+  },
+  "CS": {
+    "message": "Cool in summer, warm in winter, dark when you sleep.\n$99, compare at $124.\nFree shipping in the US\n14-day return window\nMeasure your RV before you order: 83 x 67 in (211 x 171 cm).",
+    "headline": "From $124 to $99",
+    "description": "$99. Free shipping. 14-day return window."
+  },
+  "SP": {
+    "message": "\"Protects well and blacks out nicely.\" - Sofia\n\"Very happy. Easy to set up.\" - Per\n\"Protects well against sun and heat. I'm happy.\" - Lars\n\"Great fit, feels sturdy.\" - Karin\nWindshield thermal cover, 211 x 171 cm (83 x 67 in).",
+    "headline": "\"Protects well, blacks out nicely.\"",
+    "description": "What RV owners say about the thermal cover."
+  },
+  "_test": {
+    "PD": "visualisera ✅ (fog on the glass / a hot cab) · falsifiera ✅ (either fog appears the next morning or it doesn't) · ingen annan ✅ (true only for a cover mounted OUTSIDE the glass — an interior sunshade still fogs, so an interior-cover competitor can't sign this line)",
+    "G": "visualisera ✅ (their face when they unwrap it, using it trip after trip) · falsifiera ⚠️ (weak — \"actually use\" is a prediction, not a measured fact, but it's tied to the product's real function, not empty adjectives) · ingen annan ✅ (any RV-gear brand could claim generic gift appeal, but pairing it with \"blocks sun and cold\" ties the claim to this specific product's mechanics)",
+    "CS": "visualisera ✅ ($124 next to $99, a concrete price drop) · falsifiera ✅ (the two figures are checkable against the store) · ingen annan ✅ (these are CaraShell's own prices — no competitor can put their name under this exact number)",
+    "SP": "visualisera ✅ (a name and a specific quote you can picture someone saying) · falsifiera ✅ (Sofia's quote is a real, verifiable Judge.me review, not invented) · ingen annan ✅ (only CaraShell has this customer and this quote — no competitor can sign someone else's review)"
+  }
+}

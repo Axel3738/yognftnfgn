@@ -1,0 +1,24 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-14",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "4 Norwegian videos are live in DRYTREK_NO_Damasker Vandring, all ACTIVE.",
+  "BOF_10_H1 opened a new adset, DRYTREK_NO_BOF. CI_3_H1 opened DRYTREK_NO_CI. PD_16_H1 and PD_8_H1 went to DRYTREK_NO_PD.",
+  "Each one got a Norwegian voice-over from HeyGen plus Norwegian burned-in captions replacing the Swedish ones.",
+  "PD_8_H1 finally cleared HeyGen moderation from yesterday and went up today. Its burned-in English claim block is painted out and the returns line now reads 14 days.",
+  "The Norwegian campaign now runs 45 ads, all ACTIVE: PD 27, SP 7, CS 4, G 4, CI 1, BOF 1, FO 1.",
+  "HeyGen credits 8315 before, 8135 after."
+ ],
+ "varningar": [
+  "2 videos are still held back for the third day running: FO_2_H1 and SP_6_H1. The voice check is red on both.",
+  "Both were re-rendered once with a much shorter closing line and the measured value did not move at all, which means the check is reading the background music rather than the voice. A red video is never uploaded, so they stay in the queue.",
+  "The Norwegian files are not attached to the Notion rows — the upload of files over the REST API is not built yet. Review the finished ads in Ads Manager.",
+  "The caption tool missed the pill in three places where it sits on bright snow, and Swedish text survived in CI_3_H1 on the first pass. Fixed with manual plates and verified frame by frame. This is the third time the same cause has shown up."
+ ],
+ "action_axel": [],
+ "nasta_korning": "2026-09-15"
+}

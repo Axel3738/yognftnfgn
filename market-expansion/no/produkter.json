@@ -206,5 +206,29 @@
     "campaign_id": "120251818047850233",
     "link": "https://beverbutikken.no/products/tofler-ergonomiske-tykksalede-for-inne-ute",
     "anm": "NO-kampanjen PAUSED med spend; no_prefix satt ur produktens handle, verifiera om kampanjen aktiveras"
+  },
+  "takoverdrag": {
+    "se_prefix": "Takoverdrag",
+    "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+    "no_prefix": "Takovertrekk",
+    "adset_prefix": "Takovertrekk Campingvogn NO",
+    "campaign_id": "120252183519570233",
+    "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+  },
+  "termoskydd": {
+    "se_prefix": "Termoskydd",
+    "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+    "no_prefix": "Frontrutetrekk",
+    "adset_prefix": "Frontrutetrekk til Bobil NO",
+    "campaign_id": "120252202507830233",
+    "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+  },
+  "adventskalender": {
+    "se_prefix": "Adventskalender",
+    "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+    "no_prefix": "Adventskalender",
+    "adset_prefix": "Adventskalender NO",
+    "campaign_id": "120252140554000233",
+    "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
   }
 }

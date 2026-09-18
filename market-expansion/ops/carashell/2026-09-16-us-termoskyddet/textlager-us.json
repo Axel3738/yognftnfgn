@@ -1,0 +1,78 @@
+{
+  "CaraShellFront_CS_2_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "$99 instead of $124"
+      },
+      {
+        "typ": "underrad",
+        "text": "Cool in summer, warm in winter, dark when you sleep."
+      },
+      {
+        "typ": "pris",
+        "text": "$99"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "$124"
+      },
+      {
+        "typ": "rabatt",
+        "text": "−20%"
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 14-day returns"
+      }
+    ],
+    "noter": "Rättad: siffror är tillåtna på bilden, så rubriken är nu konkret med båda priserna — '$99 instead of $124'. Tre-frågorstestet: visualisera ✅ (två prisskyltar bredvid varandra) · falsifiera ✅ (kontrollerbart mot butiken) · ingen annan ✅ (CaraShells egna priser, ingen konkurrent kan sätta sin logga under exakt de siffrorna). Rabatten − 20 % stämmer: (124−99)/124 = 20,2 % → avrundat 20 %, samma som källans procenttal. Botten kortad till '14-day returns' (siffra tillåten) — återbetalningen är fortfarande 14 dagar, bara fraktkostnaden vid retur är på kunden (nämns inte här, ingen 'free returns'-formulering använd)."
+  },
+  "CaraShellFront_SP_2_1": {
+    "element": [
+      {
+        "typ": "citat",
+        "text": "\"It protects well and blacks out nicely.\""
+      },
+      {
+        "typ": "namn",
+        "text": "– Sofia"
+      },
+      {
+        "typ": "stjarnor",
+        "text": "★★★★★"
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 14-day returns"
+      }
+    ],
+    "noter": "Citatet är Sofias riktiga Judge.me-recension, översätt troget (ingen påhittad rad). Ingen omdömessiffra eller genomsnittsbetyg anges — US-antalet är inte verifierat, så '5,0 av 5 – 10 omdömen' från SE-versionen är bortplockat och ersatt med fem stjärnsymboler i stället för en siffra. Botten kortad till '14-day returns' sedan siffror tilläts på bilden."
+  },
+  "CaraShellFront_PD_2_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "No more hot cab, dark in seconds"
+      },
+      {
+        "typ": "underrad",
+        "text": "Fits outside your windshield and side windows."
+      }
+    ],
+    "noter": "Versal-rubriken från källan skriven om i sentence case enligt kravet. Inget pris, inga siffror. 'Outside your windshield' pekar på den utvändiga monteringen — den detalj som gör påståendet svårt för ett invändigt-skydd-märke att skriva under på."
+  },
+  "CaraShellFront_G_2_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "The RV gift they'll actually use"
+      },
+      {
+        "typ": "underrad",
+        "text": "Picture their face the moment they unwrap it."
+      }
+    ],
+    "noter": "Underraden omskriven så den inte upprepar rubrikens 'actually use' — pekar i stället på ögonblicket när paketet öppnas, samma bild som SE-radens 'Se glädjen när de öppnar den'. Håller presentvinkeln utan pris."
+  }
+}

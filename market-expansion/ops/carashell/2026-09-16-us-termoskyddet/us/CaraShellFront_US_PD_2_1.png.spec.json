@@ -1,0 +1,21 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "No more hot cab, dark in seconds"
+    },
+    {
+      "typ": "underrad",
+      "text": "Fits outside your windshield and side windows."
+    }
+  ]
+}

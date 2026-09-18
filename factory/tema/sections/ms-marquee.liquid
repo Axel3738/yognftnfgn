@@ -1,0 +1,47 @@
+{%- comment -%} Fabriksägd kopia (factory/tema/sections/) sedan 2026-09-17: raderna går genom ms-landtext så [[flagga]]/[[land]] blir kundens land. {%- endcomment -%}
+{%- if section.settings.visible -%}
+{%- liquid
+  assign rows = section.settings.items | default: '' | split: '|'
+  assign speed = section.settings.speed | default: 26
+-%}
+{%- if rows.size > 0 -%}
+  <div class="ms-scope">
+    <div class="ms-marquee" style="--ms-marquee-dur: {{ speed }}s;
+      {% if section.settings.background != blank %}--ms-marquee-bg: {{ section.settings.background }};{% endif %}
+      {% if section.settings.text_color != blank %}--ms-marquee-fg: {{ section.settings.text_color }};{% endif %}">
+      {%- comment -%}
+        Två identiska grupper. CSS:en flyttar spåret exakt -50 %, så skarven
+        blir osynlig. Läggs en tredje grupp till hoppar bandet.
+      {%- endcomment -%}
+      <div class="ms-marquee__track">
+        {%- for pass in (1..2) -%}
+          <div class="ms-marquee__group" {% if forloop.index > 1 %}aria-hidden="true"{% endif %}>
+            {%- for row in rows -%}
+              {%- assign text = row | strip -%}
+              {%- if text != blank -%}<span class="ms-marquee__item">{% render 'ms-landtext', text: text %}</span>{%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Rullande band",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true,
+      "info": "Bocka ur för att stänga av den utan att ta bort den." },
+    { "type": "textarea", "id": "items", "label": "Texter",
+      "info": "Separera med |." },
+    { "type": "range", "id": "speed", "label": "Varvtid i sekunder", "min": 10, "max": 60, "step": 2, "default": 26,
+      "info": "Högre värde = långsammare." },
+    { "type": "color", "id": "background", "label": "Bakgrund", "default": "#dd821d" },
+    { "type": "color", "id": "text_color", "label": "Textfärg", "default": "#fdfbf7" }
+  ],
+  "presets": [{ "name": "Rullande band" }]
+}
+{% endschema %}

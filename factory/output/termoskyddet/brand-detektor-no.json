@@ -1,0 +1,1510 @@
+{
+ "produkt": "termoskyddet",
+ "marknad": "NO",
+ "datum": "2026-09-16",
+ "kalla": {
+  "butik": "baverbutiken.se",
+  "produkt_id": "16522215522653",
+  "produkt_handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+  "produkt_url": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+  "annonskonto": "1050941584152547",
+  "annonsprefix": "Frontrutetrekk",
+  "kampanj_id": "120250175763810291",
+  "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+  "no_annonskonto": "1050941584152547",
+  "no_kampanjmonster": "Frontrutetrekk til Bobil",
+  "no_annonsprefix": "Frontrutetrekk",
+  "srt_slug": [
+   "termoskydd"
+  ]
+ },
+ "annonser": [
+  {
+   "annons": "Frontrutetrekk_NO_CS_1",
+   "id": "120252202545560233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - CS",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.95,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris kun i dag.",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris kun i dag.",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 15–15.95s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_CS_2",
+   "id": "120252202545970233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - CS",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.03,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 51,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     },
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris, kun i dag.",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    },
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris, kun i dag.",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 15–16.03s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_CS_2_1",
+   "id": "120252202942570233",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - CS",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": null,
+       "plats": "blå platta högst upp + röd banderoll",
+       "ord": "40 % RABATT – KUN I DAG / Få igjen på lager – bestill før det er tomt!",
+       "form": "syn",
+       "sätt": "ögongranskad"
+      }
+     ],
+     "källa": "syn",
+     "syn": {
+      "syns": true,
+      "var": "blå platta högst upp + röd banderoll",
+      "ordagrant": "40 % RABATT – KUN I DAG / Få igjen på lager – bestill før det er tomt!",
+      "fil": "Frontrutetrekk_NO_CS_2_1.jpg",
+      "logotyp_utan_text": false,
+      "notis": "Falsk brådska (butiken kör ingen tidsbegränsad kampanj). Plattorna är riktiga former, så oversatt-bild.py kan byta texten — men vad den ska säga är ett CS-beslut utan kampanj. Står i uteslutna.json."
+     }
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "bildtext",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 4 · \"undefined\" → \"40 % RABATT – KUN I DAG / Få igjen på lager – bestill før det er tomt!\" (ögongranskad)",
+    "yta 4 · ögongranskat (blå platta högst upp + röd banderoll): \"40 % RABATT – KUN I DAG / Få igjen på lager – bestill før det er tomt!\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_CS_3",
+   "id": "120252202546200233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - CS",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.84,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "copy",
+      "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i copy: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [
+    {
+     "namn": "rabatt",
+     "värden": [
+      "40%"
+     ]
+    }
+   ],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "copy",
+     "rad": "⏰ KUN I DAG: 40% rabatt på frontrutetrekk til bobil.\nLageret minker raskt, og prisen går tilbake i morgen.\nMange har all",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 14.7–15.84s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_G_1",
+   "id": "120252202576410233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - G",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.4,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.35,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 49,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "pris kun i dag.",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "pris kun i dag.",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 14.4–15.35s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_G_2",
+   "id": "120252202576930233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - G",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 14.7,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.56,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 50,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": [
+     {
+      "regel": "tidsbegränsat erbjudande",
+      "yta": "inbränd",
+      "rad": "redusert pris kun i dag.",
+      "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+     }
+    ]
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)",
+    "tidsbegränsat erbjudande i inbränd: lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+   ],
+   "villkor": [],
+   "villkorsfel": [
+    {
+     "regel": "tidsbegränsat erbjudande",
+     "yta": "inbränd",
+     "rad": "redusert pris kun i dag.",
+     "fel": "lovar \"kun i dag\" — butiken har ingen tidsbegränsad kampanj (sätt butik.erbjudande.tidsbegransat om den får en)"
+    }
+   ],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 14.7–15.6s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_G_2_1",
+   "id": "120252202981840233",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - G",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "notis": "Ögonläst: 'DEN PERFEKTE GAVEN TIL BOBILEIEREN' + 'Se gleden når de åpner den – en gave de faktisk kommer til å bruke.' + knapp 'Gi bort perfeksjon'. Inget brandnamn, pris eller villkor. Domen ren stämmer."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Frontrutetrekk_NO_G_3",
+   "id": "120252202577160233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - G",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.31,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 52,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 15.3–16.31s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_PD_1",
+   "id": "120252202638660233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - PD",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.87,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 61,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken från ca 16,1 s",
+      "ordagrant": "Termobeskyttelse for bobil fra beverbutikken",
+      "sekund": 16.4,
+      "notis": "Captionband ögonläst var 0,4 s: 'Sjekk målene før du bestiller.' t.o.m. 16,0 s, brandrepliken från 16,2 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_1.mp4 (klipp vid 16,05 s)."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 18–18.9s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken från ca 16,1 s, 16.4): \"Termobeskyttelse for bobil fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_PD_2",
+   "id": "120252202638990233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - PD",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 18,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.3,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 18.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.11,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 61,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken från ca 16,5 s",
+      "ordagrant": "Termotrekk til bobil fra beverbutikken",
+      "sekund": 16.8,
+      "notis": "'Sjekk målene…' t.o.m. 16,2 s, brand från 16,6 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_2.mp4 (klipp vid 16,40 s, sista frame 'Sjekk målene før du bestiller.')."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 18–19.11s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken från ca 16,5 s, 16.8): \"Termotrekk til bobil fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_PD_2_1",
+   "id": "120252203014500233",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - PD",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": false,
+     "fynd": [],
+     "syn": {
+      "syns": false,
+      "notis": "Ögonläst: 'SLUTT PÅ VARME I BOBILEN – MØRKLEGGER OG KJØLER PÅ SEKUNDER'. Inget brandnamn, pris eller villkor. Domen ren stämmer."
+     },
+     "bekräftad_av_syn": true
+    },
+    "villkorsfel": []
+   },
+   "dom": "ren",
+   "attgöra": [],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": []
+  },
+  {
+   "annons": "Frontrutetrekk_NO_PD_3",
+   "id": "120252202639240233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - PD",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 19.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 19.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 20,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 64,
+     "syn": {
+      "syns": true,
+      "var": "caption på vit platta, sista repliken från ca 17,4 s",
+      "ordagrant": "Termobeskyttelse for bobil fra beverbutikken",
+      "sekund": 17.7,
+      "notis": "'Sjekk målene…' t.o.m. 17,1 s, brand från 17,5 s. Bortklippt i bildfix/Frontrutetrekk_NO_PD_3.mp4 (klipp vid 17,30 s, sista frame 'Sjekk målene før du bestiller.')."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 19.2–20s (4 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption på vit platta, sista repliken från ca 17,4 s, 17.7): \"Termobeskyttelse for bobil fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_SP_1",
+   "id": "120252202670640233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - SP",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.6,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.52,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 53,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 15.6–16.52s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_SP_2",
+   "id": "120252202671510233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - SP",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 17.04,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 54,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 16.2–17.04s (4 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_SP_2_1",
+   "id": "120252203082450233",
+   "typ": "bild",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - SP",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": false,
+     "dom": "ej tillämplig (bildannons)",
+     "syn": null
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": null,
+       "plats": "text på mörktonat foto, vänster överdel + grön etikett",
+       "ord": "★★★★★ Sover mye bedre nå – helt mørkt uansett vær! – Verifisert kunde, 58 år / 30 dagers åpent kjøp",
+       "form": "syn",
+       "sätt": "ögongranskad"
+      }
+     ],
+     "källa": "syn",
+     "syn": {
+      "syns": true,
+      "var": "text på mörktonat foto, vänster överdel + grön etikett",
+      "ordagrant": "★★★★★ Sover mye bedre nå – helt mørkt uansett vær! – Verifisert kunde, 58 år / 30 dagers åpent kjøp",
+      "fil": "Frontrutetrekk_NO_SP_2_1.jpg",
+      "logotyp_utan_text": false,
+      "notis": "OCR gav domen ren — villkorsregeln såg inte den norska formen '30 dagers åpent kjøp'. Ögat gör det: påhittad attribution + villkor butiken inte har (14 dagers angrerett). Står i uteslutna.json."
+     }
+    },
+    "villkorsfel": []
+   },
+   "dom": "bara-copy",
+   "attgöra": [
+    "bildtext"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 4 · \"undefined\" → \"★★★★★ Sover mye bedre nå – helt mørkt uansett vær! – Verifisert kunde, 58 år / 30 dagers åpent kjøp\" (ögongranskad)",
+    "yta 4 · ögongranskat (text på mörktonat foto, vänster överdel + grön etikett): \"★★★★★ Sover mye bedre nå – helt mørkt uansett vær! – Verifisert kunde, 58 år / 30 dagers åpent kjøp\""
+   ]
+  },
+  {
+   "annons": "Frontrutetrekk_NO_SP_3",
+   "id": "120252202672400233",
+   "typ": "video",
+   "status": "ACTIVE",
+   "adset": "Frontrutetrekk til Bobil NO - SP",
+   "kampanj": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+   "ytor": {
+    "copy": {
+     "yta": "copy",
+     "träff": false,
+     "fynd": [],
+     "länk": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+     "länk_pekar_på_källan": true
+    },
+    "tal": {
+     "yta": "tal",
+     "tillämplig": true,
+     "transkript": null,
+     "träff": null,
+     "fynd": [],
+     "dom": "okänd (inget transkript i repot)"
+    },
+    "inbränd": {
+     "yta": "inbränd",
+     "tillämplig": true,
+     "träff": true,
+     "fynd": [
+      {
+       "sekund": 15.9,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.2,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.5,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.8,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      },
+      {
+       "sekund": 16.84,
+       "plats": "sent i filmen",
+       "ord": "beverbutikken",
+       "form": "beverbutikken",
+       "sätt": "exakt"
+      }
+     ],
+     "sent_i_filmen": true,
+     "frames": 54,
+     "syn": {
+      "syns": true,
+      "var": "caption, sista repliken",
+      "ordagrant": "fra beverbutikken",
+      "notis": "Se uteslutna.json."
+     },
+     "bekräftad_av_syn": true
+    },
+    "bild": {
+     "yta": "bild",
+     "tillämplig": false,
+     "dom": "ej tillämplig (video)",
+     "syn": null
+    },
+    "villkorsfel": []
+   },
+   "dom": "kräver-slutkortsbygge",
+   "attgöra": [
+    "inbränd text",
+    "tal (oläst)"
+   ],
+   "villkor": [],
+   "villkorsfel": [],
+   "belägg": [
+    "yta 2 · okänd (inget transkript i repot)",
+    "yta 3 · sent i filmen, 15.9–16.84s (5 frames): \"beverbutikken\" (exakt)",
+    "yta 3 · ögongranskat (caption, sista repliken): \"fra beverbutikken\""
+   ]
+  }
+ ]
+}

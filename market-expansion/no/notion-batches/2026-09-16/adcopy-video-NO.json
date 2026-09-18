@@ -1,0 +1,37 @@
+{
+  "Takovertrekk_NO_CO_1_H1": {
+    "message": "Et heldekkende trekk dekker alt du allerede har — dette dekker bare taket.\nStropp og snor i kanten holder det på plass, vannet blir aldri stående ved taklukene.\n1189 kr mot 1549 kr, fri frakt og 30 dagers åpent kjøp.",
+    "headline": "Bare taket, ikke hele vogna",
+    "description": "1189 kr, fri frakt"
+  },
+  "Takovertrekk_NO_GT_4_H1": {
+    "message": "En gave til campingvogneieren – bare taket, ikke hele vogna.\n210D-vev tåler en hel vintersesong ute, og vannet blir aldri stående ved taklukene.\n1189 kr i stedet for 1549 kr – spar 360 kr. Åpent kjøp.",
+    "headline": "En gave til campingvogneieren",
+    "description": "Spar 360 kr"
+  },
+  "Takovertrekk_NO_GT_5_H1": {
+    "message": "210D-vev tåler en hel vintersesong ute.\nStropp og snor i kanten – sitter fast når det blåser.\n6,5 × 3 meter, får plass i posen som følger med.",
+    "headline": "210D-vev – tåler vinteren ute",
+    "description": "210D-vev, stropp og snor"
+  },
+  "Takovertrekk_NO_PD_4_H1": {
+    "message": "1189 kr i stedet for 1549 kr – spar 360 kr.\nStropp og snor i kanten holder det på plass i blåst.\nFri frakt og 30 dagers åpent kjøp.",
+    "headline": "Spar 360 kr på takovertrekket",
+    "description": "Spar 360 kr (23 %)"
+  },
+  "Takovertrekk_NO_RI_1_H1": {
+    "message": "Ved takluken møter tettemassen fukt dag etter dag.\nTil slutt mykner den, og vannet går rett inn gjennom taket.\nDa hjelper ingen vask — bare et takovertrekk for 1189 kr.",
+    "headline": "Ingen vask hjelper da",
+    "description": "30 dagers åpent kjøp"
+  },
+  "Takovertrekk_NO_SP_4_H1": {
+    "message": "Et heldekkende trekk er tungt å få på plass alene — dette klarer én person.\n210D-vev tåler hele vintersesongen ute, og vannet blir aldri stående ved taklukene.\n5,0 av 5 på 10 anmeldelser. 1189 kr i stedet for 1549 kr.",
+    "headline": "Én person klarer det. 210D-vev.",
+    "description": "1189 kr mot 1549 kr"
+  },
+  "Takovertrekk_NO_UG_1_H1": {
+    "message": "Tror du at man må være to for å dekke campingvogntaket?\nÉn person klarer det selv — et heldekkende trekk er tungt å få på plass alene.\nStrammes fast med stropp og snor i kanten. 1189 kr, fri frakt.",
+    "headline": "Bare taket. Én person klarer det.",
+    "description": "Fri frakt, åpent kjøp"
+  }
+}

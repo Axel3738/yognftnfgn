@@ -63,6 +63,15 @@ export const FALT = [
   // sidan lovade 1 919,30, kassan tog 1 880,63). Fylls ur
   // ekonomi.marknadspriser i produktfilen; tomt = bara butikens valuta.
   { key: 'fastpris_valutor', name: 'Paketpris per valuta (NOK:1880.20;…)', type: 'single_line_text_field' },
+  // Rabatten som PROCENT när rabattkoden är en procentkod (15, 20, 25).
+  // Snippeten har läst `rabatt_procent` sedan den skrevs, men fältet fanns
+  // varken i definitionen eller i skrivningen — så procentläget var dött och
+  // sidan räknade alltid med ett fast belopp mot STANDARDVARIANTEN.
+  // Det märktes inte medan alla varianter kostade lika. Med CaraShells
+  // prisstege (2026-09-18) gjorde det det direkt: ett 2-pack av 13,5 m visade
+  // 465,73 € på sidan medan kassans 15 %-kod tar 428,23 €. Tomt fält = fast
+  // belopp som förut (BOGO och gratis-bonus kan inte uttryckas i procent).
+  { key: 'rabatt_procent', name: 'Rabatt i procent (15, 20 …)', type: 'number_integer' },
 ];
 
 // Standardstegen när produktfilen inte har egna nivåer (offer.paket.nivaer).
@@ -220,6 +229,10 @@ export function byggPaketplan(produkt, butik = null) {
         sparProcent: rabattOre > 0 ? Math.round(((produktOre - fastOre) / produktOre) * 100) : 0,
         valuta,
         fastprisValutor,
+        // Procentsatsen när koden är en procentkod — samma tal som kassan
+        // drar, så sidan och kassan kan inte säga olika saker oavsett vilken
+        // storlek (och vilket pris) kunden väljer.
+        procent: exaktProcent ? procentHel : 0,
       };
       poster.push(post);
       if (kod && rabattOre > 0) {
@@ -358,6 +371,7 @@ export function nivaFalt(post, produktGid, bonusGid = null) {
     ['gratis_text', post.gratisAntal > 0 ? post.gratisText ?? '' : ''],
     ['bogo_gratis', '0'],
     ['fastpris_valutor', fastprisValutorText(post.fastprisValutor)],
+    ['rabatt_procent', post.procent > 0 ? String(post.procent) : ''],
   ].map(([key, value]) => ({ key, value }));
 }
 
@@ -420,12 +434,25 @@ export function rabattkodInput(k, produktGid, { bonusGid = null } = {}) {
 export async function sakerstallRabattkod(k, produktGid, { valuta = null, bonusGid = null } = {}) {
   const q = await graphql(
     `query opsFactoryRabattkod($code: String!) {
-      codeDiscountNodeByCode(code: $code) { id }
+      codeDiscountNodeByCode(code: $code) {
+        id
+        codeDiscount { ... on DiscountCodeBasic { codes(first: 5) { nodes { code } } } }
+      }
     }`,
     { code: k.kod }
   );
   const input = rabattkodInput(k, produktGid, { bonusGid });
-  const finns = q.codeDiscountNodeByCode?.id ?? null;
+  // ⚠️ Träffen räknas bara vid EXAKT kodmatch (mätt 2026-09-10 på DryTrek):
+  // Shopifys sökning `query: "code:X"` är luddig — sökningen efter
+  // DAMASKER4PACK svarade med DAMASKER2PACK, och 2-packets kod skrevs över
+  // till 20 % / min 4, så det förvalda paketet stod utan rabatt i kassan
+  // medan kortet lovade 661,30. codeDiscountNodeByCode slår upp på koden,
+  // men den returnerade koden jämförs ändå tecken för tecken med den önskade
+  // — stämmer den inte räknas koden som saknad och skapas i stället för att
+  // någon annans kod skrivs över.
+  const nod = q.codeDiscountNodeByCode ?? null;
+  const exakt = (nod?.codeDiscount?.codes?.nodes ?? []).some((c) => c.code === k.kod);
+  const finns = nod && exakt ? nod.id : null;
   if (finns) {
     const u = await graphql(
       `mutation opsFactoryRabattUppdatera($id: ID!, $basicCodeDiscount: DiscountCodeBasicInput!) {

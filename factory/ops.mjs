@@ -91,9 +91,11 @@ import { sattContinue } from './lagerpolicy.mjs';
 import { sakerstallBonus } from './bonus.mjs';
 import { byggPaketplan, byggPaket, paketRader } from './paket.mjs';
 import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad } from './marknad.mjs';
+import { byggPrislistplan, sakerstallPrislistor } from './prislista.mjs';
+import { lokalValuta } from './lander.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
-import { hamtaStartsida, hamtaProduktsida } from './kundvy-kor.mjs';
+import { hamtaStartsida, hamtaProduktsida, landPerLocale } from './kundvy-kor.mjs';
 import { kontrolleraKundvy, strukturkoll, produktkoll, svenskaMarkorer, lasMarkorer, filtreraMarkorer } from './kundvy.mjs';
 import { samlaLage } from './trippelkoll.mjs';
 import { byggJudgeMeCsv, byggJudgeMeAppCsv, byggJudgeMeCsvOversatt } from './judgeme.mjs';
@@ -117,6 +119,7 @@ import {
   patchaMsPaketValuta,
   msHeadGallerifilter,
   GALLERIFILTER_MARKE,
+  localeMarke,
   byggKorgUpsell,
   byggTillagg,
   harTillagg,
@@ -434,9 +437,9 @@ export const STEG = [
               ? ` (flerprodukt: gemensamma A/B-paketblock under testet "${gemensamtPaketTest(ctx.produkter.map((pk) => pk.p))}", trust/leverans ur butiken, ingen fullpris-kryssruta)`
               : ' (flerprodukt: produkterna har OLIKA paket-test — inga paketblock i den delade mallen, sätt samma offer.paket.test)'),
         'sections/header-group.json: annonsrad + huvudmeny, väljare på när marknader finns',
-        `snippets/ms-head.liquid: gallerifilter [SV]/[NO]${bonus.length > 0 ? ', omhämtning av korgen för upsellen' : ''}`,
+        `snippets/ms-head.liquid: gallerifilter [SV]${lista(ctx.butik.butik?.marknader).map((m) => `/[${localeMarke(m.locale)}]`).join('')}${bonus.length > 0 ? ', omhämtning av korgen för upsellen' : ''}`,
         bonus.length > 0 ? `korg-upsell för ${bonus[0]}` : 'ingen bonusprodukt — ingen korg-upsell',
-        'snippets/ms-paket.liquid: locale-grenar för temats svenska ord',
+        `snippets/ms-paket.liquid + custom_liquid-blocken: en Liquid-gren per marknadsspråk (${lista(ctx.butik.butik?.marknader).map((m) => m.locale).filter(Boolean).join(', ') || 'inga'})`,
         'produktmallen skrivs om tills tillbakaläsningen stämmer (max 3 försök)',
         ...perProdukt,
       ];
@@ -444,7 +447,12 @@ export const STEG = [
     async kor(ctx) {
       const tema = await arbetstema(ctx);
       const las = (f) => hamtaTemafil(tema.id, f);
-      const nb = lasOversattning(ctx.butik.butik.id, 'nb')?.nb ?? {};
+      // Ett marknadsspråk per rad i butik.marknader (nb, en …) — varje språk
+      // får sin egen Liquid-gren i custom_liquid-blocken och snippeten. Saknas
+      // översättningsfilen får språket en tom mapp: svenskan står kvar och
+      // syns som markör i kundvyn, aldrig tyst.
+      const marknadsLocales = [...new Set(lista(ctx.butik.butik?.marknader).map((m) => String(m.locale ?? '').trim()).filter((l) => l && l !== 'sv'))];
+      const oversattningar = Object.fromEntries(marknadsLocales.map((l) => [l, lasOversattning(ctx.butik.butik.id, l)?.nb ?? {}]));
       const produkt = ctx.produkter.length === 1 ? ctx.p : null;
 
       // Fabriksägda filer skrivs alltid över — bas-zip:ens kopia av
@@ -462,25 +470,30 @@ export const STEG = [
         if (msHead && upsell.msHeadTillagg && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${upsell.msHeadTillagg}`;
         if (produkt && harTillagg(produkt)) {
           const sv = tillaggTexter(produkt);
-          Object.assign(filer, byggTillagg(bonusHandle, { sv, nb: { label: nb['liquid.tillagg.label'], info: nb['liquid.tillagg.info'] } }));
+          const perSprak = Object.fromEntries(Object.entries(oversattningar).map(([l, o]) => [l, { label: o['liquid.tillagg.label'], info: o['liquid.tillagg.info'] }]));
+          Object.assign(filer, byggTillagg(bonusHandle, { sv, ...perSprak }));
         }
       }
       if (msHead && !msHead.includes(GALLERIFILTER_MARKE)) {
-        const locales = ['sv', ...lista(ctx.butik.butik?.marknader).map((m) => String(m.locale ?? '').trim()).filter(Boolean)];
-        msHead = `${msHead}\n${msHeadGallerifilter(locales)}`;
+        msHead = `${msHead}\n${msHeadGallerifilter(['sv', ...marknadsLocales])}`;
       }
       if (msHead) filer['snippets/ms-head.liquid'] = msHead;
 
-      const msPaket = await las('snippets/ms-paket.liquid');
+      // Basen är fabrikens egen snippet (TEMAFILER) sedan 2026-09-17 — inte
+      // den kopia butiken råkar ha (CaraShell låg på bas-zip:ens äldre köpruta
+      // utan rullgardin per enhet). Patcharna läggs ovanpå basen.
+      const msPaket = filer['snippets/ms-paket.liquid'] ?? (await las('snippets/ms-paket.liquid'));
       if (msPaket) {
-        // Två oberoende, idempotenta patchar: norska ord + paketpris i
-        // kundens valuta (fastpris_valutor). Skrivs bara om något ändrades.
+        // Två oberoende, idempotenta patchar: temats ord per marknadsspråk +
+        // paketpris i kundens valuta (fastpris_valutor). Ordpatchen bygger om
+        // grenarna ur butikens språk, så en butik som får ett nytt språk får
+        // sin gren vid nästa `--igen tema`.
         let s = msPaket;
-        for (const patch of [patchaMsPaket, patchaMsPaketValuta]) {
+        for (const patch of [(x) => patchaMsPaket(x, marknadsLocales), patchaMsPaketValuta]) {
           const p = patch(s);
           if (p) s = p;
         }
-        if (s !== msPaket) filer['snippets/ms-paket.liquid'] = s;
+        filer['snippets/ms-paket.liquid'] = s;
       }
 
       await skrivOchVerifiera(tema.id, filer);
@@ -492,7 +505,7 @@ export const STEG = [
       for (let forsok = 1; forsok <= 3; forsok++) {
         const befintlig = await las('templates/product.json');
         if (!befintlig) break;
-        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, produkter: ctx.produkter.map((pk) => pk.p), butik: ctx.butik, nb }) };
+        const mall = { 'templates/product.json': byggProduktTemplate(befintlig, { produkt, produkter: ctx.produkter.map((pk) => pk.p), butik: ctx.butik, oversattningar }) };
         await skrivTemafiler(tema.id, mall);
         const fel = await verifieraSkrivning(tema.id, mall);
         if (fel.length === 0) {
@@ -864,6 +877,9 @@ export const STEG = [
           ? `recensions-CSV ur Drive-mappen ${pk.p.kallor.drive_mapp}`
           : `${antal} recensioner ur produktfilen → output/${pk.p.produkt.id}/judgeme-app-import.csv (Judge.mes mallformat, originaldatum)${utanDatum > 0 ? ` — 🖐 ${utanDatum} saknar datum, app-CSV:n kan inte byggas förrän de finns` : ''}`,
         `API-import med tools/judgeme-import.mjs bara om env ${tokenEnv} finns — annars laddar VA:n upp filen i appen`,
+        ...(ctx.butik.judgeme?.auto_oversattning === true
+          ? ['judgeme.auto_oversattning: true — app-CSV:n bär BARA originalen; Judge.me (Awesome) översätter dem på /<locale>']
+          : []),
       ];
     },
     async kor(ctx, pk) {
@@ -901,8 +917,14 @@ export const STEG = [
         }
         const appfil = join(mapp, 'judgeme-app-import.csv');
         let appCsv = null;
+        // Judge.me översätter själv när butiken har Awesome-planen och
+        // `judgeme.auto_oversattning: true` (CaraShell, Axels beslut 2026-09-16):
+        // då bär app-CSV:n BARA originalen — importeras de översatta raderna
+        // också ser varje kund alla språk blandade på samma sida. De översatta
+        // CSV:erna per locale skrivs ändå, som reserv för en butik utan planen.
+        const autoOversattning = ctx.butik.judgeme?.auto_oversattning === true;
         try {
-          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar });
+          appCsv = byggJudgeMeAppCsv(pk.p, { produktId: String(produkt.legacyResourceId ?? ''), produktUrl: `https://${ctx.shop?.primaryDomain?.host ?? ctx.shop?.myshopifyDomain ?? ''}/products/${pk.handle}`, oversattningar: autoOversattning ? {} : oversattningar });
         } catch (e) {
           return { manuell: `App-CSV:n kunde inte byggas: ${e.message}` };
         }
@@ -915,7 +937,8 @@ export const STEG = [
       const tokenEnv = ctx.butik.judgeme?.token_env ?? 'JUDGEME_API_TOKEN';
       const shopDomain = text(ctx.butik.judgeme?.shop_domain) ?? process.env.JUDGEME_SHOP_DOMAIN ?? ctx.shop?.myshopifyDomain ?? null;
       if (!process.env[tokenEnv] || !shopDomain) {
-        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv: ${klick}` };
+        const bara = ctx.butik.judgeme?.auto_oversattning === true ? ' (bara originalen — Judge.me översätter dem på marknadernas språk)' : '';
+        return { manuell: `Ingen Judge.me-token (env ${tokenEnv}) — VA:n importerar output/${pk.p.produkt.id}/judgeme-app-import.csv${bara}: ${klick}` };
       }
       const produkt = await produktIButiken(pk);
       const arg = [
@@ -939,12 +962,19 @@ export const STEG = [
     torrt(ctx) {
       const rader = lista(ctx.butik.butik?.marknader);
       if (rader.length === 0) return ['❌ butik.marknader är tom — steget stoppar (SE + NO är standard i varje OPS)'];
-      return rader.map((m) => `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence (valuta ${m.valuta ?? '?'} — lokal valuta slås på i admin)`);
+      return rader.map((m) => {
+        const extra = lista(m.lander).length > 0 ? ` + länderna ${lista(m.lander).join(', ')} i SAMMA marknad${m.lokala_valutor === true ? ' med lokala valutor' : ''}` : '';
+        return `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence + basvalutan ${lokalValuta(m.land) ?? '?'} satt via API${extra}`;
+      });
     },
     async kor(ctx) {
       const r = await sakerstallMarknader(ctx.butik, { torr: false });
       const manuella = r.filter((x) => x.webPresence?.manuell).map((x) => `${x.land}: ${x.webPresence.manuell}`);
-      const ut = r.map((x) => ({ land: x.land, locale: x.locale, marknad: x.marknad?.namn ?? null, status: x.marknad?.status ?? null, localeSkapad: x.localeLage?.skapad === true }));
+      const ut = r.map((x) => ({
+        land: x.land, locale: x.locale, marknad: x.marknad?.namn ?? null, status: x.marknad?.status ?? null, localeSkapad: x.localeLage?.skapad === true,
+        ...(x.marknad?.lander?.onskade?.length > 0 ? { lander: x.marknad.lander } : {}),
+        ...(x.marknad?.lokalaValutor ? { lokalaValutor: x.marknad.lokalaValutor } : {}),
+      }));
       if (manuella.length > 0) return { manuell: manuella.join(' · '), marknader: ut };
       return { marknader: ut };
     },
@@ -991,6 +1021,33 @@ export const STEG = [
       }
       if (manuella.length > 0) return { manuell: manuella.join(' · '), underlag: antal, utfall };
       return { underlag: antal, utfall };
+    },
+  },
+  {
+    // Fasta priser i marknadens EGEN valuta (ekonomi.marknadspriser i
+    // produktfilen): prislista + marknadskatalog + pris/jämförpris per
+    // variant. Receptet mättes för hand på CaraShell NOK 2026-09-11
+    // (API-GRANSER.md) men fanns aldrig som steg — NOK-priset sattes med tre
+    // lösa anrop. Efter `marknad` (behöver marknadens id) och efter `paket`
+    // (paketnivåernas fastpris_valutor räknas ur samma marknadspriser).
+    id: 'prislista',
+    namn: 'Prislistor per marknad (fasta priser i marknadens valuta)',
+    niva: 'produkt',
+    modul: 'prislista.mjs',
+    stoppar: false,
+    torrt(ctx, pk) {
+      const plan = byggPrislistplan(pk.p, ctx.butik);
+      if (plan.rader.length === 0 && plan.fel.length === 0) return ['inga ekonomi.marknadspriser i produktfilen — inget att göra (bara butikens valuta)'];
+      return [
+        ...plan.rader.map((r) => `${r.valuta} (${r.land}): pris ${r.pris}${r.jamforpris ? `, jämförpris ${r.jamforpris}` : ''} — prislista "${r.namn}" + katalog kopplad till marknaden + fast pris per variant`),
+        ...plan.fel.map((f) => `🖐 ${f}`),
+      ];
+    },
+    async kor(ctx, pk) {
+      const r = await sakerstallPrislistor(ctx, pk.p, { torr: false });
+      const ut = { prislistor: r.prislistor.map((x) => ({ valuta: x.valuta, land: x.land, id: x.id, skapad: x.skapad, varianter: x.varianter })) };
+      if (r.manuella.length > 0) return { manuell: r.manuella.join(' · '), ...ut };
+      return ut;
     },
   },
   // 18 qa, 19 checklista och 20 slutrapport körs ALLTID färskt (aldrig ur
@@ -1223,7 +1280,9 @@ async function korButiksQa(ctx) {
   } catch (e) {
     punkter.push({ namn: 'arbetstema', utfall: 'kritisk', detalj: e.message });
   }
-  const kctx = { shop: ctx.shop };
+  // Varje vy läses som kund i RÄTT land (kundvy-kor.landPerLocale) — annars
+  // väljer Shopify marknad efter containerns IP (USA ⇒ USD på svenska sidan).
+  const kctx = { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   const start = await hamtaEllerNull(() => hamtaStartsida(kctx, { temaId: tema }));
   punkter.push(...kundvyPunkter({ html: start.html, felmeddelande: start.fel, losenordSatt, butik: ctx.butik, produkt: ctx.p, vad: 'startsida' }));
 
@@ -1261,7 +1320,7 @@ async function korProduktQa(ctx, pk, butiksQa) {
   const kontroll = kontrolleraLaunch(medHandleSomId(pk.p), { shop: ctx.shop, produkt, policyer: ctx.shop?.shopPolicies ?? null });
   const punkter = [...kontroll.punkter];
   const losenordSatt = Boolean(process.env.SHOPIFY_STOREFRONT_PASSWORD);
-  const kctx = butiksQa.kctx ?? { shop: ctx.shop };
+  const kctx = butiksQa.kctx ?? { shop: ctx.shop, landPerLocale: landPerLocale(ctx.butik) };
   await sov(2500);
   const sida = await hamtaEllerNull(() => hamtaProduktsida(kctx, pk.handle, { temaId: butiksQa.tema }));
   punkter.push(...kundvyPunkter({ html: sida.html, felmeddelande: sida.fel, losenordSatt, butik: ctx.butik, produkt: pk.p, vad: 'produktsida' }));

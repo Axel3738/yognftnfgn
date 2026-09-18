@@ -1,0 +1,423 @@
+{
+  "CaraShellFront_US_CS_1": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 13.11,
+    "srt": "us/CaraShellFront_US_CS_1.srt",
+    "fil": "us/CaraShellFront_US_CS_1.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_CS_1.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 10 cues |   QA-bilder att titta på: CaraShellFront_US_CS_1.mp4.qa-1.png, CaraShellFront_US_CS_1.mp4.qa-2.png, CaraShellFront_US_CS_1.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": " → 13.2s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 13.2,\n   \"medel_db\": -19.5,\n   \"max_db\": -1.3,\n   \"langd_kalla\": 16.56,\n   \"langddrift\": 0.203,\n   \"tal_ny\": 11.259999999999998,\n   \"sista_replik_slut\": 12.51,\n   \"tal_kalla\": 14.600999999999999,\n   \"taltapp\": 0.229\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 6,
+      "avvikelser": [
+        {
+          "cue": 2,
+          "manus": "Windshield thermal cover, ninety-nine dollars.",
+          "hort": "Windshield thermal cover, $99",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 5,
+          "manus": "Compare at one hundred twenty-four dollars.",
+          "hort": "Compare at $124",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 6,
+          "manus": "From CaraShell.",
+          "hort": "From Kara Shell",
+          "saknas": [
+            "carashell"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_CS_2": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 14.98,
+    "srt": "us/CaraShellFront_US_CS_2.srt",
+    "fil": "us/CaraShellFront_US_CS_2.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_CS_2.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 11 cues |   QA-bilder att titta på: CaraShellFront_US_CS_2.mp4.qa-1.png, CaraShellFront_US_CS_2.mp4.qa-2.png, CaraShellFront_US_CS_2.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "S_CS_2.mp4\": {\n  \"fel\": [],\n  \"noteringar\": [],\n  \"matvarden\": {\n   \"langd_ny\": 15.0,\n   \"medel_db\": -19.7,\n   \"max_db\": -1.7,\n   \"langd_kalla\": 17.61,\n   \"langddrift\": 0.148,\n   \"tal_ny\": 13.13,\n   \"sista_replik_slut\": 14.38,\n   \"tal_kalla\": 15.646999999999998,\n   \"taltapp\": 0.161\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 6,
+      "avvikelser": [
+        {
+          "cue": 2,
+          "manus": "Ninety-nine dollars.",
+          "hort": "$99",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 3,
+          "manus": "Windshield thermal cover, ninety-nine dollars. Cool in summer, warm in winter, dark when you sleep.",
+          "hort": "Windshield thermal cover, $99. Cool in summer, warm in winter, dark when you sleep",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 6,
+          "manus": "Windshield cover, from CaraShell.",
+          "hort": "Windshield cover from Caracelle",
+          "saknas": [
+            "carashell"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_CS_3": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 15.71,
+    "srt": "us/CaraShellFront_US_CS_3.srt",
+    "fil": "us/CaraShellFront_US_CS_3.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "880:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_CS_3.mp4  band 880:1084 (flagga), sudd: bandet självt (grannarna har text) (blur 30), 13 cues |   QA-bilder att titta på: CaraShellFront_US_CS_3.mp4.qa-1.png, CaraShellFront_US_CS_3.mp4.qa-2.png, CaraShellFront_US_CS_3.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "s 18 % (19.2s → 15.8s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 15.8,\n   \"medel_db\": -19.2,\n   \"max_db\": -1.5,\n   \"langd_kalla\": 19.21,\n   \"langddrift\": 0.178,\n   \"tal_ny\": 13.860000000000001,\n   \"sista_replik_slut\": 15.11,\n   \"tal_kalla\": 17.25,\n   \"taltapp\": 0.197\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 6,
+      "avvikelser": [
+        {
+          "cue": 2,
+          "manus": "Windshield thermal cover, ninety-nine dollars.",
+          "hort": "Windshield thermal cover, $99",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 4,
+          "manus": "Compare at one hundred twenty-four dollars.",
+          "hort": "Compare at $124",
+          "saknas": [
+            "dollars"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_G_1": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 13.4,
+    "srt": "us/CaraShellFront_US_G_1.srt",
+    "fil": "us/CaraShellFront_US_G_1.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_G_1.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 11 cues |   QA-bilder att titta på: CaraShellFront_US_G_1.mp4.qa-1.png, CaraShellFront_US_G_1.mp4.qa-2.png, CaraShellFront_US_G_1.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "ängden ändrades 20 % (16.8s → 13.4s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 13.4,\n   \"medel_db\": -20.0,\n   \"max_db\": -1.2,\n   \"langd_kalla\": 16.8,\n   \"langddrift\": 0.202,\n   \"tal_ny\": 12.05,\n   \"sista_replik_slut\": 12.8,\n   \"tal_kalla\": 15.334,\n   \"taltapp\": 0.214\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 4,
+      "avvikelser": [
+        {
+          "cue": 2,
+          "manus": "Windshield thermal cover, ninety-nine dollars. Cool in summer, warm in winter, dark when you sleep.",
+          "hort": "Windshield thermal cover, $99. Cool in summer, warm in winter, dark when you sleep",
+          "saknas": [
+            "dollars"
+          ]
+        },
+        {
+          "cue": 3,
+          "manus": "Compare at one hundred twenty-four dollars. Free shipping.",
+          "hort": "Compare at $124. Free shipping",
+          "saknas": [
+            "dollars"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_G_2": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 14.67,
+    "srt": "us/CaraShellFront_US_G_2.srt",
+    "fil": "us/CaraShellFront_US_G_2.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_G_2.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 10 cues |   QA-bilder att titta på: CaraShellFront_US_G_2.mp4.qa-1.png, CaraShellFront_US_G_2.mp4.qa-2.png, CaraShellFront_US_G_2.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "gden ändrades 21 % (18.6s → 14.7s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 14.7,\n   \"medel_db\": -19.7,\n   \"max_db\": -1.3,\n   \"langd_kalla\": 18.64,\n   \"langddrift\": 0.211,\n   \"tal_ny\": 13.07,\n   \"sista_replik_slut\": 14.07,\n   \"tal_kalla\": 16.934,\n   \"taltapp\": 0.228\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 5,
+      "avvikelser": [
+        {
+          "cue": 2,
+          "manus": "Windshield thermal cover, ninety-nine dollars, compare at one hundred twenty-four.",
+          "hort": "Windshield thermal cover, $99, compare at $124",
+          "saknas": [
+            "dollars"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_G_3": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 16.51,
+    "srt": "us/CaraShellFront_US_G_3.srt",
+    "fil": "us/CaraShellFront_US_G_3.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_G_3.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 11 cues |   QA-bilder att titta på: CaraShellFront_US_G_3.mp4.qa-1.png, CaraShellFront_US_G_3.mp4.qa-2.png, CaraShellFront_US_G_3.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "ngden ändrades 15 % (19.5s → 16.6s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 16.6,\n   \"medel_db\": -19.6,\n   \"max_db\": -1.3,\n   \"langd_kalla\": 19.53,\n   \"langddrift\": 0.15,\n   \"tal_ny\": 14.66,\n   \"sista_replik_slut\": 15.91,\n   \"tal_kalla\": 17.567,\n   \"taltapp\": 0.165\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 6,
+      "avvikelser": [
+        {
+          "cue": 1,
+          "manus": "The best Christmas gift for an RV lover. Windshield thermal cover, ninety-nine dollars.",
+          "hort": "The best Christmas gift for an RV lover. Windshield thermal cover, $99",
+          "saknas": [
+            "dollars"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_SP_1": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 18.16,
+    "srt": "us/CaraShellFront_US_SP_1.srt",
+    "fil": "us/CaraShellFront_US_SP_1.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_SP_1.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 14 cues |   QA-bilder att titta på: CaraShellFront_US_SP_1.mp4.qa-1.png, CaraShellFront_US_SP_1.mp4.qa-2.png, CaraShellFront_US_SP_1.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "gden ändrades 16 % (21.7s → 18.2s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 18.2,\n   \"medel_db\": -19.7,\n   \"max_db\": -1.4,\n   \"langd_kalla\": 21.68,\n   \"langddrift\": 0.161,\n   \"tal_ny\": 16.56,\n   \"sista_replik_slut\": 17.56,\n   \"tal_kalla\": 19.969,\n   \"taltapp\": 0.171\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 5,
+      "avvikelser": [
+        {
+          "cue": 1,
+          "manus": "Sofia writes: protects well, blacks out nicely.",
+          "hort": "Sophia writes, \"Protects well, blacks out nicely.\"",
+          "saknas": [
+            "sofia"
+          ]
+        },
+        {
+          "cue": 2,
+          "manus": "Per writes: very happy, easy to set up.",
+          "hort": "Pair rights, very happy, easy to set up",
+          "saknas": [
+            "writes"
+          ]
+        },
+        {
+          "cue": 5,
+          "manus": "Windshield cover, from CaraShell.",
+          "hort": "Windshield cover from Carchelle",
+          "saknas": [
+            "carashell"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_SP_2": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 18.92,
+    "srt": "us/CaraShellFront_US_SP_2.srt",
+    "fil": "us/CaraShellFront_US_SP_2.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_SP_2.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 15 cues |   QA-bilder att titta på: CaraShellFront_US_SP_2.mp4.qa-1.png, CaraShellFront_US_SP_2.mp4.qa-2.png, CaraShellFront_US_SP_2.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "gden ändrades 17 % (22.8s → 19.0s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 19.0,\n   \"medel_db\": -20.1,\n   \"max_db\": -1.7,\n   \"langd_kalla\": 22.81,\n   \"langddrift\": 0.167,\n   \"tal_ny\": 17.57,\n   \"sista_replik_slut\": 18.32,\n   \"tal_kalla\": 21.356,\n   \"taltapp\": 0.177\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 4,
+      "avvikelser": [
+        {
+          "cue": 1,
+          "manus": "Sofia writes: it really protects well and blacks out nicely.",
+          "hort": "Sophia writes, \"It really protects well and blacks out nicely.\"",
+          "saknas": [
+            "sofia"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_SP_3": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 18.08,
+    "srt": "us/CaraShellFront_US_SP_3.srt",
+    "fil": "us/CaraShellFront_US_SP_3.mp4",
+    "captions": {
+      "exit": 0,
+      "band": "940:1084",
+      "ogonlast_ok": false,
+      "utskrift": "✓ /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-16-us-termoskyddet/us/CaraShellFront_US_SP_3.mp4  band 940:1084 (flagga), sudd: remsa under bandet (blur 12), 13 cues |   QA-bilder att titta på: CaraShellFront_US_SP_3.mp4.qa-1.png, CaraShellFront_US_SP_3.mp4.qa-2.png, CaraShellFront_US_SP_3.mp4.qa-3.png |   ✓ ingen text utanför bandet"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "s 22 % (23.3s → 18.1s) — inte ett fel här\"\n  ],\n  \"matvarden\": {\n   \"langd_ny\": 18.1,\n   \"medel_db\": -19.9,\n   \"max_db\": -1.1,\n   \"langd_kalla\": 23.28,\n   \"langddrift\": 0.223,\n   \"tal_ny\": 16.73,\n   \"sista_replik_slut\": 17.48,\n   \"tal_kalla\": 21.826999999999998,\n   \"taltapp\": 0.234\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 4,
+      "avvikelser": [
+        {
+          "cue": 1,
+          "manus": "Lars writes: protects well against sun and heat, I'm happy. Sofia writes: it protects well and blacks out nicely. Cooler inside, no one can see in, dark all night. Per: happy, easy to set up.",
+          "hort": "Lars writes, \"Protects well against sun and heat. I'm happy.\" Sophia writes, \"It protects well and blacks out nicely. Cooler inside. No one can see in. Dark all night. Pair. Happy. Easy to set up.\"",
+          "saknas": [
+            "sofia"
+          ]
+        }
+      ]
+    }
+  },
+  "CaraShellFront_US_PD_1": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 15.7,
+    "srt": "us/CaraShellFront_US_PD_1.srt",
+    "fil": "us/CaraShellFront_US_PD_1.mp4",
+    "captions": {
+      "exit": 3,
+      "band": "940:1084",
+      "ogonlast_ok": true,
+      "utskrift": "❌ text ovanför bandet (rad 880–936, 29% av frames) — kör om med större --band"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "US_PD_1.mp4\": {\n  \"fel\": [],\n  \"noteringar\": [],\n  \"matvarden\": {\n   \"langd_ny\": 15.7,\n   \"medel_db\": -19.7,\n   \"max_db\": -1.1,\n   \"langd_kalla\": 16.14,\n   \"langddrift\": 0.027,\n   \"tal_ny\": 14.35,\n   \"sista_replik_slut\": 15.1,\n   \"tal_kalla\": 15.580000000000002,\n   \"taltapp\": 0.079\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 4,
+      "avvikelser": []
+    }
+  },
+  "CaraShellFront_US_PD_2": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 15.52,
+    "srt": "us/CaraShellFront_US_PD_2.srt",
+    "fil": "us/CaraShellFront_US_PD_2.mp4",
+    "captions": {
+      "exit": 3,
+      "band": "940:1084",
+      "ogonlast_ok": true,
+      "utskrift": "❌ text ovanför bandet (rad 880–936, 26% av frames) — kör om med större --band"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "raShellFront_US_PD_2.mp4\": {\n  \"fel\": [],\n  \"noteringar\": [],\n  \"matvarden\": {\n   \"langd_ny\": 15.6,\n   \"medel_db\": -19.7,\n   \"max_db\": -1.5,\n   \"langd_kalla\": 16.37,\n   \"langddrift\": 0.047,\n   \"tal_ny\": 14.67,\n   \"sista_replik_slut\": 14.92,\n   \"tal_kalla\": 15.94,\n   \"taltapp\": 0.08\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 2,
+      "avvikelser": []
+    }
+  },
+  "CaraShellFront_US_PD_3": {
+    "status": "OK",
+    "varning": false,
+    "langd_s": 17.57,
+    "srt": "us/CaraShellFront_US_PD_3.srt",
+    "fil": "us/CaraShellFront_US_PD_3.mp4",
+    "captions": {
+      "exit": 3,
+      "band": "940:1084",
+      "ogonlast_ok": true,
+      "utskrift": "❌ text ovanför bandet (rad 880–936, 29% av frames) — kör om med större --band"
+    },
+    "rostkoll": {
+      "exit": 0,
+      "resultat": {
+        "raw": "_PD_3.mp4\": {\n  \"fel\": [],\n  \"noteringar\": [],\n  \"matvarden\": {\n   \"langd_ny\": 17.6,\n   \"medel_db\": -19.5,\n   \"max_db\": -1.2,\n   \"langd_kalla\": 17.27,\n   \"langddrift\": 0.019,\n   \"tal_ny\": 15.719999999999999,\n   \"sista_replik_slut\": 16.97,\n   \"tal_kalla\": 16.497,\n   \"taltapp\": 0.047\n  }\n }\n}\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend.\n"
+      }
+    },
+    "scribe": {
+      "cues": 6,
+      "avvikelser": []
+    }
+  }
+}

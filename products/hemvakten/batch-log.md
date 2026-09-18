@@ -203,3 +203,234 @@ Lediga AD-ID:n lästa ur OPS-kontot och hubbens 48 rader (batch #2 inräknad).
 
 Backlog var tom inför ronden. VARIABELTAGGAR överst i varje brief
 (`products/hemvakten/batch-03/…/brief.md`). Notion-resultat i `batch-03/notion-resultat.json`.
+
+---
+
+## Leveransrunda 2026-09-13 (`/ops-leverans hemvakten/overvakningskameran`)
+
+**0 annonser live.** Kön hade 7 färdiga creatives (3 video, 4 bild), men det finns
+ingen ACTIVE SE-kampanj att ladda upp i: `HEIMGUARD_SE_Övervakningskameran` pausades
+för hand 11:06 samma dag. PAUSED med spend är ett beslut — varken kön,
+`ops-till-meta.mjs` (torrkörd, vägrade) eller den här körningen rörde den.
+
+| Annons | Typ | Pris | Dom |
+|---|---|---|---|
+| `HeimGuard_CS_11_H1` | video | 799/1000 ✅ | **Draft** — slutkortet säger `heimgard.se`, butiken är `heimguard.se` (domänen svarar inte alls, HTTP 000). Dessutom "30 dagars öppet kö." → "köp". |
+| `HeimGuard_SP_17_H1` | video | inget pris ✅ | Klar, väntar på kampanj. Anm: rosa/posteriserad färgton i hookens 3 första sek; leverantörens b-roll bär en `5G`-bricka fast produkten är 2,4/5 GHz wifi. |
+| `HeimGuard_SP_17_H2` | video | inget pris ✅ | Klar, väntar på kampanj. Samma `5G`-bricka i b-rollen. |
+| `Overvakningskamera_BOF_7_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. |
+| `Overvakningskamera_BOF_8_1` | bild | 799/1000 ✅ | **Draft** — rubriken "Klarar den svensk vinter?" är fel svenska, ska vara "den svenska vintern". |
+| `Overvakningskamera_BOF_9_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. |
+| `Overvakningskamera_LI_2_1` | bild | 799/1000 ✅ | Klar, väntar på kampanj. Alla fem påståenden kontrollerade mot produktsidan. |
+
+De sex `Overvakningskamera_*_H1`-raderna (Bäverbutikens prefix) lämnades parkerade i
+`Creative strat review` av kön — rörda av ingen.
+
+**Avsteg från kommandots stoppregel, medvetet:** regeln säger att priset är det enda
+stoppet för video och att stavfel laddas upp med anmärkning. `CS_11_H1` stoppades ändå,
+för `heimgard.se` är ingen stavning i manus utan en död adress i annonsens sista bild —
+samma sorts fel som ett felaktigt pris. Axel kan överpröva.
+
+---
+
+## Översättning NO — 2026-09-13 15:40 (`/ops-oversatt hemvakten/overvakningskameran`, körning nr 2)
+
+**0 översatta, 0 uppladdade, 0 HeyGen-credits** (8 497 före → 8 497 efter).
+Kön `SE-ACTIVE to be translated` var tom (0 av hubbens 69 rader), och
+NO-kampanjen `HEIMGUARD_NO_Overvåkingskamera` är PAUSED med 4 141 kr spend.
+PAUSED med spend är ett beslut — kampanjen rördes inte.
+
+Metas aktivitetslogg (actor `Axel Odhner`): NO pausad 11:06 CEST, SE pausad
+11:06, **SE påslagen igen 15:06**. Dagens leveransrunda 13:40 hann däremellan
+och laddade därför upp 0 av 7. Den spärren fanns inte längre när den här
+körningen startade, så jag försökte återstarta leveransrundan.
+
+⚠️ **Ny fallgrop, mätt här: `fire_trigger` på en rutin med FAST session väcker
+inte den sessionen — den mintar en ny, tom.** Anropet på
+`trig_01MTMMgsTxZKVxWin6C1AXNQ` (fast session `session_019B13NJBCepT1wo5sFG59F4`)
+gav i stället `session_01SmbW5A9GrYGaEnGSJRww1W`: `origin: force_run_trigger`,
+taggar `routine:agent-minted` + `routine-lineage-none`, **`sources` tomt** — alltså
+inget repo, ingen CLAUDE.md, precis den tomma container CLAUDE.md varnar för.
+Den gav upp efter 68 sekunder och laddade upp noll. Den fasta sessionen stod
+kvar som IDLE med oförändrad `updated_at`. Kontrollerat 18:05 UTC: fortfarande
+38 SE-annonser, noll skapade i dag, kön oförändrat 5 rader.
+
+`SendMessage` når inte heller en annan molnsession (`ListAgents` ser bara den
+egna maskinen). **Det som fungerar är `create_trigger` med
+`persistent_session_id` + `run_once_at`** — samma mekanism som cron-triggern
+använder varje dag. Skapad 18:08 UTC: `trig_01E9zjJoH9AFshHDY9bPpqWC`, fyrar
+18:20 UTC in i `session_019B13NJBCepT1wo5sFG59F4` med hela läget och de fem
+raderna angivna. Annars hade de stått stilla till 13:40 i morgon.
+
+**Rotorsak funnen (detaljerna i `dna.md`):** de 27 NO-annonserna länkar till
+`/nb`-sidan **utan** `?country=NO` och visar därför 799,00 kr i SEK för norska
+kunder; samma sida med parametern svarar 781,00 NOK. NOK var påslaget hela
+tiden. HeimGuards NO-kampanj byggdes 2026-09-09, en dag före fixen som lade
+parametern i `kampanj.mjs`. NO ROAS 1,28 mot SE:s 1,50 ska alltså inte läsas
+som en creative-dom.
+
+**Rättat i repot samma körning:** `.claude/commands/ops-oversatt.md` steg 1
+skilde inte på "kampanjen saknas" och "ägaren har pausat den" och rådde till
+`/ny-annonser` i båda fallen — det hade byggt en andra NO-kampanj bredvid den
+pausade. Nytt avsnitt `factory/PROCESS.md` → "Marknaden är pausad av ägaren".
+
+Batchfiler: `market-expansion/ops/hemvakten/2026-09-13/`. Discord:
+`#annons-uppladdning`, ping bara på Norge-beslutet.
+
+### Omkörning samma kväll — 4 annonser live
+
+Axel startade om `HEIMGUARD_SE_Övervakningskameran` själv 15:06 (Metas
+aktivitetslogg, actor Axel Odhner: pausad 11:06, påslagen 15:06). Kampanjen
+verifierad ACTIVE i kontot före uppladdning; NO-kampanjen lämnad PAUSED.
+Filerna kontrollerade med md5 mot morgonens granskning — identiska, så QA:n
+från förmiddagen gäller.
+
+| Annons | Adset | Annons-ID | Copy |
+|---|---|---|---|
+| `HeimGuard_SP_17_H1` | SP | `120249078128770172` | briefens COPY CARD |
+| `HeimGuard_SP_17_H2` | SP | `120249078136150172` | briefens COPY CARD (samma, hookvarianten är variabeln) |
+| `HeimGuard_BOF_7_1` | BOF | `120249078146060172` | sonnet-subagent (ingen COPY CARD i bildbriefen) |
+| `HeimGuard_BOF_9_1` | BOF | `120249078166950172` | sonnet-subagent |
+
+Alla fyra tillbakalästa ACTIVE. De två bildraderna ommärkta från Bäverbutikens
+prefix till butikens eget vid uppladdningen. Alla fyra flyttade till
+`SE-ACTIVE to be translated`.
+
+**`Overvakningskamera_LI_2_1` hölls.** Inget fel på creativen — priset stämmer
+och alla fem påståenden i listan är verifierade mot produktsidan. Konceptet är
+LI, och LI-adsetet är PAUSED för hand sedan 2026-09-10. Ett pausat adset är ett
+beslut: ingen uppladdning dit, adsetet orört. Raden ligger kvar i
+`To be Reviewed` och går upp av sig själv om LI slås på.
+
+**Copy-not:** `BOF_7_1`:s första rubrikförslag var "2,4 och 5 GHz wifi, ingen
+router" — tvetydigt, kunde läsas som att kameran funkar utan router, vilket är
+falskt. Subagenten skrev om till "Ja, funkar med 2,4 och 5 GHz wifi".
+
+### Väckningen fungerade — `create_trigger`, inte `fire_trigger`
+
+Kontrollerat 18:59 UTC av översättningsrundan som beställde omkörningen:
+engångsrutinen `trig_01E9zjJoH9AFshHDY9bPpqWC` fyrade 18:20 UTC in i
+leveransrundans FASTA session, som körde, laddade upp fyra annonser, flyttade
+raderna och **pushade** (`dd2c700`). SE-kampanjen: 38 → 42 annonser.
+
+Skillnaden mot det första försöket samma kväll är hela poängen:
+`fire_trigger` på samma rutin mintade en tom, repolös session som gav upp efter
+68 sekunder, medan `create_trigger` med `persistent_session_id` + `run_once_at`
+landade i rätt session med repo, CLAUDE.md och pushrättighet. Regeln står nu i
+CLAUDE.md under rutinvarningarna.
+
+⚠️ **Konsekvens för i morgon:** de fyra raderna står nu i
+`SE-ACTIVE to be translated` och möter en NO-kampanj som är pausad av Axel.
+Översättningsrundan 15:40 ska då HÅLLA kön enligt `factory/PROCESS.md`
+("Marknaden är pausad av ägaren") — inte flytta raderna, inte rendera, inte
+föreslå `/ny-annonser`.
+
+---
+
+## Axels beslut 2026-09-13 kväll: **Norge av tills vidare** (alternativ A)
+
+Frågan ställdes av översättningsrundan samma kväll, med tre alternativ. Axel
+svarade **A**.
+
+**Vad som gjordes:** rutinen `Översättning NO: hemvakten`
+(`trig_01MU7mRV7qFULBF2tTvpRc8K`) står nu `enabled: false` och heter
+"Översättning NO: hemvakten (PAUSAD 2026-09-13 — Axels beslut A, Norge av)".
+Den slutar alltså rapportera en tom kö varje dag 15:40.
+
+**Vad som INTE gjordes, med flit:**
+- NO-kampanjen `HEIMGUARD_NO_Overvåkingskamera` rördes inte. Den är PAUSED med
+  4 141 kr spend — Axels beslut, inte något en rutin får slå på.
+- De fyra raderna i `SE-ACTIVE to be translated` (`HeimGuard_SP_17_H1`,
+  `SP_17_H2`, `BOF_7_1`, `BOF_9_1`) flyttades inte och fick ingen ny status.
+  Kön HÅLLS enligt `factory/PROCESS.md` → "Marknaden är pausad av ägaren".
+  De ligger kvar som en färdig kö den dagen Norge slås på.
+- `?country=NO`-felet på de 27 NO-annonserna lagades inte. Det ingår i
+  alternativ C, som Axel valde bort. Det är fortfarande sant och står i
+  `dna.md` — läs det innan någon startar om Norge.
+- `TACKLEBAY_NO_Spöhållaren` (ACTIVE, ROAS 0,44 på 2 981 kr) rördes inte.
+  Axel svarade inte på den frågan, och en annan butiks kampanj ändras aldrig
+  av en HeimGuard-körning. Frågan står kvar.
+
+**Det här påverkar inte Sverige.** `HEIMGUARD_SE_Övervakningskameran` är ACTIVE,
+leveransrundan 13:40 och nattvakten 00:01 kör vidare som vanligt. Nattvakten
+läser ändå bara marknad SE, så den märker ingen skillnad.
+
+**För att starta Norge igen** krävs tre saker i den ordningen: (1) Axel säger
+till, (2) `?country=NO` läggs på annonslänkarna — annars upprepas exakt samma
+utfall, (3) rutinen sätts `enabled: true` med `update_trigger`. Kön töms då av
+sig själv nästa 15:40.
+
+---
+
+## Leveransrunda 2026-09-14 — batch #3 ut, 7 annonser live
+
+Carl levererade batch #3. Kön hade 9 rader: 8 video (7 nya + omgjorda `CS_11_H1`)
+och LI-bilden som fortfarande är blockerad.
+
+| Annons | Adset | Annons-ID | Pris i annonsen | Dom |
+|---|---|---|---|---|
+| `HeimGuard_CS_11_H1` | CS | `120249087261500172` | 799/1000 ✅ | Live. Domänen rättad till `heimguard.se`. Kvar: "öppet **kop**" (ska vara köp). |
+| `HeimGuard_RI_4_H1` | RI | `120249087268180172` | 799 ✅ | Live. "Heimguard 799 **unio**", "Mobilen **sörrar**". |
+| `HeimGuard_CO_5_H1` | CO | `120249087282300172` | 799/1000 ✅ | Live. "Heimguard", "gör noll döda" saknar *vinklar*. |
+| `HeimGuard_TR_2_H1` | **TR (ny)** | `120249087297600172` | 799 ✅ | Live. Adsetet fanns inte — uppladdaren klonade RI. Svart första bildruta. "Få **linsor**". |
+| `HeimGuard_PD_9_H1` | PD | `120249087311770172` | 799/1000 ✅ | Live. "**Lärmet** vet det" (ska vara Larmet). |
+| `HeimGuard_SP_19_H1` | SP | `120249087380710172` | inget pris ✅ | Live. "har vi **en eh vi**", "**linsor**". |
+| `HeimGuard_PD_6_H1` | PD | `120249087463960172` | inget pris ✅ | Live. "**linsor**". |
+| `HeimGuard_FD_2_H1` | — | — | **790** ✗ | **Draft.** "Heimgard **790 unior**" — fel pris, fel brand, nonsensord i samma rad. Även "ligger **mörd**" och "**AIN** skiljer". |
+| `Overvakningskamera_LI_2_1` | LI | — | 799/1000 ✅ | Hållen andra dygnet. LI-adsetet PAUSED för hand sedan 2026-09-10, orört. |
+
+Copyn togs ur briefarnas COPY CARD, som ligger lokalt i
+`products/hemvakten/batch-0{2,3}/video-ads-briefs/` — ingen subagent behövdes.
+
+**Rotorsaken skriven till `dna.md`:** bildtexterna är automattranskriberade ur
+voiceovern i stället för tagna ur briefens manustabell. Felen är samma sort i alla
+sju videor, och i `FD_2_H1` drabbade det priset. Åtgärden ligger hos redigeraren:
+texta från tabellen i briefens avsnitt 4.
+
+**Stoppet på `FD_2_H1` är en bedömning, inte regeln.** 790 mot 799 är 1,1 % och
+kommandots stoppgräns går vid 20 %. Raden bär ändå fel pris, fel brandnamn och ett
+påhittat ord samtidigt — då är den trasig, inte slarvig. Axel kan överpröva.
+
+Metas ratelimit på det delade OPS-kontot slog under körningen (kod 17). Uppladdaren
+väntade ut den själv; alla sju kom upp.
+
+### Live-status 2026-09-15
+
+Batch #2 live: `SP_17_H1`, `SP_17_H2`, `CS_11_H1` (2026-09-14). Kvar hos Carl: `SP_18_1`,
+`TR_1_H1`, `SR_1_H1`, `FD_1_H1`.
+Batch #3 live: `PD_6_H1`, `SP_19_H1`, `PD_9_H1`, `TR_2_H1`, `CO_5_H1`, `RI_4_H1` (2026-09-14).
+Kvar: 15. Alla nya under 12 kr — data tidigast om några dygn.
+
+---
+
+## Leveransrunda 2026-09-15 — batch #3 färdiglevererad
+
+Kön hade 4 rader: tre sista videorna ur batch #3 och LI-bilden som fortfarande är
+blockerad. `FD_2_H1` har inte kommit tillbaka från `Draft`.
+
+| Annons | Adset | Annons-ID | Pris | Dom |
+|---|---|---|---|---|
+| `HeimGuard_PD_8_H1` | PD | `120249104142940172` | 799/1000 ✅ | Live. Bildtext "**CD:** 799 kronor istället" — shot-list-etiketten ur briefen har lästs som manus. "Ingen falsklarm" ska vara "Inga". |
+| `HeimGuard_SP_20_H1` | SP | `120249104151690172` | 799/1000 ✅ | Live. "**Hemguard** kostar" — tredje stavningsvarianten i veckan. |
+| `HeimGuard_BOF_10_H1` | BOF | `120249104165170172` | 799/1000 ✅ | Live. Logotypkortet stavar HEIMGUARD rätt. |
+| `Overvakningskamera_LI_2_1` | LI | — | 799/1000 ✅ | Hållen tredje dygnet. LI-adsetet PAUSED för hand, orört. |
+
+**Två fynd skrivna till `dna.md`:**
+
+1. **Konkurrenternas märken i leverantörens b-roll** — `imou` (vattenstämpel OCH
+   tryckt på kamerahuset i uppackningen), `Dahua`, `EZVIZ`. Alla tre videorna.
+   `BOF_10_H1` frågar "Aldrig hört talas om HeimGuard?" och packar sedan upp en
+   imou-kamera. Uppladdat ändå: priset stämmer, stoppregeln för video är priset,
+   och felet sitter i hela bildbanken — att stoppa tre annonser fixar det inte.
+   **Ägarbeslut, öppen fråga till Axel.**
+2. **Recensionstalet har vuxit ur briefen.** Briefarna säger "exakt 10 recensioner,
+   alla fem stjärnor". Butiken 2026-09-15: **16 recensioner, snitt 4,94** — alltså
+   är "alla fem stjärnor" inte sant längre. Videorna har "10 RECENSIONER" inbränt
+   och visar samtidigt 16 i sin egen slutbild. Understatement skadar ingen kund, så
+   de gick upp; **annonstexten rättades** före uppladdning av en sonnet-subagent
+   till "16 kunder har betygsatt HeimGuard, snitt 4,94 av 5". Läs recensionstalet
+   ur butiken vid varje körning, precis som priset.
+
+**Not om spenden:** gårdagens sju annonser hade tillsammans 25 kr och noll köp efter
+ett dygn. Under grinden (300 kr / 3 köp) — ingen dom, men värt att veta att de nya
+creativesen får väldigt lite av CBO:ns budget.

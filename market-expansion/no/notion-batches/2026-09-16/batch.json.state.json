@@ -1,0 +1,58 @@
+{
+ "takovertrekk_GT_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/ea65fd2ade57447e956622b84247f37b/original.mp4",
+  "proofreadId": "6c3afb8812ad41dfa9044fff44d8aaf1-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "bd49630c8b7b43209bcaca2f660a4e92-nb",
+  "downloaded": true
+ },
+ "takovertrekk_GT_5_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/91c5c5a8f2f645a081f629f43c288e9e/original.mp4",
+  "proofreadId": "425417aea8614ef8853aa9701abad3ef-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "32b20ee6ef604a91a31c17d1c8e7ac33-nb",
+  "downloaded": true
+ },
+ "takovertrekk_PD_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4a740394b45545b4bb28d6a9d4ff9e83/original.mp4",
+  "proofreadId": "7450ac24525047ddb54baf82c1bff488-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "bb39ce4df456436ab443126718ec915f-nb",
+  "downloaded": true
+ },
+ "takovertrekk_CO_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/c044330bae7343f2a6200b085928e32a/original.mp4",
+  "proofreadId": "d580a892080148d399b0b6ddda6dc66d-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b3fd2152b0894a2d8e636a4ad439dee3-nb",
+  "downloaded": true
+ },
+ "takovertrekk_RI_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/270ae8e8e1974991964b2b3cf5f547c7/original.mp4",
+  "proofreadId": "4a82baabd0f4405cbd476dbfd8486749-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9fe69c1b72234aa6b1f0ca183c082e68-nb",
+  "downloaded": true
+ },
+ "takovertrekk_SP_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/1e39be8ddf3e4b66aa9d19bf62c6fb81/original.mp4",
+  "proofreadId": "178d7e75d255416b849bfeef25312fb0-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d8a56338f9cf416d85e16f48f8de11c5-nb",
+  "downloaded": true
+ },
+ "takovertrekk_UG_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/31ac0dc014c149b8b193bb903057d428/original.mp4",
+  "proofreadId": "7ae04373a6524bfb885028b335428761-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6c408b0e3db045efbfb51cb9ae27bf95-nb",
+  "downloaded": true
+ }
+}

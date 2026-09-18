@@ -253,3 +253,173 @@ Batch #2 (4 fable / 3 sonnet) är inte live än (hos redigeraren). Batch #3: 11 
   `To be Reviewed`. Någon (Axel eller `/granska`) måste flytta dem, annars står de.
 - **Metas rate limit på det delade OPS-kontot** slog 2026-09-12 när fem nattvakter
   startade 00:01. Rutinplatser med egen minut finns i registret sedan 2026-09-12.
+- **Kampanjnamnet bär ett FÖRÅLDRAT break-even-tal.**
+  `HEIMGUARD_SE_Övervakningskameran | BE-ROAS 2,11 | 2026-09-08` heter så för att
+  2,11 räknades MED moms. Momsfrågan avgjordes 2026-09-09 (Axel: räknas utan moms)
+  och det gällande talet står i `factory/produkter/overvakningskameran.yaml`:
+  **break-even ROAS 1,49 / CPA 538 kr**. Mätt 2026-09-13 i leveransrundan: läser man
+  namnet i stället för produktfilen ser 7d ROAS 1,61 ut som en förlust (mot 2,11) när
+  den i själva verket ligger ÖVER break-even (mot 1,49) — nattvakten samma natt
+  räknade +5,1 % vinst på 7 dygn och lät kampanjen vara. Den här sessionen gick på
+  minan och skickade fel tal till Discord innan det rättades. **Läs alltid
+  break-even ur produktfilen, aldrig ur ett kampanj- eller adsetnamn.** Talet i
+  namnet kan inte ändras i efterhand utan att kampanjen döps om.
+
+---
+
+## Översättningsrundan nr 2 — 2026-09-13 (`/ops-oversatt`, tom kö men en rotorsak funnen)
+
+Kön `SE-ACTIVE to be translated` var tom och NO-kampanjen pausad, så inget
+översattes. Körningen ägnades i stället åt att mäta VARFÖR Norge gick sämre än
+Sverige på exakt samma produkt och samma creatives.
+
+### Läget (mätt 2026-09-13 13:45–14:20 UTC)
+
+| Marknad | Spend (livstid) | Köp | ROAS | Mot BE-ROAS 1,49 | Status |
+|---|---|---|---|---|---|
+| SE | 6 049 kr | 7 | **1,50** | precis på break-even | ACTIVE (Axel slog på 15:06) |
+| NO | 4 141 kr | 4 | **1,28** | under break-even | PAUSED (Axel pausade 11:06) |
+
+Metas aktivitetslogg: `Axel Odhner` pausade båda 11:06 CEST och slog på SE igen
+15:06. Båda är alltså ägarbeslut — ingen rutin rörde något.
+
+### ROTORSAK: de norska annonserna pekade på en sida som tar betalt i SEK
+
+Uppmätt på samma URL, samma minut:
+
+| Länk | Valuta | Pris |
+|---|---|---|
+| `heimguard.se/nb/products/overvakningskameran` | **SEK** | 799,00 kr |
+| samma sida `?country=NO` | **NOK** | 781,00 |
+
+Alla 27 NO-annonser bär den **parameterlösa** länken. DryTreks NO-annonser bär
+`?country=NO`. Skillnaden är ett datum: fixen (webbnärvaro kopplad till marknaden
++ parametern i `kampanj.mjs`) landade 2026-09-10, och HeimGuards NO-kampanj
+byggdes **2026-09-09** — en dag för tidigt. Butiksfilens kommentar "Betalar i SEK
+tills NOK slås på i admin" är därmed **inaktuell**: NOK svarar redan, det var
+länken som saknade parametern.
+
+Det betyder att varje norsk klick landade på svenskt pris. Det är den enda
+uppmätta strukturella skillnaden mellan marknaderna, och den ligger i kassan,
+inte i creativen. **Döm ingen norsk creative på den datan.** Rättningen kräver
+nya creatives på annonserna, vilket nollställer deras gilla-markeringar och
+kommentarer — väg det mot hur mycket engagemang de hunnit samla.
+
+### Översättningsskulden (mätt i kontot, inte gissad)
+
+11 SE-annonser saknar norsk tvilling. Två av dem (`CS_2`, `CS_3`) är pausade i SE
+och ska inte översättas ⇒ **reell skuld 9**. Värre: **8 av dem står som
+`Approved` i hubben** trots att den norska annonsen aldrig skapades. `Approved`
+är slutstatus, så `/ops-oversatt` plockar dem aldrig — skulden är osynlig för
+automatiken och växer tyst. Tre annonser (`CS_1`, `CS_2`, `CS_3`) saknar
+hubbrad helt och kan aldrig gå via Notion-kön.
+
+Dessutom: 6 rader står kvar i `Translation in review` sedan 2026-09-06 — en
+status från flödet före OPS som **ingen rutin i repot läser**. Fyra av dem är
+verifierat live i NO, två (`RI_1_H1`, `SP_4_H1`) finns inte ens som SE-annonser.
+
+### Två systemfel som inte är HeimGuards ensak
+
+- **Nattvakten ser aldrig någon NO-kampanj.** `budgetrond.mjs` kör
+  `STANDARDMARKNAD='SE'`, och alla fyra rondfilerna för hemvakten innehåller
+  exakt en kampanj: SE. I OPS-kontot finns sex NO-kampanjer med 17 522 kr spend,
+  tre ACTIVE. `TACKLEBAY_NO_Spöhållaren` är ACTIVE med ROAS **0,44** på 2 981 kr
+  och 3 köp — dömbar enligt ANALYSMETOD, men ingen rutin kan se den.
+- **HeimGuard-arbete ger 0 kr i commission.** OPS-kontot står som utländskt i
+  `commission/berakning.mjs` (`arSvensk()` = false för varje HeimGuard-annons)
+  OCH hubben är undantagen som OPS-hub. Dubbelspärrat. Carl Vicente fick 21
+  briefer 2026-09-13 och tjänar noll på dem. Regeln "endast svenska annonser"
+  är från 2026-08-31; beslutet att lägga alla OPS-butiker i DK-kontot är från
+  2026-09-07 och är yngre. Vad som gäller för OPS-redigerarnas lön står
+  ingenstans skrivet — det är Axels att avgöra.
+
+---
+
+## Körning nr 4 — 2026-09-14, budgetnatt (`/notionscalercs`)
+
+Data: 7d 6 338 kr, 7 köp, ROAS 1,43 (under BE 1,49), vinstbidrag −113 kr. Dygn:
+09-11 795 kr/2 köp · 09-12 585 kr/0 · 09-13 726 kr/0. Kampanjbudget oförändrad 700 kr
+(3d under grinden: 2 106 kr, 2 köp).
+
+**`PD_2` gick från preliminär vinnare till preliminär förlorare på ett dygn utan
+köp:** 14d 2 265 kr, 4 köp, CPA 566 kr (5 % över 538). Skriptet ville pausa den.
+**Inte gjort** — lagd under ACTION NEEDED åt Axel (`--max 0`), för:
+1. ANALYSMETOD steg 5: top spendern är benchmark, inte kandidat. PD_2 är top spender
+   (2 265 kr) och enda annonsen med köp.
+2. ANALYSMETOD 2c: en dom på 3–4 köp är preliminär. Ett köp till ger CPA 453 (under BE).
+3. **Regel-lucka i `factory/budgetbeslut.mjs`:** `BENCHMARK_ANDEL` räknas på
+   *positivt* vinstbidrag (`positivTotal`), så skyddet försvinner exakt när
+   benchmarken tippar under break-even. Förslag: skydda även annonsen med störst
+   spendandel. Ändras bara på Axels besked.
+
+Batch #2 + #3 (28 briefer) ligger hos Carl, inget nytt live. Kampanjen kör 700 kr/dag
+på oprövade annonser tills leveranserna kommer.
+
+### Norge är AV sedan 2026-09-13 (Axels beslut A)
+
+NO-kampanjen är pausad av Axel och översättningsrutinen är avstängd. **Briefa
+inga norska creatives** och räkna inte in NO i någon kadens förrän han säger
+till. Svenska sidan är opåverkad och kör vidare.
+
+Den dag Norge startas om: rotorsaken ovan (`?country=NO` saknas i annonslänken,
+så norska kunder ser SEK) måste lagas FÖRST, annars upprepas samma utfall.
+Fyra färdiga rader väntar i `SE-ACTIVE to be translated`.
+- **Bildtexterna är automattranskriberade ur voiceovern och mangla ord — systematiskt,
+  inte enstaka slarv.** Mätt 2026-09-14 på batch #3:s sju levererade videor: felen är
+  samma sorts fel i alla, alltså ett steg i redigerarens flöde och inte en tabbe.
+
+  | Vad det ska stå | Vad som står | Var |
+  |---|---|---|
+  | HeimGuard | `Heimguard` / `Heimgard` | FD_2, RI_4, CO_5, TR_2 |
+  | kronor | `unior` / `unio` | FD_2, RI_4 |
+  | 799 | `790` | FD_2 |
+  | linser | `linsor` | TR_2, SP_19, PD_6 |
+  | Larmet | `Lärmet` | PD_9 |
+  | surrar | `sörrar` | RI_4 |
+  | mörk | `mörd` | FD_2 |
+  | AI:n | `AIN` | FD_2 |
+  | köp | `kop` | CS_11 (omgjord — `kö` blev `kop`, aldrig `köp`) |
+  | en enda | `en eh vi` | SP_19 |
+
+  Mönstret är en transkriberare som inte kan svenska å/ä/ö, inte kan brandnamnet och
+  hittar på ord där ljudet är otydligt. **Priset drabbas också** (`790`), och då är det
+  inte längre kosmetiskt. Kontrollera därför bildtexterna på VARJE video i varje
+  leverans, inte bara priset — och be redigeraren korrekturläsa transkriberingen mot
+  briefens manustabell innan rendering. Briefen har redan raderna ordagrant; det är
+  den enda facit som behövs.
+
+### Uppföljning 2026-09-15 (körning nr 5, budgetnatt)
+
+`PD_2` fick 2 köp 2026-09-14 (dygnet: 558 kr, ROAS 3,58) → 14d 2 651 kr, 6 köp,
+CPA 442 kr — **tillbaka som benchmark**. Att inte pausa den på 4 köp var rätt: ett
+dygn skilde "förlorare" från "vinnare". Regel-luckan i `budgetbeslut.mjs` står kvar
+i backloggen. 7d: 6 904 kr, 9 köp, ROAS 1,60, vinstbidrag 578 kr. Budget 700 kr oförändrad.
+
+**Första leveranserna live 2026-09-14 (via `/ops-leverans`):** `CS_11_H1`, `SP_17_H1`,
+`SP_17_H2` (batch #2), `TR_2_H1`, `PD_9_H1`, `CO_5_H1`, `PD_6_H1`, `SP_19_H1`, `RI_4_H1`
+(batch #3) och `BOF_7_1` (ärvd hubbrad, omdöpt). 0–11 kr var, ingen dom. Copy-A/B:
+4 fable / 5 sonnet live.
+- **Leverantörens b-roll bär KONKURRENTERNAS varumärken.** Mätt 2026-09-15 på batch
+  #3:s tre sista videor (`SP_20_H1`, `BOF_10_H1`, `PD_8_H1`) — alla tre:
+
+  | Märke | Var det syns |
+  |---|---|
+  | `imou` | vattenstämpel i appinspelningarna, och **tryckt på kamerahuset** i uppackningsklippen |
+  | `Dahua` | tryckt på kameran i `PD_8_H1`:s första bildrutor |
+  | `EZVIZ` | på den beigea kameran i flera klipp |
+
+  `BOF_10_H1` öppnar med "Aldrig hört talas om HEIMGUARD?" och packar tio sekunder
+  senare upp en kartong där det står **imou** på produkten. Det är inte en stavning
+  utan ett annat företags märke i vår annons, på material vi knappast har rätt till.
+  Uppladdat ändå (priset stämmer, och stoppregeln för video är priset) — men det är
+  ett **ägarbeslut**, inte ett redigerarfel: det sitter i hela bildbanken och går
+  inte att fixa genom att stoppa tre annonser. Öppen fråga till Axel 2026-09-15.
+- **Recensionstalet i briefarna är förlegat.** Briefarnas hårda regel säger "exakt
+  10 recensioner, alla fem stjärnor". **Mätt på produktsidan 2026-09-15: 16
+  recensioner, snitt 4,94.** Alltså är "alla fem stjärnor" inte längre sant — 4,94
+  på 16 betyg betyder minst en fyrastjärnig. `SP_20_H1` och `BOF_10_H1` har "10
+  RECENSIONER" inbränt som grafik, och visar i sin egen slutbild produktsidan med
+  "16 recensioner" — annonsen motsäger sig själv. Understatement skadar ingen kund,
+  så videorna laddades upp; **annonstexten rättades däremot** till de uppmätta
+  talen innan den gick ut. **Läs recensionstalet ur butiken vid varje körning,
+  precis som priset** — det växer, och en brief åldras.

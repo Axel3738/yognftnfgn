@@ -1,0 +1,82 @@
+{
+  "Frontrutetrekk_NO_PD_2_1": {
+    "typ": "image_hash",
+    "id": "6c58075b6f567d76fb70f32abb26cbae",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_2_1"
+  },
+  "Frontrutetrekk_NO_PD_1": {
+    "typ": "video_id",
+    "id": "1947494192597723",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_1"
+  },
+  "Frontrutetrekk_NO_PD_3": {
+    "typ": "video_id",
+    "id": "928090836583421",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_3"
+  },
+  "Frontrutetrekk_NO_PD_2": {
+    "typ": "video_id",
+    "id": "4500324783579221",
+    "namn": "CARASHELL_Frontrutetrekk_NO_PD_2"
+  },
+  "Frontrutetrekk_NO_G_2_1": {
+    "typ": "image_hash",
+    "id": "eaa8cb47984a056b9cbd2c66dd4b2f9e",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_2_1"
+  },
+  "Frontrutetrekk_NO_SP_2_1": {
+    "typ": "image_hash",
+    "id": "8cd73abfee5b64bddb36f4fb88656e17",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_2_1"
+  },
+  "Frontrutetrekk_NO_CS_2_1": {
+    "typ": "image_hash",
+    "id": "7487f998069bbfffb4a6095c309f3a4f",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_2_1"
+  },
+  "Frontrutetrekk_NO_CS_1": {
+    "typ": "video_id",
+    "id": "1102173172754154",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_1"
+  },
+  "Frontrutetrekk_NO_CS_2": {
+    "typ": "video_id",
+    "id": "1071142068978039",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_2"
+  },
+  "Frontrutetrekk_NO_CS_3": {
+    "typ": "video_id",
+    "id": "1053770650750272",
+    "namn": "CARASHELL_Frontrutetrekk_NO_CS_3"
+  },
+  "Frontrutetrekk_NO_SP_1": {
+    "typ": "video_id",
+    "id": "4504247343237053",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_1"
+  },
+  "Frontrutetrekk_NO_SP_2": {
+    "typ": "video_id",
+    "id": "1475084161112122",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_2"
+  },
+  "Frontrutetrekk_NO_SP_3": {
+    "typ": "video_id",
+    "id": "1099012909252069",
+    "namn": "CARASHELL_Frontrutetrekk_NO_SP_3"
+  },
+  "Frontrutetrekk_NO_G_1": {
+    "typ": "video_id",
+    "id": "2276780093161481",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_1"
+  },
+  "Frontrutetrekk_NO_G_2": {
+    "typ": "video_id",
+    "id": "1592409319200467",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_2"
+  },
+  "Frontrutetrekk_NO_G_3": {
+    "typ": "video_id",
+    "id": "2227448617797570",
+    "namn": "CARASHELL_Frontrutetrekk_NO_G_3"
+  }
+}

@@ -44,14 +44,11 @@
 
 import { STJARNFARG } from './branding.mjs';
 import { KRAVDA_SCOPES, SCOPE_RAD } from './token.mjs';
+import { landEn, sprakEn, lokalValuta } from './lander.mjs';
 
-// Landskod → vad VA:n ser i Shopify-adminen (engelska).
-const LAND_EN = { SE: 'Sweden', NO: 'Norway', DK: 'Denmark', FI: 'Finland', DE: 'Germany', GB: 'United Kingdom' };
-const SPRAK_EN = { SE: 'Swedish', NO: 'Norwegian', DK: 'Danish', FI: 'Finnish', DE: 'German', GB: 'English' };
-// Marknadens EGEN valuta — den VA:n slår på i admin när marknaden är klar
-// (API-spärrat i unified markets; yaml:ens marknader[].valuta står SEK
-// tills dess, se butik-mall.yaml).
-const LOKAL_VALUTA = { SE: 'SEK', NO: 'NOK', DK: 'DKK', FI: 'EUR', DE: 'EUR', GB: 'GBP' };
+// Landskod → vad VA:n ser i Shopify-adminen (engelska): lander.mjs. Marknadens
+// EGEN valuta är den VA:n slår på i admin när marknaden är klar (API-spärrat i
+// unified markets; yaml:ens marknader[].valuta står SEK tills dess).
 
 // Två olika adresser (VA:ns rättelse 2026-09-08, TankGuard): butiken
 // skapas och mejlen vidarebefordras till jobbinkorgen, men ÄGANDET förs
@@ -84,7 +81,7 @@ export function checklistaVarden(butik, produkter = [], { pixelId = null, temaNa
     .map((m) => {
       const kod = text(m?.land)?.toUpperCase();
       if (!kod) return null;
-      return { kod, land: LAND_EN[kod] ?? kod, valuta: LOKAL_VALUTA[kod] ?? text(m.valuta) ?? 'the local currency', locale: text(m.locale) };
+      return { kod, land: landEn(kod), valuta: lokalValuta(kod) ?? text(m.valuta) ?? 'the local currency', locale: text(m.locale) };
     })
     .filter(Boolean);
   return {
@@ -111,8 +108,8 @@ export function checklistaVarden(butik, produkter = [], { pixelId = null, temaNa
     bolagsnamn: text(b.bolagsnamn) ?? 'THE COMPANY',
     adress: text(b.adress) ?? 'THE COMPANY ADDRESS',
     landKod: land ?? 'SE',
-    huvudland: land ? (LAND_EN[land] ?? land) : (text(b.huvudmarknad) ?? 'the home market'),
-    sprak: land ? (SPRAK_EN[land] ?? 'the home language') : 'the home language',
+    huvudland: land ? landEn(land) : (text(b.huvudmarknad) ?? 'the home market'),
+    sprak: land ? (sprakEn(land) ?? 'the home language') : 'the home language',
     marknader,
     produkter: prods.map((p) => ({
       namn: text(p?.produkt?.namn) ?? 'PRODUCT',

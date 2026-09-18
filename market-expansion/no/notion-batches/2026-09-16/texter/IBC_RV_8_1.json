@@ -1,0 +1,59 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   275
+  ],
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "rader": 3,
+  "text": "”God pris for pengene. Passer min IBC-tank og er enkel å bruke.”"
+ },
+ {
+  "box": [
+   300,
+   298,
+   780,
+   345
+  ],
+  "storlek": 24,
+  "farg": [
+   22,
+   49,
+   76
+  ],
+  "rader": 1,
+  "text": "Daniel"
+ },
+ {
+  "box": [
+   320,
+   1088,
+   760,
+   1132
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "439 kr – veil. pris 586 kr"
+ },
+ {
+  "form": 0,
+  "text": "Bestill trekket ditt for 439 kr",
+  "rad": 0,
+  "se": "Beställ ditt överdrag för 489 kr",
+  "vanster": false
+ }
+]

@@ -1,0 +1,530 @@
+# Creative DNA — CaraShell (taköverdraget)
+
+Skapad 2026-09-12 av `/notionscalercs setup carashell` (körning nr 1).
+Butiks-id `carashell`, nyckel `carashell/takskyddet`, brand **CaraShell**, carashell.se.
+Annonskonto: **MagiBorsten DK `915422744950975`** (det delade OPS-kontot).
+
+⚠️ **All prestandadata under "Vad som är bevisat" är ÄRVD från Bäverbutiken.**
+CaraShells egen kampanj `CARASHELL_SE_Taköverdraget` startade 2026-09-11 och har
+per 2026-09-12 **314 kr spend och 0 köp på 16 annonser**. **0 av 16 har passerat
+signifikansgrinden** (≥ 300 kr OCH ≥ 3 köp) — butiken är en **KALLSTART**:
+ingen feedback-loop, ingen dom över en enda CaraShell-annons ännu.
+
+⚠️ **Två produkter sedan 2026-09-16.** Termoskyddet (`carashell/termoskyddet`,
+prefix `CaraShellFront`) lades till med `/ops-produkt`, och minnet delades då
+per produktnyckel precis som TackleBay: den här mappen är
+`products/carashell/takskyddet/`, systern ligger i
+`products/carashell/termoskyddet/`, kartan i `products/carashell/README.md`.
+⚠️ Pixeln är delad och Metas köp-event bär ingen produkt — ett termoskydd
+(559 kr) kan bokföras på taköverdragets kampanj och tvärtom. Prisavståndet är
+2×, så läs köp per produkt ur Shopify innan en annons döms
+(`factory/FLERPRODUKT.md`).
+
+---
+
+## Produkten och kunden
+
+Taköverdrag för husvagn och husbil, 6,5 × 3 m. Täcker takytan, kanten hänger
+30–40 cm ner över sidorna, elastiska spännband med plastkrokar hakar under
+karossens kant. En person sätter på det själv.
+
+**Kunden:** husvagns- och husbilsägare som ställer undan ekipaget över vintern
+och inte går upp på taket förrän i vår. Källtexten säger "husvagn", bilderna
+visar en husbil — produkten passar båda, och copyn säger båda.
+
+**Grundkonflikten:** taket är den yta du aldrig ser, och den som kostar mest att
+laga. Skadan upptäcks först när fukttestet görs på våren — då är den redan gjord.
+
+⚠️ **Aldrig påstå:** förvaringspåse, dragsko, vikt eller exakta vagnlängder.
+Källtexten nämner påse och dragsko, leverantörens bilder visar dem inte
+(`factory/produkter/takskyddet.yaml`). Källans PD-annons påstår båda — CaraShells
+version gör det inte, och ska inte börja.
+
+---
+
+## Vad som är bevisat (ÄRVT — källa: Bäverbutiken, avläst 2026-09-12)
+
+Konto `1867947880635861` (**LÄSES bara**), prefix `Takoverdrag`, hela livstiden.
+Källkampanj: `Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09`.
+**16 annonser · 8 611 kr spend · 53 köp · samlad ROAS 7,04 · verklig AOV 1 144 kr.**
+6 bedömbara, 10 under grinden. Dömda mot CaraShells linje (BE-CPA 693 kr).
+
+### Per vinkel (ÄRVD, hela livstiden)
+
+| Vinkel | Kod | Spend | Köp | CPA | Andel spend | Dom |
+|---|---|---:|---:|---:|---:|---|
+| Problemet — taket du aldrig kollar | PD | 3 623 kr | 16 | **226 kr** | 42 % | **Bevisad.** Bär mest spend och flest köp. |
+| Erbjudandet — 23 % rabatt | CS | 1 439 kr | 14 | **103 kr** | 17 % | **Bevisad.** Bästa CPA av alla fyra. |
+| Presenten — "han älskar husvagnen" | GT | 1 561 kr | 14 | **111 kr** | 18 % | **Bevisad.** En enda annons (`GT_2_H1`) bär 14 av 14 köp. |
+| Social proof — kundernas omdöme | SP | 1 986 kr | 9 | **221 kr** | 23 % | **Bevisad.** Nästan allt ligger i bildversionen. |
+
+Alla fyra ligger under break-even-CPA 693 kr. **Ingen vinkel är utdömd** — det
+skiljer CaraShell från HeimGuard och DryTrek, där en eller två vinklar bar allt.
+
+### Toppannonserna (ÄRVD, rangordnade på vinstbidrag mot CaraShells linje)
+
+| Ärvd annons | Typ | Spend | Köp | CPA | ROAS | Vinstbidrag | Hook 3s | Hold | CTR | CPC |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `Takoverdrag_GT_2_H1` | video | 1 500 kr | 14 | 107 kr | 10,54 | **8 202 kr** | 50,7 % | 25,3 % | 4,67 % | 2,99 kr |
+| `Takoverdrag_CS_2_H1` | video | 730 kr | 9 | 81 kr | 13,91 | **5 507 kr** | 48,4 % | 23,4 % | 3,33 % | 4,94 kr |
+| `Takoverdrag_SP_2_1` | **bild** | 1 656 kr | 8 | 207 kr | 5,45 | **3 888 kr** | — | — | 10,85 % | 0,94 kr |
+| `Takoverdrag_PD_2_H1` | video | 2 450 kr | 9 | 272 kr | 4,15 | **3 787 kr** | 54,8 % | 51,8 % | 6,45 % | 1,86 kr |
+| `Takoverdrag_PD_2_1` | **bild** | 484 kr | 4 | 121 kr | 9,32 | 2 288 kr (prel.) | — | — | 6,49 % | 1,72 kr |
+| `Takoverdrag_PD_1_H1` | video | 468 kr | 3 | 156 kr | 7,23 | 1 611 kr (prel.) | 51,1 % | 41,7 % | 7,73 % | 1,35 kr |
+
+Under grinden (ingen dom): `SP_2_H1` 269 kr/1 köp · `CS_2_1` 241 kr/3 ·
+`CS_3_H1` 235 kr/0 · `CS_1_H1` 233 kr/2 · `PD_3_H1` 221 kr/0 · `GT_1_H1` 35/0 ·
+`SP_3_H1` 35/0 · `SP_1_H1` 26/0 · `GT_3_H1` 23/0 · `GT_2_1` 3/0.
+
+---
+
+## Mönstren
+
+**Mönster 1 — de billigaste vinklarna fick minst pengar (BEVISAD, ärvd).**
+CS (103 kr CPA) och GT (111 kr) tillsammans: 35 % av spenden, 28 av 53 köp.
+PD (226 kr) ensam: 42 % av spenden. Det är Metas CBO-fördelning, **inte en dom**
+över CS och GT — de har aldrig fått volymen. Första frågan när CaraShells egen
+data finns: håller CS och GT sin CPA när de får mer budget?
+
+**Mönster 2 — en enda annons bär hela GT-vinkeln (HYPOTES).**
+`GT_2_H1` står för 14 av GT:s 14 köp på 1 500 av 1 561 kr. De tre andra
+GT-annonserna fick 61 kr tillsammans. Vinkelns CPA är alltså **en annons CPA**,
+inte vinkelns. Läs GT som "den här creativen funkar", inte som "presentvinkeln
+funkar" — förrän en andra GT-annons har spenderat.
+
+**Mönster 3 — bilderna replikerar här (BEVISAD, ärvd, 2 annonser).**
+`SP_2_1` (bild) tog 8 köp på 1 656 kr medan videoversionen `SP_2_H1` fick 1 köp
+på 269 kr; `PD_2_1` (bild) gav 4 köp på 484 kr med CPA 121 mot videons 272 kr.
+Bild har lägst CPC av allt (0,94 kr) och högst CTR (10,85 %).
+⚠️ Detta är motsatsen till HeimGuard, där bildversionerna av vinnarna inte
+replikerade (`products/hemvakten/dna.md` mönster 3). Produkten är visuell och
+statisk — ett tak med ett överdrag på — vilket är den troliga förklaringen.
+Bild ska ha en rejäl andel av CaraShells batcher.
+
+**Mönster 4 — hook-raten skiljer ingenting, hold ljuger (BEVISAD, ärvd).**
+Alla videor ligger på hook 42–55 %. `PD_2_H1` har högst hold av alla (51,8 %)
+och näst sämst CPA av vinnarna (272 kr); `GT_2_H1` har hold 25,3 % och bäst CPA
+(107 kr). **Använd aldrig hold som urvalskriterium på den här produkten** —
+det är ett diagnosmått för var tittaren tappar, inte ett köpmått.
+
+**Mönster 5 — CTR och CPA går isär (HYPOTES).**
+`SP_2_1` har högst CTR (10,85 %) och lägst CVR (0,45 %); `CS_2_H1` har lägst CTR
+(3,33 %) och högst CVR (6,08 %). Rabattvinkeln hämtar färre klick men rätt
+klick. Det talar för att CS-trafiken är köpnära och SP-trafiken nyfiken.
+
+---
+
+## Vad CaraShell ändrade mot källan — och varför datan inte är rakt jämförbar
+
+Avläst i båda kontona 2026-09-12.
+
+1. **PD: mekanismen rättades.** Källan: "Spänns fast med rem och dragsko" +
+   "Ryms i egen förvaringspåse". CaraShell: "elastiska spännband som hakar under
+   karossens kant" + "Täcker hela taket – kanten hänger ner 30–40 cm över
+   sidorna". Källans två påståenden går inte att se i bilderna och är därför
+   borttagna. ⚠️ Bärande raden i den mest spenderade ärvda annonsen är alltså
+   **utbytt** — behandla PD-utfallet hos CaraShell som en ny hypotes.
+2. **SP: social proofen byttes mot riktiga omdömen.** Källan: "Ångrar att jag
+   inte köpte det här förra vintern" + "fler och fler husvagnsägare". CaraShell:
+   "Passar bra och skyddar taket mot väder." – Lars, "Ett av 16 omdömen – alla
+   fem stjärnor". Butiken är ny och har 16 recensioner, inte "fler och fler".
+3. **SP: garantin rättades.** "30 dagars öppet köp" → "14 dagars ångerrätt
+   enligt svensk lag" — butikens faktiska villkor.
+4. **CS: lagerbristen ströks, rabatten står kvar.** Källans "Lagret är begränsat
+   och priset gäller bara ett tag till" är borttagen och ersatt av betalsätt,
+   ångerrätt och leveranstid. ⚠️ **Men "🔥 23% RABATT … – IDAG 🔥" står kvar**,
+   och 1 129 kr är butikens stående pris (jämförpris 1 469 kr). Det är samma
+   falska brådska som togs bort hos HeimGuard. **Öppen fråga till nästa
+   briefdag:** ska CS skrivas om utan "IDAG", och isolerar det variabeln?
+5. **GT: oförändrad, ordagrant från källan.** Det gör GT till den renaste
+   jämförelsen mellan butikerna — och den enda vinkel där ärvd data får läsas
+   som en fortsättning snarare än som riktning.
+6. **Priset rördes inte.** 1 129 / 1 469 kr i båda butikerna.
+
+---
+
+## Ekonomin
+
+Pris **1 129 kr** · jämförpris 1 469 kr · inköp **436 kr** ⇒ TB 693 kr ·
+**BE-ROAS 1,63 · BE-CPA 693 kr · target-ROAS 2,75 · target-CPA 411 kr**,
+räknat **UTAN moms** (`moms_antagen: false` i `factory/produkter/takskyddet.yaml`)
+— den linjen dömer `factory/budgetrond.mjs`.
+
+⚠️ **Inköpspriset 436 kr är HÄRLETT, inte kvitterat.** Det är baklängesräknat ur
+källkampanjens namn ("BE ROAS 1.63"). Stämmer det inte mot Temu-kvittot flyttar
+sig break-even, och varje kill-beslut med det. Axels kontroll.
+
+⚠️ **Kampanjnamnet i OPS-kontot säger "BE-ROAS 1,51", produktfilen 1,63.**
+Namnet är bara en etikett — yaml-filen är facit och den som räknas mot. Skillnaden
+är ändå värd att rätta nästa gång kampanjen döps om, så ingen läser fel linje.
+
+---
+
+## Nuläget i CaraShells eget konto (2026-09-12)
+
+`CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11` — ACTIVE, CBO
+1 000 kr/dag, 4 adsets (PD, SP, GT, CS), 16 annonser (12 video + 4 bild).
+**314 kr spend, 0 köp på 3 dygn.** Under grinden på både spend och köp ⇒
+budgetronden rör ingenting och ska inte göra det.
+`CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11` finns i samma konto
+(9 annonser) och körs med `--marknad NO`.
+
+Spend per annons i CaraShell så här långt: `PD_2_H1` 114 kr · `PD_1_H1` 46 ·
+`SP_2_H1` 46 · `SP_3_H1` 29 · `PD_3_H1` 22 · `GT_1_H1` 18 · `CS_1_H1` 13 ·
+resten under 10 kr. CBO:n har alltså börjat med PD — samma vinkel som fick mest
+i källan, och samma risk som mönster 1 beskriver.
+
+---
+
+## Mönstren ur CaraShells EGEN data (avläst 2026-09-14, körning nr 2)
+
+⚠️ Alla fyra är **hypoteser**, inte bevis: 0 av 16 annonser har passerat
+signifikansgrinden (≥ 300 kr OCH ≥ 3 köp). De är grupperade utfall över
+2 435 kr och 8 köp — riktning, inte dom. `SP_2_1` ligger 3 kr från grinden.
+
+**Mönster 6 — bild slår video 3,6× på CPA (HYPOTES, egen data).**
+Bild: 531 kr, 4 köp, **CPA 133 kr**, vinstbidrag 2 241 kr — 72 % av allt
+vinstbidrag på 22 % av spenden. Video: 1 904 kr, 4 köp, CPA 476 kr,
+vinstbidrag 868 kr. Detta **bekräftar ärvd mönster 3 i CaraShells eget konto**
+och är motsatsen till HeimGuard. Produkten är visuell och statisk — ett tak med
+ett överdrag på — och det syns i datan.
+→ **Instruktion:** majoriteten av varje batch ska vara bild. Batch #2 är 4 av 7.
+
+**Mönster 7 — SP tog över från PD (HYPOTES, egen data).**
+Hos CaraShell: SP 42 % av spenden, **5 av 8 köp**, CPA 204 kr, vinstbidrag
+2 447 kr (79 % av totalen). PD 36 %, 2 köp, CPA 443 kr. I källan var ordningen
+omvänd — PD störst med 16 köp, SP svagast av de bevisade (CPA 221 kr).
+**Trolig rotorsak:** de två ändringarna mot källan drog åt olika håll. PD:s
+bärande mekanismrad byttes ut (ändring 1) och tappade; SP fick riktiga omdömen
+i stället för "fler och fler husvagnsägare" (ändring 2) och vann. Ändringen som
+gjordes för sanningens skull gjorde annonsen starkare, inte svagare.
+→ **Instruktion:** SP får flest briefer. PD-varianter bär den rättade
+mekanismen och testas i bildformat.
+
+**Mönster 8 — GT replikerade inte, men har aldrig fått chansen (HYPOTES).**
+GT: 188 kr (8 % av spenden), **0 köp** på 4 annonser. I källan är `GT_2_H1`
+bäst av allt (14–18 köp, vinstbidrag 8 202–10 135 kr); CaraShells `GT_2_H1`
+fick 54 kr och 0 köp. ⚠️ **Detta är inte en dom** — 188 kr över fyra annonser
+är långt under grinden. Frågan i ärvd mönster 2 (bar vinkeln eller creativen?)
+är fortfarande obesvarad.
+→ **Instruktion:** GT testas som bild i batch #2, och ska därefter till ett
+eget test-ABO med lika budget om CBO:n fortsätter svälta den.
+
+**Mönster 9 — CBO-svälten upprepar sig, tredje gången (BEVISAD).**
+Ärvd mönster 1 sa det om källkontot. Nu i CaraShells eget: CS (14 %) och GT
+(8 %) får tillsammans 22 % av spenden medan PD+SP tar 78 %. Samtidigt gav
+`CS_1_H1` 1 köp på 110 kr — **CPA 110 kr, bäst av alla videor** — och fick ändå
+aldrig mer än 110 kr. Metas CBO lägger pengarna där de redan ligger.
+→ **Instruktion:** detta är exakt CLAUDE.md regel 11. Nya tester hör hemma i
+eget test-ABO med lika budget per annons, aldrig i skalningens CBO.
+
+**Mönster 4 står sig (hook/hold ljuger).** `PD_1_H1` har högst hook (54 %) och
+hold (42 %) av alla videor — och **0 köp** på 266 kr. `SP_2_1` har ingen
+videometrik alls och bäst CPA i hela kontot. Använd dem som diagnos av var
+tittaren tappar, aldrig som urvalskriterium.
+
+---
+
+## Norge-runda 2026-09-14 (`/ops-oversatt carashell`) — tre fynd som gäller framåt
+
+**1. Konceptkoden heter GT i Sverige och G i Norge.** `CARASHELL_SE_Taköverdraget`
+har adsetet `- GT` för presentvinkeln; `CARASHELL_NO_Takovertrekket` har `- G`
+för exakt samma vinkel (kampanjen byggd av `/ny-annonser` ur källans norska
+kampanj). `valjAdsetForKoncept` i `tools/meta-lib.mjs` matchar på suffix och ser
+därför inte att `GT` och `G` är samma sak — den mekaniska namnöversättningen
+`CaraShellRoof_GT_4_1` → `CaraShellRoof_NO_GT_4_1` hade skapat ett ANDRA
+presentadset bredvid det som redan spenderar, och delat vinkelns budget i två i
+en CBO.
+→ **Instruktion:** presentannonser döps `CaraShellRoof_NO_G_<n>_<v>` i Norge,
+aldrig `NO_GT`. Läs alltid NO-kampanjens egna adsetnamn innan du litar på den
+mekaniska namnöversättningen. PD, SP och CS heter lika på båda marknaderna.
+
+**2. De norska annonserna landar på en sida som visar SEK.** Mätt 2026-09-14:
+`https://carashell.se/nb/products/takskyddet` svarar `"currencyCode":"SEK"` och
+1 129,00 kr, medan samma URL med `?country=NO` svarar `"currencyCode":"NOK"` och
+1 106,00 kr (jämförpris 1 382,50). NOK är alltså påslaget som Norges
+marknadsvaluta (prislistan i `factory/produkter/takskyddet.yaml`), men
+marknadsparametern måste stå i länken för att slå igenom. De nio ärvda
+NO-annonserna (`NO_PD_1–3`, `NO_SP_1–3`, `NO_G_1–3`) saknar parametern och
+skickar därför norska kunder till en SEK-sida. Samma fel som HeimGuard, se
+`products/hemvakten/dna.md`.
+→ **Instruktion:** varje ny NO-annons laddas upp med
+`--lank https://carashell.se/nb/products/takskyddet?country=NO`. De fyra
+annonserna från den här ronden har den; de nio äldre har den inte, och att göra
+om deras creatives är Axels beslut.
+
+**3. Norsk copy skrivs utan pris.** `factory/butiker/carashell.yaml` säger
+`valuta: SEK` för NO medan `factory/produkter/takskyddet.yaml` bär en
+NOK-prislista — filerna säger olika. Tills det är utrett gäller kommandots
+grundregel: ingen prissiffra i norsk copy, precis som i alla nio ärvda
+NO-annonser. CS-vinkeln (erbjudandet) bär därför villkoren — fri frakt SE/NO,
+5–10 arbetsdagar, 14 dagars ångerrätt — i stället för prisfallet, och
+**CS-annonsen i Norge kan inte läsas som ett pristest** även om den svenska
+tvillingen är det.
+
+---
+
+## Körning nr 2 — 2026-09-14 (`/notionscalercs carashell`, briefrond nr 1)
+
+Butikens **första riktiga rond** — de tre rutinerna som setup-körningen trodde
+sig ha byggt existerar inte (se nedan), så ronden kördes för hand.
+
+Gjort: budgetronden (kampanjen 1 000 → 1 200 kr, SNABB-regeln: vinst 34,4 %
+och ROAS 3,71 på både 3 och 7 dagar), feedback-loopen ovan, batch #2 med
+7 briefer, mönster 6–9 inskrivna.
+
+⚠️ **Hub-id:t var fel och stoppade allt.** Registret pekade på
+`3d9270ab-908c-819d-be0f-c6cb71320871`, som ligger i papperskorgen
+(`in_trash: true`). Rättat till `3da270ab-908c-80c4-80d1-fbdb3fefd3b4`.
+Notion svarar OK på `GET /databases/<id>` men 404 på `query`, med en text om
+att dela databasen med integrationen — den läser som ett behörighetsfel och är
+det inte. Läs fältet `in_trash`, inte feltexten.
+
+⚠️ **Rutinerna saknas.** CLAUDE.md dokumenterade tre rutiner på Axels andra
+konto; Axel kollade i Routines-vyn 2026-09-14 och såg inga. Det förklarar varför
+butiken aldrig lämnat ett spår: noll budgetloggrader, ingen `kord`-stämpel,
+ingen commit mellan 2026-09-12 och i dag.
+
+---
+
+## Körning nr 1 — 2026-09-12 (`/notionscalercs setup carashell`)
+
+Det här är setup-körningen, inte en briefrond. Gjort: registret, Notion-hubben
+(`CaraShell creative hub`), det här minnet ur ärvd historik, torrkörningarna och
+de tre rutinerna. **Ingen brief skriven, ingen budget ändrad.**
+
+Ingen feedback-loop går att göra: ingen CaraShell-annons är bedömbar.
+Första riktiga briefronden blir en **kallstart ur ärvd DNA** enligt mönster 1–5.
+
+---
+
+## Körning nr 3 — 2026-09-16 (`/notionscalercs carashell`, briefrond nr 2)
+
+**Butikens första rond med bedömbara annonser.** Kampanjen gick från 2 435 kr /
+8 köp (14/9) till **7 513 kr spend, 20 köp, ROAS 3,10, vinst 29 %** på 7 dagar.
+Budgeten höjdes 2 400 → 2 850 kr natten till 15/9 och **2 850 → 3 400 kr** den
+här natten, båda på snabbspårsregeln. Vinstbidrag från bedömbara annonser:
+**4 528 kr**.
+
+⚠️ **2 av 20 annonser är bedömbara** (≥ 300 kr OCH ≥ 3 köp). Rankingen nedan
+gäller dem; övriga 18 står utanför och har ingen dom.
+
+| Annons | Typ | Spend | Köp | CPA | ROAS | Vinstbidrag | Andel vinst |
+|---|---|---:|---:|---:|---:|---:|---:|
+| `SP_2_1` | bild | 846 kr | 5 | **169 kr** | 6,67 | **2 619 kr** | 57,8 % |
+| `CS_1_H1` | video | 863 kr | 4 | **216 kr** | 5,23 | **1 909 kr** | 42,2 % |
+
+### Variabeltabell (14d, hela kontot — grupperade utfall, inte domar)
+
+| Variabel | Värde | Spend | Andel | Köp | CPA | Vinstbidrag | VB per kr |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Format | **bild** | 3 401 kr | 45 % | 10 | 340 kr | 4 589 kr | **1,35** |
+| Format | video | 4 112 kr | 55 % | 10 | 411 kr | 3 745 kr | 0,91 |
+| Vinkel | **SP** | 3 188 kr | 42 % | 12 | **266 kr** | 5 128 kr | **1,61** |
+| Vinkel | CS | 1 707 kr | 23 % | 5 | 341 kr | 1 962 kr | 1,15 |
+| Vinkel | PD | 2 007 kr | 27 % | 3 | 669 kr | 1 244 kr | 0,62 |
+| Vinkel | GT | 611 kr | 8 % | **0** | — | 0 kr | **0,00** |
+| Batch | #1 | 5 720 kr | 76 % | 18 | 318 kr | 7 702 kr | 1,35 |
+| Batch | #2 | 1 793 kr | 24 % | 2 | 897 kr | 632 kr | 0,35 |
+
+---
+
+### Mönster 10 — bild leder fortfarande, men glappet krympte 3× (HYPOTES, justerad)
+
+Mönster 6 sa "bild slår video 3,6× på CPA" (133 mot 476 kr). I dag: **340 mot
+411 kr**, VB per krona 1,35 mot 0,91. Riktningen håller, styrkan gör det inte.
+
+**Rotorsaken sitter i batch #2, inte i formatet.** Batchens fyra bildannonser
+står för 1 793 kr och 2 köp (CPA 897 kr) och drar ner hela bildsnittet. De hade
+dessutom **fel creative under sitt första dygn**: rena foton utan textlager 14/9,
+rättade först 15/9 (se batch-loggen). Deras siffror blandar två olika annonser.
+→ **Instruktion:** bild är fortfarande majoriteten av varje batch, men "3,6×" ska
+inte citeras vidare. Nästa rond läser om batch #2 när den haft en hel vecka med
+rätt creative.
+
+### Mönster 11 — SP är butikens vinkel, nu med en bedömbar annons bakom sig (BEVISAD)
+
+SP: 42 % av spenden, **12 av 20 köp**, CPA 266 kr, vinstbidrag 5 128 kr, VB per
+krona 1,61 — bäst av alla fyra. `SP_2_1` ensam bär 57,8 % av allt vinstbidrag och
+är kontots enda bedömbara vinnare med CPA 169 kr. Mönster 7 (SP tog över från PD)
+är därmed inte längre bara ett grupperat utfall.
+→ **Instruktion:** SP får flest briefer varje rond. Batch #3 lägger tre.
+
+### Mönster 12 — GT har nu fått sin chans och tog den inte (HYPOTES, stärkt)
+
+GT: **611 kr över 5 annonser, 0 köp.** `GT_4_1` (bild, batch #2) fick 338 kr helt
+själv — den största GT-satsningen i butikens historia — och gav noll. I källan är
+`Takoverdrag_GT_2_H1` bäst av allt (24 köp, vinstbidrag 12 124 kr).
+Frågan i ärvd mönster 2 — bar vinkeln eller creativen? — lutar nu mot **creativen**.
+⚠️ Ingen enskild GT-annons har passerat grinden, så detta är ingen dom.
+→ **Instruktion:** GT får **inga briefer** i batch #3. Innan vinkeln döms ska den
+ärvda `GT_2_H1`-creativen återskapas så rakt som möjligt, i eget test-ABO med lika
+budget — annars dör vinkeln av CBO-svält utan att någon vet om den kunde.
+
+### Mönster 13 — högsta CTR i kontot gav noll köp (BEVISAD diagnos)
+
+`PD_4_1`: **CTR 16,32 %** (kontots högsta, näst högsta är 7,66 %), CPC 0,60 kr,
+**588 kr och 0 köp**. Bilden vinner uppmärksamhet och tappar avsikt. Det är
+mönster 5 (CTR och CPA går isär) bekräftat i CaraShells eget konto, och nu med en
+rotorsak: annonsen slutar i ett konstaterande om skada och ger läsaren inget att
+göra. `PD_6_1` i batch #3 är fixen — den sätter ett känt pris mot ett okänt.
+→ **Instruktion:** CTR får aldrig ensam motivera att en creative skalas eller
+kopieras. Läs den mot CVR i samma andetag.
+
+### A/B fable mot sonnet — ställning 2026-09-16
+
+**0 bedömbara annonser per modell.** Båda kontots bedömbara annonser (`SP_2_1`,
+`CS_1_H1`) är batch #1 och bär ingen `copy_model`-tagg. Batch #2:s sju taggade
+annonser ligger alla under grinden. Testet avgörs när båda modellerna har ≥ 5
+bedömbara; batch #3 lägger 3 fable + 4 sonnet och totalen är därmed 7 / 7.
+
+### Rotorsak i bildmotorn, hittad och rättad samma natt
+
+`elementtyp()` i `factory/ops-bild.mjs` testade `/headline/` före `/star/`, så
+elementnamnet **"Star row (under headline)"** blev en andra rubrik och stjärnraden
+föll bort. Rättat: stjärntestet ligger nu först, och `call-out 1/2` mappas till
+vänster/höger etikett. ⚠️ Kvar att veta: **`bild-text.py` ritar `stjarnor` bara
+som del av citatkortet** (citat + namn + stjärnor). En annons med stjärnor men
+utan citat får dem inte ritade, och som `badge` renderas ★ som tomma rutor —
+typsnittet saknar glyfen. `SP_6_1` löstes genom att skriva betyget i ord
+("5,0 av 5 i snitt"). Gör likadant tills motorn kan rita en fristående stjärnrad.
+
+### Rotorsak 2 — basfotot lever bara i containern (US-runda 3, 2026-09-16)
+
+`/ops-bild` lägger textlagret på kie.ai-fotot och laddar upp **bara textversionen**
+till Notion; det rena fotot ligger som `.bas.png` i `factory/output/<butik>/bild-<datum>/`
+(gitignorerat) och dör med containern. Planfilen `bild-<datum>.json` bär kie.ai-länken
+(`kalla`), men skrivs över av nästa körning — `SP_6_1`-omkörningen raderade de sex
+andra bildernas länkar samma natt. Följd: en översättning (NO/US) hittar inget
+basfoto att rita om från. Lösningen som användes: **textbyte i samma rutor**
+(`market-expansion/ops/carashell/2026-09-16-us-3/oversatt-us.py` — SE-layouten
+räknas om exakt ur `bild-text.py`:s `Duk`, texten suddas radvis inuti bandet,
+US-texten ritas i samma ruta). Fungerar för band, citatkort, badge, etiketter och
+prischip; **inte** för priskortet (pris + jämförpris). Rätt fix hör hemma i
+`/ops-bild`: ladda upp basfotot till Notion-raden också (eller spara `kalla`-länken
+utan att skriva över planfilen), så att varje marknad kan rita om från grunden.
+
+## Marknader
+
+| Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |
+|---|---|---|---|---|---|---|
+| 2026-09-11 | NO | nb | NOK (fast pris) | 1 106 NOK / jämförpris 1 382,50 | 5–10 virkedager | live, `CARASHELL_NO_Takovertrekket` ACTIVE |
+| 2026-09-16 | **US** | en | **USD, fast pris** — vid första mätningen 06:44 stod SEK (ingen basvaluta på den nyskapade marknaden); vid 06:58 var USD påslagen i admin (inte av den här sessionen — Axel eller Shopify), och `--igen prislista,paket` satte då 199/249 fast + USD-rader i paketnivåerna. Mätt som amerikansk kund 07:05: **$199.00**, jämförpris $249.00, paket $338.30 / $477.60 | **199 USD / jämförpris 249** (Axels pris ur `/ny-marknad carashell US --pris 199`, inte kursen: 1 129 kr ≈ 115,55 USD) | 5–10 business days (Axels argument `--leveranstid 5–10`; leverantören bekräftar) | marknad USA ACTIVE, `/en/products/takskyddet` svarar 200 som amerikansk kund ("Add to cart"), 0 svenska markörer, `prislista` ✅. Axels svar 2026-09-16: sales tax AV (revisorn, inget påslag för kunden), Shopify Payments USD fixat, leverantören skickar till USA 5–10 arbetsdagar. Recensionerna: Axel köpte Judge.me Awesome och slog på auto-översättning 2026-09-16 (`judgeme.auto_oversattning: true`) — de 10 svenska recensionerna ska visas på engelska på /en inom 48 h; "Write a review" syntes direkt, texterna var svenska vid mätningen. Ingen CSV ska importeras. ✅ **Verifierat 2026-09-17 ~09:30 UTC i headless Chrome från amerikansk IP:** "Customer Reviews · 16 reviews · Write a review", texterna på engelska under "Reviews in Other Languages" med "Show original (Swedish)"; på `/nb/…?country=NO` "Kundeanmeldelser · Skriv en anmeldelse" och norska texter med "Vis original (svensk)" — `nb` fungerar, tvärtemot varningen i PROCESS.md punkt 12 (rättad). ⚠️ På /nb syns Lindas recension två gånger: `/no-recensioner`-kopian på norska + den svenska originalraden auto-översatt (PROCESS.md punkt 12). **Eftermiddagen 2026-09-16, Axels beslut efter tvekan-listan:** egen domän **carashell.com** för USA (marknadsraden `doman:`, US-länkar `https://carashell.com/products/takskyddet?country=US`), hello@carashell.com, **90-dagars garanti** i all engelsk text (undantag från "alltid svensk lag", bara USA — vem som betalar returfrakt till Sverige är öppet), "🇺🇸 Free shipping to the US" utan "Ships from Sweden", titeln "…up to 21 ft". Allt mätt på carashell.com samma eftermiddag. Läst som amerikan 2026-09-16: varumärkesstrippen stod på svenska (rättad, PROCESS.md punkt 15); kvarvarande tvekan är ägarbeslut — .se-domänen, "right of withdrawal under Swedish law" i USP-raden, storleken 21 ft mot amerikanska 25–40 ft, tull vid dörren (PROCESS.md punkt 16). US-kampanjen `120251436741400435` i Magiborsten UK `1107817401910319` står PAUSED (1 000 kr/dag, 5 adsets) tills Axel slår på den — `/ops-oversatt carashell/takskyddet --marknad US` fyller den 17:05 varje dag. **Kväll 2026-09-16: 27 annonser** (12 video + 4 bild batch #2 + 4 bild batch #1 + 7 bild batch #3, alla ACTIVE inuti den pausade kampanjen, länk carashell.com) |
+| 2026-09-17 | **GB, CA, AU, NZ** (i USA-marknaden) | en | **Lokala valutor, omräknade från de fasta USD-priserna** — mätt som kund per land 13:30 UTC: **£152 / C$285 / A$286 / NZ$354** (ECB samma dag $199 = £148; Shopify +2–3 %, hela tal) | Inget eget pris: Shopifys omräkning av 199 USD. Fasta x9-priser per valuta kräver egna marknader med egna subdomäner — Axels val, inte gjort | 5–10 business days (delad en-rad — leverantören har bara bekräftat USA) | Axels order 2026-09-17 ("samma annonser, lanserar i dag"). Länderna ligger i USA-marknaden på carashell.com (`lander:` + `lokala_valutor: true` på US-raden — en egen domän hör till EN marknad, PROCESS.md punkt 22); `localCurrencies` via API slog själv på AUD/CAD/GBP/NZD i Shopify Payments. Frakt: zonen "Internationell" bar länderna redan. Engelskan omskriven för fem länder (🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿 Free shipping, FAQ, köpvillkor "your local currency"). 90-dagarsgarantin gäller därmed alla fem. 🖐 Skatt/tull: UK-moms ≤ £135 (termoskyddet), tull vid dörren i CA och för takskyddet i UK — ägarens beslut. Annonslänk per land med landets egen kod (`?country=GB` osv.), aldrig `?country=US`. Axels beslut 2026-09-17: UK-momsen löser han själv (sälj ändå), leveranstiden 5–10 gäller alla fem. ⚠️ `--igen marknad` kopplade först .se till USA och nb på .com (bugg i `kopplaPresence`, rättad samma dag, tillbakaläst rätt). ⚠️ Samtidigt gjorde en annan session om produkten till nio storleksvarianter (5,5–13,5 m) — main mergades och stegen kördes om; väljaren kvar. Optionens namn "Variant" är oöversatt på /en (den sessionens) |
+
+Körningen 2026-09-16 (`/ny-marknad`) lärde tre saker som står i `factory/PROCESS.md` →
+"Marknad utanför Norden" punkt 10–13: Shopify skapar själv sidan "Dina
+integritetsval" när USA läggs till (den läckte på /nb också), enheter i engelskan
+är substans (86 °F, inte "thirty degrees"), och USD-basvalutan måste klickas i
+admin FÖRE prislistesteget.
+
+## Storlekar — nio varianter sedan 2026-09-17
+
+Axels order 2026-09-17 ("lägg in alla varianter så det funkar för alla marknader,
+ASAP"): leverantören har nio storlekar, 3 m breda, 5,5 till 13,5 m långa. Produkten
+`takskyddet` bär sedan dess **9 varianter** (`5,5 × 3 m` … `13,5 × 3 m`, SKU
+`TEMU-5050206311352-055` … `-135`), titeln är "Taköverdrag Husvagn & Husbil
+5,5–13,5 m" (nb "Taktrekk campingvogn & bobil 5,5–13,5 m", en "Roof Cover for Travel
+Trailers & Motorhomes 18–44 ft (5.5–13.5 m)", varianterna på /en som "21 × 10 ft
+(6.5 × 3 m)"). Features bär leverantörens fakta (210D Oxford, vattentät/soltålig,
+band på fyra sidor, justerbara, krokar, två 10,5 m band medföljer).
+
+**Priset är SAMMA på alla nio tills Axels quotes per storlek kommer:** 1 129 kr /
+1 106 NOK / 199 USD (fasta priser i prislistorna, tillbakalästa som kund i alla tre
+marknaderna). ⚠️ Fabriken kan inte olika pris per variant (`build-store.mjs` sätter
+`ekonomi.pris` på alla, `prislista.mjs` samma belopp per valuta) — det byggs när
+priserna finns. Paketnivåerna (2 st −15 %, 3 st −20 %) räknar per vald storlek i
+temat. Korg-upsellen på termoskyddets sida visar takskyddets FÖRSTA variant (5,5 m).
+Annonserna rördes inte — de länkar till `/products/takskyddet` och kunden väljer
+storlek på sidan.
+Samma dag: **rullgardin per överdrag i varje paketnivå** (2-pack = två rullgardiner,
+3-pack = tre) så kunden kan blanda storlekar. Köpet lägger en rad per vald storlek,
+rabattkoden räknar antal per produkt och gäller oavsett mix. Etiketten "Överdrag 1/2/3"
+(nb "Trekk", en "Cover"). Inte klickat i webbläsare av en människa.
+
+
+---
+
+## Produktfakta ändrat 2026-09-18 — vagnlängderna står nu i butikens egen titel
+
+Produkttiteln är **"Taköverdrag Husvagn & Husbil 5,5–13,5 m"** (var "6,5 × 3 m").
+Mätt samma natt på `carashell.se/products/takskyddet.json`:
+
+- **Titeln** bär numera vagnlängderna: passar ekipage 5,5–13,5 m.
+- **Beskrivningen** säger fortfarande **"Taköverdrag 6,5 × 3 m"** — dukens eget mått.
+- Priset orört: 1 129 / 1 469 kr.
+
+De två talen mäter olika saker och motsäger inte varandra. **Batch #3:s sju
+live-annonser säger "6,5 × 3 m" och är alltså korrekta** — ingen åtgärd, inget
+att pausa.
+
+⚠️ Men avsnittet "Produkten och kunden" ovan säger **"Aldrig påstå: … exakta
+vagnlängder"**, och det skrevs när längderna inte gick att verifiera. Nu påstår
+butiken dem själv i produkttiteln. Regeln gäller därför inte längre som absolut
+förbud: **5,5–13,5 m får användas i copy så länge butikens titel bär talen**,
+och ska läsas av på nytt varje briefdag i stället för att citeras härifrån.
+Ändra inte "6,5 × 3 m" till längderna i befintlig copy — de säger olika saker,
+och dukens mått är det som bevisar att den täcker taket.
+
+---
+
+## Prisstege per storlek + Finland som marknad — 2026-09-18
+
+Fram till nu kostade alla nio storlekar **1 129 kr**, i väntan på leverantörens
+offerter. Axel skickade dem, och priset är nu **per storlek**:
+
+| Storlek | SEK | EUR (FI) | NOK ⚠️ | USD ⚠️ |
+|---|---|---|---|---|
+| 5,5 × 3 m | 1 129 | 126,90 | 1 106 | 199 |
+| 6,5 × 3 m | 1 129 | 126,90 | 1 106 | 199 |
+| 7,5 × 3 m | 1 289 | 144,90 | 1 263 | 229 |
+| 8,5 × 3 m | 1 449 | 162,90 | 1 419 | 259 |
+| 9,5 × 3 m | 1 599 | 179,90 | 1 566 | 279 |
+| 10,5 × 3 m | 1 759 | 197,90 | 1 723 | 309 |
+| 11,5 × 3 m | 1 919 | 215,90 | 1 880 | 339 |
+| 12,5 × 3 m | 2 079 | 233,90 | 2 037 | 369 |
+| 13,5 × 3 m | 2 239 | 251,90 | 2 193 | 389 |
+
+SEK och EUR är **Axels egna tal**. EUR-raden för 6,5 m är CWD:s riktiga
+FI-offert (45,76 USD ⇒ 126,90 €, landad kostnad 26,5 % över Sverige — inte
+20 %); de åtta andra följer SEK-stegen × samma faktor. NOK och USD räknades
+fram av sessionen ur de påslag Axel redan valt för 6,5 m (1 106/1 129
+respektive 199/1 129) och **godkändes av honom samma dag** ("kör på") — de är
+hans tal nu, inte ett förslag. Samma svar gäller termoskyddets 62,90 € i
+Finland.
+
+**Annonserna är oberörda.** Basstorleken 6,5 m kostar fortfarande 1 129 kr, och
+det är priset batch #1–#3 säger. Första varianten i listan (5,5 m) kostar lika
+mycket, så sidans rubrikpris är också oförändrat. Ingen annons behöver pausas,
+ingen copy behöver skrivas om.
+
+**Att döma annonser blir svårare från och med nu.** Ett köp kan vara 1 129 kr
+eller 2 239 kr, och Metas köp-event bär inget storleksvärde. Break-even-ROAS
+1,63 är räknad på 1 129 kr och gäller bara den storleken. Läs AOV per order ur
+Shopify innan en annons döms på ROAS — annars ser en kampanj som sålt långa
+överdrag ut som en vinnare den inte är, och tvärtom.
+
+### Finland: carashell.se/fi, ingen egen domän
+
+Axels beslut 2026-09-18: **ingen .fi-domän.** Finskan ligger på `/fi` precis som
+norskan på `/nb` — samma butik, samma kassa, samma pixel. USA fick carashell.com
+för att ".se säger utländsk butik" till en amerikan; mellan nordiska grannar är
+en svensk butik inget hinder. En .fi-domän kan kopplas senare utan att något
+byggs om.
+
+Verifierat som finsk kund (`POST /localization` country_code=FI, language_code=fi)
+samma dag: nio storlekar i rullgardinen, €126,90–€251,90, paketpriserna
+€215,73 / €304,56 (A) och €203,04 / €285,52 (B), "Ilmainen toimitus Suomeen",
+`lang="fi"`, noll svenska markörer.
+
+### Två fel som prisstegen avslöjade
+
+1. **Produktsidans FAQ och underrubrik sa fortfarande "6,5 × 3 m"** på alla fyra
+   språk — en sida som säljer nio storlekar till nio priser. Omskrivna av
+   subagent (sonnet) med tre-frågorstestet, live på sv/nb/en/fi.
+2. **Paketrabatten räknades som ett FAST BELOPP mot standardvarianten.**
+   Metaobjektets fält `rabatt_procent` lästes av temat men skrevs aldrig av
+   fabriken, så procentläget var dött. Det syntes inte medan alla storlekar
+   kostade lika; med stegen visade ett 2-pack av 13,5 m **465,73 €** på sidan
+   medan kassans 15 %-kod tar **428,23 €**. Fältet skrivs nu (`factory/paket.mjs`)
+   och sidan visar samma tal som kassan i varje valuta och varje storlek.

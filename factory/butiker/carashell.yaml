@@ -17,6 +17,11 @@
 butik:
   id: carashell
   brand: "CaraShell"
+  # Butiken bär två produkter sedan 2026-09-16. Ett bart "carashell" i
+  # registret (rutinernas prompt `/notionscalercs carashell` på
+  # claude5@stonebite.org) betyder takskyddet — de rutinerna är takskyddets.
+  # Termoskyddet får egna rutiner på nyckeln carashell/termoskyddet.
+  huvudprodukt: takskyddet
   # Butiksadressen ur prompten är facit över id:t — anslutningen letar upp
   # miljösuffixet som bär den (ops.mjs onskadDomanUr).
   myshopify: "yitrbk-m3.myshopify.com"
@@ -32,6 +37,48 @@ butik:
     - land: NO
       locale: nb
       valuta: SEK
+    # USA sedan 2026-09-16 (/ny-marknad carashell US — Axels fråga "husbils-
+    # grejerna i USA"). Engelska på /en. USD slogs på som marknadens valuta i
+    # admin samma förmiddag (Inställningar → Marknader → USA → Valuta — inte
+    # av sessionen; mätt 06:44 SEK, 06:58 USD) och --igen prislista,paket satte
+    # de fasta USD-priserna. Leveranstiden är Axels argument
+    # (--leveranstid 5–10) och styr BARA den engelska leveransraden. Den
+    # svenska fraktraden nämner inte USA (i_fraktraden: false): sv-texterna
+    # är orörda, den norska filen matchar fortfarande, engelskan säger sitt
+    # ("Free shipping to the US") i output/carashell/oversattning-en.json.
+    - land: US
+      locale: en
+      valuta: USD
+      leveranstid: "5–10 arbetsdagar"
+      i_fraktraden: false
+      # Egen domän för USA (Axel 2026-09-16: ".se säger utländsk butik";
+      # carashell.com kopplad i Shopify samma dag, hello@carashell.com).
+      # Annonslänkarna byggs då utan /en/-mapp: https://carashell.com/products/…
+      doman: carashell.com
+      # Engelskt marknadsblock (Axels beslut 2026-09-17: "Nya Zeeland, Kanada,
+      # UK och Australien — samma annonser"). carashell.com hör till EN
+      # marknad (mätt 2026-09-17: en annan marknad får RESOURCE_NOT_FOUND på
+      # presencen), så de fyra länderna ligger i USA-marknaden med lokala
+      # valutor: kunden betalar i GBP/CAD/AUD/NZD omräknat från de fasta
+      # USD-priserna. Fasta priser per valuta kräver egna marknader med egna
+      # (sub)domäner — inte gjort. Leveransraden (5–10) delas av alla fem.
+      lander:
+        - GB
+        - CA
+        - AU
+        - NZ
+      lokala_valutor: true
+    # Finland sedan 2026-09-18 (/ny-marknad carashell FI). INGEN egen domän:
+    # Axels beslut samma dag — "vi kan köra samma kassa i Finland". Finskan
+    # ligger på carashell.se/fi precis som norskan på /nb; en .fi-domän kan
+    # kopplas senare utan att något byggs om. Priserna är Axels finska
+    # prislista, EUR per storlek (takskyddet) — inte en kursomräkning.
+    # i_fraktraden: false ⇒ de svenska och norska texterna rörs INTE; den
+    # finska filen säger själv "Ilmainen toimitus Suomeen".
+    - land: FI
+      locale: fi
+      valuta: EUR
+      i_fraktraden: false
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika
@@ -49,8 +96,23 @@ butik:
     - "överdraget"
     - "vintern"
     - "takluckor"
+    # Termoskyddets egna ord (produkt 2, 2026-09-16). "imma" heter "dugg" på
+    # norska, "vindrutan" "frontruta", "rastplats" "rasteplass".
+    - "vindrutan"
+    - "imma"
+    - "rastplats"
+    # Varumärkesstrippen under köpknappen — stod kvar på svenska på /en
+    # 2026-09-16 utan att kundvyn såg det (ordet fanns inte i listan).
+    - "Svenskt varumärke"
     # "taket" och "fukt" stavas lika på norska — som markörer ger de bara
     # falska larm (mätt 2026-09-10 på /nb: "Beskytt taket", "fukttesten").
+  # Sortimentskollektionen — butiken bär TVÅ produkter sedan 2026-09-16
+  # (/ops-produkt carashell → termoskyddet). Utan blocket hoppar bygget över
+  # kollektionen ("enproduktsbutik") och startsidan får ingen sortimentssektion.
+  kollektion:
+    handle: sortimentet
+    titel: "Sortimentet"
+    beskrivning: "<p>CaraShell gör två saker: ett taköverdrag som skyddar taket över vintern och ett termoskydd som håller vindrutan sval, mörk och fri från imma när du sover i bilen.</p>"
 
 frakt:
   fri_globalt: true
@@ -78,6 +140,12 @@ judgeme:
   # miljön är en annan butiks.
   shop_domain: "yitrbk-m3.myshopify.com"
   token_env: "JUDGEME_CARASHELL_TOKEN"
+  # Axel köpte Awesome-planen och slog på "Translate reviews automatically"
+  # 2026-09-16 (svar på USA-frågan "går det inte att den auto-translatear?").
+  # Judge.me översätter då de svenska recensionerna på /en och /nb själv, så
+  # app-CSV:n ska bara bära originalen — annars ser kunden alla språk blandade.
+  # Judge.me sa "upp till 48 timmar" innan det syns; verifieras på /en.
+  auto_oversattning: true
 
 garantier:
   - "14 dagars ångerrätt"
@@ -167,26 +235,35 @@ startsida:
     - "truck:Fri frakt – Sverige & Norge"
     - "shield:14 dagars ångerrätt"
     - "star:Betala med Klarna"
+  # BRANDNIVÅ sedan 2026-09-16 (två produkter): hero, berättelse och statement
+  # får inte låsa brandet vid taket (PROCESS.md → nischbutik). Knappen länkar
+  # till kollektionen — det sätter startsida.mjs själv i flerproduktsläget.
+  # Copyn skriven av subagent (sonnet) ur BRAND.md + copy-regler, tre-frågors-
+  # testet ✅. Förra hero-raden "Skydda taket. Inte hela vagnen." lever kvar
+  # som takskyddets egen underrubrik/annonsvinkel.
   hero:
-    rubrik: "Skydda taket. Inte hela vagnen."
-    text: "Ett taköverdrag som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern. Sätts på av en person med spännband som hakar under karossens kant."
-    knapp: "Se taköverdraget"
+    rubrik: "Skydd för taket. Skydd för rutan."
+    text: "Taköverdraget skyddar taket från regn och fukt när husvagnen eller husbilen står ute över vintern. Termoskyddet täcker vindrutan och sidorutorna och håller kupén sval, mörk och fri från imma när du sover i bilen."
+    knapp: "Se skydden"
     bild: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
   marquee:
     - "Fri frakt i Sverige och Norge"
     - "14 dagars ångerrätt"
     - "Klarna, kort och Apple Pay"
     - "Skickas från Sverige"
+  # produkt_etikett används bara i enproduktsläget (featured-product); i
+  # flerproduktsläget visar startsidan kollektionen under sortiment_rubrik.
   produkt_etikett: "Taköverdrag 6,5 × 3 m"
+  sortiment_rubrik: "Sortimentet"
   berattelse:
-    rubrik: "Varför bara taket räcker"
+    rubrik: "Varför CaraShell bara täcker det som tar stryk"
     # Ett stycke per rad — repots YAML-läsare stödjer inte | och >.
     text:
-      - "Ett helöverdrag ska täcka hela husvagnen eller husbilen. I praktiken blir det tungt, kräver två personer och skaver mot lacken när det blåser."
-      - "CaraShell täcker bara taket – ytan där regnvatten blir stående kring takluckor och skarvar över vintern. En person sätter på det själv."
+      - "Ett helöverdrag ska skydda allt på en gång. I praktiken blir det tungt, kräver två personer och skaver mot lacken när det blåser."
+      - "CaraShell täcker bara ytan som faktiskt tar stryk: taket över vintern, rutan när du sover i bilen. Mindre yta, snabbare att sätta på, och inget som skaver mot resten av fordonet."
   statement:
-    rubrik: "Taket du aldrig kollar är taket som kostar mest att laga."
-    knapp: "Skydda taket"
+    rubrik: "Skydda det som tar stryk. Inte hela vagnen."
+    knapp: "Se sortimentet"
   trygghet:
     rubrik: "Frakt och ångerrätt"
     text:

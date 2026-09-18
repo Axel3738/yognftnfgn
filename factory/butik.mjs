@@ -10,6 +10,7 @@
 import { readFileSync } from 'node:fs';
 import { lasYaml } from './yaml.mjs';
 import { fraktraderForKund } from './frakt.mjs';
+import { landsnamnSv, arKandLandskod } from './lander.mjs';
 
 const KANDA_VALUTOR = ['SEK', 'NOK', 'DKK', 'EUR', 'USD', 'GBP'];
 const HANDLE = /^[a-z0-9-]+$/;
@@ -59,6 +60,27 @@ export function kontrolleraMarknader(marknader) {
     if (satt(m.valuta) && !KANDA_VALUTOR.includes(m.valuta)) {
       fel.push(`${plats}: valuta "${m.valuta}" är okänd (tillåtna: ${KANDA_VALUTOR.join(', ')})`);
     }
+    // `lander:` = FLER länder i SAMMA Shopify-marknad (CaraShell 2026-09-17:
+    // USA-marknaden bär även GB, CA, AU, NZ på carashell.com — en egen domän
+    // hör till EN marknad, så engelsktalande länder delar block). Varje kod
+    // ska vara känd i lander.mjs, inte radens eget land och inte ett land som
+    // redan har en egen rad. `lokala_valutor: true` slår på Shopifys lokala
+    // valutor i blocket (priserna räknas om från radens valuta).
+    if (satt(m.lander)) {
+      if (!Array.isArray(m.lander)) {
+        fel.push(`${plats}: lander ska vara en lista med landskoder (GB, CA …)`);
+      } else {
+        const egna = lista(marknader).map((x) => String(x?.land ?? '').trim().toUpperCase());
+        m.lander.forEach((k) => {
+          const kod = String(k ?? '').trim().toUpperCase();
+          if (!/^[A-Z]{2}$/.test(kod)) fel.push(`${plats}.lander: "${k}" är ingen tvåbokstavskod`);
+          else if (!arKandLandskod(kod)) fel.push(`${plats}.lander: ${kod} finns inte i lander.mjs — lägg till raden där först`);
+          else if (kod === String(m.land ?? '').trim().toUpperCase()) fel.push(`${plats}.lander: ${kod} är radens eget land`);
+          else if (egna.includes(kod)) fel.push(`${plats}.lander: ${kod} har redan en egen marknadsrad`);
+        });
+      }
+    }
+    if (satt(m.lokala_valutor) && typeof m.lokala_valutor !== 'boolean') fel.push(`${plats}: lokala_valutor ska vara true eller false`);
   });
   return { fel, varningar };
 }
@@ -206,10 +228,9 @@ function fraktFranButik(b, produktLeveranstid) {
   // Länderna butiken faktiskt postar till, i klartext. Norge ska SYNAS i
   // kundvyn (Axels beslut 2026-09-08) — en norsk besökare ska aldrig behöva
   // gissa om vi skickar dit, och "Fri frakt" utan land svarar inte på det.
-  const LANDNAMN = { NO: 'Norge', DK: 'Danmark', FI: 'Finland', SE: 'Sverige', GB: 'Storbritannien' };
   const lander = [
     text(b?.butik?.huvudmarknad) ?? 'Sverige',
-    ...(b?.butik?.marknader ?? []).map((m) => LANDNAMN[m.land] ?? m.land).filter(Boolean),
+    ...(b?.butik?.marknader ?? []).filter((m) => m?.i_fraktraden !== false).map((m) => (m?.land ? landsnamnSv(m.land) : m?.land)).filter(Boolean),
   ];
 
   return {

@@ -96,6 +96,24 @@ test('marknader: NO/nb/SEK går igenom, fel landkod och okänd valuta stoppar', 
   assert.ok(kontrolleraMarknader('NO').fel.length === 1);
 });
 
+test('marknader: lander (fler länder i samma marknad) valideras mot lander.mjs och de andra raderna', () => {
+  const ok = kontrolleraMarknader([
+    { land: 'NO', locale: 'nb', valuta: 'SEK' },
+    { land: 'US', locale: 'en', valuta: 'USD', lander: ['GB', 'CA', 'AU', 'NZ'], lokala_valutor: true },
+  ]);
+  assert.deepEqual(ok.fel, []);
+  const r = kontrolleraMarknader([
+    { land: 'NO', locale: 'nb', valuta: 'SEK' },
+    { land: 'US', locale: 'en', valuta: 'USD', lander: ['NO', 'US', 'XX', 'Q'], lokala_valutor: 'ja' },
+  ]);
+  assert.ok(r.fel.some((f) => f.includes('NO har redan en egen marknadsrad')));
+  assert.ok(r.fel.some((f) => f.includes('US är radens eget land')));
+  assert.ok(r.fel.some((f) => f.includes('XX finns inte i lander.mjs')));
+  assert.ok(r.fel.some((f) => f.includes('"Q" är ingen tvåbokstavskod')));
+  assert.ok(r.fel.some((f) => f.includes('lokala_valutor ska vara true eller false')));
+  assert.ok(kontrolleraMarknader([{ land: 'US', locale: 'en', valuta: 'USD', lander: 'GB' }]).fel.some((f) => f.includes('lander ska vara en lista')));
+});
+
 test('marknader som saknas är en varning (steget marknad stoppar), inte ett fel', () => {
   const r = kontrolleraMarknader(undefined);
   assert.deepEqual(r.fel, []);

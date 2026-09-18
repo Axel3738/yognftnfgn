@@ -1,0 +1,27 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-14",
+  "lage": "oversatt",
+  "server": "CaraShell",
+  "gjort": [
+    "Norway round: 4 of 4 rows translated to Norwegian and live in CARASHELL_NO_Takovertrekket (CBO 2 000 kr/day).",
+    "CaraShellRoof_PD_4_1 -> CaraShellRoof_NO_PD_4_1 (ad set PD, existing)",
+    "CaraShellRoof_SP_4_1 -> CaraShellRoof_NO_SP_4_1 (ad set SP, existing)",
+    "CaraShellRoof_GT_4_1 -> CaraShellRoof_NO_G_4_1 (ad set G, existing)",
+    "CaraShellRoof_CS_4_1 -> CaraShellRoof_NO_CS_4_1 (ad set CS, newly created)",
+    "HeyGen credits used: 0 before -> 0 after. The queue was images only, so nothing was rendered.",
+    "No image translation needed: all four Swedish creatives are plain photos with no burned-in text, so the same files went up.",
+    "All four Notion rows moved to Approved with the Translated url filled in."
+  ],
+  "varningar": [
+    "The gift ad is named NO_G, not NO_GT. Sweden calls the gift concept GT, Norway calls it G. A mechanical name swap would have built a second gift ad set beside the one already spending and split its budget inside the CBO.",
+    "New ad set CARASHELL_NO_Takovertrekket - CS was created (cloned from G, no own budget). CS did not exist in Norway before.",
+    "Norwegian copy carries no price, same as all nine inherited Norwegian ads. The Swedish CS ad is a pure price ad, so its Norwegian twin was rebuilt on the mechanism and the terms. Do not read the Norwegian CS ad as the no-urgency price test.",
+    "The nine older Norwegian ads link to /nb without ?country=NO, so Norwegian visitors land on a page showing SEK (1 129,00 kr) instead of NOK (1 106,00 kr). The four new ads carry the parameter. Rebuilding the nine old creatives is the owner's call.",
+    "The Norwegian files are not attached to the Notion pages (REST file upload is not built) - review the creatives in Ads Manager.",
+    "Meta rate-limited the OPS account through the whole round again. Four uploads took about an hour instead of four minutes. Nothing failed; it is waiting time."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-15"
+}

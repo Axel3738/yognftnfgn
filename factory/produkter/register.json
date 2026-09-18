@@ -130,7 +130,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-18",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -141,9 +141,23 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 23
+        },
+        {
+          "date": "2026-09-14",
+          "count": 3
         }
       ],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Kampanjen DRYTREK_SE pausades manuellt 2026-09-15 20:52 (ägarbeslut, PAUSED med spend). 0 bedömbara annonser av 42, 18 av 21 batch #3-briefer ligger kvar i Draft. Inga nya briefer förrän Axel släpper pausen (briefantal auto).",
+        "satt": "2026-09-16"
+      }
     },
     "hemvakten/overvakningskameran": {
       "lage": "skala",
@@ -156,7 +170,7 @@
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-11",
       "launches": [
@@ -167,6 +181,18 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 4
+        },
+        {
+          "date": "2026-09-14",
+          "count": 7
+        },
+        {
+          "date": "2026-09-15",
+          "count": 3
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -199,7 +225,7 @@
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "2026-09-13",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "2026-09-13",
       "cycle_start": "2026-09-12",
       "launches": [
@@ -210,6 +236,10 @@
         {
           "date": "2026-09-13",
           "count": 21
+        },
+        {
+          "date": "2026-09-13",
+          "count": 1
         }
       ],
       "anteckning": "Upptäckt automatiskt ur state-filen."
@@ -258,47 +288,134 @@
       "senaste_brief": "2026-09-13",
       "redigerare_discord_id": "740814777374343259",
       "cycle_start": "2026-09-12",
-      "senaste_korning": "2026-09-13",
-      "redigerare": "Jazz (jazzer1522)"
+      "senaste_korning": "2026-09-15",
+      "redigerare": "Jazz (jazzer1522)",
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Butiken PAUSED av Axel 13/9 — ingen annons kan få data, 36 briefer ligger redan som Draft. Nya briefer vore spam (Axels princip från CatCabin 14/9). Släpps när Axel svarat A/B/C och kampanjen är igång igen.",
+        "satt": "2026-09-15"
+      }
     },
     "carashell/takskyddet": {
       "lage": "skala",
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "CaraShell creative hub",
-        "database_id": "3d9270ab-908c-819d-be0f-c6cb71320871",
+        "name": "Carashell Taköverdrag creative hub",
+        "database_id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
         "foralder_page_id": "",
         "url": ""
       },
       "kordag_offset": 0,
-      "senaste_korning": "",
-      "senaste_brief": "",
-      "cycle_start": "",
-      "launches": [],
-      "anteckning": "Upptäckt automatiskt ur state-filen."
+      "senaste_korning": "2026-09-18",
+      "senaste_brief": "2026-09-16",
+      "cycle_start": "2026-09-14",
+      "launches": [
+        {
+          "date": "2026-09-14",
+          "count": 7
+        },
+        {
+          "date": "2026-09-14",
+          "count": 4
+        },
+        {
+          "date": "2026-09-16",
+          "count": 7
+        },
+        {
+          "date": "2026-09-16",
+          "count": 7
+        },
+        {
+          "date": "2026-09-18",
+          "count": 1
+        }
+      ],
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "annonsmarknader": [
+        "NO",
+        "US"
+      ],
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-18: CaraShell briefas inte längre själv — allt skapas i Bäverbutikens teamspace och speglas hit (/ops-spegla)",
+        "satt": "2026-09-18"
+      },
+      "spegling": {
+        "kalla_hub": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+        "kalla_namn": "BÄVER For CARL Taköverdraget för Husvagn",
+        "status_se": "CaraShell SE ready to be active",
+        "status_en": "CaraShell EN ready to be active",
+        "satt": "2026-09-18"
+      }
     },
     "catcabin/utekattkojan": {
       "lage": "skala",
       "redigerare": null,
       "redigerare_discord_id": null,
       "notion": {
-        "name": "CatCabin creative hub",
-        "database_id": "3d9270ab-908c-8145-8538-d55aaaf4a7e2",
+        "name": "catcabin creative hub",
+        "database_id": "3da270ab-908c-80f6-9663-caff35a3c895",
         "foralder_page_id": "",
         "url": ""
       },
       "kordag_offset": 1,
-      "senaste_korning": "",
+      "senaste_korning": "2026-09-15",
       "senaste_brief": "",
       "cycle_start": "",
       "launches": [],
       "anteckning": "Upptäckt automatiskt ur state-filen.",
       "briefantal_override": {
-        "antal": 21,
-        "engang": true,
-        "motivering": "Axels beslut 2026-09-12: redigerare obestämd men första briefronden ska ändå ge 21 briefer — han fixar redigerare asap",
-        "satt": "2026-09-12"
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-14: kampanjen har 1 köp på 13 annonser och ROAS 0,30 — ingen bedömbar data, alltså ingen feedback-loop att brieffa ur. Låt den samla data i stället för att spamma nya ads. Budgetronden går varje natt och skyddar budgeten. Släpps med briefantal auto när 3 köp finns.",
+        "satt": "2026-09-14"
+      }
+    },
+    "carashell/termoskyddet": {
+      "lage": "skala",
+      "redigerare": null,
+      "redigerare_discord_id": null,
+      "notion": {
+        "name": "Termoskyddet",
+        "database_id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+        "foralder_page_id": "",
+        "url": ""
+      },
+      "kordag_offset": 2,
+      "senaste_korning": "2026-09-18",
+      "senaste_brief": "2026-09-17",
+      "cycle_start": "2026-09-17",
+      "launches": [
+        {
+          "date": "2026-09-17",
+          "count": 7
+        },
+        {
+          "date": "2026-09-17",
+          "count": 5
+        }
+      ],
+      "anteckning": "Upptäckt automatiskt ur state-filen.",
+      "annonsmarknader": [
+        "NO",
+        "US"
+      ],
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-18: CaraShell briefas inte längre själv — allt skapas i Bäverbutikens teamspace och speglas hit (/ops-spegla)",
+        "satt": "2026-09-18"
+      },
+      "spegling": {
+        "kalla_hub": "c5a270ab-908c-83e3-b721-81fde8643080",
+        "kalla_namn": "BÄVER Termoskyddet för Husbil",
+        "status_se": "CaraShell SE ready to be active",
+        "status_en": "CaraShell EN ready to be active",
+        "satt": "2026-09-18"
       }
     }
   },
@@ -309,7 +426,8 @@
     "kalender": 3,
     "tacklebay": 4,
     "carashell": 5,
-    "catcabin": 6
+    "catcabin": 6,
+    "carashell/termoskyddet": 7
   },
   "kommentar_rutinplatser": "Butikens plats i rutinschemat (factory/rutin.mjs tidFor): nattvakt 00:01 + 8 min × plats, leverans 13:40 + 5 min × plats, översättning 15:40 + 5 min × plats. Delas ut en gång av /notionscalercs setup och ändras aldrig — så ingen gammal butik flyttar när en ny tillkommer (Meta rate limit 2026-09-12 när fem startade samtidigt)."
 }

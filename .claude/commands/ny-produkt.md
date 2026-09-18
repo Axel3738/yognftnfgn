@@ -10,6 +10,7 @@ Gör i ordning, utan att invänta godkännande:
 1. **Research:** produktsidan via Shopify (pris, varianter), raden i product sheetet (kostnader, Note, AD ideas, konkurrentlänk — länk i SOP-06), Meta Ad Library på svenska söktermer. Allt är hypotes — markera det.
 2. **Första testbatchen:** 6 statiska (demo, problem/lösning, social proof-stil, offer, listicle, jämförelse) + 2 videokoncept. Leveransformat, naming och arbetsregler enligt `.claude/commands/forsta-batch.md`. Priser = produktsidans pris.
    **Copy/voiceover via subagent med `model: "sonnet"`** (`"haiku"` för bulkvarianter); strategi i huvudsessionen.
+   **Hard rule i varje brief: annonsen nämner aldrig butikens namn** (Axels beslut 2026-09-18, `docs/copy-regler.md`) — annonserna speglas till OPS-butikerna och ska gå att återanvända utan att göras om.
 3. **De 2 extra adsen — OVANPÅ batchen, stryks aldrig** (full spec i `docs/os/SOP-06-produkttest.md`, avsnittet "De 2 extra adsen"):
    - **Rå leverantörsvideo:** ladda ner en av leverantörens produktvideor som den är — originalmusik, **ingen voiceover, ingen text, ingen redigering**. Namnges som **PD** med hook-ID.
    - **Ren produktbild utan text:** produkten exakt som den är, **ingen text-overlay**. Namnges som **PD** med variantsiffra.

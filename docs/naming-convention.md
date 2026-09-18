@@ -97,6 +97,12 @@ Vilket hook har lägst CPA?"* — istället för att bara stirra på en enda sif
 
 ## Regler
 
+0. **Speglade annonser bär källans nummer + 100** (Axels beslut 2026-09-18,
+   `tools/ops-spegla.mjs`): `Takoverdrag_BOF_3_1` i Bäverbutiken blir
+   `CaraShellRoof_BOF_103_1` i CaraShell. Butikens egna briefer numrerar
+   under 100, så namnen krockar aldrig, koncept/nummer/variant går fortfarande
+   att skära på, och `nummer − 100` pekar tillbaka på källraden. Numrera
+   aldrig en egen brief ≥ 100.
 1. **Bara små bokstäver** i ad-namn, `_` mellan fält, `-` inom ett fält.
 2. **Ändra en variabel i taget** när du testar rent (håll allt annat lika, byt bara `angle`).
 3. **Döp aldrig om** en annons som fått data — skapa en ny med bumpat `v{N}`.

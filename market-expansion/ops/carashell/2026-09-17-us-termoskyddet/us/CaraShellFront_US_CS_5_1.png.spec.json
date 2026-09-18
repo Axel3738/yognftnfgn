@@ -1,0 +1,29 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "The roof cover for winter. The thermal cover for the road."
+    },
+    {
+      "typ": "underrad",
+      "text": "The thermal cover sits outside the windshield and both front side windows, 83 × 67 in (211 × 171 cm). The glass never gets cold from the inside – no condensation in the morning."
+    },
+    {
+      "typ": "pris",
+      "text": "Thermal cover $99"
+    },
+    {
+      "typ": "botten",
+      "text": "Free shipping · 5–10 business days · 90-day guarantee"
+    }
+  ]
+}

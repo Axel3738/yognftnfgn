@@ -1,0 +1,26 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-15",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 4167,
+    "kop_7d": 7,
+    "roas_7d": 0.72
+  },
+  "gjort": [
+    "Budget round: 0 changes. Six losing days in a row (ROAS under break-even 1.60), but the campaign already sits at the 500 SEK floor — no further cut, no campaign pause (Axel, 10 Sep). Losses are judged per ad instead.",
+    "No ad passed the kill rules: 42 ads in the campaign, all under the 3 x target-CPA line since the budget dropped. Nothing paused, nothing activated.",
+    "Trend: 7 days 4 167 SEK / 7 purchases / ROAS 0.72; 3 days 2 508 SEK / 5 purchases / ROAS 0.88. Per day: 09-09 16 SEK/0 purchases · 09-10 856 SEK/2 purchases · 09-11 788 SEK/0 purchases · 09-12 1123 SEK/3 purchases · 09-13 848 SEK/2 purchases · 09-14 537 SEK/0 purchases.",
+    "Top spenders (active): PD_14_12 257 SEK/0 · SP_6_H1 196 SEK/0 · CS_2 155 SEK/0 · PD_1 146 SEK/0 · CS_3 141 SEK/0 · PD_14_15 122 SEK/0.",
+    "Not a brief day (Tuesday). Tomorrow Wednesday 16 Sep is the brief day: first read of the 26 live creatives from batch #2/#3 against their briefs."
+  ],
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "varningar": [
+    "Campaign at the floor with ROAS 0.7-0.9 for six days. The only campaign pause the night watch can make is 0 purchases for a whole week at the floor — not the case (7 purchases in 7 days).",
+    "PD_16_H1 went live on 14 Sep but does not answer its own brief (split screen with cuts instead of one continuous take). A rebuild was requested from Jasper; until then it measures nothing."
+  ],
+  "nasta_korning": "2026-09-16 (budget + briefs, Wednesday)"
+}

@@ -13,7 +13,8 @@ CONNECTORS: inga. Allt går via `NOTION_TOKEN`, `META_ACCESS_TOKEN`,
 `DISCORD_BOT_TOKEN` och REST. Använd ALDRIG `mcp__Notion__*`.
 
 **Vad rutinen gör, i en mening:** tar redigerarens färdiga annonser
-(status **To be Reviewed** i butikens creative hub), kollar priset, laddar
+(status **To be Reviewed** i butikens creative hub — eller **Creative strat
+review** med butikens prefix och fil), kollar priset, laddar
 upp dem **LIVE** i butikens **SE-kampanj** i OPS-kontot MagiBorsten DK
 `915422744950975` (ett adset per koncept, aldrig per batch), och flyttar
 raden till **SE-ACTIVE to be translated** så `/ops-oversatt` tar den till
@@ -48,6 +49,13 @@ Färsk `main` först: `git fetch origin main && git checkout main && git reset -
 ```
 node tools/ops-leveranskon.mjs <nyckel> --marknad SE --json --ut factory/output/<butik>/leverans-$IDAG > factory/output/<butik>/leverans-$IDAG.json
 ```
+Kön är hubbens `To be Reviewed` **plus** redigerarens rader i
+`Creative strat review` som bär butikens eget prefix och har en fil (Axels
+beslut 2026-09-13: den här rundan ÄR granskningen — ingen människa flyttar
+status eller tittar först). Rader med annat prefix i den statusen är
+parkerade källrader (TackleBay 2026-09-12: Jasper flyttade tio
+`Rodholder_*` dit, Axels nej till brand-swap står) och ligger under
+`cs_lamnade` i JSON:en — rör dem inte, nämn dem inte som fel.
 Läs JSON:en: hubb, SE-kampanjen (exakt en ACTIVE — annars stopp med skälet
 i rapporten), `lank_arvd`, `pris_butik`, och raderna. Tom kö = rapportera
 "Nothing to deliver" och avsluta med DoD. Rader med `finns_i_meta: true`
@@ -108,7 +116,7 @@ node tools/notion-aterkoppling.mjs <page-id> --kommentar "Live in <kampanj> (ads
 ## DEFINITION OF DONE
 
 - [ ] Färsk `main`; konto verifierat på `ad_account_id`; hubben ur registret
-- [ ] Kön läst ur butikens hub, varje rad redovisad (uppladdad / stoppad / väntar på fil / redan uppe)
+- [ ] Kön läst ur butikens hub (`To be Reviewed` + `Creative strat review` med butikens prefix och fil), varje rad redovisad (uppladdad / stoppad / väntar på fil / redan uppe); `cs_lamnade` orörda
 - [ ] Priset kollat mot butikens sida för varje rad med pris; avvikelse > 20 % ⇒ Draft + kommentar
 - [ ] Varje uppladdning torrkörd först, sedan skarp, tillbakaläst ACTIVE/ACTIVE
 - [ ] Ett adset per koncept; inget PAUSED aktiverat; ingen avvecklad kampanj rörd

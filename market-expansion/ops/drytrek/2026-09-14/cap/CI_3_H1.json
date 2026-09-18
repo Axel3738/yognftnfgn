@@ -1,0 +1,43 @@
+{
+ "in": "../video/render/drytrek_CI_3_H1.mp4",
+ "ut": "../no/DryTrek_NO_Damasker_CI_3_H1.mp4",
+ "srt": "../video/srt-no/drytrek_CI_3_H1.srt",
+ "captions": {
+  "zon": [
+   805,
+   983
+  ],
+  "max_chars": 22,
+  "font_px": 52,
+  "standard_cy": 907,
+  "x0": 0,
+  "x1": 1080,
+  "bredd_max": 1080,
+  "fyll": [
+   {
+    "rect": [
+     200,
+     813,
+     880,
+     977
+    ],
+    "t": [
+     7.95,
+     8.25
+    ]
+   },
+   {
+    "rect": [
+     200,
+     813,
+     880,
+     977
+    ],
+    "t": [
+     8.7,
+     9.08
+    ]
+   }
+  ]
+ }
+}

@@ -3,12 +3,19 @@
 // creative hub → mål i butikens kampanj i OPS-kontot (MagiBorsten DK
 // 915422744950975). Läser bara — laddar aldrig upp, rör aldrig kontot.
 //
-//   node tools/ops-leveranskon.mjs <nyckel> [--marknad SE|NO] [--status "To be Reviewed"] [--json] [--ut <mapp>]
+//   node tools/ops-leveranskon.mjs <nyckel> [--marknad SE|NO|US] [--status "To be Reviewed"] [--json] [--ut <mapp>]
 //
 //   <nyckel>    OPS-registrets nyckel: hemvakten, tacklebay/fiskespohallare-4-pack …
-//   --marknad   SE (standard) = leveransrundan, rader i "To be Reviewed".
-//               NO = översättningsrundan; kör då --status "SE-ACTIVE to be translated".
-//   --status    statusen raderna ska stå i (skiftlägesokänsligt).
+//   --marknad   SE (standard) = leveransrundan, rader i "To be Reviewed" — plus
+//               redigerarens rader i "Creative strat review" som bär butikens
+//               eget prefix och har en fil (Axels beslut 2026-09-13, se CS_STATUS_SE).
+//               NO/US = översättningsrundan; kör då --status "SE-ACTIVE to be translated".
+//               Kontot är PER MARKNAD (factory/opsmarknader.mjs): US ligger i
+//               Magiborsten UK 1107817401910319 (Axels beslut 2026-09-16). Flera
+//               översättningsmarknader delar kön: raden får `klar_i` (bär de
+//               andra kontona redan annonsen?) och `flytta_till_approved`.
+//   --status    statusen raderna ska stå i (skiftlägesokänsligt). Med flaggan
+//               satt tas INGA extra CS-rader.
 //   --json      maskinläsbar kö på stdout (loggen går alltid på stderr).
 //   --ut <mapp> hämta varje rads fil via tools/notion-fil.mjs till <mapp>/<namn>.
 //               Utan flaggan hämtas inget — Notions fil-URL:er är signerade och
@@ -31,11 +38,42 @@ import { mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { valjAdsetForKoncept } from './meta-lib.mjs';
+import { utanSidospar } from './lib/sidokampanjer.mjs';
+import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
 const TYP_RE = /pending approval/i;          // inkludering, aldrig uteslutning
-export const STANDARD_STATUS = { SE: 'To be Reviewed', NO: 'SE-ACTIVE to be translated' };
+// Kön per marknad ur factory/opsmarknader.mjs: SE = leveransrundan, varje
+// översättningsmarknad (NO, US …) läser SE-ACTIVE to be translated.
+export const STANDARD_STATUS = Object.fromEntries(OPS_MARKNADSKODER.map((k) => [k, OPS_MARKNADER[k].status_ko]));
+// Redigerarna lämnar färdiga videor i "Creative strat review" (CS ska bedöma).
+// Sedan 2026-09-13 är CS = leveransrundan själv (Axels beslut: ingen människa
+// ska granska eller flytta status), så en sådan rad räknas som levererad OM
+// den bär butikens eget prefix OCH har en fil. Bäverbutikens gamla källrader i
+// samma status rörs ALDRIG — TackleBay 2026-09-12: Jasper parkerade tio
+// källvideor där, och Axels nej till brand-swap står. Gäller bara SE-kön
+// utan uttryckligt --status.
+export const CS_STATUS_SE = 'Creative strat review';
+
+/** Bär namnet butikens BRAND som prefix ("DryTrek_Damasker_PD_1" för DryTrek)?
+ *  Registrets prefixfilter är bredare med flit (ärvd historik: "damasker" räknas
+ *  som DryTreks i kontot), så för CS-raderna räcker det inte — Bäverbutikens
+ *  "Damasker_PD_10_H1" i samma hub är en parkerad källrad, inte en leverans. */
+export function harBrandPrefix(namn, brand) {
+  const b = String(brand ?? '').replace(/[^a-z0-9]/gi, '').toLowerCase();
+  if (!b) return true;   // okänt brand: ingen extra spärr
+  return String(namn ?? '').replace(/[^a-z0-9]/gi, '').toLowerCase().startsWith(b);
+}
+
+/** Ren regel: tas raden med i SE-kön? Standardstatusen alltid; CS-statusen
+ *  bara med butikens brand som prefix, butikens prefix och en fil. Testas utan nät. */
+export function tasMedISE(rad, { kostatus = STANDARD_STATUS.SE, brand = null } = {}) {
+  if (statusLika(rad.status, kostatus)) return true;
+  if (!statusLika(rad.status, CS_STATUS_SE)) return false;
+  return !rad.prefix_avviker && rad.leverans !== 'saknas' && harBrandPrefix(rad.namn, brand);
+}
 
 // ------------------------------------------------------------ ren logik
 // Allt nedan är utan nät och testas i tools/test/ops-leveranskon.test.mjs.
@@ -61,28 +99,26 @@ export function tolkaNamn(namn) {
   const n = annonsdel(namn);
   const f = n.split('_');
   const prefix = f[0] && /^[A-Za-zÅÄÖåäö0-9-]+$/.test(f[0]) ? f[0] : null;
-  const k = (f[1] ?? '').trim();
+  // Tvådelat prefix (DryTrek_Damasker_PD_14_1, mätt 2026-09-13): ett
+  // produktsegment med fem eller fler bokstäver före konceptkoden hoppas över
+  // när fältet efter det är en kod (1–4 bokstäver).
+  let i = 1;
+  if (/^[A-Za-zÅÄÖåäö]{5,}$/.test(f[1] ?? '') && /^[A-Za-z]{1,4}$/.test(f[2] ?? '')) i = 2;
+  const k = (f[i] ?? '').trim();
   const koncept = /^[A-Za-z]+$/.test(k) ? k.toUpperCase() : null;
-  const nr = (f[2] ?? '').trim();
+  const nr = (f[i + 1] ?? '').trim();
   const nummer = /^\d+$/.test(nr) ? Number(nr) : null;
-  const rest = f.slice(3).join('_');
+  const rest = f.slice(i + 2).join('_');
   return { prefix, koncept, nummer, variant: rest !== '' ? rest : null };
 }
 
 /** NO-målnamn: prefix + `_NO_` + resten. HeimGuard_SP_2_1 → HeimGuard_NO_SP_2_1.
- *  Ett namn som redan bär _NO_ lämnas orört; ett namn utan "_" ger null. */
-export function noNamn(seNamn) {
-  const n = annonsdel(seNamn);
-  const i = n.indexOf('_');
-  if (i <= 0) return null;
-  const prefix = n.slice(0, i);
-  const rest = n.slice(i + 1);
-  if (/^NO_/i.test(rest)) return n;
-  return `${prefix}_NO_${rest}`;
-}
+ *  Ett namn som redan bär _NO_ lämnas orört; ett namn utan "_" ger null.
+ *  (Sedan 2026-09-16 ett specialfall av marknadsNamn — samma regel för US.) */
+export const noNamn = (seNamn) => marknadsNamn(seNamn, 'NO');
 
-/** Målnamnet för marknaden: SE = namnet självt, NO = noNamn(). */
-export const malNamn = (namn, marknad) => (String(marknad).toUpperCase() === 'NO' ? noNamn(namn) : annonsdel(namn));
+/** Målnamnet för marknaden: SE = namnet självt, annars prefix + `_<KOD>_` + resten. */
+export const malNamn = (namn, marknad) => marknadsNamn(namn, marknad);
 
 /** Märker om ett namn till butikens annonsprefix. Hubbarna flyttades från
  *  Bäverbutiken 2026-09-10 och bär rader med det gamla prefixet
@@ -106,9 +142,11 @@ export const kampanjBas = (kampanjnamn) => String(kampanjnamn ?? '').split(' | '
 export const adsetNamn = (bas, koncept) => (bas && koncept ? `${bas} - ${koncept}` : null);
 
 /** Adsetet med exakt namnet (skiftlägesokänsligt), annars null. */
-export function hittaAdset(adsets, namn) {
-  if (!namn) return null;
-  const t = adsets.find((a) => String(a?.name ?? '').trim().toLowerCase() === namn.trim().toLowerCase());
+export function hittaAdset(adsets, namn, koncept = null) {
+  if (!namn && !koncept) return null;
+  // Exakt namn, annars kampanjens egen konvention (DRYTREK_SE_PD) — samma
+  // regel som uppladdaren (tools/meta-lib.mjs valjAdsetForKoncept).
+  const t = valjAdsetForKoncept(adsets ?? [], namn, koncept);
   return t ? { id: t.id, name: t.name, status: t.status ?? null } : null;
 }
 
@@ -124,10 +162,18 @@ export function valjMalkampanj(kandidater, marknad = 'SE') {
     utfall: k.utfall ?? (k.status === 'ACTIVE' ? 'ACTIVE' : (Number(k.spend) > 0 ? 'AVVECKLAD' : (k.status ? 'PAUSAD_TOM' : null))),
     spend: k.spend ?? null,
   }));
-  const aktiva = lista.filter((k) => k.status === 'ACTIVE');
+  // Sidospårskampanjer (namnet bär LISTICLE) är egna spår med egen
+  // landningssida, inte standardmålet — se tools/lib/sidokampanjer.mjs.
+  // Sållningen tar aldrig bort den sista.
+  const { kvar: aktiva, bortsallade: sidospar } = utanSidospar(lista.filter((k) => k.status === 'ACTIVE'));
   if (aktiva.length === 1) {
     const k = aktiva[0];
-    return { kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'ACTIVE' }, skal: null, kandidater: lista };
+    return {
+      kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'ACTIVE' },
+      skal: null,
+      kandidater: lista,
+      ...(sidospar.length ? { varning: `${sidospar.map((s) => `"${s.namn}"`).join(' · ')} är eget spår (namnet bär LISTICLE) och tog inte emot annonserna.` } : {}),
+    };
   }
   if (aktiva.length > 1) {
     return {
@@ -145,10 +191,24 @@ export function valjMalkampanj(kandidater, marknad = 'SE') {
       kandidater: lista,
     };
   }
-  if (pausadeTomma.length) {
+  // Exakt en PAUSED kampanj UTAN spend är nybyggd, inte ett beslut (en
+  // ägare pausar inget som aldrig spenderat). Den får ta emot annonser —
+  // kampanjen själv rörs aldrig, så inget spenderar förrän ägaren slår på
+  // den. Så blir en ny marknad (US 2026-09-16) klar med ett klick i stället
+  // för att kön hålls tills någon slår på en tom kampanj.
+  if (pausadeTomma.length === 1) {
+    const k = pausadeTomma[0];
+    return {
+      kampanj: { id: k.id, namn: k.namn, bas: kampanjBas(k.namn), status: k.status, utfall: 'PAUSAD_TOM' },
+      skal: null,
+      varning: `"${k.namn}" är PAUSED utan spend (nybyggd) — annonserna laddas upp, kampanjen rörs inte; inget spenderar förrän ägaren slår på den${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
+      kandidater: lista,
+    };
+  }
+  if (pausadeTomma.length > 1) {
     return {
       kampanj: null,
-      skal: `ingen ACTIVE ${m}-kampanj — ${pausadeTomma.map((k) => `"${k.namn}" är PAUSED utan spend`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}. VA:n slår på kampanjen först.`,
+      skal: `ingen ACTIVE ${m}-kampanj och ${pausadeTomma.length} PAUSED utan spend — gissar aldrig vilken: ${pausadeTomma.map((k) => `${k.namn} (${k.id})`).join(' · ')}${avvecklade.length ? ` (+ ${avvecklade.length} avvecklad)` : ''}.`,
       kandidater: lista,
     };
   }
@@ -212,6 +272,23 @@ export function produktJsonUrl(url) {
   } catch { return null; }
 }
 
+/** Pris + valuta ur produktsidans JSON-LD, som Shopify renderar i MARKNADENS valuta.
+ *
+ *  ⚠️ `/products/<handle>.json` svarar ALLTID i butikens basvaluta och säger inte
+ *  vilken. Mätt 2026-09-16 på drytrek.se: `.json` gav 389, medan `/nb/…?country=NO`
+ *  visade **379,00 kr** med `"priceCurrency":"NOK"` i JSON-LD:n. Att stämpla
+ *  marknadens valuta på basvalutans tal ger "389 NOK" — ett pris som inte finns
+ *  någonstans, och precis det regel 4 i /ops-oversatt förbjuder. */
+export function prisUrJsonLd(html, valuta) {
+  const träffar = [...String(html ?? '').matchAll(/"price":"?([0-9]+(?:\.[0-9]+)?)"?,"priceCurrency":"([A-Z]{3})"/g)];
+  const iValutan = träffar.filter((t) => t[2] === valuta).map((t) => Number(t[1])).filter(Number.isFinite);
+  if (!iValutan.length) {
+    const andra = [...new Set(träffar.map((t) => t[2]))];
+    return { pris: null, skal: andra.length ? `sidan prissätts i ${andra.join('/')}, inte ${valuta}` : 'sidan bär ingen JSON-LD med pris' };
+  }
+  return { pris: iValutan[0], min: Math.min(...iValutan), max: Math.max(...iValutan), valuta, skal: null };
+}
+
 /** Pris ur ett products/<handle>.json-svar: variants[0].price + min/max över varianterna. */
 export function prisUr(svar, valuta = null) {
   const p = svar?.product ?? svar;
@@ -273,7 +350,39 @@ async function hamtaHub(databaseId) {
 }
 
 /** Pris ur butiken. Timeout 10 s. Lösenordsskyddad sida ⇒ null med skäl. */
-async function hamtaPris(lank, valuta) {
+/** Produktsidan i marknadens land, läst som HTML. */
+async function hamtaMarknadspris(lank, valuta, land) {
+  let url;
+  try {
+    const u = new URL(String(lank));
+    u.search = ''; u.hash = '';
+    u.searchParams.set('country', land);
+    url = u.toString();
+  } catch { return { pris_butik: null, skal: `länken "${lank}" går inte att tolka` }; }
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), 15000);
+  try {
+    const res = await fetch(url, { signal: ac.signal, headers: { 'user-agent': 'Mozilla/5.0 (ops-leveranskon)' } });
+    if (!res.ok) return { pris_butik: null, skal: `${url} → HTTP ${res.status}` };
+    const p = prisUrJsonLd(await res.text(), valuta);
+    if (!p.pris) return { pris_butik: null, skal: p.skal };
+    return { pris_butik: { pris: p.pris, min: p.min, max: p.max, valuta, jamforpris: null, titel: null, handle: null, kalla: url }, skal: null };
+  } catch (e) {
+    return { pris_butik: null, skal: e.name === 'AbortError' ? `${url} svarade inte inom 15 s` : `${url}: ${e.message}` };
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+export async function hamtaPris(lank, valuta, land = null, basvaluta = 'SEK') {
+  // Har marknaden en EGEN valuta måste priset läsas på marknadens sida — se
+  // prisUrJsonLd ovan. Går det inte: rapportera basvalutans tal MED basvalutans
+  // namn och skälet, aldrig marknadens valuta på ett omräknat tal.
+  if (land && valuta !== basvaluta) {
+    const sid = await hamtaMarknadspris(lank, valuta, land);
+    if (sid.pris_butik) return sid;
+    var marknadsskal = sid.skal;
+  }
   const url = produktJsonUrl(lank);
   if (!url) return { pris_butik: null, skal: `länken "${lank}" pekar inte på /products/<handle>` };
   const ac = new AbortController();
@@ -288,9 +397,12 @@ async function hamtaPris(lank, valuta) {
     if (!res.ok) return { pris_butik: null, skal: `${url} → HTTP ${res.status}` };
     const ct = res.headers.get('content-type') || '';
     if (!/json/i.test(ct)) return { pris_butik: null, skal: `${url} gav ${ct || 'okänd typ'}, inte JSON — troligen lösenordsskyddad` };
-    const p = prisUr(await res.json(), valuta);
+    const p = prisUr(await res.json(), marknadsskal ? basvaluta : valuta);
     if (!p) return { pris_butik: null, skal: `${url} har inga varianter med pris` };
-    return { pris_butik: { ...p, kalla: url }, skal: null };
+    return {
+      pris_butik: { ...p, kalla: url, ...(marknadsskal ? { basvaluta: true } : {}) },
+      skal: marknadsskal ? `${valuta}-priset gick inte att läsa (${marknadsskal}) — talet nedan är butikens ${basvaluta}-pris, INTE ${valuta}` : null,
+    };
   } catch (e) {
     return { pris_butik: null, skal: e.name === 'AbortError' ? `${url} svarade inte inom 10 s` : `${url}: ${e.message}` };
   } finally {
@@ -313,31 +425,47 @@ function hamtaFil(pageId, mapp) {
 
 export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null, logg = (...a) => console.error(...a) }) {
   const m = String(marknad).toUpperCase();
-  if (!['SE', 'NO'].includes(m)) throw new Error(`--marknad måste vara SE eller NO (fick "${marknad}").`);
+  if (!OPS_MARKNADSKODER.includes(m)) throw new Error(`--marknad måste vara ${OPS_MARKNADSKODER.join('|')} (fick "${marknad}").`);
+  const marknaden = marknadFor(m);
   const kostatus = status ?? STANDARD_STATUS[m];
+  const csExtra = status === null && m === 'SE';   // bara standardkön för SE tar CS-raderna
   const varningar = [];
 
   // 1. Butiken ur registret + kontospärren. laddaButik godtar läge test
-  //    (Bäverbutiken) — det gör inte det här verktyget.
-  const { laddaButik, sakerstallKonto, OPS_ANNONSKONTO } = await import('../factory/register.mjs');
+  //    (Bäverbutiken) — det gör inte det här verktyget. Kontot är PER MARKNAD
+  //    (opsmarknader.mjs): SE/NO i OPS-kontot, US i Magiborsten UK.
+  const { laddaButik, sakerstallKonto, annonskontoFor, OPS_ANNONSKONTO } = await import('../factory/register.mjs');
   const butik = laddaButik(nyckel);
-  const konto = sakerstallKonto(butik.post);
-  if (konto !== OPS_ANNONSKONTO) {
-    throw new Error(`STOPP: ${butik.post.nyckel} pekar på konto ${konto}, inte OPS-kontot ${OPS_ANNONSKONTO}. Bäverbutikens rader går via tools/leveranskon.mjs.`);
+  const baskonto = sakerstallKonto(butik.post);
+  if (baskonto !== OPS_ANNONSKONTO) {
+    throw new Error(`STOPP: ${butik.post.nyckel} pekar på konto ${baskonto}, inte OPS-kontot ${OPS_ANNONSKONTO}. Bäverbutikens rader går via tools/leveranskon.mjs.`);
   }
+  const konto = annonskontoFor(butik.post, m);
   if (!butik.prefix) throw new Error(`${butik.post.nyckel}: ${butik.prefixfel}`);
   const hubId = butik.post.notion?.database_id;
   if (!hubId) {
     throw new Error(`${butik.post.nyckel}: hubben är inte inskriven — \`node factory/register.mjs notion ${butik.post.nyckel} <id>\``);
   }
-  logg(`Butik: ${butik.post.brand} (${butik.post.nyckel}) · konto ${konto} · prefix ${butik.prefix.join(' · ')} · marknad ${m} · status "${kostatus}"`);
+  const annonsmarknader = butik.post.annonsmarknader ?? ['NO'];
+  if (marknaden.oversatts && !annonsmarknader.includes(m)) {
+    varningar.push(`${m} står inte i butikens annonsmarknader (${annonsmarknader.join(', ')}) — rader som laddas upp här räknas inte in när Approved avgörs. Skriv in med: node factory/register.mjs annonsmarknader ${butik.post.nyckel} ${[...annonsmarknader, m].join(',')}`);
+  }
+  logg(`Butik: ${butik.post.brand} (${butik.post.nyckel}) · konto ${konto} (${marknaden.kontonamn}) · prefix ${butik.prefix.join(' · ')} · marknad ${m} · status "${kostatus}" · annonsmarknader SE + ${annonsmarknader.join(', ')}`);
+  // Standardlänken för marknaden — den ärvda vinner när kampanjen har annonser,
+  // men en NY marknads kampanj är tom och har inget att ärva.
+  let lank_standard = null;
+  try {
+    const handle = butik.produkt?.produkt?.handle || butik.produkt?.produkt?.id || butik.post.id;
+    lank_standard = marknadslank(butik.butik, { handle, kod: m });
+  } catch (e) { varningar.push(`standardlänk: ${e.message}`); }
 
   // 2. Hubben + raderna.
   const hub = await hamtaHub(hubId);
   logg(`OPS-hubb: ${hub.titel} (${hub.id})`);
   const { klaraRader } = await import('./notion-kalla.mjs');
-  const raa = await klaraRader(hub, { statusar: [kostatus.trim().toLowerCase()], typ: TYP_RE });
-  logg(`  ${raa.length} rader i "${kostatus}" (Typ ~ pending approval)`);
+  const statusar = [kostatus.trim().toLowerCase(), ...(csExtra ? [CS_STATUS_SE.toLowerCase()] : [])];
+  const raa = await klaraRader(hub, { statusar, typ: TYP_RE });
+  logg(`  ${raa.length} rader i "${kostatus}"${csExtra ? ` + "${CS_STATUS_SE}"` : ''} (Typ ~ pending approval)`);
 
   // 3. Kontot: alla annonser (dubblettkoll + kampanjkoppling) och alla kampanjer.
   const { alla, kampanjUtfall } = await import('./meta-lib.mjs');
@@ -353,7 +481,15 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   const butikens = annonser
     .filter((a) => tillhorButiken(a.name, butik.prefix) || tillhorButiken(a.campaign?.name, butik.prefix))
     .map((a) => ({ campaign_id: a.campaign?.id, ad_name: a.name, campaign_name: a.campaign?.name }));
-  const val = valjKampanjer(kampanjer, butik.prefix, butikens);
+  // Kampanjnamnets bas (kampanjbasFor) fångar en TOM kampanj utan annonser —
+  // den första US-kampanjen är alltid tom (byggd med --tom).
+  let kampanjbaser = [];
+  try {
+    const { kampanjbasFor } = await import('../factory/kampanj.mjs');
+    if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: butik.post.brand, marknad: m, produkt: butik.produkt })];
+  } catch (e) { varningar.push(`kampanjbas: ${e.message}`); }
+  const val = valjKampanjer(kampanjer, butik.prefix, butikens, kampanjbaser);
+  if (val.baraViaBas?.length) logg(`  via kampanjnamnet (tom kampanj): ${val.baraViaBas.join(' · ')}`);
   const perMarknad = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), m);
   const kandidater = [];
   for (const k of perMarknad.behall) {
@@ -361,9 +497,10 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const u = await kampanjUtfall(k.id);
     kandidater.push({ ...k, utfall: u.utfall, spend: u.spend ?? null });
   }
-  const { kampanj, skal: kampanjSkal } = valjMalkampanj(kandidater, m);
+  const { kampanj, skal: kampanjSkal, varning: kampanjVarning } = valjMalkampanj(kandidater, m);
   if (kampanj) logg(`Kampanj (${m}): ${kampanj.namn} [${kampanj.status}] · bas "${kampanj.bas}"`);
   else { logg(`Kampanj (${m}): INGEN — ${kampanjSkal}`); varningar.push(`kampanj: ${kampanjSkal}`); }
+  if (kampanjVarning) { logg(`  ⚠️  ${kampanjVarning}`); varningar.push(`kampanj: ${kampanjVarning}`); }
   for (const k of kandidater.filter((x) => x.utfall === 'AVVECKLAD')) {
     if (!kampanj || k.id !== kampanj.id) varningar.push(`"${k.name}" är PAUSED med ${Math.round(k.spend)} kr spend — avvecklad, aldrig mål`);
   }
@@ -376,36 +513,74 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const kampanjAnnonser = await alla(`${kampanj.id}/ads`, { fields: 'id,name,status,created_time,creative{object_story_spec}' }, 50);
     const arv = arvdLank(kampanjAnnonser);
     if (arv) { lank_arvd = arv.lank; logg(`Ärvd länk: ${arv.lank} (ur ${arv.fran}, ${arv.status})`); }
+    else if (lank_standard) logg(`Ingen länk att ärva (kampanjen har inga annonser än) — standardlänken för ${m} gäller: ${lank_standard}`);
     else varningar.push('ingen landningslänk gick att ärva ur kampanjens annonser');
+  }
+
+  // 4b. Övriga översättningsmarknaders konton: bär de redan annonsen? Avgör
+  //     om raden får flyttas till Approved efter den här marknaden — annars
+  //     läser nästa marknads rutin aldrig raden (NO 15:40 och US 17:05 delar
+  //     samma kö). Ett konto läses en gång.
+  const andraMarknader = marknaden.oversatts ? annonsmarknader.filter((k) => k !== m) : [];
+  const kartaPerKonto = new Map([[konto, karta]]);
+  for (const k of andraMarknader) {
+    const kk = annonskontoFor(butik.post, k);
+    if (kartaPerKonto.has(kk)) continue;
+    logg(`Läser kontot ${kk} (${marknadFor(k).kontonamn}) för ${k} …`);
+    kartaPerKonto.set(kk, dubblettKarta(await alla(`act_${kk}/ads`, { fields: 'id,name' })));
   }
 
   // 5. Pris ur butiken — en gång per unik länk.
   const prisCache = new Map();
   const prisFor = async (lank) => {
     if (!lank) return { pris_butik: null, skal: 'ingen länk' };
-    if (!prisCache.has(lank)) prisCache.set(lank, await hamtaPris(lank, butik.post.valuta ?? 'SEK'));
+    if (!prisCache.has(lank)) prisCache.set(lank, await hamtaPris(
+      lank,
+      marknaden.oversatts ? marknaden.valuta : (butik.post.valuta ?? 'SEK'),
+      marknaden.oversatts ? marknaden.country : null,
+      butik.post.valuta ?? 'SEK',
+    ));
     return prisCache.get(lank);
   };
   const forstaLandning = raa.map((r) => r.landning).find(Boolean) ?? null;
-  const huvudpris = await prisFor(lank_arvd ?? forstaLandning);
+  // Priset läses på MARKNADENS sida (/en/… för US) i marknadens valuta. Svarar
+  // sidan inte (locale:n finns inte än) är butiken inte redo för marknaden —
+  // det syns som "pris: …" i varningarna och rutinen håller kön.
+  const huvudpris = await prisFor(lank_arvd ?? lank_standard ?? forstaLandning);
   if (!huvudpris.pris_butik) varningar.push(`pris: ${huvudpris.skal}`);
   else logg(`Pris ur butiken: ${huvudpris.pris_butik.pris} ${huvudpris.pris_butik.valuta} (${huvudpris.pris_butik.min}–${huvudpris.pris_butik.max}) via ${huvudpris.pris_butik.kalla}`);
 
   // 6. Raderna.
   const rader = [];
+  const cs_lamnade = [];   // CS-rader som INTE tas: annat prefix eller ingen fil
   for (const r of raa) {
     const namn = annonsdel(r.namn);
     const t = tolkaNamn(namn);
     // Bär raden ett annat prefix än butikens (flyttad Bäverbutiks-hubb) blir
     // målnamnet ommärkt till butikens annonsprefix — det är namnet i kontot.
     const avviker = prefixAvviker(namn, butik.prefix, tillhorButiken);
+    if (!tasMedISE({ namn, status: r.status, prefix_avviker: avviker, leverans: r.leverans }, { kostatus, brand: butik.post.brand })) {
+      const skal = avviker || !harBrandPrefix(namn, butik.post.brand)
+        ? `prefixet "${t.prefix}" är inte butikens brand (${butik.post.brand}) — parkerad källrad, rörs inte`
+        : 'ingen fil än';
+      cs_lamnade.push({ namn, page_id: r.id, status: r.status, skal });
+      continue;
+    }
     const basnamn = avviker && butik.post.annonsprefix ? ommarkt(namn, butik.post.annonsprefix) : namn;
     const mal_namn = malNamn(basnamn, m);
     const adsetnamn = kampanj ? adsetNamn(kampanj.bas, t.koncept) : null;
     const d = dubblett(mal_namn, karta);
-    const lank = lank_arvd ?? r.landning ?? null;
+    const lank = lank_arvd ?? lank_standard ?? r.landning ?? null;
+    // Bär de andra översättningsmarknadernas konton redan annonsen?
+    const klar_i = {};
+    for (const k of andraMarknader) {
+      const namnDar = marknadsNamn(basnamn, k);
+      klar_i[k] = namnDar ? dubblett(namnDar, kartaPerKonto.get(annonskontoFor(butik.post, k))).finns_i_meta : false;
+    }
+    const flytta_till_approved = marknaden.oversatts ? skaFlyttasTillApproved(klar_i, annonsmarknader, m) : null;
     const rad = {
       namn, mal_namn, page_id: r.id, url: r.url, typ: typAv(r.typ), typ_notion: r.typ, status: r.status,
+      fran_cs: statusLika(r.status, CS_STATUS_SE),
       leverans: r.leverans, leverans_text: leveransText(r),
       // Signerade Notion-URL:er skrivs aldrig ut — bara namnen.
       filer: (r.filer ?? []).map((f) => ({ namn: f.namn })),
@@ -413,11 +588,13 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       drive: (r.drive ?? []).map((x) => ({ id: x.id, typ: x.typ, url: x.url })),
       landning: r.landning ?? null, lank,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
-      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn),
+      adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn, t.koncept),
       finns_i_meta: d.finns_i_meta, ad_id: d.ad_id,
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,
-      se_ad_id: m === 'NO' ? (dubblett(basnamn, karta).ad_id ?? dubblett(namn, karta).ad_id) : null,
+      // SE-annonsen ligger alltid i OPS-kontot — även när målmarknaden bor i ett annat.
+      se_ad_id: marknaden.oversatts ? (dubblett(basnamn, kartaPerKonto.get(baskonto) ?? karta).ad_id ?? dubblett(namn, kartaPerKonto.get(baskonto) ?? karta).ad_id) : null,
+      klar_i, flytta_till_approved,
       skapad: r.skapad, hub: hub.titel, fil: null, fil_alla: [], fil_fel: null,
     };
     if (rad.prefix_avviker) varningar.push(`${namn}: prefixet "${t.prefix}" är inte butikens (${butik.prefix.join(' / ')}) — målnamnet är ommärkt till "${mal_namn}"; kontrollera att creativen inte bär Bäverbutikens brand eller pris`);
@@ -425,7 +602,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     if (!mal_namn) varningar.push(`${namn}: inget "_" i namnet — målnamn kan inte bildas`);
     if (r.leverans === 'saknas') varningar.push(`${namn}: väntar på fil (varken bilaga, mediablock eller Drive-länk)`);
     if (!lank) varningar.push(`${namn}: ingen landningslänk (varken ärvd ur kampanjen eller Landing page på raden)`);
-    if (m === 'NO' && !rad.se_ad_id) varningar.push(`${namn}: SE-annonsen finns inte i kontot — inte launchad i Sverige`);
+    if (marknaden.oversatts && !rad.se_ad_id) varningar.push(`${namn}: SE-annonsen finns inte i OPS-kontot — inte launchad i Sverige`);
     if (r.landning && lank_arvd && r.landning !== lank_arvd) rad.landning_avviker = true;
     if (ut && r.leverans !== 'saknas' && !d.finns_i_meta) {
       const h = hamtaFil(r.id, join(ut, namn.replace(/[^\w åäöÅÄÖ.-]/g, '_')));
@@ -435,9 +612,13 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     }
     rader.push(rad);
   }
+  if (cs_lamnade.length) logg(`  ${cs_lamnade.length} rad(er) lämnade i "${CS_STATUS_SE}": ${cs_lamnade.map((x) => `${x.namn} (${x.skal})`).join(' · ')}`);
 
   return {
-    butik: butik.post.brand, nyckel: butik.post.nyckel, konto, marknad: m, status: kostatus,
+    butik: butik.post.brand, nyckel: butik.post.nyckel, konto, kontonamn: marknaden.kontonamn, marknad: m, status: kostatus,
+    annonsmarknader, lank_standard, valuta: marknaden.oversatts ? marknaden.valuta : (butik.post.valuta ?? 'SEK'),
+    heygen_sprak: marknaden.heygen_sprak, sprak: marknaden.sprak, locale: marknaden.locale,
+    cs_status: csExtra ? CS_STATUS_SE : null, cs_lamnade,
     hub: { id: hub.id, titel: hub.titel },
     kampanj: kampanj ? { ...kampanj, adsets: adsets.map((a) => ({ id: a.id, name: a.name, status: a.status })) } : null,
     kampanj_skal: kampanjSkal,
@@ -453,27 +634,35 @@ export function tabell(ko) {
   const ut = [];
   ut.push(`=== OPS-leveranskön · ${ko.butik} (${ko.nyckel}) · ${ko.marknad} · "${ko.status}" ===`);
   ut.push(`OPS-hubb: ${ko.hub.titel} (${ko.hub.id})`);
-  ut.push(`Konto: ${ko.konto}`);
+  ut.push(`Konto: ${ko.konto}${ko.kontonamn ? ` (${ko.kontonamn})` : ''}${ko.annonsmarknader ? ` · annonsmarknader SE + ${ko.annonsmarknader.join(', ')}` : ''}`);
   if (ko.kampanj) ut.push(`Kampanj: ${ko.kampanj.namn} [${ko.kampanj.status}] (${ko.kampanj.id}) · bas "${ko.kampanj.bas}" · ${ko.kampanj.adsets.length} adsets`);
   else ut.push(`Kampanj: ⚠️  INGEN — ${ko.kampanj_skal}`);
-  ut.push(`Ärvd länk: ${ko.lank_arvd ?? '⚠️  ingen'}`);
+  ut.push(`Ärvd länk: ${ko.lank_arvd ?? (ko.lank_standard ? `ingen — standardlänk ${ko.lank_standard}` : '⚠️  ingen')}`);
   ut.push(`Pris ur butiken: ${ko.pris_butik ? `${ko.pris_butik.pris} ${ko.pris_butik.valuta}${ko.pris_butik.min !== ko.pris_butik.max ? ` (${ko.pris_butik.min}–${ko.pris_butik.max})` : ''}${ko.pris_butik.jamforpris ? ` · jämförpris ${ko.pris_butik.jamforpris}` : ''}` : `⚠️  okänt — ${ko.pris_skal}`}`);
   ut.push('');
   if (!ko.rader.length) ut.push(`Inga rader i "${ko.status}".`);
   for (const r of ko.rader) {
     const pil = r.mal_namn && r.mal_namn !== r.namn ? ` → ${r.mal_namn}` : '';
     const dubb = r.finns_i_meta ? `  ✓ FINNS REDAN i kontot (${r.ad_id}) — laddas inte upp` : '';
-    ut.push(`• ${r.namn}${pil}  [${r.typ}]${dubb}${r.prefix_avviker ? '  ⚠️ PREFIX ≠ BUTIKENS' : ''}`);
+    ut.push(`• ${r.namn}${pil}  [${r.typ}]${dubb}${r.prefix_avviker ? '  ⚠️ PREFIX ≠ BUTIKENS' : ''}${r.fran_cs ? `  (ur "${CS_STATUS_SE}")` : ''}`);
     ut.push(`    fil:      ${r.leverans_text}${r.fil ? `  → ${r.fil}` : ''}${r.fil_fel ? `  ✗ ${r.fil_fel}` : ''}`);
     ut.push(`    koncept:  ${r.koncept ?? '⚠️  saknas'}${r.nummer != null ? ` · nr ${r.nummer}` : ''}${r.variant ? ` · variant ${r.variant}` : ''}`);
     ut.push(`    adset:    ${r.adset_namn ?? '—'}  ${r.adset ? `finns (${r.adset.id}, ${r.adset.status})` : (r.adset_namn ? 'saknas — skapas av uppladdaren' : '')}`);
     ut.push(`    länk:     ${r.lank ?? '⚠️  ingen'}${r.landning ? `  (raden: ${r.landning}${r.landning_avviker ? ' ⚠️ avviker från ärvd' : ''})` : ''}`);
-    if (ko.marknad === 'NO') ut.push(`    SE-annons: ${r.se_ad_id ?? '⚠️  finns inte i kontot'}`);
+    if (ko.marknad !== 'SE') {
+      ut.push(`    SE-annons: ${r.se_ad_id ?? '⚠️  finns inte i kontot'}`);
+      const andra = Object.entries(r.klar_i ?? {});
+      if (andra.length) ut.push(`    andra marknader: ${andra.map(([k, v]) => `${k} ${v ? '✓ uppe' : '– saknas'}`).join(' · ')} → ${r.flytta_till_approved ? 'raden flyttas till Approved efter den här' : 'raden STANNAR i kön (fler marknader kvar)'}`);
+    }
     ut.push(`    notion:   ${r.url}`);
   }
   ut.push('');
   const nya = ko.rader.filter((r) => !r.finns_i_meta);
   ut.push(`${ko.rader.length} rad(er) i kön · ${nya.length} att ladda upp · ${ko.rader.length - nya.length} finns redan`);
+  if (ko.cs_lamnade?.length) {
+    ut.push(`\nLämnade i "${CS_STATUS_SE}" (${ko.cs_lamnade.length}) — rörs inte:`);
+    for (const x of ko.cs_lamnade) ut.push(`  · ${x.namn}: ${x.skal}`);
+  }
   if (ko.varningar.length) {
     ut.push(`\nVarningar (${ko.varningar.length}):`);
     for (const v of ko.varningar) ut.push(`  ⚠️  ${v}`);

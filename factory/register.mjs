@@ -10,8 +10,10 @@
 //   node factory/register.mjs brief-kord <butik> [YYYY-MM-DD]    → stämpla senaste_brief (briefronden)
 //   node factory/register.mjs notion <butik> <database_id|url> [namn…]  → koppla Notion-hubben
 //   node factory/register.mjs redigerare <butik> <namn> [discord-id]    → tilldela redigerare
-//   node factory/register.mjs briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]
+//   node factory/register.mjs briefantal <butik> <antal|paus|auto> [--tillsvidare] [motivering…]
 //                                                     → överstyr briefrondens storlek (engång som standard)
+//                                                     → "paus" stoppar briefronden men INTE budgetronden,
+//                                                        och står tills vidare. Släpps med "auto".
 //
 // Två kalendrar per post (Axels beslut 2026-09-10):
 //   KÖRDAG   — budgetronden (/skalningskungen), var tredje dag via kordag_offset.
@@ -43,6 +45,7 @@ import { lasYaml } from './yaml.mjs';
 import { sammanfoga } from './butik.mjs';
 import { ekonomiForProdukt, linjetext } from './ekonomi.mjs';
 import { VIDEOR_PER_DAG, RONDDAGAR } from './kadens.mjs';
+import { annonsmarknaderUr, kontoFor, marknadFor } from './opsmarknader.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
@@ -161,6 +164,9 @@ export function upptackOps(rot = ROT) {
       id: y?.butik?.id ?? f.replace(/\.yaml$/, ''),
       brand: y?.butik?.brand ?? '',
       valuta: y?.butik?.valuta ?? 'SEK',
+      // Produkten ett bart butiks-id betyder i en flerproduktsbutik (se
+      // hittaPost). Tomt = butiks-id:t kastar så fort butiken bär två produkter.
+      huvudprodukt: normalisera(y?.butik?.huvudprodukt ?? ''),
       fil: `factory/butiker/${f}`,
       ra: y,
     };
@@ -206,6 +212,9 @@ export function upptackOps(rot = ROT) {
     // flerproduktsbutik matchar brandet båda produkternas annonser, och då
     // rangordnas grannens creatives mot den här produktens break-even.
     enprodukt: (antalPerButik.get(butik.id) ?? 0) === 1,
+    // true på den produkt butiksfilen pekar ut med `butik.huvudprodukt`. Bara
+    // den får svara på ett bart butiks-id i en flerproduktsbutik (hittaPost).
+    huvudprodukt: finns(butik.huvudprodukt) && butik.huvudprodukt === normalisera(produkt.id),
     daily_budget_sek: produkt.daily_budget_sek,
     byggd,
     kopplingskalla: kalla,
@@ -233,6 +242,7 @@ export function upptackTest(rot = ROT) {
       annonsprefix: p.creative_prefix ?? '',
       kampanjprefix: '',
       enprodukt: false,
+      huvudprodukt: false,
       daily_budget_sek: p.daily_budget_sek ?? null,
       byggd: true,
       kopplingskalla: 'products.json',
@@ -418,6 +428,16 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // fast redigeraren inte är bestämd). Skräp räknas som ingen överstyrning.
       briefantal_override: giltigOverride(d?.briefantal_override) ? d.briefantal_override : null,
       notion: d?.notion ?? post.notion ?? null,
+      // Marknaderna butikens SE-annonser översätts till (utöver SE). Standard
+      // NO; USA läggs till per butik (`register.mjs annonsmarknader <nyckel> NO,US`).
+      // Styr vilka översättningsrutiner setup bygger och när en rad i
+      // SE-ACTIVE to be translated får flyttas till Approved (alla klara).
+      annonsmarknader: annonsmarknaderUr(d?.annonsmarknader),
+      // Speglingen (Axels beslut 2026-09-18): produkten briefas i
+      // Bäverbutikens hub (kalla_hub) och varje NO-klar rad där speglas hit
+      // av /ops-spegla. Utan fältet finns ingen spegling och setup bygger
+      // ingen sådan rutin. Skräp räknas som ingen spegling.
+      spegling: giltigSpegling(d?.spegling) ? d.spegling : null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
       // Briefdagarna: posten får överstyra, annars toppnivån i register.json,
@@ -460,11 +480,21 @@ export function hittaPost(nyckel, register = lasRegister()) {
     throw new Error(`Okänd butik/produkt: "${nyckel}". Registret innehåller: ${lista || '(tomt)'}`);
   }
   if (traffar.length > 1) {
-    // En flerproduktsbutik slås upp på butiks-id och ger två träffar. Gissa
-    // aldrig vilken — en rond mot fel produkt dömer mot fel break-even.
+    // En flerproduktsbutik slås upp på butiks-id (eller brand) och ger två
+    // träffar. Gissa aldrig vilken — en rond mot fel produkt dömer mot fel
+    // break-even. Men butiksfilen får PEKA UT en: `butik.huvudprodukt`.
+    // Det är ett beslut i en versionerad fil, inte en gissning, och det håller
+    // butikens gamla rutiner (`/notionscalercs carashell`) i gång när
+    // produkt 2 kommer in — rutinerna ligger ofta på ett annat Claude-konto
+    // än sessionen och går inte att skriva om härifrån (CaraShell 2026-09-16).
+    const butiker = new Set(traffar.map((p) => p.butik));
+    const huvud = traffar.filter((p) => p.huvudprodukt === true);
+    if (butiker.size === 1 && huvud.length === 1) return huvud[0];
+    const tips = butiker.size === 1
+      ? ` Ange produktens nyckel (butik/produkt), eller sätt \`butik.huvudprodukt: <produkt-id>\` i ${traffar[0].butiksfil ?? 'butiksfilen'} så betyder ett bart "${nyckel}" den produkten.`
+      : ' Ange produktens nyckel (butik/produkt) i stället.';
     throw new Error(
-      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}. `
-      + 'Ange produktens nyckel (butik/produkt) i stället.'
+      `"${nyckel}" matchar ${traffar.length} poster: ${traffar.map((p) => p.nyckel).join(', ')}.${tips}`
     );
   }
   return traffar[0];
@@ -503,6 +533,34 @@ export function sakerstallKonto(post) {
 
 /** Bakåtkompatibelt namn: samma spärr, men bara för läge skala. */
 export const sakerstallOpsKonto = (post) => sakerstallKonto({ ...post, lage: 'skala' });
+
+/**
+ * Annonskontot för en OPS-post PÅ EN MARKNAD. Kontot är per marknad, inte per
+ * butik (factory/opsmarknader.mjs): SE och NO ligger i OPS-kontot, US i
+ * Magiborsten UK. Postens eget konto måste ändå vara OPS-kontot — det är
+ * butikens identitet — så kontospärren körs först. Läge test har ingen
+ * marknadsväg alls.
+ */
+export function annonskontoFor(post, marknad = 'SE') {
+  const bas = sakerstallKonto(post);
+  if (post?.lage === 'test') return bas;
+  return kontoFor(marknad);
+}
+
+/** Sätter butikens annonsmarknader ("NO,US"). SE är alltid med och skrivs aldrig. */
+export function sattAnnonsmarknader(nyckel, lista) {
+  const marknader = annonsmarknaderUr(lista);
+  for (const k of marknader) marknadFor(k);
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  rad.annonsmarknader = marknader;
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, annonsmarknader: marknader };
+}
 
 /**
  * Prefixen som en läsning av det DELADE kontot ska filtreras på.
@@ -563,6 +621,26 @@ export function prefixEllerSkal(post) {
 }
 
 /** Hela bilden av en post: register + butikskonfig + produktfil + ekonomi. */
+/**
+ * Utmappen under factory/output/ för en post. Enproduktsbutiker och butikens
+ * huvudprodukt skriver som förut i factory/output/<butik>/ (historiken ligger
+ * där); en ANDRA produkt i samma butik får factory/output/<butik>/<produkt>/.
+ * ⚠️ Mätt 2026-09-17 (nattvakten carashell/termoskyddet): utan den här delningen
+ * skrev takskyddet och termoskyddet samma budgetrond-<datum>.json,
+ * insights-<datum>.json och analys-<datum>.json — och `ops-bild --namn` läste
+ * takskyddets analysfil som termoskyddets kontonamn.
+ */
+export function utmapp(post, rot = ROT) {
+  const butik = post?.butik || String(post?.nyckel ?? '').split('/')[0];
+  if (!butik) throw new Error('utmapp: posten saknar butik och nyckel');
+  const bas = join(rot, 'factory', 'output', butik);
+  // Bara en post som BEVISLIGEN är en andra produkt får egen mapp: fältet
+  // enprodukt måste vara exakt false, id måste finnas och den får inte vara
+  // huvudprodukten. Saknas fälten (gamla poster, testfixturer) ⇒ butikens mapp.
+  const andraProdukt = post?.enprodukt === false && !post?.huvudprodukt && post?.id && butik !== 'baverbutiken';
+  return andraProdukt ? join(bas, post.id) : bas;
+}
+
 export function laddaButik(nyckel, register = lasRegister()) {
   const post = hittaPost(nyckel, register);
   // Kontospärren körs vid VARJE uppslagning, inte bara före ett Meta-anrop.
@@ -619,7 +697,7 @@ export const BRIEFANTAL_UTAN_REDIGERARE = VIDEOR_PER_DAG;
 
 /** En överstyrning är giltig bara med ett heltal > 0 — allt annat ignoreras tyst men syns i rapporten som "ingen". */
 function giltigOverride(o) {
-  return Boolean(o) && typeof o === 'object' && Number.isInteger(o.antal) && o.antal > 0;
+  return Boolean(o) && typeof o === 'object' && Number.isInteger(o.antal) && o.antal >= 0;
 }
 
 /**
@@ -640,19 +718,36 @@ function giltigOverride(o) {
 export function briefantal(post) {
   const o = post?.briefantal_override;
   if (giltigOverride(o)) {
+    // 0 = briefronden är PAUSAD. Budgetronden går som vanligt varje natt —
+    // det är hela poängen: en kampanj utan bedömbar data ska skyddas mot att
+    // bränna budget, men inte matas med briefer som bygger på gissningar.
+    // (Axels beslut 2026-09-14 på CatCabin: "vi kan nästan låta denna runna
+    // lite eftersom vi inte ens vet om den går bra — är det inte värt att
+    // spamma nya ads".) Nollas med `briefantal <butik> auto`.
+    if (o.antal === 0) {
+      return {
+        antal: 0,
+        kalla: 'pausad',
+        engang: o.engang !== false,
+        pausad: true,
+        skal: `⏸️ BRIEFRONDEN PAUSAD — budgetronden går ändå varje natt. Släpps med \`briefantal <butik> auto\``
+          + `${finns(o.motivering) ? `: ${o.motivering}` : ''}${finns(o.satt) ? ` [satt ${o.satt}]` : ''}`,
+      };
+    }
     return {
       antal: o.antal,
       kalla: 'override',
       engang: o.engang !== false,
+      pausad: false,
       skal: `ÖVERSTYRD (${o.engang !== false ? 'engång — förbrukas av brief-kord' : 'tillsvidare — nollas med `briefantal <butik> auto`'})`
         + `${finns(o.motivering) ? `: ${o.motivering}` : ''}${finns(o.satt) ? ` [satt ${o.satt}]` : ''}`,
     };
   }
   const redigerare = redigerareFor(post);
   if (redigerare) {
-    return { antal: BRIEFANTAL_KADENS, kalla: 'kadens', engang: false, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
+    return { antal: BRIEFANTAL_KADENS, kalla: 'kadens', engang: false, pausad: false, skal: `kadensen ${VIDEOR_PER_DAG}/dag × ${RONDDAGAR} dagar — redigerare ${redigerare}` };
   }
-  return { antal: BRIEFANTAL_UTAN_REDIGERARE, kalla: 'utan-redigerare', engang: false, skal: 'ingen redigerare tilldelad — en dags produktion, så hubben inte fylls med briefer ingen gör' };
+  return { antal: BRIEFANTAL_UTAN_REDIGERARE, kalla: 'utan-redigerare', engang: false, pausad: false, skal: 'ingen redigerare tilldelad — en dags produktion, så hubben inte fylls med briefer ingen gör' };
 }
 
 /**
@@ -761,13 +856,19 @@ export function sattBriefantal(nyckel, antal, { motivering = '', tillsvidare = f
   const drift = lasDrift();
   drift.poster = drift.poster ?? {};
   const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
-  if (normalisera(antal) === 'auto') {
+  const arg = normalisera(antal);
+  if (arg === 'auto') {
     rad.briefantal_override = null;
   } else {
-    const n = Number(antal);
-    if (!Number.isInteger(n) || n <= 0) throw new Error(`Ange antal briefer som ett heltal > 0, eller "auto" — fick "${antal}".`);
+    // "paus" (eller 0) stoppar briefronden men INTE budgetronden. En paus står
+    // ALLTID tills vidare: en paus som tyst förbrukas av nästa brief-kord vore
+    // en fälla, för då börjar briefarna igen utan att någon bestämt det.
+    // Släpps med `briefantal <butik> auto`.
+    const paus = arg === 'paus' || arg === 'pausa' || Number(antal) === 0;
+    const n = paus ? 0 : Number(antal);
+    if (!Number.isInteger(n) || n < 0) throw new Error(`Ange antal briefer som ett heltal > 0, "paus" för att stoppa briefronden, eller "auto" — fick "${antal}".`);
     if (!finns(motivering)) throw new Error('Ange en motivering — en överstyrning utan skäl går inte att förstå senare.');
-    rad.briefantal_override = { antal: n, engang: !tillsvidare, motivering: motivering.trim(), satt };
+    rad.briefantal_override = { antal: n, engang: paus ? false : !tillsvidare, motivering: motivering.trim(), satt };
   }
   rad.lage = rad.lage ?? post.lage;
   drift.poster[post.nyckel] = rad;
@@ -780,6 +881,60 @@ export function sattBriefantal(nyckel, antal, { motivering = '', tillsvidare = f
  * URL sparas den också. Namnet byts bara om ett nytt anges — övriga fält
  * (foralder_page_id, collection_id …) lämnas orörda.
  */
+/**
+ * De två stegen speglingen lägger till i KÄLLHUBBEN (Bäverbutikens), namngivna
+ * efter butikens brand — Axels ord 2026-09-18: "CaraShell ready to be active".
+ *   se: /oversatt NO sätter den när Norge är uppe ⇒ speglingen tar raden
+ *   en: speglingen sätter den när SE (+NO) är live i butiken ⇒ US-rutinen tar den
+ * Ren funktion. Alternativen måste finnas i hubben — Notions API kan inte
+ * skapa status-alternativ, det är Axels klick.
+ */
+export function speglingsstatusar(brand) {
+  const b = String(brand ?? '').trim();
+  if (!b) throw new Error('speglingsstatusar: brand saknas.');
+  return { se: `${b} SE ready to be active`, en: `${b} EN ready to be active` };
+}
+
+/** Bär driftraden en riktig spegling? Ett 32-hex hub-id krävs. */
+export function giltigSpegling(s) {
+  return Boolean(s && typeof s === 'object' && /^[0-9a-f]{32}$/i.test(String(s.kalla_hub ?? '').replace(/-/g, '')));
+}
+
+/** Speglingen för en post, eller null. */
+export function speglingFor(post) {
+  return giltigSpegling(post?.spegling) ? post.spegling : null;
+}
+
+/** Skriver in speglingen: källhubben (Bäverbutikens) + de två statusnamnen.
+ *  `av` tar bort den. Statusnamnen skrivs ut i klartext så /oversatt och
+ *  /ops-spegla läser samma sträng — aldrig två stavningar. */
+export function sattSpegling(nyckel, idEllerUrl, { namn = '', satt = svenskDatum() } = {}) {
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  if (normalisera(idEllerUrl) === 'av') {
+    delete rad.spegling;
+  } else {
+    const kalla_hub = normaliseraNotionId(idEllerUrl);
+    if (post.notion?.database_id && String(post.notion.database_id).replace(/-/g, '') === kalla_hub) {
+      throw new Error(`${post.nyckel}: ${kalla_hub} är butikens EGEN hub — källhubben ska vara Bäverbutikens.`);
+    }
+    const statusar = speglingsstatusar(post.brand);
+    rad.spegling = {
+      kalla_hub,
+      kalla_namn: finns(namn) ? namn.trim() : (rad.spegling?.kalla_namn ?? ''),
+      status_se: statusar.se,
+      status_en: statusar.en,
+      satt,
+    };
+  }
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, spegling: rad.spegling ?? null };
+}
+
 export function sattNotion(nyckel, idEllerUrl, namn = '') {
   const database_id = normaliseraNotionId(idEllerUrl);
   const post = hittaPost(nyckel);
@@ -855,13 +1010,19 @@ export function loggaLaunch(nyckel, antal, datum) {
 function skrivPost(post, idag) {
   const kord = arKordag(post, idag);
   console.log(`\n${post.namn}  ·  ${post.nyckel}  ·  LÄGE ${post.lage.toUpperCase()}`);
+  if (post.huvudprodukt && !post.enprodukt) {
+    // Rutinen kan ha slagit upp bara butiks-id:t. Säg vilken produkt det blev
+    // och var minnet ligger — mappen products/<butik>/ bär inte längre dna.md.
+    console.log(`  Huvudprodukt: ja — ett bart "${post.butik}" betyder den här produkten (butik.huvudprodukt). Minnet: products/${post.nyckel}/`);
+  }
   console.log(`  Annonskonto:  ${post.ad_account_id}${post.lage === 'test' ? ' (Bäverbutiken — LÄSES bara)' : ' (delat OPS-konto, filtrera på prefix)'}`);
   const { prefix, skal } = prefixEllerSkal(post);
   console.log(`  Prefixfilter: ${prefix ? prefix.join(' · ') : `❌ ${skal}`}`);
   console.log(`  Redigerare:   ${redigerareFor(post) ?? 'ingen redigerare tilldelad'}`);
+  if (post.lage !== 'test') console.log(`  Annonsmarknader: SE + ${(post.annonsmarknader ?? []).map((k) => `${k} (${marknadFor(k).kontonamn} ${kontoFor(k)})`).join(', ')}`);
   if (post.lage !== 'test') {
     const b = briefantal(post);
-    console.log(`  Briefrond:    ${b.antal} briefer — ${b.skal}`);
+    console.log(`  Briefrond:    ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
   }
   console.log(`  Dagsbudget:   ${post.daily_budget_sek ? `${post.daily_budget_sek} kr` : 'oklart — saknas i konfigen'}`);
   console.log(`  Kördag ${idag}: ${kord.kordag ? '✅ JA' : '⏭️  nej'} — ${kord.skal}. Nästa: ${kord.nastaKordag}`);
@@ -869,6 +1030,8 @@ function skrivPost(post, idag) {
   console.log(`  Briefdag ${idag}: ${brief.briefdag ? '✅ JA' : '⏭️  NEJ'} — ${brief.skal}. Nästa briefdag: ${brief.nastaBriefdag}`);
   const hub = post.notion ?? {};
   console.log(`  Notion-hub:   ${finns(hub.database_id) ? `${hub.name || '(namnlös)'} (${hub.database_id})` : 'saknas — koppla med `node factory/register.mjs notion <butik> <url>`'}`);
+  const sp = speglingFor(post);
+  if (sp) console.log(`  Spegling:     från ${sp.kalla_namn || '(namnlös)'} (${sp.kalla_hub}) — steg "${sp.status_se}" → live här → "${sp.status_en}" → Approved när US finns [satt ${sp.satt}]`);
   if (post.ny_i_registret) console.log('  ⚠️ Ny i registret — kör `node factory/register.mjs skriv-in` för att låsa kördagen.');
   if (post.lage !== 'test') {
     const { ekonomi } = laddaButik(post.nyckel, { produkter: [post] });
@@ -914,18 +1077,33 @@ function huvud() {
     return;
   }
   if (arg[0] === 'briefantal') {
-    if (!arg[2]) throw new Error('Ange antal eller "auto": briefantal <butik> <antal|auto> [--tillsvidare] [motivering…]');
+    if (!arg[2]) throw new Error('Ange antal, "paus" eller "auto": briefantal <butik> <antal|paus|auto> [--tillsvidare] [motivering…]');
     const tillsvidare = arg.includes('--tillsvidare');
     const motivering = arg.slice(3).filter((a) => a !== '--tillsvidare').join(' ');
     const post = sattBriefantal(arg[1], arg[2], { motivering, tillsvidare, satt: idag });
     const b = briefantal(post);
-    console.log(`Briefrond på ${post.namn}: ${b.antal} briefer — ${b.skal}`);
+    console.log(`Briefrond på ${post.namn}: ${b.pausad ? 'INGA briefer' : `${b.antal} briefer`} — ${b.skal}`);
     return;
   }
   if (arg[0] === 'notion') {
     if (!arg[2]) throw new Error('Ange database_id eller Notion-url: notion <butik> <id|url> [namn…]');
     const post = sattNotion(arg[1], arg[2], arg.slice(3).join(' '));
     console.log(`Notion-hub på ${post.namn}: ${post.notion.name || '(namnlös)'} (${post.notion.database_id})`);
+    return;
+  }
+  if (arg[0] === 'spegling') {
+    if (!arg[2]) throw new Error('Ange källhubben: spegling <nyckel> <bäverbutikens-hub-id|url|av> [namn…]');
+    const post = sattSpegling(arg[1], arg[2], { namn: arg.slice(3).join(' '), satt: idag });
+    if (!post.spegling) { console.log(`Spegling på ${post.namn}: AV — produkten briefas i sin egen hub igen.`); return; }
+    console.log(`Spegling på ${post.namn}: från ${post.spegling.kalla_namn || '(namnlös)'} (${post.spegling.kalla_hub})`);
+    console.log(`  Steg i källhubben (Axels klick: lägg till som Status-alternativ): "${post.spegling.status_se}" och "${post.spegling.status_en}"`);
+    console.log(`  Rutin: node factory/rutin.mjs --tider ${post.nyckel} visar /ops-spegla-tiden; /notionscalercs setup ${post.nyckel} bygger den.`);
+    return;
+  }
+  if (arg[0] === 'annonsmarknader') {
+    if (!arg[2]) throw new Error('Ange marknaderna: annonsmarknader <nyckel> NO,US');
+    const post = sattAnnonsmarknader(arg[1], arg[2]);
+    console.log(`Annonsmarknader på ${post.namn}: SE + ${post.annonsmarknader.join(', ')} (${post.annonsmarknader.map((k) => `${k} → ${marknadFor(k).kontonamn} ${kontoFor(k)}`).join(' · ')})`);
     return;
   }
   if (arg[0] === 'redigerare') {

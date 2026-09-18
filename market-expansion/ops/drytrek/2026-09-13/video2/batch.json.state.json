@@ -1,0 +1,42 @@
+{
+ "drytrek_SP_4_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/5127526697d243439db0d66f27bc30bc/original.mp4",
+  "proofreadId": "3fff156205534f158a1f3e1bc0e360b3-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "838af3a9ce124dbc9b79b71671a6c77e-nb",
+  "downloaded": true
+ },
+ "drytrek_SP_5_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/904accfd52d7482f847de51e9987e54f/original.mp4",
+  "proofreadId": "2b8f0d718c9c43f3b6f71e4a70590b9d-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "232f06d3127147fa9e141e9a4251da21-nb",
+  "downloaded": true
+ },
+ "drytrek_PD_8_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/88bdc96b052541c689b67a5e433b37e5/original.mp4",
+  "proofreadId": "1b3531c8e1d94043ad3c610d0af84c71-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "11cd7999cf5b4579b8ceb850df9e95c1-nb",
+  "downloaded": true
+ },
+ "drytrek_PD_9_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/cb52cd4d51e547a59950b6a2edccc3bf/original.mp4",
+  "proofreadId": "76aedebdb50245cfb4530a10fd629712-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "4b77064d15924815964cd706fca6236c-nb",
+  "downloaded": true
+ },
+ "drytrek_FO_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/379761fa5b1a439b98f5584a00b56f8e/original.mp4",
+  "proofreadId": "fcc18337e736484382ca22c7e490419b-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "31775ef1cce942a7a9c275de0952a4d0-nb",
+  "downloaded": true
+ }
+}

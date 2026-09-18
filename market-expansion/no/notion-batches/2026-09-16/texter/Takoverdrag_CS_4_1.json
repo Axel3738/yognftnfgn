@@ -1,0 +1,36 @@
+[
+ {
+  "form": 0,
+  "text": "1 549 kr — 1 189 kr",
+  "rad": 0,
+  "se": "1 469 kr — 1 129 kr",
+  "stryk": "1 549 kr",
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "Beskytter taket – ikke hele vogna",
+  "rad": 1,
+  "se": "Skyddar taket – inte hela vagnen",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 5,
+  "text": "1 189 kr – frakt inkludert",
+  "rad": 0,
+  "se": "1 129 kr – frakten ingår",
+  "vanster": false
+ },
+ {
+  "form": 7,
+  "text": "Kjøp takovertrekket – 1 189 kr",
+  "rad": 0,
+  "se": "Köp taköverdraget – 1 129 kr",
+  "vanster": false
+ }
+]

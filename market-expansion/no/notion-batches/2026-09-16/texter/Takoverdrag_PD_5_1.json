@@ -1,0 +1,107 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   292
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Dekk bare taket – ikke hele vogna"
+ },
+ {
+  "box": [
+   398,
+   324,
+   1047,
+   370
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 402,
+  "text": "Strammes fast med stropp"
+ },
+ {
+  "box": [
+   398,
+   376,
+   1047,
+   422
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 402,
+  "text": "Strammer i kanten"
+ },
+ {
+  "box": [
+   398,
+   428,
+   1047,
+   478
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 402,
+  "text": "Takluken holdes tørr"
+ },
+ {
+  "box": [
+   285,
+   1088,
+   800,
+   1132
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr (ord. 1 549 kr) – fri frakt"
+ },
+ {
+  "box": [
+   294,
+   1201,
+   787,
+   1308
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Handle nå – 1 189 kr"
+ }
+]

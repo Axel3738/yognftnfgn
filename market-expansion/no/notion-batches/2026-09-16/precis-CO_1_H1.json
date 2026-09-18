@@ -1,0 +1,133 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/out/takovertrekk_CO_1_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/no-video/Takovertrekk_NO_CO_1_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/srt-no/takovertrekk_CO_1_H1.srt",
+ "captions": {
+  "zon": [
+   880,
+   1015
+  ],
+  "standard_cy": 947,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 34,
+  "pad_y": 8,
+  "fyll": [
+   {
+    "rect": [
+     117,
+     915,
+     603,
+     979
+    ],
+    "t": [
+     16.98,
+     18.8
+    ]
+   },
+   {
+    "rect": [
+     266,
+     915,
+     454,
+     979
+    ],
+    "t": [
+     18.8,
+     19.38
+    ]
+   }
+  ]
+ },
+ "blur": [
+  {
+   "rect": [
+    95,
+    315,
+    660,
+    625
+   ],
+   "t": [
+    16.7,
+    19.6
+   ]
+  },
+  {
+   "rect": [
+    50,
+    315,
+    690,
+    625
+   ],
+   "t": [
+    19.6,
+    22.55
+   ]
+  },
+  {
+   "rect": [
+    50,
+    120,
+    690,
+    640
+   ],
+   "t": [
+    16.75,
+    17.45
+   ]
+  },
+  {
+   "rect": [
+    30,
+    760,
+    700,
+    1070
+   ],
+   "t": [
+    22.55,
+    23.3
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/pris_1189.png",
+   "t": [
+    16.7,
+    19.6
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/pris_1549.png",
+   "t": [
+    16.7,
+    19.6
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/frifrakt.png",
+   "t": [
+    19.6,
+    22.55
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/apentkjop.png",
+   "t": [
+    20.5,
+    22.55
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/slutkort_CO_1_H1.png",
+   "t": [
+    22.55,
+    25.75
+   ]
+  }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/qa"
+}

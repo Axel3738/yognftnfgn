@@ -1,0 +1,119 @@
+{%- comment -%}
+  opf-video — loopande MP4 i stället för WebP eller GIF.
+
+  Varför MP4 och inte WebP/GIF (Axels beslut 2026-09-09):
+  en animerad GIF på 8 sekunder väger 10–20 MB och laddar hela filen innan
+  första rutan syns. Samma klipp som h.264-MP4 väger under 1 MB, börjar
+  spela direkt och kan strömmas. WebP är bättre än GIF men saknar fortfarande
+  strömning och hårdvaruavkodning på äldre telefoner.
+
+  Uppspelningen är satt för att fungera som en gif, inte som en film:
+    autoplay + muted + loop + playsinline   spelar utan att kapa skärmen
+    preload="metadata"                      hämtar inte hela filen direkt
+    poster                                  visar en bild medan videon laddas
+    disablepictureinpicture / controlslist   inga kontroller, ingen nedladdning
+
+  ⚠️ `muted` MÅSTE stå i taggen, annars vägrar iOS och Chrome autoplay.
+  ⚠️ Videon laddas upp som en FIL (Innehåll → Filer), inte som produktmedia —
+  produktmedia går inte att välja i en tema-sektion.
+{%- endcomment -%}
+
+{%- liquid
+  assign video = section.settings.video_url
+  assign affisch = section.settings.poster
+-%}
+
+{%- if section.settings.visible and video != blank -%}
+  <div class="opf-video ms-scope" id="opf-video-{{ section.id }}">
+    {%- if section.settings.rubrik != blank -%}
+      <h2 class="opf-video__rubrik">{{ section.settings.rubrik | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.text != blank -%}
+      <p class="opf-video__text">{{ section.settings.text }}</p>
+    {%- endif -%}
+
+    <video
+      class="opf-video__spelare"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      disablepictureinpicture
+      controlslist="nodownload noplaybackrate"
+      {% if affisch != blank %}poster="{{ affisch | image_url: width: 1200 }}"{% endif %}
+      aria-label="{{ section.settings.rubrik | default: shop.name | escape }}"
+    >
+      <source src="{{ video }}" type="video/mp4">
+    </video>
+  </div>
+
+  <style>
+    #opf-video-{{ section.id }} {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+      text-align: center;
+    }
+    #opf-video-{{ section.id }} .opf-video__rubrik {
+      margin: 0 0 8px;
+      font-size: clamp(1.35rem, 3.2vw, 2rem);
+    }
+    #opf-video-{{ section.id }} .opf-video__text {
+      margin: 0 auto 20px;
+      max-width: 54ch;
+      color: var(--ms-ink-soft, inherit);
+    }
+    #opf-video-{{ section.id }} .opf-video__spelare {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: {{ section.settings.maxbredd }}px;
+      aspect-ratio: {{ section.settings.forhallande }};
+      object-fit: cover;
+      border-radius: var(--ms-radius, 12px);
+      background: var(--ms-surface-2, #f2f2f2);
+    }
+    /* Respektera systemets rörelseinställning — en loop som inte går att
+       stänga av är ett tillgänglighetsproblem. */
+    @media (prefers-reduced-motion: reduce) {
+      #opf-video-{{ section.id }} .opf-video__spelare { animation: none; }
+    }
+  </style>
+
+  <script>
+    /* Safari på iOS struntar ibland i autoplay-attributet när videon ligger
+       under vikningen. Starta den när den syns, och pausa när den inte gör
+       det — då drar den heller inte batteri i bakgrunden. */
+    (function () {
+      var el = document.querySelector('#opf-video-{{ section.id }} .opf-video__spelare');
+      if (!el || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (poster) {
+        poster.forEach(function (p) {
+          if (p.isIntersecting) { var s = el.play(); if (s && s.catch) s.catch(function () {}); }
+          else { el.pause(); }
+        });
+      }, { threshold: 0.25 }).observe(el);
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Video (loop)",
+  "tag": "section",
+  "settings": [
+    { "type": "checkbox", "id": "visible", "label": "Visa sektionen", "default": true },
+    { "type": "text", "id": "rubrik", "label": "Rubrik" },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "url", "id": "video_url", "label": "MP4-fil",
+      "info": "Ladda upp filen under Innehåll → Filer och klistra in adressen. Använd MP4, aldrig GIF eller WebP." },
+    { "type": "image_picker", "id": "poster", "label": "Affischbild",
+      "info": "Visas medan videon laddas. Ta första rutan ur klippet." },
+    { "type": "text", "id": "forhallande", "label": "Bildförhållande", "default": "9 / 16",
+      "info": "Till exempel 9 / 16 för stående, 1 / 1 för kvadrat, 16 / 9 för liggande." },
+    { "type": "range", "id": "maxbredd", "label": "Maxbredd", "min": 320, "max": 1200, "step": 20, "unit": "px", "default": 520 },
+    { "type": "range", "id": "padding_top", "label": "Luft ovanför", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "Luft nedanför", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 }
+  ],
+  "presets": [{ "name": "Video (loop)" }]
+}
+{% endschema %}

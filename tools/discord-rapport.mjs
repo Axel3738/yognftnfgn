@@ -48,6 +48,7 @@ import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { granskaSprak, serUtSomSvenska, stoppText } from './lib/engelska.mjs';
+import { OPS_MARKNADER } from '../factory/opsmarknader.mjs';
 
 /** Discords tak för ett meddelande. */
 export const MAXLANGD = 2000;
@@ -55,7 +56,7 @@ export const MAXLANGD = 2000;
  *  har redan kanalerna (Axels bild 2026-09-10): nattens budgetrapport går
  *  till #ads, briefdagens rapport till #ads-to-do där redigeraren tittar. */
 export const STANDARDKANAL = 'ads';
-export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning' });
+export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning', bild: 'ads-to-do', spegla: 'annons-uppladdning', granskning: 'ads-to-do' });
 export const kanalFor = (jobb) => String(jobb?.kanal || KANAL_PER_LAGE[jobb?.lage] || STANDARDKANAL).replace(/^#/, '');
 /** Tak per lista i mallen — fler rader gör den oläslig, inte tydligare. */
 export const TAK = { siffror: 4, gjort: 8, briefer: 10 };
@@ -65,7 +66,21 @@ const LAGEN = {
   brief: { emoji: '📝', rubrik: 'brief day' },
   leverans: { emoji: '🚀', rubrik: 'delivery run' },
   oversatt: { emoji: '🇳🇴', rubrik: 'Norway translation' },
+  bild: { emoji: '🖼️', rubrik: 'image ads' },
+  // Speglingen (Axels beslut 2026-09-18): Bäverbutikens hub → live här.
+  spegla: { emoji: '🪞', rubrik: 'mirror from Bäverbutiken' },
+  // Briefgranskningen (Axels beslut 2026-09-18): creative director-domen över
+  // nattens briefer, dagen efter — går till #ads-to-do där redigeraren tittar.
+  granskning: { emoji: '🔎', rubrik: 'brief review' },
 };
+// Översättningsrundan rapporterar per marknad: jobb.marknad (NO, US …) byter
+// flagga och rubrik ur factory/opsmarknader.mjs; utan fältet gäller Norge.
+export function lageFor(jobb) {
+  const bas = LAGEN[jobb?.lage] ?? LAGEN.budget;
+  if (jobb?.lage !== 'oversatt' || !jobb?.marknad) return bas;
+  const m = OPS_MARKNADER[String(jobb.marknad).toUpperCase()];
+  return m ? { emoji: m.emoji ?? bas.emoji, rubrik: m.rubrik_en ?? bas.rubrik } : bas;
+}
 
 /** Fält som måste finnas för att mallen ska gå att rendera alls. */
 export function saknadeFalt(jobb) {
@@ -73,7 +88,7 @@ export function saknadeFalt(jobb) {
   const saknade = [];
   if (!String(jobb.brand ?? '').trim()) saknade.push('brand');
   if (!String(jobb.datum ?? '').trim()) saknade.push('datum');
-  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt)');
+  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt | bild | spegla | granskning)');
   return saknade;
 }
 
@@ -157,7 +172,7 @@ export function renderaRapport(jobb, { axelId = null } = {}) {
   const saknade = saknadeFalt(jobb);
   if (saknade.length > 0) throw new Error(`Rapporten vägrar: saknade fält — ${saknade.join(', ')}`);
 
-  const lage = LAGEN[jobb.lage];
+  const lage = lageFor(jobb);
   const rubrik = `${lage.emoji} ${String(jobb.brand).toUpperCase()} ${lage.rubrik} — ${jobb.datum}`;
   const action = actionSektion(jobb, { axelId });
   const nasta = String(jobb.nasta_korning ?? '').trim();

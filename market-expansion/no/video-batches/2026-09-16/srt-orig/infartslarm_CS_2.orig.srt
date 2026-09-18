@@ -1,0 +1,27 @@
+1
+00:00:00,032 --> 00:00:00,842
+Sista chansen.
+
+2
+00:00:00,842 --> 00:00:04,880
+Rean gäller bara i dag. Infartslarm trådlöst. Just nu i rea.
+
+3
+00:00:04,880 --> 00:00:05,559
+Bara i dag.
+
+4
+00:00:05,659 --> 00:00:07,619
+Hör direkt när någon kör in på uppfarten.
+
+5
+00:00:07,879 --> 00:00:09,880
+Bil, besökare eller leverans.
+
+6
+00:00:09,880 --> 00:00:14,619
+Sensor ute, mottagare inne. Klart på minuter. Just nu till kraftigt nedsatt pris.
+
+7
+00:00:14,619 --> 00:00:19,719
+Men lagret krymper snabbt. När den här omgången är slut går priset upp igen. Beställ nu medan rean gäller.

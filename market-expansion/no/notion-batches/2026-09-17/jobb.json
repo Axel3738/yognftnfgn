@@ -1,0 +1,371 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-17",
+  "skapad": "2026-09-17T13:09:19.889Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 13509.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3d5270ab908c81a4bbc4d1c6ed946ea2",
+        "namn": "MC-Kapell_UV_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/3d5270ab908c81a4bbc4d1c6ed946ea2",
+        "kalla": "rader-fil"
+      },
+      "namn": "MC-Kapell_UV_1_1",
+      "status": "HOPPA",
+      "skal": "\"MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02\" är PAUSED med 2488.01 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250230544660291",
+        "status": "ACTIVE",
+        "kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "kampanjId": "120249990507280291",
+        "adset": "UV | Notionrunda 2026-09-15"
+      },
+      "prefix": "MC-Kapell",
+      "K": "UV",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "MC-Kapell",
+        "se_kampanj": "MC-Kapellet | BE ROAS 1.49 | Launch 2026-08-27",
+        "no_prefix": "MCtrekk",
+        "adset_prefix": "MC-Trekk NO",
+        "campaign_id": "120252050710680233",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252050710680233",
+        "kampanjNamn": "MC-Trekk NO | BE-ROAS 1,65 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 2488.01,
+        "adsetNamn": "MC-Trekk NO - UV",
+        "annonsNamn": "MCtrekk_NO_UV_1_1",
+        "link": "https://beverbutikken.no/products/mc-trekk-220-120-regn-stov-uv",
+        "prefix": "MCtrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c811fbd91d6c4a75dd617",
+        "namn": "Adventskalender_BF_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c811fbd91d6c4a75dd617",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_BF_4_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231333830291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_4_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c8145b52bcb1296e2aa6e",
+        "namn": "Adventskalender_BF_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c8145b52bcb1296e2aa6e",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_BF_5_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231377610291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_5_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c81e38a2af10a626f93ea",
+        "namn": "Adventskalender_BF_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c81e38a2af10a626f93ea",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_BF_6_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231410300291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_6_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c8196a319c00f84f7cf02",
+        "namn": "Adventskalender_CS_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c8196a319c00f84f7cf02",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_CS_5_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231478090291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "Adventskalender Racingbilar | CS | 2026-09-08"
+      },
+      "prefix": "Adventskalender",
+      "K": "CS",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - CS",
+        "annonsNamn": "Adventskalender_NO_CS_5_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c812e8204dbfda4fc1b80",
+        "namn": "Adventskalender_PD_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c812e8204dbfda4fc1b80",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_PD_9_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231534730291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "Adventskalender Racingbilar | PD | 2026-09-08"
+      },
+      "prefix": "Adventskalender",
+      "K": "PD",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - PD",
+        "annonsNamn": "Adventskalender_NO_PD_9_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c8139b799f2c9482dd0be",
+        "namn": "Adventskalender_RV_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c8139b799f2c9482dd0be",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_RV_3_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231575480291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "RV | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "RV",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - RV",
+        "annonsNamn": "Adventskalender_NO_RV_3_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c81b58508ee2fb0d7c4b6",
+        "namn": "Adventskalender_RV_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/3db270ab908c81b58508ee2fb0d7c4b6",
+        "kalla": "rader-fil"
+      },
+      "namn": "Adventskalender_RV_4_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250231628980291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "RV | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "RV",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - RV",
+        "annonsNamn": "Adventskalender_NO_RV_4_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    }
+  ]
+}

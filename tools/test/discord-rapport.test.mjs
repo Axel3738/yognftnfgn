@@ -131,7 +131,7 @@ test('listtak utan kapning: max 8 gjort och 10 briefer, sen "+N more"', () => {
 });
 
 test('saknade fält vägras', () => {
-  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief | leverans | oversatt)']);
+  assert.deepEqual(saknadeFalt({}), ['brand', 'datum', 'lage (budget | brief | leverans | oversatt | bild | spegla | granskning)']);
   assert.throws(() => renderaRapport({ brand: 'X', datum: '2026-09-10', lage: 'natt' }), /lage/);
 });
 
@@ -164,7 +164,15 @@ test('lägena leverans och oversatt: egen rubrik, kanal #annons-uppladdning', as
   assert.equal(kanalFor({ lage: 'oversatt' }), 'annons-uppladdning');
   assert.equal(kanalFor({ lage: 'budget' }), 'ads');
   assert.equal(kanalFor({ lage: 'brief', kanal: '#egen' }), 'egen');
-  assert.equal(Object.keys(KANAL_PER_LAGE).length, 4);
+  assert.equal(Object.keys(KANAL_PER_LAGE).length, 7);
+  assert.equal(kanalFor({ lage: 'bild' }), 'ads-to-do');
+  // Briefgranskningen (2026-09-18) rapporterar där redigeraren tittar.
+  assert.equal(kanalFor({ lage: 'granskning' }), 'ads-to-do');
+  assert.match(renderaRapport({ brand: 'CaraShell', datum: '2026-09-18', lage: 'granskning', gjort: ['Reviewed 7 briefs'] }, { axelId: '1' }), /^🔎 CARASHELL brief review — 2026-09-18/);
+  // Speglingen (2026-09-18) rapporterar i samma kanal som leveransen — det är en uppladdning.
+  assert.equal(kanalFor({ lage: 'spegla' }), 'annons-uppladdning');
+  const spegel = renderaRapport({ brand: 'CaraShell', datum: '2026-09-18', lage: 'spegla', gjort: ['Takoverdrag_BOF_3_1 → CaraShellRoof_BOF_103_1: SE ad 1 live'] }, { axelId: '1' });
+  assert.match(spegel, /^🪞 CARASHELL mirror from Bäverbutiken — 2026-09-18/);
   const text = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'leverans', gjort: ['Uploaded HeimGuard_SP_4_1 live in HEIMGUARD_SE (adset SP)'], nasta_korning: '2026-09-12' }, { axelId: '1' });
   assert.match(text, /^🚀 HEIMGUARD delivery run — 2026-09-11/);
   const no = renderaRapport({ brand: 'HeimGuard', butik: 'hemvakten', datum: '2026-09-11', lage: 'oversatt', gjort: ['Translated 2 ads'], nasta_korning: '2026-09-12' }, { axelId: '1' });

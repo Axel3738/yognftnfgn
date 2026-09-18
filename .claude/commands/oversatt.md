@@ -19,7 +19,21 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
 ## Regler som aldrig bryts
 
 - **Bygg aldrig en kampanj här.** Saknas produktens NO-kampanj: rapportera (`/translate-no` bygger).
-- **PAUSED med spend = avvecklad.** Inga nya annonser dit, raden ligger kvar i kön.
+- **PAUSED med spend = avvecklad. Då översätts raden INTE ALLS** (Axels beslut
+  2026-09-15: "om de norska kampanjerna är avstängda kan du strunta i att ens
+  translatea annonserna"). Kampanjutfallet läses i Fas 1, före all översättning:
+  ingen HeyGen-rendering, ingen bildkomposition, ingen subagent, inga krediter.
+  Gäller även när kön "bara" har sådana rader: då är rätt utfall 0 översatta,
+  inte ett försök.
+  **Raden flyttas till `Approved` direkt** (Axels beslut 2026-09-15, andra
+  besked samma dag: "om kampanjen är avstängd kan du bara flytta dom till
+  approved direkt så slipper dom ligga i vägen nästa gång"). Kommentar med
+  skälet först, sedan status → `Approved`. Kön ska vara tom på sådana rader när
+  körningen är klar — annars läser varje kommande körning om samma rader.
+  ⚠️ Priset för det: en rad i `Approved` plockas ALDRIG upp igen. Startar Axel
+  den norska kampanjen senare får de annonserna ingen norsk version automatiskt
+  — de måste sättas tillbaka i kön för hand. Säg det i briefen varje gång rader
+  flyttas, så beslutet är synligt.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.
@@ -67,14 +81,38 @@ kampanj-id, länk), kampanjens fyra utfall live, dubblett mot målkontot (läst 
 gång), NO-pris + jämförpris ur `beverbutikken.no/products.json`, målnamn
 `<NOprefix>_NO_<K>_<nr>[_<rest>]`. K (vinkeln) tas ALLTID ur SE-namnets fält 2.
 Max 40 bilder + 12 videor per körning; resten listas som kö.
-⚠️ **Hubbtitlarna slutar INTE alltid på "creative hub"** (mätt 2026-09-08: "Damasker
-vandring" `collection://7bf270ab-908c-8298-85aa-07f256f21f07` och "Fish rod holder"
-`collection://3c3270ab-908c-8356-ad6c-87ff779e647d` låg utanför titelsökningen och
-två Damasker-videor missades tills Axel visade dem). Utan `NOTION_TOKEN` (MCP-vägen):
-gör ALLTID två sökningar — `notion-search` på titeln "creative hub" **och** en
-fritextsökning på "SE-ACTIVE to be translated" i teamspacet — och läs alla distinkta
-`path`-värden som hubbar. Slå sedan SQL mot varje hubbs data source. En hubb som
-bara syns i fritextsökningen hämtas med `notion-fetch` för sitt `collection://`-id.
+⚠️ **Hubbtitlarna följer INGET mönster, och listan får aldrig komma ur minnet.**
+Mätt 2026-09-08: "Damasker vandring" och "Fish rod holder" saknade orden "creative
+hub". Mätt igen **2026-09-15, värre**: Axel döper om och skapar hubbar löpande —
+samma dag fanns `BÄVER IBC-Tanköverdraget`, `BÄVER Taköverdraget för Husvagn`,
+`BÄVER Termoskyddet för Husbil`, `BÄVER Adventskalendern Racingbilar`,
+`arkiverad Övervakningskamera` och `Arkiverad Isolerade Utekattkojan`. En körning
+läste sex hubbar ur minnet, missade dessa och rapporterade "30 rader, alla
+blockerade" när det verkliga läget var **57 rader, varav 20 skulle ha gått live**
+(Taköverdraget och IBC-tanköverdraget hade båda ACTIVE norska kampanjer). Axel
+fick upptäcka det själv: "Bro du har ju missat hur många som helst."
+
+**Gör därför så här, varje körning, utan undantag:**
+1. `notion-search` med `sort: "last_edited"` och `page_size: 50` — allt som rörts
+   den senaste tiden, inklusive nyskapade och omdöpta hubbar. Läs `path` på varje
+   träff; varje distinkt `path` är en kandidathubb.
+2. `notion-search` på `"BÄVER"`, `"creative hub"` och `"arkiverad"` — tre frågor,
+   för hubbar som inte rörts på ett tag.
+3. Slå ihop träffarna, dra bort OPS-hubbarna **per id** (`node tools/lib/ops-hubbar.mjs`),
+   dra bort andra verksamheters hubbar (`Matstrumpor creative hub`,
+   `kundsupport Grillkliniken`, `Bäverkoppling.se`, `Creative Hub master`) och
+   mallen (`MALL Creative hub MALL`).
+4. Hämta `collection://`-id per hubb. **Billigast: `notion-fetch` på en SIDA i
+   hubben** — dess `<parent-data-source url="collection://…">` är svaret, och en
+   sidhämtning är en bråkdel av en databashämtning. Sök fram en sida per hubb i
+   steg 1–2.
+5. SQL mot alla hubbar. ⚠️ **Max 10 data sources per fråga** — dela upp i omgångar.
+6. Räkna hubbarna i briefen ("N hubbar lästa"). Blir de färre än förra körningen:
+   säg det rakt ut, det betyder att något inte hittades.
+
+**En hubb som inte hittas syns aldrig som ett fel — bara som en kortare kö.**
+Det är därför steg 1 finns: den listan bygger på vad som faktiskt ändrats, inte
+på vad någon kom ihåg.
 ⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. Kö-verktyget gör det själv på REST-vägen ("OPS-hubbar undantagna: N").
 **Saknar ett prefix koppling:** problemmeddelande "⚠️ <prefix> saknar norsk
 kampanj/koppling. Lägg till raden i produktlistan." — hoppa, kör resten.
@@ -181,6 +219,16 @@ skrivs tillbaka i `jobb.json`. Tillbakaläsning: status/effective_status.
    Norge, alltså ska raden stå som Approved — inte `Translation in review`. Beslutet
    ersätter "ingen kod flyttar till Approved" för de här raderna; alla 64 rader som
    stod i `Translation in review` flyttades samma dag).
+   ⚠️ **Undantag — speglade hubbar (Axels beslut 2026-09-18):** hubbar som
+   speglas till en OPS-butik (`node tools/ops-spegla.mjs --kallor` listar dem:
+   Taköverdraget och Termoskyddet → CaraShell) får i stället status
+   **`<Brand> SE ready to be active`** — exakt strängen ur `--kallor`, aldrig
+   ur minnet. Det är steget `/ops-spegla` läser: den laddar upp den svenska
+   filen live i butiken, den norska du just gjorde i butikens NO-kampanj, och
+   tar raden vidare till engelska. `Translated url` skrivs precis som annars —
+   speglingen hämtar NO-filen ur den länken. Saknar hubben alternativet står
+   det under ACTION NEEDED (Axel lägger till det), och raden får då `Approved`
+   som förut med en kommentar om att speglingen väntar.
    **Den färdiga norska filen läggs dessutom in ÖVERST i radens sidinnehåll** (Axels
    beslut 2026-09-05: "lägg dom i itemet så jag bara kan skrolla ner och se den
    översatta bilden eller videon direkt") — rubrik `## 🇳🇴 Norsk version — <målnamn>
@@ -221,6 +269,6 @@ DSA-fält och kanaler ur blocket.
 - [ ] Video: kvotkalkyl, proofread före render, captions bara över inbränd text, QA + slutkort
 - [ ] Röstkollen körd på varje renderad video, resultatet redovisat; inga ❌ uppladdade
 - [ ] Upp i rätt kampanj/adset/konto med rätt namn, OPT_OUT + inline_comment, status enligt marknad, tillbakaläst
-- [ ] Notion: kommentar + `Translated url` + **`Approved`** + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
+- [ ] Notion: kommentar + `Translated url` + **`Approved`** (speglad hubb: **`<Brand> SE ready to be active`** ur `ops-spegla.mjs --kallor`) + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
 - [ ] Discord-brief i Axels läsformat, med ping; problem i problemkanalen
 - [ ] STATUS/körlogg uppdaterade, committat utan medier, pushat

@@ -7,6 +7,8 @@
 //   node commission/run.mjs --jobb <fil.json>    Notion-raderna från MCP-sessionen
 //   node commission/run.mjs --torr               räkna och visa, skriv ingen fil
 //   node commission/run.mjs --json               maskinläsbart
+//   node commission/run.mjs --utan-ops-hubbar    räkna INTE OPS-butikernas hubbar
+//   node commission/run.mjs --utan-kommentarer   hoppa över redigerare utan Notion-konto
 //
 // Kör var tredje dag (1, 4, 7 … 28) plus alltid månadens sista dag.
 // Den sista körningen i månaden är slutavräkningen — den som betalas ut.
@@ -21,6 +23,7 @@ import { hamtaAllSpend } from './meta.mjs';
 import * as Notion from './notion.mjs';
 import { opsHubbar, utanOpsHubbar } from '../tools/lib/ops-hubbar.mjs';
 import { byggHubbregister, kopplaAnnons } from './koppling.mjs';
+import { berikaMedKommentarer } from './kommentarer.mjs';
 import { uppdateraLeaderboard, skrivTerminal as skrivLeaderboard } from './leaderboard.mjs';
 
 const ROT = resolve(new URL('..', import.meta.url).pathname);
@@ -40,7 +43,15 @@ function laddaPersoner() {
   const { users } = JSON.parse(readFileSync(`${ROT}/dashboard/data/team.json`, 'utf8'));
   return users
     .filter((u) => u.active !== false)
-    .map((u) => ({ id: u.id, namn: u.name, notionUserId: u.notionUserId || '', roll: u.role }));
+    .map((u) => ({
+      id: u.id,
+      namn: u.name,
+      notionUserId: u.notionUserId || '',
+      roll: u.role,
+      // Redigerare utan Notion-konto pekas ut i en kommentar i stället —
+      // se commission/kommentarer.mjs.
+      kommentarMonster: u.notionKommentarMonster || '',
+    }));
 }
 
 // ------------------------------------------------------------------ Perioden
@@ -78,6 +89,12 @@ function skrivRapport(r, kallor) {
   rad.push('');
   rad.push(`Underlag: ${r.koppling?.hubbrader ?? r.godkandaRader} hubbrader med Ansvarig i ${kallor.hubbar.length} creative hub(bar), `
     + `${r.koppling ? `${r.koppling.produkter} produkter som reserv, ` : ''}spend läst ur ${kallor.konton.length} annonskonton.`);
+  if (r.kommentarer?.traffar) {
+    rad.push('');
+    rad.push(`${r.kommentarer.traffar} rader kopplades via **kommentar** i stället för Ansvarig `
+      + `(${Object.entries(r.kommentarer.perPerson).map(([n, a]) => `${n}: ${a}`).join(', ')}) — `
+      + 'redigerare som inte har något Notion-konto och därför aldrig kan stå i kolumnen Ansvarig.');
+  }
   if (kallor.svenskaBara) {
     rad.push('');
     rad.push(`**Endast svenska annonser räknas.** ${kallor.bortfiltrerat} annonser `
@@ -223,6 +240,28 @@ async function main() {
   }
   if (!hubbar.length) do_('Inga creative hubs kunde läsas. Avbryter hellre än rapporterar 0 kr till alla.');
 
+  // OPS-butikernas hubbar hålls utanför Bäverbutikens ÖVRIGA rutiner för att
+  // ingenting ska laddas upp i fel annonskonto. Commission är LÄS-BART och har
+  // inte det problemet — men spenden i OPS-kontot räknas ändå med, så utan
+  // hubbarna föll de annonserna tillbaka på produktens ägare i koppling.mjs och
+  // fel person fick betalt.
+  //
+  // Mätt 2026-09-15 (månaden hittills, två körningar med minuters mellanrum):
+  // utan hubbarna Josh 442,36 kr / Jerzee 0,43 kr; med dem Josh 421,55 kr,
+  // Jerzee 6,12 kr, Gilz +4,60, Jasper +3,22, Carl +1,09. Alltså ~21 kr som
+  // låg på produktens ägare i stället för på den som gjorde annonsen.
+  // --utan-ops-hubbar återgår till det gamla beteendet.
+  let opsLasta = [];
+  if (!finns('utan-ops-hubbar') && Notion.harToken()) {
+    const lista = [...opsHubbar().values()].map((o) => ({ id: o.id, namn: o.name }));
+    const svar = await Notion.hamtaAllaHubbar({ hubbar: lista });
+    opsLasta = svar.hubbar;
+    notionFel = [...notionFel, ...svar.fel];
+    hubbar = [...hubbar, ...opsLasta];
+    console.log(`OPS-hubbar MEDRÄKNADE: ${opsLasta.length} av ${lista.length} `
+      + `(${opsLasta.reduce((n, h) => n + h.rader.length, 0)} rader)`);
+  }
+
   // NÖDBROMS. 2026-08-31 hittade rutinen 2 hubbar av 6 — de fyra
   // skalningsprodukternas hubbar är arkiverade i Notion och föll bort ur
   // sökningen — och rapporterade 0 kr som augustis slutavräkning. En
@@ -243,6 +282,19 @@ async function main() {
       + '  Avbryter hellre än rapporterar 0 kr till alla. Kontrollera Notion-åtkomsten och kör om.');
   }
 
+  // Redigerare utan Notion-konto (Jerzee) står aldrig i Ansvarig — deras rader
+  // pekas ut i en kommentar. Bara rader som saknar Ansvarig kollas, så det blir
+  // ett API-anrop per okopplad annonsrad och aldrig en omskrivning av någon
+  // annans rad. --utan-kommentarer stänger av steget.
+  const personer = laddaPersoner();
+  let kommentarer = null;
+  if (!finns('utan-kommentarer') && Notion.harToken() && personer.some((x) => x.kommentarMonster)) {
+    kommentarer = await berikaMedKommentarer(hubbar, personer);
+    console.log(`Kommentarskopplade rader: ${kommentarer.traffar} av ${kommentarer.lasta} lästa `
+      + `(${Object.entries(kommentarer.perPerson).map(([n, a]) => `${n} ${a}`).join(', ') || 'ingen'})`
+      + `${kommentarer.fel ? ` · ${kommentarer.fel} rader kunde inte läsas` : ''}`);
+  }
+
   // --- Meta
   const { konton, annonser: allaAnnonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
 
@@ -261,12 +313,13 @@ async function main() {
   const rapport = berakna({
     hubbar,
     annonser,
-    personer: laddaPersoner(),
+    personer,
     datum,
     sats: Number(flagga('sats', SATS)),
     koppla,
   });
   rapport.koppling = { hubbrader: register.rader, oversattningsrader: register.oversattningar, produkter: produkter.length };
+  if (kommentarer) rapport.kommentarer = kommentarer;
 
   // Namnge okända Ansvariga när Notion går att fråga — ett id säger ingenting.
   if (Notion.harToken()) {

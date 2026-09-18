@@ -33,6 +33,7 @@
 // flerprodukt redan med sin första produkt — avgörs av butik.arNischbutik.
 
 import { arNischbutik } from './butik.mjs';
+import { landsnamnSv, ochLista } from './lander.mjs';
 
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
@@ -60,12 +61,16 @@ const bildHandle = (...kandidater) => {
 
 // Länderna butiken skickar till, i klartext: huvudmarknaden först, sedan
 // varje rad i butik.marknader. Norge ska SYNAS (Axels beslut 2026-09-08).
-const LANDNAMN = { SE: 'Sverige', NO: 'Norge', DK: 'Danmark', FI: 'Finland', DE: 'Tyskland', GB: 'Storbritannien', UK: 'Storbritannien' };
+// En rad med `i_fraktraden: false` nämns inte på den svenska startsidan
+// (USA på carashell.se säger inget till en svensk kund) — dess eget språk
+// får sin text i översättningsfilen. Namnen ur lander.mjs, aldrig härifrån.
 export function marknadsnamn(butik) {
   const b = butik?.butik ?? {};
   const lander = [
-    text(b.huvudmarknad) ?? LANDNAMN[String(b.land ?? '').toUpperCase()] ?? null,
-    ...lista(b.marknader).map((m) => LANDNAMN[String(m?.land ?? '').toUpperCase()] ?? text(m?.land)),
+    text(b.huvudmarknad) ?? (b.land ? landsnamnSv(b.land) : null),
+    ...lista(b.marknader)
+      .filter((m) => m?.i_fraktraden !== false)
+      .map((m) => (m?.land ? landsnamnSv(m.land) : text(m?.land))),
   ].filter(Boolean);
   return [...new Set(lander)];
 }
@@ -76,8 +81,8 @@ function defaults(butik) {
   const lander = marknadsnamn(butik);
   const fri = butik?.frakt?.fri_globalt !== false;
   const dagar = tal(butik?.retur?.angerratt_dagar) ?? 14;
-  const med = lander.join(' & ');
-  const och = lander.length > 1 ? `${lander.slice(0, -1).join(', ')} och ${lander.at(-1)}` : (lander[0] ?? '');
+  const med = ochLista(lander);
+  const och = ochLista(lander, 'och');
   const fraktKort = fri ? (med ? `Fri frakt – ${med}` : 'Fri frakt') : (med ? `Frakt till ${med}` : 'Snabb leverans');
   const fraktLang = fri ? (och ? `Fri frakt till ${och}` : 'Fri frakt') : (och ? `Vi skickar till ${och}` : 'Snabb leverans');
   const angerratt = `${dagar} dagars ångerrätt`;

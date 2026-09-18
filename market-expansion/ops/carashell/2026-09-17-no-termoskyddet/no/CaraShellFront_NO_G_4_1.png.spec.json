@@ -1,0 +1,33 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "Gi bort en morgen uten dugg å tørke."
+    },
+    {
+      "typ": "underrad",
+      "text": "Mørkt i kupeen, ingen sol klokken fire."
+    },
+    {
+      "typ": "pris",
+      "text": "548 kr"
+    },
+    {
+      "typ": "jamforpris",
+      "text": "685 kr"
+    },
+    {
+      "typ": "botten",
+      "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+    }
+  ]
+}

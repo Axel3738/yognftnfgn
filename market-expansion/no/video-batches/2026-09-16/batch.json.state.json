@@ -1,0 +1,98 @@
+{
+ "infartslarm_CS_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/d1cfb67c87bf403b8b40d095ae6ab3e2/original.mp4",
+  "proofreadId": "8735cdc1f34f45cbbfbf44e50af438cb-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b38e0936ff654194816fb7c5dd80be2c-nb",
+  "downloaded": true
+ },
+ "infartslarm_CS_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/9f72e31f4acd45abb01a3d9bbb3a97f1/original.mp4",
+  "proofreadId": "b5a20ead369c4c5f9deb4ce1bd743306-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "6da5b8777e234566bbbce79a36242afa-nb",
+  "downloaded": true
+ },
+ "infartslarm_CS_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/781185b587a24a8db6de5995d82f60ed/original.mp4",
+  "proofreadId": "7d003330ac5b4b2397afe219c19a4242-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d2c722bf59a0413f8cd6c26ee78486f3-nb",
+  "downloaded": true
+ },
+ "infartslarm_G_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/9eea0cf530f84d09baa4495ebea226b4/original.mp4",
+  "proofreadId": "20cac5c266314cb4b72f6bbe618ddce6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "4037ecf5d5d245a096ddb4a6757b2ad9-nb",
+  "downloaded": true
+ },
+ "infartslarm_G_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/29aab9b41cb64b5f80f9595cf483796a/original.mp4",
+  "proofreadId": "0eced5b6304e4b7ca268771e347b6e77-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "0a7ef9cd115b4ebfbf0ad1e8bc4aabdf-nb",
+  "downloaded": true
+ },
+ "infartslarm_G_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/c4bee0e0bcee484b91a5bcbbdd50be37/original.mp4",
+  "proofreadId": "8d876c65916b4691af35e26da9f15d25-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "1206467e02014ec9b8372f38973ec782-nb",
+  "downloaded": true
+ },
+ "infartslarm_PD_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/f29f812a82de4a0bb6b10efe627dca88/original.mp4",
+  "proofreadId": "da2b3bfa734646a597895f064fe1c8ee-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "4f41161e04684dc688be35780297abfc-nb",
+  "downloaded": true
+ },
+ "infartslarm_PD_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/acc421ac82a140248d4b205f487fc4fa/original.mp4",
+  "proofreadId": "a581ef897c4d40e4b7433d806f444ff0-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "2a2e20f9f3ef4b72a38f5f07d7cb46e0-nb",
+  "downloaded": true
+ },
+ "infartslarm_PD_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/7687986d2f274f4c9bf67c53c2c95945/original.mp4",
+  "proofreadId": "1a34197f9ca04703ba0ebfd22c44f21c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "e2dd009e4eab479cb0e8f5527851ea62-nb",
+  "downloaded": true
+ },
+ "infartslarm_SP_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/c5c3e6c997564a71863b8172711d9b05/original.mp4",
+  "proofreadId": "a69bef8897e64a0ab86a3a8d8f6704d6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ab043f7b80c5411481f18964cbec24b8-nb",
+  "downloaded": true
+ },
+ "infartslarm_SP_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/2912d53b3726471f9522266fcec71f87/original.mp4",
+  "proofreadId": "680c1864f1cf4d1bb1cdf6072abea460-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "fda1177afe09468cb89c2c29e6f0b192-nb",
+  "downloaded": true
+ },
+ "infartslarm_SP_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/24c0cc4b8bcf4950995e391689a02e86/original.mp4",
+  "proofreadId": "033688d63d55481587c7e9c17d1fb3ac-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "81d98fb3d48c493ab48ddeb1c5c8a7bc-nb",
+  "downloaded": true
+ }
+}

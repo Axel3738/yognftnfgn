@@ -18,7 +18,8 @@
 //                                            ("[\"a\",\"b\"]") — översätt inuti, behåll formen
 //   bonus.<handle>.title | body_html | meta_title   bonusprodukten (offer.bonus_produkt)
 //   kollektion.<handle>.title | body_html    flerproduktsbutikens kollektion
-//   sida.<handle>.title | body               policysidor + kontakt
+//   sida.<handle>.title | body               policysidor + kontakt + Shopifys egna sidor
+//                                            (shopify-sidor.mjs: data-sharing-opt-out)
 //   meny.main-menu.<i> | meny.footer.<i>     menyradernas titlar, i ordning
 //   index.sections.<sid>[.blocks.<bid>].settings.<key>    startsidan (templates/index.json)
 //   header.sections.… | footer.sections.…   sektionsgrupperna
@@ -48,11 +49,28 @@ import { sammanfoga, arNischbutik } from './butik.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
+import { huvudmenyRader } from './meny.mjs';
+import { byggFraktplan } from './frakt.mjs';
+
+/**
+ * De DISTINKTA fraktsättsnamnen butiken skapar ("Fri frakt", "Express" …).
+ * Ett namn per rad i kassan — dubbletter över zoner räknas en gång.
+ */
+export function fraktmetodnamn(butik) {
+  try {
+    const plan = byggFraktplan(butik);
+    const namn = (Array.isArray(plan) ? plan : []).flatMap((z) => (z.metoder ?? []).map((m) => m?.namn)).filter(Boolean);
+    return [...new Set(namn)];
+  } catch {
+    return [];
+  }
+}
 import * as buildStore from './build-store.mjs';
 import * as startsida from './startsida.mjs';
 import * as tema from './tema.mjs';
 import * as paket from './paket.mjs';
 import * as bonus from './bonus.mjs';
+import { SHOPIFY_SIDOR } from './shopify-sidor.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
@@ -109,6 +127,11 @@ export function produktTexter(p, plan) {
   if (text(input.seo?.title)) ut[`produkt.${h}.meta_title`] = input.seo.title;
   if (text(input.seo?.description)) ut[`produkt.${h}.meta_description`] = input.seo.description;
   for (const o of input.productOptions ?? []) {
+    // Optionens NAMN ("Variant") syns i varukorgen som "Variant: 5,5 × 3 m"
+    // och stod oöversatt på varje marknad till 2026-09-18 — bara VÄRDENA
+    // samlades in. "Title" är Shopifys namn på enproduktsoptionen och syns
+    // aldrig för kunden.
+    if (o.name && o.name !== 'Title') ut[`produkt.${h}.option.${o.name}`] = o.name;
     for (const v of o.values ?? []) if (v.name && v.name !== 'Default Title') ut[`produkt.${h}.variant.${v.name}`] = v.name;
   }
   return ut;
@@ -190,6 +213,13 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   }
   ut['sida.contact.title'] = 'Kontakt';
   if (ps[0]) ut['sida.contact.body'] = kontaktsida(ctx.p ?? ps[0]);
+  // Sidor Shopify skapar själv (shopify-sidor.mjs): "Dina integritetsval"
+  // dyker upp med en USA-marknad och läcker annars på varje /<locale>. Har
+  // butiken inte sidan matchar värdet ingenting — nyckeln är då bara ledig.
+  for (const s of SHOPIFY_SIDOR) {
+    ut[`sida.${s.handle}.title`] = s.titel;
+    ut[`sida.${s.handle}.body`] = s.body;
+  }
   const huvudmeny = ctx.huvudmenylankar ?? [
     ...(arNischbutik(butik, ps) && kollektion ? [{ titel: kollektion.titel ?? 'Sortimentet' }] : []),
     ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn })),
@@ -198,6 +228,14 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   huvudmeny.forEach((l, i) => { ut[`meny.main-menu.${i}`] = l.titel; });
   const sidfot = ctx.menylankar ?? [...policyer.map((x) => ({ titel: x.namn })), { titel: 'Kontakt' }];
   sidfot.forEach((l, i) => { ut[`meny.footer.${i}`] = l.titel; });
+
+  // FRAKTSÄTTETS NAMN — syns i KASSAN, inte i butiken.
+  // Stod oöversatt på varje marknad till 2026-09-18: en finsk och en
+  // amerikansk kund fick "Fri frakt" mitt i kassan (Axel upptäckte det på
+  // CaraShell). Fraktsätten är translatable (DELIVERY_METHOD_DEFINITION) men
+  // samlades aldrig in. Namnet kommer ur frakt.mjs, så nyckeln byggs ur samma
+  // källa i stället för att skrivas av.
+  for (const namn of fraktmetodnamn(butik)) ut[`frakt.metod.${namn}`] = namn;
 
   // Startsidan, sektionsgrupperna, temainställningarna — ur byggarna.
   const index = forsok('startsida.byggStartsida', () =>
@@ -283,11 +321,12 @@ export function byggMinimalKontext(butik, rader) {
     produkter: ps.map((p) => ({ p, plan: krav(buildStore, 'build-store', 'byggPlan')(p, butik), metafalt: byggMetafalt(p, { kundUnderrubrik }) })),
     policyer,
     kollektion,
-    huvudmenylankar: [
-      ...(arNischbutik(butik, ps) ? [{ titel: kollektion.titel, url: `/collections/${kollektionHandle}` }] : []),
-      ...ps.map((p) => ({ titel: p.produkt.menynamn ?? p.produkt.namn, url: `/products/${p.produkt.id}` })),
-      { titel: 'Kontakt', url: '/pages/contact' },
-    ],
+    // Samma byggare som meny-steget (meny.mjs huvudmenyRader): Hem /
+    // [kollektion] / produkter / Frakt & retur / Kontakt. Listan här byggdes
+    // förut för hand utan Hem och Frakt & retur, så "Hem" fick aldrig någon
+    // nyckel i underlaget och stod kvar på /nb som en läcka (CaraShell
+    // 2026-09-16, när produkt 2 skrev om menyn).
+    huvudmenylankar: huvudmenyRader(butik, ps),
     menylankar: [...policyer.map((x) => ({ titel: x.namn, url: `/pages/${x.handle}` })), { titel: 'Kontakt', url: '/pages/contact' }],
     shop: null,
   };

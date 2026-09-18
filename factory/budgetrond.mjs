@@ -24,7 +24,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { alla, api, lasBudget, pausa, säkerställProxy, uppdateraBudget } from '../tools/meta-lib.mjs';
-import { laddaButik, sakerstallKonto, tillhorButiken, OPS_ANNONSKONTO } from './register.mjs';
+import { laddaButik, sakerstallKonto, tillhorButiken, OPS_ANNONSKONTO, utmapp } from './register.mjs';
 import { hamtaButikensAnnonser, byggRapport, normalisera, plockaAction, filtreraPaMarknad, STANDARDMARKNAD } from './skalning.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { besluta, MAX_ANDRINGAR, budgetSek } from './budgetbeslut.mjs';
@@ -65,28 +65,37 @@ function insikt(rad) {
  * @param annonsrader    insightsrader på annonsnivå som REDAN är filtrerade
  *                       på produktens prefix (skalning.filtreraPaPrefix) —
  *                       bara `campaign_id` läses
+ * @param kampanjbaser   kampanjnamnets bas per marknad (kampanj.kampanjbasFor:
+ *                       `CARASHELL_US_Taköverdrag …`) — så en TOM kampanj utan
+ *                       annonser ändå räknas som butikens. Skiftlägesokänsligt,
+ *                       hela basen måste stå först i namnet (produktnamnet ingår,
+ *                       så en annan produkts kampanj i samma butik matchar inte).
  */
-export function valjKampanjer(allaKampanjer, prefix, annonsrader = []) {
+export function valjKampanjer(allaKampanjer, prefix, annonsrader = [], kampanjbaser = []) {
   const antalViaAnnons = new Map();
   for (const r of annonsrader) {
     const id = r?.campaign_id;
     if (id === undefined || id === null || id === '') continue;
     antalViaAnnons.set(String(id), (antalViaAnnons.get(String(id)) ?? 0) + 1);
   }
+  const baser = (kampanjbaser ?? []).map((b) => String(b ?? '').trim().toLowerCase()).filter(Boolean);
   const butikens = [];
   const slangda = [];
   const baraViaAnnons = [];
+  const baraViaBas = [];
   for (const k of allaKampanjer ?? []) {
     const viaNamn = tillhorButiken(k?.name, prefix);
     const n = antalViaAnnons.get(String(k?.id)) ?? 0;
-    if (viaNamn || n > 0) {
+    const viaBas = !viaNamn && n === 0 && baser.some((b) => String(k?.name ?? '').trim().toLowerCase().startsWith(b));
+    if (viaNamn || n > 0 || viaBas) {
       butikens.push(k);
-      if (!viaNamn) baraViaAnnons.push(`${k.name} (${n} annons${n === 1 ? '' : 'er'} med prefixet)`);
+      if (!viaNamn && n > 0) baraViaAnnons.push(`${k.name} (${n} annons${n === 1 ? '' : 'er'} med prefixet)`);
+      if (viaBas) baraViaBas.push(k.name);
     } else {
       slangda.push(k?.name);
     }
   }
-  return { butikens, slangda: slangda.sort(), baraViaAnnons: baraViaAnnons.sort() };
+  return { butikens, slangda: slangda.sort(), baraViaAnnons: baraViaAnnons.sort(), baraViaBas: baraViaBas.sort() };
 }
 
 async function hamtaUnderlag(butik, kontoId, marknad) {
@@ -302,7 +311,7 @@ async function huvud() {
   }
 
   // ---- Underlaget till fil.
-  const mapp = join(ROT, 'factory', 'output', post.butik);
+  const mapp = utmapp(post, ROT);
   if (!existsSync(mapp)) mkdirSync(mapp, { recursive: true });
   const fil = join(mapp, `budgetrond-${idag}${marknad === STANDARDMARKNAD ? '' : `-${marknad}`}.json`);
   const dump = {

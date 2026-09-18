@@ -1,0 +1,239 @@
+{
+  "byggd": "2026-09-17T21:17:02.197Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-17",
+  "locale": "en",
+  "prisplatser": true,
+  "produkt": {
+    "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "kortTitel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "handle": "takskyddet",
+    "url": "https://carashell.se/products/takskyddet",
+    "typ": "",
+    "valuta": "SEK",
+    "pris": 1129,
+    "jamforpris": 1469,
+    "prisText": "1 129 kr",
+    "jamforprisText": "1 469 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Variant",
+        "varden": [
+          "5,5 × 3 m",
+          "6,5 × 3 m",
+          "7,5 × 3 m",
+          "8,5 × 3 m",
+          "9,5 × 3 m",
+          "10,5 × 3 m",
+          "11,5 × 3 m",
+          "12,5 × 3 m",
+          "13,5 × 3 m"
+        ]
+      }
+    ],
+    "antalVarianter": 9,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-hopvikt.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-spanne.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  },
+  "marknad": {
+    "kod": "US",
+    "land": "GB",
+    "egetLand": true,
+    "locale": "en",
+    "valuta": "GBP",
+    "doman": "carashell.com",
+    "lank": "https://carashell.com/products/takskyddet?country=GB",
+    "sidlank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb?country=GB",
+    "produkt": {
+      "titel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
+      "kortTitel": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m)",
+      "handle": "takskyddet",
+      "url": "https://carashell.com/products/takskyddet",
+      "typ": "",
+      "valuta": "GBP",
+      "pris": 152,
+      "jamforpris": 191,
+      "prisText": "£152",
+      "jamforprisText": "£191",
+      "flerPriser": null,
+      "alternativ": [
+        {
+          "namn": "Variant",
+          "varden": [
+            "18 × 10 ft (5.5 × 3 m)",
+            "21 × 10 ft (6.5 × 3 m)",
+            "25 × 10 ft (7.5 × 3 m)",
+            "28 × 10 ft (8.5 × 3 m)",
+            "31 × 10 ft (9.5 × 3 m)",
+            "34 × 10 ft (10.5 × 3 m)",
+            "38 × 10 ft (11.5 × 3 m)",
+            "41 × 10 ft (12.5 × 3 m)",
+            "44 × 10 ft (13.5 × 3 m)"
+          ]
+        }
+      ],
+      "antalVarianter": 9,
+      "bilder": [
+        {
+          "index": 1,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "index": 2,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "index": 3,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-hopvikt.jpg",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "index": 4,
+          "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-spanne.jpg",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "beskrivning": "A 6.5 × 3 m (21.3 × 9.8 ft) roof cover — for rigs up to 21 ft — that covers the roof surface and keeps rainwater away from roof hatches and seams through the winter."
+    }
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/copy.en-GB.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders from the warehouse",
+    "logga": false
+  },
+  "knappar": "https://carashell.com/products/takskyddet?country=GB",
+  "butik": "carashell",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+      "width": 800,
+      "height": 800,
+      "kalla": "produkt #1"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+      "width": 1200,
+      "height": 1200,
+      "kalla": "produkt #2"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.en-GB.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning.en-GB.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/takskyddet/forhandsvisning-en-GB/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "630269441708975871",
+    "namn": "Roof Cover for Travel Trailers & Motorhomes 18–44 ft (5.5–13.5 m) – Clearance sale (listicle)",
+    "handle": "takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb"
+  },
+  "publicerat": {
+    "url": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb?country=GB",
+    "sidaId": "gid://shopify/Page/735657754956",
+    "skapad": false,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/205487636812",
+      "namn": "CaraShell – CRO v1",
+      "skrivna": [
+        "layout/listicle.liquid"
+      ]
+    },
+    "oversattning": null,
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning-gb?country=GB",
+      "tecken": 101297
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6af53dfef89f2e57d1111d31804128d6_1789555627620.png?v=1789555638",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/6663e5472b641197077bf170ea1569c2_1789555795833.png?v=1789555803",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/266e9f18aaba3f3bb7267aa90943e138_1789555689297.png?v=1789555698",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/9414240ac7db8a683af267015cee9306_1789555706788.png?v=1789555716",
+    "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/image4.png",
+    "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/tak-van.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

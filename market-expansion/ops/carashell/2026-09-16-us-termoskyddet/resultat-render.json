@@ -1,0 +1,45 @@
+{
+  "CaraShellFront_CS_2_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_US_CS_2_1",
+    "fil": "us/CaraShellFront_US_CS_2_1.png",
+    "qa": "qa/CaraShellFront_US_CS_2_1.qa.png",
+    "placerade": [
+      "botten",
+      "rubrik",
+      "priskort"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_SP_2_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_US_SP_2_1",
+    "fil": "us/CaraShellFront_US_SP_2_1.png",
+    "qa": "qa/CaraShellFront_US_SP_2_1.qa.png",
+    "placerade": [
+      "botten",
+      "citat"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_PD_2_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_US_PD_2_1",
+    "fil": "us/CaraShellFront_US_PD_2_1.png",
+    "qa": "qa/CaraShellFront_US_PD_2_1.qa.png",
+    "placerade": [
+      "rubrik"
+    ],
+    "okanda": []
+  },
+  "CaraShellFront_G_2_1": {
+    "status": "OK",
+    "mal": "CaraShellFront_US_G_2_1",
+    "fil": "us/CaraShellFront_US_G_2_1.png",
+    "qa": "qa/CaraShellFront_US_G_2_1.qa.png",
+    "placerade": [
+      "rubrik"
+    ],
+    "okanda": []
+  }
+}

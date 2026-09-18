@@ -1,0 +1,23 @@
+{
+  "Termoskydd_CS_2_1": {
+    "ok": true,
+    "taskId": "0340aadada8af4a57351b9cf0c391315",
+    "modell": "google/nano-banana-edit",
+    "url": "https://tempfile.aiquickdraw.com/as/0340aadada8af4a57351b9cf0c391315_1789555150006.png",
+    "bytes": 2682307
+  },
+  "Termoskydd_PD_2_1": {
+    "ok": true,
+    "taskId": "496cc3ccb243caac30e137e9c720634e",
+    "modell": "google/nano-banana-edit",
+    "url": "https://tempfile.aiquickdraw.com/as/496cc3ccb243caac30e137e9c720634e_1789555165922.png",
+    "bytes": 2610874
+  },
+  "Termoskydd_G_2_1": {
+    "ok": true,
+    "taskId": "e5cd34154c820201c9f0911b47b9b4c6",
+    "modell": "google/nano-banana-edit",
+    "url": "https://tempfile.aiquickdraw.com/as/e5cd34154c820201c9f0911b47b9b4c6_1789555181972.png",
+    "bytes": 2107961
+  }
+}

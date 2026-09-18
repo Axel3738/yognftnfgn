@@ -394,8 +394,16 @@ Bäverbutikens creatives går inte att referera från OPS-kontot. Kedjan är:
 hämta ner filen → brand-swappa → ladda upp på nytt till `act_915422744950975`.
 
 **Återanvänd detta:**
-- `pipeline/no-video-launch.mjs` — den ENDA koden som bygger en hel kampanjstruktur i ett
+- `factory/kampanj.mjs <produkt> --marknad SE|NO` — **kampanjbyggaren sedan 2026-09-09.**
+  ABO, ett adset per vinkel med lika budget, `is_adset_budget_sharing_enabled: false`,
+  allt PAUSED, tre spärrar före första skrivningen (konto-id, sida, pixel ≠ Bäverbutikens).
+  Mätt samma dag: en CBO med alla 16 annonser i ett adset rapporterades som klar — Axel
+  såg det direkt i Ads Manager. Regel 11 i CLAUDE.md gäller även här.
+  Norge: `--marknad NO` läser `annonscopy/<produkt>-no.json`, `media-i-malkontot-no.json`
+  och länkar till `/nb/products/<handle>`.
+- `pipeline/no-video-launch.mjs` — äldre referens för att bygga en hel kampanjstruktur i ett
   målkonto (CBO, adset per koncept med `promoted_object`, idempotent, statusar explicit).
+  ⚠️ CBO-delen är inte längre mönstret för tester.
 - `pipeline/no-image-launch.mjs` / `no-image-ads.mjs` — bildannonshalvan.
 - `pipeline/waves/no-ibc-video.config.mjs` — **detta ÄR TankGuards produkt.** Färdig
   mall och färdig copy-struktur; byt `act`/`page`/`pixel`/`link`/`campaignName`.
@@ -700,3 +708,267 @@ annonser? `FRAMMANDE_MARKNAD`-regexen filtrerar bort varje annonsnamn med
 segmentet `NO`, men SE+NO är standard i varje OPS-butik och det är samma
 redigerare. Frågan blir skarp först när någon anställs — men uppdrag D:s
 commission-fix ska byggas så att svaret bara är en konfigrad.
+
+---
+
+## ⚠️ CaraShell termoskyddet 2026-09-16 — andra produkten i en butik, och fyra fel i annonsflödet
+
+`/ops-produkt carashell <termoskydd-länk>` körde hela `/ny-annonser` som steg 7. Vad som
+gick sönder och lagades, i ordning:
+
+1. **Annonsnamnen bar brandet, inte produktens prefix.** `kampanj.mjs` döpte annonsen
+   `${brand}_${källnamn}` (`CaraShell_Termoskydd_PD_2_1`). I en enproduktsbutik ÄR brandet
+   prefixet, så det höll — i en tvåproduktsbutik matchar registrets prefixfilter
+   (`carashellfront_`) aldrig, och nattvakt, leveranskö och commission hade sett noll
+   annonser. Nu `annonsnamnAv()`: `meta.creative_prefix` + källnamnet utan källprefix,
+   `NO_` på norska marknaden ⇒ `CaraShellFront_PD_2_1`, `CaraShellFront_NO_PD_1`.
+   ⚠️ Byter form även för enproduktsbutiker (`CatCabin_PD_2_1` i stället för
+   `CatCabin_Utekattkoja_PD_2_1`) — prefixfiltret matchar båda.
+2. **`kalla.no_annonsprefix` måste bära `_NO`** (`Frontrutetrekk_NO`, som damasker.yaml).
+   Utan det läser `vinkelAv` "NO" som vinkel och kampanjbyggaren stoppar på
+   "Saknar copy för vinklarna: NO".
+3. **Kampanjnamnets datum var hårdkodat `2026-09-09`** sedan DryTrek. Nu byggdagen.
+4. **Räkningen läste aldrig `brand-detektor-no.json`.** Varje norsk källannons blev
+   "odömd" och de uppladdade norska "övertaliga — ingen dom" — även när NO-rapporten var
+   grön (CatCabins NO-räkning 2026-09-12 visar exakt det). `rakning.mjs` slår nu ihop
+   båda filerna.
+
+**Containern saknade ffmpeg och OCR.** Brand-detektorn körde igenom med "qa-frames.py
+misslyckades" på varje video och "Utan OCR kan yta 3 och 4 inte läsas" på varje bild — och
+gav ändå exit 0 med domar. Kör `pip install imageio-ffmpeg rapidocr-onnxruntime` FÖRST,
+sedan `--hamta` igen; media hämtas inte om (cachen i `.scratch/brand-detektor/`).
+
+**Brandrepliken på slutet: klipp, inte omdubb.** Alla 24 källvideor (SE + NO) slutar med
+"Termoskydd husbil från Bäverbutiken" — uppläst OCH inbränd som ordvis caption på vit
+platta. För de tre PD-videorna per marknad var det enda felet, och repliken sitter sist
+(~2,5 s). ffmpeg-klipp vid cue-starten (SE 16,00 / 16,24 / 17,14 s, NO 16,05 / 16,40 /
+17,30 s — NO-tiderna mättes med frames var 0,4 s, SRT:ns tider stämde inte på 0,2 s) tog
+bort både talet och captionen, kostade noll krediter och rörde inte rösten. Lades i
+`output/<id>/bildfix/<källnamn>.mp4` — `media-upload.mjs` tar den filen före domen.
+Ögonläs sista framen efter klippet (montage av captionbandet), annars sitter första
+ordet i brandrepliken kvar (NO PD_1 första försöket).
+
+**De nio andra per marknad går inte att rädda med ett replikbyte.** CS/G-videorna läser
+upp "rabatterat pris bara idag, lagret minskar snabbt, beställ innan det är slut" och
+SP-videorna ett vittnesmål i vi-form ("vi satte upp … förra sommaren") — hela talet är
+falskt för butiken (samma mönster som TankGuard 2026-09-09). Nytt manus + HeyGen +
+ny captionbana, en session per marknad. Krediter fanns (7 631 = ~90 videominuter), men
+röstkontrollen kräver att någon lyssnar, och en flerproduktsbutiks bygge är inte platsen.
+`uteslutna.json` namnger var och en. ⚠️ Källans 40 köp sitter i just de nio (CS 31, SP 9);
+det som är uppe (PD, G) fick aldrig budget i källan — kampanjen är en kallstart.
+
+**Bild med text direkt på fotot = ingen gratis fix.** `oversatt-bild.py --analys` hittade
+bara fotoytor (fönster, backspeglar) som "former" på CS_2_1/SP_2_1 — texten ligger på himlen.
+Vägen är kie.ai + `bildannonser/text.py`, och vad den nya texten ska säga är copy.
+
+### Samma dag, `/ny-annonser termoskyddet` — bildfix, omdubb och CBO (mätt 2026-09-16)
+
+- **CBO går att slå på i efterhand på en PAUSED kampanj utan spend:** `POST /<kampanj>`
+  med `daily_budget` + `bid_strategy=LOWEST_COST_WITHOUT_CAP` svarade `success`, och
+  adsetens egna budgetar försvann av sig själva (läs tillbaka: `daily_budget` saknas på
+  adseten). Att sätta adsetbudget till 0 avvisas ("Budgeten är för låg") — gör det inte.
+  `kampanj.mjs --cbo` bygger nya kampanjer så från början; en befintlig CBO-kampanj får
+  adset utan budget automatiskt.
+- **`kampanj.mjs` är idempotent på namn** (kampanj, adset, annons) — en andra omgång
+  media (bildfixar, omdubbade videor) körs genom samma kommando utan dubbletter.
+- **Text direkt på fotot: kie.ai `nano-banana-edit` tar bort den** med prompten "remove
+  ALL text, banners, ribbons, star ratings, badges … fill with matching sky/trees",
+  referensbild = Metas `creative.image_url` (publik). Två av fyra källbilder var samma
+  foto med olika toning — den rena varianten (CS) fick bära alla fyra. Sedan
+  `factory/bild-text.py` med butikens färger (rubrik + underrad, priskort med
+  jämförpris, citatkort med namn, bottenrad). QA före/efter som `<namn>.qa.png`.
+- **HeyGen apply-srt kräver EXAKT HeyGens eget antal segment** ("Number of segments in
+  SRT does not match existing proofread data", HTTP 400). Manus skrivna mot de gamla
+  `.orig.srt` matchade i 4 av 9 fall — resten omfördelades meningsvis över HeyGens cues
+  efter starttid (`heygen-apply-render.mjs` i sessionens scratch, logiken värd att
+  flytta in i `pipeline/localize.mjs`). Ett manus med FÄRRE meningar än HeyGen har cues
+  ger en tom cue på slutet (G_2 SE) — skriv en mening per HeyGen-cue nästa gång.
+- **Renderingen svarar `status: failed` + `failure_message: "video pending moderation by
+  our team"`** direkt efter beställning — det är en väntan, inte ett fel (Kranskydd
+  2026-08-29: släppt efter ~30 min). Ett skript som läser `failed` som slutgiltigt
+  tappar hela batchen. Krediter dras vid beställningen: 7 631 → 7 400 för 6 renderingar
+  à 15–20 s ≈ 40 krediter per video.
+- **Proofread tar 5–6 min per video** sekventiellt (upload + transkribering). Nio per
+  marknad ≈ 50 min. Kör SE och NO som två parallella loopar.
+- **`ffprobe` finns inte i claude.ai-containern** (apt tyst, statisk nedladdning 403),
+  bara ffmpeg via `pip install imageio-ffmpeg`. `pipeline/rostkoll.py` gör exakt två
+  ffprobe-anrop (längd + "finns ljudspår") — en 20-raders Python-shim i
+  `/usr/local/bin/ffprobe` som läser `ffmpeg -i` räcker och gav samma svar. Utan den
+  står röstkollen helt still; hoppa aldrig över den för att binären saknas.
+- **Röstkollen fångade ett riktigt fel:** SE CS_1 slutade 5,2 dB högre än källan i
+  sista 100 ms — HeyGen hann inte läsa "Termoskydd husbil från CaraShell." på 2,5 s.
+  Kortad till "Från CaraShell." och omrenderad (≈30 krediter). Alla 18 andra gröna.
+- **Villkorsgrep på de NYA manusen, inte bara källans.** Subagenten skrev "gratis
+  frakt og retur" i NO CS_2 — butiken har `returfrakt_betalas_av: kund`. Brand-detektorn
+  skannar källan, inte det manus som dubbas in. Grep varje `-ny.srt` mot
+  `retur|30 dag|öppet köp|tusen|idag|lager|garanti|Bäver` FÖRE render; hittat efter
+  render kostar en omrendering + en raderad annons (PAUSED, 0 kr — annars aldrig).
+- **`while read` + ett Python-skript i loopen äter stdin:** rostkoll/no-captions
+  läste första tecknet ur nästa rad, så filerna hette `rontrutetrekk_…` och källan
+  "saknades" (falskt ❌). `</dev/null` på varje anrop i loopen.
+- **Captionbandet:** källornas inbrända captions ligger på rad 975–1065 av 1280, men
+  CS_3 (SE) och SP_1 (NO) har text upp till rad 885 — `--band=885:1084` täcker.
+  Kollen "text ovanför bandet" är en OCR-flagga, inte en dom: titta på `qa-*.png`.
+- **Krediter mätt 2026-09-16:** 7 631 → 7 057 för 21 renderingar à 15–18 s ≈ 27 per
+  video (inte 40 som gissat ovan efter de sex första).
+
+### Samma kväll — HeyGen-rösten utbytt mot ElevenLabs med omtajmad video (2026-09-16)
+
+Axel lyssnade på HeyGen-klonen och dömde ut den: "ElevenLabs är bättre — klipp,
+snabbspola eller långsamma ner videoklippen något och klipp bort tomrum i
+voiceovern." Verktyget är `pipeline/omdubb/elevenlabs-omdubb.mjs` (README i mappen).
+Lärdomarna från de 18 videorna:
+
+- **Repliken styr klipplängden, ovillkorligt.** Varje cue får T = replik + 0,25 s
+  (0,6 s sist), och källfilmen fördelas om mellan segmenten inom 70–135 % — ett klipp
+  som är för kort för sin replik **lånar bildrutor av grannklippet**. Första versionen
+  lät videon gå ner till 60 % och rösten fortsätta in i nästa segment: G_1 cue 3
+  (1,7 s klipp, 3,7 s replik) gav två repliker ovanpå varandra. Fångat i torrkörningen,
+  aldrig renderat.
+- **eleven_v3 lägger 0,8–1,3 s paus mellan meningar.** SP_3 cue 1 (fyra citat) blev
+  16,5 s tal för 9,4 s film. Luckor ≥ 0,3 s inne i repliken kläms till ≈ 0,35 s med
+  `silenceremove=stop_periods=-1` (ger 13,5 s). Utan det hade SP-videorna blivit 25 s.
+- **Vad tidslinjen gav:** 83 segment i 18 videor; 32 låg mot gränsen (70 % eller
+  135 %), rösten snabbades 4–12 % i 29 segment. CS/G blev 14–19 s, SP 20–23 s (källan
+  15–17 s). SP-manusen är för långa för sina filmer — hela filmen går i 70–76 %.
+  Nästa gång: max tre citat per SP-manus, eller längre källklipp.
+- **Kolla uttalet med Scribe, inte med örat.** `POST /v1/speech-to-text`
+  (`scribe_v1`, `language_code=sv|no`) per cue-mp3 och ordjämförelse mot manuset
+  fångade fyra riktiga feluttal på 83 cues: "Jämförpris" → "jämför please",
+  "CaraShell" → "Karusell"/"Carakell" (SE, slumpvis — omgenererad cue blev rätt), och
+  **norska sammanskrivna tal:** `hundreogsyttien` (171) lästes som 117 i alla tre SP,
+  `tohundreogelleve` en gång som 220. Skriv norska tal med mellanrum och bindestreck
+  i tiotal+ental: `hundre og sytti-en`, `to hundre og elleve` — provat mot Scribe,
+  rätt tre av tre. Svenska sammanskrivna tal ("femhundrafemtionio") lästes rätt.
+- **`rostkoll.py --omtajmad`:** längddriften är förväntad när videon är omklippt med
+  flit och blir en notering med siffran; tyst spår, avhugget slut och tappat tal mäts
+  som vanligt (`--kallsrt` = HeyGen-cue-filen ger taltappet). 18 av 18 gröna.
+- **Kostnad:** 0 HeyGen-krediter. ElevenLabs ≈ 4 800 tecken för de 18 manusen plus
+  ≈ 900 för omgenererade cues (kontot stod på 46 924 av 100 022 efteråt, tier
+  creator); Scribe-anropen är gratis i tid men räknas på kontots STT-kvot. En
+  omrendering ur cachen kostar 0 tecken — mp3:orna ligger i `bildfix-el/vo/<namn>/`,
+  radera en cue-fil så genereras bara den om.
+- **Byte i Meta utan ny kampanj:** radera de gamla annonserna (PAUSED, 0 kr — spend
+  läst före varje `DELETE`), ta bort posterna ur `media-i-malkontot*.json`, lägg
+  filerna i `bildfix/`, kör `media-upload` + `kampanj.mjs --cbo` — idempotensen på
+  namn gör att bara de 9 saknade byggs per marknad. Metas rate limit efter 9
+  annonser: kampanjstegets räkning väntar 30 s → 5 min innan den läser tillbaka.
+
+### Samma dag, `/ny-annonser carashell/termoskyddet` med Axels tillägg "fixa alla till engelska och lägg in dom i den amerikanska kampanjen, i Magiborsten UK" — 16 annonser till USA utan Notion-kö (2026-09-16)
+
+Termoskyddets 16 SE-annonser (12 videor + 4 bilder) byggdes av `/ny-annonser` direkt ur
+Meta, så hubben "Termoskyddet" har 0 rader och `/ops-oversatt … --marknad US` hade
+ingenting att läsa. Källan blev **SE-kampanjen i OPS-kontot** (`120249115376140172`,
+läst via Graph), målet den tomma `CARASHELL_US_Termoskydd …` (`120251442339640435`) i
+Magiborsten UK med adseten `CARASHELL_US_CS/G/PD/SP`. Batchen:
+`market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` — `jobb.json` (kön ur
+Meta), `oversatt-output.json` (12 engelska manus med SE-videons cue-tider),
+`adcopy-US.json`, `textlager-us.json`, `dubba.mjs`, `rost-brand.mjs`, `rendera.mjs`,
+`ladda-upp.mjs`, `resultat-*.json`. Lärdomarna:
+
+- **Bäverbutikens originalvideor går inte att hämta** — `GET /<video_id>?fields=source`
+  i MagiBorsten svarar `(#10) Application does not have permission`. OPS-kontots egna
+  videor (SE-versionerna, 720 × 1280) ger `source`. De duger som bildkälla: ElevenLabs-
+  omdubben kastar ljudet och tajmar om klippen, och captionbandet (`940:1084`) täcker
+  SE-versionens vita captionruta. Cue-tiderna tas ur `bildfix-el/<namn>.mp4.srt`
+  (SE-videons tider), inte ur HeyGens `-ny.srt` (källans tider).
+- **Amerikansk röst:** `Chris - Charming, Down-to-Earth` (ElevenLabs, `accent: american`,
+  `use_case: conversational`), eleven_v3. Engelskan är 15–20 % kortare än svenskan, så
+  videon går i **upp till 135 %** (SE-omgången gick i 70 %); G_3 låg två segment över
+  taket (137/142 %) — synligt snabbare klipp, inte ett fel. Skriv engelska manus något
+  längre än svenskan nästa gång, inte kortare.
+- **Uttal mäts med Scribe, och Scribe är också slumpmässigt.** "CaraShell" lästes som
+  "Caroshell"; **"Cara Shell"** i två ord hördes som "Carashell" 8 av 8 i test. Namnet
+  "Per" läses "pur" — **"Pair"** ger det svenska uttalet. `dubba-text.mjs` bär båda
+  formerna: `voText` för rösten, `captionText` tillbaka för captions. Men samma mp3
+  hördes som "Carashell" i ett anrop och "Caroshell"/"Car Shop"/"Carousel" i nästa —
+  därför `rost-brand.mjs`: varje cue med brandet eller "Pair" godkänns först när Scribe
+  hör ordet, annars genereras den om (max 5; SP_3:s fyra-citats-cue tog 4 försök,
+  12 av 12 gröna). Digits ("$99", "83 by 67") och "Sophia"/"rights" är Scribe-stavning,
+  inte fel — filtrerade i jämförelsen.
+- **Röstcachen är nycklad på cue-INDEX, inte på texten.** `--torr` genererar ändå alla
+  mp3:or (kostar tecken), och en textrevision efteråt ger stale cues utan varning. Flytta
+  undan mappen (`mv`, `rm -rf` nekas i sandlådan) innan omkörning.
+- **`no-captions.py`:s "text ovanför bandet" är ett silvertäcke, inte text, på PD.**
+  Flaggan flyttade med bandet (940 → rad 880–936 i 29 % av frames; 860 → rad 800–856 i
+  61 %): det silvriga quiltade skyddet fyller bilden. Ögonläst i `qa/pd-remsor.png`
+  (rad 820–1100 var 1,2 s) — ingen text, `GRANSKAD_OK` i `dubba.mjs`. CS_3 var däremot
+  äkta: SE-versionen fick 885:1084 (tvåradiga källcaptions), så US får `880:1084`.
+- **Bilder:** kie.ai `nano-banana-edit` tog bort källtexten på tre foton (0 fel, ~1 min
+  per bild); CS_2_1 och SP_2_1 delar foto (den rena CS-varianten bär båda, som i SE).
+  `rendera.mjs` lägger `textlager-us.json` med `bild-text.py`; `$99 / $124 / −20%`,
+  "14-day returns" (inte "right of withdrawal" — EU-juridik som en amerikan läser som
+  "utländsk butik"). Siffror ÄR tillåtna i rubriken ("$99 instead of $124") — första
+  briefen förbjöd dem och gav en jargongrubrik ("Below the compare-at price").
+- **US-marknadens domän är `carashell.com`** (Shopify Markets, mätt 10:30 UTC):
+  `carashell.se/en/products/termoskyddet?country=US` svarar **301** dit, och
+  `carashell.com/products/termoskyddet.json` ger 99.00 / 124.00 i USD. Länken i
+  annonserna pekas dit direkt (`--lank`); `lankFor` i `opsmarknader.mjs` bygger
+  fortfarande `.se/en/…?country=US`, och kön `ops-leveranskon` skulle stoppa på
+  "omdirigerar" i priskollen. ⚠️ Nästa körning av `/ops-oversatt carashell/… --marknad
+  US` ärver `.com`-länken ur kampanjens annonser (plockaLank), men priskollen läser
+  fortfarande `.se`-länken — lär kön marknadens egen domän (en rad per marknad i
+  butiksfilen) innan den rutinen körs på riktigt.
+- **Pixeln är delad nu:** `act_1107817401910319/adspixels` listar CaraShell
+  `28589207184025756` (owner_business MagiBorsten), och takskyddets fyra US-annonser
+  har tomt `issues_info` (PENDING_REVIEW) — PROCESS.md punkt 17 är avklarad.
+- **Metas anropstak i UK-kontot:** första uppladdningen tog 8 min (backoff 30 s → 4 min),
+  de två nästa 30 s, den fjärde 7 min igen. Räkna med ~1 h för 16 annonser och kör dem
+  i bakgrunden; kör aldrig två uppladdare parallellt mot samma app.
+- **Räkningen:** `factory/rakning.mjs` känner bara SE/NO (källdomar ur brand-detektorn).
+  För US är facit `jobb.json` (16 rader ur SE-kampanjen) mot `resultat-meta.json` +
+  tillbakaläsning ur kontot — se `products/carashell/termoskyddet/batch-log.md`.
+
+### En kampanj kopierad till en ny marknad bär med sig gamla marknadens PRIS (2026-09-17→18, taköverdraget → UK/CA/AU/NZ)
+
+Axel byggde åtta kampanjer i Magiborsten UK genom att kopiera US-kampanjens creatives
+till fyra nya engelskspråkiga marknader. Språket stämde — **priset gjorde det inte**:
+216 annonser sa `$199 / $249` mot kunder som betalar i GBP, CAD, AUD och NZD. Felet
+syns inte i Meta (samma språk, samma bild) och inte i kundvyn (Shopify räknar om åt
+kunden) — bara i annonsen. Axel såg det själv.
+
+**Regel härifrån: en marknad är inte ett språk.** När en kampanj kopieras till ett nytt
+land ska priset läsas om ur butiken som kund i DET landet (`POST /localization` med
+`country_code`, sedan `/products/<handle>.json`) och bytas i alla tre ytorna — text,
+inbränd bildtext och tal. Engelska till engelska känns som en ren kopia och är det inte.
+
+Verktygen ligger i `market-expansion/ops/carashell/2026-09-17-marknader/` och är byggda
+för att kunna köras om för nästa marknad:
+
+- **`marknader.mjs`** — priser, fraktrad och kampanj-id per marknad, plus `bytPris()` som
+  gör bytet **deterministiskt i kod**. En modell som skriver om texten kan ändra annat;
+  uppdraget var att bara priset skulle bli rätt. `kvarUS()` är kontrollen efteråt (och
+  måste maskera marknadens egna `CA$`/`A$`/`NZ$` innan den letar dollartecken, annars
+  larmar den på varje rätt pris den själv skrivit).
+- **`byt-text.py`** — byter EN rad i en färdig annonsbild. Den mäter bakgrundsfärg,
+  textfärg, fetstil, versalhöjd och justering i regionen och ärver stilen, så basfotot
+  inte behövs. Två saker avgör resultatet: **regionen måste ligga innanför plattans
+  uppmätta gränser** (en region som är bredare än chipet låter texten spilla ut över
+  fotot), och krympningen ska räknas mot REGIONEN, inte mot originaltextens bredd.
+- **`dubba.mjs`** — byter talet utan att röra bilden: cue-tider ur ElevenLabs Scribe
+  (ordnivå), en replik per cue lagd på originalets starttid, `-c:v copy`.
+
+**Fyra fällor, alla mätta den här körningen:**
+1. **`-shortest` i mux klipper VIDEON.** Ljudspåret blev 0,16–0,44 s kortare än bilden och
+   `-shortest` kapade slutet — bilden ändrades alltså fast uppdraget var att inte röra
+   den. Fix: bygg ljudet på en tyst bas (`anullsrc` med `-t <videons längd>`) som första
+   amix-ingång med `duration=first`, och kör mux UTAN `-shortest`. Kontrollera längden
+   efteråt: mer än 50 ms drift är ett fel, inte en avrundning.
+2. **`apad` utan `whole_dur` hänger ffmpeg.** 22 minuter på en 27-sekundersvideo innan
+   den dödades; `atrim` efteråt stoppade inte paddningen.
+3. **Metas `video_data` läses ut med både `image_url` och `image_hash`, men accepteras
+   bara med ett av dem.** Varje video avvisades med 400 tills specen rensades innan den
+   skickades tillbaka.
+4. **Ett torrkörningsresultat får aldrig räknas som gjort.** Idempotensen hoppade över
+   annonser vars enda spår var en `--torr`-post.
+
+**Röstkollen gäller även här:** `rostkoll.py` underkände en video för att sista repliken
+gick ända ut i sista bildrutan (originalet slutar i tystnad). Lämna ≈ 0,45 s tystnad
+i slutet, och låt röstkollens exitkod styra om filen får laddas upp — filen finns på
+disk även när kollen sa ❌, så spärren måste sitta i uppladdaren.
+
+**Bytet i Meta:** `byt-creative.mjs` bygger den nya creativen på annonsens EGEN gamla
+`object_story_spec`, så sida, CTA och **landningslänk** följer med oförändrade; namn,
+adset, kampanj och status rörs aldrig. Varje byte läses tillbaka och jämförs.
+216 annonser på 27 minuter i UK-kontot, 0 fel. `verifiera.mjs` läser sedan tillbaka
+allt en gång till och dömer per annons — 216 av 216 gröna.

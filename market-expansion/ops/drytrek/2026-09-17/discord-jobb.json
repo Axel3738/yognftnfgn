@@ -1,0 +1,18 @@
+{
+ "brand": "DryTrek",
+ "butik": "drytrek",
+ "datum": "2026-09-17",
+ "lage": "oversatt",
+ "server": "DryTrek",
+ "kanal": "annons-uppladdning",
+ "gjort": [
+  "Nothing to translate today: the Norwegian queue is empty for the second day.",
+  "The Norwegian campaign is unchanged at 47 ads, all ACTIVE: PD 27, SP 8, CS 4, G 4, FO 2, CI 1, BOF 1.",
+  "Nothing new will reach this queue until the Swedish delivery round has something to push through first."
+ ],
+ "varningar": [
+  "Yesterday's price fix is doing its job: the shop reads 382 NOK today against 379 yesterday. The rate moved, and the figure follows it because it is now read from the Norwegian page on every run instead of being converted or assumed."
+ ],
+ "action_axel": [],
+ "nasta_korning": "2026-09-18"
+}

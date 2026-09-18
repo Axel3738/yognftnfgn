@@ -36,6 +36,12 @@ if (!pageId) dö('Ange <page-id>. Exempel: node tools/notion-fil.mjs 3cc270ab908
 
 const ut = flagga('ut', '.');
 if (!existsSync(ut)) mkdirSync(ut, { recursive: true });
+// --utan-sidmedia: hoppa over mediablocken i sidans kropp. Bäverbutikens
+// /oversatt NO lagger den NORSKA filen overst i sidan (2026-09-05), sa for en
+// rad utan bilaga ar sidmediat oftast NO-versionen — inte den svenska leveransen.
+// Speglingen (tools/ops-spegla.mjs) hamtar den svenska filen ur Meta i stallet
+// och anvander den har vagen bara som reserv, utan sidmedia.
+const utanSidmedia = args.includes('--utan-sidmedia');
 
 const token = process.env.NOTION_TOKEN;
 if (!token) dö('NOTION_TOKEN saknas i miljön. Utan den går bilagan inte att hämta.');
@@ -63,7 +69,7 @@ if (!filer.length) {
   // Tredje vagen forst: redigeraren har dragit in filen direkt i sidan, sa den ar
   // ett Notion-hostat mediablock. Den ar en riktig fil — Drive-lanken pa samma sida
   // pekar oftast bara pa brief-mappen, sa mediablocket vinner.
-  const media = await mediaBlockIKropp(pageId);
+  const media = utanSidmedia ? [] : await mediaBlockIKropp(pageId);
   if (media.length) {
     let k = 0;
     for (const m of media) {

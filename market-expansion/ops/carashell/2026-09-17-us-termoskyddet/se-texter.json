@@ -1,0 +1,44 @@
+{
+  "_kalla": "Briefernas tabell 'Exact text' (products/carashell/termoskyddet/batch-02/image-ads-briefs/*/brief.md) — textlagret som ligger på SE-bilderna sedan 2026-09-17. Typerna är factory/bild-text.py:s.",
+  "CaraShellFront_CS_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Svalt på sommaren, varmt på vintern, mörkt när du sover." },
+      { "typ": "underrad", "text": "Utanpå rutan, 211 × 171 cm – klart på två minuter." },
+      { "typ": "pris", "text": "559 kr" },
+      { "typ": "jamforpris", "text": "932 kr" },
+      { "typ": "rabatt", "text": "−40 %" },
+      { "typ": "botten", "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt" }
+    ]
+  },
+  "CaraShellFront_CS_5_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Taköverdraget för vintern. Termoskyddet för resan." },
+      { "typ": "underrad", "text": "Termoskyddet sitter på utsidan av framrutan och båda sidorutorna, 211 × 171 cm. Glaset blir aldrig kallt på insidan – ingen imma på morgonen." },
+      { "typ": "pris", "text": "Termoskyddet 559 kr" },
+      { "typ": "botten", "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt" }
+    ]
+  },
+  "CaraShellFront_G_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Ge bort en morgon utan imma att torka." },
+      { "typ": "underrad", "text": "Mörkt i kupén, ingen sol klockan fyra." },
+      { "typ": "pris", "text": "559 kr" },
+      { "typ": "jamforpris", "text": "932 kr" },
+      { "typ": "botten", "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt" }
+    ]
+  },
+  "CaraShellFront_PD_4_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Imma på insidan – trots gardinen i kupén." },
+      { "typ": "underrad", "text": "CaraShell sitter utanpå rutan – glaset blir aldrig kallt inifrån." },
+      { "typ": "botten", "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt" }
+    ]
+  },
+  "CaraShellFront_PD_5_1": {
+    "element": [
+      { "typ": "rubrik", "text": "Rastplatsen ser din framruta. Den ser inte dig – hela framvagnen är mörklagd." },
+      { "typ": "underrad", "text": "Mörklägger hela framvagnen från utsidan, 211 × 171 cm. Ingen ser in – och solen väcker dig inte klockan fyra." },
+      { "typ": "botten", "text": "Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt" }
+    ]
+  }
+}

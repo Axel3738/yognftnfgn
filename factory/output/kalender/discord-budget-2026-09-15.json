@@ -1,0 +1,19 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-15",
+  "lage": "budget",
+  "gjort": [
+    "Budget round: campaign still PAUSED by Axel (since Sept 13) — nothing touched, nothing activated, 0 changes",
+    "Brief round PAUSED in the register from tonight: no new briefs will be ordered on Wednesday. Reason: the store is not advertising and 36 briefs already sit as Draft — every answer to the open question (A/B/C) means no new briefs. Release with: node factory/register.mjs briefantal kalender/adventskalender-racingbilar auto",
+    "The budget round keeps running every night and will act the moment the campaign is switched on again"
+  ],
+  "siffror": { "spend_7d": 2835, "kop_7d": 5, "roas_7d": 1.18, "vinstbidrag_7d": -1185 },
+  "briefer": [],
+  "varningar": [
+    "Open owner question from Sept 13 is still unanswered: A = pause the night watch and move Jazz · B = let Jazz finish the 36 briefs · C = close the product and remove the routines. Until then: budget round only, no new briefs"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-16"
+}

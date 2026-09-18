@@ -1,0 +1,38 @@
+[
+  {
+    "n": "CaraShellRoof_US_GT_4_1",
+    "adId": "120251442457940435",
+    "gammal_creative": "2069785450332524",
+    "ny_creative": "1135863875774896",
+    "lank": "https://carashell.com/products/takskyddet?country=US",
+    "status": "ACTIVE",
+    "eff": "IN_PROCESS"
+  },
+  {
+    "n": "CaraShellRoof_US_PD_4_1",
+    "adId": "120251442471980435",
+    "gammal_creative": "2109132083297633",
+    "ny_creative": "1368342035370103",
+    "lank": "https://carashell.com/products/takskyddet?country=US",
+    "status": "ACTIVE",
+    "eff": "IN_PROCESS"
+  },
+  {
+    "n": "CaraShellRoof_US_CS_4_1",
+    "adId": "120251442481670435",
+    "gammal_creative": "1084928231091845",
+    "ny_creative": "2651578255280459",
+    "lank": "https://carashell.com/products/takskyddet?country=US",
+    "status": "ACTIVE",
+    "eff": "IN_PROCESS"
+  },
+  {
+    "n": "CaraShellRoof_US_SP_4_1",
+    "adId": "120251442617450435",
+    "gammal_creative": "3731940680315052",
+    "ny_creative": "1597565428734723",
+    "lank": "https://carashell.com/products/takskyddet?country=US",
+    "status": "ACTIVE",
+    "eff": "IN_PROCESS"
+  }
+]

@@ -1,0 +1,110 @@
+{
+  "CaraShellFront_US_CS_1#6": {
+    "text": "From Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "From Kara Shell"
+  },
+  "CaraShellFront_US_CS_2#6": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_CS_3#6": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_G_1#4": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_G_2#5": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_G_3#6": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_SP_1#2": {
+    "text": "Pair writes: very happy, easy to set up.",
+    "maste": [
+      "pair"
+    ],
+    "ok": true,
+    "forsok": 1,
+    "hort": "Pair rights, very happy, easy to set up"
+  },
+  "CaraShellFront_US_SP_1#5": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 1,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_SP_2#2": {
+    "text": "Pair writes: very happy, easy to set up.",
+    "maste": [
+      "pair"
+    ],
+    "ok": true,
+    "forsok": 1,
+    "hort": "Pair writes, \"Very happy. Easy to set up.\""
+  },
+  "CaraShellFront_US_SP_2#4": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 1,
+    "hort": "Windshield cover from Carashell"
+  },
+  "CaraShellFront_US_SP_3#1": {
+    "text": "Lars writes: protects well against sun and heat, I'm happy. Sofia writes: it protects well and blacks out nicely. Cooler inside, no one can see in, dark all night. Pair: happy, easy to set up.",
+    "maste": [
+      "pair"
+    ],
+    "ok": true,
+    "forsok": 4,
+    "hort": "Lars writes, \"Protects well against sun and heat. I'm happy.\" Sophia writes, \"It protects well and blacks out nicely. Cooler inside. No one can see in. Dark all night. Pair. Happy. Easy to set up.\""
+  },
+  "CaraShellFront_US_SP_3#4": {
+    "text": "Windshield cover, from Cara Shell.",
+    "maste": [
+      "carashell"
+    ],
+    "ok": true,
+    "forsok": 0,
+    "hort": "Windshield cover from Carashell"
+  }
+}

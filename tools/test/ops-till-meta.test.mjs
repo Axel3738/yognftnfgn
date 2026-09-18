@@ -56,6 +56,11 @@ test('kontrolleraMarknad: NO-namn i SE stoppas, SE-namn i NO stoppas, rätt kod 
   // Vinkelkoder får aldrig läsas som länder.
   assert.equal(kontrolleraMarknad('HeimGuard_TR_1_1', 'SE').ok, true);
   assert.equal(kontrolleraMarknad('HeimGuard_PD_1_1', 'SE').ok, true);
+  // USA (2026-09-16): _US_ är en marknadskod; ett US-namn i NO-kampanjen stoppas.
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'US').ok, true);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'NO').ok, false);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_US_PD_4_1', 'SE').ok, false);
+  assert.equal(kontrolleraMarknad('CaraShellRoof_PD_4_1', 'US').ok, false, 'ett US-namn måste bära _US_');
 });
 
 test('medietyp: mp4/mov är video, jpg/jpeg/png är bild, allt annat null', () => {
@@ -153,11 +158,18 @@ test('valjEnKampanj: exakt en ACTIVE på marknaden — annars null med skäl och
   const no = valjEnKampanj({ kampanjer, prefix: PREFIX, marknad: 'NO' });
   assert.equal(no.kampanj?.id, '11');
 
-  // Noll aktiva: bara den pausade finns.
+  // Noll aktiva, exakt en pausad: den väljs (utfallet läses live sedan —
+  // spend stoppar, tom = nybyggd får annonsen).
   const bara = valjEnKampanj({ kampanjer: [kampanjer[2]], prefix: PREFIX, marknad: 'SE' });
-  assert.equal(bara.kampanj, null);
-  assert.match(bara.skal, /Ingen ACTIVE kampanj/);
-  assert.match(bara.skal, /HEIMGUARD_SE_Gammal/);
+  assert.equal(bara.kampanj?.id, '12');
+  assert.equal(bara.pausad, true);
+  assert.equal(bara.skal, null);
+
+  // Noll aktiva, två pausade: stopp med listan.
+  const tvaPausade = valjEnKampanj({ kampanjer: [kampanjer[2], { id: '14', name: 'HEIMGUARD_SE_Annan', status: 'PAUSED' }], prefix: PREFIX, marknad: 'SE' });
+  assert.equal(tvaPausade.kampanj, null);
+  assert.match(tvaPausade.skal, /Ingen ACTIVE kampanj/);
+  assert.match(tvaPausade.skal, /HEIMGUARD_SE_Gammal/);
 
   // Ingen kampanj alls på marknaden — men butiken finns på en annan.
   const fel = valjEnKampanj({ kampanjer: [kampanjer[1]], prefix: PREFIX, marknad: 'SE' });
@@ -191,4 +203,25 @@ test('tolkaArgs: positional nyckel, flaggvärden räknas aldrig som positional, 
   assert.equal(a.json, true);
   assert.equal(tolkaArgs(['--namn', '--torr']).namn, null, 'flagga utan värde');
   assert.equal(tolkaArgs([]).torr, undefined);
+});
+
+test('konceptUrNamn: tvådelat prefix — produktsegmentet hoppas över (DryTrek_Damasker_PD_14_1)', () => {
+  assert.equal(konceptUrNamn('DryTrek_Damasker_PD_14_1'), 'PD');
+  assert.equal(konceptUrNamn('DryTrek_NO_Damasker_PD_14_1'), 'PD', 'marknadskod före produktsegmentet');
+  assert.equal(konceptUrNamn('DryTrek_Damasker_FO_2_H1'), 'FO');
+  assert.equal(konceptUrNamn('DryTrek_Damasker_14_1'), null, 'produktsegment följt av siffra är ingen kod');
+  assert.equal(konceptUrNamn('HeimGuard_SOCIAL_1'), null, 'fler än 4 bokstäver utan kod efter är fortfarande null');
+});
+
+test('valjEnKampanj: en TOM kampanj hittas via kampanjbasen (kampanjbasFor), inte via prefix eller annonser', () => {
+  const kampanjer = [
+    { id: '1', name: 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16', status: 'PAUSED' },
+    { id: '2', name: 'CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16', status: 'PAUSED' },
+    { id: '3', name: 'HEIMGUARD_US_Kamera', status: 'ACTIVE' },
+  ];
+  const utan = valjEnKampanj({ kampanjer, prefix: ['carashellroof_', 'carashellroof'], marknad: 'US' });
+  assert.equal(utan.kampanj, null, 'utan bas: noll annonser, prefixet matchar inte kampanjnamnet');
+  const med = valjEnKampanj({ kampanjer, prefix: ['carashellroof_', 'carashellroof'], marknad: 'US', kampanjbaser: ['CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m'] });
+  assert.equal(med.kampanj?.id, '1');
+  assert.deepEqual(med.butikens.map((k) => k.id), ['1'], 'termoskyddets kampanj matchar inte takskyddets bas');
 });

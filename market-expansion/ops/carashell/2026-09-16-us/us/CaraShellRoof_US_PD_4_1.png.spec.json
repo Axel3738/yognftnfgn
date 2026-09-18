@@ -1,0 +1,29 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "November decides April's moisture test."
+    },
+    {
+      "typ": "etikett_vanster",
+      "text": "WITHOUT – water sits by the hatch all winter"
+    },
+    {
+      "typ": "etikett_hoger",
+      "text": "WITH – 21×10 ft cover, hooked under the edge"
+    },
+    {
+      "typ": "botten",
+      "text": "Roof only. One person. $199."
+    }
+  ]
+}

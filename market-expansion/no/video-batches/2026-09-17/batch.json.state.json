@@ -1,0 +1,178 @@
+{
+ "fagelmatare_CS_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/0839d6461508434da289656123015822/original.mp4",
+  "proofreadId": "25f594e1ef754fb5b149e5873b8a132c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "8d5d0e6700bf42bc8bb3a038d3d80bc7-nb",
+  "downloaded": true
+ },
+ "fagelmatare_CS_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/be2b9904bbf74fc4b9d60ebbc8fe1e4b/original.mp4",
+  "proofreadId": "e59b255597704ba2a2842427ec527d1a-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "feee76a89ec8423ca296aae6e890e09c-nb",
+  "downloaded": true
+ },
+ "fagelmatare_CS_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/b3894e2ca6ad418db8a128241479fb90/original.mp4",
+  "proofreadId": "0dce2baec69942c38004cded1a46dba6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7b3bb41ffac6469ea06d4d1a5751d0b9-nb",
+  "downloaded": true
+ },
+ "fagelmatare_GT_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/b81fbb1e39af498abe5bcfd957920f5f/original.mp4",
+  "proofreadId": "e7d8e54d30af42cfa5a54f3732c19ad9-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b867a65c5b09472c8c513c6d6baf3b2f-nb",
+  "downloaded": true
+ },
+ "fagelmatare_GT_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/89f3540c896840adb4633fc2090aab56/original.mp4",
+  "proofreadId": "1b31496258ce44649a5998214d9f35a4-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "276ab56cfc2349748b8cdf84797d81ef-nb",
+  "downloaded": true
+ },
+ "fagelmatare_GT_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/c709e0dc801443c5a5c93abf91b7f942/original.mp4",
+  "proofreadId": "adc5da3bd56c4ba99f082363bea47790-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "c5c7e645c2ad43968c79533e4016cd62-nb",
+  "downloaded": true
+ },
+ "fagelmatare_PD_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/beee3e704cb34550b3324b7a0d89cc1a/original.mp4",
+  "proofreadId": "52a4da97625745039c31c0abe8c735da-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d1105ff43fe9453ba452c8d06eb786de-nb",
+  "downloaded": true
+ },
+ "fagelmatare_PD_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/a7f4b3236cfe499cbf159c25cb0c4c3f/original.mp4",
+  "proofreadId": "bebc2154e12346928c21cf8fa011df65-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "f0c853a3c002465ab9513b69475fd3eb-nb",
+  "downloaded": true
+ },
+ "fagelmatare_PD_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/713f0ac8fd634183b1ce6450862fc89a/original.mp4",
+  "proofreadId": "004804d330214308ba37f8b47442e6c2-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "60a346f3fc8e452db250e726fd40e569-nb",
+  "downloaded": true
+ },
+ "fagelmatare_SP_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/2dd0b7effb894caba800a14d030bab3c/original.mp4",
+  "proofreadId": "cb6ef3bfcc164a3696898f199379592f-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b5992b51e8054daf81d27028cba2d170-nb",
+  "downloaded": true
+ },
+ "fagelmatare_SP_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/c3fcfa2a9a344249945e27bdf3e1cb89/original.mp4",
+  "proofreadId": "a6f11f000b084249b30a43a8c448b877-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "61709e20f3f348538affee3515457100-nb",
+  "downloaded": true
+ },
+ "fagelmatare_SP_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/33b5c1bd3c694dc6a9e2e179666fdbfc/original.mp4",
+  "proofreadId": "d81035eaa9e34a5b83f55fceaaa06d9c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a35ed7b178c2451cafa33fe7e1b931db-nb",
+  "downloaded": true
+ },
+ "solcellslampa_CS_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/cbf3a940c1fe4439a575f255d9225a19/original.mp4",
+  "proofreadId": "2f610a7b250343eb9994b85b77ce32e8-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "116a99f0753247baa9c5d47b29221db0-nb",
+  "downloaded": true
+ },
+ "solcellslampa_CS_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/abdfba3e2c5d4f71bc38b1a126f2daad/original.mp4",
+  "proofreadId": "d188284c3b484514ad75e6b8394dac0e-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9e9b716b7afc44899408c754c6818612-nb",
+  "downloaded": true
+ },
+ "solcellslampa_G_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/c390e676de314f1ebc03659a9ad3ba22/original.mp4",
+  "proofreadId": "4617eaf293234c27ae85c4034659c09a-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9a79bdef6d37407a9778b43e4e116154-nb",
+  "downloaded": true
+ },
+ "solcellslampa_G_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/7effeee7d30b477491a35accb0809875/original.mp4",
+  "proofreadId": "07912df3d2d24168b8a796ea907c6ab2-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "8255eae596164645a33ae453b53311db-nb",
+  "downloaded": true
+ },
+ "solcellslampa_PD_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/7a12f6e5155d4549924d1b7ce8ca295a/original.mp4",
+  "proofreadId": "760ad8cac7e44c6299d3e48e8c9c64c6-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b9298ed32a0948078361145636620b32-nb",
+  "downloaded": true
+ },
+ "solcellslampa_PD_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/7cc05d047868488f85ef0f5bd8ee0d66/original.mp4",
+  "proofreadId": "89a127dd680d45f3a6086f5227d59dff-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "a7d968f1ab6149d597cf4e569194ca98-nb",
+  "downloaded": true
+ },
+ "solcellslampa_PD_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/8e2de09980ad403681de5e621108773d/original.mp4",
+  "proofreadId": "14d409214cf9412e825e9809165b9892-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "fad5a9e289a748f0a15cc996eb5d0cca-nb",
+  "downloaded": true
+ },
+ "solcellslampa_SP_1": {
+  "assetUrl": "https://resource2.heygen.ai/video/695d00c0805b4fdd85e660a3a2cdd32e/original.mp4",
+  "proofreadId": "d8cf20eb0e0e4cdf8d2e123a0763e907-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ae25b354a1b94182b221cc77bd474113-nb",
+  "downloaded": true
+ },
+ "solcellslampa_SP_2": {
+  "assetUrl": "https://resource2.heygen.ai/video/73027151269544e7adb43d290211e346/original.mp4",
+  "proofreadId": "35bb7a3a57744fba910e57394ff52457-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "d8ec18679547420f87444e7a53b68c29-nb",
+  "downloaded": true
+ },
+ "solcellslampa_SP_3": {
+  "assetUrl": "https://resource2.heygen.ai/video/9032577cf8c349e581ffc18e8fe23967/original.mp4",
+  "proofreadId": "f60240852c9f4d0892a528e2c540fa9c-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "08b9d6c9cac946ba9b623396948abe5c-nb",
+  "downloaded": true
+ }
+}

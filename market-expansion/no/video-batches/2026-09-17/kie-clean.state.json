@@ -1,0 +1,50 @@
+{
+  "fagelmatare_CS_2_1": {
+    "taskId": "dac092f877e3e0a8f732ebc3b9033b17",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/dac092f877e3e0a8f732ebc3b9033b17_1789631346658.png"
+  },
+  "fagelmatare_GT_2_1": {
+    "taskId": "db12e50ac85e23a9d5682cf4077efb7f",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/db12e50ac85e23a9d5682cf4077efb7f_1789631350329.png"
+  },
+  "fagelmatare_PD_2_1": {
+    "taskId": "a22b920572a46607a6cb2489f3238007",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/a22b920572a46607a6cb2489f3238007_1789631473278.png"
+  },
+  "fagelmatare_SP_2_1": {
+    "taskId": "2be32d67bd7b0a843c05fc4bcb27c64b",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/2be32d67bd7b0a843c05fc4bcb27c64b_1789631352092.png"
+  },
+  "solcellslampa_CS_2_1": {
+    "taskId": "69ab783f90dd029a38531fdb06f761ae",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/69ab783f90dd029a38531fdb06f761ae_1789631354938.png"
+  },
+  "solcellslampa_G_2_1": {
+    "taskId": "aa01303def33d1336f6c00cf5f60d527",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/aa01303def33d1336f6c00cf5f60d527_1789631360537.png"
+  },
+  "solcellslampa_PD_2_1": {
+    "taskId": "9be3c5eee84d6c1a032b08178f55aa80",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/as/9be3c5eee84d6c1a032b08178f55aa80_1789631363245.png"
+  },
+  "solcellslampa_SP_2_1": {
+    "taskId": "b00610454279d8a680a3f1de36ef3de2",
+    "modell": "google/nano-banana-edit",
+    "klar": true,
+    "url": "https://tempfile.aiquickdraw.com/p/b00610454279d8a680a3f1de36ef3de2_1_1789631429_1847.png"
+  }
+}

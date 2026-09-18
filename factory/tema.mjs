@@ -17,6 +17,60 @@
 
 import { readFileSync } from 'node:fs';
 import { arKalltext } from './kallskanning.mjs';
+import { landsnamnSv, ochLista } from './lander.mjs';
+
+// Temats egna småord per språk — det som ingen translationsRegister når
+// (custom_liquid, snippet-strängar, sektionernas standardrubriker). Svenskan
+// är källan; varje annat språk är en gren i Liquid (localeBranch). Ett språk
+// som saknas här faller tillbaka på svenskan — och syns då som markör i
+// kundvyn, aldrig tyst. Nytt språk = en kolumn här, inte en ny if-sats.
+const TEMAORD = {
+  eyebrow_problem: { sv: 'Känner du igen det?', nb: 'Kjenner du deg igjen?', en: 'Sound familiar?', fi: 'Tuntuuko tutulta?' },
+  eyebrow_losning: { sv: 'Lösningen', nb: 'Løsningen', en: 'The solution', fi: 'Ratkaisu' },
+  rubrik_funktioner: { sv: 'Det här får du', nb: 'Dette får du', en: 'What you get', fi: 'Tämän saat' },
+  rubrik_faq: { sv: 'Vanliga frågor', nb: 'Vanlige spørsmål', en: 'FAQ', fi: 'Usein kysyttyä' },
+  upsell_etikett: { sv: 'Passar till', nb: 'Passer til', en: 'Goes well with', fi: 'Sopii yhteen' },
+  upsell_knapp: { sv: 'Lägg till', nb: 'Legg til', en: 'Add', fi: 'Lisää' },
+  svensk_signal: {
+    sv: '<strong>Svenskt varumärke</strong> – framtaget för svenska hem',
+    nb: '<strong>Svensk merkevare</strong> – laget for nordiske hjem',
+    // "designed for Scandinavian homes" lät fel på en amerikansk sida för ett
+    // taköverdrag (CaraShell /en 2026-09-16) — "conditions" är sant för varje
+    // OPS-produkt (såld för nordiskt klimat) och läses som kvalitet i USA.
+    en: '<strong>Swedish brand</strong> – designed for Scandinavian conditions',
+    fi: '<strong>Ruotsalainen merkki</strong> – suunniteltu pohjoismaisiin oloihin',
+  },
+  leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery', fi: 'Arvioitu toimitus' },
+  leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days', fi: 'arkipäivää' },
+};
+
+// custom_liquid kan inte översättas via translationsRegister — texten
+// locale-branchas i Liquid i stället (HeimGuard-lärdom 2026-09-07).
+// `grenar` = { nb: liquid, en: liquid, … }; en gren som är tom eller lika
+// svenskan faller bort. Utan grenar: svenskan rakt av. En sträng som andra
+// argument betyder nb (äldre anrop).
+export function localeBranch(svLiquid, grenar) {
+  const g = typeof grenar === 'string' ? { nb: grenar } : grenar ?? {};
+  const par = Object.entries(g).filter(([l, v]) => l !== 'sv' && v && v !== svLiquid);
+  if (par.length === 0) return svLiquid;
+  return (
+    par.map(([l, v], i) => `{% ${i === 0 ? 'if' : 'elsif'} request.locale.iso_code == '${l}' %}${v}`).join('') +
+    `{% else %}${svLiquid}{% endif %}`
+  );
+}
+
+// Samma sak inuti ett {%- -%}-block: `{%- assign x = '…' -%}` per språk när
+// sektionsinställningen är tom.
+function standardText(variabel, texter) {
+  const tilldela = (t) => `{%- assign ${variabel} = '${String(t).replaceAll("'", '’')}' -%}`;
+  const grenar = Object.entries(texter)
+    .filter(([l]) => l !== 'sv')
+    .map(([l, t], i) => `{%- ${i === 0 ? 'if' : 'elsif'} request.locale.iso_code == '${l}' -%}${tilldela(t)}`)
+    .join('');
+  return `{%- if ${variabel} == blank -%}${grenar}{%- else -%}${tilldela(texter.sv)}{%- endif -%}{%- endif -%}`;
+}
+// Ett ord per språk i löpande Liquid (upsell-etiketten m.fl.).
+const ordPerSprak = (texter) => localeBranch(texter.sv, Object.fromEntries(Object.entries(texter).filter(([l]) => l !== 'sv')));
 
 const BAS_CSS = `
   .opf-block { padding-block: var(--ms-section-y, clamp(32px, 6vw, 64px)); }
@@ -90,7 +144,7 @@ export const OPF_MEDIA_SKRIPT = `<script>
 const PROBLEM = `{%- assign rubrik = product.metafields.opf.problem_rubrik.value -%}
 {%- assign text = product.metafields.opf.problem_text.value -%}
 {%- assign eyebrow = section.settings.eyebrow -%}
-{%- if eyebrow == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign eyebrow = 'Kjenner du deg igjen?' -%}{%- else -%}{%- assign eyebrow = 'Känner du igen det?' -%}{%- endif -%}{%- endif -%}
+${standardText('eyebrow', TEMAORD.eyebrow_problem)}
 {%- if rubrik != blank or text != blank -%}
 <div class="ms-scope opf-block opf-problem">
   <div class="opf-wrap">
@@ -121,7 +175,7 @@ ${OPF_MEDIA_SKRIPT}
 const LOSNING = `{%- assign rubrik = product.metafields.opf.losning_rubrik.value -%}
 {%- assign text = product.metafields.opf.losning_text.value -%}
 {%- assign eyebrow = section.settings.eyebrow -%}
-{%- if eyebrow == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign eyebrow = 'Løsningen' -%}{%- else -%}{%- assign eyebrow = 'Lösningen' -%}{%- endif -%}{%- endif -%}
+${standardText('eyebrow', TEMAORD.eyebrow_losning)}
 {%- if rubrik != blank or text != blank -%}
 <div class="ms-scope opf-block opf-losning" style="background: var(--ms-surface-2, transparent);">
   <div class="opf-wrap">
@@ -152,7 +206,7 @@ ${OPF_MEDIA_SKRIPT}
 const FUNKTIONER = `{%- assign benefits = product.metafields.opf.benefits.value -%}
 {%- assign features = product.metafields.opf.features.value -%}
 {%- assign rubrik = section.settings.rubrik -%}
-{%- if rubrik == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign rubrik = 'Dette får du' -%}{%- else -%}{%- assign rubrik = 'Det här får du' -%}{%- endif -%}{%- endif -%}
+${standardText('rubrik', TEMAORD.rubrik_funktioner)}
 {%- if benefits.size > 0 or features.size > 0 -%}
 <div class="ms-scope opf-block opf-funktioner">
   <div class="opf-wrap">
@@ -274,7 +328,7 @@ const GARANTI = `{%- assign garantier = product.metafields.opf.garantier.value -
 // --- FAQ — samma dragspelsspråk som temats ms-faq (details, ingen JS) ---
 const FAQ = `{%- assign faq = product.metafields.opf.faq.value -%}
 {%- assign rubrik = section.settings.rubrik -%}
-{%- if rubrik == blank -%}{%- if request.locale.iso_code == 'nb' -%}{%- assign rubrik = 'Vanlige spørsmål' -%}{%- else -%}{%- assign rubrik = 'Vanliga frågor' -%}{%- endif -%}{%- endif -%}
+${standardText('rubrik', TEMAORD.rubrik_faq)}
 {%- if faq and faq.size > 0 -%}
 <div class="ms-scope opf-block opf-faq">
   <div class="opf-wrap">
@@ -387,14 +441,13 @@ const UTGANGNA_TYPER = new Set([
 // vara SANT: bolaget är svenskt, därav "Svenskt varumärke". Skriv aldrig
 // "utvecklad av svenskar" om produkten inte är det (marknadsföringslagen,
 // och repots regel om inga falska claims).
+const svenskSignalRad = (t) =>
+  `<div class="ms-scope opf-svensk"><span aria-hidden="true">\u{1F1F8}\u{1F1EA}</span><span>${t}</span></div>`;
 export const SVENSK_SIGNAL =
-  `{% if request.locale.iso_code == 'nb' %}` +
-  `<div class="ms-scope opf-svensk"><span aria-hidden="true">\u{1F1F8}\u{1F1EA}</span>` +
-  `<span><strong>Svensk merkevare</strong> – laget for nordiske hjem</span></div>` +
-  `{% else %}` +
-  `<div class="ms-scope opf-svensk"><span aria-hidden="true">\u{1F1F8}\u{1F1EA}</span>` +
-  `<span><strong>Svenskt varumärke</strong> – framtaget för svenska hem</span></div>` +
-  `{% endif %}` +
+  localeBranch(
+    svenskSignalRad(TEMAORD.svensk_signal.sv),
+    Object.fromEntries(Object.entries(TEMAORD.svensk_signal).filter(([l]) => l !== 'sv').map(([l, t]) => [l, svenskSignalRad(t)]))
+  ) +
   `<style>.opf-svensk{display:flex;align-items:center;gap:9px;margin:10px 0 4px;` +
   `padding:10px 14px;border:1px solid var(--ms-line,#dde);` +
   `border-radius:var(--ms-radius-sm,6px);background:var(--ms-surface-2,#f5f7f9);` +
@@ -429,7 +482,55 @@ const MS_PAKET_JS = readFileSync(
 // klonen råkade ha med sig. Bas-zip:en är en startpunkt, inte facit.
 export const TEMAFILER = {
   'assets/ms-paket.js': MS_PAKET_JS,
+  // Snippeten och CSS:en ägs också av fabriken sedan 2026-09-17: CaraShell
+  // (byggd 2026-09-10) låg kvar på bas-zip:ens ÄLDRE köpruta utan rullgardin
+  // per enhet, medan ms-paket.js var ny — takskyddet fick nio storlekar och
+  // kunden kunde inte välja olika storlekar i ett 2-pack. ops.mjs lägger
+  // språk- och valutapatcharna ovanpå den här basen, aldrig tvärtom.
+  'snippets/ms-paket.liquid': readFileSync(new URL('./tema/snippets/ms-paket.liquid', import.meta.url), 'utf8'),
+  'assets/ms-paket.css': readFileSync(new URL('./tema/assets/ms-paket.css', import.meta.url), 'utf8'),
+  // Kundens land i texten (Axels beslut 2026-09-17: EN flagga, inte fem):
+  // ms-landtext byter [[flagga]]/[[land]] mot localization.country, och de
+  // tre ställen som visar fraktraden — trust-raden (USP + köprutan),
+  // marquee-sektionen och Dawns annonsrad — renderar genom den. Texterna
+  // utan hakparenteser (sv, nb) passerar orörda.
+  'snippets/ms-landtext.liquid': readFileSync(new URL('./tema/snippets/ms-landtext.liquid', import.meta.url), 'utf8'),
+  'snippets/ms-trust-row.liquid': readFileSync(new URL('./tema/snippets/ms-trust-row.liquid', import.meta.url), 'utf8'),
+  'sections/ms-marquee.liquid': readFileSync(new URL('./tema/sections/ms-marquee.liquid', import.meta.url), 'utf8'),
+  'sections/announcement-bar.liquid': readFileSync(new URL('./tema/sections/announcement-bar.liquid', import.meta.url), 'utf8'),
 };
+
+// Ordet för en enhet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2"),
+// per språk ur produktfilen (`produkt.enhet: { sv, nb, en }` eller en sträng).
+// Tomt ⇒ snippetens default 'st'.
+// Produktmallen delas av alla produkter i butiken, så ordet väljs i Liquid på
+// product.handle: `prelude` sätter opf_enhet/_nb/_en, `args` skickar dem till
+// snippeten. Tom sträng när ingen produkt har `enhet`.
+// Språken snippeten känner (enhet_<locale> i ms-paket.liquid) — utöka båda.
+export const ENHET_LOCALES = ['nb', 'en', 'fi'];
+export function enhetLiquid(produkter) {
+  const q = (s) => `'${String(s).replaceAll("'", '')}'`;
+  const rader = [];
+  for (const p of lista(produkter)) {
+    const e = p?.produkt?.enhet;
+    const ord = typeof e === 'string' ? { sv: e } : (e && typeof e === 'object' ? e : {});
+    if (!text(ord.sv)) continue;
+    const handle = text(p?.produkt?.handle) ?? text(p?.produkt?.id);
+    if (!handle) continue;
+    rader.push(
+      `{% if product.handle == ${q(handle)} %}` +
+        `{% assign opf_enhet = ${q(text(ord.sv))} %}` +
+        ENHET_LOCALES.map((l) => `{% assign opf_enhet_${l} = ${q(text(ord[l]) ?? text(ord.sv))} %}`).join('') +
+        `{% endif %}`
+    );
+  }
+  if (rader.length === 0) return { prelude: '', args: '' };
+  const standard = { nb: 'stk', en: 'pc', fi: 'kpl' };
+  return {
+    prelude: `{% assign opf_enhet = 'st' %}${ENHET_LOCALES.map((l) => `{% assign opf_enhet_${l} = '${standard[l]}' %}`).join('')}${rader.join('')}`,
+    args: `, enhet: opf_enhet${ENHET_LOCALES.map((l) => `, enhet_${l}: opf_enhet_${l}`).join('')}`,
+  };
+}
 
 // ---------------------------------------------------------------------------
 // Hjälpare ur konfigen (förenade ur tema-mall.mjs 2026-09-09, KEDJAN.md).
@@ -472,16 +573,20 @@ export function angerrattRad(butik) {
 
 // Fraktraden nämner VARJE marknad butiken skickar till (Axels beslut
 // 2026-09-08: "Fri frakt – Sverige & Norge"). Länderna kommer ur
-// butik.marknader — aldrig skrivna för hand.
-const LANDNAMN = { SE: 'Sverige', NO: 'Norge', DK: 'Danmark', FI: 'Finland', DE: 'Tyskland', GB: 'Storbritannien', UK: 'Storbritannien' };
+// butik.marknader — aldrig skrivna för hand. En marknad med
+// `i_fraktraden: false` (USA på en svensk startsida, t.ex.) lämnas utanför
+// den svenska raden — dess eget språk säger sitt i översättningsfilen.
 export function fraktRad(butik) {
   const b = butik?.butik ?? {};
   const fri = butik?.frakt?.fri_globalt !== false;
   if (!fri) return 'Snabb leverans';
-  const hem = text(b.huvudmarknad) ?? LANDNAMN[String(b.land ?? '').toUpperCase()] ?? 'Sverige';
-  const ovriga = lista(b.marknader).map((m) => LANDNAMN[String(m?.land ?? '').toUpperCase()] ?? text(m?.land)).filter(Boolean);
+  const hem = text(b.huvudmarknad) ?? (b.land ? landsnamnSv(b.land) : 'Sverige');
+  const ovriga = lista(b.marknader)
+    .filter((m) => m?.i_fraktraden !== false)
+    .map((m) => (m?.land ? landsnamnSv(m.land) : text(m?.land)))
+    .filter(Boolean);
   const lander = [...new Set([hem, ...ovriga])];
-  return lander.length > 1 ? `Fri frakt – ${lander.join(' & ')}` : `Fri frakt i ${hem}`;
+  return lander.length > 1 ? `Fri frakt – ${ochLista(lander)}` : `Fri frakt i ${hem}`;
 }
 
 export function trustPunkter(butik) {
@@ -506,16 +611,18 @@ export function annonsrader(butik, p = null) {
 // Två paketblock (A synligt, B hidden tills ms-ab.js lottar) — samma
 // custom_liquid som temats egna ms_paket-block, plus test-attributet.
 // section_id får en suffix så A och B inte delar radioknappsnamn.
-export function paketBlock(test, produktUttryck = 'product', { tillagg = false } = {}) {
+export function paketBlock(test, produktUttryck = 'product', { tillagg = false, enhet = null } = {}) {
+  const pre = enhet?.prelude ?? '';
+  const arg = enhet?.args ?? '';
   const rad = (variant) =>
-    `{% assign sid = section.id | append: '-${variant}' %}` +
+    `${pre}{% assign sid = section.id | append: '-${variant}' %}` +
     `<div {% render 'ms-ab-attrs', test: '${test}', variant: '${variant}' %}>` +
-    `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid %}</div>`;
+    `{% render 'ms-paket', product: ${produktUttryck}, variant: '${variant}', section_id: sid${arg} %}</div>`;
   // Fullpris-kryssrutan (snippets/opf-tillagg, byggTillagg) ligger som eget
   // block direkt efter paketblocken och hakar i alla ms-paket i sektionen.
   const tillaggBlock = tillagg ? { opf_tillagg: { type: 'custom_liquid', settings: { custom_liquid: "{% render 'opf-tillagg' %}" } } } : {};
   if (!text(test)) {
-    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id %}` } }, ...tillaggBlock };
+    return { ms_paket: { type: 'custom_liquid', settings: { custom_liquid: `${pre}{% render 'ms-paket', product: ${produktUttryck}, section_id: section.id${arg} %}` } }, ...tillaggBlock };
   }
   return {
     ms_paket_a: { type: 'custom_liquid', settings: { custom_liquid: rad('a') } },
@@ -555,12 +662,13 @@ export function tillaggTexter(p) {
   return { label: `Lägg till ${namn}`, info: 'Fullpris – gratis bara i paketen' };
 }
 
-// custom_liquid-block kan inte översättas via translationsRegister — texten
-// locale-branchas i Liquid i stället (HeimGuard-lärdom 2026-09-07). `nb` är
-// översättningsmappen (nyckel → norsk text) ur oversattning-nb.json.
-function localeBranch(svLiquid, nbLiquid) {
-  if (!nbLiquid || nbLiquid === svLiquid) return svLiquid;
-  return `{% if request.locale.iso_code == 'nb' %}${nbLiquid}{% else %}${svLiquid}{% endif %}`;
+// Översättningsmapparna per språk: { nb: {…}, en: {…} } ur
+// oversattning-<locale>.json. Ett äldre anrop med bara `nb` blir { nb }.
+export function oversattningarAv({ oversattningar = null, nb = null } = {}) {
+  const ut = {};
+  for (const [l, o] of Object.entries(oversattningar ?? {})) if (l !== 'sv' && o && typeof o === 'object') ut[l] = o;
+  if (nb && typeof nb === 'object' && Object.keys(nb).length > 0 && !ut.nb) ut.nb = nb;
+  return ut;
 }
 
 const PAKETBLOCK_IDN = ['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg'];
@@ -568,7 +676,8 @@ const PAKETBLOCK_IDN = ['ms_paket', 'ms_paket_a', 'ms_paket_b', 'opf_tillagg'];
 // Köprutans block ur produkt- och butiksfilen: paketblocken (A/B + fullpris-
 // kryssruta när offer säger det), trygghetsraden, leveransdagarna och
 // varianterna. Rör bara main-sektionen. Idempotent.
-function patchaKoprutan(main, { produkt, produkter = [], butik, nb }) {
+function patchaKoprutan(main, { produkt, produkter = [], butik, nb, oversattningar }) {
+  const ov = oversattningarAv({ oversattningar, nb });
   const blocks = { ...main.blocks };
   let order = [...(main.block_order ?? [])];
 
@@ -577,7 +686,10 @@ function patchaKoprutan(main, { produkt, produkter = [], butik, nb }) {
   // för fullpris är produktbunden och byggs bara i enproduktsläget.
   const test = produkt ? paketTest(produkt) : gemensamtPaketTest(produkter);
   if (produkt || test !== null) {
-    const nya = paketBlock(test, 'product', { tillagg: produkt ? harTillagg(produkt) : false });
+    const nya = paketBlock(test, 'product', {
+      tillagg: produkt ? harTillagg(produkt) : false,
+      enhet: enhetLiquid(produkt ? [produkt] : produkter),
+    });
     // Första paketblockets plats — räknad FÖRE filtreringen, så det måste
     // vara det lägsta indexet (annars glider blocken vid varje nytt varv).
     const platser = PAKETBLOCK_IDN.map((id) => order.indexOf(id)).filter((i) => i >= 0);
@@ -596,20 +708,34 @@ function patchaKoprutan(main, { produkt, produkter = [], butik, nb }) {
 
   if (butik && blocks.ms_trust) {
     const sv = trustPunkter(butik);
-    const no = sv.map((x, i) => (nb?.[`liquid.trust.${i}`] ? `${x.split(':')[0]}:${nb[`liquid.trust.${i}`]}` : x));
     const rad = (punkter) => `{% render 'ms-trust-row', items: '${punkter.join('|')}' %}`;
-    blocks.ms_trust = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad(sv), rad(no)) } };
+    const grenar = {};
+    for (const [l, o] of Object.entries(ov)) {
+      grenar[l] = rad(sv.map((x, i) => (o?.[`liquid.trust.${i}`] ? `${x.split(':')[0]}:${o[`liquid.trust.${i}`]}` : x)));
+    }
+    blocks.ms_trust = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad(sv), grenar) } };
   }
   if ((butik || produkt) && blocks.ms_delivery) {
     const d = leveransdagar(produkt?.leveranstid ?? produkt?.shipping?.tid ?? butik?.frakt?.leveranstid);
     const rad = (t) => `{% render 'ms-delivery-estimate', min_days: ${d.min}, max_days: ${d.max}, cutoff_hour: 0, text: '${t}' %}`;
-    // Norska vyn får en STATISK rad: temats ms-delivery skriver datum med
-    // svenska månadsnamn (Intl sv-SE i ms-cro.js) och reservtexten säger
-    // "arbetsdagar" — sågs på /nb i kundvyn 2026-09-08. Samma klasser, ingen JS.
-    const nbText = nb?.['liquid.delivery.text'] ?? 'Beräknad leverans';
-    const nbDagar = nb?.['liquid.delivery.dagar'] ?? `${d.min}–${d.max} virkedager`;
-    const statisk = `<div class="ms-delivery ms-scope"><span aria-hidden="true">🚚</span><div>${nbText} <span class="ms-delivery__date">${nbDagar}</span></div></div>`;
-    blocks.ms_delivery = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad('Beräknad leverans'), statisk) } };
+    // Varje ÖVERSATT vy får en STATISK rad: temats ms-delivery skriver datum
+    // med svenska månadsnamn (Intl sv-SE i ms-cro.js) och reservtexten säger
+    // "arbetsdagar" — sågs på /nb i kundvyn 2026-09-08. Samma klasser, ingen
+    // JS. Antalet dagar per marknad: `leveranstid` på raden i butik.marknader
+    // (USA från Sverige tar inte 5–10 dagar), annars butikens.
+    const grenar = {};
+    const marknader = lista(butik?.butik?.marknader);
+    for (const l of new Set([...Object.keys(ov), ...marknader.map((m) => String(m?.locale ?? '').trim()).filter((x) => x && x !== 'sv')])) {
+      const o = ov[l] ?? {};
+      const m = marknader.find((x) => String(x?.locale ?? '').trim() === l);
+      const dl = text(m?.leveranstid) ? leveransdagar(m.leveranstid) : d;
+      const txt = o['liquid.delivery.text'] ?? TEMAORD.leverans_text[l] ?? TEMAORD.leverans_text.sv;
+      const dagar = text(m?.leveranstid) || !o['liquid.delivery.dagar']
+        ? `${dl.min}–${dl.max} ${TEMAORD.leverans_enhet[l] ?? TEMAORD.leverans_enhet.sv}`
+        : o['liquid.delivery.dagar'];
+      grenar[l] = `<div class="ms-delivery ms-scope"><span aria-hidden="true">🚚</span><div>${txt} <span class="ms-delivery__date">${dagar}</span></div></div>`;
+    }
+    blocks.ms_delivery = { type: 'custom_liquid', settings: { custom_liquid: localeBranch(rad(TEMAORD.leverans_text.sv), grenar) } };
   }
 
   // Bas-temat döljer varianterna (källbutiken sålde paket via ms-paket). En
@@ -625,11 +751,13 @@ function patchaKoprutan(main, { produkt, produkter = [], butik, nb }) {
 // Judge.me-widgeten (sektion av typen "apps" eller med judgeme i id:t) om
 // templaten har en. Temats egna ms-sektioner (sticky ATC) lämnas orörda.
 //
-// Med { produkt, butik, nb } byggs dessutom köprutan ur konfigen: A/B-paket-
-// blocken + fullpris-kryssrutan när offer säger det, trygghetsraden,
+// Med { produkt, butik, oversattningar } byggs dessutom köprutan ur konfigen:
+// A/B-paketblocken + fullpris-kryssrutan när offer säger det, trygghetsraden,
 // leveransdagarna, och Judge.me-widgeten flyttar in i temats Appyta
 // (ms-app-slot — Axels ursprungsmönster, widgeten stylas aldrig av temat).
-export function byggProduktTemplate(befintlig, { produkt = null, produkter = [], butik = null, nb = {} } = {}) {
+// `oversattningar` = { nb: {…}, en: {…} } (en mapp per marknadsspråk);
+// `nb` ensamt är det äldre anropet och betyder { nb }.
+export function byggProduktTemplate(befintlig, { produkt = null, produkter = [], butik = null, nb = {}, oversattningar = null } = {}) {
   const mall = lasTemaJson(befintlig);
   const sektioner = { ...mall.sections };
 
@@ -652,22 +780,29 @@ export function byggProduktTemplate(befintlig, { produkt = null, produkter = [],
   }
 
   // Svenskt varumärke-signalen in efter trust-raden (eller sist bland
-  // blocken om trust-raden saknas). Idempotent — finns blocket rörs inget.
+  // blocken om trust-raden saknas). Blocket är helt fabriksägt, så dess
+  // Liquid skrivs om VARJE gång ur dagens språk — platsen behålls. Till
+  // 2026-09-16 rördes ett befintligt block aldrig: CaraShell fick USA i
+  // efterhand och strippen på /en stod kvar med bara nb-grenen, alltså
+  // "Svenskt varumärke – framtaget för svenska hem" på engelska sidan (läst
+  // som amerikansk kund). Samma läxa som ms-paket (patchaMsPaket).
   const huvud = sektioner.main;
-  if (huvud?.blocks && !huvud.blocks.opf_svensk) {
+  if (huvud?.blocks) {
     const blocks = {
       ...huvud.blocks,
-      opf_svensk: { type: 'custom_liquid', settings: { custom_liquid: SVENSK_SIGNAL } },
+      opf_svensk: { ...(huvud.blocks.opf_svensk ?? {}), type: 'custom_liquid', settings: { ...(huvud.blocks.opf_svensk?.settings ?? {}), custom_liquid: SVENSK_SIGNAL } },
     };
     const ordningMain = [...(huvud.block_order ?? [])];
-    const efterTrust = ordningMain.indexOf('ms_trust');
-    ordningMain.splice(efterTrust === -1 ? ordningMain.length : efterTrust + 1, 0, 'opf_svensk');
+    if (!ordningMain.includes('opf_svensk')) {
+      const efterTrust = ordningMain.indexOf('ms_trust');
+      ordningMain.splice(efterTrust === -1 ? ordningMain.length : efterTrust + 1, 0, 'opf_svensk');
+    }
     sektioner.main = { ...huvud, blocks, block_order: ordningMain };
   }
 
   // Köprutan ur konfigen (paket A/B, kryssruta, trust, leverans, varianter).
   if ((produkt || butik) && sektioner.main?.blocks) {
-    sektioner.main = patchaKoprutan(sektioner.main, { produkt, produkter, butik, nb });
+    sektioner.main = patchaKoprutan(sektioner.main, { produkt, produkter, butik, nb, oversattningar });
   }
 
   // Judge.me i Appyta (Axels ursprungsmönster) — widgeten stylas aldrig av
@@ -737,13 +872,19 @@ export function byggProduktTemplate(befintlig, { produkt = null, produkter = [],
 // ordinarie = styckpris + bonuspris, drar 0 i rabatt, visar summan i
 // kortet och sticky-knappen, och lägger bonusen i korgen vid köp.
 // Kassan visar exakt samma tal — inget pris utlovas som kassan inte ger.
-// `texter` = { sv: { label, info }, nb: { label, info } }.
+// `texter` = { sv: { label, info }, nb: { label, info }, en: { … } } — ett
+// språk per marknad; ett språk utan egen text faller tillbaka på svenskan.
 export function byggTillagg(bonusHandle, texter) {
   const t = (locale, falt) => String(texter?.[locale]?.[falt] ?? texter?.sv?.[falt] ?? '').replaceAll("'", '’');
   const branch = (falt) =>
-    texter?.nb?.[falt] && texter.nb[falt] !== texter.sv?.[falt]
-      ? `{% if request.locale.iso_code == 'nb' %}${t('nb', falt)}{% else %}${t('sv', falt)}{% endif %}`
-      : t('sv', falt);
+    localeBranch(
+      t('sv', falt),
+      Object.fromEntries(
+        Object.keys(texter ?? {})
+          .filter((l) => l !== 'sv' && texter[l]?.[falt] && texter[l][falt] !== texter.sv?.[falt])
+          .map((l) => [l, t(l, falt)])
+      )
+    );
   const snippet = `{%- comment -%}
   opf-tillagg — betald tilläggs-kryssruta på paketnivå 1 (OPS Factory).
   Renderas som custom_liquid-block direkt efter paketblocken (A/B). JS:en
@@ -844,7 +985,7 @@ export function byggKorgUpsell(upsellHandle) {
   {%- unless redan -%}
   {%- assign variant_id = upsell.selected_or_first_available_variant.id -%}
   <div class="ms-scope opf-upsell">
-    <span class="opf-upsell__etikett">{% if request.locale.iso_code == 'nb' %}Passer til{% else %}Passar till{% endif %}</span>
+    <span class="opf-upsell__etikett">${ordPerSprak(TEMAORD.upsell_etikett)}</span>
     <div class="opf-upsell__rad">
       {%- if upsell.featured_image -%}
         <img class="opf-upsell__bild" src="{{ upsell.featured_image | image_url: width: 120 }}" alt="{{ upsell.title | escape }}" width="52" height="52" loading="lazy">
@@ -855,7 +996,7 @@ export function byggKorgUpsell(upsellHandle) {
       </span>
       <button type="button" class="opf-upsell__knapp"
         onclick="this.disabled=true;var k=this;fetch('{{ routes.cart_add_url }}.js',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({id:{{ variant_id }},quantity:1})}).then(function(){window.location.reload()}).catch(function(){k.disabled=false})">
-        {% if request.locale.iso_code == 'nb' %}Legg til{% else %}Lägg till{% endif %}
+        ${ordPerSprak(TEMAORD.upsell_knapp)}
       </button>
     </div>
   </div>
@@ -1089,26 +1230,51 @@ export function settingsSchemaMedAb(schemaText) {
 }
 
 // Temats ms-paket-snippet har svenska ord inbakade ("Gratis på köpet", "värde",
-// "Välj paket") som ingen translationsRegister når — locale-brancha dem en
-// gång (idempotent: null om grenen redan finns). Sågs på /nb 2026-09-08.
+// "Välj paket") som ingen translationsRegister når — locale-brancha dem.
+// Sågs på /nb 2026-09-08. Ett ord per språk; `locales` säger vilka grenar
+// snippeten ska ha (butikens marknadsspråk). Idempotent OCH utbyggbar: en
+// snippet som redan bär nb-grenen från ett tidigare bygge avpatchas till
+// svenskan först och byggs sedan om med alla språk — så en butik som får USA
+// i efterhand får sin en-gren utan att någon rör snippeten för hand.
+// null = inget att ändra (redan rätt, eller orden finns inte i snippeten).
 export const MS_PAKET_ORD = [
-  ['Gratis på köpet', 'Gratis med på kjøpet'],
-  ['värde {{ gvarde | money }}', 'verdi {{ gvarde | money }}'],
-  ['aria-label="Välj paket"', 'aria-label="Velg pakke"'],
+  { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi' },
+  { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}' },
+  { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', attribut: 'aria-label' },
+  // De tre raderna JS:et skriver ut. De satt hårdkodade i ms-paket.js till
+  // 2026-09-18 och visades därför på SVENSKA för varje kund i världen —
+  // Axel såg "Lägger i…" på köpknappen på den finska sidan. En .js-fil kan
+  // inte bära Liquid, så texten måste komma in som attribut från snippeten.
+  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', attribut: 'data-laddar' },
+  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', attribut: 'data-spar' },
+  // Raden blir "<pris> per <enhet>" — "126,90 € per suoja", "$199.00 per
+  // cover". "per" fungerar i alla fyra språken; det är ett prisord, inte copy.
+  { sv: 'per', nb: 'per', en: 'per', fi: 'per', attribut: 'data-per' },
+  {
+    sv: 'Det gick inte att lägga i varukorgen. Försök igen.',
+    nb: 'Varen kunne ikke legges i handlekurven. Prøv igjen.',
+    en: 'We could not add this to your cart. Please try again.',
+    fi: 'Tuotetta ei voitu lisätä ostoskoriin. Yritä uudelleen.',
+    attribut: 'data-fel',
+  },
 ];
-export function patchaMsPaket(snippet) {
-  let s = String(snippet);
-  if (s.includes("request.locale.iso_code == 'nb'")) return null;
-  for (const [sv, nbOrd] of MS_PAKET_ORD) {
-    if (!s.includes(sv)) continue;
+const MS_PAKET_GREN = /\{% if request\.locale\.iso_code == '[a-z]{2}' %\}[\s\S]*?\{% else %\}([\s\S]*?)\{% endif %\}/g;
+export function avpatchaMsPaket(snippet) {
+  return String(snippet).replace(MS_PAKET_GREN, '$1');
+}
+export function patchaMsPaket(snippet, locales = ['nb']) {
+  const ra = String(snippet);
+  const sprak = [...new Set(lista(locales).map((l) => String(l).trim().toLowerCase()).filter((l) => l && l !== 'sv'))];
+  let s = avpatchaMsPaket(ra);
+  for (const ord of MS_PAKET_ORD) {
+    const grenar = Object.fromEntries(sprak.filter((l) => ord[l]).map((l) => [l, ord[l]]));
     // aria-label sitter i ett attribut — grenen måste ligga inuti citattecknen.
-    if (sv.startsWith('aria-label=')) {
-      s = s.replaceAll(sv, `aria-label="{% if request.locale.iso_code == 'nb' %}Velg pakke{% else %}Välj paket{% endif %}"`);
-    } else {
-      s = s.replaceAll(sv, `{% if request.locale.iso_code == 'nb' %}${nbOrd}{% else %}${sv}{% endif %}`);
-    }
+    const kalla = ord.attribut ? `${ord.attribut}="${ord.sv}"` : ord.sv;
+    if (!s.includes(kalla)) continue;
+    const gren = localeBranch(ord.sv, grenar);
+    s = s.replaceAll(kalla, ord.attribut ? `${ord.attribut}="${gren}"` : gren);
   }
-  return s;
+  return s === ra ? null : s;
 }
 
 // Paketpriset i kundens valuta: snippeten läser `fastpris` rakt av, och det
@@ -1144,7 +1310,8 @@ export function patchaMsPaketValuta(snippet) {
 // `locales` är butikens Shopify-locales (sv, nb, da, fi, de, en) — märket
 // är landskoden folk faktiskt skriver i alt-texten. Idempotent på märket.
 export const GALLERIFILTER_MARKE = 'opf-gallerifilter';
-const LOCALE_MARKE = { sv: 'SV', nb: 'NO', no: 'NO', da: 'DK', fi: 'FI', de: 'DE', en: 'EN' };
+export const LOCALE_MARKE = { sv: 'SV', nb: 'NO', no: 'NO', da: 'DK', fi: 'FI', de: 'DE', en: 'EN' };
+export const localeMarke = (l) => LOCALE_MARKE[String(l ?? '').toLowerCase()] ?? String(l ?? '').toUpperCase();
 export function msHeadGallerifilter(locales = ['sv', 'nb']) {
   const par = [...new Set(lista(locales).map((l) => String(l).toLowerCase()))]
     .map((l) => [l, LOCALE_MARKE[l] ?? l.toUpperCase()]);

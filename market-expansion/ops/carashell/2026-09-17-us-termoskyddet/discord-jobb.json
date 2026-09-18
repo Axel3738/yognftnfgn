@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/termoskyddet",
+  "datum": "2026-09-17",
+  "lage": "oversatt",
+  "marknad": "US",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "Termoskyddet (windshield thermal cover): 5 image ads from 'SE-ACTIVE to be translated' translated to US English and put LIVE in CARASHELL_US_Termoskydd Husbil 211 × 171 cm (Magiborsten UK, campaign ACTIVE). Existing ad sets, nothing new created.",
+    "CaraShellFront_CS_4_1 → CaraShellFront_US_CS_4_1, ad set CARASHELL_US_CS, ad 120251466053980435 ($99 / $124 / −20%)",
+    "CaraShellFront_CS_5_1 → CaraShellFront_US_CS_5_1, ad set CARASHELL_US_CS, ad 120251465899090435 (chip 'Thermal cover $99')",
+    "CaraShellFront_G_4_1 → CaraShellFront_US_G_4_1, ad set CARASHELL_US_G, ad 120251465907780435 ($99 / $124)",
+    "CaraShellFront_PD_4_1 → CaraShellFront_US_PD_4_1, ad set CARASHELL_US_PD, ad 120251466048000435 (no price)",
+    "CaraShellFront_PD_5_1 → CaraShellFront_US_PD_5_1, ad set CARASHELL_US_PD, ad 120251465920930435 (no price)",
+    "Images re-rendered from the base photos with the English text layer (83 × 67 in, 'Free shipping · 5–10 business days · 90-day guarantee'). Price $99 / compare at $124 = −20% from the product file, read live on carashell.com. Link inherited: https://carashell.com/products/termoskyddet.",
+    "Read-back: 3 of 5 ACTIVE/ACTIVE, 2 ACTIVE/IN_PROCESS (Meta review minutes after upload). No HeyGen credits used (images only).",
+    "Notion: comment + Translated url on all 5 rows, status → Approved (NO and US both carry the ad now). 'Approved' queue checked for lagging rows: 0."
+  ],
+  "varningar": [
+    "The translated US files are not attached to the Notion rows (REST file upload not built) — review them in Ads Manager via the Translated url.",
+    "CS_4_1 and PD_5_1 carry the same white band between photo and bottom bar as the SE originals (base photo does not fill the canvas). Cosmetic, for the next text-layer version.",
+    "The Swedish reviewer quote (Johan) in PD_5_1 was dropped from the US copy — cannot be verified in the US."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-18"
+}

@@ -1,0 +1,15 @@
+{
+ "in": "../video/render/drytrek_PD_13_H1.mp4",
+ "ut": "../no/DryTrek_NO_Damasker_PD_13_H1.mp4",
+ "srt": "../video/srt-no/drytrek_PD_13_H1.srt",
+ "captions": {
+  "zon": [
+   845,
+   980
+  ],
+  "max_chars": 22,
+  "font_px": 52,
+  "standard_cy": 912
+ },
+ "qa": "../cap/qa-PD_13_H1"
+}

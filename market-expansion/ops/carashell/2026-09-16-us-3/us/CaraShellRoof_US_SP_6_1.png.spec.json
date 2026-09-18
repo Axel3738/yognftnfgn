@@ -1,0 +1,29 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "16 reviews. Not one star under five."
+    },
+    {
+      "typ": "underrad",
+      "text": "Covers only the roof. Hooks under the edge. One person fits it."
+    },
+    {
+      "typ": "badge",
+      "text": "5.0 out of 5 avg"
+    },
+    {
+      "typ": "botten",
+      "text": "$199 (was $249) · Free shipping"
+    }
+  ]
+}

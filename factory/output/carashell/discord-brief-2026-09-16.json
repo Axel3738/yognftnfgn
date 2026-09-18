@@ -1,0 +1,34 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "brief",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: campaign CARASHELL_SE_Taköverdraget raised 2 850 → 3 400 kr/day (+20 %, fast-track: 3-day profit 29 % and ROAS 3.09). Read back and logged. Nothing paused, nothing activated, no ad killed",
+    "First round with judgeable ads: SP_2_1 (image) 846 kr / 5 purchases / CPA 169 kr, and CS_1_H1 (video) 863 kr / 4 purchases / CPA 216 kr. Break-even CPA is 693 kr — both are far inside it",
+    "Batch #2 read against its hypotheses: SP_4_1 was the only one of the four images that sold. Note their first day ran the wrong creative (photo without the text layer, fixed 15/9), so their numbers mix two different ads",
+    "7 new image briefs written, generated, reviewed and approved — live at 14:05 via the delivery run. Copy by subagents: 3 fable, 4 sonnet (A/B running, 7 vs 7 in total)",
+    "3 SP (winner variants: rain, aggregate rating, motorhome owner), 2 CS (the same offer as 23 % vs as 340 kr saved), 2 PD (the choice with a price on it, and the one-person mechanism as the headline)",
+    "GT gets no briefs this round: 611 kr across 5 ads and zero purchases, including GT_4_1's 338 kr on its own. Before the angle is written off it should be rebuilt from the source creative in its own test ad set",
+    "Fixed a bug in the image engine: a text element named \"Star row (under headline)\" was being drawn as a second headline, so star rows vanished. Written up in the product DNA"
+  ],
+  "siffror": { "spend_7d": 7513, "kop_7d": 20, "roas_7d": 3.10, "vinstbidrag_7d": 4528, "briefs_nya": 7 },
+  "briefer": [
+    { "namn": "CaraShellRoof_SP_5_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_SP_5_1" },
+    { "namn": "CaraShellRoof_SP_6_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_SP_6_1-3dc270ab908c812c9b84efe6a53f7397" },
+    { "namn": "CaraShellRoof_SP_7_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_SP_7_1-3dc270ab908c8115875dc24c680b9287" },
+    { "namn": "CaraShellRoof_CS_5_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_CS_5_1-3dc270ab908c81b8adcac22fc14b79e7" },
+    { "namn": "CaraShellRoof_CS_6_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_CS_6_1-3dc270ab908c81b09397fe276d954ca4" },
+    { "namn": "CaraShellRoof_PD_6_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_PD_6_1-3dc270ab908c8125b8afea9d4e7c2d8f" },
+    { "namn": "CaraShellRoof_PD_7_1", "typ": "image", "url": "https://app.notion.com/p/CaraShellRoof_PD_7_1-3dc270ab908c8144ab34d348398094cd" }
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-17",
+  "varningar": [
+    "No editor is assigned to CaraShell. Batch #2's three video briefs (PD_4_H1, PD_5_H1, SP_4_H1) are still in Draft and nobody is making them — that is why this round is seven images and no video. Two of those video concepts were rewritten as images instead",
+    "Highest CTR in the account belongs to an ad that sold nothing: PD_4_1, 16.3 % CTR, 588 kr, zero purchases. Never read CTR on its own here",
+    "SP_6_1 needed one regeneration: the star row cannot be drawn without a quote card, and as a badge the star glyphs render as empty boxes. Solved by writing the rating in words. The text layer was redone on the existing photo, so no extra image credits were spent"
+  ]
+}

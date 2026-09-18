@@ -30,6 +30,8 @@ import { byggPaketplan, METAOBJEKT_TYP } from './paket.mjs';
 import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer } from './policyer.mjs';
 import { huvudmenyRader } from './meny.mjs';
+import { lokalValuta } from './lander.mjs';
+import { prisKarta, harPrisstege } from './variantpris.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 export const IKON = { ok: '✅', fel: '❌', manuell: '🖐', varning: '⚠️ ' };
@@ -81,6 +83,17 @@ export function byggKrav(butik, produkter, ctx = {}) {
       handle,
       pris: Number(p.ekonomi?.pris),
       jamforpris: p.ekonomi?.jamforpris ?? null,
+      // Pris per variant (CaraShells nio storlekar, 2026-09-18). Kartan är
+      // namn → pris; utan stege står samma tal på alla och kollen ser likadan
+      // ut som förut.
+      variantpriser: Object.fromEntries([...prisKarta(p)].map(([namn, v]) => [namn, v.pris])),
+      prisstege: harPrisstege(p),
+      // Valutorna produkten MÅSTE ha fasta priser i. Utan dem räknar Shopify
+      // om från SEK med dagskursen, och sidan visar ett annat tal än det Axel
+      // bestämt (CaraShell 2026-09-18).
+      marknadsvalutor: (Array.isArray(p.ekonomi?.marknadspriser) ? p.ekonomi.marknadspriser : [])
+        .map((m) => String(m?.valuta ?? '').toUpperCase())
+        .filter((x) => x && x !== String(butik?.butik?.valuta ?? 'SEK').toUpperCase()),
       antalBilder: Array.isArray(p.media?.bilder) ? p.media.bilder.filter(Boolean).length : 0,
       metafalt,
       plan,
@@ -127,13 +140,39 @@ export function bedomLage(d, krav) {
     }
     lagg(p.status === 'ACTIVE' ? 'ok' : 'fel', `${pre}produkt`, `${p.title} — ${p.status}`);
     const v = p.variants?.nodes ?? [];
-    const felPris = v.filter((x) => Number(x.price) !== k.pris);
+    const vantatPris = (x) => Number(k.variantpriser?.[x.title] ?? k.pris);
+    const felPris = v.filter((x) => Number(x.price) !== vantatPris(x));
+    const alla = v.map((x) => Number(x.price));
     lagg(v.length > 0 && felPris.length === 0 ? 'ok' : 'fel', `${pre}priser`,
       v.length === 0
         ? 'inga varianter lästes'
-        : felPris.length === 0
-          ? `${k.pris} ${shop.currencyCode ?? ''} på alla ${v.length} varianter, jämförpris ${k.jamforpris ?? '—'}`
-          : `${felPris.length} varianter har fel pris (${felPris.map((x) => x.price).join(', ')})`);
+        : felPris.length > 0
+          ? `${felPris.length} varianter har fel pris (${felPris.map((x) => `${x.title}: ${x.price} ≠ ${vantatPris(x)}`).join('; ')})`
+          : k.prisstege
+            ? `prisstege ${Math.min(...alla)}–${Math.max(...alla)} ${shop.currencyCode ?? ''} över ${v.length} varianter`
+            : `${k.pris} ${shop.currencyCode ?? ''} på alla ${v.length} varianter, jämförpris ${k.jamforpris ?? '—'}`);
+    // FASTA PRISER PER VALUTA — spärren mot den tystaste bugg vi haft.
+    // Byter produktens optionsnamn får VARJE variant ett nytt id, och
+    // prislistornas fasta priser pekar då på varianter som inte finns längre.
+    // Inget felmeddelande: Shopify visar sin egen kursomräkning i stället, och
+    // bara en kund i rätt land ser skillnaden. Hände 2026-09-18 när "Variant"
+    // döptes om till "Storlek" — alla tre prislistorna tappade takskyddet.
+    // Kör `--igen prislista` efter VARJE ändring som rör varianterna.
+    for (const valuta of k.marknadsvalutor ?? []) {
+      const lista = (d.priceLists ?? []).find((x) => String(x.currency).toUpperCase() === valuta);
+      const medPris = new Set(
+        (lista?.prices?.nodes ?? [])
+          .filter((x) => x.variant?.product?.handle === k.handle)
+          .map((x) => x.variant.id)
+      );
+      const utan = v.filter((x) => !medPris.has(x.id));
+      lagg(lista && utan.length === 0 ? 'ok' : 'fel', `${pre}fast pris ${valuta}`,
+        !lista
+          ? `ingen prislista i ${valuta} — kunden ser butikens valuta omräknad`
+          : utan.length === 0
+            ? `${v.length} av ${v.length} varianter har fast ${valuta}-pris`
+            : `${utan.length} av ${v.length} varianter saknar fast ${valuta}-pris (${utan.map((x) => x.title).slice(0, 4).join(', ')}) — kör --igen prislista`);
+    }
     const felLager = v.filter((x) => x.inventoryPolicy !== 'CONTINUE' || x.inventoryItem?.tracked !== false);
     lagg(felLager.length === 0 ? 'ok' : 'fel', `${pre}lagerpolicy`,
       felLager.length === 0
@@ -227,8 +266,16 @@ export function bedomLage(d, krav) {
     lagg(mk?.status === 'ACTIVE' ? 'ok' : 'fel', `marknad ${m.land}`, mk ? `${mk.name} — ${mk.status}` : 'saknas — kör marknad.mjs');
     const harLoc = wps.some((wp) => (wp.alternateLocales ?? []).some((l) => l.locale === m.locale) || wp.defaultLocale?.locale === m.locale);
     lagg(harLoc ? 'ok' : 'fel', `${m.locale} på domänen`, harLoc ? `${m.locale} ligger på webPresence` : `${m.locale} saknas — /${m.locale} finns inte för kunden`);
-    if (m.valuta && shop.currencyCode && m.valuta !== shop.currencyCode) {
-      lagg('manuell', `valuta ${m.land}`, `${m.valuta} slås på i admin (Markets) — butiken står i ${shop.currencyCode}`);
+    // Basvalutan LÄSES nu tillbaka (sedan 2026-09-18 sätter marknad.mjs den
+    // via marketUpdate). Landets egen valuta är facit — inte butiksfilens
+    // `valuta:`-fält, som är dokumentation och släpar efter.
+    const vill = lokalValuta(m.land);
+    const bas = mk?.currencySettings?.baseCurrency?.currencyCode ?? null;
+    if (vill && shop.currencyCode && vill !== shop.currencyCode) {
+      lagg(bas === vill ? 'ok' : 'fel', `valuta ${m.land}`,
+        bas === vill
+          ? `${bas} är marknadens basvaluta`
+          : `basvalutan är ${bas ?? 'inte satt'} men ska vara ${vill} — kunden ser ${bas ?? shop.currencyCode}. Kör --igen marknad,prislista`);
     }
   }
 
@@ -272,7 +319,8 @@ export async function hamtaLage(handles) {
       onlineStore { passwordProtection { enabled } }
       themes(first: 20) { nodes { id name role } }
       shopLocales { locale primary published }
-      markets(first: 50) { nodes { id name handle status conditions { regionsCondition { regions(first: 20) { nodes { ... on MarketRegionCountry { code } } } } } } }
+      markets(first: 50) { nodes { id name handle status currencySettings { baseCurrency { currencyCode } localCurrencies } conditions { regionsCondition { regions(first: 20) { nodes { ... on MarketRegionCountry { code } } } } } } }
+      priceLists(first: 20) { nodes { id name currency prices(first: 250, originType: FIXED) { nodes { variant { id product { handle } } } } } }
       webPresences(first: 20) { nodes { id defaultLocale { locale } alternateLocales { locale } } }
       metaobjects(type: "${METAOBJEKT_TYP}", first: 100) { nodes { id handle fields { key value } } }
       pages(first: 100) { nodes { handle title } }
@@ -305,6 +353,7 @@ export async function hamtaLage(handles) {
     pages: d.pages?.nodes ?? [],
     menus: d.menus?.nodes ?? [],
     codeDiscountNodes: d.codeDiscountNodes?.nodes ?? [],
+    priceLists: d.priceLists?.nodes ?? [],
     produkter,
   };
 }
@@ -331,13 +380,27 @@ export async function kodkoll(ctx, produkt, butik) {
   const ut = [];
   const q = await graphql(
     `query opsFactoryKodkoll($h: String!, $b: String!) {
-      produkt: productByIdentifier(identifier: { handle: $h }) { status variants(first: 1) { nodes { price } } }
+      produkt: productByIdentifier(identifier: { handle: $h }) { status variants(first: 50) { nodes { title price } } }
       bonus: productByIdentifier(identifier: { handle: $b }) { status variants(first: 1) { nodes { price } } }
     }`,
     { h: handle, b: bonusHandle ?? handle }
   );
-  const pPris = Number(q.produkt?.variants?.nodes?.[0]?.price);
-  ut.push([`produktpriset i admin = ${pris} kr (ACTIVE)`, pPris === pris && q.produkt?.status === 'ACTIVE', `admin: ${pPris} kr, ${q.produkt?.status ?? '?'}`]);
+  // Med prisstege räcker det inte att läsa första varianten: alla ska stämma,
+  // var och en mot SITT pris i produktfilen (CaraShell 2026-09-18).
+  const karta = prisKarta(p);
+  const adminVarianter = q.produkt?.variants?.nodes ?? [];
+  const felVarianter = adminVarianter.filter((v) => Number(v.price) !== Number(karta.get(v.title)?.pris ?? pris));
+  const stege = harPrisstege(p);
+  const priser = adminVarianter.map((v) => Number(v.price));
+  ut.push([
+    stege
+      ? `prisstegen i admin = ${Math.min(...priser, pris)}–${Math.max(...priser, pris)} kr på ${adminVarianter.length} varianter (ACTIVE)`
+      : `produktpriset i admin = ${pris} kr (ACTIVE)`,
+    adminVarianter.length > 0 && felVarianter.length === 0 && q.produkt?.status === 'ACTIVE',
+    felVarianter.length > 0
+      ? `fel pris: ${felVarianter.map((v) => `${v.title}: ${v.price}`).join('; ')}`
+      : `admin: ${adminVarianter.length} varianter, ${q.produkt?.status ?? '?'}`,
+  ]);
   if (bonusHandle) {
     const bPris = Number(q.bonus?.variants?.nodes?.[0]?.price);
     ut.push([`bonuspriset i admin = ${bonuspris} kr fullpris (ACTIVE)`, bPris === bonuspris && q.bonus?.status === 'ACTIVE', `admin: ${bPris} kr, ${q.bonus?.status ?? '?'}`]);
@@ -354,11 +417,20 @@ export async function kodkoll(ctx, produkt, butik) {
       { kod: k.kod }
     );
     const cd = d.codeDiscountNodeByCode?.codeDiscount;
-    const belopp = Number(cd?.customerGets?.value?.amount?.amount);
+    // En kod är antingen PROCENT (paket.mjs: procent satt ⇒ Shopify bär
+    // percentage 0–1) eller BELOPP. Kollen läste bara beloppet och dömde
+    // varje procentkod som "−NaN kr" (CaraShell 2026-09-16: fyra röda rader
+    // på koder som stämde). Jämför med samma slag som planen skrev.
+    const varde = cd?.customerGets?.value;
+    const belopp = Number(varde?.amount?.amount);
+    const procent = varde?.percentage === undefined || varde?.percentage === null ? NaN : Math.round(Number(varde.percentage) * 100);
     const minst = Number(cd?.minimumRequirement?.greaterThanOrEqualToQuantity);
-    const ok = cd?.status === 'ACTIVE' && belopp === Number(k.belopp) && minst === Number(k.minstAntal);
+    const stammer = k.procent ? procent === Number(k.procent) : belopp === Number(k.belopp);
+    const ok = cd?.status === 'ACTIVE' && stammer && minst === Number(k.minstAntal);
     const kundpris = plan.poster.find((x) => x.kod === k.kod)?.kundpris;
-    ut.push([`${k.kod}: −${k.belopp} kr vid minst ${k.minstAntal} varor ⇒ ${kundpris} kr i kassan`, ok, cd ? `admin: ${cd.status}, −${belopp} kr, minst ${minst}` : 'koden finns inte']);
+    const planerat = k.procent ? `−${k.procent} %` : `−${k.belopp} kr`;
+    const iAdmin = k.procent ? (Number.isNaN(procent) ? 'inget procenttal' : `−${procent} %`) : (Number.isNaN(belopp) ? 'inget belopp' : `−${belopp} kr`);
+    ut.push([`${k.kod}: ${planerat} vid minst ${k.minstAntal} varor ⇒ ${kundpris} kr i kassan`, ok, cd ? `admin: ${cd.status}, ${iAdmin}, minst ${minst}` : 'koden finns inte']);
   }
   return ut;
 }

@@ -1,0 +1,21 @@
+{
+  "brand": "AdventLane",
+  "butik": "kalender",
+  "datum": "2026-09-14",
+  "lage": "oversatt",
+  "gjort": [
+    "Queue read: 1 row held in SE-ACTIVE to be translated (AdventLaneRacing_FM_1_H1)",
+    "NO paused by owner since 2026-09-13 11:05 CEST (ADVENTLANERACING_NO_Racingkalendern, 3211 kr lifetime spend) - 1 row held, nothing uploaded",
+    "Nothing translated, nothing rendered, 0 HeyGen credits, no Notion status changed, campaign untouched"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "The pause costs nothing and gives nothing: no new Norwegian ads since 2026-09-12, no spend since the pause. Lifetime NO: 3211 kr, 3 purchases (read 2026-09-13)",
+    "FM_1_H1 would still need a new source with room after the last line (voice check red twice) even when Norway is back on",
+    "Store status unchanged since 13/9 - same as the 13:55 delivery run today"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-15"
+}

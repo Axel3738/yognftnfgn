@@ -101,6 +101,14 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    nästa rond går på 7 igen tills `redigerare` är satt. `--tillsvidare`
    låter den stå; `briefantal <nyckel> auto` tar bort den. Raden
    `Briefrond:` i `node factory/register.mjs <nyckel>` är facit för rutinen.
+   **Vill Axel ha budgetskyddet men inga nya briefer** — vanligast när
+   kampanjen ännu inte har en enda bedömbar annons, så det inte finns någon
+   feedback-loop att brieffa ur:
+   `node factory/register.mjs briefantal <nyckel> paus "<skäl>"`.
+   Pausen stoppar BARA briefronden; budgetronden går varje natt och sänker
+   eller dödar som vanligt. Den står tills vidare (`brief-kord` förbrukar den
+   aldrig — annars hade briefarna startat igen utan beslut) och släpps med
+   `briefantal <nyckel> auto`. *(Axels beslut 2026-09-14 på CatCabin.)*
 5. **Torrkörning av allt.** I ordning, visa utskrifterna:
    ```
    node factory/budgetrond.mjs <nyckel> --idag <datum> --torr
@@ -110,7 +118,8 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    ```
    (Skriv en liten exempel-jobbfil själv för Discord-torrkörningen.) Något
    rött här = rutinen ska inte byggas än; fixa först.
-6. **TRE rutiner per butik** (Axels beslut 2026-09-11), var och en bunden
+6. **Rutinerna per butik** (tre sedan Axels beslut 2026-09-11, plus US,
+   speglingen och briefgranskningen där de gäller), var och en bunden
    till en egen fast session. Setup är **idempotent**: kör `list_triggers`
    först och bygg BARA de som saknas för den här butiken — en butik som
    redan har sin nattvakt får bara leveransrundan och översättningen. Det
@@ -121,6 +130,14 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    | Nattvakten | 00:01 + 8 min × butikens plats | `/notionscalercs <nyckel>` |
    | Leveransrundan | 13:40 + 5 min × plats | `/ops-leverans <nyckel>` |
    | Översättning NO | 15:40 + 5 min × plats | `/ops-oversatt <nyckel>` |
+   | Översättning US (bara butiker med US i `annonsmarknader`, register.json) | 16:40 + 5 min × plats | `/ops-oversatt <nyckel> --marknad US` |
+   | Speglingen (bara poster med `spegling` i register.json — `register.mjs spegling <nyckel> <bäver-hub-id>`; Axels beslut 2026-09-18, CaraShell) | 16:20 + 5 min × plats | `/ops-spegla <nyckel>` |
+
+   ⚠️ **Briefgranskningen är INTE en butiksrutin** (ombyggd 2026-09-18 kväll):
+   `/briefgranskning` går som EN rutin för hela Bäverbutiken (måndag + torsdag
+   07:00) och läser alla Bäver-hubbar, inklusive de speglade produkternas. Setup
+   bygger den inte; finns en gammal `Briefgranskningen: <nyckel>` i
+   `list_triggers` ska den tas bort, inte kompletteras.
 
    **Tiderna räknas av skriptet, aldrig i huvudet:**
    ```
@@ -170,6 +187,19 @@ Börja med färsk `main`: `git fetch origin main && git checkout main && git res
 `node factory/register.mjs <nyckel> --idag $IDAG`. Läs av: konto, prefix,
 hubb (saknas hubben: stoppa briefdelen, gör budgetdelen, larma i rapporten),
 **Briefdag JA/NEJ**, redigerare.
+**Läs `products/<nyckel>/feedback.md`** — den senaste sektionen `## Rond …`
+är creative director-domen över den senaste briefronden för produkten
+(`/briefgranskning`, Axels beslut 2026-09-18 — sedan samma kväll EN rutin för
+hela Bäverbutiken som läser de speglade produkternas Bäver-hubbar och skriver
+filen hit): vad som var bra, vad som missades och **tre regler för nästa
+rond**. På en briefdag gäller de tre reglerna varje brief du skriver i steg
+5–7, och rapporten säger vilka de var. Saknas filen är produkten aldrig
+granskad — skriv det i rapporten, inget mer.
+**Svarar registret "Okänd butik" eller står posten i läge `avslutad`**
+(t.ex. TankGuard, avslutad 2026-09-12): butiken körs inte längre. Gör
+INGENTING i kontot, ingen Discord-post, ingen commit. Skriv en rad i
+chatten: "<butik> är avslutad i registret — pausa rutinen i Routines-vyn"
+och avsluta. Samma regel gäller `/ops-leverans` och `/ops-oversatt`.
 
 ### Steg 1 — Budgetronden (varje natt)
 ```
@@ -232,7 +262,19 @@ För VARJE annons i förra batchen (`products/<butik>/batch-log.md`):
   rotorsaker. Data skild från hypotes.
 
 ### Steg 5 — Nästa batch
-**Först: finns det någon som gör dem?** Ligger förra batchens rader
+**Allra först: är briefronden pausad?** Säger raden `Briefrond:` **INGA
+briefer — ⏸️ BRIEFRONDEN PAUSAD**, så lägger du noll briefer den här ronden.
+Budgetronden i steg 1 har redan gått och gäller — pausen rör bara briefarna.
+Skriv en rad i rapporten under varningar ("briefs paused: <motiveringen>"),
+INTE under ACTION NEEDED (det är ett ägarbeslut, inget att åtgärda), hoppa
+över steg 6 och 7 och gå till steg 8. Stämpla `kord` men INTE `brief-kord` —
+pausen står tills vidare och släpps bara av `briefantal <nyckel> auto`.
+*(Axels beslut 2026-09-14 på CatCabin: en kampanj med 1 köp på 13 annonser
+har ingen feedback-loop att brieffa ur — "är det inte värt att spamma nya
+ads". Briefer utan bedömbar data är gissningar, och de kostar redigerartid
+och kontots läsbarhet.)*
+
+**Sedan: finns det någon som gör dem?** Ligger förra batchens rader
 fortfarande i `Draft` i hubben OCH ingen redigerare är tilldelad ⇒ inga
 nya briefer den här ronden. Rapportera "waiting for editor — N briefs
 still in Draft" under ACTION NEEDED och gå till steg 8. (Mätt 2026-09-12:
@@ -247,9 +289,20 @@ ovan den ronden — Axel har tagit beslutet själv — och förbrukas av
 `brief-kord` i steg 8; skriptet säger då vad nästa rond går på. Varje
 variant pekar på sin förälder och isolerar EN variabel. Varje nytt koncept
 pekar på playbook, winning line eller swipe — annars märks det `gissning`.
+**Minst två av raderna är bildannonser** (Axels beslut 2026-09-12: bild är
+billigt och snabbt) — de räknas inom antalet, inte ovanpå, och varje
+bildbrief slutar med ett IMAGE PROMPT-block enligt `.claude/commands/ops-bild.md`
+steg 3, så att steg 7 kan generera dem samma natt. **Texten på bilden**
+(rubrik, pris, badge …) skrivs i tabellen "Exact text" med elementnamn
+motorn känner igen — den ritas av textlagret (`factory/bild-text.py`), aldrig
+av bildmodellen; prompten säger "no text, leave clean space". *(CaraShell
+2026-09-14: fyra bildbriefer med rubrik och pris gick live som rena foton,
+för textlagret fanns inte.)*
 Ta med alla väntande items i `backlog.md` (märk `[använd i batch #N]`).
 Namn enligt `docs/naming-convention.md` med butikens prefix; lediga AD-ID:n
 läses ur OPS-kontot (analys-JSON:en) OCH ur hubbens befintliga radnamn.
+**De tre reglerna ur `feedback.md` (steg 0) gäller varje brief** — bryts en
+regel igen står den kvar i nästa granskning, och det syns i Discord.
 
 ### Steg 6 — Copy: A/B Fable mot Sonnet (Axels beslut 2026-09-10)
 Copyn skrivs av en subagent, aldrig av huvudsessionen. Läs `copy_modell` i
@@ -276,7 +329,12 @@ väg som användes (Agent fanns / API).
 En mapp per annons: `products/<butik>/batch-NN/<video|image>-ads-briefs/<namn>/brief.md`
 på engelska enligt `.claude/commands/forsta-batch.md` (VARIABELTAGGAR-rad
 överst, hypotes, kept/changed, script-tabell, shot list, COPY CARD, hard
-rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI). Ingen zip, ingen
+rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI).
+**Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig
+butikens namn** — inte i copyn, inte i bild, inte i voiceover, inte som
+domän. Annonser speglas mellan butiker (`/ops-spegla`), och en creative
+som säger "Bäverbutiken" eller "CaraShell" går inte att återanvända.
+Produkten, priset och länken bär butiken; namnet gör det inte. Ingen zip, ingen
 Drive-länk — briefen läsbar INNE i Notion-raden räcker (NOTION-FORMAT.md).
 Ladda upp:
 ```
@@ -286,6 +344,14 @@ Status `Draft`, Typ `Video - Pending Approval` / `Image - Pending Approval`.
 Skriptet hoppar över namn som redan finns i hubben. Visa resultatet (namn +
 url per rad). Misslyckas uppladdningen: lista raderna som skulle skapats,
 låtsas aldrig.
+**Bildraderna genereras direkt** (`/ops-bild` steg 5–7): `node factory/ops-bild.mjs
+<nyckel> --torr`, sedan skarpt, titta på varje bild med Read-verktyget mot
+den lätta checklistan i `/ops-bild` steg 6 — **sessionen dömer, Axel
+granskar aldrig bilder** (Axels beslut 2026-09-13) — och `--godkann` de som
+håller; de går live 13:40 via `/ops-leverans`. Underkända: en omgenerering,
+sedan `--underkann --skal`; de stannar i Draft och står under varningar,
+aldrig under ACTION NEEDED. Saknas `KIE_API_KEY`: skriv det under
+varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 
 ### Steg 8 — Logga, rapportera, pusha
 - `node factory/register.mjs log <nyckel> <antal> $IDAG`,
@@ -310,7 +376,7 @@ låtsas aldrig.
 - [ ] Briefdag avläst ur registret (JA/NEJ med skäl)
 - [ ] *(briefdag)* ANALYSMETOD:s snabbchecklista avbockad; vinstbidragstabellen visad; "för tidigt" utanför rankingen; ärvd historik märkt ÄRVD
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
-- [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
+- [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning / **INGA om ronden är pausad** — då står skälet under varningar och budgetronden har ändå gått), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED

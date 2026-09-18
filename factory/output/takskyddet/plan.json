@@ -1,20 +1,44 @@
 {
   "input": {
-    "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
     "handle": "takskyddet",
     "status": "ACTIVE",
-    "descriptionHtml": "<p>Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
+    "descriptionHtml": "<p>Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
     "vendor": "CaraShell",
     "seo": {
-      "title": "Taköverdrag Husvagn & Husbil 6,5 × 3 m – CaraShell",
+      "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – CaraShell",
       "description": "Torrt tak fram till våren. 14 dagars ångerrätt"
     },
     "productOptions": [
       {
-        "name": "Title",
+        "name": "Storlek",
         "values": [
           {
-            "name": "Default Title"
+            "name": "5,5 × 3 m"
+          },
+          {
+            "name": "6,5 × 3 m"
+          },
+          {
+            "name": "7,5 × 3 m"
+          },
+          {
+            "name": "8,5 × 3 m"
+          },
+          {
+            "name": "9,5 × 3 m"
+          },
+          {
+            "name": "10,5 × 3 m"
+          },
+          {
+            "name": "11,5 × 3 m"
+          },
+          {
+            "name": "12,5 × 3 m"
+          },
+          {
+            "name": "13,5 × 3 m"
           }
         ]
       }
@@ -23,12 +47,133 @@
       {
         "optionValues": [
           {
-            "optionName": "Title",
-            "name": "Default Title"
+            "optionName": "Storlek",
+            "name": "5,5 × 3 m"
           }
         ],
         "price": "1129.00",
         "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-055",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "6,5 × 3 m"
+          }
+        ],
+        "price": "1129.00",
+        "compareAtPrice": "1469.00",
+        "sku": "TEMU-5050206311352-065",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "7,5 × 3 m"
+          }
+        ],
+        "price": "1289.00",
+        "compareAtPrice": "1679.00",
+        "sku": "TEMU-5050206311352-075",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "8,5 × 3 m"
+          }
+        ],
+        "price": "1449.00",
+        "compareAtPrice": "1879.00",
+        "sku": "TEMU-5050206311352-085",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "9,5 × 3 m"
+          }
+        ],
+        "price": "1599.00",
+        "compareAtPrice": "2079.00",
+        "sku": "TEMU-5050206311352-095",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "10,5 × 3 m"
+          }
+        ],
+        "price": "1759.00",
+        "compareAtPrice": "2289.00",
+        "sku": "TEMU-5050206311352-105",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "11,5 × 3 m"
+          }
+        ],
+        "price": "1919.00",
+        "compareAtPrice": "2489.00",
+        "sku": "TEMU-5050206311352-115",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "12,5 × 3 m"
+          }
+        ],
+        "price": "2079.00",
+        "compareAtPrice": "2699.00",
+        "sku": "TEMU-5050206311352-125",
+        "inventoryPolicy": "CONTINUE",
+        "inventoryItem": {
+          "tracked": false
+        }
+      },
+      {
+        "optionValues": [
+          {
+            "optionName": "Storlek",
+            "name": "13,5 × 3 m"
+          }
+        ],
+        "price": "2239.00",
+        "compareAtPrice": "2909.00",
+        "sku": "TEMU-5050206311352-135",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
           "tracked": false
@@ -105,7 +250,7 @@
       "namespace": "opf",
       "key": "features",
       "type": "list.single_line_text_field",
-      "value": "[\"Mått 6,5 × 3 m, täcker hela takytan\",\"Svart väv, 210D\",\"Elastiska spännband med plastkrokar som hakar under karossens kant\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
+      "value": "[\"Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak\",\"Svart 210D Oxford-väv, vattentät och tål sol\",\"Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant\",\"Två extra förstärkta band på 10,5 m följer med\",\"Sätts på av en person\",\"Kanten hänger ner ca 30–40 cm över sidorna\"]"
     },
     {
       "namespace": "opf",
@@ -129,7 +274,7 @@
       "namespace": "opf",
       "key": "faq",
       "type": "json",
-      "value": "[{\"fraga\":\"Passar det min husvagn eller husbil?\",\"svar\":\"Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
+      "value": "[{\"fraga\":\"Vilken storlek ska jag välja?\",\"svar\":\"Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
     }
   ]
 }

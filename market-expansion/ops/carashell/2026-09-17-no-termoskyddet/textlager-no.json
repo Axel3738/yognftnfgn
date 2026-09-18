@@ -1,0 +1,111 @@
+{
+  "CaraShellFront_CS_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Kjølig om sommeren, varmt om vinteren, mørkt når du sover."
+      },
+      {
+        "typ": "underrad",
+        "text": "Utenpå ruten, 211 × 171 cm – klart på to minutter."
+      },
+      {
+        "typ": "pris",
+        "text": "548 kr"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "685 kr"
+      },
+      {
+        "typ": "rabatt",
+        "text": "−20 %"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "noter": "Direkte oversettelse av den bevisede svenske raden, bare ordvalg byttet (imma → dugg). Rabatten er endret fra −40 % til −20 % fordi 548→685 kr faktisk gir 20 %, ikke 40 %."
+  },
+  "CaraShellFront_CS_5_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Taktrekket for vinteren. Termotrekket for reisen."
+      },
+      {
+        "typ": "underrad",
+        "text": "Termotrekket sitter utenpå frontruten og begge sideruter foran, 211 × 171 cm. Glasset blir aldri kaldt innvendig – ingen dugg om morgenen."
+      },
+      {
+        "typ": "pris",
+        "text": "Termotrekket 548 kr"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "noter": "Produktordet 'Termotrekket' står foran prisen fordi bildet viser to produkter (tak + front) – samme løsning som den svenske originalens 'Termoskyddet 559 kr'. Taktrekkets norske pris (1 106 kr) nevnes ikke på selve bildet, bare i teksten."
+  },
+  "CaraShellFront_G_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Gi bort en morgen uten dugg å tørke."
+      },
+      {
+        "typ": "underrad",
+        "text": "Mørkt i kupeen, ingen sol klokken fire."
+      },
+      {
+        "typ": "pris",
+        "text": "548 kr"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "685 kr"
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "noter": "Kort og ordrett som svensk original. 'Klockan fyra' → 'klokken fire' beholdt som konkret klokkeslett, ikke generalisert til 'tidlig'."
+  },
+  "CaraShellFront_PD_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Dugg på innsiden – til tross for gardinen i kupeen."
+      },
+      {
+        "typ": "underrad",
+        "text": "CaraShell sitter utenpå ruten – glasset blir aldri kaldt innenfra."
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "noter": "Ingen pris på bildet, som i svensk original (PD-format). Rubrikken kortet litt ned mot 40-tegnsgrensen for headline; betydningen er uendret. Huvudsessionen 2026-09-17: bildrubriken återställd till hela raden (40-teckensgränsen gäller Ads Manager-rubriken, inte bilden)."
+  },
+  "CaraShellFront_PD_5_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Rasteplassen ser frontruten din. Den ser ikke deg – hele fronten er mørklagt."
+      },
+      {
+        "typ": "underrad",
+        "text": "Mørklegger hele fronten utenfra, 211 × 171 cm. Ingen ser inn – og solen vekker deg ikke klokken fire."
+      },
+      {
+        "typ": "botten",
+        "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+      }
+    ],
+    "noter": "Ingen pris på bildet, som i svensk original. 'Ställplatsen' → 'rasteplassen' (norsk bobil-/campingterminologi)."
+  }
+}

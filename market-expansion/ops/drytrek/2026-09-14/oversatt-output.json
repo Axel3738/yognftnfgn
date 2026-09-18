@@ -1,0 +1,75 @@
+{
+ "videor": [
+  {
+   "nyckel": "drytrek_BOF_10_H1",
+   "block": [
+    {
+     "nr": "1",
+     "no": "Passer de over støvlene mine? Én størrelse — førtitre centimeter i omkrets."
+    },
+    {
+     "nr": "2",
+     "no": "Borrelåsen og stroppen ordner resten. Lett vandrestøvel og tung jaktstøvel."
+    },
+    {
+     "nr": "3",
+     "no": "DryTrek gamasjer, tre hundre og åttini kroner paret. Fjorten dagers angrerett. Samme gamasje, begge sitter."
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_CI_3_H1",
+   "block": [
+    {
+     "nr": "1",
+     "no": "Sokken ble våt likevel."
+    },
+    {
+     "nr": "2",
+     "no": "Væten kryper inn ved støvelkanten, ikke gjennom sålen. Gamasjen tetter gapet mellom støvel og kne, førtifire centimeter opp. Sokken tørr, gamasjen tettet førtifire centimeter opp."
+    },
+    {
+     "nr": "3",
+     "no": "Gamasjer, tre hundre og åttini kroner paret. Fri frakt til Sverige og Norge."
+    }
+   ]
+  },
+  {
+   "nyckel": "drytrek_PD_16_H1",
+   "block": [
+    {
+     "nr": "1",
+     "no": "Uten å ta av støvelen."
+    },
+    {
+     "nr": "2",
+     "no": "Rundt leggen lukkes borrelåsen nedenfra og opp, kroken i snøringen, stroppen under foten."
+    },
+    {
+     "nr": "3",
+     "no": "Klart. DryTrek gamasjer, tre hundre og åttini kroner paret. Fjorten dagers angrerett."
+    }
+   ]
+  }
+ ],
+ "annonser": [
+  {
+   "namn": "DryTrek_NO_Damasker_BOF_10_H1",
+   "message": "Passer de over støvelen din?\nÉn størrelse, justerbar til 43 cm omkrets med borrelås.\n✅ Lett vandrestøvel eller tung jaktstøvel, samme gamasje\n✅ Krok i snøringen, stropp under foten, borrelås rundt leggen\n✅ Tettvevd polyester, 44 cm opp fra støvelkanten\nSe alle de 18 fargene 👇",
+   "headline": "Justerbar til 43 cm omkrets",
+   "description": "Én størrelse med borrelås — passer både lette og tunge støvler."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_CI_3_H1",
+   "message": "Sokken ble våt likevel — selv om støvelen var tett.\nVæten kryper inn ved støvelkanten, ikke gjennom sålen.\n✅ Gamasjen tetter gapet mellom støvel og kne, 44 cm opp\n✅ Krok i snøringen, stropp under foten, borrelås rundt leggen\n✅ Tettvevd polyester, væten blir på utsiden\nSe hvordan gamasjen tetter kanten 👇",
+   "headline": "Støvelkanten, ikke sålen.",
+   "description": "Tetter gapet mellom støvel og kne, der væten faktisk kommer inn."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_PD_16_H1",
+   "message": "På og av uten å ta av deg støvelen.\nRundt leggen, borrelåsen lukkes nedenfra og opp.\n✅ Krok i snøringen, stropp under foten\n✅ Borrelås rundt hele leggen, 44 cm opp fra støvelkanten\n✅ 14 dagers angrerett\nSe alle de 18 fargene 👇",
+   "headline": "På og av uten å ta av støvelen.",
+   "description": "Krok i snøringen, stropp under foten, borrelås rundt leggen."
+  }
+ ]
+}

@@ -11,6 +11,10 @@ butik:
   # läsbart och uttalbart på både svenska och engelska, aldrig å/ä/ö.
   # Tänk namn som bär i .se, .no, .dk och .com utan att ändras.
   brand: ""                   # KRITISKT — namnet kunden ser
+  # Bara i en FLERPRODUKTSBUTIK: produkt-id:t ett bart butiks-id ska betyda
+  # i registret (rutiner byggda när butiken hade en produkt bär bara
+  # butiks-id:t i sin prompt). Tomt i en enproduktsbutik.
+  huvudprodukt: ""
   bolagsnamn: ""              # KRITISKT — juridiskt namn i köpvillkoren
   orgnr: ""                   # KRITISKT
   adress: ""                  # KRITISKT — postadress i köpvillkoren
@@ -26,9 +30,15 @@ butik:
   # de här länderna. Landnamnet ska SYNAS för kunden — skriv aldrig
   # fraktländer för hand i startsidan, de kommer härifrån.
   marknader:
-    - land: NO                # tvåbokstavskod: NO, DK, FI, DE, GB
+    - land: NO                # tvåbokstavskod ur factory/lander.mjs: NO, DK, FI, DE, GB, US
       locale: nb              # Shopify-locale: nb, da, fi, de, en
       valuta: SEK             # NOK först när admin slagit på den
+    # En marknad utanför Norden läggs till med /ny-marknad <butik> <LAND>:
+    # - land: US
+    #   locale: en
+    #   valuta: SEK           # USD först när admin slagit på den (steget prislista säger klicket)
+    #   leveranstid: "8–14 arbetsdagar"   # marknadens EGEN — styr den engelska leveransraden
+    #   i_fraktraden: false   # nämns inte i den svenska fraktraden; engelskan säger sitt själv
   valuta: SEK                 # KRITISKT — SEK, NOK, DKK, EUR, USD eller GBP
   # true = priserna inkluderar skatt. OPS-butikerna säljer MED moms (avläst
   # TankGuard 2026-09-09: shop.taxesIncluded = true), till skillnad från

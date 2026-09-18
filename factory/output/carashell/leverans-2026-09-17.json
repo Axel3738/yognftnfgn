@@ -1,0 +1,295 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/termoskyddet",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.se/products/termoskyddet",
+  "valuta": "SEK",
+  "heygen_sprak": null,
+  "sprak": "svenska",
+  "locale": null,
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
+  },
+  "kampanj": {
+    "id": "120249115376140172",
+    "namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+    "bas": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249116640130172",
+        "name": "CARASHELL_SE_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249116639170172",
+        "name": "CARASHELL_SE_CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115377210172",
+        "name": "CARASHELL_SE_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115376820172",
+        "name": "CARASHELL_SE_G",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 20,
+  "lank_arvd": "https://carashell.se/products/termoskyddet",
+  "pris_butik": {
+    "pris": 559,
+    "min": 559,
+    "max": 559,
+    "jamforpris": 932,
+    "valuta": "SEK",
+    "titel": "Termoskydd Husbil 211 × 171 cm",
+    "handle": "termoskyddet",
+    "kalla": "https://carashell.se/products/termoskyddet.json"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "CaraShellFront_CS_5_1",
+      "mal_namn": "CaraShellFront_CS_5_1",
+      "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+      "url": "https://app.notion.com/p/CaraShellFront_CS_5_1-3dd270ab908c8146b829ed41b49a42cb",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_CS_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_CS_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.se/products/termoskyddet",
+      "prefix": "CaraShellFront",
+      "koncept": "CS",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm - CS",
+      "adset": {
+        "id": "120249116639170172",
+        "name": "CARASHELL_SE_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "klar_i": {},
+      "flytta_till_approved": null,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": "factory/output/carashell/leverans-2026-09-17/CaraShellFront_CS_5_1/CaraShellFront_CS_5_1.png",
+      "fil_alla": [
+        "factory/output/carashell/leverans-2026-09-17/CaraShellFront_CS_5_1/CaraShellFront_CS_5_1.png"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_G_4_1",
+      "mal_namn": "CaraShellFront_G_4_1",
+      "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+      "url": "https://app.notion.com/p/CaraShellFront_G_4_1-3dd270ab908c815c9316dc9e95df7528",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_G_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_G_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.se/products/termoskyddet",
+      "prefix": "CaraShellFront",
+      "koncept": "G",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm - G",
+      "adset": {
+        "id": "120249115376820172",
+        "name": "CARASHELL_SE_G",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "klar_i": {},
+      "flytta_till_approved": null,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": "factory/output/carashell/leverans-2026-09-17/CaraShellFront_G_4_1/CaraShellFront_G_4_1.png",
+      "fil_alla": [
+        "factory/output/carashell/leverans-2026-09-17/CaraShellFront_G_4_1/CaraShellFront_G_4_1.png"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_PD_5_1",
+      "mal_namn": "CaraShellFront_PD_5_1",
+      "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+      "url": "https://app.notion.com/p/CaraShellFront_PD_5_1-3dd270ab908c811b9b0dd59227ab15cc",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_PD_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_PD_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.se/products/termoskyddet",
+      "prefix": "CaraShellFront",
+      "koncept": "PD",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm - PD",
+      "adset": {
+        "id": "120249115377210172",
+        "name": "CARASHELL_SE_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "klar_i": {},
+      "flytta_till_approved": null,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": "factory/output/carashell/leverans-2026-09-17/CaraShellFront_PD_5_1/CaraShellFront_PD_5_1.png",
+      "fil_alla": [
+        "factory/output/carashell/leverans-2026-09-17/CaraShellFront_PD_5_1/CaraShellFront_PD_5_1.png"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_PD_4_1",
+      "mal_namn": "CaraShellFront_PD_4_1",
+      "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+      "url": "https://app.notion.com/p/CaraShellFront_PD_4_1-3dd270ab908c81b3b7b4e9337c6db203",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_PD_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_PD_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.se/products/termoskyddet",
+      "prefix": "CaraShellFront",
+      "koncept": "PD",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm - PD",
+      "adset": {
+        "id": "120249115377210172",
+        "name": "CARASHELL_SE_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "klar_i": {},
+      "flytta_till_approved": null,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": "factory/output/carashell/leverans-2026-09-17/CaraShellFront_PD_4_1/CaraShellFront_PD_4_1.png",
+      "fil_alla": [
+        "factory/output/carashell/leverans-2026-09-17/CaraShellFront_PD_4_1/CaraShellFront_PD_4_1.png"
+      ],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_CS_4_1",
+      "mal_namn": "CaraShellFront_CS_4_1",
+      "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+      "url": "https://app.notion.com/p/CaraShellFront_CS_4_1-3dd270ab908c8151b6fdf0b448caf80e",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "To be Reviewed",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_CS_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_CS_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.se/products/termoskyddet",
+      "prefix": "CaraShellFront",
+      "koncept": "CS",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm - CS",
+      "adset": {
+        "id": "120249116639170172",
+        "name": "CARASHELL_SE_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": null,
+      "klar_i": {},
+      "flytta_till_approved": null,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": "factory/output/carashell/leverans-2026-09-17/CaraShellFront_CS_4_1/CaraShellFront_CS_4_1.png",
+      "fil_alla": [
+        "factory/output/carashell/leverans-2026-09-17/CaraShellFront_CS_4_1/CaraShellFront_CS_4_1.png"
+      ],
+      "fil_fel": null
+    }
+  ],
+  "varningar": [],
+  "hamtad": "2026-09-17T12:19:05.745Z"
+}

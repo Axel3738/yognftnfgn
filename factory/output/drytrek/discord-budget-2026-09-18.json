@@ -1,0 +1,27 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-18",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 3785,
+    "kop_7d": 6,
+    "roas_7d": 0.69
+  },
+  "gjort": [
+    "SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep). Nothing activated, nothing written. 7-day window is now only spend before the pause: 3 785 SEK / 6 purchases, rolling out of the window day by day. Brief round stays paused; 19 batch #3 briefs still in Draft in the hub, 10 delivered videos still in Creative strat review.",
+    "NO dry run (nothing written): DRYTREK_NO is ACTIVE at 1 000 SEK/day. 7 days 6 957 SEK / 24 purchases / ROAS 1.65 vs break-even 1.60 — down from 1.84 yesterday. 3 days 2 821 SEK / 9 purchases / ROAS 1.37, under break-even. First dip after two readings above the line.",
+    "With today's rules the NO round WOULD have: cut 1 000 -> 700 SEK (3-day margin -10.6 % < 16 %), paused DryTrek_Gamasjer_NO_PD_2_1 (2 485 SEK, 8 purchases, CPA 311 vs break-even CPA 243), paused DryTrek_NO_Damasker_PD_14_14 (702 SEK, 1 purchase) and PD_14_15 (558 SEK, 1 purchase). Benchmark: Gamasjer_NO_PD_1 — 2 590 SEK, 12 purchases, CPA 216, 100 % of the profit. The night watch only manages SE today."
+  ],
+  "briefer": [],
+  "varningar": [
+    "The NO break-even CPA 243 SEK is a one-pair number. Real order value in NO is ~510 SEK, so break-even CPA there is ~319 SEK. With 319, PD_2_1 (CPA 311) is profitable and would not be paused — only the two PD_14 images (CPA 702 / 558) would. Do not let the SE-sized number kill Norwegian ads.",
+    "briefs paused: SE campaign paused by the owner, 0 judgeable ads of 42, 19 batch #3 briefs waiting in Draft."
+  ],
+  "action_axel": [
+    "Still open since 15 Sep — DRYTREK_SE: (A) keep paused, (B) restart at 500 SEK as is, (C) restart as a 6-ad test ad set with equal budget. Reply A, B or C.",
+    "Norway: should the night watch manage DRYTREK_NO too (budget rules + ad kills, every night)? Reply YES or NO. Today's dip (3-day ROAS 1.37) is the first sign it needs a hand. If YES I first raise the NO break-even CPA to the real order value (~319 SEK)."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-19 (budget only — briefs paused)"
+}

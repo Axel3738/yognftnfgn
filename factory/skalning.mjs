@@ -57,7 +57,7 @@ import { dirname, join } from 'node:path';
 import { alla, api, säkerställProxy } from '../tools/meta-lib.mjs';
 import {
   laddaButik, sakerstallKonto, tillhorButiken, TROSKEL, redigerareFor, arKordag,
-  BAVERBUTIKEN_ANNONSKONTO,
+  BAVERBUTIKEN_ANNONSKONTO, utmapp,
 } from './register.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { formateraStartskott } from './startskott.mjs';
@@ -330,7 +330,9 @@ export const INSIGHTS_FALT = [
 // Marknadskoderna som kan stå i ett kampanj- eller annonsnamn (`_NO_`, `…_NO`).
 // ⚠️ Listan är sluten med flit: ett generellt `_XX_`-mönster hade läst vinkel-
 // koderna (`_TR_`, `_PD_`, `_SP_`) som länder.
-export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE'];
+// US lades till 2026-09-16 (OPS-butikernas USA-annonser i Magiborsten UK,
+// factory/opsmarknader.mjs). "US" är ingen vinkelkod i namnkonventionen.
+export const MARKNADSKODER = ['SE', 'NO', 'DK', 'FI', 'UK', 'DE', 'US'];
 export const STANDARDMARKNAD = 'SE';
 
 /** Marknadskoderna ett namn bär, t.ex. "TANKGUARD_NO_SALES" → ["NO"]. Skiftlägesokänsligt. */
@@ -555,7 +557,7 @@ const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
  * normaliserade rader + period, aldrig råa Graph-svar.
  */
 export function sparaSnapshot(butik, { hamtning, arv = null, datum = new Date().toISOString().slice(0, 10), rot = ROT } = {}) {
-  const katalog = join(rot, 'factory', 'output', butik.post.butik);
+  const katalog = utmapp(butik.post, rot);
   mkdirSync(katalog, { recursive: true });
   const fil = join(katalog, `insights-${datum}.json`);
   const data = {

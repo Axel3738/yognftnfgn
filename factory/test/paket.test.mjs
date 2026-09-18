@@ -265,11 +265,13 @@ test('damasker.yaml: DryTreks nivåer ligger i offer.paket och ger källans kode
   const plan = byggPaketplan(p);
   assert.equal(plan.kalla, 'produktfil');
   assert.equal(plan.test, '');
-  assert.deepEqual(plan.poster.map((x) => x.handle), ['damasker-a1', 'damasker-a2', 'damasker-a3']);
-  assert.deepEqual(plan.poster.map((x) => x.kundpris), [389, 661.3, 933.6]);
+  // Nivåerna är 1 / 2 / 4 sedan Axels beslut 2026-09-10 (3-packet DAMASKER3PACK
+  // avaktiverades och damasker-a3 raderades i butiken samma dag).
+  assert.deepEqual(plan.poster.map((x) => x.handle), ['damasker-a1', 'damasker-a2', 'damasker-a4']);
+  assert.deepEqual(plan.poster.map((x) => x.kundpris), [389, 661.3, 1244.8]);
   assert.deepEqual(plan.poster.map((x) => x.forvald), [false, true, false]);
   assert.equal(plan.poster[1].bricka, 'Mest populär');
-  assert.deepEqual(plan.koder.map((k) => [k.kod, k.belopp, k.minstAntal]), [['DAMASKER2PACK', 116.7, 2], ['DAMASKER3PACK', 233.4, 3]]);
+  assert.deepEqual(plan.koder.map((k) => [k.kod, k.belopp, k.minstAntal]), [['DAMASKER2PACK', 116.7, 2], ['DAMASKER4PACK', 311.2, 4]]);
 });
 
 test('alla produktfiler med offer.paket ger en giltig plan', () => {
@@ -395,6 +397,10 @@ test('marknadspriser: hel procent utan bonus ger procentkod och NOK-tal i fastpr
   assert.deepEqual(a2.fastprisValutor, { NOK: 1880.2 });
   const f = Object.fromEntries(nivaFalt(a2, 'gid://p/1').map((x) => [x.key, x.value]));
   assert.equal(f.fastpris_valutor, 'NOK:1880.20');
+  // Procentsatsen skrivs i metaobjektet — snippeten har läst fältet sedan den
+  // skrevs, men ingen fyllde det, så sidan räknade fast belopp mot
+  // standardvarianten och visade fel pris på en dyrare storlek.
+  assert.equal(f.rabatt_procent, '15');
   const k = plan.koder.find((x) => x.kod === 'CARASHELLROO2A');
   assert.equal(k.procent, 15);
   assert.equal(k.belopp, 338.7);
@@ -415,7 +421,11 @@ test('marknadspriser: med gratis bonus stannar koden som belopp och valutatalen 
   assert.equal(rabattkodInput(k, 'gid://p/1').customerGets.value.discountAmount.amount, '545.00');
   const a2 = plan.poster.find((x) => x.handle === 'tanken-a-2');
   assert.deepEqual(a2.fastprisValutor, {});
-  assert.equal(Object.fromEntries(nivaFalt(a2, 'gid://p/1', 'gid://p/2').map((x) => [x.key, x.value])).fastpris_valutor, '');
+  const falt2 = Object.fromEntries(nivaFalt(a2, 'gid://p/1', 'gid://p/2').map((x) => [x.key, x.value]));
+  assert.equal(falt2.fastpris_valutor, '');
+  // Med gratis bonus går rabatten inte att uttrycka i procent — fältet är tomt
+  // och snippeten faller tillbaka på det fasta beloppet, precis som förut.
+  assert.equal(falt2.rabatt_procent, '');
 });
 
 test('fastprisValutorText: format och tomt', () => {

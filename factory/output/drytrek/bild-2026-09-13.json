@@ -1,0 +1,102 @@
+{
+  "datum": "2026-09-13",
+  "butik": "drytrek/damasker",
+  "hub": "Damasker vandring",
+  "torr": true,
+  "jobb": [],
+  "hoppade": [
+    {
+      "namn": "DryTrek_Damasker_FO_2_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "DryTrek_Damasker_SP_7_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_3",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_2",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_14_3",
+      "skal": "har redan 1 fil(er) — granska och kör --godkann/--underkann, eller --igen för en ny bild"
+    },
+    {
+      "namn": "DryTrek_Damasker_PD_12_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_9_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_PD_11_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_7_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_8_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_ID_1_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_5_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_4_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_6_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_PD_7_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_CI_2_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_CS_5_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_2_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_LI_1_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_3_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_CO_2_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_BOF_1_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    },
+    {
+      "namn": "Damasker_HL_1_1",
+      "skal": "ingen IMAGE PROMPT i briefen — lägg till blocket (se /ops-bild) och kör igen"
+    }
+  ],
+  "resultat": []
+}

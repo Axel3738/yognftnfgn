@@ -155,6 +155,15 @@ test('marknaderna kommer ur yaml, inte ur koden: NOK-steget bara när NO finns',
   assert.ok(!ingen.includes('activate **NOK**') && !ingen.includes('activate **DKK**'));
 });
 
+test('en USA-marknad får sin rad på engelska med USD — ur lander.mjs, inte ur en tabell i checklistan', () => {
+  const b = rabutik();
+  b.butik.marknader = [{ land: 'NO', locale: 'nb', valuta: 'SEK' }, { land: 'US', locale: 'en', valuta: 'SEK' }];
+  const v = checklistaVarden(b, [raprodukt()]);
+  assert.deepEqual(v.marknader.map((m) => [m.kod, m.land, m.valuta, m.locale]), [['NO', 'Norway', 'NOK', 'nb'], ['US', 'United States', 'USD', 'en']]);
+  const md = byggChecklista(b, [raprodukt()]);
+  assert.ok(md.includes('**United States**') && md.includes('**USD**'), 'USA-raden i checklistan');
+});
+
 test('valuta och land följer butiksfilen — en NOK-butik i Norge får inte SEK/Sweden', () => {
   const b = butik();
   b.butik.valuta = 'NOK';

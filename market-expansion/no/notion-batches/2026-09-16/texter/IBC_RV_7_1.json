@@ -1,0 +1,64 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   205
+  ],
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "rader": 2,
+  "text": "”Fungerer akkurat som jeg hadde håpet. Godt vern for tanken min utendørs.”"
+ },
+ {
+  "box": [
+   300,
+   225,
+   780,
+   272
+  ],
+  "storlek": 24,
+  "farg": [
+   22,
+   49,
+   76
+  ],
+  "rader": 1,
+  "text": "Karin"
+ },
+ {
+  "box": [
+   320,
+   1088,
+   760,
+   1132
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "439 kr (veil. pris 586 kr)"
+ },
+ {
+  "form": 1,
+  "klipp_efter_rad": 0,
+  "rad": null
+ },
+ {
+  "form": 1,
+  "text": "Handle nå – 439 kr",
+  "rad": 0,
+  "se": "Handla nu – 489 kr",
+  "vanster": false
+ }
+]

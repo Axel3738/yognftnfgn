@@ -1,0 +1,29 @@
+[
+ {
+  "form": 0,
+  "text": "Fri frakt på takovertrekk for campingvogn, 6,5 × 3 m",
+  "rader": [
+   0,
+   1
+  ],
+  "se_rader": [
+   "Fri frakt på taköverdrag",
+   "för husvagn, 6,5 × 3 m"
+  ],
+  "vanster": false
+ },
+ {
+  "form": 0,
+  "text": "1 189 kr (ord. 1 549 kr) – spar 360 kr",
+  "rad": 2,
+  "se": "1 129 kr (ord. 1 469 kr) – spara 340 kr",
+  "vanster": false
+ },
+ {
+  "form": 5,
+  "text": "Bestill takovertrekket – fri frakt",
+  "rad": 0,
+  "se": "Beställ taköverdraget – fri frakt",
+  "vanster": false
+ }
+]

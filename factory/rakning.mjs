@@ -617,7 +617,18 @@ async function kör() {
   }
 
   const utMapp = join(ROT, 'output', butikId);
-  const brandDetektor = läsJson(join(utMapp, 'brand-detektor.json'));
+  // Den norska halvan har EGNA domar i brand-detektor-no.json (brand-detektorn
+  // skriver aldrig över SE med NO). Till 2026-09-16 lästes bara SE-filen, så
+  // varje norsk källannons blev "odömd" i räkningen och de uppladdade norska
+  // annonserna "övertaliga — ingen dom" — även när NO-rapporten var grön.
+  const brandDetektorSe = läsJson(join(utMapp, 'brand-detektor.json'));
+  const brandDetektorNo = läsJson(join(utMapp, 'brand-detektor-no.json'));
+  const brandDetektor = brandDetektorSe || brandDetektorNo
+    ? {
+        ...(brandDetektorSe ?? brandDetektorNo),
+        annonser: [...(brandDetektorSe?.annonser ?? []), ...(brandDetektorNo?.annonser ?? [])],
+      }
+    : null;
   const kallannonser = läsJson(join(utMapp, 'kallannonser.json'));
   if (!brandDetektor && !kallannonser) {
     console.error(`✗ Varken brand-detektor.json eller kallannonser.json finns i factory/output/${butikId}/.`);

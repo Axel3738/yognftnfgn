@@ -1,0 +1,341 @@
+{
+ "_om": [
+  "Norsk annonscopy (bokmål) för DryTrek, 2026-09-09.",
+  "Skriven av en workflow: en sonnet-agent per vinkel, tre granskare per set (järnreglerna, sanningshalten, svecismer), sen en rättningsrunda. 30 agenter.",
+  "Priset är 381 NOK (ord. 635 NOK) — Shopifys egen NOK-omräkning läst ur /nb-kundvyn, aldrig SEK-siffror.",
+  "Creatives: Bäverbutikens EGNA norska filmer (Gamasjer_NO_*, redan dubbade) — inte HeyGen-dubbning av de svenska.",
+  "tre_fragor kommer från första utkastet (sonnet) och gäller hook/headline-idén; slutlig text är juryns."
+ ],
+ "sprak": "nb",
+ "pris": {
+  "nu": 381,
+  "ordinarie": 635,
+  "valuta": "NOK"
+ },
+ "vinklar": {
+  "PD": {
+   "annonser": [
+    "Gamasjer_NO_PD_1",
+    "Gamasjer_NO_PD_2",
+    "Gamasjer_NO_PD_2_1",
+    "Gamasjer_NO_PD_3"
+   ],
+   "utfall_i_kallan": "BEVISAD VINNARE — 9 689 kr, 51 köp, ROAS 2,81 mot break-even 1,60",
+   "rattad_efter_granskning": true,
+   "message": "Våt snø kommer inn over støvelkanten.\n✅ Tetter mellom støvel og bukse – der snøen ellers kryper inn\n✅ Fukt fra vått kratt blir værende på utsiden\n✅ Grus og barnåler kommer seg ikke inn\n✅ Borrelås hele veien opp – på og av uten å ta av deg støvelen\nSe alle de 18 fargene – 381 kr 👇",
+   "headline": "Snøen blir på utsiden",
+   "description": "Gamasjer som holder snø, væte og grus ute.",
+   "andringar": [
+    {
+     "vad": "Hooken: \"Våt snø starter over kanten på støvelen\" → \"Våt snø kommer inn over støvelkanten.\"",
+     "varfor": "Svenskans \"börjar ovanför kanten\" går inte att överföra ordagrant — snø kan inte \"starte\" på norska. Norrmän säger dessutom sammansatt \"støvelkanten\", inte \"kanten på støvelen\"."
+    },
+    {
+     "vad": "\"Holder snøen ute nedenfra - der den ellers kryper inn\" → \"Tetter mellom støvel og bukse – der snøen ellers kryper inn\"",
+     "varfor": "Två staplade adverb (\"ute nedenfra\") är ingen norsk ordföljd. Raden motsade också hooken (över kanten vs. nedifrån); nu beskriver den samma öppning som hooken."
+    },
+    {
+     "vad": "\"Fukt fra vått kratt stopper på utsiden\" → \"blir værende på utsiden\"",
+     "varfor": "Intransitivt \"stopper\" låter som om fukten själv väljer att stanna. Norskan använder \"blir værende\"."
+    },
+    {
+     "vad": "\"Grus og barnåler stopper utenfor støvelen\" → \"Grus og barnåler kommer seg ikke inn\"",
+     "varfor": "Samma intransitiva \"stopper\" upprepades tre gånger i annonsen och förstärkte översättningskänslan. Här byts det mot en naturlig norsk vändning."
+    },
+    {
+     "vad": "\"av og på uten å dra av støvelen\" → \"på og av uten å ta av deg støvelen\"",
+     "varfor": "\"Dra av sig\" om skodon är svenska. På norska tar man av seg støvelen. Ordföljden \"på og av\" är också den norska standardvändningen."
+    },
+    {
+     "vad": "\"Se alle 18 fargene\" → \"Se alle de 18 fargene\"",
+     "varfor": "Norskan kräver dubbel bestämdhet när ett räkneord står före bestämt substantiv. Svenskan saknar regeln, så \"de\" faller bort vid direktöversättning."
+    },
+    {
+     "vad": "\"snø, fukt & grus\" → \"snø, væte og grus\"",
+     "varfor": "\"&\" används inte i norsk annonstext, och den norska produktsidans egen husstil säger \"væte\", inte \"fukt\"."
+    },
+    {
+     "vad": "Headline \"Snøen stopper utenfor støvelen\" → \"Snøen blir på utsiden\"",
+     "varfor": "Samma onaturliga intransitiva \"stopper\". Nya rubriken är 21 tecken och håller sig under 40."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - snø som kryper inn rett over støvelkanten er en konkret, sedd detalj.",
+     "falsifiera": "Ja - man kan kontrollera på en riktig støvel om snøen faktisk begynner der.",
+     "unik": "Ja - peker på produktets faktiske dekningspunkt (der kanten slutter), ingen generisk vinterannonse eier den plasseringen."
+    },
+    "headline": {
+     "visualisera": "Ja - snø som stopper utenfor en støvel er et tydelig bilde.",
+     "falsifiera": "Ja - snøen er enten utenfor eller kommer inn, målbart.",
+     "unik": "Delvis - andre gamasjer kunne sagt noe likt, men linjen bærer produktets kjernefunksjon i stedet for et løst løfte."
+    }
+   }
+  },
+  "SP": {
+   "annonser": [
+    "Gamasjer_NO_SP_1",
+    "Gamasjer_NO_SP_2",
+    "Gamasjer_NO_SP_3",
+    "Gamasjer_NO_SP_2_1"
+   ],
+   "utfall_i_kallan": "ROAS 1,42 på 1 095 kr — under break-even",
+   "rattad_efter_granskning": true,
+   "message": "Snøen holdes ute av støvelen. Vått kratt og barnåler også.\n✅ 44 cm høy – dekker leggen fra støvelkanten og opp\n✅ Krok i snøringen, stropp under foten, borrelås rundt leggen\n✅ Tas på uten å ta av støvelen – borrelåsen går langs hele utsiden\n✅ 14 dagers angrerett fra du mottar varen\nSe hvordan gamasjene festes på støvelen 👇",
+   "headline": "Tre festepunkter. Snøen holdes ute.",
+   "description": "Krok i snøringen, stropp under foten, borrelås rundt leggen.",
+   "andringar": [
+    {
+     "vad": "\"holdes utenfor støvelen\" → \"holdes ute av støvelen\" (message rad 1)",
+     "varfor": "\"utenfor\" är rumsligt på norska (utenfor en butikk/hytte) och är svenskans \"utanför stöveln\" rakt översatt. Norskan säger \"ute av\"."
+    },
+    {
+     "vad": "\"Snøen holdes utenfor.\" → \"Snøen holdes ute.\" (headline)",
+     "varfor": "Samma svecism, och \"utenfor\" utan objekt hänger löst på norska. Idiomet är \"holde snøen ute\". Headlinen är 34 tecken, under taket 40."
+    },
+    {
+     "vad": "\"borrelåsen åpner hele veien\" → \"borrelåsen går langs hele utsiden\"",
+     "varfor": "\"åpner\" är transitivt på norska — borrelåsen öppnas, den öppnar inget. \"hele veien\" är calque på \"hela vägen\". Butikens egen norska text (factory/startsidor/drytrek.json, nb_ratext FAQ 2) säger exakt \"Borrelåsen går langs hele utsiden\"."
+    },
+    {
+     "vad": "\"den\" → \"gamasjene\" i CTA, och description skriver inte längre \"den\"",
+     "varfor": "Produkten nämndes aldrig vid namn, och \"den\" är singular fast produkten är ett par. Butikens norska text säger konsekvent \"gamasjene\" i plural."
+    },
+    {
+     "vad": "\"dekker leggen over støvelen\" → \"dekker leggen fra støvelkanten og opp\"",
+     "varfor": "\"over støvelen\" läses först som ovanpå stöveln. Butikens norska text löser höjden med \"fra støvel til kne\" — samma logik, samma bild som videon visar."
+    },
+    {
+     "vad": "Raden om påtagning behölls (bara formuleringen rättad)",
+     "varfor": "Kontrollerad mot produktfakta: factory/produkter/damasker.yaml features säger \"Kardborrestängning längs hela utsidan — går på och av med kängan på\", och butikens norska FAQ säger detsamma. Löftet är belagt, inte påhittat."
+    },
+    {
+     "vad": "\"14 dagers angrerett\" → \"14 dagers angrerett fra du mottar varen\"",
+     "varfor": "Kontrollerad mot butikens norska retur-/garantitext: \"14 dagers angrerett fra pakken kommer fram\" och \"etter norsk angrerettlov\". Norsk ångerrätt räknas från mottagandet, så annonsen säger nu samma sak som sidan."
+    },
+    {
+     "vad": "\"Sitter der du satte den.\" struken ur description",
+     "varfor": "Prestandapåstående utan täckning — noll kunder, noll recensioner, inget test. Ersatt med mekanismen (krok, stropp, borrelås) som står i produktfakta och går att falsifiera."
+    },
+    {
+     "vad": "Oförändrat i övrigt",
+     "varfor": "Samma antal rader, samma bock-lista, samma emoji, ingen SEK-siffra och inget nytt pris — copyn passar fortfarande den orörda videon."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - snø, kratt og barnåler som ikke kommer inn er en konkret, sett situasjon.",
+     "falsifiera": "Ja - målbart om snø/kratt/barnåler kommer inn eller ikke.",
+     "unik": "Delvis - påstanden er generell for gamasjer, men bruker produktlistens eksakte ord (snø, kratt, barnåler) i stedet for et løst løfte."
+    },
+    "headline": {
+     "visualisera": "Ja - tre konkrete festepunkter (krok, rem, borrelås) kan pekes på i bilde.",
+     "falsifiera": "Ja - man kan telle festepunktene og se om snøen holdes ute.",
+     "unik": "Ja - \"tre festepunkter\" er en spesifikk konstruksjonsdetalj fra produktlisten som en generisk annonse ikke ville truffet på tilfeldig."
+    }
+   }
+  },
+  "CS": {
+   "annonser": [
+    "Gamasjer_NO_CS_1",
+    "Gamasjer_NO_CS_2",
+    "Gamasjer_NO_CS_2_1",
+    "Gamasjer_NO_CS_3"
+   ],
+   "utfall_i_kallan": "104 kr, 0 köp — odömd",
+   "rattad_efter_granskning": true,
+   "message": "Snø og grus kommer ikke inn i støvelen.\n381 kr i stedet for 635 kr.\n✅ Holder ute snø, søle, grus og barnåler\n✅ Krok i snøringen, stropp under foten\n✅ 14 dagers angrerett\nBestill gamasjene dine 👇",
+   "headline": "44 cm mellom støvel og kne – 381 kr",
+   "description": "Tettvevd polyester, borrelås hele veien opp. Av og på med støvelen på.",
+   "andringar": [
+    {
+     "vad": "\"Tett vevd\" → \"Tettvevd\" (fynd 1 och 3)",
+     "varfor": "Sammansatt adjektiv skrivs i ett ord på norska. Repots godkända NO-copy för exakt denna annons (factory/annonscopy/damasker-no.json, CS-vinkeln) skriver \"Tettvevd polyester\". Särskrivningen var en svenskspegling."
+    },
+    {
+     "vad": "\"Tas på og av med støvelen på.\" → \"Av og på med støvelen på.\" (fynd 2)",
+     "varfor": "Norskan lägger riktningsorden först och undviker upprepningen av \"på\". Samma formulering står ordagrant i repots godkända NO-copy."
+    },
+    {
+     "vad": "Hookraden \"Tørre sokker ved kilometer fire.\" → \"Snø og grus kommer ikke inn i støvelen.\" (fynd 4)",
+     "varfor": "Talet fire (4 km) fanns inte i produktdatan och butiken har noll kunder som testat. \"Tørre sokker\" antydde dessutom impregnering som specen inte nämner. Nya raden är ren funktionsbeskrivning ur produktlistan."
+    },
+    {
+     "vad": "Granskarens fulla förslag på hookraden kortades till andra halvan",
+     "varfor": "Första halvan \"44 cm mellom støvel og kne\" står redan ordagrant i headline. Två identiska rader i samma annons hade blivit dubblering, och strukturkravet säger en rad på den platsen."
+    },
+    {
+     "vad": "Fynd 5 (ta bort \"tettvevd\") tillämpades INTE",
+     "varfor": "Produktdatan säger uttryckligen \"100 % polyester tätvävd\". Egenskapen är hämtad, inte påhittad, och repots egen norska text skriver \"44 cm tettvevd polyester\". Att stryka den hade tagit bort ett verifierat faktum."
+    },
+    {
+     "vad": "Fynd 6 (ta bort \"hele veien opp\") tillämpades INTE",
+     "varfor": "Produktdatan säger \"kardborre längs hela utsidan\". Kardborrens längd är dokumenterad, och godkänd NO-copy skriver \"Borrelås hele veien opp\"."
+    },
+    {
+     "vad": "Fynd 7 (ta bort på/av-påståendet) tillämpades INTE",
+     "varfor": "Produktdatan säger ordagrant \"går på och av med kängan på\". Påståendet står i specen och behövde bara idiomatisk norsk ordföljd, vilket fynd 2 redan gav."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - en vandrer ved kilometer fire med tørre føtter er et konkret bilde.",
+     "falsifiera": "Ja - beskriver et observerbart punkt, ikke en følelse eller mening.",
+     "unik": "Delvis - \"tørre sokker\" kan enhver si, men \"kilometer fire\" som spesifikt vendepunkt gjør linjen vanskeligere å kopiere rett av."
+    },
+    "headline": {
+     "visualisera": "Ja - et mål mellom to konkrete punkter på kroppen, lett å se for seg.",
+     "falsifiera": "Ja - 44 cm er et eksakt, kontrollerbart mål.",
+     "unik": "Ja - det eksakte målet 44 cm kommer fra produktdataen og er spesifikt for denne varen."
+    }
+   }
+  },
+  "G": {
+   "annonser": [
+    "Gamasjer_NO_G_1",
+    "Gamasjer_NO_G_2",
+    "Gamasjer_NO_G_3",
+    "Gamasjer_NO_G_2_1"
+   ],
+   "utfall_i_kallan": "44 kr, 0 köp — odömd",
+   "rattad_efter_granskning": true,
+   "message": "Til ham som er ute selv når marka er våt 🎁\nHan som alltid er ute - tur, hund, skog, natur.\n✅ Borrelås rundt leggen - av og på med støvelen på\n✅ Krok i snøringen, stropp under foten\n✅ 381 kr, ordinær pris 635 kr - 40 % rabatt\nVelg blant 18 farger 👇",
+   "headline": "44 cm høye gamasjer. Snø og kratt ute.",
+   "description": "Holder snøen ute nedenfra og fukt fra kratt borte fra sokken.",
+   "andringar": [
+    {
+     "vad": "\"ordinær\" → \"ordinær pris 635 kr\"",
+     "varfor": "Norskan kan inte låta adjektivet bära prisangivelsen ensamt som svenskans \"ordinarie 635 kr\". Substantivet krävs. Samma formulering som den godkända husraden i vinkel G."
+    },
+    {
+     "vad": "\"på og av\" → \"av og på\"",
+     "varfor": "Fast norsk kollokation är \"av og på\". Svensk ordföljd avslöjade översättningen och gav tre \"på\" i samma korta rad."
+    },
+    {
+     "vad": "\"langs hele utsiden\" → \"rundt leggen\"",
+     "varfor": "Produktsidan säger \"borrelås rundt leggen\". Att kardborren löper längs alla 44 cm står ingenstans i källan — obelagd uppgradering. Formuleringen \"av og på med støvelen på\" behålls, den är täckt av sidans egen monteringsbeskrivning och står i den godkända husraden."
+    },
+    {
+     "vad": "Headline: komma → \"og\", plus produktordet \"gamasjer\"",
+     "varfor": "Norskan binder ihop två objekt med \"og\"; asyndetisk lista läser som maskinöversättning. \"høye\" stod som plural utan substantiv och produktordet saknades i hela annonsen."
+    },
+    {
+     "vad": "Headline: \"Stopper\" och \"vått\" ströks",
+     "varfor": "Granskarens fulla förslag blir 46 tecken och headline-taket är 40. Öppningen \"44 cm høye gamasjer\" och \"og\"-bindningen prioriterades; raden landar på 38 tecken."
+    },
+    {
+     "vad": "Description: \"holde krattet borte fra sokken\" → \"fukt fra kratt borte fra sokken\"",
+     "varfor": "Gamasjen håller inte snåret borta från sockan, den håller fukten från snåret borta. Ordagrann komprimering av svenskan blev semantiskt skev. Ordagrant den godkända husraden i vinkel G."
+    },
+    {
+     "vad": "Bindestrecket behölls som \"-\" i stället för \"–\"",
+     "varfor": "Granskarnas förslag växlade mellan \"-\" och \"–\". Originalet och de orörda raderna använder \"-\", och rad 9 kräver oförändrad struktur."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - en person som går ut i vått vær er en synlig scene.",
+     "falsifiera": "Delvis - beskriver en vane hos mottakeren, ikke et rent sant/usant produktfaktum, men er observerbar atferd og ingen ren mening.",
+     "unik": "Delvis - gavevinkelen er vanlig, men koblingen til \"bakken er våt\" peker på produktets faktiske bruksscenario."
+    },
+    "headline": {
+     "visualisera": "Ja - høydemål pluss hva det stenger ute, konkret.",
+     "falsifiera": "Ja - 44 cm er eksakt, og man kan se om snø/kratt kommer inn.",
+     "unik": "Ja - 44 cm-målet er hentet fra produktdataen og er produktspesifikt."
+    }
+   }
+  },
+  "FO": {
+   "annonser": [
+    "Gamasjer_NO_FO_1_H1"
+   ],
+   "utfall_i_kallan": "20 kr, 0 köp — odömd",
+   "rattad_efter_granskning": true,
+   "message": "Snø, vått kratt og grus i støvelen — det som stopper turen, kommer nedenfra.\nKrok i lissene, stropp under foten, borrelås langs hele leggen.\n381 kr i stedet for 635 kr. Se de 18 fargene.",
+   "headline": "44 cm mellom støvel og kne.",
+   "description": "",
+   "andringar": [
+    {
+     "vad": "legget → leggen",
+     "varfor": "Svenskans \"benet\" (neutrum) blev fel genus. På bokmål är kroppsdelen hankjønn: en legg – leggen. \"Et legg / legget\" betyder ett veck i tyg, så raden läste som \"kardborre längs hela tygvecket\". Repots redan godkända norska copy skriver leggen."
+    },
+    {
+     "vad": "snøringen → lissene",
+     "varfor": "Svecism. Norrmän kallar skosnörena lisser/skolisser och kroken fästs \"i lissene\". \"Snøring\" är på norska verbalsubstantiv för handlingen att snöra och används inte om kängans snörning i produktspråk."
+    },
+    {
+     "vad": "\"Snø nedenfra\" → \"Snø\"",
+     "varfor": "Nyckelordet nedenfra stod två gånger i samma mening. Första ledet föregrep poängen och gjorde slutklämmen platt — läste som översättningsslinga, inte skriven norska. Poängen bärs nu bara av slutet."
+    },
+    {
+     "vad": "Prisraden lämnad ordagrant (381 / 635)",
+     "varfor": "Talen är rätt i NOK, men DryTreks NO-marknad står på valuta SEK i butikskonfigen. Kunden möter SEK på produktsidan. Copyn är korrekt — NOK måste slås på för NO-marknaden i Shopify-admin, med NOK-paketnivåer, innan annonsen får gå live."
+    },
+    {
+     "vad": "stropp under foten behållet",
+     "varfor": "Norska terrängordet enligt regel 1; inte flaggat av granskarna och därför orört."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - snø, kratt og grus i støvelen er en påtakelig, sett situasjon.",
+     "falsifiera": "Ja - beskriver en observerbar årsak, ikke en mening.",
+     "unik": "Delvis - selve problemet er generelt for vandrere, men \"kommer nedenfra\" peker på produktets spesifikke løsningsvinkel."
+    },
+    "headline": {
+     "visualisera": "Ja - et mål mellom to kroppspunkter er lett å se for seg.",
+     "falsifiera": "Ja - 44 cm er et eksakt mål.",
+     "unik": "Ja - samme produktspesifikke mål som i CS, hentet fra produktdataen."
+    }
+   }
+  },
+  "SP4": {
+   "annonser": [
+    "Gamasjer_NO_SP_4_H1"
+   ],
+   "utfall_i_kallan": "18 kr, 0 köp — odömd",
+   "rattad_efter_granskning": true,
+   "message": "Høstregnet gir seg ikke. Krattet er vått langs hele stien.\n\nKrok i lissen, stropp under foten - borrelås rundt leggen.\n\n44 cm polyester mellom støvel og kne. Snø og grus holdes ute.",
+   "headline": "Krok i lissen. Stropp under foten.",
+   "description": "",
+   "andringar": [
+    {
+     "vad": "\"Høstregnet henger i.\" → \"Høstregnet gir seg ikke.\"",
+     "varfor": "Falsk vän: \"å henge i\" betyder på norska att jobba hårt, inte att något håller i sig. Norsk läsare tolkar meningen fel."
+    },
+    {
+     "vad": "\"står vått over hele stien\" → \"er vått langs hele stien\"",
+     "varfor": "Preposition rakt från svenskan. \"Over hele stien\" betyder på norska att krattet ligger tvärs över och spärrar stigen; avsedd betydelse är längs stigen."
+    },
+    {
+     "vad": "\"snøringen\" → \"lissen\" (både i brödtext och headline)",
+     "varfor": "Ordet finns på norska men används inte om en kängas snöre; norrmän säger lissen/skolissen. \"Snøringen\" avslöjar översatt svenska."
+    },
+    {
+     "vad": "\"borrelås langs hele utsiden\" → \"borrelås rundt leggen\"",
+     "varfor": "Kardborrens placering och omfattning stod inte i produktdatan. Obekräftad konstruktionsdetalj borttagen."
+    },
+    {
+     "vad": "\"44 cm tettvevd polyester\" → \"44 cm polyester\"",
+     "varfor": "Produktdatan säger bara 100 % polyester, inget om vävens täthet. Måttet 44 cm är belagt och står kvar."
+    },
+    {
+     "vad": "\"Snø, søle og grus holdes ute.\" → \"Snø og grus holdes ute.\"",
+     "varfor": "\"Søle\" antyder vattenavvisning, och det finns ingen uppgift om impregnering eller vattentäthet i produktdatan."
+    }
+   ],
+   "tre_fragor": {
+    "hook": {
+     "visualisera": "Ja - regn og vått kratt langs stien er en konkret bilde.",
+     "falsifiera": "Ja - beskriver en tilstand som enten stemmer eller ikke, ikke en følelse.",
+     "unik": "Delvis - høstregn er en generell situasjon, men den setter opp nøyaktig det scenarioet produktets mekanikk løser i neste linje."
+    },
+    "headline": {
+     "visualisera": "Ja - to konkrete festedetaljer som kan pekes på i bilde.",
+     "falsifiera": "Ja - man kan se om kroken sitter i snøringen og remmen under foten.",
+     "unik": "Ja - produktets spesifikke konstruksjon fra produktlisten, ingen generisk konkurrent ville truffet nøyaktig disse to detaljene tilfeldig."
+    }
+   }
+  }
+ }
+}

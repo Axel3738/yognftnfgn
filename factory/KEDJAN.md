@@ -176,6 +176,15 @@ marknad.mjs
   oversattAllt(ctx, locale, oversattning, { temaId, torr }) → { registrerade, saknade:[] }
   CLI: node factory/marknad.mjs <butik-id> [--locale nb] [--torr]
 
+prislista.mjs
+  byggPrislistplan(produkt, butik) → { rader:[{ valuta, land, pris, jamforpris, namn }], fel:[] }   ren
+  hittaPrislista(prislistor, valuta, marketId), varianterAttSkriva(varianter, befintliga, rad)     ren
+  sakerstallPrislistor(ctx, produkt, { torr }) → { prislistor:[], manuella:[] }
+  CLI: node factory/prislista.mjs <butik-id> <produkt-id> [--torr]
+
+lander.mjs (ren, noll beroenden — EN landstabell i stället för sex kopior)
+  landsnamnSv(kod), landEn(kod), sprakEn(kod), lokalValuta(kod), standardLocale(kod), landskodUrNamn(namn), ochLista(lander)
+
 oversattning.mjs
   byggUnderlag(ctx, produkter) → skriver output/<butik>/oversattning-sv.json, returnerar objektet
   lasOversattning(butikId, locale) → objekt|null
@@ -241,6 +250,7 @@ Nivå `butik` körs en gång, nivå `produkt` en gång per produktfil. State per
 | 15 | `recensioner` | produkt | judgeme.mjs: app-CSV alltid; API-import om token | nej → manuell |
 | 16 | `marknad` | butik | marknad.mjs: marknad + locale + webPresence | ja |
 | 17 | `oversatt` | butik | oversattning.byggUnderlag → saknas `oversattning-<locale>.json`: manuell "översätt med subagent"; finns: marknad.oversattAllt + oversattning-granska | nej → manuell |
+| 17b | `prislista` | produkt | prislista.mjs: prislista + marknadskatalog + fast pris/jämförpris per variant ur `ekonomi.marknadspriser` (NOK, USD …). Kräver att valutan är marknadens basvaluta (admin) — annars manuell med klicket | nej → manuell |
 | 18 | `qa` | produkt+butik | kontroll.mjs + kundvy-kor/kundvy (riktig HTML) + trippelkoll | rött = inte klart |
 | 19 | `checklista` | butik | checklista.mjs → output/<butik>/CHECKLISTA.md | — |
 | 20 | `slutrapport` | butik | två listor ur state: Gjort av mig / Väntar på en människa | — |

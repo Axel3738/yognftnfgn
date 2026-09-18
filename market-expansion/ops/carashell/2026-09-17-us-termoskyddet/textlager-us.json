@@ -1,0 +1,112 @@
+{
+  "CaraShellFront_CS_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Cool in summer, warm in winter, dark when you sleep."
+      },
+      {
+        "typ": "underrad",
+        "text": "Outside the glass, 83 × 67 in – ready in two minutes."
+      },
+      {
+        "typ": "pris",
+        "text": "$99"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "$124"
+      },
+      {
+        "typ": "rabatt",
+        "text": "−20%"
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 5–10 business days · 90-day guarantee"
+      }
+    ],
+    "noter": "Direct translation of the proven Swedish line. Discount recomputed for the US price pair: $99 vs $124 is 20%, not the Swedish −40% (559/932). Size given in inches first on the image; cm is kept in the primary text."
+  },
+  "CaraShellFront_CS_5_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "The roof cover for winter. The thermal cover for the road."
+      },
+      {
+        "typ": "underrad",
+        "text": "The thermal cover sits outside the windshield and both front side windows, 83 × 67 in (211 × 171 cm). The glass never gets cold from the inside – no condensation in the morning."
+      },
+      {
+        "typ": "pris",
+        "text": "Thermal cover $99"
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 5–10 business days · 90-day guarantee"
+      }
+    ],
+    "noter": "Product word kept before the price, same as the Swedish original, because the image shows two products (roof + thermal). The roof cover's US price ($199) is only in the primary text, not on the image, matching the Swedish pattern."
+  },
+  "CaraShellFront_G_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Give a morning without condensation to wipe."
+      },
+      {
+        "typ": "underrad",
+        "text": "Dark in the cab, no sun at 4 a.m."
+      },
+      {
+        "typ": "pris",
+        "text": "$99"
+      },
+      {
+        "typ": "jamforpris",
+        "text": "$124"
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 5–10 business days · 90-day guarantee"
+      }
+    ],
+    "noter": "Short and literal, same as the Swedish original. 'Klockan fyra' kept as the concrete 'at four', not generalized to 'early morning'."
+  },
+  "CaraShellFront_PD_4_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "Condensation inside – despite the curtain in the cab."
+      },
+      {
+        "typ": "underrad",
+        "text": "CaraShell sits outside the glass – it never gets cold from the inside."
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 5–10 business days · 90-day guarantee"
+      }
+    ],
+    "noter": "No price on the image, matching the Swedish PD format. The headline is kept as one full line — the 40-character limit applies only to the Ads Manager headline, not the on-image line."
+  },
+  "CaraShellFront_PD_5_1": {
+    "element": [
+      {
+        "typ": "rubrik",
+        "text": "The rest area sees your windshield. It doesn't see you – the whole front is blacked out."
+      },
+      {
+        "typ": "underrad",
+        "text": "Blacks out the whole front from the outside, 83 × 67 in (211 × 171 cm). No one sees in – and the sun won't wake you at 4 a.m."
+      },
+      {
+        "typ": "botten",
+        "text": "Free shipping · 5–10 business days · 90-day guarantee"
+      }
+    ],
+    "noter": "'Ställplatsen'/'Rastplatsen' translated as 'the rest area' — matches the scene of people walking past at an overnight stop. No price on the image, matching the Swedish original. Everywhere in this batch, the Johan quote from the Swedish ad copy is dropped, since it can't be verified for the US."
+  },
+  "_huvudsession": "2026-09-17: \"at four\" → \"at 4 a.m.\" (amerikansk klockangivelse, tydligare än \"at four\") i G_4_1 och PD_5_1; PD_5_1:s Ads Manager-rubrik \"Blacks out the whole front outside\" → \"Blacks out the whole front from outside\"; CS_4_1:s not rättad (SE-rabatten 40 % var rätt för 559/932)."
+}

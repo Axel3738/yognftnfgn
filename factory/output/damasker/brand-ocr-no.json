@@ -1,0 +1,10034 @@
+{
+ "produkt": "damasker",
+ "datum": "2026-09-09",
+ "tathet": 0.3,
+ "annonser": {
+  "Gamasjer_NO_CS_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker, solid",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker, solid",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker, solid",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.972
+      },
+      {
+       "text": "rabatt pa gamasjene.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "rabatt pa gamasjene.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "rabatt pa gamasjene.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Snart utsolgt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Snart utsolgt.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Ordinaer pris fem hundre og femten",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "RMSIRONG",
+       "konfidens": 0.853
+      },
+      {
+       "text": "Ordinaer pris fem hundre og femten",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundre og femten",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "CHIMSIRONG",
+       "konfidens": 0.693
+      },
+      {
+       "text": "Ordinaerprisfemhundre og femten",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundre og femten",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "kroner.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "￥",
+       "konfidens": 0.512
+      },
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "grus ute.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "grus ute.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Lageretminker raskt.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.918
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Nar det er tomt, sa er det tomt.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "ertomt.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "er tomt.",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.16,
+     "texter": [
+      {
+       "text": "er tomt.",
+       "konfidens": 0.945
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_CS_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "AYASBE",
+       "konfidens": 0.765
+      },
+      {
+       "text": "AYXSE",
+       "konfidens": 0.932
+      },
+      {
+       "text": "Nesten utsolgt.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Nesten utsolgt.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Siste sjanse til salgspris.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Siste sjanse til salgspris.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.963
+      },
+      {
+       "text": "Siste sjanse til salgspris.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Siste sjanse til salgspris.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Ordinaer prisfemhundre og femten",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Ordinaer pris femhundre og femten",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreog femten",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreog femten",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "kroner.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "kroner.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Napris tre hundre og ni kroner.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Gamasjersomholdersno,fuktighet",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Gamasjersomholdersno,fuktighet",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Gamasjersom holder sno,fuktighet",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Gamasjersom holder sno,fuktighet",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Gamasjersomholder sno,fuktighet",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fuktighet",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Gamasjersomholder sno,fuktighet",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Gamasjersomholder sno,fuktighet",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "og grus ute.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "og grus ute.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "og grus ute.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Nar det ertomt, er det tomt.",
+       "konfidens": 0.931
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Nar detertomt,erdettomt.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Nar detertomt,er dettomt.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for de",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "blir utsolgt",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "blir utsolgt",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "blir utsolgt",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 17.8,
+     "texter": [
+      {
+       "text": "blir utsolgt",
+       "konfidens": 0.997
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_CS_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Gamasjer_NO_CS_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "40%RABATT",
+       "konfidens": 0.993
+      },
+      {
+       "text": "Snart utsolgt-fa igjen pa lager",
+       "konfidens": 0.96
+      },
+      {
+       "text": "Poocbove",
+       "konfidens": 0.85
+      },
+      {
+       "text": "Kjop for de er utsolgt",
+       "konfidens": 0.939
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_CS_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "一",
+       "konfidens": 0.514
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Glem ordinaer pris.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Glem ordinaer pris.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Na gjelder tilbudet.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "TM",
+       "konfidens": 0.812
+      },
+      {
+       "text": "Na gjelder tilbudet.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Na gjelder tilbudet.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Sa lenge lageret rekker.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "SAMSIRONG",
+       "konfidens": 0.918
+      },
+      {
+       "text": "Ordinaer pris fem hundre og femten",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "SAMSTRONG",
+       "konfidens": 0.88
+      },
+      {
+       "text": "Ordinaer pris fem hundre og femten",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "SAMSIRONG",
+       "konfidens": 0.98
+      },
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Ordinaerprisfemhundreog femten",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "RMSIRONO",
+       "konfidens": 0.668
+      },
+      {
+       "text": "Ordinaerprisfemhundreogfemten",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Ordinaer pris fem hundre og femten",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "kroner, napris tre hundre og ni",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "kroner.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Gamasjer som holder sno, fukt og",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "grus ute.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "grus ute.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "grus ute.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Lageret minker raskt.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Nardetertomt,erdettomt.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Nar det ertomt, er det tomt.",
+       "konfidens": 0.928
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Nar detertomt,erdettomt.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Nar det er tomt, er det tomt.",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Klikk na, sikre deg dine for det",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "er tomt.",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "er tomt.",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.63,
+     "texter": [
+      {
+       "text": "er tomt.",
+       "konfidens": 0.973
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_G_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Leter duetter engave tilhamsom",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Leter duetterengavetilhamsom",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Leter du etter en gave til hamsom",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "faktiskblirbrukt?",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "faktiskblirbrukt?",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Vetduhvasomervanskelig?",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "alleredehar alt.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "allerede har alt.",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapatur",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapa tur",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapatur",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapa tur",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapa tur",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragapa tur",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "medhundenellerbarevaereutei",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "skogen, er dette gaven han faktisk",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.938
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "skogen, er dette gaven han faktisk",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "kommer til a bruke.",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "kommer til a bruke.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "kommertilabruke.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "kommertilabruke.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "kommer til a bruke.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Om og om igjen.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Om og om igjen.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Om og om igjen.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Enkel gave,stortakknemlighet.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Enkel gave,stor takknemlighet.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "SORBIRONO",
+       "konfidens": 0.505
+      },
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "X",
+       "konfidens": 0.636
+      },
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "apner den og vet at du akkurat",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "apner den og vet at du akkurat",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "apner den og vet at du akkurat",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "apner den og vet at du akkurat",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "apner den og vet at du akkurat",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "apnerdenogvetatduakkurat",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "fant den rette gaven.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "fant den rette gaven.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "fant den rette gaven.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "效",
+       "konfidens": 0.606
+      },
+      {
+       "text": "fant den rette gaven.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "Igjen.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.2,
+     "texter": [
+      {
+       "text": "Igjen.",
+       "konfidens": 0.976
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_G_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Gaven som far ham til a si: \"Wow,",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Gaven som far ham til a si: \"Wow,",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Gaven som far ham til a si: \"Wow,",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Gaven som far ham til a si: \"Wow,",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "takk!",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Vetduhvasom ervanskelig?",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Vetduhvasom ervanskelig?",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.922
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "allerede har alt.",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "allerede har alt.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Men hvis man elsker a ga pa tur,",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Men hvis man elsker a ga pa tur,",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Men hvis man elsker a ga pa tur,",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Men hvis man elsker a ga pa tur,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Men hvis man elsker a ga pa tur,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "ga tur med hunden eller barevaere",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "ga tur med hunden ellerbarevaere",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "ga turmed hunden ellerbarevaere",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "ga tur med hunden eller bare vaere",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "ga tur med hunden eller bare vaere",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "gaturmedhundenellerbarevaere",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "gaturmedhundenellerbarevaere",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "uteiskogen,er dettegavenhan",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "ute iskogen,er dettegavenhan",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "ute i skogen, er dette gaven han",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "ute i skogen,er dette gavenhan",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "ute i skogen,er dette gaven han",
+       "konfidens": 0.922
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "faktisk kommer til a bruke om og",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "om igjen.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "om igjen.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "MSTSDN",
+       "konfidens": 0.78
+      },
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "RMSTSON",
+       "konfidens": 0.609
+      },
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "apner den og vit at du nettopp",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "apner den og vit at du nettopp",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "apner den og vit at du nettopp",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "apner den og vit at du nettopp",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "apner den og vit at du nettopp",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.07,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.981
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_G_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Gamasjer_NO_G_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "Denperfektegaven til",
+       "konfidens": 0.976
+      },
+      {
+       "text": "hamsomalltid erute",
+       "konfidens": 0.975
+      },
+      {
+       "text": "Seansiktethansnarhan apner den",
+       "konfidens": 0.964
+      },
+      {
+       "text": "Gi bort glede i dag",
+       "konfidens": 0.922
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_G_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Slutt a lete.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Slutt a lete.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Detteerjulegaventilhansom",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Dette er julegaven til han som",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Detteerjulegaventilhansom",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Detteerjulegaventilhansom",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "alltid er ute.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "alltid er ute.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "alltid er ute.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Vet du hva som er vanskelig?",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Vet du hva som ervanskelig?",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "A finne en gave til noen som",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "alleredeharalt.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "allerede har alt.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Menhvismanelskeragaturmed",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "hundenellerbarevaereutei",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "hundenellerbarevaereutei",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "hundenellerbarevaereutei",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "hundenellerbarevaereutei",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "hundenellerbarevaereutei",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "hundenellerbarevereutei",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.934
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "skogen, er dette gaven han faktisk",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "skogen,er dette gaven han faktisk",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "skogen, er dette gaven han faktisk",
+       "konfidens": 0.927
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "kommer til a bruke om og om igjen.",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Enkel gave,stor takknemlighet.",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Enkel gave,stor takknemlighet.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Enkel gave,stor takknemlighet.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "SRMSIRONG",
+       "konfidens": 0.796
+      },
+      {
+       "text": "Enkel gave, stor takknemlighet.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "RMSIAONG",
+       "konfidens": 0.784
+      },
+      {
+       "text": "SANHSIRONG",
+       "konfidens": 0.577
+      },
+      {
+       "text": "Enkel gave,stor takknemlighet.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Seansiktsuttrykkethansnarhan",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Se ansiktsuttrykket hans nar han",
+       "konfidens": 0.977
+      },
+      {
+       "text": "19",
+       "konfidens": 0.518
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "apner den og vit at du akkurat",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "apner den og vit at du akkurat",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "apner den og vit at du akkurat",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "apner den og vit at du akkurat",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "apner den og vit at du akkurat",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.27,
+     "texter": [
+      {
+       "text": "fant den rette gaven igjen.",
+       "konfidens": 0.995
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_PD_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "SANSTRONG",
+       "konfidens": 0.859
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Lei av sno i skoene hver vinter?",
+       "konfidens": 0.921
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Lei av sno i skoene hver vinter?",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Lei av sno i skoene hver vinter?",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Lei avsnoi skoene hvervinter?",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "skoenehvergang du erute?",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tettrundt",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tettrundt",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "TVF",
+       "konfidens": 0.656
+      },
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "grus.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "grus.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "AYXS",
+       "konfidens": 0.905
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.886
+      },
+      {
+       "text": "AYXSCE",
+       "konfidens": 0.682
+      },
+      {
+       "text": "Vanntette,vindtette,byggetfor",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "AYXSOD",
+       "konfidens": 0.742
+      },
+      {
+       "text": "Vanntette,vindtette, bygget for",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.805
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,byggetfor",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "hundelufting i all slagsvaer.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "hundelufting i all slagsvaer.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "hundelufting i all slags vaer.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Det fleksible materialet folger",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Det fleksible materialetfolger",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Det fleksible materialet folger",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Det fleksible materialet folger",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Detfleksiblematerialetfolger",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "hvert skritt,uansett terreng,",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "兴",
+       "konfidens": 0.657
+      },
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder,",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder,",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunder,",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder,",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder,",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder,",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "utenabekymredegforvate",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "utenabekymredegforvate",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "utena bekymre deg forvate",
+       "konfidens": 0.936
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "uten a bekymre deg forvate",
+       "konfidens": 0.921
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "utenabekymre deg forvate",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "utenabekymre deg forvate",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "sokker.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.7,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_087.jpg",
+     "sekund": 27,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_088.jpg",
+     "sekund": 27.3,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_089.jpg",
+     "sekund": 27.6,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_090.jpg",
+     "sekund": 27.9,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_091.jpg",
+     "sekund": 28.2,
+     "texter": [
+      {
+       "text": "Klar for snoen,klar for gjorma,",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_092.jpg",
+     "sekund": 28.5,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_093.jpg",
+     "sekund": 28.8,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_094.jpg",
+     "sekund": 29.1,
+     "texter": [
+      {
+       "text": "AYNSUE",
+       "konfidens": 0.507
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_095.jpg",
+     "sekund": 29.4,
+     "texter": [
+      {
+       "text": "AYXSiO",
+       "konfidens": 0.621
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_096.jpg",
+     "sekund": 29.7,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_097.jpg",
+     "sekund": 30,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_098.jpg",
+     "sekund": 30.3,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.989
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_099.jpg",
+     "sekund": 30.6,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.982
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_100.jpg",
+     "sekund": 30.9,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_101.jpg",
+     "sekund": 31.2,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.993
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_102.jpg",
+     "sekund": 31.31,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_PD_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "215",
+       "konfidens": 0.894
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "AYXSEB",
+       "konfidens": 0.777
+      },
+      {
+       "text": "Slik slipper du vate sokker for",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Slik slipper du vate sokker for",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Slikslipper du vate sokker for",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "godt.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.926
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "skoene hver gang du erute?",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tettrundt",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "anklene og stopper sno,fuktighet",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "anklene og stopper sno,fuktighet",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "anklene og stopper sno, fuktighet",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "anklene og stopper sno,fuktighet",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "anklene og stopper sno, fuktighet",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "anklene og stopper sno, fuktighet",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "anklene og stopper sno, fuktighet",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "og grus.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "og grus.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,byggetfor",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.774
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,byggetfor",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.841
+      },
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.964
+      },
+      {
+       "text": "Vanntette,vindtette,byggetfor",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "AYXS容都",
+       "konfidens": 0.533
+      },
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.905
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Vanntette, vindtette, bygget for",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "hundeluftingiallslagsvaer.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "hundelufting i all slags vaer.",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "hundelufting i all slagsvaer.",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "hundelufting i all slagsvaer.",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Det fleksible materialetfolger",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Det fleksible materialetfolger",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Detfleksiblematerialet folger",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "Det fleksible materialetfolger",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet avsekunder uten",
+       "konfidens": 0.919
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "Ta dempai lopetavsekunderuten",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "Ta dempai lopetavsekunderuten",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "Ta dempai lopetavsekunderuten",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "Ta dem pai lopet avsekunder uten",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder uten",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunderuten",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "Ta dempa i lopet av sekunderuten",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "atenkepavatesokker.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "a tenkepavatesokker.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.7,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_087.jpg",
+     "sekund": 27,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_088.jpg",
+     "sekund": 27.3,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_089.jpg",
+     "sekund": 27.6,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_090.jpg",
+     "sekund": 27.9,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_091.jpg",
+     "sekund": 28.2,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_092.jpg",
+     "sekund": 28.5,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_093.jpg",
+     "sekund": 28.8,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_094.jpg",
+     "sekund": 29.1,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_095.jpg",
+     "sekund": 29.4,
+     "texter": [
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_096.jpg",
+     "sekund": 29.7,
+     "texter": [
+      {
+       "text": "AYXSE",
+       "konfidens": 0.8
+      },
+      {
+       "text": "klarfor hva enn du moter derute.",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_097.jpg",
+     "sekund": 30,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.985
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_098.jpg",
+     "sekund": 30.3,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_099.jpg",
+     "sekund": 30.6,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.99
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_100.jpg",
+     "sekund": 30.9,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.959
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_101.jpg",
+     "sekund": 31.2,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.984
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_102.jpg",
+     "sekund": 31.5,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.99
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_103.jpg",
+     "sekund": 31.63,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.991
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.986
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_PD_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Gamasjer_NO_PD_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "SNO I SKOENE? IKKE NA LENGER.",
+       "konfidens": 0.938
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_PD_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "for vinterturen.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "for vinterturen.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "for vinterturen.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "for vinterturen.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Lei av a fa sno, regn og grus i",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "skoene hver gang du er ute?",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tettrundt",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Der gamasjene sluttertettrundt",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Der gamasjenesluttertettrundt",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tett rundt",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Der gamasjene slutter tettrundt",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "T",
+       "konfidens": 0.711
+      },
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "vristen og stopper sno, fukt og",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "grus.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.97
+      },
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.981
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.867
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "AYXSTE",
+       "konfidens": 0.782
+      },
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Vanntette,vindtette,bygget for",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "fotturer, spaserturer og",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "hundeluftingiallslagsvaer.",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "hundeluftingiallslagsvaer.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "hundeluftingi all slagsvaer.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "hundelufting i all slagsvaer.",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Detfleksiblematerialetfolger",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Detfleksiblematerialetfolger",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Det fleksible materialetfolger",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Det fleksible materialet folger",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Detfleksible materialetfolger",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "hvert skritt,uansett terreng,",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "hvert skritt, uansett terreng,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "gjorme, sno eller skog.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunderuten",
+       "konfidens": 0.95
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunderuten",
+       "konfidens": 0.947
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet avsekunder uten",
+       "konfidens": 0.921
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "Ta dempa i lopet avsekunderuten",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "Ta dem pa i lopet av sekunder uten",
+       "konfidens": 0.963
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunderuten",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "Ta dempai lopet avsekunderuten",
+       "konfidens": 0.954
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.7,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_087.jpg",
+     "sekund": 27,
+     "texter": [
+      {
+       "text": "a tenkepavatesokker.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_088.jpg",
+     "sekund": 27.3,
+     "texter": [
+      {
+       "text": "a tenkepavatesokker.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_089.jpg",
+     "sekund": 27.6,
+     "texter": [
+      {
+       "text": "a tenkepavatesokker.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_090.jpg",
+     "sekund": 27.9,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_091.jpg",
+     "sekund": 28.2,
+     "texter": [
+      {
+       "text": "a tenke pa vate sokker.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_092.jpg",
+     "sekund": 28.5,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_093.jpg",
+     "sekund": 28.8,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_094.jpg",
+     "sekund": 29.1,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_095.jpg",
+     "sekund": 29.4,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_096.jpg",
+     "sekund": 29.7,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_097.jpg",
+     "sekund": 30,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_098.jpg",
+     "sekund": 30.3,
+     "texter": [
+      {
+       "text": "Klar for snoen, klar for gjorma,",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_099.jpg",
+     "sekund": 30.6,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.79
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_100.jpg",
+     "sekund": 30.9,
+     "texter": [
+      {
+       "text": "AYNBO",
+       "konfidens": 0.532
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_101.jpg",
+     "sekund": 31.2,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.868
+      },
+      {
+       "text": "klarfor hva enn du moter derute.",
+       "konfidens": 0.945
+      }
+     ]
+    },
+    {
+     "fil": "frame_102.jpg",
+     "sekund": 31.5,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.988
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_103.jpg",
+     "sekund": 31.8,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.989
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_104.jpg",
+     "sekund": 32.1,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.989
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_105.jpg",
+     "sekund": 32.4,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.99
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_106.jpg",
+     "sekund": 32.7,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.991
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_107.jpg",
+     "sekund": 32.99,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.98
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_108.jpg",
+     "sekund": 33,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.98
+      },
+      {
+       "text": "klarforhvaenndumoterderute.",
+       "konfidens": 0.988
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_SP_1": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Ok, jeg var skeptisk til disse.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Ok, jeg var skeptisk til disse.",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Ok, jeg var skeptisk til disse.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Ok, jeg var skeptisk til disse.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Jegvar littskeptisk,erlig talt.",
+       "konfidens": 0.932
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk, erlig talt.",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk, erlig talt.",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk, aerlig talt.",
+       "konfidens": 0.965
+      },
+      {
+       "text": "毛",
+       "konfidens": 0.54
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk, aerlig talt.",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk, erlig talt.",
+       "konfidens": 0.942
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "Men jeg tok pa meg disse for",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "gaturen i morges.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "gaturen i morges.",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "gaturen i morges.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "gaturen i morges.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Ingen sno i skoene, ingen grus,",
+       "konfidens": 0.961
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "Desattpa heleveien.",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "AMSTRON",
+       "konfidens": 0.88
+      },
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "ned.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "MSIRONC",
+       "konfidens": 0.77
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "X",
+       "konfidens": 0.518
+      },
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "X",
+       "konfidens": 0.803
+      },
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "X",
+       "konfidens": 0.517
+      },
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "Enkel sak,men denfungerer",
+       "konfidens": 0.94
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "Enkel sak,mendenfungerer",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.36,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_SP_2": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": []
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Jeg testet disse pa hundeluftingen",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Jeg testet dissepa hundeluftingen",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Jeg testet dissepahundeluftingen",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "i morges.",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "Jegvar litt skeptiskfor avaere",
+       "konfidens": 0.955
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for avaere",
+       "konfidens": 0.93
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptiskfor a vaere",
+       "konfidens": 0.928
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptiskfora vaere",
+       "konfidens": 0.939
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for avaere",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for a vaere",
+       "konfidens": 0.929
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "erlig, men jeg tok pa meg disse",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "erlig, men jeg tok pa meg disse",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.948
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Etterpa,helt torre sokker,ingen",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Etterpa, helt torre sokker, ingen",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.976
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "SAMSIRONG",
+       "konfidens": 0.917
+      },
+      {
+       "text": "ned.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "BMSIRON",
+       "konfidens": 0.883
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "SRPSTRONO",
+       "konfidens": 0.791
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.977
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.988
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "samme greia.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "Enkel sak,mendenfungerer",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "Enkel sak,men denfungerer",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "Enkel sak,men denfungerer",
+       "konfidens": 0.951
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "Enkel sak,men den fungerer",
+       "konfidens": 0.946
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.7,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    },
+    {
+     "fil": "frame_087.jpg",
+     "sekund": 26.91,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_SP_2_1": {
+   "typ": "bild",
+   "filer": [
+    {
+     "fil": "Gamasjer_NO_SP_2_1.jpg",
+     "sekund": null,
+     "texter": [
+      {
+       "text": "《 Helt torre sokker -selv i",
+       "konfidens": 0.931
+      },
+      {
+       "text": "regn og leire. Kan ikke tro",
+       "konfidens": 0.996
+      },
+      {
+       "text": "Pocekuns",
+       "konfidens": 0.957
+      },
+      {
+       "text": "at jeg ventet sa lenge",
+       "konfidens": 0.991
+      },
+      {
+       "text": "med a kjope dem! 》",
+       "konfidens": 0.972
+      },
+      {
+       "text": "-Verifisert kunde,47 ar",
+       "konfidens": 0.947
+      },
+      {
+       "text": "30 dagers apent kjop",
+       "konfidens": 0.997
+      },
+      {
+       "text": "Kjop na",
+       "konfidens": 0.964
+      }
+     ]
+    }
+   ]
+  },
+  "Gamasjer_NO_SP_3": {
+   "typ": "video",
+   "filer": [
+    {
+     "fil": "frame_001.jpg",
+     "sekund": 0,
+     "texter": [
+      {
+       "text": "215",
+       "konfidens": 0.895
+      }
+     ]
+    },
+    {
+     "fil": "frame_002.jpg",
+     "sekund": 0.5,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_003.jpg",
+     "sekund": 1,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_004.jpg",
+     "sekund": 1.5,
+     "texter": [
+      {
+       "text": "Dette er tingen ingen snakker om",
+       "konfidens": 0.97
+      }
+     ]
+    },
+    {
+     "fil": "frame_005.jpg",
+     "sekund": 2,
+     "texter": [
+      {
+       "text": "Dette er tingeningen snakker om",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_006.jpg",
+     "sekund": 2.5,
+     "texter": [
+      {
+       "text": "AYXSEE",
+       "konfidens": 0.983
+      },
+      {
+       "text": "forvinterturen.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_007.jpg",
+     "sekund": 3,
+     "texter": [
+      {
+       "text": "for vinterturen.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_008.jpg",
+     "sekund": 3.3,
+     "texter": [
+      {
+       "text": "forvinterturen.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_009.jpg",
+     "sekund": 3.6,
+     "texter": [
+      {
+       "text": "forvinterturen.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_010.jpg",
+     "sekund": 3.9,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for avaere",
+       "konfidens": 0.935
+      }
+     ]
+    },
+    {
+     "fil": "frame_011.jpg",
+     "sekund": 4.2,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for avaere",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_012.jpg",
+     "sekund": 4.5,
+     "texter": [
+      {
+       "text": "Jegvar littskeptiskforavaere",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_013.jpg",
+     "sekund": 4.8,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptiskfora vaere",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_014.jpg",
+     "sekund": 5.1,
+     "texter": [
+      {
+       "text": "Jegvar litt skeptiskfor avaere",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_015.jpg",
+     "sekund": 5.4,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptisk for avaere",
+       "konfidens": 0.958
+      }
+     ]
+    },
+    {
+     "fil": "frame_016.jpg",
+     "sekund": 5.7,
+     "texter": [
+      {
+       "text": "Jeg var litt skeptiskfora vaere",
+       "konfidens": 0.937
+      }
+     ]
+    },
+    {
+     "fil": "frame_017.jpg",
+     "sekund": 6,
+     "texter": [
+      {
+       "text": "erlig, men jeg tok pa meg disse",
+       "konfidens": 0.965
+      }
+     ]
+    },
+    {
+     "fil": "frame_018.jpg",
+     "sekund": 6.3,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.956
+      }
+     ]
+    },
+    {
+     "fil": "frame_019.jpg",
+     "sekund": 6.6,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.96
+      }
+     ]
+    },
+    {
+     "fil": "frame_020.jpg",
+     "sekund": 6.9,
+     "texter": [
+      {
+       "text": "erlig, men jeg tok pa meg disse",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_021.jpg",
+     "sekund": 7.2,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_022.jpg",
+     "sekund": 7.5,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_023.jpg",
+     "sekund": 7.8,
+     "texter": [
+      {
+       "text": "aerlig, men jeg tok pa meg disse",
+       "konfidens": 0.962
+      }
+     ]
+    },
+    {
+     "fil": "frame_024.jpg",
+     "sekund": 8.1,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_025.jpg",
+     "sekund": 8.4,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_026.jpg",
+     "sekund": 8.7,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.981
+      }
+     ]
+    },
+    {
+     "fil": "frame_027.jpg",
+     "sekund": 9,
+     "texter": [
+      {
+       "text": "for turen i morges.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_028.jpg",
+     "sekund": 9.3,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_029.jpg",
+     "sekund": 9.6,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_030.jpg",
+     "sekund": 9.9,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_031.jpg",
+     "sekund": 10.2,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_032.jpg",
+     "sekund": 10.5,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_033.jpg",
+     "sekund": 10.8,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.984
+      }
+     ]
+    },
+    {
+     "fil": "frame_034.jpg",
+     "sekund": 11.1,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.983
+      }
+     ]
+    },
+    {
+     "fil": "frame_035.jpg",
+     "sekund": 11.4,
+     "texter": [
+      {
+       "text": "Vatt, gjormete, sno overalt.",
+       "konfidens": 0.995
+      }
+     ]
+    },
+    {
+     "fil": "frame_036.jpg",
+     "sekund": 11.7,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_037.jpg",
+     "sekund": 12,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_038.jpg",
+     "sekund": 12.3,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_039.jpg",
+     "sekund": 12.6,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.98
+      }
+     ]
+    },
+    {
+     "fil": "frame_040.jpg",
+     "sekund": 12.9,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.971
+      }
+     ]
+    },
+    {
+     "fil": "frame_041.jpg",
+     "sekund": 13.2,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_042.jpg",
+     "sekund": 13.5,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_043.jpg",
+     "sekund": 13.8,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.979
+      }
+     ]
+    },
+    {
+     "fil": "frame_044.jpg",
+     "sekund": 14.1,
+     "texter": [
+      {
+       "text": "Etterpa: helt torre sokker, ingen",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_045.jpg",
+     "sekund": 14.4,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.966
+      }
+     ]
+    },
+    {
+     "fil": "frame_046.jpg",
+     "sekund": 14.7,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_047.jpg",
+     "sekund": 15,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.968
+      }
+     ]
+    },
+    {
+     "fil": "frame_048.jpg",
+     "sekund": 15.3,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_049.jpg",
+     "sekund": 15.6,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.978
+      }
+     ]
+    },
+    {
+     "fil": "frame_050.jpg",
+     "sekund": 15.9,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.959
+      }
+     ]
+    },
+    {
+     "fil": "frame_051.jpg",
+     "sekund": 16.2,
+     "texter": [
+      {
+       "text": "sno i skoene, ingen grus,",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_052.jpg",
+     "sekund": 16.5,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_053.jpg",
+     "sekund": 16.8,
+     "texter": [
+      {
+       "text": "ingenting.",
+       "konfidens": 0.964
+      }
+     ]
+    },
+    {
+     "fil": "frame_054.jpg",
+     "sekund": 17.1,
+     "texter": [
+      {
+       "text": "De sattpa heleveien.",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_055.jpg",
+     "sekund": 17.4,
+     "texter": [
+      {
+       "text": "De sattpa heleveien.",
+       "konfidens": 0.943
+      }
+     ]
+    },
+    {
+     "fil": "frame_056.jpg",
+     "sekund": 17.7,
+     "texter": [
+      {
+       "text": "Desattpa heleveien.",
+       "konfidens": 0.967
+      }
+     ]
+    },
+    {
+     "fil": "frame_057.jpg",
+     "sekund": 18,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_058.jpg",
+     "sekund": 18.3,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.99
+      }
+     ]
+    },
+    {
+     "fil": "frame_059.jpg",
+     "sekund": 18.6,
+     "texter": [
+      {
+       "text": "Desattpaheleveien.",
+       "konfidens": 0.982
+      }
+     ]
+    },
+    {
+     "fil": "frame_060.jpg",
+     "sekund": 18.9,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_061.jpg",
+     "sekund": 19.2,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.974
+      }
+     ]
+    },
+    {
+     "fil": "frame_062.jpg",
+     "sekund": 19.5,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_063.jpg",
+     "sekund": 19.8,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_064.jpg",
+     "sekund": 20.1,
+     "texter": [
+      {
+       "text": "Ikke noe styr, ingenting som gled",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_065.jpg",
+     "sekund": 20.4,
+     "texter": [
+      {
+       "text": "SRMSTRONG",
+       "konfidens": 0.842
+      },
+      {
+       "text": "ned.",
+       "konfidens": 0.997
+      }
+     ]
+    },
+    {
+     "fil": "frame_066.jpg",
+     "sekund": 20.7,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.992
+      }
+     ]
+    },
+    {
+     "fil": "frame_067.jpg",
+     "sekund": 21,
+     "texter": [
+      {
+       "text": "SAMSIR",
+       "konfidens": 0.88
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.993
+      }
+     ]
+    },
+    {
+     "fil": "frame_068.jpg",
+     "sekund": 21.3,
+     "texter": [
+      {
+       "text": "IRSTROND",
+       "konfidens": 0.684
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_069.jpg",
+     "sekund": 21.6,
+     "texter": [
+      {
+       "text": "ARESTRONS",
+       "konfidens": 0.764
+      },
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.975
+      }
+     ]
+    },
+    {
+     "fil": "frame_070.jpg",
+     "sekund": 21.9,
+     "texter": [
+      {
+       "text": "Na tar jeg dem med hver gang.",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_071.jpg",
+     "sekund": 22.2,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.989
+      }
+     ]
+    },
+    {
+     "fil": "frame_072.jpg",
+     "sekund": 22.5,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.986
+      }
+     ]
+    },
+    {
+     "fil": "frame_073.jpg",
+     "sekund": 22.8,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_074.jpg",
+     "sekund": 23.1,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.973
+      }
+     ]
+    },
+    {
+     "fil": "frame_075.jpg",
+     "sekund": 23.4,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.985
+      }
+     ]
+    },
+    {
+     "fil": "frame_076.jpg",
+     "sekund": 23.7,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.969
+      }
+     ]
+    },
+    {
+     "fil": "frame_077.jpg",
+     "sekund": 24,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_078.jpg",
+     "sekund": 24.3,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.972
+      }
+     ]
+    },
+    {
+     "fil": "frame_079.jpg",
+     "sekund": 24.6,
+     "texter": [
+      {
+       "text": "Skogen, hundeturen, vandringen,",
+       "konfidens": 0.987
+      }
+     ]
+    },
+    {
+     "fil": "frame_080.jpg",
+     "sekund": 24.9,
+     "texter": [
+      {
+       "text": "sammenhengen.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_081.jpg",
+     "sekund": 25.2,
+     "texter": [
+      {
+       "text": "sammenhengen.",
+       "konfidens": 0.998
+      }
+     ]
+    },
+    {
+     "fil": "frame_082.jpg",
+     "sekund": 25.5,
+     "texter": [
+      {
+       "text": "sammenhengen.",
+       "konfidens": 0.999
+      }
+     ]
+    },
+    {
+     "fil": "frame_083.jpg",
+     "sekund": 25.8,
+     "texter": [
+      {
+       "text": "En enkel ting, men den fungerer",
+       "konfidens": 0.944
+      }
+     ]
+    },
+    {
+     "fil": "frame_084.jpg",
+     "sekund": 26.1,
+     "texter": [
+      {
+       "text": "En enkel ting,men denfungerer",
+       "konfidens": 0.941
+      }
+     ]
+    },
+    {
+     "fil": "frame_085.jpg",
+     "sekund": 26.4,
+     "texter": [
+      {
+       "text": "En enkel ting, men den fungerer",
+       "konfidens": 0.949
+      }
+     ]
+    },
+    {
+     "fil": "frame_086.jpg",
+     "sekund": 26.7,
+     "texter": [
+      {
+       "text": "En enkel ting, men den fungerer",
+       "konfidens": 0.933
+      }
+     ]
+    },
+    {
+     "fil": "frame_087.jpg",
+     "sekund": 27,
+     "texter": [
+      {
+       "text": "En enkel ting, men den fungerer",
+       "konfidens": 0.957
+      }
+     ]
+    },
+    {
+     "fil": "frame_088.jpg",
+     "sekund": 27.3,
+     "texter": [
+      {
+       "text": "En enkel ting,men den fungerer",
+       "konfidens": 0.953
+      }
+     ]
+    },
+    {
+     "fil": "frame_089.jpg",
+     "sekund": 27.6,
+     "texter": [
+      {
+       "text": "En enkel ting,men den fungerer",
+       "konfidens": 0.952
+      }
+     ]
+    },
+    {
+     "fil": "frame_090.jpg",
+     "sekund": 27.9,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.994
+      }
+     ]
+    },
+    {
+     "fil": "frame_091.jpg",
+     "sekund": 28.2,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.991
+      }
+     ]
+    },
+    {
+     "fil": "frame_092.jpg",
+     "sekund": 28.28,
+     "texter": [
+      {
+       "text": "faktisk.",
+       "konfidens": 0.996
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

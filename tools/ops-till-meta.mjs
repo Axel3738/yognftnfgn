@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// ops-till-meta.mjs — laddar upp EN creative LIVE i en OPS-butiks kampanj i det
-// gemensamma OPS-kontot MagiBorsten DK 915422744950975 (SE och NO i samma konto,
-// separata kampanjer `<PREFIX>_SE_…` / `<PREFIX>_NO_…`, CBO, ett adset per koncept).
+// ops-till-meta.mjs — laddar upp EN creative LIVE i en OPS-butiks kampanj på
+// MARKNADENS annonskonto (factory/opsmarknader.mjs): SE och NO i det gemensamma
+// OPS-kontot MagiBorsten DK 915422744950975, US i Magiborsten UK 1107817401910319
+// (Axels beslut 2026-09-16). Separata kampanjer `<PREFIX>_SE_…` / `_NO_` / `_US_`,
+// CBO, ett adset per koncept.
 //
-//   node tools/ops-till-meta.mjs <nyckel> --marknad SE|NO --namn <annonsnamn> --fil <sökväg>
+//   node tools/ops-till-meta.mjs <nyckel> --marknad SE|NO|US --namn <annonsnamn> --fil <sökväg>
 //        --primar "<primary text>" --rubrik "<headline>" [--beskrivning "<text>"]
 //        [--lank <url>] [--kampanj <id>] [--torr] [--json]
 //
@@ -11,8 +13,8 @@
 // och factory/register.mjs (butiken, kontospärren, prefixet).
 //
 // SPÄRRAR SOM INTE GÅR ATT FLAGGA BORT:
-//  1. Bara OPS-kontot 915422744950975. Bäverbutiken (1867947880635861, "MagiBorsten"
-//     utan DK) nekas alltid — namnen är nästan identiska, verksamheterna olika.
+//  1. Bara marknadens OPS-konto (opsmarknader.mjs). Bäverbutiken (1867947880635861,
+//     "MagiBorsten" utan DK) nekas alltid — namnen är nästan identiska, verksamheterna olika.
 //  2. Exakt EN aktiv kampanj för butiken på marknaden. Noll eller flera = stopp.
 //     PAUSED med spend är ett beslut (avvecklad) — dit laddas inget upp.
 //  3. Marknadskoden i annonsnamnet måste matcha --marknad. NO-namn i SE-kampanj är
@@ -36,9 +38,11 @@ import {
   säkerställProxy, api, alla, kampanjUtfall, hittaEllerSkapaAdset, laddaUppBild,
   laddaUppVideo, väntaPåThumb, ärvSidaOchIg, skapaAnnons, aktivera, ingaEnhancements,
 } from './meta-lib.mjs';
-import { laddaButik, sakerstallKonto, tillhorButiken, OPS_ANNONSKONTO } from '../factory/register.mjs';
+import { laddaButik, sakerstallKonto, annonskontoFor, tillhorButiken, OPS_ANNONSKONTO } from '../factory/register.mjs';
 import { valjKampanjer } from '../factory/budgetrond.mjs';
+import { utanSidospar } from './lib/sidokampanjer.mjs';
 import { filtreraPaMarknad, marknadskoderI, MARKNADSKODER } from '../factory/skalning.mjs';
+import { OPS_MARKNADSKODER, marknadFor, marknadslank } from '../factory/opsmarknader.mjs';
 
 // ------------------------------------------------------------- ren logik
 // Allt här nedanför är fritt från nät och fs — det är det som testas.
@@ -65,6 +69,10 @@ export function konceptUrNamn(namn) {
   if (fält.length < 2) return null;
   let i = 1;
   if (MARKNADSKODER.includes(fält[i].toUpperCase())) i += 1;
+  // Tvådelat prefix (DryTrek_Damasker_PD_14_1, mätt 2026-09-13): ett
+  // produktsegment med fem eller fler bokstäver hoppas över när fältet efter
+  // det är en kod. Ett numeriskt fält gissas fortfarande aldrig till kod.
+  if (/^[A-Za-zÅÄÖåäö]{5,}$/.test(fält[i] ?? '') && /^[A-Za-z]{1,4}$/.test(fält[i + 1] ?? '')) i += 1;
   const kandidat = fält[i] ?? '';
   return /^[A-Za-z]{1,4}$/.test(kandidat) ? kandidat.toUpperCase() : null;
 }
@@ -178,14 +186,26 @@ export function byggSpec({ typ, pageId, igId = null, media, primär, rubrik, bes
  *   marknad      SE | NO | …
  * Returnerar { kampanj, kandidater, skal }: kampanj är null när valet inte är entydigt.
  */
-export function valjEnKampanj({ kampanjer, prefix, annonsrader = [], marknad }) {
-  const val = valjKampanjer(kampanjer ?? [], prefix, annonsrader);
+export function valjEnKampanj({ kampanjer, prefix, annonsrader = [], marknad, kampanjbaser = [] }) {
+  const val = valjKampanjer(kampanjer ?? [], prefix, annonsrader, kampanjbaser);
   const m = filtreraPaMarknad(val.butikens.map((k) => ({ ...k, campaign_name: k.name })), marknad);
   const paMarknad = m.behall;
-  const aktiva = paMarknad.filter((k) => k.status === 'ACTIVE');
+  // Samma sidospårsregel som i ops-leveranskon: en kampanj vars namn bär
+  // LISTICLE är ett eget spår med egen landningssida, inte standardmålet.
+  const { kvar: aktiva, bortsallade: sidospar } = utanSidospar(paMarknad.filter((k) => k.status === 'ACTIVE'));
   const lista = (l) => l.map((k) => `${k.name} (${k.id}, ${k.status})`).join(' · ');
   if (aktiva.length === 1) {
-    return { kampanj: aktiva[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null };
+    return {
+      kampanj: aktiva[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null,
+      ...(sidospar.length ? { sidospar } : {}),
+    };
+  }
+  if (aktiva.length === 0 && paMarknad.length === 1) {
+    // Exakt en kampanj och den är PAUSED: utfallet läses live efteråt —
+    // spend > 0 är avvecklad och stoppar; utan spend är den nybyggd och
+    // får annonsen (kampanjen rörs aldrig, inget spenderar förrän ägaren
+    // slår på den). Samma regel som valjMalkampanj i ops-leveranskon.
+    return { kampanj: paMarknad[0], kandidater: paMarknad, butikens: val.butikens, baraViaAnnons: val.baraViaAnnons, skal: null, pausad: true };
   }
   if (aktiva.length === 0) {
     const skal = paMarknad.length
@@ -243,7 +263,8 @@ async function huvud() {
   if (!process.env.META_ACCESS_TOKEN) stopp('META_ACCESS_TOKEN saknas i miljön.');
 
   const marknad = String(args.marknad ?? '').toUpperCase();
-  if (!MARKNADSKODER.includes(marknad)) stopp(`Ange --marknad SE|NO (fick "${args.marknad ?? ''}").`);
+  if (!MARKNADSKODER.includes(marknad) || !OPS_MARKNADSKODER.includes(marknad)) stopp(`Ange --marknad ${OPS_MARKNADSKODER.join('|')} (fick "${args.marknad ?? ''}").`);
+  const marknaden = marknadFor(marknad);
   const namn = args.namn;
   const fil = args.fil;
   const primär = args.primar;
@@ -260,10 +281,14 @@ async function huvud() {
   //    OPS-kravet står här en gång till med klartext — det här verktyget skriver.
   const butik = laddaButik(nyckel);
   const { post } = butik;
-  const konto = sakerstallKonto(post);
-  if (konto !== OPS_ANNONSKONTO) stopp(`${post.nyckel} pekar på konto ${konto}, inte OPS-kontot ${OPS_ANNONSKONTO}. Avbryter — fel annonskonto kostar riktiga pengar.`);
+  const baskonto = sakerstallKonto(post);
+  if (baskonto !== OPS_ANNONSKONTO) stopp(`${post.nyckel} pekar på konto ${baskonto}, inte OPS-kontot ${OPS_ANNONSKONTO}. Avbryter — fel annonskonto kostar riktiga pengar.`);
+  // Kontot är PER MARKNAD (factory/opsmarknader.mjs): SE/NO i OPS-kontot, US i
+  // Magiborsten UK. Allt nedan — kampanj, dubblett, media, annons — går mot
+  // marknadens konto, aldrig mot butikens baskonto.
+  const konto = annonskontoFor(post, marknad);
   if (!butik.prefix) stopp(`${post.nyckel}: ${butik.prefixfel}`);
-  logg(`\n=== ops-till-meta — ${post.brand} (${post.nyckel}) · marknad ${marknad} · konto ${konto}${TORR ? ' · TORRKÖRNING (inget skrivs)' : ''} ===`);
+  logg(`\n=== ops-till-meta — ${post.brand} (${post.nyckel}) · marknad ${marknad} · konto ${konto} (${marknaden.kontonamn})${TORR ? ' · TORRKÖRNING (inget skrivs)' : ''} ===`);
   logg(`1. Butik: prefix ${butik.prefix.join(' · ')} · annons "${namn}" · ${typ} ${basename(fil)} (${(statSync(fil).size / 1048576).toFixed(2)} MB)`);
 
   // 3. Marknadskoll på namnet — före något nätanrop, den är gratis.
@@ -279,19 +304,26 @@ async function huvud() {
   //    ut kampanjen i flerproduktsbutiker, och hela listan är dubblettspärren.
   const allaAnnonser = await alla(`act_${konto}/ads`, { fields: 'id,name,campaign_id,effective_status' });
   const butikens = allaAnnonser.filter((a) => tillhorButiken(a.name, butik.prefix));
+  // Kampanjnamnets bas (kampanjbasFor) fångar en TOM kampanj utan annonser —
+  // den första US-annonsen går alltid in i en sådan.
+  let kampanjbaser = [];
+  try {
+    const { kampanjbasFor } = await import('../factory/kampanj.mjs');
+    if (butik.produkt) kampanjbaser = [kampanjbasFor({ brand: post.brand, marknad, produkt: butik.produkt })];
+  } catch (e) { logg(`   ⚠ kampanjbas: ${e.message}`); }
   let kampanj;
   if (args.kampanj) {
     kampanj = await api(String(args.kampanj), { params: { fields: KAMPANJFÄLT } });
-    if (String(kampanj.account_id) !== OPS_ANNONSKONTO) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte OPS-kontot ${OPS_ANNONSKONTO}. Avbryter.`);
-    const v = valjKampanjer([kampanj], butik.prefix, butikens);
-    if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar inte med ${butik.prefix.join(' / ')} och ingen annons med prefixet ligger där.`);
+    if (String(kampanj.account_id) !== konto) stopp(`Kampanj ${args.kampanj} ligger på konto ${kampanj.account_id}, inte marknadens konto ${konto} (${marknaden.kontonamn}). Avbryter.`);
+    const v = valjKampanjer([kampanj], butik.prefix, butikens, kampanjbaser);
+    if (!v.butikens.length) stopp(`Kampanj "${kampanj.name}" (${kampanj.id}) tillhör inte ${post.brand}: namnet börjar varken med ${butik.prefix.join(' / ')} eller kampanjbasen ${kampanjbaser.join(' / ') || '(saknas)'}, och ingen annons med prefixet ligger där.`);
     const m = filtreraPaMarknad([{ ...kampanj, campaign_name: kampanj.name }], marknad);
     if (!m.behall.length) stopp(`Kampanj "${kampanj.name}" ligger på marknad ${Object.keys(m.bortfiltrerade).join('/')}, inte ${marknad}.`);
     logg(`2. Kampanj (--kampanj): "${kampanj.name}" (${kampanj.id}) ${kampanj.status}/${kampanj.effective_status}${v.baraViaAnnons.length ? ' — matchar via annonserna, inte namnet' : ''}`);
   } else {
     const kampanjer = await alla(`act_${konto}/campaigns`, { fields: KAMPANJFÄLT });
-    const val = valjEnKampanj({ kampanjer, prefix: butik.prefix, annonsrader: butikens, marknad });
-    logg(`2. Kampanjer: ${kampanjer.length} i kontot · ${val.butikens.length} är ${post.brand}s · ${val.kandidater.length} på marknad ${marknad}${val.baraViaAnnons.length ? ` · via annonserna: ${val.baraViaAnnons.join(' · ')}` : ''}`);
+    const val = valjEnKampanj({ kampanjer, prefix: butik.prefix, annonsrader: butikens, marknad, kampanjbaser });
+    logg(`2. Kampanjer: ${kampanjer.length} i kontot · ${val.butikens.length} är ${post.brand}s · ${val.kandidater.length} på marknad ${marknad}${val.baraViaAnnons.length ? ` · via annonserna: ${val.baraViaAnnons.join(' · ')}` : ''}${val.pausad ? ' · enda kandidaten är PAUSED (utfallet läses live nedan)' : ''}`);
     for (const k of val.kandidater) logg(`   ${k.status === 'ACTIVE' ? '▶' : '⏸'} ${k.name} (${k.id}) ${k.status}/${k.effective_status}`);
     if (!val.kampanj) stopp(val.skal);
     kampanj = val.kampanj;
@@ -315,11 +347,26 @@ async function huvud() {
 
   // 5b. Adsetet: exakt namn, annars klon av nyaste syskonet (född PAUSED).
   const adsetnamn = adsetNamn(kampanj.name, koncept);
-  const { adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, torr: TORR });
+  // koncept: hittar även kampanjens egen konvention (DRYTREK_SE_PD) och döper
+  // ett nytt adset efter den, så ett koncept aldrig får två adsets.
+  const { adset, skapad, mall } = await hittaEllerSkapaAdset({ kampanjId: kampanj.id, act: konto, namn: adsetnamn, koncept, torr: TORR });
   logg(`5. Koncept ${koncept} → adset "${adset.name}" (${adset.id})${skapad ? ` — ${TORR ? 'skulle skapas' : 'nyskapat'} som klon av "${mall}", föds PAUSED` : ` — finns, ${adset.status}`}`);
 
-  // 6. Sida + IG, länk och DSA ur kampanjens befintliga annonser.
-  const { pageId, igId } = await ärvSidaOchIg(kampanj.id);
+  // 6. Sida + IG, länk och DSA ur kampanjens befintliga annonser. En NY
+  //    marknads kampanj (US, byggd tom av kampanj.mjs --tom) har inga annonser
+  //    att ärva ur — då gäller produktfilens sida (samma Meta-sida för alla
+  //    marknader) och marknadens standardlänk. Aldrig en gissning: saknas
+  //    page_id i produktfilen stoppar det.
+  let pageId;
+  let igId = null;
+  let sidaKalla = 'ärvd';
+  try {
+    ({ pageId, igId } = await ärvSidaOchIg(kampanj.id));
+  } catch (e) {
+    pageId = String(butik.produkt?.meta?.page_id ?? '');
+    if (!pageId) stopp(`${e.message} Produktfilen saknar dessutom meta.page_id — sidan går inte att veta.`);
+    sidaKalla = 'produktfilen (kampanjen har inga annonser än)';
+  }
   let kampanjensAnnonser;
   let dsaLäst = true;
   try {
@@ -329,10 +376,18 @@ async function huvud() {
     logg(`   ⚠ DSA-fälten gick inte att läsa (${e.message}) — läser om utan dem`);
     kampanjensAnnonser = await alla(`${kampanj.id}/ads`, { fields: ANNONSFÄLT_KAMPANJ }, 50);
   }
-  const länk = args.lank || plockaLank(kampanjensAnnonser);
+  let länk = args.lank || plockaLank(kampanjensAnnonser);
+  let lankKalla = args.lank ? '--lank' : 'ärvd';
+  if (!länk) {
+    try {
+      const handle = butik.produkt?.produkt?.handle || butik.produkt?.produkt?.id || post.id;
+      länk = marknadslank(butik.butik, { handle, kod: marknad });
+      lankKalla = `standardlänk för ${marknad}`;
+    } catch { /* stoppet nedan säger vad som saknas */ }
+  }
   if (!länk) stopp(`Ingen landningssida: --lank saknas och ingen annons i "${kampanj.name}" bär en länk. Ange --lank <produktsidans url>.`);
   const dsa = dsaLäst ? plockaDsa(kampanjensAnnonser) : null;
-  logg(`6. Sida ${pageId}${igId ? ` + IG ${igId}` : ' (ingen IG)'} · länk ${länk}${args.lank ? ' (--lank)' : ' (ärvd)'} · DSA ${dsa ? `beneficiary "${dsa.beneficiary}" / payor "${dsa.payor}" (ärvd)` : 'saknas — skickar inget'}`);
+  logg(`6. Sida ${pageId} (${sidaKalla})${igId ? ` + IG ${igId}` : ' (ingen IG)'} · länk ${länk} (${lankKalla}) · DSA ${dsa ? `beneficiary "${dsa.beneficiary}" / payor "${dsa.payor}" (ärvd)` : 'saknas — skickar inget'}`);
 
   // 7–8. Media + spec.
   let media;

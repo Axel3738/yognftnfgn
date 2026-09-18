@@ -63,6 +63,23 @@ export function arSommartid(datum) {
   return datum >= sistaSondagen(2) && datum < sistaSondagen(9);
 }
 
+/** Cronens veckodagsfält förskjutet `skifte` dagar (−1 = dagen före i UTC).
+ *  '*' och intervall som '1-5' lämnas orörda utan skifte; med skifte skrivs
+ *  intervallet ut som lista. Ren. */
+export function skiftaVeckodagar(dagar, skifte = 0) {
+  const d = String(dagar ?? '*').trim();
+  if (!skifte || d === '*') return d;
+  const lista = [];
+  for (const del of d.split(',')) {
+    const m = del.trim().match(/^(\d)(?:-(\d))?$/);
+    if (!m) throw new Error(`Veckodagsfältet "${dagar}" går inte att förskjuta — skriv dagarna som tal (0–6) eller listor (1,4).`);
+    const fran = Number(m[1]);
+    const till = m[2] !== undefined ? Number(m[2]) : fran;
+    for (let x = fran; x <= till; x++) lista.push(((x + skifte) % 7 + 7) % 7);
+  }
+  return [...new Set(lista)].sort((a, b) => a - b).join(',');
+}
+
 /** Svensk klockslag → cron i UTC. Returnerar BÅDA halvåren, för en cron kan
  *  bara stå för ett av dem — och den som glömmer det får en rutin som går fel
  *  timme halva året. */
@@ -74,11 +91,12 @@ export function tillCron(svenskTid, { dagar = '*', datum = new Date() } = {}) {
 
   const cronFor = (offset) => {
     // Dras timmen under noll hamnar körningen dagen före — det syns i
-    // veckodagsfältet och får aldrig tappas bort tyst.
+    // veckodagsfältet och får aldrig tappas bort tyst. Bär cronen veckodagar
+    // flyttas de med: måndag 00:30 svensk tid är söndag 22:30 UTC.
     const utcTim = tim - offset;
     const dagskifte = utcTim < 0 ? -1 : utcTim > 23 ? 1 : 0;
     return {
-      cron: `${min} ${((utcTim % 24) + 24) % 24} * * ${dagar}`,
+      cron: `${min} ${((utcTim % 24) + 24) % 24} * * ${skiftaVeckodagar(dagar, dagskifte)}`,
       dagskifte,
     };
   };
@@ -116,7 +134,54 @@ export const BUTIKSRUTINER = Object.freeze({
   notionscalercs: { bas: '00:01', steg: 8, vad: 'Nattvakten (varje natt; briefer ons+sön, skriptet avgör)' },
   'ops-leverans': { bas: '13:40', steg: 5, vad: 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)' },
   'ops-oversatt': { bas: '15:40', steg: 5, vad: 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)' },
+  // USA (Axels beslut 2026-09-16, kontot Magiborsten UK): samma kö som NO, en
+  // timme senare så NO:s körning hunnit klart. Byggs bara för butiker vars
+  // registerpost bär US i `annonsmarknader` (kraver).
+  'ops-oversatt-us': { bas: '16:40', steg: 5, vad: 'Översättning US OPS (SE-ACTIVE to be translated → live i US-kampanjen i Magiborsten UK)', kommando: (butik) => `/ops-oversatt ${butik} --marknad US`, kraver: 'US' },
+  // Speglingen (Axels beslut 2026-09-18): produkten briefas i Bäverbutikens
+  // hub; varje NO-klar rad där laddas upp live här (SE + NO) och kopieras till
+  // butikens hub så US-rutinen 16:40 tar den till engelska. Efter Bäverbutikens
+  // /oversatt NO (15:00), före US-rutinen. Byggs bara för poster med
+  // `spegling` i register.json (kraver).
+  'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här → butikens hub för US)', kraver: 'spegling' },
+  // ⚠️ Briefgranskningen är INTE en butiksrutin sedan 2026-09-18 (kväll):
+  // OPS-projektet är nedlagt utom CaraShell, och CaraShells briefer skrivs i
+  // Bäverbutikens hubbar. `/briefgranskning` går som EN husrutin för hela
+  // Bäverbutiken (måndag + torsdag 07:00, `--dagar 1,4`) — se lista() nedan.
+  // /notionscalercs setup bygger den inte längre.
 });
+
+/** Kommandot en butiksrutin körs med. */
+export const butiksrutinKommando = (namn, butik) => (typeof BUTIKSRUTINER[namn]?.kommando === 'function' ? BUTIKSRUTINER[namn].kommando(butik) : `/${namn} ${butik}`);
+
+/** Butikens annonsmarknader ur register.json (drift), standard NO. Läser aldrig nätet. */
+export function annonsmarknaderFor(butik, fil = REGISTERFIL) {
+  try {
+    const drift = JSON.parse(readFileSync(fil, 'utf8'));
+    const hel = String(butik ?? '').trim().toLowerCase();
+    const post = drift.poster?.[hel] ?? Object.entries(drift.poster ?? {}).find(([k]) => k.toLowerCase().startsWith(`${hel}/`))?.[1] ?? null;
+    const lista = Array.isArray(post?.annonsmarknader) ? post.annonsmarknader.map((k) => String(k).toUpperCase()) : [];
+    return lista.length ? lista : ['NO'];
+  } catch { return ['NO']; }
+}
+
+/** Har butiken en spegling i register.json (drift)? Läser aldrig nätet. */
+export function harSpegling(butik, fil = REGISTERFIL) {
+  try {
+    const drift = JSON.parse(readFileSync(fil, 'utf8'));
+    const hel = String(butik ?? '').trim().toLowerCase();
+    const post = drift.poster?.[hel] ?? Object.entries(drift.poster ?? {}).find(([k]) => k.toLowerCase().startsWith(`${hel}/`))?.[1] ?? null;
+    return /^[0-9a-f]{32}$/i.test(String(post?.spegling?.kalla_hub ?? '').replace(/-/g, ''));
+  } catch { return false; }
+}
+
+/** Ren regel: byggs rutinen för butiken? `kraver` är en marknadskod (US)
+ *  eller "spegling" (posten bär en källhubb). Utan kraver: alltid. */
+export function rutinGaller(rutin, { marknader = [], spegling = false } = {}) {
+  if (!rutin?.kraver) return true;
+  if (rutin.kraver === 'spegling') return Boolean(spegling);
+  return marknader.map((k) => String(k).toUpperCase()).includes(rutin.kraver);
+}
 
 /** OPS-butikerna i bokstavsordning (testbutiken är en fixtur). */
 export function opsButiker(rot = ROT) {
@@ -137,22 +202,41 @@ export function lasPlatser(fil = REGISTERFIL) {
   try { return JSON.parse(readFileSync(fil, 'utf8')).rutinplatser ?? {}; } catch { return {}; }
 }
 
-/** Platsen för en butik: den registrerade, annars första lediga heltalet. Ren. */
-export function platsFor(butik, platser = lasPlatser()) {
-  const id = String(butik ?? '').split('/')[0].trim().toLowerCase();
-  if (!id) throw new Error('Ange en butik.');
-  if (Number.isInteger(platser[id])) return { plats: platser[id], ny: false, id };
+/**
+ * Platsen för en rutinnyckel: den registrerade, annars första lediga heltalet.
+ * Ren.
+ *
+ * Nyckeln får vara ett butiks-id (`carashell`) eller `butik/produkt`
+ * (`tacklebay/fiskespohallare-4-pack`). Uppslaget görs på HELA nyckeln först
+ * och faller tillbaka på butiksdelen — så enproduktsbutikernas befintliga
+ * platser gäller oförändrat.
+ *
+ * ⚠️ `flerprodukt: true` betyder att butiken bär mer än en produkt med egna
+ * rutiner. Då ärvs ALDRIG butiksplatsen: två produkter i samma butik skulle
+ * annars få identisk cron och starta sina nattvakter på samma minut mot det
+ * delade OPS-kontot — precis den rate limit platserna finns för. Skickar
+ * anroparen inget vet funktionen inte hur många produkter butiken har, och
+ * arv är då rätt svar (det är enproduktsfallet, som är det vanliga).
+ */
+export function platsFor(butik, platser = lasPlatser(), { flerprodukt = false } = {}) {
+  const hel = String(butik ?? '').trim().toLowerCase();
+  if (!hel) throw new Error('Ange en butik.');
+  const butiksdel = hel.split('/')[0];
+  if (Number.isInteger(platser[hel])) return { plats: platser[hel], ny: false, id: hel };
+  if (!flerprodukt && Number.isInteger(platser[butiksdel])) {
+    return { plats: platser[butiksdel], ny: false, id: butiksdel, arvd: hel !== butiksdel };
+  }
   const upptagna = new Set(Object.values(platser).filter(Number.isInteger));
   let plats = 0;
   while (upptagna.has(plats)) plats += 1;
-  return { plats, ny: true, id };
+  return { plats, ny: true, id: hel };
 }
 
 /** Skriver in en ny plats i register.json. Rör aldrig en befintlig. */
-export function skrivInPlats(butik, fil = REGISTERFIL) {
+export function skrivInPlats(butik, fil = REGISTERFIL, opt = {}) {
   const drift = existsSync(fil) ? JSON.parse(readFileSync(fil, 'utf8')) : {};
   drift.rutinplatser = drift.rutinplatser ?? {};
-  const p = platsFor(butik, drift.rutinplatser);
+  const p = platsFor(butik, drift.rutinplatser, opt);
   if (p.ny) {
     drift.rutinplatser[p.id] = p.plats;
     drift.kommentar_rutinplatser = drift.kommentar_rutinplatser
@@ -172,20 +256,40 @@ export function plusMinuter(tid, minuter) {
 
 /** Svensk tid för en butiks rutin: bastiden + butikens plats × steget.
  *  Butiksnyckeln får vara `butik/produkt` — platsen räknas på butiksdelen. */
-export function tidFor(kommando, butik, platser = lasPlatser()) {
+export function tidFor(kommando, butik, platser = lasPlatser(), opt = {}) {
   const r = BUTIKSRUTINER[kommandonamn(kommando)];
   if (!r) throw new Error(`"${kommando}" är ingen butiksrutin — kända: ${Object.keys(BUTIKSRUTINER).join(', ')}.`);
-  return plusMinuter(r.bas, platsFor(butik, platser).plats * r.steg);
+  return plusMinuter(r.bas, platsFor(butik, platser, opt).plats * r.steg);
+}
+
+/**
+ * Rutinnycklar som skulle dela minut med `nyckel`. Ren.
+ * `andra` = övriga nycklar som har rutiner (butiks-id eller butik/produkt).
+ * Två rutiner på samma minut mot det delade OPS-kontot är den rate limit
+ * platserna finns för, och den syns bara som långsamma körningar.
+ */
+export function minutkrockar(nyckel, andra = [], platser = lasPlatser(), opt = {}) {
+  const min = platsFor(nyckel, platser, opt).plats;
+  const hel = String(nyckel ?? '').trim().toLowerCase();
+  return andra
+    .map((a) => String(a ?? '').trim().toLowerCase())
+    .filter((a) => a && a !== hel)
+    .filter((a) => platsFor(a, platser).plats === min);
 }
 
 /** Alla tre tiderna för en butik, med cron för båda halvåren. */
-export function tiderFor(butik, { platser = lasPlatser(), datum = new Date() } = {}) {
-  const p = platsFor(butik, platser);
-  return Object.keys(BUTIKSRUTINER).map((namn) => {
-    const tid = tidFor(namn, butik, platser);
-    const c = tillCron(tid, { datum });
-    return { kommando: `/${namn} ${butik}`, tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
-  });
+export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false, annonsmarknader = null, spegling = null } = {}) {
+  const p = platsFor(butik, platser, { flerprodukt });
+  const marknader = (annonsmarknader ?? annonsmarknaderFor(butik)).map((k) => String(k).toUpperCase());
+  const harSpegel = spegling ?? harSpegling(butik);
+  return Object.keys(BUTIKSRUTINER)
+    .filter((namn) => rutinGaller(BUTIKSRUTINER[namn], { marknader, spegling: harSpegel }))
+    .map((namn) => {
+      const tid = tidFor(namn, butik, platser, { flerprodukt });
+      const dagar = BUTIKSRUTINER[namn].dagar ?? '*';
+      const c = tillCron(tid, { datum, dagar });
+      return { kommando: butiksrutinKommando(namn, butik), tid, dagar, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
+    });
 }
 
 // ------------------------------------------------------------------ spärrarna
@@ -209,10 +313,13 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
     hinder.push(`Du står på grenen "${gren}". Rutiner klonar main — merga dit först, annars är rutinen schemalagd men inte igång.`);
   }
 
-  // 2. Butiken måste finnas om kommandot tar en.
+  // 2. Butiken måste finnas om kommandot tar en. En flerproduktsbutik körs per
+  //    produktnyckel (`carashell/termoskyddet`), och butiksfilen heter då
+  //    fortfarande `carashell.yaml` — leta på butiksdelen, inte hela nyckeln.
   if (butik) {
-    const b = join(ROT, 'factory', 'butiker', `${butik}.yaml`);
-    if (!existsSync(b)) hinder.push(`factory/butiker/${butik}.yaml finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
+    const butiksdel = String(butik).split('/')[0];
+    const b = join(ROT, 'factory', 'butiker', `${butiksdel}.yaml`);
+    if (!existsSync(b)) hinder.push(`factory/butiker/${butiksdel}.yaml finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
   }
 
   // 3. Dubbletter. Två rutiner med samma jobb kör båda, och den ena upptäcks
@@ -222,10 +329,17 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
   //    butik A:s nattvakt är ingen dubblett av butik B:s.
   const ordgrans = namn ? new RegExp(`(^|\\s|/)${escapeRegex(namn)}(\\s|$)`) : null;
   const butiksgrans = butik ? new RegExp(`(^|[\\s:/])${escapeRegex(butik)}(\\s|$)`, 'i') : null;
+  // Samma kommando + samma butik men ANNAN marknad (`--marknad US`) är en
+  // annan rutin: NO-översättningen 15:40 och US-översättningen 16:40 för samma
+  // butik är två jobb, inte en dubblett (2026-09-16).
+  const marknadAv = (t) => (/--marknad\s+([A-Za-z]{2})/.exec(String(t ?? ''))?.[1] ?? 'NO').toUpperCase();
+  const minMarknad = marknadAv(kommando);
   const likadana = rutiner.filter((r) => {
     const text = `${r.prompt || ''} ${r.name || ''}`;
     if (!ordgrans || !ordgrans.test(text)) return false;
-    return butiksgrans ? butiksgrans.test(text) : true;
+    if (butiksgrans && !butiksgrans.test(text)) return false;
+    if (namn === 'ops-oversatt' && marknadAv(r.prompt) !== minMarknad) return false;
+    return true;
   });
   if (likadana.length) {
     hinder.push(
@@ -305,18 +419,23 @@ export function nycklarFor(namn, { katalog = KOMMANDOKATALOG } = {}) {
 export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date(), katalog = KOMMANDOKATALOG, dagar = '*' }) {
   // `dagar` är cronens veckodagsfält: '*' varje dag, '1' måndagar (kundtjänstens
   // veckorapport), '1-5' vardagar. Utan det hade en veckorutin fått daglig cron.
+  // En butiksrutin som själv bär `dagar` (briefgranskningen: måndag + torsdag)
+  // får dem automatiskt — så setup inte kan glömma flaggan.
+  const namn = kommandonamn(kommando);
+  const egnaDagar = BUTIKSRUTINER[namn]?.dagar;
+  if ((dagar === '*' || dagar == null) && egnaDagar) dagar = egnaDagar;
   const tider = tillCron(tid, { datum, dagar });
   const kontroll = granska({ kommando, butik, gren, rutiner, katalog });
-  const namn = kommandonamn(kommando);
   // Nattvakten heter det den är, per butik — så listan i Routines-vyn går att
   // läsa utan att veta vad "notionscalercs" betyder.
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
-  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': 'Översättning NO' };
-  const butiksrutin = butik ? BUTIKSRUTINER[namn] ?? null : null;
+  const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
+  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
+  const butiksrutin = butik ? RUTINNAMN[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
-  const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null].filter(Boolean);
+  const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null, marknadIKommando ? `marknad:${marknadIKommando}` : null].filter(Boolean);
 
   return {
     ...tider,
@@ -382,8 +501,11 @@ function lista() {
   // 15:00) så inte alla containrar startar samtidigt.
   for (const b of butiker) kanda.push([tidFor('ops-leverans', b.replace('.yaml', '')), `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
   for (const b of butiker) kanda.push([tidFor('ops-oversatt', b.replace('.yaml', '')), `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
-
-  // Veckorutinen: bara måndagar (dagar '1'). Cronen byter halvår som de andra.
+  // Veckorutinerna. Cronen byter halvår som de andra.
+  // Briefgranskningen (Axels beslut 2026-09-18, ombyggd samma kväll till EN rutin
+  // för hela Bäverbutiken): måndag + torsdag (dagar '1,4'), alla hubbar i ett svep.
+  kanda.push(['07:00', '/briefgranskning', 'Briefgranskningen (MÅNDAG + TORSDAG): creative director-dom över senaste briefronden i varje Bäver-hub → Feedback-rad i hubben', '1,4']);
+  // Kundtjänsten: bara måndagar (dagar '1').
   kanda.push(['07:00', '/kundtjanst --alla --discord', 'Kundtjänst veckorapport (MÅNDAGAR): toppärenden + chargeback-ranking, alla brands', '1']);
 
   for (const [tid, kmd, vad, dagar = '*'] of kanda) {
@@ -402,10 +524,15 @@ if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
     // Butikens tre rutiner med egen minut per butik. Setup läser tiderna härifrån.
     const butik = flagga('tider');
     if (!opsButiker().includes(String(butik).split('/')[0].toLowerCase())) { console.error(`✗ Butiken "${butik}" finns inte i factory/butiker/ (${opsButiker().join(', ')}).`); process.exit(1); }
-    const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik) : platsFor(butik);
-    console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''} (svensk tid → cron):\n`);
-    for (const t of tiderFor(butik)) {
-      console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}`);
+    // --flerprodukt: produkt nr 2 i en butik får en EGEN plats i stället för
+    // att ärva butikens (annars startar två nattvakter samma minut mot det
+    // delade OPS-kontot — FLERPRODUKT.md, lagat 2026-09-14, CLI-flaggan
+    // 2026-09-16 när CaraShell fick sin andra produkt).
+    const flerprodukt = process.argv.includes('--flerprodukt');
+    const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik, undefined, { flerprodukt }) : platsFor(butik, undefined, { flerprodukt });
+    console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''}${p.arvd ? ' (ÄRVD av butiken — produkt nr 2 ska köras med --flerprodukt)' : ''} (svensk tid → cron):\n`);
+    for (const t of tiderFor(butik, { flerprodukt })) {
+      console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}${t.dagar !== '*' ? ` (veckodagar ${t.dagar})` : ''}`);
       console.log(`         sommar ${t.cronSommar} · vinter ${t.cronVinter}`);
     }
     console.log('\nFinns rutinen redan med en annan cron: update_trigger till den ovan — bygg aldrig om.\n');

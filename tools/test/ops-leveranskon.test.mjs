@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
-  handleUr, produktJsonUrl, prisUr, leveransText, prefixAvviker, STANDARD_STATUS,
+  handleUr, produktJsonUrl, prisUr, prisUrJsonLd, leveransText, prefixAvviker, STANDARD_STATUS,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -54,9 +54,12 @@ test('noNamn: prefix + _NO_ + resten', () => {
   assert.equal(noNamn('HeimGuard_SP_2_1 – COPY ONLY'), 'HeimGuard_NO_SP_2_1');
 });
 
-test('malNamn: SE = namnet självt, NO = noNamn', () => {
+test('malNamn: SE = namnet självt, NO = noNamn, US = _US_ (2026-09-16)', () => {
   assert.equal(malNamn('HeimGuard_SP_2_1', 'SE'), 'HeimGuard_SP_2_1');
   assert.equal(malNamn('HeimGuard_SP_2_1', 'no'), 'HeimGuard_NO_SP_2_1');
+  assert.equal(malNamn('CaraShellRoof_PD_4_1', 'US'), 'CaraShellRoof_US_PD_4_1');
+  assert.equal(STANDARD_STATUS.US, 'SE-ACTIVE to be translated');
+  assert.equal(STANDARD_STATUS.SE, 'To be Reviewed');
 });
 
 // ------------------------------------------------------------ kampanj + adset
@@ -110,10 +113,30 @@ test('valjMalkampanj: PAUSED med spend = avvecklad, aldrig mål', () => {
   assert.equal(v.kandidater[0].utfall, 'AVVECKLAD');
 });
 
-test('valjMalkampanj: PAUSED utan spend → null, VA:n slår på först', () => {
-  const v = valjMalkampanj([{ id: '1', name: 'HEIMGUARD_NO_Ny', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 }], 'NO');
+test('valjMalkampanj: exakt en PAUSED utan spend (nybyggd) → mål, med varning — kampanjen rörs inte', () => {
+  const v = valjMalkampanj([{ id: '1', name: 'CARASHELL_US_Taköverdrag | BE-ROAS 1.63 | 2026-09-16', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 }], 'US');
+  assert.equal(v.skal, null);
+  assert.deepEqual(v.kampanj, { id: '1', namn: 'CARASHELL_US_Taköverdrag | BE-ROAS 1.63 | 2026-09-16', bas: 'CARASHELL_US_Taköverdrag', status: 'PAUSED', utfall: 'PAUSAD_TOM' });
+  assert.match(v.varning, /PAUSED utan spend \(nybyggd\)/);
+  assert.match(v.varning, /rörs inte/);
+});
+
+test('valjMalkampanj: två PAUSED utan spend → null, gissar aldrig', () => {
+  const v = valjMalkampanj([
+    { id: '1', name: 'HEIMGUARD_NO_A', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+    { id: '2', name: 'HEIMGUARD_NO_B', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+  ], 'NO');
   assert.equal(v.kampanj, null);
-  assert.match(v.skal, /PAUSED utan spend/);
+  assert.match(v.skal, /2 PAUSED utan spend/);
+});
+
+test('valjMalkampanj: PAUSED utan spend bredvid en avvecklad → den tomma är mål, den avvecklade aldrig', () => {
+  const v = valjMalkampanj([
+    { id: '1', name: 'HEIMGUARD_NO_Gammal', status: 'PAUSED', spend: 900 },
+    { id: '2', name: 'HEIMGUARD_NO_Ny', status: 'PAUSED', utfall: 'PAUSAD_TOM', spend: 0 },
+  ], 'NO');
+  assert.equal(v.kampanj.id, '2');
+  assert.match(v.varning, /\+ 1 avvecklad/);
 });
 
 test('valjMalkampanj: en ACTIVE bredvid en avvecklad → den aktiva vinner', () => {
@@ -231,4 +254,82 @@ test('ommarkt: flyttad Bäverbutiks-rad får butikens prefix i målnamnet', asyn
   assert.equal(malNamn(ommarkt('Overvakningskamera_BOF_9_1', 'HeimGuard'), 'NO'), 'HeimGuard_NO_BOF_9_1');
   assert.equal(ommarkt('HeimGuard', 'HeimGuard'), 'HeimGuard');   // inget "_" — orört
   assert.equal(ommarkt('Overvakningskamera_BOF_9_1', ''), 'Overvakningskamera_BOF_9_1');
+});
+
+test('tasMedISE: To be Reviewed alltid; Creative strat review bara med butikens prefix och fil', async () => {
+  const { tasMedISE, CS_STATUS_SE } = await import('../ops-leveranskon.mjs');
+  assert.equal(CS_STATUS_SE, 'Creative strat review');
+  assert.equal(tasMedISE({ status: 'To be Reviewed', prefix_avviker: true, leverans: 'saknas' }), true);
+  assert.equal(tasMedISE({ status: 'creative strat review', prefix_avviker: false, leverans: 'drive-lank' }), true);
+  // Parkerad källrad (Rodholder_* i TackleBays hub) — Axels nej till brand-swap står.
+  assert.equal(tasMedISE({ status: 'Creative strat review', prefix_avviker: true, leverans: 'drive-lank' }), false);
+  assert.equal(tasMedISE({ status: 'Creative strat review', prefix_avviker: false, leverans: 'saknas' }), false);
+  assert.equal(tasMedISE({ status: 'Draft', prefix_avviker: false, leverans: 'notion-fil' }), false);
+  // DryTreks hub: registrets prefixfilter godtar "Damasker_…" (ärvd historik), men
+  // CS-raden måste bära brandet — Damasker_PD_10_H1 är Bäverbutikens, DryTrek_Damasker_PD_12_H1 är butikens.
+  assert.equal(tasMedISE({ namn: 'Damasker_PD_10_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), false);
+  assert.equal(tasMedISE({ namn: 'DryTrek_Damasker_PD_12_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), true);
+  assert.equal(tasMedISE({ namn: 'TackleBayRod_PD_46_H1', status: 'Creative strat review', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'TackleBay' }), true);
+  assert.equal(tasMedISE({ namn: 'Damasker_PD_10_H1', status: 'To be Reviewed', prefix_avviker: false, leverans: 'drive-lank' }, { brand: 'DryTrek' }), true);   // standardstatusen: oförändrat beteende
+  // NO-kön: standardstatusen är en annan, CS-status räknas inte där.
+  assert.equal(tasMedISE({ status: 'SE-ACTIVE to be translated', prefix_avviker: false, leverans: 'notion-fil' }, { kostatus: 'SE-ACTIVE to be translated' }), true);
+});
+
+test('tolkaNamn + hittaAdset: DryTreks tvådelade namn ger koncept PD och hittar DRYTREK_SE_PD', () => {
+  assert.deepEqual(tolkaNamn('DryTrek_Damasker_PD_14_1'), { prefix: 'DryTrek', koncept: 'PD', nummer: 14, variant: '1' });
+  assert.deepEqual(tolkaNamn('DryTrek_Damasker_FO_2_H1'), { prefix: 'DryTrek', koncept: 'FO', nummer: 2, variant: 'H1' });
+  assert.equal(tolkaNamn('Damasker_PD_10_H1').koncept, 'PD');
+  const adsets = [{ id: '1', name: 'DRYTREK_SE_SP', status: 'ACTIVE' }, { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' }];
+  assert.deepEqual(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - PD', 'PD'), { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' });
+  assert.equal(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - FO', 'FO'), null);
+});
+
+test('prisUrJsonLd: läser MARKNADENS pris och valuta ur produktsidan', () => {
+  // Riktig avläsning 2026-09-16 på drytrek.se/nb/products/damasker?country=NO.
+  // Basvalutans .json gav 389 — sidan visar 379 NOK. Det gamla verktyget
+  // stämplade "NOK" på 389:an och rapporterade ett pris som inte finns.
+  const html = '"price":"379.00","priceCurrency":"NOK" … "price":"633.00","priceCurrency":"NOK"';
+  assert.deepEqual(prisUrJsonLd(html, 'NOK'), { pris: 379, min: 379, max: 633, valuta: 'NOK', skal: null });
+});
+
+test('prisUrJsonLd: fel valuta eller ingen JSON-LD ger null MED skäl — aldrig ett tal', () => {
+  const html = '"price":"379.00","priceCurrency":"NOK"';
+  const fel = prisUrJsonLd(html, 'USD');
+  assert.equal(fel.pris, null);
+  assert.match(fel.skal, /prissätts i NOK, inte USD/);
+  const tom = prisUrJsonLd('<html>ingen strukturerad data</html>', 'NOK');
+  assert.equal(tom.pris, null);
+  assert.match(tom.skal, /ingen JSON-LD/);
+  assert.equal(prisUrJsonLd(null, 'NOK').pris, null);
+});
+
+test('valjMalkampanj: LISTICLE-kampanjen är eget spår — produktsidans kampanj vinner', () => {
+  // Mätt 2026-09-16 i CaraShells konto: två ACTIVE SE-kampanjer med nästan
+  // samma namn. Rundan stoppade och sju färdiga annonser blev stående.
+  // Axel: "det är inte 2 stycken samma, den ena går ju till en listicle" —
+  // kopian pekade på /pages/…-lagerrensning, originalet på produktsidan.
+  const val = valjMalkampanj([
+    { id: '120249121867590172', name: 'CARASHELL_SE_Taköverdraget LISTICLE', status: 'ACTIVE' },
+    { id: '120249050544990172', name: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj?.id, '120249050544990172');
+  assert.equal(val.skal, null);
+  assert.match(val.varning, /LISTICLE/);
+});
+
+test('valjMalkampanj: bär ALLA aktiva LISTICLE sållas ingen bort — stoppet står kvar', () => {
+  // Spärren får sålla, aldrig avgöra ensam: tar den sista kampanjen blir
+  // "inget att ladda upp i" ett tyst fel i stället för ett läsbart stopp.
+  const val = valjMalkampanj([
+    { id: '1', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' },
+    { id: '2', name: 'X_SE_Produkten LISTICLE 2', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj, null);
+  assert.match(val.skal, /2 ACTIVE SE-kampanjer/);
+});
+
+test('valjMalkampanj: en ensam LISTICLE-kampanj tas emot som vanligt', () => {
+  const val = valjMalkampanj([{ id: '9', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' }], 'SE');
+  assert.equal(val.kampanj?.id, '9');
+  assert.equal(val.skal, null);
 });

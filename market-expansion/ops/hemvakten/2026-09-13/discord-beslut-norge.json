@@ -1,0 +1,22 @@
+{
+  "brand": "HeimGuard",
+  "butik": "hemvakten",
+  "datum": "2026-09-13",
+  "lage": "oversatt",
+  "gjort": [
+    "Norway is switched off for now - Axel's decision after this evening's report",
+    "The 15:40 Norwegian translation routine is now disabled, so it stops reporting an empty queue every day",
+    "The NO campaign itself was not touched. It stays paused exactly as Axel left it",
+    "Sweden is unaffected: HEIMGUARD_SE is ACTIVE, the 13:40 delivery run and the nightly budget round keep going"
+  ],
+  "siffror": {},
+  "briefer": [],
+  "varningar": [
+    "4 finished rows stay in SE-ACTIVE to be translated (SP_17_H1, SP_17_H2, BOF_7_1, BOF_9_1). They are held, not lost, and go out the day Norway is switched back on",
+    "Before Norway restarts, the ad links need ?country=NO. Without it Norwegian customers see the price in SEK, which is what happened last round",
+    "Keep delivering Swedish creatives as usual - nothing changes for the editing work"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "paused until Axel says otherwise"
+}

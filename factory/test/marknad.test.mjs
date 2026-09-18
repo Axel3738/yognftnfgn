@@ -4,7 +4,27 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn } from '../marknad.mjs';
+import { norm, byggKarta, paraResurs, temaResursIds, typUrResursId, arLacka, landsnamn, landerAttLaggaTill } from '../marknad.mjs';
+import { lokalValuta, standardLocale, landsnamnSv } from '../lander.mjs';
+
+// ---- lander: fler länder i samma marknad (CaraShell 2026-09-17) ----------------
+
+test('landerAttLaggaTill: bara de länder marknaden saknar läggs till, dubbletter och skiftläge städas', () => {
+  const r = landerAttLaggaTill({ land: 'US', lander: ['gb', 'CA', 'AU', 'NZ', 'ca'] }, ['US', 'GB']);
+  assert.deepEqual(r.onskade, ['GB', 'CA', 'AU', 'NZ']);
+  assert.deepEqual(r.saknas, ['CA', 'AU', 'NZ']);
+  assert.deepEqual(r.redan, ['GB']);
+  assert.deepEqual(landerAttLaggaTill({ land: 'NO' }, ['NO']), { onskade: [], saknas: [], redan: [] });
+  assert.deepEqual(landerAttLaggaTill({ lander: ['GB'] }, undefined).saknas, ['GB']);
+});
+
+test('lander.mjs känner de engelsktalande länderna med egen valuta och locale en', () => {
+  for (const [kod, valuta, namn] of [['GB', 'GBP', 'Storbritannien'], ['CA', 'CAD', 'Kanada'], ['AU', 'AUD', 'Australien'], ['NZ', 'NZD', 'Nya Zeeland']]) {
+    assert.equal(lokalValuta(kod), valuta);
+    assert.equal(standardLocale(kod), 'en');
+    assert.equal(landsnamnSv(kod), namn);
+  }
+});
 import { malltexter, produktTexter, byggUnderlagObjekt, byggMinimalKontext, underlagsfil } from '../oversattning.mjs';
 import { granskaNoder, filtreraPaTema, arMaskinvarde, arAppcache, digestFor } from '../oversattning-granska.mjs';
 import { rabutik, raprodukt } from './hjalp.mjs';
@@ -102,9 +122,10 @@ test('arLacka: tekniska värden, lika ord och Shopifys egna rader är inga läck
   assert.equal(arLacka({ typ: 'temamall', key: 'x', value: 'Vad kunderna säger' }, samma), true);
 });
 
-test('landsnamn: kända koder på svenska, okända som versal kod', () => {
+test('landsnamn: kända koder på svenska (ur lander.mjs, USA med), okända som versal kod', () => {
   assert.equal(landsnamn('no'), 'Norge');
   assert.equal(landsnamn('DK'), 'Danmark');
+  assert.equal(landsnamn('US'), 'USA');
   assert.equal(landsnamn('xx'), 'XX');
 });
 
@@ -155,7 +176,14 @@ test('byggUnderlagObjekt: testbutiken ger stabila nycklar för produkt, metafäl
   assert.equal('metafalt.nackmagneten.opf.gif_problem' in ut, false); // url-fält översätts aldrig
   assert.equal(ut['sida.returpolicy.title'], 'Returpolicy');
   assert.equal(ut['sida.contact.title'], 'Kontakt');
-  assert.equal(ut['meny.main-menu.0'], 'Nackmagneten');
+  // Shopifys egen sida "Dina integritetsval" (skapas av Shopify med en
+  // USA-marknad, CaraShell 2026-09-16) — utan nyckel läckte den på /en OCH /nb.
+  assert.equal(ut['sida.data-sharing-opt-out.title'], 'Dina integritetsval');
+  assert.ok(ut['sida.data-sharing-opt-out.body'].includes('pc--optOutFormContainer'));
+  // Samma rader som meny.mjs huvudmenyRader: Hem först, sedan produkten —
+  // "Hem" saknade nyckel i underlaget till 2026-09-16 och läckte på /nb.
+  assert.equal(ut['meny.main-menu.0'], 'Hem');
+  assert.equal(ut['meny.main-menu.1'], 'Nackmagneten');
   assert.equal(ut['meny.footer.3'], 'Kontakt');
   assert.ok(Object.keys(ut).some((k) => k.startsWith('index.sections.')));
   assert.ok(Object.keys(ut).some((k) => k.startsWith('paket.')));
@@ -186,9 +214,10 @@ test('byggUnderlagObjekt: flerproduktsbutik får kollektion, en menyrad per prod
   const ut = byggUnderlagObjekt(byggMinimalKontext(butik, [p1, p2]));
   assert.equal(ut['kollektion.sortimentet.title'], 'Sortimentet');
   assert.equal(ut['kollektion.sortimentet.body_html'], '<p>Allt.</p>');
-  assert.equal(ut['meny.main-menu.0'], 'Sortimentet');
-  assert.equal(ut['meny.main-menu.1'], 'Nackmagneten');
-  assert.equal(ut['meny.main-menu.2'], 'Andra prylen');
+  assert.equal(ut['meny.main-menu.0'], 'Hem');
+  assert.equal(ut['meny.main-menu.1'], 'Sortimentet');
+  assert.equal(ut['meny.main-menu.2'], 'Nackmagneten');
+  assert.equal(ut['meny.main-menu.3'], 'Andra prylen');
   assert.equal(ut['produkt.andra-prylen.title'], 'Andra prylen');
   assert.ok(ut['metafalt.andra-prylen.opf.problem_rubrik']);
 });

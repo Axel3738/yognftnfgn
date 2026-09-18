@@ -16,6 +16,7 @@ import {
   OPS_ANNONSKONTO, BAVERBUTIKEN_ANNONSKONTO, CYKEL_DAGAR, TROSKEL,
   BRIEFDAGAR_STANDARD, BRIEF_IKAPP_DAGAR,
   briefantal, forbrukaBriefantal, BRIEFANTAL_KADENS, BRIEFANTAL_UTAN_REDIGERARE,
+  utmapp,
 } from '../register.mjs';
 
 const post = (extra = {}) => ({
@@ -420,11 +421,40 @@ test('hittaPost slår upp på nyckel, produkt-id, butiks-id och brand', () => {
   assert.throws(() => hittaPost('finns-inte'), /Okänd butik\/produkt/);
 });
 
-test('en flerproduktsbutik slås ALDRIG upp på butiks-id — den kastar', () => {
-  // Två produkter i TackleBay. Att gissa vilken hade gett en rond mot fel
-  // break-even, och det syns inte som ett fel.
+test('en flerproduktsbutik utan huvudprodukt slås ALDRIG upp på butiks-id — den kastar', () => {
+  // Två produkter i TackleBay, ingen `butik.huvudprodukt`. Att gissa vilken
+  // hade gett en rond mot fel break-even, och det syns inte som ett fel.
   assert.throws(() => hittaPost('tacklebay'), /matchar 2 poster/);
+  assert.throws(() => hittaPost('tacklebay'), /butik\.huvudprodukt/);
   assert.equal(hittaPost('tacklebay/fiskespohallare-4-pack').id, 'fiskespohallare-4-pack');
+});
+
+test('butik.huvudprodukt låter ett bart butiks-id (och brandet) betyda EN produkt', () => {
+  // CaraShell 2026-09-16: takskyddets tre rutiner säger `/notionscalercs
+  // carashell` och ligger på ett annat Claude-konto. Butiksfilen pekar ut
+  // takskyddet, så prompten fortsätter fungera utan att någon rör rutinerna.
+  for (const nyckel of ['carashell', 'CaraShell', 'carashell/takskyddet', 'takskyddet']) {
+    assert.equal(hittaPost(nyckel).nyckel, 'carashell/takskyddet', nyckel);
+  }
+  assert.equal(hittaPost('carashell').huvudprodukt, true);
+  assert.equal(hittaPost('carashell').enprodukt, false);
+  // Produkt 2 nås bara på sin egen nyckel — aldrig via butiks-id:t.
+  assert.equal(hittaPost('carashell/termoskyddet').huvudprodukt, false);
+  assert.equal(hittaPost('termoskyddet').nyckel, 'carashell/termoskyddet');
+});
+
+test('huvudprodukt är ren logik: två butiker med samma brand löses inte upp', () => {
+  const register = { produkter: [
+    { nyckel: 'a/x', id: 'x', butik: 'a', brand: 'Samma', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+    { nyckel: 'b/y', id: 'y', butik: 'b', brand: 'Samma', huvudprodukt: true, butiksfil: 'factory/butiker/b.yaml' },
+  ] };
+  assert.throws(() => hittaPost('Samma', register), /matchar 2 poster/);
+  // …och en butik med två huvudprodukter (felkonfig) kastar också.
+  const dubbel = { produkter: [
+    { nyckel: 'a/x', id: 'x', butik: 'a', brand: 'A', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+    { nyckel: 'a/y', id: 'y', butik: 'a', brand: 'A', huvudprodukt: true, butiksfil: 'factory/butiker/a.yaml' },
+  ] };
+  assert.throws(() => hittaPost('a', dubbel), /matchar 2 poster/);
 });
 
 test('laddaButik ger butikens egna linjer, räknade ur produktfilen — båda momsvägarna', () => {
@@ -498,9 +528,33 @@ test('briefantal väg 1: Axels överstyrning vinner över "7 utan redigerare" �
 });
 
 test('en skräpöverstyrning räknas som ingen — talet hittas aldrig på', () => {
-  for (const skrap of [null, {}, { antal: 0 }, { antal: -3 }, { antal: '21' }, { antal: 2.5 }, 'tjugoett']) {
+  // OBS: { antal: 0 } är INTE skräp sedan 2026-09-14 — det är pausen, se testerna nedan.
+  for (const skrap of [null, {}, { antal: -3 }, { antal: '21' }, { antal: 2.5 }, 'tjugoett']) {
     assert.equal(briefantal(post({ briefantal_override: skrap })).kalla, 'utan-redigerare', JSON.stringify(skrap));
   }
+});
+
+test('briefantal paus: 0 stoppar briefronden — budgetronden rörs inte', () => {
+  const b = briefantal(post({ briefantal_override: { antal: 0, engang: false, motivering: 'ingen bedömbar data än', satt: '2026-09-14' } }));
+  assert.equal(b.antal, 0, 'inga briefer läggs');
+  assert.equal(b.kalla, 'pausad');
+  assert.equal(b.pausad, true, 'rutinen läser flaggan och hoppar över briefdelen');
+  assert.match(b.skal, /PAUSAD/);
+  assert.match(b.skal, /budgetronden går ändå/i, 'skälet måste säga att budgetronden fortsätter');
+  assert.match(b.skal, /ingen bedömbar data än/, 'motiveringen följer med');
+});
+
+test('en paus står tills vidare — brief-kord får aldrig tyst starta briefarna igen', () => {
+  const rad = { briefantal_override: { antal: 0, engang: false, motivering: 'pausad', satt: '2026-09-14' } };
+  forbrukaBriefantal(rad, '2026-09-15');
+  assert.deepEqual(rad.briefantal_override, { antal: 0, engang: false, motivering: 'pausad', satt: '2026-09-14' }, 'pausen står kvar');
+  assert.equal(briefantal(rad).pausad, true, 'fortfarande pausad efter en briefrond');
+});
+
+test('de andra vägarna är aldrig pausade — flaggan går att lita på', () => {
+  assert.equal(briefantal(post()).pausad, false);
+  assert.equal(briefantal(post({ redigerare: 'Carl Vicente' })).pausad, false);
+  assert.equal(briefantal(post({ briefantal_override: { antal: 21, engang: true, motivering: 'm' } })).pausad, false);
 });
 
 test('forbrukaBriefantal: engång förbrukas av brief-kord med spår, tillsvidare står kvar', () => {
@@ -536,12 +590,32 @@ test('byggRegister väver in briefantal_override ur driftraden, skräp blir null
   assert.equal(briefantal(hitta('b/1')).antal, 7);
 });
 
-test('register.json: CatCabins första briefrond är överstyrd till 21 (Axels beslut 2026-09-12) tills brief-kord förbrukat den', () => {
+test('register.json: CatCabins briefrond är PAUSAD (Axels beslut 2026-09-14) — budgetronden går ändå', () => {
+  // Ersätter beslutet 2026-09-12 ("21 briefer första ronden trots ingen
+  // redigerare"). Det återkallades 2026-09-14: kampanjen har 1 köp på 13
+  // annonser, alltså ingen bedömbar data att brieffa ur. Axel: "vi kan nästan
+  // låta denna runna lite eftersom vi inte ens vet om den går bra — är det
+  // inte värt att spamma nya ads". Nattvaktens budgetrond rörs INTE av pausen.
   const drift = lasDrift();
   const rad = drift.poster['catcabin/utekattkojan'];
   assert.ok(rad, 'catcabin/utekattkojan saknas i register.json');
-  const o = rad.briefantal_override ?? rad.briefantal_override_forbrukad;
-  assert.ok(o, 'varken en gällande eller en förbrukad överstyrning finns — beslutet har försvunnit ur registret');
-  assert.equal(o.antal, 21);
-  assert.match(o.motivering, /2026-09-12/);
+  const o = rad.briefantal_override;
+  assert.ok(o, 'pausen har försvunnit ur registret — briefarna skulle starta igen utan beslut');
+  assert.equal(o.antal, 0, 'pausen är antal 0');
+  assert.equal(o.engang, false, 'en paus står tills vidare, annars startar brief-kord den tyst igen');
+  assert.match(o.motivering, /2026-09-14/);
+  assert.equal(briefantal(rad).pausad, true);
+});
+
+// ------------------------------------------------------------------ utmapp
+
+test('utmapp: enproduktsbutik och huvudprodukt skriver i factory/output/<butik>/, andra produkten i <butik>/<produkt>/', () => {
+  const rot = '/r';
+  assert.equal(utmapp(post(), rot), '/r/factory/output/hemvakten');
+  assert.equal(utmapp(post({ enprodukt: false, huvudprodukt: true, id: 'takskyddet', butik: 'carashell' }), rot), '/r/factory/output/carashell');
+  assert.equal(utmapp(post({ enprodukt: false, huvudprodukt: false, id: 'termoskyddet', butik: 'carashell' }), rot), '/r/factory/output/carashell/termoskyddet');
+  // Fixturer/gamla poster utan fälten: butikens mapp, aldrig ett kast på undefined.
+  assert.equal(utmapp({ nyckel: 'drytrek/damasker' }, rot), '/r/factory/output/drytrek');
+  assert.equal(utmapp({ butik: 'hemvakten' }, rot), '/r/factory/output/hemvakten');
+  assert.throws(() => utmapp({}, rot), /saknar butik/);
 });

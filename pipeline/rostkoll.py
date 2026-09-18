@@ -26,8 +26,22 @@ Fyra fel den fångar, alla verkliga HeyGen-lägen:
 
   1. TYST spår — klonen misslyckades helt.                      (ljud)
   2. LÄNGDDRIFT mot källan — rösten låter för snabb eller släpig. (ljud)
-  3. AVHUGGET SLUT — sista repliken hinner inte ta slut.         (SRT)
+  3. AVHUGGET SLUT — sista repliken hinner inte ta slut.   (SRT + ljud)
   4. TAPPAT TAL — meningar har fallit bort i översättningen.      (SRT)
+
+⚠️ Punkt 3 mäter SLUTENERGIN, inte var talet slutar (omskrivet 2026-09-15).
+Det gamla måttet letade upp var talbandets energi sist passerade 15 % av
+filens topp och jämförde marginalen med källans. Det straffade raka motsatsen
+till felet det skulle fånga: en dubb som säger sista ordet tydligt och sedan
+tystnar får en KORT marginal, medan en källa som tonar ut gradvis får en lång.
+DryTreks FO_2_H1 och SP_6_H1 stod röda i tre dygn på exakt det — SP_6:s dubb
+slutar 49 dB under sin egen median, alltså i ren tystnad. Mätt på 14 dubbar
+plus 14 kapade kopior av dem: hela dubbar ligger på −141…0,0 dB, kapade på
++0,8…+55 dB. Tröskeln 3 dB ger noll falsklarm på de 14. Kapas kopian MITT I ETT
+LJUD fångas 12 av 14; kapas den på en fast tidpunkt som ofta hamnar i en paus
+fångas 8 — en kapning i tystnad hörs inte och ska inte flaggas. De två som
+aldrig fångas har en KÄLLA som själv slutar på full volym och rapporteras som
+omätbara med orsak, aldrig som gröna.
 
 ⚠️ Skriptet hör inte om rösten låter TREVLIG — det hör om den är trasig.
 Grönt betyder "inga mätbara fel", inte "godkänd". Lyssna alltid på minst
@@ -44,7 +58,10 @@ from pathlib import Path
 MAX_LANGDDRIFT = 0.15        # >15 % skillnad i längd hörs som fel tempo
 MIN_MEDELVOLYM_DB = -45.0    # under detta är spåret i praktiken tyst
 MAX_TALTAPP = 0.40           # översättningen får tappa max 40 % av källans tal
-SLUTMARGINAL_S = 0.15        # sista repliken närmare slutet än så = avhuggen
+SLUTMARGINAL_S = 0.15        # sista repliken närmare slutet än så = värd att mäta i ljudet
+MAX_SLUTENERGI_DIFF_DB = 3.0 # dubben får låta 3 dB högre än källan i sista 100 ms
+KALLA_SLUTAR_HOGT_DB = 5.0   # över detta slutar källan själv på full volym → omätbart
+SLUT_TYST_DB = -6.0          # under detta har ljudet tonat ut → kan inte vara avhugget
 
 
 def kor(argv):
@@ -73,29 +90,42 @@ def volym(fil):
     return (float(m.group(1)) if m else None, float(x.group(1)) if x else None)
 
 
-def talslut(fil):
-    """När talbandets energi (300–3400 Hz) sist ligger över 15 % av toppen, i sekunder.
-    Mäts i 50 ms-fönster. None om ljudet inte gick att läsa.
+def slutenergi(fil):
+    """Hur högljutt filen fortfarande låter i sina sista 100 ms, i dB mot sin egen median.
 
-    Finns för att SRT:ens tidkoder är KÄLLANS: HeyGen kräver samma tidkoder i den
-    översatta SRT:en, så "sista repliken slutar 0,09 s före slutet" säger bara att den
-    svenska källan slutar tätt — inte om dubben hann tala klart. (AdventLane 2026-09-12:
-    6 av 7 videor rödmarkerades av tidkoden fast norskan slutade tidigare än svenskan.)"""
+    Talbandet 300–3400 Hz, 50 ms-fönster. None om ljudet inte gick att läsa.
+
+    ETT AVHUGGET SLUT ÄR ETT LJUD SOM INTE HINNER TONA UT. En film som talat
+    färdigt slutar i tystnad och landar djupt under sin median; en som kapats
+    mitt i ett ord slutar på full volym. Måttet frågar alltså rakt av "låter
+    det fortfarande när filen tar slut?" i stället för att leta efter var
+    energin sist passerade en tröskel.
+
+    ⚠️ Talar INTE om musik och röst isär — det går inte ur ljudet, och varje
+    försök har gett en kontroll som alltid är röd. Musikbädden är densamma i
+    källa och dubb, så siffran är meningsfull först som SKILLNAD mot källans
+    (`kolla()` nedan). En film som slutar med musiken på (SP_7_H1, +6,2 dB)
+    ser annars likadan ut som en kapad."""
     r = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(fil), "-vn",
                         "-af", "highpass=f=300,lowpass=f=3400", "-ac", "1", "-ar", "16000",
                         "-f", "s16le", "-"], capture_output=True)
     if not r.stdout:
         return None
     import array
+    import math
+    import statistics
     a = array.array("h"); a.frombytes(r.stdout[: len(r.stdout) // 2 * 2])
     w = 800
     n = len(a) // w
     if n == 0:
         return None
     rms = [ (sum(x * x for x in a[i * w:(i + 1) * w]) / w) ** 0.5 for i in range(n) ]
-    topp = max(rms) or 1.0
-    sista = max((i for i, v in enumerate(rms) if v > 0.15 * topp), default=-1)
-    return (sista + 1) * 0.05 if sista >= 0 else 0.0
+    horbara = [v for v in rms if v > 0]
+    if not horbara:
+        return None
+    median = statistics.median(horbara) or 1.0
+    svans = rms[-2:] or rms[-1:]
+    return 20 * math.log10((max(svans) or 1e-6) / median)
 
 
 TID = re.compile(r"(\d{2}):(\d{2}):(\d{2})[,.](\d{1,3})\s*-->\s*(\d{2}):(\d{2}):(\d{2})[,.](\d{1,3})")
@@ -126,7 +156,10 @@ def srt_tider(fil):
     return sum(b - a for a, b in ihop), ihop[-1][1]
 
 
-def kolla(kalla, ny, srt=None, kall_srt=None):
+def kolla(kalla, ny, srt=None, kall_srt=None, omtajmad=False):
+    """omtajmad=True: videon är omklippt med flit (pipeline/omdubb/elevenlabs-omdubb.mjs
+    tempo-anpassar varje klipp efter repliken), så längddrift mot källan är förväntad
+    och blir en notering med siffran i stället för ett fel. Allt annat mäts som vanligt."""
     fel, noter, m = [], [], {}
 
     if not har_ljudspar(ny):
@@ -147,7 +180,10 @@ def kolla(kalla, ny, srt=None, kall_srt=None):
         if m["langd_kalla"] and m["langd_ny"]:
             drift = abs(m["langd_ny"] - m["langd_kalla"]) / m["langd_kalla"]
             m["langddrift"] = round(drift, 3)
-            if drift > MAX_LANGDDRIFT:
+            if drift > MAX_LANGDDRIFT and omtajmad:
+                noter.append(f"omtajmad med flit: längden ändrades {drift*100:.0f} % "
+                             f"({m['langd_kalla']:.1f}s → {m['langd_ny']:.1f}s) — inte ett fel här")
+            elif drift > MAX_LANGDDRIFT:
                 fel.append(f"längden drev {drift*100:.0f} % "
                            f"({m['langd_kalla']:.1f}s → {m['langd_ny']:.1f}s) — tempot låter fel")
     else:
@@ -159,27 +195,48 @@ def kolla(kalla, ny, srt=None, kall_srt=None):
         m["tal_ny"], sista = t
         m["sista_replik_slut"] = round(sista, 2)
         if m["langd_ny"] and (m["langd_ny"] - sista) < SLUTMARGINAL_S:
-            # Tidkoden är källans (HeyGen kräver samma tidkoder). Har vi källan: mät i
-            # LJUDET var talet faktiskt slutar i båda. Dubben är avhuggen bara om den
-            # slutar tätare mot slutet än källan gör (mer än 50 ms tätare).
-            marg_ny = marg_k = None
+            # Tidkoden är KÄLLANS (HeyGen kräver samma tidkoder i den översatta SRT:en),
+            # så den säger ingenting om dubben. Har vi källan: mät i LJUDET hur högljutt
+            # var film fortfarande låter när den tar slut, och jämför. Musikbädden är
+            # gemensam, så skillnaden är rösten.
+            slut_ny = slut_k = None
             if kalla and m.get("langd_kalla"):
-                ts_ny, ts_k = talslut(ny), talslut(kalla)
-                if ts_ny is not None and ts_k is not None:
-                    marg_ny = m["langd_ny"] - ts_ny
-                    marg_k = m["langd_kalla"] - ts_k
-                    m["talslut_ny"], m["talslut_kalla"] = round(ts_ny, 2), round(ts_k, 2)
-            if marg_ny is None:
-                fel.append(f"sista repliken slutar {sista:.2f}s in i en {m['langd_ny']:.2f}s film "
-                           f"— rösten hinner inte tala klart")
-            elif marg_ny < SLUTMARGINAL_S and marg_ny + 0.05 < marg_k:
-                # avhugget = talet slutar närmare slutet än marginalen OCH tätare än källan
-                fel.append(f"talet slutar {marg_ny:.2f}s före slutet, källan hade {marg_k:.2f}s "
-                           f"— rösten hinner inte tala klart")
+                s_ny, s_k = slutenergi(ny), slutenergi(kalla)
+                if s_ny is not None and s_k is not None:
+                    slut_ny, slut_k = s_ny, s_k
+                    m["slutenergi_ny"] = round(s_ny, 1)
+                    m["slutenergi_kalla"] = round(s_k, 1)
+                    m["slutenergi_diff"] = round(s_ny - s_k, 1)
+            if slut_ny is None:
+                # Ingen källa att jämföra mot. Absolut mätning räcker ändå åt ena hållet:
+                # en film som slutar i tystnad kan inte vara avhuggen.
+                s_ensam = slutenergi(ny)
+                if s_ensam is not None:
+                    m["slutenergi_ny"] = round(s_ensam, 1)
+                if s_ensam is not None and s_ensam < SLUT_TYST_DB:
+                    noter.append(f"sista repliken går till sista bildrutan enligt tidkoden, men "
+                                 f"ljudet tonar ut i tystnad ({s_ensam:.1f} dB mot egen median) "
+                                 f"— inte avhugget")
+                else:
+                    noter.append(f"sista repliken slutar {sista:.2f}s in i en {m['langd_ny']:.2f}s "
+                                 f"film och ljudet låter fortfarande vid slutet — utan källvideo "
+                                 f"går det INTE att avgöra om det är musiken eller en avhuggen "
+                                 f"replik. Kör om med --kalla, eller lyssna på slutet")
+            elif slut_k > KALLA_SLUTAR_HOGT_DB:
+                # Källan slutar själv på full volym (musiken spelar filmen ut). Då ser en
+                # kapad dubb likadan ut som en hel — differensen har inget att mäta mot.
+                # HOPPAD med orsak, aldrig grön: PD_13_H1 och SP_7_H1 är just de här.
+                noter.append(f"källan slutar själv på full volym ({slut_k:.1f} dB mot egen median) "
+                             f"— avhugget slut går INTE att mäta på den här filmen. Lyssna på "
+                             f"slutet innan den laddas upp")
+            elif slut_ny - slut_k > MAX_SLUTENERGI_DIFF_DB:
+                fel.append(f"dubben låter {slut_ny - slut_k:.1f} dB högre än källan i sina sista "
+                           f"100 ms ({slut_ny:.1f} mot {slut_k:.1f} dB mot egen median) — "
+                           f"rösten hinner inte tala klart")
             else:
                 noter.append(f"sista repliken ligger {m['langd_ny'] - sista:.2f}s från slutet enligt "
-                             f"tidkoden (källans), men i ljudet slutar talet {marg_ny:.2f}s före slutet "
-                             f"mot källans {marg_k:.2f}s — inte avhugget")
+                             f"tidkoden (källans), men dubben tonar ut som källan "
+                             f"({slut_ny:.1f} mot {slut_k:.1f} dB) — inte avhugget")
         tk = srt_tider(kall_srt)
         if tk:
             m["tal_kalla"] = tk[0]
@@ -212,6 +269,8 @@ def main():
     p.add_argument("--mapp"); p.add_argument("--kallmapp"); p.add_argument("--srtmapp")
     p.add_argument("--kallsrtmapp")
     p.add_argument("--json", action="store_true")
+    p.add_argument("--omtajmad", action="store_true",
+                   help="videon är omklippt med flit (ElevenLabs-omdubb) — längddrift blir notering, inte fel")
     a = p.parse_args()
 
     jobb = []
@@ -231,7 +290,7 @@ def main():
 
     allt, trasiga = {}, 0
     for kalla, ny, srt, ksrt in jobb:
-        fel, noter, m = kolla(kalla, ny, srt, ksrt)
+        fel, noter, m = kolla(kalla, ny, srt, ksrt, omtajmad=a.omtajmad)
         allt[ny.name] = {"fel": fel, "noteringar": noter, "matvarden": m}
         if fel:
             trasiga += 1

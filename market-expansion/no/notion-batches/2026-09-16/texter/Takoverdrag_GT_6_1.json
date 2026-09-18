@@ -1,0 +1,65 @@
+[
+ {
+  "box": [
+   33,
+   45,
+   1047,
+   292
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Beskytt taket i jul – 1 189 kr"
+ },
+ {
+  "box": [
+   33,
+   296,
+   1047,
+   452
+  ],
+  "rader": 2,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Tåler vinteren ute – ikke tynn presenning som sprekker i frost"
+ },
+ {
+  "box": [
+   195,
+   1088,
+   885,
+   1132
+  ],
+  "storlek": 26,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Ord. 1 549 kr · Fri frakt · 30 dagers åpent kjøp"
+ },
+ {
+  "form": 1,
+  "text": "Bestill takovertrekket – 1 189 kr",
+  "rad": 0,
+  "se": "Beställ taköverdraget – 1 129 kr",
+  "vanster": false
+ }
+]

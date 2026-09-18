@@ -13,9 +13,21 @@
 # målgrupp och struktur är huvudsessionens. Underlaget: output/carashell/BRAND.md.
 
 produkt:
-  namn: "Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+  namn: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"
   id: "takskyddet"
   menynamn: "Taköverdraget"
+  # Rullgardinens etikett i varukorgen: "Storlek: 5,5 × 3 m", inte
+  # "Variant: 5,5 × 3 m" (Axels beslut 2026-09-18, efter att han sett
+  # varukorgen som finsk kund). Översätts per språk — Koko / Størrelse / Size.
+  variantrubrik: "Storlek"
+  # Ordet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2") — sedan
+  # 2026-09-17 när produkten fick nio storlekar. Kunden kan blanda storlekar
+  # i ett paket (Axels beslut samma dag).
+  enhet:
+    sv: "överdrag"
+    nb: "trekk"
+    en: "cover"
+    fi: "suoja"
 
 brand:
   namn: "CaraShell"
@@ -47,8 +59,174 @@ ekonomi:
     - valuta: NOK
       pris: 1106
       jamforpris: 1382.50
+    # USD — Axels pris 2026-09-16 (/ny-marknad carashell US --pris 199), INTE
+    # en kursomräkning (1 129 kr × 0,10235 = 115,55 USD, ECB 2026-09-15).
+    # Jämförpriset följer samma regel som NOK: 25 % över priset (248,75 → 249).
+    # Fast pris i prislistan gid://shopify/PriceList/33459372364 (prislista.mjs,
+    # 2026-09-16 efter att USD blivit marknadens basvaluta i admin) —
+    # tillbakaläst som amerikansk kund: $199.00 / $249.00.
+    - valuta: USD
+      pris: 199
+      jamforpris: 249
+    # EUR — Finland 2026-09-18. Referensraden är 6,5 m ur Axels finska
+    # prislista (CWD:s riktiga FI-offert 45,76 USD ⇒ 126,90 €). Varje storlek
+    # har sitt EGET EUR-pris i varianterna nedan; den här raden gäller bara om
+    # en variant saknar eget (och då stoppar granskaVariantpriser körningen).
+    - valuta: EUR
+      pris: 126.90
+      jamforpris: 165.90
 
 varianter:
+  # Nio storlekar, Axels besked 2026-09-17 ur leverantörens svar ("3*5.5 …
+  # 3*13.5 meters"). Namnet är längd × bredd som butiken skrivit sedan start.
+  # SKU-stammen är källans (TEMU-5050206311352) + längden i dm.
+  #
+  # PRISSTEGE sedan 2026-09-18 (Axels prislista). Fram till dess låg alla nio
+  # på 1 129 kr i väntan på leverantörens offerter per storlek.
+  #
+  #   SEK  = Axels egen stege, 1 129 → 2 239 kr. 5,5 och 6,5 m delar pris.
+  #   EUR  = Axels finska prislista, rad för rad. 6,5 m är CWD:s riktiga
+  #          FI-offert (45,76 USD ⇒ 126,90 €, landad kostnad 26,5 % över
+  #          Sverige); de åtta andra följer SEK-stegen × samma faktor.
+  #   SEK-jämförpriset = pris × 1,30 avrundat till närmaste tiotal minus 1
+  #          (samma regel som gav det gamla 1 469).
+  #   NOK  = SEK × 1 106/1 129 (påslaget Axel valde för 6,5 m 2026-09-11),
+  #          jämförpris 25 % över priset.
+  #   USD  = SEK × 199/1 129 (påslaget han valde för 6,5 m 2026-09-16),
+  #          avrundat till jämna tiotal minus 1, jämförpris 25 % över priset
+  #          avrundat likadant.
+  #   ✅ NOK och USD räknades fram av sessionen och GODKÄNDES av Axel
+  #      2026-09-18 ("kör på") — de är hans tal nu, inte ett förslag.
+  #
+  # Paketrabatterna är PROCENT (15/20/25 %), så de räknar rätt på varje
+  # storlek och i varje valuta av sig själva. En kund som blandar storlekar i
+  # ett paket får summan av de valda varianterna (tema/assets/ms-paket.js).
+  - namn: "5,5 × 3 m"
+    sku: "TEMU-5050206311352-055"
+    pris: 1129
+    jamforpris: 1469
+    marknadspriser:
+      - valuta: NOK
+        pris: 1106
+        jamforpris: 1382.50
+      - valuta: USD
+        pris: 199
+        jamforpris: 249
+      - valuta: EUR
+        pris: 126.90
+        jamforpris: 165.90
+  - namn: "6,5 × 3 m"
+    sku: "TEMU-5050206311352-065"
+    pris: 1129
+    jamforpris: 1469
+    marknadspriser:
+      - valuta: NOK
+        pris: 1106
+        jamforpris: 1382.50
+      - valuta: USD
+        pris: 199
+        jamforpris: 249
+      - valuta: EUR
+        pris: 126.90
+        jamforpris: 165.90
+  - namn: "7,5 × 3 m"
+    sku: "TEMU-5050206311352-075"
+    pris: 1289
+    jamforpris: 1679
+    marknadspriser:
+      - valuta: NOK
+        pris: 1263
+        jamforpris: 1578.75
+      - valuta: USD
+        pris: 229
+        jamforpris: 289
+      - valuta: EUR
+        pris: 144.90
+        jamforpris: 188.90
+  - namn: "8,5 × 3 m"
+    sku: "TEMU-5050206311352-085"
+    pris: 1449
+    jamforpris: 1879
+    marknadspriser:
+      - valuta: NOK
+        pris: 1419
+        jamforpris: 1773.75
+      - valuta: USD
+        pris: 259
+        jamforpris: 319
+      - valuta: EUR
+        pris: 162.90
+        jamforpris: 211.90
+  - namn: "9,5 × 3 m"
+    sku: "TEMU-5050206311352-095"
+    pris: 1599
+    jamforpris: 2079
+    marknadspriser:
+      - valuta: NOK
+        pris: 1566
+        jamforpris: 1957.50
+      - valuta: USD
+        pris: 279
+        jamforpris: 349
+      - valuta: EUR
+        pris: 179.90
+        jamforpris: 233.90
+  - namn: "10,5 × 3 m"
+    sku: "TEMU-5050206311352-105"
+    pris: 1759
+    jamforpris: 2289
+    marknadspriser:
+      - valuta: NOK
+        pris: 1723
+        jamforpris: 2153.75
+      - valuta: USD
+        pris: 309
+        jamforpris: 389
+      - valuta: EUR
+        pris: 197.90
+        jamforpris: 257.90
+  - namn: "11,5 × 3 m"
+    sku: "TEMU-5050206311352-115"
+    pris: 1919
+    jamforpris: 2489
+    marknadspriser:
+      - valuta: NOK
+        pris: 1880
+        jamforpris: 2350.00
+      - valuta: USD
+        pris: 339
+        jamforpris: 419
+      - valuta: EUR
+        pris: 215.90
+        jamforpris: 280.90
+  - namn: "12,5 × 3 m"
+    sku: "TEMU-5050206311352-125"
+    pris: 2079
+    jamforpris: 2699
+    marknadspriser:
+      - valuta: NOK
+        pris: 2037
+        jamforpris: 2546.25
+      - valuta: USD
+        pris: 369
+        jamforpris: 459
+      - valuta: EUR
+        pris: 233.90
+        jamforpris: 304.90
+  - namn: "13,5 × 3 m"
+    sku: "TEMU-5050206311352-135"
+    pris: 2239
+    jamforpris: 2909
+    marknadspriser:
+      - valuta: NOK
+        pris: 2193
+        jamforpris: 2741.25
+      - valuta: USD
+        pris: 389
+        jamforpris: 489
+      - valuta: EUR
+        pris: 251.90
+        jamforpris: 327.90
 media:
   bilder:
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
@@ -76,7 +254,7 @@ beskrivning:
 
 vinkel:
   huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
-  underrubrik: "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  underrubrik: "Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
   usp: "Bara taket. En person."
 
 malgrupp:
@@ -95,9 +273,13 @@ benefits:
   - "Lacken slipper skava mot ett tungt helöverdrag"
 
 features:
-  - "Mått 6,5 × 3 m, täcker hela takytan"
-  - "Svart väv, 210D"
-  - "Elastiska spännband med plastkrokar som hakar under karossens kant"
+  # Leverantörens svar 2026-09-17 (Axel): band ca 2,5 m, 210D Oxford
+  # vattentät och soltålig, band på 4 sidor, justerbar längd, krok i nederkant,
+  # två 10,5 m förstärkta band medföljer, storlekar 3×5,5 till 3×13,5 m.
+  - "Nio storlekar: 5,5 till 13,5 m långt, 3 m brett – välj efter ditt tak"
+  - "Svart 210D Oxford-väv, vattentät och tål sol"
+  - "Elastiska spännband på alla fyra sidor, justerbara, med plastkrokar som hakar under karossens kant"
+  - "Två extra förstärkta band på 10,5 m följer med"
   - "Sätts på av en person"
   - "Kanten hänger ner ca 30–40 cm över sidorna"
 
@@ -108,22 +290,58 @@ offer:
   # steg djupare rabatt. Inga egna nivåer behövs — mitten förvald.
   paket:
     test: "paket"
-  # Q4-ramverket: gratis bonus i paketen + betald korg-upsell.
-  # ⚠️ Ingen komplementprodukt hittas på. Kandidat i källbutiken: "Termoskydd
-  # Husbil 211 × 171 cm" 559 kr (BRAND.md) — en hel andra produkt, Axels
-  # beslut. Tills dess är bonus-steget manuellt och paketen körs utan gratisdel.
+    # Samma steg som fabrikens standard-A/B (paket.mjs NIVAER) — utskrivna
+    # här bara för att TA BORT brickan "Bäst pris" på 3-packet (Axels order
+    # 2026-09-17). Rabatt, koder (CARASHELLROO2A …) och handles är oförändrade.
+    nivaer:
+      - variant: a
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: a
+        antal: 2
+        rabatt: 0.15
+        rubrik: "2 st"
+        bricka: "Mest populär"
+      - variant: a
+        antal: 3
+        rabatt: 0.2
+        rubrik: "3 st"
+        bricka: ""
+      - variant: b
+        antal: 1
+        rubrik: "1 st"
+        underrubrik: "Standard pris"
+      - variant: b
+        antal: 2
+        rabatt: 0.2
+        rubrik: "2 st"
+        bricka: "Mest populär"
+      - variant: b
+        antal: 3
+        rabatt: 0.25
+        rubrik: "3 st"
+        bricka: ""
+  # Q4-ramverket: betald korg-upsell = butikens ANDRA produkt (TackleBay-
+  # modellen, ingen gratis bonus). Kandidaten som stod här sedan BRAND.md
+  # 2026-09-10 — "Termoskydd Husbil 211 × 171 cm", 559 kr — blev en riktig
+  # produkt 2026-09-16 (/ops-produkt carashell). Tom bildlista med flit:
+  # bonus.mjs återanvänder då den befintliga produkten och skriver bara
+  # tillbaka id:n. Paketen körs fortfarande utan gratisdel.
   bonus_produkt:
-    titel: ""
-    handle: ""
-    produkt_id: ""
-    variant_id: ""
-    pris: 0
+    titel: "Termoskydd Husbil 211 × 171 cm"
+    handle: "termoskyddet"
+    produkt_id: "16108121489740"
+    variant_id: "58826594156876"
+    pris: 559
     i_paket: ""
-    tillagg_kryssruta: true
-    kortnamn: ""
+    # false med flit: fullpris-kryssrutan (opf-tillagg) byggs bara i
+    # enproduktsläget (tema.mjs), och i en tvåproduktsbutik bär korg-upsellen
+    # samma sak. Med true blev kundvyn röd på en kryssruta som aldrig ritas.
+    tillagg_kryssruta: false
+    kortnamn: "termoskyddet"
     sku: ""
     bilder:
-      - ""
 
 reviews:
   # 10 riktiga recensioner ur källproduktens Judge.me 2026-09-10 (snitt 5,00).
@@ -173,8 +391,8 @@ reviews:
     datum: "2026-09-08"
 
 faq:
-  - fraga: "Passar det min husvagn eller husbil?"
-    svar: "Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil."
+  - fraga: "Vilken storlek ska jag välja?"
+    svar: "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil."
   - fraga: "Hur fäster jag överdraget?"
     svar: "Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna."
   - fraga: "Sitter det kvar i blåst?"

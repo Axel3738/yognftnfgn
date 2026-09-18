@@ -17,13 +17,26 @@
       "klar": true,
       "andrade": [],
       "verifierade": [
-        "Default Title"
+        "5,5 × 3 m",
+        "6,5 × 3 m",
+        "7,5 × 3 m",
+        "8,5 × 3 m",
+        "9,5 × 3 m",
+        "10,5 × 3 m",
+        "11,5 × 3 m",
+        "12,5 × 3 m",
+        "13,5 × 3 m"
       ],
       "redanRatt": true
     },
     "bonus": {
-      "klar": false,
-      "manuell": "Välj bonusprodukt: fyll i offer.bonus_produkt (handle, titel, pris, bilder) i produktfilen och kör --igen bonus."
+      "klar": true,
+      "produkt_id": "16108121489740",
+      "variant_id": "58826594156876",
+      "handle": "termoskyddet",
+      "ny": false,
+      "ateranvand": true,
+      "skrivet": true
     },
     "paket": {
       "klar": true,
@@ -46,18 +59,44 @@
     },
     "recensioner": {
       "klar": false,
-      "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/takskyddet/judgeme-app-import.csv: Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
+      "manuell": "Ingen Judge.me-token (env JUDGEME_CARASHELL_TOKEN) — VA:n importerar output/takskyddet/judgeme-app-import.csv (bara originalen — Judge.me översätter dem på marknadernas språk): Judge.me → Settings → Import reviews → Import from apps → Judge.me format → ladda upp filen → Import. Verifiera datumen i kundvyn (originaldatum, aldrig \"nyss\")."
     },
     "launch": {
       "klar": true,
       "status": "ACTIVE",
       "publicerad": true
+    },
+    "prislista": {
+      "klar": true,
+      "prislistor": [
+        {
+          "valuta": "NOK",
+          "land": "NO",
+          "id": "gid://shopify/PriceList/33455505740",
+          "skapad": false,
+          "varianter": 9
+        },
+        {
+          "valuta": "USD",
+          "land": "US",
+          "id": "gid://shopify/PriceList/33459372364",
+          "skapad": false,
+          "varianter": 9
+        },
+        {
+          "valuta": "EUR",
+          "land": "FI",
+          "id": "gid://shopify/PriceList/33463468364",
+          "skapad": false,
+          "varianter": 9
+        }
+      ]
     }
   },
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-12T03:31:41.291Z"
+    "tid": "2026-09-18T13:10:38.107Z"
   },
-  "uppdaterad": "2026-09-12T03:31:41.291Z"
+  "uppdaterad": "2026-09-18T13:10:38.107Z"
 }

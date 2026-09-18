@@ -1,0 +1,34 @@
+{
+ "annonser": [
+  {
+   "namn": "DryTrek_NO_Damasker_SP_4_H1",
+   "message": "Jeg gikk tre mil i høstregn med disse på beina.\nGrus og kvister kom aldri inn i støvelen.\nKrok i snøringen, stropp under foten, borrelås langs hele utsiden.\nGamasjene satt der jeg satte dem, hele turen.\nSe alle de 18 fargene 👇",
+   "headline": "Tre mil. Grus kom aldri inn.",
+   "description": "En vandrers egen test: tre mil i høstregn, gamasjene på hele veien."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_SP_5_H1",
+   "message": "Jeg testet gamasjene i tre uker med regn og snø.\nSnøen holdt seg ute. Gruset kom aldri inn.\nKrok i snøringen, stropp under foten, borrelås langs hele utsiden.\nSe alle de 18 fargene 👇",
+   "headline": "Snøen holdt seg ute i tre uker.",
+   "description": "Egen erfaring: tre ukers regn og snø, gamasjene fortsatt på."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_PD_8_H1",
+   "message": "Grus og snø kommer seg ikke inn i støvelen.\n✅ Krok i snøringen holder gamasjen oppe\n✅ Stropp under foten hindrer den i å gli ned\n✅ Borrelås langs hele utsiden – på og av uten å ta av deg støvelen\n✅ 44 cm mellom støvel og kne\nSe alle de 18 fargene 👇",
+   "headline": "Tre festepunkter. Ingenting kommer inn.",
+   "description": "Krok, stropp og borrelås holder grus og snø ute."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_PD_9_H1",
+   "message": "Slutt å gå hjem med kalde, våte føtter.\nSnø og grus kommer seg ikke inn i støvelen.\n✅ Dekker fra støvelkanten og opp til kneet\n✅ Krok i snøringen, stropp under foten, borrelås langs hele utsiden\n✅ 18 farger og 14 dagers angrerett\nSe alle de 18 fargene 👇",
+   "headline": "Støvelkant til kne. Tett hele veien.",
+   "description": "Krok, stropp og borrelås holder snø og grus ute – fra støvel til kne."
+  },
+  {
+   "namn": "DryTrek_NO_Damasker_FO_1_H1",
+   "message": "Snøen er på vei.\nUten beskyttelse kommer snø og grus rett ned i støvelen.\n✅ Krok i snøringen, stropp under foten, borrelås langs hele utsiden\n✅ 44 cm gamasjer – fra støvelkant til kne\n✅ 18 farger og 14 dagers angrerett\nVær klar før snøen kommer 👇",
+   "headline": "Uten beskyttelse: snø rett i støvelen.",
+   "description": "Holder snø og grus ute før vinteren kommer."
+  }
+ ]
+}

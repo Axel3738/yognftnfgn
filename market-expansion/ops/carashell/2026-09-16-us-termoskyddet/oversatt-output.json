@@ -1,0 +1,418 @@
+{
+  "sprak": "en",
+  "marknad": "US",
+  "rost": "Chris - Charming, Down-to-Earth",
+  "videor": {
+    "CaraShellFront_US_CS_1": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_CS_1.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:03,010",
+          "sv": "Rutan hålls varm om skyddet sitter utanpå.",
+          "en": "The glass stays warm with the cover outside."
+        },
+        {
+          "start": "00:00:03,260",
+          "slut": "00:00:06,320",
+          "sv": "Termoskydd husbil, femhundrafemtionio kronor.",
+          "en": "Windshield thermal cover, ninety-nine dollars."
+        },
+        {
+          "start": "00:00:06,570",
+          "slut": "00:00:10,710",
+          "sv": "Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:10,960",
+          "slut": "00:00:12,210",
+          "sv": "Fri frakt ingår.",
+          "en": "Free shipping."
+        },
+        {
+          "start": "00:00:12,460",
+          "slut": "00:00:14,531",
+          "sv": "Jämförpris niohundratrettiotvå.",
+          "en": "Compare at one hundred twenty-four dollars."
+        },
+        {
+          "start": "00:00:14,781",
+          "slut": "00:00:15,851",
+          "sv": "Från CaraShell.",
+          "en": "From CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_CS_2": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_CS_2.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:01,040",
+          "sv": "Nytt lägre pris.",
+          "en": "New lower price."
+        },
+        {
+          "start": "00:00:01,290",
+          "slut": "00:00:02,740",
+          "sv": "Femhundrafemtionio kronor.",
+          "en": "Ninety-nine dollars."
+        },
+        {
+          "start": "00:00:02,990",
+          "slut": "00:00:09,780",
+          "sv": "Termoskydd husbil, femhundrafemtionio kronor. Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Windshield thermal cover, ninety-nine dollars. Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:10,030",
+          "slut": "00:00:11,630",
+          "sv": "Jämförpris högre.",
+          "en": "Compare at a higher price."
+        },
+        {
+          "start": "00:00:11,880",
+          "slut": "00:00:13,887",
+          "sv": "Fri frakt, fjorton dagars ångerrätt.",
+          "en": "Free shipping, fourteen-day returns."
+        },
+        {
+          "start": "00:00:14,137",
+          "slut": "00:00:16,897",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_CS_3": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_CS_3.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:03,080",
+          "sv": "Skyddet kläms fast i dörrkarmen utan att öppna dörrarna.",
+          "en": "The cover clips into the door frame without opening the doors."
+        },
+        {
+          "start": "00:00:03,330",
+          "slut": "00:00:06,150",
+          "sv": "Termoskydd husbil, femhundrafemtionio kronor.",
+          "en": "Windshield thermal cover, ninety-nine dollars."
+        },
+        {
+          "start": "00:00:06,400",
+          "slut": "00:00:10,860",
+          "sv": "Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:11,110",
+          "slut": "00:00:13,316",
+          "sv": "Jämförpris niohundratrettiotvå.",
+          "en": "Compare at one hundred twenty-four dollars."
+        },
+        {
+          "start": "00:00:13,566",
+          "slut": "00:00:15,780",
+          "sv": "Fri frakt, fjorton dagars ångerrätt.",
+          "en": "Free shipping, fourteen-day returns."
+        },
+        {
+          "start": "00:00:16,030",
+          "slut": "00:00:18,500",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_G_1": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_G_1.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:02,540",
+          "sv": "Nu finns termoskydd husbil till fast pris.",
+          "en": "The thermal cover now has a fixed price."
+        },
+        {
+          "start": "00:00:02,790",
+          "slut": "00:00:09,730",
+          "sv": "Termoskydd husbil, femhundrafemtionio kronor. Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Windshield thermal cover, ninety-nine dollars. Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:09,980",
+          "slut": "00:00:13,114",
+          "sv": "Jämförpris niohundratrettiotvå. Fri frakt ingår.",
+          "en": "Compare at one hundred twenty-four dollars. Free shipping."
+        },
+        {
+          "start": "00:00:13,364",
+          "slut": "00:00:16,084",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_G_2": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_G_2.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:03,180",
+          "sv": "Det här är presenten som får dem att säga äntligen.",
+          "en": "This is the gift that makes them say, finally."
+        },
+        {
+          "start": "00:00:03,430",
+          "slut": "00:00:08,448",
+          "sv": "Termoskydd husbil, femhundrafemtionio kronor, jämförpris niohundratrettiotvå.",
+          "en": "Windshield thermal cover, ninety-nine dollars, compare at one hundred twenty-four."
+        },
+        {
+          "start": "00:00:08,698",
+          "slut": "00:00:12,718",
+          "sv": "Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:12,968",
+          "slut": "00:00:15,174",
+          "sv": "Fri frakt till Sverige och Norge.",
+          "en": "Free shipping in the US."
+        },
+        {
+          "start": "00:00:15,424",
+          "slut": "00:00:17,934",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_G_3": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_G_3.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:06,277",
+          "sv": "Den bästa julklappen för någon som älskar sin husbil. Termoskydd husbil, femhundrafemtionio kronor.",
+          "en": "The best Christmas gift for an RV lover. Windshield thermal cover, ninety-nine dollars."
+        },
+        {
+          "start": "00:00:06,527",
+          "slut": "00:00:07,847",
+          "sv": "Jämförpris högre.",
+          "en": "Compare at a higher price."
+        },
+        {
+          "start": "00:00:08,097",
+          "slut": "00:00:12,727",
+          "sv": "Svalt på sommaren, varmt på vintern, mörkt när du sover.",
+          "en": "Cool in summer, warm in winter, dark when you sleep."
+        },
+        {
+          "start": "00:00:12,977",
+          "slut": "00:00:14,207",
+          "sv": "Fri frakt ingår.",
+          "en": "Free shipping."
+        },
+        {
+          "start": "00:00:14,457",
+          "slut": "00:00:15,847",
+          "sv": "Fjorton dagars ångerrätt.",
+          "en": "Fourteen-day return window."
+        },
+        {
+          "start": "00:00:16,097",
+          "slut": "00:00:18,817",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_SP_1": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_SP_1.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:03,036",
+          "sv": "Sofia skriver: skyddar bra och mörklägger fint.",
+          "en": "Sofia writes: protects well, blacks out nicely."
+        },
+        {
+          "start": "00:00:03,286",
+          "slut": "00:00:06,256",
+          "sv": "Per skriver: mycket nöjd, enkel att montera.",
+          "en": "Per writes: very happy, easy to set up."
+        },
+        {
+          "start": "00:00:06,506",
+          "slut": "00:00:14,369",
+          "sv": "Svalare inne, ingen insyn, mörkt hela natten. Lars: skyddar bra mot sol och värme. Kolla måtten innan du beställer.",
+          "en": "Cooler inside, no one can see in, dark all night. Lars: protects well against sun and heat. Check the measurements before you order."
+        },
+        {
+          "start": "00:00:14,619",
+          "slut": "00:00:18,189",
+          "sv": "Passar tvåhundraelva gånger hundrasjuttioen centimeter.",
+          "en": "Fits eighty-three by sixty-seven inches."
+        },
+        {
+          "start": "00:00:18,439",
+          "slut": "00:00:20,969",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_SP_2": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_SP_2.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:03,636",
+          "sv": "Sofia skriver: den skyddar riktigt bra och mörklägger fint.",
+          "en": "Sofia writes: it really protects well and blacks out nicely."
+        },
+        {
+          "start": "00:00:03,886",
+          "slut": "00:00:07,426",
+          "sv": "Per skriver: mycket nöjd, enkel att montera.",
+          "en": "Per writes: very happy, easy to set up."
+        },
+        {
+          "start": "00:00:07,676",
+          "slut": "00:00:19,386",
+          "sv": "Svalare inne, ingen insyn, mörkt hela natten. Lars: skyddar bra mot sol och värme. Kolla måtten innan du beställer. Passar tvåhundraelva gånger hundrasjuttioen centimeter.",
+          "en": "Cooler inside, no one can see in, dark all night. Lars: protects well against sun and heat. Check the measurements before you order. Fits eighty-three by sixty-seven inches."
+        },
+        {
+          "start": "00:00:19,636",
+          "slut": "00:00:22,106",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_SP_3": {
+      "kalla_srt": "factory/output/termoskyddet/bildfix-el/Termoskydd_SP_3.mp4.srt",
+      "cues": [
+        {
+          "start": "00:00:00,000",
+          "slut": "00:00:13,236",
+          "sv": "Lars skriver: skyddar bra mot sol och värme, jag är nöjd. Sofia skriver: den skyddar bra och mörklägger fint. Svalare inne, ingen insyn, mörkt hela natten. Per: nöjd och enkel att montera.",
+          "en": "Lars writes: protects well against sun and heat, I'm happy. Sofia writes: it protects well and blacks out nicely. Cooler inside, no one can see in, dark all night. Per: happy, easy to set up."
+        },
+        {
+          "start": "00:00:13,486",
+          "slut": "00:00:15,207",
+          "sv": "Kolla måtten innan du beställer.",
+          "en": "Check the measurements first."
+        },
+        {
+          "start": "00:00:15,457",
+          "slut": "00:00:19,467",
+          "sv": "Passar tvåhundraelva gånger hundrasjuttioen centimeter.",
+          "en": "Fits eighty-three by sixty-seven inches."
+        },
+        {
+          "start": "00:00:19,717",
+          "slut": "00:00:22,577",
+          "sv": "Termoskydd husbil från CaraShell.",
+          "en": "Windshield cover, from CaraShell."
+        }
+      ]
+    },
+    "CaraShellFront_US_PD_1": {
+      "kalla_srt": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_1.orig.srt",
+      "cues": [
+        {
+          "start": "00:00:00,079",
+          "slut": "00:00:07,159",
+          "sv": "Så här skyddar du husbilen på tre sekunder. Ett utvändigt skydd för framrutan, tvåhundraelva gånger hundrasjuttioen centimeter.",
+          "en": "Here's how to protect your RV in three seconds. An outdoor cover for the windshield, eighty-three by sixty-seven inches."
+        },
+        {
+          "start": "00:00:07,359",
+          "slut": "00:00:08,880",
+          "sv": "Fästs enkelt på utsidan.",
+          "en": "Attaches easily outside."
+        },
+        {
+          "start": "00:00:09,000",
+          "slut": "00:00:14,259",
+          "sv": "Håller kupén sval på sommaren, håller värmen inne på vintern och mörklägger helt när du ska sova.",
+          "en": "Keeps the cab cool in summer, keeps the heat in during winter, and fully blacks out when you sleep."
+        },
+        {
+          "start": "00:00:14,319",
+          "slut": "00:00:16,039",
+          "sv": "Kolla måtten innan du beställer.",
+          "en": "Check the measurements before you order."
+        }
+      ],
+      "notering": "Källfilen har 5 cues (Bäverbutiken-brandet i cue 5). Cue 5 är bortklippt ur videon (bildfix-el-versionen) och tas inte med."
+    },
+    "CaraShellFront_US_PD_2": {
+      "kalla_srt": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_2.orig.srt",
+      "cues": [
+        {
+          "start": "00:00:00,099",
+          "slut": "00:00:02,839",
+          "sv": "Det här är produkten alla husbilsägare borde ha.",
+          "en": "This is the product every RV owner should have."
+        },
+        {
+          "start": "00:00:03,079",
+          "slut": "00:00:16,279",
+          "sv": "Ett utvändigt skydd för framrutan tvåhundraelva gånger hundrasjuttioen centimeter. Fästs enkelt på utsidan. Håller kupén sval på sommaren, håller värmen inne på vintern och mörklägger helt när du ska sova. Kolla måtten innan du beställer.",
+          "en": "An outdoor cover for the windshield, eighty-three by sixty-seven inches. Attaches easily outside. Keeps the cab cool in summer, keeps the heat in during winter, and fully blacks out when you sleep. Check the measurements before you order."
+        }
+      ],
+      "notering": "Källfilen har 3 cues. Cue 3 (Bäverbutiken-brandet) är bortklippt ur videon och tas inte med."
+    },
+    "CaraShellFront_US_PD_3": {
+      "kalla_srt": "market-expansion/no/video-batches/2026-09-12/srt-orig/termoskydd_PD_3.orig.srt",
+      "cues": [
+        {
+          "start": "00:00:00,179",
+          "slut": "00:00:02,119",
+          "sv": "Sol, kyla, insyn.",
+          "en": "Sun, cold, exposure."
+        },
+        {
+          "start": "00:00:02,240",
+          "slut": "00:00:03,759",
+          "sv": "Ett skydd löser allt.",
+          "en": "One cover fixes it all."
+        },
+        {
+          "start": "00:00:04,000",
+          "slut": "00:00:08,439",
+          "sv": "Ett utvändigt skydd för framrutan, tvåhundraelva gånger hundrasjuttioen centimeter.",
+          "en": "An outdoor cover for the windshield, eighty-three by sixty-seven inches."
+        },
+        {
+          "start": "00:00:08,500",
+          "slut": "00:00:10,099",
+          "sv": "Fästs enkelt på utsidan.",
+          "en": "Attaches easily outside."
+        },
+        {
+          "start": "00:00:10,139",
+          "slut": "00:00:15,420",
+          "sv": "Håller kupén sval på sommaren, håller värmen inne på vintern och mörklägger helt när du ska sova.",
+          "en": "Keeps the cab cool in summer, keeps the heat in during winter, and fully blacks out when you sleep."
+        },
+        {
+          "start": "00:00:15,460",
+          "slut": "00:00:17,179",
+          "sv": "Kolla måtten innan du beställer.",
+          "en": "Check the measurements before you order."
+        }
+      ],
+      "notering": "Källfilen har 7 cues. Cue 7 (Bäverbutiken-brandet) är bortklippt ur videon och tas inte med."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "citat",
+      "text": "\"Protects the RV well against rain and dirt.\""
+    },
+    {
+      "typ": "namn",
+      "text": "– Anders"
+    },
+    {
+      "typ": "stjarnor",
+      "text": "★★★★★"
+    },
+    {
+      "typ": "botten",
+      "text": "One of 16 reviews – all five stars"
+    },
+    {
+      "typ": "pris",
+      "text": "$199 (was $249)"
+    }
+  ]
+}

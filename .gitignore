@@ -20,5 +20,54 @@ market-expansion/ops/**/*.jpg
 market-expansion/ops/**/*.jpeg
 market-expansion/ops/**/*.png
 market-expansion/ops/**/*.srt
+market-expansion/ops/**/*.mp3
+market-expansion/ops/**/*.wav
 factory/output/*/leverans-*/
+factory/output/*/bild-*/
+factory/output/*/*/bild-*/
+factory/output/*/spegla-*/
+factory/output/*/*/spegla-*/
+# Briefgranskningen: brief-dumparna ur Notion (kopior) — kön (ko.json), domarna
+# (.dom.json), resultaten och rapporten committas; dumparna per hub inte
+tools/output/briefgranskning/*/*/
+# (den gamla OPS-varianten, till 2026-09-18)
+factory/output/*/briefgranskning-*/
+factory/output/*/*/briefgranskning-*/
+factory/output/*/spegla-*-torr.*
+factory/output/*/*/spegla-*-torr.*
+factory/output/*/*.logg
+# Lagerrensnings-sidorna: kie-bildernas lokala kopior dör med containern — bilderna ligger på Shopifys CDN
+listicle/output/*/*/bilder/
+listicle/output/*/*/forhandsvisning/
+listicle/output/*/*/forhandsvisning-*/
 kundtjanst/jobb/
+# Fixturkörningens utdata (`--fixtur kundtjanst/test/fixturer/demo`). Den skriver
+# brandet "demobutiken" som en riktig körning — men den är demodata och ska
+# aldrig blandas ihop med brevlådornas verkliga historik.
+kundtjanst/korningar/demobutiken/
+kundtjanst/historik/demobutiken.jsonl
+
+# Åtgärdade videor i OPS-flödet (factory/media-upload.mjs bildfix) — ligger i Meta, klipptiderna står i brand-syn.json
+factory/output/*/bildfix/*.mp4
+factory/output/*/bildfix/kie/
+factory/output/*/bildfix/*.mp4.qa-*.png
+# ElevenLabs-omdubb (pipeline/omdubb/elevenlabs-omdubb.mjs): renderingar, röstcache och QA-bilder
+# ligger i Meta; de nya SRT:erna och tidslinjerna (små) committas som facit
+factory/output/*/bildfix-el/*.mp4
+factory/output/*/bildfix-el/*.png
+factory/output/*/bildfix-el/vo/
+
+# /oversatt: batchernas media committas aldrig (källor, renderingar, lager)
+market-expansion/*/notion-batches/*/se/
+market-expansion/*/notion-batches/*/no/
+market-expansion/*/notion-batches/*/no-video/
+market-expansion/*/notion-batches/*/out/
+market-expansion/*/notion-batches/*/lager/
+market-expansion/*/notion-batches/*/*/up/
+
+# NO-videobatchernas tunga binärer (källvideor, renderingar, zip-leveranser) —
+# stannar i containern och i Drive, aldrig i git. QA-bilder och SRT:er committas.
+market-expansion/no/video-batches/*/rendered/
+market-expansion/no/video-batches/*/zip/
+market-expansion/no/video-batches/*/*/up/
+market-expansion/no/video-batches/*/final/*/*.mp4

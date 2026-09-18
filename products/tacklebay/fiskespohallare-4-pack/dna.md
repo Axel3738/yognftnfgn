@@ -184,6 +184,25 @@ break-even-CPA med ~2 kr — inte akut, men räkna om vid nästa `/cs`.
 
 ## Rotorsaker och fallgropar för nästa körning
 
+- **Priset ska stå som SIFFROR i briefens formatkrav, aldrig som utskrivna ord.**
+  Mätt 2026-09-14 i leveransrunda nr 3: båda batch #2-videorna stoppades på
+  priset, med exakt samma brott. `PD_45_H1` visade "4-pack 200 och tionio
+  kronor fri frakt." (16,5–18,0 s) och `PD_42_H1` visade "200 åtionio kronor."
+  (10,5 s). Det är "tvåhundraåttionio" där "åtta" fallit bort i
+  captiongenereringen — en autocaption klarar inte svenska räkneord. Vad
+  kunden läser är **200**, alltså 31 % under de 289 kr butiken tar, och båda
+  ryker på 20 %-regeln. Briefen sa redan `exactly "289 kr"`, men bara i
+  hard rules; sektion 3 (Format) sa inget om siffror kontra ord. **Skriv in i
+  formatkravet: "Price on screen as digits — 289 kr. Never spelled out."**
+  Felet syns inte förrän det är inbränt, och kostar en hel leveransdag.
+- **Källklippens överlägg följer med in i leveransen.** Samma körning:
+  `PD_42_H1` bär vattenstämpeln "Lilybady" med fiskelogga uppe till vänster i
+  varje bildruta, och `PD_45_H1` har kawaii-stickers (björnar, bläckfisk,
+  pussmun, hjärtögon) i alla fyra hörn genom hela andra halvan — trots att
+  briefens sektion 6 säger "no stickers". Båda kommer från det inköpta
+  källmaterialet, inte från redigeraren. **Lägg en rad i briefens sektion 6:
+  "Source-clip watermarks, handles and stickers must be cropped or covered —
+  the film may carry no mark but TackleBay's."**
 - **Kampanjnamnet bär brandet, annonserna bär produkten.** Kampanjen heter
   `TACKLEBAY_SE_Spöhållaren | BE-ROAS 1,67 | 2026-09-10`, annonserna
   `TackleBayRod_…`. Kampanjfiltret i `budgetrond.mjs` läste bara kampanjnamnet

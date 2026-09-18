@@ -1,0 +1,35 @@
+[
+ {
+  "region": [
+   38,
+   44,
+   460,
+   110
+  ],
+  "text": "Save £39",
+  "genomstruken": false,
+  "_etikett": "rubrik"
+ },
+ {
+  "region": [
+   547,
+   962,
+   841,
+   1008
+  ],
+  "text": "£191 → £152",
+  "genomstruken": false,
+  "_etikett": "prischip"
+ },
+ {
+  "region": [
+   60,
+   1082,
+   860,
+   1124
+  ],
+  "text": "Free shipping to the UK. 90-day guarantee.",
+  "genomstruken": false,
+  "_etikett": "bottenband"
+ }
+]

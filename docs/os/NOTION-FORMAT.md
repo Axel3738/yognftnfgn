@@ -26,7 +26,7 @@ Ett item per annons — aldrig ett item per batch, aldrig flera annonser i samma
 | `Draft` | Brief finns, ingen har börjat | Planerad |
 | `In progress` | Redigeraren gör **första versionen** | Pågår |
 | `In progress 2` | Har varit inne, **fått revision** och görs om | Pågår + ↺ Revision (räknas i revision rate) |
-| `Creative strat review` | Ligger hos CS för bedömning | Granskning |
+| `Creative strat review` | Ligger hos CS för bedömning. **OPS-hubbar sedan 2026-09-13:** CS är leveransrundan `/ops-leverans` — en rad med butikens eget prefix och fil tas live därifrån utan att någon flyttar den (Axels beslut). Rader med Bäverbutikens prefix i den statusen är parkerade och rörs inte | Granskning |
 | `To be Reviewed` / `In Review` | Väntar på managerns granskning | Granskning |
 | `Approved` | Godkänd | Godkänd — räknas mot kvoten |
 

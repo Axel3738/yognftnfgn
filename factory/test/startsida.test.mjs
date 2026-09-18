@@ -145,6 +145,13 @@ test('inga butiksspecifika fallbacks: accent ur branding, marknadstext ur markna
   const dk = { ...butikBas(), butik: { ...butikBas().butik, marknader: [{ land: 'DK', locale: 'da' }] } };
   assert.deepEqual(marknadsnamn(dk), ['Sverige', 'Danmark']);
   assert.ok(!JSON.stringify(bygg(dk, [produkt('a')])).includes('Norge'));
+  // USA-stödet 2026-09-16: tre länder blir "Sverige, Norge & USA"; en marknad
+  // med i_fraktraden: false nämns inte på den svenska startsidan.
+  const us = { ...butikBas(), butik: { ...butikBas().butik, marknader: [{ land: 'NO', locale: 'nb' }, { land: 'US', locale: 'en' }] } };
+  assert.deepEqual(marknadsnamn(us), ['Sverige', 'Norge', 'USA']);
+  assert.ok(JSON.stringify(bygg(us, [produkt('a')])).includes('Fri frakt – Sverige, Norge & USA'));
+  const usDold = { ...butikBas(), butik: { ...butikBas().butik, marknader: [{ land: 'NO', locale: 'nb' }, { land: 'US', locale: 'en', i_fraktraden: false }] } };
+  assert.deepEqual(marknadsnamn(usDold), ['Sverige', 'Norge']);
 
   // Källbutikens ord får aldrig sitta i en neutral default.
   const allt = JSON.stringify(json);

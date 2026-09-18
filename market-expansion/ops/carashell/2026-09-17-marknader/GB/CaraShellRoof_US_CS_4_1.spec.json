@@ -1,0 +1,26 @@
+[
+ {
+  "region": [
+   510,
+   535,
+   838,
+   642
+  ],
+  "text": "£152",
+  "genomstruken": false,
+  "_etikett": "pris (priskortet)",
+  "fet": true
+ },
+ {
+  "region": [
+   500,
+   655,
+   760,
+   707
+  ],
+  "text": "£191",
+  "genomstruken": false,
+  "_etikett": "jämförpris",
+  "fet": true
+ }
+]

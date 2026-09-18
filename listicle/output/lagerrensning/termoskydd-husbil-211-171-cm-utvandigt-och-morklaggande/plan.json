@@ -1,0 +1,152 @@
+{
+  "byggd": "2026-09-16T19:50:34.577Z",
+  "koncept": "lagerrensning",
+  "punkter": 5,
+  "datumrad": "2026-09-16",
+  "produkt": {
+    "titel": "Termoskydd Husbil 211 × 171 cm – Utvändigt och Mörkläggande",
+    "kortTitel": "Termoskydd Husbil 211 × 171 cm",
+    "handle": "termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+    "url": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+    "typ": "",
+    "pris": 559,
+    "jamforpris": 932,
+    "prisText": "559 kr",
+    "jamforprisText": "932 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Size",
+        "varden": [
+          "211cm(83.07in) x 171cm(67.32in) x 90cm(35.43in)"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg",
+        "width": 1400,
+        "height": 1400
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png",
+        "width": 2048,
+        "height": 2048
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-detalj.png",
+        "width": 2048,
+        "height": 2048
+      }
+    ],
+    "beskrivning": "Rutan är immig inifrån varje morgon\nFukten från natten lägger sig på insidan av vindrutan, och invändiga gardiner gör bara att den blir kvar mellan glaset och tyget. På sommaren är det tvärtom: solen står på och kupén är trettio grader innan frukosten är klar. Och på en rastplats vet du att alla som går förbi ser rakt in.\nUtanpå rutan – där kylan och solen faktiskt stoppas\nSkyddet spänns utvändigt över vindrutan och båda sidorutorna, så att glaset aldrig hinner bli kallt inifrån. Det mörklägger samtidigt hela framvagnen: ingen ser in, och morgonsolen väcker dig inte klockan fyra. Två minuters jobb på utsidan i stället för imma att torka bort varje dag.\nFunktioner\nKondensen får inte fäste på insidan av rutan – skyddet sitter utanpå glaset, inte innanför\nKupén blir inte trettio grader av morgonsolen – tätt material som stoppar värmen innan den kommer in\nIngen ser in på rastplatsen – mörkläggande hela vägen över framvagnen\nTäcker vindrutan och båda sidorutorna – 211 cm bred, 171 cm över mitten, 90 cm sidflikar\nSpänns fast utan att öppna dörrarna – flikarna kläms i dörrkarmen och håller i blåst\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫\nMiljöbilderna är AI-genererade illustrationer. Produktfotot visar varan som den är."
+  },
+  "copy": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/copy.json",
+  "bildplan": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/bildplan.json",
+  "brand": {
+    "id": null,
+    "namn": null,
+    "forfattare": "Anders på lagret",
+    "logga": false
+  },
+  "knappar": "/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+  "butik": "baverbutiken",
+  "bilder": [
+    {
+      "plats": "punkt1",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2688665f0908e46dce5696e9ca4da389_1789572093464.png?v=1789572104",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt2",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f360bdc599f9311b76ef48ed2bb4ff76_1789572115250.png?v=1789572130",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt3",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/754759e735a039c8b9324ce51d2e575d_1789572138516.png?v=1789572149",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt4",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8cee55766cf52b3759bbcdf3123db87e_1789572160260.png?v=1789572173",
+      "width": 1024,
+      "height": 1024,
+      "kalla": "kie (cachad 2026-09-16)"
+    },
+    {
+      "plats": "punkt5",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png",
+      "width": 2048,
+      "height": 2048,
+      "kalla": "produkt #2"
+    },
+    {
+      "plats": "lyckas",
+      "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg",
+      "width": 1400,
+      "height": 1400,
+      "kalla": "produkt #1"
+    }
+  ],
+  "html": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/termoskydd-husbil-211-171-cm-lagerrensning.html",
+  "body": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/termoskydd-husbil-211-171-cm-lagerrensning.sida.html",
+  "gempages": null,
+  "forhandsvisning": {
+    "index": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/index.html",
+    "desktop": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop.png",
+    "mobil": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil.png",
+    "desktop-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop-hero.png",
+    "desktop-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop-punkt1.png",
+    "desktop-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop-punkt2.png",
+    "desktop-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop-slut.png",
+    "desktop-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/desktop-sidfot.png",
+    "mobil-hero": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil-hero.png",
+    "mobil-punkt1": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil-punkt1.png",
+    "mobil-punkt2": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil-punkt2.png",
+    "mobil-slut": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil-slut.png",
+    "mobil-sidfot": "/home/user/yognftnfgn/listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/forhandsvisning/mobil-sidfot.png"
+  },
+  "sida": {
+    "id": "635385231081116236",
+    "namn": "Termoskydd Husbil 211 × 171 cm – Lagerrensning (listicle)",
+    "handle": "termoskydd-husbil-211-171-cm-lagerrensning"
+  },
+  "publicerat": {
+    "url": "https://baverbutiken.se/pages/termoskydd-husbil-211-171-cm-lagerrensning",
+    "sidaId": "gid://shopify/Page/728864751965",
+    "skapad": true,
+    "tema": {
+      "id": "gid://shopify/OnlineStoreTheme/198052807005",
+      "namn": "UTKAST utan popup 2026-08-28",
+      "skrivna": []
+    },
+    "kontroll": {
+      "ok": true,
+      "fel": [],
+      "url": "https://baverbutiken.se/pages/termoskydd-husbil-211-171-cm-lagerrensning",
+      "tecken": 109721
+    }
+  },
+  "bildUrler": [
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260217_124645_31eadc60-b0a9-464e-ab35-6677e400c118_1.png?v=1771948581",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/2688665f0908e46dce5696e9ca4da389_1789572093464.png?v=1789572104",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/f360bdc599f9311b76ef48ed2bb4ff76_1789572115250.png?v=1789572130",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/754759e735a039c8b9324ce51d2e575d_1789572138516.png?v=1789572149",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/8cee55766cf52b3759bbcdf3123db87e_1789572160260.png?v=1789572173",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b7-termoskydd-miljo.png",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/b6-termoskydd-se.jpg",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/hf_20260804_174634_099ca39f-dda5-4839-94b5-418823c5d1fe_1.png?v=1785902565",
+    "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/Namnlos_design_3_73a88cf4-155f-4812-918a-58fb0506d6c0.png?v=1785867932"
+  ]
+}

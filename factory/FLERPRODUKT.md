@@ -93,6 +93,63 @@ bara som konstig data.
 
 ---
 
+---
+
+## Läget 2026-09-14 — vad som byggts sedan kartläggningen
+
+Kommandot **`/ops-produkt <butik> <källänk>`** finns nu (Axels fråga: "lägg
+till en produkt på en befintlig butik i stället för att bygga en ny"), med
+`factory/ops-produkt.mjs` som motor. Det gör förarbetet och kapslar in
+fällorna, men **löser inte pixelproblemet** — det står kvar nedan.
+
+**Klart sedan kartläggningen:**
+
+| Punkt ovan | Läge |
+|---|---|
+| 1 — `ops.mjs` tar flera produktfiler | **Byggt.** `STEG` har `niva: 'butik'` / `'produkt'`; butikssteg körs en gång, de sex produktstegen loopas per produktfil. |
+| 2 — startsidesteget | **Byggt.** `startsida` skriver `templates/index.json` ur konfigen. |
+| 3 — menyn per produkt | **Byggt.** `meny` skriver `main-menu` ur alla produkter i körningen. |
+| Fynd 1 — `creative_prefix` på produkten | **Gjort i filerna.** Alla produktfiler bär eget prefix under `meta:`. `ops.mjs` stoppar två produkter som delar prefix. |
+
+**Lagat 2026-09-14, båda tysta:**
+
+- `factory/kampanj.mjs` hade `const butikId = 'drytrek'` **hårdkodat**. Varje
+  butiks kampanj byggdes alltså med DryTreks brand i namnet och `drytrek.se`
+  i annonslänken. Butiken härleds nu ur produktens `brand.namn`
+  (`butikForProdukt`, kastar hellre än gissar), och länken använder produktens
+  `handle` i stället för filnamnet — TackleBays produkt pekade fel av samma skäl.
+- `factory/rutin.mjs platsFor` räknade bara på butiksdelen av nyckeln, så en
+  ANDRA produkt i samma butik fick **identisk cron** och två nattvakter startade
+  samma minut mot det delade OPS-kontot — precis den rate limit platserna finns
+  för. Uppslaget går nu på hela nyckeln, med butiksdelen som fallback så
+  enproduktsbutikernas tider står still. `minutkrockar()` pekar ut en krock.
+
+**Kvar, och det är fortfarande fällan:**
+
+1. **Pixeln.** Oförändrad. Ingen kod delar upp köp per produkt — sökning på
+   `content_ids|product_id` i `skalning.mjs`, `budgetrond.mjs` och `ekonomi.mjs`
+   ger noll träffar (2026-09-14). Motmedlet "läs köp per produkt ur Shopify"
+   är inte byggt. Tills det är det: **döm aldrig en annons i en
+   flerproduktsbutik på pixelns CPA** — hämta köpen ur Shopify och skriv i
+   rapporten att du gjort det.
+2. **Tre butiker har prefix = brandnamn:** `overvakningskameran.yaml`
+   (`HeimGuard`), `tankguard.yaml` (`TankGuard`), `utekattkojan.yaml`
+   (`CatCabin`). De är enproduktsbutiker i dag, så det håller — men får någon
+   av dem en andra produkt måste prefixet göras produktskopat FÖRST, annars
+   matchar brandprefixet båda produkternas annonser.
+3. **Ett bart butiks-id kastar** så fort butiken bär två produkter
+   (`register.mjs hittaPost`) — **utom när butiksfilen pekar ut en
+   huvudprodukt.** Butikens tre befintliga rutiner har butiks-id i sin prompt
+   och ligger ofta på ett annat Claude-konto, så de går inte att skriva om
+   från sessionen. Lösningen sedan 2026-09-16: `butik.huvudprodukt:
+   <gamla-produktens-id>` i butiksfilen ⇒ butiks-id:t (och brandet) betyder
+   den produkten, rutinerna går orörda, och produkt 2 nås bara på sin egen
+   nyckel. Utan fältet: högljutt fel, men det inträffar på natten.
+4. **Adsetnamnen saknar produkt** (`kampanj.mjs`: `{BRAND}_{MARKNAD}_{vinkel}`).
+   Två produkter får identiskt namngivna adsets i var sin kampanj. Inte fel i
+   dag — adsetuppslaget går på kampanjen — men det gör en manuell avläsning i
+   Ads Manager förvirrande.
+
 ## Rekommendation
 
 **Bygg fiskebutiken — men i den här ordningen:**
@@ -107,3 +164,90 @@ plus tillbehör i stället för två jämlika produkter. Fabriken klarar det red
 (Q4-bonusen är ju en andra produkt i butiken), och pixelfällan uteblir
 eftersom bara en produkt annonseras. Nackdelen är att den andra produkten
 aldrig får egen annonsering med full kraft.
+
+---
+
+## Läget 2026-09-16 — första riktiga körningen: CaraShell fick termoskyddet
+
+`/ops-produkt carashell <länk>` från Axel. Vad som höll och vad som fick lagas:
+
+**Höll:** `ops-produkt.mjs` (utkast, prefixkrock, körrad med alla filer), bygget med
+`--igen kollektion,startsida,meny,tema` (takskyddet kvar i meny + startsida, kollektionen
+skapad, korg-upsellen pekar på produkt 2), `register.mjs skriv-in`, egen kampanj per
+produkt, `budgetrond` dömer mot produktfilens egen break-even.
+
+**Rutinerna, samma kväll:** ett bart `carashell` kastade "matchar 2 poster", och
+takskyddets tre rutiner (prompt `/notionscalercs carashell`) ligger på
+`claude5@stonebite.org` — osynliga från sessionen. Axels beslut: de befintliga
+rutinerna är takskyddets, termoskyddet får egna. Löst från två håll samma dag:
+`butik.huvudprodukt: takskyddet` i butiksfilen + `hittaPost` som löser upp butiks-id:t
+till huvudprodukten (så ett bart `carashell` fungerar), OCH en session på claude5 som
+byggde om de fyra rutinerna med `carashell/takskyddet` i prompten. Lärdom därifrån:
+`update_trigger` kan inte byta prompt på en rutin bunden till en annan sessions
+container — det blev nya trigger-id:n på samma fasta sessioner, de gamla raderade.
+
+**Lagat samma dag:**
+- `rutin.mjs` saknade CLI-flaggan `--flerprodukt` — `--tider carashell/termoskyddet
+  --skriv-in` hade ärvt plats 5 (takskyddets minut). Nu plats 7 (00:57 / 14:15 / 16:15).
+- `kampanj.mjs` döpte annonser med brandet, inte produktens prefix (FAS2.md 2026-09-16).
+- `oversattning.mjs` byggde huvudmenyn för hand (utan Hem, Frakt & retur) — "Hem" fick
+  aldrig en nyckel och stod kvar på /nb. Nu samma `huvudmenyRader` som meny-steget.
+- `marknad.mjs` räknade paketnivåernas `fastpris_valutor` (NOK-tal) som svenska läckor.
+- `tillagg_kryssruta: true` på produkt 1 gav röd kundvy: fullpris-kryssrutan byggs bara
+  i enproduktsläget (`tema.mjs`), korg-upsellen bär samma sak. Sätt false.
+- NOK-prislistan får inte produkt 2 av sig själv: `priceListFixedPricesAdd` per variant
+  efter bygget (tre rader, API-GRANSER.md). Gjort för hand i sessionen.
+- Norskan för produkt 2 + de omskrivna brandtexterna kräver `--igen oversatt` — körraden
+  ovan tar inte med det steget, och ett grönt state hoppar över det.
+
+**Kvar (oförändrat):** pixeln. Termoskyddet 559 kr mot takskyddet 1 129 kr = 2× — inte brus.
+Läs köp per produkt ur Shopify innan någon annons i CaraShell döms.
+
+**Hubben:** integrationen "Bäverbutiken RUTINER" ser inga SIDOR i Notion, bara
+databasrader — `notion-hub.mjs --foralder` har ingen förälder att skapa under. En hub för
+produkt 2 är därför Axels klick (duplicera "Carashell creative hub", döp om), sedan
+`node factory/register.mjs notion carashell/termoskyddet <id>` och `/notionscalercs setup`.
+
+## Köfilen krockar mellan produkterna (mätt 2026-09-16)
+
+`/ops-leverans` skriver `factory/output/<butik>/leverans-$IDAG.json`, och **butiken
+är mappen** — så takskyddets runda (14:05) och termoskyddets (14:15) skrev samma
+fil samma dag. Den som pushade sist skrev över den andra, och rebasen blev en
+konflikt på en fil ingen hade rört för hand.
+
+Rätt namn i en flerproduktsbutik bär **produktnyckeln**:
+`leverans-<produkt>-$IDAG.json` (t.ex. `leverans-takskyddet-2026-09-16.json`).
+Filen från 2026-09-16 som saknar produktdel i namnet är termoskyddets — den
+lämnades som den var för att inte skriva om historik.
+
+Samma sak gäller varje utfil per körning i en butik med fler än en produkt:
+sätt produktnyckeln i namnet innan rutinerna hinner krocka. Det syns aldrig som
+ett fel i rutinen — bara som en försvunnen fil eller en konflikt i nästa push.
+
+## Storleksvarianter på en levande produkt (mätt 2026-09-17, CaraShell takskyddet)
+
+- `varianter:` i produktfilen + `--igen produkt,metafalt,lagerpolicy,oversatt,prislista`
+  räcker: `productSet` byter "Default Title" mot de nya varianterna på samma produkt
+  (handle och id kvar, status kvar), lagerpolicyn skrivs per variant, prislistorna
+  sätter det fasta NOK/USD-priset på varje ny variant, och `oversatt` registrerar
+  variantvärdena på /en (nb behöver inget när namnet är samma som svenskan).
+- Översättningsnycklarna heter `produkt.<id>.variant.<namn>` och byggs ur planen —
+  skriv nb/en-raderna INNAN steget körs, annars läcker svenskan.
+- ⚠️ Olika pris per variant finns inte: `build-store.mjs` sätter `ekonomi.pris` på
+  alla varianter och `prislista.mjs` samma belopp per valuta. Nästa steg när Axel
+  ger priser per storlek: `varianter[].pris/jamforpris` + `marknadspriser` per variant.
+- Fyra `sida.*`-strängar (två sidor, title + body) registreras inte på nb/en —
+  matchningen sker på VÄRDE och butikens sidor har glidit från underlaget. Fanns
+  före den här körningen; rör inte varianterna.
+- **Rullgardin per enhet i paketen (Axels beslut 2026-09-17: "man vill kunna köpa två
+  olika storlekar"):** koden fanns redan i `ms-paket.js` (variantval per enhet sedan
+  2026-09-10), men CaraShells tema bar bas-zip:ens ÄLDRE `snippets/ms-paket.liquid`
+  och `assets/ms-paket.css` utan rullgardinerna — bara JS:en var fabriksägd. Sedan
+  2026-09-17 äger fabriken alla tre (`TEMAFILER` i `tema.mjs`, källfiler i
+  `factory/tema/snippets/` + `factory/tema/assets/`), och `--igen tema` skriver dem
+  till varje butik med språk- och valutapatcharna ovanpå. Ordet i etiketten
+  ("Överdrag 1 / Trekk 1 / Cover 1") kommer ur `produkt.enhet: { sv, nb, en }` och
+  väljs i Liquid på `product.handle` (`enhetLiquid`), eftersom produktmallen delas av
+  butikens alla produkter. Mätt live på takskyddet: 1 + 2 + 3 rullgardiner per A/B-block
+  med nio alternativ var, noll Liquid-fel, termoskyddet (en variant) orört.
+

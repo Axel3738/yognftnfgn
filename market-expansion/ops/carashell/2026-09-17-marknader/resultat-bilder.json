@@ -1,0 +1,491 @@
+{
+  "AU": {
+    "CaraShellRoof_US_CS_2_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_CS_2_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$358  A$286",
+          "bakgrund": [
+            255,
+            255,
+            255
+          ],
+          "farg": [
+            30,
+            30,
+            30
+          ],
+          "fet": true,
+          "hojd": 52,
+          "storlek_px": 73,
+          "just": "vanster",
+          "krympt": false,
+          "bbox_original": [
+            28,
+            7,
+            316,
+            58
+          ],
+          "bredd_fore": 289,
+          "bredd_efter": 468
+        },
+        {
+          "i": 1,
+          "status": "OK",
+          "text": "Free shipping to Australia – 90-day guarantee",
+          "bakgrund": [
+            255,
+            255,
+            255
+          ],
+          "farg": [
+            94,
+            94,
+            94
+          ],
+          "fet": false,
+          "hojd": 30,
+          "storlek_px": 42,
+          "just": "vanster",
+          "krympt": true,
+          "bbox_original": [
+            32,
+            9,
+            649,
+            38
+          ],
+          "bredd_fore": 618,
+          "bredd_efter": 850
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "jämförpris + pris (en rad, strykning på det första): A$358  A$286",
+        "fraktrad: Free shipping to Australia – 90-day guarantee"
+      ]
+    },
+    "CaraShellRoof_US_CS_4_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_CS_4_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$286",
+          "bakgrund": [
+            242,
+            242,
+            240
+          ],
+          "farg": [
+            33,
+            39,
+            43
+          ],
+          "fet": true,
+          "hojd": 89,
+          "storlek_px": 108,
+          "just": "vanster",
+          "krympt": true,
+          "bbox_original": [
+            11,
+            8,
+            244,
+            96
+          ],
+          "bredd_fore": 234,
+          "bredd_efter": 318
+        },
+        {
+          "i": 1,
+          "status": "OK",
+          "text": "A$358",
+          "bakgrund": [
+            242,
+            242,
+            240
+          ],
+          "farg": [
+            179,
+            181,
+            176
+          ],
+          "fet": true,
+          "hojd": 34,
+          "storlek_px": 49,
+          "just": "vanster",
+          "krympt": false,
+          "bbox_original": [
+            20,
+            11,
+            115,
+            44
+          ],
+          "bredd_fore": 96,
+          "bredd_efter": 144
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "pris (priskortet): A$286",
+        "jämförpris: A$358"
+      ]
+    },
+    "CaraShellRoof_US_CS_5_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_CS_5_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$358 → A$286",
+          "bakgrund": [
+            241,
+            241,
+            239
+          ],
+          "farg": [
+            35,
+            37,
+            38
+          ],
+          "fet": true,
+          "hojd": 26,
+          "storlek_px": 38,
+          "just": "vanster",
+          "krympt": false,
+          "bbox_original": [
+            12,
+            15,
+            190,
+            40
+          ],
+          "bredd_fore": 179,
+          "bredd_efter": 282
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "prischip: A$358 → A$286"
+      ]
+    },
+    "CaraShellRoof_US_CS_6_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_CS_6_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "Save A$72",
+          "bakgrund": [
+            63,
+            68,
+            74
+          ],
+          "farg": [
+            242,
+            245,
+            244
+          ],
+          "fet": true,
+          "hojd": 53,
+          "storlek_px": 74,
+          "just": "vanster",
+          "krympt": false,
+          "bbox_original": [
+            8,
+            6,
+            276,
+            58
+          ],
+          "bredd_fore": 269,
+          "bredd_efter": 368
+        },
+        {
+          "i": 1,
+          "status": "OK",
+          "text": "A$358 → A$286",
+          "bakgrund": [
+            241,
+            241,
+            239
+          ],
+          "farg": [
+            35,
+            37,
+            38
+          ],
+          "fet": true,
+          "hojd": 26,
+          "storlek_px": 38,
+          "just": "vanster",
+          "krympt": false,
+          "bbox_original": [
+            13,
+            15,
+            191,
+            40
+          ],
+          "bredd_fore": 179,
+          "bredd_efter": 282
+        },
+        {
+          "i": 2,
+          "status": "OK",
+          "text": "Free shipping to Australia. 90-day guarantee.",
+          "bakgrund": [
+            63,
+            68,
+            74
+          ],
+          "farg": [
+            240,
+            244,
+            246
+          ],
+          "fet": true,
+          "hojd": 28,
+          "storlek_px": 37,
+          "just": "center",
+          "krympt": true,
+          "bbox_original": [
+            87,
+            6,
+            689,
+            33
+          ],
+          "bredd_fore": 603,
+          "bredd_efter": 790
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "rubrik: Save A$72",
+        "prischip: A$358 → A$286",
+        "bottenband: Free shipping to Australia. 90-day guarantee."
+      ]
+    },
+    "CaraShellRoof_US_GT_4_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_GT_4_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$286 (was A$358) – save 20%",
+          "bakgrund": [
+            33,
+            109,
+            138
+          ],
+          "farg": [
+            245,
+            255,
+            255
+          ],
+          "fet": true,
+          "hojd": 28,
+          "storlek_px": 28,
+          "just": "center",
+          "krympt": true,
+          "bbox_original": [
+            13,
+            11,
+            406,
+            38
+          ],
+          "bredd_fore": 394,
+          "bredd_efter": 409
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "badge: A$286 (was A$358) – save 20%"
+      ]
+    },
+    "CaraShellRoof_US_PD_4_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_PD_4_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "Roof only. One person. A$286.",
+          "bakgrund": [
+            63,
+            68,
+            74
+          ],
+          "farg": [
+            241,
+            245,
+            247
+          ],
+          "fet": true,
+          "hojd": 28,
+          "storlek_px": 41,
+          "just": "center",
+          "krympt": false,
+          "bbox_original": [
+            84,
+            6,
+            491,
+            33
+          ],
+          "bredd_fore": 408,
+          "bredd_efter": 590
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "bottenband: Roof only. One person. A$286."
+      ]
+    },
+    "CaraShellRoof_US_PD_6_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_PD_6_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "One of them costs A$286.",
+          "bakgrund": [
+            38,
+            42,
+            46
+          ],
+          "farg": [
+            241,
+            243,
+            242
+          ],
+          "fet": true,
+          "hojd": 78,
+          "storlek_px": 66,
+          "just": "vanster",
+          "krympt": true,
+          "bbox_original": [
+            6,
+            0,
+            747,
+            77
+          ],
+          "bredd_fore": 742,
+          "bredd_efter": 804
+        },
+        {
+          "i": 1,
+          "status": "OK",
+          "text": "9.8 ft. One person. A$286.",
+          "bakgrund": [
+            32,
+            111,
+            142
+          ],
+          "farg": [
+            243,
+            255,
+            255
+          ],
+          "fet": true,
+          "hojd": 25,
+          "storlek_px": 30,
+          "just": "vanster",
+          "krympt": true,
+          "bbox_original": [
+            15,
+            5,
+            311,
+            29
+          ],
+          "bredd_fore": 297,
+          "bredd_efter": 366
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "rubrik rad 2: One of them costs A$286.",
+        "etikett rad 2: 9.8 ft. One person. A$286."
+      ]
+    },
+    "CaraShellRoof_US_SP_4_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_SP_4_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$286 (was A$358)",
+          "bakgrund": [
+            239,
+            239,
+            237
+          ],
+          "farg": [
+            35,
+            37,
+            39
+          ],
+          "fet": true,
+          "hojd": 28,
+          "storlek_px": 27,
+          "just": "center",
+          "krympt": true,
+          "bbox_original": [
+            12,
+            16,
+            237,
+            43
+          ],
+          "bredd_fore": 226,
+          "bredd_efter": 242
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "prischip: A$286 (was A$358)"
+      ]
+    },
+    "CaraShellRoof_US_SP_6_1": {
+      "exit": 0,
+      "fil": "/home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-17-marknader/AU/CaraShellRoof_US_SP_6_1.png",
+      "rader": [
+        {
+          "i": 0,
+          "status": "OK",
+          "text": "A$286 (was A$358) · Free shipping",
+          "bakgrund": [
+            50,
+            54,
+            57
+          ],
+          "farg": [
+            243,
+            244,
+            245
+          ],
+          "fet": true,
+          "hojd": 30,
+          "storlek_px": 37,
+          "just": "vanster",
+          "krympt": true,
+          "bbox_original": [
+            73,
+            6,
+            521,
+            35
+          ],
+          "bredd_fore": 449,
+          "bredd_efter": 607
+        }
+      ],
+      "fel": 0,
+      "rader_spec": [
+        "bottenband: A$286 (was A$358) · Free shipping"
+      ]
+    }
+  }
+}

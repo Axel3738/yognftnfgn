@@ -1,0 +1,37 @@
+[
+  {
+    "namn": "CaraShellRoof_SP_4_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/CaraShellRoof_SP_4_1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_CS_4_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/CaraShellRoof_CS_4_1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_PD_4_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/CaraShellRoof_PD_4_1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_GT_4_1",
+    "typ": "bild",
+    "brief": "image-ads-briefs/CaraShellRoof_GT_4_1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_PD_4_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/CaraShellRoof_PD_4_H1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_SP_4_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/CaraShellRoof_SP_4_H1/brief.md"
+  },
+  {
+    "namn": "CaraShellRoof_PD_5_H1",
+    "typ": "video",
+    "brief": "video-ads-briefs/CaraShellRoof_PD_5_H1/brief.md"
+  }
+]
