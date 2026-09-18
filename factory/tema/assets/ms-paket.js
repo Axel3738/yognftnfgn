@@ -38,9 +38,19 @@
 
   // Samma prisformatering som resten av temat. ms-cro.js exponerar den, men vi
   // klarar oss utan om den filen skulle utebli.
-  function money(cents, format) {
+  function money(cents, format, valuta) {
     if (window.MS && window.MS.money) return window.MS.money(cents, format);
-    return (cents / 100).toLocaleString('sv-SE') + ' kr';
+    // Reservvägen (ms-cro.js uteblev). Den sa "kr" på sidans SVENSKA format
+    // oavsett var kunden satt — en finsk kund fick kronor. Sidans eget språk
+    // och kundens valuta i stället; utan valuta bara siffran, aldrig en
+    // påhittad symbol.
+    var sprak = document.documentElement.lang || 'sv';
+    try {
+      if (valuta) return new Intl.NumberFormat(sprak, { style: 'currency', currency: valuta }).format(cents / 100);
+      return (cents / 100).toLocaleString(sprak);
+    } catch (e) {
+      return (cents / 100).toFixed(2);
+    }
   }
 
   // Köpformuläret letas upp här, inte via ms-cro.js. Den här filen rör pengar
@@ -226,8 +236,14 @@
       var styck = this.styckpris();
       if (!styck) return;
       var format = this.dataset.moneyFormat;
+      var valuta = this.dataset.valuta || '';
       var self = this;
       var enhet = this.dataset.enhet || 'st';
+      /* Orden kommer ur snippeten (data-per, data-spar) så de kan översättas
+         per språk. Svenskan står kvar som reserv för en butik vars tema inte
+         hunnit få de nya attributen. */
+      var perOrd = this.dataset.per || 'per';
+      var sparOrd = this.dataset.spar || 'Du sparar';
       this.inputs.forEach(function (i) {
         var antal = Number(i.dataset.antal || 1);
         var rabatt = self.rabattFor(i, styck);
@@ -239,11 +255,11 @@
           var el = kort && kort.querySelector(sel);
           if (el) el.textContent = v;
         }
-        satt('[data-ms-paket-nu]', money(nu, format));
-        satt('[data-ms-paket-forr]', money(ordinarie, format));
-        satt('[data-ms-paket-styck]', money(Math.round(nu / antal), format) + ' per ' + enhet);
+        satt('[data-ms-paket-nu]', money(nu, format, valuta));
+        satt('[data-ms-paket-forr]', money(ordinarie, format, valuta));
+        satt('[data-ms-paket-styck]', money(Math.round(nu / antal), format, valuta) + ' ' + perOrd + ' ' + enhet);
         var spar = i.parentElement.querySelector('[data-ms-paket-spar]');
-        if (spar && rabatt > 0) spar.textContent = 'Du sparar ' + money(rabatt, format);
+        if (spar && rabatt > 0) spar.textContent = sparOrd + ' ' + money(rabatt, format, valuta);
       });
     }
 
@@ -396,9 +412,12 @@
       var self = this;
       var knapp = this.knapp;
       var text = knapp.textContent;
+      /* Felraden kommer också ur snippeten. Shopifys egen text (d.description)
+         är redan på kundens språk; vår reservtext var svensk för alla. */
+      var felText = this.dataset.fel || 'Det gick inte att lägga i varukorgen. Försök igen.';
       var fel = this.fel;
       knapp.disabled = true;
-      knapp.textContent = 'Lägger i…';
+      knapp.textContent = this.dataset.laddar || 'Lägger i…';
       if (fel) fel.hidden = true;
 
       function aterstall() {
@@ -424,7 +443,7 @@
       }).then(function (svar) {
         if (!svar.ok) {
           return svar.json().then(function (d) {
-            throw new Error(d.description || d.message || 'Kunde inte lägga i varukorgen.');
+            throw new Error(d.description || d.message || felText);
           });
         }
         return svar.json();
@@ -467,7 +486,7 @@
       }).catch(function (e) {
         aterstall();
         if (fel) {
-          fel.textContent = e.message || 'Det gick inte att lägga i varukorgen. Försök igen.';
+          fel.textContent = e.message || felText;
           fel.hidden = false;
         }
       });

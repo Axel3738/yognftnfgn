@@ -65,9 +65,23 @@
     { {%- for x in p.variants -%}"{{ x.id }}":{{ x.price }}{%- unless forloop.last -%},{%- endunless -%}{%- endfor -%} }
   {%- endcapture -%}
 
+  {%- comment -%}
+    Texterna JS:et skriver ut ligger som attribut här, inte i ms-paket.js —
+    en .js-fil kan inte bära Liquid, så en sträng inne i den blir svensk för
+    varje kund i världen. Axel 2026-09-18: knappen sa "Lägger i…" på den
+    finska och den amerikanska sidan mitt i köpet. Översätts av
+    MS_PAKET_ORD i factory/tema.mjs, samma väg som aria-label.
+    `data-valuta` är kundens valuta (inte butikens) och används bara av
+    JS:ets reservformatering, den som annars hade skrivit "kr".
+  {%- endcomment -%}
   <ms-paket class="ms-scope ms-paket"
     data-money-format="{{ shop.money_format | strip_html | escape }}"
     data-enhet="{{ enhet | escape }}"
+    data-laddar="Lägger i…"
+    data-spar="Du sparar"
+    data-per="per"
+    data-fel="Det gick inte att lägga i varukorgen. Försök igen."
+    data-valuta="{{ cart.currency.iso_code | escape }}"
     {% if flera_varianter %}data-egen-val="1"{% endif %}
     data-varianter="{{ priskarta | strip | escape }}">
 

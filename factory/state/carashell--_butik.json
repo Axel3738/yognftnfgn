@@ -263,7 +263,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4379/4423"
+          "granskning": "4380/4423"
         }
       }
     },
@@ -294,7 +294,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T10:26:16.469Z"
+    "tid": "2026-09-18T11:46:48.578Z"
   },
-  "uppdaterad": "2026-09-18T10:26:16.469Z"
+  "uppdaterad": "2026-09-18T11:46:48.578Z"
 }

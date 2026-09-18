@@ -1341,6 +1341,51 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
 
+## En sträng i en .js-fil är svensk för hela världen (2026-09-18)
+
+Axel klickade "Lägg i varukorgen" på den finska sidan och knappen svarade
+**"Lägger i…"**. Hans invändning är hela poängen: *"även om man bara ser det i
+någon sekund hade jag känt mig otrygg om det var ett helt främmande språk när
+man ska spendera massa pengar."*
+
+**Rotorsaken:** `factory/tema/assets/ms-paket.js` är en ren .js-fil. Shopify
+kör ingen Liquid i den, så `request.locale` finns inte och
+`translationsRegister` når den inte. Varje sträng skriven direkt i filen når
+alltså varje kund i världen på svenska — och ingen språkkoll fångade det,
+för `kundvy.mjs` läser den renderade HTML:en och texten skrivs först när
+kunden klickar.
+
+Fyra ställen var svenska för alla marknader:
+
+| Vad | Stod | Syntes när |
+|---|---|---|
+| Köpknappen medan den laddar | "Lägger i…" | vid varje klick |
+| Styckpriset | "… per överdrag" | alltid, under varje paketnivå |
+| Rabattraden | "Du sparar …" | på nivåer med rabatt |
+| Felraden | "Det gick inte att lägga i varukorgen." | när köpet failar |
+| Prisreserven | `toLocaleString('sv-SE') + ' kr'` | om ms-cro.js uteblir |
+
+**Lösningen, och regeln framåt:** texten hör hemma i snippeten, inte i
+JavaScriptet. `snippets/ms-paket.liquid` bär dem som attribut
+(`data-laddar`, `data-spar`, `data-per`, `data-fel`), `MS_PAKET_ORD` i
+`factory/tema.mjs` översätter dem på samma väg som `aria-label`, och JS:et
+läser `this.dataset.*` med svenskan kvar som reserv för en butik vars tema
+inte hunnit få attributen. Prisreserven tar sidans eget `lang` och kundens
+valuta ur `data-valuta` (`cart.currency.iso_code`) — utan valuta skrivs bara
+siffran, aldrig en påhittad symbol.
+
+🔒 **Skriv aldrig en kundsynlig sträng i en .js-fil under `factory/tema/`.**
+Ska JS:et visa text: lägg den som ett `data-`-attribut i snippeten och en rad
+i `MS_PAKET_ORD`. Hittar du en kvarglömd sträng — sök på `textContent =` och
+på `[åäö]` inom citattecken i `factory/tema/assets/`.
+
+⚠️ **Bas-zippen:** `assets/ms-paket.js` ligger både i `TEMAFILER` och i
+`factory/tema/ops-tema.zip`, och ett test kräver att de är identiska —
+uppdatera zippen i samma commit. Snippeten är tvärtom: zipens
+`ms-paket.liquid` ska vara OPATCHAD (inga `iso_code`-grenar), för motorn
+patchar in dem vid bygget. Skriv alltså in JS-filen i zippen, aldrig
+snippeten.
+
 ## Pris per storlek + ännu en marknad (bevisat 2026-09-18, CaraShell → Finland)
 
 En produkt med nio storlekar fick nio olika priser — i fyra valutor — och
