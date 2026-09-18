@@ -1376,6 +1376,38 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
 
+## Kassans språk: läs adressen, inte texten (2026-09-18)
+
+En annan session påstod att kassan visas på svenska för finska kunder och att
+"finskan inte är publicerad för kassan". Mätt samma dag på CaraShell — det
+stämmer inte:
+
+1. `shopLocales` säger **`en, fi, nb, sv*`**, alla publicerade. Finskan ÄR på.
+2. Lägger man en vara i korgen som finsk kund (`POST /localization` med
+   `country_code=FI` + `language_code=fi`, sedan `/fi/cart/add.js`) slutar
+   kassans adress på **`/checkouts/cn/<id>/fi-fi`**. Shopify dirigerar alltså
+   till den finska kassan. Vore finskan opublicerad stod det `sv-se` där.
+
+**Adressen är därför den mätbara signalen**: locale-suffixet efter checkout-id:t
+säger vilket språk kassan körs på. Går det att läsa utan webbläsare.
+
+⚠️ **Kassans TEXTER går inte att läsa härifrån.** Shopifys checkout svarar
+**HTTP 403** på allt som inte är en riktig webbläsare, även med fullständiga
+`sec-ch-ua`/`sec-fetch`-headers (provat 2026-09-18, 51 tecken tillbaka). Samma
+vägg som Judge.me-widgeten. Vill någon veta vad kassan faktiskt säger krävs en
+människa i en webbläsare — påstå aldrig något om kassatexter utifrån `fetch`.
+
+🔑 **Kassan följer SPRÅKET kunden surfar på, inte landet.** En finsk kund som
+kommer in på den svenska sidan får svensk kassa, hur finsk hens IP än är.
+Därför måste varje annons mot Finland peka på `/fi` MED `?country=FI` — precis
+som Norge-regeln. En annonslänk utan locale ger finsk valuta men svensk kassa.
+
+Butiken kan inte översätta kassans standardtexter själv: bland
+`TranslatableResourceType` finns bara `DELIVERY_METHOD_DEFINITION`,
+`PAYMENT_GATEWAY` och `SHOP_POLICY` — "Lägg till rabatt" och "Kom ihåg mig" är
+Shopifys egna strängar. Saknas de på ett språk är det ett Shopify-ärende, inte
+något i det här repot.
+
 ## En sträng i en .js-fil är svensk för hela världen (2026-09-18)
 
 Axel klickade "Lägg i varukorgen" på den finska sidan och knappen svarade
