@@ -25,6 +25,11 @@
 // kolumn "Total tax exclusive" för SWEDEN vid Qty 1 (produktkostnad + frakt), × 9,4698.
 
 export const FX_SEK = 9.4698;
+export const FX_NOK = 9.2989;   // låst kurs, temu/cogs/README.md
+// Norge (2026-09-18, begäran: "Dinosaur calendar is missing from beverbutikken.no"):
+// Kalenderkungen-arket har BARA SWEDEN-rader (kontrollerat 2026-09-18) — inget norskt inköpspris.
+// pris = SE-pris × 1,13 avrundat till närmsta 9-slut (butiker.mjs, Axels ankare 2026-08-18),
+// usd = SE-landat × 1,133 (NO/SE-landfaktorn i temu/cogs/README.md) — en MODELL, märkt så.
 
 export const FAKTA = {
   dinosaurie: {
@@ -32,6 +37,7 @@ export const FAKTA = {
     kategori: 'gid://shopify/TaxonomyCategory/hg-3-8',   // sätts av skapa.mjs om den finns
     pris: 399, jamfor: 529, usd: 11.95,
     offert: 'Dinosaur calendar · Temu · 4,31 + 7,64 = 11,95 USD',
+    no: { pris: 449, jamfor: 599, usd: 13.54, modell: 'SE-landat 11,95 USD × 1,133 — arket saknar NORWAY-rad' },
     obs: '⚠️ Offerten: "There\'s only one factory making it, and the stock situation is unknown." MOQ 10.',
   },
   gor_din_egen: {

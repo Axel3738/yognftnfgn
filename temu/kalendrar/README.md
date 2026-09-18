@@ -8,6 +8,14 @@ kan du bara lägga upp på bäverbutiken. Och du får rippa one to one."*
 **12 kalendrar på Adventlane, 9 importerade.** Bara Sverige (Axels ord: "på bäverbutiken").
 Inga AI-bilder, inga nyskrivna texter — allt kommer från Adventlanes egna sidor.
 
+**Norge (2026-09-18):** dinosauriekalendern ligger nu även i beverbutikken.no på begäran
+("Dinosaur calendar is missing from beverbutikken.no") — 449 / 599 NOK, cogs 125,91 NOK
+(MODELL: SE-landat 11,95 USD × 1,133, Kalenderkungen-arket har bara SWEDEN-rader).
+Norsk copy i `copy-no.json` (Sonnet), skapad med `no.mjs dinosaurie --skarp`, bilden via SE:s CDN.
+https://beverbutikken.no/products/dinosaur-adventskalender-24-dinosaurer
+Övriga åtta kalendrar finns bara i SE. Fler till NO: skriv copyn till `copy-no.json`, lägg
+`no: { pris, jamfor, usd, modell }` i `fakta.mjs`, kör `node temu/kalendrar/no.mjs <id> --skarp`.
+
 | id | Titel i butiken | Pris | Inköp | Kvar |
 |---|---|---|---|---|
 | golf | Golf Adventskalender – 24 golftillbehör | 549 / 719 | 162,79 | 386 kr |
