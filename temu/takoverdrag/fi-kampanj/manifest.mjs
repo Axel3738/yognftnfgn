@@ -47,20 +47,26 @@ for (const ad of se) {
   }
 }
 // A/B-testet Bäver vs CaraShell i Finland (Axels beslut 2026-09-18): samma 34 annonser, en kampanj per butik.
-//   baver     → Magiborsten FI, Majavakauppa-sidan, Bäverbutiken.se-pixeln, majavakauppa.fi
-//   carashell → OPS-kontot MagiBorsten DK, CaraShell-sidan, CaraShell-pixeln, carashell.se/fi (FI-marknaden byggd 2026-09-18)
-// Annonsnamnen är samma i båda armarna (FI_Takoverdrag_…) så de går att jämföra rakt av — och de bär INTE
+//   baver        → Magiborsten FI, Majavakauppa-sidan, Bäverbutiken.se-pixeln, majavakauppa.fi
+//   carashell    → Magiborsten FI (Axels beslut 2026-09-18 kl 15: "Legg bare ut i Magiborsten FI"), CaraShell-sidan,
+//                  CaraShell-pixeln (måste vara delad till FI-kontot i Business Manager — byggskriptet stoppar annars),
+//                  carashell.se/fi (FI-marknaden byggd 2026-09-18)
+//   carashell_dk → den första CaraShell-armen, byggd i OPS-kontot MagiBorsten DK (kampanj 120249155398780172, PAUSED) —
+//                  ersatt av `carashell` i FI-kontot; kvar bara som facit för vad som ligger i DK.
+// Annonsnamnen är samma i alla armar (FI_Takoverdrag_…) så de går att jämföra rakt av — och de bär INTE
 // prefixet CaraShell_, så nattvakten (/notionscalercs carashell) rör inte testet.
+const caraAdset = (se) => `CARASHELL_FI_Kattopeite - ${se.replace(/^Taköverdrag Husvagn 6,5 × 3 m \| /, '').replace(/ \| Notionrunda /, ' | ').replace(/ \| 2026-09-09$/, '')}`;
+const CARA = { page_id: '1381171778405935', pixel_id: '28589207184025756', link: 'https://carashell.se/fi/products/takskyddet?country=FI',
+  kampanjnamn: `CARASHELL_FI_Kattopeite Asuntovaunu | Launch ${DATUM}`, adsetNamn: caraAdset };
 const ARMAR = {
   baver: { konto: 'act_1619718346388201', kontonamn: 'Magiborsten FI', page_id: '1317870104733246', pixel_id: '1554276343018184',
     link: 'https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan',
     kampanjnamn: `Kattopeite Asuntovaunu | FI | Launch ${DATUM}`, adsetNamn: (se) => `FI | ${se}` },
-  carashell: { konto: 'act_915422744950975', kontonamn: 'Magiborsten DK', page_id: '1381171778405935', pixel_id: '28589207184025756',
-    link: 'https://carashell.se/fi/products/takskyddet?country=FI',
-    kampanjnamn: `CARASHELL_FI_Kattopeite Asuntovaunu | Launch ${DATUM}`, adsetNamn: (se) => `CARASHELL_FI_Kattopeite - ${se.replace(/^Taköverdrag Husvagn 6,5 × 3 m \| /, '').replace(/ \| Notionrunda /, ' | ').replace(/ \| 2026-09-09$/, '')}` },
+  carashell: { konto: 'act_1619718346388201', kontonamn: 'Magiborsten FI', ...CARA },
+  carashell_dk: { konto: 'act_915422744950975', kontonamn: 'Magiborsten DK', ...CARA },
 };
 const ARM = ARMAR[args.includes('--arm') ? val('--arm') : 'baver'];
-if (!ARM) throw new Error('--arm baver|carashell');
+if (!ARM) throw new Error('--arm baver|carashell|carashell_dk');
 for (const a of adsets) a.fi_namn = ARM.adsetNamn(a.se_namn);
 const M = {
   arm: args.includes('--arm') ? val('--arm') : 'baver',

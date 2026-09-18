@@ -44,18 +44,19 @@ const sov = (ms) => new Promise((r) => setTimeout(r, ms));
 async function main() {
   // ---- spärr 1: rätt konto
   const acct = await get(M.konto, { fields: 'name,account_id,currency,account_status' });
-  // Spärr: kontot måste vara exakt det manifestet pekar på (id + namn) och aldrig SE-kontot. Två armar sedan
-  // A/B-testet 2026-09-18: Magiborsten FI (Bäver-armen) och MagiBorsten DK = OPS-kontot (CaraShell-armen).
+  // Spärr: kontot måste vara exakt det manifestet pekar på (id + namn) och aldrig SE-kontot. Armarna i
+  // manifest.mjs: baver + carashell i Magiborsten FI (Axels beslut 2026-09-18), carashell_dk i OPS-kontot MagiBorsten DK.
   const vantat = M.kontonamn || 'Magiborsten FI';
   if (acct.account_id === '1867947880635861' || M.konto !== `act_${acct.account_id}` || acct.name.toLowerCase() !== vantat.toLowerCase()) throw new Error(`STOPP: fel konto ${acct.name} (${acct.account_id}) — manifestet väntar ${vantat} (${M.konto}).`);
   console.log(`Konto: ${acct.name} (${acct.account_id}) ${acct.currency} status ${acct.account_status}`);
-  // ---- spärr 2: pixel och sida finns på kontot/token
-  const pix = await get(`${M.konto}/adspixels`, { fields: 'id,name' });
-  if (!pix.data.some((p) => p.id === M.pixel_id)) throw new Error(`STOPP: pixeln ${M.pixel_id} finns inte på ${acct.name}.`);
+  // ---- spärr 2: sidan finns på token
   const pages = await get('me/accounts', { fields: 'id,name', limit: 200 });
   const page = pages.data.find((p) => p.id === M.page_id);
   if (!page) throw new Error(`STOPP: sidan ${M.page_id} finns inte på token.`);
-  console.log(`Pixel ${M.pixel_id} (${pix.data.find((p) => p.id === M.pixel_id).name}), sida ${page.name} (${page.id})`);
+  console.log(`Sida ${page.name} (${page.id})`);
+  // Pixelspärren (spärr 3) ligger EFTER kampanj + medieuppladdning: de stegen behöver ingen pixel, och stoppar
+  // skriptet på pixeln har uppladdningen ändå gjorts och sparats i state — omkörningen fortsätter vid adsets.
+  // (2026-09-18: CaraShell-pixeln var inte delad till Magiborsten FI; delningen via API stoppades av behörighetsspärren.)
 
   // ---- kampanj (idempotent på namn)
   if (!st.kampanj) {
@@ -70,21 +71,6 @@ async function main() {
       st.kampanj = c.id; console.log(`✓ Kampanj PAUSED: ${M.kampanjnamn} (${c.id})`);
     }
     spara();
-  }
-  // ---- adsets
-  for (const a of M.adsets) {
-    if (st.adsets[a.se_namn]) continue;
-    const r = await post(`${M.konto}/adsets`, {
-      name: a.fi_namn, campaign_id: st.kampanj, status: 'PAUSED',
-      billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
-      promoted_object: { pixel_id: M.pixel_id, custom_event_type: 'PURCHASE' },
-      attribution_spec: [{ event_type: 'CLICK_THROUGH', window_days: 7 }],
-      targeting: { geo_locations: { countries: ['FI'], location_types: ['home', 'recent'] }, age_min: 18, age_max: 65, targeting_automation: { advantage_audience: 1 } },
-      // EU:s DSA kräver annonsör + betalare på varje adset (Meta-fel 3858081 utan dem, mätt 2026-09-18).
-      // Värdena läses ur manifestet — samma som SE-kampanjens 10 och FI-kontots 19 befintliga adsets.
-      dsa_beneficiary: M.dsa.beneficiary, dsa_payor: M.dsa.payor,
-    });
-    st.adsets[a.se_namn] = r.id; spara(); console.log(`✓ Adset PAUSED: ${a.fi_namn} (${r.id})`);
   }
   // ---- media
   for (const ad of M.annonser) {
@@ -117,6 +103,25 @@ async function main() {
       if (s.status?.video_status === 'error') throw new Error(`Video ${fil} fick status error hos Meta.`);
       await sov(5000);
     }
+  }
+  // ---- spärr 3: pixeln finns på kontot (måste vara delad till kontot i Business Manager)
+  const pix = await get(`${M.konto}/adspixels`, { fields: 'id,name' });
+  if (!pix.data.some((p) => p.id === M.pixel_id)) throw new Error(`STOPP: pixeln ${M.pixel_id} finns inte på ${acct.name} (kontot har: ${pix.data.map((p) => `${p.name} ${p.id}`).join(', ')}). Dela pixeln till kontot i Business Manager och kör om — kampanj och media är sparade i state.`);
+  console.log(`Pixel ${M.pixel_id} (${pix.data.find((p) => p.id === M.pixel_id).name})`);
+  // ---- adsets
+  for (const a of M.adsets) {
+    if (st.adsets[a.se_namn]) continue;
+    const r = await post(`${M.konto}/adsets`, {
+      name: a.fi_namn, campaign_id: st.kampanj, status: 'PAUSED',
+      billing_event: 'IMPRESSIONS', optimization_goal: 'OFFSITE_CONVERSIONS',
+      promoted_object: { pixel_id: M.pixel_id, custom_event_type: 'PURCHASE' },
+      attribution_spec: [{ event_type: 'CLICK_THROUGH', window_days: 7 }],
+      targeting: { geo_locations: { countries: ['FI'], location_types: ['home', 'recent'] }, age_min: 18, age_max: 65, targeting_automation: { advantage_audience: 1 } },
+      // EU:s DSA kräver annonsör + betalare på varje adset (Meta-fel 3858081 utan dem, mätt 2026-09-18).
+      // Värdena läses ur manifestet — samma som SE-kampanjens 10 och FI-kontots 19 befintliga adsets.
+      dsa_beneficiary: M.dsa.beneficiary, dsa_payor: M.dsa.payor,
+    });
+    st.adsets[a.se_namn] = r.id; spara(); console.log(`✓ Adset PAUSED: ${a.fi_namn} (${r.id})`);
   }
   // ---- creatives + annonser
   for (const ad of M.annonser) {

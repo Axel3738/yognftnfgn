@@ -609,6 +609,13 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.
   Två creatives har gammalt pris inbränt och får inte launchas: `2178753102691194`
   och `1324700059732480`.
+- **En butiks pixel följer inte ad-kontot.** Pixlarna ägs av businessen (MagiBorsten) och måste
+  vara **delade till varje ad-konto** i Business Manager (Events Manager → pixeln → Inställningar →
+  Annonskonton). Kolla `GET act_<id>/adspixels` innan ett bygge; saknas pixeln: be Axel dela den
+  till kontot (eller be om tillstånd för `POST /<pixel>/shared_accounts`) — **byt aldrig ad-konto
+  på egen hand** för att pixeln råkar ligga där. *(2026-09-18: CaraShell-armen av taköverdragets
+  FI-test byggdes i MagiBorsten DK för att CaraShell-pixeln bara låg där; Axel ville ha den i
+  Magiborsten FI och kampanjen fick byggas om.)*
 - **Meta-fältnamnen är exakta:** `amount_spent`, `actions:omni_purchase`,
   `cost_per_omni_purchase`, `purchase_roas`. INTE `spend`/`purchases`.
   ⚠️ `omni_purchase_values` är buggig — den returnerade intäkt **100× för lågt på

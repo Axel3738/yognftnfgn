@@ -2,61 +2,65 @@
 
 Spec: `FI-KAMPANJ.md`. Byggd av `fi-kampanj/` (skripten där, alla texter i `copy/`, `vo/`, `bilder/`).
 
-**Konto:** OPS-kontot MagiBorsten DK `act_915422744950975` (SEK). **Sida:** CaraShell `1381171778405935`. **Pixel:** CaraShell `28589207184025756` (eldar på carashell.se). **Länk:** https://carashell.se/fi/products/takskyddet?country=FI (FI-marknaden byggd av Axel 2026-09-18; verifierat i webbläsare samma dag: 126,90/165,90 €, fri frakt till Finland, Klarna — men **14 päivän peruuttamisoikeus**, annonserna säger 30). Slutkorten i CO_1, RI_1, SP_4, UG_1 är NEUTRALA (ingen logga) i den här armen. Annonsnamnen är samma som i Bäver-armen så armarna går att jämföra rakt av, och de bär inte prefixet CaraShell_ så nattvakten rör inte testet.
+**Konto:** Magiborsten FI `act_1619718346388201` (valuta SEK — inte EUR som specen antog; budgetar anges i öre). **Sida:** CaraShell `1381171778405935`. **Pixel:** `28589207184025756` (CaraShell — eldar på carashell.se; ägs av business MagiBorsten och måste vara delad till ad-kontot i Business Manager). **Länk:** https://carashell.se/fi/products/takskyddet?country=FI. Verifierat i webbläsare 2026-09-18: 126,90/165,90 €, fri frakt till Finland, Klarna — men **14 päivän peruuttamisoikeus**, annonserna säger 30. Slutkorten i CO_1, RI_1, SP_4, UG_1 är NEUTRALA (ingen logga) i den här armen. Annonsnamnen är samma som i Bäver-armen så armarna går att jämföra rakt av, och de bär inte prefixet CaraShell_ så nattvakten rör inte testet. **Kampanj:** `CARASHELL_FI_Kattopeite Asuntovaunu | Launch 2026-09-18` → `120251784514940199`, CBO 1100 kr/dag (≈ 100 €) som platshållare, PAUSED.
+
+Historik: armen byggdes först i OPS-kontot MagiBorsten DK (`act_915422744950975`, kampanj `120249155398780172`, PAUSED, 10 adsets/34 annonser) 2026-09-18 12:15. Axel: "Legg bare ut i Magiborsten FI" → samma kampanj byggd om i FI-kontot; DK-kampanjen ligger kvar PAUSED tills Axel säger radera.
+
+⚠️ **Ofullständig:** kampanj + media uppladdade, 0 adsets, 0 annonser. Orsak: pixeln `28589207184025756` är inte delad till kontot — byggskriptet stoppar vid spärr 3. Kör om `bygg-kampanj.mjs` med samma manifest när pixeln är delad; state-filen gör att uppladdningen inte görs om.
 
 ## Adsets
 
 | SE | FI | ID |
 |---|---|---|
-| CO | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - CO | 2026-09-15 | `120249155399000172` |
-| RI | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - RI | 2026-09-16 | `120249155399620172` |
-| Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09 | CARASHELL_FI_Kattopeite - SP | `120249155400330172` |
-| UG | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - UG | 2026-09-16 | `120249155401120172` |
-| Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09 | CARASHELL_FI_Kattopeite - GT | `120249155401820172` |
-| Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09 | CARASHELL_FI_Kattopeite - PD | `120249155402530172` |
-| BOF | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - BOF | 2026-09-15 | `120249155402890172` |
-| Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09 | CARASHELL_FI_Kattopeite - CS | `120249155403600172` |
-| LI | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - LI | 2026-09-15 | `120249155404390172` |
-| TR | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - TR | 2026-09-15 | `120249155405530172` |
+| CO | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - CO | 2026-09-15 | `—` |
+| RI | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - RI | 2026-09-16 | `—` |
+| Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09 | CARASHELL_FI_Kattopeite - SP | `—` |
+| UG | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - UG | 2026-09-16 | `—` |
+| Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09 | CARASHELL_FI_Kattopeite - GT | `—` |
+| Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09 | CARASHELL_FI_Kattopeite - PD | `—` |
+| BOF | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - BOF | 2026-09-15 | `—` |
+| Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09 | CARASHELL_FI_Kattopeite - CS | `—` |
+| LI | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - LI | 2026-09-15 | `—` |
+| TR | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - TR | 2026-09-15 | `—` |
 
 ## Annonser
 
 | SE-namn | FI-namn | FI-ad-ID | Status |
 |---|---|---|---|
-| Takoverdrag_CO_1_H1 | FI_Takoverdrag_CO_1_H1 | `120249155450990172` | uppladdad, — |
-| Takoverdrag_RI_1_H1 | FI_Takoverdrag_RI_1_H1 | `120249155451500172` | uppladdad, — |
-| Takoverdrag_SP_4_H1 | FI_Takoverdrag_SP_4_H1 | `120249155451890172` | uppladdad, — |
-| Takoverdrag_UG_1_H1 | FI_Takoverdrag_UG_1_H1 | `120249155452310172` | uppladdad, — |
-| Takoverdrag_GT_4_H1 | FI_Takoverdrag_GT_4_H1 | `120249155452610172` | uppladdad, — |
-| Takoverdrag_PD_4_H1 | FI_Takoverdrag_PD_4_H1 | `120249155453140172` | uppladdad, — |
-| Takoverdrag_GT_5_H1 | FI_Takoverdrag_GT_5_H1 | `120249155453910172` | uppladdad, — |
-| Takoverdrag_BOF_2_1 | FI_Takoverdrag_BOF_2_1 | `120249155454920172` | uppladdad, — |
-| Takoverdrag_BOF_1_1 | FI_Takoverdrag_BOF_1_1 | `120249155455720172` | uppladdad, — |
-| Takoverdrag_CO_2_1 | FI_Takoverdrag_CO_2_1 | `120249155456420172` | uppladdad, — |
-| Takoverdrag_BOF_3_1 | FI_Takoverdrag_BOF_3_1 | `120249155457400172` | uppladdad, — |
-| Takoverdrag_CS_4_1 | FI_Takoverdrag_CS_4_1 | `120249155457860172` | uppladdad, — |
-| Takoverdrag_GT_6_1 | FI_Takoverdrag_GT_6_1 | `120249155458300172` | uppladdad, — |
-| Takoverdrag_CS_6_1 | FI_Takoverdrag_CS_6_1 | `120249155458610172` | uppladdad, — |
-| Takoverdrag_PD_5_1 | FI_Takoverdrag_PD_5_1 | `120249155458980172` | uppladdad, — |
-| Takoverdrag_LI_1_1 | FI_Takoverdrag_LI_1_1 | `120249155460030172` | uppladdad, — |
-| Takoverdrag_SP_5_1 | FI_Takoverdrag_SP_5_1 | `120249155460250172` | uppladdad, — |
-| Takoverdrag_TR_1_1 | FI_Takoverdrag_TR_1_1 | `120249155461060172` | uppladdad, — |
-| Takoverdrag_SP_2_1 | FI_Takoverdrag_SP_2_1 | `120249155461540172` | uppladdad, — |
-| Takoverdrag_SP_3_H1 | FI_Takoverdrag_SP_3_H1 | `120249155462450172` | uppladdad, — |
-| Takoverdrag_SP_2_H1 | FI_Takoverdrag_SP_2_H1 | `120249155463090172` | uppladdad, — |
-| Takoverdrag_SP_1_H1 | FI_Takoverdrag_SP_1_H1 | `120249155463810172` | uppladdad, — |
-| Takoverdrag_PD_2_1 | FI_Takoverdrag_PD_2_1 | `120249155464440172` | uppladdad, — |
-| Takoverdrag_PD_3_H1 | FI_Takoverdrag_PD_3_H1 | `120249155465610172` | uppladdad, — |
-| Takoverdrag_PD_2_H1 | FI_Takoverdrag_PD_2_H1 | `120249155466580172` | uppladdad, — |
-| Takoverdrag_PD_1_H1 | FI_Takoverdrag_PD_1_H1 | `120249155467650172` | uppladdad, — |
-| Takoverdrag_GT_2_1 | FI_Takoverdrag_GT_2_1 | `120249155468060172` | uppladdad, — |
-| Takoverdrag_GT_3_H1 | FI_Takoverdrag_GT_3_H1 | `120249155469030172` | uppladdad, — |
-| Takoverdrag_GT_2_H1 | FI_Takoverdrag_GT_2_H1 | `120249155469910172` | uppladdad, — |
-| Takoverdrag_GT_1_H1 | FI_Takoverdrag_GT_1_H1 | `120249155470350172` | uppladdad, — |
-| Takoverdrag_CS_2_1 | FI_Takoverdrag_CS_2_1 | `120249155471060172` | uppladdad, — |
-| Takoverdrag_CS_3_H1 | FI_Takoverdrag_CS_3_H1 | `120249155471570172` | uppladdad, — |
-| Takoverdrag_CS_2_H1 | FI_Takoverdrag_CS_2_H1 | `120249155472310172` | uppladdad, — |
-| Takoverdrag_CS_1_H1 | FI_Takoverdrag_CS_1_H1 | `120249155472980172` | uppladdad, — |
+| Takoverdrag_CO_1_H1 | FI_Takoverdrag_CO_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_RI_1_H1 | FI_Takoverdrag_RI_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_SP_4_H1 | FI_Takoverdrag_SP_4_H1 | `—` | ej uppladdad |
+| Takoverdrag_UG_1_H1 | FI_Takoverdrag_UG_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_GT_4_H1 | FI_Takoverdrag_GT_4_H1 | `—` | ej uppladdad |
+| Takoverdrag_PD_4_H1 | FI_Takoverdrag_PD_4_H1 | `—` | ej uppladdad |
+| Takoverdrag_GT_5_H1 | FI_Takoverdrag_GT_5_H1 | `—` | ej uppladdad |
+| Takoverdrag_BOF_2_1 | FI_Takoverdrag_BOF_2_1 | `—` | ej uppladdad |
+| Takoverdrag_BOF_1_1 | FI_Takoverdrag_BOF_1_1 | `—` | ej uppladdad |
+| Takoverdrag_CO_2_1 | FI_Takoverdrag_CO_2_1 | `—` | ej uppladdad |
+| Takoverdrag_BOF_3_1 | FI_Takoverdrag_BOF_3_1 | `—` | ej uppladdad |
+| Takoverdrag_CS_4_1 | FI_Takoverdrag_CS_4_1 | `—` | ej uppladdad |
+| Takoverdrag_GT_6_1 | FI_Takoverdrag_GT_6_1 | `—` | ej uppladdad |
+| Takoverdrag_CS_6_1 | FI_Takoverdrag_CS_6_1 | `—` | ej uppladdad |
+| Takoverdrag_PD_5_1 | FI_Takoverdrag_PD_5_1 | `—` | ej uppladdad |
+| Takoverdrag_LI_1_1 | FI_Takoverdrag_LI_1_1 | `—` | ej uppladdad |
+| Takoverdrag_SP_5_1 | FI_Takoverdrag_SP_5_1 | `—` | ej uppladdad |
+| Takoverdrag_TR_1_1 | FI_Takoverdrag_TR_1_1 | `—` | ej uppladdad |
+| Takoverdrag_SP_2_1 | FI_Takoverdrag_SP_2_1 | `—` | ej uppladdad |
+| Takoverdrag_SP_3_H1 | FI_Takoverdrag_SP_3_H1 | `—` | ej uppladdad |
+| Takoverdrag_SP_2_H1 | FI_Takoverdrag_SP_2_H1 | `—` | ej uppladdad |
+| Takoverdrag_SP_1_H1 | FI_Takoverdrag_SP_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_PD_2_1 | FI_Takoverdrag_PD_2_1 | `—` | ej uppladdad |
+| Takoverdrag_PD_3_H1 | FI_Takoverdrag_PD_3_H1 | `—` | ej uppladdad |
+| Takoverdrag_PD_2_H1 | FI_Takoverdrag_PD_2_H1 | `—` | ej uppladdad |
+| Takoverdrag_PD_1_H1 | FI_Takoverdrag_PD_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_GT_2_1 | FI_Takoverdrag_GT_2_1 | `—` | ej uppladdad |
+| Takoverdrag_GT_3_H1 | FI_Takoverdrag_GT_3_H1 | `—` | ej uppladdad |
+| Takoverdrag_GT_2_H1 | FI_Takoverdrag_GT_2_H1 | `—` | ej uppladdad |
+| Takoverdrag_GT_1_H1 | FI_Takoverdrag_GT_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_CS_2_1 | FI_Takoverdrag_CS_2_1 | `—` | ej uppladdad |
+| Takoverdrag_CS_3_H1 | FI_Takoverdrag_CS_3_H1 | `—` | ej uppladdad |
+| Takoverdrag_CS_2_H1 | FI_Takoverdrag_CS_2_H1 | `—` | ej uppladdad |
+| Takoverdrag_CS_1_H1 | FI_Takoverdrag_CS_1_H1 | `—` | ej uppladdad |
 
 ## Lokaliseringslogg per annons (utöver ren översättning)
 

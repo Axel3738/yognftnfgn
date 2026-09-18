@@ -22,11 +22,23 @@ const adIdAv = (n) => st.annonser?.[n] || '—';
 const ver = st.verifiering;
 const effAv = (n) => ver?.annonser?.find((x) => x[0] === `FI_${n}`)?.[1] || '—';
 
-let md = `# Taköverdraget — finska kampanjen, körlogg (${DATUM})\n\n`;
+// Armens rubrik/konto/sida/pixel läses ur manifestet — samma skript skriver Bäver- och CaraShell-loggen.
+const SIDOR = { '1317870104733246': 'Majavakauppa', '1381171778405935': 'CaraShell' };
+const PIXLAR = {
+  '1554276343018184': 'Bäverbutiken.se — kontots enda köp-pixel, samma som Axels 19 befintliga FI-adsets; majavakauppa.fi skickar i dag ingen Meta-pixel alls — se frågan till Axel i leveransen',
+  '28589207184025756': 'CaraShell — eldar på carashell.se; ägs av business MagiBorsten och måste vara delad till ad-kontot i Business Manager',
+};
+const cara = (M.arm || 'baver').startsWith('carashell');
+let md = cara
+  ? `# Taköverdraget — finska kampanjen, CaraShell-armen (A/B-test Bäver vs CaraShell, Axels beslut 2026-09-18)\n\n`
+  : `# Taköverdraget — finska kampanjen, körlogg (${DATUM})\n\n`;
 md += `Spec: \`FI-KAMPANJ.md\`. Byggd av \`fi-kampanj/\` (skripten där, alla texter i \`copy/\`, \`vo/\`, \`bilder/\`).\n\n`;
-md += `**Konto:** Magiborsten FI \`act_1619718346388201\` (valuta SEK — inte EUR som specen antog; budgetar anges i öre). `;
-md += `**Sida:** Majavakauppa \`1317870104733246\`. **Pixel:** \`1554276343018184\` (Bäverbutiken.se — kontots enda köp-pixel, samma som Axels 19 befintliga FI-adsets; majavakauppa.fi skickar i dag ingen Meta-pixel alls — se frågan till Axel i leveransen). `;
+md += `**Konto:** ${M.kontonamn || 'Magiborsten FI'} \`${M.konto}\` (valuta SEK — inte EUR som specen antog; budgetar anges i öre). `;
+md += `**Sida:** ${SIDOR[M.page_id] || '?'} \`${M.page_id}\`. **Pixel:** \`${M.pixel_id}\` (${PIXLAR[M.pixel_id] || '?'}). **Länk:** ${M.link}. `;
+if (cara) md += `Verifierat i webbläsare 2026-09-18: 126,90/165,90 €, fri frakt till Finland, Klarna — men **14 päivän peruuttamisoikeus**, annonserna säger 30. Slutkorten i CO_1, RI_1, SP_4, UG_1 är NEUTRALA (ingen logga) i den här armen. Annonsnamnen är samma som i Bäver-armen så armarna går att jämföra rakt av, och de bär inte prefixet CaraShell_ så nattvakten rör inte testet. `;
 md += `**Kampanj:** \`${M.kampanjnamn}\` → \`${st.kampanj || '—'}\`, CBO ${M.dagsbudget_ore / 100} kr/dag (≈ 100 €) som platshållare, PAUSED.\n\n`;
+if (cara && M.konto === 'act_1619718346388201') md += `Historik: armen byggdes först i OPS-kontot MagiBorsten DK (\`act_915422744950975\`, kampanj \`120249155398780172\`, PAUSED, 10 adsets/34 annonser) 2026-09-18 12:15. Axel: "Legg bare ut i Magiborsten FI" → samma kampanj byggd om i FI-kontot; DK-kampanjen ligger kvar PAUSED tills Axel säger radera.\n\n`;
+if (!st.kampanj || !Object.keys(st.adsets || {}).length) md += `⚠️ **Ofullständig:** ${st.kampanj ? 'kampanj + media uppladdade' : 'inget skapat'}, ${Object.keys(st.adsets || {}).length} adsets, ${Object.keys(st.annonser || {}).length} annonser. Orsak: pixeln \`${M.pixel_id}\` är inte delad till kontot — byggskriptet stoppar vid spärr 3. Kör om \`bygg-kampanj.mjs\` med samma manifest när pixeln är delad; state-filen gör att uppladdningen inte görs om.\n\n`;
 if (ver) {
   const pr = ver.annonser.filter((a) => a[1] === 'PENDING_REVIEW').length, ovr = ver.annonser.filter((a) => !['PAUSED', 'PENDING_REVIEW'].includes(a[1]));
   md += `Verifiering ${DATUM} (\`effective_status\`): kampanj \`${ver.kampanj.effective_status}\`, ${ver.adsets.length} adsets (${ver.adsets.every((a) => a[1] === 'PAUSED') ? 'alla PAUSED' : 'EJ ALLA PAUSED: ' + ver.adsets.filter((a) => a[1] !== 'PAUSED').map((a) => a[0]).join(', ')}), ${ver.annonser.length} annonser: ${ver.annonser.length - pr - ovr.length} PAUSED + ${pr} PENDING_REVIEW (alla skapade med \`status: PAUSED\`; PENDING_REVIEW är Metas granskning av nya annonser och levererar inte medan kampanj och adset är pausade)${ovr.length ? ` — ⚠️ AVVIKER: ${ovr.map((a) => a[0] + '=' + a[1]).join(', ')}` : ''}.\n\n`;
