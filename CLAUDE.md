@@ -594,6 +594,16 @@ Grillklinikken-butiker får ALDRIG bäver-emojin eller "Bäverbutiken" som vendo
 - **Nya produkter skapas bara i SE och NO** (Axels beslut 2026-09-07).
   Skapa aldrig en ny produkt i DK, FI eller UK utan att Axel sagt till.
   Det som redan ligger där underhålls som vanligt.
+  *Undantag på Axels begäran 2026-09-18: taköverdraget (nio längder) ligger i FI —
+  `temu/takoverdrag/fi.mjs`. Gäller bara den produkten, inte regeln.*
+- **Saknas offert för ett land men finns för ett annat: leta upp landets RIKTIGA rad
+  innan du skalar med ett procentpåslag ur minnet.** Taköverdraget hade en FI-rad i
+  batch 6-arket (landat 26,5 % över SE) fast Axel gissade "kanske 20 %". Sök alltid i
+  offertarken efter landets rad först; skala bara det som verkligen saknas, och märk
+  det som modell i kommentaren så nästa session ser vad som är belagt.
+- **Ägarens OK kan komma som en handling, inte bara som ordet "kör".** Söker Axel efter
+  produkten i butiken (skärmdump "0 tulosta") efter att ha fått priserna är det ett OK —
+  fråga inte en gång till. *(2026-09-18: taköverdraget i FI.)*
 - **Priset hämtas från produktsidan vid varje körning**, aldrig ur en äldre brief
   eller creative. Axelbältet höjdes 2026-08-05 från 509 → 599 kr (jämförpris 678 kr
   = spara 79 kr, 11,65 %). **509 kr, 636 kr och "20 %" är förbjudna** i all ny copy.

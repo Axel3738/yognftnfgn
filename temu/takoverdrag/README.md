@@ -8,7 +8,22 @@ så det funkar för Sverige … Ser du alla storleks varianter okej? Vi måste l
 
 ## Läget
 
-**Klart och live:** sidan är omskriven med leverantörens fem nya uppgifter —
+**2026-09-18, SE:** Axel skapade de nio varianterna själv i admin (namn "3 × 5.5 Meter",
+SKU `TEMU-5050206311352`…`360`, priser 1129 → 2239 kr). Det är facit — `fakta.mjs` bär det
+som `SE_LIVE`. ⚠️ Jämförpriset är 1469 kr på alla nio, alltså lägre än priset från 9,5 m
+och uppåt. Sidan är fortfarande enstorleksversionen — `sida.mjs --nio --skarp` byter.
+
+**2026-09-18, FI — LIVE:** Axels beslut: produkten går till majavakauppa.fi trots
+SE+NO-regeln. Skapad med `fi.mjs --skarp` efter Axels OK: 9 varianter, 6 media, 3 kanaler,
+kategori Vehicle Covers, moms av, mall `claudeprodukter`. Slutgranskad live: alla bild-URL:er
+svarar 200, ordningen problem → GIF → lösning → bild → funktioner → bild → tabell → garanti,
+inga platshållare, Kaching visar variantväljaren.
+https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan
+⚠️ Kachings blocktitel i FI säger "14 Päivän peruuttamisoikeus" — samma butiksvida defekt
+som i SE ("14 Dagars Ångerrätt"), motsäger 30 dagars öppet köp. Kräver Axels inloggade
+Kaching-session (`temu/kaching-cli`).
+
+**Klart och live (SE-sidan):** sidan är omskriven med leverantörens fem nya uppgifter —
 silverbelagd 210D-oxfordväv, remmar på fyra sidor à 2,5 m, justerbar längd, krok i
 nederkant, och **två förstärkta 10,5 m-spännremmar som ingår**. Sidan hade dessutom
 ingen meta-beskrivning alls; den finns nu.
@@ -61,12 +76,28 @@ node temu/takoverdrag/sida.mjs --nio --skarp
 `sida.mjs --nio` kontrollerar att varianterna finns och vägrar annars: en sida som lovar
 nio längder men bara säljer en är ett löfte butiken inte kan hålla.
 
+## Finland
+Priserna: 6,5 m är CWD:s riktiga FI-offert i batch 6-arket (17,42 + 28,34 = 45,76 USD →
+126,90 €, landat 26,5 % över Sverige). Övriga längder = Axels SE-stege × 0,1124 (= 126,90/1129),
+avrundat till X,90. Inköpspriset är en modell (7,04 USD/m × längden × 0,856026) — byt mot CWD:s
+siffror när de kommer. SKU:erna är samma som SE så varianterna matchar rakt av.
+
+```bash
+node temu/takoverdrag/fi-priser.mjs                  # prisstegen
+node temu/takoverdrag/bilder-storlekstabell.mjs fi   # tak-storlekar-fi.jpg
+node temu/takoverdrag/fi.mjs                         # torrkörning
+node temu/takoverdrag/fi.mjs --skarp                 # skapar produkten (vägrar om SKU:n redan finns)
+```
+
 ## Filerna
-- `fakta.mjs` — de nio längderna, leverantörens fem nya uppgifter, den enda offererade raden
+- `fakta.mjs` — de nio längderna, leverantörens fem nya uppgifter, den enda offererade raden, SE-facit
 - `copy.json` — två uppsättningar: `enStorlek` (live i dag) och `nioStorlekar` (väntar)
-- `sida.mjs [--nio] [--skarp]` — skriver om produktsidan
-- `varianter.mjs [--skarp]` — skapar storleksvarianterna, spärrad utan riktiga inköpspriser
-- `bilder-storlekstabell.mjs` — infografiken med de nio längderna, skarp text ur fakta.mjs
+- `copy-fi.json` — finsk copy (Sonnet-skribent 2026-09-18), option `Koko`, tabelltexterna
+- `fi-priser.mjs` — FI-stegen med källa per rad (offert/modell)
+- `fi.mjs [--skarp]` — skapar produkten i majavakauppa.fi, bilderna via SE:s CDN
+- `sida.mjs [--nio] [--skarp]` — skriver om SE-sidan
+- `varianter.mjs [--skarp]` — SE-variantskript, aldrig kört (Axel skapade dem för hand)
+- `bilder-storlekstabell.mjs [fi]` — infografiken med de nio längderna, skarp text ur fakta.mjs (finska ur copy-fi.json)
 
 ## Två saker att veta
 - **"Vattentät" skrivs aldrig ut**, trots att leverantören säger *"waterproof and
