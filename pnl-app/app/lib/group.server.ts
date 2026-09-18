@@ -327,6 +327,7 @@ async function summeraButik(
       marketFees: stadaAvgifter(m.marketFees),
     },
     salesByMarket: daily.salesByMarket,
+    ordersByMarket: daily.ordersByMarket,
   });
 
   const totals = convertTotalsPerDay(r.totals, daily.sales, spendData.days, kurser, from, to);

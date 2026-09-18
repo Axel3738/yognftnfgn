@@ -547,11 +547,12 @@ const en = {
     feeLabel: "Transaction fee (%)",
     feeHelp: "Share of total order value. Shopify Payments is typically around 2.9 %.",
     marketFees: {
-      title: "Fees per market",
-      body: "Shopify Payments charges more for international cards and adds a currency conversion fee when the customer pays in another currency. Set them per country so profit isn't overstated abroad.",
+      title: "Fees and duty per market",
+      body: "Shopify Payments charges more for international cards and adds a currency conversion fee when the customer pays in another currency — and duty is a different amount in the EU than in North America. Set them per country so profit isn't overstated abroad.",
       feeLabel: "Card fee (%)",
       fxLabel: "Currency conversion (%)",
-      hint: "Leave a field empty to use the standard fee above and no conversion fee. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion.",
+      tariffLabel: "Duty per order",
+      hint: "Leave a field empty to use the standard values above. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion. Duty is an amount per order, not a percentage.",
       measuredAll: (pct: string, days: number) =>
         `You don't need to look these up: the dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of sales over the last ${days} days. The fields below only matter for days without that data.`,
       measured: (pct: string) => `Actually charged: ${pct} % (last 90 days)`,
@@ -1371,11 +1372,12 @@ const sv: Texts = {
     feeLabel: "Transaktionsavgift (%)",
     feeHelp: "Andel av totalt ordervärde. Shopify Payments ligger typiskt kring 2,9 %.",
     marketFees: {
-      title: "Avgifter per marknad",
-      body: "Shopify Payments tar mer för utländska kort och lägger på en valutaväxlingsavgift när kunden betalar i en annan valuta. Sätt dem per land så vinsten utomlands inte ser för bra ut.",
+      title: "Avgifter och tull per marknad",
+      body: "Shopify Payments tar mer för utländska kort och lägger på en valutaväxlingsavgift när kunden betalar i en annan valuta — och tullen är ett helt annat tal till EU än till Nordamerika. Sätt dem per land så vinsten utomlands inte ser för bra ut.",
       feeLabel: "Kortavgift (%)",
       fxLabel: "Valutaväxling (%)",
-      hint: "Tomt fält = standardavgiften ovan och ingen växlingsavgift. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling.",
+      tariffLabel: "Tull per order",
+      hint: "Tomt fält = standardvärdena ovan. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling. Tullen är ett belopp per order, inte en procentsats.",
       measuredAll: (pct: string, days: number) =>
         `Du behöver inte slå upp dem: panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen de senaste ${days} dagarna. Fälten nedan används bara för dagar utan den datan.`,
       measured: (pct: string) => `Faktiskt taget: ${pct} % (senaste 90 dagarna)`,

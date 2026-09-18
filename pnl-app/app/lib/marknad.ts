@@ -66,24 +66,41 @@ export interface Marknadsavgift {
   feeRate: number | null;
   /** Valutaväxlingsavgift, andel. Null/0 = ingen. */
   fxFeeRate: number | null;
+  /**
+   * Tull/importavgift per order, i BELOPP och butikens valuta — inte en andel.
+   * Null = butikens standardtull. Samma butik kan sälja till EU och till
+   * Nordamerika, och tullen är då helt olika tal. *(Axel 2026-09-18.)*
+   */
+  tariffPerOrder: number | null;
 }
 
-/** Städar lagrade avgifter: bara giltiga landskoder och tal mellan 0 och 1. */
+/**
+ * Städar lagrade avgifter: bara giltiga landskoder, andelar mellan 0 och 1,
+ * och tullen som ett rimligt belopp. Andel och belopp får ALDRIG valideras
+ * med samma regel — en tull på 27,50 kr hade tolkats som 2750 % och en
+ * kortavgift på 34 som 34 kr.
+ */
 export function stadaAvgifter(ra: unknown): Record<string, Marknadsavgift> {
   const ut: Record<string, Marknadsavgift> = {};
   if (!ra || typeof ra !== "object") return ut;
-  const tal = (v: unknown) => {
-    const n = typeof v === "number" ? v : parseFloat(String(v ?? "").replace(",", "."));
+  const las = (v: unknown) => (typeof v === "number" ? v : parseFloat(String(v ?? "").replace(",", ".")));
+  const andel = (v: unknown) => {
+    const n = las(v);
     return Number.isFinite(n) && n >= 0 && n < 1 ? n : null;
+  };
+  const belopp = (v: unknown) => {
+    const n = las(v);
+    return Number.isFinite(n) && n >= 0 && n < 1_000_000 ? n : null;
   };
   for (const [k, v] of Object.entries(ra as Record<string, unknown>)) {
     const kod = marknadskod(k);
     if (!kod || !v || typeof v !== "object") continue;
-    const o = v as { feeRate?: unknown; fxFeeRate?: unknown };
-    const feeRate = tal(o.feeRate);
-    const fxFeeRate = tal(o.fxFeeRate);
-    if (feeRate == null && fxFeeRate == null) continue;
-    ut[kod] = { feeRate, fxFeeRate };
+    const o = v as { feeRate?: unknown; fxFeeRate?: unknown; tariffPerOrder?: unknown };
+    const feeRate = andel(o.feeRate);
+    const fxFeeRate = andel(o.fxFeeRate);
+    const tariffPerOrder = belopp(o.tariffPerOrder);
+    if (feeRate == null && fxFeeRate == null && tariffPerOrder == null) continue;
+    ut[kod] = { feeRate, fxFeeRate, tariffPerOrder };
   }
   return ut;
 }

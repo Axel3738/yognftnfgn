@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "forsoker-igen-v100", db });
+  return json({ ok: true, build: "tull-per-marknad-v101", db });
 }

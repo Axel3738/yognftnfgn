@@ -276,6 +276,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     costTiers,
     settings: raknesettings,
     salesByMarket: daily.salesByMarket,
+    ordersByMarket: daily.ordersByMarket,
   });
   /* Raderna är räknade per marknad (rätt kostnad per land) men visas per
      variant — tabellen ska inte ha tre rader för samma motorhölje. */
@@ -315,6 +316,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       costTiers,
       settings: raknesettings,
       salesByMarket: prevData.salesByMarket,
+      ordersByMarket: prevData.ordersByMarket,
     });
     if (prev.totals.orders > 0) {
       comparison = {

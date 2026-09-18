@@ -39,7 +39,7 @@ import { rate as fxRate } from "../lib/fx.server";
 import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
 import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
 import { mixText } from "../lib/breakeven-text";
-import { feeRateFor, type CostTierRow } from "../lib/pnl.server";
+import { feeRateFor, tariffFor, type CostTierRow } from "../lib/pnl.server";
 import { stadaAvgifter } from "../lib/marknad";
 import { dayInTz } from "../lib/shopify-data.server";
 import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
@@ -120,6 +120,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
     targetMargin: Number(settings.targetMargin),
     marketFees: stadaAvgifter(settings.marketFees),
   };
+  /* Tullen för vald marknad. En EU-order och en USA-order i samma butik bär
+     helt olika tull, och break-even ska räkna med den som gäller där. */
+  const tariffEff = tariffFor(raknesettings, market);
   /* Hellre det Shopify Payments FAKTISKT tog (ur ordrarna, 90 dagar) än en
      sats någon skrivit in: den mätta satsen för marknaden när underlaget
      finns, annars Inställningars sats. */
@@ -176,7 +179,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
       unitCost,
       tiers: tiers.map((t): CostTierRow => ({ variantGid: v.variantGid, units: t.units, totalCost: t.totalCost })),
       lines: linesPerVariant.get(v.variantGid) ?? null,
-      tariffPerOrder: raknesettings.tariffPerOrder,
+      tariffPerOrder: tariffEff,
       feeRate: feeRateEff,
     });
     return {
@@ -215,7 +218,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     missing: rows.filter((r) => (market ? r.unitCost == null : !r.tackt)).length,
     saljMarknader,
     total: rows.length,
-    tariffPerOrder: Number(settings.tariffPerOrder),
+    tariffPerOrder: tariffEff,
     feeRate: feeRateEff,
     feeMatt,
     currency: settings.currency,

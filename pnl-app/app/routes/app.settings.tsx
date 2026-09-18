@@ -132,6 +132,8 @@ export async function loader({ request }: LoaderFunctionArgs) {
         {
           feeRate: a.feeRate == null ? "" : (a.feeRate * 100).toFixed(2),
           fxFeeRate: a.fxFeeRate == null ? "" : (a.fxFeeRate * 100).toFixed(2),
+          /* Tullen är ett BELOPP, inte procent — den skalas inte med 100. */
+          tariffPerOrder: a.tariffPerOrder == null ? "" : String(a.tariffPerOrder),
         },
       ]),
     ),
@@ -259,15 +261,23 @@ export async function action({ request }: ActionFunctionArgs) {
   const token = String(f.get("metaAccessToken") ?? "").trim();
   /* Avgifter per marknad: fälten heter fee_<KOD> och fx_<KOD>, i procent.
      Tomt fält = ingen egen sats (standardavgiften gäller, ingen växling). */
-  const marketFees: Record<string, { feeRate: number | null; fxFeeRate: number | null }> = {};
+  const marketFees: Record<
+    string,
+    { feeRate: number | null; fxFeeRate: number | null; tariffPerOrder: number | null }
+  > = {};
   for (const [k, v] of f.entries()) {
-    const m = k.match(/^(fee|fx)_([A-Z]{2})$/);
+    const m = k.match(/^(fee|fx|tull)_([A-Z]{2})$/);
     if (!m) continue;
     const n = parseFloat(String(v ?? "").replace(",", "."));
-    const andel = Number.isFinite(n) && n >= 0 ? n / 100 : null;
-    const post = (marketFees[m[2]] ??= { feeRate: null, fxFeeRate: null });
-    if (m[1] === "fee") post.feeRate = andel;
-    else post.fxFeeRate = andel;
+    const post = (marketFees[m[2]] ??= { feeRate: null, fxFeeRate: null, tariffPerOrder: null });
+    /* Tullen är ett belopp i butikens valuta; avgifterna är procent. Att
+       dela tullen med 100 hade gjort 27,50 kr till 27,5 öre. */
+    if (m[1] === "tull") post.tariffPerOrder = Number.isFinite(n) && n >= 0 ? n : null;
+    else {
+      const andel = Number.isFinite(n) && n >= 0 ? n / 100 : null;
+      if (m[1] === "fee") post.feeRate = andel;
+      else post.fxFeeRate = andel;
+    }
   }
 
   /* En inklistrad användartoken dör också efter 60 dagar — utan varning om
@@ -323,15 +333,18 @@ export default function Settings() {
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
   /* Avgifter per marknad, som procentsträngar per landskod. Sparas med Spara. */
-  const [avgifter, setAvgifter] = useState<Record<string, { feeRate: string; fxFeeRate: string }>>(
-    d.marketFees as Record<string, { feeRate: string; fxFeeRate: string }>,
+  type Avgiftsfalt = { feeRate: string; fxFeeRate: string; tariffPerOrder: string };
+  const tomAvgift = (): Avgiftsfalt => ({ feeRate: "", fxFeeRate: "", tariffPerOrder: "" });
+  const [avgifter, setAvgifter] = useState<Record<string, Avgiftsfalt>>(
+    d.marketFees as Record<string, Avgiftsfalt>,
   );
-  const sattAvgift = (m: string, falt: "feeRate" | "fxFeeRate") => (val: string) =>
-    setAvgifter((a) => ({ ...a, [m]: { ...(a[m] ?? { feeRate: "", fxFeeRate: "" }), [falt]: val } }));
+  const sattAvgift = (m: string, falt: keyof Avgiftsfalt) => (val: string) =>
+    setAvgifter((a) => ({ ...a, [m]: { ...tomAvgift(), ...(a[m] ?? {}), [falt]: val } }));
   const avgiftsFalt = Object.fromEntries(
     Object.entries(avgifter).flatMap(([m, a]) => [
       [`fee_${m}`, a.feeRate],
       [`fx_${m}`, a.fxFeeRate],
+      [`tull_${m}`, a.tariffPerOrder ?? ""],
     ]),
   );
 
@@ -632,6 +645,19 @@ export default function Settings() {
                           autoComplete="off"
                           placeholder="0"
                           suffix="%"
+                        />
+                      </div>
+                      {/* Tullen per order för just den här marknaden. En butik
+                          som säljer både till EU och Nordamerika har två helt
+                          olika tal, och tomt fält betyder butikens standard. */}
+                      <div style={{ width: 170 }}>
+                        <TextField
+                          label={T.settings.marketFees.tariffLabel}
+                          value={avgifter[m]?.tariffPerOrder ?? ""}
+                          onChange={sattAvgift(m, "tariffPerOrder")}
+                          autoComplete="off"
+                          placeholder={v.tariffPerOrder}
+                          suffix={d.currency}
                         />
                       </div>
                     </InlineStack>

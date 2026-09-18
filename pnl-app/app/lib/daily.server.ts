@@ -122,6 +122,11 @@ export interface DailyReadResult {
    * avgifter per marknad i räknemotorn.
    */
   salesByMarket: Record<string, number>;
+  /**
+   * Antal ordrar per marknad i intervallet. Tullen är ett belopp per order,
+   * så den kan inte räknas ur omsättningen — den behöver ordrarna.
+   */
+  ordersByMarket: Record<string, number>;
 }
 
 export interface ReadDailyOpts {
@@ -198,17 +203,23 @@ export async function readDaily(
       lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
       daysWithoutMarkets: utanUppdelning,
       salesByMarket: { [market]: sales.reduce((a, s) => a + s.totalSales, 0) },
+      ordersByMarket: { [market]: sales.reduce((a, s) => a + s.orders, 0) },
     };
   }
 
   const products: ProductRow[] = [];
   const salesByMarket: Record<string, number> = {};
+  const ordersByMarket: Record<string, number> = {};
   for (const r of rows) {
     const per = uppdelning(r);
     if (per) {
-      for (const [m, del] of Object.entries(per)) salesByMarket[m] = (salesByMarket[m] ?? 0) + del.totalSales;
+      for (const [m, del] of Object.entries(per)) {
+        salesByMarket[m] = (salesByMarket[m] ?? 0) + del.totalSales;
+        ordersByMarket[m] = (ordersByMarket[m] ?? 0) + del.orders;
+      }
     } else {
       salesByMarket[""] = (salesByMarket[""] ?? 0) + r.totalSales;
+      ordersByMarket[""] = (ordersByMarket[""] ?? 0) + r.orders;
     }
     if (per && opts.perMarknad) {
       for (const [m, del] of Object.entries(per)) products.push(...del.products.map((p) => ({ ...p, market: m })));
@@ -235,6 +246,7 @@ export async function readDaily(
     lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
     daysWithoutMarkets: 0,
     salesByMarket,
+    ordersByMarket,
   };
 }
 

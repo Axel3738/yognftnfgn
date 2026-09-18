@@ -157,7 +157,10 @@ export interface Settings {
    * den när kunden betalar i en annan valuta än butikens). Summan tas på
    * marknadens omsättning.
    */
-  marketFees?: Record<string, { feeRate?: number | null; fxFeeRate?: number | null }>;
+  marketFees?: Record<
+    string,
+    { feeRate?: number | null; fxFeeRate?: number | null; tariffPerOrder?: number | null }
+  >;
 }
 
 /** Effektiv avgiftsandel för en marknad: egen post om den finns, annars standard. */
@@ -165,6 +168,17 @@ export function feeRateFor(settings: Settings, market: string): number {
   const egen = settings.marketFees?.[market];
   if (!market || !egen) return settings.feeRate;
   return (egen.feeRate ?? settings.feeRate) + (egen.fxFeeRate ?? 0);
+}
+
+/**
+ * Tull per order för en marknad. Ett BELOPP, inte en andel: en EU-order och
+ * en USA-order i samma butik bär helt olika tull, och ingen av dem är en
+ * procentsats av ordervärdet.
+ */
+export function tariffFor(settings: Settings, market: string): number {
+  const egen = settings.marketFees?.[market];
+  if (!market || !egen || egen.tariffPerOrder == null) return settings.tariffPerOrder;
+  return egen.tariffPerOrder;
 }
 
 export interface ComputeInput {
@@ -192,6 +206,12 @@ export interface ComputeInput {
    * standardavgiften. Summan behöver inte täcka allt: resten tar standard.
    */
   salesByMarket?: Record<string, number>;
+  /**
+   * Antal ordrar per marknad i intervallet. Underlaget för tull per marknad:
+   * tullen är ett belopp per order, så den måste räknas på ordrarna och inte
+   * på omsättningen. Ordrar utan marknad tar butikens standardtull.
+   */
+  ordersByMarket?: Record<string, number>;
 }
 
 export interface ProductResult extends ProductRow {
@@ -412,7 +432,16 @@ export function compute(input: ComputeInput): ComputeResult {
   const sess = sum(sessions, (s) => s.sessions);
   const completed = sum(sessions, (s) => s.completedCheckout);
 
-  const tariff = orders * settings.tariffPerOrder;
+  /* Tullen per marknad: varje marknads ordrar bär sin egen tull, och ordrar
+     som inte är fördelade på marknad bär butikens standard. En butik som
+     säljer både till EU och till Nordamerika har två helt olika tal. */
+  let tariff = 0;
+  let ordrarFordelade = 0;
+  for (const [m, antal] of Object.entries(input.ordersByMarket ?? {})) {
+    tariff += antal * tariffFor(settings, m);
+    ordrarFordelade += antal;
+  }
+  tariff += Math.max(0, orders - ordrarFordelade) * settings.tariffPerOrder;
   /* Avgifterna. Först det som FAKTISKT drogs: dagar med `fees` ur
      ordertransaktionerna räknas rakt av — kortavgift, växlingsavgift,
      utländskt kort, allt Shopify Payments tog. Dagar utan känd avgift

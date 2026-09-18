@@ -561,6 +561,32 @@ det kostade en timme. Nu har `retrying` sin egen mening
 fel** — varje rad i den rutan ska säga antingen vad handlaren ska göra
 eller att den löser sig själv.
 
+### Tull per marknad (2026-09-18, build tull-per-marknad-v101)
+
+Axel: *"på en butik t.ex där säljer jag både till eu och till nordamerika
+och det är helt olika."* `tariffPerOrder` var ett enda tal för hela
+butiken; nu är det ett tal per marknad, i samma `marketFees`-post som
+kortavgiften och växlingsavgiften.
+
+⚠️ **Tullen är ett BELOPP, avgifterna är ANDELAR.** De får aldrig
+valideras eller sparas med samma regel. `stadaAvgifter` har därför två
+validerare: `andel()` kräver 0 ≤ n < 1, `belopp()` kräver 0 ≤ n <
+1 000 000. Och formuläret delar tullfältet med 1, inte med 100 — en tull
+på 27,50 kr som delas med hundra blir 27,5 öre, och det syns inte som ett
+fel, bara som en butik som ser lönsammare ut än den är.
+
+Räknevägen: `tariffFor(settings, market)` i `pnl.server.ts` (egen post,
+annars butikens standard), och `compute()` räknar tullen på **ordrar per
+marknad** — inte på omsättningen, eftersom tullen är per order.
+`readDaily` returnerar därför `ordersByMarket` bredvid `salesByMarket`,
+och ordrar utan marknadsuppdelning tar butikens standardtull. Break-even
+på Kostnader använder samma `tariffFor` för vald marknad.
+
+**Känd lucka:** `kundorder.server.ts` (täckningsbidrag per order i
+kundvyn) räknar fortfarande med butikens standardtull. Orderraden bär
+ingen marknad, och talen skrivs en gång vid hämtningen — samma
+begränsning som avgifterna redan har där.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad
