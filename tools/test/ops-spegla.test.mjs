@@ -5,9 +5,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  SPEGEL_OFFSET, spegelnamn, ursprungsnummer, adIdUrUrl, kontoUrUrl, brandtraff, prisUrBrief, prisParitet,
-  copyUrSpec, valjKallannons, valjSeFil, kopieraBlock, kalloutBlock, textUrBlock, bedom, byggDiscordJobb, utanInternt,
+  SPEGEL_OFFSET, SLUTSTATUS, spegelnamn, ursprungsnummer, adIdUrUrl, kontoUrUrl, brandtraff, prisUrBrief, prisParitet,
+  copyUrSpec, valjKallannons, valjSeFil, kopieraBlock, kalloutBlock, textUrBlock, bedom, arSlutstatus, byggDiscordJobb, utanInternt,
 } from '../ops-spegla.mjs';
+import { EGET_NUMMER_TAK, nastaNummer } from '../../factory/ops-bild.mjs';
 import { speglingsstatusar, giltigSpegling } from '../../factory/register.mjs';
 import { BUTIKSRUTINER, rutinGaller, tiderFor } from '../../factory/rutin.mjs';
 
@@ -48,6 +49,28 @@ test('brandtraff: bäver/beaver i vilken text som helst stoppar, ren copy släpp
   // Briefens "Landing page: https://baverbutiken.se/…" är metadata, inte annonstext.
   assert.deepEqual(brandtraff('Landing page: https://baverbutiken.se/products/takoverdrag\nHook: Hela taket.'), []);
   assert.deepEqual(brandtraff('Se https://baverbutiken.se/x — köp hos Bäverbutiken'), ['Bäverbutiken']);
+  // Granskningsfynd 2026-09-18: NO-copyn bär det norska namnet, och den går
+  // live i butikens NO-kampanj — stavningen med "e" måste fångas.
+  assert.deepEqual(brandtraff('Kjøp hos Beverbutikken i dag'), ['Beverbutikken']);
+  assert.deepEqual(brandtraff('5,0 av 5 på 10 anmeldelser hos beverbutikken'), ['beverbutikken']);
+});
+
+test('nastaNummer räknar aldrig med speglade nummer — butikens egna stannar under 100', () => {
+  // Utan spärren hade CaraShells nästa egna BOF-bild blivit 104 och krockat
+  // med speglingen av Takoverdrag_BOF_4_1 (granskningsfynd 2026-09-18).
+  assert.equal(EGET_NUMMER_TAK, SPEGEL_OFFSET, 'taket och speglingens offset måste vara samma tal');
+  const namn = ['CaraShellRoof_BOF_4_1', 'CaraShellRoof_BOF_103_1', 'CaraShellRoof_BOF_106_1'];
+  assert.equal(nastaNummer(namn, 'CaraShellRoof', 'BOF'), 5);
+  assert.equal(nastaNummer(['CaraShellRoof_BOF_103_1'], 'CaraShellRoof', 'BOF'), 1);
+});
+
+test('arSlutstatus: Approved och EN-steget flyttas aldrig bakåt av efterjusteringen', () => {
+  const statusar = { se: 'CaraShell SE ready to be active', en: 'CaraShell EN ready to be active' };
+  assert.equal(arSlutstatus(SLUTSTATUS, statusar), true);
+  assert.equal(arSlutstatus('approved', statusar), true);
+  assert.equal(arSlutstatus('CaraShell EN ready to be active', statusar), true);
+  assert.equal(arSlutstatus('Translation in review', statusar), false);
+  assert.equal(arSlutstatus(statusar.se, statusar), false);
 });
 
 test('prisUrBrief: "Price exactly 1 129 kr (compare-at 1 469 kr)" → 1129, svensk form och saknad rad', () => {
@@ -176,6 +199,12 @@ test('bedom: brand, pris, saknad fil och saknad copy stoppar SE — och därmed 
 test('bedom: redan uppe i SE ⇒ varken fil eller copy krävs för SE', () => {
   const d = bedom({ ...RAD_OK, finns_i_meta: { SE: true, NO: false }, fil: null, copy_se: null });
   assert.equal(d.se.ok, true);
+});
+
+test('bedom: en kö läst utan --ut säger "hämtas vid körning", inte "ingen svensk fil"', () => {
+  const d = bedom({ ...RAD_OK, fil: null, hamtat: false });
+  assert.match(d.se.skal.join(), /hämtas vid körning/);
+  assert.equal(bedom({ ...RAD_OK, fil: null, hamtat: true }).se.skal.join(), 'ingen svensk fil');
 });
 
 test('bedom: NO utan version, med fel, utan kampanj eller med prisavvikelse stoppas — SE påverkas inte', () => {

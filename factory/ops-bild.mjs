@@ -269,11 +269,25 @@ export function laggTextlager({ bas, ut, element, farger, python = 'python3' }) 
   return info;
 }
 
-/** Nästa lediga nummer för ett koncept ur en namnlista: PD_14 om PD_13 är högst. */
+/** Speglade annonser (tools/ops-spegla.mjs SPEGEL_OFFSET) bär källans nummer
+ *  + 100. Butikens EGNA nummer ligger därför alltid under 100 — annars hade
+ *  en spegling av `Takoverdrag_BOF_4_1` krockat med en egen `BOF_104`, och
+ *  krocken syns inte som ett fel utan som "finns redan i kontot".
+ *  Testet i factory/test/ops-bild.test.mjs låser talet mot speglingens. */
+export const EGET_NUMMER_TAK = 100;
+
+/** Nästa lediga nummer för ett koncept ur en namnlista: PD_14 om PD_13 är högst.
+ *  Speglade nummer (≥ EGET_NUMMER_TAK) räknas aldrig med. */
 export function nastaNummer(namn, prefix, koncept) {
   const re = new RegExp(`^${prefix}_${koncept}_(\\d+)(?:_|$)`, 'i');
   let max = 0;
-  for (const n of namn) { const m = annonsdel(n).match(re); if (m) max = Math.max(max, Number(m[1])); }
+  for (const n of namn) {
+    const m = annonsdel(n).match(re);
+    if (!m) continue;
+    const v = Number(m[1]);
+    if (v >= EGET_NUMMER_TAK) continue;
+    max = Math.max(max, v);
+  }
   return max + 1;
 }
 
