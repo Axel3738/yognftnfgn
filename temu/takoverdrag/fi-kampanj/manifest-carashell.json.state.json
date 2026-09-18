@@ -1,5 +1,16 @@
 {
- "adsets": {},
+ "adsets": {
+  "CO | Notionrunda 2026-09-15": "120251784625850199",
+  "RI | Notionrunda 2026-09-16": "120251784626760199",
+  "Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09": "120251784627440199",
+  "UG | Notionrunda 2026-09-16": "120251784628740199",
+  "Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09": "120251784630250199",
+  "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09": "120251784631190199",
+  "BOF | Notionrunda 2026-09-15": "120251784631710199",
+  "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09": "120251784632100199",
+  "LI | Notionrunda 2026-09-15": "120251784632680199",
+  "TR | Notionrunda 2026-09-15": "120251784633270199"
+ },
  "bilder": {
   "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_CO_1_H1.jpg": "888f11f17105d938028f4c0b46b89e15",
   "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/thumb/FI_Takoverdrag_RI_1_H1.jpg": "1b32b07f93878beaf198f50d8d5b89e4",
@@ -57,7 +68,300 @@
   "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_2_H1.mp4": "2122239939168426",
   "/tmp/claude-0/-home-user-yognftnfgn/7bedd320-901d-500f-91f4-47f164c14eb6/scratchpad/arbete/ut/FI_Takoverdrag_CS_1_H1.mp4": "1770909017548619"
  },
- "creatives": {},
- "annonser": {},
- "kampanj": "120251784514940199"
+ "creatives": {
+  "Takoverdrag_CO_1_H1": "1968460327874794",
+  "Takoverdrag_RI_1_H1": "1344894754128878",
+  "Takoverdrag_SP_4_H1": "1156311523385997",
+  "Takoverdrag_UG_1_H1": "1636694978179171",
+  "Takoverdrag_GT_4_H1": "28467196429631412",
+  "Takoverdrag_PD_4_H1": "1560421429218625",
+  "Takoverdrag_GT_5_H1": "1915394149419277",
+  "Takoverdrag_BOF_2_1": "2321457948613902",
+  "Takoverdrag_BOF_1_1": "1425111379623358",
+  "Takoverdrag_CO_2_1": "2186070411970373",
+  "Takoverdrag_BOF_3_1": "1802016704162032",
+  "Takoverdrag_CS_4_1": "2815039232205485",
+  "Takoverdrag_GT_6_1": "1285572013618778",
+  "Takoverdrag_CS_6_1": "2231417794372820",
+  "Takoverdrag_PD_5_1": "1420199430213251",
+  "Takoverdrag_LI_1_1": "2933226060363190",
+  "Takoverdrag_SP_5_1": "4688999764755734",
+  "Takoverdrag_TR_1_1": "4572667899719012",
+  "Takoverdrag_SP_2_1": "1415240866738638",
+  "Takoverdrag_SP_3_H1": "1067293229424726",
+  "Takoverdrag_SP_2_H1": "1037413945993442",
+  "Takoverdrag_SP_1_H1": "2010561269649964",
+  "Takoverdrag_PD_2_1": "1091644103240205",
+  "Takoverdrag_PD_3_H1": "3429902363856855",
+  "Takoverdrag_PD_2_H1": "933743592653374",
+  "Takoverdrag_PD_1_H1": "1101328308979214",
+  "Takoverdrag_GT_2_1": "1370202935099413",
+  "Takoverdrag_GT_3_H1": "1888644589185396",
+  "Takoverdrag_GT_2_H1": "1876175790459516",
+  "Takoverdrag_GT_1_H1": "1075760051832783",
+  "Takoverdrag_CS_2_1": "2539719379880278",
+  "Takoverdrag_CS_3_H1": "1268400832046216",
+  "Takoverdrag_CS_2_H1": "1769134154384393",
+  "Takoverdrag_CS_1_H1": "938505895914575"
+ },
+ "annonser": {
+  "Takoverdrag_CO_1_H1": "120251784634900199",
+  "Takoverdrag_RI_1_H1": "120251784635700199",
+  "Takoverdrag_SP_4_H1": "120251784635980199",
+  "Takoverdrag_UG_1_H1": "120251784636430199",
+  "Takoverdrag_GT_4_H1": "120251784636920199",
+  "Takoverdrag_PD_4_H1": "120251784637130199",
+  "Takoverdrag_GT_5_H1": "120251784637340199",
+  "Takoverdrag_BOF_2_1": "120251784637470199",
+  "Takoverdrag_BOF_1_1": "120251784637650199",
+  "Takoverdrag_CO_2_1": "120251784638000199",
+  "Takoverdrag_BOF_3_1": "120251784638350199",
+  "Takoverdrag_CS_4_1": "120251784638550199",
+  "Takoverdrag_GT_6_1": "120251784638900199",
+  "Takoverdrag_CS_6_1": "120251784639340199",
+  "Takoverdrag_PD_5_1": "120251784639880199",
+  "Takoverdrag_LI_1_1": "120251784640460199",
+  "Takoverdrag_SP_5_1": "120251784640580199",
+  "Takoverdrag_TR_1_1": "120251784641200199",
+  "Takoverdrag_SP_2_1": "120251784642340199",
+  "Takoverdrag_SP_3_H1": "120251784643300199",
+  "Takoverdrag_SP_2_H1": "120251784644260199",
+  "Takoverdrag_SP_1_H1": "120251784644640199",
+  "Takoverdrag_PD_2_1": "120251784645610199",
+  "Takoverdrag_PD_3_H1": "120251784646070199",
+  "Takoverdrag_PD_2_H1": "120251784646750199",
+  "Takoverdrag_PD_1_H1": "120251784647510199",
+  "Takoverdrag_GT_2_1": "120251784648670199",
+  "Takoverdrag_GT_3_H1": "120251784650250199",
+  "Takoverdrag_GT_2_H1": "120251784650840199",
+  "Takoverdrag_GT_1_H1": "120251784652690199",
+  "Takoverdrag_CS_2_1": "120251784653370199",
+  "Takoverdrag_CS_3_H1": "120251784654460199",
+  "Takoverdrag_CS_2_H1": "120251784654950199",
+  "Takoverdrag_CS_1_H1": "120251784655840199"
+ },
+ "kampanj": "120251784514940199",
+ "verifiering": {
+  "kampanj": {
+   "id": "120251784514940199",
+   "name": "CARASHELL_FI_Kattopeite Asuntovaunu | Launch 2026-09-18",
+   "status": "PAUSED",
+   "effective_status": "PAUSED",
+   "daily_budget": "110000"
+  },
+  "adsets": [
+   [
+    "CARASHELL_FI_Kattopeite - TR | 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - LI | 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - CS",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - BOF | 2026-09-15",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - PD",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - GT",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - UG | 2026-09-16",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - SP",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - RI | 2026-09-16",
+    "PAUSED"
+   ],
+   [
+    "CARASHELL_FI_Kattopeite - CO | 2026-09-15",
+    "PAUSED"
+   ]
+  ],
+  "annonser": [
+   [
+    "FI_Takoverdrag_CO_2_1",
+    "PAUSED",
+    "120251784638000199"
+   ],
+   [
+    "FI_Takoverdrag_PD_3_H1",
+    "PAUSED",
+    "120251784646070199"
+   ],
+   [
+    "FI_Takoverdrag_SP_1_H1",
+    "PAUSED",
+    "120251784644640199"
+   ],
+   [
+    "FI_Takoverdrag_GT_1_H1",
+    "PAUSED",
+    "120251784652690199"
+   ],
+   [
+    "FI_Takoverdrag_GT_3_H1",
+    "PAUSED",
+    "120251784650250199"
+   ],
+   [
+    "FI_Takoverdrag_CS_2_H1",
+    "PAUSED",
+    "120251784654950199"
+   ],
+   [
+    "FI_Takoverdrag_CS_3_H1",
+    "PAUSED",
+    "120251784654460199"
+   ],
+   [
+    "FI_Takoverdrag_GT_2_H1",
+    "PAUSED",
+    "120251784650840199"
+   ],
+   [
+    "FI_Takoverdrag_SP_2_H1",
+    "PAUSED",
+    "120251784644260199"
+   ],
+   [
+    "FI_Takoverdrag_PD_1_H1",
+    "PAUSED",
+    "120251784647510199"
+   ],
+   [
+    "FI_Takoverdrag_PD_2_H1",
+    "PAUSED",
+    "120251784646750199"
+   ],
+   [
+    "FI_Takoverdrag_SP_3_H1",
+    "PAUSED",
+    "120251784643300199"
+   ],
+   [
+    "FI_Takoverdrag_GT_5_H1",
+    "PAUSED",
+    "120251784637340199"
+   ],
+   [
+    "FI_Takoverdrag_GT_4_H1",
+    "PAUSED",
+    "120251784636920199"
+   ],
+   [
+    "FI_Takoverdrag_CS_2_1",
+    "PAUSED",
+    "120251784653370199"
+   ],
+   [
+    "FI_Takoverdrag_CO_1_H1",
+    "PAUSED",
+    "120251784634900199"
+   ],
+   [
+    "FI_Takoverdrag_PD_4_H1",
+    "PAUSED",
+    "120251784637130199"
+   ],
+   [
+    "FI_Takoverdrag_UG_1_H1",
+    "PAUSED",
+    "120251784636430199"
+   ],
+   [
+    "FI_Takoverdrag_GT_2_1",
+    "PAUSED",
+    "120251784648670199"
+   ],
+   [
+    "FI_Takoverdrag_SP_4_H1",
+    "PAUSED",
+    "120251784635980199"
+   ],
+   [
+    "FI_Takoverdrag_SP_2_1",
+    "PAUSED",
+    "120251784642340199"
+   ],
+   [
+    "FI_Takoverdrag_TR_1_1",
+    "PAUSED",
+    "120251784641200199"
+   ],
+   [
+    "FI_Takoverdrag_PD_2_1",
+    "PAUSED",
+    "120251784645610199"
+   ],
+   [
+    "FI_Takoverdrag_SP_5_1",
+    "PAUSED",
+    "120251784640580199"
+   ],
+   [
+    "FI_Takoverdrag_PD_5_1",
+    "PAUSED",
+    "120251784639880199"
+   ],
+   [
+    "FI_Takoverdrag_CS_6_1",
+    "PAUSED",
+    "120251784639340199"
+   ],
+   [
+    "FI_Takoverdrag_RI_1_H1",
+    "PAUSED",
+    "120251784635700199"
+   ],
+   [
+    "FI_Takoverdrag_GT_6_1",
+    "PAUSED",
+    "120251784638900199"
+   ],
+   [
+    "FI_Takoverdrag_CS_1_H1",
+    "PENDING_REVIEW",
+    "120251784655840199"
+   ],
+   [
+    "FI_Takoverdrag_CS_4_1",
+    "PAUSED",
+    "120251784638550199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_1_1",
+    "PAUSED",
+    "120251784637650199"
+   ],
+   [
+    "FI_Takoverdrag_LI_1_1",
+    "PAUSED",
+    "120251784640460199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_3_1",
+    "PAUSED",
+    "120251784638350199"
+   ],
+   [
+    "FI_Takoverdrag_BOF_2_1",
+    "PAUSED",
+    "120251784637470199"
+   ]
+  ]
+ }
 }

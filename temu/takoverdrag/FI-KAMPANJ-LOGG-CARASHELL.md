@@ -6,61 +6,61 @@ Spec: `FI-KAMPANJ.md`. Byggd av `fi-kampanj/` (skripten där, alla texter i `cop
 
 Historik: armen byggdes först i OPS-kontot MagiBorsten DK (`act_915422744950975`, kampanj `120249155398780172`, PAUSED, 10 adsets/34 annonser) 2026-09-18 12:15. Axel: "Legg bare ut i Magiborsten FI" → samma kampanj byggd om i FI-kontot; DK-kampanjen ligger kvar PAUSED tills Axel säger radera.
 
-⚠️ **Ofullständig:** kampanj + media uppladdade, 0 adsets, 0 annonser. Orsak: pixeln `28589207184025756` är inte delad till kontot — byggskriptet stoppar vid spärr 3. Kör om `bygg-kampanj.mjs` med samma manifest när pixeln är delad; state-filen gör att uppladdningen inte görs om.
+Verifiering 2026-09-18 (`effective_status`): kampanj `PAUSED`, 10 adsets (alla PAUSED), 34 annonser: 33 PAUSED + 1 PENDING_REVIEW (alla skapade med `status: PAUSED`; PENDING_REVIEW är Metas granskning av nya annonser och levererar inte medan kampanj och adset är pausade).
 
 ## Adsets
 
 | SE | FI | ID |
 |---|---|---|
-| CO | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - CO | 2026-09-15 | `—` |
-| RI | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - RI | 2026-09-16 | `—` |
-| Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09 | CARASHELL_FI_Kattopeite - SP | `—` |
-| UG | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - UG | 2026-09-16 | `—` |
-| Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09 | CARASHELL_FI_Kattopeite - GT | `—` |
-| Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09 | CARASHELL_FI_Kattopeite - PD | `—` |
-| BOF | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - BOF | 2026-09-15 | `—` |
-| Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09 | CARASHELL_FI_Kattopeite - CS | `—` |
-| LI | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - LI | 2026-09-15 | `—` |
-| TR | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - TR | 2026-09-15 | `—` |
+| CO | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - CO | 2026-09-15 | `120251784625850199` |
+| RI | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - RI | 2026-09-16 | `120251784626760199` |
+| Taköverdrag Husvagn 6,5 × 3 m | SP | 2026-09-09 | CARASHELL_FI_Kattopeite - SP | `120251784627440199` |
+| UG | Notionrunda 2026-09-16 | CARASHELL_FI_Kattopeite - UG | 2026-09-16 | `120251784628740199` |
+| Taköverdrag Husvagn 6,5 × 3 m | GT | 2026-09-09 | CARASHELL_FI_Kattopeite - GT | `120251784630250199` |
+| Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09 | CARASHELL_FI_Kattopeite - PD | `120251784631190199` |
+| BOF | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - BOF | 2026-09-15 | `120251784631710199` |
+| Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09 | CARASHELL_FI_Kattopeite - CS | `120251784632100199` |
+| LI | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - LI | 2026-09-15 | `120251784632680199` |
+| TR | Notionrunda 2026-09-15 | CARASHELL_FI_Kattopeite - TR | 2026-09-15 | `120251784633270199` |
 
 ## Annonser
 
 | SE-namn | FI-namn | FI-ad-ID | Status |
 |---|---|---|---|
-| Takoverdrag_CO_1_H1 | FI_Takoverdrag_CO_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_RI_1_H1 | FI_Takoverdrag_RI_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_SP_4_H1 | FI_Takoverdrag_SP_4_H1 | `—` | ej uppladdad |
-| Takoverdrag_UG_1_H1 | FI_Takoverdrag_UG_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_GT_4_H1 | FI_Takoverdrag_GT_4_H1 | `—` | ej uppladdad |
-| Takoverdrag_PD_4_H1 | FI_Takoverdrag_PD_4_H1 | `—` | ej uppladdad |
-| Takoverdrag_GT_5_H1 | FI_Takoverdrag_GT_5_H1 | `—` | ej uppladdad |
-| Takoverdrag_BOF_2_1 | FI_Takoverdrag_BOF_2_1 | `—` | ej uppladdad |
-| Takoverdrag_BOF_1_1 | FI_Takoverdrag_BOF_1_1 | `—` | ej uppladdad |
-| Takoverdrag_CO_2_1 | FI_Takoverdrag_CO_2_1 | `—` | ej uppladdad |
-| Takoverdrag_BOF_3_1 | FI_Takoverdrag_BOF_3_1 | `—` | ej uppladdad |
-| Takoverdrag_CS_4_1 | FI_Takoverdrag_CS_4_1 | `—` | ej uppladdad |
-| Takoverdrag_GT_6_1 | FI_Takoverdrag_GT_6_1 | `—` | ej uppladdad |
-| Takoverdrag_CS_6_1 | FI_Takoverdrag_CS_6_1 | `—` | ej uppladdad |
-| Takoverdrag_PD_5_1 | FI_Takoverdrag_PD_5_1 | `—` | ej uppladdad |
-| Takoverdrag_LI_1_1 | FI_Takoverdrag_LI_1_1 | `—` | ej uppladdad |
-| Takoverdrag_SP_5_1 | FI_Takoverdrag_SP_5_1 | `—` | ej uppladdad |
-| Takoverdrag_TR_1_1 | FI_Takoverdrag_TR_1_1 | `—` | ej uppladdad |
-| Takoverdrag_SP_2_1 | FI_Takoverdrag_SP_2_1 | `—` | ej uppladdad |
-| Takoverdrag_SP_3_H1 | FI_Takoverdrag_SP_3_H1 | `—` | ej uppladdad |
-| Takoverdrag_SP_2_H1 | FI_Takoverdrag_SP_2_H1 | `—` | ej uppladdad |
-| Takoverdrag_SP_1_H1 | FI_Takoverdrag_SP_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_PD_2_1 | FI_Takoverdrag_PD_2_1 | `—` | ej uppladdad |
-| Takoverdrag_PD_3_H1 | FI_Takoverdrag_PD_3_H1 | `—` | ej uppladdad |
-| Takoverdrag_PD_2_H1 | FI_Takoverdrag_PD_2_H1 | `—` | ej uppladdad |
-| Takoverdrag_PD_1_H1 | FI_Takoverdrag_PD_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_GT_2_1 | FI_Takoverdrag_GT_2_1 | `—` | ej uppladdad |
-| Takoverdrag_GT_3_H1 | FI_Takoverdrag_GT_3_H1 | `—` | ej uppladdad |
-| Takoverdrag_GT_2_H1 | FI_Takoverdrag_GT_2_H1 | `—` | ej uppladdad |
-| Takoverdrag_GT_1_H1 | FI_Takoverdrag_GT_1_H1 | `—` | ej uppladdad |
-| Takoverdrag_CS_2_1 | FI_Takoverdrag_CS_2_1 | `—` | ej uppladdad |
-| Takoverdrag_CS_3_H1 | FI_Takoverdrag_CS_3_H1 | `—` | ej uppladdad |
-| Takoverdrag_CS_2_H1 | FI_Takoverdrag_CS_2_H1 | `—` | ej uppladdad |
-| Takoverdrag_CS_1_H1 | FI_Takoverdrag_CS_1_H1 | `—` | ej uppladdad |
+| Takoverdrag_CO_1_H1 | FI_Takoverdrag_CO_1_H1 | `120251784634900199` | uppladdad, PAUSED |
+| Takoverdrag_RI_1_H1 | FI_Takoverdrag_RI_1_H1 | `120251784635700199` | uppladdad, PAUSED |
+| Takoverdrag_SP_4_H1 | FI_Takoverdrag_SP_4_H1 | `120251784635980199` | uppladdad, PAUSED |
+| Takoverdrag_UG_1_H1 | FI_Takoverdrag_UG_1_H1 | `120251784636430199` | uppladdad, PAUSED |
+| Takoverdrag_GT_4_H1 | FI_Takoverdrag_GT_4_H1 | `120251784636920199` | uppladdad, PAUSED |
+| Takoverdrag_PD_4_H1 | FI_Takoverdrag_PD_4_H1 | `120251784637130199` | uppladdad, PAUSED |
+| Takoverdrag_GT_5_H1 | FI_Takoverdrag_GT_5_H1 | `120251784637340199` | uppladdad, PAUSED |
+| Takoverdrag_BOF_2_1 | FI_Takoverdrag_BOF_2_1 | `120251784637470199` | uppladdad, PAUSED |
+| Takoverdrag_BOF_1_1 | FI_Takoverdrag_BOF_1_1 | `120251784637650199` | uppladdad, PAUSED |
+| Takoverdrag_CO_2_1 | FI_Takoverdrag_CO_2_1 | `120251784638000199` | uppladdad, PAUSED |
+| Takoverdrag_BOF_3_1 | FI_Takoverdrag_BOF_3_1 | `120251784638350199` | uppladdad, PAUSED |
+| Takoverdrag_CS_4_1 | FI_Takoverdrag_CS_4_1 | `120251784638550199` | uppladdad, PAUSED |
+| Takoverdrag_GT_6_1 | FI_Takoverdrag_GT_6_1 | `120251784638900199` | uppladdad, PAUSED |
+| Takoverdrag_CS_6_1 | FI_Takoverdrag_CS_6_1 | `120251784639340199` | uppladdad, PAUSED |
+| Takoverdrag_PD_5_1 | FI_Takoverdrag_PD_5_1 | `120251784639880199` | uppladdad, PAUSED |
+| Takoverdrag_LI_1_1 | FI_Takoverdrag_LI_1_1 | `120251784640460199` | uppladdad, PAUSED |
+| Takoverdrag_SP_5_1 | FI_Takoverdrag_SP_5_1 | `120251784640580199` | uppladdad, PAUSED |
+| Takoverdrag_TR_1_1 | FI_Takoverdrag_TR_1_1 | `120251784641200199` | uppladdad, PAUSED |
+| Takoverdrag_SP_2_1 | FI_Takoverdrag_SP_2_1 | `120251784642340199` | uppladdad, PAUSED |
+| Takoverdrag_SP_3_H1 | FI_Takoverdrag_SP_3_H1 | `120251784643300199` | uppladdad, PAUSED |
+| Takoverdrag_SP_2_H1 | FI_Takoverdrag_SP_2_H1 | `120251784644260199` | uppladdad, PAUSED |
+| Takoverdrag_SP_1_H1 | FI_Takoverdrag_SP_1_H1 | `120251784644640199` | uppladdad, PAUSED |
+| Takoverdrag_PD_2_1 | FI_Takoverdrag_PD_2_1 | `120251784645610199` | uppladdad, PAUSED |
+| Takoverdrag_PD_3_H1 | FI_Takoverdrag_PD_3_H1 | `120251784646070199` | uppladdad, PAUSED |
+| Takoverdrag_PD_2_H1 | FI_Takoverdrag_PD_2_H1 | `120251784646750199` | uppladdad, PAUSED |
+| Takoverdrag_PD_1_H1 | FI_Takoverdrag_PD_1_H1 | `120251784647510199` | uppladdad, PAUSED |
+| Takoverdrag_GT_2_1 | FI_Takoverdrag_GT_2_1 | `120251784648670199` | uppladdad, PAUSED |
+| Takoverdrag_GT_3_H1 | FI_Takoverdrag_GT_3_H1 | `120251784650250199` | uppladdad, PAUSED |
+| Takoverdrag_GT_2_H1 | FI_Takoverdrag_GT_2_H1 | `120251784650840199` | uppladdad, PAUSED |
+| Takoverdrag_GT_1_H1 | FI_Takoverdrag_GT_1_H1 | `120251784652690199` | uppladdad, PAUSED |
+| Takoverdrag_CS_2_1 | FI_Takoverdrag_CS_2_1 | `120251784653370199` | uppladdad, PAUSED |
+| Takoverdrag_CS_3_H1 | FI_Takoverdrag_CS_3_H1 | `120251784654460199` | uppladdad, PAUSED |
+| Takoverdrag_CS_2_H1 | FI_Takoverdrag_CS_2_H1 | `120251784654950199` | uppladdad, PAUSED |
+| Takoverdrag_CS_1_H1 | FI_Takoverdrag_CS_1_H1 | `120251784655840199` | uppladdad, PENDING_REVIEW |
 
 ## Lokaliseringslogg per annons (utöver ren översättning)
 
