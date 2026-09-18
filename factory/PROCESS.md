@@ -766,6 +766,30 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    hela tiden: det säger om appen känner igen språket, och supporten beskrev
    exakt samma fallback.
 
+   ✅ **Löst samma dag 12:02 UTC — klicket räckte, väntan behövdes inte.**
+   Axel klickade "Refresh list" och finskan slog igenom direkt; de "upp till
+   24 timmar" supporten nämnde är ett tak, inte en väntetid. Mätt minuter
+   efteråt på fyra adresser:
+
+   | Sida | locale | |
+   |---|---|---|
+   | carashell.se/fi | `fi` | ✅ |
+   | carashell.se/nb | `nb` | ✅ |
+   | carashell.com | `en` | ✅ |
+
+   **Räkna alltså inte bort ett nytt språk förrän klicket är gjort.** Hela
+   dygnet mellan "finska publicerad i Shopify" och "widgeten finsk" var
+   väntan på ett klick ingen visste om — inte en bugg och inte en
+   detekteringstid.
+
+   ⚠️ **Öppen observation, inte mätt färdigt:** butikens EGEN svenska vy
+   (`carashell.se/` och båda produktsidorna med `?country=SE`) rapporterar
+   `locale: en` medan `branding_text` samtidigt är svenskt
+   ("Drivs av Judge.me"). De två säger emot varandra, och vad kunden faktiskt
+   ser går inte att läsa ur HTML:en (widgeten ritas av JS). Troligen
+   ofarligt — grundspråket behöver ingen detektering — men kolla den svenska
+   produktsidan i en webbläsare nästa gång någon är där.
+
    🖐 **Kontrollen kräver en webbläsare, och containern klarar den inte.**
    Headless Chrome mot butiken ger `ERR_CERT_AUTHORITY_INVALID`: Playwrights
    Chromium läser inte proxyns CA-bundle, `certutil` finns inte och
