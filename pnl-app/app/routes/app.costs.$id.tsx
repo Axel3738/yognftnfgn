@@ -33,8 +33,11 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
-import { kandaMarknader } from "../lib/daily.server";
+import { kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
+import { mixBreakEven, radUtfall } from "../lib/breakeven.server";
+import { rate as fxRate } from "../lib/fx.server";
+import { dayInTz } from "../lib/shopify-data.server";
 import { asLang, localeOf, t } from "../lib/texts";
 
 const gid = (id: string) => `gid://shopify/Product/${id}`;
@@ -61,9 +64,40 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   ]);
   const marknader = await kandaMarknader(session.shop, hemlandAv(settings?.currency));
 
+  /* Break-even per packstorlek, på standardkostnaden och standardstegen, plus
+     den faktiska mixen de senaste 90 dagarna. Ett tvåpack betalar tullen en
+     gång och får packpriset — därför skiljer sig raderna, och därför är
+     mixraden det tal annonserna faktiskt måste slå. */
+  const idag = dayInTz(new Date(), settings?.timezone ?? "UTC");
+  const mix90 = await readDaily(session.shop, shiftIso(idag, -89), idag).catch(() => null);
+  const tariffPerOrder = Number(settings?.tariffPerOrder ?? 0);
+  const feeRate = Number(settings?.feeRate ?? 0);
+  const breakEven = variants.map((v) => {
+    const egnaSteg = tierRows
+      .filter((r) => r.variantGid === v.variantGid && (r.market ?? "") === "")
+      .map((r) => ({ variantGid: v.variantGid, units: r.units, totalCost: Number(r.totalCost) }));
+    const lines = mix90?.products.find((p) => p.variantGid === v.variantGid)?.lines ?? null;
+    const indata = { price: v.price, unitCost: v.unitCost, tiers: egnaSteg, lines, tariffPerOrder, feeRate };
+    const storlekar = [1, ...egnaSteg.map((t) => t.units)].sort((a, b) => a - b);
+    return {
+      variantGid: v.variantGid,
+      variantTitle: v.variantTitle === "Default Title" ? "—" : v.variantTitle,
+      rader: storlekar.map((q) => radUtfall(q, indata)).filter((r): r is NonNullable<typeof r> => r != null),
+      mix: mixBreakEven(indata),
+    };
+  });
+
+  const costCurrency = (settings?.costCurrency ?? settings?.currency ?? "SEK").toUpperCase();
+  const butiksValuta = settings?.currency ?? "SEK";
+  const kurs = costCurrency === butiksValuta ? 1 : (await fxRate(costCurrency, butiksValuta)) ?? null;
+
   return json({
     lang: asLang(settings?.language),
     marknader,
+    breakEven,
+    currency: butiksValuta,
+    costCurrency,
+    kurs,
     title: variants[0].productTitle,
     variants: variants.map((v) => ({
       variantGid: v.variantGid,
@@ -139,8 +173,15 @@ export async function action({ request, params }: ActionFunctionArgs) {
     return json({ ok: true, message: T.costDetail.entryDeleted });
   }
 
-  const productCost = num(form.get("productCost"));
-  const shippingCost = num(form.get("shippingCost"));
+  /* Beloppen kan vara i en annan valuta (leverantören offererar i USD).
+     Räknas om med dagens ECB-kurs — ingen kurs, ingen skrivning. */
+  const butiksValuta = settings?.currency ?? "SEK";
+  const inValuta = String(form.get("currency") ?? "").trim().toUpperCase() || butiksValuta;
+  const kurs = inValuta === butiksValuta ? 1 : await fxRate(inValuta, butiksValuta);
+  if (kurs == null) return json({ ok: false, message: T.costs.currency.noRate(inValuta) }, { status: 502 });
+  const rund = (n: number) => Math.round(n * kurs * 100) / 100;
+  const productCost = rund(num(form.get("productCost")));
+  const shippingCost = rund(num(form.get("shippingCost")));
   const effectiveFrom = String(form.get("effectiveFrom") ?? "");
   const variantGid = String(form.get("variantGid") ?? "");
   /* Marknad: tom = standard, skrivs även till Shopify. Satt = bara vår post,
@@ -193,7 +234,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
 }
 
 export default function ProductCost() {
-  const { lang, marknader, title, variants, history, tiers } = useLoaderData<typeof loader>();
+  const { lang, marknader, breakEven, currency, costCurrency, kurs, title, variants, history, tiers } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const tierFetcher = useFetcher<typeof action>();
   const [tier, setTier] = useState({ units: "2", totalCost: "", variantGid: "", market: "" });
@@ -205,7 +246,9 @@ export default function ProductCost() {
     effectiveFrom: today,
     variantGid: "",
     market: "",
+    currency: costCurrency,
   });
+  const valutor = [...new Set([currency, "USD", "EUR", "CNY", "GBP", "NOK", "DKK", "PLN"])];
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(lang);
   const marknadsval = [
@@ -219,6 +262,7 @@ export default function ProductCost() {
   const p = parseFloat(v.productCost.replace(",", ".")) || 0;
   const f = parseFloat(v.shippingCost.replace(",", ".")) || 0;
   const busy = fetcher.state !== "idle";
+  const dec2 = (n: number) => `${dec(n.toFixed(2))}×`;
 
   return (
     <Page
@@ -273,6 +317,15 @@ export default function ProductCost() {
                     helpText={v.market ? T.costs.market.entryHelpMarket : T.costs.market.entryHelpStandard}
                   />
                 </div>
+                <div style={{ minWidth: 160 }}>
+                  <Select
+                    label={T.costs.currency.label}
+                    options={valutor.map((c) => ({ label: c === currency ? `${c} (${T.costs.currency.shop})` : c, value: c }))}
+                    value={v.currency}
+                    onChange={set("currency")}
+                    helpText={v.currency !== currency && v.currency === costCurrency && kurs ? T.costs.currency.rateNote(v.currency, currency, kurs) : undefined}
+                  />
+                </div>
               </InlineStack>
 
               <Banner tone={p + f > 0 ? "info" : undefined}>
@@ -312,6 +365,54 @@ export default function ProductCost() {
                   : `${dec((x.price / x.unitCost).toFixed(2))}×`,
               ])}
             />
+          </Card>
+        </Layout.Section>
+
+        <Layout.Section>
+          <Card>
+            <BlockStack gap="300">
+              <Text as="h2" variant="headingMd">{T.costs.be.title}</Text>
+              <Text as="p" tone="subdued">{T.costs.be.body}</Text>
+              {breakEven.map((b) => (
+                <BlockStack key={b.variantGid} gap="100">
+                  {variants.length > 1 ? <Text as="h3" variant="headingSm">{b.variantTitle}</Text> : null}
+                  {b.rader.length ? (
+                    <DataTable
+                      columnContentTypes={["text", "numeric", "numeric", "numeric", "numeric", "numeric"]}
+                      headings={[T.costs.be.thQty, T.costs.be.thShare, T.costs.be.thRevenue, T.costs.be.thCost, T.costs.be.thCm, T.costs.thBeRoas]}
+                      rows={[
+                        ...b.rader.map((r) => {
+                          const andel = b.mix.mix.find((m) => m.qty === r.qty)?.share;
+                          return [
+                            `${r.qty} ${T.costs.be.unit}`,
+                            b.mix.antagen || andel == null ? "—" : `${Math.round(andel * 100)} %`,
+                            nf.format(r.revenue),
+                            nf.format(r.cogs),
+                            <Text key={`tb${r.qty}`} as="span" tone={r.tb > 0 ? undefined : "critical"}>{nf.format(r.tb)}</Text>,
+                            r.beRoas == null
+                              ? <Badge key={`be${r.qty}`} tone="critical">{T.costs.unprofitable}</Badge>
+                              : <Text key={`be${r.qty}`} as="span" tone={r.beRoas <= 2 ? "success" : r.beRoas <= 3 ? undefined : "critical"}>{dec2(r.beRoas)}</Text>,
+                          ];
+                        }),
+                        [
+                          <Text key="mix" as="span" fontWeight="semibold">{T.costs.be.mixRow}</Text>,
+                          b.mix.antagen ? "—" : `${b.mix.lines}`,
+                          b.mix.revenue == null ? "—" : nf.format(b.mix.revenue),
+                          "",
+                          b.mix.tb == null ? "—" : <Text key="mixtb" as="span" fontWeight="semibold" tone={b.mix.tb > 0 ? undefined : "critical"}>{nf.format(b.mix.tb)}</Text>,
+                          b.mix.beRoas == null
+                            ? <Badge key="mixbe" tone="critical">{T.costs.unprofitable}</Badge>
+                            : <Text key="mixbe" as="span" fontWeight="semibold" tone={b.mix.beRoas <= 2 ? "success" : b.mix.beRoas <= 3 ? undefined : "critical"}>{dec2(b.mix.beRoas)}</Text>,
+                        ],
+                      ]}
+                    />
+                  ) : (
+                    <Text as="p" tone="subdued">{T.costDetail.missingBadge}</Text>
+                  )}
+                  {b.mix.antagen && b.rader.length ? <Text as="p" variant="bodySm" tone="subdued">{T.costs.be.noSales}</Text> : null}
+                </BlockStack>
+              ))}
+            </BlockStack>
           </Card>
         </Layout.Section>
 

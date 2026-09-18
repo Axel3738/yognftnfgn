@@ -397,6 +397,49 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### Valuta på kostnader, break-even på flerpacksmixen, avgifter per marknad (2026-09-18, build valuta-breakeven-v92)
+
+Axels ask, i två röstmeddelanden: *"automatisk valutaväxling"*, *"automatisk
+break even roas uträknare utefter vad för bundles som säljs"* — den ändras
+varje dag efter vilka paket kunderna väljer — och *"dubbelkolla så att alla
+avgifter är inräknade … valutaväxlingsavgifterna … blir ganska dyra genom
+Shopify Payments"* på butiker som säljer till USA, Kanada, NZ, UK, Australien.
+
+**Valuta på kostnadsfälten.** Rullistan "Kostnaderna är i" i snabbfältet
+(och en Select i produktsidans formulär). Valet sparas i
+`ShopSettings.costCurrency`; fälten VISAR sparade kostnader omräknade till
+invalutan (kronor ÷ kurs) och räknar om till butikens valuta med `fx.rate()`
+(ECB) när det sparas. **Ingen kurs → ingen skrivning** (502) — ett
+dollarbelopp sparat som kronor är tiofalt fel. Offertkortet hade redan sin
+egen omräkning och rörs inte.
+
+**Break-even ROAS på den faktiska mixen.** `lib/breakeven.server.ts`
+(6 tester): `radUtfall(qty)` = omsättning, kostnad via `tierCost`, TB efter
+tull (EN gång per order) och avgift; `mixBreakEven()` viktar raderna efter
+`ProductRow.lines` (orderrader per antal) från `readDaily` de senaste 90
+dagarna. Utan försäljning: styckantagande, `antagen = true`, märkt i UI:t.
+Kostnader-tabellen visar mix-BE med mixen som undertext; produktsidan har
+kortet "Break-even ROAS per packstorlek" (en rad per storlek + mixraden).
+Under ett marknadsfilter på Kostnader räknas mixen på det landets ordrar och
+med det landets avgift. Klientsäker text i `breakeven-text.ts` — modulen
+heter `.server` för att den drar in `pnl.server`; **importera aldrig
+`breakeven.server` från en komponent** (bygget stoppar: "Server-only module
+referenced by client" — hände 2026-09-18).
+
+**Avgifter per marknad.** `ShopSettings.marketFees` =
+`{ "US": { feeRate, fxFeeRate } }` (andelar). Inställningar → "Kostnader per
+order" → "Avgifter per marknad": kortavgift % och valutaväxling % per känd
+marknad; tomt = standardavgiften, ingen växling. `readDaily` returnerar
+`salesByMarket` (omsättning per land ur uppdelningen; dagar utan uppdelning
+under `""`), och `compute()` räknar `fees = Σ omsättning_m × feeRateFor(m)`
++ resten på standard. Break-even och max-CPA använder den blandade satsen
+(`effFeeRate`). Gruppsumman går samma väg. Migration
+`20260918090000_valuta_och_avgifter`.
+
+⚠ **Oprövat i drift**, som allt i marknadsbygget. Kontrollera efter deploy
+att `/healthz` svarar `valuta-breakeven-v92` och att Kostnader-tabellens
+BE ROAS-kolumn visar en mixrad under talet för en produkt med ordrar.
+
 ### Marknader — kostnad, annonser och vinst per land (2026-09-17, build marknader-v88)
 
 Axels ask, i röstmeddelandeform: samma Shopify-butik säljer till Sverige,

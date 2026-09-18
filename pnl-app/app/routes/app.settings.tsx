@@ -60,7 +60,7 @@ import {
 } from "../lib/meta-konton.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
 import { kandaMarknader } from "../lib/daily.server";
-import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader } from "../lib/marknad";
+import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
@@ -118,6 +118,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   return json({
     marknader,
+    /* Avgifter per marknad, i PROCENT som strängar — så som fälten visar dem. */
+    marketFees: Object.fromEntries(
+      Object.entries(stadaAvgifter(s.marketFees)).map(([m, a]) => [
+        m,
+        {
+          feeRate: a.feeRate == null ? "" : (a.feeRate * 100).toFixed(2),
+          fxFeeRate: a.fxFeeRate == null ? "" : (a.fxFeeRate * 100).toFixed(2),
+        },
+      ]),
+    ),
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
     feeRate: Number(s.feeRate),
@@ -240,6 +250,18 @@ export async function action({ request }: ActionFunctionArgs) {
 
   const dec = (k: string) => parseFloat(String(f.get(k) ?? "").replace(",", "."));
   const token = String(f.get("metaAccessToken") ?? "").trim();
+  /* Avgifter per marknad: fälten heter fee_<KOD> och fx_<KOD>, i procent.
+     Tomt fält = ingen egen sats (standardavgiften gäller, ingen växling). */
+  const marketFees: Record<string, { feeRate: number | null; fxFeeRate: number | null }> = {};
+  for (const [k, v] of f.entries()) {
+    const m = k.match(/^(fee|fx)_([A-Z]{2})$/);
+    if (!m) continue;
+    const n = parseFloat(String(v ?? "").replace(",", "."));
+    const andel = Number.isFinite(n) && n >= 0 ? n / 100 : null;
+    const post = (marketFees[m[2]] ??= { feeRate: null, fxFeeRate: null });
+    if (m[1] === "fee") post.feeRate = andel;
+    else post.fxFeeRate = andel;
+  }
 
   /* En inklistrad användartoken dör också efter 60 dagar — utan varning om
      vi inte frågar Meta när den går ut. Går bara att fråga om token kommer
@@ -254,6 +276,7 @@ export async function action({ request }: ActionFunctionArgs) {
       tariffPerOrder: dec("tariffPerOrder"),
       feeRate: dec("feeRate") / 100,
       targetMargin: dec("targetMargin") / 100,
+      marketFees: stadaAvgifter(marketFees) as object,
       // Tomt fält = behåll befintlig token, radera den inte av misstag.
       ...(token
         ? {
@@ -292,6 +315,18 @@ export default function Settings() {
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
+  /* Avgifter per marknad, som procentsträngar per landskod. Sparas med Spara. */
+  const [avgifter, setAvgifter] = useState<Record<string, { feeRate: string; fxFeeRate: string }>>(
+    d.marketFees as Record<string, { feeRate: string; fxFeeRate: string }>,
+  );
+  const sattAvgift = (m: string, falt: "feeRate" | "fxFeeRate") => (val: string) =>
+    setAvgifter((a) => ({ ...a, [m]: { ...(a[m] ?? { feeRate: "", fxFeeRate: "" }), [falt]: val } }));
+  const avgiftsFalt = Object.fromEntries(
+    Object.entries(avgifter).flatMap(([m, a]) => [
+      [`fee_${m}`, a.feeRate],
+      [`fx_${m}`, a.fxFeeRate],
+    ]),
+  );
 
   /* ---- Logga in med Facebook ----
      Klick → fönstret öppnas SYNKRONT (annars stoppar webbläsaren det som en
@@ -553,6 +588,44 @@ export default function Settings() {
                 autoComplete="off"
                 helpText={T.settings.marginHelp}
               />
+              {/* Avgifter per marknad. Shopify Payments tar mer för utländska
+                  kort och en växlingsavgift när kunden betalar i en annan valuta
+                  — på en butik som säljer till USA, Kanada, UK och Australien
+                  är det procent av omsättningen som annars räknas som vinst. */}
+              {d.marknader.length ? (
+                <BlockStack gap="200">
+                  <Text as="h3" variant="headingSm">{T.settings.marketFees.title}</Text>
+                  <Text as="p" variant="bodySm" tone="subdued">{T.settings.marketFees.body}</Text>
+                  {d.marknader.map((m) => (
+                    <InlineStack key={m} gap="300" blockAlign="end" wrap>
+                      <div style={{ minWidth: 160, flex: "1 1 160px" }}>
+                        <Text as="p" variant="bodyMd">{`${marknadsnamn(m, d.lang, m)} (${m})`}</Text>
+                      </div>
+                      <div style={{ width: 170 }}>
+                        <TextField
+                          label={T.settings.marketFees.feeLabel}
+                          value={avgifter[m]?.feeRate ?? ""}
+                          onChange={sattAvgift(m, "feeRate")}
+                          autoComplete="off"
+                          placeholder={v.feeRate}
+                          suffix="%"
+                        />
+                      </div>
+                      <div style={{ width: 170 }}>
+                        <TextField
+                          label={T.settings.marketFees.fxLabel}
+                          value={avgifter[m]?.fxFeeRate ?? ""}
+                          onChange={sattAvgift(m, "fxFeeRate")}
+                          autoComplete="off"
+                          placeholder="0"
+                          suffix="%"
+                        />
+                      </div>
+                    </InlineStack>
+                  ))}
+                  <Text as="p" variant="bodySm" tone="subdued">{T.settings.marketFees.hint}</Text>
+                </BlockStack>
+              ) : null}
             </BlockStack>
           </Card>
         </Layout.Section>
@@ -792,7 +865,7 @@ export default function Settings() {
           <Button
             variant="primary"
             loading={fetcher.state !== "idle"}
-            onClick={() => fetcher.submit({ ...v, intent: "save" }, { method: "POST" })}
+            onClick={() => fetcher.submit({ ...v, ...avgiftsFalt, intent: "save" }, { method: "POST" })}
           >
             {T.settings.save}
           </Button>

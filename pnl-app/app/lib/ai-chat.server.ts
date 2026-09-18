@@ -46,6 +46,12 @@ SÅ FYLLER MAN I COGS (Kostnader-sidan), snabbast först:
 
 FLERPACK / BUNDLES (kostnad per antal): Shopify har bara ETT styckpris. Appen har egna steg: totalkostnad för 2, 3, … st i samma orderrad. Sätts på produktsidan (klicka produktnamnet i tabellen på Kostnader → kortet "Kostnad per antal (flerpack)"), eller i CSV-importen som "88.34|134.22|180.19" (1|2|3 st), eller via AI-läsningen om tabellen visar packpriser. Panelen räknar orderrader med 2+ st mot stegen; exakt steg vinner, annars närmaste lägre steg + resten till marginalpriset. Snabbfältet ändrar bara styckpriset och rör inte stegen.
 
+BREAK-EVEN ROAS: räknas på den FAKTISKA flerpacksmixen de senaste 90 dagarna (andel orderrader med 1, 2, 3 … st), inte på ett styck per order — ett tvåpack betalar tullen en gång och får packpriset. Kostnader-tabellen visar BE ROAS med mixen under; produktsidan har kortet "Break-even ROAS per packstorlek" med en rad per storlek och den faktiska mixen sist. Utan försäljning antas 1 st och det står "antar 1 st per order". Talet ändras alltså av sig självt allteftersom kunderna väljer andra paket.
+
+VALUTA PÅ KOSTNADER: överst i "Skriv in dina kostnader här" finns rullistan "Kostnaderna är i". Välj t.ex. USD, skriv beloppet som det står i leverantörens offert, så räknas det om till butikens valuta med dagens ECB-kurs när det sparas (kursen står under rullistan). Samma val finns på produktsidan för nya poster.
+
+AVGIFTER PER MARKNAD: Inställningar → "Kostnader per order" → "Avgifter per marknad": kortavgift % och valutaväxling % per land. Shopify Payments tar mer för utländska kort (+1 %) och en växlingsavgift (1,5–2 %) när kunden betalar i en annan valuta. Tomt fält = standardavgiften. Panelen räknar varje lands omsättning med landets sats, och break-even på Kostnader använder vald marknads avgift.
+
 HISTORIK: ändrar man kostnaden på produktsidan med ett "från och med"-datum räknas äldre perioder på den gamla kostnaden. Snabbfältet och AI-läsningen skriver utan datum (gäller framåt och för perioder som hämtas om).
 
 ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto. Utan koppling är annonskostnaden 0 och panelen är gulmarkerad "Annonskostnad saknas". Det finns en exempelvideo vid knappen.

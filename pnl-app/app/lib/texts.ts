@@ -204,6 +204,25 @@ const en = {
   },
 
   costs: {
+    currency: {
+      label: "Costs are in",
+      shop: "store currency",
+      rateNote: (from: string, to: string, rate: number) => `1 ${from} = ${rate.toFixed(4)} ${to} today (ECB). Converted when saved.`,
+      noRate: (c: string) => `No exchange rate for ${c} right now — costs can't be saved until it's back.`,
+    },
+    be: {
+      unit: "pc",
+      assumed: "assumes 1 pc per order — no sales yet",
+      title: "Break-even ROAS per pack size",
+      body: "A 2-pack pays duty once and gets the pack price, so its break-even is lower than the single-unit figure. The last row is the store's actual mix over the last 90 days — that is the number the ads have to beat.",
+      thQty: "Pack size",
+      thRevenue: "Revenue",
+      thCost: "Cost",
+      thCm: "CM",
+      thShare: "Share of orders",
+      mixRow: "Actual mix (90 days)",
+      noSales: "No sales in the last 90 days — 1 pc per order assumed.",
+    },
     market: {
       title: "Market",
       body: "Shipping to Sweden, Norway and the US costs very different amounts. Pick a market to see and set the cost for that country. Standard is what's in Shopify and applies to every market without its own cost.",
@@ -493,6 +512,13 @@ const en = {
     tariffHelp: "Charged once per order, not per unit. That's why bundles have better margins.",
     feeLabel: "Transaction fee (%)",
     feeHelp: "Share of total order value. Shopify Payments is typically around 2.9 %.",
+    marketFees: {
+      title: "Fees per market",
+      body: "Shopify Payments charges more for international cards and adds a currency conversion fee when the customer pays in another currency. Set them per country so profit isn't overstated abroad.",
+      feeLabel: "Card fee (%)",
+      fxLabel: "Currency conversion (%)",
+      hint: "Leave a field empty to use the standard fee above and no conversion fee. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion.",
+    },
     marginLabel: "Target margin (%)",
     marginHelp: "Max CPA on the dashboard is calculated against this margin.",
     metaTitle: "Meta",
@@ -963,6 +989,25 @@ const sv: Texts = {
   },
 
   costs: {
+    currency: {
+      label: "Kostnaderna är i",
+      shop: "butikens valuta",
+      rateNote: (from: string, to: string, rate: number) => `1 ${from} = ${rate.toFixed(4)} ${to} idag (ECB). Räknas om när det sparas.`,
+      noRate: (c: string) => `Ingen växelkurs för ${c} just nu — kostnader kan inte sparas förrän den är tillbaka.`,
+    },
+    be: {
+      unit: "st",
+      assumed: "antar 1 st per order — ingen försäljning än",
+      title: "Break-even ROAS per packstorlek",
+      body: "Ett tvåpack betalar tullen en gång och får packpriset, så dess break-even ligger lägre än stycksiffran. Sista raden är butikens faktiska mix de senaste 90 dagarna — det är talet annonserna måste slå.",
+      thQty: "Packstorlek",
+      thRevenue: "Omsättning",
+      thCost: "Kostnad",
+      thCm: "TB",
+      thShare: "Andel av ordrar",
+      mixRow: "Faktisk mix (90 dagar)",
+      noSales: "Ingen försäljning de senaste 90 dagarna — 1 st per order antas.",
+    },
     market: {
       title: "Marknad",
       body: "Frakten till Sverige, Norge och USA kostar helt olika. Välj en marknad för att se och sätta kostnaden för det landet. Standard är det som står i Shopify och gäller alla marknader utan egen kostnad.",
@@ -1252,6 +1297,13 @@ const sv: Texts = {
     tariffHelp: "Tas ut en gång per order, inte per styck. Det är därför bundles har bättre marginal.",
     feeLabel: "Transaktionsavgift (%)",
     feeHelp: "Andel av totalt ordervärde. Shopify Payments ligger typiskt kring 2,9 %.",
+    marketFees: {
+      title: "Avgifter per marknad",
+      body: "Shopify Payments tar mer för utländska kort och lägger på en valutaväxlingsavgift när kunden betalar i en annan valuta. Sätt dem per land så vinsten utomlands inte ser för bra ut.",
+      feeLabel: "Kortavgift (%)",
+      fxLabel: "Valutaväxling (%)",
+      hint: "Tomt fält = standardavgiften ovan och ingen växlingsavgift. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling.",
+    },
     marginLabel: "Målmarginal (%)",
     marginHelp: "Max-CPA på panelen räknas mot den här marginalen.",
     metaTitle: "Meta",

@@ -141,8 +141,23 @@ export interface CostChangeRow {
 
 export interface Settings {
   tariffPerOrder: number;
+  /** Standardavgift, andel av omsättningen. Gäller marknader utan egen post. */
   feeRate: number;
   targetMargin: number;
+  /**
+   * Avgifter per marknad (landskod). `feeRate` ersätter standardavgiften för
+   * marknaden; `fxFeeRate` är valutaväxlingsavgiften (Shopify Payments tar
+   * den när kunden betalar i en annan valuta än butikens). Summan tas på
+   * marknadens omsättning.
+   */
+  marketFees?: Record<string, { feeRate?: number | null; fxFeeRate?: number | null }>;
+}
+
+/** Effektiv avgiftsandel för en marknad: egen post om den finns, annars standard. */
+export function feeRateFor(settings: Settings, market: string): number {
+  const egen = settings.marketFees?.[market];
+  if (!market || !egen) return settings.feeRate;
+  return (egen.feeRate ?? settings.feeRate) + (egen.fxFeeRate ?? 0);
 }
 
 export interface ComputeInput {
@@ -164,6 +179,12 @@ export interface ComputeInput {
   /** Flerpackspriser per variant. Tom = allt räknas per styck. */
   costTiers?: CostTierRow[];
   settings: Settings;
+  /**
+   * Omsättning (totalSales) per marknad för perioden — så avgifterna kan
+   * räknas med varje marknads egen sats. Saknas → hela omsättningen på
+   * standardavgiften. Summan behöver inte täcka allt: resten tar standard.
+   */
+  salesByMarket?: Record<string, number>;
 }
 
 export interface ProductResult extends ProductRow {
@@ -381,7 +402,18 @@ export function compute(input: ComputeInput): ComputeResult {
   const completed = sum(sessions, (s) => s.completedCheckout);
 
   const tariff = orders * settings.tariffPerOrder;
-  const fees = totalSales * settings.feeRate;
+  /* Avgifterna per marknad: USA-ordrar bär USA:s kortavgift plus växlings-
+     avgiften, svenska ordrar standarden. Omsättning som inte är fördelad på
+     marknad (äldre dagar utan uppdelning) tar standardsatsen. */
+  let fees = 0;
+  let fordelad = 0;
+  for (const [m, belopp] of Object.entries(input.salesByMarket ?? {})) {
+    fees += belopp * feeRateFor(settings, m);
+    fordelad += belopp;
+  }
+  fees += Math.max(0, totalSales - fordelad) * settings.feeRate;
+  /* Den blandade satsen — det break-even och max-CPA ska räkna med. */
+  const effFeeRate = totalSales > 0 ? fees / totalSales : settings.feeRate;
   const contribution = totalSales - cogs - tariff - spend;
 
   // Rörlig kostnad exkl. annons. Break-even är där annonsbudgeten äter upp resten.
@@ -430,7 +462,7 @@ export function compute(input: ComputeInput): ComputeResult {
     breakEvenRoas: grossContribution > 0 ? totalSales / grossContribution : null,
     maxCpaAtTarget:
       orders > 0
-        ? (totalSales * (1 - settings.targetMargin - settings.feeRate) - cogs - tariff) / orders
+        ? (totalSales * (1 - settings.targetMargin - effFeeRate) - cogs - tariff) / orders
         : null,
 
     fixedCosts,

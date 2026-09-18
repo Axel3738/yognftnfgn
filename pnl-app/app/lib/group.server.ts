@@ -25,6 +25,7 @@ import { hamtaKonton, konfigurationer } from "./meta-konton.server";
 import { dayInTz } from "./shopify-data.server";
 import { decrypt } from "./crypto.server";
 import { dagarKvar, VARNA_DAGAR } from "./meta-login";
+import { stadaAvgifter } from "./marknad";
 import { t, type Lang } from "./texts";
 
 export interface GroupTotals {
@@ -314,7 +315,9 @@ async function summeraButik(
       tariffPerOrder: Number(m.tariffPerOrder),
       feeRate: Number(m.feeRate),
       targetMargin: Number(m.targetMargin),
+      marketFees: stadaAvgifter(m.marketFees),
     },
+    salesByMarket: daily.salesByMarket,
   });
 
   const totals = convertTotalsPerDay(r.totals, daily.sales, spendData.days, kurser, from, to);

@@ -39,7 +39,7 @@ import {
   refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
-import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
+import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/marknad";
 import { getSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
@@ -247,6 +247,14 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     settings: Boolean(settings.settingsSavedAt),
   };
 
+  /* Avgifter per marknad: USA-ordrar bär USA:s kortavgift och växlingsavgift,
+     svenska ordrar standarden. Kartan bor i ShopSettings.marketFees. */
+  const raknesettings = {
+    tariffPerOrder: Number(settings.tariffPerOrder),
+    feeRate: Number(settings.feeRate),
+    targetMargin: Number(settings.targetMargin),
+    marketFees: stadaAvgifter(settings.marketFees),
+  };
   const costChangeRows = costChanges.map((c) => ({
     productGid: c.productGid,
     variantGid: c.variantGid,
@@ -266,11 +274,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     products,
     costChanges: costChangeRows,
     costTiers,
-    settings: {
-      tariffPerOrder: Number(settings.tariffPerOrder),
-      feeRate: Number(settings.feeRate),
-      targetMargin: Number(settings.targetMargin),
-    },
+    settings: raknesettings,
+    salesByMarket: daily.salesByMarket,
   });
   /* Raderna är räknade per marknad (rätt kostnad per land) men visas per
      variant — tabellen ska inte ha tre rader för samma motorhölje. */
@@ -308,11 +313,8 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       products: applyCurrentCosts(prevData.products, catalog),
       costChanges: costChangeRows,
       costTiers,
-      settings: {
-        tariffPerOrder: Number(settings.tariffPerOrder),
-        feeRate: Number(settings.feeRate),
-        targetMargin: Number(settings.targetMargin),
-      },
+      settings: raknesettings,
+      salesByMarket: prevData.salesByMarket,
     });
     if (prev.totals.orders > 0) {
       comparison = {

@@ -36,7 +36,12 @@ import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } f
 import { importCostCsv } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
-import { kandaMarknader, marknaderMedOrdrar } from "../lib/daily.server";
+import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso } from "../lib/daily.server";
+import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
+import { mixText } from "../lib/breakeven-text";
+import { feeRateFor, type CostTierRow } from "../lib/pnl.server";
+import { stadaAvgifter } from "../lib/marknad";
+import { dayInTz } from "../lib/shopify-data.server";
 import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { asLang, localeOf, t } from "../lib/texts";
@@ -87,6 +92,34 @@ export async function loader({ request }: LoaderFunctionArgs) {
   /* Marknaderna en variant MÅSTE ha kostnad för: de butiken sålt till. Utan
      ordrar än (ny butik) gäller alla kända marknader. */
   const kravMarknader = saljMarknader.length ? saljMarknader : marknader;
+
+  /* Valutan man skriver kostnader i. Leverantörspriser är nästan alltid i USD
+     eller CNY; beloppet räknas om till butikens valuta med dagens ECB-kurs
+     när det sparas. Kursen skickas med så fälten kan visa den. */
+  const costCurrency = (settings.costCurrency ?? settings.currency).toUpperCase();
+  const kurs = costCurrency === settings.currency ? 1 : (await fxRate(costCurrency, settings.currency)) ?? null;
+
+  /* Hur produkterna FAKTISKT säljs de senaste 90 dagarna: orderrader per antal
+     (1 st, 2 st …) per variant. Det är underlaget för break-even ROAS — ett
+     tvåpack betalar tullen en gång och får packpriset, så break-even ligger
+     lägre än styckräkningen säger. Under en marknad: bara det landets ordrar. */
+  const idag = dayInTz(new Date(), settings.timezone ?? "UTC");
+  const mix90 = await readDaily(session.shop, shiftIso(idag, -89), idag, { market }).catch(() => null);
+  const linesPerVariant = new Map<string, Record<string, number>>();
+  for (const p of mix90?.products ?? []) {
+    if (!p.variantGid || !p.lines) continue;
+    const agg = linesPerVariant.get(p.variantGid) ?? {};
+    for (const [q, n] of Object.entries(p.lines)) agg[q] = (agg[q] ?? 0) + n;
+    linesPerVariant.set(p.variantGid, agg);
+  }
+  /* Avgiften för vald marknad (kortavgift + växlingsavgift), annars standard. */
+  const raknesettings = {
+    tariffPerOrder: Number(settings.tariffPerOrder),
+    feeRate: Number(settings.feeRate),
+    targetMargin: Number(settings.targetMargin),
+    marketFees: stadaAvgifter(settings.marketFees),
+  };
+  const feeRateEff = feeRateFor(raknesettings, market);
   /* Kostnaderna för VARJE känd marknad läses, inte bara den valda: tabellen
      längst ner visar hela upplägget på en gång — standard i en kolumn och
      varje land i sin — så man ser vad som är inlagt utan att byta i listan. */
@@ -130,6 +163,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
     const tackt =
       v.unitCost != null ||
       (kravMarknader.length > 0 && kravMarknader.every((m) => perMarknad[m] != null));
+    /* Break-even på den faktiska mixen, med marknadens avgift. */
+    const be: MixBreakEven = mixBreakEven({
+      price: v.price,
+      unitCost,
+      tiers: tiers.map((t): CostTierRow => ({ variantGid: v.variantGid, units: t.units, totalCost: t.totalCost })),
+      lines: linesPerVariant.get(v.variantGid) ?? null,
+      tariffPerOrder: raknesettings.tariffPerOrder,
+      feeRate: feeRateEff,
+    });
     return {
       ...v,
       /* Standardkostnaden (Shopify) behålls alltid — under en marknad är
@@ -137,6 +179,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
       standardCost: v.unitCost,
       tackt,
       unitCost,
+      be: { beRoas: be.beRoas, tb: be.tb, revenue: be.revenue, lines: be.lines, antagen: be.antagen, olonsamNagon: be.olonsamNagon, mix: be.mix.map((m) => ({ qty: m.qty, share: m.share })) },
       egen: mk ? egen != null : v.unitCost != null,
       arvd: Boolean(mk) && egen == null && v.unitCost != null,
       perMarknad,
@@ -166,8 +209,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
     saljMarknader,
     total: rows.length,
     tariffPerOrder: Number(settings.tariffPerOrder),
-    feeRate: Number(settings.feeRate),
+    feeRate: feeRateEff,
     currency: settings.currency,
+    costCurrency,
+    kurs,
     /* Kortet "Kommer du från Juicy?" — läge A (allt finns redan) eller B
        (släpp filen). Dolt när handlaren tryckt "Ser rätt ut". */
     juicyDismissed: Boolean(settings.juicyCardDismissedAt),
@@ -183,6 +228,24 @@ export async function action({ request }: ActionFunctionArgs) {
   /* Vald marknad följer med varje skrivning. Tom = standard → Shopify.
      Satt = marknadskostnad → bara vår egen tabell, Shopify rörs inte. */
   const market = marknadskod(form.get("market"));
+  /* Beloppet i formuläret kan vara i en annan valuta än butikens. Då räknas
+     det om här, med dagens ECB-kurs — ingen kurs, ingen skrivning: ett
+     oomräknat dollarbelopp sparat som kronor är tiofalt fel. */
+  const butiksValuta = (await prisma.shopSettings.findUnique({ where: { shop: session.shop }, select: { currency: true } }))?.currency ?? "SEK";
+  const inValuta = String(form.get("currency") ?? "").trim().toUpperCase() || butiksValuta;
+  const tillButik = async (belopp: number): Promise<number | null> => {
+    if (inValuta === butiksValuta) return belopp;
+    const k = await fxRate(inValuta, butiksValuta);
+    return k == null ? null : Math.round(belopp * k * 100) / 100;
+  };
+  if (intent === "cost-currency") {
+    const c = String(form.get("currency") ?? "").trim().toUpperCase();
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { costCurrency: /^[A-Z]{3}$/.test(c) && c !== butiksValuta ? c : null },
+    });
+    return json({ ok: true, message: "" });
+  }
   const katalogFor = async (inv: string[]) => {
     const kat = await loadCatalog(admin, session.shop, prisma);
     return kat.all.filter((v) => inv.includes(v.inventoryItemGid) || inv.includes(v.variantGid));
@@ -203,11 +266,13 @@ export async function action({ request }: ActionFunctionArgs) {
   /* Snabbfältet: en kostnad rakt in i Shopify för en eller flera varianter
      (produktnivå = alla varianter). Inga mallar, ingen fil. */
   if (intent === "set-cost") {
-    const cost = parseFloat(String(form.get("cost") ?? "").replace(/\s/g, "").replace(",", "."));
+    const ra = parseFloat(String(form.get("cost") ?? "").replace(/\s/g, "").replace(",", "."));
     const targets = String(form.get("targets") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
-    if (!Number.isFinite(cost) || cost < 0 || !targets.length) {
+    if (!Number.isFinite(ra) || ra < 0 || !targets.length) {
       return json({ ok: false, message: "invalid" }, { status: 400 });
     }
+    const cost = await tillButik(ra);
+    if (cost == null) return json({ ok: false, message: `no rate ${inValuta}→${butiksValuta}` }, { status: 502 });
     if (market) {
       const mal = await katalogFor(targets);
       await skrivMarknadskostnad(session.shop, market, mal, cost, null, `${market}: ${cost.toFixed(2)}`);
@@ -427,7 +492,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, saljMarknader, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
@@ -520,6 +585,16 @@ export default function Costs() {
   };
   const marknadsnamnet = marknadsnamn(market, lang, "");
   const arvda = rows.filter((r) => r.arvd).length;
+  /* Valutan kostnaderna skrivs i. Bytet sparas direkt; fälten räknar om. */
+  const valutaFetcher = useFetcher<typeof action>();
+  const valutor = [...new Set([currency, "USD", "EUR", "CNY", "GBP", "NOK", "DKK", "PLN"])];
+  const bytValuta = (c: string) => valutaFetcher.submit({ intent: "cost-currency", currency: c }, { method: "POST" });
+  const kursText =
+    costCurrency === currency
+      ? ""
+      : kurs == null
+        ? T.costs.currency.noRate(costCurrency)
+        : T.costs.currency.rateNote(costCurrency, currency, kurs);
   /* "Ta bort marknaden": tar bort alla kostnader och kampanjmärkningar för
      landet. Sidan går sedan tillbaka till Standard. */
   const taBortMarknadFetcher = useFetcher<typeof action>();
@@ -856,15 +931,41 @@ export default function Costs() {
             {/* Snabbfältet: skriv kostnaden per produkt, Enter sparar. */}
             <Card>
               <BlockStack gap="300">
-                <Text as="h2" variant="headingMd">
-                  {market ? `${T.costs.quick.title} · ${marknadsnamnet}` : T.costs.quick.title}
-                </Text>
+                <InlineStack gap="300" blockAlign="center" align="space-between" wrap>
+                  <Text as="h2" variant="headingMd">
+                    {market ? `${T.costs.quick.title} · ${marknadsnamnet}` : T.costs.quick.title}
+                  </Text>
+                  {/* Leverantörspriser är nästan alltid i USD eller CNY: välj
+                      valutan här, skriv beloppet som det står i offerten, och
+                      appen räknar om med dagens ECB-kurs när det sparas. */}
+                  <div style={{ minWidth: 200 }}>
+                    <Select
+                      label={T.costs.currency.label}
+                      options={valutor.map((c) => ({ label: c === currency ? `${c} (${T.costs.currency.shop})` : c, value: c }))}
+                      value={costCurrency}
+                      onChange={bytValuta}
+                      helpText={kursText || undefined}
+                    />
+                  </div>
+                </InlineStack>
                 <Text as="p" tone="subdued">{market ? T.costs.market.quickBody(marknadsnamnet) : T.costs.quick.body}</Text>
+                {costCurrency !== currency && kurs == null ? (
+                  <Banner tone="critical">{T.costs.currency.noRate(costCurrency)}</Banner>
+                ) : null}
                 <BlockStack gap="200">
-                  {/* Nyckeln bär marknaden: byter man land ska fälten börja om
-                      med det landets värden, inte behålla det förra landets. */}
+                  {/* Nyckeln bär marknad OCH valuta: byter man något ska fälten
+                      börja om med rätt värden i rätt valuta. */}
                   {produkter.map((grupp) => (
-                    <Produktrad key={`${grupp[0].productGid}|${market}`} grupp={grupp} T={T} nf={nf} currency={currency} market={market} />
+                    <Produktrad
+                      key={`${grupp[0].productGid}|${market}|${costCurrency}`}
+                      grupp={grupp}
+                      T={T}
+                      nf={nf}
+                      currency={currency}
+                      market={market}
+                      inValuta={costCurrency}
+                      kurs={kurs}
+                    />
                   ))}
                 </BlockStack>
               </BlockStack>
@@ -1039,6 +1140,22 @@ export default function Costs() {
                     if (a == null || b == null) return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
                     return <Text key={`be${r.variantGid}`} as="span">{a === b ? `${dec(a.toFixed(2))}×` : `${dec(a.toFixed(2))}–${dec(b.toFixed(2))}×`}</Text>;
                   }
+                  /* Break-even på den FAKTISKA mixen (tvåpack betalar tullen en
+                     gång, får packpriset). Utan försäljning: styckantagande, märkt. */
+                  const be = r.be;
+                  if (be && be.beRoas != null) {
+                    return (
+                      <span key={`be${r.variantGid}`}>
+                        <Text as="span" tone={be.beRoas <= 2 ? "success" : be.beRoas <= 3 ? undefined : "critical"}>
+                          {`${dec(be.beRoas.toFixed(2))}×`}
+                        </Text>
+                        <br />
+                        <Text as="span" variant="bodySm" tone="subdued">
+                          {be.antagen ? T.costs.be.assumed : mixText(be.mix, T.costs.be.unit)}
+                        </Text>
+                      </span>
+                    );
+                  }
                   if (k.beRoas == null)
                     return <Badge key={`be${r.variantGid}`} tone="critical">{T.costs.unprofitable}</Badge>;
                   return (
@@ -1077,6 +1194,11 @@ type Rad = {
   perMarknad?: Record<string, number | null>;
   /** Har kostnad där det behövs: standard, eller egen på varje säljmarknad. */
   tackt?: boolean;
+  /** Break-even på den faktiska flerpacksmixen (90 dagar). */
+  be?: {
+    beRoas: number | null; tb: number | null; revenue: number | null; lines: number; antagen: boolean; olonsamNagon: boolean;
+    mix: { qty: number; share: number }[];
+  };
 };
 
 /** "1 st 88,34 kr · 2 st 134,22 kr totalt (67,11/st)" — vad appen räknar med. */
@@ -1269,9 +1391,18 @@ function OffertRad({
  * till alla varianter (så ser en leverantörsprislista oftast ut); "Sätt per
  * variant" fäller ut ett fält per variant. Enter eller lämna fältet sparar.
  */
-function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string; market: string }) {
+function Produktrad({
+  grupp, T, nf, currency, market, inValuta, kurs,
+}: {
+  grupp: Rad[]; T: ReturnType<typeof t>; nf: Intl.NumberFormat; currency: string; market: string;
+  /** Valutan fältet skrivs i, och kursen till butikens valuta (1 = samma). */
+  inValuta: string; kurs: number | null;
+}) {
   const fetcher = useFetcher<typeof action>();
   const [open, setOpen] = useState(false);
+  /* Fältet visas i INVALUTAN: ett sparat belopp i kronor räknas tillbaka så
+     att det går att jämföra med leverantörens dollarpris. */
+  const iIn = (v: number | null) => (v == null ? null : kurs ? Math.round((v / kurs) * 100) / 100 : null);
   const kostnader = grupp.map((r) => r.unitCost);
   const alla = kostnader.every((k) => k != null);
   const lika = alla && kostnader.every((k) => k === kostnader[0]);
@@ -1282,13 +1413,14 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
   const egna = grupp.map((r) => (r.egen ? r.unitCost : null));
   const allaEgna = egna.every((k) => k != null);
   const likaEgna = allaEgna && egna.every((k) => k === egna[0]);
-  const [v, setV] = useState(likaEgna && egna[0] != null ? String(egna[0]) : "");
+  const [v, setV] = useState(likaEgna && egna[0] != null ? String(iIn(egna[0]) ?? "") : "");
   const [sparat, setSparat] = useState(false);
-  const arvdText = market && lika && kostnader[0] != null && !allaEgna ? T.costs.market.inheritedPlaceholder(nf.format(kostnader[0])) : "";
+  const arvdText = market && lika && kostnader[0] != null && !allaEgna ? T.costs.market.inheritedPlaceholder(nf.format(iIn(kostnader[0]) ?? kostnader[0])) : "";
+  const kanSpara = inValuta === currency || kurs != null;
 
   const spara = (targets: string[], value: string) => {
-    if (!value.trim()) return;
-    fetcher.submit({ intent: "set-cost", cost: value, targets: targets.join(","), market }, { method: "POST" });
+    if (!value.trim() || !kanSpara) return;
+    fetcher.submit({ intent: "set-cost", cost: value, targets: targets.join(","), market, currency: inValuta }, { method: "POST" });
     setSparat(true);
     setTimeout(() => setSparat(false), 2500);
   };
@@ -1340,13 +1472,13 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
             value={v}
             onChange={setV}
             onBlur={() => {
-              if (v && String(egna[0] ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v);
+              if (v && String(iIn(egna[0]) ?? "") !== v) spara(grupp.map((r) => r.inventoryItemGid), v);
               else if (!v && likaEgna && harKostnad) taBort(grupp.map((r) => r.inventoryItemGid));
             }}
             autoComplete="off"
             placeholder={arvdText || (!alla ? T.costs.quick.placeholder : !lika ? T.costs.quick.mixed : "")}
-            suffix={currency}
-            disabled={!lika && alla && !open}
+            suffix={inValuta}
+            disabled={(!lika && alla && !open) || !kanSpara}
           />
         </div>
         {saknas ? (
@@ -1381,7 +1513,9 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
       {open ? (
         <div style={{ paddingLeft: 16, paddingTop: 6 }}>
           <BlockStack gap="100">
-            {grupp.map((r) => <Variantrad key={`${r.variantGid}|${market}`} r={r} T={T} currency={currency} nf={nf} market={market} />)}
+            {grupp.map((r) => (
+              <Variantrad key={`${r.variantGid}|${market}|${inValuta}`} r={r} T={T} currency={currency} nf={nf} market={market} inValuta={inValuta} kurs={kurs} />
+            ))}
           </BlockStack>
         </div>
       ) : null}
@@ -1389,18 +1523,24 @@ function Produktrad({ grupp, T, nf, currency, market }: { grupp: Rad[]; T: Retur
   );
 }
 
-function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat; market: string }) {
+function Variantrad({
+  r, T, currency, nf, market, inValuta, kurs,
+}: {
+  r: Rad; T: ReturnType<typeof t>; currency: string; nf: Intl.NumberFormat; market: string; inValuta: string; kurs: number | null;
+}) {
   const fetcher = useFetcher<typeof action>();
-  const [v, setV] = useState(r.egen && r.unitCost != null ? String(r.unitCost) : "");
+  const iIn = (v: number | null) => (v == null ? null : kurs ? Math.round((v / kurs) * 100) / 100 : null);
+  const kanSpara = inValuta === currency || kurs != null;
+  const [v, setV] = useState(r.egen && r.unitCost != null ? String(iIn(r.unitCost) ?? "") : "");
   const taBort = () => fetcher.submit({ intent: "remove-cost", targets: r.inventoryItemGid, market }, { method: "POST" });
-  const arvdText = r.arvd && r.unitCost != null ? T.costs.market.inheritedPlaceholder(nf.format(r.unitCost)) : "";
+  const arvdText = r.arvd && r.unitCost != null ? T.costs.market.inheritedPlaceholder(nf.format(iIn(r.unitCost) ?? r.unitCost)) : "";
   const spara = () => {
     if (!v.trim()) {
       if (r.unitCost != null && !r.arvd) taBort();
       return;
     }
-    if (String(r.unitCost ?? "") === v) return;
-    fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid, market }, { method: "POST" });
+    if (String(iIn(r.unitCost) ?? "") === v || !kanSpara) return;
+    fetcher.submit({ intent: "set-cost", cost: v, targets: r.inventoryItemGid, market, currency: inValuta }, { method: "POST" });
   };
   const steg = stegText(r.unitCost, r.tiers, T, nf, currency);
   return (
@@ -1411,7 +1551,7 @@ function Variantrad({ r, T, currency, nf, market }: { r: Rad; T: ReturnType<type
           <Text as="span" variant="bodySm" tone="subdued">{`  · ${nf.format(r.price)} ${currency}`}</Text>
         </div>
         <div style={{ width: 150 }} onKeyDown={(e) => { if (e.key === "Enter") spara(); }}>
-          <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={arvdText || T.costs.quick.placeholder} suffix={currency} />
+          <TextField label={T.costs.thCost} labelHidden value={v} onChange={setV} onBlur={spara} autoComplete="off" placeholder={arvdText || T.costs.quick.placeholder} suffix={inValuta} disabled={!kanSpara} />
         </div>
         {r.unitCost == null && !v ? (
           !market && r.tackt ? <Badge tone="info">{T.costs.market.perMarketBadge}</Badge> : <Badge tone="critical">{T.costs.missingBadge}</Badge>

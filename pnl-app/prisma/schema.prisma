@@ -117,6 +117,16 @@ model ShopSettings {
   /// Null = av (saknade kostnader räknas som gratis och flaggas). Alltid
   /// märkt "uppskattad" i panelen — aldrig tyst.
   cogsEstimatePct Int?
+  /// Valutan handlaren skriver inköpspriser i på Kostnader-sidan ("USD").
+  /// Beloppet räknas om till butikens valuta med dagens ECB-kurs när det
+  /// sparas. Null = butikens valuta.
+  costCurrency    String?
+  /// Avgifter per marknad (landskod): { "US": { feeRate: 0.034, fxFeeRate: 0.02 } }.
+  /// feeRate ersätter den generella transaktionsavgiften för marknaden,
+  /// fxFeeRate är Shopify Payments valutaväxlingsavgift (tas ut när kunden
+  /// betalar i en annan valuta än butikens). Marknader utan post använder
+  /// feeRate ovan och ingen växlingsavgift.
+  marketFees      Json?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

@@ -114,6 +114,12 @@ export interface DailyReadResult {
    * rapporteras här så panelen kan säga att marknadsvyn är ofullständig.
    */
   daysWithoutMarkets: number;
+  /**
+   * Omsättning (totalSales) per marknad i intervallet, ur dagsradernas
+   * uppdelning. Dagar utan uppdelning hamnar under "". Underlaget för
+   * avgifter per marknad i räknemotorn.
+   */
+  salesByMarket: Record<string, number>;
 }
 
 export interface ReadDailyOpts {
@@ -189,13 +195,20 @@ export async function readDaily(
       oldestFetchedAt: oldest,
       lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
       daysWithoutMarkets: utanUppdelning,
+      salesByMarket: { [market]: sales.reduce((a, s) => a + s.totalSales, 0) },
     };
   }
 
   const products: ProductRow[] = [];
+  const salesByMarket: Record<string, number> = {};
   for (const r of rows) {
-    const per = opts.perMarknad ? uppdelning(r) : null;
+    const per = uppdelning(r);
     if (per) {
+      for (const [m, del] of Object.entries(per)) salesByMarket[m] = (salesByMarket[m] ?? 0) + del.totalSales;
+    } else {
+      salesByMarket[""] = (salesByMarket[""] ?? 0) + r.totalSales;
+    }
+    if (per && opts.perMarknad) {
       for (const [m, del] of Object.entries(per)) products.push(...del.products.map((p) => ({ ...p, market: m })));
     } else {
       products.push(...(((r.products as unknown as ProductRow[]) ?? []).map((p) => ({ ...p, market: "" }))));
@@ -218,6 +231,7 @@ export async function readDaily(
     oldestFetchedAt: oldest,
     lastDayFetchedAt: rows.length ? rows[rows.length - 1].fetchedAt : null,
     daysWithoutMarkets: 0,
+    salesByMarket,
   };
 }
 

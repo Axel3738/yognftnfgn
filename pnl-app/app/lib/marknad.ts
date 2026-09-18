@@ -60,3 +60,30 @@ export function sorteraMarknader(koder: Iterable<string>, hemland = ""): string[
     return a < b ? -1 : a > b ? 1 : 0;
   });
 }
+
+export interface Marknadsavgift {
+  /** Kortavgift, andel (0.034 = 3,4 %). Null = standardavgiften. */
+  feeRate: number | null;
+  /** Valutaväxlingsavgift, andel. Null/0 = ingen. */
+  fxFeeRate: number | null;
+}
+
+/** Städar lagrade avgifter: bara giltiga landskoder och tal mellan 0 och 1. */
+export function stadaAvgifter(ra: unknown): Record<string, Marknadsavgift> {
+  const ut: Record<string, Marknadsavgift> = {};
+  if (!ra || typeof ra !== "object") return ut;
+  const tal = (v: unknown) => {
+    const n = typeof v === "number" ? v : parseFloat(String(v ?? "").replace(",", "."));
+    return Number.isFinite(n) && n >= 0 && n < 1 ? n : null;
+  };
+  for (const [k, v] of Object.entries(ra as Record<string, unknown>)) {
+    const kod = marknadskod(k);
+    if (!kod || !v || typeof v !== "object") continue;
+    const o = v as { feeRate?: unknown; fxFeeRate?: unknown };
+    const feeRate = tal(o.feeRate);
+    const fxFeeRate = tal(o.fxFeeRate);
+    if (feeRate == null && fxFeeRate == null) continue;
+    ut[kod] = { feeRate, fxFeeRate };
+  }
+  return ut;
+}
