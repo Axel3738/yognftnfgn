@@ -99,6 +99,8 @@ Betyg 5: flera stories, hon pratar till kameran om sitt liv, högst en reklam. B
 
 ## 8. Modash (30 % av beslutet)
 
+*Tillägg 2026-09-18: Axel köper Modash och kör kursens siffror på alla tio. Skalan (sju siffror, vikter, spärrar, betyg 1–10) och betygstabellen ligger i `docs/matstrumpor-modash-score.md`.*
+
 Köp en månad när listan ligger klar. Slå upp topp 10, öppna "full report", spara PDF och ladda upp här. Kursens tröskelvärden: fejkföljare under 15 %, "real people" 75–90 %, minst 70 % av publiken följer under 500 konton, snittkommentarer minst 60 per inlägg, publiken mest 25+ och mest i Sverige. Kör också kursens bio-sökning: Sverige + "mamma", "mormor", "50+", "programledare", "radio".
 
 ## 9. Juridik som måste in i briefen
