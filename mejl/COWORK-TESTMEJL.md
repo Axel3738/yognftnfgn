@@ -1,7 +1,8 @@
 # Prompten till Cowork: skicka hela mejlkedjan som testmejl
 
 Axel vill se alla kundmejl på telefonen, i den ordning kunden får dem
-(2026-09-18). Shopify skickar testmejl till admin-kontots adress
+(2026-09-18). Körd av Cowork samma dag: alla sju skickade i ordning, 30 s
+emellan, bekräftade. Shopify skickar testmejl till admin-kontots adress
 (axelodhner.business@gmail.com, mätt 2026-09-18) med en påhittad testorder.
 
 **Sökord i Gmail som ger alla sju på en gång:** `kundsupport@baverbutiken.se`
@@ -37,8 +38,11 @@ Gör så här för varje rad i tabellen, uppifrån och ner:
 | 3 | **Leveransuppdatering** (Shipping update) |
 | 4 | **Ute för leverans** (Out for delivery) |
 | 5 | **Levererad** (Delivered) |
-| 6 | **Återbetalning** (Refund notification) |
+| 6 | **Orderåterbetalning** (Refund notification, Shopifys namn `refund_notification`) |
 | 7 | **Order annullerad** (Order cancelled) |
+
+⚠️ Bredvid "Ute för leverans" och "Levererad" ligger syskonen "Order ute
+för lokal leverans" och "Order lokalt levererad" — ta INTE dem.
 
 Heter en mall något lite annorlunda i listan: ta den som ligger närmast
 och skriv i rapporten vad den hette. Finns knappen "Skicka testmejl" inte på
