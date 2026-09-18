@@ -318,6 +318,11 @@ model DailyPnl {
   netSales        Float  @default(0)
   totalSales      Float  @default(0)
   shippingCharges Float  @default(0)
+  /// Dagens FAKTISKA betalavgifter, summerade ur ordertransaktionernas
+  /// `fees` (Shopify Payments: kortavgift, växlingsavgift, utländskt kort …).
+  /// Null = raden skrevs innan avgifterna hämtades, eller Shopify lämnade
+  /// inte ut dem — då räknar motorn med procentsatsen i Inställningar.
+  fees            Float?
   /// Dagens produktmix: [{productGid, variantGid, title, variantTitle, units, netSales, unitCost}]
   products        Json
   /// Samma dag uppdelad per marknad (ISO-landskod ur leveransadressen):

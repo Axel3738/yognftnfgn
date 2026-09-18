@@ -20,6 +20,11 @@ export interface SalesDay {
   netSales: number;
   totalSales: number; // inkl. fraktintäkt
   shippingCharges: number;
+  /**
+   * Dagens FAKTISKA betalavgifter ur ordertransaktionerna (Shopify Payments).
+   * Null/saknas = okänt för dagen → motorn räknar den dagen med procentsatsen.
+   */
+  fees?: number | null;
 }
 
 export interface SessionDay {
@@ -49,6 +54,8 @@ export interface MarknadsDel {
   netSales: number;
   totalSales: number;
   shippingCharges: number;
+  /** Faktiska avgifter för marknadens ordrar den dagen. Null = okänt. */
+  fees?: number | null;
   products: ProductRow[];
 }
 
@@ -254,6 +261,10 @@ export interface Totals {
   /** Dagar med försäljning men utan annonsdata. TB blir för högt när den inte är tom. */
   missingSpendDays: string[];
   spendComplete: boolean;
+  /** Dagar vars avgifter är FAKTISKA (ur ordertransaktionerna), av periodens dagar. */
+  feesKnownDays: number;
+  /** Avgifter som andel av omsättningen, faktiskt + sats för resten. */
+  effFeeRate: number;
 }
 
 export interface ComputeResult {
@@ -402,16 +413,32 @@ export function compute(input: ComputeInput): ComputeResult {
   const completed = sum(sessions, (s) => s.completedCheckout);
 
   const tariff = orders * settings.tariffPerOrder;
-  /* Avgifterna per marknad: USA-ordrar bär USA:s kortavgift plus växlings-
-     avgiften, svenska ordrar standarden. Omsättning som inte är fördelad på
-     marknad (äldre dagar utan uppdelning) tar standardsatsen. */
-  let fees = 0;
+  /* Avgifterna. Först det som FAKTISKT drogs: dagar med `fees` ur
+     ordertransaktionerna räknas rakt av — kortavgift, växlingsavgift,
+     utländskt kort, allt Shopify Payments tog. Dagar utan känd avgift
+     (äldre rader, eller Shopify lämnade inte ut fältet) räknas med satsen
+     per marknad: USA-ordrar bär USA:s kortavgift plus växlingsavgiften,
+     svenska ordrar standarden. Omsättning som inte är fördelad på marknad
+     tar standardsatsen. */
+  let faktiska = 0;
+  let omsMedFaktiska = 0;
+  let feesKnownDays = 0;
+  for (const s of sales) {
+    if (s.fees == null) continue;
+    faktiska += s.fees;
+    omsMedFaktiska += s.totalSales;
+    feesKnownDays++;
+  }
+  let satsBaserat = 0;
   let fordelad = 0;
   for (const [m, belopp] of Object.entries(input.salesByMarket ?? {})) {
-    fees += belopp * feeRateFor(settings, m);
+    satsBaserat += belopp * feeRateFor(settings, m);
     fordelad += belopp;
   }
-  fees += Math.max(0, totalSales - fordelad) * settings.feeRate;
+  satsBaserat += Math.max(0, totalSales - fordelad) * settings.feeRate;
+  /* Satsen gäller bara den del av omsättningen som saknar faktisk avgift. */
+  const okandAndel = totalSales > 0 ? Math.max(0, totalSales - omsMedFaktiska) / totalSales : 0;
+  const fees = faktiska + satsBaserat * okandAndel;
   /* Den blandade satsen — det break-even och max-CPA ska räkna med. */
   const effFeeRate = totalSales > 0 ? fees / totalSales : settings.feeRate;
   const contribution = totalSales - cogs - tariff - spend;
@@ -472,6 +499,8 @@ export function compute(input: ComputeInput): ComputeResult {
     unitsWithoutCost,
     missingSpendDays,
     spendComplete: missingSpendDays.length === 0,
+    feesKnownDays,
+    effFeeRate,
   };
 
   return {

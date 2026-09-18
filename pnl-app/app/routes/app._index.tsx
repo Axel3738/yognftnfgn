@@ -1344,6 +1344,14 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                 {T.dashboard.updatedAgo(dataAgeMin, refreshing)}
               </Text>
             ) : null}
+            {/* Avgifterna: faktiska ur ordrarna där de finns, annars satsen.
+                Sägs rakt ut — det är skillnaden mellan "det Shopify tog" och
+                "det någon skrev in". */}
+            {t2.orders > 0 ? (
+              <Text as="span" variant="bodySm" tone="subdued">
+                {T.dashboard.feesNote(money(t2.fees), (t2.effFeeRate * 100).toFixed(2), t2.feesKnownDays, result.days.length)}
+              </Text>
+            ) : null}
 
             {market && daysWithoutMarkets > 0 ? (
               <Banner tone="warning">{T.dashboard.market.daysWithout(daysWithoutMarkets)}</Banner>

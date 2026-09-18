@@ -153,23 +153,32 @@ async function doFetchOrderData(
   /* Landet i leveransadressen ger marknaden. Skulle Shopify neka just det
      fältet (skyddade kundfält) får ordrarna ändå hämtas — utan land, hellre
      en panel utan marknadsuppdelning än ingen panel alls. */
+  /* Avgifterna läses ur ordertransaktionerna (Shopify Payments skriver sina
+     avgifter per transaktion). Nekar Shopify det fältet hämtas utan — då
+     räknar motorn med procentsatsen i stället för att stanna panelen. */
   let medLand = true;
-  let jsonl: any[];
-  try {
-    jsonl =
-      dayCount <= 7
-        ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund, true)
-        : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund, true);
-  } catch (e) {
-    if (!arAdressNekad(e)) throw e;
-    console.error(`Leveransadressen nekades för ${shopKey || "butiken"} — hämtar utan marknad:`, (e as Error).message);
-    medLand = false;
-    jsonl =
-      dayCount <= 7
-        ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), kund, false)
-        : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), kund, false);
+  let medAvgifter = true;
+  let jsonl: any[] | null = null;
+  for (let forsok = 0; forsok < 3 && jsonl == null; forsok++) {
+    try {
+      const falt = { kund, land: medLand, avgifter: medAvgifter };
+      jsonl =
+        dayCount <= 7
+          ? await runOrdersPaginated(admin, shiftIso(from, -1), shiftIso(to, 1), falt)
+          : await runOrdersBulk(admin, shiftIso(from, -1), shiftIso(to, 1), falt);
+    } catch (e) {
+      if (medAvgifter && arAvgiftNekad(e)) {
+        console.error(`Transaktionsavgifterna nekades för ${shopKey || "butiken"} — hämtar utan:`, (e as Error).message);
+        medAvgifter = false;
+      } else if (medLand && arAdressNekad(e)) {
+        console.error(`Leveransadressen nekades för ${shopKey || "butiken"} — hämtar utan marknad:`, (e as Error).message);
+        medLand = false;
+      } else {
+        throw e;
+      }
+    }
   }
-  const data = parseOrderLines(jsonl, from, to, timezone, medLand);
+  const data = parseOrderLines(jsonl ?? [], from, to, timezone, medLand, medAvgifter);
 
   const costs = await fetchVariantCosts(admin, shopKey);
   /* Kostnaden per orderrad sätts här, med samma katalog som produktmixen —
@@ -206,6 +215,8 @@ async function doFetchOrderData(
 /** Shopify nekade adressfältet (skyddad kunddata) — inte ett allmänt fel. */
 const arAdressNekad = (e: unknown) =>
   /ACCESS_DENIED|not approved|protected customer|shippingAddress|billingAddress/i.test(String((e as Error)?.message ?? e));
+/** Shopify nekade eller känner inte fältet `fees` på transaktionerna. */
+const arAvgiftNekad = (e: unknown) => /\bfees\b|transactions|TransactionFee/i.test(String((e as Error)?.message ?? e));
 
 /** Bygger dags- och produktaggregat ur JSONL-rader (ordrar + radartiklar). */
 function parseOrderLines(
@@ -214,12 +225,16 @@ function parseOrderLines(
   to: string,
   timezone: string,
   medLand = true,
+  medAvgifter = true,
 ): OrderData {
   const salesBy = new Map<string, SalesDay>();
   for (let d = from; d <= to; d = shiftIso(d, 1)) {
     salesBy.set(d, {
       day: d, orders: 0, grossSales: 0, discounts: 0, returns: 0,
       netSales: 0, totalSales: 0, shippingCharges: 0,
+      /* Noll när avgifterna hämtas (en dag utan ordrar har noll avgift);
+         null när fältet nekades — då ska motorn räkna med satsen. */
+      fees: medAvgifter ? 0 : null,
     });
   }
 
@@ -240,7 +255,7 @@ function parseOrderLines(
     salesByMarknad.set(day, perLand);
     const hink = perLand.get(land) ?? {
       day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
-      netSales: 0, totalSales: 0, shippingCharges: 0,
+      netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
     };
     perLand.set(land, hink);
     return hink;
@@ -290,6 +305,10 @@ function parseOrderLines(
 
       const total = num(line.totalPriceSet?.shopMoney?.amount) - refunded;
       const frakt = num(line.totalShippingPriceSet?.shopMoney?.amount);
+      /* Orderns faktiska avgifter: summan av fees på alla lyckade
+         transaktioner (försäljning, capture; en återbetalning kan bära en
+         negativ avgift när Shopify återför den). */
+      const avgift = medAvgifter ? summeraAvgifter(line.transactions) : 0;
       const fyll = (b: SalesDay) => {
         b.orders += 1;
         b.grossSales += subtotal + discounts;
@@ -298,6 +317,7 @@ function parseOrderLines(
         b.netSales += subtotal - refunded;
         b.totalSales += total;
         b.shippingCharges += frakt;
+        if (b.fees != null) b.fees += avgift;
       };
       fyll(bucket);
       if (medLand) {
@@ -364,6 +384,27 @@ function parseOrderLines(
  * Bär raderna en marknad hålls marknaderna isär — samma variant såld till
  * Sverige och Norge blir två rader, för de ska räknas på olika kostnad.
  */
+/**
+ * Summerar `fees` på en orders transaktioner. Bulk-exporten ger dem som
+ * `transactions` (lista) på orderraden; pagineringen likaså. Bara lyckade
+ * transaktioner räknas — en nekad betalning har ingen avgift som drogs.
+ */
+function summeraAvgifter(transaktioner: unknown): number {
+  const lista: any[] = Array.isArray(transaktioner)
+    ? transaktioner
+    : Array.isArray((transaktioner as any)?.nodes)
+      ? (transaktioner as any).nodes
+      : Array.isArray((transaktioner as any)?.edges)
+        ? (transaktioner as any).edges.map((e: any) => e?.node)
+        : [];
+  let summa = 0;
+  for (const t of lista) {
+    if (!t || (t.status && t.status !== "SUCCESS")) continue;
+    for (const f of t.fees ?? []) summa += num(f?.amount?.amount);
+  }
+  return summa;
+}
+
 export function mergeProductRows(rows: ProductRow[]): ProductRow[] {
   const by = new Map<string, ProductRow>();
   for (const r of rows) {
@@ -397,14 +438,24 @@ const kundFalt = (kund: boolean) => (kund ? "customer { id }" : "");
    reserv för ordrar utan leverans (digitalt, upphämtning). */
 const landFalt = (land: boolean) =>
   land ? "shippingAddress { countryCodeV2 } billingAddress { countryCodeV2 }" : "";
+/* Faktiska avgifter per transaktion: det Shopify Payments drog — kortavgift,
+   växlingsavgift, utländskt kort. Det enda talet som stämmer. */
+const avgiftFalt = (avgifter: boolean) =>
+  avgifter ? "transactions(first: 20) { status kind fees { amount { amount } type rateName } }" : "";
+
+interface Orderfalt {
+  kund: boolean;
+  land: boolean;
+  avgifter: boolean;
+}
 
 async function runOrdersPaginated(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
-  kund = false,
-  land = true,
+  falt: Orderfalt,
 ): Promise<any[]> {
+  const { kund, land, avgifter } = falt;
   const lines: any[] = [];
   let after: string | null = null;
   for (let page = 0; page < 20; page++) {
@@ -417,6 +468,7 @@ async function runOrdersPaginated(
              id createdAt cancelledAt test
              ${kundFalt(kund)}
              ${landFalt(land)}
+             ${avgiftFalt(avgifter)}
              totalPriceSet { shopMoney { amount } }
              subtotalPriceSet { shopMoney { amount } }
              totalDiscountsSet { shopMoney { amount } }
@@ -491,15 +543,16 @@ async function runOrdersBulk(
   admin: AdminApiContext,
   fromExclusive: string,
   toInclusive: string,
-  kund = false,
-  land = true,
+  falt: Orderfalt,
 ): Promise<any[]> {
+  const { kund, land, avgifter } = falt;
   const inner = `{
     orders(query: "created_at:>='${fromExclusive}' AND created_at:<='${toInclusive}'") {
       edges { node {
         id createdAt cancelledAt test
         ${kundFalt(kund)}
         ${landFalt(land)}
+        ${avgiftFalt(avgifter)}
         totalPriceSet { shopMoney { amount } }
         subtotalPriceSet { shopMoney { amount } }
         totalDiscountsSet { shopMoney { amount } }

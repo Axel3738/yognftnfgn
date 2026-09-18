@@ -64,6 +64,8 @@ export async function refreshDaily(
         netSales: s.netSales,
         totalSales: s.totalSales,
         shippingCharges: s.shippingCharges,
+        /* Faktiska avgifter; null när Shopify inte lämnade ut dem. */
+        fees: s.fees ?? null,
         products,
         /* Uppdelningen per marknad skrivs bredvid totalen. Gick landet inte
            att läsa lämnas fältet orört — en gammal uppdelning är bättre än
@@ -225,6 +227,7 @@ export async function readDaily(
       netSales: r.netSales,
       totalSales: r.totalSales,
       shippingCharges: r.shippingCharges,
+      fees: r.fees ?? null,
     })),
     products: mergeProductRows(products),
     missingDays,
@@ -479,4 +482,48 @@ export async function refreshShopDaily(
     console.error(`Bakgrundshämtning för ${shop} misslyckades:`, e);
     return false;
   }
+}
+
+export interface UppmattAvgift {
+  /** Avgifter ÷ omsättning, de senaste 90 dagarna. */
+  rate: number;
+  /** Omsättning underlaget bygger på (för att bedöma om talet betyder något). */
+  sales: number;
+  days: number;
+}
+
+/**
+ * Vad Shopify Payments FAKTISKT tog, per marknad, de senaste 90 dagarna —
+ * ur dagsradernas `fees`. Nyckeln "" är hela butiken. Marknader utan
+ * uppdelning eller utan avgiftsdata saknas i svaret. Det här är svaret på
+ * "jag vet ju inte avgifterna": ingen behöver slå upp dem, de står i
+ * ordrarna.
+ */
+export async function uppmattaAvgifter(shop: string): Promise<Record<string, UppmattAvgift>> {
+  const sedan = shiftIso(new Date().toISOString().slice(0, 10), -90);
+  const rader = await prisma.dailyPnl.findMany({
+    where: { shop, day: { gte: sedan }, fees: { not: null } },
+    select: { fees: true, totalSales: true, markets: true },
+  });
+  const summa: Record<string, { fees: number; sales: number; days: number }> = {};
+  const lagg = (m: string, fees: number, sales: number) => {
+    const a = (summa[m] ??= { fees: 0, sales: 0, days: 0 });
+    a.fees += fees;
+    a.sales += sales;
+    a.days++;
+  };
+  for (const r of rader) {
+    lagg("", r.fees ?? 0, r.totalSales);
+    const per = r.markets as unknown as Record<string, MarknadsDel> | null;
+    if (!per) continue;
+    for (const [m, del] of Object.entries(per)) {
+      if (!m || del.fees == null || !(del.totalSales > 0)) continue;
+      lagg(m, del.fees, del.totalSales);
+    }
+  }
+  const ut: Record<string, UppmattAvgift> = {};
+  for (const [m, a] of Object.entries(summa)) {
+    if (a.sales > 0) ut[m] = { rate: a.fees / a.sales, sales: a.sales, days: a.days };
+  }
+  return ut;
 }

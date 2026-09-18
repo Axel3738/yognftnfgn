@@ -59,7 +59,7 @@ import {
   taBortKonto,
 } from "../lib/meta-konton.server";
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
-import { kandaMarknader } from "../lib/daily.server";
+import { kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
@@ -115,9 +115,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
   /* Marknaderna butiken sålt till (plus dem som redan har kostnad eller
      märkt kampanj) — valen i "Marknad" per kampanj. */
   const marknader = await kandaMarknader(session.shop, hemlandAv(s.currency));
+  /* Vad Shopify Payments faktiskt tog per marknad de senaste 90 dagarna, ur
+     ordrarna. Visas bredvid fälten så ingen behöver gissa — och panelen
+     räknar redan med de faktiska avgifterna där de finns. */
+  const uppmatt = await uppmattaAvgifter(session.shop).catch(() => ({}) as Record<string, never>);
 
   return json({
     marknader,
+    uppmatt: Object.fromEntries(
+      Object.entries(uppmatt).map(([m, a]) => [m, { pct: (a.rate * 100).toFixed(2), days: a.days }]),
+    ),
     /* Avgifter per marknad, i PROCENT som strängar — så som fälten visar dem. */
     marketFees: Object.fromEntries(
       Object.entries(stadaAvgifter(s.marketFees)).map(([m, a]) => [
@@ -596,10 +603,16 @@ export default function Settings() {
                 <BlockStack gap="200">
                   <Text as="h3" variant="headingSm">{T.settings.marketFees.title}</Text>
                   <Text as="p" variant="bodySm" tone="subdued">{T.settings.marketFees.body}</Text>
+                  {d.uppmatt[""] ? (
+                    <Banner tone="info">{T.settings.marketFees.measuredAll(d.uppmatt[""].pct, d.uppmatt[""].days)}</Banner>
+                  ) : null}
                   {d.marknader.map((m) => (
                     <InlineStack key={m} gap="300" blockAlign="end" wrap>
                       <div style={{ minWidth: 160, flex: "1 1 160px" }}>
                         <Text as="p" variant="bodyMd">{`${marknadsnamn(m, d.lang, m)} (${m})`}</Text>
+                        {d.uppmatt[m] ? (
+                          <Text as="p" variant="bodySm" tone="subdued">{T.settings.marketFees.measured(d.uppmatt[m].pct)}</Text>
+                        ) : null}
                       </div>
                       <div style={{ width: 170 }}>
                         <TextField

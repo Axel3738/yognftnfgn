@@ -436,8 +436,28 @@ under `""`), och `compute()` räknar `fees = Σ omsättning_m × feeRateFor(m)`
 (`effFeeRate`). Gruppsumman går samma väg. Migration
 `20260918090000_valuta_och_avgifter`.
 
+**Faktiska avgifter ur ordrarna (v93, samma dag).** Axel: *"jag vet ju inte
+avgifterna … på vissa är det fett mycket, och sen tar de en avgift med
+banken"*. Orderfrågorna (paginering + bulk) läser nu
+`transactions(first: 20) { status kind fees { amount { amount } type rateName } }`
+och summerar avgifterna på lyckade transaktioner per order →
+`SalesDay.fees`, `DailyPnl.fees` (null = okänt), `MarknadsDel.fees`.
+`compute()` räknar dagar med känd avgift rakt av och bara resten med satsen
+(`Totals.feesKnownDays`, `Totals.effFeeRate`). Panelen skriver raden
+"Betalavgifter X (Y %) — faktiska belopp …". `uppmattaAvgifter(shop)` ger
+den faktiska satsen per marknad (90 dagar); Kostnader-sidans TB/BE använder
+den när underlag finns, och Inställningar visar den bredvid fälten — de
+manuella satserna är nu bara reserv. Migration
+`20260918120000_faktiska_avgifter`.
+⚠ Nekar Shopify `fees` (fältet kräver read_orders; är det mer får vi se)
+faller hämtningen tillbaka utan avgifter (`arAvgiftNekad`) och loggar
+"Transaktionsavgifterna nekades" — läs loggen efter deploy. Äldre dagsrader
+har `fees = null` tills de exporteras om (bara färska dagar hämtas om av
+sig själva; 90-dagarsvyn blir helt faktisk först när raderna skrivits om).
+
 ⚠ **Oprövat i drift**, som allt i marknadsbygget. Kontrollera efter deploy
-att `/healthz` svarar `valuta-breakeven-v92` och att Kostnader-tabellens
+att `/healthz` svarar `faktiska-avgifter-v93`, att panelen visar raden
+"Betalavgifter … faktiska" för dagens datum, och att Kostnader-tabellens
 BE ROAS-kolumn visar en mixrad under talet för en produkt med ordrar.
 
 ### Marknader — kostnad, annonser och vinst per land (2026-09-17, build marknader-v88)

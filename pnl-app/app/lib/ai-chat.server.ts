@@ -50,7 +50,7 @@ BREAK-EVEN ROAS: räknas på den FAKTISKA flerpacksmixen de senaste 90 dagarna (
 
 VALUTA PÅ KOSTNADER: överst i "Skriv in dina kostnader här" finns rullistan "Kostnaderna är i". Välj t.ex. USD, skriv beloppet som det står i leverantörens offert, så räknas det om till butikens valuta med dagens ECB-kurs när det sparas (kursen står under rullistan). Samma val finns på produktsidan för nya poster.
 
-AVGIFTER PER MARKNAD: Inställningar → "Kostnader per order" → "Avgifter per marknad": kortavgift % och valutaväxling % per land. Shopify Payments tar mer för utländska kort (+1 %) och en växlingsavgift (1,5–2 %) när kunden betalar i en annan valuta. Tomt fält = standardavgiften. Panelen räknar varje lands omsättning med landets sats, och break-even på Kostnader använder vald marknads avgift.
+BETALAVGIFTER (FAKTISKA): appen läser de avgifter Shopify Payments faktiskt tog ur varje orders transaktioner — kortavgift, utländskt kort, valutaväxling — och räknar med dem i vinsten. Handlaren behöver inte veta sina avgifter. Panelen visar raden "Betalavgifter … faktiska belopp från Shopify Payments" under uppdateringstiden; Inställningar → "Avgifter per marknad" visar vad som faktiskt togs per land (senaste 90 dagarna). Fälten där (kortavgift %, valutaväxling %) används bara för dagar utan faktisk data (äldre dagar, eller om Shopify inte lämnar ut fältet). Break-even på Kostnader räknar med den faktiska satsen för vald marknad.
 
 HISTORIK: ändrar man kostnaden på produktsidan med ett "från och med"-datum räknas äldre perioder på den gamla kostnaden. Snabbfältet och AI-läsningen skriver utan datum (gäller framåt och för perioder som hämtas om).
 

@@ -36,7 +36,7 @@ import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } f
 import { importCostCsv } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
-import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso } from "../lib/daily.server";
+import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
 import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
 import { mixText } from "../lib/breakeven-text";
 import { feeRateFor, type CostTierRow } from "../lib/pnl.server";
@@ -119,7 +119,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
     targetMargin: Number(settings.targetMargin),
     marketFees: stadaAvgifter(settings.marketFees),
   };
-  const feeRateEff = feeRateFor(raknesettings, market);
+  /* Hellre det Shopify Payments FAKTISKT tog (ur ordrarna, 90 dagar) än en
+     sats någon skrivit in: den mätta satsen för marknaden när underlaget
+     finns, annars Inställningars sats. */
+  const uppmatt = await uppmattaAvgifter(session.shop).catch(() => ({}) as Record<string, never>);
+  const matt = uppmatt[market] ?? (market ? undefined : uppmatt[""]);
+  const feeRateEff = matt && matt.sales > 0 ? matt.rate : feeRateFor(raknesettings, market);
+  const feeMatt = Boolean(matt && matt.sales > 0);
   /* Kostnaderna för VARJE känd marknad läses, inte bara den valda: tabellen
      längst ner visar hela upplägget på en gång — standard i en kolumn och
      varje land i sin — så man ser vad som är inlagt utan att byta i listan. */
@@ -210,6 +216,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     total: rows.length,
     tariffPerOrder: Number(settings.tariffPerOrder),
     feeRate: feeRateEff,
+    feeMatt,
     currency: settings.currency,
     costCurrency,
     kurs,
@@ -492,7 +499,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 export default function Costs() {
-  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tariffPerOrder, feeRate, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
+  const { lang, market, marknader, saljMarknader, costCurrency, kurs, rows, missing, total, tariffPerOrder, feeRate, feeMatt, currency, juicyDismissed, cogsEstimatePct, aiEnabled } = useLoaderData<typeof loader>();
   const [params, setParams] = useSearchParams();
   const fetcher = useFetcher<typeof action>();
   const juicyFetcher = useFetcher<typeof action>();
@@ -1080,11 +1087,14 @@ export default function Costs() {
             {/* Hela upplägget på en gång: standard + en kolumn per marknad.
                 Egen kostnad står rakt; ärvd standard står med * i grått; saknas
                 båda står —. TB och break-even räknas på den valda marknaden. */}
-            {marknader.length ? (
-              <div style={{ padding: "12px 16px 0" }}>
-                <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.tableNote}</Text>
-              </div>
-            ) : null}
+            <div style={{ padding: "12px 16px 0" }}>
+              <BlockStack gap="100">
+                {marknader.length ? <Text as="p" variant="bodySm" tone="subdued">{T.costs.market.tableNote}</Text> : null}
+                <Text as="p" variant="bodySm" tone="subdued">
+                  {feeMatt ? T.costs.be.feeMeasured((feeRate * 100).toFixed(2)) : T.costs.be.feeSetting((feeRate * 100).toFixed(2))}
+                </Text>
+              </BlockStack>
+            </div>
             <DataTable
               columnContentTypes={["text", "text", "numeric", "numeric", ...marknader.map(() => "numeric" as const), "numeric", "numeric"]}
               headings={[

@@ -60,6 +60,12 @@ const en = {
     unknownError: "unknown error",
     fatalHelp: "Send a screenshot of this message — it points out exactly where it stops.",
     refresh: "Refresh",
+    feesNote: (fees: string, pct: string, known: number, days: number) =>
+      known >= days
+        ? `Payment fees ${fees} (${pct} %) — actual amounts from Shopify Payments.`
+        : known > 0
+          ? `Payment fees ${fees} (${pct} %) — actual for ${known} of ${days} days, the rest at your settings rate.`
+          : `Payment fees ${fees} (${pct} %) — from your settings rate; actual fees are read as new days are fetched.`,
     market: {
       label: "Market",
       all: "All markets",
@@ -222,6 +228,8 @@ const en = {
       thShare: "Share of orders",
       mixRow: "Actual mix (90 days)",
       noSales: "No sales in the last 90 days — 1 pc per order assumed.",
+      feeMeasured: (pct: string) => `CM and BE ROAS use the payment fee Shopify Payments actually charged: ${pct} % of sales (last 90 days).`,
+      feeSetting: (pct: string) => `CM and BE ROAS use the fee rate from Settings: ${pct} %. Actual fees are read as orders are fetched.`,
     },
     market: {
       title: "Market",
@@ -518,6 +526,9 @@ const en = {
       feeLabel: "Card fee (%)",
       fxLabel: "Currency conversion (%)",
       hint: "Leave a field empty to use the standard fee above and no conversion fee. Typical Shopify Payments: +1 % for international cards, 1.5–2 % conversion.",
+      measuredAll: (pct: string, days: number) =>
+        `You don't need to look these up: the dashboard reads the fees Shopify Payments actually charged from your orders — ${pct} % of sales over the last ${days} days. The fields below only matter for days without that data.`,
+      measured: (pct: string) => `Actually charged: ${pct} % (last 90 days)`,
     },
     marginLabel: "Target margin (%)",
     marginHelp: "Max CPA on the dashboard is calculated against this margin.",
@@ -845,6 +856,12 @@ const sv: Texts = {
     unknownError: "okänt fel",
     fatalHelp: "Skicka en skärmbild av det här meddelandet — det pekar ut exakt var det stannar.",
     refresh: "Uppdatera",
+    feesNote: (fees: string, pct: string, known: number, days: number) =>
+      known >= days
+        ? `Betalavgifter ${fees} (${pct} %) — faktiska belopp från Shopify Payments.`
+        : known > 0
+          ? `Betalavgifter ${fees} (${pct} %) — faktiska för ${known} av ${days} dagar, resten med satsen i Inställningar.`
+          : `Betalavgifter ${fees} (${pct} %) — enligt satsen i Inställningar; faktiska avgifter läses in när nya dagar hämtas.`,
     market: {
       label: "Marknad",
       all: "Alla marknader",
@@ -1007,6 +1024,8 @@ const sv: Texts = {
       thShare: "Andel av ordrar",
       mixRow: "Faktisk mix (90 dagar)",
       noSales: "Ingen försäljning de senaste 90 dagarna — 1 st per order antas.",
+      feeMeasured: (pct: string) => `TB och BE ROAS räknar med den avgift Shopify Payments faktiskt tog: ${pct} % av omsättningen (senaste 90 dagarna).`,
+      feeSetting: (pct: string) => `TB och BE ROAS räknar med satsen i Inställningar: ${pct} %. Faktiska avgifter läses in när ordrar hämtas.`,
     },
     market: {
       title: "Marknad",
@@ -1303,6 +1322,9 @@ const sv: Texts = {
       feeLabel: "Kortavgift (%)",
       fxLabel: "Valutaväxling (%)",
       hint: "Tomt fält = standardavgiften ovan och ingen växlingsavgift. Typiskt för Shopify Payments: +1 % för utländska kort, 1,5–2 % växling.",
+      measuredAll: (pct: string, days: number) =>
+        `Du behöver inte slå upp dem: panelen läser de avgifter Shopify Payments faktiskt tog ur dina ordrar — ${pct} % av omsättningen de senaste ${days} dagarna. Fälten nedan används bara för dagar utan den datan.`,
+      measured: (pct: string) => `Faktiskt taget: ${pct} % (senaste 90 dagarna)`,
     },
     marginLabel: "Målmarginal (%)",
     marginHelp: "Max-CPA på panelen räknas mot den här marginalen.",
