@@ -1,17 +1,24 @@
 {% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
-{% assign slut_ts = 'now' | date: '%s' | plus: 2592000 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slutdatum = slut_dag | append: ' ' | append: slut_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Paketet kommer idag</title>
+  <style>
+    @media only screen and (max-width: 480px) {
+      .bb-yttre { padding: 8px 0 !important; }
+      .bb-kort { display: inline-block !important; width: 48% !important; box-sizing: border-box !important; }
+      .bb-vinst { display: inline-block !important; width: 32% !important; box-sizing: border-box !important; }
+      .bb-knapp { display: block !important; width: auto !important; }
+      .bb-rubrik { font-size: 26px !important; }
+    }</style>
 </head>
 <body style="margin: 0; padding: 0; background-color: #f2f2f2;">
   <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">Håll utkik under dagen.</div>
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2">
     <tr>
-      <td align="center" style="padding: 24px 12px;">
+      <td align="center" class="bb-yttre" style="padding: 24px 12px;">
         <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid #e8e8e1;">
           <tr>
             <td align="center" bgcolor="#000000" style="padding: 16px 24px;">
@@ -27,16 +34,16 @@
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;">
                 {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
-                Din order {{ name }} är ute för leverans med {{ fulfillment.tracking_company | default: 'fraktbolaget' }} och kommer fram under dagen.
+                Din order {{ name }} är ute för leverans och kommer fram under dagen.
               </p>
             </td>
           </tr>
           <tr>
             <td align="center" style="padding: 24px 32px 8px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ fulfillment.tracking_url | default: order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -44,7 +51,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: #000000;">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% endif %}</p>
             </td>
           </tr>
           <tr>
