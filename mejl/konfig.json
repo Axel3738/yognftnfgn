@@ -782,12 +782,9 @@
       "ute_for_leverans": "2026-09-12 v2 (knappen till 17track)"
     },
     "inklistrade": {
-      "fraktuppdatering": "2026-09-12 v2",
-      "ute_for_leverans": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
       "orderbekraftelse": "2026-09-18 v6",
-      "fraktbekraftelse": "2026-09-18 v6",
       "levererad": "2026-09-18 v6"
     },
     "inklistrade_v1": {
