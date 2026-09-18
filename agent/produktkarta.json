@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-17",
+  "uppdaterad": "2026-09-18",
   "kampanjer": [
     {
       "campaign_id": "120250252311730291",
@@ -893,6 +893,62 @@
       "produkt": "Infartslarm NO",
       "lage": "test",
       "lage_motivering": "startad 2026-09-16 i NO-kontot 1050941584152547, noll data ännu — saknades i kartan, tillagd av /rond-auto 2026-09-16",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250268533590291",
+      "produkt": "Gör Din Egen Adventskalender 24 Askar",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250268503590291",
+      "produkt": "Inomhustofflorna i Kamouflage",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250268474110291",
+      "produkt": "Biltvättborsten med Teleskopskaft",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250268397440291",
+      "produkt": "Vedklyvborren Ø32 mm",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250268236770291",
+      "produkt": "Snöskyffeln Utan Batteri",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252268799910233",
+      "produkt": "Solcellslampa NO",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252268516440233",
+      "produkt": "Fågelmatare NO",
+      "lage": "test",
+      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
