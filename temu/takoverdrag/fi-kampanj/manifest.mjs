@@ -15,6 +15,11 @@ const copy = JSON.parse(readFileSync(val('--copy'), 'utf8')).versioner;
 const B = path.resolve(val('--bilder')), V = path.resolve(val('--videor'));
 const DATUM = new Date().toISOString().slice(0, 10);
 
+// DSA-fälten (EU) tas ur SE-kampanjens adsets — aldrig ur huvudet. Alla 10 SE- och 19 FI-adsets bär samma värde (mätt 2026-09-18).
+function dsaFran(seAds) {
+  const a = seAds.find((x) => x.adset?.dsa_beneficiary);
+  return a ? { beneficiary: a.adset.dsa_beneficiary, payor: a.adset.dsa_payor || a.adset.dsa_beneficiary } : { beneficiary: 'Axel Odhner', payor: 'Axel Odhner' };
+}
 const perAnnons = {};
 for (const [k, v] of Object.entries(copy)) for (const n of v.annonser) perAnnons[n] = v;
 
@@ -48,6 +53,10 @@ const M = {
   link: 'https://majavakauppa.fi/products/asuntovaunun-kattopeite-9-pituutta-3-m-levea-suojaa-kalleimman-pinnan',
   kampanjnamn: `Kattopeite Asuntovaunu | FI | Launch ${DATUM}`,
   dagsbudget_ore: 110000,                         // platshållare ≈ 100 €/dag (kontot är i SEK) — sätts av Axel före aktivering
+  dsa: dsaFran(se),                                // DSA-annonsör/betalare, lästa ur SE-kampanjens adsets
+  // Metas creative-features: kopieras ur SE-kampanjens creatives (alla OPT_OUT). `standard_enhancements`
+  // accepteras inte längre (Meta-fel 3858504, mätt 2026-09-18) — bara individuella features.
+  degrees_of_freedom_spec: se[0].creative.degrees_of_freedom_spec || null,
   adsets, annonser, saknas,
 };
 writeFileSync(val('--ut'), JSON.stringify(M, null, 1));

@@ -77,6 +77,9 @@ async function main() {
       promoted_object: { pixel_id: M.pixel_id, custom_event_type: 'PURCHASE' },
       attribution_spec: [{ event_type: 'CLICK_THROUGH', window_days: 7 }],
       targeting: { geo_locations: { countries: ['FI'], location_types: ['home', 'recent'] }, age_min: 18, age_max: 65, targeting_automation: { advantage_audience: 1 } },
+      // EU:s DSA kräver annonsör + betalare på varje adset (Meta-fel 3858081 utan dem, mätt 2026-09-18).
+      // Värdena läses ur manifestet — samma som SE-kampanjens 10 och FI-kontots 19 befintliga adsets.
+      dsa_beneficiary: M.dsa.beneficiary, dsa_payor: M.dsa.payor,
     });
     st.adsets[a.se_namn] = r.id; spara(); console.log(`✓ Adset PAUSED: ${a.fi_namn} (${r.id})`);
   }
@@ -128,7 +131,7 @@ async function main() {
     if (!st.creatives[ad.se_namn]) {
       const c = await post(`${M.konto}/adcreatives`, {
         name: `${ad.fi_namn} ${new Date().toISOString().slice(0, 10)}`, object_story_spec: spec,
-        degrees_of_freedom_spec: { creative_features_spec: { standard_enhancements: { enroll_status: 'OPT_OUT' } } },
+        ...(M.degrees_of_freedom_spec ? { degrees_of_freedom_spec: M.degrees_of_freedom_spec } : {}),
       });
       st.creatives[ad.se_namn] = c.id; spara();
     }
