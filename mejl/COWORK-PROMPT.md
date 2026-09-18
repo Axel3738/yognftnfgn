@@ -9,9 +9,9 @@ för den. Lösningen är råfilerna på GitHub: repot är publikt (mätt
 2026-09-13), så `raw.githubusercontent.com`-länkarna öppnas som ren text i
 en flik.
 
-**Länkarna pekar på en gren.** Byt `claude/fervent-bardeen-pzyuql` mot
-`main` när grenen mergats, annars klistrar Cowork in en gammal version.
-Tecknantalen nedan är från bygget 2026-09-18 kväll (**v8: "Spåra paketet"
+**Länkarna pekar på `main`** (sedan PR #97 mergats 2026-09-18). Bygger en
+gren om mallarna: byt till grenens namn i länkarna tills den mergats, annars
+klistrar Cowork in en gammal version. Tecknantalen nedan är från bygget 2026-09-18 kväll (**v8: "Spåra paketet"
 går till Shopifys orderstatussida, fraktbolagets namn borta ur alla mejl,
 samma-paket-raden bara i orderbekräftelsen, levererat-mejlets sju dagar
 räknas från leveransdagen**). Orderbekräftelsen är oförändrad sedan v6 och
@@ -83,10 +83,10 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `href="{{ order_status_url }}"` och `Beräknad leverans` | **77 282** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `href="{{ order_status_url }}"` | **5 955** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/fraktuppdatering.liquid |
-| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `href="{{ order_status_url }}"` | **5 944** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/ute_for_leverans.liquid |
-| 4 | **Levererad** (Delivered) | `Paketet är levererat` | `har levererats.` och `utm_source=mejl` | **73 128** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/levererad.liquid |
+| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `href="{{ order_status_url }}"` och `Beräknad leverans` | **77 282** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `href="{{ order_status_url }}"` | **5 955** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
+| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `href="{{ order_status_url }}"` | **5 944** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
+| 4 | **Levererad** (Delivered) | `Paketet är levererat` | `har levererats.` och `utm_source=mejl` | **73 128** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/levererad.liquid |
 
 ⚠️ Bredvid "Ute för leverans" och "Levererad" ligger syskonen "Order ute
 för lokal leverans" och "Order lokalt levererad" — ta INTE dem.
