@@ -50,6 +50,21 @@ import { byggMetafalt } from './metafalt.mjs';
 import { byggPolicyer, kontaktsida } from './policyer.mjs';
 import { kundUnderrubrik } from './sida.mjs';
 import { huvudmenyRader } from './meny.mjs';
+import { byggFraktplan } from './frakt.mjs';
+
+/**
+ * De DISTINKTA fraktsättsnamnen butiken skapar ("Fri frakt", "Express" …).
+ * Ett namn per rad i kassan — dubbletter över zoner räknas en gång.
+ */
+export function fraktmetodnamn(butik) {
+  try {
+    const plan = byggFraktplan(butik);
+    const namn = (Array.isArray(plan) ? plan : []).flatMap((z) => (z.metoder ?? []).map((m) => m?.namn)).filter(Boolean);
+    return [...new Set(namn)];
+  } catch {
+    return [];
+  }
+}
 import * as buildStore from './build-store.mjs';
 import * as startsida from './startsida.mjs';
 import * as tema from './tema.mjs';
@@ -112,6 +127,11 @@ export function produktTexter(p, plan) {
   if (text(input.seo?.title)) ut[`produkt.${h}.meta_title`] = input.seo.title;
   if (text(input.seo?.description)) ut[`produkt.${h}.meta_description`] = input.seo.description;
   for (const o of input.productOptions ?? []) {
+    // Optionens NAMN ("Variant") syns i varukorgen som "Variant: 5,5 × 3 m"
+    // och stod oöversatt på varje marknad till 2026-09-18 — bara VÄRDENA
+    // samlades in. "Title" är Shopifys namn på enproduktsoptionen och syns
+    // aldrig för kunden.
+    if (o.name && o.name !== 'Title') ut[`produkt.${h}.option.${o.name}`] = o.name;
     for (const v of o.values ?? []) if (v.name && v.name !== 'Default Title') ut[`produkt.${h}.variant.${v.name}`] = v.name;
   }
   return ut;
@@ -208,6 +228,14 @@ export function byggUnderlagObjekt(ctx, produkter = ctx?.produkter ?? []) {
   huvudmeny.forEach((l, i) => { ut[`meny.main-menu.${i}`] = l.titel; });
   const sidfot = ctx.menylankar ?? [...policyer.map((x) => ({ titel: x.namn })), { titel: 'Kontakt' }];
   sidfot.forEach((l, i) => { ut[`meny.footer.${i}`] = l.titel; });
+
+  // FRAKTSÄTTETS NAMN — syns i KASSAN, inte i butiken.
+  // Stod oöversatt på varje marknad till 2026-09-18: en finsk och en
+  // amerikansk kund fick "Fri frakt" mitt i kassan (Axel upptäckte det på
+  // CaraShell). Fraktsätten är translatable (DELIVERY_METHOD_DEFINITION) men
+  // samlades aldrig in. Namnet kommer ur frakt.mjs, så nyckeln byggs ur samma
+  // källa i stället för att skrivas av.
+  for (const namn of fraktmetodnamn(butik)) ut[`frakt.metod.${namn}`] = namn;
 
   // Startsidan, sektionsgrupperna, temainställningarna — ur byggarna.
   const index = forsok('startsida.byggStartsida', () =>

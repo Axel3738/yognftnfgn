@@ -209,61 +209,64 @@
     "oversatt": {
       "klar": false,
       "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 12 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 12 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt",
-      "underlag": 158,
+      "underlag": 160,
       "utfall": {
         "nb": {
-          "registrerade": 0,
+          "registrerade": 4,
           "saknade": 12,
           "perTyp": {
-            "variant": 0,
+            "variant": 1,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
+            "fraktsätt": 3,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4371/4423"
+          "granskning": "4372/4423"
         },
         "en": {
-          "registrerade": 0,
+          "registrerade": 4,
           "saknade": 12,
           "perTyp": {
-            "variant": 0,
+            "variant": 1,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
+            "fraktsätt": 3,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4391/4423"
+          "granskning": "4392/4423"
         },
         "fi": {
-          "registrerade": 0,
+          "registrerade": 4,
           "saknade": 12,
           "perTyp": {
-            "variant": 0,
+            "variant": 1,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
+            "fraktsätt": 3,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4380/4423"
+          "granskning": "4381/4423"
         }
       }
     },
@@ -294,7 +297,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T11:46:48.578Z"
+    "tid": "2026-09-18T12:36:43.176Z"
   },
-  "uppdaterad": "2026-09-18T11:46:48.578Z"
+  "uppdaterad": "2026-09-18T12:36:43.176Z"
 }

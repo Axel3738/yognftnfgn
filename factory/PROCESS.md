@@ -1376,6 +1376,54 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
 
+## Två resurser översattes aldrig — fraktsättet och optionens namn (2026-09-18)
+
+Axel öppnade varukorgen som finsk kund och pekade på tre saker. En var inget
+fel, två var riktiga — och den ena hade drabbat USA lika länge som Finland.
+
+**1. "Kassa" på knappen är FINSKA, inte svenska.** Temats `locales/fi.json`
+säger `"checkout": "Kassa"`, svenskans säger `"Gå till kassan"`. Ordet stavas
+likadant på båda språken. Innan något "rättas" i en språkfråga: läs temats
+locale-fil, den är facit.
+
+**2. `PRODUCT_OPTION` samlades aldrig in.** Varukorgen sa
+**"Variant: 5,5 × 3 m"** på varje marknad — värdet översatt, etiketten svensk.
+`samlaResurser` tog produktens `optionValues` men inte `options`. Optionens
+namn är en EGEN translatable resurs.
+
+**3. `DELIVERY_METHOD_DEFINITION` fanns inte i typlistan.** Fraktsättet heter
+**"Fri frakt"**, och det stod oöversatt för finska, norska OCH amerikanska
+kunder — mitt i kassan, i det steg där folk bestämmer sig. Det syns aldrig i
+butiken, så varken kundvyn eller språkkollen kunde hitta det: de läser
+produktsidan, och fraktsättets namn ritas först i kassan.
+
+Rättat i fabriken, gäller varje butik:
+- `marknad.mjs` → `samlaResurser` tar nu optionens id och typen
+  `DELIVERY_METHOD_DEFINITION`.
+- `oversattning.mjs` → underlaget får `produkt.<handle>.option.<namn>` och
+  `frakt.metod.<namn>` (namnen läses ur `byggFraktplan`, inte avskrivna).
+- `arLacka` undantar Shopifys egna `Title`/`Default Title` — annars larmar
+  varje enproduktsbutik om två läckor som inte går att åtgärda.
+
+Tillbakaläst ur Shopify efter körningen:
+
+| Resurs | fi | nb | en |
+|---|---|---|---|
+| Optionen "Variant" | Koko | Størrelse | Size |
+| Fraktsättet "Fri frakt" | Ilmainen toimitus | Gratis frakt | Free shipping |
+
+Och i varukorgen som riktig kund: `Koko: 5,5 × 3 m` · `Størrelse: 5,5 × 3 m` ·
+`Size: 18 × 10 ft (5.5 × 3 m)`.
+
+⚠️ **Varje OPS-butik med fler än en marknad bär samma två luckor** tills den
+kört `--igen oversatt` med de nya nycklarna i sina språkfiler. Koden är
+gemensam; översättningsorden är per butik.
+
+⚠️ **Svenska sidan säger fortfarande "Variant"** — det är optionens namn i
+Shopify, inte en översättning. Vill man ha "Storlek" där måste produkten
+skrivas om med ett annat optionsnamn; det är en produktändring, inte en
+språkändring, och den är inte gjord.
+
 ## Kassans språk: läs adressen, inte texten (2026-09-18)
 
 En annan session påstod att kassan visas på svenska för finska kunder och att

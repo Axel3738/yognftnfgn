@@ -159,5 +159,7 @@
   "tema.default.home_page": "Home page",
   "_varningar": [
     "bonus termoskyddet: offer.bonus_produkt.bilder är tom — bonusen behöver minst en bild (visas i paketraden och korgen)."
-  ]
+  ],
+  "produkt.takskyddet.option.Variant": "Koko",
+  "frakt.metod.Fri frakt": "Ilmainen toimitus"
 }

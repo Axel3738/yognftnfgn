@@ -151,7 +151,10 @@ export function arLacka(l, samma = new Set()) {
   if (l.typ === 'paket' && l.key === 'fastpris_valutor') return false;
   if (l.typ === 'policy' && l.value.includes('{{')) return false;
   if (l.typ === 'menylänk' && /^(Orders|Profile)$/.test(l.value)) return false;
-  if (l.typ === 'variant' && l.value === 'Default Title') return false;
+  // Shopifys egna namn på enproduktsoptionen. "Title"/"Default Title" ritas
+  // aldrig för kunden — utan undantaget larmar varje enproduktsbutik om två
+  // läckor som inte går att åtgärda (sedan optionens NAMN samlas in 2026-09-18).
+  if (l.typ === 'variant' && (l.value === 'Default Title' || l.value === 'Title')) return false;
   return true;
 }
 
@@ -598,15 +601,22 @@ export async function samlaResurser(ctx, temaId) {
       { id: produkt.id }
     );
     const metafalt = (mf.product?.metafields?.nodes ?? []).filter((m) => m.type !== 'url');
+    // Optionens NAMN och dess VÄRDEN är två olika resurser. Bara värdena
+    // samlades in till 2026-09-18, så varukorgen sa "Variant: 5,5 × 3 m" på
+    // varje marknad — värdet översatt, etiketten svensk.
+    const optionIds = (mf.product?.options ?? []).map((o) => o.id);
     const optionValueIds = (mf.product?.options ?? []).flatMap((o) => o.optionValues.map((v) => v.id));
-    const ids = [produkt.id, ...metafalt.map((m) => m.id), ...optionValueIds];
+    const ids = [produkt.id, ...metafalt.map((m) => m.id), ...optionIds, ...optionValueIds];
     for (const r of await translatableIds(ids)) {
       const falt = metafalt.find((m) => m.id === r.resourceId)?.key ?? null;
       ut.push({ id: r.resourceId, typ: typUrResursId(r.resourceId), handle, falt, translatableContent: r.translatableContent ?? [] });
     }
   }
 
-  const typer = [['PAGE', 'sida'], ['LINK', 'menylänk'], ['METAOBJECT', 'paket'], ['SHOP_POLICY', 'policy']];
+  // DELIVERY_METHOD_DEFINITION = fraktsättets namn i KASSAN. Det syns aldrig
+  // i butiken, så ingen kundvy-koll hittade det: en finsk och en amerikansk
+  // kund läste "Fri frakt" mitt i kassan ända till 2026-09-18.
+  const typer = [['PAGE', 'sida'], ['LINK', 'menylänk'], ['METAOBJECT', 'paket'], ['SHOP_POLICY', 'policy'], ['DELIVERY_METHOD_DEFINITION', 'fraktsätt']];
   if (produkter.length > 1 || ctx?.kollektion?.handle) typer.push(['COLLECTION', 'kollektion']);
   for (const [typ, namn] of typer) {
     for (const r of await translatableTyp(typ)) {
