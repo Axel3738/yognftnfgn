@@ -890,3 +890,33 @@ maskineriet finns redan och kostar noll krediter.
 **Beslutet är Axels** och ligger öppet: bygga om till egna marknader per land (fasta
 priser + lokal domän, men nya länkar i 216 annonser), eller låta kampanjerna samla
 data först och rätta priserna när vakten larmar.
+
+---
+
+## Leveransrunda 2026-09-18 — batch #2:s första video live
+
+`CaraShellRoof_PD_5_H1` (video, 39 s, 1080×1920) live i
+`CARASHELL_SE_Taköverdraget`, adset PD, ad `120249156254490172`.
+Det är den sista av batch #2:s briefer som saknat leverans i fyra dygn —
+husbilsägaren som avatar, hypotesen märkt som gissning i batch #2.
+
+**Kontrollen:** slutskärmen visar produktsidan 1 469 → **1 129 kr**, alltså
+exakt butikens pris ⇒ grön. Frames lästa (hooken tätt), captions läsbara,
+ljudet mätt direkt med ffmpeg: mean −23,9 dB, max −0,4 dB, inget tyst spår.
+`pipeline/rostkoll.py` gick INTE att köra — containern saknar systemets
+`ffprobe` (bara `imageio-ffmpeg` finns). Hoppad med orsak, aldrig grönmärkt.
+
+⚠️ **Produktsidan har ändrats under batchens gång.** Butiken säljer nu
+**"Taköverdrag Husvagn & Husbil 5,5–13,5 m"** i storlekar, pris **1 129–2 239 kr**
+(mätt i kön 2026-09-18; batch #2 skrevs mot "6,5 × 3 m", ett enda pris).
+Videons slutskärm spelar därför in den GAMLA sidan. Priset stämmer ändå, så
+annonsen gick upp — anmärkning skriven på Notion-raden till nästa version,
+enligt regeln att en live annons aldrig stängs av i efterhand.
+
+**Det påverkar nästa briefrond:** varje rad som säger "6,5 × 3 m" som om det
+vore hela produkten är nu osann. Skriv `1 129 kr` som "från 1 129 kr" när
+storleken inte nämns, och läs alltid titeln ur `pris_butik.titel` i köns JSON
+i stället för ur en äldre brief.
+
+✅ Sidospårsregeln (LISTICLE) höll i skarp drift: kön och uppladdaren valde
+produktsidans kampanj själva, ingen `--kampanj` behövdes.
