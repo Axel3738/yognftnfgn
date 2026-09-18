@@ -975,5 +975,6 @@ Kolumnerna SE-/NO-annons är annons-id ur den skarpa körningen (`factory/output
 
 De två stoppade säger "recensioner på baverbutiken.se" i copyn — brandregeln
 (Axels beslut 2026-09-18) fungerar som tänkt. De står kvar i `Translation in
-review` med en stopp-kommentar; redigeraren gör en butiksversion utan butiksnamn
-om Axel vill ha dem i CaraShell.
+review` med en stopp-kommentar. **Axels beslut 2026-09-18 eftermiddag: "lämna"** —
+ingen butiksversion görs, de speglas inte till CaraShell. Rutinen läser bara
+`CaraShell SE ready to be active`, så raderna rörs inte igen om ingen flyttar dem.
