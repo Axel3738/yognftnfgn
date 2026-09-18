@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "tva-i-rad-v98", db });
+  return json({ ok: true, build: "katalog-faller-tillbaka-v99", db });
 }

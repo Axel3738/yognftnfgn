@@ -525,6 +525,32 @@ den skickas (hela bilden går som text i formuläret), och mediatypen städas
 på servern — en typ modellen inte tar emot gjorde annars hela anropet till
 ett fel.
 
+⚠️ **`loadCatalog` får aldrig kasta vidare** (v99). Punkt 3 ovan gjorde att
+ett strypt svar blev ett kastat fel — och `loadCatalog` anropas i
+panelens egen loader (`app._index.tsx:157`), så en kall cache plus en
+strypning hade tagit ner hela sidan i stället för att visa gammal data.
+Nu fångas felet: hellre gammalt än tomt, hellre tomt än ett fel — och
+ingenting av det sparas, så nästa anrop försöker igen.
+
+### Vad varningsrutan "N butik(er) är inte med i summan" INTE är
+
+Den kommer ur `group.server.ts` och fanns långt före kostnadsarbetet
+(commit `fabee523`). Den betyder att gruppsumman **vägrar räkna in en butik
+vars siffror den inte kunde läsa** — annars blir vinsten för hög, vilket är
+precis den lögnen rutan byggdes för att stoppa. Tre olika skäl, tre olika
+åtgärder: `accountNotChosen` (ett klick i den butikens Inställningar),
+`loginExpired` (logga in mot Facebook igen), `refreshFailed` /
+`spendUnavailable` (hämtningen sa nej just då).
+
+Efter en deploy startar alla sex Railway-tjänster om och varje butiks
+dagsdata måste hämtas på nytt vid första sidladdningen. Flera samtidiga
+hämtningar kan då säga nej, och `senasteFel` i `daily.server.ts` håller
+butiken utanför i fem minuter till. **En full ruta direkt efter en deploy
+betyder därför inte att något är trasigt** — kontrollera `/healthz` och
+ladda om efter några minuter innan du felsöker något annat.
+Gruppsumman rör inte produktkatalogen: `daily.server.ts` importerar bara
+`fetchOrderData` och `mergeProductRows` ur `shopify-data.server.ts`.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad

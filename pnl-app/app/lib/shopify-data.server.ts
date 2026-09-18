@@ -697,7 +697,14 @@ export async function loadCatalog(
     if (Date.now() - rad.fetchedAt.getTime() > DB_TTL) void uppdateraKatalog(admin, shop, prisma).catch(() => {});
     return cat;
   }
-  return uppdateraKatalog(admin, shop, prisma);
+  /* Misslyckas hämtningen ska sidan INTE dö. Hellre gammalt än tomt, och
+     hellre tomt än ett fel — men ingenting av det sparas, så nästa anrop
+     försöker igen. (Det gamla felet var det motsatta: ett halvt resultat
+     sparades i en halvtimme och produkterna försvann tyst.) */
+  return uppdateraKatalog(admin, shop, prisma).catch((e) => {
+    console.error(`Katalogen kunde inte hämtas för ${shop}:`, e);
+    return catalogCache.get(shop)?.cat ?? katalogAv([]);
+  });
 }
 
 /* En omhämtning åt gången per butik. Två samtidiga (sidans omladdning plus
