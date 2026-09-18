@@ -42,7 +42,7 @@ import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, hamtaArbetstema, kontrolleraAnslutning } from './shopify.mjs';
 import { lasState } from './state.mjs';
 import { lasOversattning, lasUnderlag, byggMinimalKontext } from './oversattning.mjs';
-import { landsnamnSv } from './lander.mjs';
+import { landsnamnSv, lokalValuta } from './lander.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -267,7 +267,7 @@ export async function aktiveraMarknad(id) {
 
 // `marknad` är raden ur butik.yaml: { land, locale, valuta }. Hittas på
 // regionens landskod först, annars på handle/namn (butiker byggda för hand).
-export async function sakerstallMarknad(marknad, { torr = false } = {}) {
+export async function sakerstallMarknad(marknad, { torr = false, butiksvaluta = null } = {}) {
   const land = String(marknad?.land ?? '').toUpperCase();
   if (!land) throw new Error('marknad.land saknas i butik.marknader.');
   const namn = landsnamn(land);
@@ -312,6 +312,44 @@ export async function sakerstallMarknad(marknad, { torr = false } = {}) {
     tillagda = lander.saknas;
   }
 
+  // BASVALUTAN — landets egen (lander.mjs), satt via marketUpdate.
+  //
+  // ⚠️ Det här stod som ett handklick i två veckor ("API-spärrat i unified
+  // markets") och det var HALVT sant: `marketCurrencySettingsUpdate` svarar
+  // "This action is restricted if unified markets is enabled", men SAMMA
+  // fält går igenom som `marketUpdate(input: { currencySettings })`. Mätt på
+  // CaraShells finska marknad 2026-09-18: EUR satt via API, tillbakaläst.
+  //
+  // Skrivs BARA när marknaden saknar egen basvaluta. En marknad som redan
+  // bär en valuta är ett beslut (Norge fick NOK för hand 2026-09-11 medan
+  // butiksfilens rad fortfarande säger SEK) — den rörs aldrig, annars hade
+  // en körning tyst flyttat tillbaka Norge till kronor.
+  let basvaluta = null;
+  const onskadBas = lokalValuta(land);
+  const harBas = mk.currencySettings?.baseCurrency?.currencyCode ?? null;
+  if (onskadBas && onskadBas !== butiksvaluta) {
+    if (harBas) {
+      basvaluta = { valuta: harBas, redan: true, onskad: onskadBas };
+    } else if (torr) {
+      basvaluta = { valuta: onskadBas, redan: false, torr: true, onskad: onskadBas };
+    } else {
+      const d = await graphql(
+        `mutation opsFactoryMarknadBasvaluta($id: ID!, $input: MarketUpdateInput!) {
+          marketUpdate(id: $id, input: $input) {
+            market { id currencySettings { baseCurrency { currencyCode } localCurrencies } }
+            userErrors { field message }
+          }
+        }`,
+        { id: mk.id, input: { currencySettings: { baseCurrency: onskadBas } } }
+      );
+      userErrors(d.marketUpdate, `Basvalutan ${onskadBas} i ${namn}`);
+      const satt = d.marketUpdate.market?.currencySettings?.baseCurrency?.currencyCode ?? null;
+      if (satt !== onskadBas) throw new Error(`Marknaden ${namn} tog inte emot basvalutan ${onskadBas} (läste tillbaka ${satt ?? 'ingen'}).`);
+      mk = { ...mk, currencySettings: d.marketUpdate.market.currencySettings };
+      basvaluta = { valuta: satt, redan: false, onskad: onskadBas };
+    }
+  }
+
   // Lokala valutor i blocket (`lokala_valutor: true`): varje land i marknaden
   // betalar i sin egen valuta, omräknad från marknadens basvaluta (de fasta
   // priserna i prislistan). Slås på via currencySettings.localCurrencies.
@@ -339,6 +377,7 @@ export async function sakerstallMarknad(marknad, { torr = false } = {}) {
   return {
     id: mk.id, namn: mk.name ?? namn, skapad, status: mk.status ?? null,
     lander: { onskade: lander.onskade, tillagda, redan: lander.redan, torr: torr && lander.saknas.length > 0 ? lander.saknas : [] },
+    basvaluta,
     lokalaValutor,
   };
 }
@@ -444,8 +483,9 @@ export async function sakerstallMarknader(butik, { torr = false } = {}) {
   if (rader.length === 0) throw new Error('butik.marknader är tom — SE + NO är standard i varje OPS.');
   const ut = [];
   const egnaDomaner = rader.map((r) => String(r?.doman ?? '').trim().toLowerCase()).filter(Boolean);
+  const butiksvaluta = String(butik?.butik?.valuta ?? 'SEK').toUpperCase();
   for (const m of rader) {
-    const marknad = await sakerstallMarknad(m, { torr });
+    const marknad = await sakerstallMarknad(m, { torr, butiksvaluta });
     const locale = await sakerstallLocale(String(m.locale), { torr });
     const egen = String(m?.doman ?? '').trim().toLowerCase() || null;
     const andras = egnaDomaner.filter((d) => d !== egen);
@@ -693,7 +733,12 @@ async function huvud() {
     for (const wp of r.webPresence.presences) console.log(`   webbnärvaro ${wp.host}: ${wp.redan ? `har ${r.locale}` : torr ? `skulle få ${r.locale}` : `${r.locale} tillagd`}`);
     if (r.koppling.manuell) console.log(`🖐 Marknaden ${r.marknad.namn} → webbnärvaro: ${r.koppling.manuell}`);
     else console.log(`✅ Marknaden ${r.marknad.namn} ${torr ? 'skulle kopplas' : r.koppling.redan ? 'var redan kopplad' : 'kopplad'} till webbnärvaron: ${r.koppling.hosts.join(', ')}`);
-    console.log(`🖐 Valutan ${m.valuta ?? 'NOK'} slås på i admin: Inställningar → Marknader → ${r.marknad.namn} (API-spärrat i unified markets).`);
+    if (r.marknad.basvaluta) {
+      const b = r.marknad.basvaluta;
+      console.log(`✅ Basvalutan ${b.valuta}: ${b.redan ? 'stod redan' : b.torr ? 'skulle sättas' : 'satt via API (marketUpdate)'} på ${r.marknad.namn}`);
+    } else {
+      console.log(`   Basvaluta: ${r.marknad.namn} delar butikens valuta — ingen egen prislista behövs.`);
+    }
 
     const ov = lasOversattning(butikId, r.locale);
     if (!ov) {

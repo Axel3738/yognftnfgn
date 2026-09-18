@@ -397,6 +397,10 @@ test('marknadspriser: hel procent utan bonus ger procentkod och NOK-tal i fastpr
   assert.deepEqual(a2.fastprisValutor, { NOK: 1880.2 });
   const f = Object.fromEntries(nivaFalt(a2, 'gid://p/1').map((x) => [x.key, x.value]));
   assert.equal(f.fastpris_valutor, 'NOK:1880.20');
+  // Procentsatsen skrivs i metaobjektet — snippeten har läst fältet sedan den
+  // skrevs, men ingen fyllde det, så sidan räknade fast belopp mot
+  // standardvarianten och visade fel pris på en dyrare storlek.
+  assert.equal(f.rabatt_procent, '15');
   const k = plan.koder.find((x) => x.kod === 'CARASHELLROO2A');
   assert.equal(k.procent, 15);
   assert.equal(k.belopp, 338.7);
@@ -417,7 +421,11 @@ test('marknadspriser: med gratis bonus stannar koden som belopp och valutatalen 
   assert.equal(rabattkodInput(k, 'gid://p/1').customerGets.value.discountAmount.amount, '545.00');
   const a2 = plan.poster.find((x) => x.handle === 'tanken-a-2');
   assert.deepEqual(a2.fastprisValutor, {});
-  assert.equal(Object.fromEntries(nivaFalt(a2, 'gid://p/1', 'gid://p/2').map((x) => [x.key, x.value])).fastpris_valutor, '');
+  const falt2 = Object.fromEntries(nivaFalt(a2, 'gid://p/1', 'gid://p/2').map((x) => [x.key, x.value]));
+  assert.equal(falt2.fastpris_valutor, '');
+  // Med gratis bonus går rabatten inte att uttrycka i procent — fältet är tomt
+  // och snippeten faller tillbaka på det fasta beloppet, precis som förut.
+  assert.equal(falt2.rabatt_procent, '');
 });
 
 test('fastprisValutorText: format och tomt', () => {

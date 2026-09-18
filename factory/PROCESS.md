@@ -1312,3 +1312,55 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 `/ny-annonser` (FAS2.md 2026-09-16) → minne per produktnyckel (`products/<butik>/README.md`).
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
+
+## Pris per storlek + ännu en marknad (bevisat 2026-09-18, CaraShell → Finland)
+
+En produkt med nio storlekar fick nio olika priser — i fyra valutor — och
+Finland blev butikens tredje marknad. Fem saker som är nya i fabriken:
+
+1. ⚙️ **`factory/variantpris.mjs` — pris per variant.** Produktfilens
+   `varianter[]` får `pris`, `jamforpris` och ett eget `marknadspriser`-block.
+   Utan dem gäller `ekonomi`-blocket precis som förut, så inga andra butiker
+   ändras. `build-store.mjs` skriver stegen i butikens valuta, `prislista.mjs`
+   skriver den per variant i varje prislista, och `kontroll.mjs` +
+   `trippelkoll.mjs` jämför **varje variant mot SITT pris** i stället för att
+   godkänna "samma pris på alla".
+   🔒 **Järnregeln: en halv stege stoppar bygget.** Har EN variant eget pris
+   måste ALLA ha det, och då måste var och en också ha en rad i varje
+   marknadsvaluta. `granskaVariantpriser` namnger varianten som saknas. Utan
+   spärren säljer den dyraste storleken till den billigastes pris i precis ett
+   land, utan felmeddelande.
+2. ⚙️ **Marknadens basvaluta sätts nu via API:t.** Det stod som ett handklick
+   ("API-spärrat i unified markets") och det var HALVT sant:
+   `marketCurrencySettingsUpdate` svarar `This action is restricted if unified
+   markets is enabled`, men **samma fält går igenom som
+   `marketUpdate(input: { currencySettings: { baseCurrency } })`**. Mätt på
+   CaraShells finska marknad: EUR satt och tillbakaläst i samma körning.
+   `marknad.mjs` skriver den BARA när marknaden saknar egen valuta — en
+   marknad som redan bär en valuta är ett beslut (Norge fick NOK för hand
+   2026-09-11 medan butiksfilens rad fortfarande säger SEK) och rörs aldrig.
+   Trippelkollen läser tillbaka den som ✅/❌, inte som ett 🖐.
+3. 🔧 **`rabatt_procent` skrevs aldrig — paketrutan räknade fel.** Snippeten
+   `ms-paket.liquid` har läst fältet sedan den skrevs, men det fanns varken i
+   metaobjektsdefinitionen eller i skrivningen, så procentläget var dött och
+   sidan räknade ett FAST BELOPP mot standardvarianten. Osynligt medan alla
+   varianter kostade lika; med stegen visade ett 2-pack av 13,5 m 465,73 € på
+   sidan medan kassans 15 %-kod tar 428,23 €. **Kolla `data-procent` i den
+   renderade sidan** när en produkt får olika pris per variant — står det 0 på
+   en nivå med rabattkod räknar sidan fel.
+4. 🖐 **Domän per marknad är inte automatiskt rätt.** USA fick carashell.com
+   ("`.se` säger utländsk butik" till en amerikan). Finland fick INGEN egen
+   domän — Axels beslut: mellan nordiska grannar är en svensk butik inget
+   hinder, och `/fi` fungerar precis som `/nb`. Fråga ägaren; bygg inte en
+   domän för att förra marknaden fick en.
+5. ⚠️ **Texten måste läsas om när en produkt får fler varianter.** Butikens
+   titel var uppdaterad till "5,5–13,5 m", men produktsidans underrubrik och
+   första FAQ-fråga sa fortfarande "6,5 × 3 m" på ALLA fyra språk. Ingen
+   spärr fångade det — en översättningsfil är "komplett" så länge nyckeln
+   finns, oavsett vad den säger. Läs igenom `oversattning-*.json` efter varje
+   ändring av vad produkten ÄR, inte bara efter en ny marknad.
+
+**Annonserna klarade sig** för att basstorleken behöll sitt pris: 6,5 m kostar
+fortfarande 1 129 kr, och den första varianten i listan (5,5 m) lika mycket, så
+sidans rubrikpris är oförändrat. Ligger annonspriset på en storlek som ÄNDRAS
+måste annonserna skannas om (`brand-detektor.mjs`) innan stegen skrivs.

@@ -3,7 +3,7 @@
     "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
     "handle": "takskyddet",
     "status": "ACTIVE",
-    "descriptionHtml": "<p>Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
+    "descriptionHtml": "<p>Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern.</p>",
     "vendor": "CaraShell",
     "seo": {
       "title": "Taköverdrag Husvagn & Husbil 5,5–13,5 m – CaraShell",
@@ -81,8 +81,8 @@
             "name": "7,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "1289.00",
+        "compareAtPrice": "1679.00",
         "sku": "TEMU-5050206311352-075",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -96,8 +96,8 @@
             "name": "8,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "1449.00",
+        "compareAtPrice": "1879.00",
         "sku": "TEMU-5050206311352-085",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -111,8 +111,8 @@
             "name": "9,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "1599.00",
+        "compareAtPrice": "2079.00",
         "sku": "TEMU-5050206311352-095",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -126,8 +126,8 @@
             "name": "10,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "1759.00",
+        "compareAtPrice": "2289.00",
         "sku": "TEMU-5050206311352-105",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -141,8 +141,8 @@
             "name": "11,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "1919.00",
+        "compareAtPrice": "2489.00",
         "sku": "TEMU-5050206311352-115",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -156,8 +156,8 @@
             "name": "12,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "2079.00",
+        "compareAtPrice": "2699.00",
         "sku": "TEMU-5050206311352-125",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -171,8 +171,8 @@
             "name": "13,5 × 3 m"
           }
         ],
-        "price": "1129.00",
-        "compareAtPrice": "1469.00",
+        "price": "2239.00",
+        "compareAtPrice": "2909.00",
         "sku": "TEMU-5050206311352-135",
         "inventoryPolicy": "CONTINUE",
         "inventoryItem": {
@@ -274,7 +274,7 @@
       "namespace": "opf",
       "key": "faq",
       "type": "json",
-      "value": "[{\"fraga\":\"Passar det min husvagn eller husbil?\",\"svar\":\"Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
+      "value": "[{\"fraga\":\"Vilken storlek ska jag välja?\",\"svar\":\"Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil.\"},{\"fraga\":\"Hur fäster jag överdraget?\",\"svar\":\"Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna.\"},{\"fraga\":\"Sitter det kvar i blåst?\",\"svar\":\"Ja, de elastiska spännbanden håller det på plats i blåst.\"},{\"fraga\":\"Hur många behövs för att lägga på det?\",\"svar\":\"En person räcker, eftersom överdraget bara täcker taket.\"},{\"fraga\":\"Vad gäller om jag ångrar mig?\",\"svar\":\"14 dagars ångerrätt enligt svensk lag. Mejla hello@carashell.se.\"}]"
     }
   ]
 }

@@ -82,6 +82,13 @@
           "id": "gid://shopify/PriceList/33459372364",
           "skapad": false,
           "varianter": 9
+        },
+        {
+          "valuta": "EUR",
+          "land": "FI",
+          "id": "gid://shopify/PriceList/33463468364",
+          "skapad": true,
+          "varianter": 9
         }
       ]
     }
@@ -89,7 +96,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-17T13:43:24.356Z"
+    "tid": "2026-09-18T10:26:31.101Z"
   },
-  "uppdaterad": "2026-09-17T13:43:24.356Z"
+  "uppdaterad": "2026-09-18T10:26:31.101Z"
 }

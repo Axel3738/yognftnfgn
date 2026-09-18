@@ -54,10 +54,45 @@ test('byggPrislistplan: en rad per marknadspris, kopplad till marknaden med den 
     butik([{ land: 'NO', locale: 'nb', valuta: 'SEK' }, { land: 'US', locale: 'en', valuta: 'SEK' }])
   );
   assert.deepEqual(plan.fel, []);
-  assert.deepEqual(plan.rader, [
-    { valuta: 'NOK', land: 'NO', pris: 1106, jamforpris: 1382.5, namn: 'CaraShell NOK' },
-    { valuta: 'USD', land: 'US', pris: 109, jamforpris: 139, namn: 'CaraShell USD' },
-  ]);
+  assert.deepEqual(
+    plan.rader.map(({ valuta, land, pris, jamforpris, namn, stege }) => ({ valuta, land, pris, jamforpris, namn, stege })),
+    [
+      { valuta: 'NOK', land: 'NO', pris: 1106, jamforpris: 1382.5, namn: 'CaraShell NOK', stege: false },
+      { valuta: 'USD', land: 'US', pris: 109, jamforpris: 139, namn: 'CaraShell USD', stege: false },
+    ]
+  );
+  // Utan prisstege är kartan en rad — samma pris på varje variant, som förut.
+  assert.deepEqual([...plan.rader[0].perVariant], [['Default Title', { pris: 1106, jamforpris: 1382.5 }]]);
+});
+
+test('byggPrislistplan: prisstege ⇒ varje variant får sitt eget fasta pris i marknadsvalutan', () => {
+  const p = {
+    produkt: { id: 'takskyddet' },
+    brand: { namn: 'CaraShell' },
+    ekonomi: {
+      pris: 1129,
+      valuta: 'SEK',
+      marknadspriser: [{ valuta: 'EUR', pris: 126.9, jamforpris: 165.9 }],
+    },
+    varianter: [
+      { namn: '5,5 × 3 m', pris: 1129, jamforpris: 1469, marknadspriser: [{ valuta: 'EUR', pris: 126.9, jamforpris: 165.9 }] },
+      { namn: '13,5 × 3 m', pris: 2239, jamforpris: 2909, marknadspriser: [{ valuta: 'EUR', pris: 251.9, jamforpris: 327.9 }] },
+    ],
+  };
+  const plan = byggPrislistplan(p, butik([{ land: 'FI', locale: 'fi', valuta: 'EUR' }]));
+  assert.deepEqual(plan.fel, []);
+  assert.equal(plan.rader[0].stege, true);
+  assert.equal(plan.rader[0].perVariant.get('13,5 × 3 m').pris, 251.9);
+  // Och varianterna skrivs var för sig, inte alla på referenspriset.
+  const varianter = [
+    { id: 'gid://v/1', title: '5,5 × 3 m' },
+    { id: 'gid://v/2', title: '13,5 × 3 m' },
+  ];
+  const att = varianterAttSkriva(varianter, [
+    { variant: { id: 'gid://v/1' }, originType: 'FIXED', price: { amount: '126.90' }, compareAtPrice: { amount: '165.90' } },
+    { variant: { id: 'gid://v/2' }, originType: 'FIXED', price: { amount: '126.90' }, compareAtPrice: { amount: '165.90' } },
+  ], plan.rader[0]);
+  assert.deepEqual(att.map((v) => v.title), ['13,5 × 3 m']);
 });
 
 test('byggPrislistplan: butikens egen valuta hoppas över, pris utan marknad och marknad utan pris är fel — inte tysta', () => {

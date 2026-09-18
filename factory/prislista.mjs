@@ -34,6 +34,7 @@ import { laddaEnv } from './env.mjs';
 import { graphql, hamtaProduktViaHandle, kontrolleraAnslutning } from './shopify.mjs';
 import { hamtaLage } from './marknad.mjs';
 import { lokalValuta, landsnamnSv } from './lander.mjs';
+import { prisKarta, granskaVariantpriser, harPrisstege } from './variantpris.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
@@ -72,8 +73,22 @@ export function byggPrislistplan(produkt, butik = null) {
     const traffar = marknader.filter((x) => x.valuta === valuta);
     if (traffar.length === 0) { fel.push(`${id}: ${valuta}-priset har ingen marknad i butik.marknader vars valuta är ${valuta}`); continue; }
     if (traffar.length > 1) { fel.push(`${id}: ${valuta} matchar flera marknader (${traffar.map((x) => x.land).join(', ')}) — en prislista kan bara kopplas till en marknad här`); continue; }
-    rader.push({ valuta, land: traffar[0].land, pris, jamforpris, namn: `${brand} ${valuta}` });
+    // Pris PER VARIANT när produkten har en stege (nio storlekar, nio priser).
+    // Utan stege är kartan alla varianter på samma pris — samma resultat som
+    // före 2026-09-18, bara uttryckt en gång.
+    rader.push({
+      valuta,
+      land: traffar[0].land,
+      pris,
+      jamforpris,
+      namn: `${brand} ${valuta}`,
+      perVariant: prisKarta(produkt, valuta),
+      stege: harPrisstege(produkt, valuta),
+    });
   }
+  // En halv stege säljer den dyraste storleken till den billigastes pris i
+  // precis en marknad, utan felmeddelande. Den spärren hör hemma här.
+  fel.push(...granskaVariantpriser(produkt));
   // Marknader som borde ha ett pris men saknar det — en norsk kund som ser
   // SEK är precis det fältet finns för (CaraShell 2026-09-12).
   for (const m of marknader) {
@@ -92,15 +107,29 @@ export function hittaPrislista(prislistor, valuta, marketId) {
   );
 }
 
+/**
+ * Det pris raden ger EN variant. Slås upp på variantens titel i butiken
+ * (= `varianter[].namn` i produktfilen); okänd titel faller tillbaka på
+ * radens referenspris, så en produkt utan stege beter sig som förut.
+ */
+export function prisForRad(rad, variant) {
+  const t = rad?.perVariant?.get?.(variant?.title ?? '');
+  return {
+    pris: t?.pris ?? rad.pris,
+    jamforpris: t?.jamforpris ?? (t?.pris ? null : rad.jamforpris),
+  };
+}
+
 /** Varianterna vars fasta pris/jämförpris INTE redan står rätt. */
 export function varianterAttSkriva(varianter, befintliga, rad) {
   const har = new Map(lista(befintliga).map((p) => [p?.variant?.id, p]));
   return lista(varianter).filter((v) => {
+    const vill = prisForRad(rad, v);
     const p = har.get(v.id);
     if (!p || p.originType !== 'FIXED') return true;
-    if (belopp(p.price?.amount) !== belopp(rad.pris)) return true;
+    if (belopp(p.price?.amount) !== belopp(vill.pris)) return true;
     const jf = p.compareAtPrice?.amount ?? null;
-    if ((rad.jamforpris ? belopp(rad.jamforpris) : null) !== (jf === null ? null : belopp(jf))) return true;
+    if ((vill.jamforpris ? belopp(vill.jamforpris) : null) !== (jf === null ? null : belopp(jf))) return true;
     return false;
   });
 }
@@ -178,11 +207,14 @@ export async function sakerstallPrislista(rad, marketId, { torr = false } = {}) 
 export async function skrivFastaPriser(priceListId, varianter, rad, { torr = false } = {}) {
   if (varianter.length === 0) return { skrivna: 0 };
   if (torr) return { skrivna: varianter.length, torr: true };
-  const prices = varianter.map((v) => ({
-    variantId: v.id,
-    price: { amount: belopp(rad.pris), currencyCode: rad.valuta },
-    ...(rad.jamforpris ? { compareAtPrice: { amount: belopp(rad.jamforpris), currencyCode: rad.valuta } } : {}),
-  }));
+  const prices = varianter.map((v) => {
+    const vill = prisForRad(rad, v);
+    return {
+      variantId: v.id,
+      price: { amount: belopp(vill.pris), currencyCode: rad.valuta },
+      ...(vill.jamforpris ? { compareAtPrice: { amount: belopp(vill.jamforpris), currencyCode: rad.valuta } } : {}),
+    };
+  });
   const d = await graphql(
     `mutation opsFactoryFastaPriser($id: ID!, $prices: [PriceListPriceInput!]!) {
       priceListFixedPricesAdd(priceListId: $id, prices: $prices) { prices { variant { id } price { amount currencyCode } originType } userErrors { field message code } }
@@ -246,7 +278,15 @@ async function huvud() {
   const butik = lasYaml(readFileSync(butiksfil, 'utf8'));
   const produkt = lasYaml(readFileSync(produktfil, 'utf8'));
   const plan = byggPrislistplan(produkt, butik);
-  console.log(`Plan: ${plan.rader.length} prislistor${plan.rader.length ? ' — ' + plan.rader.map((r) => `${r.valuta} (${r.land}) ${r.pris}${r.jamforpris ? ` / ${r.jamforpris}` : ''}`).join(', ') : ''}`);
+  const spann = (r) => {
+    if (!r.stege) return `${r.pris}${r.jamforpris ? ` / ${r.jamforpris}` : ''}`;
+    const p = [...r.perVariant.values()].map((x) => x.pris).filter(Boolean);
+    return `${Math.min(...p)}–${Math.max(...p)} (${r.perVariant.size} storlekar)`;
+  };
+  console.log(`Plan: ${plan.rader.length} prislistor${plan.rader.length ? ' — ' + plan.rader.map((r) => `${r.valuta} (${r.land}) ${spann(r)}`).join(', ') : ''}`);
+  for (const r of plan.rader.filter((x) => x.stege)) {
+    for (const [namn, v] of r.perVariant) console.log(`   ${r.valuta}  ${namn}: ${v.pris}${v.jamforpris ? ` / ${v.jamforpris}` : ''}`);
+  }
   for (const f of plan.fel) console.log(`🖐 ${f}`);
   if (plan.rader.length === 0) return;
   const shop = await kontrolleraAnslutning();

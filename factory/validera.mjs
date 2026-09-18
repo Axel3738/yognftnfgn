@@ -8,6 +8,7 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { lasYaml } from './yaml.mjs';
+import { granskaVariantpriser } from './variantpris.mjs';
 
 const KANDA_VALUTOR = ['SEK', 'NOK', 'DKK', 'EUR', 'USD', 'GBP'];
 const HANDLE = /^[a-z0-9-]+$/;
@@ -186,6 +187,9 @@ export function validera(p) {
   for (const [i, v] of (Array.isArray(p?.varianter) ? p.varianter : []).entries()) {
     if (!text(v?.namn)) fel.push(`varianter[${i}]: namn saknas`);
   }
+  // Prisstegen (pris per variant) — en halv stege säljer den dyraste storleken
+  // till den billigastes pris utan att något felmeddelande syns.
+  fel.push(...granskaVariantpriser(p));
 
   // Paketnivåer + bonusprodukt (Q4-ramverket) — fel här stoppar, precis som
   // paket.mjs/bonus.mjs skulle ha gjort i steg 9–10.

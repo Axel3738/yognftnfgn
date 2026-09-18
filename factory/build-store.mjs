@@ -16,6 +16,7 @@ import { validera } from './validera.mjs';
 import { byggKortBeskrivning, byggForhandsvisning, SEKTIONSORDNING } from './sida.mjs';
 import { laddaEnv } from './env.mjs';
 import { skapaProdukt } from './shopify.mjs';
+import { prisForVariant as variantpris } from './variantpris.mjs';
 
 const FACTORY_ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -83,8 +84,14 @@ export function byggPlan(p, butik = null) {
     ],
     variants: varianter.map((v) => ({
       optionValues: [{ optionName: optionNamn, name: v.namn }],
-      price: p.ekonomi.pris.toFixed(2),
-      ...(p.ekonomi.jamforpris > 0 ? { compareAtPrice: p.ekonomi.jamforpris.toFixed(2) } : {}),
+      // Pris per variant sedan 2026-09-18 (CaraShells nio storlekar): egen
+      // `pris`/`jamforpris` på varianten om den finns, annars ekonomi-blockets
+      // referenspris precis som förut. Halvfyllda stegar stoppas av
+      // granskaVariantpriser i valideringen, inte här.
+      price: (variantpris(p, v.namn).pris ?? p.ekonomi.pris).toFixed(2),
+      ...(variantpris(p, v.namn).jamforpris > 0
+        ? { compareAtPrice: variantpris(p, v.namn).jamforpris.toFixed(2) }
+        : {}),
       ...(v.sku ? { sku: v.sku } : {}),
       // Sälj vidare när lagret tar slut (Axels regel 2026-09-09). Shopifys
       // default är DENY — då slutar produkten säljas tyst mitt i en kampanj

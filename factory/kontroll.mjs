@@ -7,6 +7,8 @@
 //   kritisk — STOPP, launchen avbryts
 //   manuell — kan inte verifieras via API:t, Axel måste titta själv
 
+import { prisKarta, harPrisstege, granskaVariantpriser } from './variantpris.mjs';
+
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
 const text = (v) => typeof v === 'string' && v.trim() !== '';
 
@@ -38,17 +40,28 @@ export function kontrolleraLaunch(p, { shop = null, produkt = null, policyer = n
   // 2. Priser
   const eko = p.ekonomi ?? {};
   const butiksVarianter = produkt?.variants?.nodes ?? [];
-  const felPris = butiksVarianter.filter((v) => Number(v.price) !== Number(eko.pris));
+  // Priset jämförs PER VARIANT sedan 2026-09-18: produktfilen får ge varje
+  // storlek ett eget pris, och då är "samma pris på alla" ett fel, inte ett ok.
+  const vantat = prisKarta(p);
+  const prisFor = (v) => Number(vantat.get(v.title)?.pris ?? eko.pris);
+  const felPris = butiksVarianter.filter((v) => Number(v.price) !== prisFor(v));
+  const stege = harPrisstege(p);
   if (butiksVarianter.length === 0) {
     kritisk('priser', 'Inga varianter lästes ur butiken.');
   } else if (felPris.length > 0) {
     kritisk(
       'priser',
-      `${felPris.length} variant(er) har annat pris i butiken än i produktfilen (${eko.pris}).`
+      `${felPris.length} variant(er) har annat pris i butiken än i produktfilen (${felPris
+        .map((v) => `${v.title}: ${v.price} ≠ ${prisFor(v)}`)
+        .join('; ')}).`
     );
+  } else if (stege) {
+    const p2 = butiksVarianter.map((v) => Number(v.price));
+    ok('priser', `prisstege ${Math.min(...p2)}–${Math.max(...p2)} ${eko.valuta} över ${butiksVarianter.length} varianter`);
   } else {
     ok('priser', `${eko.pris} ${eko.valuta} på alla varianter, jämförpris ${eko.jamforpris || '—'}`);
   }
+  for (const f of granskaVariantpriser(p)) kritisk('priser', f);
 
   // 3. Varianter
   const filVarianter = lista(p.varianter);
