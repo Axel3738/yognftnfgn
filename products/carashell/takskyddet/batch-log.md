@@ -1011,3 +1011,67 @@ nytt priskort mitt i bilden och lämnade det gamla chipet kvar — två priser.
 
 **Kön växer:** 24 rader i `SE-ACTIVE to be translated` (7 video, 17 bild), men
 bara 8 har en fil att jobba med. Resten väntar på redigerarna.
+
+---
+
+## USA-runda 5 2026-09-18 (`/ops-oversatt carashell/takskyddet --marknad US`) — 17 nya annonser live i USA
+
+**Kö:** 24 rader i `SE-ACTIVE to be translated`. 7 av dem (batch #3:s bilder) låg redan i USA
+sedan 16/9 — inget nytt. **17 speglade rader (9 bilder + 8 videor) översatta och uppladdade
+ACTIVE.** Dessutom kördes kön med `--status Approved`: batch #2:s fyra Approved-rader bär redan
+US-annonser, `SP_6_1` hade nu både NO och US och flyttades till `Approved`.
+
+**Kampanjvalet:** originalkampanjen `CARASHELL_US_Taköverdrag…` (`120251436741400435`) är
+PAUSED av ägaren med 2 243 kr spend — dit laddas inget upp. Enda ACTIVE US-kampanj är
+listicle-kopian `1 CARASHELL_US_Taköverdrag … – kopia` (`120251451415500435`), som länkar till
+`carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US`. Alla 17
+annonser ärver den länken. Kampanjen bär nu 44 annonser. Adseten CO, RI, UG, LI och BOF fanns
+inte och skapades av körningen; tre av dem (CO/BOF/LI) stod PAUSED efter tidigare misslyckade
+uppladdningsförsök (0 spend, skapade samma dag) och slogs på — tillbakaläsning ACTIVE.
+
+| Spegel (US) | Typ | Adset | US-annons | Notion |
+|---|---|---|---|---|
+| CaraShellRoof_US_LI_101_1 | bild | CARASHELL_US_LI | 120251488867610435 | Approved |
+| CaraShellRoof_US_PD_105_1 | bild | CARASHELL_US_PD | 120251488879980435 | Approved |
+| CaraShellRoof_US_CS_104_1 | bild | CARASHELL_US_CS | 120251488900040435 | Approved |
+| CaraShellRoof_US_CO_102_1 | bild | CARASHELL_US_CO | 120251489217370435 | Approved |
+| CaraShellRoof_US_CS_106_1 | bild | CARASHELL_US_CS | 120251489223750435 | Approved |
+| CaraShellRoof_US_GT_106_1 | bild | CARASHELL_US_GT | 120251489231820435 | Approved |
+| CaraShellRoof_US_BOF_101_1 | bild | CARASHELL_US_BOF | 120251489308740435 | Approved |
+| CaraShellRoof_US_BOF_102_1 | bild | CARASHELL_US_BOF | 120251489313310435 | Approved |
+| CaraShellRoof_US_BOF_103_1 | bild | CARASHELL_US_BOF | 120251489318610435 | Approved |
+| CaraShellRoof_US_CO_101_H1 | video | CARASHELL_US_CO | 120251489798720435 | Approved |
+| CaraShellRoof_US_RI_101_H1 | video | CARASHELL_US_RI | 120251489815700435 | Approved |
+| CaraShellRoof_US_SP_104_H1 | video | CARASHELL_US_SP | 120251489832370435 | Approved |
+| CaraShellRoof_US_UG_101_H1 | video | CARASHELL_US_UG | 120251489963410435 | Approved |
+| CaraShellRoof_US_PD_104_H1 | video | CARASHELL_US_PD | 120251490027610435 | Approved |
+| CaraShellRoof_US_GT_104_H1 | video | CARASHELL_US_GT | 120251490245280435 | Approved |
+| CaraShellRoof_US_GT_105_H1 | video | CARASHELL_US_GT | 120251490274580435 | Approved |
+| CaraShellRoof_US_PD_5_H1 | video | CARASHELL_US_PD | 120251490405930435 | kvar i kön — Norge bär den inte än |
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats mot amerikansk — $199 / ord. $249,
+90-day guarantee, free shipping in the US. Sex OPS-textlager via `oversatt-us.py`
+(mäter layouten med `bild-text.py`:s `Duk`), tre BOF-bilder ur Bäverbutikens mall via
+`pipeline/oversatt-batch.py` med handritade rutor (`bilder/overrides.json`) och försudd
+(`bilder/forsudda.py`) mot spökkanter. Alla nio granskade i full storlek. Copyn av
+sonnet-subagent med tre-frågorstestet (`adcopy-US.json`, `bilder/oversatt-output.json`).
+
+**Videorna** (HeyGen, röstklon + lip-sync, amerikansk engelska): proofread före rendering
+(4 434 → 4 312 krediter efter proofread, renderingarna därutöver). Källvideorna skannade:
+alla 8 har inbrända svenska ordcaptions, 4 har stora röda pris/frakt-texter, 6 har svensk
+slutkort (Bäverbutiken). Åtgärd: captions ersatta med engelska via `pipeline/no-precis.py`,
+röda texter suddade (`video/forbehandla.py`) och ersatta med $199 / $249 / FREE SHIPPING /
+90-DAY GUARANTEE / 210D FABRIC, slutkortet ersatt med carashell.com-kort. `rostkoll.py`
+✅ på alla 8 (längddrift ≤ 0,3 %), `video/kvarkoll.py` hittade inga kvarvarande svenska
+piller efter fyllfönstren i CO_101_H1.
+
+**Fyra verktygsfynd** (detaljer i `dna.md` rotorsak 3): `no-precis.py` tappar sista 50
+frames (`-shortest`) — löst med 2,5 s tpad + trim till ljudlängd; kopiekampanjens
+`instagram_actor_id` avvisas av API:t — `tools/ops-till-meta.mjs --ig ingen`; BOF-mallens
+bilder kräver manuella rutor; de speglade videorna bär Bäverbutikens slutkort och svenska
+priser i SE och NO i dag — speglingen kollar bara copyn.
+
+**Notion:** kommentar + `Translated url` på alla 17; 16 → `Approved` (Norge bär dem),
+`PD_5_H1` kvar. **Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1550559405999792190`, ingen ACTION NEEDED. Filer:
+`market-expansion/ops/carashell/2026-09-18-us/`.

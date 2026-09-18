@@ -16,7 +16,7 @@ const jobb = JSON.parse(readFileSync(join(HAR, 'jobb.json'), 'utf8'));
 const KONTO = jobb.konto, KAMPANJ = jobb.kampanj.namn;
 for (const [n, v] of Object.entries(r)) {
   if (!v.resultat?.ok || v.notion_klart) continue;
-  const ad = v.resultat.ad_id, adset = v.resultat.adset?.namn;
+  const ad = v.resultat.annons?.id ?? v.resultat.ad_id, adset = v.resultat.adset?.namn;
   const url = `https://www.facebook.com/adsmanager/manage/ads?act=${KONTO}&selected_ad_ids=${ad}`;
   const kom = `US ✅ ${n} live in ${KAMPANJ} (adset ${adset}), ad ${ad} — account Magiborsten UK ${KONTO}. ` +
     (v.typ === 'video' ? 'Dubbed with HeyGen (US English voice clone + lip sync), English word captions and a US end card; voice check passed. ' : 'US text layer, $199 / reg. $249, 90-day guarantee. ') +
