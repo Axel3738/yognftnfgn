@@ -361,6 +361,14 @@ väntas under en återköpsorder per dygn totalt, så nollan efter tre dagar
 säger "för tidigt", inte "trasigt". Nästa avläsning: efter 21/9, när första
 batchens fönster stängt.
 
+## Hela kedjan som testmejl
+
+`mejl/COWORK-TESTMEJL.md` är prompten som får Cowork att skicka testmejl på
+alla sju mallarna i kundens ordning (Axels önskan 2026-09-18: se allt på
+telefonen). Sökord i Gmail som hittar alla: `kundsupport@baverbutiken.se`
+(adressen står i varje malls sidfot). Övergiven kassa ingår inte — den
+ligger inte under Notiser.
+
 ## Inklistringen via Cowork
 
 `mejl/COWORK-PROMPT.md` är den färdiga prompten till Cowork (Claude i
