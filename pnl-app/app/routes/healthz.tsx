@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "summaspalt-v97", db });
+  return json({ ok: true, build: "tva-i-rad-v98", db });
 }

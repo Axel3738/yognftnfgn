@@ -7,7 +7,7 @@
  */
 
 import type { Texts } from "./texts";
-import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, setUnitCost } from "./shopify-data.server";
+import { loadCatalog, patchaKostnader, setUnitCost } from "./shopify-data.server";
 import { marknadskod } from "./marknad";
 
 /**
@@ -103,7 +103,9 @@ export async function importCostCsv(
     return { ok: false, message: T.costs.noValidRows(sample), applied, skipped };
   }
 
-  const catalog = await fetchVariantCosts(admin);
+  /* Cachen, inte en ny paginering: den här importen kördes med en egen
+     hämtning av alla varianter varje gång, vilket krockade med sidans egen. */
+  const catalog = await loadCatalog(admin, shop, prisma);
 
   /* Leverantörsofferter skriver "6-18 hk" där butiken har "6 - 18 hk" eller
      "6–18 hk" — samma variant, olika streck. Jämför därför på en städad form.
@@ -118,6 +120,10 @@ export async function importCostCsv(
     const v = norm(variantTitle);
     return v === w || v.split("/").includes(w);
   };
+
+  /* Vad som faktiskt skrevs, så katalogen kan uppdateras i stället för att
+     slängas och hämtas om från Shopify. */
+  const kostnadsandringar = new Map<string, number | null>();
 
   for (const row of parsed) {
     // Tom varianttitel = alla varianter i produkten.
@@ -136,6 +142,7 @@ export async function importCostCsv(
           skipped.push(`${target.productTitle} · ${target.variantTitle}: ${res.error}`);
           continue;
         }
+        kostnadsandringar.set(target.inventoryItemGid, row.cost);
       }
       applied.push(`${target.productTitle} · ${target.variantTitle}`);
 
@@ -171,8 +178,7 @@ export async function importCostCsv(
   }
 
 
-  invalidateVariantCosts(shop);
-  await invalidateCatalog(shop, prisma);
+  await patchaKostnader(shop, prisma, kostnadsandringar);
   return {
     ok: true,
     message: T.costs.updatedMsg(applied.length, skipped.length, skipped.slice(0, 5).join(", ")),

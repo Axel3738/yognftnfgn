@@ -32,7 +32,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
+import { loadCatalog, patchaKostnader, setUnitCost } from "../lib/shopify-data.server";
 import { kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
 import { mixBreakEven, radUtfall } from "../lib/breakeven.server";
@@ -202,10 +202,14 @@ export async function action({ request, params }: ActionFunctionArgs) {
   );
 
   const failed: string[] = [];
+  /* Vad som faktiskt skrevs — katalogen uppdateras med det i stället för att
+     slängas och pagineras om från Shopify. */
+  const kostnadsandringar = new Map<string, number | null>();
   if (!market) {
     for (const t of targets) {
       const res = await setUnitCost(admin, t.inventoryItemGid, total);
       if (!res.ok) failed.push(`${t.variantTitle}: ${res.error}`);
+      else kostnadsandringar.set(t.inventoryItemGid, total);
     }
   }
 
@@ -223,8 +227,7 @@ export async function action({ request, params }: ActionFunctionArgs) {
     },
   });
 
-  invalidateVariantCosts(session.shop);
-  await invalidateCatalog(session.shop, prisma);
+  await patchaKostnader(session.shop, prisma, kostnadsandringar);
   return json({
     ok: !failed.length,
     message: failed.length

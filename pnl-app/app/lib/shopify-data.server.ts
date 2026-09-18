@@ -694,27 +694,83 @@ export async function loadCatalog(
   if (rad) {
     const cat = katalogAv(rad.payload as VariantCost[]);
     catalogCache.set(shop, { cat, at: Date.now() });
-    if (Date.now() - rad.fetchedAt.getTime() > DB_TTL) void uppdateraKatalog(admin, shop, prisma);
+    if (Date.now() - rad.fetchedAt.getTime() > DB_TTL) void uppdateraKatalog(admin, shop, prisma).catch(() => {});
     return cat;
   }
   return uppdateraKatalog(admin, shop, prisma);
 }
+
+/* En omhämtning åt gången per butik. Två samtidiga (sidans omladdning plus
+   nästa inmatning) paginerade 40 sidor var, Shopify strypte anropen och
+   båda misslyckades. Nu delar de på samma hämtning. */
+const pagande = new Map<string, Promise<VariantCatalog>>();
 
 async function uppdateraKatalog(
   admin: AdminApiContext,
   shop: string,
   prisma: any,
 ): Promise<VariantCatalog> {
-  const cat = await fetchVariantCosts(admin);
-  catalogCache.set(shop, { cat, at: Date.now() });
-  await prisma.catalogCache
-    .upsert({
-      where: { shop },
-      create: { shop, payload: cat.all as any },
-      update: { payload: cat.all as any, fetchedAt: new Date() },
-    })
-    .catch(() => {});
-  return cat;
+  const igang = pagande.get(shop);
+  if (igang) return igang;
+
+  const jobb = (async () => {
+    const cat = await fetchVariantCosts(admin);
+    catalogCache.set(shop, { cat, at: Date.now() });
+    await prisma.catalogCache
+      .upsert({
+        where: { shop },
+        create: { shop, payload: cat.all as any },
+        update: { payload: cat.all as any, fetchedAt: new Date() },
+      })
+      .catch(() => {});
+    return cat;
+  })().finally(() => pagande.delete(shop));
+
+  pagande.set(shop, jobb);
+  return jobb;
+}
+
+/**
+ * Efter en kostnadsskrivning vet vi exakt vilka varianter som ändrades och
+ * till vad. Att slänga hela katalogen för den vetskapens skull tvingade fram
+ * en ompaginering av upp till 40 sidor från Shopify — och den omhämtningen
+ * krockade med nästa inmatning. *(Axel 2026-09-18: "man kan inte köra två i
+ * raken", sidan måste laddas om och skärmbilden släppas igen.)*
+ *
+ * Nycklarna får vara variantens eller lagerpostens GID — anropsställena har
+ * olika, och båda pekar på samma variant. Värdet `null` betyder att
+ * kostnaden togs bort.
+ */
+export async function patchaKostnader(
+  shop: string,
+  prisma: any,
+  andringar: Map<string, number | null>,
+): Promise<void> {
+  if (!andringar.size) return;
+  const nyKostnad = (v: VariantCost): number | null | undefined =>
+    andringar.has(v.inventoryItemGid)
+      ? andringar.get(v.inventoryItemGid)
+      : andringar.has(v.variantGid)
+        ? andringar.get(v.variantGid)
+        : undefined;
+
+  const minne = catalogCache.get(shop);
+  if (minne) {
+    /* Samma objekt ligger i byGid, byTitle och all — en ändring räcker. */
+    for (const v of minne.cat.all) {
+      const n = nyKostnad(v);
+      if (n !== undefined) v.unitCost = n;
+    }
+  }
+
+  const rad = await prisma.catalogCache.findUnique({ where: { shop } }).catch(() => null);
+  if (!rad) return;
+  const all = (rad.payload as VariantCost[]).map((v) => {
+    const n = nyKostnad(v);
+    return n === undefined ? v : { ...v, unitCost: n };
+  });
+  /* fetchedAt rörs inte: bakgrundsuppdateringen ska ske på sitt schema. */
+  await prisma.catalogCache.update({ where: { shop }, data: { payload: all as any } }).catch(() => {});
 }
 
 /** Efter en kostnadsskrivning måste båda lagren bort, inte bara minnet. */
@@ -735,6 +791,7 @@ export async function fetchVariantCosts(
   const byGid = new Map<string, VariantCost>();
   const byTitle = new Map<string, VariantCost>();
   let after: string | null = null;
+  let forsok = 0;
 
   for (let page = 0; page < 40; page++) {
     const res: Response = await admin.graphql(
@@ -753,7 +810,21 @@ export async function fetchVariantCosts(
     );
     const body = await res.json();
     const conn = body?.data?.productVariants;
-    if (!conn) break;
+    /* Strypt av Shopify, eller ett tillfälligt fel. Att bryta här och spara
+       det halva resultatet gjorde katalogen tom i en halvtimme: produkterna
+       försvann ur appen utan ett enda felmeddelande. Vänta och försök igen,
+       och ge hellre upp högt än tyst. */
+    if (!conn) {
+      if (forsok < 3) {
+        forsok++;
+        await new Promise((r) => setTimeout(r, 800 * forsok));
+        page--;
+        continue;
+      }
+      const fel = body?.errors?.[0]?.message ?? body?.errors?.message ?? "";
+      throw new Error(`Could not read products from Shopify${fel ? `: ${fel}` : ""}`);
+    }
+    forsok = 0;
 
     for (const v of conn.nodes ?? []) {
       const rec: VariantCost = {

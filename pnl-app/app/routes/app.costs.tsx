@@ -32,7 +32,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost, type VariantCatalog } from "../lib/shopify-data.server";
+import { loadCatalog, patchaKostnader, setUnitCost, type VariantCatalog } from "../lib/shopify-data.server";
 import { importCostCsv, normTitel, variantTraffar } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
@@ -270,10 +270,13 @@ async function skrivInmatningsrader(o: {
   butiksValuta: string;
   costCurrency: string;
   T: ReturnType<typeof t>;
-}): Promise<{ applied: SmartKvitto[]; skipped: string[]; rordShopify: boolean }> {
+}): Promise<{ applied: SmartKvitto[]; skipped: string[]; andrade: Map<string, number | null> }> {
   const applied: SmartKvitto[] = [];
   const skipped: string[] = [];
-  let rordShopify = false;
+  /* Vad som faktiskt skrevs i Shopify. Katalogen uppdateras med det i
+     stället för att slängas — annars måste den pagineras om, och den
+     omhämtningen krockade med nästa inmatning. */
+  const andrade = new Map<string, number | null>();
 
   /* En kurs per valuta, inte en per rad. */
   const kurser = new Map<string, number | null>();
@@ -340,8 +343,10 @@ async function skrivInmatningsrader(o: {
       const skrivna: typeof mal = [];
       for (const v of mal) {
         const res = await setUnitCost(o.admin, v.inventoryItemGid, cost);
-        if (res.ok) skrivna.push(v);
-        else skipped.push(`${v.productTitle} · ${v.variantTitle}: ${res.error}`);
+        if (res.ok) {
+          skrivna.push(v);
+          andrade.set(v.inventoryItemGid, cost);
+        } else skipped.push(`${v.productTitle} · ${v.variantTitle}: ${res.error}`);
       }
       if (!skrivna.length) continue;
       traffade = skrivna;
@@ -355,7 +360,6 @@ async function skrivInmatningsrader(o: {
           ]);
         }
       }
-      rordShopify = true;
     }
 
     applied.push({
@@ -370,7 +374,24 @@ async function skrivInmatningsrader(o: {
       targets: traffade.map((v) => v.inventoryItemGid).join(","),
     });
   }
-  return { applied, skipped, rordShopify };
+  return { applied, skipped, andrade };
+}
+
+/**
+ * Bilderna kommer från webbläsaren och får inte skickas vidare oprövade:
+ * en mediatyp modellen inte tar emot (heic, bmp) gör hela anropet till ett
+ * fel i stället för en tom ruta. Okända typer skickas som png — bytena är
+ * det som avgör, inte etiketten — och tomma poster faller bort.
+ */
+const TILLATNA_BILDTYPER = new Set(["image/png", "image/jpeg", "image/webp", "image/gif"]);
+function rensaBilder(raa: unknown): Bild[] {
+  if (!Array.isArray(raa)) return [];
+  return raa
+    .filter((b) => b && typeof b.base64 === "string" && b.base64.length > 0)
+    .map((b) => ({
+      mediaType: (TILLATNA_BILDTYPER.has(String(b.mediaType)) ? b.mediaType : "image/png") as Bild["mediaType"],
+      base64: b.base64 as string,
+    }));
 }
 
 /** Två decimaler, med komma bara där resten av sidan skriver komma. */
@@ -494,12 +515,13 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({ ok: true, message: "" });
     }
     const fel: string[] = [];
+    const andrade = new Map<string, number | null>();
     for (const gid of targets) {
       const r = await setUnitCost(admin, gid, cost);
       if (!r.ok) fel.push(r.error ?? gid);
+      else andrade.set(gid, cost);
     }
-    invalidateVariantCosts(session.shop);
-    await invalidateCatalog(session.shop, prisma);
+    await patchaKostnader(session.shop, prisma, andrade);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
   }
   /* Ta bort en hel marknad (felskriven landskod, land man slutat sälja till). */
@@ -521,13 +543,14 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({ ok: true, message: "" });
     }
     const fel: string[] = [];
+    const andrade = new Map<string, number | null>();
     for (const v of mal) {
       const r = await setUnitCost(admin, v.inventoryItemGid, null);
       if (!r.ok) fel.push(r.error ?? v.variantGid);
+      else andrade.set(v.inventoryItemGid, null);
     }
     await prisma.costTier.deleteMany({ where: { shop: session.shop, market: "", variantGid: { in: mal.map((v) => v.variantGid) } } });
-    invalidateVariantCosts(session.shop);
-    await invalidateCatalog(session.shop, prisma);
+    await patchaKostnader(session.shop, prisma, andrade);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
   }
   /* Offertraden handlaren valt produkt för: styckpris till Shopify, ev.
@@ -560,9 +583,11 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({ ok: true, message: "" });
     }
     const fel: string[] = [];
+    const andrade = new Map<string, number | null>();
     for (const gid of inv) {
       const r = await setUnitCost(admin, gid, cost);
       if (!r.ok) fel.push(r.error ?? gid);
+      else andrade.set(gid, cost);
     }
     if (rena.length && variants.length) {
       for (const variantGid of variants) {
@@ -581,8 +606,7 @@ export async function action({ request }: ActionFunctionArgs) {
         }
       }
     }
-    invalidateVariantCosts(session.shop);
-    await invalidateCatalog(session.shop, prisma);
+    await patchaKostnader(session.shop, prisma, andrade);
     return json({ ok: fel.length === 0, message: fel.join("; ") });
   }
   // Meddelandena visas i UI:t — hämta butikens språk först.
@@ -598,7 +622,7 @@ export async function action({ request }: ActionFunctionArgs) {
     if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
     let bilder: Bild[] = [];
     try {
-      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+      bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
     } catch {
       bilder = [];
     }
@@ -675,7 +699,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
       if (!summaRader && kandidater.length > 1) return valSvar();
 
-      const { applied, skipped, rordShopify } = await skrivInmatningsrader({
+      const { applied, skipped, andrade } = await skrivInmatningsrader({
         admin,
         shop: session.shop,
         katalog,
@@ -695,10 +719,7 @@ export async function action({ request }: ActionFunctionArgs) {
               `${belopp(summa.summa, lang)} ${(summaRader[0]?.currency || costCurrency).trim().toUpperCase()}`,
             )
           : "";
-      if (rordShopify) {
-        invalidateVariantCosts(session.shop);
-        await invalidateCatalog(session.shop, prisma);
-      }
+      await patchaKostnader(session.shop, prisma, andrade);
       return json({
         ok: true,
         message: applied.length ? T.costs.smart.done(applied.length) : svar.question && !summaNot ? "" : T.costs.smart.nothing,
@@ -744,7 +765,7 @@ export async function action({ request }: ActionFunctionArgs) {
     try {
       const katalog = await loadCatalog(admin, session.shop, prisma);
       const costCurrency = (settings?.costCurrency ?? butiksValuta).toUpperCase();
-      const { applied, skipped, rordShopify } = await skrivInmatningsrader({
+      const { applied, skipped, andrade } = await skrivInmatningsrader({
         admin,
         shop: session.shop,
         katalog,
@@ -753,10 +774,7 @@ export async function action({ request }: ActionFunctionArgs) {
         costCurrency,
         T,
       });
-      if (rordShopify) {
-        invalidateVariantCosts(session.shop);
-        await invalidateCatalog(session.shop, prisma);
-      }
+      await patchaKostnader(session.shop, prisma, andrade);
       return json({
         ok: true,
         message: applied.length ? T.costs.smart.done(applied.length) : T.costs.smart.nothing,
@@ -780,7 +798,7 @@ export async function action({ request }: ActionFunctionArgs) {
     if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
     let bilder: Bild[] = [];
     try {
-      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+      bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
     } catch {
       bilder = [];
     }
@@ -851,7 +869,7 @@ export async function action({ request }: ActionFunctionArgs) {
     if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
     let bilder: Bild[] = [];
     try {
-      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+      bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
     } catch {
       bilder = [];
     }
@@ -992,15 +1010,63 @@ export default function Costs() {
   }, [smartFetcher.state]);
   const [visaVideo, setVisaVideo] = useState(false);
   /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
+  /**
+   * En skärmbild från en modern skärm är flera megabyte, och hela bilden
+   * skickas som text i formuläret. Krymps den till 2000 px längsta sidan
+   * blir posten en bråkdel så stor — prislistan går fortfarande att läsa,
+   * och inmatningen går märkbart fortare. Går krympningen inte (udda format,
+   * gammal webbläsare) skickas originalet som förut.
+   */
+  const krymp = (file: File): Promise<{ mediaType: string; base64: string } | null> =>
+    new Promise((klar) => {
+      if (!file.type.startsWith("image/") || file.type === "image/gif") return klar(null);
+      const url = URL.createObjectURL(file);
+      const img = new Image();
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        const max = Math.max(img.width, img.height);
+        if (!max) return klar(null);
+        const skala = Math.min(1, 2000 / max);
+        if (skala === 1 && file.size < 1_500_000) return klar(null);
+        const canvas = document.createElement("canvas");
+        canvas.width = Math.round(img.width * skala);
+        canvas.height = Math.round(img.height * skala);
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return klar(null);
+        /* Vit botten: en genomskinlig png blir annars svart text på svart. */
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        try {
+          const data = canvas.toDataURL("image/jpeg", 0.9);
+          klar({ mediaType: "image/jpeg", base64: data.split(",")[1] ?? "" });
+        } catch {
+          klar(null);
+        }
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        klar(null);
+      };
+      img.src = url;
+    });
+
   const lasBilder = (setter: typeof setAiBilder) => (_all: File[], accepted: File[]) => {
     for (const file of accepted.slice(0, 6)) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const url = String(reader.result ?? "");
-        const base64 = url.split(",")[1] ?? "";
-        setter((b) => [...b, { name: file.name, mediaType: file.type || "image/png", base64 }]);
-      };
-      reader.readAsDataURL(file);
+      void (async () => {
+        const mindre = await krymp(file);
+        if (mindre?.base64) {
+          setter((b) => [...b, { name: file.name, ...mindre }]);
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => {
+          const url = String(reader.result ?? "");
+          const base64 = url.split(",")[1] ?? "";
+          setter((b) => [...b, { name: file.name, mediaType: file.type || "image/png", base64 }]);
+        };
+        reader.readAsDataURL(file);
+      })();
     }
   };
   /* Produktgrupper för snabbfältet: en rad per produkt, varianterna under. */

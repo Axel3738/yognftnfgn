@@ -490,6 +490,41 @@ Taket ligger nu på tolv rader (`…och N till`): hela storlekslistan syns, och
 knappen under kortet ryms fortfarande på en mobilskärm. Klipp aldrig en
 lista som samtidigt räknas upp i en knapptext.
 
+### Två inmatningar i rad gick inte (2026-09-18, build tva-i-rad-v98)
+
+Axel: *"när jag lägger in en bild och alla tagsen läggs in, sen ska jag
+lägga in nästa … då kraschar appen typ, och jag behöver starta om
+hemsidan."* Orsaken satt i katalogcachen, inte i AI-rutan.
+
+Varje kostnadsskrivning körde `invalidateCatalog` — **hela katalogen kastades
+ur både minne och databas**. Nästa sidladdning tvingades då paginera om upp
+till 40 sidor från Shopify, och den omhämtningen låg och körde när nästa
+inmatning skickades. Två samtidiga pagineringar strypte anropen, och
+`fetchVariantCosts` hade raden `if (!conn) break;` — ett strypt svar bröt
+tyst och **sparade det halva (ofta tomma) resultatet i databascachen i 30
+minuter**. Produkterna försvann ur appen utan ett enda felmeddelande.
+
+Fyra ändringar, alla i `shopify-data.server.ts` om inget annat sägs:
+
+1. **`patchaKostnader(shop, prisma, andringar)` ersätter invalidering.** Vi
+   vet exakt vilka varianter som skrevs och till vad — då uppdateras de i
+   cachen i stället för att katalogen slängs. Nycklarna får vara variantens
+   eller lagerpostens GID, och `null` betyder borttagen kostnad. `fetchedAt`
+   rörs inte, så bakgrundsuppdateringen går på sitt schema. **Bygg aldrig
+   tillbaka en invalidering här.**
+2. **En paginering åt gången per butik** (`pagande`-mappen): samtidiga
+   anrop delar samma hämtning i stället för att tävla.
+3. **Ett strypt svar ger tre försök med paus, sedan ett kastat fel** — aldrig
+   ett halvt resultat som sparas.
+4. `importCostCsv` hämtade alla varianter med en EGEN paginering
+   (`fetchVariantCosts(admin)` utan cachenyckel) vid varje körning. Den går
+   nu via `loadCatalog`.
+
+Dessutom: skärmbilden krymps i webbläsaren till 2000 px längsta sidan innan
+den skickas (hela bilden går som text i formuläret), och mediatypen städas
+på servern — en typ modellen inte tar emot gjorde annars hela anropet till
+ett fel.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad
