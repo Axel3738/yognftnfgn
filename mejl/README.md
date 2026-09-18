@@ -372,6 +372,14 @@ har ingen spårningsrad och är oförändrad sedan v8. Testet i
 `mallar.test.mjs` stoppar `tracking_url` från att komma tillbaka.
 Kontrollen i prompten: finns `tracking_url` i mallen är den gammal.
 
+**Inklistrad av Cowork 2026-09-18 15:10–15:15 UTC**, alla tre, verifierade
+mot servern, testmejl från Leveransbekräftelse skickat. Två observationer:
+Shopify sparade den här gången hela filen inklusive avslutande radbrytning
+(serverns tal = filens tecken, inte ett mindre som vid v8), och på Ute för
+leverans dök "Osparade ändringar" inte upp förrän Cowork skrev och raderade
+ett tecken — den kontrollerade tecken för tecken efteråt. Lärdom till
+prompten: en oförändrad ruta måste "väckas", men verifiera alltid efteråt.
+
 ## Mäta om det gör något
 
 ```bash
