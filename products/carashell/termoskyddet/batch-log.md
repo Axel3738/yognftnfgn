@@ -545,7 +545,7 @@ i Metas anropstak.
   når inte den här kön förrän den är ACTIVE igen. NO-kampanjen rörs inte av det.
 - Discord `#annons-uppladdning`, ingen ping. Batch: `market-expansion/ops/carashell/2026-09-18-no-termoskyddet/`.
 
-## 2026-09-18 — `/ops-spegla carashell/termoskyddet` — tom kö, körd för hand
+## 2026-09-18 — `/ops-spegla carashell/termoskyddet` — första schemalagda körningen, tom kö
 
 - Källhub `BÄVER Termoskyddet för Husbil` (`c5a270ab-…`): 0 rader i `CaraShell SE ready to be active`,
   0 i `CaraShell EN ready to be active`, 0 i `Translation in review`, 0 i `Approved`
@@ -554,4 +554,6 @@ i Metas anropstak.
 - SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` fortfarande PAUSED med 2 043 kr spend
   (pausad för hand 11:29 CEST, se leveransrundan ovan) — speglingen skulle ha vägrat SE ändå.
   NO-kampanjen ACTIVE, 4 adsets. Pris SE 559 SEK / NO 548 NOK ur butiken.
-- Speglingen har ingen schemalagd rutin ännu (CLAUDE.md 2026-09-18) — den här körningen var manuell.
+- Rutinen `Speglingen: carashell/termoskyddet` (`trig_01GWEbTKYMKTfqUZfcucqN71`, fast session
+  `session_017BEGfjEbMWUNPVhHFDxnxn`, cron `55 14 * * *` = 16:55 CEST) sedd i `list_triggers` på
+  `claude5@stonebite.org` i den här körningen, enabled, nästa 2026-09-19 16:55.
