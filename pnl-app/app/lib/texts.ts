@@ -230,6 +230,9 @@ const en = {
       modelPick: "My reading",
       useThis: (n: number) => (n === 1 ? "Use this one" : `Use this — ${n} costs`),
       pcs: "pcs",
+      andMore: (n: number) => (n === 1 ? "…and 1 more" : `…and ${n} more`),
+      sumUsed: (parts: string, total: string) =>
+        `One price column was the others added up (${parts} = ${total}). I used that one — it is the whole amount, so nothing from the list is left out.`,
       more: "More ways to add costs",
       hideMore: "Hide the other ways",
     },
@@ -1049,6 +1052,9 @@ const sv: Texts = {
       modelPick: "Min läsning",
       useThis: (n: number) => (n === 1 ? "Använd den här" : `Använd den här — ${n} kostnader`),
       pcs: "st",
+      andMore: (n: number) => (n === 1 ? "…och 1 till" : `…och ${n} till`),
+      sumUsed: (parts: string, total: string) =>
+        `En prisspalt var de andra ihopräknade (${parts} = ${total}). Jag använde den — den är hela beloppet, så inget ur listan är bortglömt.`,
       more: "Fler sätt att lägga in kostnader",
       hideMore: "Dölj de andra sätten",
     },

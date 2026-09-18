@@ -44,6 +44,7 @@ import { stadaAvgifter } from "../lib/marknad";
 import { dayInTz } from "../lib/shopify-data.server";
 import { lasMarknadskostnad, skrivMarknadskostnad, taBortMarknad, taBortMarknadskostnad } from "../lib/marknadskostnad.server";
 import { hemlandAv, marknadskod, marknadsnamn } from "../lib/marknad";
+import { fingeravtryck, hittaSummaspalt } from "../lib/prisspalter";
 import { asLang, localeOf, t } from "../lib/texts";
 
 /**
@@ -372,20 +373,67 @@ async function skrivInmatningsrader(o: {
   return { applied, skipped, rordShopify };
 }
 
-/** Rader → en rad text handlaren känner igen ur sin egen skärmbild. */
-function forhandsvisning(rader: SmartRad[], costCurrency: string, T: ReturnType<typeof t>): string {
-  return rader
-    .slice(0, 3)
+/** Två decimaler, med komma bara där resten av sidan skriver komma. */
+function belopp(n: number, lang: "en" | "sv"): string {
+  const s = n.toFixed(2);
+  return lang === "sv" ? s.replace(".", ",") : s;
+}
+
+/**
+ * Ett inköpspris som når butikens eget pris är inget inköpspris. Spärren
+ * finns för prislistor som skriver kostnad | påslag | utpris: de uppfyller
+ * `A + B = C` av konstruktion, och utpriset får aldrig skrivas som COGS.
+ *
+ * Kursen hämtas per valuta; saknas den fälls ingen dom (skrivningen hoppar
+ * över raden ändå och säger till).
+ */
+async function rimligaKostnader(o: {
+  rader: SmartRad[];
+  katalog: VariantCatalog;
+  butiksValuta: string;
+  costCurrency: string;
+}): Promise<boolean> {
+  const kurser = new Map<string, number | null>();
+  for (const r of o.rader) {
+    const valuta = (r.currency || o.costCurrency).trim().toUpperCase() || o.butiksValuta;
+    if (!kurser.has(valuta)) {
+      kurser.set(valuta, valuta === o.butiksValuta ? 1 : ((await fxRate(valuta, o.butiksValuta)) ?? null));
+    }
+    const k = kurser.get(valuta);
+    if (k == null || !Number.isFinite(r.unit_cost)) continue;
+    const mal = o.katalog.all.filter(
+      (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
+    );
+    for (const v of mal) {
+      if (v.price > 0 && r.unit_cost * k >= v.price) return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Rader → text handlaren känner igen ur sin egen skärmbild.
+ *
+ * Listan klipptes förut till tre rader, och ett alternativ med nio storlekar
+ * såg därför ut som om sex tappats bort medan knappen sa "9 kostnader" —
+ * Axel 2026-09-18: *"Jag tror inte den fångade alla olika varianter."* Taket
+ * ligger nu på tolv: tillräckligt för att en hel storlekslista ska synas,
+ * lågt nog att knappen under kortet ryms på en mobilskärm.
+ */
+function forhandsvisning(rader: SmartRad[], costCurrency: string, T: ReturnType<typeof t>, lang: "en" | "sv"): string {
+  const visade = rader
+    .slice(0, 12)
     .map((r) => {
       const valuta = (r.currency || costCurrency).trim().toUpperCase();
       const namn = r.variant || r.source_label || r.product;
       const steg = (r.tiers ?? [])
         .filter((t) => t.units >= 2 && t.total > 0)
-        .map((t) => ` · ${t.units} ${T.costs.smart.pcs} ${t.total}`)
+        .map((t) => ` · ${t.units} ${T.costs.smart.pcs} ${belopp(t.total, lang)}`)
         .join("");
-      return `${namn}: ${r.unit_cost} ${valuta}${steg}`;
-    })
-    .join("\n");
+      return `${namn}: ${belopp(r.unit_cost, lang)} ${valuta}${steg}`;
+    });
+  const kvar = rader.length - visade.length;
+  return [...visade, ...(kvar > 0 ? [T.costs.smart.andMore(kvar)] : [])].join("\n");
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -576,18 +624,23 @@ export async function action({ request }: ActionFunctionArgs) {
       /* Flera läsningar av samma tabell (namnlösa prisspalter): skriv INGET,
          lämna färdiga alternativ som handlaren pekar på. En öppen fråga utan
          knappar är en återvändsgränd — det var precis klagomålet. */
-      const val = (svar.choices ?? []).filter((c) => c.rows?.length);
-      if (val.length) {
-        /* Lämnar modellen BÅDE en egen läsning och alternativ är källan inte
-           entydig. Då blir den egna läsningen ett alternativ till — aldrig en
-           tyst skrivning av en godtyckligt vald prisspalt. */
-        const alternativ = [
-          ...(svar.rows?.length
-            ? [{ label: T.costs.smart.modelPick, explain: "", rows: svar.rows as SmartRad[] }]
-            : []),
-          ...val.map((c) => ({ label: c.label, explain: c.explain, rows: c.rows as SmartRad[] })),
-        ];
-        return json({
+      /* Alla läsningar av källan: alternativen plus modellens egen, utan
+         dubbletter. Modellen ska lämna antingen rows eller choices, men
+         schemat har båda som listor — så vi litar på talen, inte på löftet. */
+      const kandidater = (svar.choices ?? [])
+        .filter((c) => c.rows?.length)
+        .map((c) => ({ label: c.label, explain: c.explain, rows: c.rows as SmartRad[] }));
+      if (svar.rows?.length) {
+        const eget = fingeravtryck(svar.rows as SmartRad[]);
+        if (!kandidater.some((k) => fingeravtryck(k.rows) === eget)) {
+          kandidater.unshift({ label: T.costs.smart.modelPick, explain: "", rows: svar.rows as SmartRad[] });
+        }
+      }
+
+      /* Alternativen, som handlaren pekar på. Byggs som en funktion för att
+         vi kan behöva falla tillbaka hit efter ett misslyckat skrivförsök. */
+      const valSvar = () =>
+        json({
           ok: true,
           message: "",
           smart: {
@@ -596,39 +649,67 @@ export async function action({ request }: ActionFunctionArgs) {
             /* Rubriken bär hela valet i UI:t — utan text visas inga knappar. */
             question: svar.question || T.costs.smart.pickQuestion,
             notes: svar.notes,
-            choices: alternativ.map((c, i) => ({
+            choices: kandidater.map((c, i) => ({
               id: String(i),
               label: c.label || `${i + 1}`,
               explain: c.explain,
               rader: c.rows.length,
-              preview: forhandsvisning(c.rows, costCurrency, T),
+              preview: forhandsvisning(c.rows, costCurrency, T, lang),
               rows: JSON.stringify(c.rows),
             })),
           },
         });
-      }
+
+      /* Är ett av alternativen de andra ihopräknade är det inget val alls:
+         de andra är delpriser och summan är inköpskostnaden. Talen avgör.
+         Spärren efteråt: ett inköpspris som når butikens eget pris är inget
+         inköpspris — då kan spalten lika gärna vara ett utpris, och då
+         lägger vi fram korten i stället. */
+      const summa = hittaSummaspalt(kandidater);
+      const summaRader =
+        summa &&
+        (await rimligaKostnader({ rader: kandidater[summa.index].rows, katalog, butiksValuta, costCurrency }))
+          ? kandidater[summa.index].rows
+          : null;
+      const rader = summaRader ?? (svar.rows as SmartRad[]);
+
+      if (!summaRader && kandidater.length > 1) return valSvar();
 
       const { applied, skipped, rordShopify } = await skrivInmatningsrader({
         admin,
         shop: session.shop,
         katalog,
-        rader: svar.rows as SmartRad[],
+        rader,
         butiksValuta,
         costCurrency,
         T,
       });
+      /* Blev ingenting skrivet är summaträffen värdelös — då är korten kvar
+         bättre än ett kvitto som säger "jag använde summan" utan att någon
+         kostnad ändrades. */
+      if (summaRader && !applied.length && kandidater.length > 1) return valSvar();
+      const summaNot =
+        summaRader && summa && applied.length
+          ? T.costs.smart.sumUsed(
+              summa.delar.map((d) => belopp(d, lang)).join(" + "),
+              `${belopp(summa.summa, lang)} ${(summaRader[0]?.currency || costCurrency).trim().toUpperCase()}`,
+            )
+          : "";
       if (rordShopify) {
         invalidateVariantCosts(session.shop);
         await invalidateCatalog(session.shop, prisma);
       }
       return json({
         ok: true,
-        message: applied.length ? T.costs.smart.done(applied.length) : svar.question ? "" : T.costs.smart.nothing,
+        message: applied.length ? T.costs.smart.done(applied.length) : svar.question && !summaNot ? "" : T.costs.smart.nothing,
         smart: {
           applied,
           skipped: [...svar.unmatched, ...skipped],
-          question: svar.question,
-          notes: svar.notes,
+          /* Räknade vi ut spalten åt handlaren finns ingen fråga kvar att
+             ställa — och modellens egen anmärkning skrevs för valkort som
+             inte visas, så den skulle be honom välja något som inte finns. */
+          question: summaNot ? "" : svar.question,
+          notes: summaNot || svar.notes,
           choices: [] as { id: string; label: string; explain: string; rader: number; preview: string; rows: string }[],
         },
       });

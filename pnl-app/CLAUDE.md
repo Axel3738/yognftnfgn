@@ -440,6 +440,56 @@ samma gamla kostnad.
 Skärmbilden töms bara när något faktiskt skrevs — annars hade den försvunnit
 medan man fortfarande valde.
 
+### Räkna först, fråga sen: summaspalten (2026-09-18, build summaspalt-v97)
+
+Alternativkorten löste återvändsgränden men skapade en ny: Axel fick tre
+kort — *"det var jävligt svårt att förstå vilken vikt jag ska välja i såna
+fall"* — och kunde omöjligt veta vilken namnlös prisspalt som var hans
+inköpspris. **Ett val handlaren inte kan göra är lika illa som en fråga han
+inte kan svara på.**
+
+Talen avslöjade sig själva. I hans amerikanska prislista gällde
+`spalt1 + spalt2 = spalt3` i **alla nio cellerna, exakt** — alltså vara,
+frakt och totalen. `app/lib/prisspalter.ts` (`hittaSummaspalt`, 11 tester)
+räknar efter det innan alternativen visas: hittas en spalt som är de andra
+ihopräknade skrivs den rakt in, utan fråga, med en mening på kvittot om vad
+som hände (`smart.sumUsed`, med källans egna tal som kvitto). Hittas ingen
+sådan relation ligger alternativen kvar.
+
+Kraven som gör att den inte gissar: minst tre spalter (med två går det inte
+att peka ut summan), identisk raduppsättning och identiska packstorlekar i
+alla spalter, varje delbelopp > 0, minst två olika rader och tre celler
+kontrollerade, och exakt en spalt som passar. Marginalen är
+`max(0,03, 0,05 %)` — den finns för avrundning i källan, inte för gissningar.
+
+⚠️ **`A + B = C` bevisar ingenting i sig.** En tabell med spalterna 1 st |
+2 st | 3 st uppfyller `k + 2k = 3k` i varje cell — skrivs då "summan" som
+styckpris blir kostnaden tre gånger för hög. Därför avvisas spalter vars
+delar är **proportionella mot varandra** (samma kvot på varje rad). En äkta
+uppdelning i vara och frakt varierar: i Axels lista 1,83 / 1,65 / 1,62.
+Testet `antalskolumner (1 st / 2 st / 3 st) får ALDRIG tolkas som en summa`
+finns för att den fällan aldrig ska byggas tillbaka.
+
+Och en spärr till: en prislista med **kostnad | påslag | utpris** uppfyller
+också identiteten. Därför skrivs inget tyst om summan når variantens
+försäljningspris i Shopify (`rimligaKostnader` i `app.costs.tsx`, kursen
+omräknad först) — då ligger korten kvar. Kvittots mening säger bara det som
+faktiskt bevisades: en spalt var de andra ihopräknade. **Skriv aldrig
+"frakten är inräknad"** — spalterna var namnlösa, delen kan lika gärna vara
+tull eller påslag.
+
+Modellen ska därför lämna **ett alternativ per spalt även när den tror sig
+veta** (regel 6b i prompten). Räknar den ihop spalterna själv får
+`hittaSummaspalt` bara ett alternativ att titta på, och hela kontrollen
+uteblir tyst.
+
+**Förhandsvisningen klipptes till tre rader.** Ett alternativ med nio
+storlekar såg därför ut som om sex tappats bort, samtidigt som knappen sa
+"9 kostnader" — Axel: *"Jag tror inte den fångade alla olika varianter."*
+Taket ligger nu på tolv rader (`…och N till`): hela storlekslistan syns, och
+knappen under kortet ryms fortfarande på en mobilskärm. Klipp aldrig en
+lista som samtidigt räknas upp i en knapptext.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad

@@ -275,6 +275,9 @@ export async function tolkaInmatningMedAi(input: {
         "Beskriv varje spalt utifrån talen i explain: skalar den exakt med antalet (1×, 2×, 3× — då är det varan utan fraktrabatt), " +
         "är den lägre än antalet gånger styckpriset (då ingår frakt som blir billigare per styck i flerpack), " +
         "eller är den ungefär 1,5–2 gånger en annan spalt (då kan den vara landat pris med tull)? Gissa aldrig åt handlaren.\n" +
+        "(6b) Lämna ETT alternativ per spalt även om du tror dig veta vilken som gäller, och räkna inte ihop spalter själv. " +
+        "Appen kontrollerar efteråt om en spalt är de andra ihopräknade och avgör då saken på talen — den kontrollen kan bara " +
+        "göras om alla spalterna finns som egna alternativ.\n" +
         "(7) NÄSTAN-MATCHANDE VARIANTER: matchar alla källans rader utom en mot var sin variant i butiken, och exakt en variant blir över, " +
         "para ihop de två som blev över (t.ex. källans '5*3m' mot butikens '5,5 × 3 m') och skriv det i notes. Hoppa aldrig över en rad " +
         "bara för att stavningen skiljer på ett tecken — men para bara ihop när det är exakt en kvar på varje sida.\n" +
