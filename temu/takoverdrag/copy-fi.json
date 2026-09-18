@@ -1,0 +1,34 @@
+{
+  "titel": "Asuntovaunun Kattopeite – 9 Pituutta, 3 m Leveä – Suojaa Kalleimman Pinnan",
+  "problemH": "Katto on pinta, jota tarkistat harvimmin – ja kallein korjata",
+  "problemP": "Sade, lehdet ja linnunjätökset kertyvät katolle – juuri sille pinnalle, jota et käy tarkistamassa. Vesi seisoo kattoluukkujen ja saumojen ympärillä koko talven, tiivistemassa pehmenee, ja kun kosteus lopulta pääsee katon läpi, kyse ei ole enää pesusta vaan korjauksesta.",
+  "losningH": "Suojaa vain katto – ei koko vaunua",
+  "losningP": "Koko vaunun peittävä suoja on raskas asentaa yksin, ja se hankaa maalipintaa vasten koko talven. Tämä peittää vain sen pinnan, joka oikeasti kuluu. Hopeapinnoite ottaa auringon vastaan katon sijaan, ja sade valuu pois hopeapinnoitetusta 210D-oxfordkankaasta sen sijaan että jäisi seisomaan. Peitteen omat hihnat kulkevat kaikilla neljällä sivulla, ovat 2,5 m pitkiä, säädettävissä vaunusi mukaan ja kiinnittyvät koukkuun alareunassa – ja niiden lisäksi mukana tulee kaksi vahvistettua 10,5 m hihnaa ilman lisäkustannusta. Pituuksia on yhdeksän, kaikki 3 m leveitä, joten valitset kattoosi sopivan.",
+  "bullets": [
+    "<strong>Vesi valuu pois sen sijaan että jäisi seisomaan</strong> – hopeapinnoitettu 210D-oxfordkangas, ei ohut pressu",
+    "<strong>Pysyy paikallaan tuulessa</strong> – hihnat kaikilla neljällä sivulla, 2,5 m ja säädettävissä vaunusi mukaan",
+    "<strong>Sopii kattoon vaunun pituudesta riippumatta</strong> – yhdeksän pituutta, 5,5–13,5 m, kaikki 3 m leveitä",
+    "<strong>Kaksi ylimääräistä hihnaa sisältyy</strong> – vahvistetut 10,5 m, peitteen omien lisäksi, ilman lisäkustannusta",
+    "<strong>Yhden ihmisen asennettavissa</strong> – vain katto, ei koko vaunua, mahtuu mukana tulevaan säilytyspussiin"
+  ],
+  "storleksrad": "Yhdeksän pituutta, kaikki 3 m leveitä – mittaa katon pituus päädystä päätyyn ja valitse koko, joka on lähinnä ylöspäin, ei alaspäin.",
+  "seoTitel": "Asuntovaunun Kattopeite – 9 Pituutta, 3 m Leveä",
+  "seoText": "Suojaa asuntovaunun kattoa sateelta, lehdiltä ja auringolta. Hopeapinnoitettu 210D-kangas ja säädettävät hihnat. Yhdeksän pituutta, kaikki 3 m leveitä.",
+  "taggar": ["Asuntovaunu", "Matkailuauto", "Suojapeite", "Retkeily", "Talvisäilytys"],
+  "option": "Koko",
+  "varden": ["3 × 5,5 m", "3 × 6,5 m", "3 × 7,5 m", "3 × 8,5 m", "3 × 9,5 m", "3 × 10,5 m", "3 × 11,5 m", "3 × 12,5 m", "3 × 13,5 m"],
+  "alt": {
+    "hero": "Musta kattopeite matkailuauton katolla, kiinnitetty hihnoilla korin ympäri",
+    "gif": "Kattopeite matkailuauton katolla, kokoontaitettuna ja soljet näkyvissä",
+    "van": "Kattopeite kiristettynä matkailuauton katolle, kuvattuna edestä",
+    "hopvikt": "Kattopeite kokoontaitettuna, solki ja kangasdetalji näkyvissä",
+    "spanne": "Lähikuva soljesta ja hihnasta",
+    "storlekstabell": "Infografiikka, joka näyttää kattopeitteen yhdeksän pituutta, 5,5–13,5 metriä, kaikki 3 metriä leveitä"
+  },
+  "tabell": {
+    "rubrik": "YHDEKSÄN PITUUTTA",
+    "underrubrik": "Kaikki ovat 3 metriä leveitä – valitse katon pituuden mukaan",
+    "fot1": "210D HOPEAPINNOITETTU OXFORD-KANGAS",
+    "fot2": "Hihnat neljällä sivulla · kaksi vahvistettua 10,5 m -hihnaa sisältyy"
+  }
+}
