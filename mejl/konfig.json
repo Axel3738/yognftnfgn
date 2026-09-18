@@ -775,17 +775,17 @@
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
     "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v6 (leveransfönster 7–14 dagar, UTM-spårning, mobil-CSS, komplementrubriken, ≥299-filtret, klockslaget) inklistrad av Cowork 2026-09-18 i de tre erbjudandemallarna, alla verifierade efter omladdning: fyra kontrollsträngar, teckenantal 85 292 / 79 693 / 75 649 i Shopifys räkning (byte, ett mindre än källfilen), identiska med källfilerna. Ämnesraderna stod redan rätt. De fyra mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak (v6-bygget ger dem bara mobil-CSS, inte inklistrat).",
-    "inklistrade_aldre_comment": "v7 (2026-09-18 kväll): 'Spåra paketet' går till Shopifys orderstatussida (butikens logga, svenska, 'På väg') i stället för 17track; spårningsnumret länkar till fraktbolaget. Inte inklistrad — väntar på Axels beslut om spårningsapp (Parcel Panel/17TRACK), som ändrar var knappen ska peka.",
+    "inklistrade_aldre_comment": "v8 (2026-09-18 kväll): 'Spåra paketet' → Shopifys orderstatussida; fraktbolagets namn borta ur alla mejl (Axel: 'ta bort att det står UPS'); samma-paket-raden bara i orderbekräftelsen (Axel såg den i levererat-testmejlet); levererat-mejlets 7 dagar räknas från leveransdagen. Väntar på Cowork-inklistring av fyra mallar (mejl/COWORK-PROMPT.md). Orderbekräftelsen är oförändrad sedan v6.",
     "inklistrade_aldre": {
-      "fraktbekraftelse": "2026-09-18 v6 (knappen till 17track)",
-      "fraktuppdatering": "2026-09-12 v2 (knappen till 17track)",
-      "ute_for_leverans": "2026-09-12 v2 (knappen till 17track)"
+      "fraktbekraftelse": "2026-09-18 v6 (17track-knapp, fraktbolagets namn)",
+      "fraktuppdatering": "2026-09-12 v2 (17track-knapp, fraktbolagets namn)",
+      "ute_for_leverans": "2026-09-12 v2 (17track-knapp, fraktbolagets namn)",
+      "levererad": "2026-09-18 v6 (fraktbolagets namn, samma-paket-raden, sju dagar från orderdagen)"
     },
     "inklistrade": {
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
-      "orderbekraftelse": "2026-09-18 v6",
-      "levererad": "2026-09-18 v6"
+      "orderbekraftelse": "2026-09-18 v6"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",

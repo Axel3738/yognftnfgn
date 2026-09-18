@@ -338,6 +338,20 @@ eller 17TRACK) som också skriver "levererat" tillbaka — då går
 gränssnitt (mätt 2026-09-18), så en egen sida utan app har ingen datakälla.
 Inklistringen väntar på appbeslutet.
 
+## v8 (2026-09-18 kväll): fraktbolaget osynligt, samma-paket bara i orderbekräftelsen
+
+Ur Axels läsning av testmejlkedjan:
+- **Fraktbolagets namn är borta** ur intro och spårningsraden i alla mejl
+  ("ta bort att det står UPS"). För riktiga kunder stod det YunExpress —
+  lika onödigt. Numret länkar fortfarande till fraktbolagets sida.
+- **Samma-paket-raden** (18 timmar) ligger bara i orderbekräftelsen. I
+  frakt- och levererat-mejlen döljs den ändå av `paket_passerat`, men
+  testmejlen bygger på en färsk låtsasorder och visade den.
+- **Levererat-mejlets sju dagar räknas från leveransdagen** ('now'), inte
+  orderdagen — annars vore fönstret slut när kunden först ser gåvan.
+  `slutdatumLiquid(dagar, paketTimmar, bas)`.
+- Spårningen in i Shopify (skanningar, "Levererad"-notisen): `sparning/`.
+
 ## Mäta om det gör något
 
 ```bash

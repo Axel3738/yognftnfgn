@@ -127,17 +127,24 @@ export function leveransLiquid(frakt, packdagar = 0) {
 // datumet "sköts upp". 'now' är kvar bara som reserv om created_at saknas.
 // date: '%s' ger unix-sekunder som sträng; plus gör tal av den och
 // date-filtret tar tal.
-export function slutdatumLiquid(dagar, paketTimmar = 0) {
+// `bas` = 'created_at' (orderdagen) eller 'now' (utskicksdagen). Levererat-
+// mejlet går 1–2 veckor efter ordern, så där räknas de sju dagarna från
+// leveransdagen (Axel 2026-09-18) — annars vore erbjudandet redan "slut"
+// när kunden först ser det.
+export function slutdatumLiquid(dagar, paketTimmar = 0, bas = 'created_at') {
   const sek = dagar * 86400;
+  const kalla = bas === 'now' ? "'now'" : 'created_at';
   return (
-    `{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}` +
+    (bas === 'now'
+      ? `{% assign start_ts = 'now' | date: '%s' %}`
+      : `{% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}`) +
     // Tidszonsrättning. created_at formaterat direkt ger butikens tid, men
     // samma tidpunkt som unix-sekunder tillbaka genom date-filtret hamnade
     // en timme fel i testmejlet 2026-09-14 (02:42 i stället för 03:42).
     // Skillnaden i timtal mellan de två vägarna mäts här och läggs på alla
     // tidsstämplar som räknas ur start_ts. Fungerar oavsett vilken zon
     // Shopify råkar formatera tal i, sommartid som vintertid.
-    `{% assign tz_a = created_at | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}` +
+    `{% assign tz_a = ${kalla} | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}` +
     `{% assign tz_skift = tz_a | minus: tz_b %}` +
     `{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}` +
     `{% assign tz_sek = tz_skift | times: 3600 %}` +
@@ -658,8 +665,11 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
       : `${hjulUrl}&amp;produkt=${EXEMPEL.rader[0].handle}`;
   // Samma-paket-raden: bara när konfigen har timmar > 0 och copyn en rad.
   // I Liquid döljs den när deadline passerat (paket_passerat).
+  // Bara i orderbekräftelsen: i frakt- och levererat-mejlen har de 18
+  // timmarna alltid gått (Axel 2026-09-18 såg raden i testmejlet, som
+  // bygger på en färsk låtsasorder).
   const paketRad =
-    (e.samma_paket_timmar ?? 0) > 0 && copy.upsell.samma_paket
+    mallId === 'orderbekraftelse' && (e.samma_paket_timmar ?? 0) > 0 && copy.upsell.samma_paket
       ? `<p style="${s.brod} font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;">&#128230; ${esk(u.samma_paket)}</p>`
       : '';
   const paket = lage === 'liquid' && paketRad ? `{% if paket_passerat == false %}${paketRad}{% endif %}` : paketRad;
@@ -765,7 +775,7 @@ function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false, lev
   const assign =
     lage === 'liquid'
       ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${
-          erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, k.erbjudande.samma_paket_timmar ?? 0)}\n` : ''
+          erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, erbjudande.paket ? k.erbjudande.samma_paket_timmar ?? 0 : 0, erbjudande.bas)}\n` : ''
         }${leverans ? `${leveransLiquid(k.frakt, leverans.packdagar ?? 0)}\n` : ''}`
       : '';
   return `${assign}<!DOCTYPE html>
@@ -819,8 +829,8 @@ const SPARNING_EXEMPEL = 'https://baverbutiken.se/orders/exempel';
 function sparningsInfo(s, lage) {
   const inre =
     lage === 'liquid'
-      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: ${s.svart};">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}`
-      : `Spårningsnummer: <strong><a href="https://t.17track.net/#nums=${EXEMPEL.sparningsnummer}" style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</a></strong> (${EXEMPEL.fraktbolag})`;
+      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: ${s.svart};">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% endif %}`
+      : `Spårningsnummer: <strong><a href="https://t.17track.net/#nums=${EXEMPEL.sparningsnummer}" style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</a></strong>`;
   return `
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
@@ -927,7 +937,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   // (lägg på packtiden), fraktmejlet när paketet skickas (ingen packtid).
   const leverans =
     id === 'orderbekraftelse' ? { packdagar: k.frakt.packas_dagar ?? 2 } : id === 'fraktbekraftelse' ? { packdagar: 0 } : null;
-  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: Boolean(meta.erbjudande), leverans });
+  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: meta.erbjudande ? { bas: id === 'levererad' ? 'now' : 'created_at', paket: id === 'orderbekraftelse' } : false, leverans });
   return {
     id,
     shopify: meta.shopify,
