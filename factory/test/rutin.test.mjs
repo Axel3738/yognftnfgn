@@ -374,28 +374,28 @@ test('tillCron: veckodagarna flyttas till dagen före när svensk tid blir gård
   assert.equal(tillCron('07:00', { dagar: '1,4', datum: VINTER }).cron, '0 6 * * 1,4');
 });
 
-test('briefgranskningen: 07:00 + 5 min × plats, bara måndag + torsdag, eget namn', async () => {
-  const { BUTIKSRUTINER, tiderFor, tidFor } = await import('../rutin.mjs');
-  assert.equal(BUTIKSRUTINER.briefgranskning.dagar, '1,4');
+test('briefgranskningen: EN husrutin för hela Bäverbutiken (måndag + torsdag 07:00), ingen butiksrutin', async () => {
+  const { BUTIKSRUTINER, tiderFor } = await import('../rutin.mjs');
+  // Ombyggd 2026-09-18: OPS-projektet är nedlagt utom CaraShell, vars briefer
+  // skrivs i Bäverbutikens hubbar. setup får inte bygga en per butik längre.
+  assert.equal(BUTIKSRUTINER.briefgranskning, undefined);
   const platser = { hemvakten: 0, carashell: 5 };
-  assert.equal(tidFor('briefgranskning', 'carashell/takskyddet', platser), '07:25');
   const t = tiderFor('carashell', { platser, datum: SOMMAR, annonsmarknader: ['NO'], spegling: false });
-  const g = t.find((x) => x.kommando === '/briefgranskning carashell');
-  assert.ok(g, 'rutinen finns för varje butik');
-  assert.equal(g.tid, '07:25');
-  assert.equal(g.dagar, '1,4');
-  assert.equal(g.cron, '25 5 * * 1,4');
-  assert.equal(g.cronVinter, '25 6 * * 1,4');
-  assert.ok(t.filter((x) => x.kommando !== '/briefgranskning carashell').every((x) => x.dagar === '*'), 'de andra går varje dag');
+  assert.ok(!t.some((x) => /briefgranskning/.test(x.kommando)), 'ingen butik får en briefgranskning');
+  assert.ok(t.every((x) => x.dagar === '*'), 'butiksrutinerna går varje dag');
   const katalog = fixturkatalog();
   writeFileSync(join(katalog, 'briefgranskning.md'), '# /briefgranskning\nCONNECTORS: inga\nNOTION_TOKEN DISCORD_BOT_TOKEN.\n');
-  const f = byggForslag({ kommando: '/briefgranskning carashell/takskyddet', tid: '07:25', butik: 'carashell/takskyddet', gren: 'main', datum: SOMMAR, katalog });
-  assert.equal(f.rutinnamn, 'Briefgranskningen: carashell/takskyddet');
-  assert.equal(f.sessionstitel, 'Rutin: Briefgranskningen carashell/takskyddet');
-  assert.equal(f.cron, '25 5 * * 1,4', 'veckodagarna kommer ur BUTIKSRUTINER utan --dagar');
-  assert.deepEqual(f.taggar, ['routine:briefgranskning', 'butik:carashell/takskyddet']);
-  assert.equal(f.steg[1].argument.cron_expression, '25 5 * * 1,4');
-  // Nattvakten för samma butik är ingen dubblett av granskningen.
+  const f = byggForslag({ kommando: '/briefgranskning', tid: '07:00', dagar: '1,4', gren: 'main', datum: SOMMAR, katalog });
+  assert.equal(f.rutinnamn, 'briefgranskning');
+  assert.equal(f.cron, '0 5 * * 1,4', 'måndag + torsdag 07:00 CEST');
+  assert.equal(f.cronVinter, '0 6 * * 1,4');
+  assert.deepEqual(f.taggar, ['routine:briefgranskning']);
+  assert.equal(f.steg[0].argument.outcome_branch, 'main');
+  assert.equal(f.steg[1].argument.cron_expression, '0 5 * * 1,4');
+  assert.ok(f.kontroll.varningar.some((v) => /INGA connectors/.test(v)));
+  // Nattvakten är ingen dubblett av granskningen; en befintlig granskning är det.
   const rutiner = [{ id: 'trig_1', name: 'Nattvakten: carashell/takskyddet', prompt: '/notionscalercs carashell/takskyddet' }];
-  assert.ok(!granska({ kommando: '/briefgranskning carashell/takskyddet', butik: 'carashell/takskyddet', gren: 'main', rutiner, katalog }).hinder.some((h) => /redan/.test(h)));
+  assert.ok(!granska({ kommando: '/briefgranskning', gren: 'main', rutiner, katalog }).hinder.some((h) => /redan/.test(h)));
+  const dubblett = [{ id: 'trig_2', name: 'Briefgranskningen: Bäverbutiken', prompt: '/briefgranskning' }];
+  assert.ok(granska({ kommando: '/briefgranskning', gren: 'main', rutiner: dubblett, katalog }).hinder.some((h) => /redan 1 rutin/.test(h)));
 });

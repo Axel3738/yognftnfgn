@@ -27,7 +27,10 @@ factory/output/*/bild-*/
 factory/output/*/*/bild-*/
 factory/output/*/spegla-*/
 factory/output/*/*/spegla-*/
-# Briefgranskningen: brief-dumparna ur Notion (kopior) — kön (.json) och Discord-jobbet committas
+# Briefgranskningen: brief-dumparna ur Notion (kopior) — kön (ko.json), domarna
+# (.dom.json), resultaten och rapporten committas; dumparna per hub inte
+tools/output/briefgranskning/*/*/
+# (den gamla OPS-varianten, till 2026-09-18)
 factory/output/*/briefgranskning-*/
 factory/output/*/*/briefgranskning-*/
 factory/output/*/spegla-*-torr.*

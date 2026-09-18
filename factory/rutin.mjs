@@ -144,12 +144,11 @@ export const BUTIKSRUTINER = Object.freeze({
   // /oversatt NO (15:00), före US-rutinen. Byggs bara för poster med
   // `spegling` i register.json (kraver).
   'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här → butikens hub för US)', kraver: 'spegling' },
-  // Briefgranskningen (Axels beslut 2026-09-18): dagen efter varje briefrond
-  // (ons + sön natt ⇒ torsdag + måndag) läser en creative director nattens
-  // briefer och skriver feedback.md som Nattvakten läser i steg 0. `dagar` är
-  // cronens veckodagsfält (1 = måndag, 4 = torsdag) — den enda butiksrutin
-  // som inte går varje dag.
-  briefgranskning: { bas: '07:00', steg: 5, dagar: '1,4', vad: 'Briefgranskningen (måndag + torsdag: creative director-granskning av nattens briefrond → feedback.md)' },
+  // ⚠️ Briefgranskningen är INTE en butiksrutin sedan 2026-09-18 (kväll):
+  // OPS-projektet är nedlagt utom CaraShell, och CaraShells briefer skrivs i
+  // Bäverbutikens hubbar. `/briefgranskning` går som EN husrutin för hela
+  // Bäverbutiken (måndag + torsdag 07:00, `--dagar 1,4`) — se lista() nedan.
+  // /notionscalercs setup bygger den inte längre.
 });
 
 /** Kommandot en butiksrutin körs med. */
@@ -432,7 +431,7 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
   const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
-  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen', briefgranskning: 'Briefgranskningen' };
+  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
   const butiksrutin = butik ? RUTINNAMN[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
@@ -502,9 +501,11 @@ function lista() {
   // 15:00) så inte alla containrar startar samtidigt.
   for (const b of butiker) kanda.push([tidFor('ops-leverans', b.replace('.yaml', '')), `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
   for (const b of butiker) kanda.push([tidFor('ops-oversatt', b.replace('.yaml', '')), `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
-  for (const b of butiker) kanda.push([tidFor('briefgranskning', b.replace('.yaml', '')), `/briefgranskning ${b.replace('.yaml', '')}`, BUTIKSRUTINER.briefgranskning.vad, BUTIKSRUTINER.briefgranskning.dagar]);
-
-  // Veckorutinen: bara måndagar (dagar '1'). Cronen byter halvår som de andra.
+  // Veckorutinerna. Cronen byter halvår som de andra.
+  // Briefgranskningen (Axels beslut 2026-09-18, ombyggd samma kväll till EN rutin
+  // för hela Bäverbutiken): måndag + torsdag (dagar '1,4'), alla hubbar i ett svep.
+  kanda.push(['07:00', '/briefgranskning', 'Briefgranskningen (MÅNDAG + TORSDAG): creative director-dom över senaste briefronden i varje Bäver-hub → Feedback-rad i hubben', '1,4']);
+  // Kundtjänsten: bara måndagar (dagar '1').
   kanda.push(['07:00', '/kundtjanst --alla --discord', 'Kundtjänst veckorapport (MÅNDAGAR): toppärenden + chargeback-ranking, alla brands', '1']);
 
   for (const [tid, kmd, vad, dagar = '*'] of kanda) {
