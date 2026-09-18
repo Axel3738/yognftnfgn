@@ -544,3 +544,14 @@ i Metas anropstak.
 - SE-kampanjen är PAUSED för hand sedan 11:29 CEST (se leveransrundan samma dag) — nya rader
   når inte den här kön förrän den är ACTIVE igen. NO-kampanjen rörs inte av det.
 - Discord `#annons-uppladdning`, ingen ping. Batch: `market-expansion/ops/carashell/2026-09-18-no-termoskyddet/`.
+
+## 2026-09-18 — `/ops-spegla carashell/termoskyddet` — tom kö, körd för hand
+
+- Källhub `BÄVER Termoskyddet för Husbil` (`c5a270ab-…`): 0 rader i `CaraShell SE ready to be active`,
+  0 i `CaraShell EN ready to be active`, 0 i `Translation in review`, 0 i `Approved`
+  (efterjusteringen `--fran` gav också noll). Båda statusstegen finns i hubben. Inget speglat,
+  ingen Notion-rad rörd, inget uppladdat, ingen Discord-ping (tom kö).
+- SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` fortfarande PAUSED med 2 043 kr spend
+  (pausad för hand 11:29 CEST, se leveransrundan ovan) — speglingen skulle ha vägrat SE ändå.
+  NO-kampanjen ACTIVE, 4 adsets. Pris SE 559 SEK / NO 548 NOK ur butiken.
+- Speglingen har ingen schemalagd rutin ännu (CLAUDE.md 2026-09-18) — den här körningen var manuell.
