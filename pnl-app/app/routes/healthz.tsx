@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "faktiska-avgifter-v93", db });
+  return json({ ok: true, build: "en-ruta-v94", db });
 }

@@ -38,6 +38,7 @@ SIDOR (menyn till vänster):
 - Inställningar/Settings: valuta, språk, betalavgift %, tull per order, Meta-koppling (Logga in med Facebook eller klistra in token), annonskonto, plan.
 
 SÅ FYLLER MAN I COGS (Kostnader-sidan), snabbast först:
+0. RUTAN ÖVERST "Lägg in kostnader": släpp en skärmbild/foto (valfritt) och/eller skriv en mening — "motorhöljet, Norge, 140 kr", "alla varianter 12 usd, 2 st 20 usd", "termoskyddet 350" — och tryck Enter. AI:n förstår produkt, variant, marknad (land), valuta (räknas om med ECB-kurs) och flerpack, och lägger in det direkt. Under rutan står ett kvitto per rad med "Ta bort kostnad". Är produkten oklar lägger den inget in och frågar. Allt nedan ligger under "Fler sätt att lägga in kostnader".
 1. Snabbfältet "Skriv in dina kostnader här": ett fält per produkt, skriv kostnaden (vara + frakt, utan tull), Enter sparar direkt. "Sätt per variant" fäller ut ett fält per variant.
 2. "Låt AI läsa av din gamla app": ta en skärmbild av kostnadstabellen i Juicy (eller annan app/kalkyl), släpp den i kortet, klicka "Läs av och skriv till Shopify". AI:n matchar produkterna; rader som inte matchar listas. Flerpack följer med. Det finns en exempelvideo i kortet.
 3. "Släpp en offert från leverantören": släpp foto/skärmbild av leverantörens offert, klicka "Läs av offerten", välj produkt per rad, klicka "Lägg in". Utländsk valuta räknas om med dagens ECB-kurs.

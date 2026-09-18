@@ -10,6 +10,22 @@ import type { Texts } from "./texts";
 import { fetchVariantCosts, invalidateCatalog, invalidateVariantCosts, setUnitCost } from "./shopify-data.server";
 import { marknadskod } from "./marknad";
 
+/**
+ * Titelmatchning, delad med AI-rutan. Leverantörsofferter skriver "6-18 hk"
+ * där butiken har "6 - 18 hk" eller "6–18 hk" — samma variant, olika streck.
+ * Jämför därför på en städad form. En rad får också träffa via ett enda
+ * alternativ ("6 - 18 hk" träffar "Svart / 6 - 18 hk", "Blå / 6 - 18 hk" …)
+ * så att en storleksprislista inte behöver upprepas per färg.
+ */
+export const normTitel = (s: string) =>
+  s.toLowerCase().replace(/[–—−]/g, "-").replace(/\s*([-/])\s*/g, "$1").replace(/\s+/g, " ").trim();
+export const variantTraffar = (variantTitle: string, wanted: string) => {
+  if (wanted === "" || normTitel(wanted) === "default title") return true;
+  const w = normTitel(wanted);
+  const v = normTitel(variantTitle);
+  return v === w || v.split("/").includes(w);
+};
+
 export interface ImportResult {
   ok: boolean;
   message: string;

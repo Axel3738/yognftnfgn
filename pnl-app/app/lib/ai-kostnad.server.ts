@@ -172,3 +172,96 @@ export function tillCsv(svar: AiKostnadSvar): string {
     })
     .join("\n");
 }
+
+/* ------------------------------------------------------------------------ */
+/* En ruta för allt                                                          */
+/* ------------------------------------------------------------------------ */
+
+/**
+ * Axels ask 2026-09-18: *"en liten AI-chattruta. Där klistrar man in
+ * screenshoten, och så kan man bara beskriva lite om vilken produkt det är
+ * och för vilken marknad. Sen trycker man enter … och så lägger den bara in."*
+ *
+ * Modellen får allt den behöver för att förstå en tioårings mening: butikens
+ * exakta titlar, de marknader butiken har, butikens valuta och den valuta
+ * handlaren brukar skriva i. Den svarar med färdiga rader som actionen
+ * skriver rakt in — produkt, variant, marknad, belopp, valuta, flerpack.
+ * Är något oklart ställer den EN fråga i `question` i stället för att gissa.
+ */
+const InmatningsRad = z.object({
+  product: z.string().describe("Exakt produkttitel ur butikens lista (identisk stavning)"),
+  variant: z.string().describe("Exakt varianttitel ur listan, eller tom sträng = alla varianter i produkten"),
+  market: z.string().describe("Landskod (SE, NO, US …) ur marknadslistan om handlaren nämner ett land/en marknad, annars tom sträng = standard för alla marknader"),
+  unit_cost: z.number().describe("Kostnad för 1 st (vara + frakt, utan tull) i `currency`"),
+  currency: z.string().describe("Valutakod (SEK, USD, CNY …) som syns eller sägs. Syns ingen: använd handlarens standardvaluta som angavs"),
+  tiers: z
+    .array(z.object({ units: z.number(), total: z.number() }))
+    .describe("Flerpack: antal och TOTALpris för packet, t.ex. {units:2,total:15} = 15 för två. Tom lista om bara styckpris"),
+  source_label: z.string().describe("Hur raden hette i källan, för kvittot"),
+});
+const InmatningsSvar = z.object({
+  rows: z.array(InmatningsRad),
+  unmatched: z.array(z.string()).describe("Rader i källan som inte gick att koppla till någon produkt i butiken"),
+  question: z.string().describe("EN kort fråga till handlaren om något måste avgöras innan raderna kan skrivas (t.ex. vilken produkt). Tom sträng om allt är klart"),
+  notes: z.string().describe("Kort anmärkning om antaganden, max två meningar. Tom sträng om inga"),
+});
+export type AiInmatningSvar = z.infer<typeof InmatningsSvar>;
+
+export async function tolkaInmatningMedAi(input: {
+  bilder: Bild[];
+  text: string;
+  produkter: { productTitle: string; variantTitle: string; price: number }[];
+  marknader: { kod: string; namn: string }[];
+  currency: string;
+  costCurrency: string;
+  lang: "en" | "sv";
+}): Promise<AiInmatningSvar> {
+  const client = new Anthropic();
+  const katalog = input.produkter
+    .map((p) => `${p.productTitle} | ${p.variantTitle === "Default Title" ? "" : p.variantTitle} | ${p.price}`)
+    .join("\n");
+  const marknader = input.marknader.length
+    ? input.marknader.map((m) => `${m.kod} = ${m.namn}`).join(", ")
+    : "(inga kända ännu — landskoder som SE, NO, US, GB, DK, DE, AU, CA, NZ är ändå giltiga om handlaren nämner ett land)";
+
+  const content: Anthropic.ContentBlockParam[] = [
+    ...input.bilder.map((b): Anthropic.ImageBlockParam => ({
+      type: "image",
+      source: { type: "base64", media_type: b.mediaType, data: b.base64 },
+    })),
+    {
+      type: "text",
+      text:
+        `Butikens produkter (produkttitel | varianttitel | pris i ${input.currency}), en per rad:\n${katalog}\n\n` +
+        `Butikens marknader (landskod = land): ${marknader}\n` +
+        `Butikens valuta: ${input.currency}. Handlarens vanliga valuta för inköpspriser: ${input.costCurrency}.\n\n` +
+        (input.text.trim() ? `Handlaren skrev:\n${input.text.trim()}\n\n` : "") +
+        "Uppgift: översätt bilden/texten till rader som ska SKRIVAS som inköpskostnad. " +
+        "Handlaren kan ha släppt en skärmbild av en kostnadstabell (t.ex. från appen Juicy), ett foto av en leverantörsoffert, " +
+        "eller bara skrivit en mening som 'motorhöljet, Norge, 140 kr' eller 'alla varianter 12 usd, 2 st 20 usd'. " +
+        "Regler: (1) product och variant måste vara identiska med listan; nämns ingen variant gäller alla (tom variant). " +
+        "(2) market sätts BARA om handlaren nämner ett land eller en marknad (i text eller bild); annars tom sträng. " +
+        "(3) currency: det som står eller sägs; står inget alls använd handlarens vanliga valuta. Räkna aldrig om. " +
+        "(4) Flerpack: 'X st för Y' är tiers [{units:X,total:Y}] — totalpriset, inte styckpriset. " +
+        "(5) Är produkten omöjlig att avgöra (t.ex. bara ett pris utan namn och flera produkter i butiken): skriv INGA rader, ställ en fråga i question. " +
+        "Är det bara en produkt i butiken, eller en uppenbar match, skriv raden. " +
+        `(6) Skriv question och notes på ${input.lang === "sv" ? "svenska" : "engelska"}, kort.`,
+    },
+  ];
+
+  const res = await client.messages.parse({
+    model: "claude-opus-5",
+    max_tokens: 16000,
+    system:
+      "Du översätter en handlares skärmbilder och vardagsmeningar till inköpskostnader för en Shopify-vinstapp. " +
+      "Du hittar aldrig på tal: ett belopp som inte står eller sägs skrivs inte. Du gissar aldrig produkt när det är oklart — då frågar du. " +
+      "Svara bara med det begärda formatet.",
+    messages: [{ role: "user", content }],
+    output_config: { format: zodOutputFormat(InmatningsSvar) },
+  });
+
+  if (!res.parsed_output) {
+    throw new Error(res.stop_reason === "refusal" ? "Modellen avböjde att läsa bilden." : "Kunde inte tolka svaret från modellen.");
+  }
+  return res.parsed_output;
+}

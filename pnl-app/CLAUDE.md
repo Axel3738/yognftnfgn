@@ -397,6 +397,34 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### En ruta för allt på Kostnader (2026-09-18, build en-ruta-v94)
+
+Axel, argt och rätt: *"det fortsätter att se ut som ett jetflygplan när man
+ska lägga in koden … jag vill bara att en tioåring ska kunna göra det … det
+bästa hade nästan varit en liten AI-chattruta: klistra in screenshoten,
+beskriv produkt och marknad, tryck enter, så lägger den in."*
+
+**Byggt exakt så.** Kostnader-sidan har nu EN ruta överst, "Lägg in
+kostnader": DropZone (valfri) + ett textfält + Enter. `tolkaInmatningMedAi`
+(`lib/ai-kostnad.server.ts`) får katalogen, marknaderna (kod = namn),
+butikens valuta och handlarens kostnadsvaluta, och svarar med färdiga rader
+{product, variant, market, unit_cost, currency, tiers}. Actionen `smart`
+matchar titlarna (`normTitel`/`variantTraffar`, nu exporterade ur
+`cost-import.server.ts`), räknar om valutan med `fx.rate()` och SKRIVER
+direkt: marknad → `skrivMarknadskostnad`; standard → `setUnitCost` +
+standardsteg. Kvittot listar varje rad ("✓ Motorhölje — Norge — 140 SEK
+(12,9 USD) · 2 st …") med "Ta bort kostnad" som ångrar raden. Är produkten
+oklar skriver AI:n inget och `question` visas som banner.
+**Allt annat** (marknadsväljaren, Juicy-kortet, AI-läs-gamla-appen,
+offertkortet, uppskattningen, snabbfältet, filimporten) ligger under
+"Fler sätt att lägga in kostnader", stängt som standard (öppet när
+`ANTHROPIC_API_KEY` saknas — då finns ingen ruta). Tabellen längst ner är
+kvar. Chattens `HJALP` har rutan som punkt 0.
+
+⚠ AI:n skriver utan bekräftelse — det var asken. Kvittots "Ta bort" är
+ångra-knappen. Oprövat i drift: kontrollera att `/healthz` svarar
+`en-ruta-v94` och prova rutan med en mening på en testprodukt.
+
 ### Valuta på kostnader, break-even på flerpacksmixen, avgifter per marknad (2026-09-18, build valuta-breakeven-v92)
 
 Axels ask, i två röstmeddelanden: *"automatisk valutaväxling"*, *"automatisk

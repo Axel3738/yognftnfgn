@@ -33,8 +33,8 @@ import {
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
-import { importCostCsv } from "../lib/cost-import.server";
-import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, type Bild } from "../lib/ai-kostnad.server";
+import { importCostCsv, normTitel, variantTraffar } from "../lib/cost-import.server";
+import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
 import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
 import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
@@ -381,6 +381,118 @@ export async function action({ request }: ActionFunctionArgs) {
   const settings = await prisma.shopSettings.findUnique({ where: { shop: session.shop } });
   const T = t(asLang(settings?.language));
 
+  /* EN RUTA FÖR ALLT. Släpp en bild och/eller skriv en mening — "motorhöljet,
+     Norge, 140 kr", "alla varianter 12 usd, 2 st 20 usd" — så tolkar AI:n
+     produkt, variant, marknad, valuta och flerpack och raderna skrivs direkt.
+     Kvittot listar exakt vad som skrevs, med "Ta bort" per rad. Är produkten
+     oklar skriver AI:n inget och ställer en fråga i stället. */
+  if (intent === "smart") {
+    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    let bilder: Bild[] = [];
+    try {
+      bilder = JSON.parse(String(form.get("bilder") ?? "[]"));
+    } catch {
+      bilder = [];
+    }
+    const text = String(form.get("text") ?? "");
+    if (!bilder.length && !text.trim()) return json({ ok: false, message: T.costs.smart.empty }, { status: 400 });
+    try {
+      const lang = asLang(settings?.language);
+      const [katalog, marknader] = await Promise.all([
+        loadCatalog(admin, session.shop, prisma),
+        kandaMarknader(session.shop, hemlandAv(settings?.currency)),
+      ]);
+      const costCurrency = (settings?.costCurrency ?? butiksValuta).toUpperCase();
+      const svar = await tolkaInmatningMedAi({
+        bilder: bilder.slice(0, 6),
+        text,
+        produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle, price: v.price })),
+        marknader: marknader.map((m) => ({ kod: m, namn: marknadsnamn(m, lang, m) })),
+        currency: butiksValuta,
+        costCurrency,
+        lang,
+      });
+
+      type Kvitto = {
+        label: string; product: string; variant: string; market: string;
+        cost: number; original: string; tiers: { units: number; total: number }[]; targets: string;
+      };
+      const applied: Kvitto[] = [];
+      const skipped: string[] = [...svar.unmatched];
+      let rord = false;
+      for (const r of svar.rows) {
+        const label = r.source_label || `${r.product}${r.variant ? ` · ${r.variant}` : ""}`;
+        const mal = katalog.all.filter(
+          (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
+        );
+        if (!mal.length || !Number.isFinite(r.unit_cost) || r.unit_cost < 0) {
+          skipped.push(label);
+          continue;
+        }
+        const valuta = (r.currency || costCurrency).trim().toUpperCase() || butiksValuta;
+        const k = valuta === butiksValuta ? 1 : await fxRate(valuta, butiksValuta);
+        if (k == null) {
+          skipped.push(`${label} (${T.costs.currency.noRate(valuta)})`);
+          continue;
+        }
+        const rund = (n: number) => Math.round(n * k * 100) / 100;
+        const cost = rund(r.unit_cost);
+        const perAntal = new Map<number, number>();
+        for (const t of r.tiers ?? []) {
+          const u = Math.round(Number(t.units));
+          if (u >= 2 && Number.isFinite(t.total) && t.total > 0) perAntal.set(u, rund(t.total));
+        }
+        const tiers = [...perAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, total]) => ({ units, total }));
+        const m = marknadskod(r.market);
+        if (m) {
+          await skrivMarknadskostnad(
+            session.shop, m, mal, cost,
+            tiers.length ? tiers.map((t) => ({ units: t.units, totalCost: t.total })) : null,
+            `${m}: ${cost.toFixed(2)} (${r.unit_cost} ${valuta})`,
+          );
+        } else {
+          for (const v of mal) {
+            const res = await setUnitCost(admin, v.inventoryItemGid, cost);
+            if (!res.ok) skipped.push(`${v.productTitle} · ${v.variantTitle}: ${res.error}`);
+          }
+          if (tiers.length) {
+            for (const v of mal) {
+              await prisma.$transaction([
+                prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid: v.variantGid, market: "" } }),
+                prisma.costTier.createMany({
+                  data: tiers.map((t) => ({ shop: session.shop, variantGid: v.variantGid, units: t.units, totalCost: t.total, market: "" })),
+                }),
+              ]);
+            }
+          }
+          rord = true;
+        }
+        applied.push({
+          label,
+          product: mal[0].productTitle,
+          variant: r.variant && mal.length === 1 ? mal[0].variantTitle : "",
+          market: m,
+          cost,
+          original: valuta === butiksValuta ? "" : `${r.unit_cost} ${valuta}`,
+          tiers,
+          targets: mal.map((v) => v.inventoryItemGid).join(","),
+        });
+      }
+      if (rord) {
+        invalidateVariantCosts(session.shop);
+        await invalidateCatalog(session.shop, prisma);
+      }
+      return json({
+        ok: true,
+        message: applied.length ? T.costs.smart.done(applied.length) : svar.question ? "" : T.costs.smart.nothing,
+        smart: { applied, skipped, question: svar.question, notes: svar.notes },
+      });
+    } catch (e) {
+      console.error("AI-inmatning misslyckades:", e);
+      return json({ ok: false, message: T.costs.smart.failed((e as Error).message) }, { status: 500 });
+    }
+  }
+
   /* Leverantörsoffert: AI plockar ut raderna, kursen räknas här, handlaren
      väljer produkt i UI:t. Inget skrivs till Shopify i det här steget. */
   if (intent === "quote-read") {
@@ -544,6 +656,34 @@ export default function Costs() {
     : ["USD", "EUR", "CNY", "GBP", currency];
 
   const [visaImport, setVisaImport] = useState(false);
+  /* Allt utom AI-rutan och tabellen ligger under "Fler sätt" — sidan ska se
+     ut som en ruta, inte en cockpit. */
+  const [visaFler, setVisaFler] = useState(!aiEnabled);
+  const smartFetcher = useFetcher<typeof action>();
+  const [smartBilder, setSmartBilder] = useState<{ name: string; mediaType: string; base64: string }[]>([]);
+  const [smartText, setSmartText] = useState("");
+  type SmartKvitto = {
+    label: string; product: string; variant: string; market: string;
+    cost: number; original: string; tiers: { units: number; total: number }[]; targets: string;
+  };
+  const smartData = smartFetcher.data as unknown as
+    | { ok: boolean; message: string; smart?: { applied: SmartKvitto[]; skipped: string[]; question: string; notes: string } }
+    | undefined;
+  const korSmart = () => {
+    if (!smartBilder.length && !smartText.trim()) return;
+    smartFetcher.submit(
+      { intent: "smart", bilder: JSON.stringify(smartBilder.map(({ mediaType, base64 }) => ({ mediaType, base64 }))), text: smartText },
+      { method: "POST" },
+    );
+  };
+  /* Efter en lyckad inmatning töms rutan — kvittot står kvar under. */
+  useEffect(() => {
+    if (smartFetcher.state === "idle" && smartData?.ok && smartData.smart?.applied.length) {
+      setSmartBilder([]);
+      setSmartText("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [smartFetcher.state]);
   const [visaVideo, setVisaVideo] = useState(false);
   /* Bilder → base64 i webbläsaren. Delas av AI-kortet och offertkortet. */
   const lasBilder = (setter: typeof setAiBilder) => (_all: File[], accepted: File[]) => {
@@ -670,6 +810,100 @@ export default function Costs() {
       <Layout>
         <Layout.Section>
           <BlockStack gap="400">
+            {/* EN RUTA. Släpp en bild, skriv en mening, Enter. AI:n förstår
+                produkt, variant, marknad, valuta och flerpack och skriver in
+                det. Allt annat på sidan är reservvägar under "Fler sätt". */}
+            {aiEnabled ? (
+              <Card>
+                <BlockStack gap="300">
+                  <Text as="h2" variant="headingLg">{T.costs.smart.title}</Text>
+                  <Text as="p" tone="subdued">{T.costs.smart.body}</Text>
+                  <DropZone
+                    accept="image/png,image/jpeg,image/webp,image/gif"
+                    type="image"
+                    allowMultiple
+                    onDrop={lasBilder(setSmartBilder)}
+                  >
+                    {smartBilder.length ? (
+                      <div style={{ padding: 16 }}>
+                        <InlineStack gap="200" blockAlign="center">
+                          <Text as="p" fontWeight="semibold">{smartBilder.map((b) => b.name).join(", ")}</Text>
+                          <Button variant="plain" onClick={() => setSmartBilder([])}>×</Button>
+                        </InlineStack>
+                      </div>
+                    ) : (
+                      <DropZone.FileUpload actionTitle={T.costs.smart.drop} actionHint={T.costs.smart.dropHint} />
+                    )}
+                  </DropZone>
+                  <div
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        korSmart();
+                      }
+                    }}
+                  >
+                    <TextField
+                      label={T.costs.smart.textLabel}
+                      labelHidden
+                      value={smartText}
+                      onChange={setSmartText}
+                      autoComplete="off"
+                      placeholder={T.costs.smart.placeholder}
+                      multiline={2}
+                    />
+                  </div>
+                  <InlineStack gap="300" blockAlign="center" wrap>
+                    <Button
+                      variant="primary"
+                      size="large"
+                      disabled={!smartBilder.length && !smartText.trim()}
+                      loading={smartFetcher.state !== "idle"}
+                      onClick={korSmart}
+                    >
+                      {smartFetcher.state !== "idle" ? T.costs.smart.running : T.costs.smart.run}
+                    </Button>
+                    <Text as="span" variant="bodySm" tone="subdued">{T.costs.smart.enterHint}</Text>
+                  </InlineStack>
+
+                  {smartData && smartFetcher.state === "idle" ? (
+                    <BlockStack gap="200">
+                      {!smartData.ok ? <Banner tone="critical">{smartData.message}</Banner> : null}
+                      {smartData.smart?.question ? <Banner tone="warning">{smartData.smart.question}</Banner> : null}
+                      {smartData.ok && smartData.message ? (
+                        <Banner tone={smartData.smart?.applied.length ? "success" : "warning"}>{smartData.message}</Banner>
+                      ) : null}
+                      {smartData.smart?.applied.map((k, i) => (
+                        <SmartKvittoRad key={`${k.targets}|${k.market}|${i}`} k={k} T={T} nf={nf} currency={currency} lang={lang} />
+                      ))}
+                      {smartData.smart?.skipped.length ? (
+                        <Banner tone="warning" title={T.costs.smart.skippedTitle}>
+                          <ul style={{ margin: 0, paddingLeft: 18 }}>
+                            {smartData.smart.skipped.slice(0, 20).map((u, i) => <li key={`${u}${i}`}>{u}</li>)}
+                          </ul>
+                        </Banner>
+                      ) : null}
+                      {smartData.smart?.notes ? <Text as="p" variant="bodySm" tone="subdued">{smartData.smart.notes}</Text> : null}
+                    </BlockStack>
+                  ) : null}
+                </BlockStack>
+              </Card>
+            ) : null}
+
+            {missing > 0 ? (
+              <Banner tone="warning" title={T.costs.missingBannerTitle(missing)}>
+                {T.costs.missingBannerBody}
+              </Banner>
+            ) : (
+              <Banner tone="success">{T.costs.allHaveCost}</Banner>
+            )}
+
+            <Button variant="plain" disclosure={visaFler ? "up" : "down"} onClick={() => setVisaFler((v) => !v)}>
+              {visaFler ? T.costs.smart.hideMore : T.costs.smart.more}
+            </Button>
+
+            {visaFler ? (
+            <>
             {/* Marknad: samma produkt kostar olika att få till Sverige, Norge
                 och USA. Väljaren styr vad tabellen visar och vart varje
                 skrivning på sidan går. */}
@@ -748,14 +982,6 @@ export default function Costs() {
                 </BlockStack>
               </Card>
             ) : null}
-            {missing > 0 ? (
-              <Banner tone="warning" title={T.costs.missingBannerTitle(missing)}>
-                {T.costs.missingBannerBody}
-              </Banner>
-            ) : (
-              <Banner tone="success">{T.costs.allHaveCost}</Banner>
-            )}
-
             {/* AI läser av skärmbild av Juicy (eller vad som helst). */}
             {aiEnabled ? (
               <Card>
@@ -1079,6 +1305,8 @@ export default function Costs() {
               </BlockStack>
             </Card>
             ) : null}
+            </>
+            ) : null}
           </BlockStack>
         </Layout.Section>
 
@@ -1181,6 +1409,48 @@ export default function Costs() {
         </Layout.Section>
       </Layout>
     </Page>
+  );
+}
+
+/**
+ * En rad i kvittot från AI-rutan: vad som skrevs, var, och "Ta bort" som
+ * ångrar just den raden (samma väg som Ta bort kostnad).
+ */
+function SmartKvittoRad({
+  k, T, nf, currency, lang,
+}: {
+  k: { label: string; product: string; variant: string; market: string; cost: number; original: string; tiers: { units: number; total: number }[]; targets: string };
+  T: ReturnType<typeof t>;
+  nf: Intl.NumberFormat;
+  currency: string;
+  lang: "en" | "sv";
+}) {
+  const fetcher = useFetcher<typeof action>();
+  const borttagen = fetcher.state === "idle" && (fetcher.data as { ok?: boolean } | undefined)?.ok;
+  const var_ = k.variant && k.variant !== "Default Title" ? ` · ${k.variant}` : "";
+  const marknad = k.market ? marknadsnamn(k.market, lang, k.market) : T.costs.market.standardShort;
+  const steg = k.tiers.length
+    ? " · " + k.tiers.map((s) => T.costs.bundle.line(s.units, `${nf.format(s.total)} ${currency}`, `${nf.format(s.total / s.units)} ${currency}`)).join(" · ")
+    : "";
+  return (
+    <InlineStack gap="300" blockAlign="center" wrap>
+      <Text as="span" tone={borttagen ? "subdued" : undefined}>
+        {borttagen ? "✕ " : "✓ "}
+        <Text as="span" fontWeight="semibold">{k.product}{var_}</Text>
+        {` — ${marknad} — ${nf.format(k.cost)} ${currency}${k.original ? ` (${k.original})` : ""}${steg}`}
+      </Text>
+      {!borttagen ? (
+        <Button
+          variant="plain"
+          tone="critical"
+          size="slim"
+          loading={fetcher.state !== "idle"}
+          onClick={() => fetcher.submit({ intent: "remove-cost", targets: k.targets, market: k.market }, { method: "POST" })}
+        >
+          {T.costs.quick.remove}
+        </Button>
+      ) : null}
+    </InlineStack>
   );
 }
 

@@ -210,6 +210,24 @@ const en = {
   },
 
   costs: {
+    smart: {
+      title: "Add costs",
+      body: "Drop a screenshot or a photo of your supplier's quote, or just write it — \"engine cover, Norway, 140 kr\" or \"all variants 12 usd, 2 pcs 20 usd\". Press Enter. That's it.",
+      drop: "Drop a picture here",
+      dropHint: "Screenshot, photo or PDF page — optional",
+      textLabel: "What to add",
+      placeholder: "e.g. \"Motor cover, Norway, 140 kr\" or \"all variants 12 usd, 2 pcs 20 usd\"",
+      run: "Add",
+      running: "Reading…",
+      enterHint: "Enter adds it. Shift+Enter for a new line.",
+      empty: "Drop a picture or write something first.",
+      done: (n: number) => (n === 1 ? "Added 1 cost." : `Added ${n} costs.`),
+      nothing: "Nothing was added — I couldn't tell which product it was. Write the product name and try again.",
+      failed: (e: string) => `Could not read it: ${e}`,
+      skippedTitle: "Couldn't match these",
+      more: "More ways to add costs",
+      hideMore: "Hide the other ways",
+    },
     currency: {
       label: "Costs are in",
       shop: "store currency",
@@ -1006,6 +1024,24 @@ const sv: Texts = {
   },
 
   costs: {
+    smart: {
+      title: "Lägg in kostnader",
+      body: "Släpp en skärmbild eller ett foto av leverantörens offert, eller skriv bara — ”motorhöljet, Norge, 140 kr” eller ”alla varianter 12 usd, 2 st 20 usd”. Tryck Enter. Klart.",
+      drop: "Släpp en bild här",
+      dropHint: "Skärmbild, foto eller PDF-sida — valfritt",
+      textLabel: "Vad ska läggas in",
+      placeholder: "t.ex. ”Motorhöljet, Norge, 140 kr” eller ”alla varianter 12 usd, 2 st 20 usd”",
+      run: "Lägg in",
+      running: "Läser…",
+      enterHint: "Enter lägger in. Shift+Enter för ny rad.",
+      empty: "Släpp en bild eller skriv något först.",
+      done: (n: number) => (n === 1 ? "1 kostnad inlagd." : `${n} kostnader inlagda.`),
+      nothing: "Inget lades in — jag kunde inte se vilken produkt det gällde. Skriv produktens namn och försök igen.",
+      failed: (e: string) => `Kunde inte läsa det: ${e}`,
+      skippedTitle: "De här gick inte att koppla",
+      more: "Fler sätt att lägga in kostnader",
+      hideMore: "Dölj de andra sätten",
+    },
     currency: {
       label: "Kostnaderna är i",
       shop: "butikens valuta",
