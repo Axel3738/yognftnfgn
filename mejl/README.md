@@ -363,6 +363,15 @@ batchens fönster stängt.
 
 ## Hela kedjan som testmejl
 
+⚠️ **Knappen "Följ din order" ger 404 i testmejl** ("The checkout page
+you're looking for does not exist", Axel 2026-09-18). Den går till
+`{{ order_status_url }}`, Shopifys egen orderstatussida — samma länk som
+Shopifys standardmall använder. Testmejlets order är påhittad och har ingen
+kassa, därför finns sidan inte. För riktiga ordrar finns den (tre färska
+ordrar har `statusPageUrl` via API 2026-09-18; sidan går inte att hämta från
+containern, Shopify svarar 400/406/429 på allt som inte är en riktig
+webbläsare). Verifiera i admin: öppna en order → "Visa orderstatussida".
+
 `mejl/COWORK-TESTMEJL.md` är prompten som får Cowork att skicka testmejl på
 alla sju mallarna i kundens ordning (Axels önskan 2026-09-18: se allt på
 telefonen). Sökord i Gmail som hittar alla: `kundsupport@baverbutiken.se`
