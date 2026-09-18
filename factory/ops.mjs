@@ -92,6 +92,7 @@ import { sakerstallBonus } from './bonus.mjs';
 import { byggPaketplan, byggPaket, paketRader } from './paket.mjs';
 import { sakerstallMarknader, oversattAllt, hamtaLage, kontrolleraPrimarmarknad } from './marknad.mjs';
 import { byggPrislistplan, sakerstallPrislistor } from './prislista.mjs';
+import { lokalValuta } from './lander.mjs';
 import { byggUnderlag, lasOversattning } from './oversattning.mjs';
 import { granska as granskaOversattning } from './oversattning-granska.mjs';
 import { hamtaStartsida, hamtaProduktsida, landPerLocale } from './kundvy-kor.mjs';
@@ -963,7 +964,7 @@ export const STEG = [
       if (rader.length === 0) return ['❌ butik.marknader är tom — steget stoppar (SE + NO är standard i varje OPS)'];
       return rader.map((m) => {
         const extra = lista(m.lander).length > 0 ? ` + länderna ${lista(m.lander).join(', ')} i SAMMA marknad${m.lokala_valutor === true ? ' med lokala valutor' : ''}` : '';
-        return `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence (valuta ${m.valuta ?? '?'} — lokal valuta slås på i admin)${extra}`;
+        return `${m.land}: marknad ${m.land}, locale ${m.locale} publicerad, alternateLocale på webPresence + basvalutan ${lokalValuta(m.land) ?? '?'} satt via API${extra}`;
       });
     },
     async kor(ctx) {
@@ -1040,7 +1041,6 @@ export const STEG = [
       return [
         ...plan.rader.map((r) => `${r.valuta} (${r.land}): pris ${r.pris}${r.jamforpris ? `, jämförpris ${r.jamforpris}` : ''} — prislista "${r.namn}" + katalog kopplad till marknaden + fast pris per variant`),
         ...plan.fel.map((f) => `🖐 ${f}`),
-        '🖐 kräver att valutan är marknadens basvaluta i admin (Inställningar → Marknader → marknaden → valuta) — API:t kan inte slå på den',
       ];
     },
     async kor(ctx, pk) {

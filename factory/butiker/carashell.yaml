@@ -68,6 +68,17 @@ butik:
         - AU
         - NZ
       lokala_valutor: true
+    # Finland sedan 2026-09-18 (/ny-marknad carashell FI). INGEN egen domän:
+    # Axels beslut samma dag — "vi kan köra samma kassa i Finland". Finskan
+    # ligger på carashell.se/fi precis som norskan på /nb; en .fi-domän kan
+    # kopplas senare utan att något byggs om. Priserna är Axels finska
+    # prislista, EUR per storlek (takskyddet) — inte en kursomräkning.
+    # i_fraktraden: false ⇒ de svenska och norska texterna rörs INTE; den
+    # finska filen säger själv "Ilmainen toimitus Suomeen".
+    - land: FI
+      locale: fi
+      valuta: EUR
+      i_fraktraden: false
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika

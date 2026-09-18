@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "datum": "2026-09-18",
+  "lage": "granskning",
+  "gjort": [
+    "Reviewed 7 briefs from the 2026-09-16 round (batch #3): 0 clean, 2 with notes, 5 with errors",
+    "CaraShellRoof_PD_6_1: the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Here the domain is the bottom line ON THE IMAGE (`carashell.se · Fri frakt · 14 dagars ångerrätt`), so the image itself cannot be mirrored; next version: `Fri frakt · 14 dagars ångerrätt` — comment on the Notion row",
+    "CaraShellRoof_PD_7_1: the ad text names the store (CaraShell) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `CaraShell täcker bara taket` — write `Taköverdraget täcker bara taket` — comment on the Notion row",
+    "CaraShellRoof_SP_5_1: the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `ett av 16 omdömen på carashell.se` — drop `på carashell.se` — comment on the Notion row",
+    "CaraShellRoof_SP_6_1: the ad text names the store (carashell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text and headline lead with `16 omdömen på carashell.se` — write `16 omdömen. Snitt 5,00 av 5.` — comment on the Notion row",
+    "CaraShellRoof_SP_7_1: the ad text names the store (carashell, CaraShell, carashell.se) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores). Primary text: `på carashell.se` and `CaraShell täcker 6,5 × 3 m` — write `Taköverdraget täcker 6,5 × 3 m` — comment on the Notion row",
+    "3 rules for the next round written to products/carashell/takskyddet/feedback.md: (1) Never put the store name or the domain in the primary text, headline, description or on the image: write `ett av 16 omdömen` without `på carashell.se`, never use `CaraShell` as the subject of a sentence, and add the hard rule 'the ad never names the store' to every brief (2) In a paired test (A against B) the Exact text table, the bottom line and the layout must be identical except for the one variable — if a support line exists in A it exists in B, word for word (3) Never brief a ★ glyph outside a quote card (write the rating in words, `5,0 av 5 i snitt`), and never add a price line to a variant whose parent carries no price on the image — that is a second variable"
+  ],
+  "varningar": [
+    "CaraShellRoof_CS_5_1: hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18) · the description `Ord. 1 469 kr · Fri frakt · 14 dagars ångerrätt` starts with the compare-at price — lead with 1 129 kr, the number the buyer pays",
+    "CaraShellRoof_CS_6_1: hard rules do not carry \"the ad never names the store\" (rule since 2026-09-18) · the paired test is not held constant: `CS_5_1` has a support line (`6,5 × 3 m · Husvagn & husbil · En person sätter på det`) and the terms line `Fri frakt · 5–10 arbetsdagar · 14 dagars ångerrätt`; this brief has no support line and the terms read `Fri frakt till Sverige och Norge. 14 dagars ångerrätt.` — three differences, not one; the next read cannot attribute the outcome to the framing",
+    "No editor assigned — 5 briefs with errors stay as they are; the night watch reads feedback.md before the next round"
+  ],
+  "action_axel": [],
+  "action_redigerare": [],
+  "hub_url": "https://app.notion.com/p/3da270ab908c80c480d1fbdb3fefd3b4",
+  "nasta_korning": "2026-09-21"
+}

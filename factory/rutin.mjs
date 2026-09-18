@@ -63,6 +63,23 @@ export function arSommartid(datum) {
   return datum >= sistaSondagen(2) && datum < sistaSondagen(9);
 }
 
+/** Cronens veckodagsfält förskjutet `skifte` dagar (−1 = dagen före i UTC).
+ *  '*' och intervall som '1-5' lämnas orörda utan skifte; med skifte skrivs
+ *  intervallet ut som lista. Ren. */
+export function skiftaVeckodagar(dagar, skifte = 0) {
+  const d = String(dagar ?? '*').trim();
+  if (!skifte || d === '*') return d;
+  const lista = [];
+  for (const del of d.split(',')) {
+    const m = del.trim().match(/^(\d)(?:-(\d))?$/);
+    if (!m) throw new Error(`Veckodagsfältet "${dagar}" går inte att förskjuta — skriv dagarna som tal (0–6) eller listor (1,4).`);
+    const fran = Number(m[1]);
+    const till = m[2] !== undefined ? Number(m[2]) : fran;
+    for (let x = fran; x <= till; x++) lista.push(((x + skifte) % 7 + 7) % 7);
+  }
+  return [...new Set(lista)].sort((a, b) => a - b).join(',');
+}
+
 /** Svensk klockslag → cron i UTC. Returnerar BÅDA halvåren, för en cron kan
  *  bara stå för ett av dem — och den som glömmer det får en rutin som går fel
  *  timme halva året. */
@@ -74,11 +91,12 @@ export function tillCron(svenskTid, { dagar = '*', datum = new Date() } = {}) {
 
   const cronFor = (offset) => {
     // Dras timmen under noll hamnar körningen dagen före — det syns i
-    // veckodagsfältet och får aldrig tappas bort tyst.
+    // veckodagsfältet och får aldrig tappas bort tyst. Bär cronen veckodagar
+    // flyttas de med: måndag 00:30 svensk tid är söndag 22:30 UTC.
     const utcTim = tim - offset;
     const dagskifte = utcTim < 0 ? -1 : utcTim > 23 ? 1 : 0;
     return {
-      cron: `${min} ${((utcTim % 24) + 24) % 24} * * ${dagar}`,
+      cron: `${min} ${((utcTim % 24) + 24) % 24} * * ${skiftaVeckodagar(dagar, dagskifte)}`,
       dagskifte,
     };
   };
@@ -126,6 +144,11 @@ export const BUTIKSRUTINER = Object.freeze({
   // /oversatt NO (15:00), före US-rutinen. Byggs bara för poster med
   // `spegling` i register.json (kraver).
   'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här → butikens hub för US)', kraver: 'spegling' },
+  // ⚠️ Briefgranskningen är INTE en butiksrutin sedan 2026-09-18 (kväll):
+  // OPS-projektet är nedlagt utom CaraShell, och CaraShells briefer skrivs i
+  // Bäverbutikens hubbar. `/briefgranskning` går som EN husrutin för hela
+  // Bäverbutiken (måndag + torsdag 07:00, `--dagar 1,4`) — se lista() nedan.
+  // /notionscalercs setup bygger den inte längre.
 });
 
 /** Kommandot en butiksrutin körs med. */
@@ -263,8 +286,9 @@ export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), fl
     .filter((namn) => rutinGaller(BUTIKSRUTINER[namn], { marknader, spegling: harSpegel }))
     .map((namn) => {
       const tid = tidFor(namn, butik, platser, { flerprodukt });
-      const c = tillCron(tid, { datum });
-      return { kommando: butiksrutinKommando(namn, butik), tid, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
+      const dagar = BUTIKSRUTINER[namn].dagar ?? '*';
+      const c = tillCron(tid, { datum, dagar });
+      return { kommando: butiksrutinKommando(namn, butik), tid, dagar, cron: c.cron, cronSommar: c.cronSommar, cronVinter: c.cronVinter, vad: BUTIKSRUTINER[namn].vad, plats: p.plats, ny_plats: p.ny };
     });
 }
 
@@ -395,16 +419,20 @@ export function nycklarFor(namn, { katalog = KOMMANDOKATALOG } = {}) {
 export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner = [], datum = new Date(), katalog = KOMMANDOKATALOG, dagar = '*' }) {
   // `dagar` är cronens veckodagsfält: '*' varje dag, '1' måndagar (kundtjänstens
   // veckorapport), '1-5' vardagar. Utan det hade en veckorutin fått daglig cron.
+  // En butiksrutin som själv bär `dagar` (briefgranskningen: måndag + torsdag)
+  // får dem automatiskt — så setup inte kan glömma flaggan.
+  const namn = kommandonamn(kommando);
+  const egnaDagar = BUTIKSRUTINER[namn]?.dagar;
+  if ((dagar === '*' || dagar == null) && egnaDagar) dagar = egnaDagar;
   const tider = tillCron(tid, { datum, dagar });
   const kontroll = granska({ kommando, butik, gren, rutiner, katalog });
-  const namn = kommandonamn(kommando);
   // Nattvakten heter det den är, per butik — så listan i Routines-vyn går att
   // läsa utan att veta vad "notionscalercs" betyder.
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
   const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
-  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
-  const butiksrutin = butik ? BUTIKSRUTINER[namn] ?? null : null;
+  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
+  const butiksrutin = butik ? RUTINNAMN[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
   const taggar = [`routine:${namn}`, butik ? `butik:${butik}` : null, marknadIKommando ? `marknad:${marknadIKommando}` : null].filter(Boolean);
@@ -473,8 +501,11 @@ function lista() {
   // 15:00) så inte alla containrar startar samtidigt.
   for (const b of butiker) kanda.push([tidFor('ops-leverans', b.replace('.yaml', '')), `/ops-leverans ${b.replace('.yaml', '')}`, 'Leveransrundan OPS (To be Reviewed → live i SE-kampanjen)']);
   for (const b of butiker) kanda.push([tidFor('ops-oversatt', b.replace('.yaml', '')), `/ops-oversatt ${b.replace('.yaml', '')}`, 'Översättning NO OPS (SE-ACTIVE to be translated → live i NO-kampanjen)']);
-
-  // Veckorutinen: bara måndagar (dagar '1'). Cronen byter halvår som de andra.
+  // Veckorutinerna. Cronen byter halvår som de andra.
+  // Briefgranskningen (Axels beslut 2026-09-18, ombyggd samma kväll till EN rutin
+  // för hela Bäverbutiken): måndag + torsdag (dagar '1,4'), alla hubbar i ett svep.
+  kanda.push(['07:00', '/briefgranskning', 'Briefgranskningen (MÅNDAG + TORSDAG): creative director-dom över senaste briefronden i varje Bäver-hub → Feedback-rad i hubben', '1,4']);
+  // Kundtjänsten: bara måndagar (dagar '1').
   kanda.push(['07:00', '/kundtjanst --alla --discord', 'Kundtjänst veckorapport (MÅNDAGAR): toppärenden + chargeback-ranking, alla brands', '1']);
 
   for (const [tid, kmd, vad, dagar = '*'] of kanda) {
@@ -501,7 +532,7 @@ if (process.argv[1] && process.argv[1].endsWith('rutin.mjs')) {
     const p = process.argv.includes('--skriv-in') ? skrivInPlats(butik, undefined, { flerprodukt }) : platsFor(butik, undefined, { flerprodukt });
     console.log(`\nButiksrutinerna för ${butik} — plats ${p.plats}${p.ny ? (process.argv.includes('--skriv-in') ? ' (ny, inskriven i register.json)' : ' (NY — lägg till --skriv-in för att låsa den)') : ''}${p.arvd ? ' (ÄRVD av butiken — produkt nr 2 ska köras med --flerprodukt)' : ''} (svensk tid → cron):\n`);
     for (const t of tiderFor(butik, { flerprodukt })) {
-      console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}`);
+      console.log(`  ${t.tid}  ${t.cron.padEnd(16)} ${t.kommando.padEnd(44)} ${t.vad}${t.dagar !== '*' ? ` (veckodagar ${t.dagar})` : ''}`);
       console.log(`         sommar ${t.cronSommar} · vinter ${t.cronVinter}`);
     }
     console.log('\nFinns rutinen redan med en annan cron: update_trigger till den ovan — bygg aldrig om.\n');

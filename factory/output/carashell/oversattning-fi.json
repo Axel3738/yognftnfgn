@@ -1,6 +1,6 @@
 {
   "produkt.takskyddet.title": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m",
-  "produkt.takskyddet.body_html": "<p>6,5 × 3 m kattosuoja, joka peittää katon pinnan ja pitää sadeveden poissa kattoluukuista ja saumoista talven yli.</p>",
+  "produkt.takskyddet.body_html": "<p>Kattosuoja on saatavana yhdeksässä pituudessa, 5,5–13,5 metriä, kaikki 3 metriä leveitä – se peittää katon pinnan ja pitää sadeveden poissa kattoluukuista ja saumoista talven yli.</p>",
   "produkt.takskyddet.meta_title": "Kattosuoja asuntovaunuun & matkailuautoon 5,5–13,5 m – CaraShell",
   "produkt.takskyddet.meta_description": "Kuiva katto kevääseen asti. 14 päivän peruuttamisoikeus",
   "produkt.takskyddet.variant.5,5 × 3 m": "5,5 × 3 m",
@@ -20,7 +20,7 @@
   "metafalt.takskyddet.opf.features": "[\"Yhdeksän kokoa: 5,5–13,5 m pitkä, 3 m leveä – valitse oman kattosi mukaan\",\"Musta 210D Oxford-kangas, vedenpitävä ja auringonkestävä\",\"Joustavat kiristyshihnat kaikilla neljällä sivulla, säädettävät, muovikoukuilla jotka kiinnittyvät korin reunan alle\",\"Mukana kaksi ylimääräistä vahvistettua 10,5 m hihnaa\",\"Yhden henkilön asennettavissa\",\"Reuna roikkuu noin 30–40 cm sivujen yli\"]",
   "metafalt.takskyddet.opf.garantier": "[\"14 päivän peruuttamisoikeus\"]",
   "metafalt.takskyddet.opf.frakt": "[\"Toimitusaika: 5–10 arkipäivää\",\"Ilmainen toimitus Suomeen\"]",
-  "metafalt.takskyddet.opf.faq": "[{\"fraga\":\"Sopiiko se minun asuntovaunuuni tai matkailuautooni?\",\"svar\":\"Mitat ovat 6,5 × 3 m ja peittävät koko katon pinnan marginaalilla – mittaa ajoneuvosi katon pinta-ala ja vertaa. Sopii sekä asuntovaunuun että matkailuautoon.\"},{\"fraga\":\"Miten kiinnitän suojan?\",\"svar\":\"Joustavat kiristyshihnat muovikoukuilla kiinnittyvät korin reunan alle, pitkin sivuja.\"},{\"fraga\":\"Pysyykö se paikallaan tuulessa?\",\"svar\":\"Kyllä, joustavat kiristyshihnat pitävät sen paikallaan tuulessa.\"},{\"fraga\":\"Montako henkilöä tarvitaan asentamiseen?\",\"svar\":\"Yksi henkilö riittää, koska suoja peittää vain katon.\"},{\"fraga\":\"Entä jos haluan perua ostoni?\",\"svar\":\"14 päivän peruuttamisoikeus Ruotsin etämyyntilain (distansavtalslagen) mukaan. Lähetä sähköpostia osoitteeseen hello@carashell.se.\"}]",
+  "metafalt.takskyddet.opf.faq": "[{\"fraga\":\"Minkä koon minun pitäisi valita?\",\"svar\":\"Kattosuoja on saatavana yhdeksässä pituudessa, 5,5–13,5 metriä, kaikki 3 metriä leveitä. Mittaa katto edestä taakse ja valitse lähin pituus ylöspäin pyöristäen. Sopii sekä asuntovaunuun että matkailuautoon.\"},{\"fraga\":\"Miten kiinnitän suojan?\",\"svar\":\"Joustavat kiristyshihnat muovikoukuilla kiinnittyvät korin reunan alle, pitkin sivuja.\"},{\"fraga\":\"Pysyykö se paikallaan tuulessa?\",\"svar\":\"Kyllä, joustavat kiristyshihnat pitävät sen paikallaan tuulessa.\"},{\"fraga\":\"Montako henkilöä tarvitaan asentamiseen?\",\"svar\":\"Yksi henkilö riittää, koska suoja peittää vain katon.\"},{\"fraga\":\"Entä jos haluan perua ostoni?\",\"svar\":\"14 päivän peruuttamisoikeus Ruotsin etämyyntilain (distansavtalslagen) mukaan. Lähetä sähköpostia osoitteeseen hello@carashell.se.\"}]",
   "bonus.termoskyddet.title": "Matkailuauton lämpösuoja 211 × 171 cm",
   "bonus.termoskyddet.body_html": "<h3>Peruuttamisoikeus</h3><p>14 päivän peruuttamisoikeus Ruotsin etämyyntilain (distansavtalslagen) mukaan.</p>",
   "paket.takskyddet-a-1.rubrik": "1 kpl",
@@ -159,5 +159,7 @@
   "tema.default.home_page": "Home page",
   "_varningar": [
     "bonus termoskyddet: offer.bonus_produkt.bilder är tom — bonusen behöver minst en bild (visas i paketraden och korgen)."
-  ]
+  ],
+  "frakt.metod.Fri frakt": "Ilmainen toimitus",
+  "produkt.takskyddet.option.Storlek": "Koko"
 }

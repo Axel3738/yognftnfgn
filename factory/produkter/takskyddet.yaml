@@ -16,6 +16,10 @@ produkt:
   namn: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"
   id: "takskyddet"
   menynamn: "Taköverdraget"
+  # Rullgardinens etikett i varukorgen: "Storlek: 5,5 × 3 m", inte
+  # "Variant: 5,5 × 3 m" (Axels beslut 2026-09-18, efter att han sett
+  # varukorgen som finsk kund). Översätts per språk — Koko / Størrelse / Size.
+  variantrubrik: "Storlek"
   # Ordet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2") — sedan
   # 2026-09-17 när produkten fick nio storlekar. Kunden kan blanda storlekar
   # i ett paket (Axels beslut samma dag).
@@ -64,31 +68,165 @@ ekonomi:
     - valuta: USD
       pris: 199
       jamforpris: 249
+    # EUR — Finland 2026-09-18. Referensraden är 6,5 m ur Axels finska
+    # prislista (CWD:s riktiga FI-offert 45,76 USD ⇒ 126,90 €). Varje storlek
+    # har sitt EGET EUR-pris i varianterna nedan; den här raden gäller bara om
+    # en variant saknar eget (och då stoppar granskaVariantpriser körningen).
+    - valuta: EUR
+      pris: 126.90
+      jamforpris: 165.90
 
 varianter:
   # Nio storlekar, Axels besked 2026-09-17 ur leverantörens svar ("3*5.5 …
   # 3*13.5 meters"). Namnet är längd × bredd som butiken skrivit sedan start.
-  # SAMMA PRIS PÅ ALLA tills Axels quotes per storlek kommer — då byts priset
-  # per variant (kräver pris per variant i fabriken, finns inte 2026-09-17).
   # SKU-stammen är källans (TEMU-5050206311352) + längden i dm.
+  #
+  # PRISSTEGE sedan 2026-09-18 (Axels prislista). Fram till dess låg alla nio
+  # på 1 129 kr i väntan på leverantörens offerter per storlek.
+  #
+  #   SEK  = Axels egen stege, 1 129 → 2 239 kr. 5,5 och 6,5 m delar pris.
+  #   EUR  = Axels finska prislista, rad för rad. 6,5 m är CWD:s riktiga
+  #          FI-offert (45,76 USD ⇒ 126,90 €, landad kostnad 26,5 % över
+  #          Sverige); de åtta andra följer SEK-stegen × samma faktor.
+  #   SEK-jämförpriset = pris × 1,30 avrundat till närmaste tiotal minus 1
+  #          (samma regel som gav det gamla 1 469).
+  #   NOK  = SEK × 1 106/1 129 (påslaget Axel valde för 6,5 m 2026-09-11),
+  #          jämförpris 25 % över priset.
+  #   USD  = SEK × 199/1 129 (påslaget han valde för 6,5 m 2026-09-16),
+  #          avrundat till jämna tiotal minus 1, jämförpris 25 % över priset
+  #          avrundat likadant.
+  #   ✅ NOK och USD räknades fram av sessionen och GODKÄNDES av Axel
+  #      2026-09-18 ("kör på") — de är hans tal nu, inte ett förslag.
+  #
+  # Paketrabatterna är PROCENT (15/20/25 %), så de räknar rätt på varje
+  # storlek och i varje valuta av sig själva. En kund som blandar storlekar i
+  # ett paket får summan av de valda varianterna (tema/assets/ms-paket.js).
   - namn: "5,5 × 3 m"
     sku: "TEMU-5050206311352-055"
+    pris: 1129
+    jamforpris: 1469
+    marknadspriser:
+      - valuta: NOK
+        pris: 1106
+        jamforpris: 1382.50
+      - valuta: USD
+        pris: 199
+        jamforpris: 249
+      - valuta: EUR
+        pris: 126.90
+        jamforpris: 165.90
   - namn: "6,5 × 3 m"
     sku: "TEMU-5050206311352-065"
+    pris: 1129
+    jamforpris: 1469
+    marknadspriser:
+      - valuta: NOK
+        pris: 1106
+        jamforpris: 1382.50
+      - valuta: USD
+        pris: 199
+        jamforpris: 249
+      - valuta: EUR
+        pris: 126.90
+        jamforpris: 165.90
   - namn: "7,5 × 3 m"
     sku: "TEMU-5050206311352-075"
+    pris: 1289
+    jamforpris: 1679
+    marknadspriser:
+      - valuta: NOK
+        pris: 1263
+        jamforpris: 1578.75
+      - valuta: USD
+        pris: 229
+        jamforpris: 289
+      - valuta: EUR
+        pris: 144.90
+        jamforpris: 188.90
   - namn: "8,5 × 3 m"
     sku: "TEMU-5050206311352-085"
+    pris: 1449
+    jamforpris: 1879
+    marknadspriser:
+      - valuta: NOK
+        pris: 1419
+        jamforpris: 1773.75
+      - valuta: USD
+        pris: 259
+        jamforpris: 319
+      - valuta: EUR
+        pris: 162.90
+        jamforpris: 211.90
   - namn: "9,5 × 3 m"
     sku: "TEMU-5050206311352-095"
+    pris: 1599
+    jamforpris: 2079
+    marknadspriser:
+      - valuta: NOK
+        pris: 1566
+        jamforpris: 1957.50
+      - valuta: USD
+        pris: 279
+        jamforpris: 349
+      - valuta: EUR
+        pris: 179.90
+        jamforpris: 233.90
   - namn: "10,5 × 3 m"
     sku: "TEMU-5050206311352-105"
+    pris: 1759
+    jamforpris: 2289
+    marknadspriser:
+      - valuta: NOK
+        pris: 1723
+        jamforpris: 2153.75
+      - valuta: USD
+        pris: 309
+        jamforpris: 389
+      - valuta: EUR
+        pris: 197.90
+        jamforpris: 257.90
   - namn: "11,5 × 3 m"
     sku: "TEMU-5050206311352-115"
+    pris: 1919
+    jamforpris: 2489
+    marknadspriser:
+      - valuta: NOK
+        pris: 1880
+        jamforpris: 2350.00
+      - valuta: USD
+        pris: 339
+        jamforpris: 419
+      - valuta: EUR
+        pris: 215.90
+        jamforpris: 280.90
   - namn: "12,5 × 3 m"
     sku: "TEMU-5050206311352-125"
+    pris: 2079
+    jamforpris: 2699
+    marknadspriser:
+      - valuta: NOK
+        pris: 2037
+        jamforpris: 2546.25
+      - valuta: USD
+        pris: 369
+        jamforpris: 459
+      - valuta: EUR
+        pris: 233.90
+        jamforpris: 304.90
   - namn: "13,5 × 3 m"
     sku: "TEMU-5050206311352-135"
+    pris: 2239
+    jamforpris: 2909
+    marknadspriser:
+      - valuta: NOK
+        pris: 2193
+        jamforpris: 2741.25
+      - valuta: USD
+        pris: 389
+        jamforpris: 489
+      - valuta: EUR
+        pris: 251.90
+        jamforpris: 327.90
 media:
   bilder:
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"
@@ -116,7 +254,7 @@ beskrivning:
 
 vinkel:
   huvudvinkel: "Taket är ytan du aldrig ser — och den som kostar mest att laga. Konflikt typ A mot helöverdraget (tungt, två personer, skaver mot lacken) och före/efter (vattenpöl vid takluckan hela vintern mot torrt tak). Källa: källkampanjen 'Taköverdraget för Husvagn 6,5 × 3 m' i MagiBorsten (16 annonser, 15 köp på 2 563 kr, ROAS 6,61 de första två dygnen 2026-09-09–10; vinnaren Takoverdrag_PD_2_H1 är problem-driven) och källsidans egen rubrik 'Taket är det du aldrig ser'."
-  underrubrik: "Taköverdrag 6,5 × 3 m som täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
+  underrubrik: "Taköverdrag i nio längder, 5,5 till 13,5 meter, alla 3 meter breda – täcker takytan och håller regnvatten borta från takluckor och skarvar över vintern."
   usp: "Bara taket. En person."
 
 malgrupp:
@@ -253,8 +391,8 @@ reviews:
     datum: "2026-09-08"
 
 faq:
-  - fraga: "Passar det min husvagn eller husbil?"
-    svar: "Måtten är 6,5 × 3 m och täcker hela takytan med marginal – mät takytan på ditt fordon och jämför. Passar både husvagn och husbil."
+  - fraga: "Vilken storlek ska jag välja?"
+    svar: "Taköverdraget finns i nio längder, 5,5 till 13,5 meter, alla 3 meter breda. Mät taket från front till bakkant och välj närmaste längd uppåt. Passar både husvagn och husbil."
   - fraga: "Hur fäster jag överdraget?"
     svar: "Elastiska spännband med plastkrokar hakar under karossens kant, längs sidorna."
   - fraga: "Sitter det kvar i blåst?"

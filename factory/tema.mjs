@@ -1241,6 +1241,22 @@ export const MS_PAKET_ORD = [
   { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi' },
   { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}' },
   { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', attribut: 'aria-label' },
+  // De tre raderna JS:et skriver ut. De satt hårdkodade i ms-paket.js till
+  // 2026-09-18 och visades därför på SVENSKA för varje kund i världen —
+  // Axel såg "Lägger i…" på köpknappen på den finska sidan. En .js-fil kan
+  // inte bära Liquid, så texten måste komma in som attribut från snippeten.
+  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', attribut: 'data-laddar' },
+  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', attribut: 'data-spar' },
+  // Raden blir "<pris> per <enhet>" — "126,90 € per suoja", "$199.00 per
+  // cover". "per" fungerar i alla fyra språken; det är ett prisord, inte copy.
+  { sv: 'per', nb: 'per', en: 'per', fi: 'per', attribut: 'data-per' },
+  {
+    sv: 'Det gick inte att lägga i varukorgen. Försök igen.',
+    nb: 'Varen kunne ikke legges i handlekurven. Prøv igjen.',
+    en: 'We could not add this to your cart. Please try again.',
+    fi: 'Tuotetta ei voitu lisätä ostoskoriin. Yritä uudelleen.',
+    attribut: 'data-fel',
+  },
 ];
 const MS_PAKET_GREN = /\{% if request\.locale\.iso_code == '[a-z]{2}' %\}[\s\S]*?\{% else %\}([\s\S]*?)\{% endif %\}/g;
 export function avpatchaMsPaket(snippet) {

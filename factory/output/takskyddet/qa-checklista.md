@@ -1,7 +1,7 @@
 # QA — Taköverdrag Husvagn & Husbil 5,5–13,5 m
 
 - [x] ✅ produkt: Taköverdrag Husvagn & Husbil 5,5–13,5 m (takskyddet), status ACTIVE
-- [x] ✅ priser: 1129 SEK på alla varianter, jämförpris 1469
+- [x] ✅ priser: prisstege 1129–2239 SEK över 9 varianter
 - [x] ✅ varianter: 9 st
 - [x] ✅ bilder: 4 st, 4 media i butiken
 - [x] ✅ copy: vinkel, problem, benefits och erbjudande finns
@@ -22,6 +22,7 @@
 - [x] ✅ kundvy-produkttext: produktnamn + pris syns i huvudspråkets vy
 - [x] ✅ markörer /nb: 0 svenska markörer av 16
 - [x] ✅ markörer /en: 0 svenska markörer av 16
+- [x] ✅ markörer /fi: 0 svenska markörer av 16
 
 ## Varningar
 

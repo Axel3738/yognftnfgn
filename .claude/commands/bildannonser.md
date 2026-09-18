@@ -195,6 +195,13 @@ Fyra kontroller innan prompten byggs:
    för att spec:en aldrig bar raden. `text.py` stöder `badge` sedan länge; det är
    spec:en som ska fyllas. Räkna elementen i briefen mot elementen i spec:en innan
    du renderar, och saknas ett: lägg till det.
+   ⚠️ **Elementen får inte byta plats med varandra heller.** Recensionsannonser
+   (`RV_*`) har en liten `Headline` ovanför citatet (`En förälder skrev de här
+   orden …`, `Daniel gav den 5 stjärnor …`) och namnet + betyget som `Bottom band`.
+   Mätt 2026-09-18: i fyra RV-annonser (IBC och adventskalendern) hade de två bytt
+   plats — citatet låg överst som rubrik och briefens hook låg i den lilla
+   bottenraden. Inget innehåll saknades, men briefens hook var inte längre hooken
+   i bild. Citatet ska vara det visuellt största, hooken ska stå ovanför det.
 
 Skriv prompten på engelska (bildmodellen kräver det) men **de svenska raderna
 ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska

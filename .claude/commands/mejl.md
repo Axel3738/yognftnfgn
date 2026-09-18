@@ -17,21 +17,25 @@ och rapportera.
 
 ### 2. Bygg mallarna
 `npm run mejl` (eller `node mejl/bygg.mjs --offline` vid `offline`). Läs
-utskriften: gratisprodukterna och de tre dyraste. Är någon dyr produkt
-uppenbart fel (t.ex. slut i lager, orimlig) — sätt `dyra_override` i
-konfigen och bygg om. Kör `node --test mejl/test/*.test.mjs`; rött = fixa
-innan något publiceras.
+utskriften: gratisprodukterna, komplementkartan (antal per källa, fallback)
+och raden "⚠️ handles i konfigen som inte finns" — står något där: rätta
+handeln i `konfig.json → komplement` eller stryk den. Kör
+`node --test mejl/test/*.test.mjs`; rött = fixa innan något publiceras.
 
 ### 3. Titta på ett mejl
 Öppna `mejl/output/forhandsvisning/orderbekraftelse.html` (skärmdump via
-Chromium om det finns). Kontrollera: koden syns, fyra gratisprodukter, tre
-dyra med pris, knappen pekar på `/discount/<kod>?redirect=/collections/…`.
+Chromium om det finns). Kontrollera: koden syns, samma-paket-raden och
+urgency-raden bär tid/datum, fyra gratisprodukter, "En till" + tre
+komplement till exempelordern, knappen pekar på
+`/discount/<kod>?redirect=/collections/…`.
 
 ### 4. Publicera sidan
 Publicera `mejl/output/index.html` som Artifact (favicon ✉️, samma URL som
 förra gången — leta med `action: "list"` efter "Bäverbutikens mejl" och
 skicka `url`, annars blir det en ny länk). Skriv URL:en i `mejl/README.md`
-under "Sidan" om den saknas.
+under "Sidan" om den saknas. ⚠️ Artefakter är bundna till Claude-kontot:
+finns länken i README inte i `list` sitter du på Axels andra konto — säg
+det, publicera en ny och skriv in båda i README (hände 2026-09-13).
 
 ### 5. Committa och pusha
 `mejl/produkter.json` och `mejl/output/` committas — de är bevis på vad som

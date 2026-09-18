@@ -98,6 +98,7 @@ behind its password either way (measured: DryTrek 2026-09-09).
       Meta page are all named after – so it happens before any of them.
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
 - [ ] When Claude says the United States market is ready: Settings → Markets → **United States** → activate **USD** → Save
+- [ ] When Claude says the Finland market is ready: Settings → Markets → **Finland** → activate **EUR** → Save
 
 ## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the

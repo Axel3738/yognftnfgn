@@ -734,6 +734,69 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    språk" — samma recension två gånger på sidan. För en butik med Awesome
    är den norska importen alltså överflödig; beslut om `/no-recensioner`
    ska hoppa över sådana butiker är Axels (fråga ställd 2026-09-17).
+
+   ⚠️ **Judge.me går INTE att läsa av ur serverside-HTML.** Widgeten ritas
+   av appens JavaScript efter att sidan laddats, så det som står i den råa
+   HTML:en är ett förstadium som ingen kund ser.
+
+   *Felet, för att det inte ska göras om (2026-09-18):* Axel såg
+   "★★★★★ 16 recensioner" på /fi och frågade om auto-översättningen bara
+   behövde tid. Sessionen hämtade tre adresser med `fetch`, såg
+   "16 recensioner" i HTML:en på alla tre — även på carashell.com, där
+   widgeten bevisligen är engelsk sedan 2026-09-17 — och drog slutsatsen
+   att badgen aldrig översätts. **Fel.** Axel tittade i en riktig
+   webbläsare och såg engelska på .com. Råtexten var densamma på båda;
+   skillnaden uppstår först när JS kört.
+
+   Vad HTML:en ÄNDÅ säger, och som är läsbart: Judge.mes konfigblock bär
+   ett `"locale"`-fält. Mätt samma dag — /nb → `nb`, carashell.com → `en`,
+   **/fi → `en`**. Ett språk appen känner igen står med sin egen kod; /fi
+   faller tillbaka, vilket är väntat samma dag som språket publicerades
+   (nytt språk tar upp till 48 h; engelska tog ~26 h). Det fältet duger
+   som signal — den synliga texten gör det inte.
+
+   ✅ **Svaret från Judge.mes support 2026-09-18, och lösningen:** finska ÄR
+   ett stött språk. Appen upptäcker bara inte ett nytt Shopify-språk av sig
+   själv — *"After publishing a language in Shopify, it can take up to 24 hours
+   for our system to pick it up… your current widget language is set to
+   Swedish, which is the fallback when a language isn't detected yet."*
+   🖐 **Klicket, en gång per ny marknad: app.judge.me → Settings → Language →
+   "Refresh list"**, sedan upp till 24 timmar. Ligger nu som eget steg i
+   `.claude/commands/ny-marknad.md`. `locale`-fältet var alltså rätt signal
+   hela tiden: det säger om appen känner igen språket, och supporten beskrev
+   exakt samma fallback.
+
+   ✅ **Löst samma dag 12:02 UTC — klicket räckte, väntan behövdes inte.**
+   Axel klickade "Refresh list" och finskan slog igenom direkt; de "upp till
+   24 timmar" supporten nämnde är ett tak, inte en väntetid. Mätt minuter
+   efteråt på fyra adresser:
+
+   | Sida | locale | |
+   |---|---|---|
+   | carashell.se/fi | `fi` | ✅ |
+   | carashell.se/nb | `nb` | ✅ |
+   | carashell.com | `en` | ✅ |
+
+   **Räkna alltså inte bort ett nytt språk förrän klicket är gjort.** Hela
+   dygnet mellan "finska publicerad i Shopify" och "widgeten finsk" var
+   väntan på ett klick ingen visste om — inte en bugg och inte en
+   detekteringstid.
+
+   ⚠️ **Öppen observation, inte mätt färdigt:** butikens EGEN svenska vy
+   (`carashell.se/` och båda produktsidorna med `?country=SE`) rapporterar
+   `locale: en` medan `branding_text` samtidigt är svenskt
+   ("Drivs av Judge.me"). De två säger emot varandra, och vad kunden faktiskt
+   ser går inte att läsa ur HTML:en (widgeten ritas av JS). Troligen
+   ofarligt — grundspråket behöver ingen detektering — men kolla den svenska
+   produktsidan i en webbläsare nästa gång någon är där.
+
+   🖐 **Kontrollen kräver en webbläsare, och containern klarar den inte.**
+   Headless Chrome mot butiken ger `ERR_CERT_AUTHORITY_INVALID`: Playwrights
+   Chromium läser inte proxyns CA-bundle, `certutil` finns inte och
+   `libnss3-tools` går inte att installera (provat 2026-09-18). Att stänga
+   av TLS-verifieringen är inte ett alternativ. Judge.me-språk verifieras
+   därför av en människa i en vanlig webbläsare, eller där nätet är öppet —
+   aldrig med `fetch` mot produktsidan.
    ⚠️ Mätmetod: recensionslistan laddas lazy — `--dump-dom` och Judge.mes
    `reviews_for_widget` gav 0 kroppar; det som fungerade var
    `--screenshot` med `--window-size=1280,9000` och en beskärning av
@@ -1312,3 +1375,218 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 `/ny-annonser` (FAS2.md 2026-09-16) → minne per produktnyckel (`products/<butik>/README.md`).
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
+
+## ⚠️ Byter du optionens NAMN får varje variant ett nytt id (2026-09-18)
+
+"Variant" döptes om till "Storlek" (Axels beslut). Ett ord i produktfilen,
+`produkt.variantrubrik`. Vad som faktiskt hände i Shopify:
+
+| | Före | Efter |
+|---|---|---|
+| Optionens id | 18702147780940 | **oförändrat** |
+| Variant-id:n | 9 st | **9 HELT NYA** |
+| Fasta priser i NOK/USD/EUR | 9 + 9 + 9 | **0 + 0 + 0** |
+
+`productSet` behåller optionens id men bygger om varianterna. Och
+prislistornas fasta priser är knutna till VARIANT-id — de följde inte med.
+I några minuter såg finska, norska och amerikanska kunder Shopifys egen
+kursomräkning i stället för de priser Axel bestämt. **Inget felmeddelande.
+Ingen röd rad. Bara ett annat tal, och bara för en kund i rätt land.**
+
+🔒 **Regeln: efter VARJE ändring som rör varianterna — nytt optionsnamn, ny
+storlek, borttagen variant — måste `--igen prislista` köras.** Räkna inte med
+att märka det: butiken ser likadan ut i Sverige.
+
+✅ **Spärren är kod sedan samma dag.** Trippelkollen läser `priceLists` och
+kräver att VARJE variant bär ett fast pris i VARJE valuta produktfilens
+`ekonomi.marknadspriser` nämner. Saknas prislistan: *"ingen prislista i
+NOK — kunden ser butikens valuta omräknad"*. Saknas varianter i den:
+*"7 av 9 varianter saknar fast NOK-pris … kör --igen prislista"*. Rött, så
+QA:n inte kan bli grön. Tre tester täcker de tre lägena.
+
+⚠️ Två fällor i själva spärren, båda gjorda och rättade samma dag: fältet
+måste läggas till både i frågan OCH i `hamtaLage`s returobjekt (annars
+larmar den falskt om "ingen prislista"), och `bedomLage` läser den platta
+formen `d.priceLists`, som `markets` och `pages` — inte `{ nodes }`.
+
+📌 Ordningen som fungerade: `--igen produkt` → `--igen prislista` →
+`--igen oversatt`. Den sista för att nyckeln i underlaget följer namnet:
+`produkt.<handle>.option.Variant` blev `…option.Storlek`, och språkfilerna
+måste byta nyckel eller tappa översättningen.
+
+## Två resurser översattes aldrig — fraktsättet och optionens namn (2026-09-18)
+
+Axel öppnade varukorgen som finsk kund och pekade på tre saker. En var inget
+fel, två var riktiga — och den ena hade drabbat USA lika länge som Finland.
+
+**1. "Kassa" på knappen är FINSKA, inte svenska.** Temats `locales/fi.json`
+säger `"checkout": "Kassa"`, svenskans säger `"Gå till kassan"`. Ordet stavas
+likadant på båda språken. Innan något "rättas" i en språkfråga: läs temats
+locale-fil, den är facit.
+
+**2. `PRODUCT_OPTION` samlades aldrig in.** Varukorgen sa
+**"Variant: 5,5 × 3 m"** på varje marknad — värdet översatt, etiketten svensk.
+`samlaResurser` tog produktens `optionValues` men inte `options`. Optionens
+namn är en EGEN translatable resurs.
+
+**3. `DELIVERY_METHOD_DEFINITION` fanns inte i typlistan.** Fraktsättet heter
+**"Fri frakt"**, och det stod oöversatt för finska, norska OCH amerikanska
+kunder — mitt i kassan, i det steg där folk bestämmer sig. Det syns aldrig i
+butiken, så varken kundvyn eller språkkollen kunde hitta det: de läser
+produktsidan, och fraktsättets namn ritas först i kassan.
+
+Rättat i fabriken, gäller varje butik:
+- `marknad.mjs` → `samlaResurser` tar nu optionens id och typen
+  `DELIVERY_METHOD_DEFINITION`.
+- `oversattning.mjs` → underlaget får `produkt.<handle>.option.<namn>` och
+  `frakt.metod.<namn>` (namnen läses ur `byggFraktplan`, inte avskrivna).
+- `arLacka` undantar Shopifys egna `Title`/`Default Title` — annars larmar
+  varje enproduktsbutik om två läckor som inte går att åtgärda.
+
+Tillbakaläst ur Shopify efter körningen:
+
+| Resurs | fi | nb | en |
+|---|---|---|---|
+| Optionen "Variant" | Koko | Størrelse | Size |
+| Fraktsättet "Fri frakt" | Ilmainen toimitus | Gratis frakt | Free shipping |
+
+Och i varukorgen som riktig kund: `Koko: 5,5 × 3 m` · `Størrelse: 5,5 × 3 m` ·
+`Size: 18 × 10 ft (5.5 × 3 m)`.
+
+⚠️ **Varje OPS-butik med fler än en marknad bär samma två luckor** tills den
+kört `--igen oversatt` med de nya nycklarna i sina språkfiler. Koden är
+gemensam; översättningsorden är per butik.
+
+⚠️ **Svenska sidan säger fortfarande "Variant"** — det är optionens namn i
+Shopify, inte en översättning. Vill man ha "Storlek" där måste produkten
+skrivas om med ett annat optionsnamn; det är en produktändring, inte en
+språkändring, och den är inte gjord.
+
+## Kassans språk: läs adressen, inte texten (2026-09-18)
+
+En annan session påstod att kassan visas på svenska för finska kunder och att
+"finskan inte är publicerad för kassan". Mätt samma dag på CaraShell — det
+stämmer inte:
+
+1. `shopLocales` säger **`en, fi, nb, sv*`**, alla publicerade. Finskan ÄR på.
+2. Lägger man en vara i korgen som finsk kund (`POST /localization` med
+   `country_code=FI` + `language_code=fi`, sedan `/fi/cart/add.js`) slutar
+   kassans adress på **`/checkouts/cn/<id>/fi-fi`**. Shopify dirigerar alltså
+   till den finska kassan. Vore finskan opublicerad stod det `sv-se` där.
+
+**Adressen är därför den mätbara signalen**: locale-suffixet efter checkout-id:t
+säger vilket språk kassan körs på. Går det att läsa utan webbläsare.
+
+⚠️ **Kassans TEXTER går inte att läsa härifrån.** Shopifys checkout svarar
+**HTTP 403** på allt som inte är en riktig webbläsare, även med fullständiga
+`sec-ch-ua`/`sec-fetch`-headers (provat 2026-09-18, 51 tecken tillbaka). Samma
+vägg som Judge.me-widgeten. Vill någon veta vad kassan faktiskt säger krävs en
+människa i en webbläsare — påstå aldrig något om kassatexter utifrån `fetch`.
+
+🔑 **Kassan följer SPRÅKET kunden surfar på, inte landet.** En finsk kund som
+kommer in på den svenska sidan får svensk kassa, hur finsk hens IP än är.
+Därför måste varje annons mot Finland peka på `/fi` MED `?country=FI` — precis
+som Norge-regeln. En annonslänk utan locale ger finsk valuta men svensk kassa.
+
+Butiken kan inte översätta kassans standardtexter själv: bland
+`TranslatableResourceType` finns bara `DELIVERY_METHOD_DEFINITION`,
+`PAYMENT_GATEWAY` och `SHOP_POLICY` — "Lägg till rabatt" och "Kom ihåg mig" är
+Shopifys egna strängar. Saknas de på ett språk är det ett Shopify-ärende, inte
+något i det här repot.
+
+## En sträng i en .js-fil är svensk för hela världen (2026-09-18)
+
+Axel klickade "Lägg i varukorgen" på den finska sidan och knappen svarade
+**"Lägger i…"**. Hans invändning är hela poängen: *"även om man bara ser det i
+någon sekund hade jag känt mig otrygg om det var ett helt främmande språk när
+man ska spendera massa pengar."*
+
+**Rotorsaken:** `factory/tema/assets/ms-paket.js` är en ren .js-fil. Shopify
+kör ingen Liquid i den, så `request.locale` finns inte och
+`translationsRegister` når den inte. Varje sträng skriven direkt i filen når
+alltså varje kund i världen på svenska — och ingen språkkoll fångade det,
+för `kundvy.mjs` läser den renderade HTML:en och texten skrivs först när
+kunden klickar.
+
+Fyra ställen var svenska för alla marknader:
+
+| Vad | Stod | Syntes när |
+|---|---|---|
+| Köpknappen medan den laddar | "Lägger i…" | vid varje klick |
+| Styckpriset | "… per överdrag" | alltid, under varje paketnivå |
+| Rabattraden | "Du sparar …" | på nivåer med rabatt |
+| Felraden | "Det gick inte att lägga i varukorgen." | när köpet failar |
+| Prisreserven | `toLocaleString('sv-SE') + ' kr'` | om ms-cro.js uteblir |
+
+**Lösningen, och regeln framåt:** texten hör hemma i snippeten, inte i
+JavaScriptet. `snippets/ms-paket.liquid` bär dem som attribut
+(`data-laddar`, `data-spar`, `data-per`, `data-fel`), `MS_PAKET_ORD` i
+`factory/tema.mjs` översätter dem på samma väg som `aria-label`, och JS:et
+läser `this.dataset.*` med svenskan kvar som reserv för en butik vars tema
+inte hunnit få attributen. Prisreserven tar sidans eget `lang` och kundens
+valuta ur `data-valuta` (`cart.currency.iso_code`) — utan valuta skrivs bara
+siffran, aldrig en påhittad symbol.
+
+🔒 **Skriv aldrig en kundsynlig sträng i en .js-fil under `factory/tema/`.**
+Ska JS:et visa text: lägg den som ett `data-`-attribut i snippeten och en rad
+i `MS_PAKET_ORD`. Hittar du en kvarglömd sträng — sök på `textContent =` och
+på `[åäö]` inom citattecken i `factory/tema/assets/`.
+
+⚠️ **Bas-zippen:** `assets/ms-paket.js` ligger både i `TEMAFILER` och i
+`factory/tema/ops-tema.zip`, och ett test kräver att de är identiska —
+uppdatera zippen i samma commit. Snippeten är tvärtom: zipens
+`ms-paket.liquid` ska vara OPATCHAD (inga `iso_code`-grenar), för motorn
+patchar in dem vid bygget. Skriv alltså in JS-filen i zippen, aldrig
+snippeten.
+
+## Pris per storlek + ännu en marknad (bevisat 2026-09-18, CaraShell → Finland)
+
+En produkt med nio storlekar fick nio olika priser — i fyra valutor — och
+Finland blev butikens tredje marknad. Fem saker som är nya i fabriken:
+
+1. ⚙️ **`factory/variantpris.mjs` — pris per variant.** Produktfilens
+   `varianter[]` får `pris`, `jamforpris` och ett eget `marknadspriser`-block.
+   Utan dem gäller `ekonomi`-blocket precis som förut, så inga andra butiker
+   ändras. `build-store.mjs` skriver stegen i butikens valuta, `prislista.mjs`
+   skriver den per variant i varje prislista, och `kontroll.mjs` +
+   `trippelkoll.mjs` jämför **varje variant mot SITT pris** i stället för att
+   godkänna "samma pris på alla".
+   🔒 **Järnregeln: en halv stege stoppar bygget.** Har EN variant eget pris
+   måste ALLA ha det, och då måste var och en också ha en rad i varje
+   marknadsvaluta. `granskaVariantpriser` namnger varianten som saknas. Utan
+   spärren säljer den dyraste storleken till den billigastes pris i precis ett
+   land, utan felmeddelande.
+2. ⚙️ **Marknadens basvaluta sätts nu via API:t.** Det stod som ett handklick
+   ("API-spärrat i unified markets") och det var HALVT sant:
+   `marketCurrencySettingsUpdate` svarar `This action is restricted if unified
+   markets is enabled`, men **samma fält går igenom som
+   `marketUpdate(input: { currencySettings: { baseCurrency } })`**. Mätt på
+   CaraShells finska marknad: EUR satt och tillbakaläst i samma körning.
+   `marknad.mjs` skriver den BARA när marknaden saknar egen valuta — en
+   marknad som redan bär en valuta är ett beslut (Norge fick NOK för hand
+   2026-09-11 medan butiksfilens rad fortfarande säger SEK) och rörs aldrig.
+   Trippelkollen läser tillbaka den som ✅/❌, inte som ett 🖐.
+3. 🔧 **`rabatt_procent` skrevs aldrig — paketrutan räknade fel.** Snippeten
+   `ms-paket.liquid` har läst fältet sedan den skrevs, men det fanns varken i
+   metaobjektsdefinitionen eller i skrivningen, så procentläget var dött och
+   sidan räknade ett FAST BELOPP mot standardvarianten. Osynligt medan alla
+   varianter kostade lika; med stegen visade ett 2-pack av 13,5 m 465,73 € på
+   sidan medan kassans 15 %-kod tar 428,23 €. **Kolla `data-procent` i den
+   renderade sidan** när en produkt får olika pris per variant — står det 0 på
+   en nivå med rabattkod räknar sidan fel.
+4. 🖐 **Domän per marknad är inte automatiskt rätt.** USA fick carashell.com
+   ("`.se` säger utländsk butik" till en amerikan). Finland fick INGEN egen
+   domän — Axels beslut: mellan nordiska grannar är en svensk butik inget
+   hinder, och `/fi` fungerar precis som `/nb`. Fråga ägaren; bygg inte en
+   domän för att förra marknaden fick en.
+5. ⚠️ **Texten måste läsas om när en produkt får fler varianter.** Butikens
+   titel var uppdaterad till "5,5–13,5 m", men produktsidans underrubrik och
+   första FAQ-fråga sa fortfarande "6,5 × 3 m" på ALLA fyra språk. Ingen
+   spärr fångade det — en översättningsfil är "komplett" så länge nyckeln
+   finns, oavsett vad den säger. Läs igenom `oversattning-*.json` efter varje
+   ändring av vad produkten ÄR, inte bara efter en ny marknad.
+
+**Annonserna klarade sig** för att basstorleken behöll sitt pris: 6,5 m kostar
+fortfarande 1 129 kr, och den första varianten i listan (5,5 m) lika mycket, så
+sidans rubrikpris är oförändrat. Ligger annonspriset på en storlek som ÄNDRAS
+måste annonserna skannas om (`brand-detektor.mjs`) innan stegen skrivs.

@@ -45,7 +45,7 @@ function gronLage(krav, { temaRole = 'MAIN' } = {}) {
     onlineStore: { passwordProtection: { enabled: false } },
     themes: [{ id: TEMA_ID, name: 'Nackmagneten v1 CRO', role: temaRole }, { id: 'gid://shopify/OnlineStoreTheme/2', name: 'Dawn', role: temaRole === 'MAIN' ? 'UNPUBLISHED' : 'MAIN' }],
     shopLocales: [{ locale: 'sv', primary: true, published: true }, { locale: 'nb', primary: false, published: true }],
-    markets: [{ id: 'mk1', name: 'Norge', handle: 'no', status: 'ACTIVE', conditions: { regionsCondition: { regions: { nodes: [{ code: 'NO' }] } } } }],
+    markets: [{ id: 'mk1', name: 'Norge', handle: 'no', status: 'ACTIVE', currencySettings: { baseCurrency: { currencyCode: 'NOK' }, localCurrencies: false }, conditions: { regionsCondition: { regions: { nodes: [{ code: 'NO' }] } } } }],
     webPresences: [{ id: 'wp1', defaultLocale: { locale: 'sv' }, alternateLocales: [{ locale: 'nb' }] }],
     metaobjects,
     pages: krav.sidhandles.map((handle) => ({ handle, title: handle })),
@@ -87,6 +87,51 @@ test('en butik som stämmer med yaml ger noll fel och bara mobilvyn manuell', ()
   for (const n of ['produkt', 'priser', 'lagerpolicy', 'metafält', 'paketnivåer', 'förvald nivå', 'rabattkoder', 'OPS-temat', 'publicerat tema', 'locale nb', 'marknad NO', 'nb på domänen', 'sidor', 'huvudmeny']) {
     assert.ok(namn(lage.grona).includes(n), `${n} ska vara grön`);
   }
+});
+
+test('variant utan fast pris i en marknadsvaluta är RÖTT — den tystaste buggen vi haft', () => {
+  // Byter produktens optionsnamn får varje variant ett NYTT id, och
+  // prislistornas fasta priser pekar på varianter som inte finns. Shopify
+  // säger ingenting, den visar sin egen kursomräkning (CaraShell 2026-09-18).
+  const b = butik();
+  b.butik.valuta = 'SEK';
+  const p = dummy();
+  p.ekonomi = { ...(p.ekonomi ?? {}), valuta: 'SEK', marknadspriser: [{ valuta: 'NOK', pris: 480 }] };
+  const krav = byggKrav(b, [p], { arbetstemaId: TEMA_ID });
+  assert.deepEqual(krav.produkter[0].marknadsvalutor, ['NOK'], 'NOK ska krävas');
+
+  const d = gronLage(krav);
+  const handle = krav.produkter[0].handle;
+  const varianter = d.produkter[handle].variants.nodes;
+
+  // Alla varianter har fast pris ⇒ grönt.
+  d.priceLists = [{ currency: 'NOK', prices: { nodes: varianter.map((v) => ({ variant: { id: v.id, product: { handle } } })) } }];
+  assert.ok(namn(bedomLage(d, krav).grona).some((x) => x.includes('fast pris NOK')), 'ska vara grön när alla har fast pris');
+
+  // Prislistan finns men är TOM — exakt vad som hände. Rött, med åtgärden.
+  d.priceLists = [{ currency: 'NOK', prices: { nodes: [] } }];
+  const tom = bedomLage(d, krav).fel.find((r) => r.namn.includes('fast pris NOK'));
+  assert.ok(tom, 'tom prislista ska vara röd');
+  assert.match(tom.detalj, /saknar fast NOK-pris/);
+  assert.match(tom.detalj, /--igen prislista/);
+
+  // Ingen prislista alls ⇒ också rött, med sin egen orsak.
+  d.priceLists = [];
+  const ingen = bedomLage(d, krav).fel.find((r) => r.namn.includes('fast pris NOK'));
+  assert.match(ingen.detalj, /ingen prislista i NOK/);
+});
+
+test('marknad utan basvaluta är ett FEL, inte ett handklick — kunden ser fel valuta', () => {
+  const krav = byggKrav(butik(), [dummy()], { arbetstemaId: TEMA_ID });
+  const d = gronLage(krav);
+  d.markets = d.markets.map((m) => ({ ...m, currencySettings: null }));
+  const lage = bedomLage(d, krav);
+  const rad = lage.fel.find((r) => r.namn === 'valuta NO');
+  assert.ok(rad, 'valuta NO ska vara röd när basvalutan saknas');
+  assert.match(rad.detalj, /ska vara NOK/);
+  // Grön när den står rätt (gronLage sätter NOK), och rätt valuta kommer ur
+  // landet — inte ur butiksfilens `valuta:`-fält, som släpar efter.
+  assert.ok(namn(bedomLage(gronLage(krav), krav).grona).includes('valuta NO'));
 });
 
 test('opublicerat OPS-tema är manuellt, utan påståendet att API:t är spärrat', () => {

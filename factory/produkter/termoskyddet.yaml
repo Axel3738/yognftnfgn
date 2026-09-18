@@ -67,6 +67,15 @@ ekonomi:
     - valuta: USD
       pris: 99
       jamforpris: 124
+    # EUR — Finland 2026-09-18. Axels finska prislista gäller takskyddet, och
+    # den ger faktorn 126,90/1 129 = 0,1124 (landad kostnad 26,5 % över
+    # Sverige, inte kursen). 559 × 0,1124 = 62,83 ⇒ 62,90 €, jämförpriset
+    # 25 % över som för NOK och USD (78,63 ⇒ 78,90). Utan raden hade finska
+    # kunder sett SEK på termoskyddet medan takskyddet visade euro.
+    # ✅ Framräknat av sessionen, GODKÄNT av Axel 2026-09-18 ("kör på").
+    - valuta: EUR
+      pris: 62.90
+      jamforpris: 78.90
 
 varianter:
 media:

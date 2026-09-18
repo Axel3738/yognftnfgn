@@ -465,3 +465,66 @@ förbud: **5,5–13,5 m får användas i copy så länge butikens titel bär tal
 och ska läsas av på nytt varje briefdag i stället för att citeras härifrån.
 Ändra inte "6,5 × 3 m" till längderna i befintlig copy — de säger olika saker,
 och dukens mått är det som bevisar att den täcker taket.
+
+---
+
+## Prisstege per storlek + Finland som marknad — 2026-09-18
+
+Fram till nu kostade alla nio storlekar **1 129 kr**, i väntan på leverantörens
+offerter. Axel skickade dem, och priset är nu **per storlek**:
+
+| Storlek | SEK | EUR (FI) | NOK ⚠️ | USD ⚠️ |
+|---|---|---|---|---|
+| 5,5 × 3 m | 1 129 | 126,90 | 1 106 | 199 |
+| 6,5 × 3 m | 1 129 | 126,90 | 1 106 | 199 |
+| 7,5 × 3 m | 1 289 | 144,90 | 1 263 | 229 |
+| 8,5 × 3 m | 1 449 | 162,90 | 1 419 | 259 |
+| 9,5 × 3 m | 1 599 | 179,90 | 1 566 | 279 |
+| 10,5 × 3 m | 1 759 | 197,90 | 1 723 | 309 |
+| 11,5 × 3 m | 1 919 | 215,90 | 1 880 | 339 |
+| 12,5 × 3 m | 2 079 | 233,90 | 2 037 | 369 |
+| 13,5 × 3 m | 2 239 | 251,90 | 2 193 | 389 |
+
+SEK och EUR är **Axels egna tal**. EUR-raden för 6,5 m är CWD:s riktiga
+FI-offert (45,76 USD ⇒ 126,90 €, landad kostnad 26,5 % över Sverige — inte
+20 %); de åtta andra följer SEK-stegen × samma faktor. NOK och USD räknades
+fram av sessionen ur de påslag Axel redan valt för 6,5 m (1 106/1 129
+respektive 199/1 129) och **godkändes av honom samma dag** ("kör på") — de är
+hans tal nu, inte ett förslag. Samma svar gäller termoskyddets 62,90 € i
+Finland.
+
+**Annonserna är oberörda.** Basstorleken 6,5 m kostar fortfarande 1 129 kr, och
+det är priset batch #1–#3 säger. Första varianten i listan (5,5 m) kostar lika
+mycket, så sidans rubrikpris är också oförändrat. Ingen annons behöver pausas,
+ingen copy behöver skrivas om.
+
+**Att döma annonser blir svårare från och med nu.** Ett köp kan vara 1 129 kr
+eller 2 239 kr, och Metas köp-event bär inget storleksvärde. Break-even-ROAS
+1,63 är räknad på 1 129 kr och gäller bara den storleken. Läs AOV per order ur
+Shopify innan en annons döms på ROAS — annars ser en kampanj som sålt långa
+överdrag ut som en vinnare den inte är, och tvärtom.
+
+### Finland: carashell.se/fi, ingen egen domän
+
+Axels beslut 2026-09-18: **ingen .fi-domän.** Finskan ligger på `/fi` precis som
+norskan på `/nb` — samma butik, samma kassa, samma pixel. USA fick carashell.com
+för att ".se säger utländsk butik" till en amerikan; mellan nordiska grannar är
+en svensk butik inget hinder. En .fi-domän kan kopplas senare utan att något
+byggs om.
+
+Verifierat som finsk kund (`POST /localization` country_code=FI, language_code=fi)
+samma dag: nio storlekar i rullgardinen, €126,90–€251,90, paketpriserna
+€215,73 / €304,56 (A) och €203,04 / €285,52 (B), "Ilmainen toimitus Suomeen",
+`lang="fi"`, noll svenska markörer.
+
+### Två fel som prisstegen avslöjade
+
+1. **Produktsidans FAQ och underrubrik sa fortfarande "6,5 × 3 m"** på alla fyra
+   språk — en sida som säljer nio storlekar till nio priser. Omskrivna av
+   subagent (sonnet) med tre-frågorstestet, live på sv/nb/en/fi.
+2. **Paketrabatten räknades som ett FAST BELOPP mot standardvarianten.**
+   Metaobjektets fält `rabatt_procent` lästes av temat men skrevs aldrig av
+   fabriken, så procentläget var dött. Det syntes inte medan alla storlekar
+   kostade lika; med stegen visade ett 2-pack av 13,5 m **465,73 €** på sidan
+   medan kassans 15 %-kod tar **428,23 €**. Fältet skrivs nu (`factory/paket.mjs`)
+   och sidan visar samma tal som kassan i varje valuta och varje storlek.

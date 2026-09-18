@@ -85,16 +85,19 @@ export async function graphql(query, variables = {}) {
 const num = (gid) => String(gid).split('/').pop();
 
 // Alla aktiva produkter, plattade: id, variant, titel, handle, url, pris,
-// jämförpris, lager, lagerpolicy, bild. Sidor om 100 tills slut.
+// jämförpris, lager, lagerpolicy, bild, typ, taggar, kollektioner (handles).
+// Typ/taggar/kollektioner bär komplementkartan (sedan 2026-09-13). Sidor om
+// 50 tills slut — kollektionerna gör frågan dyrare än förr.
 export async function hamtaProdukter() {
   const ut = [];
   let after = null;
   for (;;) {
     const d = await graphql(
-      `query($after: String) { products(first: 100, query: "status:active", after: $after) {
+      `query($after: String) { products(first: 50, query: "status:active", after: $after) {
         pageInfo { hasNextPage endCursor }
-        edges { node { id title handle onlineStoreUrl totalInventory featuredImage { url }
-          variants(first: 1) { edges { node { id price compareAtPrice inventoryPolicy } } } } } } }`,
+        edges { node { id title handle onlineStoreUrl totalInventory productType tags hasOnlyDefaultVariant featuredImage { url }
+          collections(first: 10) { edges { node { handle } } }
+          variants(first: 1) { edges { node { id price compareAtPrice inventoryPolicy availableForSale } } } } } } }`,
       { after }
     );
     for (const { node: n } of d.products.edges) {
@@ -110,12 +113,51 @@ export async function hamtaProdukter() {
         lager: n.totalInventory,
         lagerpolicy: v.inventoryPolicy ?? null,
         bild: n.featuredImage?.url ?? null,
+        typ: n.productType ?? '',
+        taggar: n.tags ?? [],
+        kollektioner: (n.collections?.edges ?? []).map((e) => e.node.handle),
+        // Hjulet och förslagskorten lägger i korgen direkt bara när det inte
+        // finns något att välja (storlek, färg) — annars länk till produktsidan.
+        en_variant: Boolean(n.hasOnlyDefaultVariant),
+        kopbar: v.availableForSale !== false,
       });
     }
     if (!d.products.pageInfo.hasNextPage) break;
     after = d.products.pageInfo.endCursor;
   }
   return ut;
+}
+
+// Mest sålda produkterna de senaste `dagar` dagarna, räknat i antal sålda
+// enheter över alla ordrar som inte annullerats. Hjulsidan visar dem som
+// "vägen till 299 kr" (Axels beslut 2026-09-13: senaste sju dagarna, minst
+// 299 kr). Kräver read_orders. Returnerar [{ handle, antal, ordrar, pris }]
+// sorterat fallande, ofiltrerat — prisgränsen läggs av den som ringer.
+export async function hamtaStorsaljare(dagar = 7) {
+  const sedan = new Date(Date.now() - dagar * 86400 * 1000).toISOString().slice(0, 10);
+  const per = new Map();
+  let after = null;
+  for (let sida = 0; sida < 40; sida++) {
+    const d = await graphql(
+      `query($q: String!, $after: String) { orders(first: 250, query: $q, after: $after) {
+        pageInfo { hasNextPage endCursor }
+        nodes { cancelledAt lineItems(first: 20) { nodes { quantity product { handle } variant { price } } } } } }`,
+      { q: `created_at:>=${sedan}`, after }
+    );
+    for (const o of d.orders.nodes) {
+      if (o.cancelledAt) continue;
+      for (const li of o.lineItems.nodes) {
+        if (!li.product?.handle) continue;
+        const p = per.get(li.product.handle) ?? { handle: li.product.handle, antal: 0, ordrar: 0, pris: Number(li.variant?.price ?? 0) };
+        p.antal += li.quantity;
+        p.ordrar += 1;
+        per.set(li.product.handle, p);
+      }
+    }
+    if (!d.orders.pageInfo.hasNextPage) break;
+    after = d.orders.pageInfo.endCursor;
+  }
+  return [...per.values()].sort((a, b) => b.antal - a.antal || b.ordrar - a.ordrar);
 }
 
 export async function hamtaKollektion(handle) {

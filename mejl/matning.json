@@ -1,0 +1,39 @@
+{
+  "matt": "2026-09-17",
+  "fran": "2026-09-12",
+  "kod": "TACKIGEN",
+  "ordrar_sedan_start": 434,
+  "med_koden": {
+    "antal": 0,
+    "omsattning_sek": 0,
+    "ordrar": [],
+    "gavor": []
+  },
+  "via_hjulet": {
+    "antal": 0,
+    "ordrar": []
+  },
+  "fran_mejlet": {
+    "antal": 0,
+    "per_mall": {},
+    "ordrar": []
+  },
+  "konvertering_procent": 0,
+  "aterkop_per_manad": {
+    "2026-07": {
+      "ordrar": 202,
+      "aterkop": 4,
+      "procent": 2
+    },
+    "2026-08": {
+      "ordrar": 1736,
+      "aterkop": 35,
+      "procent": 2
+    },
+    "2026-09": {
+      "ordrar": 1093,
+      "aterkop": 38,
+      "procent": 3.5
+    }
+  }
+}
