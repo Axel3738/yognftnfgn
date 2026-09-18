@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   290
+  ],
+  "rader": 2,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.6,
+  "text": "Free shipping on the roof cover, 21 × 10 ft"
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   388
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "$199 (reg. $249) – save $50"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "90-day guarantee – not happy, get your money back"
+ },
+ {
+  "box": [
+   214,
+   1212,
+   867,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop – Free Shipping"
+ }
+]

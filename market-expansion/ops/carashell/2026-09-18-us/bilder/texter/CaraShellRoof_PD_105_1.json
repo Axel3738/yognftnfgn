@@ -1,0 +1,109 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "rader": 1,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Just the roof — not the RV"
+ },
+ {
+  "box": [
+   354,
+   320,
+   1000,
+   368
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   22,
+   21,
+   20
+  ],
+  "bock": true,
+  "vanster_x": 404,
+  "text": "Held by a strap"
+ },
+ {
+  "box": [
+   354,
+   373,
+   1000,
+   421
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   22,
+   21,
+   20
+  ],
+  "bock": true,
+  "vanster_x": 404,
+  "text": "Edge drawcord"
+ },
+ {
+  "box": [
+   354,
+   425,
+   1000,
+   474
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   22,
+   21,
+   20
+  ],
+  "bock": true,
+  "vanster_x": 404,
+  "text": "Roof hatch stays dry"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "$199 (reg. $249) – free shipping"
+ },
+ {
+  "box": [
+   320,
+   1212,
+   760,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop Now – $199"
+ }
+]

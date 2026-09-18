@@ -1,0 +1,119 @@
+{
+ "CaraShellRoof_LI_101_1": {
+  "malnamn": "CaraShellRoof_US_LI_101_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_LI_101_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_LI_101_1.jpg.qa.png"
+ },
+ "CaraShellRoof_PD_105_1": {
+  "malnamn": "CaraShellRoof_US_PD_105_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_PD_105_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_PD_105_1.jpg.qa.png"
+ },
+ "CaraShellRoof_CS_104_1": {
+  "malnamn": "CaraShellRoof_US_CS_104_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CS_104_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CS_104_1.jpg.qa.png"
+ },
+ "CaraShellRoof_CO_102_1": {
+  "malnamn": "CaraShellRoof_US_CO_102_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CO_102_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CO_102_1.jpg.qa.png"
+ },
+ "CaraShellRoof_CS_106_1": {
+  "malnamn": "CaraShellRoof_US_CS_106_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CS_106_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_CS_106_1.jpg.qa.png"
+ },
+ "CaraShellRoof_GT_106_1": {
+  "malnamn": "CaraShellRoof_US_GT_106_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_GT_106_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_GT_106_1.jpg.qa.png"
+ },
+ "CaraShellRoof_BOF_101_1": {
+  "malnamn": "CaraShellRoof_US_BOF_101_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_101_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_101_1.jpg.qa.png"
+ },
+ "CaraShellRoof_BOF_102_1": {
+  "malnamn": "CaraShellRoof_US_BOF_102_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_102_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_102_1.jpg.qa.png"
+ },
+ "CaraShellRoof_BOF_103_1": {
+  "malnamn": "CaraShellRoof_US_BOF_103_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_103_1.jpg",
+  "qa": "market-expansion/ops/carashell/2026-09-18-us/bilder/no/CaraShellRoof_US_BOF_103_1.jpg.qa.png"
+ }
+}

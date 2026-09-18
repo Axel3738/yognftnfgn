@@ -1,0 +1,546 @@
+{
+ "_kalla": "US-lokalisering av se-texter.json (2026-09-18), byggd av copywriter-subagenten. Priser: $199 exakt när annonsen namnger storleken (21 × 10 ft / 6,5 × 3 m) ELLER redan innehåller ett av de fyra fasta prismönstren (→, —, ord., spara) enligt uppdragets exakta mappningar — i praktiken alla annonser utom CO_102_1, som saknar både storlek och prismönster och där priset skrivs 'from $199'. 'Butikens namn står aldrig i annonsen' (copy-regler.md, tillagd 2026-09-18) följs redan i SE-källan, ingen ändring behövdes för det.",
+ "CaraShellRoof_LI_101_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Water never pools at the hatches — covers the whole roof, 21 × 10 ft."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Stays on in wind — the strap hooks under the edge."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "One person alone — just the roof, not the whole RV."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Holds up outside all winter — 210D fabric that won't crack in frost."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Fits in the included bag — takes no room in the storage bin."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$199 (reg. $249) – free shipping – 90-day guarantee"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop Roof Cover"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Storlek 6,5 × 3 m → 21 × 10 ft (verifierat faktum).",
+   "'förtältslådan' (specifik svensk husvagnsterm för tältförvaring) → generiskt 'storage bin' — exakt amerikansk motsvarighet finns inte, betydelsen (tar ingen extra plats i förvaringen) behålls.",
+   "Pris exakt $199/$249 eftersom rubriken redan namnger storleken.",
+   "'30 dagars öppet köp' → '90-day guarantee' (verifierat faktum, aldrig 30 dagar för USA)."
+  ]
+ },
+ "CaraShellRoof_PD_105_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Just the roof — not the RV"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Held by a strap"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Edge drawcord"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Roof hatch stays dry"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$199 (reg. $249) – free shipping"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop Now – $199"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Punkterna kortade till korta fragment ('Held by a strap', 'Edge drawcord') i stället för hela meningar för att hålla sig inom samma enradsruta som svenskan.",
+   "Exakt $199/$249 eftersom fraktraden redan har '(ord. …)'-mönstret, trots att ingen storlek nämns i just den här annonsen."
+  ]
+ },
+ "CaraShellRoof_CS_104_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$249 — $199"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Protects the roof, not the RV"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$199 – shipping included"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Buy Now – $199"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "'1 469 kr — 1 129 kr' → '$249 — $199' enligt uppdragets exakta mappning; genomstrykningen läggs automatiskt på $249.",
+   "Underraden tappar 'hela' (whole) framför RV för att hålla sig under 90 %-gränsen — betydelsen (inte hela vagnen) finns kvar i 'not the RV'.",
+   "CTA 'Köp' → 'Buy Now' (inte 'Shop Now' som i övriga annonser) för att spegla att SE-texten säger 'Köp', inte 'Handla'."
+  ]
+ },
+ "CaraShellRoof_CO_102_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Just the roof. Not the RV."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Heavy to put on alone"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "One person handles it"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Rubs the paint all winter"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Protects the costly roof"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop Now – From $199"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Enda bilden av de nio utan storlek och utan något av de fyra fasta prismönstren (→/—/ord./spara) — CTA:ns pris skrivs därför 'From $199', inte exakt $199, enligt uppdragets regel.",
+   "'Skyddar den dyraste ytan' → 'Protects the costly roof' ('dyraste'/mest kostsamma tappar superlativet 'the costliest' för att få plats i chippens enradsruta; 'costly' behåller kostnadspåståendet)."
+  ]
+ },
+ "CaraShellRoof_CS_106_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Free shipping on the roof cover, 21 × 10 ft"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$199 (reg. $249) – save $50"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "90-day guarantee – not happy, get your money back"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop – Free Shipping"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Storlek 6,5 × 3 m → 21 × 10 ft, pris exakt $199/$249.",
+   "'spara 340 kr' → 'save $50' (verifierat: $249 − $199 = $50 = 20 %, inte SE:s 23 %).",
+   "'30 dagars öppet köp' → '90-day guarantee' i fraktraden.",
+   "CTA kortad till 'Shop – Free Shipping' (20 tecken) för att hålla sig under 22-teckensgränsen — SE-CTA:ns exakta pris ryms inte i den gränsen tillsammans med 'fri frakt'."
+  ]
+ },
+ "CaraShellRoof_GT_106_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Protect roof this Christmas"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Winter-ready — not a thin tarp that cracks in frost"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Reg. $249 · Free shipping · 90-day guarantee"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop Now – $199"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Rubriken tappar priset (SE: '… i jul – 1 129 kr') eftersom 'Christmas' (9 tecken) är mycket längre än 'jul' (3 tecken) — får inte plats i samma tvåradsruta med priset kvar. Priset finns kvar i fraktraden och CTA:n i stället. Artikeln 'the' tappad ('Protect roof' i stället för 'Protect the roof') för att komma nära 90 %-målet (27 tecken mot mål 26 — 103 %, mot 107 % med artikeln kvar); radantalet (2 rader) matchar SE.",
+   "'Ord. 1 469 kr' → 'Reg. $249' (samma fasta mönster).",
+   "'30 dagars öppet köp' → '90-day guarantee'."
+  ]
+ },
+ "CaraShellRoof_BOF_101_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$249 → $199"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Covers the roof, not the RV"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D fabric – built to last all winter"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Shop Now – Save $50"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "'1 469 kr → 1 129 kr' → '$249 → $199' enligt uppdragets exakta mappning.",
+   "'spara 340 kr' → 'Save $50' i CTA:n."
+  ]
+ },
+ "CaraShellRoof_BOF_102_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "$199 instead of $249 – save $50."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Free shipping in the US — included in the $199 price."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "90-day guarantee — not happy, you get your money back."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Klarna at checkout — the $199 roof cover."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "RV Roof Cover, 21 × 10 ft – $199"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Protect Roof – $199"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "'Fri frakt inom Sverige' → 'Free shipping in the US' (butiken skickar bara inom USA).",
+   "'30 dagars öppet köp' → '90-day guarantee' med samma pengarna-tillbaka-löfte.",
+   "Fraktraden 'Taköverdrag Husvagn 6,5 × 3 m' → 'RV Roof Cover, 21 × 10 ft' — 'RV' som paraplyterm i stället för att räkna upp husvagn/husbil, för att få plats.",
+   "CTA 'Skydda taket – 1 129 kr, fri frakt.' (35 tecken, klarar aldrig 22-teckensgränsen) kortad till 'Protect Roof – $199' (artikeln 'the' tappad för att nå exakt 20 tecken, under 22-teckensgränsen) — 'fri frakt' flyttad till fraktraden ovanför istället.",
+   "Huvudsessionen kortade punkt 2 för att få plats på en rad i samma storlek som de andra (QA 2026-09-18): '90-day guarantee — not happy, you get your money back.'"
+  ]
+ },
+ "CaraShellRoof_BOF_103_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Is a regular tarp really enough?"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D holds up in winter. Tarps crack in frost."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "$199 (reg. $249)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Guard the Costly Roof"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "Underraden 46 tecken mot ett mål på 45 (90 % av SE:s 50) — 1 tecken över målet, kunde inte kortas ytterligare utan att tappa 'in frost' som är själva sakpåståendet (spricker i FROST, inte bara i kyla generellt).",
+   "'Skydda den dyra ytan' → 'Guard the Costly Roof' (22 tecken, exakt på CTA-gränsen)."
+  ]
+ }
+}

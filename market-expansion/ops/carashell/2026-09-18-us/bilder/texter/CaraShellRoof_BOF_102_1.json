@@ -1,0 +1,110 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "rader": 2,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.6,
+  "text": "$199 instead of $249 – save $50."
+ },
+ {
+  "box": [
+   69,
+   320,
+   1040,
+   372
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 117,
+  "text": "Free shipping in the US — included in the $199 price."
+ },
+ {
+  "box": [
+   69,
+   374,
+   1040,
+   478
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 117,
+  "text": "90-day guarantee — not happy, you get your money back."
+ },
+ {
+  "box": [
+   69,
+   481,
+   1040,
+   526
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 117,
+  "text": "Klarna at checkout — the $199 roof cover."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "RV Roof Cover, 21 × 10 ft – $199"
+ },
+ {
+  "box": [
+   203,
+   1212,
+   877,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Protect Roof – $199"
+ }
+]

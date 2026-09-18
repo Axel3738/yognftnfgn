@@ -1,0 +1,1241 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "konto": "1107817401910319",
+  "kontonamn": "Magiborsten UK",
+  "marknad": "US",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/takskyddet?country=US",
+  "valuta": "USD",
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub"
+  },
+  "kampanj": {
+    "id": "120251451415500435",
+    "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+    "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120251451415290435",
+        "name": "CARASHELL_US_GT",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415060435",
+        "name": "CARASHELL_US_G",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 8,
+  "lank_arvd": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+  "pris_butik": null,
+  "pris_skal": "länken \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\" pekar inte på /products/<handle>",
+  "rader": [
+    {
+      "namn": "CaraShellRoof_CO_101_H1",
+      "mal_namn": "CaraShellRoof_US_CO_101_H1",
+      "page_id": "3df270ab-908c-815b-a474-e0a33330276b",
+      "url": "https://app.notion.com/p/CaraShellRoof_CO_101_H1-3df270ab908c815ba474e0a33330276b",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CO_101_H1.mp4, CaraShellRoof_NO_CO_101_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CO_101_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_CO_101_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CO",
+      "nummer": 101,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CO",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156949620172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T13:28:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_101_H1/CaraShellRoof_CO_101_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_101_H1/CaraShellRoof_CO_101_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_101_H1/CaraShellRoof_CO_101_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_RI_101_H1",
+      "mal_namn": "CaraShellRoof_US_RI_101_H1",
+      "page_id": "3df270ab-908c-815b-bb88-e6d9ef42d975",
+      "url": "https://app.notion.com/p/CaraShellRoof_RI_101_H1-3df270ab908c815bbb88e6d9ef42d975",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_RI_101_H1.mp4, CaraShellRoof_NO_RI_101_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_RI_101_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_RI_101_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "RI",
+      "nummer": 101,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - RI",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156812030172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T13:18:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_RI_101_H1/CaraShellRoof_RI_101_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_RI_101_H1/CaraShellRoof_RI_101_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_RI_101_H1/CaraShellRoof_RI_101_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_SP_104_H1",
+      "mal_namn": "CaraShellRoof_US_SP_104_H1",
+      "page_id": "3df270ab-908c-81e9-961a-ed9cdc49ef98",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_104_H1-3df270ab908c81e9961aed9cdc49ef98",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_SP_104_H1.mp4, CaraShellRoof_NO_SP_104_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_SP_104_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_SP_104_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "SP",
+      "nummer": 104,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - SP",
+      "adset": {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156702540172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T13:16:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_SP_104_H1/CaraShellRoof_SP_104_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_SP_104_H1/CaraShellRoof_SP_104_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_SP_104_H1/CaraShellRoof_SP_104_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_UG_101_H1",
+      "mal_namn": "CaraShellRoof_US_UG_101_H1",
+      "page_id": "3df270ab-908c-81b3-828d-e9e0dd040536",
+      "url": "https://app.notion.com/p/CaraShellRoof_UG_101_H1-3df270ab908c81b3828de9e0dd040536",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_UG_101_H1.mp4, CaraShellRoof_NO_UG_101_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_UG_101_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_UG_101_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "UG",
+      "nummer": 101,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - UG",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156622630172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T13:06:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_UG_101_H1/CaraShellRoof_UG_101_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_UG_101_H1/CaraShellRoof_UG_101_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_UG_101_H1/CaraShellRoof_UG_101_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_PD_104_H1",
+      "mal_namn": "CaraShellRoof_US_PD_104_H1",
+      "page_id": "3df270ab-908c-81ab-9623-d1b5abf970dc",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_104_H1-3df270ab908c81ab9623d1b5abf970dc",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_PD_104_H1.mp4, CaraShellRoof_NO_PD_104_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_PD_104_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_PD_104_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "PD",
+      "nummer": 104,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - PD",
+      "adset": {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156601060172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T12:56:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_104_H1/CaraShellRoof_PD_104_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_104_H1/CaraShellRoof_PD_104_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_104_H1/CaraShellRoof_PD_104_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_GT_104_H1",
+      "mal_namn": "CaraShellRoof_US_GT_104_H1",
+      "page_id": "3df270ab-908c-8162-bdfc-f0abf6277a75",
+      "url": "https://app.notion.com/p/CaraShellRoof_GT_104_H1-3df270ab908c8162bdfcf0abf6277a75",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_GT_104_H1.mp4, CaraShellRoof_NO_GT_104_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_GT_104_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_GT_104_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "GT",
+      "nummer": 104,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - GT",
+      "adset": {
+        "id": "120251451415290435",
+        "name": "CARASHELL_US_GT",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156466900172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T12:46:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_104_H1/CaraShellRoof_GT_104_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_104_H1/CaraShellRoof_GT_104_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_104_H1/CaraShellRoof_GT_104_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_LI_101_1",
+      "mal_namn": "CaraShellRoof_US_LI_101_1",
+      "page_id": "3df270ab-908c-81aa-bb3a-e74b01710eb8",
+      "url": "https://app.notion.com/p/CaraShellRoof_LI_101_1-3df270ab908c81aabb3ae74b01710eb8",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_LI_101_1.jpg, CaraShellRoof_NO_LI_101_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_LI_101_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_LI_101_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "LI",
+      "nummer": 101,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - LI",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156106200172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T12:36:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_LI_101_1/CaraShellRoof_LI_101_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_LI_101_1/CaraShellRoof_LI_101_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_LI_101_1/CaraShellRoof_LI_101_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_PD_105_1",
+      "mal_namn": "CaraShellRoof_US_PD_105_1",
+      "page_id": "3df270ab-908c-8138-87e7-cef1b0705a0e",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_105_1-3df270ab908c813887e7cef1b0705a0e",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_PD_105_1.jpg, CaraShellRoof_NO_PD_105_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_PD_105_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_PD_105_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "PD",
+      "nummer": 105,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - PD",
+      "adset": {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249155879890172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T12:19:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_105_1/CaraShellRoof_PD_105_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_105_1/CaraShellRoof_PD_105_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_105_1/CaraShellRoof_PD_105_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_CS_104_1",
+      "mal_namn": "CaraShellRoof_US_CS_104_1",
+      "page_id": "3df270ab-908c-8161-848a-efb554107a9c",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_104_1-3df270ab908c8161848aefb554107a9c",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CS_104_1.jpg, CaraShellRoof_NO_CS_104_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CS_104_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_CS_104_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CS",
+      "nummer": 104,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CS",
+      "adset": {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249155303460172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T12:05:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_104_1/CaraShellRoof_CS_104_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_104_1/CaraShellRoof_CS_104_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_104_1/CaraShellRoof_CS_104_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_CO_102_1",
+      "mal_namn": "CaraShellRoof_US_CO_102_1",
+      "page_id": "3df270ab-908c-8156-afd9-dffc5a968834",
+      "url": "https://app.notion.com/p/CaraShellRoof_CO_102_1-3df270ab908c8156afd9dffc5a968834",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CO_102_1.jpg, CaraShellRoof_NO_CO_102_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CO_102_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_CO_102_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CO",
+      "nummer": 102,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CO",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249155137870172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:49:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_102_1/CaraShellRoof_CO_102_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_102_1/CaraShellRoof_CO_102_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CO_102_1/CaraShellRoof_CO_102_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_GT_105_H1",
+      "mal_namn": "CaraShellRoof_US_GT_105_H1",
+      "page_id": "3df270ab-908c-81a7-944a-d819898c06e4",
+      "url": "https://app.notion.com/p/CaraShellRoof_GT_105_H1-3df270ab908c81a7944ad819898c06e4",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_GT_105_H1.mp4, CaraShellRoof_NO_GT_105_H1.mp4",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_GT_105_H1.mp4"
+        },
+        {
+          "namn": "CaraShellRoof_NO_GT_105_H1.mp4"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "GT",
+      "nummer": 105,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - GT",
+      "adset": {
+        "id": "120251451415290435",
+        "name": "CARASHELL_US_GT",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154846540172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:47:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_105_H1/CaraShellRoof_GT_105_H1_1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_105_H1/CaraShellRoof_GT_105_H1_1.mp4",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_105_H1/CaraShellRoof_GT_105_H1_2.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_CS_106_1",
+      "mal_namn": "CaraShellRoof_US_CS_106_1",
+      "page_id": "3df270ab-908c-81e2-bd5c-cd9df68cc542",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_106_1-3df270ab908c81e2bd5ccd9df68cc542",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CS_106_1.jpg, CaraShellRoof_NO_CS_106_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CS_106_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_CS_106_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CS",
+      "nummer": 106,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CS",
+      "adset": {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154827750172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:37:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_106_1/CaraShellRoof_CS_106_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_106_1/CaraShellRoof_CS_106_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_CS_106_1/CaraShellRoof_CS_106_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_GT_106_1",
+      "mal_namn": "CaraShellRoof_US_GT_106_1",
+      "page_id": "3df270ab-908c-81b1-b6e2-cd213e0af190",
+      "url": "https://app.notion.com/p/CaraShellRoof_GT_106_1-3df270ab908c81b1b6e2cd213e0af190",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_GT_106_1.jpg, CaraShellRoof_NO_GT_106_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_GT_106_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_GT_106_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "GT",
+      "nummer": 106,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - GT",
+      "adset": {
+        "id": "120251451415290435",
+        "name": "CARASHELL_US_GT",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154704850172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:28:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_106_1/CaraShellRoof_GT_106_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_106_1/CaraShellRoof_GT_106_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_GT_106_1/CaraShellRoof_GT_106_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_BOF_101_1",
+      "mal_namn": "CaraShellRoof_US_BOF_101_1",
+      "page_id": "3df270ab-908c-81ac-b5d1-e24fa8078f7c",
+      "url": "https://app.notion.com/p/CaraShellRoof_BOF_101_1-3df270ab908c81acb5d1e24fa8078f7c",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_BOF_101_1.jpg, CaraShellRoof_NO_BOF_101_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_BOF_101_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_BOF_101_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "BOF",
+      "nummer": 101,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - BOF",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154654850172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:25:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_101_1/CaraShellRoof_BOF_101_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_101_1/CaraShellRoof_BOF_101_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_101_1/CaraShellRoof_BOF_101_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_BOF_102_1",
+      "mal_namn": "CaraShellRoof_US_BOF_102_1",
+      "page_id": "3df270ab-908c-8151-ac2e-f7e2ac693951",
+      "url": "https://app.notion.com/p/CaraShellRoof_BOF_102_1-3df270ab908c8151ac2ef7e2ac693951",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_BOF_102_1.jpg, CaraShellRoof_NO_BOF_102_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_BOF_102_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_BOF_102_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "BOF",
+      "nummer": 102,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - BOF",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154552480172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:16:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_102_1/CaraShellRoof_BOF_102_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_102_1/CaraShellRoof_BOF_102_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_102_1/CaraShellRoof_BOF_102_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_BOF_103_1",
+      "mal_namn": "CaraShellRoof_US_BOF_103_1",
+      "page_id": "3df270ab-908c-8118-9aca-f2a5d69d31fd",
+      "url": "https://app.notion.com/p/CaraShellRoof_BOF_103_1-3df270ab908c81189acaf2a5d69d31fd",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_BOF_103_1.jpg, CaraShellRoof_NO_BOF_103_1.jpg",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_BOF_103_1.jpg"
+        },
+        {
+          "namn": "CaraShellRoof_NO_BOF_103_1.jpg"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "BOF",
+      "nummer": 103,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - BOF",
+      "adset": null,
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249154407540172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-18T11:07:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_103_1/CaraShellRoof_BOF_103_1_1.jpg",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_103_1/CaraShellRoof_BOF_103_1_1.jpg",
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_BOF_103_1/CaraShellRoof_BOF_103_1_2.jpg"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_PD_7_1",
+      "mal_namn": "CaraShellRoof_US_PD_7_1",
+      "page_id": "3dc270ab-908c-8144-ab34-d348398094cd",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_7_1-3dc270ab908c8144ab34d348398094cd",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_PD_7_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_PD_7_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "PD",
+      "nummer": 7,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - PD",
+      "adset": {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312540435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249123047960172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_PD_6_1",
+      "mal_namn": "CaraShellRoof_US_PD_6_1",
+      "page_id": "3dc270ab-908c-8125-b8af-ea9d4e7c2d8f",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_6_1-3dc270ab908c8125b8afea9d4e7c2d8f",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_PD_6_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_PD_6_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "PD",
+      "nummer": 6,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - PD",
+      "adset": {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312580435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249122897700172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_CS_6_1",
+      "mal_namn": "CaraShellRoof_US_CS_6_1",
+      "page_id": "3dc270ab-908c-81b0-9397-fe276d954ca4",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_6_1-3dc270ab908c81b09397fe276d954ca4",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CS_6_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CS_6_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CS",
+      "nummer": 6,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CS",
+      "adset": {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312480435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249122887210172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_CS_5_1",
+      "mal_namn": "CaraShellRoof_US_CS_5_1",
+      "page_id": "3dc270ab-908c-81b8-adca-c22fc14b79e7",
+      "url": "https://app.notion.com/p/CaraShellRoof_CS_5_1-3dc270ab908c81b8adcac22fc14b79e7",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_CS_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_CS_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "CS",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - CS",
+      "adset": {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312590435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249123060760172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_SP_7_1",
+      "mal_namn": "CaraShellRoof_US_SP_7_1",
+      "page_id": "3dc270ab-908c-8115-875d-c24c680b9287",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_7_1-3dc270ab908c8115875dc24c680b9287",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_SP_7_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_SP_7_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "SP",
+      "nummer": 7,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - SP",
+      "adset": {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312390435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249122729920172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_SP_6_1",
+      "mal_namn": "CaraShellRoof_US_SP_6_1",
+      "page_id": "3dc270ab-908c-812c-9b84-efe6a53f7397",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_6_1-3dc270ab908c812c9b84efe6a53f7397",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_SP_6_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_SP_6_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "SP",
+      "nummer": 6,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - SP",
+      "adset": {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312500435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249122718510172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_SP_5_1",
+      "mal_namn": "CaraShellRoof_US_SP_5_1",
+      "page_id": "3dc270ab-908c-81be-9251-d0e188804d08",
+      "url": "https://app.notion.com/p/CaraShellRoof_SP_5_1-3dc270ab908c81be9251d0e188804d08",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellRoof_SP_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellRoof_SP_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "SP",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - SP",
+      "adset": {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": true,
+      "ad_id": "120251471312470435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249122698370172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-15T22:58:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null,
+      "landning_avviker": true
+    },
+    {
+      "namn": "CaraShellRoof_PD_5_H1",
+      "mal_namn": "CaraShellRoof_US_PD_5_H1",
+      "page_id": "3db270ab-908c-8119-b65e-cd20812e74a4",
+      "url": "https://app.notion.com/p/CaraShellRoof_PD_5_H1-3db270ab908c8119b65ecd20812e74a4",
+      "typ": "video",
+      "typ_notion": "Video - Pending Approval",
+      "status": "SE-ACTIVE to be translated",
+      "fran_cs": false,
+      "leverans": "drive-lank",
+      "leverans_text": "Drive: mapp 1_JIGQLgx9jHfX8XVdychoTXECU-S6QF3",
+      "filer": [],
+      "media": [],
+      "drive": [
+        {
+          "id": "1_JIGQLgx9jHfX8XVdychoTXECU-S6QF3",
+          "typ": "mapp",
+          "url": "https://drive.google.com/drive/folders/1_JIGQLgx9jHfX8XVdychoTXECU-S6QF3?usp=drive_link"
+        }
+      ],
+      "landning": "https://carashell.se/products/takskyddet",
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "prefix": "CaraShellRoof",
+      "koncept": "PD",
+      "nummer": 5,
+      "variant": "H1",
+      "adset_namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m - PD",
+      "adset": {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      "finns_i_meta": false,
+      "ad_id": null,
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249156254490172",
+      "klar_i": {
+        "NO": false
+      },
+      "flytta_till_approved": false,
+      "skapad": "2026-09-14T06:54:00.000Z",
+      "hub": "Carashell Taköverdrag creative hub",
+      "fil": "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_5_H1/CaraShellRoof_PD_5_H1.mp4",
+      "fil_alla": [
+        "market-expansion/ops/carashell/2026-09-18-us/se/CaraShellRoof_PD_5_H1/CaraShellRoof_PD_5_H1.mp4"
+      ],
+      "fil_fel": null,
+      "landning_avviker": true
+    }
+  ],
+  "varningar": [
+    "\"CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16\" är PAUSED med 2243 kr spend — avvecklad, aldrig mål",
+    "pris: länken \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\" pekar inte på /products/<handle>"
+  ],
+  "hamtad": "2026-09-18T15:09:49.210Z"
+}

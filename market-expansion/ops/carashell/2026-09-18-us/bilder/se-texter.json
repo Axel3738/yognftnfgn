@@ -1,0 +1,93 @@
+{
+  "_kalla": "Avläst ur SE-bilderna 2026-09-18 (Bäverbutikens BOF-mall, bildannonser/text.py — speglade till CaraShell av /ops-spegla). Formerna uppifrån och ned; block = radindex som är EN radbruten mening; stryk_del = överstruket jämförpris. Rutorna står i overrides.json (mätta med matrader.py + oversatt-bild.py --analys), inte gissade.",
+  "CaraShellRoof_LI_101_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Vattnet blir aldrig stående", "vid takluckorna – täcker", "hela taket, 6,5 × 3 meter."], "block": [0, 1, 2] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Sitter kvar när det blåser – rem och dragsko håller den på", "plats."], "block": [0, 1] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["En person klarar det själv – bara taket, inte hela vagnen."] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Håller en hel vintersäsong ute – 210D-väv som inte spricker i", "frost."], "block": [0, 1] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Ryms i påsen som följer med – tar ingen plats i förtältslådan."] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["1 129 kr (ord. 1 469 kr) – fri frakt – 30 dagars öppet köp"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Beställ taköverdraget"] }
+    ]
+  },
+  "CaraShellRoof_PD_105_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Täck bara taket – inte", "hela vagnen"], "block": [0, 1] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Spänns fast med rem"] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Dragsko i kanten"] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Takluckan hålls torr"] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["1 129 kr (ord. 1 469 kr) – fri frakt"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Handla nu – 1 129 kr"] }
+    ]
+  },
+  "CaraShellRoof_CS_104_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["1 469 kr — 1 129 kr"], "stryk_del": "1 469 kr" },
+      { "typ": "platta", "roll": "underrad", "rader": ["Skyddar taket – inte hela vagnen"] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["1 129 kr – frakten ingår"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Köp taköverdraget – 1 129 kr"] }
+    ]
+  },
+  "CaraShellRoof_CO_102_1": {
+    "mall": "BOF-jamforelse",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Täck taket.", "Inte hela vagnen."], "block": [0, 1] },
+      { "typ": "etikett", "roll": "chip_vanster_upp", "rader": ["Tungt att få på plats ensam"] },
+      { "typ": "etikett", "roll": "chip_hoger_upp", "rader": ["Hanteras av en person"] },
+      { "typ": "etikett", "roll": "chip_vanster_ner", "rader": ["Skaver mot lacken hela vintern"] },
+      { "typ": "etikett", "roll": "chip_hoger_ner", "rader": ["Skyddar den dyraste ytan"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Handla taköverdraget – 1 129 kr"] }
+    ]
+  },
+  "CaraShellRoof_CS_106_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Fri frakt på taköverdrag", "för husvagn, 6,5 × 3 m"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["1 129 kr (ord. 1 469 kr) – spara 340 kr"] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["30 dagars öppet köp – gillar du inte skyddet får du pengarna tillbaka"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Beställ taköverdraget – fri frakt"] }
+    ]
+  },
+  "CaraShellRoof_GT_106_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Skydda taket i jul – 1 129", "kr"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Tål vintern ute – inte tunn presenning som spricker i", "frost"], "block": [0, 1] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["Ord. 1 469 kr · Fri frakt · 30 dagars öppet köp"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Beställ taköverdraget – 1 129 kr"] }
+    ]
+  },
+  "CaraShellRoof_BOF_101_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["1 469 kr → 1 129 kr"] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Täcker taket – inte hela vagnen"] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["210D-väv – tål en hel vintersäsong ute"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Beställ nu – spara 340 kr"] }
+    ]
+  },
+  "CaraShellRoof_BOF_102_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["1 129 kr i stället för 1 469", "kr – spara 340 kr."], "block": [0, 1] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Fri frakt inom Sverige – ingår i taköverdragets 1 129 kr."] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["30 dagars öppet köp på taköverdraget för 1 129 kr: gillar du", "inte det, får du pengarna tillbaka."], "block": [0, 1] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Klarna i kassan – taköverdraget för 1 129 kr."] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["Taköverdrag Husvagn 6,5 × 3 m – 1 129 kr"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Skydda taket – 1 129 kr, fri frakt."] }
+    ]
+  },
+  "CaraShellRoof_BOF_103_1": {
+    "mall": "BOF",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Räcker det med en vanlig", "presenning?"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["210D-väv tål vintern. Presenning spricker i frost."] },
+      { "typ": "etikett", "roll": "fraktrad", "rader": ["1 129 kr (ord. 1 469 kr)"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Skydda den dyra ytan"] }
+    ]
+  }
+}

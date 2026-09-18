@@ -1,0 +1,128 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   400
+  ],
+  "rader": 3,
+  "storlek": 72,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.6,
+  "text": "Water never pools at the hatches — covers the whole roof, 21 × 10 ft."
+ },
+ {
+  "box": [
+   58,
+   438,
+   1040,
+   538
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 106,
+  "text": "Stays on in wind — the strap hooks under the edge."
+ },
+ {
+  "box": [
+   58,
+   546,
+   1040,
+   596
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 106,
+  "text": "One person alone — just the roof, not the whole RV."
+ },
+ {
+  "box": [
+   58,
+   598,
+   1040,
+   698
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 106,
+  "text": "Holds up outside all winter — 210D fabric that won't crack in frost."
+ },
+ {
+  "box": [
+   58,
+   704,
+   1040,
+   756
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "bock": true,
+  "vanster_x": 106,
+  "text": "Fits in the included bag — takes no room in the storage bin."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "$199 (reg. $249) – free shipping – 90-day guarantee"
+ },
+ {
+  "box": [
+   310,
+   1212,
+   770,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop Roof Cover"
+ }
+]

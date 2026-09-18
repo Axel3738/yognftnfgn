@@ -1,0 +1,67 @@
+{
+ "jobb": [
+  {
+   "namn": "CaraShellRoof_LI_101_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_LI_101_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_PD_105_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_PD_105_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_CS_104_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_CS_104_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_CO_102_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_CO_102_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_CS_106_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_CS_106_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_GT_106_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_GT_106_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_BOF_101_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_101_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_BOF_102_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_102_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_BOF_103_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_103_1"
+   }
+  }
+ ]
+}

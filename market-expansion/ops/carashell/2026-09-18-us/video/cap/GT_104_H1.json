@@ -1,0 +1,19 @@
+{
+ "in": "../video/forbehandlad/carashell_GT_104_H1.mp4",
+ "ut": "../us/CaraShellRoof_US_GT_104_H1.mp4",
+ "srt": "../video/srt-us/carashell_GT_104_H1.srt",
+ "captions": {
+  "zon": [
+   880,
+   1100
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 1022,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620
+ },
+ "lager": [],
+ "qa": "../cap/qa-GT_104_H1"
+}

@@ -1,0 +1,224 @@
+{
+  "CaraShellRoof_US_LI_101_1": {
+    "page_id": "3df270ab-908c-81aa-bb3a-e74b01710eb8",
+    "koncept": "LI",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "Meta 400: (#100) Param instagram_actor_id must be a valid Instagram account id"
+    }
+  },
+  "CaraShellRoof_US_PD_105_1": {
+    "page_id": "3df270ab-908c-8138-87e7-cef1b0705a0e",
+    "koncept": "PD",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_PD_105_1\" PAUSED i \"CARASHELL_US_PD\" och sedan aktivera annonsen. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_CS_104_1": {
+    "page_id": "3df270ab-908c-8161-848a-efb554107a9c",
+    "koncept": "CS",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_CS_104_1\" PAUSED i \"CARASHELL_US_CS\" och sedan aktivera annonsen. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_CO_102_1": {
+    "page_id": "3df270ab-908c-8156-afd9-dffc5a968834",
+    "koncept": "CO",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_CO_102_1\" PAUSED i \"CARASHELL_US_CO\" och sedan aktivera annonsen + det nya adsetet. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_CS_106_1": {
+    "page_id": "3df270ab-908c-81e2-bd5c-cd9df68cc542",
+    "koncept": "CS",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_CS_106_1\" PAUSED i \"CARASHELL_US_CS\" och sedan aktivera annonsen. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_GT_106_1": {
+    "page_id": "3df270ab-908c-81b1-b6e2-cd213e0af190",
+    "koncept": "GT",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_GT_106_1\" PAUSED i \"CARASHELL_US_GT\" och sedan aktivera annonsen. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_BOF_101_1": {
+    "page_id": "3df270ab-908c-81ac-b5d1-e24fa8078f7c",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_BOF_101_1\" PAUSED i \"CARASHELL_US_BOF\" och sedan aktivera annonsen + det nya adsetet. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_BOF_102_1": {
+    "page_id": "3df270ab-908c-8151-ac2e-f7e2ac693951",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_BOF_102_1\" PAUSED i \"CARASHELL_US_BOF\" och sedan aktivera annonsen + det nya adsetet. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_BOF_103_1": {
+    "page_id": "3df270ab-908c-8118-9aca-f2a5d69d31fd",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": false,
+    "resultat": null,
+    "logg": [
+      "       \"call_to_action\": {",
+      "         \"type\": \"SHOP_NOW\",",
+      "         \"value\": {",
+      "           \"link\": \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\"",
+      "         }",
+      "       }",
+      "     },",
+      "     \"instagram_actor_id\": \"17841421066812446\"",
+      "   }",
+      "[TORRKÖRNING] Skulle skapa annons \"CaraShellRoof_US_BOF_103_1\" PAUSED i \"CARASHELL_US_BOF\" och sedan aktivera annonsen + det nya adsetet. Kampanjen rörs aldrig. Inget skrevs."
+    ]
+  },
+  "CaraShellRoof_US_PD_7_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-8144-ab34-d348398094cd",
+    "koncept": "PD",
+    "flytta_till_approved": false
+  },
+  "CaraShellRoof_US_PD_6_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-8125-b8af-ea9d4e7c2d8f",
+    "koncept": "PD",
+    "flytta_till_approved": false
+  },
+  "CaraShellRoof_US_CS_6_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-81b0-9397-fe276d954ca4",
+    "koncept": "CS",
+    "flytta_till_approved": false
+  },
+  "CaraShellRoof_US_CS_5_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-81b8-adca-c22fc14b79e7",
+    "koncept": "CS",
+    "flytta_till_approved": false
+  },
+  "CaraShellRoof_US_SP_7_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-8115-875d-c24c680b9287",
+    "koncept": "SP",
+    "flytta_till_approved": false
+  },
+  "CaraShellRoof_US_SP_6_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-812c-9b84-efe6a53f7397",
+    "koncept": "SP",
+    "flytta_till_approved": true
+  },
+  "CaraShellRoof_US_SP_5_1": {
+    "hoppad": "finns redan i kontot",
+    "page_id": "3dc270ab-908c-81be-9251-d0e188804d08",
+    "koncept": "SP",
+    "flytta_till_approved": false
+  }
+}
