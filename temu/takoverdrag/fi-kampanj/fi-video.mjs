@@ -80,12 +80,17 @@ export function hittaTystnader(fil) {
   if (start != null) ut.push([start, dur(fil)]);           // tystnad ända till slutet
   return ut;
 }
-export function klippPlan(tystnader, langd) {
+export function klippPlan(tystnader, langd, behov = Infinity) {
+  // behov = sekunder som måste bort ur de inre pauserna; utan behov komprimeras allt till BEHALL.
+  // Med behov kortas pauserna proportionellt (GT_4 2026-09-18: 2,4 s för mycket bortklippt när allt gick till 0,25 s).
   const klipp = [];
+  const inre = tystnader.filter(([a, b]) => a > 0.02 && b < langd - 0.02 && b - a > MIN_TYST);
+  const R = inre.reduce((s, [a, b]) => s + (b - a - BEHALL), 0);
+  const andel = behov >= R ? 1 : Math.max(0, behov) / R;
   for (const [a, b] of tystnader) {
     if (b >= langd - 0.02) klipp.push([Math.max(0, a + 0.10), langd]);       // svansen: behåll 0,10 s
     else if (a <= 0.02) klipp.push([0, Math.max(0, b - 0.10)]);              // inledningen: behåll 0,10 s
-    else if (b - a > MIN_TYST) klipp.push([a + BEHALL / 2, b - BEHALL / 2]);
+    else if (b - a > MIN_TYST && andel > 0) { const bort = (b - a - BEHALL) * andel; const m = (a + b) / 2; klipp.push([m - bort / 2, m + bort / 2]); }
   }
   return klipp;
 }
@@ -146,7 +151,7 @@ async function main() {
       const kant = klippPlan(tystnader, raLangd).filter(([a, b]) => a === 0 || b === raLangd);
       const inre = tystnader.filter(([a, b]) => a > 0.02 && b < raLangd - 0.02 && b - a > MIN_TYST);
       const utanKant = raLangd - kant.reduce((s, [a, b]) => s + (b - a), 0);
-      if (utanKant > fri) { klipp = klippPlan(tystnader, raLangd); klippLjud(`${A}/vo/${namn}.mp3`, klipp, klippt); varp0 = varpAv(klipp); }
+      if (utanKant > fri) { klipp = klippPlan(tystnader, raLangd, utanKant - mal); klippLjud(`${A}/vo/${namn}.mp3`, klipp, klippt); varp0 = varpAv(klipp); }
       else if (utanKant < mal - 0.5 && inre.length) {
         // för kort: förläng pauserna (max +0,6 s per paus) så talet spänner över SE-talets tid
         const d = Math.min(0.6, (mal - utanKant) / inre.length);
