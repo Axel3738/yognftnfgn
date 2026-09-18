@@ -1,0 +1,251 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/termoskyddet",
+  "konto": "1107817401910319",
+  "kontonamn": "Magiborsten UK",
+  "marknad": "US",
+  "status": "Approved",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/termoskyddet?country=US",
+  "valuta": "USD",
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE US-kampanj — \"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend (avvecklad, ett beslut) · \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1977 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 16,
+  "lank_arvd": null,
+  "pris_butik": {
+    "pris": 99,
+    "min": 99,
+    "max": 99,
+    "valuta": "USD",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://carashell.com/products/termoskyddet?country=US"
+  },
+  "pris_skal": null,
+  "rader": [
+    {
+      "namn": "CaraShellFront_CS_5_1",
+      "mal_namn": "CaraShellFront_US_CS_5_1",
+      "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+      "url": "https://app.notion.com/p/CaraShellFront_CS_5_1-3dd270ab908c8146b829ed41b49a42cb",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "Approved",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_CS_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_CS_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.com/products/termoskyddet?country=US",
+      "prefix": "CaraShellFront",
+      "koncept": "CS",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": true,
+      "ad_id": "120251465899090435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249137080570172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_G_4_1",
+      "mal_namn": "CaraShellFront_US_G_4_1",
+      "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+      "url": "https://app.notion.com/p/CaraShellFront_G_4_1-3dd270ab908c815c9316dc9e95df7528",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "Approved",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_G_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_G_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.com/products/termoskyddet?country=US",
+      "prefix": "CaraShellFront",
+      "koncept": "G",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": true,
+      "ad_id": "120251465907780435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249137085810172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_PD_5_1",
+      "mal_namn": "CaraShellFront_US_PD_5_1",
+      "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+      "url": "https://app.notion.com/p/CaraShellFront_PD_5_1-3dd270ab908c811b9b0dd59227ab15cc",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "Approved",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_PD_5_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_PD_5_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.com/products/termoskyddet?country=US",
+      "prefix": "CaraShellFront",
+      "koncept": "PD",
+      "nummer": 5,
+      "variant": "1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": true,
+      "ad_id": "120251465920930435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249137109590172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_PD_4_1",
+      "mal_namn": "CaraShellFront_US_PD_4_1",
+      "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+      "url": "https://app.notion.com/p/CaraShellFront_PD_4_1-3dd270ab908c81b3b7b4e9337c6db203",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "Approved",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_PD_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_PD_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.com/products/termoskyddet?country=US",
+      "prefix": "CaraShellFront",
+      "koncept": "PD",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": true,
+      "ad_id": "120251466048000435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249137190450172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null
+    },
+    {
+      "namn": "CaraShellFront_CS_4_1",
+      "mal_namn": "CaraShellFront_US_CS_4_1",
+      "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+      "url": "https://app.notion.com/p/CaraShellFront_CS_4_1-3dd270ab908c8151b6fdf0b448caf80e",
+      "typ": "bild",
+      "typ_notion": "Image - Pending Approval",
+      "status": "Approved",
+      "fran_cs": false,
+      "leverans": "notion-fil",
+      "leverans_text": "bilaga: CaraShellFront_CS_4_1.png",
+      "filer": [
+        {
+          "namn": "CaraShellFront_CS_4_1.png"
+        }
+      ],
+      "media": [],
+      "drive": [],
+      "landning": "https://carashell.se/products/termoskyddet",
+      "lank": "https://carashell.com/products/termoskyddet?country=US",
+      "prefix": "CaraShellFront",
+      "koncept": "CS",
+      "nummer": 4,
+      "variant": "1",
+      "adset_namn": null,
+      "adset": null,
+      "finns_i_meta": true,
+      "ad_id": "120251466053980435",
+      "prefix_avviker": false,
+      "namn_ommarkt": false,
+      "se_ad_id": "120249137196990172",
+      "klar_i": {
+        "NO": true
+      },
+      "flytta_till_approved": true,
+      "skapad": "2026-09-16T23:16:00.000Z",
+      "hub": "Termoskyddet",
+      "fil": null,
+      "fil_alla": [],
+      "fil_fel": null
+    }
+  ],
+  "varningar": [
+    "kampanj: ingen ACTIVE US-kampanj — \"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend (avvecklad, ett beslut) · \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1977 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend — avvecklad, aldrig mål",
+    "\"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1977 kr spend — avvecklad, aldrig mål"
+  ],
+  "hamtad": "2026-09-18T15:18:19.745Z"
+}

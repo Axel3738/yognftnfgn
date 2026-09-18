@@ -557,3 +557,22 @@ i Metas anropstak.
 - Rutinen `Speglingen: carashell/termoskyddet` (`trig_01GWEbTKYMKTfqUZfcucqN71`, fast session
   `session_017BEGfjEbMWUNPVhHFDxnxn`, cron `55 14 * * *` = 16:55 CEST) sedd i `list_triggers` på
   `claude5@stonebite.org` i den här körningen, enabled, nästa 2026-09-19 16:55.
+
+## 2026-09-18 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, US pausad av ägaren
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader (batch #2), alla
+  redan uppe i US sedan 2026-09-17 (`finns_i_meta: true`) — inget eftersläpande.
+- **US-kampanjen `CARASHELL_US_Termoskydd Husbil 211 × 171 cm` (`120251442339640435`,
+  Magiborsten UK) är PAUSED sedan 2026-09-18 09:34 UTC (11:34 CEST)** med 1 977 kr spend,
+  0 köp — pausad för hand, samma förmiddag som SE-kampanjen (11:29). Största spendarna:
+  `US_PD_2` 989 kr, `US_PD_2_1` 450 kr, `US_CS_5_1` 185 kr, resten under 60 kr; 21 annonser
+  ACTIVE/CAMPAIGN_PAUSED. Kopian `1 CARASHELL_US_… – kopia` (`120251451414990435`, skapad
+  2026-09-16 22:21 CEST av någon annan än rutinerna) är PAUSED sedan 2026-09-17 15:25 CEST
+  med 616 kr, 0 köp. Båda är PAUSED med spend = beslut; rutinen rör dem inte.
+- Läge "US paused by owner": 0 rader hållna, inget renderat (0 HeyGen-credits), inget
+  uppladdat, ingen Notion-rad rörd. Kommer rader i `SE-ACTIVE to be translated` hålls de
+  där tills kampanjen är ACTIVE igen, eller tills US tas bort ur `annonsmarknader`.
+- Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550526534278717470`, ingen ping.
+- Kommandofilen fick 2026-09-18 en not om egen domän (`carashell.com`) i länkraden, och
+  `hamtaPris` exporteras nu ur `ops-leveranskon.mjs` — inget som ändrar den här rundan.
