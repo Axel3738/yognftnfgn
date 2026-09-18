@@ -12,6 +12,9 @@ import { fileURLToPath } from 'node:url';
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HAR, '..', '..', '..', '..');
 const NYCKEL = 'carashell/takskyddet';
+// Instagram-kontot ur originalkampanjens API-skapade annonser (2026-09-16/17). Kopiekampanjens
+// eget instagram_user_id (17841421066812446) avvisas av API:t — se tools/ops-till-meta.mjs --ig.
+const IG = '17841423916277476';
 const args = process.argv.slice(2);
 const flagga = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
 const bara = flagga('--bara');
@@ -33,7 +36,7 @@ for (const r of rader) {
   if (r.typ === 'video' && rostkoll[n] && rostkoll[n].ok === false) { resultat[n] = { fel: 'röstkoll ❌ — laddas inte upp', page_id: r.page_id }; console.log(n, 'RÖSTKOLL ❌ — hoppas'); continue; }
   const c = copy[n];
   if (!c) { resultat[n] = { fel: 'saknar copy', page_id: r.page_id }; console.log(n, 'SAKNAR COPY'); continue; }
-  const argv = [join(ROT, 'tools', 'ops-till-meta.mjs'), NYCKEL, '--marknad', 'US', '--kampanj', jobb.kampanj.id,
+  const argv = [join(ROT, 'tools', 'ops-till-meta.mjs'), NYCKEL, '--marknad', 'US', '--kampanj', jobb.kampanj.id, '--ig', IG,
     '--namn', n, '--fil', fil, '--primar', c.message, '--rubrik', c.headline, '--beskrivning', c.description, skarpt ? '--json' : '--torr'];
   const p = spawnSync('node', argv, { encoding: 'utf8', cwd: ROT });
   const logg = (p.stdout + p.stderr).split('\n').filter((l) => l && !/UNDICI|trace-warnings/.test(l));

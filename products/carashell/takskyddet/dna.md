@@ -404,6 +404,33 @@ prischip; **inte** för priskortet (pris + jämförpris). Rätt fix hör hemma i
 `/ops-bild`: ladda upp basfotot till Notion-raden också (eller spara `kalla`-länken
 utan att skriva över planfilen), så att varje marknad kan rita om från grunden.
 
+### Rotorsak 3 — fyra fynd ur US-rundan 2026-09-18 (17 speglade rader)
+
+1. **`pipeline/no-precis.py` tappar exakt 50 frames (2 s) i slutet på varje video.** Mätt
+   på alla åtta: render 643 frames → ut 593, oberoende av lager. Orsaken är `-shortest`
+   tillsammans med råmask-strömmarna i filtergrafen. I `PD_104_H1` låg "Ninety-day
+   guarantee." i de två sekunderna. Lösning tills verktyget rättas: padda ingången med
+   2,5 s klonad slutframe (`forbehandla.py`, tpad) och klipp utfilen till ljudets längd
+   (`trimma.py`). Kolla alltid `nb_frames` render mot ut innan uppladdning.
+2. **En kampanj Axel kopierat i Ads Manager bär ett `instagram_user_id` som API:t inte
+   tar som `instagram_actor_id`** ("must be a valid Instagram account id", 9 av 9). Id:t
+   ur en API-skapad annons i originalkampanjen (`17841423916277476`) fungerar.
+   `tools/ops-till-meta.mjs --ig <id>|ingen` sedan 2026-09-18.
+3. **Bäverbutikens BOF-bilder (speglade) översätts med manuella rutor, inte detektorn:**
+   rubrik och checklista ligger direkt på ljus bakgrund och hittas aldrig av
+   `oversatt-bild.py --analys`. Rutorna mäts med `matrader.py`, ALLA former går via
+   `box_for_form`, fraktraden (vit text på foto) får `fyll: mork` (alfa 235 — rita_box
+   suddar bara mörka pixlar när raden är ljus), bockpunkter hålls på EN rad (bocken ritas
+   per rad), och bilden försuddas med `forsudda.py` före körningen (rita_box suddar aldrig
+   pixlar med summa ≥ 500, så antialias-kanterna på en 76 px rubrik blir ett spöke).
+   Mall: `market-expansion/ops/carashell/2026-09-18-us/bilder/`.
+4. **De speglade källvideorna bär Bäverbutikens slutkort (logga + kr-pris) och stora röda
+   pop-texter (1129 KR / FRI FRAKT / 210D-VÄV).** De ligger live i CaraShell SE och NO med
+   Bäverbutikens slutkort — speglingen kollar bara copyn. För US: `rodtext.py` mäter
+   fönster + rutor, `bygg-cap.py` bygger blur-platta + amerikansk text i samma stil och ett
+   nytt US-slutkort (produktbilden klipps ur källans kort). `kvarkoll.py` hittar frames
+   där det svenska pillret överlevde (CO_101_H1: tre fönster → `captions.fyll`).
+
 ## Marknader
 
 | Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |

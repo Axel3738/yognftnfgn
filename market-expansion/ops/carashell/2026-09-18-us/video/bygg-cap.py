@@ -109,7 +109,9 @@ rodtext(720, 1280, [("FREE SHIPPING", 100, [62, 70, 665, 285], False)], [40, 36,
 # ------------------------------------------------------------ per video
 # fönster ur rodtext.py (t0 = första framen med röd text, t1 = sista) + slutkort_fran
 VIDEOR = {
-    "CO_101_H1": {"W": 720, "cy": 946, "rod": [("pris-mitt", [16.8, 19.5], [40, 316, 680, 640]), ("frakt-mitt", [19.5, 22.6], [40, 316, 680, 620])], "slut": 22.6},
+    # fyll: manuella pillerplattor där detektorn missade det svenska pillret (kvarkoll.py 2026-09-18)
+    "CO_101_H1": {"W": 720, "cy": 946, "rod": [("pris-mitt", [16.8, 19.5], [40, 316, 680, 640]), ("frakt-mitt", [19.5, 22.6], [40, 316, 680, 620])], "slut": 22.6,
+                  "fyll": [{"rect": [180, 908, 500, 998], "t": [1.2, 1.7]}, {"rect": [245, 908, 726, 985], "t": [17.4, 19.6]}, {"rect": [158, 908, 726, 976], "t": [20.2, 20.9]}]},
     "RI_101_H1": {"W": 720, "cy": 949, "rod": [("pris-mitt", [22.2, 24.9], [40, 316, 680, 640]), ("frakt-mitt", [24.9, 28.4], [40, 316, 680, 620])], "slut": 28.4},
     "SP_104_H1": {"W": 720, "cy": 1018, "rod": [("vav-mitt", [16.0, 20.4], [30, 260, 690, 530]), ("pris-mitt", [26.0, 28.8], [40, 316, 680, 640])], "slut": 36.8},
     "UG_101_H1": {"W": 720, "cy": 1018, "rod": [("pris-topp", [19.0, 20.9], [40, 36, 680, 310]), ("frakt-topp", [20.9, 22.6], [40, 36, 680, 310])], "slut": 24.0},
@@ -125,14 +127,15 @@ for n, v in VIDEOR.items():
     if v["slut"] is not None:
         lager.append({"png": f"../lager/slutkort-{v['W']}.png", "t": [v["slut"], 999]})
     K = {
-        "in": f"../video/forbehandlad/carashell_{n}.mp4",
-        "ut": f"../us/CaraShellRoof_US_{n}.mp4",
-        "srt": f"../video/srt-us/carashell_{n}.srt",
+        "in": f"../forbehandlad/carashell_{n}.mp4",
+        "ut": f"../../us/CaraShellRoof_US_{n}.mp4",
+        "srt": f"../srt-us/carashell_{n}.srt",
         "captions": {"zon": [int(880 * sk), int(1100 * sk)], "max_chars": 34, "font_px": int(30 * sk), "standard_cy": v["cy"],
                      "x0": int(50 * sk), "x1": int(670 * sk), "bredd_max": int(620 * sk),
-                     **({"av": [[v["slut"], 999]]} if v["slut"] is not None else {})},
+                     **({"av": [[v["slut"], 999]]} if v["slut"] is not None else {}),
+                     **({"fyll": v["fyll"]} if v.get("fyll") else {})},
         "lager": lager,
-        "qa": f"../cap/qa-{n}",
+        "qa": f"qa-{n}",
     }
     json.dump(K, open(os.path.join(HÄR, "cap", f"{n}.json"), "w"), indent=1, ensure_ascii=False)
     forbehandla[n] = [{"rect": r, "t": t} for _, t, r in v["rod"]]

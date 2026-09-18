@@ -7,7 +7,14 @@
 //
 //   node tools/ops-till-meta.mjs <nyckel> --marknad SE|NO|US --namn <annonsnamn> --fil <sökväg>
 //        --primar "<primary text>" --rubrik "<headline>" [--beskrivning "<text>"]
-//        [--lank <url>] [--kampanj <id>] [--torr] [--json]
+//        [--lank <url>] [--kampanj <id>] [--ig <instagram-id>|ingen] [--torr] [--json]
+//
+// --ig: Instagram-kontot i annonsen ärvs annars ur kampanjens befintliga annonser
+//   (instagram_actor_id / instagram_user_id). En kampanj som Axel KOPIERAT i Ads
+//   Manager bär ett instagram_user_id som API:t inte tar som instagram_actor_id
+//   (mätt 2026-09-18 på CaraShells US-kopia: "Param instagram_actor_id must be a
+//   valid Instagram account id", 9 av 9 uppladdningar). Ge då id:t ur en annons
+//   som API:t själv skapat (originalkampanjen), eller "ingen" för att utelämna fältet.
 //
 // Bygger på tools/meta-lib.mjs (samma spärrar som tools/notion-till-marknad.mjs)
 // och factory/register.mjs (butiken, kontospärren, prefixet).
@@ -367,6 +374,7 @@ async function huvud() {
     if (!pageId) stopp(`${e.message} Produktfilen saknar dessutom meta.page_id — sidan går inte att veta.`);
     sidaKalla = 'produktfilen (kampanjen har inga annonser än)';
   }
+  if (args.ig) { igId = String(args.ig) === 'ingen' ? null : String(args.ig); logg(`Instagram-konto: ${igId ?? 'utelämnat'} (--ig)`); }
   let kampanjensAnnonser;
   let dsaLäst = true;
   try {

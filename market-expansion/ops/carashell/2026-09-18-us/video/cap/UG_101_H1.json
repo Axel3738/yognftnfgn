@@ -1,7 +1,7 @@
 {
- "in": "../video/forbehandlad/carashell_UG_101_H1.mp4",
- "ut": "../us/CaraShellRoof_US_UG_101_H1.mp4",
- "srt": "../video/srt-us/carashell_UG_101_H1.srt",
+ "in": "../forbehandlad/carashell_UG_101_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_UG_101_H1.mp4",
+ "srt": "../srt-us/carashell_UG_101_H1.srt",
  "captions": {
   "zon": [
    880,
@@ -43,5 +43,5 @@
    ]
   }
  ],
- "qa": "../cap/qa-UG_101_H1"
+ "qa": "qa-UG_101_H1"
 }
