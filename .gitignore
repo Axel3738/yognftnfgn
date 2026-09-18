@@ -27,6 +27,9 @@ factory/output/*/bild-*/
 factory/output/*/*/bild-*/
 factory/output/*/spegla-*/
 factory/output/*/*/spegla-*/
+# Briefgranskningen: brief-dumparna ur Notion (kopior) — kön (.json) och Discord-jobbet committas
+factory/output/*/briefgranskning-*/
+factory/output/*/*/briefgranskning-*/
 factory/output/*/spegla-*-torr.*
 factory/output/*/*/spegla-*-torr.*
 factory/output/*/*.logg
