@@ -1196,3 +1196,26 @@ andra NO-kampanj bredvid den pausade och dubblat spenden.
 
 Priset lästes till **380 NOK** (382 den 17:e, 379 den 16:e). Den levande
 avläsningen fortsätter följa kursen, som den ska.
+
+---
+
+## 2026-09-19 — nattvakten, körning nr 8: båda marknaderna avstängda, 0 ändringar
+
+SE: `DRYTREK_SE_Damasker Vandring` PAUSED sedan 15/9, **0 ändringar**, inget
+aktiverat. 7d: 2 998 kr, 6 köp, ROAS 0,87 — bara spend före pausen; 3d 0 kr.
+NO: `DRYTREK_NO_Damasker Vandring` pausades av Axel 18/9 11:28 (8 450 kr
+livstid, 31 köp, ROAS 1,82 livstid men 1,36 på 3 dygn). Ingen torrkörning i
+natt — PAUSED med spend är ett beslut och rutinen rör det aldrig. Frågan om
+NO-styrning (ställd 17/9 och 18/9) är därmed stängd av pausen.
+
+Produkten står helt still: noll spend, noll aktiva annonser. Briefronden
+pausad (registret säger "briefdag JA — ikappkörning", `Briefrond:` PAUS ⇒ noll
+briefer, ingen `brief-kord`). Hubben oförändrad tredje natten: 19 batch
+#3-rader i Draft, 10 videor i Creative strat review, 31 Approved.
+`products/drytrek/feedback.md` saknas — produkten har aldrig briefgranskats
+(nytt steg 0 i kommandot sedan 18/9).
+
+Discord `#ads`: A/B/C-frågan om SE står kvar sedan 15/9; ny fråga om rutinen
+ska stängas av i Routines så länge ingen marknad är igång (HeimGuard NO-
+prejudikatet 13/9). Rutinen slår aldrig på något själv.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-19.json`.
