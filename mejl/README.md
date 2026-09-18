@@ -324,6 +324,20 @@ jämförde tecken för tecken. Metoden står nu i prompten som reserv. Lärdom: 
 Shopifys redigerare räknar tecken, så 85 293 byte är 84 152 tecken. Prompten
 anger nu tecken och kollar per mall vad som redan sitter.
 
+## Spårningsknappen (v7, 2026-09-18 kväll)
+
+Testmejlets "Spåra paketet" gick till UPS (påhittat nummer); riktiga kunder
+gick till `fulfillment.tracking_url` = `t.17track.net` (engelska, reklam).
+Axel såg Shopifys orderstatussida ("det är ju som vår egen tracker") —
+därför pekar knappen nu på `{{ order_status_url }}` i alla tre
+fraktmallarna, och spårningsnumret i mejlet länkar till fraktbolaget.
+⚠️ Statussidan visar bara "Bekräftad" och "På väg": inga skanningar når
+Shopify (0 av 500 ordrar). Detaljer kräver en spårningsapp (Parcel Panel
+eller 17TRACK) som också skriver "levererat" tillbaka — då går
+"Levererad"-mejlet ut. YunExpress svarar 405 och 4PX har stängt sitt öppna
+gränssnitt (mätt 2026-09-18), så en egen sida utan app har ingen datakälla.
+Inklistringen väntar på appbeslutet.
+
 ## Mäta om det gör något
 
 ```bash

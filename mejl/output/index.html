@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-18 07:44 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-18 11:05 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
@@ -93,7 +93,7 @@
     <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="https://baverbutiken.se/collections/din-gratisprodukt">https://baverbutiken.se/collections/din-gratisprodukt</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>TACKIGEN</strong> är skapad och aktiv (2026-09-12, Cowork (Claude i Chrome) i Axels inloggade Shopify admin). Köpvillkoret är kollektionen <strong>Alla produkter</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>7 av 8 mallar inklistrade och sparade under Inställningar → Notiser. Testmejl på Orderbekräftelse skickat 2026-09-12. Hoppades över: Övergiven kassa (se mallen längst ner).</p></div>
-    
+    <div class="lage-rad att-gora"><span class="ikon">🔁</span><p>3 mallar har en äldre version inklistrad (v7 (2026-09-18 kväll): 'Spåra paketet' går till Shopifys orderstatussida (butikens logga, svenska, 'På väg') i stället för 17track; spårningsnumret länkar till fraktbolaget. Inte inklistrad — väntar på Axels beslut om spårningsapp (Parcel Panel/17TRACK), som ändrar var knappen ska peka.) och ska klistras om: <strong>Leveransbekräftelse</strong>, <strong>Leveransuppdatering</strong>, <strong>Ute för leverans</strong>. De övriga är oförändrade i sak.</p></div>
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: det riktiga köptestet under steg 1 — koden har 0 användningar än.</p></div>
   </section>
 
@@ -601,7 +601,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 01:44 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 05:05 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -966,7 +966,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ fulfillment.tracking_url | default: order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -974,7 +974,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: #000000;">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1249,7 +1249,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;&lt;a href=&quot;https://t.17track.net/#nums=UA123456789SE&quot; style=&quot;color: #000000;&quot;&gt;UA123456789SE&lt;/a&gt;&lt;/strong&gt; (YunExpress)&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -1290,7 +1290,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 01:44 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 05:05 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -1563,7 +1563,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ fulfillment.tracking_url | default: order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -1571,7 +1571,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: #000000;">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1666,7 +1666,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;&lt;a href=&quot;https://t.17track.net/#nums=UA123456789SE&quot; style=&quot;color: #000000;&quot;&gt;UA123456789SE&lt;/a&gt;&lt;/strong&gt; (YunExpress)&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -1784,7 +1784,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ fulfillment.tracking_url | default: order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -1792,7 +1792,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: #000000;">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1887,7 +1887,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;&lt;a href=&quot;https://t.17track.net/#nums=UA123456789SE&quot; style=&quot;color: #000000;&quot;&gt;UA123456789SE&lt;/a&gt;&lt;/strong&gt; (YunExpress)&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -2274,7 +2274,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 01:44 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 05:05 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;

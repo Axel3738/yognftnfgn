@@ -45,7 +45,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{{ fulfillment.tracking_url | default: order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{{ order_status_url }}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -53,7 +53,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: #000000;">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}</p>
             </td>
           </tr>
           <tr>

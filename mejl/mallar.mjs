@@ -808,14 +808,19 @@ export const MALLAR = [
   { id: 'avbruten_order', shopify: 'Order annullerad / Order cancelled', erbjudande: false },
 ];
 
-const SPARNING_LIQUID = '{{ fulfillment.tracking_url | default: order_status_url }}';
+// Knappen går till Shopifys orderstatussida (butikens logga, svenska, "På
+// väg"-tidslinje), inte till fraktbolagets 17track-sida med reklam och
+// engelska (Axel 2026-09-18: "det är ju som vår egen tracker"). Själva
+// spårningsnumret i mejlet länkar fortfarande till fraktbolaget för den som
+// vill se varje skanning.
+const SPARNING_LIQUID = '{{ order_status_url }}';
 const SPARNING_EXEMPEL = 'https://baverbutiken.se/orders/exempel';
 
 function sparningsInfo(s, lage) {
   const inre =
     lage === 'liquid'
-      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{{ fulfillment.tracking_number }}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}`
-      : `Spårningsnummer: <strong>${EXEMPEL.sparningsnummer}</strong> (${EXEMPEL.fraktbolag})`;
+      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: ${s.svart};">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% if fulfillment.tracking_company %} ({{ fulfillment.tracking_company }}){% endif %}{% endif %}`
+      : `Spårningsnummer: <strong><a href="https://t.17track.net/#nums=${EXEMPEL.sparningsnummer}" style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</a></strong> (${EXEMPEL.fraktbolag})`;
   return `
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
