@@ -1376,6 +1376,44 @@ nb-översättning av de nya + ÄNDRADE nycklarna (jämför mot HEAD-versionen av
 Butikens gamla rutiner (`/notionscalercs <butik>`) slutar gå samma natt — de ska pekas
 om till `<butik>/<produkt 1>` på det konto de ligger på.
 
+## ⚠️ Byter du optionens NAMN får varje variant ett nytt id (2026-09-18)
+
+"Variant" döptes om till "Storlek" (Axels beslut). Ett ord i produktfilen,
+`produkt.variantrubrik`. Vad som faktiskt hände i Shopify:
+
+| | Före | Efter |
+|---|---|---|
+| Optionens id | 18702147780940 | **oförändrat** |
+| Variant-id:n | 9 st | **9 HELT NYA** |
+| Fasta priser i NOK/USD/EUR | 9 + 9 + 9 | **0 + 0 + 0** |
+
+`productSet` behåller optionens id men bygger om varianterna. Och
+prislistornas fasta priser är knutna till VARIANT-id — de följde inte med.
+I några minuter såg finska, norska och amerikanska kunder Shopifys egen
+kursomräkning i stället för de priser Axel bestämt. **Inget felmeddelande.
+Ingen röd rad. Bara ett annat tal, och bara för en kund i rätt land.**
+
+🔒 **Regeln: efter VARJE ändring som rör varianterna — nytt optionsnamn, ny
+storlek, borttagen variant — måste `--igen prislista` köras.** Räkna inte med
+att märka det: butiken ser likadan ut i Sverige.
+
+✅ **Spärren är kod sedan samma dag.** Trippelkollen läser `priceLists` och
+kräver att VARJE variant bär ett fast pris i VARJE valuta produktfilens
+`ekonomi.marknadspriser` nämner. Saknas prislistan: *"ingen prislista i
+NOK — kunden ser butikens valuta omräknad"*. Saknas varianter i den:
+*"7 av 9 varianter saknar fast NOK-pris … kör --igen prislista"*. Rött, så
+QA:n inte kan bli grön. Tre tester täcker de tre lägena.
+
+⚠️ Två fällor i själva spärren, båda gjorda och rättade samma dag: fältet
+måste läggas till både i frågan OCH i `hamtaLage`s returobjekt (annars
+larmar den falskt om "ingen prislista"), och `bedomLage` läser den platta
+formen `d.priceLists`, som `markets` och `pages` — inte `{ nodes }`.
+
+📌 Ordningen som fungerade: `--igen produkt` → `--igen prislista` →
+`--igen oversatt`. Den sista för att nyckeln i underlaget följer namnet:
+`produkt.<handle>.option.Variant` blev `…option.Storlek`, och språkfilerna
+måste byta nyckel eller tappa översättningen.
+
 ## Två resurser översattes aldrig — fraktsättet och optionens namn (2026-09-18)
 
 Axel öppnade varukorgen som finsk kund och pekade på tre saker. En var inget

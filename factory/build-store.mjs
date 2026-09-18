@@ -52,7 +52,13 @@ export function bildPost(b, standardAlt) {
 // tillbaka på butikens brand när produktfilen saknar eget brandnamn.
 export function byggPlan(p, butik = null) {
   const riktigaVarianter = Array.isArray(p.varianter) && p.varianter.length > 0;
-  const optionNamn = riktigaVarianter ? 'Variant' : 'Title';
+  // Optionens namn syns för kunden som "<namn>: 5,5 × 3 m" i varukorgen och
+  // över rullgardinen. "Variant" säger ingenting — bär varianterna storlekar
+  // eller färger hör det ordet dit. `produkt.variantrubrik` i produktfilen,
+  // "Variant" när den saknas (Axels beslut 2026-09-18). Översätts som vanligt:
+  // underlaget får nyckeln produkt.<handle>.option.<namn>.
+  const egenRubrik = typeof p.produkt?.variantrubrik === 'string' ? p.produkt.variantrubrik.trim() : '';
+  const optionNamn = riktigaVarianter ? (egenRubrik || 'Variant') : 'Title';
   const varianter = riktigaVarianter ? p.varianter : [{ namn: 'Default Title' }];
   // Listorna tål null, tom sträng och (efter yaml-fixen) `[]` — men aldrig
   // krascha på en felskriven rad: valideringen har redan sagt sitt.

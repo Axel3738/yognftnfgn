@@ -88,6 +88,12 @@ export function byggKrav(butik, produkter, ctx = {}) {
       // ut som förut.
       variantpriser: Object.fromEntries([...prisKarta(p)].map(([namn, v]) => [namn, v.pris])),
       prisstege: harPrisstege(p),
+      // Valutorna produkten MÅSTE ha fasta priser i. Utan dem räknar Shopify
+      // om från SEK med dagskursen, och sidan visar ett annat tal än det Axel
+      // bestämt (CaraShell 2026-09-18).
+      marknadsvalutor: (Array.isArray(p.ekonomi?.marknadspriser) ? p.ekonomi.marknadspriser : [])
+        .map((m) => String(m?.valuta ?? '').toUpperCase())
+        .filter((x) => x && x !== String(butik?.butik?.valuta ?? 'SEK').toUpperCase()),
       antalBilder: Array.isArray(p.media?.bilder) ? p.media.bilder.filter(Boolean).length : 0,
       metafalt,
       plan,
@@ -145,6 +151,28 @@ export function bedomLage(d, krav) {
           : k.prisstege
             ? `prisstege ${Math.min(...alla)}–${Math.max(...alla)} ${shop.currencyCode ?? ''} över ${v.length} varianter`
             : `${k.pris} ${shop.currencyCode ?? ''} på alla ${v.length} varianter, jämförpris ${k.jamforpris ?? '—'}`);
+    // FASTA PRISER PER VALUTA — spärren mot den tystaste bugg vi haft.
+    // Byter produktens optionsnamn får VARJE variant ett nytt id, och
+    // prislistornas fasta priser pekar då på varianter som inte finns längre.
+    // Inget felmeddelande: Shopify visar sin egen kursomräkning i stället, och
+    // bara en kund i rätt land ser skillnaden. Hände 2026-09-18 när "Variant"
+    // döptes om till "Storlek" — alla tre prislistorna tappade takskyddet.
+    // Kör `--igen prislista` efter VARJE ändring som rör varianterna.
+    for (const valuta of k.marknadsvalutor ?? []) {
+      const lista = (d.priceLists ?? []).find((x) => String(x.currency).toUpperCase() === valuta);
+      const medPris = new Set(
+        (lista?.prices?.nodes ?? [])
+          .filter((x) => x.variant?.product?.handle === k.handle)
+          .map((x) => x.variant.id)
+      );
+      const utan = v.filter((x) => !medPris.has(x.id));
+      lagg(lista && utan.length === 0 ? 'ok' : 'fel', `${pre}fast pris ${valuta}`,
+        !lista
+          ? `ingen prislista i ${valuta} — kunden ser butikens valuta omräknad`
+          : utan.length === 0
+            ? `${v.length} av ${v.length} varianter har fast ${valuta}-pris`
+            : `${utan.length} av ${v.length} varianter saknar fast ${valuta}-pris (${utan.map((x) => x.title).slice(0, 4).join(', ')}) — kör --igen prislista`);
+    }
     const felLager = v.filter((x) => x.inventoryPolicy !== 'CONTINUE' || x.inventoryItem?.tracked !== false);
     lagg(felLager.length === 0 ? 'ok' : 'fel', `${pre}lagerpolicy`,
       felLager.length === 0
@@ -292,6 +320,7 @@ export async function hamtaLage(handles) {
       themes(first: 20) { nodes { id name role } }
       shopLocales { locale primary published }
       markets(first: 50) { nodes { id name handle status currencySettings { baseCurrency { currencyCode } localCurrencies } conditions { regionsCondition { regions(first: 20) { nodes { ... on MarketRegionCountry { code } } } } } } }
+      priceLists(first: 20) { nodes { id name currency prices(first: 250, originType: FIXED) { nodes { variant { id product { handle } } } } } }
       webPresences(first: 20) { nodes { id defaultLocale { locale } alternateLocales { locale } } }
       metaobjects(type: "${METAOBJEKT_TYP}", first: 100) { nodes { id handle fields { key value } } }
       pages(first: 100) { nodes { handle title } }
@@ -324,6 +353,7 @@ export async function hamtaLage(handles) {
     pages: d.pages?.nodes ?? [],
     menus: d.menus?.nodes ?? [],
     codeDiscountNodes: d.codeDiscountNodes?.nodes ?? [],
+    priceLists: d.priceLists?.nodes ?? [],
     produkter,
   };
 }

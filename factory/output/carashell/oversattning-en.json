@@ -157,6 +157,6 @@
   "produkt.takskyddet.variant.11,5 × 3 m": "38 × 10 ft (11.5 × 3 m)",
   "produkt.takskyddet.variant.12,5 × 3 m": "41 × 10 ft (12.5 × 3 m)",
   "produkt.takskyddet.variant.13,5 × 3 m": "44 × 10 ft (13.5 × 3 m)",
-  "produkt.takskyddet.option.Variant": "Size",
-  "frakt.metod.Fri frakt": "Free shipping"
+  "frakt.metod.Fri frakt": "Free shipping",
+  "produkt.takskyddet.option.Storlek": "Size"
 }

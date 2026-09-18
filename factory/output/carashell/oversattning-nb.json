@@ -159,6 +159,6 @@
   "produkt.takskyddet.variant.11,5 × 3 m": "11,5 × 3 m",
   "produkt.takskyddet.variant.12,5 × 3 m": "12,5 × 3 m",
   "produkt.takskyddet.variant.13,5 × 3 m": "13,5 × 3 m",
-  "produkt.takskyddet.option.Variant": "Størrelse",
-  "frakt.metod.Fri frakt": "Gratis frakt"
+  "frakt.metod.Fri frakt": "Gratis frakt",
+  "produkt.takskyddet.option.Storlek": "Størrelse"
 }

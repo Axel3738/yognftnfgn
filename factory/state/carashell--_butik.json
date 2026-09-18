@@ -212,17 +212,17 @@
       "underlag": 160,
       "utfall": {
         "nb": {
-          "registrerade": 4,
+          "registrerade": 0,
           "saknade": 12,
           "perTyp": {
-            "variant": 1,
+            "variant": 0,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
-            "fraktsätt": 3,
+            "fraktsätt": 0,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
@@ -231,17 +231,17 @@
           "granskning": "4372/4423"
         },
         "en": {
-          "registrerade": 4,
+          "registrerade": 0,
           "saknade": 12,
           "perTyp": {
-            "variant": 1,
+            "variant": 0,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
-            "fraktsätt": 3,
+            "fraktsätt": 0,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
@@ -250,17 +250,17 @@
           "granskning": "4392/4423"
         },
         "fi": {
-          "registrerade": 4,
+          "registrerade": 0,
           "saknade": 12,
           "perTyp": {
-            "variant": 1,
+            "variant": 0,
             "produkt": 0,
             "metafält": 0,
             "sida": 0,
             "menylänk": 0,
             "paket": 0,
             "policy": 0,
-            "fraktsätt": 3,
+            "fraktsätt": 0,
             "kollektion": 0,
             "temamall": 0,
             "sektionsgrupp": 0,
@@ -297,7 +297,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T12:36:43.176Z"
+    "tid": "2026-09-18T13:10:23.709Z"
   },
-  "uppdaterad": "2026-09-18T12:36:43.176Z"
+  "uppdaterad": "2026-09-18T13:10:23.709Z"
 }

@@ -89,6 +89,38 @@ test('en butik som stämmer med yaml ger noll fel och bara mobilvyn manuell', ()
   }
 });
 
+test('variant utan fast pris i en marknadsvaluta är RÖTT — den tystaste buggen vi haft', () => {
+  // Byter produktens optionsnamn får varje variant ett NYTT id, och
+  // prislistornas fasta priser pekar på varianter som inte finns. Shopify
+  // säger ingenting, den visar sin egen kursomräkning (CaraShell 2026-09-18).
+  const b = butik();
+  b.butik.valuta = 'SEK';
+  const p = dummy();
+  p.ekonomi = { ...(p.ekonomi ?? {}), valuta: 'SEK', marknadspriser: [{ valuta: 'NOK', pris: 480 }] };
+  const krav = byggKrav(b, [p], { arbetstemaId: TEMA_ID });
+  assert.deepEqual(krav.produkter[0].marknadsvalutor, ['NOK'], 'NOK ska krävas');
+
+  const d = gronLage(krav);
+  const handle = krav.produkter[0].handle;
+  const varianter = d.produkter[handle].variants.nodes;
+
+  // Alla varianter har fast pris ⇒ grönt.
+  d.priceLists = [{ currency: 'NOK', prices: { nodes: varianter.map((v) => ({ variant: { id: v.id, product: { handle } } })) } }];
+  assert.ok(namn(bedomLage(d, krav).grona).some((x) => x.includes('fast pris NOK')), 'ska vara grön när alla har fast pris');
+
+  // Prislistan finns men är TOM — exakt vad som hände. Rött, med åtgärden.
+  d.priceLists = [{ currency: 'NOK', prices: { nodes: [] } }];
+  const tom = bedomLage(d, krav).fel.find((r) => r.namn.includes('fast pris NOK'));
+  assert.ok(tom, 'tom prislista ska vara röd');
+  assert.match(tom.detalj, /saknar fast NOK-pris/);
+  assert.match(tom.detalj, /--igen prislista/);
+
+  // Ingen prislista alls ⇒ också rött, med sin egen orsak.
+  d.priceLists = [];
+  const ingen = bedomLage(d, krav).fel.find((r) => r.namn.includes('fast pris NOK'));
+  assert.match(ingen.detalj, /ingen prislista i NOK/);
+});
+
 test('marknad utan basvaluta är ett FEL, inte ett handklick — kunden ser fel valuta', () => {
   const krav = byggKrav(butik(), [dummy()], { arbetstemaId: TEMA_ID });
   const d = gronLage(krav);

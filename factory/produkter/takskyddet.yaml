@@ -16,6 +16,10 @@ produkt:
   namn: "Taköverdrag Husvagn & Husbil 5,5–13,5 m"
   id: "takskyddet"
   menynamn: "Taköverdraget"
+  # Rullgardinens etikett i varukorgen: "Storlek: 5,5 × 3 m", inte
+  # "Variant: 5,5 × 3 m" (Axels beslut 2026-09-18, efter att han sett
+  # varukorgen som finsk kund). Översätts per språk — Koko / Størrelse / Size.
+  variantrubrik: "Storlek"
   # Ordet i paketrutans rullgardiner ("Överdrag 1", "Överdrag 2") — sedan
   # 2026-09-17 när produkten fick nio storlekar. Kunden kan blanda storlekar
   # i ett paket (Axels beslut samma dag).
