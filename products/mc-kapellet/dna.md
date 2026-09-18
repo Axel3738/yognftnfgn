@@ -249,3 +249,25 @@ felmeddelande — identisk lista för fem olika produkter. Rätt väg:
 Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
 men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
 hubben äger sina nummer också.
+
+---
+
+## Uppdatering 2026-09-18 (`/rond-auto` steg 4b, feedbackloop + batch #4)
+
+Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
+`batch-log.md` under samma datum. Kortversionen av vad datan flyttade:
+
+1. **BEVISAD — PD_1 bär produkten ensam.** 53 % av spenden, 72 % av vinsten,
+   CPA 187 mot break-even-CPA 313. Instruktion: `PD_10_H1` matar den med färsk
+   film och samma resultat-först-struktur.
+2. **BEVISAD — PD_3 har slitits ut och går nu back.** Samma mekanik som PD_1
+   men ROAS 1,12 mot break-even 1,49, alltså −661 kr. Det är rotorsaken till att
+   vinnaren måste matas INNAN den slits ut. Kopiera inte PD_3:s film.
+3. **BEVISAD — det feta prisformatet ger kampanjens bästa CPA.** CS_2_1: 146 kr.
+   Dess urgency-rad ("IDAG ENDAST / Snart slutsåld") går däremot inte att belägga.
+   Instruktion: `CS_8_H1` och `PD_11_1` behåller layouten och stryker lögnen —
+   40 %-talet är sant och får stå kvar.
+4. **HYPOTES — vintervinkeln är otestad.** Både PD_1 och PD_3 visar en hoj som
+   fortfarande används. `OB_5_H1` talar till den som ställer undan den.
+
+Priset avläst live 2026-09-18: 349 kr, jämförpris 582 kr → spara 233 kr = 40 %. Måttet på sidan: 218 × 118,5 cm.

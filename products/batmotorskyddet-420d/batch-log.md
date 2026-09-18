@@ -292,3 +292,86 @@ Johan Karlsson. Citatet är oförändrat.
 | `Batmotor_RV_9_1` | statisk, review | ordagrant citat, Mikael Svensson | — |
 
 **Modellpolicy följd:** all svensk copy skriven av en sonnet-subagent.
+
+---
+
+## Feedbackloop + batch #4 — 2026-09-18 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-18 ur MagiBorsten 1867947880635861):**
+26 609 kr spend · 128 köp · livstids-ROAS 3,01 mot break-even 1,62. Dagsbudget **höjd 2 000 → 2 400 kr** denna körning (SKALA, snabbspår: ROAS 4,55 på tre dagar).
+
+**Datakvalitet:** `amount_spent × purchase_roas` summerat per annons stämmer mot
+kampanjens egen intäkt inom avrundning; annonsurvalet täcker 93 % av kampanjens
+spend. `omni_purchase_values` användes INTE (känd bugg, CLAUDE.md). Inga trasiga rader.
+
+**Signifikansgrind (ANALYSMETOD steg 2c):** 10 annonser bedömbara. För tidigt, ingen dom: Batmotor_SP_1_H2 (1 165 kr/2 köp), PD_1_H3 (974 kr/2 köp), PD_5_1 (398 kr/0 köp), BF_1_1 (322 kr/1 köp).
+
+**Vinstbidrag — rangordnat på vinst, inte på ROAS eller CPA.**
+Break-even-CPA räknas per annons på dess EGEN AOV (`intäkt/köp ÷ break-even-ROAS`),
+aldrig på en blandad siffra:
+
+| Annons | Status | Spend | Spend% | Köp | CPA | BE-CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| Batmotor_SP_1_H5 (top spender = benchmark) | ACTIVE | 5 615 | 23 % | 35 | 160 | 377 | 3,81 | **+7 574 kr (33 %)** |
+| Batmotor_SP_1_H1 | ACTIVE | 2 569 | 10 % | 17 | 151 | 405 | 4,35 | +4 322 kr |
+| Batmotor_CS_2_1 (statisk) | ACTIVE | 2 923 | 12 % | 17 | 172 | 393 | 3,71 | +3 763 kr |
+| Batmotor_SP_1_H3 | ACTIVE | 5 015 | 20 % | 16 | 313 | 432 | 2,23 | +1 900 kr |
+| Batmotor_BF_3_1 | ACTIVE | 2 109 | 9 % | 10 | 211 | 370 | 2,84 | +1 587 kr |
+| Batmotor_RV_1_H1 | ACTIVE | 675 | 3 % | 5 | 135 | 357 | 4,29 | +1 112 kr |
+| Batmotor_CS_5_H1 | ACTIVE | 789 | 3 % | 4 | 197 | 420 | 3,45 | +891 kr |
+| Batmotor_BF_12_1 | ACTIVE | 442 | 2 % | 3 | 147 | 441 | 4,84 | +880 kr |
+| Batmotor_FM_1_H1 | ACTIVE | 846 | 3 % | 5 | 169 | 329 | 3,15 | +798 kr |
+| Batmotor_UG_1_H1 | ACTIVE | 968 | 4 % | 4 | 242 | 357 | 2,39 | +461 kr |
+
+Summa vinstbidrag i urvalet: **+23 288 kr**. Ingen bedömbar annons ligger under
+break-even — kampanjen är kontots friskaste.
+
+**Mönster (data skild från hypotes):**
+1. **BEVISAD — SP_1-hookfamiljen ÄR kampanjen.** H5 +7 574 kr, H1 +4 322 kr,
+   H3 +1 900 kr = 59 % av allt vinstbidrag på tre annonser med samma kropp och
+   olika öppningar. Instruktion: `SP_1_H10` byter bara de tre första sekunderna.
+2. **BEVISAD — hooken är variabeln, inte kroppen.** Samma familj rymmer både
+   kontots bästa (H5, ROAS 3,81) och dess sämsta (H2, ROAS 0,80 på 1 165 kr,
+   under grinden). Instruktion: kopiera aldrig H2:s öppning.
+3. **BEVISAD — statiska prisformat fungerar här.** CS_2_1 +3 763 kr vid CPA 172.
+   Instruktion: `CS_10_1` behåller layouten och byter bort den falska deadlinen.
+4. **HYPOTES — säsongsvinkeln är otestad.** Ingen annons talar till den som
+   ställer upp båten i oktober. `SP_4_H1` gör det.
+
+**Priset avläst live 2026-09-18** ur butikens produkt-JSON: 579 kr, jämförpris 965 kr → spara 386 kr = 40 %. Recensionsvidgeten avläst live samma dag: **8 recensioner, snitt 5,00**.
+
+### Batch #4 — 11 (4 video + 2 statiska i rundan, 3 BOF-bilder, 2 review-bilder) briefer, alla i Notion som Draft
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Batmotor_SP_1_H10` | video | ny öppning på SP_1-kroppen: "de flesta skydd täcker bara kåpan" | hooken |
+| `Batmotor_SP_4_H1` | video | säsongsvinkeln — motorn står ute från oktober till våren | vinkeln |
+| `Batmotor_CS_9_H1` | video | CS_2_1:s erbjudande i rörlig form, utan den falska deadlinen | formatet |
+| `Batmotor_PD_7_H1` | video | monteringen tidtagen i bild, hela vägen ner över riggen | beviset |
+| `Batmotor_BF_13_1` | statisk | före/efter i EN bild: bar motor i regn mot täckt motor | formatet |
+| `Batmotor_CS_10_1` | statisk | CS_2_1:s prislayout med ärlig rubrik | rubriken |
+| `Batmotor_BOF_1_1` | statisk, BOF | 579 kr mot 965 kr, spara 386 kr | — |
+| `Batmotor_BOF_2_1` | statisk, BOF | 30 dagars öppet köp + Klarna | — |
+| `Batmotor_BOF_3_1` | statisk, BOF | passformsinvändningen: 9 storlekar, 0–5 hk till 250–350 hk | — |
+| `Batmotor_RV_10_1` | statisk, review | ordagrant citat, Peter Andersson | — |
+| `Batmotor_RV_11_1` | statisk, review | ordagrant citat, Thomas Eriksson | — |
+
+**Review-bilderna:** detta är enda produkten i ronden där citat får användas —
+de åtta citaten är unika och produktspecifika. Peter Andersson och Thomas
+Eriksson var de två sista obrukade. Efter denna batch är **alla åtta förbrukade**;
+nästa review-bild kräver nya recensioner.
+
+**Modellpolicy följd (CLAUDE.md regel 6):** all svensk copy skriven av en
+sonnet-subagent som fick DNA, hypotes, hook, formatkrav och `docs/copy-regler.md`.
+Strategi, analys, namngivning och briefstruktur gjordes av huvudsessionen.
+Tre-frågorstestet står i varje brief, rad för rad.
+
+**Rättat av huvudsessionen efter subagenten:**
+- Subagenten fick först instruktionen "sex obrukade citat" ur `dna.md`.
+  `batch-log.md` visar att fyra till använts sedan dess (Mikael Svensson,
+  Lars Johansson, Anders Nilsson, Daniel Lindberg). Subagenten upptäckte det
+  själv och valde rätt två. **`dna.md`:s recensionsavsnitt är därmed
+  inaktuellt och bör läsas tillsammans med batch-loggen.**
+- `SP_1_H10`:s stjärnrad ("8 av 8 recensioner ger 5 stjärnor") kontrollerades
+  live mot Judge.me-vidgeten innan den fick stå kvar, och briefen bär en regel
+  om att kolla om siffran före export.

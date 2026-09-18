@@ -5,16 +5,17 @@ batch #1. Fylls på av `/koncept` och kommande `/cs`-körningar.
 
 ## Väntande idéer
 
-- **Vinterförvaringsvinkeln.** Husbilen står stilla från oktober till mars och
-  det är då kondensen gör mest skada. Ingen annons talar till den som ställer
-  undan bilen i stället för till den som kör den. Otestat.
+- **Vinterförvaringsvinkeln.** [använd i batch #2] Husbilen står stilla från
+  oktober till mars och det är då kondensen gör mest skada. Ingen annons
+  talar till den som ställer undan bilen i stället för till den som kör den.
+  Briefad som `Termoskydd_SP_8_H1`.
   *Källa: sidans kondensmekanik + säsongen.*
 - **Mängdrabatten som huvudbudskap i video.** `MT_1_1` i batch #1 testar den
   statiskt. Bär den som rörlig är den en egen vinkel, inte bara ett erbjudande.
   *Källa: produktsidans förvalda 2-pack (−15 %).*
-- **Sidoflikarna som eget bevis.** "90 cm sidflikar" och "kläms i dörrkarmen"
-  är det som skiljer produkten från en enkel frontmatta — men ingen annons
-  visar det ensamt i närbild. Otestat.
+- **Sidoflikarna som eget bevis.** [använd i batch #2] "90 cm sidflikar" och
+  "kläms i dörrkarmen" är det som skiljer produkten från en enkel frontmatta.
+  Briefad som `Termoskydd_SP_9_1`.
   *Källa: produktsidans måttrad.*
 
 ## Spärrar som gäller tills något ändras

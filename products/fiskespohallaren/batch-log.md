@@ -332,3 +332,92 @@ wizard-citat.
 > Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
 > i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
 > briefer som aldrig nått kontot, och de äger sitt nummer ändå.
+
+---
+
+## Feedbackloop + batch #6 — 2026-09-18 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-18 ur MagiBorsten 1867947880635861):**
+78 823 kr spend · 394 köp · livstids-ROAS 2,17 mot break-even 1,50. Dagsbudget 1 800 kr (oförändrad denna körning — VANTA_KADENS, ändrad för nyligen).
+
+**Datakvalitet:** `amount_spent × purchase_roas` summerat per annons stämmer mot
+kampanjens egen intäkt inom avrundning; annonsurvalet täcker 98 % av kampanjens
+spend. `omni_purchase_values` användes INTE (känd bugg, CLAUDE.md). Inga trasiga rader.
+
+**Signifikansgrind (ANALYSMETOD steg 2c):** 14 annonser bedömbara (≥300 kr OCH ≥3 köp). För tidigt, ingen dom: Fiskespöhållare_CS_1_H3 (377 kr/2 köp), Rodholder_PD_7_1 (354 kr/1 köp), Fiskespöhållare_PD_1_H2 (304 kr/1 köp).
+
+**Vinstbidrag — rangordnat på vinst, inte på ROAS eller CPA.**
+Break-even-CPA räknas per annons på dess EGEN AOV (`intäkt/köp ÷ break-even-ROAS`),
+aldrig på en blandad siffra:
+
+| Annons | Status | Spend | Spend% | Köp | CPA | BE-CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| Fiskespöhållare_CS_1_H1 | ACTIVE | 7 380 | 10 % | 52 | 142 | 287 | 3,04 | **+7 560 kr (21 %)** |
+| Fiskespöhållare_PD_EXTRA (…564380291) | ACTIVE | 17 141 | 22 % | 86 | 199 | 280 | 2,10 | +6 901 kr (20 %) |
+| Fiskespöhållare_PD_EXTRA (…856844270291) | PAUSED | 9 159 | 12 % | 51 | 180 | 288 | 2,40 | +5 518 kr |
+| Fiskespöhållare_PD_EXTRA (…857099190291) | ACTIVE | 5 029 | 7 % | 34 | 148 | 270 | 2,74 | +4 158 kr |
+| Fiskespöhållare_PD_1_H1 (top spender = benchmark) | ACTIVE | 16 026 | 21 % | 62 | 258 | 313 | 1,81 | +3 351 kr |
+| Rodholder_PD_15_H1 | PAUSED | 9 268 | 12 % | 39 | 238 | 308 | 1,94 | +2 728 kr |
+| Rodholder_PD_6_1 (bäst statisk) | ACTIVE | 3 366 | 4 % | 21 | 160 | 284 | 2,66 | +2 594 kr |
+| Fiskespöhållare_CS_1_H3 | ACTIVE | 505 | 1 % | 8 | 63 | 289 | 6,87 | +1 808 kr |
+| Rodholder_PD_16_H1 | ACTIVE | 3 119 | 4 % | 13 | 240 | 267 | 1,67 | +354 kr |
+| Rodholder_CS_3_1 | ACTIVE | 797 | 1 % | 4 | 199 | 276 | 2,08 | +309 kr |
+| Rodholder_SO_3_H1 | ACTIVE | 441 | 1 % | 3 | 147 | 225 | 2,30 | +235 kr |
+| Rodholder_PD_11_H2 | PAUSED | 1 922 | 2 % | 6 | 320 | 317 | 1,49 | −19 kr |
+| Rodholder_SO_4_1 | PAUSED | 808 | 1 % | 3 | 269 | 259 | 1,44 | −30 kr |
+| Fiskespöhållare_CS_2_1 | PAUSED | 907 | 1 % | 3 | 302 | 218 | 1,08 | −253 kr |
+
+Summa vinstbidrag i urvalet: **+35 215 kr**.
+
+**Mönster (data skild från hypotes):**
+1. **BEVISAD — erbjudandevinkeln (CS) är produktens starkaste per krona.**
+   CS_1_H1 gör +7 560 kr på bara 10 % av spenden; hela CS-koden står för
+   +9 424 kr på fyra annonser. Instruktion till batchen: två nya CS-executions
+   i video (`Rodholder_PD_60_H1` öppnar på priset, `Rodholder_CS_9_H1` visar vad
+   289 kr köper).
+2. **BEVISAD — PD-demon bär volymen.** PD-koden står för +25 586 kr över
+   åtta bedömbara annonser, och de tre PD_EXTRA-varianterna ensamma för
+   +16 577 kr. Instruktion: behåll PD-strukturen, variera bara öppningen.
+3. **BEVISAD — top spendern är benchmark, inte kandidat.** PD_1_H1 tar 21 % av
+   spenden på kampanjens lägsta ROAS bland de stora (1,81) men ligger ändå
+   +3 351 kr över break-even. Den döms inte mot de små annonserna.
+4. **HYPOTES — det ärliga jämförpriset är nytt bränsle.** Jämförpriset 482 kr
+   finns numera i Shopify (satt 2026-09-15), så "spara 193 kr / 40 %" går att
+   säga ärligt för första gången. Det var förbjudet i batch #3–#5.
+   ⚠️ Formatetiketterna (video/statisk) går inte att lita på för de äldsta
+   annonserna — PD_EXTRA-raderna saknar `_H`-suffix trots att de är video.
+   Ingen video-mot-statisk-slutsats dras därför denna körning.
+
+**Priset avläst live 2026-09-18** ur butikens produkt-JSON: 289 kr, jämförpris 482 kr → spara 193 kr = 40 %. Bekräftat i `variants[0]`.
+
+### Batch #6 — 9 (4 video + 2 statiska i rundan, 3 BOF-bilder, 0 review-bilder) briefer, alla i Notion som Draft
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Rodholder_PD_60_H1` | video | PD-strukturen växer om den öppnar på det ärliga priset i stället för problemet | öppningen |
+| `Rodholder_PD_61_H1` | video | samma film, men hooken är problemet (spöspetsar som hakar i varandra) | hooken, allt annat låst mot PD_60 |
+| `Rodholder_CS_9_H1` | video | "det här får du för 289 kr" — räkna fram alla fyra klämmorna i bild | beviset |
+| `Rodholder_GT_6_H1` | video | ordlös före/efter i 30 s; GT har aldrig fått riktig spend | formatet |
+| `Rodholder_PD_62_1` | statisk | PD_6_1:s minimalistiska formel med det nya, ärliga prisblocket | erbjudandet |
+| `Rodholder_SO_10_1` | statisk | samma layout, rubriken bär problemet i stället för priset | rubrikvinkeln |
+| `Rodholder_BOF_1_1` | statisk, BOF | 289 kr mot 482 kr, spara 193 kr | — |
+| `Rodholder_BOF_2_1` | statisk, BOF | 30 dagars nöjd-kund-garanti, fri frakt inom Sverige, Klarna | — |
+| `Rodholder_BOF_3_1` | statisk, BOF | räkneinvändningen: fyra klämmor räcker till fyra spön, 1:1 i bild | — |
+
+**Inga review-bilder.** Produkten har 8 recensioner men bara en organisk, och
+den är 1 stjärna. Recensionsregeln i den här filen gäller: review-bilder byggs
+bara på riktiga kundcitat.
+
+**Modellpolicy följd (CLAUDE.md regel 6):** all svensk copy skriven av en
+sonnet-subagent som fick DNA, hypotes, hook, formatkrav och `docs/copy-regler.md`.
+Strategi, analys, namngivning och briefstruktur gjordes av huvudsessionen.
+Tre-frågorstestet står i varje brief, rad för rad.
+
+**Rättat av huvudsessionen efter subagenten:**
+- `Rodholder_BOF_2_1` påstod först "fri frakt över 300 kr". Produktsidans egen
+  rad säger **"Fri Frakt inom Sverige"** utan beloppsgräns (butikens toppbanner
+  bär däremot "FRI FRAKT – På ordrar över 300kr", så påståendet var inte falskt,
+  bara en annan och snävare formulering). Alla briefer i dagens rond använder nu
+  produktsidans egen ovillkorliga rad.
+- Tre `Why`-rader bar tal subagenten räknat själv (+9 784 kr, +39 824 kr, "1,69",
+  "ROAS 2,98"). Ersatta med den här körningens verifierade siffror.

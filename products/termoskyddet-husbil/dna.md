@@ -117,3 +117,26 @@ Konsekvens: inga review-bilder för den här produkten, och Båtmotorskyddets tv
 review-bilder från 2026-09-15 vilar på ett svagare argument än det såg ut —
 dess åtta citat är åtminstone unika sinsemellan, men det är inte samma sak som
 verifierat. Flaggat till Axel.
+
+---
+
+## Uppdatering 2026-09-18 (`/rond-auto` steg 4b, feedbackloop + batch #2)
+
+Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
+`batch-log.md` under samma datum. Kortversionen av vad datan flyttade:
+
+1. **BEVISAD — de två CS-statiska bär 81 % av vinsten.** CS_3 och CS_2 ligger
+   nästan exakt lika (+4 702 / +4 630 kr). Instruktion: erbjudandet är motorn,
+   och `CS_7_H1` bär det vidare i video.
+2. **BEVISAD — SP_2_1 är den effektivaste kompositionen.** CPA 127 kr där
+   benchmarken CS_3 betalar 185 kr, på kampanjens högsta CTR (6,34 %).
+   Instruktion: lås layouten, byt innehållet — `CS_8_1` och `SP_9_1`.
+3. **HYPOTES, inte dom — videon är utsvulten, inte svag.** Ingen video har ett
+   enda köp, men ingen video har heller fått spend att tala om. Fyra av sex
+   rundannonser är därför video denna batch, precis som batch #1 beslutade.
+4. **BEVISAD — de tre spärrarna gäller fortfarande.** Noll recensioner
+   (Judge.me-vidgeten avläst igen), september på väg in i vintern, och ingen
+   påhittad brådska. CS_3 bryter mot alla tre men rörs inte — den är live och
+   lönsam, och stoppregeln gäller före uppladdning, inte i efterhand.
+
+Priset avläst live 2026-09-18: 559 kr, jämförpris 932 kr → spara 373 kr = 40 %. Mängdrabatt: 2 st −15 % (förvald), 3 st −20 %.

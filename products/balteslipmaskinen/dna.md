@@ -313,3 +313,25 @@ felmeddelande — identisk lista för fem olika produkter. Rätt väg:
 Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
 men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
 hubben äger sina nummer också.
+
+---
+
+## Uppdatering 2026-09-18 (`/rond-auto` steg 4b, feedbackloop + batch #5)
+
+Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
+`batch-log.md` under samma datum. Kortversionen av vad datan flyttade:
+
+1. **BEVISAD — b020-statisken är produktens starkaste format.** PD_19_1 gör
+   +4 234 kr på 14 % av spenden, PD_2_1 ytterligare +1 685 kr på samma layout.
+   Instruktion: två nya statics i exakt den layouten (`PD_27_1`, `SO_7_1`), bara
+   rubriken varierar.
+2. **BEVISAD — PD_4_H1 är kontots mest effektiva annons och är utsvulten.**
+   722 kr spend, ROAS 5,87, CPA 181 mot break-even-CPA 612. Instruktion: mata
+   dess mekanik med två nya videor (`PD_25_H1`, `PD_26_H1`).
+3. **BEVISAD — top spendern PD_2 är benchmark.** 33 % av spenden på ROAS 2,14.
+   Den är lönsam och döms inte mot småannonserna; den är måttstocken.
+4. **HYPOTES — 3-i-1-bredden är otestad som hook.** Varje bedömbar annons
+   demonstrerar en kniv. `PD_26_H1` byter bara demoobjektet till en yxa;
+   `SO_7_1` bär bredden i rubriken.
+
+Priset avläst live 2026-09-18: 909 kr, jämförpris 1 182 kr → spara 273 kr = 23 %. "40 %" är fortsatt FÖRBJUDET — det var falskt.

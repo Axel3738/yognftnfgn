@@ -302,3 +302,23 @@ felmeddelande — identisk lista för fem olika produkter. Rätt väg:
 Sju av dagens 37 brief-namn krockade med rader som redan låg i Notion-hubben
 men aldrig nått annonskontot. En avläsning av bara kontot räcker alltså inte —
 hubben äger sina nummer också.
+
+---
+
+## Uppdatering 2026-09-18 (`/rond-auto` steg 4b, feedbackloop + batch #4)
+
+Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
+`batch-log.md` under samma datum. Kortversionen av vad datan flyttade:
+
+1. **BEVISAD — SP_1-hookfamiljen ÄR kampanjen.** H5 +7 574 kr, H1 +4 322 kr,
+   H3 +1 900 kr = 59 % av allt vinstbidrag på tre annonser med samma kropp och
+   olika öppningar. Instruktion: `SP_1_H10` byter bara de tre första sekunderna.
+2. **BEVISAD — hooken är variabeln, inte kroppen.** Samma familj rymmer både
+   kontots bästa (H5, ROAS 3,81) och dess sämsta (H2, ROAS 0,80 på 1 165 kr,
+   under grinden). Instruktion: kopiera aldrig H2:s öppning.
+3. **BEVISAD — statiska prisformat fungerar här.** CS_2_1 +3 763 kr vid CPA 172.
+   Instruktion: `CS_10_1` behåller layouten och byter bort den falska deadlinen.
+4. **HYPOTES — säsongsvinkeln är otestad.** Ingen annons talar till den som
+   ställer upp båten i oktober. `SP_4_H1` gör det.
+
+Priset avläst live 2026-09-18: 579 kr, jämförpris 965 kr → spara 386 kr = 40 %. Recensionsvidgeten avläst live samma dag: **8 recensioner, snitt 5,00**.

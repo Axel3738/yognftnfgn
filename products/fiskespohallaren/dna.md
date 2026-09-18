@@ -528,3 +528,30 @@ som de står.
 läge, inte en lag. Här löstes det med ett fält i Shopify på under en dag.
 Skriv sådana fynd som *vad som saknas och vem som kan fylla det*, inte som
 ett permanent förbud.
+
+---
+
+## Uppdatering 2026-09-18 (`/rond-auto` steg 4b, feedbackloop + batch #6)
+
+Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
+`batch-log.md` under samma datum. Kortversionen av vad datan flyttade:
+
+1. **BEVISAD — erbjudandevinkeln (CS) är produktens starkaste per krona.**
+   CS_1_H1 gör +7 560 kr på bara 10 % av spenden; hela CS-koden står för
+   +9 424 kr på fyra annonser. Instruktion till batchen: två nya CS-executions
+   i video (`Rodholder_PD_60_H1` öppnar på priset, `Rodholder_CS_9_H1` visar vad
+   289 kr köper).
+2. **BEVISAD — PD-demon bär volymen.** PD-koden står för +25 586 kr över
+   åtta bedömbara annonser, och de tre PD_EXTRA-varianterna ensamma för
+   +16 577 kr. Instruktion: behåll PD-strukturen, variera bara öppningen.
+3. **BEVISAD — top spendern är benchmark, inte kandidat.** PD_1_H1 tar 21 % av
+   spenden på kampanjens lägsta ROAS bland de stora (1,81) men ligger ändå
+   +3 351 kr över break-even. Den döms inte mot de små annonserna.
+4. **HYPOTES — det ärliga jämförpriset är nytt bränsle.** Jämförpriset 482 kr
+   finns numera i Shopify (satt 2026-09-15), så "spara 193 kr / 40 %" går att
+   säga ärligt för första gången. Det var förbjudet i batch #3–#5.
+   ⚠️ Formatetiketterna (video/statisk) går inte att lita på för de äldsta
+   annonserna — PD_EXTRA-raderna saknar `_H`-suffix trots att de är video.
+   Ingen video-mot-statisk-slutsats dras därför denna körning.
+
+Priset avläst live 2026-09-18: 289 kr, jämförpris 482 kr → spara 193 kr = 40 %. Bekräftat i `variants[0]`.

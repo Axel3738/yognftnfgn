@@ -255,3 +255,78 @@ Tre-frågorstestet redovisas rad för rad i varje brief.
 > Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
 > i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
 > briefer som aldrig nått kontot, och de äger sitt nummer ändå.
+
+---
+
+## Feedbackloop + batch #5 — 2026-09-18 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-18 ur MagiBorsten 1867947880635861):**
+36 197 kr spend · 93 köp · livstids-ROAS 2,54 mot break-even 1,73. Dagsbudget 1 900 kr (oförändrad — VANTA_KADENS).
+
+**Datakvalitet:** `amount_spent × purchase_roas` summerat per annons stämmer mot
+kampanjens egen intäkt inom avrundning; annonsurvalet täcker 95 % av kampanjens
+spend. `omni_purchase_values` användes INTE (känd bugg, CLAUDE.md). Inga trasiga rader.
+
+**Signifikansgrind (ANALYSMETOD steg 2c):** 8 annonser bedömbara. För tidigt, ingen dom: Balteslipmaskin_G_1 (1 063 kr/1 köp), CS_1 (717 kr/1 köp), SP_2 (470 kr/1 köp), CS_2 (312 kr/2 köp).
+
+**Vinstbidrag — rangordnat på vinst, inte på ROAS eller CPA.**
+Break-even-CPA räknas per annons på dess EGEN AOV (`intäkt/köp ÷ break-even-ROAS`),
+aldrig på en blandad siffra:
+
+| Annons | Status | Spend | Spend% | Köp | CPA | BE-CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_PD_19_1 (statisk) | ACTIVE | 4 629 | 14 % | 16 | 289 | 554 | 3,31 | **+4 234 kr (27 %)** |
+| Balteslipmaskin_PD_3 | ACTIVE | 4 714 | 14 % | 13 | 363 | 573 | 2,73 | +2 735 kr |
+| Balteslipmaskin_PD_2 (top spender = benchmark) | ACTIVE | 11 315 | 33 % | 24 | 471 | 582 | 2,14 | +2 655 kr |
+| Beltgrinder_PD_4_H1 (video) | ACTIVE | 722 | 2 % | 4 | 181 | 612 | 5,87 | +1 726 kr |
+| Balteslipmaskin_PD_2_1 | ACTIVE | 2 529 | 7 % | 7 | 361 | 602 | 2,88 | +1 685 kr |
+| Balteslipmaskin_CS_3 | ACTIVE | 878 | 3 % | 3 | 293 | 641 | 3,79 | +1 045 kr |
+| Balteslipmaskin_CS_2_1 (falsk rabatt) | PAUSED | 4 571 | 13 % | 10 | 457 | 557 | 2,11 | +1 003 kr |
+| Balteslipmaskin_PD_1 | ACTIVE | 2 339 | 7 % | 6 | 390 | 517 | 2,29 | +761 kr |
+
+Summa vinstbidrag i urvalet: **+15 843 kr**.
+
+**Mönster (data skild från hypotes):**
+1. **BEVISAD — b020-statisken är produktens starkaste format.** PD_19_1 gör
+   +4 234 kr på 14 % av spenden, PD_2_1 ytterligare +1 685 kr på samma layout.
+   Instruktion: två nya statics i exakt den layouten (`PD_27_1`, `SO_7_1`), bara
+   rubriken varierar.
+2. **BEVISAD — PD_4_H1 är kontots mest effektiva annons och är utsvulten.**
+   722 kr spend, ROAS 5,87, CPA 181 mot break-even-CPA 612. Instruktion: mata
+   dess mekanik med två nya videor (`PD_25_H1`, `PD_26_H1`).
+3. **BEVISAD — top spendern PD_2 är benchmark.** 33 % av spenden på ROAS 2,14.
+   Den är lönsam och döms inte mot småannonserna; den är måttstocken.
+4. **HYPOTES — 3-i-1-bredden är otestad som hook.** Varje bedömbar annons
+   demonstrerar en kniv. `PD_26_H1` byter bara demoobjektet till en yxa;
+   `SO_7_1` bär bredden i rubriken.
+
+**Priset avläst live 2026-09-18** ur butikens produkt-JSON: 909 kr, jämförpris 1 182 kr → spara 273 kr = 23 %. "40 %" är fortsatt FÖRBJUDET — det var falskt.
+
+### Batch #5 — 9 (4 video + 2 statiska i rundan, 3 BOF-bilder, 0 review-bilder) briefer, alla i Notion som Draft
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Beltgrinder_PD_25_H1` | video | PD_4_H1:s mekanik med ny hook — 10-sekunderslöftet kvar | hooken |
+| `Beltgrinder_PD_26_H1` | video | identisk film, demoobjektet är en yxa i stället för en kniv | demoobjektet |
+| `Beltgrinder_SP_9_H1` | video | hela knivlådan slipad i EN obruten tagning med stoppur i bild | beviset |
+| `Beltgrinder_CS_4_H1` | video | prisformatet ärligt: 909 / 1 182 kr, spara 273 kr (23 %) | erbjudandet |
+| `Beltgrinder_PD_27_1` | statisk | b020-layouten, rubriken bär 10-sekunderslöftet | rubriken |
+| `Beltgrinder_SO_7_1` | statisk | samma layout, rubriken bär 3-i-1-bredden | rubrikvinkeln |
+| `Beltgrinder_BOF_4_1` | statisk, BOF | 909 kr mot 1 182 kr, spara 273 kr | — |
+| `Beltgrinder_BOF_5_1` | statisk, BOF | 30 dagars pengarna-tillbaka, fri frakt, 5–10 arbetsdagar | — |
+| `Beltgrinder_BOF_6_1` | statisk, BOF | "Mini"-invändningen besvarad ärligt — storlek och funktioner, ALDRIG styrka | — |
+
+**Inga review-bilder.** 11 recensioner men bara en organisk, och den är 1 stjärna
+("För liten. Svag motor"). `BOF_6_1` bär därför en uttrycklig regel: inga
+påståenden om motorstyrka, kraft eller vibration.
+
+**Modellpolicy följd (CLAUDE.md regel 6):** all svensk copy skriven av en
+sonnet-subagent som fick DNA, hypotes, hook, formatkrav och `docs/copy-regler.md`.
+Strategi, analys, namngivning och briefstruktur gjordes av huvudsessionen.
+Tre-frågorstestet står i varje brief, rad för rad.
+
+**Rättat av huvudsessionen efter subagenten:**
+- Två briefer påstod "fri frakt över 300 kr". Produktsidan säger
+  "Fri Frakt inom Sverige" — ändrat till den raden (se Fiskespöhållarens not om
+  butikens toppbanner).
+- Tre `Why`-rader bar tal subagenten räknat själv. Ersatta med körningens egna.

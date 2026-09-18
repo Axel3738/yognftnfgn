@@ -337,3 +337,70 @@ Tre-frågorstestet redovisas rad för rad i varje brief.
 > Raderna ovan bär de omdöpta, lediga namnen. **Lärdom:** läs av upptagna AD-ID:n
 > i BÅDE annonskontot och Notion-hubben innan du numrerar — hubben innehåller
 > briefer som aldrig nått kontot, och de äger sitt nummer ändå.
+
+---
+
+## Feedbackloop + batch #4 — 2026-09-18 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-18 ur MagiBorsten 1867947880635861):**
+18 255 kr spend · 85 köp · livstids-ROAS 2,05 mot break-even 1,49. Dagsbudget 700 kr (oförändrad — VANTA_KADENS).
+
+**Datakvalitet:** `amount_spent × purchase_roas` summerat per annons stämmer mot
+kampanjens egen intäkt inom avrundning; annonsurvalet täcker 92 % av kampanjens
+spend. `omni_purchase_values` användes INTE (känd bugg, CLAUDE.md). Inga trasiga rader.
+
+**Signifikansgrind (ANALYSMETOD steg 2c):** 3 annonser bedömbara — oförändrat läge sedan batch #3. För tidigt, ingen dom: PD_2 (778 kr/1 köp), OF_1_1 (402 kr/2 köp), SP_3 (380 kr/1 köp), SP_1 (332 kr/1 köp).
+
+**Vinstbidrag — rangordnat på vinst, inte på ROAS eller CPA.**
+Break-even-CPA räknas per annons på dess EGEN AOV (`intäkt/köp ÷ break-even-ROAS`),
+aldrig på en blandad siffra:
+
+| Annons | Status | Spend | Spend% | Köp | CPA | BE-CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|
+| MC-Kapell_PD_1 (top spender = benchmark) | ACTIVE | 8 812 | 53 % | 47 | 187 | 313 | 2,49 | **+5 889 kr (72 %)** |
+| MC-Kapell_CS_2_1 (statisk, bäst CPA) | ACTIVE | 3 368 | 20 % | 23 | 146 | 277 | 2,82 | +3 003 kr |
+| MC-Kapell_PD_3 | ACTIVE | 2 699 | 16 % | 8 | 337 | 255 | 1,12 | **−661 kr** |
+
+Summa vinstbidrag i urvalet: **+8 230 kr**.
+
+**Mönster (data skild från hypotes):**
+1. **BEVISAD — PD_1 bär produkten ensam.** 53 % av spenden, 72 % av vinsten,
+   CPA 187 mot break-even-CPA 313. Instruktion: `PD_10_H1` matar den med färsk
+   film och samma resultat-först-struktur.
+2. **BEVISAD — PD_3 har slitits ut och går nu back.** Samma mekanik som PD_1
+   men ROAS 1,12 mot break-even 1,49, alltså −661 kr. Det är rotorsaken till att
+   vinnaren måste matas INNAN den slits ut. Kopiera inte PD_3:s film.
+3. **BEVISAD — det feta prisformatet ger kampanjens bästa CPA.** CS_2_1: 146 kr.
+   Dess urgency-rad ("IDAG ENDAST / Snart slutsåld") går däremot inte att belägga.
+   Instruktion: `CS_8_H1` och `PD_11_1` behåller layouten och stryker lögnen —
+   40 %-talet är sant och får stå kvar.
+4. **HYPOTES — vintervinkeln är otestad.** Både PD_1 och PD_3 visar en hoj som
+   fortfarande används. `OB_5_H1` talar till den som ställer undan den.
+
+**Priset avläst live 2026-09-18** ur butikens produkt-JSON: 349 kr, jämförpris 582 kr → spara 233 kr = 40 %. Måttet på sidan: 218 × 118,5 cm.
+
+### Batch #4 — 7 (3 video + 1 statisk i rundan, 3 BOF-bilder, 0 review-bilder) briefer, alla i Notion som Draft
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `MC-Kapell_PD_10_H1` | video | PD_1:s struktur med färsk film och ny hook, innan vinnaren slits ut som PD_3 | materialet |
+| `MC-Kapell_CS_8_H1` | video | CS_2_1:s feta prislayout i rörlig form, utan urgency-raden | formatet |
+| `MC-Kapell_OB_5_H1` | video | vintervinkeln: hojen står stilla oktober–april | vinkeln |
+| `MC-Kapell_PD_11_1` | statisk | CS_2_1:s layout med ärlig rubrik, ingen urgency alls | rubriken |
+| `MC-Kapell_BOF_1_1` | statisk, BOF | 349 kr mot 582 kr, spara 233 kr | — |
+| `MC-Kapell_BOF_2_1` | statisk, BOF | fri frakt, 5–10 arbetsdagar, 30 dagars öppet köp | — |
+| `MC-Kapell_BOF_3_1` | statisk, BOF | passformsinvändningen löst med måttet 218 × 118,5 cm | — |
+
+**Inga review-bilder.** 10 recensioner, noll organiska — regeln i den här filen
+gäller.
+
+**Modellpolicy följd (CLAUDE.md regel 6):** all svensk copy skriven av en
+sonnet-subagent som fick DNA, hypotes, hook, formatkrav och `docs/copy-regler.md`.
+Strategi, analys, namngivning och briefstruktur gjordes av huvudsessionen.
+Tre-frågorstestet står i varje brief, rad för rad.
+
+**Rättat av huvudsessionen efter subagenten:**
+- Två briefer påstod "fri frakt över 300 kr"; ändrat till produktsidans egen
+  "Fri frakt inom Sverige".
+- `PD_10_H1`:s `Why` sa att PD_3 fallit till ROAS 1,34 — det talet är från
+  2026-09-08. Rättat till dagens: livstids-ROAS 1,12 och −661 kr vinstbidrag.

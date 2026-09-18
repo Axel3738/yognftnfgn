@@ -158,3 +158,77 @@ Huvudsessionen rättade tre rader i `BOF_5_1` som subagenten hade märkt som
 fallna på tre-frågorstestet men ändå velat skicka — garantitexten är ett
 faktapåstående om erbjudandet, inte en persuasionsrad, och är därför undantagen
 från konkurrent-kolumnen, inte underkänd i den.
+
+---
+
+## Feedbackloop + batch #2 — 2026-09-18 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-18 ur MagiBorsten 1867947880635861):**
+11 511 kr spend · 64 köp · livstids-ROAS 3,18 mot break-even 1,61. Dagsbudget 2 300 kr (oförändrad denna körning — VANTA_KADENS, höjd så sent som i går).
+
+**Datakvalitet:** `amount_spent × purchase_roas` summerat per annons stämmer mot
+kampanjens egen intäkt inom avrundning; annonsurvalet täcker 96 % av kampanjens
+spend. `omni_purchase_values` användes INTE (känd bugg, CLAUDE.md). Inga trasiga rader.
+
+**Signifikansgrind (ANALYSMETOD steg 2c):** 4 annonser bedömbara. För tidigt, ingen dom: Termoskydd_CS_2_1 (578 kr/2 köp).
+
+**Vinstbidrag — rangordnat på vinst, inte på ROAS eller CPA.**
+Break-even-CPA räknas per annons på dess EGEN AOV (`intäkt/köp ÷ break-even-ROAS`),
+aldrig på en blandad siffra:
+
+| Annons | Status | Spend | Spend% | Köp | CPA | BE-CPA | ROAS | CTR | **Vinstbidrag** |
+|---|---|---|---|---|---|---|---|---|---|
+| Termoskydd_CS_3 (top spender = benchmark) | ACTIVE | 4 811 | 44 % | 26 | 185 | 366 | 3,18 | 4,67 % | **+4 702 kr (41 %)** |
+| Termoskydd_CS_2 | ACTIVE | 4 050 | 37 % | 25 | 162 | 347 | 3,45 | 3,51 % | +4 630 kr (40 %) |
+| Termoskydd_SP_2_1 | ACTIVE | 764 | 7 % | 6 | 127 | 347 | 4,39 | 6,34 % | +1 319 kr |
+| Termoskydd_SP_2 | ACTIVE | 852 | 8 % | 5 | 170 | 347 | 3,28 | 3,62 % | +884 kr |
+
+Summa vinstbidrag i urvalet: **+11 535 kr**. Alla fyra bedömbara annonser är
+statiska, och alla fyra går med vinst.
+
+**Mönster (data skild från hypotes):**
+1. **BEVISAD — de två CS-statiska bär 81 % av vinsten.** CS_3 och CS_2 ligger
+   nästan exakt lika (+4 702 / +4 630 kr). Instruktion: erbjudandet är motorn,
+   och `CS_7_H1` bär det vidare i video.
+2. **BEVISAD — SP_2_1 är den effektivaste kompositionen.** CPA 127 kr där
+   benchmarken CS_3 betalar 185 kr, på kampanjens högsta CTR (6,34 %).
+   Instruktion: lås layouten, byt innehållet — `CS_8_1` och `SP_9_1`.
+3. **HYPOTES, inte dom — videon är utsvulten, inte svag.** Ingen video har ett
+   enda köp, men ingen video har heller fått spend att tala om. Fyra av sex
+   rundannonser är därför video denna batch, precis som batch #1 beslutade.
+4. **BEVISAD — de tre spärrarna gäller fortfarande.** Noll recensioner
+   (Judge.me-vidgeten avläst igen), september på väg in i vintern, och ingen
+   påhittad brådska. CS_3 bryter mot alla tre men rörs inte — den är live och
+   lönsam, och stoppregeln gäller före uppladdning, inte i efterhand.
+
+**Priset avläst live 2026-09-18** ur butikens produkt-JSON: 559 kr, jämförpris 932 kr → spara 373 kr = 40 %. Mängdrabatt: 2 st −15 % (förvald), 3 st −20 %.
+
+### Batch #2 — 9 (4 video + 2 statiska i rundan, 3 BOF-bilder, 0 review-bilder) briefer, alla i Notion som Draft
+
+| Annons | Format | Hypotes | Isolerad variabel |
+|---|---|---|---|
+| `Termoskydd_CS_7_H1` | video | CS-erbjudandet i rörlig form, ärligt och utan brådska | formatet |
+| `Termoskydd_PD_8_H1` | video | tvåminutersjobbet tidtaget i bild, utan att öppna en dörr | beviset |
+| `Termoskydd_PD_9_H1` | video | kondensmekaniken visad i delad bild: imma utanpå, ruta klar | mekanismen |
+| `Termoskydd_SP_8_H1` | video | vinterförvaringsvinkeln ur backloggen — husbilen står still okt–mars | vinkeln |
+| `Termoskydd_CS_8_1` | statisk | SP_2_1:s komposition med mörkläggning/insyn som rubrik | rubriken |
+| `Termoskydd_SP_9_1` | statisk | sidoflikarna ur backloggen som eget bevis, 90 cm i närbild | beviset |
+| `Termoskydd_BOF_7_1` | statisk, BOF | 559 kr mot 932 kr + den riktiga mängdrabatten | — |
+| `Termoskydd_BOF_8_1` | statisk, BOF | fri frakt inom Sverige + 30 dagars öppet köp | — |
+| `Termoskydd_BOF_9_1` | statisk, BOF | passformsinvändningen: 211 × 171 cm och 90 cm flikar | — |
+
+**Två backlog-idéer använda** och märkta `[använd i batch #2]` i `backlog.md`:
+vinterförvaringsvinkeln (`SP_8_H1`) och sidoflikarna (`SP_9_1`).
+**Inga review-bilder** — produkten har fortfarande noll recensioner.
+
+**Modellpolicy följd (CLAUDE.md regel 6):** all svensk copy skriven av en
+sonnet-subagent som fick DNA, hypotes, hook, formatkrav och `docs/copy-regler.md`.
+Strategi, analys, namngivning och briefstruktur gjordes av huvudsessionen.
+Tre-frågorstestet står i varje brief, rad för rad.
+
+**Rättat av huvudsessionen efter subagenten:**
+- `PD_8_H1` hade en påhittad mätning i copyn: "1 minut och 52 sekunder,
+  uppmätt". Ingen har filmat monteringen, så siffran fanns inte. Ersatt med
+  `[TID]` som redigeraren fyller i ur den verkliga tagningen, plus en regel om
+  att hooken ska ändras om jobbet tar längre än två minuter.
+- `CS_8_1`:s `Why` sa CPA 93 kr för SP_2_1; dagens avläsning är 127 kr. Rättat.
