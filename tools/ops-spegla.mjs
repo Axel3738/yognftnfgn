@@ -313,11 +313,20 @@ async function notion(sokvag, { method = 'GET', body = null } = {}) {
   if (vanta > 0) await new Promise((r) => setTimeout(r, vanta));
   sist = Date.now();
   for (let forsok = 0; ; forsok++) {
-    const res = await fetch(`${NOTION_API}/${sokvag}`, {
-      method,
-      headers: { authorization: `Bearer ${token}`, 'notion-version': '2022-06-28', 'content-type': 'application/json' },
-      body: body ? JSON.stringify(body) : undefined,
-    });
+    let res;
+    try {
+      res = await fetch(`${NOTION_API}/${sokvag}`, {
+        method,
+        headers: { authorization: `Bearer ${token}`, 'notion-version': '2022-06-28', 'content-type': 'application/json' },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+    } catch (e) {
+      // Nätfel ("fetch failed") — mätt 2026-09-18 i torrkörningen: fem rader
+      // föll på Notion-frågan direkt efter två långa uppladdarkörningar.
+      // Tre nya försök med paus; sedan felet i klartext.
+      if (forsok < 3) { await new Promise((r) => setTimeout(r, 3000 * (forsok + 1))); continue; }
+      throw new Error(`Notion nåddes inte (${sokvag}): ${e.cause?.message ?? e.message}`);
+    }
     const json = await res.json().catch(() => ({}));
     if (res.ok) return json;
     if ((res.status === 429 || res.status >= 500) && forsok < 3) { await new Promise((r) => setTimeout(r, 2000 * (forsok + 1))); continue; }
@@ -450,7 +459,10 @@ async function hamtaNoVersion(translatedUrl, { ut = null, filnamn = 'no', logg }
     }
     if (!url) { no.fel = `Meta gav ingen fil-URL för NO-${no.media.typ}en`; return no; }
     if (!existsSync(ut)) mkdirSync(ut, { recursive: true });
-    const res = await fetch(url);
+    let res = null;
+    for (let forsok = 0; forsok < 3 && !res; forsok++) {
+      try { res = await fetch(url); } catch (e) { if (forsok === 2) { no.fel = `NO-filen gick inte att hämta: ${e.cause?.message ?? e.message}`; return no; } await new Promise((r) => setTimeout(r, 3000 * (forsok + 1))); }
+    }
     if (!res.ok) { no.fel = `NO-filen svarade ${res.status}`; return no; }
     const mal = join(ut, `${filnamn}${no.media.typ === 'video' ? '.mp4' : '.jpg'}`);
     writeFileSync(mal, Buffer.from(await res.arrayBuffer()));
