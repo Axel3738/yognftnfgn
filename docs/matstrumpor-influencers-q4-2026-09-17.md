@@ -17,6 +17,14 @@
 **Så här körs det (kursen, punkt för punkt).** Skicka mailen i dag, från din adress. Två lådor till var och en utan krav. Videomöte på tio minuter när lådorna kommit fram. Pris efter mötet. Avtal: 3–5 story-frames, 30 dagars annonsrättigheter fördelade fritt, pris exkl. moms, "Reklam från Matstrumpor" på varje frame. Alla tre live samma vecka, v.44, en till två dagar isär. Samma dag: 5–10 hook-varianter av deras video plus minst tre andra format i annonskontot. Veckosamtal med den som sålde bäst, och byt till provision när relationen bär.
 
 
+## Utfallslogg (uppdateras varje gång någon svarar)
+
+| Datum | Vem | Kanal | Svar | Nästa steg |
+|---|---|---|---|---|
+| 2026-09-17 | Alla tio | Mail (copy-paste-versionen) + DM till Nina | Skickat kl. 20:43–21:42 | Vänta på svar, följ upp efter 4 dagar |
+| 2026-09-18 | Margareta Hallin | Mail | **Nej.** "Vilken rolig idé men tyvärr tror jag inte riktigt att den passar på mitt konto." | Tacka med en rad, fråga inte varför. Reserv 2 (Agneta Sjödin) rycker upp. |
+| 2026-09-18 | Nina Hermansen | Instagram-DM | **Positivt.** Hon har lämnat ProAd (tabellen nedan är inaktuell på den punkten). "Tony" sköter alla hennes samarbeten och återkommer. | Vänta på Tony till tisdag 23/9, annars be Nina om hans mail. Starta tvåveckorsobservationen av hennes stories nu. Rättelse: hej@proad.se gäller inte längre för henne. |
+
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 
 Tre nya svenska influencers för Sushi-Strumpor på matstrumpor.se, kontakt i dag, samarbeten live i slutet av oktober eller början av november, max 150 000 kr totalt och helst under 50 000 kr per person. Profiler utan agent eller byrå föredras eftersom priset då går att förhandla. Publiken ska vara kvinnor 40+, inget yngre segment nu. I villkoren ska det stå 30 dagars annonsrättigheter på videon, och de 30 dagarna får spridas fritt i flera fönster. Lådorna finns i lager. COGS för två lådor till Sverige: 12,3 USD + 2,7 EUR tull ≈ 157 kr.
@@ -96,7 +104,7 @@ Begränsningar: Instagram ligger bakom inloggning, så story-beteende och kommen
 
 | # | Namn | Instagram | Följare | Publik (källa) | Agent | Pris 3–5 frames + 30 dagars rättigheter | Kontaktväg | Status efter granskning |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Nina Hermansen | @niiinis.se | 108 000 | 92 % kvinnor, 45–54 störst, 94 % Sverige, story-räckvidd 16 500 (ProAd, dec 2025) | ProAd | 20 000–30 000 kr | hej@proad.se, 040-61 60 001 | Kontakta i dag. Be om rent story-paket. |
+| 1 | Nina Hermansen | @niiinis.se | 108 000 | 92 % kvinnor, 45–54 störst, 94 % Sverige, story-räckvidd 16 500 (ProAd, dec 2025) | Har lämnat ProAd (hennes eget svar 18/9); manager "Tony" sköter samarbetena | 20 000–30 000 kr | DM @niiinis.se, Tony återkommer | Positivt svar 18/9. Väntar på Tony. |
 | 2 | Susanne Jonsson | @susannesskafferi | 38 000 | 71 % kvinnor, 55–64 störst (29 %), 93 % Sverige (ProAd) | ProAd, men direkt via info@foodie.se | 8 000–15 000 kr | info@foodie.se, susannesskafferi.se/kontakt | Kontakta i dag. Bekräfta SVT-fritt i höst skriftligt. |
 | 3 | Karin Adelsköld | @karinadelskold | 81 000 | Kvinnor 45–60 (inferens, ingen mätning) | Ingen för IG | 10 000–18 000 kr | agnes@karinadelskold.se | Kontakta i dag som feeler. Aldrig gjort reklam. |
 | 4 | Margareta Hallin | @50something.se | 114 000 | Kvinnor 50+ (Kollega, GP) | Ingen, eget bolag | 15 000–30 000 kr | 50something.se/pages/kontakt, DM | Reserv 1. Kurerat flöde, ej granskad adversarialt. |
