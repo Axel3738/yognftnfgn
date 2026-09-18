@@ -735,28 +735,33 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    är den norska importen alltså överflödig; beslut om `/no-recensioner`
    ska hoppa över sådana butiker är Axels (fråga ställd 2026-09-17).
 
-   ⚠️ **Stjärnbadgen högst upp på produktsidan följer INTE multi-language
-   widgets** (mätt 2026-09-18 när Finland lades till och Axel såg
-   "★★★★★ 16 recensioner" på /fi). Den lilla raden — Judge.mes
-   `jdgm-prev-badge__text`, renderad serverside av appens block — står på
-   butikens standardspråk överallt. Mätt samma minut på tre adresser:
+   ⚠️ **Judge.me går INTE att läsa av ur serverside-HTML.** Widgeten ritas
+   av appens JavaScript efter att sidan laddats, så det som står i den råa
+   HTML:en är ett förstadium som ingen kund ser.
 
-   | Sida | Badge | Widgetens locale |
-   |---|---|---|
-   | carashell.com (EN) | "16 recensioner" | en |
-   | /nb | "16 recensioner" | nb |
-   | /fi | "16 recensioner" | en |
+   *Felet, för att det inte ska göras om (2026-09-18):* Axel såg
+   "★★★★★ 16 recensioner" på /fi och frågade om auto-översättningen bara
+   behövde tid. Sessionen hämtade tre adresser med `fetch`, såg
+   "16 recensioner" i HTML:en på alla tre — även på carashell.com, där
+   widgeten bevisligen är engelsk sedan 2026-09-17 — och drog slutsatsen
+   att badgen aldrig översätts. **Fel.** Axel tittade i en riktig
+   webbläsare och såg engelska på .com. Råtexten var densamma på båda;
+   skillnaden uppstår först när JS kört.
 
-   Den engelska raden är beviset: där ÄR widgeten översatt sedan
-   2026-09-17 ("16 reviews", "Write a review", "Show original (Swedish)"),
-   och badgen står ändå på svenska. Den väntar alltså inte på något och
-   blir inte finsk av sig själv. Samma gäller `branding_text`
-   ("Drivs av Judge.me"). Temat kan inte rätta det: butiken har ingen
-   `jdgm`-snippet alls (kollat i temafilerna samma dag) — texten kommer ur
-   Judge.me-appen. **Blanda inte ihop de två:** badgen är appens
-   gränssnittsspråk, den STORA widgeten längre ned är det
-   multi-language/auto-translate gäller, och ett NYTT språk i Shopify tar
-   upp till 48 h innan Judge.me känner igen det (engelska tog ~26 h).
+   Vad HTML:en ÄNDÅ säger, och som är läsbart: Judge.mes konfigblock bär
+   ett `"locale"`-fält. Mätt samma dag — /nb → `nb`, carashell.com → `en`,
+   **/fi → `en`**. Ett språk appen känner igen står med sin egen kod; /fi
+   faller tillbaka, vilket är väntat samma dag som språket publicerades
+   (nytt språk tar upp till 48 h; engelska tog ~26 h). Det fältet duger
+   som signal — den synliga texten gör det inte.
+
+   🖐 **Kontrollen kräver en webbläsare, och containern klarar den inte.**
+   Headless Chrome mot butiken ger `ERR_CERT_AUTHORITY_INVALID`: Playwrights
+   Chromium läser inte proxyns CA-bundle, `certutil` finns inte och
+   `libnss3-tools` går inte att installera (provat 2026-09-18). Att stänga
+   av TLS-verifieringen är inte ett alternativ. Judge.me-språk verifieras
+   därför av en människa i en vanlig webbläsare, eller där nätet är öppet —
+   aldrig med `fetch` mot produktsidan.
    ⚠️ Mätmetod: recensionslistan laddas lazy — `--dump-dom` och Judge.mes
    `reviews_for_widget` gav 0 kroppar; det som fungerade var
    `--screenshot` med `--window-size=1280,9000` och en beskärning av
