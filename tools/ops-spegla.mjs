@@ -150,10 +150,11 @@ export function valjKallannons(annonser, namn) {
   return [...traffar].sort((a, b) => rang(a) - rang(b) || String(b.created_time ?? '').localeCompare(String(a.created_time ?? '')))[0];
 }
 
-/** Den svenska filen bland radens: 4:5 först (feed), annars första som inte är NO. */
+/** Den svenska filen bland radens: 4:5 först (feed), annars första som inte är
+ *  NO. Bara NO-filer ⇒ null — en norsk fil är aldrig en svensk leverans. */
 export function valjSeFil(filer = []) {
   const kand = filer.filter((f) => !/_no[_.]/i.test(basename(String(f))));
-  return kand.find((f) => /4x5|4-5|1080x1350/i.test(basename(f))) ?? kand[0] ?? filer[0] ?? null;
+  return kand.find((f) => /4x5|4-5|1080x1350/i.test(basename(f))) ?? kand[0] ?? null;
 }
 
 const rikText = (lista = []) => (Array.isArray(lista) ? lista : [])
@@ -418,10 +419,14 @@ async function sattStatus(pageId, hub, status) {
   return blev;
 }
 
-/** Hämtar radens svenska fil via tools/notion-fil.mjs (bilaga, sid-media eller Drive). */
+/** RESERVVÄGEN för den svenska filen: tools/notion-fil.mjs utan sidmedia (bilaga
+ *  eller Drive-länk). Sidmediat hoppas över med flit: Bäverbutikens /oversatt NO
+ *  lägger den NORSKA filen överst i sidan, och för en videorad utan bilaga hade
+ *  den annars blivit "den svenska filen" (granskningsfynd 2026-09-18 — den norska
+ *  videon hade gått live som svensk annons). Huvudvägen är Meta: se hamtaMetaVersion. */
 function hamtaSeFil(pageId, mapp) {
   if (!existsSync(mapp)) mkdirSync(mapp, { recursive: true });
-  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), ren(pageId), '--ut', mapp], { encoding: 'utf8', env: process.env, timeout: 10 * 60 * 1000 });
+  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), ren(pageId), '--ut', mapp, '--utan-sidmedia'], { encoding: 'utf8', env: process.env, timeout: 10 * 60 * 1000 });
   const rader = String(r.stdout ?? '').trim().split('\n').filter(Boolean);
   if (r.status !== 0) return { fil: null, fil_alla: [], fel: String(r.stderr ?? '').trim() || `notion-fil.mjs avslutade med ${r.status}` };
   return { fil: valjSeFil(rader), fil_alla: rader, fel: null };
@@ -429,12 +434,23 @@ function hamtaSeFil(pageId, mapp) {
 
 // ------------------------------------------------------------ nät: Meta
 
-/** Bäverbutikens NO-annons: copy + mediefil (bilden via image_hash, videon via source). */
-async function hamtaNoVersion(translatedUrl, { ut = null, filnamn = 'no', logg } = {}) {
-  const { api } = await import('./meta-lib.mjs');
+/** Bäverbutikens NO-annons ur `Translated url`: copy + mediefil. */
+async function hamtaNoVersion(translatedUrl, opt = {}) {
   const adId = adIdUrUrl(translatedUrl);
   const konto = kontoUrUrl(translatedUrl);
-  if (!adId) return null;
+  if (!adId || !konto) return null;
+  return hamtaMetaVersion({ adId, konto, ...opt });
+}
+
+/**
+ * En live annons i ett av Bäverbutikens konton (LÄSES bara): copy ur specen
+ * och själva mediefilen — bilden via image_hash → adimages, videon via
+ * video_id → source. Det är den enda källan som garanterat är exakt det som
+ * spenderar i Sverige/Norge: Notion-sidan bär både den svenska bilagan och
+ * den norska filen överst i kroppen, och de går inte att skilja på namn.
+ */
+async function hamtaMetaVersion({ adId, konto, ut = null, filnamn = 'fil', logg } = {}) {
+  const { api } = await import('./meta-lib.mjs');
   const no = { ad_id: adId, konto, namn: null, status: null, kampanj: null, copy: null, media: null, fil: null, fel: null, lank: null };
   try {
     const a = await api(adId, { params: { fields: 'id,name,effective_status,campaign{name},creative{object_story_spec}' } });
@@ -467,7 +483,7 @@ async function hamtaNoVersion(translatedUrl, { ut = null, filnamn = 'no', logg }
     const mal = join(ut, `${filnamn}${no.media.typ === 'video' ? '.mp4' : '.jpg'}`);
     writeFileSync(mal, Buffer.from(await res.arrayBuffer()));
     no.fil = mal;
-    logg?.(`  NO hämtad: ${no.namn} → ${mal}`);
+    logg?.(`  hämtad ur Meta: ${no.namn} → ${mal}`);
   } catch (e) {
     no.fel = e.message;
   }
@@ -642,12 +658,23 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
       kampanj_se: se.kampanj ? { id: se.kampanj.id, namn: se.kampanj.namn, bas: se.kampanj.bas } : null,
       kampanj_no: no.kampanj ? { id: no.kampanj.id, namn: no.kampanj.namn, bas: no.kampanj.bas } : null,
       adset_se: se.kampanj ? hittaAdset(se.adsets, adsetNamn(se.kampanj.bas, tolkaNamn(namn).koncept), tolkaNamn(namn).koncept) : null,
-      block: block.length, fil: null, fil_alla: [], fil_fel: null,
+      block: block.length, fil: null, fil_kalla: null, fil_alla: [], fil_fel: null,
     };
     if (ut && !dSe.finns_i_meta) {
-      const h = hamtaSeFil(r.id, radmapp);
-      Object.assign(rad, h.fel ? { fil_fel: h.fel } : { fil: h.fil, fil_alla: h.fil_alla });
-      if (h.fel) logg(`  ✗ ${namn}: ${h.fel}`); else logg(`  SE hämtad: ${h.fil}`);
+      // Den svenska filen: FÖRST ur Bäverbutikens live SE-annons i Meta (exakt
+      // det som spenderar), sedan Notion-bilagan/Drive som reserv — aldrig
+      // sidans mediablock, där ligger den norska versionen.
+      const seV = kall ? await hamtaMetaVersion({ adId: kall.id, konto: KALLKONTO_SE, ut: radmapp, filnamn: spegel ?? namn, logg }) : null;
+      if (seV?.fil) {
+        Object.assign(rad, { fil: seV.fil, fil_kalla: `Meta-annons ${kall.id}`, fil_alla: [seV.fil] });
+      } else {
+        const h = hamtaSeFil(r.id, radmapp);
+        const skalMeta = seV?.fel ? `Meta: ${seV.fel}` : (kall ? 'Meta gav ingen fil' : 'ingen källannons i Meta');
+        Object.assign(rad, h.fel || !h.fil
+          ? { fil_fel: `${skalMeta}; Notion: ${h.fel ?? 'bara NO-filer eller inget att hämta'}` }
+          : { fil: h.fil, fil_kalla: 'Notion-bilaga/Drive (reserv)', fil_alla: h.fil_alla });
+        if (rad.fil_fel) logg(`  ✗ ${namn}: ${rad.fil_fel}`); else logg(`  SE hämtad ur Notion (reserv): ${h.fil}`);
+      }
     }
     rad.bedomning = bedom(rad);
     rad._block = block;   // används av --kor, skrivs aldrig ut
@@ -821,7 +848,7 @@ export function tabell(ko) {
     ut.push(`• ${r.namn} → ${r.spegel ?? '⚠️ inget spegelnamn'}  [${r.typ}]  ${b.se.ok ? '✅ SE' : `⛔ SE: ${b.se.skal.join('; ')}`}${r.finns_i_meta.SE ? ' (finns redan)' : ''}`);
     ut.push(`    copy:     ${r.copy_se ? `"${r.copy_se.rubrik}" ur ${r.kall_ad?.kampanj ?? '?'}` : '⚠️  ingen källannons'}${r.brand.length ? `  ⛔ brand: ${r.brand.join(', ')}` : ''}`);
     ut.push(`    pris:     creativen ${r.pris_kalla ?? '?'} (${r.pris_kalla_fran ?? 'okänt'}) · butiken ${ko.pris_se?.pris ?? '?'} → ${r.paritet_se.ok ? 'ok' : r.paritet_se.skal}`);
-    ut.push(`    fil:      ${r.fil ?? (r.fil_fel ? `✗ ${r.fil_fel}` : r.filer.length ? r.filer.join(', ') : '(hämtas med --ut)')}`);
+    ut.push(`    fil:      ${r.fil ? `${r.fil} (${r.fil_kalla})` : r.fil_fel ? `✗ ${r.fil_fel}` : `(hämtas med --ut: ur Meta-annons ${r.kall_ad?.id ?? '?'}${r.filer.length ? `, reserv bilaga ${r.filer.join(', ')}` : ''})`}`);
     ut.push(`    NO:       ${r.no ? `${r.no.namn ?? r.no.ad_id} [${r.no.status ?? '?'}] ${r.no.fil ? `→ ${r.no.fil}` : r.no.fel ? `✗ ${r.no.fel}` : '(hämtas med --ut)'} · pris ${r.pris_kalla_no ?? '?'} vs ${ko.pris_no?.pris ?? '?'} → ${b.no.ok ? '✅' : `⛔ ${b.no.skal.join('; ')}`}` : '— ingen NO-version på källraden'}`);
     ut.push(`    notion:   ${r.url}`);
   }

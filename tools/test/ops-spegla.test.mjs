@@ -96,6 +96,9 @@ test('valjSeFil: 4:5 före 1:1, NO-filer räknas aldrig som svensk', () => {
   assert.equal(valjSeFil(['/x/Takoverdrag_GT_5_H1.mp4']), '/x/Takoverdrag_GT_5_H1.mp4');
   assert.equal(valjSeFil(['/x/CaraShellRoof_NO_BOF_103_1.jpg', '/x/Takoverdrag_BOF_3_1.jpg']), '/x/Takoverdrag_BOF_3_1.jpg');
   assert.equal(valjSeFil([]), null);
+  // Granskningsfynd 2026-09-18: bara NO-filer får ALDRIG bli "den svenska filen".
+  assert.equal(valjSeFil(['/x/CaraShellRoof_NO_GT_105_H1.mp4']), null);
+  assert.equal(valjSeFil(['/x/Takovertrekk_NO_GT_5_H1.mp4', '/x/x_no.mp4']), null);
 });
 
 // ------------------------------------------------------------ blocken
