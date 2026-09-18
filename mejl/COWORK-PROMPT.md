@@ -37,7 +37,10 @@ dialog: stäng den utan att spara, och skapa aldrig något.
 något annat än det som nyss kopierades (förra mallen, och en gång ett
 telefonnummer från en annan app). **Kontrollera alltid vad du klistrat in
 INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
-Stämmer det inte: kopiera om, spara inte.
+Stämmer det inte: kopiera om, spara inte. Slutar tangentbordet nå fliken
+med källfilen (Cmd+A markerar inget, hände 2026-09-18 på mall 3): hämta
+filen direkt i Shopify-sidan i stället för via urklippet, och jämför det
+inklistrade mot källfilen tecken för tecken före sparning. Det fungerade.
 
 **Börja med att kolla vad som redan sitter — per mall.** Öppna varje mall i
 tabellen → Redigera kod. Innehåller brödtexten redan texten `utm_source=mejl`
@@ -84,8 +87,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
 **84 152**, Leveransbekräftelse **78 592**, Levererad **74 573**. Det är
 tecken, inte byte (å/ä/ö och emoji räknas som ett). Shopifys redigerare
-visar **ett tecken mindre** än källan (filens avslutande radbrytning följer
-inte med) — det är rätt. Skiljer det mer än så är det fel innehåll i
+räknar dock i byte och visar då 85 292 / 79 693 / 75 649 — **ett mindre**
+än källfilens byte (avslutande radbrytningen följer inte med). Båda talen
+är rätt, mätt av Cowork 2026-09-18. Skiljer det mer än så är det fel innehåll i
 urklippet. Jämför gärna det inklistrade mot källfilen tecken för tecken, det
 är en hårdare kontroll än siffran.
 

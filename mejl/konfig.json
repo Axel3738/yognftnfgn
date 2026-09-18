@@ -774,18 +774,17 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu. v6 inklistrad av Cowork 2026-09-18: Orderbekräftelse verifierad efter omladdning (alla fyra kontrollsträngarna, identisk med källfilen tecken för tecken), Leveransbekräftelse sparad utan felmeddelande men omladdningskontrollen hanns inte med. Levererad väntar. Testmejlet på v6 inte skickat. De fyra mallarna utan erbjudande har v2 från 2026-09-12.",
-    "inklistrade_aldre_comment": "v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. Väntar på v6 (2026-09-18): v5:s fyra rättningar ur Gmail-PDF:en (komplementrubriken, 289 kr-förslaget, klockslaget, mobil-CSS) + UTM-spårning på hjullänken (17/9) + leveransfönstret 7–14 dagar med datum och raden om tyst spårning (18/9, Axels beslut 'fixa det').",
-    "inklistrade_aldre": {
-      "levererad": "2026-09-14 v4"
-    },
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v6 (leveransfönster 7–14 dagar, UTM-spårning, mobil-CSS, komplementrubriken, ≥299-filtret, klockslaget) inklistrad av Cowork 2026-09-18 i de tre erbjudandemallarna, alla verifierade efter omladdning: fyra kontrollsträngar, teckenantal 85 292 / 79 693 / 75 649 i Shopifys räkning (byte, ett mindre än källfilen), identiska med källfilerna. Ämnesraderna stod redan rätt. De fyra mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak (v6-bygget ger dem bara mobil-CSS, inte inklistrat).",
+    "inklistrade_aldre_comment": "Tom sedan 2026-09-18 — alla tre erbjudandemallarna har v6.",
+    "inklistrade_aldre": {},
     "inklistrade": {
       "fraktuppdatering": "2026-09-12 v2",
       "ute_for_leverans": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
       "orderbekraftelse": "2026-09-18 v6",
-      "fraktbekraftelse": "2026-09-18 v6 (sparad, ej verifierad efter omladdning — Chrome tappade kopplingen)"
+      "fraktbekraftelse": "2026-09-18 v6",
+      "levererad": "2026-09-18 v6"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
@@ -805,11 +804,12 @@
     "mallbranding_gjort": "Cowork 2026-09-13: sidan heter 'Anpassa e-postmallar' (knapp uppe till höger på Kundaviseringar). Logotyp = Namnlos_design_44_67839842-4d7e-4a47-bad7-edcdcd627348.png (samma fil som mallarna länkar), Logotypstorlek 180 → 240, Varumärkeshantering → Accentfärg #1990C6 → #dd1d1d. Bekräftat 'Inställningar sparade'.",
     "mallbranding_comment": "Datum när logga + accentfärg satts under Inställningar → Notiser → Kundnotiser → Anpassa e-postmall. Den inställningen gäller ALLA Shopifys standardmallar (orderfaktura, betalningsfel, kontomejl, returer, lokal leverans) — de vi klistrat in bär sin egen HTML och påverkas inte. null ⇒ sidan säger att det återstår.",
     "testmejl_skickat": "2026-09-12",
-    "testmejl_aktuell_version": null,
+    "testmejl_aktuell_version": "2026-09-18",
     "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. v4-testmejlet 2026-09-14 gav Gmail-PDF:en som avslöjade fyra fel (se inklistrade_aldre_comment); v5-testmejlet är inte skickat. Testmejlet visar det som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja), klockslaget (ska stämma med svensk tid) och hur mejlet ser ut på mobilen.",
     "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
     "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
     "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5.",
-    "leveranslofte": "2026-09-18: 7–14 dagar från skickdagen (konfig.frakt), räknat i Liquid vid utskick. Inklistrat i Shopify först när v6 klistrats in — tills dess visar mejlen v4:s '5–10 arbetsdagar'."
+    "leveranslofte": "2026-09-18: 7–14 dagar från skickdagen (konfig.frakt), räknat i Liquid vid utskick. Inklistrat i Shopify först när v6 klistrats in — tills dess visar mejlen v4:s '5–10 arbetsdagar'.",
+    "testmejl_aktuell_version_gjort": "Skickat av Cowork 2026-09-18 från Orderbekräftelse (v6) till axelodhner.business@gmail.com, bekräftelse 'Testmeddelande skickat'. Vad mejlet visar (Beräknad leverans med två datum, mobilen) läser Axel."
   }
 }
