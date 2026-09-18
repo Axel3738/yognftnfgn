@@ -199,10 +199,33 @@ const InmatningsRad = z.object({
     .describe("Flerpack: antal och TOTALpris för packet, t.ex. {units:2,total:15} = 15 för två. Tom lista om bara styckpris"),
   source_label: z.string().describe("Hur raden hette i källan, för kvittot"),
 });
+/**
+ * Ett komplett alternativ när källan går att läsa på flera sätt — typiskt en
+ * prislista med flera namnlösa prisspalter (vara / vara+frakt / landat pris).
+ * VARJE alternativ bär hela sin uppsättning rader, så handlaren bara pekar
+ * på det som stämmer och allt skrivs. Aldrig en öppen fråga utan knappar.
+ */
+const InmatningsVal = z.object({
+  label: z.string().describe("Kort etikett handlaren känner igen alternativet på, t.ex. 'Första prisspalten' eller 'Mittenspalten'"),
+  explain: z
+    .string()
+    .describe(
+      "En mening om vad spalten verkar vara, grundat på talen: skalar den rakt med antalet (vara utan rabatt), " +
+        "har den flerpacksrabatt (vara + frakt), eller är den ~1,5–2× en annan spalt (kan vara landat pris med tull)? Max en mening.",
+    ),
+  rows: z.array(InmatningsRad).describe("HELA uppsättningen rader om det här alternativet är rätt"),
+});
+
 const InmatningsSvar = z.object({
-  rows: z.array(InmatningsRad),
+  rows: z.array(InmatningsRad).describe("Raderna att skriva när källan är entydig. Tom lista när du i stället lämnar choices"),
+  choices: z
+    .array(InmatningsVal)
+    .describe(
+      "2–4 kompletta alternativ när källan går att läsa på flera sätt (flera namnlösa prisspalter). " +
+        "Lämna tom när du är säker — fyll då rows i stället. Fyll ALDRIG både rows och choices.",
+    ),
   unmatched: z.array(z.string()).describe("Rader i källan som inte gick att koppla till någon produkt i butiken"),
-  question: z.string().describe("EN kort fråga till handlaren om något måste avgöras innan raderna kan skrivas (t.ex. vilken produkt). Tom sträng om allt är klart"),
+  question: z.string().describe("EN kort fråga som rubrik ÖVER alternativen i choices, t.ex. 'Vilken prisspalt är vara + frakt?'. Tom sträng om allt är klart"),
   notes: z.string().describe("Kort anmärkning om antaganden, max två meningar. Tom sträng om inga"),
 });
 export type AiInmatningSvar = z.infer<typeof InmatningsSvar>;
@@ -242,10 +265,22 @@ export async function tolkaInmatningMedAi(input: {
         "Regler: (1) product och variant måste vara identiska med listan; nämns ingen variant gäller alla (tom variant). " +
         "(2) market sätts BARA om handlaren nämner ett land eller en marknad (i text eller bild); annars tom sträng. " +
         "(3) currency: det som står eller sägs; står inget alls använd handlarens vanliga valuta. Räkna aldrig om. " +
-        "(4) Flerpack: 'X st för Y' är tiers [{units:X,total:Y}] — totalpriset, inte styckpriset. " +
-        "(5) Är produkten omöjlig att avgöra (t.ex. bara ett pris utan namn och flera produkter i butiken): skriv INGA rader, ställ en fråga i question. " +
+        "(4) Flerpack: 'X st för Y' är tiers [{units:X,total:Y}] — totalpriset, inte styckpriset.\n" +
+        "(5) ANTALSKOLUMN: har tabellen en smal kolumn med 1, 2, 3 som upprepas för varje produkt/storlek, är det ANTAL — " +
+        "raden med 1 ger unit_cost, raderna med 2 och 3 ger tiers [{units:2,total:…},{units:3,total:…}] för SAMMA produktrad. " +
+        "Slå alltså ihop de tre raderna till EN rad per storlek; skapa aldrig tre separata rader.\n" +
+        "(6) FLERA PRISSPALTER: har tabellen två eller tre namnlösa talkolumner per rad går den att läsa på flera sätt. " +
+        "Ställ då INGEN öppen fråga — lämna rows tom och fyll choices med ETT alternativ PER SPALT, där varje alternativ " +
+        "bär hela uppsättningen rader byggd på just den spalten. Sätt question till en kort rubrik som 'Vilken prisspalt ska jag använda?'. " +
+        "Beskriv varje spalt utifrån talen i explain: skalar den exakt med antalet (1×, 2×, 3× — då är det varan utan fraktrabatt), " +
+        "är den lägre än antalet gånger styckpriset (då ingår frakt som blir billigare per styck i flerpack), " +
+        "eller är den ungefär 1,5–2 gånger en annan spalt (då kan den vara landat pris med tull)? Gissa aldrig åt handlaren.\n" +
+        "(7) NÄSTAN-MATCHANDE VARIANTER: matchar alla källans rader utom en mot var sin variant i butiken, och exakt en variant blir över, " +
+        "para ihop de två som blev över (t.ex. källans '5*3m' mot butikens '5,5 × 3 m') och skriv det i notes. Hoppa aldrig över en rad " +
+        "bara för att stavningen skiljer på ett tecken — men para bara ihop när det är exakt en kvar på varje sida.\n" +
+        "(8) Är produkten omöjlig att avgöra (t.ex. bara ett pris utan namn och flera produkter i butiken): skriv INGA rader, ställ en fråga i question. " +
         "Är det bara en produkt i butiken, eller en uppenbar match, skriv raden. " +
-        `(6) Skriv question och notes på ${input.lang === "sv" ? "svenska" : "engelska"}, kort.`,
+        `(9) Skriv label, explain, question och notes på ${input.lang === "sv" ? "svenska" : "engelska"}, kort.`,
     },
   ];
 
@@ -254,8 +289,9 @@ export async function tolkaInmatningMedAi(input: {
     max_tokens: 16000,
     system:
       "Du översätter en handlares skärmbilder och vardagsmeningar till inköpskostnader för en Shopify-vinstapp. " +
-      "Du hittar aldrig på tal: ett belopp som inte står eller sägs skrivs inte. Du gissar aldrig produkt när det är oklart — då frågar du. " +
-      "Svara bara med det begärda formatet.",
+      "Du hittar aldrig på tal: ett belopp som inte står eller sägs skrivs inte. Du gissar aldrig vilken prisspalt som gäller — " +
+      "du lägger fram alternativen som färdiga val handlaren pekar på. Handlaren är inte utvecklare: en öppen fråga utan " +
+      "valbara alternativ är ett misslyckande. Svara bara med det begärda formatet.",
     messages: [{ role: "user", content }],
     output_config: { format: zodOutputFormat(InmatningsSvar) },
   });

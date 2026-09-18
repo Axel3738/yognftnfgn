@@ -32,7 +32,7 @@ import {
 
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
-import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost } from "../lib/shopify-data.server";
+import { invalidateCatalog, invalidateVariantCosts, loadCatalog, setUnitCost, type VariantCatalog } from "../lib/shopify-data.server";
 import { importCostCsv, normTitel, variantTraffar } from "../lib/cost-import.server";
 import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
 import { rate as fxRate } from "../lib/fx.server";
@@ -228,6 +228,166 @@ export async function loader({ request }: LoaderFunctionArgs) {
   });
 }
 
+/** En rad som AI-rutan vill skriva, i den form den kommer tillbaka. */
+type SmartRad = {
+  product: string;
+  variant: string;
+  market: string;
+  unit_cost: number;
+  currency: string;
+  tiers: { units: number; total: number }[];
+  source_label: string;
+};
+
+/** En skriven rad, som kvittot visar den. */
+type SmartKvitto = {
+  label: string;
+  product: string;
+  variant: string;
+  market: string;
+  cost: number;
+  /** Vad som stod där innan, i butikens valuta. Null = ingen kostnad fanns. */
+  before: number | null;
+  original: string;
+  tiers: { units: number; total: number }[];
+  targets: string;
+};
+
+/**
+ * Skriver AI-rutans rader. Delad av två vägar: källan var entydig (skrivs
+ * direkt), eller handlaren pekade på ett av alternativen. Samma kod båda
+ * gångerna — annars skiljer sig resultatet beroende på hur man kom hit.
+ *
+ * Kurserna hämtas en gång per valuta och den gamla kostnaden läses innan
+ * skrivningen, så kvittot kan visa "var 210,45 → nu 140,00".
+ */
+async function skrivInmatningsrader(o: {
+  admin: any;
+  shop: string;
+  katalog: VariantCatalog;
+  rader: SmartRad[];
+  butiksValuta: string;
+  costCurrency: string;
+  T: ReturnType<typeof t>;
+}): Promise<{ applied: SmartKvitto[]; skipped: string[]; rordShopify: boolean }> {
+  const applied: SmartKvitto[] = [];
+  const skipped: string[] = [];
+  let rordShopify = false;
+
+  /* En kurs per valuta, inte en per rad. */
+  const kurser = new Map<string, number | null>();
+  const kursFor = async (valuta: string): Promise<number | null> => {
+    if (valuta === o.butiksValuta) return 1;
+    if (!kurser.has(valuta)) kurser.set(valuta, (await fxRate(valuta, o.butiksValuta)) ?? null);
+    return kurser.get(valuta) ?? null;
+  };
+  /* Marknadens nuvarande kostnader, en läsning per marknad. */
+  const varianter = o.katalog.all.map((v) => ({ variantGid: v.variantGid, productGid: v.productGid }));
+  const marknadsKostnader = new Map<string, Awaited<ReturnType<typeof lasMarknadskostnad>>>();
+  const foreFor = async (market: string, variantGid: string): Promise<number | null> => {
+    if (!market) return o.katalog.all.find((v) => v.variantGid === variantGid)?.unitCost ?? null;
+    if (!marknadsKostnader.has(market)) {
+      marknadsKostnader.set(market, await lasMarknadskostnad(o.shop, market, varianter));
+    }
+    return marknadsKostnader.get(market)?.unitCost.get(variantGid) ?? null;
+  };
+
+  for (const r of o.rader) {
+    const label = r.source_label || `${r.product}${r.variant ? ` · ${r.variant}` : ""}`;
+    const mal = o.katalog.all.filter(
+      (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
+    );
+    if (!mal.length || !Number.isFinite(r.unit_cost) || r.unit_cost < 0) {
+      skipped.push(label);
+      continue;
+    }
+    const valuta = (r.currency || o.costCurrency).trim().toUpperCase() || o.butiksValuta;
+    const k = await kursFor(valuta);
+    if (k == null) {
+      skipped.push(`${label} (${o.T.costs.currency.noRate(valuta)})`);
+      continue;
+    }
+    const rund = (n: number) => Math.round(n * k * 100) / 100;
+    const cost = rund(r.unit_cost);
+    /* Samma antal två gånger (AI:n läste tvåpacket en gång per färg) skulle
+       spräcka skrivningen efter att de gamla stegen raderats. Sista vinner. */
+    const perAntal = new Map<number, number>();
+    for (const t of r.tiers ?? []) {
+      const u = Math.round(Number(t.units));
+      if (u >= 2 && Number.isFinite(t.total) && t.total > 0) perAntal.set(u, rund(t.total));
+    }
+    const tiers = [...perAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, total]) => ({ units, total }));
+    const m = marknadskod(r.market);
+    /* Kvittots "var X → nu Y" gäller hela raden. Står varianterna på olika
+       gamla kostnader finns inget enda "var" att visa — då visas inget. */
+    const foren = await Promise.all(mal.map((v) => foreFor(m, v.variantGid)));
+    const before = foren.every((f) => f === foren[0]) ? foren[0] : null;
+    /* Vilka varianter som faktiskt blev skrivna. Misslyckas Shopify på alla
+       ska raden hamna bland de överhoppade, aldrig på kvittot. */
+    let traffade = mal;
+
+    if (m) {
+      await skrivMarknadskostnad(
+        o.shop,
+        m,
+        mal,
+        cost,
+        tiers.length ? tiers.map((t) => ({ units: t.units, totalCost: t.total })) : null,
+        `${m}: ${cost.toFixed(2)} (${r.unit_cost} ${valuta})`,
+      );
+    } else {
+      const skrivna: typeof mal = [];
+      for (const v of mal) {
+        const res = await setUnitCost(o.admin, v.inventoryItemGid, cost);
+        if (res.ok) skrivna.push(v);
+        else skipped.push(`${v.productTitle} · ${v.variantTitle}: ${res.error}`);
+      }
+      if (!skrivna.length) continue;
+      traffade = skrivna;
+      if (tiers.length) {
+        for (const v of skrivna) {
+          await prisma.$transaction([
+            prisma.costTier.deleteMany({ where: { shop: o.shop, variantGid: v.variantGid, market: "" } }),
+            prisma.costTier.createMany({
+              data: tiers.map((t) => ({ shop: o.shop, variantGid: v.variantGid, units: t.units, totalCost: t.total, market: "" })),
+            }),
+          ]);
+        }
+      }
+      rordShopify = true;
+    }
+
+    applied.push({
+      label,
+      product: traffade[0].productTitle,
+      variant: r.variant && traffade.length === 1 ? traffade[0].variantTitle : "",
+      market: m,
+      cost,
+      before,
+      original: valuta === o.butiksValuta ? "" : `${r.unit_cost} ${valuta}`,
+      tiers,
+      targets: traffade.map((v) => v.inventoryItemGid).join(","),
+    });
+  }
+  return { applied, skipped, rordShopify };
+}
+
+/** Rader → en rad text handlaren känner igen ur sin egen skärmbild. */
+function forhandsvisning(rader: SmartRad[], costCurrency: string, T: ReturnType<typeof t>): string {
+  return rader
+    .slice(0, 3)
+    .map((r) => {
+      const valuta = (r.currency || costCurrency).trim().toUpperCase();
+      const namn = r.variant || r.source_label || r.product;
+      const steg = (r.tiers ?? [])
+        .filter((t) => t.units >= 2 && t.total > 0)
+        .map((t) => ` · ${t.units} ${T.costs.smart.pcs} ${t.total}`)
+        .join("");
+      return `${namn}: ${r.unit_cost} ${valuta}${steg}`;
+    })
+    .join("\n");
+}
+
 export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
   const form = await request.formData();
@@ -413,82 +573,122 @@ export async function action({ request }: ActionFunctionArgs) {
         lang,
       });
 
-      type Kvitto = {
-        label: string; product: string; variant: string; market: string;
-        cost: number; original: string; tiers: { units: number; total: number }[]; targets: string;
-      };
-      const applied: Kvitto[] = [];
-      const skipped: string[] = [...svar.unmatched];
-      let rord = false;
-      for (const r of svar.rows) {
-        const label = r.source_label || `${r.product}${r.variant ? ` · ${r.variant}` : ""}`;
-        const mal = katalog.all.filter(
-          (v) => normTitel(v.productTitle) === normTitel(r.product) && variantTraffar(v.variantTitle, r.variant),
-        );
-        if (!mal.length || !Number.isFinite(r.unit_cost) || r.unit_cost < 0) {
-          skipped.push(label);
-          continue;
-        }
-        const valuta = (r.currency || costCurrency).trim().toUpperCase() || butiksValuta;
-        const k = valuta === butiksValuta ? 1 : await fxRate(valuta, butiksValuta);
-        if (k == null) {
-          skipped.push(`${label} (${T.costs.currency.noRate(valuta)})`);
-          continue;
-        }
-        const rund = (n: number) => Math.round(n * k * 100) / 100;
-        const cost = rund(r.unit_cost);
-        const perAntal = new Map<number, number>();
-        for (const t of r.tiers ?? []) {
-          const u = Math.round(Number(t.units));
-          if (u >= 2 && Number.isFinite(t.total) && t.total > 0) perAntal.set(u, rund(t.total));
-        }
-        const tiers = [...perAntal.entries()].sort((a, b) => a[0] - b[0]).map(([units, total]) => ({ units, total }));
-        const m = marknadskod(r.market);
-        if (m) {
-          await skrivMarknadskostnad(
-            session.shop, m, mal, cost,
-            tiers.length ? tiers.map((t) => ({ units: t.units, totalCost: t.total })) : null,
-            `${m}: ${cost.toFixed(2)} (${r.unit_cost} ${valuta})`,
-          );
-        } else {
-          for (const v of mal) {
-            const res = await setUnitCost(admin, v.inventoryItemGid, cost);
-            if (!res.ok) skipped.push(`${v.productTitle} · ${v.variantTitle}: ${res.error}`);
-          }
-          if (tiers.length) {
-            for (const v of mal) {
-              await prisma.$transaction([
-                prisma.costTier.deleteMany({ where: { shop: session.shop, variantGid: v.variantGid, market: "" } }),
-                prisma.costTier.createMany({
-                  data: tiers.map((t) => ({ shop: session.shop, variantGid: v.variantGid, units: t.units, totalCost: t.total, market: "" })),
-                }),
-              ]);
-            }
-          }
-          rord = true;
-        }
-        applied.push({
-          label,
-          product: mal[0].productTitle,
-          variant: r.variant && mal.length === 1 ? mal[0].variantTitle : "",
-          market: m,
-          cost,
-          original: valuta === butiksValuta ? "" : `${r.unit_cost} ${valuta}`,
-          tiers,
-          targets: mal.map((v) => v.inventoryItemGid).join(","),
+      /* Flera läsningar av samma tabell (namnlösa prisspalter): skriv INGET,
+         lämna färdiga alternativ som handlaren pekar på. En öppen fråga utan
+         knappar är en återvändsgränd — det var precis klagomålet. */
+      const val = (svar.choices ?? []).filter((c) => c.rows?.length);
+      if (val.length) {
+        /* Lämnar modellen BÅDE en egen läsning och alternativ är källan inte
+           entydig. Då blir den egna läsningen ett alternativ till — aldrig en
+           tyst skrivning av en godtyckligt vald prisspalt. */
+        const alternativ = [
+          ...(svar.rows?.length
+            ? [{ label: T.costs.smart.modelPick, explain: "", rows: svar.rows as SmartRad[] }]
+            : []),
+          ...val.map((c) => ({ label: c.label, explain: c.explain, rows: c.rows as SmartRad[] })),
+        ];
+        return json({
+          ok: true,
+          message: "",
+          smart: {
+            applied: [] as SmartKvitto[],
+            skipped: svar.unmatched,
+            /* Rubriken bär hela valet i UI:t — utan text visas inga knappar. */
+            question: svar.question || T.costs.smart.pickQuestion,
+            notes: svar.notes,
+            choices: alternativ.map((c, i) => ({
+              id: String(i),
+              label: c.label || `${i + 1}`,
+              explain: c.explain,
+              rader: c.rows.length,
+              preview: forhandsvisning(c.rows, costCurrency, T),
+              rows: JSON.stringify(c.rows),
+            })),
+          },
         });
       }
-      if (rord) {
+
+      const { applied, skipped, rordShopify } = await skrivInmatningsrader({
+        admin,
+        shop: session.shop,
+        katalog,
+        rader: svar.rows as SmartRad[],
+        butiksValuta,
+        costCurrency,
+        T,
+      });
+      if (rordShopify) {
         invalidateVariantCosts(session.shop);
         await invalidateCatalog(session.shop, prisma);
       }
       return json({
         ok: true,
         message: applied.length ? T.costs.smart.done(applied.length) : svar.question ? "" : T.costs.smart.nothing,
-        smart: { applied, skipped, question: svar.question, notes: svar.notes },
+        smart: {
+          applied,
+          skipped: [...svar.unmatched, ...skipped],
+          question: svar.question,
+          notes: svar.notes,
+          choices: [] as { id: string; label: string; explain: string; rader: number; preview: string; rows: string }[],
+        },
       });
     } catch (e) {
       console.error("AI-inmatning misslyckades:", e);
+      return json({ ok: false, message: T.costs.smart.failed((e as Error).message) }, { status: 500 });
+    }
+  }
+
+  /* Handlaren pekade på ett av alternativen: skriv exakt de raderna. Samma
+     skrivare som direktvägen, och raderna kontrolleras mot katalogen igen. */
+  if (intent === "smart-apply") {
+    let rader: SmartRad[] = [];
+    try {
+      const ra = JSON.parse(String(form.get("rows") ?? "[]"));
+      if (Array.isArray(ra)) rader = ra as SmartRad[];
+    } catch {
+      rader = [];
+    }
+    if (!rader.length) return json({ ok: false, message: T.costs.smart.nothing }, { status: 400 });
+    /* Det som inte gick att koppla stod i förra svaret. Utan det här försvinner
+       varningen när kvittot ersätter alternativen — och en storlek som hoppades
+       över skulle tyst behålla sin gamla kostnad. */
+    let ohanterade: string[] = [];
+    try {
+      const oh = JSON.parse(String(form.get("unmatched") ?? "[]"));
+      if (Array.isArray(oh)) ohanterade = oh.map((x) => String(x));
+    } catch {
+      ohanterade = [];
+    }
+    const anteckning = String(form.get("notes") ?? "");
+    try {
+      const katalog = await loadCatalog(admin, session.shop, prisma);
+      const costCurrency = (settings?.costCurrency ?? butiksValuta).toUpperCase();
+      const { applied, skipped, rordShopify } = await skrivInmatningsrader({
+        admin,
+        shop: session.shop,
+        katalog,
+        rader,
+        butiksValuta,
+        costCurrency,
+        T,
+      });
+      if (rordShopify) {
+        invalidateVariantCosts(session.shop);
+        await invalidateCatalog(session.shop, prisma);
+      }
+      return json({
+        ok: true,
+        message: applied.length ? T.costs.smart.done(applied.length) : T.costs.smart.nothing,
+        smart: {
+          applied,
+          skipped: [...ohanterade, ...skipped],
+          question: "",
+          notes: anteckning,
+          choices: [] as { id: string; label: string; explain: string; rader: number; preview: string; rows: string }[],
+        },
+      });
+    } catch (e) {
+      console.error("AI-inmatning (val) misslyckades:", e);
       return json({ ok: false, message: T.costs.smart.failed((e as Error).message) }, { status: 500 });
     }
   }
@@ -664,11 +864,36 @@ export default function Costs() {
   const [smartText, setSmartText] = useState("");
   type SmartKvitto = {
     label: string; product: string; variant: string; market: string;
-    cost: number; original: string; tiers: { units: number; total: number }[]; targets: string;
+    cost: number; before: number | null; original: string; tiers: { units: number; total: number }[]; targets: string;
   };
+  type SmartVal = { id: string; label: string; explain: string; rader: number; preview: string; rows: string };
   const smartData = smartFetcher.data as unknown as
-    | { ok: boolean; message: string; smart?: { applied: SmartKvitto[]; skipped: string[]; question: string; notes: string } }
+    | {
+        ok: boolean;
+        message: string;
+        smart?: { applied: SmartKvitto[]; skipped: string[]; question: string; notes: string; choices?: SmartVal[] };
+      }
     | undefined;
+  /* Peka på ett alternativ → skriv det. Samma fetcher som rutan, så
+     alternativen byts mot kvittot av sig själva när det är gjort. */
+  const [valtId, setValtId] = useState<string | null>(null);
+  const valjAlternativ = (v: SmartVal) => {
+    setValtId(v.id);
+    smartFetcher.submit(
+      {
+        intent: "smart-apply",
+        rows: v.rows,
+        /* Följer med tillbaka, annars försvinner varningen om det som inte
+           gick att koppla i samma sekund som kvittot visas. */
+        unmatched: JSON.stringify(smartData?.smart?.skipped ?? []),
+        notes: smartData?.smart?.notes ?? "",
+      },
+      { method: "POST" },
+    );
+  };
+  /* Vilken av de två vägarna som kör just nu. En ny läsning byter ut hela
+     resultatet; ett val skriver bara, och då ska rutan stå kvar. */
+  const smartKor = smartFetcher.state !== "idle" ? String(smartFetcher.formData?.get("intent") ?? "") : "";
   const korSmart = () => {
     if (!smartBilder.length && !smartText.trim()) return;
     smartFetcher.submit(
@@ -866,10 +1091,43 @@ export default function Costs() {
                     <Text as="span" variant="bodySm" tone="subdued">{T.costs.smart.enterHint}</Text>
                   </InlineStack>
 
-                  {smartData && smartFetcher.state === "idle" ? (
+                  {smartData && smartKor !== "smart" ? (
                     <BlockStack gap="200">
                       {!smartData.ok ? <Banner tone="critical">{smartData.message}</Banner> : null}
-                      {smartData.smart?.question ? <Banner tone="warning">{smartData.smart.question}</Banner> : null}
+                      {smartData.smart?.question ? (
+                        <Banner tone={smartData.smart.choices?.length ? "info" : "warning"}>
+                          <BlockStack gap="100">
+                            <Text as="p" fontWeight="semibold">{smartData.smart.question}</Text>
+                            {smartData.smart.choices?.length ? (
+                              <Text as="p" variant="bodySm">{T.costs.smart.pickHint}</Text>
+                            ) : null}
+                          </BlockStack>
+                        </Banner>
+                      ) : null}
+                      {/* Alternativen: tryck på det som stämmer, så skrivs allt.
+                          Siffrorna är källans egna, så de går att känna igen
+                          direkt i skärmbilden man just släppte. */}
+                      {smartData.smart?.choices?.map((c) => (
+                        <Card key={c.id} background="bg-surface-secondary">
+                          <BlockStack gap="200">
+                            <Text as="h3" variant="headingSm">{c.label}</Text>
+                            {c.explain ? <Text as="p" variant="bodySm" tone="subdued">{c.explain}</Text> : null}
+                            <div style={{ whiteSpace: "pre-wrap" }}>
+                              <Text as="p" variant="bodySm" tone="subdued">{c.preview}</Text>
+                            </div>
+                            <div>
+                              <Button
+                                variant="primary"
+                                disabled={smartKor === "smart-apply"}
+                                loading={smartKor === "smart-apply" && valtId === c.id}
+                                onClick={() => valjAlternativ(c)}
+                              >
+                                {T.costs.smart.useThis(c.rader)}
+                              </Button>
+                            </div>
+                          </BlockStack>
+                        </Card>
+                      ))}
                       {smartData.ok && smartData.message ? (
                         <Banner tone={smartData.smart?.applied.length ? "success" : "warning"}>{smartData.message}</Banner>
                       ) : null}
@@ -1419,7 +1677,7 @@ export default function Costs() {
 function SmartKvittoRad({
   k, T, nf, currency, lang,
 }: {
-  k: { label: string; product: string; variant: string; market: string; cost: number; original: string; tiers: { units: number; total: number }[]; targets: string };
+  k: { label: string; product: string; variant: string; market: string; cost: number; before: number | null; original: string; tiers: { units: number; total: number }[]; targets: string };
   T: ReturnType<typeof t>;
   nf: Intl.NumberFormat;
   currency: string;
@@ -1432,12 +1690,15 @@ function SmartKvittoRad({
   const steg = k.tiers.length
     ? " · " + k.tiers.map((s) => T.costs.bundle.line(s.units, `${nf.format(s.total)} ${currency}`, `${nf.format(s.total / s.units)} ${currency}`)).join(" · ")
     : "";
+  /* Skrev vi över något? Visa vad som stod där innan — annars går det inte
+     att se om en ny prislista faktiskt ändrade något. */
+  const fore = k.before != null && Math.abs(k.before - k.cost) > 0.005 ? `${nf.format(k.before)} → ` : "";
   return (
     <InlineStack gap="300" blockAlign="center" wrap>
       <Text as="span" tone={borttagen ? "subdued" : undefined}>
         {borttagen ? "✕ " : "✓ "}
         <Text as="span" fontWeight="semibold">{k.product}{var_}</Text>
-        {` — ${marknad} — ${nf.format(k.cost)} ${currency}${k.original ? ` (${k.original})` : ""}${steg}`}
+        {` — ${marknad} — ${fore}${nf.format(k.cost)} ${currency}${k.original ? ` (${k.original})` : ""}${steg}`}
       </Text>
       {!borttagen ? (
         <Button

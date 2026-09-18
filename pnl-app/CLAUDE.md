@@ -397,6 +397,62 @@ i hans ordning:
 - Grillkliniken: Axel vill klona hela upplägget till en annan butik.
 - App Store-granskningssvaret: åtgärda när mejlet kommer.
 
+### AI-rutan ger VAL, inte frågor (2026-09-18, build valj-prisspalt-v96)
+
+Axel: rutan *"funkade aaaaasbra när jag la in UK-costs"*, men på den
+amerikanska prislistan *"bara varnar den och håller på och bökar"*. Den
+skärmbilden (Taköverdrag, leverantörskalkyl) har en antalskolumn (1/2/3 per
+storlek), en storlekskolumn och **tre namnlösa prisspalter**. AI:n gjorde
+precis som den var tillsagd — ställde en öppen fråga — och det är en
+återvändsgränd för någon som inte är utvecklare.
+
+**Regeln nu: en öppen fråga utan knappar är ett misslyckande.** Går källan
+att läsa på flera sätt lämnar `tolkaInmatningMedAi` i stället `choices`:
+2–4 KOMPLETTA alternativ, ett per prisspalt, där vart och ett bär hela sin
+uppsättning rader. Actionen skriver då ingenting utan returnerar dem med en
+sifferförhandsvisning ur källans egna tal; UI:t visar ett kort per
+alternativ med en knapp. Klicket postar `smart-apply` med just det
+alternativets rader.
+
+**Skrivningen är utbruten till `skrivInmatningsrader()`** (modulnivå i
+`app.costs.tsx`) och delas av båda vägarna — annars hade "direkt" och "efter
+val" kunnat bete sig olika. Den cachar kursen per valuta, läser den GAMLA
+kostnaden före skrivningen (katalogen för standard, `lasMarknadskostnad` per
+marknad) och kvittot visar därför `210,45 → 140,00`. Samma fetcher används
+för båda intents, så alternativkorten byts mot kvittot av sig själva.
+
+**Grinden står på `choices`, aldrig på `rows`.** Prompten säger "fyll aldrig
+både `rows` och `choices`", men schemat har båda som obligatoriska listor och
+en modell kan fylla dem ändå. Villkorade grinden på att `rows` var tom
+skrevs en godtyckligt vald prisspalt tyst medan alternativen kastades. Nu
+gäller: finns det alternativ visas alternativ — modellens egen läsning blir
+då ett alternativ till (etiketten `smart.modelPick`), aldrig en skrivning.
+Rubriken faller tillbaka på `smart.pickQuestion`, för UI:t ritar bara
+knapparnas banner när `question` har text.
+
+Tre saker till som annars ljuger för handlaren: det som inte gick att koppla
+(`unmatched`) postas med i `smart-apply` och läggs först i `skipped` — annars
+försvann varningen i samma sekund som kvittot ersatte alternativen, och en
+överhoppad storlek behöll tyst sin gamla kostnad. Rader där Shopify nekade
+`setUnitCost` på samtliga varianter hamnar bland de överhoppade i stället för
+på kvittot. Och `var X → nu Y` visas bara när alla träffade varianter stod på
+samma gamla kostnad.
+Skärmbilden töms bara när något faktiskt skrevs — annars hade den försvunnit
+medan man fortfarande valde.
+
+**Två promptregler till, ur just den här tabellen:**
+- *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
+  ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad
+  — aldrig tre separata rader.
+- *Nästan-matchande varianter:* matchar alla källrader utom en, och exakt en
+  butiksvariant blir över, paras de två ihop (källans `5*3m` mot butikens
+  `5,5 × 3 m`) och det skrivs i `notes`. Bara när det är exakt en kvar på
+  varje sida.
+
+⚠ `variantTraffar` matchar fortfarande EXAKT (normaliserat) — närmatchningen
+görs av modellen, som måste svara med butikens stavning. Svarar den med
+källans stavning hoppas raden över och hamnar i "gick inte att koppla".
+
 ### En ruta för allt på Kostnader (2026-09-18, build en-ruta-v94)
 
 Axel, argt och rätt: *"det fortsätter att se ut som ett jetflygplan när man
