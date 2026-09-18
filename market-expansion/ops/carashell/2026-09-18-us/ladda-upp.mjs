@@ -14,7 +14,7 @@ const ROT = join(HAR, '..', '..', '..', '..');
 const NYCKEL = 'carashell/takskyddet';
 // Instagram-kontot ur originalkampanjens API-skapade annonser (2026-09-16/17). Kopiekampanjens
 // eget instagram_user_id (17841421066812446) avvisas av API:t — se tools/ops-till-meta.mjs --ig.
-const IG = '17841423916277476';
+const IG = 'ingen';   // mätt 2026-09-18: även originalets id avvisas — kontot har inget IG-konto via API; i går ärvdes inget id alls (bara page_id i object_story_spec)
 const args = process.argv.slice(2);
 const flagga = (n) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
 const bara = flagga('--bara');
