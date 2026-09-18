@@ -5,22 +5,65 @@ bara lägesrapporten.
 
 ## 2026-09-18 eftermiddag — Axels fråga: vad kör vi i Norge utan recensioner?
 
-Mätt mot verkligheten i tre led, inte mot `sources.json`:
+**Svar: ingenting. Alla åtta produkter som är PÅSLAGNA i Norge har
+recensioner (8–11 st).**
 
-1. **Vad körs?** De två norska annonskontona (`act_1418612340124566` "Norge" —
-   noll annonser med spend; `act_1050941584152547` "Magiborsten NO" — 711
-   annonser med spend senaste 30 dagarna). Produkten läses ur annonsens
-   **länk** (`/products/<handle>`), inte ur kampanjnamnet: **42 produkter**.
-2. **Vad har recensioner?** Judge.me: 647 recensioner, **61 produkter** med
-   minst en synlig. Butiken har 201 produkter, alltså saknar 141 recensioner
-   — men de flesta av dem kör vi inga annonser på.
-3. **Korsningen:** av de 42 vi kör hade **tre** noll synliga recensioner.
+### ⚠️ Spend senaste 30 dagarna är INTE samma sak som "vi kör den"
 
-| Produkt | Spend 30 d | Annonser | Läge |
-|---|---:|---:|---|
-| Båtmotortrekk 420D | 20 755 kr | 45 | ✅ **rättad samma stund** |
-| Jetvifte for Makita-batteri | 1 593 kr | 15 | ❌ inget ark finns i Drive |
-| Medisinboks i Lommeformat | 23 kr | 2 | ❌ arket har bara exempelrader |
+Första mätningen tog varje annons med spend > 0 senaste 30 dagarna och fick
+**42 produkter**, varav tre utan recensioner. Axel invände direkt: "båda
+kampanjerna är ju fan avstängda, jag snackar om aktiva kampanjer".
+
+Han hade rätt. Av de 711 annonserna med spend står **544 på
+`CAMPAIGN_PAUSED`** och 4 på `PAUSED` — spenden är historisk. Bara
+`effective_status` **ACTIVE** eller **WITH_ISSUES** betyder påslaget:
+163 annonser på **8 produkter**.
+
+| Rec | Spend 30 d | Annonser | Produkt |
+|---:|---:|---:|---|
+| 11 | 21 136 kr | 26 | Kranbeskyttelse Frost 420D |
+| 10 | 19 846 kr | 44 | IBC-tanktrekk 1000 L |
+| 10 | 19 817 kr | 30 | Takovertrekk til Campingvogn |
+| 10 | 11 522 kr | 12 | Stigestøtte 2-pk |
+| 10 | 6 772 kr | 11 | Isolert Utekattehus |
+| 10 | 623 kr | 14 | Solcellelampe 210 LED |
+| 8 | 11 774 kr | 10 | Arbeidslampe for Makita-batteri |
+| 8 | 577 kr | 16 | Fuglemater med kamera |
+
+**Filtrera alltid på `effective_status`, aldrig på spend, när frågan är
+"vad kör vi".** Spend svarar på "vad har vi kört".
+
+### De tre från den första mätningen — alla pausade
+
+| Produkt | Läge |
+|---|---|
+| Båtmotortrekk 420D | 44× CAMPAIGN_PAUSED + 1× PAUSED. **Fixad ändå** (se nedan) — 20 755 kr har redan gått åt, och slås den på igen är den redo |
+| Jetvifte for Makita-batteri | 15× CAMPAIGN_PAUSED |
+| Medisinboks i Lommeformat | 2× CAMPAIGN_PAUSED |
+
+**Medisinboksen är avvecklad, inte pausad i väntan på något.** Kampanjen
+`Medisinboks NO | BE-ROAS 1,64 | 2026-09-03` skapades 3 september 07:55 och
+stängdes av **43 minuter senare**, 08:38, efter 23 kr och 0 köp. Produkten är
+dessutom **slut i lager** i den norska butiken (219 NOK, `available: false`).
+Den behöver inga recensioner — stryk den ur väntelistan.
+
+### 🔑 "Lövblåsaren" i Drive ÄR Jetviften
+
+Axel skickade in `5.1 Lövblåsare_REVIEW` som xlsx 2026-09-18. **Bladet heter
+`Jetflakt_Makita_Reviews_10_rece`** och texterna handlar om att blåsa löv och
+damm i garaget och bilen. Det förklarar varför flera körningar sökt förgäves
+efter en "løvblåser" bland butikens 201 produkter — produkten heter
+`jetvifte-for-makita-batteri-blas-rent-uten-ledning` och har funnits hela
+tiden. **Mappnamnet i Drive är inte produktens namn.**
+
+Arket har samma tre fel som Taköverdrag Husvagn hade:
+- `title` bär personnamn (Erik, Johan, Anders …) i stället för rubriker
+- `reviewer_name` bär *andra* personnamn (Anna, Lars, Maria …) — förskjutet
+- `product_handle` pekar på **utekattkojan**, inte Jetviften
+
+Samma tidsstämpel på alla tio rader (`2026-09-04 05:54:08 UTC`) — exakt samma
+som Taköverdragets ark. Det är en mall som fyllts fel, inte tio olika misstag.
+Brådskar inte: Jetviftens kampanj är pausad.
 
 ### Båtmotorskyddet hade en färdig CSV som aldrig kom in
 
