@@ -1,288 +1,318 @@
 {
-  "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
-  "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
-  "uppdaterad": "2026-09-17",
-  "kalla": "Notion-svepet i /rond-auto steg 4c, körd 2026-09-17 via Notion-MCP (notion-search på \"creative hub\" och \"BÄVER\" med sort last_edited, notion-query-data-sources på testcentret och alla tio levande hubbarna i en UNION-fråga).",
-  "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
-  "databas_1_product_test_center": {
-    "namn": "Product test center SE BÄVER",
-    "collection": "collection://d80270ab-908c-839b-9dcc-8721c5f29570",
-    "vad_den_ar": "HAR bor nya produkter. Varje rad ar en produkt, och sjalva SIDAN innehaller arbetet: voiceover-manus per koncept (DEMO, SOCIAL PROOF, CLEARANCE, GIFT), hook-alternativ, Drive-lank till fardiga annonser och lank till produktsidan. Kolla ALLTID har for nya produkter innan du sager att nagot saknas.",
-    "egna_statusar": {
-      "Testing": "Produkten testas just nu.",
-      "Ads review": "Vantar pa Axels granskning.",
-      "Ready to launch": "Klar att launcha.",
-      "In progress": "Arbete pagar.",
-      "Continue to scale": "Bevisad vinnare som skalas.",
-      "Has gotten over 2000 sek spend": "Passerat domgransen.",
-      "Products": "Produktbiblioteket, inte aktivt arbete."
-    },
-    "vantar_pa_axel": [
-      {
-        "namn": "5.1 Lövblåsare",
-        "status": "Ads review",
-        "not": "Oförändrad sedan 2026-09-14. Ingen kampanj i vare sig SE- eller NO-kontot."
-      },
-      {
-        "namn": "7 Solcellslarm 2-pack",
-        "status": "Ads review",
-        "not": "Ingen kampanj i SE-kontot. NO har Solcellslarm-material sedan tidigare."
-      },
-      {
-        "namn": "6 Staketstolpsbygel 2-pack (2 st ingår)",
-        "status": "Ads review",
-        "not": "NO-kampanjen Gjerdestolpebøyle stängdes av 2026-09-16 av ronden. Ingen SE-kampanj."
-      },
-      {
-        "namn": "7 Stegstöd 2-pack",
-        "status": "Ads review",
-        "not": "Kör i NO (Stigestøtte 2-pk, 8 869 kr livstid, ROAS 2,82). Ingen SE-kampanj än."
-      },
-      {
-        "namn": "7 Infartslarm Trådlöst",
-        "status": "Ads review",
-        "not": "⚠️ SE-kampanjen STÄNGDES AV av ronden 2026-09-17 (ROAS 0,77 mot break-even 1,61, 1 900 kr på 3 dagar). NO-kampanjen Infartslarm NO lever men ligger på ROAS 0,48 och har bara 930 kr — för lite data för en dom."
-      },
-      {
-        "namn": "7 Termoskydd Husbil 211 × 171 cm",
-        "status": "Ads review",
-        "not": "Kontots näst bästa SE-produkt. Skalad 1 950 → 2 300 kr/dag i dag."
-      },
-      {
-        "namn": "7 Sittkäpp Hopfällbar",
-        "status": "Ads review",
-        "not": "⚠️ SE-kampanjen STÄNGDES AV av ronden 2026-09-17 (ROAS 0,53 mot break-even 1,64, 1 783 kr på 3 dagar, 1 köp)."
-      },
-      {
-        "namn": "8 Solcellslampa 210 LED Sensor",
-        "status": "Ads review",
-        "not": "NY SE-kampanj launchad 2026-09-17 02:32, 1 000 kr/dag. 104 kr spend, inga köp än."
-      },
-      {
-        "namn": "10 Fågelmatare med kamera",
-        "status": "Ads review",
-        "not": "NY SE-kampanj launchad 2026-09-17 02:16, 1 000 kr/dag. 142 kr spend, inga köp än."
-      },
-      {
-        "namn": "K Dinosauriekalender",
-        "status": "Ads review",
-        "not": "NY SE-kampanj launchad 2026-09-17 02:54, 1 000 kr/dag. 156 kr spend, 1 köp, ROAS 2,55 — för tidigt för en dom."
-      },
-      {
-        "namn": "8 Vedklyvborr Ø32 mm",
-        "status": "In progress",
-        "not": "Ingen kampanj i något konto."
-      },
-      {
-        "namn": "K Gör din egen-kalender",
-        "status": "In progress",
-        "not": "Ingen kampanj i något konto."
-      }
-    ],
-    "i_testing": [
-      {
-        "namn": "5.1 Diskställ i Två Våningar",
-        "not": "Bara NO-kampanj tidigare (Oppvaskstativ NO) — den är inte aktiv idag heller."
-      },
-      {
-        "namn": "5.1 Pälsborste till Dyson-dammsugare",
-        "not": "Bara NO-kampanj tidigare (Pelsbørste NO) — inte aktiv idag."
-      },
-      {
-        "namn": "6 Adventskalender Racingbilar",
-        "not": "SE-kampanjen är ACTIVE igen (Axel startade om den 2026-09-14 efter avstängningen). ROAS 0,78 på 3 dagar mot break-even 1,62 — budgeten kapades 1 000 → 500 kr idag av livstidsspärren. 4:e back-dygnet i rad; efter det 5:e stängs den av."
-      },
-      {
-        "namn": "6 Adventskalender Fiskedrag",
-        "not": "Ingen kampanj. Axels beslut 2026-09-10 att skippa den som OPS-produkt."
-      },
-      {
-        "namn": "6 Isolerad Utekattkoja",
-        "not": "SE-kampanjen inte aktiv. NO-kampanjen 'Isolert Utekattehus NO' ACTIVE, ROAS 2,03 — LAT_VARA idag."
-      },
-      {
-        "namn": "6 Taköverdrag Husvagn 6,5 × 3 m",
-        "not": "Kontots starkaste produkt just nu: ROAS 4,95 på 3 dagar, 21 118 kr livstidsspend, 99 köp. LAT_VARA (budgettaket 8 000 kr räcker)."
-      },
-      {
-        "namn": "SOP-rader (How to generate voiceover, HOW TO ADD CAPTIONS CORRECTLY, HOW TO TRANSLATE ADS m.fl.)",
-        "not": "Dokumentation, inte produkter. Räknas aldrig som arbete."
-      }
-    ],
-    "not_2026_09_16": "7 produktrader i Ads review, men bara TVÅ av dem saknar kampanj (Lövblåsaren och Solcellslarmet). De fem andra kör redan — statusraden i testcentret uppdateras inte när en produkt launchas, så \"Ads review\" betyder här inte alltid att något väntar. Raderna i Testing är till största delen SOP-sidor (HOW TO TRANSLATE ADS, how to make swipe on ads osv), inte produkter."
+ "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
+ "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
+ "uppdaterad": "2026-09-18",
+ "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-09-18 via Notion-MCP (notion-search på \"creative hub\" med sort last_edited och på \"BÄVER\" title_only, notion-query-data-sources på testcentret och alla tio levande hubbarna i en UNION-fråga med Typ-filter på inkludering).",
+ "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
+ "databas_1_product_test_center": {
+  "namn": "Product test center SE BÄVER",
+  "collection": "collection://d80270ab-908c-839b-9dcc-8721c5f29570",
+  "vad_den_ar": "HAR bor nya produkter. Varje rad ar en produkt, och sjalva SIDAN innehaller arbetet: voiceover-manus per koncept (DEMO, SOCIAL PROOF, CLEARANCE, GIFT), hook-alternativ, Drive-lank till fardiga annonser och lank till produktsidan. Kolla ALLTID har for nya produkter innan du sager att nagot saknas.",
+  "egna_statusar": {
+   "Testing": "Produkten testas just nu.",
+   "Ads review": "Vantar pa Axels granskning.",
+   "Ready to launch": "Klar att launcha.",
+   "In progress": "Arbete pagar.",
+   "Continue to scale": "Bevisad vinnare som skalas.",
+   "Has gotten over 2000 sek spend": "Passerat domgransen.",
+   "Products": "Produktbiblioteket, inte aktivt arbete."
   },
-  "databas_2_creative_hubs": {
-    "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
-    "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. 'drafts' nedan = antal rader med Status exakt 'Draft' (briefen finns, ingen har börjat) — rader i 'To be Reviewed'/'In progress'/'Creative strat review'/'SE-ACTIVE to be translated'/'Translation in review' räknas inte som drafts, de är redan under arbete.",
-    "levande": [
-      {
-        "namn": "Fish rod holder",
-        "produkt": "Fiskespöhållaren",
-        "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
-        "drafts": 41,
-        "drafts_video": 3,
-        "drafts_bild": 38,
-        "not": "OFÖRÄNDRAD på 41 andra dygnet i rad. Systemets största drafthög och den har stått still — 38 bildbriefer som ingen plockat. Produkten skalades ändå 1 500 → 1 800 kr/dag i dag. Värt en fråga till redigerarna: varför rör ingen den här hubben?"
-      },
-      {
-        "namn": "BÄVER  For CARL Taköverdraget för Husvagn",
-        "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
-        "collection": "collection://5f2270ab-908c-82ef-b029-0767819050db",
-        "drafts": 7,
-        "drafts_video": 7,
-        "drafts_bild": 0,
-        "not": "⚠️ OMDÖPT av Axel sedan i går — hette BÄVER Taköverdraget för Husvagn, heter nu \"BÄVER  For CARL Taköverdraget för Husvagn\". Samma databas-id, så ingen ny hub. Signalen är att Carl fått produkten. UPP från 0 till 7: batch #2:s 24 briefer landade 2026-09-16, och redigerarna har redan tagit 17 av dem (5 video In progress, 12 bild To be Reviewed). Kvar som draft: 7 video."
-      },
-      {
-        "namn": "BÄVER Termoskyddet för Husbil",
-        "produkt": "Termoskyddet för Husbil 211 × 171 cm",
-        "collection": "collection://7d0270ab-908c-831e-8021-8758336851c8",
-        "drafts": 6,
-        "drafts_video": 6,
-        "drafts_bild": 0,
-        "not": "NED från 26 till 6 — 20 rader plockade på ett dygn, systemets största rörelse. Alla 16 bildbriefer är borta ur draft. Kvar: 6 video."
-      },
-      {
-        "namn": "BÄVER Övervakningskameran",
-        "produkt": "Övervakningskameran",
-        "collection": "collection://2f7270ab-908c-83f7-a989-87456507e37b",
-        "drafts": 7,
-        "drafts_video": 3,
-        "drafts_bild": 4,
-        "not": "OFÖRÄNDRAD på 7. Produkten är briefpausad till 2026-10-15 (Axels beslut) — det här är de sista briefer den får på ett tag, och ingen har börjat på dem."
-      },
-      {
-        "namn": "Motorcycle Cover creative hub",
-        "produkt": "MC-Kapellet",
-        "collection": "collection://632270ab-908c-8307-a318-873192ba664a",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "NED från 3 till 0. Hubben redigerades sent 2026-09-16 (MC-Kapell_RE_5_1, RE_6_1, PD_8_H1, OF/OB/GA-serien) — redigerarna jobbar aktivt här."
-      },
-      {
-        "namn": "Belt grinder creative hub",
-        "produkt": "Bälteslipmaskinen",
-        "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-        "drafts": 1,
-        "drafts_video": 0,
-        "drafts_bild": 1,
-        "not": "NED från 4 till 1. Tre rader redigerade så sent som 2026-09-17 kl 03:04–03:11 (Beltgrinder_PD_22_H1, PD_23_H1, SP_8_H1) — natten var produktiv här."
-      },
-      {
-        "namn": "Boat motor cover creative hub",
-        "produkt": "Båtmotorskyddet 420D",
-        "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
-        "drafts": 1,
-        "drafts_video": 1,
-        "drafts_bild": 0,
-        "not": "UPP från 0 till 1 (en videobrief). Produkten skalades 1 700 → 2 000 kr/dag i dag, ROAS 4,74 på tre dagar."
-      },
-      {
-        "namn": "BÄVER IBC-Tanköverdraget",
-        "produkt": "IBC-Tanköverdraget",
-        "collection": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "NED från 1 till 0 — TOM. Batch #5:s elva briefer är helt upplockade (2 video In progress, 2 video + 1 bild To be Reviewed, 6 bild Translation in review). Därför fick produkten batch #6 i dag. OBS: produkten har TVÅ hubbar — batch #1–#4 ligger i den äldre IBC Tank Cover creative hub, som är ARKIVERAD. Skapa aldrig en tredje."
-      },
-      {
-        "namn": "BÄVER Adventskalendern Racingbilar",
-        "produkt": "Adventskalendern Racingbilar",
-        "collection": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "TOM andra dygnet i rad. Batch #2 helt upplockad (7 bild i SE-ACTIVE to be translated, 2 video In progress, 2 video To be Reviewed). Därför fick produkten batch #3 i dag."
-      },
-      {
-        "namn": "BÄVER Isolerade Utekattkojan",
-        "produkt": "Isolerade Utekattkojan",
-        "collection": "collection://30d270ab-908c-821a-a322-87119dc8f095",
-        "drafts": 0,
-        "drafts_video": 0,
-        "drafts_bild": 0,
-        "not": "HELT TOM — 0 rader av alla typer, oförändrat sedan 2026-09-14. Produkten har ingen SE-kampanj (bara Isolert Utekattehus NO i NO-kontot, som går på ROAS 2,03 över break-even 1,62). Ingen SE-kampanj = inget behov i ronden."
-      }
-    ],
-    "arkiverade": [
-      {
-        "namn": "Beach crocs creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Mower seat creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Trimmer belt creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Boat cover 420D creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Men's Plush Slippers creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Fish rod holder NO creative hub",
-        "not": "is_archived: true"
-      },
-      {
-        "namn": "Kranbeskyttelse Frost NO creative hub",
-        "not": "is_archived: true"
-      }
-    ],
-    "nya_hubbar_sedan_forra_svepet": [
-      {
-        "namn": "Termoskyddet",
-        "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
-        "collection": "collection://991270ab-908c-8397-9423-07eada721a91",
-        "skapad": "2026-09-16",
-        "rader": 0,
-        "VARNING": "OIDENTIFIERAD OCH OREGISTRERAD. En helt ny, TOM databas som dök upp i dag och som bara heter \"Termoskyddet\". Den är INTE Bäverbutikens hub för produkten — den heter BÄVER Termoskyddet för Husbil och står i produktkartan. Sannolikaste förklaringen: det är CaraShells hub för dess nya andra produkt carashell/termoskyddet, som lades till 2026-09-16 och vars hub enligt CLAUDE.md inte var byggd. Om det stämmer MÅSTE den skrivas in i factory/produkter/register.json (node factory/register.mjs notion carashell/termoskyddet 3dd270ab-908c-8018-a927-c2e551f7de8a), annars suger Bäverbutikens leveransrunda in den och laddar upp i FEL annonskonto. Ronden har inte rört den och har inte registret på den här grenen — går till Axel som en fråga, inte som ett påstående."
-      }
-    ],
-    "nyss_arkiverade": [],
-    "LAGET_2026_09_16": "Redigerarna har tagit fart. Taköverdraget och Adventskalendern har NOLL drafts kvar — hela förstabatchen respektive batch #2 är levererad och uppladdad (står i SE-ACTIVE to be translated). IBC har 1 draft kvar. Samtidigt har Termoskyddet vuxit till 26 drafts (17 igår + gårdagens extra batch på 9) utan att någon börjat, och Fiskespöhållaren till 41. De två är flaskhalsarna. BÄVER Övervakningskameran är inte längre tom: 7 drafts från gårdagens batch ligger där. BÄVER Isolerade Utekattkojan är fortfarande helt tom (0 rader av alla typer).",
-    "omdopta_sedan_forra_svepet": [
-      {
-        "namn": "Dont work here Surveillance Camera creative hub",
-        "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
-        "not": "Hette tidigare \"Surveillance Camera creative hub\". Omdöpt av Axel 2026-09-16. Inte arkiverad (is_archived saknas), men namnet är instruktionen: skriv inget nytt där. Nya briefer går i BÄVER Övervakningskameran, precis som produktkartan säger."
-      },
-      {
-        "namn": "ARKIVERAD Smiley face trash can stickers creative hub",
-        "id": "3d0270ab-908c-8149-b39f-dd9e0ef8133f",
-        "not": "Har fått prefixet ARKIVERAD i namnet men bär INTE is_archived: true. Namnet och fältet säger olika saker — fältet är det som gäller enligt kommandot, men produkten har ingen aktiv kampanj så det spelar ingen roll i praktiken."
-      }
-    ],
-    "andra_verksamheters_hubbar_bortdragna": [
-      "Matstrumpor creative hub",
-      "Creative hub prank apron",
-      "Creative hub golf grill kit",
-      "Creative Hub master",
-      "Customer support bäverbutiken",
-      "kundsupport Grillkliniken",
-      "Bäverkoppling.se",
-      "MALL Creative hub MALL (mallen)",
-      "Carashell Taköverdrag creative hub (OPS-butik, MagiBorsten DK)",
-      "Racing Car Advent Calendar creative hub (gammal hub, batch #1)",
-      "IBC Tank Cover creative hub (gammal hub, batch #1–#4)",
-      "arkiverad Övervakningskamera",
-      "Damasker vandring (OPS, DryTrek)"
-    ],
-    "summa_drafts": 63,
-    "rorelse_sedan_igar": "82 → 63 drafts. Redigerarna tog 39 rader (Termoskyddet −20, Bälteslipmaskinen −3, MC-Kapellet −3, IBC −1) och fick 20 nya (Taköverdraget +7 ur batch #2, Båtmotorskyddet +1, och i dag IBC +9 och Adventskalendern +9 ur ronden). Fiskespöhållarens 41 står still för andra dygnet.",
-    "nya_hubbar_sedan_igar": "Inga. notion-search på \"creative hub\" (sort last_edited) och på \"BÄVER\" gav bara de tio kända Bäver-hubbarna plus OPS-hubbarna (Carashell Taköverdrag creative hub, Termoskyddet) som undantas per id ur factory/produkter/register.json.",
-    "nyss_arkiverade_sedan_igar": "\"BÄVER Termoskyddet för Husbil\" 513270ab-908c-825e-b71e-81cdf455dd98 står nu is_archived: true. Det är Bäverbutikens gamla källhub för termoskyddet — den LEVANDE hubben är c5a270ab-908c-83e3-b721-81fde8643080 (collection 7d0270ab-…), som står i produktkartan och som svepet läste. Två hubbar med exakt samma namn: läs id, aldrig namn."
-  },
-  "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15.",
-  "arbetsfordelning": {
-    "redigerarna": "Plockar Draft → In progress → To be Reviewed. 88 drafts ligger och väntar totalt (34 bild Fiskespöhållaren + 17 Termoskyddet + 15 Taköverdraget + 11 IBC + 11 Adventskalendern).",
-    "rutinerna": "/notionkorning 13:20 tar 'To be Reviewed' upp i Meta. /bildannonser 20:00 tar Draft-bildrader till kie.ai."
-  }
+  "vantar_pa_axel": [
+   {
+    "namn": "5.1 Lövblåsare",
+    "status": "Ads review",
+    "not": "Oförändrad sedan 2026-09-14. Ingen kampanj i vare sig SE- eller NO-kontot."
+   },
+   {
+    "namn": "7 Solcellslarm 2-pack",
+    "status": "Ads review",
+    "not": "Ingen kampanj i SE-kontot. NO har Solcellslarm-material sedan tidigare."
+   },
+   {
+    "namn": "6 Staketstolpsbygel 2-pack (2 st ingår)",
+    "status": "Ads review",
+    "not": "NO-kampanjen Gjerdestolpebøyle stängdes av 2026-09-16 av ronden. Ingen SE-kampanj."
+   },
+   {
+    "namn": "7 Stegstöd 2-pack",
+    "status": "Ads review",
+    "not": "Kör i NO (Stigestøtte 2-pk, 8 869 kr livstid, ROAS 2,82). Ingen SE-kampanj än."
+   },
+   {
+    "namn": "7 Infartslarm Trådlöst",
+    "status": "Ads review",
+    "not": "⚠️ SE-kampanjen STÄNGDES AV av ronden 2026-09-17 (ROAS 0,77 mot break-even 1,61, 1 900 kr på 3 dagar). NO-kampanjen Infartslarm NO lever men ligger på ROAS 0,48 och har bara 930 kr — för lite data för en dom."
+   },
+   {
+    "namn": "7 Termoskydd Husbil 211 × 171 cm",
+    "status": "Ads review",
+    "not": "Kontots näst bästa SE-produkt. Skalad 1 950 → 2 300 kr/dag i dag."
+   },
+   {
+    "namn": "7 Sittkäpp Hopfällbar",
+    "status": "Ads review",
+    "not": "⚠️ SE-kampanjen STÄNGDES AV av ronden 2026-09-17 (ROAS 0,53 mot break-even 1,64, 1 783 kr på 3 dagar, 1 köp)."
+   },
+   {
+    "namn": "8 Solcellslampa 210 LED Sensor",
+    "status": "Ads review",
+    "not": "NY SE-kampanj launchad 2026-09-17 02:32, 1 000 kr/dag. 104 kr spend, inga köp än."
+   },
+   {
+    "namn": "10 Fågelmatare med kamera",
+    "status": "Ads review",
+    "not": "NY SE-kampanj launchad 2026-09-17 02:16, 1 000 kr/dag. 142 kr spend, inga köp än."
+   },
+   {
+    "namn": "K Dinosauriekalender",
+    "status": "Ads review",
+    "not": "NY SE-kampanj launchad 2026-09-17 02:54, 1 000 kr/dag. 156 kr spend, 1 köp, ROAS 2,55 — för tidigt för en dom."
+   },
+   {
+    "namn": "8 Vedklyvborr Ø32 mm",
+    "status": "In progress",
+    "not": "Ingen kampanj i något konto."
+   },
+   {
+    "namn": "K Gör din egen-kalender",
+    "status": "In progress",
+    "not": "Ingen kampanj i något konto."
+   }
+  ],
+  "i_testing": [
+   {
+    "namn": "5.1 Diskställ i Två Våningar",
+    "not": "Bara NO-kampanj tidigare (Oppvaskstativ NO) — den är inte aktiv idag heller."
+   },
+   {
+    "namn": "5.1 Pälsborste till Dyson-dammsugare",
+    "not": "Bara NO-kampanj tidigare (Pelsbørste NO) — inte aktiv idag."
+   },
+   {
+    "namn": "6 Adventskalender Racingbilar",
+    "not": "SE-kampanjen är ACTIVE igen (Axel startade om den 2026-09-14 efter avstängningen). ROAS 0,78 på 3 dagar mot break-even 1,62 — budgeten kapades 1 000 → 500 kr idag av livstidsspärren. 4:e back-dygnet i rad; efter det 5:e stängs den av."
+   },
+   {
+    "namn": "6 Adventskalender Fiskedrag",
+    "not": "Ingen kampanj. Axels beslut 2026-09-10 att skippa den som OPS-produkt."
+   },
+   {
+    "namn": "6 Isolerad Utekattkoja",
+    "not": "SE-kampanjen inte aktiv. NO-kampanjen 'Isolert Utekattehus NO' ACTIVE, ROAS 2,03 — LAT_VARA idag."
+   },
+   {
+    "namn": "6 Taköverdrag Husvagn 6,5 × 3 m",
+    "not": "Kontots starkaste produkt just nu: ROAS 4,95 på 3 dagar, 21 118 kr livstidsspend, 99 köp. LAT_VARA (budgettaket 8 000 kr räcker)."
+   },
+   {
+    "namn": "SOP-rader (How to generate voiceover, HOW TO ADD CAPTIONS CORRECTLY, HOW TO TRANSLATE ADS m.fl.)",
+    "not": "Dokumentation, inte produkter. Räknas aldrig som arbete."
+   }
+  ],
+  "not_2026_09_16": "7 produktrader i Ads review, men bara TVÅ av dem saknar kampanj (Lövblåsaren och Solcellslarmet). De fem andra kör redan — statusraden i testcentret uppdateras inte när en produkt launchas, så \"Ads review\" betyder här inte alltid att något väntar. Raderna i Testing är till största delen SOP-sidor (HOW TO TRANSLATE ADS, how to make swipe on ads osv), inte produkter.",
+  "avlast": "2026-09-18",
+  "nya_sedan_igar": [
+   {
+    "namn": "10 Snöskyffel utan batteri",
+    "status": "Ads review",
+    "not": "NY rad sedan i går. SE-kampanj launchad 2026-09-18 02:17, 1 000 kr/dag, 168 kr spend, inga köp än."
+   },
+   {
+    "namn": "8 Biltvättborste Teleskop 100 cm",
+    "status": "Ads review",
+    "not": "NY rad. SE-kampanj launchad 2026-09-18 02:38, 1 000 kr/dag, 137 kr spend."
+   },
+   {
+    "namn": "8 Inomhustofflor Fodrade Herr 40–47",
+    "status": "Ads review",
+    "not": "NY rad. SE-kampanj launchad 2026-09-18 02:45, 1 000 kr/dag, 107 kr spend."
+   },
+   {
+    "namn": "8 Vedklyvborr Ø32 mm",
+    "status": "Ads review",
+    "not": "FLYTTAD från In progress. SE-kampanj launchad 2026-09-18 02:29, 1 000 kr/dag, 114 kr spend."
+   },
+   {
+    "namn": "K Gör din egen-kalender",
+    "status": "Ads review",
+    "not": "FLYTTAD från In progress. SE-kampanj launchad 2026-09-18 02:51, 1 000 kr/dag, 97 kr spend."
+   }
+  ],
+  "not_2026_09_18": "Fem produkter launchades i SE-kontot natten till 2026-09-18 (02:17–02:54), alla på 1 000 kr/dag. Ingen av dem har nog data för en dom — ronden gav dem alla FOR_LITE_DATA, vilket är rätt. De är inskrivna i agent/produktkarta.json som lage: test."
+ },
+ "databas_2_creative_hubs": {
+  "vad_de_ar": "En hub per produkt som gatt vidare fran testcentret. Har ligger de enskilda annonserna som briefer.",
+  "sa_lases_de": "Bara Typ 'Video - Pending Approval' eller 'Image - Pending Approval' ar annonser. Guideline, SOP, Feedback och Winning Creative ar dokumentation. Filtrera pa INKLUDERING, aldrig uteslutning. 'drafts' nedan = antal rader med Status exakt 'Draft' (briefen finns, ingen har börjat) — rader i 'To be Reviewed'/'In progress'/'Creative strat review'/'SE-ACTIVE to be translated'/'Translation in review' räknas inte som drafts, de är redan under arbete.",
+  "levande": [
+   {
+    "namn": "Fish rod holder",
+    "produkt": "Fiskespöhållaren",
+    "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
+    "drafts": 41,
+    "drafts_video": 3,
+    "drafts_bild": 38,
+    "not": "OFÖRÄNDRAD på 41 TREDJE dygnet i rad. Systemets största drafthög står helt still — 38 bildbriefer som ingen plockat sedan 2026-09-15. Produkten fick ändå batch #6 i dag (kommandot har inget tak och rundan var förfallen). ⚠️ Hubben delas numera med TackleBays OPS-butik: de senaste raderna heter TackleBayRod_*, och hubben är undantagen ur Bäverbutikens leveransrunda per id. Det kan vara förklaringen till att Bäverbutikens Rodholder_-rader står stilla — de faller mellan två rutiner. Fråga till Axel, inte ett beslut för körningen."
+   },
+   {
+    "namn": "BÄVER  For CARL Taköverdraget för Husvagn",
+    "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "collection": "collection://5f2270ab-908c-82ef-b029-0767819050db",
+    "drafts": 4,
+    "drafts_video": 4,
+    "drafts_bild": 0,
+    "not": "NED från 7 till 4. Tre videobriefer plockade på ett dygn. Ingen ny batch i dag — rundan faller 2026-09-19."
+   },
+   {
+    "namn": "BÄVER Termoskyddet för Husbil",
+    "produkt": "Termoskyddet för Husbil 211 × 171 cm",
+    "collection": "collection://7d0270ab-908c-831e-8021-8758336851c8",
+    "drafts": 2,
+    "drafts_video": 2,
+    "drafts_bild": 0,
+    "not": "NED från 6 till 2. Fyra videobriefer plockade. Fick batch #2 i dag (9 briefer)."
+   },
+   {
+    "namn": "BÄVER Övervakningskameran",
+    "produkt": "Övervakningskameran",
+    "collection": "collection://2f7270ab-908c-83f7-a989-87456507e37b",
+    "drafts": 7,
+    "drafts_video": 3,
+    "drafts_bild": 4,
+    "not": "OFÖRÄNDRAD på 7 andra dygnet i rad. Produkten är briefpausad till 2026-10-15 och dess SE-kampanj sänktes till golvet 500 kr i dag (livstidsspärren). Ingen rör de sista briefarna."
+   },
+   {
+    "namn": "Motorcycle Cover creative hub",
+    "produkt": "MC-Kapellet",
+    "collection": "collection://632270ab-908c-8307-a318-873192ba664a",
+    "drafts": 0,
+    "drafts_video": 0,
+    "drafts_bild": 0,
+    "not": "TOM andra dygnet i rad — redigerarna håller jämna steg. Fick batch #4 i dag (7 briefer)."
+   },
+   {
+    "namn": "Belt grinder creative hub",
+    "produkt": "Bälteslipmaskinen",
+    "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
+    "drafts": 1,
+    "drafts_video": 0,
+    "drafts_bild": 1,
+    "not": "OFÖRÄNDRAD på 1 bildbrief. Fick batch #5 i dag (9 briefer)."
+   },
+   {
+    "namn": "Boat motor cover creative hub",
+    "produkt": "Båtmotorskyddet 420D",
+    "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
+    "drafts": 1,
+    "drafts_video": 1,
+    "drafts_bild": 0,
+    "not": "OFÖRÄNDRAD på 1 videobrief. Fick batch #4 i dag (11 briefer, inklusive två review-bilder på riktiga citat)."
+   },
+   {
+    "namn": "BÄVER IBC-Tanköverdraget",
+    "produkt": "IBC-Tanköverdraget",
+    "collection": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
+    "drafts": 0,
+    "drafts_video": 0,
+    "drafts_bild": 0,
+    "not": "TOM. Batch #6 (9 briefer, lagda 2026-09-17) är redan helt upplockad — snabbaste hubben i systemet."
+   },
+   {
+    "namn": "BÄVER Adventskalendern Racingbilar",
+    "produkt": "Adventskalendern Racingbilar",
+    "collection": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
+    "drafts": 0,
+    "drafts_video": 0,
+    "drafts_bild": 0,
+    "not": "TOM tredje dygnet i rad. Batch #3 (lagd 2026-09-17) redan upplockad."
+   },
+   {
+    "namn": "BÄVER Isolerade Utekattkojan",
+    "produkt": "Isolerade Utekattkojan",
+    "collection": "collection://30d270ab-908c-821a-a322-87119dc8f095",
+    "drafts": 0,
+    "drafts_video": 0,
+    "drafts_bild": 0,
+    "not": "TOM. OPS-butiken CatCabins briefrond är pausad av Axel sedan 2026-09-14."
+   }
+  ],
+  "arkiverade": [
+   {
+    "namn": "Beach crocs creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Mower seat creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Trimmer belt creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Boat cover 420D creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Men's Plush Slippers creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Fish rod holder NO creative hub",
+    "not": "is_archived: true"
+   },
+   {
+    "namn": "Kranbeskyttelse Frost NO creative hub",
+    "not": "is_archived: true"
+   }
+  ],
+  "nya_hubbar_sedan_forra_svepet": [
+   {
+    "namn": "Termoskyddet",
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "collection": "collection://991270ab-908c-8397-9423-07eada721a91",
+    "skapad": "2026-09-16",
+    "rader": 0,
+    "VARNING": "OIDENTIFIERAD OCH OREGISTRERAD. En helt ny, TOM databas som dök upp i dag och som bara heter \"Termoskyddet\". Den är INTE Bäverbutikens hub för produkten — den heter BÄVER Termoskyddet för Husbil och står i produktkartan. Sannolikaste förklaringen: det är CaraShells hub för dess nya andra produkt carashell/termoskyddet, som lades till 2026-09-16 och vars hub enligt CLAUDE.md inte var byggd. Om det stämmer MÅSTE den skrivas in i factory/produkter/register.json (node factory/register.mjs notion carashell/termoskyddet 3dd270ab-908c-8018-a927-c2e551f7de8a), annars suger Bäverbutikens leveransrunda in den och laddar upp i FEL annonskonto. Ronden har inte rört den och har inte registret på den här grenen — går till Axel som en fråga, inte som ett påstående."
+   }
+  ],
+  "nyss_arkiverade": "Inga nya sedan 2026-09-17.",
+  "LAGET_2026_09_16": "Redigerarna har tagit fart. Taköverdraget och Adventskalendern har NOLL drafts kvar — hela förstabatchen respektive batch #2 är levererad och uppladdad (står i SE-ACTIVE to be translated). IBC har 1 draft kvar. Samtidigt har Termoskyddet vuxit till 26 drafts (17 igår + gårdagens extra batch på 9) utan att någon börjat, och Fiskespöhållaren till 41. De två är flaskhalsarna. BÄVER Övervakningskameran är inte längre tom: 7 drafts från gårdagens batch ligger där. BÄVER Isolerade Utekattkojan är fortfarande helt tom (0 rader av alla typer).",
+  "omdopta_sedan_forra_svepet": [
+   {
+    "namn": "Dont work here Surveillance Camera creative hub",
+    "id": "3cd270ab-908c-81bd-aab8-f19ec3e2d260",
+    "not": "Hette tidigare \"Surveillance Camera creative hub\". Omdöpt av Axel 2026-09-16. Inte arkiverad (is_archived saknas), men namnet är instruktionen: skriv inget nytt där. Nya briefer går i BÄVER Övervakningskameran, precis som produktkartan säger."
+   },
+   {
+    "namn": "ARKIVERAD Smiley face trash can stickers creative hub",
+    "id": "3d0270ab-908c-8149-b39f-dd9e0ef8133f",
+    "not": "Har fått prefixet ARKIVERAD i namnet men bär INTE is_archived: true. Namnet och fältet säger olika saker — fältet är det som gäller enligt kommandot, men produkten har ingen aktiv kampanj så det spelar ingen roll i praktiken."
+   }
+  ],
+  "andra_verksamheters_hubbar_bortdragna": [
+   "Matstrumpor creative hub",
+   "Creative hub prank apron",
+   "Creative hub golf grill kit",
+   "Creative Hub master",
+   "Customer support bäverbutiken",
+   "kundsupport Grillkliniken",
+   "Bäverkoppling.se",
+   "MALL Creative hub MALL (mallen)",
+   "Carashell Taköverdrag creative hub (OPS-butik, MagiBorsten DK)",
+   "Racing Car Advent Calendar creative hub (gammal hub, batch #1)",
+   "IBC Tank Cover creative hub (gammal hub, batch #1–#4)",
+   "arkiverad Övervakningskamera",
+   "Damasker vandring (OPS, DryTrek)"
+  ],
+  "summa_drafts": 63,
+  "rorelse_sedan_igar": "82 → 63 drafts. Redigerarna tog 39 rader (Termoskyddet −20, Bälteslipmaskinen −3, MC-Kapellet −3, IBC −1) och fick 20 nya (Taköverdraget +7 ur batch #2, Båtmotorskyddet +1, och i dag IBC +9 och Adventskalendern +9 ur ronden). Fiskespöhållarens 41 står still för andra dygnet.",
+  "nya_hubbar_sedan_igar": "Inga. Samma tio levande hubbar som 2026-09-17, samma id:n.",
+  "nyss_arkiverade_sedan_igar": "\"BÄVER Termoskyddet för Husbil\" 513270ab-908c-825e-b71e-81cdf455dd98 står nu is_archived: true. Det är Bäverbutikens gamla källhub för termoskyddet — den LEVANDE hubben är c5a270ab-908c-83e3-b721-81fde8643080 (collection 7d0270ab-…), som står i produktkartan och som svepet läste. Två hubbar med exakt samma namn: läs id, aldrig namn.",
+  "summering_2026_09_18": "56 draftrader totalt över tio levande hubbar (mot 63 i går). Två hubbar står helt still: Fish rod holder (41, tredje dygnet) och BÄVER Övervakningskameran (7, andra dygnet) — tillsammans 48 av de 56. De andra åtta hubbarna rör sig varje dygn."
+ },
+ "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15.",
+ "arbetsfordelning": {
+  "redigerarna": "Plockar Draft → In progress → To be Reviewed. 88 drafts ligger och väntar totalt (34 bild Fiskespöhållaren + 17 Termoskyddet + 15 Taköverdraget + 11 IBC + 11 Adventskalendern).",
+  "rutinerna": "/notionkorning 13:20 tar 'To be Reviewed' upp i Meta. /bildannonser 20:00 tar Draft-bildrader till kie.ai."
+ }
 }
