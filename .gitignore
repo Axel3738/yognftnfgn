@@ -25,6 +25,10 @@ market-expansion/ops/**/*.wav
 factory/output/*/leverans-*/
 factory/output/*/bild-*/
 factory/output/*/*/bild-*/
+factory/output/*/spegla-*/
+factory/output/*/*/spegla-*/
+factory/output/*/spegla-*-torr.*
+factory/output/*/*/spegla-*-torr.*
 factory/output/*/*.logg
 # Lagerrensnings-sidorna: kie-bildernas lokala kopior dör med containern — bilderna ligger på Shopifys CDN
 listicle/output/*/*/bilder/

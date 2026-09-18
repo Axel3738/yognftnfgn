@@ -130,6 +130,7 @@ Gör i ordning. Varje steg skriver ut vad det fann; stoppa aldrig tyst.
    | Leveransrundan | 13:40 + 5 min × plats | `/ops-leverans <nyckel>` |
    | Översättning NO | 15:40 + 5 min × plats | `/ops-oversatt <nyckel>` |
    | Översättning US (bara butiker med US i `annonsmarknader`, register.json) | 16:40 + 5 min × plats | `/ops-oversatt <nyckel> --marknad US` |
+   | Speglingen (bara poster med `spegling` i register.json — `register.mjs spegling <nyckel> <bäver-hub-id>`; Axels beslut 2026-09-18, CaraShell) | 16:20 + 5 min × plats | `/ops-spegla <nyckel>` |
 
    **Tiderna räknas av skriptet, aldrig i huvudet:**
    ```
@@ -311,7 +312,12 @@ väg som användes (Agent fanns / API).
 En mapp per annons: `products/<butik>/batch-NN/<video|image>-ads-briefs/<namn>/brief.md`
 på engelska enligt `.claude/commands/forsta-batch.md` (VARIABELTAGGAR-rad
 överst, hypotes, kept/changed, script-tabell, shot list, COPY CARD, hard
-rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI). Ingen zip, ingen
+rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI).
+**Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig
+butikens namn** — inte i copyn, inte i bild, inte i voiceover, inte som
+domän. Annonser speglas mellan butiker (`/ops-spegla`), och en creative
+som säger "Bäverbutiken" eller "CaraShell" går inte att återanvända.
+Produkten, priset och länken bär butiken; namnet gör det inte. Ingen zip, ingen
 Drive-länk — briefen läsbar INNE i Notion-raden räcker (NOTION-FORMAT.md).
 Ladda upp:
 ```

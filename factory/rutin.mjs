@@ -120,6 +120,12 @@ export const BUTIKSRUTINER = Object.freeze({
   // timme senare så NO:s körning hunnit klart. Byggs bara för butiker vars
   // registerpost bär US i `annonsmarknader` (kraver).
   'ops-oversatt-us': { bas: '16:40', steg: 5, vad: 'Översättning US OPS (SE-ACTIVE to be translated → live i US-kampanjen i Magiborsten UK)', kommando: (butik) => `/ops-oversatt ${butik} --marknad US`, kraver: 'US' },
+  // Speglingen (Axels beslut 2026-09-18): produkten briefas i Bäverbutikens
+  // hub; varje NO-klar rad där laddas upp live här (SE + NO) och kopieras till
+  // butikens hub så US-rutinen 16:40 tar den till engelska. Efter Bäverbutikens
+  // /oversatt NO (15:00), före US-rutinen. Byggs bara för poster med
+  // `spegling` i register.json (kraver).
+  'ops-spegla': { bas: '16:20', steg: 5, vad: 'Speglingen (Bäverbutikens hub → live SE + NO här → butikens hub för US)', kraver: 'spegling' },
 });
 
 /** Kommandot en butiksrutin körs med. */
@@ -134,6 +140,24 @@ export function annonsmarknaderFor(butik, fil = REGISTERFIL) {
     const lista = Array.isArray(post?.annonsmarknader) ? post.annonsmarknader.map((k) => String(k).toUpperCase()) : [];
     return lista.length ? lista : ['NO'];
   } catch { return ['NO']; }
+}
+
+/** Har butiken en spegling i register.json (drift)? Läser aldrig nätet. */
+export function harSpegling(butik, fil = REGISTERFIL) {
+  try {
+    const drift = JSON.parse(readFileSync(fil, 'utf8'));
+    const hel = String(butik ?? '').trim().toLowerCase();
+    const post = drift.poster?.[hel] ?? Object.entries(drift.poster ?? {}).find(([k]) => k.toLowerCase().startsWith(`${hel}/`))?.[1] ?? null;
+    return /^[0-9a-f]{32}$/i.test(String(post?.spegling?.kalla_hub ?? '').replace(/-/g, ''));
+  } catch { return false; }
+}
+
+/** Ren regel: byggs rutinen för butiken? `kraver` är en marknadskod (US)
+ *  eller "spegling" (posten bär en källhubb). Utan kraver: alltid. */
+export function rutinGaller(rutin, { marknader = [], spegling = false } = {}) {
+  if (!rutin?.kraver) return true;
+  if (rutin.kraver === 'spegling') return Boolean(spegling);
+  return marknader.map((k) => String(k).toUpperCase()).includes(rutin.kraver);
 }
 
 /** OPS-butikerna i bokstavsordning (testbutiken är en fixtur). */
@@ -231,11 +255,12 @@ export function minutkrockar(nyckel, andra = [], platser = lasPlatser(), opt = {
 }
 
 /** Alla tre tiderna för en butik, med cron för båda halvåren. */
-export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false, annonsmarknader = null } = {}) {
+export function tiderFor(butik, { platser = lasPlatser(), datum = new Date(), flerprodukt = false, annonsmarknader = null, spegling = null } = {}) {
   const p = platsFor(butik, platser, { flerprodukt });
   const marknader = (annonsmarknader ?? annonsmarknaderFor(butik)).map((k) => String(k).toUpperCase());
+  const harSpegel = spegling ?? harSpegling(butik);
   return Object.keys(BUTIKSRUTINER)
-    .filter((namn) => !BUTIKSRUTINER[namn].kraver || marknader.includes(BUTIKSRUTINER[namn].kraver))
+    .filter((namn) => rutinGaller(BUTIKSRUTINER[namn], { marknader, spegling: harSpegel }))
     .map((namn) => {
       const tid = tidFor(namn, butik, platser, { flerprodukt });
       const c = tillCron(tid, { datum });
@@ -375,7 +400,7 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
   const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
-  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO' };
+  const BUTIKSRUTINER = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
   const butiksrutin = butik ? BUTIKSRUTINER[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;

@@ -333,7 +333,20 @@
       "annonsmarknader": [
         "NO",
         "US"
-      ]
+      ],
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-18: CaraShell briefas inte längre själv — allt skapas i Bäverbutikens teamspace och speglas hit (/ops-spegla)",
+        "satt": "2026-09-18"
+      },
+      "spegling": {
+        "kalla_hub": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+        "kalla_namn": "BÄVER For CARL Taköverdraget för Husvagn",
+        "status_se": "CaraShell SE ready to be active",
+        "status_en": "CaraShell EN ready to be active",
+        "satt": "2026-09-18"
+      }
     },
     "catcabin/utekattkojan": {
       "lage": "skala",
@@ -386,7 +399,20 @@
       "annonsmarknader": [
         "NO",
         "US"
-      ]
+      ],
+      "briefantal_override": {
+        "antal": 0,
+        "engang": false,
+        "motivering": "Axels beslut 2026-09-18: CaraShell briefas inte längre själv — allt skapas i Bäverbutikens teamspace och speglas hit (/ops-spegla)",
+        "satt": "2026-09-18"
+      },
+      "spegling": {
+        "kalla_hub": "c5a270ab-908c-83e3-b721-81fde8643080",
+        "kalla_namn": "BÄVER Termoskyddet för Husbil",
+        "status_se": "CaraShell SE ready to be active",
+        "status_en": "CaraShell EN ready to be active",
+        "satt": "2026-09-18"
+      }
     }
   },
   "rutinplatser": {

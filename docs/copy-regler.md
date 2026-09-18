@@ -66,6 +66,12 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
 
 ## Processregler (för den som bygger briefer/statics)
 
+- **Butikens namn står aldrig i annonsen** (Axels beslut 2026-09-18). Inte
+  "Bäverbutiken", inte "CaraShell", inte domänen — varken i copy, i bild, i
+  voiceover eller i captions. Annonser speglas mellan butiker
+  (`/ops-spegla`), och en rad som säger vilken butik den är kan inte
+  återanvändas. Produkten, priset och länken pekar ut butiken; namnet
+  tillför inget för kunden. Skriv det som hard rule i varje brief.
 - **En Mississippi-testet:** budskapet ska landa direkt, inte efter en
   genomläsning. Kunden scrollar förbi — det är tempot som gäller.
 - **Vem pratar vi med?** Nulägesattityd → önskad attityd. A och B först,

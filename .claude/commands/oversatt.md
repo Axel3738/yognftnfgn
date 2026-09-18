@@ -219,6 +219,16 @@ skrivs tillbaka i `jobb.json`. Tillbakaläsning: status/effective_status.
    Norge, alltså ska raden stå som Approved — inte `Translation in review`. Beslutet
    ersätter "ingen kod flyttar till Approved" för de här raderna; alla 64 rader som
    stod i `Translation in review` flyttades samma dag).
+   ⚠️ **Undantag — speglade hubbar (Axels beslut 2026-09-18):** hubbar som
+   speglas till en OPS-butik (`node tools/ops-spegla.mjs --kallor` listar dem:
+   Taköverdraget och Termoskyddet → CaraShell) får i stället status
+   **`<Brand> SE ready to be active`** — exakt strängen ur `--kallor`, aldrig
+   ur minnet. Det är steget `/ops-spegla` läser: den laddar upp den svenska
+   filen live i butiken, den norska du just gjorde i butikens NO-kampanj, och
+   tar raden vidare till engelska. `Translated url` skrivs precis som annars —
+   speglingen hämtar NO-filen ur den länken. Saknar hubben alternativet står
+   det under ACTION NEEDED (Axel lägger till det), och raden får då `Approved`
+   som förut med en kommentar om att speglingen väntar.
    **Den färdiga norska filen läggs dessutom in ÖVERST i radens sidinnehåll** (Axels
    beslut 2026-09-05: "lägg dom i itemet så jag bara kan skrolla ner och se den
    översatta bilden eller videon direkt") — rubrik `## 🇳🇴 Norsk version — <målnamn>
@@ -259,6 +269,6 @@ DSA-fält och kanaler ur blocket.
 - [ ] Video: kvotkalkyl, proofread före render, captions bara över inbränd text, QA + slutkort
 - [ ] Röstkollen körd på varje renderad video, resultatet redovisat; inga ❌ uppladdade
 - [ ] Upp i rätt kampanj/adset/konto med rätt namn, OPT_OUT + inline_comment, status enligt marknad, tillbakaläst
-- [ ] Notion: kommentar + `Translated url` + **`Approved`** + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
+- [ ] Notion: kommentar + `Translated url` + **`Approved`** (speglad hubb: **`<Brand> SE ready to be active`** ur `ops-spegla.mjs --kallor`) + **norska filen inlagd överst på sidan**; hoppade rader kommenterade
 - [ ] Discord-brief i Axels läsformat, med ping; problem i problemkanalen
 - [ ] STATUS/körlogg uppdaterade, committat utan medier, pushat
