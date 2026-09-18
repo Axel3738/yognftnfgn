@@ -774,7 +774,7 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat).",
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat). ⚠️ v9 (spårningsnumret utan länk, 2026-09-18 sen kväll) väntar på inklistring i Leveransbekräftelse, Leveransuppdatering och Ute för leverans — COWORK-PROMPT.md.",
     "inklistrade_aldre_comment": "Tom sedan 2026-09-18 kväll.",
     "inklistrade_aldre": {},
     "inklistrade": {

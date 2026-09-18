@@ -238,7 +238,10 @@ test('orderbekräftelsen använder Shopifys ordervariabler', () => {
 test('fraktmallarna använder fulfillment, övergiven kassa använder url, återbetalning amount', () => {
   const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
   assert.ok(frakt.html.includes('{% for line in fulfillment.fulfillment_line_items %}'));
-  assert.ok(frakt.html.includes('fulfillment.tracking_url'));
+  // Spårningsnumret är ren text — aldrig en länk till fraktbolaget (2026-09-18 kväll).
+  assert.ok(frakt.html.includes('{{ fulfillment.tracking_number }}'));
+  assert.ok(!frakt.html.includes('tracking_url'), 'spårningsnumret får inte länka till fraktbolaget');
+  assert.ok(!frakt.html.includes('tracking_company'));
   const kassa = byggMall('overgiven_kassa', { ...indata, lage: 'liquid' });
   assert.ok(kassa.html.includes('href="{{ url }}"'));
   const ater = byggMall('aterbetalning', { ...indata, lage: 'liquid' });

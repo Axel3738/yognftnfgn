@@ -829,8 +829,11 @@ const SPARNING_EXEMPEL = 'https://baverbutiken.se/orders/exempel';
 function sparningsInfo(s, lage) {
   const inre =
     lage === 'liquid'
-      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong>{% if fulfillment.tracking_url %}<a href="{{ fulfillment.tracking_url }}" style="color: ${s.svart};">{{ fulfillment.tracking_number }}</a>{% else %}{{ fulfillment.tracking_number }}{% endif %}</strong>{% endif %}`
-      : `Spårningsnummer: <strong><a href="https://t.17track.net/#nums=${EXEMPEL.sparningsnummer}" style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</a></strong>`;
+      // Ren text, ingen länk (Axels beslut 2026-09-18 kväll): länken gick till
+      // fraktbolagets sida (UPS i testmejlet, 17track på riktiga ordrar) — kunden
+      // ska bara till vår orderstatussida, och dit går knappen ovanför.
+      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong style="color: ${s.svart};">{{ fulfillment.tracking_number }}</strong>{% endif %}`
+      : `Spårningsnummer: <strong style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</strong>`;
   return `
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
