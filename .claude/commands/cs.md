@@ -85,6 +85,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
 - Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- **Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig butikens namn** — inte "Bäverbutiken" i copy, bild, voiceover eller som domän. Färdiga annonser speglas till OPS-butikerna (`/ops-spegla`: Taköverdraget och Termoskyddet → CaraShell), och en creative som säger vilken butik den är stoppas där. Produkten, priset och länken bär butiken.
 
 ### 4. Modellpolicy (obligatorisk)
 - **All slutgiltig ad copy, alla svenska manusrader och voiceovers skrivs av en subagent via Agent-verktyget med `model: "sonnet"`** (eller `"haiku"` för bulkvarianter av samma line). Skicka subagenten: produktens DNA, hypotesen, hooken och formatkraven — den skriver bara text, inga strategibeslut.

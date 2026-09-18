@@ -56,7 +56,7 @@ export const MAXLANGD = 2000;
  *  har redan kanalerna (Axels bild 2026-09-10): nattens budgetrapport går
  *  till #ads, briefdagens rapport till #ads-to-do där redigeraren tittar. */
 export const STANDARDKANAL = 'ads';
-export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning', bild: 'ads-to-do' });
+export const KANAL_PER_LAGE = Object.freeze({ budget: 'ads', brief: 'ads-to-do', leverans: 'annons-uppladdning', oversatt: 'annons-uppladdning', bild: 'ads-to-do', spegla: 'annons-uppladdning' });
 export const kanalFor = (jobb) => String(jobb?.kanal || KANAL_PER_LAGE[jobb?.lage] || STANDARDKANAL).replace(/^#/, '');
 /** Tak per lista i mallen — fler rader gör den oläslig, inte tydligare. */
 export const TAK = { siffror: 4, gjort: 8, briefer: 10 };
@@ -67,6 +67,8 @@ const LAGEN = {
   leverans: { emoji: '🚀', rubrik: 'delivery run' },
   oversatt: { emoji: '🇳🇴', rubrik: 'Norway translation' },
   bild: { emoji: '🖼️', rubrik: 'image ads' },
+  // Speglingen (Axels beslut 2026-09-18): Bäverbutikens hub → live här.
+  spegla: { emoji: '🪞', rubrik: 'mirror from Bäverbutiken' },
 };
 // Översättningsrundan rapporterar per marknad: jobb.marknad (NO, US …) byter
 // flagga och rubrik ur factory/opsmarknader.mjs; utan fältet gäller Norge.
@@ -83,7 +85,7 @@ export function saknadeFalt(jobb) {
   const saknade = [];
   if (!String(jobb.brand ?? '').trim()) saknade.push('brand');
   if (!String(jobb.datum ?? '').trim()) saknade.push('datum');
-  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt | bild)');
+  if (!LAGEN[jobb.lage]) saknade.push('lage (budget | brief | leverans | oversatt | bild | spegla)');
   return saknade;
 }
 

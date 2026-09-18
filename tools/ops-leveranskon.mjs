@@ -374,7 +374,7 @@ async function hamtaMarknadspris(lank, valuta, land) {
   }
 }
 
-async function hamtaPris(lank, valuta, land = null, basvaluta = 'SEK') {
+export async function hamtaPris(lank, valuta, land = null, basvaluta = 'SEK') {
   // Har marknaden en EGEN valuta måste priset läsas på marknadens sida — se
   // prisUrJsonLd ovan. Går det inte: rapportera basvalutans tal MED basvalutans
   // namn och skälet, aldrig marknadens valuta på ett omräknat tal.

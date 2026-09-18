@@ -56,7 +56,7 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 1. Slutrapport som EN markdown-fil: executive summary → datakvalitet → FAS 1–10 → lärdomar.
 2. Varje annons i testplanen: egen självständig brief i egen mapp — en klippare ska kunna jobba utan att läsa något annat.
 3. **Engelska briefer**; svenska manusrader/voiceovers/text-i-bild i tabell `Swedish (use this) | English meaning`.
-4. Två zip: `video-ads-briefs.zip` + `image-ads-briefs.zip`, vardera med README (globala regler: rätt pris, produkt i bild före sekund 4, svenska captions ord-för-ord, exportformat 9:16 + 4:5 resp. 1:1 + 1080×1350, stavfällor) och i bild-zippen `reference-assets` med befintliga annonsbilder (vinnare tydligt döpta, ej-återanvändbara som `DO_NOT_REUSE_...`).
+4. Två zip: `video-ads-briefs.zip` + `image-ads-briefs.zip`, vardera med README (globala regler: rätt pris, **aldrig butikens namn i annonsen** — Axels beslut 2026-09-18, annonserna speglas mellan butiker med `/ops-spegla` — produkt i bild före sekund 4, svenska captions ord-för-ord, exportformat 9:16 + 4:5 resp. 1:1 + 1080×1350, stavfällor) och i bild-zippen `reference-assets` med befintliga annonsbilder (vinnare tydligt döpta, ej-återanvändbara som `DO_NOT_REUSE_...`).
 5. Skicka rapport + briefer + zip i samma leverans utan att invänta godkännande. Max EN fråga sist, bara om den kräver ägarens beslut.
 6. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
 

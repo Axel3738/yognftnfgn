@@ -433,6 +433,11 @@ export function byggRegister({ upptackta = [], drift = { poster: {} } } = {}) {
       // Styr vilka översättningsrutiner setup bygger och när en rad i
       // SE-ACTIVE to be translated får flyttas till Approved (alla klara).
       annonsmarknader: annonsmarknaderUr(d?.annonsmarknader),
+      // Speglingen (Axels beslut 2026-09-18): produkten briefas i
+      // Bäverbutikens hub (kalla_hub) och varje NO-klar rad där speglas hit
+      // av /ops-spegla. Utan fältet finns ingen spegling och setup bygger
+      // ingen sådan rutin. Skräp räknas som ingen spegling.
+      spegling: giltigSpegling(d?.spegling) ? d.spegling : null,
       kordag_offset: offset,
       senaste_korning: d?.senaste_korning ?? '',
       // Briefdagarna: posten får överstyra, annars toppnivån i register.json,
@@ -876,6 +881,60 @@ export function sattBriefantal(nyckel, antal, { motivering = '', tillsvidare = f
  * URL sparas den också. Namnet byts bara om ett nytt anges — övriga fält
  * (foralder_page_id, collection_id …) lämnas orörda.
  */
+/**
+ * De två stegen speglingen lägger till i KÄLLHUBBEN (Bäverbutikens), namngivna
+ * efter butikens brand — Axels ord 2026-09-18: "CaraShell ready to be active".
+ *   se: /oversatt NO sätter den när Norge är uppe ⇒ speglingen tar raden
+ *   en: speglingen sätter den när SE (+NO) är live i butiken ⇒ US-rutinen tar den
+ * Ren funktion. Alternativen måste finnas i hubben — Notions API kan inte
+ * skapa status-alternativ, det är Axels klick.
+ */
+export function speglingsstatusar(brand) {
+  const b = String(brand ?? '').trim();
+  if (!b) throw new Error('speglingsstatusar: brand saknas.');
+  return { se: `${b} SE ready to be active`, en: `${b} EN ready to be active` };
+}
+
+/** Bär driftraden en riktig spegling? Ett 32-hex hub-id krävs. */
+export function giltigSpegling(s) {
+  return Boolean(s && typeof s === 'object' && /^[0-9a-f]{32}$/i.test(String(s.kalla_hub ?? '').replace(/-/g, '')));
+}
+
+/** Speglingen för en post, eller null. */
+export function speglingFor(post) {
+  return giltigSpegling(post?.spegling) ? post.spegling : null;
+}
+
+/** Skriver in speglingen: källhubben (Bäverbutikens) + de två statusnamnen.
+ *  `av` tar bort den. Statusnamnen skrivs ut i klartext så /oversatt och
+ *  /ops-spegla läser samma sträng — aldrig två stavningar. */
+export function sattSpegling(nyckel, idEllerUrl, { namn = '', satt = svenskDatum() } = {}) {
+  const post = hittaPost(nyckel);
+  const drift = lasDrift();
+  drift.poster = drift.poster ?? {};
+  const rad = drift.poster[post.nyckel] ?? nyDriftrad(post);
+  if (normalisera(idEllerUrl) === 'av') {
+    delete rad.spegling;
+  } else {
+    const kalla_hub = normaliseraNotionId(idEllerUrl);
+    if (post.notion?.database_id && String(post.notion.database_id).replace(/-/g, '') === kalla_hub) {
+      throw new Error(`${post.nyckel}: ${kalla_hub} är butikens EGEN hub — källhubben ska vara Bäverbutikens.`);
+    }
+    const statusar = speglingsstatusar(post.brand);
+    rad.spegling = {
+      kalla_hub,
+      kalla_namn: finns(namn) ? namn.trim() : (rad.spegling?.kalla_namn ?? ''),
+      status_se: statusar.se,
+      status_en: statusar.en,
+      satt,
+    };
+  }
+  rad.lage = rad.lage ?? post.lage;
+  drift.poster[post.nyckel] = rad;
+  skrivDrift(drift);
+  return { ...post, spegling: rad.spegling ?? null };
+}
+
 export function sattNotion(nyckel, idEllerUrl, namn = '') {
   const database_id = normaliseraNotionId(idEllerUrl);
   const post = hittaPost(nyckel);
@@ -971,6 +1030,8 @@ function skrivPost(post, idag) {
   console.log(`  Briefdag ${idag}: ${brief.briefdag ? '✅ JA' : '⏭️  NEJ'} — ${brief.skal}. Nästa briefdag: ${brief.nastaBriefdag}`);
   const hub = post.notion ?? {};
   console.log(`  Notion-hub:   ${finns(hub.database_id) ? `${hub.name || '(namnlös)'} (${hub.database_id})` : 'saknas — koppla med `node factory/register.mjs notion <butik> <url>`'}`);
+  const sp = speglingFor(post);
+  if (sp) console.log(`  Spegling:     från ${sp.kalla_namn || '(namnlös)'} (${sp.kalla_hub}) — steg "${sp.status_se}" → live här → "${sp.status_en}" → Approved när US finns [satt ${sp.satt}]`);
   if (post.ny_i_registret) console.log('  ⚠️ Ny i registret — kör `node factory/register.mjs skriv-in` för att låsa kördagen.');
   if (post.lage !== 'test') {
     const { ekonomi } = laddaButik(post.nyckel, { produkter: [post] });
@@ -1028,6 +1089,15 @@ function huvud() {
     if (!arg[2]) throw new Error('Ange database_id eller Notion-url: notion <butik> <id|url> [namn…]');
     const post = sattNotion(arg[1], arg[2], arg.slice(3).join(' '));
     console.log(`Notion-hub på ${post.namn}: ${post.notion.name || '(namnlös)'} (${post.notion.database_id})`);
+    return;
+  }
+  if (arg[0] === 'spegling') {
+    if (!arg[2]) throw new Error('Ange källhubben: spegling <nyckel> <bäverbutikens-hub-id|url|av> [namn…]');
+    const post = sattSpegling(arg[1], arg[2], { namn: arg.slice(3).join(' '), satt: idag });
+    if (!post.spegling) { console.log(`Spegling på ${post.namn}: AV — produkten briefas i sin egen hub igen.`); return; }
+    console.log(`Spegling på ${post.namn}: från ${post.spegling.kalla_namn || '(namnlös)'} (${post.spegling.kalla_hub})`);
+    console.log(`  Steg i källhubben (Axels klick: lägg till som Status-alternativ): "${post.spegling.status_se}" och "${post.spegling.status_en}"`);
+    console.log(`  Rutin: node factory/rutin.mjs --tider ${post.nyckel} visar /ops-spegla-tiden; /notionscalercs setup ${post.nyckel} bygger den.`);
     return;
   }
   if (arg[0] === 'annonsmarknader') {
