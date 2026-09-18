@@ -522,3 +522,15 @@ OCH de fyra adseten** (`CARASHELL_US_CS/G/PD/SP`) — annonserna är redan ACTIV
 De sju sista videorna laddades upp med `ladda-upp-snabb.mjs` (≈ 8 Graph-anrop per annons)
 på 5 minuter, efter att `ops-till-meta` (≈ 20 anrop per annons) tagit 8–37 minuter per video
 i Metas anropstak.
+
+## 2026-09-18 — `/ops-leverans carashell/termoskyddet` — tom kö, SE-kampanjen pausad av en människa
+
+- Kön: 0 rader i `To be Reviewed` / `Creative strat review`. Hubben: 5 Approved (gårdagens
+  batch #2, klara i NO + US) och 2 Draft-videor (inte levererade, ingen redigerare). Inget laddades upp.
+- **SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` är PAUSED sedan 2026-09-18
+  11:29 CEST** (`updated_time` ur Meta). Nattvakten 00:57 rörde inte statusen — den sänkte CBO
+  1 000 → 700 kr och pausade `G_2_1` (budgetlogg). Pausen kom alltså senare, för hand.
+  Livstid: 2 028 kr, 4 köp, ROAS 1,10 mot break-even 1,61. PAUSED med spend = beslut;
+  leveransrundan laddar inte upp dit och aktiverar inget.
+- Konsekvens: nya rader i `To be Reviewed` stannar där tills SE-kampanjen är ACTIVE igen
+  (kön säger "ingen ACTIVE SE-kampanj"). NO-kampanjen berörs inte av den här rundan.
