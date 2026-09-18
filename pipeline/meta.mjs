@@ -10,6 +10,10 @@ const API = `https://graph.facebook.com/${VERSION}`;
 export const ACCOUNTS = {
   snarklos:    { id: 'act_1346450049878358', label: 'SnarkLös' },
   magiborsten: { id: 'act_1867947880635861', label: 'MagiBorsten' },
+  // Bäverbutikens finska marknad (majavakauppa.fi). Verifierat 2026-09-18 via
+  // /me/adaccounts: namnet "Magiborsten FI", valuta SEK (inte EUR — budgetar anges i öre).
+  // Sidan är Majavakauppa 1317870104733246; någon egen FI-pixel finns inte på kontot.
+  magiborstenfi: { id: 'act_1619718346388201', label: 'Magiborsten FI' },
 };
 
 // Accepterar prefix: "magi" → magiborsten, "snark" → snarklos.

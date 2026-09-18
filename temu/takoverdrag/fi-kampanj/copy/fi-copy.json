@@ -1,0 +1,277 @@
+{
+ "versioner": {
+  "Takoverdrag_CO_1_H1": {
+   "annonser": [
+    "Takoverdrag_CO_1_H1"
+   ],
+   "rubrik": "Oikea pinta, ei koko vaunua",
+   "text": "Kokovaunun suoja peittää kaiken, mitä sinulla jo on — tämä peittää vain katon.\nHihna ja kiristin reunassa pitävät sen paikallaan, vesi valuu pois kattoluukkujen ympäriltä.\n126,90 € (norm. 165,90 €), ilmainen toimitus ja 30 päivän palautusoikeus.",
+   "lankbeskrivning": "126,90 €, ilmainen toimitus",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €, jämförpris 1 469 kr → 165,90 €",
+    "'vattnet står aldrig' → 'vesi valuu pois ... ympäriltä' (förbjudet 'aldrig' om produktutfall)",
+    "'30 dagars öppet köp' → '30 päivän palautusoikeus', frakt bekräftad gratis till Finland"
+   ]
+  },
+  "Takoverdrag_CO_2_1": {
+   "annonser": [
+    "Takoverdrag_CO_2_1"
+   ],
+   "rubrik": "Yksi henkilö, ei hankausta maaliin",
+   "text": "Kokovaunun suoja on raskas asentaa yksin.\nSe hankaa maalipintaa koko talven, kattopeite ei hankaa.\nYksi henkilö asentaa sen, ja se suojaa kalleimman pinnan: katon.",
+   "lankbeskrivning": "Suojaa katon, ei maalia",
+   "andringar": []
+  },
+  "Takoverdrag_RI_1_H1": {
+   "annonser": [
+    "Takoverdrag_RI_1_H1"
+   ],
+   "rubrik": "Kun tiiviste pehmenee, pesu ei riitä",
+   "text": "Kattoluukun tiivistemassa kohtaa kosteutta päivä toisensa jälkeen.\nLopulta se pehmenee, ja vesi pääsee suoraan katon läpi.\nSilloin pelkkä pesu ei riitä — vain kattopeite auttaa, 126,90 €.",
+   "lankbeskrivning": "30 päivän palautusoikeus",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €",
+    "rubrik konkretiserad (tiivistemassan pehmenar) — originalet bröt ingen regel, ren kvalitetsöversättning"
+   ]
+  },
+  "Takoverdrag_SP_4_H1": {
+   "annonser": [
+    "Takoverdrag_SP_4_H1"
+   ],
+   "rubrik": "Yksi riittää. 210D-kangas.",
+   "text": "Kokovaunun suoja on raskas asentaa yksin — tämän asentaa yksi henkilö.\n210D-kangas kestää koko talvikauden ulkona, ja vesi valuu pois kattoluukkujen ympäriltä.\nHihnat kaikilla neljällä sivulla. 126,90 € (norm. 165,90 €).",
+   "lankbeskrivning": "126,90 € (norm. 165,90 €)",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €, jämförpris 1 469 kr → 165,90 €",
+    "'5,0 av 5 på 10 recensioner' struken (ingen recension i FI) → ersatt med 'hihnat kaikilla neljällä sivulla' ur fakta.mjs",
+    "'vattnet står aldrig' → 'vesi valuu pois ... ympäriltä'"
+   ]
+  },
+  "Takoverdrag_SP_5_1": {
+   "annonser": [
+    "Takoverdrag_SP_5_1"
+   ],
+   "rubrik": "Kaksi ylimääräistä hihnaa mukana",
+   "text": "Kaksi vahvistettua 10,5 m hihnaa sisältyy ilman lisäkustannusta.\nVesi ei jää seisomaan kattoluukkujen ympärille.\nPysyy paikallaan tuulessa ja kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "Hihnat sisältyvät jo hintaan",
+   "andringar": [
+    "rubrik 'Kaksi ylimääräistä hihnaa mukana' ersätter '5,0 av 5 på 10 recensioner' (ingen recension i FI) — belagt ur fakta.mjs (två 10,5 m-hihnaa ingår)",
+    "'på baverbutiken.se' struket helt",
+    "'vattnet blir aldrig stående' → 'vesi ei jää seisomaan'"
+   ]
+  },
+  "Takoverdrag_UG_1_H1": {
+   "annonser": [
+    "Takoverdrag_UG_1_H1"
+   ],
+   "rubrik": "Vain katto. Yksi henkilö riittää.",
+   "text": "Luuletko, että koko vaunu pitää peittää?\nYksi henkilö asentaa sen itse — kokovaunun suoja on raskas asentaa yksin.\nKiinnitetään hihnalla ja koukulla reunassa. 126,90 €, ilmainen toimitus.",
+   "lankbeskrivning": "126,90 €, ilmainen toimitus",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €",
+    "huvudsessionen 2026-09-18: 'koko katon' → 'koko vaunu' (SE-vinkeln är hela vagnen mot bara taket)"
+   ]
+  },
+  "Takoverdrag_GT_4_H1": {
+   "annonser": [
+    "Takoverdrag_GT_4_H1"
+   ],
+   "rubrik": "Hopeapinnoite ottaa auringon vastaan",
+   "text": "Hopeapinnoite ottaa auringon vastaan katon sijaan.\n6,5 × 3 metriä, yksi henkilö asentaa sen itse.\nVesi valuu pois kattoluukkujen ympäriltä.",
+   "lankbeskrivning": "Hopeapinnoitettu 210D-kangas",
+   "andringar": [
+    "rubrik omskriven: '5,0/5 hos husvagnsägare' (recension, finns ej i FI) → 'Hopeapinnoite ottaa auringon vastaan' (belagt ur copy-fi.json)",
+    "'5,0 av 5 i betyg på 10 recensioner – riktiga husvagnsägare' struken → ersatt med hopeapinnoite-fakta",
+    "'vattnet blir aldrig stående' → 'vesi valuu pois ... ympäriltä'",
+    "länkbeskrivning '5,0/5 på 10 recensioner' → 'Hopeapinnoitettu 210D-kangas'"
+   ]
+  },
+  "Takoverdrag_GT_5_H1": {
+   "annonser": [
+    "Takoverdrag_GT_5_H1"
+   ],
+   "rubrik": "210D-kangas kestää talven ulkona",
+   "text": "210D-kangas kestää koko talvikauden ulkona.\nHihna ja koukku reunassa – pysyy paikallaan tuulessa.\n6,5 × 3 metriä, mahtuu mukana tulevaan säilytyspussiin.",
+   "lankbeskrivning": "210D-kangas, hihna ja koukku",
+   "andringar": []
+  },
+  "Takoverdrag_GT_6_1": {
+   "annonser": [
+    "Takoverdrag_GT_6_1"
+   ],
+   "rubrik": "Suojaa katto jouluksi – 126,90 €",
+   "text": "Suojaa katto jouluksi, 126,90 €.\n210D-kangas kestää talven ulkona, toisin kuin ohut pressu, joka halkeaa pakkasessa.\nTaitettuna mukana tulevaan säilytyspussiin.",
+   "lankbeskrivning": "Kangas, joka kestää talven",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €"
+   ]
+  },
+  "Takoverdrag_PD_4_H1": {
+   "annonser": [
+    "Takoverdrag_PD_4_H1"
+   ],
+   "rubrik": "Säästä 39 € kattopeitteestä",
+   "text": "126,90 € hintaan 165,90 € sijaan – säästät 39 €.\nHihna ja koukku reunassa pitävät kiinni tuulessa.\nIlmainen toimitus ja 30 päivän palautusoikeus.",
+   "lankbeskrivning": "Säästä 39 €",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €, jämförpris 1 469 kr → 165,90 €, 'spara 340 kr' → 'säästät 39 €'"
+   ]
+  },
+  "Takoverdrag_PD_5_1": {
+   "annonser": [
+    "Takoverdrag_PD_5_1"
+   ],
+   "rubrik": "Hihna ja koukku pitävät paikallaan",
+   "text": "Peitä vain katto, ei koko vaunua.\nKiinnitetään hihnalla ja koukulla reunassa.\nKattoluukku pysyy kuivana, vesi valuu pois sen ympäriltä.",
+   "lankbeskrivning": "Kattoluukku pysyy kuivana",
+   "andringar": [
+    "'vattnet blir aldrig stående' → 'vesi valuu pois sen ympäriltä'"
+   ]
+  },
+  "Takoverdrag_BOF_1_1": {
+   "annonser": [
+    "Takoverdrag_BOF_1_1"
+   ],
+   "rubrik": "Kattopeite – vain katto, koko talven",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nPeittää koko katon, 6,5 × 3 metriä, ei koko vaunua.\n210D-kangas kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "165,90 € → 126,90 €",
+   "andringar": [
+    "pris: 1 129/1 469 kr → 126,90/165,90 €, 'spara 340 kr' → 'säästät 39 €'"
+   ]
+  },
+  "Takoverdrag_BOF_2_1": {
+   "annonser": [
+    "Takoverdrag_BOF_2_1"
+   ],
+   "rubrik": "126,90 € – ilmainen toimitus",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nIlmainen toimitus, 30 päivän palautusoikeus ja Klarna.\nEi lisämaksuja, ei yllätyksiä kassalla.",
+   "lankbeskrivning": "Hinta, jonka näet, on hinta",
+   "andringar": [
+    "pris: 1 129/1 469 kr → 126,90/165,90 €, 'spara 340 kr' → 'säästät 39 €'",
+    "Klarna kontrollerad och bekräftad i FI-kassan (uppdragets verifierade fakta)"
+   ]
+  },
+  "Takoverdrag_BOF_3_1": {
+   "annonser": [
+    "Takoverdrag_BOF_3_1"
+   ],
+   "rubrik": "210D-kangas, ei ohut pressu",
+   "text": "Tavallinen pressu halkeaa pakkasessa yhden kauden jälkeen.\nTämä on 210D-kangas, joka on tehty kestämään talven ulkona.\n126,90 €, kiinnittyy hihnalla ja koukulla reunassa.",
+   "lankbeskrivning": "Kestää pakkasen koko talven",
+   "andringar": [
+    "pris: 1 129 kr → 126,90 €"
+   ]
+  },
+  "Takoverdrag_CS_4_1": {
+   "annonser": [
+    "Takoverdrag_CS_4_1"
+   ],
+   "rubrik": "126,90 € – toimitus sisältyy",
+   "text": "165,90 € → 126,90 €, säästät 39 €.\nSuojaa katon, 6,5 × 3 metriä, ei koko asuntovaunua.\nToimitus sisältyy hintaan, ei lisämaksuja kassalla.",
+   "lankbeskrivning": "Ei lisämaksuja kassalla",
+   "andringar": [
+    "pris: 1 469/1 129 kr → 165,90/126,90 €, 'spara 340 kr' → 'säästät 39 €'"
+   ]
+  },
+  "Takoverdrag_CS_6_1": {
+   "annonser": [
+    "Takoverdrag_CS_6_1"
+   ],
+   "rubrik": "Ilmainen toimitus – 126,90 €",
+   "text": "Ilmainen toimitus asuntovaunun kattopeitteeseen, 6,5 × 3 metriä.\n126,90 € hintaan 165,90 € sijaan, säästät 39 €.\n30 päivän palautusoikeus, jos se ei sovi.",
+   "lankbeskrivning": "30 päivän palautusoikeus",
+   "andringar": [
+    "pris: 1 129/1 469 kr → 126,90/165,90 €, 'spara 340 kr' → 'säästät 39 €'"
+   ]
+  },
+  "Takoverdrag_LI_1_1": {
+   "annonser": [
+    "Takoverdrag_LI_1_1"
+   ],
+   "rubrik": "Vesi valuu pois kattoluukulta",
+   "text": "Peittää koko katon, 6,5 × 3 metriä.\nVesi valuu pois kattoluukkujen ympäriltä sen sijaan että jäisi seisomaan.\nKiinnitetään hihnalla ja koukulla, pysyy paikallaan tuulessa.",
+   "lankbeskrivning": "6,5 × 3 m, pysyy tuulessa",
+   "andringar": [
+    "rubrik 'Vattnet står aldrig vid takluckan' → 'Vesi valuu pois takaluukulta' (förbjudet 'aldrig' i rubriken, uttryckligen nämnt i uppdraget)",
+    "'vattnet blir aldrig stående' i brödtext → 'vesi valuu pois ... sen sijaan että jäisi seisomaan'"
+   ]
+  },
+  "Takoverdrag_TR_1_1": {
+   "annonser": [
+    "Takoverdrag_TR_1_1"
+   ],
+   "rubrik": "126,90 € – ja vain katto",
+   "text": "126,90 € hintaan 165,90 € sijaan, säästät 39 €.\nPeitä vain katto, ei koko vaunua.\n210D-kangas kestää koko talvikauden ulkona.",
+   "lankbeskrivning": "Vain katto, oikeaan hintaan",
+   "andringar": [
+    "rubrik '5,0 av 5 – och 340 kr billigare' (recension) → '126,90 € – ja vain katto' (belagt pris + positionering)",
+    "'5,0 av 5 på 10 recensioner på baverbutiken.se' struken helt",
+    "pris: 1 129/1 469 kr → 126,90/165,90 €, 'spara 340 kr' → 'säästät 39 €'"
+   ]
+  },
+  "SP_social": {
+   "annonser": [
+    "Takoverdrag_SP_1_H1",
+    "Takoverdrag_SP_2_H1",
+    "Takoverdrag_SP_3_H1",
+    "Takoverdrag_SP_2_1"
+   ],
+   "rubrik": "Hihnat kaikilla neljällä sivulla",
+   "text": "Hihnat kulkevat kaikilla neljällä sivulla ja säätyvät vaunusi mukaan. 🙌\nNiin kattopeite pysyy paikallaan koko talven.\n✅ Suojaa katon sateelta, lumelta ja lialta\n✅ Yksi henkilö asentaa sen itse – ei tarvita apua\n✅ 30 päivän palautusoikeus, jos et ole tyytyväinen\nKatso, miksi tämä kattopeite kannattaa hankkia ennen talvea. 👇",
+   "lankbeskrivning": "Ilmainen toimitus Suomeen",
+   "andringar": [
+    "påhittat kundcitat '\"Ångrar att jag inte köpte det här förra vintern\"' struket (finns inte i FI) → ersatt med hihnat-fakta ur copy-fi.json",
+    "'Så säger fler och fler husvagnsägare' (social proof) struken → generisk uppmaning utan sifferpåstående",
+    "länkbeskrivning 'Betygsatt av riktiga kunder' struken (ingen recension i FI) → 'Ilmainen toimitus Suomeen'",
+    "frakt bekräftad gratis till Finland"
+   ]
+  },
+  "GT_present": {
+   "annonser": [
+    "Takoverdrag_GT_1_H1",
+    "Takoverdrag_GT_2_H1",
+    "Takoverdrag_GT_3_H1",
+    "Takoverdrag_GT_2_1"
+   ],
+   "rubrik": "Lahja, jota hän oikeasti käyttää",
+   "text": "Hän puhuu asuntovaunusta kuin se olisi lemmikki. 😅\nTänä vuonna löysin vihdoin jotain, josta hän oikeasti innostuu.\n🎁 Kattopeite, joka suojaa hänen asuntovaunuaan koko talven\n🎁 Jotain, mitä hän oikeasti käyttää – yhä uudelleen\n🎁 Toimitetaan helposti kotiin, valmis käärittäväksi\nAnna lahja, joka näyttää, että tiedät mistä hän välittää. 👇",
+   "lankbeskrivning": "Lahja, ilmainen toimitus",
+   "andringar": [
+    "frakt bekräftad gratis till Finland (i övrigt ren översättning, inga pris- eller recensionsrader i original)"
+   ]
+  },
+  "PD_skyddat": {
+   "annonser": [
+    "Takoverdrag_PD_1_H1",
+    "Takoverdrag_PD_2_H1",
+    "Takoverdrag_PD_3_H1",
+    "Takoverdrag_PD_2_1"
+   ],
+   "rubrik": "Asuntovaunun katto suojattuna talveksi",
+   "text": "Asuntovaunun katto on pinta, jota tarkistat harvimmin – ja kallein korjata. 🏕️\n✅ Suojaa sateelta, lumelta ja UV-säteilyltä koko talven\n✅ Kiinnitetään hihnalla ja koukulla reunassa\n✅ Yksi henkilö asentaa sen itse\n✅ Mahtuu omaan säilytyspussiin, kun sitä ei käytetä\nSuojaa asuntovaunun katto ennen kuin talvi tekee siitä kalliin. 👇",
+   "lankbeskrivning": "6,5 × 3 m, ilmainen toimitus",
+   "andringar": [
+    "rubrik 'helt skyddat' → 'suojattuna' (ordet 'helt' struket, absolut utfall förbjudet)",
+    "'Spänns fast ... klart på minuter' (hastighetslöfte) struket → 'Kiinnitetään hihnalla ja koukulla reunassa'",
+    "'en person klarar det helt själv' → 'yksi henkilö asentaa sen itse' ('helt' struket)",
+    "'taket ... du aldrig kollar' → 'pinta, jota tarkistat harvimmin' (samma formulering som copy-fi.json, 'aldrig'/'koskaan' undviks)"
+   ]
+  },
+  "CS_rabatt": {
+   "annonser": [
+    "Takoverdrag_CS_1_H1",
+    "Takoverdrag_CS_2_H1",
+    "Takoverdrag_CS_3_H1",
+    "Takoverdrag_CS_2_1"
+   ],
+   "rubrik": "23 % alennus kattopeitteestä",
+   "text": "🔥 23 % ALENNUS ASUNTOVAUNUN KATTOPEITTEESTÄ – TÄNÄÄN 🔥\n165,90 € → 126,90 €\nVarastoa on rajoitetusti, ja hinta on voimassa vain vähän aikaa.\nTalvi tulee joka tapauksessa – varmista, että katto on suojattu ajoissa.\nVarmista omasi ennen kuin varasto loppuu. 👇",
+   "lankbeskrivning": "23 % alennus tänään",
+   "andringar": [
+    "pris: 1469 kr → 1129 kr → 165,90 € → 126,90 €",
+    "'Fri frakt inom Sverige' → 'Ilmainen toimitus Suomeen' (Sverige-referens struken)",
+    "rubrik omskriven från 'Husvagnstaket – helt skyddat i vinter' (delad rubrik med PD-gruppen i SE, 'helt' är ett förbjudet absolut utfall) till prisfokuserad rubrik"
+   ]
+  }
+ }
+}

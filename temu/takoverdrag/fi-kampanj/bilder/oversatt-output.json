@@ -1,0 +1,781 @@
+{
+ "Takoverdrag_BOF_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "165,90 € → 126,90 €"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Peittää katon – ei koko vaunua"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D-kangas kestää talven ulkona"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Tilaa nyt – säästä 39 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 469/1 129 kr -> 165,90/126,90 €, 'spara 340 kr' -> 'säästä 39 €'"
+  ]
+ },
+ "Takoverdrag_BOF_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "126,90 € hintaan 165,90 € sijaan, säästä 39 €."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Ilmainen toimitus Suomeen – sisältyy hintaan 126,90 €."
+     },
+     {
+      "rader": [
+       1,
+       2
+      ],
+      "text": "30 päivän palautusoikeus tuotteelle 126,90 €: jos et pidä siitä, saat rahat takaisin."
+     },
+     {
+      "rader": [
+       3
+      ],
+      "text": "Klarna kassalla – kattopeite 126,90 €."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Kattopeite 6,5 × 3 m – 126,90 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Suojaa katto – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €, 'spara 340 kr' -> 'säästät 39 €'",
+   "'Fri frakt inom Sverige' -> 'Ilmainen toimitus Suomeen' (Sverige struket, sant för FI)",
+   "Klarna bekräftad i FI-kassan"
+  ]
+ },
+ "Takoverdrag_BOF_3_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Riittääkö tavallinen pressu?"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "210D-kangas kestää talven – pressu ei."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90 € (165,90 €)"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Suojaa kallis pinta"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €"
+  ]
+ },
+ "Takoverdrag_CO_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Peitä katto"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Ei koko vaunua."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Raskas asentaa yksin"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Asennettavissa yksin"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Hankaa maalipintaa koko talven"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Suojaa kalleimman pinnan"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Osta kattopeite – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129 kr -> 126,90 €"
+  ]
+ },
+ "Takoverdrag_CS_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "165,90 € — 126,90 €"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Suojaa katon – ei koko vaunua"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90 € – toimitus sisältyy"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Osta kattopeite – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 469/1 129 kr -> 165,90/126,90 €",
+   "'stryk_del' (överstruket pris) gäller nu '165,90 €', samma numeriska del som SE",
+   "huvudsessionen 2026-09-18: fototext '126,90 € + toimitus' → '126,90 € – toimitus sisältyy' ('+ toimitus' läses som att frakt tillkommer)"
+  ]
+ },
+ "Takoverdrag_CS_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Ilmainen toimitus – kattopeite 6,5 × 3 m"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "126,90 € (norm. 165,90 €) – säästä 39 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 päivän palautusoikeus – jos et pidä siitä, saat rahat takaisin"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Tilaa – ilmainen toimitus"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €, 'spara 340 kr' -> 'säästä 39 €'",
+   "frakt bekräftad gratis till Finland"
+  ]
+ },
+ "Takoverdrag_GT_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Joulun kattosuoja 126,90 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Kestää talven – ohut pressu halkeaa pakkasessa"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "165,90 € · Ilmainen toimitus · 30 pv palautus"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Tilaa kattopeite – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €"
+  ]
+ },
+ "Takoverdrag_LI_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1,
+       2
+      ],
+      "text": "Vesi valuu pois kattoluukkujen ympäriltä – peittää katon, 6,5 × 3 metriä."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Pysyy paikallaan tuulessa – hihna ja koukku pitävät sen kiinni."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Yksi henkilö asentaa sen – vain katto, ei koko vaunua."
+     },
+     {
+      "rader": [
+       3,
+       4
+      ],
+      "text": "Kestää talvikauden ulkona – 210D-kangas, ei halkea pakkasessa."
+     },
+     {
+      "rader": [
+       5
+      ],
+      "text": "Mahtuu säilytyspussiin – ei vie tilaa etuteltan laatikossa."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90 € (165,90 €) – ilmainen toimitus, 30 pv palautus"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Tilaa kattopeite"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "rubrik 'Vattnet blir aldrig stående' -> 'Vesi valuu pois ... ympäriltä' (förbjudet 'aldrig' om utfall)",
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €"
+  ]
+ },
+ "Takoverdrag_PD_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Peitä vain katto – ei koko vaunua"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Kiinnitys hihnalla"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Koukku reunassa"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Luukku pysyy kuivana"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90/165,90 € – ilm. toimitus"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Osta nyt – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €"
+  ]
+ },
+ "Takoverdrag_SP_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Hihnat neljällä sivulla"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Vesi valuu pois kattoluukkujen ympäriltä – peittää koko katon, 6,5 × 3 m"
+     },
+     {
+      "rader": [
+       2,
+       3
+      ],
+      "text": "Pysyy paikallaan tuulessa – hihna ja koukku reunassa"
+     },
+     {
+      "rader": [
+       4,
+       5
+      ],
+      "text": "Kestää talvikauden ulkona – 210D-kangas, ei ohut pressu joka halkeaa"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90 € – säästä 39 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Suojaa katto – 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "rubrik '5,0 av 5 – 10 recensioner' struken (ingen recension i FI, stjärnorna är grafik och tas bort) -> 'Hihnat neljällä sivulla' (belagt ur fakta.mjs, samma teckenbudget)",
+   "'vattnet blir aldrig stående' -> 'vesi valuu pois ... ympäriltä'",
+   "pris: 1 129 kr -> 126,90 €, 'spara 340 kr' -> 'säästä 39 €'"
+  ]
+ },
+ "Takoverdrag_TR_1_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0,
+       1
+      ],
+      "text": "Kestävä 210D-kangas"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Peitä vain katto – ei koko vaunua"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "126,90 € (165,90 €) – säästä 39 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Peitä katto, 126,90 €"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "rubrik '5,0 av 5 på 10 recensioner' struken (ingen recension i FI) -> '210D-kangas, ei ohut pressu' (belagt, samma teckenbudget)",
+   "pris: 1 129/1 469 kr -> 126,90/165,90 €, 'spara 340 kr' -> 'säästä 39 €'"
+  ]
+ },
+ "Takoverdrag_SP_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Kattopeite kiinnitetään hihnalla ja koukulla."
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "Katto pysyy suojattuna koko talven."
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "Yksi henkilö asentaa sen"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "[ Suojaa kattosi nyt ]"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "30 päivän palautusoikeus – täysi hyvitys"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "påhittat kundcitat + fabricerad attribution ('Verifierad kund, 58 år') struket helt (ingen recension i FI) -> ersatt med tre belagda påståenden utan citattecken och utan 'kund', enligt uppdragets varning",
+   "hastighetslöfte 'fem minuter, helt själv' struket"
+  ]
+ },
+ "Takoverdrag_PD_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "SADE EI SAA"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "PILATA KATTOA –"
+     },
+     {
+      "rader": [
+       2
+      ],
+      "text": "SUOJAA SE PEITTEELLÄ"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "hastighetslöfte '5 minuter' struket, skriven om till tre versalrader enligt uppdragets varning (max 20 tecken/rad)"
+  ]
+ },
+ "Takoverdrag_GT_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "TÄYDELLINEN LAHJA"
+     },
+     {
+      "rader": [
+       1
+      ],
+      "text": "ASUNTOVAUNUFANILLE"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Hän ei ole vain kohtelias – hän on aidosti iloinen."
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "[ Anna lahja, jonka hän haluaa ]"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "ren översättning inom teckenbudgeten (varning: max 22 tecken/rad på fototext-rubriken)"
+  ]
+ },
+ "Takoverdrag_CS_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "23% ALENNUS – NYT"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "165,90 €  126,90 €"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "Rajoitettu varasto – loppuu nopeasti"
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "rader": [
+       0
+      ],
+      "text": "[ Osta ennen loppumista ]"
+     }
+    ]
+   }
+  ],
+  "andringar": [
+   "pris: 1469/1129 kr -> 165,90/126,90 € (exakt formulering enligt uppdragets varning — 2 tecken över den mekaniska budgeten men given ordagrant i källan, prisraden får extra utrymme/fetstil enligt varningen)",
+   "23% behållen (stämmer: 39/165,90=23,5%)"
+  ]
+ }
+}

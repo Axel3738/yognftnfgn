@@ -1,0 +1,1231 @@
+{
+ "IBC_BOF_10_1": {
+  "box_for_form": {
+   "1": [
+    {
+     "box": [
+      300,
+      1088,
+      780,
+      1132
+     ],
+     "post": 0,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "IBC_BOF_11_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      40,
+      1047,
+      190
+     ],
+     "post": 0,
+     "storlek": 62,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "rader": 1,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      33,
+      190,
+      1047,
+      420
+     ],
+     "post": 1,
+     "storlek": 62,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "rader": 2,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      420,
+      1047,
+      590
+     ],
+     "post": 0,
+     "storlek": 38,
+     "farg": [
+      18,
+      18,
+      16
+     ],
+     "rader": 2,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      33,
+      1086,
+      1047,
+      1132
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "IBC_BOF_12_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      50,
+      1047,
+      285
+     ],
+     "post": 0,
+     "storlek": 62,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "rader": 2
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      320,
+      1047,
+      442
+     ],
+     "post": 0,
+     "storlek": 36,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "rader": 2
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      330,
+      1088,
+      750,
+      1132
+     ],
+     "post": 0,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "IBC_PD_9_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      305
+     ],
+     "post": 0,
+     "storlek": 62,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "rader": 2,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      305,
+      1047,
+      460
+     ],
+     "post": 0,
+     "storlek": 36,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "rader": 2,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      200,
+      1084,
+      880,
+      1136
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 120,
+     "radie": 14
+    }
+   ]
+  }
+ },
+ "IBC_RV_7_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      55,
+      1047,
+      205
+     ],
+     "post": 0,
+     "storlek": 40,
+     "fet": true,
+     "farg": [
+      20,
+      47,
+      73
+     ],
+     "rader": 2
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      300,
+      225,
+      780,
+      272
+     ],
+     "post": 0,
+     "storlek": 24,
+     "farg": [
+      22,
+      49,
+      76
+     ],
+     "rader": 1
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      320,
+      1088,
+      760,
+      1132
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "IBC_RV_8_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      55,
+      1047,
+      275
+     ],
+     "post": 0,
+     "storlek": 40,
+     "fet": true,
+     "farg": [
+      20,
+      47,
+      73
+     ],
+     "rader": 3
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      300,
+      298,
+      780,
+      345
+     ],
+     "post": 0,
+     "storlek": 24,
+     "farg": [
+      22,
+      49,
+      76
+     ],
+     "rader": 1
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      320,
+      1088,
+      760,
+      1132
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Takoverdrag_BOF_1_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      40,
+      1047,
+      175
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      33,
+      175,
+      1047,
+      285
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      240,
+      1088,
+      840,
+      1132
+     ],
+     "post": 0,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Takoverdrag_BOF_2_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      110,
+      318,
+      1047,
+      376
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      110,
+      376,
+      1047,
+      479
+     ],
+     "post": 1,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      110,
+      479,
+      1047,
+      534
+     ],
+     "post": 2,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      220,
+      1084,
+      870,
+      1136
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 120,
+     "radie": 14
+    }
+   ]
+  }
+ },
+ "Takoverdrag_BOF_3_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      292
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      296,
+      1047,
+      396
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 36,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      350,
+      1088,
+      730,
+      1132
+     ],
+     "post": 0,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Takoverdrag_CO_2_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      172
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      33,
+      172,
+      1047,
+      296
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ]
+  }
+ },
+ "Takoverdrag_CS_6_1": {
+  "box_for_form": {
+   "1": [
+    {
+     "box": [
+      60,
+      1084,
+      1020,
+      1136
+     ],
+     "post": 0,
+     "storlek": 26,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 130,
+     "radie": 14
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      188,
+      1201,
+      893,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 39,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_GT_6_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      292
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      296,
+      1047,
+      452
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 36,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      195,
+      1088,
+      885,
+      1132
+     ],
+     "post": 0,
+     "storlek": 26,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Takoverdrag_LI_1_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      412
+     ],
+     "post": 0,
+     "rader": 3,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      100,
+      432,
+      1047,
+      542
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      100,
+      542,
+      1047,
+      602
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      100,
+      602,
+      1047,
+      704
+     ],
+     "post": 2,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    },
+    {
+     "box": [
+      100,
+      704,
+      1047,
+      762
+     ],
+     "post": 3,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      125,
+      1084,
+      955,
+      1136
+     ],
+     "post": 0,
+     "storlek": 26,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 130,
+     "radie": 14
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      283,
+      1201,
+      797,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 39,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_PD_5_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      45,
+      1047,
+      292
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      398,
+      324,
+      1047,
+      370
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 402
+    },
+    {
+     "box": [
+      398,
+      376,
+      1047,
+      422
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 402
+    },
+    {
+     "box": [
+      398,
+      428,
+      1047,
+      478
+     ],
+     "post": 2,
+     "rader": 1,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 402
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      285,
+      1088,
+      800,
+      1132
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      294,
+      1201,
+      787,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 39,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_SP_5_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      175,
+      1047,
+      285
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      100,
+      322,
+      1047,
+      418
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103
+    },
+    {
+     "box": [
+      100,
+      424,
+      1047,
+      524
+     ],
+     "post": 1,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103
+    },
+    {
+     "box": [
+      100,
+      530,
+      1047,
+      634
+     ],
+     "post": 2,
+     "rader": 2,
+     "storlek": 30,
+     "farg": [
+      26,
+      26,
+      26
+     ],
+     "vanster_x": 103
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      350,
+      1084,
+      730,
+      1136
+     ],
+     "post": 0,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 130,
+     "radie": 14
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      250,
+      1201,
+      831,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 39,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "Takoverdrag_TR_1_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      33,
+      175,
+      1047,
+      405
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 62,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "fet": true,
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      33,
+      412,
+      1047,
+      512
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 36,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      215,
+      1084,
+      875,
+      1136
+     ],
+     "post": 0,
+     "storlek": 26,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true,
+     "fyll": "mork",
+     "alfa": 130,
+     "radie": 14
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      293,
+      1201,
+      788,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 39,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ }
+}

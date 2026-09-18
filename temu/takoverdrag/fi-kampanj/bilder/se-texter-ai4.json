@@ -1,0 +1,33 @@
+{
+  "Takoverdrag_SP_2_1": {
+    "beskrivning": "Foto: svart taköverdrag på husvagnstak, grusuppfart. Beige textruta nederst.",
+    "former": [
+      { "typ": "platta", "rader": ["\"Satte den på taket på fem minuter, helt själv.", "Nu behöver jag inte oroa mig hela vintern.\"", "– Verifierad kund, 58 år"], "varning": "PÅHITTAT KUNDCITAT + hastighetslöfte 'fem minuter' — får inte finnas i FI. Ersätt hela rutan med ett belagt faktum i samma längd (två rader citat-stil är INTE ok, skriv som påstående utan citattecken och utan 'kund')" },
+      { "typ": "knapp", "rader": ["[ Skydda ditt tak nu ]"] },
+      { "typ": "fototext", "rader": ["30 dagars öppet köp – full återbetalning"] }
+    ]
+  },
+  "Takoverdrag_PD_2_1": {
+    "beskrivning": "Foto: husbil med svart taköverdrag, vinterlandskap. Mörk versaltext direkt på ljus himmel högst upp, tre rader centrerade.",
+    "former": [
+      { "typ": "fototext", "rader": ["REGNET SKA INTE", "FÅ FÖRSTÖRA TAKET –", "TÄCK DET PÅ 5 MINUTER"], "varning": "hastighetslöfte '5 minuter' — skriv om. Tre korta versalrader, max 20 tecken per rad." }
+    ]
+  },
+  "Takoverdrag_GT_2_1": {
+    "beskrivning": "Foto: hopvikt taköverdrag med presentband på ett bord, jul/brasa i bakgrunden. Vit versaltext högst upp på mörk bakgrund, två rader + en mindre rad. Mörk pill-knapp nederst.",
+    "former": [
+      { "typ": "fototext", "rader": ["DEN PERFEKTA PRESENTEN", "TILL HUSVAGNS-ÄLSKAREN"], "varning": "två versalrader, max 22 tecken per rad" },
+      { "typ": "fototext", "rader": ["Han blir inte \"tack snällt\"-glad. Han blir riktigt glad."] },
+      { "typ": "knapp", "rader": ["[ Ge presenten han faktiskt vill ha ]"] }
+    ]
+  },
+  "Takoverdrag_CS_2_1": {
+    "beskrivning": "Grafisk layout: vit/ljus yta uppe till vänster med röd rubrik, orange-röda former till höger, husbil med överdrag nederst.",
+    "former": [
+      { "typ": "platta", "rader": ["23% RABATT – IDAG"], "varning": "röd fet versalrubrik, max 18 tecken" },
+      { "typ": "platta", "rader": ["1469 kr  1129 kr"], "varning": "jämförpriset överstruket, priset fett: skriv '165,90 €  126,90 €'" },
+      { "typ": "platta", "rader": ["Begränsat lager – slut när det är slut"] },
+      { "typ": "knapp", "rader": ["[ Köp innan det tar slut ]"] }
+    ]
+  }
+}

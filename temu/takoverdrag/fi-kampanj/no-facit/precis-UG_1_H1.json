@@ -1,0 +1,63 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/out/takovertrekk_UG_1_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/no-video/Takovertrekk_NO_UG_1_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/srt-no/takovertrekk_UG_1_H1.srt",
+ "captions": {
+  "zon": [
+   950,
+   1090
+  ],
+  "standard_cy": 1020,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 8,
+  "pad_y": 8,
+  "fyll": []
+ },
+ "blur": [
+  {
+   "rect": [
+    20,
+    10,
+    715,
+    330
+   ],
+   "t": [
+    18.2,
+    20.95
+   ]
+  },
+  {
+   "rect": [
+    30,
+    760,
+    700,
+    1070
+   ],
+   "t": [
+    23.95,
+    24.7
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/pris_1189_ug.png",
+   "t": [
+    18.5,
+    20.95
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/lager/slutkort_UG_1_H1.png",
+   "t": [
+    23.95,
+    26.9
+   ]
+  }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-16/qa"
+}

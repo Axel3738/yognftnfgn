@@ -1,0 +1,153 @@
+{
+  "Takoverdrag_CO_1_H1": {
+    "manus": "Kokovaunun suoja on raskas asentaa yksin. Vedän kattopeitteen paikalleen ja kiinnitän hihnalla ja koukulla. Vesi valuu pois kattoluukkujen ympäriltä. Mahtuu säilytyspussiin. 126,90 euroa. Ilmainen toimitus. 30 päivän palautusoikeus.",
+    "tecken": 232,
+    "andringar": [
+      "pris: 1129 kronor -> 126,90 euroa",
+      "'vattnet blir aldrig stående' -> 'vesi valuu pois ... ympäriltä'",
+      "kortat till 232/252 tecken: 'skyddar den dyraste ytan' struken, upprepningar bort"
+    ]
+  },
+  "Takoverdrag_CS_1_H1": {
+    "manus": "Tänään kattopeite maksaa 126,90 euroa. Huomenna emme tiedä. Kattopeite, 6,5 kertaa 3 metriä. Normaalihinta 165,90 euroa, tänään 126,90 euroa. Säästät 39 euroa vain kampanjan ajan. Varastoa on rajoitetusti. Ilmainen toimitus. 30 päivän palautusoikeus. Varmista omasi ennen kuin se loppuu.",
+    "tecken": 287,
+    "andringar": [
+      "pris: 1469/1129 kronor -> 165,90/126,90 euroa, 'över 300 kronor rabatt' -> 'säästät 39 euroa'",
+      "kortat: upprepad intro ('just nu, tak över dag...') förenklad"
+    ]
+  },
+  "Takoverdrag_CS_2_H1": {
+    "manus": "23 prosentin alennus asuntovaunun kattopeitteestä. Vain tänään. Koko 6,5 kertaa 3 metriä. Normaalihinta 165,90 euroa, tänään 126,90 euroa. Säästät 39 euroa vain kampanjan ajan. Varastoa on rajoitetusti. Ilmainen toimitus. 30 päivän palautusoikeus. Varmista omasi ennen kuin se loppuu.",
+    "tecken": 284,
+    "andringar": [
+      "pris: 1469/1129 kronor -> 165,90/126,90 euroa, 23 % behållen (stämmer: 39/165,90=23,5%)",
+      "kortat till 284/295 tecken"
+    ]
+  },
+  "Takoverdrag_CS_3_H1": {
+    "manus": "Normaalihinta 165,90 euroa, nyt 126,90 euroa. Varasto vähenee. Kattopeite, 6,5 kertaa 3 metriä. Säästät 39 euroa vain kampanjan ajan. Varastoa on rajoitetusti. Ilmainen toimitus. 30 päivän palautusoikeus. Varmista omasi ennen kuin se loppuu.",
+    "tecken": 241,
+    "andringar": [
+      "pris: 1469/1129 kronor -> 165,90/126,90 euroa",
+      "kraftigt kortat (481 SE-tecken text -> 241 FI): upprepad prisrad i öppningen slagen ihop till en mening"
+    ]
+  },
+  "Takoverdrag_GT_1_H1": {
+    "manus": "Hän puhuu asuntovaunusta enemmän kuin minusta. Tänä vuonna etsin jotain, mistä hän oikeasti innostuisi, ei vain tavaraa laatikkoon. Löysin kattopeitteen, joka suojaa kattoa koko talven. Hän oli aidosti iloinen. Annoin jotain, mitä hän oikeasti käyttää joka talvi. Paras lahja näyttää, että tiedät mistä hän välittää.",
+    "tecken": 316,
+    "andringar": [
+      "kortat (542 SE-tecken text -> 316 FI): mellansatsen 'Inte bara en pryl som hamnar i en låda' och upprepningar strukna, hooken och avslutet behållna",
+      "'Inte tack snällt glad, riktigt glad' kortat till 'aidosti iloinen'"
+    ]
+  },
+  "Takoverdrag_GT_2_H1": {
+    "manus": "Mitä antaa asuntovaunumiehelle? Tänä vuonna etsin jotain, mistä hän oikeasti innostuisi, ei vain tavaraa laatikkoon. Löysin kattopeitteen, joka suojaa kattoa koko talven. Hän oli aidosti iloinen. Annoin jotain, mitä hän oikeasti käyttää joka talvi. Paras lahja näyttää, että tiedät mistä hän välittää.",
+    "tecken": 301,
+    "andringar": [
+      "kortat (517 -> 301 tecken): 'Jag har löst det' struken, dubblerad känslobeskrivning kortad"
+    ]
+  },
+  "Takoverdrag_GT_3_H1": {
+    "manus": "Hän avasi paketin ja hiljeni ilosta. Tänä vuonna etsin jotain, mistä hän oikeasti innostuisi, ei vain tavaraa laatikkoon. Löysin kattopeitteen, joka suojaa kattoa koko talven. Hän oli aidosti iloinen. Annoin jotain, mitä hän oikeasti käyttää joka talvi. Paras lahja näyttää, että tiedät mistä hän välittää.",
+    "tecken": 306,
+    "andringar": [
+      "kortat (508 -> 306 tecken): samma mönster som GT_2/GT_1"
+    ]
+  },
+  "Takoverdrag_GT_4_H1": {
+    "manus": "Lahja asuntovaunun omistajalle. Vain katto, ei koko vaunua. Pysyy paikallaan tuulessa, kiinnitetään hihnalla ja koukulla. Vesi valuu pois kattoluukkujen ympäriltä. Yksi henkilö riittää. 210D-kangas kestää koko talvikauden ulkona. 126,90 euroa. Säästät 39 euroa. 30 päivän palautusoikeus.",
+    "tecken": 287,
+    "andringar": [
+      "pris: 1129 kronor -> 126,90 euroa, 'spara 340 kronor' -> 'säästät 39 euroa'",
+      "'vattnet blir aldrig stående' -> 'vesi valuu pois ... ympäriltä'",
+      "kortat: 'tar ingen plats i förtältslådan' struken"
+    ]
+  },
+  "Takoverdrag_GT_5_H1": {
+    "manus": "Kokovaunun suoja on raskas asentaa yksin. Tämän laitat itse. Vain katto, kallein pinta korjata. Kiinnitetään hihnalla ja koukulla, pysyy paikallaan tuulessa. 210D-kangas kestää talven ulkona. 126,90 euroa, ennen 165,90 euroa. Ilmainen toimitus.",
+    "tecken": 244,
+    "andringar": [
+      "pris: 1129/1469 kronor -> 126,90/165,90 euroa",
+      "kortat till 244/259 tecken: '30 päivän palautusoikeus' struken för att rymmas (fri frakt/ilmainen toimitus kvar)"
+    ]
+  },
+  "Takoverdrag_PD_1_H1": {
+    "manus": "Asuntovaunun katto on pinta, jota tarkistat harvimmin. Tämä on kattopeite, 6,5 kertaa 3 metriä. Peittää vain katon, ei koko vaunua. Kangas on vahvaa 210D-kangasta, kestää sadetta, lunta ja aurinkoa koko talven. Kiinnität sen hihnalla ja koukulla, pysyy paikallaan tuulessa. Yksi henkilö asentaa sen itse. Kun sitä ei käytetä, se taitetaan säilytyspussiin. Yksinkertainen tapa suojata asuntovaunun kallein pinta.",
+    "tecken": 411,
+    "andringar": [
+      "'ingen någonsin kollar' -> 'pinta, jota tarkistat harvimmin' (samma formulering som copy-fi.json, undviker 'koskaan')",
+      "kortat (631 -> 411 tecken): 'ingen tung presenning att dra över själv i blåsten' och 'ingen behöver hålla i andra änden' strukna"
+    ]
+  },
+  "Takoverdrag_PD_2_H1": {
+    "manus": "Asuntovaunun katto maksaa eniten ja on suojattu vähiten. Tämä on kattopeite, 6,5 kertaa 3 metriä. Peittää vain katon, ei koko vaunua. Kangas on vahvaa 210D-kangasta, kestää sadetta, lunta ja aurinkoa koko talven. Kiinnität sen hihnalla ja koukulla, pysyy paikallaan tuulessa. Yksi henkilö asentaa sen itse. Kun sitä ei käytetä, se taitetaan säilytyspussiin. Yksinkertainen tapa suojata asuntovaunun kallein pinta.",
+    "tecken": 413,
+    "andringar": [
+      "samma kortning och 'koskaan'-undvikande som PD_1_H1 (622 -> 413 tecken)"
+    ]
+  },
+  "Takoverdrag_PD_3_H1": {
+    "manus": "Näin suojaat asuntovaunun katon itse. Tämä on kattopeite, 6,5 kertaa 3 metriä. Peittää vain katon, ei koko vaunua. Kangas on vahvaa 210D-kangasta, kestää sadetta, lunta ja aurinkoa koko talven. Kiinnität sen hihnalla ja koukulla, pysyy paikallaan tuulessa. Yksi henkilö asentaa sen itse. Kun sitä ei käytetä, se taitetaan säilytyspussiin. Yksinkertainen tapa suojata asuntovaunun kallein pinta.",
+    "tecken": 394,
+    "andringar": [
+      "hastighetslöfte 'på under en minut' struket ur rubrikmeningen -> 'Näin suojaat asuntovaunun katon itse'",
+      "kortat (628 -> 394 tecken), samma struken text som PD_1/PD_2"
+    ]
+  },
+  "Takoverdrag_PD_4_H1": {
+    "manus": "Ilman suojaa vesi kerääntyy kattoluukun ympärille koko talven. Yksi henkilö riittää, vain katto. Kiinnitetään hihnalla ja koukulla, pysyy paikallaan tuulessa. 210D-kangas kestää talven ulkona. Katto on pinta, jota tarkistat harvimmin ja joka on kallein korjata. 126,90 euroa.",
+    "tecken": 275,
+    "andringar": [
+      "pris: 1129 kronor -> 126,90 euroa",
+      "'det du aldrig ser' -> 'tarkistat harvimmin' (copy-fi.json-formulering)",
+      "kortat kraftigt (395 -> 275 tecken): '30 päivän palautusoikeus' och pressning-jämförelsen strukna för att rymmas inom 284 tecken"
+    ]
+  },
+  "Takoverdrag_RI_1_H1": {
+    "manus": "Kattoluukun kohdalla vesi jää seisomaan. Tiivistemassa kohtaa kosteutta päivä toisensa jälkeen. Lopulta se pehmenee. Kosteus pääsee katon läpi. Silloin pelkkä pesu ei riitä. Tarvitaan kattopeite, ei koko vaunun suojaa. Peitä vain katto. Tilaa kattopeite. 126,90 euroa. Ilmainen toimitus. 30 päivän palautusoikeus.",
+    "tecken": 313,
+    "andringar": [
+      "pris: 1129 kronor -> 126,90 euroa",
+      "kortat: upprepningen 'en person, bara taket. Täck bara taket' slagen ihop"
+    ]
+  },
+  "Takoverdrag_SP_1_H1": {
+    "manus": "Asuntovaunun katolle kertyy tahroja ja sammalta talven aikana ilman suojaa. Kattopeite kiinnitetään hihnalla reunassa. Katto pysyy suojattuna koko talven. Yksinkertainen ja edullinen ratkaisu asuntovaunun omistajalle.",
+    "tecken": 217,
+    "andringar": [
+      "påhittat kundvittnesmål ('Jag ångrade...', 'hos oss', 'kan verkligen rekommendera') struket helt (ingen recension i FI) -> ersatt med belagt problem/lösning ur fakta.mjs",
+      "hastighetslöfte 'typ fem minuter' struket"
+    ]
+  },
+  "Takoverdrag_SP_2_H1": {
+    "manus": "Asuntovaunu seisoo ulkona koko talven. Ilman suojaa katolle kertyy tahroja ja sammalta. Kattopeite kiinnitetään hihnalla reunassa. Katto pysyy suojattuna koko talven. Yksinkertainen ja edullinen ratkaisu asuntovaunun omistajalle.",
+    "tecken": 229,
+    "andringar": [
+      "samma som SP_1_H1: påhittat vittnesmål struket, hastighetslöfte struket"
+    ]
+  },
+  "Takoverdrag_SP_3_H1": {
+    "manus": "Ilman suojaa asuntovaunun katolle kertyy tahroja ja sammalta talven aikana. Kattopeite kiinnitetään hihnalla reunassa. Katto pysyy suojattuna koko talven. Yksinkertainen ja edullinen ratkaisu asuntovaunun omistajalle.",
+    "tecken": 217,
+    "andringar": [
+      "samma som SP_1_H1, inklusive 'grannen frågade'-öppningen struken"
+    ]
+  },
+  "Takoverdrag_SP_4_H1": {
+    "manus": "Kokovaunun suoja on raskas asentaa yksin. Tämä peittää vain katon, ei koko vaunua. Yksi henkilö asentaa sen itse. Vesi valuu pois kattoluukkujen ympäriltä. Kiinnitetään hihnalla ja koukulla. Pysyy paikallaan tuulessa. 210D-kangas kestää koko talvikauden ulkona. Mahtuu säilytyspussiin. Vain katto, ei koko vaunua. 126,90 euroa. Hihnat kaikilla neljällä sivulla. Tilaa kattopeite. Ei tarvita apua.",
+    "tecken": 396,
+    "andringar": [
+      "'5,0 av 5 på tio recensioner' struken (ingen recension i FI) -> ersatt med 'hihnat kaikilla neljällä sivulla' ur fakta.mjs",
+      "'vattnet blir aldrig stående' och 'bara taket, aldrig hela vagnen' -> omskrivna utan 'aldrig'",
+      "pris: 1129 kronor -> 126,90 euroa"
+    ]
+  },
+  "Takoverdrag_UG_1_H1": {
+    "manus": "Luuletko, että katon peittämiseen tarvitaan kaksi ihmistä? Tämä mahtuu säilytyspussiin. Vain katto, ei koko vaunua. Kiinnitän sen hihnalla ja koukulla. Katto on suojattu, ja tein sen itse. 126,90 euroa. Ilmainen toimitus ja palautusoikeus.",
+    "tecken": 239,
+    "andringar": [
+      "pris: 1129 kronor -> 126,90 euroa",
+      "kortat till 239/270 tecken: 'och jag gjorde det själv' och 'beställ taköverdraget' som eget utrop struket"
+    ]
+  }
+}

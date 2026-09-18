@@ -1,0 +1,92 @@
+{
+ "jobb": [
+  {
+   "namn": "Takoverdrag_BOF_1_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_BOF_1_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_BOF_2_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_BOF_2_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_BOF_3_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_BOF_3_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_CO_2_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_CO_2_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_CS_4_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_CS_4_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_CS_6_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_CS_6_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_GT_6_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_GT_6_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_LI_1_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_LI_1_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_PD_5_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_PD_5_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_SP_5_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_SP_5_1"
+   }
+  },
+  {
+   "namn": "Takoverdrag_TR_1_1",
+   "status": "KÖR",
+   "typ": "bild",
+   "mal": {
+    "annonsNamn": "FI_Takoverdrag_TR_1_1"
+   }
+  }
+ ]
+}
