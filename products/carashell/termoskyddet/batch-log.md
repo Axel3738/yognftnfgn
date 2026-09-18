@@ -126,11 +126,22 @@ efter ElevenLabs-bytet. Kontroller före: butiken svarade 200 utan `/password`
 `last_fired_time` 2026-09-16 02:58. Sedan sattes **kampanj `120249115376140172`,
 4 adsets (`CARASHELL_SE_PD/G/CS/SP`) och 16 annonser ACTIVE** — namngiven lista,
 alla PAUSED med 0 kr före, tillbakaläst ACTIVE på tre nivåer efter (8 annonser
-`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag. **NO-kampanjen
-`120249115382210172` står kvar PAUSED** — inget "Launch: CARASHELL_NO_…" än.
-Från och med nu: nattvakten (00:57) har något att döma, leveransrundan (14:15)
-laddar upp i SE-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp
-per annons (regel 3).
+`IN_PROCESS` = Metas granskning). CBO 1 000 kr/dag.
+
+### LAUNCH NO — 2026-09-16 ~10:50 UTC (12:50 svensk tid)
+
+Axel skrev **"Launch: CARASHELL_NO_Termoskydd Husbil 211 × 171 cm"** en halvtimme
+senare. Kontroll före: `/nb/products/termoskyddet?country=NO` svarar 200 och visar
+548 / 685 NOK med NOK-paketnivåer. Sedan **kampanj `120249115382210172`, 4 adsets
+(`CARASHELL_NO_PD/G/CS/SP`, geo NO) och 16 annonser ACTIVE**, tillbakaläst ACTIVE på
+tre nivåer. CBO 1 000 kr/dag (kontovaluta SEK). ⚠️ Meta rate-limitade kontot
+("User request limit reached", code 17) mitt i — efter uppladdningar + SE-launch
+samma förmiddag; aktiveringen väntade in gränsen (90 s × 5) och gick igenom.
+
+Båda marknaderna live. Från och med nu: nattvakten (00:57) har något att döma,
+leveransrundan (14:15) laddar upp i SE-kampanjen, NO-översättningen (16:15) i
+NO-kampanjen. Första avläsning tidigast efter 300 kr spend eller 3 köp per
+annons (regel 3).
 
 ### Att läsa av första briefdagen
 
@@ -138,6 +149,281 @@ per annons (regel 3).
 2. Replikerar bilden (PD_2_1) som SP_2_1 gjorde i källan?
 3. Prioritet i briefronden: ett **sant CS-manus** (pris/jämförpris/villkor, ingen
    brådska) och ett **SP-manus med riktigt citat** ur Judge.me-underlaget.
+
+## 2026-09-16 — `/ops-oversatt carashell/termoskyddet --marknad US` (första US-körningen)
+
+- Ingen US-kampanj fanns och `annonsmarknader` var SE,NO. Körningen skrev in NO,US i
+  registret och byggde en TOM kampanj: `CARASHELL_US_Termoskydd Husbil 211 × 171 cm |
+  BE-ROAS 1.61 | 2026-09-16` (`120251442339640435`, Magiborsten UK, CBO 1 000 kr/dag,
+  PAUSED, adsets CS/G/PD/SP, 0 annonser). ⚠️ `kampanj.mjs --tom` hade återanvänt
+  takskyddets US-kampanj (matchade på `CARASHELL_US_`) — rättat till produktens bas
+  före bygget.
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 i `Approved` — hubben har inga rader
+  alls än; de 16 SE-annonserna byggdes ur källan och går inte via hubben.
+- **Läge: hållen** (PAUSED utan spend). Ingen US-rutin finns för den här nyckeln —
+  `/notionscalercs setup carashell/termoskyddet` på claude5-kontot bygger 17:15-rutinen.
+
+## 2026-09-16 — `/ops-leverans carashell/termoskyddet` (första leveransrundan)
+
+- Kön: 0 rader i hubben "Termoskyddet" (`3dd270ab-…`) — varken `To be Reviewed`
+  eller `Creative strat review`; hubben är helt tom (0 rader totalt). Inget laddades upp.
+- SE-kampanjen `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115376140172`) står nu **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G) — var PAUSED vid bygget i förmiddags. Ärvd länk
+  `https://carashell.se/products/termoskyddet` ur `CaraShellFront_G_3`.
+  Rundan kan alltså leverera så fort något hamnar i `To be Reviewed`.
+- Pris ur butiken: 559 SEK (jämförpris 932).
+- Nästa: nattvakten 00:57 producerar första briefronden (7 st, ingen redigerare).
+  Rader når leveransrundan först när en redigerare levererar eller `/ops-bild` körs.
+
+## 2026-09-16 — `/ops-oversatt carashell/termoskyddet` (första NO-körningen)
+
+- Kön: 0 rader i `SE-ACTIVE to be translated` — hubben "Termoskyddet" är fortfarande
+  tom. Inget översatt, inget renderat (0 HeyGen-credits), inget uppladdat, ingen
+  Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 |
+  2026-09-16` (`120249115382210172`, MagiBorsten DK) är **ACTIVE** med 4 ACTIVE adsets
+  (SP/CS/PD/G). Ärvd länk `https://carashell.se/nb/products/termoskyddet?country=NO`
+  ur `CaraShellFront_NO_G_3`. Rutinen kan alltså leverera så fort en rad når kön.
+- Butiken redo för NO: 548 NOK läst på den norska sidan (= `ekonomi.marknadspriser`).
+  ⚠️ `/nb/products/termoskyddet.json` utan `?country=NO` svarar 559/932 — det är
+  Shopifys basvaluta, inte ett norskt pris; läs alltid med `?country=NO`.
+- Meta rate-limitade fyra gånger i rad (30 → 240 s) under läsningen av kontot —
+  körningen tog ~10 min i stället för sekunder. Inte ett fel, bara långsamt.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549788313140076604`), ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-16-no-termoskyddet/` (jobb.json).
+
+## 2026-09-16 17:15 — `/ops-oversatt carashell/termoskyddet --marknad US` (första schemalagda US-körningen)
+
+- Rutinen `trig_01C9Dfcm5k9wuxPDaQaRNF1r` (plats 7 = 17:15, fast session
+  `session_01Ngpv9kMqf3BM8onpTbMdCt`) fyrade 15:15 UTC — sedd i `list_triggers`
+  samma körning, `last_run` SUCCEEDED.
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 rader i `Approved` (eftersläpningskollen
+  för marknad tillagd i efterhand). Hubben "Termoskyddet" är fortfarande helt tom
+  (0 rader i alla statusar, mätt via `databases/<id>/query`). Inget översatt, inget
+  renderat (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- US-kampanjen `CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
+  (`120251442339640435`, Magiborsten UK) är **PAUSED utan spend** (nybyggd) med 4 ACTIVE
+  adsets (SP/PD/G/CS). Kön hittar den nu på namnets bas (`PAUSAD_TOM`) och skulle ha
+  laddat upp i den — kampanjens status rörs aldrig av rutinen.
+- ⚠️ **Kampanjen bär redan 16 annonser** (`CaraShellFront_US_*`: 12 videor + 4 bilder,
+  alla ACTIVE, effective_status CAMPAIGN_PAUSED, länk `https://carashell.com/products/termoskyddet`,
+  copy med $99) skapade 11:00–12:29 UTC i dag — efter förmiddagens körning som såg
+  0 annonser. Ingen commit i repot (`git log --all`) beskriver uppladdningen; de speglar
+  SE-kampanjens 16 annonser precis som takskyddets US-spegling (`d87ec56`). Inget spenderar
+  förrän Axel slår på kampanjen.
+- Butiken redo för US: 99 USD läst på `carashell.com/products/termoskyddet?country=US`.
+- Ärvd länk ur `CaraShellFront_US_G_3`: `https://carashell.com/products/termoskyddet`.
+- Discord: rapport i `#annons-uppladdning` på "CaraShell — OPS" (meddelande
+  `1549802219279486996`), ping till Axel under ACTION NEEDED (slå på kampanjen om US-testet
+  ska starta).
+- Batch: `market-expansion/ops/carashell/2026-09-16-us-termoskyddet/` (jobb.json,
+  jobb-approved.json, discord-jobb.json + köloggarna).
+
+---
+
+## LP lagerrensning 2026-09-16 kväll — samma sida i två butiker
+
+**CaraShell:** https://carashell.se/pages/termoskydd-husbil-211-171-cm-lagerrensning —
+byggd av en annan session samma dag (`/lagerrensning https://carashell.se/products/termoskyddet`,
+commit `64ebdc22` på grenen `claude/dreamy-carson-rejnmn`, inte på `main` när
+det här skrevs). Obrandad, "Anders på lagret", pris **559 / 932 kr**, 14 dagars
+ångerrätt ("Om det inte känns rätt"), punkt 1–4 kie-bilder på Bäverbutikens CDN,
+punkt 5 produktbild 2 (husbilen i tallskogen), lyckas produktbild 1 (skyddet
+med måtten). Filerna: `listicle/output/lagerrensning/termoskyddet/` på den grenen.
+
+**Bäverbutiken:** https://baverbutiken.se/pages/termoskydd-husbil-211-171-cm-lagerrensning —
+Axels fråga ("gör samma sak för denna"), byggd i den här sessionen: samma copy
+och samma bilder (cachen träffade på prompten — noll nya kie-credits; Bäverbutikens
+produktsida har samma tre bilder i samma ordning), knapparna till
+`/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande`, pris 559 / 932 kr
+avläst ur Bäverbutikens `/products/<handle>.json`. Varje faktapåstående i copyn
+står ordagrant på Bäverbutikens sida (imma på insidan, trettio grader, klockan
+fyra, rastplatsen, 211/171/90 cm, flikarna i dörrkarmen, två minuter på utsidan).
+Två ställen omskrivna: fraktmeningen i lyckas-blocket (fri frakt inom Sverige,
+5–10 arbetsdagar, **30 dagars öppet köp**) och riskfritt-blocket (mallens
+"Därför kan du testa helt riskfritt." — Bäverbutiken lovar pengarna tillbaka
+inom 30 dagar, CaraShell gör det inte). Temafilerna fanns redan på "UTKAST utan
+popup 2026-08-28". Läst tillbaka som kund utan header/footer/meny. Filerna:
+`listicle/output/lagerrensning/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande/`.
+
+Regeln, som för takskyddet: en produkt i två butiker får två sidor med varsin
+produktlänk. OPS-kontots annonser pekar på CaraShell-sidan, MagiBorstens på
+Bäverbutikens — aldrig korsvis, då bokförs köpen på fel pixel.
+
+**USA-versionen på carashell.com, 2026-09-16 sent på kvällen:**
+**https://carashell.com/pages/termoskydd-husbil-211-171-cm-lagerrensning?country=US**
+— samma sida med en engelsk översättning (`--marknad US`), inte en ny sida.
+Copyn `copy.en.json` mot den engelska produktsidan: **$99 / $124** (USD ur
+carashell.com), "windshield thermal cover", 86 °F i stället för trettio grader
+(sidans egen siffra), four a.m., rest area, flaps clip into the door frame,
+90-day guarantee, free shipping to the US. Samma bilder, noll credits.
+Knapparna → `https://carashell.com/products/termoskyddet?country=US`. Läst
+tillbaka på carashell.com på engelska; carashell.se `?country=SE` svenska.
+Den svenska CaraShell-sidans filer ligger nu också på `main`-grenen härifrån
+(hämtade från `claude/dreamy-carson-rejnmn`, samma innehåll).
+
+---
+
+## Batch #2 — 2026-09-17, nattvakten `/notionscalercs carashell/termoskyddet` körning nr 1 (första briefronden) — KALLSTART
+
+**Läget vid avläsningen (Meta, last_14d, SE):** kampanjen `CARASHELL_SE_Termoskydd
+Husbil 211 × 171 cm` ACTIVE, CBO 1 000 kr/dag, 636 kr / 2 köp / ROAS 1,76 på 3 dygn
+(launch 2026-09-16 12:20). 16 annonser, **0 bedömbara** (grinden 300 kr OCH 3 köp),
+högst spend `G_2_1` 232 kr / 0 köp, `CS_2_1` 96 kr / 2 köp. Ingen feedback-loop
+— ingen annons i batch #1 har ett utfall att skriva. **Budgetronden: 0 ändringar**
+(kampanjen "för tidigt", ingen annons kill-kandidat, inget pausat, inget aktiverat).
+⚠️ Pixeln delas med takskyddet och CaraShell har inga Shopify-nycklar i rutinens
+miljö (`SHOPIFY_*_CARASHELL` saknas) — köp per produkt gick INTE att läsa ur
+Shopify. Det spelade ingen roll i natt (ingen dom fälldes), men det måste finnas
+före första domen.
+
+**Ronden:** 7 briefer (ingen redigerare ⇒ 7, inte 21). Alla ur backloggen — 2 videor
++ 5 bilder. Bilderna genererade samma natt (kie.ai, 5 st, textlager `bild-text.py`),
+tittade och godkända ⇒ `To be Reviewed` → live 14:15 via `/ops-leverans`.
+Videorna ligger i `Draft` tills en redigerare finns. Copy: A/B fable/sonnet
+(registrets `copy_modell: ab`, standard), varannan brief, via Agent-verktyget
+(Agent fanns — inte API-vägen), tre-frågorstestet i varje brief.
+
+| Annons | Typ | Vinkel | Hypotes | Isolerad variabel / förälder | Källa | copy_model |
+|---|---|---|---|---|---|---|
+| `CaraShellFront_CS_4_H1` | video | CS | Vinnarraden FÖRST, priset sedan, slår CS_2:s prisöppning på CPA | ordningen · förälder `CaraShellFront_CS_2` (ärvd CS_2 550 kr/8 köp) | winning line (dna mönster 1+4), backlog #1 | fable |
+| `CaraShellFront_CS_4_1` | bild | CS | Raden läses, inte tittas — bär som static med priskort | formatet mot CS_4_H1; rubriken mot `CS_2_1` | ärvd SP_2_1 (bild, bäst CPC), backlog #1 | sonnet |
+| `CaraShellFront_PD_4_H1` | video | PD | Imman på insidan + varför gardinen inte hjälper ⇒ första PD som passerar grinden under BE | scenen · ingen förälder (PD_1–3 är mekanik) | butikens huvudvinkel, konflikt typ A, backlog #4 — **hypotes** | fable |
+| `CaraShellFront_PD_4_1` | bild | PD | Rubriken bär konflikten själv, CTR ≥ 4 %, inget pris | formatet mot PD_4_H1 | backlog #4 + takskyddets mönster 6 | sonnet |
+| `CaraShellFront_PD_5_1` | bild | PD | Insynsscenen (rastplatsen) är mer omedelbar än imman | scenen mot PD_4_1 | "mörkt när du sover" (ärvd) + källsidans tredje scen — **gissning** | fable |
+| `CaraShellFront_G_4_1` | bild | G | Konkret morgon i present-raden slår "perfekta presenten" | rubriken · förälder `G_2_1` (7 kr, 0 köp) | backlog #6 — **gissning** | sonnet |
+| `CaraShellFront_CS_5_1` | bild | CS | Två-produktsparet lyfter CTR utan att sänka CVR | rubriken mot CS_4_1 | backlog #7 (sortimentet) — **gissning** | fable |
+
+Namn lästa ur kontot (analys-JSON) + hubben (0 rader före): CS/PD/G/SP 1–3 upptagna ⇒ 4 och 5.
+Notion: 7 rader skapade i "Termoskyddet" (`3dd270ab-908c-8018-a927-c2e551f7de8a`), url per rad i
+`factory/output/carashell/termoskyddet/bild-2026-09-17.json` + Discord-jobbet.
+
+**Bildgranskningen (sessionen, lätta checklistan):** 5 av 5 godkända. `CS_4_1` fick
+textlagret omgjort på samma foto (0 nya credits): rabattchipen "40 % under jämförpris"
+höggs av vid kanten — nu "−40 %", samma fakta. `PD_4_1`:s copy rättad från "immat"
+till "imman" (grammatik, inte omskrivning). Två små huvudsessionsval, båda inskrivna
+i respektive brief.
+
+**Två saker rutinen lärde sig, rättade i samma commit:**
+1. `factory/output/carashell/` delades av takskyddet och termoskyddet — samma
+   `budgetrond-<datum>.json`, `insights-<datum>.json`, `analys-<datum>.json`, och
+   `ops-bild --namn` läste takskyddets analysfil som termoskyddets kontonamn.
+   Ny `utmapp(post)` i `register.mjs`: andra produkten skriver i
+   `factory/output/carashell/termoskyddet/`, huvudprodukten som förut.
+2. Ingen Shopify-nyckel för CaraShell i rutinens miljö ⇒ pixelns delning kan inte
+   läsas isär. Står under Axels uppgifter.
+
+**Att läsa av 2026-09-20 (nästa briefdag):** (1) passerar någon annons grinden — då
+första riktiga feedback-loopen; (2) bild mot video inom CS (CS_4_1 mot CS_4_H1 finns
+bara om videon gjorts — utan redigerare är bildhälften det enda som får data);
+(3) A/B-ställningen fable/sonnet: 4 fable / 3 sonnet i den här ronden, 0 bedömbara.
+
+## 2026-09-17 — `/ops-leverans carashell/termoskyddet` — batch #2 live (5 bildannonser)
+
+- Kön: 5 bildrader i `To be Reviewed` (nattvaktens briefrond 16→17/9, bilder genererade
+  23:16 UTC). Alla fem gick live i `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm`
+  (`120249115376140172`, CBO 1 000 kr/dag), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_CS_5_1` — tvåproduktsraden (tak + termo), adset CS, ad `120249137080570172`
+  - `CaraShellFront_CS_4_1` — "Svalt på sommaren, varmt på vintern", 559/932/−40 %, adset CS, ad `120249137196990172`
+  - `CaraShellFront_G_4_1` — presenten "en morgon utan imma", 559/932, adset G, ad `120249137085810172`
+  - `CaraShellFront_PD_5_1` — rastplatsen, utan pris, adset PD, ad `120249137109590172`
+  - `CaraShellFront_PD_4_1` — imma trots gardinen, utan pris, adset PD, ad `120249137190450172`
+- Pris: 559 kr på varje annons med pris = butikens 559 (läst live), jämförpris 932, −40 % exakt.
+- Tillbakaläst: 3/5 ACTIVE/ACTIVE, 2 ACTIVE/IN_PROCESS (Metas granskning minuter efter uppladdning).
+- Anmärkning (ingen stopp): PD_5_1 och CS_4_1 har ett vitt band mellan foto och bottenrad —
+  fotot fyllde inte canvasen. Kosmetiskt, till nästa version av textlagret (`factory/bild-text.py`).
+- Notion: alla fem → `SE-ACTIVE to be translated`. NO-rutinen 16:15 och US-rutinen 17:15 tar dem.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550123118687944789`.
+- Meta rate limit slog till på rad 3 (30 s + 60 s väntan) — uppladdaren backade själv, inget förlorat.
+- Läsregel för utvärderingen: delad pixel med takskyddet, och CS_5_1 visar takskyddet i bild —
+  köp per produkt i Shopify före dom. Ingen dom före 300 kr / 3 köp per annons.
+
+## 2026-09-17 — `/ops-oversatt carashell/termoskyddet` (NO) — batch #2 live i Norge (5 bildannonser)
+
+- Kön: 5 bildrader i `SE-ACTIVE to be translated` (leveransrundans batch #2 samma dag). Alla
+  fem översatta till bokmål och **live** i `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm`
+  (`120249115382210172`, MagiBorsten DK), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_NO_CS_4_1` — adset CS, ad `120249139476950172`, priskort 548 / 685 kr / −20 %
+  - `CaraShellFront_NO_CS_5_1` — adset CS, ad `120249138960400172`, chip "Termotrekket 548 kr"
+  - `CaraShellFront_NO_G_4_1` — adset G, ad `120249138996830172`, 548 / 685 kr
+  - `CaraShellFront_NO_PD_4_1` — adset PD, ad `120249139126570172`, utan pris
+  - `CaraShellFront_NO_PD_5_1` — adset PD, ad `120249139118320172`, utan pris
+- Länk ärvd ur `CaraShellFront_NO_G_3`: `https://carashell.se/nb/products/termoskyddet?country=NO`.
+  Tillbakaläst ACTIVE/IN_PROCESS på alla fem (Metas granskning).
+- **Bildvägen:** basfotona fanns kvar bakom kie.ai-länkarna i
+  `factory/output/carashell/termoskyddet/bild-2026-09-17.json` (svarade 14:18 UTC) ⇒ det
+  norska textlagret ritades rent med `factory/bild-text.py` på originalfotot — samma band,
+  priskort och typsnitt som SE, ingen suddning. Skriptet: `<batch>/oversatt-no.py`.
+  Lärdom: planfilen i `factory/output/` är basfotots enda spår — committa den alltid
+  (nattvakten gjorde det i dag; takskyddets US-runda 16/9 fick suddvägen för att den saknades).
+- Pris ur `ekonomi.marknadspriser`: 548 NOK, jämförpris 685 ⇒ −20 % (inte SE:s −40 %).
+  Läst live på `/nb/products/termoskyddet?country=NO` = 548.
+- Copy: Sonnet-subagent (`textlager-no.json`, `adcopy-NO.json`, tre-frågorstestet i
+  `oversatt-output.json`). Huvudsessionen rättade tre saker: PD_4_1:s bildrubrik hade
+  kortats mot Ads Managers 40-teckensgräns (återställd till hela raden), "normalpris" →
+  "sammenligningspris", CS_5_1:s rubrik "for vinter" → "for vinteren". Johans svenska
+  recension struken ur PD_5_1:s norska copy (går inte att verifiera i Norge).
+- Notion: kommentar + `Translated url` på alla fem; **status orörd** (`flytta_till_approved`
+  falskt — US-rutinen 17:15 ska hitta dem). Kända luckan: de norska filerna ligger inte i
+  Notion-raden.
+- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping. Meta rate-limitade under
+  uppladdningen — fem annonser tog ~12 min.
+- Anmärkning: CS_4_1, PD_4_1, PD_5_1 bär samma vita band som SE-originalen (basfotot fyller
+  inte canvasen). Kosmetiskt, till nästa version av textlagret.
+- Läsregel: samma som SE — delad pixel med takskyddet, ingen dom före 300 kr / 3 köp.
+
+## 2026-09-17 — `/ops-oversatt carashell/termoskyddet --marknad US` — batch #2 live i USA (5 bildannonser)
+
+- Kön: 5 bildrader i `SE-ACTIVE to be translated` (NO klar på alla, `flytta_till_approved`
+  sant). `Approved`-kön kollad för eftersläpande rader: 0. Alla fem översatta till amerikansk
+  engelska och **live** i `CARASHELL_US_Termoskydd Husbil 211 × 171 cm` (`120251442339640435`,
+  Magiborsten UK — kampanjen **ACTIVE** sedan Axel slog på den; 16 speglade annonser låg där
+  redan), befintliga adsets, inget nytt skapat:
+  - `CaraShellFront_US_CS_4_1` — adset CS, ad `120251466053980435`, priskort $99 / $124 / −20%
+  - `CaraShellFront_US_CS_5_1` — adset CS, ad `120251465899090435`, chip "Thermal cover $99"
+  - `CaraShellFront_US_G_4_1` — adset G, ad `120251465907780435`, $99 / $124
+  - `CaraShellFront_US_PD_4_1` — adset PD, ad `120251466048000435`, utan pris
+  - `CaraShellFront_US_PD_5_1` — adset PD, ad `120251465920930435`, utan pris
+- Länk ärvd ur `CaraShellFront_US_G_3`: `https://carashell.com/products/termoskyddet` (US-domänen).
+  Tillbakaläst: 3/5 ACTIVE/ACTIVE, 2 ACTIVE/IN_PROCESS (Metas granskning).
+- **Bildvägen:** samma som NO samma dag — basfotona (kie.ai-länkarna i
+  `bas/urls.txt`, svarade 15:18 UTC) + det engelska textlagret ritat rent med
+  `factory/bild-text.py`. Skriptet `<batch>/oversatt-us.py` är NO-skriptets med US-namn och en
+  hårdare spärr (SE/NO-priser, nordiska bokstäver, `kr`, brittisk stavning). Utmapp `us/`.
+- Pris ur `ekonomi.marknadspriser`: 99 USD, jämförpris 124 ⇒ −20 % (inte SE:s −40 %). Läst live
+  på `carashell.com/products/termoskyddet?country=US` = $99 / $124. Måttet tum först på bilden
+  (83 × 67 in), cm i parentes i primärtexten. Villkorsraden ur US-sidan: "Free shipping ·
+  5–10 business days · 90-day guarantee" (90-dagarsgarantin är Axels US-undantag, inte
+  14 dagars ångerrätt). Taköverdragets US-pris $199 i CS_5_1:s primärtext.
+- Copy: Sonnet-subagent (`textlager-us.json`, `adcopy-US.json`, tre-frågorstestet i
+  `adcopy-US.json`). Huvudsessionen rättade: "at four" → "at 4 a.m." (G_4_1, PD_5_1),
+  PD_5_1:s Ads Manager-rubrik "… front outside" → "… front from outside" (39 tecken), dubbla
+  punkter efter "a.m.", och en felaktig not (SE:s −40 % var rätt för 559/932). Johans svenska
+  recension struken ur PD_5_1 (går inte att verifiera i USA). Kvarvarande ❌ i tre-frågorstestet:
+  CS_4_1:s och G_4_1:s rubriker samt PD_5_1:s öppning och rubrik faller på "ingen annan kan säga
+  det" — ärvt från SE-raderna, som spenderar; inte ändrat.
+- Notion: kommentar + `Translated url` på alla fem, **status → Approved** (NO + US bär annonsen).
+  Kända luckan: US-filerna ligger inte i Notion-raden.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550168790082392225`, ingen ping.
+  Meta rate-limitade under uppladdningen — fem annonser tog ~11 min (11:26→11:36 UTC + väntan).
+- Anmärkning: CS_4_1 och PD_5_1 bär samma vita band som SE-originalen. Kosmetiskt, till nästa
+  version av textlagret. Pillow saknades i containern (`pip install pillow`) — det installeras
+  inte av repot.
+- Läsregel: delad pixel med takskyddet, kampanjen delar konto med takskyddets US-kampanj —
+  ingen dom före 300 kr / 3 köp per annons.
+
+## 2026-09-18 — nattvakten körning nr 2 (ingen briefdag): −30 % och en paus
+
+SE last_14d: **1 694 kr / 4 köp / ROAS 1,32** på två dygn mot break-even 1,61 —
+vinst −13,6 %. Regeln "vinst < 16 % → −30 %": **CBO 1 000 → 700 kr/dag**, tillbakaläst.
+**`G_2_1` (ärvd presentbild) PAUSAD**: 721 kr, 2 köp, CPA 361 kr över BE 347 kr —
+ny annons-regeln (≥ 3 × target-CPA utan vinst). Två loggrader i `budgetlogg.jsonl`.
+Batch #2:s fem bilder live sedan 14:15: `CS_4_1` 250 kr / 0 köp, övriga < 20 kr —
+för tidigt. `CS_2_1` bär 2 av 4 köp (156 kr). ⚠️ Pixeln delad, ingen Shopify-nyckel:
+köpen gick inte att dela per produkt — ändringarna följer regelboken på pixelns tal.
+Nästa briefdag 2026-09-20.
 
 ---
 

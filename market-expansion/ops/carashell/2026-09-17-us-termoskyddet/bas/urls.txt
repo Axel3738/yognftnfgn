@@ -1,0 +1,19 @@
+jobb[0] keys: [
+  'namn',
+  'typ',
+  'hub',
+  'notion_url',
+  'page_id',
+  'prompt',
+  'bildformat',
+  'referens_bilder',
+  'referens_kalla',
+  'prompt_kalla',
+  'text',
+  'text_okanda'
+]
+CaraShellFront_CS_5_1 https://tempfile.aiquickdraw.com/a2/ba9eb863a60529b9f740b0cf7e8f66dc_1789600645182.png | kalla: "https://tempfile.aiquickdraw.com/a2/ba9eb863a60529b9f740b0cf7e8f66dc_1789600645182.png"
+CaraShellFront_G_4_1 https://tempfile.aiquickdraw.com/as/c9f3e393fad6934312372e35350d6811_1789600638502.png | kalla: "https://tempfile.aiquickdraw.com/as/c9f3e393fad6934312372e35350d6811_1789600638502.png"
+CaraShellFront_PD_5_1 https://tempfile.aiquickdraw.com/a2/218cab52f641b87aa6f85699d6bdfaa7_1789600698000.png | kalla: "https://tempfile.aiquickdraw.com/a2/218cab52f641b87aa6f85699d6bdfaa7_1789600698000.png"
+CaraShellFront_PD_4_1 https://tempfile.aiquickdraw.com/a2/3e73111005f0aab9d3e617a8ab56d54e_1789600673992.png | kalla: "https://tempfile.aiquickdraw.com/a2/3e73111005f0aab9d3e617a8ab56d54e_1789600673992.png"
+CaraShellFront_CS_4_1 https://tempfile.aiquickdraw.com/a2/dcaec2efca8ce3ef395e3ac6ac67526a_1789600700443.png | kalla: "https://tempfile.aiquickdraw.com/a2/dcaec2efca8ce3ef395e3ac6ac67526a_1789600700443.png"

@@ -1,0 +1,25 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/termoskyddet",
+  "datum": "2026-09-17",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "Termoskyddet (windshield thermal cover): 5 image ads translated to Norwegian and live in CARASHELL_NO_Termoskydd Husbil 211 × 171 cm (MagiBorsten DK), one ad set per concept, link /nb/products/termoskyddet?country=NO.",
+    "CaraShellFront_CS_4_1 → CaraShellFront_NO_CS_4_1 (ad set CARASHELL_NO_CS, ad 120249139476950172) — price card 548 kr / 685 kr / −20 %.",
+    "CaraShellFront_CS_5_1 → CaraShellFront_NO_CS_5_1 (ad set CARASHELL_NO_CS, ad 120249138960400172) — 'Termotrekket 548 kr'.",
+    "CaraShellFront_G_4_1 → CaraShellFront_NO_G_4_1 (ad set CARASHELL_NO_G, ad 120249138996830172) — 548 kr / 685 kr.",
+    "CaraShellFront_PD_4_1 → CaraShellFront_NO_PD_4_1 (ad set CARASHELL_NO_PD, ad 120249139126570172) — no price on image.",
+    "CaraShellFront_PD_5_1 → CaraShellFront_NO_PD_5_1 (ad set CARASHELL_NO_PD, ad 120249139118320172) — no price on image.",
+    "Images re-rendered on the original kie.ai photos with the Norwegian text layer (0 credits, no HeyGen — no video in the queue). Prices from ekonomi.marknadspriser (548 / 685 NOK), read live on the /nb page.",
+    "Notion: comment + Translated url on all five rows; status stays 'SE-ACTIVE to be translated' until the US run (17:15) carries them too."
+  ],
+  "varningar": [
+    "All five ads read ACTIVE / IN_PROCESS right after upload — Meta's review, normal for the first minutes.",
+    "The translated images are not attached to the Notion rows (no REST upload in this routine) — review them in Ads Manager via the Translated url.",
+    "CS_4_1, PD_4_1 and PD_5_1 carry a white band between photo and bottom line — same as the Swedish originals (the base photo did not fill the canvas). Cosmetic, for the next text-layer version."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-18"
+}

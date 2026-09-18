@@ -4,239 +4,68 @@
   "konto": "1107817401910319",
   "kontonamn": "Magiborsten UK",
   "marknad": "US",
-  "kalla": "SE-kampanjen 120249115376140172 i MagiBorsten DK 915422744950975 (inte Notion — hubben Termoskyddet har 0 rader; annonserna byggdes av /ny-annonser direkt ur Meta)",
-  "lank": "https://carashell.com/products/termoskyddet",
-  "lank_notis": "carashell.se/en/products/termoskyddet?country=US svarar 301 till carashell.com (US-marknadens domän, mätt 2026-09-16 10:30 UTC). carashell.com/products/termoskyddet.json: 99.00 / 124.00 USD.",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/termoskyddet?country=US",
   "valuta": "USD",
-  "pris_butik": {
-    "pris": 99,
-    "jamforpris": 124,
-    "valuta": "USD",
-    "titel": "Windshield Thermal Cover for Motorhome 211 × 171 cm (83 × 67 in)",
-    "kalla": "https://carashell.com/products/termoskyddet.json"
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
   },
-  "rost": "Chris - Charming, Down-to-Earth (ElevenLabs, eleven_v3, amerikansk)",
   "kampanj": {
     "id": "120251442339640435",
     "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+    "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm",
     "status": "PAUSED",
-    "daily_budget": "100000",
+    "utfall": "PAUSAD_TOM",
     "adsets": [
       {
         "id": "120251442347460435",
         "name": "CARASHELL_US_SP",
-        "status": "PAUSED",
-        "geo": [
-          "US"
-        ],
-        "pixel": "28589207184025756"
+        "status": "ACTIVE"
       },
       {
         "id": "120251442344700435",
         "name": "CARASHELL_US_PD",
-        "status": "PAUSED",
-        "geo": [
-          "US"
-        ],
-        "pixel": "28589207184025756"
+        "status": "ACTIVE"
       },
       {
         "id": "120251442342940435",
         "name": "CARASHELL_US_G",
-        "status": "PAUSED",
-        "geo": [
-          "US"
-        ],
-        "pixel": "28589207184025756"
+        "status": "ACTIVE"
       },
       {
         "id": "120251442341240435",
         "name": "CARASHELL_US_CS",
-        "status": "PAUSED",
-        "geo": [
-          "US"
-        ],
-        "pixel": "28589207184025756"
+        "status": "ACTIVE"
       }
     ]
   },
-  "rader": [
-    {
-      "namn": "CaraShellFront_CS_1",
-      "mal_namn": "CaraShellFront_US_CS_1",
-      "se_ad_id": "120249119351950172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_CS",
-      "koncept": "CS",
-      "video_id": "2832668333787204",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_CS_2",
-      "mal_namn": "CaraShellFront_US_CS_2",
-      "se_ad_id": "120249119330640172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_CS",
-      "koncept": "CS",
-      "video_id": "1627219288818536",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_CS_2_1",
-      "mal_namn": "CaraShellFront_US_CS_2_1",
-      "se_ad_id": "120249116643220172",
-      "typ": "bild",
-      "adset_se": "CARASHELL_SE_CS",
-      "koncept": "CS",
-      "video_id": null,
-      "image_hash": "69bb2c851d020a814ea9c345a1368352",
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_CS_3",
-      "mal_namn": "CaraShellFront_US_CS_3",
-      "se_ad_id": "120249119322950172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_CS",
-      "koncept": "CS",
-      "video_id": "1058887550365535",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_G_1",
-      "mal_namn": "CaraShellFront_US_G_1",
-      "se_ad_id": "120249119346640172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_G",
-      "koncept": "G",
-      "video_id": "1055541384014380",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_G_2",
-      "mal_namn": "CaraShellFront_US_G_2",
-      "se_ad_id": "120249119364050172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_G",
-      "koncept": "G",
-      "video_id": "2530288620821985",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_G_2_1",
-      "mal_namn": "CaraShellFront_US_G_2_1",
-      "se_ad_id": "120249115379090172",
-      "typ": "bild",
-      "adset_se": "CARASHELL_SE_G",
-      "koncept": "G",
-      "video_id": null,
-      "image_hash": "f25dbdf5e08d4a678f0000465711aadd",
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_G_3",
-      "mal_namn": "CaraShellFront_US_G_3",
-      "se_ad_id": "120249119367400172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_G",
-      "koncept": "G",
-      "video_id": "1626015559201522",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_PD_1",
-      "mal_namn": "CaraShellFront_US_PD_1",
-      "se_ad_id": "120249115380450172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_PD",
-      "koncept": "PD",
-      "video_id": "1425585236378151",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_PD_2",
-      "mal_namn": "CaraShellFront_US_PD_2",
-      "se_ad_id": "120249115378560172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_PD",
-      "koncept": "PD",
-      "video_id": "1832555357741127",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_PD_2_1",
-      "mal_namn": "CaraShellFront_US_PD_2_1",
-      "se_ad_id": "120249115381700172",
-      "typ": "bild",
-      "adset_se": "CARASHELL_SE_PD",
-      "koncept": "PD",
-      "video_id": null,
-      "image_hash": "d16e75453cd94270c8fc56beb5b501b4",
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_PD_3",
-      "mal_namn": "CaraShellFront_US_PD_3",
-      "se_ad_id": "120249115381170172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_PD",
-      "koncept": "PD",
-      "video_id": "1702822294775277",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_SP_1",
-      "mal_namn": "CaraShellFront_US_SP_1",
-      "se_ad_id": "120249119354860172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_SP",
-      "koncept": "SP",
-      "video_id": "2108893293037202",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_SP_2",
-      "mal_namn": "CaraShellFront_US_SP_2",
-      "se_ad_id": "120249119327750172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_SP",
-      "koncept": "SP",
-      "video_id": "1377071997926556",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_SP_2_1",
-      "mal_namn": "CaraShellFront_US_SP_2_1",
-      "se_ad_id": "120249116642180172",
-      "typ": "bild",
-      "adset_se": "CARASHELL_SE_SP",
-      "koncept": "SP",
-      "video_id": null,
-      "image_hash": "5de7cedd4eaba509b32e8c9e69fbf7ee",
-      "status_se": "ACTIVE/ACTIVE"
-    },
-    {
-      "namn": "CaraShellFront_SP_3",
-      "mal_namn": "CaraShellFront_US_SP_3",
-      "se_ad_id": "120249119358600172",
-      "typ": "video",
-      "adset_se": "CARASHELL_SE_SP",
-      "koncept": "SP",
-      "video_id": "1476738361174252",
-      "image_hash": null,
-      "status_se": "ACTIVE/ACTIVE"
-    }
+  "kampanj_skal": null,
+  "kampanjer_bort": 7,
+  "lank_arvd": "https://carashell.com/products/termoskyddet",
+  "pris_butik": {
+    "pris": 99,
+    "min": 99,
+    "max": 99,
+    "valuta": "USD",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://carashell.com/products/termoskyddet?country=US"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [
+    "kampanj: \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED utan spend (nybyggd) — annonserna laddas upp, kampanjen rörs inte; inget spenderar förrän ägaren slår på den."
   ],
-  "hamtad": "2026-09-16T10:42:09.873Z"
+  "hamtad": "2026-09-16T15:17:19.591Z"
 }

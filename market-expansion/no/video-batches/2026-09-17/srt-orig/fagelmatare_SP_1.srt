@@ -1,0 +1,31 @@
+1
+00:00:00,100 --> 00:00:03,700
+Dette er produktet alle fugleelskere snakker om akkurat nå.
+
+2
+00:00:03,900 --> 00:00:10,180
+Dette er fuglemateren med kamera og solcellepanel, og den har blitt et av våre mest populære produkter.
+
+3
+00:00:10,500 --> 00:00:14,040
+Kundene elsker å kunne se fuglene sine direkte på mobilen.
+
+4
+00:00:14,320 --> 00:00:16,000
+Nye besøkende hver dag.
+
+5
+00:00:16,320 --> 00:00:20,400
+Solcellepanelet gjør at den passer seg selv. Ingen lading, ikke noe styr.
+
+6
+00:00:20,720 --> 00:00:22,120
+Mange sier det samme.
+
+7
+00:00:22,340 --> 00:00:24,280
+Det er vanskelig å slutte å sjekke appen.
+
+8
+00:00:24,520 --> 00:00:28,320
+Vil du se hvilke fugler som faktisk besøker hagen din? Nå vet du det.

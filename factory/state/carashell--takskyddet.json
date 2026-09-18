@@ -17,7 +17,15 @@
       "klar": true,
       "andrade": [],
       "verifierade": [
-        "Default Title"
+        "5,5 × 3 m",
+        "6,5 × 3 m",
+        "7,5 × 3 m",
+        "8,5 × 3 m",
+        "9,5 × 3 m",
+        "10,5 × 3 m",
+        "11,5 × 3 m",
+        "12,5 × 3 m",
+        "13,5 × 3 m"
       ],
       "redanRatt": true
     },
@@ -66,14 +74,14 @@
           "land": "NO",
           "id": "gid://shopify/PriceList/33455505740",
           "skapad": false,
-          "varianter": 1
+          "varianter": 9
         },
         {
           "valuta": "USD",
           "land": "US",
           "id": "gid://shopify/PriceList/33459372364",
           "skapad": false,
-          "varianter": 1
+          "varianter": 9
         }
       ]
     }
@@ -81,7 +89,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T09:47:36.737Z"
+    "tid": "2026-09-17T13:43:24.356Z"
   },
-  "uppdaterad": "2026-09-16T09:47:36.737Z"
+  "uppdaterad": "2026-09-17T13:43:24.356Z"
 }

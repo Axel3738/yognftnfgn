@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-17",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 7 rows in the queue (batch #3), all 7 already live in the US campaign since yesterday's round - nothing new to upload today. Batch #2's four Approved rows are in the US campaign too. HeyGen credits used: 0.",
+    "The US campaign CARASHELL_US_Taköverdrag is now ON (switched on by the owner): 27 ads, 1 471 SEK spent, 1 purchase so far (account currency SEK). Too early for any verdict.",
+    "A copy of the US campaign exists since 22:20 Swedish time yesterday, pointing every ad to the listicle page carashell.com/pages/takoverdrag-...-lagerrensning: 27 ads, 1 118 SEK spent, 3 purchases. Same setup as the Swedish LISTICLE campaign."
+  ],
+  "varningar": [
+    "Two ACTIVE US campaigns with the same name. The tool only recognises a side-track campaign when its name contains LISTICLE (that is how the Swedish one was solved), so the next US round with new rows will stop on 'two active campaigns' until the copy is renamed.",
+    "Norway is blocked on these same 7 rows: yesterday's NO round (15:45) tried the OCR-based image translator and stopped with double-exposed text. That is not the way for text-layer images - the in-place text swap used for the US versions (market-expansion/ops/carashell/2026-09-16-us-3/oversatt-us.py, now with --marknad NO) does it cleanly, checked side by side on all 7 yesterday. The Norwegian copy and image texts from yesterday's NO round are saved and can be reused. Until NO carries the ads the rows stay in 'SE-ACTIVE to be translated' - correct per the shared-queue rule.",
+    "CaraShellRoof_GT_4_1 (batch #2) is live in Sweden and the US but never went to Norway - the NO round should pick it up from Approved."
+  ],
+  "action_axel": [
+    "Rename the copied US campaign so the tools know it is the listicle track: Ads Manager -> account Magiborsten UK -> campaign '1 CARASHELL_US_Taköverdrag ... – kopia' -> click the name -> change it to 'CARASHELL_US_Taköverdrag LISTICLE'. One click, exactly like you did for the Swedish one."
+  ],
+  "nasta_korning": "2026-09-18 17:05"
+}

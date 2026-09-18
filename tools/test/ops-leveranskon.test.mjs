@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
-  handleUr, produktJsonUrl, prisUr, leveransText, prefixAvviker, STANDARD_STATUS,
+  handleUr, produktJsonUrl, prisUr, prisUrJsonLd, leveransText, prefixAvviker, STANDARD_STATUS,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -282,4 +282,54 @@ test('tolkaNamn + hittaAdset: DryTreks tvådelade namn ger koncept PD och hittar
   const adsets = [{ id: '1', name: 'DRYTREK_SE_SP', status: 'ACTIVE' }, { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' }];
   assert.deepEqual(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - PD', 'PD'), { id: '2', name: 'DRYTREK_SE_PD', status: 'ACTIVE' });
   assert.equal(hittaAdset(adsets, 'DRYTREK_SE_Damasker Vandring - FO', 'FO'), null);
+});
+
+test('prisUrJsonLd: läser MARKNADENS pris och valuta ur produktsidan', () => {
+  // Riktig avläsning 2026-09-16 på drytrek.se/nb/products/damasker?country=NO.
+  // Basvalutans .json gav 389 — sidan visar 379 NOK. Det gamla verktyget
+  // stämplade "NOK" på 389:an och rapporterade ett pris som inte finns.
+  const html = '"price":"379.00","priceCurrency":"NOK" … "price":"633.00","priceCurrency":"NOK"';
+  assert.deepEqual(prisUrJsonLd(html, 'NOK'), { pris: 379, min: 379, max: 633, valuta: 'NOK', skal: null });
+});
+
+test('prisUrJsonLd: fel valuta eller ingen JSON-LD ger null MED skäl — aldrig ett tal', () => {
+  const html = '"price":"379.00","priceCurrency":"NOK"';
+  const fel = prisUrJsonLd(html, 'USD');
+  assert.equal(fel.pris, null);
+  assert.match(fel.skal, /prissätts i NOK, inte USD/);
+  const tom = prisUrJsonLd('<html>ingen strukturerad data</html>', 'NOK');
+  assert.equal(tom.pris, null);
+  assert.match(tom.skal, /ingen JSON-LD/);
+  assert.equal(prisUrJsonLd(null, 'NOK').pris, null);
+});
+
+test('valjMalkampanj: LISTICLE-kampanjen är eget spår — produktsidans kampanj vinner', () => {
+  // Mätt 2026-09-16 i CaraShells konto: två ACTIVE SE-kampanjer med nästan
+  // samma namn. Rundan stoppade och sju färdiga annonser blev stående.
+  // Axel: "det är inte 2 stycken samma, den ena går ju till en listicle" —
+  // kopian pekade på /pages/…-lagerrensning, originalet på produktsidan.
+  const val = valjMalkampanj([
+    { id: '120249121867590172', name: 'CARASHELL_SE_Taköverdraget LISTICLE', status: 'ACTIVE' },
+    { id: '120249050544990172', name: 'CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj?.id, '120249050544990172');
+  assert.equal(val.skal, null);
+  assert.match(val.varning, /LISTICLE/);
+});
+
+test('valjMalkampanj: bär ALLA aktiva LISTICLE sållas ingen bort — stoppet står kvar', () => {
+  // Spärren får sålla, aldrig avgöra ensam: tar den sista kampanjen blir
+  // "inget att ladda upp i" ett tyst fel i stället för ett läsbart stopp.
+  const val = valjMalkampanj([
+    { id: '1', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' },
+    { id: '2', name: 'X_SE_Produkten LISTICLE 2', status: 'ACTIVE' },
+  ], 'SE');
+  assert.equal(val.kampanj, null);
+  assert.match(val.skal, /2 ACTIVE SE-kampanjer/);
+});
+
+test('valjMalkampanj: en ensam LISTICLE-kampanj tas emot som vanligt', () => {
+  const val = valjMalkampanj([{ id: '9', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' }], 'SE');
+  assert.equal(val.kampanj?.id, '9');
+  assert.equal(val.skal, null);
 });

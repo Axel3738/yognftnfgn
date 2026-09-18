@@ -37,8 +37,11 @@ tystnar får en KORT marginal, medan en källa som tonar ut gradvis får en lån
 DryTreks FO_2_H1 och SP_6_H1 stod röda i tre dygn på exakt det — SP_6:s dubb
 slutar 49 dB under sin egen median, alltså i ren tystnad. Mätt på 14 dubbar
 plus 14 kapade kopior av dem: hela dubbar ligger på −141…0,0 dB, kapade på
-+0,8…+55 dB. Tröskeln 3 dB ger noll falsklarm på de 14 och fångar 8 av de 14
-kapningarna — resten kapades i en naturlig paus och låter inte avhuggna.
++0,8…+55 dB. Tröskeln 3 dB ger noll falsklarm på de 14. Kapas kopian MITT I ETT
+LJUD fångas 12 av 14; kapas den på en fast tidpunkt som ofta hamnar i en paus
+fångas 8 — en kapning i tystnad hörs inte och ska inte flaggas. De två som
+aldrig fångas har en KÄLLA som själv slutar på full volym och rapporteras som
+omätbara med orsak, aldrig som gröna.
 
 ⚠️ Skriptet hör inte om rösten låter TREVLIG — det hör om den är trasig.
 Grönt betyder "inga mätbara fel", inte "godkänd". Lyssna alltid på minst

@@ -1,0 +1,189 @@
+{
+  "sprak": "nb",
+  "modell": "sonnet",
+  "datum": "2026-09-17",
+  "pris_anvant": {
+    "pris": "1 106 kr",
+    "jamforpris": "1 382,50 kr",
+    "besparing": "276,50 kr",
+    "rabatt": "20 %"
+  },
+  "annonser": [
+    {
+      "namn": "CaraShellRoof_NO_PD_7_1",
+      "se_namn": "CaraShellRoof_PD_7_1",
+      "tre_fragor": [
+        {
+          "rad": "Bare taket. Én person.",
+          "visualisera": "Ja – en person som legger et overtrekk over bare taket, ikke hele kjøretøyet.",
+          "falsifiera": "Ja – det dekker enten bare taket eller ikke, og det tar enten én person eller flere.",
+          "bara_vi": "Ja – peker mot konkurrentens heldekkende presenning som krever to personer."
+        },
+        {
+          "rad": "En heldekkende presenning krever to par hender og en stige rundt hele kjøretøyet.",
+          "visualisera": "Ja – stigen, de to parene hender.",
+          "falsifiera": "Ja – sant eller usant om hva metoden konkurrentens produkt krever.",
+          "bara_vi": "Delvis – beskriver konkurrentens produkt, men setter opp kontrasten mot CaraShell."
+        },
+        {
+          "rad": "Elastiske stropper hekter under karosseriets kant.",
+          "visualisera": "Ja – stroppen, kroken, kanten.",
+          "falsifiera": "Ja – enten hekter den under kanten eller ikke.",
+          "bara_vi": "Ja – den eksakte festemekanismen er beskrevet, ikke en generell påstand."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_PD_6_1",
+      "se_namn": "CaraShellRoof_PD_6_1",
+      "tre_fragor": [
+        {
+          "rad": "Taket eller taktrekket. Ett av dem koster 1 106 kr.",
+          "visualisera": "Ja – to konkrete alternativer med hver sin kostnad.",
+          "falsifiera": "Ja – prisen på taktrekket er en fast, sjekkbar sum.",
+          "bara_vi": "Ja – bare CaraShell kan sette sin egen pris mot den andre kostnaden."
+        },
+        {
+          "rad": "Takluker, skjøter og tetninger sitter på flaten ingen ser på.",
+          "visualisera": "Ja – takluke, skjøt, tetning er konkrete deler.",
+          "falsifiera": "Ja – enten sitter de der eller ikke, det er en observasjon om kjøretøyet.",
+          "bara_vi": "Nei – konkurrenter kan si det samme om taket generelt."
+        },
+        {
+          "rad": "Regnet blir stående der til fukttesten i april.",
+          "visualisera": "Ja – vann som står, en test som skjer i april.",
+          "falsifiera": "Ja – sant eller usant at fukt oppdages først om våren.",
+          "bara_vi": "Delvis – mekanismen er generell, men kobles direkte til CaraShells pris i neste linje."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_CS_6_1",
+      "se_namn": "CaraShellRoof_CS_6_1",
+      "tre_fragor": [
+        {
+          "rad": "1 382,50 kr → 1 106 kr – spar 276,50 kr",
+          "visualisera": "Ja – to konkrete tall og differansen mellom dem.",
+          "falsifiera": "Ja – regnestykket kan sjekkes.",
+          "bara_vi": "Ja – tallene er CaraShells egne, faste priser."
+        },
+        {
+          "rad": "1 382,50 kr → 1 106 kr. Det er 276,50 kr du sparer på samme tak.",
+          "visualisera": "Ja – pilen mellom to priser.",
+          "falsifiera": "Ja – differansen er et regnestykke, ikke en påstand.",
+          "bara_vi": "Ja – de eksakte prisene tilhører CaraShell."
+        },
+        {
+          "rad": "Prisen gjelder uansett når du handler – ingen nedtelling.",
+          "visualisera": "Nei – fravær av noe (en nedtelling) er vanskeligere å visualisere enn et konkret objekt.",
+          "falsifiera": "Ja – enten står prisen fast eller den gjør ikke det.",
+          "bara_vi": "Ja – det er et bevisst brudd med falsk hast, ikke en generisk rabattpåstand."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_CS_5_1",
+      "se_namn": "CaraShellRoof_CS_5_1",
+      "tre_fragor": [
+        {
+          "rad": "Taktrekket – 20 % rabatt, 1 106 kr",
+          "visualisera": "Ja – en konkret prosent og et konkret beløp.",
+          "falsifiera": "Ja – 20 % av 1 382,50 kr er sjekkbart.",
+          "bara_vi": "Ja – tallene er CaraShells faste priser, ikke en generell rabatt."
+        },
+        {
+          "rad": "20 % rabatt på taktrekket: 1 382,50 kr blir 1 106 kr.",
+          "visualisera": "Ja – to tall og en pil.",
+          "falsifiera": "Ja – regnestykket kan sjekkes mot butikken.",
+          "bara_vi": "Ja – prisene er CaraShells egne."
+        },
+        {
+          "rad": "Stroppene hekter under karosseriets kant.",
+          "visualisera": "Ja – stroppen, kroken, kanten.",
+          "falsifiera": "Ja – enten hekter de under kanten eller ikke.",
+          "bara_vi": "Ja – den konkrete festemekanismen, ikke en generell påstand."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_SP_7_1",
+      "se_namn": "CaraShellRoof_SP_7_1",
+      "tre_fragor": [
+        {
+          "rad": "Bobil eller campingvogn – samme tak",
+          "visualisera": "Ja – to konkrete kjøretøy og samme flate.",
+          "falsifiera": "Ja – enten er taket samme problem på begge, eller ikke.",
+          "bara_vi": "Delvis – observasjonen er generell, styrkes av sitatet og målene som følger."
+        },
+        {
+          "rad": "\"Passer bra og beskytter taket mot vær.\" – Lars, ett av 16 anmeldelser.",
+          "visualisera": "Ja – et navngitt sitat fra en navngitt kunde.",
+          "falsifiera": "Ja – sitatet finnes eller finnes ikke på carashell.se.",
+          "bara_vi": "Ja – ingen konkurrent kan signere Lars sitt sitat."
+        },
+        {
+          "rad": "CaraShell dekker 6,5 × 3 m, samme duk, samme stropper under karosseriets kant.",
+          "visualisera": "Ja – konkrete mål og en konkret festemekanisme.",
+          "falsifiera": "Ja – målene er sjekkbare produktfakta.",
+          "bara_vi": "Ja – de eksakte målene er CaraShells egne."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_SP_6_1",
+      "se_namn": "CaraShellRoof_SP_6_1",
+      "tre_fragor": [
+        {
+          "rad": "16 anmeldelser – snitt 5,00 av 5",
+          "visualisera": "Ja – et konkret antall og en konkret snittkarakter.",
+          "falsifiera": "Ja – tallet kan sjekkes mot carashell.se.",
+          "bara_vi": "Ja – de 16 anmeldelsene er CaraShells egne."
+        },
+        {
+          "rad": "16 anmeldelser på carashell.se. Snitt 5,00 av 5.",
+          "visualisera": "Ja – tall og nettsted.",
+          "falsifiera": "Ja – sjekkbart mot butikken.",
+          "bara_vi": "Ja – egne anmeldelser, ikke en generell påstand om kvalitet."
+        },
+        {
+          "rad": "Flaten der takluker og skjøter står i vann hele vinteren.",
+          "visualisera": "Ja – takluke, skjøt, vann, vinter.",
+          "falsifiera": "Ja – enten står vannet der eller ikke.",
+          "bara_vi": "Nei – kan sies om ethvert kjøretøytak, styrkes av produktdetaljene rundt."
+        }
+      ]
+    },
+    {
+      "namn": "CaraShellRoof_NO_SP_5_1",
+      "se_namn": "CaraShellRoof_SP_5_1",
+      "tre_fragor": [
+        {
+          "rad": "16 anmeldelser, 5 stjerner – også i regn",
+          "visualisera": "Ja – tall, stjerner og et konkret vær.",
+          "falsifiera": "Ja – sjekkbart mot butikken og mot bildet.",
+          "bara_vi": "Ja – egne anmeldelser kombinert med et bilde tatt i regn."
+        },
+        {
+          "rad": "\"Passer bra og beskytter taket mot vær.\" – Lars, ett av 16 anmeldelser.",
+          "visualisera": "Ja – navngitt sitat fra navngitt kunde.",
+          "falsifiera": "Ja – sitatet finnes eller finnes ikke.",
+          "bara_vi": "Ja – ingen konkurrent kan signere Lars sitt sitat."
+        },
+        {
+          "rad": "Vannet blir liggende på duken, taket under er tørt.",
+          "visualisera": "Ja – vann på duken, tørt tak under.",
+          "falsifiera": "Ja – enten er taket under tørt eller ikke, det er en observasjon i bildet.",
+          "bara_vi": "Ja – knyttet direkte til bildet tatt i regn, ikke en generell værpåstand."
+        }
+      ]
+    }
+  ],
+  "anteckningar": [
+    "Pris verifisert 2026-09-17 mot carashell.se/nb/products/takskyddet?country=NO: 1 106 kr / jamforpris 1 382,50 kr / besparing 276,50 kr / rabatt 20 %. Svenske tall (1 129, 1 469, 340, 23 %) er ikke brukt noe sted.",
+    "Alle syv annonsene er PD/CS/SP – ingen GT i denne runden, så navnekollisjonen 'GT vs G' i dna.md gjelder ikke her.",
+    "Lars-sitatet er beholdt med samme navn (ikke byttet til Johan) etter oppdragets instruks, oversatt uten å endre meningsinnhold.",
+    "Terminologi fulgt: campingvogn, bobil, taktrekk, takluke, skjøt, tetning, duk, stropper med plasthaker, angrerett, 'helpresenning' -> 'heldekkende presenning'.",
+    "Ingen falsk hast lagt til – 'ingen nedtelling' i CS_6_1 er en bevisst kontrast, ikke en ny tidsfrist.",
+    "Bildtekstenes radantall er identisk med de svenske versjonene; radlengdene ligger innenfor cirka ±15 % siden norsk og svensk har nesten samme ordlengde her."
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "CaraShellFront_US_CS_5_1": {
+    "page_id": "3dd270ab-908c-8146-b829-ed41b49a42cb",
+    "koncept": "CS",
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/termoskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251442339640435",
+        "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+        "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"
+      },
+      "adset": {
+        "id": "120251442341240435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251465899090435",
+        "namn": "CaraShellFront_US_CS_5_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "2026397808139093",
+      "media": {
+        "typ": "bild",
+        "hash": "1445f05961949c88ed0b4926bbc2c995"
+      },
+      "lank": "https://carashell.com/products/termoskyddet",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellFront_US_G_4_1": {
+    "page_id": "3dd270ab-908c-815c-9316-dc9e95df7528",
+    "koncept": "G",
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/termoskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251442339640435",
+        "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+        "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"
+      },
+      "adset": {
+        "id": "120251442342940435",
+        "namn": "CARASHELL_US_G",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251465907780435",
+        "namn": "CaraShellFront_US_G_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1773078987095560",
+      "media": {
+        "typ": "bild",
+        "hash": "63935b4cff994d904b8175f07e52626d"
+      },
+      "lank": "https://carashell.com/products/termoskyddet",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellFront_US_PD_5_1": {
+    "page_id": "3dd270ab-908c-811b-9b0d-d59227ab15cc",
+    "koncept": "PD",
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/termoskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251442339640435",
+        "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+        "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"
+      },
+      "adset": {
+        "id": "120251442344700435",
+        "namn": "CARASHELL_US_PD",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251465920930435",
+        "namn": "CaraShellFront_US_PD_5_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1790396475712632",
+      "media": {
+        "typ": "bild",
+        "hash": "098bc265e5d2a8f2ea23efd3807f903e"
+      },
+      "lank": "https://carashell.com/products/termoskyddet",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellFront_US_PD_4_1": {
+    "page_id": "3dd270ab-908c-81b3-b7b4-e9337c6db203",
+    "koncept": "PD",
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/termoskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251442339640435",
+        "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+        "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"
+      },
+      "adset": {
+        "id": "120251442344700435",
+        "namn": "CARASHELL_US_PD",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251466048000435",
+        "namn": "CaraShellFront_US_PD_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1527370195823346",
+      "media": {
+        "typ": "bild",
+        "hash": "b293f3bd5f379b2246f078d611c5e24f"
+      },
+      "lank": "https://carashell.com/products/termoskyddet",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellFront_US_CS_4_1": {
+    "page_id": "3dd270ab-908c-8151-b6fd-f0b448caf80e",
+    "koncept": "CS",
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/termoskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251442339640435",
+        "namn": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+        "bas": "CARASHELL_US_Termoskydd Husbil 211 × 171 cm"
+      },
+      "adset": {
+        "id": "120251442341240435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251466053980435",
+        "namn": "CaraShellFront_US_CS_4_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1089928993963877",
+      "media": {
+        "typ": "bild",
+        "hash": "91c2b69b91626159d39ce527bf93e7bf"
+      },
+      "lank": "https://carashell.com/products/termoskyddet",
+      "dsa": null,
+      "torr": false
+    }
+  }
+}

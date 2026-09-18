@@ -1,0 +1,56 @@
+{
+  "hamtat": "2026-09-16T19:41:54.499Z",
+  "koncept": "lagerrensning",
+  "kommando": "/lagerrensning",
+  "punkter": 5,
+  "produkt": {
+    "titel": "Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan",
+    "kortTitel": "Taköverdrag Husvagn 6,5 × 3 m",
+    "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+    "url": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+    "typ": "",
+    "pris": 1129,
+    "jamforpris": 1469,
+    "prisText": "1 129 kr",
+    "jamforprisText": "1 469 kr",
+    "flerPriser": null,
+    "alternativ": [
+      {
+        "namn": "Title",
+        "varden": [
+          "Default Title"
+        ]
+      }
+    ],
+    "antalVarianter": 1,
+    "bilder": [
+      {
+        "index": 1,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "index": 2,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-van.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 3,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-hopvikt.jpg",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "index": 4,
+        "src": "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/tak-spanne.jpg",
+        "width": 1200,
+        "height": 1200
+      }
+    ],
+    "beskrivning": "Taket är det du aldrig ser – och det som kostar mest att laga\nRegnet, löven och fågelskiten hamnar på taket, och det är precis den ytan du inte går upp och kollar. Vattnet står kvar kring takluckor och skarvar hela vintern, tätmassan mjuknar, och när fukten väl tagit sig in genom taket är det inte en tvätt som krävs utan en reparation.\nTäck bara taket – inte hela vagnen\nEtt helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern. Det här täcker den yta som faktiskt tar stryk. Det spänns med rem och dragsko, sitter tight i blåst och går att få på plats utan att någon behöver hålla i andra änden.\nFunktioner\nVattnet blir aldrig stående kring takluckorna – täcker hela takytan, 6,5 × 3 m\nSitter kvar när det blåser – spänns fast med rem och dragsko i kanten\nHanteras av en person – bara taket, inte hela vagnen att kämpa med ensam\nTål en hel vintersäsong ute – 210D-väv, inte tunn presenning som spricker i frost\nRyms i förvaringspåsen som följer med – tar ingen plats i förtältslådan\nVår garanti\n30 dagars öppet köp – gillar du det inte får du pengarna tillbaka. Smidig leverans och trygg betalning med Klarna. 🦫"
+  },
+  "dna": null,
+  "sidhandle": "takoverdrag-husvagn-6-5-3-m-lagerrensning"
+}

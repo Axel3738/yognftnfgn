@@ -1,0 +1,24 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-18",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the LISTICLE campaign goes 1 000 → 1 200 kr/day (fast track: 3-day profit 30 %, ROAS 3.19). It is now above the data gate with 1 416 kr and 4 purchases, and it is outperforming the main campaign on ROAS — 3.19 against 2.38",
+    "Main campaign CARASHELL_SE_Taköverdraget holds at 3 400 kr/day: 3-day profit 19.3 % is inside the 16–25 % hold band. Third night in a row the rules chose to hold, which is what should happen while the raises settle",
+    "Nothing paused, nothing activated, no ad killed. CS_1_H1 (1 899 kr, 5 purchases, CPA 380 kr) and SP_2_1 (1 260 kr, 5 purchases, CPA 252 kr) both clear the gate as winners",
+    "Correction, my own mistake: I ran the budget round twice tonight and the LISTICLE budget went 1 000 → 1 200 → 1 400. The fast track allows ONE +20 % step per night, so I set it back to 1 200 kr, read it back from Meta and logged the correction. The campaign's status was never touched",
+    "Product check: the store title is now \"Taköverdrag Husvagn & Husbil 5,5–13,5 m\" — those are the caravan lengths it fits. The description still says the cover itself is 6,5 × 3 m, so every live ad saying 6,5 × 3 m is still correct. Nothing to change",
+    "No brief day (Friday). Next brief day: Sunday 2026-09-20"
+  ],
+  "siffror": { "spend_7d": 15429, "kop_7d": 38, "roas_7d": 2.83, "vinstbidrag_7d": 9621 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-19",
+  "varningar": [
+    "Profit on the main campaign keeps easing as the budget works: 29 % → 23.2 % → 19.3 % over three nights. Still inside the hold band, but one more step down and the rules cut the budget 30 %. Worth watching rather than acting on",
+    "Still no editor assigned to CaraShell. Batch #2's three video briefs have been in Draft since 14 September"
+  ]
+}

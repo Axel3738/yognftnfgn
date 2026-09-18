@@ -1,6 +1,22 @@
 # Creative DNA — CaraShell (termoskyddet)
 
 Skapad 2026-09-16 av `/ops-produkt carashell` (körning nr 0 — bygget, ingen briefrond).
+**Senast uppdaterad 2026-09-17 av nattvakten, körning nr 1 (första briefronden — KALLSTART).**
+Egen data: 636 kr / 2 köp / ROAS 1,76 på 3 dygn, **0 bedömbara annonser** — inga
+mönster ur egen data än; allt nedan är fortfarande ÄRVT. Batch #2 (7 briefer) i
+`batch-log.md`. Nästa avläsning 2026-09-20.
+
+⚠️ **Utmappen är `factory/output/carashell/termoskyddet/`** (sedan 2026-09-17,
+`utmapp()` i `factory/register.mjs`) — inte `factory/output/carashell/`, som är
+takskyddets. Innan delningen läste `ops-bild --namn` takskyddets analysfil som
+termoskyddets kontonamn, och båda nattvakterna skrev samma `budgetrond-<datum>.json`.
+
+⚠️ **Shopify-nyckel för CaraShell saknas i rutinens miljö** (mätt 2026-09-17:
+inget `SHOPIFY_*_CARASHELL`). Pixelvarningen nedan går därför inte att lösa i
+rutinen förrän nyckeln finns — ingen dom fälls här innan dess.
+
+**A/B fable/sonnet (ställning):** batch #2 = 4 fable / 3 sonnet, 0 bedömbara.
+Avgörs automatiskt när båda har ≥ 5 bedömbara annonser (regel i `/notionscalercs` steg 6).
 Butiks-id `carashell`, nyckel `carashell/termoskyddet`, brand **CaraShell**, carashell.se/products/termoskyddet.
 Annonskonto: **MagiBorsten DK `915422744950975`** (det delade OPS-kontot). Prefix **`CaraShellFront`**.
 Systerprodukt: `carashell/takskyddet` (`CaraShellRoof`) — se `products/carashell/README.md`.
@@ -142,7 +158,17 @@ target-ROAS 2,70 · target-CPA 207 kr**, räknat **UTAN moms**
 
 ---
 
-## Nuläget i CaraShells eget konto (2026-09-16)
+## Nuläget i CaraShells eget konto (2026-09-17, nattvakten körning nr 1)
+
+Båda kampanjerna **ACTIVE sedan 2026-09-16** (Axels "Launch" 12:20 SE / 12:50 NO).
+SE last_14d: 636 kr, 2 köp, ROAS 1,76 — grinden ej passerad av någon annons.
+Spend per adset i CBO:n: G-bilden `G_2_1` tog 232 kr (37 %) utan köp, `CS_2_1`
+96 kr med båda köpen; PD_1–3 sammanlagt 45 kr — mönster 2 (CBO-svälten) är
+redan synligt efter tre dygn, så PD är fortfarande odömd. Budgetronden gjorde
+0 ändringar. Batch #2: 5 bilder till `To be Reviewed` (live 14:15), 2 videor i
+`Draft` utan redigerare.
+
+## Nuläget vid bygget (2026-09-16)
 
 `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16`
 (`120249115376140172`) — **PAUSED**, **CBO 1 000 kr/dag** (den låsta strukturen,
@@ -167,4 +193,5 @@ byggt på hook-raden i mönster 4, inte på "prisfall".
 | Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |
 |---|---|---|---|---|---|---|
 | 2026-09-16 | NO | nb | NOK (fast pris, satt av ops-produkt-sessionen) | 548 NOK / jämförpris 685 | 5–10 virkedager | NO-kampanj PAUSED tills Axel skriver "Launch" |
-| 2026-09-16 | **US** | en | **USD, fast pris** — mätt som amerikansk kund 07:20: **$99.00**, jämförpris $124.00, paket $168.30 / $237.60. (Före raden, 07:05: Shopifys egen omräkning $59.00 / $98.00.) | **99 USD / jämförpris 124** — Axels beslut 2026-09-16 ("OK TERMOSKYDDET SKA KOSTA 99 DOLLAR"), svar på `/ny-marknad`-rapportens fråga (alternativen: 59 = kursen, 99 = samma påslag som takskyddet 1,72×). Jämförpriset 25 % över, som NOK och takskyddet | 5–10 business days | `/en/products/termoskyddet` svarar 200 som amerikansk kund, 0 svenska markörer, `prislista` ✅ (samma prislista `PriceList/33459372364` som takskyddet). Sales tax AV, Shopify Payments USD och frakten till USA bekräftade av Axel 2026-09-16 (samma som takskyddet); recensionerna översätts av Judge.me (Awesome, påslaget 2026-09-16, upp till 48 h — PROCESS.md punkt 12). **US-kampanjen `CARASHELL_US_Termoskydd Husbil 211 × 171 cm` (`120251442339640435`, Magiborsten UK `1107817401910319`) fylld 2026-09-16 med alla 16 SE-annonser på amerikansk engelska** — Axels order samma dag ("fixa alla till engelska och lägg in dom i den amerikanska kampanjen, i Magiborsten UK"). `annonsmarknader` är nu `NO,US`. Kampanjen står **PAUSED** tills Axel slår på den; annonserna ACTIVE inuti. Länken är **carashell.com/products/termoskyddet** (USA-marknadens egen domän — `.se/en/…?country=US` svarar 301 dit). Röst: ElevenLabs "Chris - Charming, Down-to-Earth". Hela rundan: `products/carashell/termoskyddet/batch-log.md` → "USA-runda 2026-09-16" och `factory/FAS2.md` |
+| 2026-09-16 | **US** | en | **USD, fast pris** — mätt som amerikansk kund 07:20: **$99.00**, jämförpris $124.00, paket $168.30 / $237.60. (Före raden, 07:05: Shopifys egen omräkning $59.00 / $98.00.) | **99 USD / jämförpris 124** — Axels beslut 2026-09-16 ("OK TERMOSKYDDET SKA KOSTA 99 DOLLAR"), svar på `/ny-marknad`-rapportens fråga (alternativen: 59 = kursen, 99 = samma påslag som takskyddet 1,72×). Jämförpriset 25 % över, som NOK och takskyddet | 5–10 business days | `/en/products/termoskyddet` svarar 200 som amerikansk kund, 0 svenska markörer, `prislista` ✅ (samma prislista `PriceList/33459372364` som takskyddet). Sales tax AV, Shopify Payments USD och frakten till USA bekräftade av Axel 2026-09-16 (samma som takskyddet); recensionerna översätts av Judge.me (Awesome, påslaget 2026-09-16, upp till 48 h — PROCESS.md punkt 12). ✅ Verifierat 2026-09-17 ~09:30 UTC på `carashell.com/products/termoskyddet` i headless Chrome från amerikansk IP: "Customer Reviews · 20 reviews · Write a review", texterna på engelska ("Practical protection from the sun and heat.") med "Show original (Swedish)" och en rad "Show original (Norwegian)". US-kampanj `120251442339640435` (`CARASHELL_US_Termoskydd Husbil 211 × 171 cm`) byggd 2026-09-16 eftermiddag av `/ops-oversatt … --marknad US`-körningen — PAUSED, CBO 1 000 kr/dag, adsets CS/G/PD/SP, 0 annonser; `annonsmarknader` NO,US. Ingen US-rutin (byggs på claude5 med `/notionscalercs setup carashell/termoskyddet`). USA-sidan sedan samma eftermiddag på **carashell.com** ($99.00, 90-dagars garanti, hello@carashell.com) |
+| 2026-09-17 | **GB, CA, AU, NZ** (i USA-marknaden) | en | **Lokala valutor, omräknade från de fasta USD-priserna** — mätt som kund per land 13:30 UTC: **£76 / C$142 / A$143 / NZ$177** | Inget eget pris: Shopifys omräkning av 99 USD (se takskyddets rad) | 5–10 business days (delad en-rad) | Samma block som takskyddet (PROCESS.md punkt 22). 🖐 UK: £76 ligger under £135-gränsen ⇒ brittisk moms ska tas i kassan och kräver UK-momsregistrering (gov.uk 2026-09-17) — ägarens beslut innan termoskyddet säljs till UK. Frakt, engelska och garanti som takskyddet |

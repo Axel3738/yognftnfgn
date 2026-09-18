@@ -1,0 +1,78 @@
+[
+ {
+  "box": [
+   33,
+   175,
+   1047,
+   405
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "5,0 av 5 på 10 anmeldelser"
+ },
+ {
+  "box": [
+   33,
+   412,
+   1047,
+   512
+  ],
+  "rader": 1,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Dekk bare taket – ikke hele vogna"
+ },
+ {
+  "box": [
+   215,
+   1084,
+   875,
+   1136
+  ],
+  "storlek": 26,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "alfa": 130,
+  "radie": 14,
+  "text": "1 189 kr i stedet for 1 549 kr – spar 360 kr"
+ },
+ {
+  "box": [
+   293,
+   1201,
+   788,
+   1308
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Dekk taket – 1 189 kr"
+ }
+]

@@ -1,0 +1,18 @@
+{
+  "sprak": "en",
+  "marknad": "US",
+  "pris": {
+    "pris": 99,
+    "jamforpris": 124,
+    "rabatt": "−20%",
+    "valuta": "USD"
+  },
+  "bilder": {
+    "CaraShellFront_CS_4_1": { "mal_namn": "CaraShellFront_US_CS_4_1", "rader_se": 6, "rader_us": 6 },
+    "CaraShellFront_CS_5_1": { "mal_namn": "CaraShellFront_US_CS_5_1", "rader_se": 4, "rader_us": 4 },
+    "CaraShellFront_G_4_1": { "mal_namn": "CaraShellFront_US_G_4_1", "rader_se": 5, "rader_us": 5 },
+    "CaraShellFront_PD_4_1": { "mal_namn": "CaraShellFront_US_PD_4_1", "rader_se": 3, "rader_us": 3 },
+    "CaraShellFront_PD_5_1": { "mal_namn": "CaraShellFront_US_PD_5_1", "rader_se": 3, "rader_us": 3 }
+  },
+  "notering": "Prices converted to the verified US numbers ($99 / $124, −20% — the Swedish −40% did not hold at the US price pair). Size 211 × 171 cm given as inches first on-image (83 × 67 in), with cm kept in parentheses in primary text only. 'Ställplatsen'/'rastplatsen' translated as 'the rest area'; 'kupén' as 'the cab'; 'imma' as 'condensation'. The Swedish 14-day right-of-withdrawal line was replaced everywhere with the US page's 90-day guarantee, and every 'Sverige/Norge' and 'ord.' reference was dropped in favor of 'was $124' / 'compare at $124'. The Johan customer quote in PD_5_1 was dropped since it cannot be verified for the US market. All five on-image text layers keep the exact element type and order of se-texter.json for their ad."
+}

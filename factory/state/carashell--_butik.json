@@ -40,6 +40,12 @@
         "sections/opf-garanti.liquid",
         "sections/opf-faq.liquid",
         "assets/ms-paket.js",
+        "snippets/ms-paket.liquid",
+        "assets/ms-paket.css",
+        "snippets/ms-landtext.liquid",
+        "snippets/ms-trust-row.liquid",
+        "sections/ms-marquee.liquid",
+        "sections/announcement-bar.liquid",
         "sections/header-group.json",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
@@ -167,23 +173,46 @@
           "locale": "en",
           "marknad": "USA",
           "status": "ACTIVE",
-          "localeSkapad": true
+          "localeSkapad": false,
+          "lander": {
+            "onskade": [
+              "GB",
+              "CA",
+              "AU",
+              "NZ"
+            ],
+            "tillagda": [],
+            "redan": [
+              "GB",
+              "CA",
+              "AU",
+              "NZ"
+            ],
+            "torr": []
+          },
+          "lokalaValutor": {
+            "pa": true,
+            "redan": true,
+            "bas": "USD",
+            "torr": false
+          }
         }
       ]
     },
     "oversatt": {
-      "klar": true,
-      "underlag": 151,
+      "klar": false,
+      "manuell": "nb: 4 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html — komplettera oversattning-nb.json och kör --igen oversatt · en: 4 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html — komplettera oversattning-en.json och kör --igen oversatt",
+      "underlag": 158,
       "utfall": {
         "nb": {
-          "registrerade": 2,
-          "saknade": 0,
+          "registrerade": 0,
+          "saknade": 4,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 1,
-            "menylänk": 1,
+            "sida": 0,
+            "menylänk": 0,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
@@ -191,25 +220,25 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4342/4373"
+          "granskning": "4372/4416"
         },
         "en": {
-          "registrerade": 5,
-          "saknade": 0,
+          "registrerade": 3,
+          "saknade": 4,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
             "metafält": 0,
-            "sida": 2,
-            "menylänk": 1,
+            "sida": 0,
+            "menylänk": 0,
             "paket": 0,
             "policy": 0,
             "kollektion": 0,
-            "temamall": 1,
+            "temamall": 2,
             "sektionsgrupp": 1,
             "temainställning": 0
           },
-          "granskning": "4349/4373"
+          "granskning": "4392/4416"
         }
       }
     },
@@ -240,7 +269,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-16T09:47:24.470Z"
+    "tid": "2026-09-17T13:43:12.615Z"
   },
-  "uppdaterad": "2026-09-16T09:47:24.470Z"
+  "uppdaterad": "2026-09-17T13:43:12.615Z"
 }

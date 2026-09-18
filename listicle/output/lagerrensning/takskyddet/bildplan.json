@@ -1,0 +1,31 @@
+{
+  "_kommentar": "Bildplan för taköverdragets lagerrensningssida, 2026-09-16. Produktsidan har fyra bilder: 1 = husbil med överdraget snett framifrån (vit bakgrund), 2 = samma husbil från andra hållet (vit bakgrund), 3 = hopvikt överdrag med detaljcirklar (väv, spännband), 4 = spännbandets plastkrokar på rosa tyg. Ingen av dem bär text, pris eller människor. Scenbilderna för punkt 1–4 (taket som fått stå, höstsopningen, fuktskadan inifrån, uppställningsplatsen) finns inte bland produktbilderna och genereras utan produkt och utan människor — produkten visas i produktbilderna 1 och 2 (punkt 5 och lyckas).",
+  "bilder": {
+    "punkt1": {
+      "kalla": "kie",
+      "prompt": "The roof of a white caravan seen from ladder height at a slight angle, late autumn: wet brown leaves gathered around the raised roof skylight hatch and a shallow puddle of rainwater standing along the sealed seam beside it, overcast grey Nordic sky, gravel storage lot blurred below, photo-realistic, natural muted colours, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt2": {
+      "kalla": "kie",
+      "prompt": "A plain white caravan seen from the side, parked on a gravel winter storage lot, a soft push broom and a plastic bucket standing on the ground beside it, a small pile of swept leaves next to the wheel, light autumn rain beginning to fall, wet ground, overcast Nordic daylight, photo-realistic, completely unbranded caravan body with no badges, no lettering, no stickers and no decals, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt3": {
+      "kalla": "kie",
+      "prompt": "Interior ceiling of a caravan seen from below, close to the frame of the roof skylight hatch: a brown water stain spreading across the light ceiling panel from one corner of the hatch, the panel slightly swollen and discoloured, soft daylight from a side window, photo-realistic, no people, no hands, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt4": {
+      "kalla": "kie",
+      "prompt": "A row of caravans and motorhomes parked side by side on a large gravel winter storage lot, thin frost on their roofs, low winter sun, bare birch trees and a wooden fence in the background, Swedish countryside, photo-realistic, no people, no text, no logos",
+      "referenser": [],
+      "format": "1:1"
+    },
+    "punkt5": { "kalla": "produkt", "index": 1 },
+    "lyckas": { "kalla": "produkt", "index": 2 }
+  }
+}

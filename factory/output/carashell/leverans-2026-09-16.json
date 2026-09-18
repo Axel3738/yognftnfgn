@@ -1,0 +1,69 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/termoskyddet",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.se/products/termoskyddet",
+  "valuta": "SEK",
+  "heygen_sprak": null,
+  "sprak": "svenska",
+  "locale": null,
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
+  },
+  "kampanj": {
+    "id": "120249115376140172",
+    "namn": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16",
+    "bas": "CARASHELL_SE_Termoskydd Husbil 211 × 171 cm",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249116640130172",
+        "name": "CARASHELL_SE_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249116639170172",
+        "name": "CARASHELL_SE_CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115377210172",
+        "name": "CARASHELL_SE_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249115376820172",
+        "name": "CARASHELL_SE_G",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 19,
+  "lank_arvd": "https://carashell.se/products/termoskyddet",
+  "pris_butik": {
+    "pris": 559,
+    "min": 559,
+    "max": 559,
+    "jamforpris": 932,
+    "valuta": "SEK",
+    "titel": "Termoskydd Husbil 211 × 171 cm",
+    "handle": "termoskyddet",
+    "kalla": "https://carashell.se/products/termoskyddet.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [],
+  "hamtad": "2026-09-16T12:18:18.788Z"
+}

@@ -252,7 +252,7 @@ if (!dry && ok > 0) {
   const kalladatum = new Set(
     rader.map((r) => String(r.review_date ?? '').trim().slice(0, 10)).filter(Boolean),
   );
-  let importdag = 0, lasta = 0;
+  let importdag = 0, lasta = 0, spam = 0, synliga = 0;
   for (let sida = 1; sida <= 50; sida++) {
     const svar = await judgemeGet('/reviews', { per_page: '100', page: String(sida) });
     if (!svar.ok) break;
@@ -262,8 +262,27 @@ if (!dry && ok > 0) {
       if (Number(r.product_external_id) !== Number(productId)) continue;
       lasta++;
       if (String(r.created_at ?? '').slice(0, 10) === idag && !kalladatum.has(idag)) importdag++;
+      if (r.curated === 'spam') spam++;
+      if (r.published && !r.hidden) synliga++;
     }
   }
+
+  // Spamvakt (uppmätt 2026-09-17 på beverbutikken.no): Judge.mes egna spamfilter
+  // tog HELA föregående dags import — tio rader, alla curated=spam och
+  // published=false, alltså osynliga i kundvyn. POST svarade 201 på varje,
+  // så inget i körningen såg fel ut. Och eftersom dubblettspärren räknar just
+  // synliga rader hade nästa natt importerat om dem i all evighet.
+  // Antalet spam-märkta steg dessutom dag för dag (1 → 5 → 14), så det här
+  // är inget engångsfall. PUT {published:true, hidden:false, curated:'ok'}
+  // fungerar och ÄNDRAR på riktigt — till skillnad från created_at-fallet nedan.
+  if (spam > 0) {
+    console.error(`⚠️ SPAMFILTRET TOG ${spam} av ${lasta} recensioner på produkten — de är OSYNLIGA i kundvyn.`);
+    console.error(`Synliga just nu: ${synliga}. Judge.mes POST svarar 201 ändå, så körningen såg lyckad ut.`);
+    console.error('Rätta med PUT /reviews/<id> {"published":true,"hidden":false,"curated":"ok"} per rad,');
+    console.error('och läs tillbaka efteråt. Dubblettspärren räknar synliga rader — lämnas de spam-märkta');
+    console.error('importerar nästa körning om dem, natt efter natt.');
+  }
+
   if (importdag > 0) {
     console.error(`⚠️ DATUMEN TOG INTE: ${importdag} av ${lasta} recensioner står som ${idag} i stället för källans datum.`);
     console.error('Judge.me:s API skriver inte created_at. I kundvyn står det "nyss" på allihop.');

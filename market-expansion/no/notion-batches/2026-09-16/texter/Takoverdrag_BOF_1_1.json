@@ -1,0 +1,65 @@
+[
+ {
+  "box": [
+   33,
+   40,
+   1047,
+   175
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "1 549 kr → 1 189 kr"
+ },
+ {
+  "box": [
+   33,
+   175,
+   1047,
+   285
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Dekker taket – ikke hele vogna"
+ },
+ {
+  "box": [
+   240,
+   1088,
+   840,
+   1132
+  ],
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "210D-vev – tåler en hel vintersesong ute"
+ },
+ {
+  "form": 4,
+  "text": "Bestill nå – spar 360 kr",
+  "rad": 0,
+  "se": "Beställ nu – spara 340 kr",
+  "vanster": false
+ }
+]

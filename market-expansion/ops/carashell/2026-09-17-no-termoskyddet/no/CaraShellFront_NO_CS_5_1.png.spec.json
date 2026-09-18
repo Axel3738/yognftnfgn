@@ -1,0 +1,29 @@
+{
+  "farger": {
+    "mork": "#22282E",
+    "accent": "#1F6F8E",
+    "text": "#1B2026",
+    "yta": "#F1F2EF",
+    "accent_text": "#FFFFFF",
+    "text_pa_mork": "#F1F2EF",
+    "dampad": "#B3B8B0"
+  },
+  "element": [
+    {
+      "typ": "rubrik",
+      "text": "Taktrekket for vinteren. Termotrekket for reisen."
+    },
+    {
+      "typ": "underrad",
+      "text": "Termotrekket sitter utenpå frontruten og begge sideruter foran, 211 × 171 cm. Glasset blir aldri kaldt innvendig – ingen dugg om morgenen."
+    },
+    {
+      "typ": "pris",
+      "text": "Termotrekket 548 kr"
+    },
+    {
+      "typ": "botten",
+      "text": "Fri frakt · 5–10 virkedager · 14 dagers angrerett"
+    }
+  ]
+}

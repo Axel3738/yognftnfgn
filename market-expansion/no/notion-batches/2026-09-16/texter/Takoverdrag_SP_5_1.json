@@ -1,0 +1,110 @@
+[
+ {
+  "box": [
+   33,
+   175,
+   1047,
+   285
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fet": true,
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "5,0 av 5 – 10 anmeldelser"
+ },
+ {
+  "box": [
+   100,
+   322,
+   1047,
+   418
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "text": "Vannet blir aldri stående ved takluken – dekker hele takflaten, 6,5 × 3 m"
+ },
+ {
+  "box": [
+   100,
+   424,
+   1047,
+   524
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "text": "Sitter fast når det blåser – strammes fast med stropp og strammer i kanten"
+ },
+ {
+  "box": [
+   100,
+   530,
+   1047,
+   634
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   26,
+   26,
+   26
+  ],
+  "vanster_x": 103,
+  "text": "Tåler en hel vintersesong ute – 210D-vev, ikke tynn presenning som sprekker i frost"
+ },
+ {
+  "box": [
+   350,
+   1084,
+   730,
+   1136
+  ],
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "fyll": "mork",
+  "alfa": 130,
+  "radie": 14,
+  "text": "1 189 kr – spar 360 kr"
+ },
+ {
+  "box": [
+   250,
+   1201,
+   831,
+   1308
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Beskytt taket for 1 189 kr"
+ }
+]

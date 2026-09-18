@@ -616,6 +616,26 @@ export function prefixEllerSkal(post) {
 }
 
 /** Hela bilden av en post: register + butikskonfig + produktfil + ekonomi. */
+/**
+ * Utmappen under factory/output/ för en post. Enproduktsbutiker och butikens
+ * huvudprodukt skriver som förut i factory/output/<butik>/ (historiken ligger
+ * där); en ANDRA produkt i samma butik får factory/output/<butik>/<produkt>/.
+ * ⚠️ Mätt 2026-09-17 (nattvakten carashell/termoskyddet): utan den här delningen
+ * skrev takskyddet och termoskyddet samma budgetrond-<datum>.json,
+ * insights-<datum>.json och analys-<datum>.json — och `ops-bild --namn` läste
+ * takskyddets analysfil som termoskyddets kontonamn.
+ */
+export function utmapp(post, rot = ROT) {
+  const butik = post?.butik || String(post?.nyckel ?? '').split('/')[0];
+  if (!butik) throw new Error('utmapp: posten saknar butik och nyckel');
+  const bas = join(rot, 'factory', 'output', butik);
+  // Bara en post som BEVISLIGEN är en andra produkt får egen mapp: fältet
+  // enprodukt måste vara exakt false, id måste finnas och den får inte vara
+  // huvudprodukten. Saknas fälten (gamla poster, testfixturer) ⇒ butikens mapp.
+  const andraProdukt = post?.enprodukt === false && !post?.huvudprodukt && post?.id && butik !== 'baverbutiken';
+  return andraProdukt ? join(bas, post.id) : bas;
+}
+
 export function laddaButik(nyckel, register = lasRegister()) {
   const post = hittaPost(nyckel, register);
   // Kontospärren körs vid VARJE uppslagning, inte bara före ett Meta-anrop.

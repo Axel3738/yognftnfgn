@@ -1,26 +1,22 @@
 {
   "brand": "CaraShell",
-  "butik": "carashell",
+  "butik": "carashell/termoskyddet",
   "datum": "2026-09-16",
   "lage": "oversatt",
   "marknad": "US",
-  "server": "CaraShell",
   "kanal": "annons-uppladdning",
   "gjort": [
-    "Thermal cover, first US round: all 16 of 16 Swedish ads (12 videos + 4 images) translated to American English and uploaded to CARASHELL_US_Termoskydd Husbil 211 × 171 cm in Magiborsten UK (act 1107817401910319) - CARASHELL_US_CS: 4, CARASHELL_US_G: 4, CARASHELL_US_PD: 4, CARASHELL_US_SP: 4.",
-    "Videos: re-voiced with ElevenLabs (American voice \"Chris\"), video re-timed to the English lines, English captions burned in the same band, Swedish captions covered. Voice check green on 12 of 12, brand name and the name Per verified by speech-to-text on every video.",
-    "Images: source text removed with kie.ai (3 clean base photos), English text layer with the verified US figures: $99 (was $124, -20%), free shipping, 14-day returns. No Swedish left.",
-    "Ad copy per angle in American English: price only in the CS angle ($99, compare at $124); reviews quoted by first name (Sofia, Per, Lars, Karin) - no review counts claimed.",
-    "Landing link: https://carashell.com/products/termoskyddet (the US market's own domain - carashell.se/en/...?country=US redirects there). Price on the page: 99 USD, compare at 124.",
-    "HeyGen credits used: 0. kie.ai: 3 image edits. ElevenLabs: about 6,000 characters incl. re-generated lines.",
-    "Notion: nothing to update - the Termoskyddet hub has 0 rows (the SE ads were built straight from Meta)."
+    "Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows. Queue 'Approved' checked for rows missing in the US — 0 rows. Nothing to translate.",
+    "US campaign CARASHELL_US_Termoskydd Husbil 211 × 171 cm (Magiborsten UK) found: PAUSED, never spent, 4 ad sets (SP/CS/PD/G), 16 ads already in it (12 videos + 4 images, all ACTIVE, link https://carashell.com/products/termoskyddet).",
+    "Store ready for US: price $99 read on carashell.com.",
+    "No HeyGen credits used, nothing uploaded, no Notion rows changed, campaign status not touched."
   ],
   "varningar": [
-    "The US campaign is PAUSED (built today, never run). The 16 ads are ACTIVE inside it, so nothing spends until the owner switches the campaign on.",
-    "English runs 15-20% shorter than Swedish, so the video clips play up to 35% faster than the Swedish versions. Watch CS_3 and SP_2 once before scaling."
+    "The Termoskyddet hub is still empty (0 rows in any status). Rows reach this queue only after an editor delivers or /ops-bild runs, and /ops-leverans puts them live in SE first.",
+    "The 16 US ads in the campaign were uploaded earlier today (11:00–12:29 UTC) by another session and are not recorded in the repo. They mirror the 16 SE ads. They spend nothing until the campaign is switched on."
   ],
   "action_axel": [
-    "Switch on when you want US traffic: Ads Manager -> account Magiborsten UK -> campaign \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm\" -> toggle ON the campaign AND its four ad sets (CARASHELL_US_CS, _G, _PD, _SP - they were built PAUSED and the upload never touches existing ad sets). The 16 ads are already ACTIVE. Pixel access is confirmed (no Meta issues on any ad)."
+    "US campaign CARASHELL_US_Termoskydd Husbil 211 × 171 cm is PAUSED (never run) with 16 ads ready. Nothing spends until you switch the campaign on in Ads Manager (account Magiborsten UK). Switch it on only if you want the US test to start now — budget 1 000 SEK/day."
   ],
-  "nasta_korning": "2026-09-17 17:05 (US routine, carashell/takskyddet)"
+  "nasta_korning": "2026-09-17"
 }

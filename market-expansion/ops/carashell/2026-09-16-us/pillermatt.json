@@ -1,0 +1,170 @@
+{
+ "CaraShellRoof_CS_1_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   983,
+   1054
+  ],
+  "piller_x_typ": [
+   151,
+   563
+  ],
+  "frames_med_piller": 54,
+  "frames": 57
+ },
+ "CaraShellRoof_CS_2_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   983,
+   1054
+  ],
+  "piller_x_typ": [
+   147,
+   559
+  ],
+  "frames_med_piller": 48,
+  "frames": 53
+ },
+ "CaraShellRoof_CS_3_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   983,
+   1054
+  ],
+  "piller_x_typ": [
+   124,
+   555
+  ],
+  "frames_med_piller": 53,
+  "frames": 59
+ },
+ "CaraShellRoof_GT_1_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   132,
+   540
+  ],
+  "frames_med_piller": 59,
+  "frames": 59
+ },
+ "CaraShellRoof_GT_2_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   976,
+   1061
+  ],
+  "piller_x_typ": [
+   98,
+   612
+  ],
+  "frames_med_piller": 55,
+  "frames": 55
+ },
+ "CaraShellRoof_GT_3_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   138,
+   551
+  ],
+  "frames_med_piller": 57,
+  "frames": 57
+ },
+ "CaraShellRoof_PD_1_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   167,
+   551
+  ],
+  "frames_med_piller": 75,
+  "frames": 75
+ },
+ "CaraShellRoof_PD_2_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   163,
+   566
+  ],
+  "frames_med_piller": 74,
+  "frames": 75
+ },
+ "CaraShellRoof_PD_3_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   174,
+   562
+  ],
+  "frames_med_piller": 76,
+  "frames": 76
+ },
+ "CaraShellRoof_SP_1_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   173,
+   545
+  ],
+  "frames_med_piller": 47,
+  "frames": 47
+ },
+ "CaraShellRoof_SP_2_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   181,
+   537
+  ],
+  "frames_med_piller": 49,
+  "frames": 49
+ },
+ "CaraShellRoof_SP_3_H1": {
+  "W": 720,
+  "H": 1280,
+  "piller_y": [
+   988,
+   1049
+  ],
+  "piller_x_typ": [
+   167,
+   551
+  ],
+  "frames_med_piller": 46,
+  "frames": 46
+ }
+}

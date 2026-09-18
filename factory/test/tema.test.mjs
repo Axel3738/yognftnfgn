@@ -360,6 +360,28 @@ test('bas-zip:ens ms-paket.js är samma fil som fabrikens', async () => {
   assert.equal(ur_zip, TEMAFILER['assets/ms-paket.js']);
 });
 
+test('kundens land i fraktraden: ms-landtext + de tre renderande filerna ägs av fabriken och matchar bas-zip:en', async () => {
+  // Axels beslut 2026-09-17: EN flagga för kundens land, inte fem i rad.
+  const { execFileSync } = await import('node:child_process');
+  const url = new URL('../tema/ops-tema.zip', import.meta.url);
+  const filer = ['snippets/ms-landtext.liquid', 'snippets/ms-trust-row.liquid', 'sections/ms-marquee.liquid', 'sections/announcement-bar.liquid'];
+  for (const f of filer) {
+    assert.ok(TEMAFILER[f], `${f} ska ligga i TEMAFILER`);
+    const ur_zip = execFileSync('unzip', ['-p', fileURLToPath(url), f], { encoding: 'utf8', maxBuffer: 4 * 1024 * 1024 });
+    assert.equal(ur_zip, TEMAFILER[f], `${f}: bas-zip:en ska bära samma fil som fabriken`);
+  }
+  const snippet = TEMAFILER['snippets/ms-landtext.liquid'];
+  for (const kod of ['US', 'GB', 'CA', 'AU', 'NZ']) assert.ok(snippet.includes(`when '${kod}'`), `ms-landtext saknar ${kod}`);
+  assert.ok(snippet.includes("replace: '[[flagga]]', flagga | replace: '[[land]]', land"));
+  assert.ok(snippet.includes('echo t | escape'), 'utdata ska escapas');
+  // De tre renderande filerna går genom snippeten — inte runt den.
+  assert.ok(TEMAFILER['snippets/ms-trust-row.liquid'].includes("{% render 'ms-landtext', text: txt %}"));
+  assert.ok(!TEMAFILER['snippets/ms-trust-row.liquid'].includes('<span>{{ txt }}</span>'));
+  assert.ok(TEMAFILER['sections/ms-marquee.liquid'].includes("{% render 'ms-landtext', text: text %}"));
+  assert.equal((TEMAFILER['sections/announcement-bar.liquid'].match(/render 'ms-landtext'/g) ?? []).length, 2);
+  assert.ok(!TEMAFILER['sections/announcement-bar.liquid'].includes('settings.text | escape }}'));
+});
+
 test('gömt A/B-kort köper aldrig, och samma submit körs bara en gång', () => {
   const js = TEMAFILER['assets/ms-paket.js'];
   // A/B-motorn gömmer förloraren med hidden i stället för att ta bort den.

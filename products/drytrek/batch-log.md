@@ -928,3 +928,199 @@ PD_14 färger 752/2 · SP 685/3 · CI 50 · FO 36 · BOF 12. Kampanjen totalt
 
 Copy-A/B: fable-taggade live-annonser 146 kr / 0 köp, sonnet-taggade 1 175 kr
 / 2 köp (inkl. färgbilderna). 0 bedömbara per modell.
+
+---
+
+## 2026-09-16 — leveransrunda: ingen SE-kampanj att leverera till
+
+Rutinen körde 11:50 UTC. **Ingen uppladdning var möjlig:**
+`DRYTREK_SE_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09` står **PAUSED sedan
+2026-09-15 20:52 CEST med 4 657 kr spend** — pausad av Axel för hand. PAUSED med
+spend är ett beslut: kön behandlar kampanjen som avvecklad och vägrar ladda upp
+dit. Nattvakten hade redan konstaterat samma sak natten till 16/9 (commit
+`e515632`) och pausat briefronden i registret.
+
+Kön var dessutom tom: 0 rader i `To be Reviewed`, inga nya leveranser från
+Jasper. Pris läst live ur butiken: 389 kr. Inget rördes i kontot.
+
+### ⚠️ Norge kör vidare och är LÖNSAMT — det saknades i nattens bild
+
+Nattvaktens siffror räknade bara Sverige. Båda kampanjerna, 7 dagar,
+lästa ur Meta 2026-09-16:
+
+| Kampanj | Status | Spend 7d | Köp | ROAS | Mot break-even 1,60 |
+|---|---|---:|---:|---:|---|
+| `DRYTREK_NO_Damasker Vandring` | **ACTIVE, 1 000 kr/dag** | 6 306 kr | 22 | **1,78** | **över — lönsam** |
+| `DRYTREK_SE_Damasker Vandring` | PAUSED 15/9 | 4 657 kr | 8 | 0,73 | under |
+
+Norge har alltså både mer spend och fler köp än Sverige hade, och ligger över
+break-even. Ingen har rört den kampanjen. Det är samma produkt, samma pris och i
+stor utsträckning samma creatives — skillnaden ligger i marknaden, inte i
+materialet. **Skriv aldrig "DryTrek går back" utan att säga vilken marknad som
+avses.**
+
+### ⚠️ Break-even-CPA 243 kr är för lågt satt i alla briefer
+
+Briefarnas `243 kr` kommer ur `389 / 1,60`, alltså antagandet att varje kund
+köper ett par. Verkligt ordervärde, räknat som `spend × ROAS ÷ köp` (metoden
+CLAUDE.md föreskriver, eftersom `omni_purchase_values` är buggig):
+
+| Marknad | Intäkt 7d | Köp | AOV ≈ | Break-even-CPA ≈ (AOV / 1,60) |
+|---|---:|---:|---:|---:|
+| NO | 11 225 kr | 22 | **510 kr** | **319 kr** |
+| SE | 3 400 kr | 8 | **425 kr** | **266 kr** |
+
+Paketnivåerna säljer alltså. Med rätt tal är Norges CPA 287 kr **under** sin
+break-even — samma dom som ROAS 1,78 ger, nu räknad två vägar.
+
+**Ingen tidigare dom ändras av det här:** annonserna ronden pausade låg på
+463 kr och 550 kr per köp, över även den korrigerade nivån. Men 243 kr är en
+för hård grind för kommande annonser, och talet står i varje brief och i
+nattvaktens annonsregel. ⚠️ **Ska in i `dna.md` vid nästa `/cs`** — ROAS är
+avrundad till två decimaler, så AOV-talen är ungefärliga och bör räknas om på
+ett längre fönster innan de skrivs som fasta.
+
+Hubben: 38 Draft, 31 Approved, 0 i översättningskön, 10 parkerade
+`Damasker_*`-rader kvar orörda.
+
+---
+
+## Norge 2026-09-16 — tom kö, men prisavläsningen visade sig ljuga
+
+Rutinen triggade 13:50 UTC. **0 rader** i `SE-ACTIVE to be translated` — inget
+att översätta. Kön har varit tom sedan de två sista gick live i går.
+
+Men en siffra i körloggen hade bytt betydelse över natten. Där det i går stod
+`Pris ur butiken: 389 SEK` stod det i dag `389 NOK` — samma tal, ny valuta.
+
+**Talet 389 NOK finns inte.** Mätt samma dag:
+
+| Källa | Svar |
+|---|---|
+| `/nb/products/damasker.json` | 389 — **basvalutan**, och svaret säger inte vilken |
+| `/nb/products/damasker?country=NO` | **379,00 kr**, `"priceCurrency":"NOK"` i JSON-LD, 18 av 18 |
+| `/nb/products/damasker` utan `?country=NO` | SEK |
+| `/products/damasker` (SE) | SEK |
+
+Shopifys `.json`-endpoint svarar **alltid** i butikens basvaluta och nämner den
+aldrig. Den nya marknadskoden i `tools/ops-leveranskon.mjs` läste det talet och
+**stämplade på marknadens valuta**. Norges riktiga pris är 379 NOK (jämförpris
+633), inte 389.
+
+Samma fel på alla NO-butiker, ~2,5 % i storlek eftersom det är SEK→NOK-kursen:
+
+| Butik | `.json` (bas) | marknadens sida | gammal utskrift |
+|---|---|---|---|
+| DryTrek | 389 SEK | **379 NOK** | 389 NOK |
+| HeimGuard | 799 SEK | **779 NOK** | 799 NOK |
+| TackleBay | 289 SEK | **282 NOK** | 289 NOK |
+| CaraShell US | 199 USD | 199 USD | 199 USD ✅ (carashell.com har USD som basvaluta) |
+
+**Ingen annons stoppades eller släpptes fel av det här.** Stoppregeln går på
+20 % avvikelse och felet är 2,5 %. Skadan är en annan: rule 4 säger att ett
+NOK-pris aldrig får hittas på, och loggraden såg ut som en mätning. En session
+som läst "389 NOK" hade kunnat skriva in det i norsk copy i god tro.
+
+**Lagat:** `hamtaPris` läser marknadens egen sida med `?country=<land>` och
+plockar pris + `priceCurrency` ur JSON-LD:n när marknadens valuta skiljer sig
+från butikens (`prisUrJsonLd`, 2 nya tester). Går det inte rapporteras
+basvalutans tal **med basvalutans namn och skälet** — aldrig marknadens valuta
+på ett omräknat tal. Verifierat mot fyra butiker och två marknader.
+`npm test` 1 288/1 288.
+
+⚠️ **De norska annonser som kör nu säger 389 kr** (de äldre 381/635) medan
+butiken visar **379 kr / 633 kr** för norska kunder. Inbränt i bild och
+inläst i voiceovern — går inte att rätta utan omrendering. Axel har redan
+sagt nej till att skriva om dem för 381/635-avvikelsen (2026-09-13), och
+den här är mindre. Ingen åtgärd, men skrivet så nästa session inte tror
+att 389 är norskt facit.
+
+⚠️ **Lärdomen, samma familj som gårdagens:** ett tal som bär fel etikett ser
+exakt ut som ett mätt tal. `.json`-endpointen svarar villigt med en siffra på
+varje språkprefix — den siffran är bara aldrig marknadens. Läs valutan ur
+samma svar som priset, eller rapportera att du inte kunde.
+
+---
+
+## Nattvakten 2026-09-17 (körning nr 6, ingen briefdag) — SE pausad, NO torrkörd
+
+SE: `DRYTREK_SE` PAUSED (ägaren 15/9), 0 ändringar. 7d 4 641 kr / 8 köp / 0,73.
+Briefronden pausad (18 batch #3-briefer i Draft).
+
+**NO torrkörd för första gången** (`--marknad NO --torr`, inget skrivet):
+`DRYTREK_NO` ACTIVE 1 000 kr/dag, 7d **7 109 kr / 26 köp / ROAS 1,84** (över
+break-even 1,60), 3d 2 870 kr / 10 köp / 1,58. Reglerna hade gjort 3 ändringar:
+sänkt 1 000 → 700 kr (vinst 3d −0,8 %), pausat `Gamasjer_NO_PD_2_1` (2 386 kr,
+8 köp, CPA 298 mot BE-CPA 243) och `NO_PD_14_15` (469 kr, 1 köp). Benchmark
+`Gamasjer_NO_PD_1`: 2 241 kr, 11 köp, CPA 204 — 100 % av vinstbidraget.
+⚠️ **BE-CPA 243 är fel för NO**: verklig AOV ≈ 510 kr (leveransrundan 16/9,
+26 order) ⇒ BE-CPA ≈ 319 kr. Med 319 hade ronden pausat **ingenting**.
+Rutinen dömer bara SE tills Axel säger annat — frågan ställd i Discord.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-17-NO.json`.
+
+---
+
+## 2026-09-17 — leveransrunda: oförändrat läge, men Norge fortsätter uppåt
+
+Andra dagen utan SE-kampanj att leverera till. `DRYTREK_SE_Damasker Vandring`
+står kvar PAUSED sedan 15/9 20:52, orörd. Kön var tom. Inget laddades upp,
+inget rördes i kontot. Pris läst live: 389 kr.
+
+**Norge stärks, andra avläsningen i rad över break-even:**
+
+| Mätdag | Spend 7d | Köp | ROAS | Mot break-even 1,60 |
+|---|---:|---:|---:|---|
+| 2026-09-16 | 6 306 kr | 22 | 1,78 | över |
+| 2026-09-17 | 7 113 kr | 26 | **1,84** | **över, och stigande** |
+
+Sverige samma fönster 2026-09-17: 4 641 kr, 8 köp, ROAS 0,73. Det talet ändrar
+sig inte längre — kampanjen är avstängd, siffran rullar bara ut ur fönstret.
+
+Två avläsningar är inte ett bevis, men riktningen är entydig och den håller
+även när spenden ökar. Det här är det enda stället i DryTreks historik där en
+marknad ligger över break-even. **Skrivs in i `dna.md` vid nästa `/cs`**, med
+den tidigare noteringen om att break-even-CPA 243 kr är för lågt satt.
+
+Ägarfrågan om omstart av Sverige står obesvarad i Discord `#ads-to-do` sedan
+15/9. Ingenting här väntar på den — rutinen rapporterar tyst tills den besvaras.
+
+---
+
+## Norge 2026-09-17 — tom kö, andra dagen
+
+**0 rader** i `SE-ACTIVE to be translated`. NO-kampanjen orörd: 47 annonser,
+samtliga ACTIVE (PD 27, SP 8, CS 4, G 4, FO 2, CI 1, BOF 1). Ingenting når den
+här kön förrän leveransrundan har något att skicka vidare.
+
+Gårdagens prisfix bevisade sig direkt: butiken läses i dag till **382 NOK** mot
+379 i går. Kursen rörde sig, och siffran följde med — för att den hämtas ur den
+norska sidan vid varje körning i stället för att räknas om eller antas. Med det
+gamla verktyget hade det stått 389 båda dagarna.
+
+---
+
+## 2026-09-18 — nattvakten, körning nr 7 (ingen briefdag att köra: ronden pausad)
+
+SE: `DRYTREK_SE_Damasker Vandring` PAUSED sedan 15/9 20:52, **0 ändringar**,
+inget aktiverat. 7d-fönstret bär bara spend före pausen: 3 785 kr, 6 köp,
+ROAS 0,69 — rullar ut dag för dag. Registret sa "briefdag JA — ikappkörning"
+(senaste brief 13/9), men `Briefrond:` står på PAUS ⇒ noll briefer, ingen
+`brief-kord`. Hubben oförändrad: 19 batch #3-rader i Draft (skapade 12/9),
+10 videor i Creative strat review, 31 Approved.
+
+**Norge, torrkörning (inget skrivet) — första dippen:**
+
+| Mätdag | Spend 7d | Köp | ROAS 7d | ROAS 3d |
+|---|---:|---:|---:|---:|
+| 2026-09-16 | 6 306 kr | 22 | 1,78 | — |
+| 2026-09-17 | 7 109 kr | 26 | 1,84 | 1,58 |
+| 2026-09-18 | 6 957 kr | 24 | **1,65** | **1,37** |
+
+Reglerna hade i natt sänkt 1 000 → 700 kr (vinst 3d −10,6 %) och pausat
+`Gamasjer_NO_PD_2_1` (2 485 kr, 8 köp, CPA 311), `NO_Damasker_PD_14_14`
+(702 kr, 1 köp) och `PD_14_15` (558 kr, 1 köp). Benchmark `Gamasjer_NO_PD_1`:
+2 590 kr, 12 köp, CPA 216, 100 % av vinstbidraget. Med BE-CPA ≈ 319 kr
+(verklig NO-AOV ≈ 510) hade bara de två PD_14-bilderna pausats — PD_2_1 är
+lönsam på det talet. Rutinen dömer fortfarande bara SE; frågan (YES/NO) och
+A/B/C-frågan om SE står obesvarade i Discord `#ads` sedan 15/9 resp. 17/9.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-18{,-NO}.json`.

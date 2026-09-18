@@ -716,6 +716,31 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
    app-CSV:n med BARA originalen (de översatta CSV:erna skrivs som reserv).
    Sätt flaggan i varje ny butik som får planen — annars importerar VA:n
    blandade språk.
+   ✅ **Verifierat 2026-09-17 09:10–09:40 UTC (påminnelsen), ~26 h efter
+   påslaget, i headless Chrome från containerns amerikanska IP:**
+   `carashell.com/products/takskyddet` — "Customer Reviews", "16 reviews",
+   knappen "Write a review", rubriken "Reviews in Other Languages", texterna
+   på engelska ("Simple solution and good fit.") med länken "Show original
+   (Swedish)". `carashell.com/products/termoskyddet` — samma, "20 reviews",
+   en rad med "Show original (Norwegian)" (en norsk originalrecension).
+   `carashell.se/nb/products/takskyddet?country=NO` — "Kundeanmeldelser",
+   "Skriv en anmeldelse", norska texter med "Vis original (svensk)".
+   ⚠️ **Varningen ovan om `nb` var fel:** widgeten översätts till norska
+   med locale `nb` också, både knappar och recensionstext. Stryk den ur
+   huvudet. ⚠️ **Ny sak på /nb:** `/no-recensioner` importerade norska
+   KOPIOR av de svenska recensionerna (Linda "Enkel løsning og god
+   passform." ligger som egen norsk rad), och auto-översättningen visar
+   nu den svenska originalraden på norska under "Anmeldelser på andre
+   språk" — samma recension två gånger på sidan. För en butik med Awesome
+   är den norska importen alltså överflödig; beslut om `/no-recensioner`
+   ska hoppa över sådana butiker är Axels (fråga ställd 2026-09-17).
+   ⚠️ Mätmetod: recensionslistan laddas lazy — `--dump-dom` och Judge.mes
+   `reviews_for_widget` gav 0 kroppar; det som fungerade var
+   `--screenshot` med `--window-size=1280,9000` och en beskärning av
+   widgetområdet (Pillow), sedan titta. curl ser bara `jdgmSettings`
+   (knapptexterna), aldrig översättningen. `carashell.se/nb/…` utan
+   `?country=NO` skickas från amerikansk IP om till carashell.com, och
+   `/localization`-cookien gav 429 tre gånger — parametern räcker.
 13. ⚙️ `kundvy-kor.mjs`:s reservkoll av rabattkoderna (`trippelkoll.kodkoll`)
    läste bara `amount` och dömde varje PROCENT-kod som "−NaN kr" — fyra röda
    rader på koder som stämde (CaraShell 2026-09-16). Rättad: jämför procent
@@ -783,6 +808,168 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
     `klar_i` dömer per rad vilka marknader som saknas, så inget laddas upp
     två gånger (dubblettspärren mot kontot håller också). Textlager-bilder
     ritas om från basfotot — se `.claude/commands/ops-oversatt.md` steg 3.
+19. ⚠️ **Två konton på samma produkt samma dag = samma jobb två gånger.**
+    Mätt 2026-09-16 på CaraShell US: den här sessionen och Axels andra konto
+    körde `/ops-oversatt … --marknad US` parallellt, båda renderade alla tolv
+    videor i HeyGen (dubbla krediter), och bara dubblettspärren i
+    `tools/ops-till-meta.mjs` (annonsnamn mot kontots alla annonser) hindrade
+    att kampanjen fick 24 videor. Innan en manuell körning: läs kontot
+    (`ops-leveranskon … --status Approved`) — `finns_i_meta` säger vad som
+    redan ligger uppe — och kolla `git log origin/main` för samma batchmapp.
+    Rutinerna kolliderar inte (en fast session per butik och marknad).
+
+19. ⚙️ **Egen domän per marknad — carashell.com för USA (Axels beslut
+   2026-09-16, "domänen?").** Axel kopplade carashell.com + www i Shopify
+   (Settings → Domains); den låg som 301 → carashell.se tills marknaden fick
+   den. API:t KAN: `webPresenceCreate({ domainId, defaultLocale: "en",
+   alternateLocales: [] })` + `marketUpdate(USA, { webPresencesToAdd: [ny],
+   webPresencesToDelete: [.se-närvaron, myshopify-närvaron] })` — mätt samma
+   dag, tillbakaläst `USA → carashell.com/en`, och `carashell.com/products/
+   takskyddet` svarar 200 med `Shopify.locale en`, `Shopify.country US`, USD.
+   `carashell.com/en/…` ger 404 (språket är standard på domänen — ingen
+   mapp), `carashell.se/en/…` svarar fortfarande. Därför bär marknadsraden
+   `doman: carashell.com` och `opsmarknader.marknadslank` bygger länken utan
+   /en/ när raden har egen domän (`kampanj.mjs`, `ops-leveranskon`,
+   `ops-till-meta` går alla den vägen). Mejlen på /en: hello@carashell.com.
+   ⚠️ www.carashell.com svarar bara över IPv4 (301 → carashell.com); över
+   IPv6 tog anslutningen inte — containerns nät, inte butiken.
+20. 🖐→⚙️ **Axels USA-beslut 2026-09-16 efter tvekan-listan:** 90-dagars
+   garanti ("90-day guarantee" / "Try it risk-free for 90 days") ersätter
+   "14-day right of withdrawal" i HELA den engelska texten, inklusive
+   returpolicy och köpvillkor — ett uttryckligt undantag från regeln "alltid
+   svensk lag, aldrig egna köplöften" (2026-09-08), för USA-marknaden enbart;
+   svenska och norska sidorna säger fortfarande 14 dagar. Returpolicyn
+   säger INTE vem som betalar returfrakten till Sverige — det är fortfarande
+   öppet (fråga till Axel i rapporten). "Ships from Sweden" struken ur
+   marquee:n, "🇺🇸 Free shipping to the US" i stället. Titeln "Roof Cover
+   for Travel Trailers & Motorhomes up to 21 ft (6.5 × 3 m)". Storleken,
+   sales tax (av), telefon (inget) var hans övriga svar.
+   ⚠️ Sidfotens "Ångra köp"-länk (Shopifys självbetjänade ångring,
+   `angerratt.mjs`) stod som "Contact" i en-filen och "Kontakt" i nb-filen —
+   subagenterna hade tappat en rad i sidfotsmenyn. Rättat: "Return an order"
+   / "Angre kjøp". Läs sidfoten på varje /<locale> när menyn ändras.
+21. ⚙️ **Cookie-rutan och Judge.me:s knapptexter — mätt 2026-09-16 kväll,
+   inget ändrat (Axels order: vänta).** Två frågor från Axel, båda besvarade
+   med mätningar i stället för gissningar:
+   - **"Stäng av cookie-grejen i USA."** Den är redan av för amerikaner.
+     `privacySettings.banner` är `autoManaged: true`, och Shopifys egen
+     samtyckestabell (`consentPolicy`, 319 rader) säger `consentRequired:
+     false` på alla 52 US-rader — bara `dataSaleOptOutRequired: true` i 15
+     delstater (CA, CO, CT, DE, FL, IA, MT, NE, NH, NJ, OR, TN, TX, UT, VA),
+     vilket ger en "Your privacy choices"-sida, ingen ruta. Renderat i
+     headless Chrome från containerns IP (Ohio): ingen ruta, ingen
+     integritetslänk i sidfoten. **Rutan följer besökarens land, inte
+     domänen** — SE och NO står `consentRequired: true`, så Axel ser den på
+     carashell.com för att han sitter i Sverige. Att ta bort den för honom
+     vore att ta bort den för svenska kunder. Appen har
+     `read_privacy_settings` + `write_privacy_settings` (fler än
+     `KRAVDA_SCOPES`), så `consentPolicyUpdate` GÅR — men det finns inget
+     att göra.
+   - **"Gör engelska till primärspråk så Judge.me funkar."** Judge.me:s
+     egen hjälpartikel (8389840) säger motsatsen: välj i **Settings →
+     Language** det språk som matchar butikens *default published
+     language* (svenska) i "Widget and notification emails language",
+     bocka **"Enable multi-language widgets"** under "Widgets and
+     translations", Spara — sedan översätts knapptexterna automatiskt per
+     Shopify-språk (gratisplanen räcker; "Refresh list" eller upp till 24 h
+     innan språket syns). Sidan bar 2026-09-16 kväll `jdgmSettings` med
+     enbart svenska texter på /en ⇒ rutan är sannolikt inte ibockad.
+     **Byte av primärspråk är dessutom dyrt och farligt:** Shopify raderar
+     befintliga översättningar för språket man byter TILL (de 150 en-raderna),
+     översätter inget själv, tar bort svenska som språk tills det läggs
+     till igen som översättning — och hela fabriken är svensk-först
+     (`oversattning.mjs` läser underlaget ur resurserna, `TEMAORD` med `''`
+     = sv, `kundvy-kor`, alla andra OPS-butiker). Kassan är inget argument:
+     Shopify översätter kassan per publicerat språk oavsett vilket som är
+     primärt. Rekommendation: rutan i Judge.me, aldrig språkbytet.
+22. ⚙️ **Ett ENGELSKT MARKNADSBLOCK — GB, CA, AU, NZ i USA-marknaden (byggt
+   2026-09-17, Axels order "Nya Zeeland, Kanada, UK och Australien, samma
+   annonser, lanserar i dag").** Fem mätningar styrde formen:
+   - **En egen domän hör till EN marknad.** `marketUpdate(webPresencesToAdd:
+     [carashell.com])` från en nyskapad GB-marknad svarade `RESOURCE_NOT_FOUND`
+     på presencen. Egna marknader per land hade alltså krävt `carashell.se/en-gb/`
+     (Axel sa nej till .se för USA) eller fyra subdomäner med DNS-klick. Därför:
+     länderna läggs i USA-marknaden. Raden i `butik.marknader` bär det som
+     `lander: [GB, CA, AU, NZ]` (blocklista — yaml-parsern tar inte `[a, b]`)
+     + `lokala_valutor: true`; `marknad.mjs sakerstallMarknad` lägger till
+     regionerna med `conditions.conditionsToAdd.regionsCondition.regions` och
+     läser tillbaka.
+   - **`currencySettings.localCurrencies: true` via API GÅR — och slog själv
+     på AUD, CAD, GBP och NZD i Shopify Payments** (`enabledPresentmentCurrencies`
+     gick från NOK,SEK,USD till AUD,CAD,GBP,NOK,NZD,SEK,USD i samma sekund).
+     Axels "jag ordnar valutorna" behövdes inte.
+   - **Priserna är Shopifys omräkning av de FASTA USD-priserna** (prislistan i
+     marknadens basvaluta), inte av SEK: takskyddet $199 → £152 / C$285 /
+     A$286 / NZ$354, termoskyddet $99 → £76 / A$143 / NZ$177 (mätt som kund
+     per land med `?country=XX` på carashell.com, 2026-09-17 13:30 UTC; ECB
+     samma dag $199 = £148 — Shopify lägger ~2–3 % och rundar till hela).
+     Fasta x9-priser per valuta kräver en egen marknad per valuta = egna
+     subdomäner. Inte gjort; Axels val.
+   - **Frakten var redan klar:** zonen "Internationell" (`frakt.fri_globalt`)
+     bar AU, CA, GB, NZ med "Fri frakt 0 SEK" sedan bygget.
+   - **Den engelska texten är EN fil för alla fem** (locale en). "Free shipping
+     to the US" / 🇺🇸 byttes av en sonnet-subagent till "🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿 Free
+     shipping", FAQ "Which countries do you ship to?", köpvillkoren "Prices are
+     shown in your local currency (USD, GBP, CAD, AUD or NZD)". Leveransraden
+     (5–10 business days) och 90-dagarsgarantin gäller därmed alla fem —
+     substansfrågor till Axel, inte översättning.
+   ⚠️ **Bugg hittad och rättad samma dag: `--igen marknad` bröt domänbeslutet.**
+   `kopplaPresence` kopplade ALLA presences till varje marknad och
+   `laggTillAlternateLocale` la nb på alla — så USA-marknaden fick .se +
+   myshopify tillbaka och carashell.com fick /nb. Nu respekterar `marknad.mjs`
+   radens `doman:`: bara den presencen på marknaden (andra kopplas loss), och
+   andra marknaders egna domäner hoppas över (befintligt språk tas bort).
+   Mätt efteråt: USA = carashell.com(en), Norge = .se + myshopify (sv+nb/en).
+   ⚠️ **Två sessioner på samma butik samma förmiddag:** medan detta byggdes
+   gjorde en annan session om takskyddet till nio storleksvarianter
+   (5,5–13,5 m) med egen köpruta (`snippets/ms-paket.liquid` + css). Mitt
+   första `--igen tema` gick med gammal kod och skrev den gamla köprutan;
+   `main` mergades och stegen kördes om — kundvyn grön, väljaren kvar. Regeln
+   "en session per butik" gäller fabriken lika mycket som annonserna.
+   ⚠️ **Annonslänken bär LANDETS egen kod, aldrig USA:s:** `?country=US`
+   låser valutan till USD för en britt. En kampanj per land (Axels väg
+   2026-09-17: duplicera US-kampanjen, byt geo i adsetet) länkar
+   `https://carashell.com/products/<handle>?country=GB` / `CA` / `AU` / `NZ`
+   — mätt: parametern ger rätt valuta oavsett IP. Utan parameter väljer
+   Shopify land på IP, vilket också fungerar men gör första renderingen
+   IP-beroende.
+   🖐→⚙️ **Axels beslut 2026-09-17 på rapportens tre frågor:** UK-momsen
+   löser han själv, sälj ändå (alternativ C); leveranstiden är 5–10
+   arbetsdagar till alla fem (leverantören) — den delade en-raden är alltså
+   sann; annonserna byggs av honom som kopior av US-kampanjen per land.
+   🖐 **Skatt och tull är det som återstår, och det är ägarens:** UK — varor
+   ≤ £135 ska bära brittisk moms vid kassan och säljaren måste vara
+   UK-momsregistrerad, utan omsättningsgräns (gov.uk, läst 2026-09-17);
+   termoskyddet £76 faller under, takskyddet £152 över (då tar transportören
+   importmoms + tull + avgift av kunden vid dörren). AU/NZ: GST bara över
+   AUD 75 000 / NZD 60 000 per år, annars inget vid gränsen under
+   AUD/NZD 1 000. CA: tull + GST/HST + transportörens avgift tas av kunden
+   vid leverans (från Sverige gäller CAD 20-gränsen). Shopifys "collect
+   duties at checkout" kräver Advanced-plan. Kvar i admin: Settings → Taxes
+   and duties → United Kingdom (VAT), leveranstiden per land hos leverantören,
+   Klarna i kassan per land (inte mätbart härifrån).
+   Kvar hos den andra sessionen: optionens NAMN ("Variant"/"Title") saknar
+   en/nb-översättning — rubriken över storleksväljaren står "Variant" på /en.
+   ⚙️ **EN flagga för kundens land, inte fem (Axels order samma eftermiddag:
+   "märk vilket land kunden kommer ifrån och visa bara den flaggan").**
+   Ny fabriksägd snippet `snippets/ms-landtext.liquid` byter `[[flagga]]` och
+   `[[land]]` i en textrad mot kundens land ur `localization.country`
+   (US → "🇺🇸 … the US", GB → "🇬🇧 … the UK", CA/AU/NZ namnet, SE/NO
+   engelska namnet, okänt land 🌍 + Shopifys landsnamn) och escapar utdata.
+   De tre ställen som visar fraktraden renderar genom den och är därför
+   fabriksägda kopior i `factory/tema/` (TEMAFILER + bas-zip:en, testade
+   lika): `snippets/ms-trust-row.liquid` (USP-raden + köprutans trust),
+   `sections/ms-marquee.liquid` och Dawns `sections/announcement-bar.liquid`.
+   Engelskan bär tokens: "[[flagga]] Free shipping to [[land]]" (marquee,
+   annonsrad, `liquid.trust.0`) och "truck:Free shipping to [[land]]" (USP);
+   sv/nb har inga hakparenteser och passerar orörda. Mätt 2026-09-17 ~16:00
+   UTC som kund per land: US "🇺🇸 Free shipping to the US" (3 träffar på
+   startsidan, 2 på produktsidan), CA "🇨🇦 … Canada", AU "🇦🇺 … Australia",
+   NZ "🇳🇿 … New Zealand", GB "🇬🇧 … the UK"; SE-sidan oförändrad
+   ("Fri frakt – Sverige & Norge"). ⚠️ Shopify slår på botkontrollen
+   ("Verifying your connection…", 9 kB) efter ~8 snabba curl-anrop från
+   containern — vänta 10 s mellan sidor, eller ta headless Chrome.
+   `[[` i sidkällan är Shopifys egna JS-arrayer, inte tokens.
 
 19. ⚙️ **USA-marknaden får en egen domän, och pixeln är delad** (mätt 2026-09-16,
     termoskyddets US-runda). `carashell.com` är USA-marknadens domän i Shopify

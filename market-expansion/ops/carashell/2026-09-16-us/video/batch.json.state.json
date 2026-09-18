@@ -1,0 +1,98 @@
+{
+ "carashell_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/0e7b0e41c56a45068e9f291e0716faff/original.mp4",
+  "proofreadId": "fb45132df9864467b5d4155d1a8ae9da-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b8fdc8a0cc0b443f918cf5b82fd71892-en",
+  "downloaded": true
+ },
+ "carashell_CS_2_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/640c5048fa744d9092d61c3f0bb3722b/original.mp4",
+  "proofreadId": "2414c82fa7a64dea8f4676fafddfb65f-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7bedab5061fd445399be39ffd28634b5-en",
+  "downloaded": true
+ },
+ "carashell_CS_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/df48453f4b90420d96d9b0856a01c50b/original.mp4",
+  "proofreadId": "d5632da908d64e6d801e97a8dc7b3c00-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ccff5ca6943a46a487b40bcf36ab397d-en",
+  "downloaded": true
+ },
+ "carashell_GT_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/294d9c86c6fc437ba5d513fbc2072b26/original.mp4",
+  "proofreadId": "fab54f4465064b7288e726aba00f47e9-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "4098e8ed915a456b9fab7096195c3d8c-en",
+  "downloaded": true
+ },
+ "carashell_GT_2_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/61cc18ff054f41539ff4a9075c3c31a9/original.mp4",
+  "proofreadId": "a2e4cfd27ceb4dd886cb835d1a1ae60f-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "e91b24d0f7ce4e71b5482b20bbfae851-en",
+  "downloaded": true
+ },
+ "carashell_GT_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/6cb512eea5df457db66af78dfe1a1d13/original.mp4",
+  "proofreadId": "0dfedd63176f41d280c357bf60adee4d-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "071486729bc5443290f518db97a8f024-en",
+  "downloaded": true
+ },
+ "carashell_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/79ef42b6b9ce4451a17c32329b06f4fe/original.mp4",
+  "proofreadId": "bf48e99b04ca4d86bad99141815fe436-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3e507359d2324a108c0da4309d50bccd-en",
+  "downloaded": true
+ },
+ "carashell_PD_2_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/00bb7834ec304f61bdb4175927402168/original.mp4",
+  "proofreadId": "7fdf962b65f14cb7b10e4654b4a33340-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "85b9749393174276847f1206cf2387fc-en",
+  "downloaded": true
+ },
+ "carashell_PD_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/dd5d17bce7e34fdaa30c62c775ddc627/original.mp4",
+  "proofreadId": "251aa5c4459a497ba299265b0056710e-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "42e6f35c5b734ee298e7ed8dec044a90-en",
+  "downloaded": true
+ },
+ "carashell_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/31352fb2ba2b437c9649ec49de280179/original.mp4",
+  "proofreadId": "9faec42145c8498e8cbeda5d0e9f8b1b-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "1cb861d315b64615bdabdfd823121817-en",
+  "downloaded": true
+ },
+ "carashell_SP_2_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/9e4eb15e8f4143d3af96431fb9eaa865/original.mp4",
+  "proofreadId": "ded5a094bd21431b8aa8a026134fddc9-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "b81597fe35ef41348ebc0f40edf8c3ba-en",
+  "downloaded": true
+ },
+ "carashell_SP_3_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/d555a40b51024f6f9e5e87bfea3b78a3/original.mp4",
+  "proofreadId": "ad5f444a7475427b9d6f198990c55c95-en-en-US",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "9dc0d6ac8f9940debce99404ae4f6c79-en",
+  "downloaded": true
+ }
+}

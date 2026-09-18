@@ -24,7 +24,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { alla, api, lasBudget, pausa, säkerställProxy, uppdateraBudget } from '../tools/meta-lib.mjs';
-import { laddaButik, sakerstallKonto, tillhorButiken, OPS_ANNONSKONTO } from './register.mjs';
+import { laddaButik, sakerstallKonto, tillhorButiken, OPS_ANNONSKONTO, utmapp } from './register.mjs';
 import { hamtaButikensAnnonser, byggRapport, normalisera, plockaAction, filtreraPaMarknad, STANDARDMARKNAD } from './skalning.mjs';
 import { linjetext } from './ekonomi.mjs';
 import { besluta, MAX_ANDRINGAR, budgetSek } from './budgetbeslut.mjs';
@@ -311,7 +311,7 @@ async function huvud() {
   }
 
   // ---- Underlaget till fil.
-  const mapp = join(ROT, 'factory', 'output', post.butik);
+  const mapp = utmapp(post, ROT);
   if (!existsSync(mapp)) mkdirSync(mapp, { recursive: true });
   const fil = join(mapp, `budgetrond-${idag}${marknad === STANDARDMARKNAD ? '' : `-${marknad}`}.json`);
   const dump = {

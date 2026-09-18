@@ -36,7 +36,7 @@ import { lasYaml } from './yaml.mjs';
 import { laddaEnv } from './env.mjs';
 import { api, ingaEnhancements, väntaPåThumb } from '../tools/meta-lib.mjs';
 import { MALKONTO } from './kallannonser.mjs';
-import { OPS_MARKNADSKODER, marknadFor, lankFor, domanUrButik } from './opsmarknader.mjs';
+import { OPS_MARKNADSKODER, marknadFor, marknadslank } from './opsmarknader.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 
@@ -194,12 +194,12 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
   const tom = arg.includes('--tom');
   const vinkelflagga = arg.includes('--vinklar') ? arg[arg.indexOf('--vinklar') + 1] : null;
 
-  const doman = domanUrButik(butik);
   // Marknadens annonser ska landa på MARKNADENS sida (/nb, /en …) med
   // `?country=` — utan parametern får kunden marknadens språk men SVENSKA
   // priser (DryTrek 2026-09-10: 16 norska annonser en dag på /nb utan country).
-  // Regeln bor i opsmarknader.lankFor.
-  const lank = lankFor({ doman, handle: handleFor(p), kod: marknad });
+  // Regeln bor i opsmarknader.lankFor; en marknad med egen domän
+  // (butik.marknader[].doman — carashell.com för USA) får den utan språkmapp.
+  const lank = marknadslank(butik, { handle: handleFor(p), kod: marknad });
 
   let media = {};
   let copyblock = {};
@@ -241,13 +241,18 @@ if (process.argv[1] && process.argv[1].endsWith('kampanj.mjs')) {
     }
     const vinklar = vinklarFor({ flagga: vinkelflagga, seAdsets });
     if (!vinklar.length) throw new Error('Inga vinklar: ange --vinklar SP,PD,GT,CS eller se till att butikens SE-kampanj har adsets.');
-    // Idempotent: finns butikens kampanj för marknaden redan i kontot återanvänds
-    // den och bara saknade adsets skapas — ett avbrutet bygge (Meta 400 på
-    // första adsetet, CaraShell US 2026-09-16) får aldrig ge två kampanjer.
+    // Idempotent: finns PRODUKTENS kampanj för marknaden redan i kontot
+    // återanvänds den och bara saknade adsets skapas — ett avbrutet bygge
+    // (Meta 400 på första adsetet, CaraShell US 2026-09-16) får aldrig ge två
+    // kampanjer. ⚠️ Matchningen är på produktens kampanjbas, inte butikens:
+    // med bara `CARASHELL_US_` hittade termoskyddets bygge takskyddets
+    // US-kampanj och hade fyllt den (torrkörning 2026-09-16). Adsetnamnen
+    // (`bas` + vinkel) är däremot butikens, som i SE.
     const bas = `${brand.toUpperCase()}_${marknad}_`;
+    const produktBas = kampanjbasFor({ brand, marknad, produkt: p }).toUpperCase();
     const befintliga = ((await api(`act_${act}/campaigns`, { params: { fields: 'id,name,status,daily_budget,bid_strategy', limit: 200 } })).data ?? [])
-      .filter((k) => String(k.name).toUpperCase().startsWith(bas));
-    if (befintliga.length > 1) throw new Error(`${befintliga.length} kampanjer i kontot börjar med ${bas}: ${befintliga.map((k) => `${k.name} (${k.id})`).join(' · ')} — vet inte vilken. Rensa först.`);
+      .filter((k) => String(k.name).toUpperCase().split(' | ')[0].trim() === produktBas);
+    if (befintliga.length > 1) throw new Error(`${befintliga.length} kampanjer i kontot heter ${produktBas}: ${befintliga.map((k) => `${k.name} (${k.id})`).join(' · ')} — vet inte vilken. Rensa först.`);
     const aterbruk = befintliga[0] ?? null;
     const harAdsets = aterbruk ? ((await api(`${aterbruk.id}/adsets`, { params: { fields: 'id,name,status', limit: 100 } })).data ?? []) : [];
     const saknade = vinklar.filter((v) => !harAdsets.some((a) => String(a.name).toUpperCase() === `${bas}${v}`));

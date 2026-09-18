@@ -1,0 +1,31 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round 3 for the roof cover: the 7 image ads from batch #3 (went live in Sweden earlier tonight) translated to American English and uploaded to CARASHELL_US_Taköverdrag in Magiborsten UK (act 1107817401910319), one ad set per concept. The US campaign now carries 27 ads.",
+    "CaraShellRoof_SP_5_1 -> CaraShellRoof_US_SP_5_1 (ad set CARASHELL_US_SP), ad 120251447567460435",
+    "CaraShellRoof_SP_6_1 -> CaraShellRoof_US_SP_6_1 (ad set CARASHELL_US_SP), ad 120251447548410435",
+    "CaraShellRoof_SP_7_1 -> CaraShellRoof_US_SP_7_1 (ad set CARASHELL_US_SP), ad 120251447531970435",
+    "CaraShellRoof_CS_5_1 -> CaraShellRoof_US_CS_5_1 (ad set CARASHELL_US_CS), ad 120251447435050435",
+    "CaraShellRoof_CS_6_1 -> CaraShellRoof_US_CS_6_1 (ad set CARASHELL_US_CS), ad 120251447430630435",
+    "CaraShellRoof_PD_6_1 -> CaraShellRoof_US_PD_6_1 (ad set CARASHELL_US_PD), ad 120251447347010435",
+    "CaraShellRoof_PD_7_1 -> CaraShellRoof_US_PD_7_1 (ad set CARASHELL_US_PD), ad 120251447338360435",
+    "All seven read back ACTIVE in ACTIVE ad sets, landing link https://carashell.com/products/takskyddet?country=US. Image text: $199 (was $249, 20% off / save $50), free shipping in the US, 5-10 business days, 90-day guarantee, 21.3 x 9.8 ft, 16 reviews - all read from the live US store page. No Swedish text, no kr, no 14-day return claim left.",
+    "Images: SP_6_1 re-rendered from its clean base photo. The other six had no base photo left (the night watch's container died with them), so the US text was swapped in place inside the same bands and chips - checked one by one, side by side with the Swedish version.",
+    "HeyGen credits used: 0 (image ads only). Batch #2's three video briefs are still Draft with no editor assigned.",
+    "Notion: comment + Translated url on all seven rows. Rows stay in 'SE-ACTIVE to be translated' because Norway has not carried them yet - tomorrow's NO run at 15:45 takes them. Batch #2's four rows (GT/PD/CS/SP_4_1) were already in the US campaign - nothing lagging in Approved."
+  ],
+  "varningar": [
+    "The US campaign is still PAUSED (built 2026-09-16, never run). All 27 ads are ACTIVE inside it, so nothing spends until the owner switches it on. Meta shows PENDING_REVIEW / IN_PROCESS on the new ones - normal for fresh ads.",
+    "The translated files are not attached to the Notion rows (no REST file upload in this flow) - check the creatives in Ads Manager via the Translated url on each row."
+  ],
+  "action_axel": [
+    "Switch the US campaign on when you want the US product test to start: Ads Manager -> account Magiborsten UK -> campaign 'CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16' -> toggle on. Nothing else is needed - the 27 ads and 4 ad sets are already on."
+  ],
+  "nasta_korning": "2026-09-17 17:05"
+}

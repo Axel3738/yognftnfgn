@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "Thermal cover, first US round: all 16 of 16 Swedish ads (12 videos + 4 images) translated to American English and uploaded to CARASHELL_US_Termoskydd Husbil 211 × 171 cm in Magiborsten UK (act 1107817401910319) - CARASHELL_US_CS: 4, CARASHELL_US_G: 4, CARASHELL_US_PD: 4, CARASHELL_US_SP: 4.",
+    "Videos: re-voiced with ElevenLabs (American voice \"Chris\"), video re-timed to the English lines, English captions burned in the same band, Swedish captions covered. Voice check green on 12 of 12, brand name and the name Per verified by speech-to-text on every video.",
+    "Images: source text removed with kie.ai (3 clean base photos), English text layer with the verified US figures: $99 (was $124, -20%), free shipping, 14-day returns. No Swedish left.",
+    "Ad copy per angle in American English: price only in the CS angle ($99, compare at $124); reviews quoted by first name (Sofia, Per, Lars, Karin) - no review counts claimed.",
+    "Landing link: https://carashell.com/products/termoskyddet (the US market's own domain - carashell.se/en/...?country=US redirects there). Price on the page: 99 USD, compare at 124.",
+    "HeyGen credits used: 0. kie.ai: 3 image edits. ElevenLabs: about 6,000 characters incl. re-generated lines.",
+    "Notion: nothing to update - the Termoskyddet hub has 0 rows (the SE ads were built straight from Meta)."
+  ],
+  "varningar": [
+    "The US campaign is PAUSED (built today, never run). The 16 ads are ACTIVE inside it, so nothing spends until the owner switches the campaign on.",
+    "English runs 15-20% shorter than Swedish, so the video clips play up to 35% faster than the Swedish versions. Watch CS_3 and SP_2 once before scaling."
+  ],
+  "action_axel": [
+    "Switch on when you want US traffic: Ads Manager -> account Magiborsten UK -> campaign \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm\" -> toggle ON the campaign AND its four ad sets (CARASHELL_US_CS, _G, _PD, _SP - they were built PAUSED and the upload never touches existing ad sets). The 16 ads are already ACTIVE. Pixel access is confirmed (no Meta issues on any ad)."
+  ],
+  "nasta_korning": "2026-09-17 17:05 (US routine, carashell/takskyddet)"
+}

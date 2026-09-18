@@ -72,6 +72,31 @@ i så fall över den — Judge.me har ingen egen dubblettspärr, och en andra k�
 skulle ge produkten allt i dubbel upplaga. Vill man ändå lägga på en
 påbyggnadsbatch: `--anda`, men bara på Axels uttryckliga begäran.
 
+### Spamfiltret — kolla ALLTID efter en skarp import
+
+Judge.mes egna spamfilter tar hela importer. Uppmätt 2026-09-16 → 18: alla tio
+raderna på infartslarmet, alla åtta på fågelmataren, alla tio på
+solcellslampan. **POST svarar 201 på varje rad ändå**, så körningen ser lyckad
+ut — men raderna får `curated: spam` + `published: false` och syns aldrig för
+kunden. Antalet steg 1 → 5 → 14 → 18 på fyra dagar.
+
+Importskriptets efterkontroll säger ifrån (`⚠️ SPAMFILTRET TOG N av M`). Rätta
+direkt, i samma körning:
+
+```bash
+node tools/judgeme-publicera.mjs --product-handle <no-handle> \
+  --store-url https://beverbutikken.no \
+  --shop-domain "$JUDGEME_NO_SHOP_DOMAIN" --token-env JUDGEME_NO_API_TOKEN
+```
+
+Verktyget rör **en produkt** per körning och **bara** rader med `curated: spam`,
+och läser tillbaka efteråt. Har produkten redan synliga recensioner stannar det:
+då är de spam-märkta sannolikt dubbletter av en CSV-import och märkningen är
+rätt.
+
+**Lämnas de spam-märkta importerar nästa natt om dem** — dubblettspärren räknar
+synliga rader, inte rader.
+
 ⚠️ **Judge.me byter namn på recensenten om e-posten känns igen.** Adressen är
 nyckeln till recensentprofilen, så en generisk adress plockar någon annans namn
 — 2026-08-30 publicerades "Johan" som *klaas hum* och två andra som *Customer*.
@@ -145,5 +170,6 @@ tre körningar, noll pushar, fyra produkter översatta om varje natt.)*
 - [ ] Bygget kört, bortvalslistan läst och redovisad
 - [ ] `--dry` granskad före skarp import
 - [ ] Importen körd, eller blockeringen skriven i rapporten
+- [ ] Spamfiltret kollat efter varje skarp import, spam-märkta rader publicerade
 - [ ] Rapport skickad i Discord-kanalen #reviews
 - [ ] Allt committat och pushat

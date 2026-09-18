@@ -1,0 +1,152 @@
+{
+  "CaraShellRoof_US_CS_1_H1": {
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437592600435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251443679590435",
+        "namn": "CaraShellRoof_US_CS_1_H1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1843203737032235",
+      "media": {
+        "typ": "video",
+        "id": "2038339686937860"
+      },
+      "lank": "https://carashell.com/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellRoof_US_CS_2_H1": {
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251436741400435",
+        "namn": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16",
+        "bas": "CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251437592600435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251443854310435",
+        "namn": "CaraShellRoof_US_CS_2_H1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "979748931156789",
+      "media": {
+        "typ": "video",
+        "id": "3882566601885478"
+      },
+      "lank": "https://carashell.com/products/takskyddet?country=US",
+      "dsa": null,
+      "torr": false
+    }
+  },
+  "CaraShellRoof_US_CS_3_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_CS_3_H1\" finns redan i kontot: ad_id 120251443924930435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_GT_1_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_GT_1_H1\" finns redan i kontot: ad_id 120251443936870435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_GT_2_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_GT_2_H1\" finns redan i kontot: ad_id 120251443941470435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_GT_3_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_GT_3_H1\" finns redan i kontot: ad_id 120251443947020435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_PD_1_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_PD_1_H1\" finns redan i kontot: ad_id 120251443952290435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_PD_2_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_PD_2_H1\" finns redan i kontot: ad_id 120251443958320435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_PD_3_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_PD_3_H1\" finns redan i kontot: ad_id 120251443963930435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_SP_1_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_SP_1_H1\" finns redan i kontot: ad_id 120251443973510435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_SP_2_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_SP_2_H1\" finns redan i kontot: ad_id 120251443980060435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  },
+  "CaraShellRoof_US_SP_3_H1": {
+    "exit": 1,
+    "skarpt": true,
+    "resultat": {
+      "ok": false,
+      "fel": "\"CaraShellRoof_US_SP_3_H1\" finns redan i kontot: ad_id 120251443986910435 (ADSET_PAUSED, kampanj 120251436741400435). Laddar inte upp igen."
+    }
+  }
+}

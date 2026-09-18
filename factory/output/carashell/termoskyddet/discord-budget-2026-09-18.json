@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-18",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #2 — budget round only, Friday is not a brief day",
+    "Campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm: 1 694 kr / 4 purchases / ROAS 1.32 over its first 2 days against break-even 1.61 — profit −13.6 %. Rule 'profit under 16 % → −30 %': daily budget lowered 1 000 → 700 kr, read back",
+    "Ad CaraShellFront_G_2_1 (the inherited gift image) paused: 721 kr spend, 2 purchases, CPA 361 kr over break-even 347 kr — the new-ad rule (spent ≥ 3 × target CPA without turning a profit). Read back ACTIVE → PAUSED",
+    "The five images from last night's brief round are live since 14:15: CS_4_1 has 250 kr / 0 purchases so far, the other four under 20 kr each — all too early. CS_2_1 (inherited offer image) carries 2 of the 4 purchases at 156 kr",
+    "Nothing activated. 21 ads read, 20 left untouched"
+  ],
+  "siffror": { "spend_3d": 1694, "kop_3d": 4, "roas_3d": 1.32, "budget_ny": 700, "andringar": 2 },
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-19",
+  "varningar": [
+    "The pixel is shared with the roof cover and the routine still has no Shopify key for CaraShell, so the 4 purchases could not be split per product. Tonight's two changes follow the rules on the pixel's numbers as they stand — if any of those purchases was a roof cover, the thermal cover is doing worse than this, not better",
+    "Two days of data is thin. The budget cut is the rulebook's call (no cadence block: the campaign had never been touched); the rules will raise it again if the 3-day and 7-day windows recover"
+  ]
+}

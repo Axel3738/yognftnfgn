@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-16",
+  "lage": "oversatt",
+  "server": "CaraShell",
+  "gjort": [
+    "Norway round for the roof cover: queue empty, nothing translated and nothing uploaded.",
+    "CARASHELL_NO_Takovertrekket is ACTIVE, so the market is running - this is an empty queue, not a hold.",
+    "HeyGen credits used: 0 before -> 0 after."
+  ],
+  "varningar": [
+    "The queue is empty because the 13:40 delivery round stopped: the account now holds TWO ACTIVE campaigns named CARASHELL_SE_Taköverdraget with the same 20 ads (120249050544990172 with 9 646 kr and 23 purchases, and 120249121867590172 with 35 kr and 0 purchases). Nothing reaches Norway until one of them is picked.",
+    "Seven finished image ads are waiting in To be Reviewed (CS_5_1, CS_6_1, PD_6_1, PD_7_1, SP_5_1, SP_6_1, SP_7_1). They are price-checked and ready; they go live in Sweden first, then here the next day.",
+    "Three video briefs from batch #2 are still in Draft (PD_4_H1, PD_5_H1, SP_4_H1). No editor is assigned to this product.",
+    "Meta rate-limited the OPS account hard through the whole round again."
+  ],
+  "action_axel": [
+    "Two ACTIVE campaigns with the same name is the one thing nobody but you can settle. Tell us which CARASHELL_SE_Taköverdraget is the real one - the one with 9 646 kr and 23 purchases, or the empty copy made today - and pause the other. Seven ads are waiting on that answer, in Sweden and then here."
+  ],
+  "nasta_korning": "2026-09-17"
+}

@@ -173,7 +173,7 @@ copy — varken rubriker, stödrader eller CTA. Det är inte en effektivisering,
 `/cs`-flödet, aldrig av en nattrutin. Saknar briefen svenska rader: **hoppa över
 raden**, lämna den i `Draft` och skriv den under "Behöver brief" i rapporten.
 
-Tre kontroller innan prompten byggs:
+Fyra kontroller innan prompten byggs:
 
 1. **Priset.** Står ett pris i briefen: hämta det verkliga priset från
    produktsidan (`Landing page`) och jämför. Skiljer de sig — hoppa över raden
@@ -185,6 +185,16 @@ Tre kontroller innan prompten byggs:
 3. **Bildformat.** `4:5` (1080×1350) är standard för Metas feed. Säger briefen
    `1:1` — använd det. Säger den båda: generera ett jobb per format och döp dem
    `<namn>` och `<namn>_1x1`.
+4. **Varje element i briefens `Script / shot list` ska med i spec:en.** Raderna
+   heter `Headline`, `Sub-line`, `Badge`, `Bottom band` och `CTA` — de mappar mot
+   stilarna `rubrik`, `brod`, `badge`, `brod` och `knapp` i `bildannonser/text.py`.
+   ⚠️ **`Badge` är den som glöms.** Mätt 2026-09-17 i leveransrundan: samtliga 29
+   bildannonser för taköverdraget och termoskyddet saknade sin badge (`–340 kr`,
+   `–23 %`, `19,5 m²`, `Mest populär` …) medan rubrik, underrad, bottenrad och CTA
+   satt rätt. Texten var alltså inte fel — den var utelämnad, i varje enda bild,
+   för att spec:en aldrig bar raden. `text.py` stöder `badge` sedan länge; det är
+   spec:en som ska fyllas. Räkna elementen i briefen mot elementen i spec:en innan
+   du renderar, och saknas ett: lägg till det.
 
 Skriv prompten på engelska (bildmodellen kräver det) men **de svenska raderna
 ordagrant inom citattecken**, med en uttrycklig instruktion att texten ska
