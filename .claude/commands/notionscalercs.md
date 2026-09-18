@@ -205,6 +205,17 @@ och avsluta. Samma regel gäller `/ops-leverans` och `/ops-oversatt`.
 ```
 node factory/budgetrond.mjs <nyckel> --idag $IDAG
 ```
+⚠️ **Kör den EN gång, och läs hela utskriften från den körningen.** Skriptet
+skriver skarpt direkt — en andra skarp körning samma natt höjer budgeten en
+gång till, för snabbspåret är "tillåtet varje dag" och räknar inte om dygnets
+egna ändringar. *(Mätt 2026-09-18 på CaraShell: jag körde ronden skarpt två
+gånger för att se toppen av utskriften och LISTICLE-kampanjen gick 1 000 →
+1 200 → 1 400 kr på en natt. Rättad tillbaka till 1 200 samma körning och
+loggad som `RATTELSE`.)* Behöver du bara läsa tabellen: använd `--torr`.
+Rättar du en egen dubbelhöjning — sätt tillbaka rätt nivå via Meta, läs
+tillbaka värdet och skriv en `RATTELSE`-rad i `factory/budgetlogg.jsonl`,
+annars räknar nästa rond kadensen ur fel utgångsläge.
+
 Skriptet visar tabellen FÖRE skrivning, genomför max 3 ändringar inom
 spärrarna, läser tillbaka gammalt → nytt och loggar varje rad i
 `factory/budgetlogg.jsonl`. Reglerna står i `factory/budgetbeslut.mjs` och
