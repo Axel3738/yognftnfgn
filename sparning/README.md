@@ -37,7 +37,7 @@ Varför inte fraktbolagen direkt: YunExpress svarar 405 utanför sin sajt och
 | `17track.mjs` | Klienten: `/register`, `/gettrackinfo`, `/stoptrack`. Header `17token`, 40 nummer per anrop, 3 anrop/s, väntar vid 429 |
 | `status.mjs` | Ren logik: bolagskoder, status → Shopify-status, svenska meddelanden, `tolka()` och `planera()` |
 | `lage.json` | Minnet: registrerade nummer, senast skrivna status, leveransdatum. **Committas av rutinen** — utan filen registreras allt om och kvoten bränns |
-| `test/status.test.mjs` | 8 tester utan nät |
+| `test/status.test.mjs` | 7 tester utan nät |
 
 ```bash
 node --test sparning/test/*.test.mjs
@@ -53,9 +53,10 @@ node sparning/kor.mjs
   startkvoten, därefter köps kvot per paket ("Buy more" i deras panel).
   ⚠️ En nyckel som läggs in på claude.ai syns först i en **ny** container.
 - Shopify-appen "bäver email" (`SHOPIFY_CLIENT_ID_SE_BAVER_SE`) saknade
-  `write_fulfillments` vid bygget (16 rättigheter, ingen för fulfillments).
-  `fulfillmentEventCreate` kräver `read_fulfillments` + `write_fulfillments`.
-  `kor.mjs --kolla` säger det i klartext tills det är löst.
+  `write_fulfillments` vid bygget (16 rättigheter). Axel lade till
+  `read_fulfillments` + `write_fulfillments` 2026-09-18 (18 rättigheter) —
+  `fulfillmentEventCreate` kräver båda. `kor.mjs --kolla` säger det i
+  klartext om det saknas igen (t.ex. i en ny butik).
 
 ## Statusmappning
 
@@ -83,13 +84,23 @@ per butik. Inte byggt än; Bäverbutiken först.
 
 ## Rutinen
 
-`/sparning` (`.claude/commands/sparning.md`), varje timme, fast session med
-repot som källa (annars kan `lage.json` inte pushas — se CLAUDE.md om
-rutiner). Byggs med `/rutin /sparning <tid>` när nyckeln syns i en ny
-container och Shopify-appen fått rättigheterna. Kommandofilen måste ligga
-på `main` — rutinen klonar `main`.
+`/sparning` (`.claude/commands/sparning.md`), varje timme kl :16, fast
+session med repot som källa (annars kan `lage.json` inte pushas — se
+CLAUDE.md om rutiner). **Byggd 2026-09-18 16:16 CEST på
+`claude5@stonebite.org`:** trigger `trig_014rEkz1EjfRfUW6dZxnvm6Q`, fast
+session `session_01To75UpfXYXGX5jcb9QYrdv`, cron `16 * * * *` (timvis —
+påverkas inte av vinteromställningen), taggar `routine:sparning` +
+`butik:baverbutiken`, inga connectors. Sedd i `list_triggers` samma körning.
+Kommandofilen ligger på `main` — rutinen klonar `main`.
+
+Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
+(varje timme)" → av. Ingen kvot bränns när den står still; redan skrivna
+event i Shopify ligger kvar.
 
 ## Logg
+
+- **2026-09-18 16:16 CEST:** rutinen byggd (se ovan). Nästa steg som inte
+  är gjort: `--butik` för de andra butikerna.
 
 - **2026-09-18 15:29 UTC, första skarpa rundan** (nyckeln syntes efter
   containeromstart, appen hade fått 18 rättigheter): 932 ordrar på 14
