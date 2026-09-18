@@ -328,7 +328,9 @@ def main():
     # -loop 1: en PNG utan loop är EN frame vid t=0 — ett lager vars fönster börjar långt in i videon
     # (slutkortet i UG_1_H1 vid 16,26 s, 2026-09-08) hann aldrig ritas; med loop är bilden en oändlig ström
     for L in lager: cmd += ['-loop', '1', '-i', P(L['png'])]
-    fc = ('[0:v]format=gbrp,split[a][b];[b]boxblur=14:3[bl];[1:v]format=gbrp[m];[2:v]format=gbrp[q];'
+    # blur_radie (valfri i konfigen): stor röd prisgrafik lämnar en läsbar röd skugga vid 14 — FI 2026-09-18 använder 30
+    br = int(K.get('blur_radie', 14))
+    fc = (f'[0:v]format=gbrp,split[a][b];[b]boxblur={br}:3[bl];[1:v]format=gbrp[m];[2:v]format=gbrp[q];'
           '[3:v]format=gbrp[vit];[a][bl][m]maskedmerge[v00];[v00][vit][q]maskedmerge[v0]')
     cur = 'v0'
     for i, L in enumerate(lager):

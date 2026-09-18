@@ -18,7 +18,8 @@ import path from 'node:path';
 const args = process.argv.slice(2);
 const val = (f, d = null) => { const i = args.indexOf(f); return i !== -1 ? args[i + 1] : d; };
 const A = path.resolve(val('--arbete', '.'));
-const bara = val('--bara');
+const bara = val('--bara') ? val('--bara').split(',') : null;      // en eller flera (kommaseparerade)
+const resultatNamn = val('--resultat', 'resultat.json');          // egen fil per parallell körning
 const steg = val('--steg', 'alla');
 const REPO = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../../..');
 export const ROST = { id: 'paqSK057kuKFy1kq3bdZ', namn: 'Martti - Calm & relaxed' };
@@ -91,10 +92,22 @@ export function klippPlan(tystnader, langd) {
 export function varpAv(klipp) {
   return (t) => { let bort = 0; for (const [a, b] of klipp) { if (t >= b) bort += b - a; else if (t > a) { bort += t - a; break; } else break; } return t - bort; };
 }
+const SR = 44100;
+function pcm(inn) { return spawnSync('ffmpeg', ['-v', 'error', '-i', inn, '-f', 's16le', '-ac', '1', '-ar', String(SR), '-'], { maxBuffer: 1 << 28 }).stdout; }
+function wav(buf, out) { sh('ffmpeg', ['-y', '-v', 'error', '-f', 's16le', '-ac', '1', '-ar', String(SR), '-i', '-', out], { input: buf }); }
+// Klipp bort [a,b]-intervallen (pauskomprimering) — exakt, i PCM
 function klippLjud(inn, klipp, out) {
-  const uttr = klipp.length ? `not(${klipp.map(([a, b]) => `between(t,${a.toFixed(3)},${b.toFixed(3)})`).join('+')})` : '1';
-  sh('ffmpeg', ['-y', '-v', 'error', '-i', inn, '-af', `aselect='${uttr}',asetpts=N/SR/TB`, '-ar', '44100', out]);
+  const raw = pcm(inn); const delar = []; let pos = 0;
+  for (const [a, b] of klipp) { const i0 = Math.floor(a * SR) * 2, i1 = Math.floor(b * SR) * 2; delar.push(raw.subarray(pos, i0)); pos = i1; }
+  delar.push(raw.subarray(pos)); wav(Buffer.concat(delar), out);
 }
+// Lägg in `d` sekunder tystnad vid varje tidpunkt i `punkter` (pausförlängning för korta VO:er, så talet spänner över SE-talets tid)
+function forlangLjud(inn, punkter, d, out) {
+  const raw = pcm(inn); const delar = []; let pos = 0; const tyst = Buffer.alloc(Math.floor(d * SR) * 2);
+  for (const t of punkter) { const i = Math.floor(t * SR) * 2; delar.push(raw.subarray(pos, i), tyst); pos = i; }
+  delar.push(raw.subarray(pos)); wav(Buffer.concat(delar), out);
+}
+export function varpForlang(punkter, d) { return (t) => t + d * punkter.filter((p) => p < t).length; }
 
 // ---- 3. Ljudet: FI-VO (ev. atempo ≤ 1,10) läggs vid SE-talets start, loudnorm, tystnad runt om, video-längd
 function byggLjud(vo, offsetS, tempo, langd, out) {
@@ -105,11 +118,11 @@ function byggLjud(vo, offsetS, tempo, langd, out) {
 async function main() {
   const manus = JSON.parse(readFileSync(`${A}/vo/fi-manus.json`, 'utf8'));
   const seT = JSON.parse(readFileSync(`${A}/vo/se-transkript.json`, 'utf8'));
-  const resultatFil = `${A}/resultat.json`;
+  const resultatFil = `${A}/${resultatNamn}`;
   const resultat = existsSync(resultatFil) ? JSON.parse(readFileSync(resultatFil, 'utf8')) : {};
   mkdirSync(`${A}/ut`, { recursive: true }); mkdirSync(`${A}/precis`, { recursive: true });
   for (const [namn, m] of Object.entries(manus)) {
-    if (bara && namn !== bara) continue;
+    if (bara && !bara.includes(namn)) continue;
     const src = `${A}/src/${namn}.mp4`;
     const r = resultat[namn] || {};
     try {
@@ -124,12 +137,25 @@ async function main() {
       }
       const al = JSON.parse(readFileSync(`${A}/vo/${namn}.align.json`, 'utf8')).alignment;
       const raLangd = dur(`${A}/vo/${namn}.mp3`);
-      const klipp = klippPlan(hittaTystnader(`${A}/vo/${namn}.mp3`), raLangd);
+      const tystnader = hittaTystnader(`${A}/vo/${namn}.mp3`);
       const klippt = `${A}/vo/${namn}.klippt.wav`;
-      klippLjud(`${A}/vo/${namn}.mp3`, klipp, klippt);
-      const voLangd = dur(klippt);
-      const varp0 = varpAv(klipp);
       const fri = langd - start - 0.25;
+      const mal = Math.min(seT[namn].talad_tid, fri);      // sikta på SE-talets spann: pillren i bilden lever så länge
+      let klipp = [], varp0, forlangda = 0;
+      // svans/inledning klipps alltid; inre pauser komprimeras bara om VO:n annars inte ryms
+      const kant = klippPlan(tystnader, raLangd).filter(([a, b]) => a === 0 || b === raLangd);
+      const inre = tystnader.filter(([a, b]) => a > 0.02 && b < raLangd - 0.02 && b - a > MIN_TYST);
+      const utanKant = raLangd - kant.reduce((s, [a, b]) => s + (b - a), 0);
+      if (utanKant > fri) { klipp = klippPlan(tystnader, raLangd); klippLjud(`${A}/vo/${namn}.mp3`, klipp, klippt); varp0 = varpAv(klipp); }
+      else if (utanKant < mal - 0.5 && inre.length) {
+        // för kort: förläng pauserna (max +0,6 s per paus) så talet spänner över SE-talets tid
+        const d = Math.min(0.6, (mal - utanKant) / inre.length);
+        const tmp = `${A}/vo/${namn}.kant.wav`; klippLjud(`${A}/vo/${namn}.mp3`, kant, tmp); const vk = varpAv(kant);
+        const punkter = inre.map(([a, b]) => vk((a + b) / 2));
+        forlangLjud(tmp, punkter, d, klippt); const vf = varpForlang(punkter, d); varp0 = (t) => vf(vk(t)); forlangda = inre.length; klipp = kant;
+        r.pauser_forlangda = `${inre.length} × ${d.toFixed(2)} s`;
+      } else { klipp = kant; klippLjud(`${A}/vo/${namn}.mp3`, klipp, klippt); varp0 = varpAv(klipp); }
+      const voLangd = dur(klippt);
       let tempo = 1;
       if (voLangd > fri) tempo = voLangd / fri;
       if (tempo > 1.10) { r.status = 'FÖR LÅNG'; r.skal = `VO ${voLangd.toFixed(1)} s (rå ${raLangd.toFixed(1)}) ryms inte i ${fri.toFixed(1)} s (tempo ${tempo.toFixed(2)} > 1,10) — korta manuset`; resultat[namn] = r; writeFileSync(resultatFil, JSON.stringify(resultat, null, 1)); console.log(`✗ ${namn}: ${r.skal}`); continue; }

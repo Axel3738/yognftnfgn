@@ -21,6 +21,7 @@ const K = {};
 const alla = ['CO_1_H1', 'CS_1_H1', 'CS_2_H1', 'CS_3_H1', 'GT_1_H1', 'GT_2_H1', 'GT_3_H1', 'GT_4_H1', 'GT_5_H1', 'PD_1_H1', 'PD_2_H1', 'PD_3_H1', 'PD_4_H1', 'RI_1_H1', 'SP_1_H1', 'SP_2_H1', 'SP_3_H1', 'SP_4_H1', 'UG_1_H1'];
 for (const k of alla) K[k] = { captions: { ...UGC }, blur: [], lager: [] };
 for (const k of ['CO_1_H1', 'RI_1_H1']) K[k].captions = { ...HOG };
+for (const k of ['CO_1_H1', 'RI_1_H1', 'SP_4_H1', 'UG_1_H1']) K[k].blur_radie = 30;   // stor röd prisgrafik under lagren
 
 // Blixtframen "RV ROOF COVER / 5-STAR REVIEW!" (0,17 s) — hela bilden suddas de framesen
 for (const [namn, f] of Object.entries(flash)) for (const [a, b] of f) K[namn.replace('Takoverdrag_', '')].blur.push({ rect: [0, 0, 720, 1280], t: [a - 0.04, b + 0.04] });
