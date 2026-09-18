@@ -576,3 +576,13 @@ i Metas anropstak.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550526534278717470`, ingen ping.
 - Kommandofilen fick 2026-09-18 en not om egen domän (`carashell.com`) i länkraden, och
   `hamtaPris` exporteras nu ur `ops-leveranskon.mjs` — inget som ändrar den här rundan.
+
+## 2026-09-19 — nattvakten körning nr 3 (ingen briefdag): kampanjen PAUSED, 0 ändringar
+
+`CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` står **PAUSED** (avstängd under 18/9 av
+någon annan än rutinen — inte loggat här). Slutläsning: **2 058 kr / 4 köp / ROAS 1,08**
+på tre dygn mot BE 1,61. `CS_4_1` nådde 506 kr / 0 köp före pausen; `CS_2_1` bär 2 av 4
+köp (180 kr). Inget rört, inget aktiverat — PAUSED är ett beslut. **Briefronden pausad
+av Axel 2026-09-18** ("CaraShell briefas inte längre själv — allt skapas i Bäverbutikens
+teamspace och speglas hit, `/ops-spegla`"), så söndagens briefdag ger inga briefer.
+Batch #2:s två videobriefer ligger kvar i Draft i hubben.
