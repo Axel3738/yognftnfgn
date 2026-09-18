@@ -91,6 +91,13 @@ på `main` — rutinen klonar `main`.
 
 ## Logg
 
+- **2026-09-18 15:29 UTC, första skarpa rundan** (nyckeln syntes efter
+  containeromstart, appen hade fått 18 rättigheter): 932 ordrar på 14
+  dagar, 940 paket, 40 registrerade (tak), 30 event skrivna, 0 fel. 10 av
+  40 hade "No tracking information at this time" — nyss skickade, 17TRACK
+  har inte hunnit. Tillbakaläst ur Shopify: #7429 och #7404 bär CONFIRMED
+  med svenskt meddelande. Alla 40 var InfoReceived (skickade samma dag).
+
 - **2026-09-18:** byggd. Inte körd skarpt: nyckeln fanns inte i containern
   (ny container krävs) och appen saknar `write_fulfillments`. Testerna gröna,
   `--torr` läste ordrarna: 2 682 ordrar på 45 dagar, 2 607 paket utan
