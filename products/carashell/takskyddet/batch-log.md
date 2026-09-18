@@ -890,3 +890,56 @@ maskineriet finns redan och kostar noll krediter.
 **Beslutet är Axels** och ligger öppet: bygga om till egna marknader per land (fasta
 priser + lokal domän, men nya länkar i 216 annonser), eller låta kampanjerna samla
 data först och rätta priserna när vakten larmar.
+
+## Spegling 2026-09-18 — efterjusteringen (`/ops-spegla carashell/takskyddet --fran "Translation in review"`, EN gång) + rutinerna byggda
+
+**Bakgrund (Axels beslut 2026-09-18):** Taköverdraget briefas bara i Bäverbutikens
+hub `BÄVER For CARL Taköverdraget för Husvagn` (`7ec270ab-…`). Rutinen `/ops-spegla`
+tar varje rad som är live i SE och översatt till NO där, laddar upp den svenska
+filen live i `CARASHELL_SE_Taköverdraget` och Bäverbutikens norska version i
+`CARASHELL_NO_Takovertrekket` (0 krediter), skapar en rad i CaraShells hub i
+`SE-ACTIVE to be translated` (US-rutinen gör engelskan) och flyttar källraden till
+`CaraShell EN ready to be active`. Spegelnamn = källans nummer + 100.
+
+**Rutinerna byggda 2026-09-18 12:41 CEST på `claude5@stonebite.org`** (sedda i
+`list_triggers` samma körning): Taköverdraget `trig_01P52LAAkrixM6JzRYUxc4KY` →
+`session_01RyFN4bCPBXxHroKFzUsKGW`, 16:45 (`45 14 * * *` CEST); Termoskyddet
+`trig_01GWEbTKYMKTfqUZfcucqN71` → `session_017BEGfjEbMWUNPVhHFDxnxn`, 16:55
+(`55 14 * * *` CEST). Båda statusstegen fanns i källhubben vid bygget.
+
+**Kön vid bygget:** 0 rader i `CaraShell SE ready to be active` (steget är nytt),
+men 18 rader i `Translation in review` som blev NO-klara innan steget fanns ⇒
+efterjusteringen körs en gång från den statusen. Priser: SE 1 129 kr (butiken)
+mot 1 129 kr i varje brief ⇒ ok; NO 1 106 NOK (butiken) mot 1 189 NOK
+(beverbutikken.no) ⇒ 7 %, ok. Kampanjer: SE och NO ACTIVE, 4 adsets var.
+Varning: `CARASHELL_SE_Taköverdraget LISTICLE` är eget spår och tog inte emot annonser.
+
+**Torrkörningen (start 12:21 CEST):** 18 rader, 16 gröna, 2 stoppade. `Approved`
+hade 0 rader (mätt samma förmiddag), så `"Translation in review"` ensam täcker allt.
+Kolumnerna SE-/NO-annons fylls i ur den skarpa körningens `spegla-2026-09-18.json`.
+
+| Källrad | Spegel | Typ | Rubrik ur SE-annonsen | Dom torrt | SE-annons | NO-annons |
+|---|---|---|---|---|---|---|
+| Takoverdrag_BOF_3_1 | CaraShellRoof_BOF_103_1 | bild | 210D-väv, inte tunn presenning | ✅ | | |
+| Takoverdrag_TR_1_1 | CaraShellRoof_TR_101_1 | bild | 5,0 av 5 – och 340 kr billigare | ⛔ nämner baverbutiken | — | — |
+| Takoverdrag_BOF_2_1 | CaraShellRoof_BOF_102_1 | bild | 1 129 kr – fri frakt och öppet köp | ✅ | | |
+| Takoverdrag_BOF_1_1 | CaraShellRoof_BOF_101_1 | bild | Taköverdrag – bara taket, hela vintern | ✅ | | |
+| Takoverdrag_GT_6_1 | CaraShellRoof_GT_106_1 | bild | Skydda taket i jul – 1 129 kr | ✅ | | |
+| Takoverdrag_CS_6_1 | CaraShellRoof_CS_106_1 | bild | Fri frakt – 1 129 kr (ord. 1 469 kr) | ✅ | | |
+| Takoverdrag_GT_5_H1 | CaraShellRoof_GT_105_H1 | video | 210D-väv – tål vintern ute | ✅ | | |
+| Takoverdrag_CO_2_1 | CaraShellRoof_CO_102_1 | bild | En person, inget skav mot lacken | ✅ | | |
+| Takoverdrag_CS_4_1 | CaraShellRoof_CS_104_1 | bild | 1 129 kr – frakten ingår | ✅ | | |
+| Takoverdrag_SP_5_1 | CaraShellRoof_SP_105_1 | bild | 5,0 av 5 på 10 recensioner | ⛔ nämner baverbutiken | — | — |
+| Takoverdrag_PD_5_1 | CaraShellRoof_PD_105_1 | bild | Rem och dragsko håller det på plats | ✅ | | |
+| Takoverdrag_LI_1_1 | CaraShellRoof_LI_101_1 | bild | Vattnet står aldrig vid takluckan | ✅ | | |
+| Takoverdrag_GT_4_H1 | CaraShellRoof_GT_104_H1 | video | 5,0/5 hos husvagnsägare | ✅ | | |
+| Takoverdrag_PD_4_H1 | CaraShellRoof_PD_104_H1 | video | Spara 340 kr på taköverdraget | ✅ | | |
+| Takoverdrag_UG_1_H1 | CaraShellRoof_UG_101_H1 | video | Bara taket. En person klarar det. | ✅ | | |
+| Takoverdrag_SP_4_H1 | CaraShellRoof_SP_104_H1 | video | En person räcker. 210D-väv. | ✅ | | |
+| Takoverdrag_RI_1_H1 | CaraShellRoof_RI_101_H1 | video | Ingen tvätt hjälper då | ✅ | | |
+| Takoverdrag_CO_1_H1 | CaraShellRoof_CO_101_H1 | video | Rätt yta, inte hela vagnen | ✅ | | |
+
+De två stoppade säger "recensioner på baverbutiken.se" i copyn — brandregeln
+(Axels beslut 2026-09-18) fungerar som tänkt. De står kvar i `Translation in
+review` med en stopp-kommentar; redigeraren gör en butiksversion utan butiksnamn
+om Axel vill ha dem i CaraShell.
