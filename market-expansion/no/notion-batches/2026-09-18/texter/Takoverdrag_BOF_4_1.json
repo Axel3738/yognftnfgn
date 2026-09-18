@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   150
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "1 189 kr"
+ },
+ {
+  "box": [
+   33,
+   195,
+   1047,
+   265
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "360 kr billigere enn 1 549 kr"
+ },
+ {
+  "box": [
+   450,
+   1084,
+   630,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "19,5 m² tak"
+ },
+ {
+  "box": [
+   370,
+   1222,
+   711,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Betal 1 189 kr"
+ }
+]

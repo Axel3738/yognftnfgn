@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   58,
+   1047,
+   392
+  ],
+  "rader": 3,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Vannet blir aldri stående rundt takluker"
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   560
+  ],
+  "rader": 2,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "210D-vev, ikke en tynn presenning som sprekker i frost"
+ },
+ {
+  "box": [
+   409,
+   1084,
+   672,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr for taket"
+ },
+ {
+  "box": [
+   216,
+   1222,
+   865,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se hva det koster å beskytte taket"
+ }
+]

@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   150
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "439 kr."
+ },
+ {
+  "box": [
+   33,
+   195,
+   1047,
+   265
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Ordinær pris 586 kr — 25 % rabatt."
+ },
+ {
+  "box": [
+   297,
+   1084,
+   781,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "147 kr billigere enn ordinær pris."
+ },
+ {
+  "box": [
+   246,
+   1222,
+   834,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Betal 439 kr — ikke 586 kr."
+ }
+]

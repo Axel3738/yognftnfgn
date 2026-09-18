@@ -1,0 +1,87 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   190
+  ],
+  "rader": 2,
+  "storlek": 45,
+  "fet": true,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "text": "«Passer godt på tanken og beskytter mot solen."
+ },
+ {
+  "box": [
+   33,
+   205,
+   1047,
+   275
+  ],
+  "rader": 1,
+  "storlek": 45,
+  "fet": true,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "text": "Akkurat det jeg trengte.»"
+ },
+ {
+  "box": [
+   400,
+   300,
+   680,
+   340
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   21,
+   49,
+   74
+  ],
+  "text": "Sofia"
+ },
+ {
+  "box": [
+   316,
+   1084,
+   762,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Anmeldelse fra produktsiden."
+ },
+ {
+  "box": [
+   84,
+   1222,
+   996,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Gjør som Sofia — beskytt tanken mot solen."
+ }
+]

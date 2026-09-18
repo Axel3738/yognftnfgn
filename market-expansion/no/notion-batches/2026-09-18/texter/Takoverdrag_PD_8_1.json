@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   275
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "6,5 × 3 meter – hele taket, ikke mer"
+ },
+ {
+  "box": [
+   33,
+   315,
+   1047,
+   385
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "210D-vev – tåler en hel vintersesong ute"
+ },
+ {
+  "box": [
+   280,
+   1084,
+   800,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Bare taket – håndteres av én person"
+ },
+ {
+  "box": [
+   417,
+   1222,
+   664,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se målene"
+ }
+]

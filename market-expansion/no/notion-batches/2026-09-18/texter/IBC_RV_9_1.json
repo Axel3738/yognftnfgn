@@ -1,0 +1,73 @@
+[
+ {
+  "box": [
+   33,
+   50,
+   1047,
+   285
+  ],
+  "rader": 3,
+  "storlek": 45,
+  "fet": true,
+  "farg": [
+   20,
+   48,
+   74
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "«Bra kvalitet og enkel å bruke. Passet min 1000-liters tank uten problemer.»"
+ },
+ {
+  "box": [
+   400,
+   300,
+   680,
+   340
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   22,
+   49,
+   75
+  ],
+  "text": "Johan"
+ },
+ {
+  "box": [
+   316,
+   1084,
+   762,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Anmeldelse fra produktsiden."
+ },
+ {
+  "box": [
+   209,
+   1222,
+   872,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Gjør som Johan — dekk tanken."
+ }
+]

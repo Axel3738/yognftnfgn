@@ -1,0 +1,125 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   165
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "6,5 × 3 meter tak."
+ },
+ {
+  "box": [
+   33,
+   180,
+   1047,
+   285
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Ikke mer."
+ },
+ {
+  "box": [
+   360,
+   322,
+   1047,
+   372
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 367,
+  "text": "Stropp og snortrekk i kanten"
+ },
+ {
+  "box": [
+   360,
+   375,
+   1047,
+   425
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 367,
+  "text": "Settes på av én person"
+ },
+ {
+  "box": [
+   360,
+   430,
+   1047,
+   472
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 367,
+  "text": "210D-vev"
+ },
+ {
+  "box": [
+   450,
+   1084,
+   630,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr"
+ },
+ {
+  "box": [
+   238,
+   1222,
+   842,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Dekk taket, ikke hele vogna"
+ }
+]

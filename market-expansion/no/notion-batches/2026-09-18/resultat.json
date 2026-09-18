@@ -1,0 +1,265 @@
+{
+ "IBC_BOF_13_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_13_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_13_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_13_1.jpg.qa.png"
+ },
+ "IBC_BOF_14_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_14_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_14_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_14_1.jpg.qa.png"
+ },
+ "IBC_BOF_15_1": {
+  "malnamn": "IBC-tanktrekk_NO_BOF_15_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_15_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_BOF_15_1.jpg.qa.png"
+ },
+ "IBC_CO_2_H1": {
+  "malnamn": "IBC-tanktrekk_NO_CO_2_H1",
+  "status": "FEL",
+  "skal": "'IBC_CO_2_H1'"
+ },
+ "IBC_CS_7_1": {
+  "malnamn": "IBC-tanktrekk_NO_CS_7_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_CS_7_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_CS_7_1.jpg.qa.png"
+ },
+ "IBC_PD_10_1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_10_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_PD_10_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_PD_10_1.jpg.qa.png"
+ },
+ "IBC_PD_8_H1": {
+  "malnamn": "IBC-tanktrekk_NO_PD_8_H1",
+  "status": "FEL",
+  "skal": "'IBC_PD_8_H1'"
+ },
+ "IBC_RV_10_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_10_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_RV_10_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_RV_10_1.jpg.qa.png"
+ },
+ "IBC_RV_9_1": {
+  "malnamn": "IBC-tanktrekk_NO_RV_9_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_RV_9_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/IBC-tanktrekk_NO_RV_9_1.jpg.qa.png"
+ },
+ "IBC_SP_5_H1": {
+  "malnamn": "IBC-tanktrekk_NO_SP_5_H1",
+  "status": "FEL",
+  "skal": "'IBC_SP_5_H1'"
+ },
+ "Takoverdrag_BOF_4_1": {
+  "malnamn": "Takovertrekk_NO_BOF_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_4_1.jpg.qa.png"
+ },
+ "Takoverdrag_BOF_5_1": {
+  "malnamn": "Takovertrekk_NO_BOF_5_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_5_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_5_1.jpg.qa.png"
+ },
+ "Takoverdrag_BOF_6_1": {
+  "malnamn": "Takovertrekk_NO_BOF_6_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_6_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_BOF_6_1.jpg.qa.png"
+ },
+ "Takoverdrag_CO_4_1": {
+  "malnamn": "Takovertrekk_NO_CO_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CO_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CO_4_1.jpg.qa.png"
+ },
+ "Takoverdrag_CS_10_1": {
+  "malnamn": "Takovertrekk_NO_CS_10_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CS_10_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CS_10_1.jpg.qa.png"
+ },
+ "Takoverdrag_CS_11_1": {
+  "malnamn": "Takovertrekk_NO_CS_11_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CS_11_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_CS_11_1.jpg.qa.png"
+ },
+ "Takoverdrag_GT_9_1": {
+  "malnamn": "Takovertrekk_NO_GT_9_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_GT_9_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_GT_9_1.jpg.qa.png"
+ },
+ "Takoverdrag_LI_2_1": {
+  "malnamn": "Takovertrekk_NO_LI_2_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_LI_2_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_LI_2_1.jpg.qa.png"
+ },
+ "Takoverdrag_OB_1_H1": {
+  "malnamn": "Takovertrekk_NO_OB_1_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_OB_1_H1'"
+ },
+ "Takoverdrag_PD_6_H1": {
+  "malnamn": "Takovertrekk_NO_PD_6_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_PD_6_H1'"
+ },
+ "Takoverdrag_PD_7_H1": {
+  "malnamn": "Takovertrekk_NO_PD_7_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_PD_7_H1'"
+ },
+ "Takoverdrag_PD_8_1": {
+  "malnamn": "Takovertrekk_NO_PD_8_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_PD_8_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_PD_8_1.jpg.qa.png"
+ },
+ "Takoverdrag_PD_9_1": {
+  "malnamn": "Takovertrekk_NO_PD_9_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_PD_9_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_PD_9_1.jpg.qa.png"
+ },
+ "Takoverdrag_RI_3_H1": {
+  "malnamn": "Takovertrekk_NO_RI_3_H1",
+  "status": "FEL",
+  "skal": "'Takoverdrag_RI_3_H1'"
+ },
+ "Takoverdrag_RI_4_1": {
+  "malnamn": "Takovertrekk_NO_RI_4_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_RI_4_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_RI_4_1.jpg.qa.png"
+ },
+ "Takoverdrag_TR_2_1": {
+  "malnamn": "Takovertrekk_NO_TR_2_1",
+  "karta": [
+   null,
+   null,
+   null,
+   null
+  ],
+  "status": "OK",
+  "fil": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_TR_2_1.jpg",
+  "qa": "market-expansion/no/notion-batches/2026-09-18/no/Takovertrekk_NO_TR_2_1.jpg.qa.png"
+ }
+}

@@ -1,0 +1,96 @@
+[
+ {
+  "box": [
+   33,
+   47,
+   1047,
+   175
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Bare taket."
+ },
+ {
+  "box": [
+   33,
+   175,
+   1047,
+   300
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Ikke hele vogna."
+ },
+ {
+  "box": [
+   33,
+   300,
+   1047,
+   461
+  ],
+  "rader": 2,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Et heldekkende trekk er tungt å få på plass alene og skurer mot lakken hele vinteren."
+ },
+ {
+  "box": [
+   366,
+   1084,
+   711,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Dekker taket, 6,5 × 3 m"
+ },
+ {
+  "box": [
+   347,
+   1222,
+   734,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se takovertrekket"
+ }
+]

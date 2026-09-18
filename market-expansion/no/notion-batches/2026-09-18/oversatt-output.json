@@ -1,0 +1,912 @@
+{
+ "IBC_BOF_13_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Hvordan når du lokket når tanken er dekket?",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Åpningen øverst går rett til lokket.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Åpne øverst, løft lokket, lukk igjen — uten å ta av hele trekket.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Nå tanken når du vil.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_BOF_14_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Passer den virkelig din IBC-tank?",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "120 × 100 × 116 cm — målene for en standard 1000 L IBC-tank.",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Bygget etter IBC-tankens mål — ikke en universalpresenning.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Ikke mål — den er laget for din tank.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_BOF_15_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "439 kr.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Ordinær pris 586 kr — 25 % rabatt.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "147 kr billigere enn ordinær pris.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Betal 439 kr — ikke 586 kr.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_CS_7_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "439 kr per stk (ord. 586 kr)",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "2-pakning IBC-tanktrekk: 15 % rabatt + fri frakt inkludert",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "15 %-rabatten er allerede forhåndsvalgt når du velger 2-pakning",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Bestill 2-pakningen – 439 kr per stk",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_PD_10_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Sollys inn i tanken.",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "Alger i vannet.",
+      "rader": [
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Stenger ute lyset",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "210D Oxford-stoff",
+      "rader": [
+       1
+      ]
+     },
+     {
+      "text": "Passer din 1000 L-tank",
+      "rader": [
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Åpningen øverst går rett til lokket — ingen avdekking for å nå tanken.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Lukk åpningen. Hold lyset ute.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_RV_9_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "«Bra kvalitet og enkel å bruke. Passet min 1000-liters tank uten problemer.»",
+      "rader": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Johan",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Anmeldelse fra produktsiden.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Gjør som Johan — dekk tanken.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "IBC_RV_10_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "«Passer godt på tanken og beskytter mot solen.",
+      "rader": [
+       0,
+       1
+      ]
+     },
+     {
+      "text": "Akkurat det jeg trengte.»",
+      "rader": [
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Sofia",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Anmeldelse fra produktsiden.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Gjør som Sofia — beskytt tanken mot solen.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_BOF_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "360 kr billigere enn 1 549 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "19,5 m² tak",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Betal 1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_BOF_5_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Er ikke en presenning nok?",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "210D-vev, ikke en tynn presenning som sprekker i frost",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Tåler vinteren ute – uten å sprekke",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se forskjellen på veven",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_BOF_6_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Klarer jeg det selv?",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Bare taket – ikke hele vogna",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Stropp og snortrekk i kanten",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Sett på taket selv",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_CO_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Bare taket.",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "Ikke hele vogna.",
+      "rader": [
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Et heldekkende trekk er tungt å få på plass alene og skurer mot lakken hele vinteren.",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Dekker taket, 6,5 × 3 m",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se takovertrekket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_CS_10_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Spar 360 kr på takovertrekket",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "1 549 kr → 1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Vurdering 5,0 av 5 (10 anmeldelser)",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se takovertrekket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_CS_11_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Spar 23 % på takovertrekket",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "1 549 kr → 1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Vurdering 5,0 av 5 (10 anmeldelser)",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se takovertrekket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_GT_9_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Han går ut i pysjen for å sjekke at trekket sitter.",
+      "rader": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Gi ham et takovertrekk som sitter fast.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Sitter fast når det blåser – spennes fast med stropp og snortrekk i kanten.",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Gi bort takovertrekket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_LI_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "6,5 × 3 meter tak.",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "Ikke mer.",
+      "rader": [
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Stropp og snortrekk i kanten",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "Settes på av én person",
+      "rader": [
+       1
+      ]
+     },
+     {
+      "text": "210D-vev",
+      "rader": [
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Dekk taket, ikke hele vogna",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_PD_8_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "6,5 × 3 meter – hele taket, ikke mer",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "210D-vev – tåler en hel vintersesong ute",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Bare taket – håndteres av én person",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se målene",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_PD_9_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Vannet blir stående rundt takluker.",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Taket er det du aldri ser – og det som koster mest å reparere.",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Dekker hele takflaten, 6,5 × 3 m",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Beskytt taket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_RI_4_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Vannet blir aldri stående rundt takluker",
+      "rader": [
+       0,
+       1,
+       2
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "210D-vev, ikke en tynn presenning som sprekker i frost",
+      "rader": [
+       0,
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "1 189 kr for taket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se hva det koster å beskytte taket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "Takoverdrag_TR_2_1": {
+  "former": [
+   {
+    "texter": [
+     {
+      "text": "Bare 10 anmeldelser.",
+      "rader": [
+       0
+      ]
+     },
+     {
+      "text": "Alle 5 av 5.",
+      "rader": [
+       1
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "5,0 av 5 på 10 anmeldelser",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "1 189 kr",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   },
+   {
+    "texter": [
+     {
+      "text": "Se takovertrekket",
+      "rader": [
+       0
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

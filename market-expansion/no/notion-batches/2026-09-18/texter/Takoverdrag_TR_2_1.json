@@ -1,0 +1,87 @@
+[
+ {
+  "box": [
+   33,
+   185,
+   1047,
+   285
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Bare 10 anmeldelser."
+ },
+ {
+  "box": [
+   33,
+   300,
+   1047,
+   395
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Alle 5 av 5."
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   505
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "5,0 av 5 på 10 anmeldelser"
+ },
+ {
+  "box": [
+   450,
+   1084,
+   630,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr"
+ },
+ {
+  "box": [
+   347,
+   1222,
+   734,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se takovertrekket"
+ }
+]

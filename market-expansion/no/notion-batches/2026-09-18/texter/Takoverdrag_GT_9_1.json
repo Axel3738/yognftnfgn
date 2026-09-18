@@ -1,0 +1,76 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   392
+  ],
+  "rader": 3,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   19,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Han går ut i pysjen for å sjekke at trekket sitter."
+ },
+ {
+  "box": [
+   33,
+   440,
+   1047,
+   510
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Gi ham et takovertrekk som sitter fast."
+ },
+ {
+  "box": [
+   60,
+   1084,
+   1019,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sitter fast når det blåser – spennes fast med stropp og snortrekk i kanten."
+ },
+ {
+  "box": [
+   297,
+   1222,
+   784,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Gi bort takovertrekket"
+ }
+]

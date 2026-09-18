@@ -1,0 +1,784 @@
+{
+ "bilder": {
+  "IBC_BOF_13_1": {
+   "texter": [
+    {
+     "rader": [
+      "Hvordan når du lokket",
+      "når tanken er dekket?"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Åpningen øverst går rett til lokket."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Åpne øverst, løft lokket, lukk igjen — uten å ta av hele trekket."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Nå tanken når du vil."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_BOF_14_1": {
+   "texter": [
+    {
+     "rader": [
+      "Passer den virkelig din",
+      "IBC-tank?"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "120 × 100 × 116 cm — målene for en standard 1000 L",
+      "IBC-tank."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Bygget etter IBC-tankens mål — ikke en universalpresenning."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Ikke mål — den er laget for din tank."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_BOF_15_1": {
+   "texter": [
+    {
+     "rader": [
+      "439 kr."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Ordinær pris 586 kr — 25 % rabatt."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "147 kr billigere enn ordinær pris."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Betal 439 kr — ikke 586 kr."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_CS_7_1": {
+   "texter": [
+    {
+     "rader": [
+      "439 kr per stk (ord.",
+      "586 kr)"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "2-pakning IBC-tanktrekk: 15 % rabatt + fri frakt inkludert"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (rabattsats ej verifierad, se andringar)"
+    },
+    {
+     "rader": [
+      "15 %-rabatten er allerede forhåndsvalgt når du velger 2-pakning"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (rabattsats ej verifierad, se andringar)"
+    },
+    {
+     "rader": [
+      "Bestill 2-pakningen – 439 kr per stk"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_PD_10_1": {
+   "texter": [
+    {
+     "rader": [
+      "Sollys inn i tanken.",
+      "Alger i vannet."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Stenger ute lyset",
+      "210D Oxford-stoff",
+      "Passer din 1000 L-tank"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Åpningen øverst går rett til lokket — ingen avdekking for å nå tanken."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Lukk åpningen. Hold lyset ute."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_RV_9_1": {
+   "texter": [
+    {
+     "rader": [
+      "«Bra kvalitet og enkel å bruke.",
+      "Passet min 1000-liters tank uten",
+      "problemer.»"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Johan"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Anmeldelse fra produktsiden."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Gjør som Johan — dekk tanken."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "IBC_RV_10_1": {
+   "texter": [
+    {
+     "rader": [
+      "«Passer godt på tanken og beskytter mot",
+      "solen.",
+      "Akkurat det jeg trengte.»"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Sofia"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Anmeldelse fra produktsiden."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Gjør som Sofia — beskytt tanken mot solen."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_BOF_4_1": {
+   "texter": [
+    {
+     "rader": [
+      "1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "360 kr billigere enn 1 549 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "19,5 m² tak"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Betal 1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_BOF_5_1": {
+   "texter": [
+    {
+     "rader": [
+      "Er ikke en",
+      "presenning nok?"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "210D-vev, ikke en tynn presenning som sprekker i",
+      "frost"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Tåler vinteren ute – uten å sprekke"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se forskjellen på veven"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_BOF_6_1": {
+   "texter": [
+    {
+     "rader": [
+      "Klarer jeg det selv?"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Bare taket – ikke hele vogna"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Stropp og snortrekk i kanten"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Sett på taket selv"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_CO_4_1": {
+   "texter": [
+    {
+     "rader": [
+      "Bare taket.",
+      "Ikke hele vogna."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Et heldekkende trekk er tungt å få på plass alene og",
+      "skurer mot lakken hele vinteren."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Dekker taket, 6,5 × 3 m"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_CS_10_1": {
+   "texter": [
+    {
+     "rader": [
+      "Spar 360 kr på",
+      "takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "1 549 kr → 1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Vurdering 5,0 av 5 (10 anmeldelser)"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_CS_11_1": {
+   "texter": [
+    {
+     "rader": [
+      "Spar 23 % på",
+      "takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "1 549 kr → 1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Vurdering 5,0 av 5 (10 anmeldelser)"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_GT_9_1": {
+   "texter": [
+    {
+     "rader": [
+      "Han går ut i pysjen for",
+      "å sjekke at trekket",
+      "sitter."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Gi ham et takovertrekk som sitter fast."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Sitter fast når det blåser – spennes fast med stropp og snortrekk i kanten."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Gi bort takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_LI_2_1": {
+   "texter": [
+    {
+     "rader": [
+      "6,5 × 3 meter tak.",
+      "Ikke mer."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Stropp og snortrekk i kanten",
+      "Settes på av én person",
+      "210D-vev"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Dekk taket, ikke hele vogna"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_PD_8_1": {
+   "texter": [
+    {
+     "rader": [
+      "6,5 × 3 meter – hele taket,",
+      "ikke mer"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "210D-vev – tåler en hel vintersesong ute"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Bare taket – håndteres av én person"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se målene"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_PD_9_1": {
+   "texter": [
+    {
+     "rader": [
+      "Vannet blir stående rundt",
+      "takluker."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Taket er det du aldri ser – og det som koster mest",
+      "å reparere."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Dekker hele takflaten, 6,5 × 3 m"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Beskytt taket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  },
+  "Takoverdrag_RI_4_1": {
+   "texter": [
+    {
+     "rader": [
+      "Vannet blir aldri",
+      "stående rundt",
+      "takluker"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "210D-vev, ikke en tynn presenning som sprekker i",
+      "frost"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "1 189 kr for taket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se hva det koster å beskytte taket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    }
+   ]
+  },
+  "Takoverdrag_TR_2_1": {
+   "texter": [
+    {
+     "rader": [
+      "Bare 10 anmeldelser.",
+      "Alle 5 av 5."
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "5,0 av 5 på 10 anmeldelser"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "1 189 kr"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen ✅"
+    },
+    {
+     "rader": [
+      "Se takovertrekket"
+     ],
+     "test": "visualisera ✅ / falsifiera ✅ / egen △ (generisk CTA)"
+    }
+   ]
+  }
+ },
+ "copy": {
+  "IBC-tanktrekk_NO_BOF_13_1": {
+   "message": "Hvordan når du lokket når tanken er dekket? Åpningen øverst går rett til lokket – du drar opp glidelåsen, fyller på og lukker igjen. Trekket sitter på, bare åpningen beveger seg.",
+   "headline": "Åpningen går rett til lokket",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_BOF_14_1": {
+   "message": "Passer den virkelig din IBC-tank? 120 × 100 × 116 cm – målene for en standard 1000 L IBC-tank. Bygget etter disse målene, ikke en universalpresenning. Ikke mål – den er laget for din tank.",
+   "headline": "120 × 100 × 116 cm – din tank",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_BOF_15_1": {
+   "message": "439 kr. Ordinær pris 586 kr – 25 % rabatt. 147 kr billigere for samme tanktrekk. Betal 439 kr, ikke 586 kr.",
+   "headline": "439 kr – ikke 586 kr",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_CO_2_H1": {
+   "message": "Presenningen løsner i første vindkast. Vårt 210D Oxford-stoff sitter fast i samme vind og stenger ute sollyset helt. Åpningen øverst gir deg lokket likevel.",
+   "headline": "Vinden tar presenningen",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_CS_7_1": {
+   "message": "439 kr per stykk. Velger du 2-pakning trekkes 15 % fra automatisk, og fri frakt er inkludert. Ingen kode trengs – rabatten ligger allerede inne. Samme 210D Oxford-stoff og samme UV-beskyttelse, bare lavere pris per stykk.",
+   "headline": "2-pakning: 15 % + fri frakt",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_PD_10_1": {
+   "message": "Sollys inn i tanken. Alger i vannet. 210D Oxford-stoff stenger ute lyset helt, og åpningen øverst går rett til lokket – ingen avdekking for å nå tanken. Passer din 1000 L-tank.",
+   "headline": "Stenger ute lyset, ikke lokket",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_PD_8_H1": {
+   "message": "210D Oxford-stoffet blokkerer UV helt. Uten det blir vannet sånn her. Stoffet holder lyset ute så algene ikke får noe å vokse av. Åpning øverst gjør at du når lokket uten å løfte av hele trekket. 439 kr i stedet for 586 kr – spar 147 kr.",
+   "headline": "210D Oxford-stoffet blokkerer UV helt.",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_RV_10_1": {
+   "message": "Anmeldelse fra produktsiden. «Passer godt på tanken og beskytter mot solen. Akkurat det jeg trengte.» – Sofia. Gjør som Sofia – beskytt tanken mot solen.",
+   "headline": "Sofia: beskytter mot solen",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_RV_9_1": {
+   "message": "Anmeldelse fra produktsiden. «Bra kvalitet og enkel å bruke. Passet min 1000-liters tank uten problemer.» – Johan. Gjør som Johan – dekk tanken.",
+   "headline": "Johan: passet uten problemer",
+   "description": ""
+  },
+  "IBC-tanktrekk_NO_SP_5_H1": {
+   "message": "Stoffet slipper ikke gjennom en eneste solstråle. Åpningen øverst gjør at du når lokket uten å løfte av hele trekket. UV og dagslys når aldri plasten under stoffet, så algene får ingenting å vokse av. 4,7 av 5 på 10 anmeldelser, 439 kr (ord. 586 kr).",
+   "headline": "Blokkerer UV – 4,7 av 5",
+   "description": ""
+  },
+  "Takovertrekk_NO_BOF_4_1": {
+   "message": "1 189 kr. 360 kr billigere enn ordinær pris 1 549 kr, en rabatt på 23 %. Dekker hele taket, 19,5 m².",
+   "headline": "1 189 kr for takovertrekket",
+   "description": ""
+  },
+  "Takovertrekk_NO_BOF_5_1": {
+   "message": "Er ikke en presenning nok? En tynn presenning sprekker i kulden. Takovertrekket er 210D-vev og tåler vinteren ute – uten å sprekke.",
+   "headline": "Er ikke en presenning nok?",
+   "description": ""
+  },
+  "Takovertrekk_NO_BOF_6_1": {
+   "message": "Klarer jeg det selv? Ja. Bare taket, ikke hele vogna – én person fester stropp og snortrekk i kanten uten hjelp.",
+   "headline": "Klarer jeg det selv?",
+   "description": ""
+  },
+  "Takovertrekk_NO_CO_4_1": {
+   "message": "Bare taket. Ikke hele vogna. Et heldekkende trekk er tungt å få på plass alene og skurer mot lakken hele vinteren. Takovertrekket håndteres av én person.",
+   "headline": "Bare taket. Ikke hele vogna.",
+   "description": ""
+  },
+  "Takovertrekk_NO_CS_10_1": {
+   "message": "Spar 360 kr på takovertrekket. 1 549 kr blir 1 189 kr. Vurdering 5,0 av 5 på 10 anmeldelser.",
+   "headline": "Spar 360 kr på takovertrekket",
+   "description": ""
+  },
+  "Takovertrekk_NO_CS_11_1": {
+   "message": "Spar 23 % på takovertrekket. 1 549 kr blir 1 189 kr. Vurdering 5,0 av 5 på 10 anmeldelser.",
+   "headline": "Spar 23 % på takovertrekket",
+   "description": ""
+  },
+  "Takovertrekk_NO_GT_9_1": {
+   "message": "Han går ut i pysjen for å sjekke at trekket sitter. Stropp og snortrekk i kanten holder det på plass når det blåser. Vurdering 5,0 av 5 på 10 anmeldelser.",
+   "headline": "Han sjekker trekket i pysjen",
+   "description": ""
+  },
+  "Takovertrekk_NO_LI_2_1": {
+   "message": "6,5 × 3 meter tak. Ikke mer. Stropp og snortrekk i kanten, settes på av én person. 210D-vev som får plass i medfølgende bag. 1 189 kr, 23 % rabatt mot 1 549 kr.",
+   "headline": "6,5 × 3 meter tak. Ikke mer.",
+   "description": ""
+  },
+  "Takovertrekk_NO_OB_1_H1": {
+   "message": "«Blåser det ikke av?», tenker du. Stropp og snortrekk spenner kanten hardt, ingen flapping selv i hard vind. 210D-vev, laget for en hel vintersesong utendørs. 1 189 kr, ord. 1 549 kr.",
+   "headline": "Sitter fast når det blåser",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_6_H1": {
+   "message": "Én person. Det er alt som trengs. Ingen ekstra hjelp trengs for å få trekket på plass — bare stropp og snortrekk som spennes fast i kanten. Passer i medfølgende bag når det ikke er i bruk. 1 189 kr, ord. 1 549 kr.",
+   "headline": "Én person er nok for taket",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_7_H1": {
+   "message": "6,5 ganger 3 meter. Legges rett over taket. Stropp og snortrekk spenner fast kanten, så vann aldri blir stående rundt takluker. En bøtte vann helles rett over taket – og renner av, ingen dam igjen. 1 189 kr, ord. 1 549 kr.",
+   "headline": "6,5 × 3 m rett over taket",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_8_1": {
+   "message": "6,5 × 3 meter – hele taket, ikke mer. 210D-vev som tåler en hel vintersesong ute. 19,5 m², håndteres av én person.",
+   "headline": "6,5 × 3 meter – hele taket",
+   "description": ""
+  },
+  "Takovertrekk_NO_PD_9_1": {
+   "message": "Vannet blir stående rundt takluker. Taket er det du aldri ser – og det som koster mest å reparere om det går i stykker. Dekker hele takflaten, 6,5 × 3 m.",
+   "headline": "Vannet blir stående på taket",
+   "description": ""
+  },
+  "Takovertrekk_NO_RI_3_H1": {
+   "message": "Taket er det du aldri ser. Det er også flaten som koster mest å reparere om den går i stykker. Et trekk i 210D-vev dekker hele taket, 6,5 × 3 meter, så vann aldri blir stående rundt takluker. 1 189 kr, ord. 1 549 kr (spar 360 kr).",
+   "headline": "Taket du aldri ser",
+   "description": ""
+  },
+  "Takovertrekk_NO_RI_4_1": {
+   "message": "Vannet blir aldri stående rundt takluker. Taket er det du aldri ser – og det som koster mest å reparere om det går i stykker. Det er 210D-vev, ikke en tynn presenning som sprekker i frost. 1 189 kr for taket.",
+   "headline": "Vannet blir aldri stående",
+   "description": ""
+  },
+  "Takovertrekk_NO_TR_2_1": {
+   "message": "Bare 10 anmeldelser. Alle 5 av 5. 5,0 av 5 på 10 anmeldelser. 1 189 kr for takovertrekket.",
+   "headline": "Bare 10 anmeldelser. Alle 5 av 5.",
+   "description": ""
+  }
+ },
+ "andringar": [
+  {
+   "bild": "IBC_BOF_15_1",
+   "svenskt": "489 kr / ord. 636 kr / 147 kr billigare / 23 % rabatt",
+   "norskt": "439 kr / ord. 586 kr / 147 kr billigere / 25 % rabatt",
+   "skal": "Svenska belopp bytta mot verifierade norska. 147 kr av 586 kr blir 25 %, inte 23 % — rabattsatsen skiljer sig mellan marknaderna trots samma kronbelopp i rabatt."
+  },
+  {
+   "bild": "IBC_CS_7_1",
+   "svenskt": "489 kr styck (ord. 636 kr), 2-pack med 15 % rabatt + fri frakt",
+   "norskt": "439 kr per stk (ord. 586 kr), 2-pakning med 15 % rabatt + fri frakt",
+   "skal": "Grundpriset bytt till norska belopp. 15 %-rabatten vid 2 stk är VERIFIERAD på beverbutikken.no samma dag (mängdrabattstegen st2b = 15 %, st3c = 20 %), så procentsatsen står kvar. Fri frakt gäller: 2 × 439 = 878 kr passerar gränsen 300 kr."
+  },
+  {
+   "bild": "IBC_PD_8_H1",
+   "svenskt": "489 kr i stället för 636 kr – spara 147 kr",
+   "norskt": "439 kr i stedet for 586 kr – spar 147 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska (147 kr rabatt är samma kronbelopp på båda marknaderna, bara grundpriserna skiljer)."
+  },
+  {
+   "bild": "IBC_SP_5_H1",
+   "svenskt": "489 kr (ord. 636 kr)",
+   "norskt": "439 kr (ord. 586 kr)",
+   "skal": "Svenska belopp bytta mot verifierade norska. Betyget 4,7 av 5 på 10 anmeldelser är den verifierade norska siffran och stod redan i källraden."
+  },
+  {
+   "bild": "Takoverdrag_BOF_4_1",
+   "svenskt": "1 129 kr / 340 kr billigare / 1 469 kr / 23 %",
+   "norskt": "1 189 kr / 360 kr billigere / 1 549 kr / 23 %",
+   "skal": "Svenska belopp bytta mot verifierade norska. Rabattsatsen 23 % är oförändrad — den råkar stämma på båda marknaderna för taköverdraget/takovertrekket."
+  },
+  {
+   "bild": "Takoverdrag_CS_10_1",
+   "svenskt": "1 469 kr → 1 129 kr, spara 340 kr",
+   "norskt": "1 549 kr → 1 189 kr, spar 360 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_CS_11_1",
+   "svenskt": "1 469 kr → 1 129 kr, 23 %",
+   "norskt": "1 549 kr → 1 189 kr, 23 %",
+   "skal": "Svenska belopp bytta mot verifierade norska. Rabattsatsen oförändrad."
+  },
+  {
+   "bild": "Takoverdrag_LI_2_1",
+   "svenskt": "1 129 kr, 23 % rabatt mot 1 469 kr",
+   "norskt": "1 189 kr, 23 % rabatt mot 1 549 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_OB_1_H1",
+   "svenskt": "1 129 kr, ord. 1 469 kr",
+   "norskt": "1 189 kr, ord. 1 549 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_PD_6_H1",
+   "svenskt": "1 129 kr, ord. 1 469 kr",
+   "norskt": "1 189 kr, ord. 1 549 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_PD_7_H1",
+   "svenskt": "1 129 kr, ord. 1 469 kr",
+   "norskt": "1 189 kr, ord. 1 549 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_RI_3_H1",
+   "svenskt": "1 129 kr, ord. 1 469 kr (spara 340 kr)",
+   "norskt": "1 189 kr, ord. 1 549 kr (spar 360 kr)",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_RI_4_1",
+   "svenskt": "1 129 kr för taket",
+   "norskt": "1 189 kr for taket",
+   "skal": "Svenska belopp bytta mot verifierade norska."
+  },
+  {
+   "bild": "Takoverdrag_TR_2_1",
+   "svenskt": "1 129 kr",
+   "norskt": "1 189 kr",
+   "skal": "Svenska belopp bytta mot verifierade norska. Betygsraden 5,0 av 5 på 10 anmeldelser är den verifierade norska siffran."
+  }
+ ],
+ "hoppa": []
+}

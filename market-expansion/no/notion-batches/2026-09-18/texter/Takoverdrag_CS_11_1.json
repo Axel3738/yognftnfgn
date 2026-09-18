@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   55,
+   1047,
+   285
+  ],
+  "rader": 2,
+  "storlek": 70,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Spar 23 % på takovertrekket"
+ },
+ {
+  "box": [
+   33,
+   320,
+   1047,
+   378
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "1 549 kr → 1 189 kr"
+ },
+ {
+  "box": [
+   308,
+   1084,
+   771,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Vurdering 5,0 av 5 (10 anmeldelser)"
+ },
+ {
+  "box": [
+   347,
+   1222,
+   734,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se takovertrekket"
+ }
+]

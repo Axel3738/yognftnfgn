@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   165
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Klarer jeg det selv?"
+ },
+ {
+  "box": [
+   33,
+   200,
+   1047,
+   262
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Bare taket – ikke hele vogna"
+ },
+ {
+  "box": [
+   341,
+   1084,
+   737,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Stropp og snortrekk i kanten"
+ },
+ {
+  "box": [
+   340,
+   1222,
+   741,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Sett på taket selv"
+ }
+]

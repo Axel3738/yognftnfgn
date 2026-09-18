@@ -1,0 +1,125 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   165
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   19,
+   17,
+   16
+  ],
+  "text": "Sollys inn i tanken."
+ },
+ {
+  "box": [
+   33,
+   180,
+   1047,
+   285
+  ],
+  "rader": 1,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   19,
+   17,
+   16
+  ],
+  "text": "Alger i vannet."
+ },
+ {
+  "box": [
+   386,
+   322,
+   1047,
+   372
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 390,
+  "text": "Stenger ute lyset"
+ },
+ {
+  "box": [
+   386,
+   375,
+   1047,
+   425
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 390,
+  "text": "210D Oxford-stoff"
+ },
+ {
+  "box": [
+   386,
+   430,
+   1047,
+   472
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "vanster": true,
+  "vanster_x": 390,
+  "text": "Passer din 1000 L-tank"
+ },
+ {
+  "box": [
+   68,
+   1084,
+   1010,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Åpningen øverst går rett til lokket — ingen avdekking for å nå tanken."
+ },
+ {
+  "box": [
+   195,
+   1222,
+   885,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Lukk åpningen. Hold lyset ute."
+ }
+]

@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   58,
+   1047,
+   275
+  ],
+  "rader": 2,
+  "storlek": 70,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Vannet blir stående rundt takluker."
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   445
+  ],
+  "rader": 2,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Taket er det du aldri ser – og det som koster mest å reparere."
+ },
+ {
+  "box": [
+   315,
+   1084,
+   763,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Dekker hele takflaten, 6,5 × 3 m"
+ },
+ {
+  "box": [
+   387,
+   1222,
+   693,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Beskytt taket"
+ }
+]

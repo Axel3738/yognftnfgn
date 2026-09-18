@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   58,
+   1047,
+   275
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Hvordan når du lokket når tanken er dekket?"
+ },
+ {
+  "box": [
+   33,
+   315,
+   1047,
+   385
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Åpningen øverst går rett til lokket."
+ },
+ {
+  "box": [
+   55,
+   1084,
+   1024,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Åpne øverst, løft lokket, lukk igjen — uten å ta av hele trekket."
+ },
+ {
+  "box": [
+   261,
+   1222,
+   819,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Nå tanken når du vil."
+ }
+]

@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   275
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Passer den virkelig din IBC-tank?"
+ },
+ {
+  "box": [
+   33,
+   315,
+   1047,
+   440
+  ],
+  "rader": 2,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "120 × 100 × 116 cm — målene for en standard 1000 L IBC-tank."
+ },
+ {
+  "box": [
+   90,
+   1084,
+   988,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Bygget etter IBC-tankens mål — ikke en universalpresenning."
+ },
+ {
+  "box": [
+   158,
+   1222,
+   923,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Ikke mål — den er laget for din tank."
+ }
+]

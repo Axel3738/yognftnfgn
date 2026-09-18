@@ -1,0 +1,70 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   285
+  ],
+  "rader": 2,
+  "storlek": 66,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "439 kr per stk (ord. 586 kr)"
+ },
+ {
+  "box": [
+   33,
+   315,
+   1047,
+   385
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "2-pakning IBC-tanktrekk: 15 % rabatt + fri frakt inkludert"
+ },
+ {
+  "box": [
+   167,
+   1084,
+   913,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "15 %-rabatten er allerede forhåndsvalgt når du velger 2-pakning"
+ },
+ {
+  "box": [
+   213,
+   1222,
+   867,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Bestill 2-pakningen – 439 kr per stk"
+ }
+]

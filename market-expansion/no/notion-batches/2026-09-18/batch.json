@@ -1,0 +1,25 @@
+{
+ "ibc-tanktrekk": {
+  "produkt": "IBC-tanktrekk 1000 L",
+  "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+  "videos": {
+   "CO_2_H1": "meta:1063820523024427",
+   "PD_8_H1": "meta:1387033843410567",
+   "SP_5_H1": "meta:1841924466797267"
+  },
+  "pris_nok": 439,
+  "jamforpris_nok": 586
+ },
+ "takovertrekk": {
+  "produkt": "Takovertrekk til Campingvogn",
+  "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+  "videos": {
+   "OB_1_H1": "meta:1906776980305994",
+   "PD_6_H1": "meta:1799802437683001",
+   "PD_7_H1": "meta:961591576997026",
+   "RI_3_H1": "meta:973503352439826"
+  },
+  "pris_nok": 1189,
+  "jamforpris_nok": 1549
+ }
+}

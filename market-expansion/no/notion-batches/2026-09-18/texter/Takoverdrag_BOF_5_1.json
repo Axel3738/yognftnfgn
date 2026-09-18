@@ -1,0 +1,76 @@
+[
+ {
+  "box": [
+   33,
+   47,
+   1047,
+   310
+  ],
+  "rader": 2,
+  "storlek": 58,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "Er ikke en presenning nok?"
+ },
+ {
+  "box": [
+   33,
+   310,
+   1047,
+   461
+  ],
+  "rader": 2,
+  "storlek": 36,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "radie": 0,
+  "text": "210D-vev, ikke en tynn presenning som sprekker i frost"
+ },
+ {
+  "box": [
+   297,
+   1084,
+   782,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Tåler vinteren ute – uten å sprekke"
+ },
+ {
+  "box": [
+   287,
+   1222,
+   793,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 39,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Se forskjellen på veven"
+ }
+]
