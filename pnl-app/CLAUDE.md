@@ -551,6 +551,16 @@ ladda om efter några minuter innan du felsöker något annat.
 Gruppsumman rör inte produktkatalogen: `daily.server.ts` importerar bara
 `fetchOrderData` och `mergeProductRows` ur `shopify-data.server.ts`.
 
+**Skilj "gick inte" från "försöker igen" (v100).** `getSpend` skiljer redan
+på `retrying` (Meta svarade inte den här gången — nästa laddning har den
+med) och `fetch-failed`, men `group.server.ts` skrev samma mening för
+båda. Den norska butiken låg i `retrying` och rutan sa "annonskostnaden
+gick inte att hämta"; Axel läste det som att halva appen var trasig, och
+det kostade en timme. Nu har `retrying` sin egen mening
+(`T.group.spendRetrying`). **Skriv aldrig ett självläkande läge som ett
+fel** — varje rad i den rutan ska säga antingen vad handlaren ska göra
+eller att den löser sig själv.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad

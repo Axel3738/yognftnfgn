@@ -716,6 +716,8 @@ const en = {
       "couldn't fetch this store's data — open its dashboard once; its access may need to be renewed",
     spendUnavailable:
       "ad spend could not be fetched — excluded so the total isn't overstated",
+    spendRetrying:
+      "Meta didn't answer just now — trying again in a few minutes; it comes back on its own",
     loginExpired:
       "the Facebook login has expired — open that store's Settings and log in again; excluded until then",
     accountNotChosen:
@@ -1538,6 +1540,8 @@ const sv: Texts = {
       "butikens siffror gick inte att hämta — öppna dess panel en gång; åtkomsten kan behöva förnyas",
     spendUnavailable:
       "annonskostnaden gick inte att hämta — utesluten så att summan inte blir för hög",
+    spendRetrying:
+      "Meta svarade inte just nu — nytt försök om några minuter; den kommer med av sig själv",
     loginExpired:
       "Facebook-inloggningen har gått ut — öppna den butikens Inställningar och logga in igen; utesluten tills dess",
     accountNotChosen:

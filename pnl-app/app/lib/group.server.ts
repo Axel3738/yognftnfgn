@@ -276,11 +276,20 @@ async function summeraButik(
   }
   if (metaKonton.length && spendData.error) {
     /* Utgången Facebook-inloggning får ett eget skäl: åtgärden är ett klick
-       i DEN butikens Settings, inte "öppna panelen en gång". */
+       i DEN butikens Settings, inte "öppna panelen en gång".
+       Och "retrying" — Meta svarade inte den här gången — är INTE ett fel som
+       kräver något: nästa laddning har den med igen. Att säga "gick inte att
+       hämta" om något som fixar sig självt läste Axel 2026-09-18 som att
+       halva appen var trasig, och det kostade en timme. */
     return {
       ok: false,
       shop: m.shop,
-      reason: spendData.errorCode === "expired" ? T.group.loginExpired : T.group.spendUnavailable,
+      reason:
+        spendData.errorCode === "expired"
+          ? T.group.loginExpired
+          : spendData.errorCode === "retrying"
+            ? T.group.spendRetrying
+            : T.group.spendUnavailable,
     };
   }
 
