@@ -37,7 +37,8 @@ export const kr = (n) => `${Math.round(Number(n)).toLocaleString('sv-SE').replac
 export const EXEMPEL = {
   fornamn: 'Johan',
   ordernummer: '#4821',
-  fraktbolag: 'PostNord',
+  fraktbolag: 'YunExpress',
+  leverans_dagar: [7, 14],
   belopp: 599,
   rader: [
     { handle: 'axelbalte-for-trimmer-justerbart-nylonbalte', titel: 'Axelbälte för Trimmer – Justerbart Nylonbälte', antal: 1, pris: 599, bild: 'https://cdn.shopify.com/s/files/1/1013/0322/2621/files/e0eacffe518545679195983f7a434ba3-goods_compact_cropped.jpg?v=1782032083' },
@@ -67,6 +68,9 @@ const LIQUID = {
   '{{belopp}}': '{{ amount | money }}',
   '{{slutdatum}}': '{{ slutdatum }}',
   '{{paketdeadline}}': 'kl {{ paket_tid }} den {{ paket_datum }}',
+  // Leveransfönstret, räknat vid utskick (se leveransLiquid).
+  '{{leverans_fran}}': '{{ lev_fran_datum }}',
+  '{{leverans_till}}': '{{ lev_till_datum }}',
 };
 
 export const MANADER = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december'];
@@ -96,6 +100,21 @@ function datumLiquid(ts, prefix) {
     `{% assign ${prefix}_mm = ${ts} | date: '%m' %}` +
     `{% case ${prefix}_mm %}${fall}{% else %}{% assign ${prefix}_man = '' %}{% endcase %}` +
     `{% assign ${prefix}_datum = ${prefix}_dag | append: ' ' | append: ${prefix}_man %}`
+  );
+}
+
+// Liquid som sätter leveransfönstret `lev_fran_datum`–`lev_till_datum`
+// (svensk månad) räknat från utskicket: fraktmejlet går när paketet skickas,
+// så 'now' + 7 / + 14 dagar är fönstret; orderbekräftelsen lägger på
+// packtiden först. Inga leveransevent kommer från YunExpress/4PX (0 av 500
+// ordrar sedan 15 juni, mätt 2026-09-17), så datumet måste räknas, inte läsas.
+export function leveransLiquid(frakt, packdagar = 0) {
+  const fran = ((frakt.leverans_dagar_min ?? 7) + packdagar) * 86400;
+  const till = ((frakt.leverans_dagar_max ?? 14) + packdagar) * 86400;
+  return (
+    `{% assign lev_bas = 'now' | date: '%s' | plus: 0 %}` +
+    `{% assign lev_fran_ts = lev_bas | plus: ${fran} %}${datumLiquid('lev_fran_ts', 'lev_fran')}` +
+    `{% assign lev_till_ts = lev_bas | plus: ${till} %}${datumLiquid('lev_till_ts', 'lev_till')}`
   );
 }
 
@@ -185,7 +204,7 @@ const LIQUID_AMNE = {
   '{{förnamn}}': "{{ customer.first_name | default: 'Hej' }}",
 };
 
-export function ersatt(text, lage, tabell = LIQUID) {
+export function ersatt(text, lage, tabell = LIQUID, { packdagar = 0 } = {}) {
   let ut = String(text ?? '');
   for (const [nyckel, liquid] of Object.entries(tabell)) {
     const exempel = {
@@ -196,6 +215,8 @@ export function ersatt(text, lage, tabell = LIQUID) {
       '{{belopp}}': kr(EXEMPEL.belopp),
       '{{slutdatum}}': EXEMPEL.slutdatum ?? exempelSlutdatum(30),
       '{{paketdeadline}}': EXEMPEL.paketdeadline ?? exempelPaketdeadline(18),
+      '{{leverans_fran}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[0] ?? 7) + packdagar),
+      '{{leverans_till}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[1] ?? 14) + packdagar),
     }[nyckel];
     ut = ut.split(nyckel).join(lage === 'liquid' ? liquid : exempel);
   }
@@ -280,6 +301,29 @@ function avdelare(s) {
   return `
           <tr>
             <td style="padding: 0 32px;"><div style="border-top: 1px solid ${s.ram}; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>`;
+}
+
+// Leveransfönstret i fraktmejlet: etikett, datumspann stort, och raden om
+// de tysta dagarna under. Ljus ruta så det syns utan att tävla med knappen.
+function leveransFonster(s, etikett, spann, forklaring) {
+  return `
+          <tr>
+            <td style="padding: 16px 32px 4px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f7f2" style="border: 1px solid ${s.ram};">
+                <tr>
+                  <td align="center" style="padding: 16px 20px 6px;">
+                    <p style="${s.brod} font-size: 12px; font-weight: bold; color: ${s.rod}; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px;">${esk(etikett)}</p>
+                    <p style="${s.rubrik} font-size: 24px; line-height: 1.15; color: ${s.svart}; margin: 0;">${esk(spann)}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: 4px 20px 16px;">
+                    <p style="${s.brod} font-size: 13px; line-height: 1.6; color: ${s.gra}; margin: 0;">${esk(forklaring)}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
           </tr>`;
 }
 
@@ -717,12 +761,12 @@ function mobilStil() {
 // ska med — mallar utan erbjudandeblock använder aldrig {{ slutdatum }}, och
 // mallar utan order (lösenord, kontoinbjudan) har inget created_at att räkna
 // ur, så assignen vore bara död kod i deras HTML.
-function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false }) {
+function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false, leverans = null }) {
   const assign =
     lage === 'liquid'
       ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${
           erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, k.erbjudande.samma_paket_timmar ?? 0)}\n` : ''
-        }`
+        }${leverans ? `${leveransLiquid(k.frakt, leverans.packdagar ?? 0)}\n` : ''}`
       : '';
   return `${assign}<!DOCTYPE html>
 <html lang="sv">
@@ -802,7 +846,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
         erbj +
         knappRad(s, c.knapp, ordUrl) +
         litenRubrik(s, c.steg_rubrik) +
-        tidslinje(s, [c.steg1, c.steg2, c.steg3]) +
+        tidslinje(s, [c.steg1, c.steg2, c.steg3].map((t) => ersatt(t, lage, LIQUID, { packdagar: k.frakt.packas_dagar ?? 2 }))) +
         avdelare(s) +
         litenRubrik(s, 'Din order', { topp: 24 }) +
         orderRader(s, lage, 'order') +
@@ -815,7 +859,11 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
       rader +=
         knappRad(s, c.knapp, sparUrl) +
         sparningsInfo(s, lage) +
-        stycke(k, s, c.tips, { farg: s.gra, storlek: 13, topp: 8 }) +
+        // Beräknad leverans med datum + varför spårningen är tyst i början.
+        // Inga leveransevent kommer från YunExpress/4PX, så det här mejlet är
+        // det enda som sätter förväntningen (Axel 2026-09-18: "fixa det").
+        leveransFonster(s, ersatt(c.beraknad_rubrik, lage), ersatt(c.beraknad, lage), ersatt(c.tysta_dagar, lage)) +
+        stycke(k, s, ersatt(c.tips, lage), { farg: s.gra, storlek: 13, topp: 8 }) +
         erbj +
         litenRubrik(s, 'I paketet', { topp: 24 }) +
         orderRader(s, lage, 'frakt') +
@@ -870,7 +918,11 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   }
 
   rader += sidfot(k, s, copy);
-  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: Boolean(meta.erbjudande) });
+  // Leveransfönstret räknas vid utskick: orderbekräftelsen går vid ordern
+  // (lägg på packtiden), fraktmejlet när paketet skickas (ingen packtid).
+  const leverans =
+    id === 'orderbekraftelse' ? { packdagar: k.frakt.packas_dagar ?? 2 } : id === 'fraktbekraftelse' ? { packdagar: 0 } : null;
+  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: Boolean(meta.erbjudande), leverans });
   return {
     id,
     shopify: meta.shopify,

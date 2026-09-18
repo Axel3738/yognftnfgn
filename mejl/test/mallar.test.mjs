@@ -274,3 +274,24 @@ test('riktig katalog: axelbältet får borsthuvudena, mallarna under 100 kB', { 
     assert.ok(m.html.length < 100 * 1024, `${m.id}: ${(m.html.length / 1024).toFixed(0)} kB`);
   }
 });
+
+test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orderbekräftelsen', () => {
+  // Axels beslut 2026-09-18. Inga leveransevent kommer från YunExpress/4PX,
+  // så datumet räknas i Liquid vid utskick i stället för att läsas.
+  const f = konfig.frakt;
+  const order = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
+  const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
+  const sek = (d) => d * 86400;
+  assert.ok(order.html.includes(`lev_fran_ts = lev_bas | plus: ${sek(f.leverans_dagar_min + f.packas_dagar)}`), 'orderbekräftelsen lägger på packtiden');
+  assert.ok(order.html.includes(`lev_till_ts = lev_bas | plus: ${sek(f.leverans_dagar_max + f.packas_dagar)}`));
+  assert.ok(frakt.html.includes(`lev_fran_ts = lev_bas | plus: ${sek(f.leverans_dagar_min)}`), 'fraktmejlet räknar från skickdagen');
+  assert.ok(frakt.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'fraktmejlet visar fönstret');
+  assert.ok(order.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'orderbekräftelsen visar fönstret i tidslinjen');
+  for (const m of byggAlla({ ...indata, lage: 'liquid' })) {
+    assert.ok(!m.html.includes('5–10 arbetsdagar') && !m.html.includes('svenska lager'), `${m.id}: gamla leveranslöftet kvar`);
+    assert.ok(!m.html.includes('{{leverans_'), `${m.id}: oersatt platshållare`);
+  }
+  const ex = byggMall('fraktbekraftelse', { ...indata, lage: 'exempel' });
+  assert.match(ex.html, /Beräknad leverans/);
+  assert.match(ex.html, /\d{1,2} [a-zå]+–\d{1,2} [a-zå]+/, 'exemplet visar två datum');
+});

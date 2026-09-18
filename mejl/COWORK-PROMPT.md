@@ -11,8 +11,8 @@ en flik och går att markera med Ctrl+A.
 
 **Länkarna pekar på en gren.** Byt `claude/fervent-bardeen-pzyuql` mot
 `main` när grenen mergats, annars klistrar Cowork in en gammal version.
-Tecknantalen nedan är från bygget 2026-09-14 (**v5: mobilanpassad, rätt
-rubrik över komplementen, bara förslag ≥ 299 kr, rätt klockslag**) —
+Tecknantalen nedan är från bygget 2026-09-18 (**v6: leveransfönster 7–14
+dagar med datum, tyst spårning förklarad, UTM-spårning, mobilanpassad**) —
 bygger du om mallarna, kör `wc -c mejl/output/*.liquid` och uppdatera dem,
 annars stämmer inte kontrollen.
 
@@ -81,7 +81,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 - `plus: 604800`
 
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
-**83 256**, Leveransbekräftelse **76 460**, Levererad **75 650**. Shopifys
+**85 293**, Leveransbekräftelse **79 694**, Levererad **75 650**. Shopifys
 redigerare visar **ett tecken mindre** än källan (filens avslutande
 radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
 fel innehåll i urklippet.

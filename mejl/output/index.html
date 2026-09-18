@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-17 18:59 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-18 06:16 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
@@ -93,7 +93,7 @@
     <div class="lage-rad"><span class="ikon">✅</span><p>Klart via API: kollektionen <a href="https://baverbutiken.se/collections/din-gratisprodukt">https://baverbutiken.se/collections/din-gratisprodukt</a> är live med de fyra gratisprodukterna. Mallarna nedan är byggda på butikens riktiga produkter och priser.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>Rabattkoden <strong>TACKIGEN</strong> är skapad och aktiv (2026-09-12, Cowork (Claude i Chrome) i Axels inloggade Shopify admin). Köpvillkoret är kollektionen <strong>Alla produkter</strong> (automatisk, pris över 0 kr) eftersom Shopify inte tillåter "Alla produkter" i Köp X få Y.</p></div>
     <div class="lage-rad"><span class="ikon">✅</span><p>4 av 8 mallar inklistrade och sparade under Inställningar → Notiser. Testmejl på Orderbekräftelse skickat 2026-09-12. Hoppades över: Övergiven kassa (se mallen längst ner).</p></div>
-    <div class="lage-rad att-gora"><span class="ikon">🔁</span><p>3 mallar har en äldre version inklistrad (v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. v5 rättar fyra fel ur Gmail-PDF:en: rubriken 'Passar ihop med det du köpte' skrevs innan produktkopplingen räknats (visade fallback-rubriken), en 289 kr-produkt låg under 'en räcker till 299 kr', klockslaget stod en timme fel, och mallen var inte mobilanpassad) och ska klistras om: <strong>Orderbekräftelse</strong>, <strong>Leveransbekräftelse</strong>, <strong>Levererad</strong>. De övriga är oförändrade i sak.</p></div>
+    <div class="lage-rad att-gora"><span class="ikon">🔁</span><p>3 mallar har en äldre version inklistrad (v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. Väntar på v6 (2026-09-18): v5:s fyra rättningar ur Gmail-PDF:en (komplementrubriken, 289 kr-förslaget, klockslaget, mobil-CSS) + UTM-spårning på hjullänken (17/9) + leveransfönstret 7–14 dagar med datum och raden om tyst spårning (18/9, Axels beslut 'fixa det').) och ska klistras om: <strong>Orderbekräftelse</strong>, <strong>Leveransbekräftelse</strong>, <strong>Levererad</strong>. De övriga är oförändrade i sak.</p></div>
     <div class="lage-rad att-gora"><span class="ikon">👉</span><p>Kvar för dig: 3 inklistringar (steg 2) och testmejlet på de nya mallarna (steg 4). Shopify har inget API för det, så det är dina klick eller Coworks.</p></div>
   </section>
 
@@ -210,10 +210,11 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">80 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">82 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-orderbekraftelse">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-orderbekraftelse">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
 {% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign tz_a = created_at | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}{% assign tz_skift = tz_a | minus: tz_b %}{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}{% assign tz_sek = tz_skift | times: 3600 %}{% assign start_ts = start_ts | plus: tz_sek %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: tz_sek %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
+{% assign lev_bas = 'now' | date: '%s' | plus: 0 %}{% assign lev_fran_ts = lev_bas | plus: 777600 %}{% assign lev_fran_dag = lev_fran_ts | date: '%-d' %}{% assign lev_fran_mm = lev_fran_ts | date: '%m' %}{% case lev_fran_mm %}{% when '01' %}{% assign lev_fran_man = 'januari' %}{% when '02' %}{% assign lev_fran_man = 'februari' %}{% when '03' %}{% assign lev_fran_man = 'mars' %}{% when '04' %}{% assign lev_fran_man = 'april' %}{% when '05' %}{% assign lev_fran_man = 'maj' %}{% when '06' %}{% assign lev_fran_man = 'juni' %}{% when '07' %}{% assign lev_fran_man = 'juli' %}{% when '08' %}{% assign lev_fran_man = 'augusti' %}{% when '09' %}{% assign lev_fran_man = 'september' %}{% when '10' %}{% assign lev_fran_man = 'oktober' %}{% when '11' %}{% assign lev_fran_man = 'november' %}{% when '12' %}{% assign lev_fran_man = 'december' %}{% else %}{% assign lev_fran_man = '' %}{% endcase %}{% assign lev_fran_datum = lev_fran_dag | append: ' ' | append: lev_fran_man %}{% assign lev_till_ts = lev_bas | plus: 1382400 %}{% assign lev_till_dag = lev_till_ts | date: '%-d' %}{% assign lev_till_mm = lev_till_ts | date: '%m' %}{% case lev_till_mm %}{% when '01' %}{% assign lev_till_man = 'januari' %}{% when '02' %}{% assign lev_till_man = 'februari' %}{% when '03' %}{% assign lev_till_man = 'mars' %}{% when '04' %}{% assign lev_till_man = 'april' %}{% when '05' %}{% assign lev_till_man = 'maj' %}{% when '06' %}{% assign lev_till_man = 'juni' %}{% when '07' %}{% assign lev_till_man = 'juli' %}{% when '08' %}{% assign lev_till_man = 'augusti' %}{% when '09' %}{% assign lev_till_man = 'september' %}{% when '10' %}{% assign lev_till_man = 'oktober' %}{% when '11' %}{% assign lev_till_man = 'november' %}{% when '12' %}{% assign lev_till_man = 'december' %}{% else %}{% assign lev_till_man = '' %}{% endcase %}{% assign lev_till_datum = lev_till_dag | append: ' ' | append: lev_till_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -428,19 +429,19 @@
                   <td width="34" valign="top" style="padding: 8px 0;">
                     <div align="center" style="width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;">1</div>
                   </td>
-                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Vi packar din order inom 0–2 arbetsdagar.</td>
+                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Vi packar din order inom 1–2 arbetsdagar.</td>
                 </tr>
                 <tr>
                   <td width="34" valign="top" style="padding: 8px 0;">
                     <div align="center" style="width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;">2</div>
                   </td>
-                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Paketet skickas — du får ett mejl med spårningslänk samma stund. Hittar du det inte, kolla skräpposten.</td>
+                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Paketet skickas – du får ett mejl med spårningslänk samma stund. Hittar du det inte, kolla skräpposten.</td>
                 </tr>
                 <tr>
                   <td width="34" valign="top" style="padding: 8px 0;">
                     <div align="center" style="width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;">3</div>
                   </td>
-                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Framme hos dig: 1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Alltid spårbart.</td>
+                  <td style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;">Framme hos dig {{ lev_fran_datum }}–{{ lev_till_datum }}. Paketet skickas från vårt lager utomlands, alltid spårbart hela vägen.</td>
                 </tr>
               </table>
             </td>
@@ -520,9 +521,9 @@
           <tr>
             <td style="padding: 0 32px 24px;">
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 10px 0 0;"><strong>När skickas min order?</strong></p>
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;">Vi behandlar ordern inom 0–2 arbetsdagar. När den skickas får du ett mejl med spårningslänk.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;">Vi packar din order inom 1–2 arbetsdagar. Så snart den skickas får du ett mejl med spårningslänk.</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;"><strong>Hur lång är leveranstiden?</strong></p>
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;">1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Frakten är alltid spårbar.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;">7–14 dagar räknat från att paketet skickats. Det kommer från vårt lager utomlands med YunExpress eller 4PX, så första biten är flygtransport till Sverige. Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget – och uppdateras sen.</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;"><strong>Kan jag ångra eller returnera?</strong></p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;">Du har 14 dagars ångerrätt och 30 dagars returpolicy. Ångerfunktionen finns i sidfoten på baverbutiken.se.</p>
               <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;"><strong>Jag vill ändra något i ordern</strong></p>
@@ -600,7 +601,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 00:16 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -612,7 +613,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 25 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -775,19 +776,19 @@
                   &lt;td width=&quot;34&quot; valign=&quot;top&quot; style=&quot;padding: 8px 0;&quot;&gt;
                     &lt;div align=&quot;center&quot; style=&quot;width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;&quot;&gt;1&lt;/div&gt;
                   &lt;/td&gt;
-                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Vi packar din order inom 0–2 arbetsdagar.&lt;/td&gt;
+                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Vi packar din order inom 1–2 arbetsdagar.&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td width=&quot;34&quot; valign=&quot;top&quot; style=&quot;padding: 8px 0;&quot;&gt;
                     &lt;div align=&quot;center&quot; style=&quot;width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;&quot;&gt;2&lt;/div&gt;
                   &lt;/td&gt;
-                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Paketet skickas — du får ett mejl med spårningslänk samma stund. Hittar du det inte, kolla skräpposten.&lt;/td&gt;
+                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Paketet skickas – du får ett mejl med spårningslänk samma stund. Hittar du det inte, kolla skräpposten.&lt;/td&gt;
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td width=&quot;34&quot; valign=&quot;top&quot; style=&quot;padding: 8px 0;&quot;&gt;
                     &lt;div align=&quot;center&quot; style=&quot;width: 24px; height: 24px; background-color: #dd1d1d; color: #ffffff; line-height: 24px; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 13px;&quot;&gt;3&lt;/div&gt;
                   &lt;/td&gt;
-                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Framme hos dig: 1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Alltid spårbart.&lt;/td&gt;
+                  &lt;td style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; padding: 8px 0;&quot;&gt;Framme hos dig 27 september–4 oktober. Paketet skickas från vårt lager utomlands, alltid spårbart hela vägen.&lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
             &lt;/td&gt;
@@ -873,9 +874,9 @@
           &lt;tr&gt;
             &lt;td style=&quot;padding: 0 32px 24px;&quot;&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 10px 0 0;&quot;&gt;&lt;strong&gt;När skickas min order?&lt;/strong&gt;&lt;/p&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;&quot;&gt;Vi behandlar ordern inom 0–2 arbetsdagar. När den skickas får du ett mejl med spårningslänk.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;&quot;&gt;Vi packar din order inom 1–2 arbetsdagar. Så snart den skickas får du ett mejl med spårningslänk.&lt;/p&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;&quot;&gt;&lt;strong&gt;Hur lång är leveranstiden?&lt;/strong&gt;&lt;/p&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;&quot;&gt;1–2 arbetsdagar med PostNord från vårt svenska lager, 5–10 arbetsdagar från vårt utländska lager. Frakten är alltid spårbar.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;&quot;&gt;7–14 dagar räknat från att paketet skickats. Det kommer från vårt lager utomlands med YunExpress eller 4PX, så första biten är flygtransport till Sverige. Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget – och uppdateras sen.&lt;/p&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;&quot;&gt;&lt;strong&gt;Kan jag ångra eller returnera?&lt;/strong&gt;&lt;/p&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 2px 0 0;&quot;&gt;Du har 14 dagars ångerrätt och 30 dagars returpolicy. Ångerfunktionen finns i sidfoten på baverbutiken.se.&lt;/p&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #000000; margin: 12px 0 0;&quot;&gt;&lt;strong&gt;Jag vill ändra något i ordern&lt;/strong&gt;&lt;/p&gt;
@@ -916,10 +917,11 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">74 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">77 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-fraktbekraftelse">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-fraktbekraftelse">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
 {% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign tz_a = created_at | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}{% assign tz_skift = tz_a | minus: tz_b %}{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}{% assign tz_sek = tz_skift | times: 3600 %}{% assign start_ts = start_ts | plus: tz_sek %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: tz_sek %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}{% assign paket_ts = start_ts | plus: 64800 %}{% assign paket_dag = paket_ts | date: '%-d' %}{% assign paket_mm = paket_ts | date: '%m' %}{% case paket_mm %}{% when '01' %}{% assign paket_man = 'januari' %}{% when '02' %}{% assign paket_man = 'februari' %}{% when '03' %}{% assign paket_man = 'mars' %}{% when '04' %}{% assign paket_man = 'april' %}{% when '05' %}{% assign paket_man = 'maj' %}{% when '06' %}{% assign paket_man = 'juni' %}{% when '07' %}{% assign paket_man = 'juli' %}{% when '08' %}{% assign paket_man = 'augusti' %}{% when '09' %}{% assign paket_man = 'september' %}{% when '10' %}{% assign paket_man = 'oktober' %}{% when '11' %}{% assign paket_man = 'november' %}{% when '12' %}{% assign paket_man = 'december' %}{% else %}{% assign paket_man = '' %}{% endcase %}{% assign paket_datum = paket_dag | append: ' ' | append: paket_man %}{% assign paket_tid = paket_ts | date: '%H:%M' %}{% if paket_ts < nu_ts %}{% assign paket_passerat = true %}{% else %}{% assign paket_passerat = false %}{% endif %}
+{% assign lev_bas = 'now' | date: '%s' | plus: 0 %}{% assign lev_fran_ts = lev_bas | plus: 604800 %}{% assign lev_fran_dag = lev_fran_ts | date: '%-d' %}{% assign lev_fran_mm = lev_fran_ts | date: '%m' %}{% case lev_fran_mm %}{% when '01' %}{% assign lev_fran_man = 'januari' %}{% when '02' %}{% assign lev_fran_man = 'februari' %}{% when '03' %}{% assign lev_fran_man = 'mars' %}{% when '04' %}{% assign lev_fran_man = 'april' %}{% when '05' %}{% assign lev_fran_man = 'maj' %}{% when '06' %}{% assign lev_fran_man = 'juni' %}{% when '07' %}{% assign lev_fran_man = 'juli' %}{% when '08' %}{% assign lev_fran_man = 'augusti' %}{% when '09' %}{% assign lev_fran_man = 'september' %}{% when '10' %}{% assign lev_fran_man = 'oktober' %}{% when '11' %}{% assign lev_fran_man = 'november' %}{% when '12' %}{% assign lev_fran_man = 'december' %}{% else %}{% assign lev_fran_man = '' %}{% endcase %}{% assign lev_fran_datum = lev_fran_dag | append: ' ' | append: lev_fran_man %}{% assign lev_till_ts = lev_bas | plus: 1209600 %}{% assign lev_till_dag = lev_till_ts | date: '%-d' %}{% assign lev_till_mm = lev_till_ts | date: '%m' %}{% case lev_till_mm %}{% when '01' %}{% assign lev_till_man = 'januari' %}{% when '02' %}{% assign lev_till_man = 'februari' %}{% when '03' %}{% assign lev_till_man = 'mars' %}{% when '04' %}{% assign lev_till_man = 'april' %}{% when '05' %}{% assign lev_till_man = 'maj' %}{% when '06' %}{% assign lev_till_man = 'juni' %}{% when '07' %}{% assign lev_till_man = 'juli' %}{% when '08' %}{% assign lev_till_man = 'augusti' %}{% when '09' %}{% assign lev_till_man = 'september' %}{% when '10' %}{% assign lev_till_man = 'oktober' %}{% when '11' %}{% assign lev_till_man = 'november' %}{% when '12' %}{% assign lev_till_man = 'december' %}{% else %}{% assign lev_till_man = '' %}{% endcase %}{% assign lev_till_datum = lev_till_dag | append: ' ' | append: lev_till_man %}
 <!DOCTYPE html>
 <html lang="sv">
 <head>
@@ -976,8 +978,25 @@
             </td>
           </tr>
           <tr>
+            <td style="padding: 16px 32px 4px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f7f2" style="border: 1px solid #e8e8e1;">
+                <tr>
+                  <td align="center" style="padding: 16px 20px 6px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #dd1d1d; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px;">Beräknad leverans</p>
+                    <p style="font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; line-height: 1.15; color: #000000; margin: 0;">{{ lev_fran_datum }}–{{ lev_till_datum }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: 4px 20px 16px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget, inte borttappat. Du behöver inte göra något, den uppdateras så snart det checkats in.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
             <td style="padding: 8px 32px 8px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">Spårningen kan ta några timmar att aktiveras — visar länken inget än, prova igen i kväll.</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">Spårningen kan stå still i 2–4 dagar medan paketet är på väg till flyget – helt normalt. Kolla igen efter det.</p>
             </td>
           </tr>
           <!-- Erbjudandet: köp igen → välj en gratisprodukt -->
@@ -1213,7 +1232,7 @@
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;&quot;&gt;
                 Hej Johan!
-                Din order #4821 har lämnat lagret och är på väg med PostNord.
+                Din order #4821 har lämnat lagret och är på väg med YunExpress.
               &lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -1230,12 +1249,29 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (PostNord)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
+            &lt;/td&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+            &lt;td style=&quot;padding: 16px 32px 4px;&quot;&gt;
+              &lt;table role=&quot;presentation&quot; width=&quot;100%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; bgcolor=&quot;#f7f7f2&quot; style=&quot;border: 1px solid #e8e8e1;&quot;&gt;
+                &lt;tr&gt;
+                  &lt;td align=&quot;center&quot; style=&quot;padding: 16px 20px 6px;&quot;&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #dd1d1d; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px;&quot;&gt;Beräknad leverans&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; line-height: 1.15; color: #000000; margin: 0;&quot;&gt;25 september–2 oktober&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                  &lt;td align=&quot;center&quot; style=&quot;padding: 4px 20px 16px;&quot;&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget, inte borttappat. Du behöver inte göra något, den uppdateras så snart det checkats in.&lt;/p&gt;
+                  &lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/table&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td style=&quot;padding: 8px 32px 8px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Spårningen kan ta några timmar att aktiveras — visar länken inget än, prova igen i kväll.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;&quot;&gt;Spårningen kan stå still i 2–4 dagar medan paketet är på väg till flyget – helt normalt. Kolla igen efter det.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;!-- Erbjudandet: köp igen → välj en gratisprodukt --&gt;
@@ -1254,7 +1290,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 00:16 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -1266,7 +1302,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 25 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1613,7 +1649,7 @@
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;&quot;&gt;
                 Hej Johan!
-                Spårningsuppgifterna för din order #4821 har uppdaterats hos PostNord.
+                Spårningsuppgifterna för din order #4821 har uppdaterats hos YunExpress.
               &lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -1630,7 +1666,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (PostNord)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -1834,7 +1870,7 @@
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;&quot;&gt;
                 Hej Johan!
-                Din order #4821 är ute för leverans med PostNord och kommer fram under dagen.
+                Din order #4821 är ute för leverans med YunExpress och kommer fram under dagen.
               &lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -1851,7 +1887,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (PostNord)&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Spårningsnummer: &lt;strong&gt;UA123456789SE&lt;/strong&gt; (YunExpress)&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -2213,7 +2249,7 @@
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
               &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #000000; margin: 0;&quot;&gt;
                 Hej Johan!
-                Din order #4821 har levererats av PostNord.
+                Din order #4821 har levererats av YunExpress.
               &lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
@@ -2238,7 +2274,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 12:59 den 18 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 00:16 den 19 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -2250,7 +2286,7 @@
                 &lt;/tr&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot; style=&quot;padding: 12px 24px; margin-top: 20px;&quot;&gt;
-                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 24 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
+                    &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; line-height: 1.5; color: #ffffff; margin: 0;&quot;&gt;&amp;#9203; Gäller i 7 dagar, till 25 september — vissa produkter finns bara i begränsat antal.&lt;/p&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;

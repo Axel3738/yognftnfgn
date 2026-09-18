@@ -287,6 +287,34 @@ med komplementkartan renderas bort vid utskick. Det färdiga mejlet är
 som byggs ur samma kod). Gmail klipper vid ~102 kB, så marginalen är stor.
 Shopify dokumenterar **ingen** storleksgräns för notismallar.
 
+## Leveranstiden (v6, Axels beslut 2026-09-18: "fixa det")
+
+Mätt 2026-09-17: alla 22 senaste leveranser gick med YunExpress/4PX från
+lagret utomlands, ingen från svenskt lager, och **inga leveransevent kommer
+tillbaka** — 0 av 500 ordrar sedan 15 juni har `inTransitAt` eller
+`deliveredAt`. Därför går "Ute för leverans" och "Levererad" aldrig ut, och
+fraktmejlet går inom två timmar från ordern medan paketet tar veckor. I den
+tystnaden föds klagomålen.
+
+Beslut: lova **7–14 dagar** (`konfig.frakt.leverans_dagar_min/max`) och
+räkna datumet i mejlet i stället för att läsa det från fraktbolaget:
+
+- `leveransLiquid()` i `mallar.mjs` sätter `lev_fran_datum`–`lev_till_datum`
+  ur `'now'` vid utskick. Fraktmejlet räknar från skickdagen; orderbekräftelsen
+  lägger på packtiden (`packas_dagar`) först.
+- Fraktmejlet har rutan **Beräknad leverans** med datumspannet och raden om
+  de tysta dagarna (spårningen står still 2–4 dagar tills paketet checkats
+  in på flyget). Orderbekräftelsens tidslinje och FAQ säger samma sak.
+- Copyn skriven av en Sonnet-subagent 2026-09-18 enligt copy-reglerna,
+  tre-frågorstestet redovisat i körningen. Det gamla löftet ("1–2 arbetsdagar
+  från svenskt lager, 5–10 från utländskt") är borta ur alla mallar — testet
+  faller om det kommer tillbaka.
+
+**Kvar:** de tidsstyrda mejlen mellan "på väg" och framme (dag 3, 7, 12) och
+recensionsmejlet. De kräver en avsändare som går på klocka — Shopify Flow +
+Shopify Email i admin (klick, ingen API), eller en egen rutin med en
+mejltjänst över HTTPS (IMAP/SMTP går inte från claude.ai). Inte byggt.
+
 ## Mäta om det gör något
 
 ```bash

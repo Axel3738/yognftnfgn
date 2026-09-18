@@ -16,9 +16,12 @@
     "logga_hojd": 80
   },
   "frakt": {
-    "packas": "0–2 arbetsdagar",
-    "sverige": "1–2 arbetsdagar med PostNord från vårt svenska lager",
-    "utland": "5–10 arbetsdagar från vårt utländska lager",
+    "comment": "Leveranslöftet i mejlen. Mätt 2026-09-17 i Shopify: alla 22 senaste leveranser gick med YunExpress/4PX från lagret utomlands, ingen från svenskt lager, och inga leveransevent kommer tillbaka (0 av 500 ordrar sedan 15 juni). Axels beslut 2026-09-18 ('fixa det'): lova 7–14 dagar. Mejlen räknar datumfönstret vid utskick: fraktmejlet från skickdagen, orderbekräftelsen från orderdagen plus packtiden.",
+    "packas": "1–2 arbetsdagar",
+    "packas_dagar": 2,
+    "leverans_dagar_min": 7,
+    "leverans_dagar_max": 14,
+    "sparning_vaknar": "2–4 dagar",
     "angerratt_dagar": 14,
     "retur_dagar": 30
   },
@@ -772,7 +775,7 @@
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
     "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. De fem mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak. De tre erbjudandemallarna väntar på v5 (se inklistrade_aldre).",
-    "inklistrade_aldre_comment": "v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. v5 rättar fyra fel ur Gmail-PDF:en: rubriken 'Passar ihop med det du köpte' skrevs innan produktkopplingen räknats (visade fallback-rubriken), en 289 kr-produkt låg under 'en räcker till 299 kr', klockslaget stod en timme fel, och mallen var inte mobilanpassad",
+    "inklistrade_aldre_comment": "v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. Väntar på v6 (2026-09-18): v5:s fyra rättningar ur Gmail-PDF:en (komplementrubriken, 289 kr-förslaget, klockslaget, mobil-CSS) + UTM-spårning på hjullänken (17/9) + leveransfönstret 7–14 dagar med datum och raden om tyst spårning (18/9, Axels beslut 'fixa det').",
     "inklistrade_aldre": {
       "orderbekraftelse": "2026-09-14 v4",
       "fraktbekraftelse": "2026-09-14 v4",
@@ -806,6 +809,7 @@
     "testmejl_aktuell_version_comment": "Sätt till datumet när testmejlet skickats på de mallar som ligger uppe NU. null ⇒ sidan säger att det återstår. v4-testmejlet 2026-09-14 gav Gmail-PDF:en som avslöjade fyra fel (se inklistrade_aldre_comment); v5-testmejlet är inte skickat. Testmejlet visar det som inte går att mäta någon annanstans: att line.product.handle finns i notis-Liquid (rätt komplement = ja), klockslaget (ska stämma med svensk tid) och hur mejlet ser ut på mobilen.",
     "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
     "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
-    "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5."
+    "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5.",
+    "leveranslofte": "2026-09-18: 7–14 dagar från skickdagen (konfig.frakt), räknat i Liquid vid utskick. Inklistrat i Shopify först när v6 klistrats in — tills dess visar mejlen v4:s '5–10 arbetsdagar'."
   }
 }
