@@ -315,6 +315,13 @@ recensionsmejlet. De kräver en avsändare som går på klocka — Shopify Flow 
 Shopify Email i admin (klick, ingen API), eller en egen rutin med en
 mejltjänst över HTTPS (IMAP/SMTP går inte från claude.ai). Inte byggt.
 
+**Inklistring 2026-09-18 (Cowork):** Orderbekräftelse v6 verifierad efter
+omladdning, Leveransbekräftelse v6 sparad men Chrome tappade kopplingen
+före omladdningskontrollen, Levererad inte påbörjad, testmejlet inte
+skickat. Lärdom: teckenantalen i prompten var byte (`wc -c`), inte tecken —
+Shopifys redigerare räknar tecken, så 85 293 byte är 84 152 tecken. Prompten
+anger nu tecken och kollar per mall vad som redan sitter.
+
 ## Mäta om det gör något
 
 ```bash

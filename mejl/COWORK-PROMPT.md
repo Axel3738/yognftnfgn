@@ -13,8 +13,7 @@ en flik och går att markera med Ctrl+A.
 `main` när grenen mergats, annars klistrar Cowork in en gammal version.
 Tecknantalen nedan är från bygget 2026-09-18 (**v6: leveransfönster 7–14
 dagar med datum, tyst spårning förklarad, UTM-spårning, mobilanpassad**) —
-bygger du om mallarna, kör `wc -c mejl/output/*.liquid` och uppdatera dem,
-annars stämmer inte kontrollen.
+bygger du om mallarna, räkna om dem i TECKEN (`python3 -c "print(len(open('mejl/output/orderbekraftelse.liquid',encoding='utf-8').read()))"`), inte byte — Cowork mätte 2026-09-18 att `wc -c` gav byte och stämde inte.
 
 ---
 
@@ -40,11 +39,13 @@ telefonnummer från en annan app). **Kontrollera alltid vad du klistrat in
 INNAN du sparar**: rätt längd (se tabellens teckenantal) och rätt innehåll.
 Stämmer det inte: kopiera om, spara inte.
 
-**Börja med att kolla vad som redan sitter.** Öppna Orderbekräftelse →
-Redigera kod. Innehåller brödtexten redan texten `utm_source=mejl` är den
-nya versionen inklistrad sedan tidigare — hoppa då över tabellen helt och gå
-direkt till **B** längre ner. Saknas den (äldre versioner innehåller
-`/pages/din-gratisprodukt` men inte `utm_source=mejl`): gör tabellen.
+**Börja med att kolla vad som redan sitter — per mall.** Öppna varje mall i
+tabellen → Redigera kod. Innehåller brödtexten redan texten `utm_source=mejl`
+är den nya versionen inklistrad sedan tidigare: hoppa över den mallen
+(ladda om sidan och kontrollera de fyra textbitarna, det räcker). Saknas den
+(äldre versioner innehåller `/pages/din-gratisprodukt` men inte
+`utm_source=mejl`): klistra in enligt stegen. Är alla tre redan klara: gå
+direkt till **B** längre ner.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
@@ -81,10 +82,12 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 - `plus: 604800`
 
 Antal tecken efter inklistring, som extra kontroll: Orderbekräftelse
-**85 293**, Leveransbekräftelse **79 694**, Levererad **75 650**. Shopifys
-redigerare visar **ett tecken mindre** än källan (filens avslutande
-radbrytning följer inte med) — det är rätt. Skiljer det mer än så är det
-fel innehåll i urklippet.
+**84 152**, Leveransbekräftelse **78 592**, Levererad **74 573**. Det är
+tecken, inte byte (å/ä/ö och emoji räknas som ett). Shopifys redigerare
+visar **ett tecken mindre** än källan (filens avslutande radbrytning följer
+inte med) — det är rätt. Skiljer det mer än så är det fel innehåll i
+urklippet. Jämför gärna det inklistrade mot källfilen tecken för tecken, det
+är en hårdare kontroll än siffran.
 
 Logga och accentfärg under **Anpassa e-postmallar** är redan gjorda
 (2026-09-13) — rör dem inte.

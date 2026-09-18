@@ -774,18 +774,18 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. De fem mallarna utan erbjudande har v2 från 2026-09-12 och är oförändrade i sak. De tre erbjudandemallarna väntar på v5 (se inklistrade_aldre).",
+    "inklistrade_comment": "Vad som ligger i Shopify just nu. v6 inklistrad av Cowork 2026-09-18: Orderbekräftelse verifierad efter omladdning (alla fyra kontrollsträngarna, identisk med källfilen tecken för tecken), Leveransbekräftelse sparad utan felmeddelande men omladdningskontrollen hanns inte med. Levererad väntar. Testmejlet på v6 inte skickat. De fyra mallarna utan erbjudande har v2 från 2026-09-12.",
     "inklistrade_aldre_comment": "v4 från 2026-09-14 (inklistrad av Cowork, verifierad, teckenantal 87 978 / 81 234 / 80 438) — den version kunden fick mejlet med. Väntar på v6 (2026-09-18): v5:s fyra rättningar ur Gmail-PDF:en (komplementrubriken, 289 kr-förslaget, klockslaget, mobil-CSS) + UTM-spårning på hjullänken (17/9) + leveransfönstret 7–14 dagar med datum och raden om tyst spårning (18/9, Axels beslut 'fixa det').",
     "inklistrade_aldre": {
-      "orderbekraftelse": "2026-09-14 v4",
-      "fraktbekraftelse": "2026-09-14 v4",
       "levererad": "2026-09-14 v4"
     },
     "inklistrade": {
       "fraktuppdatering": "2026-09-12 v2",
       "ute_for_leverans": "2026-09-12 v2",
       "aterbetalning": "2026-09-12 v2",
-      "avbruten_order": "2026-09-12 v2"
+      "avbruten_order": "2026-09-12 v2",
+      "orderbekraftelse": "2026-09-18 v6",
+      "fraktbekraftelse": "2026-09-18 v6 (sparad, ej verifierad efter omladdning — Chrome tappade kopplingen)"
     },
     "inklistrade_v1": {
       "orderbekraftelse": "2026-09-12",
