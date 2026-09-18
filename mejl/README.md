@@ -361,6 +361,17 @@ innehåll och `updatedAt` ur Shopifys egen mall-data i stället — det står
 nu i prompten, steg 8. "Ignorera" på "Osparade ändringar" återställer
 redigeraren till serverns (gamla) version.
 
+## v9 (2026-09-18 kväll): spårningsnumret utan länk
+
+Axel klickade på numret i testmejlet "Paketet är på väg" och hamnade på
+UPS sida ("det funkar inte tillsammans"). På riktiga ordrar hade det gått
+till 17track — lika fel: kunden ska bara till vår orderstatussida, dit
+knappen redan går. Numret är nu **ren text** (svart, fet, kopierbart) i
+Leveransbekräftelse, Leveransuppdatering och Ute för leverans. Levererad
+har ingen spårningsrad och är oförändrad sedan v8. Testet i
+`mallar.test.mjs` stoppar `tracking_url` från att komma tillbaka.
+Kontrollen i prompten: finns `tracking_url` i mallen är den gammal.
+
 ## Mäta om det gör något
 
 ```bash
