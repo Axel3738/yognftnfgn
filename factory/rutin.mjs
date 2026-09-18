@@ -289,10 +289,13 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
     hinder.push(`Du står på grenen "${gren}". Rutiner klonar main — merga dit först, annars är rutinen schemalagd men inte igång.`);
   }
 
-  // 2. Butiken måste finnas om kommandot tar en.
+  // 2. Butiken måste finnas om kommandot tar en. En flerproduktsbutik körs per
+  //    produktnyckel (`carashell/termoskyddet`), och butiksfilen heter då
+  //    fortfarande `carashell.yaml` — leta på butiksdelen, inte hela nyckeln.
   if (butik) {
-    const b = join(ROT, 'factory', 'butiker', `${butik}.yaml`);
-    if (!existsSync(b)) hinder.push(`factory/butiker/${butik}.yaml finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
+    const butiksdel = String(butik).split('/')[0];
+    const b = join(ROT, 'factory', 'butiker', `${butiksdel}.yaml`);
+    if (!existsSync(b)) hinder.push(`factory/butiker/${butiksdel}.yaml finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
   }
 
   // 3. Dubbletter. Två rutiner med samma jobb kör båda, och den ena upptäcks
