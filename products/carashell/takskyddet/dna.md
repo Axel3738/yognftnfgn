@@ -487,9 +487,11 @@ offerter. Axel skickade dem, och priset är nu **per storlek**:
 
 SEK och EUR är **Axels egna tal**. EUR-raden för 6,5 m är CWD:s riktiga
 FI-offert (45,76 USD ⇒ 126,90 €, landad kostnad 26,5 % över Sverige — inte
-20 %); de åtta andra följer SEK-stegen × samma faktor. NOK och USD är
-**HÄRLEDDA** ur de påslag Axel redan valt för 6,5 m (1 106/1 129 respektive
-199/1 129) — de är inte kvitterade och ska bytas rakt av när han säger sitt.
+20 %); de åtta andra följer SEK-stegen × samma faktor. NOK och USD räknades
+fram av sessionen ur de påslag Axel redan valt för 6,5 m (1 106/1 129
+respektive 199/1 129) och **godkändes av honom samma dag** ("kör på") — de är
+hans tal nu, inte ett förslag. Samma svar gäller termoskyddets 62,90 € i
+Finland.
 
 **Annonserna är oberörda.** Basstorleken 6,5 m kostar fortfarande 1 129 kr, och
 det är priset batch #1–#3 säger. Första varianten i listan (5,5 m) kostar lika

@@ -86,12 +86,13 @@ varianter:
   #          Sverige); de åtta andra följer SEK-stegen × samma faktor.
   #   SEK-jämförpriset = pris × 1,30 avrundat till närmaste tiotal minus 1
   #          (samma regel som gav det gamla 1 469).
-  #   NOK  ⚠️ HÄRLEDD, inte kvitterad av Axel: SEK × 1 106/1 129 (kursen han
-  #          valde för 6,5 m 2026-09-11), jämförpris 25 % över priset.
-  #   USD  ⚠️ HÄRLEDD, inte kvitterad: SEK × 199/1 129 (påslaget han valde för
-  #          6,5 m 2026-09-16), avrundat till jämna tiotal minus 1, jämförpris
-  #          25 % över priset avrundat likadant.
-  #   Byt NOK/USD-talen rakt av när Axel säger sitt — inget annat hänger på dem.
+  #   NOK  = SEK × 1 106/1 129 (påslaget Axel valde för 6,5 m 2026-09-11),
+  #          jämförpris 25 % över priset.
+  #   USD  = SEK × 199/1 129 (påslaget han valde för 6,5 m 2026-09-16),
+  #          avrundat till jämna tiotal minus 1, jämförpris 25 % över priset
+  #          avrundat likadant.
+  #   ✅ NOK och USD räknades fram av sessionen och GODKÄNDES av Axel
+  #      2026-09-18 ("kör på") — de är hans tal nu, inte ett förslag.
   #
   # Paketrabatterna är PROCENT (15/20/25 %), så de räknar rätt på varje
   # storlek och i varje valuta av sig själva. En kund som blandar storlekar i
