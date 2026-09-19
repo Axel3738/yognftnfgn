@@ -195,8 +195,22 @@ Då säger brief och bild samma sak, och båda rutinerna är nöjda.
 the brief" — rättelsen låg bara som kommentar. Nio andra rader i samma batch
 hade samma problem och hade studsat i tur och ordning.)*
 
-Fyra kontroller innan prompten byggs:
+Fem kontroller innan prompten byggs:
 
+0. **Butikens namn och domän får aldrig stå i annonsen** (Axels beslut
+   2026-09-18, samma hard rule som `/cs` steg 3). Varken i copy, i bild eller
+   som domän — inte "Bäverbutiken", inte `baverbutiken.se`. Färdiga annonser
+   speglas till OPS-butikerna (`/ops-spegla`), och en creative som säger vilken
+   butik den kommer från pekar då på fel butik. Produkten, priset och länken
+   bär butiken. **Den här rutinen är sista grinden** — texten bränns in här, och
+   efter det går den inte att rätta utan att göra om bilden. Hittar du en domän
+   eller ett butiksnamn i en brief-rad: byt raden i briefen med
+   `tools/notion-brief-rattelse.py` (minsta möjliga ändring — stryk domänen,
+   behåll resten) och kommentera varför, precis som vid en prisrättelse.
+   *(Mätt 2026-09-19: `Batmotor_BOF_2_1` och `BOF_3_1` studsade i
+   leveransrundan med CTA "Läs mer på baverbutiken.se." respektive "Hitta din
+   storlek på baverbutiken.se." — bilderna var i övrigt rätt, men hela
+   genereringen fick göras om.)*
 1. **Priset.** Står ett pris i briefen: hämta det verkliga priset från
    produktsidan (`Landing page`) och jämför. Skiljer de sig — hoppa över raden
    och rapportera. Ett inbränt gammalt pris gör creativen oanvändbar (se
