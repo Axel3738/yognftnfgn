@@ -9,8 +9,32 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-18",
+  "uppdaterad": "2026-09-19",
   "kampanjer": [
+    {
+      "campaign_id": "120250284567670291",
+      "produkt": "Hönsgårdsduken 145 × 109 cm",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250284606120291",
+      "produkt": "Snöflingorna 25-pack",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250284693380291",
+      "produkt": "Sotarsetet med Böjliga Stänger",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120250252311730291",
       "produkt": "Taköverdraget LISTICLE LAGERRENSNING",
