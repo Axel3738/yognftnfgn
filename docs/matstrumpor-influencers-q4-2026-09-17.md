@@ -25,6 +25,7 @@
 | 2026-09-18 | Margareta Hallin | Mail | **Nej.** "Vilken rolig idé men tyvärr tror jag inte riktigt att den passar på mitt konto." | Tacka med en rad, fråga inte varför. Reserv 2 (Agneta Sjödin) rycker upp. |
 | 2026-09-18 | Nina Hermansen | Instagram-DM | **Positivt.** Hon har lämnat ProAd (tabellen nedan är inaktuell på den punkten). "Tony" sköter alla hennes samarbeten och återkommer. | Vänta på Tony till tisdag 23/9, annars be Nina om hans mail. Starta tvåveckorsobservationen av hennes stories nu. Rättelse: hej@proad.se gäller inte längre för henne. |
 | 2026-09-18 | Alla tio + fem egna fynd | Modash | 15 rapporter exporterade och betygsatta enligt sjusifferskalan. Åhman 9,6, Jonsson 8,0, Sjödin 7,5, Törnblom 7,1, Hermansen 6,0, Adelsköld 5,7. Hallin, Lyth och Crafoord under 4. Fynd: Showbonden 6,6, Annelie Andersson 5,5, Tjockkocken 4,5, Skippasockret 5 (spärr), Malin Jönsson 4 (spärr). | Full tabell i `docs/matstrumpor-modash-score.md`. Åhman går upp till kandidat om SVT-frågan får ett skriftligt svar. |
+| 2026-09-19 | Sofia Åhman | Mail till info@sofiaahman.se (adressen står på hennes sajt) | Nytt personligt mail enligt kursens struktur (video 3): ämnesrad med Friskvårdspriset 2025, lådor utan förväntningar, betalt samarbete, samtal om hon gillar dem. Hon fick aldrig utskicket 17/9 (hennes väg var formuläret). | Ingen DM förrän 4 arbetsdagar utan svar. SVT-frågan ställs när hon tackar ja till lådorna, inte i första mailet. |
 
 ## 1. Uppdraget och ramarna (Axels svar 2026-09-17)
 
@@ -223,6 +224,33 @@ Axel Odhner, Matstrumpor.se, [mobil]
 **Beroende på svaret.** Byrån skickar prislista med rättighetsnivåer (ofta 30/60/90 dagar): välj 30, be dem dela upp story och rättigheter, och säg att ni kan förlänga efter två veckor om det säljer. Kreatören frågar "vad menar du med annonsrätt?": svara i en mening att ni vill köra hennes story-video som er egen annons på Meta under en begränsad period, 30 dagar, och att det betalas utöver storyn. De svarar att de bara gör inlägg eller reels: säg att ni bara köper stories, det är där köpen sker, och gå vidare till en reserv om de inte viker. De vill ha exklusivitet eller långtidsavtal: nej i första rundan, det kommer efter att första omgången sålt. De svarar inte på fyra dagar: uppföljningen nedan, sedan nästa reserv.
 
 **Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail kom fram. Frågan står kvar: betalt story-samarbete inför jul, två lådor på väg om du vill testa först. /Axel"
+
+
+**Sofia Åhman, nytt mail 2026-09-19 (kursens struktur, video 3 "Outreach & Setup").** Skickas till info@sofiaahman.se. Ämnesraden bygger på Friskvårdspriset 2025 (Årets hälsoinspiratör, Svenska Friskvårdsförbundet med Säkra/Svedea, diplom hon visat på Instagram) och citatet om Hemmagympa är hennes eget till Senioren 24 mars 2026.
+
+```
+Ämne: Grattis till Friskvårdspriset, Sofia
+
+Hej Sofia!
+
+Jag heter Axel och driver Matstrumpor.se.
+
+Grattis till Friskvårdspriset och titeln Årets hälsoinspiratör, och till att tittarna fick tillbaka Hemmagympa i våras. Du sa att det är det billigaste programmet SVT har och ger mest för folkhälsan. Jag håller med.
+
+Jag skriver för att jag vill skicka två av våra sushilådor till dig och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete.
+
+Lådan är fem par strumpor rullade som maki, i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att du testar den först och ser om du gillar den. De som köper den är nästan bara kvinnor över 45, alltså samma personer som tränar med dig.
+
+Gillar du lådorna bokar vi ett kort samtal och går igenom samarbetet.
+
+Matstrumpor.se är ett svenskt bolag som säljer strumpor förpackade som mat: sushi, pizza, hamburgare och donut. Fri frakt och 30 dagars öppet köp. Vi tror att du passar oss perfekt.
+
+Vänliga hälsningar
+Axel Odhner
+Matstrumpor.se
+```
+
+DM på Instagram bara om hon inte svarat på fyra arbetsdagar: "Hej Sofia! Skickade ett mail till info@ förra veckan om ett betalt samarbete, ämne 'Grattis till Friskvårdspriset'. Vill bara att det inte fastnat i spam. /Axel". När hon tackar ja till lådorna: be om adress och ställ SVT-frågan i samma svar ("Hemmagympa går ju som repris varje vardag och SVT har regler om reklam runt sändning. Vet du om det stoppar ett samarbete i november, eller är det något du kollar med dem?").
 
 ## 14. Mallen för de sju reserverna (och alla nya namn)
 
