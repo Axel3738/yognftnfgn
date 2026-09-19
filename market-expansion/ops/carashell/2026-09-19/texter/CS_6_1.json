@@ -1,0 +1,28 @@
+[
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "Spar 276,50 kr"
+ },
+ {
+  "form": 3,
+  "rad": 0,
+  "text": "Fri frakt til Sverige og Norge. 14 dagers angrerett."
+ },
+ {
+  "box": [
+   542,
+   956,
+   850,
+   1026
+  ],
+  "text": "1 382,50 kr → 1 106 kr",
+  "fet": true,
+  "farg": [
+   34,
+   40,
+   46
+  ],
+  "storlek": 34
+ }
+]

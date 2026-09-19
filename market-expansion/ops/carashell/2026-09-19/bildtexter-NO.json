@@ -1,0 +1,67 @@
+{
+  "CaraShellRoof_NO_PD_7_1": {
+    "topprubrik": "Bare taket. Én person.",
+    "etikett_vanster": "Kanten henger 30–40 cm ned",
+    "etikett_hoger": [
+      "Stroppen hekter under",
+      "karosseriets kant"
+    ],
+    "bottenband": "Ingen hjelper. Ingen presenning over hele kjøretøyet."
+  },
+  "CaraShellRoof_NO_PD_6_1": {
+    "topprubrik": [
+      "Taket eller taktrekket.",
+      "Ett av dem koster 1 106 kr."
+    ],
+    "etikett_vanster": [
+      "TAKET – takluker,",
+      "skjøter, tetninger. Prisen",
+      "får du i april."
+    ],
+    "etikett_hoger": [
+      "TAKTREKKET – 6,5 × 3",
+      "m duk. Én person. 1 106 kr."
+    ],
+    "bottenband": "1 106 kr · Fri frakt · 14 dagers angrerett"
+  },
+  "CaraShellRoof_NO_CS_6_1": {
+    "topprubrik": "Spar 276,50 kr",
+    "prisbricka": "1 382,50 kr → 1 106 kr",
+    "bottenband": "Fri frakt til Sverige og Norge. 14 dagers angrerett."
+  },
+  "CaraShellRoof_NO_CS_5_1": {
+    "topprubrik": "20 % rabatt på taktrekket",
+    "underrad": "6,5 × 3 m · Campingvogn & bobil · Én person setter det på",
+    "prisbricka": "1 382,50 kr → 1 106 kr",
+    "bottenband": "Fri frakt · 5–10 arbeidsdager · 14 dagers angrerett"
+  },
+  "CaraShellRoof_NO_SP_7_1": {
+    "citat": [
+      "\"Passer bra og beskytter taket",
+      "mot vær.\""
+    ],
+    "attribution": "– Lars",
+    "stjarnor": "★★★★★",
+    "etikett": "Ett av 16 anmeldelser – alle fem stjerner",
+    "bottenband": "Samme tak. Samme 6,5 × 3 m. Campingvogn eller bobil."
+  },
+  "CaraShellRoof_NO_SP_6_1": {
+    "topprubrik": [
+      "16 anmeldelser. Ikke en",
+      "stjerne under fem."
+    ],
+    "underrad": "Dekker bare taket. Hekter under kanten. Én person setter det på.",
+    "bricka": "5,0 av 5 i snitt",
+    "bottenband": "1 106 kr (ord. 1 382,50 kr) · Fri frakt"
+  },
+  "CaraShellRoof_NO_SP_5_1": {
+    "citat": [
+      "\"Passer bra og beskytter taket",
+      "mot vær.\""
+    ],
+    "attribution": "– Lars",
+    "stjarnor": "★★★★★",
+    "etikett": "Ett av 16 anmeldelser – alle fem stjerner",
+    "bottenband": "Vannet blir liggende på duken. Taket under er tørt."
+  }
+}

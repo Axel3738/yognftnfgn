@@ -1,0 +1,80 @@
+[
+ {
+  "box": [
+   0,
+   0,
+   896,
+   254
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   60,
+   66,
+   72
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "text": "Taket eller taktrekket. Ett av dem koster 1 106 kr.",
+  "rader": 2,
+  "fet": true,
+  "farg": [
+   241,
+   242,
+   239
+  ],
+  "storlek": 56,
+  "vanster": true
+ },
+ {
+  "box": [
+   46,
+   888,
+   401,
+   1016
+  ],
+  "utvidga": 6,
+  "rader": 3,
+  "text": "TAKET – takluker, skjøter, tetninger. Prisen får du i april.",
+  "fet": true,
+  "farg": [
+   241,
+   242,
+   239
+  ],
+  "storlek": 28,
+  "vanster": true
+ },
+ {
+  "form": 3,
+  "rader": [
+   0,
+   1
+  ],
+  "text": "TAKTREKKET – 6,5 × 3 m duk. Én person. 1 106 kr."
+ },
+ {
+  "box": [
+   0,
+   1052,
+   896,
+   1152
+  ],
+  "fyll": "mork",
+  "fyllfarg": [
+   60,
+   66,
+   72
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "utvidga": 6,
+  "text": "1 106 kr · Fri frakt · 14 dagers angrerett",
+  "fet": true,
+  "farg": [
+   241,
+   242,
+   239
+  ],
+  "storlek": 31
+ }
+]
