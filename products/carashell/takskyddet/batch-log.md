@@ -1075,3 +1075,42 @@ priser i SE och NO i dag — speglingen kollar bara copyn.
 `PD_5_H1` kvar. **Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
 meddelande `1550559405999792190`, ingen ACTION NEEDED. Filer:
 `market-expansion/ops/carashell/2026-09-18-us/`.
+
+## Norge 2026-09-19 — de sex stoppade bilderna live (`/ops-oversatt carashell/takskyddet`)
+
+Kön: 7 rader i `SE-ACTIVE to be translated` (6 bild, 1 video). **6 uppladdade, 1 hållen.**
+Kampanj `CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11` (ACTIVE, CBO 2 000 kr/dag),
+konto 915422744950975 (MagiBorsten DK). Länk `…/nb/products/takskyddet?country=NO` på alla sex.
+Pris ur `ekonomi.marknadspriser`: **1 106 NOK, ord. 1 382,50, spar 276,50 = 20 %** — den svenska
+23-procentaren översattes aldrig. Priset lästes dessutom live på den norska sidan av kön.
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_CS_6_1` | `CaraShellRoof_NO_CS_6_1` | CS | `120249172226310172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_CS_5_1` | `CaraShellRoof_NO_CS_5_1` | CS | `120249172228120172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_SP_5_1` | `CaraShellRoof_NO_SP_5_1` | SP | `120249172233790172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_SP_7_1` | `CaraShellRoof_NO_SP_7_1` | SP | `120249172278540172` | ACTIVE/PENDING_REVIEW |
+| `CaraShellRoof_PD_7_1` | `CaraShellRoof_NO_PD_7_1` | PD | `120249172282500172` | ACTIVE/IN_PROCESS |
+| `CaraShellRoof_PD_6_1` | `CaraShellRoof_NO_PD_6_1` | PD | `120249172287960172` | ACTIVE/IN_PROCESS |
+
+**Bilderna** (0 krediter): `pipeline/oversatt-bild.py` med per-bild-texter i
+`market-expansion/ops/carashell/2026-09-19/texter/`. Två verktygsfel rättade i samma
+körning (`fyllfarg`, `utvidga`) och två påstådda fel avskrivna — facit i
+`2026-09-19/BILDSTOPP-LOST.md`, lärdomarna i `dna.md`. Varje bild granskad i full
+storlek OCH mätt: `max avvik < 40` av 765 och `andel > 60 == 0` i varje suddad ruta.
+
+**Copyn:** butikens namn ut ur fyra `message`-block och `PD_6_1`:s bottenband (Axels
+beslut 2026-09-18), omskrivet av sonnet-subagent mot `docs/copy-regler.md` med
+tre-frågorstestet redovisat (`copyrattning-NO.json`).
+
+**Notion:** kommentar + `Translated url` på alla sex, alla sex → **`Approved`**
+(US bar dem redan sedan 2026-09-18). `PD_5_H1` fick kommentar med skälet, status orörd.
+
+**`PD_5_H1` hållen** — tre skäl mätta i källfilen (39,4 s, 1080×1920): inbrända svenska
+ordcaptions i hela filmen, slutkort som är en skärmdump av den svenska produktsidan
+(`carashell.se`, `1 469,00 → 1 129,00 kr`, "16 recensioner"), och butikens namn i både
+caption och voiceover. US-rundan 2026-09-18 byggde om precis detta för engelska, så vägen
+finns — men den lägger tillbaka butikens namn, vilket är ägarens beslut.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS), meddelande
+`1550877622257328160`, med `🔴 ACTION NEEDED` för videofrågan.
