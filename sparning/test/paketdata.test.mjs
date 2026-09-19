@@ -153,12 +153,21 @@ test('handelserUr: sorterar nyast först även när svaret är felordnat', () =>
   assert.ok(boknIx < hamtIx, 'bokningen ska ligga före upphämtningen efter sorteringen');
 });
 
-test('handelserUr: fras utan översättning hoppas över — ingen engelska till kunden', () => {
+test('handelserUr: fras utan översättning BEHÅLLS med fraktbolagets egen text', () => {
+  // Ändrat 2026-09-19 på Axels krav: "ingen faktisk trackinghändelse får tas
+  // bort ur fullständig historik". Förut hoppades raden över och en skanning
+  // med tid och plats försvann tyst. Nu står fraktbolagets text kvar — den
+  // syns BARA i den fullständiga historiken, aldrig i sammanfattningen, så
+  // kunden möter fortfarande inte engelska i standardvyn.
   const bara = (t) => (t === 'Shipment information received' ? 'Vi har fått uppgifterna om paketet' : null);
   const h = handelserUr(POST_YT, { oversattFras: bara, stadaPlats, nu: NU });
-  assert.equal(h.length, 1);
-  assert.equal(h[0].text, 'Vi har fått uppgifterna om paketet');
-  assert.equal(h[0].plats, null);
+  assert.equal(h.length, POST_YT.track_info.tracking.providers[0].events.length);
+  const oversatt = h.filter((x) => x.text === 'Vi har fått uppgifterna om paketet');
+  assert.equal(oversatt.length, 1, 'den kända frasen översattes');
+  // Varje rad bär fraktbolagets originaltext i `ra` — det kontrollen mäter mot.
+  for (const x of h) assert.ok(x.ra, 'råtexten sparas för kontrollen');
+  // Ingen rad tappade sin tid.
+  for (const x of h) assert.ok(!Number.isNaN(Date.parse(x.tid)));
 });
 
 test('handelserUr: ogiltig och framtida tid hoppas över, time_utc duger som reserv', () => {
@@ -176,7 +185,10 @@ test('handelserUr: ogiltig och framtida tid hoppas över, time_utc duger som res
 });
 
 test('handelserUr: taket är MAX_HANDELSER, de senaste behålls', () => {
-  // Syntetisk fixtur: 40 händelser, en per dygn, med texter ur ordboken.
+  // Taket höjdes 30 → 120 2026-09-19 (Axels krav att ingen skanning får
+  // försvinna), så 40 händelser ryms nu alla. Testet mäter båda sakerna: att
+  // ett normalt paket INTE kapas, och att taket ändå biter när det ska.
+  // Syntetisk fixtur: en händelse per dygn, med texter ur ordboken.
   const texter = Object.keys(ORDBOK);
   const events = [];
   for (let i = 0; i < 40; i++) {
@@ -189,9 +201,21 @@ test('handelserUr: taket är MAX_HANDELSER, de senaste behålls', () => {
     });
   }
   const h = handelserUr(post('TEST3', 190008, events), { ...SPRAK, nu: NU });
-  assert.equal(h.length, MAX_HANDELSER);
+  assert.equal(h.length, 40, '40 händelser ryms under taket 120 — inget kapas');
   assert.equal(h[0].tid, '2026-09-19T00:00:00.000Z');
-  assert.equal(h[MAX_HANDELSER - 1].tid, new Date(Date.parse('2026-09-19T00:00:00Z') - 29 * 24 * 3600 * 1000).toISOString());
+
+  // Och taket biter fortfarande: MAX_HANDELSER + 10 händelser ger MAX.
+  const manga = [];
+  for (let i = 0; i < MAX_HANDELSER + 10; i++) {
+    manga.push({
+      time_iso: new Date(Date.parse('2026-09-19T00:00:00Z') - i * 24 * 3600 * 1000).toISOString(),
+      description: texter[i % texter.length],
+      location: null, sub_status: null, stage: null,
+    });
+  }
+  const t2 = handelserUr(post('TEST3B', 190008, manga), { ...SPRAK, nu: NU });
+  assert.equal(t2.length, MAX_HANDELSER);
+  assert.equal(t2[0].tid, '2026-09-19T00:00:00.000Z', 'de SENASTE behålls');
 });
 
 test('handelserUr: tomt eller trasigt svar ger tom lista, aldrig ett kast', () => {
@@ -284,15 +308,18 @@ test('handelserUr: ordboken får svara med { text, kand } lika gärna som en str
     return { text: null, kand: false };
   };
   const h = handelserUr(POST_NY, { oversattFras: somObjekt, stadaPlats, nu: NU });
-  assert.deepEqual(h, [{
-    tid: '2026-09-18T10:14:55.000Z',
-    text: 'Vi har fått uppgifterna om paketet',
-    plats: null,
-  }]);
+  assert.equal(h.length, 1);
+  assert.equal(h[0].tid, '2026-09-18T10:14:55.000Z');
+  assert.equal(h[0].text, 'Vi har fått uppgifterna om paketet');
+  assert.equal(h[0].plats, null);
+  assert.ok(!/\[object/.test(h[0].text), 'aldrig [object Object] till kunden');
 
-  // { text: null } ska hoppas över precis som ett rent null.
+  // { text: null } faller tillbaka på fraktbolagets egen text — raden får
+  // inte försvinna (samma krav som testet ovan).
   const tomt = () => ({ text: null, kand: false });
-  assert.deepEqual(handelserUr(POST_YT, { oversattFras: tomt, stadaPlats, nu: NU }), []);
+  const utan = handelserUr(POST_YT, { oversattFras: tomt, stadaPlats, nu: NU });
+  assert.equal(utan.length, POST_YT.track_info.tracking.providers[0].events.length);
+  for (const x of utan) assert.equal(x.text, x.ra, 'råtexten används när ordboken tiger');
 });
 
 // ---------------------------------------------------------------------------

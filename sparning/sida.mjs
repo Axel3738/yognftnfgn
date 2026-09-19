@@ -143,6 +143,15 @@ function copydata(c) {
 // den ut till vänster om #bb-spar. Ligger temats spalt kant i kant med
 // skärmen blir det en vågrät scrollning på mobilen. (Resonemang, inte
 // mätning — sidan har ännu inte setts i en riktig webbläsare.)
+// Sammanfattningens fem punkter (.bbs-steg) delar formspråk med den
+// fullständiga historiken (.bbs-lista): samma lodräta linje, samma prickar.
+// Skillnaden är att stegen alltid är fem rader och tål mer luft, att nådda
+// skeden är svarta med datum medan kommande står grå utan, och att
+// historiken ligger hopfälld i en <details>.
+//
+// ⚠️ Inga /* */-kommentarer inuti mallsträngen nedan: testet som mäter att
+// all CSS är avgränsad under #bb-spar läser selektorerna med en enkel
+// delning och tar då kommentaren för en selektor som läcker ut i temat.
 function stil(c) {
   return `
 #bb-spar{--bbs-rod:${c.rod};--bbs-svart:${c.svart};--bbs-ram:${c.ram};--bbs-gra:#5b5b5b;max-width:620px;margin:0 auto;padding:0 0 28px;color:var(--bbs-svart);font-family:inherit;font-size:16px;line-height:1.5;text-align:left}
@@ -178,6 +187,23 @@ function stil(c) {
 #bb-spar .bbs-tid{display:block;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 2px}
 #bb-spar .bbs-text{margin:0}
 #bb-spar .bbs-ort{margin:2px 0 0;font-size:14px;color:var(--bbs-gra)}
+#bb-spar .bbs-steg{list-style:none;margin:18px 0 0;padding:0 0 0 8px}
+#bb-spar .bbs-stegrad{position:relative;margin:0;padding:0 0 20px 26px;border-left:2px solid var(--bbs-ram)}
+#bb-spar .bbs-stegrad:last-child{border-left-color:transparent;padding-bottom:0}
+#bb-spar .bbs-stegrad::before{content:"";position:absolute;left:-7px;top:4px;width:14px;height:14px;border-radius:50%;background:#fff;border:2px solid var(--bbs-ram);box-sizing:border-box}
+#bb-spar .bbs-stegrad--nadd{border-left-color:var(--bbs-svart)}
+#bb-spar .bbs-stegrad--nadd::before{background:var(--bbs-svart);border-color:var(--bbs-svart)}
+#bb-spar .bbs-stegrad--nadd:last-child{border-left-color:transparent}
+#bb-spar .bbs-stegrad--nu::before{left:-9px;top:1px;width:18px;height:18px;background:var(--bbs-rod);border-color:var(--bbs-rod)}
+#bb-spar .bbs-stegnamn{margin:0;font-weight:700;color:var(--bbs-gra)}
+#bb-spar .bbs-stegrad--nadd .bbs-stegnamn{color:var(--bbs-svart)}
+#bb-spar .bbs-stegtid{display:block;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--bbs-gra);margin:3px 0 0}
+#bb-spar .bbs-stegort{text-transform:none;letter-spacing:0}
+#bb-spar .bbs-avvikelse{margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--bbs-rod);background:#fdf3f3;font-weight:700}
+#bb-spar .bbs-mer{margin:22px 0 0;border-top:1px solid var(--bbs-ram);padding:14px 0 0}
+#bb-spar .bbs-mer summary{cursor:pointer;font-weight:700;padding:4px 0;list-style:revert}
+#bb-spar .bbs-mer summary:hover{color:var(--bbs-rod)}
+#bb-spar .bbs-merhjalp{font-size:14px;color:var(--bbs-gra);margin:8px 0 0}
 #bb-spar .bbs-byggd{font-size:13px;color:var(--bbs-gra);margin:20px 0 0}
 #bb-spar .bbs-hjalprad{font-size:14px;color:var(--bbs-gra);margin:14px 0 0}
 @media (max-width:420px){#bb-spar h2{font-size:25px}#bb-spar .bbs-fakta{gap:10px 0;display:block}}
@@ -306,6 +332,7 @@ function starta() {
   var sok = $('bbs-sok'), traff = $('bbs-traff'), saknas = $('bbs-saknas');
   var falt = $('bbs-falt'), form = $('bbs-form'), fel = $('bbs-fel');
   var lista = $('bbs-lista'), tomrad = $('bbs-tom'), annat = $('bbs-annat');
+  var stegruta = $('bbs-steg'), mer = $('bbs-mer'), avvikelse = $('bbs-avvikelse');
 
   // saknat = numret slogs upp men fanns inte (då visas rutan som förklarar
   // varför). felText = en rad rakt ovanför fältet, t.ex. vid tomt fält.
@@ -333,11 +360,45 @@ function starta() {
     text.className = 'bbs-text';
     text.textContent = h.text;
     li.appendChild(text);
-    if (h.plats) {
-      var ort = document.createElement('p');
-      ort.className = 'bbs-ort';
-      ort.textContent = h.plats;
-      li.appendChild(ort);
+    // Den fullständiga historiken visar orten MED land ("Rozenburg,
+    // Nederländerna"). Ursprungs- och transitland ska gå att hitta här —
+    // det är hela poängen med att historiken finns kvar (Axels krav
+    // 2026-09-19), och sparning/kontroll.mjs mäter att inget land tappats.
+    var ort = h.platsMedLand || h.plats;
+    if (ort) {
+      var o = document.createElement('p');
+      o.className = 'bbs-ort';
+      o.textContent = ort;
+      li.appendChild(o);
+    }
+    return li;
+  }
+
+  // En punkt i sammanfattningen. Nådda skeden bär datum och ort; de som
+  // återstår står kvar i grått, så kunden ser vad som händer sedan i stället
+  // för att undra om något saknas.
+  function stegrad(s, arNu) {
+    var li = document.createElement('li');
+    li.className = 'bbs-stegrad' + (s.nadd ? ' bbs-stegrad--nadd' : '') + (arNu ? ' bbs-stegrad--nu' : '');
+    var namn = document.createElement('p');
+    namn.className = 'bbs-stegnamn';
+    namn.textContent = s.etikett;
+    li.appendChild(namn);
+    if (s.nadd) {
+      var tid = document.createElement('time');
+      tid.className = 'bbs-stegtid';
+      tid.setAttribute('datetime', s.iso);
+      tid.textContent = formatera(s.tid);
+      li.appendChild(tid);
+      // Orten i egen nod: datumet står i versaler som på resten av sidan, men
+      // ett ortnamn i versaler skriks ut ("MALMÖ", "UMEÅ") och ser billigt ut.
+      if (s.plats) {
+        var ort = document.createElement('span');
+        ort.className = 'bbs-stegort';
+        ort.textContent = s.plats;
+        tid.appendChild(document.createTextNode(' · '));
+        tid.appendChild(ort);
+      }
     }
     return li;
   }
@@ -351,9 +412,25 @@ function starta() {
     visaEl($('bbs-ingress'), !!ingress);
     $('bbs-bolag').textContent = p.bolag || '–';
     $('bbs-nummer').textContent = p.nummer;
+
+    // Avvikelser göms inte bland de fem punkterna — en retur eller ett
+    // misslyckat leveransförsök är det enda kunden bryr sig om just då.
+    var avv = p.avvikelser && p.avvikelser.length ? p.avvikelser[0] : null;
+    avvikelse.textContent = avv ? avv.text + (avv.plats ? ' (' + avv.plats + ')' : '') : '';
+    visaEl(avvikelse, !!avv);
+
+    // Sammanfattningen: fem punkter.
+    var s = p.sammanfattning && p.sammanfattning.steg ? p.sammanfattning.steg : [];
+    stegruta.textContent = '';
+    for (var k = 0; k < s.length; k++) stegruta.appendChild(stegrad(s[k], s[k].nr === p.sammanfattning.nu));
+    visaEl(stegruta, s.length > 0 && p.handelser.length > 0);
+
+    // Hela historiken, oförändrad, bakom "Visa fullständig transporthistorik".
     lista.textContent = '';
     for (var i = 0; i < p.handelser.length; i++) lista.appendChild(rad(p.handelser[i], i === 0));
-    visaEl(lista, p.handelser.length > 0);
+    visaEl(mer, p.handelser.length > 0);
+    try { mer.open = false; } catch (e) {}
+
     tomrad.textContent = C.tom;
     visaEl(tomrad, p.handelser.length === 0);
   }
@@ -453,7 +530,13 @@ export function byggSidkropp(data, konfig) {
     <div><dt>Spårningsnummer</dt><dd id="bbs-nummer"></dd></div>
   </dl>
   <p id="bbs-tom" hidden></p>
-  <ol id="bbs-lista" class="bbs-lista" hidden></ol>
+  <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
+  <ol id="bbs-steg" class="bbs-steg" hidden></ol>
+  <details id="bbs-mer" class="bbs-mer" hidden>
+    <summary>Visa fullständig transporthistorik</summary>
+    <p class="bbs-merhjalp">Varje skanning fraktbolaget har rapporterat, med ort och land.</p>
+    <ol id="bbs-lista" class="bbs-lista"></ol>
+  </details>
   <p class="bbs-hjalprad">Undrar du något om leveransen? Mejla <a href="mailto:${mail}">${mail}</a>.</p>
 </div>
 <button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn" hidden>Spåra ett annat nummer</button>

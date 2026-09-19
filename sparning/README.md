@@ -36,14 +36,16 @@ Varför inte fraktbolagen direkt: YunExpress svarar 405 utanför sin sajt och
 | `kor.mjs` | Rundan. `--torr` läser utan att registrera eller skriva, `--kolla` testar bara nyckel + rättigheter, `--dagar N` fönstret bakåt (14), `--max N` tak på registreringar per körning (150, nyast först), `--ingen-sida` hoppar över spårningssidan |
 | `17track.mjs` | Klienten: `/register`, `/gettrackinfo`, `/stoptrack`. Header `17token`, 40 nummer per anrop, 3 anrop/s, väntar vid 429 |
 | `status.mjs` | Ren logik: bolagskoder, status → Shopify-status, svenska meddelanden, `tolka()` och `planera()` |
+| `steg.mjs` | Vilket av kundens fem skeden en skanning hör till. Ordboken avgör, platsen lyfter till "i landet", och skedet backar aldrig |
+| `kontroll.mjs` | **Spärren:** Axels fyra krav, mätta mot fraktbolagets rådata. Publiceringen vägrar lägga upp en sida som fallerar |
 | `uppacka.mjs` | **Kontraktet:** dataformatet på spårningssidan och uppackaren. Körs både i Node och i kundens webbläsare — `sida.mjs` bäddar in filen med `export ` bortstrippat, så formatet kan aldrig tolkas olika på de två ställena |
 | `sprak.mjs` + `fraser.json` | Fraktbolagens texter till svenska. 78 ordboksnycklar avlästa ur riktig data; okända fraser faller på en generell mening ur `sub_status` och loggas av rundan |
-| `paketdata.mjs` | 17TRACK-svar → händelselista → det komprimerade formatet. Slår ihop dubbletter, tak 30 skanningar, fönster 45 dagar |
+| `paketdata.mjs` | 17TRACK-svar → händelselista → det komprimerade formatet. Slår ihop dubbletter inom samma minut, tak 120 skanningar, fönster 45 dagar |
 | `sida.mjs` | Kundens sida: HTML, CSS och JS i en Shopify-sidkropp. Samma mönster som lyckohjulet — inga temafiler, inga externa resurser |
 | `publicera.mjs` | Sidan till Shopify. `--torr` bygger bara filerna, `--paket <fil>` läser paketen ur rundans lista i stället för ur minnet. Trippelkollen sist: API, publik vy, känt nummer i kundens data |
 | `konfig.json` | Sidans handle, titel, fönster och bokförda publiceringar |
 | `lage.json` | Minnet: registrerade nummer, senast skrivna status, leveransdatum. **Committas av rutinen** — utan filen registreras allt om och kvoten bränns. Bär **inga** skanningar, se nedan |
-| `test/` | 101 tester utan nät |
+| `test/` | 115 tester utan nät, varav 14 för Axels fyra krav |
 
 ```bash
 node --test sparning/test/*.test.mjs
@@ -52,6 +54,72 @@ node sparning/kor.mjs --torr
 node sparning/kor.mjs
 node sparning/publicera.mjs --torr   # bara sidan, ur paketminnet
 ```
+
+## Sammanfattningsvyn (Axels krav 2026-09-19)
+
+Sidan visade varje enskild logistikhändelse — terminal, land, transportstatus —
+och blev rörig: ett paket har i snitt nio skanningar, som mest 29. Standardvyn
+är nu **fem punkter**:
+
+> Beställning mottagen → Paketet är på väg → Ankommit till Sverige →
+> Ute för leverans → Levererat
+
+Hela historiken finns kvar bakom **"Visa fullständig transporthistorik"**, med
+ort OCH land på varje rad ("Rozenburg, Nederländerna"). Ingen skanning tas
+bort, inget datum räknas om — de fem punkterna är en ren gruppering av rader
+som redan finns.
+
+**Så avgörs skedet** (`steg.mjs`), i den ordningen:
+1. Har frasen ett skede i tabellen — det gäller. Alla 78 ordboksnycklar är
+   klassificerade.
+2. Annars: ligger skanningen i mottagarlandet är den minst "Ankommit".
+3. Annars: ärv skedet från skanningen före. Skedet backar aldrig.
+
+⚠️ **Fraktbolagets statuskod duger inte som grund.** Mätt 2026-09-19 på 1 873
+skanningar: 1 507 av dem (80 %) bär `sub_status` "InTransit_Other", och
+`OutForDelivery` förekom inte en enda gång. Koden kan inte skilja Shenzhen från
+Umeå. Ordboken kan.
+
+⚠️ **PostNords förhandsavisering ljuger om Sverige.** "Vi har fått en
+beställning på en leverans och väntar på paketet" bär platsen SWEDEN men
+skickas innan paketet lämnat Kina — 20 fall av 20. Utan undantaget i
+`FORHANDSAVI` hade var fjärde paket visat "Ankommit till Sverige" dag ett.
+
+⚠️ **"Ute för leverans" saknas oftast.** Bara 13 av 204 paket hade någon
+utkörningssignal. Skedet står därför grått tills det faktiskt händer — de fem
+punkterna visas alltid, så kunden ser både var paketet är och vad som återstår.
+
+⚠️ **Tvetydiga fraser är medvetet neutrala.** Importtullen klareras i
+Nederländerna och "destination airport" är Amsterdam för ett paket som ska till
+Umeå. Att klassa dem som ankomst hade daterat steget dagar för tidigt, så de
+lyfts bara av platsen.
+
+## Kontrollen
+
+```bash
+node --test sparning/test/kontroll.test.mjs
+```
+
+Fyra krav, ett test per krav, körda mot **riktig rådata** ur butikens egna
+paket (`test/fixturer/riktiga-paket.json`: sju paket, 78 skanningar, valda så
+att varje läge finns med). `publicera.mjs` kör samma kontroll före varje
+publicering och **vägrar lägga upp en sida som fallerar**.
+
+| Krav | Vad som mäts |
+|---|---|
+| 1 | Varje distinkt skanning i fraktbolagets data finns i historiken |
+| 2 | Varje land i rådatan går att LÄSA i historiken |
+| 3 | Varje nått skede pekar på en riktig skanning, och skedena är daterade i ordning |
+| 4 | "Ankommit till Sverige" kräver en fysisk skanning — förhandsavisering duger inte |
+
+Fyra av testerna går åt andra hållet: de **manipulerar datan så att den ljuger**
+och kräver att kontrollen fäller den. En kontroll som aldrig kan bli röd bevisar
+ingenting.
+
+Kontrollen har redan betalat sig. Den hittade tre fel som ingen letade efter:
+tiderna avrundades uppåt så en skanning 10:14:30 blev 10:15 (578 av 1 851
+rader), ihopslagningen tog bort äkta skanningar en timme isär, och
+publiceringen tappade landet när den läste rundans lista (158 av 1 055 paket).
 
 ## Kundens spårningssida
 
@@ -139,6 +207,18 @@ Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
 event i Shopify ligger kvar.
 
 ## Logg
+
+- **2026-09-19 kväll, sammanfattningsvyn.** Axel: sidan "visar varje enskild
+  logistikhändelse, terminal, land och transportstatus vilket gör sidan väldigt
+  rörig". Standardvyn är nu fem punkter; historiken ligger bakom "Visa
+  fullständig transporthistorik" med ort och land per rad.
+  Kontrollen (`kontroll.mjs`, fyra krav, spärr i publiceringen) hittade **tre
+  fel som ingen letade efter**: tidsavrundning uppåt (578 av 1 851 rader),
+  ihopslagning som tog bort äkta skanningar, och ett tappat land i
+  publiceringen (158 av 1 055 paket). Alla tre rättade.
+  Publicerad skarpt: 1 055 paket, 11 223 skanningar, 279 kB, kontrollen grön,
+  trippelkollen grön, sedd i Chromium på 390 och 1 280 px med historiken både
+  fälld och öppen.
 
 - **2026-09-19, spårningssidan live.** Axel: "den visar inga detaljer" om
   Shopifys orderstatussida — den kan inte visa mer, så butiken fick en egen.

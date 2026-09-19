@@ -265,6 +265,53 @@ export function stadaPlats(plats) {
   return stadaOrt(forsta) ?? land;
 }
 
+// Vilket LAND ligger platsen i? Returnerar svenskt landsnamn, eller null när
+// fraktbolaget inte gett något att gå på.
+//
+// `stadaPlats` kastar landet när det finns en ort ("MALMO, SCHNER, SE" →
+// "Malmö"), för kunden vill läsa orten. Stegindelningen behöver landet, och
+// kontrollen behöver kunna bevisa att inget land försvann på vägen — därför
+// den här, som läser samma sträng men svarar på den andra frågan.
+//
+// Tre källor, i fallande säkerhet:
+//   1. Landskod i någon kommadel ("…, SE").
+//   2. Landsnamn utskrivet ("Mainland China", "SWEDEN").
+//   3. Ortnamnet i ORTER — de svenska orter som FAKTISKT mätts i datan.
+// Punkt 3 gäller bara Sverige: vi har ingen kinesisk ortstabell, och gissar
+// aldrig ett land ur en ort vi inte känner igen.
+export function landFor(plats) {
+  if (plats == null) return null;
+  if (typeof plats !== 'string' && typeof plats !== 'number') return null;
+  const rå = String(plats).replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
+  if (!rå) return null;
+
+  const delar = rå.split(',').map((d) => d.trim()).filter(Boolean);
+  for (const del of delar) {
+    const kod = del.toUpperCase();
+    if (kod.length === 2) {
+      const träff = slaUpp(LANDSKODER, kod);
+      if (träff) return träff;
+    }
+    const namn = slaUpp(LANDSNAMN, normalisera(del));
+    if (namn) return namn;
+  }
+
+  // Ortnamnet. Varje ord prövas mot ORTER, så "MALMÖ BREVTERMINAL" och
+  // "Early Bird Malmö" båda ger Sverige.
+  for (const ord of rå.split(/[\s,]+/)) {
+    const bar = utanDiakriter(ord).toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (bar && slaUpp(ORTER, bar)) return 'Sverige';
+  }
+  return null;
+}
+
+// Alla länder en platssträng kan sägas nämna. Används av kontrollen: varje
+// land i fraktbolagets rådata ska gå att hitta i den fullständiga historiken.
+export function landerI(plats) {
+  const l = landFor(plats);
+  return l ? [l] : [];
+}
+
 function stadaOrt(text) {
   // "644 35 Torshälla" → "Torshälla". Postnumret säger kunden inget.
   let s = text.replace(/^\d{3}\s?\d{2}\s+/, '').trim();

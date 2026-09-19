@@ -31,8 +31,9 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
-import { byggData, filtreraFonster, handelserUr, FONSTER_DAGAR } from './paketdata.mjs';
-import { oversattFras, stadaPlats, okandaFraser } from './sprak.mjs';
+import { byggData, filtreraFonster, handelserUr, FONSTER_DAGAR, MAX_HANDELSER } from './paketdata.mjs';
+import { kontrollera, rapport as kontrollrapport } from './kontroll.mjs';
+import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
 import { STATUS } from './status.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
@@ -87,6 +88,11 @@ if (fonsterIx > -1) {
 }
 
 const NU = Date.now();
+
+// Mottagarlandet. Står i sidans etikett ("Ankommit till Sverige") och är det
+// kontrollen mäter den fysiska ankomsten mot. Butiken säljer också till
+// Norge, så värdet är konfigurerbart — men aldrig gissat.
+const MOTTAGARLAND = 'Sverige';
 
 // --- 1. Konfig och löftet i mejlen ------------------------------------------
 
@@ -194,7 +200,7 @@ if (iFonster.length !== paket.length) {
   console.log(`Fönster ${dagar} dagar: ${paket.length - iFonster.length} paket föll bort (senaste skanningen är äldre).`);
 }
 
-const { data, statistik } = byggData(iFonster, { nu: NU });
+const { data, statistik } = byggData(iFonster, { nu: NU, mottagarland: MOTTAGARLAND });
 for (const v of statistik.varningar.slice(0, 10)) console.log(`  ⚠️ ${v}`);
 if (statistik.varningar.length > 10) console.log(`  ⚠️ … och ${ord(statistik.varningar.length - 10, 'varning till', 'varningar till')}`);
 
@@ -219,6 +225,18 @@ if ((!statistik.handelser || !statistik.paket) && totaltHandelser) {
     process.exit(1);
   }
   console.log(`⚠️ ${rad} En skarp körning hade avbrutit här; torrkörningen bygger filerna ändå.`);
+}
+
+// --- 3b. Kontrollen ---------------------------------------------------------
+// Axels fyra krav 2026-09-19: ingen skanning får försvinna, länderna ska gå
+// att hitta, sammanfattningen får inte motsäga rådatan, och "Ankommit till
+// <land>" kräver en fysisk skanning. En sida som säger fel om var paketet är
+// går inte ut — hellre gårdagens sida än en som ljuger.
+const kontroll = kontrollera(iFonster, data, { mottagarland: MOTTAGARLAND, maxHandelser: MAX_HANDELSER });
+console.log(kontrollrapport(kontroll));
+if (!kontroll.ok && !baraFiler) {
+  console.error('❌ Sidan publicerades INTE. Rätta felen ovan och kör om.');
+  process.exit(1);
 }
 
 const sidmodul = await laddaSidmodul();
@@ -470,7 +488,7 @@ function paketUrLage(lageFil) {
 function handelserFor(post, noterna) {
   const via = (rått) => {
     noterna.raOversatta++;
-    return handelserUr(rått, { oversattFras, stadaPlats, nu: NU });
+    return handelserUr(rått, { oversattFras, stadaPlats, landFor, nu: NU });
   };
   if (post?.track_info) return via(post);
   if (post?.ra?.track_info) return via(post.ra);
@@ -482,8 +500,19 @@ function handelserFor(post, noterna) {
 
   // Färdiga händelser. `iso` tas emot som alias för `tid`, eftersom det är vad
   // uppacka.packaUppEtt() kallar samma sak när en sparad kedja läses tillbaka.
+  //
+  // ⚠️ `land` och `ra` MÅSTE följa med. Utan dem tappar sidan ursprungs- och
+  // transitlandet (Axels krav 2026-09-19) och kontrollen tappar fraktbolagets
+  // originaltext att mäta mot. Mätt samma dag: utan de två fälten fällde
+  // kontrollen 158 av 1 055 paket på "landet går inte att hitta i historiken".
   return lista
-    .map((h) => ({ tid: h?.tid ?? h?.iso ?? null, text: h?.text ?? null, plats: h?.plats ?? null }))
+    .map((h) => ({
+      tid: h?.tid ?? h?.iso ?? null,
+      text: h?.text ?? null,
+      plats: h?.plats ?? null,
+      land: h?.land ?? null,
+      ra: h?.ra ?? null,
+    }))
     .filter((h) => h.tid && h.text);
 }
 

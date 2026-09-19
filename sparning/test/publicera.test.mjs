@@ -22,7 +22,11 @@ const REPO = dirname(SPARNING);
 
 // Filerna publicera.mjs drar in: direkt (paketdata, sprak, status), dynamiskt
 // (sida) och i sin tur (uppacka, fraser.json).
-const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'fraser.json', 'konfig.json'];
+// ⚠️ Varje ny modul i sparning/ som publicera.mjs (direkt eller indirekt)
+// importerar MÅSTE stå här — annars faller testet på ERR_MODULE_NOT_FOUND i
+// temp-kopian, inte på det den mäter. steg.mjs och kontroll.mjs lades till
+// 2026-09-19 med sammanfattningsvyn.
+const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json'];
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå
 // konfigurationens `sida`-block.

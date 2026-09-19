@@ -27,13 +27,19 @@
 // 14,8 % av samma data utan ordbok. Svenskan kostar alltså ingenting:
 // ordboken bär varje fras EN gång.
 
-import { FORMAT, STATUSAR, isoTillMinut } from './uppacka.mjs';
+import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut } from './uppacka.mjs';
+import { klassificera } from './steg.mjs';
 
 // Tak per paket. Mätt 2026-09-19 på samma 204 paket: minst 1 händelse, median
-// 5, flest 29. Taket 30 skär alltså inget i dagens data — det är en spärr mot
-// ett enskilt paket som fastnar i en slinga hos fraktbolaget, inte en
-// beskärning av det normala.
-export const MAX_HANDELSER = 30;
+// 5, flest 29. Taket är en spärr mot ett enskilt paket som fastnar i en
+// slinga hos fraktbolaget, inte en beskärning av det normala.
+//
+// ⚠️ Höjt 30 → 120 2026-09-19 på Axels krav: "ingen faktisk trackinghändelse
+// får tas bort ur fullständig historik". Med 30 låg det mest rapporterade
+// paketet en enda skanning från taket, och nästa långsamma leverans hade
+// tystat rader utan att någon märkte det. `sparning/kontroll.mjs` larmar om
+// ett paket någonsin når taket — då ska det höjas igen, inte accepteras.
+export const MAX_HANDELSER = 120;
 
 // Fönstret sidan visar. Ett paket vars senaste skanning är äldre än så här
 // många dagar tas bort ur filen — det är levererat sedan länge och ingen
@@ -41,12 +47,19 @@ export const MAX_HANDELSER = 30;
 export const FONSTER_DAGAR = 45;
 
 // Två skanningar med samma text och samma plats inom det här spannet räknas
-// som EN. Fraktbolagen dubbelrapporterar: körd 2026-09-19 på de 204 paketens
-// 1 873 händelser (med den riktiga ordboken i sparning/sprak.mjs) föll
-// **22 händelser** bort i **19 grupper** — de flesta sekunder isär (4PX skrev
-// "THE SHIPMENT ITEM IS UNDER TRANSPORTATION." i MALMÖ PAKETTERMINAL
-// 15:39:00 och 15:39:01 samma dag; det paketet är fixtur i testfilen).
-const IHOP_MS = 60 * 60 * 1000;
+// som EN. Fraktbolagen dubbelrapporterar: 4PX skrev "THE SHIPMENT ITEM IS
+// UNDER TRANSPORTATION." i MALMÖ PAKETTERMINAL 15:39:00 och 15:39:01 samma
+// dag — samma skanning, skickad två gånger.
+//
+// ⚠️ Sänkt från en timme till en minut 2026-09-19, på Axels krav att ingen
+// faktisk trackinghändelse får tas bort ur fullständig historik. Med en
+// timme föll ÄKTA skanningar bort: paketet 4PX3003132969051CN hade samma
+// text och plats 03:03 och 03:45, två skilda hanteringar, och den tidigare
+// försvann. `sparning/test/kontroll.test.mjs` fällde det.
+//
+// Formatet har ändå bara minutupplösning, så det som slås ihop nu är exakt
+// det som annars hade blivit två identiska rader på samma minut i sidan.
+const IHOP_MS = 60 * 1000 - 1;
 
 // Hur långt fram i tiden en tidsstämpel får ligga innan den räknas som
 // trasig. Fraktbolagens tidszoner är inte alltid rätt angivna, så en liten
@@ -83,7 +96,7 @@ const RESERVSTATUS = 0;
 //
 // Returnerar [{ tid, text, plats }] nyast först, där `tid` är en ISO-sträng
 // i UTC och `plats` är en sträng eller null.
-export function handelserUr(post, { oversattFras, stadaPlats, nu = Date.now() } = {}) {
+export function handelserUr(post, { oversattFras, stadaPlats, landFor, nu = Date.now() } = {}) {
   if (typeof oversattFras !== 'function' || typeof stadaPlats !== 'function') {
     throw new Error('handelserUr(): oversattFras och stadaPlats måste skickas in (de bor i sparning/sprak.mjs).');
   }
@@ -105,14 +118,23 @@ export function handelserUr(post, { oversattFras, stadaPlats, nu = Date.now() } 
     if (ms > gransFram) continue;         // framtida tid ⇒ trasig stämpel
 
     const plats = renText(fras(stadaPlats(rad.location ?? null)));
-    const text = renText(fras(oversattFras(
+    const land = typeof landFor === 'function' ? renText(landFor(rad.location ?? null)) : null;
+    const rå = renText(rad.description ?? null);
+    let text = renText(fras(oversattFras(
       rad.description ?? null,
       rad.sub_status ?? null,
       { stage: rad.stage ?? null, plats },
     )));
-    if (!text) continue;                  // ingen svensk fras ⇒ visa inget
+    // ⚠️ Tidigare hoppades raden över när ingen svensk fras fanns. Det bröt
+    // Axels krav 2026-09-19 ("ingen faktisk trackinghändelse får tas bort ur
+    // fullständig historik"): en skanning med tid och plats men okänd text
+    // försvann tyst. Nu behålls den med fraktbolagets egen text — den står
+    // bara i den fullständiga historiken, aldrig i sammanfattningen, så
+    // kunden möter fortfarande inte engelska i standardvyn.
+    if (!text) text = rå;
+    if (!text) continue;                  // varken översättning eller rå text
 
-    rader.push({ ms, tid: new Date(ms).toISOString(), text, plats });
+    rader.push({ ms, tid: new Date(ms).toISOString(), text, plats, land, ra: rå });
   }
 
   // Steg 2: nyast först. Ordningen i svaret är oftast redan så, men den är
@@ -130,7 +152,7 @@ export function handelserUr(post, { oversattFras, stadaPlats, nu = Date.now() } 
     const forra = senast.get(nyckel);
     if (forra !== undefined && forra - rad.ms <= IHOP_MS) continue;
     senast.set(nyckel, rad.ms);
-    behallna.push({ tid: rad.tid, text: rad.text, plats: rad.plats });
+    behallna.push({ tid: rad.tid, text: rad.text, plats: rad.plats, land: rad.land, ra: rad.ra });
     if (behallna.length >= MAX_HANDELSER) break;
   }
   return behallna;
@@ -220,7 +242,7 @@ function renText(v) {
 //
 // Returnerar { data, statistik: { paket, handelser, fraser, platser, tecken,
 // varningar } }.
-export function byggData(paket, { nu } = {}) {
+export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
   if (!Number.isFinite(nu)) {
     throw new Error('byggData(): { nu } måste vara millisekunder — bygget frågar aldrig klockan själv.');
   }
@@ -261,7 +283,7 @@ export function byggData(paket, { nu } = {}) {
         varningar.push(`Händelse utan text på ${nummer} hoppades över.`);
         continue;
       }
-      rader.push({ minut, text, plats: renText(h?.plats) });
+      rader.push({ minut, text, plats: renText(h?.plats), land: renText(h?.land), ra: renText(h?.ra) ?? text });
     }
 
     // Formatet säger "händelserna ligger nyast först" (sparning/uppacka.mjs),
@@ -273,6 +295,17 @@ export function byggData(paket, { nu } = {}) {
     // två händelser på samma minut behåller sin inbördes ordning — och
     // därmed sekundordningen handelserUr() redan lagt dem i.
     rader.sort((a, b) => b.minut - a.minut);
+
+    // Kundens fem skeden. Klassificeringen är REN GRUPPERING av de rader som
+    // redan finns: den rör varken tid, text eller plats, och kan bara sätta
+    // `steg` och `avvikelse`. En rad kan aldrig försvinna här.
+    const klassade = klassificera(rader, {
+      iMottagarlandet: (r) => !!r.land && r.land === mottagarland,
+    });
+    for (let i = 0; i < rader.length; i++) {
+      rader[i].steg = klassade[i]?.steg ?? -1;
+      rader[i].avvikelse = !!klassade[i]?.avvikelse;
+    }
 
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
     // byter värdet — den senare posten vinner, som varningen säger.
@@ -288,6 +321,7 @@ export function byggData(paket, { nu } = {}) {
   // "YT262600…" kan mycket väl stå som två poster och falla ihop här.
   const fraser = new Raknare();
   const platser = new Raknare();
+  const lander = new Raknare();
   const bolagsnamn = [];        // bolagen är få; först-sedd-ordning räcker
   const bolagIndex = new Map();
   let handelser = 0;
@@ -300,6 +334,7 @@ export function byggData(paket, { nu } = {}) {
     for (const r of post.rader) {
       r.frasIx = fraser.lagg(r.text);
       r.platsIx = r.plats ? platser.lagg(r.plats) : null;
+      r.landIx = r.land ? lander.lagg(r.land) : null;
       handelser++;
     }
   }
@@ -310,12 +345,15 @@ export function byggData(paket, { nu } = {}) {
   // först sedd först, så bygget blir deterministiskt.
   const fraslista = fraser.sorterad();
   const platslista = platser.sorterad();
+  const landlista = lander.sorterad();
 
   const data = {
     v: FORMAT,
     byggd: isoTillMinut(nu) ?? 0,
+    land: mottagarland,
     f: fraslista.lista,
     p: platslista.lista,
+    l: landlista.lista,
     b: bolagsnamn,
     k: {},
   };
@@ -327,6 +365,9 @@ export function byggData(paket, { nu } = {}) {
         r.minut,
         fraslista.nyIndex[r.frasIx],
         r.platsIx === null ? -1 : platslista.nyIndex[r.platsIx],
+        typeof r.steg === 'number' ? r.steg : -1,
+        r.landIx === null ? -1 : landlista.nyIndex[r.landIx],
+        r.avvikelse ? 1 : 0,
       ]),
     ];
   }
@@ -338,6 +379,7 @@ export function byggData(paket, { nu } = {}) {
       handelser,
       fraser: data.f.length,
       platser: data.p.length,
+      lander: data.l.length,
       tecken: JSON.stringify(data).length,
       varningar,
     },

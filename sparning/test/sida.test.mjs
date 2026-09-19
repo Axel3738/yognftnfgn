@@ -122,8 +122,13 @@ class Attrapp {
   focus() {}
 }
 
+// ⚠️ Varje id skriptet slår upp måste stå här. Saknas ett får skriptet null
+// och faller på första punktnotationen — testet rapporterar då ett fel som
+// ser ut att handla om något annat. bbs-steg, bbs-mer och bbs-avvikelse
+// kom med sammanfattningsvyn 2026-09-19.
 const IDN = ['bb-spar', 'bbs-sok', 'bbs-traff', 'bbs-saknas', 'bbs-falt', 'bbs-form', 'bbs-fel',
-  'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-bolag', 'bbs-nummer', 'bbs-byggd'];
+  'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-bolag', 'bbs-nummer', 'bbs-byggd',
+  'bbs-steg', 'bbs-mer', 'bbs-avvikelse'];
 
 // Delar en adress i `search` och `hash` som en webbläsare gör. Tidigare lade
 // attrappen HELA adressen i `location.search`, och då såg "#nummer=…"-testet
@@ -412,7 +417,9 @@ test('sidan körs: utan nummer, utan skanningar, okänt nummer, tomt fält', () 
   // Registrerat men aldrig skannat ⇒ besked, ingen tom tidslinje.
   const bokat = kor(kropp, '?nummer=YT2626100708672397');
   assert.equal(bokat.get('bbs-rubrik').textContent, 'Paketet är bokat');
-  assert.equal(bokat.get('bbs-lista').hidden, true);
+  // Utan skanningar finns varken sammanfattning eller historik att visa.
+  assert.equal(bokat.get('bbs-mer').hidden, true, 'historiken ska vara dold');
+  assert.equal(bokat.get('bbs-steg').hidden, true, 'de fem punkterna ska vara dolda');
   assert.equal(bokat.get('bbs-tom').hidden, false);
   assert.equal(bokat.get('bbs-tom').textContent,
     'Paketet är bokat. Fraktbolaget har inte skannat det än — det brukar ta 2–4 dagar.');
