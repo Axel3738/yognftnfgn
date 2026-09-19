@@ -1219,3 +1219,20 @@ Discord `#ads`: A/B/C-frågan om SE står kvar sedan 15/9; ny fråga om rutinen
 ska stängas av i Routines så länge ingen marknad är igång (HeimGuard NO-
 prejudikatet 13/9). Rutinen slår aldrig på något själv.
 Underlag: `factory/output/drytrek/budgetrond-2026-09-19.json`.
+
+---
+
+## 2026-09-19 — leveransrunda: oförändrat, andra dygnet med båda marknaderna av
+
+Ingen förändring sedan igår. Båda kampanjerna PAUSED, kön tom, inget rört i
+kontot. Pris 389 kr.
+
+⚠️ **Norges 7d-ROAS läser 1,71 idag mot 1,65 igår — det är INTE en förbättring.**
+Kampanjen har varit av sedan 18/9 11:28, så ingen ny spend kommer in; fönstret
+töms bara på sina sämre dagar. Exakt det fel gårdagens rättelse handlade om,
+fast åt andra hållet: **ett rullande fönster över en pausad kampanj bär ingen
+signal alls.** Sverige samma dag: 2 998 kr, 6 köp, ROAS 0,87 — samma sak där.
+
+Båda ägarfrågorna obesvarade: omstart av Sverige (`#ads-to-do`, sedan 15/9) och
+om den här rutinen ska pausas (`#annons-uppladdning`, sedan 18/9). Ingen av dem
+pingas om — rapporten går tyst tills något ändras.
