@@ -120,3 +120,36 @@
 4. Dubblett: "CaraShellRoof_NO_SP_7_1" finns inte bland kontots 600 annonser — ok
   ⏳ Meta rate limit (försök 1/8) — väntar 30s
   ⏳ Meta rate limit (försök 2/8) — väntar 60s
+  ⏳ Meta rate limit (försök 3/8) — väntar 120s
+  ⏳ Meta rate limit (försök 4/8) — väntar 240s
+5. Koncept SP → adset "CARASHELL_NO_Takovertrekket - SP" (120249050600070172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash 13e4df25c3eca00576aa380063ee5cb9
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "13e4df25c3eca00576aa380063ee5cb9",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "\"Passer bra og beskytter taket mot vær.\" – Lars, ett av 16 anmeldelser – alle fem stjerner.\n\nHar du bobil er taket akkurat samme problem som på en campingvogn – bare høyere oppe. Taktrekket dekker 6,5 × 3 m, samme duk, samme stropper under karosseriets kant.\n\n1 106 kr (ord. 1 382,50 kr). Fri frakt til Sverige og Norge. 14 dagers angrerett etter svensk lov.",
+       "name": "Bobil eller campingvogn – samme tak",
+       "description": "6,5 × 3 m. 16 anmeldelser, 5,00. 1 106 kr.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_SP_7_1 (120249172278540172), creative 1638607104614430
+9. Aktiverad: annons 120249172278540172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_SP_7_1 → ACTIVE / effective IN_PROCESS (adset 120249050600070172)
+   exit=0
+=== CaraShellRoof_NO_PD_7_1 ===
+(node:1869) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_PD_7_1" · bild CaraShellRoof_NO_PD_7_1.jpg (0.16 MB)
+3. Marknadskoll: "CaraShellRoof_NO_PD_7_1" bär NO — ok för NO
