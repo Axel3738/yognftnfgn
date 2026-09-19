@@ -78,6 +78,27 @@ finns: läs kön med SQL (`Status = 'SE-ACTIVE to be translated'` i alla hubbar 
 teamspacet Bäverbutiken, Typ ~ pending approval) till en JSON-fil och ge den till
 kö-verktyget med `--rader`; statusbyten görs då med `notion-update-page`.
 
+🔴 **MCP-vägen är en NÖDVÄG, inte ett likvärdigt alternativ — den kostar Axel
+en godkännandeklick per anrop.** Mätt 2026-09-19: `NOTION_TOKEN` saknades i
+rutinens container, så körningen gick via MCP:n och krävde ~29 klick (hubbsök,
+sidhämtningar, SQL, 14 statusbyten). Körningen 2026-09-18 krävde ~65 (52
+statusbyten). Axel 2026-09-19: "du har tagit upp typ minst 30 minuter av min tid
+varje dag … jag behöver godkänna varenda liten jävla uppdatering i notion."
+`.claude/settings.json` är INTE felet — `mcp__Notion__notion-update-page` står
+redan i `allow` och läget är `dontAsk`; connector-anrop godkänns ändå per anrop
+på claude.ai. Enda riktiga fixen är nyckeln.
+**Med `NOTION_TOKEN` satt är hela rutinen klickfri**, för då finns REST-vägen för
+varje steg och allt går genom `node` (som är förhandsgodkänt i `allow`):
+| Steg | REST-verktyg (0 klick) | MCP-nödväg (1 klick/anrop) |
+|---|---|---|
+| Hitta hubbar + läsa kön | `tools/notion-kalla.mjs`, `tools/oversattningskon.mjs` utan `--rader` | `notion-search` + `notion-fetch` + SQL |
+| Kommentar, `Translated url`, status | `tools/notion-aterkoppling.mjs <id> --kommentar "…" --egenskap "Translated url=…" --status "…"` | `notion-update-page` per rad |
+| Lägga in filen överst på raden | `tools/notion-fil-upp.mjs` | `notion-create-file-upload` + `insert_content` |
+Börja därför ALLTID Steg 0 med att kolla nyckeln, och står den som SAKNAD:
+säg det överst i svaret till Axel med antalet klick körningen kommer att kosta,
+innan du drar igång. Nyckeln läggs i **Default ENV** `env_01PBy3BU66p5AEJYSfm8EbjP`
+(det rutinerna faktiskt kör i), inte i "Default" `env_01FhBQMkVFeo4ZZ2hB4T9a9k`.
+
 ## Fas 1 — Kön (gratis, alltid komplett)
 
 ```bash
