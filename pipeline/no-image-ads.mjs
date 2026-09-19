@@ -89,7 +89,7 @@ for (const adsetCfg of cfg.adsets) {
   const K = adsetCfg.name.split(' - ').pop();               // "Gamasjer NO - PD" → PD
   const img = path.join(opt.imgdir, `${opt.slug}_${K}_2_1_NO.png`);
   if (!existsSync(img)) { console.log(`  · ingen bild för ${K} (${img}) — hoppar`); continue; }
-  const adName = adsetCfg.ads[0].name.replace(/_\d+$/, '_2_1'); // Gamasjer_NO_PD_1 → Gamasjer_NO_PD_2_1
+  const adName = adsetCfg.ads[0].name.replace(/_\d+(_H\d+)?$/, '_2_1'); // Gamasjer_NO_PD_1 → …_PD_2_1; Vedklyvborr_NO_CS_1_H1 → …_CS_2_1
   const adsetId = adsets.find(a => a.name === adsetCfg.name)?.id;
   if (!adsetId) { console.error(`✗ adset saknas: ${adsetCfg.name}`); process.exit(1); }
   const prior = new Set(((await api(`${adsetId}/ads`, { params: { fields: 'name', limit: '100' } })).data || []).map(x => x.name));
