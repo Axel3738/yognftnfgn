@@ -34,6 +34,16 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
   den norska kampanjen senare får de annonserna ingen norsk version automatiskt
   — de måste sättas tillbaka i kön för hand. Säg det i briefen varje gång rader
   flyttas, så beslutet är synligt.
+  ⚠️ **Fråga ALDRIG om en avstängd norsk kampanj ska startas om** (Axels beslut
+  2026-09-19): "om kampanjerna är avstängda i Norge för att de testats men inte
+  går bra, men vi fortfarande skalar dom i Sverige, ska vi inte försöka
+  återaktivera dom i Norge bara för att vi fortsätter med dom i Sverige."
+  Att produkten skalar i Sverige är alltså INGET argument för Norge — de två
+  marknaderna bedöms var för sig. Rapportera att kön var blockerad och gå
+  vidare; lägg ingen "Axels beslut krävs"-rad om saken i briefen eller i
+  körloggen. Mätt 2026-09-19: Beltesliper, Frontrutetrekk til Bobil och
+  Båtmotortrekk är alla avvecklade med spend, och alla tre produkterna skalar
+  i Sverige — det är det normala läget, inte ett problem att lösa.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.
