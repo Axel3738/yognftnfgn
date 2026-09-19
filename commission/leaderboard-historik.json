@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-18T04:08:40.598Z",
+  "uppdaterad": "2026-09-19T04:08:30.699Z",
   "valuta": "USD",
   "dagar": [
     {
@@ -323,6 +323,27 @@
         "gilz": 3.18,
         "jasper": 2.36,
         "jerzee": 0.87
+      },
+      "platser": {
+        "josh": 1,
+        "annabelle": 2,
+        "carl": 3,
+        "gilz": 4,
+        "jasper": 5,
+        "jerzee": 6
+      }
+    },
+    {
+      "datum": "2026-09-19",
+      "manad": "2026-09",
+      "valuta": "USD",
+      "per": {
+        "josh": 47.75,
+        "annabelle": 25.32,
+        "carl": 4.68,
+        "gilz": 3.37,
+        "jasper": 2.58,
+        "jerzee": 0.89
       },
       "platser": {
         "josh": 1,
