@@ -587,6 +587,25 @@ kundvyn) räknar fortfarande med butikens standardtull. Orderraden bär
 ingen marknad, och talen skrivs en gång vid hämtningen — samma
 begränsning som avgifterna redan har där.
 
+**Gick det att spara? (v102.)** Axel kunde inte se det, och jag kunde
+inte heller: serverns sparväg är bevisat korrekt (simulerad med riktiga
+fältnamn), men ingenting i gränssnittet visade vad som faktiskt låg i
+databasen. Två ändringar som gör läget avläsbart i stället för att kräva
+felsökning:
+
+- **Inställningar läser om fälten efter varje sparning.** Fälten hölls
+  förut i lokalt state som initierades en enda gång, så siffran stod kvar
+  i rutan vare sig den sparades eller inte. Nu speglar de databasen.
+- **Tull-rutan på panelen visar snittet per order.** Står butikens
+  standardtull där räknas allt på ett tal; står något annat är tullen per
+  marknad i spel. *(Axels 2026-09-18: tullen var 908 kr på 33 ordrar =
+  exakt 27,50 × 33, och det gick inte att avgöra om marknadstullen var
+  sparad eller bara oanvänd.)*
+
+**Regel:** ett värde handlaren matar in ska gå att läsa tillbaka ur
+gränssnittet. Ett formulär vars fält bara speglar tangentbordet kan inte
+svara på frågan "sparades det?".
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad

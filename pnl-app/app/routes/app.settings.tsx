@@ -347,6 +347,15 @@ export default function Settings() {
       [`tull_${m}`, a.tariffPerOrder ?? ""],
     ]),
   );
+  /* Efter en sparning visar fälten det som FAKTISKT ligger i databasen, inte
+     det man råkade skriva. Utan det här stod siffran kvar i rutan vare sig
+     den sparades eller inte, och "gick det att spara?" gick inte att se.
+     (Loadern läser om sig själv efter varje sparning.) */
+  const sparadeAvgifter = JSON.stringify(d.marketFees);
+  useEffect(() => {
+    setAvgifter(d.marketFees as Record<string, Avgiftsfalt>);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sparadeAvgifter]);
 
   /* ---- Logga in med Facebook ----
      Klick → fönstret öppnas SYNKRONT (annars stoppar webbläsaren det som en

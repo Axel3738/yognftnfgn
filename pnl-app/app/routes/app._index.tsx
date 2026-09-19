@@ -1190,7 +1190,18 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
           : T.dashboard.kpi.allUnitsCovered,
       tone: t2.unitsWithoutCost ? "critical" : undefined,
     },
-    { label: T.dashboard.kpi.duty, value: money(t2.tariff), sub: T.dashboard.kpi.ordersCount(nf.format(t2.orders)) },
+    {
+      /* Snittet per order gör tullen kontrollerbar: står butikens standard
+         där räknas allt på ett tal, står något annat är tullen per marknad
+         i spel. Utan det gick det inte att se om en sparad marknadstull
+         faktiskt användes. */
+      label: T.dashboard.kpi.duty,
+      value: money(t2.tariff),
+      sub:
+        t2.orders > 0
+          ? T.dashboard.kpi.dutyPerOrder(nf.format(t2.orders), money(t2.tariff / t2.orders))
+          : T.dashboard.kpi.ordersCount(nf.format(t2.orders)),
+    },
     { label: T.dashboard.kpi.mer, value: mult(t2.mer), sub: T.dashboard.kpi.breakEven(mult(t2.breakEvenMer)) },
     {
       label: T.dashboard.kpi.netProfit,
