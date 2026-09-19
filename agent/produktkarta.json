@@ -81,7 +81,11 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-17, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3e0270ab-908c-818b-9630-cd66fb6f7db6",
+      "notion_hub_datakalla": "collection://2fa270ab-908c-82e9-9a4a-8763b56702bd",
+      "notion_hub_namn": "Bird feeder with camera creative hub",
+      "notion_hub_not": "Skapad 2026-09-19 av /rond-auto steg 4b genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794). Ärver engelska statusar och Typ-alternativ. Produktens förstabatch ligger här."
     },
     {
       "campaign_id": "120250253948980291",
@@ -858,7 +862,7 @@
     },
     {
       "campaign_id": "120250147343350291",
-      "produkt": "Takövedraget för Husvagn 6,5 × 3 m",
+      "produkt": "Taköverdraget för Husvagn 6,5 × 3 m",
       "lage": "test",
       "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,

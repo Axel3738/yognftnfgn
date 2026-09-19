@@ -16,6 +16,13 @@ Koncept som väntar, ännu inte briefade. Skapad 2026-09-14.
 
 ## Väntande idéer
 
+- ~~**Vinnaren översatt till en annan husvagnsstorlek.**~~
+  `[använd i batch #3 — Takoverdrag_PD_10_H1, PD_10_1 och BOF_7_1]` Spärren
+  ("kräver att sortimentet kontrolleras först") är uppfylld: produktsidans JSON
+  lästes live 2026-09-19 och gav **nio** storlekar, 3 × 5,5 m till 3 × 13,5 m,
+  1 129–2 239 kr. Idén kom tillbaka samma vecka från Axel själv via databasen
+  *Annonsidéer* (2026-09-18).
+
 - **Vad kostar en takreparation på en husvagn, på riktigt?** Så fort siffran är
   belagd (verkstadsprislista, försäkringsbolag, skriftlig offert) blir
   prisankaret mycket vassare än 1 129 mot 1 469. **Ta den aldrig ur luften** —

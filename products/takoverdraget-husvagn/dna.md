@@ -164,3 +164,87 @@ Upptagna AD-ID i kontot före batch #2: CS 1–4 + 6, GT 1–6, PD 1–5, SP 1�
 CO 1–2, LI 1, RI 1, TR 1, UG 1, BOF 1–3.
 **Nästa lediga efter batch #2:** CS 12, GT 10, PD 10, SP 6, CO 5, LI 3, RI 5,
 TR 3, UG 3, OB 2, BOF 7.
+
+---
+
+# Körning 3 — 2026-09-19 (`/rond-auto` steg 4b, brief-runda)
+
+## Siffrorna (livstid, avläst 2026-09-19 ur Meta)
+
+Kampanj: **57 440 kr spend · 207 köp · ROAS 4,20 · intäkt 241 130 kr.**
+**AOV 1 165 kr → break-even-CPA 715 kr** (break-even-ROAS 1,63 ur kampanjnamnet).
+Dagsbudget **16 000 kr** — fördubblad igen sedan 2026-09-16 (8 000 kr).
+
+⚠️ **Ronden kunde INTE fälla en budgetdom i dag.** `agent/besked.mjs` har en
+rimlighetsspärr på 100–10 000 kr dagsbudget och svarade `ORIMLIG_DATA`:
+"Dagsbudget 16000 kr ligger utanför 100–10000 kr — troligen en felparsning".
+Det är **inte** en felparsning, det är Axels riktiga budget. Spärrens tak
+måste höjas, annars får kontots starkaste produkt aldrig mer en budgetdom.
+Ronden ändrade ingenting och flaggade det i stället — se `batch-log.md`.
+
+### Vinstbidrag = (715 − CPA) × köp. Rangordnat på vinst, aldrig på ROAS.
+
+| Annons | Format | Spend | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|
+| CS_2_1 | statisk | 7 132 | 38 | 188 | 6,28 | **20 025** |
+| CS_2_H1 | video | 5 522 | 28 | 197 | 6,05 | **14 488** |
+| SP_2_1 | statisk | 7 493 | 30 | 250 | 4,52 | 13 947 |
+| GT_2_H1 | video | 5 726 | 27 | 212 | 5,52 | 13 569 |
+| SP_4_H1 | video | 9 021 | 24 | 376 | 3,27 | 8 131 |
+| PD_4_H1 | video | 4 218 | 11 | 383 | 3,15 | 3 643 |
+| PD_2_1 | statisk | 969 | 6 | 162 | 6,99 | 3 319 |
+| PD_2_H1 | video | 3 206 | 9 | 356 | 3,17 | 3 226 |
+| PD_1_H1 | video | 912 | 5 | 182 | 5,49 | 2 662 |
+| CS_3_H1 | video | 1 076 | 5 | 215 | 5,24 | 2 497 |
+| CS_4_1 | statisk | 669 | 3 | 223 | 5,06 | 1 475 |
+| CS_1_H1 | video | 797 | 3 | 266 | 4,25 | 1 347 |
+| BOF_2_1 | statisk | 1 102 | 3 | 367 | 3,07 | 1 042 |
+| **SP_2_H1** | video | 5 049 | 7 | **721** | 1,56 | **−47** |
+
+Summa bedömbara: **89 323 kr vinstbidrag.**
+
+**För tidigt (grind 300 kr / 3 köp):** GT_5_H1 (1 619 kr, 2 köp),
+RI_1_H1 (687, 2), GT_4_H1 (601, 0), UG_1_H1 (388, 2), PD_3_H1 (367, 0).
+Resten av batch #1 och hela batch #2 ligger fortfarande under grinden eller
+är inte uppladdade än.
+
+### Vinstbidrag per vinkel
+
+| Vinkel | Spend | Köp | CPA | Vinstbidrag | Vinst per spendkrona |
+|---|---|---|---|---|---|
+| **CS** | 15 197 | 77 | 197 | **39 831** | **2,62 kr** |
+| GT | 5 726 | 27 | 212 | 13 569 | 2,37 kr |
+| PD | 9 305 | 31 | 300 | 12 849 | 1,38 kr |
+| SP | 21 563 | 61 | 353 | 22 030 | 1,02 kr |
+| BOF | 1 102 | 3 | 367 | 1 042 | 0,95 kr |
+
+## Vad som ändrades sedan 2026-09-16
+
+- **CS håller när budgeten fördubblas — öppen fråga besvarad.** Spenden gick
+  9 875 → 15 197 kr (+54 %) och CPA 170 → 197 kr (+16 %). Vinsten per
+  spendkrona sjönk 3,17 → 2,62 men CS är fortfarande dubbelt så lönsam som SP.
+  **Kurvan planar, den vänder inte.** CS ska fortsatt få mest.
+- **GT håller också.** GT_2_H1 gick 5 029 → 5 726 kr och CPA 201 → 212.
+  2,37 kr per spendkrona — näst bäst. Presentvinkeln tål skalning.
+- **SP_4_H1 är kampanjens nya största spendare och är mediokert lönsam.**
+  9 021 kr = 16 % av all spend, CPA 376 mot break-even 715. Den går plus
+  (8 131 kr vinstbidrag) och ska INTE dödas — men den äter budget som CS
+  hade omsatt till ungefär dubbelt så mycket vinst.
+- **`SP_2_H1` har nått break-even och står still där.** CPA 721 mot
+  break-even-CPA 715, vinstbidrag −47 kr (var −626 kr). Den har ätit
+  5 049 kr. Den ligger kvar ACTIVE; `/cs` pausar aldrig annonser.
+- **PD_2_1 är kampanjens billigaste köp och svälter.** CPA 162 kr på bara
+  969 kr spend. Den enda annonsen under 200 kr CPA utöver CS-paret.
+
+## Öppna frågor efter körning 3
+
+- Kronor eller procent i prisankaret? `CS_10_1` mot `CS_11_1` är briefade men
+  **inte live än** — batch #2 ligger kvar i hubben. Obesvarad.
+- Bär presentvinkeln som statisk? `GT_6_1` står på 185 kr. Tredje försöket
+  (`GT_9_1`) är inte live. Obesvarad.
+- **Nytt: passar-frågan.** Sortimentet är nu kontrollerat — **nio storlekar,
+  3 × 5,5 m till 3 × 13,5 m, 1 129–2 239 kr** (läst live ur produktsidans
+  JSON 2026-09-19). Allt material hittills säger ett enda mått. Batch #3
+  testar om storleksspannet i hooken öppnar segmentet som i dag sållar bort
+  sig själv. Backlog-item struket och använt.
+- Vad kostar en takreparation? Fortfarande **inte belagd**. Får inte gissas.

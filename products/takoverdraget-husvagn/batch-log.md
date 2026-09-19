@@ -178,3 +178,91 @@ briefen ligger i Notion-itemet, vilket är det redigerarna faktiskt läser, och
 Drive-länken är enligt kommandot ett komplement och aldrig ersättningen. Skapas
 mappen senare: lägg `Batch #2` INUTI produktens befintliga mapp (Joshs), aldrig
 i `BÄVER/Products`.
+
+## Batch #3 — 2026-09-19 (`/rond-auto` steg 4b, förfallen 3-dagarsrunda)
+
+**Trigger:** `annonsbehov` flaggade `brief_runda`, 3 dagar sedan batch #2,
+`rundaAntal` 8. Kampanjen kontrollerad ACTIVE direkt före batchen.
+
+**Underlag:** livstidsdata ur Meta 2026-09-19 — 57 440 kr spend, 207 köp,
+ROAS 4,20, intäkt 241 130 kr. AOV 1 165 kr → **break-even-CPA 715 kr**.
+Full vinstbidragstabell i `dna.md`, körning 3.
+
+**AXELS IDÉ STYRDE RONDEN.** Databasen *Annonsidéer* hade en rad med Status
+`Ny`, Produkt "Taköverdraget", skapad 2026-09-18 19:50: *"För annons PD_2_H1
+måste vi göra en variant … i stället för att bara säga en storlek säger vi att
+den finns i alla storlekar … typ 13 olika storlekar, eller 10 olika storlekar."*
+
+Kopplingen till analysen, som briefens hypotes bygger på:
+
+- Idén fanns redan i backloggen sedan 2026-09-14 (*"Vinnaren översatt till en
+  annan husvagnsstorlek"*) med en uttrycklig spärr: **sortimentet måste
+  kontrolleras först.** Det är gjort i den här körningen — produktsidans JSON
+  lästes live och gav **nio** storlekar, 3 × 5,5 m till 3 × 13,5 m,
+  1 129–2 239 kr. Backlog-itemet är därmed struket och använt.
+- ⚠️ **Det är nio, inte tio och inte tretton.** Briefen säger nio. Att skriva
+  Axels siffra hade varit en påhittad uppgift.
+- ⚠️ **Priset måste skrivas "från 1 129 kr"** i varje rad som nämner spannet —
+  13,5-metersvarianten kostar 2 239 kr, och "nio storlekar" plus "1 129 kr"
+  utan "från" är en prisuppgift som är falsk för sju av nio varianter.
+- **Vad datan säger om idén:** PD-vinkeln är mittfältet (1,38 kr vinst per
+  spendkrona mot CS:s 2,62), och just `PD_2_H1` ligger på CPA 356 mot CS-parets
+  188–197. Rent vinkelmässigt talar datan alltså **emot** att lägga en ny satsning
+  i PD. Men idén är inte "mer PD" — den tar bort en diskvalificerare i sekund två
+  för alla som inte äger en 6,5-metersvagn, och det är en mekanism ingen annan
+  brief i kampanjen har testat.
+- **Min förutsägelse, skriven i förväg:** `PD_10_H1` landar mellan PD-snittet
+  (CPA 300) och CS-paret (CPA ~195) — alltså troligen 230–300 kr. Den slår
+  originalet `PD_2_H1` (CPA 356) för att den öppnar ett segment som i dag
+  sållar bort sig, men den slår inte CS, eftersom prisankaret är kampanjens
+  bevisat starkaste argument och "från 1 129 kr" är ett svagare ankare än
+  "1 129 kr mot 1 469 kr". **Största risken är just det: "från" försvagar
+  siffran.** Läs av `PD_10_H1` mot `PD_2_H1`, aldrig mot CS.
+
+Raden är satt till **Byggd** i Annonsidéer med annonsnamnen i en kommentar.
+
+### Briefer i denna batch — 11 st (6 video, 2 statiska, 3 BOF-bilder)
+
+| Annons | Format | Hypotes | Källa |
+|---|---|---|---|
+| Takoverdrag_PD_10_H1 | Video | **Axels idé.** Variant av PD_2_H1 där enda ändringen är storleksraden: nio storlekar, från 1 129 kr. Stänger passar-invändningen i hooken | Annonsidéer 2026-09-18 + backloggen + produktsidan |
+| Takoverdrag_CS_12_H1 | Video | CS-argumentet i jag-form, en tagning — den enda inpackning prisankaret inte fått | CS_2_1 + CS_2_H1, 45 % av vinstbidraget |
+| Takoverdrag_GT_10_H1 | Video | Mottagaren beskriven genom vad han redan äger till vagnen | GT_2_H1, 2,37 kr/spendkrona |
+| Takoverdrag_OB_2_H1 | Video | "Var gör jag av den på sommaren?" — förvaringspåsen visad | Sidans egen rad, oanvänd i allt material |
+| Takoverdrag_CO_5_H1 | Video | Fienden är passivitet, inte helöverdraget | Sidans rad om taket man aldrig ser |
+| Takoverdrag_TR_3_H1 | Video | Leder med begränsningen: den täcker taket, inte hela vagnen | Sidans egen rad + copy-reglernas konfliktregel |
+| Takoverdrag_PD_10_1 | Statisk | Samma nya variabel som PD_10_H1 som bild — rent formattest | PD_2_1, kampanjens lägsta CPA (162) |
+| Takoverdrag_CS_13_1 | Statisk | Prisankaret omräknat till yta: 1 129 kr för 19,5 m² | CS-vinkeln + copy-reglernas tidsramsregel |
+| Takoverdrag_BOF_7_1 | Statisk | BOF: vilken längd har din vagn? Nio storlekar, från 1 129 kr | Samma nya variabel |
+| Takoverdrag_BOF_8_1 | Statisk | BOF-invändning: var bor den på sommaren | Sidans egen rad |
+| Takoverdrag_BOF_9_1 | Statisk | Priset mot risken, kvalitativt. Ingen påhittad reparationskostnad | Sidans egen rad |
+
+**Inga review-bilder.** Produkten har fortfarande exakt 10 seedade recensioner
+och ingen organisk. Aggregatet används redan i `TR_2_1` (batch #2).
+
+**Butiksneutralitet:** samma krav som batch #2 — inget butiksnamn, ingen URL,
+ingen logga, ingen fri frakt/Klarna/öppet köp/leveranstid/returer.
+
+### Feedbackloop på batch #1 och #2
+
+- **Batch #1:** tre annonser är nu bedömbara. `PD_4_H1` CPA 383 (11 köp),
+  `SP_4_H1` CPA 376 (24 köp, kampanjens största spendare), `BOF_2_1` CPA 367.
+  Alla tre över break-even men under kampanjsnittet. `GT_4_H1` står på 601 kr
+  med noll köp och närmar sig en dom.
+- **Batch #2 är fortfarande inte live.** Samtliga 24 rader ligger kvar i
+  hubben (Draft / In progress / CaraShell SE ready to be active). Alla
+  hypoteser därifrån står obesvarade. Det är därför batch #3 inte upprepar
+  någon av dem.
+
+### ⚠️ Flaggat till Axel, inte åtgärdat av körningen
+
+1. **Budgetspärren stoppar kontots starkaste produkt.** Dagsbudget 16 000 kr
+   ligger utanför `agent/besked.mjs` rimlighetsintervall 100–10 000 kr, så domen
+   blev `ORIMLIG_DATA` och ingen budgetändring fälldes. Taket behöver höjas.
+   Ronden ändrar inte konstanter på eget bevåg.
+2. **`SP_2_H1` ligger på exakt break-even** (CPA 721 mot 715) efter att ha ätit
+   5 049 kr. `/cs` pausar aldrig annonser — det är Axels beslut eller trappans.
+3. **`PD_2_1` svälter.** Kampanjens billigaste köp (CPA 162) på 969 kr spend.
+
+**Ingen Drive-mapp skapad** — hela briefen ligger i Notion-itemet, som är det
+redigerarna läser. Samma val som batch #2.
