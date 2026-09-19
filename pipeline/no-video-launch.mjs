@@ -99,7 +99,7 @@ async function thumbnailFor(videoId) {
 
 // ── 1. Videor: återanvänd på titel, ladda annars upp ──
 const vids = new Map();
-for (const v of (await api(`${cfg.act}/advideos`, { params: { fields: 'title,id,status', limit: '500' } })).data || [])
+for (const v of (await api(`${cfg.act}/advideos`, { params: { fields: 'title,id,status', limit: '100' } })).data || [])
   vids.set((v.title || '').replace(/\.\w+$/, '').trim(), { id: v.id, ready: v.status?.video_status === 'ready' });
 
 const wanted = [];
