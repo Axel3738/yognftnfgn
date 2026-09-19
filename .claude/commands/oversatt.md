@@ -96,8 +96,18 @@ varje steg och allt går genom `node` (som är förhandsgodkänt i `allow`):
 | Lägga in filen överst på raden | `tools/notion-fil-upp.mjs` | `notion-create-file-upload` + `insert_content` |
 Börja därför ALLTID Steg 0 med att kolla nyckeln, och står den som SAKNAD:
 säg det överst i svaret till Axel med antalet klick körningen kommer att kosta,
-innan du drar igång. Nyckeln läggs i **Default ENV** `env_01PBy3BU66p5AEJYSfm8EbjP`
-(det rutinerna faktiskt kör i), inte i "Default" `env_01FhBQMkVFeo4ZZ2hB4T9a9k`.
+innan du drar igång.
+⚠️ **Miljön är per rutin och per konto — läs av den, skriv den aldrig ur minnet.**
+Mätt 2026-09-19 med `get_session` (utan `session_id`) + `list_environments`:
+den här rutinens fasta session `session_017mSZA2oYsnFEtSa723vodp` kör i
+**`env_017T5nLJowPH52bir1CsVYEk`, som heter "yoyo"** — kontot har bara två
+miljöer, "yoyo" och "Concurrent". Den `Default ENV` `env_01PBy3BU66p5AEJYSfm8EbjP`
+som står i CLAUDE.md finns INTE på det här kontot; den gäller kundtjänst-rutinen
+på Axels andra konto. En session vet själv vilken miljö den kör i, så fråga
+sessionen i stället för att leta i dokumentationen.
+⚠️ En variabel som läggs in på claude.ai syns först i en NY container — inte i
+en session som redan kör. Lägger Axel in nyckeln mitt i en körning gäller den
+alltså från nästa körning, inte den pågående.
 
 ## Fas 1 — Kön (gratis, alltid komplett)
 
