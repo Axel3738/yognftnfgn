@@ -645,5 +645,12 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
   Ingen schemalagd rutin går de tiderna. Enligt CLAUDE.md ska Bäverbutikens `/oversatt NO` sätta
   `CaraShell SE ready to be active` på den här hubben, aldrig `Approved` — annars når raderna aldrig
   speglingens kö. Inget arbete är förlorat: `--fran "Approved"` fångar dem när SE-kampanjen är igång.
+  **Orsaken funnen i commit `732359e`** ("/oversatt NO 2026-09-19: hela kön blockerad, 14 rader till
+  Approved"): Bäverbutikens NO-kampanj `Frontrutetrekk til Bobil` är avvecklad (PAUSED, 4 495 kr spend),
+  så den körningen översatte inte och flyttade raderna till `Approved` enligt den generella regeln
+  2026-09-15 — utan att känna till speglingsundantaget. 5 av de 21 raderna kom den vägen 16:54–16:57 UTC.
+  För en speglad hub är `Approved` fel även när NO är avvecklad: speglingen behöver bara den SVENSKA
+  filen, och hoppar NO-delen av sig själv. `/oversatt NO` bör kolla `ops-spegla.mjs --kallor` innan den
+  sätter status på en hub.
 - NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` ACTIVE, 4 adsets. Pris 559 SEK / 548 NOK
   läst ur butiken. Rutin: `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
