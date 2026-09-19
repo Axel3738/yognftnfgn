@@ -1,8 +1,8 @@
 {
  "kommentar": "Var arbetet finns i Notion. Det ligger i TVA databaser, inte en - det ar den vanligaste missen och den far en att svara 'det finns inget arbete' nar det finns massor.",
  "VARNING_LAS_DETTA_FORST": "Hittar du inget i en databas betyder det INTE att det inte finns arbete. Det betyder att du letat pa ett stalle. Sag alltid VILKA kallor du kollat, och foresla den du inte kollat. Pasta aldrig att nagot inte finns.",
- "uppdaterad": "2026-09-18",
- "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-09-18 via Notion-MCP (notion-search på \"creative hub\" med sort last_edited och på \"BÄVER\" title_only, notion-query-data-sources på testcentret och alla tio levande hubbarna i en UNION-fråga med Typ-filter på inkludering).",
+ "uppdaterad": "2026-09-19",
+ "kalla": "Notion-svepet i /rond-auto steg 4c, kört 2026-09-19 via Notion-MCP: notion-query-data-sources på testcentret, notion-search på \"creative hub\" (sort last_edited) och \"BÄVER\" (title_only), samt tre UNION-frågor med Typ-filter på INKLUDERING över sjutton hubbar. OPS-butikernas egna hubbar (Carashell, Damasker vandring/DryTrek) och andra verksamheters hubbar är bortdragna; Fish rod holder och Isolerade Utekattkojan räknas kvar eftersom de delas med Bäverbutiken.",
  "VARNING_FARSKHET": "Ogonblicksbild. Notion andras hela tiden. Ar uppdaterad mer an nagra dagar gammalt: sag det och hamta om.",
  "databas_1_product_test_center": {
   "namn": "Product test center SE BÄVER",
@@ -148,10 +148,10 @@
     "namn": "Fish rod holder",
     "produkt": "Fiskespöhållaren",
     "collection": "collection://3c3270ab-908c-8356-ad6c-87ff779e647d",
-    "drafts": 41,
-    "drafts_video": 3,
-    "drafts_bild": 38,
-    "not": "OFÖRÄNDRAD på 41 TREDJE dygnet i rad. Systemets största drafthög står helt still — 38 bildbriefer som ingen plockat sedan 2026-09-15. Produkten fick ändå batch #6 i dag (kommandot har inget tak och rundan var förfallen). ⚠️ Hubben delas numera med TackleBays OPS-butik: de senaste raderna heter TackleBayRod_*, och hubben är undantagen ur Bäverbutikens leveransrunda per id. Det kan vara förklaringen till att Bäverbutikens Rodholder_-rader står stilla — de faller mellan två rutiner. Fråga till Axel, inte ett beslut för körningen."
+    "drafts": 50,
+    "drafts_video": 7,
+    "drafts_bild": 43,
+    "not": "⚠️ VÄXTE 41 → 50. FJÄRDE dygnet utan att en enda rad plockas, och nu ökar högen i stället för att krympa. 43 bildbriefer ligger orörda. Hubben delas med TackleBays OPS-butik (TackleBayRod_*) och är undantagen ur Bäverbutikens leveransrunda per id — raderna faller sannolikt mellan två rutiner. Detta är körningens tydligaste larm och en fråga till Axel, inte ett beslut för ronden."
    },
    {
     "namn": "BÄVER  For CARL Taköverdraget för Husvagn",
@@ -160,16 +160,16 @@
     "drafts": 4,
     "drafts_video": 4,
     "drafts_bild": 0,
-    "not": "NED från 7 till 4. Tre videobriefer plockade på ett dygn. Ingen ny batch i dag — rundan faller 2026-09-19."
+    "not": "Oförändrat 4 (alla video). Batch #3 (11 nya briefer) lades in av den här körningen — siffran här är mätt FÖRE det."
    },
    {
     "namn": "BÄVER Termoskyddet för Husbil",
     "produkt": "Termoskyddet för Husbil 211 × 171 cm",
     "collection": "collection://7d0270ab-908c-831e-8021-8758336851c8",
-    "drafts": 2,
-    "drafts_video": 2,
+    "drafts": 0,
+    "drafts_video": 0,
     "drafts_bild": 0,
-    "not": "NED från 6 till 2. Fyra videobriefer plockade. Fick batch #2 i dag (9 briefer)."
+    "not": "2 → 0. Redigerarna tömde högen."
    },
    {
     "namn": "BÄVER Övervakningskameran",
@@ -178,7 +178,7 @@
     "drafts": 7,
     "drafts_video": 3,
     "drafts_bild": 4,
-    "not": "OFÖRÄNDRAD på 7 andra dygnet i rad. Produkten är briefpausad till 2026-10-15 och dess SE-kampanj sänktes till golvet 500 kr i dag (livstidsspärren). Ingen rör de sista briefarna."
+    "not": "Oförändrat 7. ⚠️ Kampanjen stängdes av av trappan i dag — de sju drafterna är material till en kampanj som inte kör."
    },
    {
     "namn": "Motorcycle Cover creative hub",
@@ -187,34 +187,34 @@
     "drafts": 0,
     "drafts_video": 0,
     "drafts_bild": 0,
-    "not": "TOM andra dygnet i rad — redigerarna håller jämna steg. Fick batch #4 i dag (7 briefer)."
+    "not": "0. ⚠️ Kampanjen stängdes av av trappan i dag."
    },
    {
     "namn": "Belt grinder creative hub",
     "produkt": "Bälteslipmaskinen",
     "collection": "collection://a1d270ab-908c-82e2-b3be-07b523257509",
-    "drafts": 1,
+    "drafts": 2,
     "drafts_video": 0,
-    "drafts_bild": 1,
-    "not": "OFÖRÄNDRAD på 1 bildbrief. Fick batch #5 i dag (9 briefer)."
+    "drafts_bild": 2,
+    "not": "1 → 2."
    },
    {
     "namn": "Boat motor cover creative hub",
     "produkt": "Båtmotorskyddet 420D",
     "collection": "collection://1dc270ab-908c-836b-a048-073bfaa48353",
-    "drafts": 1,
-    "drafts_video": 1,
+    "drafts": 2,
+    "drafts_video": 2,
     "drafts_bild": 0,
-    "not": "OFÖRÄNDRAD på 1 videobrief. Fick batch #4 i dag (11 briefer, inklusive två review-bilder på riktiga citat)."
+    "not": "1 → 2."
    },
    {
     "namn": "BÄVER IBC-Tanköverdraget",
     "produkt": "IBC-Tanköverdraget",
     "collection": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
-    "drafts": 0,
-    "drafts_video": 0,
+    "drafts": 1,
+    "drafts_video": 1,
     "drafts_bild": 0,
-    "not": "TOM. Batch #6 (9 briefer, lagda 2026-09-17) är redan helt upplockad — snabbaste hubben i systemet."
+    "not": "0 → 1."
    },
    {
     "namn": "BÄVER Adventskalendern Racingbilar",
@@ -223,7 +223,7 @@
     "drafts": 0,
     "drafts_video": 0,
     "drafts_bild": 0,
-    "not": "TOM tredje dygnet i rad. Batch #3 (lagd 2026-09-17) redan upplockad."
+    "not": "Oförändrat 0."
    },
    {
     "namn": "BÄVER Isolerade Utekattkojan",
@@ -232,7 +232,7 @@
     "drafts": 0,
     "drafts_video": 0,
     "drafts_bild": 0,
-    "not": "TOM. OPS-butiken CatCabins briefrond är pausad av Axel sedan 2026-09-14."
+    "not": "Oförändrat 0. CatCabins OPS-hub, briefronden pausad."
    }
   ],
   "arkiverade": [
@@ -304,11 +304,47 @@
    "arkiverad Övervakningskamera",
    "Damasker vandring (OPS, DryTrek)"
   ],
-  "summa_drafts": 63,
-  "rorelse_sedan_igar": "82 → 63 drafts. Redigerarna tog 39 rader (Termoskyddet −20, Bälteslipmaskinen −3, MC-Kapellet −3, IBC −1) och fick 20 nya (Taköverdraget +7 ur batch #2, Båtmotorskyddet +1, och i dag IBC +9 och Adventskalendern +9 ur ronden). Fiskespöhållarens 41 står still för andra dygnet.",
-  "nya_hubbar_sedan_igar": "Inga. Samma tio levande hubbar som 2026-09-17, samma id:n.",
-  "nyss_arkiverade_sedan_igar": "\"BÄVER Termoskyddet för Husbil\" 513270ab-908c-825e-b71e-81cdf455dd98 står nu is_archived: true. Det är Bäverbutikens gamla källhub för termoskyddet — den LEVANDE hubben är c5a270ab-908c-83e3-b721-81fde8643080 (collection 7d0270ab-…), som står i produktkartan och som svepet läste. Två hubbar med exakt samma namn: läs id, aldrig namn.",
-  "summering_2026_09_18": "56 draftrader totalt över tio levande hubbar (mot 63 i går). Två hubbar står helt still: Fish rod holder (41, tredje dygnet) och BÄVER Övervakningskameran (7, andra dygnet) — tillsammans 48 av de 56. De andra åtta hubbarna rör sig varje dygn."
+  "summa_drafts": 66,
+  "rorelse_sedan_igar": "56 → 66 drafts över samma tio levande hubbar. Hela ökningen sitter i Fish rod holder (41 → 50); tre hubbar rörde sig med en rad var och Termoskyddet tömdes (2 → 0).",
+  "nya_hubbar_sedan_igar": "Inga. Samma tio levande hubbar som 2026-09-18, samma id:n. Fågelmataren med Kamera fick sin FÖRSTA hub av den här körningen (se nedan) — den är ny i morgondagens svep.",
+  "nyss_arkiverade_sedan_igar": "Inga nya sedan 2026-09-18.",
+  "summering_2026_09_18": "56 draftrader totalt över tio levande hubbar (mot 63 i går). Två hubbar står helt still: Fish rod holder (41, tredje dygnet) och BÄVER Övervakningskameran (7, andra dygnet) — tillsammans 48 av de 56. De andra åtta hubbarna rör sig varje dygn.",
+  "DODA_KAMPANJERS_DRAFTS_2026_09_19": {
+   "vad": "Hubbar vars kampanj är avstängd men som fortfarande bär obearbetade briefer. Mätt i dag, första gången ronden räknar dem.",
+   "Medicinasken": {
+    "collection": "collection://810270ab-908c-837b-a5d9-87a2cfa83944",
+    "drafts": 15,
+    "video": 6,
+    "bild": 9
+   },
+   "Kasta & Fånga-settet": {
+    "collection": "collection://d66270ab-908c-82fd-8040-07dc00c4fc84",
+    "drafts": 17,
+    "video": 6,
+    "bild": 11
+   },
+   "Bordtennisnätet Infällbart": {
+    "collection": "collection://87a270ab-908c-82c2-83a5-0747c3646b48",
+    "drafts": 17,
+    "video": 6,
+    "bild": 11
+   },
+   "Gravstenspennan": {
+    "collection": "collection://fea270ab-908c-83f2-b390-874797ca5497",
+    "drafts": 3,
+    "video": 3,
+    "bild": 0
+   },
+   "Kranbeskyttelse Frost NO": {
+    "collection": "collection://de8270ab-908c-83fe-9943-87319bf904b6",
+    "drafts": 3,
+    "video": 3,
+    "bild": 0
+   },
+   "summa": 55,
+   "not": "55 briefer till fem kampanjer som inte kör. De tre första stängdes av 2026-09-04. Ingen rutin plockar dem och ingen städar dem. Går till Axel som en fråga: ska de arkiveras eller är produkterna på väg tillbaka? Ronden rör dem inte."
+  },
+  "summering_2026_09_19": "66 draftrader över tio levande hubbar (mot 56 i går), plus 55 rader i fem hubbar vars kampanj är avstängd. Ökningen är helt och hållet Fish rod holder, som nu står fjärde dygnet och VÄXER."
  },
  "dod_data": "Hubbar utan produkt i produktkartan och kampanjer utan hub redovisas i leveransen. Kartan fick MC-Kapellets hub inskriven 2026-09-15.",
  "arbetsfordelning": {
