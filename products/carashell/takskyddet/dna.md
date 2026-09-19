@@ -555,3 +555,54 @@ samma dag: nio storlekar i rullgardinen, €126,90–€251,90, paketpriserna
    kostade lika; med stegen visade ett 2-pack av 13,5 m **465,73 €** på sidan
    medan kassans 15 %-kod tar **428,23 €**. Fältet skrivs nu (`factory/paket.mjs`)
    och sidan visar samma tal som kassan i varje valuta och varje storlek.
+
+## Norge-runda 2026-09-19 (`/ops-oversatt carashell/takskyddet`) — bildöversättaren släppt
+
+Sex bilder som stått i `SE-ACTIVE to be translated` sedan 2026-09-17 gick live.
+Det som höll dem var inte ett trasigt verktyg utan fyra olösta layoutfall — två
+av dem var mina egna felställda frågor. Facit:
+`market-expansion/ops/carashell/2026-09-19/BILDSTOPP-LOST.md`.
+
+**Två riktiga fel i `pipeline/oversatt-bild.py`, båda rättade i samma körning:**
+
+1. `rita_box` kunde inte måla en platta i en given färg — fyllfärgen var
+   hårdkodad till (248,248,248)/(10,14,18), och OPS-mallens band är [60,66,72].
+   Ny nyckel `fyllfarg`. Den löser också **fullbreda rubriker över delade
+   foton** (`PD_6_1`: rubriken ligger över två olika foton, så radmedianen går
+   inte att sudda mot): bandet målas om ogenomskinligt i sin egen färg.
+2. 3 px utvidgning räcker inte för **stor fet text på ett mörkt band**.
+   `PD_7_1`:s bottenband, 31 px fet vit på [60,66,72]: efter suddningen låg
+   13 % kontrast kvar på 10 % av pixlarna i rad 1087–1097 — en läsbar spökrad.
+   Antialias-kanten hamnar under tröskeln `summa > 450`. Ny nyckel `utvidga`
+   (standard 3) → 6 ger max 4,8 % och 0 % över tröskeln.
+
+**Två "fel" som inte fanns:**
+
+- ★ saknas i Liberation Sans, men stjärnraden ska aldrig ritas om.
+  Fällan är att `sudda()` suddar **hela formen** så snart en enda rad i den
+  listas — stjärnorna och "– Lars" försvann som bieffekt. `klipp_efter_rad`
+  finns för precis det.
+- Prisbrickan inuti den fullbreda vita remsan behöver ingen formdetektor: en
+  `box` **utan** `fyll` suddar och ritar om just brickan, och `fyll_2d` målar
+  lokalt så brickans två toner (237 över remsan, 254 i den) behålls.
+
+**Regeln som föll ut — och som kostade två dagars leverans att lära sig:**
+*döm suddningen på mätning, aldrig på förhandsbilden.* Tre gånger den här dagen
+visade förhandsbilden en spökrad; två mätte ≤ 4 % kontrast och fanns inte i
+filen, en mätte 13 % och var verklig. Måttet är `np.abs(box - median).sum(axis=2)`
+mot formens egen median: `max < 40` och `andel > 60 == 0` ⇒ ingen spökrad.
+Samma felslut gjordes 2026-09-17 och togs tillbaka 2026-09-18.
+
+**Butikens namn ut ur copyn** (Axels beslut 2026-09-18): fyra `message`-block sa
+"CaraShell dekker …" eller "16 anmeldelser på carashell.se", och `PD_6_1`:s
+bottenband sa `carashell.se · Fri frakt · …`. Omskrivna av sonnet-subagent mot
+`docs/copy-regler.md`. Påståendet om 16 omdömen står kvar utan källhänvisning.
+
+**Videon `PD_5_H1` hölls** — tre skäl, alla mätta i källfilen (39,4 s, 1080×1920):
+inbrända svenska ordcaptions i hela filmen, slutkortet är en skärmdump av den
+svenska produktsidan med `carashell.se`, `1 469,00 kr → 1 129,00 kr` och
+"16 recensioner", och både caption och voiceover säger butikens namn
+("Carashell taköverdrag"). US-rundan 2026-09-18 byggde om precis detta för
+engelska (`pipeline/no-precis.py`, `video/forbehandla.py`, nytt slutkort), så
+vägen finns — men den lägger tillbaka butikens namn i annonsen, vilket är
+ägarens fråga och inte rutinens.
