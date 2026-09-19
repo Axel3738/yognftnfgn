@@ -774,16 +774,16 @@
     "comment": "Vad som faktiskt är gjort i Shopify. Uppdateras av den som gör det (session, Cowork eller Axel) — sidan läser härifrån, aldrig ur chatten.",
     "rabattkod_skapad": "2026-09-12",
     "rabattkod_av": "Cowork (Claude i Chrome) i Axels inloggade Shopify admin",
-    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat). v9 (spårningsnumret utan länk) inklistrad av Cowork 2026-09-18 15:10–15:15 UTC i Leveransbekräftelse, Leveransuppdatering och Ute för leverans — verifierade mot servern, identiska med källfilerna, 77 150 / 5 823 / 5 812 tecken (Shopify sparade den här gången även den avslutande radbrytningen, så serverns tal = filens). Levererad kvar på v8.",
+    "inklistrade_comment": "Vad som ligger i Shopify just nu och stämmer med repot. v8 inklistrad av Cowork 2026-09-18 kväll i Leveransbekräftelse, Leveransuppdatering, Ute för leverans och Levererad — verifierade mot Shopifys mall-API på servern (inte redigeraren efter F5), identiska med källfilerna, byte 78 379 / 5 969 / 5 953 / 74 200. Orderbekräftelsen har v6 (oförändrad sedan dess). Återbetalning och Order annullerad har v2 (bara mobil-CSS skiljer, inte inklistrat). v9 (spårningsnumret utan länk) inklistrad av Cowork 2026-09-18 15:10–15:15 UTC i Leveransbekräftelse, Leveransuppdatering och Ute för leverans — verifierade mot servern, identiska med källfilerna, 77 150 / 5 823 / 5 812 tecken (Shopify sparade den här gången även den avslutande radbrytningen, så serverns tal = filens). Levererad kvar på v8. ⚠️ v10 (knappen Spåra paketet → butikens egna spårningssida /pages/spara) väntar på inklistring i samma tre mallar — COWORK-PROMPT.md.",
     "inklistrade_aldre_comment": "Tom sedan 2026-09-18 kväll.",
     "inklistrade_aldre": {},
     "inklistrade": {
       "aterbetalning": "2026-09-12 v2",
       "avbruten_order": "2026-09-12 v2",
       "orderbekraftelse": "2026-09-18 v6",
-      "fraktbekraftelse": "2026-09-18 v9",
-      "fraktuppdatering": "2026-09-18 v9",
-      "ute_for_leverans": "2026-09-18 v9",
+      "fraktbekraftelse": "2026-09-18 v9 (v10 byggd, väntar)",
+      "fraktuppdatering": "2026-09-18 v9 (v10 byggd, väntar)",
+      "ute_for_leverans": "2026-09-18 v9 (v10 byggd, väntar)",
       "levererad": "2026-09-18 v8"
     },
     "inklistrade_v1": {

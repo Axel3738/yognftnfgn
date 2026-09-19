@@ -33,18 +33,59 @@ Varför inte fraktbolagen direkt: YunExpress svarar 405 utanför sin sajt och
 
 | Fil | Vad |
 |---|---|
-| `kor.mjs` | Rundan. `--torr` läser utan att registrera eller skriva, `--kolla` testar bara nyckel + rättigheter, `--dagar N` fönstret bakåt (14), `--max N` tak på registreringar per körning (150, nyast först) |
+| `kor.mjs` | Rundan. `--torr` läser utan att registrera eller skriva, `--kolla` testar bara nyckel + rättigheter, `--dagar N` fönstret bakåt (14), `--max N` tak på registreringar per körning (150, nyast först), `--ingen-sida` hoppar över spårningssidan |
 | `17track.mjs` | Klienten: `/register`, `/gettrackinfo`, `/stoptrack`. Header `17token`, 40 nummer per anrop, 3 anrop/s, väntar vid 429 |
 | `status.mjs` | Ren logik: bolagskoder, status → Shopify-status, svenska meddelanden, `tolka()` och `planera()` |
-| `lage.json` | Minnet: registrerade nummer, senast skrivna status, leveransdatum. **Committas av rutinen** — utan filen registreras allt om och kvoten bränns |
-| `test/status.test.mjs` | 7 tester utan nät |
+| `uppacka.mjs` | **Kontraktet:** dataformatet på spårningssidan och uppackaren. Körs både i Node och i kundens webbläsare — `sida.mjs` bäddar in filen med `export ` bortstrippat, så formatet kan aldrig tolkas olika på de två ställena |
+| `sprak.mjs` + `fraser.json` | Fraktbolagens texter till svenska. 78 ordboksnycklar avlästa ur riktig data; okända fraser faller på en generell mening ur `sub_status` och loggas av rundan |
+| `paketdata.mjs` | 17TRACK-svar → händelselista → det komprimerade formatet. Slår ihop dubbletter, tak 30 skanningar, fönster 45 dagar |
+| `sida.mjs` | Kundens sida: HTML, CSS och JS i en Shopify-sidkropp. Samma mönster som lyckohjulet — inga temafiler, inga externa resurser |
+| `publicera.mjs` | Sidan till Shopify. `--torr` bygger bara filerna, `--paket <fil>` läser paketen ur rundans lista i stället för ur minnet. Trippelkollen sist: API, publik vy, känt nummer i kundens data |
+| `konfig.json` | Sidans handle, titel, fönster och bokförda publiceringar |
+| `lage.json` | Minnet: registrerade nummer, senast skrivna status, leveransdatum. **Committas av rutinen** — utan filen registreras allt om och kvoten bränns. Bär **inga** skanningar, se nedan |
+| `test/` | 101 tester utan nät |
 
 ```bash
 node --test sparning/test/*.test.mjs
 node sparning/kor.mjs --kolla
 node sparning/kor.mjs --torr
 node sparning/kor.mjs
+node sparning/publicera.mjs --torr   # bara sidan, ur paketminnet
 ```
+
+## Kundens spårningssida
+
+**https://baverbutiken.se/pages/spara** (Axels beslut 2026-09-19, valt ur två
+alternativ: "jag vet inte helst en egen spårningssida skulle jag säga alltså B").
+
+Shopifys orderstatussida kan bara rita tre streck med datum — Bekräftad, På
+väg, Levererad — utan orter och utan historik, hur mycket rutinen än skriver
+in i den. Det var det Axel såg: "den visar inga detaljer". Egna sidan visar
+hela kedjan: "17 sep 23:28 · Paketet är levererat i din brevlåda · Umeå",
+hela vägen tillbaka till avsändaren i Kina.
+
+- Kunden kommer från leveransmejlets knapp med `?nummer=…` och slipper skriva
+  något. Utan nummer i adressen finns ett sökfält.
+- **Uppslaget går på spårningsnummer, aldrig på ordernummer.** Ordernummer är
+  sekventiella och lätta att gissa; då hade vem som helst kunnat skriva 6500
+  och se var någon annans paket är. Datan bär bara spårningsnummer, status,
+  fraktbolag, skanningstexter och orter — inga namn, inga adresser.
+- Sidan är statisk. Rutinen bygger om den varje timme; den hämtar ingenting
+  själv medan kunden tittar, och säger det ("nya skanningar läggs till varje
+  timme").
+
+⚠️ **Skanningarna sparas aldrig i `lage.json`.** 948 paket à ~9 skanningar
+väger 0,7 MB, och filen committas varje timme — ett år hade gett 6,3 GB
+git-historik (räknat 2026-09-19 på repots lagefil). Rundan har ändå redan
+hämtat skanningarna, så den skriver dem till `output/paket.json`
+(gitignorerad) och skickar filen till `publicera.mjs --paket`. Bygg aldrig in
+dem i minnet "för att publiceringen ska kunna köras fristående".
+
+⚠️ **Sidan bär fler paket än rundan skriver event för.** Orderfönstret är 14
+dagar, men ett paket som varit på väg i tre veckor är precis det en kund vill
+slå upp. Resten hämtas därför ur paketminnet (60 dagar) och läses bara —
+inga event, ingen kvot. Att läsa är gratis hos 17TRACK; bara registreringen
+kostar.
 
 ## Nycklar och rättigheter
 
@@ -99,8 +140,25 @@ event i Shopify ligger kvar.
 
 ## Logg
 
-- **2026-09-18 16:16 CEST:** rutinen byggd (se ovan). Nästa steg som inte
-  är gjort: `--butik` för de andra butikerna.
+- **2026-09-19, spårningssidan live.** Axel: "den visar inga detaljer" om
+  Shopifys orderstatussida — den kan inte visa mer, så butiken fick en egen.
+  Byggd av fyra agenter parallellt (språk, dataformat, kundvy, publicering)
+  med adversarisk granskning per del: **35 fel hittade och rättade före
+  första körningen**, bland dem engelska som nådde kunden, en tidszonsbugg
+  som läste 17TRACK:s `time_utc` som lokal tid, och en publicering som kunde
+  lägga upp en tom sida. 101 tester utan nät.
+  Första skarpa körningen: **1 055 paket, 11 206 skanningar, 202 kB sida**,
+  trippelkollen grön (API, publik vy, känt nummer i kundens data). Sedd i
+  Chromium på 390 px och 1280 px: levererat, på väg, okänt nummer och tomt
+  sökfält — inga konsolfel, ingen vågrät scroll.
+  Fraserna mättes på riktig data först: 204 paket, 1 873 skanningar, 75
+  distinkta fraser (engelska, VERSALER och några redan svenska) och 92
+  platser ("MALMO, SCHNER, SE" → Malmö). Rundans inlärningsloop fångade sex
+  fraser till i den första riktiga körningen; de ligger nu i ordboken.
+  Nästa steg som inte är gjort: `--butik` för de andra butikerna, och
+  mejlets v10-knapp ska klistras in av Cowork.
+
+- **2026-09-18 16:16 CEST:** rutinen byggd (se ovan).
 
 - **2026-09-18 15:29 UTC, första skarpa rundan** (nyckeln syntes efter
   containeromstart, appen hade fått 18 rättigheter): 932 ordrar på 14

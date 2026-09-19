@@ -823,8 +823,18 @@ export const MALLAR = [
 // engelska (Axel 2026-09-18: "det är ju som vår egen tracker"). Själva
 // spårningsnumret i mejlet länkar fortfarande till fraktbolaget för den som
 // vill se varje skanning.
-const SPARNING_LIQUID = '{{ order_status_url }}';
-const SPARNING_EXEMPEL = 'https://baverbutiken.se/orders/exempel';
+// Knappen "Spåra paketet" går till butikens EGNA spårningssida (v10,
+// 2026-09-19). Shopifys orderstatussida kan bara rita tre streck med datum —
+// Bekräftad, På väg, Levererad — utan orter och utan historik, hur mycket vi
+// än skriver in i den. Egna sidan visar hela kedjan på svenska med ort och
+// tid (sparning/sida.mjs, publiceras varje timme av spårningsrundan).
+//
+// Saknar leveransen ett spårningsnummer finns inget att slå upp — då går
+// knappen till orderstatussidan som förut, så den aldrig leder till en
+// "vi hittar inte det numret".
+const SPARSIDA = 'https://baverbutiken.se/pages/spara';
+const SPARNING_LIQUID = `{% if fulfillment.tracking_number %}${SPARSIDA}?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}`;
+const SPARNING_EXEMPEL = `${SPARSIDA}?nummer=${EXEMPEL.sparningsnummer}`;
 
 function sparningsInfo(s, lage) {
   const inre =

@@ -11,14 +11,15 @@ en flik.
 
 **Länkarna pekar på `main`** (sedan PR #97 mergats 2026-09-18). Bygger en
 gren om mallarna: byt till grenens namn i länkarna tills den mergats, annars
-klistrar Cowork in en gammal version. Tecknantalen nedan är från bygget 2026-09-18 sen kväll (**v9:
-spårningsnumret är ren text, ingen länk till fraktbolaget** — Axel hamnade
-på UPS sida från testmejlet). Levererad är oförändrad sedan v8 och
+klistrar Cowork in en gammal version. Tecknantalen nedan är från bygget 2026-09-19 (**v10: knappen "Spåra
+paketet" går till butikens EGNA spårningssida**, baverbutiken.se/pages/spara,
+som visar hela kedjan på svenska med ort och tid — Shopifys orderstatussida
+kan bara rita tre streck). Levererad är oförändrad sedan v8 och
 orderbekräftelsen sedan v6; de står inte i tabellen. Bygger du om mallarna, räkna om dem i TECKEN
 (`python3 -c "print(len(open('mejl/output/fraktbekraftelse.liquid',encoding='utf-8').read()))"`),
 inte byte — Cowork mätte 2026-09-18 att `wc -c` gav byte och stämde inte.
 
-Historik: v4 inklistrad 2026-09-14, v6 (tre erbjudandemallar) 2026-09-18, v8 (fyra fraktmallar) 2026-09-18 kväll, v9 (tre fraktmallar) väntar. Coworks metod som fungerar: hämta filen direkt i Shopify-sidan, skriv in via kodrutans eget API, verifiera mot serverns mall-data — inget urklipp, inga kortkommandon.
+Historik: v4 inklistrad 2026-09-14, v6 (tre erbjudandemallar) 2026-09-18, v8 (fyra fraktmallar) 2026-09-18 kväll, v9 (tre fraktmallar) 2026-09-18 sen kväll, v10 (samma tre) väntar. Coworks metod som fungerar: hämta filen direkt i Shopify-sidan, skriv in via kodrutans eget API, verifiera mot serverns mall-data — inget urklipp, inga kortkommandon.
 
 ---
 
@@ -48,9 +49,9 @@ i Shopify-sidan i stället för via urklippet, och jämför det inklistrade mot
 källfilen tecken för tecken före sparning. Det fungerade.
 
 **Börja med att kolla vad som redan sitter — per mall.** Öppna varje mall i
-tabellen → Redigera kod. Innehåller brödtexten texten `tracking_url`
-är det den gamla versionen: klistra in enligt stegen. Saknas
-`tracking_url` helt är den nya versionen redan inne: hoppa över den
+tabellen → Redigera kod. Saknar brödtexten texten `/pages/spara`
+är det den gamla versionen: klistra in enligt stegen. Finns
+`/pages/spara` redan är den nya versionen inne: hoppa över den
 mallen. Är alla tre redan klara: gå direkt till **B** längre ner.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
@@ -66,8 +67,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 5. Rutan **E-postbrödtext (HTML)** (Email body HTML): klicka i rutan, tryck
    **Cmd+A**, tryck **Delete**, tryck **Cmd+V**.
 6. **Innan du sparar:** kontrollera att det inklistrade är rätt mall — rätt
-   teckenantal, att textbiten i kolumnen "Kontrollera" finns, och att
-   `tracking_url` INTE finns någonstans.
+   teckenantal och att textbiten i kolumnen "Kontrollera" finns.
    Fel innehåll: kopiera om från fliken och klistra in igen.
 7. Klicka **Spara**.
 8. **Kontrollera mot servern, inte mot redigeraren.** Shopify sparar
@@ -82,17 +82,18 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `<strong style="color: #000000;">{{ fulfillment.tracking_number }}</strong>` och `Beräknad leverans` | **77 150** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `<strong style="color: #000000;">{{ fulfillment.tracking_number }}</strong>` | **5 823** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
-| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `<strong style="color: #000000;">{{ fulfillment.tracking_number }}</strong>` | **5 812** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
+| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `/pages/spara?nummer=` och `Beräknad leverans` | **77 296** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `/pages/spara?nummer=` | **5 969** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
+| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `/pages/spara?nummer=` | **5 958** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger syskonet "Order ute för lokal
 leverans" — ta INTE det. Rör inte heller "Levererad": den är redan rätt.
 
 Talen i kolumnen Tecken är tecken, inte byte. Shopifys redigerare räknar i
-byte och visar då 78 247 / 5 837 / 5 821 — **ett mindre** än
-källfilens byte (avslutande radbrytningen följer inte med). Båda talen är
-rätt. Skiljer det mer än så är det fel innehåll i urklippet.
+byte, alltså högre tal — varje å/ä/ö väger två byte. Skiljer det mycket mer
+än så är det fel innehåll i urklippet. (Vid v9-inklistringen 2026-09-18
+sparade Shopify hela filen inklusive den avslutande radbrytningen, så
+serverns teckenantal stämde exakt med tabellen.)
 
 Logga och accentfärg under **Anpassa e-postmallar** är redan gjorda
 (2026-09-13) — rör dem inte.
@@ -107,8 +108,7 @@ Bara den mallen.
 
 1. Vilka av de tre som sparades och verifierades efter omladdning.
 2. Tecknantalet du såg per mall.
-3. Om kontrolltexten saknades, eller `tracking_url` fanns kvar, och i
-   vilken mall.
+3. Om kontrolltexten saknades, och i vilken mall.
 4. Om testmejlet gick iväg, och till vilken adress Shopify sa att det gick.
 5. Allt som såg konstigt ut, även småsaker.
 

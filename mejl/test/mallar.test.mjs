@@ -298,3 +298,17 @@ test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orde
   assert.match(ex.html, /Beräknad leverans/);
   assert.match(ex.html, /\d{1,2} [a-zå]+–\d{1,2} [a-zå]+/, 'exemplet visar två datum');
 });
+
+test('v10: "Spåra paketet" går till butikens egen spårningssida, med orderstatussidan som reserv', () => {
+  const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
+  // Knappen ska bära numret, så kunden aldrig behöver skriva något.
+  assert.ok(frakt.html.includes('/pages/spara?nummer={{ fulfillment.tracking_number | url_encode }}'));
+  // Utan spårningsnummer finns inget att slå upp — då orderstatussidan.
+  assert.ok(frakt.html.includes('{% if fulfillment.tracking_number %}'));
+  assert.ok(frakt.html.includes('{% else %}{{ order_status_url }}{% endif %}'));
+  for (const id of ['fraktuppdatering', 'ute_for_leverans']) {
+    assert.ok(byggMall(id, { ...indata, lage: 'liquid' }).html.includes('/pages/spara?nummer='), id);
+  }
+  // Orderbekräftelsen har ingen leverans än och rör inte spårningssidan.
+  assert.ok(!byggMall('orderbekraftelse', { ...indata, lage: 'liquid' }).html.includes('/pages/spara'));
+});
