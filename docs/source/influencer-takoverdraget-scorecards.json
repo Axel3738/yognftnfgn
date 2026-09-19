@@ -1,0 +1,2811 @@
+{
+ "produkt": "Taköverdrag Husvagn – Skyddar Den Dyraste Ytan (baverbutiken.se)",
+ "byggd": "2026-09-19",
+ "metod": "HappyFlops Brain (The Celebrity Code) + produkttolerans som egen faktor 20 % (min 6 för kontakt). Två skeptiker (A publik/räckvidd, B varumärke/genomförbarhet) per finalist. Modash 30 % + tvåveckorsobservation 70 % avgör avtal.",
+ "kopardata": {
+  "hamtad": "2026-09-19T19:30:22.151Z",
+  "konto": "act_1867947880635861",
+  "kampanjer": {
+   "120250147343350291": {
+    "name": "Taköverdraget huvudkampanj",
+    "total": {
+     "spend": 70486.29,
+     "kop": 241,
+     "varde": 285329.64,
+     "roas": 4.048016,
+     "impressions": 512813
+    },
+    "rows": [
+     {
+      "age": "65+",
+      "gender": "male",
+      "spend": 28806.54,
+      "kop": 129,
+      "varde": 154427.53,
+      "roas": 5.36085
+     },
+     {
+      "age": "55-64",
+      "gender": "male",
+      "spend": 19303.03,
+      "kop": 64,
+      "varde": 74945.2,
+      "roas": 3.882561
+     },
+     {
+      "age": "65+",
+      "gender": "female",
+      "spend": 7486.57,
+      "kop": 23,
+      "varde": 25609.93,
+      "roas": 3.420783
+     },
+     {
+      "age": "45-54",
+      "gender": "male",
+      "spend": 5145.38,
+      "kop": 10,
+      "varde": 11606,
+      "roas": 2.255616
+     },
+     {
+      "age": "55-64",
+      "gender": "female",
+      "spend": 5737.45,
+      "kop": 8,
+      "varde": 9982.3,
+      "roas": 1.73985
+     },
+     {
+      "age": "45-54",
+      "gender": "female",
+      "spend": 1352.29,
+      "kop": 4,
+      "varde": 5051.68,
+      "roas": 3.735648
+     },
+     {
+      "age": "35-44",
+      "gender": "male",
+      "spend": 1342.73,
+      "kop": 3,
+      "varde": 3707,
+      "roas": 2.760793
+     },
+     {
+      "age": "18-24",
+      "gender": "female",
+      "spend": 4.31,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "18-24",
+      "gender": "male",
+      "spend": 29.25,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "18-24",
+      "gender": "unknown",
+      "spend": 0.07,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "female",
+      "spend": 31.9,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "male",
+      "spend": 325.45,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "unknown",
+      "spend": 44.81,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "35-44",
+      "gender": "female",
+      "spend": 197.14,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "35-44",
+      "gender": "unknown",
+      "spend": 17.98,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "45-54",
+      "gender": "unknown",
+      "spend": 81.88,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "55-64",
+      "gender": "unknown",
+      "spend": 232.52,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "65+",
+      "gender": "unknown",
+      "spend": 346.99,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "Unknown",
+      "gender": "unknown",
+      "spend": 0,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     }
+    ]
+   },
+   "120250252311730291": {
+    "name": "Taköverdraget LISTICLE",
+    "total": {
+     "spend": 3025.77,
+     "kop": 7,
+     "varde": 7903,
+     "roas": 2.611897,
+     "impressions": 15873
+    },
+    "rows": [
+     {
+      "age": "55-64",
+      "gender": "male",
+      "spend": 870.34,
+      "kop": 3,
+      "varde": 3387,
+      "roas": 3.891583
+     },
+     {
+      "age": "65+",
+      "gender": "male",
+      "spend": 1301.86,
+      "kop": 3,
+      "varde": 3387,
+      "roas": 2.601662
+     },
+     {
+      "age": "45-54",
+      "gender": "male",
+      "spend": 195.57,
+      "kop": 1,
+      "varde": 1129,
+      "roas": 5.772869
+     },
+     {
+      "age": "18-24",
+      "gender": "male",
+      "spend": 0.74,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "female",
+      "spend": 1.28,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "male",
+      "spend": 6.95,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "25-34",
+      "gender": "unknown",
+      "spend": 1.64,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "35-44",
+      "gender": "female",
+      "spend": 5.94,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "35-44",
+      "gender": "male",
+      "spend": 38.58,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "35-44",
+      "gender": "unknown",
+      "spend": 0.22,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "45-54",
+      "gender": "female",
+      "spend": 55.25,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "45-54",
+      "gender": "unknown",
+      "spend": 1.89,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "55-64",
+      "gender": "female",
+      "spend": 249.35,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "55-64",
+      "gender": "unknown",
+      "spend": 6,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "65+",
+      "gender": "female",
+      "spend": 277.42,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "65+",
+      "gender": "unknown",
+      "spend": 12.69,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     },
+     {
+      "age": "Unknown",
+      "gender": "male",
+      "spend": 0.05,
+      "kop": 0,
+      "varde": 0,
+      "roas": 0
+     }
+    ]
+   }
+  }
+ },
+ "modash_mall": {
+  "vikter": {
+   "falska_foljare": 0.2,
+   "real_people": 0.15,
+   "foljer_max_500": 0.15,
+   "snittkommentarer": 0.2,
+   "ratt_kon_man": 0.1,
+   "ratt_alder_45_64_proxy": 0.15,
+   "ratt_land_sverige": 0.05
+  },
+  "poangtrappor": {
+   "falska_foljare": "10p ≤10 % | 8p 11–15 | 5p 16–20 | 2p 21–30 | 0p >30",
+   "real_people": "10p ≥85 % | 8p 75–84 | 5p 65–74 | 2p 55–64 | 0p <55",
+   "foljer_max_500": "10p ≥70 % | 8p 55–69 | 5p 40–54 | 2p 20–39 | 0p <20",
+   "snittkommentarer": "10p ≥100 | 8p 60–99 | 5p 40–59 | 2p 20–39 | 0p <20",
+   "ratt_kon_man": "10p ≥80 % | 8p 70–79 | 5p 60–69 | 2p 50–59 | 0p <50",
+   "ratt_alder_45_64_proxy": "10p ≥50 % | 8p 40–49 | 5p 30–39 | 2p 20–29 | 0p <20 — Modash visar inte 65+, som är 63 % av köparna",
+   "ratt_land_sverige": "10p ≥85 % | 8p 75–84 | 5p 65–74 | 2p 55–64 | 0p <55"
+  },
+  "sparrar": "falska >30 % ⇒ max 3; Sverige <65 % ⇒ max 4; kommentarer <20 ⇒ max 5. Paid engagement antecknas, ger inga poäng.",
+  "slutbetyg": "0,30 × Modash + 0,70 × tvåveckorsobservationen",
+  "status": "Inga Modash-rapporter lästa ännu — Axel laddar upp PDF:erna, delpoäng per kolumn fylls i här."
+ },
+ "finalister": [
+  {
+   "nyckel": "nilla-micke",
+   "namn": "Nilla & Micke Trevik (Våra Husbilsresor)",
+   "kort_dom": "Starkast produktmatch av de fem: en egen innehållskategori kallad 'Våra Bästa Prylar' plus praktiskt fix-innehåll (byter solcellsregulator) — publiken är redan tränad att ta emot prylrekommendationer. Enda verkliga problemet är att deras poddkollegor är ambassadörer för en direkt konkurrent.",
+   "klassificering": "High Performer",
+   "konverteringsroll": "Bottom-of-funnel prylrekommendatör — precis den roll produkten behöver.",
+   "poang": {
+    "kannedom": {
+     "p": 7,
+     "belagg": "18 600 YT-prenumeranter, rankade som 184:e mäktigaste i husbil-YouTube av branschtidningen Husbil & Husvagn, 13 års historik sedan 2013.",
+     "kalla": "VERIFIERAD: https://www.youtube.com/@VaraHusbilsresor/about (2026-09-19) ; https://www.husbilhusvagn.se/nyheter/de-ar-maktigast-i-husbil-pa-youtube"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "Sajten talar 'vi'-språk direkt till publiken ('vi testar, vi lagar mat, vi delar tips') — communityton. Inga kommentarer/likes kunde läsas.",
+     "kalla": "INFERENS av: https://www.varahusbilsresor.se/"
+    },
+    "manniskor_koppling": {
+     "p": 6,
+     "belagg": "Praktisk kamratskap snarare än djup sårbarhet — delar vardagsfix och husbilsproblem ('Hur länge varar ett batteri?'), men ingen hittad motgångsberättelse i stil med sjukdom/kris.",
+     "kalla": "VERIFIERAD: https://www.varahusbilsresor.se/"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 8,
+     "belagg": "Handfast DIY-innehåll ('Byter solcellsregulator'), inte glättat — de visar tekniska misslyckanden/lagningar, inte bara framgång. Oberoende, ingen byrå.",
+     "kalla": "VERIFIERAD: https://www.varahusbilsresor.se/"
+    },
+    "publikmatch": {
+     "p": 8,
+     "belagg": "Renodlad husbilsnischkanal (inte vanlife/skåpbil), pardrivet (matchar köparnas civilstånd bättre än soloprofil), 13 års etablerad husbilshistorik — mycket nära köparprofilen.",
+     "kalla": "VERIFIERAD: finalister.json + https://www.varahusbilsresor.se/"
+    },
+    "produkttolerans": {
+     "p": 8,
+     "belagg": "Har en egen innehållskategori 'Våra Bästa Prylar' — direkt bevis på att publiken redan konsumerar prylrekommendationer från dem, i rätt prisklass-anda (praktiska husbilstillbehör).",
+     "kalla": "VERIFIERAD: https://www.varahusbilsresor.se/"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "Varm, praktisk, 13 år i samma format — inget kontroversiellt hittat.",
+     "kalla": "VERIFIERAD (inget negativt hittat)"
+    },
+    "varumarkessakerhet": {
+     "p": 5,
+     "belagg": "Verklig risk: medvärdar i Stora Husbilspodden tillsammans med Robban & Jeanette (GlampingExplorer), som är ambassadörer för Campingvaruhusets Campmaster Takskydd Husvagn/Husbil — en DIREKT konkurrentprodukt i samma sortiment.",
+     "kalla": "VERIFIERAD: finalister.json (obs-fält) ; https://www.campingvaruhuset.se/sv/campmaster-takskydd-husvagn-husbil"
+    },
+    "god_garning": {
+     "p": 5,
+     "belagg": "Inget specifikt belägg hittat.",
+     "kalla": "INFERENS — neutralt, inget hittat"
+    },
+    "selektivitet": {
+     "p": 6,
+     "belagg": "Känt Elmia-utställarsamarbete 2026, podden har sponsorkoder (Kosta Lodge, Finnlines) — måttligt kommersiellt aktiva, inget tecken på reklamöverflöd på egna kanalen.",
+     "kalla": "VERIFIERAD: finalister.json ; https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia"
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "'Våra Bästa Prylar' är formulerat som personliga rekommendationer, inte reklamspråk — läser som tips.",
+     "kalla": "VERIFIERAD: https://www.varahusbilsresor.se/"
+    }
+   },
+   "viktat": 7.0,
+   "produkttolerans_motivering": "Högsta produkttoleransen i gruppen: en existerande 'bästa prylar'-kategori plus praktiskt fix-innehåll betyder att en taköverdrags-rekommendation passar rakt in i vad de redan gör — inget nytt format behöver uppfinnas.",
+   "roda_flaggor": [
+    "Poddkollegorna Robban & Jeanette är ambassadörer för en direkt konkurrent (Campmaster Takskydd) — måste briefas bort från att nämnas i samma andetag",
+    "Ingen bekräftad publiceringsfrekvens/senaste inlägg-datum på sajten"
+   ],
+   "grona_flaggor": [
+    "Egen 'Våra Bästa Prylar'-kategori — direkt bevis på produkttolerans",
+    "13 års etablerad, oberoende husbilsprofil",
+    "Branschrankad (184:e plats) av Husbil & Husvagn"
+   ],
+   "risk": "Medel — inte skandalrisk utan en konkurrentnärhet via poddnätverket som måste hanteras i briefen (aldrig samtidig exponering med Campmaster).",
+   "ej_verifierbart": [
+    "Kommentarskvalitet",
+    "Stories",
+    "Aktuell publiceringstakt/senaste inlägg",
+    "Fullständig lista över tidigare betalda samarbeten"
+   ],
+   "kontaktvag_verifierad": "varahusbilsresor@gmail.com (från YouTube-kanalens om-sida, VERIFIERAD 2026-09-19)",
+   "personlig_krok_till_mail": "Referera deras 'Våra Bästa Prylar'-sektion och det handfasta fix-innehållet (t.ex. 'Byter solcellsregulator') — https://www.varahusbilsresor.se/",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta",
+   "sandordning": 1,
+   "skeptiker_A": [
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "11 100 prenumeranter (YouTube), 184:e plats på Husbil & Husvagns ranking",
+     "status": "MOTBEVISAT",
+     "belagg": "Rankingen är daterad 2023-10-06 (Medieakademins Maktbarometer) — tre år gammal. Kanalen har i dag 18 600 prenumeranter (about-sidan 2026-09-19), 341 videor, country 'Sverige'. Senaste 8 videor 15 000–25 700 visningar — mer visningar per video än prenumeranter.",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/de-ar-maktigast-i-husbil-pa-youtube (2023-10-06), https://www.youtube.com/@VaraHusbilsresor/about",
+     "konsekvens_for_beslutet": "Siffran i underlaget är för LÅG och inaktuell; den primära är 18 600 med stark visningsgrad. Det stärker kandidaten, men rubriken 'foljare' ska bytas."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Aktiv kanal 2026, ren husbilsnisch",
+     "status": "BEKRÄFTAT",
+     "belagg": "RSS 2026-09-19: videor 2026-09-13, 09-06, 08-30 — 'toa-spolning, markisben, wifi i husbilen', 'torkskåp och nya cyklar till husbilen', 'Vad kostade vår resa med husbil till Kroatien?'. Prylfokus + Amazon-shop i beskrivningen.",
+     "kalla": "https://www.youtube.com/feeds/videos.xml?channel_id=UCIVMZuK7OXcw2GAwFgpBFoQ",
+     "konsekvens_for_beslutet": "Bästa innehållsmatchen på listan: praktiska tillbehörsvideor för husbilsägare. Amazon-shop visar att de säljer prylar till publiken redan."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Uppträdde som Elmia-utställarsamarbete 2026",
+     "status": "MOTBEVISAT",
+     "belagg": "Källan (husbilhusvagn.se 'Stora husbilspodden sänder live från Elmia') är daterad 2023-09-07 och gäller Elmia 9 september 2023. Inget i kanalens senaste videor (Kroatien, skogen, torkskåp) nämner Elmia 2026.",
+     "kalla": "https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia (2023-09-07)",
+     "konsekvens_for_beslutet": "Årtalet är fel — det var 2023. Inget bevis för mässnärvaro 2026."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Ålder 'troligen äldre/etablerat par'; publik 55+ män",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Ingen källa anger ålder. Pressmeddelandet 2022-06-03 kallar dem 'Mikael och Gunilla'. Publikdemografi finns inte publikt. Instagram (varahusbilsresor) gav HTTP 200 men bara login-skal, ingen siffra.",
+     "kalla": "https://www.mynewsdesk.com/se/bauermedia/news/peter-sandholt-fraan-morrongaenget-startar-husbilspodd-448779, https://www.instagram.com/varahusbilsresor/",
+     "konsekvens_for_beslutet": "Ålder och publik är antaganden. Begär YouTube-demografi."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Medvärdar i Stora Husbilspodden tillsammans med Robban & Jeanette (Campingvaruhuset-ambassadörer, konkurrent)",
+     "status": "BEKRÄFTAT (podden), GÅR EJ ATT VERIFIERA (ambassadörskapet)",
+     "belagg": "Podplay/podtail: Stora Husbilspodden avsnitt 68 'The final show' 2023-09-29 — podden är nedlagd. Nya Stora Husbilspodden (Jeanette & Robban, utan Nilla & Micke) lades ner 2025-09-25. Campingvaruhusets produktsida för Campmaster Takskydd (fr 1 495 kr) nämner inga ambassadörer.",
+     "kalla": "https://podtail.se/podcast/stora-husbilspodden/, https://podcasts.apple.com/se/podcast/nya-stora-husbilspodden/id1809529485, https://www.campingvaruhuset.se/sv/campmaster-takskydd-husvagn-husbil",
+     "konsekvens_for_beslutet": "Podd-kopplingen är historisk (2022–2023) och ger ingen räckvidd i dag. Konkurrentrisken via Robban & Jeanette är obevisad."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Medvärd i Stora Husbilspodden tillsammans med Campingvaruhusets ambassadörer (Robban & Jeanette) — konkurrentkoppling",
+     "status": "MOTBEVISAT (som PÅGÅENDE koppling)",
+     "belagg": "Podplay: avsnitt 68 'The final show' 2023-09-29: 'Stora Husbilspodden parkerar på obestämd framtid'. Inga avsnitt efter det. Glamping Explorer ÄR ambassadörer för Campingvaruhuset enligt Campingvaruhusets ambassadörssida (läst 2026-09-19), men podden där de satt ihop är död sedan tre år.",
+     "kalla": "https://www.podplay.com/podcasts/stora-husbilspodden-940955; https://www.campingvaruhuset.se/sv/ambassadorer-campingvaruhuset",
+     "konsekvens_for_beslutet": "Ingen aktiv konkurrentkoppling. Kopplingen till Campingvaruhuset är indirekt och historisk — ingen anledning att stryka."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Ren husbilsnisch, lång historik sedan 2013, oberoende",
+     "status": "BEKRÄFTAT MED TILLÄGG",
+     "belagg": "Egna sajten: 'Vi samarbetar gärna med företag inom husbils- och campingbranschen – tillverkare, återförsäljare, campingar och leverantörer av tillbehör.' Aktiva affiliate-avtal: Silwy (kod HUSBILSRESOR), Amazon-shop, Epidemic Sound. Dethleffs har en egen marknadssida om paret och deras Alpa ('influencerparet'). Inget överdrag/skydd-samarbete hittat.",
+     "kalla": "https://www.varahusbilsresor.se/samarbeta; https://www.varahusbilsresor.se/v-ra-b-sta-prylar; https://www.dethleffs.se/alpa-och-varahusbilsresor",
+     "konsekvens_for_beslutet": "Hög produkttolerans, de ber uttryckligen om tillbehörssamarbeten. Dethleffs-kopplingen är ingen konflikt (tillverkare, inte överdrag)."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Äger husbil och lever husbilsliv",
+     "status": "BEKRÄFTAT MED PRECISERING",
+     "belagg": "YouTube-about: 'Husbil: Dethleffs Alpa I-6820-2 2024. Hemma: Bor i Falkenberg, och helger i husbilen.' Om-sidan: Micke född 1974, IT-ansvarig; Nilla född 1971, ekonomiansvarig. Husbilen står på uppfarten vid villan norr om Falkenberg (Dethleffs-sidan). Aktiva: nya videor varje vecka t.o.m. 2026-09-13.",
+     "kalla": "https://www.youtube.com/@VaraHusbilsresor/about; https://www.varahusbilsresor.se/about; RSS 2026-09-13",
+     "konsekvens_for_beslutet": "Inte heltidare (jobbar, 52 och 55 år) — men det är precis den vagn-på-uppfarten-över-vintern-publik som köper taköverdrag. Stark kandidat i Sverige hela hösten."
+    },
+    {
+     "nyckel": "nilla-micke",
+     "pastaende": "Kontaktväg okänd",
+     "status": "MOTBEVISAT",
+     "belagg": "info@varahusbilsresor.se (samarbeten), micke@ / nilla@varahusbilsresor.se, varahusbilsresor@gmail.com (YouTube).",
+     "kalla": "https://www.varahusbilsresor.se/samarbeta; https://www.varahusbilsresor.se/",
+     "konsekvens_for_beslutet": "Skicka till info@varahusbilsresor.se."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "levamedhusbil",
+   "namn": "Peter & Lotta (Levamedhusbil)",
+   "kort_dom": "Bästa yrkestrovärdigheten i gruppen: Peter jobbar professionellt med husbilar på verkstad, sajten kör ett fast 'Fredagstips'-format och har redan en Samarbete-sida med minst en aktiv partner (Autovendo). Litet konto men rakast produktmatch tillsammans med Nilla & Micke.",
+   "klassificering": "High Performer",
+   "konverteringsroll": "Bottom-of-funnel 'expertrekommendation' — mekanikerns tips, inte en influencer-annons.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "13 900 YT-prenumeranter, fast veckoformat 'Fredagstips', och Lotta Engberg (känd svensk artist/programledare) har medverkat i en video — oklart om betalt samarbete men signalerar att de kan attrahera kända gäster.",
+     "kalla": "VERIFIERAD (prenumeranter): https://www.youtube.com/@levamedhusbil/about (2026-09-19) ; VERIFIERAD (Lotta Engberg-medverkan, kontext OKÄNT): finalister.json"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "Praktiskt tips-format ('Fredagstips') brukar generera god vilja, men inga kommentarer kunde läsas.",
+     "kalla": "INFERENS av: https://levamedhusbil.se/"
+    },
+    "manniskor_koppling": {
+     "p": 6,
+     "belagg": "'Har campat hela livet', började på tidigt 70-tal, delar 'minnen, kunskap och glädjen' med publiken — kommunikativ vi-ton, men ingen djup motgångsberättelse hittad.",
+     "kalla": "VERIFIERAD: https://levamedhusbil.se/"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 8,
+     "belagg": "Peter arbetar faktiskt professionellt med husbilar på verkstad — han är inte bara innehållsskapare utan yrkesutövare, vilket ger genuin sakkunskap bakom varje tips.",
+     "kalla": "VERIFIERAD: finalister.json (varfor_relevant)"
+    },
+    "publikmatch": {
+     "p": 8,
+     "belagg": "Praktiskt, teknikorienterat husbilsinnehåll från en yrkesmekaniker — matchar sannolikt väl mot en äldre, praktiskt lagd köparbas (86% män, 55+).",
+     "kalla": "VERIFIERAD: finalister.json + https://levamedhusbil.se/"
+    },
+    "produkttolerans": {
+     "p": 9,
+     "belagg": "Redan en aktiv 'Samarbete'-sida med minst en partner (Autovendo, fordonsrelaterad) — bevisat att de tar emot relevanta kommersiella samarbeten. Fast veckoformat för tips gör en produktrekommendation till en naturlig, återkommande sak snarare än en engångsannons. Yrkesbakgrunden gör skyddsprodukter trovärdiga att rekommendera.",
+     "kalla": "VERIFIERAD: https://levamedhusbil.se/"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "Varm, nostalgisk campington ('campat hela livet'), inget kontroversiellt hittat.",
+     "kalla": "VERIFIERAD (inget negativt hittat)"
+    },
+    "varumarkessakerhet": {
+     "p": 6,
+     "belagg": "Inga skandaler hittade. Lotta Engberg-medverkan är okontroversiell men dess exakta natur (betalt/organiskt) är oklar — mindre risk, mest en fråga att ställa innan kontakt.",
+     "kalla": "VERIFIERAD (inget negativt) + OKÄNT (Lotta Engberg-kontext)"
+    },
+    "god_garning": {
+     "p": 5,
+     "belagg": "Inget specifikt belägg hittat.",
+     "kalla": "INFERENS — neutralt, inget hittat"
+    },
+    "selektivitet": {
+     "p": 6,
+     "belagg": "Samarbete-sidan visar bara en identifierad logga (Autovendo) — inte reklamöverflöd, men öppna för samarbeten.",
+     "kalla": "VERIFIERAD: https://levamedhusbil.se/"
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "En yrkesmekanikers produkttips läser som sakkunskap snarare än reklam — starkare kommersiell trovärdighet än en ren lifestyle-profil.",
+     "kalla": "INFERENS baserat på: finalister.json (Peters yrke) + https://levamedhusbil.se/"
+    }
+   },
+   "viktat": 7.2,
+   "produkttolerans_motivering": "Högsta produkttoleransen i gruppen tillsammans med Nilla & Micke: en yrkesmekaniker med ett fast veckotips-format och en redan aktiv samarbetsyta — en taköverdragsrekommendation passar rakt in i formatet och känns sakkunnig snarare än sponsrad.",
+   "roda_flaggor": [
+    "/kontakt/-sidan på levamedhusbil.se gav 404 vid vår kontroll (2026-09-19) — kontaktvägen bör verifieras på nytt innan utskick",
+    "Minsta kontot i gruppen (13 900 YT) — begränsad räckvidd",
+    "Lotta Engberg-medverkans kontext (betalt/organiskt) är oklar"
+   ],
+   "grona_flaggor": [
+    "Peter är yrkesverksam husbilsmekaniker — inbyggd produkttrovärdighet",
+    "Fast 'Fredagstips'-format — färdig innehållsplats för en rekommendation",
+    "Redan aktiv Samarbete-sida med minst en fordonsrelaterad partner (Autovendo)"
+   ],
+   "risk": "Låg — inga skandalsignaler, huvudrisken är enbart begränsad räckvidd och en kontaktväg som behöver dubbelkollas.",
+   "ej_verifierbart": [
+    "Kommentarskvalitet",
+    "Stories",
+    "Exakt natur av Lotta Engberg-medverkan (betalt eller ej)",
+    "Publikens exakta köns-/åldersfördelning",
+    "Fungerande /kontakt/-sida (404 vid kontroll)"
+   ],
+   "kontaktvag_verifierad": "kontakt@levamedhusbil.se (från YouTube-kanalens om-sida, VERIFIERAD tidigare) — OBS: /kontakt/-sidan på levamedhusbil.se svarade 404 idag (2026-09-19), dubbelkolla mejladressen innan utskick.",
+   "personlig_krok_till_mail": "Referera 'Fredagstips'-serien och att Peter jobbar med husbilar på verkstad i vardagen — https://levamedhusbil.se/",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta",
+   "sandordning": 2,
+   "skeptiker_A": [
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Följartal OKÄNT / 13 900 prenumeranter",
+     "status": "BEKRÄFTAT",
+     "belagg": "YouTube about 2026-09-19: '13 900 prenumeranter', 298 videor, 'Gick med 4 maj 2023', Sverige. Senaste 8 videor 6 000–17 500 visningar (2026-09-13 'Adriana hittar hem', 09-11 'Peter svarar på ERA frågor', 'Vi tittar närmare på 2 plåtisar under 6 meter' 17 475 vis).",
+     "kalla": "https://www.youtube.com/@levamedhusbil/about, RSS UC5jlmvsom5QhFBWqj8aW2BQ",
+     "konsekvens_for_beslutet": "Snabbväxande (13 900 på 2,5 år) med visningar i nivå med prenumeranterna. Solid men mellanstor."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Kontaktväg levamedhusbil.se/kontakt VERIFIERAD",
+     "status": "MOTBEVISAT",
+     "belagg": "levamedhusbil.se/kontakt/ svarar HTTP 404 (curl + WebFetch 2026-09-19). Startsidan (200) anger kontakt@levamedhusbil.se — samma som YouTube about.",
+     "kalla": "https://levamedhusbil.se/kontakt/ (404), https://levamedhusbil.se/",
+     "konsekvens_for_beslutet": "Länken i underlaget är död. Använd kontakt@levamedhusbil.se."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Ålder troligen 55+; publik husbilsägare",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "'uppvuxna med camping på 70-talet' (about) ger ~50–60 år som inferens, ingen källa anger ålder. Innehållet är tekniskt (el, hagelskydd, plåtisar) vilket talar för ägarpublik, men demografi saknas. Nyinköpt husvagn Adria IMV 330 1976 (video 2026-09-07) — nu både husbil och husvagn.",
+     "kalla": "https://www.youtube.com/@levamedhusbil/about, RSS",
+     "konsekvens_for_beslutet": "Innehållet passar produkten (teknik/skydd). Ålder och publik är fortfarande antaganden."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Inga kända samarbeten",
+     "status": "MOTBEVISAT (delvis)",
+     "belagg": "Startsidan visar två partnerlogotyper varav 'Autovendo' (husbilshandlare). Amazon-shop i YouTube-about.",
+     "kalla": "https://levamedhusbil.se/",
+     "konsekvens_for_beslutet": "De har redan minst en kommersiell partner i husbilsbranschen — kolla exklusivitet innan avtal."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Kontakt https://levamedhusbil.se/kontakt/ VERIFIERAD",
+     "status": "MOTBEVISAT (fel URL, rätt adress)",
+     "belagg": "/kontakt/ svarar 404. Rätt sida: https://levamedhusbil.se/get-in-touch — 'E-postadress kontakt@levamedhusbil.se'. Samarbetssidan: 'kontakta oss för prisuppgift … tekniska samarbeten där vi visar och bedömer produkter i våra Fredagstips'.",
+     "kalla": "https://levamedhusbil.se/get-in-touch; https://levamedhusbil.se/samarbete",
+     "konsekvens_for_beslutet": "Mejlen stämmer, URL:en i underlaget är död. De tar betalt för produkttester — räkna med arvode."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Inga kända samarbeten",
+     "status": "MOTBEVISAT",
+     "belagg": "Video 2026-09-04: 'Peter utvärderar även hagelskydden som vi tog med oss från Sunout'. SunOut säljer solskydd, hagelskydd och 'vintertäcke för husbilar' (hyttäcke) — angränsande kategori skydd/täcke, inte taköverdrag. Amazon-affiliate. @adriamobilsverige taggas.",
+     "kalla": "https://youtu.be/gfkkZ_r1Eco; https://www.sunout.se/vintertacke/",
+     "konsekvens_for_beslutet": "Ingen direkt konkurrent, men de har just visat en skyddsprodukt från Sunout. Fråga rakt ut om exklusivitet i kategorin 'skydd' innan avtal."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Äger husbil sedan 2021",
+     "status": "BEKRÄFTAT MED TILLÄGG",
+     "belagg": "YouTube-about: 'Husbil: Adria Sonic Supreme SL 2020. Vi bor i Varberg. Peter jobbar med husbilar på en verkstad.' Video 2026-09-13 'Adriana hittar hem': köpte dessutom en Adria IMV 330 husvagn 1976 som vinterprojekt. Aktiva, flera videor/vecka.",
+     "kalla": "https://www.youtube.com/@levamedhusbil/about; https://youtu.be/hrCY40ST2eo",
+     "konsekvens_for_beslutet": "Två tak att lägga överdrag på, båda hemma i Varberg i vinter. Verkstadskopplingen (vilken firma? okänt) kan innebära att arbetsgivaren säljer överdrag — okontrollerat."
+    },
+    {
+     "nyckel": "levamedhusbil",
+     "pastaende": "Följartal okänt",
+     "status": "BEKRÄFTAT",
+     "belagg": "13 900 prenumeranter, 298 videor.",
+     "kalla": "https://www.youtube.com/@levamedhusbil/about",
+     "konsekvens_for_beslutet": "—"
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "cajsa",
+   "namn": "Cajsa Olsson (Min lilla Adria 305)",
+   "kort_dom": "56 år, lever på sjukersättning, köpte en 45-årig husvagn för 5 000 kr och renoverade den själv för ytterligare 5 000 kr. Hela hennes 29 700-följare-community är byggt kring exakt denna husvagn och dess skötsel, och hon arrangerar egna tjejträffar. Högst viktat betyg i gruppen trots minst räckvidd av de fem.",
+   "klassificering": "High Performer",
+   "konverteringsroll": "BOF community-röst: hyperengagerad nischcommunity byggd kring husvagnsskötsel på riktigt — hög konverteringspotential trots liten räckvidd.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "Omskriven i branschtidningen husbilhusvagn.se och i Hemtrevligt/Hemmets Journal, arrangerar egna tjejträffar för husvagnscommunityn",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats"
+    },
+    "omtyckthet": {
+     "p": 8,
+     "belagg": "Eget citat: \"Instagram har hjälpt mig enormt mycket. Jag har bara fått positiva kommentarer.\" (självrapporterat, inte oberoende läst av oss)",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats"
+    },
+    "manskligkoppling": {
+     "p": 9,
+     "belagg": "Berättar öppet om sjukersättning på grund av social fobi, tre döttrar, fyra barnbarn, och sin dröm om att en dag ha råd att åka till Provence",
+     "kalla": "https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån — vi har inte själva läst kommentarsfälten, bara hennes eget citat om positiv respons (se omtyckthet)",
+     "kalla": "—"
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": "—"
+    },
+    "akthet": {
+     "p": 9,
+     "belagg": "Rå, oputsad DIY-berättelse: köpte en 1980-års husvagn för 5 000 kr, renoverade den själv (slipning, målning, egen diskho av en gammal skål) för ytterligare ~5 000 kr, inga kända varumärkessamarbeten",
+     "kalla": "https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/"
+    },
+    "publikmatch": {
+     "p": 5,
+     "belagg": "93% kvinnliga följare mot köparprofilens 86% män — könsmismatch, men hennes egen ålder (56) och innehåll om barnbarnsresor matchar sannolikt köparprofilens ålderssegment väl",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats"
+    },
+    "produkttolerans": {
+     "p": 9,
+     "belagg": "Hela kontot och communityn är byggt kring skötsel och renovering av just denna husvagn; hon lägger egen tid och (begränsade) pengar på att underhålla den — ett taköverdrag för vinterförvaring är en självklar, inte påklistrad, del av hennes redan bevisade innehåll",
+     "kalla": "https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/"
+    },
+    "trygghet": {
+     "p": 8,
+     "belagg": "Arrangerar egna tjejträffar uttryckligen för att \"dela inspiration och idéer\" — bygger aktivt en trygg community",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats"
+    },
+    "varumarkessakerhet": {
+     "p": 8,
+     "belagg": "Ingen skandal hittad, genomgående varm och sårbar men okontroversiell ton",
+     "kalla": "https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/"
+    },
+    "godgarning": {
+     "p": 6,
+     "belagg": "Arrangerar tjejträffar på ställplatser för att bygga gemenskap, utan synligt kommersiellt syfte",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats"
+    },
+    "selektivitet": {
+     "p": 8,
+     "belagg": "Inga kända varumärkessamarbeten hittade alls — mycket lågt reklamtryck (eller helt enkelt outnyttjad ännu)",
+     "kalla": "finalister.json (ursprunglig research) + denna körnings källor"
+    },
+    "kommersiell_trovardighet": {
+     "p": 8,
+     "belagg": "Noll känd sponsringshistorik och en uttalat budgetmedveten, DIY-präglad profil (sjukersättning, husvagn köpt för 5 000 kr) gör att ett produkttips sannolikt läses som äkta, inte reklam",
+     "kalla": "https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/"
+    }
+   },
+   "viktat": 7.89,
+   "produkttolerans_motivering": "Högst i hela gruppen: hela hennes konto och community existerar för att hon renoverar och sköter om exakt en gammal husvagn. Ett taköverdrag som skyddar hennes investering under vintern passar rakt in i det hon redan visar och pratar om — ingen anpassning krävs.",
+   "roda_flaggor": [
+    "93% kvinnlig publik mot köparprofilens 86% män — ren könsmismatch mot de faktiska köparna, även om hon själv kan påverka husvagnsköp i familjen",
+    "Lever på sjukersättning (uttalat begränsad ekonomi) — en gåva i produktens prisklass (1 129–2 239 kr) är sannolikt meningsfullt stor för henne, hantera generöst och respektfullt i kontakten"
+   ],
+   "grona_flaggor": [
+    "Ovanligt hög äkthet: köpte och renoverade en 45-årig husvagn helt själv för totalt ~10 000 kr",
+    "Hela communityn (tjejträffar, 29 700 följare) är byggd kring just denna husvagns skötsel — perfekt produktmatchning",
+    "Inga kända tidigare varumärkessamarbeten — ovanligt rent flöde"
+   ],
+   "risk": "Minst räckvidd av de fem (29 700 IG, TikTok bara 359 följare) — men högst produkttolerans och äkthet. Bäst för trovärdighet/konvertering i en liten skala, inte för volym.",
+   "ej_verifierbart": [
+    "Kommentarsfält inte oberoende lästa av oss (bara hennes eget citat om positiv respons)",
+    "Stories ej lästa",
+    "Publikens åldersfördelning ej verifierad (bara könsfördelning 93% kvinnor)",
+    "Kontaktväg (mejl) ej hittad"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen mejladress hittad i de källor som gick att läsa. Sannolikt Instagram-DM (@min_lilla_adria_305). Ej testad.",
+   "personlig_krok_till_mail": "Köpte en 45-årig Adria 305 för 5 000 kr och renoverade den helt själv (inklusive egenbyggd diskho av en gammal skål) för ytterligare ~5 000 kr — https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta",
+   "sandordning": 3,
+   "skeptiker_A": [
+    {
+     "nyckel": "cajsa",
+     "pastaende": "29 700 följare Instagram, 93 % kvinnliga följare — VERIFIERAD",
+     "status": "GÅR EJ ATT VERIFIERA (siffran), BEKRÄFTAT (källan säger så)",
+     "belagg": "husbilhusvagn.se artikeln är daterad 2023-04-12 (uppdaterad 2024-10-18): '29 700 följare', '93 procent av mina följare är tjejer', 56 år, Åstorp. Hemmets Journal 2023-06-25: 'närmare 30 000 följare', 56 år, fyra barnbarn. Instagram min_lilla_adria_305 svarade 302/429 — dagens tal okänt. TikTok läst i dag: 359 följare, 4 videor, konto från 2020 — dött.",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats (2023-04-12), https://www.hemtrevligt.se/hemmetsjournal/artiklar/fritid/20230625/cajsa-min-lilla-adria/, https://www.tiktok.com/@minlillaadria305",
+     "konsekvens_for_beslutet": "Talet är 3,5 år gammalt och sekundärt. TikTok-kanalen i underlaget är i praktiken tom. Ålder 56 (nu ~59) matchar — men 93 % kvinnor är rakt emot 86 % manliga köpare, enligt hennes egen uppgift."
+    },
+    {
+     "nyckel": "cajsa",
+     "pastaende": "Aktiv 2026",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Enda kanal som gick att läsa (TikTok) har 4 videor totalt. Instagram, den enda kanal som räknas, är oläsbar i dag.",
+     "kalla": "https://www.tiktok.com/@minlillaadria305",
+     "konsekvens_for_beslutet": "Ingen bild av aktivitet 2026. Kräv skärmdump av IG-insikter innan kontakt."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "cajsa",
+     "pastaende": "29 700 IG, 93 % kvinnor, äger Adria 305",
+     "status": "BEKRÄFTAT (2023-siffra) MED TILLÄGG",
+     "belagg": "H&H 2023-04-12: 29 700 följare, 93 % tjejer. TikTok-bio 2026-09-19: 'Min lilla husvagn..en Adria 305 från 1980' (359 följare där). Hemtrevligt 2023: 56 år, bor i radhus i Åstorp, vagnen står på uppfarten; sjukersättning, låg inkomst, 'hela min vagn är gjord på budget', 'älskar återvinning'. IG 429 i dag.",
+     "kalla": "https://www.husbilhusvagn.se/reportage/popular-influencer-ordnar-tjejtraff-pa-stallplats; https://www.tiktok.com/@minlillaadria305; https://www.hemtrevligt.se/fritid/cajsa-min-lilla-adria/516151",
+     "konsekvens_for_beslutet": "Vagn 1980 med tidigare fuktskada i taket, står hemma på uppfarten = idealisk användning. Budget-/loppisprofilen gör att en 1 129-kronorsprodukt måste presenteras som 'skyddar investeringen', inte som lyx. Ingen kontaktväg utöver IG-DM hittad. Följartalet är 3,5 år gammalt."
+    },
+    {
+     "nyckel": "cajsa",
+     "pastaende": "Samarbeten, SR/SVT, skandaler",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Inget hittat. Nämner själv ångest/social fobi öppet i pressen — ingen varumärkesrisk, men känslig person att hantera.",
+     "kalla": "H&H 2023",
+     "konsekvens_for_beslutet": "Inget hittat ≠ ren."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "our-third-home",
+   "namn": "Annelie och Ludwig Eliasen (Our Third Home)",
+   "kort_dom": "Officiella Dethleffs-ambassadörer sedan 2020, köpte Sveriges första 4x4 Dethleffs Globebus Performance 2025 och medverkade i Dethleffs monter på Elmia Husvagn & Husbil så sent som 11–12 september 2026. Vanliga yrkesarbetande (sjuksköterska + servicechef) med en riktig husbil — starkast produkttolerans i gruppen, men bunden till en tillverkares varumärke.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "BOF-trovärdighet: etablerad husbilsauktoritet med tillverkarbacking, stark för produktbevis och nischtillit hos husbilsägare.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "8 010 YT-prenumeranter (litet konto), men officiell exponering via Dethleffs egen marknadsföring och medverkan i tillverkarens monter på Elmia Husvagn & Husbil 11–12 sept 2026, en nationell mässa i nischen",
+     "kalla": "https://www.youtube.com/@ourthirdhome/about ; https://www.dethleffs.se/elmia-husvagn-och-husbil"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "INFERENS: officiellt ambassadörskap i 5+ år indikerar att tillverkaren bedömer dem som omtyckta/pålitliga, men kommentarer ej lästa",
+     "kalla": "https://www.dethleffs.se/our-third-home"
+    },
+    "manskligkoppling": {
+     "p": 7,
+     "belagg": "Delar vardagsliv: pendlade Trollhättan–Eslöv i 7 år, husbilen har egna smeknamn (\"Bertha\"/\"Den rullande reaktorn\"), 500+ mil genom sex länder sommaren 2025",
+     "kalla": "https://www.dethleffs.se/our-third-home"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån (Instagram gav 429 två gånger)",
+     "kalla": "—"
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": "—"
+    },
+    "akthet": {
+     "p": 8,
+     "belagg": "Vanliga yrken (sjuksköterska, servicechef på Nespresso) — inte heltidsinfluencers, vilket sänker risken för \"performing real\"",
+     "kalla": "https://www.dethleffs.se/our-third-home"
+    },
+    "publikmatch": {
+     "p": 7,
+     "belagg": "INFERENS/VERIFIERAD: etablerat vuxet par som äger en riktig premiumhusbil och syns i tillverkarens egen mässexponering för husbilsköpare — matchar sannolikt köparprofilens ålders- och intresseprofil väl, även om könsfördelningen i deras egen publik inte är känd",
+     "kalla": "https://www.dethleffs.se/our-third-home ; https://www.dethleffs.se/elmia-husvagn-och-husbil"
+    },
+    "produkttolerans": {
+     "p": 8,
+     "belagg": "Äger en riktig husbil (4x4 Dethleffs Globebus Performance), dokumenterar resor, förberedelser och utrustning, medverkar i tillverkarens egen montrar för husbilspublik — ett taköverdrag för vinterförvaring passar naturligt i deras innehåll",
+     "kalla": "https://www.dethleffs.se/our-third-home ; https://www.dethleffs.se/elmia-husvagn-och-husbil"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade, varm familje-/vardagston",
+     "kalla": "—"
+    },
+    "varumarkessakerhet": {
+     "p": 8,
+     "belagg": "Redan godkända/vetta av en stor tillverkare (Dethleffs) som officiella ambassadörer i flera år — indirekt kvalitetsstämpel, ingen skandal hittad",
+     "kalla": "https://www.dethleffs.se/our-third-home"
+    },
+    "godgarning": {
+     "p": null,
+     "belagg": "Inget belägg hittat",
+     "kalla": "—"
+    },
+    "selektivitet": {
+     "p": 8,
+     "belagg": "Bara ett känt större samarbete (Dethleffs) över 5+ år — hög selektivitet",
+     "kalla": "https://www.dethleffs.se/our-third-home"
+    },
+    "kommersiell_trovardighet": {
+     "p": 6,
+     "belagg": "INFERENS: risk att en produkt från ett annat varumärke känns malplacerad bredvid ett exklusivt tillverkarambassadörskap, eller att avtalet begränsar andra samarbeten — okänt om Dethleffs-avtalet ger kategoriexklusivitet",
+     "kalla": "—"
+    }
+   },
+   "viktat": 7.21,
+   "produkttolerans_motivering": "Högst i gruppen: äger en riktig husbil, syns i tillverkarens egen utrustnings-/reseexponering, vanliga yrkesarbetande som delar underhålls- och förberedelseinnehåll på riktigt. Ett taköverdrag för vinterförvaring är ett naturligt, inte ett påklistrat, inslag.",
+   "roda_flaggor": [
+    "Redan exklusiva ambassadörer för husbilstillverkaren Dethleffs sedan 2020 — okänt om avtalet begränsar andra produktsamarbeten eller om ett annat varumärkes produkt känns malplacerad i deras flöde",
+    "Instagram-följartal helt okänt (429 vid två försök) — reell räckvidd utanför YouTube är overifierad"
+   ],
+   "grona_flaggor": [
+    "Verklig, aktiv husbilsägare med riktig tillverkarbacking (Sveriges första 4x4 Dethleffs Globebus Performance)",
+    "Vanliga yrken (sjuksköterska, servicechef) — inte professionella influencers, vilket stärker trovärdigheten",
+    "Färsk, verifierad aktivitet: medverkade i Dethleffs monter på Elmia Husvagn & Husbil 11–12 sept 2026, en vecka innan denna körning"
+   ],
+   "risk": "Enda reella risken är Dethleffs-relationens eventuella exklusivitet — kolla det innan kontakt tas, annars är profilen den starkaste produktmässiga matchningen i listan.",
+   "ej_verifierbart": [
+    "Kommentarer och stories ej lästa",
+    "Instagram-följartal helt okänt (429 vid två separata försök)",
+    "Om Dethleffs-ambassadörskapet innebär kategoriexklusivitet mot andra varumärken",
+    "Publikens ålders-/könssammansättning inte verifierad",
+    "Ingen mejladress hittad — kontaktväg overifierad"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen publik mejladress hittad. Sannolikt Instagram-DM eller via Dethleffs Sverige som mellanhand. Ej testad.",
+   "personlig_krok_till_mail": "Medverkade i Dethleffs monter på Elmia Husvagn & Husbil-mässan 11–12 september 2026 med sin nya 4x4-husbil \"Bertha\" — https://www.dethleffs.se/elmia-husvagn-och-husbil",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta",
+   "sandordning": 4,
+   "skeptiker_A": [
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "8 010 prenumeranter YouTube, följartal IG okänt",
+     "status": "BEKRÄFTAT (YouTube), GÅR EJ ATT VERIFIERA (IG)",
+     "belagg": "YouTube about 2026-09-19: '8 010 prenumeranter', 345 videor, sedan 2021-06-04; INGET land angivet i kanalen (enda kanalen på listan utan 'Sverige'), men beskrivningen är svensk (Trollhättan/Eslöv). Instagram our.third.home 302/429. Senaste långvideor 4 100–9 100 visningar.",
+     "kalla": "https://www.youtube.com/@ourthirdhome/about, RSS UCx8cbObCG9rOxCZunBwwq-A",
+     "konsekvens_for_beslutet": "Liten kanal (minst på listan efter Jikitas/Gurgin). Räckvidden bär inte ett betalt samarbete ensamt."
+    },
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "Aktivt Dethleffs-ambassadörspar, Elmia 2026",
+     "status": "BEKRÄFTAT",
+     "belagg": "dethleffs.se/elmia-husvagn-och-husbil: Elmia 9–13 sept 2026, 'Our Third Home' i Dethleffs monter 11–12 sept kl 15–17. Videon 2026-09-17 'Vi intar Elmia': 'Under fredagen och lördagen stod vi två timmar om dagen i Dethleffs monter'. RSS 2026-09-18/19: nu i Georgien/Kaukasus med 4x4-bilen.",
+     "kalla": "https://www.dethleffs.se/elmia-husvagn-och-husbil, RSS",
+     "konsekvens_for_beslutet": "Bunden till en tillverkare — ett överdrag konkurrerar inte med Dethleffs, men ett avtal kan ha exklusivitet på tillbehör. Fråga."
+    },
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "Videon 'Täcke för husbilen – hos Folkness!' är ett konkurrerande överdragssamarbete",
+     "status": "MOTBEVISAT (egen hypotes prövad)",
+     "belagg": "folkness.se säljer sängtäcken i ekologisk bomull (1 700–2 600 kr) med sektionen 'Husbil/Husvagn' — 'täcke' = sängtäcke, inte fordonsskydd.",
+     "kalla": "https://www.folkness.se/",
+     "konsekvens_for_beslutet": "Ingen konkurrentkonflikt — men de gör redan produktintegrationer med husbilstillbehör, vilket är rätt format."
+    },
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "Publik 55+ husbilsägare",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Ålder på paret okänd (Annelie operationssjuksköterska, Ludwig servicechef — yrkesverksamma, alltså troligen under 65). Innehåll: 4x4, Island, F-roads, Georgien — äventyrsresor, inte 'stå still och skydda bilen'.",
+     "kalla": "https://www.dethleffs.se/our-third-home",
+     "konsekvens_for_beslutet": "Innehållsprofilen (äventyr, 4x4) drar yngre och mer aktiva ägare än 93 % 55+."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "Dethleffs-ambassadörer, ingen byrå, inga andra samarbeten",
+     "status": "BEKRÄFTAT MED TILLÄGG",
+     "belagg": "Dethleffs: 'influencerparet Our Third Home', i montern 11–12 sept 2026. Video 2026-09-04 'Täcke för husbilen – hos Folkness!' med rabattkod O3H10 — Folkness säljer SÄNGTÄCKEN (bedding), inte fordonsöverdrag. Kontakt: info.o3h@gmail.com.",
+     "kalla": "https://www.dethleffs.se/elmia-husvagn-och-husbil; https://youtu.be/MjOqCUVV2vs; https://folkness.se/; https://www.youtube.com/@ourthirdhome/about",
+     "konsekvens_for_beslutet": "Tar rabattkodssamarbeten — produkttolerans hög. Ingen konkurrent."
+    },
+    {
+     "nyckel": "our-third-home",
+     "pastaende": "I Sverige och monterbar husbil",
+     "status": "GÅR EJ ATT VERIFIERA (okt 2026)",
+     "belagg": "Videor 2026-09-17 'Flyr landet för nya intryck', 2026-09-18 'Tbilisi Georgien', 2026-09-19 '4x4 i Kaukasiska bergen'. Annelie är operationssjuksköterska, Ludwig servicechef — resan är sannolikt tidsbegränsad, men hemkomstdatum okänt. Husbil: Dethleffs Globebus Performance 4x4 (2025). Följartal IG okänt (429); YT 8 010.",
+     "kalla": "RSS UCx8cbObCG9rOxCZunBwwq-A",
+     "konsekvens_for_beslutet": "Kan vara utomlands när produkten ska skickas. Fråga om hemkomst innan avtal. Låg räckvidd (8k YT)."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "jikitas",
+   "namn": "Marlene Rindå Jikita & Martin Jikita (Jikitas På Äventyr)",
+   "kort_dom": "Liten räckvidd (3 930 YT-prenumeranter) men ovanligt djup nischtrovärdighet: recenserar utrustning för branschtidningen Husvagn & Camping och skriver tips om vintercamping för nya husbilsägare — rakt i produktens ärende. Senaste blogginlägget (18 sept 2026, dagen före denna körning) handlar om att hon mår dåligt och får elaka kommentarer — dålig kontakttajming just nu.",
+   "klassificering": "High Performer",
+   "konverteringsroll": "BOF-nischexpert: recensions- och tipsröst med hög tillit i en liten men mycket engagerad publik, särskilt stark på just vintercamping/vinterförvaring.",
+   "poang": {
+    "kannedom": {
+     "p": 5,
+     "belagg": "Bara 3 930 YT-prenumeranter, men arbetar som recensent för branschtidningen Husvagn & Camping, vilket ger nischtrovärdighet bortom rena följartal",
+     "kalla": "https://fdensammamamman.se/ (läst 2026-09-19) ; https://www.youtube.com/@jikitaspååventyr/about"
+    },
+    "omtyckthet": {
+     "p": 5,
+     "belagg": "Blandat: hennes senaste blogginlägg (18 sept 2026) nämner att hon fått elaka kommentarer — inte enhälligt positiv mottagning just nu, men omfattning okänd",
+     "kalla": "https://fdensammamamman.se/ (läst 2026-09-19)"
+    },
+    "manskligkoppling": {
+     "p": 9,
+     "belagg": "20 år av dagliga, mycket personliga blogginlägg om hälsa, relationer och vardag, inklusive öppenhjärtiga inlägg om att må dåligt",
+     "kalla": "https://fdensammamamman.se/ (läst 2026-09-19)"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån — vi har inte själva läst kommentarsfälten, bara hennes eget omnämnande av att ha fått elaka kommentarer (se omtyckthet/trygghet)",
+     "kalla": "—"
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": "—"
+    },
+    "akthet": {
+     "p": 9,
+     "belagg": "Extremt rå och personlig 20-årig livsblogg, inklusive att öppet dela att hon just nu mår dåligt — motsatsen till \"performing real\"",
+     "kalla": "https://fdensammamamman.se/ (läst 2026-09-19)"
+    },
+    "publikmatch": {
+     "p": 5,
+     "belagg": "Bloggens historiska kärna (\"Fd Ensamma Mamman\") antyder en annan huvudpublik (ensamstående föräldrar/kvinnor) än husvagns-/husbilsägare 55+/män, men recensionsrollen för Husvagn & Camping ger viss överlappning med rätt publik",
+     "kalla": "https://www.freedomtravel.se/en/influencers/marlene-rinda-jikita/"
+    },
+    "produkttolerans": {
+     "p": 8,
+     "belagg": "Äger en riktig husbil (\"Peppe\", sedan 2021), skriver uttryckligen artiklar om vintercamping och tips för nya husbilsägare, samt recenserar utrustning professionellt för Husvagn & Camping — direkt matchning mot produktens vinterförvaringssyfte",
+     "kalla": "https://www.freedomtravel.se/en/influencers/marlene-rinda-jikita/"
+    },
+    "trygghet": {
+     "p": 5,
+     "belagg": "Blandat: varm och personlig ton generellt, men just nu synligt sårbar (senaste inlägget 18 sept 2026: \"Ledsen och orkeslös\", nämner elaka kommentarer) — läge att respektera vid kontakttajming",
+     "kalla": "https://fdensammamamman.se/ (läst 2026-09-19)"
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "Ingen skandal hittad; bakgrund som journalist i ~30 år talar för att hon följer branschregler (nämner själv \"reglerna är många\" om samarbeten)",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/influencer-i-husbil-darfor-ar-det-en-drom"
+    },
+    "godgarning": {
+     "p": null,
+     "belagg": "Inget belägg hittat",
+     "kalla": "—"
+    },
+    "selektivitet": {
+     "p": 7,
+     "belagg": "Egna ord: \"det är svårt att få samarbeten och reglerna är många\" — låg samarbetsvolym, sannolikt selektiv eller svårtillgänglig för varumärken",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/influencer-i-husbil-darfor-ar-det-en-drom"
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "Modest inkomst från innehåll (\"några tusenlappar\" från YT), låg synlig sponsringsvolym — ett produkttips skulle sannolikt läsas som äkta",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/influencer-i-husbil-darfor-ar-det-en-drom"
+    }
+   },
+   "viktat": 7.11,
+   "produkttolerans_motivering": "Högt: äger en riktig husbil sedan 2021, recenserar utrustning professionellt för en etablerad branschtidning och skriver egna artiklar om just vintercamping/nya husbilsägare — produktkategorin är rakt i hennes redan bevisade innehållsämne.",
+   "roda_flaggor": [
+    "Senaste blogginlägget (18 sept 2026, dagen före denna körning) heter \"Ledsen och orkeslös\" och beskriver att hon mår dåligt och fått elaka kommentarer — dålig tajming för ett kalla mejl just nu, vänta minst en vecka och läs av läget igen",
+    "Publikens kärna är historiskt bredare livsstil/relationer (\"Fd Ensamma Mamman\"), inte renodlat husvagn/husbil"
+   ],
+   "grona_flaggor": [
+    "Recenserar utrustning professionellt för branschtidningen Husvagn & Camping — ovanlig nischtrovärdighet för kontostorleken",
+    "Skriver egna artiklar om vintercamping och tips för nya husbilsägare — matchar produktens säsong och köparbehov exakt",
+    "Två fungerande mejladresser hittade, låg kommersialiseringsgrad"
+   ],
+   "risk": "Litet konto ger begränsad räckvidd, och det aktuella känslomässiga läget gör att ett mejl just denna vecka riskerar fel tajming. Innehållsmässigt är matchningen ändå ovanligt stark.",
+   "ej_verifierbart": [
+    "Stories ej lästa",
+    "Kommentarsfält inte oberoende lästa av oss (bara hennes eget omnämnande av \"elaka kommentarer\")",
+    "Instagram-följartal okänt (429 vid försök)",
+    "Ålder ej hittad",
+    "Publikens exakta ålders-/könssammansättning ej verifierad"
+   ],
+   "kontaktvag_verifierad": "mmjikita@gmail.com (YouTube-kanalens om-sida) och marlenerinda@gmail.com (bloggens kontaktuppgift) — båda VERIFIERADE som angivna, ej testade med faktiskt mejl.",
+   "personlig_krok_till_mail": "Skriver egna artiklar om vintercamping och tips till nya husbilsägare för FREEDOMtravel — vinkla mejlet mot just vinterförvaring, hennes eget expertområde. https://www.freedomtravel.se/en/influencers/marlene-rinda-jikita/ (Vänta med utskick till hennes läge lättat, se röd flagga.)",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta (tidigast 2026-09-28)",
+   "sandordning": 5,
+   "skeptiker_A": [
+    {
+     "nyckel": "jikitas",
+     "pastaende": "Bred, etablerad följarskara över flera plattformar; följartal OKÄNT",
+     "status": "MOTBEVISAT",
+     "belagg": "YouTube about 2026-09-19: 3 930 prenumeranter, 555 videor, sedan 2011. Senaste videor: 159 vis (2026-09-19), 1 704, 1 221, 468, 631 — bara Elmia-turen nådde 13 082. Instagram 302/429. Bloggen fdensammamamman.se senast 2026-09-18 ('Ledsen och orkeslös'); freedomtravel.se anger inga följartal.",
+     "kalla": "https://www.youtube.com/@jikitaspååventyr/about, RSS UCZwHZsdhemmwko9Jc6Rn88g, https://fdensammamamman.se/",
+     "konsekvens_for_beslutet": "'Bred följarskara' saknar täckning — de mätbara talen är bland de lägsta på listan (hundratals visningar per video). Aktiva och husbilsägare, ja, men räckvidden är hobbynivå."
+    },
+    {
+     "nyckel": "jikitas",
+     "pastaende": "Husbilsinnehåll med ägarpublik",
+     "status": "MOTBEVISAT (delvis)",
+     "belagg": "Senaste tre veckornas videor: kryssning med Sun Princess (Aten, Kusadasi, Kreta) blandat med Elmia och ställplats Gränna. Kanalbeskrivning: 'Till fots, med flyg, båt, cykel eller med vår husbil.' Bloggen: 'lever i hus som kräver underhåll', Marlene 'runt 50'.",
+     "kalla": "RSS, https://www.youtube.com/@jikitaspååventyr/about, https://fdensammamamman.se/",
+     "konsekvens_for_beslutet": "Blandad resekanal, inte renodlad husbil. Kontakt (mmjikita@gmail.com, 'Vi är öppna för spännande samarbeten') är dock bekräftad ur about."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "jikitas",
+     "pastaende": "Inga bekräftade samarbeten; kontaktväg okänd",
+     "status": "MOTBEVISAT (delvis)",
+     "belagg": "YouTube-about: 'Vi är öppna för spännande samarbeten :-) Kontakt: mmjikita@gmail.com'. Video 2026-09-05 taggar @firstcamp9886 (First Camp Strömstad). Marlene är skribent hos FREEDOMtravel. De drev Influencerhörnan på Elmia 2023 och höll föreläsning på Elmia 2026. Inget överdrag/skydd.",
+     "kalla": "https://www.youtube.com/@jikitaspååventyr/about; https://youtu.be/7k1zCSxU1ng; https://www.freedomtravel.se/en/influencers/marlene-rinda-jikita/",
+     "konsekvens_for_beslutet": "Kontaktväg finns. Marlene betonar själv influencerreglerna (skatt på produkter, reklammärkning) — förvänta korrekt #reklam-märkning."
+    },
+    {
+     "nyckel": "jikitas",
+     "pastaende": "Äger husbilen Peppe, i Sverige",
+     "status": "BEKRÄFTAT MED VARNING",
+     "belagg": "Video 2026-09-05: parkerade husbilen på First Camp Strömstad sista helgen i augusti 2026. Video 2026-09-19: 'Våra 5 dagar på Elmia 2026 – roliga möten, HUSBILSJAKT och föreläsning' — de letar ny husbil. Bloggen fdensammamamman.se: 'Vi tittar ju efter en ny husbil, den vi ska bo på heltid i.'",
+     "kalla": "https://youtu.be/7k1zCSxU1ng; https://fdensammamamman.se/",
+     "konsekvens_for_beslutet": "Husbilen kan bytas under hösten — ett skräddarsytt mått kan bli fel. Bekräfta fordon innan produkt skickas. Räckvidd låg: 3 930 YT, IG okänt (429)."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "annika",
+   "namn": "Annika Elgeskog (HusbilsAnnika)",
+   "kort_dom": "Äkta 'sålde huset'-berättelse med tydlig ålderskoppling till målgruppen, men hennes uttalade syfte är att inspirera KVINNOR och hon bor permanent i husbilen — oklart om vinterförvaring av taket är hennes vinkel. Gender-mismatch mot köparbasen (86% män) är den verkliga svagheten, inte räckvidden.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Mid-funnel förtroende/awareness för det kvinnliga skiktet av köpargruppen — inte en ren gear-review-kanal.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "36 000 IG-följare, 16 200 YT-prenumeranter (607 videor, kanal sedan 2014), regionalt uppslag i Barometern.",
+     "kalla": "VERIFIERAD: https://www.instagram.com/husbilsannika/ ; https://www.youtube.com/@HusbilsAnnika/about (läst 2026-09-19) ; https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "Reportaget beskriver henne varmt ('Jag lever deras dröm'), redaktionell vinkel snarare än reklam. Inga kommentarer/likes kunde läsas för att styrka det.",
+     "kalla": "INFERENS av tonen i: https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/"
+    },
+    "manniskor_koppling": {
+     "p": 7,
+     "belagg": "Sålde huset, bor permanent i husbilen 'Fina Stina', positionerar sig som förebild ('Jag lever deras dröm') — tydligt personligt narrativ, men artikeln gick inte att läsa i sin helhet så motgångar syns inte.",
+     "kalla": "VERIFIERAD (delvis, sidan trunkerad): https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 7,
+     "belagg": "Oberoende, ingen byrå. Reportagets ton bedöms som 'authentic rather than promotional' snarare än säljande.",
+     "kalla": "INFERENS av: https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/"
+    },
+    "publikmatch": {
+     "p": 5,
+     "belagg": "Ålder matchar (62 år, målgrupp 55+/65+) och hon äger/bor i husbil. Men hennes uttalade uppdrag är att inspirera KVINNOR — köparbasen är 86% män. Full permanent-boende gör 'vinterförvaring' till en mindre självklar vinkel för henne (hon kanske reser söderut i stället för att ställa av).",
+     "kalla": "Meta-köpdata (från briefen) + VERIFIERAD: https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/"
+    },
+    "produkttolerans": {
+     "p": 6,
+     "belagg": "Äger och bor i en husbil dagligen — produktkategorin (fordonsskydd) är relevant för hennes vardag. Men inget hittat om att hon pratar tillbehör/prylar specifikt, och hennes permanenta boende gör 'ställa av för vintern'-vinkeln oklar. Klarar 6-poängsspärren men är inte ett självklart case.",
+     "kalla": "INFERENS, ingen direkt gear-content hittad"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "Varm, hoppfull redaktionell vinkel, inga kontroverser hittade.",
+     "kalla": "VERIFIERAD (inget negativt hittat): sökning i finalistens källor"
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "Inga skandaler hittade, oberoende (ingen byrå), inget SR/SVT-uppdrag.",
+     "kalla": "VERIFIERAD (inget hittat): finalister.json"
+    },
+    "god_garning": {
+     "p": 5,
+     "belagg": "Inget konkret 'god gärning'-belägg hittat utöver den allmänna inspirationsretoriken.",
+     "kalla": "INFERENS — neutralt, inget hittat"
+    },
+    "selektivitet": {
+     "p": 7,
+     "belagg": "Enda kända samarbetet är ett bokförlag/bokturné — inget tecken på reklamtungt flöde.",
+     "kalla": "VERIFIERAD: finalister.json (kanda_samarbeten)"
+    },
+    "kommersiell_trovardighet": {
+     "p": 6,
+     "belagg": "Ingen historik av produktreklam hittad — varken positivt eller negativt belägg för hur en rekommendation skulle läsas.",
+     "kalla": "INFERENS, inget hittat"
+    }
+   },
+   "viktat": 6.2,
+   "produkttolerans_motivering": "Passerar spärren (6/10) tack vare att hon faktiskt äger och lever i produktens fordonstyp, men hon saknar synligt prylinnehåll och hennes permanenta husbilsliv gör 'vinterförvaring' till en svagare krok än för profiler som pendlar/ställer av säsongsvis. Bör briefas mot en annan vinkel än ren vinterförvaring, t.ex. skydd vid uppställning mellan resor.",
+   "roda_flaggor": [
+    "Gender-mismatch: hennes uttalade uppdrag är att nå kvinnor, köparbasen är 86% män",
+    "Permanent husbilsboende gör 'vinterförvaring' till en mindre naturlig vinkel"
+   ],
+   "grona_flaggor": [
+    "Ålder matchar målgruppen exakt (62 år mot 55+/65+ köpare)",
+    "Oberoende, ingen byrå — enklare förhandling",
+    "Redaktionellt bekräftad äkta 'sålde allt'-berättelse (Barometern)"
+   ],
+   "risk": "Låg skandalrisk, men medelhög effektivitetsrisk pga publik-/vinkelmismatch mot den faktiska köparen.",
+   "ej_verifierbart": [
+    "Kommentarskvalitet",
+    "Stories",
+    "IG-publikens ålders-/könsfördelning",
+    "Fullständig Barometern-artikel (sidan var trunkerad)",
+    "Tidigare betalda samarbeten utöver bokdelen"
+   ],
+   "kontaktvag_verifierad": "Linktree https://linktr.ee/husbilsannika (VERIFIERAD) samt aelgeskog20@gmail.com (från YouTube-kanalens om-sida, VERIFIERAD 2026-09-19)",
+   "personlig_krok_till_mail": "Referera Barometern-reportaget om att hon sålde huset och nu bor permanent i husbilen 'Fina Stina' för att inspirera andra kvinnor — https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/",
+   "rekommendation": "reserv",
+   "beslut_efter_skeptiker": "kontakta",
+   "sandordning": 6,
+   "skeptiker_A": [
+    {
+     "nyckel": "annika",
+     "pastaende": "36 000 följare på Instagram, 'VERIFIERAD' mot instagram.com/husbilsannika",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Instagram svarade 302 → login (curl) och 429 (WebFetch) 2026-09-19. Barometern-artikeln (2022-08-31) nämner INGEN siffra. Ingen primär eller sekundär källa för 36 000 gick att läsa i dag.",
+     "kalla": "https://www.instagram.com/husbilsannika/ (302/429), https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/ (2022-08-31)",
+     "konsekvens_for_beslutet": "Underlagets 'VERIFIERAD' är felmärkt. Räkna bara med YouTube 16 200 (läst själv) tills IG-siffran setts."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "16 200 prenumeranter på YouTube, kanal sedan 2014, svensk",
+     "status": "BEKRÄFTAT",
+     "belagg": "youtube.com/@HusbilsAnnika/about läst 2026-09-19: '16 200 prenumeranter', '607 videor', 'Gick med 3 apr. 2014', country 'Sverige'. Senaste 8 videor 4 800–13 000 visningar.",
+     "kalla": "https://www.youtube.com/@HusbilsAnnika/about",
+     "konsekvens_for_beslutet": "Primärsiffran håller. Räckvidden per video (~5–13k) är dock i nivå med Levamedhusbil och under Våra Husbilsresor."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "Bor på heltid i husbilen 'Fina Stina' / ren husbilsprofil",
+     "status": "MOTBEVISAT",
+     "belagg": "Senaste videon 2026-09-16 (3 dagar sedan): 'HusbilsAnnika går i graven och ger plats åt ÄVENTYRSANNIKA.' Beskrivning: 'Jag kommer inte sälja husbilen men jag kommer inte att åka så mycket som jag gjort de 5 år jag bodde på heltid i Lilla Fina. Nu är det dags att resa på fler olika sätt.' Kanalens about: bilen heter numera 'Lilla Fina' (Bürstner 532-2), inte Fina Stina. Video 2026-07-25: 'Ett livstecken innan jag flyger iväg!'",
+     "kalla": "https://www.youtube.com/feeds/videos.xml?channel_id=UCZBLCZJ2YoL1Lxse_aBjy0w (läst 2026-09-19)",
+     "konsekvens_for_beslutet": "Hon lägger ner husbilsvarumärket samma vecka som listan skrivs. Publiken följer med till en resekanal utan fordon. Ett taköverdragssamarbete landar i en kanal som just deklarerat att husbilen ska stå still mer — passar produkten (skydd vid stillastående) men publiken glider bort. Sänk från topp till reserv, eller kräv att samarbetet görs som 'nu står bilen still, så skyddar jag den'."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "Träffar rakt i målgruppens ålderssegment (55–65+); publiken är husbilsägare",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Ingen plattform exponerar publikdemografi. Motindikation: Barometern 2022 'Jag vill inspirera andra kvinnor'; kanalbeskrivningen riktar sig till 'ett friare liv', inte till fordonsägare. Köparna är 86 % män — hennes uttalade målgrupp är kvinnor.",
+     "kalla": "https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/",
+     "konsekvens_for_beslutet": "Sannolik könsmismatch mot 86 % manliga köpare. Begär publikstatistik (kön/ålder ur YouTube Studio) innan avtal."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "Ingen byrå, oberoende, kontakt via Linktree",
+     "status": "BEKRÄFTAT",
+     "belagg": "linktr.ee/husbilsannika läst 2026-09-19: Instagram, YouTube samt en sponsrad länk 'Hem - Zipforce' med utm_campaign=husbilsannika (elcykel/elmotor-samarbete). Mejl aelgeskog20@gmail.com på YouTube about. Ingen byrå.",
+     "kalla": "https://linktr.ee/husbilsannika, https://www.youtube.com/@HusbilsAnnika/about",
+     "konsekvens_for_beslutet": "Direktkontakt fungerar. Hon tar redan betalda samarbeten (Zipforce) — hon är van vid affiliate-upplägg."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "annika",
+     "pastaende": "Bor på heltid i husbilen \"Fina Stina\"",
+     "status": "MOTBEVISAT",
+     "belagg": "YouTube-beskrivningen (daterad jan 2023): bodde ETT år i Fina Stina, sedan två år i lägenhet, flyttade sedan in i en Bürstner 532-2 'Lilla Fina'. Video 2026-09-16 'HusbilsAnnika går i graven och ger plats åt ÄVENTYRSANNIKA': 'Jag kommer inte sälja husbilen men jag kommer inte att åka så mycket som jag gjort de 5 år jag bodde på heltid i Lilla Fina. Nu är det dags att resa på fler olika sätt … Jag börjar även ett nytt arbete.' Video 2026-07-25 'Ett livstecken innan jag flyger iväg!'.",
+     "kalla": "https://www.youtube.com/@HusbilsAnnika/about; https://youtu.be/qTsxajxD5dg (2026-09-16); https://youtu.be/yvfLMy-nw-Y",
+     "konsekvens_for_beslutet": "Hon äger fortfarande en husbil (Bürstner 532-2) men har 2026-09-16 lagt ner varumärket HusbilsAnnika och går över till flyg/tåg-resor + nytt jobb. Husbilen står mer stilla = taköverdrag passar på riktigt, men husbilspubliken riskerar att tunnas ut. Degradera från topp till 'fråga, men räkna med att flödet byter nisch'."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "62 år (VERIFIERAD via Barometern)",
+     "status": "MOTBEVISAT",
+     "belagg": "Barometern-artikeln är daterad 31 augusti 2022. 62 då = ca 66 år 2026.",
+     "kalla": "https://www.barometern.se/feature/annika-62-blev-influencer-och-bor-i-husbil-pa-heltid-jag-vill-inspirera-andra-kvinnor/",
+     "konsekvens_for_beslutet": "Fortfarande mitt i målgruppen, men underlagets ålder är fyra år gammal."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "Ingen byrå, inga kommersiella samarbeten utöver förlag",
+     "status": "MOTBEVISAT",
+     "belagg": "Linktree har tre länkar: Instagram, YouTube och 'Hem - Zipforce' (elcykelkit-företag) — ett kommersiellt samarbete som inte står i underlaget. Ingen konkurrent inom överdrag/skydd hittad.",
+     "kalla": "https://linktr.ee/husbilsannika",
+     "konsekvens_for_beslutet": "Hon tar betalda samarbeten (Zipforce). Ingen konflikt med taköverdrag. Bekräftar att produkt i flödet accepteras."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "Kontakt aelgeskog20@gmail.com",
+     "status": "BEKRÄFTAT",
+     "belagg": "Adressen ligger i YouTube-kanalens about-data (läst 2026-09-19).",
+     "kalla": "https://www.youtube.com/@HusbilsAnnika/about",
+     "konsekvens_for_beslutet": "Mejlvägen fungerar. Instagram gav 429, följartalet 36 000 kunde inte verifieras i dag."
+    },
+    {
+     "nyckel": "annika",
+     "pastaende": "SR/SVT, skandaler",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Inget hittat i lästa källor. Ingen sökmotor tillgänglig.",
+     "kalla": "—",
+     "konsekvens_for_beslutet": "Inget hittat ≠ ren."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "freedom-living",
+   "namn": "Markku & Agneta Korpela (Freedom Living)",
+   "kort_dom": "Stark personlig krok (cancerbesked blev startskottet för husbilslivet) men artikeln om det är betalspärrad så djupet går inte att styrka. Övrig press beskriver dem i en rätt säljande, 'allt gick bra'-ton kring en dyr kontantköpt husbil (1,4 Mkr) — risk för mismatch mot en 1 000–2 000 kr-produkt.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Aspirationell livsstilsbekräftelse snarare än prismedveten pryltips-kanal.",
+   "poang": {
+    "kannedom": {
+     "p": 7,
+     "belagg": "21 200 YT-prenumeranter, uppslag i News55 och Sveriges Radio (nationell kanal) samt husbilhusvagn.se.",
+     "kalla": "VERIFIERAD: https://www.youtube.com/@agnetamarkku-freedomliving706/about (2026-09-19) ; https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/ ; https://www.sverigesradio.se/artikel/sa-upp-sig-efter-nastan-40-ar-nu-ar-paret-youtubers (titel, ej fullständigt läst, 403)"
+    },
+    "omtyckthet": {
+     "p": 5,
+     "belagg": "News55-artikeln är beskriven som säljande/framgångsfokuserad utan kritisk distans — kan läsas som gillbart (aspirationellt) eller distanserande beroende på läsare.",
+     "kalla": "INFERENS av: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    },
+    "manniskor_koppling": {
+     "p": 6,
+     "belagg": "Rubriken 'Vi fick blodad tand att resa efter cancerbeskedet' bekräftar en verklig kris som motiverade livsstilen — men artikeltexten är betalspärrad så det går inte att se HUR sårbart de berättar.",
+     "kalla": "VERIFIERAD (rubrik), EJ LÄSBART (brödtext, betalvägg): https://www.husbilhusvagn.se/nyheter/markku-och-agneta-vi-fick-blodad-tand-att-resa-efter-cancerbeskedet"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 5,
+     "belagg": "News55 beskrivs som 'relativt säljande... läser som en inspirationsprofil snarare än analytisk journalistik' — mer polerad framgångsberättelse än oredigerat vardagsliv.",
+     "kalla": "INFERENS av: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    },
+    "publikmatch": {
+     "p": 6,
+     "belagg": "Markku 56 år, målgruppsmatch på ålder (55+) rimlig, men de kontantköpte en husbil för 1,4 Mkr — ett förmögenhetsskikt som kan skilja sig från köpare av en 1 129–2 239 kr-produkt.",
+     "kalla": "VERIFIERAD: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    },
+    "produkttolerans": {
+     "p": 6,
+     "belagg": "Äger husbil och dokumenterar husbilslivet dagligen (produktrelevant), och kanalen är redan sponsringsfinansierad (van vid kommersiellt innehåll). Men inget hittat om pryltips/gear-innehåll specifikt, och den förmögna framtoningen kan klasha lätt med en budget-/mellanprisprodukt.",
+     "kalla": "VERIFIERAD (sponsring): https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/ ; INFERENS (mismatch-risk)"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "Genomgående positiv, hoppfull framtoning i pressen, inget kontroversiellt.",
+     "kalla": "VERIFIERAD (inget negativt hittat)"
+    },
+    "varumarkessakerhet": {
+     "p": 6,
+     "belagg": "Inga skandaler hittade, men den förmögenhetstunga framtoningen (kontantköpt husbil för 1,4 Mkr) skapar en mild 'behöver hen verkligen det här'-dissonans för en billigare produkt.",
+     "kalla": "INFERENS av: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    },
+    "god_garning": {
+     "p": 5,
+     "belagg": "Inget specifikt belägg hittat.",
+     "kalla": "INFERENS — neutralt, inget hittat"
+    },
+    "selektivitet": {
+     "p": 5,
+     "belagg": "Kanalen är uttryckligen delvis sponsringsfinansierad ('drar in pengar på via sponsring') — inte en exklusiv/sällan-reklam-profil.",
+     "kalla": "VERIFIERAD: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    },
+    "kommersiell_trovardighet": {
+     "p": 5,
+     "belagg": "Publiken är redan van vid sponsrat innehåll från kanalen (professionellt hanterat), men det gör också att en ny sponsring blir 'ännu en annons' snarare än ett unikt förtroendeögonblick.",
+     "kalla": "INFERENS av: https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/"
+    }
+   },
+   "viktat": 5.8,
+   "produkttolerans_motivering": "Klarar precis spärren (6/10): produktrelevant ägarskap och van vid sponsring, men ingen synlig pryltips-nisch och en förmögenhetsframtoning som kan skava mot en lågprisprodukt. Svagare produktmatch än Nilla & Micke eller Peter & Lotta.",
+   "roda_flaggor": [
+    "Kontantköpt husbil för 1,4 Mkr — förmögenhetsprofil kan klasha med en 1 000–2 000 kr-produkt",
+    "Redan sponsringsfinansierad kanal → publiken redan mättad på annonser, lägre marginalnytta per ny sponsring",
+    "Cancerbesked-artikeln (den starkaste kroken) är betalspärrad, går inte att styrka djupet"
+   ],
+   "grona_flaggor": [
+    "Verklig, dokumenterad kris (cancerbesked) som motivator — stark potentiell krok om artikeln kan läsas i sin helhet",
+    "Van vid och kompetent med sponsrat innehåll — smidigt genomförande",
+    "Nationell press (Sveriges Radio, News55) utöver nischpress"
+   ],
+   "risk": "Medel — ingen skandalrisk, men mismatch-risk mellan deras förmögna framtoning och en prisvärd produkt, samt annonsutmattning hos publiken.",
+   "ej_verifierbart": [
+    "Fullständig cancerbesked-artikel (betalvägg, 403/paywall)",
+    "IG- och FB-följartal (uppskattade, ej källbelagda)",
+    "Vilka varumärken de tidigare sponsrats av",
+    "Kommentarskvalitet",
+    "Stories"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen mejladress eller kontaktsida hittad i tillgängliga källor. Prova Facebook-sidan https://www.facebook.com/p/Agneta-Markku-Freedom-Living-61556408936935/ (ej testad här) eller YouTube-kanalens Om-flik.",
+   "personlig_krok_till_mail": "Referera husbilhusvagn.se-rubriken om att cancerbeskedet blev startskottet för husbilslivet — https://www.husbilhusvagn.se/nyheter/markku-och-agneta-vi-fick-blodad-tand-att-resa-efter-cancerbeskedet",
+   "rekommendation": "reserv",
+   "beslut_efter_skeptiker": "kontakta (avtal bara om vagnen står i Sverige i vinter)",
+   "sandordning": 7,
+   "skeptiker_A": [
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Strax över 20 000 (YouTube), ca 10 000 (Instagram), 6 500 (Facebook) — märkt OKÄNT",
+     "status": "BEKRÄFTAT (YouTube), GÅR EJ ATT VERIFIERA (IG/FB)",
+     "belagg": "YouTube about 2026-09-19: '21 200 prenumeranter', 368 videor, Sverige, sedan 2012. IG/FB-talen kommer ur AP7-bloggen 2026-02-18 ('Just over 20,000 / approximately 10,000 / 6,500') — sekundär men bara 7 månader gammal. Instagram agneta_markku svarade 302.",
+     "kalla": "https://www.youtube.com/@agnetamarkku-freedomliving706/about, https://www.ap7.se/blogg/de-salde-allt-for-att-leva-husbilsliv-flera-ar-innan-pension/ (2026-02-18)",
+     "konsekvens_for_beslutet": "Underlaget var för försiktigt — YouTube-talet är primärt bekräftat och AP7-källan är färsk. Kan uppgraderas från OKÄNT."
+    },
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Markku 56 år; lever permanent i husbil",
+     "status": "MOTBEVISAT (delvis)",
+     "belagg": "AP7 2026-02-18: 58 och 57 år (News55 2024-05-07 sa 56 — den siffran är två år gammal). Kanalbeskrivningen: 'Vi är skrivna på en camping i Bohuslän … i vår villavagn, i husbilen' — husbil på vintern, villavagn i Kungshamn på sommaren, inte permanent husbil.",
+     "kalla": "https://www.ap7.se/blogg/de-salde-allt-for-att-leva-husbilsliv-flera-ar-innan-pension/, https://www.youtube.com/@agnetamarkku-freedomliving706/about",
+     "konsekvens_for_beslutet": "Åldern är 57–58 (bättre match mot 55+). Husbilen står stilla halva året — det är precis användningsfallet för ett taköverdrag. Stärker kandidaten."
+    },
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Aktiv 2026 med husbilsägare som publik",
+     "status": "BEKRÄFTAT",
+     "belagg": "RSS: 2026-09-16 'JAG ÅTERVÄNDER TILL PLATSEN DÄR MITT LIV BÖRJADE' (10 513 vis), 2026-09-09 'VI GÖR DET IGEN! Freedom Living Husbilsträff 2027' (arrangerar egna husbilsträffar), 'WattCycle Batteries … installation och test i husbil', 'Victron tar över'. Prylvideor + träffar = ägarpublik.",
+     "kalla": "https://www.youtube.com/feeds/videos.xml?channel_id=UCxsgePuF_aaXnzo8BrEGXRw",
+     "konsekvens_for_beslutet": "Starkaste 55+-matchen med bevisad ägarpublik (egen husbilsträff). Kön i publiken är fortfarande okänt."
+    },
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Sponsring finns, ospecificerade varumärken",
+     "status": "BEKRÄFTAT",
+     "belagg": "Videotitlar 2026: 'WattCycle Batteries 12V 314Ah LifePO4 – installation och test i husbil', 'Victron tar över'; Amazon-shop i about. News55 2024-05-07: 'drar in pengar på via sponsring'.",
+     "kalla": "https://www.youtube.com/@agnetamarkku-freedomliving706/videos, https://www.news55.se/halsa/wellness/salde-rubbet-for-ett-aventyrsliv-i-husbil/",
+     "konsekvens_for_beslutet": "Vana vid produktintegrationer i husbilsteknik — relevant format för ett överdrag. Kontaktväg saknas i underlaget (ingen mejl läst)."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Bor permanent i husbil, i Sverige, kanalen finansieras via ospecificerad sponsring",
+     "status": "BEKRÄFTAT MED KRITISKT TILLÄGG",
+     "belagg": "Video 2026-07-28: 'Vi övervintrar varje år på Gran Canaria och står ofta still under längre perioder.' 2026-08-12: 'Nu uppgraderar vi husbilen inför Kanarieöarna'. 2026-08-18: 'Nu är vi på rull igen – häng med på vår höstresa'. 2026-07-06: 'Vi har lämnat villavagnen och kör mot det okända'. Betalda samarbeten namngivna: WattCycle (betalt, kod FREEDOMLIVING), NomadiQ BBQ (kod FL706-10), Victron via Amazon-affiliate. Inget överdrag/skydd.",
+     "kalla": "https://www.youtube.com/feeds/videos.xml?channel_id=UCxsgePuF_aaXnzo8BrEGXRw (RSS läst 2026-09-19)",
+     "konsekvens_for_beslutet": "Sannolikt UTOMLANDS i oktober 2026 (höstresa mot Gran Canaria). Produkt måste skickas innan avresa eller till utlandet; ett taköverdrag på en husbil som körs söderut är fel användning i flödet. Degradera."
+    },
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Strax över 20 000 YouTube",
+     "status": "BEKRÄFTAT",
+     "belagg": "21 200 prenumeranter, 368 videor (läst 2026-09-19). Sponsrat: WattCycle, NomadiQ.",
+     "kalla": "https://www.youtube.com/@agnetamarkku-freedomliving706",
+     "konsekvens_for_beslutet": "Instagram 10 000 ej verifierat (429)."
+    },
+    {
+     "nyckel": "freedom-living",
+     "pastaende": "Kontaktväg",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Ingen mejladress i YouTube-about. Länkar: Amazon-shop, Instagram, Facebook. SR-artikeln svarar 403.",
+     "kalla": "https://www.youtube.com/@agnetamarkku-freedomliving706/about",
+     "konsekvens_for_beslutet": "Bara DM-väg. Genomförbarhet låg."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "reiselinda",
+   "namn": "Linda & Pär (ReiseLinda / Husbilsbloggarna)",
+   "kort_dom": "Litet men mycket rätt konto: bor permanent i husbil sedan 2022, driver dessutom hela det svenska husbilsbloggar-nätverket (~30 andra skapare). Renodlad nisch, äkta ton, verifierad kontaktväg. Bästa balansen mellan trovärdighet och räckvidd i gruppen.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Nischnav — kan driva både förtroende (MOF) och direktkonvertering (BOF) hos en publik som redan lever husbilslivet",
+   "poang": {
+    "kannedom": {
+     "p": 7,
+     "belagg": "VERIFIERAD nischad kännedom: hon driver 'Husbilsbloggarna', ett nätverk som samlar ~30 andra svenska husbilsbloggare/YouTubers — ett nav-läge i nischen.",
+     "kalla": "https://www.reiselinda.se/husbilsbloggarna/"
+    },
+    "omtycktet": {
+     "p": 7,
+     "belagg": "INFERENS: lång historik (310 videor, blogg sedan 2017) och att andra skapare frivilligt ansluter till hennes nätverk tyder på gott anseende. Ingen kommentardata läst.",
+     "kalla": "https://www.youtube.com/@Reiselinda/about"
+    },
+    "manskl_koppling": {
+     "p": 8,
+     "belagg": "VERIFIERAD/INFERENS: bor permanent i husbil sedan maj 2022, husbilsägare sedan 2017 — lång, löpande vardagsdokumentation typisk för hög mänsklig koppling i just den här nischen.",
+     "kalla": "https://www.youtube.com/@Reiselinda/about"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 8,
+     "belagg": "INFERENS: litet konto (7 430 prenumeranter) utan kända stora varumärkessamarbeten, driver ett ideellt community-nätverk — pekar mot 'real' snarare än 'performing real'.",
+     "kalla": ""
+    },
+    "publikmatch": {
+     "p": 8,
+     "belagg": "INFERENS: renodlad husbilsnisch med lång historik i just husbilslivet — sannolikt en etablerad, äldre husbilsägar-publik som matchar taköverdragsköparen väl. Exakt demografi ej verifierad.",
+     "kalla": "https://www.reiselinda.se/"
+    },
+    "produkttolerans": {
+     "p": 8,
+     "belagg": "VERIFIERAD grund: hon lever permanent i husbil och driver ett helt nätverk av husbilsskapare — vinterförvaring/taköverdrag är precis den typ av praktiska produkter den publiken redan diskuterar. Ingen känd tung kommersialisering som skulle göra en rekommendation misstänkt.",
+     "kalla": "https://www.reiselinda.se/"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade, roll som nätverksbyggare/sammanhållande figur i nischen.",
+     "kalla": ""
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "INFERENS: inget negativt funnet i underlaget.",
+     "kalla": ""
+    },
+    "god_garning": {
+     "p": 6,
+     "belagg": "Driver gratis ett nätverk (Husbilsbloggarna) som lyfter fram ~30 andra skapare snarare än bara sig själv — ett konkret community-byggande agerande.",
+     "kalla": "https://www.reiselinda.se/husbilsbloggarna/"
+    },
+    "selektivitet": {
+     "p": 6,
+     "belagg": "INFERENS: inga kända betalda samarbeten hittade i underlaget — kan tyda på selektivitet, men kan också bero på tunt sökunderlag.",
+     "kalla": ""
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "INFERENS: inget reklamtungt intryck; nätverksbyggande och egen vardag dominerar innehållet framför synliga varumärkessamarbeten.",
+     "kalla": ""
+    }
+   },
+   "viktat": 7.53,
+   "produkttolerans_motivering": "Hon lever själv i husbilen permanent och är nav för hela det svenska husbilsbloggar-communityt — taköverdraget passar rakt in i det hon redan pratar om (vinterförvaring, praktisk husbilsvård) utan att kännas påklistrat.",
+   "roda_flaggor": [
+    "Instagram-följartal okänt (länk på sajten inaktiv/placeholder vid kontroll)",
+    "Kommentarer och stories inte läsbara härifrån"
+   ],
+   "grona_flaggor": [
+    "Nav för hela det svenska husbilsbloggar-nätverket (~30 andra skapare) — en kontakt kan ge spridningseffekt",
+    "Verifierad kontaktväg (mejl)",
+    "Lång, äkta historik i just husbilsnischen sedan 2017",
+    "Inga kända skandaler eller reklamöverflöd"
+   ],
+   "risk": "Låg. Litet konto rent räckviddsmässigt, men mycket starkt matchat och genuint — låg risk för att kännas fel.",
+   "ej_verifierbart": [
+    "Exakt Instagram-följartal",
+    "Kommentarkvalitet",
+    "Stories",
+    "Exakt kön/ålder på Linda och Pär",
+    "Antal betalda samarbeten totalt"
+   ],
+   "kontaktvag_verifierad": "lindatorm[at]gmail.se — VERIFIERAD (https://www.reiselinda.se/husbilsbloggarna/)",
+   "personlig_krok_till_mail": "Hon driver 'Husbilsbloggarna' — nätverket som samlar ~30 andra svenska husbilsskapare — https://www.reiselinda.se/husbilsbloggarna/",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta (avtal bara om montering före avresan)",
+   "sandordning": 8,
+   "skeptiker_A": [
+    {
+     "nyckel": "reiselinda",
+     "pastaende": "Följartal OKÄNT; YouTube 7 430",
+     "status": "BEKRÄFTAT (YouTube)",
+     "belagg": "YouTube about 2026-09-19: '7 430 prenumeranter', 310 videor, Sverige, sedan 2011; länkar reiselinda.se, instagram.com/reiselinda, facebook.com/reiselinda. RSS: 2026-09-13 Starlink/solcell (8 422 vis), 09-06 'Summerar sommaren … Portugalnyheter', 08-30 'förbereder övervintringsresan'. Instagram 302/429.",
+     "kalla": "https://www.youtube.com/@Reiselinda/about, RSS UCBPUAg7hCYUMD582WM90McQ",
+     "konsekvens_for_beslutet": "Liten men aktiv och genuint heltidshusbil. Visningar > prenumeranter per video."
+    },
+    {
+     "nyckel": "reiselinda",
+     "pastaende": "Nav för ~30 husbilsbloggare (Husbilsbloggarna)",
+     "status": "MOTBEVISAT (siffran), BEKRÄFTAT (nätverket)",
+     "belagg": "reiselinda.se/husbilsbloggarna/ listar ~60 bloggar/kanaler (inkl. Våra Husbilsresor, Jikitas, Freedom Living, flera norska). Artikeln 'Lär känna husbilsbloggarna' är från 2020-04-14: 'nästan 500 medlemmar och runt tjugo bloggare'. Sidan innehåller poster daterade upp till 2022 — oklart hur levande nätverket är 2026. Kontakt lindatorm@gmail.com (inte .se som i underlaget).",
+     "kalla": "https://www.reiselinda.se/husbilsbloggarna/, https://www.reiselinda.se/lar-kanna-husbilsbloggarna/ (2020-04-14)",
+     "konsekvens_for_beslutet": "Nätverket är en lista, inte bevisad räckvidd. Mejladressens toppdomän i underlaget är fel (.se ⇒ .com)."
+    },
+    {
+     "nyckel": "reiselinda",
+     "pastaende": "Ålder/kön okänt, troligen par; heltid sedan 2022",
+     "status": "BEKRÄFTAT (par, heltid), GÅR EJ ATT VERIFIERA (ålder)",
+     "belagg": "YouTube about: 'Linda och Pär … husbilsägare sen 2017 och sen maj 2022 bor på heltid'. Ingen källa anger ålder. Övervintrar i Portugal — bilen rullar året runt, står sällan under tak.",
+     "kalla": "https://www.youtube.com/@Reiselinda/about",
+     "konsekvens_for_beslutet": "Heltidsresenärer har mindre behov av ett överdrag för stillastående — svagare produktmatch än Freedom Living (villavagn på sommaren)."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "reiselinda",
+     "pastaende": "Bor på heltid i husbil, i Sverige",
+     "status": "BEKRÄFTAT MED KRITISKT TILLÄGG",
+     "belagg": "Blogg 2025-02-07: 'Tusen och en natt på heltid i husbilen' (sedan maj 2022). Video 2026-08-30 'Hemmavid och förbereder ÖVERVINTRINGSRESAN'; 2026-09-06 'om den kommande övervintringsresan … Silves och Portugal … som vi har för avsikt att besöka i vinter'. Bloggen 2022: 'åker söderut för att slippa vintern … Portugal'. 'Hemmavid' = Östhammar/Kallerö-området.",
+     "kalla": "https://www.reiselinda.se/tusen-och-en-natt-pa-heltid-i-husbilen/; RSS UCBPUAg7hCYUMD582WM90McQ",
+     "konsekvens_for_beslutet": "Reser mot Portugal under hösten — sannolikt utomlands en stor del av oktober; husbilen körs, står inte under överdrag. Degradera; om samarbete: skicka produkt före avresa och acceptera att den inte används i vinter."
+    },
+    {
+     "nyckel": "reiselinda",
+     "pastaende": "Ingen byrå, inga samarbeten",
+     "status": "BEKRÄFTAT MED TILLÄGG",
+     "belagg": "Amazon-affiliate + Starlink-referral; 'Vi har köpt den och tillbehören själva, inget är sponsrat' (2026-09-13). Reklamlänkar markeras. Kontakt lindatorm@gmail.com bekräftad på /om/ och /husbilsbloggarna/. YT 7 430.",
+     "kalla": "https://www.reiselinda.se/om/; https://youtu.be/…(2026-09-13)",
+     "konsekvens_for_beslutet": "Låg räckvidd; värdet är nätverket Husbilsbloggarna (Facebook-grupp), inte egna följare."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "2tanter",
+   "namn": "Lena Johansson & Lena Ljunggren (2Tanter1Husvagn)",
+   "kort_dom": "Podd av och för husvagnsliv, drivs av två väninnor i 55 år som reser i en Adria Action från 2009 ('Bulan'). Ingen räckviddssiffra hittad, men publikmatch och produkttolerans är de starkaste i hela gruppen — det här ÄR husvagnsvardag, inte ett sidospår.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Ren BOF-konverterare: liten men extremt matchad lyssnarskara som redan lever husvagnslivet",
+   "poang": {
+    "kannedom": {
+     "p": 5,
+     "belagg": "INFERENS: beskrivs som 'podden som växer fram längs vägarna' av campingsverige.se — nischad och på väg upp, men ny och utan mätbar lyssnarsiffra.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna"
+    },
+    "omtycktet": {
+     "p": 6,
+     "belagg": "INFERENS: en etablerad branschsajt (campingsverige.se) har skrivit ett positivt reportage om dem. Ingen lyssnarfeedback läst.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna"
+    },
+    "manskl_koppling": {
+     "p": 9,
+     "belagg": "VERIFIERAD/INFERENS: podd-format med två väninnor i 55 år som delar minnen och vardag på vägarna — samtalsdrivet och personligt per definition. Hög mänsklig koppling.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån (poddformat saknar dessutom en direkt stories-motsvarighet i underlaget), mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 9,
+     "belagg": "INFERENS: åldrad egen husvagn från 2009 ('Bulan'), inget kommersiellt underlag hittat — två privatpersoner som pratar om sin egen hobby. Mycket 'real', låg 'performing'.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna"
+    },
+    "publikmatch": {
+     "p": 8,
+     "belagg": "INFERENS: en podd om husvagnsliv mellan två 55+-kvinnor matchar direkt köparbasens ålder (93% 55+). Könsmatchningen är svagare (köparna är 86% män) eftersom lyssnarskarans könsfördelning är okänd.",
+     "kalla": ""
+    },
+    "produkttolerans": {
+     "p": 9,
+     "belagg": "VERIFIERAD: hela podden bygger på deras egen husvagn och camping-vardag — en podd om husvagnsliv med lyssnare som redan diskuterar husvagnsutrustning är en nästan perfekt miljö för ett taköverdrag i just denna prisklass.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna"
+    },
+    "trygghet": {
+     "p": 8,
+     "belagg": "INFERENS: inget kontroversiellt hittat, varm vänskapston genomgående.",
+     "kalla": ""
+    },
+    "varumarkessakerhet": {
+     "p": 8,
+     "belagg": "INFERENS: litet men rent underlag, inget negativt funnet.",
+     "kalla": ""
+    },
+    "god_garning": {
+     "p": null,
+     "belagg": "Inget specifikt gott-gärning-signal hittat i underlaget.",
+     "kalla": ""
+    },
+    "selektivitet": {
+     "p": 7,
+     "belagg": "INFERENS: inga kända kommersiella samarbeten hittade — sannolikt en ännu oexploaterad, icke reklamtung kanal.",
+     "kalla": ""
+    },
+    "kommersiell_trovardighet": {
+     "p": 8,
+     "belagg": "INFERENS: opartisk, hobbybaserad ton utan tidigare reklamsamarbeten funna — ett omnämnande skulle sannolikt låta som ett genuint tips snarare än reklam.",
+     "kalla": ""
+    }
+   },
+   "viktat": 8.16,
+   "produkttolerans_motivering": "Podden ÄR husvagnsliv — de reser i en egen husvagn från 2009 och pratar om camping förr och nu. Ett taköverdrag i 1 129–2 239 kr passar rakt in i deras egen praktiska vardag utan att kännas som en främmande produkt.",
+   "roda_flaggor": [
+    "Ingen kontaktväg hittad i underlaget",
+    "Ingen lyssnarsiffra — svårt att bedöma faktisk konverteringsvolym",
+    "Kommentarer och stories inte läsbara härifrån"
+   ],
+   "grona_flaggor": [
+    "Högsta publikmatch och produkttolerans i hela gruppen",
+    "Äkta hobbyröst utan reklamhistorik",
+    "Uppmärksammade av en etablerad branschsajt (campingsverige.se)"
+   ],
+   "risk": "Låg skandalrisk, men okänd faktisk räckvidd gör den totala konverteringsvolymen osäker — bör betraktas som en trovärdighetssatsning snarare än en volymsatsning.",
+   "ej_verifierbart": [
+    "Lyssnarsiffror",
+    "Kontaktväg",
+    "Kommentarkvalitet",
+    "Stories",
+    "Exakt ålder",
+    "Gott-gärning-signal"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen kontaktväg hittad i underlaget (endast reportage och bok-länk på Amazon)",
+   "personlig_krok_till_mail": "Deras podd lyfts nyligen fram i ett stort reportage på campingsverige.se om hur den 'växer fram längs vägarna' — https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna",
+   "rekommendation": "kontakta",
+   "beslut_efter_skeptiker": "kontakta när kontaktväg finns; stryks utan Instagram",
+   "sandordning": 9,
+   "skeptiker_A": [
+    {
+     "nyckel": "2tanter",
+     "pastaende": "Ny podd som växer; följartal okänt",
+     "status": "BEKRÄFTAT (podden finns och är aktiv)",
+     "belagg": "iTunes-API 2026-09-19: '2tanter1husvagn – Följ oss genom landet - ett stopp i taget.', 32 avsnitt, första 2026-01-17 ('1. Första resan'), senaste 2026-09-14 ('32. Hösten är äntligen kommen!'), värd på Acast. Apple: 5,0 med 2 betyg. Instagram @2tanter1husvagn nämns i avsnitt 25 — svarade 302 vid ett försök.",
+     "kalla": "https://podcasts.apple.com/se/podcast/2tanter1husvagn-f%C3%B6lj-oss-genom-landet-ett-stopp-i-taget/id1869857702, https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna (2026-07-02)",
+     "konsekvens_for_beslutet": "Aktiv, veckovis, husvagn — men 2 betyg på Apple efter 32 avsnitt tyder på en mycket liten lyssnarskara. Ingen räckviddssiffra alls."
+    },
+    {
+     "nyckel": "2tanter",
+     "pastaende": "Ålder 55+ (två väninnor i 55 år)",
+     "status": "BEKRÄFTAT (inferens håller)",
+     "belagg": "campingsverige.se 2026-07-02: 'vänner i 55 år' ⇒ minst ~60 år. Kön: två kvinnor.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna",
+     "konsekvens_for_beslutet": "Åldern träffar; könet gör inte det (köpare 86 % män). Lyssnarna är sannolikt kvinnor i samma ålder — okänt."
+    },
+    {
+     "nyckel": "2tanter",
+     "pastaende": "Bok på Amazon",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "amazon.com-sidan svarade HTTP 500. Podd-titeln 'Följ oss genom landet - ett stopp i taget' matchar Amazon-URL:en — troligen poddens sida i Amazon Music, inte en bok.",
+     "kalla": "https://www.amazon.com/2tanter1husvagn-genom-landet-stopp-taget/dp/B0GHFH98CY",
+     "konsekvens_for_beslutet": "'bok/Amazon' i underlaget är sannolikt en feltolkning av en poddlistning."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "2tanter",
+     "pastaende": "Ny podd som växer, 55+, husvagnsägare",
+     "status": "BEKRÄFTAT (bara EN källa)",
+     "belagg": "Campingsverige 2026-07-02: Adria Action 2009 'Bulan', vänner i 55 år, hundar, B96-körkort, mål Abisko i sommar. Inga lyssnarsiffror, ingen poddplattform, ingen kontakt i artikeln. Podtail 404, 2tanter1husvagn.se svarar inte, Amazon-sidan gav ingen läsbar info.",
+     "kalla": "https://www.campingsverige.se/reportage/tva-tanter-och-en-husvagn-podden-som-vaxer-fram-langs-vagarna",
+     "konsekvens_for_beslutet": "Går inte att nå eller mäta med tillgängliga verktyg. 'Fem avsnitt och tio lyssnare' var deras eget mål — räckvidden är okänd och sannolikt liten. Stories + annonsrätt kräver Instagram — inte belagt att de har det."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "peter-sandholt",
+   "namn": "Peter Sandholt (Stora Husbilspodden)",
+   "kort_dom": "Etablerad radiopersonlighet (Mix Megapol/Bauer Media) med ett podd-ekosystem som redan kör sponsorkoder, men två verkliga frågetecken: dels är det oklart om podden fortfarande sänder aktivt (motstridiga signaler om avsnitt 68 vs 69), dels delar han co-hosts med Robban & Jeanette som är ambassadörer för en direkt konkurrentprodukt.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Awareness/consideration via poddens ad-read-format — inte en personlig produktgranskning.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "Etablerad radiovärd på Mix Megapol Göteborg (Bauer Media, 'Morrongänget'), medgrundare av en podd med flera sammanslagna nischpubliker.",
+     "kalla": "VERIFIERAD: https://www.mynewsdesk.com/se/bauermedia/news/peter-sandholt-fraan-morrongaenget-startar-husbilspodd-448779"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "Avslappnad, humoristisk radioton (citat: 'Jag är lite full i fan') — igenkännbar radiopersonlighet, men inga lyssnarsiffror eller recensioner hittade.",
+     "kalla": "INFERENS av: https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia"
+    },
+    "manniskor_koppling": {
+     "p": 7,
+     "belagg": "Poddformatet delar även mindre trevliga upplevelser ('resor ombord på bärgare') snarare än bara framgång — konversationsformatet ger utrymme för genuina delade motgångar mellan värdarna.",
+     "kalla": "VERIFIERAD: https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 7,
+     "belagg": "Oredigerad, spontan radioton ('lite full i fan'), van vid att prata live och oskriptat — känns oregisserat snarare än varumärkesstyrt.",
+     "kalla": "VERIFIERAD (citat): https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia"
+    },
+    "publikmatch": {
+     "p": 6,
+     "belagg": "Ren husbils-podd matchar nischen, men Peter själv är relativt ny husbilsägare (bytte nyligen från husvagn) — mindre djup praktisk erfarenhet än de andra kandidaterna. Ingen lyssnarstatistik hittad för att styrka ålders-/könsmatchen.",
+     "kalla": "VERIFIERAD (ägarbyte): finalister.json ; OKÄNT (lyssnardemografi)"
+    },
+    "produkttolerans": {
+     "p": 6,
+     "belagg": "Podden kör redan sponsorkoder (Kosta Lodge, Finnlines, Elmia) — bevisat ad-read-format. Men inget gear-/prylfokus hittat (mer resor/ställplatser), och osäkerheten om podden fortfarande sänder aktivt gör produktplaceringens värde svårbedömt just nu.",
+     "kalla": "VERIFIERAD (sponsorkoder): https://www.podplay.com/podcasts/stora-husbilspodden-940955 ; OKÄNT (aktuell sändningsstatus)"
+    },
+    "trygghet": {
+     "p": 6,
+     "belagg": "Casual/skämtsam ton är i grunden trygg men kan vara dubbeleggad ('lite full i fan') beroende på sammanhang.",
+     "kalla": "INFERENS av: https://www.husbilhusvagn.se/massor/stora-husbilspodden-sander-live-fran-elmia"
+    },
+    "varumarkessakerhet": {
+     "p": 6,
+     "belagg": "Anställd av etablerat mediabolag (Bauer Media) ger viss struktur/trygghet, inte SR/SVT så ingen karantänregel. Men samma konkurrentrisk som Nilla & Micke: Robban & Jeanette (medvärdar) är ambassadörer för Campmaster Takskydd — och det sitter inbakat i själva podden, svårare att särskilja än vid ett enskilt inlägg.",
+     "kalla": "VERIFIERAD: finalister.json + en.wikipedia.org/wiki/Mix_Megapol"
+    },
+    "god_garning": {
+     "p": 5,
+     "belagg": "Inget specifikt belägg hittat.",
+     "kalla": "INFERENS — neutralt, inget hittat"
+    },
+    "selektivitet": {
+     "p": 6,
+     "belagg": "Tre identifierade sponsorkategorier i podden (boende, färja, mässa) — måttlig kommersiell aktivitet, inte överlastad.",
+     "kalla": "VERIFIERAD: https://www.podplay.com/podcasts/stora-husbilspodden-940955"
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "Poddens dynamiska sponsorkod-format är en väletablerad, av lyssnare accepterad annonsform — mindre 'influencer-reklam'-stigma än ett Instagram-inlägg.",
+     "kalla": "INFERENS baserat på: https://www.podplay.com/podcasts/stora-husbilspodden-940955"
+    }
+   },
+   "viktat": 6.3,
+   "produkttolerans_motivering": "Klarar spärren (6/10) tack vare ett redan fungerande sponsorkod-format i podden, men saknar egen gear-/prylnisch och bär samma konkurrentrisk som Nilla & Micke — plus en oklar aktivitetsstatus som gör produkttoleransen svårare att lita på just nu.",
+   "roda_flaggor": [
+    "Motstridiga uppgifter om poddens aktivitet: en källa antyder att podden 'parkerades efter avsnitt 68 (september 2023)', medan en annan uppger 69 avsnitt totalt per 2026-09-19 — sändningsstatus MÅSTE verifieras innan kontakt",
+    "Medvärdar (Robban & Jeanette) är ambassadörer för en direkt konkurrentprodukt (Campmaster Takskydd) — sitter inbakat i podden, svårt att isolera",
+    "Ingen lyssnarsiffra hittad — räckvidden går inte att bedöma"
+   ],
+   "grona_flaggor": [
+    "Etablerat, väletablerat sponsorkod-format i podden (Kosta Lodge, Finnlines, Elmia)",
+    "Genuin, oskriptad radioton",
+    "Samlar flera nischpublik i ett forum (sin egen + Nilla & Mickes + Robban & Jeanettes) — om podden faktiskt sänder"
+   ],
+   "risk": "Medel-till-hög — beror helt på om podden fortfarande är aktiv (obekräftat) och på konkurrentkopplingen inbakad i formatet.",
+   "ej_verifierbart": [
+    "Aktuell publiceringsstatus/senaste avsnitt",
+    "Lyssnarsiffror",
+    "Kommentarskvalitet",
+    "Stories",
+    "Om Bauer Media kräver godkännande av sponsorer i podden"
+   ],
+   "kontaktvag_verifierad": "storahusbilspodden@gmail.com (från podplay.com, VERIFIERAD 2026-09-19)",
+   "personlig_krok_till_mail": "Referera att han själv nyligen bytte husvagn mot husbil och startade Stora Husbilspodden av 'ren lust' — https://www.podplay.com/podcasts/stora-husbilspodden-940955",
+   "rekommendation": "reserv",
+   "beslut_efter_skeptiker": "STRUKEN: podden nedlagd 2023-09-29, ingen kanal",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Veckovis podd om husbilsliv (Stora Husbilspodden), aktiv",
+     "status": "MOTBEVISAT",
+     "belagg": "Podtail/Apple: avsnitt 68 'The final show' 2023-09-29: 'Stora Husbilspodden parkerar på obestämd framtid'. Efterföljaren 'Nya Stora Husbilspodden' (Jeanette & Robban, UTAN Peter Sandholt) sände sitt sista avsnitt 2025-09-25: 'Det här blir det sista avsnittet'. Ingen aktiv podd finns.",
+     "kalla": "https://podtail.se/podcast/stora-husbilspodden/, https://podcasts.apple.com/se/podcast/nya-stora-husbilspodden/id1809529485, iTunes-API lookup 2026-09-19",
+     "konsekvens_for_beslutet": "Kandidaten bygger på en kanal som varit död i tre år. Stryk från finalisterna."
+    },
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Peter Sandholt har befintlig radiopublik via Morrongänget, Mix Megapol Göteborg",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Pressmeddelandet är från 2022-06-03. radioplay.se/mixmegapol och sv.wikipedia Mix Megapol (läst 2026-09-19) nämner inte Peter Sandholt; morgonprogrammet heter sedan 2025 'Gry & Morgongänget'. Om han fortfarande sänder lokalt i Göteborg gick inte att läsa.",
+     "kalla": "https://www.mynewsdesk.com/se/bauermedia/news/peter-sandholt-fraan-morrongaenget-startar-husbilspodd-448779 (2022-06-03), https://radioplay.se/mixmegapol/, https://sv.wikipedia.org/wiki/Mix_Megapol",
+     "konsekvens_for_beslutet": "Radiopubliken är obekräftad 2026 och är dessutom en allmän Göteborgspublik, inte husbilsägare."
+    },
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Följartal OKÄNT, kontakt storahusbilspodden@gmail.com",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Inga lyssnarsiffror publika. Mejladressen finns på Podplay men tillhör en nedlagd podd — okänt om den läses.",
+     "kalla": "https://www.podplay.com/podcasts/stora-husbilspodden-940955",
+     "konsekvens_for_beslutet": "Ingen mätbar räckvidd alls."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Veckovis podd, 69 avsnitt, sponsring här når flera communities",
+     "status": "MOTBEVISAT",
+     "belagg": "Podplay: senaste avsnitt 2023-09-29 '68. The final show': 'Alla resor har sitt slut och Stora Husbilspodden parkerar på obestämd framtid.' Inget avsnitt på tre år.",
+     "kalla": "https://www.podplay.com/podcasts/stora-husbilspodden-940955",
+     "konsekvens_for_beslutet": "STRYK. Det finns ingen podd att sponsra. Mejlen storahusbilspodden@gmail.com finns i beskrivningen men kanalen är nedlagd."
+    },
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Peter Sandholt jobbar på Mix Megapol Göteborg (Bauer)",
+     "status": "GÅR EJ ATT VERIFIERA (2026)",
+     "belagg": "Bauer-pressen är från 2022-06-03. Podplay-texten 2023 hänvisar till Morrongänget. radioplay.se/mixmegapol ger ingen programledarlista (404 på undersidorna). Bauer-policy om externa reklamsamarbeten hittades inte.",
+     "kalla": "https://www.mynewsdesk.com/se/bauermedia/news/peter-sandholt-fraan-morrongaenget-startar-husbilspodd-448779",
+     "konsekvens_for_beslutet": "Om han fortfarande är Bauer-anställd kan interna regler gälla — okänt. Irrelevant om podden stryks."
+    },
+    {
+     "nyckel": "peter-sandholt",
+     "pastaende": "Äger husbil (bytte nyligen från husvagn)",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Uppgiften är från 2022–2023 (Podplay/H&H). Inget nyare.",
+     "kalla": "https://www.husbilhusvagn.se/reportage/radioprofil-gor-succe-med-husbilspodd-jag-ar-lite-full-i-fan (låst)",
+     "konsekvens_for_beslutet": "—"
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "ribecka",
+   "namn": "Rebecka \"Ribecka\" Eskilsson (Nilsson) & Martin Knutsson",
+   "kort_dom": "Störst räckvidd i hela listan (244k YT, ~300k IG, 13:e plats på Husbil & Husvagns YouTube-ranking) men fel person för just det här: hon är 32, bor numera i hus i Åskloster (inte husvagn/husbil), har två egna bolag och redan flera löpande sponsorer. Publiken är lokal/familjelivs-lifestyle, inte 55+ husvagnsägare.",
+   "klassificering": "Skip",
+   "konverteringsroll": "Ren TOF-räckvidd om hon alls användes — men målgruppen matchar inte köparprofilen, så ingen tydlig roll i den här kampanjen.",
+   "poang": {
+    "kannedom": {
+     "p": 8,
+     "belagg": "13:e plats på Husbil & Husvagns YouTube-ranking av alla svenska kanaler; 244 000 YT-prenumeranter verifierat 2026-09-19",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/de-ar-maktigast-i-husbil-pa-youtube ; https://www.youtube.com/@ribecka1041/about"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "INFERENS: 700 000 följare kombinerat och fortsatt tillväxt tyder på bred omtyckthet, men kommentarsfält ej lästa",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "manskligkoppling": {
+     "p": 7,
+     "belagg": "Delar familjeliv öppet: sambo Martin (33), barnen Solvej (3) och Bo (1), kommande bröllop i augusti under namnet Eskilsson, citat: \"Vi har aldrig jobbat med det vi jobbar med för att bli kända\"",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån (Instagram gav 429, YouTube-kommentarer ej hämtade)",
+     "kalla": "—"
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": "—"
+    },
+    "akthet": {
+     "p": 5,
+     "belagg": "Genuin familjedelning men samtidigt professionaliserad verksamhet: två egna bolag (Ribecka AB, Salty Soul AB) plus \"ett antal företag och sponsorer\" och medverkan i SVT:s \"Mammor\" — risk för \"performing real\" i ett redan reklamtungt flöde",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "publikmatch": {
+     "p": 3,
+     "belagg": "Hon är 32 år och bor numera i hus i Åskloster (inte längre husvagn/husbil-boende), innehållet är bred familjelivs-/livsstilsprofil — matchar inte köparprofilen 86% män, 93% 55+, 63% 65+",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "produkttolerans": {
+     "p": 4,
+     "belagg": "Fordonet är en ombyggd skåpbil/buss (inte husvagn/husbil), används numera bara för resor, inte permanentboende; inget belägg för att flödet diskuterar husvagns-/husbilstillbehör; varumärket är brett familjeliv + badkläder (Salty Soul), inte utrustning/underhåll",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade, familjefokuserat innehåll",
+     "kalla": "—"
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade i sökningen",
+     "kalla": "—"
+    },
+    "godgarning": {
+     "p": null,
+     "belagg": "Inget belägg hittat",
+     "kalla": "—"
+    },
+    "selektivitet": {
+     "p": 4,
+     "belagg": "\"Ett antal företag och sponsorer\" nämns som löpande — låg selektivitet, sannolikt reklamtungt flöde",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    },
+    "kommersiell_trovardighet": {
+     "p": 4,
+     "belagg": "Med två egna bolag och flera löpande sponsorer riskerar en ny produktrekommendation att drunkna som \"ännu en annons\" snarare än ett genuint tips",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8"
+    }
+   },
+   "viktat": 5.05,
+   "produkttolerans_motivering": "Under gränsen 6: fordonet är en ombyggd buss/skåpbil (inte husvagn/husbil), hon bor nu i hus och profilen är familjeliv + eget badklädesbolag — ingen synlig koppling till husvagns-/husbilstillbehör eller vinterförvaring. Kontaktas inte enligt regeln.",
+   "roda_flaggor": [
+    "Fordonet är egentligen en skåpbil/buss, inte husvagn/husbil i produktens mening — passar sämre in i briefen än posten ursprungligen antydde",
+    "Ålder i finalistlistan (26 år, 2024) stämmer inte med den verifierade uppgiften (32 år) i hn.se-artikeln — flaggat, inte löst",
+    "Redan två egna bolag + flera sponsorer = hög risk att en ny produkt känns som reklam bland reklam"
+   ],
+   "grona_flaggor": [
+    "Störst verifierad räckvidd och nationellt rankad (13:e plats) i hela husvagns-/husbilsnischen på YouTube"
+   ],
+   "risk": "Låg produkttolerans och svag publikmatch trots stor räckvidd — pengarna går sannolikt till fel publik. Om hon ändå övervägs: gör det som en ren räckviddsaffär, inte som nischtrovärdighet.",
+   "ej_verifierbart": [
+    "Kommentarer och stories ej lästa",
+    "Åldersuppgift osäker: 26 år (finalistlistan, 2024) vs 32 år (hn.se, verifierad direktkälla) — konflikt olöst",
+    "TikTok-handle @ribecka 149 900 följare — identiteten ej bekräftad som samma person",
+    "Publikens ålders-/könssammansättning inte verifierad, bara antagen utifrån innehållet",
+    "Exakt IG-följartal (298 900) inte omverifierat denna session (Instagram gav 429)"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen publik mejladress hittad, sannolikt Instagram-DM eller via bolaget Ribecka AB. Ej testad.",
+   "personlig_krok_till_mail": "Hon och Martin gifter sig i augusti under det gemensamma namnet Eskilsson — https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8 (men se produkttolerans-varningen ovan innan den kroken används)",
+   "rekommendation": "skip",
+   "beslut_efter_skeptiker": "STRUKEN: ingen vagn, fel publik, produkttolerans 4",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "ribecka",
+     "pastaende": "298 900 (Instagram) / 231 000 (YouTube, 13:e plats)",
+     "status": "MOTBEVISAT (siffrorna inaktuella; kanalen större)",
+     "belagg": "YouTube about 2026-09-19: '244 000 prenumeranter', 547 videor, 71,4 M visningar, Sverige. 231 000 är rankingen från 2023-10-06. Instagram 297 000 enligt hn.se 2026-06-21 (färsk sekundärkälla, IG själv 302/429). TikTok @ribecka läst 2026-09-19: 149 900 följare, bio 'yt/insta: ribecka' — samma person bekräftad.",
+     "kalla": "https://www.youtube.com/@ribecka1041/about, https://www.tiktok.com/@ribecka, https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8 (2026-06-21)",
+     "konsekvens_for_beslutet": "Räckvidden är verklig och störst på listan. Handle-identiteten TikTok/YT/IG är bekräftad via TikTok-bion."
+    },
+    {
+     "nyckel": "ribecka",
+     "pastaende": "26 år, bor i ombyggd skåpbil/buss, vanlife/husbilsinnehåll",
+     "status": "MOTBEVISAT",
+     "belagg": "hn.se 2026-06-21: 32 år, bor i ett hus i Åskloster utanför Varberg; medverkade i SVT:s 'Mammor'. Senaste videor: 'HAN VALDE HUSET...' (2026-09-06), 'HUR SKA BARNEN ÖVERLEVA DETTA??', 'ÖVERRASKAR EN FÖLJARE MED EN BIL!!', 'RENOVERAR CAMPERN VI GER BORT TILL EN FÖLJARE'. Familje-/vlogg-kanal med campern som giveaway-rekvisita, inte husbilsliv.",
+     "kalla": "https://www.hn.se/… (2026-06-21), RSS UCB1qBlpuLMi2ydz8zxFfLfw",
+     "konsekvens_for_beslutet": "Åldern i underlaget är 6 år fel och boendet är fel. Publiken (förlossningsvideo, SVT Mammor, barnvideor) är unga mammor — motsatsen till 86 % män 55+. Störst räckvidd, sämst träff. Placera i annan kategori (bred räckvidd), inte som husbilsprofil."
+    },
+    {
+     "nyckel": "ribecka",
+     "pastaende": "Ingen byrå, kontakt via IG-DM",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "TikTok-bion länkar till saltysoul.se — en bikinibutik ('Salty Soul Swimwear', designad i Sverige) utan namn på ägare; nämner inte Ribecka. Kan vara eget bolag eller sponsor. Ingen mejl läst.",
+     "kalla": "https://www.tiktok.com/@ribecka, https://saltysoul.se/",
+     "konsekvens_for_beslutet": "Kontaktväg saknas fortfarande. Bio-länken antyder egna kommersiella intressen (badmode) — långt från målgruppen."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "ribecka",
+     "pastaende": "Bor i ombyggd skåpbil/buss, husbils-/vanlife-innehåll",
+     "status": "MOTBEVISAT",
+     "belagg": "Hallands Nyheter 2026-06-21: 'de har blivit husägare, skaffat båt … bosatta i Åskloster utanför Varberg … Mycket av innehållet i kanalerna har bytts ut från vanlife i Europa till husliv och barn.' Video 2026-06-21 'FULL HOUSETOUR I VÅRT NYA FORDON' är en camper de GER BORT till en följare (2026-08-06 'Renoverar campern vi ger bort'). Video 2026-09-06 'HAN VALDE HUSET…'.",
+     "kalla": "https://www.hn.se/nyheter/varberg/rebecka-livet-ar-annorlunda-nu-men-battre.a81e7ee4-fc07-4487-b6d4-1f9ea8bac2a8; RSS UCB1qBlpuLMi2ydz8zxFfLfw",
+     "konsekvens_for_beslutet": "Inget eget tak att montera på — de äger hus + båt, campern skänks bort. Publiken är familj/husliv, inte husvagnsägare 55+. STRYK eller lägg som ren räckviddsköp utan produktdemo."
+    },
+    {
+     "nyckel": "ribecka",
+     "pastaende": "Inga kända pågående varumärkessamarbeten, ej SVT",
+     "status": "MOTBEVISAT",
+     "belagg": "Betalda samarbeten i beskrivningarna: Anyfin (lån, 2026-09-06), Mantle (hudvård, 2026-08-06), North Aura (2026-07-02). Medverkade i SVT-programmet 'Mammor' i början av 2026 (HN). Driver Ribecka AB + Salty Soul AB (badkläder).",
+     "kalla": "https://youtu.be/YrIN3kFUQeQ; https://youtu.be/csSe6ukhAa0; https://youtu.be/reHLhXHqjk0; HN 2026-06-21",
+     "konsekvens_for_beslutet": "Tar många betalda samarbeten (låneförmedlare = varumärkesrisk för 55+-publik). SVT-medverkan som deltagare, inte anställd — ingen karantän. Priset lär ligga långt över en 1 129-kronorsprodukts budget."
+    },
+    {
+     "nyckel": "ribecka",
+     "pastaende": "Följartal 298 900 IG / 231 000 YT",
+     "status": "BEKRÄFTAT (uppdaterat)",
+     "belagg": "HN 2026-06-21: YouTube 244 000, Instagram 297 000, Snapchat 36 000, TikTok 147 000. YouTube-about 2026-09-19: 244 000.",
+     "kalla": "HN 2026-06-21; https://www.youtube.com/@ribecka1041/about",
+     "konsekvens_for_beslutet": "—"
+    },
+    {
+     "nyckel": "ribecka",
+     "pastaende": "Kontaktväg okänd",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Ingen mejl i YouTube-about (endast instagram.com/ribecka). Bolag: Ribecka AB.",
+     "kalla": "https://www.youtube.com/@ribecka1041/about",
+     "konsekvens_for_beslutet": "—"
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "amalia",
+   "namn": "Amalia Braunsthal & Robin Lundström",
+   "kort_dom": "Från campingbuss-liv till egen glampingverksamhet (Örnviken, Söderköping) med bland annat husvagnsplatser — genuin koppling till camping/husvagn via företaget, men hennes eget fordon och nuvarande fokus är glamping-estetik, inte husvagns-/husbilsunderhåll. Följartalet går inte att fastställa säkert.",
+   "klassificering": "Hybrid",
+   "konverteringsroll": "Mid-funnel livsstilstillit — kan korsa mot husvagnsägare via glampingverksamhetens egna gäster, men är inte en ren husvagns-nischröst.",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "79:e plats på Husbil & Husvagns YouTube-ranking (nationell nischkännedom, lägre än flera andra finalister)",
+     "kalla": "https://www.husbilhusvagn.se/nyheter/de-ar-maktigast-i-husbil-pa-youtube"
+    },
+    "omtyckthet": {
+     "p": 6,
+     "belagg": "INFERENS: ingen kommentarsläsning gjord, men artikeltonen och citaten är genomgående positiva",
+     "kalla": "https://www.nt.se/nyheter/sodra-finno/artikel/de-erbjuder-glamping-med-bohemlyx-instagram-profilerna-har-slagit-ner-bopalarna-efter-aren-i-campingbuss/jpyx647j"
+    },
+    "manskligkoppling": {
+     "p": 7,
+     "belagg": "Delar hela livsresan från campingbuss till egen glampingverksamhet, citat om filosofi: \"Vi vill förädla platsen ... det ska kännas som att vara i naturen men mer 'bohemlyx'\"",
+     "kalla": "https://www.folkbladet.se/nyheter/sodra-finno/artikel/fran-vanlife-till-glampinglife-det-har-ar-var-drom/l7dk23xl"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån (Instagram ej hämtningsbar)",
+     "kalla": "—"
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen",
+     "kalla": "—"
+    },
+    "akthet": {
+     "p": 7,
+     "belagg": "Genuin livsresa (sålde campinglivet för att bygga egen verksamhet), personliga citat, ingen synlig \"performad\" ton",
+     "kalla": "https://www.nt.se/nyheter/sodra-finno/artikel/de-erbjuder-glamping-med-bohemlyx-instagram-profilerna-har-slagit-ner-bopalarna-efter-aren-i-campingbuss/jpyx647j"
+    },
+    "publikmatch": {
+     "p": 4,
+     "belagg": "INFERENS: nisch är \"bohemlyx\"-glamping/ombyggd skolbuss, estetikdrivet innehåll — annan publikprofil än 55+ husvagns-/husbilsägare; ingen ålders-/könsdata på publiken hittad",
+     "kalla": "https://www.folkbladet.se/nyheter/sodra-finno/artikel/fran-vanlife-till-glampinglife-det-har-ar-var-drom/l7dk23xl"
+    },
+    "produkttolerans": {
+     "p": 6,
+     "belagg": "Driver fysisk camping/glamping-anläggning med bland annat husvagnsplatser (direkt operativ koppling till husvagnsägare som gäster), men eget fordon är ombyggd skolbuss och inget belägg finns för att hon innehållsmässigt täcker husvagns-/husbilstillbehör",
+     "kalla": "https://www.folkbladet.se/nyheter/sodra-finno/artikel/fran-vanlife-till-glampinglife-det-har-ar-var-drom/l7dk23xl"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade, varm och personlig ton i artiklarna",
+     "kalla": "—"
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler hittade, registrerat eget företag",
+     "kalla": "—"
+    },
+    "godgarning": {
+     "p": null,
+     "belagg": "Inget belägg hittat",
+     "kalla": "—"
+    },
+    "selektivitet": {
+     "p": 7,
+     "belagg": "Bara ett känt tidigare samarbete hittat (smyckesmärket Cielocrystals, ej camping-relaterat) — tyder på selektivt flöde",
+     "kalla": "finalister.json (ursprunglig research)"
+    },
+    "kommersiell_trovardighet": {
+     "p": 7,
+     "belagg": "INFERENS: låg sponsringsvolym och egen genuin verksamhet talar för att ett produkttips skulle läsas som äkta, inte som reklam",
+     "kalla": "—"
+    }
+   },
+   "viktat": 6.21,
+   "produkttolerans_motivering": "Precis på gränsen (6): hennes glampingverksamhet har husvagnsplatser och camping-koppling, vilket ger en verklig ingång — men hon själv bor inte i husvagn/husbil längre och inget innehåll om produktkategorin (taköverdrag/vinterförvaring) är belagt. Kontaktbar, men marginell.",
+   "roda_flaggor": [
+    "Följartal går inte att fastställa: samma källa (nt.se) gav 60 000 i denna körning mot 169 000 i tidigare research — konflikt olöst",
+    "Hennes eget fordon är en ombyggd skolbuss, inte en klassisk husvagn/husbil"
+   ],
+   "grona_flaggor": [
+    "Driver en riktig camping-/glampingverksamhet med husvagnsplatser — verklig operativ koppling till målgruppen, inte bara innehåll",
+    "Bara ett känt, icke-relaterat tidigare samarbete — lågt reklamtryck"
+   ],
+   "risk": "Följartalskonflikten gör räckviddsantagandet osäkert. Produkttoleransen bygger mer på hennes verksamhet än på hennes eget flöde — testa med en liten brief innan större budget läggs.",
+   "ej_verifierbart": [
+    "Kommentarer och stories ej lästa",
+    "Instagram-följartal: 60 000 (denna körnings läsning av nt.se) mot 169 000 (tidigare researchkälla) — olöst konflikt",
+    "Publikens ålders-/könssammansättning ej verifierad",
+    "Kontaktväg (kontakt@amaliabrauns.se) hittad men inte testad"
+   ],
+   "kontaktvag_verifierad": "kontakt@amaliabrauns.se — VERIFIERAD som angiven kontaktadress på amaliabrauns.se, men inte testad med ett faktiskt mejl.",
+   "personlig_krok_till_mail": "Startade nyligen glampingverksamheten Örnviken i Söderköping med bland annat husvagnsplatser, efter flera år i ombyggd campingbuss — https://www.folkbladet.se/nyheter/sodra-finno/artikel/fran-vanlife-till-glampinglife-det-har-ar-var-drom/l7dk23xl",
+   "rekommendation": "reserv",
+   "beslut_efter_skeptiker": "STRUKEN: bor i stuga, ingen vagn, följartal utan källa",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "amalia",
+     "pastaende": "169 000 (Instagram) 'VERIFIERAD' via nt.se; 43 800 (YouTube, plats 79)",
+     "status": "MOTBEVISAT",
+     "belagg": "nt.se (2022-05-29) säger 60 000 IG-följare; folkbladet.se (2022-06-18) säger ca 61 000. Ingen läst källa säger 169 000 — siffran har inget belägg. YouTube i dag: @amaliabraunsthal 55 100 prenumeranter (about 2026-09-19), 619 videor; 43 800 är 2023-rankingen. Instagram @amaliabrauns svarade 302/429.",
+     "kalla": "https://www.nt.se/… (2022-05-29), https://www.folkbladet.se/… (2022-06-18), https://www.youtube.com/@amaliabraunsthal/about",
+     "konsekvens_for_beslutet": "IG-talet i underlaget är oförankrat (kan vara en förväxling eller påhitt) och källhänvisningen är falsk. Räkna med YouTube 55 100 tills IG lästs."
+    },
+    {
+     "nyckel": "amalia",
+     "pastaende": "Tydlig fordonslivs-vinkel; bor i skolbuss / driver glamping",
+     "status": "MOTBEVISAT",
+     "belagg": "YouTube about 2026-09-19: 'nu är vi tillbaka i sverige och har köpt oss ett litet hus som vi håller på att renovera och bygga ut'. Senaste videor: 'VI HAR FLYTTAT - behövde lämna vårt hus..' (2026-09), 'TOTAL SCAM | vårt nya 100k golv!!', 'bygger Sveriges lyxigaste pool', 'GÖR KAOS I HELA HUSET'. Husrenovering, inte fordon. Ålder 31/32 (2022) ⇒ ~35 i dag; barn 8 och 4 (2022).",
+     "kalla": "https://www.youtube.com/@amaliabraunsthal/about, RSS UCBzkCwmARKFViO860vgT6gw",
+     "konsekvens_for_beslutet": "Vanlife-eran är över sedan 2022. Publiken är en ung familjepublik som följer husbygge. Ingen träff mot husvagns-/husbilsägare 55+. Stryk eller flytta till 'bred räckvidd'."
+    },
+    {
+     "nyckel": "amalia",
+     "pastaende": "Kontakt kontakt@amaliabrauns.se VERIFIERAD",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "amaliabrauns.se/glamping/ läst 2026-09-19 innehåller bara rubriken 'Glamping' och en IG-länk — ingen mejladress på sidan.",
+     "kalla": "https://amaliabrauns.se/glamping/",
+     "konsekvens_for_beslutet": "Mejlen är obekräftad; 'VERIFIERAD' är felmärkt."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "amalia",
+     "pastaende": "169 000 Instagram (VERIFIERAD via NT)",
+     "status": "MOTBEVISAT (källan säger annat)",
+     "belagg": "NT-artikeln 2022-05-29 säger '60 000 följare'; Folkbladet 2022-06-18 'cirka 61 000'. Siffran 169 000 står inte i någon av de angivna källorna. Instagram gav 429.",
+     "kalla": "https://www.nt.se/nyheter/sodra-finno/artikel/…/jpyx647j; https://www.folkbladet.se/…/l7dk23xl",
+     "konsekvens_for_beslutet": "Räkna med 60–70k tills IG kan läsas. YouTube är 55 100 (2026-09-19), upp från 43 800."
+    },
+    {
+     "nyckel": "amalia",
+     "pastaende": "Äger fordon / driver glampingen Örnviken",
+     "status": "MOTBEVISAT",
+     "belagg": "YouTube-about: 'nu är vi tillbaka i sverige och har köpt oss ett litet hus'. Video 2026-08-30 'VI HAR FLYTTAT – behövde lämna vårt hus': 'vi köpte en liten stuga i mitten av Sverige som vi renoverar … En bas i Sverige'. Glampingen nämns inte längre. Ingen husvagn/husbil, utan ombyggda skolbussar.",
+     "kalla": "https://www.youtube.com/@amaliabraunsthal/about; https://youtu.be/x2ZM5sivMTc",
+     "konsekvens_for_beslutet": "Inget husvagns-/husbilstak. Innehållet är husrenovering/familj. STRYK för produktdemo."
+    },
+    {
+     "nyckel": "amalia",
+     "pastaende": "Kontakt kontakt@amaliabrauns.se VERIFIERAD",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "amaliabrauns.se/kontakt/ = 404; ingen mailto på startsidan eller /glamping/ (sidan innehåller bara rubriken 'Glamping'). Betalt samarbete: Readly (2026-08-30).",
+     "kalla": "https://amaliabrauns.se/; https://amaliabrauns.se/glamping/",
+     "konsekvens_for_beslutet": "Adressen är inte belagd på någon läst sida."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "hanna-hoglund",
+   "namn": "Hanna Höglund (hemmahoshanna)",
+   "kort_dom": "Stort TikTok-konto (303k) men fel kärnämne (hem/städ, inte husvagn) och sannolikt fel publik (yngre, mer kvinnodominerad än köparbasens 86% män/93% 55+). Husvagnsinnehållet är ett sidospår som en husvagnstillverkare (Kabe) råkat uppmärksamma — inte ett flöde där följarna redan pratar utrustning i 1000–2000 kr-klassen.",
+   "klassificering": "Skip",
+   "konverteringsroll": "Ren räckvidd/TOF i bästa fall — svag direktkonverterare eftersom kärnpubliken sannolikt inte matchar husvagnsköparen",
+   "poang": {
+    "kannedom": {
+     "p": 6,
+     "belagg": "VERIFIERAD nischad kännedom: husvagnstillverkaren Kabe skrev en egen artikel om hennes TikTok-framgång, vilket visar att hon syns i husvagnskretsar trots att kontot är brett hem/städ.",
+     "kalla": "https://www.kabe.se/en/news/hanna-s-success-on-tiktok/"
+    },
+    "omtycktet": {
+     "p": 7,
+     "belagg": "INFERENS: 303 400 följare plus att en branschaktör (Kabe) lyfter fram henne positivt tyder på bred uppskattning. Kommentarfältet är inte läsbart härifrån, så betyget är en uppskattning.",
+     "kalla": "https://www.tiktok.com/@hemmahoshanna"
+    },
+    "manskl_koppling": {
+     "p": 5,
+     "belagg": "INFERENS: hem/städ-genren visar ofta vardag, men inget konkret belägg hittades i underlaget om att hon delar motgångar eller pratar direkt TILL följarna om husvagnslivet specifikt.",
+     "kalla": ""
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån (TikTok-kommentarer ej hämtningsbara), mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 5,
+     "belagg": "INFERENS: etablerat varumärkessamarbete (Nivea Sun Kids) synligt i ett husvagnsrelaterat inlägg — blandar kommersiellt och redaktionellt, vilket sänker äktheten något. Hem/städ-genren på TikTok är också ofta produktionsstyrd.",
+     "kalla": "finalistunderlag (kanda_samarbeten)"
+    },
+    "publikmatch": {
+     "p": 3,
+     "belagg": "INFERENS: TikTok hem/städ-innehåll drar en publik som sannolikt är yngre och mer kvinnodominerad än köparbasen (86% män, 93% 55+). Ingen data om hennes faktiska följardemografi hittad.",
+     "kalla": ""
+    },
+    "produkttolerans": {
+     "p": 5,
+     "belagg": "Husvagnsinnehåll finns och är uppmärksammat av Kabe (VERIFIERAD), men det är sidoinnehåll i ett brett hem/städ-flöde — ingen känd rekommendation av utrustning i taköverdragets prisklass. Under 6-tröskeln.",
+     "kalla": "https://www.kabe.se/en/news/hanna-s-success-on-tiktok/"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: inga skandaler eller kontroverser hittade i underlaget, varmt hem-innehåll ger lågriskprofil.",
+     "kalla": ""
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "INFERENS: inget negativt funnet i sökningen.",
+     "kalla": ""
+    },
+    "god_garning": {
+     "p": null,
+     "belagg": "Inget specifikt gott-gärning-signal hittat i underlaget.",
+     "kalla": ""
+    },
+    "selektivitet": {
+     "p": 6,
+     "belagg": "INFERENS: endast ett känt samarbete (Nivea) hittat — pekar varken på reklamtungt eller extremt selektivt flöde. Underlaget är för tunt för säkert omdöme.",
+     "kalla": "finalistunderlag (kanda_samarbeten)"
+    },
+    "kommersiell_trovardighet": {
+     "p": 5,
+     "belagg": "INFERENS: Nivea-samarbetet syns enligt underlaget i en husvagnsrelaterad post, vilket blandar reklam och redaktionellt i samma sammanhang — sänker trovärdigheten i just husvagnsnischen.",
+     "kalla": "finalistunderlag (kanda_samarbeten)"
+    }
+   },
+   "viktat": 5.11,
+   "produkttolerans_motivering": "Husvagnsinnehållet är verifierat men perifert (sidoämne i ett brett hem/städ-konto), och det finns ingen dokumenterad vana att rekommendera camping-/husvagnsutrustning i 1000–2000 kr-klassen. Landar under 6-tröskeln — publiken hade sannolikt höjt på ögonbrynen.",
+   "roda_flaggor": [
+    "Sannolik köns-/åldersmismatch mot köparbasen (86% män, 93% 55+)",
+    "Husvagnsinnehåll är sidospår, inte kärnämne",
+    "TikTok-kommentarer och stories går inte att verifiera härifrån"
+   ],
+   "grona_flaggor": [
+    "Husvagnstillverkaren Kabe har skrivit en egen artikel om henne — viss trovärdighet i nischen",
+    "Mycket stor räckvidd (303 400 följare)",
+    "Tidigare varumärkessamarbete (Nivea) synligt just i ett husvagnsrelaterat inlägg"
+   ],
+   "risk": "Låg skandalrisk, men hög risk för dålig konvertering pga sannolik publikmismatch (fel kön/ålder).",
+   "ej_verifierbart": [
+    "Kommentarkvalitet",
+    "Stories",
+    "Instagram-följartal (@hemmahoshanna_)",
+    "Faktisk köns-/åldersfördelning bland följarna",
+    "Gott-gärning-signal"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen kontaktväg hittad i underlaget",
+   "personlig_krok_till_mail": "Husvagnstillverkaren Kabe skrev nyligen en egen artikel om hennes TikTok-framgång och husvagnsinnehåll — https://www.kabe.se/en/news/hanna-s-success-on-tiktok/",
+   "rekommendation": "skip",
+   "beslut_efter_skeptiker": "RESERV: produkttolerans 5, kontaktas inte",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "303 300 följare TikTok",
+     "status": "BEKRÄFTAT",
+     "belagg": "tiktok.com/@hemmahoshanna läst 2026-09-19: followerCount 303 300, 744 videor, 13,8 M gilla, nickname 'Hanna', bio 'Hannahoglund.jobb@gmail.com / Instagram - Hemmahoshanna_'. Kabe-artikeln 2025-09-28 sa 'just over 283,000' — konsekvent tillväxt, samma konto.",
+     "kalla": "https://www.tiktok.com/@hemmahoshanna, https://www.kabe.se/en/news/hanna-s-success-on-tiktok/ (2025-09-28)",
+     "konsekvens_for_beslutet": "Siffran håller och är primär. Kontaktmejl finns i bion (saknas i underlaget)."
+    },
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "Publiken äger husvagn / matchar äldre män",
+     "status": "MOTBEVISAT (som sannolikhet)",
+     "belagg": "Kabe 2025-09-28: Hanna är 28 år, äger KABE Classic 660 GDL (2017). Linktree (läst 2026-09-19) är en affiliate-lista: kollagen, mascara, ögonfransböjare, Polly Pocket, LEGO, snackslådor, Bogg Bag, babyhack.se — produkter för unga mammor. Nivea Sun Kids-samarbete. TikTok-plattformen i sig är den yngsta.",
+     "kalla": "https://linktr.ee/hemmahoshanna, https://www.kabe.se/en/news/hanna-s-success-on-tiktok/",
+     "konsekvens_for_beslutet": "Allt hon monetariserar riktar sig till kvinnor 25–40 med småbarn. Husvagnsägandet är äkta (Kabe bekräftar), men publiken är inte köparen. Om hon används: mät med egen rabattkod, förvänta låg konvertering."
+    },
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "Aktiv 2026, svensk",
+     "status": "BEKRÄFTAT (indirekt)",
+     "belagg": "744 videor, språk sv-SE i profildatan, Kabe-artikel sept 2025. Datum på senaste inlägg gick inte att läsa ur profilsidan (videolistan laddas med JS).",
+     "kalla": "https://www.tiktok.com/@hemmahoshanna",
+     "konsekvens_for_beslutet": "Ingen anledning att tro att kontot sover."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "Äger husvagn — oklart om ägo eller lån",
+     "status": "MOTBEVISAT (den äger)",
+     "belagg": "Kabe 2025-09-28: 'became enthusiastic when she found a used KABE Classic 660 GDL two years ago' — 'Camper: KABE Classic 660 GDL, 2017'. Bor i Jäderfors utanför Sandviken, 28 år, partner Alexander, två barn. 4–5 veckor husvagnssemester/år, 283 000 följare då; TikTok 303 300 i dag. Mejl i TikTok-bio: Hannahoglund.jobb@gmail.com.",
+     "kalla": "https://www.kabe.se/en/news/hanna-s-success-on-tiktok/; https://www.tiktok.com/@hemmahoshanna",
+     "konsekvens_for_beslutet": "Egen husvagn, står hemma större delen av året. Kontaktväg verifierad. Kabe-artikeln är redaktionell PR, inget överdragssamarbete."
+    },
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "Produkttolerans / minimalism-krock",
+     "status": "BEKRÄFTAT SOM RISK",
+     "belagg": "Kabe: 'is fundamentally a minimalist … I prefer to remove things rather than add them … depicts an ordinary family life without ostentatious luxury'. Samtidigt: 'I'm very happy to be able to support myself as a digital creator' — hon lever på kontot. Hon är 28 — publiken är sannolikt inte 55+.",
+     "kalla": "https://www.kabe.se/en/news/hanna-s-success-on-tiktok/",
+     "konsekvens_for_beslutet": "Passar som 'ordning och skydd', inte som pryl. Publikens ålder matchar troligen inte målgruppen 55–65+."
+    },
+    {
+     "nyckel": "hanna-hoglund",
+     "pastaende": "Nivea-samarbete",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Instagram 429; TikTok-sidans HTML visar inga inläggstexter.",
+     "kalla": "—",
+     "konsekvens_for_beslutet": "—"
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "gurgin",
+   "namn": "Gurgîn Bakircioglu",
+   "kort_dom": "Nationellt känd mediaprofil (SVT-dokumentären 'Aldrig mer kebab', tidigare Barnkanalen/Gomorron Sverige/P5) med genuint klimatmotiverat husbilsliv — men uppgifterna om hur mycket han faktiskt bor i husbilen motsäger varandra ('sedan dess' vs 'deltid' i senaste kollen), YouTube-kontot är litet (1 570 prenumeranter) och flera andra egna varumärken (Hundpodden, Vecanis) konkurrerar om fokus.",
+   "klassificering": "Icon",
+   "konverteringsroll": "TOF-kändisskap med stor generell kännedom, men oklar koppling till faktisk husvagnsvardag gör honom till en svag direktkonverterare i just den här nischen",
+   "poang": {
+    "kannedom": {
+     "p": 8,
+     "belagg": "VERIFIERAD nationell kännedom: SVT-dokumentären 'Aldrig mer kebab' (regi Hogir Hirori), tidigare Barnkanalen, Gomorron Sverige och P5 Stockholm/Metropol. Klart starkare generell kännedom än övriga i gruppen.",
+     "kalla": "https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-for-klimatet-fran-kebabkock-till-vegan-dumpstrare"
+    },
+    "omtycktet": {
+     "p": 6,
+     "belagg": "INFERENS: nationellt känd, men klimataktivism kan vara polariserande — vissa attraheras, vissa irriteras. Neutral-positiv utan direkt kommentardata.",
+     "kalla": ""
+    },
+    "manskl_koppling": {
+     "p": 7,
+     "belagg": "VERIFIERAD/INFERENS: dokumentären visar honom och hunden Ronja genom minusgrader och motorproblem i husbilen — konkret sårbarhet/vardag visad för en nationell publik.",
+     "kalla": "https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-for-klimatet-fran-kebabkock-till-vegan-dumpstrare"
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 7,
+     "belagg": "INFERENS: klimatmotiverat livsval dokumenterat med motgångar (kyla, motorproblem) snarare än glansigt — tyder på äkthet, men som f.d. mediaprofil finns en viss 'performing'-risk.",
+     "kalla": "https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-for-klimatet-fran-kebabkock-till-vegan-dumpstrare"
+    },
+    "publikmatch": {
+     "p": 4,
+     "belagg": "INFERENS: publiken kring klimataktivism/minimalism är sannolikt bredare och yngre/mer miljömedveten än köparbasen (93% 55+). Han matchar könsmässigt (man), men temat (minimalism/klimat) är inte samma sak som traditionellt camping-hobby-intresse.",
+     "kalla": ""
+    },
+    "produkttolerans": {
+     "p": 4,
+     "belagg": "MOTSÄGELSE i underlaget: 'lever sedan dess i husbil' (heltid) enligt huvudbeskrivningen kontra 'bor deltid i husbil' enligt senaste kollen 2026-09-19. Han driver dessutom flera andra egna projekt (Hundpodden Vår Bästa Vän, Vecanis) som konkurrerar om fokus. Husbilslivet är en profilerande story-vinkel snarare än löpande praktisk vardag med utrustningstips. Under 6-tröskeln.",
+     "kalla": "https://www.gurgin.se/ (jfr https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-for-klimatet-fran-kebabkock-till-vegan-dumpstrare)"
+    },
+    "trygghet": {
+     "p": 6,
+     "belagg": "INFERENS: ingen skandal hittad, men en tydlig aktivistprofil kan av en äldre, mer traditionell publik uppfattas som 'agenda-driven' snarare än trygg vardag.",
+     "kalla": ""
+    },
+    "varumarkessakerhet": {
+     "p": 5,
+     "belagg": "OKÄNT/INFERENS: nuvarande koppling till SVT/SR är okänd (tidigare aktiv, nuvarande anställningsstatus ej fastställd) — om han fortfarande har ett SR/SVT-uppdrag kan opartiskhetsregler göra ett synligt kommersiellt samarbete känsligt. Bör kontrolleras innan kontakt.",
+     "kalla": ""
+    },
+    "god_garning": {
+     "p": 7,
+     "belagg": "VERIFIERAD: sålde lägenheten och sa upp sig för klimatets skull, driver dessutom ett hundprojekt (Vecanis, vegansk hundmat) — tydligt 'gör gott'-narrativ.",
+     "kalla": "https://www.sverigesradio.se/artikel/gurgin-bakircioglu-sa-upp-sig-och-salde-lagenheten-for-klimatet"
+    },
+    "selektivitet": {
+     "p": null,
+     "belagg": "Inget underlag hittat om antal eller täthet av kommersiella samarbeten.",
+     "kalla": ""
+    },
+    "kommersiell_trovardighet": {
+     "p": 5,
+     "belagg": "INFERENS: som f.d. medieprofil med flera egna varumärken (Vecanis, Hundpodden) riskerar en produktrekommendation att uppfattas som ytterligare ett av hans 'projekt' snarare än ett spontant tips.",
+     "kalla": ""
+    }
+   },
+   "viktat": 5.49,
+   "produkttolerans_motivering": "Underlaget motsäger sig självt om hur mycket han faktiskt bor i husbilen just nu (heltid vs deltid), och husbilslivet konkurrerar med flera andra egna projekt om hans fokus. Detta är en story-vinkel för honom, inte en fortlöpande praktisk vardag där han redan pratar utrustning. Under 6-tröskeln — kräver research innan ett ev. beslut att ändå kontakta.",
+   "roda_flaggor": [
+    "Motstridiga uppgifter om deltid/heltid i husbilen — måste redas ut innan kontakt",
+    "Okänd nuvarande SR/SVT-koppling (möjlig opartiskhetsrisk vid kommersiellt samarbete)",
+    "Flera egna varumärken (Hundpodden, Vecanis) konkurrerar om fokus",
+    "Litet YouTube-konto (1 570 prenumeranter) trots stor generell kändisskap — oklar faktisk digital räckvidd i husbilsnischen"
+   ],
+   "grona_flaggor": [
+    "Stark nationell kännedom via SVT-dokumentär",
+    "Tydligt 'gör gott'-narrativ (sålde allt för klimatet)",
+    "Matchar köparbasens kön (man)"
+   ],
+   "risk": "Medel-hög. Produkttoleransen är osäker (motsägelse i underlaget) och SR/SVT-status okänd — kräver research innan ev. kontakt tas, oavsett hans stora namnkännedom.",
+   "ej_verifierbart": [
+    "Exakt omfattning av husbilslivet just nu (deltid/heltid-motsägelsen)",
+    "Nuvarande SR/SVT-anställning",
+    "Selektivitet/antal samarbeten",
+    "Kommentarkvalitet",
+    "Stories",
+    "Kontaktväg (formulär ej testat)"
+   ],
+   "kontaktvag_verifierad": "Kontaktformulär på gurgin.se — INFERENS, ej testat",
+   "personlig_krok_till_mail": "SVT-dokumentären 'Aldrig mer kebab' (regi Hogir Hirori) om honom och hunden Ronja i husbilen genom en svensk vinter — https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-for-klimatet-fran-kebabkock-till-vegan-dumpstrare",
+   "rekommendation": "skip",
+   "beslut_efter_skeptiker": "STRUKEN: polariserande, sovande kanal, produkttolerans 4",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "gurgin",
+     "pastaende": "Lever i husbil på heltid sedan 2023; SR-poddar",
+     "status": "MOTBEVISAT",
+     "belagg": "gurgin.se (läst 2026-09-19): 'Efter fyra år av heltid i husbilen och tre år deltid bor jag nu i ett kollektiv i Stockholms finaste go-zone Östberga.' YouTube about: 'bor deltid i orten och deltid i min husbil'. husbilhusvagn.se 2023-03-08: 'bor i husbil och kollektiv'. Han lämnade SR: 'sa upp mig från min fasta tjänst'.",
+     "kalla": "https://www.gurgin.se/, https://www.youtube.com/@gurgin/about, https://www.husbilhusvagn.se/nyheter/gurgin-valde-husbilsliv-ny-dokumentar (2023-03-08)",
+     "konsekvens_for_beslutet": "Bor i kollektiv i Stockholm. Husbilen är deltid/historisk. Dokumentären är från mars 2023."
+    },
+    {
+     "nyckel": "gurgin",
+     "pastaende": "Multi-plattform (Instagram/YouTube/SR-poddar) med räckvidd",
+     "status": "MOTBEVISAT",
+     "belagg": "YouTube about 2026-09-19: 1 570 prenumeranter, 15 videor, senaste 2024-01-24 (283 vis), dessförinnan 2023 — sovande i 2,5 år. Innehåll: veganism, dumpstring, politik ('HÖGERN ÄR KÄNSLIGA SNOWFLAKES'). Instagram @Gurgin 302/429. Nuvarande projekt: Hundpodden Vår Bästa Vän, Vecanis (vegansk hundmat), krönikor i Syre.",
+     "kalla": "https://www.youtube.com/@gurgin/about, RSS UCsrYdRB0yLqsRJq0U8o7YzQ, https://www.gurgin.se/",
+     "konsekvens_for_beslutet": "Ingen aktiv husbilskanal, politiskt polariserande profil, minsta räckvidd på listan. Stryk."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "gurgin",
+     "pastaende": "Köpte husbil 2023, lever sedan dess i husbil",
+     "status": "MOTBEVISAT",
+     "belagg": "Husvagn & Camping 2017-06-13: köpte Eura Mobil Integra 600 (1998) och 'lever numera husbilsliv på heltid'. Expressen 2019: sa upp sig 'för tre år sedan'. SVT 2023: 'bor både i husbilen och ibland i sin flickväns lägenhet'. gurgin.se + YouTube 2026: 'bor deltid i orten och deltid i min husbil'.",
+     "kalla": "https://www.husvagnochcamping.se/artiklar/nyheter/20170613/…; https://www.svt.se/nyheter/inrikes/radikala-livsforandringen-…; https://www.gurgin.se/; https://www.youtube.com/@gurgin/about",
+     "konsekvens_for_beslutet": "Husbil sedan ~2016, deltid nu. Dokumentären är från 2023, inte 'ny'. Husbilen (1998) är gammal — överdrag är i sig rimligt, men se nedan."
+    },
+    {
+     "nyckel": "gurgin",
+     "pastaende": "SVT-karantän / SR-anställning",
+     "status": "MOTBEVISAT (ingen karantän) MED TILLÄGG",
+     "belagg": "'Aldrig mer kebab' finns inte på SVT Play (404, 2026-09-19). Han är enligt egen sajt 'journalist och opinionsbildare/grön föreläsare', inte anställd. Representeras av föreläsarbyråerna Athenas och Green Communication (Wikipedia-källor) — byrå finns, men för föreläsningar.",
+     "kalla": "https://www.svtplay.se/aldrig-mer-kebab; https://www.athenas.se/foerelaesare/gurgin-bakircioglu/; https://sv.wikipedia.org/wiki/Gurgîn_Bakircioglu",
+     "konsekvens_for_beslutet": "Inga reklamregler i vägen. Kontakt: info@gurgin.se (avkodad ur sajten)."
+    },
+    {
+     "nyckel": "gurgin",
+     "pastaende": "Varumärkessäkerhet / produkttolerans",
+     "status": "BEKRÄFTAT SOM HÖG RISK",
+     "belagg": "Profil: klimataktivism, veganism, 'politisk barnfrihet', 'sålde 95 % av ägodelarna', 'husbilsminimalist', dumpstring. YouTube-titlar 2023: 'HÖGERN ÄR KÄNSLIGA SNOWFLAKES', 'HENRIK JÖNSSSON ÄLSKAR BLATTAR OCH VIN!', 'FANATISK VEGAN SKÄLLER UT DJURPARKERNA … I RIKSDAGEN'. Kritiserade EU:s migrationsavtal i Strasbourg (Wikipedia). Kanalen död sedan 2024-01 (1 570 prenumeranter, 15 videor). Driver Vecanis (vegansk hundmat).",
+     "kalla": "RSS UCsrYdRB0yLqsRJq0U8o7YzQ; https://sv.wikipedia.org/wiki/Gurgîn_Bakircioglu; https://www.gurgin.se/",
+     "konsekvens_for_beslutet": "Politiskt polariserande och antikonsumtionsprofil — att sälja en pryl krockar med hela varumärket, och en 55+ husvagnspublik är delvis motsatt läger. YouTube är död. STRYK."
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  },
+  {
+   "nyckel": "nathalie-jonsson",
+   "namn": "Nathalie Jonsson",
+   "kort_dom": "Jakt- och friluftsprofil (24 000 följare, VERIFIERAD) som tillsammans med partner Robert Salomonsson driver Jakt för livet och en fysisk campingverksamhet (Nynäs Camp). Könsmatchningen mot köparbasen är bra, men huvudnischen är jakt — inte husvagn/husbil — och det är okänt om hon själv äger husvagn/husbil.",
+   "klassificering": "Skip",
+   "konverteringsroll": "Sidospår in i jakt-/friluftspubliken — i bästa fall TOF, oklar direkt koppling till husvagnsköp",
+   "poang": {
+    "kannedom": {
+     "p": 5,
+     "belagg": "VERIFIERAD nischad kännedom inom jaktkretsar (egen artikel i branschtidningen Jaktjournalen), men ingen koppling till husvagns-/husbilsnischen specifikt hittad.",
+     "kalla": "https://www.jaktjournalen.se/jaktprofilen-for-nathaliejfl-ar-det-viktigt-att-hitta-sin-nisch-och-folja-den"
+    },
+    "omtycktet": {
+     "p": 6,
+     "belagg": "INFERENS: omskriven positivt av både Jaktjournalen och Vildmarken.se. Ingen kommentardata läst.",
+     "kalla": "https://vildmarken.se/reportage/nathalie-jonsson-om-resan-med-jakt-livet-vi-borjade-med-en-kamera-och-en-drom-om-att-leva-pa-jakten/"
+    },
+    "manskl_koppling": {
+     "p": 6,
+     "belagg": "INFERENS: parrelation med Robert Salomonsson och yrke som barnmorska ger en mänsklig dimension, men inget konkret belägg om att hon delar vardag/motgångar hittades i underlaget.",
+     "kalla": ""
+    },
+    "kommentarer": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "stories": {
+     "p": null,
+     "belagg": "EJ LÄSBART härifrån, mäts i tvåveckorsobservationen.",
+     "kalla": ""
+    },
+    "akthet": {
+     "p": 6,
+     "belagg": "INFERENS: driver egen fysisk verksamhet (Nynäs Camp) och eget varumärke (Jakt för livet) — reellt engagemang, men eget varumärke innebär också ett inbyggt kommersiellt intresse.",
+     "kalla": ""
+    },
+    "publikmatch": {
+     "p": 6,
+     "belagg": "INFERENS: jakt-/friluftspublik är ofta äldre män, vilket matchar köparbasens 86% män väl — men 'jakt' och 'husvagn/husbil' är inte samma köpbeteende, så matchningen är delvis snarare än direkt.",
+     "kalla": ""
+    },
+    "produkttolerans": {
+     "p": 5,
+     "belagg": "Hon driver Nynäs Camp (en campingverksamhet), vilket är ett starkt indicium på koppling till camping/husvagnsliv — men det är okänt om hon själv äger husvagn/husbil eller om hennes följare diskuterar taköverdrag specifikt. Huvudnischen är jakt. Under 6-tröskeln.",
+     "kalla": "https://www.jaktjournalen.se/jaktprofilen-for-nathaliejfl-ar-det-viktigt-att-hitta-sin-nisch-och-folja-den"
+    },
+    "trygghet": {
+     "p": 7,
+     "belagg": "INFERENS: yrke som barnmorska plus etablerad familjedriven verksamhet ger en trygg, seriös profil; inget negativt hittat.",
+     "kalla": ""
+    },
+    "varumarkessakerhet": {
+     "p": 7,
+     "belagg": "INFERENS: inget kontroversiellt funnet. Jaktnisch kan vara polariserande för vissa målgrupper, men inte för den här (husvagnsägare 55+, delvis friluftsintresserade).",
+     "kalla": ""
+    },
+    "god_garning": {
+     "p": null,
+     "belagg": "Inget specifikt gott-gärning-signal hittat i underlaget.",
+     "kalla": ""
+    },
+    "selektivitet": {
+     "p": null,
+     "belagg": "Inget underlag hittat om antal eller täthet av kommersiella samarbeten.",
+     "kalla": ""
+    },
+    "kommersiell_trovardighet": {
+     "p": 6,
+     "belagg": "INFERENS: driver eget varumärke (Jakt för livet), vilket ger vana vid kommersiellt content — kan gå åt båda håll för trovärdigheten. Neutral bedömning.",
+     "kalla": ""
+    }
+   },
+   "viktat": 5.83,
+   "produkttolerans_motivering": "Hon driver en fysisk campingverksamhet (Nynäs Camp) tillsammans med Robert Salomonsson, vilket är ett reellt indicium — men det är okänt om hon själv äger husvagn/husbil eller om hennes egna följare pratar utrustning i den här prisklassen. Huvudämnet är jakt, inte husvagn. Landar precis under 6-tröskeln.",
+   "roda_flaggor": [
+    "Huvudnisch är jakt, inte husvagn/husbil",
+    "Okänt om hon själv äger husvagn/husbil",
+    "Ingen kontaktväg hittad i underlaget",
+    "Kommentarer och stories inte läsbara härifrån"
+   ],
+   "grona_flaggor": [
+    "Driver egen fysisk campingverksamhet (Nynäs Camp) — konkret koppling till camping",
+    "Stark könsmatchning mot köparbasen (jakt-publik ofta män)",
+    "Yrke som barnmorska ger trovärdighet/trygghet"
+   ],
+   "risk": "Medel. Produktrelevansen är oklar (jakt ≠ husvagn/husbil), så konverteringen är osäker trots bra kön/ålders-signaler.",
+   "ej_verifierbart": [
+    "Äger hon själv husvagn/husbil",
+    "Kontaktväg",
+    "Kommentarkvalitet",
+    "Stories",
+    "Gott-gärning-signal",
+    "Selektivitet/antal samarbeten",
+    "Faktisk publikdemografi"
+   ],
+   "kontaktvag_verifierad": "OKÄNT — ingen kontaktväg hittad i underlaget",
+   "personlig_krok_till_mail": "Hon driver Nynäs Camp tillsammans med Robert Salomonsson vid sidan av Jakt för livet — https://vildmarken.se/reportage/nathalie-jonsson-om-resan-med-jakt-livet-vi-borjade-med-en-kamera-och-en-drom-om-att-leva-pa-jakten/",
+   "rekommendation": "skip",
+   "beslut_efter_skeptiker": "STRUKEN: produkttolerans 5, ingen vagn",
+   "sandordning": null,
+   "skeptiker_A": [
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "24 000 följare Instagram — VERIFIERAD via Jaktjournalen",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Jaktjournalen-artikeln är daterad 2019-12-01 och ligger bakom betalvägg — siffran är nästan sju år gammal och kunde inte läsas i dag. vildmarken.se (2025-11-11) anger inget följartal. Instagram nathaliejfl svarade 302/429.",
+     "kalla": "https://www.jaktjournalen.se/jaktprofilen-for-nathaliejfl-ar-det-viktigt-att-hitta-sin-nisch-och-folja-den (2019-12-01, betalvägg), https://vildmarken.se/reportage/nathalie-jonsson-om-resan-med-jakt-livet-vi-borjade-med-en-kamera-och-en-drom-om-att-leva-pa-jakten/ (2025-11-11)",
+     "konsekvens_for_beslutet": "'VERIFIERAD' är felmärkt: källan är 2019 och oläsbar. Ingen aktuell räckviddssiffra."
+    },
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "Nynäs Camp = camping ⇒ koppling till husvagns-/campingliv",
+     "status": "MOTBEVISAT",
+     "belagg": "jaktforlivet.se: 'Vår Jakt & Fiske Camp ligger i den lilla fjällbyn Storbäck, på stranden av den fiskrika Stora Arksjön' — självhushållsstugor, strandbastu, vildmarksstugor, jakt/fiske. Inga husvagnsplatser eller ställplats nämns. nynascamp.se finns inte (DNS ENOTFOUND).",
+     "kalla": "https://jaktforlivet.se/",
+     "konsekvens_for_beslutet": "'Camp' betyder jaktläger, inte camping. Ingen husvagns-/husbilskoppling alls. Enda plus: jaktpubliken är sannolikt manlig — men okänd ålder och ingen fordonskoppling. Stryk från husvagnsspåret."
+    },
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "Aktiv 2026",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Senaste läsbara spår: vildmarken.se 2025-11-11 och jaktforlivet.se med innehåll från 2022–jan 2025. Instagram oläsbar.",
+     "kalla": "https://jaktforlivet.se/",
+     "konsekvens_for_beslutet": "Aktivitet okänd."
+    }
+   ],
+   "skeptiker_B": [
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "24 000 IG (VERIFIERAD via Jaktjournalen)",
+     "status": "GÅR EJ ATT VERIFIERA (2026)",
+     "belagg": "Jaktjournalen-artikeln är daterad 2019-12-01 — siffran är nästan sju år gammal. Artikeltexten är låst/JS-laddad. Instagram 429.",
+     "kalla": "https://www.jaktjournalen.se/nyheter/jaktprofilen-for-nathaliejfl-…/818668",
+     "konsekvens_for_beslutet": "Följartalet är inte aktuellt."
+    },
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "Camping-koppling via Nynäs Camp → husvagnsliv",
+     "status": "MOTBEVISAT",
+     "belagg": "jaktforlivet.se: Nynäs Camp = 'Jakt & Fiske Camp … väl utrustade stugor … vildmarkskojor mitt i jaktmarken', skoterleder, båtuthyrning. Inga ställplatser/husvagnsplatser nämns på campsidan. Ingen uppgift om egen husvagn/husbil någonstans.",
+     "kalla": "https://www.jaktforlivet.se/; https://www.jaktforlivet.se/jakt-fiskecamp/",
+     "konsekvens_for_beslutet": "'Camp' betyder stugby för jägare, inte camping. Inget tak att montera på. Publik = jägare, inte husvagnsägare. STRYK."
+    },
+    {
+     "nyckel": "nathalie-jonsson",
+     "pastaende": "Samarbeten / varumärkessäkerhet",
+     "status": "GÅR EJ ATT VERIFIERA",
+     "belagg": "Vildmarken: 'samarbeten med jaktföretag', Jakt för livet Play, egen webshop. Jakt (järv, björn) är polariserande utanför jaktpubliken. Kontakt: info@jaktforlivet.se (bolag), ingen personlig adress. Partnersidan 404.",
+     "kalla": "https://vildmarken.se/reportage/nathalie-jonsson-om-resan-med-jakt-livet-…",
+     "konsekvens_for_beslutet": "—"
+    }
+   ],
+   "modash": {
+    "status": "väntar på PDF",
+    "delpoang": {},
+    "betyg": null
+   },
+   "observation_fas8": {
+    "dagar": [],
+    "snitt": null,
+    "dagar_med_stories": null,
+    "kommentarer_snitt_5_inlagg": null,
+    "insikter_skarmdump": null
+   }
+  }
+ ]
+}
