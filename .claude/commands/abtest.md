@@ -25,8 +25,26 @@ pekar rätt innan du hämtar något — fel butik ger siffror som ser rimliga ut
    och vilka som inte är det. Sluta här.
 
 4. **Hämta ordrarna.** GraphQL mot Admin API, ordrar sedan testet startade,
-   med `customAttributes`. Attributen heter `AB <test-id>` med värdet `a` eller `b`.
-   Ordrar som även har `AB <test-id> forced` = `ja` är granskningsbesök och ska bort.
+   med `customAttributes` **och `discountCodes`**. Attributen heter `AB <test-id>`
+   med värdet `a` eller `b`. Ordrar som även har `AB <test-id> forced` = `ja` är
+   granskningsbesök och ska bort.
+
+   ⚠️ **Stämpeln saknas på en del ordrar — använd rabattkoden som reserv.**
+   Avläst 2026-09-19: tre av sju ordrar efter publiceringen saknade
+   `AB sortval`, två av dem bevisligen från B (de bar B:s egna koder). Orsaken
+   är köpvägar som aldrig passerar produktsidans kod (expressknappar,
+   kundvagnssidan, en vagn fylld vid ett tidigare besök). `ms-ab.js` fick en
+   efterstämpling 2026-09-19 som täpper till det framåt, men gamla ordrar
+   måste läsas via koden:
+
+   | Kod på ordern | Variant |
+   |---|---|
+   | `SUSHI-*`, `PIZZA-*`, `HAMBURGARE-*`, `DONUT-*` | A |
+   | `STRUMPOR-K1F1-P*`, `STRUMPOR-K2F2-P*` | B (koderna finns bara i B) |
+
+   Saknas både stämpel och kod går ordern inte att tillskriva — räkna den som
+   okänd och **redovisa antalet okända** bredvid resultatet. Hitta aldrig på en
+   variant.
 
 5. **Skriv en JSON-fil** med formen
    `[{ "name": "#1042", "totalPrice": 399, "attributes": { "AB buybox": "b" } }]`

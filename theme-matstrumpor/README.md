@@ -196,4 +196,13 @@ förbättringen rakt av i stället.
   kod på varje. Nyskapade koder tar ett par minuter innan butiken godtar dem.
   Ligger i kopian `207180890451`; förhandsvisa med `?ms_ab=sortval:a` / `:b`.
   Känt: galleriet visar sushins bilder oavsett sort.
+- **Testet är LIVE sedan 2026-09-18** (Axel publicerade kopian; den är nu butikens
+  publicerade tema). ⚠️ **Stämpeln föll bort på ca 3 av 7 ordrar** de första
+  dygnen — köpvägar som aldrig passerar produktsidans kod. `ms-ab.js` fick
+  därför `efterstampla()` 2026-09-19: vid varje sidvisning kontrolleras vagnen
+  och saknad/fel stämpel skrivs om, plus en kontroll direkt efter varje köp.
+  **Den fixen ligger i repot men är INTE uppladdad till det publicerade temat** —
+  sessionens behörighetsläge stoppar skrivning dit. Ladda upp den innan
+  avläsningen litar på stämpeln. Gamla ordrar läses via rabattkoden
+  (`STRUMPOR-*-P*` = B, övriga = A), se `.claude/commands/abtest.md`.
 - Klaviyo är installerat. Rör inte dess kod.

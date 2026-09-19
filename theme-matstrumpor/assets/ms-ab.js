@@ -127,6 +127,39 @@
 
   var stamped = false;
 
+  /* Skyddsnätet.
+
+     Stämpeln skrivs normalt FÖRE varorna (stampCart nedan), men det finns
+     vägar in i kassan som aldrig passerar den koden: Shop Pay och andra
+     expressknappar, köp från kundvagnssidan, och en vagn som fyllts i ett
+     tidigare besök. Avläst i ordrarna 2026-09-19: ungefär tre av sju köp
+     saknade stämpel, två av dem bevisligen från variant B (de bar B:s egna
+     rabattkoder). Utan stämpel blir testet oläsbart.
+
+     Därför kontrolleras vagnen också vid varje sidvisning: har den varor men
+     fel eller ingen stämpel, skrivs den om. Då räcker det att besökaren ser
+     EN sida med den här koden någon gång innan kassan. */
+  function efterstampla() {
+    if (!Object.keys(assigned).length) return;
+    var rutt = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+    fetch(rutt + 'cart.js', { credentials: 'same-origin', headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (vagn) {
+        if (!vagn || !vagn.item_count) return;          // tom vagn: inget att märka
+        var vill = attributesPayload();
+        var har = vagn.attributes || {};
+        var saknas = Object.keys(vill).some(function (k) { return har[k] !== vill[k]; });
+        if (!saknas) return;
+        return fetch(rutt + 'cart/update.js', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ attributes: vill })
+        });
+      })
+      .catch(function () { /* nätet strulade — nästa sidvisning försöker igen */ });
+  }
+
   function stampCart() {
     // Skriver varianten till kundvagnen. Körs en gång per sidvisning, precis
     // innan varan läggs i kundvagnen, och returnerar ett löfte så att
@@ -161,7 +194,13 @@
         var url = typeof input === 'string' ? input : (input && input.url) || '';
         if (url.indexOf('/cart/add') !== -1) {
           var args = arguments;
-          return stampCart().then(function () { return origFetch.apply(window, args); });
+          return stampCart()
+            .then(function () { return origFetch.apply(window, args); })
+            .then(function (svar) {
+              // Vagnen har varor nu — kontrollera att stämpeln sitter.
+              setTimeout(efterstampla, 0);
+              return svar;
+            });
         }
         return origFetch.apply(window, arguments);
       };
@@ -205,10 +244,12 @@
       applyVisibility();
       hookCartAdd();
       pushToAnalytics();
+      efterstampla();
     });
   } else {
     hookCartAdd();
     pushToAnalytics();
+    efterstampla();
   }
 
   // Sektioner som laddas om i temaredigeraren måste få varianten applicerad igen.
