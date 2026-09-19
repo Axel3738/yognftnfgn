@@ -53,13 +53,19 @@ def rodtext(W, H, rader, panel):
 
 
 def slutkort(W, H, produktbild, ut):
-    """US-slutkort: vit bakgrund, blå badge carashell.com, produktbilden ur källans slutkort,
-    titel, stjärnor + 16 reviews, $249 överstruket + $199 + Sale, fotrad."""
+    """US-slutkort: vit bakgrund, blå badge, produktbilden ur källans slutkort,
+    titel, stjärnor + 16 reviews, $249 överstruket + $199 + Sale, fotrad.
+    ⚠️ Badgen sa "carashell.com" när de åtta videorna renderades 2026-09-18. Samma dag
+    beslutade Axel att butikens namn och domän aldrig står i en annons
+    (`docs/copy-regler.md`, processregel 1) — bygget hann före regeln. De åtta ligger
+    kvar live (live-annonser stängs aldrig av i efterhand, Axels beslut 2026-09-15);
+    texten är bytt HÄR så nästa runda som kopierar filen börjar rätt. Ändringen rör
+    ingen befintlig annons."""
     sk = W / 720
     im = Image.new("RGBA", (W, H), (255, 255, 255, 255))
     d = ImageDraw.Draw(im)
-    # badge
-    f = ImageFont.truetype(NORMAL, int(40 * sk)); t = "carashell.com"; w = f.getlength(t)
+    # badge — produkten, priset och länken pekar ut butiken; namnet tillför inget
+    f = ImageFont.truetype(NORMAL, int(40 * sk)); t = "90-DAY GUARANTEE"; w = f.getlength(t)
     bw, bh = w + 60 * sk, 72 * sk; bx = (W - bw) / 2; by = 250 * sk
     d.rounded_rectangle([bx, by, bx + bw, by + bh], radius=int(10 * sk), fill=(44, 95, 138, 255))
     d.text((W / 2 - w / 2, by + bh / 2 - f.getmetrics()[0] * 0.72 / 2 - 4 * sk), t, font=f, fill=(255, 255, 255, 255))

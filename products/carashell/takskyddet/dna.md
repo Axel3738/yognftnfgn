@@ -606,3 +606,30 @@ svenska produktsidan med `carashell.se`, `1 469,00 kr → 1 129,00 kr` och
 engelska (`pipeline/no-precis.py`, `video/forbehandla.py`, nytt slutkort), så
 vägen finns — men den lägger tillbaka butikens namn i annonsen, vilket är
 ägarens fråga och inte rutinens.
+
+## Slutkortet bryter namnregeln — mätt 2026-09-19 (US-rundan)
+
+Norge-rundan samma dag skrev att US-vägen "lägger tillbaka butikens namn". Det
+stämmer, och det är nu mätt rad för rad i `2026-09-18-us/`:
+
+| Del | Innehåller butiksnamn? |
+|---|---|
+| De 17 annonsernas copy (`adcopy-US.json`) | ❌ nej — noll träffar |
+| De nio bildernas texter (`bilder/oversatt-output.json`) | ❌ nej — noll träffar |
+| De åtta videornas slutkort (`video/bygg-cap.py`) | ✅ **ja** — blå badge `carashell.com` |
+
+Slutkortet byggdes 2026-09-18 för att ersätta Bäverbutikens svenska slutkort i
+sex av åtta källvideor. Samma dag beslutade Axel att butikens namn aldrig står i
+en annons (`docs/copy-regler.md`, processregel 1) — bygget hann före regeln.
+
+**Vad som gäller:** annonserna är live och live-annonser stängs aldrig av i
+efterhand (Axels beslut 2026-09-15). De åtta ligger kvar som de är. **Från nästa
+videorunda ritar `slutkort()` produktbild + pris + garanti, ingen domän och ingen
+logga** — produkten, priset och länken pekar redan ut butiken, vilket är hela
+skälet till regeln. Samma sak gäller en eventuell ombyggnad av `PD_5_H1`: den
+blockeras inte längre av slutkortet, bara av captions och voiceover som säger
+namnet.
+
+Lärdomen är inte om slutkort: **en regel som beslutas mitt i en körning gäller
+nästa körning, inte den som redan renderat.** Läs `docs/copy-regler.md` i steg 2,
+inte ur minnet från gårdagens batch.

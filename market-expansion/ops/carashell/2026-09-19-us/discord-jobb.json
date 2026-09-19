@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-19",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: nothing new to translate today. The queue held 1 row in 'SE-ACTIVE to be translated' - CaraShellRoof_PD_5_H1 - and it already runs in the US since 2026-09-18 (ad 120251490405930435). It stays in the queue because Norway does not carry it yet; the Norwegian round is holding it and has already asked about it.",
+    "The Approved queue was checked as well: 27 rows, every one of them carries a US ad. Nothing is lagging behind.",
+    "Health check on the US campaign (1 CARASHELL_US_Takoverdrag ... - kopia, ACTIVE, 10 ad sets): 44 ads, all 44 ACTIVE. Yesterday's 17 new ads all passed Meta review - none disapproved, none limited.",
+    "Store readiness for the US confirmed: the American product page answers 200 in English (Roof Cover for Travel Trailers & Motorhomes 18-44 ft) at $199, and the landing page the ads point to answers 200 as an American visitor.",
+    "0 HeyGen credits and 0 kie.ai credits used - nothing was rendered or generated."
+  ],
+  "varningar": [
+    "Rule check on yesterday's batch: the eight US videos carry an end card with the text carashell.com. The store name and domain were ruled out of every ad on 2026-09-18, the same day those videos were built. The ads are live and live ads are never switched off, so they stay as they are; from the next video round the end card shows the product and the price only, no domain. The nine images and all 17 ad copies are clean - no store name anywhere.",
+    "The queue could not read the price automatically because the campaign's inherited link is the listicle page, not a product page. The price was read directly from the American product page instead: $199."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-20 17:05"
+}

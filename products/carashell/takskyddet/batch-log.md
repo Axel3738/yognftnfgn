@@ -1114,3 +1114,35 @@ finns — men den lägger tillbaka butikens namn, vilket är ägarens beslut.
 
 **Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS), meddelande
 `1550877622257328160`, med `🔴 ACTION NEEDED` för videofrågan.
+
+---
+
+## USA-runda 6 2026-09-19 (`/ops-oversatt carashell/takskyddet --marknad US`) — tom kö, allt friskt
+
+**Inget att översätta och inget att ladda upp.** Båda köerna lästa:
+
+| Kö | Rader | Läge |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 1 | `CaraShellRoof_PD_5_H1` — bär redan US-annonsen `120251490405930435` sedan 18/9. Stannar för att Norge inte bär den; NO-rundan håller den och har ställt frågan till Axel |
+| `Approved` (eftersläpningskollen) | 27 | 0 saknar US-annons |
+
+Kampanj: `1 CARASHELL_US_Taköverdrag … – kopia` `120251451415500435`, ACTIVE, 10 adsets.
+Den ursprungliga `CARASHELL_US_Taköverdrag …` står fortfarande PAUSED med 2 246 kr
+spend — ägarens beslut, rörs inte. 8 kampanjer i kontot sorterades bort av kön.
+
+**Tillbakaläsning:** 44 annonser i US-kampanjen, **alla 44 ACTIVE**. Gårdagens 17 har
+passerat Metas granskning — ingen underkänd, ingen begränsad.
+
+**Butiken redo för USA:** produktsidan svarar 200 på engelska
+("Roof Cover for Travel Trailers & Motorhomes 18–44 ft") med **$199** som grundpris,
+och listicle-sidan annonserna pekar på svarar 200 som amerikansk besökare. Kön kunde
+inte läsa priset själv — den ärvda länken är listicle-sidan, inte `/products/<handle>`
+— så priset lästes direkt på marknadens produktsida i stället.
+
+**Regelkoll på gårdagens batch:** copy och bilder är rena från butiksnamn, men de åtta
+videornas slutkort bär badgen `carashell.com`. Namnregeln beslutades 2026-09-18, samma
+dag som bygget. De ligger kvar (live-annonser stängs aldrig av i efterhand); slutkortet
+ritas utan domän från nästa videorunda. Facit i `dna.md`.
+
+**Krediter:** 0 HeyGen, 0 kie.ai. **Discord:** engelsk rapport i `#annons-uppladdning`,
+meddelande `1550913936994340948`, ingen ACTION NEEDED.
