@@ -1,0 +1,10 @@
+{
+  "_kommentar": [
+    "Butiker som aldrig debiteras — de räknas som 'pro' utan att betala.",
+    "Listan ligger i repot med flit: den sköts av en session, inte av en",
+    "miljövariabel i Railway som Axel skulle behöva klicka i. Lägg till",
+    "hela .myshopify.com-adressen i små bokstäver, en per rad, pusha.",
+    "BILLING_EXEMPT_SHOPS i miljön gäller fortfarande och läggs ihop med den här."
+  ],
+  "butiker": []
+}

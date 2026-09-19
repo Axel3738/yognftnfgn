@@ -606,6 +606,26 @@ felsökning:
 gränssnittet. Ett formulär vars fält bara speglar tangentbordet kan inte
 svara på frågan "sparades det?".
 
+### Fri tillgång åt enskilda butiker (2026-09-19, build gratis-butiker-v103)
+
+Axel ger testare fri tillgång i utbyte mot feedback. **Rabattkoder finns
+inte för Shopify-appar** — en handlare kan inte skriva in en kod någonstans.
+Appen kör Shopify App Pricing (managed pricing) och Billing API:t är
+förbjudet här, så det finns tre vägar: en privat plan i Shopifys
+partnerpanel, ett förlängt gratisperiod, eller appens egen fri-lista.
+
+Fri-listan är den vi använder. `billingExemptShops` i `app/shopify.server.ts`
+slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
+**`pnl-app/gratis-butiker.json`** i repot. Filen finns för att listan ska gå
+att fylla på med en push — Axel ska inte behöva klicka i Railways
+miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
+
+Bra att veta när någon installerar utan att stå på listan: **grinden stänger
+bara LTV-sidan** (`app.ltv.tsx`, `plan === "pro"`). Panelen, Kostnader,
+Fasta kostnader och Inställningar är öppna. Adresserna kan alltså samlas in
+EFTER installationen utan att något går förlorat — och `PLAN_GATE=1` sitter
+bara på App Store-tjänsten.
+
 **Två promptregler till, ur just den här tabellen:**
 - *Antalskolumn:* en smal kolumn med 1, 2, 3 som upprepas per storlek är
   ANTAL. Rad 1 ger `unit_cost`, rad 2 och 3 blir `tiers` på SAMMA produktrad

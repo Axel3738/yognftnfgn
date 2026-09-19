@@ -8,17 +8,26 @@ import {
 } from "@shopify/shopify-app-remix/server";
 import { PrismaSessionStorage } from "@shopify/shopify-app-session-storage-prisma";
 import prisma from "./db.server";
+import gratisButiker from "../gratis-butiker.json";
 
 export const STANDARD_PLAN = "Standard";
 
 /**
- * Butiker som aldrig debiteras: egna butiker och custom-installationerna.
- * Kommaseparerade .myshopify.com-domäner i BILLING_EXEMPT_SHOPS.
+ * Butiker som aldrig debiteras: egna butiker, custom-installationerna och
+ * butiker Axel gett fri tillgång (testare som betalar med feedback).
+ *
+ * Två källor, som slås ihop:
+ *  - `BILLING_EXEMPT_SHOPS` i miljön, kommaseparerat (som förut).
+ *  - `gratis-butiker.json` i repot — så att listan går att fylla på med en
+ *    push i stället för att Axel ska klicka i Railways miljövariabler.
+ *    *(Axel 2026-09-19: en kompis skulle få fri tillgång på fem butiker.)*
  */
 export const billingExemptShops = new Set(
-  (process.env.BILLING_EXEMPT_SHOPS ?? "")
-    .split(",")
-    .map((s) => s.trim().toLowerCase())
+  [
+    ...(process.env.BILLING_EXEMPT_SHOPS ?? "").split(","),
+    ...(Array.isArray(gratisButiker.butiker) ? gratisButiker.butiker : []),
+  ]
+    .map((s) => String(s).trim().toLowerCase())
     .filter(Boolean),
 );
 
