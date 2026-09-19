@@ -226,28 +226,27 @@ Axel Odhner, Matstrumpor.se, [mobil]
 **Uppföljning efter fyra dagar (alla):** "Hej igen, vill bara kolla att mitt mail kom fram. Frågan står kvar: betalt story-samarbete inför jul, två lådor på väg om du vill testa först. /Axel"
 
 
-**Sofia Åhman, nytt mail 2026-09-19 (kursens struktur, video 3 "Outreach & Setup").** Skickas till info@sofiaahman.se. Ämnesraden bygger på Friskvårdspriset 2025 (Årets hälsoinspiratör, Svenska Friskvårdsförbundet med Säkra/Svedea, diplom hon visat på Instagram) och citatet om Hemmagympa är hennes eget till Senioren 24 mars 2026.
+**Sofia Åhman, nytt mail 2026-09-19 (kursens struktur, video 3 "Outreach & Setup", sju meningar som hans exempel).** Skickas från axel.odhner@stonebite.org till info@sofiaahman.se, som nytt mail, inte som svar i någon gammal tråd. Ämnesraden bygger på Friskvårdspriset 2025 (Årets hälsoinspiratör, Svenska Friskvårdsförbundet med Säkra/Svedea, diplom hon visat på Instagram). "Julklapp" står i trovärdighetsmeningen eftersom kursen vill att det som skiljer produkten från andra nämns där.
 
 ```
 Ämne: Grattis till Friskvårdspriset, Sofia
 
 Hej Sofia!
 
-Jag heter Axel och driver Matstrumpor.se.
+Jag heter Axel och driver Matstrumpor.se. Grattis till Friskvårdspriset och titeln Årets hälsoinspiratör, och till att tittarna fick tillbaka Hemmagympa i våras.
 
-Grattis till Friskvårdspriset och titeln Årets hälsoinspiratör, och till att tittarna fick tillbaka Hemmagympa i våras. Du sa att det är det billigaste programmet SVT har och ger mest för folkhälsan. Jag håller med.
+Jag skriver för att jag vill skicka två av våra sushilådor till dig och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete inför jul.
 
-Jag skriver för att jag vill skicka två av våra sushilådor till dig och familjen, utan några förväntningar. Anledningen är att vi är intresserade av ett betalt samarbete.
-
-Lådan är fem par strumpor rullade som maki, i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att du testar den först och ser om du gillar den. De som köper den är nästan bara kvinnor över 45, alltså samma personer som tränar med dig.
+Lådan är en julklapp: fem par strumpor rullade som maki i en förpackning som ser ut som riktig takeaway, med ätpinnar, färdig att ges bort utan inslagning. Vi vill att du testar den först och ser om du gillar den lika mycket som våra kunder, som nästan bara är kvinnor över 45.
 
 Gillar du lådorna bokar vi ett kort samtal och går igenom samarbetet.
 
-Matstrumpor.se är ett svenskt bolag som säljer strumpor förpackade som mat: sushi, pizza, hamburgare och donut. Fri frakt och 30 dagars öppet köp. Vi tror att du passar oss perfekt.
+Matstrumpor.se säljer strumpor förpackade som mat, med fri frakt och 30 dagars öppet köp. Vi tror att du passar oss perfekt.
 
 Vänliga hälsningar
 Axel Odhner
-Matstrumpor.se
+Matstrumpor.se, Stonebite AB
+070-xxx xx xx
 ```
 
 DM på Instagram bara om hon inte svarat på fyra arbetsdagar: "Hej Sofia! Skickade ett mail till info@ förra veckan om ett betalt samarbete, ämne 'Grattis till Friskvårdspriset'. Vill bara att det inte fastnat i spam. /Axel". När hon tackar ja till lådorna: be om adress och ställ SVT-frågan i samma svar ("Hemmagympa går ju som repris varje vardag och SVT har regler om reklam runt sändning. Vet du om det stoppar ett samarbete i november, eller är det något du kollar med dem?").
