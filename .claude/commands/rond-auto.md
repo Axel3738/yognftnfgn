@@ -389,6 +389,15 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   aldrig under fyra (`rundkvot` i `agent/rond.mjs`). Axel 2026-09-02: "jag tar
   hellre några briefs för mycket, jag har ett överflöd av redigerare." För
   `forsta_batch` gäller i stället hela veckokvoten (`veckokvot` i utfallet).
+  Kvoten planar ut vid 3 000 kr/dag (4 annonser i veckan, 8 per runda) — en
+  budget på 16 000 kr ger inte fler briefer än en på 4 000. Det är med flit.
+- **Axels manuella zon (2026-09-19): budget över motorns tak 4 000 kr.**
+  Motorn höjer aldrig dit, så en sådan budget har Axel satt själv
+  (Taköverdraget: 16 000 kr/dag, fick tidigare `ORIMLIG_DATA` och ingen dom
+  alls). Domen blir `MANUELL` (går plus, lämnas) eller `MANUELL_FORLUST`
+  (går back — larm under "att kolla", ping till Axel, men **ingen** budget
+  ändras av ronden). Briefrundan går som vanligt. Rimlighetstaket för
+  felparsning är 50 000 kr; över det är det fortfarande `ORIMLIG_DATA`.
 - **Hubben är den som står i `agent/produktkarta.json` (`notion_hub_id` +
   `notion_hub_datakalla`).** Finns den där: använd den, sök inte, skapa inte.
   Axel bygger hubbarna själv sedan 2026-09-13 och döper dem **"BÄVER <produkt>"**

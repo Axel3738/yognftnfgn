@@ -562,3 +562,56 @@ test('en produkt som stängs av eller går trappan får aldrig briefer', () => {
   const frisk = [{ id: 'c', namn: 'Z | BE ROAS 1.50', spendTotal: 9000, budget: 1000, dom: { kod: 'SKALA', vinstProcent: 30 } }];
   assert.equal(annonsbehov(frisk, { logg: [], idag: '2026-09-02' }).length, 1);
 });
+
+// Axels manuella zon (2026-09-19): en budget över motorns tak har Axel satt
+// själv. Taköverdraget låg på 16 000 kr/dag och fick ORIMLIG_DATA — kontots
+// starkaste produkt utan dom. Nu: dom, men ingen budgetändring, och larm
+// när den går back.
+test('manuell budget över taket: går plus ⇒ MANUELL, ingen ändring', () => {
+  const rad = bedomKampanj(
+    {
+      id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)',
+      spend_3d: '40 000,00 kr', roas_3d: '2.40', kop_3d: 60, spend_total: '90 000,00 kr',
+    },
+    { logg: [], idag: '2026-09-19', karta: {} },
+  );
+  assert.equal(rad.dom.kod, 'MANUELL');
+  assert.equal(rad.dom.kraverGodkannande, false);
+  assert.equal(rad.dom.nyBudget, null);
+  assert.match(rad.dom.motivering, /manuella zon/);
+  // (1/1,63 − 1/2,40) × 100 = 19,7 % — zonen "stabil", 16–25 %.
+  assert.ok(rad.dom.vinstProcent > 16 && rad.dom.vinstProcent < 25);
+  assert.match(rad.dom.rubrik, /stabil/);
+});
+
+test('manuell budget över taket: går back ⇒ MANUELL_FORLUST, larm men ingen ändring', () => {
+  const rad = bedomKampanj(
+    {
+      id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)',
+      spend_3d: '40 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr',
+    },
+    { logg: [], idag: '2026-09-19', karta: {} },
+  );
+  assert.equal(rad.dom.kod, 'MANUELL_FORLUST');
+  assert.equal(rad.dom.kraverGodkannande, false);
+  assert.equal(rad.dom.nyBudget, null);
+  assert.match(rad.dom.motivering, /Axel/);
+  // Larmet syns under "att kolla" i rapporten, aldrig under "att göra".
+  const text = rapport([rad], { idag: '2026-09-19', hamtad: '2026-09-19T05:00:00Z' });
+  assert.match(text, /Taköverdraget/);
+  assert.deepEqual(planera([rad], { logg: [], idag: '2026-09-19' }).atgarder, []);
+});
+
+test('rimlighetstaket är 50 000: 16 000 är en dom, 60 000 är fortfarande felparsning', () => {
+  const orimlig = bedomKampanj(
+    { id: '1', namn: 'X | BE ROAS 1.50', daily_budget: '60 000,00 kr (SEK)', spend_3d: '1 000,00 kr', roas_3d: '2.0', kop_3d: 10 },
+    { logg: [], idag: '2026-09-19', karta: {} },
+  );
+  assert.equal(orimlig.dom.kod, 'ORIMLIG_DATA');
+  // Precis på motorns tak är det fortfarande motorns zon — "taket nått", inte manuellt.
+  const paTaket = bedomKampanj(
+    { id: '2', namn: 'Y | BE ROAS 1.50', daily_budget: '4 000,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '2.40', kop_3d: 30, spend_total: '50 000,00 kr' },
+    { logg: [], idag: '2026-09-19', karta: { 2: { lage: 'drift' } } },
+  );
+  assert.notEqual(paTaket.dom.kod, 'MANUELL');
+});

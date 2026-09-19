@@ -308,6 +308,25 @@ export function besked(rad) {
       'Meta returnerade ingen ROAS för perioden. Rör ingenting förrän siffran finns.');
   }
 
+  // 3b. Axels manuella zon (Axels beslut 2026-09-19). Motorn höjer aldrig över
+  // TAK_SEK, så en budget över taket har Axel satt själv — Taköverdraget låg
+  // på 16 000 kr/dag. Där gäller hans hand, inte procentreglerna: motorn rör
+  // varken upp eller ner, men den dömer siffrorna som vanligt och LARMAR när
+  // produkten går back, för på den nivån kostar ett dygns förlust mer än en
+  // hel testbudget. Sänkningen är Axels beslut — ronden pekar, han trycker.
+  if (rad.budget > TAK_SEK) {
+    const bas = `${pct(vinst)} vinst av omsättningen (ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}). Budgeten ${kr(rad.budget)} ligger över motorns tak ${kr(TAK_SEK)} — Axels manuella zon, ronden ändrar inte budgeten här.`;
+    if (vinst < 0) {
+      return svar('MANUELL_FORLUST', 'Går back på manuell budget — Axel avgör',
+        `${bas} Går BACK. Ronden rör den inte, men det här är dyrt: ${kr(rad.budget)} om dagen under break-even. Axel: sänk eller stäng av i Ads Manager.`,
+        { zon: 'stop', vinstProcent: vinst });
+    }
+    const lage = vinst < ZON_SANK_UNDER ? 'tunn marginal' : vinst < ZON_SKALA_OVER ? 'stabil' : 'stark';
+    return svar('MANUELL', `Manuell budget — ${lage}`,
+      `${bas} Går plus (${lage}). Lämnas som den är.`,
+      { zon: vinst >= ZON_SKALA_OVER ? 'up' : 'hold', vinstProcent: vinst });
+  }
+
   // 4. Kadensspärren: Meta ska hinna lära sig mellan ändringar.
   // Snabbspåret gäller bara uppåt: skalningszon + ROAS ≥ 3 → 1 dag räcker.
   const dagar = rad.dagarSedanAndring;

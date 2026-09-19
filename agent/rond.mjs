@@ -31,11 +31,14 @@ export const TILLATET_KONTONAMN = 'MagiBorsten';
 export const ROAS_RIMLIGT_MIN = 0;
 export const ROAS_RIMLIGT_MAX = 15;
 
-// Samma sak för dagsbudgeten: kontots budgetar ligger 500-4 000 kr. Ett tal
-// under 100 eller över 10 000 är med all sannolikhet en felparsning (öre lästa
-// som kronor eller tvärtom) — ingen dom, larm i stället.
+// Samma sak för dagsbudgeten. Ett tal under 100 eller över 50 000 är med all
+// sannolikhet en felparsning (öre lästa som kronor eller tvärtom) — ingen dom,
+// larm i stället. Taket var 10 000 till 2026-09-19: Axel hade själv skalat
+// Taköverdraget till 16 000 kr/dag och kontots starkaste produkt fick
+// ORIMLIG_DATA i stället för en dom. Budgetar över motorns eget tak
+// (TAK_SEK i besked.mjs, 4 000 kr) är Axels manuella zon — se besked().
 export const BUDGET_RIMLIG_MIN = 100;
-export const BUDGET_RIMLIG_MAX = 10000;
+export const BUDGET_RIMLIG_MAX = 50000;
 
 // Kontodatan får vara högst så här gammal när en plan byggs.
 export const MAX_DATAALDER_TIMMAR = 20;
@@ -493,9 +496,9 @@ export function annonskvot(budgetSek) {
 
 const ORDNING = [
   'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
-  'STOR_SPEND_UTAN_KOP', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
+  'STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
   'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL',
-  'FOR_LITE_DATA', 'FRYST', 'LAT_VARA',
+  'FOR_LITE_DATA', 'FRYST', 'MANUELL', 'LAT_VARA',
 ];
 
 function kr(n) {
@@ -509,7 +512,7 @@ export function rapport(rader, meta, behov = []) {
   const attGora = sorterade.filter((r) => r.dom.kraverGodkannande);
   const attKolla = sorterade.filter(
     (r) => !r.dom.kraverGodkannande
-      && ['STOR_SPEND_UTAN_KOP', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'RAKNA_BACKDAGAR'].includes(r.dom.kod),
+      && ['STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'RAKNA_BACKDAGAR'].includes(r.dom.kod),
   );
   const ifred = sorterade.filter((r) => !attGora.includes(r) && !attKolla.includes(r));
 
