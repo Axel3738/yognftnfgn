@@ -68,7 +68,9 @@ market-expansion/*/notion-batches/*/*/up/
 # NO-videobatchernas tunga binärer (källvideor, renderingar, zip-leveranser) —
 # stannar i containern och i Drive, aldrig i git. QA-bilder och SRT:er committas.
 market-expansion/no/video-batches/*/rendered/
+market-expansion/no/video-batches/*/out/
 market-expansion/no/video-batches/*/zip/
 market-expansion/no/video-batches/*/*/up/
 market-expansion/no/video-batches/*/final/*/*.mp4
+market-expansion/no/video-batches/*/frame-check/
 market-expansion/*/notion-batches/*/frames/
