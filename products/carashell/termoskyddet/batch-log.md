@@ -611,3 +611,19 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
   väntade läget**, inte ett fel.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913337725026415`, ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-19-no-termoskyddet/`.
+
+## 2026-09-19 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, US fortsatt pausad
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader (batch #2), alla
+  redan uppe i US — inget eftersläpande.
+- **Oförändrat sedan gårdagens runda.** `CARASHELL_US_Termoskydd Husbil 211 × 171 cm`
+  (`120251442339640435`) står kvar PAUSED med **samma `updated_time` som igår**
+  (2026-09-18 09:34 UTC / 11:34 CEST) — ingen har rört den. Livstid 1 978 kr / 0 köp
+  (+1,13 kr eftersläpande attribution sedan igår). Kopian `1 CARASHELL_US_… – kopia`
+  (`120251451414990435`) PAUSED sedan 2026-09-17, 616 kr / 0 köp. Båda är PAUSED med
+  spend = beslut; rutinen rör dem inte.
+- Läge "US paused by owner": 0 rader hållna, inget renderat (0 HeyGen-credits), inget
+  uppladdat, ingen Notion-rad rörd.
+- Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913495669809304`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-19-us-termoskyddet/`.
