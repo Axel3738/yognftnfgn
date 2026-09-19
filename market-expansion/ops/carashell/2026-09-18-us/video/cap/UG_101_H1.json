@@ -1,0 +1,47 @@
+{
+ "in": "../forbehandlad/carashell_UG_101_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_UG_101_H1.mp4",
+ "srt": "../srt-us/carashell_UG_101_H1.srt",
+ "captions": {
+  "zon": [
+   880,
+   1100
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 1018,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    24.0,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/pris-topp.png",
+   "t": [
+    19.0,
+    20.9
+   ]
+  },
+  {
+   "png": "../lager/frakt-topp.png",
+   "t": [
+    20.9,
+    22.6
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    24.0,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-UG_101_H1"
+}

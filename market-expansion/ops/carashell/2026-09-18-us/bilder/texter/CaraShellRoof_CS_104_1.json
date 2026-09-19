@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   160
+  ],
+  "rader": 1,
+  "storlek": 72,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "stryk": "$249",
+  "text": "$249 — $199"
+ },
+ {
+  "box": [
+   33,
+   198,
+   1047,
+   266
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "Protects the roof, not the RV"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "$199 – shipping included"
+ },
+ {
+  "box": [
+   236,
+   1212,
+   845,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Buy Now – $199"
+ }
+]

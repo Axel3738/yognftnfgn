@@ -1,0 +1,26 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-18",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 24 rows in the queue, 17 new ads translated to American English and uploaded live into the active US campaign (the listicle track, the only ACTIVE US campaign - the product-page campaign is PAUSED by the owner with 2 243 SEK spent). 9 images + 8 videos, one ad set per concept; new ad sets CO, RI, UG, LI and BOF created and switched on. The US campaign now carries 44 ads.",
+    "Images (Swedish text swapped in place, $199 / reg. $249, 90-day guarantee, free shipping in the US): LI_101_1 -> ad 120251488867610435 (LI) | PD_105_1 -> 120251488879980435 (PD) | CS_104_1 -> 120251488900040435 (CS) | CO_102_1 -> 120251489217370435 (CO) | CS_106_1 -> 120251489223750435 (CS) | GT_106_1 -> 120251489231820435 (GT) | BOF_101_1 -> 120251489308740435 (BOF) | BOF_102_1 -> 120251489313310435 (BOF) | BOF_103_1 -> 120251489318610435 (BOF)",
+    "Videos (HeyGen US-English voice clone + lip sync, English word captions, red price/shipping overlays replaced with $199 / $249 / FREE SHIPPING / 90-DAY GUARANTEE / 210D FABRIC, Swedish end cards replaced with a carashell.com end card): CO_101_H1 -> 120251489798720435 (CO) | RI_101_H1 -> 120251489815700435 (RI) | SP_104_H1 -> 120251489832370435 (SP) | UG_101_H1 -> 120251489963410435 (UG) | PD_104_H1 -> 120251490027610435 (PD) | GT_104_H1 -> 120251490245280435 (GT) | GT_105_H1 -> 120251490274580435 (GT) | PD_5_H1 -> 120251490405930435 (PD)",
+    "Voice check passed on all 8 (length drift 0-0.3 %, no silent track, last line ends inside the file). Every finished video checked frame by frame for surviving Swedish caption pills - none left. The source videos were scanned before rendering: all 8 carry burned-in Swedish word captions, 4 carry big red price/shipping text, 6 carry a Swedish end card - all handled.",
+    "HeyGen credits: 4 434 before -> 4 312 after proofread -> renders on top of that (8 videos, 25-40 s each). 0 kie.ai credits.",
+    "The 7 batch #3 image rows were already live in the US since 2026-09-16 - nothing new. SP_6_1 now has both NO and US -> moved to Approved. Batch #2's four Approved rows already carry US ads.",
+    "Notion: comment + Translated url on all 17 rows. Rows that Norway already carries (the 16 mirrored ones) -> Approved. PD_5_H1 stays in the queue until the NO round carries it."
+  ],
+  "varningar": [
+    "The uploads landed in the listicle-track campaign ('1 CARASHELL_US_... - kopia', landing page carashell.com/pages/takoverdrag-...-lagerrensning?country=US) because it is the only ACTIVE US campaign since the owner paused the product-page one. Every new ad inherits that listicle link. If you want these ads on the product page instead, switch the product-page campaign back on and the next round will use it.",
+    "The mirrored source videos (from the Swedish hub) show a BAVERBUTIKEN end card and Swedish prices - that is what is live in CaraShell SE and NO today; the mirroring only checks the ad copy. The US versions got a carashell.com end card.",
+    "Meta shows PENDING_REVIEW / IN_PROCESS on a few of the new ads - normal for fresh ads.",
+    "Tool note: pipeline/no-precis.py cut the last 2 seconds off every video (-shortest); worked around with padding + trim in this batch, documented in dna.md. The copied campaign's Instagram id is rejected by the API - the uploader now supports --ig ingen."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-19 17:05"
+}

@@ -404,6 +404,33 @@ prischip; **inte** för priskortet (pris + jämförpris). Rätt fix hör hemma i
 `/ops-bild`: ladda upp basfotot till Notion-raden också (eller spara `kalla`-länken
 utan att skriva över planfilen), så att varje marknad kan rita om från grunden.
 
+### Rotorsak 3 — fyra fynd ur US-rundan 2026-09-18 (17 speglade rader)
+
+1. **`pipeline/no-precis.py` tappar exakt 50 frames (2 s) i slutet på varje video.** Mätt
+   på alla åtta: render 643 frames → ut 593, oberoende av lager. Orsaken är `-shortest`
+   tillsammans med råmask-strömmarna i filtergrafen. I `PD_104_H1` låg "Ninety-day
+   guarantee." i de två sekunderna. Lösning tills verktyget rättas: padda ingången med
+   2,5 s klonad slutframe (`forbehandla.py`, tpad) och klipp utfilen till ljudets längd
+   (`trimma.py`). Kolla alltid `nb_frames` render mot ut innan uppladdning.
+2. **En kampanj Axel kopierat i Ads Manager bär ett `instagram_user_id` som API:t inte
+   tar som `instagram_actor_id`** ("must be a valid Instagram account id", 9 av 9). Id:t
+   ur en API-skapad annons i originalkampanjen (`17841423916277476`) fungerar.
+   `tools/ops-till-meta.mjs --ig <id>|ingen` sedan 2026-09-18.
+3. **Bäverbutikens BOF-bilder (speglade) översätts med manuella rutor, inte detektorn:**
+   rubrik och checklista ligger direkt på ljus bakgrund och hittas aldrig av
+   `oversatt-bild.py --analys`. Rutorna mäts med `matrader.py`, ALLA former går via
+   `box_for_form`, fraktraden (vit text på foto) får `fyll: mork` (alfa 235 — rita_box
+   suddar bara mörka pixlar när raden är ljus), bockpunkter hålls på EN rad (bocken ritas
+   per rad), och bilden försuddas med `forsudda.py` före körningen (rita_box suddar aldrig
+   pixlar med summa ≥ 500, så antialias-kanterna på en 76 px rubrik blir ett spöke).
+   Mall: `market-expansion/ops/carashell/2026-09-18-us/bilder/`.
+4. **De speglade källvideorna bär Bäverbutikens slutkort (logga + kr-pris) och stora röda
+   pop-texter (1129 KR / FRI FRAKT / 210D-VÄV).** De ligger live i CaraShell SE och NO med
+   Bäverbutikens slutkort — speglingen kollar bara copyn. För US: `rodtext.py` mäter
+   fönster + rutor, `bygg-cap.py` bygger blur-platta + amerikansk text i samma stil och ett
+   nytt US-slutkort (produktbilden klipps ur källans kort). `kvarkoll.py` hittar frames
+   där det svenska pillret överlevde (CO_101_H1: tre fönster → `captions.fyll`).
+
 ## Marknader
 
 | Datum | Marknad | Locale | Valuta i kundvyn (mätt) | Pris i produktfilen | Leveranstid | Läge |
@@ -528,3 +555,81 @@ samma dag: nio storlekar i rullgardinen, €126,90–€251,90, paketpriserna
    kostade lika; med stegen visade ett 2-pack av 13,5 m **465,73 €** på sidan
    medan kassans 15 %-kod tar **428,23 €**. Fältet skrivs nu (`factory/paket.mjs`)
    och sidan visar samma tal som kassan i varje valuta och varje storlek.
+
+## Norge-runda 2026-09-19 (`/ops-oversatt carashell/takskyddet`) — bildöversättaren släppt
+
+Sex bilder som stått i `SE-ACTIVE to be translated` sedan 2026-09-17 gick live.
+Det som höll dem var inte ett trasigt verktyg utan fyra olösta layoutfall — två
+av dem var mina egna felställda frågor. Facit:
+`market-expansion/ops/carashell/2026-09-19/BILDSTOPP-LOST.md`.
+
+**Två riktiga fel i `pipeline/oversatt-bild.py`, båda rättade i samma körning:**
+
+1. `rita_box` kunde inte måla en platta i en given färg — fyllfärgen var
+   hårdkodad till (248,248,248)/(10,14,18), och OPS-mallens band är [60,66,72].
+   Ny nyckel `fyllfarg`. Den löser också **fullbreda rubriker över delade
+   foton** (`PD_6_1`: rubriken ligger över två olika foton, så radmedianen går
+   inte att sudda mot): bandet målas om ogenomskinligt i sin egen färg.
+2. 3 px utvidgning räcker inte för **stor fet text på ett mörkt band**.
+   `PD_7_1`:s bottenband, 31 px fet vit på [60,66,72]: efter suddningen låg
+   13 % kontrast kvar på 10 % av pixlarna i rad 1087–1097 — en läsbar spökrad.
+   Antialias-kanten hamnar under tröskeln `summa > 450`. Ny nyckel `utvidga`
+   (standard 3) → 6 ger max 4,8 % och 0 % över tröskeln.
+
+**Två "fel" som inte fanns:**
+
+- ★ saknas i Liberation Sans, men stjärnraden ska aldrig ritas om.
+  Fällan är att `sudda()` suddar **hela formen** så snart en enda rad i den
+  listas — stjärnorna och "– Lars" försvann som bieffekt. `klipp_efter_rad`
+  finns för precis det.
+- Prisbrickan inuti den fullbreda vita remsan behöver ingen formdetektor: en
+  `box` **utan** `fyll` suddar och ritar om just brickan, och `fyll_2d` målar
+  lokalt så brickans två toner (237 över remsan, 254 i den) behålls.
+
+**Regeln som föll ut — och som kostade två dagars leverans att lära sig:**
+*döm suddningen på mätning, aldrig på förhandsbilden.* Tre gånger den här dagen
+visade förhandsbilden en spökrad; två mätte ≤ 4 % kontrast och fanns inte i
+filen, en mätte 13 % och var verklig. Måttet är `np.abs(box - median).sum(axis=2)`
+mot formens egen median: `max < 40` och `andel > 60 == 0` ⇒ ingen spökrad.
+Samma felslut gjordes 2026-09-17 och togs tillbaka 2026-09-18.
+
+**Butikens namn ut ur copyn** (Axels beslut 2026-09-18): fyra `message`-block sa
+"CaraShell dekker …" eller "16 anmeldelser på carashell.se", och `PD_6_1`:s
+bottenband sa `carashell.se · Fri frakt · …`. Omskrivna av sonnet-subagent mot
+`docs/copy-regler.md`. Påståendet om 16 omdömen står kvar utan källhänvisning.
+
+**Videon `PD_5_H1` hölls** — tre skäl, alla mätta i källfilen (39,4 s, 1080×1920):
+inbrända svenska ordcaptions i hela filmen, slutkortet är en skärmdump av den
+svenska produktsidan med `carashell.se`, `1 469,00 kr → 1 129,00 kr` och
+"16 recensioner", och både caption och voiceover säger butikens namn
+("Carashell taköverdrag"). US-rundan 2026-09-18 byggde om precis detta för
+engelska (`pipeline/no-precis.py`, `video/forbehandla.py`, nytt slutkort), så
+vägen finns — men den lägger tillbaka butikens namn i annonsen, vilket är
+ägarens fråga och inte rutinens.
+
+## Slutkortet bryter namnregeln — mätt 2026-09-19 (US-rundan)
+
+Norge-rundan samma dag skrev att US-vägen "lägger tillbaka butikens namn". Det
+stämmer, och det är nu mätt rad för rad i `2026-09-18-us/`:
+
+| Del | Innehåller butiksnamn? |
+|---|---|
+| De 17 annonsernas copy (`adcopy-US.json`) | ❌ nej — noll träffar |
+| De nio bildernas texter (`bilder/oversatt-output.json`) | ❌ nej — noll träffar |
+| De åtta videornas slutkort (`video/bygg-cap.py`) | ✅ **ja** — blå badge `carashell.com` |
+
+Slutkortet byggdes 2026-09-18 för att ersätta Bäverbutikens svenska slutkort i
+sex av åtta källvideor. Samma dag beslutade Axel att butikens namn aldrig står i
+en annons (`docs/copy-regler.md`, processregel 1) — bygget hann före regeln.
+
+**Vad som gäller:** annonserna är live och live-annonser stängs aldrig av i
+efterhand (Axels beslut 2026-09-15). De åtta ligger kvar som de är. **Från nästa
+videorunda ritar `slutkort()` produktbild + pris + garanti, ingen domän och ingen
+logga** — produkten, priset och länken pekar redan ut butiken, vilket är hela
+skälet till regeln. Samma sak gäller en eventuell ombyggnad av `PD_5_H1`: den
+blockeras inte längre av slutkortet, bara av captions och voiceover som säger
+namnet.
+
+Lärdomen är inte om slutkort: **en regel som beslutas mitt i en körning gäller
+nästa körning, inte den som redan renderat.** Läs `docs/copy-regler.md` i steg 2,
+inte ur minnet från gårdagens batch.

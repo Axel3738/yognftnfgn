@@ -1,0 +1,23 @@
+1
+00:00:00,140 --> 00:00:01,640
+I dag er siste sjanse.
+
+2
+00:00:01,920 --> 00:00:04,200
+Akkurat i dag får du tretti prosent rabatt.
+
+3
+00:00:04,500 --> 00:00:05,960
+Lageret går snart tomt.
+
+4
+00:00:06,120 --> 00:00:10,960
+Denne boret gjør vedkløyving til en lek, og akkurat nå er den billigere enn noen gang.
+
+5
+00:00:11,200 --> 00:00:12,600
+Bare i dag, bare nå.
+
+6
+00:00:12,920 --> 00:00:14,980
+Klikk på lenken før det er tomt.

@@ -1,0 +1,114 @@
+{
+ "CaraShellRoof_US_CO_101_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 25.84,
+   "medel_db": -17.6,
+   "max_db": -1.5,
+   "langd_kalla": 25.888844,
+   "langddrift": 0.002,
+   "tal_ny": 21.62,
+   "sista_replik_slut": 22.46
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_RI_101_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 31.56,
+   "medel_db": -21.1,
+   "max_db": -2.7,
+   "langd_kalla": 31.577732,
+   "langddrift": 0.001,
+   "tal_ny": 25.699999999999996,
+   "sista_replik_slut": 27.72
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_SP_104_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 39.92,
+   "medel_db": -18.3,
+   "max_db": -1.3,
+   "langd_kalla": 39.936916,
+   "langddrift": 0.0,
+   "tal_ny": 34.260000000000005,
+   "sista_replik_slut": 36.38
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_UG_101_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 27.2,
+   "medel_db": -21.2,
+   "max_db": -3.0,
+   "langd_kalla": 27.212381,
+   "langddrift": 0.0,
+   "tal_ny": 21.56,
+   "sista_replik_slut": 23.96
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_PD_104_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 25.52,
+   "medel_db": -15.5,
+   "max_db": -1.4,
+   "langd_kalla": 25.563764,
+   "langddrift": 0.002,
+   "tal_ny": 24.3,
+   "sista_replik_slut": 25.2
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_GT_104_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 26.84,
+   "medel_db": -15.4,
+   "max_db": -1.2,
+   "langd_kalla": 26.864082,
+   "langddrift": 0.001,
+   "tal_ny": 25.100000000000005,
+   "sista_replik_slut": 26.46
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_GT_105_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 23.28,
+   "medel_db": -15.7,
+   "max_db": -1.2,
+   "langd_kalla": 23.288209,
+   "langddrift": 0.0,
+   "tal_ny": 21.86,
+   "sista_replik_slut": 22.96
+  },
+  "ok": true
+ },
+ "CaraShellRoof_US_PD_5_H1": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 39.52,
+   "medel_db": -20.9,
+   "max_db": -2.5,
+   "langd_kalla": 39.403991,
+   "langddrift": 0.003,
+   "tal_ny": 33.379999999999995,
+   "sista_replik_slut": 35.36
+  },
+  "ok": true
+ }
+}

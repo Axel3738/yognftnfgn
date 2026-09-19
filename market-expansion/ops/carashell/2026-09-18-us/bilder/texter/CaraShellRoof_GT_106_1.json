@@ -1,0 +1,73 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "rader": 2,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.6,
+  "text": "Protect roof this Christmas"
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   445
+  ],
+  "rader": 2,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "radavstand": 1.6,
+  "text": "Winter-ready — not a thin tarp that cracks in frost"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Reg. $249 · Free shipping · 90-day guarantee"
+ },
+ {
+  "box": [
+   208,
+   1212,
+   873,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop Now – $199"
+ }
+]

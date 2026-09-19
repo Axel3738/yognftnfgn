@@ -609,7 +609,13 @@ def rita_box(bild, im, b):
     en platta som smälter ihop med bakgrunden). b = {"box": [x0,y0,x1,y1],
     "text": ..., "fet": bool, "farg": [r,g,b], "fyll": "ljus"|"mork"|null,
     "outline": [r,g,b]|null, "radie": px, "storlek": px}. fyll=ljus lägger en
-    nästan vit platta (som text.py:s platta) över rutan, mork en mörk."""
+    nästan vit platta (som text.py:s platta) över rutan, mork en mörk.
+    "fyllfarg": [r,g,b] sätter plattans färg exakt i stället för de två
+    standardtonerna — behövs när rutan ska matcha ett band som redan finns i
+    bilden (OPS-mallens topp- och bottenband är [60,66,72], inte [10,14,18]),
+    och när bakgrunden under rutan är delad så radmedianen inte går att sudda
+    mot (CaraShellRoof_PD_6_1: rubriken ligger över två olika foton, mätt
+    2026-09-19). fyllfarg kräver "fyll" — den byter färg, inte läge."""
     x0, y0, x1, y1 = [int(v) for v in b["box"]]
     # Sudda befintlig text i rutan först: pixlar som avviker mörkt (ljus platta)
     # eller ljust (mörk platta) från radens median fylls med radens median.
@@ -636,7 +642,12 @@ def rita_box(bild, im, b):
         summa = box.sum(axis=2)
         diff = summa - rm.sum(axis=1)[:, None]
         t = ((diff < -60) & (summa < 500)) if ljus_platta else ((diff > 60) & (summa > 450))
-        for _ in range(3):
+        # "utvidga": hur många px masken växer. 3 räcker för normal text, men stor
+        # FET text på ett mörkt band har en antialias-gloria som ligger under
+        # tröskeln summa > 450 och blir kvar som en läsbar spökrad
+        # (CaraShellRoof_PD_7_1:s bottenband, 31 px fet vit text: 13 % kontrast kvar
+        # på rad 1087–1097, mätt 2026-09-19). Höj till 6 på såna band.
+        for _ in range(int(b.get("utvidga", 3))):
             t2 = t.copy()
             t2[1:] |= t[:-1]; t2[:-1] |= t[1:]; t2[:, 1:] |= t[:, :-1]; t2[:, :-1] |= t[:, 1:]
             t = t2
@@ -649,8 +660,9 @@ def rita_box(bild, im, b):
         # fyller den svenska texten med plattans median (vitare än plattan runt om) och lämnar
         # en VIT spökskugga som 225 alfa inte döljer (Batmotor_CS_7_1/FM_3_1, mätt 2026-09-09).
         alfa = int(b.get("alfa", 225 if b["fyll"] == "ljus" else 200))
-        platta = Image.new("RGBA", (x1 - x0, y1 - y0),
-                           (248, 248, 248, alfa) if b["fyll"] == "ljus" else (10, 14, 18, alfa))
+        grund = tuple(int(c) for c in b["fyllfarg"]) if b.get("fyllfarg") else \
+            ((248, 248, 248) if b["fyll"] == "ljus" else (10, 14, 18))
+        platta = Image.new("RGBA", (x1 - x0, y1 - y0), grund + (alfa,))
         mask = Image.new("L", platta.size, 0)
         ImageDraw.Draw(mask).rounded_rectangle([0, 0, platta.width - 1, platta.height - 1],
                                                radius=int(b.get("radie", 24)), fill=255)

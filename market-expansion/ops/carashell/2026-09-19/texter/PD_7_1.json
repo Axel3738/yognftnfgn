@@ -1,0 +1,49 @@
+[
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "Bare taket. Én person."
+ },
+ {
+  "form": 2,
+  "rader": [
+   0,
+   1
+  ],
+  "text": "Stroppen hekter under karosseriets kant"
+ },
+ {
+  "box": [
+   50,
+   958,
+   428,
+   1016
+  ],
+  "text": "Kanten henger 30–40 cm ned",
+  "fet": true,
+  "farg": [
+   241,
+   242,
+   239
+  ],
+  "storlek": 28,
+  "utvidga": 6
+ },
+ {
+  "box": [
+   0,
+   1052,
+   896,
+   1152
+  ],
+  "text": "Ingen hjelper. Ingen presenning over hele kjøretøyet.",
+  "fet": true,
+  "farg": [
+   241,
+   242,
+   239
+  ],
+  "storlek": 31,
+  "utvidga": 6
+ }
+]

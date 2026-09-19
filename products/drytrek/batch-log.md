@@ -1196,3 +1196,48 @@ andra NO-kampanj bredvid den pausade och dubblat spenden.
 
 Priset lästes till **380 NOK** (382 den 17:e, 379 den 16:e). Den levande
 avläsningen fortsätter följa kursen, som den ska.
+
+---
+
+## 2026-09-19 — nattvakten, körning nr 8: båda marknaderna avstängda, 0 ändringar
+
+SE: `DRYTREK_SE_Damasker Vandring` PAUSED sedan 15/9, **0 ändringar**, inget
+aktiverat. 7d: 2 998 kr, 6 köp, ROAS 0,87 — bara spend före pausen; 3d 0 kr.
+NO: `DRYTREK_NO_Damasker Vandring` pausades av Axel 18/9 11:28 (8 450 kr
+livstid, 31 köp, ROAS 1,82 livstid men 1,36 på 3 dygn). Ingen torrkörning i
+natt — PAUSED med spend är ett beslut och rutinen rör det aldrig. Frågan om
+NO-styrning (ställd 17/9 och 18/9) är därmed stängd av pausen.
+
+Produkten står helt still: noll spend, noll aktiva annonser. Briefronden
+pausad (registret säger "briefdag JA — ikappkörning", `Briefrond:` PAUS ⇒ noll
+briefer, ingen `brief-kord`). Hubben oförändrad tredje natten: 19 batch
+#3-rader i Draft, 10 videor i Creative strat review, 31 Approved.
+`products/drytrek/feedback.md` saknas — produkten har aldrig briefgranskats
+(nytt steg 0 i kommandot sedan 18/9).
+
+Discord `#ads`: A/B/C-frågan om SE står kvar sedan 15/9; ny fråga om rutinen
+ska stängas av i Routines så länge ingen marknad är igång (HeimGuard NO-
+prejudikatet 13/9). Rutinen slår aldrig på något själv.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-19.json`.
+
+---
+
+## 2026-09-19 — leveransrunda: oförändrat, andra dygnet med båda marknaderna av
+
+Ingen förändring sedan igår. Båda kampanjerna PAUSED, kön tom, inget rört i
+kontot. Pris 389 kr.
+
+⚠️ **Norges 7d-ROAS läser 1,71 idag mot 1,65 igår — det är INTE en förbättring.**
+Kampanjen har varit av sedan 18/9 11:28, så ingen ny spend kommer in; fönstret
+töms bara på sina sämre dagar. Exakt det fel gårdagens rättelse handlade om,
+fast åt andra hållet: **ett rullande fönster över en pausad kampanj bär ingen
+signal alls.** Sverige samma dag: 2 998 kr, 6 köp, ROAS 0,87 — samma sak där.
+
+Båda ägarfrågorna obesvarade: omstart av Sverige (`#ads-to-do`, sedan 15/9) och
+om den här rutinen ska pausas (`#annons-uppladdning`, sedan 18/9). Ingen av dem
+pingas om — rapporten går tyst tills något ändras.
+
+**2026-09-19:** Oförändrat. NO-kampanjen fortfarande PAUSED (8 476 kr — de 26
+kronorna sedan i går är efterattribuering, inte spend), kön fortfarande 0 rader,
+priset 380 NOK. Ingenting rört. Loggas som en rad med flit: en dag utan
+förändring förtjänar ingen egen rubrik.

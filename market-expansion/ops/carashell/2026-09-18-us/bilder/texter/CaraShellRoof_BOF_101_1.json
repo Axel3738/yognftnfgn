@@ -1,0 +1,71 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   160
+  ],
+  "rader": 1,
+  "storlek": 72,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "$249 → $199"
+ },
+ {
+  "box": [
+   33,
+   198,
+   1047,
+   262
+  ],
+  "rader": 1,
+  "storlek": 34,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "Covers the roof, not the RV"
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "210D fabric – built to last all winter"
+ },
+ {
+  "box": [
+   277,
+   1212,
+   804,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop Now – Save $50"
+ }
+]

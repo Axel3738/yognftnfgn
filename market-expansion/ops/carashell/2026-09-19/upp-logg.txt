@@ -1,0 +1,221 @@
+=== CaraShellRoof_NO_CS_6_1 ===
+(node:1235) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_CS_6_1" · bild CaraShellRoof_NO_CS_6_1.jpg (0.20 MB)
+3. Marknadskoll: "CaraShellRoof_NO_CS_6_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (30 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_CS_6_1" finns inte bland kontots 621 annonser — ok
+5. Koncept CS → adset "CARASHELL_NO_Takovertrekket - CS" (120249089478400172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash 4b918c179099689e75f94f9295e85617
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "4b918c179099689e75f94f9295e85617",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "1 382,50 kr → 1 106 kr. Det er 276,50 kr du sparer på samme tak, samme 6,5 × 3 m duk, samme stropper under karosseriets kant.\n\nPrisen gjelder uansett når du handler – ingen nedtelling. Fri frakt til Sverige og Norge, levering 5–10 arbeidsdager. 14 dagers angrerett etter svensk lov.",
+       "name": "1 382,50 kr → 1 106 kr – spar 276,50 kr",
+       "description": "Fri frakt SE/NO. 14 dagers angrerett.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_CS_6_1 (120249172226310172), creative 2223725878200830
+9. Aktiverad: annons 120249172226310172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_CS_6_1 → ACTIVE / effective IN_PROCESS (adset 120249089478400172)
+   exit=0
+=== CaraShellRoof_NO_CS_5_1 ===
+(node:1286) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_CS_5_1" · bild CaraShellRoof_NO_CS_5_1.jpg (0.23 MB)
+3. Marknadskoll: "CaraShellRoof_NO_CS_5_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (31 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_CS_5_1" finns inte bland kontots 622 annonser — ok
+5. Koncept CS → adset "CARASHELL_NO_Takovertrekket - CS" (120249089478400172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash 244add0875404855b0564b5decd2f574
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "244add0875404855b0564b5decd2f574",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "20 % rabatt på taktrekket: 1 382,50 kr blir 1 106 kr.\n\n6,5 × 3 m svart duk som dekker taket på campingvogn og bobil. Kanten henger 30–40 cm ned over sidene og stroppene hekter under karosseriets kant. Én person setter det på.\n\nFri frakt til Sverige og Norge. Levering 5–10 arbeidsdager. 14 dagers angrerett etter svensk lov.",
+       "name": "Taktrekket – 20 % rabatt, 1 106 kr",
+       "description": "Ord. 1 382,50 kr · Fri frakt · 14 dagers angrerett",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_CS_5_1 (120249172228120172), creative 1073159122250918
+9. Aktiverad: annons 120249172228120172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_CS_5_1 → ACTIVE / effective IN_PROCESS (adset 120249089478400172)
+   exit=0
+=== CaraShellRoof_NO_SP_5_1 ===
+(node:1441) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_SP_5_1" · bild CaraShellRoof_NO_SP_5_1.jpg (0.25 MB)
+3. Marknadskoll: "CaraShellRoof_NO_SP_5_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (32 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_SP_5_1" finns inte bland kontots 623 annonser — ok
+5. Koncept SP → adset "CARASHELL_NO_Takovertrekket - SP" (120249050600070172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash ab886ce3262363a706490872d450d3c0
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "ab886ce3262363a706490872d450d3c0",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "\"Passer bra og beskytter taket mot vær.\" – Lars, ett av 16 anmeldelser – alle fem stjerner.\n\nDette bildet er tatt i regn: vannet blir liggende på duken, taket under er tørt, kanten hektet under karosseriets kant.\n\n1 106 kr (ord. 1 382,50 kr). Fri frakt til Sverige og Norge. 14 dagers angrerett etter svensk lov.",
+       "name": "16 anmeldelser, 5 stjerner – også i regn",
+       "description": "\"Beskytter taket mot vær.\" – Lars. 1 106 kr.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_SP_5_1 (120249172233790172), creative 1680283167006469
+9. Aktiverad: annons 120249172233790172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_SP_5_1 → ACTIVE / effective IN_PROCESS (adset 120249050600070172)
+   exit=0
+=== CaraShellRoof_NO_SP_7_1 ===
+(node:1516) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_SP_7_1" · bild CaraShellRoof_NO_SP_7_1.jpg (0.28 MB)
+3. Marknadskoll: "CaraShellRoof_NO_SP_7_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (33 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_SP_7_1" finns inte bland kontots 600 annonser — ok
+  ⏳ Meta rate limit (försök 1/8) — väntar 30s
+  ⏳ Meta rate limit (försök 2/8) — väntar 60s
+  ⏳ Meta rate limit (försök 3/8) — väntar 120s
+  ⏳ Meta rate limit (försök 4/8) — väntar 240s
+5. Koncept SP → adset "CARASHELL_NO_Takovertrekket - SP" (120249050600070172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash 13e4df25c3eca00576aa380063ee5cb9
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "13e4df25c3eca00576aa380063ee5cb9",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "\"Passer bra og beskytter taket mot vær.\" – Lars, ett av 16 anmeldelser – alle fem stjerner.\n\nHar du bobil er taket akkurat samme problem som på en campingvogn – bare høyere oppe. Taktrekket dekker 6,5 × 3 m, samme duk, samme stropper under karosseriets kant.\n\n1 106 kr (ord. 1 382,50 kr). Fri frakt til Sverige og Norge. 14 dagers angrerett etter svensk lov.",
+       "name": "Bobil eller campingvogn – samme tak",
+       "description": "6,5 × 3 m. 16 anmeldelser, 5,00. 1 106 kr.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_SP_7_1 (120249172278540172), creative 1638607104614430
+9. Aktiverad: annons 120249172278540172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_SP_7_1 → ACTIVE / effective IN_PROCESS (adset 120249050600070172)
+   exit=0
+=== CaraShellRoof_NO_PD_7_1 ===
+(node:1869) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_PD_7_1" · bild CaraShellRoof_NO_PD_7_1.jpg (0.16 MB)
+3. Marknadskoll: "CaraShellRoof_NO_PD_7_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (34 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_PD_7_1" finns inte bland kontots 625 annonser — ok
+5. Koncept PD → adset "CARASHELL_NO_Takovertrekket - PD" (120249050598260172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash c33b15a30554a221285c15b9e251c9ff
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "c33b15a30554a221285c15b9e251c9ff",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "En heldekkende presenning krever to par hender og en stige rundt hele kjøretøyet. Taktrekket dekker bare taket: 6,5 × 3 m svart duk, kanten henger 30–40 cm ned over sidene, elastiske stropper hekter under karosseriets kant.\n\nDu går opp, legger den over taket, hekter stroppene under kanten. Ferdig – alene.\n\n1 106 kr (ord. 1 382,50 kr). Fri frakt til Sverige og Norge. 14 dagers angrerett etter svensk lov.",
+       "name": "Bare taket. Én person.",
+       "description": "Ingen hjelper. Ingen heldekkende presenning. 1 106 kr.",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_PD_7_1 (120249172282500172), creative 962958336851219
+9. Aktiverad: annons 120249172282500172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_PD_7_1 → ACTIVE / effective IN_PROCESS (adset 120249050598260172)
+   exit=0
+=== CaraShellRoof_NO_PD_6_1 ===
+(node:2022) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+=== ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
+1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_PD_6_1" · bild CaraShellRoof_NO_PD_6_1.jpg (0.19 MB)
+3. Marknadskoll: "CaraShellRoof_NO_PD_6_1" bär NO — ok för NO
+2. Kampanjer: 23 i kontot · 3 är CaraShells · 1 på marknad NO · via annonserna: CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (35 annonser med prefixet) · CARASHELL_SE_Taköverdraget LISTICLE (20 annonser med prefixet) · CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (44 annonser med prefixet)
+   ▶ CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 (120249050596730172) ACTIVE/ACTIVE
+   → vald: "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172)
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_PD_6_1" finns inte bland kontots 626 annonser — ok
+5. Koncept PD → adset "CARASHELL_NO_Takovertrekket - PD" (120249050598260172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: bild uppladdad, image_hash f62c25c7057dccbe9f46812625b8c1c5
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "link_data": {
+       "image_hash": "f62c25c7057dccbe9f46812625b8c1c5",
+       "link": "https://carashell.se/nb/products/takskyddet?country=NO",
+       "message": "Taket eller taktrekket. Ett av dem koster 1 106 kr.\n\nTakluker, skjøter og tetninger sitter på flaten ingen ser på. Regnet blir stående der fra det første høstregnet til fukttesten i april – og først da får du vite hva vinteren kostet.\n\nTaktrekket vet du prisen på nå: 1 106 kr (ord. 1 382,50 kr). 6,5 × 3 m svart duk, kanten henger 30–40 cm ned over sidene, stroppene hekter under karosseriets kant. Passer campingvogn og bobil. Én person setter det på.\n\nFri frakt til Sverige og Norge. 14 dagers angrerett etter svensk lov.",
+       "name": "1 106 kr – eller fukttesten i april",
+       "description": "Bare taket · 6,5 × 3 m · Én person · Fri frakt SE/NO",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_PD_6_1 (120249172287960172), creative 1662114461913605
+9. Aktiverad: annons 120249172287960172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_PD_6_1 → ACTIVE / effective IN_PROCESS (adset 120249050598260172)
+   exit=0
+KLART

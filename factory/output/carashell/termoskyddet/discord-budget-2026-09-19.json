@@ -1,0 +1,21 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-19",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #3 — budget round only, Saturday is not a brief day",
+    "Campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is PAUSED (someone switched it off during 18/9 — not the routine). Final reading: 2 058 kr / 4 purchases / ROAS 1.08 over 3 days against break-even 1.61. A paused campaign is a decision: nothing touched, nothing activated",
+    "CS_4_1 (the winning-line image from batch #2) reached 506 kr with 0 purchases before the pause; CS_2_1 (inherited offer image) still carries 2 of the 4 purchases at 180 kr",
+    "0 changes, 0 log lines. Brief round is paused by owner decision since 18/9 (CaraShell is now mirrored from the Bäverbutiken hub via /ops-spegla), so no briefs on Sunday either"
+  ],
+  "siffror": { "spend_3d": 2058, "kop_3d": 4, "roas_3d": 1.08, "budget": 700, "andringar": 0 },
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-20",
+  "varningar": [
+    "The routine will keep reporting a paused campaign every night until it is switched on again. It never activates anything itself",
+    "The pixel is still shared with the roof cover and there is no Shopify key for CaraShell, so the 4 purchases were never split per product"
+  ]
+}

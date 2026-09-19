@@ -1,0 +1,18 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/termoskyddet",
+  "datum": "2026-09-19",
+  "lage": "oversatt",
+  "marknad": "US",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows. 'Approved' checked for rows missing in the US — 5 rows, all already live in the US. Nothing to translate.",
+    "US campaign CARASHELL_US_Termoskydd Husbil 211 × 171 cm (Magiborsten UK) is still PAUSED by the owner, unchanged since 2026-09-18 11:34 CEST — 1 978 SEK lifetime, 0 purchases. The copy '1 … – kopia' is still PAUSED since 2026-09-17 — 616 SEK, 0 purchases. Neither touched.",
+    "0 rows held. No HeyGen credits used, nothing uploaded, no Notion rows changed."
+  ],
+  "varningar": [
+    "Nothing changed since yesterday's run. While the US campaign stays paused, new rows will be held in 'SE-ACTIVE to be translated' — nothing is rendered or uploaded until the owner switches it on (or removes US from the store's ad markets: node factory/register.mjs annonsmarknader carashell/termoskyddet NO)."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-20"
+}

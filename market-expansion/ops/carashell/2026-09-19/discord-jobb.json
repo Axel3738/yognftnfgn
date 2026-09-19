@@ -1,0 +1,30 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-19",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Six image ads that had been stuck since 2026-09-17 are now live in CARASHELL_NO_Takovertrekket, one ad set per concept, all read back ACTIVE.",
+    "CS_6_1 -> CaraShellRoof_NO_CS_6_1 (ad set CS, ad 120249172226310172)",
+    "CS_5_1 -> CaraShellRoof_NO_CS_5_1 (ad set CS, ad 120249172228120172)",
+    "SP_5_1 -> CaraShellRoof_NO_SP_5_1 (ad set SP, ad 120249172233790172)",
+    "SP_7_1 -> CaraShellRoof_NO_SP_7_1 (ad set SP, ad 120249172278540172)",
+    "PD_7_1 -> CaraShellRoof_NO_PD_7_1 (ad set PD, ad 120249172282500172)",
+    "PD_6_1 -> CaraShellRoof_NO_PD_6_1 (ad set PD, ad 120249172287960172)",
+    "Norwegian prices throughout: 1 106 kr, was 1 382,50 kr, save 276,50 kr = 20 %. The Swedish 23 % was never carried across.",
+    "All six link to /nb/products/takskyddet?country=NO, so Norwegian buyers see NOK and not SEK.",
+    "HeyGen credits used: 0 before -> 0 after. Images are translated pixel by pixel, no credits.",
+    "All six Notion rows moved to Approved - both NO and US now carry the ad."
+  ],
+  "varningar": [
+    "The store name was taken out of the Norwegian copy before upload. Four body texts said 'CaraShell covers only the roof' or '16 reviews at carashell.se', and PD_6_1's bottom band said 'carashell.se - Free shipping - 14 days return'. An ad must never carry the store name, because the same ad is mirrored between stores. The 16-review claim still stands, just without naming where the reviews sit.",
+    "Two real faults were found and fixed in the image translator: it could not paint a bar in a colour the image already uses, and a 3 px erase margin left a readable ghost line under large bold text (measured on PD_7_1's bottom band: 13 % contrast left on 10 % of the pixels). Both now have their own setting.",
+    "Two faults reported on 2026-09-17 did not exist: the star row must simply be left alone rather than redrawn, and the price chip needs a manual box rather than a new detector."
+  ],
+  "action_axel": [
+    "The video PD_5_H1 is held and was not uploaded. Three things block it, all measured in the source file: Swedish word captions are burned into the whole video and HeyGen only translates the audio; the end card is a screenshot of the Swedish product page showing 1 469,00 kr to 1 129,00 kr, while Norway pays 1 106 kr; and both the caption and the voiceover say the store name. The US run on 2026-09-18 rebuilt exactly this for English, so the path exists - but it puts the store name back into the ad, and after your decision on 2026-09-18 that is your call, not the routine's. Tell us which way to go and the video ships the same day. The row stays in SE-ACTIVE to be translated until then."
+  ],
+  "nasta_korning": "2026-09-20"
+}

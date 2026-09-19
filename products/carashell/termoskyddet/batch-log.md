@@ -576,3 +576,81 @@ i Metas anropstak.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550526534278717470`, ingen ping.
 - Kommandofilen fick 2026-09-18 en not om egen domän (`carashell.com`) i länkraden, och
   `hamtaPris` exporteras nu ur `ops-leveranskon.mjs` — inget som ändrar den här rundan.
+
+## 2026-09-19 — nattvakten körning nr 3 (ingen briefdag): kampanjen PAUSED, 0 ändringar
+
+`CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` står **PAUSED** (avstängd under 18/9 av
+någon annan än rutinen — inte loggat här). Slutläsning: **2 058 kr / 4 köp / ROAS 1,08**
+på tre dygn mot BE 1,61. `CS_4_1` nådde 506 kr / 0 köp före pausen; `CS_2_1` bär 2 av 4
+köp (180 kr). Inget rört, inget aktiverat — PAUSED är ett beslut. **Briefronden pausad
+av Axel 2026-09-18** ("CaraShell briefas inte längre själv — allt skapas i Bäverbutikens
+teamspace och speglas hit, `/ops-spegla`"), så söndagens briefdag ger inga briefer.
+Batch #2:s två videobriefer ligger kvar i Draft i hubben.
+
+## 2026-09-19 — `/ops-leverans carashell/termoskyddet` — tom kö, oförändrat
+
+- Kön: 0 rader i `To be Reviewed` / `Creative strat review`. Hubben oförändrad sedan igår
+  (5 Approved, 2 Draft-videor). Inget laddades upp, inget rördes i kontot.
+- SE-kampanjen står kvar PAUSED med samma `updated_time` som igår (2026-09-18 11:29 CEST) —
+  ingen har rört den. Livstid 2 058 kr / 4 köp / ROAS 1,09 (eftersläpande attribution +30 kr).
+- Nattvakten skrev ingen budgetloggrad för termoskyddet i natt (kampanjen pausad, inget att döma).
+- Sedan 2026-09-18 briefas termoskyddet i Bäverbutikens hub och speglas hit av `/ops-spegla`
+  (16:55) — den rutinen laddar upp direkt i SE-kampanjen när den är ACTIVE. Tom kö här är det
+  väntade läget, inte ett fel.
+
+## 2026-09-19 — `/ops-oversatt carashell/termoskyddet` (NO) — tom kö
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. Inget översatt, inget renderat
+  (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` (`120249115382210172`,
+  MagiBorsten DK) **ACTIVE** med 4 ACTIVE adsets; ärvd länk ur `CaraShellFront_NO_CS_4_1`
+  (`https://carashell.se/nb/products/termoskyddet?country=NO`). 548 NOK läst på `/nb`-sidan.
+- SE-kampanjen står kvar PAUSED av ägaren sedan 2026-09-18 11:29 CEST — inga nya rader når
+  den här kön den vägen. Sedan 2026-09-18 briefas produkten dessutom i Bäverbutikens hub och
+  speglas hit av `/ops-spegla` 16:55, som laddar upp direkt i SE-kampanjen. **Tom kö är det
+  väntade läget**, inte ett fel.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913337725026415`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-19-no-termoskyddet/`.
+
+## 2026-09-19 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, US fortsatt pausad
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader (batch #2), alla
+  redan uppe i US — inget eftersläpande.
+- **Oförändrat sedan gårdagens runda.** `CARASHELL_US_Termoskydd Husbil 211 × 171 cm`
+  (`120251442339640435`) står kvar PAUSED med **samma `updated_time` som igår**
+  (2026-09-18 09:34 UTC / 11:34 CEST) — ingen har rört den. Livstid 1 978 kr / 0 köp
+  (+1,13 kr eftersläpande attribution sedan igår). Kopian `1 CARASHELL_US_… – kopia`
+  (`120251451414990435`) PAUSED sedan 2026-09-17, 616 kr / 0 köp. Båda är PAUSED med
+  spend = beslut; rutinen rör dem inte.
+- Läge "US paused by owner": 0 rader hållna, inget renderat (0 HeyGen-credits), inget
+  uppladdat, ingen Notion-rad rörd.
+- Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913495669809304`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-19-us-termoskyddet/`.
+## 2026-09-19 — `/ops-spegla carashell/termoskyddet` — kön tom, 21 rader blockerade av pausad SE-kampanj
+
+- **Ordinarie kö: 0 rader** i `CaraShell SE ready to be active`, 0 i `CaraShell EN ready to be active`.
+  Inget speglat, ingen Notion-rad rörd, inget uppladdat, ingen Discord-ping.
+- **Efterjustering `--fran "Translation in review,Approved"`: 0 + 21 rader.** Torrkörningen gav
+  **0 speglade / 21 hoppade / 0 fel** — samma skäl på varenda rad: *ingen ACTIVE SE-kampanj i butiken*.
+  `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` är PAUSED med **2 058 kr** spend (pausad för hand
+  2026-09-18 11:29 CEST). PAUSED med spend är ett beslut — speglingen laddar inte upp dit.
+  Ingen rad stoppades på pris (559 kr i briefen = 559 kr i butiken) och ingen på brandnamn.
+  Ingen av de 21 har NO-version (Translated url saknas), så NO-delen hade hoppats ändå.
+- Skarp körning **inte** gjord: med 0 speglade i torrt är den bevisligen ett no-op — varje rad
+  hoppas före första skrivningen (`ops-spegla.mjs` rad 772–787), och kommentarsgrenen kräver
+  brand- eller prisstopp, vilket ingen rad har.
+- ⚠️ **De 21 raderna står i `Approved`, inte i speglingssteget.** Mätt på alla 21 (`last_edited_time`):
+  16 fick sin status 2026-09-19 06:32 UTC, 5 ändrades 16:54–16:57 UTC mitt under den här körningen.
+  Ingen schemalagd rutin går de tiderna. Enligt CLAUDE.md ska Bäverbutikens `/oversatt NO` sätta
+  `CaraShell SE ready to be active` på den här hubben, aldrig `Approved` — annars når raderna aldrig
+  speglingens kö. Inget arbete är förlorat: `--fran "Approved"` fångar dem när SE-kampanjen är igång.
+  **Orsaken funnen i commit `732359e`** ("/oversatt NO 2026-09-19: hela kön blockerad, 14 rader till
+  Approved"): Bäverbutikens NO-kampanj `Frontrutetrekk til Bobil` är avvecklad (PAUSED, 4 495 kr spend),
+  så den körningen översatte inte och flyttade raderna till `Approved` enligt den generella regeln
+  2026-09-15 — utan att känna till speglingsundantaget. 5 av de 21 raderna kom den vägen 16:54–16:57 UTC.
+  För en speglad hub är `Approved` fel även när NO är avvecklad: speglingen behöver bara den SVENSKA
+  filen, och hoppar NO-delen av sig själv. `/oversatt NO` bör kolla `ops-spegla.mjs --kallor` innan den
+  sätter status på en hub.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` ACTIVE, 4 adsets. Pris 559 SEK / 548 NOK
+  läst ur butiken. Rutin: `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.

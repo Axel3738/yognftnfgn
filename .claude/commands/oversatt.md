@@ -34,6 +34,16 @@ Skriv i Axels läsformat: en mening per rad, max 10 ord, inga filnamn, ingen tek
   den norska kampanjen senare får de annonserna ingen norsk version automatiskt
   — de måste sättas tillbaka i kön för hand. Säg det i briefen varje gång rader
   flyttas, så beslutet är synligt.
+  ⚠️ **Fråga ALDRIG om en avstängd norsk kampanj ska startas om** (Axels beslut
+  2026-09-19): "om kampanjerna är avstängda i Norge för att de testats men inte
+  går bra, men vi fortfarande skalar dom i Sverige, ska vi inte försöka
+  återaktivera dom i Norge bara för att vi fortsätter med dom i Sverige."
+  Att produkten skalar i Sverige är alltså INGET argument för Norge — de två
+  marknaderna bedöms var för sig. Rapportera att kön var blockerad och gå
+  vidare; lägg ingen "Axels beslut krävs"-rad om saken i briefen eller i
+  körloggen. Mätt 2026-09-19: Beltesliper, Frontrutetrekk til Bobil och
+  Båtmotortrekk är alla avvecklade med spend, och alla tre produkterna skalar
+  i Sverige — det är det normala läget, inte ett problem att lösa.
 - **Fel konto = avbryt.** Kampanjens `account_id` måste vara marknadens (`marknader.json`).
 - **Kontot är facit för dubbletter.** Finns målnamnet i målkontot är raden klar.
 - **Ingen rad hoppas tyst.** Allt som inte kördes står i briefen med skäl.
@@ -67,6 +77,37 @@ Env som krävs: `META_ACCESS_TOKEN`, `NOTION_TOKEN`, `KIE_API_KEY` (reserv för 
 finns: läs kön med SQL (`Status = 'SE-ACTIVE to be translated'` i alla hubbar under
 teamspacet Bäverbutiken, Typ ~ pending approval) till en JSON-fil och ge den till
 kö-verktyget med `--rader`; statusbyten görs då med `notion-update-page`.
+
+🔴 **MCP-vägen är en NÖDVÄG, inte ett likvärdigt alternativ — den kostar Axel
+en godkännandeklick per anrop.** Mätt 2026-09-19: `NOTION_TOKEN` saknades i
+rutinens container, så körningen gick via MCP:n och krävde ~29 klick (hubbsök,
+sidhämtningar, SQL, 14 statusbyten). Körningen 2026-09-18 krävde ~65 (52
+statusbyten). Axel 2026-09-19: "du har tagit upp typ minst 30 minuter av min tid
+varje dag … jag behöver godkänna varenda liten jävla uppdatering i notion."
+`.claude/settings.json` är INTE felet — `mcp__Notion__notion-update-page` står
+redan i `allow` och läget är `dontAsk`; connector-anrop godkänns ändå per anrop
+på claude.ai. Enda riktiga fixen är nyckeln.
+**Med `NOTION_TOKEN` satt är hela rutinen klickfri**, för då finns REST-vägen för
+varje steg och allt går genom `node` (som är förhandsgodkänt i `allow`):
+| Steg | REST-verktyg (0 klick) | MCP-nödväg (1 klick/anrop) |
+|---|---|---|
+| Hitta hubbar + läsa kön | `tools/notion-kalla.mjs`, `tools/oversattningskon.mjs` utan `--rader` | `notion-search` + `notion-fetch` + SQL |
+| Kommentar, `Translated url`, status | `tools/notion-aterkoppling.mjs <id> --kommentar "…" --egenskap "Translated url=…" --status "…"` | `notion-update-page` per rad |
+| Lägga in filen överst på raden | `tools/notion-fil-upp.mjs` | `notion-create-file-upload` + `insert_content` |
+Börja därför ALLTID Steg 0 med att kolla nyckeln, och står den som SAKNAD:
+säg det överst i svaret till Axel med antalet klick körningen kommer att kosta,
+innan du drar igång.
+⚠️ **Miljön är per rutin och per konto — läs av den, skriv den aldrig ur minnet.**
+Mätt 2026-09-19 med `get_session` (utan `session_id`) + `list_environments`:
+den här rutinens fasta session `session_017mSZA2oYsnFEtSa723vodp` kör i
+**`env_017T5nLJowPH52bir1CsVYEk`, som heter "yoyo"** — kontot har bara två
+miljöer, "yoyo" och "Concurrent". Den `Default ENV` `env_01PBy3BU66p5AEJYSfm8EbjP`
+som står i CLAUDE.md finns INTE på det här kontot; den gäller kundtjänst-rutinen
+på Axels andra konto. En session vet själv vilken miljö den kör i, så fråga
+sessionen i stället för att leta i dokumentationen.
+⚠️ En variabel som läggs in på claude.ai syns först i en NY container — inte i
+en session som redan kör. Lägger Axel in nyckeln mitt i en körning gäller den
+alltså från nästa körning, inte den pågående.
 
 ## Fas 1 — Kön (gratis, alltid komplett)
 

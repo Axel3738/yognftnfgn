@@ -1,0 +1,104 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "rader": 1,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Just the roof. Not the RV."
+ },
+ {
+  "box": [
+   57,
+   614,
+   458,
+   675
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Heavy to put on alone"
+ },
+ {
+  "box": [
+   565,
+   614,
+   901,
+   675
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "One person handles it"
+ },
+ {
+  "box": [
+   57,
+   1039,
+   512,
+   1100
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Rubs the paint all winter"
+ },
+ {
+  "box": [
+   565,
+   1039,
+   945,
+   1100
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Protects the costly roof"
+ },
+ {
+  "box": [
+   208,
+   1212,
+   874,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Shop Now – From $199"
+ }
+]

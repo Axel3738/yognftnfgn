@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   33,
+   60,
+   1047,
+   290
+  ],
+  "rader": 2,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.6,
+  "text": "Is a regular tarp really enough?"
+ },
+ {
+  "box": [
+   33,
+   318,
+   1047,
+   390
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "210D holds up in winter. Tarps crack in frost."
+ },
+ {
+  "box": [
+   33,
+   1086,
+   1047,
+   1136
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "$199 (reg. $249)"
+ },
+ {
+  "box": [
+   306,
+   1212,
+   775,
+   1297
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Guard the Costly Roof"
+ }
+]

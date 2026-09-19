@@ -1,0 +1,21 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-19",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: main campaign CARASHELL_SE_Taköverdraget raised 3 400 → 4 000 kr/day. The store turned back up — 3-day profit 32.1 % and ROAS 3.42, against 19.3 % and 2.38 last night. 47 purchases over 7 days",
+    "The LISTICLE campaign stays at 1 200 kr: it is in scaling territory (profit 25.9 %) but the cadence lock wants 3 days between changes and it was raised yesterday. It will be eligible again on Monday",
+    "Nothing paused, nothing activated, no ad killed. Profit contribution across judgeable ads is now 13 561 kr over 14 days",
+    "No brief day (Saturday) — and the brief round is paused anyway: CaraShell is no longer briefed on its own, everything is created in the Bäverbutiken teamspace and mirrored here. The budget round keeps running every night"
+  ],
+  "siffror": { "spend_7d": 19411, "kop_7d": 53, "roas_7d": 3.32, "vinstbidrag_7d": 13561 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-20",
+  "varningar": [
+    "The LISTICLE campaign's ROAS eased from 3.19 to 2.82 as its budget went up — still well above break-even 1.63 and still profitable, but it is the number to watch when the cadence lock opens on Monday"
+  ]
+}

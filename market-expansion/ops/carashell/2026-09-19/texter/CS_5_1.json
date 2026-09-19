@@ -1,0 +1,33 @@
+[
+ {
+  "form": 0,
+  "rad": 0,
+  "text": "20 % rabatt på taktrekket"
+ },
+ {
+  "form": 0,
+  "rad": 1,
+  "text": "6,5 × 3 m · Campingvogn & bobil · Én person setter det på"
+ },
+ {
+  "form": 4,
+  "rad": 0,
+  "text": "Fri frakt · 5–10 arbeidsdager · 14 dagers angrerett"
+ },
+ {
+  "box": [
+   542,
+   956,
+   850,
+   1026
+  ],
+  "text": "1 382,50 kr → 1 106 kr",
+  "fet": true,
+  "farg": [
+   34,
+   40,
+   46
+  ],
+  "storlek": 34
+ }
+]

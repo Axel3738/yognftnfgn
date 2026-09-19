@@ -1,0 +1,45 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/termoskyddet",
+  "konto": "1107817401910319",
+  "kontonamn": "Magiborsten UK",
+  "marknad": "US",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/termoskyddet?country=US",
+  "valuta": "USD",
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3dd270ab-908c-8018-a927-c2e551f7de8a",
+    "titel": "Termoskyddet"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE US-kampanj — \"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend (avvecklad, ett beslut) · \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1978 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 16,
+  "lank_arvd": null,
+  "pris_butik": {
+    "pris": 99,
+    "min": 99,
+    "max": 99,
+    "valuta": "USD",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://carashell.com/products/termoskyddet?country=US"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [
+    "kampanj: ingen ACTIVE US-kampanj — \"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend (avvecklad, ett beslut) · \"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1978 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"1 CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16 – kopia\" är PAUSED med 616 kr spend — avvecklad, aldrig mål",
+    "\"CARASHELL_US_Termoskydd Husbil 211 × 171 cm | BE-ROAS 1.61 | 2026-09-16\" är PAUSED med 1978 kr spend — avvecklad, aldrig mål"
+  ],
+  "hamtad": "2026-09-19T16:55:17.555Z"
+}

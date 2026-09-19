@@ -1,0 +1,23 @@
+1
+00:00:00,140 --> 00:00:01,640
+Idag är sista chansen.
+
+2
+00:00:01,920 --> 00:00:04,200
+Just idag trettio procent rabatt.
+
+3
+00:00:04,500 --> 00:00:05,960
+Lagret tar snart slut.
+
+4
+00:00:06,120 --> 00:00:10,960
+Den här borren gör vedklivning till en lek och just nu är den billigare än någonsin.
+
+5
+00:00:11,200 --> 00:00:12,600
+Bara i dag, bara nu.
+
+6
+00:00:12,920 --> 00:00:14,980
+Klicka på länken innan den är slut
