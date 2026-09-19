@@ -627,3 +627,23 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
 - Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913495669809304`, ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-19-us-termoskyddet/`.
+## 2026-09-19 — `/ops-spegla carashell/termoskyddet` — kön tom, 21 rader blockerade av pausad SE-kampanj
+
+- **Ordinarie kö: 0 rader** i `CaraShell SE ready to be active`, 0 i `CaraShell EN ready to be active`.
+  Inget speglat, ingen Notion-rad rörd, inget uppladdat, ingen Discord-ping.
+- **Efterjustering `--fran "Translation in review,Approved"`: 0 + 21 rader.** Torrkörningen gav
+  **0 speglade / 21 hoppade / 0 fel** — samma skäl på varenda rad: *ingen ACTIVE SE-kampanj i butiken*.
+  `CARASHELL_SE_Termoskydd Husbil 211 × 171 cm` är PAUSED med **2 058 kr** spend (pausad för hand
+  2026-09-18 11:29 CEST). PAUSED med spend är ett beslut — speglingen laddar inte upp dit.
+  Ingen rad stoppades på pris (559 kr i briefen = 559 kr i butiken) och ingen på brandnamn.
+  Ingen av de 21 har NO-version (Translated url saknas), så NO-delen hade hoppats ändå.
+- Skarp körning **inte** gjord: med 0 speglade i torrt är den bevisligen ett no-op — varje rad
+  hoppas före första skrivningen (`ops-spegla.mjs` rad 772–787), och kommentarsgrenen kräver
+  brand- eller prisstopp, vilket ingen rad har.
+- ⚠️ **De 21 raderna står i `Approved`, inte i speglingssteget.** Mätt på alla 21 (`last_edited_time`):
+  16 fick sin status 2026-09-19 06:32 UTC, 5 ändrades 16:54–16:57 UTC mitt under den här körningen.
+  Ingen schemalagd rutin går de tiderna. Enligt CLAUDE.md ska Bäverbutikens `/oversatt NO` sätta
+  `CaraShell SE ready to be active` på den här hubben, aldrig `Approved` — annars når raderna aldrig
+  speglingens kö. Inget arbete är förlorat: `--fran "Approved"` fångar dem när SE-kampanjen är igång.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` ACTIVE, 4 adsets. Pris 559 SEK / 548 NOK
+  läst ur butiken. Rutin: `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
