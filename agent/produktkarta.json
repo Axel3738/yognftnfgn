@@ -12,6 +12,30 @@
   "uppdaterad": "2026-09-19",
   "kampanjer": [
     {
+      "campaign_id": "120252299552200233",
+      "produkt": "Vedkløyverbor NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252299606860233",
+      "produkt": "Innetøfler NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252299777560233",
+      "produkt": "Dinosaur Adventskalender NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
       "campaign_id": "120250284567670291",
       "produkt": "Hönsgårdsduken 145 × 109 cm",
       "lage": "test",
