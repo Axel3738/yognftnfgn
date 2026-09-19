@@ -1146,3 +1146,68 @@ ritas utan domän från nästa videorunda. Facit i `dna.md`.
 
 **Krediter:** 0 HeyGen, 0 kie.ai. **Discord:** engelsk rapport i `#annons-uppladdning`,
 meddelande `1550913936994340948`, ingen ACTION NEEDED.
+
+---
+
+## Spegling 2026-09-19 (`/ops-spegla carashell/takskyddet`) — 16 av 16, 32 annonser live, 0 fel
+
+Rutinen fyrade 16:45 CEST. Källhubben `BÄVER  For CARL Taköverdraget för
+Husvagn` hade **16 rader i `CaraShell SE ready to be active`** (de som
+Bäverbutikens `/oversatt NO` satte där). Alla 16 speglades: den svenska filen
+live i `CARASHELL_SE_Taköverdraget`, Bäverbutikens norska version live i
+`CARASHELL_NO_Takovertrekket` (0 krediter), rad i CaraShells hub med båda
+filerna i `SE-ACTIVE to be translated`, källraden till
+`CaraShell EN ready to be active`. Priset 1 129 SEK / 1 106 NOK läst live ur
+butiken; ingen rad nämnde Bäverbutiken. Konto 915422744950975 hela vägen.
+
+Dessutom: **16 källrader i `CaraShell EN ready to be active` fick `Approved`** —
+deras US-annonser står uppe i Magiborsten UK sedan US-rutinen körde.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_RI_4_1 | CaraShellRoof_RI_104_1 | 120249174019150172 | 120249174021420172 |
+| Takoverdrag_LI_2_1 | CaraShellRoof_LI_102_1 | 120249174032370172 | 120249174039480172 |
+| Takoverdrag_TR_2_1 | CaraShellRoof_TR_102_1 | 120249174105240172 | 120249174110360172 |
+| Takoverdrag_BOF_4_1 | CaraShellRoof_BOF_104_1 | 120249174162850172 | 120249174165780172 |
+| Takoverdrag_CS_11_1 | CaraShellRoof_CS_111_1 | 120249174264230172 | 120249174268950172 |
+| Takoverdrag_CS_10_1 | CaraShellRoof_CS_110_1 | 120249174524170172 | 120249174528040172 |
+| Takoverdrag_PD_6_H1 | CaraShellRoof_PD_106_H1 | 120249174596040172 | 120249174602710172 |
+| Takoverdrag_RI_3_H1 | CaraShellRoof_RI_103_H1 | 120249174703490172 | 120249174709540172 |
+| Takoverdrag_PD_7_H1 | CaraShellRoof_PD_107_H1 | 120249174717100172 | 120249174771810172 |
+| Takoverdrag_OB_1_H1 | CaraShellRoof_OB_101_H1 | 120249174782070172 | 120249174817930172 |
+| Takoverdrag_BOF_5_1 | CaraShellRoof_BOF_105_1 | 120249175041030172 | 120249175047680172 |
+| Takoverdrag_BOF_6_1 | CaraShellRoof_BOF_106_1 | 120249175074100172 | 120249175075400172 |
+| Takoverdrag_GT_9_1 | CaraShellRoof_GT_109_1 | 120249175077150172 | 120249175111110172 |
+| Takoverdrag_PD_9_1 | CaraShellRoof_PD_109_1 | 120249175114360172 | 120249175150360172 |
+| Takoverdrag_CO_4_1 | CaraShellRoof_CO_104_1 | 120249175155390172 | 120249175232730172 |
+| Takoverdrag_PD_8_1 | CaraShellRoof_PD_108_1 | 120249175256490172 | 120249175262920172 |
+
+De tio översta gick i första omgången, de sex nedersta i en andra omgång efter
+rättelsen nedan. Tillbakaläst ur Meta: samtliga 32 har `status: ACTIVE` i rätt
+kampanj i OPS-kontot. Tre av de sist uppladdade stod `PENDING_REVIEW` /
+`IN_PROCESS` vid avläsningen — Metas normala granskningsfönster, inte ett fel;
+adsetet är ACTIVE och annonsens egen status är ACTIVE.
+
+### Rotorsak: sex rader stoppades på "okänt pris" fast priset stod att läsa
+
+Första omgången hoppade **sex bildrader** (`BOF_5_1`, `BOF_6_1`, `GT_9_1`,
+`PD_9_1`, `CO_4_1`, `PD_8_1`, alla ur LISTICLE-ronden) med skälet
+*"priset går inte att jämföra (creativen okänt, butiken 1129)"*. Det var inget
+fel på creativen: prisregelns reserv läser Bäverbutikens produktsida, och
+sidan säger **1 129 kr — exakt CaraShells pris**.
+
+Felet satt i `tools/ops-spegla.mjs`: landningssidan lästes **bara ur radens
+Notion-egenskaper**. De här briefarna bär den i brödtexten i stället —
+`Landing page: https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-…
+— reference only. The URL, the shop name and the logo must never appear`. Med
+tom egenskap fanns ingen sida att läsa priset från, och "okänt pris är aldrig
+grönt" gjorde resten. Raderna hade stoppats på nytt varje dygn, tyst, utan att
+något var fel med dem.
+
+Rättat samma körning: `landningUrBrief()` plockar länken ur brieftexten när
+egenskapen är tom. Efter rättelsen läste alla sex 1 129 SEK och gick live.
+`npm test` grönt (1 409). **Lärdomen: en tom Notion-egenskap betyder inte att
+uppgiften saknas — Bäver-briefarna skriver landningssidan i texten.**
+
+⚠️ Kvar som varning från verktyget: `CARASHELL_SE_Taköverdraget LISTICLE` är
+eget spår (namnet bär LISTICLE) och tar aldrig emot speglade annonser.

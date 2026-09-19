@@ -116,6 +116,19 @@ export function brandtraff(...texter) {
   return [...ut];
 }
 
+/** Landningssidan ur brödtexten, när raden saknar Notion-egenskapen.
+ *  Bäver-briefarna skriver den mitt i texten — "Landing page: <url> —
+ *  reference only. The URL, the shop name and the logo must never appear" —
+ *  och prisregelns reserv ("annars Bäverbutikens produktsida") hade därför
+ *  ingen sida att läsa. *(Mätt 2026-09-19: sex LISTICLE-rader stoppades på
+ *  "priset går inte att jämföra (creativen okänt)" fast briefen bar länken
+ *  och sidan sa 1 129 kr — exakt CaraShells pris.)* Länken slutar vid
+ *  mellanslag, tankstreck eller parentes. */
+export function landningUrBrief(text) {
+  const m = /landing\s*page\s*:?\s*(https?:\/\/[^\s)\]]+)/i.exec(String(text ?? ''));
+  return m ? m[1].replace(/[.,;]+$/, '') : null;
+}
+
 /** Priset briefen föreskriver ("Price exactly 1 129 kr", "Pris exakt 559 kr"), annars null. */
 export function prisUrBrief(text) {
   const m = /pri(?:ce|s)\s+(?:exactly|exakt)\s*:?\s*([\d][\d\s  .,]*?)\s*(?:kr|sek)\b/i.exec(String(text ?? ''));
@@ -652,10 +665,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     const block = await hamtaBlock(r.id);
     const brieftext = textUrBlock(block);
     const pris_brief = prisUrBrief(brieftext);
+    // Landningssidan står antingen som egenskap på raden eller mitt i briefen.
+    const landning = r.landning ?? landningUrBrief(brieftext);
     let pris_kalla = pris_brief;
     let pris_kalla_fran = pris_brief ? 'briefen' : null;
-    if (!pris_kalla && r.landning) {
-      const p = await prisFor(r.landning, 'SEK');
+    if (!pris_kalla && landning) {
+      const p = await prisFor(landning, 'SEK');
       if (p.pris_butik) { pris_kalla = p.pris_butik.pris; pris_kalla_fran = p.pris_butik.kalla; }
     }
     const radmapp = ut ? join(ut, namn.replace(/[^\w åäöÅÄÖ.-]/g, '_')) : null;
@@ -671,7 +686,7 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     }
     const rad = {
       namn, spegel, spegel_no, spegel_us, page_id: r.id, url: r.url, typ: r.typ, typ_notion: r.typ_notion, status: r.status,
-      filer: r.filer, landning: r.landning, skapad: r.skapad,
+      filer: r.filer, landning, skapad: r.skapad,
       kall_ad: kall ? { id: kall.id, status: kall.effective_status, kampanj: kall.campaign?.name ?? null } : null,
       copy_se,
       no: noV,
