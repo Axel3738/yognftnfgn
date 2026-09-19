@@ -1,0 +1,641 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-19",
+  "skapad": "2026-09-19T13:15:24.727Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 13177.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3df270ab908c81729c98edf4121f150b",
+        "namn": "Beltgrinder_SO_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3df270ab908c81729c98edf4121f150b",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_SO_7_1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289384540291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "SO | Notionrunda 2026-09-02"
+      },
+      "prefix": "Beltgrinder",
+      "K": "SO",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - SO",
+        "annonsNamn": "Beltesliper_NO_SO_7_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c8176b6dac50721fe4d84",
+        "namn": "Beltgrinder_BOF_5_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3df270ab908c8176b6dac50721fe4d84",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_BOF_5_1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289400330291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "BOF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Beltgrinder",
+      "K": "BOF",
+      "nr": "5",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - BOF",
+        "annonsNamn": "Beltesliper_NO_BOF_5_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81bf89aef0f28102a019",
+        "namn": "Beltgrinder_BOF_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3df270ab908c81bf89aef0f28102a019",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_BOF_4_1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289417230291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "BOF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Beltgrinder",
+      "K": "BOF",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - BOF",
+        "annonsNamn": "Beltesliper_NO_BOF_4_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c811d825fef40e9fdcfb9",
+        "namn": "Beltgrinder_BOF_6_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Belt grinder creative hub",
+        "url": "https://app.notion.com/3df270ab908c811d825fef40e9fdcfb9",
+        "kalla": "rader-fil"
+      },
+      "namn": "Beltgrinder_BOF_6_1",
+      "status": "HOPPA",
+      "skal": "\"Beltesliper NO | BE-ROAS 1,41 | 2026-08-29\" är PAUSED med 7110.45 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289372790291",
+        "status": "ACTIVE",
+        "kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kampanjId": "120249902177470291",
+        "adset": "BOF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Beltgrinder",
+      "K": "BOF",
+      "nr": "6",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Beltgrinder",
+        "se_kampanj": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "no_prefix": "Beltesliper",
+        "adset_prefix": "Beltesliper NO",
+        "campaign_id": "120251998498540233",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251998498540233",
+        "kampanjNamn": "Beltesliper NO | BE-ROAS 1,41 | 2026-08-29",
+        "utfall": "AVVECKLAD",
+        "spend": 7110.45,
+        "adsetNamn": "Beltesliper NO - BOF",
+        "annonsNamn": "Beltesliper_NO_BOF_6_1",
+        "link": "https://beverbutikken.no/products/beltesliper-mini-3-i-1-knivsliper-polerer",
+        "prefix": "Beltesliper"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c8129b35ae93dd7d9e5ea",
+        "namn": "Termoskydd_BOF_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/3df270ab908c8129b35ae93dd7d9e5ea",
+        "kalla": "rader-fil"
+      },
+      "namn": "Termoskydd_BOF_9_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289435480291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Termoskydd",
+      "K": "BOF",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - BOF",
+        "annonsNamn": "Frontrutetrekk_NO_BOF_9_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c8187bf53ec725ee25e89",
+        "namn": "Termoskydd_BOF_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/3df270ab908c8187bf53ec725ee25e89",
+        "kalla": "rader-fil"
+      },
+      "namn": "Termoskydd_BOF_8_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289443650291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Termoskydd",
+      "K": "BOF",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - BOF",
+        "annonsNamn": "Frontrutetrekk_NO_BOF_8_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c818a9de7ea7d0f5f5042",
+        "namn": "Termoskydd_CS_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/3df270ab908c818a9de7ea7d0f5f5042",
+        "kalla": "rader-fil"
+      },
+      "namn": "Termoskydd_CS_8_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289459880291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | CS | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "CS",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - CS",
+        "annonsNamn": "Frontrutetrekk_NO_CS_8_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c818d814ee7925c482cef",
+        "namn": "Termoskydd_SP_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/3df270ab908c818d814ee7925c482cef",
+        "kalla": "rader-fil"
+      },
+      "namn": "Termoskydd_SP_9_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289480630291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | SP | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "SP",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - SP",
+        "annonsNamn": "Frontrutetrekk_NO_SP_9_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81f08f89fa995ca30ed9",
+        "namn": "Termoskydd_BOF_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/3df270ab908c81f08f89fa995ca30ed9",
+        "kalla": "rader-fil"
+      },
+      "namn": "Termoskydd_BOF_7_1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289497670291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Termoskydd",
+      "K": "BOF",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - BOF",
+        "annonsNamn": "Frontrutetrekk_NO_BOF_7_1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81b3a654cb55fcf7b976",
+        "namn": "Batmotor_RV_11_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3df270ab908c81b3a654cb55fcf7b976",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_11_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289863700291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "11",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_11_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81c5bda3e9dc64a17d5c",
+        "namn": "Batmotor_RV_10_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3df270ab908c81c5bda3e9dc64a17d5c",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_RV_10_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289801080291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "RV | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "RV",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - RV",
+        "annonsNamn": "Batmotortrekk_NO_RV_10_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81f693eafa2fba363717",
+        "namn": "Batmotor_CS_10_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3df270ab908c81f693eafa2fba363717",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_CS_10_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289595490291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | CS | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "CS",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - CS",
+        "annonsNamn": "Batmotortrekk_NO_CS_10_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c814e9a3bc4865bbeb4e3",
+        "namn": "Batmotor_BF_13_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3df270ab908c814e9a3bc4865bbeb4e3",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BF_13_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289522610291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BF | Notionrunda 2026-09-02"
+      },
+      "prefix": "Batmotor",
+      "K": "BF",
+      "nr": "13",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BF",
+        "annonsNamn": "Batmotortrekk_NO_BF_13_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c815aa276c13fb0b97daf",
+        "namn": "Batmotor_BOF_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/3df270ab908c815aa276c13fb0b97daf",
+        "kalla": "rader-fil"
+      },
+      "namn": "Batmotor_BOF_1_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250289540570291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Batmotor",
+      "K": "BOF",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BOF",
+        "annonsNamn": "Batmotortrekk_NO_BOF_1_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    }
+  ]
+}
