@@ -1,0 +1,20 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell/termoskyddet",
+  "datum": "2026-09-19",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows, nothing to translate.",
+    "NO campaign CARASHELL_NO_Termoskydd Husbil 211 × 171 cm is ACTIVE with 4 ad sets (SP/CS/PD/G), link https://carashell.se/nb/products/termoskyddet?country=NO.",
+    "Store ready for NO: price 548 NOK read on the Norwegian product page.",
+    "No HeyGen credits used, nothing uploaded, no Notion rows changed."
+  ],
+  "varningar": [
+    "The SE campaign is still paused by the owner (since 2026-09-18 11:29 CEST), so no new rows reach this queue. The NO campaign keeps running and is untouched by this routine.",
+    "Since 2026-09-18 this product is briefed in the main store's hub and mirrored here by the 16:55 mirror routine, which uploads straight into the SE campaign. An empty queue here is the expected state."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-20"
+}

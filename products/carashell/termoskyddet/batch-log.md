@@ -597,3 +597,17 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
 - Sedan 2026-09-18 briefas termoskyddet i Bäverbutikens hub och speglas hit av `/ops-spegla`
   (16:55) — den rutinen laddar upp direkt i SE-kampanjen när den är ACTIVE. Tom kö här är det
   väntade läget, inte ett fel.
+
+## 2026-09-19 — `/ops-oversatt carashell/termoskyddet` (NO) — tom kö
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. Inget översatt, inget renderat
+  (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` (`120249115382210172`,
+  MagiBorsten DK) **ACTIVE** med 4 ACTIVE adsets; ärvd länk ur `CaraShellFront_NO_CS_4_1`
+  (`https://carashell.se/nb/products/termoskyddet?country=NO`). 548 NOK läst på `/nb`-sidan.
+- SE-kampanjen står kvar PAUSED av ägaren sedan 2026-09-18 11:29 CEST — inga nya rader når
+  den här kön den vägen. Sedan 2026-09-18 briefas produkten dessutom i Bäverbutikens hub och
+  speglas hit av `/ops-spegla` 16:55, som laddar upp direkt i SE-kampanjen. **Tom kö är det
+  väntade läget**, inte ett fel.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1550913337725026415`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-19-no-termoskyddet/`.
