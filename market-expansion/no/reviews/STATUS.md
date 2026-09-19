@@ -3,6 +3,48 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-19 — 0 nya, full täckning på allt som är påslaget
+
+Inga nya mappar i MAKE TO NORWAY (36 + WINNERS med 3, samma som i går).
+Bygget gav identiska filer, `git status` tomt efteråt, och `--dry` mot de tre
+produkter gårdagen rörde svarade "hoppar över": Fuglemater 8, Solcellelampe
+10, Båtmotortrekk 10. Butiksfeeden 201 → 202 produkter (den nya ligger inte i
+MAKE TO NORWAY och är alltså ingen kandidat).
+
+### Täckningskollen är nu en del av rutinen
+
+Gårdagens mätning körd igen — **186 påslagna annonser på 8 produkter, alla med
+8–11 synliga recensioner.** Ingen aktiv produkt i Norge saknar socialt bevis.
+
+| Rec | Spend 30 d | Ann | Produkt |
+|---:|---:|---:|---|
+| 11 | 21 628 kr | 26 | Kranbeskyttelse Frost 420D |
+| 10 | 23 959 kr | 45 | Takovertrekk til Campingvogn |
+| 10 | 21 243 kr | 52 | IBC-tanktrekk 1000 L |
+| 10 | 13 754 kr | 12 | Stigestøtte 2-pk |
+| 10 | 7 750 kr | 11 | Isolert Utekattehus |
+| 10 | 1 725 kr | 14 | Solcellelampe 210 LED |
+| 8 | 12 757 kr | 10 | Arbeidslampe for Makita-batteri |
+| 8 | 1 633 kr | 16 | Fuglemater med kamera |
+
+Skripten ligger i sessionens scratchpad, inte i repot — de är två korta
+Meta-frågor (`/ads` med `effective_status` + `insights.date_preset(last_30d)`,
+produkten läst ur annonsens länk) korsade mot Judge.mes `/reviews`. Värt att
+köra när något känns oklart, inte varje natt.
+
+⚠️ **Fältet heter `spend` på annons-nivå, inte `amount_spent`** — det senare
+gäller ad account-nivå och ger `(#100) is not valid for fields param`.
+Och `limit=200` på `/ads` med creative-fält ger "Please reduce the amount of
+data"; 25 fungerar.
+
+### De tre som väntar — alla oförändrade, alla på pausade kampanjer
+
+| Ark | Läge 2026-09-19 |
+|---|---|
+| `Gravstenspenna_Reviews` | bara `TEST – …`-rader, oförändrat sedan 2026-09-04 |
+| `Medicinask i Fickformat_REVIEW` | bara `Exempel N – EJ KUNDRECENSION`. **Produkten är avvecklad** — se nedan |
+| `5.1 Lövblåsare_REVIEW` (= Jetviften) | personnamn i `title`, fel `product_handle`. Oförändrat |
+
 ## 2026-09-18 eftermiddag — Axels fråga: vad kör vi i Norge utan recensioner?
 
 **Svar: ingenting. Alla åtta produkter som är PÅSLAGNA i Norge har
