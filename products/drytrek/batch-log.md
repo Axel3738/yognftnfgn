@@ -1236,3 +1236,8 @@ signal alls.** Sverige samma dag: 2 998 kr, 6 köp, ROAS 0,87 — samma sak där
 Båda ägarfrågorna obesvarade: omstart av Sverige (`#ads-to-do`, sedan 15/9) och
 om den här rutinen ska pausas (`#annons-uppladdning`, sedan 18/9). Ingen av dem
 pingas om — rapporten går tyst tills något ändras.
+
+**2026-09-19:** Oförändrat. NO-kampanjen fortfarande PAUSED (8 476 kr — de 26
+kronorna sedan i går är efterattribuering, inte spend), kön fortfarande 0 rader,
+priset 380 NOK. Ingenting rört. Loggas som en rad med flit: en dag utan
+förändring förtjänar ingen egen rubrik.
