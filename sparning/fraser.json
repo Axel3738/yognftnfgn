@@ -76,5 +76,9 @@
   "the package's weight and/or size have been updated": "Paketets vikt och mått är uppdaterade",
   "the package has been delivered in a bag at the mailbox": "Paketet är levererat i en påse vid brevlådan",
   "paketet har uppdaterats till ombud": "Paketet skickas till ett ombud i stället",
-  "mottagaren aviserad": "Du har fått en avi om paketet"
+  "mottagaren aviserad": "Du har fått en avi om paketet",
+  "port of departure - departure": "Paketet har lämnat avgångsorten",
+  "vi kom inte in genom porten - leveransen kunde inte genomföras": "Chauffören kom inte in genom porten och kunde inte lämna paketet",
+  "din leverans är försenad - leveransdatum uppdateras": "Leveransen är försenad. Leveransdatumet uppdateras",
+  "递四方揽收": "4PX har hämtat paketet"
 }

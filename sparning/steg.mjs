@@ -40,6 +40,7 @@ const SKEDE = {};
 const satt = (steg, fraser) => { for (const f of fraser) SKEDE[normalisera(f)] = steg; };
 
 satt(BESTALLD, [
+  '下单成功，包裹待入库',
   'Shipment information received',
   'Parcel information received',
   'SHIPPING INFORMATION RECEIVED',
@@ -50,6 +51,8 @@ satt(BESTALLD, [
 ]);
 
 satt(PA_VAG, [
+  '递四方揽收',
+  'Port of departure - Departure',
   'Shipment picked up',
   'Yanwen Pickup Scan',
   '4PX received shipment.',
@@ -119,6 +122,12 @@ const AVVIKELSE = new Set([
   'The courier did not have the package with them when it was supposed to be delivered.',
   'Return to customers.',
   'Shipment has been returned to sender.',
+  // Tillagda 2026-09-20 efter en genomsökning av alla 92 fraktbolagstexter i
+  // flottan: de här tre låg som vanliga skanningar och lyfte därför skeden
+  // som om allt gått bra. De två svenska är PostNords egna.
+  'Vi kom inte in genom porten - leveransen kunde inte genomföras',
+  'Din leverans är försenad - leveransdatum uppdateras',
+  '退回客户',
 ].map(normalisera));
 
 // Fraser som bär mottagarlandets namn men skickas innan paketet är där.

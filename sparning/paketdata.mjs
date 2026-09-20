@@ -314,9 +314,15 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
     const medDelsteg = klassificeraDelsteg(rader);
     for (let i = 0; i < rader.length; i++) rader[i].delsteg = medDelsteg[i]?.delsteg ?? -1;
 
+    // Sista biten i Sverige, om 17TRACK gett oss den. Namnet och länkmallen
+    // ordbokas (fem bolag på 623 paket); numret är unikt per paket.
+    const sb = p?.sistaBiten && p.sistaBiten.namn
+      ? { namn: renText(p.sistaBiten.namn), nummer: renText(p.sistaBiten.nummer), mall: renText(p.sistaBiten.mall) }
+      : null;
+
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
     // byter värdet — den senare posten vinner, som varningen säger.
-    poster.set(nummer, { statusIx, bolag: renText(p?.bolag), rader });
+    poster.set(nummer, { statusIx, bolag: renText(p?.bolag), rader, sistaBiten: sb });
   }
 
   // Svep 2: ordböckerna byggs ur de poster som FAKTISKT hamnar i filen.
@@ -331,12 +337,22 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
   const lander = new Raknare();
   const bolagsnamn = [];        // bolagen är få; först-sedd-ordning räcker
   const bolagIndex = new Map();
+  const sistaLista = [];        // [namn, länkmall] — fem bolag i praktiken
+  const sistaIndex = new Map();
   let handelser = 0;
 
   for (const post of poster.values()) {
     if (post.bolag && !bolagIndex.has(post.bolag)) {
       bolagIndex.set(post.bolag, bolagsnamn.length);
       bolagsnamn.push(post.bolag);
+    }
+    if (post.sistaBiten) {
+      const id = `${post.sistaBiten.namn}\u0000${post.sistaBiten.mall ?? ''}`;
+      if (!sistaIndex.has(id)) {
+        sistaIndex.set(id, sistaLista.length);
+        sistaLista.push([post.sistaBiten.namn, post.sistaBiten.mall ?? null]);
+      }
+      post.sistaIx = sistaIndex.get(id);
     }
     for (const r of post.rader) {
       r.frasIx = fraser.lagg(r.text);
@@ -362,6 +378,10 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
     p: platslista.lista,
     l: landlista.lista,
     b: bolagsnamn,
+    // Sista biten i mottagarlandet: [[namn, länkmall], …]. Mallen bär {nr}
+    // när bolaget har en provad djuplänk, annars är den bolagets egen
+    // spårningssida, och null när vi inte har någon adress vi litar på.
+    s: sistaLista,
     k: {},
   };
   for (const [nummer, post] of poster) {
@@ -379,6 +399,10 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
         // läser e[6] defensivt, så äldre data ger -1 och visas som förut.
         typeof r.delsteg === 'number' ? r.delsteg : -1,
       ]),
+      // Fält 4 på posten, tillagt 2026-09-20: [sistaBitIx, dess nummer].
+      // Utelämnas helt när paketet ännu inte lämnats till ett lokalt bolag,
+      // så de 432 paket som är på väg inte bär tomma fält.
+      ...(typeof post.sistaIx === 'number' ? [[post.sistaIx, post.sistaBiten.nummer ?? null]] : []),
     ];
   }
 

@@ -316,12 +316,31 @@ export function packaUppEtt(data, nummer) {
       delsteg: typeof e[6] === 'number' ? e[6] : -1,
     };
   });
+  // Sista biten i mottagarlandet, om 17TRACK gett oss den. Posten bär
+  // [sistaBitIx, nummer] på plats 4 och saknas helt när paketet ännu inte
+  // lämnats till ett lokalt bolag. Länken byggs HÄR ur mallen, så den bara
+  // står en gång i filen.
+  var sista = null;
+  var sb = post[3];
+  if (sb && data.s && data.s[sb[0]]) {
+    var sistaRad = data.s[sb[0]];
+    var sistaNr = sb[1] == null ? null : sb[1];
+    var mall = sistaRad[1] == null ? null : sistaRad[1];
+    sista = {
+      namn: sistaRad[0],
+      nummer: sistaNr,
+      lank: mall ? (sistaNr ? mall.split('{nr}').join(encodeURIComponent(sistaNr)) : mall.split('{nr}').join('')) : null,
+      djuplank: Boolean(mall && sistaNr && mall.indexOf('{nr}') >= 0),
+    };
+  }
+
   return {
     nummer: n,
     bolag: bolag[post[1]] == null ? null : bolag[post[1]],
     statusKod: rad[0],
     status: rad[1],
     land: land,
+    sistaBiten: sista,
     handelser: handelser,
     sammanfattning: sammanfattning(handelser, land),
     avvikelser: handelser.filter(function (h) { return h.avvikelse; }),

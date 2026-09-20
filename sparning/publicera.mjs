@@ -480,6 +480,12 @@ function paketUrLage(lageFil) {
       bolag: post?.bolag ?? null,
       statusKod,
       handelser: handelserFor(post, noterna),
+      // ⚠️ Den här funktionen bygger en NY post och tappar därför allt den
+      // inte räknar upp. Sista biten (bolaget som kör hem paketet, ur
+      // 17TRACK:s misc_info) föll tyst bort på det viset 2026-09-20: 623
+      // paket hade fältet i paket.json och noll hade det i sidan. Lägger du
+      // till ett fält i rundans poster måste det räknas upp här också.
+      sistaBiten: post?.sistaBiten ?? null,
     });
   }
   return { paket: ut, noter: noterna };

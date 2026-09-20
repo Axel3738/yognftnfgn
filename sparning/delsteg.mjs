@@ -50,6 +50,7 @@ const satt = (nyckel, fraser) => {
 // ---------------------------------------------------------- skede 0: ordern
 
 satt('forbereds', [
+  '下单成功，包裹待入库',
   'Shipment information received',
   'Parcel information received',
   'SHIPPING INFORMATION RECEIVED',
@@ -61,6 +62,8 @@ satt('forbereds', [
 // ------------------------------------------------------- skede 1: på väg hit
 
 satt('hamtat', [
+  '递四方揽收',
+  'Port of departure - Departure',
   'Shipment picked up',
   'Yanwen Pickup Scan',
   '4PX received shipment.',

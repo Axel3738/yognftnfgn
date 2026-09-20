@@ -122,6 +122,34 @@ const UNDERSTATUS_PREFIX = {
   Exception: 'Det har blivit ett problem med leveransen',
 };
 
+// ---------------------------------------------------------------- mönster
+//
+// Fraser som bär VARIABEL text och därför aldrig kan stå som nycklar i
+// ordboken. Yanwens kinesiska skanningar skriver ut terminalen i 【…】, och
+// upphämtningsraden bär dessutom budets NAMN och MOBILNUMMER:
+//
+//   您的快件在【江苏省昆山市陆家镇】已揽收，揽收人: <namn>（<telefon>）
+//
+// ⚠️ Den raden får ALDRIG bli en ordboksnyckel — då hade en främmande
+// persons telefonnummer legat i repot. Mönstret matchar i stället på det som
+// är stabilt (已揽收 = "upphämtat") och lämnar resten därhän. Samma sak för
+// terminalraderna: 转运中心 är ett omlastningscenter, och vilket det är
+// spelar kunden ingen roll — sidan visar ändå ingen utländsk geografi.
+//
+// ⚠️ Översättningarna av de kinesiska raderna är TOLKADE, inte hämtade ur
+// någon dokumentation. De är medvetet generella: 转运中心 blir
+// "omlastningsterminalen" utan ortsnamn, och 揽收 blir "upphämtat".
+// Mätt 2026-09-20: fem sådana rader i butikens 1 055 paket, alla från Yanwen.
+const MONSTER = [
+  [/离开.*(转运中心|分拨中心)/, 'Paketet har lämnat omlastningsterminalen'],
+  [/(到达|已到).*(转运中心|分拨中心)/, 'Paketet har kommit till omlastningsterminalen'],
+  [/已揽收/, 'Paketet är upphämtat'],
+  [/入库称重/, 'Paketet är invägt hos fraktbolaget'],
+  [/下单成功/, 'Ordern är registrerad hos fraktbolaget'],
+  [/退回客户/, 'Paketet skickas tillbaka till avsändaren'],
+  [/换号失败|路由失败/, 'Fraktbolaget kunde inte uppdatera spårningen'],
+];
+
 // Fraktbolagets beskrivning → { text, kand }.
 //
 // kand = true när frasen fanns i ordboken, eller när den redan är svensk.
@@ -133,6 +161,13 @@ export function oversattFras(beskrivning, subStatus) {
 
   if (nyckel && Object.prototype.hasOwnProperty.call(FRASER, nyckel)) {
     return { text: putsa(FRASER[nyckel]), kand: true };
+  }
+
+  // Mönstren prövas FÖRE svenskakollen och före OKANDA: de är exakta nog att
+  // räknas som kända, men kan aldrig stå som nycklar (se varningen ovan).
+  const rå = String(beskrivning == null ? '' : beskrivning);
+  for (const [m, svensk] of MONSTER) {
+    if (m.test(rå)) return { text: svensk, kand: true };
   }
 
   // Redan svensk — släpps igenom som den är. PostNord skriver en del av sina

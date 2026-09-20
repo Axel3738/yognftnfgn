@@ -23,6 +23,7 @@ import { oversattFras, stadaPlats, landFor } from '../sprak.mjs';
 import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
 import { kontrolleraStandardvyn, kontrollera } from '../kontroll.mjs';
 import { delstegForFras, huvudskedeFor, klassificeraDelsteg } from '../delsteg.mjs';
+import { sistaBiten } from '../sistabiten.mjs';
 import { byggSidkropp } from '../sida.mjs';
 
 const FIXTUR = JSON.parse(readFileSync(new URL('./fixturer/riktiga-paket.json', import.meta.url), 'utf8'));
@@ -340,4 +341,81 @@ test('krav 5 FÄLLER en standardvy som visar en utländsk ort', () => {
   assert.equal(problem.length, 1, 'kontrollen märkte inte att Kina stod i standardvyn');
   assert.equal(problem[0].krav, 5);
   assert.match(problem[0].text, /Kina/);
+});
+
+// ------------------------------------------------- sista biten i Sverige
+
+// ⚠️ 17TRACK ger oss sista-bit-bolaget i `misc_info` — vi läste bara aldrig
+// fältet förrän Axel sa till 2026-09-20. Mätt samma dag på butikens 1 055
+// paket: CityMail 251, PostNord 189, Early Bird 101, DHL 68, Instabee 13.
+test('sista biten läses ur misc_info och pekar bara på provade adresser', () => {
+  const pn = sistaBiten({ local_provider: 'PostNord Sweden', local_number: 'UJ338439355SE', local_key: 19241 }, 'YT1');
+  assert.equal(pn.namn, 'PostNord');
+  assert.equal(pn.nummer, 'UJ338439355SE');
+  assert.ok(pn.mall.includes('{nr}'), 'PostNord har en provad djuplänk');
+
+  const cm = sistaBiten({ local_provider: 'CityMail', local_number: 'BCMYE004692786', local_key: 100405 }, 'YT1');
+  assert.equal(cm.namn, 'CityMail');
+  assert.ok(!cm.mall.includes('{nr}'), 'CityMail läser inte numret ur adressen — ingen djuplänk');
+
+  // local_key är 0 för de här två, så uppslaget måste gå på namnet.
+  assert.equal(sistaBiten({ local_provider: 'SE-U-DHL', local_number: 'X9', local_key: 0 }, 'YT1').namn, 'DHL');
+  assert.equal(sistaBiten({ local_provider: 'SE-INSTABEE', local_number: 'X9', local_key: 0 }, 'YT1').namn, 'Instabee');
+
+  // Okänt bolag: namnet visas, men ALDRIG en gissad länk.
+  const okand = sistaBiten({ local_provider: 'Något Bolag AB', local_number: 'X9', local_key: 0 }, 'YT1');
+  assert.equal(okand.namn, 'Något Bolag AB');
+  assert.equal(okand.mall, null, 'en gissad länk som ger 404 är värre än ingen länk');
+
+  // Inget bolag ⇒ ingen ruta. Och ett local_number som bara ekar huvudnumret
+  // är ingen sista bit (mätt: 131 paket såg ut så).
+  assert.equal(sistaBiten({ local_number: 'YT1' }, 'YT1'), null);
+  assert.equal(sistaBiten({}, 'YT1'), null);
+  assert.equal(sistaBiten({ local_provider: 'PostNord', local_number: 'yt-1' }, 'YT1').nummer, null);
+});
+
+test('sista biten överlever komprimeringen och blir en länk i uppackaren', () => {
+  const NU2 = Date.parse('2026-09-19T21:00:00Z');
+  const { data } = byggData([
+    {
+      nummer: 'YT111', bolag: 'YunExpress', statusKod: 'IN_TRANSIT',
+      handelser: [{ tid: '2026-09-18T10:00:00Z', text: 'Paketet är på väg', plats: 'Malmö', land: 'Sverige' }],
+      sistaBiten: { namn: 'PostNord', nummer: 'UJ338439355SE', mall: 'https://portal.postnord.com/tracking/details/{nr}' },
+    },
+    {
+      nummer: 'YT222', bolag: 'YunExpress', statusKod: 'IN_TRANSIT',
+      handelser: [{ tid: '2026-09-18T10:00:00Z', text: 'Paketet är på väg', plats: 'Malmö', land: 'Sverige' }],
+      sistaBiten: { namn: 'CityMail', nummer: 'BCM1', mall: 'https://www.citymail.se/spara-paket/' },
+    },
+    {
+      nummer: 'YT333', bolag: 'YunExpress', statusKod: 'IN_TRANSIT',
+      handelser: [{ tid: '2026-09-18T10:00:00Z', text: 'Paketet är på väg', plats: null, land: null }],
+    },
+  ], { nu: NU2, mottagarland: LAND });
+
+  const a = packaUppEtt(data, 'YT111').sistaBiten;
+  assert.equal(a.namn, 'PostNord');
+  assert.equal(a.lank, 'https://portal.postnord.com/tracking/details/UJ338439355SE');
+  assert.equal(a.djuplank, true);
+
+  const b = packaUppEtt(data, 'YT222').sistaBiten;
+  assert.equal(b.lank, 'https://www.citymail.se/spara-paket/');
+  assert.equal(b.djuplank, false, 'utan {nr} är det ingen djuplänk');
+  assert.equal(b.nummer, 'BCM1', 'numret ska stå bredvid så kunden kan klistra in det');
+
+  // Paket utan sista bit bär inget fält alls — de 432 som är på väg ska inte
+  // kosta plats i filen.
+  assert.equal(packaUppEtt(data, 'YT333').sistaBiten, null);
+  assert.equal(data.k.YT333.length, 3, 'posten ska sakna fält 4');
+  assert.equal(data.s.length, 2, 'bolagen ska ordbokas, inte upprepas per paket');
+});
+
+test('sidan ritar sista biten som en riktig länk', () => {
+  const { data } = byggAllt();
+  const kropp = byggSidkropp(data, KONFIG);
+  assert.ok(kropp.includes('id="bbs-sista"'), 'rutan för sista biten saknas');
+  assert.ok(kropp.includes('Sista biten i {{land}}'), 'rubriken saknas i texterna');
+  // Länken öppnas i ny flik och lämnar ingen referrer-koppling.
+  const kod = kropp.split('<script>').pop();
+  assert.ok(kod.includes("a.setAttribute('rel', 'noopener')"), 'länken ska bära rel=noopener');
 });

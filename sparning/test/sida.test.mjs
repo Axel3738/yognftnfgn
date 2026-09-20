@@ -126,7 +126,7 @@ class Attrapp {
 // och faller på första punktnotationen — testet rapporterar då ett fel som
 // ser ut att handla om något annat. bbs-steg, bbs-mer och bbs-avvikelse
 // kom med sammanfattningsvyn 2026-09-19.
-const IDN = ['bb-spar', 'bbs-sok', 'bbs-traff', 'bbs-saknas', 'bbs-falt', 'bbs-form', 'bbs-fel',
+const IDN = ['bb-spar', 'bbs-sista', 'bbs-sok', 'bbs-traff', 'bbs-saknas', 'bbs-falt', 'bbs-form', 'bbs-fel',
   'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-bolag', 'bbs-nummer', 'bbs-byggd',
   'bbs-steg', 'bbs-mer', 'bbs-avvikelse'];
 

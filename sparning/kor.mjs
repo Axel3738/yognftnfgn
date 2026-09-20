@@ -25,6 +25,7 @@ import { nyckel, registrera, hamta } from './17track.mjs';
 import { bolagskod, tolka, planera } from './status.mjs';
 import { handelserUr } from './paketdata.mjs';
 import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
+import { sistaBiten } from './sistabiten.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const LAGE = join(ROT, 'lage.json');
@@ -152,6 +153,9 @@ if (attHamta.length && nyckel()) {
       bolag: k.bolag || t.bolag || null,
       statusKod: t.status ?? lage.paket[k.nummer]?.status ?? null,
       handelser: handelserUr(rå, { oversattFras, stadaPlats, landFor, nu: Date.now() }),
+      // Sista biten i Sverige: bolag + deras eget nummer, ur misc_info.
+      // Läses här för det är enda stället 17TRACK-svaret finns i original.
+      sistaBiten: sistaBiten(rå.track_info && rå.track_info.misc_info, k.nummer),
     });
     if (k.baraSidan) continue; // ur minnet: bara till sidan, inga event och ingen lagefil-ändring
     const p = (lage.paket[k.nummer] ??= { bolag: k.bolag, kod: k.kod, order: k.order, fulfillment: k.fulfillment });

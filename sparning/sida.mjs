@@ -118,6 +118,12 @@ function copydata(c) {
     // Utan den står sidan stilla i 4–9 dygn under den internationella
     // sträckan — 544 av 1 055 paket låg där när det mättes 2026-09-19.
     senast: 'Senaste skanning {{tid}}',
+    // Sista biten i Sverige. 17TRACK lämnar bolaget och dess EGET nummer i
+    // misc_info; vi läste bara aldrig fältet (Axel 2026-09-20). Mätt samma
+    // dag: 623 av 1 055 paket hade ett namngivet svenskt bolag.
+    sistaRubrik: 'Sista biten i {{land}}',
+    sistaLank: 'Följ hos {{bolag}}',
+    sistaUtanLank: 'Numret hos {{bolag}}',
     // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner,
     // så ikonen följer resan: kvitto → låda → stämpel → flygplan → lager →
     // lastbil → brevlåda.
@@ -189,6 +195,10 @@ function stil(c) {
 #bb-spar .bbs-fakta div{min-width:0}
 #bb-spar .bbs-fakta dt{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 2px}
 #bb-spar .bbs-fakta dd{margin:0;font-weight:700;word-break:break-all}
+#bb-spar .bbs-sista{margin:-8px 0 18px;padding:12px 16px;border:1px solid var(--bbs-ram);border-top:0;font-size:14px;line-height:1.6}
+#bb-spar .bbs-sista .bbs-sistaetikett{display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 3px}
+#bb-spar .bbs-sista .bbs-sistanr{font-weight:700;word-break:break-all}
+#bb-spar .bbs-sista a{font-weight:700}
 #bb-spar .bbs-lista{list-style:none;margin:8px 0 0;padding:0 0 0 8px}
 #bb-spar .bbs-rad{position:relative;margin:0;padding:0 0 22px 24px;border-left:2px solid var(--bbs-ram)}
 #bb-spar .bbs-rad:last-child{border-left-color:transparent;padding-bottom:0}
@@ -573,6 +583,41 @@ function starta() {
     $('bbs-bolag').textContent = p.bolag || '–';
     $('bbs-nummer').textContent = p.nummer;
 
+    // Sista biten i Sverige: vem som kör hem paketet och vad det heter hos
+    // dem. Länken pekar rakt på paketet när vi har en PROVAD djuplänk, annars
+    // på bolagets egen spårningssida — numret står bredvid så kunden kan
+    // klistra in det. En gissad djuplänk som ger 404 mitt i en leverans är
+    // värre än ingen länk alls.
+    var sista = $('bbs-sista');
+    sista.textContent = '';
+    var sb = p.sistaBiten;
+    if (sb && sb.namn) {
+      var et = document.createElement('span');
+      et.className = 'bbs-sistaetikett';
+      et.textContent = C.sistaRubrik.split('{{land}}').join(p.land || '');
+      sista.appendChild(et);
+      if (sb.lank) {
+        var a = document.createElement('a');
+        a.setAttribute('href', sb.lank);
+        a.setAttribute('rel', 'noopener');
+        a.setAttribute('target', '_blank');
+        a.textContent = (sb.djuplank ? C.sistaLank : C.sistaUtanLank).split('{{bolag}}').join(sb.namn);
+        sista.appendChild(a);
+      } else {
+        var b = document.createElement('strong');
+        b.textContent = sb.namn;
+        sista.appendChild(b);
+      }
+      if (sb.nummer) {
+        sista.appendChild(document.createTextNode(' · '));
+        var nr = document.createElement('span');
+        nr.className = 'bbs-sistanr';
+        nr.textContent = sb.nummer;
+        sista.appendChild(nr);
+      }
+    }
+    visaEl(sista, Boolean(sb && sb.namn));
+
     // Avvikelser göms inte bland punkterna — en retur eller ett misslyckat
     // leveransförsök är det enda kunden bryr sig om just då. Orten stryks
     // med samma regel; frasen säger redan "till avsändaren".
@@ -712,6 +757,7 @@ export function byggSidkropp(data, konfig) {
     <div><dt>Fraktbolag</dt><dd id="bbs-bolag"></dd></div>
     <div><dt>Spårningsnummer</dt><dd id="bbs-nummer"></dd></div>
   </dl>
+  <p id="bbs-sista" class="bbs-sista" hidden></p>
   <p id="bbs-tom" hidden></p>
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
