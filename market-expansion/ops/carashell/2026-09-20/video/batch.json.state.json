@@ -2,6 +2,8 @@
  "carashell_PD_5_H1": {
   "assetUrl": "https://resource2.heygen.ai/video/206d8ff640944935be7f68a7beb3719c/original.mp4",
   "proofreadId": "d12e3e89df2b47e6a505cfd41456baa6-nb-nb-NO",
-  "srtDone": true
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "18e85411ab7e411d98ba823d67184199-nb"
  }
 }
