@@ -654,3 +654,20 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
   sätter status på en hub.
 - NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` ACTIVE, 4 adsets. Pris 559 SEK / 548 NOK
   läst ur butiken. Rutin: `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
+
+## 2026-09-20 — nattvakten körning nr 4 (briefdag, men briefronden pausad): båda marknaderna PAUSED
+
+**SE** `CARASHELL_SE_Termoskydd…` PAUSED (sedan 18/9): 2 058 kr / 4 köp / ROAS 1,08 på 7 dygn
+mot BE 1,61. **NO** `CARASHELL_NO_Termoskydd…` **också PAUSED** (torrkörd avläsning, inget
+skrivet): 3 513 kr / 7 köp på 7 dygn, vinstbidrag **+267 kr**. Produkten spenderar alltså
+ingenting på någon marknad. 0 ändringar, inget aktiverat.
+
+⚠️ **Värt att veta innan något startas om:** `CaraShellFront_NO_CS_3` (video, norska) var
+produktens ENDA bedömbara vinnare när marknaden stängdes — **774 kr, 3 köp, CPA 258 kr**
+mot break-even 347 kr. `NO_PD_5_1` (609 kr/1 köp) och `NO_G_2_1` (354 kr/1 köp) låg under
+grinden. Sverige hade ingen bedömbar annons alls. Startas NO om är CS_3 utgångspunkten,
+inte de svenska bilderna.
+
+Briefronden pausad sedan 2026-09-18 (Axels beslut: CaraShell briefas i Bäverbutikens
+teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `kord` stämplad,
+`brief-kord` INTE (pausen står tills vidare).
