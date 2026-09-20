@@ -1211,3 +1211,53 @@ uppgiften saknas — Bäver-briefarna skriver landningssidan i texten.**
 
 ⚠️ Kvar som varning från verktyget: `CARASHELL_SE_Taköverdraget LISTICLE` är
 eget spår (namnet bär LISTICLE) och tar aldrig emot speglade annonser.
+
+## Norge 2026-09-20 — videon som hölls i går är live (`/ops-oversatt carashell/takskyddet`)
+
+Kön: **17 rader** i `SE-ACTIVE to be translated`. **1 uppladdad, 16 utan jobb här.**
+
+**De 16 behövde ingenting.** Gårdagens spegling laddade upp både den svenska och den
+norska versionen (`finns_i_meta: true` med annons-id på varenda rad), så de ligger
+redan live i `CARASHELL_NO_Takovertrekket` och väntar bara på USA
+(`klar_i: {"US": false}`). Ingen status rördes — `flytta_till_approved` är falskt
+tills US-rutinen 17:05 bär dem.
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_PD_5_H1` | `CaraShellRoof_NO_PD_5_H1` | PD | `120249184161160172` | ACTIVE/IN_PROCESS |
+
+**Videon byggdes om, den översattes inte.** Tre hinder hittades 2026-09-19 och alla tre
+gick att lösa utan butikens namn — vilket är rättelsen mot gårdagens dom att frågan
+krävde ägaren:
+
+1. **Voiceovern** sa `Carashell taköverdrag` i block 3 och de svenska priserna i block 6.
+   HeyGens proofread-steg körs FÖRE rendering, så manuset skrevs om där: block 3
+   "Dette takovertrekket", block 6 `1 106` / `1 382,50 kr` uttalade som ord. Samma sex
+   block, samma timecodes. Sonnet-subagent mot `docs/copy-regler.md`.
+2. **27 inbrända svenska ordcaptions** → `pipeline/no-precis.py` med US-rundans mätningar
+   på samma källfil (zon 1320–1650, font 45, cy 1420, x 75–1005).
+3. **Slutkortet** var en skärmdump av den svenska produktsidan (`carashell.se`,
+   `1 469,00 → 1 129,00 kr`, "16 recensioner") → nytt norskt kort som PNG-lager
+   (`video/bygg-no.py`): 14 dagers angrerett, `1 382,50 kr` överstruket, `1 106 kr`,
+   16 anmeldelser, fri frakt. Produktbilden klippt ur källans eget kort.
+
+**En läcka hittad i granskningen och rättad:** lagret startade 36,4 s, men
+cirkelövergången börjar **36,0** och den svenska sidan var läsbar inuti cirkeln i ett
+par tiondelar. Mätt i den renderade filen: vita pixlar 0,16 % vid 36,0 → 33,7 % vid
+36,3 → 78 % vid 36,4. Lagret flyttat till 36,0, videon bränd om, övergången kontrollerad
+bildruta för bildruta. ⚠️ **US-rundans åtta videor 2026-09-18 har samma 36,4 och samma
+läcka.** De ligger live och rörs inte (Axels regel 2026-09-15); receptet är rättat.
+
+**Copyn:** två av fyra rader failade tre-frågorstestet i första svaret och skickades
+tillbaka. Rubriken `Beskytt bobilens tak i vinter` var en uppmaning vilken konkurrent
+som helst kunde köra → **`Bare taket – ingen hjelp trengs`**. Första stycket namnger nu
+takluckorna och skarvarna.
+
+**HeyGen:** 2 558 → 2 538 krediter (en rendering, ingen omrendering).
+`rostkoll.py` ✅. **Notion:** kommentar + `Translated url`, raden → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551238015316393996`,
+ingen ACTION NEEDED.
+
+⚠️ **Manuset committas nu i `oversatt-output.json`** — `.srt` är gitignoretat som media
+i `market-expansion/ops/**`, så en omrendering hade annars fått börja om från HeyGens
+råöversättning, med butikens namn och de svenska priserna tillbaka.

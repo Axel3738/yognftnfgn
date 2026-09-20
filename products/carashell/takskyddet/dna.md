@@ -634,3 +634,39 @@ namnet.
 Lärdomen är inte om slutkort: **en regel som beslutas mitt i en körning gäller
 nästa körning, inte den som redan renderat.** Läs `docs/copy-regler.md` i steg 2,
 inte ur minnet från gårdagens batch.
+
+## Norge-runda 2026-09-20 — en video som såg omöjlig ut var tre lösbara problem
+
+`PD_5_H1` hölls 2026-09-19 med domen att en norsk version måste lägga tillbaka
+butikens namn i annonsen och att det därför var ägarens beslut. **Den domen var
+fel, och felet är värt att komma ihåg:** jag räknade tre hinder rätt men drog
+slutsatsen utan att läsa hur verktygskedjan faktiskt fungerar.
+
+| Hinder | Varför det inte kräver butikens namn |
+|---|---|
+| Voiceovern säger `Carashell taköverdrag` | HeyGens **proofread körs före rendering**. Manuset är mitt att skriva om — raden blev "Dette takovertrekket" |
+| 27 inbrända svenska ordcaptions | `pipeline/no-precis.py` suddar pillret per frame och lägger min egen norska cue. Jag skriver texten |
+| Slutkortet är den svenska produktsidan | Byts mot ett PNG-lager jag bygger själv (`video/bygg-no.py`), utan domän |
+
+**Lärdomen:** innan något eskaleras till Axel som ett beslut — läs vad verktyget
+kan. Ett steg som heter "proofread" är inte en kontroll, det är en redigering.
+Dygnet som gick kostade ingenting i pengar men annonsen stod stilla i onödan.
+
+**Mätfyndet:** slutkortslagret startade 36,4 s, men den vita cirkelövergången
+börjar **36,0** — den svenska sidan med `carashell.se` och `1 469,00 → 1 129,00 kr`
+var läsbar inuti cirkeln i ett par tiondelar. Vita pixlar i den renderade filen:
+0,16 % vid 36,0 → 33,7 % vid 36,3 → 78 % vid 36,4. Samma 36,4 står i US-rundans
+åtta videor 2026-09-18, som alltså bär läckan live. **Granska alltid övergången IN
+i ett utbytt slutkort, inte bara kortet.**
+
+⚠️ **`.srt` är gitignoretat som media** i `market-expansion/ops/**`. Den norska
+voiceovern är creative-arbete, inte media — den ligger sedan i dag i
+`oversatt-output.json` med svensk källrad bredvid varje norsk rad. Utan den hade
+en omrendering börjat om från HeyGens råöversättning, som säger butikens namn och
+de svenska priserna.
+
+**Speglingens rader ska inte översättas här.** Alla 16 rader som `/ops-spegla` la i
+hubben 2026-09-19 bar redan `finns_i_meta: true` med annons-id i NO — speglingen
+laddar upp både den svenska och den norska versionen. De väntar på USA, inte på
+NO-rutinen. Kör aldrig en översättning på dem: det hade blivit dubbletter i samma
+adset.

@@ -4,3 +4,29 @@
 === ops-till-meta — CaraShell (carashell/takskyddet) · marknad NO · konto 915422744950975 (MagiBorsten DK) ===
 1. Butik: prefix carashellroof_ · carashellroof · annons "CaraShellRoof_NO_PD_5_H1" · video CaraShellRoof_NO_PD_5_H1.mp4 (25.32 MB)
 3. Marknadskoll: "CaraShellRoof_NO_PD_5_H1" bär NO — ok för NO
+2. Kampanj (--kampanj): "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11" (120249050596730172) ACTIVE/ACTIVE — matchar via annonserna, inte namnet
+   CBO: 2000 kr/dag · kampanjbas "CARASHELL_NO_Takovertrekket"
+4. Dubblett: "CaraShellRoof_NO_PD_5_H1" finns inte bland kontots 659 annonser — ok
+5. Koncept PD → adset "CARASHELL_NO_Takovertrekket - PD" (120249050598260172) — finns, ACTIVE
+6. Sida 1381171778405935 (ärvd) (ingen IG) · länk https://carashell.se/nb/products/takskyddet?country=NO (--lank) · DSA saknas — skickar inget
+7. Media: video 1389971213334396 uppladdad, thumbnail klar
+8. Creative-spec (SHOP_NOW, alla enhancements OPT_OUT):
+   {
+     "page_id": "1381171778405935",
+     "video_data": {
+       "video_id": "1389971213334396",
+       "image_url": "https://scontent-ord5-2.xx.fbcdn.net/v/t15.5256-10/818431489_2007985326523386_597610986707107798_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=e3495b&_nc_ohc=wtisxAmRea8Q7kNvwHKQvcR&_nc_oc=AdpmJXhs8iTHx8SAGOtffAVo86uFPKW6GOxgHbQolWzMSmtCVsMuLee5CaaHERxCbzs&_nc_zt=23&_nc_ht=scontent-ord5-2.xx&edm=APRAPSkEAAAA&_nc_gid=gQ4_Q2GctL2UGwE4Jrtvhg&_nc_tpa=Q5bMBQKvFp1SZMJOI8nBJroOkCj7wH44Xov2yp5LPbaGVyVYJCZY1sVTSVgXkFzuITDrLGaD4BVts97-Pw&oh=00_AQI3FSv717meeoz5xgQN0kPQ4pMOQdrDVl38L9s9i39Eug&oe=6AB5A7EC",
+       "message": "Fukten starter ved taklukene og skjøtene på taket, der vann blir liggende hele vinteren uten at noen klatrer opp for å sjekke. Først om våren avgjør fukttesten om tetningene holdt.\n\nTaktrekket legges rett over taket og hektes fast med elastiske bånd under kanten. Du setter det på helt selv.\n\n1 106 kr (ord. 1 382,50 kr). Fri frakt i Sverige og Norge. 14 dagers angrerett etter svensk lov. 16 anmeldelser, snitt 5,00.",
+       "title": "Bare taket – ingen hjelp trengs",
+       "link_description": "1 106 kr · Fri frakt SE/NO · 16 anmeldelser, snitt 5,00",
+       "call_to_action": {
+         "type": "SHOP_NOW",
+         "value": {
+           "link": "https://carashell.se/nb/products/takskyddet?country=NO"
+         }
+       }
+     }
+   }
+8. Annons skapad PAUSED: CaraShellRoof_NO_PD_5_H1 (120249184161160172), creative 1611296153710149
+9. Aktiverad: annons 120249184161160172: PAUSED → ACTIVE
+   Tillbakaläsning: CaraShellRoof_NO_PD_5_H1 → ACTIVE / effective IN_PROCESS (adset 120249050598260172)
