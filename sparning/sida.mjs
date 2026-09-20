@@ -105,15 +105,34 @@ function tomtext(vaknar) {
   return vaknar ? `${bas} — det brukar ta ${vaknar}.` : `${bas}.`;
 }
 
+// ⚠️ TILLFÄLLIG — väntar på Axels val (2026-09-20). Fraktbolagen skickar
+// nästan aldrig någon utkörningssignal: 13 av 204 paket, mätt 2026-09-19.
+// Skedet står därför grått och odaterat MELLAN två svarta rader på 93,6 % av
+// de levererade paketen, vilket läser som att något gått fel.
+//
+//   true  = "Ute för leverans" är en egen rad, som i dag (fem rader).
+//   false = skedet vävs in som en underrad på "Ankommit till {{land}}"
+//           (fyra rader, inget grått hål).
+//
+// Båda byggdes som förhandsvisningar åt Axel. När han valt: ta bort den här
+// konstanten och den gren i `visaPaket()` som inte vanns.
+export const UTKORNING_EGEN_RAD = true;
+
 // Texterna som skriptet behöver. Allt annat står i HTML:en, så det går att
 // läsa och rätta utan att gräva i JavaScript.
-function copydata(c) {
+function copydata(c, utkorningEgenRad) {
   return {
     idag: 'i dag',
     igar: 'i går',
     rubriker: RUBRIKER,
     reservrubrik: 'Ditt paket',
     tom: tomtext(c.vaknar),
+    // Raden under det aktiva skedet när paketet rört sig sedan det nåddes.
+    // Utan den står sidan stilla i 4–9 dygn under den internationella
+    // sträckan — 544 av 1 055 paket låg där när det mättes 2026-09-19.
+    senast: 'Senaste skanning {{tid}}',
+    utkorningEgenRad: !!utkorningEgenRad,
+    utkorningUnderrad: 'Ute för leverans {{tid}}',
     // Sidan är statisk: skanningarna bakas in när rutinen bygger om den, varje
     // timme. Den hämtar ingenting själv medan kunden tittar, och får inte
     // påstå det heller — står det "hämtar" tror kunden att en uppdatering är
@@ -199,6 +218,8 @@ function stil(c) {
 #bb-spar .bbs-stegrad--nadd .bbs-stegnamn{color:var(--bbs-svart)}
 #bb-spar .bbs-stegtid{display:block;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--bbs-gra);margin:3px 0 0}
 #bb-spar .bbs-stegort{text-transform:none;letter-spacing:0}
+#bb-spar .bbs-stegsenast{text-transform:none;letter-spacing:0;font-style:italic}
+#bb-spar .bbs-stegextra{text-transform:none;letter-spacing:0}
 #bb-spar .bbs-avvikelse{margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--bbs-rod);background:#fdf3f3;font-weight:700}
 #bb-spar .bbs-mer{margin:22px 0 0;border-top:1px solid var(--bbs-ram);padding:14px 0 0}
 #bb-spar .bbs-mer summary{cursor:pointer;font-weight:700;padding:4px 0;list-style:revert}
@@ -377,7 +398,13 @@ function starta() {
   // En punkt i sammanfattningen. Nådda skeden bär datum och ort; de som
   // återstår står kvar i grått, så kunden ser vad som händer sedan i stället
   // för att undra om något saknas.
-  function stegrad(s, arNu) {
+  //
+  // Ortsfältet s.plats är redan filtrerat av sammanfattning() i uppacka.mjs —
+  // utländska orter och terminalnamn kommer aldrig hit. Filtrera inte om här.
+  //
+  // Argumentet "extra" är en frivillig underrad ("Ute för leverans 17 sep
+  // 14:41") som används när utkörningsskedet vävs in i ankomstraden.
+  function stegrad(s, arNu, extra) {
     var li = document.createElement('li');
     li.className = 'bbs-stegrad' + (s.nadd ? ' bbs-stegrad--nadd' : '') + (arNu ? ' bbs-stegrad--nu' : '');
     var namn = document.createElement('p');
@@ -399,33 +426,95 @@ function starta() {
         tid.appendChild(document.createTextNode(' · '));
         tid.appendChild(ort);
       }
+      if (extra) {
+        var u = document.createElement('span');
+        u.className = 'bbs-stegtid bbs-stegextra';
+        u.textContent = extra;
+        li.appendChild(u);
+      }
+      // Det AKTIVA skedet får den senaste skanningen under sig, men bara när
+      // paketet faktiskt rört sig sedan skedet nåddes. Annars hade raden
+      // upprepat samma tid två gånger.
+      if (arNu && s.senastIso && s.senastIso !== s.iso) {
+        var sen = document.createElement('time');
+        sen.className = 'bbs-stegtid bbs-stegsenast';
+        sen.setAttribute('datetime', s.senastIso);
+        sen.textContent = C.senast.replace('{{tid}}', formatera(s.senastTid));
+        li.appendChild(sen);
+      }
     }
     return li;
+  }
+
+  // Orten en ENSKILD skanning får visa i standardvyn (ingressen och
+  // avvikelseraden). Samma regel som sammanfattning() i uppacka.mjs, men på
+  // en skanning i stället för ett skede: ligger den utanför mottagarlandet är
+  // den ett utländskt terminalnamn och stryks. Saknas landet visas orten —
+  // landFor() känner bara de svenska orter som mätts, så en okänd ort är
+  // oftast en svensk ort och aldrig ett land vi kunnat läsa ut.
+  //
+  // ⚠️ Undantag: skanningar FÖRE ankomsten till mottagarlandet visar aldrig
+  // ort, även när landet är okänt — det är där "Hongqiao" bor.
+  function ortIVyn(h, land) {
+    if (!h || !h.plats) return null;
+    if (h.land && land && h.land !== land) return null;
+    if (h.plats === land) return null;
+    if (typeof h.steg === 'number' && h.steg >= 0 && h.steg < I_LANDET_NR) return null;
+    return h.plats;
+  }
+
+  function stegMedNyckel(steg, nyckel) {
+    for (var i = 0; i < steg.length; i++) if (steg[i].nyckel === nyckel) return steg[i];
+    return null;
   }
 
   function visaPaket(p) {
     visaEl(sok, false); visaEl(saknas, false); visaEl(traff, true); visaEl(annat, true);
     $('bbs-rubrik').textContent = C.rubriker[p.statusKod] || p.status || C.reservrubrik;
+
+    // Ingressen bär fraktbolagets senaste text. Den STÅR KVAR med flit: den
+    // är det enda på sidan som rör sig under den internationella sträckan,
+    // som tar 4–9 dygn. Bara ORTEN stryks, och bara när skanningen skedde
+    // utanför mottagarlandet — då är den ett utländskt terminalnamn.
     var forsta = p.handelser.length ? p.handelser[0] : null;
-    var ingress = forsta ? forsta.text + (forsta.plats ? ' (' + forsta.plats + ')' : '') : '';
+    var ingressort = ortIVyn(forsta, p.land);
+    var ingress = forsta ? forsta.text + (ingressort ? ' (' + ingressort + ')' : '') : '';
     $('bbs-ingress').textContent = ingress;
     visaEl($('bbs-ingress'), !!ingress);
     $('bbs-bolag').textContent = p.bolag || '–';
     $('bbs-nummer').textContent = p.nummer;
 
-    // Avvikelser göms inte bland de fem punkterna — en retur eller ett
-    // misslyckat leveransförsök är det enda kunden bryr sig om just då.
+    // Avvikelser göms inte bland punkterna — en retur eller ett misslyckat
+    // leveransförsök är det enda kunden bryr sig om just då. Orten stryks
+    // med samma regel; frasen säger redan "till avsändaren".
     var avv = p.avvikelser && p.avvikelser.length ? p.avvikelser[0] : null;
-    avvikelse.textContent = avv ? avv.text + (avv.plats ? ' (' + avv.plats + ')' : '') : '';
+    var avvort = ortIVyn(avv, p.land);
+    avvikelse.textContent = avv ? avv.text + (avvort ? ' (' + avvort + ')' : '') : '';
     visaEl(avvikelse, !!avv);
 
-    // Sammanfattningen: fem punkter.
+    // Sammanfattningen: leveransens milstolpar.
     var s = p.sammanfattning && p.sammanfattning.steg ? p.sammanfattning.steg : [];
     stegruta.textContent = '';
-    for (var k = 0; k < s.length; k++) stegruta.appendChild(stegrad(s[k], s[k].nr === p.sammanfattning.nu));
+    // ⚠️ Variabeln heter stegpost, inte rad. Funktionen rad() bygger
+    // historikens rader längre ned i samma funktion, och en "var rad" här
+    // skuggar den i HELA visaPaket — historiken kastade "rad is not a
+    // function" och kunden fick rutan "Vi hittar inte det numret".
+    for (var k = 0; k < s.length; k++) {
+      var stegpost = s[k];
+      // Utkörningsskedet som underrad i stället för egen punkt: fraktbolagen
+      // skickar nästan aldrig signalen, och en grå rad mitt i kedjan läser
+      // som ett fel. Skedet finns kvar i datan oavsett vilket som valts.
+      if (!C.utkorningEgenRad && stegpost.nyckel === 'utkorning') continue;
+      var extra = null;
+      if (!C.utkorningEgenRad && stegpost.nyckel === 'i_landet') {
+        var uk = stegMedNyckel(s, 'utkorning');
+        if (uk && uk.nadd) extra = C.utkorningUnderrad.replace('{{tid}}', formatera(uk.tid));
+      }
+      stegruta.appendChild(stegrad(stegpost, stegpost.nr === p.sammanfattning.nu, extra));
+    }
     visaEl(stegruta, s.length > 0 && p.handelser.length > 0);
 
-    // Hela historiken, oförändrad, bakom "Visa fullständig transporthistorik".
+    // Hela historiken, oförändrad, bakom "Mer information".
     lista.textContent = '';
     for (var i = 0; i < p.handelser.length; i++) lista.appendChild(rad(p.handelser[i], i === 0));
     visaEl(mer, p.handelser.length > 0);
@@ -487,16 +576,19 @@ function starta() {
 // `data` är objektet ur `sparning/paketdata.mjs` byggData().data, alltså
 // exakt formatet `sparning/uppacka.mjs` beskriver. `konfig` är mejlens
 // konfiguration (`mejl/konfig.json`) eller ett utsnitt av den.
-export function byggSidkropp(data, konfig) {
+// `val.utkorningEgenRad` överstyr UTKORNING_EGEN_RAD och finns bara för att
+// kunna bygga båda förhandsvisningarna åt Axel. Tas bort med konstanten.
+export function byggSidkropp(data, konfig, val) {
   if (!data || typeof data !== 'object' || !data.k) {
     throw new Error('byggSidkropp(): datan saknar `k` — det är inte paketdatan ur sparning/paketdata.mjs.');
   }
   const c = lasKonfig(konfig);
+  const utkorningEgenRad = val && typeof val.utkorningEgenRad === 'boolean' ? val.utkorningEgenRad : UTKORNING_EGEN_RAD;
   // Samma eskapning som lyckohjulet: "</" i en JSON-sträng skulle stänga
   // <script>-taggen mitt i datan och tömma sidan. En ortsträng från ett
   // fraktbolag kan innehålla vad som helst.
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
-  const copy = JSON.stringify(copydata(c)).replace(/<\//g, '<\\/');
+  const copy = JSON.stringify(copydata(c, utkorningEgenRad)).replace(/<\//g, '<\\/');
   const mail = esk(c.support);
   const vantetid = c.vaknar
     ? ` Är paketet nyss skickat kan fraktbolaget ännu inte ha registrerat det — det brukar ta ${esk(c.vaknar)}.`
@@ -533,8 +625,8 @@ export function byggSidkropp(data, konfig) {
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
   <details id="bbs-mer" class="bbs-mer" hidden>
-    <summary>Visa fullständig transporthistorik</summary>
-    <p class="bbs-merhjalp">Varje skanning fraktbolaget har rapporterat, med ort och land.</p>
+    <summary>Mer information</summary>
+    <p class="bbs-merhjalp">Hela transportkedjan som fraktbolaget rapporterat den, med ort och land.</p>
     <ol id="bbs-lista" class="bbs-lista"></ol>
   </details>
   <p class="bbs-hjalprad">Undrar du något om leveransen? Mejla <a href="mailto:${mail}">${mail}</a>.</p>
@@ -554,9 +646,9 @@ ${skript()}
 // tomt dokument runtom. Sidan hämtar ingenting från nätet, så den ser exakt
 // likadan ut här som i butiken — bortsett från temats typsnitt, som ärvs av
 // butiken men inte finns här.
-export function byggForhandsvisning(data, konfig) {
+export function byggForhandsvisning(data, konfig, val) {
   return `<!DOCTYPE html>
 <html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Spåra ditt paket</title>
 <style>body{margin:0;padding:24px 16px;font-family:Arial,Helvetica,sans-serif;background:#f7f7f7}.rte{background:#fff;padding:24px 16px;max-width:760px;margin:0 auto}</style></head>
-<body><div class="rte">${byggSidkropp(data, konfig)}</div></body></html>`;
+<body><div class="rte">${byggSidkropp(data, konfig, val)}</div></body></html>`;
 }

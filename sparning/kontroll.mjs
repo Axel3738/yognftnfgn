@@ -5,8 +5,7 @@
 //
 //   1. Ingen faktisk trackinghändelse får tas bort ur fullständig historik.
 //   2. Finns ursprungsland eller transitland i transportörens rådata måste
-//      kunden fortfarande kunna hitta det via "Visa fullständig
-//      transporthistorik".
+//      kunden fortfarande kunna hitta det via "Mer information".
 //   3. Sammanfattningen får förenkla tekniska ortnamn och transportörstexter,
 //      men får inte visa ett land, en plats eller en status som MOTSÄGER
 //      råinformationen.
@@ -24,7 +23,7 @@
 // mellanform. Ett fel som redan finns i `handelserUr()` skulle annars
 // reproduceras av kontrollen och se rätt ut.
 
-import { packaUppEtt, STEG } from './uppacka.mjs';
+import { packaUppEtt, I_LANDET_NR } from './uppacka.mjs';
 import { arForhandsavi } from './steg.mjs';
 import { landFor, normalisera } from './sprak.mjs';
 
@@ -132,12 +131,25 @@ export function kontrolleraSammanfattning(rå, paket, { mottagarland }) {
     }
 
     // Krav 4: ankomsten till mottagarlandet.
+    //
+    // ⚠️ Två mätningar, inte en. Kedjan måste bära en fysisk skanning i
+    // landet — OCH skedets EGEN rad måste vara en av de skanningar som
+    // rättfärdigar ankomsten. Fram till 2026-09-20 mättes bara kedjan, så
+    // ankomstraden kunde peka på "Klart i tullen i avsändarlandet · Kina"
+    // utan att kontrollen sa ett ord (reproducerat på YT2625400704778854).
+    // Så länge orten stod i vyn syntes felet ändå; nu när standardvyn inte
+    // visar utländska orter finns ingen sådan ledtråd kvar.
     if (steg.nyckel === 'i_landet') {
       const stod = paket.handelser.filter((h) => h.steg >= I_LANDET_NR && !h.avvikelse);
       const fysisk = stod.some((h) => h.land === mottagarland && !arForhandsaviText(h, rå));
       const viaFras = stod.some((h) => h.steg === I_LANDET_NR && h.land !== mottagarland && bararAnkomstfras(h, rå));
       if (!fysisk && !viaFras) {
         problem.push(fel(4, paket.nummer, `"${steg.etikett}" visas utan en fysisk skanning i ${mottagarland}.`, steg.iso));
+      } else {
+        const egenHaller = (bakom.land === mottagarland && !arForhandsaviText(bakom, rå)) || bararAnkomstfras(bakom, rå);
+        if (!egenHaller) {
+          problem.push(fel(4, paket.nummer, `"${steg.etikett}" dateras av en skanning som varken skedde i ${mottagarland} eller säger ankomst ("${bakom.text}"${bakom.land ? `, ${bakom.land}` : ''}).`, steg.iso));
+        }
       }
     }
 
@@ -157,7 +169,41 @@ export function kontrolleraSammanfattning(rå, paket, { mottagarland }) {
   return problem;
 }
 
-const I_LANDET_NR = STEG.findIndex((r) => r[0] === 'i_landet');
+// ---------------------------------------------------------------------------
+// Krav 5: standardvyn bär ingen utländsk geografi
+// ---------------------------------------------------------------------------
+//
+// Axels krav 2026-09-20: kunden ska se leveransens milstolpar, inte
+// logistiken. Utländska terminalnamn och länder hör hemma i "Mer
+// information", aldrig bland punkterna.
+//
+// Kontrollen mäter i stället för att lita på filtret i `sammanfattning()`:
+// varje ort ett skede visar måste (a) tillhöra ett skede från `i_landet` och
+// uppåt, (b) inte ligga i ett annat land än mottagarlandet, och (c) inte vara
+// landets eget namn ("Ankommit till Sverige · Sverige").
+//
+// ⚠️ Kontrollen får ALDRIG kräva att orten saknas i HISTORIKEN — krav 2 säger
+// motsatsen. Det är bara `sammanfattning.steg` som mäts här.
+export function kontrolleraStandardvyn(paket, { mottagarland }) {
+  const problem = [];
+  const s = paket.sammanfattning;
+  if (!s) return problem;
+  for (const steg of s.steg) {
+    if (!steg.nadd || !steg.plats) continue;
+    if (steg.nr < I_LANDET_NR) {
+      problem.push(fel(5, paket.nummer, `Skedet "${steg.etikett}" visar orten "${steg.plats}" fast det ligger före ankomsten till ${mottagarland}.`, steg.plats));
+      continue;
+    }
+    if (steg.land && steg.land !== mottagarland) {
+      problem.push(fel(5, paket.nummer, `Skedet "${steg.etikett}" visar orten "${steg.plats}" som ligger i ${steg.land}, inte i ${mottagarland}.`, steg.plats));
+      continue;
+    }
+    if (steg.plats === mottagarland) {
+      problem.push(fel(5, paket.nummer, `Skedet "${steg.etikett}" visar "${steg.plats}" som ort — det är landet, inte en ort.`, steg.plats));
+    }
+  }
+  return problem;
+}
 
 // Är skanningen en förhandsavisering? Slås upp i RÅDATAN, inte i vår egen
 // översättning — det är fraktbolagets text regeln gäller.
@@ -205,6 +251,7 @@ export function kontrollera(paketlista, data, { mottagarland = 'Sverige', maxHan
     problem.push(...kontrolleraFullstandighet(rå, packat));
     problem.push(...kontrolleraLander(rå, packat));
     problem.push(...kontrolleraSammanfattning(rå, packat, { mottagarland }));
+    problem.push(...kontrolleraStandardvyn(packat, { mottagarland }));
     if (maxHandelser && packat.handelser.length >= maxHandelser) {
       problem.push(fel(1, packat.nummer, `Paketet har ${packat.handelser.length} skanningar och slår i taket (${maxHandelser}) — höj MAX_HANDELSER.`, null));
     }
@@ -223,6 +270,7 @@ export function rapport(resultat) {
     2: 'länder som inte går att hitta i historiken',
     3: 'sammanfattning som motsäger rådatan',
     4: '"Ankommit till landet" utan fysisk skanning',
+    5: 'utländsk ort eller land i standardvyn',
   };
   for (const [krav, antal] of Object.entries(resultat.perKrav).sort()) {
     rader.push(`   Krav ${krav} (${KRAVTEXT[krav] ?? '?'}): ${antal}`);

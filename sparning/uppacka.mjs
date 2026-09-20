@@ -65,13 +65,27 @@ export const STATUSAR = [
 //
 // ⚠️ Ordningen ÄR stegnumret. Lägg aldrig till ett skede i mitten — då pekar
 // all redan byggd data fel. Nya skeden läggs sist, eller så höjs FORMAT.
+// `steg.mjs` bär SAMMA ordning som konstanter (BESTALLD=0 … LEVERERAT=4) —
+// de två filerna måste ändras i samma commit eller inte alls.
+//
+// ⚠️ NYCKELN är kontraktet, etiketten är fri text. `kontroll.mjs` slår upp
+// 'i_landet' och 'levererat' på nyckeln; byt aldrig en nyckel utan att läsa
+// den filen. Etiketterna skrevs om 2026-09-20 (Axels beslut): kunden ska se
+// leveransens milstolpar, inte logistiken. "Paketet är på väg" hette förut
+// steg 1 och bar utländska ortnamn — nu heter det "Internationell transport"
+// och bär ingen geografi alls (se `sammanfattning()` nedan).
 export const STEG = [
-  ['bestalld', 'Beställning mottagen'],
-  ['pa_vag', 'Paketet är på väg'],
+  ['bestalld', 'Beställningen är registrerad'],
+  ['pa_vag', 'Internationell transport'],
   ['i_landet', 'Ankommit till {{land}}'],
   ['utkorning', 'Ute för leverans'],
   ['levererat', 'Levererat'],
 ];
+
+// Första skedet som per definition ligger i mottagarlandet. Allt före det är
+// utlandet, och där visar sammanfattningen aldrig en ort. Härlett ur STEG,
+// aldrig skrivet som en siffra — annars är det ännu en sanning som kan glida.
+export const I_LANDET_NR = STEG.findIndex((rad) => rad[0] === 'i_landet');
 
 export const STANDARDLAND = 'Sverige';
 
@@ -115,6 +129,33 @@ export function stegEtikett(stegIx, land) {
   return rad[1].replace('{{land}}', land || STANDARDLAND);
 }
 
+// Får ortnamnet i skanningen `h` visas i sammanfattningen?
+//
+// Två spärrar, och de behövs båda (mätt 2026-09-19 på 1 055 riktiga paket):
+//
+//   1. SKEDET avgör i första hand. Allt före `i_landet` är utlandet, och där
+//      visas ingen ort alls. Det är `steg.mjs` som redan avgjort landsfrågan
+//      en gång, med PostNords förhandsaviseringsundantag inbakat — vylagret
+//      ska inte göra om den bedömningen.
+//   2. Landet är en extra spärr ovanpå, för en sen skanning som ärvt ett
+//      högre skede.
+//
+// ⚠️ Filtrera ALDRIG på landet ensamt. `landFor()` känner bara de svenska
+// orter som faktiskt mätts, så `landFor('LULEÅ PAKETTERMINAL LULEÅ')` och
+// `landFor('KIRUNA')` ger båda null — en ren landsregel hade tystat svenska
+// utlämningsställen. Och `landFor('Hongqiao')` ger också null, så den
+// omvända regeln hade släppt igenom just det kinesiska terminalnamnet.
+//
+// ⚠️ "Ankommit till Sverige · Sverige" hjälper ingen: är orten samma ord som
+// landet är den ingen ort, bara en landskod som städats.
+function ortFor(stegIx, h, land) {
+  if (!h || !h.plats) return null;
+  if (stegIx < I_LANDET_NR) return null;
+  if (h.land && land && h.land !== land) return null;
+  if (h.plats === land) return null;
+  return h.plats;
+}
+
 // De fem skedena för ett paket, byggda ur dess egna skanningar.
 //
 // Ett skede är `nadd` bara när en riktig skanning bär det steget — aldrig
@@ -124,10 +165,24 @@ export function stegEtikett(stegIx, land) {
 // ljuger inte om att paketet varit ute för leverans.
 //
 // `tid` är den FÖRSTA skanningen i skedet — när paketet nådde dit.
+//
+// `senastTid`/`senastIso` är den SENASTE skanningen i samma skede, och de
+// finns av ett mätt skäl: 544 av 1 055 paket (51,6 %) står i internationell
+// transport, och den sträckan tar 4–9 dygn. Utan den raden står hela sidan
+// stilla i en vecka för varannan kund, som då tror att paketet fastnat.
+// `tid`/`iso` rörs inte — `kontroll.mjs` krav 3 matchar på dem.
+//
+// `plats` är den ort vyn FÅR visa (se ortFor ovan). `raPlats` och `land` är
+// skanningens egna värden, kvar så att `kontroll.mjs` kan mäta att filtret
+// gjort rätt i stället för att lita på det.
 export function sammanfattning(handelser, land) {
   var ut = [];
   for (var i = 0; i < STEG.length; i++) {
-    ut.push({ nr: i, nyckel: STEG[i][0], etikett: stegEtikett(i, land), nadd: false, tid: null, iso: null, text: null, plats: null });
+    ut.push({
+      nr: i, nyckel: STEG[i][0], etikett: stegEtikett(i, land), nadd: false,
+      tid: null, iso: null, text: null, plats: null, raPlats: null, land: null,
+      senastTid: null, senastIso: null,
+    });
   }
   var hogsta = -1;
   for (var j = 0; j < handelser.length; j++) {
@@ -144,7 +199,14 @@ export function sammanfattning(handelser, land) {
       rad.tid = h.tid;
       rad.iso = h.iso;
       rad.text = h.text;
-      rad.plats = h.plats;
+      rad.raPlats = h.plats;
+      rad.land = h.land == null ? null : h.land;
+      rad.plats = ortFor(s, h, land);
+    }
+    // Den nyaste i skedet är den första vi ser, eftersom listan är nyast först.
+    if (!rad.senastIso || (h.iso && h.iso > rad.senastIso)) {
+      rad.senastTid = h.tid;
+      rad.senastIso = h.iso;
     }
   }
   return { steg: ut, nu: hogsta };

@@ -2,7 +2,7 @@
 //
 //   1. Ingen faktisk trackinghändelse får tas bort ur fullständig historik.
 //   2. Finns ursprungsland eller transitland i transportörens rådata måste
-//      kunden hitta det via "Visa fullständig transporthistorik".
+//      kunden hitta det via "Mer information".
 //   3. Sammanfattningen får förenkla ortnamn och transportörstexter, men
 //      aldrig visa ett land, en plats eller en status som MOTSÄGER rådatan.
 //   4. "Ankommit till Sverige" får aldrig visas utan en faktisk fysisk

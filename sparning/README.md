@@ -61,13 +61,39 @@ Sidan visade varje enskild logistikhändelse — terminal, land, transportstatus
 och blev rörig: ett paket har i snitt nio skanningar, som mest 29. Standardvyn
 är nu **fem punkter**:
 
-> Beställning mottagen → Paketet är på väg → Ankommit till Sverige →
-> Ute för leverans → Levererat
+> Beställningen är registrerad → Internationell transport →
+> Ankommit till Sverige → Ute för leverans → Levererat
 
-Hela historiken finns kvar bakom **"Visa fullständig transporthistorik"**, med
-ort OCH land på varje rad ("Rozenburg, Nederländerna"). Ingen skanning tas
-bort, inget datum räknas om — de fem punkterna är en ren gruppering av rader
-som redan finns.
+Hela historiken finns kvar bakom **"Mer information"**, med ort OCH land på
+varje rad ("Rozenburg, Nederländerna"). Ingen skanning tas bort, inget datum
+räknas om — punkterna är en ren gruppering av rader som redan finns.
+
+### Ingen utländsk geografi i standardvyn (Axels krav 2026-09-20)
+
+Kunden ska se leveransens milstolpar, inte logistiken. Tre regler:
+
+1. **Ort visas bara från "Ankommit till Sverige" och uppåt** (`ortFor` i
+   `uppacka.mjs`). Allt före det är utlandet. Mätt på den publicerade datan
+   2026-09-20: 683 av 1 194 ortsrader föll bort — 604 "Kina", 67 "Hongqiao"
+   och 12 "Sverige" som satt på PostNords förhandsavisering.
+   ⚠️ **Filtrera aldrig på landet ensamt.** `landFor()` känner bara de orter
+   som mätts, så både `LULEÅ PAKETTERMINAL LULEÅ` och `Hongqiao` ger `null`:
+   en landsregel hade tystat svenska utlämningsställen och ändå släppt igenom
+   det kinesiska terminalnamnet. Skedet är facit, landet är en extra spärr.
+2. **Svenska orter är kvar.** `Levererat · ICA nära Gällö` är den enda raden
+   på sidan som kräver något av kunden — den får aldrig bli bara "Levererat".
+3. **Ingressen behåller fraktbolagets text, men tappar orten.** Den är det
+   ENDA som rör sig under den internationella sträckan (4–9 dygn, och 544 av
+   1 055 paket låg där 2026-09-19). Görs den statisk är sidan byte-identisk i
+   en vecka för varannan kund, och då mejlar de kundtjänst. Det aktiva skedet
+   bär dessutom "Senaste skanning &lt;tid&gt;" av samma skäl.
+
+**Krav 5 i `kontroll.mjs`** mäter det i stället för att lita på filtret, och
+`publicera.mjs` vägrar publicera en sida som fäller det. Fyra ordboksfraser
+skrevs om samma dag: de påstod "mottagarlandet" men bars av skanningar i
+Nederländerna (importtullen klareras där), och utan orten i vyn hade kunden
+läst "Klart i tullen i mottagarlandet" ovanför ett grått "Ankommit till
+Sverige" — 7 riktiga paket låg så när det mättes.
 
 **Så avgörs skedet** (`steg.mjs`), i den ordningen:
 1. Har frasen ett skede i tabellen — det gäller. Alla 78 ordboksnycklar är
@@ -207,6 +233,26 @@ Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
 event i Shopify ligger kvar.
 
 ## Logg
+
+- **2026-09-20, städningen av standardvyn.** Axel: "only the major delivery
+  milestones … no foreign terminal names or countries … one simple status
+  such as International transport … keep the complete carrier history behind
+  Mer information". Skedena heter nu *Beställningen är registrerad →
+  Internationell transport → Ankommit till Sverige → Ute för leverans →
+  Levererat*, orten visas bara från ankomsten och uppåt, knappen heter
+  "Mer information", och krav 5 i `kontroll.mjs` gör regeln till en spärr i
+  publiceringen. **Rådatan rördes inte** — samma format (v2), samma
+  skanningar, samma tider, samma länder i historiken.
+  Fyra fel som fanns redan innan hittades på vägen och rättades: fyra
+  ordboksfraser påstod mottagarlandet fast skanningen skedde i Nederländerna
+  (7 paket läste motsägande just då), krav 4 kollade aldrig att
+  ankomststegets EGEN skanning skedde i Sverige, spårningens tester låg
+  utanför `npm test`, och skedenas antal och etiketter var helt opinnade — en
+  felaktig hopslagning 5→4 gav 115/115 grönt. Nu 127 tester, varav 11 nya i
+  `test/standardvy.test.mjs`.
+  ⚠️ Kvar att bestämma: om "Ute för leverans" ska vara en egen rad. Skedet
+  saknas hos 191 av 204 paket och står då grått mitt i kedjan. Konstanten
+  `UTKORNING_EGEN_RAD` i `sida.mjs` bär båda varianterna tills Axel valt.
 
 - **2026-09-19 kväll, sammanfattningsvyn.** Axel: sidan "visar varje enskild
   logistikhändelse, terminal, land och transportstatus vilket gör sidan väldigt

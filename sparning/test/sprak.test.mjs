@@ -3,6 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { FRASER, normalisera, oversattFras, stadaPlats, okandaFraser } from '../sprak.mjs';
+import { skedeForFras, I_LANDET } from '../steg.mjs';
 
 // De 75 distinkta skanningstexter som faktiskt mättes: 204 av Bäverbutikens
 // paket hos 17TRACK 2026-09-19, 1 873 händelser. Listan är rådata, inte ett
@@ -145,8 +146,31 @@ test('ordboken översätter till kundens språk, inte ord för ord', () => {
   assert.equal(oversattFras('Shipment information received').text, 'Vi har fått uppgifterna om paketet');
   assert.equal(oversattFras('Departed from sort facility').text, 'Paketet har lämnat sorteringsterminalen');
   assert.equal(oversattFras('Clearence processing completed - Export').text, 'Klart i tullen i avsändarlandet');
-  assert.equal(oversattFras('NOA received').text, 'Paketet är anmält till mottagarlandet');
+  assert.equal(oversattFras('NOA received').text, 'Paketet är anmält till tullen');
   assert.equal(oversattFras('THE SHIPMENT ITEM HAS BEEN DELIVERED.').text, 'Paketet är levererat');
+});
+
+// ⚠️ Den här regeln föddes 2026-09-20, när standardvyn slutade visa orter.
+//
+// Fyra fraser påstod mottagarlandet fast skanningen skedde i Nederländerna:
+// importtullen klareras där, och "destination airport" är Amsterdam för ett
+// paket som ska till Umeå (se varningen i steg.mjs:68-74). Så länge orten
+// stod i vyn löste "(Nederländerna)" motsägelsen. Utan den läste kunden
+// "Klart i tullen i mottagarlandet" rakt ovanför ett grått, odaterat
+// "Ankommit till Sverige" — mätt på 7 riktiga paket i den publicerade datan
+// 2026-09-20.
+//
+// Regeln: en fras får bara säga mottagarlandet om fraktbolagets egen text
+// står i I_LANDET-tabellen i steg.mjs. Den tabellen är det enda stället där
+// vi vet att skanningen verkligen skedde i landet.
+test('bara fraser som ÄR ankomst får påstå mottagarlandet', () => {
+  const ankomst = new Set(Object.keys(FRASER).filter((n) => skedeForFras(n) === I_LANDET));
+  const pastar = [];
+  for (const [nyckel, text] of Object.entries(FRASER)) {
+    if (!/mottagarlandet|ditt land|din adress/i.test(text)) continue;
+    if (!ankomst.has(nyckel)) pastar.push(`${nyckel} → ${text}`);
+  }
+  assert.deepEqual(pastar, [], `fraser som påstår mottagarlandet utan att vara ankomst:\n  ${pastar.join('\n  ')}`);
 });
 
 test('redan svenska fraser släpps igenom som de är', () => {
