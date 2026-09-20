@@ -703,3 +703,22 @@ teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `k
   2026-09-19 20:07. Speglingen 16:55 laddar därför inte upp något heller.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551236149488656429`, ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-20-no-termoskyddet/`.
+
+## 2026-09-20 — `/ops-spegla carashell/termoskyddet` — tom kö, NU ÄR BÅDA marknaderna pausade
+
+- **Ordinarie kö: 0 rader** i `CaraShell SE ready to be active`, 0 i `CaraShell EN ready to be active`.
+  Inget speglat, ingen Notion-rad rörd, inget uppladdat, ingen Discord-ping.
+- ⚠️ **NO-kampanjen pausades i går kväll.** Mätt ur Meta (`updated_time`):
+  `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` PAUSED **2026-09-19 20:07 CEST** med 3 515 kr spend;
+  `CARASHELL_SE_…` PAUSED sedan 2026-09-18 11:29 CEST med 2 058 kr spend. Båda är PAUSED med spend,
+  alltså avvecklade med flit — **termoskyddet spenderar ingenting alls i CaraShell just nu**, och
+  speglingen har ingen kampanj att ladda upp till i någon marknad. Rör dem inte utan Axels ok.
+- Ingen efterjustering körd i dag: med båda kampanjerna pausade hoppas varje rad före första
+  skrivningen, och gårdagens torrkörning bevisade utfallet på 21 av exakt samma rader (0 speglade).
+  En ny 27-radersrunda hade kostat en halvtimmes Meta-läsningar utan att ändra något.
+- ⚠️ **Källhubben fylls på i fel status och växer:** 35 rader totalt — **27 `Approved`** (21 i går) och
+  8 `Creative strat review`; noll i båda speglingsstegen. `/oversatt NO` fortsätter alltså sätta
+  `Approved` i stället för `CaraShell SE ready to be active` (orsaken i går: commit `732359e`).
+  Inget arbete är förlorat — `--fran "Approved"` fångar dem — men speglingens ordinarie kö kommer
+  aldrig att se en enda rad så länge det pågår.
+- Pris 559 SEK / 548 NOK läst ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
