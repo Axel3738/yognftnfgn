@@ -1,12 +1,3 @@
-# Cowork-prompt: fraktmejlen i Beverbutikken (beverbutikken.no)
-
-Byggd av `node mejl/bygg-butik.mjs beverbutikken`. Hela mallen byts — inte enskilda
-rader — så mejlet ser ut som Bäverbutikens (Axels dom 2026-09-20 på den
-lappade Shopify-mallen: "tvääär fula"). Länkarna pekar på `main`: pusha
-först, annars klistrar Cowork in en gammal version. Delen under linjen är prompten.
-
----
-
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Beverbutikken**
 (beverbutikken.no, 1acuam-s5.myshopify.com). Uppgifter: **A.** byta ut koden i
 **tre kundnotiser**, sedan **C.** ett testmejl. Rör ingenting annat i

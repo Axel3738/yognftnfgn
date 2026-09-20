@@ -55,10 +55,10 @@ standard för alla notiser, inget i mallen.
 ⚠️ **Avsändaradressen är Beverbutikken@gmail.com.** Shopify tar inte
 Gmail-domäner som anpassad avsändare, så mejlen går från
 `store+95795249527@shopifyemail.com` medan sidfoten hänvisar till
-kundesupport@beverbutikken.no. Lösningen är Axels klick: Inställningar →
-Aviseringar → Avsändarens e-post → `kundesupport@beverbutikken.no` →
-verifieringslänken i den inkorgen. Axel går igenom alla butikers
-avsändaradresser samma kväll.
+kundesupport@beverbutikken.no. Axel bytte samma kväll till **support@beverbutikken.no** och
+verifierade den (inte kundesupport@ som BESLUT.md sa). Registret och
+mallarnas sidfot uppdaterade — mallarna körs om av Cowork (10 426 / 6 230 /
+6 233 tecken).
 
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md`
 

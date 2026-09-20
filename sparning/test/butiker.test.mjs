@@ -129,7 +129,7 @@ test('Shopify-meddelandena översätts och behåller orten innanför punkten', (
   const ov = skapaOversattare('nb');
   assert.equal(meddelande('IN_TRANSIT', 'Oslo', 'x@y.z', ov.T), 'Pakken er på vei (Oslo).');
   assert.equal(meddelande('DELIVERED', null, 'x@y.z', ov.T), 'Pakken er levert.');
-  assert.equal(meddelande('FAILURE', null, 'kundesupport@beverbutikken.no', ov.T), 'Det oppstod et problem med leveringen. Send e-post til kundesupport@beverbutikken.no, så hjelper vi deg.');
+  assert.equal(meddelande('FAILURE', null, 'support@beverbutikken.no', ov.T), 'Det oppstod et problem med leveringen. Send e-post til support@beverbutikken.no, så hjelper vi deg.');
   // Svensk butik: oförändrat, med Bäverbutikens adress som förut.
   assert.equal(meddelande('FAILURE', null), 'Ett problem uppstod med leveransen. Mejla kundsupport@baverbutiken.se så hjälper vi till.');
   const plan = planera({ status: 'IN_TRANSIT', tid: '2026-09-20T10:00:00Z', plats: 'Bergen' }, [], null, { support: 'a@b.c', T: ov.T });
@@ -175,7 +175,7 @@ test('en norsk sida: ordboken, etiketterna och texterna på norska, inga svenska
   assert.equal(data.o['På väg'], 'På vei');
   assert.deepEqual(ov.okanda(), [], 'allt i fixturen ska ha översättning');
 
-  const kropp = byggSidkropp(data, { sprak: 'nb', prefix: 'BB-', tidszon: 'Europe/Oslo', butik: { support: 'kundesupport@beverbutikken.no' }, frakt: { sparning_vaknar: '2–4 dager' } });
+  const kropp = byggSidkropp(data, { sprak: 'nb', prefix: 'BB-', tidszon: 'Europe/Oslo', butik: { support: 'support@beverbutikken.no' }, frakt: { sparning_vaknar: '2–4 dager' } });
   const synligt = kropp.replace(/<style>[\s\S]*?<\/style>/g, ' ').replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]*>/g, ' ');
   assert.ok(synligt.includes('Spor pakken din'));
   assert.ok(synligt.includes('Skriv inn pakkenummeret ditt'));
@@ -190,7 +190,7 @@ test('en norsk sida: ordboken, etiketterna och texterna på norska, inga svenska
   assert.equal(copy.tz, 'Europe/Oslo');
   assert.equal(copy.locale, 'nb-NO');
   assert.equal(copy.tom, 'Pakken er registrert. Transportøren har ikke skannet den ennå — det tar vanligvis 2–4 dager.');
-  assert.ok(kropp.includes('kundesupport@beverbutikken.no'));
+  assert.ok(kropp.includes('support@beverbutikken.no'));
   assert.ok(!kropp.includes('baverbutiken.se'), 'Bäverbutikens adress får inte läcka in i en annan butik');
   // Sidans skript slår upp etiketterna i D.o — ordlistan ska ligga i datan.
   const d = /<script type="application\/json" id="bb-spar-data">([\s\S]*?)<\/script>/.exec(kropp);

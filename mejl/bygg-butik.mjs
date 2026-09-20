@@ -11,6 +11,7 @@
 //   <mall>.amne.txt               ämnesraden
 //   forhandsvisning/<mall>.html   mejlet med exempeldata
 //   COWORK-PROMPT.md              uppgiften till Cowork, med teckenantal och råfil-länkar
+//   PROMPT.txt                    samma prompt utan huvudet — råfilen på GitHub går att kopiera rakt in i Cowork
 //
 // Bakgrund (2026-09-20 kväll): Cowork lappade Shopifys standardmall i
 // CaraShell (bytte länkar, lät Shop-knappen stå) och Axel dömde "tvääär fula,
@@ -145,7 +146,7 @@ Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
   const avsandare = brand.byt_avsandare
     ? `\n### 0. Avsändaradressen — FÖRST
 
-**Inställningar** → **Notiser** → **Avsändarens e-post** (Sender email): byt till **${brand.byt_avsandare}** och spara. Shopify visar då "ej verifierad" och skickar ett verifieringsmejl till den adressen — Axel klickar länken i inkorgen ${brand.byt_avsandare}. Rapportera "verifieringsmejlet skickat" och vänta på Axels "klickat" innan du går vidare till A. Ändra inget annat på sidan.
+**Inställningar** → **Notiser** → **Avsändarens e-post** (Sender email): byt till **${brand.byt_avsandare}** och spara. Shopify visar då "ej verifierad" och skickar ett verifieringsmejl till den adressen — Axel klickar länken i inkorgen ${brand.byt_avsandare}. Rapportera "verifieringsmejlet skickat" och vänta på Axels "klickat" innan du går vidare till A. **Står adressen redan på ${brand.byt_avsandare} och är verifierad: rapportera det och gå direkt till A.** Ändra inget annat på sidan.
 `
     : '';
   return `# Cowork-prompt: fraktmejlen${brand.meny_klar ? '' : ' + menylänken'} i ${reg.namn} (${reg.url.replace('https://', '')})
@@ -236,7 +237,10 @@ export function skrivButik(id, { rot = ROT } = {}) {
   }
   for (const m of b.exempel) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.html`), m.html);
   for (const m of b.exempelExtra ?? []) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.${m.kod}.html`), m.html);
-  writeFileSync(join(ut, 'COWORK-PROMPT.md'), coworkPrompt(b));
+  const prompt = coworkPrompt(b);
+  writeFileSync(join(ut, 'COWORK-PROMPT.md'), prompt);
+  // PROMPT.txt = bara delen under linjen, så Axel kan öppna råfilen, Ctrl+A, Ctrl+C och klistra in i Cowork.
+  writeFileSync(join(ut, 'PROMPT.txt'), prompt.split('\n---\n').slice(1).join('\n---\n').replace(/^\n+/, ''));
   return { ...b, ut };
 }
 

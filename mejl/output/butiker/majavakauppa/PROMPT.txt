@@ -1,14 +1,5 @@
-# Cowork-prompt: fraktmejlen i Beverbutikken (beverbutikken.no)
-
-Byggd av `node mejl/bygg-butik.mjs beverbutikken`. Hela mallen byts — inte enskilda
-rader — så mejlet ser ut som Bäverbutikens (Axels dom 2026-09-20 på den
-lappade Shopify-mallen: "tvääär fula"). Länkarna pekar på `main`: pusha
-först, annars klistrar Cowork in en gammal version. Delen under linjen är prompten.
-
----
-
-Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Beverbutikken**
-(beverbutikken.no, 1acuam-s5.myshopify.com). Uppgifter: **A.** byta ut koden i
+Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Majavakauppa**
+(majavakauppa.fi, q0uthu-xq.myshopify.com). Uppgifter: **A.** byta ut koden i
 **tre kundnotiser**, sedan **C.** ett testmejl. Rör ingenting annat i
 Shopify: inga andra mallar, inga inställningar, inga rabatter, inga produkter.
 
@@ -22,7 +13,7 @@ sådan dialog: stäng den utan att spara.
 kodrutans eget API, och verifiera mot serverns mall-data — inget urklipp,
 inga kortkommandon. **Klistra aldrig in en halv mall.**
 
-Kontrollera först att https://beverbutikken.no/pages/spor svarar och visar rubriken "Spor pakken din".
+Kontrollera först att https://majavakauppa.fi/pages/seuranta svarar och visar rubriken "Seuraa pakettiasi".
 Gör den inte det: stoppa och rapportera.
 
 ⚠️ **Avsändaradressen.** Visar Shopify en gul banner i mallens redigerare —
@@ -30,7 +21,7 @@ Gör den inte det: stoppa och rapportera.
 avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
 att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
 avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
-går ett mejl till **support@beverbutikken.no** med en länk som Axel klickar — stanna
+går ett mejl till **asiakastuki@majavakauppa.fi** med en länk som Axel klickar — stanna
 där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
@@ -51,9 +42,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakken din er på vei` | `BB-` och `sha256` | **10 426** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering / Shipping update** | `Ny info om pakken din` | `BB-` och `sha256` | **6 230** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/fraktuppdatering.liquid |
-| 3 | **Ute för leverans / Out for delivery** | `Pakken kommer i dag` | `BB-` och `sha256` | **6 233** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/beverbutikken/ute_for_leverans.liquid |
+| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakettisi on matkalla` | `BB-` och `sha256` | **10 601** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering / Shipping update** | `Uutta tietoa paketistasi` | `BB-` och `sha256` | **6 235** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktuppdatering.liquid |
+| 3 | **Ute för leverans / Out for delivery** | `Paketti saapuu tänään` | `BB-` och `sha256` | **6 243** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger "Order ute för lokal leverans" — ta INTE
 det. Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
@@ -61,13 +52,13 @@ Shopifys räknare).
 
 ### B. Menylänken
 
-Redan gjord — **Spor pakken** ligger i huvudmenyn och sidfotsmenyn. Rör inte menyerna.
+Redan gjord — **Seuraa pakettia** ligger i huvudmenyn och sidfotsmenyn. Rör inte menyerna.
 
 ### C. Testmejlet
 
 **Leveransbekräftelse** → **Skicka testmejl**. Bara den. Öppna mejlet: en
-enda knapp **Spor pakken**, länken börjar med
-`https://beverbutikken.no/pages/spor?nummer=BB-`. (Sidan säger att den inte hittar numret för
+enda knapp **Seuraa pakettia**, länken börjar med
+`https://majavakauppa.fi/pages/seuranta?nummer=BB-`. (Sidan säger att den inte hittar numret för
 testmejlets påhittade spårningsnummer — det är väntat.)
 
 ### Rapportera tillbaka
