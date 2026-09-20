@@ -19,6 +19,10 @@ till `xn--bverbutiken-98a.dk` (bæverbutiken.dk) — trippelkollen läste den
 adressen. Mejl + meny: `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
 (A + B + C).
 
+⚠️ **Avsändaradressen är kundesupport@baeverbutiken.dk** (Coworks avläsning
+2026-09-20 sen kväll), inte kundeservice@ — registret rättat; verifieringsmejlet
+gick dit. Axel klickar länken i den inkorgen.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

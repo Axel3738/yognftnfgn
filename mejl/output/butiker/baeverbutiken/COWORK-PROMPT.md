@@ -30,10 +30,11 @@ Gör den inte det: stoppa och rapportera.
 avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
 att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
 avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
-går ett mejl till **kundeservice@baeverbutiken.dk** med en länk som Axel klickar — stanna
+går ett mejl till **kundesupport@baeverbutiken.dk** med en länk som Axel klickar — stanna
 där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
+
 
 
 ### A. De tre mallarna
