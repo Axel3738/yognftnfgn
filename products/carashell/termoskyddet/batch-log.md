@@ -741,6 +741,8 @@ teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `k
 ## 2026-09-21 — nattvakten körning nr 5 (ingen briefdag): SE fortfarande PAUSED, 0 ändringar
 
 SE PAUSED: 7d 2 058 kr / 4 köp, 3d nere på 355 kr / 0 köp när de pausade dygnen rullar in.
-0 ändringar, inget aktiverat. **NO kontrollerades INTE i natt** — Meta rate-limitade kontot
-och den läs-bara torrkörningen låg kvar i kö när rapporten gick ut (den var PAUSED vid
-gårdagens avläsning). Briefronden pausad sedan 18/9. `kord` stämplad, `brief-kord` inte.
+0 ändringar, inget aktiverat. **NO: också fortfarande PAUSED** — 3d 1 743 kr / 2 köp,
+7d 3 516 kr / 7 köp (läs-bar torrkörning, inget skrivet). Kollen låg kvar i Metas rate
+limit-kö när Discord-rapporten gick ut och rapporterades där som "ej kontrollerad"; den
+blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 18/9.
+`kord` stämplad, `brief-kord` inte.
