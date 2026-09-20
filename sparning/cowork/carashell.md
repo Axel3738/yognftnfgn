@@ -43,6 +43,24 @@ bär Shopifys klickspårning `/_t/c/v3/…` framför — standard, vidarebefordr
 `shipping_update` hade `updatedAt` 20:00:06Z före körningen = Coworks
 egen knapp-körning tidigare samma kväll, inget annat. **Butiken är helt klar.**
 
+## ⛔ Utfall 3 — fyrspråkiga mallen STOPPAD av Coworks klassificerare (2026-09-21 ~01:30 CEST)
+
+Steg 0 klart utan klick: avsändaren står redan på **hello@carashell.com**,
+domänen Autentiserad. Alla tre råfiler hämtade och kontrollerade
+(41 115 / 24 402 / 24 394 tecken, `CS-` 8, `sha256` 8, `country_code` 1 i
+varje). Men Cowork-sessionen gick i **auto-läge**, och dess
+säkerhetsklassificerare nekade tre gånger att skriva in externt hämtad kod i
+en inloggad sida ("Untrusted Code Integration") — både när sidan hämtade
+råfilen själv och när innehållet matades in i verifierade delar. Ämnesraden
+återställdes, **inget sparat**: servern har kvar den svenska hela mallen
+(`updatedAt` 2026-09-20T20:29:41Z, 10 179 tecken, ämne "Ditt paket är på
+väg"). Svenska kunder får alltså redan det snygga mejlet; det är de tre
+extra språken som väntar. NO/DK/FI gick igenom med samma metod i samma
+timme — skillnaden är auto-läget. **Lösning: kör om CaraShell-prompten i en
+chatt UTAN automatiskt godkännande och godkänn varje inskrivning.**
+Coworks fråga om att engelska knappen pekar på carashell.com: det är
+avsiktligt — carashell.com är USA-marknadens egen domän (`mejl_marknader`).
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

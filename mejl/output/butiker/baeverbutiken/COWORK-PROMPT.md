@@ -1,4 +1,4 @@
-# Cowork-prompt: fraktmejlen + menylänken i Bæverbutiken (baeverbutiken.dk)
+# Cowork-prompt: fraktmejlen i Bæverbutiken (baeverbutiken.dk)
 
 Byggd av `node mejl/bygg-butik.mjs baeverbutiken`. Hela mallen byts — inte enskilda
 rader — så mejlet ser ut som Bäverbutikens (Axels dom 2026-09-20 på den
@@ -9,7 +9,7 @@ först, annars klistrar Cowork in en gammal version. Delen under linjen är prom
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Bæverbutiken**
 (baeverbutiken.dk, v0xqtk-tx.myshopify.com). Uppgifter: **A.** byta ut koden i
-**tre kundnotiser**, **B.** lägga in menylänken, sedan **C.** ett testmejl. Rör ingenting annat i
+**tre kundnotiser**, sedan **C.** ett testmejl. Rör ingenting annat i
 Shopify: inga andra mallar, inga inställningar, inga rabatter, inga produkter.
 
 ⚠️ **Datorn är en Windows-dator, inte en Mac.** Klicka alltid först inne i
@@ -61,12 +61,7 @@ Shopifys räknare).
 
 ### B. Menylänken
 
-1. **Onlinebutik** → **Navigering** → **Huvudmeny** (Main menu).
-2. Finns redan en rad som länkar till `/pages/spor`: rör den inte. Annars **Lägg till menyalternativ**, Namn: `Spor pakken`, Länk: `/pages/spor`, **Lägg till**, **Spara menyn**. Raden sist.
-3. Samma i **Sidfotsmeny** (Footer menu) — heter den något annat, ta den meny sidfoten på baeverbutiken.dk faktiskt visar.
-4. Kontrollera i kundens vy: öppna https://baeverbutiken.dk i en ny flik, ladda om, se att **Spor pakken** syns i huvudmenyn och sidfoten och landar på "Spor din pakke".
-
-Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
+Redan gjord — **Spor pakken** ligger i huvudmenyn och sidfotsmenyn. Rör inte menyerna.
 
 ### C. Testmejlet
 
@@ -79,8 +74,7 @@ testmejlets påhittade spårningsnummer — det är väntat.)
 
 1. Vilka mallar som sparades och verifierades mot servern, teckenantal per mall.
 2. Om kontrolltexten saknades, och i vilken mall.
-3. Menyerna: vilka två menyer som fick raden, och vad du såg i kundens vy.
-4. Testmejlet: gick det, till vilken adress, knappens text.
-5. Allt som såg konstigt ut.
+3. Testmejlet: gick det, till vilken adress, knappens text.
+4. Allt som såg konstigt ut.
 
 Om Shopify vägrar spara: spara inte om, skriv exakt vad felmeddelandet sa.

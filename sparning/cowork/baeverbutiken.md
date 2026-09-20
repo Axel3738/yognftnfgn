@@ -23,6 +23,22 @@ adressen. Mejl + meny: `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
 2026-09-20 sen kväll), inte kundeservice@ — registret rättat; verifieringsmejlet
 gick dit. Axel klickar länken i den inkorgen.
 
+## ✅ Utfall 2026-09-21 ~01:25 CEST — mallar + meny + testmejl KLARA (Cowork, nya prompten)
+
+Avsändaren **kundesupport@baeverbutiken.dk** står som Autentiserad (Axels
+klick). Tre mallar inskrivna och verifierade mot serverns mall-data:
+`shipping_confirmation` 10 432 / `shipping_update` 6 228 /
+`shipment_out_for_delivery` 6 236 tecken, identiska med råfilerna, `BB-` +
+`sha256` i alla, ämnen `Din pakke er på vej` / `Ny info om din pakke` /
+`Pakken kommer i dag`. **Spor pakken → /pages/spor** sist i Huvudmeny och
+Sidfotsmeny (`footer`), sedd i kundens vy. Testmejl till
+axelodhner.business@gmail.com: en knapp **Spor pakken**,
+`https://baeverbutiken.dk/pages/spor?nummer=BB-6C1002DF`. Cowork råkade
+öppna "Lägg till sida"-dialogen (texten hamnade i raden "Kontakt os") men
+stängde utan att spara och gjorde om med tabb i stället för koordinatklick —
+serverns meny var rätt efteråt. `meny_klar: true` i `mejl/butiker/baeverbutiken.json`.
+**Danmark är klart.**
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

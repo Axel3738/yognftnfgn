@@ -35,6 +35,23 @@ Det som återstår är steg A–C nedan — hoppa över steg 0.
 - Shopifys lista pekade "Leveransbekräftelse" på "Faktura för orderutkast";
   rätt väg är URL:en `email_templates/shipping_confirmation/edit`.
 
+## ✅ Utfall 2026-09-21 ~01:30 CEST — tre mallar + testmejl KLARA (Cowork, nya prompten)
+
+Domänen Autentiserad, ingen banner. Tre mallar via CodeMirror-API:t
+(`window.__cmView`-vägen), sparade och lästa tillbaka från servern:
+`shipping_confirmation` 10 601 / `shipping_update` 6 235 /
+`shipment_out_for_delivery` 6 243 tecken, exakt matchning, `BB-` + `sha256`
+i alla, ämnen `Pakettisi on matkalla` / `Uutta tietoa paketistasi` /
+`Paketti saapuu tänään`. Testmejl framme: en knapp **Seuraa pakettia** →
+`https://majavakauppa.fi/pages/seuranta?nummer=BB-6C1002DF`. Menyn var
+redan klar.
+
+⚠️ **Avsändaradressen är `asiakaspalvelu@majavakauppa.fi`** enligt den här
+körningen — inte `asiakastuki@` som den tidigare Cowork-körningen läste och
+som står i `sparning/butiker.json` + mallarnas sidfot. Fråga till Axel
+2026-09-21: vilken ska kunderna skriva till? Är svaret asiakaspalvelu@ byggs
+mallarna om och körs en gång till.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/majavakauppa/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

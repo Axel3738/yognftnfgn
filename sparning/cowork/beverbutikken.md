@@ -60,6 +60,17 @@ verifierade den (inte kundesupport@ som BESLUT.md sa). Registret och
 mallarnas sidfot uppdaterade — mallarna körs om av Cowork (10 426 / 6 230 /
 6 233 tecken).
 
+## ✅ Utfall 2026-09-21 ~01:30 CEST — de OMBYGGDA mallarna (support@) inne, testmejl OK
+
+Cowork körde `PROMPT.txt` igen efter adressbytet: alla tre inskrivna via
+kodrutans API och verifierade mot EmailTemplate-API — 10 426 / 6 230 / 6 233
+tecken, byte för byte lika råfilerna, ämnesraderna oförändrade, `BB-` +
+`sha256` i alla tre. Avsändaren **support@beverbutikken.no** står som
+Autentiserad; testmejlet gick från den adressen (inte längre Shopifys
+reservadress), en knapp **Spor pakken** → `?nummer=BB-6C1002DF`. Coworks
+anmärkning: djupa admin-URL:er ger vit sida, klicka via Inställningar →
+Aviseringar. **Norge är klart.**
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
