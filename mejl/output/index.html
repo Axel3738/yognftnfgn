@@ -84,7 +84,7 @@
 
 <main>
   <header class="topp">
-    <p class="dampad">Bäverbutiken.se · byggd 2026-09-20 14:11 UTC</p>
+    <p class="dampad">Bäverbutiken.se · byggd 2026-09-20 14:44 UTC</p>
     <h1>Bäverbutikens mejl</h1>
     <p>Åtta kundmejl i butikens stil, med erbjudandet <strong>köp igen → välj en gratisprodukt</strong> i orderbekräftelsen, leveransbekräftelsen och leverans-klart-mejlet. Under gratisprodukterna: en till av det kunden köpte + tre som passar ihop.</p>
   </header>
@@ -601,7 +601,7 @@
                           &lt;span style=&quot;font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 24px; color: #ffffff; letter-spacing: 3px; padding-left: 8px;&quot;&gt;TACKIGEN&lt;/span&gt;
                         &lt;/td&gt;
                       &lt;/tr&gt;
-                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 08:11 den 21 september så skickas allt i ett paket, inte två.&lt;/p&gt;
+                    &lt;/table&gt;&lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.5; color: #ffffff; margin: 0 0 18px;&quot;&gt;&amp;#128230; Beställ före kl 08:44 den 21 september så skickas allt i ett paket, inte två.&lt;/p&gt;
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
@@ -758,7 +758,7 @@
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=UA123456789SE&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Följ din order&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=BB-439563F5&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Följ din order&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -917,7 +917,7 @@
       </div>
       <div class="rad">
         <div class="etikett">Mallens kod</div>
-        <p class="dampad">75 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
+        <p class="dampad">76 kB. Ersätt ALLT i rutan "E-postbrödtext (HTML)" med det här.</p>
         <button type="button" class="kopiera stor" data-mal="liquid-fraktbekraftelse">Kopiera hela mallen</button>
         <script type="text/plain" id="liquid-fraktbekraftelse">{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
 {% if created_at %}{% assign start_ts = created_at | date: '%s' %}{% else %}{% assign start_ts = 'now' | date: '%s' %}{% endif %}{% assign tz_a = created_at | date: '%H' | plus: 0 %}{% assign tz_b = start_ts | date: '%H' | plus: 0 %}{% assign tz_skift = tz_a | minus: tz_b %}{% if tz_skift > 12 %}{% assign tz_skift = tz_skift | minus: 24 %}{% elsif tz_skift < -12 %}{% assign tz_skift = tz_skift | plus: 24 %}{% endif %}{% assign tz_sek = tz_skift | times: 3600 %}{% assign start_ts = start_ts | plus: tz_sek %}{% assign slut_ts = start_ts | plus: 604800 %}{% assign slut_dag = slut_ts | date: '%-d' %}{% assign slut_mm = slut_ts | date: '%m' %}{% case slut_mm %}{% when '01' %}{% assign slut_man = 'januari' %}{% when '02' %}{% assign slut_man = 'februari' %}{% when '03' %}{% assign slut_man = 'mars' %}{% when '04' %}{% assign slut_man = 'april' %}{% when '05' %}{% assign slut_man = 'maj' %}{% when '06' %}{% assign slut_man = 'juni' %}{% when '07' %}{% assign slut_man = 'juli' %}{% when '08' %}{% assign slut_man = 'augusti' %}{% when '09' %}{% assign slut_man = 'september' %}{% when '10' %}{% assign slut_man = 'oktober' %}{% when '11' %}{% assign slut_man = 'november' %}{% when '12' %}{% assign slut_man = 'december' %}{% else %}{% assign slut_man = '' %}{% endcase %}{% assign slut_datum = slut_dag | append: ' ' | append: slut_man %}{% assign slutdatum = slut_datum %}{% assign nu_ts = 'now' | date: '%s' | plus: tz_sek %}{% if slut_ts < nu_ts %}{% assign slut_passerat = true %}{% else %}{% assign slut_passerat = false %}{% endif %}
@@ -966,7 +966,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -974,7 +974,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;">{% if fulfillment.tracking_number %}Ditt paketnummer: <strong style="color: #000000; letter-spacing: 0.04em;">{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1241,7 +1241,7 @@
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=UA123456789SE&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=BB-439563F5&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1249,7 +1249,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;&quot;&gt;Ditt paketnummer: &lt;strong style=&quot;color: #000000; letter-spacing: 0.04em;&quot;&gt;BB-439563F5&lt;/strong&gt;&lt;br&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -1563,7 +1563,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -1571,7 +1571,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;">{% if fulfillment.tracking_number %}Ditt paketnummer: <strong style="color: #000000; letter-spacing: 0.04em;">{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1658,7 +1658,7 @@
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=UA123456789SE&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=BB-439563F5&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1666,7 +1666,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;&quot;&gt;Ditt paketnummer: &lt;strong style=&quot;color: #000000; letter-spacing: 0.04em;&quot;&gt;BB-439563F5&lt;/strong&gt;&lt;br&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -1784,7 +1784,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
                 <tr>
                   <td align="center" bgcolor="#dd1d1d">
-                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                    <a href="{% if fulfillment.tracking_number %}https://baverbutiken.se/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
                   </td>
                 </tr>
               </table>
@@ -1792,7 +1792,7 @@
           </tr>
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;">{% if fulfillment.tracking_number %}Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;">{% if fulfillment.tracking_number %}Ditt paketnummer: <strong style="color: #000000; letter-spacing: 0.04em;">{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
             </td>
           </tr>
           <tr>
@@ -1879,7 +1879,7 @@
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=UA123456789SE&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=BB-439563F5&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;&quot;&gt;Spåra paketet&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;
@@ -1887,7 +1887,7 @@
           &lt;/tr&gt;
           &lt;tr&gt;
             &lt;td align=&quot;center&quot; style=&quot;padding: 8px 32px 4px;&quot;&gt;
-              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0;&quot;&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
+              &lt;p style=&quot;font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;&quot;&gt;Ditt paketnummer: &lt;strong style=&quot;color: #000000; letter-spacing: 0.04em;&quot;&gt;BB-439563F5&lt;/strong&gt;&lt;br&gt;Klicka på knappen ovan så visas ditt paket direkt.&lt;/p&gt;
             &lt;/td&gt;
           &lt;/tr&gt;
           &lt;tr&gt;
@@ -2470,7 +2470,7 @@
               &lt;table role=&quot;presentation&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; border=&quot;0&quot; class=&quot;bb-knapp&quot;&gt;
                 &lt;tr&gt;
                   &lt;td align=&quot;center&quot; bgcolor=&quot;#dd1d1d&quot;&gt;
-                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=UA123456789SE&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 12px 32px;&quot;&gt;Lämna ett omdöme&lt;/a&gt;
+                    &lt;a href=&quot;https://baverbutiken.se/pages/spara?nummer=BB-439563F5&quot; target=&quot;_blank&quot; style=&quot;display: inline-block; font-family: Impact,'Anton','Arial Narrow','Arial Black',sans-serif; text-transform: uppercase; font-size: 15px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 12px 32px;&quot;&gt;Lämna ett omdöme&lt;/a&gt;
                   &lt;/td&gt;
                 &lt;/tr&gt;
               &lt;/table&gt;

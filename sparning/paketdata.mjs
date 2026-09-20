@@ -30,6 +30,7 @@
 import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut } from './uppacka.mjs';
 import { klassificera } from './steg.mjs';
 import { klassificeraDelsteg } from './delsteg.mjs';
+import { bavernummer, avvikerFranLiquid, PREFIX as BAVER_PREFIX } from './bavernummer.mjs';
 
 // Tak per paket. Mätt 2026-09-19 på samma 204 paket: minst 1 händelse, median
 // 5, flest 29. Taket är en spärr mot ett enskilt paket som fastnar i en
@@ -322,7 +323,13 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
 
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
     // byter värdet — den senare posten vinner, som varningen säger.
-    poster.set(nummer, { statusIx, bolag: renText(p?.bolag), rader, sistaBiten: sb });
+    // Bävernumret, de åtta hexsiffrorna utan prefix. Krockar mäts i svep 2.
+    const baverHex = bavernummer(nummer).slice(BAVER_PREFIX.length).toLowerCase();
+    if (avvikerFranLiquid(p?.nummer)) {
+      varningar.push(`Spårningsnumret "${p?.nummer}" bär tecken som Liquid inte tar bort — mejlets bävernummer skiljer sig från sidans.`);
+    }
+
+    poster.set(nummer, { statusIx, bolag: renText(p?.bolag), rader, sistaBiten: sb, baverHex });
   }
 
   // Svep 2: ordböckerna byggs ur de poster som FAKTISKT hamnar i filen.
@@ -340,6 +347,15 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
   const sistaLista = [];        // [namn, länkmall] — fem bolag i praktiken
   const sistaIndex = new Map();
   let handelser = 0;
+
+  // Två paket får aldrig dela bävernummer — då hade kunden kunnat få fel paket.
+  const baverSedda = new Map();
+  for (const [nummer, post] of poster) {
+    if (baverSedda.has(post.baverHex)) {
+      varningar.push(`Bävernummerkrock: ${nummer} och ${baverSedda.get(post.baverHex)} ger båda ${BAVER_PREFIX}${post.baverHex.toUpperCase()}.`);
+    }
+    baverSedda.set(post.baverHex, nummer);
+  }
 
   for (const post of poster.values()) {
     if (post.bolag && !bolagIndex.has(post.bolag)) {
@@ -399,10 +415,10 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
         // läser e[6] defensivt, så äldre data ger -1 och visas som förut.
         typeof r.delsteg === 'number' ? r.delsteg : -1,
       ]),
-      // Fält 4 på posten, tillagt 2026-09-20: [sistaBitIx, dess nummer].
-      // Utelämnas helt när paketet ännu inte lämnats till ett lokalt bolag,
-      // så de 432 paket som är på väg inte bär tomma fält.
-      ...(typeof post.sistaIx === 'number' ? [[post.sistaIx, post.sistaBiten.nummer ?? null]] : []),
+      // Fält 4: bävernumrets åtta hexsiffror. Fält 5: [sistaBitIx, dess
+      // nummer] eller null när paketet ännu inte lämnats till ett lokalt bolag.
+      post.baverHex,
+      typeof post.sistaIx === 'number' ? [post.sistaIx, post.sistaBiten.nummer ?? null] : null,
     ];
   }
 

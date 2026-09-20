@@ -21,8 +21,12 @@
 //     p: ["Malmö", "Shenzhen", …],                    platser
 //     l: ["Sverige", "Kina", …],                      länder
 //     b: ["YunExpress", "4PX", …],                    fraktbolag
-//     k: { "YT2624700707772213": [statusIx, bolagIx, [[minut, frasIx, platsIx, stegIx, landIx, flaggor], …]] }
+//     s: [["PostNord", "<länkmall med {nr}>"], …],         sista-bit-bolag + länkmall
+//     k: { "YT2624700707772213": [statusIx, bolagIx, [[minut, frasIx, platsIx, stegIx, landIx, flaggor, delstegIx], …], "3f7a2c1d", [sistaIx, "UJ…"] | null] }
 //   }
+//
+// Postens fjärde fält (2026-09-20) är bävernumrets åtta hexsiffror, femte är
+// sista biten i mottagarlandet eller null.
 //
 // Minut = hela minuter sedan 2026-01-01T00:00:00Z. Plats- och landindex -1 =
 // okänt. Händelserna ligger nyast först. `stegIx` pekar in i STEG nedan och
@@ -82,7 +86,11 @@ export const STEG = [
   // att paketet är på väg." Var paketet ÄR står som delskede (DELSTEG),
   // ur samma skanningar.
   ['pa_vag', 'Paketet är på väg'],
-  ['i_landet', 'Framme i {{land}}'],
+  // ⚠️ Hette "Framme i {{land}}" fram till 2026-09-20 kväll. Axel: "Det borde
+  // vi ju inte ha eftersom att det ger en uppfattning om Kina" — att säga
+  // att paketet kommit TILL landet säger att det kom från ett annat.
+  // Nyckeln i_landet är oförändrad; kontroll.mjs mäter ankomsten på den.
+  ['i_landet', 'Hos fraktbolaget'],
   ['utkorning', 'Ute för leverans'],
   ['levererat', 'Levererat'],
 ];
@@ -123,7 +131,7 @@ export const DELSTEG = [
   ['tull', 'Hos tullen', 'stampel', 1],
   ['tullklart', 'Genom tullen', 'stampel', 1],
 
-  ['hos_bolaget', 'Hos fraktbolaget', 'lager', 2],
+  ['hos_bolaget', 'Mottaget av fraktbolaget', 'lager', 2],
   ['terminal', 'På terminalen', 'lager', 2],
   ['sorteras', 'Sorteras', 'lager', 2],
   // ⚠️ "mot din ort", inte "till din ort". Skanningen säger att paketet
@@ -177,56 +185,20 @@ export function nyckel(nummer) {
 // Bävernumret
 // ---------------------------------------------------------------------------
 //
-// Axels beslut 2026-09-20: "Ta bort & maska med ett eget bävernummer så de
-// inte ser YT nr". Fraktbolagets nummer börjar på YT eller 4PX och skvallrar
-// om var paketet kommer ifrån.
-//
-// Numret räknas fram UR spårningsnumret, med en ren funktion som körs
-// likadant i bygget och i kundens webbläsare. Det betyder:
-//   - Ingen tabell att hålla i synk, inget extra i datafilen.
-//   - Samma paket får ALLTID samma bävernummer, varje timme, för alltid.
-//   - Gamla mejl med ?nummer=YT… fungerar kvar: sidan slår upp båda.
-//
-// ⚠️ DET HÄR ÄR MASKERING, INTE SÄKERHET. Datablocket i sidan bär fortfarande
-// varje spårningsnummer i klartext — det måste det, för uppslaget sker i
-// webbläsaren. Den som läser sidkällan ser dem. Skyddet mot att läsa andras
-// paket är att datan inte bär NAMN, ADRESS eller ORDERNUMMER, och att
-// uppslaget kräver ett nummer man inte kan gissa. Bävernumret ändrar inget
-// av det; det gör bara att KUNDEN inte möter "YT…" i vyn.
-//
-// Alfabetet saknar 0, 1, I och O med flit: kunden kan behöva läsa upp numret
-// i telefon eller skriva av det ur ett mejl.
-var BAVER_ALFABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+// Kundens eget paketnummer. Räknas INTE här — bygget skriver det i datan
+// (sparning/bavernummer.mjs, SHA-256 av spårningsnumret) så att sidan,
+// Node och Shopifys mejlmallar alltid får exakt samma svar. Posten bär de
+// åtta hexsiffrorna på plats 4; sidan sätter "BB-" framför.
+var BAVER_PREFIX = 'BB-';
 
-function fnv1a(text, start) {
-  var h = start >>> 0;
-  for (var i = 0; i < text.length; i++) {
-    h ^= text.charCodeAt(i);
-    h = Math.imul(h, 16777619) >>> 0;
-  }
-  return h >>> 0;
+export function baverSnyggt(hex) {
+  return hex ? BAVER_PREFIX + String(hex).toUpperCase() : '';
 }
 
-// Spårningsnummer → "BB" + sju tecken. 32^7 ≈ 3,4·10^10 möjliga nummer mot
-// ~1 100 paket i fönstret, så en krock är osannolik — men bygget mäter det
-// ändå (se byggData i paketdata.mjs) i stället för att lita på oddsen.
-export function bavernummer(nummer) {
-  var n = nyckel(nummer);
-  if (!n) return '';
-  var a = fnv1a(n, 2166136261);
-  var b = fnv1a(n + '|baver', 2654435761);
-  var ut = '';
-  var x = a;
-  for (var i = 0; i < 4; i++) { ut += BAVER_ALFABET.charAt(x & 31); x = x >>> 5; }
-  var y = b;
-  for (var j = 0; j < 3; j++) { ut += BAVER_ALFABET.charAt(y & 31); y = y >>> 5; }
-  return 'BB' + ut;
-}
-
-// Så kunden ser det: BB-4K7N2QX. Uppslaget normaliserar bort bindestrecket.
-export function bavernummerSnyggt(nummer) {
-  var b = bavernummer(nummer);
-  return b ? b.slice(0, 2) + '-' + b.slice(2) : '';
+// Uppslagsnyckel för ett bävernummer, samma normalisering som nyckel():
+// "bb-3f7a2c1d" och "BB3F7A2C1D" är samma nummer.
+export function baverNyckel(hex) {
+  return hex ? nyckel(BAVER_PREFIX + hex) : '';
 }
 
 // Orten och landet ihop, för den fullständiga historiken: "Rozenburg,
@@ -389,7 +361,7 @@ export function packaUppEtt(data, nummer) {
   // lämnats till ett lokalt bolag. Länken byggs HÄR ur mallen, så den bara
   // står en gång i filen.
   var sista = null;
-  var sb = post[3];
+  var sb = post[4];
   if (sb && data.s && data.s[sb[0]]) {
     var sistaRad = data.s[sb[0]];
     var sistaNr = sb[1] == null ? null : sb[1];
@@ -405,8 +377,9 @@ export function packaUppEtt(data, nummer) {
   return {
     nummer: n,
     // Kundens nummer. Axels beslut 2026-09-20: fraktbolagets YT…/4PX… ska
-    // aldrig mötas i vyn. Räknas ur numret, samma svar varje gång.
-    baver: bavernummerSnyggt(n),
+    // aldrig mötas i vyn. Skrivet av bygget, läses bara här.
+    baver: baverSnyggt(typeof post[3] === 'string' ? post[3] : ''),
+    baverHex: typeof post[3] === 'string' ? post[3] : '',
     bolag: bolag[post[1]] == null ? null : bolag[post[1]],
     statusKod: rad[0],
     status: rad[1],

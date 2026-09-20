@@ -15,6 +15,7 @@ import assert from 'node:assert/strict';
 
 import { handelserUr, byggData, filtreraFonster, FONSTER_DAGAR, MAX_HANDELSER } from '../paketdata.mjs';
 import { packaUpp, packaUppEtt, nyckel, isoTillMinut, minutTillIso, FORMAT, STATUSAR } from '../uppacka.mjs';
+import { bavernummer } from '../bavernummer.mjs';
 
 // --- Ordboken testerna skickar in ------------------------------------------
 // Så lite som möjligt av det riktiga språklagret: bara de fraser fixturerna
@@ -496,9 +497,10 @@ test('byggData: ordboken kortar filen rejält mot samma data utan ordbok', () =>
   const { paket, byggd } = byggTreFixturer();
   const s = byggd.statistik;
 
-  // Samma innehåll rakt av, utan fras- och platsordbok.
+  // Samma innehåll rakt av, utan fras- och platsordbok. Bävernumret (2026-09-20)
+  // är riktig data sidan behöver, så det räknas med på båda sidor.
   const ratt = JSON.stringify(paket.map((p) => ({
-    n: p.nummer, b: p.bolag, s: p.statusKod,
+    n: p.nummer, b: p.bolag, s: p.statusKod, bb: bavernummer(p.nummer),
     e: p.handelser.map((h) => [h.tid, h.text, h.plats]),
   }))).length;
 

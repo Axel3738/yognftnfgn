@@ -8,7 +8,8 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import { byggSidkropp, byggForhandsvisning, uppackarkalla, SIDMARKOR, DATAMARKOR, COPYMARKOR } from '../sida.mjs';
-import { isoTillMinut, packaUppEtt, bavernummer, bavernummerSnyggt } from '../uppacka.mjs';
+import { isoTillMinut, packaUppEtt } from '../uppacka.mjs';
+import { bavernummer as bavernummerSnyggt } from '../bavernummer.mjs';
 
 // --------------------------------------------------------------- fixturen
 
@@ -414,8 +415,9 @@ test('sidan körs: numret ur adressen ger rubrik, fakta och hela kedjan', () => 
   assert.equal(n.get('bbs-ingress').textContent, 'Paketet är på väg (Malmö)');
   // ⚠️ Fraktbolaget visas INTE längre, och numret är bävernumret. Axels
   // beslut 2026-09-20: kunden ska inte möta "YunExpress" eller "YT…".
-  assert.equal(n.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708674690'));
-  assert.match(n.get('bbs-nummer').textContent, /^BB-[2-9A-HJ-NP-Z]{7}$/);
+  // v1-fixturen saknar bävernumret (fält 4) — då faller sidan tillbaka på
+  // spårningsnumret. Riktig data testas i standardvy.test.mjs.
+  assert.equal(n.get('bbs-nummer').textContent, 'YT2626100708674690');
   assert.ok(!kundtext(byggSidkropp(data, KONFIG)).includes('YunExpress'), 'fraktbolaget ska inte stå i vyn');
   assert.equal(n.get('bbs-traff').hidden, false);
   assert.equal(n.get('bbs-sok').hidden, true, 'sökfältet ska inte ligga i vägen när paketet hittades');
@@ -460,7 +462,7 @@ test('sidan körs: utan nummer, utan skanningar, okänt nummer, tomt fält', () 
   // Numret går också att läsa ur #-delen (mejlklienter som tappar ?-delen).
   const viaHash = kor(kropp, '#nummer=YT2626100708870041');
   assert.equal(viaHash.get('bbs-rubrik').textContent, 'Paketet är levererat');
-  assert.equal(viaHash.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708870041'));
+  assert.equal(viaHash.get('bbs-nummer').textContent, 'YT2626100708870041');
 
   // Okänt nummer ⇒ förklaringen OCH fältet, så kunden kan pröva igen.
   const okant = kor(kropp, '?nummer=YT0000000000000000');
@@ -496,7 +498,7 @@ test('numret läses ur #-delen, både "#nummer=" och ett bart "#YT…"', () => {
 
   // Och frågesträngen vinner över ankaret när båda finns.
   const bada = kor(kropp, '?nummer=YT2626100708674690#YT2626100708870041');
-  assert.equal(bada.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708674690'));
+  assert.equal(bada.get('bbs-nummer').textContent, 'YT2626100708674690');
 });
 
 test('trasig procentkodning i adressen ger sökfältet, aldrig en tom sida', () => {

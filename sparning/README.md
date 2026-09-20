@@ -164,6 +164,23 @@ hela vägen tillbaka till avsändaren i Kina.
   sekventiella och lätta att gissa; då hade vem som helst kunnat skriva 6500
   och se var någon annans paket är. Datan bär bara spårningsnummer, status,
   fraktbolag, skanningstexter och orter — inga namn, inga adresser.
+- **Kunden ser ett bävernummer, aldrig fraktbolagets** (Axels beslut
+  2026-09-20: "maska med ett eget bävernummer så de inte ser YT nr").
+  `BB-` + de åtta första hexsiffrorna i SHA-256 av spårningsnumret
+  (`bavernummer.mjs`). Det **genereras inte per order och lagras ingenstans
+  — det räknas** på tre ställen med samma svar: bygget skriver det i sidans
+  data, Shopifys mejlmall räknar det med Liquid-filtret `sha256`
+  (`BAVER_LIQUID` i `mejl/mallar.mjs`, mejltestet kör kedjan mot Node), och
+  kundtjänst räknar det med `node sparning/baver.mjs <ordernummer | YT… |
+  BB-…>` som slår i `lage.json` (order ↔ spårningsnummer, 60 dagar) och
+  skriver ut kundens länk. Utan terminal: klistra in fraktbolagets nummer
+  från ordern i Shopify direkt i sökfältet på sidan — den tar båda och visar
+  bävernumret. Maskering, inte sekretess: sidkällan bär spårningsnumren.
+- **Sista biten i Sverige** (`sistabiten.mjs`): 17TRACK:s `misc_info` bär
+  ombudets namn och EGET nummer (PostNord `UJ…SE`, CityMail, Early Bird,
+  Instabee). Rutan "Hämta ditt paket" med länk visas **bara** när paketet
+  ligger för upphämtning (`READY_FOR_PICKUP`) — innan dess avslöjar en
+  CityMail-sökning avsändarlandet.
 - Sidan är statisk. Rutinen bygger om den varje timme; den hämtar ingenting
   själv medan kunden tittar, och säger det ("nya skanningar läggs till varje
   timme").
@@ -233,6 +250,29 @@ Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
 event i Shopify ligger kvar.
 
 ## Logg
+
+- **2026-09-20 kväll, bävernummer + sista biten + delsteg.** Fem beslut av
+  Axel samma dag, alla live: (1) "Internationell transport" ersatt av
+  delsteg som säger var paketet faktiskt är (`delsteg.mjs`: lämnat lagret,
+  på flyget, genom tullen, hos fraktbolaget …) med paket-animation; (2)
+  aldrig "på väg till Sverige" — och (3) inte "Framme i Sverige" heller,
+  skedet heter **Hos fraktbolaget** (ett land i rubriken pekar ut det andra
+  landet); (4) 17TRACK:s last-mile-data → "Hämta ditt paket" med ombudets
+  nummer och länk, bara vid `READY_FOR_PICKUP`; (5) **bävernummer** i stället
+  för YT-nummer, SHA-256 så mejlet (Liquid) räknar samma som sidan;
+  beräknad leverans ur `mejl/konfig.json` (7–14 dagar från första
+  skanningen) som popup, röd när den passerats. Kundtjänst:
+  `sparning/baver.mjs`. Publiceringen tolkar sidans JavaScript före
+  uppladdning (`provkorSkriptet`) sedan en syntaxmiss gick ut live. 143
+  spårningstester + 35 mejltester. Mejlmallarna v11 (bävernumret i
+  klartext under knappen) väntar på Cowork — `mejl/COWORK-PROMPT.md`.
+  ⚠️ Koden ligger på grenen `claude/fervent-bardeen-pzyuql`, inte på `main`
+  (Axel: "inte merga än"). Timrutinen kör `main`, vars `kor.mjs` inte känner
+  till sidan alls (mätt 2026-09-20: ingen `publicera` i `origin/main`) — den
+  skriver bara event i Shopify. Sidan byggs alltså inte om av någon förrän
+  grenen mergats; tills dess är den en ögonblicksbild från senaste
+  handpubliceringen (`node sparning/kor.mjs --max 0`) och släpar efter
+  timme för timme.
 
 - **2026-09-20, städningen av standardvyn.** Axel: "only the major delivery
   milestones … no foreign terminal names or countries … one simple status

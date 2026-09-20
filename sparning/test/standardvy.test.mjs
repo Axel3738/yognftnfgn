@@ -18,9 +18,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { handelserUr, byggData } from '../paketdata.mjs';
 import { oversattFras, stadaPlats, landFor } from '../sprak.mjs';
-import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning, bavernummer, bavernummerSnyggt } from '../uppacka.mjs';
+import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
+import { bavernummer, bavernyckel, avvikerFranLiquid } from '../bavernummer.mjs';
 import { kontrolleraStandardvyn, kontrollera } from '../kontroll.mjs';
 import { delstegForFras, huvudskedeFor, klassificeraDelsteg } from '../delsteg.mjs';
 import { sistaBiten } from '../sistabiten.mjs';
@@ -78,7 +80,7 @@ test('skedenas nycklar, ordning och etiketter är låsta', () => {
   assert.deepEqual(STEG, [
     ['bestalld', 'Ordern är mottagen'],
     ['pa_vag', 'Paketet är på väg'],
-    ['i_landet', 'Framme i {{land}}'],
+    ['i_landet', 'Hos fraktbolaget'],
     ['utkorning', 'Ute för leverans'],
     ['levererat', 'Levererat'],
   ]);
@@ -271,7 +273,7 @@ test('de svenska skedena har egna delskeden', () => {
   const iLandet = u.sammanfattning.steg[2];
   assert.ok(iLandet.nadd);
   assert.equal(huvudskedeFor(iLandet.delsteg), 2, 'ankomstskedet visar ett delskede från fel del av resan');
-  assert.ok(['Hos fraktbolaget', 'På terminalen', 'Sorteras', 'På väg mot din ort'].includes(iLandet.delstegEtikett),
+  assert.ok(['Mottaget av fraktbolaget', 'På terminalen', 'Sorteras', 'På väg mot din ort'].includes(iLandet.delstegEtikett),
     `oväntat delskede i Sverige: ${iLandet.delstegEtikett}`);
   // Och utkörningen ska ha sitt eget.
   const utk = u.sammanfattning.steg[3];
@@ -403,10 +405,11 @@ test('sista biten överlever komprimeringen och blir en länk i uppackaren', () 
   assert.equal(b.djuplank, false, 'utan {nr} är det ingen djuplänk');
   assert.equal(b.nummer, 'BCM1', 'numret ska stå bredvid så kunden kan klistra in det');
 
-  // Paket utan sista bit bär inget fält alls — de 432 som är på väg ska inte
-  // kosta plats i filen.
+  // Paket utan sista bit bär `null` i fält 5 (fält 4 är bävernumret sedan
+  // 2026-09-20, så platsen måste finnas) — fyra tecken, inte en tom mall.
   assert.equal(packaUppEtt(data, 'YT333').sistaBiten, null);
-  assert.equal(data.k.YT333.length, 3, 'posten ska sakna fält 4');
+  assert.equal(data.k.YT333.length, 5, 'posten bär fem fält');
+  assert.equal(data.k.YT333[4], null, 'fält 5 är null utan sista bit');
   assert.equal(data.s.length, 2, 'bolagen ska ordbokas, inte upprepas per paket');
 });
 
@@ -414,7 +417,7 @@ test('sidan ritar sista biten som en riktig länk', () => {
   const { data } = byggAllt();
   const kropp = byggSidkropp(data, KONFIG);
   assert.ok(kropp.includes('id="bbs-sista"'), 'rutan för sista biten saknas');
-  assert.ok(kropp.includes('Sista biten i {{land}}'), 'rubriken saknas i texterna');
+  assert.ok(kropp.includes('Hämta ditt paket'), 'rubriken saknas i texterna');
   // Länken öppnas i ny flik och lämnar ingen referrer-koppling.
   const kod = kropp.split('<script>').pop();
   assert.ok(kod.includes("a.setAttribute('rel', 'noopener')"), 'länken ska bära rel=noopener');
@@ -427,18 +430,23 @@ test('bävernumret ersätter fraktbolagets nummer i vyn', () => {
   const { paket, data } = byggAllt();
   const kropp = byggSidkropp(data, KONFIG);
 
-  // Stabilt: samma paket ger samma nummer, varje gång, i båda riktningarna.
+  // Stabilt: samma paket ger samma nummer, varje gång, hur kunden än skriver.
   assert.equal(bavernummer('YT2625400704778854'), bavernummer('yt 2625-4007 0477 8854'));
-  assert.match(bavernummerSnyggt('YT2625400704778854'), /^BB-[2-9A-HJ-NP-Z]{7}$/);
-  // Alfabetet saknar 0, 1, I och O — numret ska gå att läsa upp i telefon.
-  for (const n of paket) assert.ok(!/[01IO]/.test(bavernummer(n.nummer).slice(2)), `förväxlingsbart tecken i ${n.nummer}`);
+  assert.match(bavernummer('YT2625400704778854'), /^BB-[0-9A-F]{8}$/);
+  // Känt SHA-256-svar, så Liquid-kedjan i mejlet går att kontrollräkna:
+  // sha256("YT2625400704778854") börjar på de här åtta hexsiffrorna.
+  assert.equal(bavernummer('YT2625400704778854'), 'BB-' + createHash('sha256').update('YT2625400704778854').digest('hex').slice(0, 8).toUpperCase());
+  // Liquid tar bara bort mellanslag och bindestreck — inget riktigt nummer
+  // får bära något annat, annars räknar mejlet ett annat nummer än sidan.
+  for (const n of paket) assert.ok(!avvikerFranLiquid(n.nummer), `mejlet hade räknat fel bävernummer för ${n.nummer}`);
 
-  // Inga krockar i hela flottan.
+  // Inga krockar i hela flottan, och bygget skrev numret i datan.
   const sedda = new Map();
   for (const n of Object.keys(data.k)) {
     const b = bavernummer(n);
     assert.ok(!sedda.has(b), `krock: ${n} och ${sedda.get(b)} delar bävernummer ${b}`);
     sedda.set(b, n);
+    assert.equal(packaUppEtt(data, n).baver, b, `sidan visar ett annat bävernummer än bygget räknade för ${n}`);
   }
 
   // Vyn bär aldrig fraktbolaget eller dess nummer.

@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-20 14:11 UTC
+# Mejlmallarna — byggda 2026-09-20 14:44 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
@@ -21,7 +21,7 @@ Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratispr
 
 ## Mallar
 - `orderbekraftelse.liquid` → Orderbekräftelse / Order confirmation · ämne: {% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar · 82 kB
-- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 75 kB
+- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 76 kB
 - `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 6 kB
 - `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 6 kB
 - `levererad.liquid` → Levererad / Delivered · ämne: Paketet är levererat · 71 kB

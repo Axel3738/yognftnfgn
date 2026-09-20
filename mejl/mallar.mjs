@@ -23,6 +23,8 @@
 //   övergiven kassa: url, line_items, customer
 //   återbetalning:  amount, refund_line_items (line.line_item, line.quantity)
 
+import { bavernummer } from '../sparning/bavernummer.mjs';
+
 const esk = (s) =>
   String(s ?? '')
     .replace(/&/g, '&amp;')
@@ -833,30 +835,34 @@ export const MALLAR = [
 // knappen till orderstatussidan som förut, så den aldrig leder till en
 // "vi hittar inte det numret".
 const SPARSIDA = 'https://baverbutiken.se/pages/spara';
-const SPARNING_LIQUID = `{% if fulfillment.tracking_number %}${SPARSIDA}?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}`;
-const SPARNING_EXEMPEL = `${SPARSIDA}?nummer=${EXEMPEL.sparningsnummer}`;
 
-// ⚠️ NUMRET STÅR INTE LÄNGRE I MEJLET. Axels beslut 2026-09-20: "maska med
-// ett eget bävernummer så de inte ser YT nr". Fraktbolagets nummer börjar på
-// YT eller 4PX och skvallrar om varifrån paketet kommer.
+// ⚠️ FRAKTBOLAGETS NUMMER STÅR INTE LÄNGRE I MEJLET. Axels beslut 2026-09-20:
+// "maska med ett eget bävernummer så de inte ser YT nr". Fraktbolagets
+// nummer börjar på YT eller 4PX och skvallrar om varifrån paketet kommer.
 //
-// Bävernumret räknas fram ur spårningsnumret med en hashfunktion
-// (sparning/uppacka.mjs → bavernummer). Liquid kan inte räkna den, så mejlet
-// visar INGET nummer alls — knappen ovanför bär numret i adressen, och
-// spårningssidan visar bävernumret när kunden landar där. Kunden behöver
-// alltså aldrig numret i handen.
+// Bävernumret är BB- + de åtta första hexsiffrorna i SHA-256 av
+// spårningsnumret (sparning/bavernummer.mjs). Shopifys Liquid har filtret
+// sha256, så mejlet räknar fram EXAKT samma nummer som sidan — kedjan här
+// måste vara densamma som i bavernummer.mjs (testet "Liquid och Node ger
+// samma bävernummer" vaktar det). Enkla citattecken i filtren, se LIQUID.
 //
 // Tidigare stod här "Spårningsnummer: {{ fulfillment.tracking_number }}" som
 // ren text (v9, Axels beslut 2026-09-18). Den raden är borta.
+export const BAVER_LIQUID = "{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}";
+const BAVER_EXEMPEL = bavernummer(EXEMPEL.sparningsnummer);
+const SPARNING_LIQUID = `{% if fulfillment.tracking_number %}${SPARSIDA}?nummer=${BAVER_LIQUID}{% else %}{{ order_status_url }}{% endif %}`;
+const SPARNING_EXEMPEL = `${SPARSIDA}?nummer=${BAVER_EXEMPEL}`;
+
+// Raden under knappen: bävernumret i klartext, så kunden kan skriva in det
+// själv på spårningssidan (eller läsa upp det för kundtjänst).
 function sparningsInfo(s, lage) {
-  const inre =
-    lage === 'liquid'
-      ? '{% if fulfillment.tracking_number %}Klicka på knappen ovan så visas ditt paket direkt.{% endif %}'
-      : 'Klicka på knappen ovan så visas ditt paket direkt.';
+  const nummer = lage === 'liquid' ? BAVER_LIQUID : BAVER_EXEMPEL;
+  const rad = `Ditt paketnummer: <strong style="color: ${s.svart}; letter-spacing: 0.04em;">${nummer}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.`;
+  const inre = lage === 'liquid' ? `{% if fulfillment.tracking_number %}${rad}{% endif %}` : rad;
   return `
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
-              <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 0;">${inre}</p>
+              <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 0; line-height: 1.6;">${inre}</p>
             </td>
           </tr>`;
 }

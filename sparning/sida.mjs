@@ -127,7 +127,7 @@ function copydata(c) {
     // Sista biten i Sverige. 17TRACK lämnar bolaget och dess EGET nummer i
     // misc_info; vi läste bara aldrig fältet (Axel 2026-09-20). Mätt samma
     // dag: 623 av 1 055 paket hade ett namngivet svenskt bolag.
-    sistaRubrik: 'Sista biten i {{land}}',
+    sistaRubrik: 'Hämta ditt paket',
     sistaLank: 'Följ hos {{bolag}}',
     sistaUtanLank: 'Numret hos {{bolag}}',
     // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner,
@@ -765,7 +765,11 @@ function starta() {
   function viaBaver(n) {
     if (!baverIndex) {
       baverIndex = {};
-      for (var k in D.k) if (Object.prototype.hasOwnProperty.call(D.k, k)) baverIndex[bavernummer(k)] = k;
+      for (var k in D.k) {
+        if (!Object.prototype.hasOwnProperty.call(D.k, k)) continue;
+        var hex = D.k[k][3];
+        if (typeof hex === 'string' && hex) baverIndex[baverNyckel(hex)] = k;
+      }
     }
     return Object.prototype.hasOwnProperty.call(baverIndex, n) ? baverIndex[n] : null;
   }
@@ -846,11 +850,11 @@ export function byggSidkropp(data, konfig) {
   <h2>Spåra ditt paket</h2>
   <p id="bbs-fel" class="bbs-fel" hidden></p>
   <form id="bbs-form" novalidate>
-    <label for="bbs-falt">Klistra in ditt spårningsnummer</label>
-    <input id="bbs-falt" class="bbs-falt" name="nummer" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="YT2626100708674690">
+    <label for="bbs-falt">Skriv in ditt paketnummer</label>
+    <input id="bbs-falt" class="bbs-falt" name="nummer" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="BB-3F7A2C1D">
     <button type="submit" class="bbs-knapp">Visa paketet</button>
   </form>
-  <p class="bbs-hjalp">Numret står i ditt leveransmejl, under knappen Spåra paketet. Mellanslag och bindestreck spelar ingen roll.</p>
+  <p class="bbs-hjalp">Paketnumret börjar med BB och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.</p>
 </div>
 <div id="bbs-saknas" class="bbs-ruta" hidden>
   <h2>Vi hittar inte det numret</h2>
