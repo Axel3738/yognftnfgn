@@ -202,7 +202,61 @@ export function mappaRad(text, marknadstext, priser) {
   if (/(arbetsdagar|vardagar|leveranstid|leveranspa)/.test(platt)) {
     return { roll: 'leverans', ny: fot.leverans, regel: 'raden säger leveranstid → butikens egen leveransrad' };
   }
+  // SPRÅKNEUTRAL RAD. "6,5×3 m" ser likadan ut på svenska och danska — måttet
+  // ÄR måttet. En sådan rad ska skrivas tillbaka OFÖRÄNDRAD, inte täckas.
+  // ⚠️ Mätt 2026-09-20: CaraShellRoof_PD_107_H1 och RI_103_H1 fick en svart
+  // platta över storleken, eftersom ingen regel träffade och raden därmed
+  // räknades som "täckt utan ersättning". En storleksangivelse är inte text
+  // att översätta.
+  if (sprakneutral(text)) {
+    return { roll: 'neutral', ny: text, regel: 'raden bär inga språkbärande ord (bara siffror, enheter och tecken) — skrivs tillbaka oförändrad' };
+  }
+  // SPECIFIKATION med en teknisk kod ("210D-VÄV"). Ordet hämtas ur BUTIKENS
+  // EGEN text på marknadens språk, aldrig ur en översättning jag hittar på:
+  // features-raden i oversattning-<locale>.json säger "210D Oxford-væv", så
+  // "210D-VÄV" blir "210D-VÆV". Hittas ingen sådan rad blir domen okänd —
+  // hellre en namngiven lucka än ett påhittat ord.
+  const spec = specord(text, marknadstext);
+  if (spec) return { roll: 'spec', ny: spec.ny, regel: spec.regel };
+
   return { roll: 'okand', ny: null, regel: 'ingen regel träffade — texten går inte att ersätta med marknadens sanning' };
+}
+
+/** Bär raden några språkbärande ord alls? Siffror, enheter (m, cm, kg, %),
+ *  och skiljetecken räknas inte. "6,5×3 m" → true, "210D-VÄV" → false. */
+export function sprakneutral(text) {
+  const utanTal = String(text ?? '')
+    .replace(/\d+([.,]\d+)?/g, ' ')
+    .replace(/[×x*/·,.\-–—:;()\[\]%°"']/g, ' ');
+  const ord = utanTal.split(/\s+/).map((o) => o.trim()).filter(Boolean);
+  // Enhetsord som är samma på alla marknader vi kör.
+  const ENHETER = new Set(['m', 'cm', 'mm', 'km', 'kg', 'g', 'l', 'ml', 'd', 'st', 'mm2', 'm2', 'm²', 'cm²']);
+  return ord.length > 0 && ord.every((o) => ENHETER.has(o.toLowerCase()));
+}
+
+/**
+ * Ordet ur BUTIKENS EGNA marknadstext för en rad med en teknisk kod.
+ * Letar efter samma kod (t.ex. "210D") i marknadens features-rader och tar
+ * det sammansatta ordet som står intill. Källa, inte gissning.
+ */
+export function specord(text, marknadstext) {
+  const kod = /(\d{2,4}\s?[A-Za-z])\b/.exec(String(text ?? ''));
+  if (!kod) return null;
+  const nyckel = kod[1].replace(/\s+/g, '').toUpperCase();
+  const rader = [marknadstext.features, marknadstext.fotrad, marknadstext.titel]
+    .flat()
+    .filter((x) => typeof x === 'string');
+  for (const rad of rader) {
+    const m = new RegExp(`${nyckel}\\s+([\\p{L}]+-[\\p{L}]+|[\\p{L}]+)`, 'iu').exec(rad.replace(/\s+/g, ' '));
+    if (!m) continue;
+    // "Oxford-væv" → vi vill ha samma form som källan: "210D-VÄV" → "210D-VÆV".
+    const sista = m[1].split('-').pop();
+    return {
+      ny: foljVersaler(text, `${nyckel}-${sista}`),
+      regel: `koden "${nyckel}" finns i butikens egen marknadstext ("${m[0].trim()}") → ordet därifrån`,
+    };
+  }
+  return null;
 }
 
 /** Källans versaler ska följa med: "1129 KR" → "819 KR.", inte "819 kr.". */
@@ -348,8 +402,14 @@ export function efterdom(efter, skrivna, markorer = []) {
     const traffar = svenskaTraffar(r.text, markorer);
     if (!traffar.length) continue;
     const ol = arOverlagg(r);
+    // ⚠️ FILMAD TEXT ÄR ALDRIG VÅR. Mätt 2026-09-20 på CaraShellRoof_PD_3_H1
+    // och GT_2_H1: OCR läste trycket på en kvinnas t-shirt ("IN THE MEADOW")
+    // som "INTE MEADOW", markören "inte" slog till, och två färdiga videor
+    // dömdes "SVENSK TEXT KVAR". Texten sitter på ett plagg i filmen — den
+    // går varken att ta bort eller att skylla på. En rad som följer kameran
+    // redovisas därför som en ANMÄRKNING, aldrig som kvarvarande svenska.
     kvar.push({ text: r.text, t: r.t, box: r.box, rutor: r.rutor, drift_px: r.drift_px,
-      markorer: traffar, overlagg: ol.ja, varfor: ol.regel });
+      markorer: traffar, overlagg: ol.ja, filmad: !ol.ja, varfor: ol.regel });
   }
   return kvar;
 }
@@ -536,13 +596,23 @@ export async function huvud() {
 
   console.log('\nEFTERKONTROLL (OCR på resultatet)');
   const efter = mat(ut, { fps, till });
-  const kvar = efterdom(efter, skrivna, markorer);
+  const alla = efterdom(efter, skrivna, markorer);
+  // FILMAD text är innehåll i filmen (tryck på ett plagg, en skylt, en
+  // registreringsskylt) — den går varken att ta bort eller att skylla på, och
+  // den fäller därför aldrig videon. Den redovisas som en ANMÄRKNING så en
+  // människa kan säga emot. Se kommentaren i efterdom().
+  const kvar = alla.filter((k) => !k.filmad);
+  const filmat = alla.filter((k) => k.filmad);
   rapport.matning_efter = efter;
   rapport.kvar = kvar;
+  rapport.filmat = filmat;
   for (const k of kvar) {
     console.log(`  ❌ ${k.t[0].toFixed(2)}–${k.t[1].toFixed(2)}s ${JSON.stringify(k.box)} ${JSON.stringify(k.text)} — svenska markörer: ${k.markorer.join(', ')} (${k.varfor})`);
   }
-  if (!kvar.length) console.log('  ✅ ingen svensk markör kvar i bilden');
+  for (const k of filmat) {
+    console.log(`  ℹ️ ${k.t[0].toFixed(2)}–${k.t[1].toFixed(2)}s ${JSON.stringify(k.text)} — markör "${k.markorer.join(', ')}" men texten är FILMAD (${k.varfor}); fäller inte videon, titta om den stör`);
+  }
+  if (!kvar.length) console.log('  ✅ ingen svensk markör kvar i ett överlägg');
 
   const dom = kvar.length ? 'SVENSK TEXT KVAR' : (utanErsattning.length ? 'TÄCKT UTAN ERSÄTTNING' : 'REN');
   rapport.dom = dom;

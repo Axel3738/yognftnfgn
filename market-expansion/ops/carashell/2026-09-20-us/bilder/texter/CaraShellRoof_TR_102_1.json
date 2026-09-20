@@ -1,0 +1,88 @@
+[
+ {
+  "box": [
+   40,
+   188,
+   1040,
+   282
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Just 16 reviews."
+ },
+ {
+  "box": [
+   40,
+   308,
+   1040,
+   400
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "All 5 stars."
+ },
+ {
+  "box": [
+   80,
+   442,
+   1000,
+   496
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "text": "5.0 out of 5 on 16 reviews"
+ },
+ {
+  "box": [
+   300,
+   1086,
+   780,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 255,
+  "text": "$199"
+ },
+ {
+  "box": [
+   340,
+   1228,
+   742,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See the cover"
+ }
+]

@@ -1,0 +1,142 @@
+=== CaraShellRoof_BOF_104_1
+  form 0 knapp y=[1201, 1308] x=[350, 731] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1269] x=[396, 686] h=30 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1099, 1120] x=[464, 615] h=21
+=== CaraShellRoof_BOF_105_1
+  form 0 platta y=[47, 307] x=[548, 1047] rader=2 platta=[228, 228, 228]
+      rad 0 y=[78, 136] x=[561, 801] h=58 FET färg=[19, 18, 16] vänster
+      rad 1 y=[199, 272] x=[548, 769] h=73 FET färg=[19, 18, 16] vänster
+  form 1 platta y=[319, 461] x=[549, 1047] rader=2 platta=[228, 228, 228]
+      rad 0 y=[334, 371] x=[549, 971] h=37 normal färg=[19, 18, 16] vänster
+      rad 1 y=[398, 425] x=[550, 578] h=27 FET färg=[18, 17, 16] vänster
+  form 2 knapp y=[1201, 1308] x=[267, 813] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1234, 1278] x=[312, 767] h=44 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1120] x=[311, 768] h=22
+=== CaraShellRoof_BOF_106_1
+  form 0 platta y=[47, 278] x=[33, 1047] rader=2 platta=[252, 252, 252]
+      rad 0 y=[78, 151] x=[175, 906] h=73 FET färg=[18, 17, 15] centrerad
+      rad 1 y=[213, 250] x=[284, 797] h=37 normal färg=[19, 18, 16] centrerad
+  form 1 platta y=[940, 1113] x=[418, 502] rader=2 platta=[180, 180, 180]
+      rad 0 y=[940, 972] x=[472, 501] h=32 normal färg=[92, 91, 90] vänster
+      rad 1 y=[1052, 1113] x=[418, 502] h=61 normal färg=[107, 109, 108] centrerad
+  form 2 platta y=[1000, 1121] x=[508, 639] rader=2 platta=[180, 180, 180]
+      rad 0 y=[1067, 1083] x=[575, 585] h=16 normal färg=[140, 141, 138] vänster
+      rad 1 y=[1096, 1121] x=[508, 639] h=25 FET färg=[249, 250, 249] centrerad
+  form 3 knapp y=[1201, 1308] x=[320, 761] rader=2 platta=[24, 72, 120]
+      rad 0 y=[1234, 1278] x=[365, 717] h=44 FET färg=[254, 255, 255] centrerad
+      rad 1 y=[1289, 1298] x=[330, 743] h=9 FET färg=[77, 77, 76] centrerad
+  ETIKETT (ljus text) y=[1098, 1120] x=[355, 723] h=22
+=== CaraShellRoof_CO_104_1
+  form 0 knapp y=[852, 922] x=[304, 415] rader=2 platta=[6, 6, 6]
+      rad 0 y=[852, 878] x=[304, 331] h=26 normal färg=[103, 112, 120] vänster
+      rad 1 y=[904, 922] x=[304, 415] h=18 FET färg=[108, 107, 103] centrerad
+  form 1 knapp y=[1201, 1308] x=[327, 754] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[372, 710] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1120] x=[381, 697] h=22
+=== CaraShellRoof_CS_110_1
+  form 0 platta y=[47, 399] x=[33, 1047] rader=3 platta=[246, 246, 246]
+      rad 0 y=[70, 151] x=[255, 828] h=81 FET färg=[19, 18, 16] centrerad
+      rad 1 y=[199, 272] x=[283, 797] h=73 FET färg=[18, 17, 16] centrerad
+      rad 2 y=[334, 363] x=[367, 714] h=29 normal färg=[19, 18, 16] centrerad
+  form 1 platta y=[774, 869] x=[167, 272] rader=1 platta=[222, 222, 216]
+      rad 0 y=[789, 869] x=[171, 272] h=80 normal färg=[120, 111, 107] centrerad
+  form 2 platta y=[795, 938] x=[294, 578] rader=3 platta=[222, 222, 216]
+      rad 0 y=[795, 844] x=[430, 578] h=49 FET färg=[141, 140, 134] vänster
+      rad 1 y=[871, 886] x=[294, 401] h=15 FET färg=[132, 130, 124] vänster
+      rad 2 y=[895, 938] x=[294, 578] h=43 normal färg=[139, 137, 132] centrerad
+  form 3 knapp y=[1201, 1308] x=[327, 754] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[372, 710] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1126] x=[322, 757] h=28
+=== CaraShellRoof_CS_111_1
+  form 0 platta y=[47, 399] x=[33, 1047] rader=3 platta=[252, 252, 252]
+      rad 0 y=[70, 151] x=[279, 805] h=81 FET färg=[18, 17, 15] centrerad
+      rad 1 y=[199, 272] x=[283, 797] h=73 FET färg=[18, 17, 15] centrerad
+      rad 2 y=[334, 363] x=[367, 714] h=29 normal färg=[19, 18, 16] centrerad
+  form 1 platta y=[633, 952] x=[390, 591] rader=2 platta=[228, 228, 228]
+      rad 0 y=[633, 767] x=[390, 591] h=134 normal färg=[76, 75, 75] centrerad
+      rad 1 y=[851, 952] x=[390, 591] h=101 normal färg=[63, 63, 63] centrerad
+  form 2 platta y=[745, 958] x=[596, 777] rader=2 platta=[234, 234, 234]
+      rad 0 y=[745, 836] x=[596, 777] h=91 normal färg=[137, 138, 136] centrerad
+      rad 1 y=[925, 958] x=[596, 777] h=33 normal färg=[135, 135, 136] centrerad
+  form 3 knapp y=[959, 1013] x=[602, 770] rader=1 platta=[42, 42, 42]
+      rad 0 y=[959, 1013] x=[602, 770] h=54 normal färg=[112, 113, 113] centrerad
+  form 4 knapp y=[1201, 1308] x=[327, 754] rader=2 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[372, 710] h=39 FET färg=[255, 255, 255] centrerad
+      rad 1 y=[1289, 1298] x=[340, 743] h=9 FET färg=[73, 73, 75] centrerad
+  ETIKETT (ljus text) y=[1098, 1126] x=[322, 757] h=28
+=== CaraShellRoof_GT_109_1
+  form 0 platta y=[47, 428] x=[33, 1047] rader=3 platta=[234, 240, 246]
+      rad 0 y=[70, 151] x=[102, 983] h=81 FET färg=[19, 17, 15] centrerad
+      rad 1 y=[199, 272] x=[125, 958] h=73 FET färg=[19, 17, 16] centrerad
+      rad 2 y=[320, 378] x=[440, 638] h=58 FET färg=[18, 17, 15] centrerad
+  form 1 platta y=[440, 520] x=[33, 1047] rader=1 platta=[228, 228, 228]
+      rad 0 y=[455, 492] x=[170, 909] h=37 normal färg=[19, 18, 16] centrerad
+  form 2 knapp y=[522, 641] x=[532, 937] rader=1 platta=[30, 30, 36]
+      rad 0 y=[547, 641] x=[546, 937] h=94 normal färg=[75, 90, 119] centrerad
+  form 3 knapp y=[638, 856] x=[578, 634] rader=2 platta=[90, 120, 150]
+      rad 0 y=[638, 731] x=[578, 634] h=93 normal färg=[58, 83, 106] centrerad
+      rad 1 y=[833, 856] x=[578, 634] h=23 normal färg=[59, 83, 103] centrerad
+  form 4 platta y=[678, 783] x=[816, 926] rader=1 platta=[132, 168, 198]
+      rad 0 y=[678, 783] x=[816, 926] h=105 normal färg=[5, 15, 29] centrerad
+  form 5 knapp y=[1201, 1308] x=[278, 803] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[323, 759] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1100, 1126] x=[74, 1005] h=26
+=== CaraShellRoof_LI_102_1
+  form 0 platta y=[47, 496] x=[33, 1047] rader=5 platta=[252, 252, 252]
+      rad 0 y=[78, 147] x=[228, 850] h=69 FET färg=[18, 17, 15] centrerad
+      rad 1 y=[202, 272] x=[362, 719] h=70 FET färg=[18, 17, 16] centrerad
+      rad 2 y=[332, 364] x=[368, 757] h=32 normal färg=[19, 18, 17] centrerad
+      rad 3 y=[382, 417] x=[367, 693] h=35 normal färg=[19, 18, 17] centrerad
+      rad 4 y=[440, 463] x=[367, 510] h=23 normal färg=[19, 18, 16] vänster
+  form 1 platta y=[634, 674] x=[461, 619] rader=1 platta=[174, 180, 186]
+      rad 0 y=[634, 674] x=[461, 619] h=40 normal färg=[130, 132, 141] centrerad
+  form 2 knapp y=[1201, 1308] x=[218, 862] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[262, 816] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1099, 1120] x=[486, 594] h=21
+=== CaraShellRoof_PD_108_1
+  form 0 band y=[432, 843] x=[77, 1000] rader=3 platta=[42, 42, 42]
+      rad 0 y=[432, 496] x=[998, 1000] h=64 normal färg=[250, 250, 250] vänster
+      rad 1 y=[504, 622] x=[997, 1000] h=118 normal färg=[249, 250, 249] vänster
+      rad 2 y=[653, 739] x=[999, 1000] h=86 normal färg=[239, 240, 238] vänster
+  form 1 platta y=[503, 770] x=[57, 77] rader=6 platta=[252, 252, 252]
+      rad 0 y=[504, 516] x=[60, 77] h=12 normal färg=[70, 70, 69] vänster
+      rad 1 y=[559, 578] x=[58, 60] h=19 normal färg=[61, 59, 60] vänster
+      rad 2 y=[603, 650] x=[57, 77] h=47 normal färg=[55, 55, 55] centrerad
+      rad 3 y=[659, 670] x=[76, 77] h=11 normal färg=[64, 62, 63] vänster
+      rad 4 y=[678, 690] x=[76, 77] h=12 normal färg=[90, 90, 89] vänster
+      rad 5 y=[747, 758] x=[76, 77] h=11 normal färg=[60, 60, 60] vänster
+  form 2 platta y=[504, 770] x=[997, 1018] rader=3 platta=[252, 252, 252]
+      rad 0 y=[504, 629] x=[997, 1018] h=125 normal färg=[27, 27, 27] centrerad
+      rad 1 y=[635, 691] x=[997, 999] h=56 normal färg=[26, 25, 25] vänster
+      rad 2 y=[717, 770] x=[997, 1000] h=53 normal färg=[27, 27, 27] vänster
+  form 3 knapp y=[1201, 1308] x=[397, 684] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1234, 1269] x=[442, 638] h=35 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1120] x=[294, 786] h=22
+=== CaraShellRoof_PD_109_1
+  form 0 platta y=[0, 45] x=[46, 1010] rader=1 platta=[228, 228, 228]
+      rad 0 y=[0, 34] x=[46, 1010] h=34 normal färg=[145, 151, 156] centrerad
+  form 1 platta y=[47, 461] x=[33, 1047] rader=4 platta=[252, 252, 252]
+      rad 0 y=[70, 151] x=[75, 1000] h=81 FET färg=[19, 18, 16] centrerad
+      rad 1 y=[199, 257] x=[311, 764] h=58 FET färg=[19, 18, 16] centrerad
+      rad 2 y=[334, 371] x=[81, 999] h=37 normal färg=[19, 18, 16] centrerad
+      rad 3 y=[396, 433] x=[471, 607] h=37 normal färg=[19, 18, 16] centrerad
+  form 2 knapp y=[1201, 1308] x=[367, 713] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[412, 668] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1125] x=[330, 749] h=27
+=== CaraShellRoof_RI_104_1
+  form 0 platta y=[47, 582] x=[33, 1047] rader=5 platta=[246, 246, 246]
+      rad 0 y=[78, 151] x=[222, 852] h=73 FET färg=[19, 18, 16] centrerad
+      rad 1 y=[191, 272] x=[290, 787] h=81 FET färg=[19, 18, 16] centrerad
+      rad 2 y=[320, 378] x=[322, 759] h=58 FET färg=[19, 18, 16] centrerad
+      rad 3 y=[455, 492] x=[109, 971] h=37 normal färg=[19, 18, 16] centrerad
+      rad 4 y=[517, 546] x=[502, 578] h=29 normal färg=[19, 18, 16] centrerad
+  form 1 knapp y=[1165, 1315] x=[999, 1080] rader=2 platta=[12, 12, 18]
+      rad 0 y=[1165, 1223] x=[999, 1080] h=58 normal färg=[68, 69, 72] centrerad
+      rad 1 y=[1255, 1289] x=[1030, 1075] h=34 normal färg=[44, 46, 47] vänster
+  form 2 knapp y=[1201, 1308] x=[196, 885] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[241, 841] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1098, 1120] x=[423, 657] h=22
+=== CaraShellRoof_TR_102_1
+  form 0 knapp y=[1201, 1308] x=[327, 754] rader=1 platta=[24, 72, 120]
+      rad 0 y=[1239, 1278] x=[372, 710] h=39 FET färg=[255, 255, 255] centrerad
+  ETIKETT (ljus text) y=[1099, 1120] x=[486, 594] h=21

@@ -1261,3 +1261,54 @@ ingen ACTION NEEDED.
 ⚠️ **Manuset committas nu i `oversatt-output.json`** — `.srt` är gitignoretat som media
 i `market-expansion/ops/**`, så en omrendering hade annars fått börja om från HeyGens
 råöversättning, med butikens namn och de svenska priserna tillbaka.
+
+---
+
+## Spegling 2026-09-20 (`/ops-spegla carashell/takskyddet`) — 0 av 5, annonskontot är obetalt
+
+Rutinen fyrade 16:45 CEST. Kön hade **5 rader** i `CaraShell SE ready to be
+active` (`Takoverdrag_BOF_9_1`, `CS_13_1`, `PD_10_1`, `BOF_8_1`, `BOF_7_1` —
+alla bild, alla ur LISTICLE-ronden). Alla fem var gröna på pris: 1 129 kr mot
+butikens 1 129. **Torrkörningen sa 5 speglade, 0 hoppade, 0 fel.** Den skarpa
+körningen laddade upp noll.
+
+**Varje uppladdning nekades av Meta med samma svar:**
+`400 Permissions error — antingen är objektet inte synligt för dig, eller så
+begränsas åtgärden till vissa kontotyper`.
+
+### Rotorsak: `account_status: 3` på OPS-kontot
+
+Magiborsten DK `915422744950975` står **UNSETTLED** — obetalt. Mätt samma
+körning:
+
+| Kontroll | Svar |
+|---|---|
+| `account_status` | **3 (UNSETTLED)**, `disable_reason: 0` |
+| Token-rättigheter | `ads_management`, `ads_read`, `business_management` — alla `granted` |
+| `user_tasks` på kontot | `DRAFT, ANALYZE, ADVERTISE, MANAGE` |
+| Magiborsten UK `1107817401910319` | `account_status: 1` — opåverkat |
+| Spend i dag / i går | 6 493 kr / 8 512 kr — leveransen rullar |
+
+Alltså: **inget fel på token, inget fel på raderna, inget fel på verktyget.**
+Meta låter befintliga annonser leverera men blockerar allt nyskapande tills
+saldot är betalt. Läsningar går igenom, skrivningar inte — det är därför kön
+kunde läsas och torrköras utan att något syntes.
+
+**Ingenting blev halvgjort.** Ingen annons, ingen creative: `BOF_107_1`,
+`BOF_108_1`, `BOF_109_1`, `CS_113_1` och `PD_110_1` finns inte i kontot
+(kontrollerat med namnfilter efter att Metas rate limit släppt). Alla fem
+källrader ligger kvar i `CaraShell SE ready to be active` med orörd status, så
+rutinen tar dem själv nästa gång kontot är betalt. Inget behöver köras om för
+hand.
+
+⚠️ **Det här gäller alla OPS-butiker, inte bara CaraShell.** Leveransrundan
+13:40, NO-översättningen 15:40 och nattvaktens budgetändringar skriver till
+samma konto och kommer att nekas likadant tills saldot är reglerat. US-spåret
+i Magiborsten UK fungerar.
+
+⚠️ Lärdom: **en grön torrkörning bevisar inte att kontot tar emot.** Torrt
+läser bara — kontots betalningsstatus märks först vid första skrivningen.
+`account_status` är värt att läsa innan en lång uppladdningsrunda startas.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1551257682919428208`, med `🔴 ACTION NEEDED` till Axel.

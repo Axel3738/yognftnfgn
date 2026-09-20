@@ -1,0 +1,88 @@
+[
+ {
+  "box": [
+   40,
+   58,
+   1040,
+   396
+  ],
+  "rader": 3,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   17,
+   15
+  ],
+  "radavstand": 1.68,
+  "fyll": "ljus",
+  "fyllfarg": [
+   238,
+   243,
+   249
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "text": "He goes out in his pajamas to check the cover's still on."
+ },
+ {
+  "box": [
+   60,
+   442,
+   1020,
+   502
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "fyllfarg": [
+   232,
+   232,
+   232
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "text": "Give him a roof cover that stays put."
+ },
+ {
+  "box": [
+   44,
+   1086,
+   1036,
+   1138
+  ],
+  "rader": 1,
+  "storlek": 28,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Stays put in the wind — held tight by straps and a drawcord at the edge."
+ },
+ {
+  "box": [
+   292,
+   1228,
+   790,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Gift the roof cover"
+ }
+]

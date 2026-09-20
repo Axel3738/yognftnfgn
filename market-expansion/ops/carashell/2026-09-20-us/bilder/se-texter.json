@@ -1,0 +1,113 @@
+{
+  "_kalla": "Avläst ur de 12 SE-bilderna 2026-09-20 (OPS-textlagrets mall: vit platta överst med rubrik + underrad, vit etikettrad direkt på fotot ovanför knappen, blå CTA-knapp; några har pris-/stjärnrad överst utan platta). Formerna uppifrån och ned. block = radindex som hör ihop till EN radbruten mening. bock = grön bockpunkt. Rutorna står i overrides.json (mätta, inte gissade).",
+  "CaraShellRoof_BOF_104_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "pris_stor", "rader": ["1 129 kr"] },
+      { "typ": "fri", "roll": "underrad", "rader": ["340 kr billigare än 1 469 kr"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["19,5 m² tak"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Betala 1 129 kr"] }
+    ]
+  },
+  "CaraShellRoof_CS_110_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Spara 340 kr på", "taköverdraget"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["1 469 kr  →  1 129 kr"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Betyg 5,0 av 5 (10 recensioner)"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se taköverdraget"] }
+    ]
+  },
+  "CaraShellRoof_CS_111_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Spara 23 % på", "taköverdraget"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["1 469 kr  →  1 129 kr"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Betyg 5,0 av 5 (10 recensioner)"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se taköverdraget"] }
+    ]
+  },
+  "CaraShellRoof_BOF_105_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Räcker inte en", "presenning?"], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["210D-väv, inte en tunn presenning som spricker i", "frost"], "block": [0, 1] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Tål vintern ute – utan att spricka"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se skillnaden på väven"] }
+    ]
+  },
+  "CaraShellRoof_BOF_106_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Klarar jag det själv?"] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Bara taket – inte hela vagnen"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Rem och dragsko i kanten"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Sätt på taket själv"] }
+    ]
+  },
+  "CaraShellRoof_CO_104_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Bara taket.", "Inte hela vagnen."] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Ett helöverdrag är tungt att få på plats ensam och", "skaver mot lacken hela vintern."], "block": [0, 1] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Täcker taket, 6,5 × 3 m"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se taköverdraget"] }
+    ]
+  },
+  "CaraShellRoof_GT_109_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Han går ut i pyjamas för", "att kolla att överdraget", "sitter."], "block": [0, 1, 2] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Ge honom ett taköverdrag som sitter kvar."] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Sitter kvar när det blåser – spänns fast med rem och dragsko i kanten."] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Ge bort taköverdraget"] }
+    ]
+  },
+  "CaraShellRoof_LI_102_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["6,5 × 3 meter tak.", "Inget mer."] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Rem och dragsko i kanten"] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["Sätts på av en person"] },
+      { "typ": "platta", "roll": "punkt", "bock": true, "rader": ["210D-väv"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["1 129 kr"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Täck taket, inte hela vagnen"] }
+    ]
+  },
+  "CaraShellRoof_PD_108_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["6,5 × 3 meter – hela taket,", "inget mer"], "block": [0, 1] },
+      { "typ": "fri", "roll": "underrad", "rader": ["210D-väv – tål en hel vintersäsong ute"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Bara taket – hanteras av en person"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se måtten"] }
+    ]
+  },
+  "CaraShellRoof_PD_109_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Vattnet blir stående kring", "takluckorna."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Taket är det du aldrig ser – och det som kostar mest", "att laga."], "block": [0, 1] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["Täcker hela takytan, 6,5 × 3 m"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Skydda taket"] }
+    ]
+  },
+  "CaraShellRoof_RI_104_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "platta", "roll": "rubrik", "rader": ["Vattnet blir aldrig", "stående kring", "takluckorna"], "block": [0, 1, 2] },
+      { "typ": "platta", "roll": "underrad", "rader": ["210D-väv, inte en tunn presenning som spricker i", "frost"], "block": [0, 1] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["1 129 kr för taket"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se vad taket kostar att skydda"] }
+    ]
+  },
+  "CaraShellRoof_TR_102_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["Bara 10 recensioner.", "Alla 5 av 5."] },
+      { "typ": "fri", "roll": "underrad", "rader": ["5,0 av 5 på 10 recensioner"] },
+      { "typ": "etikett", "roll": "etikett", "rader": ["1 129 kr"] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se taköverdraget"] }
+    ]
+  }
+}

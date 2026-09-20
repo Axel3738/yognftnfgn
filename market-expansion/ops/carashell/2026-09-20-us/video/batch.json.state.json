@@ -1,0 +1,34 @@
+{
+ "carashell_OB_101_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/ae41568fca8c40998500c21ec6a25586/original.mp4",
+  "proofreadId": "359dc700ef5a437eb0879227c915a6b8-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "2e8723bc70354af099a634c2d0b792cd-nb",
+  "downloaded": true
+ },
+ "carashell_PD_107_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/1a5107effa444ce2a6256ede241a6b49/original.mp4",
+  "proofreadId": "42b16dd5efbf40fda4fe5c93d9bbf6d3-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "fa7caee515b342628a4a67b1ddbc92dd-nb",
+  "downloaded": true
+ },
+ "carashell_RI_103_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/7e8f32dbc99e4622837cf82b8d67fbae/original.mp4",
+  "proofreadId": "f9f3ec556385447d8319f148d6942d42-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "64b4cb37632d4c7a877d903e63113140-nb",
+  "downloaded": true
+ },
+ "carashell_PD_106_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/1d100ecc5f3e4d309e789ee027372547/original.mp4",
+  "proofreadId": "89a6bc68cca5414db6df8c3aa79e49e2-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "3ef0251f76c9473ab691680c4023c355-nb",
+  "downloaded": true
+ }
+}
