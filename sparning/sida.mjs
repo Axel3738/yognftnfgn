@@ -24,6 +24,7 @@
 // spårningsnumret är enda nyckeln, precis som hos fraktbolaget.
 
 import { readFileSync } from 'node:fs';
+import { skapaOversattare } from './oversatt.mjs';
 
 // Publiceraren letar efter de här två i kundens vy för att veta att rätt sida
 // ligger uppe. Ändras de måste publiceraren ändras samtidigt.
@@ -88,7 +89,17 @@ function lasKonfig(konfig) {
   const butik = k.butik ?? {};
   const frakt = k.frakt ?? {};
   const vaknar = frakt.sparning_vaknar ?? k.sparning_vaknar ?? null;
+  // Butikens språk (sparning/oversatt.mjs). Svenska är identiteten; för
+  // Beverbutikken, Bæverbutiken och Majavakauppa byts varje mening här i
+  // sista ledet. Prefixet och tidszonen följer butiken (sparning/butiker.json).
+  const ov = skapaOversattare(k.sprak ?? butik.sprak ?? 'sv');
   return {
+    sprak: ov.kod,
+    locale: ov.locale,
+    html: ov.html,
+    T: ov.T,
+    prefix: String(k.prefix ?? butik.prefix ?? 'BB-'),
+    tidszon: String(k.tidszon ?? butik.tidszon ?? 'Europe/Stockholm'),
     support: butik.support ?? k.support ?? STANDARDSUPPORT,
     rod: butik.farg_rod ?? k.farg_rod ?? STANDARDSTIL.rod,
     svart: butik.farg_svart ?? k.farg_svart ?? STANDARDSTIL.svart,
@@ -121,9 +132,9 @@ function erbjudandeUr(k) {
 
 // Texten för ett paket som är registrerat men aldrig skannat. Meningen om
 // väntetiden byggs bara när konfigurationen gett en.
-function tomtext(vaknar) {
-  const bas = 'Paketet är bokat. Fraktbolaget har inte skannat det än';
-  return vaknar ? `${bas} — det brukar ta ${vaknar}.` : `${bas}.`;
+function tomtext(vaknar, T = (x) => x) {
+  const bas = T('Paketet är bokat. Fraktbolaget har inte skannat det än');
+  return vaknar ? `${bas} — ${T('det brukar ta')} ${vaknar}.` : `${bas}.`;
 }
 
 // Erbjudandet under paketet (Axels beslut 2026-09-20 kväll: "nån sjuk upsell
@@ -148,22 +159,25 @@ function erbjudandeBlock(c) {
 // Texterna som skriptet behöver. Allt annat står i HTML:en, så det går att
 // läsa och rätta utan att gräva i JavaScript.
 function copydata(c) {
+  const T = c.T || ((x) => x);
   return {
-    idag: 'i dag',
-    igar: 'i går',
-    rubriker: RUBRIKER,
-    reservrubrik: 'Ditt paket',
-    tom: tomtext(c.vaknar),
+    tz: c.tidszon,
+    locale: c.locale,
+    idag: T('i dag'),
+    igar: T('i går'),
+    rubriker: Object.fromEntries(Object.entries(RUBRIKER).map(([k, v]) => [k, T(v)])),
+    reservrubrik: T('Ditt paket'),
+    tom: tomtext(c.vaknar, T),
     // Raden under det aktiva skedet när paketet rört sig sedan det nåddes.
     // Utan den står sidan stilla i 4–9 dygn under den internationella
     // sträckan — 544 av 1 055 paket låg där när det mättes 2026-09-19.
-    senast: 'Senaste skanning {{tid}}',
+    senast: T('Senaste skanning {{tid}}'),
     // Sista biten i Sverige. 17TRACK lämnar bolaget och dess EGET nummer i
     // misc_info; vi läste bara aldrig fältet (Axel 2026-09-20). Mätt samma
     // dag: 623 av 1 055 paket hade ett namngivet svenskt bolag.
-    sistaRubrik: 'Hämta ditt paket',
-    sistaLank: 'Följ hos {{bolag}}',
-    sistaUtanLank: 'Numret hos {{bolag}}',
+    sistaRubrik: T('Hämta ditt paket'),
+    sistaLank: T('Följ hos {{bolag}}'),
+    sistaUtanLank: T('Numret hos {{bolag}}'),
     // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner,
     // så ikonen följer resan: kvitto → låda → stämpel → flygplan → lager →
     // lastbil → brevlåda.
@@ -175,17 +189,17 @@ function copydata(c) {
     // timme. Den hämtar ingenting själv medan kunden tittar, och får inte
     // påstå det heller — står det "hämtar" tror kunden att en uppdatering är
     // ett klick bort.
-    uppdaterad: 'Uppdaterad {{tid}} · nya skanningar läggs till varje timme',
-    nummer: 'Ditt paketnummer',
+    uppdaterad: T('Uppdaterad {{tid}} · nya skanningar läggs till varje timme'),
+    nummer: T('Ditt paketnummer'),
     // Beräknad leverans. Dagarna kommer ur mejlens konfiguration, samma
     // löfte kunden redan fått — aldrig ur huvudet. Saknas de visas ingen
     // ruta alls.
-    leverans: 'Beräknad leverans',
-    leveransSen: 'Leveransen är försenad',
-    leveransSenText: 'Den skulle ha varit framme {{datum}}. Mejla oss så kollar vi upp den åt dig.',
+    leverans: T('Beräknad leverans'),
+    leveransSen: T('Leveransen är försenad'),
+    leveransSenText: T('Den skulle ha varit framme {{datum}}. Mejla oss så kollar vi upp den åt dig.'),
     levMin: c.levMin,
     levMax: c.levMax,
-    tomtFalt: 'Klistra in numret från leveransmejlet först.',
+    tomtFalt: T('Klistra in numret från leveransmejlet först.'),
   };
 }
 
@@ -349,14 +363,28 @@ function nodlage() {
 function starta() {
   var D = JSON.parse(document.getElementById('bb-spar-data').textContent);
   var C = JSON.parse(document.getElementById('bb-spar-copy').textContent);
-  var TZ = 'Europe/Stockholm';
+  var TZ = (C && C.tz) || 'Europe/Stockholm';
+  var LOC = (C && C.locale) || LOC;
+
+  // Skedenas och delskedenas etiketter ligger inbäddade på svenska (uppacka.mjs
+  // körs här i webbläsaren); butikens språk står i D.o, byggt av
+  // sparning/oversatt.mjs. Svensk butik: ingen ordlista, samma text tillbaka.
+  function ord(text) {
+    if (D && D.o && Object.prototype.hasOwnProperty.call(D.o, text)) return D.o[text];
+    return text;
+  }
   var $ = function (id) { return document.getElementById(id); };
   var visaEl = function (el, pa) { if (el) el.hidden = !pa; };
 
   // ---------------------------------------------------------------- tiden
+  // ⚠️ datumStr/arStr är NYCKLAR (dagenFore() delar dem på '-'), inte text
+  // kunden ser — de ska alltid vara sv-SE:s ÅÅÅÅ-MM-DD. Med butikens locale
+  // gav nb-NO "20.9.2026", dagenFore() kastade och varje norskt uppslag
+  // slutade i "Vi finner ikke det nummeret" (mätt 2026-09-20). Bara det
+  // som VISAS (formatera, spann, klockStr) formateras med LOC.
   function datumStr(d) { return d.toLocaleDateString('sv-SE', { timeZone: TZ }); }
   function arStr(d) { return d.toLocaleDateString('sv-SE', { timeZone: TZ, year: 'numeric' }); }
-  function klockStr(d) { return d.toLocaleTimeString('sv-SE', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }); }
+  function klockStr(d) { return d.toLocaleTimeString(LOC, { timeZone: TZ, hour: '2-digit', minute: '2-digit' }); }
 
   function dagenFore(iso) {
     var a = iso.split('-');
@@ -376,7 +404,7 @@ function starta() {
     if (dag === dagenFore(idag)) return C.igar + ' ' + kl;
     var alt = { timeZone: TZ, day: 'numeric', month: 'short' };
     if (arStr(d) !== arStr(nu)) alt.year = 'numeric';
-    return d.toLocaleDateString('sv-SE', alt).replace(/\./g, '') + ' ' + kl;
+    return d.toLocaleDateString(LOC, alt).replace(/\./g, '') + ' ' + kl;
   }
 
   // ------------------------------------------------------------- adressen
@@ -474,7 +502,7 @@ function starta() {
 
     var namn = document.createElement('p');
     namn.className = 'bbs-stegnamn';
-    namn.textContent = s.etikett;
+    namn.textContent = ord(s.etikett);
     li.appendChild(namn);
     if (s.nadd) {
       var tid = document.createElement('time');
@@ -498,7 +526,7 @@ function starta() {
         del.className = 'bbs-stegdel';
         del.appendChild(rita(s.delstegIkon || 'lada'));
         var dtext = document.createElement('span');
-        dtext.textContent = s.delstegEtikett;
+        dtext.textContent = ord(s.delstegEtikett);
         del.appendChild(dtext);
         li.appendChild(del);
       }
@@ -610,11 +638,11 @@ function starta() {
   // "25–28 sep" — och med månad på båda när de skiljer sig.
   function spann(a, b) {
     var alt = { timeZone: TZ, day: 'numeric', month: 'short' };
-    var ettA = a.toLocaleDateString('sv-SE', alt).replace(/\./g, '');
-    var ettB = b.toLocaleDateString('sv-SE', alt).replace(/\./g, '');
+    var ettA = a.toLocaleDateString(LOC, alt).replace(/\./g, '');
+    var ettB = b.toLocaleDateString(LOC, alt).replace(/\./g, '');
     var m = { timeZone: TZ, month: 'short' };
-    if (a.toLocaleDateString('sv-SE', m) === b.toLocaleDateString('sv-SE', m)) {
-      return a.toLocaleDateString('sv-SE', { timeZone: TZ, day: 'numeric' }) + '–' + ettB;
+    if (a.toLocaleDateString(LOC, m) === b.toLocaleDateString(LOC, m)) {
+      return a.toLocaleDateString(LOC, { timeZone: TZ, day: 'numeric' }) + '–' + ettB;
     }
     return ettA + ' – ' + ettB;
   }
@@ -652,7 +680,7 @@ function starta() {
   function visaPaket(p) {
     visaEl(sok, false); visaEl(saknas, false); visaEl(traff, true); visaEl(annat, true);
     visaLeverans(p);
-    $('bbs-rubrik').textContent = C.rubriker[p.statusKod] || p.status || C.reservrubrik;
+    $('bbs-rubrik').textContent = C.rubriker[p.statusKod] || ord(p.status) || C.reservrubrik;
 
     // Ingressen bär fraktbolagets senaste text. Den STÅR KVAR med flit: den
     // är det enda på sidan som rör sig under den internationella sträckan,
@@ -762,7 +790,8 @@ function starta() {
       for (var k in D.k) {
         if (!Object.prototype.hasOwnProperty.call(D.k, k)) continue;
         var hex = D.k[k][3];
-        if (typeof hex === 'string' && hex) baverIndex[baverNyckel(hex)] = k;
+        // Prefixet ur datan (D.bp): CaraShells kunder skriver CS-…, inte BB-….
+        if (typeof hex === 'string' && hex) baverIndex[baverNyckel(hex, D.bp)] = k;
       }
     }
     return Object.prototype.hasOwnProperty.call(baverIndex, n) ? baverIndex[n] : null;
@@ -833,46 +862,48 @@ export function byggSidkropp(data, konfig) {
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
   const copy = JSON.stringify(copydata(c)).replace(/<\//g, '<\\/');
   const mail = esk(c.support);
+  const T = c.T;
+  const prefixKort = c.prefix.replace(/-+$/, '');
   // Kunden får leveransmejlet i samma sekund som ordern skickas, men sidan
   // hämtar nya paket en gång i timmen — klickar hen direkt finns numret inte
   // här än. Det är den vanligaste orsaken till "hittar inte", inte ett
   // felskrivet nummer (Axels test 2026-09-20 kväll).
-  const vantetid = ' Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.';
+  const vantetid = ' ' + T('Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.');
   return `<div id="bb-spar">
 <style>${stil(c)}</style>
-<noscript><p class="bbs-noscript">Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla <a href="mailto:${mail}">${mail}</a> så kollar vi paketet åt dig.</p></noscript>
+<noscript><p class="bbs-noscript">${T('Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla')} <a href="mailto:${mail}">${mail}</a> ${T('så kollar vi paketet åt dig.')}</p></noscript>
 <div id="bbs-sok" class="bbs-ruta" hidden>
-  <p class="bbs-etikett">Spårning</p>
-  <h2>Spåra ditt paket</h2>
+  <p class="bbs-etikett">${T('Spårning')}</p>
+  <h2>${T('Spåra ditt paket')}</h2>
   <p id="bbs-fel" class="bbs-fel" hidden></p>
   <form id="bbs-form" novalidate>
-    <label for="bbs-falt">Skriv in ditt paketnummer</label>
-    <input id="bbs-falt" class="bbs-falt" name="nummer" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="BB-3F7A2C1D">
-    <button type="submit" class="bbs-knapp">Visa paketet</button>
+    <label for="bbs-falt">${T('Skriv in ditt paketnummer')}</label>
+    <input id="bbs-falt" class="bbs-falt" name="nummer" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="${esk(c.prefix)}3F7A2C1D">
+    <button type="submit" class="bbs-knapp">${T('Visa paketet')}</button>
   </form>
-  <p class="bbs-hjalp">Paketnumret börjar med BB och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.</p>
+  <p class="bbs-hjalp">${esk(T('Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.').split('{{prefix}}').join(prefixKort))}</p>
 </div>
 <div id="bbs-saknas" class="bbs-ruta" hidden>
-  <h2>Vi hittar inte det numret</h2>
-  <p>Kontrollera att hela numret kom med när du klistrade in det.${vantetid}</p>
-  <p>Stämmer numret och det ändå inte syns här: mejla <a href="mailto:${mail}">${mail}</a> så letar vi upp paketet åt dig.</p>
-  <p class="bbs-hjalprad"><a href="/">Till butiken</a></p>
+  <h2>${T('Vi hittar inte det numret')}</h2>
+  <p>${T('Kontrollera att hela numret kom med när du klistrade in det.')}${vantetid}</p>
+  <p>${T('Stämmer numret och det ändå inte syns här: mejla')} <a href="mailto:${mail}">${mail}</a> ${T('så letar vi upp paketet åt dig.')}</p>
+  <p class="bbs-hjalprad"><a href="/">${T('Till butiken')}</a></p>
 </div>
 <div id="bbs-traff" hidden>
-  <p class="bbs-etikett">Spårning</p>
+  <p class="bbs-etikett">${T('Spårning')}</p>
   <h2 id="bbs-rubrik"></h2>
   <p id="bbs-ingress" class="bbs-ingress" hidden></p>
   <p id="bbs-leverans" class="bbs-leverans" hidden></p>
   <dl class="bbs-fakta">
-    <div><dt>Ditt paketnummer</dt><dd id="bbs-nummer"></dd></div>
+    <div><dt>${T('Ditt paketnummer')}</dt><dd id="bbs-nummer"></dd></div>
   </dl>
   <p id="bbs-sista" class="bbs-sista" hidden></p>
   <p id="bbs-tom" hidden></p>
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
-  <p class="bbs-hjalprad">Undrar du något om leveransen? Mejla <a href="mailto:${mail}">${mail}</a>.</p>
+  <p class="bbs-hjalprad">${T('Undrar du något om leveransen? Mejla')} <a href="mailto:${mail}">${mail}</a>.</p>
 ${erbjudandeBlock(c)}</div>
-<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden>Spåra ett annat nummer</button>
+<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden>${T('Spåra ett annat nummer')}</button>
 <p id="bbs-byggd" class="bbs-byggd" hidden></p>
 <script type="application/json" ${DATAMARKOR}>${json}</script>
 <script type="application/json" ${COPYMARKOR}>${copy}</script>
@@ -889,7 +920,7 @@ ${skript()}
 // butiken men inte finns här.
 export function byggForhandsvisning(data, konfig) {
   return `<!DOCTYPE html>
-<html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Spåra ditt paket</title>
+<html lang="${lasKonfig(konfig).html}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esk(lasKonfig(konfig).T('Spåra ditt paket'))}</title>
 <style>body{margin:0;padding:24px 16px;font-family:Arial,Helvetica,sans-serif;background:#f7f7f7}.rte{background:#fff;padding:24px 16px;max-width:760px;margin:0 auto}</style></head>
 <body><div class="rte">${byggSidkropp(data, konfig)}</div></body></html>`;
 }

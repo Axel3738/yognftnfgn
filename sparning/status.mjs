@@ -45,16 +45,22 @@ const AVVIKELSER = new Set(['ATTEMPTED_DELIVERY', 'FAILURE']);
 
 // Svenska meddelanden — kunden ser dem på orderstatussidan. Korta, utan
 // ursäkter, med plats när fraktbolaget gett en (docs/copy-regler.md).
-export function meddelande(status, plats, support = 'kundsupport@baverbutiken.se') {
+//
+// `T` är butikens språklager (sparning/oversatt.mjs): meningen skrivs på svenska
+// här och byts i sista ledet, så Beverbutikkens kund läser norska på sin
+// orderstatussida. Svenska = identiteten.
+export function meddelande(status, plats, support = 'kundsupport@baverbutiken.se', T = (s) => s) {
   const var_ = plats ? ` (${plats})` : '';
+  // Orten hängs på EFTER översättningen, innanför den avslutande punkten.
+  const medPlats = (mening) => T(mening).replace(/\.$/, '') + var_ + '.';
   switch (status) {
-    case 'CONFIRMED': return 'Fraktbolaget har tagit emot uppgifterna om paketet.';
-    case 'IN_TRANSIT': return `Paketet är på väg${var_}.`;
-    case 'READY_FOR_PICKUP': return `Paketet finns att hämta hos ombudet${var_}.`;
-    case 'OUT_FOR_DELIVERY': return 'Paketet är ute för leverans i dag.';
-    case 'ATTEMPTED_DELIVERY': return 'Leverans försöktes utan att lyckas. Ett nytt försök följer.';
-    case 'DELIVERED': return `Paketet är levererat${var_}.`;
-    case 'FAILURE': return `Ett problem uppstod med leveransen. Mejla ${support} så hjälper vi till.`;
+    case 'CONFIRMED': return T('Fraktbolaget har tagit emot uppgifterna om paketet.');
+    case 'IN_TRANSIT': return medPlats('Paketet är på väg.');
+    case 'READY_FOR_PICKUP': return medPlats('Paketet finns att hämta hos ombudet.');
+    case 'OUT_FOR_DELIVERY': return T('Paketet är ute för leverans i dag.');
+    case 'ATTEMPTED_DELIVERY': return T('Leverans försöktes utan att lyckas. Ett nytt försök följer.');
+    case 'DELIVERED': return medPlats('Paketet är levererat.');
+    case 'FAILURE': return T('Ett problem uppstod med leveransen. Mejla {{support}} så hjälper vi till.').split('{{support}}').join(support);
     default: return '';
   }
 }
@@ -92,7 +98,7 @@ function renPlats(plats) {
 // statusar som redan finns som event i Shopify (lästa ur ordern), `sista` =
 // senast skrivna status enligt vår lagefil. Returnerar null eller
 // { status, happenedAt, message }.
-export function planera(tolkad, redan = [], sista = null) {
+export function planera(tolkad, redan = [], sista = null, { support, T } = {}) {
   const s = tolkad.status;
   if (!s) return null;
   const finns = new Set(redan);
@@ -106,7 +112,7 @@ export function planera(tolkad, redan = [], sista = null) {
   return {
     status: s,
     happenedAt: giltigTid(tolkad.tid) ? tolkad.tid : new Date().toISOString(),
-    message: meddelande(s, tolkad.plats),
+    message: meddelande(s, tolkad.plats, support ?? undefined, T ?? undefined),
   };
 }
 

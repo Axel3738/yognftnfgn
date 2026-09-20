@@ -35,11 +35,11 @@ import { byggData, filtreraFonster, handelserUr, FONSTER_DAGAR, MAX_HANDELSER } 
 import { kontrollera, rapport as kontrollrapport } from './kontroll.mjs';
 import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
 import { STATUS } from './status.mjs';
+import { STEG, DELSTEG, STATUSAR } from './uppacka.mjs';
+import { lasButik, butikIdUr, skapaMappar, skapaKlient } from './butik.mjs';
+import { skapaOversattare, oversattData } from './oversatt.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
-const UT = join(ROT, 'output');
-const KONFIG = join(ROT, 'konfig.json');
-const LAGE = join(ROT, 'lage.json');
 const MEJLKONFIG = join(ROT, '..', 'mejl', 'konfig.json');
 
 const DYGN_MS = 24 * 60 * 60 * 1000;
@@ -57,6 +57,13 @@ const FORMER = [
 // --- 0. Flaggor -------------------------------------------------------------
 
 const arg = process.argv.slice(2);
+// Butiken (--butik <id>, annars Bäverbutiken). Filerna följer butiken:
+// Bäverbutiken i sparning/ som förut, de andra i sparning/butiker/<id>/.
+const BUTIK = lasButik(butikIdUr(arg));
+const FILER = skapaMappar(BUTIK);
+const UT = FILER.output;
+const KONFIG = FILER.konfig;
+const LAGE = FILER.lage;
 const torr = arg.includes('--torr');
 const offline = arg.includes('--offline');
 // --torr och --offline gör samma sak här: bygget läser bara lokala filer, så
@@ -92,11 +99,13 @@ const NU = Date.now();
 // Mottagarlandet. Står i sidans etikett ("Ankommit till Sverige") och är det
 // kontrollen mäter den fysiska ankomsten mot. Butiken säljer också till
 // Norge, så värdet är konfigurerbart — men aldrig gissat.
-const MOTTAGARLAND = 'Sverige';
+const MOTTAGARLAND = BUTIK.land;
 
 // --- 1. Konfig och löftet i mejlen ------------------------------------------
 
-const konfig = lasJson(KONFIG, 'sidans inställningar');
+// Bäverbutiken har sin konfig.json med kommentarer och bokföring; en annan
+// butik får en ur registret första gången, och bokföringen skrivs dit sedan.
+const konfig = existsSync(KONFIG) ? lasJson(KONFIG, 'sidans inställningar') : standardKonfig(BUTIK);
 const s = konfig.sida;
 if (!s?.handle || !s?.titel) {
   console.error('❌ sparning/konfig.json saknar sida.handle eller sida.titel.');
@@ -111,35 +120,65 @@ try {
   mejlkonfig = JSON.parse(readFileSync(MEJLKONFIG, 'utf8'));
   const dar = mejlkonfig?.frakt?.sparning_vaknar ?? null;
   const har = konfig.frakt?.sparning_vaknar ?? null;
-  if (dar && har && dar !== har) {
+  if (BUTIK.standard && dar && har && dar !== har) {
     console.log(`⚠️ Löftet skiljer sig: mejl/konfig.json säger "${dar}", sparning/konfig.json säger "${har}". Sidan visar sitt eget värde — rätta det ena.`);
   }
 } catch (fel) {
   console.log(`⚠️ Kunde inte läsa mejl/konfig.json för att jämföra löftet om spårningen: ${fel.message}`);
 }
 
-// Konfigurationen sidan byggs med: mejlens butiksblock (loggans färger och
-// rubriktypsnittet bor där, i EN fil) med sparningens egna värden ovanpå.
-// Därför står inga färger i sparning/konfig.json — de skulle bli en andra
-// sanning och glida isär med mejlen.
-const sidkonfig = {
-  ...konfig,
-  butik: { ...(mejlkonfig?.butik ?? {}), ...(konfig.butik ?? {}) },
-  frakt: { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) },
-  // Erbjudandet under paketet (Axels beslut 2026-09-20 kväll) läses ur samma
-  // block som mejlen och lyckohjulet — beloppet och hjulets adress får aldrig
-  // bli en andra sanning här.
-  erbjudande: mejlkonfig?.erbjudande ?? null,
-  hjul: mejlkonfig?.hjul ?? null,
-};
-
 // Proxyn tidigt: kravProxy() kör om hela processen med NODE_USE_ENV_PROXY=1,
 // så allt efter den punkten körs två gånger om den står längre ner.
 let shopify = null;
+let kontakt = null;
 if (!baraFiler) {
-  shopify = await import('../mejl/shopify.mjs');
-  shopify.kravProxy();
+  const m = await import('../mejl/shopify.mjs');
+  m.kravProxy();
+  // Butikens egen klient (sparning/butik.mjs): Bäverbutiken via
+  // _SE_BAVER_SE-nycklarna som förut, de andra via sina.
+  shopify = await skapaKlient(BUTIK);
+  kontakt = await shopify.kolla();
+  if (kontakt.saknar.length) {
+    console.error(`❌ ${BUTIK.namn}: appen "${kontakt.app}" saknar ${kontakt.saknar.join(', ')} — sidan går inte att skriva. Lägg till rättigheterna på appen och installera om den.`);
+    process.exit(1);
+  }
 }
+
+// Konfigurationen sidan byggs med. Bäverbutiken: mejlens butiksblock (loggans
+// färger och rubriktypsnittet bor där, i EN fil) med sparningens egna värden
+// ovanpå — därför står inga färger i sparning/konfig.json. Andra butiker: det
+// registret säger (språk, prefix, tidszon, support, leveranslöfte), samma
+// färger, och erbjudandet BARA där registret säger erbjudande: true (Axels
+// beslut 2026-09-20: "skippa gratis produkt / spin the wheel på de andra").
+const supportmejl = BUTIK.support ?? kontakt?.kontaktmejl ?? null;
+if (!supportmejl && !baraFiler) {
+  console.error(`❌ ${BUTIK.namn}: ingen supportadress — varken i sparning/butiker.json eller i Shopifys shop.contactEmail. Sidan skriver ut den på fyra ställen.`);
+  process.exit(1);
+}
+const sidkonfig = {
+  ...konfig,
+  sprak: BUTIK.sprak,
+  prefix: BUTIK.prefix,
+  tidszon: BUTIK.tidszon ?? (BUTIK.sprak === 'sv' ? 'Europe/Stockholm' : sprakTidszon(BUTIK.sprak)),
+  butik: {
+    ...(mejlkonfig?.butik ?? {}),
+    ...(konfig.butik ?? {}),
+    namn: BUTIK.namn,
+    url: BUTIK.url,
+    support: supportmejl ?? konfig.butik?.support ?? mejlkonfig?.butik?.support ?? null,
+  },
+  frakt: BUTIK.standard
+    ? { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) }
+    : {
+      sparning_vaknar: BUTIK.sparning_vaknar ?? null,
+      leverans_dagar_min: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[0] : null,
+      leverans_dagar_max: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[1] : null,
+    },
+  // Erbjudandet under paketet läses ur samma block som mejlen och lyckohjulet —
+  // beloppet och hjulets adress får aldrig bli en andra sanning här.
+  erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
+  hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
+};
 
 // --- 2. Paketminnet ---------------------------------------------------------
 
@@ -205,7 +244,7 @@ if (iFonster.length !== paket.length) {
   console.log(`Fönster ${dagar} dagar: ${paket.length - iFonster.length} paket föll bort (senaste skanningen är äldre).`);
 }
 
-const { data, statistik } = byggData(iFonster, { nu: NU, mottagarland: MOTTAGARLAND });
+const { data, statistik } = byggData(iFonster, { nu: NU, mottagarland: MOTTAGARLAND, prefix: BUTIK.prefix });
 for (const v of statistik.varningar.slice(0, 10)) console.log(`  ⚠️ ${v}`);
 if (statistik.varningar.length > 10) console.log(`  ⚠️ … och ${ord(statistik.varningar.length - 10, 'varning till', 'varningar till')}`);
 
@@ -243,6 +282,12 @@ if (!kontroll.ok && !baraFiler) {
   console.error('❌ Sidan publicerades INTE. Rätta felen ovan och kör om.');
   process.exit(1);
 }
+
+// Butikens språk. Datan byggdes och KONTROLLERADES på svenska ovan; först nu
+// byts frasordboken och etiketterna (sparning/oversatt.mjs). En mening utan
+// översättning står kvar på svenska och räknas i rapporten — aldrig tyst.
+const OV = skapaOversattare(BUTIK.sprak);
+oversattData(data, OV, { steg: STEG, delsteg: DELSTEG, statusar: STATUSAR });
 
 const sidmodul = await laddaSidmodul();
 const indata = { konfig: sidkonfig, data, statistik, paket: iFonster, nu: NU };
@@ -378,7 +423,7 @@ if (apiData.data?.byggd !== data.byggd) {
 
 // --- 7. Tillbakaläsning 2: kundens vy ---------------------------------------
 
-const url = `${(konfig.butik?.url ?? 'https://baverbutiken.se').replace(/\/$/, '')}/pages/${s.handle}`;
+const url = `${BUTIK.url}/pages/${s.handle}`;
 let publik = null;
 let sistaFel = 'inget försök gjort';
 for (let forsok = 1; forsok <= 4; forsok++) {
@@ -446,7 +491,7 @@ konfig.lage.sida_publicerad = new Date().toLocaleDateString('sv-SE', { timeZone:
 konfig.lage.sida_url = url;
 konfig.lage.sida_matt = `${statistik.paket} paket, ${ord(statistik.handelser, 'händelse', 'händelser')}, ${kB} kB`;
 writeFileSync(KONFIG, `${JSON.stringify(konfig, null, 2)}\n`);
-console.log('Bokfört i sparning/konfig.json → lage.sida_publicerad och lage.sida_url.');
+console.log(`Bokfört i ${KONFIG.replace(ROT + '/', 'sparning/')} → lage.sida_publicerad och lage.sida_url.`);
 rapportSlut();
 
 // ---------------------------------------------------------------------------
@@ -472,6 +517,11 @@ function ord(antal, ental, flertal) {
 
 function rapportSlut() {
   const okanda = okandaFraser();
+  const oovers = typeof OV !== 'undefined' ? OV.okanda() : [];
+  if (oovers.length) {
+    console.log(`⚠️ ${ord(oovers.length, 'mening saknar', 'meningar saknar')} översättning till ${OV.kod} och står kvar på svenska — lägg in dem i sparning/sprak/${OV.kod}.json:`);
+    for (const t of oovers.slice(0, 15)) console.log(`     ${t}`);
+  }
   console.log(
     `Klart: ${statistik.paket} paket, ${ord(statistik.handelser, 'händelse', 'händelser')}, ${kB} kB sida, ` +
     `${ord(okanda.length, 'okänd fras', 'okända fraser')}${okanda.length ? `: ${okanda.slice(0, 5).join(' | ')}${okanda.length > 5 ? ' …' : ''}` : ''}.`
@@ -483,6 +533,21 @@ function rapportSlut() {
     // okända fraser i datan". Den siffran står i rundans egen logg.
     console.log('  (Fraserna var redan översatta i lage.json — okända fraser räknas då av sparning/kor.mjs, inte här.)');
   }
+}
+
+// Sidkonfig ur registret för en butik som ännu inte har någon konfig.json.
+function standardKonfig(butik) {
+  return {
+    comment: `Spårningssidan i ${butik.namn}: /pages/${butik.handle}. Skriven av sparning/publicera.mjs ur sparning/butiker.json — ändra i registret, inte här. Blocket lage skrivs av publiceringen.`,
+    sida: { handle: butik.handle, titel: butik.titel, template_suffix: null, markor: 'bb-spar', data_id: 'bb-spar-data', fonster_dagar: null },
+    butik: { namn: butik.namn, url: butik.url, support: butik.support ?? null },
+    frakt: { sparning_vaknar: butik.sparning_vaknar ?? null },
+    lage: { sida_publicerad: null, sida_url: null, sida_matt: null },
+  };
+}
+
+function sprakTidszon(kod) {
+  return { nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki' }[kod] ?? 'Europe/Stockholm';
 }
 
 function paus(ms) {

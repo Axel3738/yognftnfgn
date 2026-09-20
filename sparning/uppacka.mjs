@@ -16,7 +16,10 @@
 //   {
 //     v: 2,                       formatversion
 //     byggd: <minut>,             när filen byggdes
-//     land: "Sverige",            mottagarlandet, för stegets etikett
+//     land: "Sverige",            mottagarlandet (svenskt namn, internt), för kontrollen
+//     bp: "BB-",                  bävernumrets prefix (butikens; CaraShell CS-)
+//     sprak: "nb", o: { … }       (bara andra språk än svenska) språkkod + ordlista
+//                                 svensk etikett → butikens språk för STEG/DELSTEG/STATUSAR
 //     f: ["Vi har fått uppgifterna om paketet", …],   fraser, svenska
 //     p: ["Malmö", "Shenzhen", …],                    platser
 //     l: ["Sverige", "Kina", …],                      länder
@@ -191,14 +194,14 @@ export function nyckel(nummer) {
 // åtta hexsiffrorna på plats 4; sidan sätter "BB-" framför.
 var BAVER_PREFIX = 'BB-';
 
-export function baverSnyggt(hex) {
-  return hex ? BAVER_PREFIX + String(hex).toUpperCase() : '';
+export function baverSnyggt(hex, prefix) {
+  return hex ? (prefix || BAVER_PREFIX) + String(hex).toUpperCase() : '';
 }
 
 // Uppslagsnyckel för ett bävernummer, samma normalisering som nyckel():
 // "bb-3f7a2c1d" och "BB3F7A2C1D" är samma nummer.
-export function baverNyckel(hex) {
-  return hex ? nyckel(BAVER_PREFIX + hex) : '';
+export function baverNyckel(hex, prefix) {
+  return hex ? nyckel((prefix || BAVER_PREFIX) + hex) : '';
 }
 
 // Orten och landet ihop, för den fullständiga historiken: "Rozenburg,
@@ -378,7 +381,7 @@ export function packaUppEtt(data, nummer) {
     nummer: n,
     // Kundens nummer. Axels beslut 2026-09-20: fraktbolagets YT…/4PX… ska
     // aldrig mötas i vyn. Skrivet av bygget, läses bara här.
-    baver: baverSnyggt(typeof post[3] === 'string' ? post[3] : ''),
+    baver: baverSnyggt(typeof post[3] === 'string' ? post[3] : '', data.bp),
     baverHex: typeof post[3] === 'string' ? post[3] : '',
     bolag: bolag[post[1]] == null ? null : bolag[post[1]],
     statusKod: rad[0],

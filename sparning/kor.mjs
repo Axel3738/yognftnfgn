@@ -20,7 +20,9 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { kravProxy, graphql } from '../mejl/shopify.mjs';
+import { kravProxy } from '../mejl/shopify.mjs';
+import { lasButik, butikIdUr, skapaMappar, skapaKlient } from './butik.mjs';
+import { skapaOversattare } from './oversatt.mjs';
 import { nyckel, registrera, hamta } from './17track.mjs';
 import { bolagskod, tolka, planera } from './status.mjs';
 import { handelserUr } from './paketdata.mjs';
@@ -28,10 +30,15 @@ import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
 import { sistaBiten } from './sistabiten.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
-const LAGE = join(ROT, 'lage.json');
-const UT = join(ROT, 'output');
-const PAKETFIL = join(UT, 'paket.json');
 const arg = process.argv.slice(2);
+// Butiken (--butik <id>, annars Bäverbutiken). Minnet och utdatan följer
+// butiken: Bäverbutiken i sparning/ som förut, de andra i sparning/butiker/<id>/.
+const BUTIK = lasButik(butikIdUr(arg));
+const FILER = skapaMappar(BUTIK);
+const LAGE = FILER.lage;
+const UT = FILER.output;
+const PAKETFIL = FILER.paketfil;
+const LAGE_NAMN = LAGE.replace(ROT + '/', 'sparning/');
 const torr = arg.includes('--torr');
 const kolla = arg.includes('--kolla');
 const ingenSida = arg.includes('--ingen-sida');
@@ -44,6 +51,7 @@ const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 14;
 const maxIx = arg.indexOf('--max');
 const MAX_REG = maxIx > -1 ? Number(arg[maxIx + 1]) : 150;
 const LEVERERAD_BEHALL_DAGAR = 60;
+const KRAV_TEXT = 'read_orders + write_fulfillments + write_content';
 
 kravProxy();
 
@@ -51,17 +59,28 @@ kravProxy();
 const brister = [];
 if (!nyckel()) brister.push('TRACK17_API_KEY saknas i miljön (Environments på claude.ai — syns först i en ny container).');
 let scopes = [];
+let graphql = null;
+let kontakt = null;
+console.log(`Butik: ${BUTIK.namn} (${BUTIK.url}), språk ${BUTIK.sprak}, prefix ${BUTIK.prefix}, minne ${LAGE_NAMN}`);
 try {
-  const s = await graphql(`query { currentAppInstallation { accessScopes { handle } } }`, {});
-  scopes = s.currentAppInstallation.accessScopes.map((x) => x.handle);
+  const klient = await skapaKlient(BUTIK);
+  graphql = klient.graphql;
+  kontakt = await klient.kolla();
+  scopes = kontakt.scopes;
 } catch (fel) {
   brister.push(`Shopify svarar inte: ${fel.message}`);
 }
-if (scopes.length && !scopes.includes('write_fulfillments')) {
-  brister.push('Shopify-appen saknar rättigheten write_fulfillments (behövs för fulfillmentEventCreate). Lägg till read_fulfillments + write_fulfillments på appen i Dev Dashboard och installera om den.');
+if (kontakt && kontakt.saknar.length) {
+  brister.push(`Shopify-appen "${kontakt.app}" i ${BUTIK.namn} saknar ${kontakt.saknar.join(', ')}. Lägg till dem på appen i Dev Dashboard (read_orders kräver "Protected customer data access") och installera om den.`);
 }
+// Supportadressen står på kundens sida och i FAILURE-meddelandet. Registret
+// först, annars Shopifys egen kontaktmejl — aldrig en annan butiks.
+const SUPPORT = BUTIK.support ?? kontakt?.kontaktmejl ?? null;
+if (!SUPPORT) brister.push(`${BUTIK.namn} saknar supportadress — varken i sparning/butiker.json eller i Shopifys shop.contactEmail.`);
+// Butikens språk för Shopify-meddelandena (sparning/oversatt.mjs).
+const OV = skapaOversattare(BUTIK.sprak);
 if (kolla || brister.length) {
-  console.log(brister.length ? `❌ ${brister.join('\n❌ ')}` : `✅ Nyckel finns, Shopify-appen har write_fulfillments (${scopes.length} rättigheter).`);
+  console.log(brister.length ? `❌ ${brister.join('\n❌ ')}` : `✅ Nyckel finns, appen "${kontakt.app}" i ${BUTIK.namn} har ${KRAV_TEXT} (${scopes.length} rättigheter). Support: ${SUPPORT}.`);
   if (kolla) process.exit(brister.length ? 1 : 0);
   if (!torr) process.exit(1);
   console.log('--torr: fortsätter läsningen trots bristerna, skriver inget.');
@@ -161,7 +180,7 @@ if (attHamta.length && nyckel()) {
     const p = (lage.paket[k.nummer] ??= { bolag: k.bolag, kod: k.kod, order: k.order, fulfillment: k.fulfillment });
     p.status17 = t.status17;
     p.senast = new Date().toISOString().slice(0, 16);
-    const plan = planera(t, k.redan, p.status ?? null);
+    const plan = planera(t, k.redan, p.status ?? null, { support: SUPPORT ?? undefined, T: OV.T });
     rader.push(`${k.order} ${k.nummer} ${t.status17 ?? '–'}${t.plats ? ` @ ${t.plats}` : ''}${plan ? ` → ${plan.status}` : ''}`);
     if (!plan) continue;
     if (torr) { skrivna++; continue; }
@@ -192,7 +211,7 @@ for (const [n, p] of Object.entries(lage.paket)) {
 }
 lage.senaste_korning = { datum: new Date().toISOString(), ordrar: ordrar.length, paket: kandidater.length, registrerade: nya.length, skrivna, fel, torr };
 if (!torr) writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`);
-console.log(`${torr ? '--torr: ' : ''}Event ${torr ? 'som skulle skrivas' : 'skrivna'} i Shopify: ${skrivna}, fel: ${fel}. ${torr ? 'Inget sparat.' : 'Sparat i sparning/lage.json.'}`);
+console.log(`${torr ? '--torr: ' : ''}Event ${torr ? 'som skulle skrivas' : 'skrivna'} i Shopify: ${skrivna}, fel: ${fel}. ${torr ? 'Inget sparat.' : `Sparat i ${LAGE_NAMN}.`}`);
 
 // --- 7. Spårningssidan ------------------------------------------------------
 // Kundens sida, baverbutiken.se/pages/spara. Skanningarna är redan hämtade
@@ -213,11 +232,11 @@ if (ingenSida) {
 } else {
   mkdirSync(UT, { recursive: true });
   writeFileSync(PAKETFIL, `${JSON.stringify(forSidan)}\n`);
-  const r = spawnSync(process.execPath, [join(ROT, 'publicera.mjs'), '--paket', PAKETFIL, ...(torr ? ['--torr'] : [])], { stdio: 'inherit' });
+  const r = spawnSync(process.execPath, [join(ROT, 'publicera.mjs'), '--butik', BUTIK.id, '--paket', PAKETFIL, ...(torr ? ['--torr'] : [])], { stdio: 'inherit' });
   if (r.status !== 0) {
     // Sidan är kundens vy, men eventen i Shopify är redan skrivna och sparade.
     // Rundan får inte se ut att ha misslyckats i sin huvuduppgift.
-    console.log(`⚠️ Spårningssidan publicerades inte (kod ${r.status}). Eventen ovan är skrivna. Kör: node sparning/publicera.mjs --paket ${PAKETFIL}`);
+    console.log(`⚠️ Spårningssidan publicerades inte (kod ${r.status}). Eventen ovan är skrivna. Kör: node sparning/publicera.mjs --butik ${BUTIK.id} --paket ${PAKETFIL}`);
   }
 }
 process.exit(fel && !skrivna ? 1 : 0);

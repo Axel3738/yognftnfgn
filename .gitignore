@@ -78,3 +78,6 @@ market-expansion/*/notion-batches/*/frames/
 
 # Spårningssidan: byggd sidkropp och förhandsvisning — artefakter, inte källkod
 sparning/output/
+
+# Spårningens utdata per butik (sidkroppen + alla skanningar, ~1 MB per körning)
+sparning/butiker/*/output/

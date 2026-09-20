@@ -22,16 +22,20 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { bavernummer, arBavernummer, normalisera } from './bavernummer.mjs';
+import { lasButik, butikIdUr, filerFor } from './butik.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
-const LAGE = join(ROT, 'lage.json');
+// Butiken (--butik <id>): minnet och prefixet följer den (sparning/butiker.json).
+const BUTIK = lasButik(butikIdUr(process.argv.slice(2)));
+const LAGE = filerFor(BUTIK).lage;
+const PREFIX = BUTIK.prefix;
 
 export function lasMinne(fil = LAGE) {
   if (!existsSync(fil)) return [];
   const lage = JSON.parse(readFileSync(fil, 'utf8'));
   return Object.entries(lage.paket ?? {}).map(([nummer, p]) => ({
     nummer,
-    baver: bavernummer(nummer),
+    baver: bavernummer(nummer, PREFIX),
     order: p.order ?? null,
     bolag: p.bolag ?? null,
     status: p.status ?? null,
@@ -49,7 +53,7 @@ export function tolkaFraga(text) {
   // och bär bokstäver).
   const order = t.match(/^(?:order\s*|#\s*|order\s*#\s*)(\d+)$/i) ?? t.match(/^(\d{3,7})$/);
   if (order) return { typ: 'order', varde: `#${order[1]}` };
-  if (arBavernummer(t)) return { typ: 'baver', varde: normalisera(t).replace(/^BB/, 'BB-') };
+  if (arBavernummer(t, PREFIX)) return { typ: 'baver', varde: normalisera(t).replace(new RegExp('^' + normalisera(PREFIX)), PREFIX) };
   return { typ: 'sparning', varde: normalisera(t) };
 }
 
@@ -59,7 +63,7 @@ export function slaUpp(text, minne) {
   if (f.typ === 'baver') return { fraga: f, traffar: minne.filter((p) => p.baver === f.varde) };
   const traffar = minne.filter((p) => normalisera(p.nummer) === f.varde);
   // Ett spårningsnummer som inte finns i minnet ger ändå sitt bävernummer.
-  if (!traffar.length && f.varde) traffar.push({ nummer: f.varde, baver: bavernummer(f.varde), order: null, bolag: null, status: null, senast: null, levererad: null, utanforMinnet: true });
+  if (!traffar.length && f.varde) traffar.push({ nummer: f.varde, baver: bavernummer(f.varde, PREFIX), order: null, bolag: null, status: null, senast: null, levererad: null, utanforMinnet: true });
   return { fraga: f, traffar };
 }
 
@@ -73,10 +77,10 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   if (arg.includes('--alla')) {
     console.log(`Bävernummer   Spårningsnummer       Order    Status            Senast`);
     for (const p of minne.sort((a, b) => (b.senast ?? '').localeCompare(a.senast ?? ''))) console.log(rad(p));
-    console.log(`\n${minne.length} paket i sparning/lage.json.`);
+    console.log(`\n${minne.length} paket i ${LAGE.replace(ROT + '/', 'sparning/')} (${BUTIK.namn}).`);
     process.exit(0);
   }
-  const fraga = arg.filter((a) => !a.startsWith('--')).join(' ');
+  const fraga = arg.filter((a, i) => !a.startsWith('--') && arg[i - 1] !== '--butik').join(' ');
   if (!fraga) {
     console.log('Ange ett ordernummer (#7430), ett spårningsnummer (YT…) eller ett bävernummer (BB-…). --alla listar minnet.');
     process.exit(2);
@@ -90,5 +94,5 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   }
   console.log(`Bävernummer   Spårningsnummer       Order    Status            Senast`);
   for (const p of traffar) console.log(rad(p));
-  console.log(`\nKundens länk: https://baverbutiken.se/pages/spara?nummer=${traffar[0].baver}`);
+  console.log(`\nKundens länk: ${BUTIK.url}/pages/${BUTIK.handle}?nummer=${traffar[0].baver}`);
 }

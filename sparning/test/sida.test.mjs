@@ -644,3 +644,32 @@ test('erbjudandet under paketet: stor knapp till hjulet, "Spåra ett annat numme
   assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, erbjudande: { minsta_kop_sek: 299 } }).includes('class="bbs-erbjudande"'));
   assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, hjul: { handle: 'din-gratisprodukt' } }).includes('class="bbs-erbjudande"'));
 });
+
+test('en norsk sida KÖRS: uppslaget ur adressen ger norsk rubrik och fem punkter (2026-09-20: datumnycklarna får inte följa locale)', () => {
+  const data = fixtur();
+  data.byggd = min(klockanTio(0));
+  data.k.YT2626100708674690[2] = [[min(klockanTio(0)), 0, 0], [min(klockanTio(1)), 2, 1]];
+  data.o = { 'Paketet är på väg': 'Pakken er på vei', 'Ordern är mottagen': 'Ordren er mottatt', 'Hos fraktbolaget': 'Hos transportøren', 'Ute för leverans': 'Ute for levering', 'Levererat': 'Levert', 'På väg': 'På vei' };
+  data.sprak = 'nb';
+  const kropp = byggSidkropp(data, { ...KONFIG, sprak: 'nb', tidszon: 'Europe/Oslo' });
+  const n = kor(kropp, '?nummer=YT2626100708674690');
+  assert.equal(n.get('bbs-traff').hidden, false, 'paketet ska hittas');
+  assert.equal(n.get('bbs-saknas').hidden, true);
+  assert.equal(n.get('bbs-rubrik').textContent, 'Pakken er på vei');
+  assert.equal(n.get('bbs-steg').barn.length, 5);
+  assert.ok(n.get('bbs-steg').textContent.includes('Ordren er mottatt'), 'skedena ska bära norska etiketter ur D.o');
+  assert.ok(!n.get('bbs-steg').textContent.includes('Ordern är mottagen'));
+  assert.ok(n.get('bbs-byggd').textContent.startsWith('Oppdatert i dag'), 'byggd-raden på norska med LOC-klocka');
+});
+
+test('bävernumret slås upp med BUTIKENS prefix (CS-…), inte BB-… (mätt live på carashell.se 2026-09-20)', () => {
+  const data = fixtur();
+  data.bp = 'CS-';
+  data.k.YT2626100708674690[3] = 'f1cf2e59';
+  const kropp = byggSidkropp(data, { ...KONFIG, prefix: 'CS-' });
+  const n = kor(kropp, '?nummer=cs-f1cf2e59');
+  assert.equal(n.get('bbs-traff').hidden, false, 'CS-numret ska hitta paketet');
+  assert.equal(n.get('bbs-nummer').textContent, 'CS-F1CF2E59');
+  const fel = kor(kropp, '?nummer=BB-F1CF2E59');
+  assert.equal(fel.get('bbs-saknas').hidden, false, 'fel prefix ska inte hitta något');
+});

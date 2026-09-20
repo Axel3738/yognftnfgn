@@ -244,7 +244,7 @@ function renText(v) {
 //
 // Returnerar { data, statistik: { paket, handelser, fraser, platser, tecken,
 // varningar } }.
-export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
+export function byggData(paket, { nu, mottagarland = STANDARDLAND, prefix = BAVER_PREFIX } = {}) {
   if (!Number.isFinite(nu)) {
     throw new Error('byggData(): { nu } måste vara millisekunder — bygget frågar aldrig klockan själv.');
   }
@@ -324,7 +324,7 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
     // byter värdet — den senare posten vinner, som varningen säger.
     // Bävernumret, de åtta hexsiffrorna utan prefix. Krockar mäts i svep 2.
-    const baverHex = bavernummer(nummer).slice(BAVER_PREFIX.length).toLowerCase();
+    const baverHex = bavernummer(nummer, prefix).slice(prefix.length).toLowerCase();
     if (avvikerFranLiquid(p?.nummer)) {
       varningar.push(`Spårningsnumret "${p?.nummer}" bär tecken som Liquid inte tar bort — mejlets bävernummer skiljer sig från sidans.`);
     }
@@ -352,7 +352,7 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
   const baverSedda = new Map();
   for (const [nummer, post] of poster) {
     if (baverSedda.has(post.baverHex)) {
-      varningar.push(`Bävernummerkrock: ${nummer} och ${baverSedda.get(post.baverHex)} ger båda ${BAVER_PREFIX}${post.baverHex.toUpperCase()}.`);
+      varningar.push(`Bävernummerkrock: ${nummer} och ${baverSedda.get(post.baverHex)} ger båda ${prefix}${post.baverHex.toUpperCase()}.`);
     }
     baverSedda.set(post.baverHex, nummer);
   }
@@ -390,6 +390,7 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
     v: FORMAT,
     byggd: isoTillMinut(nu) ?? 0,
     land: mottagarland,
+    bp: prefix,
     f: fraslista.lista,
     p: platslista.lista,
     l: landlista.lista,

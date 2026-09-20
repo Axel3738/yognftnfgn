@@ -26,7 +26,10 @@ const REPO = dirname(SPARNING);
 // importerar MÅSTE stå här — annars faller testet på ERR_MODULE_NOT_FOUND i
 // temp-kopian, inte på det den mäter. steg.mjs och kontroll.mjs lades till
 // 2026-09-19 med sammanfattningsvyn.
-const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'bavernummer.mjs', 'sistabiten.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json'];
+// butik.mjs, oversatt.mjs, butiker.json och sprak/ lades till 2026-09-20 med
+// flerbutiksstödet (Axels order: samma system i alla butiker).
+const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'bavernummer.mjs', 'sistabiten.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json', 'butik.mjs', 'oversatt.mjs', 'butiker.json'];
+const SPRAKFILER = ['nb.json', 'da.json', 'fi.json'];
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå
 // konfigurationens `sida`-block.
@@ -35,6 +38,8 @@ function bygg(lage, konfigAndringar = {}) {
   mkdirSync(join(rot, 'sparning'));
   mkdirSync(join(rot, 'mejl'));
   for (const f of FILER) copyFileSync(join(SPARNING, f), join(rot, 'sparning', f));
+  mkdirSync(join(rot, 'sparning', 'sprak'));
+  for (const f of SPRAKFILER) copyFileSync(join(SPARNING, 'sprak', f), join(rot, 'sparning', 'sprak', f));
   // mejl/konfig.json läses för löftet om spårningen; mejl/shopify.mjs laddas
   // dynamiskt i en skarp körning (men anropas aldrig i testerna).
   for (const f of ['konfig.json', 'shopify.mjs']) {

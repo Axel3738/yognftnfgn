@@ -57,20 +57,23 @@ export function avvikerFranLiquid(nummer) {
 }
 
 // "BB-3F7A2C1D" — eller tom sträng för ett tomt nummer.
-export function bavernummer(nummer) {
+// `prefix` är butikens (sparning/butiker.json: BB- för Bäver-butikerna, CS-
+// för CaraShell). Hexsiffrorna är alltid samma — bara prefixet skiljer.
+export function bavernummer(nummer, prefix = PREFIX) {
   const n = normalisera(nummer);
   if (!n) return '';
   const hex = createHash('sha256').update(n, 'utf8').digest('hex');
-  return PREFIX + hex.slice(0, LANGD).toUpperCase();
+  return prefix + hex.slice(0, LANGD).toUpperCase();
 }
 
 // Uppslagsnyckel: "BB3F7A2C1D" — det uppacka.nyckel() gör av det kunden
 // skriver, med eller utan bindestreck, versaler eller inte.
-export function bavernyckel(nummer) {
-  return normalisera(bavernummer(nummer));
+export function bavernyckel(nummer, prefix = PREFIX) {
+  return normalisera(bavernummer(nummer, prefix));
 }
 
 // Ser en sträng ut som ett bävernummer? (Kunden kan skriva "bb-3f7a2c1d".)
-export function arBavernummer(text) {
-  return /^BB[0-9A-F]{8}$/.test(normalisera(text));
+export function arBavernummer(text, prefix = PREFIX) {
+  const p = normalisera(prefix);
+  return new RegExp('^' + p + '[0-9A-F]{8}$').test(normalisera(text));
 }

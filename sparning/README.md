@@ -232,13 +232,73 @@ kostar.
 Bolagskoder (17TRACK): YunExpress `190008`, 4PX `190094`, PostNord Sverige
 `19241`. Okänt bolag registreras utan kod — 17TRACK gissar ur numret.
 
-## Fler butiker
+## Fler butiker (Axels order 2026-09-20 kväll: "lägg in spårningssystemet i alla")
 
-`kor.mjs` går mot den butik `mejl/shopify.mjs` läser ur miljön
-(`SHOPIFY_CLIENT_ID_SE_BAVER_SE` + secret + `SHOPIFY_SHOP_SE`). För nästa
-butik: en `--butik`-flagga som väljer nyckelpar och egen lagefil per butik.
-Samma 17TRACK-konto och nyckel för alla — kvoten räknas per paket, inte
-per butik. Inte byggt än; Bäverbutiken först.
+Registret är **`sparning/butiker.json`** — en post per butik: namn, url,
+myshopify-domän, nycklarnas namn (`env_suffix` ⇒ `SHOPIFY_CLIENT_ID_<suffix>`
++ secret; `ops: true` ⇒ fabrikens nycklar via `listicle/butik.mjs`), språk,
+mottagarland, support, bävernumrets prefix, sidans handle/titel,
+leveranslöfte och om erbjudandet (lyckohjulet) ska visas. `node
+sparning/butik.mjs` listar. Hemligheterna ligger aldrig i filen.
+
+```bash
+node sparning/kor.mjs --butik carashell --kolla     # nycklar + rättigheter
+node sparning/kor.mjs --butik carashell             # rundan + sidan
+node sparning/publicera.mjs --butik beverbutikken --torr --paket <fil>
+node sparning/baver.mjs --butik carashell "#1030"   # kundtjänst
+```
+
+- **Bäverbutiken är standard** (`standard: true`) och bär sina filer i
+  `sparning/` som förut — rutinen på `main` rör inget. De andra får
+  `sparning/butiker/<id>/lage.json` + `konfig.json` (committas) och
+  `output/` (gitignorerad).
+- **Samma 17TRACK-konto och `TRACK17_API_KEY` för alla** — kvoten räknas per
+  paket, inte per butik. CaraShells första runda registrerade 141 paket.
+- **Språket** (`sparning/oversatt.mjs` + `sparning/sprak/nb.json`, `da.json`,
+  `fi.json`): hela kedjan byggs och KONTROLLERAS på svenska, och i sista
+  ledet byts varje mening — frasordboken, skedena, delskedena,
+  statusetiketterna, rubrikerna, sidans texter och Shopify-meddelandena —
+  mot butikens språk ur EN tabell (svensk mening → översatt). En mening
+  utan översättning står kvar på svenska och räknas i rapporten. Testet
+  `butiker.test.mjs` läser alla meningar ur källfilerna och kräver en
+  översättning i varje fil. ⚠️ Översättningarna är sessionens (2026-09-20),
+  inte en modersmålstalares — finskan är osäkrast. Rätta i JSON-filen.
+  ⚠️ Sidans datumNYCKLAR (`datumStr`) är alltid sv-SE — `nb-NO` gav
+  "20.9.2026", `dagenFore()` kastade och varje norskt uppslag blev "Vi
+  finner ikke det nummeret" (mätt 2026-09-20). Bara det som visas
+  formateras med butikens locale.
+- **Prefixet** följer butiken (`data.bp`): CaraShell `CS-…`, Bäver-butikerna
+  `BB-…`. Hexsiffrorna är samma; sidan slår upp med butikens prefix (mätt
+  live på carashell.se innan det rättades: CS-nummer gav "hittar inte").
+- **Mottagarlandet** styr steg- och kontrollogiken (`byggData`/`kontrollera`
+  får `mottagarland` ur registret). Den norska torrkörningen på
+  Bäverbutikens paket fällde 7 av 1 104 på krav 4 — rätt, de var svenska.
+- **Supportadressen** läses ur registret, annars ur Shopifys
+  `shop.contactEmail` — aldrig en annan butiks. Majavakauppas är okänd.
+- **Erbjudandet** (lyckohjulet) bara där `erbjudande: true` — Bäverbutiken.
+
+**Läget per butik 2026-09-20 kväll** (`scratchpad/scopes-alla.mjs`, token +
+`currentAppInstallation.accessScopes` per butik):
+
+| Butik | Kopplad | Appens rättigheter | Sida |
+|---|---|---|---|
+| Bäverbutiken | ✅ | ✅ | live sedan 2026-09-19 |
+| CaraShell | ✅ (fabrikens app "Factory", 154 scopes) | ✅ | **live 2026-09-20: https://carashell.se/pages/spara** — 141 registrerade, 138 event, 140 paket på sidan, CS-nummer |
+| Beverbutikken NO | ✅ (`_NO`) | ❌ "Bever No produkter claude" saknar `read_orders`, `write_fulfillments`, `write_content` | väntar — `sparning/cowork/beverbutikken.md` steg 0 |
+| Bæverbutiken DK | ❌ token-svar `app_not_installed` | — | väntar — `sparning/cowork/baeverbutiken.md` steg 0 |
+| Majavakauppa FI | ✅ (`_FI`) | ❌ "FI claudeprodukter" saknar samma tre | väntar — `sparning/cowork/majavakauppa.md` steg 0 |
+| BeaverShop UK | ✅ (`_UK`) | ❌ saknar samma tre | inte beställd av Axel; går att lägga till i registret (engelska saknas i `sprak/`) |
+
+Mejlmallar och menylänk per butik är klick i admin utan API — Cowork-prompten
+per butik ligger i `sparning/cowork/<id>.md` (för NO/DK/FI även appens
+rättigheter i Dev Dashboard, steg 0). När en butik fått rättigheterna:
+`node sparning/kor.mjs --butik <id>` (publicerar sidan), sedan rutinen
+(`/sparning <id>`, en per butik, fast session + cron på egen minut) och
+därefter Cowork-prompten steg A–C.
+
+⚠️ CaraShell säljer också till NO (/nb), US (carashell.com) och FI (/fi).
+Sidan är EN Shopify-sida på svenska; översättningar av den per marknad
+(Shopifys Translations API, som listiclarna) är inte byggda.
 
 ## Rutinen
 
