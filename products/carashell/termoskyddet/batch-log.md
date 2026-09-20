@@ -682,3 +682,24 @@ teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `k
   så speglingen 16:55 har inget att lämna hit heller.
 - Briefarna skrivs i Bäverbutikens hub sedan 2026-09-18. Tom kö i den här rutinen är det väntade
   läget; den blir användbar igen först när en människa slår på SE-kampanjen.
+
+## 2026-09-20 — `/ops-oversatt carashell/termoskyddet` (NO) — NO-kampanjen pausad av ägaren
+
+- **Nytt läge sedan i går: `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm`
+  (`120249115382210172`) är PAUSED med spend.** `updated_time` 2026-09-19 20:07 CEST,
+  21 annonser. Livstid ur Meta (`date_preset=maximum`): **3 515,44 kr / 7 köp /
+  ROAS 1,14 / CPA 502 kr** mot break-even 1,61 — kampanjen gick med förlust, pausen
+  stoppar den. PAUSED med spend = ett beslut; rutinen rör den aldrig och föreslår
+  varken `/ny-annonser` eller `--tom`.
+- Ingen rutin gjorde det: `factory/budgetlogg.jsonl` har inga NO-rader (senaste
+  termoskydds-raderna är 2026-09-18 på SE), och nattvakten i natt (körning nr 4)
+  rapporterade bara "båda marknaderna PAUSED, 0 ändringar". Alltså en människas paus.
+- Kön: 0 rader i `SE-ACTIVE to be translated` ⇒ **0 rader hållna**. Inget översatt,
+  inget renderat (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- Läge: **"NO paused by owner"** enligt kommandofilens tabell. Kommer rader in i kön
+  hålls de där tills NO-kampanjen är ACTIVE igen eller NO tas bort ur `annonsmarknader`.
+- Butiken är fortfarande redo för Norge: 548 NOK läst på `/nb`-sidan.
+- Båda marknaderna är nu pausade för produkten: SE sedan 2026-09-18 11:29, NO sedan
+  2026-09-19 20:07. Speglingen 16:55 laddar därför inte upp något heller.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551236149488656429`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-20-no-termoskyddet/`.
