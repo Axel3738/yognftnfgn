@@ -18,6 +18,20 @@ Den läser ingen text och vet inget om varumärken — OCR:en är `factory/brand
 och domen om butikens namn i en annons är `factory/brandord.mjs`. Slutkortskollen
 säger var man ska titta.
 
+⚠️ DEN HÄR FILEN ÄR INTE SPÄRREN. Spärren före uppladdning är
+`factory/bildbrand.mjs` — den importeras som `granskaOmVideo` av
+`tools/ops-spegla.mjs` och `tools/ops-leveranskon.mjs`, läser OCR ur kortet och
+dömer ren / slutkort-utan-brand / slutkort-med-brand. Den här filen är
+MÄTVERKTYGET en människa kör för hand (steg 2 i
+`factory/output/carashell/PROMPT-DK-ANNONSER.md`): den mäter var kortet BÖRJAR,
+vilket bildbrand inte gör — bildbrand antar 3,0 s bakifrån.
+Bygg aldrig in den här filen som en grind bredvid bildbrand: två grindar på
+samma fråga börjar förr eller senare svara olika.
+Jämförda 2026-09-20 på repots alla 98 mp4:or: noll oenigheter om *om* det finns
+ett kort (bildbrand 97 ren + 1 slutkort, den här 94 NEJ + 3 OSÄKER + 1 JA — och
+det är samma fil). Om kortets START skiljer de sig med flit: på
+CaraShellRoof_DK_CO_101_H1 mäter den här filen 22,71 s, bildbrand antar 22,91 s.
+
 Metoden
 -------
 1. Längd och upplösning läses ur `ffmpeg -i` (stderr).
@@ -41,6 +55,13 @@ Metoden
 Alla mätvärden följer med i svaret (antal frames, trösklar, rörelse per frame i
 slutet) så en människa kan se att domen har fel.
 
+Tidsupplösningen är en frame, alltså ±0,2 s vid 5 fps. `--fps 10` halverar den
+och kostar dubbelt så mycket tid. `--svans 12` tittar längre bak.
+
+Mätt 2026-09-20 på 98 mp4:or i repot: 1 JA (CaraShellRoof_DK_CO_101_H1, kortet
+börjar 22,71 s — kontrollbilden vid 22,70 visar kortet, alltså rätt inom en
+frame), 3 OSÄKER (frysta slutbilder), 94 NEJ, noll falska JA.
+
 Kostar 0 kr: lokal ffmpeg, ingen modell, inget nät, inget annonskonto.
 """
 
@@ -51,13 +72,33 @@ import subprocess
 import sys
 
 # --- trösklar -------------------------------------------------------------
-# Avlästa 2026-09-20 på riktigt material (se `factory/test/slutkortskoll.test.mjs`
-# och rapporten i batch-loggen). Mätt rörelse i svansen:
-#   slutkort (CaraShellRoof_DK_CO_101_H1, PNG-lager över sista 3,3 s):  0,0005–0,0032
-#   levande film som står nästan stilla (Frontrutetrekk_NO_G_1):        0,0071–0,0206
-#   levande film, normal (Termoskydd_PD_2):                             0,0148–0,0430
-# Gapet mellan stillbildslager och stillastående film är alltså ~2×, inte 100×.
-# Därför två trösklar och en OSÄKER-zon däremellan.
+# Avlästa 2026-09-20 på 98 riktiga mp4:or i repot (Bäverbutikens källvideor,
+# de norska batcherna, fabrikens utdata). Rörelse i svansen:
+#   slutkort (CaraShellRoof_DK_CO_101_H1, PNG-lager över sista 3,2 s): 0,00000–0,00001
+#   övergången IN i kortet (en enda frame):                            0,156 och 0,360
+#   levande film som står nästan stilla (Frontrutetrekk_NO_G_1):       0,0266–0,0351
+#   levande film, normal (Termoskydd_PD_2):                            0,0217–0,0510
+#   fryst sista bildruta (NO_ibc_SP_1_H1, hand lämnar bilden):         < 0,006 i 0,8 s
+# Gapet mellan stillbildslager och stillastående film är alltså ~1000×, men den
+# frysta slutbilden ligger mitt i kortets zon — därför två trösklar, en OSÄKER-zon
+# och platthet som andrasignal.
+#
+# ⚠️ MIN_LANGD_S finns av ett konkret skäl: ffmpegs fps-filter DUBBLERAR ofta sista
+# framen när strömmen tar slut mellan två uttag. Räknat 2026-09-20 på de 94 videor
+# som fick NEJ: 17 av dem har ett rörelsevärde under RORELSE_JA i sin ALLRA SISTA
+# frame utan att ha något slutkort (Frontrutetrekk_NO_*, NO_stickers_* m.fl.).
+# En enda lugn frame får aldrig bli en dom. Sänk inte MIN_LANGD_S under 0,8 s.
+# Mätt samma dag genom att köra om domslut() på samma mätdata med olika värden:
+#   0,8 → 1 JA / 3 OSÄKER / 94 NEJ      0,2 → 1 JA / 11 OSÄKER / 86 NEJ
+#   0,4 → 1 JA / 6 OSÄKER / 91 NEJ      0,0 → 1 JA / 23 OSÄKER / 74 NEJ
+# På det här korpuset blir de extra fallen OSÄKER, inte JA — plattheten räddar
+# dem, för en fryst filmruta är ett foto. Men en film som slutar PLATT (uttoning
+# mot svart, en ljus produktbild) har inget sådant skydd: med MIN_LANGD_S = 0 ger
+# en enda dubblerad slutframe då ett falskt JA. Det fallet är testat i
+# `factory/test/slutkortskoll.test.mjs` ("en dubblerad slutframe är inget kort").
+#
+# Utfallet med värdena nedan: 1 JA (rätt), 3 OSÄKER (alla verkligt tveksamma
+# frysta slutbilder), 94 NEJ, noll falska JA.
 RORELSE_JA = 0.006      # under detta: bildrutan rör sig inte, det är ett lager
 RORELSE_KANSKE = 0.011  # mellan trösklarna: kandidat, men domen blir OSÄKER
 PLATT_MIN = 0.35        # andel pixlar nära medianfärgen — ett kort har stora enfärgade ytor
@@ -233,15 +274,23 @@ def domslut(tider, rorelser, plattor, min_langd_s=MIN_LANGD_S):
     if langd(i_ja) >= min_langd_s and platt_ja >= PLATT_MIN:
         return {
             "dom": "JA",
-            "skal": (f"{n - i_ja} frames rör sig inte (< {RORELSE_JA}) över {langd(i_ja):.1f} s mätt mellan "
-                     f"första och sista framen, platthet {platt_ja:.2f} ≥ {PLATT_MIN}"),
+            # ⚠️ langd() mäter mellan FÖRSTA och SISTA UTTAGNA bildrutan, inte till
+            # filmens slut — sista uttaget ligger upp till 1/fps före slutet. Den
+            # siffran är därför alltid något mindre än `slutkort_langd_s` i svaret
+            # (POC:en: 2,8 s här, 3,20 s dit). Säg vilket som är vilket, annars
+            # läser en människa det som att verktyget säger emot sig självt.
+            "skal": (f"{n - i_ja} frames rör sig inte (< {RORELSE_JA}) över {langd(i_ja):.1f} s uttagna "
+                     f"bildrutor (kortets fulla längd står i slutkort_langd_s), "
+                     f"platthet {platt_ja:.2f} ≥ {PLATT_MIN}"),
             "fran_s": round(tider[i_ja], 2),
         }
     # Fall 2: stillbild men ytan ser ut som ett foto → frusen sista bildruta?
     if langd(i_ja) >= min_langd_s:
+        extra = " (hela det analyserade fönstret står still — stillbild, inte annons?)" if i_ja == 0 else ""
         return {
             "dom": "OSAKER",
-            "skal": f"bildrutan står still i {langd(i_ja):.1f} s men ytan är inte platt (platthet {platt_ja:.2f} < {PLATT_MIN}) — fryst slutbild snarare än ett kort?",
+            "skal": (f"bildrutan står still i {langd(i_ja):.1f} s men ytan är inte platt "
+                     f"(platthet {platt_ja:.2f} < {PLATT_MIN}) — fryst slutbild snarare än ett kort?{extra}"),
             "fran_s": round(tider[i_ja], 2),
         }
     # Fall 3: bara den tillåtande tröskeln träffar.
@@ -325,13 +374,26 @@ def _skriv_text(s):
 
 def _flagga(argv, namn, standard):
     """--namn <tal> eller --namn=<tal>. Returnerar (värde, kvarvarande argv)."""
+    def tal(rå):
+        # Ett skrivfel i en flagga ska ge en mening, inte en pythonstacktrace —
+        # och 0 eller negativt ger division med noll längre ner (tider = i/fps).
+        try:
+            v = float(rå)
+        except ValueError:
+            raise SystemExit(f"--{namn} vill ha ett tal, fick {rå!r}")
+        if v <= 0:
+            raise SystemExit(f"--{namn} måste vara större än 0, fick {v}")
+        return v
+
     kvar, varde, i = [], standard, 0
     while i < len(argv):
         a = argv[i]
         if a == f"--{namn}" and i + 1 < len(argv):
-            varde = float(argv[i + 1]); i += 2; continue
+            varde = tal(argv[i + 1]); i += 2; continue
+        if a == f"--{namn}":
+            raise SystemExit(f"--{namn} saknar värde")
         if a.startswith(f"--{namn}="):
-            varde = float(a.split("=", 1)[1]); i += 1; continue
+            varde = tal(a.split("=", 1)[1]); i += 1; continue
         kvar.append(a); i += 1
     return varde, kvar
 

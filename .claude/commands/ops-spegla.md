@@ -37,8 +37,21 @@ statusnamnen kommer därifrån — skriv dem aldrig ur minnet:
    pris (läst live) laddas inget upp — kommentar på källraden, status orörd,
    raden under ACTION NEEDED. Samma för NO mot butikens NO-pris. Okänt pris
    är aldrig grönt. Verktyget dömer; du läser domen.
-2. **Brandet.** Nämner copyn eller briefens annonstext Bäverbutiken stoppas
-   raden. En OPS-butik säger aldrig vilken butik den är.
+2. **Brandet i texten.** Nämner copyn eller briefens annonstext Bäverbutiken
+   stoppas raden. En OPS-butik säger aldrig vilken butik den är.
+2b. **Brandet i bilden — slutkortet** (`factory/bildbrand.mjs`, 2026-09-20).
+   Regel 2 läser text; den ser inte de sista sekunderna. Nio av källans
+   videor slutar med ett 3,0 s slutkort och åtta av dem bär Bäverbutikens
+   logga — de gick live i Norge med loggan kvar. Både den svenska och den
+   norska filen granskas nu FÖRE uppladdning, ~0,7 s per video. Tre domar:
+   `ren` (inget kort) laddas upp tyst; `slutkort-utan-brand` laddas upp men
+   **namnges i rapporten** (kortet kan vara på fel språk för marknaden);
+   `slutkort-med-brand` (butiksnamn eller domän i bild, **även butikens
+   eget** — PD_5_H1 bar "carashell.se") laddas **inte** upp: namngiven rad
+   under ACTION NEEDED, kommentar på källraden, status orörd. En video som
+   inte gick att läsa blir `okand` — laddas upp, men namnges. **Inget som
+   redan är live rörs** (Axels beslut 2026-09-15); spärren gäller före
+   uppladdning och stoppar alltid bara sin egen rad, aldrig körningen.
 3. **Rätt konto.** SE och NO i OPS-kontot `915422744950975`, via
    `tools/ops-till-meta.mjs` (kastar på allt annat). Bäverbutikens konton
    LÄSES bara (copy + NO-fil). US rörs inte här — det är `/ops-oversatt

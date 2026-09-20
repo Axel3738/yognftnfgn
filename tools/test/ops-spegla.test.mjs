@@ -242,6 +242,73 @@ test('byggDiscordJobb: engelska rader, hoppade under warnings, brand/pris under 
   assert.match(j.action_axel[2], /Add these Status options/);
 });
 
+// ------------------------------------------------- slutkortsspärren (2026-09-20)
+// Spärren som stoppar en uppladdning bor i bedom() och byggDiscordJobb(), inte i
+// factory/bildbrand.mjs — modulen mäter, de här två besluter. De var otestade när
+// spärren byggdes; testerna nedan är skrivna efter en adversariell granskning.
+
+const slutkortsdom = (dom, ord = null) => ({ dom, skal: 'mätt', slut_sek: 3, fynd: ord ? [{ ord, form: ord, satt: 'kallbrand/exakt' }] : [] });
+
+test('bedom: slutkort MED butiksnamn stoppar sin egen marknad — utan-brand och okänd stoppar ingenting', () => {
+  const medSe = bedom({ ...RAD_OK, slutkort: { se: slutkortsdom('slutkort-med-brand', 'baverbutiken'), no: null } });
+  assert.equal(medSe.se.ok, false);
+  assert.match(medSe.se.skal.join(), /slutkortet namnger en butik: "baverbutiken"/);
+
+  const medNo = bedom({ ...RAD_OK, slutkort: { se: null, no: slutkortsdom('slutkort-med-brand', 'beverbutikken') } });
+  assert.equal(medNo.se.ok, true, 'NO-slutkortet får aldrig stoppa den svenska raden');
+  assert.equal(medNo.no.ok, false);
+  assert.match(medNo.no.skal.join(), /NO-slutkortet namnger en butik: "beverbutikken"/);
+
+  for (const dom of ['ren', 'slutkort-utan-brand', 'okand']) {
+    const d = bedom({ ...RAD_OK, slutkort: { se: slutkortsdom(dom), no: slutkortsdom(dom) } });
+    assert.equal(d.se.ok, true, `${dom} får inte stoppa SE`);
+    assert.equal(d.no.ok, true, `${dom} får inte stoppa NO`);
+  }
+  // En rad utan granskning (bild, dubblett i Meta, kö utan --ut) stoppas aldrig
+  // av spärren — "inte granskad" är inte samma sak som "fälld".
+  assert.equal(bedom({ ...RAD_OK, slutkort: { se: null, no: null } }).se.ok, true);
+  assert.equal(bedom({ ...RAD_OK, slutkort: null }).se.ok, true);
+});
+
+test('byggDiscordJobb: NO-fyndet göms inte när SE-slutkortet redan stoppat raden', () => {
+  // Buggen: dubblettskyddet var rad-brett, och korSpegling lägger bara SE-skälen
+  // i r.skal. En rad med butiksnamn i BÅDA korten tappade NO-fyndet helt.
+  const j = byggDiscordJobb({
+    brand: 'CaraShell', datum: '2026-09-20', rader: [{
+      namn: 'Takoverdrag_CO_1_H1', utfall: 'hoppad', skal: 'slutkortet namnger en butik: "baverbutiken"',
+      slutkort: { se: slutkortsdom('slutkort-med-brand', 'baverbutiken'), no: slutkortsdom('slutkort-med-brand', 'beverbutikken') },
+    }],
+  });
+  const noRader = [...j.varningar, ...j.action_axel].filter((r) => /\(NO\)/.test(r));
+  assert.ok(noRader.length >= 1, 'NO-fyndet måste stå i rapporten — ett fynd göms aldrig');
+  assert.ok(j.action_axel.some((r) => /\(NO\).*end card names a store/.test(r)), 'och det ska ligga under ACTION NEEDED');
+  // SE-fyndet står redan i "skipped"-raden: det upprepas inte.
+  assert.equal(j.varningar.filter((r) => /\(SE\)/.test(r)).length, 0);
+});
+
+test('byggDiscordJobb: en rapportrad påstår aldrig att något laddats upp', () => {
+  // En rad kan bära "slutkort-utan-brand" och ändå stoppas av priset. Raden
+  // sa förut "Uploaded — check …" ändå.
+  const j = byggDiscordJobb({
+    brand: 'CaraShell', datum: '2026-09-20', rader: [{
+      namn: 'Takoverdrag_RI_1_H1', utfall: 'hoppad', skal: 'pris SE: creativen säger 1469',
+      slutkort: { se: slutkortsdom('slutkort-utan-brand'), no: slutkortsdom('okand') },
+    }],
+  });
+  for (const rad of j.varningar) assert.doesNotMatch(rad, /\bUploaded\b/, `osant påstående i rapporten: ${rad}`);
+  assert.ok(j.varningar.some((r) => /\(SE\): has an end card/.test(r)));
+  assert.ok(j.varningar.some((r) => /\(NO\): end card could not be checked/.test(r)));
+});
+
+test('byggDiscordJobb: ett rent slutkort ger ingen rad alls', () => {
+  const j = byggDiscordJobb({
+    brand: 'CaraShell', datum: '2026-09-20',
+    rader: [{ namn: 'A_1_H1', spegel: 'B_101_H1', utfall: 'speglad', se: { ad_id: '1', kampanj: 'K' }, no: { ad_id: '2', kampanj: 'K2' }, slutkort: { se: slutkortsdom('ren'), no: slutkortsdom('ren') } }],
+  });
+  assert.deepEqual(j.varningar, []);
+  assert.deepEqual(j.action_axel, []);
+});
+
 test('utanInternt: block och scheman skrivs aldrig ut', () => {
   const ut = utanInternt({ brand: 'X', _hubbar: { kalla: {} }, rader: [{ namn: 'a', _block: [1, 2] }] });
   assert.equal(ut._hubbar, undefined);

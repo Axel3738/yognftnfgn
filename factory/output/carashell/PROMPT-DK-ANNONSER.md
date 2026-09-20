@@ -36,11 +36,27 @@ LÄNKARNA: https://carashell.se/da/products/takskyddet?country=DK
 carashell.com och ser engelska och dollar. Ta länken ur
 `factory/opsmarknader.mjs` (`marknadslank`), gissa den aldrig.
 
-SPRÅKET: danska. Röstdubbning via HeyGen med output_language
-"Danish (Denmark)" (avläst ur `node pipeline/localize.mjs langs` 2026-09-20 —
-listan har både "Danish" och "Danish (Denmark)"; den senare följer mönstret
-från norskan). ElevenLabs är INTE en dubbningsväg i repot — `voiceover/` gör
-bara svensk voiceover från manus.
+SPRÅKET: danska. ⚠️ **Omdubbningen görs med ElevenLabs, inte HeyGen.**
+Axel dömde ut HeyGens klonröst 2026-09-16 kväll; vägen som gäller står i
+`pipeline/omdubb/README.md` under rubriken "ElevenLabs-vägen (den som gäller
+sedan 2026-09-16 kväll)":
+
+  node pipeline/omdubb/elevenlabs-omdubb.mjs --kalla=<källa.mp4> \
+       --srt=<manus.srt> --ut=<ut.mp4> --rost="<röstnamn>" [--torr]
+
+Kör `--torr` först och läs tabellen — en ⚠️-rad betyder att manuset är för
+långt för filmen. Efteråt: `python3 pipeline/rostkoll.py` (obligatoriskt,
+gratis) och captions med `no-captions.py`. Noll HeyGen-krediter.
+⚠️ `CLAUDE.md` beskriver fortfarande `/translate` som HeyGen. Den raden är
+inte uppdaterad efter 2026-09-16 och gäller Bäverbutikens `/translate`-flöde,
+inte OPS-omdubben. Följ README:n i `pipeline/omdubb/`.
+
+⚠️ **DANSK RÖST SAKNAS — fråga Axel innan första videon renderas.** README
+listar bara SE ("Martin - Warm, Confident and Relatable") och NO ("Martin -
+Clear and Comforting") och har järnregeln *"dubba aldrig norska med den
+svenska rösten"*. Samma sak gäller danska. Mätt 2026-09-20 med
+`cd voiceover && npm run voices`: ingen röst på kontot är märkt dansk.
+Rendera ingen dansk video förrän rösten är bestämd.
 
 ── SLUTKORTEN, det här är hela poängen ──────────────────────────────────
 

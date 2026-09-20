@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import {
   annonsdel, statusLika, typAv, tolkaNamn, noNamn, malNamn, kampanjBas, adsetNamn,
   hittaAdset, valjMalkampanj, dubblettKarta, dubblett, lankUr, arvdLank,
-  handleUr, produktJsonUrl, prisUr, prisUrJsonLd, leveransText, prefixAvviker, STANDARD_STATUS,
+  handleUr, produktJsonUrl, prisUr, prisUrJsonLd, leveransText, prefixAvviker, STANDARD_STATUS, tabell,
 } from '../ops-leveranskon.mjs';
 import { tillhorButiken } from '../../factory/register.mjs';
 
@@ -332,4 +332,42 @@ test('valjMalkampanj: en ensam LISTICLE-kampanj tas emot som vanligt', () => {
   const val = valjMalkampanj([{ id: '9', name: 'X_SE_Produkten LISTICLE', status: 'ACTIVE' }], 'SE');
   assert.equal(val.kampanj?.id, '9');
   assert.equal(val.skal, null);
+});
+
+// ---------------------------------------------- slutkortsspärren i kötabellen
+// Tabellen är det rutinen läser innan den laddar upp. Var raden syns, hur den
+// räknas och om den säger "LADDA INTE UPP" är alltså spärrens synliga del —
+// den var otestad när spärren byggdes (adversariell granskning 2026-09-20).
+
+const KO_BAS = {
+  butik: 'CaraShell', nyckel: 'carashell/takskyddet', marknad: 'SE', status: 'To be Reviewed',
+  hub: { titel: 'Carashell creative hub', id: 'abc' }, konto: '915422744950975', kontonamn: 'MagiBorsten DK',
+  kampanj: null, kampanj_skal: 'ingen', lank_arvd: 'https://carashell.se/products/takskyddet', lank_standard: null,
+  pris_butik: null, pris_skal: 'okänt', cs_lamnade: [], varningar: [],
+};
+const KO_RAD = {
+  namn: 'CaraShellRoof_CO_101_H1', mal_namn: 'CaraShellRoof_CO_101_H1', typ: 'video', url: 'https://notion.so/r',
+  finns_i_meta: false, ad_id: null, prefix_avviker: false, fran_cs: false, leverans_text: 'bilaga', fil: '/x/a.mp4',
+  fil_fel: null, koncept: 'CO', nummer: 101, variant: 'H1', adset_namn: 'X - CO', adset: null, lank: 'https://carashell.se/x',
+  landning: null, slutkort: null,
+};
+
+test('tabell: en slutkortsstoppad rad syns, säger LADDA INTE UPP och räknas inte som "att ladda upp"', () => {
+  const t = tabell({
+    ...KO_BAS,
+    rader: [
+      { ...KO_RAD, slutkort: { dom: 'slutkort-med-brand', skal: 'slutkortet namnger en butik', fynd: [{ ord: 'baverbutiken' }], blockerar: true } },
+      { ...KO_RAD, namn: 'CaraShellRoof_GT_1_H1', slutkort: { dom: 'ren', skal: 'inget slutkort', fynd: [], blockerar: false } },
+    ],
+  });
+  assert.match(t, /slutkort: ⛔ slutkort-med-brand .* → LADDA INTE UPP/);
+  assert.match(t, /2 rad\(er\) i kön · 1 att ladda upp · 0 finns redan · 1 stoppad\(e\) av slutkortet/);
+  assert.match(t, /⛔ 1 rad\(er\) stoppas av slutkortet: CaraShellRoof_CO_101_H1/);
+  assert.match(t, /Inget som redan är live rörs/);
+});
+
+test('tabell: utan granskning skrivs ingen slutkortsrad — "inte granskad" är inte "ren"', () => {
+  const t = tabell({ ...KO_BAS, rader: [{ ...KO_RAD, typ: 'bild', slutkort: null }] });
+  assert.doesNotMatch(t, /slutkort:/);
+  assert.match(t, /1 rad\(er\) i kön · 1 att ladda upp · 0 finns redan$/m);
 });
