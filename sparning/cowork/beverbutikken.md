@@ -33,6 +33,33 @@ Det som återstår är steg A–C nedan — hoppa över steg 0.
   kvar. Den nya mallen har `{% if fulfillment.tracking_number %}` runt
   knappen och orderstatussidan som reserv.
 
+## ✅ Utfall 2026-09-20 sen kväll — de NYA mallarna ligger på servern, testmejl OK
+
+Axel trodde Norge-fliken gått förlorad, men Cowork hade hunnit klart:
+körningen av `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md` fann
+alla tre mallarna **redan identiska med råfilerna** på servern
+(EmailTemplate-API, `bodyHtml` + `updatedAt`, inte redigeraren):
+
+| Mall | Shopify-id | Tecken | updatedAt (UTC) |
+|---|---|---|---|
+| Leveransbekräftelse | `shipping_confirmation` | 10 436 | 2026-09-20 20:46:18 |
+| Leveransuppdatering | `shipping_update` | 6 240 | 20:55:19 |
+| Ute för leverans | `shipment_out_for_delivery` | 6 243 | 20:58:24 |
+
+Ämnesraderna rätt, `BB-` + `sha256` i alla tre, inget sparat om. Ingen gul
+avsändarbanner. Testmejl till axelodhner.business@gmail.com: en enda knapp
+**Spor pakken** → `https://beverbutikken.no/pages/spor?nummer=BB-6C1002DF`.
+Knappen går via Shopifys klickspårning (`/_t/c/v3/…`) före sidan — Shopifys
+standard för alla notiser, inget i mallen.
+
+⚠️ **Avsändaradressen är Beverbutikken@gmail.com.** Shopify tar inte
+Gmail-domäner som anpassad avsändare, så mejlen går från
+`store+95795249527@shopifyemail.com` medan sidfoten hänvisar till
+kundesupport@beverbutikken.no. Lösningen är Axels klick: Inställningar →
+Aviseringar → Avsändarens e-post → `kundesupport@beverbutikken.no` →
+verifieringslänken i den inkorgen. Axel går igenom alla butikers
+avsändaradresser samma kväll.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
