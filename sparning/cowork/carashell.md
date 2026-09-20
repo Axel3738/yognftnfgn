@@ -30,6 +30,19 @@ kopierad rakt in i Cowork. Delen under linjen är prompten.
   mejlet (mallen räknar på `fulfillment.tracking_number`, det första).
   Sidan slår upp varje kolli för sig, så kunden ser det första paketet.
 
+## ✅ Utfall 2 — nya mallen inne (Cowork 2026-09-20 22:29–22:33 CEST)
+
+`mejl/output/butiker/carashell/COWORK-PROMPT.md` körd: alla tre mallarna
+skrivna via kodrutans API och lästa tillbaka ur serverns `EmailTemplate`
+tecken för tecken (10 179 / 6 053 / 6 042, identiska med råfilerna,
+`updatedAt` 20:29:41Z / 20:31:42Z / 20:32:25Z). Ämnesraderna bytta till
+"Ditt paket är på väg" / "Ny info om ditt paket" / "Paketet kommer idag".
+Testmejl till axelodhner.business@gmail.com 22:33: en knapp **Spåra
+paketet** → `carashell.se/pages/spara?nummer=CS-6C1002DF` (HTML-versionen
+bär Shopifys klickspårning `/_t/c/v3/…` framför — standard, vidarebefordrar).
+`shipping_update` hade `updatedAt` 20:00:06Z före körningen = Coworks
+egen knapp-körning tidigare samma kväll, inget annat. **Butiken är helt klar.**
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
