@@ -6,6 +6,30 @@ Det som återstår är klick i Shopify-admin utan API: mejlmallarna och
 menyn. Axel klistrar inte in något själv — den här texten är uppgiften,
 kopierad rakt in i Cowork. Delen under linjen är prompten.
 
+## Utfall (Cowork, 2026-09-20 sen kväll) — ✅ KLART
+
+- **A.** Alla tre mallarna (Leveransbekräftelse, Leveransuppdatering, Ute
+  för leverans) ändrade och lästa tillbaka ur serverns mall-data: 8 rader
+  per mall, `pages/spara?nummer=` ×2, `sha256` ×6, "Ditt paketnummer" ×3,
+  `fulfillment.tracking_url` 0, `tracking_company` 0. Slingan över
+  `tracking_numbers` förenklad till `{% if fulfillment.tracking_numbers.size == 1 %}`
+  / `{% if tracking_number %}`.
+- **B.** "Spåra paket" → `/pages/spara` sist i **Main menu** och **Footer
+  menu**, verifierat i kundens vy på carashell.se.
+- **C.** Testmejl skickat till axelodhner.business@gmail.com (Shopifys
+  testmejl bär ett påhittat spårningsnummer ⇒ länken visar "hittar inte",
+  det är väntat).
+- Stopp på vägen: avsändaradressen hello@carashell.se var **ej verifierad**
+  och testmejlet gick inte att skicka. Axels val: skicka verifieringen,
+  klicka länken i inkorgen, sedan A + C. Löst — märket borta.
+- **Kvar, Axels beslut:** Shopifys egen knapp "Spåra order med Shop"
+  (`shop_app_tracking_url`) står orörd i mallarna. Den leder till Shop-appen,
+  inte till spårningssidan. Byts den mot "Spåra paketet" → `/pages/spara`
+  är det ett eget litet Cowork-steg (samma tre mallar).
+- Anmärkning från Cowork: en leverans med flera kolli får samma CS-nummer i
+  mejlet (mallen räknar på `fulfillment.tracking_number`, det första).
+  Sidan slår upp varje kolli för sig, så kunden ser det första paketet.
+
 ---
 
 Du jobbar i Chrome i min inloggade Shopify-admin för butiken **CaraShell**
