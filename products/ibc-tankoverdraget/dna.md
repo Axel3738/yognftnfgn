@@ -476,3 +476,60 @@ längre skrivas som produktens huvudsakliga hinder.
 Samtliga 10 lästa ordagrant från produktsidan, alla 5 stjärnor. Använda
 hittills: Maria + Lena (batch #2), Karin + Daniel (batch #5), Johan + Sofia
 (batch #6). Kvar oanvända: Emma, Magnus, Peter, Anders.
+
+---
+
+## Uppdatering 2026-09-20 (`/cs`-körning, batch #7, rond-auto steg 4b, behov `brief_runda`, 3 dygn sedan batch #6)
+
+**Källa:** MagiBorsten `1867947880635861`, kampanj `120250001079150291`, ad-nivå,
+`date_preset: maximum`, hämtat 2026-09-20 ~06:00 UTC. Kampanjen kontrollerad
+ACTIVE före batchen. `amount_spent × purchase_roas` som intäkt.
+
+**Livstid:** 37 652 kr spend · 135 köp · ROAS 2,39 · intäkt 89 862 kr.
+**AOV 666 kr → break-even-CPA 441 kr** (BE-ROAS 1,51 ur kampanjnamnet).
+Dagsbudget 600 kr, domen i dag `VANTA_KADENS`.
+
+### Vinstbidrag = (441 − CPA) × köp
+
+| Annons | Format | Spend | Sp% | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|---|
+| **PD_1_H1** (benchmark) | video | 29 816 kr | 79,2 % | 112 | 266 | 2,48 | **19 553 kr** |
+| PD_Extra | video | 1 580 kr | 4,2 % | 8 | 197 | 2,69 | 1 947 kr |
+| CS_1_H3 | statisk | 1 101 kr | 2,9 % | 6 | 183 | 3,60 | 1 544 kr |
+
+**För tidigt:** `PD_9_1` (199 kr, **3 köp**, ROAS 21,7 — klarar köpgrinden men
+inte spendgrinden; batch #5:s starkaste signal, väntar på 300 kr), SP_3_H1
+(979 kr, 2 köp, ROAS 1,0), CO_1_1 (870 kr, 1 köp, ROAS 0,56 — lutar
+förlorare), PD_2_1 (618 kr, 0), PD_1_H2 (396 kr, 0), CS_2_1 (144 kr, 0).
+
+### Feedbackloop på batch #6 (2026-09-17)
+- **Levererat:** `PD_10_H1`, `PD_10_H2`, `CS_8_H1` ligger i hubben som
+  **Creative strat review** — redigerarna har gjort dem, de väntar på
+  CS-granskning (`/granska`), inte i kontot än.
+- **Live sedan 2026-09-18:** `PD_10_1` (41 kr), `BOF_13/14/15` (< 1 kr),
+  `RV_9_1`/`RV_10_1` (< 1 kr), `CO_2_H1` (25 kr). Ingen dom.
+- Hypoteserna om längd (PD_10_H1 vs H2) och prisvideo (CS_8_H1) är alltså
+  producerade men obesvarade.
+
+### Det som är nytt
+1. Benchmarkens CPA fortsätter krypa: 173 → 205 → 208 → 256 → 263 → **266 kr**.
+   Fortfarande 40 % under break-even. Trenden är oförändrad, ingen larm.
+2. **Recensionerna avlästa igen, ordagrant ur sidans HTML:** 10 st, **7 × 5★
+   och 3 × 4★ (Karin, Daniel, Emma är 4★)** → **4,7 av 5**. Det avgör batch
+   #6:s öppna fråga: läsningen från 2026-09-04 var rätt, 2026-09-17:s "alla
+   5 stjärnor" var fel. Aggregatet "4,7 av 5 på 10 recensioner" är nu
+   verifierat och används i BOF_16_1.
+3. **Ingen 2-pack finns på sidan** (JSON: en variant, "Default Title",
+   489/636 kr). Batch #5:s `CS_7_1` ("2-packet är förvalt") byggde på en
+   premiss som inte stämmer i dag — den är Approved i hubben; flaggas till
+   Axel, rörs inte.
+4. Oanvända recensioner före i dag: Emma (4★) och Anders (5★) — använda nu.
+   Magnus/Peter användes i batch #4 (gamla hubben), Karin/Daniel i #5,
+   Johan/Sofia i #6, Maria/Lena i #2. Alla tio är nu använda en gång.
+
+### Batch #7 — variabler som isoleras
+- **Talare** på vinnarens manus (PD_11_H1: creator on camera i stället för
+  röst utan ansikte — PD_4_H2 hade samma hypotes men fick 88 kr).
+- **Förlustvinkel** (RI_1_H1/RI_1_1: en sommar utan överdrag + sidans
+  storm-rad) — otestad mekanism.
+- **Längd på prisvinkeln** (CS_9_H1, 12–15 s, samma rader som CS_8_H1).

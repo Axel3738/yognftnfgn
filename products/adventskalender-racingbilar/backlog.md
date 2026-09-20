@@ -12,9 +12,8 @@ Tom vid skapande (batch #1, 2026-09-10) — inga koncept väntar ännu.
   i batch #1 (Anna, Johan). Kvar i den riktiga CSV:n: Emma, Linda, Sara,
   Erik, Maria, Daniel, Sofia, Peter (samtliga 5 stjärnor, verbatim, källa:
   Drive-CSV "Adventskalender Racingbilar_REVIEW").
-- **Andra formatet på UGC-vinkeln** — batch #1 testar en talande förälder
-  (`UG_1_H1`). Om det slår an: fler UGC-varianter (annan förälder, annat
-  hem-scenario) är en naturlig andra omgång.
+- ~~**Andra formatet på UGC-vinkeln**~~ `[använd i batch #4]` → `UG_3_H1`
+  (annan förälder, kvällsscenario). UG_2_H1 gav 2 köp på 332 kr, ROAS 4,05.
 - **"Vilken bil gömmer sig bakom luckan idag?"-nyfikenhetsmekanik** (lånad
   från en konkurrent, Dumpling-tema-kalendern) — bara delvis testad i
   `AU_1_H1`/`CO_1_H1`:s öppningsscener denna batch. En renodlad

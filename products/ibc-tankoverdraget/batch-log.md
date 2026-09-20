@@ -461,3 +461,49 @@ tre-frågorstestet rad för rad; huvudsessionen gjorde analysen, hypoteserna,
 namngivningen, briefstrukturen och rättelsen ovan.
 
 **Nästa lediga AD-ID:** PD 11, CS 9, GT 6, SP 6, CO 3, BOF 16, RV 11.
+
+---
+
+## Batch #7 — 2026-09-20 (`/cs`, rond-auto steg 4b, behov `brief_runda`, 3 dygn sedan batch #6)
+
+**Underlag:** livstid 2026-09-20 — 37 652 kr, 135 köp, ROAS 2,39, intäkt
+89 862 kr. AOV 666 kr → break-even-CPA 441 kr. Kampanjen ACTIVE, budget
+600 kr (VANTA_KADENS i dag). Full analys i `dna.md` 2026-09-20.
+
+**Feedback-rad i hubben:** ingen rad med Typ `Feedback` finns i
+`BÄVER IBC-Tanköverdraget` (SQL mot collectionen 2026-09-20) — ingen tidigare
+briefgranskning har lämnat regler. **Annonsidéer:** inga rader för IBC.
+
+**Feedbackloop batch #6:** PD_10_H1/PD_10_H2/CS_8_H1 levererade, står i
+`Creative strat review`; de sex statiska live sedan 18/9 med < 41 kr var.
+Inget utfall att logga än.
+
+**Briefer i denna batch — 9 st (3 video, 1 statisk i rundan = `rundaAntal 4`, + 3 BOF + 2 recension):**
+
+| Annons | Format | Variabeltaggar | Hypotes | Källa |
+|---|---|---|---|---|
+| IBC_PD_11_H1 | Video 20–25 s | Angle: pain · Hook: vinnarens · Format: creator on camera · Proof: 210D/blixtlås/topp · Offer: inget pris · Talare: **creator man** | Vinnarens exakta manus, ENDA variabeln är talaren (ansikte i bild) | PD_1_H1 |
+| IBC_RI_1_H1 | Video 20–25 s | Angle: cost of inaction · Hook: en sommar utan · Proof: sidans storm-rad | Förlustvinkeln otestad på produkten | Produktsidan |
+| IBC_CS_9_H1 | Video 12–15 s | Angle: pris · Hook: 489/636/147 · Format: kort klipp | Isolerar längden på prisvinkeln mot CS_8_H1 (20–25 s) | CS_1_H3 + PD_Extra-gapet |
+| IBC_RI_1_1 | Statisk | Split: bar tank i sol / överdrag på | Statisk tvilling till RI_1_H1 | RI_1_H1 |
+| IBC_BOF_16_1 | BOF | 4,7 av 5 på 10 recensioner | Verifierat aggregat, första gången | Judge.me 2026-09-20 |
+| IBC_BOF_17_1 | BOF | Ljuset ute, vattnet klart — mekanismen | Utfallet som BOF | Produktsidan |
+| IBC_BOF_18_1 | BOF | Passar den? 120 × 100 × 116 cm | Vanligaste invändningen, ny rad | Produktsidan |
+| IBC_RV_11_1 | Recension | Anders, 5★, ordagrant | — | Judge.me 2026-09-20 |
+| IBC_RV_12_1 | Recension | Emma, **4★**, ordagrant (ärligt märkt) | — | Judge.me 2026-09-20 |
+
+**Naming:** upptagna ID avlästa i kontot 2026-09-20: PD ≤ 10, CS ≤ 8 (CS_8_H1 i
+hubben), GT ≤ 5, SP ≤ 5, CO ≤ 2, BOF ≤ 15, RV ≤ 10. Nya: PD 11, CS 9, RI 1
+(ny kod), BOF 16–18, RV 11–12.
+
+**Backlog:** tom, dubbelkollad.
+
+**Levererat:** samtliga 9 som items i **`BÄVER IBC-Tanköverdraget`**
+(`collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2`), Status `Draft`, Typ
+`Video`/`Image - Pending Approval`, hela briefen i sidan. Verifiering står i
+rondens rapport 2026-09-20. Ingen Drive-mapp skapad.
+
+**Modellpolicy:** följd — sonnet-subagent skrev copyn, huvudsessionen analys,
+hypoteser, namn och struktur.
+
+**Nästa lediga AD-ID:** PD 12, CS 10, GT 6, SP 6, CO 3, RI 2, BOF 19, RV 13.

@@ -267,3 +267,56 @@ obesvarat, för raden svälter.
 Samtliga 10 lästa ordagrant från produktsidan, alla 5 stjärnor. Använda:
 Anna + Johan (batch #1), Sara + Emma (batch #2), Erik + Daniel (batch #3).
 Kvar oanvända: Peter, Sofia, Maria, Linda.
+
+---
+
+## Uppdatering 2026-09-20 (`/cs`-körning, batch #4, rond-auto steg 4b, fokus "ersätt det som pausats i trappan")
+
+**Källa:** MagiBorsten `1867947880635861`, kampanj `120250134672020291`, ad-nivå,
+`date_preset: maximum`, hämtat 2026-09-20 ~06:00 UTC. Kampanjen ACTIVE.
+
+**Livstid:** 10 791 kr spend · 35 köp · ROAS 1,91 · intäkt 20 637 kr.
+**AOV 590 kr → break-even-CPA 364 kr** (BE-ROAS 1,62). Dagsbudget 500 kr —
+rondens dom i dag `UPPSKJUTEN_GRANS` (SKALA till 600 kr föreslagen, 0,6
+procentenheter från zongränsen). 3-dagars: 1 515 kr, 7 köp, ROAS 2,77 —
+kampanjen har vänt upp sedan de två PD_2-annonserna pausades.
+
+### Vinstbidrag = (364 − CPA) × köp
+
+| Annons | Format | Status | Spend | Sp% | Köp | CPA | ROAS | Vinstbidrag |
+|---|---|---|---|---|---|---|---|---|
+| PD_2_H1 | video | PAUSED | 4 243 kr | 39,3 % | 11 | 386 | 1,40 | **−240 kr** |
+| PD_2_1 | statisk | PAUSED | 2 973 kr | 27,5 % | 10 | 297 | 2,12 | **+666 kr** |
+| GT_1_H1 | video | ACTIVE | 1 218 kr | 11,3 % | 4 | 304 | 1,93 | +238 kr |
+
+**För tidigt, men det är här kampanjen lever nu:** `UG_2_H1` (332 kr, 2 köp,
+ROAS 4,05 — UGC-föräldern, batch #2), `PD_9_H1` (191 kr, 1 köp, ROAS 4,43 —
+videon på stillbildens komposition, live sedan 18/9), `GT_2_1` (501 kr, 2 köp,
+ROAS 1,99), `PD_1_H1` (227 kr, 2 köp), `BF_6_1` (225 kr, 1 köp), `RV_3_1`
+(101 kr, 1 köp), `CS_2_1` (95 kr, 1 köp).
+
+### Feedbackloop på batch #3 (2026-09-17)
+Live sedan 18/9: `PD_10_1` (17 kr), `FM_2_H1` (78 kr), `BF_7/8/9` (< 10 kr),
+`RV_5/6` (< 2 kr). `PD_10_H1` levererad, står i `Creative strat review`.
+Ingen bedömbar. ⚠️ **Namnkrock:** batch #3 återanvände `CO_3_H1` och
+`FM_2_H1` från batch #2 — hubben har nu TVÅ rader med vardera namnet (en
+Approved, en Creative strat review). Nästa körning måste läsa av kontot,
+inte batch-loggens "nästa lediga", innan den numrerar. Batch #4 använder
+CO 4, FM-serien lämnas orörd.
+
+### Mönster (uppdaterade)
+1. **BEVISAD (oförändrad):** chokladkonflikten på den STATISKA helscenen är
+   produktens enda bevisade vinnare (+666 kr) — och den är pausad.
+2. **HYPOTES, ny (2 köp, ROAS 4,05):** UGC-förälder som pratar till kamera
+   (UG_2_H1) är kampanjens starkaste nya signal. → UG_3_H1 testar formatet
+   med ny person/scenario (kväll i stället för morgon).
+3. **HYPOTES (1 köp, ROAS 4,43):** videon på stillbildens komposition
+   (PD_9_H1) svarar batch #2:s fråga åt rätt håll. → PD_11_H1 behåller
+   kompositionen och isolerar hooken (24 olika bilar mot chokladraden).
+4. **GT_1_H1 är den enda lönsamma aktiva bedömbara annonsen** (+238 kr) →
+   GT_4_H1 near-iteration med ett ordagrant recensionscitat som skäl.
+
+### Recensioner omlästa 2026-09-20 (sidans HTML)
+10 st, alla 5★ — "5,0 av 5 på 10 recensioner" verifierat, används i BF_11_1.
+Använda före i dag: Anna, Johan (#1), Sara, Emma (#2), Erik, Daniel (#3).
+Nu: Peter, Sofia (#4). Kvar: Maria, Linda.

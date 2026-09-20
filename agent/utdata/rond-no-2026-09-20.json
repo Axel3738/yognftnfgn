@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "idag": "2026-09-20",
+    "hamtad": "2026-09-20T05:40:00Z",
+    "marknad": "NO",
+    "varningar": []
+  },
+  "rader": [
+    {
+      "id": "120252299777560233",
+      "namn": "Dinosaur Adventskalender NO | BE-ROAS 1,46 | 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 706.76,
+      "spendTotal": 753.06,
+      "roas3d": 1.791796,
+      "kop3d": 2,
+      "roasTotal": 1.681632,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "FOR_LITE_DATA",
+        "rubrik": "För lite data för en dom",
+        "motivering": "707 kr och 2 köp på 3 dagar. Grinden går vid 300 kr och 3 köp. Rör ingenting.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": null,
+        "breakEven": 1.46,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252299606860233",
+      "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 713.6,
+      "spendTotal": 792.46,
+      "roas3d": null,
+      "kop3d": null,
+      "roasTotal": null,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "FOR_LITE_DATA",
+        "rubrik": "För lite data för en dom",
+        "motivering": "714 kr och okänt antal köp på 3 dagar. Grinden går vid 300 kr och 3 köp. Rör ingenting.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": null,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252299552200233",
+      "namn": "Vedkløyverbor NO | BE-ROAS 1,61 | 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 731.97,
+      "spendTotal": 767.92,
+      "roas3d": 0.426698,
+      "kop3d": 1,
+      "roasTotal": 0.406722,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "FOR_LITE_DATA",
+        "rubrik": "För lite data för en dom",
+        "motivering": "732 kr och 1 köp på 3 dagar. Grinden går vid 300 kr och 3 köp. Rör ingenting.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": null,
+        "breakEven": 1.61,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252183673160233",
+      "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
+      "lage": "test",
+      "budget": 3000,
+      "spend3d": 8529.86,
+      "spendTotal": 17297.77,
+      "roas3d": 3.221584,
+      "kop3d": 17,
+      "roasTotal": 3.037041,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "SKALA",
+        "rubrik": "Skala upp 20 %",
+        "motivering": "30,3 % vinst av omsättningen (ROAS 3,22 mot break-even 1,63). Ändra från 3 000 kr till 3 600 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "nyBudget": 3600,
+        "zon": "up",
+        "vinstProcent": 30.309062307252916,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "lage": "test",
+      "budget": 4000,
+      "spend3d": 12494.23,
+      "spendTotal": 27797.86,
+      "roas3d": 2.27775,
+      "kop3d": 21,
+      "roasTotal": 2.829256,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Låt vara",
+        "motivering": "17,8 % vinst av omsättningen (ROAS 2,28 mot break-even 1,62). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 17.825420635210996,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 2777.59,
+      "spendTotal": 13741.54,
+      "roas3d": 1.951606,
+      "kop3d": 12,
+      "roasTotal": 1.989191,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "10,1 % vinst av omsättningen (ROAS 1,95 mot break-even 1,63). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 10.10984258495452,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "lage": "test",
+      "budget": 1950,
+      "spend3d": 4049,
+      "spendTotal": 22882.45,
+      "roas3d": 2.230595,
+      "kop3d": 12,
+      "roasTotal": 2.500084,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 1 dag sedan. Nästa ändring tidigast efter 3 dagar.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": 16.518605582100253,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    }
+  ],
+  "plan": {
+    "sparrad": false,
+    "orsak": null,
+    "atgarder": [
+      {
+        "kampanj_id": "120252183673160233",
+        "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
+        "kod": "SKALA",
+        "motivering": "30,3 % vinst av omsättningen (ROAS 3,22 mot break-even 1,63). Ändra från 3 000 kr till 3 600 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "typ": "budget",
+        "fran_sek": 3000,
+        "till_sek": 3600,
+        "till_ore": 360000
+      }
+    ],
+    "uppskjutna": [],
+    "gammalTotal": 12950,
+    "nyTotal": 13550
+  },
+  "annonsbehov": [],
+  "veckokvot": [
+    {
+      "kampanj_id": "120252299777560233",
+      "namn": "Dinosaur Adventskalender NO | BE-ROAS 1,46 | 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252299606860233",
+      "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252299552200233",
+      "namn": "Vedkløyverbor NO | BE-ROAS 1,61 | 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252183673160233",
+      "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "antal": 3,
+      "nyaKoncept": 1
+    }
+  ]
+}

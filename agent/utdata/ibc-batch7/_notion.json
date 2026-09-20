@@ -1,0 +1,78 @@
+{
+ "collection": "4ce270ab-908c-8260-9ad0-07426ac2b1c2",
+ "datum": "2026-09-20T06:04:39.825Z",
+ "sidor": [
+  {
+   "namn": "IBC_BOF_16_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-81d2-aaa0-f15502149c9c",
+   "url": "https://app.notion.com/p/IBC_BOF_16_1-3e1270ab908c81d2aaa0f15502149c9c",
+   "block": 18,
+   "tabeller": 4
+  },
+  {
+   "namn": "IBC_BOF_17_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-8121-8c99-e812ba688dd2",
+   "url": "https://app.notion.com/p/IBC_BOF_17_1-3e1270ab908c81218c99e812ba688dd2",
+   "block": 18,
+   "tabeller": 4
+  },
+  {
+   "namn": "IBC_BOF_18_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-81d9-8573-e4673785de2a",
+   "url": "https://app.notion.com/p/IBC_BOF_18_1-3e1270ab908c81d98573e4673785de2a",
+   "block": 17,
+   "tabeller": 4
+  },
+  {
+   "namn": "IBC_CS_9_H1",
+   "typ": "Video - Pending Approval",
+   "id": "3e1270ab-908c-81ba-a747-e6932b6a8e2b",
+   "url": "https://app.notion.com/p/IBC_CS_9_H1-3e1270ab908c81baa747e6932b6a8e2b",
+   "block": 16,
+   "tabeller": 3
+  },
+  {
+   "namn": "IBC_PD_11_H1",
+   "typ": "Video - Pending Approval",
+   "id": "3e1270ab-908c-8141-bb5b-c5882f5abbe8",
+   "url": "https://app.notion.com/p/IBC_PD_11_H1-3e1270ab908c8141bb5bc5882f5abbe8",
+   "block": 16,
+   "tabeller": 3
+  },
+  {
+   "namn": "IBC_RI_1_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-81f1-b30d-de1bd242acf8",
+   "url": "https://app.notion.com/p/IBC_RI_1_1-3e1270ab908c81f1b30dde1bd242acf8",
+   "block": 17,
+   "tabeller": 4
+  },
+  {
+   "namn": "IBC_RI_1_H1",
+   "typ": "Video - Pending Approval",
+   "id": "3e1270ab-908c-81ee-9c12-dfed1773f95d",
+   "url": "https://app.notion.com/p/IBC_RI_1_H1-3e1270ab908c81ee9c12dfed1773f95d",
+   "block": 16,
+   "tabeller": 3
+  },
+  {
+   "namn": "IBC_RV_11_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-810b-ae71-d060c389b843",
+   "url": "https://app.notion.com/p/IBC_RV_11_1-3e1270ab908c810bae71d060c389b843",
+   "block": 18,
+   "tabeller": 4
+  },
+  {
+   "namn": "IBC_RV_12_1",
+   "typ": "Image - Pending Approval",
+   "id": "3e1270ab-908c-81e5-9ef5-f1b17dc33749",
+   "url": "https://app.notion.com/p/IBC_RV_12_1-3e1270ab908c81e59ef5f1b17dc33749",
+   "block": 18,
+   "tabeller": 4
+  }
+ ]
+}

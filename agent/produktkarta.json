@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-19",
+  "uppdaterad": "2026-09-20",
   "kampanjer": [
     {
       "campaign_id": "120252299552200233",
@@ -960,17 +960,31 @@
       "campaign_id": "120250268503590291",
       "produkt": "Inomhustofflorna i Kamouflage",
       "lage": "test",
-      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "lage_motivering": "Passerat testtröskeln 2026-09-20 (1 912 kr, 24,3 % vinst, ROAS 2,58) — förstabatch + OPS-startskott samma dag. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
+      "notion_hub_datakalla": "collection://63a270ab-908c-8215-a509-87aeee113477",
+      "notion_hub_namn": "Indoor slippers creative hub",
+      "notion_hub_not": "Skapad 2026-09-20 av /rond-auto steg 4b genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794). Förstabatchen (17 briefer) ligger här.",
+      "drive_produktmapp_id": "1fl1ACX8Q25KnwKUUwPuu9H1pIaTMiZJ-",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp 'Fodrade Inomhustofflor' (Finish Ad-länken i Product test center). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products.",
+      "minne": "products/inomhustofflorna/"
     },
     {
       "campaign_id": "120250268474110291",
       "produkt": "Biltvättborsten med Teleskopskaft",
       "lage": "test",
-      "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "lage_motivering": "Passerat testtröskeln 2026-09-20 (1 943 kr, 20,2 % vinst, ROAS 2,47) — förstabatch + OPS-startskott samma dag. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3e1270ab-908c-810c-9d50-f14ab53b461f",
+      "notion_hub_datakalla": "collection://905270ab-908c-8354-935d-071286e4e9b2",
+      "notion_hub_namn": "Car wash brush creative hub",
+      "notion_hub_not": "Skapad 2026-09-20 av /rond-auto steg 4b genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794). Förstabatchen (17 briefer) ligger här.",
+      "drive_produktmapp_id": "1qwAOtlYm68VnJ451QCDjlo0b28AmJkK_",
+      "drive_produktmapp_not": "Joshs befintliga produktmapp 'Biltvättborste Teleskop' (Finish Ad-länken i Product test center). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products.",
+      "minne": "products/biltvattborsten/"
     },
     {
       "campaign_id": "120250268397440291",

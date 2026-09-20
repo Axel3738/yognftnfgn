@@ -225,3 +225,49 @@ namngivningen och briefstrukturen.
 
 **Nästa lediga AD-ID:** PD 11, CS 6, GT 4, SP 4, CO 4, AU 2, UG 2, FM 3, TR 3,
 RI 2, LI 2, BF 10, RV 7.
+
+---
+
+## Batch #4 — 2026-09-20 (`/cs`, rond-auto steg 4b, behov `brief_runda`, fokus "ersätt det som pausats i trappan")
+
+**Underlag:** livstid 2026-09-20 — 10 791 kr, 35 köp, ROAS 1,91, intäkt
+20 637 kr. AOV 590 kr → break-even-CPA 364 kr. Kampanjen ACTIVE, 500 kr/dag.
+Full analys i `dna.md` 2026-09-20.
+
+**Feedback-rad i hubben:** ingen rad med Typ `Feedback` i
+`BÄVER Adventskalendern Racingbilar` (SQL 2026-09-20). **Annonsidéer:** inga
+rader för Adventskalendern.
+
+**Feedbackloop batch #3:** inget bedömbart; PD_10_H1 levererad (Creative strat
+review). Namnkrocken CO_3_H1/FM_2_H1 mellan batch #2 och #3 noterad i dna.md.
+
+**Briefer i denna batch — 9 st (3 video + 1 statisk = `rundaAntal 4`, + 3 BOF + 2 recension):**
+
+| Annons | Format | Variabeltaggar | Hypotes | Källa |
+|---|---|---|---|---|
+| Adventskalender_UG_3_H1 | Video 20–25 s | Angle: konflikt · Format: UGC talking head · Talare: förälder · Scenario: kväll, raden av bilar på hyllan | Bär UGC-formatet eller personen? Andra föräldern, nytt scenario | UG_2_H1 (2 köp, ROAS 4,05) |
+| Adventskalender_PD_11_H1 | Video 20–25 s | Angle: demo · Hook: 24 olika bilar · Format: stillbildens komposition, push-in | Isolerar hooken på den komposition som bär (PD_9_H1) | PD_2_1 + PD_9_H1 |
+| Adventskalender_GT_4_H1 | Video 20–25 s | Angle: gåva · Hook: recensionsrad ordagrant · Proof: Peter/Sofia | Near-iteration av enda lönsamma aktiva annonsen; bara hooken byts | GT_1_H1 |
+| Adventskalender_CO_4_1 | Statisk | Split: 24 dec tom chokladkalender / 24 bilar kvar | Konflikten som bild i vinnarens helscen-stil | Chokladkonflikten |
+| Adventskalender_BF_10_1 | BOF | 24 luckor, 24 olika bilar | Antalet som hela bilden | Produktsidan |
+| Adventskalender_BF_11_1 | BOF | 5,0 av 5 på 10 recensioner | Verifierat aggregat | Judge.me 2026-09-20 |
+| Adventskalender_BF_12_1 | BOF | Hjulen rullar på riktigt, från 3 år | Egenskap + ärlig ålder | Produktsidan |
+| Adventskalender_RV_7_1 | Recension | Peter, 5★, ordagrant | — | Judge.me 2026-09-20 |
+| Adventskalender_RV_8_1 | Recension | Sofia, 5★, ordagrant | — | Judge.me 2026-09-20 |
+
+**Naming:** upptagna ID avlästa i kontot 2026-09-20: PD ≤ 10, GT ≤ 3, CS ≤ 5,
+SP ≤ 3, UG ≤ 2, CO ≤ 3, FM ≤ 2, BF ≤ 9, RV ≤ 6. Nya: UG 3, PD 11, GT 4,
+CO 4, BF 10–12, RV 7–8.
+
+**Backlog:** "Andra formatet på UGC-vinkeln" plockad → `[använd i batch #4]`
+(UG_3_H1). Calimero-ramningen ligger kvar.
+
+**Levererat:** samtliga 9 som items i **`BÄVER Adventskalendern Racingbilar`**
+(`collection://efe270ab-908c-83ef-aa11-87c98e87f5b0`), Status `Draft`, Typ
+`Video`/`Image - Pending Approval`. Verifiering i rondens rapport 2026-09-20.
+Ingen Drive-mapp skapad.
+
+**Modellpolicy:** följd.
+
+**Nästa lediga AD-ID (läs ändå av kontot först):** PD 12, CS 6, GT 5, SP 4,
+CO 5, AU 2, UG 4, FM 3, TR 3, RI 2, LI 2, BF 13, RV 9.
