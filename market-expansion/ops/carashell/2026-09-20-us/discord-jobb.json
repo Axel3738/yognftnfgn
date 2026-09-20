@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-20",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 16 rows in the queue, 16 translated to American English and uploaded live into the active US campaign (1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia). 12 images + 4 videos, one ad set per concept. Every row already runs in Norway, so all of them move to Approved.",
+    "Images (Swedish text swapped in place, $199 / reg. $249, 20% off, 5.0 from 16 US reviews): PD_108_1 -> ad 120251517347070435 (PD) | CO_104_1 -> ad 120251517351750435 (CO) | PD_109_1 -> ad 120251517360050435 (PD) | GT_109_1 -> ad 120251517428960435 (GT) | BOF_106_1 -> ad 120251517432670435 (BOF) | BOF_105_1 -> ad 120251517527450435 (BOF) | CS_110_1 -> ad 120251517537530435 (CS) | CS_111_1 -> ad 120251517590320435 (CS) | BOF_104_1 -> ad 120251517595390435 (BOF) | TR_102_1 -> ad 120251517606640435 (TR) | LI_102_1 -> ad 120251517647060435 (LI) | RI_104_1 -> ad 120251517651500435 (RI)",
+    "Videos (HeyGen US-English voice clone + lip sync, English word captions, red Swedish price and size overlays replaced with $199 / SAVE $50 / 21 x 10 FT / 210D FABRIC): OB_101_H1 -> ad 120251517183220435 (OB) | PD_107_H1 -> ad 120251517190490435 (PD) | RI_103_H1 -> ad 120251517195980435 (RI) | PD_106_H1 -> ad 120251517205690435 (PD)",
+    "Voice check passed on all 4 (length drift 0.1-0.2 %, no silent track, last line ends inside the file). Every finished video was read frame by frame and by OCR: no Swedish caption pill and no Swedish price survives.",
+    "End cards: all four source videos ended on a BAVERBUTIKEN card with the Swedish product page and a kr price. The queue blocked them for exactly that reason. Each one was rebuilt as a US end card that names no store and no domain, so the uploaded file no longer carries a store name anywhere."
+  ],
+  "varningar": [
+    "The uploads landed in the listicle-track campaign, the only ACTIVE US campaign since the owner paused the product-page one. Every new ad inherits that listicle link.",
+    "Meta shows PENDING_REVIEW / IN_PROCESS on fresh ads for a while - normal."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-21 17:05"
+}

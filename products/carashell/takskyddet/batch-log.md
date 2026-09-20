@@ -1312,3 +1312,66 @@ läser bara — kontots betalningsstatus märks först vid första skrivningen.
 
 **Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
 meddelande `1551257682919428208`, med `🔴 ACTION NEEDED` till Axel.
+
+---
+
+## USA-runda 7 2026-09-20 (`/ops-oversatt carashell/takskyddet --marknad US`) — 16 nya annonser live
+
+**Kön:** 16 rader i `SE-ACTIVE to be translated` (12 bild, 4 video), alla speglade från
+Bäverbutiken samma dag och alla redan live i Norge — därför gick samtliga 16 till
+`Approved` efter uppladdningen. Kampanj: `1 CARASHELL_US_Taköverdrag … – kopia`
+`120251451415500435` (ACTIVE, 10 adsets). Originalkampanjen står kvar PAUSED med
+2 246 kr spend — ägarens beslut, rörd inte.
+
+| Spegel (US) | Typ | Adset | US-annons | Röstkoll |
+|---|---|---|---|---|
+| CaraShellRoof_US_PD_108_1 | bild | CARASHELL_US_PD | `120251517347070435` | — |
+| CaraShellRoof_US_CO_104_1 | bild | CARASHELL_US_CO | `120251517351750435` | — |
+| CaraShellRoof_US_PD_109_1 | bild | CARASHELL_US_PD | `120251517360050435` | — |
+| CaraShellRoof_US_GT_109_1 | bild | CARASHELL_US_GT | `120251517428960435` | — |
+| CaraShellRoof_US_BOF_106_1 | bild | CARASHELL_US_BOF | `120251517432670435` | — |
+| CaraShellRoof_US_BOF_105_1 | bild | CARASHELL_US_BOF | `120251517527450435` | — |
+| CaraShellRoof_US_CS_110_1 | bild | CARASHELL_US_CS | `120251517537530435` | — |
+| CaraShellRoof_US_CS_111_1 | bild | CARASHELL_US_CS | `120251517590320435` | — |
+| CaraShellRoof_US_BOF_104_1 | bild | CARASHELL_US_BOF | `120251517595390435` | — |
+| CaraShellRoof_US_TR_102_1 | bild | CARASHELL_US_TR | `120251517606640435` | — |
+| CaraShellRoof_US_LI_102_1 | bild | CARASHELL_US_LI | `120251517647060435` | — |
+| CaraShellRoof_US_RI_104_1 | bild | CARASHELL_US_RI | `120251517651500435` | — |
+| CaraShellRoof_US_OB_101_H1 | video | CARASHELL_US_OB | `120251517183220435` | ✅ |
+| CaraShellRoof_US_PD_107_H1 | video | CARASHELL_US_PD | `120251517190490435` | ✅ |
+| CaraShellRoof_US_RI_103_H1 | video | CARASHELL_US_RI | `120251517195980435` | ✅ |
+| CaraShellRoof_US_PD_106_H1 | video | CARASHELL_US_PD | `120251517205690435` | ✅ |
+
+**Slutkortsspärren fällde alla fyra videorna** — och hade rätt: källorna slutar på
+Bäverbutikens kort med svensk produktsida och kr-pris. Kortet byggdes om till ett
+amerikanskt utan butiksnamn och utan domän, och rutan mättes om på den FÄRDIGA filen
+innan uppladdning. ⚠️ `rapidocr-onnxruntime` saknades i containern, så första
+körningen svarade `okand` i stället för att blockera — installera den före kön.
+Rotorsaken och receptet står i `dna.md`.
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats med `pipeline/oversatt-batch.py`
+och handritade rutor (`bilder/overrides.json`), textstorlekarna kalibrerade mot SE-radernas
+uppmätta bredd (rubrik 77, underrad 38, etikett 30, knapp 42, punkt 38). Tre bilder fick
+spöken i QA: `BOF_105_1` och `GT_109_1` (halvgenomskinligt band över tvåtonat foto) löstes
+med opak platta i bandets uppmätta färg, `TR_102_1` med etikettplatta alfa 255. **OCR över
+alla tolv färdiga bilder: noll svenska träffar.**
+
+**Videorna** (HeyGen, amerikansk engelska): proofread före rendering, SRT lokaliserad med
+samma blockantal och timecodes, captions bytta med `no-precis.py`, röda svenska pop-texter
+ersatta med `$199` / `SAVE $50` / `21 x 10 FT` / `210D FABRIC`. `rostkoll.py` ✅ på alla
+fyra (längddrift 0,1–0,2 %). `kvarkoll.py` flaggade fyra fönster — alla falsklarm, OCR
+visar engelsk text i varje (verktyget mäter överlapp med källans pillerruta, inte språk).
+⚠️ RI_103_H1:s röda fönster 0,4–1,6 s är en PIL, inte text — den rördes inte.
+
+**Priset:** $199 / ord. $249 ur `ekonomi.marknadspriser`, rabatten omräknad 23 % → **20 %**
+(det svenska talet gäller inte i USD). Recensionerna lästes live på den amerikanska
+produktsidan: **16 recensioner, 5,0** — bilderna sa 10, vilket är inaktuellt.
+
+⚠️ **Meta strypte kontot mitt i uppladdningen** (kod 17, "User request limit reached").
+Uppladdaren backade av och tog sig igenom på egen hand; hela rundan tog drygt två timmar
+i stället för tjugo minuter. Inget gick förlorat, men räkna med det i tidsplanen när en
+batch är större än tio rader.
+
+**Notion:** kommentar + `Translated url` på alla 16, alla 16 → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551270110281338922`,
+ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-20-us/`.
