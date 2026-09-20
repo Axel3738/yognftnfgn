@@ -355,6 +355,20 @@ def valj_variant(produkt, butik, valuta, onskad=None):
 # --------------------------------------------------------------------------
 # Texterna — den rena delen. `--json-text` skriver exakt det här.
 # --------------------------------------------------------------------------
+def _lista(varde):
+    """Ett fält som bär en JSON-lista som STRÄNG → riktig lista. Tomt om det
+    inte går att läsa — en trasig rad ska aldrig kasta hela kortet."""
+    if isinstance(varde, list):
+        return [str(x) for x in varde]
+    if not isinstance(varde, str) or not varde.strip():
+        return []
+    try:
+        v = json.loads(varde)
+    except (ValueError, TypeError):
+        return []
+    return [str(x) for x in v] if isinstance(v, list) else []
+
+
 def _las_oversattning(rot, butiks_id, locale, egen=None):
     """Butikens EGNA marknadstext (titel, garanti) om filen finns. Valfri."""
     fil = egen or os.path.join(rot, 'factory', 'output', str(butiks_id), f'oversattning-{locale}.json')
@@ -493,6 +507,14 @@ def bygg_texter(konfig, kod, variant=None, titel=None, garanti=None, rot=ROT, ov
         'jamforpris': formatera_pris(jamforpris, valuta),
         'rea': o['rea'] if jamforpris and float(jamforpris) > float(pris) else '',
         'fotrad': fotrad,
+        # Produktens egenskapsrader på marknadens språk. Kortet ritar dem inte —
+        # de finns här för att ANDRA steg ska kunna hämta butikens EGNA ord i
+        # stället för att hitta på en översättning. ⚠️ Mätt 2026-09-20: den
+        # inbrända raden "210D-VÄV" i CaraShellRoof_SP_104_H1 blev en svart
+        # platta ("täckt utan ersättning") eftersom pipeline/omdubb/inbrand.mjs
+        # letade efter just de här raderna och inte fick några. Butikens danska
+        # säger "Sort 210D Oxford-væv" — därifrån ska ordet komma.
+        'features': _lista(over.get(f'metafalt.{produkt_id}.opf.features')),
     }
     granska_brandord(texter, forbjudna_ord(konfig))
     return texter, kallor

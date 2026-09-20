@@ -403,8 +403,17 @@ test('specord hämtar ordet ur BUTIKENS egen marknadstext, aldrig ur en påhitta
   // "210D-VÄV" blev en svart platta i OB_101 och SP_104 (mätt 2026-09-20).
   // Butikens egen danska säger "210D Oxford-væv" i features — därifrån, och
   // ingen annanstans, kommer ordet.
-  const { specord } = await import('../omdubb/inbrand.mjs');
-  const mt = { features: ['Ni størrelser: 5,5 til 13,5 m langt', 'Sort 210D Oxford-væv, vandtæt og tåler sol'], fotrad: '', titel: '' };
+  // ⚠️ Testet använder den RIKTIGA marknadstexten. En handbyggd fixtur med ett
+  // features-fält dolde 2026-09-20 att `marknadstexter()` inte HADE något
+  // features — specord returnerade null i skarp körning medan testet var grönt,
+  // och CaraShellRoof_SP_104_H1 fick en svart platta över "210D-VÄV".
+  const { specord, marknadstexter } = await import('../omdubb/inbrand.mjs');
+  const { texter: mt } = marknadstexter({
+    produkt: 'factory/produkter/takskyddet.yaml',
+    butik: 'factory/butiker/carashell.yaml',
+    marknad: 'DK',
+  });
+  assert.ok((mt.features ?? []).length > 0, 'marknadstexten MÅSTE bära features — utan dem hittar specord ingenting');
   const s = specord('210D-VÄV', mt);
   assert.ok(s, 'koden 210D finns i butikens features');
   assert.equal(s.ny, '210D-VÆV', 'versalerna följer källan, ordet kommer ur butikens text');
