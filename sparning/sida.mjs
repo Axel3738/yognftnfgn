@@ -53,6 +53,38 @@ export const STANDARDSTIL = {
 // mejlet, på orderstatussidan och här.
 export const STANDARDSUPPORT = 'kundsupport@baverbutiken.se';
 
+// Tidszon per språk för de extra språken på en sida. 'auto' = kundens
+// webbläsare — engelskan (US, GB, CA, AU, NZ) spänner över tio tidszoner.
+export const TIDSZON = { sv: 'Europe/Stockholm', nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki', en: 'auto' };
+
+// De fasta texterna i markupen, på svenska. Varje rad har ett data-t med
+// samma text som nyckel; för de extra språken bakas översättningen in i
+// C.sprak[kod].markup och skriptet byter textContent vid start. {{prefix}}
+// byts redan här (prefixet är detsamma på alla språk).
+export const MARKUP_TEXTER = [
+  'Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla',
+  'så kollar vi paketet åt dig.',
+  'Spårning',
+  'Spåra ditt paket',
+  'Skriv in ditt paketnummer',
+  'Visa paketet',
+  'Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.',
+  'Vi hittar inte det numret',
+  'Kontrollera att hela numret kom med när du klistrade in det.',
+  'Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.',
+  'Stämmer numret och det ändå inte syns här: mejla',
+  'så letar vi upp paketet åt dig.',
+  'Till butiken',
+  'Ditt paketnummer',
+  'Undrar du något om leveransen? Mejla',
+  'Spåra ett annat nummer',
+];
+function markupTexter(T, prefixKort) {
+  const ut = {};
+  for (const t of MARKUP_TEXTER) ut[t] = T(t).split('{{prefix}}').join(prefixKort);
+  return ut;
+}
+
 // Statuskod → rubriken kunden möter högst upp. Koderna är `STATUSAR` i
 // `sparning/uppacka.mjs`; en kod som inte står här faller tillbaka på den
 // svenska etiketten därifrån, aldrig på en påhittad rubrik.
@@ -109,6 +141,16 @@ function lasKonfig(konfig) {
     // Impact i versaler, CaraShell fet Arial i gemener.
     versaler: butik.rubrik_versaler ?? k.rubrik_versaler ?? true,
     fet: butik.rubrik_fet ?? k.rubrik_fet ?? false,
+    // Extra språk på samma sida (registret → sprak_extra). Sidan byter själv
+    // efter <html lang> för adressen kunden kom in på — Shopify sätter den
+    // per locale (/nb → nb, carashell.com → en). Texterna för varje extra
+    // språk bakas in i copy-rutan (C.sprak) och i datan (D.ft/D.ot).
+    extra: (Array.isArray(k.sprak_extra) ? k.sprak_extra : [])
+      .filter((kod) => kod && kod !== ov.kod)
+      .map((kod) => {
+        const o = skapaOversattare(kod);
+        return { kod: o.kod, locale: o.locale, T: o.T, tidszon: TIDSZON[o.kod] ?? 'Europe/Stockholm' };
+      }),
     vaknar: vaknar ? String(vaknar).trim() : null,
     // Leveranslöftet kunden redan fått i mejlen (mejl/konfig.json →
     // frakt.leverans_dagar_min/max). ⚠️ Hittas ALDRIG på här: saknas talen
@@ -204,6 +246,21 @@ function copydata(c) {
     levMin: c.levMin,
     levMax: c.levMax,
     tomtFalt: T('Klistra in numret från leveransmejlet först.'),
+    // Samma texter på de extra språken, plus markupens fasta rader. Skriptet
+    // byter till C.sprak[lang] när <html lang> säger ett av dem.
+    ...(c.extra?.length
+      ? {
+          sprak: Object.fromEntries(
+            c.extra.map((x) => [
+              x.kod,
+              {
+                ...copydata({ ...c, T: x.T, tidszon: x.tidszon, locale: x.locale, extra: [] }),
+                markup: markupTexter(x.T, String(c.prefix ?? '').replace(/-+$/, '')),
+              },
+            ])
+          ),
+        }
+      : {}),
   };
 }
 
@@ -352,7 +409,9 @@ if (rot) {
   } catch (e) {
     // Kunden ska aldrig mötas av en tom sida. Går något sönder som sidan
     // inte kan laga — trasig JSON i datablocket, en skadad händelse — visas
-    // sökfältet och rutan med adressen till kundtjänst i stället.
+    // sökfältet och rutan med adressen till kundtjänst i stället. Felet
+    // loggas i webbläsarens konsol så det går att hitta.
+    try { if (typeof console !== 'undefined' && console.error) console.error('bb-spar:', e && e.stack ? e.stack : e); } catch (e2) {}
     nodlage();
   }
 }
@@ -367,7 +426,32 @@ function nodlage() {
 function starta() {
   var D = JSON.parse(document.getElementById('bb-spar-data').textContent);
   var C = JSON.parse(document.getElementById('bb-spar-copy').textContent);
+  // Flera språk på samma sida: Shopify sätter lang-attributet på dokumentet
+  // efter adressen kunden kom in på (/nb → nb, carashell.com → en). Finns språket i C.sprak
+  // byts texterna, fraserna (D.ft) och etiketterna (D.ot) här, innan något
+  // ritas. Annars butikens eget språk, precis som förut.
+  var rotEl = document.documentElement;
+  var LANG = String((rotEl && rotEl.getAttribute && rotEl.getAttribute('lang')) || '').slice(0, 2).toLowerCase();
+  if (LANG && C && C.sprak && Object.prototype.hasOwnProperty.call(C.sprak, LANG)) {
+    var CX = C.sprak[LANG];
+    if (D && D.ft && D.ft[LANG]) D.f = D.ft[LANG];
+    if (D && D.ot && D.ot[LANG]) D.o = D.ot[LANG];
+    var noder = document.querySelectorAll ? document.querySelectorAll('#bb-spar [data-t]') : [];
+    for (var ni = 0; ni < noder.length; ni++) {
+      // (heter inte nyckel — det är uppackarens funktion, som ligger i samma räckvidd)
+      var tNyckel = noder[ni].getAttribute('data-t');
+      if (CX.markup && Object.prototype.hasOwnProperty.call(CX.markup, tNyckel)) noder[ni].textContent = CX.markup[tNyckel];
+    }
+    // "Till butiken" ska landa i samma språk som kunden kom från.
+    var hem = document.querySelector ? document.querySelector('#bb-spar a[data-hem]') : null;
+    var seg = String((location && location.pathname) || '').split('/')[1] || '';
+    if (hem && seg.toLowerCase() === LANG) hem.setAttribute('href', '/' + seg + '/');
+    C = CX;
+  }
   var TZ = (C && C.tz) || 'Europe/Stockholm';
+  if (TZ === 'auto') {
+    try { TZ = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Europe/Stockholm'; } catch (e) { TZ = 'Europe/Stockholm'; }
+  }
   var LOC = (C && C.locale) || LOC;
 
   // Skedenas och delskedenas etiketter ligger inbäddade på svenska (uppacka.mjs
@@ -875,39 +959,39 @@ export function byggSidkropp(data, konfig) {
   const vantetid = ' ' + T('Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.');
   return `<div id="bb-spar">
 <style>${stil(c)}</style>
-<noscript><p class="bbs-noscript">${T('Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla')} <a href="mailto:${mail}">${mail}</a> ${T('så kollar vi paketet åt dig.')}</p></noscript>
+<noscript><p class="bbs-noscript"><span data-t="Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla">${T('Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla')}</span> <a href="mailto:${mail}">${mail}</a> <span data-t="så kollar vi paketet åt dig.">${T('så kollar vi paketet åt dig.')}</span></p></noscript>
 <div id="bbs-sok" class="bbs-ruta" hidden>
-  <p class="bbs-etikett">${T('Spårning')}</p>
-  <h2>${T('Spåra ditt paket')}</h2>
+  <p class="bbs-etikett" data-t="Spårning">${T('Spårning')}</p>
+  <h2 data-t="Spåra ditt paket">${T('Spåra ditt paket')}</h2>
   <p id="bbs-fel" class="bbs-fel" hidden></p>
   <form id="bbs-form" novalidate>
-    <label for="bbs-falt">${T('Skriv in ditt paketnummer')}</label>
+    <label for="bbs-falt" data-t="Skriv in ditt paketnummer">${T('Skriv in ditt paketnummer')}</label>
     <input id="bbs-falt" class="bbs-falt" name="nummer" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="${esk(c.prefix)}3F7A2C1D">
-    <button type="submit" class="bbs-knapp">${T('Visa paketet')}</button>
+    <button type="submit" class="bbs-knapp" data-t="Visa paketet">${T('Visa paketet')}</button>
   </form>
-  <p class="bbs-hjalp">${esk(T('Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.').split('{{prefix}}').join(prefixKort))}</p>
+  <p class="bbs-hjalp" data-t="Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.">${esk(T('Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.').split('{{prefix}}').join(prefixKort))}</p>
 </div>
 <div id="bbs-saknas" class="bbs-ruta" hidden>
-  <h2>${T('Vi hittar inte det numret')}</h2>
-  <p>${T('Kontrollera att hela numret kom med när du klistrade in det.')}${vantetid}</p>
-  <p>${T('Stämmer numret och det ändå inte syns här: mejla')} <a href="mailto:${mail}">${mail}</a> ${T('så letar vi upp paketet åt dig.')}</p>
-  <p class="bbs-hjalprad"><a href="/">${T('Till butiken')}</a></p>
+  <h2 data-t="Vi hittar inte det numret">${T('Vi hittar inte det numret')}</h2>
+  <p><span data-t="Kontrollera att hela numret kom med när du klistrade in det.">${T('Kontrollera att hela numret kom med när du klistrade in det.')}</span> <span data-t="Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.">${vantetid.trim()}</span></p>
+  <p><span data-t="Stämmer numret och det ändå inte syns här: mejla">${T('Stämmer numret och det ändå inte syns här: mejla')}</span> <a href="mailto:${mail}">${mail}</a> <span data-t="så letar vi upp paketet åt dig.">${T('så letar vi upp paketet åt dig.')}</span></p>
+  <p class="bbs-hjalprad"><a href="/" data-hem data-t="Till butiken">${T('Till butiken')}</a></p>
 </div>
 <div id="bbs-traff" hidden>
-  <p class="bbs-etikett">${T('Spårning')}</p>
+  <p class="bbs-etikett" data-t="Spårning">${T('Spårning')}</p>
   <h2 id="bbs-rubrik"></h2>
   <p id="bbs-ingress" class="bbs-ingress" hidden></p>
   <p id="bbs-leverans" class="bbs-leverans" hidden></p>
   <dl class="bbs-fakta">
-    <div><dt>${T('Ditt paketnummer')}</dt><dd id="bbs-nummer"></dd></div>
+    <div><dt data-t="Ditt paketnummer">${T('Ditt paketnummer')}</dt><dd id="bbs-nummer"></dd></div>
   </dl>
   <p id="bbs-sista" class="bbs-sista" hidden></p>
   <p id="bbs-tom" hidden></p>
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
-  <p class="bbs-hjalprad">${T('Undrar du något om leveransen? Mejla')} <a href="mailto:${mail}">${mail}</a>.</p>
+  <p class="bbs-hjalprad"><span data-t="Undrar du något om leveransen? Mejla">${T('Undrar du något om leveransen? Mejla')}</span> <a href="mailto:${mail}">${mail}</a>.</p>
 ${erbjudandeBlock(c)}</div>
-<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden>${T('Spåra ett annat nummer')}</button>
+<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden data-t="Spåra ett annat nummer">${T('Spåra ett annat nummer')}</button>
 <p id="bbs-byggd" class="bbs-byggd" hidden></p>
 <script type="application/json" ${DATAMARKOR}>${json}</script>
 <script type="application/json" ${COPYMARKOR}>${copy}</script>

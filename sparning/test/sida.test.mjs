@@ -155,7 +155,7 @@ function doldaFranStart(kropp) {
   return ut;
 }
 
-function kor(kropp, adress) {
+function kor(kropp, adress, { lang = '' } = {}) {
   const noder = new Map(IDN.map((id) => [id, new Attrapp('div')]));
   for (const id of doldaFranStart(kropp)) if (noder.has(id)) noder.get(id).hidden = true;
   for (const markor of [DATAMARKOR, COPYMARKOR]) {
@@ -171,6 +171,11 @@ function kor(kropp, adress) {
     const forra = { d: globalThis.document, l: globalThis.location, h: globalThis.history };
     const { search, hash } = delaAdress(adr);
     globalThis.document = {
+      // Shopify sätter <html lang> per locale — det är så sidan vet vilket av
+      // sina språk den ska visa (CaraShell: /nb, carashell.com, /fi).
+      documentElement: { getAttribute: (n) => (n === 'lang' ? lang : null) },
+      querySelectorAll: () => [],
+      querySelector: () => null,
       getElementById: (id) => noder.get(id) ?? null,
       createElement: (t) => new Attrapp(t),
       // Stegikonerna ritas som SVG (2026-09-20). Attrappen bryr sig inte om
@@ -383,7 +388,7 @@ test('sidan säger när datan byggdes och hämtar den ur datan', () => {
 
 test('tillgängligheten: label, knappar och svensk sida', () => {
   const kropp = byggSidkropp(fixtur(), KONFIG);
-  assert.ok(/<label for="bbs-falt">/.test(kropp), 'fältet saknar riktig label');
+  assert.ok(/<label for="bbs-falt"[^>]*>/.test(kropp), 'fältet saknar riktig label');
   assert.ok(/<input id="bbs-falt"/.test(kropp));
   assert.ok(/<button type="submit"/.test(kropp), 'sökningen ska vara en riktig knapp i ett formulär');
   assert.ok(/<form id="bbs-form"/.test(kropp));
@@ -673,3 +678,30 @@ test('bävernumret slås upp med BUTIKENS prefix (CS-…), inte BB-… (mätt li
   const fel = kor(kropp, '?nummer=BB-F1CF2E59');
   assert.equal(fel.get('bbs-saknas').hidden, false, 'fel prefix ska inte hitta något');
 });
+
+test('flera språk på samma sida: lang="en" ger engelsk rubrik, etiketter och fraser ur D.ft/D.ot; utan lang svenska', async () => {
+  // CaraShell: svenska är butikens språk, men /nb, carashell.com och /fi
+  // sätter lang på dokumentet. Datan bär D.ft/D.ot per extra språk
+  // (sparning/oversatt.mjs oversattExtra) och C.sprak bär texterna.
+  const { oversattExtra } = await import('../oversatt.mjs');
+  const { STEG, DELSTEG, STATUSAR } = await import('../uppacka.mjs');
+  const data = fixtur();
+  oversattExtra(data, [...data.f], ['en', 'nb'], { steg: STEG, delsteg: DELSTEG, statusar: STATUSAR });
+  assert.ok(data.ft.en && data.ot.en && data.ft.nb && data.ot.nb);
+  assert.equal(data.ft.en.length, data.f.length);
+  const kropp = byggSidkropp(data, { ...KONFIG, sprak_extra: ['en', 'nb'] });
+  const copy = JSON.parse(jsonRuta(kropp, COPYMARKOR));
+  assert.ok(copy.sprak.en && copy.sprak.nb, 'C.sprak per extra språk');
+  assert.equal(copy.sprak.en.rubriker.IN_TRANSIT, 'The parcel is on its way');
+  assert.equal(copy.sprak.en.tz, 'auto');
+  assert.equal(copy.sprak.en.markup['Spåra ditt paket'], 'Track your parcel');
+  assert.ok(copy.sprak.en.markup['Paketnumret börjar med {{prefix}} och står i ditt leveransmejl, under knappen Spåra paketet. Har du ett spårningsnummer från fraktbolaget fungerar det också. Mellanslag och bindestreck spelar ingen roll.'].startsWith('Your parcel number starts with BB'));
+  assert.ok(kropp.includes('data-t="Spåra ditt paket"'), 'markupen bär data-t så skriptet kan byta texten');
+  const en = kor(kropp, '?nummer=YT2626100708674690', { lang: 'en' });
+  assert.equal(en.get('bbs-rubrik').textContent, 'The parcel is on its way');
+  const sv = kor(kropp, '?nummer=YT2626100708674690');
+  assert.equal(sv.get('bbs-rubrik').textContent, 'Paketet är på väg');
+  const nb = kor(kropp, '?nummer=YT2626100708674690', { lang: 'nb' });
+  assert.equal(nb.get('bbs-rubrik').textContent, 'Pakken er på vei');
+});
+

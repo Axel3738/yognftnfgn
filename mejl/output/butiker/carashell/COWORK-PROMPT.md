@@ -30,18 +30,25 @@ Gör den inte det: stoppa och rapportera.
 avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
 att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
 avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
-går ett mejl till **hello@carashell.se** med en länk som Axel klickar — stanna
+går ett mejl till **hello@carashell.com** med en länk som Axel klickar — stanna
 där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
 
+
+### 0. Avsändaradressen — FÖRST
+
+**Inställningar** → **Notiser** → **Avsändarens e-post** (Sender email): byt till **hello@carashell.com** och spara. Shopify visar då "ej verifierad" och skickar ett verifieringsmejl till den adressen — Axel klickar länken i inkorgen hello@carashell.com. Rapportera "verifieringsmejlet skickat" och vänta på Axels "klickat" innan du går vidare till A. Ändra inget annat på sidan.
+
 ### A. De tre mallarna
+
+⚠️ **Ämnesraderna är Liquid** (mallen väljer språk på leveranslandet): kopiera HELA raden ur `https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/<mall>.amne.txt` in i fältet E-postämne — den börjar med `{% case shipping_address.country_code %}` och slutar med `{% endcase %}`. Språken i mallen: sv, nb, en, fi.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 1. Hämta mallens råfil (kolumnen "Mallens kod"). Det är en ren textfil.
 2. Shopify-admin → **Inställningar** → **Notiser** → **Kundaviseringar** → mallens namn → **Redigera kod**.
-3. Fältet **E-postämne**: jämför med ämnesraden i tabellen, tecken för tecken. Skiljer den sig: byt till tabellens rad.
+3. Fältet **E-postämne**: jämför med ämnesraden i tabellen (råfilen `<mall>.amne.txt`), tecken för tecken. Skiljer den sig: byt till tabellens rad.
 4. Rutan **E-postbrödtext (HTML)**: ersätt HELA innehållet med råfilen.
 5. **Innan du sparar:** rätt teckenantal (tabellen) och att texten i kolumnen "Kontrollera" finns.
 6. **Spara**.
@@ -49,9 +56,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse / Shipping confirmation** | `Ditt paket är på väg` | `CS-` och `sha256` | **10 179** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering / Shipping update** | `Ny info om ditt paket` | `CS-` och `sha256` | **6 053** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/fraktuppdatering.liquid |
-| 3 | **Ute för leverans / Out for delivery** | `Paketet kommer idag` | `CS-` och `sha256` | **6 042** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/ute_for_leverans.liquid |
+| 1 | **Leveransbekräftelse / Shipping confirmation** | `(hela raden ur råfilens ämnesrad, se nedan)` | `CS-`, `sha256` och `country_code` | **41 115** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering / Shipping update** | `(hela raden ur råfilens ämnesrad, se nedan)` | `CS-`, `sha256` och `country_code` | **24 402** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/fraktuppdatering.liquid |
+| 3 | **Ute för leverans / Out for delivery** | `(hela raden ur råfilens ämnesrad, se nedan)` | `CS-`, `sha256` och `country_code` | **24 394** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger "Order ute för lokal leverans" — ta INTE
 det. Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i

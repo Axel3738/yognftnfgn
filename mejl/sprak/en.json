@@ -1,0 +1,43 @@
+{
+  "comment": "Engelska för CaraShells USA-marknad (carashell.com — US, GB, CA, AU, NZ). Skriven av sessionen 2026-09-20 sen kväll; rätta här, aldrig i koden. Samma struktur som nb.json. Datumen skrivs '27 September' (inte amerikanskt 'September 27') — samma form fungerar i alla fem länderna.",
+  "kod": "en",
+  "ord": {
+    "Hej": "Hi",
+    "I paketet": "In the parcel",
+    "Levereras till": "Delivering to",
+    "Antal": "Qty",
+    "Ditt paketnummer": "Your parcel number",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Click the button above and your parcel shows up right away."
+  },
+  "manader": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  "dagsuffix": "",
+  "menyrad": "Track your parcel",
+  "sidfot": "Questions about your order? Reply to this email or write to {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Your parcel is on its way", "{{ordernummer}} has left the warehouse", "On its way to you now"],
+      "preheader": ["Your tracking link is here.", "Check your spam folder if you can't see the email."],
+      "rubrik": "Your parcel is on its way!",
+      "intro": "Your order {{ordernummer}} has left the warehouse and is on its way to you.",
+      "knapp": "Track your parcel",
+      "tips": "Tracking can stand still for 2–4 days while the parcel is on its way to the flight – that is completely normal. Check again after that.",
+      "beraknad_rubrik": "Estimated delivery",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Tracking often shows nothing for the first 2–4 days – the parcel is on its way to the flight, not lost. You don't need to do anything, it updates as soon as the parcel is checked in."
+    },
+    "fraktuppdatering": {
+      "amne": ["New update on your parcel", "Your tracking has been updated", "Update: {{ordernummer}}"],
+      "preheader": ["Here is where things stand right now.", "See the latest details here."],
+      "rubrik": "Your tracking has been updated",
+      "intro": "The tracking details for your order {{ordernummer}} have been updated.",
+      "knapp": "Track your parcel"
+    },
+    "ute_for_leverans": {
+      "amne": ["Your parcel arrives today", "Out for delivery now", "{{ordernummer}} is being delivered today"],
+      "preheader": ["Keep an eye out during the day.", "Soon in your mailbox or at the pickup point."],
+      "rubrik": "Your parcel arrives today",
+      "intro": "Your order {{ordernummer}} is out for delivery and will arrive during the day.",
+      "knapp": "Track your parcel"
+    }
+  }
+}

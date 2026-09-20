@@ -37,11 +37,11 @@ export function lasSprak(kod, rot = ROT) {
 }
 
 // Konfig + copy för en butik, i det format byggMall vill ha.
-export function butikIndata(id, { rot = ROT, register = undefined } = {}) {
+export function butikIndata(id, { rot = ROT, register = undefined, sprakKod = null, sida = null } = {}) {
   const reg = lasButik(id, register);
   if (reg.standard) throw new Error('Bäverbutiken byggs med mejl/bygg.mjs, inte här.');
   const brand = JSON.parse(readFileSync(join(rot, 'butiker', `${id}.json`), 'utf8'));
-  const sprak = lasSprak(reg.sprak, rot);
+  const sprak = lasSprak(sprakKod ?? reg.sprak, rot);
   const basCopy = JSON.parse(readFileSync(join(rot, 'copy.json'), 'utf8'));
   const support = reg.support;
   if (!support) throw new Error(`${id}: supportadress saknas i sparning/butiker.json — mejlets sidfot behöver den.`);
@@ -64,7 +64,7 @@ export function butikIndata(id, { rot = ROT, register = undefined } = {}) {
       logga_hojd: brand.logga_hojd,
     },
     frakt: { leverans_dagar_min: min, leverans_dagar_max: max },
-    sparning: { sida: `${reg.url}/pages/${reg.handle}`, prefix: reg.prefix },
+    sparning: { sida: sida ?? `${reg.url}/pages/${reg.handle}`, prefix: reg.prefix },
     sprak: { kod: sprak.kod, ord: sprak.ord ?? {}, manader: sprak.manader ?? undefined, dagsuffix: sprak.dagsuffix ?? '' },
     // Inget erbjudande: blocket byggs bara när konfigen bär `erbjudande`.
   };
@@ -77,11 +77,41 @@ export function butikIndata(id, { rot = ROT, register = undefined } = {}) {
   return { konfig, copy, produkter: null, reg, brand, sprak };
 }
 
+// En butik med flera marknader (registret → mejl_marknader, CaraShell:
+// NO → norska, US/GB/CA/AU/NZ → engelska, FI → finska) får EN mall per
+// notis som väljer språk själv på leveranslandet — Shopify har ingen mall
+// per marknad. Varje gren är en hel mall på sitt språk med marknadens egen
+// adress till spårningssidan; allt annat land får butikens språk.
 export function byggButik(id, opts = {}) {
-  const indata = butikIndata(id, opts);
-  const liquid = FRAKTMALLAR.map((m) => byggMall(m, { ...indata, lage: 'liquid' }));
-  const exempel = FRAKTMALLAR.map((m) => byggMall(m, { ...indata, lage: 'exempel' }));
-  return { ...indata, liquid, exempel };
+  const bas = butikIndata(id, opts);
+  const marknader = Array.isArray(bas.reg.mejl_marknader) ? bas.reg.mejl_marknader : [];
+  const varianter = marknader.map((m) => ({
+    lander: (m.lander ?? []).map((l) => String(l).toUpperCase()),
+    kod: m.sprak,
+    indata: butikIndata(id, { ...opts, sprakKod: m.sprak, sida: m.sida ?? null }),
+  }));
+  for (const v of varianter) {
+    if (!v.lander.length) throw new Error(`${id}: mejl_marknader-rad utan länder (språk ${v.kod}).`);
+    if (v.kod === bas.sprak.kod) throw new Error(`${id}: mejl_marknader får inte bära butikens eget språk (${v.kod}) — det är else-grenen.`);
+  }
+  const liquid = FRAKTMALLAR.map((m) => {
+    const grund = byggMall(m, { ...bas, lage: 'liquid' });
+    if (!varianter.length) return grund;
+    const grenar = varianter.map((v) => ({ v, mall: byggMall(m, { ...v.indata, lage: 'liquid' }) }));
+    const when = (v) => `{% when ${v.lander.map((l) => `'${l}'`).join(' or ')} %}`;
+    const html =
+      `{% case shipping_address.country_code %}` +
+      grenar.map(({ v, mall }) => `${when(v)}${mall.html}`).join('') +
+      `{% else %}${grund.html}{% endcase %}`;
+    const amne =
+      `{% case shipping_address.country_code %}` +
+      grenar.map(({ v, mall }) => `${when(v)}${mall.amne}`).join('') +
+      `{% else %}${grund.amne}{% endcase %}`;
+    return { ...grund, html, amne, sprak: [bas.sprak.kod, ...varianter.map((v) => v.kod)] };
+  });
+  const exempel = FRAKTMALLAR.map((m) => byggMall(m, { ...bas, lage: 'exempel' }));
+  const exempelExtra = varianter.flatMap((v) => FRAKTMALLAR.map((m) => ({ ...byggMall(m, { ...v.indata, lage: 'exempel' }), kod: v.kod })));
+  return { ...bas, liquid, exempel, exempelExtra, varianter };
 }
 
 // Prompten till Cowork: samma metod som Bäverbutikens (mejl/COWORK-PROMPT.md)
@@ -92,7 +122,9 @@ export function coworkPrompt({ reg, brand, sprak, liquid, copy }) {
   const rader = liquid
     .map((m, i) => {
       const meta = MALLAR.find((x) => x.id === m.id);
-      return `| ${i + 1} | **${meta.shopify}** | \`${m.amne}\` | \`${reg.prefix}\` och \`sha256\` | **${m.html.length.toLocaleString('sv-SE').replace(/ /g, ' ')}** | ${RAW}/${id}/${m.id}.liquid |`;
+      const amne = m.amne.startsWith('{% case') ? '(hela raden ur råfilens ämnesrad, se nedan)' : m.amne;
+      const kontroll = m.sprak ? `\`${reg.prefix}\`, \`sha256\` och \`country_code\`` : `\`${reg.prefix}\` och \`sha256\``;
+      return `| ${i + 1} | **${meta.shopify}** | \`${amne}\` | ${kontroll} | **${m.html.length.toLocaleString('sv-SE').replace(/ /g, ' ')}** | ${RAW}/${id}/${m.id}.liquid |`;
     })
     .join('\n');
   const meny = brand.meny_klar
@@ -106,6 +138,16 @@ export function coworkPrompt({ reg, brand, sprak, liquid, copy }) {
 
 Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
 `;
+  const flersprak = liquid.some((m) => m.sprak);
+  const amnesrader = flersprak
+    ? `\n⚠️ **Ämnesraderna är Liquid** (mallen väljer språk på leveranslandet): kopiera HELA raden ur \`${RAW}/${id}/<mall>.amne.txt\` in i fältet E-postämne — den börjar med \`{% case shipping_address.country_code %}\` och slutar med \`{% endcase %}\`. Språken i mallen: ${liquid[0].sprak.join(', ')}.\n`
+    : '';
+  const avsandare = brand.byt_avsandare
+    ? `\n### 0. Avsändaradressen — FÖRST
+
+**Inställningar** → **Notiser** → **Avsändarens e-post** (Sender email): byt till **${brand.byt_avsandare}** och spara. Shopify visar då "ej verifierad" och skickar ett verifieringsmejl till den adressen — Axel klickar länken i inkorgen ${brand.byt_avsandare}. Rapportera "verifieringsmejlet skickat" och vänta på Axels "klickat" innan du går vidare till A. Ändra inget annat på sidan.
+`
+    : '';
   return `# Cowork-prompt: fraktmejlen${brand.meny_klar ? '' : ' + menylänken'} i ${reg.namn} (${reg.url.replace('https://', '')})
 
 Byggd av \`node mejl/bygg-butik.mjs ${id}\`. Hela mallen byts — inte enskilda
@@ -143,13 +185,14 @@ där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
 
+${avsandare}
 ### A. De tre mallarna
-
+${amnesrader}
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 1. Hämta mallens råfil (kolumnen "Mallens kod"). Det är en ren textfil.
 2. Shopify-admin → **Inställningar** → **Notiser** → **Kundaviseringar** → mallens namn → **Redigera kod**.
-3. Fältet **E-postämne**: jämför med ämnesraden i tabellen, tecken för tecken. Skiljer den sig: byt till tabellens rad.
+3. Fältet **E-postämne**: jämför med ämnesraden i tabellen${flersprak ? ' (råfilen `<mall>.amne.txt`)' : ''}, tecken för tecken. Skiljer den sig: byt till tabellens rad.
 4. Rutan **E-postbrödtext (HTML)**: ersätt HELA innehållet med råfilen.
 5. **Innan du sparar:** rätt teckenantal (tabellen) och att texten i kolumnen "Kontrollera" finns.
 6. **Spara**.
@@ -191,6 +234,7 @@ export function skrivButik(id, { rot = ROT } = {}) {
     writeFileSync(join(ut, `${m.id}.amne.txt`), `${m.amne}\n`);
   }
   for (const m of b.exempel) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.html`), m.html);
+  for (const m of b.exempelExtra ?? []) writeFileSync(join(ut, 'forhandsvisning', `${m.id}.${m.kod}.html`), m.html);
   writeFileSync(join(ut, 'COWORK-PROMPT.md'), coworkPrompt(b));
   return { ...b, ut };
 }

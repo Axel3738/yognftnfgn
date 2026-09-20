@@ -51,7 +51,21 @@ test('varje butik: tre mallar, balanserad Liquid, eget prefix och egen sida, ing
     assert.equal(b.liquid.length, 3);
     const sida = `${b.reg.url}/pages/${b.reg.handle}`;
     for (const m of b.liquid) {
-      assert.ok(m.html.startsWith('{% assign fornamn'), `${id}/${m.id}: assign först`);
+      if (m.sprak) {
+        // Flera marknader: EN mall som väljer språk på leveranslandet, varje
+        // gren en hel mall med sin egen assign-rad och sitt eget <html lang>.
+        assert.ok(m.html.startsWith('{% case shipping_address.country_code %}'), `${id}/${m.id}: case på leveranslandet först`);
+        assert.ok(m.html.endsWith('{% endcase %}'), `${id}/${m.id}: endcase sist`);
+        for (const kod of m.sprak) assert.ok(m.html.includes(`<html lang="${kod}">`), `${id}/${m.id}: gren för ${kod}`);
+        assert.equal(rakna(m.html, /\{% assign fornamn/g), m.sprak.length, `${id}/${m.id}: en assign-rad per språk`);
+        for (const rad of b.reg.mejl_marknader) {
+          assert.ok(m.html.includes(`{% when ${rad.lander.map((l) => `'${l}'`).join(' or ')} %}`), `${id}/${m.id}: when för ${rad.lander.join('/')}`);
+          if (rad.sida) assert.ok(m.html.includes(`${rad.sida}?nummer=`), `${id}/${m.id}: marknadens sida ${rad.sida}`);
+        }
+        assert.ok(m.amne.startsWith('{% case shipping_address.country_code %}') && m.amne.endsWith('{% endcase %}'), `${id}/${m.id}: ämnesraden väljer språk`);
+      } else {
+        assert.ok(m.html.startsWith('{% assign fornamn'), `${id}/${m.id}: assign först`);
+      }
       assert.equal(rakna(m.html, /\{%\s*if\b/g), rakna(m.html, /\{%\s*endif\b/g), `${id}/${m.id}: if/endif`);
       assert.equal(rakna(m.html, /\{%\s*for\b/g), rakna(m.html, /\{%\s*endfor\b/g), `${id}/${m.id}: for/endfor`);
       assert.equal(rakna(m.html, /\{%\s*case\b/g), rakna(m.html, /\{%\s*endcase\b/g), `${id}/${m.id}: case/endcase`);
@@ -62,6 +76,7 @@ test('varje butik: tre mallar, balanserad Liquid, eget prefix och egen sida, ing
       assert.ok(!/baverbutiken|bäverbutiken|TACKIGEN|din-gratisprodukt|kundsupport@/i.test(m.html), `${id}/${m.id}: inget av Bäverbutiken`);
       assert.ok(!m.html.includes('shop_app_tracking_url'), `${id}/${m.id}: ingen Shop-knapp`);
       assert.ok(m.html.includes(`<html lang="${b.sprak.kod}">`), `${id}/${m.id}: lang`);
+      assert.ok(!/\{\{(förnamn|ordernummer|leverans_fran|leverans_till|support)\}\}/.test(m.amne), `${id}/${m.id}: platshållare i ämnet`);
       for (const tagg of m.html.match(/\{\{[^}]*\}\}|\{%[^%]*%\}/g) ?? []) {
         assert.ok(!tagg.includes('&quot;') && !tagg.includes('"'), `${id}/${m.id}: citattecken i Liquid: ${tagg}`);
       }
@@ -99,14 +114,22 @@ test('CaraShell: svensk copy ur copy.json, CS-prefix, lugn rubrikstil, vitt sidh
   assert.ok(frakt.includes("prepend: 'CS-'"));
   assert.ok(frakt.includes('https://carashell.se/pages/spara?nummer='));
   assert.ok(frakt.includes('Spåra paketet') && frakt.includes('Beräknad leverans'));
-  assert.ok(frakt.includes('hello@carashell.se'));
+  assert.ok(frakt.includes('hello@carashell.com'), 'avsändaren hello@carashell.com (Axels beslut 2026-09-20)');
   // Rubrikstilen (30 px) är gemener och fet; etiketten i leveransrutan är
   // versal av sig själv, så sök på rubrikens egen sträng.
   assert.ok(frakt.includes('font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 30px'), 'fet rubrik i gemener');
   assert.ok(!frakt.includes('text-transform: uppercase; font-size: 30px'), 'ingen versal rubrik');
   assert.ok(frakt.includes('bgcolor="#ffffff" style="padding: 20px 24px 16px; border-bottom'), 'ljust sidhuvud med linje');
   assert.ok(frakt.includes('bgcolor="#1F6F8E"'), 'regnblå knapp');
-  assert.equal(b.liquid.find((m) => m.id === 'fraktbekraftelse').amne, 'Ditt paket är på väg');
+  // Fyra språk i samma mall, styrda av leveranslandet; svenska är else-grenen.
+  const m1 = b.liquid.find((m) => m.id === 'fraktbekraftelse');
+  assert.deepEqual(m1.sprak, ['sv', 'nb', 'en', 'fi']);
+  assert.ok(m1.amne.includes("{% when 'NO' %}Pakken din er på vei"));
+  assert.ok(m1.amne.includes("{% when 'US' or 'GB' or 'CA' or 'AU' or 'NZ' %}Your parcel is on its way"));
+  assert.ok(m1.amne.endsWith('{% else %}Ditt paket är på väg{% endcase %}'));
+  assert.ok(frakt.includes('https://carashell.com/pages/spara?nummer=') && frakt.includes('https://carashell.se/nb/pages/spara?nummer='));
+  assert.ok(frakt.includes('Track your parcel') && frakt.includes('Spor pakken') && frakt.includes('Seuraa pakettia'));
+  assert.ok(b.exempelExtra.length === 9 && b.exempelExtra.every((e) => !e.html.includes('{{')), 'förhandsvisning per språk utan Liquid');
 });
 
 test('Bäverbutikens mallar är orörda av butiksbygget: ingen k.sprak, svart sidhuvud, BB-', () => {
@@ -134,7 +157,8 @@ test('Cowork-prompten: råfil-länkar på main, teckenantal, ämnesrad, prefix; 
     const p = coworkPrompt(b);
     for (const m of b.liquid) {
       assert.ok(p.includes(`/main/mejl/output/butiker/${id}/${m.id}.liquid`), `${id}: länk ${m.id}`);
-      assert.ok(p.includes(`\`${m.amne}\``), `${id}: ämnesrad ${m.id}`);
+      if (m.sprak) assert.ok(p.includes('country_code') && p.includes('.amne.txt'), `${id}: flerspråkig ämnesrad`);
+      else assert.ok(p.includes(`\`${m.amne}\``), `${id}: ämnesrad ${m.id}`);
       assert.ok(p.includes(`**${m.html.length.toLocaleString('sv-SE').replace(/ /g, ' ')}**`), `${id}: teckenantal ${m.id}`);
     }
     assert.ok(p.includes(`?nummer=${b.reg.prefix}`), `${id}: prefixet i testmejlskontrollen`);
@@ -142,6 +166,8 @@ test('Cowork-prompten: råfil-länkar på main, teckenantal, ämnesrad, prefix; 
     assert.ok(!p.includes('Mac. Använd Cmd'));
     if (b.brand.meny_klar) assert.ok(p.includes('Redan gjord'), `${id}: menyn hoppas över`);
     else assert.ok(p.includes(`Namn: \`${b.sprak.menyrad}\``), `${id}: menyraden på butikens språk`);
+    if (b.brand.byt_avsandare) assert.ok(p.includes('### 0. Avsändaradressen') && p.includes(b.brand.byt_avsandare), `${id}: avsändarbytet`);
+    else assert.ok(!p.includes('### 0. Avsändaradressen'), `${id}: inget avsändarbyte`);
   }
 });
 

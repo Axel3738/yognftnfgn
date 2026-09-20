@@ -24,7 +24,8 @@
     "sprak": "sv",
     "land": "Sverige",
     "landskod": "SE",
-    "support": "hello@carashell.se",
+    "support": "hello@carashell.com",
+    "support_comment": "Axels beslut 2026-09-20 sen kväll: en avsändare för alla marknader, hello@carashell.com (\".se skriker utländsk butik för amerikanerna\"). Var hello@carashell.se tills dess. Shopify har EN avsändaradress per butik — den går inte att byta per marknad.",
     "prefix": "CS-",
     "handle": "spara",
     "titel": "Spåra ditt paket",
@@ -32,7 +33,14 @@
     "leverans_dagar": [7, 14],
     "leverans_dagar_comment": "Butikens löfte är 5–10 arbetsdagar (factory/butiker/carashell.yaml → frakt.leveranstid) = 7–14 kalenderdagar.",
     "sparning_vaknar": "2–4 dagar",
-    "marknader_comment": "Butiken säljer också till NO (/nb), US (carashell.com) och FI (/fi). Sidan publiceras på svenska; översättningar av sidan per marknad är inte byggda (2026-09-20)."
+    "sprak_extra": ["nb", "en", "fi"],
+    "sprak_extra_comment": "Sidan bär alla fyra språken och byter själv efter adressen kunden kom in på (Shopifys <html lang>: /nb → norska, carashell.com → engelska, /fi → finska, annars svenska). Byggt 2026-09-20 sen kväll (Axels fråga: 'hur gör du med språket?').",
+    "mejl_marknader": [
+      { "lander": ["NO"], "sprak": "nb", "sida": "https://carashell.se/nb/pages/spara" },
+      { "lander": ["US", "GB", "CA", "AU", "NZ"], "sprak": "en", "sida": "https://carashell.com/pages/spara" },
+      { "lander": ["FI"], "sprak": "fi", "sida": "https://carashell.se/fi/pages/spara" }
+    ],
+    "mejl_marknader_comment": "Fraktmejlen är EN mall per notis i Shopify (ingen per marknad). Mallen väljer språk själv på leveranslandet (shipping_address.country_code): raderna här blir {% case %}-grenar, allt annat land får butikens språk (sv). Knappen pekar på marknadens adress till spårningssidan."
   },
   "beverbutikken": {
     "namn": "Beverbutikken",

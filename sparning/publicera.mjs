@@ -37,7 +37,7 @@ import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
 import { STATUS } from './status.mjs';
 import { STEG, DELSTEG, STATUSAR } from './uppacka.mjs';
 import { lasButik, butikIdUr, skapaMappar, skapaKlient } from './butik.mjs';
-import { skapaOversattare, oversattData } from './oversatt.mjs';
+import { skapaOversattare, oversattData, oversattExtra } from './oversatt.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
 const MEJLKONFIG = join(ROT, '..', 'mejl', 'konfig.json');
@@ -171,6 +171,7 @@ const sidkonfig = {
   sprak: BUTIK.sprak,
   prefix: BUTIK.prefix,
   tidszon: BUTIK.tidszon ?? (BUTIK.sprak === 'sv' ? 'Europe/Stockholm' : sprakTidszon(BUTIK.sprak)),
+  sprak_extra: BUTIK.sprak_extra ?? [],
   // Brandet: Bäverbutiken ur mejl/konfig.json, andra butiker ur
   // mejl/butiker/<id>.json — samma fil som deras fraktmejl byggs av, så
   // sidan och mejlet aldrig ser olika ut. ⚠️ Före 2026-09-20 sen kväll
@@ -311,7 +312,13 @@ if (!kontroll.ok && !baraFiler) {
 // byts frasordboken och etiketterna (sparning/oversatt.mjs). En mening utan
 // översättning står kvar på svenska och räknas i rapporten — aldrig tyst.
 const OV = skapaOversattare(BUTIK.sprak);
+// De extra språken (registret → sprak_extra) byggs ur den SVENSKA ordboken,
+// innan butikens eget språk byter data.f på plats.
+const F_SV = [...(data.f ?? [])];
+const SPRAK_EXTRA = (BUTIK.sprak_extra ?? []).filter((k) => k !== OV.kod);
 oversattData(data, OV, { steg: STEG, delsteg: DELSTEG, statusar: STATUSAR });
+const OV_EXTRA = oversattExtra(data, F_SV, SPRAK_EXTRA, { steg: STEG, delsteg: DELSTEG, statusar: STATUSAR });
+if (SPRAK_EXTRA.length) console.log(`Extra språk på sidan: ${SPRAK_EXTRA.join(', ')} (byts efter adressen kunden kom in på).`);
 
 const sidmodul = await laddaSidmodul();
 const indata = { konfig: sidkonfig, data, statistik, paket: iFonster, nu: NU };
@@ -542,6 +549,15 @@ function ord(antal, ental, flertal) {
 function rapportSlut() {
   const okanda = okandaFraser();
   const oovers = typeof OV !== 'undefined' ? OV.okanda() : [];
+  if (typeof OV_EXTRA !== 'undefined') {
+    for (const [kod, o] of Object.entries(OV_EXTRA)) {
+      const saknas = o.okanda();
+      if (saknas.length) {
+        console.log(`⚠️ ${ord(saknas.length, 'mening saknar', 'meningar saknar')} översättning till ${kod} (extra språk) — lägg in dem i sparning/sprak/${kod}.json:`);
+        for (const m of saknas.slice(0, 20)) console.log(`     ${m}`);
+      }
+    }
+  }
   if (oovers.length) {
     console.log(`⚠️ ${ord(oovers.length, 'mening saknar', 'meningar saknar')} översättning till ${OV.kod} och står kvar på svenska — lägg in dem i sparning/sprak/${OV.kod}.json:`);
     for (const t of oovers.slice(0, 15)) console.log(`     ${t}`);
@@ -571,7 +587,8 @@ function standardKonfig(butik) {
 }
 
 function sprakTidszon(kod) {
-  return { nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki' }[kod] ?? 'Europe/Stockholm';
+  // 'auto' = kundens webbläsare (engelskan spänner över tio tidszoner).
+  return { nb: 'Europe/Oslo', da: 'Europe/Copenhagen', fi: 'Europe/Helsinki', en: 'auto' }[kod] ?? 'Europe/Stockholm';
 }
 
 function paus(ms) {

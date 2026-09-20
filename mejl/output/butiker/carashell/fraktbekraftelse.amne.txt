@@ -1,1 +1,1 @@
-Ditt paket är på väg
+{% case shipping_address.country_code %}{% when 'NO' %}Pakken din er på vei{% when 'US' or 'GB' or 'CA' or 'AU' or 'NZ' %}Your parcel is on its way{% when 'FI' %}Pakettisi on matkalla{% else %}Ditt paket är på väg{% endcase %}

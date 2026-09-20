@@ -35,6 +35,7 @@ där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
 
+
 ### A. De tre mallarna
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:

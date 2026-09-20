@@ -26,6 +26,7 @@ export const SPRAK = {
   nb: { namn: 'norska (bokmål)', locale: 'nb-NO', html: 'nb' },
   da: { namn: 'danska', locale: 'da-DK', html: 'da' },
   fi: { namn: 'finska', locale: 'fi-FI', html: 'fi' },
+  en: { namn: 'engelska', locale: 'en-GB', html: 'en' },
 };
 
 export function lasSprakfil(kod) {
@@ -77,3 +78,26 @@ export function oversattData(data, ov, { steg = [], delsteg = [], statusar = [] 
   data.sprak = ov.kod;
   return data;
 }
+
+// Flera språk på SAMMA sida (CaraShell: svenska + norska + engelska + finska,
+// Axels fråga 2026-09-20 "hur gör du med språket?"). Sidan byter själv efter
+// Shopifys <html lang> för adressen kunden kom in på (/nb, carashell.com, /fi).
+// `fSv` är den SVENSKA frasordboken (data.f innan oversattData körts —
+// butikens eget språk kan redan ha bytt data.f). Skriver data.ft[kod] (fraser)
+// och data.ot[kod] (etiketter) per extra språk; sidans skript väljer.
+export function oversattExtra(data, fSv, koder = [], { steg = [], delsteg = [], statusar = [] } = {}) {
+  const ov = {};
+  for (const kod of koder) {
+    const o = skapaOversattare(kod);
+    if (o.kod === 'sv') continue;
+    data.ft ??= {};
+    data.ot ??= {};
+    data.ft[o.kod] = (fSv ?? []).map((t) => o.T(t));
+    const etiketter = {};
+    for (const rad of [...steg, ...delsteg, ...statusar]) if (rad && rad[1]) etiketter[rad[1]] = o.T(rad[1]);
+    data.ot[o.kod] = etiketter;
+    ov[o.kod] = o;
+  }
+  return ov;
+}
+
