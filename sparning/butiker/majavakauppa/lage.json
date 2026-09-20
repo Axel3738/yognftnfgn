@@ -8,7 +8,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8409466995037",
    "registrerad": "2026-09-20",
    "status17": "InfoReceived",
-   "senast": "2026-09-20T19:53",
+   "senast": "2026-09-20T20:54",
    "status": "CONFIRMED"
   },
   "YT2626300703845945": {
@@ -16,7 +16,9 @@
    "kod": 190008,
    "order": "#1058",
    "fulfillment": "gid://shopify/Fulfillment/8409465520477",
-   "registrerad": "2026-09-20"
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T20:54"
   },
   "YT2626200707253031": {
    "bolag": "YunExpress",
@@ -25,7 +27,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8409285886301",
    "registrerad": "2026-09-20",
    "status17": "InfoReceived",
-   "senast": "2026-09-20T19:53",
+   "senast": "2026-09-20T20:54",
    "status": "CONFIRMED"
   },
   "YT2626200707253361": {
@@ -35,7 +37,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8408551653725",
    "registrerad": "2026-09-20",
    "status17": "InfoReceived",
-   "senast": "2026-09-20T19:53",
+   "senast": "2026-09-20T20:54",
    "status": "CONFIRMED"
   },
   "YT2626200704533708": {
@@ -43,7 +45,9 @@
    "kod": 190008,
    "order": "#1055",
    "fulfillment": "gid://shopify/Fulfillment/8408289280349",
-   "registrerad": "2026-09-20"
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T20:54"
   },
   "YT2626200704533641": {
    "bolag": "YunExpress",
@@ -52,7 +56,7 @@
    "fulfillment": "gid://shopify/Fulfillment/8408287576413",
    "registrerad": "2026-09-20",
    "status17": "InfoReceived",
-   "senast": "2026-09-20T19:53",
+   "senast": "2026-09-20T20:54",
    "status": "CONFIRMED"
   },
   "YT2626200704730197": {
@@ -62,16 +66,16 @@
    "fulfillment": "gid://shopify/Fulfillment/8408287543645",
    "registrerad": "2026-09-20",
    "status17": "InfoReceived",
-   "senast": "2026-09-20T19:53",
+   "senast": "2026-09-20T20:54",
    "status": "CONFIRMED"
   }
  },
  "senaste_korning": {
-  "datum": "2026-09-20T19:53:44.696Z",
+  "datum": "2026-09-20T20:54:51.627Z",
   "ordrar": 7,
   "paket": 7,
-  "registrerade": 7,
-  "skrivna": 5,
+  "registrerade": 0,
+  "skrivna": 0,
   "fel": 0,
   "torr": false
  }
