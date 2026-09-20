@@ -1,0 +1,69 @@
+[
+ {
+  "box": [
+   80,
+   55,
+   1010,
+   285
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Om sommeren bor det i en pose, ikke i veien."
+ },
+ {
+  "box": [
+   33,
+   307,
+   1047,
+   391
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Får plass i oppbevaringsposen som følger med."
+ },
+ {
+  "box": [
+   33,
+   1015,
+   1047,
+   1151
+  ],
+  "rader": 2,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Ingen stor vinteroppbevaring – bare posen som fulgte med pakken."
+ },
+ {
+  "box": [
+   249,
+   1210,
+   831,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "1 189 kr. Får plass i en pose."
+ }
+]

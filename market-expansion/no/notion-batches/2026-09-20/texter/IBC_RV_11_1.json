@@ -1,0 +1,74 @@
+[
+ {
+  "box": [
+   150,
+   52,
+   930,
+   178
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Anders, 5 stjerner"
+ },
+ {
+  "box": [
+   60,
+   195,
+   1020,
+   420
+  ],
+  "rader": 3,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   20,
+   48,
+   74
+  ],
+  "text": "Veldig bra trekk. Passer IBC-tanken min perfekt og er enkelt å sette på."
+ },
+ {
+  "box": [
+   33,
+   1058,
+   1047,
+   1162
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "210D Oxford-stoff. Stopper alger & UV."
+ },
+ {
+  "box": [
+   138,
+   1210,
+   943,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sett på trekket. Vannet forblir klart."
+ }
+]

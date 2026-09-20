@@ -1,0 +1,88 @@
+[
+ {
+  "box": [
+   0,
+   55,
+   1080,
+   165
+  ],
+  "rader": 1,
+  "storlek": 58,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "1 189 kr nå."
+ },
+ {
+  "box": [
+   70,
+   185,
+   1010,
+   395
+  ],
+  "rader": 2,
+  "storlek": 60,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "Et tak du ikke vet prisen på senere."
+ },
+ {
+  "box": [
+   33,
+   428,
+   1047,
+   512
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Taket er det du aldri ser – og det som koster mest å reparere."
+ },
+ {
+  "box": [
+   33,
+   1066,
+   1047,
+   1152
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "1 189 kr er hele regningen. Ingen gjetting."
+ },
+ {
+  "box": [
+   265,
+   1210,
+   815,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Beskytt taket – 1 189 kr."
+ }
+]

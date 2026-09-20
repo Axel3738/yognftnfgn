@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   200,
+   60,
+   880,
+   165
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   18,
+   16
+  ],
+  "text": "Emma, 4 stjerner"
+ },
+ {
+  "box": [
+   60,
+   185,
+   1020,
+   430
+  ],
+  "rader": 3,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   20,
+   47,
+   73
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Veldig fornøyd. Tanken ser mye bedre ut, og overtrekket sitter bra."
+ },
+ {
+  "box": [
+   33,
+   1067,
+   1047,
+   1151
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "210D Oxford-stoff. Stopper alger & UV."
+ },
+ {
+  "box": [
+   138,
+   1210,
+   943,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sett på trekket. Vannet forblir klart."
+ }
+]
