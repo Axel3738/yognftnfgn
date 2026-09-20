@@ -1,0 +1,16 @@
+{
+ "brand": "CaraShell",
+ "datum": "2026-09-20",
+ "lage": "spegla",
+ "gjort": [],
+ "varningar": [
+  "All five uploads failed with the same Meta 400 Permissions error. Root cause found: the shared OPS ad account Magiborsten DK (915422744950975) is UNSETTLED (account_status 3). Reads work, writes are blocked — the token still holds MANAGE and ads_management, and the US account Magiborsten UK (status 1) is unaffected.",
+  "Nothing was half-created: no ad, no creative. All five source rows are untouched in \"CaraShell SE ready to be active\" and will be picked up again automatically once the account is settled.",
+  "Existing ads keep delivering and spending (6 493 SEK today, 8 512 SEK yesterday) — only new uploads are blocked. This hits every OPS routine that writes to this account, not just the mirror.",
+  "SE campaign: \"CARASHELL_SE_Taköverdraget LISTICLE\" is its own track (the name carries LISTICLE) and did not receive the ads."
+ ],
+ "action_axel": [
+  "Settle the outstanding balance on ad account Magiborsten DK 915422744950975 in Meta Ads Manager → Billing. No new ad can be uploaded to any OPS store until that is paid."
+ ],
+ "nasta_korning": "tomorrow 16:20 + slot"
+}
