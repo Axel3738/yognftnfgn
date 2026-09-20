@@ -38,13 +38,22 @@ for f in "$KALLA"/*.mp4; do
     hoppade=$((hoppade+1)); continue
   fi
   echo "─── $n ───────────────────────────────────────────"
-  if timeout 2400 node "$ROT/pipeline/omdubb/marknadsvideo.mjs" \
+  # ⚠️ EXITKODEN FÅR INTE GÅ GENOM ETT RÖR. `cmd | tail` returnerar TAILS status,
+  # som alltid är 0 — mätt 2026-09-20: två videor felade (en med överlappande
+  # slutkort, en som aldrig skrev sin fil) och batchen rapporterade "FELADE: 0".
+  # Loggen skrivs därför till fil, och koden läses direkt.
+  logg="$UT/$malnamn.logg"
+  timeout 2400 node "$ROT/pipeline/omdubb/marknadsvideo.mjs" \
       --kalla="$f" --srt="$manus" --marknad="$MARKNAD" --inbrand --captions \
       --produkt="$PRODUKT" --butik="$BUTIK" \
-      ${BILD:+--produktbild="$BILD"} --ut="$ut" 2>&1 | tail -4; then
+      ${BILD:+--produktbild="$BILD"} --ut="$ut" > "$logg" 2>&1
+  kod=$?
+  tail -4 "$logg"
+  # En video utan fil är alltid ett fel, oavsett vad exitkoden säger.
+  if [ "$kod" -eq 0 ] && [ -f "$ut" ]; then
     klara=$((klara+1))
   else
-    felade=$((felade+1)); FELLISTA="$FELLISTA $n"
+    felade=$((felade+1)); FELLISTA="$FELLISTA $n(kod=$kod)"
   fi
 done
 

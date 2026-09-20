@@ -84,7 +84,22 @@ export function slutkortsStart(fil) {
   return { dom: j?.dom ?? 'FEL', fran: j?.dom === 'JA' ? Number(j.slutkort_fran_s) : null, langd: j?.slutkort_langd_s ?? null, skal: j?.skal ?? '' };
 }
 
-/** Sista cuens sluttid ur en SRT — klipppunkten får aldrig ligga före talet. */
+/** Minsta film sista cuen måste ha kvar efter klippet. Under det dras bilden
+ *  ut i slowmotion. Mätt 2026-09-20: CaraShellRoof_PD_5_H1 har 2,80 s film
+ *  till en replik som tar ~5 s — omdubben lånar bildrutor av grannklippet och
+ *  klarar det. 1,5 s är satt med marginal under det, inte uppmätt som gräns. */
+export const MIN_FILM_SISTA_CUE = 1.5;
+
+/** Sista cuens STARTTID ur en SRT. */
+export function sistaCueStart(srtFil) {
+  const t = readFileSync(srtFil, 'utf8');
+  const tider = [...t.matchAll(/(\d+):(\d+):(\d+)[,.](\d+)\s*-->/g)]
+    .map((m) => Number(m[1]) * 3600 + Number(m[2]) * 60 + Number(m[3]) + Number(m[4]) / 1000);
+  if (!tider.length) throw new Error(`${basename(srtFil)} har inga cue-tider`);
+  return Math.max(...tider);
+}
+
+/** Sista cuens sluttid ur en SRT. */
 export function sistaCueSlut(srtFil) {
   const t = readFileSync(srtFil, 'utf8');
   const tider = [...t.matchAll(/-->\s*(\d+):(\d+):(\d+)[,.](\d+)/g)]
@@ -129,9 +144,29 @@ if (process.argv[1]?.endsWith('marknadsvideo.mjs')) {
   // steg tidigare, men aldrig in i talet.
   let klippVid = null;
   if (kort.dom === 'JA') {
-    if (kort.fran < talSlut - 0.05) {
-      console.error(`STOPP: slutkortet börjar ${kort.fran}s men talet slutar ${talSlut.toFixed(2)}s — de överlappar.`);
-      process.exit(3);
+    // ⚠️ TALET FÅR LIGGA ÖVER SLUTKORTET. Mätt 2026-09-20 på
+    // CaraShellRoof_PD_5_H1: källans speaker läser frakt- och garantiraden
+    // MEDAN slutkortet visas (kortet börjar 36,72 s, talet slutar 39,00 s).
+    // Den första versionen av det här steget stoppade körningen helt — men
+    // `elevenlabs-omdubb.mjs` passar in repliken i den film den FÅR, och
+    // förlänger videon när repliken är längre. Att stoppa var alltså att
+    // kasta en fungerande annons av fel skäl.
+    //
+    // Det som ÄR farligt är att sista filmklippet blir så kort att repliken
+    // måste dras ut i slowmotion. Gränsen mäts därför mot hur mycket film
+    // sista cuen har kvar efter klippet, inte mot om det överlappar alls.
+    const overlapp = Math.max(0, talSlut - kort.fran);
+    if (overlapp > 0) {
+      const sista = sistaCueStart(srt);
+      const filmKvar = kort.fran - sista;
+      if (filmKvar < MIN_FILM_SISTA_CUE) {
+        console.error(`STOPP: slutkortet börjar ${kort.fran}s, sista cuen börjar ${sista.toFixed(2)}s `
+          + `— bara ${filmKvar.toFixed(2)}s film kvar till den (minst ${MIN_FILM_SISTA_CUE}s krävs, `
+          + 'annars dras bilden ut i slowmotion). Korta manusets sista cue eller lägg den tidigare.');
+        process.exit(3);
+      }
+      console.log(`  ⚠️ talet löper ${overlapp.toFixed(2)}s in i slutkortet — omdubben passar in det i `
+        + `de ${filmKvar.toFixed(2)}s film som finns före kortet. Titta på sista klippets fart i tabellen.`);
     }
     klippVid = Math.max(talSlut + 0.05, kort.fran - SLUTKORTSMARGINAL);
     if (klippVid > kort.fran - SLUTKORTSMARGINAL + 0.001) {
