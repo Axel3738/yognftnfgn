@@ -89,5 +89,11 @@
   "the parcel has arrived at the terminal and is soon on its way to your mailbox. the next update will be when it is delivered": "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat",
   "batch delivery to carrier": "Paketet är överlämnat till fraktbolaget",
   "pick up by local carrier at destination port": "Paketet är överlämnat till fraktbolaget",
-  "the parcel is delivered in the mailbox": "Paketet är levererat i din brevlåda"
+  "the parcel is delivered in the mailbox": "Paketet är levererat i din brevlåda",
+  "package return, received by shipper": "Paketet har skickats tillbaka till avsändaren",
+  "the parcel was delivered at the door": "Paketet är levererat vid din dörr",
+  "there was an error in the edi, a new notification has been made": "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget",
+  "the shipment was marked with an invalid postal code. the shipment is forwarded to the recipient but may be delayed": "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat",
+  "the parcel has been delivered": "Paketet är levererat",
+  "the shipment has been sorted and forwarded": "Paketet har lämnat sorteringsterminalen"
 }

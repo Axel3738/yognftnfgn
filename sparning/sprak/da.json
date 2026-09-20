@@ -157,6 +157,8 @@
     "Mottagaren har lämnat leveransinstruktioner": "Modtageren har givet leveringsinstruktioner",
     "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat": "Pakken er ankommet til terminalen og er snart på vej til din postkasse. Næste opdatering kommer, når den er leveret",
     "Paketet är överlämnat till fraktbolaget": "Pakken er overdraget til fragtfirmaet",
-    "Paketet har kommit till omlastningsorten": "Pakken er ankommet til omladningsstedet"
+    "Paketet har kommit till omlastningsorten": "Pakken er ankommet til omladningsstedet",
+    "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget": "Oplysningerne om pakken indeholdt en fejl og er sendt igen til fragtfirmaet",
+    "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Postnummeret på pakken var forkert. Pakken sendes videre til dig, men kan blive forsinket"
   }
 }
