@@ -1266,3 +1266,23 @@ rör aldrig något som ägaren pausat. Båda ägarfrågorna står obesvarade i D
 — omstart av SE (A/B/C, sedan 15/9) och om rutinen ska stängas av tills en
 marknad slås på (sedan 18/9). Ingen pingas.
 Underlag: `factory/output/drytrek/budgetrond-2026-09-20.json`.
+
+---
+
+## 2026-09-20 — leveransrunda: fönstret tomt, DryTrek har inga siffror kvar att läsa
+
+Oförändrat: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+
+**Norges 7d-fönster är nu helt tomt — 0 kr, mot 6 713 kr igår.** Det är precis
+vad gårdagens anteckning förutsade: kampanjen har varit av sedan 18/9 och
+fönstret har rullat klart. Sverige läser 1 875 kr, 3 köp, ROAS 0,62 och töms på
+samma sätt de närmaste dagarna.
+
+**Från och med nu bär ingen av marknaderna ett tal värt att läsa.** Det finns
+ingen prestandasignal kvar att rapportera förrän en kampanj slås på igen.
+Sekvensen 1,78 → 1,84 → 1,65 → 1,71 → 0 är hela historien om varför ett rullande
+fönster inte är en trend: de två sista stegen skedde utan att en enda krona
+spenderades.
+
+Båda ägarfrågorna står obesvarade (omstart av Sverige sedan 15/9, paus av den här
+rutinen sedan 18/9). Ingen pingas om igen.
