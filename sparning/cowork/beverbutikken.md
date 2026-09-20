@@ -16,6 +16,23 @@ dataåtkomst" godkänd i admin). Sessionen körde `/sparning beverbutikken` och 
 **https://beverbutikken.no/pages/spor** svarar med rubriken "Spor pakken din". Timrutinen är byggd.
 Det som återstår är steg A–C nedan — hoppa över steg 0.
 
+## Utfall 2026-09-20 sen kväll (Cowork körde den GAMLA A–C-prompten)
+
+- **A** gjord enligt den gamla metoden (byten i Shopifys standardmall):
+  `sha256` 5/5/4, `tracking_url` 0, `shop_app_tracking_url` 0, två knappar
+  "Vis bestillingen din" + "Spor pakken", "Pakkenummeret ditt: BB-…". Byts
+  helt av `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md` (samma dom
+  som CaraShell: lappad standardmall är ful).
+- **B** klar: "Spor pakken" sist i **Hovedmeny** (`main-menu`) och
+  **Bunntekstmeny** (`footer`), sett i kundens vy. `meny_klar: true` i
+  `mejl/butiker/beverbutikken.json`.
+- **C** testmejl skickat till axelodhner.business@gmail.com.
+- Coworks anmärkningar (gäller den gamla mallen, försvinner med den nya):
+  samma BB-nummer upprepat per kolli i flernummersslingan, knappen
+  ovillkorlig även utan spårningsnummer, brödtexten "Spor forsendelsen din"
+  kvar. Den nya mallen har `{% if fulfillment.tracking_number %}` runt
+  knappen och orderstatussidan som reserv.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

@@ -1,0 +1,24 @@
+{
+  "comment": "Spårningssidan i Bæverbutiken: /pages/spor. Skriven av sparning/publicera.mjs ur sparning/butiker.json — ändra i registret, inte här. Blocket lage skrivs av publiceringen.",
+  "sida": {
+    "handle": "spor",
+    "titel": "Spor din pakke",
+    "template_suffix": null,
+    "markor": "bb-spar",
+    "data_id": "bb-spar-data",
+    "fonster_dagar": null
+  },
+  "butik": {
+    "namn": "Bæverbutiken",
+    "url": "https://baeverbutiken.dk",
+    "support": "kundeservice@baeverbutiken.dk"
+  },
+  "frakt": {
+    "sparning_vaknar": "2–4 dage"
+  },
+  "lage": {
+    "sida_publicerad": "2026-09-20",
+    "sida_url": "https://baeverbutiken.dk/pages/spor",
+    "sida_matt": "1 paket, 0 händelser, 54 kB"
+  }
+}

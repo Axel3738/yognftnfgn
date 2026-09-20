@@ -8,6 +8,17 @@ en app som **inte är installerad** i den danska butiken (Shopify svarar
 **https://baeverbutiken.dk/pages/spor**. FÖRST DÅ görs steg A–C.
 Delen under linjen är prompten; kör den i två omgångar.
 
+## Utfall 2026-09-20 sen kväll
+
+Axel installerade appen "DK claudeprodukter" själv (Coworks filter vägrade
+klicket). `--kolla` grön (13 rättigheter), rundan: 1 order, 1 registrerat,
+0 skanningar; sidan **https://baeverbutiken.dk/pages/spor** publicerad TOM
+som första sida (`gid://shopify/Page/722777276761`), timrutin
+`trig_01Xjx5pUdre9Uw3LJiBy9Nzs` på :48. ⚠️ baeverbutiken.dk omdirigerar
+till `xn--bverbutiken-98a.dk` (bæverbutiken.dk) — trippelkollen läste den
+adressen. Mejl + meny: `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
+(A + B + C).
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

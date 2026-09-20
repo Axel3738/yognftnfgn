@@ -38,6 +38,9 @@ const FILER = skapaMappar(BUTIK);
 const LAGE = FILER.lage;
 const UT = FILER.output;
 const PAKETFIL = FILER.paketfil;
+// Har sidan publicerats någon gång? Styr om en runda utan skanningar får
+// hoppa över sidan (ja, den finns) eller ska publicera en tom (första gången).
+const konfigLage = existsSync(FILER.konfig) ? JSON.parse(readFileSync(FILER.konfig, 'utf8'))?.lage : null;
 const LAGE_NAMN = LAGE.replace(ROT + '/', 'sparning/');
 const torr = arg.includes('--torr');
 const kolla = arg.includes('--kolla');
@@ -227,9 +230,12 @@ if (okanda.length) {
 }
 if (ingenSida) {
   console.log('--ingen-sida: spårningssidan rörs inte.');
-} else if (!forSidan.length) {
+} else if (!forSidan.length && konfigLage?.sida_publicerad) {
   console.log('Inga skanningar hämtade — spårningssidan lämnas som den är.');
 } else {
+  // Utan skanningar men utan publicerad sida: publicera ändå (tom), så
+  // mejlens knapp och menylänken har en sida från dag ett. publicera.mjs
+  // släpper igenom en tom sida bara första gången.
   mkdirSync(UT, { recursive: true });
   writeFileSync(PAKETFIL, `${JSON.stringify(forSidan)}\n`);
   const r = spawnSync(process.execPath, [join(ROT, 'publicera.mjs'), '--butik', BUTIK.id, '--paket', PAKETFIL, ...(torr ? ['--torr'] : [])], { stdio: 'inherit' });

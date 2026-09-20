@@ -1,4 +1,4 @@
-# Cowork-prompt: fraktmejlen + menylänken i Majavakauppa (majavakauppa.fi)
+# Cowork-prompt: fraktmejlen i Majavakauppa (majavakauppa.fi)
 
 Byggd av `node mejl/bygg-butik.mjs majavakauppa`. Hela mallen byts — inte enskilda
 rader — så mejlet ser ut som Bäverbutikens (Axels dom 2026-09-20 på den
@@ -9,7 +9,7 @@ först, annars klistrar Cowork in en gammal version. Delen under linjen är prom
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken **Majavakauppa**
 (majavakauppa.fi, q0uthu-xq.myshopify.com). Uppgifter: **A.** byta ut koden i
-**tre kundnotiser**, **B.** lägga in menylänken, sedan **C.** ett testmejl. Rör ingenting annat i
+**tre kundnotiser**, sedan **C.** ett testmejl. Rör ingenting annat i
 Shopify: inga andra mallar, inga inställningar, inga rabatter, inga produkter.
 
 ⚠️ **Datorn är en Windows-dator, inte en Mac.** Klicka alltid först inne i
@@ -24,6 +24,16 @@ inga kortkommandon. **Klistra aldrig in en halv mall.**
 
 Kontrollera först att https://majavakauppa.fi/pages/seuranta svarar och visar rubriken "Seuraa pakettiasi".
 Gör den inte det: stoppa och rapportera.
+
+⚠️ **Avsändaradressen.** Visar Shopify en gul banner i mallens redigerare —
+"Innan du kan redigera aviseringar måste du granska och verifiera din
+avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
+att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
+avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
+går ett mejl till **asiakastuki@majavakauppa.fi** med en länk som Axel klickar — stanna
+där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
+Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
+CaraShell 2026-09-20.)
 
 ### A. De tre mallarna
 
@@ -49,12 +59,7 @@ Shopifys räknare).
 
 ### B. Menylänken
 
-1. **Onlinebutik** → **Navigering** → **Huvudmeny** (Main menu).
-2. Finns redan en rad som länkar till `/pages/seuranta`: rör den inte. Annars **Lägg till menyalternativ**, Namn: `Seuraa pakettia`, Länk: `/pages/seuranta`, **Lägg till**, **Spara menyn**. Raden sist.
-3. Samma i **Sidfotsmeny** (Footer menu) — heter den något annat, ta den meny sidfoten på majavakauppa.fi faktiskt visar.
-4. Kontrollera i kundens vy: öppna https://majavakauppa.fi i en ny flik, ladda om, se att **Seuraa pakettia** syns i huvudmenyn och sidfoten och landar på "Seuraa pakettiasi".
-
-Skapa aldrig en ny meny, ta aldrig bort en rad, ändra inga andra namn.
+Redan gjord — **Seuraa pakettia** ligger i huvudmenyn och sidfotsmenyn. Rör inte menyerna.
 
 ### C. Testmejlet
 
@@ -67,8 +72,7 @@ testmejlets påhittade spårningsnummer — det är väntat.)
 
 1. Vilka mallar som sparades och verifierades mot servern, teckenantal per mall.
 2. Om kontrolltexten saknades, och i vilken mall.
-3. Menyerna: vilka två menyer som fick raden, och vad du såg i kundens vy.
-4. Testmejlet: gick det, till vilken adress, knappens text.
-5. Allt som såg konstigt ut.
+3. Testmejlet: gick det, till vilken adress, knappens text.
+4. Allt som såg konstigt ut.
 
 Om Shopify vägrar spara: spara inte om, skriv exakt vad felmeddelandet sa.

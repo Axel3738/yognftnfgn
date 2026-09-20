@@ -217,11 +217,18 @@ if (!totaltHandelser) {
   const rad = PAKETFIL
     ? `Inga händelser i ${PAKETFIL} — spårningsrundan hittade inga skanningar hos 17TRACK.`
     : 'Inga händelser i sparning/lage.json — spårningsrundan har inte sparat några skanningar än (node sparning/kor.mjs).';
-  if (!baraFiler) {
+  // En tom sida får aldrig ersätta en publicerad — men den FÖRSTA
+  // publiceringen får vara tom: mejlens knapp och menylänken behöver en
+  // sida att landa på från dag ett (Bæverbutiken 2026-09-20: 1 order, 0
+  // skanningar, och Cowork ska lägga in menylänken samma kväll). Sidan
+  // svarar "hittar inte" tills rundan har skanningar, och nästa körning
+  // fyller den.
+  const forstaGangen = !konfig?.lage?.sida_publicerad;
+  if (!baraFiler && !forstaGangen) {
     console.error(`❌ ${rad} En tom sida publiceras inte.`);
     process.exit(1);
   }
-  console.log(`⚠️ ${rad} Bygget fortsätter för att det är en torrkörning.`);
+  console.log(`⚠️ ${rad} ${forstaGangen && !baraFiler ? 'Sidan har aldrig publicerats — den första får vara tom så mejl och meny har någonstans att landa.' : 'Bygget fortsätter för att det är en torrkörning.'}`);
 }
 
 // --- 3. Datan och sidkroppen ------------------------------------------------

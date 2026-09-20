@@ -18,6 +18,23 @@ dataåtkomst" godkänd i admin). Sessionen körde `/sparning majavakauppa` och s
 **https://majavakauppa.fi/pages/seuranta** svarar med rubriken "Seuraa pakettiasi". Timrutinen är byggd.
 Det som återstår är steg A–C nedan — hoppa över steg 0.
 
+## Utfall 2026-09-20 sen kväll (Cowork körde den GAMLA A–C-prompten)
+
+- **A STOPPAD:** Shopify visar bannern "Innan du kan redigera aviseringar
+  måste du granska och verifiera din avsändares e-postadress" — fälten
+  utgråade på alla tre mallarna. Cowork rörde inget (kontoinställning
+  utanför uppdraget). Mallarna är Shopifys engelska standard. Steget
+  "Skicka verifiering" står nu i `mejl/output/butiker/majavakauppa/COWORK-PROMPT.md`;
+  länken landar i asiakastuki@majavakauppa.fi och är Axels klick.
+- **B** klar: "Seuraa pakettia" sist i **Main menu** och **Footer menu**
+  (`footer`), sett i kundens vy (header SEURAA PAKETTIA, sidfot, klick
+  landar på "Seuraa pakettiasi"). `meny_klar: true` i
+  `mejl/butiker/majavakauppa.json`. En felklickad etikett på "Ota yhteyttä"
+  återställdes med "Ignorera" efter att serverns meny lästs (orörd).
+- **C** inte skickat (mallen orörd).
+- Shopifys lista pekade "Leveransbekräftelse" på "Faktura för orderutkast";
+  rätt väg är URL:en `email_templates/shipping_confirmation/edit`.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/majavakauppa/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

@@ -33,7 +33,7 @@ const SPRAKFILER = ['nb.json', 'da.json', 'fi.json'];
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå
 // konfigurationens `sida`-block.
-function bygg(lage, konfigAndringar = {}) {
+function bygg(lage, konfigAndringar = {}, bokforing = {}) {
   const rot = mkdtempSync(join(tmpdir(), 'spar-pub-'));
   mkdirSync(join(rot, 'sparning'));
   mkdirSync(join(rot, 'mejl'));
@@ -52,7 +52,7 @@ function bygg(lage, konfigAndringar = {}) {
   // från senaste skarpa publiceringen, och utan det här mätte testet
   // "bokfördes ingenting" mot den siffran i stället för mot noll — det gick
   // grönt ända tills sidan publicerades på riktigt första gången (2026-09-19).
-  konfig.lage = Object.fromEntries(Object.keys(konfig.lage ?? {}).map((k) => [k, null]));
+  konfig.lage = { ...Object.fromEntries(Object.keys(konfig.lage ?? {}).map((k) => [k, null])), ...bokforing };
   writeFileSync(join(rot, 'sparning', 'konfig.json'), JSON.stringify(konfig, null, 2));
   writeFileSync(join(rot, 'sparning', 'lage.json'), JSON.stringify(lage, null, 1));
   return rot;
@@ -170,12 +170,24 @@ test('textrutan räknas som markör och nämns i rapporten', () => {
   assert.match(ut, /Markörer:.*id="bb-spar-copy"/);
 });
 
-test('skarp körning avbryter när paketminnet saknar skanningar', () => {
-  const rot = bygg({ paket: { YT0000000000000: { bolag: 'YunExpress', status: 'CONFIRMED' } } });
+test('skarp körning avbryter när paketminnet saknar skanningar — om sidan redan är publicerad', () => {
+  const rot = bygg({ paket: { YT0000000000000: { bolag: 'YunExpress', status: 'CONFIRMED' } } }, {}, { sida_publicerad: '2026-09-19' });
   const { kod, ut } = kor(rot);
   assert.equal(kod, 1, ut);
   assert.match(ut, /Inga händelser i sparning\/lage\.json/);
+  assert.match(ut, /En tom sida publiceras inte/);
   assert.doesNotMatch(ut, /Uppdaterad|Skapad|Publikt/);
+});
+
+test('första publiceringen får vara tom: utan bokförd sida stoppar inte spärren', () => {
+  // Bæverbutiken 2026-09-20: 1 order, 0 skanningar, men mejlens knapp och
+  // menylänken behöver en sida att landa på från dag ett. Utan nycklar
+  // faller körningen senare (Shopify), men spärren mot tom sida ska ha
+  // släppt igenom.
+  const rot = bygg({ paket: { YT0000000000000: { bolag: 'YunExpress', status: 'CONFIRMED' } } });
+  const { ut } = kor(rot);
+  assert.match(ut, /första får vara tom/);
+  assert.doesNotMatch(ut, /En tom sida publiceras inte/);
 });
 
 test('skarp körning avbryter när FÖNSTRET åt upp alla skanningar', () => {
