@@ -105,6 +105,10 @@ function lasKonfig(konfig) {
     svart: butik.farg_svart ?? k.farg_svart ?? STANDARDSTIL.svart,
     ram: butik.farg_ram ?? k.farg_ram ?? STANDARDSTIL.ram,
     font: butik.font_rubrik ?? k.font_rubrik ?? STANDARDSTIL.font,
+    // Rubrikstilen följer mejlen (mejl/mallar.mjs stil()): Bäverbutiken
+    // Impact i versaler, CaraShell fet Arial i gemener.
+    versaler: butik.rubrik_versaler ?? k.rubrik_versaler ?? true,
+    fet: butik.rubrik_fet ?? k.rubrik_fet ?? false,
     vaknar: vaknar ? String(vaknar).trim() : null,
     // Leveranslöftet kunden redan fått i mejlen (mejl/konfig.json →
     // frakt.leverans_dagar_min/max). ⚠️ Hittas ALDRIG på här: saknas talen
@@ -229,7 +233,7 @@ function stil(c) {
 #bb-spar{--bbs-rod:${c.rod};--bbs-svart:${c.svart};--bbs-ram:${c.ram};--bbs-gra:#5b5b5b;max-width:620px;margin:0 auto;padding:0 0 28px;color:var(--bbs-svart);font-family:inherit;font-size:16px;line-height:1.5;text-align:left}
 #bb-spar *{box-sizing:border-box}
 #bb-spar [hidden]{display:none!important}
-#bb-spar h2{font-family:${c.font};font-weight:400;text-transform:uppercase;letter-spacing:.5px;font-size:30px;line-height:1.1;margin:0 0 10px;color:var(--bbs-svart)}
+#bb-spar h2{font-family:${c.font};font-weight:${c.fet ? 700 : 400};text-transform:${c.versaler ? 'uppercase' : 'none'};letter-spacing:${c.versaler ? '.5px' : '0'};font-size:30px;line-height:1.1;margin:0 0 10px;color:var(--bbs-svart)}
 #bb-spar p{margin:0 0 12px}
 #bb-spar a{color:var(--bbs-svart);text-decoration:underline}
 #bb-spar a:hover{color:var(--bbs-rod)}
@@ -241,14 +245,14 @@ function stil(c) {
 #bb-spar .bbs-falt{display:block;width:100%;padding:14px 12px;font-size:16px;font-family:inherit;color:var(--bbs-svart);background:#fff;border:2px solid var(--bbs-svart);border-radius:0;margin:0 0 12px}
 #bb-spar label{display:block;font-weight:700;margin:0 0 8px}
 #bb-spar .bbs-hjalp{font-size:14px;color:var(--bbs-gra);margin:10px 0 0}
-#bb-spar .bbs-knapp{display:block;width:100%;min-height:52px;padding:14px 20px;background:var(--bbs-rod);color:#fff;border:0;border-radius:0;font-family:${c.font};font-size:21px;letter-spacing:1px;text-transform:uppercase;line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}
+#bb-spar .bbs-knapp{display:block;width:100%;min-height:52px;padding:14px 20px;background:var(--bbs-rod);color:#fff;border:0;border-radius:0;font-family:${c.font};font-weight:${c.fet ? 700 : 400};font-size:${c.versaler ? 21 : 19}px;letter-spacing:${c.versaler ? '1px' : '0'};text-transform:${c.versaler ? 'uppercase' : 'none'};line-height:1.2;text-align:center;text-decoration:none;cursor:pointer}
 #bb-spar .bbs-knapp:hover{background:#b81616;color:#fff;text-decoration:none}
 #bb-spar .bbs-knapp--tunn{background:#fff;color:var(--bbs-svart);border:2px solid var(--bbs-svart);font-size:17px;min-height:48px}
 #bb-spar .bbs-knapp--tunn:hover{background:var(--bbs-ram);color:var(--bbs-svart)}
 #bb-spar .bbs-fel{color:var(--bbs-rod);font-weight:700;margin:0 0 12px}
 #bb-spar .bbs-leverans{margin:0 0 16px;padding:14px 16px;border:2px solid var(--bbs-svart);background:#fff}
 #bb-spar .bbs-leverans .bbs-levetikett{display:block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 4px}
-#bb-spar .bbs-leverans .bbs-levdatum{display:block;font-family:${c.font};font-size:24px;line-height:1.15;text-transform:uppercase;letter-spacing:.5px}
+#bb-spar .bbs-leverans .bbs-levdatum{display:block;font-family:${c.font};font-weight:${c.fet ? 700 : 400};font-size:24px;line-height:1.15;text-transform:${c.versaler ? 'uppercase' : 'none'};letter-spacing:${c.versaler ? '.5px' : '0'}}
 #bb-spar .bbs-leverans .bbs-levtext{display:block;font-size:14px;margin:6px 0 0}
 #bb-spar .bbs-leverans--sen{border-color:var(--bbs-rod)}
 #bb-spar .bbs-leverans--sen .bbs-levdatum{color:var(--bbs-rod)}

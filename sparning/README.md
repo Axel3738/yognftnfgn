@@ -299,6 +299,27 @@ rättigheter i Dev Dashboard, steg 0). När en butik fått rättigheterna:
 (`/sparning <id>`, en per butik, fast session + cron på egen minut) och
 därefter Cowork-prompten steg A–C.
 
+**Brandet på sidan** följer butiken sedan 2026-09-20 sen kväll: Bäverbutiken
+ur `mejl/konfig.json`, andra butiker ur `mejl/butiker/<id>.json` (samma
+fil som deras fraktmejl) — färger, typsnitt och rubrikstil (`rubrik_versaler`,
+`rubrik_fet` → `sida.mjs` `versaler`/`fet`). ⚠️ Före det spred `publicera.mjs`
+Bäverbutikens mejlkonfig in för ALLA butiker, så CaraShells sida gick live
+röd med Impact i versaler (Axel: "det är bäverbutikens branding ju, inte
+carashells"). Rättat samma kväll, sidan ompublicerad regnblå med feta
+gemener; NO/DK/FI har Bäverbutikens färger i sina brandfiler och ser
+likadana ut som förut.
+
+**Leveranslöftet 7–14 dagar mätt mot verkligheten 2026-09-20** (Shopify
+`fulfillment.createdAt → deliveredAt`, `scratchpad/leveranstid.mjs`):
+Bäverbutiken 133 levererade paket sedan rutinen började skriva event
+(2026-09-18) — p25 10,0 / median 11,1 / p75 12,3 / p90 13,0 / max 14,0
+dagar. Urvalet är bara två dygns leveranser (paket som levererades före
+18/9 saknar `deliveredAt`, och de som ännu är på väg räknas inte), så
+det är en lägsta nivå, inte hela bilden. 7–14 täcker p90. CaraShell och
+NO har 0 resp. 1 levererat med datum — mät om efter två veckor innan
+löftet ändras. Axels fråga samma kväll ("borde vi lägga på lite tid?"):
+beslutet väntar på den mätningen.
+
 ⚠️ CaraShell säljer också till NO (/nb), US (carashell.com) och FI (/fi).
 Sidan är EN Shopify-sida på svenska; översättningar av den per marknad
 (Shopifys Translations API, som listiclarna) är inte byggda.

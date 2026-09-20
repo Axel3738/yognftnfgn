@@ -126,6 +126,17 @@ try {
 } catch (fel) {
   console.log(`⚠️ Kunde inte läsa mejl/konfig.json för att jämföra löftet om spårningen: ${fel.message}`);
 }
+// Andra butikers brand (färger, typsnitt, rubrikstil) ur mejl/butiker/<id>.json.
+let butikBrand = null;
+if (!BUTIK.standard) {
+  const brandfil = join(ROT, '..', 'mejl', 'butiker', `${BUTIK.id}.json`);
+  if (existsSync(brandfil)) {
+    butikBrand = JSON.parse(readFileSync(brandfil, 'utf8'));
+    console.log(`Brand: mejl/butiker/${BUTIK.id}.json (knapp ${butikBrand.farg_rod}, rubriker ${butikBrand.rubrik_versaler === false ? 'gemener' : 'versaler'}).`);
+  } else {
+    console.log(`⚠️ Ingen brandfil mejl/butiker/${BUTIK.id}.json — sidan byggs med reservstilen (Bäverbutikens färger).`);
+  }
+}
 
 // Proxyn tidigt: kravProxy() kör om hela processen med NODE_USE_ENV_PROXY=1,
 // så allt efter den punkten körs två gånger om den står längre ner.
@@ -160,12 +171,18 @@ const sidkonfig = {
   sprak: BUTIK.sprak,
   prefix: BUTIK.prefix,
   tidszon: BUTIK.tidszon ?? (BUTIK.sprak === 'sv' ? 'Europe/Stockholm' : sprakTidszon(BUTIK.sprak)),
+  // Brandet: Bäverbutiken ur mejl/konfig.json, andra butiker ur
+  // mejl/butiker/<id>.json — samma fil som deras fraktmejl byggs av, så
+  // sidan och mejlet aldrig ser olika ut. ⚠️ Före 2026-09-20 sen kväll
+  // spreds mejlkonfigens butik-block in för ALLA butiker: CaraShells sida
+  // gick live röd med Impact i versaler (Axel: "det är bäverbutikens
+  // branding ju, inte carashells").
   butik: {
-    ...(mejlkonfig?.butik ?? {}),
+    ...(BUTIK.standard ? (mejlkonfig?.butik ?? {}) : (butikBrand ?? {})),
     ...(konfig.butik ?? {}),
     namn: BUTIK.namn,
     url: BUTIK.url,
-    support: supportmejl ?? konfig.butik?.support ?? mejlkonfig?.butik?.support ?? null,
+    support: supportmejl ?? konfig.butik?.support ?? (BUTIK.standard ? mejlkonfig?.butik?.support : null) ?? null,
   },
   frakt: BUTIK.standard
     ? { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) }
