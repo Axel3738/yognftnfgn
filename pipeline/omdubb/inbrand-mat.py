@@ -268,7 +268,13 @@ def rader_i_block(block, rader):
     bx = block['box']
     inne = []
     for r in rader:
-        if r['t'][1] <= block['t'][0] or r['t'][0] >= block['t'][1]:
+        # Raden måste ligga i blocket i TIDEN, inte bara nudda kanten: två
+        # pop-block följer ofta direkt på varandra (mätt: prisblocket slutar
+        # 19,5 s och fraktblocket börjar 19,6 s, medan OCR-fönstret för
+        # "1129KR" sträcker sig till 19,667 s). Utan kravet lånade fraktblocket
+        # prisraden.
+        overlapp = min(r['t'][1], block['t'][1]) - max(r['t'][0], block['t'][0])
+        if overlapp < min(0.5, (r['t'][1] - r['t'][0]) / 2):
             continue
         b = r['box']
         # rutan ska ligga i blocket (≥ 60 % av radens yta)
@@ -302,11 +308,117 @@ def rader_i_block(block, rader):
         # lång säker avläsning slår ett kort fragment ("14C9 KR" > "149").
         best = sorted(k['kandidater'],
                       key=lambda r: (r['rutor'], r['konf'] * len(r['text'])), reverse=True)[0]
+        # Rutan ritas av de avläsningar som setts i MINST TVÅ bildrutor. En
+        # engångsavläsning har ofta en vild ruta (mätt: den stora röda texten
+        # lästes en bildruta som bara "K" i rutan 362,264–579,557, 112 px
+        # högre än de sju avläsningarna av "1129KR"). Finns ingen sådan rad —
+        # jämförprisraden lästes olika i varenda ruta — används alla.
+        stabila = [r for r in k['kandidater'] if r['rutor'] >= 2]
+        valda = stabila or k['kandidater']
+        box = list(valda[0]['box'])
+        for r in valda[1:]:
+            box = union(box, r['box'])
         ut.append({'text': best['text'],
                    'texter': sorted({t for r in k['kandidater'] for t in r['texter']}),
-                   'box': k['box'], 'konf': best['konf'],
-                   'rutor': sum(r['rutor'] for r in k['kandidater'])})
+                   'box': box, 'konf': best['konf'],
+                   'rutor': sum(r['rutor'] for r in k['kandidater']),
+                   'ruta_ur': 'rader sedda i ≥ 2 bildrutor' if stabila else 'alla avläsningar (ingen sågs två gånger)'})
     return ut
+
+
+# --------------------------------------------------------------------------
+# Ordcaption-pillret (porterad piller.py)
+# --------------------------------------------------------------------------
+# Pillret är en nästan vit platta med mörk text, nederst i bild. Det mäts i
+# PIXLAR och inte med OCR, av exakt samma skäl som röda blocket: en rad som
+# OCR:en läser fel ska ändå suddas. Språket spelar ingen roll — plattan syns.
+# Trösklarna är piller.py:s (2026-09-18) med bredden skalad mot upplösningen.
+PILLER_VIT, PILLER_MORK = 235, 60
+PILLER_MIN_BREDD = 1 / 6      # andel av bildbredden som måste vara vit på raden
+PILLER_MIN_MORKA = 3          # mörka textpixlar på samma rad
+PILLER_MIN_HOJD = 16          # px; tunnare band är inte en textrad
+PILLER_MAX_HOJD = 1 / 9       # andel av bildhöjden; högre är inte ett piller
+
+
+def piller_fonster(fil, W, H, fps, zon_fran=0.5):
+    """Bildrutor där ett ordcaption-piller syns, grupperade till fönster.
+
+    Returnerar [{"t":[t0,t1], "box":[x0,y0,x1,y1], "rutor":n}] — rutan är
+    UNIONEN av pillrets läge i fönstrets bildrutor."""
+    p = subprocess.run([ffmpeg_bin(), '-v', 'error', '-i', fil, '-vf', f'fps={fps}',
+                        '-f', 'rawvideo', '-pix_fmt', 'gray', '-'], capture_output=True)
+    ra = np.frombuffer(p.stdout, dtype=np.uint8)
+    n = len(ra) // (W * H)
+    if n == 0:
+        return []
+    fr = ra[:n * W * H].reshape(n, H, W).astype(np.int16)
+    lo = int(H * zon_fran)
+    min_bredd = max(60, int(W * PILLER_MIN_BREDD))
+    max_hojd = int(H * PILLER_MAX_HOJD)
+    per_ruta = []
+    for i in range(n):
+        g = fr[i][lo:]
+        vit = g > PILLER_VIT
+        mork = g < PILLER_MORK
+        rader = np.nonzero((vit.sum(axis=1) > min_bredd) & (mork.sum(axis=1) >= PILLER_MIN_MORKA))[0]
+        if len(rader) < PILLER_MIN_HOJD:
+            per_ruta.append(None)
+            continue
+        y0, y1 = int(rader[0]), int(rader[-1])
+        if y1 - y0 > max_hojd:
+            per_ruta.append(None)
+            continue
+        # x mäts på TEXTEN, inte på det vita: `vit.any(axis=0)` tar med varje
+        # ljus sak i bandet (mätt 2026-09-20: husvagnens vita tak gav x 0–719
+        # på en 720 px bred bild, alltså hela bredden). Den mörka texten är
+        # däremot bara pillrets. Kolumnklustret får ha mellanrum upp till
+        # ordmellanrummets bredd.
+        morka = np.nonzero(mork[y0:y1 + 1].sum(axis=0) >= 2)[0]
+        if len(morka) < 10:
+            per_ruta.append(None)
+            continue
+        kluster, start = [], 0
+        for k in range(1, len(morka) + 1):
+            if k == len(morka) or morka[k] - morka[k - 1] > max(20, W // 24):
+                kluster.append((int(morka[start]), int(morka[k - 1])))
+                start = k
+        x0, x1 = max(kluster, key=lambda c: c[1] - c[0])
+        # Plattans kant ligger några px utanför texten. Den kan INTE mätas
+        # genom att växa ut i det vita: i den här källan är himlen och
+        # husvagnens tak också vita, och kanten växte till hela bildbredden
+        # (mätt 2026-09-20). Ett fast tillägg är ärligare än en mätning som
+        # spårar ur.
+        pad = max(10, (y1 - y0) // 3)
+        per_ruta.append([max(0, x0 - pad), lo + y0, min(W - 1, x1 + pad), lo + y1])
+
+    fonster, oppet = [], None
+    for i, box in enumerate(per_ruta):
+        if box is None:
+            if oppet and i - oppet['sista_i'] > 1:
+                fonster.append(oppet)
+                oppet = None
+            continue
+        if oppet and i - oppet['sista_i'] <= 1:
+            oppet['box'] = union(oppet['box'], box)
+            oppet['sista_i'] = i
+            oppet['rutor'] += 1
+        else:
+            if oppet:
+                fonster.append(oppet)
+            oppet = {'box': list(box), 'forsta_i': i, 'sista_i': i, 'rutor': 1}
+    if oppet:
+        fonster.append(oppet)
+    sedda = [b for b in per_ruta if b]
+    median = None
+    if sedda:
+        median = [int(np.median([b[k] for b in sedda])) for k in range(4)]
+    return {
+        'fonster': [{'t': [round(f['forsta_i'] / fps, 3), round((f['sista_i'] + 1) / fps, 3)],
+                     'box': f['box'], 'rutor': f['rutor']} for f in fonster],
+        'median_box': median,
+        'rutor_med_piller': len(sedda),
+        'rutor': n,
+    }
 
 
 # --------------------------------------------------------------------------
@@ -335,9 +447,17 @@ def mat(fil, fps=3, konf=0.45, rod_fps=10, till=None, spara_rutor=None):
         if till is not None:
             b['t'][1] = min(b['t'][1], till)
         b['rader'] = rader_i_block(b, rader)
+
+    piller = piller_fonster(fil, W, H, rod_fps)
+    piller['fonster'] = [p for p in piller['fonster'] if till is None or p['t'][0] < till]
+    for p in piller['fonster']:
+        if till is not None:
+            p['t'][1] = min(p['t'][1], till)
+
     return {'fil': os.path.abspath(fil), 'W': W, 'H': H, 'langd': round(langd, 3),
             'fps': fps, 'rod_fps': rod_fps, 'rutor': len(per_ruta),
-            'till': till, 'konf_min': konf, 'rader': rader, 'rodblock': block}
+            'till': till, 'konf_min': konf, 'rader': rader, 'rodblock': block,
+            'piller': piller}
 
 
 def main():
