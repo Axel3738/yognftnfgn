@@ -8,6 +8,16 @@ en app som **inte är installerad** i den danska butiken (Shopify svarar
 **https://baeverbutiken.dk/pages/spor**. FÖRST DÅ görs steg A–C.
 Delen under linjen är prompten; kör den i två omgångar.
 
+## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md`
+
+Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
+standardmall, Shop-knappen kvar): "mailen var tvääär fula, fulare än
+originalet". Mejlen byggs nu som Bäverbutikens — hela mallen byts —
+av `node mejl/bygg-butik.mjs baeverbutiken` (butikens logga, färger, språk,
+paketprefix, utan gratisprodukt-blocket). Prompten till Cowork ligger i
+`mejl/output/butiker/baeverbutiken/COWORK-PROMPT.md` och täcker A + C + menylänken B.
+Steg A nedan är kvar som historik och ska INTE köras.
+
 ---
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken

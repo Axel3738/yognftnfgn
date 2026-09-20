@@ -1,0 +1,121 @@
+{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}
+{% assign lev_bas = 'now' | date: '%s' | plus: 0 %}{% assign lev_fran_ts = lev_bas | plus: 604800 %}{% assign lev_fran_dag = lev_fran_ts | date: '%-d' %}{% assign lev_fran_mm = lev_fran_ts | date: '%m' %}{% case lev_fran_mm %}{% when '01' %}{% assign lev_fran_man = 'januari' %}{% when '02' %}{% assign lev_fran_man = 'februari' %}{% when '03' %}{% assign lev_fran_man = 'mars' %}{% when '04' %}{% assign lev_fran_man = 'april' %}{% when '05' %}{% assign lev_fran_man = 'maj' %}{% when '06' %}{% assign lev_fran_man = 'juni' %}{% when '07' %}{% assign lev_fran_man = 'juli' %}{% when '08' %}{% assign lev_fran_man = 'augusti' %}{% when '09' %}{% assign lev_fran_man = 'september' %}{% when '10' %}{% assign lev_fran_man = 'oktober' %}{% when '11' %}{% assign lev_fran_man = 'november' %}{% when '12' %}{% assign lev_fran_man = 'december' %}{% else %}{% assign lev_fran_man = '' %}{% endcase %}{% assign lev_fran_datum = lev_fran_dag | append: ' ' | append: lev_fran_man %}{% assign lev_till_ts = lev_bas | plus: 1209600 %}{% assign lev_till_dag = lev_till_ts | date: '%-d' %}{% assign lev_till_mm = lev_till_ts | date: '%m' %}{% case lev_till_mm %}{% when '01' %}{% assign lev_till_man = 'januari' %}{% when '02' %}{% assign lev_till_man = 'februari' %}{% when '03' %}{% assign lev_till_man = 'mars' %}{% when '04' %}{% assign lev_till_man = 'april' %}{% when '05' %}{% assign lev_till_man = 'maj' %}{% when '06' %}{% assign lev_till_man = 'juni' %}{% when '07' %}{% assign lev_till_man = 'juli' %}{% when '08' %}{% assign lev_till_man = 'augusti' %}{% when '09' %}{% assign lev_till_man = 'september' %}{% when '10' %}{% assign lev_till_man = 'oktober' %}{% when '11' %}{% assign lev_till_man = 'november' %}{% when '12' %}{% assign lev_till_man = 'december' %}{% else %}{% assign lev_till_man = '' %}{% endcase %}{% assign lev_till_datum = lev_till_dag | append: ' ' | append: lev_till_man %}
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paketet är på väg!</title>
+  <style>
+    @media only screen and (max-width: 480px) {
+      .bb-yttre { padding: 8px 0 !important; }
+      .bb-kort { display: inline-block !important; width: 48% !important; box-sizing: border-box !important; }
+      .bb-vinst { display: inline-block !important; width: 32% !important; box-sizing: border-box !important; }
+      .bb-knapp { display: block !important; width: auto !important; }
+      .bb-rubrik { font-size: 26px !important; }
+    }</style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f2f2f2;">
+  <div style="display: none; max-height: 0; overflow: hidden; mso-hide: all;">Spårningslänken finns här.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f2f2f2">
+    <tr>
+      <td align="center" class="bb-yttre" style="padding: 24px 12px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="max-width: 600px; width: 100%; border: 1px solid #D6D9D3;">
+          <tr>
+            <td align="center" bgcolor="#ffffff" style="padding: 20px 24px 16px; border-bottom: 1px solid #D6D9D3;">
+              <a href="https://carashell.se" style="text-decoration: none;"><img src="https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200" alt="CaraShell" width="96" height="96" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;"></a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 36px 32px 8px;">
+              <span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 30px; line-height: 1.15; color: #22282E;">Paketet är på väg!</span>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 8px 32px 4px;">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 15px; line-height: 1.6; color: #22282E; margin: 0;">
+                {% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}
+                Din order {{ name }} har lämnat lagret och är på väg till dig.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 24px 32px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="bb-knapp">
+                <tr>
+                  <td align="center" bgcolor="#1F6F8E">
+                    <a href="{% if fulfillment.tracking_number %}https://carashell.se/pages/spara?nummer={{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'CS-' }}{% else %}{{ order_status_url }}{% endif %}" target="_blank" style="display: inline-block; font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 18px; letter-spacing: 1px; color: #ffffff; text-decoration: none; padding: 16px 44px;">Spåra paketet</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 8px 32px 4px;">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 0; line-height: 1.6;">{% if fulfillment.tracking_number %}Ditt paketnummer: <strong style="color: #22282E; letter-spacing: 0.04em;">{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'CS-' }}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.{% endif %}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 16px 32px 4px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f7f2" style="border: 1px solid #D6D9D3;">
+                <tr>
+                  <td align="center" style="padding: 16px 20px 6px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-weight: bold; color: #1F6F8E; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px;">Beräknad leverans</p>
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 24px; line-height: 1.15; color: #22282E; margin: 0;">{{ lev_fran_datum }}–{{ lev_till_datum }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center" style="padding: 4px 20px 16px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget, inte borttappat. Du behöver inte göra något, den uppdateras så snart det checkats in.</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 32px 8px;">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; line-height: 1.6; color: #6b6b6b; margin: 0;">Spårningen kan stå still i 2–4 dagar medan paketet är på väg till flyget – helt normalt. Kolla igen efter det.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 24px 32px 8px;">
+              <span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 16px; color: #22282E; letter-spacing: 0.5px;">I paketet</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 32px 8px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">{% for line in fulfillment.fulfillment_line_items %}
+                <tr>
+                  <td width="72" valign="middle" style="padding: 10px 0;">
+                    {% if line.line_item.image %}<img src="{{ line.line_item | img_url: 'compact_cropped' }}" alt="" width="60" height="60" style="display: block; border: 1px solid #D6D9D3;">{% endif %}
+                  </td>
+                  <td valign="middle" style="padding: 10px 0 10px 12px;">
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; color: #22282E; font-weight: bold; margin: 0;">{{ line.line_item.title }}</p>
+                    <p style="font-family: Arial,Helvetica,sans-serif; font-size: 13px; color: #6b6b6b; margin: 2px 0 0;">Antal: {{ line.quantity }}</p>
+                  </td>
+                  
+                </tr>{% endfor %}
+              </table>
+            </td>
+          </tr>{% if shipping_address %}
+          <tr>
+            <td style="padding: 0 32px;"><div style="border-top: 1px solid #D6D9D3; font-size: 0; line-height: 0;">&nbsp;</div></td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 32px;">
+              <span style="font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 16px; color: #22282E; letter-spacing: 0.5px;">Levereras till</span>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.6; color: #22282E; margin: 8px 0 0;">{{ shipping_address.name }}<br>{{ shipping_address.address1 }}{% if shipping_address.address2 != blank %}<br>{{ shipping_address.address2 }}{% endif %}<br>{{ shipping_address.zip }} {{ shipping_address.city }}</p>
+            </td>
+          </tr>{% endif %}
+          <tr>
+            <td align="center" bgcolor="#ffffff" style="border-top: 1px solid #D6D9D3; padding: 24px 32px;">
+              <p style="font-family: Arial,Helvetica,sans-serif; font-weight: bold; font-size: 15px; color: #22282E; letter-spacing: 1px; margin: 0 0 8px;">CaraShell</p>
+              <p style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; line-height: 1.6; color: #6b6b6b; margin: 0;">Frågor om din order? Svara på det här mejlet eller skriv till <a href="mailto:hello@carashell.se" style="color: #22282E;">hello@carashell.se</a>.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

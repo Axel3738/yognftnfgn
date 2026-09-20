@@ -30,6 +30,16 @@ kopierad rakt in i Cowork. Delen under linjen är prompten.
   mejlet (mallen räknar på `fulfillment.tracking_number`, det första).
   Sidan slår upp varje kolli för sig, så kunden ser det första paketet.
 
+## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
+
+Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
+standardmall, Shop-knappen kvar): "mailen var tvääär fula, fulare än
+originalet". Mejlen byggs nu som Bäverbutikens — hela mallen byts —
+av `node mejl/bygg-butik.mjs carashell` (butikens logga, färger, språk,
+paketprefix, utan gratisprodukt-blocket). Prompten till Cowork ligger i
+`mejl/output/butiker/carashell/COWORK-PROMPT.md` och täcker A + C (menyn är redan gjord).
+Steg A nedan är kvar som historik och ska INTE köras.
+
 ---
 
 Du jobbar i Chrome i min inloggade Shopify-admin för butiken **CaraShell**

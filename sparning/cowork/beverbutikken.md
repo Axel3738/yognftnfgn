@@ -16,6 +16,16 @@ dataåtkomst" godkänd i admin). Sessionen körde `/sparning beverbutikken` och 
 **https://beverbutikken.no/pages/spor** svarar med rubriken "Spor pakken din". Timrutinen är byggd.
 Det som återstår är steg A–C nedan — hoppa över steg 0.
 
+## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/beverbutikken/COWORK-PROMPT.md`
+
+Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
+standardmall, Shop-knappen kvar): "mailen var tvääär fula, fulare än
+originalet". Mejlen byggs nu som Bäverbutikens — hela mallen byts —
+av `node mejl/bygg-butik.mjs beverbutikken` (butikens logga, färger, språk,
+paketprefix, utan gratisprodukt-blocket). Prompten till Cowork ligger i
+`mejl/output/butiker/beverbutikken/COWORK-PROMPT.md` och täcker A + C + menylänken B.
+Steg A nedan är kvar som historik och ska INTE köras.
+
 ---
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken

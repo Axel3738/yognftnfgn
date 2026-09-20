@@ -7,6 +7,14 @@ fraktmallarna. Den leder till Shop-appen, inte till spårningssidan. Det här
 steget byter den. Bäverbutikens v11-mallar har ingen sådan knapp (mätt i
 `mejl/output/`), så det gäller bara CaraShell. Delen under linjen är prompten.
 
+## ⚠️ ERSATT 2026-09-20 sen kväll — kör INTE den här
+
+Cowork bytte Shop-knappen enligt prompten nedan, och resultatet var
+Shopifys standardmall med två knappar i Shop-lila (Axel: "tvääär fula,
+fulare än originalet"). Hela mallen byts nu i stället:
+`mejl/output/butiker/carashell/COWORK-PROMPT.md` (byggd av
+`node mejl/bygg-butik.mjs carashell`). Texten nedan är historik.
+
 ---
 
 Du jobbar i Chrome i min inloggade Shopify-admin för butiken **CaraShell**

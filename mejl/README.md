@@ -568,3 +568,46 @@ Testa vilken som gäller: `node mejl/nyckelkoll.mjs`.
 - `{{ line | img_url: 'compact_cropped' }}` ger 160 px-bilder som funkar i
   alla mejlklienter; `featuredImage.url` ur API:t är fullstor och används
   bara för erbjudandets produkter (fasta `width`/`height` i taggen).
+
+## Fraktmejlen i de andra butikerna (`bygg-butik.mjs`)
+
+Samma tre fraktmejl (Leveransbekräftelse, Leveransuppdatering, Ute för
+leverans) för CaraShell, Beverbutikken (NO), Bæverbutiken (DK) och
+Majavakauppa (FI) — utan gratisprodukt-blocket (Axels beslut 2026-09-20),
+med butikens logga, färger, språk, paketprefix och spårningssida.
+
+```bash
+node mejl/bygg-butik.mjs carashell     # en butik
+npm run mejl:butiker                   # alla utom Bäverbutiken
+```
+
+Skriver `mejl/output/butiker/<id>/` — `.liquid` + `.amne.txt` per mall,
+`forhandsvisning/`, och **`COWORK-PROMPT.md`** (uppgiften till Cowork med
+teckenantal och råfil-länkar på `main` — pusha före Cowork).
+
+Källorna, en sak på ett ställe:
+- `sparning/butiker.json` — namn, url, support, prefix, spårningssidans
+  handle, leveranslöfte, språk (samma register som spårningsrutinen).
+- `mejl/butiker/<id>.json` — bara brandet: färger, logga (temats fil på
+  butikens CDN), typsnitt, sidhuvudets färg. `meny_klar: true` hoppar
+  över menysteget i prompten.
+- `mejl/sprak/<kod>.json` — orden i byggstenarna (`ord`), månadsnamnen i
+  Liquid-datumen (`manader` + `dagsuffix`, finskan skriver "7. syyskuuta"),
+  sidfoten med `{{support}}`, menyraden, och copyn per mall (`mallar`).
+  Svenska (`sv.json`) tar copyn ur `copy.json` — samma text som Bäverbutiken.
+
+`mallar.mjs` läser tre valfria fält i konfigen: `sparning` { sida, prefix },
+`sprak` { kod, ord, manader, dagsuffix } och `butik.sidhuvud_farg` /
+`rubrik_versaler` / `rubrik_fet`. Utan dem byggs Bäverbutikens mallar
+byte för byte som förut (mätt 2026-09-20 mot en kopia av `output/`).
+
+**Varför:** Coworks första CaraShell-körning bytte länkar rad för rad i
+Shopifys standardmall och lät Shop-knappen stå — Axel: "mailen var tvääär
+fula, fulare än originalet". En hel mall som byts är det som fungerat för
+Bäverbutiken (v11).
+
+Loggorna: CaraShell har mörk rund logga på transparent, Bäver-klonerna svart
+text på transparent — alla fyra får därför **vitt sidhuvud** med linje under
+(`sidhuvud_farg`), inte Bäverbutikens svarta. Mätt i Chromium 2026-09-20
+på 700 och 390 px.
+

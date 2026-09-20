@@ -1,0 +1,10 @@
+{
+  "comment": "Svenska för en butik som INTE är Bäverbutiken (CaraShell). Mallarnas copy tas ur mejl/copy.json (samma text som Bäverbutiken), bara sidfoten och menyraden står här. {{support}} byts mot butikens supportadress av bygg-butik.mjs.",
+  "kod": "sv",
+  "ord": {},
+  "manader": null,
+  "dagsuffix": "",
+  "menyrad": "Spåra paket",
+  "sidfot": "Frågor om din order? Svara på det här mejlet eller skriv till {{support}}.",
+  "mallar": null
+}

@@ -289,8 +289,11 @@ node sparning/baver.mjs --butik carashell "#1030"   # kundtjänst
 | Majavakauppa FI | ✅ (`_FI`) | ✅ sedan 2026-09-20 kväll (Cowork steg 0: version `fi-claudeprodukter-4`, 13 rättigheter) | **live 2026-09-20 21:48 CEST: https://majavakauppa.fi/pages/seuranta** — 7 ordrar/14 d, 7 registrerade, 5 event, 5 paket på sidan. Support `asiakastuki@majavakauppa.fi` (läst ur Shopify av Cowork, nu i `butiker.json`). Timrutin `trig_016yuCdWwbFPgA2ntJcLGUED` (:40). Mejl + meny: `cowork/majavakauppa.md` steg A–C |
 | BeaverShop UK | ✅ (`_UK`) | ❌ saknar samma tre | inte beställd av Axel; går att lägga till i registret (engelska saknas i `sprak/`) |
 
-Mejlmallar och menylänk per butik är klick i admin utan API — Cowork-prompten
-per butik ligger i `sparning/cowork/<id>.md` (för NO/DK/FI även appens
+Mejlmallar och menylänk per butik är klick i admin utan API — mejlen byggs
+hela av `node mejl/bygg-butik.mjs <id>` och Cowork-prompten ligger i
+`mejl/output/butiker/<id>/COWORK-PROMPT.md` (Axels dom 2026-09-20 på den
+lappade Shopify-mallen: "tvääär fula"); appens rättigheter (steg 0) står i
+`sparning/cowork/<id>.md` (för NO/DK/FI även appens
 rättigheter i Dev Dashboard, steg 0). När en butik fått rättigheterna:
 `node sparning/kor.mjs --butik <id>` (publicerar sidan), sedan rutinen
 (`/sparning <id>`, en per butik, fast session + cron på egen minut) och

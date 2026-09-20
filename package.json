@@ -13,6 +13,7 @@
     "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs kundtjanst/test/*.test.mjs mejl/test/*.test.mjs listicle/test/*.test.mjs pipeline/test/*.test.mjs sparning/test/*.test.mjs",
     "listicle": "node listicle/bygg.mjs",
     "mejl": "node mejl/bygg.mjs",
+    "mejl:butiker": "node mejl/bygg-butik.mjs --alla",
     "bilder": "node bildannonser/run.mjs",
     "commission": "node commission/run.mjs",
     "kundtjanst": "node kundtjanst/run.mjs",

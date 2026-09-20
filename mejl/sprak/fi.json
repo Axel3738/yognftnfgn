@@ -1,0 +1,43 @@
+{
+  "comment": "Finska för Majavakauppa (majavakauppa.fi). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. Månadsnamnen står i partitiv med punkt efter dagen ('7. syyskuuta'). Samma struktur som nb.json.",
+  "kod": "fi",
+  "ord": {
+    "Hej": "Hei",
+    "I paketet": "Paketissa",
+    "Levereras till": "Toimitusosoite",
+    "Antal": "Määrä",
+    "Ditt paketnummer": "Pakettinumerosi",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Klikkaa yllä olevaa painiketta, niin pakettisi näkyy heti."
+  },
+  "manader": ["tammikuuta", "helmikuuta", "maaliskuuta", "huhtikuuta", "toukokuuta", "kesäkuuta", "heinäkuuta", "elokuuta", "syyskuuta", "lokakuuta", "marraskuuta", "joulukuuta"],
+  "dagsuffix": ".",
+  "menyrad": "Seuraa pakettia",
+  "sidfot": "Kysyttävää tilauksestasi? Vastaa tähän viestiin tai kirjoita osoitteeseen {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Pakettisi on matkalla", "{{ordernummer}} on lähtenyt varastolta", "Matkalla sinulle nyt"],
+      "preheader": ["Seurantalinkki on tässä.", "Tarkista roskaposti, jos et näe viestiä."],
+      "rubrik": "Paketti on matkalla!",
+      "intro": "Tilauksesi {{ordernummer}} on lähtenyt varastolta ja on matkalla sinulle.",
+      "knapp": "Seuraa pakettia",
+      "tips": "Seuranta voi pysyä paikallaan 2–4 päivää, kun paketti on matkalla lentokentälle – täysin normaalia. Tarkista uudelleen sen jälkeen.",
+      "beraknad_rubrik": "Arvioitu toimitus",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Seuranta ei usein näytä mitään ensimmäisten 2–4 päivän aikana – paketti on matkalla lentokentälle, ei kadonnut. Sinun ei tarvitse tehdä mitään, seuranta päivittyy heti kun paketti on kirjattu sisään."
+    },
+    "fraktuppdatering": {
+      "amne": ["Uutta tietoa paketistasi", "Seuranta on päivitetty", "Päivitys: {{ordernummer}}"],
+      "preheader": ["Näin tilanne on juuri nyt.", "Katso uusimmat tiedot tästä."],
+      "rubrik": "Seuranta on päivitetty",
+      "intro": "Tilauksesi {{ordernummer}} seurantatiedot on päivitetty.",
+      "knapp": "Seuraa pakettia"
+    },
+    "ute_for_leverans": {
+      "amne": ["Paketti saapuu tänään", "Jakelussa nyt", "{{ordernummer}} toimitetaan tänään"],
+      "preheader": ["Pidä silmällä päivän aikana.", "Pian postilaatikossasi tai noutopisteessä."],
+      "rubrik": "Paketti saapuu tänään",
+      "intro": "Tilauksesi {{ordernummer}} on jakelussa ja saapuu päivän aikana.",
+      "knapp": "Seuraa pakettia"
+    }
+  }
+}

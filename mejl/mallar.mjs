@@ -80,9 +80,9 @@ export const MANADER = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', '
 // Sista dag för erbjudandet: orderdag + giltig_dagar, som "20 september".
 // Exempel-läget räknar i JavaScript från i dag; Liquid-läget räknar i Shopify
 // vid utskick (se `slutdatumLiquid`) från orderns created_at.
-export function exempelSlutdatum(dagar, nu = new Date()) {
+export function exempelSlutdatum(dagar, nu = new Date(), sprak = null) {
   const d = new Date(nu.getTime() + dagar * 86400 * 1000);
-  return `${d.getDate()} ${MANADER[d.getMonth()]}`;
+  return `${d.getDate()}${sprak?.dagsuffix ?? ''} ${(sprak?.manader ?? MANADER)[d.getMonth()]}`;
 }
 
 // Samma-paket-deadline i exempelläget: nu + N timmar, som "kl 14:30 den 14 september".
@@ -94,15 +94,29 @@ export function exempelPaketdeadline(timmar, nu = new Date()) {
 }
 
 // Liquid som gör "<dag> <svensk månad>" av unix-sekunderna i variabeln `ts`.
-// Månaden mappas för hand — Shopify ger engelska namn.
-function datumLiquid(ts, prefix) {
-  const fall = MANADER.map((m, i) => `{% when '${String(i + 1).padStart(2, '0')}' %}{% assign ${prefix}_man = '${m}' %}`).join('');
+// Månaden mappas för hand — Shopify ger engelska namn. `sprak` (butikens
+// språkfil, se SPRAK nedan) byter månadsnamnen och dagsuffixet ("7. syyskuuta").
+function datumLiquid(ts, prefix, sprak = null) {
+  const manader = sprak?.manader ?? MANADER;
+  const suffix = sprak?.dagsuffix ?? '';
+  const fall = manader.map((m, i) => `{% when '${String(i + 1).padStart(2, '0')}' %}{% assign ${prefix}_man = '${m}' %}`).join('');
   return (
     `{% assign ${prefix}_dag = ${ts} | date: '%-d' %}` +
     `{% assign ${prefix}_mm = ${ts} | date: '%m' %}` +
     `{% case ${prefix}_mm %}${fall}{% else %}{% assign ${prefix}_man = '' %}{% endcase %}` +
-    `{% assign ${prefix}_datum = ${prefix}_dag | append: ' ' | append: ${prefix}_man %}`
+    `{% assign ${prefix}_datum = ${prefix}_dag | append: '${suffix} ' | append: ${prefix}_man %}`
   );
+}
+
+// Butikens språk i mejlen. Bäverbutiken är svenska (standard: inga byten
+// alls). En annan butik ger `k.sprak` = { kod, ord, manader, dagsuffix } ur
+// mejl/sprak/<kod>.json: `ord` byter de fasta orden i byggstenarna (Hej,
+// I paketet, Antal …), `manader` månadsnamnen i Liquid-datumen. Copyn per
+// mall kommer ur samma fil (bygg-butik.mjs). Svenska stannar i koden.
+export const SPRAK_STANDARD = { kod: 'sv', ord: {}, manader: MANADER, dagsuffix: '' };
+function ordFor(k) {
+  const ord = k.sprak?.ord ?? {};
+  return (text) => ord[text] ?? text;
 }
 
 // Liquid som sätter leveransfönstret `lev_fran_datum`–`lev_till_datum`
@@ -110,13 +124,13 @@ function datumLiquid(ts, prefix) {
 // så 'now' + 7 / + 14 dagar är fönstret; orderbekräftelsen lägger på
 // packtiden först. Inga leveransevent kommer från YunExpress/4PX (0 av 500
 // ordrar sedan 15 juni, mätt 2026-09-17), så datumet måste räknas, inte läsas.
-export function leveransLiquid(frakt, packdagar = 0) {
+export function leveransLiquid(frakt, packdagar = 0, sprak = null) {
   const fran = ((frakt.leverans_dagar_min ?? 7) + packdagar) * 86400;
   const till = ((frakt.leverans_dagar_max ?? 14) + packdagar) * 86400;
   return (
     `{% assign lev_bas = 'now' | date: '%s' | plus: 0 %}` +
-    `{% assign lev_fran_ts = lev_bas | plus: ${fran} %}${datumLiquid('lev_fran_ts', 'lev_fran')}` +
-    `{% assign lev_till_ts = lev_bas | plus: ${till} %}${datumLiquid('lev_till_ts', 'lev_till')}`
+    `{% assign lev_fran_ts = lev_bas | plus: ${fran} %}${datumLiquid('lev_fran_ts', 'lev_fran', sprak)}` +
+    `{% assign lev_till_ts = lev_bas | plus: ${till} %}${datumLiquid('lev_till_ts', 'lev_till', sprak)}`
   );
 }
 
@@ -213,7 +227,7 @@ const LIQUID_AMNE = {
   '{{förnamn}}': "{{ customer.first_name | default: 'Hej' }}",
 };
 
-export function ersatt(text, lage, tabell = LIQUID, { packdagar = 0 } = {}) {
+export function ersatt(text, lage, tabell = LIQUID, { packdagar = 0, sprak = null } = {}) {
   let ut = String(text ?? '');
   for (const [nyckel, liquid] of Object.entries(tabell)) {
     const exempel = {
@@ -224,8 +238,8 @@ export function ersatt(text, lage, tabell = LIQUID, { packdagar = 0 } = {}) {
       '{{belopp}}': kr(EXEMPEL.belopp),
       '{{slutdatum}}': EXEMPEL.slutdatum ?? exempelSlutdatum(30),
       '{{paketdeadline}}': EXEMPEL.paketdeadline ?? exempelPaketdeadline(18),
-      '{{leverans_fran}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[0] ?? 7) + packdagar),
-      '{{leverans_till}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[1] ?? 14) + packdagar),
+      '{{leverans_fran}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[0] ?? 7) + packdagar, new Date(), sprak),
+      '{{leverans_till}}': exempelSlutdatum((EXEMPEL.leverans_dagar?.[1] ?? 14) + packdagar, new Date(), sprak),
     }[nyckel];
     ut = ut.split(nyckel).join(lage === 'liquid' ? liquid : exempel);
   }
@@ -244,14 +258,25 @@ function lankaMejl(text, k) {
 // Byggstenar (tabell-HTML)
 // ---------------------------------------------------------------------------
 
+// Rubrikstilen: Bäverbutiken har Impact i versaler (ingen font-weight — Impact
+// är fet av sig). En butik med lugnare ton (CaraShell) sätter
+// `rubrik_versaler: false` och `rubrik_fet: true` och får Arial bold i
+// gemener. Standardvärdena ger exakt Bäverbutikens sträng.
 function stil(k) {
+  const b = k.butik;
+  const versaler = b.rubrik_versaler ?? true;
+  const fet = b.rubrik_fet ?? false;
   return {
-    rubrik: `font-family: ${k.butik.font_rubrik}; text-transform: uppercase;`,
+    rubrik: `font-family: ${b.font_rubrik};${versaler ? ' text-transform: uppercase;' : ''}${fet ? ' font-weight: bold;' : ''}`,
     brod: 'font-family: Arial,Helvetica,sans-serif;',
-    rod: k.butik.farg_rod,
-    svart: k.butik.farg_svart,
-    ram: k.butik.farg_ram,
+    rod: b.farg_rod,
+    svart: b.farg_svart,
+    ram: b.farg_ram,
     gra: '#6b6b6b',
+    // Sidhuvudet och sidfoten: svart som standard (Bäverbutikens vita logga
+    // på transparent). En butik med mörk logga på transparent sätter
+    // `sidhuvud_farg: "#ffffff"` och får en ljus topp med linje under.
+    huvud: b.sidhuvud_farg ?? b.farg_svart,
   };
 }
 
@@ -259,18 +284,21 @@ function stil(k) {
 // transparent ⇒ svart bakgrund), annars namnet i text.
 function sidhuvud(k, s) {
   const b = k.butik;
+  const ljus = s.huvud.toLowerCase() === '#ffffff';
   const inre = b.logga_url
     ? `<img src="${b.logga_url}" alt="${esk(b.namn)}" width="${b.logga_bredd ?? 240}" height="${b.logga_hojd ?? 80}" style="display: block; margin: 0 auto; max-width: 100%; height: auto; border: 0;">`
-    : `<span style="${s.rubrik} font-size: 26px; letter-spacing: 1px; color: #ffffff;">${esk(b.namn)}</span>`;
+    : `<span style="${s.rubrik} font-size: 26px; letter-spacing: 1px; color: ${ljus ? s.svart : '#ffffff'};">${esk(b.namn)}</span>`;
   return `
           <tr>
-            <td align="center" bgcolor="${s.svart}" style="padding: 16px 24px;">
+            <td align="center" bgcolor="${s.huvud}" style="padding: ${ljus ? '20px 24px 16px' : '16px 24px'};${ljus ? ` border-bottom: 1px solid ${s.ram};` : ''}">
               <a href="${b.url}" style="text-decoration: none;">${inre}</a>
             </td>
           </tr>`;
 }
 
 function rubrikOchIntro(k, s, rubrik, intro, lage) {
+  const o = ordFor(k);
+  const hej = o('Hej');
   return `
           <tr>
             <td align="center" style="padding: 36px 32px 8px;">
@@ -280,8 +308,8 @@ function rubrikOchIntro(k, s, rubrik, intro, lage) {
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">
               <p style="${s.brod} font-size: 15px; line-height: 1.6; color: ${s.svart}; margin: 0;">
-                ${lage === 'liquid' ? '{% if fornamn != blank %}Hej {{ fornamn }}!{% else %}Hej!{% endif %}' : `Hej ${esk(EXEMPEL.fornamn)}!`}
-                ${lankaMejl(ersatt(intro, lage), k)}
+                ${lage === 'liquid' ? `{% if fornamn != blank %}${hej} {{ fornamn }}!{% else %}${hej}!{% endif %}` : `${hej} ${esk(EXEMPEL.fornamn)}!`}
+                ${lankaMejl(ersatt(intro, lage, LIQUID, { sprak: k.sprak }), k)}
               </p>
             </td>
           </tr>`;
@@ -386,7 +414,7 @@ function orderRad(s, f) {
                   </td>
                   <td valign="middle" style="padding: 10px 0 10px 12px;">
                     <p style="${s.brod} font-size: 14px; color: ${s.svart}; font-weight: bold; margin: 0;">${f.titel}</p>
-                    <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 2px 0 0;">Antal: ${f.antal}</p>
+                    <p style="${s.brod} font-size: 13px; color: ${s.gra}; margin: 2px 0 0;">${f.antalOrd ?? 'Antal'}: ${f.antal}</p>
                   </td>
                   ${f.pris !== null ? `<td align="right" valign="middle" style="white-space: nowrap; padding: 10px 0;"><p style="${s.brod} font-size: 14px; color: ${s.svart}; margin: 0;">${f.pris}</p></td>` : ''}
                 </tr>`;
@@ -394,7 +422,8 @@ function orderRad(s, f) {
 
 // Orderrader i tre varianter: orderns line_items, fraktens fulfillment_line_items,
 // återbetalningens refund_line_items. Exempelläget använder samma två rader.
-function orderRader(s, lage, kalla) {
+function orderRader(s, lage, kalla, k = null) {
+  const antalOrd = ordFor(k ?? {})('Antal');
   const KALLOR = {
     order: {
       loop: 'line_items',
@@ -412,10 +441,10 @@ function orderRader(s, lage, kalla) {
   const kk = KALLOR[kalla];
   let rader;
   if (lage === 'liquid') {
-    rader = `{% for line in ${kk.loop} %}${orderRad(s, kk.falt)}{% endfor %}`;
+    rader = `{% for line in ${kk.loop} %}${orderRad(s, { ...kk.falt, antalOrd })}{% endfor %}`;
   } else {
     rader = EXEMPEL.rader
-      .map((r) => orderRad(s, { bild: r.bild, titel: esk(r.titel), antal: r.antal, pris: kk.falt.pris === null ? null : kr(r.pris) }))
+      .map((r) => orderRad(s, { bild: r.bild, titel: esk(r.titel), antal: r.antal, pris: kk.falt.pris === null ? null : kr(r.pris), antalOrd }))
       .join('');
   }
   return `
@@ -460,7 +489,7 @@ function summering(s, lage) {
           </tr>`;
 }
 
-function leveransadress(s, lage) {
+function leveransadress(s, lage, k = null) {
   const a = EXEMPEL.adress;
   const inre =
     lage === 'liquid'
@@ -469,7 +498,7 @@ function leveransadress(s, lage) {
   const block = `${avdelare(s)}
           <tr>
             <td style="padding: 20px 32px;">
-              <span style="${s.rubrik} font-size: 16px; color: ${s.svart}; letter-spacing: 0.5px;">Levereras till</span>
+              <span style="${s.rubrik} font-size: 16px; color: ${s.svart}; letter-spacing: 0.5px;">${esk(ordFor(k ?? {})('Levereras till'))}</span>
               <p style="${s.brod} font-size: 14px; line-height: 1.6; color: ${s.svart}; margin: 8px 0 0;">${inre}</p>
             </td>
           </tr>`;
@@ -744,9 +773,9 @@ export function erbjudandeBlock(k, s, copy, produkter, lage = 'liquid', kalla = 
 function sidfot(k, s, copy) {
   return `
           <tr>
-            <td align="center" bgcolor="${s.svart}" style="border-top: 1px solid #2a2a2a; padding: 24px 32px;">
-              <p style="${s.rubrik} font-size: 15px; color: #ffffff; letter-spacing: 1px; margin: 0 0 8px;">${esk(k.butik.namn)}</p>
-              <p style="${s.brod} font-size: 12px; line-height: 1.6; color: #d9d9d9; margin: 0;">${esk(copy.sidfot.fragor).replace(/([a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,})/gi, '<a href="mailto:$1" style="color: #ffffff;">$1</a>')}</p>
+            <td align="center" bgcolor="${s.huvud}" style="border-top: 1px solid ${s.huvud.toLowerCase() === '#ffffff' ? s.ram : '#2a2a2a'}; padding: 24px 32px;">
+              <p style="${s.rubrik} font-size: 15px; color: ${s.huvud.toLowerCase() === '#ffffff' ? s.svart : '#ffffff'}; letter-spacing: 1px; margin: 0 0 8px;">${esk(k.butik.namn)}</p>
+              <p style="${s.brod} font-size: 12px; line-height: 1.6; color: ${s.huvud.toLowerCase() === '#ffffff' ? s.gra : '#d9d9d9'}; margin: 0;">${esk(copy.sidfot.fragor).replace(/([a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,})/gi, `<a href="mailto:$1" style="color: ${s.huvud.toLowerCase() === '#ffffff' ? s.svart : '#ffffff'};">$1</a>`)}</p>
             </td>
           </tr>`;
 }
@@ -778,10 +807,10 @@ function dokument(k, s, lage, { titel, preheader, rader, erbjudande = false, lev
     lage === 'liquid'
       ? `{% assign fornamn = customer.first_name | default: billing_address.first_name | default: shipping_address.first_name %}\n${
           erbjudande ? `${slutdatumLiquid(k.erbjudande.giltig_dagar ?? 30, erbjudande.paket ? k.erbjudande.samma_paket_timmar ?? 0 : 0, erbjudande.bas)}\n` : ''
-        }${leverans ? `${leveransLiquid(k.frakt, leverans.packdagar ?? 0)}\n` : ''}`
+        }${leverans ? `${leveransLiquid(k.frakt, leverans.packdagar ?? 0, k.sprak)}\n` : ''}`
       : '';
   return `${assign}<!DOCTYPE html>
-<html lang="sv">
+<html lang="${k.sprak?.kod ?? 'sv'}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -835,6 +864,12 @@ export const MALLAR = [
 // knappen till orderstatussidan som förut, så den aldrig leder till en
 // "vi hittar inte det numret".
 const SPARSIDA = 'https://baverbutiken.se/pages/spara';
+// Samma kedja för en annan butik: sidan och prefixet ur `k.sparning`
+// (bygg-butik.mjs läser dem ur sparning/butiker.json — CaraShell `CS-`).
+export function sparningsKedja(prefix) {
+  if (!/^[A-Z]{2,4}-$/.test(prefix)) throw new Error(`Paketprefixet ska vara 2–4 versaler + bindestreck, fick "${prefix}"`);
+  return `{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: '${prefix}' }}`;
+}
 
 // ⚠️ FRAKTBOLAGETS NUMMER STÅR INTE LÄNGRE I MEJLET. Axels beslut 2026-09-20:
 // "maska med ett eget bävernummer så de inte ser YT nr". Fraktbolagets
@@ -848,16 +883,30 @@ const SPARSIDA = 'https://baverbutiken.se/pages/spara';
 //
 // Tidigare stod här "Spårningsnummer: {{ fulfillment.tracking_number }}" som
 // ren text (v9, Axels beslut 2026-09-18). Den raden är borta.
-export const BAVER_LIQUID = "{{ fulfillment.tracking_number | upcase | replace: ' ', '' | replace: '-', '' | sha256 | slice: 0, 8 | upcase | prepend: 'BB-' }}";
-const BAVER_EXEMPEL = bavernummer(EXEMPEL.sparningsnummer);
-const SPARNING_LIQUID = `{% if fulfillment.tracking_number %}${SPARSIDA}?nummer=${BAVER_LIQUID}{% else %}{{ order_status_url }}{% endif %}`;
-const SPARNING_EXEMPEL = `${SPARSIDA}?nummer=${BAVER_EXEMPEL}`;
+export const BAVER_LIQUID = sparningsKedja('BB-');
+
+// Spårningslänkarna för butiken i `k`: Bäverbutiken utan `k.sparning`, andra
+// butiker med { sida, prefix }.
+function sparningFor(k) {
+  const sida = k.sparning?.sida ?? SPARSIDA;
+  const prefix = k.sparning?.prefix ?? 'BB-';
+  const liquid = sparningsKedja(prefix);
+  const exempel = bavernummer(EXEMPEL.sparningsnummer, prefix);
+  return {
+    liquid,
+    exempel,
+    lankLiquid: `{% if fulfillment.tracking_number %}${sida}?nummer=${liquid}{% else %}{{ order_status_url }}{% endif %}`,
+    lankExempel: `${sida}?nummer=${exempel}`,
+  };
+}
 
 // Raden under knappen: bävernumret i klartext, så kunden kan skriva in det
 // själv på spårningssidan (eller läsa upp det för kundtjänst).
-function sparningsInfo(s, lage) {
-  const nummer = lage === 'liquid' ? BAVER_LIQUID : BAVER_EXEMPEL;
-  const rad = `Ditt paketnummer: <strong style="color: ${s.svart}; letter-spacing: 0.04em;">${nummer}</strong><br>Klicka på knappen ovan så visas ditt paket direkt.`;
+function sparningsInfo(s, lage, k) {
+  const o = ordFor(k);
+  const sp = sparningFor(k);
+  const nummer = lage === 'liquid' ? sp.liquid : sp.exempel;
+  const rad = `${esk(o('Ditt paketnummer'))}: <strong style="color: ${s.svart}; letter-spacing: 0.04em;">${nummer}</strong><br>${esk(o('Klicka på knappen ovan så visas ditt paket direkt.'))}`;
   const inre = lage === 'liquid' ? `{% if fulfillment.tracking_number %}${rad}{% endif %}` : rad;
   return `
           <tr>
@@ -872,13 +921,20 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   const c = copy[id];
   const meta = MALLAR.find((m) => m.id === id);
   if (!c || !meta) throw new Error(`Okänd mall: ${id}`);
-  EXEMPEL.slutdatum = exempelSlutdatum(k.erbjudande.giltig_dagar ?? 30);
-  EXEMPEL.paketdeadline = exempelPaketdeadline(k.erbjudande.samma_paket_timmar ?? 18);
+  // Erbjudandet (gratisprodukten) finns bara i Bäverbutiken. En butik utan
+  // `erbjudande` i konfigen bygger samma mallar utan blocket (Axels beslut
+  // 2026-09-20: "skippa gratis produkt / spin the wheel på de andra").
+  const medErbjudande = Boolean(meta.erbjudande && k.erbjudande);
+  EXEMPEL.slutdatum = exempelSlutdatum(k.erbjudande?.giltig_dagar ?? 30);
+  EXEMPEL.paketdeadline = exempelPaketdeadline(k.erbjudande?.samma_paket_timmar ?? 18);
   // Komplementen läser orderns rader i orderbekräftelsen, fraktens rader i
   // frakt- och leveransmejlen (där heter produkten line.line_item).
-  const erbj = meta.erbjudande ? erbjudandeBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt', id) : '';
-  const ordUrl = lage === 'liquid' ? '{{ order_status_url }}' : SPARNING_EXEMPEL;
-  const sparUrl = lage === 'liquid' ? SPARNING_LIQUID : SPARNING_EXEMPEL;
+  const erbj = medErbjudande ? erbjudandeBlock(k, s, copy, produkter, lage, id === 'orderbekraftelse' ? 'order' : 'frakt', id) : '';
+  const sp = sparningFor(k);
+  const ordUrl = lage === 'liquid' ? '{{ order_status_url }}' : sp.lankExempel;
+  const sparUrl = lage === 'liquid' ? sp.lankLiquid : sp.lankExempel;
+  const o = ordFor(k);
+  const ers = (t) => ersatt(t, lage, LIQUID, { sprak: k.sprak });
   let rader = sidhuvud(k, s) + rubrikOchIntro(k, s, c.rubrik, c.intro, lage);
 
   // Erbjudandet ligger direkt efter hälsningen i de mallar som bär det —
@@ -901,20 +957,20 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
     case 'fraktbekraftelse':
       rader +=
         knappRad(s, c.knapp, sparUrl) +
-        sparningsInfo(s, lage) +
+        sparningsInfo(s, lage, k) +
         // Beräknad leverans med datum + varför spårningen är tyst i början.
         // Inga leveransevent kommer från YunExpress/4PX, så det här mejlet är
         // det enda som sätter förväntningen (Axel 2026-09-18: "fixa det").
-        leveransFonster(s, ersatt(c.beraknad_rubrik, lage), ersatt(c.beraknad, lage), ersatt(c.tysta_dagar, lage)) +
-        stycke(k, s, ersatt(c.tips, lage), { farg: s.gra, storlek: 13, topp: 8 }) +
+        leveransFonster(s, ers(c.beraknad_rubrik), ers(c.beraknad), ers(c.tysta_dagar)) +
+        stycke(k, s, ers(c.tips), { farg: s.gra, storlek: 13, topp: 8 }) +
         erbj +
-        litenRubrik(s, 'I paketet', { topp: 24 }) +
-        orderRader(s, lage, 'frakt') +
-        leveransadress(s, lage);
+        litenRubrik(s, o('I paketet'), { topp: 24 }) +
+        orderRader(s, lage, 'frakt', k) +
+        leveransadress(s, lage, k);
       break;
     case 'fraktuppdatering':
     case 'ute_for_leverans':
-      rader += knappRad(s, c.knapp, sparUrl) + sparningsInfo(s, lage) + avdelare(s) + litenRubrik(s, 'I paketet', { topp: 24 }) + orderRader(s, lage, 'frakt');
+      rader += knappRad(s, c.knapp, sparUrl) + sparningsInfo(s, lage, k) + avdelare(s) + litenRubrik(s, o('I paketet'), { topp: 24 }) + orderRader(s, lage, 'frakt', k);
       break;
     case 'levererad':
       rader +=
@@ -965,7 +1021,7 @@ export function byggMall(id, { konfig: k, copy, produkter, lage }) {
   // (lägg på packtiden), fraktmejlet när paketet skickas (ingen packtid).
   const leverans =
     id === 'orderbekraftelse' ? { packdagar: k.frakt.packas_dagar ?? 2 } : id === 'fraktbekraftelse' ? { packdagar: 0 } : null;
-  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: meta.erbjudande ? { bas: id === 'levererad' ? 'now' : 'created_at', paket: id === 'orderbekraftelse' } : false, leverans });
+  const html = dokument(k, s, lage, { titel: c.rubrik, preheader: c.preheader[0], rader, erbjudande: medErbjudande ? { bas: id === 'levererad' ? 'now' : 'created_at', paket: id === 'orderbekraftelse' } : false, leverans });
   return {
     id,
     shopify: meta.shopify,
