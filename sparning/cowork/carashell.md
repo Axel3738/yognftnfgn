@@ -39,9 +39,10 @@ länken **Spåra paket** i huvudmenyn och sidfoten. Sedan **C.** ett testmejl.
 Rör ingenting annat i Shopify: inga andra mallar, inga inställningar, inga
 rabatter, inga produkter, inga andra menyrader.
 
-⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** Ctrl+A och Ctrl+C tolkas
-som Shopifys egna kortkommandon och öppnar dialoger ("Lägg till produktserie",
-"Lägg till sida"). Öppnas en sådan dialog: stäng den utan att spara.
+⚠️ **Datorn är en Windows-dator, inte en Mac.** Klicka alltid först inne i
+kodfältet innan du markerar eller kopierar — kortkommandon som når Shopifys
+sida öppnar dialoger ("Lägg till produktserie", "Lägg till sida"). Öppnas en
+sådan dialog: stäng den utan att spara.
 
 ⚠️ **Kontrollera alltid mot servern, inte mot redigeraren.** Shopify sparar
 osparade utkast i webbläsaren och lägger tillbaka dem efter F5. Läs mallens

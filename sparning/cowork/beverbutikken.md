@@ -15,7 +15,7 @@ Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken
 **Beverbutikken** (beverbutikken.no, 1acuam-s5.myshopify.com). Rör
 ingenting annat i Shopify än det som står här.
 
-⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** ⚠️ **Kontrollera alltid
+⚠️ **Datorn är en Windows-dator, inte en Mac.** ⚠️ **Kontrollera alltid
 mot servern, inte mot redigeraren** (Shopify lägger tillbaka osparade utkast
 efter F5). Klicka aldrig "Ignorera" på "Osparade ändringar" utan att först ha
 läst vad servern har.

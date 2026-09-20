@@ -60,10 +60,11 @@ En av mallarna är stor (~77 500 tecken). Det tar några sekunder att
 klistra in. Vänta ut det. **Klistra aldrig in en halv mall** — går något
 fel, stoppa och berätta vad som hände.
 
-⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** Ctrl+A och Ctrl+C tolkas
-som Shopifys egna kortkommandon och öppnar dialoger som "Lägg till
-produktserie" och "Lägg till sida" (hände 2026-09-13). Öppnas en sådan
-dialog: stäng den utan att spara, och skapa aldrig något.
+⚠️ **Datorn är en Windows-dator, inte en Mac** (Axels besked 2026-09-20).
+Klicka alltid först inne i kodfältet innan du markerar eller kopierar —
+kortkommandon som når Shopifys sida i stället för fältet öppnar dialoger som
+"Lägg till produktserie" och "Lägg till sida" (hände 2026-09-13). Öppnas en
+sådan dialog: stäng den utan att spara, och skapa aldrig något.
 
 ⚠️ **Urklippet är inte att lita på.** Flera gånger har det innehållit något
 annat än det som nyss kopierades (förra mallen, ett telefonnummer, en

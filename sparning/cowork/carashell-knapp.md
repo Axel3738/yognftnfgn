@@ -14,7 +14,7 @@ Du jobbar i Chrome i min inloggade Shopify-admin för butiken **CaraShell**
 order med Shop" mot en knapp **Spåra paketet** som går till butikens egen
 spårningssida. Rör ingenting annat i Shopify.
 
-⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** ⚠️ **Kontrollera alltid
+⚠️ **Datorn är en Windows-dator, inte en Mac.** ⚠️ **Kontrollera alltid
 mot servern, inte mot redigeraren.** Klicka aldrig "Ignorera" på "Osparade
 ändringar" utan att först ha läst vad servern har.
 

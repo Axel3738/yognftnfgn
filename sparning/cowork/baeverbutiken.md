@@ -14,7 +14,7 @@ Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken
 **Bæverbutiken** (baeverbutiken.dk, v0xqtk-tx.myshopify.com). Rör ingenting
 annat i Shopify än det som står här.
 
-⚠️ **Datorn är en Mac. Använd Cmd, aldrig Ctrl.** ⚠️ **Kontrollera alltid
+⚠️ **Datorn är en Windows-dator, inte en Mac.** ⚠️ **Kontrollera alltid
 mot servern, inte mot redigeraren.** Klicka aldrig "Ignorera" på "Osparade
 ändringar" utan att först ha läst vad servern har.
 
