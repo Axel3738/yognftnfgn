@@ -121,7 +121,10 @@ export const DELSTEG = [
   ['hos_bolaget', 'Hos fraktbolaget', 'lager', 2],
   ['terminal', 'På terminalen', 'lager', 2],
   ['sorteras', 'Sorteras', 'lager', 2],
-  ['mot_orten', 'På väg till din ort', 'lastbil', 2],
+  // ⚠️ "mot din ort", inte "till din ort". Skanningen säger att paketet
+  // lämnat en terminal — nästa stopp kan vara en terminal till. Det går
+  // framåt, men vi vet inte att nästa stopp är kundens ort.
+  ['mot_orten', 'På väg mot din ort', 'lastbil', 2],
 
   ['forbereds_utk', 'Förbereds för utkörning', 'lastbil', 3],
   ['i_bilen', 'I bilen på väg till dig', 'lastbil', 3],

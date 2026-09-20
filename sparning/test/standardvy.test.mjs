@@ -270,7 +270,7 @@ test('de svenska skedena har egna delskeden', () => {
   const iLandet = u.sammanfattning.steg[2];
   assert.ok(iLandet.nadd);
   assert.equal(huvudskedeFor(iLandet.delsteg), 2, 'ankomstskedet visar ett delskede från fel del av resan');
-  assert.ok(['Hos fraktbolaget', 'På terminalen', 'Sorteras', 'På väg till din ort'].includes(iLandet.delstegEtikett),
+  assert.ok(['Hos fraktbolaget', 'På terminalen', 'Sorteras', 'På väg mot din ort'].includes(iLandet.delstegEtikett),
     `oväntat delskede i Sverige: ${iLandet.delstegEtikett}`);
   // Och utkörningen ska ha sitt eget.
   const utk = u.sammanfattning.steg[3];
