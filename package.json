@@ -18,7 +18,9 @@
     "kundtjanst": "node kundtjanst/run.mjs",
     "kundtjanst:setup": "node kundtjanst/setup.mjs",
     "kundtjanst:sida": "node kundtjanst/rapportsida.mjs",
-    "sjalvtest": "node factory/sjalvtest.mjs"
+    "sjalvtest": "node factory/sjalvtest.mjs",
+    "sop": "node kundtjanst/sop-koll.mjs",
+    "tvist": "node kundtjanst/tvistfakta.mjs"
   },
   "engines": {
     "node": ">=20"

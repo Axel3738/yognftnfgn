@@ -38,3 +38,29 @@ notion:
   # (Den första länken 2026-09-12, 36f270ab…, var redigerarnas Creative Hub master.)
   sop_database_id: "3aa270ab-908c-8057-a8a0-cc691d9e956b"
   rapport_database_id: ""
+
+# Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina platshållare med.
+# Avläst ur butikens egen återbetalningspolicy 2026-09-20 — inte gissat.
+tvister:
+  # Butikens EGEN policy, ordagrant: "Vi har 30 dagars returpolicy, vilket
+  # betyder att du har 30 dagar på dig att begära retur från det att du
+  # mottog artikeln." ⚠️ FRÅN MOTTAGANDET. Leveranstiden är 3–4 veckor
+  # (mätt på tvistordrarna: #5418 beställd 16/8, levererad 11/9 = 26 dagar),
+  # så fönstret öppnar en månad efter köpet.
+  returfonster_dagar: 30
+  # Lagstadgad ångerrätt, står på samma sida: 14 dagar från mottagandet
+  # (distansavtalslagen 2005:59). Gäller parallellt med de 30 dagarna.
+  angerratt_dagar: 14
+  policy_url: "https://baverbutiken.se/policies/refund-policy"   # svarar 200, avläst 2026-09-20
+  # ⚠️ TOM MED FLIT — returadressen står INTE i policyn ("Om returen accepteras
+  # skickar vi dig instruktioner om hur och var du ska skicka paketet"), och
+  # VA:n skickar den för hand. Fyll i den adress hon faktiskt använder, annars
+  # kan mejlmallarna i kundtjanst/sop/30-EMAIL-TEMPLATES.md inte skickas.
+  returadress: ""
+  # ⚠️ TOM — står i Shopify admin → Settings → Payments → Customer billing
+  # statement. Läs den där; en descriptor kunden inte känner igen är en vanlig
+  # orsak till "unrecognized".
+  billing_descriptor: ""
+  # 0 = slåss om allt. Ändra först när någon räknat på vad VA-timmen kostar
+  # mot medeltvisten (348–589 kr på de flesta rader).
+  strid_lonar_sig_over: 0

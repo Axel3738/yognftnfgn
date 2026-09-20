@@ -57,7 +57,18 @@ notion:
 # att fylla i tio rader, inte genom att skriva om rutinerna.
 tvister:
   returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden
-  returfonster_dagar: 14      # {{RETURN_WINDOW_DAYS}} — ångerrätten som står på sajten
+  # {{RETURN_WINDOW_DAYS}} — butikens EGEN returpolicy. Läs den på policy_url,
+  # gissa aldrig. ⚠️ Räknas från att kunden MOTTOG varan, inte från ordern —
+  # med 3–4 veckors leveranstid är det en helt annan dag. (Mätt 2026-09-20:
+  # VA:n bedömde #5435 som "13 dagar efter orderbekräftelsen, inom 14-dagars-
+  # policyn" — i själva verket hade varan inte ens levererats än, och butikens
+  # policy är 30 dagar, inte 14.)
+  returfonster_dagar: 30
+  # {{WITHDRAWAL_WINDOW_DAYS}} — den LAGSTADGADE ångerrätten, som gäller
+  # parallellt med returpolicyn ovan och inte går att avtala bort. 14 dagar i
+  # EU/Sverige (distansavtalslagen 2005:59), räknat från mottagandet. Utanför
+  # EU: sätt det landets regel, eller 0 om ingen finns.
+  angerratt_dagar: 14
   policy_url: ""              # {{POLICY_URL}} — sidan kunden godkände i kassan (returer/villkor)
   # {{BILLING_DESCRIPTOR}} — texten som står på kundens kontoutdrag. Står den inte
   # här gissar ingen: läs den i Shopify admin → Settings → Payments → Customer

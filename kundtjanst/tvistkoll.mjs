@@ -13,7 +13,8 @@
 //
 // ⚠️ Varför den finns (Axels beslut 2026-09-13): veckorapporten går måndag
 // 07:00. En tvist som kommer in på tisdag med deadline på torsdag hinner gå ut
-// innan nästa rapport — och en obesvarad tvist förloras automatiskt. Den här
+// innan nästa rapport — och en obesvarad CHARGEBACK förloras. (En obesvarad
+// inquiry gör det inte: den eskalerar till chargeback. Se renderaLarm.) Den här
 // kollen täpper till den luckan utan att läsa om hela brevlådan varje dag.
 //
 // ⚠️ LÄS-BARA mot Shopify (bara GET). Skriver ingenting i repot — den behöver

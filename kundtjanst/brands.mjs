@@ -57,6 +57,22 @@ export const STANDARD_TROSKLAR = Object.freeze({
   ordrar_dagar: 30,              // hur många dagars ordrar tvistgraden räknas mot
 });
 
+/**
+ * Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina {{PLATSHÅLLARE}} med.
+ * Samma SOP-text körs på alla butiker — det här blocket är det enda som
+ * skiljer dem åt. Allt som är tomt här MÅSTE fyllas per butik; SOP:en säger
+ * själv vad som inte går att göra utan det. Gissa aldrig åt en butik.
+ * `node kundtjanst/sop-koll.mjs --lista` visar hela listan.
+ */
+export const STANDARD_TVISTER = Object.freeze({
+  returadress: '',            // står sällan i policyn — VA:n skickar den för hand
+  returfonster_dagar: null,   // butikens EGEN policy. null = oläst, läs policy_url
+  angerratt_dagar: 14,        // lagstadgad ångerrätt, EU/Sverige (distansavtalslagen 2005:59)
+  policy_url: '',
+  billing_descriptor: '',     // Shopify → Settings → Payments → Customer billing statement
+  strid_lonar_sig_over: 0,    // 0 = slåss om allt
+});
+
 /** Vad fabrikens butiksfil ger. Fälten som saknas blir '' — aldrig påhittade. */
 export function brandUrButiksfil(b, id) {
   const bu = b?.butik ?? {};
@@ -94,6 +110,10 @@ export function brandUrEgenfil(b, id) {
     // shopify.env_suffix: när Shopify-nycklarna heter något annat än <ID>
     // (Axels val 2026-09-13: SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER).
     shopify: b?.shopify ?? {},
+    // Värdena tvist-SOP:erna i kundtjanst/sop/ fyller sina {{PLATSHÅLLARE}}
+    // med. Samma SOP-text körs på alla butiker; det här blocket är det enda
+    // som skiljer dem. `node kundtjanst/sop-koll.mjs --lista` visar vilka.
+    tvister: b?.tvister ?? {},
   };
 }
 
@@ -119,7 +139,7 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
     if (id === 'testbutiken') continue;
     let b;
     try { b = lasYaml(readFileSync(join(fabrik, f), 'utf8')); } catch { continue; }
-    karta.set(id, { ...brandUrButiksfil(b, id), aktiv: true, mail: {}, discord: {}, notion: {}, trosklar: {}, shopify: {} });
+    karta.set(id, { ...brandUrButiksfil(b, id), aktiv: true, mail: {}, discord: {}, notion: {}, trosklar: {}, shopify: {}, tvister: {} });
   }
   for (const f of yamlFiler(egna)) {
     const id = basename(f, '.yaml');
@@ -132,12 +152,13 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
     if (!bas) { karta.set(id, egen); continue; }
     karta.set(id, {
       ...bas,
-      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'shopify', 'kalla'].includes(k))),
+      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'shopify', 'tvister', 'kalla'].includes(k))),
       kalla: `${bas.kalla} + kundtjanst/brands`,
       mail: { ...bas.mail, ...egen.mail },
       discord: { ...bas.discord, ...egen.discord },
       notion: { ...bas.notion, ...egen.notion },
       trosklar: { ...bas.trosklar, ...egen.trosklar },
+      tvister: { ...(bas.tvister ?? {}), ...egen.tvister },
       shopify: { ...(bas.shopify ?? {}), ...egen.shopify },
     });
   }
@@ -201,6 +222,7 @@ export function korkonfig(brand, env = process.env) {
   return {
     ...brand,
     trosklar: { ...STANDARD_TROSKLAR, ...(brand.trosklar ?? {}) },
+    tvister: { ...STANDARD_TVISTER, ...(brand.tvister ?? {}) },
     mail: {
       host,
       port: Number(m.port) || LOOPIA_IMAP.port,

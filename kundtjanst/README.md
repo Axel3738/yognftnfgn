@@ -19,10 +19,29 @@ som fattas.
 Vid sidan av veckorapporten går **tvistkollen** varje dag: `tvistkoll.mjs` läser
 bara Shopify-tvisterna och larmar om någon har evidence-deadline inom tre dagar.
 Den finns för att veckorapporten går måndag 07:00 — en tvist som kommer in på
-tisdag med deadline på torsdag hinner annars gå ut, och **en obesvarad tvist
-förloras automatiskt** (Axels beslut 2026-09-13). Den läser inga mejl, tar
-sekunder och skriver ingenting i repot. Håll den så: bygger man in ärenden och
-ranking i den blir den långsam och slutar köras.
+tisdag med deadline på torsdag hinner annars gå ut (Axels beslut 2026-09-13).
+Den läser inga mejl, tar sekunder och skriver ingenting i repot. Håll den så:
+bygger man in ärenden och ranking i den blir den långsam och slutar köras.
+
+⚠️ **Inquiry och chargeback är inte samma sak, och skillnaden är hela spelet.**
+Mätt på Bäverbutikens 50 tvister 2026-09-20:
+
+| | Antal | Avgjorda | Vunna | Förlorade |
+|---|---|---|---|---|
+| inquiry | 43 | 29 | **29** | **0** |
+| chargeback | 7 | 4 | 1 | **3** |
+
+Alla tre förluster någonsin var chargebacks (1 435 kr). En obesvarad **inquiry**
+förloras alltså INTE automatiskt — den **eskalerar till chargeback** med ny
+deadline, och det är där pengarna försvinner. #4914, #5044 och #4706 gick den
+vägen och rapporterades felaktigt som förlorade 2026-09-18/19. Larmet sorterar
+därför chargebacks överst, och texten "an unanswered dispute is lost
+automatically" är borttagen ur både koden och rapportsidan — skriv aldrig
+tillbaka den.
+
+Handboken VA:n följer när larmet kommer ligger i **`kundtjanst/sop/`** (engelska,
+portabel över alla butiker). `kundtjanst/tvistfakta.mjs` ger domen på ett
+kommando; `kundtjanst/sop-koll.mjs` vaktar att SOP:erna förblir portabla.
 
 ```bash
 node kundtjanst/run.mjs --kolla                       # vad går att läsa här?
