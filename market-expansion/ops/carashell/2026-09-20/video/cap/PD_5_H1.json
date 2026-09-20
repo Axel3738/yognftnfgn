@@ -1,0 +1,33 @@
+{
+ "in": "../carashell/up/PD_5_H1.mp4",
+ "ut": "../../no/CaraShellRoof_NO_PD_5_H1.mp4",
+ "srt": "../srt-ratt/carashell_PD_5_H1.srt",
+ "captions": {
+  "zon": [
+   1320,
+   1650
+  ],
+  "max_chars": 34,
+  "font_px": 45,
+  "standard_cy": 1420,
+  "x0": 75,
+  "x1": 1005,
+  "bredd_max": 930,
+  "av": [
+   [
+    36.4,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/slutkort-1080.png",
+   "t": [
+    36.4,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-PD_5_H1"
+}
