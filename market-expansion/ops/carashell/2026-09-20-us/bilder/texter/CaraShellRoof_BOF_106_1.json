@@ -1,0 +1,71 @@
+[
+ {
+  "box": [
+   40,
+   60,
+   1040,
+   166
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Can I do it myself?"
+ },
+ {
+  "box": [
+   60,
+   200,
+   1020,
+   264
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Just the roof, not the whole RV"
+ },
+ {
+  "box": [
+   160,
+   1084,
+   920,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Straps & cord at the edge"
+ },
+ {
+  "box": [
+   334,
+   1222,
+   748,
+   1290
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Fit it yourself"
+ }
+]

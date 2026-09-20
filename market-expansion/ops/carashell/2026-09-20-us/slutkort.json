@@ -1,0 +1,90 @@
+{
+  "CaraShellRoof_US_OB_101_H1": {
+    "dom": "slutkort-med-brand",
+    "skal": "slutkortet namnger en butik: \"baverbutiken\" (kallbrand/exakt)",
+    "fynd": [
+      {
+        "ord": "baverbutiken",
+        "form": "baverbutiken",
+        "satt": "kallbrand/exakt"
+      }
+    ],
+    "textrader": [
+      "BAVERBUTIKEN",
+      "TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN",
+      "DYRASTEYTAN",
+      "★★★★★10recensioner",
+      "1469KF1,129Kr",
+      "Finnsilager-Begransatantal"
+    ],
+    "sekunder": 1.71,
+    "slut_sek": 3,
+    "blockerar": true
+  },
+  "CaraShellRoof_US_PD_107_H1": {
+    "dom": "slutkort-med-brand",
+    "skal": "slutkortet namnger en butik: \"baverbutiken\" (kallbrand/exakt)",
+    "fynd": [
+      {
+        "ord": "baverbutiken",
+        "form": "baverbutiken",
+        "satt": "kallbrand/exakt"
+      }
+    ],
+    "textrader": [
+      "BAVERBUTIKEN",
+      "TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN",
+      "DYRASTEYTAN",
+      "★★★★★10recensioner",
+      "1,469KF1,129Kr",
+      "Finnsilager-Begransatantal"
+    ],
+    "sekunder": 1.33,
+    "slut_sek": 3,
+    "blockerar": true
+  },
+  "CaraShellRoof_US_RI_103_H1": {
+    "dom": "slutkort-med-brand",
+    "skal": "slutkortet namnger en butik: \"baverbutiken\" (kallbrand/exakt)",
+    "fynd": [
+      {
+        "ord": "baverbutiken",
+        "form": "baverbutiken",
+        "satt": "kallbrand/exakt"
+      }
+    ],
+    "textrader": [
+      "BAVERBUTIKEN",
+      "TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN",
+      "DYRASTEYTAN",
+      "★★★★★10recensioner",
+      "1469-KF1,129Kr",
+      "Finnsilager-Begransatantal"
+    ],
+    "sekunder": 1.36,
+    "slut_sek": 3,
+    "blockerar": true
+  },
+  "CaraShellRoof_US_PD_106_H1": {
+    "dom": "slutkort-med-brand",
+    "skal": "slutkortet namnger en butik: \"baverbutiken\" (kallbrand/exakt)",
+    "fynd": [
+      {
+        "ord": "baverbutiken",
+        "form": "baverbutiken",
+        "satt": "kallbrand/exakt"
+      }
+    ],
+    "textrader": [
+      "BAVERBUTIKEN",
+      "TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN",
+      "DYRASTEYTAN",
+      "★★★★★10recensioner",
+      "1469KF1,129Kr",
+      "Finnsilager-Begransatantal"
+    ],
+    "sekunder": 1.36,
+    "slut_sek": 3,
+    "blockerar": true
+  }
+}

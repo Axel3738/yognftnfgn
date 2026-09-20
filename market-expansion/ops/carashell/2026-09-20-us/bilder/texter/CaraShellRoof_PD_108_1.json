@@ -1,0 +1,72 @@
+[
+ {
+  "box": [
+   40,
+   60,
+   1040,
+   290
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.68,
+  "text": "21 × 10 ft — the whole roof, no more"
+ },
+ {
+  "box": [
+   80,
+   320,
+   1000,
+   376
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   17
+  ],
+  "text": "210D — built for a full winter outside"
+ },
+ {
+  "box": [
+   160,
+   1084,
+   920,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Just the roof — one person handles it"
+ },
+ {
+  "box": [
+   410,
+   1222,
+   672,
+   1282
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See size"
+ }
+]

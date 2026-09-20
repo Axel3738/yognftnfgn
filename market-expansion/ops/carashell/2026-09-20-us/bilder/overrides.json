@@ -1,0 +1,1111 @@
+{
+ "_kalla": "Rutor mätta 2026-09-20 ur de 12 SE-bilderna (matrader.py för textradernas y/x, oversatt-bild.py --analys för plattor och knappar). Alla former går via box_for_form — detektorn hittar varken den vita etikettraden direkt på fotot eller texten i de halvgenomskinliga plattorna över delade foton. Textstorlekarna är KALIBRERADE, inte gissade: varje storlek är den som återger SE-radens uppmätta bredd i Liberation Sans (rubrik 77, underrad 38, etikett 30, knapp 42, punkt 38, stort pris 76) och stämmer med factory/bild-text.py:s STORLEK (rubrik 0.072×1080 = 78). Etikettraden är vit text direkt på fotot: den får mörk platta (fyll mork, alfa 235) i stället för suddning — rita_box suddar bara mörka pixlar när raden är ljus, så en vit svensk rad ligger annars kvar (lärdom från 2026-09-18). Knapptexten är vit på en solid blå knapp och suddas rent utan platta. QA-rättning samma dag: BOF_105 och GT_109 fick opak platta i bandets uppmätta färg (halvgenomskinligt band över tvåtonat foto — suddningen smetar i stället för att sudda), TR_102:s etikettplatta alfa 235 -> 255 (det svenska priset lyste igenom).",
+ "CaraShellRoof_BOF_104_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      180,
+      60,
+      900,
+      152
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 76,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      140,
+      198,
+      940,
+      258
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 40,
+     "farg": [
+      20,
+      19,
+      17
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      180,
+      1086,
+      900,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      362,
+      1228,
+      720,
+      1282
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_CS_110_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.68
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      80,
+      320,
+      1000,
+      380
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      170,
+      1084,
+      910,
+      1138
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      340,
+      1228,
+      742,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_CS_111_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "radavstand": 1.68
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      80,
+      320,
+      1000,
+      380
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      170,
+      1084,
+      910,
+      1138
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      340,
+      1228,
+      742,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_BOF_105_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.68,
+     "fyll": "ljus",
+     "fyllfarg": [
+      233,
+      238,
+      241
+     ],
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      320,
+      1020,
+      442
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72,
+     "fyll": "ljus",
+     "fyllfarg": [
+      234,
+      242,
+      245
+     ],
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      140,
+      1084,
+      940,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      282,
+      1222,
+      798,
+      1290
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_BOF_106_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      166
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      200,
+      1020,
+      264
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      160,
+      1084,
+      920,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      334,
+      1222,
+      748,
+      1290
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_CO_104_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      160
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    },
+    {
+     "box": [
+      40,
+      186,
+      1040,
+      290
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      318,
+      1020,
+      440
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 38,
+     "farg": [
+      20,
+      19,
+      18
+     ],
+     "radavstand": 1.72
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      170,
+      1084,
+      910,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      340,
+      1228,
+      742,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_GT_109_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      396
+     ],
+     "post": 0,
+     "rader": 3,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      17,
+      15
+     ],
+     "radavstand": 1.68,
+     "fyll": "ljus",
+     "fyllfarg": [
+      238,
+      243,
+      249
+     ],
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      442,
+      1020,
+      502
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "fyll": "ljus",
+     "fyllfarg": [
+      232,
+      232,
+      232
+     ],
+     "alfa": 255,
+     "radie": 0
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      44,
+      1086,
+      1036,
+      1138
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 28,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      292,
+      1228,
+      790,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_LI_102_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      160
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ]
+    },
+    {
+     "box": [
+      40,
+      190,
+      1040,
+      290
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      300,
+      322,
+      1000,
+      368
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      17
+     ],
+     "bock": true,
+     "vanster_x": 366
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      300,
+      374,
+      1000,
+      424
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      17
+     ],
+     "bock": true,
+     "vanster_x": 366
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      300,
+      430,
+      1000,
+      474
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "bock": true,
+     "vanster_x": 366
+    }
+   ],
+   "4": [
+    {
+     "box": [
+      300,
+      1086,
+      780,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "5": [
+    {
+     "box": [
+      232,
+      1228,
+      848,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_PD_108_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.68
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      80,
+      320,
+      1000,
+      376
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      20,
+      19,
+      17
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      160,
+      1084,
+      920,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      410,
+      1222,
+      672,
+      1282
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_PD_109_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      276
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.68
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      320,
+      1020,
+      442
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      180,
+      1084,
+      900,
+      1138
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      380,
+      1228,
+      700,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_RI_104_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      60,
+      1040,
+      396
+     ],
+     "post": 0,
+     "rader": 3,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.58
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      440,
+      1020,
+      562
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 38,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.72
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      260,
+      1084,
+      820,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 235
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      210,
+      1228,
+      872,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_TR_102_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      188,
+      1040,
+      282
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    },
+    {
+     "box": [
+      40,
+      308,
+      1040,
+      400
+     ],
+     "post": 1,
+     "rader": 1,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      80,
+      442,
+      1000,
+      496
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 38,
+     "farg": [
+      20,
+      19,
+      18
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      300,
+      1086,
+      780,
+      1134
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 30,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "fyll": "mork",
+     "alfa": 255
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      340,
+      1228,
+      742,
+      1288
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ }
+}
