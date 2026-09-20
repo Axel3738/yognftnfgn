@@ -274,6 +274,15 @@ event i Shopify ligger kvar.
   samma kväll 17:35 CEST, verifierade mot servern; "Spåra paket" i huvudmeny
   + sidfot** — `mejl/COWORK-PROMPT.md`. Grenen mergad till `main` 2026-09-20
   kväll (Axels order), så timrutinen bygger om sidan varje timme.
+  **Senare samma kväll:** Axels dom "riktigt jävla bra" + två ändringar:
+  (a) **"Mer information" bort** (beslut B — historiken räknade upp Kina
+  rad för rad); (b) **upsell under paketet**: svart block "Vinn en
+  gratisprodukt" med stor röd knapp **Få en gratisprodukt** →
+  `/pages/din-gratisprodukt` (lyckohjulet), "Spåra ett annat nummer" liten
+  under. Belopp och hjulets adress ur `mejl/konfig.json` (`erbjudande`,
+  `hjul`) via `publicera.mjs` — ingen kod i länken, ingen andra sanning.
+  Visas bara i träffvyn. Shopifys Liquid-kedja för bävernumret mätt mot
+  Node på tre riktiga nummer (tillfällig temamall, raderad): identisk.
   ⚠️ Koden ligger på grenen `claude/fervent-bardeen-pzyuql`, inte på `main`
   (Axel: "inte merga än"). Timrutinen kör `main`, vars `kor.mjs` inte känner
   till sidan alls (mätt 2026-09-20: ingen `publicera` i `origin/main`) — den
