@@ -76,7 +76,11 @@ export const STATUSAR = [
 // och bär ingen geografi alls (se `sammanfattning()` nedan).
 export const STEG = [
   ['bestalld', 'Beställningen är registrerad'],
-  ['pa_vag', 'Internationell transport'],
+  // ⚠️ Destinationen får stå här, ursprunget aldrig. Axel 2026-09-20:
+  // "Internationell transport" kändes "bara skumt" — kunden vill veta vart
+  // paketet är på väg, inte vilken kategori transporten tillhör. Var det ÄR
+  // just nu står som delskede (DELSTEG ovan), ur samma skanningar.
+  ['pa_vag', 'På väg till {{land}}'],
   ['i_landet', 'Ankommit till {{land}}'],
   ['utkorning', 'Ute för leverans'],
   ['levererat', 'Levererat'],
@@ -86,6 +90,38 @@ export const STEG = [
 // utlandet, och där visar sammanfattningen aldrig en ort. Härlett ur STEG,
 // aldrig skrivet som en siffra — annars är det ännu en sanning som kan glida.
 export const I_LANDET_NR = STEG.findIndex((rad) => rad[0] === 'i_landet');
+
+// Delskedena inom "På väg till {{land}}" — var på resan paketet är.
+// Fraserna som avgör vilket delskede en skanning bär står i
+// `sparning/delsteg.mjs`; HÄR bor bara etiketterna och motiven, av samma skäl
+// som STEG gör det: den här filen körs också i kundens webbläsare och får
+// inte importera något.
+//
+// ⚠️ Ordningen ÄR delstegsnumret, precis som i STEG, och numret ligger i
+// varje byggd datafil. Lägg aldrig till ett delskede i mitten.
+//
+// ⚠️ Inget delskede får påstå mottagarlandet. Ankomsten dit är huvudskedet
+// `i_landet`, som steg.mjs avgör med förhandsaviseringsundantaget inbakat.
+// Därför "Landat" och inte "Landat i Sverige".
+export const DELSTEG = [
+  ['hamtat', 'Hämtat hos avsändaren', 'lada'],
+  ['utforsel', 'Klart för avfärd', 'stampel'],
+  ['flygplats', 'På flygplatsen', 'flygplats'],
+  ['luften', 'I luften', 'flyg'],
+  ['landat', 'Landat', 'flyg'],
+  ['tull', 'Hos tullen', 'stampel'],
+  ['tullklart', 'Genom tullen', 'stampel'],
+];
+
+export function delstegEtikett(ix) {
+  var d = DELSTEG[ix];
+  return d ? d[1] : '';
+}
+
+export function delstegIkon(ix) {
+  var d = DELSTEG[ix];
+  return d ? d[2] : null;
+}
 
 export const STANDARDLAND = 'Sverige';
 
@@ -182,6 +218,8 @@ export function sammanfattning(handelser, land) {
       nr: i, nyckel: STEG[i][0], etikett: stegEtikett(i, land), nadd: false,
       tid: null, iso: null, text: null, plats: null, raPlats: null, land: null,
       senastTid: null, senastIso: null,
+      // Längst komna delskede inom det här skedet, och när det nåddes.
+      delsteg: -1, delstegEtikett: '', delstegIkon: null, delstegTid: null, delstegIso: null,
     });
   }
   var hogsta = -1;
@@ -207,6 +245,17 @@ export function sammanfattning(handelser, land) {
     if (!rad.senastIso || (h.iso && h.iso > rad.senastIso)) {
       rad.senastTid = h.tid;
       rad.senastIso = h.iso;
+    }
+
+    // Delskedet: det längst komna, och tiden för den FÖRSTA skanning som bar
+    // det — alltså när paketet nådde dit, samma regel som för skedet själv.
+    var dd = typeof h.delsteg === 'number' ? h.delsteg : -1;
+    if (dd >= 0 && (dd > rad.delsteg || (dd === rad.delsteg && rad.delstegIso && h.iso && h.iso < rad.delstegIso))) {
+      rad.delsteg = dd;
+      rad.delstegEtikett = delstegEtikett(dd);
+      rad.delstegIkon = delstegIkon(dd);
+      rad.delstegTid = h.tid;
+      rad.delstegIso = h.iso;
     }
   }
   return { steg: ut, nu: hogsta };
@@ -243,6 +292,9 @@ export function packaUppEtt(data, nummer) {
       platsMedLand: platsMedLand(plats, hland),
       steg: typeof e[3] === 'number' ? e[3] : -1,
       avvikelse: !!(e[5] & 1),
+      // Fält 7 kom 2026-09-20. Äldre data saknar det ⇒ -1, och sidan visar
+      // då den internationella sträckan utan delskede, precis som förut.
+      delsteg: typeof e[6] === 'number' ? e[6] : -1,
     };
   });
   return {

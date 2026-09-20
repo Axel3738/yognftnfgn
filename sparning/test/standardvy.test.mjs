@@ -20,8 +20,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { handelserUr, byggData } from '../paketdata.mjs';
 import { oversattFras, stadaPlats, landFor } from '../sprak.mjs';
-import { packaUppEtt, STEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
+import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
 import { kontrolleraStandardvyn, kontrollera } from '../kontroll.mjs';
+import { delstegForFras } from '../delsteg.mjs';
 import { byggSidkropp } from '../sida.mjs';
 
 const FIXTUR = JSON.parse(readFileSync(new URL('./fixturer/riktiga-paket.json', import.meta.url), 'utf8'));
@@ -46,6 +47,26 @@ function byggAllt() {
   return { paket, data };
 }
 
+// ⚠️ Den här fällan slog till TRE gånger under ändringen 2026-09-20.
+// Sidans skript ligger i en String.raw-mall i sida.mjs, så ett bakåtfnutt
+// var som helst i koden — även mitt i en kommentar — avslutar mallen och
+// gör hela filen osyntaktisk. Felet pekar då på kommentarraden och ser ut
+// att handla om något helt annat. Testet läser filen som text, för det är
+// just som text felet uppstår.
+test('sidans skriptmall bär inga bakåtfnuttar', () => {
+  const kalla = readFileSync(new URL('../sida.mjs', import.meta.url), 'utf8');
+  const start = kalla.indexOf('String.raw');
+  assert.ok(start > 0, 'hittade inte skriptmallen — har den bytt form?');
+  const fran = kalla.indexOf('`', start) + 1;
+  const till = kalla.indexOf('\n`;', fran);
+  assert.ok(till > fran, 'hittade inte slutet på skriptmallen');
+  const inne = kalla.slice(fran, till);
+  const rader = inne.split('\n');
+  const traff = rader.map((r, i) => [i, r]).filter(([, r]) => r.includes('`'));
+  assert.deepEqual(traff.map(([i, r]) => `rad ${i + 1}: ${r.trim()}`), [],
+    'ett bakåtfnutt i skriptmallen stänger String.raw och river hela filen — skriv om raden utan det');
+});
+
 // ---------------------------------------------------------------- kontraktet
 
 // ⚠️ Det här testet ska bli rött när någon ändrar skedena. Det är meningen.
@@ -55,7 +76,7 @@ function byggAllt() {
 test('skedenas nycklar, ordning och etiketter är låsta', () => {
   assert.deepEqual(STEG, [
     ['bestalld', 'Beställningen är registrerad'],
-    ['pa_vag', 'Internationell transport'],
+    ['pa_vag', 'På väg till {{land}}'],
     ['i_landet', 'Ankommit till {{land}}'],
     ['utkorning', 'Ute för leverans'],
     ['levererat', 'Levererat'],
@@ -63,11 +84,22 @@ test('skedenas nycklar, ordning och etiketter är låsta', () => {
   assert.equal(I_LANDET_NR, 2, 'i_landet ska vara skede 2 — steg.mjs hårdkodar samma tal');
 });
 
-test('inget skede före Sverige nämner ett land eller en ort i sin etikett', () => {
-  for (let i = 0; i < I_LANDET_NR; i++) {
-    const etikett = STEG[i][1];
-    assert.ok(!etikett.includes('{{land}}'), `skede ${i} bär landet i etiketten: ${etikett}`);
-    assert.ok(!/kina|nederländerna|sverige|norge/i.test(etikett), `skede ${i} nämner ett land: ${etikett}`);
+// ⚠️ MOTTAGARLANDET är tillåtet i en etikett — det är kundens eget land och
+// hela poängen med raden ("På väg till Sverige"). Det som är förbjudet är
+// ursprungs- och transitgeografin. Skillnaden är avsiktlig: `{{land}}` byts
+// mot datans `land`, alltså alltid mottagarlandet, aldrig Kina.
+test('ingen etikett bär utländsk geografi', () => {
+  for (const [, etikett] of STEG) {
+    assert.ok(!/kina|nederländerna|holland|belgien|shenzhen|hongqiao|rozenburg/i.test(etikett),
+      `etiketten nämner utländsk geografi: ${etikett}`);
+    assert.ok(!/sverige|norge|finland/i.test(etikett),
+      `skriv {{land}} i stället för ett hårdkodat landsnamn: ${etikett}`);
+  }
+  for (const [, etikett] of DELSTEG) {
+    assert.ok(!/kina|nederländerna|holland|belgien|europa|shenzhen|hongqiao|rozenburg/i.test(etikett),
+      `delskedet nämner geografi: ${etikett}`);
+    // Ett delskede får aldrig påstå ankomsten — det är i_landet:s jobb.
+    assert.ok(!etikett.includes('{{land}}'), `delskedet påstår mottagarlandet: ${etikett}`);
   }
 });
 
@@ -170,6 +202,91 @@ test('hela kontrollen är grön på riktig data, med krav 5 inräknat', () => {
 });
 
 // ⚠️ Motprov. En kontroll som aldrig kan bli röd bevisar ingenting.
+// ----------------------------------------------------- delskedet på resan
+
+test('delskedet läses ur fraktbolagets egna skanningar', () => {
+  const { data } = byggAllt();
+  // Lång kedja Kina → Nederländerna → Sverige: paketet gick hela vägen, så
+  // dess sista delskede ska vara tullen, inte flyget.
+  const lang = packaUppEtt(data, 'YT2625400704778854').sammanfattning.steg[1];
+  assert.equal(lang.delstegEtikett, 'Genom tullen');
+  assert.equal(lang.delstegIkon, 'stampel');
+  // Nyss upphämtat, två skanningar: första delskedet och inget mer.
+  const nyss = packaUppEtt(data, 'YT2626100708675887').sammanfattning.steg[1];
+  assert.equal(nyss.delstegEtikett, 'Hämtat hos avsändaren');
+  assert.equal(nyss.delstegIkon, 'lada');
+  // Bara bokat, ingen rörelse: inget delskede alls ska påstås.
+  const bokat = packaUppEtt(data, 'YT2626100708674690').sammanfattning.steg[1];
+  assert.equal(bokat.delsteg, -1);
+  assert.equal(bokat.delstegEtikett, '');
+});
+
+test('delskedet pekar alltid på en riktig skanning i historiken', () => {
+  const { paket, data } = byggAllt();
+  for (const p of paket) {
+    const u = packaUppEtt(data, p.nummer);
+    for (const s of u.sammanfattning.steg) {
+      if (s.delsteg < 0) continue;
+      const bakom = u.handelser.find((h) => h.iso === s.delstegIso && h.delsteg === s.delsteg);
+      assert.ok(bakom, `${p.nummer}: delskedet "${s.delstegEtikett}" har ingen skanning bakom sig`);
+      assert.ok(!bakom.avvikelse, `${p.nummer}: delskedet bygger på en avvikelse`);
+    }
+  }
+});
+
+test('delskedet finns BARA på den internationella sträckan', () => {
+  const { paket, data } = byggAllt();
+  let sedda = 0;
+  for (const p of paket) {
+    const u = packaUppEtt(data, p.nummer);
+    for (const h of u.handelser) {
+      if (h.delsteg < 0) continue;
+      sedda++;
+      assert.ok(h.steg >= 0 && h.steg < I_LANDET_NR,
+        `${p.nummer}: en skanning i skede ${h.steg} bär delskede ${h.delsteg} — delskeden hör bara till resan hit`);
+    }
+    for (const s of u.sammanfattning.steg) {
+      if (s.nyckel === 'pa_vag' || s.nyckel === 'bestalld') continue;
+      assert.equal(s.delsteg, -1, `${p.nummer}: skedet "${s.nyckel}" ska inte bära något delskede`);
+    }
+  }
+  assert.ok(sedda > 20, 'för få delskeden för att testet ska betyda något');
+});
+
+test('ett tvetydigt fraktbolagsord flyttar aldrig fram delskedet', () => {
+  // "Arrived at sort facility" händer både i Shenzhen och i Rozenburg.
+  // Den får därför inte ensam göra ett paket "Genom tullen".
+  assert.equal(delstegForFras('Arrived at sort facility'), -1);
+  assert.equal(delstegForFras('Departed from facility'), -1);
+  assert.equal(delstegForFras('Shipment is in transit to next facility'), -1);
+  // De entydiga ska däremot träffa.
+  assert.ok(delstegForFras('International flight has departed') >= 0);
+  assert.ok(delstegForFras('Clearance processing completed - Import') >= 0);
+});
+
+// ⚠️ Avvikelseraden ligger i STANDARDVYN, ovanför stegen, och undantas inte
+// av filtret i sammanfattning() — den bygger på en skanning utan skede.
+// Mätt 2026-09-20 på 4PX3003158126759CN: rutan skrev "Paketet skickas
+// tillbaka till avsändaren (Hongqiao)" tills ortIVyn fick sitt stränga läge.
+test('avvikelserutan bär ingen utländsk ort', () => {
+  const { data } = byggAllt();
+  const kropp = byggSidkropp(data, KONFIG);
+  const kod = kropp.split('<script>').pop();
+  assert.ok(/ortIVyn\(avv, p\.land, true\)/.test(kod),
+    'avvikelseraden måste använda det stränga läget — annars läcker en ort utan känt land');
+});
+
+test('sidan: delskedet och stegikonerna ritas', () => {
+  const { data } = byggAllt();
+  const kropp = byggSidkropp(data, KONFIG);
+  assert.ok(kropp.includes('bbs-stegdel'), 'delskederaden saknas');
+  assert.ok(kropp.includes('bbs-stegikon'), 'stegikonen saknas');
+  assert.ok(kropp.includes('bbs-resa'), 'paketet som färdas längs linjen saknas');
+  assert.ok(kropp.includes('prefers-reduced-motion'), 'animationen måste gå att stänga av');
+  // Ikonerna är ritade, inte hämtade.
+  assert.ok(!/<img/i.test(kropp) && !/\.svg/i.test(kropp), 'ikonerna får inte laddas utifrån');
+});
+
 test('krav 5 FÄLLER en standardvy som visar en utländsk ort', () => {
   const { data } = byggAllt();
   const u = packaUppEtt(data, 'YT2625400704778854');

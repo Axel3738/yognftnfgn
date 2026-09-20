@@ -26,7 +26,7 @@ const REPO = dirname(SPARNING);
 // importerar MÅSTE stå här — annars faller testet på ERR_MODULE_NOT_FOUND i
 // temp-kopian, inte på det den mäter. steg.mjs och kontroll.mjs lades till
 // 2026-09-19 med sammanfattningsvyn.
-const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json'];
+const FILER = ['publicera.mjs', 'paketdata.mjs', 'sprak.mjs', 'status.mjs', 'sida.mjs', 'uppacka.mjs', 'steg.mjs', 'delsteg.mjs', 'kontroll.mjs', 'fraser.json', 'konfig.json'];
 
 // En kopia av sparning/ med egen lagefil. `konfigAndringar` skrivs ovanpå
 // konfigurationens `sida`-block.

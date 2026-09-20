@@ -133,6 +133,13 @@ function copydata(c, utkorningEgenRad) {
     senast: 'Senaste skanning {{tid}}',
     utkorningEgenRad: !!utkorningEgenRad,
     utkorningUnderrad: 'Ute för leverans {{tid}}',
+    // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner
+    // på "På väg till …"-raden, så ikonen följer resan: låda → stämpel →
+    // flygplats → flygplan.
+    ikoner: {
+      bestalld: 'kvitto', pa_vag: 'flyg', i_landet: 'lager',
+      utkorning: 'lastbil', levererat: 'brevlada',
+    },
     // Sidan är statisk: skanningarna bakas in när rutinen bygger om den, varje
     // timme. Den hämtar ingenting själv medan kunden tittar, och får inte
     // påstå det heller — står det "hämtar" tror kunden att en uppdatering är
@@ -220,6 +227,29 @@ function stil(c) {
 #bb-spar .bbs-stegort{text-transform:none;letter-spacing:0}
 #bb-spar .bbs-stegsenast{text-transform:none;letter-spacing:0;font-style:italic}
 #bb-spar .bbs-stegextra{text-transform:none;letter-spacing:0}
+#bb-spar .bbs-steg--ikoner .bbs-stegrad{padding-left:44px}
+#bb-spar .bbs-steg--ikoner .bbs-stegrad::before{display:none}
+#bb-spar .bbs-stegikon{position:absolute;left:-17px;top:-2px;width:32px;height:32px;border-radius:50%;background:#fff;border:2px solid var(--bbs-ram);display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+#bb-spar .bbs-stegikon svg{width:17px;height:17px;display:block;fill:none;stroke:var(--bbs-ram);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+#bb-spar .bbs-stegrad--nadd .bbs-stegikon{border-color:var(--bbs-svart);background:var(--bbs-svart)}
+#bb-spar .bbs-stegrad--nadd .bbs-stegikon svg{stroke:#fff}
+#bb-spar .bbs-stegrad--nu .bbs-stegikon{border-color:var(--bbs-rod);background:var(--bbs-rod)}
+#bb-spar .bbs-stegrad--nu .bbs-stegikon svg{stroke:#fff}
+#bb-spar .bbs-stegdel{display:inline-flex;align-items:center;gap:6px;margin:6px 0 0;padding:4px 10px 4px 7px;border:1.5px solid var(--bbs-svart);border-radius:999px;font-size:13px;font-weight:700;line-height:1.3}
+#bb-spar .bbs-stegdel svg{width:14px;height:14px;flex:0 0 14px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+#bb-spar .bbs-stegrad--nu .bbs-stegdel{border-color:var(--bbs-rod);color:var(--bbs-rod)}
+#bb-spar .bbs-linje{position:absolute;left:-2px;top:0;width:2px;height:0;background:var(--bbs-svart);transition:height 900ms cubic-bezier(.22,.61,.36,1)}
+#bb-spar .bbs-steg--rullar .bbs-stegrad--nadd .bbs-linje{height:100%}
+#bb-spar .bbs-stegrad--nu .bbs-stegikon{animation:bbs-puls 2.4s ease-in-out infinite}
+@keyframes bbs-puls{0%,100%{box-shadow:0 0 0 0 rgba(221,29,29,.45)}50%{box-shadow:0 0 0 7px rgba(221,29,29,0)}}
+#bb-spar .bbs-resa{position:absolute;left:-11px;top:26px;bottom:2px;width:20px;pointer-events:none;overflow:hidden}
+#bb-spar .bbs-resa svg{position:absolute;left:0;width:20px;height:20px;fill:none;stroke:var(--bbs-rod);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;animation:bbs-resa 4.2s cubic-bezier(.45,0,.55,1) infinite}
+@keyframes bbs-resa{0%{top:-24px;opacity:0}18%{opacity:1}82%{opacity:1}100%{top:100%;opacity:0}}
+@media (prefers-reduced-motion:reduce){
+#bb-spar .bbs-linje{transition:none}
+#bb-spar .bbs-stegrad--nu .bbs-stegikon{animation:none}
+#bb-spar .bbs-resa{display:none}
+}
 #bb-spar .bbs-avvikelse{margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--bbs-rod);background:#fdf3f3;font-weight:700}
 #bb-spar .bbs-mer{margin:22px 0 0;border-top:1px solid var(--bbs-ram);padding:14px 0 0}
 #bb-spar .bbs-mer summary{cursor:pointer;font-weight:700;padding:4px 0;list-style:revert}
@@ -407,6 +437,32 @@ function starta() {
   function stegrad(s, arNu, extra) {
     var li = document.createElement('li');
     li.className = 'bbs-stegrad' + (s.nadd ? ' bbs-stegrad--nadd' : '') + (arNu ? ' bbs-stegrad--nu' : '');
+
+    // Linjen som fylls vid inladdning. Den ligger ovanpå radens grå kant och
+    // växer till full höjd när listan får klassen bbs-steg--rullar.
+    var linje = document.createElement('span');
+    linje.className = 'bbs-linje';
+    li.appendChild(linje);
+
+    var ikon = document.createElement('span');
+    ikon.className = 'bbs-stegikon';
+    ikon.appendChild(rita(ikonFor(s)));
+    li.appendChild(ikon);
+
+    // Paketet som färdas längs linjen — bara på det skede som pågår NU, och
+    // bara medan resan faktiskt fortsätter (aldrig på "Levererat").
+    //
+    // ⚠️ Motivet är ALLTID paketet, aldrig skedets ikon. Det är kundens
+    // paket som rör sig; en tullstämpel som glider nedför linjen läser som
+    // ett fel. Skedets egen ikon visar i stället VAR paketet är just nu.
+    if (arNu && s.nadd && s.nyckel !== 'levererat') {
+      var resa = document.createElement('span');
+      resa.className = 'bbs-resa';
+      resa.setAttribute('aria-hidden', 'true');
+      resa.appendChild(rita(s.nyckel === 'utkorning' ? 'lastbil' : 'lada'));
+      li.appendChild(resa);
+    }
+
     var namn = document.createElement('p');
     namn.className = 'bbs-stegnamn';
     namn.textContent = s.etikett;
@@ -425,6 +481,17 @@ function starta() {
         ort.textContent = s.plats;
         tid.appendChild(document.createTextNode(' · '));
         tid.appendChild(ort);
+      }
+      // Var på resan paketet är. Egen rad, inte inbakad i datumet: det är
+      // den upplysning kunden faktiskt är ute efter medan paketet är borta.
+      if (s.delstegEtikett) {
+        var del = document.createElement('span');
+        del.className = 'bbs-stegdel';
+        del.appendChild(rita(s.delstegIkon || 'lada'));
+        var dtext = document.createElement('span');
+        dtext.textContent = s.delstegEtikett;
+        del.appendChild(dtext);
+        li.appendChild(del);
       }
       if (extra) {
         var u = document.createElement('span');
@@ -455,10 +522,17 @@ function starta() {
   //
   // ⚠️ Undantag: skanningar FÖRE ankomsten till mottagarlandet visar aldrig
   // ort, även när landet är okänt — det är där "Hongqiao" bor.
-  function ortIVyn(h, land) {
+  // ⚠️ Argumentet "strang" krävs för avvikelseraden. En avvikelse bär inget skede
+  // (steg.mjs ger den -1, en störning är inte framsteg), så skedesspärren
+  // nedan biter inte på den. Utan det stränga läget skrev returrutan
+  // "Paketet skickas tillbaka till avsändaren (Hongqiao)" — mätt på ett
+  // riktigt paket 2026-09-20. I strängt läge måste landet vara KÄNT och
+  // vara mottagarlandet; annars ingen ort alls.
+  function ortIVyn(h, land, strang) {
     if (!h || !h.plats) return null;
-    if (h.land && land && h.land !== land) return null;
     if (h.plats === land) return null;
+    if (strang) return h.land && land && h.land === land ? h.plats : null;
+    if (h.land && land && h.land !== land) return null;
     if (typeof h.steg === 'number' && h.steg >= 0 && h.steg < I_LANDET_NR) return null;
     return h.plats;
   }
@@ -466,6 +540,41 @@ function starta() {
   function stegMedNyckel(steg, nyckel) {
     for (var i = 0; i < steg.length; i++) if (steg[i].nyckel === nyckel) return steg[i];
     return null;
+  }
+
+  // Motiven. Varje ikon är en lista med path-data i ett 24x24-rutnät, ritade
+  // med createElementNS i stället för en HTML-sträng — sidan sätter aldrig
+  // uppmärkning från text, och den regeln gäller även våra egna konstanter.
+  var IKONER = {
+    kvitto: ['M6 3h12v18l-3-2-3 2-3-2-3 2z', 'M9 8h6', 'M9 12h6'],
+    lada: ['M3 8l9-4 9 4v8l-9 4-9-4z', 'M3 8l9 4 9-4', 'M12 12v8'],
+    stampel: ['M9 3h6v5a3 3 0 0 0 3 3H6a3 3 0 0 0 3-3z', 'M4 15h16v4H4z'],
+    flygplats: ['M3 20h18', 'M5 20V9l7-5 7 5v11', 'M10 20v-5h4v5'],
+    flyg: ['M2 13l20-7-7 20-3-8z', 'M12 18l-1 4 3-3'],
+    lager: ['M3 21V9l9-6 9 6v12', 'M9 21v-7h6v7'],
+    lastbil: ['M2 7h11v9H2z', 'M13 10h4l4 3v3h-8z', 'M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', 'M18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'],
+    brevlada: ['M3 10a5 5 0 0 1 10 0v7H3z', 'M13 17h8v-7a5 5 0 0 0-5-5h-3', 'M17 8h2', 'M7 21v-4'],
+  };
+
+  function rita(namn) {
+    var banor = IKONER[namn] || IKONER.lada;
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('focusable', 'false');
+    for (var i = 0; i < banor.length; i++) {
+      var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      p.setAttribute('d', banor[i]);
+      svg.appendChild(p);
+    }
+    return svg;
+  }
+
+  // Vilket motiv bär skedet? Delskedet vinner när det finns, så raden
+  // "På väg till Sverige" visar var paketet FAKTISKT är.
+  function ikonFor(s) {
+    if (s.delstegIkon) return s.delstegIkon;
+    return (C.ikoner && C.ikoner[s.nyckel]) || 'lada';
   }
 
   function visaPaket(p) {
@@ -488,7 +597,7 @@ function starta() {
     // leveransförsök är det enda kunden bryr sig om just då. Orten stryks
     // med samma regel; frasen säger redan "till avsändaren".
     var avv = p.avvikelser && p.avvikelser.length ? p.avvikelser[0] : null;
-    var avvort = ortIVyn(avv, p.land);
+    var avvort = ortIVyn(avv, p.land, true);
     avvikelse.textContent = avv ? avv.text + (avvort ? ' (' + avvort + ')' : '') : '';
     visaEl(avvikelse, !!avv);
 
@@ -513,6 +622,18 @@ function starta() {
       stegruta.appendChild(stegrad(stegpost, stegpost.nr === p.sammanfattning.nu, extra));
     }
     visaEl(stegruta, s.length > 0 && p.handelser.length > 0);
+
+    // Linjerna ritas tomma och fylls sedan, så kunden SER hur långt paketet
+    // kommit i stället för att bara läsa det. Klassen sätts i nästa
+    // bildruta, annars hinner webbläsaren aldrig se utgångsläget och
+    // övergången uteblir. Sidan är statisk — animationen visar historik, och
+    // får aldrig se ut som att något händer live.
+    stegruta.className = 'bbs-steg bbs-steg--ikoner';
+    try {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { stegruta.className = 'bbs-steg bbs-steg--ikoner bbs-steg--rullar'; });
+      });
+    } catch (e) { stegruta.className = 'bbs-steg bbs-steg--ikoner bbs-steg--rullar'; }
 
     // Hela historiken, oförändrad, bakom "Mer information".
     lista.textContent = '';

@@ -168,11 +168,24 @@ function kor(kropp, adress) {
   const medDom = (adr, gor) => {
     const forra = { d: globalThis.document, l: globalThis.location, h: globalThis.history };
     const { search, hash } = delaAdress(adr);
-    globalThis.document = { getElementById: (id) => noder.get(id) ?? null, createElement: (t) => new Attrapp(t) };
+    globalThis.document = {
+      getElementById: (id) => noder.get(id) ?? null,
+      createElement: (t) => new Attrapp(t),
+      // Stegikonerna ritas som SVG (2026-09-20). Attrappen bryr sig inte om
+      // namnrymden, men den MÅSTE finnas — utan den kastar sidan och kunden
+      // får rutan "Vi hittar inte det numret" i stället för sitt paket.
+      createElementNS: (ns, t) => { const n = new Attrapp(t); n.namnrymd = ns; return n; },
+      createTextNode: (t) => { const n = new Attrapp('#text'); n.textContent = t; return n; },
+    };
     globalThis.location = { search, hash, pathname: '/pages/spara-paketet' };
     globalThis.history = { replaceState: (a, b, url) => noder.adresser.push(url) };
+    // Animationen sätts i nästa bildruta. I testet kör vi den direkt, så
+    // slutläget (linjerna fyllda) är det testet mäter.
+    const forraRaf = globalThis.requestAnimationFrame;
+    globalThis.requestAnimationFrame = (f) => { f(); return 0; };
     try { gor(); } finally {
       globalThis.document = forra.d; globalThis.location = forra.l; globalThis.history = forra.h;
+      globalThis.requestAnimationFrame = forraRaf;
     }
   };
   medDom(adress ?? '', () => new Function(kodrutan(kropp))());
@@ -285,7 +298,13 @@ test('den inbäddade koden kör och hittar rätt paket i den inbäddade datan', 
 
 test('inga externa resurser — inga URL:er alls i sidan', () => {
   const kropp = byggSidkropp(fixtur(), KONFIG);
-  assert.ok(!/https?:\/\//.test(kropp), 'sidan pekar ut på nätet');
+  // ⚠️ ETT undantag, tillagt 2026-09-20 när stegikonerna kom:
+  // "http://www.w3.org/2000/svg" är XML-namnrymden createElementNS kräver
+  // för att rita en <svg>. Den hämtas aldrig — webbläsaren slår aldrig upp
+  // den — men den är en textmässig URL och skulle annars fälla spärren.
+  // Allt ANNAT som ser ut som en URL är fortfarande förbjudet.
+  const utanNamnrymd = kropp.split('http://www.w3.org/2000/svg').join('');
+  assert.ok(!/https?:\/\//.test(utanNamnrymd), 'sidan pekar ut på nätet');
   assert.ok(!/<img/i.test(kropp), 'ingen bild ska laddas');
   assert.ok(!/@import|url\(/.test(kropp), 'ingen CSS-import och inget url() i stilen');
   assert.ok(!/<link/i.test(kropp), 'inget typsnitt och inget stilark utifrån');
@@ -298,7 +317,18 @@ test('all CSS är avgränsad under #bb-spar', () => {
   const kropp = byggSidkropp(fixtur(), KONFIG);
   const stil = /<style>([\s\S]*?)<\/style>/.exec(kropp)[1];
   assert.ok(stil.length > 500, 'stilen ser tom ut');
-  const utanMedia = stil.replace(/@media[^{]*\{/g, '');
+  // @keyframes går inte att avgränsa under en selektor — namnet är globalt i
+  // dokumentet. Därför lyfts blocken ut och prövas mot NAMNET i stället:
+  // det måste börja med bbs-, så ett temanamn aldrig kan krocka med vårt.
+  // (Tillagt 2026-09-20 med stegens animation.)
+  const kvar = stil.replace(/@keyframes\s+([\w-]+)\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, (hel, namn) => {
+    assert.ok(namn.startsWith('bbs-'), 'animationsnamnet kan krocka med temat: ' + namn);
+    return '';
+  });
+  assert.ok(/@keyframes/.test(stil), 'testet hittade inga @keyframes — har de flyttat?');
+  assert.ok(!/@keyframes/.test(kvar), 'ett @keyframes-block gick inte att läsa av');
+
+  const utanMedia = kvar.replace(/@media[^{]*\{/g, '');
   const selektorer = [...utanMedia.matchAll(/(?:^|\})\s*([^{}]+)\{/g)].map((m) => m[1].trim());
   assert.ok(selektorer.length > 10, 'hittade för få selektorer för att testet ska betyda något');
   for (const s of selektorer) {
@@ -574,7 +604,9 @@ test('förhandsvisningen är ett helt dokument med samma kropp', () => {
   assert.ok(html.startsWith('<!DOCTYPE html>'));
   assert.ok(html.includes('<html lang="sv">'));
   assert.ok(html.includes(byggSidkropp(data, KONFIG)), 'förhandsvisningen ska bära exakt sidkroppen');
-  assert.ok(!/https?:\/\//.test(html), 'förhandsvisningen hämtar något från nätet');
+  // Samma undantag som i sidtestet ovan: SVG-namnrymden är ingen resurs.
+  const utanNamnrymd = html.split('http://www.w3.org/2000/svg').join('');
+  assert.ok(!/https?:\/\//.test(utanNamnrymd), 'förhandsvisningen hämtar något från nätet');
 });
 
 test('fel indata stoppas i stället för att bli en tom sida', () => {

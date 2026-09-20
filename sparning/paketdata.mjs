@@ -27,8 +27,9 @@
 // 14,8 % av samma data utan ordbok. Svenskan kostar alltså ingenting:
 // ordboken bär varje fras EN gång.
 
-import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut } from './uppacka.mjs';
+import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut, I_LANDET_NR } from './uppacka.mjs';
 import { klassificera } from './steg.mjs';
+import { klassificeraDelsteg } from './delsteg.mjs';
 
 // Tak per paket. Mätt 2026-09-19 på samma 204 paket: minst 1 händelse, median
 // 5, flest 29. Taket är en spärr mot ett enskilt paket som fastnar i en
@@ -307,6 +308,14 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
       rader[i].avvikelse = !!klassade[i]?.avvikelse;
     }
 
+    // Var på den internationella sträckan? Samma sorts ren gruppering, ett
+    // lager ned: den rör varken tid, text, plats eller `steg`, och gäller
+    // BARA rader som redan klassats som internationell transport.
+    const medDelsteg = klassificeraDelsteg(rader, {
+      arInternationell: (r) => typeof r.steg === 'number' && r.steg >= 0 && r.steg < I_LANDET_NR,
+    });
+    for (let i = 0; i < rader.length; i++) rader[i].delsteg = medDelsteg[i]?.delsteg ?? -1;
+
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
     // byter värdet — den senare posten vinner, som varningen säger.
     poster.set(nummer, { statusIx, bolag: renText(p?.bolag), rader });
@@ -368,6 +377,9 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
         typeof r.steg === 'number' ? r.steg : -1,
         r.landIx === null ? -1 : landlista.nyIndex[r.landIx],
         r.avvikelse ? 1 : 0,
+        // Fält 7, tillagt 2026-09-20. Inget FORMAT-byte behövs: uppackaren
+        // läser e[6] defensivt, så äldre data ger -1 och visas som förut.
+        typeof r.delsteg === 'number' ? r.delsteg : -1,
       ]),
     ];
   }
