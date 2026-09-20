@@ -1,0 +1,78 @@
+{
+ "comment": "Skrivs av sparning/kor.mjs. nummer → { bolag, kod, order, fulfillment, registrerad, status, senast, levererad }",
+ "paket": {
+  "YT2626300703845960": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1059",
+   "fulfillment": "gid://shopify/Fulfillment/8409466995037",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T19:53",
+   "status": "CONFIRMED"
+  },
+  "YT2626300703845945": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1058",
+   "fulfillment": "gid://shopify/Fulfillment/8409465520477",
+   "registrerad": "2026-09-20"
+  },
+  "YT2626200707253031": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1057",
+   "fulfillment": "gid://shopify/Fulfillment/8409285886301",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T19:53",
+   "status": "CONFIRMED"
+  },
+  "YT2626200707253361": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1056",
+   "fulfillment": "gid://shopify/Fulfillment/8408551653725",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T19:53",
+   "status": "CONFIRMED"
+  },
+  "YT2626200704533708": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1055",
+   "fulfillment": "gid://shopify/Fulfillment/8408289280349",
+   "registrerad": "2026-09-20"
+  },
+  "YT2626200704533641": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1054",
+   "fulfillment": "gid://shopify/Fulfillment/8408287576413",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T19:53",
+   "status": "CONFIRMED"
+  },
+  "YT2626200704730197": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1053",
+   "fulfillment": "gid://shopify/Fulfillment/8408287543645",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-20T19:53",
+   "status": "CONFIRMED"
+  }
+ },
+ "senaste_korning": {
+  "datum": "2026-09-20T19:53:44.696Z",
+  "ordrar": 7,
+  "paket": 7,
+  "registrerade": 7,
+  "skrivna": 5,
+  "fel": 0,
+  "torr": false
+ }
+}

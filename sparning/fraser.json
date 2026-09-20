@@ -80,5 +80,8 @@
   "port of departure - departure": "Paketet har lämnat avgångsorten",
   "vi kom inte in genom porten - leveransen kunde inte genomföras": "Chauffören kom inte in genom porten och kunde inte lämna paketet",
   "din leverans är försenad - leveransdatum uppdateras": "Leveransen är försenad. Leveransdatumet uppdateras",
-  "递四方揽收": "4PX har hämtat paketet"
+  "递四方揽收": "4PX har hämtat paketet",
+  "shipping label created": "Fraktetiketten är skapad",
+  "parcel electronic information received": "Vi har fått uppgifterna om paketet",
+  "the sender has notified us that a parcel is on its way to our terminal. when we have received the parcel, the tracking will be updated": "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot"
 }

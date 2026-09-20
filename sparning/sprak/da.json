@@ -8,6 +8,8 @@
   },
   "ord": {
     "Vi har fått uppgifterna om paketet": "Vi har modtaget oplysningerne om pakken",
+    "Fraktetiketten är skapad": "Fragtlabelen er oprettet",
+    "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot": "Afsenderen har meddelt, at pakken er på vej til terminalen. Sporingen opdateres, når den er modtaget",
     "Uppgifterna om paketet är registrerade": "Oplysningerne om pakken er registreret",
     "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet": "Afsenderen har bestilt forsendelsen, og fragtfirmaet venter på pakken",
     "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det": "Afsenderen gør din pakke klar. Sporingen opdateres, når fragtfirmaet har modtaget den",

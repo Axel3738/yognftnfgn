@@ -8,6 +8,8 @@
   },
   "ord": {
     "Vi har fått uppgifterna om paketet": "Olemme saaneet paketin tiedot",
+    "Fraktetiketten är skapad": "Lähetystarra on luotu",
+    "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot": "Lähettäjä on ilmoittanut, että paketti on matkalla terminaaliin. Seuranta päivittyy, kun paketti on vastaanotettu",
     "Uppgifterna om paketet är registrerade": "Paketin tiedot on rekisteröity",
     "Avsändaren har bokat leveransen och fraktbolaget väntar på paketet": "Lähettäjä on tilannut kuljetuksen ja kuljetusyhtiö odottaa pakettia",
     "Avsändaren förbereder ditt paket. Spårningen uppdateras när PostNord har tagit emot det": "Lähettäjä valmistelee pakettiasi. Seuranta päivittyy, kun kuljetusyhtiö on vastaanottanut sen",
