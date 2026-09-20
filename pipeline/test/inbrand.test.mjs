@@ -377,3 +377,51 @@ test('jämförpriset stryks över, priset gör det inte — källan visar ett st
   assert.equal(jamfor.stryk, true, 'jämförpriset MÅSTE strykas över');
   assert.equal(pris.stryk, false, 'priset får aldrig strykas över');
 });
+
+test('språkneutral rad skrivs tillbaka oförändrad — ett mått är inte text att översätta', async () => {
+  // ⚠️ Mätt 2026-09-20: CaraShellRoof_PD_107_H1 och RI_103_H1 fick en svart
+  // platta över "6,5×3 m", eftersom ingen regel träffade. Storleken ser
+  // likadan ut på svenska och danska.
+  const { sprakneutral, mappaRad, marknadstexter } = await import('../omdubb/inbrand.mjs');
+  assert.equal(sprakneutral('6,5×3 m'), true);
+  assert.equal(sprakneutral('6,5 × 3 m'), true);
+  assert.equal(sprakneutral('19,5 m²'), true);
+  assert.equal(sprakneutral('210D-VÄV'), false, 'väv är ett ord, inte en enhet');
+  assert.equal(sprakneutral('FRI FRAKT'), false);
+  assert.equal(sprakneutral(''), false, 'tom rad är inte neutral');
+  const { texter } = marknadstexter({
+    produkt: 'factory/produkter/takskyddet.yaml',
+    butik: 'factory/butiker/carashell.yaml',
+    marknad: 'DK',
+  });
+  const m = mappaRad('6,5×3 m', texter, { pris: ['1129'], jamforpris: ['1469'] });
+  assert.equal(m.roll, 'neutral');
+  assert.equal(m.ny, '6,5×3 m', 'måttet skrivs tillbaka exakt som det stod');
+});
+
+test('specord hämtar ordet ur BUTIKENS egen marknadstext, aldrig ur en påhittad översättning', async () => {
+  // "210D-VÄV" blev en svart platta i OB_101 och SP_104 (mätt 2026-09-20).
+  // Butikens egen danska säger "210D Oxford-væv" i features — därifrån, och
+  // ingen annanstans, kommer ordet.
+  const { specord } = await import('../omdubb/inbrand.mjs');
+  const mt = { features: ['Ni størrelser: 5,5 til 13,5 m langt', 'Sort 210D Oxford-væv, vandtæt og tåler sol'], fotrad: '', titel: '' };
+  const s = specord('210D-VÄV', mt);
+  assert.ok(s, 'koden 210D finns i butikens features');
+  assert.equal(s.ny, '210D-VÆV', 'versalerna följer källan, ordet kommer ur butikens text');
+  // Utan en features-rad med koden ska den hellre säga nej än hitta på.
+  assert.equal(specord('210D-VÄV', { features: ['Sort væv, vandtæt'], fotrad: '', titel: '' }), null);
+  assert.equal(specord('FRI FRAKT', mt), null, 'ingen teknisk kod i raden');
+});
+
+test('filmad text fäller aldrig videon — trycket på en t-shirt är inte vår svenska', async () => {
+  // ⚠️ Mätt 2026-09-20: OCR läste "IN THE MEADOW" på en t-shirt i
+  // CaraShellRoof_PD_3_H1 som "INTE MEADOW", markören "inte" slog till, och
+  // två färdiga videor dömdes "SVENSK TEXT KVAR". Texten sitter på ett plagg.
+  const { efterdom, MAX_DRIFT } = await import('../omdubb/inbrand.mjs');
+  const overlagg = { text: 'INTE MEADOW', t: [2.6, 3.0], box: [10, 10, 100, 40], rutor: 4, drift_px: 1 };
+  const filmad = { ...overlagg, drift_px: MAX_DRIFT + 5 };
+  const a = efterdom({ rader: [overlagg] }, [], []);
+  const b = efterdom({ rader: [filmad] }, [], []);
+  assert.equal(a.length, 1); assert.equal(a[0].filmad, false, 'ett stillastående överlägg ÄR vårt');
+  assert.equal(b.length, 1); assert.equal(b[0].filmad, true, 'text som följer kameran är filmad');
+});
