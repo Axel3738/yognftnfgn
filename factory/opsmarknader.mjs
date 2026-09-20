@@ -14,6 +14,29 @@
 // Nytt land = en rad här + `annonsmarknader` på butikens registerpost
 // (`node factory/register.mjs annonsmarknader <nyckel> NO,US`). Ingen if-sats.
 
+// ⛔ MÄTT 2026-09-20 kl ~19: OPS-KONTOT ÄR **UNSETTLED** (obetald faktura).
+// `act_915422744950975?fields=account_status` svarar **3** och varje skrivning
+// nekas. Felet SER UT som ett behörighetsfel och är det inte — Meta svarar
+// "Permissions error / Behörighetsfel" (code 200, subcode 1487194) och den
+// riktiga orsaken står bara i `error_data`:
+//     {"ad_account_load":"success","ad_account_status":3,
+//      "has_write_ad_account_permissions":"false"}
+// Utestående saldo vid mätningen: 1 456 895 (öre) = 14 568,95 SEK.
+//
+// ⚠️ LÄSNINGAR FUNGERAR ÄNDÅ, och det är fällan. En uppladdning kommer igenom
+// sju steg — hittar kampanjen, hittar adsetet, laddar till och med upp
+// videofilen — och faller först på `adcreatives`. Läser man bara felmeddelandet
+// letar man efter fel sida, fel scope och fel token i timmar. Läs `error_data`.
+//
+// Vad som INTE går medan kontot är unsettled: skapa annonser, ändra budget,
+// pausa eller aktivera. Alltså nattvakten, leveransrundan och varje
+// /ops-oversatt mot det här kontot. De tre andra kontona var ACTIVE samma
+// mätning (Bäverbutiken 1867947880635861, Magiborsten UK 1107817401910319,
+// Magiborsten NO 1050941584152547).
+//
+// Kontroll innan man felsöker något annat:
+//   node -e "fetch('https://graph.facebook.com/v21.0/act_915422744950975?fields=account_status,balance&access_token='+process.env.META_ACCESS_TOKEN).then(r=>r.json()).then(j=>console.log(j))"
+//   1 = ACTIVE, 2 = DISABLED, 3 = UNSETTLED, 8 = PENDING_SETTLEMENT, 9 = IN_GRACE_PERIOD
 const OPS_KONTO = '915422744950975';
 
 // `rost` är ElevenLabs-rösten för omdubbningen (Axels beslut 2026-09-16 kväll:

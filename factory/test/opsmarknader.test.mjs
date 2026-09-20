@@ -111,3 +111,20 @@ test('rösten per marknad: ElevenLabs-rösten står i tabellen, aldrig i ett skr
   const roster = OPS_MARKNADSKODER.map((k) => OPS_MARKNADER[k].rost).filter(Boolean);
   assert.equal(new Set(roster).size, roster.length, 'två marknader delar röst — dubba aldrig ett språk med ett annat språks röst');
 });
+
+test('kontot i tabellen är OPS-kontot — och kommentaren bär UNSETTLED-fyndet 2026-09-20', async () => {
+  // Fyndet får inte tappas bort vid en refaktorering: felet SER UT som ett
+  // behörighetsfel ("Permissions error", code 200, subcode 1487194) och är en
+  // obetald faktura. Den riktiga orsaken står bara i error_data
+  // ("ad_account_status":3). Utan den raden letar nästa session efter fel
+  // scope, fel sida och fel token i timmar — uppladdningen kommer nämligen
+  // igenom sju steg och laddar till och med upp videofilen innan den faller.
+  const { readFileSync } = await import('node:fs');
+  const kalla = readFileSync(new URL('../opsmarknader.mjs', import.meta.url), 'utf8');
+  assert.match(kalla, /UNSETTLED/, 'UNSETTLED-fyndet ska stå kvar i filen');
+  assert.match(kalla, /1487194/, 'subkoden är det som gör felet googlingsbart');
+  assert.match(kalla, /ad_account_status/, 'error_data är där orsaken faktiskt står');
+  // Kontot självt ska inte ha ändrats av fyndet.
+  assert.equal(OPS_MARKNADER.SE.act, '915422744950975');
+  assert.equal(OPS_MARKNADER.DK.act, '915422744950975');
+});
