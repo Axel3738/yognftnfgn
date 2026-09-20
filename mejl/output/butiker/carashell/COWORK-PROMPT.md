@@ -25,15 +25,7 @@ inga kortkommandon. **Klistra aldrig in en halv mall.**
 Kontrollera först att https://carashell.se/pages/spara svarar och visar rubriken "Spåra ditt paket".
 Gör den inte det: stoppa och rapportera.
 
-⚠️ **Avsändaradressen.** Visar Shopify en gul banner i mallens redigerare —
-"Innan du kan redigera aviseringar måste du granska och verifiera din
-avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
-att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
-avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
-går ett mejl till **hello@carashell.com** med en länk som Axel klickar — stanna
-där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
-Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
-CaraShell 2026-09-20.)
+
 
 
 ### 0. Avsändaradressen — FÖRST
