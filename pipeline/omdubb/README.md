@@ -23,8 +23,39 @@ node pipeline/omdubb/elevenlabs-omdubb.mjs --kalla=<källa.mp4> --srt=<manus.srt
   Kör `--torr` först och läs tabellen: en ⚠️-rad betyder att manuset är för långt
   för filmen.
 - Röster: SE `Martin - Warm, Confident and Relatable`, NO `Martin - Clear and
-  Comforting` (norsk, finns på kontot; `cd voiceover && npm run voices` listar).
-  Dubba aldrig norska med den svenska rösten.
+  Comforting` (norsk, finns på kontot; `cd voiceover && npm run voices` listar),
+  **DK `Søren - Clear, Confident and Versatile`** (`xj6X4BCUsv9oxohm1E8o`).
+  Dubba aldrig ett språk med ett annat språks röst.
+
+  **Så valdes danskan (2026-09-20).** Axels besked: *"B, men jag kan inte danska
+  så du får lösa allt. Men tänk på att generera med v3 modellen."* Ingen kan
+  höra åt honom, så valet gjordes på det som går att MÄTA. Fem infödda danska
+  röster ur ElevenLabs bibliotek — man, medelålders/ung, neutral dialekt (samma
+  profil som svenskan och norskan) — lades till på kontot, fick läsa tre riktiga
+  annonsrepliker (problem, lösning, pris) med `eleven_v3`, och ljudet
+  transkriberades tillbaka med Scribe (`scribe_v1`, `language_code=da`).
+  Avvikelsen mellan manus och transkript är felläsningen.
+
+  | Röst | Ordfel | Tempo, tre repliker |
+  |---|---|---|
+  | **Søren** | **0 / 45** | 4,91 · 5,25 · 5,15 s |
+  | Frederik - Confident, Warm, Crisp, Calm | 0 / 45 | 4,60 · **7,16** · 4,52 s |
+  | Mads - Clear, Direct and Natural | 1 / 45 | — |
+  | Noam - Enganging and Clear | 1 / 45 | — |
+  | Mikael Lund - Explanatory & Informative | 1 / 45 | — |
+
+  Mads och Noam tappade "og" i "otte hundrede **og** nitten kroner" — priset
+  blir fel uppläst. Mikael Lund läste **"taglugen" som "tavlen"**, alltså
+  produktens kärnord; diskad direkt.
+
+  Tempot fällde avgörandet mellan de två felfria: omdubben klipper in repliken i
+  filmens segment och får snabba upp max 12 %. Frederik tog 7,16 s på den mening
+  Søren klarade på 5,25 — den skillnaden knuffar ut rader ur filmen. Søren är
+  dessutom jämn över tre olika långa repliker.
+
+  ⚠️ **Vad provet INTE säger:** om rösten låter säljande. Scribe mäter att
+  rätt ord kommer ut, inte att de låter bra. Proven ligger kvar som mp3 om
+  någon dansktalande ska döma; Frederik är den dokumenterade tvåan.
 - Efteråt: `python3 pipeline/rostkoll.py --kalla <källa> --ny <ut> --srt <ut>.srt
   --kallsrt <manus.srt> --omtajmad` (längddriften är förväntad), Scribe-koll av
   uttalet (`POST /v1/speech-to-text`, `scribe_v1`, per cue-mp3 — se FAS2 2026-09-16

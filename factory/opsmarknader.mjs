@@ -16,23 +16,28 @@
 
 const OPS_KONTO = '915422744950975';
 
+// `rost` är ElevenLabs-rösten för omdubbningen (Axels beslut 2026-09-16 kväll:
+// HeyGens klonröst dömdes ut, `pipeline/omdubb/elevenlabs-omdubb.mjs` gäller).
+// `heygen_sprak` står kvar för HeyGen-vägen, som finns kvar som historik.
+// ⚠️ Dubba aldrig ett språk med ett annat språks röst. US har ingen röst vald
+// än — engelskan har inte dubbats om, bara textats.
 export const OPS_MARKNADER = Object.freeze({
   SE: Object.freeze({
     kod: 'SE', namn: 'Sverige', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
     geo: ['SE'], locale: null, country: null, valuta: 'SEK', valuta_i_annons: 'kr',
-    heygen_sprak: null, sprak: 'svenska', status_ko: 'To be Reviewed', oversatts: false,
+    heygen_sprak: null, sprak: 'svenska', rost: 'Martin - Warm, Confident and Relatable', status_ko: 'To be Reviewed', oversatts: false,
     emoji: '🇸🇪', rubrik_en: 'Sweden delivery',
   }),
   NO: Object.freeze({
     kod: 'NO', namn: 'Norge', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
     geo: ['NO'], locale: 'nb', country: 'NO', valuta: 'NOK', valuta_i_annons: 'kr',
-    heygen_sprak: 'Norwegian Bokmål (Norway)', sprak: 'norsk bokmål', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    heygen_sprak: 'Norwegian Bokmål (Norway)', sprak: 'norsk bokmål', rost: 'Martin - Clear and Comforting', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇳🇴', rubrik_en: 'Norway translation',
   }),
   US: Object.freeze({
     kod: 'US', namn: 'USA', act: '1107817401910319', kontonamn: 'Magiborsten UK', kontovaluta: 'SEK',
     geo: ['US'], locale: 'en', country: 'US', valuta: 'USD', valuta_i_annons: '$',
-    heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', rost: null, status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇺🇸', rubrik_en: 'US translation',
   }),
   // Danmark 2026-09-20 (/ny-marknad carashell DK). Kontot är det delade
@@ -47,7 +52,7 @@ export const OPS_MARKNADER = Object.freeze({
   DK: Object.freeze({
     kod: 'DK', namn: 'Danmark', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
     geo: ['DK'], locale: 'da', country: 'DK', valuta: 'DKK', valuta_i_annons: 'kr.',
-    heygen_sprak: 'Danish (Denmark)', sprak: 'danska', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    heygen_sprak: 'Danish (Denmark)', sprak: 'danska', rost: 'Søren - Clear, Confident and Versatile', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇩🇰', rubrik_en: 'Denmark translation',
   }),
 });

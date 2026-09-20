@@ -96,3 +96,18 @@ test('skalning känner US som marknadskod — en _US_-annons filtreras till US, 
   assert.equal(filtreraPaMarknad(rader, 'SE').behall.length, 1);
   assert.deepEqual(filtreraPaMarknad(rader, 'SE').bortfiltrerade, { US: 1 });
 });
+
+test('rösten per marknad: ElevenLabs-rösten står i tabellen, aldrig i ett skript (Danmark 2026-09-20)', () => {
+  // Axels beslut 2026-09-16: omdubbningen görs med ElevenLabs, inte HeyGen.
+  // Rösten valdes 2026-09-20 genom mätning — fem infödda danska röster läste
+  // tre annonsrepliker med eleven_v3, Scribe transkriberade tillbaka, och
+  // Søren var den enda felfria med jämnt tempo (pipeline/omdubb/README.md).
+  assert.equal(OPS_MARKNADER.DK.rost, 'Søren - Clear, Confident and Versatile');
+  assert.equal(OPS_MARKNADER.SE.rost, 'Martin - Warm, Confident and Relatable');
+  assert.equal(OPS_MARKNADER.NO.rost, 'Martin - Clear and Comforting');
+  // USA har ingen röst vald — engelskan har aldrig dubbats om, bara textats.
+  assert.equal(OPS_MARKNADER.US.rost, null);
+  // Järnregeln: ingen röst delas mellan två språk.
+  const roster = OPS_MARKNADSKODER.map((k) => OPS_MARKNADER[k].rost).filter(Boolean);
+  assert.equal(new Set(roster).size, roster.length, 'två marknader delar röst — dubba aldrig ett språk med ett annat språks röst');
+});
