@@ -107,17 +107,24 @@ inte röras utan att Axel ber om det.
 10. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
     två olika saker. Godkännande kräver grön checklista (eller override med
     skriven motivering), och bara godkända creatives räknas mot kvoten.
-11. **Nya tester launchas i ett separat test-ABO med lika budget per annons.**
-    CBO används för skalning av bevisade vinnare — aldrig för tester. *(Axels beslut
-    2026-08-12. Mönster 5 i motorhöljets DNA, märkt `BEVISAD — tredje gången`: tre
-    batcher svalt ihjäl bredvid `PD_1_H3` som tar 42 % av spenden. Batch #2 fick 16
-    av 17 annonser under 30 kr; batch #5:s trevägstest med identisk copy gav
-    5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
-    oläsbar och kvoten meningslös.)*
-    ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
-    `/notionkorning` laddar upp redigerarnas färdiga creatives i den kampanj som
-    redan bär produktens annonser, inte i ett nytt test-ABO. Det gäller ENBART den
-    rutinen. Rätta inte tillbaka det — allt annat nytt testande följer regel 11.
+11. **Alla nya annonser går i produktens CBO, i adsetet som bär konceptets
+    vinkel. En annons som inte fått spend på sju dygn är en förlorare:
+    etikettera (`INGEN_LEVERANS`) och släpp — aldrig ett test-ABO.** *(Axels
+    beslut 2026-09-20, ur Evolve-materialet. Regeln hette till dess "nya tester
+    i ett separat test-ABO med lika budget per annons" — Axels beslut
+    2026-08-12 — och lärdomen bakom den är sann: batch #2 fick 16 av 17
+    annonser under 30 kr bredvid `PD_1_H3` som tog 42 % av spenden, och batch
+    #5:s trevägstest gav 5,70 / 5,52 / 159,76 kr
+    (`products/motorholjet/batch-log.md:64–66`; CLAUDE.md:s gamla hänvisning
+    till "mönster 5 i motorhöljets DNA" var fel — mönster 5 är Karusell). Men
+    Evolves data på 42 CBO-svultna annonser säger att svält är Metas dom: 36
+    dog i ABO inom sju dygn, en skalade, och tvingad spend ger köp som inte är
+    inkrementella. I drift följdes ABO-regeln aldrig — allt låg redan i CBO
+    (mätt 2026-09-19). Att en ny annons svälter är ett utfall att logga, inte
+    ett processfel att bygga runt.)*
+    Nattrutinen `/notionkorning` laddar upp redigerarnas färdiga creatives i den
+    kampanj som redan bär produktens annonser (Axels beslut 2026-08-30, tidigare
+    ett undantag — nu huvudregeln).
 
     Kampanjen slås upp ur **kontot** (annonsprefixet i namnet), inte ur
     `campaign_ids[0]`. Mätt 2026-08-31: alla fyra skalningsprodukters

@@ -64,6 +64,10 @@ statiska är underexploaterade (4 % av spend) trots att SO_2 har näst bästa CP
 **Batchsumma:** 490 kr · 1 köp. 16 av 17 fick under 30 kr — CBO:n svälter dem.
 **Lärdom (process, inte kreativ):** att lägga 17 nya statiska i en CBO med en etablerad volymvinnare
 ger dem aldrig en chans. Nästa gång: ABO-testkampanj med lika budget per annons i 48 h.
+*(Omprövad 2026-09-20, Axels beslut ur Evolve-materialet: ABO-cellen byggdes aldrig, och
+kursens data på 42 CBO-svultna annonser säger att 36 dog i ABO inom sju dygn och en skalade.
+Svält är Metas dom — en annons utan spend på sju dygn etiketteras `INGEN_LEVERANS` och släpps.
+Siffrorna ovan står kvar som mätning; slutsatsen "ABO nästa gång" gäller inte längre. CLAUDE.md regel 11.)*
 
 ---
 

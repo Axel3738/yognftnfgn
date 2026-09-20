@@ -1,6 +1,21 @@
 # Förslag: Evolve-materialet → Skalnings kungen
 
-**2026-09-20. STATUS: FÖRSLAG — inget är byggt, ingen rutin är ändrad.**
+**2026-09-20 kväll. STATUS: fyra av tolv byggda på Axels order ("Bygg").**
+Axels beslut samma dag, efter en andra bedömning av förslaget: tolv punkter
+var ett program — ta fyra, kör dem, mät. Byggt, i den ordning han bad om:
+**2.1** klick-attribution (mätt + steg 1 i rond-auto), **2.4** etiketten dag 7
+(`agent/etikett.mjs`, steg 3c), **2.3** spendtjuven i gröna kampanjer
+(`spendtjuv.mjs` grönt läge, steg 3b, med hans grind: ≥ 3 köp under
+break-even eller 0 köp över 3 × break-even-CPA), **2.2 i mjuk form**
+(`MANUELL_SANK`: −20 % per förlustmorgon, aldrig under 4 000, aldrig paus,
+larm — kapning till 4 000 i ett steg avvisad). Dessutom regel 11 omskriven
+(inte struken) och bilder bara med jobb. Namnet: A (register + Notion-fält),
+byggs härnäst. Koden ligger på grenen `claude/nice-cori-n283zp-rond`
+(utgår från agent-grenen `claude/daily-agent-discussion-uos5df` som rutinen
+läser) — 207 tester gröna. Säsongsdatumen är inte bekräftade och inte byggda.
+Resten (2.5–2.12) väntar tills etiketterna finns.
+
+**Ursprungligt läge 2026-09-20 förmiddag: FÖRSLAG — inget byggt.**
 Axels uppdrag: säg vad vi ska ändra i Skalnings kungen (`/rond-auto` på grenen
 `claude/daily-agent-discussion-uos5df`) för att varje brief ska ha högre intent
 och för att vi ska hitta fler breakthroughs. Källa: Axels källmaterial från
