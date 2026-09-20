@@ -413,6 +413,16 @@ def mat_rad(a, fri, rad, W, H, pad):
         "centrerad_i_bild": abs(cx - W / 2) <= max(6, W * 0.02),
         "fet": None if stil is None else stil["fet"],
         "storlek": None if stil is None else stil["storlek"],
+        # Hur BRED källans typsnitt är jämfört med vårt, vid samma höjd.
+        # ⚠️ Avläst 2026-09-20 över fem annonser: BOF_101, CS_4, PD_6 och SP_2
+        # ligger på 0,91–1,15 (alltså samma bredd som Liberation Sans), medan
+        # CaraShellRoof_GT_2_1.jpg:s tre rubrikrader ligger på 0,69–0,77 — den
+        # annonsen är satt med ett SMALT typsnitt. Containern har inget
+        # condensed-snitt (fc-list 2026-09-20: bara Liberation, DejaVu, Free),
+        # så ritningen pressar i stället ihop texten med den här faktorn.
+        # Värden ÖVER 1 betyder att OCR:en tappat mellanslag, inte att
+        # typsnittet är brett — därför pressas aldrig något ut, bara ihop.
+        "bredfaktor": None if stil is None else round(ink_b / max(1, stil["prov_bredd"]), 3),
         "passform": stil,
     }
     return rad

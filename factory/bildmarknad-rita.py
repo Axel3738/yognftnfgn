@@ -47,10 +47,27 @@ _mat = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_mat)
 INK_ANDEL = _mat.INK_ANDEL
 
-# Hur långt utanför textens pixlar fotoinpaintingen målar. 3 px täcker
-# kantutjämningen; mätt 2026-09-20 på GT_2 lämnade 1 px kvar en grå spökkontur
-# av bokstäverna.
-INPAINT_MARGINAL = 3
+# Hur långt utanför textens pixlar fotoinpaintingen målar.
+#
+# ⚠️ INGET VÄRDE ÄR BRA. Mätt 2026-09-20 på CaraShellRoof_GT_2_1.jpg, där
+# rubrikerna är vit text med mjuk skugga rakt på ett vardagsrumsfoto, och
+# resultatet tittat på i tre körningar (bara suddat, ingen ny text):
+#   3 px   skuggan står kvar — "DEN PERFE" och "TILL HUSVA" går att LÄSA
+#   7 px   spökena nästan borta, men platta grå fält börjar synas
+#   11 px  spökena borta, och fotot med dem: hårda grå rektanglar över
+#          fönsterkarm och vägg
+# 7 är den minst dåliga kompromissen och är vald därefter — inte för att den
+# är bra. Därför rapporteras varje fotorad som UNGEFÄRLIG, och en bild med
+# fotorader blir aldrig "REN" utan att en människa sagt --tillat-foto.
+# Rotorsaken är skuggan: masken hittar de VITA glyfpixlarna, medan den mörka
+# skuggan runt dem är kvar och håller bokstavsformen läsbar.
+INPAINT_MARGINAL = 7
+
+# Under den här bredfaktorn räknas källans typsnitt som SMALT och texten pressas
+# ihop i stället för att krympas. 0,90 ligger i glappet mellan de fyra annonser
+# som mätte 0,91–1,15 (samma bredd som Liberation Sans) och GT_2:s rubriker som
+# mätte 0,69–0,77 (mätt 2026-09-20, se bredfaktor i bildmarknad-mat.py).
+SMALT_TYPSNITT = 0.90
 
 
 def _font(fet, storlek):
@@ -70,22 +87,38 @@ def _inkmask(a, ruta, bakfarg):
     return d > topp * INK_ANDEL
 
 
-def sudda_enfargad(a, ruta, farg):
+def sudda_enfargad(a, fri, ruta, farg, platta=None):
+    """Plattan fylls i första hand med INTERPOLATION, inte med en enda färg.
+
+    ⚠️ Mätt 2026-09-20 på CaraShellRoof_CS_4_1.jpg: priskortet ser enfärgat ut
+    men bär en svag lodrät gradient. En platt fyllning lämnade en skarv på 1,64
+    resp. 0,94 nivåer vid rutans kant — en syNLIG rektangel på en stor ljus yta,
+    precis det en suddning aldrig får ge. De mörka banden hade skarv 0,00 och
+    blir lika bra på båda sätten.
+
+    Banden hålls INNANFÖR plattan, annars läser de knappens kant i stället för
+    knappens färg (den blå knappen i BOF_101 fick gradientfel 22,15 just så)."""
+    gjort = sudda_gradient(a, fri, ruta, granser=platta)
+    if gjort:
+        return f"{gjort} — inom plattan"
     x0, y0, x1, y1 = ruta
     a[y0:y1 + 1, x0:x1 + 1] = np.array(farg, dtype=np.float32)
-    return f"fylld med plattans färg {[round(f) for f in farg]}"
+    return f"fylld med plattans färg {[round(f) for f in farg]} (ingen plats för band inom plattan)"
 
 
-def sudda_gradient(a, fri, ruta):
+def sudda_gradient(a, fri, ruta, granser=None):
     """Per kolumn: linjär interpolation mellan bandet ovanför och under rutan.
 
     På en lodrät gradient återskapar det bakgrunden exakt — resultatet är
-    skarpt, utan skarv, eftersom varje kolumn möter sina egna grannpixlar."""
+    skarpt, utan skarv, eftersom varje kolumn möter sina egna grannpixlar.
+
+    `granser` begränsar var banden får hämtas (plattans egen ruta)."""
     H = a.shape[0]
     x0, y0, x1, y1 = ruta
+    tak, golv = (0, H) if granser is None else (max(0, granser[1]), min(H, granser[3] + 1))
     m = max(6, (y1 - y0) // 3)
-    ta, tb = max(0, y0 - m), y0
-    ba, bb = y1 + 1, min(H, y1 + 1 + m)
+    ta, tb = max(tak, y0 - m), y0
+    ba, bb = y1 + 1, min(golv, y1 + 1 + m)
     if tb - ta < 2 or bb - ba < 2:
         return None
     mt, mb = fri[ta:tb, x0:x1 + 1], fri[ba:bb, x0:x1 + 1]
@@ -100,20 +133,83 @@ def sudda_gradient(a, fri, ruta):
     return f"gradient interpolerad kolumnvis mellan {m} px ovanför och {m} px under"
 
 
-def sudda_foto(a, ruta, bakfarg):
+def mat_skarv(a, ruta):
+    """Steget mellan pixlarna strax innanför och strax utanför rutans kant.
+
+    Det är måttet på om suddningen SYNS. OCR:en kan inte se det: en utsuddad
+    yta är ingen text, så efterkontrollen är nöjd medan bilden bär en
+    rektangel. Mäts direkt efter suddningen och FÖRE den nya texten — annars
+    mäter man den nya raden i stället för bakgrunden.
+
+    ⚠️ Kanterna mäts var för sig och den största vinner. Slås de ihop tar felen
+    ut varandra: en platt fyllning mitt i en gradient ligger för mörkt upptill
+    och lika mycket för ljust nedtill. Mätt 2026-09-20 gav den hopslagna
+    varianten 0,03 på ett fall som per kant mäter 11,63."""
+    H = a.shape[0]
+    x0, y0, x1, y1 = ruta
+
+    def steg(i0, i1, u0, u1):
+        if u0 < 0 or u1 > H or i1 <= i0 or u1 <= u0:
+            return 0.0
+        inn = a[i0:i1, x0:x1 + 1].reshape(-1, 3).mean(axis=0)
+        ut = a[u0:u1, x0:x1 + 1].reshape(-1, 3).mean(axis=0)
+        return float(np.abs(inn - ut).max())
+
+    return round(max(steg(y0 + 1, y0 + 4, y0 - 4, y0 - 1),
+                     steg(y1 - 3, y1, y1 + 2, y1 + 5)), 2)
+
+
+def _otsu(v):
+    """Otsus tröskel på en 1D-vektor. Ren numpy — scipy finns inte i containern."""
+    hist, kanter = np.histogram(v, bins=64)
+    mitt = (kanter[:-1] + kanter[1:]) / 2
+    tot = hist.sum()
+    if tot == 0:
+        return float(v.max())
+    w0 = np.cumsum(hist)
+    w1 = tot - w0
+    s0 = np.cumsum(hist * mitt)
+    s1 = s0[-1] - s0
+    giltig = (w0 > 0) & (w1 > 0)
+    if not giltig.any():
+        return float(v.max())
+    mellan = np.zeros_like(mitt, dtype=float)
+    mellan[giltig] = (w0[giltig] * w1[giltig]
+                      * (s0[giltig] / w0[giltig] - s1[giltig] / w1[giltig]) ** 2)
+    return float(mitt[int(np.argmax(mellan))])
+
+
+def _fotomask(a, ruta, textfarg):
+    """Textens pixlar på ett FOTO, sedda från TEXTFÄRGEN i stället för bakgrunden.
+
+    ⚠️ Mätt 2026-09-20 på CaraShellRoof_GT_2_1.jpg: masken byggd ur
+    bakgrundsfärgen lämnade tydliga spökrester av "DEN PERFEKTA PRESENTEN" i
+    vänster- och högerkanten. På en gradient är ringens färg en bra bild av
+    bakgrunden; på ett foto är den ett medelvärde av vägg, eld och gran och
+    säger inget om någon enskild pixel. Textfärgen är däremot samma överallt i
+    raden, så avståndet till DEN skiljer glyf från foto. Tröskeln sätts med
+    Otsu i stället för en fast andel, eftersom kontrasten varierar över bilden."""
+    x0, y0, x1, y1 = ruta
+    sub = a[y0:y1 + 1, x0:x1 + 1]
+    d = np.sqrt(((sub - np.array(textfarg, dtype=np.float32)) ** 2).sum(axis=2))
+    return d <= _otsu(d.ravel())
+
+
+def sudda_foto(a, ruta, textfarg):
     """Bara textens pixlar målas igen — fotot runt omkring rörs inte."""
     try:
         import cv2
     except ImportError:
         return None
     x0, y0, x1, y1 = ruta
-    ink = _inkmask(a, ruta, bakfarg).astype(np.uint8) * 255
+    ink = _fotomask(a, ruta, textfarg).astype(np.uint8) * 255
     k = np.ones((INPAINT_MARGINAL * 2 + 1,) * 2, np.uint8)
     ink = cv2.dilate(ink, k)
     sub = np.clip(a[y0:y1 + 1, x0:x1 + 1], 0, 255).astype(np.uint8)
     lagad = cv2.inpaint(sub[:, :, ::-1], ink, 7, cv2.INPAINT_TELEA)[:, :, ::-1]
     a[y0:y1 + 1, x0:x1 + 1] = lagad.astype(np.float32)
-    return f"cv2.inpaint (TELEA) på textens pixlar, {INPAINT_MARGINAL} px marginal — ungefärlig på foto"
+    return (f"cv2.inpaint (TELEA) på textens pixlar (mask ur textfärgen {list(textfarg)}, Otsu), "
+            f"{INPAINT_MARGINAL} px marginal — UNGEFÄRLIG: fotot bakom texten gissas fram")
 
 
 def rita_rad(bild, atg):
@@ -127,10 +223,18 @@ def rita_rad(bild, atg):
     storlek = float(stil["storlek"])
     maxbredd = atg.get("maxbredd") or (ruta[2] - ruta[0] + 1)
 
+    # Källans typsnitt kan vara SMALARE än vårt. Då pressas texten ihop i sidled
+    # i stället för att krympas — så behåller raden rätt höjd och rätt vikt.
+    # Containern saknar condensed-snitt (fc-list 2026-09-20), och en rad som
+    # krymps i BÅDA led ser mindre ut än originalet, vilket syns direkt bredvid
+    # de andra raderna i annonsen.
+    bf = stil.get("bredfaktor")
+    press = float(bf) if bf and bf < SMALT_TYPSNITT else 1.0
+
     krympt = None
     f = _font(fet, storlek)
     bb = f.getbbox(text)
-    while (bb[2] - bb[0]) > maxbredd and storlek > 7:
+    while (bb[2] - bb[0]) * press > maxbredd and storlek > 7:
         storlek *= 0.97
         f = _font(fet, storlek)
         bb = f.getbbox(text)
@@ -141,33 +245,36 @@ def rita_rad(bild, atg):
     # Lodrätt: samma BASLINJE som källan. Origo→baslinje beror bara på
     # typsnittet, så ett prov med KÄLLANS text vid samma storlek ger var källan
     # ritades — och den nya texten ritas från exakt samma origo.
-    prov_f = _font(fet, storlek)
-    pbb = prov_f.getbbox(atg.get("kalltext") or text)
+    pbb = f.getbbox(atg.get("kalltext") or text)
     origo_y = ib[1] - pbb[1]
 
-    # Vågrätt: kanten mätningen läste.
-    bredd = bb[2] - bb[0]
-    if stil.get("justering") == "vanster":
-        origo_x = ib[0] - bb[0]
-    else:
-        mitt = (ib[0] + ib[2] + 1) / 2
-        origo_x = mitt - bredd / 2 - bb[0]
-
-    d = ImageDraw.Draw(bild)
     farg = tuple(int(c) for c in stil["textfarg"])
-    d.text((origo_x, origo_y), text, font=prov_f, fill=farg)
-
+    lw, lh = max(1, bb[2] - bb[0]), max(1, bb[3] - bb[1])
+    lager = Image.new("RGBA", (lw, lh), (0, 0, 0, 0))
+    ld = ImageDraw.Draw(lager)
+    ld.text((-bb[0], -bb[1]), text, font=f, fill=farg + (255,))
     if atg.get("stryk"):
         # Jämförpriset STRYKS ÖVER. Utan strecket läses raden som ett ANDRA
         # pris i stället för ett överstruket förepris — samma regel som
         # pipeline/omdubb/inbrand.mjs byggPopblock.
-        ny = prov_f.getbbox(text)
-        y = origo_y + (ny[1] + ny[3]) / 2
-        tj = max(2, round(storlek * 0.055))
-        d.line([(origo_x + ny[0], y), (origo_x + ny[2], y)], fill=farg, width=tj)
+        y = lh / 2
+        ld.line([(0, y), (lw, y)], fill=farg + (255,), width=max(2, round(storlek * 0.055)))
+    if press != 1.0:
+        lager = lager.resize((max(1, int(round(lw * press))), lh), Image.LANCZOS)
+
+    # Vågrätt: kanten mätningen läste. Positionen räknas på den FÄRDIGA bredden,
+    # alltså efter en eventuell hoppressning.
+    slutbredd = lager.size[0]
+    if stil.get("justering") == "vanster":
+        x = ib[0]
+    else:
+        x = round((ib[0] + ib[2] + 1) / 2 - slutbredd / 2)
+    y = round(origo_y + bb[1])
+    bild.paste(lager, (int(x), int(y)), lager)
 
     return {"storlek": round(storlek, 1), "krympt": krympt,
-            "origo": [round(origo_x, 1), round(origo_y, 1)],
+            "ihoppressad": None if press == 1.0 else round(press, 3),
+            "ritad_box": [int(x), int(y), int(x) + slutbredd, int(y) + lh],
             "justering": stil.get("justering", "center")}
 
 
@@ -190,17 +297,22 @@ def main():
         farg = atg["bakgrund"].get("farg")
         post = {"i": atg.get("i"), "klass": klass, "ny_text": atg.get("ny_text")}
         if klass == "enfargad" and farg:
-            post["suddning"] = sudda_enfargad(a, atg["ruta"], farg)
+            post["suddning"] = sudda_enfargad(a, fri, atg["ruta"], farg, atg["bakgrund"].get("platta"))
         elif klass == "gradient":
             post["suddning"] = sudda_gradient(a, fri, atg["ruta"])
-            if post["suddning"] is None:
-                post["suddning"] = sudda_enfargad(a, atg["ruta"], farg) if farg else None
-                post["nedgradering"] = "gradientbanden gick inte att läsa — fyllde med ringens medelfärg"
+            if post["suddning"] is None and farg:
+                x0, y0, x1, y1 = atg["ruta"]
+                a[y0:y1 + 1, x0:x1 + 1] = np.array(farg, dtype=np.float32)
+                post["suddning"] = f"fylld med ringens medelfärg {[round(f) for f in farg]}"
+                post["nedgradering"] = "gradientbanden gick inte att läsa"
         else:
-            post["suddning"] = sudda_foto(a, atg["ruta"], farg or [0, 0, 0])
+            post["suddning"] = sudda_foto(a, atg["ruta"], atg["stil"]["textfarg"])
             if post["suddning"] is None:
                 post["suddning"] = "HOPPAD: cv2 saknas i containern — fotobakgrunden kan inte lagas"
                 post["hoppad"] = True
+        # Mäts HÄR, innan den nya texten ritas: efteråt mäter man den nya raden.
+        if not post.get("hoppad"):
+            post["skarv"] = mat_skarv(a, atg["ruta"])
         rapport.append(post)
 
     bild = Image.fromarray(np.clip(a, 0, 255).astype(np.uint8), "RGB")

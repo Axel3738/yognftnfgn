@@ -29,9 +29,11 @@
 //   --matning   skriver BARA mätningen som JSON på stdout (rad-index, text, box,
 //               stil) — underlaget en copywriter skriver sina rader mot
 //   --texter    JSON [{"rad": 0, "text": "…"}] med copywriterns rader
+//   --tillat-foto  godkänn en bild vars rader låg på FOTOBAKGRUND (se nedan)
 //
 // Skriver <ut> och <ut>.bildmarknad.json (mätning före, plan, mätning efter, dom).
-// Exit 0 = rent, 4 = svensk text kvar eller rad utan ersättning, 2 = fel indata.
+// Exit 0 = rent, 4 = svensk text kvar / rad utan ersättning / ogranskad
+// fotobakgrund, 3 = butikens namn i texten som skulle ritas, 2 = fel indata.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, join, basename } from 'node:path';
@@ -119,17 +121,6 @@ const SPRAKLOSA = /^[\s→⟶>–—\-·|/+()[\]]*$/u;
 // sköter), så ett tal med "kr" efter sig är fortfarande bara ett tal.
 const VALUTAORD = /\b(kr|kr\.|sek|dkk|nok|eur|usd|kroner|kronor)\b/gi;
 
-/**
- * Bär raden PROSA — alltså ord som någon har skrivit på ett språk?
- *
- * ⚠️ Den här frågan får INTE ställas till markörlistan i inbrand.mjs. Den
- * listan är gjord för videocaptions och känner inte "Beställ nu – spara 340 kr":
- * mätt 2026-09-20 gav `svenskaTraffar` noll träffar på den raden, varpå
- * rabattregeln nedan gladeligen skrev hela knapptexten till "250 kr." och
- * kastade bort budskapet. Testet är därför språkoberoende: finns det bokstäver
- * kvar när talen och valutaorden strukits, är raden skriven av en människa och
- * ska skrivas om av en människa.
- */
 // Löftena i butikens fotrad, med mönstret som känner igen dem i källan.
 // Samma tre delar som `delaFotrad` i inbrand.mjs ger: frakt · garanti · leverans.
 const FOTMONSTER = [
@@ -156,6 +147,17 @@ export function fotdelar(text, marknadstext) {
   return funna.sort((a, b) => a.pos - b.pos);
 }
 
+/**
+ * Bär raden PROSA — alltså ord som någon har skrivit på ett språk?
+ *
+ * ⚠️ Den här frågan får INTE ställas till markörlistan i inbrand.mjs. Den
+ * listan är gjord för videocaptions och känner inte "Beställ nu – spara 340 kr":
+ * mätt 2026-09-20 gav `svenskaTraffar` noll träffar på den raden, varpå
+ * rabattregeln gladeligen skrev hela knapptexten till "250 kr." och kastade
+ * bort budskapet. Testet är därför språkoberoende: finns det bokstäver kvar när
+ * talen och valutaorden strukits, är raden skriven av en människa och ska
+ * skrivas om av en människa.
+ */
 export function harProsa(text) {
   const kvar = String(text ?? '')
     .replace(/\d[\d\s.,]*/g, ' ')
@@ -273,6 +275,12 @@ export function mappaBildrad(text, marknadstext, priser, extra = {}) {
 // svenska texten 489 px, alltså ~5 % luft per sida.
 const PLATTMARGINAL = 0.04;
 
+// Över så här många nivåers steg vid rutans kant syns suddningen som en
+// rektangel. Avläst 2026-09-20 på de tre färdiga danska bilderna: BOF_101 och
+// CS_4 landade på 0,00–1,69 (osynligt), medan en platt fyllning mitt i en
+// gradient mäter 11,63 och GT_2:s fotorader 15–96. 6 ligger i glappet.
+const SYNLIG_SKARV = 6;
+
 /**
  * Hur bred den nya raden får bli innan den måste krympas.
  *
@@ -377,6 +385,7 @@ export async function huvud() {
   const atgarder = [];
   const skrivna = [];
   const utanErsattning = [];
+  const neutrala = [];
   console.log('\nPLAN');
   for (const r of fore.rader) {
     if (!r.stil) {
@@ -415,7 +424,15 @@ export async function huvud() {
       console.log(`  #${r.i} ${JSON.stringify(r.text)}\n       → INGEN ERSÄTTNING [${roll}] ${regel}`);
     }
   }
-  brandspärr(skrivna);
+  // Att vägra skriva butikens namn är ett BESLUT, inte en krasch — därför en
+  // ren utskrift och en egen exitkod i stället för en stackdump.
+  try {
+    brandspärr(skrivna);
+  } catch (fel) {
+    console.error(`\n❌ ${fel.message}`);
+    console.error('\nIngen bild skrevs. Skriv om raden utan butikens namn och kör igen.');
+    process.exit(3);
+  }
 
   if (utanErsattning.length) {
     console.log('\n  ⚠️ RADER UTAN ERSÄTTNING — de lämnas ORÖRDA (svensk text står alltså kvar):');
@@ -426,7 +443,7 @@ export async function huvud() {
   const rapport = {
     kalla, ut, marknad: marknaden.kod, sprak: marknaden.sprak, valuta: marknaden.valuta,
     marknadstext: mt, kallor, rabatt, kallpriser: priser, kallrabatter,
-    matning_fore: fore, plan: atgarder, utan_ersattning: utanErsattning,
+    matning_fore: fore, plan: atgarder, utan_ersattning: utanErsattning, sprakneutrala: neutrala,
   };
 
   if (args.torr) {
@@ -445,12 +462,22 @@ export async function huvud() {
   writeFileSync(planfil, JSON.stringify({ in: kalla, ut, W: fore.W, H: fore.H, atgarder }, null, 1));
   const res = JSON.parse(kor(['python3', join(ROT, 'factory', 'bildmarknad-rita.py'), planfil]).stdout);
   rapport.rendering = res;
+  const synliga = [];
   for (const p of res.atgarder) {
     console.log(`  #${p.i} ${p.suddning}`);
+    if (p.skarv != null) {
+      const syns = p.skarv > SYNLIG_SKARV;
+      if (syns) synliga.push(p);
+      console.log(`       skarv ${p.skarv} nivåer vid rutans kant${syns ? ' ⚠️ SYNS SOM EN REKTANGEL' : ''}`);
+    }
+    if (p.ritning?.ihoppressad) {
+      console.log(`       källans typsnitt är smalare än vårt — texten pressad till ${Math.round(p.ritning.ihoppressad * 100)} % bredd`);
+    }
     if (p.ritning?.krympt) {
       console.log(`       ⚠️ STILEN KRYMPTES ${p.ritning.krympt.fran} → ${p.ritning.krympt.till} px: ${p.ritning.krympt.varfor}`);
     }
   }
+  rapport.synlig_skarv = synliga.map((p) => ({ rad: p.i, skarv: p.skarv }));
 
   console.log('\nEFTERKONTROLL (OCR på resultatet)');
   const efter = mat(ut, { konf: Number(args.konf ?? 0.45), pad: Number(args.pad ?? 6) });
@@ -464,11 +491,30 @@ export async function huvud() {
   }
   if (!kvar.length) console.log('  ✅ ingen svensk markör kvar i bilden');
 
-  const dom = kvar.length ? 'SVENSK TEXT KVAR' : (utanErsattning.length ? 'TÄCKT UTAN ERSÄTTNING' : 'REN');
+  // Fotorader: suddningen är en gissning, inte en återskapad bakgrund.
+  // ⚠️ Mätt 2026-09-20 (se INPAINT_MARGINAL i bildmarknad-rita.py): källans
+  // text bär en mjuk skugga, och masken tar de vita glyfpixlarna men inte
+  // skuggan. Antingen står bokstavsformen kvar läsbar, eller så måste så
+  // mycket målas över att fotot blir platta grå fält. Därför får en sådan bild
+  // aldrig heta REN av sig själv — en människa måste titta och säga
+  // --tillat-foto. OCR:en kan inte fånga det här: en utsuddad skugga är ingen
+  // text, så efterkontrollen är nöjd medan bilden ser trasig ut.
+  const fotorader = atgarder.filter((a) => a.bakgrund.klass === 'foto');
+  if (fotorader.length) {
+    console.log(`\n⚠️ ${fotorader.length} rad(er) låg på FOTOBAKGRUND (#${fotorader.map((a) => a.i).join(', #')}).`);
+    console.log('   Suddningen där är ungefärlig — titta på bilden innan den går ut.');
+  }
+  rapport.fotorader = fotorader.map((a) => a.i);
+
+  const ogranskatFoto = fotorader.length && !args['tillat-foto'];
+  const dom = kvar.length ? 'SVENSK TEXT KVAR'
+    : (utanErsattning.length ? 'TÄCKT UTAN ERSÄTTNING'
+      : (ogranskatFoto ? 'FOTOBAKGRUND — MÅSTE GRANSKAS' : 'REN'));
   rapport.dom = dom;
   writeFileSync(`${ut}.bildmarknad.json`, `${JSON.stringify(rapport, null, 1)}\n`);
-  console.log(`\n${kvar.length ? '❌' : (utanErsattning.length ? '⚠️' : '✅')} ${dom} — rapport i ${basename(ut)}.bildmarknad.json`);
-  process.exit(kvar.length || utanErsattning.length ? 4 : 0);
+  console.log(`\n${kvar.length ? '❌' : (utanErsattning.length || ogranskatFoto ? '⚠️' : '✅')} ${dom} — rapport i ${basename(ut)}.bildmarknad.json`);
+  if (ogranskatFoto) console.log('   Godkänn med --tillat-foto när du har tittat på bilden.');
+  process.exit(kvar.length || utanErsattning.length || ogranskatFoto ? 4 : 0);
 }
 
 if (process.argv[1]?.endsWith('bildmarknad.mjs')) await huvud();
