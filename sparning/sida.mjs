@@ -793,9 +793,11 @@ export function byggSidkropp(data, konfig) {
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
   const copy = JSON.stringify(copydata(c)).replace(/<\//g, '<\\/');
   const mail = esk(c.support);
-  const vantetid = c.vaknar
-    ? ` Är paketet nyss skickat kan fraktbolaget ännu inte ha registrerat det — det brukar ta ${esk(c.vaknar)}.`
-    : ' Är paketet nyss skickat kan fraktbolaget ännu inte ha registrerat det.';
+  // Kunden får leveransmejlet i samma sekund som ordern skickas, men sidan
+  // hämtar nya paket en gång i timmen — klickar hen direkt finns numret inte
+  // här än. Det är den vanligaste orsaken till "hittar inte", inte ett
+  // felskrivet nummer (Axels test 2026-09-20 kväll).
+  const vantetid = ' Fick du leveransmejlet nyss? Då är paketet på väg in här — sidan hämtar nya paket varje timme, så prova igen om en liten stund.';
   return `<div id="bb-spar">
 <style>${stil(c)}</style>
 <noscript><p class="bbs-noscript">Den här sidan behöver JavaScript för att visa din spårning. Slå på det i webbläsaren och ladda om sidan, eller mejla <a href="mailto:${mail}">${mail}</a> så kollar vi paketet åt dig.</p></noscript>
