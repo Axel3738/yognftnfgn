@@ -204,6 +204,18 @@
       "namn": "Solcellslampa 210 LED Sensor",
       "drive_sheet": "1nhfPsVG8b0YfURPSdFftMHxzD12x1CuC6AdjyvqO0kg",
       "no_handle": "solcellelampe-med-bevegelsessensor-tre-hoder-210-led"
+    },
+    {
+      "id": "innetofler",
+      "namn": "Fodrade Inomhustofflor",
+      "drive_sheet": "1ixNspytk-E2S3UIVAahmfV8n3VnFow5xTI0tLoNQ2rk",
+      "no_handle": "forede-innetofler-kamuflasje-herrestorrelse-40-47"
+    },
+    {
+      "id": "vedkloyver-bor",
+      "namn": "Vedklyvborr Ø32 mm",
+      "drive_sheet": "1MDo4k9F9rVMeEzBdGSr-Of9xjpk6JnzE3P8OuKgZYJE",
+      "no_handle": "vedkloyver-bor-til-drill-kloyvekjegle-o32-mm-3-fester"
     }
   ]
 }
