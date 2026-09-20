@@ -257,6 +257,14 @@ export function mappaBildrad(text, marknadstext, priser, extra = {}) {
     }
   }
 
+  // 5. Varken prosa, känt tal eller roll — alltså ingenting som är svenskt.
+  //    "−23 %" är samma rabatt i Danmark (de danska priserna är satta med
+  //    samma procent, se produktfilens DKK-kommentar), och ett procenttal
+  //    stavas likadant. Sådana rader ska lämnas i fred, inte efterlysas som
+  //    saknad copy — men de ska sägas högt, inte tigas ihjäl.
+  if (!harProsa(text)) {
+    return { roll: 'sprakneutral', ny: null, regel: 'raden bär varken bokstäver eller något av källans tal — inget att översätta, lämnas orörd' };
+  }
   return grund;
 }
 
@@ -396,6 +404,9 @@ export async function huvud() {
         maxbredd: tillatenBredd(r, fore.W),
       });
       console.log(`  #${r.i} ${JSON.stringify(r.text)}\n       → ${JSON.stringify(ny)}  [${roll}] ${regel}`);
+    } else if (roll === 'sprakneutral') {
+      neutrala.push({ rad: r.i, text: r.text, regel });
+      console.log(`  #${r.i} ${JSON.stringify(r.text)}\n       → LÄMNAS ORÖRD [${roll}] ${regel}`);
     } else {
       // ⚠️ En rad utan ersättning TÄCKS ALDRIG TYST. Att sudda den svenska
       // texten och lämna tomt tar bort budskapet ur annonsen utan att någon
