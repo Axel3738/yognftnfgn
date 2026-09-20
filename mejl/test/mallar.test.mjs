@@ -238,10 +238,18 @@ test('orderbekräftelsen använder Shopifys ordervariabler', () => {
 test('fraktmallarna använder fulfillment, övergiven kassa använder url, återbetalning amount', () => {
   const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
   assert.ok(frakt.html.includes('{% for line in fulfillment.fulfillment_line_items %}'));
-  // Spårningsnumret är ren text — aldrig en länk till fraktbolaget (2026-09-18 kväll).
-  assert.ok(frakt.html.includes('{{ fulfillment.tracking_number }}'));
+  // ⚠️ Spårningsnumret står INTE i mejlet (Axels beslut 2026-09-20: "maska
+  // med ett eget bävernummer så de inte ser YT nr"). Numret börjar på YT
+  // eller 4PX och skvallrar om varifrån paketet kommer. Knappen bär numret i
+  // adressen, och spårningssidan visar bävernumret när kunden landar där.
+  assert.ok(!frakt.html.includes('{{ fulfillment.tracking_number }}'),
+    'fraktbolagets nummer får inte stå som text i mejlet');
   assert.ok(!frakt.html.includes('tracking_url'), 'spårningsnumret får inte länka till fraktbolaget');
-  assert.ok(!frakt.html.includes('tracking_company'));
+  assert.ok(!frakt.html.includes('tracking_company'), 'fraktbolagets NAMN avslöjar ursprunget lika mycket som numret');
+  // Knappen måste däremot fortfarande bära numret — annars hittar kunden inte
+  // sitt paket när hen klickar.
+  assert.ok(frakt.html.includes('pages/spara?nummer={{ fulfillment.tracking_number | url_encode }}'),
+    'knappen ska ta med numret i adressen');
   const kassa = byggMall('overgiven_kassa', { ...indata, lage: 'liquid' });
   assert.ok(kassa.html.includes('href="{{ url }}"'));
   const ater = byggMall('aterbetalning', { ...indata, lage: 'liquid' });
