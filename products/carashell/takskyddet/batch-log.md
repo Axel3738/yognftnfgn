@@ -1375,3 +1375,24 @@ batch är större än tio rader.
 **Notion:** kommentar + `Translated url` på alla 16, alla 16 → `Approved`.
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551270110281338922`,
 ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-20-us/`.
+
+---
+
+## 2026-09-21 — `CaraShellRoof_CS_4_1` pausad av nattvakten (batch #2)
+
+**Dödvikt enligt ny annons-regeln:** 1 499 kr spend (≥ 3 × target-CPA 411 kr),
+2 köp, **CPA 750 kr mot break-even 693 kr** på 14 dygn. Första annonsen i
+butikens historia som reglerna dödat.
+
+Hypotesen den bar (batch #2): *rabatten säljer lika bra utan falsk brådska —
+"IDAG" bort, priset som stående erbjudande*. **Utfallet räcker inte för att
+falsifiera den.** Annonsen fick aldrig volym medan den levde (113 kr på tre
+dygn i mitten av september, se körning nr 3) och klarade grinden först när
+CBO:n plötsligt gav den 1 499 kr. Två köp är under de tre som krävs för en dom
+på annons­nivå — pausen är ett kostnadsbeslut, inte ett omdöme om brådskan.
+
+**Frågan lever vidare i batch #3:** `CS_5_1` och `CS_6_1` är båda brådskefria
+och isolerar i stället rabattframingen mot varandra (23 % mot 340 kr). Läs dem
+mot `CS_1_H1` (video, CPA 216 kr) nästa gång någon gör en feedback-loop —
+CaraShell briefas inte längre härifrån, så den loopen ligger numera i
+Bäverbutikens teamspace.
