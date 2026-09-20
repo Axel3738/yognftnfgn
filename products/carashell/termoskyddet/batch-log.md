@@ -671,3 +671,14 @@ inte de svenska bilderna.
 Briefronden pausad sedan 2026-09-18 (Axels beslut: CaraShell briefas i Bäverbutikens
 teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `kord` stämplad,
 `brief-kord` INTE (pausen står tills vidare).
+
+## 2026-09-20 — `/ops-leverans carashell/termoskyddet` — tom kö, tredje dagen i rad
+
+- Kön: 0 rader i `To be Reviewed` / `Creative strat review`. CaraShells hub oförändrad
+  (5 Approved, 2 Draft-videor). Inget laddades upp, inget rördes i kontot.
+- SE-kampanjen kvar PAUSED med samma `updated_time` 2026-09-18 11:29 CEST — ingen har rört
+  den på tre dygn. Livstid 2 058 kr / 4 köp / ROAS 1,09 mot break-even 1,61, oförändrat sedan igår.
+- Bäverbutikens källhub (`c5a270ab-…`) bär 35 rader men ingen i `CaraShell SE ready to be active`,
+  så speglingen 16:55 har inget att lämna hit heller.
+- Briefarna skrivs i Bäverbutikens hub sedan 2026-09-18. Tom kö i den här rutinen är det väntade
+  läget; den blir användbar igen först när en människa slår på SE-kampanjen.
