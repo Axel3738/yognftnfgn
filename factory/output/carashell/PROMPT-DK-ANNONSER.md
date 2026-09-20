@@ -78,12 +78,22 @@ MÄTT 2026-09-20, använd det, mät inte om det:
     "Från CaraShell." rakt ut. Samma regel, samma åtgärd.
 
 GÖR SÅ HÄR:
-  1. `python3 factory/slutkort.py --marknad DK …` bygger ett danskt
-     slutkort ur produktfilen, butiksfilen och opsmarknader-raden: ingen
-     logga, inget butiksnamn, ingen domän. Läs filens egen hjälptext.
-     Finns filen inte: receptet står i
-     `market-expansion/ops/carashell/2026-09-18-us/video/bygg-cap.py`
-     (funktionen `slutkort()`) — den byggde US-korten och är bevisad.
+  1. Bygg det danska kortet (klart och kört 2026-09-20):
+
+       python3 factory/slutkort.py --produkt factory/produkter/takskyddet.yaml \
+           --butik factory/butiker/carashell.yaml --marknad DK --bredd 720 \
+           --produktbild <png> --ut lager/slutkort-dk-720.png
+
+     Samma rad med `--bredd 1080` för 1080×1920-videorna, och med
+     `termoskyddet.yaml` för produkt 2. Allt innehåll kommer ur filerna —
+     titel och garanti ur `oversattning-da.json`, priset ur
+     `ekonomi.marknadspriser`, fraktraden ur butikens fraktkonfig. Motorn
+     skriver ut VAD den valde; läs den utskriften. Den vägrar skriva bilden
+     (exit 4) om ett butiksnamn eller en domän smyger in.
+     Produktbilden dras ur ett befintligt slutkort — det finns sparade i
+     `factory/output/carashell/endkort/<annons>/slutkort.png`.
+     ⚠️ Kommer bilden från ett gammalt kort: `--vitrensa` (standard 250) tar
+     bort dess nästan-vita bakgrund, annars syns den som en grå ruta.
   2. `python3 factory/slutkortskoll.py <video.mp4>` säger vilka videor som
      HAR ett slutkort och från vilken sekund. Lita inte på listan ovan för
      en video du inte känner igen — mät.
