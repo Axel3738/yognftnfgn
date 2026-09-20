@@ -43,7 +43,7 @@ for f in "$KALLA"/*.mp4; do
   # slutkort, en som aldrig skrev sin fil) och batchen rapporterade "FELADE: 0".
   # Loggen skrivs därför till fil, och koden läses direkt.
   logg="$UT/$malnamn.logg"
-  timeout 2400 node "$ROT/pipeline/omdubb/marknadsvideo.mjs" \
+  timeout "${TAK:-2400}" node "$ROT/pipeline/omdubb/marknadsvideo.mjs" \
       --kalla="$f" --srt="$manus" --marknad="$MARKNAD" --inbrand --captions \
       --produkt="$PRODUKT" --butik="$BUTIK" \
       ${BILD:+--produktbild="$BILD"} --ut="$ut" > "$logg" 2>&1
