@@ -22,10 +22,10 @@ kopierad rakt in i Cowork. Delen under linjen är prompten.
 - Stopp på vägen: avsändaradressen hello@carashell.se var **ej verifierad**
   och testmejlet gick inte att skicka. Axels val: skicka verifieringen,
   klicka länken i inkorgen, sedan A + C. Löst — märket borta.
-- **Kvar, Axels beslut:** Shopifys egen knapp "Spåra order med Shop"
-  (`shop_app_tracking_url`) står orörd i mallarna. Den leder till Shop-appen,
-  inte till spårningssidan. Byts den mot "Spåra paketet" → `/pages/spara`
-  är det ett eget litet Cowork-steg (samma tre mallar).
+- **Shop-knappen:** Shopifys egen knapp "Spåra order med Shop"
+  (`shop_app_tracking_url`) stod orörd efter första körningen. Axels beslut
+  samma kväll: "Jag vill inte ha shop länken" ⇒ byts mot **Spåra paketet** →
+  `/pages/spara` — Cowork-prompten `carashell-knapp.md`.
 - Anmärkning från Cowork: en leverans med flera kolli får samma CS-nummer i
   mejlet (mallen räknar på `fulfillment.tracking_number`, det första).
   Sidan slår upp varje kolli för sig, så kunden ser det första paketet.
