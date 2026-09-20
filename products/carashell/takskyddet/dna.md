@@ -670,3 +670,54 @@ hubben 2026-09-19 bar redan `finns_i_meta: true` med annons-id i NO — spegling
 laddar upp både den svenska och den norska versionen. De väntar på USA, inte på
 NO-rutinen. Kör aldrig en översättning på dem: det hade blivit dubbletter i samma
 adset.
+
+## Slutkortsspärren fällde alla fyra videorna — US-rundan 2026-09-20
+
+Kön har sedan 2026-09-20 en slutkortskoll (`factory/bildbrand.mjs`, järnregel 2b i
+`/ops-oversatt`): de sista sekunderna av varje video OCR-läses, och bär kortet ett
+butiksnamn blockeras raden. **Alla fyra videorna i dag blockerades**, och kollen hade
+rätt — kortet är Bäverbutikens logga, den svenska produktsidans titel, "10 recensioner"
+och `1 469 kr → 1 129 kr`.
+
+| Video | Dom | Vad OCR läste |
+|---|---|---|
+| OB_101_H1 | `slutkort-med-brand` | BAVERBUTIKEN / TAKOVERDRAG HUSVAGN … / 1469 KR 1,129 Kr |
+| PD_107_H1 | `slutkort-med-brand` | samma kort |
+| RI_103_H1 | `slutkort-med-brand` | samma kort |
+| PD_106_H1 | `slutkort-med-brand` | samma kort |
+
+**Så här lästes spärren, och varför raderna ändå gick live.** Regeln motiverar stoppet
+med att "ingen omdubbning rör BILDEN". Det stämmer för HeyGen-vägen ensam — men den här
+batchens pipeline ritar om bilden: `video/bygg-cap.py` bygger ett nytt slutkort som
+PNG-lager och `no-precis.py` lägger det över de sista sekunderna. **Stoppet gäller
+källfilen, inte den färdiga filen.** Därför byggdes kortet om först, och rutan kördes om
+med `granskaOmVideo` på den FÄRDIGA filen innan uppladdning. Den som läser regeln
+bokstavligt och hoppar raden lämnar fyra färdiga annonser oöversatta utan skäl; den som
+laddar upp källfilen sätter Bäverbutikens logga i ett amerikanskt annonskonto. Vägen är
+att göra bilden ren och mäta om.
+
+⚠️ **`rapidocr-onnxruntime` saknas i containern.** Utan den svarar kollen `okand` — "ett
+slutkort finns men texten gick inte att läsa" — vilket INTE blockerar. Första körningen
+i dag släppte alltså igenom fyra kort med Bäverbutikens logga utan att någon hade sett
+dem. `pip install rapidocr-onnxruntime` först, sedan läs kön. En spärr som inte kan mäta
+säger inte ifrån; den säger "vet inte", och det är lätt att läsa som grönt.
+
+## Tre mätfynd om bildöversättningen — 2026-09-20
+
+1. **Textstorleken ska kalibreras, inte gissas.** Varje forms storlek räknades fram som
+   den som återger SE-radens uppmätta bredd i Liberation Sans: rubrik 77, underrad 38,
+   etikett 30, knapp 42, punkt 38. De stämmer med `factory/bild-text.py`:s `STORLEK`
+   (rubrik 0,072 × 1080 = 78) — mallen är alltså densamma, och en gissad storlek hade
+   synts direkt mot originalet.
+2. **Halvgenomskinlig platta över tvåtonat foto går inte att sudda.** `BOF_105_1` (blå
+   is till vänster, svart väv till höger) och `GT_109_1` (kvällsljus) behöll ett läsbart
+   spöke av den svenska rubriken efter både `forsudda.py` och `rita_box` — radmedianen
+   blir fel när raden har två bakgrunder. Lösningen är `fyll: "ljus"` + `fyllfarg` i
+   bandets uppmätta färg (85:e percentilen, vänster och höger inom 2–4 nivåer) + `alfa: 255`.
+   Samma fynd som `PD_6_1` 2026-09-19, nu med receptet skrivet.
+3. **En mörk etikettplatta på alfa 235 släpper igenom vit svensk text.** `TR_102_1`
+   visade "1 129 kr" under "$199" tills plattan sattes till 255.
+
+**Kontrollen som faktiskt håller:** OCR över alla tolv färdiga bilder med ett förbjudet-
+mönster (å/ä/ö, kr, 1 129, 1 469, 340, 23 %, taköverdrag, presenning, recensioner). Noll
+träffar. Ögat missar ett spöke i en gradient; OCR gör det inte.
