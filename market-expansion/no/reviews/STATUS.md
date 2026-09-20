@@ -3,6 +3,59 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-20 — 18 nya på två produkter, 36 i `sources.json`
+
+MAKE TO NORWAY hade **tre** nya mappar. Två importerades, en hoppades över.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Fôrede Innetøfler | 10 | `forede-innetofler-kamuflasje-herrestorrelse-40-47` |
+| Vedkløyver-bor Ø32 mm | 8 | `vedkloyver-bor-til-drill-kloyvekjegle-o32-mm-3-fester` |
+
+Kartorna: +24 översättningar, +9 namn. Butiksfeeden står kvar på 202 produkter.
+Båda arken bar riktiga betyg — **4:or och 5:or**, första gången något annat än
+rena femmor kommer in.
+
+Spamfiltret tog båda importerna igen (10/10 och 8/8). Rättat i samma körning
+med `tools/judgeme-publicera.mjs`, båda tillbakalästa som fullt synliga.
+
+### ⚠️ Dinosauriekalendern hoppades över — namnen är märkta som exempel
+
+`Dinosauriekalender_REVIEW` (`1YB8supotimDoLEVtyIwEkyccasbZ6-w7vhejIEcsqAE`)
+har sju rader med **riktiga rubriker, riktiga texter, rätt handle och betyg** —
+men varenda recensent heter `Anna (EXEMPEL)`, `Erik (EXEMPEL)`, `Sara
+(EXEMPEL)` … med `anna@example.com` som adress.
+
+Arket är alltså till 90 % färdigt. Det som fattas är namnen, och **namn hittas
+aldrig på** — att lägga in `Anna (EXEMPEL)` i `names.no.json` vore att tvätta
+bort en flagga källan satt med flit. Handlen finns i butiken
+(`dinosaur-adventskalender-24-dinosaurer`), så den dagen arket får riktiga namn
+går produkten in på en natt.
+
+Skiljer sig från Medicinasken, där titel, namn OCH handle alla var mall.
+
+### `picture_urls` nollställs nu av bygget
+
+Inomhustofflornas ark bar `https://baverbutiken.se/` i bildkolumnen på **alla
+tio rader**. Det är varken en bild (Judge.me väntar sig en bildlänk) eller något
+som hör hemma i den norska butiken — en svensk butikslänk under en norsk
+recension. Fältet ligger nu i `NOLLSTÄLLDA` i `make-no-reviews.py`, bredvid
+`product_id`, `ip_address` och `metaobject_handle`.
+
+Samma ark bar dessutom ifyllda `product_id` (Shopify-varianter ur den svenska
+butiken) och `reply: "Tack för din recension!"` — id:t nollades som vanligt,
+svaret översattes till `Takk for anmeldelsen din!`.
+
+### ⚠️ Shopifys bot-spärr slår mot `curl`, inte mot node och python
+
+`curl` mot `beverbutikken.no/products.json` svarade med en HTML-sida
+("Verifying your connection…") i stället för JSON — även med en
+webbläsar-`User-Agent`. **`fetch` i node och `urllib` i python kom igenom
+samtidigt**, och bygget som använder python märkte ingenting.
+
+Hämta alltså butiksfeeden med node eller python i felsökning, inte med curl.
+Ett tomt eller konstigt svar från feeden betyder inte att butiken är nere.
+
 ## Läget 2026-09-19 — 0 nya, full täckning på allt som är påslaget
 
 Inga nya mappar i MAKE TO NORWAY (36 + WINNERS med 3, samma som i går).

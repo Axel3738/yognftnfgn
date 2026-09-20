@@ -41,6 +41,14 @@ för hand.
 
 1. **Rendera aldrig före proofread.** Rendering drar HeyGen-credits.
 2. **Skanna källvideon efter inbränd svensk text** — HeyGen översätter bara ljudet.
+2b. **Slutkortet** (`factory/bildbrand.mjs`, 2026-09-20). Kön granskar de
+   sista 3 sekunderna av varje video som ska laddas upp. `slutkort.blockerar`
+   ⇒ ladda inte upp raden (slutkortet namnger en butik — ingen omdubbning
+   rör BILDEN, varken HeyGen eller ElevenLabs-vägen, så ett svenskt slutkort
+   med logga följer med rakt in i marknaden).
+   `slutkort-utan-brand` och `okand` laddas upp men **namnges i rapporten**:
+   ett slutkort på svenska är fel språk i Danmark även utan butiksnamn.
+   Inget som redan är live rörs.
 3. **`python3 pipeline/rostkoll.py` på varje renderad video.** ❌ laddas inte upp.
 4. **Priset kommer ur produktfilen eller inte alls.** `ekonomi.marknadspriser`
    för marknadens valuta (NOK 1 106 / USD …) är facit för all copy, dubb och

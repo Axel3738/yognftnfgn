@@ -20,8 +20,8 @@ test('domanForMarknad + marknadslank: marknadens egen domän utan språkmapp, an
 import { annonskontoFor, OPS_ANNONSKONTO } from '../register.mjs';
 import { MARKNADSKODER, marknadskoderI, filtreraPaMarknad } from '../skalning.mjs';
 
-test('USA ligger i Magiborsten UK, SE och NO i OPS-kontot — kontot är per marknad, kontrollerat på id', () => {
-  assert.deepEqual(OPS_MARKNADSKODER, ['SE', 'NO', 'US']);
+test('USA ligger i Magiborsten UK, SE/NO/DK i OPS-kontot — kontot är per marknad, kontrollerat på id', () => {
+  assert.deepEqual(OPS_MARKNADSKODER, ['SE', 'NO', 'US', 'DK']);
   assert.equal(kontoFor('US'), '1107817401910319');
   assert.equal(kontoFor('NO'), '915422744950975');
   assert.equal(kontoFor('se'), '915422744950975');
@@ -30,10 +30,18 @@ test('USA ligger i Magiborsten UK, SE och NO i OPS-kontot — kontot är per mar
   assert.equal(OPS_MARKNADER.US.locale, 'en');
   assert.equal(OPS_MARKNADER.US.valuta, 'USD');
   assert.deepEqual(OPS_MARKNADER.US.geo, ['US']);
-  assert.throws(() => marknadFor('DK'), /Okänd OPS-marknad "DK"/);
+  // Danmark 2026-09-20: samma konto som SE och NO trots att kontot HETER
+  // "MagiBorsten DK" — namnet är historiskt, kontot är OPS gemensamma.
+  assert.equal(kontoFor('DK'), '915422744950975');
+  assert.equal(OPS_MARKNADER.DK.locale, 'da');
+  assert.equal(OPS_MARKNADER.DK.valuta, 'DKK');
+  assert.equal(OPS_MARKNADER.DK.heygen_sprak, 'Danish (Denmark)');
+  assert.deepEqual(OPS_MARKNADER.DK.geo, ['DK']);
+  assert.throws(() => marknadFor('JP'), /Okänd OPS-marknad "JP"/);
   assert.equal(arOpsMarknad('us'), true);
+  assert.equal(arOpsMarknad('dk'), true);
   assert.equal(arOpsMarknad('XX'), false);
-  assert.deepEqual(oversattningsmarknader(), ['NO', 'US']);
+  assert.deepEqual(oversattningsmarknader(), ['NO', 'US', 'DK']);
 });
 
 test('annonskontoFor: OPS-posten har OPS-kontot som identitet men målet är marknadens konto', () => {
@@ -87,4 +95,19 @@ test('skalning känner US som marknadskod — en _US_-annons filtreras till US, 
   assert.equal(filtreraPaMarknad(rader, 'US').behall.length, 1);
   assert.equal(filtreraPaMarknad(rader, 'SE').behall.length, 1);
   assert.deepEqual(filtreraPaMarknad(rader, 'SE').bortfiltrerade, { US: 1 });
+});
+
+test('rösten per marknad: ElevenLabs-rösten står i tabellen, aldrig i ett skript (Danmark 2026-09-20)', () => {
+  // Axels beslut 2026-09-16: omdubbningen görs med ElevenLabs, inte HeyGen.
+  // Rösten valdes 2026-09-20 genom mätning — fem infödda danska röster läste
+  // tre annonsrepliker med eleven_v3, Scribe transkriberade tillbaka, och
+  // Søren var den enda felfria med jämnt tempo (pipeline/omdubb/README.md).
+  assert.equal(OPS_MARKNADER.DK.rost, 'Søren - Clear, Confident and Versatile');
+  assert.equal(OPS_MARKNADER.SE.rost, 'Martin - Warm, Confident and Relatable');
+  assert.equal(OPS_MARKNADER.NO.rost, 'Martin - Clear and Comforting');
+  // USA har ingen röst vald — engelskan har aldrig dubbats om, bara textats.
+  assert.equal(OPS_MARKNADER.US.rost, null);
+  // Järnregeln: ingen röst delas mellan två språk.
+  const roster = OPS_MARKNADSKODER.map((k) => OPS_MARKNADER[k].rost).filter(Boolean);
+  assert.equal(new Set(roster).size, roster.length, 'två marknader delar röst — dubba aldrig ett språk med ett annat språks röst');
 });

@@ -89,6 +89,13 @@
           "id": "gid://shopify/PriceList/33463468364",
           "skapad": false,
           "varianter": 9
+        },
+        {
+          "valuta": "DKK",
+          "land": "DK",
+          "id": "gid://shopify/PriceList/33497383244",
+          "skapad": true,
+          "varianter": 9
         }
       ]
     }
@@ -96,7 +103,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T13:10:38.107Z"
+    "tid": "2026-09-20T07:52:13.746Z"
   },
-  "uppdaterad": "2026-09-18T13:10:38.107Z"
+  "uppdaterad": "2026-09-20T07:52:13.746Z"
 }

@@ -25,12 +25,12 @@ import { landsnamnSv, ochLista } from './lander.mjs';
 // som saknas här faller tillbaka på svenskan — och syns då som markör i
 // kundvyn, aldrig tyst. Nytt språk = en kolumn här, inte en ny if-sats.
 const TEMAORD = {
-  eyebrow_problem: { sv: 'Känner du igen det?', nb: 'Kjenner du deg igjen?', en: 'Sound familiar?', fi: 'Tuntuuko tutulta?' },
-  eyebrow_losning: { sv: 'Lösningen', nb: 'Løsningen', en: 'The solution', fi: 'Ratkaisu' },
-  rubrik_funktioner: { sv: 'Det här får du', nb: 'Dette får du', en: 'What you get', fi: 'Tämän saat' },
-  rubrik_faq: { sv: 'Vanliga frågor', nb: 'Vanlige spørsmål', en: 'FAQ', fi: 'Usein kysyttyä' },
-  upsell_etikett: { sv: 'Passar till', nb: 'Passer til', en: 'Goes well with', fi: 'Sopii yhteen' },
-  upsell_knapp: { sv: 'Lägg till', nb: 'Legg til', en: 'Add', fi: 'Lisää' },
+  eyebrow_problem: { sv: 'Känner du igen det?', nb: 'Kjenner du deg igjen?', en: 'Sound familiar?', fi: 'Tuntuuko tutulta?', da: 'Kender du det?' },
+  eyebrow_losning: { sv: 'Lösningen', nb: 'Løsningen', en: 'The solution', fi: 'Ratkaisu', da: 'Løsningen' },
+  rubrik_funktioner: { sv: 'Det här får du', nb: 'Dette får du', en: 'What you get', fi: 'Tämän saat', da: 'Det får du' },
+  rubrik_faq: { sv: 'Vanliga frågor', nb: 'Vanlige spørsmål', en: 'FAQ', fi: 'Usein kysyttyä', da: 'Ofte stillede spørgsmål' },
+  upsell_etikett: { sv: 'Passar till', nb: 'Passer til', en: 'Goes well with', fi: 'Sopii yhteen', da: 'Passer til' },
+  upsell_knapp: { sv: 'Lägg till', nb: 'Legg til', en: 'Add', fi: 'Lisää', da: 'Tilføj' },
   svensk_signal: {
     sv: '<strong>Svenskt varumärke</strong> – framtaget för svenska hem',
     nb: '<strong>Svensk merkevare</strong> – laget for nordiske hjem',
@@ -39,9 +39,10 @@ const TEMAORD = {
     // OPS-produkt (såld för nordiskt klimat) och läses som kvalitet i USA.
     en: '<strong>Swedish brand</strong> – designed for Scandinavian conditions',
     fi: '<strong>Ruotsalainen merkki</strong> – suunniteltu pohjoismaisiin oloihin',
+    da: '<strong>Svensk mærke</strong> – udviklet til nordiske forhold',
   },
-  leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery', fi: 'Arvioitu toimitus' },
-  leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days', fi: 'arkipäivää' },
+  leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery', fi: 'Arvioitu toimitus', da: 'Forventet levering' },
+  leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days', fi: 'arkipäivää', da: 'hverdage' },
 };
 
 // custom_liquid kan inte översättas via translationsRegister — texten
@@ -507,7 +508,7 @@ export const TEMAFILER = {
 // product.handle: `prelude` sätter opf_enhet/_nb/_en, `args` skickar dem till
 // snippeten. Tom sträng när ingen produkt har `enhet`.
 // Språken snippeten känner (enhet_<locale> i ms-paket.liquid) — utöka båda.
-export const ENHET_LOCALES = ['nb', 'en', 'fi'];
+export const ENHET_LOCALES = ['nb', 'en', 'fi', 'da'];
 export function enhetLiquid(produkter) {
   const q = (s) => `'${String(s).replaceAll("'", '')}'`;
   const rader = [];
@@ -1238,23 +1239,24 @@ export function settingsSchemaMedAb(schemaText) {
 // i efterhand får sin en-gren utan att någon rör snippeten för hand.
 // null = inget att ändra (redan rätt, eller orden finns inte i snippeten).
 export const MS_PAKET_ORD = [
-  { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi' },
-  { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}' },
-  { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', attribut: 'aria-label' },
+  { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi', da: 'Gratis med i købet' },
+  { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}', da: 'værdi {{ gvarde | money }}' },
+  { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', da: 'Vælg pakke', attribut: 'aria-label' },
   // De tre raderna JS:et skriver ut. De satt hårdkodade i ms-paket.js till
   // 2026-09-18 och visades därför på SVENSKA för varje kund i världen —
   // Axel såg "Lägger i…" på köpknappen på den finska sidan. En .js-fil kan
   // inte bära Liquid, så texten måste komma in som attribut från snippeten.
-  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', attribut: 'data-laddar' },
-  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', attribut: 'data-spar' },
+  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', da: 'Lægger i…', attribut: 'data-laddar' },
+  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', da: 'Du sparer', attribut: 'data-spar' },
   // Raden blir "<pris> per <enhet>" — "126,90 € per suoja", "$199.00 per
   // cover". "per" fungerar i alla fyra språken; det är ett prisord, inte copy.
-  { sv: 'per', nb: 'per', en: 'per', fi: 'per', attribut: 'data-per' },
+  { sv: 'per', nb: 'per', en: 'per', fi: 'per', da: 'pr.', attribut: 'data-per' },
   {
     sv: 'Det gick inte att lägga i varukorgen. Försök igen.',
     nb: 'Varen kunne ikke legges i handlekurven. Prøv igjen.',
     en: 'We could not add this to your cart. Please try again.',
     fi: 'Tuotetta ei voitu lisätä ostoskoriin. Yritä uudelleen.',
+    da: 'Varen kunne ikke lægges i kurven. Prøv igen.',
     attribut: 'data-fel',
   },
 ];

@@ -38,3 +38,47 @@ notion:
   # (Den första länken 2026-09-12, 36f270ab…, var redigerarnas Creative Hub master.)
   sop_database_id: "3aa270ab-908c-8057-a8a0-cc691d9e956b"
   rapport_database_id: ""
+
+# Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina platshållare med.
+# Avläst ur butikens egen återbetalningspolicy 2026-09-20 — inte gissat.
+tvister:
+  # Butikens EGEN policy, ordagrant: "Vi har 30 dagars returpolicy, vilket
+  # betyder att du har 30 dagar på dig att begära retur från det att du
+  # mottog artikeln." ⚠️ FRÅN MOTTAGANDET. Leveranstiden är 3–4 veckor
+  # (mätt på tvistordrarna: #5418 beställd 16/8, levererad 11/9 = 26 dagar),
+  # så fönstret öppnar en månad efter köpet.
+  returfonster_dagar: 30
+  # Lagstadgad ångerrätt, står på samma sida: 14 dagar från mottagandet
+  # (distansavtalslagen 2005:59). Gäller parallellt med de 30 dagarna.
+  angerratt_dagar: 14
+  policy_url: "https://baverbutiken.se/policies/refund-policy"   # svarar 200, avläst 2026-09-20
+  # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen
+  # accepteras skickar vi dig instruktioner om hur och var du ska skicka
+  # paketet") och ska inte heller göra det — kunden ska höra av sig först.
+  returadress: "Sjöhed 160"
+  # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
+  # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
+  # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en
+  # trasig vara blev en tvist, och en tvist kostar mer än en retur.
+  returadress_pa_forfragan: true
+  # Vem som betalar returfrakten är ägarens beslut och ännu inte fattat.
+  # ⚠️ Lämna tom tills Axel sagt det — VA:n får inte gissa i ett mejl.
+  returfrakt_betalas_av: ""
+  # ⚠️ TOM — står i Shopify admin → Settings → Payments → Customer billing
+  # statement. Läs den där; en descriptor kunden inte känner igen är en vanlig
+  # orsak till "unrecognized".
+  billing_descriptor: ""
+  # 0 = slåss om allt. Ändra först när någon räknat på vad VA-timmen kostar
+  # mot medeltvisten (348–589 kr på de flesta rader).
+  strid_lonar_sig_over: 0
+
+  # Eskaleringen (kundtjanst/sop/60-ESCALATION.md). Axels beslut 2026-09-20:
+  # VA:n sköter hela den dagliga tvistkön själv — eskalering är för
+  # bedömningsfrågor, inte för rutinjobb.
+  agare_kontakt: "Axel (Discord #customer-service)"
+  # 0 = VA:n får återbetala och acceptera hela kön utan att fråga. Tvisterna
+  # ligger på 348–1 262 kr och en vunnen dag är värd mer än ett godkännande.
+  godkannande_over: 0
+  ersattning_over: 0
+  # Svarstidsmålet som gör friktionsmodellen ovan försvarbar.
+  forsta_svar_timmar: 24

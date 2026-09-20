@@ -106,15 +106,49 @@ test('larmet bär ordernummer, belopp, deadline och vad som ska göras', () => {
   assert.match(text, /899 SEK/);
   assert.match(text, /due 2026-09-16/);
   assert.match(text, /2 days left/);
-  assert.match(text, /tracking number/);
+  assert.match(text, /delivery scan/);
 });
 
 test('larmet blir rött och säger "past the due date" när något är förfallet', () => {
-  const gult = renderaLarm(bradskande([tvist()], { nu: NU }), { brand: 'B', nu: NU });
-  const rott = renderaLarm(bradskande([tvist({ evidensSenast: '2026-09-11' })], { nu: NU }), { brand: 'B', nu: NU });
+  const inq = (extra) => tvist({ typ: 'inquiry', ...extra });
+  const gult = renderaLarm(bradskande([inq()], { nu: NU }), { brand: 'B', nu: NU });
+  const rott = renderaLarm(bradskande([inq({ evidensSenast: '2026-09-11' })], { nu: NU }), { brand: 'B', nu: NU });
   assert.ok(gult.startsWith('🟡'), gult.slice(0, 20));
   assert.ok(rott.startsWith('🔴'), rott.slice(0, 20));
   assert.match(rott, /1 already past the due date/);
+});
+
+// ------------------------------------------------- chargeback före inquiry
+// Mätt 2026-09-20 på Bäverbutikens 50 tvister: 29 av 29 avgjorda INQUIRIES
+// vunna (100 %), chargebacks 1 av 4 — alla tre förluster någonsin var
+// chargebacks. Larmet måste därför skilja på dem.
+
+test('en chargeback gör larmet rött även med flera dagar kvar', () => {
+  const cb = renderaLarm(bradskande([tvist({ typ: 'chargeback', evidensSenast: '2026-09-17' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.ok(cb.startsWith('🔴'), cb.slice(0, 20));
+  assert.match(cb, /1 real chargeback/);
+  assert.match(cb, /🔴 CHARGEBACK/);
+});
+
+test('chargebacks sorteras före inquiries även när inquiryn förfaller tidigare', () => {
+  const lista = [
+    tvist({ id: 'inq-idag', typ: 'inquiry', evidensSenast: '2026-09-14' }),
+    tvist({ id: 'cb-senare', typ: 'chargeback', evidensSenast: '2026-09-17' }),
+  ];
+  assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), ['cb-senare', 'inq-idag']);
+});
+
+test('larmet påstår ALDRIG att en obesvarad tvist förloras automatiskt', () => {
+  // Det stod så i larmet 2026-09-15..20 och är falskt för inquiries.
+  const text = renderaLarm(bradskande([tvist({ typ: 'inquiry' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.doesNotMatch(text, /lost automatically/i);
+  assert.match(text, /can escalate into a chargeback/);
+});
+
+test('larmet säger åt VA:n att kolla trackingen först vid "not received"', () => {
+  const text = renderaLarm(bradskande([tvist({ orsak: 'product_not_received' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.match(text, /CHECK THE TRACKING FIRST/);
+  assert.match(text, /Stuck or no scan → refund, do not fight/);
 });
 
 test('en tvist som förfaller IDAG kallas aldrig passerad — den går att vinna', () => {

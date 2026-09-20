@@ -1047,6 +1047,68 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
     US-annonser. Termoskyddets 16 SE-annonser gick till engelska utan Notion —
     hela vägen står i `factory/FAS2.md` (samma dag, "16 annonser till USA").
 
+23. ⚙️ **Danmark 2026-09-20 (`/ny-marknad carashell DK`) — tre saker som inte
+    stod någonstans innan, och ett falskt larm att inte gå på igen.**
+
+    ⚙️ **Basvalutan sätts numera av API:t. Klicket i punkt 5 gäller inte längre.**
+    `marketUpdate(input: { currencySettings: { baseCurrency: DKK } })` gick rakt
+    igenom på den nyskapade marknaden, och prislistan fick sina tio fasta
+    DKK-priser i SAMMA körning — ingen 🖐, ingen väntan på admin. (Det äldre
+    `marketCurrencySettingsUpdate` svarar fortfarande "This action is restricted
+    if unified markets is enabled"; det var det som en gång gjorde klicket
+    nödvändigt.) USA fick sitt admin-klick i september för att koden inte kunde
+    — inte för att Shopify inte kan.
+
+    ⚠️ **Läs ALLTID marknadens sida med `?country=<LAND>`, annars mäter du fel
+    butik.** Utan parametern följde `/da/products/takskyddet` en 302 till
+    `carashell.com` (USA-marknaden äger den domänen och containern går ut från
+    USA) och svarade `lang="en"` med USD — vilket läser precis som "danskan
+    fungerar inte". Med `?country=DK`: `lang="da"`, `"currency":"DKK"`,
+    819,00 kr. En `POST /localization` räcker alltså INTE; cookien förlorar mot
+    domänroutningen.
+
+    ⚠️ **Judge.mes `locale` står på TVÅ ställen i HTML:en — och det första är
+    inte Judge.mes.** En sökning på `"locale":"…"` gav `da` och `en`. `da` sitter
+    i Shopifys eget block (`"domain":"carashell.se","predictiveSearch":true`);
+    Judge.mes står bredvid `"branding_text":"Drivs av Judge.me"` och sa **`en`**.
+    Läser man första träffen rapporterar man "språket är upptäckt" när det inte
+    är det. Matcha alltid på grannskapet (`branding_url`/`branding_text`), aldrig
+    på första förekomsten. Domen för Danmark blev därför: klicket **Settings →
+    Language → "Refresh list"** kvarstår (punkt 12).
+
+    ⚠️ **Ett falskt larm värt att känna igen:** markörskanningen är grön (0 av 16)
+    men en sökning på "Köp nu" träffar ändå — en gång, i Judge.mes
+    `widget_ugc_primary_button_text`. UGC-galleriet är inte installerat
+    (`widget_ugc_install_preference: false`), så strängen är osynlig för kunden
+    och finns likadant på /nb, /en och /fi. Det är appens egen inställning, inte
+    en läcka i temat. Rör den inte.
+
+    ⚙️ **Prisregeln blev Axels, inte kursens.** Frågan ställdes med två räknade
+    alternativ; svaret var *"kör ett snäpp högre för danmark, quotes brukar vara
+    dyrare än sverige med kanske 10 %"* ⇒ SEK × dagskurs × 1,10, avrundat till x9,
+    jämförpriset räknat likadant ur SEK-jämförpriset så rabattprocenten blir
+    densamma som den svenska sidan visar. ⚠️ **Det finns en motsatt precedens i
+    repot:** Bæverbutikken DK byggdes 2026-08-09 med DKK = SEK × 0,65 (alltså
+    UNDER kursen) med motiveringen att en 1:1-regel hade gjort sortimentet ~55 %
+    dyrare i Danmark. Precedensen är inte fel — den gällde en annan butik och
+    ett annat beslut. Citera den, låt ägaren välja, skriv aldrig in ett pris han
+    inte sett.
+
+    ⚙️ **Ordningen som fungerade, oförändrad:** `--igen marknad,tema,oversatt,
+    prislista,recensioner` med ALLA produktfiler, `--dry-run` först.
+    `da` lades till i `TEMAORD` och `MS_PAKET_ORD` (`factory/tema.mjs`),
+    `enhet_da` i `snippets/ms-paket.liquid`, `enhet.da` i produktfilen.
+    Den danska filen skrevs av en sonnet-subagent (160/160 nycklar) och säger
+    Danmarks egen sanning — "Gratis fragt til Danmark", "5–10 hverdage" — inte
+    en översättning av "Sverige & Norge". `i_fraktraden: false` ⇒ svenskan,
+    norskan och finskan är orörda.
+
+    ⚠️ **De "12 svenska texter" som `oversatt` rapporterar som läckor på nb, en,
+    fi OCH da är listicle-sidorna** (`/pages/<handle>-lagerrensning` m.fl.), inte
+    butikens egna. De översätts av `listicle/` genom Translations API med
+    `--marknad`, inte av fabriken. Siffran är alltså inte ett nytt fel och blir
+    inte mindre av att man kör `--igen oversatt` en gång till.
+
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
   visar SVENSKA priser för norska kunder.** Fixen i Fas 4 (webbnärvaro +

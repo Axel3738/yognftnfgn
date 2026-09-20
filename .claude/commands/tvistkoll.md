@@ -16,7 +16,14 @@ måste besvaras inom tre dagar, och posta listan i brandets Discord — inget me
 kvart. Den här läser bara tvister och tar sekunder. Den finns för att täppa till
 en lucka Axel pekade ut 2026-09-13: veckorapporten går måndag 07:00, så en tvist
 som kommer in på tisdag med deadline på torsdag hinner gå ut innan nästa rapport
-— och **en obesvarad tvist förloras automatiskt.** Läs aldrig om brevlådan här
+— och en **chargeback** som inte besvaras förloras.
+
+⚠️ **Rättat 2026-09-20, mätt på 50 tvister:** en obesvarad **inquiry** förloras
+INTE automatiskt (29 av 29 avgjorda vunna, 0 förlorade) — den **eskalerar till
+chargeback** med ny deadline, och det är där pengarna försvinner (chargebacks:
+1 vunnen av 4, alla tre förluster någonsin). Skriv aldrig tillbaka den gamla
+meningen "en obesvarad tvist förloras automatiskt"; den stod i Discord-larmet
+2026-09-15..20 och fick tre eskalerade tvister att rapporteras som förlorade. Läs aldrig om brevlådan här
 och bygg aldrig in ärenden, kategorier eller ranking; då blir den långsam och
 slutar köras.
 

@@ -269,12 +269,22 @@ test('butikernas tider: fast plats per butik ur register.json, aldrig samma star
   assert.ok(!t.some((x) => x.kommando.includes('--marknad US')));
   // USA-butiken (Axels beslut 2026-09-16): en fjärde rutin, en timme efter NO, eget kommando.
   const us = tiderFor('carashell', { platser: { ...platser, carashell: 5 }, datum: SOMMAR, annonsmarknader: ['NO', 'US'] });
-  assert.equal(us.length, Object.keys(BUTIKSRUTINER).length);
+  // Allt utom DK-rutinen: den kräver DK i annonsmarknader (Danmark 2026-09-20).
+  assert.equal(us.length, Object.keys(BUTIKSRUTINER).length - 1);
+  assert.ok(!us.some((x) => x.kommando.includes('--marknad DK')), 'ingen DK-rutin utan DK i annonsmarknader');
   const usRutin = us.find((x) => x.kommando === '/ops-oversatt carashell --marknad US');
   assert.ok(usRutin, 'US-rutinen finns med eget kommando');
   assert.equal(usRutin.tid, '17:05');
   assert.equal(usRutin.cron, '5 15 * * *');
   assert.equal(us.find((x) => x.kommando === '/ops-oversatt carashell').tid, '16:05');
+  // Danmark (Axels order 2026-09-20): en femte rutin, en timme efter USA, i
+  // det DELADE OPS-kontot — inte Magiborsten UK som USA.
+  const dk = tiderFor('carashell', { platser: { ...platser, carashell: 5 }, datum: SOMMAR, annonsmarknader: ['NO', 'US', 'DK'] });
+  assert.equal(dk.length, Object.keys(BUTIKSRUTINER).length);
+  const dkRutin = dk.find((x) => x.kommando === '/ops-oversatt carashell --marknad DK');
+  assert.ok(dkRutin, 'DK-rutinen finns med eget kommando');
+  assert.equal(dkRutin.tid, '18:05');
+  assert.equal(dkRutin.cron, '5 16 * * *');
   assert.throws(() => tidFor('cs', 'drytrek', platser), /ingen butiksrutin/);
 });
 

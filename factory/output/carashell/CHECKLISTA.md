@@ -99,6 +99,7 @@ behind its password either way (measured: DryTrek 2026-09-09).
 - [ ] When Claude says the Norway market is ready: Settings → Markets → **Norway** → activate **NOK** → Save
 - [ ] When Claude says the United States market is ready: Settings → Markets → **United States** → activate **USD** → Save
 - [ ] When Claude says the Finland market is ready: Settings → Markets → **Finland** → activate **EUR** → Save
+- [ ] When Claude says the Denmark market is ready: Settings → Markets → **Denmark** → activate **DKK** → Save
 
 ## 6. Domain
 Loopia first – Shopify cannot connect a domain that is not bought, and the

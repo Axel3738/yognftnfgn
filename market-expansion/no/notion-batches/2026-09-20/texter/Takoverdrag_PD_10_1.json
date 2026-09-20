@@ -1,0 +1,73 @@
+[
+ {
+  "box": [
+   60,
+   48,
+   1020,
+   296
+  ],
+  "rader": 2,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Ni størrelser – fra 3 × 5,5 til 3 × 13,5 meter."
+ },
+ {
+  "box": [
+   33,
+   307,
+   1047,
+   391
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Fra 1 189 kr."
+ },
+ {
+  "box": [
+   33,
+   1006,
+   1047,
+   1162
+  ],
+  "rader": 2,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Sitter fast når det blåser – stropper på alle fire sider, 2,5 m og justerbare etter din vogn."
+ },
+ {
+  "box": [
+   295,
+   1210,
+   785,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Se alle ni størrelser."
+ }
+]

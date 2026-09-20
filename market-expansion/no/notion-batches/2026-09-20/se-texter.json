@@ -1,0 +1,96 @@
+{
+ "Takoverdrag_BOF_9_1": {
+  "former": [
+   { "typ": "platta", "rader": ["1 129 kr nu."], "stil": "rubrik vit platta topp" },
+   { "typ": "rubrik", "rader": ["Ett tak du inte vet priset", "på sen."], "block": [0, 1], "stil": "svart fet text direkt på foto" },
+   { "typ": "platta", "rader": ["Taket är det du aldrig ser – och det som kostar mest att laga."], "stil": "halvgenomskinlig vit platta över foto" },
+   { "typ": "platta", "rader": ["1 129 kr är hela notan. Ingen gissning."], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Skydda taket – 1 129 kr."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "Takoverdrag_CS_13_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["58 kr per kvadratmeter", "skyddat tak."], "block": [0, 1], "stil": "svart fet rubrik, rad 1 på vit platta" },
+   { "typ": "platta", "rader": ["1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Taket är det du aldrig ser – och det som kostar mest att laga."], "stil": "beige platta" },
+   { "typ": "knapp", "rader": ["Skydda taket för 1 129 kr."], "stil": "blå knapp, vit fet text" }
+  ],
+  "varning": "58 kr/m² är räknat ur 1 129 SEK / 19,5 m². Måste räknas om ur NO-priset."
+ },
+ "Takoverdrag_PD_10_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Nio storlekar – från 3 ×", "5,5 till 3 × 13,5 meter."], "block": [0, 1], "stil": "svart fet rubrik" },
+   { "typ": "platta", "rader": ["Från 1 129 kr."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 m och", "justerbara efter din vagn."], "block": [0, 1], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Se alla nio storlekar."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "Takoverdrag_BOF_8_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["På sommaren bor den i", "en påse, inte i vägen."], "block": [0, 1], "stil": "svart fet rubrik" },
+   { "typ": "platta", "rader": ["Ryms i förvaringspåsen som följer med."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Ingen skrymmande vinterförvaring – bara påsen som kom med", "paketet."], "block": [0, 1], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["1 129 kr. Ryms i en påse."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "Takoverdrag_BOF_7_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Din husvagns längd är en", "av nio."], "block": [0, 1], "stil": "svart fet rubrik" },
+   { "typ": "platta", "rader": ["Nio storlekar, 3 × 5,5 till 3 × 13,5 meter."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Från 1 129 kr."], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Se alla nio storlekar."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "IBC_RV_12_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Emma, 4 stjärnor"], "stil": "svart fet rubrik" },
+   { "typ": "citat", "rader": ["Mycket nöjd.", "Tanken ser mycket bättre ut och", "överdraget sitter bra."], "block": [0, 1, 2], "stil": "mörkblå fet text på vitt" },
+   { "typ": "platta", "rader": ["210D Oxford-tyg. Stoppar alger & UV."], "stil": "ljus platta över foto" },
+   { "typ": "knapp", "rader": ["Sätt på skyddet. Vattnet förblir klart."], "stil": "blå knapp, vit fet text" }
+  ],
+  "varning": "Svensk recension. Namn och betyg behålls men källan ska bli baverbutiken.se enligt regeln."
+ },
+ "IBC_RV_11_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Anders, 5 stjärnor"], "stil": "svart fet rubrik" },
+   { "typ": "citat", "rader": ["Väldigt bra överdrag.", "Passar min IBC-tank perfekt och är enkelt", "att sätta på."], "block": [0, 1, 2], "stil": "mörkblå fet text på vit platta" },
+   { "typ": "platta", "rader": ["210D Oxford-tyg. Stoppar alger & UV."], "stil": "ljus platta över foto" },
+   { "typ": "knapp", "rader": ["Sätt på skyddet. Vattnet förblir klart."], "stil": "blå knapp, vit fet text" }
+  ],
+  "varning": "Svensk recension. Namn och betyg behålls men källan ska bli baverbutiken.se enligt regeln."
+ },
+ "IBC_RI_1_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Utan skydd."], "stil": "svart fet rubrik på vit topprand" },
+   { "typ": "rubrik", "rader": ["Med skydd."], "stil": "svart fet rubrik direkt på foto" },
+   { "typ": "platta", "rader": ["Vattnet blir grönt av alger."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Presenningen som skulle skydda blåser av vid första höststormen."], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Sätt på skyddet. Vattnet förblir klart."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "IBC_BOF_18_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Passar den min tank?"], "stil": "svart fet rubrik" },
+   { "typ": "platta", "rader": ["120 × 100 × 116 cm. Passar en standard 1000 L IBC-tank."], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["Öppning upptill för locket."], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Kolla måtten och beställ."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "IBC_BOF_17_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["Ljuset stannar ute.", "Vattnet stannar klart."], "stil": "svart fet rubrik, TVÅ egna meningar (inget block)" },
+   { "typ": "platta", "rader": ["210D Oxford-tyg blockerar ljuset."], "stil": "halvgenomskinlig vit platta över foto" },
+   { "typ": "platta", "rader": ["Stoppar alger. Håller UV ute."], "stil": "vit platta" },
+   { "typ": "knapp", "rader": ["Sätt på skyddet. Vattnet förblir klart."], "stil": "blå knapp, vit fet text" }
+  ]
+ },
+ "IBC_BOF_16_1": {
+  "former": [
+   { "typ": "rubrik", "rader": ["4,7 av 5"], "stil": "svart fet rubrik" },
+   { "typ": "platta", "rader": ["10 recensioner"], "stil": "vit platta" },
+   { "typ": "platta", "rader": ["IBC-tanköverdrag. Stoppar alger & UV."], "stil": "ljus platta" },
+   { "typ": "knapp", "rader": ["Zippa fast skyddet."], "stil": "blå knapp, vit fet text" }
+  ],
+  "varning": "Betyget är KONTROLLERAT på beverbutikken.no 2026-09-20: ratingValue 4.70, reviewCount 10 — identiskt med den svenska sidan. Siffrorna får därför stå kvar."
+ }
+}

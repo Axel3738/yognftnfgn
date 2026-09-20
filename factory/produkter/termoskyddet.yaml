@@ -76,6 +76,16 @@ ekonomi:
     - valuta: EUR
       pris: 62.90
       jamforpris: 78.90
+    # DKK — Danmark 2026-09-20. Axels beslut samma dag: "kör ett snäpp högre,
+    # danska quotes brukar vara dyrare än Sverige med kanske 10 %". Alltså
+    # SEK × 0,66204 (ECB 2026-09-18) × 1,10, avrundat till x9 — 559 → 409 DKK.
+    # Jämförpriset räknas likadant ur SEK-jämförpriset (932 → 679), så
+    # rabattprocenten blir densamma som i Sverige (40 %). Det är ett annat
+    # grepp än NOK/USD/EUR, som alla bär 25 % över priset — här följer
+    # jämförpriset den svenska sidan i stället, eftersom den är källan.
+    - valuta: DKK
+      pris: 409
+      jamforpris: 679
 
 varianter:
 media:

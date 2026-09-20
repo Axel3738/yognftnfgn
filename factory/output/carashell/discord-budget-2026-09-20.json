@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-20",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: no change tonight, but for a good reason. The main campaign qualifies for another raise — 3-day profit 36.0 %, ROAS 3.94 — and is blocked only by the 4 000 kr/day ceiling the rules carry. It sits at that ceiling now",
+    "The LISTICLE campaign also qualifies (profit 27.7 %) but the cadence lock wants 3 days between changes and only 2 have passed. It opens tomorrow",
+    "Nothing paused, nothing activated, no ad killed. 53 purchases over 7 days at ROAS 3.40, against break-even 1.63. Profit contribution across judgeable ads: 19 215 kr over 14 days",
+    "Sunday is a brief day, but the brief round stays paused — CaraShell is briefed in the Bäverbutiken teamspace and mirrored here. No briefs written, as decided"
+  ],
+  "siffror": { "spend_7d": 23361, "kop_7d": 63, "roas_7d": 3.36, "vinstbidrag_7d": 19215 },
+  "briefer": [],
+  "action_axel": [
+    "The main campaign has hit the 4 000 kr/day ceiling and still earns a raise every night. Profit is 36 % on 3 days and the store took 53 purchases this week — the rules cannot scale it further on their own. Decide whether the ceiling should go up, and to what. It is a budget decision, so I am not touching it: say a number and I will raise the limit in factory/budgetbeslut.mjs (TAK_SEK) and let the night watch keep going from there"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-21",
+  "varningar": [
+    "Briefs paused since 18 September by owner decision: CaraShell is no longer briefed on its own — everything is created in the Bäverbutiken teamspace and mirrored across. The budget round runs every night regardless"
+  ]
+}

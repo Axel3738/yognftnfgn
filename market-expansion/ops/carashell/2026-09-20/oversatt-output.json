@@ -1,0 +1,45 @@
+{
+ "sprak": "nb",
+ "heygen_sprak": "Norwegian Bokmål (Norway)",
+ "marknad": "NO",
+ "kalla": "CaraShellRoof_PD_5_H1 (svensk, 39,4 s, 1080×1920)",
+ "not": "Manuset committas här eftersom .srt är gitignoretat som media i market-expansion/ops/** — utan den här filen dör den norska voiceovern med containern och en omrendering hade fått börja om. Två rättelser mot HeyGens råöversättning: block 3 sa butikens namn (\"Carashell takovertrekk\"), block 6 sa de svenska priserna.",
+ "block": [
+  {
+   "nr": 1,
+   "tid": "00:00:00,120 --> 00:00:08,420",
+   "svenska": "Taket på din husbil är ytan du aldrig ser och den dyraste att laga. Vid takluckorna blir regnvatten stående hela vintern utan att du vet om det.",
+   "norska": "Taket på bobilen din er flaten du aldri ser, og den dyreste å reparere. Ved taklukene blir regnvann stående hele vinteren uten at du vet om det."
+  },
+  {
+   "nr": 2,
+   "tid": "00:00:08,760 --> 00:00:10,460",
+   "svenska": "Ingen går upp och kollar förrän våren.",
+   "norska": "Ingen går opp og sjekker før våren."
+  },
+  {
+   "nr": 3,
+   "tid": "00:00:10,700 --> 00:00:15,720",
+   "svenska": "Då avgör fukttestet om tätningarna höll. Carashell taköverdrag läggs direkt över taket.",
+   "norska": "Da avgjør fukttesten om tetningene holdt. Dette takovertrekket legges direkte over taket."
+  },
+  {
+   "nr": 4,
+   "tid": "00:00:15,880 --> 00:00:22,100",
+   "svenska": "Kanten hänger trettio till fyrtio centimeter ner över sidorna och hakar fast med elastiska band under karossens kant.",
+   "norska": "Kanten henger tretti til førti centimeter ned over sidene og festes med elastiske bånd under kanten på karosseriet."
+  },
+  {
+   "nr": 5,
+   "tid": "00:00:22,360 --> 00:00:29,180",
+   "svenska": "Du sätter på det helt själv. Inget helöverdrag, ingen hjälp behövs. Sexton omdömen. Snittbetyg fem komma noll noll.",
+   "norska": "Du setter det på helt selv. Ingen heldekkende overtrekk, ingen hjelp trengs. Seksten anmeldelser. Snittvurdering fem komma null null."
+  },
+  {
+   "nr": 6,
+   "tid": "00:00:29,480 --> 00:00:35,360",
+   "svenska": "Ettusen etthundratjugonio kronor. Ordinarie ettusenfyrahundrasextionio kronor. Fri frakt i Sverige och Norge.",
+   "norska": "Ettusen hundre og seks kroner. Ordinær pris ettusen tre hundre og åttito komma femti kroner. Fri frakt i Sverige og Norge."
+  }
+ ]
+}

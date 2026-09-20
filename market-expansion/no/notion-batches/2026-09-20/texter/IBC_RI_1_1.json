@@ -1,0 +1,90 @@
+[
+ {
+  "box": [
+   300,
+   60,
+   780,
+   168
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Uten trekk."
+ },
+ {
+  "box": [
+   300,
+   185,
+   780,
+   282
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Med trekk."
+ },
+ {
+  "box": [
+   33,
+   307,
+   1047,
+   391
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Vannet blir grønt av alger."
+ },
+ {
+  "box": [
+   33,
+   1067,
+   1047,
+   1151
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Presenningen som skulle beskytte blåser av i den første høststormen."
+ },
+ {
+  "box": [
+   138,
+   1210,
+   943,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sett på trekket. Vannet forblir klart."
+ }
+]

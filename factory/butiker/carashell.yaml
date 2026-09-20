@@ -79,6 +79,18 @@ butik:
       locale: fi
       valuta: EUR
       i_fraktraden: false
+    # Danmark sedan 2026-09-20 (/ny-marknad carashell DK). Ingen egen domän —
+    # samma beslut som Finland: danskan ligger på carashell.se/da, en .dk kan
+    # kopplas senare utan att något byggs om. Priserna är Axels beslut samma
+    # dag ("kör ett snäpp högre, danska quotes brukar vara dyrare än Sverige
+    # med kanske 10 %"): SEK × 0,66204 (ECB 2026-09-18) × 1,10, avrundat till
+    # x9, med samma rabattnivå som den svenska sidan. i_fraktraden: false ⇒
+    # de svenska, norska och finska texterna rörs INTE; den danska filen säger
+    # själv "Gratis fragt til Danmark".
+    - land: DK
+      locale: da
+      valuta: DKK
+      i_fraktraden: false
   valuta: SEK
   moms_i_pris: true
   # Butikens EGNA svenska ord som aldrig får stå kvar på /nb. Ord som är lika

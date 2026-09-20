@@ -654,3 +654,71 @@ Batch #2:s två videobriefer ligger kvar i Draft i hubben.
   sätter status på en hub.
 - NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` ACTIVE, 4 adsets. Pris 559 SEK / 548 NOK
   läst ur butiken. Rutin: `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
+
+## 2026-09-20 — nattvakten körning nr 4 (briefdag, men briefronden pausad): båda marknaderna PAUSED
+
+**SE** `CARASHELL_SE_Termoskydd…` PAUSED (sedan 18/9): 2 058 kr / 4 köp / ROAS 1,08 på 7 dygn
+mot BE 1,61. **NO** `CARASHELL_NO_Termoskydd…` **också PAUSED** (torrkörd avläsning, inget
+skrivet): 3 513 kr / 7 köp på 7 dygn, vinstbidrag **+267 kr**. Produkten spenderar alltså
+ingenting på någon marknad. 0 ändringar, inget aktiverat.
+
+⚠️ **Värt att veta innan något startas om:** `CaraShellFront_NO_CS_3` (video, norska) var
+produktens ENDA bedömbara vinnare när marknaden stängdes — **774 kr, 3 köp, CPA 258 kr**
+mot break-even 347 kr. `NO_PD_5_1` (609 kr/1 köp) och `NO_G_2_1` (354 kr/1 köp) låg under
+grinden. Sverige hade ingen bedömbar annons alls. Startas NO om är CS_3 utgångspunkten,
+inte de svenska bilderna.
+
+Briefronden pausad sedan 2026-09-18 (Axels beslut: CaraShell briefas i Bäverbutikens
+teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `kord` stämplad,
+`brief-kord` INTE (pausen står tills vidare).
+
+## 2026-09-20 — `/ops-leverans carashell/termoskyddet` — tom kö, tredje dagen i rad
+
+- Kön: 0 rader i `To be Reviewed` / `Creative strat review`. CaraShells hub oförändrad
+  (5 Approved, 2 Draft-videor). Inget laddades upp, inget rördes i kontot.
+- SE-kampanjen kvar PAUSED med samma `updated_time` 2026-09-18 11:29 CEST — ingen har rört
+  den på tre dygn. Livstid 2 058 kr / 4 köp / ROAS 1,09 mot break-even 1,61, oförändrat sedan igår.
+- Bäverbutikens källhub (`c5a270ab-…`) bär 35 rader men ingen i `CaraShell SE ready to be active`,
+  så speglingen 16:55 har inget att lämna hit heller.
+- Briefarna skrivs i Bäverbutikens hub sedan 2026-09-18. Tom kö i den här rutinen är det väntade
+  läget; den blir användbar igen först när en människa slår på SE-kampanjen.
+
+## 2026-09-20 — `/ops-oversatt carashell/termoskyddet` (NO) — NO-kampanjen pausad av ägaren
+
+- **Nytt läge sedan i går: `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm`
+  (`120249115382210172`) är PAUSED med spend.** `updated_time` 2026-09-19 20:07 CEST,
+  21 annonser. Livstid ur Meta (`date_preset=maximum`): **3 515,44 kr / 7 köp /
+  ROAS 1,14 / CPA 502 kr** mot break-even 1,61 — kampanjen gick med förlust, pausen
+  stoppar den. PAUSED med spend = ett beslut; rutinen rör den aldrig och föreslår
+  varken `/ny-annonser` eller `--tom`.
+- Ingen rutin gjorde det: `factory/budgetlogg.jsonl` har inga NO-rader (senaste
+  termoskydds-raderna är 2026-09-18 på SE), och nattvakten i natt (körning nr 4)
+  rapporterade bara "båda marknaderna PAUSED, 0 ändringar". Alltså en människas paus.
+- Kön: 0 rader i `SE-ACTIVE to be translated` ⇒ **0 rader hållna**. Inget översatt,
+  inget renderat (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- Läge: **"NO paused by owner"** enligt kommandofilens tabell. Kommer rader in i kön
+  hålls de där tills NO-kampanjen är ACTIVE igen eller NO tas bort ur `annonsmarknader`.
+- Butiken är fortfarande redo för Norge: 548 NOK läst på `/nb`-sidan.
+- Båda marknaderna är nu pausade för produkten: SE sedan 2026-09-18 11:29, NO sedan
+  2026-09-19 20:07. Speglingen 16:55 laddar därför inte upp något heller.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551236149488656429`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-20-no-termoskyddet/`.
+
+## 2026-09-20 — `/ops-spegla carashell/termoskyddet` — tom kö, NU ÄR BÅDA marknaderna pausade
+
+- **Ordinarie kö: 0 rader** i `CaraShell SE ready to be active`, 0 i `CaraShell EN ready to be active`.
+  Inget speglat, ingen Notion-rad rörd, inget uppladdat, ingen Discord-ping.
+- ⚠️ **NO-kampanjen pausades i går kväll.** Mätt ur Meta (`updated_time`):
+  `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` PAUSED **2026-09-19 20:07 CEST** med 3 515 kr spend;
+  `CARASHELL_SE_…` PAUSED sedan 2026-09-18 11:29 CEST med 2 058 kr spend. Båda är PAUSED med spend,
+  alltså avvecklade med flit — **termoskyddet spenderar ingenting alls i CaraShell just nu**, och
+  speglingen har ingen kampanj att ladda upp till i någon marknad. Rör dem inte utan Axels ok.
+- Ingen efterjustering körd i dag: med båda kampanjerna pausade hoppas varje rad före första
+  skrivningen, och gårdagens torrkörning bevisade utfallet på 21 av exakt samma rader (0 speglade).
+  En ny 27-radersrunda hade kostat en halvtimmes Meta-läsningar utan att ändra något.
+- ⚠️ **Källhubben fylls på i fel status och växer:** 35 rader totalt — **27 `Approved`** (21 i går) och
+  8 `Creative strat review`; noll i båda speglingsstegen. `/oversatt NO` fortsätter alltså sätta
+  `Approved` i stället för `CaraShell SE ready to be active` (orsaken i går: commit `732359e`).
+  Inget arbete är förlorat — `--fran "Approved"` fångar dem — men speglingens ordinarie kö kommer
+  aldrig att se en enda rad så länge det pågår.
+- Pris 559 SEK / 548 NOK läst ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.

@@ -1241,3 +1241,54 @@ pingas om — rapporten går tyst tills något ändras.
 kronorna sedan i går är efterattribuering, inte spend), kön fortfarande 0 rader,
 priset 380 NOK. Ingenting rört. Loggas som en rad med flit: en dag utan
 förändring förtjänar ingen egen rubrik.
+
+---
+
+## 2026-09-20 — nattvakten, körning nr 9: briefdag utan briefer, 0 ändringar
+
+Söndag = briefdag i kadensen, men `Briefrond:` står på PAUS ⇒ noll briefer,
+`kord` stämplat, ingen `brief-kord`. SE PAUSED sedan 15/9 20:52 (oförändrad
+`updated_time`), NO PAUSED sedan 18/9. **0 ändringar**, inget aktiverat, ingen
+loggrad. Hubben oförändrad fjärde natten: 19 rader i Draft, 10 i Creative strat
+review, 31 Approved. `products/drytrek/feedback.md` saknas fortfarande.
+
+SE 7d: **1 875 kr, 3 köp, ROAS 0,62** på fyra dagsrader — mot 2 998 kr / 6 köp
+igår. 3d-fönstret är tomt.
+
+**Ingen av siffrorna är en signal längre.** Med båda kampanjerna av kommer ingen
+ny spend in; fönstret tappar bara dagar i bakkanten. Att SE:s ROAS faller
+0,87 → 0,62 betyder att de sista aktiva dygnen var svagare än snittet, inget
+annat — precis som Norges 1,65 → 1,71 igår inte var en förbättring. Skrivet ut
+här så att ingen senare natt läser rörelsen som utveckling.
+
+Fem nätter i rad med 0 ändringar är rätt utfall, inte en trasig rutin: reglerna
+rör aldrig något som ägaren pausat. Båda ägarfrågorna står obesvarade i Discord
+— omstart av SE (A/B/C, sedan 15/9) och om rutinen ska stängas av tills en
+marknad slås på (sedan 18/9). Ingen pingas.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-20.json`.
+
+---
+
+## 2026-09-20 — leveransrunda: fönstret tomt, DryTrek har inga siffror kvar att läsa
+
+Oförändrat: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+
+**Norges 7d-fönster är nu helt tomt — 0 kr, mot 6 713 kr igår.** Det är precis
+vad gårdagens anteckning förutsade: kampanjen har varit av sedan 18/9 och
+fönstret har rullat klart. Sverige läser 1 875 kr, 3 köp, ROAS 0,62 och töms på
+samma sätt de närmaste dagarna.
+
+**Från och med nu bär ingen av marknaderna ett tal värt att läsa.** Det finns
+ingen prestandasignal kvar att rapportera förrän en kampanj slås på igen.
+Sekvensen 1,78 → 1,84 → 1,65 → 1,71 → 0 är hela historien om varför ett rullande
+fönster inte är en trend: de två sista stegen skedde utan att en enda krona
+spenderades.
+
+Båda ägarfrågorna står obesvarade (omstart av Sverige sedan 15/9, paus av den här
+rutinen sedan 18/9). Ingen pingas om igen.
+
+**Norge 2026-09-20 (översättningsrutinen):** Tredje dygnet oförändrat. NO-kampanjen
+PAUSED, **8 476 kr — exakt samma tal som i går**, så efterattribueringen har lagt
+sig också. Kön 0 rader, priset 380 NOK. Ingenting rört. Rutinen kommer att
+rapportera detta varje dag tills Norge slås på igen; frågan om att tysta den står
+obesvarad sedan 19/9 och ingen pingas om igen.

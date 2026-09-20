@@ -28,7 +28,12 @@ KÄLLOR = json.loads((HÄR / "sources.json").read_text(encoding="utf-8"))
 NAMN = {k: v for k, v in json.loads((HÄR / "names.no.json").read_text(encoding="utf-8")).items()
         if not k.startswith("_")}
 
-NOLLSTÄLLDA = ["product_id", "ip_address", "metaobject_handle"]
+# picture_urls nollställs sedan 2026-09-20: Fodrade Inomhustofflor-arket bar
+# `https://baverbutiken.se/` på var och en av sina tio rader. Det är varken en
+# bild (Judge.me väntar sig en bildlänk) eller något som hör hemma i den norska
+# butiken — en svensk butikslänk under en norsk recension. Bilder från kund
+# ligger dessutom på källbutikens CDN och följer inte med hit.
+NOLLSTÄLLDA = ["product_id", "ip_address", "metaobject_handle", "picture_urls"]
 NO_ORTER = ["Oslo, Norge", "Bergen, Vestland, Norge", "Trondheim, Trøndelag, Norge"]
 
 

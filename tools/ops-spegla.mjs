@@ -36,8 +36,16 @@
 //     annars Bäverbutikens produktsida). Avviker det > 20 % från butikens
 //     eget pris laddas inget upp — kommentar på källraden, status orörd.
 //     Samma regel för NO mot butikens NO-pris.
-//   • Brandet. Nämner copyn eller briefen Bäverbutiken ("bäver", "beaver")
-//     stoppas raden — en OPS-butik säger aldrig vilken butik den är.
+//   • Brandet i TEXTEN. Nämner copyn eller briefen Bäverbutiken ("bäver",
+//     "beaver") stoppas raden — en OPS-butik säger aldrig vilken butik den är.
+//   • Brandet i BILDEN (factory/bildbrand.mjs, 2026-09-20). Textspärren läser
+//     copy och brieftext; den ser inte slutkortet. Nio av källans videor
+//     slutar med ett 3,0 s slutkort och åtta av dem bär Bäverbutikens logga —
+//     de gick live i Norge med loggan kvar, eftersom ingen spärr tittade på
+//     bildrutorna. Nu granskas den svenska och den norska filen FÖRE
+//     uppladdning: slutkort med butiksnamn stoppar RADEN (aldrig körningen,
+//     aldrig något som redan är live), slutkort utan butiksnamn och oläsbara
+//     videor laddas upp men namnges i rapporten.
 //   • Kontot. Bara OPS-kontot skrivs till (ops-till-meta.mjs kastar på allt
 //     annat). Bäverbutikens konton LÄSES bara.
 //   • Dubblett. Finns spegelnamnet redan i kontot laddas det inte upp igen —
@@ -53,6 +61,7 @@ import {
   annonsdel, tolkaNamn, valjMalkampanj, dubblettKarta, dubblett, arvdLank, hamtaPris, typAv, adsetNamn, hittaAdset,
 } from './ops-leveranskon.mjs';
 import { marknadFor, marknadsNamn, marknadslank } from '../factory/opsmarknader.mjs';
+import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, rapportrad as slutkortsrad, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 import { hittaFält, byggEgenskaper, delaBlock } from './notion-brief.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -114,6 +123,19 @@ export function brandtraff(...texter) {
     for (const m of utanLankar.matchAll(/b[äae]ver\w*|beaver\w*/gi)) ut.add(m[0]);
   }
   return [...ut];
+}
+
+/** Landningssidan ur brödtexten, när raden saknar Notion-egenskapen.
+ *  Bäver-briefarna skriver den mitt i texten — "Landing page: <url> —
+ *  reference only. The URL, the shop name and the logo must never appear" —
+ *  och prisregelns reserv ("annars Bäverbutikens produktsida") hade därför
+ *  ingen sida att läsa. *(Mätt 2026-09-19: sex LISTICLE-rader stoppades på
+ *  "priset går inte att jämföra (creativen okänt)" fast briefen bar länken
+ *  och sidan sa 1 129 kr — exakt CaraShells pris.)* Länken slutar vid
+ *  mellanslag, tankstreck eller parentes. */
+export function landningUrBrief(text) {
+  const m = /landing\s*page\s*:?\s*(https?:\/\/[^\s)\]]+)/i.exec(String(text ?? ''));
+  return m ? m[1].replace(/[.,;]+$/, '') : null;
 }
 
 /** Priset briefen föreskriver ("Price exactly 1 129 kr", "Pris exakt 559 kr"), annars null. */
@@ -265,6 +287,9 @@ export function bedom(rad) {
   const se = { ok: true, skal: [] };
   if (!rad.spegel) se.skal.push('spegelnamn kan inte bildas ur namnet');
   if (rad.brand?.length) se.skal.push(`nämner Bäverbutiken: ${rad.brand.join(', ')}`);
+  // Slutkortet i bilden. Bara "med-brand" stoppar; "utan-brand" och "okänd"
+  // är rapportrader, inte stopp (factory/bildbrand.mjs).
+  if (slutkortBlockerar(rad.slutkort?.se?.dom)) se.skal.push(`slutkortet namnger en butik: ${(rad.slutkort.se.fynd ?? []).map((f) => `"${f.ord}"`).join(', ')}`);
   if (!rad.paritet_se?.ok) se.skal.push(`pris SE: ${rad.paritet_se?.skal ?? 'okänt'}`);
   if (!rad.kampanj_se) se.skal.push('ingen SE-kampanj i butiken');
   if (!rad.finns_i_meta?.SE) {
@@ -281,6 +306,7 @@ export function bedom(rad) {
   else {
     if (rad.no.fel) no.skal.push(rad.no.fel);
     if (!rad.no.copy) no.skal.push('NO-annonsen saknar copy');
+    if (slutkortBlockerar(rad.slutkort?.no?.dom)) no.skal.push(`NO-slutkortet namnger en butik: ${(rad.slutkort.no.fynd ?? []).map((f) => `"${f.ord}"`).join(', ')}`);
     if (!rad.finns_i_meta?.NO && !rad.no.fil) no.skal.push('NO-filen gick inte att hämta');
     if (!rad.paritet_no?.ok) no.skal.push(`pris NO: ${rad.paritet_no?.skal ?? 'okänt'}`);
   }
@@ -303,10 +329,38 @@ export function byggDiscordJobb(resultat) {
     } else if (r.utfall === 'hoppad') {
       varningar.push(`${r.namn}: skipped — ${r.skal}`);
       // Brand- och prisstopp kräver ett beslut; saknad fil eller kampanj löser sig själv.
-      if (/nämner|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${r.skal} — decide whether the editor should make a store version`);
+      if (/nämner|slutkortet namnger|pris SE|pris NO|price/i.test(r.skal)) action.push(`${r.namn}: ${r.skal} — decide whether the editor should make a store version`);
     } else if (r.utfall === 'fel') {
       varningar.push(`${r.namn}: FAILED — ${r.skal}`);
       action.push(`${r.namn} failed: ${r.skal}`);
+    }
+  }
+  // Slutkorten. Ett fynd namnges ALLTID, också när det inte stoppade något:
+  // ett slutkort på svenska i en dansk annons är fel även utan butiksnamn,
+  // och en oläsbar video måste någon titta på. (factory/bildbrand.mjs)
+  //
+  // ⚠️ Dubblettskyddet är PER MARKNAD, inte per rad. Här stod förut en
+  // rad-bred flagga (`/slutkortet namnger/` mot r.skal), och den var ett
+  // hål: `bedom()` skriver SE-skälet som "slutkortet namnger …" och
+  // NO-skälet som "NO-slutkortet namnger …", men korSpegling lägger BARA
+  // SE-skälen i r.skal — stoppas raden på SE hinner NO aldrig bedömas.
+  // En rad med butiksnamn i BÅDA slutkorten fick därför sitt NO-fynd tyst
+  // borttaget ur både varningar och ACTION NEEDED (mätt 2026-09-20).
+  // Regeln i modulen är att ett fynd aldrig göms; därför: suppression bara
+  // när just den marknadens fynd redan står ordagrant i ett skäl.
+  const redanSagt = (r, m) => {
+    const skal = m === 'NO' ? `${r.skal ?? ''}; ${r.no?.skal ?? ''}` : (r.skal ?? '');
+    return m === 'NO' ? /NO-slutkortet namnger/i.test(skal) : /(?:^|;\s*)slutkortet namnger/i.test(skal);
+  };
+  for (const r of resultat.rader ?? []) {
+    for (const [m, g] of [['SE', r.slutkort?.se], ['NO', r.slutkort?.no]]) {
+      if (!g) continue;
+      // Stoppade rader bär redan skälet i sin "skipped"-rad — en gång räcker.
+      if (g.dom === SLUTKORTSDOMAR.medBrand && redanSagt(r, m)) continue;
+      const rad = slutkortsrad(`${r.namn} (${m})`, g);
+      if (!rad) continue;
+      varningar.push(rad);
+      if (g.dom === SLUTKORTSDOMAR.medBrand) action.push(rad);
     }
   }
   for (const r of resultat.approved ?? []) gjort.push(`${r.namn}: 🇺🇸 English version ${r.us_ad_id} is live — source row set to Approved`);
@@ -629,6 +683,9 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
   const pris_no = lank_no ? await hamtaPris(lank_no, marknadFor('NO').valuta, 'NO', butik.post.valuta ?? 'SEK') : { pris_butik: null, skal: 'ingen NO-länk' };
   if (!pris_no.pris_butik || pris_no.pris_butik.basvaluta) varningar.push(`butikens NO-pris: ${pris_no.skal ?? 'okänt'}`);
   else logg(`Pris NO ur butiken: ${pris_no.pris_butik.pris} ${pris_no.pris_butik.valuta} via ${pris_no.pris_butik.kalla}`);
+  // Butikens egna former till slutkortskollen: "CaraShell", carashell.se,
+  // carashell.com. Axels regel gäller ALLA butiksnamn, inte bara källans.
+  const butiksord = butiksordUr({ brand: butik.post.brand, lankar: [lank_se, lank_no] });
   const prisCache = new Map();
   const prisFor = async (lank, valuta, land, bas) => {
     if (!lank) return { pris_butik: null, skal: 'ingen länk' };
@@ -652,10 +709,12 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     const block = await hamtaBlock(r.id);
     const brieftext = textUrBlock(block);
     const pris_brief = prisUrBrief(brieftext);
+    // Landningssidan står antingen som egenskap på raden eller mitt i briefen.
+    const landning = r.landning ?? landningUrBrief(brieftext);
     let pris_kalla = pris_brief;
     let pris_kalla_fran = pris_brief ? 'briefen' : null;
-    if (!pris_kalla && r.landning) {
-      const p = await prisFor(r.landning, 'SEK');
+    if (!pris_kalla && landning) {
+      const p = await prisFor(landning, 'SEK');
       if (p.pris_butik) { pris_kalla = p.pris_butik.pris; pris_kalla_fran = p.pris_butik.kalla; }
     }
     const radmapp = ut ? join(ut, namn.replace(/[^\w åäöÅÄÖ.-]/g, '_')) : null;
@@ -671,7 +730,7 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
     }
     const rad = {
       namn, spegel, spegel_no, spegel_us, page_id: r.id, url: r.url, typ: r.typ, typ_notion: r.typ_notion, status: r.status,
-      filer: r.filer, landning: r.landning, skapad: r.skapad,
+      filer: r.filer, landning, skapad: r.skapad,
       kall_ad: kall ? { id: kall.id, status: kall.effective_status, kampanj: kall.campaign?.name ?? null } : null,
       copy_se,
       no: noV,
@@ -702,6 +761,31 @@ export async function byggSpegelko({ nyckel, fran = null, ut = null, logg = (...
           ? { fil_fel: `${skalMeta}; Notion: ${h.fel ?? 'bara NO-filer eller inget att hämta'}` }
           : { fil: h.fil, fil_kalla: 'Notion-bilaga/Drive (reserv)', fil_alla: h.fil_alla });
         if (rad.fil_fel) logg(`  ✗ ${namn}: ${rad.fil_fel}`); else logg(`  SE hämtad ur Notion (reserv): ${h.fil}`);
+      }
+    }
+    // Slutkortet i bildrutorna — bara på VIDEO, bara på filer som faktiskt
+    // ska laddas upp (en dubblett i Meta laddas inte upp, så den kostar
+    // ingenting att granska). ~0,7 s per video, mätt: factory/bildbrand.mjs.
+    rad.slutkort = { se: null, no: null };
+    if (ut) {
+      rad.slutkort.se = await granskaOmVideo({ fil: rad.fil, typ: rad.typ, hoppa: dSe.finns_i_meta, butiksord });
+      // NO-filen kommer ur Meta och kan vara en bild även när raden är video —
+      // mediatypen där är facit, inte Notion-raden.
+      rad.slutkort.no = await granskaOmVideo({ fil: noV?.fil ?? null, typ: noV?.media?.typ ?? rad.typ, hoppa: dNo.finns_i_meta, butiksord });
+      for (const [m, g] of [['SE', rad.slutkort.se], ['NO', rad.slutkort.no]]) {
+        if (!g || g.dom === SLUTKORTSDOMAR.ren) continue;
+        // Fyndet namnges alltid — men i körloggen och i tabellen, inte i
+        // `varningar`.
+        // ⚠️ Här stod förut en svensk rad som pushades till `ko.varningar`.
+        // Två fel på en gång: (1) byggDiscordJobb lägger ut ett engelskt
+        // `rapportrad` för exakt samma fynd, så rapporten sa allt två gånger,
+        // och (2) `ko.varningar` kopieras rakt in i Discord-jobbet, där
+        // tools/lib/engelska.mjs stoppar svensk text med exit 3 om
+        // ANTHROPIC_NYCKEL saknas. Slutkortsfynd är vardag (varje ombyggt
+        // FI/DK-kort är "utan-brand"), så den raden hade gjort ett stoppat
+        // Discord-inlägg till normalläget i just de containrar där nyckeln
+        // gång på gång saknats (CLAUDE.md, OPS-byggena).
+        logg(`  slutkort ${m}: ${g.dom} — ${g.skal}`);
       }
     }
     rad.bedomning = bedom(rad);
@@ -767,20 +851,32 @@ export async function korSpegling({ ko, torr = false, logg = (...a) => console.e
   }
 
   for (const rad of ko.rader) {
-    const ut = { namn: rad.namn, spegel: rad.spegel, page_id: rad.page_id, utfall: null, skal: null, se: null, no: null, hubb: null };
+    const ut = { namn: rad.namn, spegel: rad.spegel, page_id: rad.page_id, utfall: null, skal: null, se: null, no: null, hubb: null, slutkort: rad.slutkort ?? null };
     resultat.rader.push(ut);
     if (!rad.bedomning.se.ok) {
       ut.utfall = 'hoppad';
       ut.skal = rad.bedomning.se.skal.join('; ');
       logg(`↷ ${rad.namn}: ${ut.skal}`);
-      // Brand- och prisstopp är redigerarens/Axels sak: kommentar på källraden,
-      // status orörd. Rutinen går varje dag och raden står kvar tills någon
-      // gör om creativen — samma kommentar en gång, inte en ny varje dygn.
-      if (!torr && (rad.brand.length || !rad.paritet_se.ok)) {
+      // Brand-, slutkorts- och prisstopp är redigerarens/Axels sak: kommentar
+      // på källraden, status orörd. Rutinen går varje dag och raden står kvar
+      // tills någon gör om creativen — samma kommentar en gång, inte en ny
+      // varje dygn.
+      // ⚠️ Slutkortsstoppet saknades i det här villkoret fram till 2026-09-20,
+      // medan `.claude/commands/ops-spegla.md` steg 2b redan lovade en
+      // kommentar på källraden. En rad som stoppades ENBART av slutkortet fick
+      // alltså ingen — redigeraren såg aldrig varför den inte speglades.
+      const slutkortsstopp = slutkortBlockerar(rad.slutkort?.se?.dom);
+      if (!torr && (rad.brand.length || slutkortsstopp || !rad.paritet_se.ok)) {
         const marke = `⛔ Not mirrored to ${ko.brand}: ${ut.skal}`;
+        // Kravet i kommentaren följer stoppet — en prisrad ska inte be om ett
+        // nytt slutkort, och tvärtom.
+        const krav = [];
+        if (rad.brand.length) krav.push('must not name Bäverbutiken');
+        if (slutkortsstopp) krav.push(`must end without any store name, domain or logo in the last ${rad.slutkort.se.slut_sek ?? 3} seconds — rebuild the end card`);
+        if (!rad.paritet_se.ok) krav.push(`must carry ${ko.brand}'s price (${ko.pris_se?.pris ?? '?'} ${ko.pris_se?.valuta ?? 'SEK'})`);
         try {
           if (await harKommentar(rad.page_id, marke)) logg('  (stopp-kommentaren står redan på raden — skriver ingen ny)');
-          else await kommentera(rad.page_id, `${marke}. The store version must not name Bäverbutiken and must carry ${ko.brand}'s price (${ko.pris_se?.pris ?? '?'} ${ko.pris_se?.valuta ?? 'SEK'}).`);
+          else await kommentera(rad.page_id, `${marke}. The store version ${krav.join(' and ')}.`);
         } catch (e) { ut.skal += ` (kommentaren misslyckades: ${e.message})`; }
       }
       continue;
@@ -912,6 +1008,11 @@ export function tabell(ko) {
     ut.push(`    pris:     creativen ${r.pris_kalla ?? '?'} (${r.pris_kalla_fran ?? 'okänt'}) · butiken ${ko.pris_se?.pris ?? '?'} → ${r.paritet_se.ok ? 'ok' : r.paritet_se.skal}`);
     ut.push(`    fil:      ${r.fil ? `${r.fil} (${r.fil_kalla})` : r.fil_fel ? `✗ ${r.fil_fel}` : `(hämtas med --ut: ur Meta-annons ${r.kall_ad?.id ?? '?'}${r.filer.length ? `, reserv bilaga ${r.filer.join(', ')}` : ''})`}`);
     ut.push(`    NO:       ${r.no ? `${r.no.namn ?? r.no.ad_id} [${r.no.status ?? '?'}] ${r.no.fil ? `→ ${r.no.fil}` : r.no.fel ? `✗ ${r.no.fel}` : '(hämtas med --ut)'} · pris ${r.pris_kalla_no ?? '?'} vs ${ko.pris_no?.pris ?? '?'} → ${b.no.ok ? '✅' : `⛔ ${b.no.skal.join('; ')}`}` : '— ingen NO-version på källraden'}`);
+    for (const [m, g] of [['SE', r.slutkort?.se], ['NO', r.slutkort?.no]]) {
+      if (!g) continue;
+      const ikon = SLUTKORTSIKON[g.dom] ?? '?';
+      ut.push(`    slutkort ${m}: ${ikon} ${g.dom} — ${g.skal}${g.textrader?.length ? `  [${g.textrader.slice(0, 4).join(' | ')}]` : ''}`);
+    }
     ut.push(`    notion:   ${r.url}`);
   }
   if (ko.klara_en.length) {

@@ -438,6 +438,7 @@ utan att skriva över planfilen), så att varje marknad kan rita om från grunde
 | 2026-09-11 | NO | nb | NOK (fast pris) | 1 106 NOK / jämförpris 1 382,50 | 5–10 virkedager | live, `CARASHELL_NO_Takovertrekket` ACTIVE |
 | 2026-09-16 | **US** | en | **USD, fast pris** — vid första mätningen 06:44 stod SEK (ingen basvaluta på den nyskapade marknaden); vid 06:58 var USD påslagen i admin (inte av den här sessionen — Axel eller Shopify), och `--igen prislista,paket` satte då 199/249 fast + USD-rader i paketnivåerna. Mätt som amerikansk kund 07:05: **$199.00**, jämförpris $249.00, paket $338.30 / $477.60 | **199 USD / jämförpris 249** (Axels pris ur `/ny-marknad carashell US --pris 199`, inte kursen: 1 129 kr ≈ 115,55 USD) | 5–10 business days (Axels argument `--leveranstid 5–10`; leverantören bekräftar) | marknad USA ACTIVE, `/en/products/takskyddet` svarar 200 som amerikansk kund ("Add to cart"), 0 svenska markörer, `prislista` ✅. Axels svar 2026-09-16: sales tax AV (revisorn, inget påslag för kunden), Shopify Payments USD fixat, leverantören skickar till USA 5–10 arbetsdagar. Recensionerna: Axel köpte Judge.me Awesome och slog på auto-översättning 2026-09-16 (`judgeme.auto_oversattning: true`) — de 10 svenska recensionerna ska visas på engelska på /en inom 48 h; "Write a review" syntes direkt, texterna var svenska vid mätningen. Ingen CSV ska importeras. ✅ **Verifierat 2026-09-17 ~09:30 UTC i headless Chrome från amerikansk IP:** "Customer Reviews · 16 reviews · Write a review", texterna på engelska under "Reviews in Other Languages" med "Show original (Swedish)"; på `/nb/…?country=NO` "Kundeanmeldelser · Skriv en anmeldelse" och norska texter med "Vis original (svensk)" — `nb` fungerar, tvärtemot varningen i PROCESS.md punkt 12 (rättad). ⚠️ På /nb syns Lindas recension två gånger: `/no-recensioner`-kopian på norska + den svenska originalraden auto-översatt (PROCESS.md punkt 12). **Eftermiddagen 2026-09-16, Axels beslut efter tvekan-listan:** egen domän **carashell.com** för USA (marknadsraden `doman:`, US-länkar `https://carashell.com/products/takskyddet?country=US`), hello@carashell.com, **90-dagars garanti** i all engelsk text (undantag från "alltid svensk lag", bara USA — vem som betalar returfrakt till Sverige är öppet), "🇺🇸 Free shipping to the US" utan "Ships from Sweden", titeln "…up to 21 ft". Allt mätt på carashell.com samma eftermiddag. Läst som amerikan 2026-09-16: varumärkesstrippen stod på svenska (rättad, PROCESS.md punkt 15); kvarvarande tvekan är ägarbeslut — .se-domänen, "right of withdrawal under Swedish law" i USP-raden, storleken 21 ft mot amerikanska 25–40 ft, tull vid dörren (PROCESS.md punkt 16). US-kampanjen `120251436741400435` i Magiborsten UK `1107817401910319` står PAUSED (1 000 kr/dag, 5 adsets) tills Axel slår på den — `/ops-oversatt carashell/takskyddet --marknad US` fyller den 17:05 varje dag. **Kväll 2026-09-16: 27 annonser** (12 video + 4 bild batch #2 + 4 bild batch #1 + 7 bild batch #3, alla ACTIVE inuti den pausade kampanjen, länk carashell.com) |
 | 2026-09-17 | **GB, CA, AU, NZ** (i USA-marknaden) | en | **Lokala valutor, omräknade från de fasta USD-priserna** — mätt som kund per land 13:30 UTC: **£152 / C$285 / A$286 / NZ$354** (ECB samma dag $199 = £148; Shopify +2–3 %, hela tal) | Inget eget pris: Shopifys omräkning av 199 USD. Fasta x9-priser per valuta kräver egna marknader med egna subdomäner — Axels val, inte gjort | 5–10 business days (delad en-rad — leverantören har bara bekräftat USA) | Axels order 2026-09-17 ("samma annonser, lanserar i dag"). Länderna ligger i USA-marknaden på carashell.com (`lander:` + `lokala_valutor: true` på US-raden — en egen domän hör till EN marknad, PROCESS.md punkt 22); `localCurrencies` via API slog själv på AUD/CAD/GBP/NZD i Shopify Payments. Frakt: zonen "Internationell" bar länderna redan. Engelskan omskriven för fem länder (🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿 Free shipping, FAQ, köpvillkor "your local currency"). 90-dagarsgarantin gäller därmed alla fem. 🖐 Skatt/tull: UK-moms ≤ £135 (termoskyddet), tull vid dörren i CA och för takskyddet i UK — ägarens beslut. Annonslänk per land med landets egen kod (`?country=GB` osv.), aldrig `?country=US`. Axels beslut 2026-09-17: UK-momsen löser han själv (sälj ändå), leveranstiden 5–10 gäller alla fem. ⚠️ `--igen marknad` kopplade först .se till USA och nb på .com (bugg i `kopplaPresence`, rättad samma dag, tillbakaläst rätt). ⚠️ Samtidigt gjorde en annan session om produkten till nio storleksvarianter (5,5–13,5 m) — main mergades och stegen kördes om; väljaren kvar. Optionens namn "Variant" är oöversatt på /en (den sessionens) |
+| 2026-09-20 | **DK** | da | **DKK, fast pris** — mätt som dansk kund 09:2x (POST /localization DK/da + `?country=DK`): `html lang="da"`, `"currency":"DKK"`, **819,00 kr / 1.069,00 kr** på 5,5–6,5 m, paketnivåerna 696,15 / 1.392,30 osv. (procentrabatterna räknar rätt i DKK av sig själva) | **819–1 629 DKK per storlek**, jämförpris 1 069–2 119. Axels beslut 2026-09-20 på prisfrågan: *"kör ett snäpp högre för danmark, quotes brukar vara dyrare än sverige med kanske 10 %"* ⇒ SEK × 0,66204 (ECB 2026-09-18) × 1,10, avrundat till x9, jämförpriset räknat likadant ur SEK-jämförpriset så rabatten blir 23 % som i Sverige. **Inte en ren kursomräkning** — en rak omräkning hade gett 749 DKK | 5–10 hverdage (ärvd, `i_fraktraden: false` ⇒ den svenska fraktraden är orörd) | Marknad Danmark ACTIVE, basvaluta DKK **satt via API** (`marketUpdate(currencySettings.baseCurrency)` — inget admin-klick behövdes, till skillnad från USA i september), locale `da` publicerad, prislistan "CaraShell DKK" med 10 av 10 fasta priser. 0 svenska markörer av 16 på /da. ⚠️ **Judge.me har INTE upptäckt danskan:** appens konfigblock på sidan säger `"locale":"en"` (det `"da"` som också står i HTML:en är Shopifys eget block, inte Judge.mes) ⇒ klicket Settings → Language → Refresh list + upp till 24 h. ⚠️ Enda svenska strängen på sidan är `widget_ugc_primary_button_text: "Köp nu"` i Judge.mes UGC-konfig — widgeten är inte installerad (`widget_ugc_install_preference: false`), alltså osynlig för kunden; samma sak på /nb, /en och /fi. Annonserna är ett eget spår: DK finns i `factory/opsmarknader.mjs` (konto `915422744950975`, heygen_sprak `Danish (Denmark)`), men ingen DK-kampanj och ingen DK-rutin finns — `annonsmarknader` står kvar på NO,US tills kampanjen byggts |
 
 Körningen 2026-09-16 (`/ny-marknad`) lärde tre saker som står i `factory/PROCESS.md` →
 "Marknad utanför Norden" punkt 10–13: Shopify skapar själv sidan "Dina
@@ -633,3 +634,39 @@ namnet.
 Lärdomen är inte om slutkort: **en regel som beslutas mitt i en körning gäller
 nästa körning, inte den som redan renderat.** Läs `docs/copy-regler.md` i steg 2,
 inte ur minnet från gårdagens batch.
+
+## Norge-runda 2026-09-20 — en video som såg omöjlig ut var tre lösbara problem
+
+`PD_5_H1` hölls 2026-09-19 med domen att en norsk version måste lägga tillbaka
+butikens namn i annonsen och att det därför var ägarens beslut. **Den domen var
+fel, och felet är värt att komma ihåg:** jag räknade tre hinder rätt men drog
+slutsatsen utan att läsa hur verktygskedjan faktiskt fungerar.
+
+| Hinder | Varför det inte kräver butikens namn |
+|---|---|
+| Voiceovern säger `Carashell taköverdrag` | HeyGens **proofread körs före rendering**. Manuset är mitt att skriva om — raden blev "Dette takovertrekket" |
+| 27 inbrända svenska ordcaptions | `pipeline/no-precis.py` suddar pillret per frame och lägger min egen norska cue. Jag skriver texten |
+| Slutkortet är den svenska produktsidan | Byts mot ett PNG-lager jag bygger själv (`video/bygg-no.py`), utan domän |
+
+**Lärdomen:** innan något eskaleras till Axel som ett beslut — läs vad verktyget
+kan. Ett steg som heter "proofread" är inte en kontroll, det är en redigering.
+Dygnet som gick kostade ingenting i pengar men annonsen stod stilla i onödan.
+
+**Mätfyndet:** slutkortslagret startade 36,4 s, men den vita cirkelövergången
+börjar **36,0** — den svenska sidan med `carashell.se` och `1 469,00 → 1 129,00 kr`
+var läsbar inuti cirkeln i ett par tiondelar. Vita pixlar i den renderade filen:
+0,16 % vid 36,0 → 33,7 % vid 36,3 → 78 % vid 36,4. Samma 36,4 står i US-rundans
+åtta videor 2026-09-18, som alltså bär läckan live. **Granska alltid övergången IN
+i ett utbytt slutkort, inte bara kortet.**
+
+⚠️ **`.srt` är gitignoretat som media** i `market-expansion/ops/**`. Den norska
+voiceovern är creative-arbete, inte media — den ligger sedan i dag i
+`oversatt-output.json` med svensk källrad bredvid varje norsk rad. Utan den hade
+en omrendering börjat om från HeyGens råöversättning, som säger butikens namn och
+de svenska priserna.
+
+**Speglingens rader ska inte översättas här.** Alla 16 rader som `/ops-spegla` la i
+hubben 2026-09-19 bar redan `finns_i_meta: true` med annons-id i NO — speglingen
+laddar upp både den svenska och den norska versionen. De väntar på USA, inte på
+NO-rutinen. Kör aldrig en översättning på dem: det hade blivit dubbletter i samma
+adset.

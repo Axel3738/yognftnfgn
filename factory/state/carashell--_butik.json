@@ -203,12 +203,19 @@
           "marknad": "Finland",
           "status": "ACTIVE",
           "localeSkapad": false
+        },
+        {
+          "land": "DK",
+          "locale": "da",
+          "marknad": "Danmark",
+          "status": "ACTIVE",
+          "localeSkapad": true
         }
       ]
     },
     "oversatt": {
       "klar": false,
-      "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 12 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 12 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt",
+      "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 12 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 12 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt · da: 12 svenska texter saknar översättning (läckor på /da): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-da.json och kör --igen oversatt",
       "underlag": 160,
       "utfall": {
         "nb": {
@@ -228,7 +235,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4372/4423"
+          "granskning": "4394/4445"
         },
         "en": {
           "registrerade": 0,
@@ -247,7 +254,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4392/4423"
+          "granskning": "4413/4445"
         },
         "fi": {
           "registrerade": 0,
@@ -266,7 +273,26 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4381/4423"
+          "granskning": "4403/4445"
+        },
+        "da": {
+          "registrerade": 113,
+          "saknade": 12,
+          "perTyp": {
+            "variant": 1,
+            "produkt": 8,
+            "metafält": 18,
+            "sida": 9,
+            "menylänk": 9,
+            "paket": 22,
+            "policy": 3,
+            "fraktsätt": 3,
+            "kollektion": 1,
+            "temamall": 31,
+            "sektionsgrupp": 7,
+            "temainställning": 1
+          },
+          "granskning": "4394/4445"
         }
       }
     },
@@ -297,7 +323,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T13:10:23.709Z"
+    "tid": "2026-09-20T07:51:55.130Z"
   },
-  "uppdaterad": "2026-09-18T13:10:23.709Z"
+  "uppdaterad": "2026-09-20T07:51:55.131Z"
 }
