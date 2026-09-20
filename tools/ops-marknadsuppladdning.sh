@@ -24,7 +24,11 @@ ROT="$(cd "$(dirname "$0")/.." && pwd)"
 
 uppe=0; felade=0; utan_copy=0; FELLISTA=""; COPYLISTA=""
 
-for f in "$MEDIA"/*.mp4 "$MEDIA"/*.jpg; do
+# ⚠️ ALLA filändelser ops-till-meta.mjs tar (VIDEO + BILD i den filen). Globbade
+# den bara *.mp4 och *.jpg tog körningen tyst noll av 36 danska bilder — de låg
+# som .png — och laddade i stället upp fyra kvarglömda .jpg från ett mellansteg.
+# Mätt 2026-09-20. En saknad ändelse syns inte som ett fel, bara som en kortare kö.
+for f in "$MEDIA"/*.mp4 "$MEDIA"/*.mov "$MEDIA"/*.jpg "$MEDIA"/*.jpeg "$MEDIA"/*.png; do
   [ -e "$f" ] || continue
   namn="$(basename "$f")"; namn="${namn%.*}"
   # Copyn skrevs mot KÄLLANS namn — ta bort marknadskoden för att hitta den.
