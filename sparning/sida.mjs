@@ -101,7 +101,22 @@ function lasKonfig(konfig) {
     // lova olika saker.
     levMin: Number.isFinite(frakt.leverans_dagar_min) ? frakt.leverans_dagar_min : null,
     levMax: Number.isFinite(frakt.leverans_dagar_max) ? frakt.leverans_dagar_max : null,
+    // Erbjudandet "köp igen → gratisprodukt" (mejl/konfig.json → erbjudande +
+    // hjul, samma källa som mejlen och lyckohjulet). Axels beslut 2026-09-20
+    // kväll: en stor knapp till hjulet under paketet, "Spåra ett annat
+    // nummer" blir liten. Saknas blocket i konfigurationen visas inget —
+    // sidan hittar aldrig på ett erbjudande.
+    erbjudande: erbjudandeUr(k),
   };
+}
+
+function erbjudandeUr(k) {
+  const e = k.erbjudande ?? null;
+  const handle = k.hjul?.handle ?? null;
+  if (!e || !handle) return null;
+  const minsta = Number(e.minsta_kop_sek);
+  if (!Number.isFinite(minsta) || minsta <= 0) return null;
+  return { minsta, sida: `/pages/${String(handle).replace(/^\/+|\/+$/g, '')}` };
 }
 
 // Texten för ett paket som är registrerat men aldrig skannat. Meningen om
@@ -109,6 +124,25 @@ function lasKonfig(konfig) {
 function tomtext(vaknar) {
   const bas = 'Paketet är bokat. Fraktbolaget har inte skannat det än';
   return vaknar ? `${bas} — det brukar ta ${vaknar}.` : `${bas}.`;
+}
+
+// Erbjudandet under paketet (Axels beslut 2026-09-20 kväll: "nån sjuk upsell
+// … 'få en gratis produkt' stor och tydlig, och en mindre knapp under som är
+// spåra ett annat paket"). Ligger inne i träffvyn, så det visas bara när ett
+// paket visas — aldrig i sökläget eller vid "hittar inte". Löftet är exakt
+// det mejlen och hjulet ger: vinsten blir gratis i KASSAN vid nästa köp över
+// beloppet (rabatten syns först där, se mejl/README.md → "Det här är hjulet
+// inte"). Ingen rabattkod i länken — hjulets kassaknapp lägger på den.
+function erbjudandeBlock(c) {
+  const e = c.erbjudande;
+  if (!e) return '';
+  return `  <div class="bbs-erbjudande">
+    <p class="bbs-etikett bbs-etikett--ljus">Tack för din beställning</p>
+    <h2>Vinn en gratisprodukt</h2>
+    <p>Som tack får du snurra vårt lyckohjul. Vinsten blir gratis i kassan vid ditt nästa köp över ${esk(String(e.minsta))} kr.</p>
+    <a class="bbs-knapp bbs-knapp--stor" href="${esk(e.sida)}">Få en gratisprodukt</a>
+  </div>
+`;
 }
 
 // Texterna som skriptet behöver. Allt annat står i HTML:en, så det går att
@@ -252,6 +286,12 @@ function stil(c) {
 #bb-spar .bbs-avvikelse{margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--bbs-rod);background:#fdf3f3;font-weight:700}
 #bb-spar .bbs-byggd{font-size:13px;color:var(--bbs-gra);margin:20px 0 0}
 #bb-spar .bbs-hjalprad{font-size:14px;color:var(--bbs-gra);margin:14px 0 0}
+#bb-spar .bbs-erbjudande{margin:26px 0 0;padding:22px 18px 20px;background:var(--bbs-svart);color:#fff}
+#bb-spar .bbs-erbjudande h2{color:#fff;margin:0 0 8px}
+#bb-spar .bbs-erbjudande p{color:#fff;margin:0 0 14px}
+#bb-spar .bbs-etikett--ljus{color:var(--bbs-rod)}
+#bb-spar .bbs-knapp--stor{font-size:23px;min-height:58px;padding:16px 20px}
+#bb-spar .bbs-knapp--liten{width:auto;min-height:42px;padding:9px 18px;margin:16px auto 0;font-size:15px;letter-spacing:.5px;border-width:1px}
 @media (max-width:420px){#bb-spar h2{font-size:25px}#bb-spar .bbs-fakta{gap:10px 0;display:block}}
 `;
 }
@@ -831,8 +871,8 @@ export function byggSidkropp(data, konfig) {
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
   <p class="bbs-hjalprad">Undrar du något om leveransen? Mejla <a href="mailto:${mail}">${mail}</a>.</p>
-</div>
-<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn" hidden>Spåra ett annat nummer</button>
+${erbjudandeBlock(c)}</div>
+<button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn bbs-knapp--liten" hidden>Spåra ett annat nummer</button>
 <p id="bbs-byggd" class="bbs-byggd" hidden></p>
 <script type="application/json" ${DATAMARKOR}>${json}</script>
 <script type="application/json" ${COPYMARKOR}>${copy}</script>

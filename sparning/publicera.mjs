@@ -126,6 +126,11 @@ const sidkonfig = {
   ...konfig,
   butik: { ...(mejlkonfig?.butik ?? {}), ...(konfig.butik ?? {}) },
   frakt: { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) },
+  // Erbjudandet under paketet (Axels beslut 2026-09-20 kväll) läses ur samma
+  // block som mejlen och lyckohjulet — beloppet och hjulets adress får aldrig
+  // bli en andra sanning här.
+  erbjudande: mejlkonfig?.erbjudande ?? null,
+  hjul: mejlkonfig?.hjul ?? null,
 };
 
 // Proxyn tidigt: kravProxy() kör om hela processen med NODE_USE_ENV_PROXY=1,

@@ -618,3 +618,29 @@ test('fel indata stoppas i stället för att bli en tom sida', () => {
   const tom = byggSidkropp({ v: 1, byggd: 0, f: [], p: [], b: [], k: {} }, KONFIG);
   assert.deepEqual(JSON.parse(jsonRuta(tom, DATAMARKOR)).k, {});
 });
+
+test('erbjudandet under paketet: stor knapp till hjulet, "Spåra ett annat nummer" liten (Axels beslut 2026-09-20 kväll)', () => {
+  const med = { ...KONFIG, erbjudande: { kod: 'TACKIGEN', minsta_kop_sek: 299 }, hjul: { handle: 'din-gratisprodukt' } };
+  const kropp = byggSidkropp(fixtur(), med);
+  assert.ok(kropp.includes('class="bbs-erbjudande"'), 'erbjudandeblocket saknas');
+  assert.ok(kropp.includes('href="/pages/din-gratisprodukt"'), 'knappen ska gå till hjulet, utan rabattkod i länken');
+  assert.ok(!kropp.includes('TACKIGEN'), 'koden står inte på sidan — hjulets kassaknapp lägger på den');
+  assert.ok(kropp.includes('över 299 kr'), 'beloppet ska komma ur konfigurationen');
+  // Ordningen: erbjudandet ligger inne i träffvyn, före den lilla knappen.
+  assert.ok(kropp.indexOf('class="bbs-erbjudande"') < kropp.indexOf('id="bbs-annat"'));
+  assert.ok(/id="bbs-annat"[^>]*bbs-knapp--liten/.test(kropp), 'spåra-ett-annat-knappen ska vara den lilla');
+  // Visas bara med ett paket: ligger i #bbs-traff, som är dolt i sökläget.
+  const utan = kor(kropp, '');
+  assert.equal(utan.get('bbs-traff').hidden, true);
+  const traff = kor(kropp, '?nummer=YT2626100708674690');
+  assert.equal(traff.get('bbs-traff').hidden, false);
+  assert.equal(traff.get('bbs-annat').hidden, false);
+
+  // Utan erbjudande i konfigurationen: inget block, inget påhittat.
+  const tom = byggSidkropp(fixtur(), KONFIG);
+  assert.ok(!tom.includes('class="bbs-erbjudande"'), 'CSS-regeln får finnas, blocket inte');
+  assert.ok(!tom.includes('gratisprodukt'));
+  // Halvt block (belopp utan hjul, eller hjul utan belopp) ger inte heller något.
+  assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, erbjudande: { minsta_kop_sek: 299 } }).includes('class="bbs-erbjudande"'));
+  assert.ok(!byggSidkropp(fixtur(), { ...KONFIG, hjul: { handle: 'din-gratisprodukt' } }).includes('class="bbs-erbjudande"'));
+});
