@@ -105,7 +105,7 @@ produktbilden_ur_kallan(produkt)
 slutkort(1080, 1920, produkt, os.path.join(HÄR, "lager", "slutkort-1080.png"))
 
 K = {
-    "in": "../carashell/up/PD_5_H1.mp4",
+    "in": "../render/carashell_PD_5_H1.mp4",
     "ut": "../../no/CaraShellRoof_NO_PD_5_H1.mp4",
     "srt": "../srt-ratt/carashell_PD_5_H1.srt",
     "captions": {"zon": [1320, 1650], "max_chars": 34, "font_px": 45, "standard_cy": 1420,
