@@ -28,6 +28,7 @@ produkt:
     nb: "trekk"
     en: "cover"
     fi: "suoja"
+    da: "betræk"
 
 brand:
   namn: "CaraShell"
@@ -75,6 +76,15 @@ ekonomi:
     - valuta: EUR
       pris: 126.90
       jamforpris: 165.90
+    # DKK — Danmark 2026-09-20. Axels beslut samma dag på frågan om prisnivå:
+    # "kör ett snäpp högre, danska quotes brukar vara dyrare än Sverige med
+    # kanske 10 %". Alltså SEK × 0,66204 (ECB 2026-09-18) × 1,10, avrundat
+    # till x9 — inte en ren kursomräkning. Jämförpriset räknas på samma sätt
+    # ur SEK-jämförpriset, så rabattprocenten blir densamma som i Sverige
+    # (23 %). Varje storlek har sitt EGET DKK-pris i varianterna nedan.
+    - valuta: DKK
+      pris: 819
+      jamforpris: 1069
 
 varianter:
   # Nio storlekar, Axels besked 2026-09-17 ur leverantörens svar ("3*5.5 …
@@ -115,6 +125,9 @@ varianter:
       - valuta: EUR
         pris: 126.90
         jamforpris: 165.90
+      - valuta: DKK
+        pris: 819
+        jamforpris: 1069
   - namn: "6,5 × 3 m"
     sku: "TEMU-5050206311352-065"
     pris: 1129
@@ -129,6 +142,9 @@ varianter:
       - valuta: EUR
         pris: 126.90
         jamforpris: 165.90
+      - valuta: DKK
+        pris: 819
+        jamforpris: 1069
   - namn: "7,5 × 3 m"
     sku: "TEMU-5050206311352-075"
     pris: 1289
@@ -143,6 +159,9 @@ varianter:
       - valuta: EUR
         pris: 144.90
         jamforpris: 188.90
+      - valuta: DKK
+        pris: 939
+        jamforpris: 1219
   - namn: "8,5 × 3 m"
     sku: "TEMU-5050206311352-085"
     pris: 1449
@@ -157,6 +176,9 @@ varianter:
       - valuta: EUR
         pris: 162.90
         jamforpris: 211.90
+      - valuta: DKK
+        pris: 1059
+        jamforpris: 1369
   - namn: "9,5 × 3 m"
     sku: "TEMU-5050206311352-095"
     pris: 1599
@@ -171,6 +193,9 @@ varianter:
       - valuta: EUR
         pris: 179.90
         jamforpris: 233.90
+      - valuta: DKK
+        pris: 1169
+        jamforpris: 1519
   - namn: "10,5 × 3 m"
     sku: "TEMU-5050206311352-105"
     pris: 1759
@@ -185,6 +210,9 @@ varianter:
       - valuta: EUR
         pris: 197.90
         jamforpris: 257.90
+      - valuta: DKK
+        pris: 1279
+        jamforpris: 1669
   - namn: "11,5 × 3 m"
     sku: "TEMU-5050206311352-115"
     pris: 1919
@@ -199,6 +227,9 @@ varianter:
       - valuta: EUR
         pris: 215.90
         jamforpris: 280.90
+      - valuta: DKK
+        pris: 1399
+        jamforpris: 1809
   - namn: "12,5 × 3 m"
     sku: "TEMU-5050206311352-125"
     pris: 2079
@@ -213,6 +244,9 @@ varianter:
       - valuta: EUR
         pris: 233.90
         jamforpris: 304.90
+      - valuta: DKK
+        pris: 1519
+        jamforpris: 1969
   - namn: "13,5 × 3 m"
     sku: "TEMU-5050206311352-135"
     pris: 2239
@@ -227,6 +261,9 @@ varianter:
       - valuta: EUR
         pris: 251.90
         jamforpris: 327.90
+      - valuta: DKK
+        pris: 1629
+        jamforpris: 2119
 media:
   bilder:
     - url: "https://cdn.shopify.com/s/files/1/1013/0322/2621/files/image4.png"

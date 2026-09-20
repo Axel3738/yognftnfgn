@@ -20,8 +20,8 @@ test('domanForMarknad + marknadslank: marknadens egen domän utan språkmapp, an
 import { annonskontoFor, OPS_ANNONSKONTO } from '../register.mjs';
 import { MARKNADSKODER, marknadskoderI, filtreraPaMarknad } from '../skalning.mjs';
 
-test('USA ligger i Magiborsten UK, SE och NO i OPS-kontot — kontot är per marknad, kontrollerat på id', () => {
-  assert.deepEqual(OPS_MARKNADSKODER, ['SE', 'NO', 'US']);
+test('USA ligger i Magiborsten UK, SE/NO/DK i OPS-kontot — kontot är per marknad, kontrollerat på id', () => {
+  assert.deepEqual(OPS_MARKNADSKODER, ['SE', 'NO', 'US', 'DK']);
   assert.equal(kontoFor('US'), '1107817401910319');
   assert.equal(kontoFor('NO'), '915422744950975');
   assert.equal(kontoFor('se'), '915422744950975');
@@ -30,10 +30,18 @@ test('USA ligger i Magiborsten UK, SE och NO i OPS-kontot — kontot är per mar
   assert.equal(OPS_MARKNADER.US.locale, 'en');
   assert.equal(OPS_MARKNADER.US.valuta, 'USD');
   assert.deepEqual(OPS_MARKNADER.US.geo, ['US']);
-  assert.throws(() => marknadFor('DK'), /Okänd OPS-marknad "DK"/);
+  // Danmark 2026-09-20: samma konto som SE och NO trots att kontot HETER
+  // "MagiBorsten DK" — namnet är historiskt, kontot är OPS gemensamma.
+  assert.equal(kontoFor('DK'), '915422744950975');
+  assert.equal(OPS_MARKNADER.DK.locale, 'da');
+  assert.equal(OPS_MARKNADER.DK.valuta, 'DKK');
+  assert.equal(OPS_MARKNADER.DK.heygen_sprak, 'Danish (Denmark)');
+  assert.deepEqual(OPS_MARKNADER.DK.geo, ['DK']);
+  assert.throws(() => marknadFor('JP'), /Okänd OPS-marknad "JP"/);
   assert.equal(arOpsMarknad('us'), true);
+  assert.equal(arOpsMarknad('dk'), true);
   assert.equal(arOpsMarknad('XX'), false);
-  assert.deepEqual(oversattningsmarknader(), ['NO', 'US']);
+  assert.deepEqual(oversattningsmarknader(), ['NO', 'US', 'DK']);
 });
 
 test('annonskontoFor: OPS-posten har OPS-kontot som identitet men målet är marknadens konto', () => {

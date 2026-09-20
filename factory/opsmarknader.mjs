@@ -35,6 +35,21 @@ export const OPS_MARKNADER = Object.freeze({
     heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇺🇸', rubrik_en: 'US translation',
   }),
+  // Danmark 2026-09-20 (/ny-marknad carashell DK). Kontot är det delade
+  // OPS-kontot — samma som SE och NO. ⚠️ Kontot HETER "MagiBorsten DK" men
+  // är inte Danmarks konto: namnet är historiskt, det bär alla OPS-butikers
+  // svenska och norska kampanjer, och Bäverbutikens EGNA danska kampanjer
+  // ligger också där (med Bäverbutikens sida och pixel). Därför måste varje
+  // uppslag filtrera på butikens brandprefix, aldrig på "DK" i namnet.
+  // heygen_sprak avläst ur `node pipeline/localize.mjs langs` samma dag —
+  // listan har både "Danish" och "Danish (Denmark)"; den senare följer
+  // mönstret från "Norwegian Bokmål (Norway)".
+  DK: Object.freeze({
+    kod: 'DK', namn: 'Danmark', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
+    geo: ['DK'], locale: 'da', country: 'DK', valuta: 'DKK', valuta_i_annons: 'kr.',
+    heygen_sprak: 'Danish (Denmark)', sprak: 'danska', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    emoji: '🇩🇰', rubrik_en: 'Denmark translation',
+  }),
 });
 
 export const OPS_MARKNADSKODER = Object.freeze(Object.keys(OPS_MARKNADER));
