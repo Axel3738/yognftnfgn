@@ -317,6 +317,8 @@ event i Shopify ligger kvar.
 
 ## Logg
 
+- **2026-09-20 sen kväll, alla butiker.** Axel: "implementera denna spårningsgrejen … till andra shopify butiker" — CaraShell, beverbutikken.no, baeverbutikken.dk, majavakauppa.fi, utan lyckohjulet. Byggt: registret `butiker.json`, `butik.mjs` (klient per butik), `oversatt.mjs` + `sprak/nb|da|fi.json` (146 meningar × 3 språk, täckningstest), `--butik` i kor/publicera/baver, prefix per butik, Shopify-meddelanden på butikens språk. Kopplingskollen (`scopes-alla.mjs`): CaraShell ✅ (Factory-appen), NO/FI svarar men saknar tre rättigheter, DK `app_not_installed`. **CaraShell live** 18:39 CEST (141 registrerade, 140 paket, CS-nummer) + timrutin `trig_01UAU1N6P4MpPmeLgKffprHo` 18:47. Två fel hittade av torrkörningen mot riktig data: locale-datumnycklar (norska uppslag fällde) och BB-prefixet i sidans uppslag (CS-nummer hittades inte live). Cowork-prompter i `cowork/<id>.md`. 155 spårningstester, 1 673 totalt.
+
 - **2026-09-20 kväll, bävernummer + sista biten + delsteg.** Fem beslut av
   Axel samma dag, alla live: (1) "Internationell transport" ersatt av
   delsteg som säger var paketet faktiskt är (`delsteg.mjs`: lämnat lagret,
