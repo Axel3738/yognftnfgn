@@ -129,7 +129,7 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   }
   ut.push(
     '',
-    '**What to do, for each one — the SOPs are in `kundtjanst/sop/`, start at `00-MASTER.md`:**',
+    '**What to do, for each one — the SOPs are in `kundtjanst/sop/`, start at `START-HERE.md`:**',
     '1. "Not received"? CHECK THE TRACKING FIRST. Delivered with a scan → fight. Stuck or no scan → refund, do not fight.',
     '2. Shopify admin → Settings → Payments → Disputes → open the order.',
     '3. Attach the proof: delivery scan, order confirmation, and the email thread.',

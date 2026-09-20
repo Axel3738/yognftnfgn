@@ -96,7 +96,19 @@ Store values live in **one** place: `kundtjanst/brands/<id>.yaml` → the `tvist
 
 **An empty config value is a stop, not a guess.** No `{{RETURN_ADDRESS}}` → you cannot send T4. No `{{POLICY_URL}}` → you cannot quote terms. Ask the owner once, have it written into the brand file, and every store after this one is already solved.
 
-**Gap, do not invent:** who pays return shipping is not in the brand file. Read it on `{{POLICY_URL}}`. If the policy is silent, ask the owner once and have it added to the policy page — never promise "free return" on your own.
+**Who pays return shipping:** `tvister.returfrakt_betalas_av` ({{RETURN_POSTAGE_PAID_BY}}) — `kund` = the customer, `butik` = we do. **Empty means the owner has not decided**, and then you read `{{POLICY_URL}}` and say only what the policy says. Never promise "free return" on your own.
+
+> **THE RETURN ADDRESS IS GIVEN OUT, NEVER PUBLISHED.**
+> When `tvister.returadress_pa_forfragan` is `true`, {{RETURN_ADDRESS}} is not on
+> the website anywhere. The customer must ask us, and we send it. That is a
+> deliberate choice by the owner — it keeps returns down — and it turns your
+> reply speed into money: **answer a return request within
+> {{FIRST_REPLY_TARGET_HOURS}} hours.** A customer who asks how to return
+> something and gets no answer opens a dispute instead, and a dispute costs more
+> than the return ever would. *(Example, 2026-09-20: #5122, a missed email about
+> damaged straps became a dispute.)*
+> Send the address in plain text in the reply, never as a link, and write the
+> date you sent it in the decision sheet — it is evidence item 13.
 
 ### Per-order placeholders — where each one really comes from
 

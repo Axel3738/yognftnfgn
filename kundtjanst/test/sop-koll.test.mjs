@@ -54,3 +54,30 @@ test('de RIKTIGA SOP-filerna är portabla — inga alias, inga okända namn', as
   for (const f of filer) alla.push(...granska(f, readFileSync(join(SOPMAPP, f), 'utf8')).fel);
   assert.deepEqual(alla, [], `SOP-filerna är inte portabla:\n${alla.join('\n')}`);
 });
+
+test('eskaleringen finns som egen SOP och är routad från START-HERE', async () => {
+  const { readFileSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { SOPMAPP } = await import('../sop-koll.mjs');
+  if (!existsSync(SOPMAPP)) return;
+  const esk = join(SOPMAPP, '60-ESCALATION.md');
+  assert.ok(existsSync(esk), '60-ESCALATION.md saknas — VA:n vet inte vem hon frågar');
+  const t = readFileSync(esk, 'utf8');
+  // Regeln som gör eskaleringen ofarlig: deadlinen väntar aldrig på ett svar.
+  assert.match(t, /DEADLINE NEVER WAITS/i);
+  assert.match(t, /\{\{OWNER_CONTACT\}\}/);
+  assert.match(t, /\{\{REFUND_APPROVAL_LIMIT\}\}/);
+  assert.match(readFileSync(join(SOPMAPP, 'START-HERE.md'), 'utf8'), /60-ESCALATION\.md/);
+});
+
+test('returadressen lämnas ut på förfrågan — och svarstiden står bredvid regeln', async () => {
+  const { readFileSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { SOPMAPP } = await import('../sop-koll.mjs');
+  if (!existsSync(SOPMAPP)) return;
+  for (const f of ['START-HERE.md', '30-EMAIL-TEMPLATES.md']) {
+    const t = readFileSync(join(SOPMAPP, f), 'utf8');
+    assert.match(t, /returadress_pa_forfragan/, `${f} nämner inte friktionsmodellen`);
+    assert.match(t, /\{\{FIRST_REPLY_TARGET_HOURS\}\}/, `${f} saknar svarstidsvillkoret`);
+  }
+});

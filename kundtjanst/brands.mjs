@@ -66,11 +66,18 @@ export const STANDARD_TROSKLAR = Object.freeze({
  */
 export const STANDARD_TVISTER = Object.freeze({
   returadress: '',            // står sällan i policyn — VA:n skickar den för hand
+  returadress_pa_forfragan: true, // adressen står inte publikt; kunden ber om den
   returfonster_dagar: null,   // butikens EGEN policy. null = oläst, läs policy_url
   angerratt_dagar: 14,        // lagstadgad ångerrätt, EU/Sverige (distansavtalslagen 2005:59)
+  returfrakt_betalas_av: '',  // {{RETURN_POSTAGE_PAID_BY}} — 'kund' / 'butik'. '' = obestämt
   policy_url: '',
   billing_descriptor: '',     // Shopify → Settings → Payments → Customer billing statement
   strid_lonar_sig_over: 0,    // 0 = slåss om allt
+  // Eskaleringen: vem VA:n frågar, och var gränsen för egna beslut går.
+  agare_kontakt: '',          // {{OWNER_CONTACT}} — namn/handle VA:n eskalerar till
+  godkannande_over: 0,        // {{REFUND_APPROVAL_LIMIT}} — 0 = allt får beslutas själv
+  ersattning_over: 0,         // {{REPLACEMENT_LIMIT}} — ersättningsvara utan att fråga
+  forsta_svar_timmar: 24,     // {{FIRST_REPLY_TARGET_HOURS}} — svarstidsmålet
 });
 
 /** Vad fabrikens butiksfil ger. Fälten som saknas blir '' — aldrig påhittade. */

@@ -34,6 +34,7 @@ Supporting files, used from inside the reason files — do not start here:
 | **30-EMAIL-TEMPLATES.md** | The actual emails to send the customer. Copy-paste, fill the placeholders |
 | **40-EVIDENCE-PACK.md** | What to attach in Shopify and exactly where each item is found |
 | **50-PREVENTION.md** | After the dispute: what to change so the next one does not happen |
+| **60-ESCALATION.md** | What you decide yourself, what you hand to the owner, and how you write it |
 | `orders/` | One decision sheet per order we have handled — read the ones like yours |
 
 ## 2. The three rules that matter most
@@ -71,7 +72,19 @@ Supporting files, used from inside the reason files — do not start here:
 
 When the three rules do not give you an answer: choose **ESCALATE**, write what you
 found in the decision sheet, and hand it to the owner. Guessing on a dispute costs
-real money; asking costs one message.
+real money; asking costs one message. **60-ESCALATION.md** says exactly which
+cases those are, and what the message looks like — including the one rule that
+beats all of them: *a deadline never waits for an answer.*
+
+> **THE RETURN ADDRESS IS NOT PUBLIC.** On stores where
+> `returadress_pa_forfragan` is `true`, {{RETURN_ADDRESS}} is nowhere on the site
+> — the customer has to ask us for it, and that is deliberate: it keeps returns
+> down. It only works if you answer **within {{FIRST_REPLY_TARGET_HOURS}}
+> hours**. A customer who asks for a return address and hears nothing does not
+> give up; they dispute, and a dispute costs far more than the return would have.
+> Treat "how do I return this?" as the most urgent mail in the inbox, not the
+> least. *(Example, 2026-09-20: order #5122 — a customer wrote about damaged
+> straps, the mail was missed, and it became a dispute.)*
 
 ## 3. Your daily routine
 

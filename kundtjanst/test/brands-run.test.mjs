@@ -202,3 +202,27 @@ test('jobbfilen trådar på Gmails trådid och kör hela flödet', async () => {
   assert.equal(utanBrand.hoppad, true);
   assert.match(utanBrand.orsak, /saknar brandet "x"/);
 });
+
+test('tvister-blocket når koden: eskaleringsnycklarna läses, standarden fyller resten', () => {
+  const brand = brandUrEgenfil(lasYaml([
+    'brand:',
+    '  namn: "Beta"',
+    '  supportmail: "hello@beta.se"',
+    '  shop: "beta-2.myshopify.com"',
+    'tvister:',
+    '  returadress: "Sjöhed 160"',
+    '  agare_kontakt: "Ägaren (Discord)"',
+    '  godkannande_over: 500',
+    '',
+  ].join('\n')), 'beta');
+  const k = korkonfig(brand, {});
+  assert.equal(k.tvister.returadress, 'Sjöhed 160');
+  assert.equal(k.tvister.agare_kontakt, 'Ägaren (Discord)');
+  assert.equal(k.tvister.godkannande_over, 500);
+  // Det som INTE står i filen kommer ur standarden — aldrig undefined i ett mejl.
+  assert.equal(k.tvister.returadress_pa_forfragan, true);
+  assert.equal(k.tvister.forsta_svar_timmar, 24);
+  assert.equal(k.tvister.angerratt_dagar, 14);
+  // ⚠️ Returfrakten är ägarens beslut och får aldrig gissas.
+  assert.equal(k.tvister.returfrakt_betalas_av, '');
+});

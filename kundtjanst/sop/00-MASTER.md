@@ -332,11 +332,15 @@ tvister:
   strid_lonar_sig_over: 0     # {{FIGHT_THRESHOLD}} in the store's own currency. 0 = always fight
 ```
 
-**Not in the template yet — the owner must add these two keys, or give them to the VA at onboarding** (see Known gaps):
+The escalation keys are in the template too (added 2026-09-20) — **60-ESCALATION.md** is what they govern:
 
 ```yaml
   agare_kontakt: ""           # {{OWNER_CONTACT}} — who the VA escalates to
-  godkannande_over: 0         # {{REFUND_APPROVAL_LIMIT}} — refund/accept above this needs the owner
+  godkannande_over: 0         # {{REFUND_APPROVAL_LIMIT}} — refund/accept above this needs the owner. 0 = the VA decides everything
+  ersattning_over: 0          # {{REPLACEMENT_LIMIT}}
+  forsta_svar_timmar: 24      # {{FIRST_REPLY_TARGET_HOURS}} — the reply-time target
+  returadress_pa_forfragan: true  # the return address is given out on request, never published
+  returfrakt_betalas_av: ""   # {{RETURN_POSTAGE_PAID_BY}} — "kund" / "butik". Empty = undecided, do not guess
 ```
 
 {{STORE_ID}}, {{STORE_NAME}}, {{STORE_DOMAIN}}, {{SUPPORT_EMAIL}}, {{CURRENCY}} and the country come from the brand block (`brand.namn`, `brand.shop`, `brand.supportmail`, `brand.valuta`, `brand.land`) or from `factory/butiker/<id>.yaml`. {{ESCALATION_CHANNEL}} is `discord.kanal` (default `customer-service`). Secrets never go in YAML.
@@ -364,14 +368,14 @@ tvister:
 
 ## ⚠️ Known gaps — do not paper over these
 
-- [ ] **The reason-code SOPs do not exist yet.** `kundtjanst/sop/` is empty (checked 2026-09-20). Until `product-not-received.md`, `product-unacceptable.md`, `credit-not-processed.md`, `fraudulent.md`, `unrecognized.md`, `duplicate.md`, `subscription-canceled.md` and `general.md` are written, **this file plus the verdict from `tvistfakta.mjs` is the whole procedure** — that is enough to decide and submit.
+- [x] ~~The reason-code SOPs do not exist yet.~~ **Written 2026-09-20, same day:** `10-NOT-RECEIVED.md`, `11-UNACCEPTABLE.md`, `12-CREDIT-NOT-PROCESSED.md`, `13-FRAUD-UNRECOGNIZED.md`, `14-DUPLICATE-SUBSCRIPTION-OTHER.md`, plus `20-NO-CONTACT.md`, `30-EMAIL-TEMPLATES.md`, `40-EVIDENCE-PACK.md`, `50-PREVENTION.md` and `60-ESCALATION.md`. Route from `START-HERE.md`, not from this file.
 - [ ] **Field labels on the Shopify evidence form are not documented.** VERIFY IN SHOPIFY ADMIN: Orders → disputed order → **Add evidence**. Write the real labels in here the first time you see them.
 - [ ] **The "Accept chargeback" button's exact label and location are not documented.** VERIFY IN SHOPIFY ADMIN on the next real chargeback, and write it in.
 - [ ] **Chargeback fee amount is not documented.** VERIFY IN SHOPIFY ADMIN: Settings → Payments → the payout/transaction record for a chargeback. Do not quote a figure to the owner until it is read there.
 - [ ] **Card-network rules, deadlines, percentages and win rates are not in this file** — we have no verified access to the Visa/Mastercard rulebooks. Everything numeric above is either Shopify's own wording (quoted) or our own measurement (dated). Keep it that way.
 - [ ] **Bank review time:** Shopify's pages state 30–90 days, 65–75 days, up to 75 days and up to 120 days in different places. Never promise a customer a date.
 - [ ] **When the {{RETURN_WINDOW_DAYS}} window starts** (order date or delivery date) is a per-store legal question the owner must answer. It decides cases like #5435.
-- [ ] **The `tvister:` config block is not read by the code yet.** `kundtjanst/brands.mjs` merges only `trosklar` (`korkonfig`, ~line 203). Until `tvister` is added to `brandUrEgenfil`, `upptackBrands` and the merge list, the values are read by humans from the YAML and silently ignored by the code. `agare_kontakt` and `godkannande_over` are not even in `kundtjanst/brand-mall.yaml` yet.
+- [x] ~~The `tvister:` config block is not read by the code yet.~~ **Wired 2026-09-20:** `kundtjanst/brands.mjs` has `STANDARD_TVISTER` and merges `tvister` through `brandUrEgenfil`, `upptackBrands` and `korkonfig`, so a value written in the YAML reaches the code. `agare_kontakt`, `godkannande_over`, `ersattning_over`, `forsta_svar_timmar`, `returadress_pa_forfragan` and `returfrakt_betalas_av` are in `kundtjanst/brand-mall.yaml`.
 - [ ] **`tvistfakta.mjs` defaults to one specific store id.** Always pass `--brand {{STORE_ID}}`. A VA who forgets reads another store's orders and will not be told.
 - [ ] **`sparning/` reaches one store only.** Tracking for the other stores is read through `tvistfakta.mjs` / 17track.net in the browser, not through the hourly routine.
 - [ ] **Whether a *fought* inquiry ever escalates anyway is unmeasured.** What we measured 2026-09-20: decided inquiries 29 won / 0 lost; chargebacks 1 won / 3 lost; three ignored inquiries (#4914, #5044, #4706) turned into chargebacks. Answer inquiries — they are cheap to win.
@@ -388,7 +392,8 @@ tvister:
 | Store list, ids and which keys are missing | `node kundtjanst/run.mjs --kolla`, `kundtjanst/brands.mjs` |
 | Store config template | `kundtjanst/brand-mall.yaml` (`tvister:`, `discord.kanal`) |
 | Weekly report and the VA work list | `kundtjanst/README.md`, `kundtjanst/atgardsplan.mjs` (`HINKAR`) |
-| Per-reason procedures | `kundtjanst/sop/` — **not written yet** (see Known gaps) |
+| Per-reason procedures | `kundtjanst/sop/` — route from `START-HERE.md` |
+| What the VA decides alone vs hands to the owner | `kundtjanst/sop/60-ESCALATION.md` |
 
 <!--
 REVIEW: fixed 24 defects.
@@ -429,7 +434,7 @@ MISSING CASES ADDED (all from the owner's own 12 orders):
 
 CANNOT BE RESOLVED WITHOUT THE OWNER:
 - Shopify evidence-form field labels, the "Accept chargeback" button label, and the chargeback fee amount: someone must read them on a real dispute and write them in.
-- {{OWNER_CONTACT}} and {{REFUND_APPROVAL_LIMIT}}: no config key exists yet; add `agare_kontakt` and `godkannande_over` to `kundtjanst/brand-mall.yaml`.
+- {{OWNER_CONTACT}} and {{REFUND_APPROVAL_LIMIT}}: RESOLVED 2026-09-20 — `agare_kontakt` and `godkannande_over` are in `kundtjanst/brand-mall.yaml` and read by `brands.mjs`; the procedure they govern is `60-ESCALATION.md`.
 - Whether {{RETURN_WINDOW_DAYS}} runs from order date or delivery date (decides #5435) — legal, per store.
 - The `tvister:` block is still not read by `kundtjanst/brands.mjs`; until it is, the values work for humans only.
 - Delivery dates and amounts inside the worked examples come from the earlier session's Shopify/17TRACK read; I could not re-verify them here, so they are written as examples with their measurement date, never as rules.

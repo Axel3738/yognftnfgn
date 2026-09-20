@@ -43,6 +43,7 @@ hade det inte — och det är det enda som inte gick att vinna.
 | `30-EMAIL-TEMPLATES.md` | Färdiga kundmejl att klistra in |
 | `40-EVIDENCE-PACK.md` | Vad som bifogas och var det hämtas |
 | `50-PREVENTION.md` | Hur nästa tvist undviks — den här läser du, inte VA:n |
+| `60-ESCALATION.md` | Vad VA:n bestämmer själv och vad hon lämnar till dig |
 | `99-BACKLOG.md` | Vad systemet ännu inte täcker |
 | `beslut/order-*.md` | Färdig dom per öppen tvist, med bevistext att klistra in |
 
@@ -57,11 +58,17 @@ SOP-texten är **identisk på alla butiker**. Det enda som skiljer dem är
 # kundtjanst/brands/<butik>.yaml
 tvister:
   returadress: "..."          # VA:n skickar den för hand — står sällan i policyn
+  returadress_pa_forfragan: true  # adressen publiceras aldrig; kunden ber om den
   returfonster_dagar: 30      # butikens EGEN policy — LÄS den, gissa aldrig
   angerratt_dagar: 14         # lagstadgad ångerrätt (EU/Sverige)
+  returfrakt_betalas_av: ""   # "kund" / "butik". Tom = obestämt, VA:n gissar aldrig
   policy_url: "https://..."   # sidan kunden godkände i kassan
   billing_descriptor: "..."   # Shopify → Settings → Payments
   strid_lonar_sig_over: 0     # under detta belopp: återbetala i stället
+  agare_kontakt: "..."        # vem VA:n eskalerar till
+  godkannande_over: 0         # 0 = VA:n beslutar hela kön själv
+  ersattning_over: 0
+  forsta_svar_timmar: 24      # svarstidsmålet
 ```
 
 Hela listan: `node kundtjanst/sop-koll.mjs --lista`
@@ -91,8 +98,13 @@ tvistordrar svarade *"does not register, please register first"* — de var
 
 ## Två saker du måste bestämma
 
-1. **Returadressen** finns ingenstans i repot. VA:n skickar den för hand.
-   Utan den går mejlmallarna inte att skicka som de står.
+1. ✅ **Returadressen — löst 2026-09-20.** `Sjöhed 160`, och den publiceras
+   aldrig: kunden måste mejla kundtjänst för att få den
+   (`returadress_pa_forfragan: true`). Det ger färre returer, men villkoret står
+   i SOP:erna: **svar inom 24 timmar.** Ett missat returmejl blir en tvist, och
+   en tvist kostar mer än returen. #5122 är exemplet.
+   ⚠️ Kvar att bestämma: **vem som betalar returfrakten**
+   (`returfrakt_betalas_av`). Den är tom, och VA:n får inte gissa i ett kundmejl.
 
 2. **Returfönstret säger emot sig självt i praktiken.** Butikens policy säger
    **30 dagars retur** + **14 dagars lagstadgad ångerrätt**, båda räknat
@@ -100,6 +112,16 @@ tvistordrar svarade *"does not register, please register first"* — de var
    orderbekräftelsen, inom 14-dagarspolicyn" — men varan var inte ens levererad
    då. Med 3–4 veckors leveranstid öppnar fönstret en månad efter köpet, och
    det är den detaljen som avgör om en kund har rätt eller inte.
+
+   ⚠️ **Och annonserna säger något tredje.** Mätt 2026-09-20 i repot: de
+   publicerade listicle-sidorna lovar "30 dagars öppet köp", "30 dagars
+   nöjd-kund-garanti" och "30 dagar på dig att skicka tillbaka det"
+   (`listicle/mall/exempel-copy.json`, `listicle/mall/sida.json` och
+   `copy.json` för takskyddet, termoskyddet, axelbältet och taköverdraget).
+   Tre olika löften i samma tratt — policyn 30 + 14, annonserna 30, lagen 14 —
+   och varje glapp är en färdig `product_unacceptable`- eller
+   `credit_not_processed`-tvist. Vilket tal som gäller är Axels beslut; att
+   **ett** tal ska gälla överallt är inte en åsikt.
 
 ---
 
