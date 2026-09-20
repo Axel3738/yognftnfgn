@@ -31,9 +31,19 @@ inte byte — Cowork mätte 2026-09-18 att `wc -c` gav byte och stämde inte.
 Historik: v4 inklistrad 2026-09-14, v6 (tre erbjudandemallar) 2026-09-18,
 v8 (fyra fraktmallar) 2026-09-18 kväll, v9 (tre fraktmallar) 2026-09-18 sen
 kväll, v10 (knappen till egna sidan) byggd 2026-09-19 men aldrig
-inklistrad, v11 (bävernumret) väntar. Coworks metod som fungerar: hämta
-filen direkt i Shopify-sidan, skriv in via kodrutans eget API, verifiera
-mot serverns mall-data — inget urklipp, inga kortkommandon.
+inklistrad, **v11 (bävernumret) inklistrad av Cowork 2026-09-20 kl 17:35–17:37
+CEST** — alla tre verifierade tecken för tecken mot serverns `EmailTemplate`
+(77 552 / 6 245 / 6 234, SHA-256 lika), Levererad orörd (18/9), ämnesraderna
+var redan rätt. Samma körning: **"Spåra paket" → `/pages/spara` sist i
+Huvudmeny (`main-menu`) och Sidfotsmeny (`footer`)**, sedd i kundens vy
+(sessionen läste startsidan efteråt: länken finns i desktopmenyn,
+mobilmenyn och sidfoten). Testmejl skickat till Axels Gmail. Coworks metod
+som fungerar: hämta filen direkt i Shopify-sidan, skriv in via kodrutans
+eget API, verifiera mot serverns mall-data — inget urklipp, inga
+kortkommandon. Cowork noterade att ett klick på menylänken på startsidan
+inte navigerade i dess webbläsare ("svart laddningsyta") medan direktbesök
+fungerade — HTML:en pekar rätt, troligen temats laddningsöverlägg som fångade
+det första klicket; inte mätt av en människa.
 
 ---
 

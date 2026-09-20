@@ -270,8 +270,10 @@ event i Shopify ligger kvar.
   skanningen) som popup, röd när den passerats. Kundtjänst:
   `sparning/baver.mjs`. Publiceringen tolkar sidans JavaScript före
   uppladdning (`provkorSkriptet`) sedan en syntaxmiss gick ut live. 143
-  spårningstester + 35 mejltester. Mejlmallarna v11 (bävernumret i
-  klartext under knappen) väntar på Cowork — `mejl/COWORK-PROMPT.md`.
+  spårningstester + 35 mejltester. **Mejlmallarna v11 inklistrade av Cowork
+  samma kväll 17:35 CEST, verifierade mot servern; "Spåra paket" i huvudmeny
+  + sidfot** — `mejl/COWORK-PROMPT.md`. Grenen mergad till `main` 2026-09-20
+  kväll (Axels order), så timrutinen bygger om sidan varje timme.
   ⚠️ Koden ligger på grenen `claude/fervent-bardeen-pzyuql`, inte på `main`
   (Axel: "inte merga än"). Timrutinen kör `main`, vars `kor.mjs` inte känner
   till sidan alls (mätt 2026-09-20: ingen `publicera` i `origin/main`) — den
