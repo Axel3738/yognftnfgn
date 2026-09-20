@@ -737,3 +737,10 @@ teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `k
 - Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551251439307726912`, ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-20-us-termoskyddet/`.
+
+## 2026-09-21 — nattvakten körning nr 5 (ingen briefdag): SE fortfarande PAUSED, 0 ändringar
+
+SE PAUSED: 7d 2 058 kr / 4 köp, 3d nere på 355 kr / 0 köp när de pausade dygnen rullar in.
+0 ändringar, inget aktiverat. **NO kontrollerades INTE i natt** — Meta rate-limitade kontot
+och den läs-bara torrkörningen låg kvar i kö när rapporten gick ut (den var PAUSED vid
+gårdagens avläsning). Briefronden pausad sedan 18/9. `kord` stämplad, `brief-kord` inte.
