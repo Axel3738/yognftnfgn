@@ -1292,3 +1292,22 @@ PAUSED, **8 476 kr — exakt samma tal som i går**, så efterattribueringen har
 sig också. Kön 0 rader, priset 380 NOK. Ingenting rört. Rutinen kommer att
 rapportera detta varje dag tills Norge slås på igen; frågan om att tysta den står
 obesvarad sedan 19/9 och ingen pingas om igen.
+
+---
+
+## 2026-09-21 — nattvakten, körning nr 10: sjätte natten med 0 ändringar
+
+Briefdag i kadensen (ikappkörning, 8 dygn sedan senaste briefen), men
+`Briefrond:` står på PAUS ⇒ noll briefer, `kord` stämplat, ingen `brief-kord`.
+SE PAUSED sedan 15/9 20:52 (`updated_time` orörd sjätte dygnet), NO PAUSED
+sedan 18/9. **0 ändringar, 0 loggrader.** Hubben oförändrad femte natten: 19 i
+Draft, 10 i Creative strat review, 31 Approved. `feedback.md` saknas.
+
+SE 7d: **1 027 kr, 1 köp, ROAS 0,38** på tre dagsrader (2 998 → 1 875 → 1 027).
+Fönstret töms; på onsdag är det noll. Det är inte en försämring utan
+kalendern — samma sak som skrevs ut 19/9 och 20/9. Läs inte trenden.
+
+Sex nätter i rad med 0 ändringar är reglerna som fungerar: ingenting som ägaren
+pausat rörs. Frågan om rutinen ska stängas av (ställd 18/9) har nu praktisk
+betydelse — rapporten beskriver ett tomt konto varje natt.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-21.json`.
