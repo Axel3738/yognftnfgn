@@ -75,13 +75,14 @@ export const STATUSAR = [
 // steg 1 och bar utländska ortnamn — nu heter det "Internationell transport"
 // och bär ingen geografi alls (se `sammanfattning()` nedan).
 export const STEG = [
-  ['bestalld', 'Beställningen är registrerad'],
-  // ⚠️ Destinationen får stå här, ursprunget aldrig. Axel 2026-09-20:
-  // "Internationell transport" kändes "bara skumt" — kunden vill veta vart
-  // paketet är på väg, inte vilken kategori transporten tillhör. Var det ÄR
-  // just nu står som delskede (DELSTEG ovan), ur samma skanningar.
-  ['pa_vag', 'På väg till {{land}}'],
-  ['i_landet', 'Ankommit till {{land}}'],
+  ['bestalld', 'Ordern är mottagen'],
+  // ⚠️ INGEN geografi alls här. Axel 2026-09-20, efter att ha sett "På väg
+  // till Sverige": "jag gillar inte att det står att den är på väg till
+  // sverige. Jag vill att kunden ska känna att allt känns bra och bara se
+  // att paketet är på väg." Var paketet ÄR står som delskede (DELSTEG),
+  // ur samma skanningar.
+  ['pa_vag', 'Paketet är på väg'],
+  ['i_landet', 'Framme i {{land}}'],
   ['utkorning', 'Ute för leverans'],
   ['levererat', 'Levererat'],
 ];
@@ -103,14 +104,29 @@ export const I_LANDET_NR = STEG.findIndex((rad) => rad[0] === 'i_landet');
 // ⚠️ Inget delskede får påstå mottagarlandet. Ankomsten dit är huvudskedet
 // `i_landet`, som steg.mjs avgör med förhandsaviseringsundantaget inbakat.
 // Därför "Landat" och inte "Landat i Sverige".
+// Fjärde fältet är HUVUDSKEDET delskedet hör till (index i STEG). Det är
+// den bindningen som gör att "Arrived at sort facility" kan betyda
+// "Sorteras" i Sverige utan att betyda det i Kina — se delsteg.mjs.
 export const DELSTEG = [
-  ['hamtat', 'Hämtat hos avsändaren', 'lada'],
-  ['utforsel', 'Klart för avfärd', 'stampel'],
-  ['flygplats', 'På flygplatsen', 'flygplats'],
-  ['luften', 'I luften', 'flyg'],
-  ['landat', 'Landat', 'flyg'],
-  ['tull', 'Hos tullen', 'stampel'],
-  ['tullklart', 'Genom tullen', 'stampel'],
+  ['forbereds', 'Förbereds hos avsändaren', 'kvitto', 0],
+
+  ['hamtat', 'Hämtat hos avsändaren', 'lada', 1],
+  ['utforsel', 'Klart för avfärd', 'stampel', 1],
+  ['flygplats', 'På flygplatsen', 'flygplats', 1],
+  ['luften', 'I luften', 'flyg', 1],
+  ['landat', 'Landat', 'flyg', 1],
+  ['tull', 'Hos tullen', 'stampel', 1],
+  ['tullklart', 'Genom tullen', 'stampel', 1],
+
+  ['hos_bolaget', 'Hos fraktbolaget', 'lager', 2],
+  ['terminal', 'På terminalen', 'lager', 2],
+  ['sorteras', 'Sorteras', 'lager', 2],
+  ['mot_orten', 'På väg till din ort', 'lastbil', 2],
+
+  ['forbereds_utk', 'Förbereds för utkörning', 'lastbil', 3],
+  ['i_bilen', 'I bilen på väg till dig', 'lastbil', 3],
+  ['paketbox', 'Inlagt i paketboxen', 'lager', 3],
+  ['ombud', 'Finns att hämta hos ombudet', 'lager', 3],
 ];
 
 export function delstegEtikett(ix) {

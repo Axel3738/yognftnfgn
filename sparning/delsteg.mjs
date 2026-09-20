@@ -1,40 +1,33 @@
-// Var på den internationella sträckan är paketet — "hämtat hos avsändaren",
-// "i luften", "genom tullen"?
+// Var på resan är paketet — "förbereds hos avsändaren", "i luften",
+// "sorteras", "i bilen på väg till dig"?
 //
 // Bakgrund (Axel 2026-09-20): skedet hette "Internationell transport" och
-// kändes "bara skumt". Kunden vill veta att vi har koll: att paketet har
-// lämnat lagret, att det ligger på ett flyg, att det är genom tullen. Datan
-// vet det redan — fraktbolaget skannar varje sådant steg — men sidan sa det
-// inte, för allt mellan avsändaren och Sverige låg i ETT skede.
+// kändes "bara skumt". Kunden vill veta att vi har koll. Samma dag, efter
+// att ha sett första versionen: stegen i Sverige ska vara TYDLIGAST — inne
+// på terminalen, sorteras, i bilen på väg till din stad — och stegen före
+// Sverige ska vara lugna, bara att ordern är på väg och hanteras.
 //
-// Det här är alltså ingen ny information. Det är samma skanningar, lästa en
-// gång till med en annan fråga.
+// Det här är ingen ny information. Det är samma skanningar, lästa en gång
+// till med en annan fråga.
 //
-// ⚠️ SAMMA DISCIPLIN SOM steg.mjs: bara fraser som ENTYDIGT betyder ett
-// delskede står i tabellen. "Arrived at sort facility" och "Departed from
-// facility" händer både i Shenzhen och i Rozenburg — de är neutrala och
-// flyttar ingenting. Mätt 2026-09-20: med de tvetydiga fraserna inräknade
-// stod 257 av 432 paket som "genom tullen"; med bara de entydiga blev det
-// 250, och de 7 andra hade flyttats fram på en skanning som lika gärna kunde
-// ha skett i Kina. Ett delskede som gissar är värre än inget delskede.
+// ⚠️ SAMMA DISCIPLIN SOM steg.mjs: en fras måste betyda ETT delskede.
+// Skillnaden mot steg.mjs är att delskedet är BUNDET TILL SITT HUVUDSKEDE:
+// "Arrived at sort facility" händer både i Shenzhen och i Malmö, men den
+// står här som ett delskede i skede 2 (Framme i landet) och gäller därför
+// bara när skanningen redan ÄR klassad som svensk. I skede 1 är den neutral
+// och flyttar ingenting. Det är steg.mjs som avgjort landsfrågan, med
+// PostNords förhandsaviseringsundantag inbakat — den bedömningen görs
+// aldrig om här.
 //
-// ⚠️ INGET DELSKEDE FÅR PÅSTÅ SVERIGE. Ankomsten till mottagarlandet är
-// huvudskedet `i_landet` och avgörs av steg.mjs, med PostNords
-// förhandsaviseringsundantag inbakat. Delskedena beskriver resan dit — de
-// slutar vid tullen, aldrig i Sverige. `Landat` säger med flit inte var.
+// Mätt 2026-09-20 på den publicerade datan (1 055 paket, 11 206 skanningar):
+// 707 skanningar säger "kommit till sorteringsterminalen", varav 482 i
+// utlandet och 225 i Sverige. Utan kopplingen till huvudskedet hade de 482
+// blivit "Sorteras" mitt i Kina.
 //
-// Uppmätt fördelning 2026-09-20 på de 432 paket som stod i internationell
-// transport i den publicerade datan (median dygn i delskedet inom parentes):
-//   Hämtat hos avsändaren 92 (0,3)   ·  Klart för avfärd 23 (0,8)
-//   På flygplatsen 56 (0,7)          ·  I luften 2 (1,0)
-//   Landat 8 (1,4)                   ·  Hos tullen 1 (0,2)
-//   Genom tullen 250 (1,3)
-// "I luften" är med flit ett litet tal: flyget lyfter och landar oftast
-// samma dygn, så nästan inget paket STÅR där. Delskedet passeras ändå, och
-// syns i historiken.
+// ⚠️ INGET DELSKEDE FÅR PÅSTÅ ANKOMSTEN till mottagarlandet. Den är
+// huvudskedet `i_landet`. Därför heter delskedet i luften "Landat", inte
+// "Landat i Sverige".
 
-// Etiketterna och motiven bor i uppacka.mjs — den filen körs också i kundens
-// webbläsare. Här bor fraserna som avgör vilket delskede en skanning bär.
 import { normalisera } from './sprak.mjs';
 import { DELSTEG } from './uppacka.mjs';
 
@@ -45,8 +38,27 @@ const NR = {};
 const satt = (nyckel, fraser) => {
   const ix = DELSTEG.findIndex((d) => d[0] === nyckel);
   if (ix < 0) throw new Error(`delsteg.mjs: okänt delskede "${nyckel}"`);
-  for (const f of fraser) NR[normalisera(f)] = ix;
+  for (const f of fraser) {
+    const n = normalisera(f);
+    if (NR[n] !== undefined && NR[n] !== ix) {
+      throw new Error(`delsteg.mjs: frasen "${f}" pekar på två delskeden — en fras får bara betyda ett.`);
+    }
+    NR[n] = ix;
+  }
 };
+
+// ---------------------------------------------------------- skede 0: ordern
+
+satt('forbereds', [
+  'Shipment information received',
+  'Parcel information received',
+  'SHIPPING INFORMATION RECEIVED',
+  'Processing information input',
+  'Vi har fått en beställning på en leverans och väntar på paketet',
+  'We have received a notification from your shipper that they are preparing an item for you. The tracking information will be updated when the parcel is handed over to PostNord.',
+]);
+
+// ------------------------------------------------------- skede 1: på väg hit
 
 satt('hamtat', [
   'Shipment picked up',
@@ -69,17 +81,15 @@ satt('flygplats', [
   'Departure from the original airport',
 ]);
 
-satt('luften', [
-  'International flight has departed',
-]);
+satt('luften', ['International flight has departed']);
 
 satt('landat', [
   'International flight has arrived',
   'Arrival to the destination airport',
 ]);
 
-// ⚠️ "Start Customs Clearence" och "NOA received" sker i transitlandet, inte
-// i Sverige — därför "Hos tullen" och inte "Hos svenska tullen".
+// ⚠️ Tullen här är transitlandets, inte Sveriges — därför "Hos tullen" och
+// inte "Hos svenska tullen".
 satt('tull', [
   'Start Customs Clearence',
   'NOA received',
@@ -92,36 +102,99 @@ satt('tullklart', [
   'Collected at Cargo Terminal',
 ]);
 
-// Delskedet en ENSKILD skanning bär, utan hänsyn till de andra.
-// `rå` = fraktbolagets egen text. INGET när frasen är neutral eller okänd.
+// --------------------------------------------- skede 2: framme i mottagarlandet
+
+satt('hos_bolaget', [
+  'Delivered to local carrier',
+  'Early Bird has received the package',
+  'THE SHIPMENT ITEM HAS ARRIVED AT THE COUNTRY OF DESTINATION.',
+]);
+
+satt('terminal', [
+  'Arrived at domestic terminal station',
+  'The package has arrived at terminal (T1).',
+  'The package has arrived at terminal (T2).',
+  'The package has arrived at terminal (T3).',
+  'Paket har ankommit till vår terminal',
+  'ankommit till terminal',
+  'THE SHIPMENT ITEM HAS ARRIVED AT THE DISTRIBUTION TERMINAL.',
+]);
+
+// De här två är tvetydiga MELLAN länder, men inte inom skede 2 — där är de
+// alltid den svenska sorteringen. Se varningen högst upp.
+satt('sorteras', [
+  'Arrived at sort facility',
+  'Your item is being processed at our sorting center',
+  'Sorted',
+]);
+
+satt('mot_orten', [
+  'Departed from facility',
+  'The shipment item has been loaded',
+]);
+
+// ------------------------------------------------- skede 3: ute för leverans
+
+satt('forbereds_utk', [
+  'Paketet förbereds för leverans',
+  'The package is activated for delivery.',
+]);
+
+satt('i_bilen', [
+  'THE DELIVERY OF THE SHIPMENT ITEM IS IN PROGRESS.',
+]);
+
+satt('ombud', [
+  'THE SHIPMENT ITEM HAS BEEN DELIVERED TO A SERVICE POINT.',
+  'PICK-UP AT SERVICEPOINT, SELECTED BY THE RECEIVER.',
+  'Paketet har uppdaterats till ombud',
+]);
+
+satt('paketbox', [
+  'A compartment is booked',
+  'Dropped off at locker by courier',
+]);
+
+// ---------------------------------------------------------------------------
+
+// Delskedet en ENSKILD fras bär, utan hänsyn till skede eller ordning.
+// INGET när frasen är neutral eller okänd.
 export function delstegForFras(rå) {
   const s = NR[normalisera(rå ?? '')];
   return typeof s === 'number' ? s : INGET;
 }
 
+// Vilket huvudskede hör delskedet till?
+export function huvudskedeFor(delsteg) {
+  const d = DELSTEG[delsteg];
+  return d ? d[3] : -1;
+}
+
 // Hela kedjan → delsteg per skanning.
 //
 // `handelser` ligger NYAST FÖRST (formatet i uppacka.mjs); klassificeringen
-// går kronologiskt för att kunna ärva framåt. En skanning utanför det
-// internationella skedet får alltid INGET — delskedena beskriver bara den
-// sträckan, och `steg` avgör vilken sträcka raden hör till.
+// går kronologiskt för att kunna ärva framåt.
 //
-// `arInternationell(h)` skickas in i stället för att importeras, så modulen
-// går att testa utan STEG-tabellen.
-export function klassificeraDelsteg(handelser, { arInternationell } = {}) {
+// Två regler utöver steg.mjs:
+//   1. Ett delskede gäller bara när skanningens EGET huvudskede är det
+//      delskedet hör till. Annars är frasen neutral här.
+//   2. Ärvningen sker INOM ett huvudskede. En neutral skanning i skede 2
+//      ärver aldrig "Genom tullen" från skede 1 — då hade den svenska raden
+//      visat var paketet var i Nederländerna.
+export function klassificeraDelsteg(handelser) {
   const kron = [...(handelser ?? [])].reverse();
-  let hogsta = INGET;
+  const hogstaPerSkede = new Map();
   const ut = kron.map((h) => {
-    if (h?.avvikelse) return { ...h, delsteg: INGET };
-    if (typeof arInternationell === 'function' && !arInternationell(h)) {
-      return { ...h, delsteg: INGET };
-    }
+    const skede = typeof h?.steg === 'number' ? h.steg : -1;
+    if (h?.avvikelse || skede < 0) return { ...h, delsteg: INGET };
+
+    const hogsta = hogstaPerSkede.has(skede) ? hogstaPerSkede.get(skede) : INGET;
     let d = delstegForFras(h?.ra ?? h?.text ?? '');
-    if (d === INGET) d = hogsta;            // neutral skanning ärver
-    if (d !== INGET && d < hogsta) d = hogsta; // paketet backar aldrig
-    if (d > hogsta) hogsta = d;
+    if (d !== INGET && huvudskedeFor(d) !== skede) d = INGET;   // regel 1
+    if (d === INGET) d = hogsta;                                // regel 2
+    if (d !== INGET && d < hogsta) d = hogsta;                  // backar aldrig
+    if (d > hogsta) hogstaPerSkede.set(skede, d);
     return { ...h, delsteg: d };
   });
   return ut.reverse();
 }
-

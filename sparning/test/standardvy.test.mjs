@@ -22,7 +22,7 @@ import { handelserUr, byggData } from '../paketdata.mjs';
 import { oversattFras, stadaPlats, landFor } from '../sprak.mjs';
 import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
 import { kontrolleraStandardvyn, kontrollera } from '../kontroll.mjs';
-import { delstegForFras } from '../delsteg.mjs';
+import { delstegForFras, huvudskedeFor, klassificeraDelsteg } from '../delsteg.mjs';
 import { byggSidkropp } from '../sida.mjs';
 
 const FIXTUR = JSON.parse(readFileSync(new URL('./fixturer/riktiga-paket.json', import.meta.url), 'utf8'));
@@ -75,9 +75,9 @@ test('sidans skriptmall bär inga bakåtfnuttar', () => {
 // stegnumret ligger dessutom i varje redan byggd datafil.
 test('skedenas nycklar, ordning och etiketter är låsta', () => {
   assert.deepEqual(STEG, [
-    ['bestalld', 'Beställningen är registrerad'],
-    ['pa_vag', 'På väg till {{land}}'],
-    ['i_landet', 'Ankommit till {{land}}'],
+    ['bestalld', 'Ordern är mottagen'],
+    ['pa_vag', 'Paketet är på väg'],
+    ['i_landet', 'Framme i {{land}}'],
     ['utkorning', 'Ute för leverans'],
     ['levererat', 'Levererat'],
   ]);
@@ -234,34 +234,77 @@ test('delskedet pekar alltid på en riktig skanning i historiken', () => {
   }
 });
 
-test('delskedet finns BARA på den internationella sträckan', () => {
+// ⚠️ DET HÄR ÄR REGELN HELA DELSTEGSBYGGET VILAR PÅ.
+// Ett delskede är bundet till sitt huvudskede. "Arrived at sort facility"
+// händer både i Shenzhen och i Malmö; den står som "Sorteras" i skede 2 och
+// är neutral i skede 1. Släpper bindningen blir 482 kinesiska skanningar
+// "Sorteras" (mätt 2026-09-20 på den publicerade datan).
+test('varje delskede hör till sitt eget huvudskede', () => {
   const { paket, data } = byggAllt();
   let sedda = 0;
+  const skedenSedda = new Set();
   for (const p of paket) {
     const u = packaUppEtt(data, p.nummer);
     for (const h of u.handelser) {
       if (h.delsteg < 0) continue;
       sedda++;
-      assert.ok(h.steg >= 0 && h.steg < I_LANDET_NR,
-        `${p.nummer}: en skanning i skede ${h.steg} bär delskede ${h.delsteg} — delskeden hör bara till resan hit`);
+      skedenSedda.add(h.steg);
+      assert.equal(huvudskedeFor(h.delsteg), h.steg,
+        `${p.nummer}: skanningen i skede ${h.steg} bär delskedet "${DELSTEG[h.delsteg][1]}" som hör till skede ${huvudskedeFor(h.delsteg)}`);
     }
     for (const s of u.sammanfattning.steg) {
-      if (s.nyckel === 'pa_vag' || s.nyckel === 'bestalld') continue;
-      assert.equal(s.delsteg, -1, `${p.nummer}: skedet "${s.nyckel}" ska inte bära något delskede`);
+      if (s.delsteg < 0) continue;
+      assert.equal(huvudskedeFor(s.delsteg), s.nr,
+        `${p.nummer}: skedet "${s.nyckel}" visar ett delskede från ett annat skede`);
     }
   }
   assert.ok(sedda > 20, 'för få delskeden för att testet ska betyda något');
+  assert.ok(skedenSedda.size >= 3, `delskeden syns bara i skede ${[...skedenSedda]} — hela resan ska vara täckt`);
 });
 
-test('ett tvetydigt fraktbolagsord flyttar aldrig fram delskedet', () => {
-  // "Arrived at sort facility" händer både i Shenzhen och i Rozenburg.
-  // Den får därför inte ensam göra ett paket "Genom tullen".
-  assert.equal(delstegForFras('Arrived at sort facility'), -1);
-  assert.equal(delstegForFras('Departed from facility'), -1);
-  assert.equal(delstegForFras('Shipment is in transit to next facility'), -1);
-  // De entydiga ska däremot träffa.
-  assert.ok(delstegForFras('International flight has departed') >= 0);
-  assert.ok(delstegForFras('Clearance processing completed - Import') >= 0);
+test('de svenska skedena har egna delskeden', () => {
+  const { data } = byggAllt();
+  // Levererat paket som gick hela vägen: skedet "Framme i Sverige" ska bära
+  // ett svenskt delskede, inte tullen från resan hit.
+  const u = packaUppEtt(data, 'YT2625400704778854');
+  const iLandet = u.sammanfattning.steg[2];
+  assert.ok(iLandet.nadd);
+  assert.equal(huvudskedeFor(iLandet.delsteg), 2, 'ankomstskedet visar ett delskede från fel del av resan');
+  assert.ok(['Hos fraktbolaget', 'På terminalen', 'Sorteras', 'På väg till din ort'].includes(iLandet.delstegEtikett),
+    `oväntat delskede i Sverige: ${iLandet.delstegEtikett}`);
+  // Och utkörningen ska ha sitt eget.
+  const utk = u.sammanfattning.steg[3];
+  assert.ok(utk.nadd);
+  assert.equal(huvudskedeFor(utk.delsteg), 3);
+});
+
+test('ett tvetydigt fraktbolagsord binds till ETT skede, aldrig två', () => {
+  // "Arrived at sort facility" betyder "Sorteras" — men bara i skede 2.
+  const sort = delstegForFras('Arrived at sort facility');
+  assert.ok(sort >= 0, 'frasen ska ha ett delskede');
+  assert.equal(huvudskedeFor(sort), 2, 'sorteringen hör till den svenska sträckan');
+  assert.equal(DELSTEG[sort][1], 'Sorteras');
+
+  // Klassificeraren släpper den i skede 1 och tar den i skede 2.
+  const kedja = [
+    { iso: '2026-09-15T10:00', ra: 'Arrived at sort facility', steg: 2, avvikelse: false },
+    { iso: '2026-09-12T10:00', ra: 'Arrived at sort facility', steg: 1, avvikelse: false },
+  ];
+  const ut = klassificeraDelsteg(kedja);
+  assert.equal(ut[0].delsteg, sort, 'i Sverige ska den räknas');
+  assert.equal(ut[1].delsteg, -1, 'i utlandet ska samma fras vara neutral');
+});
+
+test('ett neutralt ord ärver aldrig över en skedesgräns', () => {
+  // Utan spärren hade den svenska raden visat "Genom tullen" — alltså var
+  // paketet var i Nederländerna, på skedet som säger att det är i Sverige.
+  const kedja = [
+    { iso: '2026-09-15T10:00', ra: 'Shipment is in transit to next facility', steg: 2, avvikelse: false },
+    { iso: '2026-09-13T10:00', ra: 'Clearance processing completed - Import', steg: 1, avvikelse: false },
+  ];
+  const ut = klassificeraDelsteg(kedja);
+  assert.equal(DELSTEG[ut[1].delsteg][1], 'Genom tullen');
+  assert.equal(ut[0].delsteg, -1, 'skede 2 ärvde ett delskede från skede 1');
 });
 
 // ⚠️ Avvikelseraden ligger i STANDARDVYN, ovanför stegen, och undantas inte

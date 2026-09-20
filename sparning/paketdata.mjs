@@ -27,7 +27,7 @@
 // 14,8 % av samma data utan ordbok. Svenskan kostar alltså ingenting:
 // ordboken bär varje fras EN gång.
 
-import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut, I_LANDET_NR } from './uppacka.mjs';
+import { FORMAT, STATUSAR, STANDARDLAND, isoTillMinut } from './uppacka.mjs';
 import { klassificera } from './steg.mjs';
 import { klassificeraDelsteg } from './delsteg.mjs';
 
@@ -308,12 +308,10 @@ export function byggData(paket, { nu, mottagarland = STANDARDLAND } = {}) {
       rader[i].avvikelse = !!klassade[i]?.avvikelse;
     }
 
-    // Var på den internationella sträckan? Samma sorts ren gruppering, ett
-    // lager ned: den rör varken tid, text, plats eller `steg`, och gäller
-    // BARA rader som redan klassats som internationell transport.
-    const medDelsteg = klassificeraDelsteg(rader, {
-      arInternationell: (r) => typeof r.steg === 'number' && r.steg >= 0 && r.steg < I_LANDET_NR,
-    });
+    // Var på resan? Samma sorts ren gruppering, ett lager ned: den rör
+    // varken tid, text, plats eller `steg`. Varje delskede är bundet till
+    // sitt huvudskede, så klassificeringen läser `steg` som redan är satt.
+    const medDelsteg = klassificeraDelsteg(rader);
     for (let i = 0; i < rader.length; i++) rader[i].delsteg = medDelsteg[i]?.delsteg ?? -1;
 
     // Map.set på en nyckel som redan finns behåller platsen i ordningen men
