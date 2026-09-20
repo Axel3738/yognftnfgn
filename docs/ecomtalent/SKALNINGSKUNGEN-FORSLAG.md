@@ -111,6 +111,17 @@ FÖRLORAS · KOSTNAD.
   löses med nytt fält, gamla kvar.
 - **KOSTNAD:** en parameter i tre anrop + ett fält. Verifiera först att
   MCP-anropet tar `action_attribution_windows` (`ads_get_field_context`).
+- **MÄTT 2026-09-20 (läs-bara, `META_ACCESS_TOKEN`, last_7d, aktiva kampanjer):**
+  SE-kontot 154 880 kr spend, ROAS default 3,06 mot 7d_click 3,00 — diff
+  **1,7 %** totalt. NO-kontot 63 453 kr, diff **0,0 %**. Tio av fjorton
+  SE-kampanjer (inkl. Taköverdraget 71 309 kr, 3,51/3,51) har default = klick,
+  alltså är deras attribution redan 7d click. Fyra kampanjer räknar in
+  1d_view: **Fiskespöhållaren 2,01 → 1,64 (18,6 %, BE 1,50)**, IBC-Tanköverdraget
+  2,25 → 2,09 (7,1 %), Båtmotorskyddet 3,75 → 3,55 (5,4 %), Bälteslipmaskinen
+  3,08 → 3,00 (2,5 %). Slutsats: view-through är försumbar på kontonivå men
+  över 5 % på tre kampanjer — motorn bör döma på `7d_click` för alla (en
+  parameter), så att Fiskespöhållaren inte skalas på ett tal som ligger 18 %
+  över det klickbaserade. Skript: `viewthrough.mjs` (scratch, ej i repot).
 
 ### 2.2 Säkring i den manuella zonen (Axels beslut — inte ur materialet)
 - **REGEL:** Budget över 4 000 kr (`MANUELL`): `MANUELL_FORLUST` två morgnar i
