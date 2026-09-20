@@ -105,22 +105,9 @@ function tomtext(vaknar) {
   return vaknar ? `${bas} — det brukar ta ${vaknar}.` : `${bas}.`;
 }
 
-// ⚠️ TILLFÄLLIG — väntar på Axels val (2026-09-20). Fraktbolagen skickar
-// nästan aldrig någon utkörningssignal: 13 av 204 paket, mätt 2026-09-19.
-// Skedet står därför grått och odaterat MELLAN två svarta rader på 93,6 % av
-// de levererade paketen, vilket läser som att något gått fel.
-//
-//   true  = "Ute för leverans" är en egen rad, som i dag (fem rader).
-//   false = skedet vävs in som en underrad på "Ankommit till {{land}}"
-//           (fyra rader, inget grått hål).
-//
-// Båda byggdes som förhandsvisningar åt Axel. När han valt: ta bort den här
-// konstanten och den gren i `visaPaket()` som inte vanns.
-export const UTKORNING_EGEN_RAD = true;
-
 // Texterna som skriptet behöver. Allt annat står i HTML:en, så det går att
 // läsa och rätta utan att gräva i JavaScript.
-function copydata(c, utkorningEgenRad) {
+function copydata(c) {
   return {
     idag: 'i dag',
     igar: 'i går',
@@ -131,11 +118,9 @@ function copydata(c, utkorningEgenRad) {
     // Utan den står sidan stilla i 4–9 dygn under den internationella
     // sträckan — 544 av 1 055 paket låg där när det mättes 2026-09-19.
     senast: 'Senaste skanning {{tid}}',
-    utkorningEgenRad: !!utkorningEgenRad,
-    utkorningUnderrad: 'Ute för leverans {{tid}}',
-    // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner
-    // på "På väg till …"-raden, så ikonen följer resan: låda → stämpel →
-    // flygplats → flygplan.
+    // Motiv per skede. Delskedets eget motiv (DELSTEG i uppacka.mjs) vinner,
+    // så ikonen följer resan: kvitto → låda → stämpel → flygplan → lager →
+    // lastbil → brevlåda.
     ikoner: {
       bestalld: 'kvitto', pa_vag: 'flyg', i_landet: 'lager',
       utkorning: 'lastbil', levererat: 'brevlada',
@@ -537,11 +522,6 @@ function starta() {
     return h.plats;
   }
 
-  function stegMedNyckel(steg, nyckel) {
-    for (var i = 0; i < steg.length; i++) if (steg[i].nyckel === nyckel) return steg[i];
-    return null;
-  }
-
   // Motiven. Varje ikon är en lista med path-data i ett 24x24-rutnät, ritade
   // med createElementNS i stället för en HTML-sträng — sidan sätter aldrig
   // uppmärkning från text, och den regeln gäller även våra egna konstanter.
@@ -608,18 +588,11 @@ function starta() {
     // historikens rader längre ned i samma funktion, och en "var rad" här
     // skuggar den i HELA visaPaket — historiken kastade "rad is not a
     // function" och kunden fick rutan "Vi hittar inte det numret".
+    // Fem rader, alltid. Axels val 2026-09-20 ("jag kör gärna på 5 steg").
+    // Varianten som vävde in utkörningen i ankomstraden är borttagen.
     for (var k = 0; k < s.length; k++) {
       var stegpost = s[k];
-      // Utkörningsskedet som underrad i stället för egen punkt: fraktbolagen
-      // skickar nästan aldrig signalen, och en grå rad mitt i kedjan läser
-      // som ett fel. Skedet finns kvar i datan oavsett vilket som valts.
-      if (!C.utkorningEgenRad && stegpost.nyckel === 'utkorning') continue;
-      var extra = null;
-      if (!C.utkorningEgenRad && stegpost.nyckel === 'i_landet') {
-        var uk = stegMedNyckel(s, 'utkorning');
-        if (uk && uk.nadd) extra = C.utkorningUnderrad.replace('{{tid}}', formatera(uk.tid));
-      }
-      stegruta.appendChild(stegrad(stegpost, stegpost.nr === p.sammanfattning.nu, extra));
+      stegruta.appendChild(stegrad(stegpost, stegpost.nr === p.sammanfattning.nu));
     }
     visaEl(stegruta, s.length > 0 && p.handelser.length > 0);
 
@@ -697,19 +670,16 @@ function starta() {
 // `data` är objektet ur `sparning/paketdata.mjs` byggData().data, alltså
 // exakt formatet `sparning/uppacka.mjs` beskriver. `konfig` är mejlens
 // konfiguration (`mejl/konfig.json`) eller ett utsnitt av den.
-// `val.utkorningEgenRad` överstyr UTKORNING_EGEN_RAD och finns bara för att
-// kunna bygga båda förhandsvisningarna åt Axel. Tas bort med konstanten.
-export function byggSidkropp(data, konfig, val) {
+export function byggSidkropp(data, konfig) {
   if (!data || typeof data !== 'object' || !data.k) {
     throw new Error('byggSidkropp(): datan saknar `k` — det är inte paketdatan ur sparning/paketdata.mjs.');
   }
   const c = lasKonfig(konfig);
-  const utkorningEgenRad = val && typeof val.utkorningEgenRad === 'boolean' ? val.utkorningEgenRad : UTKORNING_EGEN_RAD;
   // Samma eskapning som lyckohjulet: "</" i en JSON-sträng skulle stänga
   // <script>-taggen mitt i datan och tömma sidan. En ortsträng från ett
   // fraktbolag kan innehålla vad som helst.
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
-  const copy = JSON.stringify(copydata(c, utkorningEgenRad)).replace(/<\//g, '<\\/');
+  const copy = JSON.stringify(copydata(c)).replace(/<\//g, '<\\/');
   const mail = esk(c.support);
   const vantetid = c.vaknar
     ? ` Är paketet nyss skickat kan fraktbolaget ännu inte ha registrerat det — det brukar ta ${esk(c.vaknar)}.`
@@ -767,9 +737,9 @@ ${skript()}
 // tomt dokument runtom. Sidan hämtar ingenting från nätet, så den ser exakt
 // likadan ut här som i butiken — bortsett från temats typsnitt, som ärvs av
 // butiken men inte finns här.
-export function byggForhandsvisning(data, konfig, val) {
+export function byggForhandsvisning(data, konfig) {
   return `<!DOCTYPE html>
 <html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Spåra ditt paket</title>
 <style>body{margin:0;padding:24px 16px;font-family:Arial,Helvetica,sans-serif;background:#f7f7f7}.rte{background:#fff;padding:24px 16px;max-width:760px;margin:0 auto}</style></head>
-<body><div class="rte">${byggSidkropp(data, konfig, val)}</div></body></html>`;
+<body><div class="rte">${byggSidkropp(data, konfig)}</div></body></html>`;
 }
