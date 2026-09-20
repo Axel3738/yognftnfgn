@@ -722,3 +722,18 @@ teamspace och speglas hit) — söndagens briefdag gav därför inga briefer. `k
   Inget arbete är förlorat — `--fran "Approved"` fångar dem — men speglingens ordinarie kö kommer
   aldrig att se en enda rad så länge det pågår.
 - Pris 559 SEK / 548 NOK läst ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
+
+## 2026-09-20 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, alla tre marknaderna pausade
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader, **0 saknas i US**.
+- **Helt oförändrat sedan gårdagens runda:** `CARASHELL_US_Termoskydd Husbil 211 × 171 cm`
+  (`120251442339640435`) PAUSED med samma `updated_time` (2026-09-18 09:34 UTC) och **exakt
+  samma spend, 1 978,33 kr / 0 köp** — ingen eftersläpande attribution ens. Kopian
+  (`120251451414990435`) PAUSED sedan 2026-09-17, 616 kr / 0 köp. Båda orörda.
+- **Läget i stort:** SE pausad 18/9, NO pausad (avläst av nattvakten i natt), US pausad 18/9.
+  Produkten spenderar ingenting på någon marknad. Den här rutinen har haft tom kö tre dygn
+  i rad — det är väntat, inte ett fel.
+- Läge "US paused by owner": 0 rader hållna, 0 HeyGen-credits, inget uppladdat, ingen Notion-rad rörd.
+- Pris ur butiken: $99 på `carashell.com/products/termoskyddet?country=US`.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551251439307726912`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-20-us-termoskyddet/`.
