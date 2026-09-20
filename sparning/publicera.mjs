@@ -243,6 +243,36 @@ const sidmodul = await laddaSidmodul();
 const indata = { konfig: sidkonfig, data, statistik, paket: iFonster, nu: NU };
 const { kropp, form } = byggKropp(sidmodul, indata);
 
+// ⚠️ KÖR SIDANS EGET SKRIPT INNAN NÅGOT SKICKAS TILL SHOPIFY.
+// Hela sidan ligger i ETT script-block, och varenda synlig ruta föds med
+// attributet `hidden` — de visas av skriptet. Ett syntaxfel någonstans i de
+// ~350 kB:n ger därför en HELT TOM sida hos kunden, och nödläget nodlage()
+// bor i samma block så det dör med. Markörkontrollerna nedan letar bara
+// efter strängar och är gröna ändå: bevisat 2026-09-20 genom att skriva
+// `function starta( {` — alla kontroller ✅, sidan tom.
+// Testsviten hade den här grinden; publiceringen hade den inte.
+function provkorSkriptet(html) {
+  const bitar = String(html).split('<script>');
+  const sista = bitar[bitar.length - 1];
+  const slut = sista.indexOf('</script>');
+  if (bitar.length < 2 || slut < 0) return 'hittade inget skriptblock i sidkroppen';
+  try {
+    // Bara PARSAS, inte köras — den rör document/location som inte finns här.
+    new Function(sista.slice(0, slut));
+    return null;
+  } catch (fel) {
+    return String(fel && fel.message ? fel.message : fel);
+  }
+}
+
+const syntaxfel = provkorSkriptet(kropp);
+if (syntaxfel) {
+  console.error(`❌ Sidans skript går inte att tolka: ${syntaxfel}`);
+  console.error('   Kunden hade fått en helt tom sida. Inget skickat till Shopify.');
+  process.exit(1);
+}
+
+
 const markor = markorer(kropp, sidmodul, s);
 if (!markor.ok) {
   console.error(`❌ ${markor.fel}`);

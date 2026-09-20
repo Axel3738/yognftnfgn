@@ -8,7 +8,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 import { byggSidkropp, byggForhandsvisning, uppackarkalla, SIDMARKOR, DATAMARKOR, COPYMARKOR } from '../sida.mjs';
-import { isoTillMinut, packaUppEtt } from '../uppacka.mjs';
+import { isoTillMinut, packaUppEtt, bavernummer, bavernummerSnyggt } from '../uppacka.mjs';
 
 // --------------------------------------------------------------- fixturen
 
@@ -127,7 +127,7 @@ class Attrapp {
 // ser ut att handla om något annat. bbs-steg, bbs-mer och bbs-avvikelse
 // kom med sammanfattningsvyn 2026-09-19.
 const IDN = ['bb-spar', 'bbs-sista', 'bbs-sok', 'bbs-traff', 'bbs-saknas', 'bbs-falt', 'bbs-form', 'bbs-fel',
-  'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-bolag', 'bbs-nummer', 'bbs-byggd',
+  'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-leverans', 'bbs-nummer', 'bbs-byggd',
   'bbs-steg', 'bbs-mer', 'bbs-avvikelse'];
 
 // Delar en adress i `search` och `hash` som en webbläsare gör. Tidigare lade
@@ -412,8 +412,11 @@ test('sidan körs: numret ur adressen ger rubrik, fakta och hela kedjan', () => 
 
   assert.equal(n.get('bbs-rubrik').textContent, 'Paketet är på väg');
   assert.equal(n.get('bbs-ingress').textContent, 'Paketet är på väg (Malmö)');
-  assert.equal(n.get('bbs-bolag').textContent, 'YunExpress');
-  assert.equal(n.get('bbs-nummer').textContent, 'YT2626100708674690');
+  // ⚠️ Fraktbolaget visas INTE längre, och numret är bävernumret. Axels
+  // beslut 2026-09-20: kunden ska inte möta "YunExpress" eller "YT…".
+  assert.equal(n.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708674690'));
+  assert.match(n.get('bbs-nummer').textContent, /^BB-[2-9A-HJ-NP-Z]{7}$/);
+  assert.ok(!kundtext(byggSidkropp(data, KONFIG)).includes('YunExpress'), 'fraktbolaget ska inte stå i vyn');
   assert.equal(n.get('bbs-traff').hidden, false);
   assert.equal(n.get('bbs-sok').hidden, true, 'sökfältet ska inte ligga i vägen när paketet hittades');
   assert.equal(n.get('bbs-saknas').hidden, true);
@@ -457,7 +460,7 @@ test('sidan körs: utan nummer, utan skanningar, okänt nummer, tomt fält', () 
   // Numret går också att läsa ur #-delen (mejlklienter som tappar ?-delen).
   const viaHash = kor(kropp, '#nummer=YT2626100708870041');
   assert.equal(viaHash.get('bbs-rubrik').textContent, 'Paketet är levererat');
-  assert.equal(viaHash.get('bbs-bolag').textContent, '4PX');
+  assert.equal(viaHash.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708870041'));
 
   // Okänt nummer ⇒ förklaringen OCH fältet, så kunden kan pröva igen.
   const okant = kor(kropp, '?nummer=YT0000000000000000');
@@ -493,7 +496,7 @@ test('numret läses ur #-delen, både "#nummer=" och ett bart "#YT…"', () => {
 
   // Och frågesträngen vinner över ankaret när båda finns.
   const bada = kor(kropp, '?nummer=YT2626100708674690#YT2626100708870041');
-  assert.equal(bada.get('bbs-nummer').textContent, 'YT2626100708674690');
+  assert.equal(bada.get('bbs-nummer').textContent, bavernummerSnyggt('YT2626100708674690'));
 });
 
 test('trasig procentkodning i adressen ger sökfältet, aldrig en tom sida', () => {

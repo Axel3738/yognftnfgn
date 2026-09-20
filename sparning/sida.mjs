@@ -95,6 +95,12 @@ function lasKonfig(konfig) {
     ram: butik.farg_ram ?? k.farg_ram ?? STANDARDSTIL.ram,
     font: butik.font_rubrik ?? k.font_rubrik ?? STANDARDSTIL.font,
     vaknar: vaknar ? String(vaknar).trim() : null,
+    // Leveranslöftet kunden redan fått i mejlen (mejl/konfig.json →
+    // frakt.leverans_dagar_min/max). ⚠️ Hittas ALDRIG på här: saknas talen
+    // visar sidan ingen beräknad leverans alls. Sidan och mejlen får aldrig
+    // lova olika saker.
+    levMin: Number.isFinite(frakt.leverans_dagar_min) ? frakt.leverans_dagar_min : null,
+    levMax: Number.isFinite(frakt.leverans_dagar_max) ? frakt.leverans_dagar_max : null,
   };
 }
 
@@ -136,8 +142,15 @@ function copydata(c) {
     // påstå det heller — står det "hämtar" tror kunden att en uppdatering är
     // ett klick bort.
     uppdaterad: 'Uppdaterad {{tid}} · nya skanningar läggs till varje timme',
-    bolag: 'Fraktbolag',
-    nummer: 'Spårningsnummer',
+    nummer: 'Ditt paketnummer',
+    // Beräknad leverans. Dagarna kommer ur mejlens konfiguration, samma
+    // löfte kunden redan fått — aldrig ur huvudet. Saknas de visas ingen
+    // ruta alls.
+    leverans: 'Beräknad leverans',
+    leveransSen: 'Leveransen är försenad',
+    leveransSenText: 'Den skulle ha varit framme {{datum}}. Mejla oss så kollar vi upp den åt dig.',
+    levMin: c.levMin,
+    levMax: c.levMax,
     tomtFalt: 'Klistra in numret från leveransmejlet först.',
   };
 }
@@ -191,6 +204,12 @@ function stil(c) {
 #bb-spar .bbs-knapp--tunn{background:#fff;color:var(--bbs-svart);border:2px solid var(--bbs-svart);font-size:17px;min-height:48px}
 #bb-spar .bbs-knapp--tunn:hover{background:var(--bbs-ram);color:var(--bbs-svart)}
 #bb-spar .bbs-fel{color:var(--bbs-rod);font-weight:700;margin:0 0 12px}
+#bb-spar .bbs-leverans{margin:0 0 16px;padding:14px 16px;border:2px solid var(--bbs-svart);background:#fff}
+#bb-spar .bbs-leverans .bbs-levetikett{display:block;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 4px}
+#bb-spar .bbs-leverans .bbs-levdatum{display:block;font-family:${c.font};font-size:24px;line-height:1.15;text-transform:uppercase;letter-spacing:.5px}
+#bb-spar .bbs-leverans .bbs-levtext{display:block;font-size:14px;margin:6px 0 0}
+#bb-spar .bbs-leverans--sen{border-color:var(--bbs-rod)}
+#bb-spar .bbs-leverans--sen .bbs-levdatum{color:var(--bbs-rod)}
 #bb-spar .bbs-fakta{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0 0 18px;padding:14px 16px;border:1px solid var(--bbs-ram)}
 #bb-spar .bbs-fakta div{min-width:0}
 #bb-spar .bbs-fakta dt{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 2px}
@@ -567,8 +586,77 @@ function starta() {
     return (C.ikoner && C.ikoner[s.nyckel]) || 'lada';
   }
 
+  // Beräknad leverans: avsändningsdagen + löftet kunden redan fått i mejlen.
+  //
+  // ⚠️ Ankaret är den FÖRSTA skanningen i "Paketet är på väg", alltså när
+  // fraktbolaget faktiskt fick paketet — inte bokningen, som kan ligga dygn
+  // före. Finns inget sådant skede än används bokningen, och då räknas
+  // packtiden inte bort; fönstret blir därför försiktigt brett, inte snävt.
+  //
+  // ⚠️ Räknas i KALENDERDAGAR, som löftet i mejlen. Ingen avrundning åt något
+  // håll, och inga helgdagar — vi har ingen kalender för fraktbolagets
+  // arbetsdagar och ska inte låtsas ha en.
+  function fonster(p) {
+    if (!C.levMin || !C.levMax) return null;
+    var s = p.sammanfattning && p.sammanfattning.steg ? p.sammanfattning.steg : [];
+    var ankare = null;
+    for (var i = 0; i < s.length; i++) {
+      if (s[i].nyckel === 'pa_vag' && s[i].nadd) { ankare = s[i].tid; break; }
+    }
+    if (!ankare) {
+      for (var j = 0; j < s.length; j++) if (s[j].nyckel === 'bestalld' && s[j].nadd) { ankare = s[j].tid; break; }
+    }
+    if (!ankare || isNaN(ankare.getTime())) return null;
+    var fran = new Date(ankare.getTime() + C.levMin * 86400000);
+    var till = new Date(ankare.getTime() + C.levMax * 86400000);
+    return { fran: fran, till: till, sen: Date.now() > till.getTime() };
+  }
+
+  // "25–28 sep" — och med månad på båda när de skiljer sig.
+  function spann(a, b) {
+    var alt = { timeZone: TZ, day: 'numeric', month: 'short' };
+    var ettA = a.toLocaleDateString('sv-SE', alt).replace(/\./g, '');
+    var ettB = b.toLocaleDateString('sv-SE', alt).replace(/\./g, '');
+    var m = { timeZone: TZ, month: 'short' };
+    if (a.toLocaleDateString('sv-SE', m) === b.toLocaleDateString('sv-SE', m)) {
+      return a.toLocaleDateString('sv-SE', { timeZone: TZ, day: 'numeric' }) + '–' + ettB;
+    }
+    return ettA + ' – ' + ettB;
+  }
+
+  function visaLeverans(p) {
+    var ruta = $('bbs-leverans');
+    ruta.textContent = '';
+    ruta.className = 'bbs-leverans';
+    // Framme ⇒ ingen prognos. Är paketet levererat eller ligger och väntar
+    // hos ombudet är en beräknad leveransdag inaktuell och bara förvirrande —
+    // kunden ska hämta det, inte vänta på det.
+    var klar = p.statusKod === 'DELIVERED' || p.statusKod === 'READY_FOR_PICKUP';
+    var f = klar ? null : fonster(p);
+    if (!f) { visaEl(ruta, false); return; }
+    var et = document.createElement('span');
+    et.className = 'bbs-levetikett';
+    et.textContent = f.sen ? C.leveransSen : C.leverans;
+    ruta.appendChild(et);
+    var d = document.createElement('span');
+    d.className = 'bbs-levdatum';
+    d.textContent = spann(f.fran, f.till);
+    ruta.appendChild(d);
+    if (f.sen) {
+      ruta.className = 'bbs-leverans bbs-leverans--sen';
+      var t = document.createElement('span');
+      t.className = 'bbs-levtext';
+      t.textContent = C.leveransSenText.split('{{datum}}').join(spann(f.fran, f.till));
+      ruta.textContent = '';
+      ruta.appendChild(et);
+      ruta.appendChild(t);
+    }
+    visaEl(ruta, true);
+  }
+
   function visaPaket(p) {
     visaEl(sok, false); visaEl(saknas, false); visaEl(traff, true); visaEl(annat, true);
+    visaLeverans(p);
     $('bbs-rubrik').textContent = C.rubriker[p.statusKod] || p.status || C.reservrubrik;
 
     // Ingressen bär fraktbolagets senaste text. Den STÅR KVAR med flit: den
@@ -580,8 +668,11 @@ function starta() {
     var ingress = forsta ? forsta.text + (ingressort ? ' (' + ingressort + ')' : '') : '';
     $('bbs-ingress').textContent = ingress;
     visaEl($('bbs-ingress'), !!ingress);
-    $('bbs-bolag').textContent = p.bolag || '–';
-    $('bbs-nummer').textContent = p.nummer;
+    // ⚠️ Fraktbolagets namn (YunExpress, 4PX) och dess nummer (YT…, 4PX…)
+    // skrivs INTE ut. Axels beslut 2026-09-20: kunden ska inte se var
+    // paketet kommer ifrån. Båda finns kvar i datan — historiken bakom
+    // "Mer information" är oförändrad — men vyn visar bävernumret.
+    $('bbs-nummer').textContent = p.baver || p.nummer;
 
     // Sista biten i Sverige: vem som kör hem paketet och vad det heter hos
     // dem. Länken pekar rakt på paketet när vi har en PROVAD djuplänk, annars
@@ -616,7 +707,11 @@ function starta() {
         sista.appendChild(nr);
       }
     }
-    visaEl(sista, Boolean(sb && sb.namn));
+    // ⚠️ BARA när paketet ligger och väntar på att hämtas. Axels beslut
+    // 2026-09-20: annars kan kunden slå upp bolagets eget nummer hos t.ex.
+    // CityMail och se hela kedjan från Kina. När paketet ska hämtas behöver
+    // hen däremot numret — då väger nyttan tyngre.
+    visaEl(sista, Boolean(sb && sb.namn && p.statusKod === 'READY_FOR_PICKUP'));
 
     // Avvikelser göms inte bland punkterna — en retur eller ett misslyckat
     // leveransförsök är det enda kunden bryr sig om just då. Orten stryks
@@ -663,8 +758,22 @@ function starta() {
     visaEl(tomrad, p.handelser.length === 0);
   }
 
+  // Bävernummer → spårningsnummer. Byggs en gång, vid första uppslaget.
+  // Kunden har numret ur mejlet; gamla mejl bär fortfarande YT-numret och
+  // ska fortsätta fungera, så båda slås upp.
+  var baverIndex = null;
+  function viaBaver(n) {
+    if (!baverIndex) {
+      baverIndex = {};
+      for (var k in D.k) if (Object.prototype.hasOwnProperty.call(D.k, k)) baverIndex[bavernummer(k)] = k;
+    }
+    return Object.prototype.hasOwnProperty.call(baverIndex, n) ? baverIndex[n] : null;
+  }
+
   function slaUpp(nr, franAdressen) {
     var n = nyckel(nr);
+    var somBaver = n ? viaBaver(n) : null;
+    if (somBaver) n = somBaver;
     if (!n) { visaSok(String(nr || ''), false, franAdressen ? '' : C.tomtFalt); return; }
     // En skadad post i datan (en händelse utan minut ⇒ minutTillIso() kastar
     // på en ogiltig tid) får inte tömma sidan. Kunden får då samma vänliga
@@ -753,9 +862,9 @@ export function byggSidkropp(data, konfig) {
   <p class="bbs-etikett">Spårning</p>
   <h2 id="bbs-rubrik"></h2>
   <p id="bbs-ingress" class="bbs-ingress" hidden></p>
+  <p id="bbs-leverans" class="bbs-leverans" hidden></p>
   <dl class="bbs-fakta">
-    <div><dt>Fraktbolag</dt><dd id="bbs-bolag"></dd></div>
-    <div><dt>Spårningsnummer</dt><dd id="bbs-nummer"></dd></div>
+    <div><dt>Ditt paketnummer</dt><dd id="bbs-nummer"></dd></div>
   </dl>
   <p id="bbs-sista" class="bbs-sista" hidden></p>
   <p id="bbs-tom" hidden></p>

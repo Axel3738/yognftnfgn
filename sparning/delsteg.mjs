@@ -99,10 +99,18 @@ satt('tull', [
   'Arrived at the warehouse of Customs Broker',
 ]);
 
+// ⚠️ 'Collected at Cargo Terminal' stod här till 2026-09-20 och var FEL.
+// Ordboken översätter den till "Paketet är hämtat på fraktterminalen" — den
+// säger ingenting om tullen. Mätt på 1 055 riktiga paket: 465 av 466 hade
+// den FÖRE 'Start Customs Clearence', i snitt drygt en och en halv timme
+// före den riktiga klareringen. Sidan sa alltså "Genom tullen" medan
+// fraktbolagets nästa skanning sa att tullhanteringen precis börjat, och
+// "backar aldrig"-regeln låste fast påståendet resten av resan.
+// Den är nu NEUTRAL: den flyttar ingenting, och skedet sätts av de två
+// fraser som faktiskt betyder att tullen är klar.
 satt('tullklart', [
   'Clearance processing completed - Import',
   'Released from customs: Customs cleared',
-  'Collected at Cargo Terminal',
 ]);
 
 // --------------------------------------------- skede 2: framme i mottagarlandet

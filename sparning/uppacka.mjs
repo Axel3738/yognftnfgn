@@ -108,7 +108,12 @@ export const I_LANDET_NR = STEG.findIndex((rad) => rad[0] === 'i_landet');
 // den bindningen som gör att "Arrived at sort facility" kan betyda
 // "Sorteras" i Sverige utan att betyda det i Kina — se delsteg.mjs.
 export const DELSTEG = [
-  ['forbereds', 'Förbereds hos avsändaren', 'kvitto', 0],
+  // ⚠️ Hette "Förbereds hos avsändaren" till 2026-09-20 och lovade för mycket:
+  // fyra av de sex fraser som sätter skedet är rena datahändelser ("Shipment
+  // information received"), och i ett riktigt paket kom den tre dygn EFTER
+  // upphämtningen. Vi ser att fraktbolaget har bokningen, inte att någon
+  // packar något.
+  ['forbereds', 'Inbokad hos fraktbolaget', 'kvitto', 0],
 
   ['hamtat', 'Hämtat hos avsändaren', 'lada', 1],
   ['utforsel', 'Klart för avfärd', 'stampel', 1],
@@ -166,6 +171,62 @@ export function isoTillMinut(tid) {
 // mejlet, och det kan bära blanksteg.
 export function nyckel(nummer) {
   return String(nummer == null ? '' : nummer).toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+// ---------------------------------------------------------------------------
+// Bävernumret
+// ---------------------------------------------------------------------------
+//
+// Axels beslut 2026-09-20: "Ta bort & maska med ett eget bävernummer så de
+// inte ser YT nr". Fraktbolagets nummer börjar på YT eller 4PX och skvallrar
+// om var paketet kommer ifrån.
+//
+// Numret räknas fram UR spårningsnumret, med en ren funktion som körs
+// likadant i bygget och i kundens webbläsare. Det betyder:
+//   - Ingen tabell att hålla i synk, inget extra i datafilen.
+//   - Samma paket får ALLTID samma bävernummer, varje timme, för alltid.
+//   - Gamla mejl med ?nummer=YT… fungerar kvar: sidan slår upp båda.
+//
+// ⚠️ DET HÄR ÄR MASKERING, INTE SÄKERHET. Datablocket i sidan bär fortfarande
+// varje spårningsnummer i klartext — det måste det, för uppslaget sker i
+// webbläsaren. Den som läser sidkällan ser dem. Skyddet mot att läsa andras
+// paket är att datan inte bär NAMN, ADRESS eller ORDERNUMMER, och att
+// uppslaget kräver ett nummer man inte kan gissa. Bävernumret ändrar inget
+// av det; det gör bara att KUNDEN inte möter "YT…" i vyn.
+//
+// Alfabetet saknar 0, 1, I och O med flit: kunden kan behöva läsa upp numret
+// i telefon eller skriva av det ur ett mejl.
+var BAVER_ALFABET = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+
+function fnv1a(text, start) {
+  var h = start >>> 0;
+  for (var i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619) >>> 0;
+  }
+  return h >>> 0;
+}
+
+// Spårningsnummer → "BB" + sju tecken. 32^7 ≈ 3,4·10^10 möjliga nummer mot
+// ~1 100 paket i fönstret, så en krock är osannolik — men bygget mäter det
+// ändå (se byggData i paketdata.mjs) i stället för att lita på oddsen.
+export function bavernummer(nummer) {
+  var n = nyckel(nummer);
+  if (!n) return '';
+  var a = fnv1a(n, 2166136261);
+  var b = fnv1a(n + '|baver', 2654435761);
+  var ut = '';
+  var x = a;
+  for (var i = 0; i < 4; i++) { ut += BAVER_ALFABET.charAt(x & 31); x = x >>> 5; }
+  var y = b;
+  for (var j = 0; j < 3; j++) { ut += BAVER_ALFABET.charAt(y & 31); y = y >>> 5; }
+  return 'BB' + ut;
+}
+
+// Så kunden ser det: BB-4K7N2QX. Uppslaget normaliserar bort bindestrecket.
+export function bavernummerSnyggt(nummer) {
+  var b = bavernummer(nummer);
+  return b ? b.slice(0, 2) + '-' + b.slice(2) : '';
 }
 
 // Orten och landet ihop, för den fullständiga historiken: "Rozenburg,
@@ -251,7 +312,14 @@ export function sammanfattning(handelser, land) {
     var rad = ut[s];
     // Händelserna ligger nyast först, så den sist sedda i ett skede är den
     // äldsta — alltså när paketet nådde dit.
-    if (!rad.nadd || (rad.iso && h.iso && h.iso < rad.iso)) {
+    // ⚠️ <= och inte <. Formatet har minutupplösning, så två skanningar i
+    // samma minut ger LIKA strängar, och listan är nyast först — den sist
+    // sedda av två lika är alltså den äldsta i sekunder. Med < vann i
+    // stället den nyaste, och skedet daterades av fel rad. Mätt på 1 055
+    // paket: 236 sådana krockar på 184 paket, 93 i ankomstskedet. Krav 4
+    // dömer just den raden, så felet stoppade hela timrundan för ALLA
+    // kunder, inte bara det paketet.
+    if (!rad.nadd || (rad.iso && h.iso && h.iso <= rad.iso)) {
       rad.nadd = true;
       rad.tid = h.tid;
       rad.iso = h.iso;
@@ -269,7 +337,7 @@ export function sammanfattning(handelser, land) {
     // Delskedet: det längst komna, och tiden för den FÖRSTA skanning som bar
     // det — alltså när paketet nådde dit, samma regel som för skedet själv.
     var dd = typeof h.delsteg === 'number' ? h.delsteg : -1;
-    if (dd >= 0 && (dd > rad.delsteg || (dd === rad.delsteg && rad.delstegIso && h.iso && h.iso < rad.delstegIso))) {
+    if (dd >= 0 && (dd > rad.delsteg || (dd === rad.delsteg && rad.delstegIso && h.iso && h.iso <= rad.delstegIso))) {
       rad.delsteg = dd;
       rad.delstegEtikett = delstegEtikett(dd);
       rad.delstegIkon = delstegIkon(dd);
@@ -336,6 +404,9 @@ export function packaUppEtt(data, nummer) {
 
   return {
     nummer: n,
+    // Kundens nummer. Axels beslut 2026-09-20: fraktbolagets YT…/4PX… ska
+    // aldrig mötas i vyn. Räknas ur numret, samma svar varje gång.
+    baver: bavernummerSnyggt(n),
     bolag: bolag[post[1]] == null ? null : bolag[post[1]],
     statusKod: rad[0],
     status: rad[1],

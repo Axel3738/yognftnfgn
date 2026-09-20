@@ -836,14 +836,23 @@ const SPARSIDA = 'https://baverbutiken.se/pages/spara';
 const SPARNING_LIQUID = `{% if fulfillment.tracking_number %}${SPARSIDA}?nummer={{ fulfillment.tracking_number | url_encode }}{% else %}{{ order_status_url }}{% endif %}`;
 const SPARNING_EXEMPEL = `${SPARSIDA}?nummer=${EXEMPEL.sparningsnummer}`;
 
+// ⚠️ NUMRET STÅR INTE LÄNGRE I MEJLET. Axels beslut 2026-09-20: "maska med
+// ett eget bävernummer så de inte ser YT nr". Fraktbolagets nummer börjar på
+// YT eller 4PX och skvallrar om varifrån paketet kommer.
+//
+// Bävernumret räknas fram ur spårningsnumret med en hashfunktion
+// (sparning/uppacka.mjs → bavernummer). Liquid kan inte räkna den, så mejlet
+// visar INGET nummer alls — knappen ovanför bär numret i adressen, och
+// spårningssidan visar bävernumret när kunden landar där. Kunden behöver
+// alltså aldrig numret i handen.
+//
+// Tidigare stod här "Spårningsnummer: {{ fulfillment.tracking_number }}" som
+// ren text (v9, Axels beslut 2026-09-18). Den raden är borta.
 function sparningsInfo(s, lage) {
   const inre =
     lage === 'liquid'
-      // Ren text, ingen länk (Axels beslut 2026-09-18 kväll): länken gick till
-      // fraktbolagets sida (UPS i testmejlet, 17track på riktiga ordrar) — kunden
-      // ska bara till vår orderstatussida, och dit går knappen ovanför.
-      ? `{% if fulfillment.tracking_number %}Spårningsnummer: <strong style="color: ${s.svart};">{{ fulfillment.tracking_number }}</strong>{% endif %}`
-      : `Spårningsnummer: <strong style="color: ${s.svart};">${EXEMPEL.sparningsnummer}</strong>`;
+      ? '{% if fulfillment.tracking_number %}Klicka på knappen ovan så visas ditt paket direkt.{% endif %}'
+      : 'Klicka på knappen ovan så visas ditt paket direkt.';
   return `
           <tr>
             <td align="center" style="padding: 8px 32px 4px;">

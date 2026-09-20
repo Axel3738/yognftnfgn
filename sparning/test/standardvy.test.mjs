@@ -20,7 +20,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { handelserUr, byggData } from '../paketdata.mjs';
 import { oversattFras, stadaPlats, landFor } from '../sprak.mjs';
-import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning } from '../uppacka.mjs';
+import { packaUppEtt, STEG, DELSTEG, I_LANDET_NR, sammanfattning, bavernummer, bavernummerSnyggt } from '../uppacka.mjs';
 import { kontrolleraStandardvyn, kontrollera } from '../kontroll.mjs';
 import { delstegForFras, huvudskedeFor, klassificeraDelsteg } from '../delsteg.mjs';
 import { sistaBiten } from '../sistabiten.mjs';
@@ -418,4 +418,70 @@ test('sidan ritar sista biten som en riktig länk', () => {
   // Länken öppnas i ny flik och lämnar ingen referrer-koppling.
   const kod = kropp.split('<script>').pop();
   assert.ok(kod.includes("a.setAttribute('rel', 'noopener')"), 'länken ska bära rel=noopener');
+});
+
+// ------------------------------------------- Axels tre krav 2026-09-20 kväll
+
+// "Ta bort & maska med ett eget bävernummer så de inte ser YT nr"
+test('bävernumret ersätter fraktbolagets nummer i vyn', () => {
+  const { paket, data } = byggAllt();
+  const kropp = byggSidkropp(data, KONFIG);
+
+  // Stabilt: samma paket ger samma nummer, varje gång, i båda riktningarna.
+  assert.equal(bavernummer('YT2625400704778854'), bavernummer('yt 2625-4007 0477 8854'));
+  assert.match(bavernummerSnyggt('YT2625400704778854'), /^BB-[2-9A-HJ-NP-Z]{7}$/);
+  // Alfabetet saknar 0, 1, I och O — numret ska gå att läsa upp i telefon.
+  for (const n of paket) assert.ok(!/[01IO]/.test(bavernummer(n.nummer).slice(2)), `förväxlingsbart tecken i ${n.nummer}`);
+
+  // Inga krockar i hela flottan.
+  const sedda = new Map();
+  for (const n of Object.keys(data.k)) {
+    const b = bavernummer(n);
+    assert.ok(!sedda.has(b), `krock: ${n} och ${sedda.get(b)} delar bävernummer ${b}`);
+    sedda.set(b, n);
+  }
+
+  // Vyn bär aldrig fraktbolaget eller dess nummer.
+  assert.ok(!kropp.includes('id="bbs-bolag"'), 'fraktbolagsfältet ska vara borta ur vyn');
+  assert.ok(kropp.includes('Ditt paketnummer'), 'faktarutan ska säga Ditt paketnummer');
+  // ⚠️ Numren finns kvar i DATAN — uppslaget sker i webbläsaren och kräver
+  // dem. Det här är maskering av vyn, inte sekretess.
+  assert.ok(kropp.includes('YT2625400704778854'), 'datan måste bära spårningsnumret för uppslaget');
+});
+
+test('sidan slår upp både bävernumret och det gamla spårningsnumret', () => {
+  const { data } = byggAllt();
+  const kod = byggSidkropp(data, KONFIG).split('<script>').pop();
+  assert.ok(kod.includes('function viaBaver'), 'uppslaget via bävernummer saknas');
+  assert.ok(/somBaver/.test(kod), 'gamla mejl med ?nummer=YT… måste fortsätta fungera');
+});
+
+// "visa bara om paketet är available for pick up, annars visa inte då man kan
+//  se att de e från kina hos city mail!"
+test('sista biten visas BARA när paketet ligger hos ombudet', () => {
+  const { data } = byggAllt();
+  const kod = byggSidkropp(data, KONFIG).split('<script>').pop();
+  assert.ok(kod.includes("p.statusKod === 'READY_FOR_PICKUP'"),
+    'sista biten måste vara villkorad på att paketet ska hämtas — annars kan kunden slå upp bolagets nummer och se Kina');
+});
+
+// "fixa expected veliry date span när man skriver in ordernr som pop up också!"
+test('beräknad leverans räknas ur mejlens löfte, aldrig ur huvudet', () => {
+  const { data } = byggAllt();
+  const utan = byggSidkropp(data, { butik: { support: 'a@b.se' } });
+  const utanCopy = JSON.parse(/id="bb-spar-copy">([\s\S]*?)<\/script>/.exec(utan)[1].split('<\\/').join('</'));
+  assert.equal(utanCopy.levMin, null, 'utan konfiguration ska ingen prognos byggas');
+  assert.equal(utanCopy.levMax, null);
+
+  const med = byggSidkropp(data, { butik: { support: 'a@b.se' }, frakt: { leverans_dagar_min: 7, leverans_dagar_max: 14 } });
+  const medCopy = JSON.parse(/id="bb-spar-copy">([\s\S]*?)<\/script>/.exec(med)[1].split('<\\/').join('</'));
+  assert.equal(medCopy.levMin, 7);
+  assert.equal(medCopy.levMax, 14);
+  assert.ok(med.includes('id="bbs-leverans"'), 'rutan saknas');
+
+  // Talen ska vara SAMMA som mejlen lovar — sidan och mejlen får aldrig
+  // säga olika saker.
+  const mejl = JSON.parse(readFileSync(new URL('../../mejl/konfig.json', import.meta.url), 'utf8'));
+  assert.equal(mejl.frakt.leverans_dagar_min, 7);
+  assert.equal(mejl.frakt.leverans_dagar_max, 14);
 });
