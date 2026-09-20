@@ -153,6 +153,10 @@
     "så letar vi upp paketet åt dig.": "niin etsimme paketin puolestasi.",
     "Till butiken": "Kauppaan",
     "Undrar du något om leveransen? Mejla": "Onko kysyttävää toimituksesta? Lähetä sähköpostia osoitteeseen",
-    "Spåra ett annat nummer": "Seuraa toista numeroa"
+    "Spåra ett annat nummer": "Seuraa toista numeroa",
+    "Mottagaren har lämnat leveransinstruktioner": "Vastaanottaja on antanut toimitusohjeet",
+    "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat": "Paketti on saapunut terminaaliin ja on pian matkalla postilaatikkoosi. Seuraava päivitys tulee, kun se on toimitettu",
+    "Paketet är överlämnat till fraktbolaget": "Paketti on luovutettu kuljetusyhtiölle",
+    "Paketet har kommit till omlastningsorten": "Paketti on saapunut uudelleenlastauspaikkaan"
   }
 }

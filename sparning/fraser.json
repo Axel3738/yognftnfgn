@@ -83,5 +83,11 @@
   "递四方揽收": "4PX har hämtat paketet",
   "shipping label created": "Fraktetiketten är skapad",
   "parcel electronic information received": "Vi har fått uppgifterna om paketet",
-  "the sender has notified us that a parcel is on its way to our terminal. when we have received the parcel, the tracking will be updated": "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot"
+  "the sender has notified us that a parcel is on its way to our terminal. when we have received the parcel, the tracking will be updated": "Avsändaren har aviserat att paketet är på väg till terminalen. Spårningen uppdateras när det har tagits emot",
+  "delivery instructions are provided by the recipient": "Mottagaren har lämnat leveransinstruktioner",
+  "port of destination - arrival": "Paketet har kommit till omlastningsorten",
+  "the parcel has arrived at the terminal and is soon on its way to your mailbox. the next update will be when it is delivered": "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat",
+  "batch delivery to carrier": "Paketet är överlämnat till fraktbolaget",
+  "pick up by local carrier at destination port": "Paketet är överlämnat till fraktbolaget",
+  "the parcel is delivered in the mailbox": "Paketet är levererat i din brevlåda"
 }

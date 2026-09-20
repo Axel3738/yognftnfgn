@@ -153,6 +153,10 @@
     "så letar vi upp paketet åt dig.": "så finder vi pakken for dig.",
     "Till butiken": "Til butikken",
     "Undrar du något om leveransen? Mejla": "Har du spørgsmål til leveringen? Skriv til",
-    "Spåra ett annat nummer": "Spor et andet nummer"
+    "Spåra ett annat nummer": "Spor et andet nummer",
+    "Mottagaren har lämnat leveransinstruktioner": "Modtageren har givet leveringsinstruktioner",
+    "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat": "Pakken er ankommet til terminalen og er snart på vej til din postkasse. Næste opdatering kommer, når den er leveret",
+    "Paketet är överlämnat till fraktbolaget": "Pakken er overdraget til fragtfirmaet",
+    "Paketet har kommit till omlastningsorten": "Pakken er ankommet til omladningsstedet"
   }
 }
