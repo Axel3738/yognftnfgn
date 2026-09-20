@@ -32,7 +32,7 @@ FET = "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"
 NORMAL = "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"
 STJARNA = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 KÄLLA = os.path.join(HÄR, "carashell", "up", "PD_5_H1.mp4")
-SLUT_FRÅN = 36.4
+SLUT_FRÅN = 36.0  # övergångscirkeln börjar här; 36,4 släppte fram det svenska kortet
 os.makedirs(os.path.join(HÄR, "lager"), exist_ok=True)
 os.makedirs(os.path.join(HÄR, "cap"), exist_ok=True)
 
