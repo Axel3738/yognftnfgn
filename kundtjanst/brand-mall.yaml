@@ -51,6 +51,22 @@ notion:
   sop_database_id: ""         # VA:ns SOP-databas → rapporten säger vilka toppärenden som saknar SOP
   rapport_database_id: ""     # databas där veckorapporten läggs som sida (--notion)
 
+# Värdena SOP:erna i kundtjanst/sop/ fyller sina {{PLATSHÅLLARE}} med. Samma
+# SOP-text körs på alla butiker — det är bara det här blocket som skiljer dem
+# åt, och det är hela poängen: en ny butik får fungerande tvisthantering genom
+# att fylla i tio rader, inte genom att skriva om rutinerna.
+tvister:
+  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden
+  returfonster_dagar: 14      # {{RETURN_WINDOW_DAYS}} — ångerrätten som står på sajten
+  policy_url: ""              # {{POLICY_URL}} — sidan kunden godkände i kassan (returer/villkor)
+  # {{BILLING_DESCRIPTOR}} — texten som står på kundens kontoutdrag. Står den inte
+  # här gissar ingen: läs den i Shopify admin → Settings → Payments → Customer
+  # billing statement. Fel descriptor är en vanlig orsak till "unrecognized".
+  billing_descriptor: ""
+  # Under det här beloppet är det billigare att återbetala än att lägga VA-tid på
+  # att slåss. 0 = slåss alltid. Sätt det i butikens egen valuta.
+  strid_lonar_sig_over: 0
+
 trosklar:
   arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —
                               # då faller allt obesvarat äldre än en vecka ur rapporten,

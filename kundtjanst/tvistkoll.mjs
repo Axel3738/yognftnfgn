@@ -59,7 +59,20 @@ export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGA
     .filter((x) => OPPEN.includes(x.status))
     .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu) }))
     .filter((x) => x.kvar === null || x.kvar <= grans)
-    .sort((a, b) => (a.kvar ?? 99) - (b.kvar ?? 99) || b.belopp - a.belopp);
+    // Chargebacks först, sedan deadline, sedan belopp. Ordningen är mätt, inte
+    // en känsla: av Bäverbutikens 50 tvister 2026-09-20 var 29 av 29 avgjorda
+    // INQUIRIES vunna (100 %) medan chargebacks stod på 1 vunnen av 4 — alla
+    // tre förluster någonsin var chargebacks. Det är alltså chargebacken som
+    // kostar pengar, och den ska stå högst i larmet även om en inquiry
+    // förfaller tidigare.
+    .sort((a, b) => (arChargeback(b) - arChargeback(a))
+      || ((a.kvar ?? 99) - (b.kvar ?? 99))
+      || (b.belopp - a.belopp));
+}
+
+/** Chargeback = pengarna är redan dragna och en förlust är slutgiltig. Ren. */
+export function arChargeback(t) {
+  return String(t?.typ ?? '').toLowerCase() === 'chargeback' ? 1 : 0;
 }
 
 const belopp = (x) => `${Number(x.belopp ?? 0).toLocaleString('en-US', { maximumFractionDigits: 0 })} ${x.valuta ?? ''}`.trim();
@@ -84,24 +97,42 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   // (Mätt 2026-09-16: #4914 förföll samma dag och räknades som passerad.)
   const forfallna = rader.filter((x) => (x.kvar ?? 99) < 0).length;
   const idag = rader.filter((x) => x.kvar === 0).length;
-  const rubrik = forfallna || idag ? '🔴' : '🟡';
-  const brast = [forfallna && `${forfallna} already past the due date`, idag && `${idag} due today`].filter(Boolean).join(', ');
+  const cb = rader.filter(arChargeback).length;
+  // Rött bara när det faktiskt brinner: en chargeback, eller något som
+  // förfaller i dag eller har passerat. En inquiry med två dagar kvar är gul.
+  const rubrik = cb || forfallna || idag ? '🔴' : '🟡';
+  const brast = [
+    cb && `${cb} real chargeback${cb === 1 ? '' : 's'}`,
+    forfallna && `${forfallna} already past the due date`,
+    idag && `${idag} due today`,
+  ].filter(Boolean).join(', ');
   const ut = [
     `${rubrik} **Dispute deadlines — ${brand} (${datum})**`,
     '',
-    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}. An unanswered dispute is lost automatically, so this is money, not admin.`,
+    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`,
+    '',
+    // ⚠️ Texten stod tidigare som "an unanswered dispute is lost automatically".
+    // Det är FALSKT för inquiries och stod i larmet 2026-09-15..20. Mätt på 50
+    // tvister 2026-09-20: 29 av 29 avgjorda inquiries vunna, 0 förlorade —
+    // en obesvarad inquiry ESKALERAR till chargeback (#4914, #5044, #4706 gick
+    // den vägen), den förloras inte på plats. Chargebacks däremot: 3 av 4
+    // förlorade. Skriv aldrig tillbaka det gamla påståendet.
+    '**CHARGEBACK = the money is already taken and a loss is final. Handle these first.**',
+    '**INQUIRY = the bank is only asking. Unanswered it can escalate into a chargeback — that is the real cost of ignoring it.**',
     '',
   ];
   for (const x of rader) {
     const order = x.ordernamn ? `${x.ordernamn}` : `order ${x.orderId ?? 'unknown'}`;
-    ut.push(`• **${order}** — ${x.typ}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — ${x.evidensSenast ? `due ${x.evidensSenast}` : 'due date unknown'} — ${narText(x.kvar)}`);
+    const mark = arChargeback(x) ? '🔴 CHARGEBACK' : 'inquiry';
+    ut.push(`• **${order}** — ${mark}, ${String(x.orsak).replace(/_/g, ' ')} — ${belopp(x)} — ${x.evidensSenast ? `due ${x.evidensSenast}` : 'due date unknown'} — ${narText(x.kvar)}`);
   }
   ut.push(
     '',
-    '**What to do, for each one:**',
-    '1. Shopify admin → Settings → Payments → Disputes → open the order.',
-    '2. Attach the proof: tracking number with a delivery scan, the order confirmation, and the email thread if the customer was told about a delay.',
-    '3. Submit before the due date. Do not wait for the weekly report.',
+    '**What to do, for each one — the SOPs are in `kundtjanst/sop/`, start at `00-MASTER.md`:**',
+    '1. "Not received"? CHECK THE TRACKING FIRST. Delivered with a scan → fight. Stuck or no scan → refund, do not fight.',
+    '2. Shopify admin → Settings → Payments → Disputes → open the order.',
+    '3. Attach the proof: delivery scan, order confirmation, and the email thread.',
+    '4. Submit before the due date. Do not wait for the weekly report.',
   );
   return ut.join('\n');
 }
