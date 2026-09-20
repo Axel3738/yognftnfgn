@@ -1286,3 +1286,9 @@ spenderades.
 
 Båda ägarfrågorna står obesvarade (omstart av Sverige sedan 15/9, paus av den här
 rutinen sedan 18/9). Ingen pingas om igen.
+
+**Norge 2026-09-20 (översättningsrutinen):** Tredje dygnet oförändrat. NO-kampanjen
+PAUSED, **8 476 kr — exakt samma tal som i går**, så efterattribueringen har lagt
+sig också. Kön 0 rader, priset 380 NOK. Ingenting rört. Rutinen kommer att
+rapportera detta varje dag tills Norge slås på igen; frågan om att tysta den står
+obesvarad sedan 19/9 och ingen pingas om igen.
