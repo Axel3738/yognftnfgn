@@ -1,0 +1,106 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "SE",
+  "status": "To be Reviewed",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.se/products/takskyddet",
+  "valuta": "SEK",
+  "heygen_sprak": null,
+  "sprak": "svenska",
+  "locale": null,
+  "cs_status": "Creative strat review",
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub"
+  },
+  "kampanj": {
+    "id": "120249050544990172",
+    "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
+    "bas": "CARASHELL_SE_Taköverdraget",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120249174776820172",
+        "name": "CARASHELL_SE_Taköverdraget - OB",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249174103390172",
+        "name": "CARASHELL_SE_Taköverdraget - TR",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249156801640172",
+        "name": "CARASHELL_SE_Taköverdraget - RI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249156618810172",
+        "name": "CARASHELL_SE_Taköverdraget - UG",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249156102430172",
+        "name": "CARASHELL_SE_Taköverdraget - LI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249155128570172",
+        "name": "CARASHELL_SE_Taköverdraget - CO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249154404740172",
+        "name": "CARASHELL_SE_Taköverdraget - BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249050594580172",
+        "name": "CARASHELL_SE_Taköverdraget - CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249050592930172",
+        "name": "CARASHELL_SE_Taköverdraget - SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249050591110172",
+        "name": "CARASHELL_SE_Taköverdraget - GT",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120249050545660172",
+        "name": "CARASHELL_SE_Taköverdraget - PD",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 20,
+  "lank_arvd": "https://carashell.se/products/takskyddet",
+  "pris_butik": {
+    "pris": 1129,
+    "min": 1129,
+    "max": 2239,
+    "jamforpris": 1469,
+    "valuta": "SEK",
+    "titel": "Taköverdrag Husvagn & Husbil 5,5–13,5 m",
+    "handle": "takskyddet",
+    "kalla": "https://carashell.se/products/takskyddet.json"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [
+    "kampanj: \"CARASHELL_SE_Taköverdraget LISTICLE\" är eget spår (namnet bär LISTICLE) och tog inte emot annonserna."
+  ],
+  "hamtad": "2026-09-20T12:08:08.780Z"
+}
