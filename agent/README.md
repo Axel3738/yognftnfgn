@@ -41,6 +41,29 @@ och hitta aldrig på data. Ligger räkningen i kod blir svaret detsamma varje
 gång och går att testa. Claudes jobb är att hämta rätt siffror och lämna
 dem oförändrade — inte att bedöma dem.
 
+## Annonsnivån (sedan 2026-09-20 — Axels fyra ur Evolve-materialet)
+
+Bakgrund: `docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` på `main`. Budgetmotorn
+var inte problemet, annonsnivån var det. Fyra saker byggdes, i den ordning
+Axel bad om:
+
+1. **Klick-attribution.** Alla tre Meta-anropen med
+   `action_attribution_windows: ["7d_click"]`; `rond.mjs` varnar när
+   kontodatan saknar `attribution: "7d_click"`. Mätt 2026-09-20: 1,7 % på
+   kontonivå, 18,6 % på Fiskespöhållaren.
+2. **Etiketten dag 7** (`agent/etikett.mjs`): BREAKTHROUGH / SPEND_WINNER /
+   KPI_WINNER / LOSER / INGEN_LEVERANS per annons, räknat på annonsens egna
+   första vecka, med `bedombar` (300 kr / 3 köp) bredvid. Loggkod `ETIKETT`.
+   Breakthrough-frekvensen `node agent/etikett.mjs --frekvens`, alltid som
+   "3/21 (14 %)". Etiketten är ingen dom.
+3. **Spendtjuven i gröna kampanjer** (`spendtjuv.mjs`, `lage: "gron"`):
+   Axels grind — ≥ 300 kr och ≥ 3 köp under break-even, eller 0 köp över
+   3 × break-even-CPA — mot en namngiven lista; nåd för etiketterad
+   BREAKTHROUGH, takad; orsakskod per tjuv. Trappan behåller sin gamla grind.
+4. **Mjuk manuell zon** (`besked.mjs`, `MANUELL_SANK`): över taket 4 000 kr
+   ger förlust −20 % samma morgon, aldrig under taket, aldrig paus, larm.
+   Kapning till 4 000 i ett steg avvisades av Axel.
+
 ## Spärrarna
 
 - **Bara ett konto.** Ronden vägrar köra mot annat än MagiBorsten

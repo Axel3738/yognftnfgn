@@ -87,6 +87,38 @@ export const DOM = {
   STANG_AV: 'STANG_AV',
   INGEN_TJUV: 'INGEN_TJUV',
   ROR_INGENTING: 'ROR_INGENTING',
+  TJUV_I_GRON: 'TJUV_I_GRON',
+};
+
+// ---------------------------------------------------------------------------
+// GRÖNT LÄGE (Axels beslut 2026-09-20, ur Evolve-materialet — förslagets 2.3).
+// Spärren körs numera på ALLA aktiva kampanjer, inte bara dem trappan är på
+// väg att stänga av. I en grön kampanj (över break-even) finns ingen kärna att
+// rädda — frågan är bara om enskilda annonser dränerar den. Där gäller Axels
+// strängare grind: ≥ 300 kr OCH antingen ≥ 3 köp under break-even, eller 0 köp
+// över 3 × break-even-CPA. En annons med 1–2 köp under break-even är brus i en
+// grön kampanj — den pausas INTE här (i trappan gäller den gamla grinden,
+// annars hade Övervakningskameran 2026-09-14 dött igen: dess tjuvar hade 1–2 köp).
+// ---------------------------------------------------------------------------
+
+/** Köp som krävs för att döma en annons med köp som tjuv i en grön kampanj. */
+export const GRON_MIN_KOP = 3;
+/** Utan köp: så många break-even-CPA i spend innan annonsen är en tjuv. */
+export const GRON_NOLL_KOP_CPA_FAKTOR = 3;
+/** Under sju dygn får en annons dränera så här mycket utan att kallas tjuv (fördröjd tändning). */
+export const UNG_ANNONS_DAGAR = 7;
+export const UNG_ANNONS_MAX_DRANERING_SEK = 1000;
+/** Nåden för breakthroughs: etiketten får vara högst så här gammal … */
+export const NAD_ETIKETT_MAX_DAGAR = 14;
+/** … och nåden bryts när dräneringen över 7 dygn passerar så många break-even-CPA, eller vid så många back-dygn. */
+export const NAD_MAX_DRANERING_CPA_FAKTOR = 3;
+export const NAD_MAX_BACKDAGAR = 5;
+
+/** Orsakskoder — så ersättaren angriper rätt sak första gången. */
+export const ORSAK = {
+  TROTT_VINNARE: 'TROTT_VINNARE',
+  NOLL_KOP: 'NOLL_KOP',
+  UNDER_BE: 'UNDER_BE',
 };
 
 /** Svenskt heltal med tusenmellanslag. */
@@ -110,6 +142,10 @@ export function lasAnnons(rad) {
   const kopRå = lasBelopp(rad.kop ?? rad.omni_purchase);
   const roasLivstid = lasBelopp(rad.roas_livstid);
   const status = String(rad.status ?? rad.effective_status ?? '').toUpperCase();
+  const spend7d = lasBelopp(rad.spend_7d);
+  const roas7d = lasBelopp(rad.roas_7d);
+  const alder = lasBelopp(rad.alder_dagar);
+  const backdagar = lasBelopp(rad.backdagar_i_rad);
   return {
     id: String(rad.id ?? ''),
     namn: String(rad.namn ?? rad.name ?? ''),
@@ -117,6 +153,14 @@ export function lasAnnons(rad) {
     spend: Number.isFinite(spend) ? spend : null,
     roas: Number.isFinite(roasRå) ? roasRå : 0,
     kop: Number.isFinite(kopRå) ? kopRå : 0,
+    // Grönt läge (frivilliga fält): ålder i dygn, 7-dygnsfönstret för nåden,
+    // etiketten dag 7 ur budgetloggen (kod ETIKETT) och dess datum.
+    alder_dagar: Number.isFinite(alder) ? alder : null,
+    spend_7d: Number.isFinite(spend7d) ? spend7d : null,
+    roas_7d: Number.isFinite(roas7d) ? roas7d : null,
+    backdagar_i_rad: Number.isFinite(backdagar) ? backdagar : null,
+    etikett: rad.etikett ? String(rad.etikett).toUpperCase() : null,
+    etikett_datum: rad.etikett_datum ? String(rad.etikett_datum).slice(0, 10) : null,
     // Livstids-ROAS är frivillig. Den dömer aldrig — den märker en tjuv som
     // en TRÖTT VINNARE, så leveransen kan säga "mata ersättarna" i stället för
     // "den här creativen var dålig".
@@ -249,8 +293,104 @@ function raknaDom(jobb = {}) {
   };
 }
 
+/** Orsaken bakom en tjuv, i fast ordning. */
+export function tjuvOrsak(a, breakEven) {
+  if (Number.isFinite(a.roas_livstid) && a.roas_livstid >= breakEven) return ORSAK.TROTT_VINNARE;
+  if (a.kop === 0) return ORSAK.NOLL_KOP;
+  return ORSAK.UNDER_BE;
+}
+
+/**
+ * Grönt läge: tjuvar i en kampanj som går plus. Se blocket ovanför DOM.
+ *
+ * @param {object} jobb
+ * @param {Array}  jobb.annonser        annonsrader (level: ad, last_3d) — en NAMNGIVEN lista, aldrig ett mönstersvep
+ * @param {number|string} jobb.spend_3d kampanjens spend i samma fönster
+ * @param {number} jobb.break_even      break-even-ROAS
+ * @param {number} [jobb.break_even_cpa] break-even-CPA i kronor (AOV ÷ break-even-ROAS) — krävs för 0-köpsgrinden
+ * @param {string} [jobb.idag]          YYYY-MM-DD, för nådens 14-dagarsfönster
+ */
+export function raknaGron(jobb = {}) {
+  const breakEven = lasBelopp(jobb.break_even);
+  const kampanjSpend = lasBelopp(jobb.spend_3d);
+  const beCpa = lasBelopp(jobb.break_even_cpa);
+  const idag = jobb.idag ? String(jobb.idag).slice(0, 10) : null;
+  const noteringar = [];
+
+  if (!(breakEven > 0)) return { dom: DOM.ROR_INGENTING, lage: 'gron', tjuvar: [], vantar: [], motivering: 'Break-even saknas — spärren kan inte räkna. Ingenting rörs.' };
+  if (!(kampanjSpend > 0)) return { dom: DOM.ROR_INGENTING, lage: 'gron', tjuvar: [], vantar: [], motivering: 'Kampanjens spend saknas — spärren kan inte räkna. Ingenting rörs.' };
+  if (!(beCpa > 0)) noteringar.push('break_even_cpa saknas i jobbfilen — annonser med 0 köp kan inte dömas som tjuvar i dag.');
+
+  const alla = (Array.isArray(jobb.annonser) ? jobb.annonser : []).map(lasAnnons);
+  const aktiva = alla.filter((a) => a.status === '' || a.status === 'ACTIVE');
+  const tak = breakEven * TJUV_MARGINAL;
+
+  const kandidater = aktiva
+    .filter((a) => Number.isFinite(a.spend) && a.spend >= TJUV_MIN_SPEND_SEK)
+    .filter((a) => a.spend / kampanjSpend >= TJUV_MIN_SPENDANDEL)
+    .filter((a) => dranering(a, breakEven) >= TJUV_MIN_DRANERING_SEK)
+    .filter((a) => {
+      if (a.kop >= GRON_MIN_KOP) return a.roas < tak;
+      if (a.kop === 0) return beCpa > 0 && a.spend >= GRON_NOLL_KOP_CPA_FAKTOR * beCpa;
+      return false; // 1–2 köp under break-even är brus i en grön kampanj
+    })
+    .sort((a, b) => dranering(b, breakEven) - dranering(a, breakEven));
+
+  const tjuvar = [];
+  const vantar = [];
+  for (const a of kandidater) {
+    a.dranering = dranering(a, breakEven);
+    a.trott_vinnare = Number.isFinite(a.roas_livstid) && a.roas_livstid >= breakEven;
+    a.orsak = tjuvOrsak(a, breakEven);
+
+    // Fördröjd tändning: en ung annons får dränera lite innan den kallas tjuv.
+    if (Number.isFinite(a.alder_dagar) && a.alder_dagar < UNG_ANNONS_DAGAR && a.dranering < UNG_ANNONS_MAX_DRANERING_SEK) {
+      vantar.push({ ...a, vantar_orsak: `bara ${a.alder_dagar} dygn gammal och dränerar ${heltal(a.dranering)} kr (< ${UNG_ANNONS_MAX_DRANERING_SEK}) — fördröjd tändning, läs om i morgon` });
+      continue;
+    }
+
+    // Nåden (Evolve: en breakthrough får ha en dålig vecka). Bara etiketterad
+    // BREAKTHROUGH ≤ 14 dygn gammal med livstid över break-even. Takad: bryts
+    // vid 3 × BE-CPA i 7-dygnsdränering eller 5 back-dygn i rad. Saknas 7-dygns-
+    // talen håller nåden — hellre ett dygn till än en pausad vinnare.
+    const etikettAlder = a.etikett_datum && idag ? (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${a.etikett_datum}T00:00:00Z`)) / 86400000 : null;
+    const nadKandidat = a.etikett === 'BREAKTHROUGH' && a.trott_vinnare
+      && (etikettAlder === null || (Number.isFinite(etikettAlder) && etikettAlder <= NAD_ETIKETT_MAX_DAGAR));
+    if (nadKandidat) {
+      const dran7 = Number.isFinite(a.spend_7d) && Number.isFinite(a.roas_7d)
+        ? a.spend_7d - (a.spend_7d * a.roas_7d) / breakEven
+        : null;
+      const taketNatt = (beCpa > 0 && Number.isFinite(dran7) && dran7 >= NAD_MAX_DRANERING_CPA_FAKTOR * beCpa)
+        || (Number.isFinite(a.backdagar_i_rad) && a.backdagar_i_rad >= NAD_MAX_BACKDAGAR);
+      if (!taketNatt) {
+        vantar.push({ ...a, vantar_orsak: `BREAKTHROUGH (${a.etikett_datum ?? 'datum saknas'}) med livstids-ROAS ${decimal(a.roas_livstid)} över break-even — nåd. Dränering 7 d: ${dran7 === null ? 'okänd' : `${heltal(dran7)} kr`} (tak ${beCpa > 0 ? heltal(NAD_MAX_DRANERING_CPA_FAKTOR * beCpa) : '—'} kr), back-dygn ${a.backdagar_i_rad ?? 'okänt'} (tak ${NAD_MAX_BACKDAGAR}).` });
+        continue;
+      }
+      a.nad_bruten = true;
+    }
+    tjuvar.push(a);
+  }
+
+  const gemensamt = { lage: 'gron', tjuvar, vantar, break_even: breakEven, break_even_cpa: beCpa > 0 ? beCpa : null, kampanj_spend: kampanjSpend, noteringar };
+  if (tjuvar.length === 0) {
+    const vantText = vantar.length ? ` ${vantar.length} annons(er) väntar (nåd eller ung).` : '';
+    return { ...gemensamt, dom: DOM.INGEN_TJUV, motivering: `Ingen annons uppfyller den gröna grinden (≥ ${TJUV_MIN_SPEND_SEK} kr, ≥ ${Math.round(TJUV_MIN_SPENDANDEL * 100)} % av spenden, ≥ ${TJUV_MIN_DRANERING_SEK} kr dränering, och ≥ ${GRON_MIN_KOP} köp under ${decimal(tak)} eller 0 köp över ${GRON_NOLL_KOP_CPA_FAKTOR} × break-even-CPA).${vantText}` };
+  }
+  if (tjuvar.length > MAX_TJUVAR) {
+    return { ...gemensamt, dom: DOM.ROR_INGENTING, motivering: `${tjuvar.length} tjuvar i en kampanj som går plus (taket är ${MAX_TJUVAR}) — det stämmer inte, kontrollera datan. Ingenting rörs.` };
+  }
+  const namn = tjuvar.map((a) => `${a.namn} (${heltal(a.spend)} kr, ${a.kop} köp, ROAS ${decimal(a.roas)}, ${a.orsak}${a.nad_bruten ? ', nåden bruten' : ''})`).join(', ');
+  return {
+    ...gemensamt,
+    dom: DOM.TJUV_I_GRON,
+    tjuvSpend: tjuvar.reduce((s, a) => s + a.spend, 0),
+    motivering: `${tjuvar.length} spendtjuv${tjuvar.length > 1 ? 'ar' : ''} i en grön kampanj (break-even ${decimal(breakEven)}): ${namn}. Pausa exakt dessa — kampanjen rörs inte.${vantar.length ? ` ${vantar.length} annons(er) väntar (nåd eller ung).` : ''}`,
+  };
+}
+
 /**
  * Fäller domen — och lägger på ägarskyddet.
+ * `jobb.lage === 'gron'` går till raknaGron (kampanj som går plus); annars trappan.
  *
  * **Ägarskyddet (Axels beslut 2026-09-14).** Har ägaren själv startat om
  * kampanjen i dag (`agarbeslut_idag`, dvs en `ATERAKTIVERA`-rad med dagens
@@ -260,7 +400,9 @@ function raknaDom(jobb = {}) {
  * siffrorna säger. Blödningen stoppas ändå: finns tjuvar pausas de.
  */
 export function spendtjuvsdom(jobb = {}) {
+  if (jobb.lage === 'gron') return raknaGron(jobb);
   const utfall = raknaDom(jobb);
+  for (const a of utfall.tjuvar ?? []) a.orsak = tjuvOrsak(a, utfall.break_even ?? lasBelopp(jobb.break_even));
   if (!jobb.agarbeslut_idag) return utfall;
   if (utfall.dom !== DOM.STANG_AV && utfall.dom !== DOM.INGEN_TJUV) return utfall;
 
@@ -282,15 +424,24 @@ export function formatera(utfall, jobb = {}) {
   const rader = [];
   rader.push(`SPENDTJUVSSPÄRREN — ${jobb.kampanj_namn ?? jobb.kampanj_id ?? 'okänd kampanj'}`);
   rader.push('='.repeat(70));
-  rader.push(`Dom: ${utfall.dom}`);
+  rader.push(`Dom: ${utfall.dom}${utfall.lage === 'gron' ? '  (grönt läge — kampanjen går plus)' : ''}`);
   rader.push('');
   rader.push(utfall.motivering);
+  for (const n of utfall.noteringar ?? []) rader.push(`  ⚠ ${n}`);
   if (utfall.tjuvar?.length) {
     rader.push('');
     rader.push('Tjuvar:');
     for (const a of utfall.tjuvar) {
       const trott = a.trott_vinnare ? `  ← trött vinnare (livstid ${decimal(a.roas_livstid)})` : '';
-      rader.push(`  ⛔ ${a.namn.padEnd(34)} ${heltal(a.spend).padStart(7)} kr  ${a.kop} köp  ROAS ${decimal(a.roas)}${trott}`);
+      const orsak = a.orsak ? `  [${a.orsak}]` : '';
+      rader.push(`  ⛔ ${a.namn.padEnd(34)} ${heltal(a.spend).padStart(7)} kr  ${a.kop} köp  ROAS ${decimal(a.roas)}${orsak}${trott}`);
+    }
+  }
+  if (utfall.vantar?.length) {
+    rader.push('');
+    rader.push('Väntar (pausas inte i dag):');
+    for (const a of utfall.vantar) {
+      rader.push(`  ⏳ ${a.namn.padEnd(34)} ${heltal(a.spend).padStart(7)} kr  ${a.kop} köp  ROAS ${decimal(a.roas)} — ${a.vantar_orsak}`);
     }
   }
   if (utfall.raddade?.length) {

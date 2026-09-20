@@ -71,6 +71,21 @@ export function kontrolleraKonto(data) {
 }
 
 /**
+ * Attributionen ska vara klickbaserad (Axels beslut 2026-09-20, mätt samma dag:
+ * Fiskespöhållaren visade ROAS 2,01 med visningar inräknade och 1,64 på klick —
+ * 18,6 % — mot break-even 1,50). Kontodata utan `attribution: "7d_click"` ger en
+ * varning, ingen avbruten rond: gamla filer och gamla körningar ska gå att läsa.
+ */
+export const KRAVD_ATTRIBUTION = '7d_click';
+export function attributionsvarning(data) {
+  const a = String(data?.attribution ?? '');
+  if (a === KRAVD_ATTRIBUTION) return null;
+  return a
+    ? `Kontodatan är hämtad med attribution "${a}", inte "${KRAVD_ATTRIBUTION}" — ROAS kan vara uppblåst av visningsköp.`
+    : `Kontodatan saknar fältet attribution — hämta med action_attribution_windows ["${KRAVD_ATTRIBUTION}"] så ROAS räknas på klick.`;
+}
+
+/**
  * Break-even för en kampanj, i tur och ordning:
  * 1. räknat ur kostnadsblocket i produktkarta.json (pris och kostnad per order)
  * 2. ett fast tal i produktkarta.json
@@ -225,7 +240,7 @@ export function planera(rader, { logg = [], idag = null } = {}) {
   // Redan ändrad idag (dubbelkörning, kraschad körning som hann skriva)?
   const andradIdag = (id) => idag !== null && logg.some(
     (r) => r.kampanj_id === id && r.genomford === true && r.datum === idag
-      && ['SKALA', 'SANK', 'HALVERA', 'STANG_AV', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'].includes(r.kod),
+      && ['SKALA', 'SANK', 'HALVERA', 'MANUELL_SANK', 'STANG_AV', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'].includes(r.kod),
   );
 
   for (const r of rader) {
@@ -239,7 +254,9 @@ export function planera(rader, { logg = [], idag = null } = {}) {
       continue;
     }
 
-    if (d.naraGrans && uppskjutnaIRad(r.id) < 3) {
+    // MANUELL_SANK skjuts aldrig upp på zongränsen: −20 % är redan den mjuka
+    // formen, och i den zonen kostar ett dygn under break-even mer än en testbudget.
+    if (d.naraGrans && d.kod !== 'MANUELL_SANK' && uppskjutnaIRad(r.id) < 3) {
       if (d.kod === 'HALVERA') {
         const ner = nyBudget('ner', r.budget);
         if (Number.isFinite(ner) && ner < r.budget) {
@@ -268,6 +285,19 @@ export function planera(rader, { logg = [], idag = null } = {}) {
         ...grund, typ: 'budget',
         fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
         ...(d.raket ? { raket: true } : {}),
+      });
+    } else if (d.kod === 'MANUELL_SANK') {
+      // Manuella zonen (Axel 2026-09-20): −20 % ovanför motorns tak. Beloppet
+      // får ligga över TAK_SEK — det är hela poängen — men aldrig under det,
+      // aldrig över gamla budgeten och aldrig utanför rimlighetsspannet.
+      if (!Number.isFinite(d.nyBudget) || d.nyBudget < TAK_SEK_PLAN || d.nyBudget >= r.budget
+          || d.nyBudget > BUDGET_RIMLIG_MAX) {
+        uppskjutna.push({ ...grund, orsak: `ogiltigt belopp (${d.nyBudget}) — utförs inte` });
+        continue;
+      }
+      atgarder.push({
+        ...grund, typ: 'budget', larm: true,
+        fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
       });
     } else if (d.kod === 'STANG_AV') {
       atgarder.push({ ...grund, typ: 'paus_kampanj' });
@@ -495,7 +525,7 @@ export function annonskvot(budgetSek) {
 }
 
 const ORDNING = [
-  'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'SANK', 'SKALA',
+  'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'MANUELL_SANK', 'SANK', 'SKALA',
   'STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
   'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL',
   'FOR_LITE_DATA', 'FRYST', 'MANUELL', 'LAT_VARA',
@@ -643,6 +673,8 @@ async function main() {
   const varningar = [];
   const trasiga = await raknaTrasigaRader();
   if (trasiga > 0) varningar.push(`${trasiga} trasig(a) rader i budgetloggen hoppades över.`);
+  const attr = attributionsvarning(data);
+  if (attr) varningar.push(attr);
 
   const rader = data.kampanjer.map((k) => bedomKampanj(k, { logg, idag, karta, fx }));
 

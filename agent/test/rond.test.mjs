@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, arAvstangd, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -584,22 +584,53 @@ test('manuell budget över taket: går plus ⇒ MANUELL, ingen ändring', () => 
   assert.match(rad.dom.rubrik, /stabil/);
 });
 
-test('manuell budget över taket: går back ⇒ MANUELL_FORLUST, larm men ingen ändring', () => {
+test('manuell budget över taket: går back ⇒ MANUELL_SANK, −20 % men aldrig under taket, larm', () => {
   const rad = bedomKampanj(
     {
       id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)',
       spend_3d: '40 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr',
     },
-    { logg: [], idag: '2026-09-19', karta: {} },
+    { logg: [], idag: '2026-09-20', karta: {} },
   );
-  assert.equal(rad.dom.kod, 'MANUELL_FORLUST');
-  assert.equal(rad.dom.kraverGodkannande, false);
-  assert.equal(rad.dom.nyBudget, null);
-  assert.match(rad.dom.motivering, /Axel/);
-  // Larmet syns under "att kolla" i rapporten, aldrig under "att göra".
-  const text = rapport([rad], { idag: '2026-09-19', hamtad: '2026-09-19T05:00:00Z' });
-  assert.match(text, /Taköverdraget/);
-  assert.deepEqual(planera([rad], { logg: [], idag: '2026-09-19' }).atgarder, []);
+  assert.equal(rad.dom.kod, 'MANUELL_SANK');
+  assert.equal(rad.dom.kraverGodkannande, true);
+  assert.equal(rad.dom.larm, true);
+  assert.equal(rad.dom.nyBudget, 12800); // 16 000 × 0,8, jämna 50 kr
+  assert.match(rad.dom.motivering, /larma Axel/);
+  // Planen utför den: beloppet får ligga över motorns tak 4 000.
+  const plan = planera([rad], { logg: [], idag: '2026-09-20' });
+  assert.equal(plan.atgarder.length, 1);
+  assert.equal(plan.atgarder[0].typ, 'budget');
+  assert.equal(plan.atgarder[0].till_sek, 12800);
+  assert.equal(plan.atgarder[0].till_ore, 1280000);
+  assert.equal(plan.atgarder[0].larm, true);
+  // Aldrig under taket: 4 500 kr × 0,8 = 3 600 → stannar på 4 000.
+  const nara = bedomKampanj(
+    { id: '2', namn: 'X | BE ROAS 1.63', daily_budget: '4 500,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr' },
+    { logg: [], idag: '2026-09-20', karta: {} },
+  );
+  assert.equal(nara.dom.kod, 'MANUELL_SANK');
+  assert.equal(nara.dom.nyBudget, 4000);
+  // En gång per dygn: redan sänkt i dag ⇒ uppskjuten.
+  const logg = [{ datum: '2026-09-20', kampanj_id: '1', kod: 'MANUELL_SANK', genomford: true, ny_budget: 12800 }];
+  const igen = planera([rad], { logg, idag: '2026-09-20' });
+  assert.equal(igen.atgarder.length, 0);
+  assert.equal(igen.uppskjutna.length, 1);
+});
+
+test('manuell budget över taket: går plus ⇒ MANUELL, rörs inte', () => {
+  const rad = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '4.31', kop_3d: 120, spend_total: '90 000,00 kr' },
+    { logg: [], idag: '2026-09-20', karta: {} },
+  );
+  assert.equal(rad.dom.kod, 'MANUELL');
+  assert.deepEqual(planera([rad], { logg: [], idag: '2026-09-20' }).atgarder, []);
+});
+
+test('attributionsvarning: bara 7d_click är tyst', () => {
+  assert.equal(attributionsvarning({ attribution: '7d_click' }), null);
+  assert.match(attributionsvarning({}), /saknar fältet attribution/);
+  assert.match(attributionsvarning({ attribution: 'default' }), /inte "7d_click"/);
 });
 
 test('rimlighetstaket är 50 000: 16 000 är en dom, 60 000 är fortfarande felparsning', () => {

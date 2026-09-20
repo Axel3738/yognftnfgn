@@ -234,3 +234,85 @@ test('dranering är noll exakt vid break-even', () => {
   const a = lasAnnons({ name: 'X', amount_spent: 1000, purchase_roas: 1.6, omni_purchase: 2 });
   assert.ok(Math.abs(dranering(a, 1.6)) < 0.0001);
 });
+
+// ---------------------------------------------------------------------------
+// Grönt läge (Axels beslut 2026-09-20): spärren i kampanjer som går plus.
+// ---------------------------------------------------------------------------
+
+const GRON = {
+  lage: 'gron', idag: '2026-09-27',
+  kampanj_namn: 'Taköverdraget | BE ROAS 1.63 | Launch 2026-09-01',
+  break_even: 1.63, break_even_cpa: 700, spend_3d: '48 000,00 kr (SEK)',
+  annonser: [
+    { id: 'v', namn: 'Takoverdrag_PD_10_H1', spend: '30 000,00 kr (SEK)', kop: 150, roas: '4.5', status: 'ACTIVE' },
+    // ≥ 3 köp under break-even × 0,9 och dränerar: tjuv (UNDER_BE)
+    { id: 't1', namn: 'Takoverdrag_CS_5_H1', spend: '6 000,00 kr (SEK)', kop: 5, roas: '0.9', status: 'ACTIVE' },
+    // 0 köp över 3 × BE-CPA (2 100 kr): tjuv (NOLL_KOP)
+    { id: 't2', namn: 'Takoverdrag_SP_6_1', spend: '5 000,00 kr (SEK)', kop: 0, roas: null, status: 'ACTIVE' },
+    // 2 köp under break-even: brus i en grön kampanj — INTE tjuv
+    { id: 'b', namn: 'Takoverdrag_PD_7_H1', spend: '5 000,00 kr (SEK)', kop: 2, roas: '0.8', status: 'ACTIVE' },
+    // 0 köp men under 3 × BE-CPA: inte tjuv
+    { id: 'u', namn: 'Takoverdrag_G_8_1', spend: '1 900,00 kr (SEK)', kop: 0, roas: null, status: 'ACTIVE' },
+  ],
+};
+
+test('grönt läge: Axels grind — ≥ 3 köp under BE eller 0 köp över 3 × BE-CPA; 1–2 köp är brus', () => {
+  const u = spendtjuvsdom(GRON);
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+  assert.deepEqual(u.tjuvar.map((a) => a.id).sort(), ['t1', 't2']);
+  assert.equal(u.tjuvar.find((a) => a.id === 't1').orsak, 'UNDER_BE');
+  assert.equal(u.tjuvar.find((a) => a.id === 't2').orsak, 'NOLL_KOP');
+  assert.match(u.motivering, /kampanjen rörs inte/);
+});
+
+test('grönt läge: utan break_even_cpa döms inga 0-köpsannonser, och det står i rapporten', () => {
+  const u = spendtjuvsdom({ ...GRON, break_even_cpa: undefined });
+  assert.deepEqual(u.tjuvar.map((a) => a.id), ['t1']);
+  assert.match(u.noteringar.join(' '), /break_even_cpa saknas/);
+});
+
+test('grönt läge: nåd för etiketterad BREAKTHROUGH med livstid över break-even — takad', () => {
+  const bt = { id: 't1', namn: 'Takoverdrag_CS_5_H1', spend: '6 000,00 kr (SEK)', kop: 5, roas: '0.9', status: 'ACTIVE', roas_livstid: '2.4', etikett: 'BREAKTHROUGH', etikett_datum: '2026-09-20' };
+  const bara = (a) => ({ ...GRON, annonser: [GRON.annonser[0], a] });
+  // Nåd: inga 7-dygnstal ⇒ väntar.
+  let u = spendtjuvsdom(bara(bt));
+  assert.equal(u.dom, DOM.INGEN_TJUV);
+  assert.equal(u.vantar.length, 1);
+  assert.match(u.vantar[0].vantar_orsak, /nåd/);
+  // Nåden bryts: dränering 7 d ≥ 3 × BE-CPA (2 100 kr).
+  u = spendtjuvsdom(bara({ ...bt, spend_7d: 9000, roas_7d: 0.9 }));
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+  assert.equal(u.tjuvar[0].nad_bruten, true);
+  assert.equal(u.tjuvar[0].orsak, 'TROTT_VINNARE');
+  // Nåden bryts: 5 back-dygn i rad.
+  u = spendtjuvsdom(bara({ ...bt, backdagar_i_rad: 5 }));
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+  // Etiketten äldre än 14 dygn ⇒ ingen nåd.
+  u = spendtjuvsdom(bara({ ...bt, etikett_datum: '2026-09-01' }));
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+  // SPEND_WINNER får ingen nåd — bara BREAKTHROUGH.
+  u = spendtjuvsdom(bara({ ...bt, etikett: 'SPEND_WINNER' }));
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+});
+
+test('grönt läge: ung annons med liten dränering väntar; utan tjuvar ⇒ INGEN_TJUV; för många ⇒ ROR_INGENTING', () => {
+  const ung = { id: 'y', namn: 'Takoverdrag_PD_9_H1', spend: '5 000,00 kr (SEK)', kop: 0, roas: null, status: 'ACTIVE', alder_dagar: 3 };
+  // Dränering 5 000 kr ≥ 1 000 ⇒ ingen ungdomsrabatt.
+  let u = spendtjuvsdom({ ...GRON, annonser: [GRON.annonser[0], ung] });
+  assert.equal(u.dom, DOM.TJUV_I_GRON);
+  // Mindre dränering (0 köp, 2 200 kr — över 3 × BE-CPA men 2 200 kr dränering ≥ 1 000) ⇒ fortfarande tjuv;
+  // med 3 köp ROAS 1,3 på 2 200 kr dränerar den ~445 kr — under 500-grinden, ingen tjuv alls.
+  u = spendtjuvsdom({ ...GRON, annonser: [GRON.annonser[0], { ...ung, spend: '2 200,00 kr (SEK)', kop: 3, roas: '1.3' }] });
+  assert.equal(u.dom, DOM.INGEN_TJUV);
+  // 6 tjuvar i en grön kampanj: datan stämmer inte — rör ingenting.
+  const manga = Array.from({ length: 6 }, (_, i) => ({ id: `m${i}`, namn: `Takoverdrag_X_${i}_1`, spend: '5 000,00 kr (SEK)', kop: 4, roas: '0.5', status: 'ACTIVE' }));
+  u = spendtjuvsdom({ ...GRON, spend_3d: '40 000,00 kr (SEK)', annonser: manga });
+  assert.equal(u.dom, DOM.ROR_INGENTING);
+});
+
+test('trappan behåller den gamla grinden: Övervakningskamerans tjuvar (1–2 köp) pausas fortfarande', () => {
+  const u = spendtjuvsdom(OVERVAKNINGSKAMERAN);
+  assert.equal(u.dom, DOM.PAUSA_TJUVAR);
+  assert.equal(u.tjuvar.length, 3);
+  assert.ok(u.tjuvar.every((a) => a.orsak === 'UNDER_BE'));
+});

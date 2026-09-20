@@ -150,3 +150,18 @@ test('skrivRad vägrar rader som gör kadensspärren blind', async () => {
   // Ett förslag (genomford false) får sakna ny_budget.
   await skrivRad(rad({ kod: 'SANK', genomford: false, ny_budget: null }), fil);
 });
+
+test('skrivRad: MANUELL_SANK kräver ny_budget, ETIKETT/TJUV_PAUSAD får aldrig ha det', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'logg-'));
+  const fil = join(dir, 'l.jsonl');
+  const bas = { datum: '2026-09-20', kampanj_id: '1', kampanj_namn: 'X', ad_account_id: '1867947880635861', genomford: true };
+  await assert.rejects(() => skrivRad({ ...bas, kod: 'MANUELL_SANK' }, fil), /ny_budget/);
+  await skrivRad({ ...bas, kod: 'MANUELL_SANK', ny_budget: 12800 }, fil);
+  await assert.rejects(() => skrivRad({ ...bas, kod: 'ETIKETT', ny_budget: 12800 }, fil), /blinda kadensspärren/);
+  await skrivRad({ ...bas, kod: 'ETIKETT', annons_id: 'a1', etikett: 'LOSER' }, fil);
+  await assert.rejects(() => skrivRad({ ...bas, kod: 'TJUV_PAUSAD', ny_budget: 1 }, fil), /blinda kadensspärren/);
+  const rader = await lasLogg(fil);
+  assert.equal(rader.length, 2);
+  // Etikettraden bromsar aldrig kadensen.
+  assert.equal(dagarSedanAndring(rader, '1', '2026-09-21'), 1);
+});

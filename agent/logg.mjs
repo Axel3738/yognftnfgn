@@ -136,9 +136,16 @@ export async function skrivRad(rad, fil = LOGGFIL) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(rad.datum))) {
     throw new Error(`Loggradens datum "${rad.datum}" är inte YYYY-MM-DD — kadensspärren skulle bli blind för raden`);
   }
-  if (['SKALA', 'SANK', 'HALVERA'].includes(rad.kod) && rad.genomford === true
+  if (['SKALA', 'SANK', 'HALVERA', 'MANUELL_SANK'].includes(rad.kod) && rad.genomford === true
       && !Number.isFinite(rad.ny_budget)) {
     throw new Error(`En genomförd ${rad.kod} utan ny_budget gör ändringen osynlig för kadensspärren — vägrar`);
+  }
+  // Etiketter, tjuvpauser och larm bär ALDRIG ny_budget: dagarSedanAndring
+  // räknar varje genomförd rad med det fältet som en budgetändring och skulle
+  // frysa kampanjen i tre dygn utan att någon rört budgeten.
+  if (['ETIKETT', 'ETIKETT_UPPGRADERAD', 'TJUV_PAUSAD', 'VANTA_BREAKTHROUGH', 'OPS_STARTSKOTT'].includes(rad.kod)
+      && Number.isFinite(rad.ny_budget)) {
+    throw new Error(`En ${rad.kod}-rad med ny_budget skulle blinda kadensspärren — vägrar`);
   }
   await appendFile(fil, `${JSON.stringify(rad)}\n`, 'utf8');
   return rad;

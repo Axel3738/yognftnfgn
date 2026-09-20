@@ -88,6 +88,16 @@ marknadens konto och filtrering på `campaign.effective_status IN ["ACTIVE"]`:
 2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
 3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien (varje dygn: datum, roas OCH spend ur `amount_spent`)
 
+**Alla tre anropen med `action_attribution_windows: ["7d_click"]`** (Axels
+beslut 2026-09-20). Mätt samma dag: kontonivån skiljer 1,7 % (SE) och 0 %
+(NO), men Fiskespöhållaren visade ROAS 2,01 med visningsköp inräknade och
+1,64 på klick — 18,6 % — mot break-even 1,50; IBC 7,1 %, Båtmotorskyddet
+5,4 %. Läser du `purchase_roas`/`omni_purchase` ur svaret: ta värdet för
+fönstret `7d_click`, inte `value`. Skriv `"attribution": "7d_click"` överst i
+kontodatafilen — `rond.mjs` varnar när fältet saknas eller säger något annat.
+Tar MCP-verktyget inte parametern: kör `ads_get_field_context`, skriv i
+rapporten att attributionen är kontots standard, och gissa aldrig ett tal.
+
 Fältnamnen är exakta. Använd **aldrig** `omni_purchase_values` (buggig, se
 CLAUDE.md). Skriv siffrorna **ordagrant** till `agent/kontodata.json` i samma
 format som `/rond` beskriver. Saknas ett värde: `null`, aldrig 0, aldrig gissat.
@@ -260,7 +270,124 @@ som konstanter högst upp i `agent/spendtjuv.mjs` — ändra dem där, aldrig h�
 ⚠️ Ligger kampanjens ROAS under break-even utan att vara i trappan (domarna
 `HALVERA` och `SANK`): kör spärren ändå, men **utför ingenting** — redovisa
 tjuvarna i leveransen så Axel ser blödningen innan den blir en avstängning.
-Bara trappan får pausa annonser.
+I en kampanj som går back pausar bara trappan annonser.
+
+### 3b. Spendtjuven i GRÖNA kampanjer (Axels beslut 2026-09-20 — förslagets 2.3)
+
+Spärren körs numera på **alla aktiva kampanjer som går plus** (domarna
+`LAT_VARA`, `SKALA`, `VANTA_KADENS`, `MANUELL`, `MANUELL_SANK`) med
+≥ 1 000 kr spend på 3 dygn — Taköverdraget inräknat. Bakgrund: en tjuv på
+10 % av 16 000 kr/dag dränerar ~1 600 kr om dagen under break-even och var
+osynlig för ronden, för spärren gick bara i trappan.
+
+Per sådan kampanj: hämta annonserna (`level: "ad"`, `date_preset: "last_3d"`,
+filtrering på `campaign.id`, fälten `amount_spent`, `omni_purchase`,
+`purchase_roas`, `effective_status`, `created_time`; dessutom
+`date_preset: "maximum"` för `roas_livstid`). Skriv en jobbfil med
+`"lage": "gron"` — **en namngiven lista, aldrig ett mönstersvep**:
+
+```json
+{
+  "lage": "gron", "idag": "<IDAG>",
+  "kampanj_id": "...", "kampanj_namn": "...",
+  "break_even": 1.63, "break_even_cpa": 693,
+  "spend_3d": "48 000,00 kr (SEK)",
+  "annonser": [{ "id": "...", "namn": "...", "spend": "6 000,00 kr (SEK)", "kop": 5,
+                 "roas": "0.90", "status": "ACTIVE", "roas_livstid": 1.1,
+                 "alder_dagar": 12, "etikett": "BREAKTHROUGH", "etikett_datum": "2026-09-20",
+                 "spend_7d": "9 000,00 kr (SEK)", "roas_7d": "0.95", "backdagar_i_rad": 2 }]
+}
+```
+
+- `break_even_cpa` = AOV ÷ break-even-ROAS, där AOV = livstidens
+  `amount_spent × purchase_roas ÷ omni_purchase` för kampanjen. Saknas den
+  kan annonser med 0 köp inte dömas — skriptet säger det, och det står i
+  leveransen.
+- `alder_dagar` ur `created_time`. `etikett` + `etikett_datum` ur senaste
+  `ETIKETT`-raden för annonsen i budgetloggen (steg 3c). `spend_7d`/`roas_7d`
+  (last_7d) och `backdagar_i_rad` (dygnsserien på annonsnivå) behövs bara för
+  annonser med etiketten BREAKTHROUGH — de avgör om nåden bryts.
+
+```bash
+node agent/spendtjuv.mjs --jobb <fil.json> --json
+```
+
+**Grinden i grönt läge (Axels ord):** ≥ 300 kr OCH ≥ 10 % av spenden OCH
+≥ 500 kr dränering, och antingen **≥ 3 köp under break-even × 0,9** eller
+**0 köp över 3 × break-even-CPA**. En annons med 1–2 köp under break-even är
+brus i en grön kampanj och pausas inte här. *(Trappan behåller den gamla
+grinden — Övervakningskamerans tjuvar 2026-09-14 hade 1–2 köp, och med den
+nya grinden hade kampanjen dött igen.)*
+
+Domarna:
+- **`TJUV_I_GRON`** — pausa **exakt de annonser som står i `tjuvar`**
+  (`entity_type: "ad"`, `fields: {"status":"PAUSED"}`), verifiera med en
+  tillbakaläsning per annons, rör inte kampanjen, logga en rad per annons
+  med kod `TJUV_PAUSAD` (`genomford: true`, `annons_id`, `annons_namn`,
+  `spend`, `roas`, `dranering`, `orsak` — aldrig `ny_budget`). Orsaken
+  (`TROTT_VINNARE` / `NOLL_KOP` / `UNDER_BE`) går in i leveransen och i
+  batch-log.md som utfall, så nästa brief angriper rätt sak. Räddningstaket
+  3/14 d förbrukas inte.
+- **`INGEN_TJUV`** — ingenting rörs.
+- **`ROR_INGENTING`** — fler än fem tjuvar i en kampanj som går plus stämmer
+  inte; kontrollera datan, rör ingenting.
+- **`vantar`** (nåd eller ung annons) — pausas inte i dag; logga
+  `VANTA_BREAKTHROUGH` (`genomford: false`) med `vantar_orsak`, och skriv det
+  i leveransen. Nåden gäller BARA annonser med etiketten BREAKTHROUGH ≤ 14
+  dygn gammal och livstids-ROAS över break-even, och bryts vid ≥ 3 ×
+  break-even-CPA i 7-dygnsdränering eller 5 back-dygn i rad (Evolve: en
+  breakthrough får ha en dålig vecka, men inte två).
+
+Pausas en annons med etiketten BREAKTHROUGH eller SPEND_WINNER: posta i
+`--kanal larm` (engelska) `"<namn> paused as thief (<orsak>), lifetime ROAS
+X — consider re-enabling"`. Ronden startar aldrig något pausat själv.
+
+### 3c. Etiketten dag 7 + breakthrough-frekvensen (Axels beslut 2026-09-20 — förslagets 2.4)
+
+Varje annons får en etikett när den är sju dygn gammal, räknad på **annonsens
+egna första vecka** — aldrig `last_7d`. Etiketten beskriver vad Meta gjorde;
+den är **ingen dom** (dom, kill, skalning och DNA kräver fortfarande 300 kr
+och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
+
+1. Per ACTIVE kampanj: hämta annonslistan (`level: "ad"`, fälten `id`,
+   `name`, `created_time`, `effective_status`). Kandidater = annonser med
+   `created_time` ≤ IDAG − 7 dygn som saknar `ETIKETT`-rad i
+   `agent/budgetlogg.jsonl` (`annons_id`). Inga kandidater ⇒ hoppa kampanjen.
+2. För varje D0 (skapelsedatum, svensk tid) i kampanjen: hämta insights på
+   `level: "ad"` med `time_range: {"since": D0, "until": D0+6}`, fälten
+   `amount_spent`, `omni_purchase`, `purchase_roas`, `impressions`,
+   `video_view` (3 s), `video_thruplay_watched_actions`, med
+   `action_attribution_windows: ["7d_click"]` — och kampanjen i **samma**
+   `time_range` (`level: "campaign"`: `amount_spent`, `purchase_roas`).
+   Annonser med samma D0 delar anrop. Stryper Meta (kod 17): lista
+   kandidaterna som "utan etikett" i leveransen och ta dem i morgon.
+3. Skriv en jobbfil per kampanj och kör:
+   ```bash
+   node agent/etikett.mjs --jobb <fil.json>          # skriver ETIKETT-rader i budgetloggen
+   node agent/etikett.mjs --frekvens                 # breakthrough-frekvensen ur loggen
+   ```
+   Formatet står överst i `agent/etikett.mjs`. `batch` och `typ` läses ur
+   produktens `batch-log.md` (`## Batch #N`-rubriken som bär annonsnamnet);
+   hittas inget: `batch: null`, `typ: "okänd"` — aldrig gissat. Budgeten
+   dag 0/dag 7 läser skriptet själv ur budgetloggen (`gammal_budget`); ange
+   `budget_d0`/`budget_d7` bara om du läst dem i Ads Manager.
+4. Klistra in tabellen skriptet skriver under en rubrik
+   `## Etiketter dag 7 (<IDAG>)` i `products/<id>/batch-log.md` (finns
+   mappen), och skriv frekvensraden överst i filen:
+   `Breakthrough-frekvens: 3/21 (14 %)` — alltid brutet tal, aldrig procent
+   ensam, ingen procent alls under tio annonser. Rör inte dna.md.
+5. Dag 14 och dag 28 efter etiketten: kör samma steg med `--uppgradering`
+   för annonser som fick SPEND_WINNER eller KPI_WINNER — blir de
+   BREAKTHROUGH nu skrivs `ETIKETT_UPPGRADERAD`. Ingen etikett ändras annars.
+6. Leveransen får sektionen **"Labels today"** (annons, etikett, andel,
+   bedömbar, playbook-läsning) och frekvensen per produkt och batch. Sätts en
+   BREAKTHROUGH: posta i `--kanal larm` (engelska) `"Breakthrough: <namn> —
+   <andel> % of campaign spend, budget <d0> → <d7> kr"`.
+
+Committa och pusha `agent/budgetlogg.jsonl` + batch-log-filerna i samma push
+som rondens loggrader. Notion-fältet `Outcome` och registret
+`products/<id>/annonser.jsonl` byggs i nästa steg (Axels A på namnet) — skriv
+inga etiketter i Notion förrän det finns.
 
 **En förlängning gäller ett HELT dygn.** Finns en `TRAPPA_FORLANGNING`-rad för
 kampanjen **från i dag** (`senasteRadMedKod(logg, id, ["TRAPPA_FORLANGNING"],
@@ -349,17 +476,20 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   batch är video. Förstabatch: sex nya videokoncept + variationer på
   vinnarna + sex statiska. Brief-runda: `rundaAntal` annonser (dubbla
   veckokvoten, minst fyra), varav högst två statiska.
-- **Statiska på samma nivå som förut** — plus två extra serier som Axel
-  bestämde 2026-09-02 ("bilder är billiga, gör extra bara för att"):
-  - **+3 BOF-bilder per batch** (bottom of funnel — till den som redan sett
-    produkten): pris/erbjudande, garanti/fri frakt, jämförelse eller
-    invändning. Samma mall, samma tre-frågorstest.
-  - **+2 review-bilder per batch** byggda på **riktiga recensioner** ur
-    produktsidan eller Judge.me — citatet ordagrant, aldrig omskrivet, aldrig
-    påhittat. Finns inga recensioner: inga review-bilder, och skriv det i
-    leveransen. *(Sömnadskitet 2026-09-02: en review-bild gick ut med
-    nonsenstext som "citat". Det får aldrig hända igen.)*
-  Serierna räknas utöver `rundaAntal`/förstabatchens antal.
+- **Bilder bara med ett jobb** (Axels beslut 2026-09-20, ersätter "gör extra
+  bara för att" från 2026-09-02 — han såg själv att det bara spammade
+  bildannonser). En bildbrief skrivs när den har ett av tre jobb, och jobbet
+  står i briefens första rad: **validera en ny vinkel** (billigare än video —
+  videon byggs först när bilden är validerad: ≥ 300 kr och ROAS_7d ≥
+  break-even), **svara på en invändning** (BOF: pris/garanti/jämförelse —
+  bara om produktens senaste BOF-etiketter har minst en KPI_WINNER, annars
+  0 BOF-bilder nästa batch), eller **variant på en vinnare** (en variabel).
+  Review-bilder bara med **riktiga recensioner** ur produktsidan eller
+  Judge.me — citatet ordagrant, aldrig omskrivet, aldrig påhittat.
+  *(Sömnadskitet 2026-09-02: en review-bild gick ut med nonsenstext som
+  "citat". Det får aldrig hända igen.)* En bild vars tagg redan bärs av en
+  live-annons med ≥ 10 % av spenden är en dubblett och skrivs inte.
+  Bilderna räknas inom `rundaAntal`, inte utöver.
 - **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
   kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
   varje svensk rad — en rad med ett ❌ går inte ut.
@@ -394,10 +524,16 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
 - **Axels manuella zon (2026-09-19): budget över motorns tak 4 000 kr.**
   Motorn höjer aldrig dit, så en sådan budget har Axel satt själv
   (Taköverdraget: 16 000 kr/dag, fick tidigare `ORIMLIG_DATA` och ingen dom
-  alls). Domen blir `MANUELL` (går plus, lämnas) eller `MANUELL_FORLUST`
-  (går back — larm under "att kolla", ping till Axel, men **ingen** budget
-  ändras av ronden). Briefrundan går som vanligt. Rimlighetstaket för
-  felparsning är 50 000 kr; över det är det fortfarande `ORIMLIG_DATA`.
+  alls). Domen blir `MANUELL` (går plus, lämnas) eller — sedan 2026-09-20,
+  Axels mjuka form — `MANUELL_SANK` (går back: **−20 % samma morgon**, jämna
+  50 kr, aldrig under taket 4 000, aldrig paus, högst en gång per dygn; utförs
+  som en vanlig `typ: "budget"`-åtgärd i steg 3 och postas dessutom i
+  `--kanal larm` med ping till Axel). Under taket tar de vanliga reglerna
+  över. *(Förslaget "kapa till 4 000 i ett steg" avvisades: 75 % på en morgon
+  på en produkt som drar ~26 000 kr i vinst per dag kostar mer än det
+  skyddar, och Evolve säger att en breakthrough får ha en dålig vecka.)*
+  Briefrundan går som vanligt. Rimlighetstaket för felparsning är 50 000 kr;
+  över det är det fortfarande `ORIMLIG_DATA`.
 - **Hubben är den som står i `agent/produktkarta.json` (`notion_hub_id` +
   `notion_hub_datakalla`).** Finns den där: använd den, sök inte, skapa inte.
   Axel bygger hubbarna själv sedan 2026-09-13 och döper dem **"BÄVER <produkt>"**
@@ -625,6 +761,12 @@ inget gjordes). Utförda ändringar: `genomford: true`,
 `godkand_av: "auto — Axels stående beslut 2026-08-29"`. Fältformatet står i
 `/rond` steg 5.
 
+Nya koder sedan 2026-09-20: `MANUELL_SANK` (budgetändring, bär `ny_budget`),
+`TJUV_PAUSAD` och `VANTA_BREAKTHROUGH` (annonsnivå, steg 3b), `ETIKETT` och
+`ETIKETT_UPPGRADERAD` (steg 3c, skrivs av `agent/etikett.mjs`). De fyra sista
+får **aldrig** bära `ny_budget` — `skrivRad` vägrar, för kadensspärren skulle
+annars frysa kampanjen i tre dygn.
+
 ## 6. Leverans
 
 Committa och pusha `agent/budgetlogg.jsonl` + `agent/produktkarta.json`
@@ -679,7 +821,9 @@ Posta dessutom, i **egna** poster:
 - `--kanal uppgifter` varje gång nya uppgifter går ut till redigerarna
   (brief-runda eller förstabatch klar): produkt, antal briefer, Notion-länk.
 - `--kanal larm` när något kräver Axel: `STOR_SPEND_UTAN_KOP`, `plan.sparrad`,
-  misslyckad verifiering efter en Meta-skrivning.
+  misslyckad verifiering efter en Meta-skrivning, varje `MANUELL_SANK`
+  (sänkning i hans manuella zon), en pausad tjuv med etiketten BREAKTHROUGH
+  eller SPEND_WINNER, och varje ny BREAKTHROUGH-etikett.
 
 Startskotten postas **inte** härifrån — `agent/startskott.mjs` gör det själv
 i steg 4d, i sin egen kanal och på svenska.
@@ -692,6 +836,10 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] `kontodata.json` (SE) och `kontodata-no.json` (NO) skrivna ordagrant
 - [ ] Ronden körd för båda marknaderna; `plan.sparrad` kontrollerad för var och en
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
+- [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte
+- [ ] Spendtjuven körd i grönt läge på alla plus-kampanjer ≥ 1 000 kr/3 d, mot en namngiven lista; tjuvar pausade en och en med tillbakaläsning, `TJUV_PAUSAD`/`VANTA_BREAKTHROUGH` loggade utan `ny_budget`
+- [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under 4 000 kr, larm postat
+- [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
 - [ ] Alla `forsta_batch` körda (inget tak) + alla `brief_runda`, med
       *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte
