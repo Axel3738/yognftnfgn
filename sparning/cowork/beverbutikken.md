@@ -9,6 +9,13 @@ sidan **https://beverbutikken.no/pages/spor**. FÖRST DÅ görs steg A–C.
 Delen under linjen är prompten; kör den i två omgångar (steg 0 nu, A–C
 när Axel fått besked att sidan är uppe).
 
+## Läge 2026-09-20 kväll — steg 0 KLART, sidan LIVE, kör A–C
+
+Cowork körde steg 0 (appversion `…-4` med de fyra rättigheterna, "Uppdatera
+dataåtkomst" godkänd i admin). Sessionen körde `/sparning beverbutikken` och sidan
+**https://beverbutikken.no/pages/spor** svarar med rubriken "Spor pakken din". Timrutinen är byggd.
+Det som återstår är steg A–C nedan — hoppa över steg 0.
+
 ---
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken

@@ -11,6 +11,13 @@ Delen under linjen är prompten; kör den i två omgångar.
 ur Shopifys "Butikens kontaktmejl" (Inställningar → Butiksuppgifter). Be
 Cowork rapportera vilken adress som står där i steg 0.
 
+## Läge 2026-09-20 kväll — steg 0 KLART, sidan LIVE, kör A–C
+
+Cowork körde steg 0 (appversion `…-4` med de fyra rättigheterna, "Uppdatera
+dataåtkomst" godkänd i admin). Sessionen körde `/sparning majavakauppa` och sidan
+**https://majavakauppa.fi/pages/seuranta** svarar med rubriken "Seuraa pakettiasi". Timrutinen är byggd.
+Det som återstår är steg A–C nedan — hoppa över steg 0.
+
 ---
 
 Du jobbar i Chrome i mitt inloggade Shopify-konto för butiken
