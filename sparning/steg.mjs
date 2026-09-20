@@ -2,9 +2,9 @@
 //
 // Bakgrund (Axel 2026-09-19): sidan visade varje enskild logistikhändelse —
 // terminal, land, transportstatus — och blev rörig. Kunden vill se fem
-// punkter. Hela historiken finns kvar bakom "Mer information"; det här är
-// bara en gruppering av skanningar som redan finns, aldrig ett nytt datum
-// och aldrig en ny status.
+// punkter. Hela historiken ligger kvar i datan (vyn "Mer information" togs
+// bort 2026-09-20 kväll); det här är bara en gruppering av skanningar som
+// redan finns, aldrig ett nytt datum och aldrig en ny status.
 //
 // GRUNDEN ÄR ORDBOKEN, INTE FRAKTBOLAGETS STATUSKOD. Mätt 2026-09-19 på 204
 // paket och 1 873 skanningar: 1 507 av dem (80 %) bär `sub_status`

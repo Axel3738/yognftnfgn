@@ -172,13 +172,15 @@ test('det aktiva skedet bär den senaste skanningen, inte bara den första', () 
 
 // --------------------------------------------------------------- sidan
 
-test('sidan: knappen heter "Mer information" och historiken ligger kvar bakom den', () => {
+test('sidan: ingen "Mer information" och ingen historiklista (Axels beslut 2026-09-20 kväll, B)', () => {
+  // Historiken räknade upp Kina och Nederländerna rad för rad — bort. Rådatan
+  // i sidan är orörd (nästa test), men ingen vy ritar den.
   const { data } = byggAllt();
   const kropp = byggSidkropp(data, KONFIG);
-  assert.ok(kropp.includes('<summary>Mer information</summary>'), 'knappens namn har ändrats');
-  assert.ok(/<details[^>]*id="bbs-mer"/.test(kropp), 'historiken ska ligga bakom en <details>');
-  assert.ok(kropp.includes('med ort och land'), 'hjälpraden som förklarar vad som finns bakom knappen är borta');
-  assert.ok(kropp.includes('id="bbs-lista"'), 'historiklistan saknas');
+  assert.ok(!kropp.includes('<summary>Mer information</summary>'), 'knappen ska vara borta');
+  assert.ok(!/<details[^>]*id="bbs-mer"/.test(kropp), 'historiken ska inte ligga bakom någon <details>');
+  assert.ok(!kropp.includes('id="bbs-lista"'), 'historiklistan ska inte finnas');
+  assert.ok(!/\.bbs-(lista|rad|mer)\b/.test(kropp), 'historikens CSS ska vara borta');
 });
 
 test('sidan: datan bär fortfarande varje skanning, ort och land', () => {

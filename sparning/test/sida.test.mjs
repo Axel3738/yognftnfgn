@@ -125,11 +125,12 @@ class Attrapp {
 
 // ⚠️ Varje id skriptet slår upp måste stå här. Saknas ett får skriptet null
 // och faller på första punktnotationen — testet rapporterar då ett fel som
-// ser ut att handla om något annat. bbs-steg, bbs-mer och bbs-avvikelse
-// kom med sammanfattningsvyn 2026-09-19.
+// ser ut att handla om något annat. bbs-steg och bbs-avvikelse kom med
+// sammanfattningsvyn 2026-09-19; bbs-mer/bbs-lista (historiken) togs bort
+// 2026-09-20 kväll.
 const IDN = ['bb-spar', 'bbs-sista', 'bbs-sok', 'bbs-traff', 'bbs-saknas', 'bbs-falt', 'bbs-form', 'bbs-fel',
-  'bbs-lista', 'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-leverans', 'bbs-nummer', 'bbs-byggd',
-  'bbs-steg', 'bbs-mer', 'bbs-avvikelse'];
+  'bbs-tom', 'bbs-annat', 'bbs-rubrik', 'bbs-ingress', 'bbs-leverans', 'bbs-nummer', 'bbs-byggd',
+  'bbs-steg', 'bbs-avvikelse'];
 
 // Delar en adress i `search` och `hash` som en webbläsare gör. Tidigare lade
 // attrappen HELA adressen i `location.search`, och då såg "#nummer=…"-testet
@@ -424,17 +425,14 @@ test('sidan körs: numret ur adressen ger rubrik, fakta och hela kedjan', () => 
   assert.equal(n.get('bbs-saknas').hidden, true);
   assert.equal(n.get('bbs-tom').hidden, true);
 
-  // Tidslinjen: nyast överst, svensk text, ort och tid.
-  const rader = n.get('bbs-lista').barn;
-  assert.equal(rader.length, 3);
-  assert.equal(rader[0].className, 'bbs-rad bbs-rad--nu', 'senaste raden ska bära den röda punkten');
-  assert.equal(rader[1].className, 'bbs-rad');
-  const rad = (i) => rader[i].barn.map((b) => b.textContent);
-  assert.deepEqual(rad(0), ['i dag 12:00', 'Paketet är på väg', 'Malmö']);
-  assert.deepEqual(rad(1), ['i går 12:00', 'Paketet har lämnat terminalen', 'Shenzhen']);
-  assert.deepEqual(rad(2), ['15 sep 12:14', 'Vi har fått uppgifterna om paketet'], 'utan ort skrivs ingen ortsrad');
-  assert.equal(rader[0].barn[0].tagg, 'time');
-  assert.equal(rader[0].barn[0].attr.datetime, new Date(klockanTio(0)).toISOString());
+  // ⚠️ Ingen fullständig historik (Axels beslut 2026-09-20 kväll: "B — bort
+  // med mer information"): Shenzhen-skanningen ligger i datan men får inte
+  // nå någon vy. De fem punkterna är hela sidan.
+  assert.equal(n.get('bbs-steg').hidden, false, 'de fem punkterna ska visas');
+  assert.equal(n.get('bbs-steg').barn.length, 5);
+  assert.ok(!n.get('bb-spar').textContent.includes('Shenzhen'), 'avsändarorten får inte synas någonstans i vyn');
+  assert.ok(!n.get('bb-spar').textContent.includes('Mer information'));
+  assert.ok(!n.get('bb-spar').textContent.includes('Paketet har lämnat terminalen'), 'historikens rader ska inte ritas');
 
   assert.equal(n.get('bbs-byggd').hidden, false);
   assert.equal(n.get('bbs-byggd').textContent, 'Uppdaterad i dag 12:00 · nya skanningar läggs till varje timme');
@@ -452,8 +450,7 @@ test('sidan körs: utan nummer, utan skanningar, okänt nummer, tomt fält', () 
   // Registrerat men aldrig skannat ⇒ besked, ingen tom tidslinje.
   const bokat = kor(kropp, '?nummer=YT2626100708672397');
   assert.equal(bokat.get('bbs-rubrik').textContent, 'Paketet är bokat');
-  // Utan skanningar finns varken sammanfattning eller historik att visa.
-  assert.equal(bokat.get('bbs-mer').hidden, true, 'historiken ska vara dold');
+  // Utan skanningar finns ingen sammanfattning att visa.
   assert.equal(bokat.get('bbs-steg').hidden, true, 'de fem punkterna ska vara dolda');
   assert.equal(bokat.get('bbs-tom').hidden, false);
   assert.equal(bokat.get('bbs-tom').textContent,

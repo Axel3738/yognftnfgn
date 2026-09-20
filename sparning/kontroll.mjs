@@ -5,7 +5,9 @@
 //
 //   1. Ingen faktisk trackinghändelse får tas bort ur fullständig historik.
 //   2. Finns ursprungsland eller transitland i transportörens rådata måste
-//      kunden fortfarande kunna hitta det via "Mer information".
+//      det finnas kvar i sidans data. (Kravet löd "via Mer information" —
+//      den vyn togs bort 2026-09-20 kväll på Axels beslut B; kravet mäts
+//      sedan dess på datablocket, som är orört. Ingen vy visar landet.)
 //   3. Sammanfattningen får förenkla tekniska ortnamn och transportörstexter,
 //      men får inte visa ett land, en plats eller en status som MOTSÄGER
 //      råinformationen.

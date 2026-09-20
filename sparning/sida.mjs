@@ -168,16 +168,10 @@ function copydata(c) {
 // på knappen "Spåra ett annat nummer", som därför syntes redan innan kunden
 // hade sökt. Spärren gör `hidden` pålitligt för alla vyer på sidan.
 //
-// `.bbs-lista` bär 8 px vänsterindrag av samma sorts skäl: tidslinjens punkt
-// ligger på `left:-7px` i förhållande till raden, och utan indraget sticker
-// den ut till vänster om #bb-spar. Ligger temats spalt kant i kant med
-// skärmen blir det en vågrät scrollning på mobilen. (Resonemang, inte
-// mätning — sidan har ännu inte setts i en riktig webbläsare.)
-// Sammanfattningens fem punkter (.bbs-steg) delar formspråk med den
-// fullständiga historiken (.bbs-lista): samma lodräta linje, samma prickar.
-// Skillnaden är att stegen alltid är fem rader och tål mer luft, att nådda
-// skeden är svarta med datum medan kommande står grå utan, och att
-// historiken ligger hopfälld i en <details>.
+// Sammanfattningens fem punkter (.bbs-steg) är hela vyn: nådda skeden är
+// svarta med datum, kommande står grå utan. Den fullständiga historiken
+// (.bbs-lista bakom "Mer information") togs bort 2026-09-20 kväll på Axels
+// beslut — den räknade upp Kina och Nederländerna rad för rad.
 //
 // ⚠️ Inga /* */-kommentarer inuti mallsträngen nedan: testet som mäter att
 // all CSS är avgränsad under #bb-spar läser selektorerna med en enkel
@@ -218,15 +212,6 @@ function stil(c) {
 #bb-spar .bbs-sista .bbs-sistaetikett{display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 3px}
 #bb-spar .bbs-sista .bbs-sistanr{font-weight:700;word-break:break-all}
 #bb-spar .bbs-sista a{font-weight:700}
-#bb-spar .bbs-lista{list-style:none;margin:8px 0 0;padding:0 0 0 8px}
-#bb-spar .bbs-rad{position:relative;margin:0;padding:0 0 22px 24px;border-left:2px solid var(--bbs-ram)}
-#bb-spar .bbs-rad:last-child{border-left-color:transparent;padding-bottom:0}
-#bb-spar .bbs-rad::before{content:"";position:absolute;left:-5px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--bbs-ram);border:2px solid #fff}
-#bb-spar .bbs-rad--nu::before{left:-7px;top:2px;width:16px;height:16px;background:var(--bbs-rod)}
-#bb-spar .bbs-rad--nu .bbs-text{font-weight:700}
-#bb-spar .bbs-tid{display:block;font-size:13px;letter-spacing:.5px;text-transform:uppercase;color:var(--bbs-gra);margin:0 0 2px}
-#bb-spar .bbs-text{margin:0}
-#bb-spar .bbs-ort{margin:2px 0 0;font-size:14px;color:var(--bbs-gra)}
 #bb-spar .bbs-steg{list-style:none;margin:18px 0 0;padding:0 0 0 8px}
 #bb-spar .bbs-stegrad{position:relative;margin:0;padding:0 0 20px 26px;border-left:2px solid var(--bbs-ram)}
 #bb-spar .bbs-stegrad:last-child{border-left-color:transparent;padding-bottom:0}
@@ -265,10 +250,6 @@ function stil(c) {
 #bb-spar .bbs-resa{display:none}
 }
 #bb-spar .bbs-avvikelse{margin:14px 0 0;padding:12px 14px;border-left:4px solid var(--bbs-rod);background:#fdf3f3;font-weight:700}
-#bb-spar .bbs-mer{margin:22px 0 0;border-top:1px solid var(--bbs-ram);padding:14px 0 0}
-#bb-spar .bbs-mer summary{cursor:pointer;font-weight:700;padding:4px 0;list-style:revert}
-#bb-spar .bbs-mer summary:hover{color:var(--bbs-rod)}
-#bb-spar .bbs-merhjalp{font-size:14px;color:var(--bbs-gra);margin:8px 0 0}
 #bb-spar .bbs-byggd{font-size:13px;color:var(--bbs-gra);margin:20px 0 0}
 #bb-spar .bbs-hjalprad{font-size:14px;color:var(--bbs-gra);margin:14px 0 0}
 @media (max-width:420px){#bb-spar h2{font-size:25px}#bb-spar .bbs-fakta{gap:10px 0;display:block}}
@@ -396,8 +377,8 @@ function starta() {
   // ---------------------------------------------------------------- vyerna
   var sok = $('bbs-sok'), traff = $('bbs-traff'), saknas = $('bbs-saknas');
   var falt = $('bbs-falt'), form = $('bbs-form'), fel = $('bbs-fel');
-  var lista = $('bbs-lista'), tomrad = $('bbs-tom'), annat = $('bbs-annat');
-  var stegruta = $('bbs-steg'), mer = $('bbs-mer'), avvikelse = $('bbs-avvikelse');
+  var tomrad = $('bbs-tom'), annat = $('bbs-annat');
+  var stegruta = $('bbs-steg'), avvikelse = $('bbs-avvikelse');
 
   // saknat = numret slogs upp men fanns inte (då visas rutan som förklarar
   // varför). felText = en rad rakt ovanför fältet, t.ex. vid tomt fält.
@@ -411,32 +392,6 @@ function starta() {
     visaEl(fel, !!felText);
     if (forifyllt) falt.value = forifyllt;
     if (saknat || felText) { try { falt.focus(); } catch (e) {} }
-  }
-
-  function rad(h, forst) {
-    var li = document.createElement('li');
-    li.className = forst ? 'bbs-rad bbs-rad--nu' : 'bbs-rad';
-    var tid = document.createElement('time');
-    tid.className = 'bbs-tid';
-    tid.setAttribute('datetime', h.iso);
-    tid.textContent = formatera(h.tid);
-    li.appendChild(tid);
-    var text = document.createElement('p');
-    text.className = 'bbs-text';
-    text.textContent = h.text;
-    li.appendChild(text);
-    // Den fullständiga historiken visar orten MED land ("Rozenburg,
-    // Nederländerna"). Ursprungs- och transitland ska gå att hitta här —
-    // det är hela poängen med att historiken finns kvar (Axels krav
-    // 2026-09-19), och sparning/kontroll.mjs mäter att inget land tappats.
-    var ort = h.platsMedLand || h.plats;
-    if (ort) {
-      var o = document.createElement('p');
-      o.className = 'bbs-ort';
-      o.textContent = ort;
-      li.appendChild(o);
-    }
-    return li;
   }
 
   // En punkt i sammanfattningen. Nådda skeden bär datum och ort; de som
@@ -724,10 +679,9 @@ function starta() {
     // Sammanfattningen: leveransens milstolpar.
     var s = p.sammanfattning && p.sammanfattning.steg ? p.sammanfattning.steg : [];
     stegruta.textContent = '';
-    // ⚠️ Variabeln heter stegpost, inte rad. Funktionen rad() bygger
-    // historikens rader längre ned i samma funktion, och en "var rad" här
-    // skuggar den i HELA visaPaket — historiken kastade "rad is not a
-    // function" och kunden fick rutan "Vi hittar inte det numret".
+    // (Variabeln hette en gång "rad" och skuggade historikens rad() i hela
+    // visaPaket — kunden fick "Vi hittar inte det numret". Historiken är
+    // borta sedan 2026-09-20, namnet stegpost står kvar av tydlighet.)
     // Fem rader, alltid. Axels val 2026-09-20 ("jag kör gärna på 5 steg").
     // Varianten som vävde in utkörningen i ankomstraden är borttagen.
     for (var k = 0; k < s.length; k++) {
@@ -748,11 +702,11 @@ function starta() {
       });
     } catch (e) { stegruta.className = 'bbs-steg bbs-steg--ikoner bbs-steg--rullar'; }
 
-    // Hela historiken, oförändrad, bakom "Mer information".
-    lista.textContent = '';
-    for (var i = 0; i < p.handelser.length; i++) lista.appendChild(rad(p.handelser[i], i === 0));
-    visaEl(mer, p.handelser.length > 0);
-    try { mer.open = false; } catch (e) {}
+    // ⚠️ Ingen fullständig historik längre (Axels beslut 2026-09-20 kväll,
+    // "B — bort med mer information"): den listade Kina och Nederländerna
+    // rad för rad, och det var hela poängen med bävernumret att inte peka ut
+    // avsändarlandet. Rådatan ligger kvar i D (kontroll.mjs mäter den), men
+    // kunden ser bara de fem punkterna.
 
     tomrad.textContent = C.tom;
     visaEl(tomrad, p.handelser.length === 0);
@@ -874,11 +828,6 @@ export function byggSidkropp(data, konfig) {
   <p id="bbs-tom" hidden></p>
   <p id="bbs-avvikelse" class="bbs-avvikelse" hidden></p>
   <ol id="bbs-steg" class="bbs-steg" hidden></ol>
-  <details id="bbs-mer" class="bbs-mer" hidden>
-    <summary>Mer information</summary>
-    <p class="bbs-merhjalp">Hela transportkedjan som fraktbolaget rapporterat den, med ort och land.</p>
-    <ol id="bbs-lista" class="bbs-lista"></ol>
-  </details>
   <p class="bbs-hjalprad">Undrar du något om leveransen? Mejla <a href="mailto:${mail}">${mail}</a>.</p>
 </div>
 <button type="button" id="bbs-annat" class="bbs-knapp bbs-knapp--tunn" hidden>Spåra ett annat nummer</button>

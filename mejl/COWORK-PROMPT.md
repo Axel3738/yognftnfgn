@@ -16,10 +16,9 @@ för den. Lösningen är råfilerna på GitHub: repot är publikt (mätt
 2026-09-13), så `raw.githubusercontent.com`-länkarna öppnas som ren text i
 en flik.
 
-⚠️ **Länkarna nedan pekar på grenen `claude/fervent-bardeen-pzyuql`**, för
-v11 ligger inte på `main` än (Axel: "inte merga än", 2026-09-20). När grenen
-mergats: byt `claude/fervent-bardeen-pzyuql` mot `main` i de tre länkarna.
-Klistras en gammal gren in får kunden ett mejl utan bävernummer.
+**Länkarna pekar på `main`** (grenen mergades 2026-09-20 kväll på Axels
+order). Bygger en gren om mallarna: byt till grenens namn i länkarna tills
+den mergats, annars klistrar Cowork in en gammal version.
 
 Teckentalen nedan är från bygget 2026-09-20 (**v11: bävernumret
 "Ditt paketnummer: BB-…" i klartext under knappen, och knappen bär samma
@@ -101,9 +100,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `Ditt paketnummer` och `sha256` och `Beräknad leverans` | **77 552** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `Ditt paketnummer` och `sha256` | **6 245** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/fraktuppdatering.liquid |
-| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `Ditt paketnummer` och `sha256` | **6 234** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/fervent-bardeen-pzyuql/mejl/output/ute_for_leverans.liquid |
+| 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `Ditt paketnummer` och `sha256` och `Beräknad leverans` | **77 552** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `Ditt paketnummer` och `sha256` | **6 245** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
+| 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `Ditt paketnummer` och `sha256` | **6 234** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger syskonet "Order ute för lokal
 leverans" — ta INTE det. Rör inte heller "Levererad": den är redan rätt.

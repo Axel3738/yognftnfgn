@@ -61,12 +61,18 @@ Sidan visade varje enskild logistikhändelse — terminal, land, transportstatus
 och blev rörig: ett paket har i snitt nio skanningar, som mest 29. Standardvyn
 är nu **fem punkter**:
 
-> Beställningen är registrerad → Internationell transport →
-> Ankommit till Sverige → Ute för leverans → Levererat
+> Ordern är mottagen → Paketet är på väg → Hos fraktbolaget →
+> Ute för leverans → Levererat
 
-Hela historiken finns kvar bakom **"Mer information"**, med ort OCH land på
-varje rad ("Rozenburg, Nederländerna"). Ingen skanning tas bort, inget datum
-räknas om — punkterna är en ren gruppering av rader som redan finns.
+(Så sedan 2026-09-20 kväll; hette först *Beställningen är registrerad →
+Internationell transport → Ankommit till Sverige → …*.) Under varje nådd
+punkt står ett delsteg som säger var paketet faktiskt är (`delsteg.mjs`).
+
+⚠️ **"Mer information" med hela historiken är BORTA** (Axels beslut
+2026-09-20 kväll, B: "bort med mer information") — den räknade upp Kina och
+Nederländerna rad för rad, tvärtemot bävernumrets syfte. Ingen skanning tas
+bort ur *datan*: sidans datablock bär fortfarande varje rad med ort och
+land, och `kontroll.mjs` mäter det. Bara vyn är fem punkter.
 
 ### Ingen utländsk geografi i standardvyn (Axels krav 2026-09-20)
 
