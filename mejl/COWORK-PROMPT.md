@@ -45,6 +45,32 @@ inte navigerade i dess webbläsare ("svart laddningsyta") medan direktbesök
 fungerade — HTML:en pekar rätt, troligen temats laddningsöverlägg som fångade
 det första klicket; inte mätt av en människa.
 
+**v12 inklistrad av Cowork 2026-09-21 kl 22:30 CEST — EN mall, Orderbekräftelsen.**
+Leveranstiden i FAQ-raden: `7–14 dagar` → `5–10 arbetsdagar` (Axels order samma
+dag). Verifierad mot serverns `emailTemplate`, inte mot redigeraren: **84 138
+tecken, SHA-256 lika med GitHub-filen**, `updatedAt 2026-09-21T20:30:48Z`,
+`5–10 arbetsdagar` finns och `7–14 dagar` är borta. Ämnesraden var redan exakt
+rätt (109 tecken) och rördes inte. De tre fraktmallarna orörda och kontrollerade
+på plats: 77 552 / 6 245 / 6 234, alla med `Ditt paketnummer` + `sha256`,
+Leveransbekräftelsen även `Beräknad leverans`; inga osparade utkast låg och
+väntade. Menyraderna fanns redan från v11 — lästa i kundens vy på tre ställen
+(desktopmeny, mobilmeny, sidfot), alla `href="/pages/spara"`. Testmejl skickat
+från Leveransbekräftelse till Axels Gmail.
+
+⚠️ **Filen bar en ändring till, och den var rätt:** produkttiteln `Taköverdrag
+Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan` hade kortats till `Taköverdrag
+Husvagn – Skyddar Den Dyraste Ytan` på två rader. Orsaken är att `npm run mejl`
+läser produkterna **live ur Shopify** vid varje bygge (`mejl/produkter.json`),
+och Axel hade döpt om produkten i butiken; handlen är oförändrad. Det förklarar
+också varför mallen blev KORTARE (84 151 → 84 138) trots att leveranstidstexten
+blev sex tecken längre. Räkna aldrig bort en teckendiff som "fel urklipp" utan
+att först jämföra mot butikens egna produktnamn.
+
+⚠️ **Adressen `/email_templates/out_for_delivery/edit` ger 404** — rätt slug är
+`shipment_out_for_delivery`. `local_out_for_delivery` ("Order ute för lokal
+leverans") är en ANNAN mall och ska inte röras. Samma fallgrop som CaraShell
+2026-09-21.
+
 ---
 
 ## Kopiera allt nedanför linjen till Cowork
@@ -96,7 +122,9 @@ tabellen → Redigera kod.
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 1. Öppna mallens kodlänk i en **ny flik**. Det är en ren textfil. Klicka i
-   texten, tryck **Cmd+A**, sedan **Cmd+C**.
+   texten, tryck **Ctrl+A**, sedan **Ctrl+C** (Windows-dator, se varningen ovan).
+   Går urklippet inte att lita på: hämta filen direkt i Shopify-sidan och skriv
+   in den via kodrutans eget API — det är metoden som fungerat två körningar i rad.
 2. Gå tillbaka till Shopify-admin → **Inställningar** → **Notiser** →
    **Kundaviseringar** → klicka på mallens namn.
 3. Klicka **Redigera kod** (Edit code).
@@ -104,7 +132,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
    tecken för tecken. Står den redan exakt rätt: **rör den inte**. Skiljer
    den sig: markera allt, ta bort, klistra in tabellens rad.
 5. Rutan **E-postbrödtext (HTML)** (Email body HTML): klicka i rutan, tryck
-   **Cmd+A**, tryck **Delete**, tryck **Cmd+V**.
+   **Ctrl+A**, tryck **Delete**, tryck **Ctrl+V**.
 6. **Innan du sparar:** kontrollera att det inklistrade är rätt mall — rätt
    teckenantal och att textbiten i kolumnen "Kontrollera" finns.
    Fel innehåll: kopiera om från fliken och klistra in igen.
