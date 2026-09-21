@@ -159,6 +159,7 @@
     "Paketet är överlämnat till fraktbolaget": "Pakken er overlevert til transportøren",
     "Paketet har kommit till omlastningsorten": "Pakken har kommet til omlastingsstedet",
     "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget": "Opplysningene om pakken inneholdt en feil og er sendt på nytt til transportøren",
-    "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Postnummeret på pakken var feil. Pakken sendes videre til deg, men kan bli forsinket"
+    "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Postnummeret på pakken var feil. Pakken sendes videre til deg, men kan bli forsinket",
+    "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke leveres fordi det manglet navn på postkassen. Den er på vei til et hentested nær deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag"
   }
 }

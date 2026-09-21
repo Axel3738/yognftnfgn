@@ -159,6 +159,7 @@
     "Paketet är överlämnat till fraktbolaget": "Paketti on luovutettu kuljetusyhtiölle",
     "Paketet har kommit till omlastningsorten": "Paketti on saapunut uudelleenlastauspaikkaan",
     "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget": "Paketin tiedoissa oli virhe, ja ne on lähetetty uudelleen kuljetusyhtiölle",
-    "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Paketin postinumero oli virheellinen. Paketti lähetetään edelleen sinulle, mutta se voi viivästyä"
+    "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Paketin postinumero oli virheellinen. Paketti lähetetään edelleen sinulle, mutta se voi viivästyä",
+    "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakettia ei voitu toimittaa, koska postilaatikosta puuttui nimi. Se on matkalla lähellesi noutopisteeseen, ja saat ilmoituksen, kun sen voi noutaa, yleensä yhden arkipäivän kuluessa"
   }
 }
