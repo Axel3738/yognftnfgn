@@ -1356,3 +1356,26 @@ gjorde det, och båda är avstängda.
 
 Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa den här rutinen,
 18 sep). Ingen pingas om.
+
+---
+
+## 2026-09-22 — nattvakten, körning nr 11: sista mätbara dygnet i fönstret
+
+Kördag OCH briefdag i kadensen, men `Briefrond:` står på PAUS ⇒ noll briefer,
+`kord` stämplat, ingen `brief-kord`. SE PAUSED sedan 15/9 20:52 (`updated_time`
+orörd sjunde dygnet), NO PAUSED sedan 18/9. **0 ändringar, 0 loggrader.**
+
+SE 7d: **487 kr, 1 köp, ROAS 0,80** på två dagsrader. I morgon är fönstret tomt
+och rapporten har inga siffror alls att visa — det är väntat, inte ett fel.
+Serien 2 998 → 1 875 → 1 027 → 487 är fönstret som töms, ingenting annat.
+
+Hubben oförändrad sjätte natten: 19 i Draft, 10 i Creative strat review, 31
+Approved. **`feedback.md` kommer inte att skapas av den nya briefgranskningen**
+(byggd 18/9, första körning måndag 21/9): den läser Bäverbutikens hubbar, och
+DryTreks hub är en OPS-hub som undantas per id. Ingen åtgärd medan produkten är
+av, men värt att veta innan briefronden släpps — då behöver granskningen
+antingen utökas eller så får `/cs` göra jobbet.
+
+Sjunde natten med 0 ändringar. Frågorna till Axel står kvar sedan 15/9 (A/B/C
+för SE) och 18/9 (stäng av rutinen tills en marknad är igång).
+Underlag: `factory/output/drytrek/budgetrond-2026-09-22.json`.
