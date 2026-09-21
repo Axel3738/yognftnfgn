@@ -266,9 +266,17 @@ export function berakna({ hubbar, annonser, personer, datum, sats = SATS, koppla
     ({ traffar, omatchade, konflikter } = matcha(annonser, register));
   }
 
+  // En person kan bära flera Notion-id:n: sitt eget plus alias för konton som
+  // dykt upp i efterhand. Alias skrivs aldrig över ett id som redan är taget —
+  // hellre okopplat än fel person.
   const personPaNotionId = new Map(
     personer.filter((p) => p.notionUserId).map((p) => [p.notionUserId, p]),
   );
+  for (const p of personer) {
+    for (const alias of p.notionUserIdAlias ?? []) {
+      if (alias && !personPaNotionId.has(alias)) personPaNotionId.set(alias, p);
+    }
+  }
 
   /** En post per mottagare, plus tre samlingsposter för det som inte betalas ut. */
   const poster = new Map();
