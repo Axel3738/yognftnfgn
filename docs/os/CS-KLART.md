@@ -193,7 +193,7 @@ CaraShell, `--ersatt-backfill`, hook rate ur `value`), rond-auto 3c/4b/4e/6
 speglade hubbar: nummer ≤ 100 + pris mot båda butikerna, AI-raden),
 `tools/ai-rad.mjs`, `tools/annonskommentarer.mjs` (kluster), ANALYSMETOD
 6b, cs.md, forsta-batch.md, notionscalercs.md, ops-oversatt.md,
-BRIEF-REGI.md. Tester: 216 (agent) + 1 421 (main) gröna.
+BRIEF-REGI.md. Tester: 227 på agent-grenen (varav 210 i `agent/test/`) + 1 421 på `main` — alla gröna, mätta 2026-09-21.
 
 **Läsning av betygen:** ✅ grön = koden tvingar det OCH en körning har
 visat det. 🟡 halvvägs = koden tvingar det men rutinen har inte kört det
