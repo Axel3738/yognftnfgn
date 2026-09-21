@@ -95,7 +95,31 @@ export async function api(sökväg, { method = 'GET', params = {}, form = null }
     if (väntaTill > Date.now()) await vänta(väntaTill - Date.now());
     senastAnrop = Date.now();
 
-    const res = await fetch(url, { method: form ? 'POST' : method, body });
+    // Utan timeout lämnar ett tappat proxy-socket löftet olöst för alltid. Node
+    // tömmer då händelsekön och avslutar med kod 0 — ingen felrad, ingen utskrift,
+    // och ett verktyg med --json skriver en TOM fil som läser som "kön var tom".
+    // (Mätt 2026-09-21: /ops-oversatt carashell dog så fyra körningar i rad, två
+    // gånger på OPS-kontot och två på US-kontot.) En timeout gör tystnaden till
+    // ett fel som går att se. Uppladdningar får längre tid — en video tar minuter.
+    const skrivning = Boolean(form) || method !== 'GET';
+    let res;
+    try {
+      res = await fetch(url, {
+        method: form ? 'POST' : method,
+        body,
+        signal: AbortSignal.timeout(skrivning ? 900_000 : 90_000),
+      });
+    } catch (fel) {
+      // En LÄSNING görs om — den har inga sidoeffekter. En SKRIVNING görs aldrig
+      // om automatiskt: anropet kan ha gått fram innan svaret tappades, och ett
+      // omförsök hade skapat annonsen två gånger. Den felar i stället högt, och
+      // anroparen läser tillbaka kontot.
+      if (skrivning) throw new Error(`Meta ${method}${form ? ' (form)' : ''} mot ${sökväg} nådde aldrig fram: ${fel.message}`);
+      if (försök >= BACKOFF_MS.length) throw new Error(`Meta GET ${sökväg}: ${fel.message} (efter ${försök + 1} försök)`);
+      console.error(`  ⏳ Meta svarade inte (${fel.message}) (försök ${försök + 1}/${BACKOFF_MS.length}) — väntar ${BACKOFF_MS[försök] / 1000}s`);
+      await vänta(BACKOFF_MS[försök]);
+      continue;
+    }
     const json = await res.json().catch(() => ({}));
     if (res.ok && !json.error) return json;
 
