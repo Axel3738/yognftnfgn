@@ -196,3 +196,66 @@ Fjolårets julvinnare (~100k spend, ROAS 3–5 enligt Axel) finns **inte** i nå
 konto kopplingen ser: `Sushi kanske?` (1550615276530638) innehåller
 Grillklinikens NO-annonser, `Norge` och `Axel Odhner` är tomma, `Finland DK`
 gick inte att läsa.
+
+---
+
+# A/B-test `sortval` — avläsning 1 (2026-09-21)
+
+Testet: sushisidans paketkort. **A** = sidan som förut (en sort, sushins egna
+nivåer). **B** = mixa och matcha, en dropdown per låda med alla fyra sorterna,
+kollektionsvida koder `STRUMPOR-K1F1-P*` / `STRUMPOR-K2F2-P*`.
+
+**Testfönster:** från order `#4786` 2026-09-18 07:31 (första ordern efter att
+Axel publicerade temat) till 2026-09-21 18:49 = 3,5 dygn. Ordrar före `#4786`
+är förköp och räknas inte — `#4785` 05:49 samma dag saknar stämpel och bär
+A-kod, och hade blivit felräknad som A om fönstret satts till midnatt.
+
+**Butiken:** matstrumpor.se (`1r46tp-qx`), verifierad. Trafik 30 d: 2 348
+sessioner, 112 ordrar, 4,77 % konvertering, 78 besökare/dag, snittorder 461 kr.
+
+## Utfall (analys.mjs, oförändrat)
+
+| | A | B |
+|---|---|---|
+| Ordrar | 9 | 7 |
+| Intäkt | 3 790 kr | 3 591 kr |
+| Snittorder | 421 kr | 513 kr |
+
+Skillnad i snittordervärde 92 kr (p = 0,292) · lyft B mot A −22,2 % ·
+p = 0,8026 · konfidens 19,7 %.
+
+**Beslut: för få köp — 7 av 25 per variant. Ingen dom förrän dess.**
+
+## Vad som ändå är värt att notera
+
+- **Fördelningen är rimlig.** 9 mot 7 på 16 köp är vad man väntar sig av en
+  50/50-lottning i den här storleken. Inget tyder på att motorn snedfördelar.
+- **B:s snittorder är högre** (513 mot 421 kr) — B står för de två enda
+  798-kronorsordrarna (`#4790`, `#4791`, båda `STRUMPOR-K2F2-P4`). Det är exakt
+  den mekanik mixläget ska driva, men p = 0,292 betyder att det lika gärna kan
+  vara slumpen. **Får inte agera på.**
+- **Efterstämplingen fungerar i skarp drift.** Av ordrarna före fixen
+  (2026-09-18/19) saknade tre av sex stämpel; av de tio ordrarna efter fixen har
+  **alla tio** stämpel. `#4788`, `#4790` och `#4791` härleddes ur rabattkoden
+  enligt reservregeln i `.claude/commands/abtest.md`. Noll okända.
+- ⚠️ **`#4793` kom från donutsidan** (`DONUT-K1F1`), inte sushisidan. Den bär
+  stämpel `a` eftersom motorn stämplar på alla sidor, men kunden såg aldrig det
+  som testas. Sådana köp späder ut båda armarna lika mycket (lottningen är
+  slumpmässig) men gör effekten svagare att mäta. Vid nästa avläsning: överväg
+  att räkna en sekundär tabell med bara sushisidans köp.
+- ⚠️ **Konvertering per variant går inte att räkna.** Shopify mäter inte
+  sessioner per variant, och motorn skriver bara stämpeln på ordern — inte på
+  besöket. Verktygets "lyft" bygger därför på antal köp, inte på besökare.
+  Vill vi ha äkta konvertering måste exponeringen loggas någonstans vi kan läsa.
+
+## Nästa avläsning
+
+Takten i fönstret: A 2,6 köp/dygn, B 2,0 köp/dygn. För att nå 25 per variant
+behöver B ~9 dygn till och A ~6 — alltså **omkring 30 september**. Observera att
+25 köp per variant bara är golvet för att matematiken ska gälla; temats egen
+planering (`/abtest planera`, 78 besökare/dag) säger att även ett lyft på 50 %
+kräver ~49 dygn. Räkna med att nästa avläsning säger "fortsätt".
+
+**Rör ingenting under tiden** — inga pris-, frakt- eller budgetändringar, och
+titta inte varje dag.
+
