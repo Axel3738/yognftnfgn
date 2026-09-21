@@ -1,349 +1,263 @@
 <title>Backend inför Q4</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
 <style>
-  /* Sidan är skriven för Axel: stora bokstäver, korta rader, ett spår i taget.
-     Uppdateras av sessionen när svaren från Evolve-boten och Canwangda kommer.
-     Publiceras om mot SAMMA länk (docs/q4/README.md). */
+  /* Dashboard för Axel: allt syns på en skärm, detaljer bakom "Visa mer".
+     Uppdateras av sessionen när svaren kommer; publiceras om mot samma länk (README). */
   :root {
-    --grund: #f3f5f7;
-    --yta: #ffffff;
-    --text: #17212b;
-    --dov: #56636f;
-    --linje: #d6dde3;
-    --accent: #0b4f6c;
-    --accent-ljus: #dcebf1;
-    --vantar: #b45f06;
-    --vantar-ljus: #fdebd0;
-    --klart: #1f6f3a;
-    --klart-ljus: #d9f0e0;
-    --fara: #b3261e;
-    --fara-ljus: #f9dcda;
-    --skugga: 0 1px 2px rgba(23, 33, 43, .06);
+    --grund: #eef1f4; --yta: #ffffff; --yta2: #f6f8fa; --text: #17212b; --dov: #5b6874; --linje: #d5dce3;
+    --accent: #1f7f9f; --accent-ljus: #d8edf4;
+    --varn: #c46a00; --varn-ljus: #fdebd3;
+    --ok: #1f7a3f; --ok-ljus: #d8f1e0;
+    --fara: #b3261e; --fara-ljus: #f9dcda;
+    --grå: #6d7b88;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --grund: #121a21; --yta: #1b2530; --text: #eef2f5; --dov: #a3b0bb; --linje: #2f3d4a;
-      --accent: #7cc4e0; --accent-ljus: #1c3a49; --vantar: #f0b25b; --vantar-ljus: #46330f;
-      --klart: #7fd39a; --klart-ljus: #163d24; --fara: #ff8a80; --fara-ljus: #4a1f1c;
-      --skugga: none;
-    }
-  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --grund: #10171d; --yta: #1a232c; --yta2: #202b36; --text: #eef2f5; --dov: #a6b2bd; --linje: #2e3a46;
+    --accent: #7cc4e0; --accent-ljus: #1b3a48; --varn: #f0b25b; --varn-ljus: #45330f;
+    --ok: #7fd39a; --ok-ljus: #163d24; --fara: #ff8a80; --fara-ljus: #4a1f1c; --grå: #8a97a3; } }
   :root[data-theme="dark"] {
-    --grund: #121a21; --yta: #1b2530; --text: #eef2f5; --dov: #a3b0bb; --linje: #2f3d4a;
-    --accent: #7cc4e0; --accent-ljus: #1c3a49; --vantar: #f0b25b; --vantar-ljus: #46330f;
-    --klart: #7fd39a; --klart-ljus: #163d24; --fara: #ff8a80; --fara-ljus: #4a1f1c;
-    --skugga: none;
-  }
-  body {
-    background: var(--grund); color: var(--text);
-    font-family: "Atkinson Hyperlegible", "Verdana", "Segoe UI", system-ui, sans-serif;
-    font-size: 20px; line-height: 1.65;
-    padding-inline: 20px; padding-block: 32px 80px;
-  }
-  main { max-width: 680px; margin: 0 auto; display: grid; gap: 56px; }
-  h1, h2, h3 { line-height: 1.2; text-wrap: balance; margin: 0; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.7rem; margin-bottom: 20px; }
-  h3 { font-size: 1.25rem; }
-  p { margin: 0 0 16px; max-width: 34em; }
-  p:last-child { margin-bottom: 0; }
-  strong { font-weight: 700; }
-  section > p + p { margin-top: 0; }
-  .etikett { display: inline-block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--dov); font-weight: 700; margin-bottom: 8px; }
-  .huvud { display: grid; gap: 12px; }
-  .huvud p.stor { font-size: 1.25rem; }
-  .datum { color: var(--dov); font-size: 1rem; }
+    --grund: #10171d; --yta: #1a232c; --yta2: #202b36; --text: #eef2f5; --dov: #a6b2bd; --linje: #2e3a46;
+    --accent: #7cc4e0; --accent-ljus: #1b3a48; --varn: #f0b25b; --varn-ljus: #45330f;
+    --ok: #7fd39a; --ok-ljus: #163d24; --fara: #ff8a80; --fara-ljus: #4a1f1c; --grå: #8a97a3; }
 
-  /* statuspiller: alltid ikon + text, aldrig bara färg */
-  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; font-size: .95rem; font-weight: 700; white-space: nowrap; }
-  .pill::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: currentColor; flex: none; }
-  .pill.vantar { background: var(--vantar-ljus); color: var(--vantar); }
-  .pill.klart { background: var(--klart-ljus); color: var(--klart); }
+  body { background: var(--grund); color: var(--text); font-family: "Atkinson Hyperlegible", Verdana, "Segoe UI", system-ui, sans-serif; font-size: 18px; line-height: 1.45; padding-inline: 16px; padding-block: 16px 48px; }
+  main { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; }
+  h1, h2, h3, p { margin: 0; }
+  h1 { font-size: 1.6rem; line-height: 1.1; }
+  h2 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .06em; color: var(--dov); }
+  h3 { font-size: 1.15rem; line-height: 1.25; text-wrap: balance; }
+  .rad { display: grid; gap: 16px; }
+  .rad.tva { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .rad.tre { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .rad.fyra { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .box { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; padding: 18px 20px; display: grid; gap: 10px; align-content: start; }
+  .box.fara { border-color: var(--fara); border-width: 2px; }
+  .box.varn { border-color: var(--varn); border-width: 2px; }
+
+  /* topp */
+  .topp { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+  .topp .sub { color: var(--dov); font-size: .95rem; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; font-size: .9rem; font-weight: 700; white-space: nowrap; }
+  .pill::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: currentColor; flex: none; }
+  .pill.varn { background: var(--varn-ljus); color: var(--varn); }
+  .pill.ok { background: var(--ok-ljus); color: var(--ok); }
+  .pill.ok::before { border-radius: 2px; }
   .pill.fara { background: var(--fara-ljus); color: var(--fara); }
-  .pill.klart::before { border-radius: 2px; }
-  .pill.fara::before { width: 0; height: 0; border-radius: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid currentColor; background: none; }
+  .pill.fara::before { width: 0; height: 0; border-radius: 0; background: none; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 11px solid currentColor; }
 
-  /* paketets resa */
-  .resa { display: grid; gap: 0; border-left: 6px solid var(--accent); padding-left: 24px; margin-top: 8px; }
-  .steg { position: relative; padding-bottom: 28px; }
-  .steg:last-child { padding-bottom: 0; }
-  .steg::before { content: ""; position: absolute; left: -35px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--accent); border: 3px solid var(--grund); }
-  .steg .dag { font-weight: 700; color: var(--accent); font-size: 1rem; letter-spacing: .04em; text-transform: uppercase; }
-  .steg .vad { font-size: 1.2rem; font-weight: 700; margin: 2px 0 4px; }
-  .steg .mer { color: var(--dov); font-size: 1rem; max-width: 30em; }
-  .steg.varning::before { background: var(--fara); }
-  .steg.varning .dag { color: var(--fara); }
+  /* huvudtal */
+  .hero { display: grid; gap: 4px; }
+  .hero .n { font-size: 2.6rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+  .hero .n.fara { color: var(--fara); } .hero .n.varn { color: var(--varn); } .hero .n.accent { color: var(--accent); }
+  .hero .t { color: var(--dov); font-size: .95rem; }
+  .hero .e { font-size: 1rem; }
+  .jmf { font-size: .9rem; color: var(--dov); }
+  .jmf b { color: var(--text); }
 
-  /* siffror */
-  .siffror { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
-  .tal { background: var(--yta); border: 1px solid var(--linje); border-radius: 12px; padding: 18px 18px 14px; box-shadow: var(--skugga); }
-  .tal .n { font-size: 2rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--accent); }
-  .tal .t { font-size: 1rem; color: var(--dov); margin-top: 6px; }
+  /* resan: stapel */
+  .stapel { display: grid; gap: 6px; }
+  .spar { display: flex; height: 44px; border-radius: 8px; overflow: hidden; gap: 2px; background: var(--yta2); }
+  .seg { display: grid; place-items: center; color: #fff; font-weight: 700; font-size: .95rem; white-space: nowrap; overflow: hidden; }
+  .seg.a { background: var(--grå); flex: 0.5; } .seg.b { background: var(--varn); flex: 4.5; } .seg.c { background: var(--accent); flex: 10; } .seg.d { background: var(--accent); opacity: .55; flex: 8; }
+  .skala { display: flex; justify-content: space-between; font-size: .85rem; color: var(--dov); font-variant-numeric: tabular-nums; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .95rem; }
+  .legend span::before { content: ""; display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 6px; vertical-align: -2px; }
+  .legend .la::before { background: var(--grå); } .legend .lb::before { background: var(--varn); } .legend .lc::before { background: var(--accent); } .legend .ld::before { background: var(--accent); opacity: .55; }
+  .poang { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .poang div { background: var(--yta2); border-radius: 10px; padding: 10px 12px; }
+  .poang b { display: block; font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+  .poang span { font-size: .9rem; color: var(--dov); }
+  .poang .b b { color: var(--varn); }
 
-  /* problem och frågor */
-  .kort { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; padding: 22px 24px; box-shadow: var(--skugga); }
-  .kort + .kort { margin-top: 18px; }
-  .kort header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; margin-bottom: 12px; }
-  .kort .nr { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--accent-ljus); color: var(--accent); font-weight: 700; font-size: 1.1rem; flex: none; }
-  .kort .rubrik { display: flex; align-items: center; gap: 14px; }
-  .rad { display: grid; grid-template-columns: 9em 1fr; gap: 6px 16px; margin-top: 10px; }
-  .rad dt { font-weight: 700; color: var(--dov); font-size: 1rem; padding-top: 3px; }
-  .rad dd { margin: 0; }
-  .svar { border: 2px dashed var(--linje); border-radius: 10px; padding: 12px 16px; color: var(--dov); font-size: 1.05rem; margin-top: 12px; }
-  @media (max-width: 520px) { .rad { grid-template-columns: 1fr; gap: 2px 0; } .rad dd { margin-bottom: 8px; } }
-
-  .inte { background: var(--fara-ljus); border-radius: 14px; padding: 20px 24px; }
-  .inte ul, .lista ul { margin: 8px 0 0; padding-left: 22px; }
-  .inte li, .lista li { margin-bottom: 8px; }
-
-  /* julgränsen */
-  .jul { background: var(--accent-ljus); border-radius: 14px; padding: 22px 24px; }
-  .jul .stort { font-size: 1.6rem; font-weight: 700; }
-
-  /* ordlista */
-  .ord { display: grid; gap: 14px; }
-  .ord div { background: var(--yta); border: 1px solid var(--linje); border-radius: 10px; padding: 12px 16px; }
-  .ord b { display: block; font-size: 1.1rem; }
-  .ord span { color: var(--dov); font-size: 1.05rem; }
-
-  .logg { border-top: 1px solid var(--linje); padding-top: 20px; color: var(--dov); font-size: 1rem; }
-  .logg ul { padding-left: 22px; margin: 6px 0 0; }
-  a { color: var(--accent); }
-  a:focus-visible, button:focus-visible { outline: 3px solid var(--vantar); outline-offset: 2px; }
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  /* svarstavla */
+  .tavla { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; }
+  .fraga { background: var(--yta2); border-radius: 10px; padding: 12px 14px; display: grid; gap: 6px; }
+  .fraga .huvud { display: flex; align-items: center; gap: 10px; }
+  .fraga .nr { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-ljus); color: var(--accent); font-weight: 700; flex: none; }
+  .fraga .till { font-size: .85rem; color: var(--dov); }
+  .fraga .svar { border: 2px dashed var(--linje); border-radius: 8px; padding: 8px 10px; color: var(--dov); font-size: .95rem; }
+  details { border-top: 1px solid var(--linje); padding-top: 8px; }
+  details summary { cursor: pointer; font-weight: 700; color: var(--accent); font-size: .95rem; list-style: none; }
+  details summary::before { content: "+ "; }
+  details[open] summary::before { content: "– "; }
+  details summary:focus-visible { outline: 3px solid var(--varn); outline-offset: 2px; border-radius: 4px; }
+  details > *:not(summary) { margin-top: 8px; font-size: .98rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { background: var(--yta2); border: 1px solid var(--linje); border-radius: 8px; padding: 6px 12px; font-size: .95rem; }
+  .chip.nej { background: var(--fara-ljus); border-color: transparent; }
+  .chip.ja { background: var(--ok-ljus); border-color: transparent; }
+  .ord { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px 16px; font-size: .95rem; }
+  .ord b { display: block; }
+  .ord span { color: var(--dov); }
+  .fot { color: var(--dov); font-size: .9rem; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
 <main>
 
-  <section class="huvud">
-    <span class="etikett">Bäverbutiken · backend inför Black Friday och julen</span>
-    <h1>Backend inför Q4</h1>
-    <p class="stor">Den här sidan förklarar hur paketen går, vad som kan gå sönder när vi säljer dubbelt så mycket, och vilka svar vi väntar på.</p>
-    <p class="datum">Senast uppdaterad 21 september 2026. Sidan fylls på när svaren från Evolve-boten och Canwangda kommer.</p>
-  </section>
+  <div class="topp">
+    <div>
+      <h1>Backend inför Q4</h1>
+      <div class="sub">Bäverbutiken · siffror ur Shopify och Meta 19 sep · uppdaterad 21 sep 2026</div>
+    </div>
+    <div class="chips">
+      <span class="pill varn">Svar inne: 0 av 6</span>
+      <span class="pill fara">Julgränsen: inte satt</span>
+    </div>
+  </div>
 
-  <section>
-    <h2>1. Så går ett paket i dag</h2>
-    <p>Vi har inget eget lager. När en kund beställer köper vår agent i Kina, Canwangda, varan åt oss och skickar den. Så här lång tid tar varje steg. Siffrorna är mätta på våra riktiga paket i september.</p>
-    <div class="resa">
-      <div class="steg">
-        <div class="dag">Dag 0</div>
-        <div class="vad">Kunden beställer</div>
-        <div class="mer">Pengarna kommer in. Kunden får ett mejl som lovar leverans inom 7 till 14 dagar.</div>
+  <!-- rad 1: de tre viktigaste talen -->
+  <div class="rad tre">
+    <div class="box fara hero">
+      <div class="t">Hälften av paketen är framme först dag</div>
+      <div class="n fara">14–15</div>
+      <div class="e">Vi lovar 7–14 dagar i mejlen. Hälften av kunderna får paketet efter att löftet gått ut.</div>
+    </div>
+    <div class="box varn hero">
+      <div class="t">Paketet ligger hos agenten i</div>
+      <div class="n varn">4–5 dagar</div>
+      <div class="e">Det enda vi kan korta i år. Lager på agentens hylla gör det till 0–1 dag.</div>
+    </div>
+    <div class="box hero">
+      <div class="t">Försäljning senaste 30 dagarna</div>
+      <div class="n accent">1,3 mkr</div>
+      <div class="e jmf">Månaden innan <b>0,6 mkr</b>. Det har fördubblats. Q4 blir dubbelt igen.</div>
+    </div>
+  </div>
+
+  <!-- rad 2: resan -->
+  <div class="box">
+    <h2>Så lång tid tar ett paket, dag för dag</h2>
+    <div class="stapel">
+      <div class="spar" role="img" aria-label="Tidslinje: 0,5 dag hos agenten till fraktsedel, 4,5 dagar väntan hos agenten, cirka 10 dagar frakt tills hälften är framme, sedan upp till dag 23 för nio av tio">
+        <div class="seg a" title="Fraktsedel: 0,5 dag"></div>
+        <div class="seg b" title="Ligger hos agenten: 4–5 dagar">Hos agenten</div>
+        <div class="seg c" title="Flyg och PostNord: cirka 10 dagar">Flyg + PostNord</div>
+        <div class="seg d" title="De långsamma: dag 15–23">De långsamma</div>
       </div>
-      <div class="steg">
-        <div class="dag">Dag 0,5</div>
-        <div class="vad">Agenten skapar fraktsedeln</div>
-        <div class="mer">Shopify säger nu "skickad". Men paketet har inte lämnat Kina än.</div>
+      <div class="skala"><span>Dag 0</span><span>Dag 5</span><span>Dag 10</span><span>Dag 15</span><span>Dag 23</span></div>
+      <div class="legend"><span class="la">Fraktsedel skapas, 0,5 dag</span><span class="lb">Väntar hos agenten, 4–5 dagar</span><span class="lc">Frakt tills hälften är framme</span><span class="ld">Sista tiondelen</span></div>
+    </div>
+    <div class="poang">
+      <div><b>0,5</b><span>dag: fraktsedel klar. Shopify säger "skickad".</span></div>
+      <div class="b"><b>4–5</b><span>dagar: paketet lämnar agenten först nu.</span></div>
+      <div><b>14–15</b><span>dagar: hälften av kunderna har fått paketet.</span></div>
+      <div><b>23</b><span>dagar: nio av tio har fått paketet.</span></div>
+    </div>
+    <details><summary>Visa mer</summary>
+      <p>Mätt på våra riktiga paket i september via 17TRACK och Shopify. 54 % av paketen är oskannade av YunExpress fyra till fem dagar efter att fraktsedeln skapats. I december blir allt långsammare: agenten har mer att göra, flygen är fulla, PostNord har julrusning.</p>
+    </details>
+  </div>
+
+  <!-- rad 3: siffror -->
+  <div class="rad fyra">
+    <div class="box hero"><div class="t">Beställningar, 30 dagar</div><div class="n">1 954</div><div class="jmf">Innan: <b>1 295</b></div></div>
+    <div class="box hero"><div class="t">Kundmejl om "var är mitt paket"</div><div class="n varn">7 av 10</div><div class="jmf">293 mejl på 30 dagar. Obesvarade nu: <b>16</b></div></div>
+    <div class="box hero"><div class="t">Tvister hos banken, 30 dagar</div><div class="n varn">29</div><div class="jmf">Riktiga chargebacks: <b>2</b>. Resten är frågor från banken.</div></div>
+    <div class="box hero"><div class="t">Lager i Sverige</div><div class="n">0</div><div class="jmf">Beslutat: inget i år.</div></div>
+  </div>
+
+  <!-- rad 4: risker -->
+  <div class="rad tre">
+    <div class="box fara">
+      <span class="pill fara">Risk 1 · störst</span>
+      <h3>Julklapparna hinner inte fram</h3>
+      <p>Vi måste veta sista säkra beställningsdag och sluta lova jul efter den.</p>
+      <p class="jmf">Väntar på svar <b>B</b> och <b>1</b>.</p>
+      <details><summary>Visa mer</summary><p>I september tar det 14 till 16 dagar till hälften. December är långsammare, och en julklapp som kommer den 27:e blir nästan alltid en tvist hos banken. Utan julrusning skulle gränsen ligga runt 1 december.</p></details>
+    </div>
+    <div class="box varn">
+      <span class="pill varn">Risk 2</span>
+      <h3>Agenten hinner inte skicka</h3>
+      <p>Lösningen i år: köpa in lager av topp 3 och lägga det på agentens hylla i Kina.</p>
+      <p class="jmf">Väntar på svar <b>A</b>, <b>2</b> och <b>3</b>.</p>
+      <details><summary>Visa mer</summary><p>Agenten köper varje vara först när kunden beställt. Därför ligger paketet 4 till 5 dagar hos dem. Topp 3 just nu: Taköverdraget 286 st, Fiskespöhållaren 597 st, IBC-överdraget 218 st per månad. Risken: produkten dör och lagret blir liggande. Alla vinnare är bara 3 till 6 veckor gamla.</p></details>
+    </div>
+    <div class="box varn">
+      <span class="pill varn">Risk 3</span>
+      <h3>Shopify håller inne pengarna</h3>
+      <p>Snabb tillväxt + långa leveranser + "paketet kom aldrig" är precis den profil de granskar.</p>
+      <p class="jmf">Väntar på svar <b>C</b>.</p>
+      <details><summary>Visa mer</summary><p>Shopify Payments kan hålla inne en del av försäljningen i flera månader som säkerhet. Bara 2 av 1 756 beställningar blev riktiga chargebacks, det är lågt, men 27 kunder frågade banken var paketet var. Vi vill veta vad man gör i förväg.</p></details>
+    </div>
+  </div>
+
+  <!-- rad 5: svarstavla -->
+  <div class="box">
+    <h2>Svar vi väntar på · 0 av 6 inne</h2>
+    <div class="tavla">
+      <div class="fraga">
+        <div class="huvud"><span class="nr">A</span><div><h3>Lager hos agenten</h3><div class="till">Evolve-boten</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Hur mycket lager brukar butiker som vår köpa in per produkt inför Q4, hur stor del av pengarna går förlorade när produkten dör, och vad tar agenten betalt för hyllan?</p><p><b>Sen:</b> vi bestämmer hur många veckors försäljning vi vågar köpa in av topp 3.</p></details>
       </div>
-      <div class="steg varning">
-        <div class="dag">Dag 4 till 5</div>
-        <div class="vad">Paketet lämnar agenten</div>
-        <div class="mer">Först nu tar fraktbolaget YunExpress emot paketet. Hälften av paketen väntar så här länge. Det här är den enda delen vi kan göra snabbare.</div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">B</span><div><h3>December och julgränsen</h3><div class="till">Evolve-boten</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Hur många dagar långsammare blir det från Kina till Sverige i december, från vilket datum, vilken sista beställningsdag brukar man köra, och vad gör man med annonserna efter den?</p><p><b>Sen:</b> vi sätter julgränsen och bestämmer vad julannonserna säger efter den.</p></details>
       </div>
-      <div class="steg">
-        <div class="dag">Dag 14 till 15</div>
-        <div class="vad">Hälften av kunderna har fått paketet</div>
-        <div class="mer">Andra hälften väntar fortfarande. Löftet i mejlet, 14 dagar, har gått ut.</div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">C</span><div><h3>Slippa innehållna pengar</h3><div class="till">Evolve-boten</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Vad gör butiker som vår i förväg för att slippa granskning hos Shopify Payments, vilka siffror tittar de på, och vilka papper ska vi ha klara?</p><p><b>Sen:</b> checklista och färdigt bevispaket före Black Friday.</p></details>
       </div>
-      <div class="steg">
-        <div class="dag">Dag 23</div>
-        <div class="vad">Nio av tio har fått paketet</div>
-        <div class="mer">Den sista tiondelen tar ännu längre. Det är de kunderna som mejlar och ringer banken.</div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">1</span><div><h3>Hanteringstid i december</h3><div class="till">Canwangda</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>I dag ligger paketet 4 till 5 dagar hos er. Vad blir det under 11.11, Black Friday och december? Kan vi köpa förtur?</p><p><b>Sen:</b> räknas in i julgränsen.</p></details>
+      </div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">2</span><div><h3>Vad kostar lager på er hylla</h3><div class="till">Canwangda</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Om vi köper in Taköverdraget, Fiskespöhållaren och IBC-överdraget i förväg: minsta antal, förskott, hur länge det får ligga, vad som händer med det som inte säljs.</p><p><b>Sen:</b> jämförs med svar A och räknas på.</p></details>
+      </div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">3</span><div><h3>Hur många per vecka</h3><div class="till">Canwangda</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Om vi säljer dubbelt så mycket av topp 3, hur många kan ni leverera per vecka utan kö?</p><p><b>Sen:</b> tak för hur hårt vi skalar varje produkt i november.</p></details>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>2. Siffrorna just nu</h2>
-    <p>Senaste 30 dagarna, lästa ur Shopify och Meta den 19 september.</p>
-    <div class="siffror">
-      <div class="tal"><div class="n">1 954</div><div class="t">beställningar på 30 dagar. Månaden innan: 1 295.</div></div>
-      <div class="tal"><div class="n">1,3 mkr</div><div class="t">i försäljning. Månaden innan: 0,6 mkr. Det har fördubblats.</div></div>
-      <div class="tal"><div class="n">7 av 10</div><div class="t">kundmejl handlar om "var är mitt paket".</div></div>
-      <div class="tal"><div class="n">29</div><div class="t">tvister hos banken på 30 dagar. Nästan alla säger "paketet kom aldrig".</div></div>
+  <!-- rad 6: julgräns + inte i år + byggt -->
+  <div class="rad tre">
+    <div class="box fara hero">
+      <div class="t">Sista säkra beställningsdag före jul</div>
+      <div class="n fara">Inte satt</div>
+      <div class="e">Utan julrusning: runt 1 december. Riktiga dagen räknas när svar B och 1 är inne.</div>
     </div>
-  </section>
-
-  <section>
-    <h2>3. Tre saker som kan gå sönder i Q4</h2>
-    <p>Om vi säljer dubbelt så mycket i november och december händer det här, om vi inte gör något.</p>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">1</span><h3>Paketen hinner inte fram till jul</h3></div>
-        <span class="pill fara">Störst risk</span>
-      </header>
-      <p>I september tar det 14 till 16 dagar till hälften av kunderna. I december blir allt långsammare: agenten har mer att göra, flygen är fulla och PostNord har julrusning.</p>
-      <p>En julklapp som kommer den 27 december blir nästan alltid en tvist hos banken. Vi måste veta vilken dag som är <strong>sista säkra beställningsdag</strong>, och sluta lova jul efter den dagen.</p>
-      <dl class="rad">
-        <dt>Vad vi vet</dt><dd>Utan julrusning skulle gränsen ligga runt 1 december.</dd>
-        <dt>Vad vi väntar på</dt><dd>Svar B från Evolve-boten och svar 1 från Canwangda.</dd>
-      </dl>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">2</span><h3>Agenten hinner inte skicka</h3></div>
-        <span class="pill vantar">Kan lösas med lager hos agenten</span>
-      </header>
-      <p>Agenten köper varje vara först när kunden beställt. Därför ligger paketet 4 till 5 dagar hos dem. Med dubbelt så många beställningar kan det bli ännu längre.</p>
-      <p>Lösningen som är möjlig i år: vi köper in ett litet lager av våra bästa produkter och lägger det <strong>på agentens hylla i Kina</strong>. Då kan de skicka samma dag. Risken är att en produkt slutar sälja och lagret blir liggande.</p>
-      <dl class="rad">
-        <dt>Vad vi vet</dt><dd>Taköverdraget säljer 286 stycken i månaden, Fiskespöhållaren 597, IBC-överdraget 218. Alla vinnare är bara 3 till 6 veckor gamla.</dd>
-        <dt>Vad vi väntar på</dt><dd>Svar A från Evolve-boten och svar 2 och 3 från Canwangda.</dd>
-      </dl>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">3</span><h3>Shopify håller inne våra pengar</h3></div>
-        <span class="pill vantar">Går att förebygga</span>
-      </header>
-      <p>Shopify Payments är den som betalar ut pengarna till oss. Om de ser en butik som växer snabbt, har långa leveranstider och många kunder som säger "paketet kom aldrig" kan de <strong>hålla inne en del av pengarna</strong> i flera månader som säkerhet.</p>
-      <p>Vi ser precis så ut just nu. Vi vill veta vad man gör i förväg så att det inte händer.</p>
-      <dl class="rad">
-        <dt>Vad vi vet</dt><dd>Bara 2 av 1 756 beställningar blev riktiga chargebacks. Det är lågt. Men 27 kunder frågade banken var paketet var.</dd>
-        <dt>Vad vi väntar på</dt><dd>Svar C från Evolve-boten.</dd>
-      </dl>
-    </article>
-  </section>
-
-  <section>
-    <h2>4. Det här gör vi inte i år</h2>
-    <div class="inte">
-      <p>Axel har bestämt. Ingen behöver fundera mer på det här.</p>
-      <ul>
-        <li>Vi flyttar <strong>inget lager till Sverige</strong>. Det är för krångligt i år.</li>
-        <li>Vi <strong>byter inte agent</strong>. Canwangda är kvar.</li>
-        <li>Vi <strong>byter inte fraktlinje</strong>. YunExpress är redan den snabbaste till Sverige. Den kan bara bli snabbare om vi skickar mer.</li>
-      </ul>
+    <div class="box">
+      <h2>Gör vi inte i år</h2>
+      <div class="chips"><span class="chip nej">Lager i Sverige</span><span class="chip nej">Byta agent</span><span class="chip nej">Byta fraktlinje</span></div>
+      <p class="jmf">Axels beslut. Ingen funderar mer på det.</p>
     </div>
-  </section>
-
-  <section>
-    <h2>5. Svaren vi väntar på</h2>
-    <p>Tre frågor går till Evolve-boten i Discord. Tre frågor går direkt till Canwangda. När ett svar kommer skrivs det in här, och rutan byter färg.</p>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">A</span><h3>Lager hos agenten</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Evolve-boten</dd>
-        <dt>Frågan</dt><dd>Hur mycket lager brukar butiker som vår köpa in per produkt inför Q4, hur stor del av pengarna brukar gå förlorade när produkten dör, och vad tar agenten betalt för att ha lagret på hyllan?</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Bestämmer hur många veckors försäljning vi vågar köpa in av topp 3, eller om vi låter bli.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">B</span><h3>December och julgränsen</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Evolve-boten</dd>
-        <dt>Frågan</dt><dd>Hur många dagar långsammare blir det från Kina till Sverige i december, från vilket datum börjar det, vilken sista beställningsdag brukar man köra, och vad gör man med annonserna efter den dagen?</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Sätter datumet för sista säkra beställning och bestämmer vad julprodukternas annonser ska säga efter det.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">C</span><h3>Så undviker vi att Shopify håller inne pengar</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Evolve-boten</dd>
-        <dt>Frågan</dt><dd>Vad gör butiker som vår i förväg för att slippa granskning och innehållna pengar, vilka siffror tittar Shopify på, och vilka papper ska vi ha klara om det ändå händer?</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Gör en checklista och ett färdigt bevispaket innan Black Friday.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">1</span><h3>Hur lång blir hanteringen i december?</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Canwangda</dd>
-        <dt>Frågan</dt><dd>I dag ligger paketet 4 till 5 dagar hos er. Vad blir det under 11.11, Black Friday och december? Kan vi köpa förtur?</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Räknar in det i julgränsen.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">2</span><h3>Vad kostar lager på er hylla?</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Canwangda</dd>
-        <dt>Frågan</dt><dd>Om vi köper in Taköverdraget, Fiskespöhållaren och IBC-överdraget i förväg: minsta antal, förskott, hur länge det får ligga, och vad som händer med det som inte säljs.</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Jämför med svar A och räknar på vad det kostar.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-
-    <article class="kort">
-      <header>
-        <div class="rubrik"><span class="nr">3</span><h3>Hur många kan ni skicka per vecka?</h3></div>
-        <span class="pill vantar">Väntar på svar</span>
-      </header>
-      <dl class="rad">
-        <dt>Till vem</dt><dd>Canwangda</dd>
-        <dt>Frågan</dt><dd>Om vi säljer dubbelt så mycket av topp 3, hur många kan ni leverera per vecka utan att det blir kö?</dd>
-        <dt>Vad vi gör med svaret</dt><dd>Sätter ett tak för hur hårt vi vågar skala varje produkt i november.</dd>
-      </dl>
-      <div class="svar">Svaret skrivs in här.</div>
-    </article>
-  </section>
-
-  <section>
-    <h2>6. Julgränsen</h2>
-    <div class="jul">
-      <span class="etikett">Sista säkra beställningsdag för leverans före julafton</span>
-      <div class="stort">Inte bestämd än</div>
-      <p style="margin-top:10px">Utan julrusning skulle gränsen ligga runt <strong>1 december</strong>. Den riktiga dagen räknas ut när svar B och svar 1 har kommit. Efter den dagen ska annonser för julklappar sluta lova jul.</p>
+    <div class="box">
+      <h2>Redan byggt</h2>
+      <div class="chips"><span class="chip ja">Spårning på ordersidan, varje timme</span><span class="chip ja">Tvistlarm i Discord varje morgon</span><span class="chip ja">Kundtjänstrapport</span></div>
     </div>
-  </section>
+  </div>
 
-  <section>
-    <h2>7. Vad vi redan har byggt</h2>
-    <div class="lista">
-      <ul>
-        <li><strong>Spårning i butiken.</strong> Varje timme hämtas paketens skanningar och skrivs in i Shopify. Kunden ser var paketet är på sin ordersida.</li>
-        <li><strong>Tvistkoll varje morgon.</strong> Om en tvist hos banken måste besvaras inom tre dagar larmar den i Discord.</li>
-        <li><strong>Kundtjänstrapport.</strong> Räknar mejlen, vad de handlar om och hur många som är obesvarade. Just nu är 16 obesvarade.</li>
-      </ul>
-    </div>
-  </section>
+  <div class="box">
+    <details><summary>Ordlista</summary>
+      <div class="ord">
+        <div><b>Agent</b><span>Canwangda i Kina. Köper varan och skickar paketet åt oss.</span></div>
+        <div><b>Fraktsedel</b><span>Lappen med adress och spårningsnummer. Shopify säger "skickad" när den skapas.</span></div>
+        <div><b>Hälften framme</b><span>Median. Dagen då hälften av paketen kommit fram.</span></div>
+        <div><b>Nio av tio framme</b><span>p90. Dagen då 90 av 100 paket kommit fram.</span></div>
+        <div><b>WISMO</b><span>"Where is my order". Kundens mejl om var paketet är.</span></div>
+        <div><b>Fråga från banken</b><span>Kunden frågade sin bank. Inga pengar tagna än, men vi måste svara med bevis.</span></div>
+        <div><b>Chargeback</b><span>Banken tar tillbaka pengarna. Svarar vi inte i tid förlorar vi automatiskt.</span></div>
+        <div><b>Innehållna pengar</b><span>Shopify behåller en del av försäljningen som säkerhet. Kallas hold eller reserve.</span></div>
+      </div>
+    </details>
+  </div>
 
-  <section>
-    <h2>8. Ordlista</h2>
-    <div class="ord">
-      <div><b>Agent</b><span>Företaget i Kina, Canwangda, som köper varan och skickar paketet åt oss.</span></div>
-      <div><b>Fraktsedel</b><span>Lappen med adress och spårningsnummer. När den skapas säger Shopify "skickad", även om paketet ligger kvar.</span></div>
-      <div><b>Hälften framme</b><span>Kallas median. Den dag då hälften av paketen har kommit fram.</span></div>
-      <div><b>Nio av tio framme</b><span>Kallas p90. Den dag då 90 av 100 paket har kommit fram. De sista tio tar längre.</span></div>
-      <div><b>WISMO</b><span>"Where is my order". Kundens mejl som frågar var paketet är.</span></div>
-      <div><b>Förfrågan från banken</b><span>Kunden har ringt sin bank och frågat om köpet. Ingen har tagit pengar än, men vi måste svara med bevis.</span></div>
-      <div><b>Chargeback</b><span>Banken tar tillbaka pengarna från oss. Om vi inte svarar i tid förlorar vi automatiskt.</span></div>
-      <div><b>Innehållna pengar</b><span>Shopify behåller en del av försäljningen som säkerhet, ofta i flera månader. Kallas hold eller reserve.</span></div>
-      <div><b>Lager hos agenten</b><span>Vi köper in varor i förväg och de ligger på Canwangdas hylla i Kina, klara att skickas samma dag.</span></div>
-    </div>
-  </section>
-
-  <section class="logg">
-    <strong>Uppdateringar</strong>
-    <ul>
-      <li>21 september 2026: första versionen. Siffror ur Shopify och Meta 19 september. Alla sex svar väntar.</li>
-    </ul>
-  </section>
+  <div class="fot">Uppdateringar: 21 sep 2026, första versionen. Alla sex svar väntar.</div>
 
 </main>
