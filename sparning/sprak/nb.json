@@ -163,6 +163,12 @@
     "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke leveres fordi det manglet navn på postkassen. Den er på vei til et hentested nær deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag",
     "Paketet fick inte plats i brevlådan och kunde inte lämnas vid dörren eftersom namn saknades. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken fikk ikke plass i postkassen og kunne ikke leveres ved døren fordi navn manglet. Den er på vei til et hentested i nærheten av deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag",
     "Paketet har sorterats fel och leveransdatumet uppdateras": "Pakken har blitt feilsortert, og leveringsdatoen oppdateres",
-    "Ett sms om paketet har skickats till dig": "En SMS om pakken er sendt til deg"
+    "Ett sms om paketet har skickats till dig": "En SMS om pakken er sendt til deg",
+    "Fraktbolaget har hämtat paketet i paketboxen": "Fraktselskapet har hentet pakken i pakkeboksen",
+    "Ombudet förlänger tiden du har på dig att hämta paketet": "Hentestedet forlenger tiden du har på deg til å hente pakken",
+    "Vi kunde inte skicka avin till din mejladress": "Vi kunne ikke sende varselet til e-postadressen din",
+    "Du har hämtat paketet hos ombudet": "Du har hentet pakken på hentestedet",
+    "Chauffören kunde inte lämna paketet eftersom ditt namn inte fanns på adressen": "Sjåføren kunne ikke levere pakken fordi navnet ditt ikke fantes på adressen",
+    "Du har identifierat dig med e-legitimation": "Du har identifisert deg med elektronisk ID"
   }
 }

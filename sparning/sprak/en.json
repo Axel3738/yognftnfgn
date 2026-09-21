@@ -159,6 +159,12 @@
     "Paketet är överlämnat till fraktbolaget": "The parcel has been handed to the carrier",
     "Paketet har kommit till omlastningsorten": "The parcel has arrived at the transit point",
     "Paketet har sorterats fel och leveransdatumet uppdateras": "The parcel was missorted and the delivery date is being updated",
-    "Ett sms om paketet har skickats till dig": "A text message about the parcel has been sent to you"
+    "Ett sms om paketet har skickats till dig": "A text message about the parcel has been sent to you",
+    "Fraktbolaget har hämtat paketet i paketboxen": "The carrier has collected the parcel from the locker",
+    "Ombudet förlänger tiden du har på dig att hämta paketet": "The pickup point is extending the time you have to collect the parcel",
+    "Vi kunde inte skicka avin till din mejladress": "We could not send the notification to your email address",
+    "Du har hämtat paketet hos ombudet": "You have collected the parcel from the pickup point",
+    "Chauffören kunde inte lämna paketet eftersom ditt namn inte fanns på adressen": "The driver could not deliver the parcel because your name was not at the address",
+    "Du har identifierat dig med e-legitimation": "You identified yourself with electronic ID"
   }
 }
