@@ -219,9 +219,35 @@ test('en VA kan rapportera in en insats — men inte godkänna den själv', asyn
   assert.equal(lasInsatser(join(tmp, 'insatser.jsonl'))[0].status, 'vantar');
 });
 
+test('Head of support får inte godkänna sina EGNA insatser trots rätten att godkänna', async () => {
+  // Mechile är både VA och Head of support (2026-09-21) — rätten 'godkanna'
+  // får aldrig bli en väg till egna pengar.
+  const { kaka } = await loggaIn('hanna@test.se', 'supportchef1');
+  const csrf = await farskCsrf('/app/mig', kaka);
+  const skicka = await fetch(`${bas}/app/mig/rapportera`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({ csrf, uppdrag: 'recension_med_namn', referens: 'https://trustpilot.com/reviews/2', text: 'Kunden nämnde mig' }).toString(),
+  });
+  assert.equal(skicka.status, 200);
+  const { lasInsatser } = await import('../../bonus/kor.mjs');
+  const egen = lasInsatser(join(tmp, 'insatser.jsonl')).find((i) => i.personId === 'hanna');
+  assert.ok(egen, 'chefens egen insats ska finnas');
+
+  const fusk = await fetch(`${bas}/app/bonus/godkann`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({ csrf, id: egen.id, beslut: 'godkand' }).toString(),
+  });
+  assert.equal(fusk.status, 403);
+  assert.equal(lasInsatser(join(tmp, 'insatser.jsonl')).find((i) => i.id === egen.id).status, 'vantar');
+});
+
 test('Head of support godkänner insatsen och den blir utbetalbar', async () => {
   const { lasInsatser } = await import('../../bonus/kor.mjs');
-  const insats = lasInsatser(join(tmp, 'insatser.jsonl'))[0];
+  const insats = lasInsatser(join(tmp, 'insatser.jsonl')).find((i) => i.personId === 'vera');
   const { kaka } = await loggaIn('hanna@test.se', 'supportchef1');
   const csrf = await farskCsrf('/app/bonus', kaka);
   const svar = await fetch(`${bas}/app/bonus/godkann`, {
@@ -231,7 +257,7 @@ test('Head of support godkänner insatsen och den blir utbetalbar', async () => 
     body: new URLSearchParams({ csrf, id: insats.id, beslut: 'godkand' }).toString(),
   });
   assert.equal(svar.status, 200);
-  const efter = lasInsatser(join(tmp, 'insatser.jsonl'))[0];
+  const efter = lasInsatser(join(tmp, 'insatser.jsonl')).find((i) => i.id === insats.id);
   assert.equal(efter.status, 'godkand');
   assert.equal(efter.beslutAv, 'Hanna Chef');
 });

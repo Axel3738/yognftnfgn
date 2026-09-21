@@ -317,10 +317,17 @@ npm run bonus                # skarpt: skriver bonus/utfall/<månad>.json
 
 | Vem | Tjänar på |
 |---|---|
-| VA | $5 recension med namn · $10 tre på en vecka · $3 tvist besvarad i tid · $10 vunnen tvist · $15 tom inkorg · $10 svarstid under 12 h |
-| Head of support | 10 % av teamets bonus · $25 risk under 25 · $20 full SOP-täckning |
-| Produkttest | $2 godkänd → $5 testad → $25 lönsam → $100 skalad (trappan i Notion) |
-| Redigerare | 0,4 % av spenden (commission, oförändrat) |
+| VA | $5 recension med namn · $10 tre på en vecka · $1 tvist besvarad i tid · $5 vunnen tvist · $15 tom inkorg · $10 svarstid under 12 h — veckobonusarna EN gång per vecka när ALLA personens butiker klarar det |
+| Head of support | 10 % av teamets bonus (utan egna rader) · $25 per butik med risk under 25 · $20 full SOP-täckning hela månaden |
+| Produkttest | **$15 per färdig produkt** (`Ads review` eller längre) — Axels beslut 2026-09-21, ersatte trappan 2/5/25/100. Trappan visas fortfarande på sidan Produkttest |
+| Redigerare | 0,4 % av spenden (commission, oförändrat) — Josh och Annabelle tjänar dessutom i produkttest (`extraRoller`) |
+
+**Axels svar 2026-09-21 (inskrivna):** kontaktmejl `contact@stonebite.org`;
+**Mechile Delos Santos** är både VA och Head of customer support för alla
+butiker (`bonus/personer.json`, `brands: ["*"]` = alla, även framtida);
+tvistbeloppen halverade ("alldeles för mycket"); Trustpilot-konto finns inte och
+behövs inte — Judge.me läses redan. Servern stoppar självgodkännande även för
+den som har rätten `godkanna` (403 när insatsens personId är den inloggades).
 
 ⚠️ **Varför de inte drog recensioner — och vad som ändrats.** Tre saker
 saknades: de såg aldrig pengarna, ingen visste exakt hur man ber om en

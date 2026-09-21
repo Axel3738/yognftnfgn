@@ -45,19 +45,28 @@ Beloppen ligger i `regler.json` och ändras där. Motorn och sajten följer med.
 |---|---|---|
 | Recension med ditt namn | $5 | Judge.me/Trustpilot automatiskt, eller inrapporterad + godkänd |
 | Tre recensioner på en vecka | $10 | Räknas per kalendervecka |
-| Tvist besvarad i tid med bevis | $3 | Tvisten är besvarad när deadline passerar |
-| Vunnen tvist | $10 | Shopify säger won |
-| Tom inkorg på fredag | $15 | Under 10 obesvarade i veckorapporten |
-| Svar inom ett halvt dygn | $10 | Mediansvarstid under 12 h |
+| Tvist besvarad i tid med bevis | $1 | Tvisten är besvarad när deadline passerar |
+| Vunnen tvist | $5 | Shopify säger won |
+| Tom inkorg när veckan är slut | $15 | Under 10 obesvarade i **alla** personens butiker, en utbetalning per vecka |
+| Svar inom ett halvt dygn | $10 | Mediansvarstid under 12 h i alla butiker, en utbetalning per vecka |
+
+Tvistbeloppen halverades 2026-09-21 på Axels ord ("alldeles för mycket").
+Veckobonusarna betalas **en gång per vecka, inte per butik** — Mechile svarar
+för alla butiker (`brands: ["*"]`), och en missad butik stoppar veckan.
 
 ### Head of customer support
-Tio procent av vad VA-teamet tjänar, plus $25 när ett brands risk går under 25
-och $20 för full SOP-täckning. **Chefen tjänar på att lära teamet, inte på att
-göra jobbet själv.**
+Tio procent av vad VA-teamet tjänar — **utan chefens egna rader** — plus $25
+per butik vars risk är under 25 vid månadens sista rapport och $20 när varje
+vecka i månaden hade full SOP-täckning. **Chefen tjänar på att lära teamet,
+inte på att göra jobbet själv.** Är chefen ensam i teamet (som Mechile i dag)
+är andelen noll tills fler anställs.
 
 ### Produkttest
-Trappan: $2 godkänd för test → $5 fick sin chans → $25 går med vinst →
-$100 skalas. En produkt som går hela vägen ger $132 till den som hittade den.
+**$15 per färdig produkt** — raden i Product test center nådde `Ads review`
+eller längre (Axels beslut 2026-09-21; ersatte trappan 2 / 5 / 25 / 100).
+Redigerar testaren annonserna själv får hen dessutom 0,4 % av spenden på dem
+(bara Sverige) — det är redigerarprogrammet, inte ett andra produkttestbelopp.
+Josh och Annabelle bär båda rollerna (`extraRoller: ["produkttest"]`).
 
 ### Videoredigerare
 0,4 % av annonsspenden på godkända annonser — samma som förut, nu synlig på

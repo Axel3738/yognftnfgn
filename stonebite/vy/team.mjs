@@ -17,6 +17,9 @@ import { SPRAKEN } from '../sprak.mjs';
 
 const USD = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
 
+/** `*` i brands betyder alla butiker (bonus/motor.mjs svararFor) — visas med ord, inte som en stjärna. */
+const butiksnamn = (b) => (b === '*' ? t('Alla butiker') : b);
+
 function flyttMarke(flytt) {
   if (!flytt) return '<span class="mini">–</span>';
   return flytt > 0
@@ -132,7 +135,7 @@ export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }
           <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('E-post'))}</span><span class="namn">${esc(anvandare.epost)}</span></li>
           <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Roll'))}</span><span><span class="namn">${esc(t(r?.namn ?? anvandare.roll))}</span><span class="bi">${esc(t(r?.beskrivning ?? ''))}</span></span></li>
           ${person?.extraRoller?.length ? `<li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Tjänar även i'))}</span><span>${person.extraRoller.map((x) => `<span class="tagg">${esc(t(ROLLER[x]?.namn ?? x))}</span>`).join(' ')}</span></li>` : ''}
-          ${person?.brands?.length ? `<li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Dina butiker'))}</span><span>${person.brands.map((b) => `<span class="tagg">${esc(b)}</span>`).join(' ')}</span></li>` : ''}
+          ${person?.brands?.length ? `<li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Dina butiker'))}</span><span>${person.brands.map((b) => `<span class="tagg">${esc(butiksnamn(b))}</span>`).join(' ')}</span></li>` : ''}
           <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Du ser'))}</span><span>${menyFor(anvandare).map((s) => `<span class="tagg">${esc(t(s.titel))}</span>`).join(' ')}</span></li>
           <li>
             <span style="min-width:140px;color:var(--ink-3)">${esc(t('Språk'))}</span>
@@ -260,7 +263,7 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
             </select>
           </label>
           <label class="falt" style="margin:0"><span>Förnamn i recensioner</span><input name="fornamn" placeholder="Maria"></label>
-          <label class="falt" style="margin:0"><span>Butiker (kommatecken)</span><input name="brands" placeholder="baverbutiken, carashell" list="butikslista"></label>
+          <label class="falt" style="margin:0"><span>Butiker (kommatecken, eller * för alla)</span><input name="brands" placeholder="baverbutiken, carashell — eller *" list="butikslista"></label>
           <datalist id="butikslista">${butiker.map((b) => `<option value="${attr(b)}"></option>`).join('')}</datalist>
           <label class="falt" style="margin:0"><span>Tjänar även i</span>
             <select name="extraroll">
@@ -270,7 +273,7 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
           </label>
           <button class="knapp" type="submit">Skapa konto</button>
         </form>`,
-        fot: 'Förnamnet är hur systemet hittar personen i en recension. Butikerna styr veckobonusarna (tom inkorg, svarstid).',
+        fot: 'Förnamnet är hur systemet hittar personen i en recension. Butikerna styr veckobonusarna (tom inkorg, svarstid) — en stjärna betyder alla butiker, även de som byggs sen.',
       }),
     })}
 
@@ -281,7 +284,7 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
         innehall: `<ul class="lista">${utanKonto.map((p) => `
           <li>
             <span>${status('varning', 'ingen inloggning')}</span>
-            <span><span class="namn">${esc(p.namn)}</span><span class="bi">${esc(ROLLER[p.roll]?.namn ?? p.roll)}${p.brands?.length ? ` · ${p.brands.join(', ')}` : ''}</span></span>
+            <span><span class="namn">${esc(p.namn)}</span><span class="bi">${esc(ROLLER[p.roll]?.namn ?? p.roll)}${p.brands?.length ? ` · ${esc(p.brands.map(butiksnamn).join(', '))}` : ''}</span></span>
           </li>`).join('')}</ul>`,
       }),
     }) : ''}

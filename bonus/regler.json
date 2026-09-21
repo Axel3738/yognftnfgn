@@ -57,7 +57,8 @@
         {
           "id": "tvist_besvarad",
           "namn": "Tvist besvarad med bevis i tid",
-          "belopp": 3,
+          "belopp": 1,
+          "belopp_kommentar": "Var 3. Axels beslut 2026-09-21: 'alldeles för mycket, halvera minst' — sänkt till 1 (sidan visar hela dollar).",
           "enhet": "per tvist",
           "hur": "Svara på tvisten INNAN sista svarsdagen och bifoga spårningsbevis: fraktbolagets skanning, orderbekräftelsen och mejltråden.",
           "mats": "Tvisten måste vara besvarad (inte 'needs response') när svarsdagen passerar.",
@@ -73,36 +74,39 @@
         {
           "id": "tvist_vunnen",
           "namn": "Vunnen tvist",
-          "belopp": 10,
+          "belopp": 5,
+          "belopp_kommentar": "Var 10. Halverat 2026-09-21 på Axels beslut.",
           "enhet": "per vunnen tvist",
-          "hur": "Vinner vi tvisten får du tio dollar. Chargebacks är svårast och värda mest.",
+          "hur": "Vinner vi tvisten får du fem dollar. Chargebacks är svårast och värda mest.",
           "mats": "Shopify säger won/lost. Bara tvister med svar räknas.",
           "kalla": "tvister",
           "auto": true,
           "en": {
             "namn": "Dispute won",
             "enhet": "per dispute won",
-            "hur": "If we win the dispute you get ten dollars. Chargebacks are the hardest and worth the most.",
+            "hur": "If we win the dispute you get five dollars. Chargebacks are the hardest and worth the most.",
             "mats": "Shopify says won/lost. Only disputes with a response count."
           }
         },
         {
           "id": "tom_inkorg",
-          "namn": "Tom inkorg på fredag",
+          "namn": "Tom inkorg när veckan är slut",
           "belopp": 15,
           "enhet": "per vecka",
-          "hur": "Färre än 10 obesvarade ärenden när veckan tar slut.",
-          "mats": "Kundtjänstrapportens 'obesvarade' på fredagen.",
+          "hur": "Färre än 10 obesvarade ärenden i ALLA dina butiker när veckan tar slut. Missar en butik betalas veckan inte.",
+          "mats": "Kundtjänstrapportens 'obesvarade' per butik, en gång i veckan. En utbetalning per vecka, hur många butiker du än har.",
           "kalla": "kundtjanst",
           "auto": true,
+          "omfang": "vecka",
+          "omfang_kommentar": "vecka = en utbetalning per person och vecka när alla personens butiker klarar kravet (Axel 2026-09-21: 'alla inkorgar'; Mechile svarar för allt och jobbar alla dagar, så fredagen är borta ur texten).",
           "krav": {
             "obesvarade_under": 10
           },
           "en": {
-            "namn": "Empty inbox on Friday",
+            "namn": "Empty inbox at the end of the week",
             "enhet": "per week",
-            "hur": "Fewer than 10 unanswered tickets when the week ends.",
-            "mats": "The support report's 'unanswered' on Friday."
+            "hur": "Fewer than 10 unanswered tickets in ALL your stores when the week ends. If one store misses, the week is not paid.",
+            "mats": "The support report's 'unanswered' per store, once a week. One payout per week no matter how many stores you cover."
           }
         },
         {
@@ -110,18 +114,19 @@
           "namn": "Svar inom ett halvt dygn",
           "belopp": 10,
           "enhet": "per vecka",
-          "hur": "Håll medianen på svarstiden under 12 timmar en hel vecka.",
-          "mats": "Kundtjänstrapportens mediansvarstid.",
+          "hur": "Håll medianen på svarstiden under 12 timmar en hel vecka — i alla dina inkorgar.",
+          "mats": "Kundtjänstrapportens mediansvarstid per butik. En utbetalning per vecka när alla dina butiker klarar det.",
           "kalla": "kundtjanst",
           "auto": true,
+          "omfang": "vecka",
           "krav": {
             "median_timmar_under": 12
           },
           "en": {
             "namn": "Answer within half a day",
             "enhet": "per week",
-            "hur": "Keep the median response time under 12 hours for a whole week.",
-            "mats": "The support report's median response time."
+            "hur": "Keep the median response time under 12 hours for a whole week — in all your inboxes.",
+            "mats": "The support report's median response time per store. One payout per week when all your stores make it."
           }
         }
       ],
@@ -142,16 +147,16 @@
           "namn": "Andel av teamets bonus",
           "belopp": 0.1,
           "enhet": "10 % av vad VA-teamet tjänar",
-          "hur": "Allt dina VA:er tjänar ger dig tio procent på toppen. Lär dem skaffa recensioner så tjänar ni båda.",
-          "mats": "Räknas på teamets utbetalda bonus samma månad.",
+          "hur": "Allt dina VA:er tjänar ger dig tio procent på toppen. Lär dem skaffa recensioner så tjänar ni båda. Dina egna uppdrag räknas inte in — de betalas för sig.",
+          "mats": "Räknas på teamets utbetalda bonus samma månad, utan dina egna rader. Är du ensam i teamet blir andelen noll tills fler anställs.",
           "kalla": "team",
           "auto": true,
           "andel": true,
           "en": {
             "namn": "Share of the team bonus",
             "enhet": "10 % of what the VA team earns",
-            "hur": "Everything your VAs earn gives you ten percent on top. Teach them to collect reviews and you both earn.",
-            "mats": "Calculated on the team's paid bonus the same month."
+            "hur": "Everything your VAs earn gives you ten percent on top. Teach them to collect reviews and you both earn. Your own tasks are not included — they are paid on their own.",
+            "mats": "Calculated on the team's paid bonus the same month, without your own rows. If you are alone in the team the share is zero until more people are hired."
           }
         },
         {
@@ -163,6 +168,7 @@
           "mats": "Veckorapportens riskpoäng vid månadens sista körning.",
           "kalla": "kundtjanst",
           "auto": true,
+          "omfang": "brand-manad",
           "krav": {
             "risk_under": 25
           },
@@ -179,9 +185,10 @@
           "belopp": 20,
           "enhet": "per månad",
           "hur": "Varje ärendetyp i topp 5 ska ha en SOP i Notion. Är alla täckta hela månaden får du tjugo dollar.",
-          "mats": "SOP-täckningen i veckorapporten.",
+          "mats": "SOP-täckningen i veckorapporten — varje vecka i månaden, i alla dina butiker.",
           "kalla": "kundtjanst",
           "auto": true,
+          "omfang": "manad",
           "en": {
             "namn": "A routine for every top ticket type",
             "enhet": "per month",
@@ -200,76 +207,33 @@
       "roller": [
         "produkttest"
       ],
-      "beskrivning": "Du tjänar mest när en produkt du hittat faktiskt säljer. Trappan stiger hela vägen till skalning.",
+      "kommentar": "Axels beslut 2026-09-21: trappan 2 / 5 / 25 / 100 är ersatt med 15 dollar per FÄRDIG produkt. Andelen av spenden (0,4 % på de egna annonserna, bara Sverige) är redigerarprogrammet — Josh och Annabelle får den redan där, så den skrivs inte en gång till här. Trappans steg finns kvar i kallor.mjs för sidan Produkttest (var produkterna står), men bara 'produkt_fardig' betalar.",
+      "beskrivning": "Du tjänar 15 dollar för varje produkt du gör klar för annonser. Redigerar du dessutom annonserna själv får du 0,4 % av spenden på dem (bara Sverige) — det står under Videoredigerare.",
       "uppdrag": [
         {
-          "id": "produkt_godkand",
-          "namn": "Produkt godkänd för test",
-          "belopp": 2,
+          "id": "produkt_fardig",
+          "namn": "Färdig produkt",
+          "belopp": 15,
           "enhet": "per produkt",
-          "hur": "Research klar, sida och underlag godkänt — produkten går vidare till annonser.",
-          "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig.",
+          "hur": "Research klar, sida och underlag godkänt — produkten är klar för annonser.",
+          "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig. Betalas en gång per produkt, den månad raden nådde dit.",
           "kalla": "produkttest",
           "auto": true,
+          "krav": {
+            "steg": "produkt_godkand"
+          },
+          "krav_kommentar": "steg = vilket trappsteg i kallor.mjs som utlöser betalningen. 'produkt_godkand' = Ads review eller längre.",
           "en": {
-            "namn": "Product approved for testing",
+            "namn": "Finished product",
             "enhet": "per product",
-            "hur": "Research done, page and material approved — the product moves on to ads.",
-            "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner."
-          }
-        },
-        {
-          "id": "produkt_testad",
-          "namn": "Produkten fick sin chans",
-          "belopp": 5,
-          "enhet": "per produkt",
-          "hur": "Produkten har spenderat över 2 000 kr i annonser — den blev verkligen testad.",
-          "mats": "Status 'Has gotten over 2000 sek spend' eller mätt spend i annonskontot.",
-          "kalla": "produkttest",
-          "auto": true,
-          "en": {
-            "namn": "Product got its chance",
-            "enhet": "per product",
-            "hur": "The product has spent over 2 000 SEK on ads — it really was tested.",
-            "mats": "Status 'Has gotten over 2000 sek spend' or measured spend in the ad account."
-          }
-        },
-        {
-          "id": "produkt_lonsam",
-          "namn": "Produkten går med vinst",
-          "belopp": 25,
-          "enhet": "per produkt",
-          "hur": "Produkten är märkt Profitable — den tjänar pengar över break-even.",
-          "mats": "Typ 'Profitable' i Product test center.",
-          "kalla": "produkttest",
-          "auto": true,
-          "en": {
-            "namn": "Product is profitable",
-            "enhet": "per product",
-            "hur": "The product is marked Profitable — it makes money above break-even.",
-            "mats": "Type 'Profitable' in Product test center."
-          }
-        },
-        {
-          "id": "produkt_skalad",
-          "namn": "Produkten skalas",
-          "belopp": 100,
-          "enhet": "per produkt",
-          "hur": "Produkten går till 'Continue to scale' — den blir en av butikens bärare.",
-          "mats": "Status 'Continue to scale' eller 'Hires for this product'.",
-          "kalla": "produkttest",
-          "auto": true,
-          "en": {
-            "namn": "Product is scaling",
-            "enhet": "per product",
-            "hur": "The product moves to 'Continue to scale' — it becomes one of the store's earners.",
-            "mats": "Status 'Continue to scale' or 'Hires for this product'."
+            "hur": "Research done, page and material approved — the product is ready for ads.",
+            "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner. Paid once per product, in the month the row got there."
           }
         }
       ],
       "en": {
         "namn": "Product testing",
-        "beskrivning": "You earn the most when a product you found actually sells. The ladder climbs all the way to scaling."
+        "beskrivning": "You earn 15 dollars for every product you get ready for ads. If you also edit the ads yourself you get 0.4 % of the spend on them (Sweden only) — that is listed under Video editors."
       }
     },
     "redigerare": {
@@ -304,7 +268,7 @@
     }
   },
   "godkannande": {
-    "kommentar": "Inrapporterade insatser (en recension VA:n hittat själv, en tvist som inte syns i datan) måste godkännas innan de betalas. Ägare och Head of customer support godkänner.",
+    "kommentar": "Inrapporterade insatser (en recension VA:n hittat själv, en tvist som inte syns i datan) måste godkännas innan de betalas. Ägare och Head of customer support godkänner — men aldrig sina egna rader: servern svarar 403 när personId på insatsen är den inloggades. Mechile är både VA och Head of support (2026-09-21), så hennes egna insatser godkänns av Axel.",
     "roller_som_godkanner": [
       "agare",
       "chef",

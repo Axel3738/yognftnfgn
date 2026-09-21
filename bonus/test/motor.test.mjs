@@ -98,7 +98,7 @@ test('en tvist betalas bara när någon gjort anspråk OCH datan håller med', (
     { id: '4', personId: 'ella', uppdrag: 'tvist_besvarad', referens: '#0000', status: 'godkand', datum: '2026-09-10' },
   ];
   const u = raknaUt({ regler, personer, period, matningar, insatser });
-  assert.equal(u.personer.find((p) => p.id === 'maria').summa, 13, '3 för svar + 10 för vinst');
+  assert.equal(u.personer.find((p) => p.id === 'maria').summa, 6, '1 för svar + 5 för vinst (halverat 2026-09-21)');
   assert.equal(u.personer.find((p) => p.id === 'ella').summa, 0, 'obesvarad tvist och okänd order ger noll');
   assert.equal(u.otilldelat.filter((o) => o.program === 'va').length, 2);
 });
@@ -150,14 +150,60 @@ test('chefens andel är tio procent av teamets bonus', () => {
   assert.equal(Math.round(hanna.summa * 100) / 100, Math.round(teamsumma * 0.1 * 100) / 100);
 });
 
-test('produkttest-trappan betalar per steg produkten nått', () => {
+test('chefen får ingen andel av sina EGNA pengar — ensam i teamet blir andelen noll', () => {
+  // Mechile 2026-09-21: både VA och Head of support, ingen annan i kundtjänsten.
+  const ensam = [{ id: 'mechile', namn: 'Mechile Delos Santos', fornamn: 'Mechile', roll: 'support_chef', brands: ['*'], alias: [] }];
+  const u = raknaUt({ regler, personer: ensam, period, matningar: { recensioner: [rec('Mechile var fantastisk'), rec('Tack Mechile!')] } });
+  const m = u.personer.find((p) => p.id === 'mechile');
+  assert.equal(m.rader.find((r) => r.uppdrag === 'recension_med_namn').summa, 10, 'hon tjänar VA-uppdragen direkt');
+  assert.equal(m.rader.some((r) => r.uppdrag === 'teamets_andel'), false, 'men inte tio procent på sig själv');
+  assert.equal(m.summa, 10);
+
+  // Med en VA bredvid räknas andelen bara på VA:ns pengar.
+  const tva = [...ensam, { id: 'maria', namn: 'Maria Santos', fornamn: 'Maria', roll: 'va', brands: ['baverbutiken'], alias: [] }];
+  const u2 = raknaUt({ regler, personer: tva, period, matningar: { recensioner: [rec('Mechile var fantastisk'), rec('Maria hjälpte mig')] } });
+  const m2 = u2.personer.find((p) => p.id === 'mechile');
+  assert.equal(m2.rader.find((r) => r.uppdrag === 'teamets_andel').summa, 0.5, '10 % av Marias 5 dollar');
+});
+
+test('veckobonus med * betalas EN gång per vecka — och bara när alla butiker klarar kravet', () => {
+  const mechile = [{ id: 'mechile', namn: 'Mechile Delos Santos', fornamn: 'Mechile', roll: 'support_chef', brands: ['*'], alias: [] }];
+  const bra = { obesvarade: 3, medianTimmar: 6, risk: 10, sopSaknas: 0 };
+  const matningar = { kundtjanst: [
+    { brand: 'baverbutiken', vecka: '2026-W37', datum: '2026-09-07', ...bra },
+    { brand: 'carashell', vecka: '2026-W37', datum: '2026-09-07', ...bra },
+    { brand: 'baverbutiken', vecka: '2026-W38', datum: '2026-09-14', ...bra },
+    { brand: 'carashell', vecka: '2026-W38', datum: '2026-09-14', ...bra, obesvarade: 40 }, // en butik missar
+  ] };
+  const u = raknaUt({ regler, personer: mechile, period, matningar });
+  const m = u.personer.find((p) => p.id === 'mechile');
+  assert.equal(m.rader.find((r) => r.uppdrag === 'tom_inkorg').summa, 15, 'W37 betalas, W38 inte — carashell hade 40 obesvarade');
+  assert.equal(m.rader.find((r) => r.uppdrag === 'snabb_svarstid').summa, 20, 'svarstiden klarades båda veckorna, en utbetalning per vecka — inte per butik');
+  assert.equal(u.otilldelat.length, 0, 'med * står ingen butik utan ansvarig');
+});
+
+test('månadsmålen döms på butikens sista rad, en gång per butik respektive månad', () => {
+  const matningar = { kundtjanst: [
+    { brand: 'baverbutiken', vecka: '2026-W37', datum: '2026-09-07', obesvarade: 3, medianTimmar: 6, risk: 60, sopSaknas: 1 },
+    { brand: 'baverbutiken', vecka: '2026-W38', datum: '2026-09-14', obesvarade: 3, medianTimmar: 6, risk: 20, sopSaknas: 0 },
+    { brand: 'carashell', vecka: '2026-W38', datum: '2026-09-14', obesvarade: 3, medianTimmar: 6, risk: 10, sopSaknas: 0 },
+  ] };
+  const chef = [{ id: 'hanna', namn: 'Hanna Reyes', fornamn: 'Hanna', roll: 'support_chef', brands: ['*'], alias: [] }];
+  const u = raknaUt({ regler, personer: chef, period, matningar });
+  const hanna = u.personer.find((p) => p.id === 'hanna');
+  assert.equal(hanna.rader.find((r) => r.uppdrag === 'risken_ner').antal, 2, 'sista raden per butik: båda under 25 ⇒ två butiker, inte tre rader');
+  assert.equal(hanna.rader.some((r) => r.uppdrag === 'sop_tackning'), false, 'SOP saknades en vecka ⇒ inte "hela månaden"');
+});
+
+test('produkttest betalar 15 dollar per färdig produkt — en gång, inte per steg', () => {
   const matningar = { produkttest: [
     { produkt: 'Vinnaren', ansvarig: 'Pia Lopez', status: 'Continue to scale', typ: 'Profitable', datum: '2026-09-05', steg: ['produkt_godkand', 'produkt_testad', 'produkt_skalad', 'produkt_lonsam'] },
     { produkt: 'Floppen', ansvarig: 'Pia Lopez', status: 'Ads review', typ: null, datum: '2026-09-06', steg: ['produkt_godkand'] },
+    { produkt: 'Ofärdig', ansvarig: 'Pia Lopez', status: 'Draft', typ: null, datum: '2026-09-07', steg: [] },
   ] };
   const u = raknaUt({ regler, personer, period, matningar });
   const pia = u.personer.find((p) => p.id === 'pia');
-  assert.equal(pia.summa, 2 + 5 + 100 + 25 + 2, 'vinnaren ger hela trappan, floppen bara första steget');
+  assert.equal(pia.summa, 15 + 15, 'två produkter klara för annonser, hur långt de sedan kom spelar ingen roll (Axel 2026-09-21)');
 });
 
 test('produkttest utan konto i registret betalas inte', () => {
@@ -175,7 +221,7 @@ test('en person kan bära två roller och tjäna i båda programmen', () => {
   };
   const u = raknaUt({ regler, personer: tvaRoller, matningar, period });
   const josh = u.personer.find((p) => p.id === 'josh');
-  assert.equal(josh.summa, 50.94 + 2 + 5 + 100);
+  assert.equal(josh.summa, 50.94 + 15, 'commission som redigerare + 15 för den färdiga produkten');
   assert.equal(josh.programs.length, 2);
   assert.equal(harRollen({ roll: 'redigerare', extraRoller: ['produkttest'] }, 'produkttest'), true);
   assert.deepEqual(rollerFor({ roll: 'va', extraRoller: ['produkttest'] }), ['va', 'produkttest']);

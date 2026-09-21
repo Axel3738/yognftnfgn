@@ -9,8 +9,8 @@
     "kalla_kommentar": "Uppgifterna är hämtade ur factory/butiker/carashell.yaml (butikernas juridiska avsändare) 2026-09-21."
   },
   "kontakt": {
-    "epost": "",
-    "epost_kommentar": "Fylls i av Axel. Tom adress ⇒ ingen kontaktrad på sidan. Publicera aldrig en privat gmail här.",
+    "epost": "contact@stonebite.org",
+    "epost_kommentar": "Axels besked 2026-09-21. Tom adress ⇒ ingen kontaktrad på sidan. Publicera aldrig en privat gmail här.",
     "telefon": ""
   },
   "hero": {

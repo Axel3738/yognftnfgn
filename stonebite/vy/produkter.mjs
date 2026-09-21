@@ -1,8 +1,9 @@
 // vy/produkter.mjs — Produkttest och Recensioner.
 //
 // Produkttest är trappan en ny produkt går uppför: godkänd research → fick sin
-// chans → går med vinst → skalas. Varje steg är pengar till den som hittade
-// produkten, så trappan är både arbetsflöde och lönebesked.
+// chans → går med vinst → skalas. Trappan visar var produkterna står; pengarna
+// (15 dollar per färdig produkt, Axels beslut 2026-09-21) faller på första
+// steget — resten är läge, inte lön. Beloppet bor i bonus/regler.json.
 //
 // Recensionssidan svarar på EN fråga: får någon betalt för det kunderna
 // skriver? Står det noll i "med namn" är bonusprogrammet bara ett löfte.
@@ -46,7 +47,7 @@ export function produkttestSida({ snapshot, anvandare, nu = new Date() }) {
     kort({
       etikett: 'Produkter i trappan',
       varde: tal(p.antal),
-      forklaring: 'Produkter som passerat minst ett steg. Varje steg är pengar till den som hittade den.',
+      forklaring: 'Produkter som passerat minst ett steg. Första steget är pengar till den som gjorde produkten klar.',
     }),
     kort({
       etikett: 'Fick sin chans',
@@ -103,7 +104,7 @@ export function produkttestSida({ snapshot, anvandare, nu = new Date() }) {
 
     ${block({
       titel: 'Vem hittar produkterna',
-      under: 'Ansvarig i Notion. Har personen ett konto här får hen betalt för varje steg produkten klarar.',
+      under: 'Ansvarig i Notion. Har personen ett konto här får hen betalt när produkten är klar för annonser.',
       innehall: panel({
         innehall: tabell(
           [{ titel: 'Person' }, { titel: 'Produkter', tal: true }, { titel: 'Lönsamma', tal: true }, { titel: 'Skalade', tal: true }],

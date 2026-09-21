@@ -31,6 +31,16 @@ export function rollerFor(person) {
   return [...new Set([person?.roll, ...(person?.extraRoller ?? [])].filter(Boolean))];
 }
 
+/**
+ * Svarar personen för butiken? `brands: ["*"]` betyder alla butiker — Mechile
+ * är ensam på kundtjänsten (Axel 2026-09-21: "hon är ansvarig för allt") och
+ * en handskriven lista hade missat varje ny OPS-butik tyst.
+ */
+export function svararFor(person, brand) {
+  const b = person?.brands ?? [];
+  return b.includes('*') || (Boolean(brand) && b.includes(brand));
+}
+
 // ------------------------------------------------------------- hjälpare
 
 /** Alla namn en person kan kännas igen på, små bokstäver. */
@@ -174,47 +184,112 @@ function tvistrader(uppdrag, personer, matningar, insatser, period) {
   return { rader, otilldelat };
 }
 
-/** Veckomått ur kundtjänstrapporten: tom inkorg, svarstid, risk, SOP. */
+/** Klarar EN veckorad (en butik, en vecka) uppdragets krav? Ger { uppfyllt, text }. */
+function veckoradDom(uppdrag, m) {
+  if (uppdrag.krav?.obesvarade_under !== undefined) {
+    return { uppfyllt: Number(m.obesvarade) < uppdrag.krav.obesvarade_under, text: `${m.obesvarade} obesvarade (krav: under ${uppdrag.krav.obesvarade_under})` };
+  }
+  if (uppdrag.krav?.median_timmar_under !== undefined) {
+    const ok = m.medianTimmar !== null && m.medianTimmar !== undefined && Number(m.medianTimmar) < uppdrag.krav.median_timmar_under;
+    return { uppfyllt: ok, text: `median ${m.medianTimmar} h (krav: under ${uppdrag.krav.median_timmar_under} h)` };
+  }
+  if (uppdrag.krav?.risk_under !== undefined) {
+    return { uppfyllt: Number(m.risk) < uppdrag.krav.risk_under, text: `risk ${m.risk} (krav: under ${uppdrag.krav.risk_under})` };
+  }
+  if (uppdrag.id === 'sop_tackning') {
+    return { uppfyllt: m.sopSaknas === 0, text: m.sopSaknas === 0 ? 'alla topp-ärenden har en rutin' : `${m.sopSaknas} ärendetyper saknar rutin` };
+  }
+  return { uppfyllt: false, text: '' };
+}
+
+/**
+ * Veckomått ur kundtjänstrapporten: tom inkorg, svarstid, risk, SOP.
+ *
+ * `omfang` i regeln säger hur ofta det betalas:
+ *   vecka        en gång per person och vecka, när ALLA personens butiker klarar
+ *                kravet (Axel 2026-09-21: "svarstid på alla inkorgar under 12 h").
+ *                Utan det hade Mechile — som svarar för allt — fått veckobonusen
+ *                gånger antalet butiker, och en missad butik hade drunknat.
+ *   brand-manad  en gång per butik och period, dömd på butikens SISTA rad
+ *                ("vid månadens sista körning").
+ *   manad        en gång per person och period, när varje rad för personens
+ *                butiker klarar kravet ("hela månaden").
+ * Ingen omfang ⇒ vecka. Rader som klarar kravet men saknar ansvarig hamnar i
+ * otilldelat, en per butik och vecka, så pengarna ingen fick syns.
+ */
 function kundtjanstrader(uppdrag, personer, matningar, period) {
   const rader = [];
   const otilldelat = [];
-  for (const m of matningar.kundtjanst ?? []) {
-    if (!iPerioden(m.datum, period)) continue;
+  const omfang = uppdrag.omfang ?? 'vecka';
+  const iProgrammet = personer.filter((p) => (uppdrag.roller ?? []).some((r) => harRollen(p, r)));
 
-    let uppfyllt = false;
-    let text = '';
-    if (uppdrag.krav?.obesvarade_under !== undefined) {
-      uppfyllt = Number(m.obesvarade) < uppdrag.krav.obesvarade_under;
-      text = `${m.obesvarade} obesvarade (krav: under ${uppdrag.krav.obesvarade_under})`;
-    } else if (uppdrag.krav?.median_timmar_under !== undefined) {
-      uppfyllt = m.medianTimmar !== null && m.medianTimmar !== undefined && Number(m.medianTimmar) < uppdrag.krav.median_timmar_under;
-      text = `median ${m.medianTimmar} h (krav: under ${uppdrag.krav.median_timmar_under} h)`;
-    } else if (uppdrag.krav?.risk_under !== undefined) {
-      uppfyllt = Number(m.risk) < uppdrag.krav.risk_under;
-      text = `risk ${m.risk} (krav: under ${uppdrag.krav.risk_under})`;
-    } else if (uppdrag.id === 'sop_tackning') {
-      uppfyllt = m.sopSaknas === 0;
-      text = m.sopSaknas === 0 ? 'alla topp-ärenden har en rutin' : `${m.sopSaknas} ärendetyper saknar rutin`;
+  let underlag = (matningar.kundtjanst ?? []).filter((m) => iPerioden(m.datum, period));
+  if (omfang === 'brand-manad') {
+    // Sista raden per butik vinner — det är den som gäller när månaden stängs.
+    const sista = new Map();
+    for (const m of underlag) {
+      const fore = sista.get(m.brand);
+      if (!fore || String(m.datum ?? '') >= String(fore.datum ?? '')) sista.set(m.brand, m);
     }
-    if (!uppfyllt) continue;
+    underlag = [...sista.values()];
+  }
 
-    const ansvariga = personer.filter((p) => (p.brands ?? []).includes(m.brand) && (uppdrag.roller ?? []).some((r) => harRollen(p, r)));
-    const bevis = { vad: `${m.brand} ${m.vecka ?? ''}`.trim(), datum: String(m.datum ?? '').slice(0, 10), text, lank: '' };
-    if (!ansvariga.length) {
-      otilldelat.push({ uppdrag: uppdrag.id, orsak: `ingen är tilldelad ${m.brand}`, bevis });
-      continue;
+  const domda = underlag.map((m) => ({ ...m, ...veckoradDom(uppdrag, m), vecka: m.vecka ?? veckonyckel(m.datum) }));
+
+  // Klarade rader utan någon som svarar för butiken — en människa ska se dem.
+  for (const m of domda) {
+    if (!m.uppfyllt) continue;
+    if (iProgrammet.some((p) => svararFor(p, m.brand))) continue;
+    otilldelat.push({
+      uppdrag: uppdrag.id,
+      orsak: `ingen är tilldelad ${m.brand}`,
+      bevis: { vad: `${m.brand} ${m.vecka ?? ''}`.trim(), datum: String(m.datum ?? '').slice(0, 10), text: m.text, lank: '' },
+    });
+  }
+
+  for (const p of iProgrammet) {
+    const mina = domda.filter((m) => svararFor(p, m.brand));
+    if (!mina.length) continue;
+
+    // Grupperna som var och en kan ge EN utbetalning.
+    const grupper = new Map();
+    for (const m of mina) {
+      const nyckel = omfang === 'vecka' ? m.vecka : omfang === 'brand-manad' ? m.brand : period?.namn ?? 'perioden';
+      if (!grupper.has(nyckel)) grupper.set(nyckel, []);
+      grupper.get(nyckel).push(m);
     }
-    for (const p of ansvariga) rader.push({ personId: p.id, belopp: uppdrag.belopp, bevis });
+
+    for (const [nyckel, grupp] of grupper) {
+      if (!grupp.every((m) => m.uppfyllt)) continue;
+      const senaste = grupp.reduce((a, b) => (String(a.datum ?? '') >= String(b.datum ?? '') ? a : b));
+      const butiker = [...new Set(grupp.map((m) => m.brand))];
+      rader.push({
+        personId: p.id,
+        belopp: uppdrag.belopp,
+        bevis: {
+          vad: omfang === 'brand-manad' ? `${nyckel} ${period?.namn ?? ''}`.trim() : `${nyckel} · ${butiker.length} ${butiker.length === 1 ? 'butik' : 'butiker'}`,
+          datum: String(senaste.datum ?? '').slice(0, 10),
+          text: grupp.map((m) => `${m.brand}: ${m.text}`).join(' · ').slice(0, 300),
+          lank: '',
+        },
+      });
+    }
   }
   return { rader, otilldelat };
 }
 
-/** Produkttest: trappan från godkänd research till skalad produkt. */
+/**
+ * Produkttest. Trappan i kallor.mjs säger var produkten står; regeln säger
+ * vilket steg som betalar (`krav.steg`, annars uppdragets eget id). Sedan
+ * 2026-09-21 betalar bara 'produkt_fardig' (= steget produkt_godkand, Ads review
+ * eller längre) — 15 dollar, Axels beslut.
+ */
 function produkttestrader(uppdrag, personer, matningar, period) {
   const rader = [];
   const otilldelat = [];
+  const steg = uppdrag.krav?.steg ?? uppdrag.id;
   for (const p of matningar.produkttest ?? []) {
-    if (!p.steg?.includes(uppdrag.id)) continue;
+    if (!p.steg?.includes(steg)) continue;
     if (!iPerioden(p.datum, period)) continue;
     const person = personer.find((x) => (x.notionNamn && x.notionNamn === p.ansvarig) || x.namn === p.ansvarig);
     const bevis = { vad: p.produkt, datum: String(p.datum ?? '').slice(0, 10), text: `${p.status ?? ''}${p.typ ? ` · ${p.typ}` : ''}`.trim(), lank: p.lank ?? '' };
@@ -314,13 +389,15 @@ export function raknaUt({ regler, personer = [], matningar = {}, insatser = [], 
   }
 
   // Andelsuppdrag (Head of support får del av teamets bonus) räknas sist.
+  // Chefens EGNA rader räknas aldrig in — Mechile är både VA och Head of
+  // support (2026-09-21), och tio procent på sig själv är ingen teambonus.
   for (const [, program] of Object.entries(regler.program ?? {})) {
     for (const uppdrag of program.uppdrag ?? []) {
       if (uppdrag.kalla !== 'team') continue;
-      const team = [...perPerson.values()].filter((p) => p.roll === 'va');
-      const teamsumma = team.reduce((s, p) => s + p.summa, 0);
-      if (teamsumma <= 0) continue;
       for (const chef of [...perPerson.values()].filter((p) => (program.roller ?? []).some((r) => p.roll === r || (p.extraRoller ?? []).includes(r)))) {
+        const team = [...perPerson.values()].filter((p) => p.id !== chef.id && harRollen(p, 'va'));
+        const teamsumma = team.reduce((s, p) => s + p.summa, 0);
+        if (teamsumma <= 0) continue;
         const summa = teamsumma * (Number(uppdrag.belopp) || 0);
         chef.rader.push({
           uppdrag: uppdrag.id, namn: uppdrag.namn, enhet: uppdrag.enhet, antal: team.length, summa,

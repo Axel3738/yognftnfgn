@@ -434,6 +434,11 @@ export async function hantera(req, res) {
         }
         const extra = { csrf };
         const insats = lasInsatser(INSATSFIL).find((i) => i.id === f.id);
+        // Regel 4: ingen godkänner sina egna pengar — inte ens med rätten
+        // 'godkanna'. Mechile är både VA och Head of support (2026-09-21).
+        if (insats && anvandare.personId && insats.personId === anvandare.personId) {
+          return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Du kan inte godkänna dina egna insatser. Ägaren gör det.', nonce, https });
+        }
         if (!insats) {
           extra.fel = 'Insatsen finns inte.';
         } else {

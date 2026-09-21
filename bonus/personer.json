@@ -40,7 +40,9 @@
       "brands": [],
       "notionNamn": "Josh Naelga",
       "alias": [],
-      "extraRoller": []
+      "extraRoller": [
+        "produkttest"
+      ]
     },
     {
       "id": "annabelle",
@@ -52,7 +54,22 @@
       "alias": [
         "Anna G"
       ],
-      "extraRoller": []
+      "extraRoller": [
+        "produkttest"
+      ]
+    },
+    {
+      "id": "mechile",
+      "namn": "Mechile Delos Santos",
+      "fornamn": "Mechile",
+      "roll": "support_chef",
+      "brands": [
+        "*"
+      ],
+      "notionNamn": "",
+      "alias": [],
+      "extraRoller": [],
+      "kommentar": "Axels besked 2026-09-21: 'Hon är ansvarig för allt just nu' — både VA och Head of customer support, alla butiker (*). Rollen support_chef är med i programmet Kundtjänst, så hon tjänar VA-uppdragen direkt; teamandelen räknas utan hennes egna rader. E-post och exakt Notion-namn saknas — inloggningen skapar Axel på sidan Konton och kopplar till personId mechile."
     },
     {
       "id": "gilz",
@@ -99,7 +116,7 @@
     }
   ],
   "att_fylla_i": {
-    "kommentar": "⚠️ Ingen VA och ingen produkttestare står här ännu — deras namn finns ingenstans i repot, och systemet hittar aldrig på människor. Lägg till dem på sajten (Konton → Lägg till någon) med rätt roll, så börjar bonusen räknas. Utan fornamn kan ingen recension kopplas till dem, och utan brands får de inga veckobonusar.",
+    "kommentar": "Kundtjänsten är Mechile (2026-09-21, se hennes rad). Fler VA:er läggs till på sajten (Konton → Lägg till någon) med rätt roll, så börjar bonusen räknas. Utan fornamn kan ingen recension kopplas till dem, och utan brands får de inga veckobonusar — `*` betyder alla butiker.",
     "mall": {
       "id": "fornamn",
       "namn": "Hela Namnet",
@@ -112,6 +129,6 @@
       "alias": [],
       "extraRoller": []
     },
-    "produkttest_kommentar": "⚠️ Mätt 2026-09-21: Josh Naelga (13 rader) och Annabelle Gonzales (12 rader) står som Ansvarig på produkttester i Notion, men har bara rollen redigerare. Vill Axel att de ska tjäna på produkttest också: sätt extraRoller: [\"produkttest\"] på dem (går att klicka i på sajten under Konton). Systemet gör det inte av sig självt — det är ett beslut om pengar."
+    "produkttest_kommentar": "Mätt 2026-09-21: Josh Naelga (13 rader) och Annabelle Gonzales (12 rader) står som Ansvarig på produkttester i Notion. Axels beslut samma dag: ja, de tjänar på produkttest också — 15 dollar per färdig produkt (extraRoller produkttest, inskrivet) + sin vanliga redigerarandel 0,4 % på de egna annonserna (bara Sverige, redan i programmet redigerare)."
   }
 }

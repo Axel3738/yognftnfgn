@@ -87,6 +87,7 @@ const ORDBOK = {
   'Roll': 'Role',
   'Du ser': 'You can see',
   'Dina butiker': 'Your stores',
+  'Alla butiker': 'All stores',
   'Tjänar även i': 'Also earns in',
   'Byt lösenord': 'Change password',
   'Du loggas ut från alla andra enheter när du byter.': 'You will be logged out of all other devices.',

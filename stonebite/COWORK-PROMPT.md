@@ -40,25 +40,17 @@ Ditt eget konto skapar du på `https://stonebite.org/kom-igang` — den sidan
 stänger sig själv i samma sekund som kontot finns. Båda prompterna är skrivna
 så att Cowork inte fyller i det formuläret åt dig.
 
-## Det jag behöver veta om verksamheten
+## Verksamheten — Axels svar 2026-09-21, inskrivna i repot
 
-Svara i chatten, en rad per fråga:
+| Fråga | Svar | Var det sitter |
+|---|---|---|
+| Kontaktmejl på publika sidan | `contact@stonebite.org` | `stonebite/profil.json` |
+| VA:erna | **Mechile Delos Santos** — ansvarig för allt just nu | `bonus/personer.json` (`brands: ["*"]` = alla butiker) |
+| Head of customer support | Mechile, alla butiker | samma rad, roll `support_chef` (tjänar VA-uppdragen direkt) |
+| Produkttestarna | Josh och Annabelle tjänar på produkttest också: **15 dollar per färdig produkt** + sin vanliga 0,4 % på de egna annonserna (bara Sverige) | `extraRoller: ["produkttest"]`, `bonus/regler.json` → produkttest |
+| Bonusbeloppen | Tvister halverade: **1 dollar besvarad, 5 dollar vunnen**. Tom inkorg 15 och svarstid 10 per vecka står kvar — men betalas en gång per vecka när **alla** butiker klarar det, inte per butik. Head of support 10 % av teamet, utan egna rader (noll medan hon är ensam) | `bonus/regler.json` |
+| Trustpilot | Inget konto, och det behövs inte: Judge.me läses redan automatiskt. Skaffar Axel ett senare: `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` i Environments | `bonus/kallor.mjs` |
 
-1. **Kontaktmejl till publika sidan.** Vilken adress ska stå på stonebite.org?
-   (Just nu står ingen — jag vägrar publicera en privat gmail.)
-2. **VA:erna.** Vad heter de, vilken e-post har de, och vilken butik svarar de
-   för? Utan förnamn kan systemet inte koppla en recension till rätt person.
-3. **Produkttestarna.** Samma sak: namn och e-post. Och ska Josh och Annabelle
-   tjäna på produkttest också? De står som ansvariga på 25 produkter i Notion
-   men får bara betalt som redigerare i dag.
-4. **Head of customer support.** Vem är det, och vilka butiker har hen ansvar
-   för?
-5. **Bonusbeloppen.** Jag har satt dem så här — säg till om något ska ändras:
-   5 dollar per recension med namn, 10 extra för tre på en vecka, 3 dollar per
-   besvarad tvist, 10 för en vunnen, 15 för tom inkorg på fredagen, 10 för
-   svarstid under 12 timmar. Produkttest: 2 / 5 / 25 / 100 dollar för godkänd,
-   testad, lönsam, skalad. Head of support får 10 % av vad teamet tjänar.
-6. **Trustpilot.** Har du ett Trustpilot Business-konto? I så fall behöver jag
-   en API-nyckel och butikernas business unit-id, så läses recensionerna
-   automatiskt. Utan det får VA:erna rapportera in dem själva på sajten — det
-   fungerar, men någon måste godkänna varje rad.
+Det enda som inte står i repot är **Mechiles e-post** — den skriver Axel in
+själv när han skapar hennes konto på sidan Konton (koppla till personen
+`mechile` så räknas bonusen från dag ett).
