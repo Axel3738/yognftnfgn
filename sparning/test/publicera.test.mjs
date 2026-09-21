@@ -58,11 +58,41 @@ function bygg(lage, konfigAndringar = {}, bokforing = {}) {
   return rot;
 }
 
+// ⚠️ MILJÖN SKALAS AV FRÅN VARJE SHOPIFY-NYCKEL FÖRE VARJE KÖRNING.
+//
+// Testerna nedan kör publicera.mjs SKARPT (utan --torr) för att mäta att
+// spärrarna avbryter i rätt läge. Kopian bär den RIKTIGA konfig.json — samma
+// butik, samma handle `spara` — så en skarp körning som slipper förbi en
+// spärr publicerar på riktigt. Ett test gör det med flit: "första
+// publiceringen får vara tom" släpper igenom ett paketminne med ETT
+// låtsasnummer, och kommentaren där antog att "utan nycklar faller körningen
+// senare (Shopify)".
+//
+// Det antagandet höll inte. 2026-09-21 21:44 UTC låg
+// https://baverbutiken.se/pages/spara live med exakt ett paket —
+// `YT0000000000000`, testets eget nummer — och varje kund som slog upp sitt
+// paketnummer fick "Vi hittar inte det numret". Nycklarna finns i den här
+// containern och i rutinernas, så `npm test` publicerade över kundernas sida.
+//
+// Spärren sitter i publicera.mjs, inte här: `SPARNING_INGEN_PUBLICERING=1`
+// låter körningen gå precis som en skarp — samma klient, samma spärrar, samma
+// utskrifter — men stannar exakt före pageCreate/pageUpdate.
+//
+// ⚠️ Två vägar som INTE fungerar, båda provade när den här spärren skrevs:
+// att TA BORT nycklarna ur miljön (butik.mjs kräver att de finns och kastar
+// innan spärrarna hinner köra) och att ge dem FALSKA värden (token-anropet
+// ligger före spärrarna, så körningen dör på "app_not_installed"). I båda
+// fallen mätte testerna något annat än det de handlar om.
+function utanAttKunnaPublicera() {
+  return { ...process.env, SPARNING_INGEN_PUBLICERING: '1' };
+}
+
 function kor(rot, flaggor = []) {
   const r = spawnSync(process.execPath, [join(rot, 'sparning', 'publicera.mjs'), ...flaggor], {
     cwd: rot,
     encoding: 'utf8',
     timeout: 120000,
+    env: utanAttKunnaPublicera(),
   });
   return { kod: r.status, ut: `${r.stdout ?? ''}${r.stderr ?? ''}` };
 }
@@ -273,4 +303,38 @@ test('en trasig post i lagefilen kraschar inte publiceringen', () => {
   const { kod, ut } = kor(rot, ['--torr']);
   assert.equal(kod, 0, ut);
   assert.match(ut, /Okänd status/);
+});
+
+test('nödbromsen: SPARNING_INGEN_PUBLICERING=1 stannar före mutationen', () => {
+  // Regressionen som kostade kunderna en kväll: testerna körde skriptet
+  // skarpt mot den RIKTIGA butiken och en av dem publicerade en sida med ett
+  // enda låtsaspaket. Spärren måste därför gå att bevisa, inte bara finnas.
+  //
+  // Körningen nedan har allt den behöver för att lyckas — ett paketminne med
+  // riktiga skanningar och en redan publicerad sida, alltså ingen spärr som
+  // avbryter — och ska ändå sluta utan en enda skrivning.
+  // Eget paketminne: `lageMedSkanningar()` fastnar i kontrollen (landet
+  // "Sverige" går inte att hitta i dess historik), och då hade testet mätt
+  // kontrollen i stället för nödbromsen.
+  const lage = {
+    paket: {
+      YT2624700707772213: {
+        bolag: 'YunExpress',
+        status: 'DELIVERED',
+        handelser: [
+          { tid: iso(1), text: 'Paketet är levererat', plats: 'Malmö', land: 'Sverige' },
+          { tid: iso(4), text: 'Paketet har lämnat terminalen', plats: 'Stockholm', land: 'Sverige' },
+        ],
+      },
+    },
+  };
+  const rot = bygg(lage, {}, { sida_publicerad: '2026-09-19' });
+  const { kod, ut } = kor(rot);
+  assert.equal(kod, 0, ut);
+  assert.match(ut, /SPARNING_INGEN_PUBLICERING=1: sidan byggdes men skrevs ALDRIG/);
+  assert.doesNotMatch(ut, /Uppdaterad: gid|Skapad: gid|Publikt:/, 'något skrevs mot Shopify');
+  // Sidan byggdes på riktigt — spärren stoppar mutationen, inte arbetet.
+  assert.ok(existsSync(join(rot, 'sparning', 'output', 'sida.html')));
+  const konfig = JSON.parse(readFileSync(join(rot, 'sparning', 'konfig.json'), 'utf8'));
+  assert.equal(konfig.lage.sida_publicerad, '2026-09-19', 'bokföringen rördes');
 });

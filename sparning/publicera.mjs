@@ -71,6 +71,29 @@ const offline = arg.includes('--offline');
 // som mejl/hjul-publicera.mjs (där --offline hoppar över produkthämtningen).
 const baraFiler = torr || offline;
 
+// ⚠️ NÖDBROMSEN: `SPARNING_INGEN_PUBLICERING=1` i miljön förbjuder varje
+// skrivning mot Shopify, men låter körningen gå precis som en skarp — samma
+// klient, samma spärrar, samma utskrifter. Skillnaden är att den stannar
+// EXAKT före pageCreate/pageUpdate.
+//
+// Varför den finns: `sparning/test/publicera.test.mjs` kör skriptet skarpt i
+// en temp-kopia för att mäta att spärrarna avbryter i rätt läge, och kopian
+// bär den RIKTIGA konfig.json — samma butik, samma handle `spara`. Ett av
+// testerna släpper med flit igenom ett paketminne med ETT låtsasnummer
+// ("första publiceringen får vara tom"), och kommentaren där antog att
+// körningen ändå föll på att nycklarna saknades.
+//
+// Det antagandet var falskt i varje container som HAR nycklarna — alltså
+// rutinernas och sessionernas. 2026-09-21 21:44 UTC låg
+// https://baverbutiken.se/pages/spara live med exakt ett paket,
+// `YT0000000000000` ur testet, och varje kund som slog upp sitt paketnummer
+// fick "Vi hittar inte det numret". `npm test` hade publicerat över kundernas
+// sida.
+//
+// Spärren sitter därför i skriptet, inte i testet: en miljövariabel som säger
+// nej är sann oavsett vem som kör, och den behöver inga nycklar för att hålla.
+const forbjudenPublicering = process.env.SPARNING_INGEN_PUBLICERING === '1';
+
 // --paket <fil>: läs paketen ur en färdig lista i stället för ur paketminnet.
 // Det är vägen spårningsrundan går. Skanningarna sparas ALDRIG i lage.json —
 // 948 paket à ~9 skanningar väger 0,7 MB, och filen committas varje timme, så
@@ -387,6 +410,14 @@ console.log(`Markörer: sidan id="${markor.markor}", datan id="${markor.dataId}"
 
 if (baraFiler) {
   console.log(`${torr ? '--torr' : '--offline'}: inget skrivet till Shopify. Filerna ligger i sparning/output/.`);
+  rapportSlut();
+  process.exit(0);
+}
+
+// Sista utgången före mutationen. Står nödbromsen på har körningen gjort allt
+// utom att skriva — spärrarna har dömt, sidan är byggd, filerna ligger kvar.
+if (forbjudenPublicering) {
+  console.log('⛔ SPARNING_INGEN_PUBLICERING=1: sidan byggdes men skrevs ALDRIG till Shopify.');
   rapportSlut();
   process.exit(0);
 }
