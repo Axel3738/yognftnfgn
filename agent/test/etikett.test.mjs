@@ -146,3 +146,12 @@ test('osäker: spend winner med KPI men utan budgethistorik märks, gissas aldri
   assert.equal(g.osakra, 1);
   assert.equal(g.frekvens, '0/2');
 });
+
+test('utford_som_briefad (2.12): ja/nej följer med raden, allt annat blir okänd — aldrig gissat', () => {
+  assert.equal(lasEtikettannons({ id: 'a', namn: 'T_PD_1_H1', d0: '2026-09-01', spend: 500, utford_som_briefad: 'ja' }).utford_som_briefad, 'ja');
+  assert.equal(lasEtikettannons({ id: 'a', namn: 'T_PD_1_H1', d0: '2026-09-01', spend: 500, utford_som_briefad: 'NEJ' }).utford_som_briefad, 'nej');
+  assert.equal(lasEtikettannons({ id: 'a', namn: 'T_PD_1_H1', d0: '2026-09-01', spend: 500 }).utford_som_briefad, 'okänd');
+  assert.equal(lasEtikettannons({ id: 'a', namn: 'T_PD_1_H1', d0: '2026-09-01', spend: 500, utford_som_briefad: 'kanske' }).utford_som_briefad, 'okänd');
+  const { rader } = raknaEtiketter({ datum: '2026-09-21', kampanj_id: 'K', kampanj_namn: 'T', break_even: 1.5, kampanj: { spend: 1000, roas: 2 }, annonser: [{ id: 'a', namn: 'T_PD_1_H1', d0: '2026-09-01', spend: 500, kop: 3, roas: 2, utford_som_briefad: 'nej' }] }, []);
+  assert.equal(rader[0].utford_som_briefad, 'nej');
+});

@@ -43,6 +43,16 @@ dem oförändrade — inte att bedöma dem.
 
 ## Annonsnivån (sedan 2026-09-20 — Axels fyra ur Evolve-materialet)
 
+**Bakkatalogen är etiketterad** (2026-09-21, `agent/etikett-backfill.mjs
+--konto SE|NO|alla [--torr] [--cache <prefix>]`): 1 682 SE + 664 NO annonser
+med komplett sjudagarsfönster, rader med `backfill: true`, rapport i
+`agent/utdata/etiketter-backfill-2026-09-21.md`. Där budgethistoriken saknas i
+fönstret (budgetloggen börjar 2026-08-28) står `osaker_breakthrough: true` —
+aldrig gissat uppåt. Etikettraden bär sedan samma dag `utford_som_briefad`
+(`ja`/`nej`/`okänd`) — sessionen läser den live creativen mot briefen.
+Briefspärren (regi rad för rad + komponenttaggar) ligger på `main`:
+`tools/briefgranskning.mjs --rad/--manifest`, mallen `docs/os/BRIEF-REGI.md`.
+
 Bakgrund: `docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` på `main`. Budgetmotorn
 var inte problemet, annonsnivån var det. Fyra saker byggdes, i den ordning
 Axel bad om:

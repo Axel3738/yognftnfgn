@@ -184,6 +184,10 @@ export function lasEtikettannons(rad) {
     typ: rad.typ ?? null,
     iteration_nr: rad.iteration_nr ?? null,
     parent: rad.parent ?? null,
+    // 2.12 (Axels beslut 2026-09-21): kördes creativen som briefad? Sessionen
+    // läser den LIVE annonsen (primärtext, rubrik, första frame) mot briefen.
+    // 'nej' ⇒ utfallet räknas inte in i variabeltabellen. Aldrig gissat: 'okänd'.
+    utford_som_briefad: /^(ja|nej)$/i.test(String(rad.utford_som_briefad ?? '')) ? String(rad.utford_som_briefad).toLowerCase() : 'okänd',
   };
 }
 
@@ -275,6 +279,7 @@ export function raknaEtiketter(jobb, logg = [], { uppgradering = false } = {}) {
       preliminar: e.preliminar,
       nara_grans: e.nara_grans,
       osaker_breakthrough: e.osaker_breakthrough === true,
+      utford_som_briefad: a.utford_som_briefad,
       orsak: e.orsak ?? null,
       ...(jobb.backfill ? { backfill: true } : {}),
       // ALDRIG ny_budget: dagarSedanAndring räknar varje rad med det fältet som

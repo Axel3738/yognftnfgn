@@ -371,6 +371,17 @@ och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
    hittas inget: `batch: null`, `typ: "okänd"` — aldrig gissat. Budgeten
    dag 0/dag 7 läser skriptet själv ur budgetloggen (`gammal_budget`); ange
    `budget_d0`/`budget_d7` bara om du läst dem i Ads Manager.
+   **`utford_som_briefad`** (2.12, Axels beslut 2026-09-21): för varje
+   BEDÖMBAR kandidat med brief i repot, läs den LIVE creativen (primärtext,
+   rubrik, första frame via `tools/qa-frames.py`) mot briefens COPY CARD och
+   hookrad och skriv `"utford_som_briefad": "ja"|"nej"` i jobbfilen; `nej` ⇒
+   utfallet räknas inte in i variabeltabellen (motorhöljets copy-lärdomar i
+   augusti byggde på text som aldrig kört). Ingen läsning ⇒ utelämna fältet,
+   skriptet skriver `okänd`. Aldrig gissat.
+   **Bakkatalogen är redan etiketterad** (`agent/etikett-backfill.mjs`,
+   2026-09-21: 1 682 SE + 664 NO annonser, `backfill: true`) — kandidater är
+   bara annonser utan ETIKETT-rad. Kör backfillen igen bara om loggen
+   förlorat rader (`--torr` först).
 4. Klistra in tabellen skriptet skriver under en rubrik
    `## Etiketter dag 7 (<IDAG>)` i `products/<id>/batch-log.md` (finns
    mappen), och skriv frekvensraden överst i filen:
@@ -382,7 +393,12 @@ och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
 6. Leveransen får sektionen **"Labels today"** (annons, etikett, andel,
    bedömbar, playbook-läsning) och frekvensen per produkt och batch. Sätts en
    BREAKTHROUGH: posta i `--kanal larm` (engelska) `"Breakthrough: <namn> —
-   <andel> % of campaign spend, budget <d0> → <d7> kr"`.
+   <andel> % of campaign spend, budget <d0> → <d7> kr"` **och skriv blocket
+   `## Komponentkarta <namn>` i produktens `dna.md`** (ANALYSMETOD 6b): HOOK /
+   BRIDGE / HOLD / CTA med exakt rad ur briefen, valens, awareness, avatar,
+   och **bärande komponent = hypotes** — det är den 2.5-iterationerna byggs
+   på när den rundan finns. Saknar produkten brief i repot: skriv kartan ur
+   den live creativen och märk raderna "läst ur annonsen, inte ur brief".
 
 Committa och pusha `agent/budgetlogg.jsonl` + batch-log-filerna i samma push
 som rondens loggrader. Notion-fältet `Outcome` och registret
@@ -493,6 +509,36 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
 - **Briefens format är mallen i `forsta-batch.md` (LEVERANSFORMAT).** Enkel,
   kort, samma struktur varje gång. Tre-frågorstabellen är obligatorisk på
   varje svensk rad — en rad med ett ❌ går inte ut.
+- **Regi rad för rad i varje videobrief + komponenttaggar i varje brief
+  (Axels beslut 2026-09-21, förslagets 2.9 och 2.12).** Videobriefen har
+  regitabellen ur `docs/os/BRIEF-REGI.md` — en rad per manusrad: Time |
+  Script line | Audio | On-screen text | Picture | Effect + length | Source |
+  Reference | Latitude, plus raderna Assets / Reference ads / Editor latitude
+  (MAY / MUST NOT). Källan är alltid ett av fem format; `OUR AD <namn>` kräver
+  mm:ss — hämta videon ur Meta, kör `tools/qa-frames.py` 1 frame/s och läs av;
+  går klippet inte att läsa skriv `DRIVE <id> [EDITOR PICKS: …]`, aldrig en
+  påhittad sekund. Regin skriver DU (regel 6 gäller texten). Taggraden får
+  `typ=N|M|I|S · koncept · parent · iteration · kalla · avatar · awareness ·
+  begar · mekanism · urgency · hook-mekanik · confidence` (fasta listor,
+  ANALYSMETOD 6b) och raden `Memo:`; avatarerna ur `dna.md` → `## Avatarer`
+  (max 4, med källa — saknas listan skriver du den först); minst 1 av 5 nya
+  koncept har `kalla=voc` (kommentarerna: `node tools/annonskommentarer.mjs
+  --konto SE --kampanj <id> --ut products/<id>/kommentarer.md`, kluster ≥ 3
+  ⇒ INVAND-variant). **Spärren körs INNAN en enda Notion-rad skapas:**
+  ```bash
+  node tools/briefgranskning.mjs --manifest products/<id>/batch-NN/manifest.json --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>
+  ```
+  Exit 1 ⇒ rätta och kör om; en stoppad brief går aldrig upp. Visa
+  utskriften (regi x/y per video) i leveransen. Verktyget och dess importer
+  ligger på `main` — kör det ur en färsk `main`-worktree, inte ur
+  agent-grenens kopia: `git fetch origin main && git worktree add -f
+  /tmp/main-sparr origin/main && node /tmp/main-sparr/tools/briefgranskning.mjs
+  --manifest …` (inget nät, ingen NOTION_TOKEN behövs i det läget).
+  **Mät från dag 1** (BRIEF-REGI.md → "Mät från dag 1"): i batch-log-tabellen
+  per annons kolumnerna `rev` (antal läsningar i `In progress 2`, `okänd`
+  tills raden lästs — Notion har ingen statushistorik) och `brief → live`
+  (Notion `Skapad` → Metas `created_time`), så regitabellens effekt går att
+  jämföra före/efter över ≥ 2 batcher.
 
 - Behov `forsta_batch` → produkten har passerat 1 500 kr OCH ligger på minst
   **20 % vinst**. Under det flaggas ingenting: produkten chillar och prövas om
