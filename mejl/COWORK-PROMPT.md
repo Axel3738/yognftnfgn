@@ -75,13 +75,23 @@ med källfilen (Cmd+A markerar inget, hände 2026-09-18): hämta filen direkt
 i Shopify-sidan i stället för via urklippet, och jämför det inklistrade mot
 källfilen tecken för tecken före sparning. Det fungerade.
 
-### A. De tre mallarna
+### A. Mallarna
+
+⚠️ **Den här körningen (v12, 2026-09-21) gäller EN mall: Orderbekräftelsen.**
+Den enda ändringen är leveranstiden i FAQ-raden "Hur lång är leveranstiden?":
+den sa `7–14 dagar` och ska säga `5–10 arbetsdagar` (ägarens beslut samma dag —
+det är vad butikens egen fraktsida alltid sagt). De tre fraktmallarna är
+**oförändrade sedan v11** och ska inte röras om de redan är inne.
 
 **Börja med att kolla vad som redan sitter — per mall.** Öppna varje mall i
-tabellen → Redigera kod. Saknar brödtexten texten `Ditt paketnummer`
-är det en gammal version: klistra in enligt stegen. Finns
-`Ditt paketnummer` redan är den nya versionen inne: hoppa över den
-mallen. Är alla tre redan klara: gå direkt till **B**.
+tabellen → Redigera kod.
+- **Orderbekräftelsen (rad 0):** står `5–10 arbetsdagar` redan i brödtexten är
+  den klar — hoppa över. Står `7–14 dagar` där: klistra in enligt stegen.
+- **De tre fraktmallarna (rad 1–3):** saknar brödtexten texten
+  `Ditt paketnummer` är det en gammal version: klistra in enligt stegen. Finns
+  `Ditt paketnummer` redan är den nya versionen inne: hoppa över den mallen.
+
+Är alla fyra redan klara: gå direkt till **B**.
 
 Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
@@ -111,12 +121,18 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
+| 0 | **Orderbekräftelse** (Order confirmation) | `{% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar` | `5–10 arbetsdagar` (INTE `7–14 dagar`) | **84 138** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/orderbekraftelse.liquid |
 | 1 | **Leveransbekräftelse** (Shipping confirmation) | `Ditt paket är på väg` | `Ditt paketnummer` och `sha256` och `Beräknad leverans` | **77 552** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktbekraftelse.liquid |
 | 2 | **Leveransuppdatering** (Shipping update) | `Ny info om ditt paket` | `Ditt paketnummer` och `sha256` | **6 245** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/fraktuppdatering.liquid |
 | 3 | **Ute för leverans** (Out for delivery) | `Paketet kommer idag` | `Ditt paketnummer` och `sha256` | **6 234** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger syskonet "Order ute för lokal
 leverans" — ta INTE det. Rör inte heller "Levererad": den är redan rätt.
+
+⚠️ **De fyra butikerna CaraShell, Beverbutikken, Bæverbutiken och Majavakauppa
+berörs INTE av v12** — deras mallar är byte för byte oförändrade (mätt
+2026-09-21: de skrev aldrig ut något dagfönster i text, bara datumen). Kör
+aldrig om dem "för säkerhets skull".
 
 Talen i kolumnen Tecken är tecken, inte byte. Shopifys redigerare räknar i
 byte, alltså högre tal — varje å/ä/ö väger två byte. Skiljer det mycket mer

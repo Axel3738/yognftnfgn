@@ -64,10 +64,14 @@ tvister:
   # Kunden betalar och ordnar returfrakten; ingen returetikett skickas. Det är
   # vad butikens befintliga retur-SOP alltid sagt, inskrivet 2026-09-21.
   returfrakt_betalas_av: "kund"
-  # ⚠️ TOM — står i Shopify admin → Settings → Payments → Customer billing
-  # statement. Läs den där; en descriptor kunden inte känner igen är en vanlig
-  # orsak till "unrecognized".
-  billing_descriptor: ""
+  # Avläst av Axel 2026-09-21 i Shopify admin → Settings → Payments →
+  # "Uppgifter för kundens kontoutdrag" → Namn på kundens kontoutdrag.
+  # Det är EXAKT den här texten kunden ser på sitt kontoutdrag — en descriptor
+  # kunden inte känner igen är en vanlig orsak till "unrecognized"-tvister.
+  billing_descriptor: "SP Baverbutiken.se"
+  # Supportnumret som står bredvid descriptorn i samma ruta. Banken ger det
+  # till kunden som vill ringa innan hen öppnar en tvist.
+  support_telefon: "+46 79 340 44 07"
   # 0 = slåss om allt. Ändra först när någon räknat på vad VA-timmen kostar
   # mot medeltvisten (348–589 kr på de flesta rader).
   strid_lonar_sig_over: 0
