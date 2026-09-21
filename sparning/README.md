@@ -336,6 +336,22 @@ påverkas inte av vinteromställningen), taggar `routine:sparning` +
 `butik:baverbutiken`, inga connectors. Sedd i `list_triggers` samma körning.
 Kommandofilen ligger på `main` — rutinen klonar `main`.
 
+**En rutin per butik, egen minut** (så de sex pusharna inte krockar; varje
+körning gör `git pull --rebase` först):
+
+| Minut | Butik | Trigger | Fast session |
+|---|---|---|---|
+| :16 | Bäverbutiken | `trig_014rEkz1EjfRfUW6dZxnvm6Q` | `session_01To75UpfXYXGX5jcb9QYrdv` |
+| :24 | CaraShell | `trig_01UAU1N6P4MpPmeLgKffprHo` | `session_01EZDDNdhgXgYFZ7p8DWf4BU` |
+| :32 | Beverbutikken NO | `trig_01JqE4TDfLVwpJEHhECGyQFL` | `session_01YGSL1w5uQszYjieUqqc9iN` |
+| :40 | Majavakauppa FI | `trig_016yuCdWwbFPgA2ntJcLGUED` | `session_019k52ns9p5muXHmQD532Hvd` |
+| :48 | Bæverbutiken DK | `trig_01Xjx5pUdre9Uw3LJiBy9Nzs` | `session_01SLDa7FRSAf2964pHQ1mjVg` |
+| :56 | **Matstrumpor** | **`trig_01LSdjZgepsWf761ocrFWAAo`** | **`session_017E57dcmd1Lf7PpJTBsoAUE`** |
+
+Matstrumpors rutin byggd 2026-09-21 11:41 CEST på `claude5@stonebite.org`
+efter att koden låg på `main`, sedd i `list_triggers` samma körning, första
+körning 11:56 CEST. Alla sex ligger på samma konto.
+
 Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
 (varje timme)" → av. Ingen kvot bränns när den står still; redan skrivna
 event i Shopify ligger kvar.

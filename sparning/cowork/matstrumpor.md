@@ -43,8 +43,12 @@ finns inte i mejlklienter — mejlen använder närmaste rundade systemfont.
 Supportadressen **kundsupport@matstrumpor.se** lästes ur Shopifys
 `shop.contactEmail` och står också i butikens egen sidfot.
 
-Timrutin: se `sparning/README.md` → Rutinen (byggs efter att koden ligger på
-`main`; id:t skrivs in först när det synts i `list_triggers`).
+Timrutin: **`trig_01LSdjZgepsWf761ocrFWAAo`** på `56 * * * *`, fast session
+**`session_017E57dcmd1Lf7PpJTBsoAUE`** (repot som källa, `main` som utgren),
+taggar `routine:sparning` + `butik:matstrumpor`, inga connectors. Byggd
+2026-09-21 11:41 CEST på `claude5@stonebite.org` EFTER att koden låg på
+`main` (`04088e8`), sedd i `list_triggers` samma körning, första körning
+11:56 CEST.
 
 ## Mejl + meny
 
