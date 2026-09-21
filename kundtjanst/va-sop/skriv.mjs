@@ -18,7 +18,7 @@
 // butikens värden ur brandfilen (`fyll.mjs`) och filnamnen i texten byts mot
 // Notion-sidornas titlar — handboken förblir portabel i repot, VA:n läser den
 // färdigifylld i Notion.
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fyll, brandFor } from '../sop/fyll.mjs';
@@ -275,5 +275,10 @@ export async function huvud(argv = process.argv.slice(2)) {
 if (process.argv[1] && process.argv[1].endsWith('skriv.mjs')) {
   const logg = await huvud();
   const nya = logg.filter((x) => x.slag === 'ny');
-  if (nya.length) console.log('\nNya sid-id (skriv in dem i notion.json):\n' + nya.map((x) => `  ${x.fil}  ${x.id}`).join('\n'));
+  // Id:t skrivs tillbaka direkt. Gör man det för hand skapar nästa körning en
+  // DUBBLETT av sidan i stället för att uppdatera den — och ingen märker det.
+  if (nya.length) {
+    writeFileSync(join(HÄR, 'notion.json'), JSON.stringify(KONF, null, 1) + '\n');
+    console.log('\nNya sid-id inskrivna i notion.json:\n' + nya.map((x) => `  ${x.fil}  ${x.id}`).join('\n'));
+  }
 }

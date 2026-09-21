@@ -221,62 +221,74 @@
   {
    "kalla": "../sop/START-HERE.md",
    "titel": "Chargebacks — START HERE: route the dispute",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8182-85ee-cd7d6e3c7a84"
   },
   {
    "kalla": "../sop/00-MASTER.md",
    "titel": "Chargebacks — the first hour",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8197-bada-f622a1266aed"
   },
   {
    "kalla": "../sop/10-NOT-RECEIVED.md",
    "titel": "Dispute reason: product not received",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8121-b6f4-ea69c6d6a0f0"
   },
   {
    "kalla": "../sop/11-UNACCEPTABLE.md",
    "titel": "Dispute reason: product unacceptable or not as described",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8128-979d-e474a85e5fe8"
   },
   {
    "kalla": "../sop/12-CREDIT-NOT-PROCESSED.md",
    "titel": "Dispute reason: credit not processed",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8124-bb5e-cd429b0b751c"
   },
   {
    "kalla": "../sop/13-FRAUD-UNRECOGNIZED.md",
    "titel": "Dispute reason: fraudulent or unrecognized",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8105-b39a-cc7a3220c07e"
   },
   {
    "kalla": "../sop/14-DUPLICATE-SUBSCRIPTION-OTHER.md",
    "titel": "Dispute reason: duplicate, subscription cancelled or other",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8101-b755-e65dfb88c9f9"
   },
   {
    "kalla": "../sop/20-NO-CONTACT.md",
    "titel": "Dispute with no email history with the customer",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81e3-aa17-de023eea53b5"
   },
   {
    "kalla": "../sop/30-EMAIL-TEMPLATES.md",
    "titel": "Dispute email templates",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81f9-89a4-d146c5bc56a9"
   },
   {
    "kalla": "../sop/40-EVIDENCE-PACK.md",
    "titel": "Dispute evidence pack — what to attach and where to find it",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8194-a4fc-c7fcaf6034fc"
   },
   {
    "kalla": "../sop/50-PREVENTION.md",
    "titel": "After the dispute — preventing the next one",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81c0-9f8d-f68d89220a2e"
   },
   {
    "kalla": "../sop/60-ESCALATION.md",
    "titel": "Disputes — what you decide and what the owner decides",
-   "kategori": "Payment"
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8190-8b04-d48fbee10450"
   }
  ],
  "brand": "baverbutiken"
