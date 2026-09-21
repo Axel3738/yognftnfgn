@@ -43,11 +43,12 @@ import { byggArenden } from './arenden.mjs';
 import { ShopifyLasare } from './shopify.mjs';
 import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
-import { HINK, hinka, beslut } from './autosvar/hinkar.mjs';
+import { HINK, hinka, beslut, redanBesvaradAvOss } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
 import { skrivEnkelt, skrivArgt, valjSprak, fornamn, xNyckelFor } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
+import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
 import { nyckel as nyckel17 } from '../sparning/17track.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
@@ -81,6 +82,20 @@ export async function korBrand(brand, {
   const minnet = minne(lasLogg(brand.id, loggmapp));
   let svarade = 0;
 
+  // Tvisterna läses EN gång per körning: en order med en tvist får aldrig
+  // ett automatiskt svar (Axels järnregel), och Shopifys tvistnotis kommer
+  // som ett eget mejl som motorn inte kan knyta till kundens fråga.
+  let tvister = [];
+  if (sh && typeof sh.hamtaTvister === 'function') {
+    try {
+      const t = await sh.hamtaTvister(new Date(nu.getTime() - 180 * 24 * TIMME));
+      if (t.tillganglig === false) res.varningar.push(`tvisterna gick inte att läsa (${t.orsak}) — en order med tvist kan få ett ENKELT svar, VA:n bör veta det`);
+      else tvister = t.lista ?? [];
+    } catch (e) {
+      res.varningar.push(`tvisterna gick inte att läsa (${e.message.slice(0, 100)})`);
+    }
+  }
+
   // 1. Kandidaterna: inkorgen nyast först, tills mejlen är äldre än fönstret.
   const inkorg = konfig.mail.inkorg || 'INBOX';
   const lista = await b.lista({ mapp: inkorg, sida: 1, antal: 50 });
@@ -101,7 +116,7 @@ export async function korBrand(brand, {
     const mejl = { ...m, bilaga: rad.bilaga };
     const grund = hinka({ mejl, brand: konfig });
     const hash = kundHash(mejl.fran?.adress);
-    const post = { tid: kord, uid: m.uid, messageId: m.messageId, kund: mejl.fran?.adress ?? '', kundHash: hash, amne: mejl.amne, hink: grund.hink, typ: grund.typ, kategori: grund.klass.kategori, ordernummer: grund.klass.ordernummer, sprak: valjSprak(grund.klass.sprak, konfig.svar.sprak), orsak: grund.orsak, atgard: 'hoppad', torr };
+    const post = { tid: kord, uid: m.uid, messageId: m.messageId, kund: mejl.fran?.adress ?? '', kundHash: hash, amne: mejl.amne, kontaktformular: Boolean(mejl.kontaktformular), hink: grund.hink, typ: grund.typ, kategori: grund.klass.kategori, ordernummer: grund.klass.ordernummer, sprak: valjSprak(grund.klass.sprak, konfig.svar.sprak), orsak: grund.orsak, atgard: 'hoppad', torr };
     if (grund.hink === HINK.SKIP) { skrivLogg(brand.id, post, loggmapp); res.rader.push(post); continue; }
 
     // Tråden: kundens mejl i inkorgen + våra svar i Sent och Drafts.
@@ -120,7 +135,7 @@ export async function korBrand(brand, {
     // Fakta bara för ENKEL — det är där de används.
     let fakta = null;
     if (hink.hink === HINK.ENKEL && ['wismo', 'adress'].includes(hink.typ)) {
-      fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg });
+      fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg, tvister });
       post.fakta = fakta.kalla;
     }
     const d = beslut({ hink, fakta, trad });
@@ -156,7 +171,8 @@ export async function korBrand(brand, {
             post.hink = HINK.SVAR; post.orsak = 'svaret stoppades av löftesspärren'; post.orsakEn = 'reply blocked by the promise guard'; d.svara = false; d.flagga = true; d.flytta = false;
           } else {
             try {
-              const r = await b.svara(m.uid, { mapp: inkorg, text, utkast: torr });
+              // forvantadTill: Roundcube måste vilja skicka till just den här kunden — annars inget svar.
+              const r = await b.svara(m.uid, { mapp: inkorg, text, utkast: torr, forvantadTill: mejl.fran.adress });
               post.atgard = r.typ === 'utkast' ? 'utkast' : 'svar';
               post.utkastUid = r.utkastUid ?? null;
               post.till = maskeraAdress(r.till);
@@ -188,12 +204,17 @@ export async function korBrand(brand, {
   return res;
 }
 
-/** Ett mejl ur brevlådan, tolkat, med cache per uid (loop-läget läser samma lista varje minut). */
+/**
+ * Ett mejl ur brevlådan, tolkat, med cache per uid (loop-läget läser samma
+ * lista varje minut). Shopifys kontaktformulär-notiser blir kundens eget
+ * mejl här (autosvar/kontaktformular.mjs) — kunden som avsändare, kundens
+ * ord som text — så hinkar, tråd, fakta och logg ser samma kund överallt.
+ */
 async function lasMejl(b, mapp, uid, cache) {
   const nyckel = `${mapp}:${uid}`;
   if (cache.has(nyckel)) return cache.get(nyckel);
   const r = await b.las(uid, { mapp, ra: true });
-  const m = tolkaMejl(r.ra, { uid, mapp });
+  const m = kundUrKontaktformular(tolkaMejl(r.ra, { uid, mapp }));
   cache.set(nyckel, m);
   return m;
 }
@@ -238,9 +259,22 @@ export async function byggTrad(b, konfig, mejl, { cache = new Map(), maxSidor = 
   for (const mapp of ['Drafts', 'INBOX.Drafts']) if (await lasUt(mapp)) break;
   const byggt = byggArenden({ inkorg: inkommande, skickat, brand: konfig, nu: new Date() });
   const a = byggt.arenden.find((x) => x.uids.includes(mejl.uid)) ?? byggt.arenden.find((x) => x.kund.adress === adress);
-  if (!a) return { id: `${adress}|${mejl.amneNyckel}`, antalInkommande: 1, antalSvar: 0, ids: [mejl.messageId].filter(Boolean) };
+  // Sent-mappen är stor (~50 mejl om dagen i Bäverbutiken) och sökningen ser
+  // bara första sidan — därför räknas också mejlets egna spår av ett svar
+  // från oss (References från vår domän, vår adress i citatet).
+  const spar = redanBesvaradAvOss({ mejl, brand: konfig });
+  if (!a) return { id: loggnyckel(`${adress}|${mejl.amneNyckel}`), antalInkommande: 1, antalSvar: spar.besvarad ? 1 : 0, ids: [mejl.messageId].filter(Boolean), besvaradSpar: spar.orsak };
   const ids = inkommande.filter((x) => a.uids.includes(x.uid)).map((x) => x.messageId).filter(Boolean);
-  return { id: a.id, antalInkommande: a.antalInkommande, antalSvar: a.antalSvar, ids };
+  return { id: loggnyckel(a.id), antalInkommande: a.antalInkommande, antalSvar: Math.max(a.antalSvar, spar.besvarad ? 1 : 0), ids, besvaradSpar: spar.orsak };
+}
+
+/**
+ * Trådnyckeln så som den får stå i loggen: adressen före "|" byts mot samma
+ * hash som `kundHash` — loggen bär aldrig en kundadress i klartext (Axels
+ * järnregel; den första loggen 2026-09-21 hade adressen här). Ren.
+ */
+export function loggnyckel(nyckel) {
+  return String(nyckel ?? '').replace(/^([^|]*@[^|]*)/, (adr) => kundHash(adr.replace(/^<|>$/g, '')));
 }
 
 // ------------------------------------------------------------------ CLI

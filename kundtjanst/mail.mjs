@@ -143,6 +143,8 @@ export function skrivUt(kommando, r) {
     case 'visa':
       return [`Svar på uid ${r.uid} i ${r.mapp} — inget skickat`, `Från:  ${r.fran}`, `Till:  ${r.till}`, `Ämne:  ${r.amne}`, `Tråd:  ${r.replyMsgid ?? '(In-Reply-To sätts av Roundcube)'}`, '', 'Citatet Roundcube lägger under svaret:', r.citat || '(inget)'].join('\n');
     case 'svara':
+      // --visa ger förhandsgranskningen (ingen typ) — skriv aldrig "Skickat" då.
+      if (!r.typ) return skrivUt('visa', r);
       return r.typ === 'utkast'
         ? `📝 Utkast sparat i ${r.utkastMapp ?? 'Drafts'} (uid ${r.utkastUid ?? '?'}) — svar på uid ${r.uid}, till ${r.till}, ämne "${r.amne}". Inget skickat.`
         : `✉️  Skickat till ${r.till}, ämne "${r.amne}" (svar på uid ${r.uid})${r.sparfel ? ' ⚠️ men kopian kunde inte sparas i Sent' : ''}.`;

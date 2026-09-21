@@ -243,14 +243,22 @@ export class Brevlada {
    * Svarar på mejlet `uid` i tråden (In-Reply-To/References sätts av
    * Roundcube). `text` är vårt svar; citatet hängs på efter en tom rad om
    * `medCitat` (standard). `utkast: true` sparar i Drafts i stället för att
-   * skicka. Returnerar { typ: 'skickat'|'utkast', till, amne, utkastUid }.
+   * skicka. `forvantadTill` är adressen svaret SKA gå till: står den inte i
+   * Roundcubes mottagarfält skickas inget (kod MOTTAGARE_AVVIKER) — spärren
+   * som gör att ett svar på ett kontaktformulär-mejl aldrig går till
+   * mailer@shopify.com i stället för till kunden.
+   * Returnerar { typ: 'skickat'|'utkast', till, amne, utkastUid }.
    */
-  async svara(uid, { mapp = this.inkorg, text, amne = null, utkast = false, medCitat = true } = {}) {
+  async svara(uid, { mapp = this.inkorg, text, amne = null, utkast = false, medCitat = true, forvantadTill = null } = {}) {
     const n = kollaUid(uid);
     const egen = String(text ?? '').replace(/\r\n/g, '\n').trim();
     if (!egen) throw new Error('svara: texten är tom — ett tomt svar skickas aldrig.');
     return this.medSession(async (k) => {
       const kompose = await k.oppnaSvar(mapp, n);
+      const vantad = String(forvantadTill ?? '').trim().toLowerCase();
+      if (vantad && !String(kompose.till ?? '').toLowerCase().includes(vantad)) {
+        throw Object.assign(new Error(`svara: Roundcube vill skicka till "${kompose.till}" men svaret skulle gå till ${vantad} — inget skickat (uid ${n} i ${mapp}).`), { kod: 'MOTTAGARE_AVVIKER' });
+      }
       const citat = medCitat && kompose.citat.trim() ? `\n\n${kompose.citat.replace(/\r\n/g, '\n').trim()}` : '';
       const r = await k.skickaSvar(kompose, { text: `${egen}\n${citat}`, amne, utkast });
       return { uid: n, mapp, typ: r.typ, till: kompose.till, amne: amne ?? kompose.amne, utkastUid: r.utkastUid, sparfel: r.sparfel, meddelande: r.meddelande, utkastMapp: kompose.utkastMapp };

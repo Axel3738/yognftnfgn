@@ -49,9 +49,9 @@ const FRAMED = (rader) => `<!DOCTYPE html><html><head><script type="text/javascr
 function falskWebmail({ mappar = ['INBOX', 'Drafts', 'Sent', 'Spam', 'Trash'], nekaSandning = null } = {}) {
   const anrop = [];
   const tillstand = { mappar: [...mappar], flaggor: {}, flyttade: [], skickade: [], utkast: [], nastaUtkastUid: 77 };
-  const svar = (status, kropp, cookies = [], typ = 'text/html') => ({
+  const svar = (status, kropp, cookies = [], typ = 'text/html', location = null) => ({
     status, ok: status >= 200 && status < 300,
-    headers: { getSetCookie: () => cookies, get: (n) => (n.toLowerCase() === 'content-type' ? typ : null) },
+    headers: { getSetCookie: () => cookies, get: (n) => (n.toLowerCase() === 'content-type' ? typ : n.toLowerCase() === 'location' ? location : null) },
     text: async () => kropp,
     arrayBuffer: async () => { const b = Buffer.from(kropp, 'utf8'); return b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength); },
   });
@@ -70,9 +70,18 @@ function falskWebmail({ mappar = ['INBOX', 'Drafts', 'Sent', 'Spam', 'Trash'], n
     const action = q.get('_action');
     if (action === 'list') return json({ action: 'list', env: { messagecount: 0, pagecount: 1, current_page: 1 }, exec: '' });
     if (action === 'compose') {
-      if (!q.get('_reply_uid')) return svar(200, '<html>nytt mejl</html>');
-      if (q.get('_reply_uid') === '99') return svar(200, COMPOSE_HTML(99).replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to"></textarea>'));
-      return svar(200, COMPOSE_HTML(q.get('_reply_uid')));
+      // Som riktiga Roundcube (mätt mot Loopia 2026-09-21): första anropet
+      // ger 302 till en unik adress med _id; parametrarna ligger i sessionen.
+      if (!q.get('_id')) {
+        if (!q.get('_reply_uid')) return svar(302, '', [], 'text/html', './?_task=mail&_action=compose&_id=68cf1a2b3c4d5');
+        tillstand.komposeUid = q.get('_reply_uid');
+        return svar(302, '', [], 'text/html', './?_task=mail&_action=compose&_id=68cf1a2b3c4d5');
+      }
+      if (q.get('_id') !== '68cf1a2b3c4d5') return svar(200, LOGIN_HTML);
+      const uid = tillstand.komposeUid;
+      if (!uid) return svar(200, '<html>nytt mejl</html>');
+      if (uid === '99') return svar(200, COMPOSE_HTML(99).replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to"></textarea>'));
+      return svar(200, COMPOSE_HTML(uid));
     }
     if (action === 'send' && opts.method === 'POST') {
       if (body.get('_id') !== '68cf1a2b3c4d5') return svar(200, FRAMED(['iframe_loaded("0")', 'display_message("Invalid compose ID","error")']));
@@ -221,6 +230,26 @@ test('svara: tom text skickas aldrig, Roundcubes fel kommer igenom, mejl utan mo
   const nekad = ny({ nekaSandning: 'Could not send message.' });
   await assert.rejects(() => nekad.b.svara(3, { text: 'x' }), (e) => e.kod === 'SANDNING_NEKAD');
   assert.equal(nekad.f.tillstand.skickade.length, 0);
+});
+
+test('svara: följer Roundcubes 302 till _id-adressen med sessionscookien (steg 7, mätt live 2026-09-21)', async () => {
+  const { b, f } = ny();
+  await b.svara(3, { text: 'Hej' });
+  const compose = f.anrop.filter((a) => a.q.get('_action') === 'compose');
+  assert.equal(compose.length, 2, 'första anropet får 302, andra hämtar formuläret');
+  assert.equal(compose[0].q.get('_reply_uid'), '3');
+  assert.equal(compose[1].q.get('_id'), '68cf1a2b3c4d5');
+  assert.equal(compose[1].q.get('_reply_uid'), null, 'andra anropet är exakt Location-adressen');
+  assert.match(compose[1].headers.Cookie, /roundcube_sessid=s2/, 'samma session');
+  assert.equal(f.tillstand.skickade.length, 1);
+});
+
+test('svara: forvantadTill — går svaret till en annan adress än kundens skickas inget (MOTTAGARE_AVVIKER)', async () => {
+  const { b, f } = ny();
+  await assert.rejects(() => b.svara(3, { text: 'Hej', forvantadTill: 'kund@annan.se' }), (e) => e.kod === 'MOTTAGARE_AVVIKER' && /anna@gmail\.com/.test(e.message));
+  assert.equal(f.anrop.filter((a) => a.q.get('_action') === 'send').length, 0, 'inget postat');
+  const r = await b.utkast(3, { text: 'Hej', forvantadTill: 'ANNA@gmail.com' });
+  assert.equal(r.typ, 'utkast', 'skiftläge spelar ingen roll');
 });
 
 test('förhandsgranska: visar till, ämne och citat utan att posta något', async () => {

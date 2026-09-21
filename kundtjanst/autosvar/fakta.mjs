@@ -80,7 +80,7 @@ export function valjOrder(ordrar = []) {
  *
  * Returnerar { order, sandning, sparning, lank, fonster, sparr, kalla[] }.
  */
-export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 = null, sprak = 'sv', nu = new Date(), logg = () => {} } = {}) {
+export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 = null, sprak = 'sv', nu = new Date(), logg = () => {}, tvister = [] } = {}) {
   const ut = { order: null, sandning: null, sparning: null, lank: null, fonster: null, sparr: null, kalla: [] };
   if (!shopify) { ut.kalla.push('Shopify inte kopplat'); return ut; }
   const avsandare = String(mejl?.fran?.adress ?? '').toLowerCase();
@@ -118,6 +118,14 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
   }
   if (!ut.order) return ut;
 
+  // 1b. En order med en tvist (öppen eller avgjord) får aldrig ett automatiskt svar.
+  const tvist = (tvister ?? []).find((t) => String(t.orderId) === String(ut.order.id));
+  if (tvist) {
+    ut.sparr = `ordern ${ut.order.namn} har en tvist hos Shopify (${tvist.typ ?? 'tvist'}, ${tvist.status || 'status okänd'}) — inget automatiskt svar, VA:n`;
+    ut.kalla.push(`tvist ${tvist.typ ?? ''} ${tvist.status ?? ''}`.trim());
+    return ut;
+  }
+
   // 2. Sändningen (senaste med spårningsnummer, annars senaste)
   const s = [...(ut.order.sandningar ?? [])].sort((a, b) => (b.skickad?.getTime() ?? 0) - (a.skickad?.getTime() ?? 0));
   ut.sandning = s.find((x) => x.nummer) ?? s[0] ?? null;
@@ -151,5 +159,30 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
     ut.sparning = { status17: null, levererad: true, senaste: null };
     ut.kalla.push('Shopify: levererad');
   }
+  ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar });
+  if (ut.sparr) ut.kalla.push(ut.sparr);
   return ut;
+}
+
+/**
+ * Är faktan för gammal för att ett mallsvar ska vara sant? Ren. Returnerar
+ * spärrtexten eller null. Första torrkörningen 2026-09-21 skrev "Beräknad
+ * leverans: 2 sep–9 sep" den 21 september och "fraktbolaget visar den
+ * första skanningen 2–4 dagar efter" om ett paket skickat 26 dagar tidigare.
+ *   • Leveransfönstret har passerat och paketet är inte levererat ⇒ försenat — VA:n.
+ *   • Skickat för mer än 5 dagar sedan utan en enda skanning ⇒ VA:n.
+ *   • Inte skickad fast ordern är äldre än packtiden + 3 dagar ⇒ VA:n.
+ */
+export function staltFakta(fakta, { nu = new Date(), packasDagar = 2 } = {}) {
+  const t = nu instanceof Date ? nu.getTime() : Number(nu);
+  const dagar = (d) => Math.floor((t - d.getTime()) / DAG);
+  if (fakta?.sparning?.levererad) return null;
+  const s = fakta?.sandning;
+  if (s?.skickad) {
+    if (fakta.fonster?.till && t > fakta.fonster.till.getTime()) return `paketet är försenat — skickat för ${dagar(s.skickad)} dagar sedan och leveransfönstret har passerat — VA:n`;
+    if (!fakta.sparning?.senaste && dagar(s.skickad) > 5) return `inga skanningar ${dagar(s.skickad)} dagar efter att paketet skickades — VA:n`;
+    return null;
+  }
+  if (fakta?.order?.skapad && dagar(fakta.order.skapad) > (Number(packasDagar) || 2) + 3) return `ordern är inte skickad efter ${dagar(fakta.order.skapad)} dagar — VA:n`;
+  return null;
 }

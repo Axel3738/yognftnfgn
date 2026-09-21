@@ -64,7 +64,7 @@ const T = {
     avslut: 'Hör av dig om du undrar något mer.',
     halsningSlut: 'Vänliga hälsningar',
     signatur: (b) => `Kundtjänst ${b}`,
-    x: { ej_levererad: 'paketet som inte kommit fram', skadad_defekt: 'den trasiga varan', fel_vara: 'att du fått fel vara', var_ar_ordern: 'väntan på ditt paket', aterbetalning: 'pengarna du väntar på', avbestallning: 'avbeställningen', retur_angerratt: 'returen', okand_debitering: 'debiteringen', chargeback_hot: 'din beställning', vantat: 'att du fått vänta på svar', levererat_ej_mottaget: 'paketet som inte kommit fram trots att det markerats som levererat', standard: 'din beställning' },
+    x: { ej_levererad: 'paketet som inte kommit fram', skadad_defekt: 'varan som inte är som den ska', fel_vara: 'att du fått fel vara', var_ar_ordern: 'väntan på ditt paket', aterbetalning: 'pengarna du väntar på', avbestallning: 'avbeställningen', retur_angerratt: 'returen', okand_debitering: 'debiteringen', chargeback_hot: 'din beställning', vantat: 'att du fått vänta på svar', levererat_ej_mottaget: 'paketet som inte kommit fram trots att det markerats som levererat', standard: 'din beställning' },
   },
   nb: {
     halsning: (n) => (n ? `Hei ${n}!` : 'Hei!'),
@@ -85,7 +85,7 @@ const T = {
     avslut: 'Ta kontakt hvis du lurer på noe mer.',
     halsningSlut: 'Vennlig hilsen',
     signatur: (b) => `Kundeservice ${b}`,
-    x: { ej_levererad: 'pakken som ikke har kommet frem', skadad_defekt: 'den ødelagte varen', fel_vara: 'at du fikk feil vare', var_ar_ordern: 'ventingen på pakken din', aterbetalning: 'pengene du venter på', avbestallning: 'kanselleringen', retur_angerratt: 'returen', okand_debitering: 'belastningen', chargeback_hot: 'bestillingen din', vantat: 'at du har måttet vente på svar', levererat_ej_mottaget: 'pakken som ikke har kommet frem selv om den er merket som levert', standard: 'bestillingen din' },
+    x: { ej_levererad: 'pakken som ikke har kommet frem', skadad_defekt: 'varen som ikke er som den skal', fel_vara: 'at du fikk feil vare', var_ar_ordern: 'ventingen på pakken din', aterbetalning: 'pengene du venter på', avbestallning: 'kanselleringen', retur_angerratt: 'returen', okand_debitering: 'belastningen', chargeback_hot: 'bestillingen din', vantat: 'at du har måttet vente på svar', levererat_ej_mottaget: 'pakken som ikke har kommet frem selv om den er merket som levert', standard: 'bestillingen din' },
   },
   da: {
     halsning: (n) => (n ? `Hej ${n}!` : 'Hej!'),
@@ -106,7 +106,7 @@ const T = {
     avslut: 'Skriv endelig, hvis du har flere spørgsmål.',
     halsningSlut: 'Venlig hilsen',
     signatur: (b) => `Kundeservice ${b}`,
-    x: { ej_levererad: 'pakken, der ikke er nået frem', skadad_defekt: 'den ødelagte vare', fel_vara: 'at du fik en forkert vare', var_ar_ordern: 'ventetiden på din pakke', aterbetalning: 'pengene, du venter på', avbestallning: 'annulleringen', retur_angerratt: 'returneringen', okand_debitering: 'trækket på dit kort', chargeback_hot: 'din ordre', vantat: 'at du har måttet vente på svar', levererat_ej_mottaget: 'pakken, der ikke er nået frem, selvom den er markeret som leveret', standard: 'din ordre' },
+    x: { ej_levererad: 'pakken, der ikke er nået frem', skadad_defekt: 'varen, der ikke er som den skal være', fel_vara: 'at du fik en forkert vare', var_ar_ordern: 'ventetiden på din pakke', aterbetalning: 'pengene, du venter på', avbestallning: 'annulleringen', retur_angerratt: 'returneringen', okand_debitering: 'trækket på dit kort', chargeback_hot: 'din ordre', vantat: 'at du har måttet vente på svar', levererat_ej_mottaget: 'pakken, der ikke er nået frem, selvom den er markeret som leveret', standard: 'din ordre' },
   },
   fi: {
     halsning: (n) => (n ? `Hei ${n}!` : 'Hei!'),
@@ -127,7 +127,7 @@ const T = {
     avslut: 'Ota yhteyttä, jos sinulla on muuta kysyttävää.',
     halsningSlut: 'Ystävällisin terveisin',
     signatur: (b) => `Asiakaspalvelu ${b}`,
-    x: { ej_levererad: 'saapumattoman paketin kanssa', skadad_defekt: 'rikkinäisen tuotteen kanssa', fel_vara: 'väärän tuotteen kanssa', var_ar_ordern: 'pakettisi odottamisen kanssa', aterbetalning: 'odottamiesi rahojen kanssa', avbestallning: 'peruutuksen kanssa', retur_angerratt: 'palautuksen kanssa', okand_debitering: 'veloituksen kanssa', chargeback_hot: 'tilauksesi kanssa', vantat: 'vastauksen odottamisen kanssa', levererat_ej_mottaget: 'paketin kanssa, jota et ole saanut vaikka se on merkitty toimitetuksi', standard: 'tilauksesi kanssa' },
+    x: { ej_levererad: 'saapumattoman paketin kanssa', skadad_defekt: 'tuotteen kanssa, joka ei ole niin kuin pitäisi', fel_vara: 'väärän tuotteen kanssa', var_ar_ordern: 'pakettisi odottamisen kanssa', aterbetalning: 'odottamiesi rahojen kanssa', avbestallning: 'peruutuksen kanssa', retur_angerratt: 'palautuksen kanssa', okand_debitering: 'veloituksen kanssa', chargeback_hot: 'tilauksesi kanssa', vantat: 'vastauksen odottamisen kanssa', levererat_ej_mottaget: 'paketin kanssa, jota et ole saanut vaikka se on merkitty toimitetuksi', standard: 'tilauksesi kanssa' },
   },
   en: {
     halsning: (n) => (n ? `Hi ${n}!` : 'Hi!'),
@@ -148,7 +148,7 @@ const T = {
     avslut: 'Just reply if there is anything else.',
     halsningSlut: 'Kind regards',
     signatur: (b) => `Customer service ${b}`,
-    x: { ej_levererad: 'the parcel that never arrived', skadad_defekt: 'the broken item', fel_vara: 'receiving the wrong item', var_ar_ordern: 'the wait for your parcel', aterbetalning: 'the money you are waiting for', avbestallning: 'the cancellation', retur_angerratt: 'the return', okand_debitering: 'the charge', chargeback_hot: 'your order', vantat: 'having to wait for a reply', levererat_ej_mottaget: 'the parcel that has not reached you even though it is marked as delivered', standard: 'your order' },
+    x: { ej_levererad: 'the parcel that never arrived', skadad_defekt: 'the item not being as it should', fel_vara: 'receiving the wrong item', var_ar_ordern: 'the wait for your parcel', aterbetalning: 'the money you are waiting for', avbestallning: 'the cancellation', retur_angerratt: 'the return', okand_debitering: 'the charge', chargeback_hot: 'your order', vantat: 'having to wait for a reply', levererat_ej_mottaget: 'the parcel that has not reached you even though it is marked as delivered', standard: 'your order' },
   },
 };
 
@@ -246,7 +246,7 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
 // över hotet ("min bank") — en kund som aldrig fått paketet och hotar med
 // banken ska höra "paketet som inte kommit fram", inte "din beställning".
 const X_KONKRET = ['ej_levererad', 'skadad_defekt', 'fel_vara', 'okand_debitering'];
-const X_OVRIGA = ['aterbetalning', 'avbestallning', 'retur_angerratt', 'var_ar_ordern'];
+const X_OVRIGA = ['avbestallning', 'retur_angerratt', 'var_ar_ordern'];   // aterbetalning ⇒ standard: "pengarna du väntar på" var fel när kunden just BEGÄRT pengarna (torrkörningen 2026-09-21)
 
 /** X-nyckeln ur klassificeringen + ilskans orsaker (hinkar.arArg). Ren. */
 export function xNyckelFor(klass, argOrsaker = []) {

@@ -63,7 +63,7 @@ const REGLER = [
     'missing from', 'bara en av', 'fick bara', 'fikk bare', 'only received', 'stämmer inte', 'stemmer ikke', 'kvalitet', 'kvalitet', 'billig plast', 'usel',
   ]],
   ['var_ar_ordern', [
-    'var är min', 'var är ordern', 'var är paketet', 'var är beställningen', 'hvor er', 'hvor blir', 'where is my', 'where.s my', 'när kommer', 'når kommer', 'hvornår kommer', 'when will',
+    'var är min', 'var är mitt', 'var är ordern', 'var är paketet', 'var är beställningen', 'var är den', 'var är varan', 'var är vår', 'hvor er', 'hvor blir', 'where is my', 'where.s my', 'när kommer', 'når kommer', 'hvornår kommer', 'when will',
     'spårning', 'sporing', 'sporingsnummer', 'tracking', 'track', 'leveransstatus', 'leveringsstatus', 'status på min', 'status on my', 'kollinummer', 'pakkesporing',
     'har inte fått någon bekräftelse', 'ingen bekräftelse', 'ingen bekreftelse', 'no confirmation', 'orderbekräftelse', 'ordrebekreftelse', 'leveranstid', 'leveringstid', 'delivery time',
     'skickat', 'skickats', 'sendt', 'shipped', 'dröjer', 'tar så lång tid', 'tar lang tid', 'taking so long', 'väntat i', 'ventet i', 'waited', 'inte fått något paket',
@@ -136,11 +136,13 @@ export function hittaOrdernummer(text) {
 export function gissaSprak(text) {
   const s = ` ${normalisera(text)} `;
   // Ord som skiljer språken åt — inte de gemensamma (er, min, har, det).
+  // ⚠️ "order" är svenska också ("min order") — det räknades som engelska
+  // och gav "Hi Eric!" på "Var är denna vara" (torrkörningen 2026-09-21).
   const poang = {
-    sv: (s.match(/ (och|inte|jag|är|beställning|beställde|hej|inget|ingen|också|pengarna|varan) /g) || []).length,
+    sv: (s.match(/ (och|inte|jag|är|ett|mitt|ditt|när|vad|från|till|fått|någon|något|beställning|beställde|hej|inget|ingen|också|pengarna|varan|paketet|ordern) /g) || []).length,
     no: (s.match(/ (og|ikke|jeg|bestilling|bestilte|hei|noe|ikkje|pakken|ordre|varen) /g) || []).length,
     da: (s.match(/ (og|ikke|jeg|bestilling|bestilte|hej|noget|pakken|ordre|varen|af) /g) || []).length,
-    en: (s.match(/ (and|not|the|my|order|is|have|with|hi|hello|please|you) /g) || []).length,
+    en: (s.match(/ (and|not|the|my|is|have|with|hi|hello|please|you|where|when|received|parcel|package|shipping|delivery) /g) || []).length,
     fi: (s.match(/ (ja|ei|minä|on|tilaus|hei|olen|kiitos|paketti) /g) || []).length,
   };
   // "hej" är svenska OCH danska, "hei" norska; ø/æ utesluter svenska.

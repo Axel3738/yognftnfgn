@@ -8,11 +8,12 @@ import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
-import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp } from '../autosvar/hinkar.mjs';
+import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
 import { skrivEnkelt, skrivArgt, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor } from '../autosvar/svar.mjs';
-import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning } from '../autosvar/fakta.mjs';
+import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
+import { kundUrKontaktformular, arKontaktformular } from '../autosvar/kontaktformular.mjs';
 import { tolkaMejl } from '../mime.mjs';
 import { normaliseraOrder } from '../shopify.mjs';
 import { klassificera } from '../klassificering.mjs';
@@ -74,16 +75,19 @@ class FalskBrevlada {
     }
     return { mapp, fraga, lasta: this.mapp(mapp).length, sidorLasta: 1, sidor: 1, traffar, klippt: false };
   }
-  async svara(uid, { mapp = 'INBOX', text, utkast = false } = {}) {
+  async svara(uid, { mapp = 'INBOX', text, utkast = false, forvantadTill = null } = {}) {
     this.anrop.push(['svara', uid, utkast ? 'utkast' : 'skickat']);
     const m = this.mapp(mapp).find((x) => x.uid === Number(uid));
     if (!m) throw new Error('uid saknas');
     const t = tolkaMejl(m.ra, { uid: m.uid });
     if (!String(text).trim()) throw new Error('svara: texten är tom');
+    // Som Roundcube: svaret går till Reply-To före From; forvantadTill är spärren i brevlada.mjs.
+    const till = t.svarTill?.adress || t.fran.adress;
+    if (forvantadTill && till !== String(forvantadTill).toLowerCase()) throw Object.assign(new Error(`svara: Roundcube vill skicka till "${till}" men svaret skulle gå till ${forvantadTill}`), { kod: 'MOTTAGARE_AVVIKER' });
     const nyUid = this.nastaUid++;
-    const svar = { uid: nyUid, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till: t.fran.adress, amne: `Re: ${t.amne}`, text, id: `<svar-${nyUid}@baverbutiken.se>`, refs: [...t.references, t.messageId], timmarSedan: 0 }), text };
+    const svar = { uid: nyUid, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till, amne: `Re: ${t.amne}`, text, id: `<svar-${nyUid}@baverbutiken.se>`, refs: [...t.references, t.messageId], timmarSedan: 0 }), text };
     this.mappar[utkast ? 'Drafts' : 'Sent'].push(svar);
-    return { uid: Number(uid), mapp, typ: utkast ? 'utkast' : 'skickat', till: t.fran.adress, amne: `Re: ${t.amne}`, utkastUid: utkast ? nyUid : null, sparfel: false, utkastMapp: 'Drafts' };
+    return { uid: Number(uid), mapp, typ: utkast ? 'utkast' : 'skickat', till, amne: `Re: ${t.amne}`, utkastUid: utkast ? nyUid : null, sparfel: false, utkastMapp: 'Drafts' };
   }
   async flagga(uid, { mapp = 'INBOX', av = false } = {}) {
     this.anrop.push(['flagga', uid, !av]);
@@ -114,12 +118,13 @@ const ORDRAR = {
   1051: { id: 5, name: '#1051', order_number: 1051, email: 'kari@online.no', created_at: '2026-09-20T11:00:00+02:00', financial_status: 'paid', fulfillment_status: null, customer: { first_name: 'Kari' }, fulfillments: [] },
   1070: { id: 4, name: '#1070', order_number: 1070, email: 'lev@kund.se', created_at: '2026-09-01T10:00:00+02:00', financial_status: 'paid', fulfillment_status: 'fulfilled', fulfillments: [{ status: 'success', created_at: '2026-09-02T09:00:00+02:00', tracking_company: 'YunExpress', tracking_numbers: ['YT2626000000009'], shipment_status: 'delivered' }] },
 };
-function falskShopify(ordrar = ORDRAR) {
+function falskShopify(ordrar = ORDRAR, tvister = []) {
   const alla = Object.values(ordrar).map(normaliseraOrder);
   return {
     anrop: [],
     async hamtaOrderPaNamn(n) { this.anrop.push(['namn', n]); return alla.find((o) => o.nummer === String(n).replace(/^#/, '')) ?? null; },
     async hamtaOrdrarForEmail(e) { this.anrop.push(['email', e]); return alla.filter((o) => o.email === e.toLowerCase()); },
+    async hamtaTvister() { this.anrop.push(['tvister']); return { tillganglig: true, lista: tvister }; },
   };
 }
 const SPARNING17 = {
@@ -564,4 +569,170 @@ test('brandfilerna: NO/DK/FI/CaraShell/Bäverbutiken bär svar-blocket, språk u
   // Brandets egna nycklar vinner över domänsuffixet.
   const k2 = korkonfig({ ...id('beverbutikken'), shopify: {} }, { ...env, SHOPIFY_CLIENT_ID_BEVERBUTIKKEN: 'egen', SHOPIFY_CLIENT_SECRET_BEVERBUTIKKEN: 'x' });
   assert.equal(k2.shopify.clientId, 'egen');
+});
+
+// ------------------------------------------------------------------ Shopifys kontaktformulär
+
+// Mätt i Bäverbutikens inkorg 2026-09-21: kontaktformuläret kommer från
+// mailer@shopify.com med kunden i Reply-To och kroppen "Landskod/Name/E-post/Text".
+const KONTAKT = (svarTill, text, { amne = 'Nytt kundmeddelande den 21 september 2026 10.09', id = '<E1kontakt@shopify.com>', namn = 'Anna Andersson', epost = svarTill, land = 'SE', utanReplyTo = false, timmarSedan = 1 } = {}) => ra({
+  fran: '=?iso-8859-1?q?B=E4verbutiken=2Ese?= "(Shopify)" <mailer@shopify.com>', amne, id, timmarSedan,
+  extra: utanReplyTo ? '' : `Reply-To: ${svarTill}\r\n`,
+  text: `Du har fått ett nytt meddelande från din webbshops\nkontaktformulär.\n\nLandskod:\n${land}\n\nName:\n${namn}\n\nE-post:\n${epost}\n\nText:\n${text}`,
+});
+const KONTAKT_EN = (svarTill, text) => ra({
+  fran: 'Bæverbutiken (Shopify) <mailer@shopify.com>', amne: 'New customer message on September 21, 2026 at 10:09 am', id: '<E2kontakt@shopify.com>',
+  extra: `Reply-To: ${svarTill}\r\n`,
+  text: `You've received a new message from your online store's contact form.\n\nCountry Code:\nDK\n\nName:\nMette Hansen\n\nEmail:\n${svarTill}\n\nBody:\n${text}`,
+});
+
+test('kontaktformulär: kunden ur Reply-To och kundens ord ur Text — Shopifys egna notiser rörs inte', () => {
+  const m = kundUrKontaktformular(tolkaMejl(KONTAKT('anna@gmail.com', 'Hej! Var är min order #1042? Har inte fått någon spårning.\nMvh Anna'), { uid: 30 }));
+  assert.equal(m.kontaktformular, true);
+  assert.deepEqual(m.fran, { namn: 'Anna Andersson', adress: 'anna@gmail.com' });
+  assert.equal(m.text, 'Hej! Var är min order #1042? Har inte fått någon spårning.\nMvh Anna');
+  assert.equal(m.relay.fran.adress, 'mailer@shopify.com');
+  assert.equal(m.relay.land, 'SE');
+  assert.equal(m.amne, 'Nytt kundmeddelande den 21 september 2026 10.09', 'ämnet står kvar — svaret blir "Re: Nytt kundmeddelande …" som VA:ns');
+  // Engelska notisen (DK-butiken med engelskt admin-språk).
+  const en = kundUrKontaktformular(tolkaMejl(KONTAKT_EN('mette@mail.dk', 'Hvor er min pakke?'), { uid: 31 }));
+  assert.deepEqual([en.kontaktformular, en.fran.adress, en.fran.namn, en.text], [true, 'mette@mail.dk', 'Mette Hansen', 'Hvor er min pakke?']);
+  // Utan Reply-To: E-post-fältet i kroppen.
+  const utan = kundUrKontaktformular(tolkaMejl(KONTAKT('bo@x.se', 'Var är paketet?', { utanReplyTo: true }), { uid: 32 }));
+  assert.deepEqual([utan.kontaktformular, utan.fran.adress], [true, 'bo@x.se']);
+  // Reply-To till en systemadress ⇒ orört (hinkarna hoppar över det som förut).
+  const sys = tolkaMejl(KONTAKT('no-reply@shopify.com', 'x', { epost: 'no-reply@shopify.com' }), { uid: 33 });
+  assert.equal(kundUrKontaktformular(sys), sys);
+  // Shopifys egna notiser (ny order, tvist) är inte kontaktformulär.
+  const order = tolkaMejl(M.shopify.ra, { uid: 18 });
+  assert.equal(arKontaktformular(order), false);
+  assert.equal(kundUrKontaktformular(order), order);
+  const tvist = tolkaMejl(ra({ fran: 'Shopify <no-reply@shopify.com>', amne: 'En förfrågan har öppnats gällande order #5953', text: 'En kund har öppnat en förfrågan. Svara i admin.', id: '<t1@shopify.com>' }), { uid: 34 });
+  assert.equal(kundUrKontaktformular(tvist), tvist);
+  // Ett vanligt kundmejl är orört.
+  const vanligt = tolkaMejl(M.wismoSv.ra, { uid: 10 });
+  assert.equal(kundUrKontaktformular(vanligt), vanligt);
+  assert.equal(vanligt.svarTill, null);
+});
+
+test('kontaktformulär: hinkas som kundens mejl — WISMO besvaras till kunden (Reply-To), produktfråga flaggas, notisen om en tvist hoppas', async () => {
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 40, ra: KONTAKT('anna@gmail.com', 'Hej! Var är min order #1042? Har inte fått någon spårning.', { id: '<k40@shopify.com>' }) },
+    { uid: 41, ra: KONTAKT('iris@gmail.com', 'Hej! Undrar om ett takskydd för husbil 3x7,5 meter kostar 1129 kronor? Vi är endast intresserade av att köpa 1 st.', { id: '<k41@shopify.com>', namn: 'Iris Andersson', amne: 'Nytt kundmeddelande den 21 september 2026 20.09' }) },
+    { uid: 42, ra: ra({ fran: 'Shopify <no-reply@shopify.com>', amne: 'En förfrågan har öppnats gällande order #5953', text: 'En kund har öppnat en förfrågan.', id: '<k42@shopify.com>' }) },
+  ] });
+  const r = await kor(b);
+  const rad = (uid) => r.rader.find((x) => x.uid === uid);
+  assert.deepEqual([rad(40).hink, rad(40).typ, rad(40).atgard, rad(40).kontaktformular], [HINK.ENKEL, 'wismo', 'utkast', true]);
+  assert.equal(rad(40).till, 'an***@gmail.com', 'svaret går till kunden i Reply-To, maskerat i loggen');
+  assert.equal(rad(40).kund, 'anna@gmail.com', 'kunden — inte mailer@shopify.com');
+  assert.equal(b.utkast().length, 1);
+  assert.match(b.utkast()[0].text, /Hej Anna!/);
+  assert.match(b.utkast()[0].text, /#1042/);
+  assert.equal(tolkaMejl(b.utkast()[0].ra, { uid: 1 }).till[0].adress, 'anna@gmail.com');
+  assert.deepEqual([rad(41).hink, rad(41).atgard, rad(41).flaggad], [HINK.SVAR, 'flaggad', true], 'produktfrågan är VA:ns, men den HOPPAS inte');
+  assert.match(rad(41).orsak, /kategori/);
+  assert.deepEqual([rad(42).hink, rad(42).atgard], [HINK.SKIP, 'hoppad'], 'tvistnotisen från Shopify är fortfarande en systemavsändare');
+  assert.equal(b.skickade().length, 0, 'torrläge');
+});
+
+test('kontaktformulär: samma kund skriver igen via formuläret ⇒ andra mejlet går till VA:n (dygnsregeln + tråden)', async () => {
+  const loggmapp = tmp();
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 50, ra: KONTAKT('anna@gmail.com', 'Var är min order #1042? Ingen spårning.', { id: '<k50@shopify.com>', timmarSedan: 3 }) },
+  ] });
+  const r1 = await kor(b, { loggmapp });
+  assert.equal(r1.rader.find((x) => x.uid === 50).atgard, 'utkast');
+  b.mappar.INBOX.push({ uid: 51, ra: KONTAKT('anna@gmail.com', 'Hallå? Var är min order #1042?', { id: '<k51@shopify.com>', amne: 'Nytt kundmeddelande den 21 september 2026 11.30', timmarSedan: 1 }) });
+  const r2 = await kor(b, { loggmapp });
+  const rad = r2.rader.find((x) => x.uid === 51);
+  assert.deepEqual([rad.hink, rad.atgard, rad.flaggad], [HINK.SVAR, 'flaggad', true]);
+  assert.match(rad.orsak, /redan fått ett automatiskt svar/);
+  assert.equal(b.utkast().length, 1, 'fortfarande bara ett utkast');
+});
+
+// ------------------------------------------------------------------ lärdomarna ur första torrkörningen 2026-09-21
+
+test('redanBesvaradAvOss: References från vår domän eller vår adress i citatet = besvarad; Shopifys orderbekräftelse räknas inte', () => {
+  const m = (o) => tolkaMejl(ra({ fran: 'Kund <kund@x.se>', amne: 'Re: Cykelbyxor', text: 'Skickade returen i fredags', id: '<k1@x.se>', ...o }), { uid: 1 });
+  assert.equal(redanBesvaradAvOss({ mejl: m({ refs: ['<abc@baverbutiken.se>'] }), brand: KONFIG }).besvarad, true);
+  assert.equal(redanBesvaradAvOss({ mejl: m({ refs: ['<abc@outlook.com>'] }), brand: KONFIG }).besvarad, false);
+  // Outlook-citat utan References: "Från: kundsupport@…"
+  const outlook = m({ text: `Fortfarande inget paket.\n\n-------------------------\n\nFrån: ${SUPPORT} <${SUPPORT}>\nSkickat: Wednesday, 16 September 2026 05:40\nTill: Kund\nÄmne: Re: Kamera\n\nHej, ditt paket är på väg.` });
+  assert.equal(redanBesvaradAvOss({ mejl: outlook, brand: KONFIG }).besvarad, true);
+  assert.equal(outlook.text, 'Fortfarande inget paket.', 'Outlooks streckrad avslutar citatet');
+  // BlueMail: "Den 25 augusti 2026, kl 15:58, Namn\n<adress> skrev:" — bruten över två rader.
+  const bluemail = m({ text: `Var är denna vara\n\nFå BlueMail för Mobil\n\nDen 25 augusti 2026, kI 15:58, Bäverbutiken.se\n<${SUPPORT}> skrev:\n\nTack för din order!\nOrder #5953\nORDERSAMMANFATTNING`, amne: 'Re: Order #5953 bekräftad', refs: ['<e1@shopify.com>'] });
+  assert.equal(bluemail.text, 'Var är denna vara', 'citatet klipps vid "skrev:" och datumraden före tas bort');
+  assert.equal(redanBesvaradAvOss({ mejl: bluemail, brand: KONFIG }).besvarad, false, 'svar på orderbekräftelsen är kundens FÖRSTA fråga');
+  // Samma citat men på ett vanligt ämne = ett svar från oss.
+  const svar = m({ text: `Tack!\n\nDen 25 augusti 2026, kl 15:58, Kundsupport\n<${SUPPORT}> skrev:\n\nHej, här är spårningen.`, amne: 'Re: Var är paketet' });
+  assert.equal(redanBesvaradAvOss({ mejl: svar, brand: KONFIG }).besvarad, true);
+});
+
+test('byggTrad + beslut: kundens svar på VÅRT svar (References @baverbutiken.se) blir SVÅR fast Sent-sökningen inte hittar svaret', async () => {
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 60, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Re: Var är min order #1042?', text: 'Var är mitt paket? Har fortfarande inte fått någon spårning.', id: '<t60@gmail.com>', refs: ['<va-svar@baverbutiken.se>'] }) },
+  ] });
+  const r = await kor(b);
+  const rad = r.rader.find((x) => x.uid === 60);
+  assert.deepEqual([rad.hink, rad.atgard, rad.flaggad], [HINK.SVAR, 'flaggad', true]);
+  assert.match(rad.orsak, /redan ett svar från oss/);
+  assert.equal(b.utkast().length, 0);
+});
+
+test('staltFakta: passerat leveransfönster, inga skanningar efter 5 dagar, oskickad order äldre än packtid + 3 ⇒ VA:n', () => {
+  const nu = new Date('2026-09-21T12:00:00Z');
+  const skickad = (d) => ({ sandning: { skickad: new Date(d) }, fonster: leveransfonster(new Date(d), [7, 14]), sparning: { senaste: { tid: d } } });
+  assert.match(staltFakta(skickad('2026-08-26T10:00:00Z'), { nu }), /försenat — skickat för 26 dagar sedan/);
+  assert.equal(staltFakta(skickad('2026-09-15T10:00:00Z'), { nu }), null, 'inom fönstret');
+  assert.match(staltFakta({ sandning: { skickad: new Date('2026-09-10T10:00:00Z') }, fonster: leveransfonster(new Date('2026-09-10T10:00:00Z')), sparning: null }, { nu }), /inga skanningar 11 dagar/);
+  assert.equal(staltFakta({ sandning: { skickad: new Date('2026-09-18T10:00:00Z') }, fonster: leveransfonster(new Date('2026-09-18T10:00:00Z')), sparning: null }, { nu }), null, 'nyss skickat utan skanning är normalt');
+  assert.equal(staltFakta({ sandning: { skickad: new Date('2026-08-01T10:00:00Z') }, fonster: leveransfonster(new Date('2026-08-01T10:00:00Z')), sparning: { levererad: true } }, { nu }), null, 'levererat är aldrig försenat');
+  assert.match(staltFakta({ sandning: null, order: { skapad: new Date('2026-09-10T10:00:00Z') } }, { nu, packasDagar: 2 }), /inte skickad efter 11 dagar/);
+  assert.equal(staltFakta({ sandning: null, order: { skapad: new Date('2026-09-19T10:00:00Z') } }, { nu, packasDagar: 2 }), null);
+});
+
+test('korBrand: försenat paket och order med tvist får inget ENKELT svar — flaggas till VA:n', async () => {
+  const ordrar = { ...ORDRAR, 5953: { id: 9, name: '#5953', order_number: 5953, email: 'eric@mdab.nu', created_at: '2026-08-25T15:58:00+02:00', financial_status: 'paid', fulfillment_status: 'fulfilled', customer: { first_name: 'Eric' }, fulfillments: [{ status: 'success', created_at: '2026-08-26T09:00:00+02:00', tracking_company: '4PX', tracking_numbers: ['4PX9999'] }] } };
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 70, ra: ra({ fran: 'Eric <eric@mdab.nu>', amne: 'Re: Order #5953 bekräftad', text: 'Var är denna vara', id: '<e70@mdab.nu>', refs: ['<e1@shopify.com>'] }) },
+  ] });
+  const r = await kor(b, { shopify: falskShopify(ordrar) });
+  const rad = r.rader.find((x) => x.uid === 70);
+  assert.deepEqual([rad.hink, rad.atgard, rad.sprak], [HINK.SVAR, 'flaggad', 'sv'], 'svenska — "order" räknas inte som engelska');
+  assert.match(rad.orsak, /försenat/);
+  assert.equal(b.utkast().length, 0);
+  // Samma order med en tvist: spärren är tvisten, oavsett paket.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 71, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Var är min order #1042?', text: 'Hej, var är paketet?', id: '<a71@gmail.com>' }) }] });
+  const r2 = await kor(b2, { shopify: falskShopify(ORDRAR, [{ id: 1, orderId: 1, typ: 'inquiry', status: 'needs_response' }]) });
+  const rad2 = r2.rader.find((x) => x.uid === 71);
+  assert.equal(rad2.hink, HINK.SVAR);
+  assert.match(rad2.orsak, /tvist hos Shopify \(inquiry, needs_response\)/);
+  assert.equal(b2.utkast().length, 0);
+});
+
+test('hinka: retur/återbetalning/fel vara är aldrig ENKEL, "skit"/"skräp"/"betalar inte" är ARG, X för defekt och återbetalning är neutrala', () => {
+  const h = (amne, text) => hinka({ mejl: tolkaMejl(ra({ fran: 'K <k@x.se>', amne, text, id: '<h@x.se>' }), { uid: 1 }), brand: KONFIG });
+  const retur = h('Re: Cykelbyxor', 'Skickade min retur i fredags med Postnord spårbart paket');
+  assert.equal(retur.hink, HINK.SVAR);
+  assert.equal(enkelTyp({ klass: retur.klass, amne: 'Re: Cykelbyxor', text: 'Skickade min retur i fredags med Postnord spårbart paket' }), null);
+  const skit = h('Vad är det här för skit?', 'Produkten ser inte alls ut som på bilden. Ni kan komma och hämta den. Det här betalar jag inte för.');
+  assert.deepEqual([skit.hink, skit.orsak], [HINK.ARG, 'argt ordval']);
+  const skrap = h('Skräp order #6600', 'Det är rent skräp och svartglansig plast lika tunt som en ICA kasse. Önskar full återbetalning och hävdar distansköplagen.');
+  assert.equal(skrap.hink, HINK.ARG);
+  assert.equal(xNyckelFor(skrap.klass, skrap.argOrsaker), 'standard', 'nybegärd återbetalning ⇒ "din beställning", inte "pengarna du väntar på"');
+  const liten = h('Överdrag', 'Fick just mitt överdrag. Tyvärr är det för litet, det går inte att få ner under propellern. Jag behöver en storlek större.');
+  assert.equal(liten.hink, HINK.ARG, 'Axels lista: trasig/defekt vara ⇒ ARG');
+  assert.match(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: xNyckelFor(liten.klass, liten.argOrsaker) }).text, /med varan som inte är som den ska blir/);
+  assert.equal(klassificera({ amne: 'Re: Order #5953 bekräftad', text: 'Var är denna vara' }).sprak, 'sv');
+});
+
+test('mime: BlueMails plain-del som bara är tomrader ⇒ HTML-delen bär texten, och citatet klipps vid "skrev:"', () => {
+  const plain = `Var =C3=A4r denna vara=20\n${'=20\n'.repeat(40)}\n${'          =20\n'.repeat(30)}   B=C3=A4verbutiken.se\n\n   Order #5953\n${'=20\n'.repeat(20)}`;
+  const html = `<html><body><div dir=3D"auto">Var =C3=A4r denna vara</div><div>F=C3=A5 <a href=3D"https://bluemail.me/">BlueMail f=C3=B6r Mobil</a></div><div class=3D"replyHeader">Den 25 augusti 2026, kI 15:58, B=C3=A4verbutiken.se &lt;<a href=3D"mailto:${SUPPORT}">${SUPPORT}</a>&gt; skrev:<br/></div><blockquote><p>Tack f=C3=B6r din order!</p><p>Order #5953</p></blockquote></body></html>`;
+  const raMail = `From: Eric <eric@mdab.nu>\r\nTo: ${SUPPORT}\r\nSubject: Re: Order #5953 bekr=?utf-8?q?=C3=A4ftad?=\r\nDate: Mon, 21 Sep 2026 19:33:00 +0200\r\nMessage-ID: <b1@mdab.nu>\r\nContent-Type: multipart/alternative; boundary=xx\r\n\r\n--xx\r\nContent-Type: text/plain; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n${plain}\r\n--xx\r\nContent-Type: text/html; charset=utf-8\r\nContent-Transfer-Encoding: quoted-printable\r\n\r\n${html}\r\n--xx--\r\n`;
+  const m = tolkaMejl(raMail, { uid: 1 });
+  assert.equal(m.text, 'Var är denna vara', 'html-delen valdes och citatet klipptes');
+  assert.match(m.helText, /Order #5953/);
 });

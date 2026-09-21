@@ -45,6 +45,31 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   ordernummer, Message-ID och kundens adress MASKERAD (+ en hash för
   dygnsregeln). Aldrig svarstexten — den finns i Sent.
 - `--torr` = utkast i Drafts. Skarpt kräver `--skarpt` uttryckligen.
+- **Shopifys kontaktformulär ÄR kundmejl.** "Nytt kundmeddelande den …" från
+  `mailer@shopify.com` bär kunden i Reply-To och kundens ord under `Text:` —
+  motorn läser dem som kundens eget mejl (`autosvar/kontaktformular.mjs`), och
+  svaret går till kunden (Roundcube svarar till Reply-To; `forvantadTill`-spärren
+  i `brevlada.svara` stoppar allt annat). Shopifys notiser OM butiken (ny order,
+  tvist öppnad) hoppas fortfarande. Mätt 2026-09-21: 10 av de 30 senaste mejlen
+  var kontaktformulär.
+- **Ett svar från oss syns i mejlet självt:** References från butikens domän
+  eller vår adress i citatet ⇒ tråden är besvarad ⇒ VA:n. Sent-mappen är för
+  stor (~50 mejl/dag) för att sökningen ska vara enda vakten.
+- **Gammal fakta är ingen fakta:** passerat leveransfönster, inga skanningar 5
+  dagar efter skick, oskickad order äldre än packtid + 3 dagar, eller en tvist på
+  ordern ⇒ inget ENKELT svar (`fakta.staltFakta`). Retur/återbetalning/fel vara/
+  defekt i mejlet ⇒ aldrig ENKEL, även om kunden också nämner spårning.
+
+⚠️ **En brevlåda, EN session i taget.** 2026-09-21 23:28 körde två sessioner
+torrkörningen samtidigt: Drafts fick sex utkast (fyra från den ena, ett från
+den andra), flaggorna sattes av båda, och den ena såg därför inte mejlen den
+andra redan flaggat. Kör aldrig `/autosvar` i två sessioner mot samma butik —
+loggen och flaggorna är minnet, och de delas inte mellan containrar förrän
+loggen är pushad.
+
+Mappnamnen i Loopia är `INBOX.Drafts`, `INBOX.Sent`, `INBOX.VA-PRIO` (webbmejlen
+visar dem utan `INBOX.`). `mail.mjs lista --mapp Drafts` säger "finns inte" —
+skriv `INBOX.Drafts`. Motorn känner båda formerna.
 
 ## Gör i ordning
 

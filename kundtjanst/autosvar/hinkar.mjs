@@ -33,12 +33,16 @@ const TVISTORD = [
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Ilska utöver klassificeringens eskaleringsord (sv/nb/da/fi/en).
+// "skit", "skräp", "bluff", "betalar inte" lades till 2026-09-21 kväll efter
+// den första torrkörningen: "Vad är det här för skit? … Det här betalar jag
+// inte för" och "Det är rent skräp" hamnade i SVÅR i stället för ARG.
 const ARGORD = [
   '\\barg\\b', 'förbannad', 'irriterad', 'besviken', 'frustrerad', 'urusel', '\\busel\\b', 'fruktansvärt', 'hemskt', 'skäms', 'aldrig mer', 'sista gången', 'oseriös', 'katastrof',
-  '\\bsint\\b', 'forbanna', 'skuffet', 'frustrert', 'elendig', 'aldri mer', 'siste gang', 'useriøs',
-  '\\bvred\\b', 'skuffet', 'frustreret', 'elendigt', 'aldrig mere', 'sidste gang',
-  'vihainen', 'pettynyt', 'turhautunut', 'surkea', 'en ikinä enää',
-  'pissed', 'angry', 'furious', 'disappointed', 'frustrated', 'terrible', 'awful', '\\bworst\\b', 'never again', 'disgusting', 'ridiculous', 'unacceptable', 'joke\\b',
+  '\\bskit\\b', 'skitprodukt', 'skräp', 'bluff', 'bedrägeri', 'lurad', 'lurade', 'betalar (jag |vi )?inte', 'oacceptabel', 'skandal', 'skämt', 'dålig kvalit', 'usel kvalit', 'tunt som en',
+  '\\bsint\\b', 'forbanna', 'skuffet', 'frustrert', 'elendig', 'aldri mer', 'siste gang', 'useriøs', 'søppel', 'svindel', '\\blurt\\b', '\\bdritt\\b', 'uakseptabel',
+  '\\bvred\\b', 'skuffet', 'frustreret', 'elendigt', 'aldrig mere', 'sidste gang', 'skrald', 'snydt', '\\blort\\b', 'uacceptabel',
+  'vihainen', 'pettynyt', 'turhautunut', 'surkea', 'en ikinä enää', 'roska', 'huijaus', 'paska',
+  'pissed', 'angry', 'furious', 'disappointed', 'frustrated', 'terrible', 'awful', '\\bworst\\b', 'never again', 'disgusting', 'ridiculous', 'unacceptable', 'joke\\b', '\\bscam\\b', 'fraud', 'rip-?off', 'garbage', 'rubbish', '\\bcrap\\b',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Enkla ämnen — bara när mejlet INTE är argt.
@@ -52,6 +56,37 @@ const OPPETTIDER = ['öppettider', 'när svarar ni', 'telefonnummer', 'ringa er'
 const LEVERANSTID = ['leveranstid', 'hur lång tid tar leverans', 'hur lång leveranstid', 'hur snabbt levererar', 'när levererar ni', 'leveringstid', 'hvor lang tid tar leverans', 'hvor lang leveringstid', 'toimitusaika', 'kuinka kauan toimitus',
   'delivery time', 'how long (does|will) (the )?(delivery|shipping) take', 'shipping time', 'how long until',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+
+// Shopifys egna kundnotiser — ett svar på dem ("Re: Order #5953 bekräftad")
+// är kundens FÖRSTA fråga, inte ett svar på ett svar från oss.
+const NOTISAMNE = /^\s*((re|sv|vs|fwd?|fw|aw|ang)\s*:\s*)*(order\s*#?\d+\s*(bekräftad|bekreftet|bekræftet|confirmed|vahvistettu|har skickats|er sendt|is on its way|shipped)|tack för din (order|beställning)|takk for (bestillingen|ordren)|tak for din ordre|kiitos tilauksestasi|thank you for your (order|purchase)|din (order|beställning) (är på väg|har skickats)|your order (is on its way|has shipped)|leveransuppdatering|shipping (update|confirmation)|delivery update)/i;
+const NOTISMARKOR = /(ordersammanfattning|order summary|ordresammendrag|ordreoversigt|tilauksen yhteenveto|tack för din order|takk for bestillingen|tak for din ordre|kiitos tilauksestasi|thank you for your order|din order är på väg|your order is on its way)/i;
+
+/**
+ * Har vi (en människa i butiken) redan svarat i den här tråden? Ren.
+ * Två spår, båda billiga och oberoende av hur stor Sent-mappen är:
+ *   1. References/In-Reply-To bär ett Message-ID från butikens egen domän —
+ *      kunden svarar på ett mejl VI skrev (Roundcube sätter <…@baverbutiken.se>).
+ *   2. Citatet i kroppen har vår supportadress som avsändare ("Från: … <supportmail>",
+ *      "… <supportmail> skrev:"). Shopifys egna notiser (orderbekräftelsen) citeras
+ *      också med vår adress — de räknas INTE: ett "Re: Order #5953 bekräftad" är
+ *      kundens första fråga.
+ * Bakgrund: första torrkörningen 2026-09-21 svarade i två trådar VA:n redan
+ * besvarat (Sent har ~50 mejl om dagen, sökningen såg bara första sidan).
+ */
+export function redanBesvaradAvOss({ mejl, brand } = {}) {
+  const support = String(brand?.supportmail ?? '').toLowerCase();
+  const doman = support.split('@')[1] ?? '';
+  const refs = (mejl?.references ?? []).map((r) => String(r).toLowerCase());
+  const notis = NOTISAMNE.test(String(mejl?.amne ?? '')) || NOTISMARKOR.test(String(mejl?.helText ?? ''));
+  if (doman && refs.some((r) => r.endsWith(`@${doman}>`)) && !notis) return { besvarad: true, orsak: 'References bär ett Message-ID från butikens egen domän' };
+  if (!support || notis) return { besvarad: false, orsak: null };
+  const hel = String(mejl?.helText ?? '');
+  const adr = support.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  if (new RegExp(`(^|\\n)\\s*>?\\s*(från|from|fra|lähettäjä|de|von)\\s*:[^\\n]*${adr}`, 'i').test(hel)) return { besvarad: true, orsak: 'citatet har ett tidigare svar från vår supportadress' };
+  if (new RegExp(`${adr}>?\\s*(skrev|wrote|schrieb|kirjoitti|escribió)\\s*:`, 'i').test(hel)) return { besvarad: true, orsak: 'citatet har ett tidigare svar från vår supportadress' };
+  return { besvarad: false, orsak: null };
+}
 
 /** Är texten ett tvist-/chargebackärende? Ren. */
 export function harTvistord(text) {
@@ -90,11 +125,18 @@ const HAR_ORDER = ['min order', 'min beställning', 'beställde', 'har beställt
   'my order', 'i ordered', 'i have ordered', 'my parcel', 'my package', 'the parcel', 'tilasin', 'tilaukseni', 'pakettini', 'paketti',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
+// Kategorier som gör att ett mejl ALDRIG är enkelt, även om det också låter
+// som en spårningsfråga. "Skickade min retur i fredags med Postnord spårbart
+// paket" fick ett WISMO-svar med utgående spårning i första torrkörningen
+// 2026-09-21 — ordet "spårbart" vann över ordet "retur".
+const ALDRIG_ENKEL = new Set(['retur_angerratt', 'aterbetalning', 'fel_vara', 'skadad_defekt', 'avbestallning', 'faktura_klarna', 'okand_debitering', 'chargeback_hot', 'ej_levererad']);
+
 /** Vilken enkel fråga det är, eller null. Ren. */
 export function enkelTyp({ klass, amne = '', text = '' }) {
   const a = normalisera(amne);
   const t = normalisera(text);
   const traff = (lista) => lista.some((re) => re.test(a) || re.test(t));
+  if ((klass.alla ?? []).some((x) => ALDRIG_ENKEL.has(x.id))) return null;
   if (traff(ADRESS)) return 'adress';
   if (traff(OPPETTIDER)) return 'oppettider';
   // Leveranstid utan order = fråga före köp. Med ordernummer eller ordertext är det WISMO.
