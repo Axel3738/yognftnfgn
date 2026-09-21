@@ -769,3 +769,17 @@ blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 1
   speglingen fyller på kön.
 - Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
   Batch: `market-expansion/ops/carashell/2026-09-21-no-termoskyddet/`.
+
+## 2026-09-21 — `/ops-spegla carashell/termoskyddet` — tom kö, oförändrat, men kön växer bakom stoppet
+
+- **Ordinarie kö: 0 rader** i båda speglingsstegen. Inget speglat, inget uppladdat, ingen
+  Notion-rad rörd, ingen Discord-ping.
+- **Oförändrat sedan i går:** båda kampanjerna PAUSED med spend, alltså avvecklade.
+  `CARASHELL_SE_…` 2 058 kr (sedan 2026-09-18 11:29 CEST), `CARASHELL_NO_…` 3 516 kr
+  (sedan 2026-09-19 20:07 CEST). Ingen marknad tar emot annonser. Ingen efterjustering körd:
+  utan ACTIVE kampanj hoppas varje rad före första skrivningen, bevisat på 21 rader 2026-09-19.
+- ⚠️ **Källhubben växer medan stoppet står:** 42 rader (35 i går) — **27 `Approved` (oförändrat)**,
+  8 `Creative strat review`, 4 `In progress`, 3 `Draft`. De sju nya ligger i tidiga steg, alltså
+  **produceras nya creatives för en produkt vars båda marknader är avstängda**. De 27 Approved
+  står fortfarande i fel status för en speglad hub (se 2026-09-19) och väntar på `--fran "Approved"`.
+- Pris 559 SEK / 548 NOK läst ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
