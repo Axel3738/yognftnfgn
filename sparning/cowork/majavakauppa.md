@@ -48,9 +48,9 @@ redan klar.
 
 ⚠️ **Avsändaradressen är `asiakaspalvelu@majavakauppa.fi`** enligt den här
 körningen — inte `asiakastuki@` som den tidigare Cowork-körningen läste och
-som står i `sparning/butiker.json` + mallarnas sidfot. Fråga till Axel
-2026-09-21: vilken ska kunderna skriva till? Är svaret asiakaspalvelu@ byggs
-mallarna om och körs en gång till.
+som står i `sparning/butiker.json` + mallarnas sidfot. **Axels svar 2026-09-21: B = asiakaspalvelu@.** Registret och
+mallarnas sidfot ombyggda med den adressen; Cowork kör prompten en gång till
+(mallarna är idempotenta, samma metod).
 
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/majavakauppa/COWORK-PROMPT.md`
 

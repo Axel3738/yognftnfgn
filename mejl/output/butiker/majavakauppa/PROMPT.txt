@@ -21,7 +21,7 @@ Gör den inte det: stoppa och rapportera.
 avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
 att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
 avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
-går ett mejl till **asiakastuki@majavakauppa.fi** med en länk som Axel klickar — stanna
+går ett mejl till **asiakaspalvelu@majavakauppa.fi** med en länk som Axel klickar — stanna
 där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
 Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
 CaraShell 2026-09-20.)
@@ -42,9 +42,9 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 
 | # | Mall i Shopify | Ämnesrad | Kontrollera | Tecken | Mallens kod |
 |---|---|---|---|---|---|
-| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakettisi on matkalla` | `BB-` och `sha256` | **10 601** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktbekraftelse.liquid |
-| 2 | **Leveransuppdatering / Shipping update** | `Uutta tietoa paketistasi` | `BB-` och `sha256` | **6 235** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktuppdatering.liquid |
-| 3 | **Ute för leverans / Out for delivery** | `Paketti saapuu tänään` | `BB-` och `sha256` | **6 243** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/ute_for_leverans.liquid |
+| 1 | **Leveransbekräftelse / Shipping confirmation** | `Pakettisi on matkalla` | `BB-` och `sha256` | **10 607** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktbekraftelse.liquid |
+| 2 | **Leveransuppdatering / Shipping update** | `Uutta tietoa paketistasi` | `BB-` och `sha256` | **6 241** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/fraktuppdatering.liquid |
+| 3 | **Ute för leverans / Out for delivery** | `Paketti saapuu tänään` | `BB-` och `sha256` | **6 249** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/majavakauppa/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger "Order ute för lokal leverans" — ta INTE
 det. Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
