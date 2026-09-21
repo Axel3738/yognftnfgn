@@ -4,6 +4,17 @@
 // inga kundnamn, inga butiksdetaljer som konkurrenter kan använda. Allt som
 // står här kommer ur stonebite/profil.json — tomma fält ritas inte alls,
 // så sidan kan aldrig påstå något som ingen fyllt i.
+//
+// ⚠️ BUTIKERNA NÄMNS ALDRIG HÄR (Axels order 2026-09-21, sidan hade legat
+// live med alla elva namn och domäner i en lista). En konkurrent som läser
+// stonebite.org ska inte få veta vilka butiker vi driver, hur många de är
+// eller vilka domäner de ligger på — det är en färdig kopieringslista.
+// `profil.varumarken` finns kvar i filen men renderas BARA inloggad, på
+// sidan Butiker. Bygg aldrig tillbaka listan, antalet eller de härledda
+// siffrorna ("Varumärken 11", "Länder vi säljer i 6") på den publika sidan.
+// Ett test i `test/server.test.mjs` hämtar `/` och letar efter varje
+// butiksnamn och varje domän ur profil.json — det ska förbli rött om någon
+// försöker igen.
 
 import { esc, attr } from './delar.mjs';
 import { publiktSkal } from './layout.mjs';
@@ -18,17 +29,6 @@ function rutor(punkter) {
     </article>`).join('')}</div>`;
 }
 
-function varumarken(lista) {
-  if (!lista?.length) return '';
-  return `<div class="brands">${lista.map((m) => `
-    <article class="brand">
-      <span class="brand-land">${esc(m.land ?? '')}</span>
-      <span class="brand-namn">${esc(m.namn)}</span>
-      ${m.text ? `<p>${esc(m.text)}</p>` : ''}
-      ${m.url ? `<a class="lank" href="${attr(m.url)}" rel="noopener">${esc(String(m.url).replace(/^https?:\/\//, ''))}</a>` : ''}
-    </article>`).join('')}</div>`;
-}
-
 /**
  * @param profil stonebite/profil.json
  * @param fakta  { butiker, marknader } räknade ur snapshoten — bara sanna tal
@@ -38,23 +38,19 @@ export function publikSida({ profil, fakta = null, inloggad = false, nonce = '' 
   const hero = profil?.hero ?? {};
   const kontakt = profil?.kontakt ?? {};
 
-  // Siffrorna räknas ur listan av varumärken — alltså ur samma fakta som
-  // står längre ned på sidan. Inga tal som ingen kan kontrollera.
-  const marken = profil?.varumarken ?? [];
-  const lander = new Set(marken.flatMap((m) => String(m.land ?? '').split(',').map((l) => l.trim()).filter(Boolean)));
-  const siffror = [
-    marken.length ? { etikett: 'Varumärken', varde: String(marken.length) } : null,
-    lander.size ? { etikett: 'Länder vi säljer i', varde: String(lander.size) } : null,
-    ...(profil?.siffror ?? []).filter((s) => String(s.varde ?? '').trim() && String(s.etikett ?? '').trim()),
-  ].filter(Boolean);
+  // Bara siffror någon skrivit in för hand i profil.json. Antalet butiker och
+  // antalet länder räknades förut ur varumärkeslistan — det säger en
+  // konkurrent hur stor verksamheten är och togs bort med listan.
+  const siffror = (profil?.siffror ?? [])
+    .filter((s) => String(s.varde ?? '').trim() && String(s.etikett ?? '').trim());
 
   const innehall = `
 <section class="hero"><div class="omslag">
   <h1>${esc(hero.rubrik ?? 'Stonebite')}</h1>
   ${hero.underrad ? `<p class="ingress">${esc(hero.underrad)}</p>` : ''}
   <div class="hero-knappar">
-    <a class="knapp" href="#varumarken">Se våra butiker</a>
-    <a class="knapp tyst" href="/logga-in">Logga in</a>
+    <a class="knapp" href="/logga-in">Logga in</a>
+    <a class="knapp tyst" href="#vad-vi-gor">Vad vi gör</a>
   </div>
 </div></section>
 
@@ -68,12 +64,6 @@ ${siffror.length ? `<section class="sektion" style="border-top:1px solid var(--l
   <p class="sektion-etikett">Vad vi gör</p>
   <h2 style="margin-bottom:34px">Vi äger hela kedjan — från produkten till paketet som knackar på dörren.</h2>
   ${rutor(profil?.vad_vi_gor)}
-</div></section>
-
-<section class="sektion" id="varumarken"><div class="omslag">
-  <p class="sektion-etikett">Varumärken</p>
-  <h2 style="margin-bottom:34px">Butikerna vi driver.</h2>
-  ${varumarken(profil?.varumarken)}
 </div></section>
 
 <section class="sektion" id="bolaget"><div class="omslag">

@@ -307,6 +307,19 @@ så DNS-prompten förbjuder uttryckligen ändringar av MX, SPF, DKIM och
 verifieringsposter. Samma fil bär listan på det jag behöver veta om
 verksamheten.
 
+⚠️ **BUTIKERNA NÄMNS ALDRIG PÅ DEN PUBLIKA SIDAN** (Axels order 2026-09-21:
+"du leakar ju fan alla mina butiker det får du inte göra"). Sidan gick live med
+en sektion "Butikerna vi driver" som listade **alla elva** med namn, land och
+domän, plus siffrorna "Varumärken 11" och "Länder vi säljer i 6" — alltså en
+färdig kopieringslista åt vem som helst som öppnar stonebite.org. Listan,
+siffrorna, hero-knappen "Se våra butiker" och menylänken "Varumärken" är
+borttagna; `profil.varumarken` ligger kvar i filen och visas **bara inloggad**,
+på sidan Butiker. Ett test hämtar `/` och letar efter varje butiksnamn och varje
+domän ur `profil.json` (`stonebite/test/server.test.mjs` → "publika sidan nämner
+inte en enda butik"). **Bygg aldrig tillbaka det** — inte som lista, inte som
+antal, inte som logotyper. Den publika sidan säger vad bolaget gör, aldrig vilka
+butiker det är.
+
 ### ✅ I DRIFT sedan 2026-09-21 kväll (Cowork byggde, mätt av sessionen)
 
 **Railway:** projekt `strong-solace`, tjänst `yognftnfgn`, deployar `main`,

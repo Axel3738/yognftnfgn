@@ -74,6 +74,30 @@ test('publika sidan svarar utan inloggning', async () => {
   assert.doesNotMatch(html, /Översikt<\/a>/, 'publika sidan ska inte visa appens meny');
 });
 
+/**
+ * Axels order 2026-09-21, efter att sidan legat live med alla elva butiker:
+ * "du leakar ju fan alla mina butiker det får du inte göra". En konkurrent
+ * som öppnar stonebite.org ska inte få en färdig lista på vad vi driver.
+ * Testet läser profil.json och letar efter VARJE butiksnamn och VARJE domän
+ * i den publika HTML:en — det fångar både listan och en siffra som råkar
+ * skvallra ("Varumärken 11").
+ */
+test('publika sidan nämner inte en enda butik', async () => {
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  const marken = profil.varumarken ?? [];
+  assert.ok(marken.length >= 5, 'profilen ska ha butikerna kvar — de visas inloggad');
+
+  const html = await (await hamta('/')).text();
+  for (const m of marken) {
+    if (m.namn) assert.ok(!html.includes(m.namn), `butiksnamnet "${m.namn}" läcker på publika sidan`);
+    const doman = String(m.url ?? '').replace(/^https?:\/\//, '').replace(/\/$/, '');
+    if (doman) assert.ok(!html.includes(doman), `domänen "${doman}" läcker på publika sidan`);
+  }
+  assert.ok(!/Varumärken\s*<\/div>\s*<div[^>]*>\s*\d+/.test(html), 'antalet butiker ska inte stå som siffra');
+  assert.ok(!html.includes('Butikerna vi driver'), 'butikssektionen ska vara borta');
+});
+
 test('säkerhetsrubrikerna sitter på varje svar', async () => {
   const r = await hamta('/');
   assert.equal(r.headers.get('x-frame-options'), 'DENY');
