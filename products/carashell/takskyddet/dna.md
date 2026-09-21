@@ -721,3 +721,42 @@ säger inte ifrån; den säger "vet inte", och det är lätt att läsa som grön
 **Kontrollen som faktiskt håller:** OCR över alla tolv färdiga bilder med ett förbjudet-
 mönster (å/ä/ö, kr, 1 129, 1 469, 340, 23 %, taköverdrag, presenning, recensioner). Noll
 träffar. Ögat missar ett spöke i en gradient; OCR gör det inte.
+
+---
+
+## 2026-09-21 — Trygghetsblock i varukorgen (A/B) + språklös bild i kassan
+
+Axels fråga: en bild i kassan med recensioner och stjärnor, som många gör —
+men hur löser man det i fem marknader?
+
+**Svaret var nej på kassan.** Butiken ligger på planen "Shopify"; att anpassa
+kassan per marknad kräver Advanced eller Plus. Bilden blir EN bild för alla
+fem språken, kassans utseende går inte att översätta, och den enda bildytan
+som finns kvar (ordersammanfattningens bakgrund) är hopfälld på mobil — där
+all Meta-trafik landar. Hela mätningen står i `factory/PROCESS.md`.
+
+**Byggt i stället:**
+
+1. **Trygghetsblock i varukorgslådan**, rakt ovanför kassaknappen:
+   `★★★★★ 5,0 · 16 recensioner` + butikens tre trygghetspunkter.
+   Betyget läses ur `reviews.rating` per produkt i korgen (Judge.me), så det
+   följer verkligheten i stället för en siffra någon skrivit in.
+   Verifierat som kund i alla fem marknader: sv, nb, da, fi och en — den
+   engelska bär kundens eget land i fraktraden (`🇺🇸 Free shipping to the US`)
+   och decimalpunkt i stället för komma.
+2. **A/B-test `korgtrygg`**, 50/50, kaka i 30 dagar. Variant a ser blocket,
+   variant b dagens korg. Verifierat i webbläsare: `display: grid` mot
+   `display: none`. Utfallet stämplas som orderattribut `AB korgtrygg`, så det
+   går att läsa ur Shopify utan att vi sparar något själva.
+3. **Språklös strip till kassan**: `CaraShell | ★★★★★ 5` — butiksnamn,
+   stjärnor, en siffra. Inget ord, så den är lika rätt i alla fem kassorna.
+   Uppladdad till butikens Files som `carashell-kassabild.png`.
+   Betyget är mätt (viktat: 5,0 på 36 recensioner över två produkter), och
+   `node factory/kassabild.mjs carashell --kolla` säger till när det glidit.
+
+**Vad som INTE är mätt:** om blocket faktiskt höjer konverteringen. Det är
+precis därför det ligger som A/B och inte bara rullades ut — svaret kommer ur
+orderattributet, inte ur en gissning.
+
+⚠️ Kassabilden är inte vald än — det sista klicket kräver en människa,
+eftersom API:t är stängt av planen.

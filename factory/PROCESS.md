@@ -1652,3 +1652,82 @@ Finland blev butikens tredje marknad. Fem saker som är nya i fabriken:
 fortfarande 1 129 kr, och den första varianten i listan (5,5 m) lika mycket, så
 sidans rubrikpris är oförändrat. Ligger annonspriset på en storlek som ÄNDRAS
 måste annonserna skannas om (`brand-detektor.mjs`) innan stegen skrivs.
+
+---
+
+## Kassan går inte att anpassa per marknad — ytan före den gör det (mätt 2026-09-21)
+
+Axels fråga: *"Det går att lägga till en bild i kassan … men jag undrar hur vi
+ska komma runt i alla marknader."* Rätt fråga, och svaret är att man inte kan.
+
+**Mätt på CaraShell, allt med läsande anrop:**
+
+| Vad | Utfall |
+|---|---|
+| Butikens plan | **"Shopify"** (`shopifyPlus: false`, `partnerDevelopment: false`) |
+| Kassa per marknad | Kräver **Advanced eller Plus** — butiken ligger ett steg under |
+| `checkoutBranding` | `ACCESS_DENIED`, *"the shop must be on a Plus plan"* — trots att appen har `write_checkout_branding_settings` |
+| Checkout-profiler | **EN**, publicerad, betjänar alla fem marknaderna |
+| `TranslatableResourceType` | 29 värden, **inget** rör checkout |
+| Bildytor kvar i kassan | Logotypen + ordersammanfattningens bakgrund. Header och Main togs bort av Shopify **2026-02-05, på alla planer** |
+
+**Scope och plan är två olika grindar.** Appen hade rätt scope hela tiden;
+planen stoppade ändå. Ett `ACCESS_DENIED` från `checkoutBranding` ska därför
+läsas som "fel plan", inte som "fel behörighet" — annars går timmarna åt till
+att leta efter ett scope som redan finns.
+
+**Och ytan som finns kvar är nästan värdelös där trafiken är:**
+ordersammanfattningen är **hopfälld som standard på mobil**, och i stort sett
+all Meta-trafik är mobil. En trust-bild där ser kunden aldrig.
+
+### Det som gäller i stället
+
+1. **Varukorgslådan bär trygghetsblocket.** Steget direkt före kassan, och
+   vi äger det helt: `byggKorgTrygghet` i `factory/tema.mjs` →
+   `snippets/opf-korg-trygghet.liquid`, inknäppt av `byggKorgWrapper` rakt
+   ovanför delsumman och kassaknappen. Femspråkigt via `localeBranch`, med
+   landet i texten bytt per besökare av `ms-landtext`.
+   **Betyget mäts, aldrig skrivs:** `item.product.metafields.reviews.rating`
+   (Judge.me håller metafältet uppdaterat).
+2. **Kassan får en SPRÅKLÖS strip:** `node factory/kassabild.mjs <butik>` —
+   butiksnamn + stjärnor + en siffra, inget ord. `kassabild.py` vägrar skriva
+   filen om spec:en bär text. Bilden är statisk, så `--kolla` mäter om
+   betyget och säger till när det glidit mer än 0,2.
+
+### Tre fällor, alla dyrköpta samma dag
+
+- **A/B i varukorgen går via CSS, aldrig via `hidden`.** `ms-ab.js` stämplar
+  `data-ms-ab-<test>` på `<html>`, och DET överlever att Dawn hämtar om hela
+  cart-drawer-sektionen vid varje varukorgsändring. `ms-ab-attrs` sätter
+  attributet `hidden` på elementet — lådan kommer tillbaka från servern i
+  sitt ursprungsskick, och en besökare i variant B hade sett blocket ändå så
+  fort hen ändrade antal.
+- **`ms_ab_tests` skrivs i steget `brand`, inte i `tema`.** Ett
+  `--igen tema` lägger blocket i butiken men inte testet i inställningen, och
+  då står blocket dolt för ALLA (CSS-grinden väntar på ett attribut som aldrig
+  sätts). Kör `--igen brand` också. Inställningen är en textarea med ett test
+  per rad, så `slaIhopTester` lägger det nya ovanpå i stället för att skriva
+  över paketvalets test.
+- **Trygghetsraden sätter `--ms-tr-antal` som INLINE style på sitt eget
+  element.** En variabel på föräldern biter inte. Vill man stapla den i lådan
+  måste `grid-template-columns` sättas direkt.
+
+### Kontrollen som faktiskt bevisar något
+
+`curl` räcker inte: blocket ligger i en stängd låda, så `isVisible()` är
+falskt i båda varianterna. Mät `getComputedStyle(el).display` i stället —
+`grid` mot `none` skiljer "avstängd av A/B" från "lådan är stängd".
+Chromium finns i containern på
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` och behöver
+`--ignore-certificate-errors` + `ignoreHTTPSErrors` för proxyns certifikat.
+
+⚠️ **`curl` utan `-L` mot carashell.se ger en 9 kB mellansida**, inte butiken.
+Den saknar allt — `ms-ab-config`, `ms-cro.css`, hela temat — och läser som att
+sajten är trasig. Följ omdirigeringen.
+
+**Utfall 2026-09-21, tillbakaläst som kund i varje marknad:**
+SE `★★★★★ 5,0 16 recensioner · Fri frakt – Sverige & Norge · 14 dagars ångerrätt`,
+NO `16 anmeldelser · Gratis frakt`, DK `16 anmeldelser · Gratis fragt til Danmark`,
+FI `16 arvostelua · Ilmainen toimitus Suomeen`,
+US `16 reviews · 🇺🇸 Free shipping to the US · 90-day guarantee` — med decimalPUNKT.
+A/B verifierat i webbläsare: variant a `display: grid`, variant b `display: none`.

@@ -798,3 +798,128 @@ test('zipens ms-paket.liquid bär ankaret för BÅDA bygg-patcharna', async () =
   assert.equal(patchaMsPaket(valuta), null);
   assert.equal(patchaMsPaketValuta(valuta), null);
 });
+
+// ── Trygghetsblocket i varukorgen (Axels fråga 2026-09-21 om en bild i kassan) ──
+//
+// Bakgrund som gör testerna värda att ha: Shopifys kassa går INTE att anpassa
+// per marknad under planen Advanced, och CaraShell ligger på "Shopify"
+// (mätt 2026-09-21). Ytan vi äger är varukorgslådan, och den är redan
+// femspråkig. Blocket måste därför klara tre saker som alla är lätta att
+// bygga sönder: riktigt betyg, ett A/B som överlever att lådan ritas om,
+// och rätt språk i varje marknad.
+
+test('korgtrygghet: betyget LÄSES ur produktens metafält — aldrig en inskriven siffra', async () => {
+  const { byggKorgTrygghet } = await import('../tema.mjs');
+  const butik = { frakt: { fri_globalt: true }, retur: { angerratt_dagar: 14 } };
+  const { 'snippets/opf-korg-trygghet.liquid': s } = byggKorgTrygghet({ butik });
+  assert.ok(s.includes('item.product.metafields.reviews.rating.value.rating'), 'betyget ska komma ur reviews.rating');
+  assert.ok(s.includes('item.product.metafields.reviews.rating_count.value'), 'antalet ska komma ur reviews.rating_count');
+  // Mätt 2026-09-21: takskyddet 5,0 på 16 recensioner, termoskyddet 5,0 på 20.
+  // Skrivs något av det in i snippeten är det fel dagen efter nästa recension,
+  // och det bryter husregeln "hitta aldrig på data".
+  assert.equal(/\b(16|20)\s*(recensioner|anmeldelser|reviews|arvostelua)/.test(s), false, 'ett antal står inskrivet i mallen');
+  assert.equal(/>\s*[45][.,]\d\s*</.test(s), false, 'ett betyg står inskrivet i mallen');
+  // Utan betyg ska BARA trygghetsraden synas — aldrig noll stjärnor.
+  assert.ok(s.includes('{%- if opf_antal > 0 -%}'), 'stjärnraden ska vara villkorad på att betyg finns');
+  assert.ok(s.includes("{% render 'ms-trust-row'"), 'trygghetsraden ska alltid renderas');
+});
+
+test('korgtrygghet: A/B går via CSS på <html>, ALDRIG via hidden — lådan ritas om med innerHTML', async () => {
+  const { byggKorgTrygghet, KORGTRYGGHET_TEST } = await import('../tema.mjs');
+  const butik = { frakt: { fri_globalt: true } };
+  const med = byggKorgTrygghet({ butik, test: KORGTRYGGHET_TEST })['snippets/opf-korg-trygghet.liquid'];
+  // ms-ab.js stämplar data-ms-ab-<id> på <html>; DET överlever att Dawn
+  // hämtar om hela cart-drawer-sektionen vid varje varukorgsändring.
+  assert.ok(med.includes(`html[data-ms-ab-${KORGTRYGGHET_TEST}="a"] .opf-korgtrygg { display: grid; }`));
+  assert.ok(med.includes('.opf-korgtrygg { display: none; }'), 'utan attribut ska blocket vara dolt = kontrollen');
+  // ms-ab-attrs sätter attributet hidden på elementet. Det går förlorat så
+  // fort lådan kommer tillbaka från servern, och en besökare i variant B
+  // hade då fått se blocket ändå. Därför får det inte användas här.
+  assert.equal(med.includes('ms-ab-attrs'), false, 'ms-ab-attrs överlever inte att lådan ritas om');
+  // `aria-hidden` på stjärnorna är något helt annat och ska stå kvar.
+  assert.equal(/(?<!aria-)\bhidden\b/.test(med), false, 'hidden-attributet återställs av varje omritning');
+  assert.ok(med.includes('aria-hidden="true"'), 'stjärnorna läses redan upp som en siffra — skärmläsaren ska hoppa över dem');
+  // Utan test: ingen grind alls, annars hade blocket stått dolt för ALLA.
+  const utan = byggKorgTrygghet({ butik })['snippets/opf-korg-trygghet.liquid'];
+  assert.equal(utan.includes('data-ms-ab'), false);
+  assert.equal(utan.includes('.opf-korgtrygg { display: none; }'), false);
+});
+
+test('korgtrygghet: samma språkkälla som produktsidans trygghetsrad, och landet byts per besökare', async () => {
+  const { byggKorgTrygghet } = await import('../tema.mjs');
+  const butik = { frakt: { fri_globalt: true }, retur: { angerratt_dagar: 14 } };
+  const ov = {
+    nb: { 'liquid.trust.0': 'Gratis frakt', 'liquid.trust.1': '14 dagers angrerett', 'liquid.trust.2': 'Trygg betaling' },
+    en: { 'liquid.trust.0': '[[flagga]] Free shipping to [[land]]', 'liquid.trust.1': '90-day guarantee', 'liquid.trust.2': 'Secure payment' },
+    da: { 'liquid.trust.0': 'Gratis fragt til Danmark', 'liquid.trust.1': '14 dages fortrydelsesret', 'liquid.trust.2': 'Sikker betaling' },
+    fi: { 'liquid.trust.0': 'Ilmainen toimitus', 'liquid.trust.1': '14 päivän palautusoikeus', 'liquid.trust.2': 'Turvallinen maksu' },
+  };
+  const s = byggKorgTrygghet({ butik, oversattningar: ov })['snippets/opf-korg-trygghet.liquid'];
+  for (const l of ['nb', 'en', 'da', 'fi']) assert.ok(s.includes(`request.locale.iso_code == '${l}'`), `språket ${l} saknas`);
+  assert.ok(s.includes('Trygg betaling') && s.includes('Sikker betaling') && s.includes('Turvallinen maksu'));
+  // Tokens går orörda in i ms-trust-row, som renderar dem genom ms-landtext.
+  assert.ok(s.includes('[[flagga]] Free shipping to [[land]]'), 'landstokens ska överleva till ms-trust-row');
+  // Ordet "recensioner" ska följa språket, inte stå kvar på svenska.
+  for (const ord of ['recensioner', 'anmeldelser', 'reviews', 'arvostelua']) assert.ok(s.includes(ord), `ordet ${ord} saknas`);
+  // Engelskan skriver 4.8, resten 4,8.
+  assert.ok(s.includes("replace: '.', ','"), 'decimaltecknet ska bytas utanför engelskan');
+});
+
+test('byggKorgWrapper: båda blocken knäpps in, trygghetsraden närmast kassaknappen, markeringen kvar', async () => {
+  const { byggKorgWrapper } = await import('../tema.mjs');
+  const w = byggKorgWrapper(['opf-korg-upsell', 'opf-korg-trygghet'])['sections/cart-drawer.liquid'];
+  assert.ok(w.includes("{% render 'opf-korg-upsell' %}") && w.includes("{% render 'opf-korg-trygghet' %}"));
+  // Ordningen i den hopslagna strängen avgör ordningen i lådan.
+  assert.ok(w.indexOf('opf_opf_korg_upsell |') < w.indexOf('opf_opf_korg_trygghet |')
+    || w.indexOf('append: opf_opf_korg_upsell') < w.indexOf('append: opf_opf_korg_trygghet'));
+  // Markeringen måste följa med, annars försvinner delsumman och kassaknappen.
+  assert.ok(w.includes("append: opf_marke"), 'markeringen ska läggas tillbaka efter innehållet');
+  assert.ok(w.includes('replace_first: opf_marke, opf_nytt'));
+  // Renderar inget block något: lådan ska ut orörd, aldrig en tom ruta.
+  assert.ok(w.includes('{%- if opf_innehall != blank -%}') && w.includes('{{ opf_lada }}'));
+  assert.deepEqual(Object.keys(byggKorgWrapper([])), [], 'inga block = ingen wrapper');
+});
+
+test('byggKorgUpsell ensam ger samma låda som förut — trygghetsblocket får inte ha ändrat upsellen', async () => {
+  const { byggKorgUpsell } = await import('../tema.mjs');
+  const u = byggKorgUpsell('bonusen');
+  assert.ok(u['snippets/opf-korg-upsell.liquid'].includes("all_products['bonusen']"));
+  const w = u['sections/cart-drawer.liquid'];
+  assert.ok(w.includes("{% render 'opf-korg-upsell' %}"));
+  assert.equal(w.includes('opf-korg-trygghet'), false, 'ensam upsell ska inte rendera ett block som inte byggts');
+  assert.ok(u.msHeadTillagg.includes('sections=cart-drawer'));
+});
+
+test('slaIhopTester: paketvalets A/B får ALDRIG skrivas över av korgtestet', async () => {
+  const { slaIhopTester, rensaSettings, KORGTRYGGHET_TEST } = await import('../tema.mjs');
+  // Inställningen ms_ab_tests är en textarea med ett test per rad. Skrivs den
+  // rakt över försvinner paketväljarens varianter tyst — ms-paket renderar då
+  // noll nivåer (samma fälla som TackleBay 2026-09-10).
+  assert.equal(slaIhopTester('paket', 'korgtrygg'), 'paket\nkorgtrygg');
+  assert.equal(slaIhopTester('paket:90:10', 'paket'), 'paket:90:10', 'samma id två gånger ger en rad, viktningen behålls');
+  assert.equal(slaIhopTester('#paket', 'paket'), '#paket', 'ett avstängt test återupplivas inte');
+  assert.equal(slaIhopTester('', 'korgtrygg'), 'korgtrygg');
+  assert.equal(slaIhopTester(null), '');
+  const r = rensaSettings({ current: {} }, { abTest: 'paket', extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(r.current.ms_ab_tests, 'paket\nkorgtrygg');
+  assert.equal(r.current.ms_ab_cookie_days, 30);
+  // Utan paket-test ska korgtestet ändå in, annars sätts aldrig attributet.
+  const r2 = rensaSettings({ current: { ms_ab_tests: '' } }, { extraTester: [KORGTRYGGHET_TEST] });
+  assert.equal(r2.current.ms_ab_tests, 'korgtrygg');
+});
+
+test('korgtrygghet: trygghetsradens kolumner tvingas till en — variabeln på föräldern biter inte', async () => {
+  const { byggKorgTrygghet } = await import('../tema.mjs');
+  const s = byggKorgTrygghet({ butik: { frakt: { fri_globalt: true } } })['snippets/opf-korg-trygghet.liquid'];
+  // ms-trust-row.liquid skriver style="--ms-tr-antal: {{ rows.size }}" INLINE
+  // på elementet, och .ms-trust läser den som repeat(var(--ms-tr-antal, 3), 1fr).
+  // En variabel satt på en förälder förlorar därför mot inline-värdet — det
+  // enda som fungerar är att sätta grid-template-columns direkt.
+  assert.ok(s.includes('.opf-korgtrygg .ms-trust { grid-template-columns: 1fr;'), 'kolumnerna måste sättas direkt, inte via variabeln');
+  assert.equal(s.includes('.opf-korgtrygg .ms-trust-row'), false, 'klassen heter .ms-trust, inte .ms-trust-row');
+  // Raden bär egen ram och bakgrund på produktsidan — i lådan blir det en ruta i rutan.
+  assert.ok(s.includes('border: 0; background: none;'));
+  // Tom sträng, inte `blank`, som startvärde: `assign x = blank` är inte
+  // dokumenterad Liquid, medan '' jämförs lika med blank.
+  assert.ok(s.includes("{%- assign opf_betyg = '' -%}"));
+});

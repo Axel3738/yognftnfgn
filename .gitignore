@@ -81,3 +81,8 @@ sparning/output/
 
 # Spårningens utdata per butik (sidkroppen + alla skanningar, ~1 MB per körning)
 sparning/butiker/*/output/
+# Kassabilden byggs om ur butikens live-betyg (factory/kassabild.mjs) — bara
+# MÄTNINGEN (kassabild.json) är minne värt att committa. PNG:en och spec:en
+# är genererade och skulle bara lägga binärer i historiken.
+factory/output/*/kassabild.png
+factory/output/*/kassabild.png.spec.json
