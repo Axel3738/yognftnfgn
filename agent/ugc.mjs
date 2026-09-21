@@ -143,8 +143,14 @@ export function skalasOmFyraVeckor(logg, kampanjId, { idag, rad = null, karta = 
   const inom = (r, dagar) => { const d = dagarMellan(r.datum, idag); return d !== null && d >= 0 && d <= dagar; };
   const senasteLiv = egna.filter((r) => ['STANG_AV', 'ATERAKTIVERA'].includes(r.kod)).sort((a, b) => (String(a.datum) < String(b.datum) ? -1 : 1)).at(-1);
   if (senasteLiv?.kod === 'STANG_AV') return { sannolikt: false, skal: ['kampanjen är avstängd'] };
-  const sankt = egna.filter((r) => ['SANK', 'HALVERA', 'MANUELL_SANK', 'ATGARDSTRAPPAN', 'TRAPPA_FORLANGNING'].includes(r.kod) && inom(r, 14));
-  if (sankt.length) skal.push(`sänkt/trappa senaste 14 dagarna (${[...new Set(sankt.map((r) => r.kod))].join(', ')})`);
+  // Trappan på 14 dagar säger nej. En enstaka sänkning gör det bara om den är
+  // den SENASTE budgetändringen — en kampanj som sänkts en gång och sedan
+  // skalats sju gånger (IBC 2026-09-21) skalas, den sänks inte.
+  const trappa = egna.filter((r) => ['ATGARDSTRAPPAN', 'TRAPPA_FORLANGNING'].includes(r.kod) && inom(r, 14));
+  const andringar = egna.filter((r) => ['SKALA', 'SANK', 'HALVERA', 'MANUELL_SANK'].includes(r.kod) && inom(r, 14)).sort((a, b) => (String(a.datum) < String(b.datum) ? -1 : 1));
+  const senasteAndring = andringar.at(-1) ?? null;
+  const sankt = [...trappa, ...(senasteAndring && senasteAndring.kod !== 'SKALA' ? [senasteAndring] : [])];
+  if (sankt.length) skal.push(`${trappa.length ? 'trappa' : 'senaste budgetändringen är en sänkning'} senaste 14 dagarna (${[...new Set(sankt.map((r) => r.kod))].join(', ')})`);
   const skalad = egna.filter((r) => r.kod === 'SKALA' && inom(r, 28)).length;
   const vinst = num(rad?.dom?.vinstProcent);
   const budget = num(rad?.budget);
@@ -160,16 +166,25 @@ export function skalasOmFyraVeckor(logg, kampanjId, { idag, rad = null, karta = 
 }
 
 const TRO_RE = /\b(tro|tron|auktoritet|tillit|trust|belief|believe|authority|credib|trovärd|förtroende|litar)\w*/i;
+/** En brist, inte bara ordet: "litar inte", "saknar tillit", "brist på auktoritet". "utan" räknas inte ("trovärdigt utan pris" är motsatsen). */
+const BRIST_RE = /\b(saknas|saknar|brist|fattas|inte|ingen|inget|otillräcklig|lacks?|missing|no\b)/i;
+const UGC_RE = /\b(ugc|kreatör|creator|riktigt ansikte|riktig person|real person|real face)/i;
 
-/** Villkor 3: det som saknas är tro/auktoritet/tillit — läst ur lärdomen. Utan lärdom: okänd. */
+/**
+ * Villkor 3: det som saknas är tro/auktoritet/tillit — läst ur lärdomen.
+ * Ja när komponenten tro avvek, eller när en mening i hypotesen/nästa
+ * annonser nämner tro/tillit/auktoritet SOM EN BRIST (eller pekar på UGC).
+ * "gör demot trovärdigt" är inte en brist. Utan lärdom: okänd.
+ */
 export function saknasTro(logg, annonsId) {
   const l = lardomar(logg).get(String(annonsId));
   if (!l) return { ja: null, skal: 'ingen lärdom skriven — skriv den först (node agent/lardom.mjs --skelett)', lardom: null };
   const avvikelse = (l.komponent_avvikelser ?? []).some((k) => /^tro$/i.test(k));
-  const text = `${l.hypotes ?? ''}\n${(l.nasta ?? []).join('\n')}`;
-  const namnd = TRO_RE.test(text);
-  if (avvikelse || namnd) return { ja: true, skal: avvikelse ? 'lärdomen: komponenten tro avvek från briefen' : `lärdomen nämner ${text.match(TRO_RE)?.[0]} i hypotesen/nästa annonser`, lardom: l.lardom_id, nasta: l.nasta ?? [] };
-  return { ja: false, skal: 'lärdomen pekar inte på tro/auktoritet/tillit — det som saknas går att lösa med befintligt material', lardom: l.lardom_id, nasta: l.nasta ?? [] };
+  const meningar = `${l.hypotes ?? ''}\n${(l.nasta ?? []).join('\n')}`.split(/[.;!?\n]/);
+  const traff = meningar.find((m) => (TRO_RE.test(m) && BRIST_RE.test(m)) || UGC_RE.test(m));
+  if (avvikelse) return { ja: true, skal: 'lärdomen: komponenten tro avvek från briefen', lardom: l.lardom_id, nasta: l.nasta ?? [] };
+  if (traff) return { ja: true, skal: `lärdomen: "${traff.trim().slice(0, 90)}"`, lardom: l.lardom_id, nasta: l.nasta ?? [] };
+  return { ja: false, skal: 'lärdomen pekar inte på en brist i tro/auktoritet/tillit — det som saknas går att lösa med befintligt material', lardom: l.lardom_id, nasta: l.nasta ?? [] };
 }
 
 /**

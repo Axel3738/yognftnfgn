@@ -59,7 +59,11 @@ test('skalasOmFyraVeckor (villkor 2) är en bedömning med skäl: avstängd/sän
   assert.equal(skalasOmFyraVeckor([{ kampanj_id: 'K1', kod: 'STANG_AV', genomford: true, datum: '2026-09-15' }], 'K1', { idag, rad }).sannolikt, false);
   const sankt = skalasOmFyraVeckor([{ kampanj_id: 'K1', kod: 'SANK', genomford: true, datum: '2026-09-15', ny_budget: 2000 }], 'K1', { idag, rad });
   assert.equal(sankt.sannolikt, false);
-  assert.match(sankt.skal.join(';'), /sänkt\/trappa senaste 14 dagarna \(SANK\)/);
+  assert.match(sankt.skal.join(';'), /senaste budgetändringen är en sänkning senaste 14 dagarna \(SANK\)/);
+  // En sänkning följd av skalningar: kampanjen skalas (IBC 2026-09-21: en SANK, sju SKALA).
+  const vant = skalasOmFyraVeckor([{ kampanj_id: 'K1', kod: 'SANK', genomford: true, datum: '2026-09-10', ny_budget: 500 }, { kampanj_id: 'K1', kod: 'SKALA', genomford: true, datum: '2026-09-18', ny_budget: 600 }, { kampanj_id: 'K1', kod: 'SKALA', genomford: true, datum: '2026-09-21', ny_budget: 700 }], 'K1', { idag, rad: null });
+  assert.equal(vant.sannolikt, true, JSON.stringify(vant));
+  assert.equal(skalasOmFyraVeckor([{ kampanj_id: 'K1', kod: 'TRAPPA_FORLANGNING', genomford: true, datum: '2026-09-18' }, { kampanj_id: 'K1', kod: 'SKALA', genomford: true, datum: '2026-09-20', ny_budget: 700 }], 'K1', { idag, rad }).sannolikt, false, 'trappan säger alltid nej');
   assert.equal(skalasOmFyraVeckor([], 'K1', { idag, rad: { id: 'K1', budget: 500, dom: { vinstProcent: 5 } } }).sannolikt, false);
   const sasong = skalasOmFyraVeckor([], 'K1', { idag, rad, karta: { sasong_slut: '2026-10-15' } });
   assert.equal(sasong.sannolikt, false);
@@ -69,9 +73,13 @@ test('skalasOmFyraVeckor (villkor 2) är en bedömning med skäl: avstängd/sän
 test('saknasTro (villkor 3) läses ur lärdomen — utan lärdom okänd, aldrig gissad', () => {
   assert.equal(saknasTro([], '111').ja, null);
   assert.equal(saknasTro([LARDOM()], '111').ja, true);
-  assert.match(saknasTro([LARDOM()], '111').skal, /lärdomen nämner/);
+  assert.match(saknasTro([LARDOM()], '111').skal, /lärdomen: "kunden litar inte/);
   assert.equal(saknasTro([LARDOM({ hypotes: 'hooken tappar efter tre sekunder', nasta: ['`X_PD_1_H2` — ny hook'], komponent_avvikelser: ['brådska'] })], '111').ja, false);
   assert.equal(saknasTro([LARDOM({ hypotes: 'bilden bär', komponent_avvikelser: ['tro'] })], '111').ja, true);
+  // Ordet räcker inte — det ska vara en brist. "gör demot trovärdigt utan pris" är motsatsen (IBC_PD_1_H1 2026-09-21).
+  assert.equal(saknasTro([LARDOM({ hypotes: 'en spec man kan peka på gör demot trovärdigt utan pris eller brådska; att produkten inte syns i första bilden verkar inte ha kostat hook rate', nasta: ['`IBC_PD_12_H1` — ny hook'] })], '111').ja, false);
+  assert.equal(saknasTro([LARDOM({ hypotes: 'publiken saknar tillit till att väven håller', nasta: [] })], '111').ja, true);
+  assert.equal(saknasTro([LARDOM({ hypotes: 'hooken håller', nasta: ['`X_SP_9_H1` — UGC: en kreatör visar överdraget i regn'] })], '111').ja, true, 'nästa annonser pekar på UGC');
 });
 
 test('kandidater (punkt 20): förslag bara när alla tre villkor är sanna; tystas efter förslag och efter beställning', () => {
