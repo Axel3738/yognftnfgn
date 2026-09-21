@@ -32,7 +32,9 @@ test('nyBudget: jämna 50 kr, nedåt vid höjning och uppåt vid sänkning — s
   assert.equal(nyBudget(605, 0.7), 450 < GOLV_SEK ? GOLV_SEK : 450); // 423,5 → golvet
   assert.equal(nyBudget(1230, 0.7), 900);      // 861 → 900 uppåt
   assert.equal(nyBudget(1000, RAKET_FAKTOR), 2000);
-  assert.equal(nyBudget(3000, RAKET_FAKTOR), TAK_SEK);
+  assert.equal(TAK_SEK, 10000);                // Axels beslut 2026-09-21 (var 4 000)
+  assert.equal(nyBudget(3000, RAKET_FAKTOR), 6000);   // rymdes inte under det gamla taket
+  assert.equal(nyBudget(6000, RAKET_FAKTOR), TAK_SEK); // 12 000 klipps vid taket
   assert.equal(nyBudget(TAK_SEK, 1.2), null);  // taket nått
   assert.equal(nyBudget(GOLV_SEK, 0.7), null); // golvet nått
   assert.equal(nyBudget(520, 1.2), 600);
@@ -70,7 +72,7 @@ test('RAKET: ROAS ≥ 5 på 3d och 7d ⇒ dubbla, tillåtet dagen efter en ändr
 });
 
 test('RAKET stannar vid taket', () => {
-  const [r] = dom({ kampanj: kampanj({ daily_budget: '400000' }), d3: ins(6), d7: ins(6) });
+  const [r] = dom({ kampanj: kampanj({ daily_budget: String(TAK_SEK * 100) }), d3: ins(6), d7: ins(6) });
   assert.equal(r.atgard, null);
   assert.match(r.sparr, /taket/);
 });

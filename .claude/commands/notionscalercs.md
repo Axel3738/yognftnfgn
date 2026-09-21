@@ -222,7 +222,7 @@ spärrarna, läser tillbaka gammalt → nytt och loggar varje rad i
 är facit — ändra aldrig en siffra i huvudet. Kortversion, så rapporten kan
 förklara dem:
 - **Raket** ROAS ≥ 5 tre OCH sju dagar → budgeten dubblas (Axel 2026-09-10),
-  varje natt om det håller, tak 4 000 kr/dag.
+  varje natt om det håller, tak 10 000 kr/dag (Axel 2026-09-21, var 4 000).
 - **Snabb** vinst ≥ 25 % och ROAS ≥ 3 → +20 % varje natt.
 - **Skala** vinst ≥ 25 % båda fönstren → +20 %, minst 3 dygn mellan ändringar.
 - **Sänk** vinst < 16 % → −30 %, golv 500 kr, minst 3 dygn mellan ändringar.

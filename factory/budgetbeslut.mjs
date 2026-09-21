@@ -7,7 +7,7 @@
 // docs/os/ANALYSMETOD.md steg 2–4 (grind, linjer, vinstbidrag), CLAUDE.md
 // "PAUSED i annonskontot är ett beslut" + regel 11 (test-ABO), och den gamla
 // motorn agent/besked.mjs på grenen claude/daily-agent-discussion-uos5df
-// (vinstProcent, nyBudget med 50-kronorsavrundning, GOLV 500, TAK 4000,
+// (vinstProcent, nyBudget med 50-kronorsavrundning, GOLV 500, TAK 4000 — höjt till 10 000 2026-09-21,
 // zonerna 16/25, snabbspår, raketspår). Axels beslut 2026-09-10: rutinen FÅR
 // ändra budget själv (läge A) inom spärrarna, och raketen är "dubbla" (×2,0 —
 // den gamla motorn hade ×1,8 som antagande).
@@ -44,7 +44,7 @@
 // 11. SÄNK: vinst_3d < 16 % (inkl. förlust) ⇒ −30 %, aldrig under GOLV
 //     500 kr, bara om ≥ 3 dygn sedan senaste ändring.
 // 12. Avrundning till jämna 50 kr: nedåt vid höjning, uppåt vid sänkning, så
-//     steget aldrig blir större än faktorn. GOLV 500, TAK 4 000 kr/dag per
+//     steget aldrig blir större än faktorn. GOLV 500, TAK 10 000 kr/dag per
 //     enhet. Kan steget inte tas (taket/golvet nått) blir det ingen åtgärd.
 // 13. Annonskill (ad-nivå, ur skalning.mjs klassificering 14d): klass
 //     `forlorare` (CPA > break-even efter ≥ 500 kr och ≥ 3 köp) OCH 7d-CPA
@@ -70,7 +70,12 @@ import { dagarSedanAndring, harRad, andringarIdag } from './budgetlogg.mjs';
 export { vinstProcent };
 
 export const GOLV_SEK = 500;
-export const TAK_SEK = 4000;
+// Taket höjt 4 000 → 10 000 kr/dag per enhet, Axels beslut 2026-09-21. Skälet
+// stod i kontot: Båtmotorskyddet låg fastklämt på exakt 4 000 med ROAS 3,74 mot
+// break-even 1,62 och 84 köp i veckan, Sotarsetet gick 4,35 på 2 150 kr, och
+// fyra produkter till närmade sig taket. Nattvakten hade själv bett om beslutet
+// (factory/output/carashell/discord-budget-2026-09-20.json).
+export const TAK_SEK = 10000;
 export const STEG_SEK = 50;
 
 export const GRIND_SPEND_SEK = 300;
