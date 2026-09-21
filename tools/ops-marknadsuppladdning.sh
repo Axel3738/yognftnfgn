@@ -17,6 +17,14 @@
 # namnges, och summan i slutet är det som avgör om ordet "klart" får skrivas
 # (samma regel som factory/rakning.mjs). Exit 1 om något felade eller saknade
 # copy.
+#
+# ⚠️ EN KÖRNING TAR TIMMAR (Meta stryper skrivningarna, kod 17 — Danmark
+# 2026-09-20: 59 annonser på ~7 h). Väntar du ut den: vänta på PID:en
+# (`until ! kill -0 <pid>`), ALDRIG på skriptets NAMN med `pgrep -f`. Mätt
+# samma natt: två väntare sökte båda efter texten "dk-upp.sh", hittade
+# VARANDRAS kommandorader och väntade på varandra i sex timmar medan
+# uppladdningen för länge sedan var klar. En namnsökning matchar varje skal
+# som råkar bära namnet i sin kommandorad, din egen väntare inräknad.
 
 set -u
 NYCKEL="$1"; MARKNAD="$2"; MEDIA="$3"; COPY="$4"; TORR="${5:-}"
