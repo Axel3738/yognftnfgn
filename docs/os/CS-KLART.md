@@ -273,3 +273,123 @@ efter bygget.
 motläsare, och **ingen oberoende byggordning finns** — ordningen som följdes är
 min egen, inte genomlysningens. Kör om `byggordning` innan nästa bygge om du
 vill ha en andra åsikt om prioriteringen.
+
+### 2026-09-21 — bygge 2: view-through, motorns tak, turordningen, de 40, researchprovet
+
+Axels fyra beslut och två tillägg samma kväll, i hans ordning.
+
+**1. View-through-mätningen (punkt 1) — GJORD, och Meta svarar tydligt.**
+Ett anrop med båda fönstren begärda visar formen: `value` är Metas
+**deduplicerade total inklusive visningsköp**, `7d_click` är bara klicken
+(SE, livstid: 1 814 mot 1 765 — och 1 765 + 69 visningsköp ≠ 1 814, alltså
+dedupliceras överlappet). Koden läser rätt: `val()` i
+`agent/etikett-backfill.mjs` har `fönster = '7d_click'` som default och
+faller tillbaka på `value` bara när fönsternyckeln saknas, vilket är precis
+rätt för `video_view` och `landing_page_view` men aldrig för köp.
+
+Skillnaden, mätt 30 dygn 2026-08-22 → 2026-09-20:
+
+| Konto | Köp med visning → bara klick | ROAS med visning → bara klick | Uppblåst |
+|---|---|---|---|
+| SE MagiBorsten | 1 813 → 1 764 | 2,347 → 2,283 | 2,8 % |
+| NO Magiborsten | 781 → 781 | 1,971 → 1,971 | 0,0 % |
+
+**Norge har noll visningsköp.** Sverige 2,8 % på kontonivå, men spridningen
+per kampanj är det som betyder något: Vandringskängor 22 %,
+Skoreparationslapparna 10,8 %, IBC 7,5 %, Övervakningskameran 6,9 %,
+Båtmotorskyddet 6,0 %.
+
+**En enda kampanj VÄNDER** (över break-even med visningsköp, under utan):
+Vandringskängor Herr, 2 026 kr spend, break-even 1,60 — 1,61 ✅ med visning,
+1,32 ❌ utan. Den är redan PAUSED. Sex SE-kampanjer saknar break-even i
+namnet och går inte att pröva alls.
+
+⚠️ Det som INTE gick att verifiera: `agent/kontodata.json` är gitignorerad
+och skrivs i containern, så om den senaste rutinkörningen faktiskt satte
+`"attribution": "7d_click"` går inte att läsa härifrån. `attributionsvarning`
+i `agent/rond.mjs` larmar om fältet saknas — läs den raden i morgonrapporten.
+
+**2. Motorns tak 4 000 → 10 000 kr (nytt).** Tre spärrar över 4 000:
+en etiketterad `BREAKTHROUGH` eller `SPEND_WINNER` inom 28 dygn
+(`harLevandeVinnare`, exakt `true` krävs), steg max 20 % (inget raketspår i
+högzonen), och förlust kapar aldrig — en förlustmorgon ger `HOGZON_AVVAKTA`,
+två i rad ger −20 %, aldrig under 4 000 i ett steg. Spärren ligger före
+test/drift-uppdelningen så åtgärdstrappan inte kan stänga av en
+högzonskampanj när produktkartan saknar raden. Manuella zonens gräns följer
+taket och går nu vid 10 000.
+
+Provkört mot kontot: **Båtmotorskyddet 4 000 → 4 800** (har vinnaretikett,
+ROAS 3,24 mot break-even 1,62, 47 köp på tre dygn). Sotarsetet 2 150 → 2 550,
+ROAS 4,35, och **saknar ännu vinnaretikett** — den slår i 4 000 om ett par
+ronder och stannar där tills en etikett finns. Ingen kampanj ligger i dag över
+4 000 utan etikett. Bara 12 ACTIVE-kampanjer har budget på kampanjnivå; resten
+är ABO och rörs inte av taket.
+
+**Briefkvoten är oförändrad (Axels punkt 6)** och planar ut vid 3 000 kr redan
+i dag. Ett nytt test låser fast det för både `annonskvot` och `rundkvot`, så
+en framtida takändring inte kan smyga upp antalet briefer.
+
+**3. Turordning i stället för golv (nytt).** `oskrivna()` sorterar kön själv:
+kampanjer med levande breakthrough först, fallande på oskriven spend, och
+inom en kampanj breakthrough → bedömbar → resten. Åtta svenska kampanjer
+hamnar först; IBC faller bort för att dess enda breakthrough redan har sin
+lärdom. `rond-auto` 3c.4b kräver nu att det **faktiska** antalet skrivna
+lärdomar rapporteras, aldrig en uppskattning.
+
+**Takten, mätt i stället för gissad.** Skelettgenereringen tar 0,3 s för 133
+bedömbara. Meta-läsningen av en live annons tar 0,5 s. **Ingetdera är
+flaskhalsen** — bedömningen är. En komplett lärdom skrevs den här sessionen
+hela vägen (`Beltgrinder_PD_19_1`, BREAKTHROUGH, 41 % av kampanjens spend):
+skelett → läst live annons → ifylld → spärren godkände → `LARDOM`-rad. Kön
+gick från 2 378 till 2 377.
+
+⚠️ **Det strukturella fyndet är större än takten: 127 av de 133 bedömbara
+svenska annonserna har ingen brief i repot.** Utan briefen finns ingen
+"planerat"-kolumn, så punkt 2 — planerat mot utfört per komponent — går
+**inte** att göra för 95 % av backloggen. Den enda ärliga ifyllningen där är
+`okänd` på alla sju komponenterna, vilket är vad spärren accepterar och vad
+lärdomen ovan gör. För nya batcher skriver rutinen briefen i repot, så det
+läker framåt — men bakkatalogen blir aldrig en riktig
+planerat-mot-utfört-analys. Skriv aldrig om det till något annat.
+
+**4. De 40 kampanjerna utan bedömbar annons — jag hade fel.**
+Jag skrev att de "spenderar pengar utan att en enda annons når 300 kr och tre
+köp". Mätt mot kontot: **alla 40 är redan PAUSED. Noll är ACTIVE. De
+spenderar ingenting.** De är kyrkogården, inte en läcka, och `annonsbehov`
+filtrerar bort pausade kampanjer, så de kan inte få briefer heller. Det finns
+ingenting att stänga av.
+
+Det som däremot står kvar i siffrorna:
+
+| | Kampanjer | Annonser gjorda | Spend i första veckan |
+|---|---|---|---|
+| Utan en enda bedömbar annons | 40 | 562 | 68 550 kr |
+| Med minst en bedömbar | 43 | 1 120 | 382 438 kr |
+
+**33,4 % av allt annonsarbete gick till produkter som dog i test.** Snittet är
+14,1 annonser per kampanj som aldrig producerade en bedömbar annons — de dog
+runt 1 500–2 000 kr med ROAS 0,3–1,3. Frågan är inte om de ska stängas av,
+utan om en testprodukt ska få 14 annonser innan domen faller vid 2 000 kr.
+Den frågan är inte utredd och ingen siffra här svarar på den.
+
+**5. Researchprovet på Taköverdraget (handskrivet, ingen kod).**
+`products/takoverdraget-husvagn/research.md`. Tre trådar på Husbilsklubben,
+tolv citat ordagrant med skribent och datum, sökt på problemet och aldrig på
+produkten. Med tröskeln tre oberoende källor nådde **ett enda** förslag upp —
+och det är ingen ny avatar utan **en tro som stoppar köpet**: att lägga något
+över husvagnen kapslar in fukten och gör skadan värre. Den finns i alla tre
+trådarna, över tolv år, hos både den som testat och ångrat sig och den som
+inte vågat börja. Snölast, besvär, blåst och möss nådde en källa var och står
+märkta som gissningar.
+
+Det går emot mitt eget förslag: jag skrev att extern research skulle hitta nya
+sub-avatarer. Den hittade en invändning. Fyra förbehåll står i filen — åldern
+(nio av tolv citat är från 2013–2014), urvalet (ett forum, lutar mot husbil
+och erfarna ägare), att tre trådar inte är tre personer, och att inget där är
+ett kundomdöme. Järnregeln gäller: research styr strategin, aldrig texten i en
+annons. Nästa steg om Axel vill gå vidare är en produkt i en helt annan nisch,
+för att se om utfallet är produktens eller metodens.
+
+**Läget mot de 27 punkterna efter bygge 2:** 6 gröna (15, 22, 23, 25, 26 och
+nu **1**, view-through mätt och koden verifierad), 21 halvvägs, 0 saknas.
+Punkt 2 är halvvägs med ett tak: den kan aldrig bli grön för bakkatalogen.
