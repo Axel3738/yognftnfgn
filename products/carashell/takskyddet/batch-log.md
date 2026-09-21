@@ -1465,12 +1465,17 @@ kampanj PAUSED, CBO 1 000 kr/dag:**
 24 videor + 36 bilder, alla 60 med egen dansk copy. **0 fel, 0 utan copy.**
 Varje annons tillbakaläst som `ACTIVE`.
 
-⚠️ **Sex adsets är ACTIVE, fem är PAUSED.** De fem (CO, CS, GT, PD, SP) bär
-46 av de 60 annonserna och har **0 kr spend och 0 visningar** — de föddes
-PAUSED av `kampanj.mjs --tom` 2026-09-20 15:00, de är alltså inte avstängda
-av ett beslut. De sex ACTIVE skapades av uppladdningen själv, som bara rör
-det den skapat. Slås kampanjen på utan att de fem slås på kör **14 av 60
-annonser**, utan felmeddelande.
+**Alla elva adsets är ACTIVE sedan 2026-09-21.** Sex skapades av
+uppladdningen själv (den rör bara det den skapat); de fem övriga — CO, CS,
+GT, PD, SP, som bär 46 av de 60 annonserna — föddes PAUSED av
+`kampanj.mjs --tom` 2026-09-20 15:00 och hade **0 kr spend och 0
+visningar**, alltså inte avstängda av ett beslut. Slagna på mot en namngiven
+lista efter Axels ok samma morgon. Hade de lämnats pausade hade en launch
+kört **14 av 60 annonser utan felmeddelande** — den fällan är värd att leta
+efter i varje ny marknad: räkna ACTIVE adsets, inte bara ACTIVE annonser.
+
+Tillbakaläst: kampanj PAUSED, **11 av 11 adsets ACTIVE, 60 av 60 annonser
+ACTIVE**.
 
 **Det som kostade mest tid, i ordning:**
 1. Kontot var UNSETTLED (obetald faktura). Felet läser som ett
