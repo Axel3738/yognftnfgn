@@ -34,6 +34,37 @@ export function datumUrRa(ra) {
   return tolkaDatum(tolkaRubriker(rubrikblock).get('date'));
 }
 
+const VECKODAG = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6, sön: 0, mån: 1, tis: 2, ons: 3, tor: 4, fre: 5, lör: 6 };
+
+/**
+ * Roundcubes visningsdatum i listkolumnen → Date, eller null när formen inte
+ * känns igen. Roundcube (prettydate, avläst hos Loopia 2026-09-21) skriver
+ * "Today 23:28" i dag, "Wed 05:40" inom sex dagar, annars "2026-08-19 17:12";
+ * ett svenskt UI säger "Idag"/"Igår" och veckodagarna på svenska. Tiden är
+ * brevlådans lokala (Europe/Stockholm sätts vid inloggningen) men läses här
+ * som UTC — felet är högst två timmar, och funktionen används bara för att
+ * veta hur långt tillbaka en lista sträcker sig, aldrig som tidsstämpel. Ren.
+ */
+export function tolkaListdatum(text, nu = new Date()) {
+  const s = String(text ?? '').trim();
+  if (!s) return null;
+  let m;
+  if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:\s+(\d{1,2}):(\d{2}))?$/))) return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +(m[4] ?? 0), +(m[5] ?? 0)));
+  const klock = (d, h, min) => { d.setUTCHours(+h, +min, 0, 0); return d; };
+  if ((m = s.match(/^(?:today|idag|i dag)\s+(\d{1,2}):(\d{2})$/i))) return klock(new Date(nu), m[1], m[2]);
+  if ((m = s.match(/^(?:yesterday|igår|i går)\s+(\d{1,2}):(\d{2})$/i))) { const d = new Date(nu); d.setUTCDate(d.getUTCDate() - 1); return klock(d, m[1], m[2]); }
+  if ((m = s.match(/^([a-zåäö]{3})\.?\s+(\d{1,2}):(\d{2})$/i))) {
+    const v = VECKODAG[m[1].toLowerCase()];
+    if (v === undefined) return null;
+    const d = klock(new Date(nu), m[2], m[3]);
+    const steg = (d.getUTCDay() - v + 7) % 7 || 7;   // senaste dagen med det namnet, aldrig i dag
+    d.setUTCDate(d.getUTCDate() - steg);
+    return d;
+  }
+  const t = Date.parse(s);   // ISO (t.ex. ur en testbrevlåda)
+  return Number.isFinite(t) ? new Date(t) : null;
+}
+
 /**
  * Roundcubes listkolumner → en rad som går att visa. Kolumnerna kommer som
  * HTML-fragment (avläst 2026-09-12 och 2026-09-21): `fromto` är

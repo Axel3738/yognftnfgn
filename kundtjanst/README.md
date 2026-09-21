@@ -103,6 +103,16 @@ riktiga IMAP-namnet så att människan får säga `VA-PRIO`. Utkast (steg 8),
 flagga (9) och flytta (10) svarade som källkoden sa. Säger felet `steg 7`–`11`
 är det Loopias Roundcube som ändrat sig igen.
 
+⚠️ **Tråden byggs ur HELA Skickat, inte första sidan** (rättat samma kväll).
+Bäverbutikens Skickat hade 576 mejl på 12 sidor, och VA:ns svar från en vecka
+tillbaka låg på sida 4 och 5 — så två av fyra utkast i första torrkörningen
+gick till kunder som redan hade ett svar från oss. `autosvar.mjs mappIndex`
+läser nu inkorg, Skickat och Drafts sida för sida 30 dagar bakåt, en gång per
+körning (~30 s hos Bäverbutiken: 25 sidor inkorg + 9 sidor Skickat), och
+stannar när en hel sida är äldre än fönstret (`brevlada.tolkaListdatum` läser
+Roundcubes visningsdatum). Taket är 40 sidor per mapp; nås det står det som
+varning i rapporten i stället för att äldre svar tyst försvinner.
+
 **Samma saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
 stdio-MCP-server (JSON-RPC 2.0, en rad per meddelande, noll beroenden) som
 `.mcp.json` i repo-roten registrerar under namnet **`loopia-mail`**. En
