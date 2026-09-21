@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-21",
+  "lage": "oversatt",
+  "marknad": "US",
+  "server": "CaraShell",
+  "kanal": "annons-uppladdning",
+  "gjort": [
+    "US round for the roof cover: 5 rows in the queue, all 5 translated to American English and uploaded live into the active US campaign. All images, no video today. Every row already runs in Norway, so all five moved to Approved.",
+    "Images (Swedish text swapped in place): BOF_107_1 -> ad 120251535696070435 (BOF) | BOF_108_1 -> 120251535705330435 (BOF) | PD_110_1 -> 120251535934370435 (PD) | CS_113_1 -> 120251535969460435 (CS) | BOF_109_1 -> 120251536199230435 (BOF)",
+    "Numbers are the store's own, not converted: $199 (reg. $249), nine sizes 18 to 44 ft, and $0.95 per square foot worked from $199 over about 210 sq ft of roof on a 21-ft trailer. The Swedish per-square-metre price was recalculated, not translated.",
+    "0 HeyGen credits and 0 kie.ai credits."
+  ],
+  "varningar": [
+    "Three Swedish claims were dropped because the American product page does not carry them: the storage bag (BOF_108_1's whole angle was built on it), the drawcord, and the strap details 'all four sides, 2.5 m, adjustable'. BOF_108_1 keeps the off-season angle using what the photo actually shows - the cover folded flat on a shelf. Product memory has banned the bag claim since 2026-09-12 and the page confirmed it again today.",
+    "The uploads landed in the listicle-track campaign, the only ACTIVE US campaign since the owner paused the product-page one. Every new ad inherits that listicle link.",
+    "Meta shows PENDING_REVIEW / IN_PROCESS on fresh ads for a while - normal."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-21 17:05"
+}

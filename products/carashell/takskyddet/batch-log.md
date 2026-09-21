@@ -1547,3 +1547,50 @@ det farliga: en tyst nolla ser ut som ett lugnt svar. Rotorsaken och fixen står
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551599832102076558`,
 ingen ACTION NEEDED.
+## USA-runda 8 2026-09-21 (`/ops-oversatt carashell/takskyddet --marknad US`) — fem bilder live
+
+**Kön:** 5 rader i `SE-ACTIVE to be translated`, alla bild, alla redan live i Norge —
+samtliga fem gick därför till `Approved`. `Approved`-kollen: 44 rader, 0 saknar US-annons.
+Kampanj `1 CARASHELL_US_Taköverdrag … – kopia` `120251451415500435` (ACTIVE, 12 adsets).
+Originalkampanjen står kvar PAUSED med 2 246 kr spend — ägarens beslut, orörd.
+Butiken redo: produktsidan svarar 200 på engelska, $199, 16 recensioner 5,0.
+
+| Spegel (US) | Typ | Adset | US-annons | Röstkoll |
+|---|---|---|---|---|
+| CaraShellRoof_US_BOF_107_1 | bild | CARASHELL_US_BOF | `120251535696070435` | — |
+| CaraShellRoof_US_BOF_108_1 | bild | CARASHELL_US_BOF | `120251535705330435` | — |
+| CaraShellRoof_US_PD_110_1 | bild | CARASHELL_US_PD | `120251535934370435` | — |
+| CaraShellRoof_US_CS_113_1 | bild | CARASHELL_US_CS | `120251535969460435` | — |
+| CaraShellRoof_US_BOF_109_1 | bild | CARASHELL_US_BOF | `120251536199230435` | — |
+
+**Tre svenska påståenden ströks — produktminnet mot marknadens egen sida.**
+`dna.md` förbjuder sedan 2026-09-12 att påstå förvaringspåse, dragsko, vikt eller exakt
+vagnlängd, och den amerikanska produktsidan bekräftade i dag att inget av det står där.
+
+| Rad | Svenskan sa | Amerikanskan säger |
+|---|---|---|
+| `BOF_108_1` (hela vinkeln) | "Ryms i förvaringspåsen som följer med" | "Off-season, it won't take over the garage" + "Folded flat, beside the paint cans" — det fotot faktiskt visar |
+| `PD_110_1` bottenband | "remmar på alla fyra sidor, 2,5 m och justerbara" | "elastic straps hook under the edge" — sidans egen formulering |
+| `CS_113_1` | "58 kr per kvadratmeter", "6,5-meters husvagn" | **$0,95 per square foot**, räknat på $199 / ~210 sq ft, och "21-ft trailer" |
+
+Rabatten räknades om (23 % → 20 %) och priset per yta räknades fram ur sidans egna tal —
+aldrig en omräknad SEK-siffra.
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats, textstorlekarna kalibrerade mot
+SE-radernas uppmätta bredd. ⚠️ **Underraden är 32 px i den här mallen, inte 38 som i
+20/9-batchen** — storleken mäts per batch och ärvs aldrig.
+
+**Två verktygsfynd, båda inbyggda i `forsudda.py`:**
+1. **`utvidga` per ruta.** En 77 px FET rubrik direkt på ett foto, utan egen platta, lämnar
+   en antialias-gloria som tre utvidgningar inte når (2,5 % av rutan över tröskeln på
+   `BOF_108_1`). Sätt `"utvidga": 6–8` på såna rutor.
+2. **`troskel` per ruta.** Glorian låg till 13 % i intervallet 30–60 och rördes aldrig av
+   standardtröskeln 60. `"troskel": 25` tar den.
+
+⚠️ **OCR fångar inte lågkontrastspöken.** `PD_110_1` visade "5,5 till 3 × 13,5 meter."
+tydligt för ögat medan OCR-kontrollen läste bilden som ren. OCR är en bra sista grind mot
+kvarglömd text, men den ersätter inte att titta på bilden i full storlek.
+
+**Notion:** kommentar + `Translated url` på alla fem, alla fem → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551619717293150299`,
+ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-21-us/`.

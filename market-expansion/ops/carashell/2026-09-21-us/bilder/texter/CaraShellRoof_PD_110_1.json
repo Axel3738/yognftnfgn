@@ -1,0 +1,74 @@
+[
+ {
+  "box": [
+   40,
+   58,
+   1040,
+   284
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "radavstand": 1.68,
+  "utvidga": 8,
+  "troskel": 25,
+  "text": "Nine sizes — from 18 to 44 feet."
+ },
+ {
+  "box": [
+   60,
+   316,
+   1020,
+   378
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "From $199."
+ },
+ {
+  "box": [
+   60,
+   1026,
+   1020,
+   1140
+  ],
+  "rader": 2,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.75,
+  "utvidga": 8,
+  "troskel": 25,
+  "text": "Stays put in the wind — elastic straps hook under the edge."
+ },
+ {
+  "box": [
+   306,
+   1226,
+   775,
+   1286
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See all nine sizes."
+ }
+]
