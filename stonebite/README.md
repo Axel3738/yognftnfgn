@@ -180,6 +180,23 @@ helst som kör Node (Railway, Fly, en VPS).
 
 ---
 
+## I drift (2026-09-21)
+
+| | |
+|---|---|
+| Adress | **https://www.stonebite.org** — `stonebite.org` skickas vidare dit (302) |
+| Direktadress | `https://yognftnfgn-production-cfb8.up.railway.app` — felsök alltid här först |
+| Railway | projekt `strong-solace`, tjänst `yognftnfgn`, branch `main`, volym `/data` |
+| DNS | Squarespace (namnservrar `ns-cloud-e*.googledomains.com`) |
+| Mejl | Google Workspace, `MX 1 smtp.google.com` — **rör aldrig MX, SPF, DKIM** |
+
+⚠️ Roten kan inte peka direkt på Railway: Squarespace tillåter inte CNAME på
+`@` och Railway ger ingen A-post. `www` är därför den riktiga adressen.
+
+⚠️ Certifikatet går inte att kontrollera från en claude.ai-container — proxyn
+MITM:ar HTTPS och visar alltid Anthropics eget cert. Kolla i en webbläsare
+eller i Railway → Settings → Domains.
+
 ## Vad som INTE är byggt än
 
 - Ingen glömt-lösenord-funktion (ägaren sätter ett nytt på sidan Konton).
