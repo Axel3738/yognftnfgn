@@ -795,6 +795,45 @@ mejla `kundsupport@baverkoppling.se` — domänen saknar MX-post helt (mätt
 något gått fel. Flera tvister är märkta "no conversation"; en del av dem kan
 vara kunder som faktiskt hörde av sig.
 
+**`kundtjanst/va-sop/` — VA:ns vardags-SOP:ar, filerna är källan och Notion är
+visningen** (byggd 2026-09-21 när spårningssidan låg live i sex butiker men
+SOP:erna fortfarande skickade VA:n till fraktbolaget först). 18 sidor i
+Notion-databasen **"Customer support bäverbutiken"** `3aa270ab-908c-8057-a8a0-cc691d9e956b`,
+skrivna av `node kundtjanst/va-sop/skriv.mjs` (`--torr` först, `--bara <fil>`
+för en sida) enligt `notion.json`.
+
+⚠️ **Mätt vid bygget: varje SOP-rad hade Notions tomma svenska standardmall i
+kroppen** (Bakgrund / Analys / Rekommendationer / Implementering) **och hela
+SOP:en som Word-PDF i egenskapen `Filer och media`.** Ingen kunde söka i dem och
+ingen laddar ner en PDF mitt i ett kundmejl. Texten står nu i sidan; bilagan
+ligger kvar orörd (den är en egenskap, inte block). Skrivaren känner igen exakt
+den mallen och **vägrar skriva över en kropp med annat innehåll** — den hoppar
+och säger varför; `--ersatt-allt` krävs för att ändå köra.
+
+Två sidor bär hela portabiliteten: **`00-STORE-FACTS.md` är den ENDA sidan som
+ändras per brand** (butikstabell, avsändarland, ägarens värden), och
+**`01-TRACKING-PAGE.md`** är uppslagsrutinen som alla leverans-SOP:ar pekar på:
+Shopify-orderns fulfillment-tidslinje (rutinen skriver skanningarna dit varje
+timme) → butikens egna spårningssida → fraktbolagets portal som RESERV. Ingen
+procedurtext nämner ett butiksnamn, en domän, ett fraktbolag eller en adress.
+Hittar du ett värde som måste ändras för ett brand hör det hemma i Store facts.
+Ny butik inför Q4 = duplicera databasen, ändra Store facts, klart.
+
+⚠️ **Kunden får butikens paketnummer (`BB-`/`CS-`/`MS-`) och sidlänken, aldrig
+fraktbolagets nummer** (`YT…`, `4PX…`) — det är bankens, i en tvist. Sidan visar
+däremot sista-bitens fraktbolag med namn, eget nummer och länk när paketet nått
+kundens land (`sparning/sistabiten.mjs`; 432 av 1 055 paket hade inget ännu
+2026-09-20), så bolagets NAMN är inte hemligt — numret är.
+Leveranslöftet är **7–14 kalenderdagar efter fraktmejlet** överallt; "5–10
+arbetsdagar" och handläggningstid i löftet är utrensade. ⚠️ Sexton **⚠️ OWNER**-
+markörer står kvar i texten — sök på ordet i Notion, det är Axels frågelista
+(vem betalar returfrakten, CaraShells "Skickas från Sverige", tull i US/GB/CA/AU/NZ,
+Klarna-tvisternas portal och deadline).
+
+Skild från **`kundtjanst/sop/`**: den är tvisthandboken (chargebacks/inquiries,
+`{{PLATSHÅLLARE}}` ur brandfilen, vakten `npm run sop`). Den här basen är
+vardagen och skickar VA:n vidare dit första timmen.
+
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter
 `LOGO_WORDMARK = 'GRILLKLINIKEN'` och grillfärger, och `package.json` säger
