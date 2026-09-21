@@ -1,0 +1,24 @@
+{
+  "comment": "Spårningssidan i Matstrumpor: /pages/spara. Skriven av sparning/publicera.mjs ur sparning/butiker.json — ändra i registret, inte här. Blocket lage skrivs av publiceringen.",
+  "sida": {
+    "handle": "spara",
+    "titel": "Spåra ditt paket",
+    "template_suffix": null,
+    "markor": "bb-spar",
+    "data_id": "bb-spar-data",
+    "fonster_dagar": null
+  },
+  "butik": {
+    "namn": "Matstrumpor",
+    "url": "https://matstrumpor.se",
+    "support": "kundsupport@matstrumpor.se"
+  },
+  "frakt": {
+    "sparning_vaknar": "2–4 dagar"
+  },
+  "lage": {
+    "sida_publicerad": "2026-09-21",
+    "sida_url": "https://matstrumpor.se/pages/spara",
+    "sida_matt": "48 paket, 640 händelser, 73 kB"
+  }
+}

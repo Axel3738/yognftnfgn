@@ -73,7 +73,11 @@ test('varje butik: tre mallar, balanserad Liquid, eget prefix och egen sida, ing
       assert.ok(m.html.includes('{% else %}{{ order_status_url }}{% endif %}'), `${id}/${m.id}: reserv utan spårningsnummer`);
       assert.ok(m.html.includes(b.reg.support), `${id}/${m.id}: supportadressen`);
       assert.ok(m.html.includes(b.brand.logga_url), `${id}/${m.id}: loggan`);
-      assert.ok(!/baverbutiken|bäverbutiken|TACKIGEN|din-gratisprodukt|kundsupport@/i.test(m.html), `${id}/${m.id}: inget av Bäverbutiken`);
+      // ⚠️ Mönstret var `kundsupport@` utan domän fram till 2026-09-21 och föll
+      // då på Matstrumpor, vars EGEN adress är kundsupport@matstrumpor.se.
+      // Varje förekomst i Bäverbutikens copy är kundsupport@baverbutiken.se,
+      // så domänen ska stå med — annars stoppar testet en riktig butik.
+      assert.ok(!/baverbutiken|bäverbutiken|TACKIGEN|din-gratisprodukt|kundsupport@baverbutiken/i.test(m.html), `${id}/${m.id}: inget av Bäverbutiken`);
       assert.ok(!m.html.includes('shop_app_tracking_url'), `${id}/${m.id}: ingen Shop-knapp`);
       assert.ok(m.html.includes(`<html lang="${b.sprak.kod}">`), `${id}/${m.id}: lang`);
       assert.ok(!/\{\{(förnamn|ordernummer|leverans_fran|leverans_till|support)\}\}/.test(m.amne), `${id}/${m.id}: platshållare i ämnet`);

@@ -1,0 +1,17 @@
+{
+  "comment": "Brandet i Matstrumpors fraktmejl och på spårningssidan. Färgerna är avlästa live ur butikens tema 2026-09-21 (CSS-variablerna i startsidans huvud): accent/knapp 221,130,29 och text 18,18,18. Loggan är temats fil på butikens CDN (orange bokstäver runt en sushi, transparent botten ⇒ vitt sidhuvud). Allt annat — namn, adress, support, prefix, spårningssida, leveranslöfte, språk — läses ur sparning/butiker.json. Bygg: node mejl/bygg-butik.mjs matstrumpor",
+  "farg_rod": "#dd821d",
+  "farg_rod_comment": "Temats --color-button / --color-link (221,130,29). Butiken har ingen röd färg alls — fältet heter så av historiska skäl och betyder 'knappfärgen'.",
+  "farg_svart": "#121212",
+  "farg_ram": "#e4dbc9",
+  "farg_ram_comment": "Temats cream-bakgrund (243,237,226) ett steg mörkare, så ramen syns mot vitt.",
+  "font_rubrik": "'Trebuchet MS',Verdana,Arial,sans-serif",
+  "font_rubrik_comment": "Temats egen rubrikfont är Mochiy Pop P One (Google Fonts) — den finns inte i mejlklienter, så närmaste rundade systemfont används i stället.",
+  "rubrik_versaler": false,
+  "rubrik_fet": true,
+  "sidhuvud_farg": "#ffffff",
+  "logga_url": "https://matstrumpor.se/cdn/shop/files/Namnlos_design_-_2026-03-19T120925.579.png?v=1773918572&width=280",
+  "logga_bredd": 140,
+  "logga_hojd": 79,
+  "meny_klar": false
+}
