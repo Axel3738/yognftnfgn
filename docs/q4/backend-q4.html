@@ -90,6 +90,16 @@
   .ord b { display: block; }
   .ord span { color: var(--dov); }
   .fot { color: var(--dov); font-size: .9rem; }
+  .tabell { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .tabell th, .tabell td { text-align: right; padding: 9px 10px; border-bottom: 1px solid var(--linje); }
+  .tabell th:first-child, .tabell td:first-child { text-align: left; }
+  .tabell thead th { font-size: .85rem; color: var(--dov); text-transform: uppercase; letter-spacing: .04em; border-bottom-width: 2px; }
+  .tabell tbody tr:last-child td { border-bottom: none; }
+  .tabell td.stor { font-weight: 700; font-size: 1.1rem; }
+  .tabell tr.markerad td { background: var(--accent-ljus); }
+  .tabell tr.markerad td:first-child { border-radius: 8px 0 0 8px; }
+  .tabell tr.markerad td:last-child { border-radius: 0 8px 8px 0; }
+  .svepbar { overflow-x: auto; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
@@ -101,7 +111,7 @@
       <div class="sub">Bäverbutiken · siffror ur Shopify och Meta 19 sep · uppdaterad 21 sep 2026</div>
     </div>
     <div class="chips">
-      <span class="pill varn">Svar inne: 0 av 6</span>
+      <span class="pill varn">Svar inne: 1 av 7</span>
       <span class="pill fara">Julgränsen: inte satt</span>
     </div>
   </div>
@@ -170,7 +180,7 @@
       <span class="pill varn">Risk 2</span>
       <h3>Agenten hinner inte skicka</h3>
       <p>Lösningen i år: köpa in lager av topp 3 och lägga det på agentens hylla i Kina.</p>
-      <p class="jmf">Väntar på svar <b>A</b>, <b>2</b> och <b>3</b>.</p>
+      <p class="jmf">Väntar på svar <b>2</b>, <b>3</b> och <b>4</b>. Svar A är inne, se rutan nedan.</p>
       <details><summary>Visa mer</summary><p>Agenten köper varje vara först när kunden beställt. Därför ligger paketet 4 till 5 dagar hos dem. Topp 3 just nu: Taköverdraget 286 st, Fiskespöhållaren 597 st, IBC-överdraget 218 st per månad. Risken: produkten dör och lagret blir liggande. Alla vinnare är bara 3 till 6 veckor gamla.</p></details>
     </div>
     <div class="box varn">
@@ -182,15 +192,48 @@
     </div>
   </div>
 
+  <!-- rad 4b: vad lagret kostar (ur svar A) -->
+  <div class="rad tva">
+    <div class="box">
+      <h2>Vad lager hos agenten kostar oss</h2>
+      <div class="svepbar">
+        <table class="tabell">
+          <thead><tr><th>Lager för topp 3</th><th>Kostar</th><th>Med kredit, betala nu</th></tr></thead>
+          <tbody>
+            <tr><td>2 veckor</td><td class="stor">92 000 kr</td><td>28 000 kr</td></tr>
+            <tr class="markerad"><td>4 veckor</td><td class="stor">183 000 kr</td><td>55 000 kr</td></tr>
+            <tr><td>10 veckor</td><td class="stor">458 000 kr</td><td>137 000 kr</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="jmf">En vecka lager av topp 3 kostar <b>46 000 kr</b>. 10 veckor är nivån en medlem i Evolve körde på samma omsättning som vi.</p>
+      <details><summary>Visa mer</summary>
+        <p>Topp 3 säljer per vecka: Taköverdraget 67 st, Fiskespöhållaren 139 st, IBC-överdraget 51 st. Inköpspriser ur repot: 436 kr, 63 kr och 155 kr.</p>
+        <p>"Med kredit" betyder att vi bara lägger 30 % nu och resten långt senare. Det är exakt det svar A säger är knepet: risken sitter i betalningen, inte i antalet.</p>
+        <p><b>Osäkert:</b> Taköverdragets 436 kr är uträknat, inte avläst på ett kvitto. IBC-överdragets 155 kr har ett konkurrerande tal, 188 kr. Båda ska kvitteras mot Canwangdas faktura.</p>
+      </details>
+    </div>
+    <div class="box">
+      <h2>Det svar A ändrade</h2>
+      <h3>Pengarisken sitter i betalningen, inte i antalet</h3>
+      <p>Rådet från Evolve är inte "köp mindre lager". Det är <b>betala inte allt på en gång</b>.</p>
+      <p class="jmf">En medlem har 20 % vid order, 10 % när varan är klar, 70 % efter 120 dagar. Då har produkten hunnit sälja klart innan sista fakturan ska betalas. Han fick de villkoren efter ett års samarbete och 4 till 6 ordrar.</p>
+      <p class="jmf">Därför är <b>fråga 4 till Canwangda ny</b>: vilka betalningsvillkor kan vi få?</p>
+    </div>
+  </div>
+
   <!-- rad 5: svarstavla -->
   <div class="box">
-    <h2>Svar vi väntar på · 0 av 6 inne</h2>
+    <h2>Svar vi väntar på · 1 av 7 inne</h2>
     <div class="tavla">
       <div class="fraga">
-        <div class="huvud"><span class="nr">A</span><div><h3>Lager hos agenten</h3><div class="till">Evolve-boten</div></div></div>
-        <span class="pill varn">Väntar på svar</span>
-        <div class="svar">Svaret skrivs in här.</div>
-        <details><summary>Frågan och vad vi gör med svaret</summary><p>Hur mycket lager brukar butiker som vår köpa in per produkt inför Q4, hur stor del av pengarna går förlorade när produkten dör, och vad tar agenten betalt för hyllan?</p><p><b>Sen:</b> vi bestämmer hur många veckors försäljning vi vågar köpa in av topp 3.</p></details>
+        <div class="huvud"><span class="nr">A</span><div><h3>Lager hos agenten</h3><div class="till">Evolve-boten · svarat 21 sep</div></div></div>
+        <span class="pill ok">Svar inne, halva frågan</span>
+        <div class="svar" style="border-style:solid;border-color:var(--ok);color:var(--text)">
+          <b>Det vi fick:</b> en medlem på vår omsättning köpte 10 veckors lager inför Q4. Rådet är att inte betala allt på en gång utan förhandla kredit. Exempel: 20 % vid order, 10 % när varan är klar, 70 % efter 120 dagar mot 4 % påslag. Ges oftast efter 4 till 6 ordrar.<br><br>
+          <b>Det vi inte fick:</b> ingen har delat vad agentens hylla kostar, hur mycket lager som blir liggande, eller om lager gör hanteringen snabbare. Boten säger att vi ska fråga medlemmarna direkt i stället för boten.
+        </div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Hur mycket lager brukar butiker som vår köpa in per produkt inför Q4, hur stor del av pengarna går förlorade när produkten dör, och vad tar agenten betalt för hyllan?</p><p><b>Gjort:</b> räknat vad 2, 4 och 10 veckor kostar oss, se rutan ovanför.</p><p><b>Kvar:</b> Axel postar frågan i Evolve-communityn, inte till boten, och Canwangda svarar på fråga 2 och 4.</p></details>
       </div>
       <div class="fraga">
         <div class="huvud"><span class="nr">B</span><div><h3>December och julgränsen</h3><div class="till">Evolve-boten</div></div></div>
@@ -221,6 +264,12 @@
         <span class="pill varn">Väntar på svar</span>
         <div class="svar">Svaret skrivs in här.</div>
         <details><summary>Frågan och vad vi gör med svaret</summary><p>Om vi säljer dubbelt så mycket av topp 3, hur många kan ni leverera per vecka utan kö?</p><p><b>Sen:</b> tak för hur hårt vi skalar varje produkt i november.</p></details>
+      </div>
+      <div class="fraga">
+        <div class="huvud"><span class="nr">4</span><div><h3>Betalningsvillkor</h3><div class="till">Canwangda · ny fråga, kom ur svar A</div></div></div>
+        <span class="pill varn">Väntar på svar</span>
+        <div class="svar">Svaret skrivs in här.</div>
+        <details><summary>Frågan och vad vi gör med svaret</summary><p>Måste vi betala hela lagret i förväg, eller kan vi lägga en del nu och resten om 30, 60 eller 120 dagar?</p><p><b>Sen:</b> avgör om vi köper 2, 4 eller 10 veckors lager. Får vi kredit blir risken mycket mindre och vi kan köpa mer.</p></details>
       </div>
     </div>
   </div>
@@ -258,6 +307,6 @@
     </details>
   </div>
 
-  <div class="fot">Uppdateringar: 21 sep 2026, första versionen. Alla sex svar väntar.</div>
+  <div class="fot">Uppdateringar: 21 sep 2026 — svar A inne från Evolve-boten (halva frågan), kostnadsrutan tillagd, ny fråga 4 till Canwangda om betalningsvillkor. 21 sep 2026 — första versionen.</div>
 
 </main>
