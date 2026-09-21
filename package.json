@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne, redigerardashboard och bildannons-rutinen. Inga externa beroenden.",
+  "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne, redigerardashboard och bildannons-rutinen. Inga externa beroenden. Plus stonebite/: bolagets egen sajt med inloggade dashboards.",
   "scripts": {
     "quota": "node pipeline/quota.mjs",
     "seed": "node dashboard/seed.mjs --force",
     "dash": "node dashboard/build.mjs",
     "status": "node dashboard/cli.mjs status",
     "review": "node dashboard/cli.mjs review-queue",
-    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs kundtjanst/test/*.test.mjs mejl/test/*.test.mjs listicle/test/*.test.mjs pipeline/test/*.test.mjs sparning/test/*.test.mjs",
+    "test": "node --test dashboard/test/*.test.mjs bildannonser/test/*.test.mjs commission/test/*.test.mjs factory/test/*.test.mjs tools/test/*.test.mjs kundtjanst/test/*.test.mjs mejl/test/*.test.mjs listicle/test/*.test.mjs pipeline/test/*.test.mjs sparning/test/*.test.mjs stonebite/test/*.test.mjs",
     "listicle": "node listicle/bygg.mjs",
     "mejl": "node mejl/bygg.mjs",
     "mejl:butiker": "node mejl/bygg-butik.mjs --alla",
@@ -21,7 +21,9 @@
     "kundtjanst:sida": "node kundtjanst/rapportsida.mjs",
     "sjalvtest": "node factory/sjalvtest.mjs",
     "sop": "node kundtjanst/sop-koll.mjs",
-    "tvist": "node kundtjanst/tvistfakta.mjs"
+    "tvist": "node kundtjanst/tvistfakta.mjs",
+    "sida": "node stonebite/server.mjs",
+    "sida:hamta": "node stonebite/hamta.mjs"
   },
   "engines": {
     "node": ">=20"

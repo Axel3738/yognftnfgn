@@ -214,6 +214,70 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ---
 
+## `stonebite/` — bolagets egen sajt med inloggning (NY 2026-09-21)
+
+Stonebite Ecom AB:s webbplats: en **publik sida** (vad bolaget gör, vilka
+butiker vi driver) och ett **inloggat läge** med dashboards för butiker,
+annonser, redigerare, kundtjänst och leverans. Noll npm-beroenden, ingen
+databas, inga externa anrop från sidan. Full dokumentation: `stonebite/README.md`.
+
+```bash
+node stonebite/hamta.mjs     # hämtar data (Shopify + Meta + repot) → data/snapshot.json
+npm run sida                 # startar sajten på http://localhost:4000
+```
+
+**Fyra roller, och rollen avgör vad servern ens svarar på** (`stonebite/roller.mjs`,
+kontrolleras vid varje sidvisning — menyn är bara en spegling):
+
+| Roll | Ser | Ser inte |
+|---|---|---|
+| Ägare | allt + konton | — |
+| Chef | allt utom konton | vem som får logga in |
+| Redigerare | topplistan + sin egen sida | **spend, ROAS, omsättning, break-even, satsen** |
+| Kundtjänst | ärenden, tvister, paket | all ekonomi |
+
+Att redigerare aldrig ser spend är samma järnregel som topplistan (Axels beslut
+2026-09-02). Satsen räknas som spend — med belopp OCH sats går spenden att
+räkna ut baklänges. Ett test i `stonebite/test/server.test.mjs` bevisar spärren
+genom att logga in som redigerare och gissa adresserna.
+
+⚠️ **Hämtning och visning är två olika saker med flit.** `hamta.mjs` skriver
+`stonebite/data/snapshot.json`; servern läser bara filen. En sida som hämtade
+vid varje besök hade tagit minuter och slagit i Metas kod 17. Sidan visar alltid
+när datan hämtades, och varje källa rapporterar sitt eget läge på sidan Drift.
+
+Regler som sitter i koden (och som INTE ska "förenklas" bort):
+- **Valutor summeras aldrig ihop.** SEK, NOK, DKK, EUR står var för sig.
+- **Ingen procent på ett halvt dygn** — dagens tal jämförs aldrig i procent mot
+  gårdagens hela dygn, bara hela veckor mot hela veckor.
+- **"Kvar efter reklam" räknas bara när ALLA butiker gick att läsa.** Reklamen
+  syns alltid (Meta), försäljningen per butik. Saknas en butik blir siffran fel
+  åt minus-hållet — då står det varför i stället.
+- **ROAS kommer ur Meta**, aldrig ur vår egen division omsättning ÷ spend.
+- **Rangordning på vinstbidrag** (`spend × (ROAS ÷ break-even − 1)`, samma formel
+  som ANALYSMETOD omskriven). Break-even läses ur kampanjnamnet — kontot skriver
+  både `BE ROAS 1.63` och `BE-ROAS 1,51`, båda formerna hanteras.
+- **Saknad data skrivs ut med orsak**, aldrig som en nolla.
+
+Butikerna **upptäcks** (sparning/butiker.json + factory/butiker/*.yaml + varje
+`SHOPIFY_SHOP_*` i miljön som har nycklar bredvid sig) — ingen handskriven lista.
+⚠️ Mätt 2026-09-21: 7 av 13 butiker gick att läsa. **Bäverbutiken och UK svarar
+403 "requires merchant approval for read_orders"** — fabrikens app saknar
+godkännande för kunddata, precis som kundtjänsten en gång behövde en egen app.
+Sidan säger det rakt ut i stället för att visa noll.
+
+Säkerhet: scrypt-hashade lösenord, HMAC-signerad kaka (HttpOnly/SameSite/Secure),
+CSRF-nyckel i varje formulär, fem inloggningsförsök per adress och IP, CSP med
+nonce. `STONEBITE_HEMLIGHET` signerar kakorna; `data/anvandare.json` och
+`data/hemlighet.txt` är gitignorerade. **Vid drift måste kontofilen ligga på en
+volym som överlever en deploy** (`STONEBITE_ANVANDARE`) — annars är alla konton
+borta vid nästa version.
+
+Första gången: öppna `/kom-igang` och skapa ägarkontot. Sidan stänger sig själv
+när kontot finns; alla andra konton läggs till inne på sidan Konton.
+
+---
+
 ## Kommandona (Axels gränssnitt)
 
 40 filer i `.claude/commands/` (räknade 2026-09-16). Detta är produkten — resten är stödsystem.
@@ -426,6 +490,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
 | Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
 | Grillklinikens COGS, marginaler och moms (legacy) | `docs/grillkliniken-ekonomi.md` |
+| **Bolagets sajt: publik sida + inloggade dashboards** (stonebite.org) | `stonebite/` — `README.md`, `roller.mjs` (vem ser vad), `hamta.mjs` (datan), `profil.json` (texten på publika sidan) |
 | **Kundmejlen + gratisprodukt-erbjudandet** (Shopify-notiser, kod `TACKIGEN`, kollektion `din-gratisprodukt`) | `mejl/` — `README.md`, `konfig.json`, `copy.json`. ⚠️ Shopify har inget API för notismallar: Axel klistrar in från sidan `/mejl` bygger. Rabattkoden kräver `write_discounts` som appen "Bäver uppladdare" saknar (mätt 2026-09-12) |
 
 ### Produkterna (`products/products.json`)
