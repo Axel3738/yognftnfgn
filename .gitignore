@@ -98,3 +98,5 @@ stonebite/data/anvandare.json
 # — de är kvittot på vad som betalats ut.
 stonebite/data/insatser.jsonl
 stonebite/data/personer-extra.json
+
+factory/output/*/logga-*

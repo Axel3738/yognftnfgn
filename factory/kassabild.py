@@ -130,13 +130,17 @@ def bygg(spec, ut):
     f = spec.get('farger') or {}
     c_text = hex_rgb(f.get('mork'), (34, 40, 46))
     c_stjarna = hex_rgb(f.get('stjarna') or '#F5A623', (245, 166, 35))
-    c_yta = hex_rgb(f.get('yta') or '#FFFFFF', (255, 255, 255))
+    # Kassans header ritar sin egen bakgrund — strippen ska ligga PÅ den,
+    # inte bära en egen vit platta som syns som en rektangel mot en färgad
+    # header. Standard: genomskinlig.
+    yta = str(f.get('yta') or 'transparent').strip().lower()
+    c_yta = (0, 0, 0, 0) if yta == 'transparent' else hex_rgb(yta, (255, 255, 255)) + (255,)
 
     bredd = int(spec.get('bredd') or 560)
     hojd = int(bredd * 0.26)
     skala = 4  # ritas 4× och krymps — kanterna blir mjuka utan antialias-flaggor
     B, H = bredd * skala, hojd * skala
-    bild = Image.new('RGBA', (B, H), c_yta + (255,))
+    bild = Image.new('RGBA', (B, H), c_yta)
     rita = ImageDraw.Draw(bild)
     rita._image = bild
 
@@ -145,8 +149,13 @@ def bygg(spec, ut):
     mitt_y = H // 2
 
     if logga_sokvag and os.path.exists(logga_sokvag):
+        # Butikens RIKTIGA logga (ur temats settings.logo, hämtad av
+        # kassabild.mjs) — aldrig butiksnamnet satt i Liberation Sans.
+        # Axels dom 2026-09-21 på textvarianten: "fitt fult". Loggan får
+        # nästan hela höjden: den är oftast en rund badge.
         logga = Image.open(logga_sokvag).convert('RGBA')
-        mal_h = int(H * 0.46)
+        logga = logga.crop(logga.getbbox() or (0, 0, logga.width, logga.height))
+        mal_h = int(H * 0.84)
         mal_b = max(1, int(logga.width * mal_h / logga.height))
         logga = logga.resize((mal_b, mal_h), Image.LANCZOS)
         bild.alpha_composite(logga, (x, mitt_y - mal_h // 2))
@@ -177,7 +186,7 @@ def bygg(spec, ut):
     sx = delare_x + int(B * 0.045)
     lucka = int(B * 0.025)
     tillgangligt = hoger - sx - lucka - txt_b
-    radie = max(4, min(int(H * 0.17), int(tillgangligt / 11.75)))
+    radie = max(4, min(int(H * 0.14), int(tillgangligt / 11.75)))
     steg = int(radie * 2.35)
     if tillgangligt <= 0:
         raise SystemExit('STOPP — butiksnamnet tar hela bredden, stjärnorna får inte plats. Höj "bredd" i spec:en.')

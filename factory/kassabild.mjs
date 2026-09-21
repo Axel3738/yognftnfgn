@@ -47,6 +47,8 @@ import { lasYaml } from './yaml.mjs';
 import { graphql } from './shopify.mjs';
 import { anslut } from './token.mjs';
 import { laddaUppBild } from './filer.mjs';
+import { hamtaArbetstema, hamtaTemafil } from './shopify.mjs';
+import { lasTemaJson } from './tema.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -87,6 +89,31 @@ export async function hamtaBetyg() {
     try { betyg = Number(JSON.parse(p.betyg?.value ?? 'null')?.value ?? NaN); } catch { betyg = null; }
     return { titel: p.title, handle: p.handle, betyg: Number.isFinite(betyg) ? betyg : null, antal: Number(p.antal?.value ?? 0) || 0 };
   });
+}
+
+/**
+ * Butikens riktiga logga: temats `settings.logo` (shopify://shop_images/<fil>)
+ * → filens CDN-adress → hämtad till disk. Utan den ritar kassabild.py
+ * butiksnamnet i Liberation Sans, och det dömde Axel ut 2026-09-21.
+ * Returnerar null när temat saknar logga — då säger rapporten det.
+ */
+export async function hamtaLogga(utMapp) {
+  const tema = await hamtaArbetstema();
+  const ra = await hamtaTemafil(tema.id, 'config/settings_data.json');
+  const logo = String(lasTemaJson(ra ?? '{}')?.current?.logo ?? '');
+  const m = logo.match(/shop_images\/([^?]+)/);
+  if (!m) return null;
+  const filnamn = m[1];
+  const stam = filnamn.replace(/\.[a-z0-9]+$/i, '');
+  const d = await graphql(`{ files(first: 10, query: "filename:${stam}") { nodes { ... on MediaImage { image { url } } } } }`);
+  const traff = (d.files?.nodes ?? []).map((n) => n.image?.url).find((u) => u && u.includes(`/${filnamn}`));
+  if (!traff) return null;
+  const r = await fetch(traff);
+  if (!r.ok) return null;
+  mkdirSync(utMapp, { recursive: true });
+  const lokal = join(utMapp, `logga-${filnamn}`);
+  writeFileSync(lokal, Buffer.from(await r.arrayBuffer()));
+  return { filnamn, url: traff, lokal };
 }
 
 const bokforing = (butikId) => join(ROT, 'factory', 'output', butikId, 'kassabild.json');
@@ -144,19 +171,21 @@ export async function byggKassabild(butikId, { bredd = 560, ut = null, torr = fa
 
   const namn = String(butik?.butik?.brand ?? butikId);
   const f = butik?.branding?.farger ?? {};
+  const fil = ut ?? join(ROT, 'factory', 'output', butikId, 'kassabild.png');
+  const logga = await hamtaLogga(dirname(fil));
   const spec = {
     namn,
     betyg: vagt.betyg,
     bredd,
-    farger: { mork: f.mork, accent: f.accent, yta: f.bakgrund ?? '#FFFFFF', linje: f.linje, stjarna: '#F5A623' },
+    logga: logga?.lokal ?? '',
+    farger: { mork: f.mork, accent: f.accent, yta: 'transparent', linje: f.linje, stjarna: '#F5A623' },
   };
-  const fil = ut ?? join(ROT, 'factory', 'output', butikId, 'kassabild.png');
   const ritad = rita(spec, fil);
 
-  if (torr) return { butikId, ...vagt, produkterRad: produkter, spec, bild: ritad, drift: d, torr: true };
+  if (torr) return { butikId, ...vagt, produkterRad: produkter, spec, bild: ritad, logga, drift: d, torr: true };
 
   const uppladdad = await laddaUppBild(fil, { alt: `${namn} ${vagt.betyg}`, filnamn: `${butikId}-kassabild.png`, aterandvand: false });
-  const post = { butikId, namn, betyg: vagt.betyg, antal: vagt.antal, antalProdukter: vagt.antalProdukter, bild: ritad, fil: uppladdad, matt: new Date().toISOString().slice(0, 10) };
+  const post = { butikId, namn, betyg: vagt.betyg, antal: vagt.antal, antalProdukter: vagt.antalProdukter, bild: ritad, logga: logga?.filnamn ?? null, fil: uppladdad, matt: new Date().toISOString().slice(0, 10) };
   mkdirSync(dirname(bokforing(butikId)), { recursive: true });
   writeFileSync(bokforing(butikId), `${JSON.stringify(post, null, 2)}\n`);
   return { ...post, produkterRad: produkter, drift: d };
@@ -186,6 +215,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
     console.log(`\nViktat betyg: ${r.betyg} på ${r.antal} recensioner över ${r.antalProdukter} produkter`);
     if (r.drift?.orsak) console.log(`Drift: ${r.drift.glidit ? '⚠️ ' : ''}${r.drift.orsak}`);
     if (r.kolla) process.exit(r.drift?.glidit ? 1 : 0);
+    console.log(`Logga: ${r.logga?.filnamn ?? r.logga ?? '⚠️ SAKNAS i temat — butiksnamnet ritas som text i stället'}`);
     console.log(`Bild: ${r.bild.fil} (${r.bild.bredd}×${r.bild.hojd} px, inga ord)`);
     if (r.torr) { console.log('\nTorrkörning — inget laddades upp.'); process.exit(0); }
     console.log(`Uppladdad: ${r.fil?.url ?? r.fil?.id ?? '(okänt)'}`);

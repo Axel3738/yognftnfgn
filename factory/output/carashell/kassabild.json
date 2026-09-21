@@ -11,11 +11,12 @@
     "betyg": 5,
     "namn": "CaraShell"
   },
+  "logga": "carashell-logga-c.png",
   "fil": {
     "namn": "carashell-kassabild.png",
     "handle": "shopify://shop_images/carashell-kassabild.png",
-    "url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/carashell-kassabild.png?v=1789974674",
-    "id": "gid://shopify/MediaImage/76380673507660"
+    "url": "https://cdn.shopify.com/s/files/1/1092/3107/9756/files/carashell-kassabild.png?v=1790012364",
+    "id": "gid://shopify/MediaImage/76397639041356"
   },
   "matt": "2026-09-21"
 }
