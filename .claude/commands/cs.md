@@ -127,7 +127,7 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - Zip-paketera brieferna (video + image) som i forsta-batch-kommandot.
 - Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
 - Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`) — och kolumnerna **rev** (antal läsningar i `In progress 2`, `okänd` tills raden lästs) och **brief → live (dagar)** (Notion `Skapad` → Metas `created_time`), så regitabellens effekt går att mäta (BRIEF-REGI.md → "Mät från dag 1").
-- **Kommentarerna på top spendern:** `node tools/annonskommentarer.mjs --konto SE --kampanj <id>` skriver `products/<id>/kommentarer.md` (senaste 30 d, kluster per tema). Ett kluster med ≥ 3 kommentarer om samma invändning ⇒ en INVAND-variant i batchen (`kalla=voc`).
+- **Kommentarerna på top spendern:** `node tools/annonskommentarer.mjs --konto SE --kampanj <id>` skriver `products/<id>/kommentarer.md` (senaste 30 d, kluster per tema). Ett kluster med ≥ 3 kommentarer om samma invändning ⇒ en INVAND-variant i batchen (`kalla=voc`). **Vinkelkoden i annonsnamnet är `OB`, aldrig `BOF`** (Axels beslut 2026-09-21: BOF är funnelposition, och med BOF går invändningsannonserna inte att skära ut ur datan — `docs/naming-convention.md`).
 - Committa och pusha alla ändringar i `products/`.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
@@ -146,5 +146,5 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
 - [ ] Varje videobrief: regitabell enligt `docs/os/BRIEF-REGI.md`; varje brief: komponenttaggar + `tro` + `Memo:` + `lardom=L-…`; `node tools/briefgranskning.mjs --rad/--manifest` grön INNAN Notion-raderna skapades (utskriften visad)
 - [ ] Lärdom skriven för varje etiketterad annons i förra batchen (`products/<id>/lardomar.md`), briefer ≤ lärdomar, mixen ur etiketterna redovisad (levande breakthrough ja/nej ⇒ 80/20 åt vilket håll)
-- [ ] `kommentarer.md` uppdaterad för top spendern; kluster ≥ 3 ⇒ INVAND-variant i batchen
+- [ ] `kommentarer.md` uppdaterad för top spendern; kluster ≥ 3 ⇒ INVAND-variant i batchen, namngiven med vinkelkoden `OB`
 - [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade
