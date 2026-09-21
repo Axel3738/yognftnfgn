@@ -34,7 +34,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname, basename } from 'node:path';
 import { lasYaml } from '../factory/yaml.mjs';
-import { envSuffix, losNycklar } from '../factory/token.mjs';
+import { envSuffix, losNycklar, suffixForDoman } from '../factory/token.mjs';
 
 export const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const FABRIKENS_BUTIKER = join(ROT, 'factory', 'butiker');
@@ -80,17 +80,42 @@ export const STANDARD_TVISTER = Object.freeze({
   forsta_svar_timmar: 24,     // {{FIRST_REPLY_TARGET_HOURS}} — svarstidsmålet
 });
 
+/**
+ * Autosvarets inställningar (kundtjanst/autosvar.mjs). Allt som står i ett
+ * svar till en kund kommer härifrån, ur Shopify eller ur 17TRACK — aldrig ur
+ * huvudet. Tomt = autosvaret säger det i --kolla och hoppar den delen.
+ */
+export const STANDARD_SVAR = Object.freeze({
+  autosvar: true,             // false = motorn rör inte brevlådan (flaggar inte heller)
+  sprak: '',                  // sv|nb|da|fi|en — standard ur brand.land när tomt
+  signatur: '',               // "Kundtjänst Bäverbutiken" — tomt = "<Kundtjänst på kundens språk> <brand>"
+  leverans_dagar: [7, 14],    // butikens leveranslöfte, kalenderdagar från skickdagen (mejl/konfig.json frakt)
+  packas_dagar: 2,            // arbetsdagar innan en betald order skickas
+  sparningssida: '',          // https://baverbutiken.se/pages/spara — kundens spårningssida (sparning/butiker.json handle)
+  sparning_prefix: 'BB-',     // bävernumrets prefix på sidan (sparning/butiker.json prefix)
+  va_mapp: 'VA-PRIO',         // mappen ARGA trådar flyttas till — VA:n tar den först
+  svarstid_timmar: 24,        // "vi svarar inom N timmar på vardagar" — måste hållas
+  max_per_korning: 20,        // spärr: fler automatiska svar än så per körning och butik skickas aldrig
+  fonster_timmar: 72,         // hur gamla inkommande mejl som får ett automatiskt svar
+});
+
 /** Vad fabrikens butiksfil ger. Fälten som saknas blir '' — aldrig påhittade. */
 export function brandUrButiksfil(b, id) {
   const bu = b?.butik ?? {};
+  // Fabriksbutiken bär sitt leveranslöfte ("5–10 arbetsdagar") och sin
+  // domän i butiksfilen — autosvaret tar det därifrån om brandfilen tystnar.
+  const lev = String(b?.frakt?.leveranstid ?? '').match(/(\d+)\s*[–-]\s*(\d+)\s*arbetsdag/);
+  const svar = {};
+  if (lev) svar.leverans_dagar = [Math.round(Number(lev[1]) * 1.4), Math.round(Number(lev[2]) * 1.4)];
   return {
     id,
     brand: String(bu.brand ?? '').trim() || id,
     supportmail: String(bu.supportmail ?? '').trim().toLowerCase(),
-    shop: String(b?.judgeme?.shop_domain ?? '').trim().toLowerCase(),
+    shop: String(b?.judgeme?.shop_domain ?? bu.myshopify ?? '').trim().toLowerCase(),
     land: String(bu.land ?? '').trim() || 'SE',
     valuta: String(bu.valuta ?? '').trim() || 'SEK',
     kalla: 'factory/butiker',
+    svar,
   };
 }
 
@@ -121,7 +146,15 @@ export function brandUrEgenfil(b, id) {
     // med. Samma SOP-text körs på alla butiker; det här blocket är det enda
     // som skiljer dem. `node kundtjanst/sop-koll.mjs --lista` visar vilka.
     tvister: b?.tvister ?? {},
+    // Autosvarets inställningar (STANDARD_SVAR) — signatur, leveranslöfte,
+    // spårningssida, VA-mappen.
+    svar: b?.svar ?? {},
   };
+}
+
+/** Butikens eget språk ur landet: SE→sv, NO→nb, DK→da, FI→fi, allt annat en. */
+export function sprakForLand(land) {
+  return { SE: 'sv', NO: 'nb', DK: 'da', FI: 'fi' }[String(land ?? '').toUpperCase()] ?? 'en';
 }
 
 /** Standardvärdena för det som fortfarande är tomt efter sammanslagningen. */
@@ -159,7 +192,7 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
     if (!bas) { karta.set(id, egen); continue; }
     karta.set(id, {
       ...bas,
-      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'shopify', 'tvister', 'kalla'].includes(k))),
+      ...Object.fromEntries(Object.entries(egen).filter(([k, v]) => !(v === '' || v === undefined) && !['mail', 'discord', 'notion', 'trosklar', 'shopify', 'tvister', 'svar', 'kalla'].includes(k))),
       kalla: `${bas.kalla} + kundtjanst/brands`,
       mail: { ...bas.mail, ...egen.mail },
       discord: { ...bas.discord, ...egen.discord },
@@ -167,6 +200,7 @@ export function upptackBrands({ fabrik = FABRIKENS_BUTIKER, egna = EGNA_BRANDS }
       trosklar: { ...bas.trosklar, ...egen.trosklar },
       tvister: { ...(bas.tvister ?? {}), ...egen.tvister },
       shopify: { ...(bas.shopify ?? {}), ...egen.shopify },
+      svar: { ...(bas.svar ?? {}), ...egen.svar },
     });
   }
   return [...karta.values()].map(medStandard).sort((a, b) => a.id.localeCompare(b.id));
@@ -211,7 +245,15 @@ export function korkonfig(brand, env = process.env) {
   // allmänna används bara om den pekar på just det här brandets domän.
   const shopEgen = (env[n.shop] || '').trim().toLowerCase().replace(/^https?:\/\//, '').replace(/\/.*$/, '');
   const shop = shopEgen || brand.shop || (nycklar.shop === brand.shop ? nycklar.shop : '');
-  const perButik = (namn) => env[`${namn}_${n.shopifySuffix}`] ?? env[`${namn}_${brand.id}`] ?? '';
+  // Reservvägen (2026-09-21): finns ingen variabel med brandets eget suffix,
+  // men en SHOPIFY_SHOP_<X> som bär exakt brandets domän, så används den
+  // uppsättningens nycklar (samma uppslag som fabriken: token.mjs
+  // suffixForDoman). Mätt i sessionens container: SHOPIFY_SHOP_NO/DK/FI pekar
+  // på Beverbutikken/Bæverbutiken/Majavakauppa och deras appar har
+  // read_orders, medan KUNDTJANST-nycklarna med brand-suffix saknas där.
+  const domanSuffix = shop ? suffixForDoman(shop, env) : null;
+  const perButik = (namn) => env[`${namn}_${n.shopifySuffix}`] ?? env[`${namn}_${brand.id}`]
+    ?? (domanSuffix && !env[`${namn}_${n.shopifySuffix}`] ? env[`${namn}_${domanSuffix}`] : undefined) ?? '';
   // Shopify CLI:s token (atkn_…) ger ALLTID 401 mot Admin API (factory/token.mjs
   // vet det sedan tidigare; mätt igen 2026-09-12 på Bäverbutiken i en ny
   // container). Den räknas därför inte som token — client credentials från
@@ -230,6 +272,7 @@ export function korkonfig(brand, env = process.env) {
     ...brand,
     trosklar: { ...STANDARD_TROSKLAR, ...(brand.trosklar ?? {}) },
     tvister: { ...STANDARD_TVISTER, ...(brand.tvister ?? {}) },
+    svar: { ...STANDARD_SVAR, ...(brand.svar ?? {}), sprak: String(brand.svar?.sprak ?? '').trim() || sprakForLand(brand.land) },
     mail: {
       host,
       port: Number(m.port) || LOOPIA_IMAP.port,

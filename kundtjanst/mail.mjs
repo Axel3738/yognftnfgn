@@ -1,10 +1,18 @@
-// mail.mjs — CLI:n för supportbrevlådan på Loopia, läs-bara, över webbmejlen.
+// mail.mjs — CLI:n för supportbrevlådan på Loopia, över webbmejlen.
 //
 //   node kundtjanst/mail.mjs kolla                      logga in och ut — funkar nycklarna?
 //   node kundtjanst/mail.mjs mappar                     mappnamnen (INBOX, Sent, Drafts …)
 //   node kundtjanst/mail.mjs lista [--mapp INBOX] [--sida 1] [--antal 20]
 //   node kundtjanst/mail.mjs las <uid> [--mapp INBOX] [--ra] [--max 4000]
 //   node kundtjanst/mail.mjs sok "<ord …>" [--mapp INBOX] [--sidor 4] [--kropp]
+//
+// Skrivning (2026-09-21 — svara, utkast, flagga, flytta; aldrig radera):
+//   node kundtjanst/mail.mjs svara <uid> --visa                    vad svaret skulle bli (till, ämne, citat) — skickar inget
+//   node kundtjanst/mail.mjs utkast <uid> --text "…" [--amne "…"]  sparar svaret i Drafts (torrkörningen)
+//   node kundtjanst/mail.mjs svara <uid> --text "…" [--utan-citat]  SKICKAR i tråden — går inte att ångra
+//   node kundtjanst/mail.mjs flagga <uid> [--av]                    stjärnan på (eller av)
+//   node kundtjanst/mail.mjs flytta <uid> --till VA-PRIO [--skapa]  till en mapp (skapas bara med --skapa)
+//   node kundtjanst/mail.mjs mapp <namn>                            skapa en mapp
 //
 // Gemensamt: --brand <id> (behövs bara när flera brevlådor är konfigurerade),
 // --json (maskinläsbart, det MCP-servern och andra skript vill ha), --tyst.
@@ -26,19 +34,26 @@ export function tolkaArgv(argv) {
     if (!a.startsWith('--')) { val._.push(a); continue; }
     const namn = a.slice(2);
     const nasta = argv[i + 1];
-    if (nasta !== undefined && !nasta.startsWith('--') && !['json', 'ra', 'kropp', 'tyst', 'hjalp', 'help'].includes(namn)) { val[namn] = nasta; i++; }
+    if (nasta !== undefined && !nasta.startsWith('--') && !['json', 'ra', 'kropp', 'tyst', 'hjalp', 'help', 'visa', 'av', 'skapa', 'utan-citat', 'utkast'].includes(namn)) { val[namn] = nasta; i++; }
     else val[namn] = true;
   }
   return val;
 }
 
-const HJALP = `Brevlådan (Loopia webbmejl, läs-bara)
+const HJALP = `Brevlådan (Loopia webbmejl)
 
   node kundtjanst/mail.mjs kolla                          logga in och ut
   node kundtjanst/mail.mjs mappar                         mappnamnen
   node kundtjanst/mail.mjs lista [--mapp INBOX] [--sida 1] [--antal 20]
   node kundtjanst/mail.mjs las <uid> [--mapp INBOX] [--ra] [--max 4000]
   node kundtjanst/mail.mjs sok "<ord …>" [--mapp INBOX] [--sidor 4] [--kropp]
+
+  node kundtjanst/mail.mjs svara <uid> --visa                    vad svaret blir — skickar inget
+  node kundtjanst/mail.mjs utkast <uid> --text "…" [--amne "…"]  spara i Drafts (torrkörning)
+  node kundtjanst/mail.mjs svara <uid> --text "…" [--utan-citat]  SKICKA i tråden (går inte att ångra)
+  node kundtjanst/mail.mjs flagga <uid> [--av]                    stjärnan på/av
+  node kundtjanst/mail.mjs flytta <uid> --till <mapp> [--skapa]   till en mapp
+  node kundtjanst/mail.mjs mapp <namn>                            skapa en mapp
 
   --brand <id>   vilken brevlåda (bara när flera är konfigurerade)
   --json         maskinläsbart
@@ -76,6 +91,29 @@ export async function korKommando(kommando, val, brevlada) {
       if (!fraga) throw new Error('sok behöver ett eller flera ord: node kundtjanst/mail.mjs sok "order 1042"');
       return brevlada.sok(fraga, { mapp: val.mapp, maxSidor: Number(val.sidor) || 4, kropp: Boolean(val.kropp), max: Number(val.max) || 50 });
     }
+    case 'svara':
+    case 'utkast': {
+      const uid = val._[1];
+      if (!uid) throw new Error(`${kommando} behöver ett uid: node kundtjanst/mail.mjs ${kommando} 1234 --text "…"`);
+      if (val.visa) return brevlada.forhandsgranskaSvar(uid, { mapp: val.mapp });
+      if (!val.text) throw new Error(`${kommando} behöver --text "…" (eller --visa för att bara titta).`);
+      return brevlada.svara(uid, { mapp: val.mapp, text: val.text, amne: val.amne ?? null, utkast: kommando === 'utkast' || Boolean(val.utkast), medCitat: !val['utan-citat'] });
+    }
+    case 'flagga': {
+      const uid = val._[1];
+      if (!uid) throw new Error('flagga behöver ett uid: node kundtjanst/mail.mjs flagga 1234 [--av]');
+      return brevlada.flagga(uid, { mapp: val.mapp, av: Boolean(val.av) });
+    }
+    case 'flytta': {
+      const uid = val._[1];
+      if (!uid) throw new Error('flytta behöver ett uid och --till <mapp>: node kundtjanst/mail.mjs flytta 1234 --till VA-PRIO');
+      return brevlada.flytta(uid, { mapp: val.mapp, till: val.till, skapa: Boolean(val.skapa) });
+    }
+    case 'mapp': {
+      const namn = val._.slice(1).join(' ');
+      if (!namn) throw new Error('mapp behöver ett namn: node kundtjanst/mail.mjs mapp VA-PRIO');
+      return brevlada.skapaMapp(namn);
+    }
     default:
       throw new Error(`Okänt kommando "${kommando}".\n\n${HJALP}`);
   }
@@ -102,6 +140,18 @@ export function skrivUt(kommando, r) {
       ].join('\n');
     case 'sok':
       return `${r.traffar.length} träffar på "${r.fraga}" i ${r.mapp} (${r.lasta} mejl lästa, sida 1–${r.sidorLasta} av ${r.sidor}${r.klippt ? ', klippt vid max' : ''})\n\n${radTabell(r.traffar).join('\n')}`;
+    case 'visa':
+      return [`Svar på uid ${r.uid} i ${r.mapp} — inget skickat`, `Från:  ${r.fran}`, `Till:  ${r.till}`, `Ämne:  ${r.amne}`, `Tråd:  ${r.replyMsgid ?? '(In-Reply-To sätts av Roundcube)'}`, '', 'Citatet Roundcube lägger under svaret:', r.citat || '(inget)'].join('\n');
+    case 'svara':
+      return r.typ === 'utkast'
+        ? `📝 Utkast sparat i ${r.utkastMapp ?? 'Drafts'} (uid ${r.utkastUid ?? '?'}) — svar på uid ${r.uid}, till ${r.till}, ämne "${r.amne}". Inget skickat.`
+        : `✉️  Skickat till ${r.till}, ämne "${r.amne}" (svar på uid ${r.uid})${r.sparfel ? ' ⚠️ men kopian kunde inte sparas i Sent' : ''}.`;
+    case 'flagga':
+      return `${r.flaggad ? '🚩 Flaggad' : 'Flagga borttagen'}: uid ${r.uid} i ${r.mapp}.`;
+    case 'flytta':
+      return `📁 uid ${r.uid} flyttad ${r.fran} → ${r.till}${r.skapad ? ' (mappen skapades)' : ''}.`;
+    case 'mapp':
+      return r.fannsRedan ? `Mappen "${r.namn}" fanns redan.` : `📁 Mappen "${r.namn}" skapad. Mappar nu: ${r.mappar.join(', ')}`;
     default:
       return JSON.stringify(r, null, 2);
   }

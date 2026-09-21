@@ -29,6 +29,7 @@ export function normaliseraOrder(o) {
   const fulfillments = Array.isArray(o.fulfillments) ? o.fulfillments : [];
   const sparning = fulfillments.some((f) => f.status !== 'cancelled' && ((f.tracking_numbers ?? []).length > 0 || f.tracking_number));
   const skapad = o.created_at ? new Date(o.created_at) : null;
+  const datum = (v) => { const d = v ? new Date(v) : null; return d && !Number.isNaN(d.getTime()) ? d : null; };
   return {
     id: o.id,
     namn: o.name ?? (o.order_number ? `#${o.order_number}` : ''),
@@ -44,8 +45,27 @@ export function normaliseraOrder(o) {
     total: Number(o.total_price ?? 0),
     valuta: o.currency ?? null,
     taggar: String(o.tags ?? '').split(',').map((s) => s.trim()).filter(Boolean),
+    // Det autosvaret behöver för att svara på "var är min order": varje
+    // sändning med spårningsnummer, bolag och när den skickades. Bara
+    // riktiga sändningar (cancelled hoppas över).
+    sandningar: fulfillments
+      .filter((f) => f.status !== 'cancelled')
+      .map((f) => ({
+        skickad: datum(f.created_at),
+        bolag: f.tracking_company ?? null,
+        nummer: (f.tracking_numbers ?? []).filter(Boolean)[0] ?? f.tracking_number ?? null,
+        lank: (f.tracking_urls ?? []).filter(Boolean)[0] ?? f.tracking_url ?? null,
+        leveransstatus: f.shipment_status ?? null,
+      })),
+    kund: { fornamn: String(o.customer?.first_name ?? o.shipping_address?.first_name ?? o.billing_address?.first_name ?? '').trim() },
+    land: o.shipping_address?.country_code ?? null,
+    produkter: (Array.isArray(o.line_items) ? o.line_items : []).map((l) => ({ titel: l.title, antal: l.quantity })),
   };
 }
+
+// Fälten autosvaret läser — ordern, kunden (förnamnet till hälsningen) och
+// sändningarna. Kundens fulla adress hämtas aldrig hit.
+const SVARSFALT = 'id,name,order_number,email,contact_email,created_at,financial_status,fulfillment_status,fulfillments,refunds,cancelled_at,total_price,currency,tags,customer,shipping_address,line_items';
 
 /** En REST-dispute → platt form. Ren. */
 export function normaliseraTvist(d, ordrar = []) {
@@ -164,6 +184,30 @@ export class ShopifyLasare {
       if (e.status === 404) return null;
       throw e;
     }
+  }
+
+  /**
+   * EN order på dess namn ("#1042" eller "1042"). Shopifys REST-filter `name`
+   * matchar hela namnet. Saknas den: null. Autosvaret slår upp ordernumret
+   * kunden skrev och KRÄVER sen att orderns e-post är kundens — annars ingen
+   * fakta, ingen annan kunds order i ett svar.
+   */
+  async hamtaOrderPaNamn(namn) {
+    const n = String(namn ?? '').trim().replace(/^#/, '');
+    if (!/^\d{3,8}$/.test(n)) return null;
+    const { data } = await this.get(`https://${this.shop}/admin/api/${API_VERSION()}/orders.json?status=any&limit=5&name=${encodeURIComponent(`#${n}`)}&fields=${SVARSFALT}`);
+    const traff = (data.orders ?? []).find((o) => String(o.name ?? '').replace(/^#/, '') === n || String(o.order_number ?? '') === n);
+    return traff ? normaliseraOrder(traff) : null;
+  }
+
+  /** Kundens ordrar (nyast först) på e-postadress, sedan `sedan`. Max 10. */
+  async hamtaOrdrarForEmail(email, sedan) {
+    const e = String(email ?? '').trim().toLowerCase();
+    if (!e.includes('@')) return [];
+    const q = new URLSearchParams({ status: 'any', limit: '10', email: e, fields: SVARSFALT, order: 'created_at desc' });
+    if (sedan) q.set('created_at_min', new Date(sedan).toISOString());
+    const { data } = await this.get(`https://${this.shop}/admin/api/${API_VERSION()}/orders.json?${q}`);
+    return (data.orders ?? []).map(normaliseraOrder).filter((o) => o.email === e).sort((a, b) => (b.skapad?.getTime() ?? 0) - (a.skapad?.getTime() ?? 0));
   }
 
   /** Tvister initierade sedan `sedan`. { tillganglig, lista, orsak }. */

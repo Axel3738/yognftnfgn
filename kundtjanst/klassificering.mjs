@@ -51,7 +51,8 @@ const REGLER = [
     // "inte fått" ensamt är WISMO ("inte fått någon spårning") — här krävs att det är varan/paketet som saknas.
     'aldrig kommit', 'aldrig kom', 'kom aldrig', 'har inte kommit', 'inte kommit fram', 'inte fått (paketet|varan|leveransen|min beställning|min order|ordern|något paket|det|den)',
     'aldrig fått (paketet|varan|leveransen|min beställning|min order|ordern|det|den)', 'har inte mottagit', 'ej mottagit', 'ikke mottatt', 'ikke fått (pakken|varen|noe|bestillingen|ordren)',
-    'aldri kommet', 'ikke kommet', 'ikke modtaget', 'aldrig modtaget', 'not received', 'never arrived', 'never received', 'haven.t received', 'has not arrived', 'hasn.t arrived',
+    // Engelskan kräver också att det är varan/paketet som saknas: "have not received any tracking" är WISMO, inte "aldrig levererad" (rättat 2026-09-21 — autosvaret hade annars lugnat en lugn kund).
+    'aldri kommet', 'ikke kommet', 'ikke modtaget', 'aldrig modtaget', '(not|haven.t|havent|hasn.t|have never) received (the |my |our |any |this )?(parcel|package|order|item|items|goods|product|delivery|it|anything)\\b', 'never arrived', 'never received', 'has not arrived', 'hasn.t arrived',
     'försvunn', 'forsvunn', 'borttappad', 'lost (package|parcel|in the mail|in transit)', '(package|parcel) (is |was |got )?lost', 'tappat bort', 'fått tillbaka till avsändaren',
     'returnerad till avsändaren', 'returned to sender', 'levererad men', 'levert men', 'delivered but', 'inget paket', 'ingen pakke', 'no package',
   ]],

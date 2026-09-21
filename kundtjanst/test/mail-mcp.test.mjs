@@ -42,14 +42,15 @@ test('initialize: förhandlar protokoll, annonserar tools, ger instruktioner', a
   assert.deepEqual((await s.hantera(req(3, 'ping'))).result, {});
 });
 
-test('tools/list: fem läs-bara verktyg med giltiga scheman', async () => {
+test('tools/list: fem läs-bara + fyra skrivande verktyg med giltiga scheman', async () => {
   const s = skapaServer({ env: ENV, oppna: falskBrevlada });
   const r = await s.hantera(req(1, 'tools/list'));
-  assert.deepEqual(r.result.tools.map((t) => t.name), ['mail_brands', 'mail_folders', 'mail_list', 'mail_read', 'mail_search']);
+  assert.deepEqual(r.result.tools.map((t) => t.name), ['mail_brands', 'mail_folders', 'mail_list', 'mail_read', 'mail_search', 'mail_reply', 'mail_draft', 'mail_flag', 'mail_move']);
+  const LASANDE = ['mail_brands', 'mail_folders', 'mail_list', 'mail_read', 'mail_search'];
   for (const t of VERKTYG) {
     assert.equal(t.inputSchema.type, 'object', t.name);
-    assert.equal(t.annotations.readOnlyHint, true, `${t.name} ska vara läs-bart`);
-    assert.equal(t.annotations.destructiveHint, false, t.name);
+    assert.equal(t.annotations.readOnlyHint, LASANDE.includes(t.name), `${t.name} readOnlyHint`);
+    assert.equal(t.annotations.destructiveHint, t.name === 'mail_reply', `${t.name} destructiveHint — bara sändning går inte att ångra`);
     assert.ok(t.description.length > 40, t.name);
   }
   assert.deepEqual(VERKTYG.find((t) => t.name === 'mail_read').inputSchema.required, ['uid']);
@@ -151,7 +152,7 @@ test('den riktiga processen: initialize + tools/list över stdio utan nät', asy
   assert.equal(kod, 0, fel);
   const rader = ut.trim().split('\n').map((r) => JSON.parse(r));
   assert.equal(rader[0].result.serverInfo.name, 'loopia-mail');
-  assert.equal(rader[1].result.tools.length, 5);
-  assert.match(fel, /loopia-mail 1\.0\.0: 5 verktyg/);
+  assert.equal(rader[1].result.tools.length, 9);
+  assert.match(fel, /loopia-mail 1\.1\.0: 9 verktyg/);
   assert.equal(ut.includes('·'), false, 'stdout är bara JSON-RPC');
 });

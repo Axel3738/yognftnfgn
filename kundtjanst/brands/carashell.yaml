@@ -1,0 +1,33 @@
+# CaraShell — OPS-butik byggd av fabriken (factory/butiker/carashell.yaml bär
+# brand, shop och land). Den här filen lägger BARA på det kundtjänsten och
+# autosvaret behöver, och rättar supportadressen.
+#
+# ⚠️ Avsändaren i Shopify byttes 2026-09-20 till hello@carashell.com för alla
+# marknader (Axels beslut, "'.se' skriker utländsk butik för amerikanerna";
+# verifierad 2026-09-21). Fabriksfilen säger fortfarande hello@carashell.se.
+# Kunderna svarar till .com — så det är brevlådan att läsa och svara ur. Både
+# carashell.se och carashell.com har MX på Loopia (mätt 2026-09-21). Svaren
+# till .se måste vidarebefordras till .com hos Loopia (Axels klick, CLAUDE.md).
+# Nyckeln heter KUNDTJANST_MAIL_PASS_CARASHELL (Loopia-lösenordet för .com).
+# Sätt KUNDTJANST_MAIL_USER_CARASHELL om brevlådan ändå är .se.
+#
+# Spårningssidan (sparning/butiker.json): https://carashell.se/pages/spara,
+# bävernumrets prefix CS-. Engelska kunder: sidan byter språk själv på
+# carashell.com, men länken här går till .se — Shopify skickar en amerikansk
+# besökare vidare till .com (302) och sidan är densamma.
+
+brand:
+  supportmail: "hello@carashell.com"
+
+svar:
+  autosvar: true
+  sprak: sv
+  signatur: "Kundtjänst CaraShell"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://carashell.se/pages/spara"
+  sparning_prefix: "CS-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72

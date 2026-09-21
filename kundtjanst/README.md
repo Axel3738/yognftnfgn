@@ -76,21 +76,46 @@ konfigurerade (med en enda väljs den själv), `--tyst` tystar loggen.
 Listningen använder Roundcubes egna listkolumner och hämtar inte råmejlen —
 en sida med 50 mejl tar en sekund. Läsning markerar inte mejlet som läst.
 
-**Samma fem saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
+**Skrivning (2026-09-21, byggd för autosvaret):** samma CLI kan svara i
+tråden, spara utkast, flagga, flytta och skapa en mapp — aldrig radera,
+aldrig markera som läst:
+
+```bash
+node kundtjanst/mail.mjs svara 1650 --visa                     # vad svaret blir: till, ämne, citat — skickar inget
+node kundtjanst/mail.mjs utkast 1650 --text "Hej! …"           # sparar i Drafts (torrkörningen)
+node kundtjanst/mail.mjs svara 1650 --text "Hej! …"            # SKICKAR i tråden — går inte att ångra
+node kundtjanst/mail.mjs flagga 1650 [--av]                    # stjärnan på/av
+node kundtjanst/mail.mjs flytta 1650 --till VA-PRIO --skapa    # till en mapp (skapas bara med --skapa)
+node kundtjanst/mail.mjs mapp VA-PRIO                          # skapa en mapp
+```
+
+Svaret öppnas med Roundcubes eget svarsformulär (`_reply_uid`), så servern
+sätter `In-Reply-To`/`References` själv och tråden hänger ihop i kundens
+klient; kundens mejl citeras under vår text. ⚠️ Skrivvägen är avläst ur
+Roundcubes källkod (master 2026-09-21: `program/actions/mail/{compose,send,
+mark,move}.php`, `settings/folder_save.php`, `app.js submit_messageform`) —
+inte mätt live mot Loopia, för lösenordet saknades i containern som byggde
+den. Första skarpa körningen ska vara `utkast` och kontrolleras i Drafts;
+säger felet `steg 7`–`11` är det Loopias Roundcube som skiljer sig.
+
+**Samma saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
 stdio-MCP-server (JSON-RPC 2.0, en rad per meddelande, noll beroenden) som
 `.mcp.json` i repo-roten registrerar under namnet **`loopia-mail`**. En
 Claude Code-session i repot får då `mail_brands`, `mail_folders`,
-`mail_list`, `mail_read` och `mail_search` som riktiga verktyg — utan att
-komma ihåg en Bash-rad, och utan någon connector på claude.ai (Loopia har
-ingen). Servern håller Roundcube-sessionen levande mellan anropen, loggar in
-igen själv om den gått ut (30 min), kör anropen ett i taget per brevlåda
-(två parallella inloggningar gav 403, mätt 2026-09-21) och loggar ut när
-Claude Code stänger den.
+`mail_list`, `mail_read`, `mail_search` (läsning) och `mail_reply`,
+`mail_draft`, `mail_flag`, `mail_move` (skrivning) som riktiga verktyg — utan
+att komma ihåg en Bash-rad, och utan någon connector på claude.ai (Loopia har
+ingen). `mail_reply` är markerat `destructiveHint` (går inte att ångra);
+`mail_draft` är torrkörningen. Servern håller Roundcube-sessionen levande
+mellan anropen, loggar in igen själv om den gått ut (30 min), kör anropen ett
+i taget per brevlåda (två parallella inloggningar gav 403, mätt 2026-09-21)
+och loggar ut när Claude Code stänger den.
 
-Kräver bara `KUNDTJANST_MAIL_PASS_<ID>` i miljön — `.mcp.json` skickar
-Bäverbutikens vidare uttryckligen; en annan butiks nyckel läggs till där på
-samma sätt. `.claude/settings.json` har `enableAllProjectMcpServers` så
-servern startar utan godkännandeklick i rutinerna.
+Kräver bara `KUNDTJANST_MAIL_PASS_<ID>` i miljön — `.mcp.json` skickar alla
+kända brands nycklar vidare uttryckligen (Bäverbutiken, OPS-butikerna,
+Beverbutikken, Bæverbutiken, Majavakauppa); en ny butiks nyckel läggs till
+där. `.claude/settings.json` har `enableAllProjectMcpServers` så servern
+startar utan godkännandeklick i rutinerna.
 
 Prova för hand: `printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node kundtjanst/mail-mcp.mjs`.
 Skarpt mätt 2026-09-21 mot Bäverbutiken: INBOX 1 574 mejl på 32 sidor,
@@ -99,6 +124,45 @@ listning + sökning på en sida ≈ 2 s, `--kropp` ≈ 0,3 s per mejl.
 ⚠️ Utdata bär kundadresser i klartext — det är ett verktyg för den som redan
 har lösenordet. Maskera (`ka***@gmail.com`) innan något postas i Discord
 eller Notion; rapporterna gör det själva, CLI:n gör det inte.
+
+## Autosvaret: enkla mejl besvaras, arga lugnas, svåra flaggas (`autosvar.mjs`)
+
+Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
+själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
+
+```bash
+node kundtjanst/autosvar.mjs --kolla                                # vad går att läsa/skriva per butik
+node kundtjanst/autosvar.mjs --brand baverbutiken --torr            # svaren som UTKAST i Drafts, inget skickat
+node kundtjanst/autosvar.mjs --brand baverbutiken --skarpt --discord  # skarpt (bara efter 20 rätta utkast i rad)
+node kundtjanst/autosvar.mjs --alla --skarpt --loop 60              # minut-servern: samma kod, om och om igen
+```
+
+Tre hinkar, rena regler (`autosvar/hinkar.mjs`), ingen modell:
+
+| Hink | Vad | Vad motorn gör |
+|---|---|---|
+| **ENKEL** | var är min order, leveranstid, adressbyte före leverans, öppettider | svarar själv med fakta ur Shopify + 17TRACK (`autosvar/fakta.mjs`); saknas fakta ⇒ SVÅR |
+| **ARG** | frustration, hot om bank/ARN/recension, "aldrig fått", trasig vara, tredje mejlet utan svar | Axels lugnande rad (`autosvar/svar.mjs`, X = kundens faktiska problem), flaggar och flyttar till `VA-PRIO` |
+| **SVÅR** | retur, återbetalning, reklamation, tvist, fel vara, allt som inte går att belägga | inget svar, bara flagga |
+| SKIP | autosvar, listmejl, Shopify/Klarna-notiser, butikens egna adresser | rörs inte |
+
+Järnreglerna står i `.claude/commands/autosvar.md` och som tester i
+`test/autosvar.test.mjs`: ett automatiskt svar per tråd någonsin (Sent, Drafts
+OCH loggen `autosvar/logg/<butik>.jsonl` räknas — ett dygns spärr per kund
+dessutom), aldrig på tvistord eller bilagor, aldrig ett löfte
+(`harForbjudet`), aldrig en annan kunds order (orderns e-post måste vara
+avsändarens), kundens språk (sv/nb/da/fi/en), signatur = butikens supportnamn.
+Allt i svaret kommer ur brandfilens `svar:`-block (leveranslöfte, packtid,
+spårningssida, signatur, VA-mapp), ur Shopify (order, sändning, skickdag) eller
+ur 17TRACK (senaste skanningen, gratis läsning — registreras aldrig här).
+Svenska skanningsfraser översätts med `sparning/oversatt.mjs`; engelska
+kunder får fraktbolagets egen rad.
+
+Bäverbutikens Shopify-app för kundtjänsten kräver `SHOPIFY_CLIENT_ID/SECRET_
+BAVERBUTIKEN_EMAILSCRAPER`; saknas de faller `korkonfig` tillbaka på den
+uppsättning `SHOPIFY_SHOP_<X>` som bär butikens domän (`_SE`, `_NO`, `_DK`,
+`_FI` — mätt 2026-09-21: NO/DK/FI-apparna läser ordrar, SE-appen saknar
+`read_orders`).
 
 ## Så hänger det ihop
 

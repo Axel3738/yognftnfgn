@@ -2,10 +2,11 @@
 //
 // Claude Code startar den här filen som en stdio-MCP-server (`.mcp.json` i
 // repo-roten) och får verktygen mail_brands, mail_folders, mail_list,
-// mail_read och mail_search — samma fem saker som CLI:n (kundtjanst/mail.mjs)
-// gör, genom samma bibliotek (kundtjanst/brevlada.mjs). Noll beroenden:
-// MCP:s stdio-transport är JSON-RPC 2.0, ett meddelande per rad, och det
-// räcker med readline + JSON.parse.
+// mail_read, mail_search (läsning) samt mail_reply, mail_draft, mail_flag och
+// mail_move (skrivning, sedan 2026-09-21) — samma saker som CLI:n
+// (kundtjanst/mail.mjs) gör, genom samma bibliotek (kundtjanst/brevlada.mjs).
+// Noll beroenden: MCP:s stdio-transport är JSON-RPC 2.0, ett meddelande per
+// rad, och det räcker med readline + JSON.parse.
 //
 // Varför en egen connector: claude.ai har ingen Loopia-connector, IMAP går
 // inte genom containerns proxy (bara HTTPS, mätt 2026-09-12), och Axel vill
@@ -13,9 +14,12 @@
 // vägen — och den här servern gör den till verktyg i stället för en
 // Bash-rad man måste komma ihåg.
 //
-// LÄS-BARA. Inget verktyg kan markera, flytta, radera eller skicka. Vill
-// någon lägga till det: läs webmail.mjs först — där står varför läsningen
-// är byggd som den är, och skrivning kräver Roundcubes formulär + token.
+// Skrivningen gör fyra saker och inget annat: svara i tråden, spara utkast,
+// flagga, flytta (skapar mappen bara med skapa: true). Ingen radering, ingen
+// läst-markering. mail_reply är det enda som inte går att ångra — det är
+// markerat destructiveHint så klienten kan fråga. Regeln för autosvaret
+// (kundtjanst/autosvar.mjs) är att ALDRIG anropa mail_reply mot en kund förrän
+// tjugo utkast i rad varit rätt (Axels beslut 2026-09-21, steg 5).
 //
 // Regler för stdio-servrar som är lätta att bryta:
 //   • stdout är BARA JSON-RPC. All logg går till stderr (Claude Code visar den
@@ -30,7 +34,7 @@ import { upptackBrands, korkonfig } from './brands.mjs';
 import { skrivUt } from './mail.mjs';
 
 export const PROTOKOLL = ['2025-06-18', '2025-03-26', '2024-11-05'];
-export const SERVER_INFO = { name: 'loopia-mail', title: 'Loopia brevlåda (läs-bara)', version: '1.0.0' };
+export const SERVER_INFO = { name: 'loopia-mail', title: 'Loopia brevlåda (läsa, svara, flagga, flytta)', version: '1.1.0' };
 
 const BRAND_ARG = { type: 'string', description: 'Brand-id (t.ex. "baverbutiken"). Utelämna när bara en brevlåda är konfigurerad — se mail_brands.' };
 const MAPP_ARG = { type: 'string', description: 'Mapp, standard INBOX. Namnen ges av mail_folders (Sent, Drafts, Spam, Trash …).' };
@@ -104,6 +108,80 @@ export const VERKTYG = [
     },
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
   },
+  {
+    name: 'mail_reply',
+    title: 'Svara i tråden (skickar!)',
+    description: 'Svarar på mejlet med uid:t, i samma tråd (Roundcube sätter In-Reply-To/References själv). `text` är vårt svar; kundens mejl citeras under det. SKICKAR PÅ RIKTIGT och går inte att ångra — använd mail_draft för att se resultatet i Drafts först, eller `visa: true` här för att bara se mottagare, ämne och citat utan att skicka. Signatur ingår inte: skriv den i texten.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        brand: BRAND_ARG,
+        uid: { type: 'integer', minimum: 1, description: 'Mejlet som besvaras (uid ur mail_list/mail_search).' },
+        mapp: MAPP_ARG,
+        text: { type: 'string', minLength: 1, description: 'Hela svaret, ren text (inte HTML). Kundens mejl citeras automatiskt efter en tom rad.' },
+        amne: { type: 'string', description: 'Eget ämne. Utelämnat = Roundcubes "Re: …".' },
+        utanCitat: { type: 'boolean', description: 'true = citera inte kundens mejl.' },
+        visa: { type: 'boolean', description: 'true = skicka INTE, returnera bara vad svaret skulle bli (till, ämne, citat).' },
+      },
+      required: ['uid', 'text'],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: true },
+  },
+  {
+    name: 'mail_draft',
+    title: 'Spara svar som utkast',
+    description: 'Samma som mail_reply men sparar i mappen Drafts i stället för att skicka. Det är torrkörningen: VA:n eller Axel läser utkastet i webbmejlen och skickar själv. Returnerar utkastets uid i Drafts.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        brand: BRAND_ARG,
+        uid: { type: 'integer', minimum: 1, description: 'Mejlet som besvaras.' },
+        mapp: MAPP_ARG,
+        text: { type: 'string', minLength: 1, description: 'Hela svaret, ren text.' },
+        amne: { type: 'string', description: 'Eget ämne. Utelämnat = "Re: …".' },
+        utanCitat: { type: 'boolean', description: 'true = citera inte kundens mejl.' },
+      },
+      required: ['uid', 'text'],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
+  },
+  {
+    name: 'mail_flag',
+    title: 'Flagga ett mejl',
+    description: 'Sätter flaggan (\\Flagged — stjärnan i webbmejlen) på mejlet så VA:n ser det. `av: true` tar bort flaggan. Rör aldrig läst/oläst.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        brand: BRAND_ARG,
+        uid: { type: 'integer', minimum: 1, description: 'Mejlet.' },
+        mapp: MAPP_ARG,
+        av: { type: 'boolean', description: 'true = ta bort flaggan.' },
+      },
+      required: ['uid'],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+  },
+  {
+    name: 'mail_move',
+    title: 'Flytta ett mejl till en mapp',
+    description: 'Flyttar mejlet till mappen `till` (t.ex. "VA-PRIO"). Saknas mappen är det ett fel med mappnamnen i texten — skicka `skapa: true` för att skapa den. Mejlet får ett nytt uid i målmappen.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        brand: BRAND_ARG,
+        uid: { type: 'integer', minimum: 1, description: 'Mejlet.' },
+        mapp: MAPP_ARG,
+        till: { type: 'string', minLength: 1, description: 'Målmappen, exakt som mail_folders skriver den.' },
+        skapa: { type: 'boolean', description: 'true = skapa målmappen om den saknas.' },
+      },
+      required: ['uid', 'till'],
+      additionalProperties: false,
+    },
+    annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
+  },
 ];
 
 /** Brands utan hemligheter — det mail_brands svarar. */
@@ -157,6 +235,30 @@ export function skapaServer({ oppna = (id) => oppnaBrevlada(id, { logg }), logg 
         const r = await b.sok(arg.fraga, { mapp: arg.mapp, maxSidor: arg.sidor ?? 4, kropp: Boolean(arg.kropp), max: arg.max ?? 50 });
         return { text: skrivUt('sok', r), data: r };
       }
+      case 'mail_reply': {
+        const b = brevlada(arg.brand);
+        if (arg.visa) {
+          const r = await b.forhandsgranskaSvar(arg.uid, { mapp: arg.mapp });
+          return { text: skrivUt('visa', r), data: r };
+        }
+        const r = await b.svara(arg.uid, { mapp: arg.mapp, text: arg.text, amne: arg.amne ?? null, utkast: false, medCitat: !arg.utanCitat });
+        return { text: skrivUt('svara', r), data: r };
+      }
+      case 'mail_draft': {
+        const b = brevlada(arg.brand);
+        const r = await b.utkast(arg.uid, { mapp: arg.mapp, text: arg.text, amne: arg.amne ?? null, medCitat: !arg.utanCitat });
+        return { text: skrivUt('svara', r), data: r };
+      }
+      case 'mail_flag': {
+        const b = brevlada(arg.brand);
+        const r = await b.flagga(arg.uid, { mapp: arg.mapp, av: Boolean(arg.av) });
+        return { text: skrivUt('flagga', r), data: r };
+      }
+      case 'mail_move': {
+        const b = brevlada(arg.brand);
+        const r = await b.flytta(arg.uid, { mapp: arg.mapp, till: arg.till, skapa: Boolean(arg.skapa) });
+        return { text: skrivUt('flytta', r), data: r };
+      }
       default:
         throw Object.assign(new Error(`Okänt verktyg: ${namn}`), { jsonrpc: -32602 });
     }
@@ -179,7 +281,7 @@ export function skapaServer({ oppna = (id) => oppnaBrevlada(id, { logg }), logg 
             protocolVersion: protokoll,
             capabilities: { tools: { listChanged: false } },
             serverInfo: SERVER_INFO,
-            instructions: 'Läs-bara brevlåda över Loopias webbmejl. Börja med mail_list (nyast först) eller mail_search, läs sedan enskilda mejl med mail_read och uid:t. Kundadresser i svaren är personuppgifter — maskera dem (ka***@gmail.com) innan något postas i Discord eller Notion.',
+            instructions: 'Supportbrevlådan över Loopias webbmejl. Börja med mail_list (nyast först) eller mail_search, läs sedan enskilda mejl med mail_read och uid:t. Skrivning: mail_draft sparar ett svar i Drafts (torrkörning), mail_reply SKICKAR i tråden och går inte att ångra — kör mail_draft först, eller mail_reply med visa: true. mail_flag flaggar, mail_move flyttar (skapa: true skapar mappen). Kundadresser i svaren är personuppgifter — maskera dem (ka***@gmail.com) innan något postas i Discord eller Notion.',
           });
         }
         case 'ping':

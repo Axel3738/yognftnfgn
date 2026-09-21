@@ -8,9 +8,20 @@
 // 1.7 (avläst 2026-09-12: rcversion 10703, skin loopia_elastic) — samma
 // inloggning som brevlådan, och den svarar på port 443.
 //
-// LÄS-BARA: bara inloggning, lista, hämta råkälla (viewsource) och utloggning.
-// Inget markeras som läst (viewsource sätter ingen \Seen-flagga i Roundcube),
-// inget flyttas, inget raderas.
+// LÄSNINGEN är läs-bara: inloggning, lista, hämta råkälla (viewsource) och
+// utloggning markerar inget som läst (viewsource sätter ingen \Seen-flagga i
+// Roundcube), flyttar inget, raderar inget.
+//
+// SKRIVNINGEN (sedan 2026-09-21, kundtjänstverktyget som svarar på enkla mejl)
+// gör exakt fem saker och inget annat: svara på ett mejl, spara svaret som
+// utkast, flagga, flytta till en mapp, skapa en mapp. Ingen radering, ingen
+// "markera som läst", inget nytt mejl utan tråd. Anropen är avlästa ur
+// Roundcubes källkod (github.com/roundcube/roundcubemail, master 2026-09-21:
+// program/actions/mail/{compose,send,mark,move}.php, settings/folder_save.php,
+// program/js/app.js submit_messageform) — INTE mätta live mot Loopia ännu, för
+// lösenordet saknades i den container som byggde dem. Första skarpa körningen
+// ska gå med `node kundtjanst/mail.mjs utkast <uid> --text "…"` och kontrolleras
+// i mappen Drafts innan något skickas.
 //
 // Flödet mot Roundcube:
 //   1. GET  /                           → cookie roundcube_sessid + _token i formuläret
@@ -20,6 +31,17 @@
 //        + header X-Roundcube-Request   → JSON { env: {pagecount…}, exec: "this.add_message_row(uid, {…}, {…}, …);" }
 //   5. GET  /?_task=mail&_action=viewsource&_uid=…&_mbox=…   → råmejlet (text/plain), samma form som IMAP ger
 //   6. GET  /?_task=logout
+//   7. GET  /?_task=mail&_action=compose&_reply_uid=…&_mbox=…  → svarsformuläret: compose_id (rcmail.set_env
+//        eller hidden _id), identiteten (<select name="_from">), _to, "Re: …" i _subject, citatet i <textarea
+//        name="_message">. Servern minns In-Reply-To/References i sessionen (compose.php rad 236–237) och
+//        sätter dem själv vid sändningen — därför hänger tråden ihop utan att vi rör rubrikerna.
+//   8. POST /?_task=mail&_action=send&_unlock=0&_framed=1     → body _token,_id,_from,_to,_subject,_message,
+//        _is_html=0,_draft=""|"1",_draft_saveid,_attachments. Svaret är en liten HTML-sida med
+//        `parent.rcmail.sent_successfully("confirmation", …)` (skickat) eller `parent.rcmail.set_draft_id(<uid>)`
+//        (utkast sparat i Drafts) eller `display_message("…","error")`.
+//   9. POST /?_task=mail&_action=mark&_remote=1&_unlock=0      → body _token,_uid,_mbox,_flag=flagged|unflagged
+//  10. POST /?_task=mail&_action=move&_remote=1&_unlock=0      → body _token,_uid,_mbox,_target_mbox
+//  11. POST /?_task=settings&_action=save-folder&_framed=1     → body _token,_name,_parent="",_mbox=""  (ny mapp)
 //
 // ⚠️ Det här är ett gränssnitt byggt för människor, inte ett API. Byter Loopia
 // Roundcube-version kan något steg sluta stämma. Varje steg kastar därför ett
@@ -117,6 +139,135 @@ export function mapparUrEnv(env) {
   if (Array.isArray(env.mailboxes_list)) return env.mailboxes_list.map(String);
   if (env.mailboxes && typeof env.mailboxes === 'object') return Object.keys(env.mailboxes);
   return [];
+}
+
+// ------------------------------------------------------------------ skrivvägens tolkare (rena)
+
+/** HTML-attributvärde → text (samma entiteter som html_textarea/html_inputfield skriver). */
+function avkodaAttribut(s) {
+  return String(s ?? '')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&amp;/g, '&');
+}
+
+/** Värdet i ett fält med namnet `namn`: <input … name="_x" … value="…"> eller <textarea name="_x">…</textarea>. null om fältet saknas. */
+export function plockaFalt(html, namn) {
+  const s = String(html ?? '');
+  const ta = s.match(new RegExp(`<textarea\\b[^>]*\\bname="${namn}"[^>]*>([\\s\\S]*?)<\\/textarea>`, 'i'));
+  // En radbrytning direkt efter <textarea> hör till HTML-syntaxen, inte till
+  // innehållet (webbläsaren slänger den) — Roundcube skriver citatet så.
+  if (ta) return avkodaAttribut(ta[1].replace(/^\r?\n/, ''));
+  const inp = s.match(new RegExp(`<input\\b[^>]*\\bname="${namn}"[^>]*>`, 'i'));
+  if (inp) {
+    const v = inp[0].match(/\bvalue="([^"]*)"/);
+    return v ? avkodaAttribut(v[1]) : '';
+  }
+  return null;
+}
+
+/** Identiteterna ur <select name="_from">: [{ id, text, vald }]. Tom lista om fältet saknas. */
+export function plockaIdentiteter(html) {
+  const s = String(html ?? '');
+  const sel = s.match(/<select\b[^>]*\bname="_from"[^>]*>([\s\S]*?)<\/select>/i);
+  if (!sel) {
+    const dold = s.match(/<input\b[^>]*\bname="_from"[^>]*\bvalue="([^"]*)"/i);
+    return dold ? [{ id: avkodaAttribut(dold[1]), text: '', vald: true }] : [];
+  }
+  const ut = [];
+  for (const m of sel[1].matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>/gi)) {
+    const v = m[1].match(/\bvalue="([^"]*)"/);
+    ut.push({ id: v ? avkodaAttribut(v[1]) : '', text: avkodaAttribut(m[2]).replace(/\s+/g, ' ').trim(), vald: /\bselected\b/i.test(m[1]) });
+  }
+  return ut;
+}
+
+/**
+ * Svarsformuläret (steg 7) → det vi behöver för att skicka: compose-id,
+ * identitet, mottagare, ämne, citatet Roundcube själv lagt i kroppen.
+ * Kastar med steget om formuläret inte känns igen.
+ */
+export function tolkaKompose(html) {
+  const env = plockaSetEnv(html) ?? {};
+  const id = env.compose_id ?? plockaFalt(html, '_id');
+  if (!id) throw new Error('Svarsformuläret gav inget compose-id (steg 7) — varken rcmail.set_env.compose_id eller hidden _id. Roundcube-versionen kan ha ändrats.');
+  const identiteter = plockaIdentiteter(html);
+  const vald = identiteter.find((i) => i.vald) ?? identiteter[0] ?? null;
+  const till = plockaFalt(html, '_to');
+  if (till === null) throw new Error('Svarsformuläret saknar fältet _to (steg 7). Roundcube-versionen kan ha ändrats.');
+  return {
+    id: String(id),
+    fran: vald ? vald.id : '',
+    identiteter,
+    till: till.replace(/\s+/g, ' ').trim(),
+    amne: plockaFalt(html, '_subject') ?? '',
+    citat: plockaFalt(html, '_message') ?? '',
+    utkastUid: plockaFalt(html, '_draft_saveid') ?? '',
+    arHtml: plockaFalt(html, '_is_html') === '1',
+    replyMsgid: env.reply_msgid ?? null,
+    utkastMapp: env.drafts_mailbox ?? null,
+  };
+}
+
+/**
+ * Argumenten ur ett JS-anrop i ett svar: `namn(a, b, …)` → [a, b, …].
+ * Roundcube skriver argumenten med json_serialize, så det som står mellan
+ * parenteserna är JSON-literaler — de läses som en JSON-array. null om anropet
+ * saknas. Strängar hoppas över när parenteserna räknas.
+ */
+export function jsAnrop(text, namn) {
+  const s = String(text ?? '');
+  const i = s.indexOf(`${namn}(`);
+  if (i === -1) return null;
+  const start = i + namn.length + 1;
+  let djup = 1;
+  let iStrang = false;
+  let j = start;
+  for (; j < s.length; j++) {
+    const c = s[j];
+    if (iStrang) { if (c === '\\') j++; else if (c === '"') iStrang = false; continue; }
+    if (c === '"') iStrang = true;
+    else if (c === '(' || c === '[' || c === '{') djup++;
+    else if (c === ')' || c === ']' || c === '}') { djup--; if (djup === 0) break; }
+  }
+  const inre = s.slice(start, j);
+  try { return JSON.parse(`[${inre}]`); } catch { return inre.trim() ? [inre.trim()] : []; }
+}
+
+/** Felmeddelandet ur `display_message("…","error")` i ett svar (JSON-exec eller framed HTML), annars null. */
+export function felUrSvar(text) {
+  const s = String(text ?? '');
+  for (const m of s.matchAll(/display_message\(\s*"((?:[^"\\]|\\.)*)"\s*,\s*"error"/g)) {
+    try { return JSON.parse(`"${m[1]}"`); } catch { return m[1]; }
+  }
+  // show_message('internalerror','error') i äldre form, eller Roundcubes egen feltext utan JS.
+  if (/"error"\)/.test(s) && /display_message|show_message/.test(s)) return s.replace(/\s+/g, ' ').slice(0, 200);
+  return null;
+}
+
+/**
+ * Sändningens svar (steg 8, framed HTML) → { typ: 'skickat'|'utkast', meddelande, utkastUid, sparfel }.
+ * Kastar med felet Roundcube gav, eller med steget om svaret inte känns igen.
+ */
+export function tolkaSandsvar(html) {
+  const s = String(html ?? '');
+  const fel = felUrSvar(s);
+  if (fel) throw Object.assign(new Error(`Roundcube avvisade sändningen (steg 8): ${fel}`), { kod: 'SANDNING_NEKAD' });
+  const skickat = jsAnrop(s, 'sent_successfully');
+  if (skickat) return { typ: 'skickat', meddelande: String(skickat[1] ?? ''), utkastUid: null, sparfel: skickat[3] === true };
+  const utkast = jsAnrop(s, 'set_draft_id');
+  if (utkast) return { typ: 'utkast', meddelande: (jsAnrop(s, 'display_message') ?? [])[0] ?? '', utkastUid: Number(utkast[0]) || null, sparfel: false };
+  if (/name="_pass"|_task=login/.test(s)) throw new Error('Sändningen gav inloggningssidan (steg 8) — sessionen kan ha gått ut.');
+  throw new Error(`Sändningens svar kändes inte igen (steg 8): varken sent_successfully, set_draft_id eller display_message. Roundcube-versionen kan ha ändrats. Svaret börjar: ${s.replace(/\s+/g, ' ').slice(0, 160)}`);
+}
+
+/** JSON-svaret från mark/move (`_remote=1`) → kastar vid fel, annars { exec }. */
+export function tolkaRemoteSvar(text, { steg, vad }) {
+  let json;
+  try { json = typeof text === 'string' ? JSON.parse(text) : text; } catch { throw new Error(`Roundcube ${vad}-svaret var inte JSON (steg ${steg}) — sessionen kan ha gått ut.`); }
+  const exec = String(json?.exec ?? '');
+  const fel = felUrSvar(exec);
+  if (fel) throw Object.assign(new Error(`Roundcube kunde inte ${vad} (steg ${steg}): ${fel}`), { kod: 'ATGARD_NEKAD' });
+  return { exec, env: json?.env ?? {} };
 }
 
 // ------------------------------------------------------------------ klienten
@@ -230,6 +381,101 @@ export class WebmailKlient {
       if (sida >= sidor) break;
     }
     return ut;
+  }
+
+  // ---------------------------------------------------------------- skrivvägen (steg 7–11)
+
+  /** Läser om mailsidans set_env — mapplistan efter att en mapp skapats. */
+  async uppdateraMappar() {
+    const mail = await this.anrop('?_task=mail&_mbox=INBOX');
+    const env = plockaSetEnv(await mail.text());
+    if (env?.request_token) this.token = env.request_token;
+    this.mappar = mapparUrEnv(env);
+    return this.mappar;
+  }
+
+  /** Steg 7: svarsformuläret för uid i mapp → tolkaKompose(). */
+  async oppnaSvar(mapp, uid) {
+    const q = new URLSearchParams({ _task: 'mail', _action: 'compose', _reply_uid: String(uid), _mbox: mapp });
+    const svar = await this.anrop(`?${q}`);
+    const html = await svar.text();
+    if (!svar.ok) throw new Error(`Roundcube compose gav HTTP ${svar.status} (steg 7) för uid ${uid} i ${mapp}.`);
+    if (/name="_pass"/.test(html) && !/name="_to"/.test(html)) throw new Error('Svarsformuläret gav inloggningssidan (steg 7) — sessionen kan ha gått ut.');
+    const k = tolkaKompose(html);
+    if (!k.till) throw new Error(`Svarsformuläret för uid ${uid} har ingen mottagare (steg 7) — mejlet saknar avsändare, eller Roundcube kände inte igen uid:t.`);
+    return k;
+  }
+
+  /**
+   * Steg 8: skicka (eller spara som utkast) det öppnade svaret.
+   * `kompose` är svaret från oppnaSvar(); `text` är hela kroppen som skickas
+   * (anroparen bestämmer om citatet ska hänga med). `utkast: true` sparar i
+   * Drafts i stället för att skicka — det är --torr-läget.
+   */
+  async skickaSvar(kompose, { text, amne = null, utkast = false } = {}) {
+    if (!kompose?.id) throw new Error('skickaSvar kräver ett öppnat svarsformulär (oppnaSvar).');
+    if (!String(text ?? '').trim()) throw new Error('skickaSvar: texten är tom — ett tomt mejl skickas aldrig.');
+    const form = new URLSearchParams({
+      _token: this.token,
+      _task: 'mail',
+      _action: 'send',
+      _id: kompose.id,
+      _from: kompose.fran ?? '',
+      _to: kompose.till,
+      _cc: '',
+      _bcc: '',
+      _subject: amne ?? kompose.amne ?? '',
+      _message: String(text),
+      _is_html: '0',
+      _draft: utkast ? '1' : '',
+      _draft_saveid: kompose.utkastUid ?? '',
+      _attachments: '',
+      _framed: '1',
+    });
+    const svar = await this.anrop('?_task=mail&_action=send&_unlock=0&_framed=1', { metod: 'POST', kropp: form.toString() });
+    const html = await svar.text();
+    if (svar.status === 403) throw new Error('Roundcube nekade sändningen (403, steg 8) — request_token stämde inte. Roundcube-versionen kan ha ändrats.');
+    if (!svar.ok) throw new Error(`Roundcube send gav HTTP ${svar.status} (steg 8).`);
+    return tolkaSandsvar(html);
+  }
+
+  /** Ett ajax-POST med token i både kropp och header (så som app.js http_post gör). */
+  async remotePost(action, falt, { task = 'mail' } = {}) {
+    const form = new URLSearchParams({ _token: this.token, ...falt });
+    const svar = await this.anrop(`?_task=${task}&_action=${action}&_remote=1&_unlock=0`, { metod: 'POST', kropp: form.toString(), ajax: true });
+    const text = await svar.text();
+    if (svar.status === 403) throw new Error(`Roundcube nekade ${action} (403) — request_token stämde inte. Roundcube-versionen kan ha ändrats.`);
+    if (!svar.ok) throw new Error(`Roundcube ${action} gav HTTP ${svar.status}.`);
+    return text;
+  }
+
+  /** Steg 9: flagga (eller avflagga) ett mejl. */
+  async markera(mapp, uid, flagga = 'flagged') {
+    if (!['flagged', 'unflagged'].includes(flagga)) throw new Error(`markera: bara flagged/unflagged, inte "${flagga}" — läst/oläst/raderat rörs aldrig härifrån.`);
+    const text = await this.remotePost('mark', { _uid: String(uid), _mbox: mapp, _flag: flagga });
+    return tolkaRemoteSvar(text, { steg: 9, vad: 'flagga' });
+  }
+
+  /** Steg 10: flytta ett mejl till en annan mapp. */
+  async flytta(mapp, uid, malMapp) {
+    if (!malMapp || malMapp === mapp) throw new Error(`flytta: målmappen "${malMapp}" är tom eller samma som källan.`);
+    const text = await this.remotePost('move', { _uid: String(uid), _mbox: mapp, _target_mbox: malMapp });
+    return tolkaRemoteSvar(text, { steg: 10, vad: 'flytta' });
+  }
+
+  /** Steg 11: skapa en mapp på toppnivå. Läser om mapplistan efteråt och kräver att mappen syns. */
+  async skapaMapp(namn) {
+    const n = String(namn ?? '').trim();
+    if (!n || /[/.]/.test(n)) throw new Error(`skapaMapp: "${namn}" är inte ett giltigt mappnamn (tomt, eller bär / eller .).`);
+    const form = new URLSearchParams({ _token: this.token, _name: n, _parent: '', _mbox: '', _framed: '1' });
+    const svar = await this.anrop('?_task=settings&_action=save-folder&_framed=1', { metod: 'POST', kropp: form.toString() });
+    const html = await svar.text();
+    if (svar.status === 403) throw new Error('Roundcube nekade save-folder (403, steg 11) — request_token stämde inte.');
+    const fel = felUrSvar(html);
+    if (fel) throw Object.assign(new Error(`Roundcube kunde inte skapa mappen "${n}" (steg 11): ${fel}`), { kod: 'MAPP_NEKAD' });
+    const mappar = await this.uppdateraMappar();
+    if (mappar.length && !mappar.includes(n)) throw new Error(`Mappen "${n}" syns inte i mapplistan efter save-folder (steg 11): ${mappar.join(', ')}. Roundcube-versionen kan ha ändrats.`);
+    return { namn: n, mappar };
   }
 
   /** Första mappen i listan som finns. null om ingen. */

@@ -32,6 +32,22 @@ shopify:
   # SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER.
   env_suffix: "BAVERBUTIKEN_EMAILSCRAPER"
 
+# Autosvaret (kundtjanst/autosvar.mjs). Leveranslöftet är samma som fraktmejlen
+# (mejl/konfig.json frakt: 7–14 dagar, packas 1–2 arbetsdagar, Axels beslut
+# 2026-09-18); spårningssidan är den rutinen bygger varje timme.
+svar:
+  autosvar: true
+  sprak: sv
+  signatur: "Kundtjänst Bäverbutiken"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://baverbutiken.se/pages/spara"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+
 notion:
   # VA:ns SOP-databas "Customer support bäverbutiken" (47 rader, kolumnen
   # Kategori: Payment, Delivery, Return and Refund …), länken Axel gav 2026-09-13.

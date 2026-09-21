@@ -98,6 +98,24 @@ tvister:
   # tvistgenerator.
   forsta_svar_timmar: 24
 
+# Autosvaret (kundtjanst/autosvar.mjs, 2026-09-21): svarar själv på ENKLA mejl
+# (var är min order, leveranstid, adressbyte före leverans, öppettider) med
+# fakta ur Shopify + 17TRACK, lugnar ARGA kunder med Axels mall och flaggar
+# allt SVÅRT till VA:n. Allt som står i ett svar kommer härifrån eller ur
+# systemen — aldrig ur huvudet. Tomma fält = motorn säger det i --kolla.
+svar:
+  autosvar: true              # false = motorn rör inte den här brevlådan alls
+  sprak: ""                   # sv|nb|da|fi|en — kundens språk vinner; tomt = ur brand.land
+  signatur: ""                # "Kundtjänst Bäverbutiken" — tomt = "Kundtjänst <namn>" på kundens språk. ALDRIG "AI"
+  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar)
+  packas_dagar: 2             # arbetsdagar från order till sändning
+  sparningssida: ""           # https://<butik>/pages/spara — kundens spårningssida (sparning/butiker.json). Tomt = ingen länk i svaret
+  sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)
+  va_mapp: VA-PRIO            # mappen ARGA trådar flyttas till — VA:n tar den först. Skapas om den saknas
+  svarstid_timmar: 24         # "vi svarar inom N timmar på vardagar" — måste hållas, annars ljuger svaret
+  max_per_korning: 20         # tak på automatiska svar per körning; resten flaggas
+  fonster_timmar: 72          # mejl äldre än så får aldrig ett automatiskt svar (VA:n har dem)
+
 trosklar:
   arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —
                               # då faller allt obesvarat äldre än en vecka ur rapporten,

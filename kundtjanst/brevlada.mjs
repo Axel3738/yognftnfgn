@@ -9,8 +9,15 @@
 // läst/oläst) och hämtar inte råmejlet — det gör att en sida med 50 mejl tar
 // en sekund i stället för en minut.
 //
-// LÄS-BARA, precis som webmail.mjs: inget markeras som läst, inget flyttas,
-// inget raderas, inget skickas. Roundcubes viewsource sätter ingen \Seen-flagga.
+// Läsningen är läs-bar precis som i webmail.mjs: inget markeras som läst,
+// Roundcubes viewsource sätter ingen \Seen-flagga.
+//
+// SKRIVNINGEN (2026-09-21, autosvaret): svara(), utkast(), flagga(), flytta()
+// och skapaMapp() — fem verb, inget annat. Ingen radering, ingen läst-
+// markering. Varje skrivning läser tillbaka det den kan (utkastets uid,
+// mapplistan) och kastar när Roundcube inte bekräftar. `svara()` bygger
+// kroppen som "vår text + tom rad + Roundcubes eget citat av kundens mejl"
+// så tråden ser ut som ett vanligt svar i kundens klient.
 //
 // Sessionen mot Roundcube dör efter ~30 min utan trafik. Varje metod går via
 // `medSession`, som loggar in vid behov och loggar in IGEN en gång om
@@ -172,8 +179,7 @@ export class Brevlada {
 
   /** Ett mejl, tolkat. `ra: true` ger även råkällan. `maxTecken` klipper texten. */
   async las(uid, { mapp = this.inkorg, ra = false, maxTecken = 0 } = {}) {
-    const n = Number(uid);
-    if (!Number.isInteger(n) || n <= 0) throw new Error(`uid måste vara ett positivt heltal, fick "${uid}".`);
+    const n = kollaUid(uid);
     return this.medSession(async (k) => {
       const rakalla = await k.hamtaRa(mapp, n);
       const m = tolkaMejl(rakalla, { uid: n, mapp });
@@ -218,10 +224,94 @@ export class Brevlada {
     });
   }
 
+  // ---------------------------------------------------------------- skrivningen
+
+  /**
+   * Svarsformuläret för ett mejl, utan att skicka: vem svaret går till, ämnet
+   * Roundcube satt ("Re: …") och citatet. Det autosvaret tittar på innan det
+   * bestämmer sig, och det CLI:n visar med `svara --visa`.
+   */
+  async forhandsgranskaSvar(uid, { mapp = this.inkorg } = {}) {
+    const n = kollaUid(uid);
+    return this.medSession(async (k) => {
+      const kompose = await k.oppnaSvar(mapp, n);
+      return { uid: n, mapp, till: kompose.till, amne: kompose.amne, fran: kompose.identiteter.find((i) => i.id === kompose.fran)?.text ?? kompose.fran, citat: kompose.citat, replyMsgid: kompose.replyMsgid };
+    });
+  }
+
+  /**
+   * Svarar på mejlet `uid` i tråden (In-Reply-To/References sätts av
+   * Roundcube). `text` är vårt svar; citatet hängs på efter en tom rad om
+   * `medCitat` (standard). `utkast: true` sparar i Drafts i stället för att
+   * skicka. Returnerar { typ: 'skickat'|'utkast', till, amne, utkastUid }.
+   */
+  async svara(uid, { mapp = this.inkorg, text, amne = null, utkast = false, medCitat = true } = {}) {
+    const n = kollaUid(uid);
+    const egen = String(text ?? '').replace(/\r\n/g, '\n').trim();
+    if (!egen) throw new Error('svara: texten är tom — ett tomt svar skickas aldrig.');
+    return this.medSession(async (k) => {
+      const kompose = await k.oppnaSvar(mapp, n);
+      const citat = medCitat && kompose.citat.trim() ? `\n\n${kompose.citat.replace(/\r\n/g, '\n').trim()}` : '';
+      const r = await k.skickaSvar(kompose, { text: `${egen}\n${citat}`, amne, utkast });
+      return { uid: n, mapp, typ: r.typ, till: kompose.till, amne: amne ?? kompose.amne, utkastUid: r.utkastUid, sparfel: r.sparfel, meddelande: r.meddelande, utkastMapp: kompose.utkastMapp };
+    });
+  }
+
+  /** Samma som svara() men alltid som utkast i Drafts — --torr-läget. */
+  utkast(uid, val = {}) {
+    return this.svara(uid, { ...val, utkast: true });
+  }
+
+  /** Flaggar (\Flagged) mejlet, eller tar bort flaggan med `av: true`. */
+  async flagga(uid, { mapp = this.inkorg, av = false } = {}) {
+    const n = kollaUid(uid);
+    return this.medSession(async (k) => {
+      await k.markera(mapp, n, av ? 'unflagged' : 'flagged');
+      return { uid: n, mapp, flaggad: !av };
+    });
+  }
+
+  /**
+   * Flyttar mejlet till mappen `till`. Saknas mappen skapas den bara när
+   * `skapa: true` — annars är det ett fel med mappnamnen i texten, så ett
+   * stavfel aldrig ger en ny mapp av misstag.
+   */
+  async flytta(uid, { mapp = this.inkorg, till, skapa = false } = {}) {
+    const n = kollaUid(uid);
+    const mal = String(till ?? '').trim();
+    if (!mal) throw new Error('flytta: ange målmappen med --till <mapp>.');
+    return this.medSession(async (k) => {
+      let skapad = false;
+      if (k.mappar.length && !k.mappar.includes(mal)) {
+        if (!skapa) throw Object.assign(new Error(`Mappen "${mal}" finns inte i brevlådan (${k.mappar.join(', ')}). Skapa den med --skapa, eller välj en som finns.`), { kod: 'MAPP_SAKNAS' });
+        await k.skapaMapp(mal);
+        skapad = true;
+      }
+      await k.flytta(mapp, n, mal);
+      return { uid: n, fran: mapp, till: mal, skapad };
+    });
+  }
+
+  /** Skapar en mapp på toppnivå. Finns den redan: ingen ändring, `fannsRedan: true`. */
+  async skapaMapp(namn) {
+    return this.medSession(async (k) => {
+      const n = String(namn ?? '').trim();
+      if (k.mappar.length && k.mappar.includes(n)) return { namn: n, fannsRedan: true, mappar: [...k.mappar] };
+      const r = await k.skapaMapp(n);
+      return { namn: r.namn, fannsRedan: false, mappar: r.mappar };
+    });
+  }
+
   async loggaUt() {
     if (this.inloggad) await this.klient.loggaUt();
     this.inloggad = false;
   }
+}
+
+function kollaUid(uid) {
+  const n = Number(uid);
+  if (!Number.isInteger(n) || n <= 0) throw new Error(`uid måste vara ett positivt heltal, fick "${uid}".`);
+  return n;
 }
 
 /** ~160 tecken runt första träffen av `ord` i texten — så sökträffen går att bedöma utan att öppna mejlet. */
