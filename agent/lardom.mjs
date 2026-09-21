@@ -12,7 +12,7 @@
 //   BRIEF  — en per brief som skapas i Notion: lardom, typ, parent, koncept,
 //            iteration_nr (räknat ur loggen, aldrig ur huvudet), taggarna.
 //
-//   node agent/lardom.mjs --skelett [--konto SE|NO|alla] [--kampanj <id>] [--idag YYYY-MM-DD] [--ut <fil.md>] [--bara-bedombara]
+//   node agent/lardom.mjs --skelett [--konto SE|NO|alla] [--kampanj <id>] [--idag YYYY-MM-DD] [--ut <fil.md>] [--bara-bedombara] [--utan-turordning]
 //       Skriver ett skelett per ETIKETT-rad som saknar LARDOM-rad: datan är
 //       ifylld ur etikettraden och briefens taggar; sessionen fyller
 //       "Utfört", hypotesen (märkt gissning) och "Nästa annonser".
@@ -148,8 +148,21 @@ export function etiketter(logg) {
   return ut;
 }
 
-/** Etiketterade annonser utan lärdom (punkt 5) — det som INTE är klart. */
-export function oskrivna(logg, { kampanjId = null, adAccountId = null, baraBedombara = false } = {}) {
+/**
+ * Etiketterade annonser utan lärdom (punkt 5) — det som INTE är klart.
+ *
+ * Turordningen är Axels beslut 2026-09-21, i stället för ett briefgolv första
+ * veckan: **kampanjer med en levande breakthrough först, i fallande ordning på
+ * spend.** Skälet är att varje breakthrough utan lärdom blockerar upp till tre
+ * vidarebyggen på en annons som redan bevisat sig — det är den dyraste
+ * blockeringen i kön. Mätt samma dag: 2 378 etiketter saknade lärdom, men bara
+ * 184 var bedömbara, och 9 svenska kampanjer bar en levande breakthrough.
+ *
+ * Inom en kampanj: breakthrough först, sedan bedömbara, sedan spend. Ett golv
+ * på antal briefer avvisades — "ett golv skulle ge briefer som inte pekar på
+ * någonting, och det är precis vad regeln finns för att stoppa".
+ */
+export function oskrivna(logg, { kampanjId = null, adAccountId = null, baraBedombara = false, idag = null, turordning = true } = {}) {
   const skrivna = lardomar(logg);
   const ut = [];
   for (const e of etiketter(logg).values()) {
@@ -159,7 +172,28 @@ export function oskrivna(logg, { kampanjId = null, adAccountId = null, baraBedom
     if (skrivna.has(String(e.annons_id))) continue;
     ut.push(e);
   }
-  return ut.sort((a, b) => (b.spend_ad ?? 0) - (a.spend_ad ?? 0));
+  if (!turordning) return ut.sort((a, b) => (b.spend_ad ?? 0) - (a.spend_ad ?? 0));
+
+  // Kampanjens plats i kön: har den en levande breakthrough, och hur mycket
+  // spend bär dess oskrivna etiketter tillsammans?
+  const perKampanj = new Map();
+  for (const e of ut) {
+    const k = String(e.kampanj_id);
+    if (!perKampanj.has(k)) perKampanj.set(k, { bt: false, spend: 0 });
+    const p = perKampanj.get(k);
+    p.spend += e.spend_ad ?? 0;
+    if (e.etikett === ETIKETT.BREAKTHROUGH && (!idag || (dagarMellan(e.datum, idag) ?? 1e9) <= LEVANDE_DAGAR)) p.bt = true;
+  }
+  const rang = (e) => (e.etikett === ETIKETT.BREAKTHROUGH ? 0 : e.bedombar ? 1 : 2);
+  return ut.sort((a, b) => {
+    const ka = perKampanj.get(String(a.kampanj_id)), kb = perKampanj.get(String(b.kampanj_id));
+    if (ka.bt !== kb.bt) return ka.bt ? -1 : 1;              // breakthrough-kampanjer först
+    if (ka.spend !== kb.spend) return kb.spend - ka.spend;    // sedan störst spend
+    if (String(a.kampanj_id) !== String(b.kampanj_id)) return String(a.kampanj_id) < String(b.kampanj_id) ? -1 : 1;
+    const ra = rang(a), rb = rang(b);
+    if (ra !== rb) return ra - rb;                            // inom kampanjen: bt, bedömbar, resten
+    return (b.spend_ad ?? 0) - (a.spend_ad ?? 0);
+  });
 }
 
 /** BRIEF-rader för en kampanj. */
@@ -577,7 +611,7 @@ async function huvud(argv) {
   if (finns('skelett')) {
     const konto = String(flagga('konto', 'alla')).toUpperCase();
     const kontoId = { SE: '1867947880635861', NO: '1050941584152547' }[konto] ?? null;
-    const lista = oskrivna(logg, { kampanjId: flagga('kampanj'), adAccountId: kontoId, baraBedombara: finns('bara-bedombara') });
+    const lista = oskrivna(logg, { kampanjId: flagga('kampanj'), adAccountId: kontoId, baraBedombara: finns('bara-bedombara'), idag, turordning: !finns('utan-turordning') });
     const ut = [`# Lärdomar att skriva — ${idag}`, '', `${lista.length} etiketterade annonser utan lärdom${kontoId ? ` (${konto})` : ''}. Fyll varje [FYLL I], spara, kör \`node agent/lardom.mjs --skriv <fil>\`. En annons är inte klar förrän raden LARDOM finns.`, ''];
     let perK = null;
     for (const e of lista) {

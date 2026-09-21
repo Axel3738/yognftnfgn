@@ -430,6 +430,22 @@ sedan 2026-09-21 för konverteringsgraden i lärdomen.
    Ingen brief-runda får fler briefer än lärdomar skrivna sedan förra batchen
    (`brieftak` i `agent/lardom.mjs`, punkt 8) — skriv lärdomarna FÖRE
    briefsteget 4b, annars är rundan 0.
+
+   **Turordningen (Axels beslut 2026-09-21, i stället för ett briefgolv):**
+   `--skelett` sorterar sedan dess kön själv — **kampanjer med en levande
+   breakthrough först, i fallande ordning på oskriven spend**, och inom en
+   kampanj breakthrough → bedömbar → resten. Arbeta uppifrån och ned och
+   sluta när morgonen är slut; det som inte hanns med ligger kvar i kön i
+   morgon. `--utan-turordning` ger den gamla rena spend-ordningen.
+   Skälet: varje breakthrough utan lärdom blockerar upp till tre vidarebyggen
+   på en annons som redan bevisat sig — den dyraste blockeringen i kön.
+   Ett golv avvisades av Axel: "ett golv skulle ge briefer som inte pekar på
+   någonting, och det är precis vad regeln finns för att stoppa."
+   **Rapportera det FAKTISKA antalet skrivna lärdomar i leveransen**, aldrig
+   en uppskattning — siffran är hela grunden för brieftaket nästa morgon.
+   *(Utgångsläget 2026-09-21: 2 378 etiketterade annonser utan lärdom, varav
+   bara 184 bedömbara; 41 av de 83 svenska kampanjerna hade inte EN enda
+   bedömbar annons och kan alltså inte producera en lärdom alls.)*
 5. Dag 14 och dag 28 efter etiketten: kör samma steg med `--uppgradering`
    för annonser som fick SPEND_WINNER eller KPI_WINNER — blir de
    BREAKTHROUGH nu skrivs `ETIKETT_UPPGRADERAD`. Ingen etikett ändras annars.
