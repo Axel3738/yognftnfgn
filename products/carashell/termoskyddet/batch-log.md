@@ -767,7 +767,7 @@ blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 1
 - Butiken redo för Norge: 548 NOK läst på `/nb`-sidan.
 - SE är också fortsatt pausad (sedan 2026-09-18), så varken leveransrundan eller
   speglingen fyller på kön.
-- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551613933364842497`, ingen ping.
   Batch: `market-expansion/ops/carashell/2026-09-21-no-termoskyddet/`.
 
 ## 2026-09-21 — `/ops-spegla carashell/termoskyddet` — tom kö, oförändrat, men kön växer bakom stoppet
@@ -783,3 +783,20 @@ blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 1
   **produceras nya creatives för en produkt vars båda marknader är avstängda**. De 27 Approved
   står fortfarande i fel status för en speglad hub (se 2026-09-19) och väntar på `--fran "Approved"`.
 - Pris 559 SEK / 548 NOK läst ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
+
+## 2026-09-21 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, fjärde dagen
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader, 0 saknas i US.
+- **Oförändrat tredje dygnet i rad:** US-kampanjen (`120251442339640435`) PAUSED med samma
+  `updated_time` (2026-09-18 09:34 UTC) och **samma spend, 1 978,33 kr / 0 köp** — identiskt
+  med 19/9 och 20/9, alltså ingen eftersläpande attribution kvar. Kopian
+  (`120251451414990435`) PAUSED sedan 2026-09-17, 616,24 kr / 0 köp. Båda orörda.
+- Alla tre marknaderna (SE, NO, US) är pausade av ägaren. Produkten spenderar ingenting.
+- Läge "US paused by owner": 0 rader hållna, 0 HeyGen-credits, inget uppladdat, ingen
+  Notion-rad rörd. Pris ur butiken: $99.
+- ⚠️ **Mätt i den här körningen: Metas Graph API avvisar `?ids=<a>,<b>`** med "The ids query
+  parameter is deprecated in v26.0+" — även på v21.0. Hämta ett objekt per anrop i stället.
+  Inget skript i repot använder den vägen (enda träffen på `ids=` är en Ads Manager-LÄNK i
+  `tools/test/ops-spegla.test.mjs`, inte ett API-anrop), så ingen kod behövde ändras.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551613933364842497`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-21-us-termoskyddet/`.
