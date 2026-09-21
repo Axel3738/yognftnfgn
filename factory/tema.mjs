@@ -1131,7 +1131,11 @@ export function byggKorgTrygghet({ butik, oversattningar = {}, test = null } = {
   const trust = localeBranch(rad(sv), trustGrenar);
 
   // Decimaltecknet: engelskan skriver 4.8, alla våra andra språk 4,8.
-  const decimal = localeBranch(`{{ opf_betyg | replace: '.', ',' }}`, { en: `{{ opf_betyg }}` });
+  // Alltid EN decimal och " / 5" — "5,0 / 5" läses som ett betyg, ett bart
+  // "5" som en räkning (Axels invändning 2026-09-21: "typ 4,76 / 5 eller nått
+  // trovärdigt"). Siffran är fortfarande mätt: alla 36 recensioner var femmor
+  // den dagen, och första fyran syns här automatiskt som 4,9 / 5.
+  const decimal = localeBranch(`{{ opf_betyg | round: 1 | replace: '.', ',' }} / 5`, { en: `{{ opf_betyg | round: 1 }} / 5` });
 
   const t = text(test);
   const gate = t

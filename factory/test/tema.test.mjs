@@ -818,7 +818,8 @@ test('korgtrygghet: betyget LÄSES ur produktens metafält — aldrig en inskriv
   // Skrivs något av det in i snippeten är det fel dagen efter nästa recension,
   // och det bryter husregeln "hitta aldrig på data".
   assert.equal(/\b(16|20)\s*(recensioner|anmeldelser|reviews|arvostelua)/.test(s), false, 'ett antal står inskrivet i mallen');
-  assert.equal(/>\s*[45][.,]\d\s*</.test(s), false, 'ett betyg står inskrivet i mallen');
+  assert.equal(/>\s*[45][.,]\d\s*(\/ 5)?\s*</.test(s), false, 'ett betyg står inskrivet i mallen');
+  assert.ok(s.includes("round: 1 | replace: '.', ',' }} / 5"), 'betyget skrivs som x,x / 5');
   // Utan betyg ska BARA trygghetsraden synas — aldrig noll stjärnor.
   assert.ok(s.includes('{%- if opf_antal > 0 -%}'), 'stjärnraden ska vara villkorad på att betyg finns');
   assert.ok(s.includes("{% render 'ms-trust-row'"), 'trygghetsraden ska alltid renderas');

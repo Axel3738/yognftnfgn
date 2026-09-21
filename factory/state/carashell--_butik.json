@@ -236,7 +236,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4397/4452"
+          "granskning": "4396/4451"
         },
         "en": {
           "registrerade": 0,
@@ -255,7 +255,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4417/4452"
+          "granskning": "4416/4451"
         },
         "fi": {
           "registrerade": 0,
@@ -274,7 +274,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4406/4452"
+          "granskning": "4405/4451"
         },
         "da": {
           "registrerade": 0,
@@ -293,7 +293,7 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4397/4452"
+          "granskning": "4396/4451"
         }
       }
     },
@@ -324,7 +324,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-21T07:04:49.776Z"
+    "tid": "2026-09-21T23:09:23.990Z"
   },
-  "uppdaterad": "2026-09-21T07:04:49.776Z"
+  "uppdaterad": "2026-09-21T23:09:23.990Z"
 }

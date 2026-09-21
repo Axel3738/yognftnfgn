@@ -173,7 +173,10 @@ def bygg(spec, ut):
     # Siffran — ett tal är samma på alla fem språk. Decimaltecknet är det enda
     # som skiljer (4.8 mot 4,8), så heltal skrivs utan decimal och resten med
     # den svenska kommateringen: kassans största marknad är Sverige.
-    txt = str(int(betyg)) if betyg == int(betyg) else f'{betyg:.1f}'.replace('.', ',')
+    # Alltid en decimal + " / 5" — "5,0 / 5" läses som ett betyg, ett bart "5"
+    # som en räkning (Axels invändning 2026-09-21). Kommat är svenskt: kassans
+    # största marknad. Siffran är fortfarande mätt, aldrig vald.
+    txt = f'{betyg:.1f}'.replace('.', ',') + ' / 5'
     tf = typsnitt(int(H * 0.26))
     txt_b = rita.textlength(txt, font=tf)
 
