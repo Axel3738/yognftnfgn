@@ -79,6 +79,26 @@ engelska och behåller `?nummer=` — språkroutingen i mallen är rätt.
 Nuvarande ämnesrad på servern är ren text `Ditt paket är på väg`; den nya är
 Liquid-raden (227 tecken).
 
+## ⚠️ Utfall 5 — Axel klistrade in själv (2026-09-21 07:44–07:46 CEST): 2 av 3 rätt, mall 3 i FEL mall
+
+Väg B fungerade: Cowork läste serverns EmailTemplate-data och sha256-jämförde
+mot råfilerna. `shipping_confirmation` 41 115 ✅ och `shipping_update` 24 402 ✅,
+ämnesraderna (Liquid) ✅, `CS-`/`sha256`/`country_code` i alla. **Men
+`ute_for_leverans.liquid` (24 394) hamnade i `local_out_for_delivery` = "Order
+ute för lokal leverans"**, och "Ute för leverans" (`out_for_delivery`) står
+kvar på Shopifys standardmall. Orsak: Shopifys interna `name` för
+lokal-leverans-mallen är bokstavligen "Out for delivery" — bara `displayName`
+skiljer. Följd tills det rättas: lokal-leverans-kunder får flygfraktsmejlet,
+riktiga ute-för-leverans-kunder får standardmallen utan spårningslänk.
+Rättning (Axels klick): lägg filen i "Ute för leverans", och **Återgå till
+standard** i "Order ute för lokal leverans" (`versions: 2`, standarden finns
+kvar). Testmejl C skickat och framme 05:50:57Z: **engelskt** ("Your parcel is
+on its way", en knapp Track your parcel → carashell.com/pages/spara?nummer=CS-…)
+eftersom Shopifys testorder har ett engelskt country_code — den svenska
+grenen testas först av en riktig svensk order. Avsändaren i testmejlet är
+Shopifys relä `store+…@g.shopifyemail.com`; skarpa utskick ska gå från
+hello@carashell.com (Autentiserad) — kolla på nästa riktiga order.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
