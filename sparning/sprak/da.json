@@ -160,6 +160,7 @@
     "Paketet har kommit till omlastningsorten": "Pakken er ankommet til omladningsstedet",
     "Uppgifterna om paketet innehöll ett fel och har skickats om till fraktbolaget": "Oplysningerne om pakken indeholdt en fejl og er sendt igen til fragtfirmaet",
     "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat": "Postnummeret på pakken var forkert. Pakken sendes videre til dig, men kan blive forsinket",
-    "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke leveres, fordi der manglede navn på postkassen. Den er på vej til et afhentningssted nær dig, og du får besked, når den kan afhentes, normalt inden for én hverdag"
+    "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke leveres, fordi der manglede navn på postkassen. Den er på vej til et afhentningssted nær dig, og du får besked, når den kan afhentes, normalt inden for én hverdag",
+    "Paketet fick inte plats i brevlådan och kunde inte lämnas vid dörren eftersom namn saknades. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke være i postkassen og kunne ikke leveres ved døren, fordi navnet manglede. Den er på vej til et afhentningssted i nærheden af dig, og du får besked, når den kan hentes, som regel inden for én hverdag"
   }
 }
