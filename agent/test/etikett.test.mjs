@@ -131,3 +131,18 @@ test('hjälpare: dagarMellan, arBof, hook/hold ur råa fält', () => {
   assert.equal(a.hold_rate, 0.05);
   assert.equal(a.roas, 0);
 });
+
+test('osäker: spend winner med KPI men utan budgethistorik märks, gissas aldrig upp till breakthrough', () => {
+  const e = etikettera(annons(), { ...kampanj, budgetHojd: null });
+  assert.equal(e.etikett, ETIKETT.SPEND_WINNER);
+  assert.equal(e.osaker_breakthrough, true);
+  // Under break-even: vanlig spend winner, inte osäker.
+  assert.equal(etikettera(annons({ roas: 1.2 }), { ...kampanj, budgetHojd: null }).osaker_breakthrough, undefined);
+  const logg = [
+    { kod: 'ETIKETT', datum: '2026-09-21', ad_account_id: '1', kampanj_id: 'K', kampanj_namn: 'T | BE', annons_id: 'x', annons_namn: 'T_PD_1_1', etikett: 'SPEND_WINNER', osaker_breakthrough: true },
+    { kod: 'ETIKETT', datum: '2026-09-21', ad_account_id: '1', kampanj_id: 'K', kampanj_namn: 'T | BE', annons_id: 'y', annons_namn: 'T_PD_2_1', etikett: 'LOSER' },
+  ];
+  const [g] = breakthroughFrekvens(logg);
+  assert.equal(g.osakra, 1);
+  assert.equal(g.frekvens, '0/2');
+});

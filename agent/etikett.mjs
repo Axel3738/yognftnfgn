@@ -148,6 +148,12 @@ export function etikettera(a, k) {
   if ((overTroskel || ut.nara_grans) && k.budgetHojd === true && hallerKpi) {
     return { ...ut, etikett: ETIKETT.BREAKTHROUGH };
   }
+  // Budgethistoriken saknas (null): annonsen hade spenden och KPI:n, men om
+  // kampanjen höjdes går inte att veta — budgetloggen börjar 2026-08-28.
+  // Etiketten blir SPEND_WINNER, märkt osäker, aldrig gissad uppåt.
+  if (overTroskel && hallerKpi && k.budgetHojd === null) {
+    return { ...ut, etikett: ETIKETT.SPEND_WINNER, osaker_breakthrough: true, orsak: 'budgethistorik saknas i fönstret — kan ha varit breakthrough' };
+  }
   if (overTroskel) return { ...ut, etikett: ETIKETT.SPEND_WINNER };
   if (kpi) return { ...ut, etikett: ETIKETT.KPI_WINNER };
   return { ...ut, etikett: ETIKETT.LOSER };
@@ -268,7 +274,9 @@ export function raknaEtiketter(jobb, logg = [], { uppgradering = false } = {}) {
       bedombar: e.bedombar,
       preliminar: e.preliminar,
       nara_grans: e.nara_grans,
+      osaker_breakthrough: e.osaker_breakthrough === true,
       orsak: e.orsak ?? null,
+      ...(jobb.backfill ? { backfill: true } : {}),
       // ALDRIG ny_budget: dagarSedanAndring räknar varje rad med det fältet som
       // en budgetändring och skulle frysa kampanjen i tre dygn.
       genomford: true,
@@ -296,6 +304,7 @@ export function breakthroughFrekvens(logg, { kampanjId = null } = {}) {
     perAnnons.set(nyckel, {
       kampanj_id: r.kampanj_id, kampanj_namn: r.kampanj_namn, batch: r.batch ?? null,
       etikett: tidigare?.etikett === ETIKETT.BREAKTHROUGH || arBt ? ETIKETT.BREAKTHROUGH : r.etikett,
+      osaker: r.osaker_breakthrough === true && !arBt && tidigare?.etikett !== ETIKETT.BREAKTHROUGH,
       ad_account_id: r.ad_account_id,
     });
   }
@@ -303,12 +312,12 @@ export function breakthroughFrekvens(logg, { kampanjId = null } = {}) {
   for (const a of perAnnons.values()) {
     const key = `${a.ad_account_id}|${a.kampanj_id}`;
     if (!grupper.has(key)) {
-      grupper.set(key, { ad_account_id: a.ad_account_id, kampanj_id: a.kampanj_id, kampanj_namn: a.kampanj_namn, antal: 0, breakthroughs: 0, spend_winners: 0, kpi_winners: 0, losers: 0, ingen_leverans: 0, batcher: new Map() });
+      grupper.set(key, { ad_account_id: a.ad_account_id, kampanj_id: a.kampanj_id, kampanj_namn: a.kampanj_namn, antal: 0, breakthroughs: 0, osakra: 0, spend_winners: 0, kpi_winners: 0, losers: 0, ingen_leverans: 0, batcher: new Map() });
     }
     const g = grupper.get(key);
     g.antal += 1;
     if (a.etikett === ETIKETT.BREAKTHROUGH) g.breakthroughs += 1;
-    else if (a.etikett === ETIKETT.SPEND_WINNER) g.spend_winners += 1;
+    else if (a.etikett === ETIKETT.SPEND_WINNER) { g.spend_winners += 1; if (a.osaker) g.osakra += 1; }
     else if (a.etikett === ETIKETT.KPI_WINNER) g.kpi_winners += 1;
     else if (a.etikett === ETIKETT.INGEN_LEVERANS) g.ingen_leverans += 1;
     else if (a.etikett === ETIKETT.LOSER) g.losers += 1;
@@ -352,7 +361,7 @@ const dec = (x) => (x === null || x === undefined ? '—' : Number(x).toFixed(2)
 export function formateraTabell(rader) {
   const ut = ['| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |', '|---|---|---|---|---|---|---|---|---|---|'];
   for (const r of rader) {
-    ut.push(`| ${r.annons_namn} | ${r.batch ?? '—'} | ${r.typ ?? '—'} | **${r.etikett}**${r.nara_grans ? ' ⚠ nära 30 %' : ''} | ${pct(r.andel)} | ${Math.round(r.spend_ad ?? 0)} kr | ${r.kop} | ${dec(r.roas_ad)} / ${dec(r.roas_kampanj)} | ${r.bedombar ? (r.preliminar ? 'ja (prel.)' : 'ja') : 'nej'} | ${playbookLasning(r)} |`);
+    ut.push(`| ${r.annons_namn} | ${r.batch ?? '—'} | ${r.typ ?? '—'} | **${r.etikett}**${r.osaker_breakthrough ? ' ⚠ osäker (kan vara breakthrough)' : ''}${r.nara_grans ? ' ⚠ nära 30 %' : ''} | ${pct(r.andel)} | ${Math.round(r.spend_ad ?? 0)} kr | ${r.kop} | ${dec(r.roas_ad)} / ${dec(r.roas_kampanj)} | ${r.bedombar ? (r.preliminar ? 'ja (prel.)' : 'ja') : 'nej'} | ${playbookLasning(r)} |`);
   }
   return ut.join('\n');
 }
@@ -362,7 +371,8 @@ export function formateraFrekvenser(grupper) {
   const ut = ['Breakthrough-frekvens (BREAKTHROUGH / alla etiketterade utom BOF):'];
   for (const g of grupper) {
     const namn = String(g.kampanj_namn).split('|')[0].trim();
-    ut.push(`  ${namn}: ${g.frekvens} — spend winners ${g.spend_winners}, KPI winners ${g.kpi_winners}, losers ${g.losers}, ej levererade ${g.ingen_leverans}`);
+    const osakra = g.osakra ? ` (varav ${g.osakra} OSÄKRA — budgethistorik saknas, kan ha varit breakthrough)` : '';
+    ut.push(`  ${namn}: ${g.frekvens} — spend winners ${g.spend_winners}${osakra}, KPI winners ${g.kpi_winners}, losers ${g.losers}, ej levererade ${g.ingen_leverans}`);
     for (const b of g.batcher) ut.push(`      batch ${b.batch}: ${b.frekvens}`);
   }
   return ut.join('\n');
