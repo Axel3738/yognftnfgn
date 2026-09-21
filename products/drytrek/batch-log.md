@@ -1315,3 +1315,44 @@ Underlag: `factory/output/drytrek/budgetrond-2026-09-21.json`.
 **Norge 2026-09-21 (översättningsrutinen):** Fjärde dygnet oförändrat. NO-kampanjen
 PAUSED med 8 476 kr (samma tal tredje dagen i rad), kön 0 rader, priset 381 NOK
 (380 i går — kursen rör sig, avläsningen följer med). Ingenting rört.
+
+## 2026-09-21 — leveransrunda: rättelse, gårdagens nolla var Metas fel
+
+Oförändrat i sak: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+Kontot läser 730 annonser / 25 kampanjer. Tio `Damasker_*`-källrader ligger kvar
+parkerade i `Creative strat review` och rörs inte.
+
+**Rättelse.** I går skrev jag att Norges 7-dagarsfönster var "helt tomt — 0 kr" och
+drog slutsatser av det. Det var inte tomt. I dag läser samma fönster 4 209 kr, och
+ett rullande fönster kan inte fyllas på igen — alltså var gårdagens 0 fel data från
+Meta, inte ett fönster som tömts. Jag läste dag för dag i dag för att vara säker:
+
+| Kampanj | Sista dagen med spend | Belopp |
+|---|---|---|
+| NO | 2026-09-18 | 420,59 kr |
+| SE | 2026-09-15 | 487,39 kr |
+
+Dagssummorna 14–20 sep stämmer exakt mot `last_7d` i dag (NO 4 209,01 kr,
+SE 1 026,91 kr). Ingenting saknas i kontot.
+
+**Lärdomen ovanpå gårdagens:** ett rullande fönster är inte bara oläsbart som
+trend — det går också att få en ren felavläsning ur det utan att något ser trasigt
+ut. En nolla från Meta ska korskollas mot `time_increment: 1` innan den skrivs ner
+som ett faktum. Gårdagens rad i den här loggen står kvar som den skrevs; det här
+är rättelsen, inte en omskrivning.
+
+**Livstidstalen — det enda som inte rör sig av sig själv:**
+
+| Marknad | Spend | Köp | ROAS | CPA | Mot BE-ROAS 1,60 |
+|---|---|---|---|---|---|
+| NO | 8 475,60 kr | 31 | **1,81** | 273 kr | över |
+| SE | 4 657,46 kr | 8 | **0,73** | 582 kr | långt under |
+
+Norge var marknaden som fungerade. Med verklig AOV (15 371 / 31 ≈ 496 kr) blir
+break-even-CPA 310 kr, inte 243 kr som 389/1,60 ger — och då är NO:s vinstbidrag
+(310 − 273) × 31 ≈ **+1 130 kr**. SE:s är (423/1,60 − 582) × 8 ≈ **−2 540 kr**.
+Det är hela historien om DryTrek hittills: en marknad som bar sig och en som inte
+gjorde det, och båda är avstängda.
+
+Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa den här rutinen,
+18 sep). Ingen pingas om.
