@@ -99,6 +99,43 @@ export function minnesmapp(kampanj, { rot = ROT } = {}) {
   return null;
 }
 
+/**
+ * En BEFINTLIG minnesmapp som troligen hör till produkten, när sluggen inte
+ * träffar rakt av (Axels bugg 2026-09-21).
+ *
+ * Bakgrund: `--skriv` föll tidigare tillbaka på `products/<slug av
+ * kampanjnamnet>` och SKAPADE mappen. Taköverdragets lärdom hamnade därför i
+ * `products/takoverdraget-for-husvagn-6-5-3-m/` medan produktens minne ligger i
+ * `products/takoverdraget-husvagn/`. Mätt samma dag: 86 kampanjer i
+ * produktkartan saknar `minne`, och sluggen träffar en befintlig mapp i bara 3
+ * av dem — resten hade splittrat produktminnet i nya tomma mappar, tyst.
+ *
+ * Returnerar mappnamnet (utan `products/`) eller null. Ren läsning, ingen
+ * skrivning: den GISSAR aldrig åt anroparen, den pekar bara ut kandidaten så
+ * att en människa kan skriva in `minne` i produktkartan.
+ */
+export function narmasteMinnesmapp(produktnamn, { rot = ROT } = {}) {
+  const s = slug(produktnamn);
+  if (!s) return null;
+  let mappar = [];
+  try { mappar = readdirSync(join(rot, 'products')).filter((f) => statSync(join(rot, 'products', f)).isDirectory()); } catch { return null; }
+  if (mappar.includes(s)) return s;
+  // Marknadssuffix först: "overvakningskameran-no" → "overvakningskameran".
+  const utanMarknad = s.replace(/-(no|dk|fi|uk|us|se)$/, '');
+  if (utanMarknad !== s && mappar.includes(utanMarknad)) return utanMarknad;
+  // Sedan ordmängd: alla mappens ord ska finnas i kampanjnamnet. "Taköverdraget
+  // för Husvagn 6,5 × 3 m" → takoverdraget + husvagn finns båda, alltså
+  // products/takoverdraget-husvagn. Minst TVÅ ord krävs — ett ensamt ord
+  // matchar för lätt och skulle koppla ihop olika produkter.
+  const ord = new Set(s.split('-').filter(Boolean));
+  const kandidater = mappar.filter((m) => {
+    const mo = m.split('-').filter(Boolean);
+    return mo.length >= 2 && mo.every((o) => ord.has(o));
+  });
+  if (!kandidater.length) return null;
+  return kandidater.sort((a, b) => b.split('-').length - a.split('-').length || b.length - a.length)[0];
+}
+
 /** Läser produktkartan → { campaign_id: post }. */
 export function lasProduktkarta(fil = join(HÄR, 'produktkarta.json')) {
   if (!existsSync(fil)) return {};
@@ -651,7 +688,20 @@ async function huvud(argv) {
     if (torr) { console.log(`\n--torr: ${resultat.length} lärdomar validerade, inget skrivet.`); return; }
     for (const { v, e, b } of resultat) {
       const k = karta[String(e.kampanj_id)] ?? { produkt: String(e.kampanj_namn).split('|')[0].trim(), campaign_id: e.kampanj_id };
-      const mapp = minnesmapp(k) ?? `products/${slug(k.produkt)}`;
+      // Splittra ALDRIG produktminnet i en ny mapp när en befintlig troligen
+      // hör till produkten (Axels bugg 2026-09-21). En helt ny produkt får en
+      // ny mapp — det är rätt. En produkt som redan har minne får inte det.
+      let mapp = minnesmapp(k);
+      if (!mapp) {
+        const nara = narmasteMinnesmapp(k.produkt);
+        if (nara) {
+          console.error(`\n✗ ${e.annons_namn}: kampanjen "${k.produkt}" saknar \`minne\` i agent/produktkarta.json, och sluggen pekar på en NY mapp fast produktminnet redan finns i products/${nara}/.`);
+          console.error('  Inget skrivet. Lägg in raden i produktkartan och kör om:');
+          console.error(`    "campaign_id": "${e.kampanj_id}", "minne": "products/${nara}"`);
+          process.exit(1);
+        }
+        mapp = `products/${slug(k.produkt)}`;
+      }
       const mål = join(ROT, mapp, 'lardomar.md');
       mkdirSync(dirname(mål), { recursive: true });
       if (!existsSync(mål)) writeFileSync(mål, `# Lärdomar — ${k.produkt}\n\nEn per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av \`node agent/lardom.mjs --skriv\`; varje brief pekar på ett id här (\`lardom=L-…\`).\n\n`);

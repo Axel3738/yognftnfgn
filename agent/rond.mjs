@@ -87,6 +87,66 @@ export function attributionsvarning(data) {
 }
 
 /**
+ * Visningsköpsvarningen (Axels beslut 2026-09-21).
+ *
+ * Kontonivån är lugn — mätt 30 dygn 2026-08-22 → 2026-09-20 är svenska kontot
+ * uppblåst 2,8 % och det norska 0,0 %. Det är SPRIDNINGEN som betyder något:
+ * samma mätning gav Vandringskängor 22 %, Skoreparationslapparna 10,8 %,
+ * IBC 7,5 %, Övervakningskameran 6,9 %, Båtmotorskyddet 6,0 %. Vandringskängor
+ * låg på 1,61 med visningsköp och 1,32 utan, mot break-even 1,60 — domen vänder.
+ *
+ * Varningen fälls när visningsandelen är över VISNING_LARM_ANDEL OCH kampanjen
+ * ligger i den farliga zonen kring break-even. Det är den enda zonen där felet
+ * kan vända en dom; en kampanj på ROAS 4 med 20 % visningsköp byter inte
+ * beslut av det.
+ *
+ * ⚠️ Zonen mäts på BÅDA talen, inte bara på klick-ROAS. Axels formulering
+ * 2026-09-21 var "inom 15 procent från break-even", och läst på klick-ROAS
+ * ensamt missar den hans eget exempel: Vandringskängor låg 17,5 % under
+ * break-even på klick men 0,6 % från den med visningsköp inräknade. Det är
+ * just det som gör kampanjen farlig — den SER ut att ligga på break-even i
+ * Ads Manager. Därför: varning om något av talen ligger inom marginalen,
+ * och alltid när de står på var sin sida om break-even.
+ *
+ * Ren funktion. `roas3dVisning` kommer ur kontodatan (`value`-nyckeln i Metas
+ * svar) och `roas3d` ur `7d_click`. Saknas visningstalet returneras null —
+ * ingen varning, aldrig en gissning.
+ */
+export const VISNING_LARM_ANDEL = 0.05;
+export const VISNING_LARM_MARGINAL = 0.15;
+export function visningsvarning(rad) {
+  const klick = lasBelopp(rad?.roas3d);
+  const medVisning = lasBelopp(rad?.roas3dVisning);
+  const be = Number.isFinite(rad?.breakEven) && rad.breakEven > 0 ? rad.breakEven : null;
+  if (!Number.isFinite(klick) || klick <= 0 || !Number.isFinite(medVisning) || medVisning <= 0 || be === null) return null;
+  const andel = medVisning / klick - 1;
+  if (!(andel > VISNING_LARM_ANDEL)) return null;
+  const vander = medVisning >= be && klick < be;
+  const avstandKlick = Math.abs(klick / be - 1);
+  const avstandVisning = Math.abs(medVisning / be - 1);
+  const avstand = Math.min(avstandKlick, avstandVisning);
+  if (!vander && !(avstand < VISNING_LARM_MARGINAL)) return null;
+  const p = (x) => `${(x * 100).toFixed(1).replace('.', ',')} %`;
+  const d = (x) => x.toFixed(2).replace('.', ',');
+  return {
+    kampanj_id: rad.id ?? null,
+    namn: rad.namn ?? null,
+    andel,
+    avstand,
+    vander,
+    text: `${rad.namn ?? 'okänd kampanj'}: ${p(andel)} av ROAS:en kommer från visningsköp. Med visningsköp ${d(medVisning)}, på bara klick ${d(klick)}, break-even ${d(be)} — närmast ${p(avstand)} ifrån.${vander ? ' ⚠ DOMEN VÄNDER: över break-even med visningsköp, under utan. Läs klicksiffran.' : ' Domen står sig åt samma håll, men marginalen är för tunn för att lita på siffran.'}`,
+  };
+}
+
+/** Alla visningsköpsvarningar i en rondomgång, värst först. */
+export function visningsvarningar(rader) {
+  return rader
+    .map((r) => visningsvarning({ ...r, breakEven: r.dom?.breakEven ?? r.breakEven }))
+    .filter(Boolean)
+    .sort((a, b) => (a.vander === b.vander ? b.andel - a.andel : a.vander ? -1 : 1));
+}
+
+/**
  * Break-even för en kampanj, i tur och ordning:
  * 1. räknat ur kostnadsblocket i produktkarta.json (pris och kostnad per order)
  * 2. ett fast tal i produktkarta.json
@@ -115,6 +175,9 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
   // Livstids-ROAS: spärren mot att stänga av en kampanj som gått plus totalt.
   const roasTotal = lasBelopp(kampanj.roas_total);
   const roas3d = lasBelopp(kampanj.roas_3d);
+  // ROAS med visningsköp inräknade (`value`-nyckeln). Valfritt fält — bara
+  // visningsköpsvarningen använder det, och domen räknas ALDRIG på det.
+  const roas3dVisning = lasBelopp(kampanj.roas_3d_visning);
   const kop3d = lasBelopp(kampanj.kop_3d);
 
   const grund = {
@@ -125,6 +188,7 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     spend3d,
     spendTotal,
     roas3d,
+    roas3dVisning,
     kop3d,
     roasTotal,
     // Briefpaus: budgeten sköts som vanligt, men produkten får inga nya
@@ -580,6 +644,18 @@ export function rapport(rader, meta, behov = []) {
   ut.push('');
   ut.push(`${TILLATET_KONTONAMN} ${TILLATET_KONTO} · ${rader.length} aktiva kampanjer · data hämtad ${meta.hamtad}`);
   ut.push('');
+
+  // Visningsköpsvarningen (Axel 2026-09-21) står FÖRE åtgärderna: den handlar
+  // om ifall siffran under en dom går att lita på, inte om domen i sig.
+  const visning = visningsvarningar(rader);
+  if (visning.length) {
+    ut.push(`## ⚠ Visningsköp nära break-even (${visning.length})`);
+    ut.push('');
+    ut.push('Över 5 % av ROAS:en kommer från folk som bara SÅG annonsen, och klick-ROAS ligger inom 15 % från break-even. Det är den enda zonen där attributionen kan vända en dom.');
+    ut.push('');
+    for (const v of visning) ut.push(`- ${v.text}`);
+    ut.push('');
+  }
 
   if (attGora.length === 0) {
     ut.push('## Inget att göra idag');

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -715,4 +715,51 @@ test('rimlighetstaket är 50 000: 16 000 är en dom, 60 000 är fortfarande felp
     { logg: [], idag: '2026-09-19', karta: { 2: { lage: 'drift' } } },
   );
   assert.notEqual(paTaket.dom.kod, 'MANUELL');
+});
+
+test('visningsköpsvarningen fångar Vandringskängor — fallet som motiverade regeln', () => {
+  // Axels tröskel 2026-09-21 var "inom 15 procent från break-even". Läst på
+  // KLICK-ROAS ensamt missar den hans eget exempel: 1,32 mot break-even 1,60
+  // är 17,5 % ifrån. Med visningsköp inräknade ligger den 0,6 % från gränsen,
+  // och det är just det som gör kampanjen farlig — den ser ut att gå jämnt ut.
+  const v = visningsvarning({ id: '1', namn: 'Vandringskängor Herr', roas3d: 1.32, roas3dVisning: 1.61, breakEven: 1.60 });
+  assert.ok(v, 'varningen ska fällas');
+  assert.equal(v.vander, true);
+  assert.match(v.text, /DOMEN VÄNDER/);
+  assert.match(v.text, /22,0 %/);
+});
+
+test('visningsköpsvarningen tiger när felet inte kan vända en dom', () => {
+  // Hög ROAS: 6 % visningsköp på 3,24 mot break-even 1,62 byter ingenting.
+  assert.equal(visningsvarning({ namn: 'Båtmotorskyddet', roas3d: 3.24, roas3dVisning: 3.44, breakEven: 1.62 }), null);
+  // Tunn marginal men nästan inga visningsköp.
+  assert.equal(visningsvarning({ namn: 'Tunn', roas3d: 1.62, roas3dVisning: 1.64, breakEven: 1.60 }), null);
+  // Inget visningstal alls ⇒ ingen varning, aldrig en gissning.
+  assert.equal(visningsvarning({ namn: 'Utan tal', roas3d: 1.60, breakEven: 1.60 }), null);
+  assert.equal(visningsvarning({ namn: 'Utan be', roas3d: 1.32, roas3dVisning: 1.61 }), null);
+  // Tunn marginal OCH hög visningsandel ⇒ varning.
+  assert.ok(visningsvarning({ namn: 'Farlig', roas3d: 1.55, roas3dVisning: 1.67, breakEven: 1.60 }));
+});
+
+test('visningsköpsvarningarna sorteras med de vändande domarna först', () => {
+  const rader = [
+    { id: '1', namn: 'Tunn men står sig', roas3d: 1.70, roas3dVisning: 1.85, dom: { breakEven: 1.60 } },
+    { id: '2', namn: 'Vänder', roas3d: 1.50, roas3dVisning: 1.65, dom: { breakEven: 1.60 } },
+    { id: '3', namn: 'Rör sig inte', roas3d: 4.00, roas3dVisning: 4.10, dom: { breakEven: 1.60 } },
+  ];
+  const v = visningsvarningar(rader);
+  assert.equal(v.length, 2);
+  assert.equal(v[0].namn, 'Vänder');
+  assert.equal(v[0].vander, true);
+});
+
+test('rapporten skriver visningsköpsvarningen före åtgärderna', () => {
+  const rad = bedomKampanj(
+    { id: '9', namn: 'Vandringskängor | BE ROAS 1.60', daily_budget: '500,00 kr (SEK)', spend_3d: '2 000,00 kr', roas_3d: '1.32', roas_3d_visning: '1.61', kop_3d: 5, spend_total: '9 000,00 kr' },
+    { logg: [], idag: '2026-09-22', karta: {} },
+  );
+  assert.equal(rad.roas3dVisning, 1.61);
+  const text = rapport([rad], { idag: '2026-09-22', hamtad: '2026-09-22T05:00:00Z' });
+  assert.match(text, /Visningsköp nära break-even/);
+  assert.ok(text.indexOf('Visningsköp nära break-even') < text.indexOf('## Att'), 'varningen ska stå före åtgärderna');
 });

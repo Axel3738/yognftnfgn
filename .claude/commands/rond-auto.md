@@ -98,6 +98,22 @@ kontodatafilen — `rond.mjs` varnar när fältet saknas eller säger något ann
 Tar MCP-verktyget inte parametern: kör `ads_get_field_context`, skriv i
 rapporten att attributionen är kontots standard, och gissa aldrig ett tal.
 
+**Hämta OCKSÅ visningstalet (Axels beslut 2026-09-21).** Kör anrop 1 med
+`action_attribution_windows: ["7d_click", "1d_view"]` i stället — svaret bär
+då BÅDA: `value` är Metas deduplicerade total *inklusive* visningsköp och
+`7d_click` bara klicken. Skriv `roas_3d` ur `7d_click` som förut, och lägg
+till **`roas_3d_visning` ur `value`** på varje kampanj. Domen räknas aldrig på
+visningstalet — det används bara av `visningsvarning()` i `agent/rond.mjs`,
+som larmar när över 5 % av ROAS:en kommer från visningsköp OCH kampanjen
+ligger inom 15 % från break-even (mätt på båda talen, eller när de står på var
+sin sida om den). Saknas fältet: ingen varning, aldrig en gissning.
+*(Mätt 2026-09-21, 30 dygn: SE-kontot uppblåst 2,8 %, NO 0,0 % — men
+Vandringskängor 22 %, Skoreparationslapparna 10,8 %, IBC 7,5 %,
+Övervakningskameran 6,9 %, Båtmotorskyddet 6,0 %. Vandringskängor låg 1,61 med
+visningsköp och 1,32 utan, mot break-even 1,60: domen vänder. Zonen mäts på
+båda talen just därför — på klick-ROAS ensamt ligger den 17,5 % ifrån och hade
+missats.)*
+
 Fältnamnen är exakta. Använd **aldrig** `omni_purchase_values` (buggig, se
 CLAUDE.md). Skriv siffrorna **ordagrant** till `agent/kontodata.json` i samma
 format som `/rond` beskriver. Saknas ett värde: `null`, aldrig 0, aldrig gissat.
@@ -1069,6 +1085,7 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Spendtjuven körd i grönt läge på alla plus-kampanjer ≥ 1 000 kr/3 d, mot en namngiven lista; tjuvar pausade en och en med tillbakaläsning, `TJUV_PAUSAD`/`VANTA_BREAKTHROUGH` loggade utan `ny_budget`
 - [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under taket 10 000 kr, larm postat
 - [ ] Varje `SKALA` över 4 000 kr har `harVinnare: true` — annars är det en bugg, inte en dom
+- [ ] `roas_3d_visning` satt på varje kampanj, och visningsköpsvarningen läst i rapporten
 - [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
 - [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)

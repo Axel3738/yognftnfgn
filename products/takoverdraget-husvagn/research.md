@@ -89,13 +89,41 @@ gissning och ska märkas så.
 
 **Bara en når tröskeln, och den är inte en ny avatar — den är en invändning.**
 
-Det är provets viktigaste resultat, och det går emot vad jag själv trodde när
-jag föreslog spåret. Jag skrev att nya sub-avatarer bor hos folk som har
-problemet men aldrig hört talas om oss. Det forumet faktiskt bär är inte nya
-målgrupper utan **en tro som stoppar köpet**: att lägga något över husvagnen
-gör fuktskadan värre, inte bättre. Den tron finns i alla tre trådarna, över
-tolv år, och den hålls både av den som testat och ångrat sig (anding2) och av
-den som inte vågat börja (peter nilsson, spelman-på-husbilstaket).
+Det forumet bär är inte nya målgrupper utan **en tro som stoppar köpet**: att
+lägga något över husvagnen gör fuktskadan värre, inte bättre. Den tron finns i
+alla tre trådarna, över tolv år, och den hålls både av den som testat och
+ångrat sig (anding2) och av den som inte vågat börja (peter nilsson,
+spelman-på-husbilstaket).
+
+## Hypotesen, omskriven (Axels rättelse 2026-09-21)
+
+Jag skrev först att det här var ett underbetyg åt metoden — att provet gav
+"fel sorts" fynd eftersom jag hade lovat nya sub-avatarer. Axel avvisade det:
+
+> "Jag räknar inte 'invändning, inte avatar' som ett misslyckande. En
+> invändning som blockerar köpet är precis det Evolve kallar en trosbrist, och
+> den är värd mer än en avatar vi ändå hade gissat oss till."
+
+Han har rätt, och hypotesen ska stå så här i stället:
+
+**Extern research hittar det som stoppar köpet. Ibland är det en ny målgrupp,
+ibland en invändning. Båda är träffar.**
+
+En avatar går att gissa fram ur produkten och kunddatan. En trosbarriär går
+inte att gissa — den syns bara där folk pratar med varandra i stället för med
+oss, och den måste vara formulerad med deras ord för att gå att bemöta.
+
+### Bekräftad av våra egna annonskommentarer
+
+Axel 2026-09-21: samma invändning står i kommentarerna på **`Takoverdrag_SP_4_H1`**,
+där någon skriver:
+
+> "Men det bör väl vara luft i mellan, nu blir det väl tätt"
+
+Två oberoende källor, tolv år isär, utan kontakt med varandra: ett forum från
+2013–2025 och vår egen annons 2026. **Det är inte en gissning längre.**
+Forumet gav språket, kommentaren gav bekräftelsen att invändningen lever hos
+just den publik vi betalar för att nå.
 
 ## Vad det betyder för briefandet
 
@@ -109,6 +137,13 @@ mekanismen som skiljer ett ventilerat överdrag från en tät presenning, och va
 som händer med luften under draget. Vilken av dem som bär är en hypotes och
 ska märkas som gissning i lärdomen.
 
+**Briefas som INVAND-variant** (Axels beslut 2026-09-21), med `kalla=voc` —
+kommentaren på `Takoverdrag_SP_4_H1` är den formella källan, forumet är
+språket bakom den. Annonsen ska bemöta att **överdraget andas i stället för
+att kapsla in**, inte förneka att invändningen är rimlig: den som säger "nu
+blir det väl tätt" har rätt om en presenning, och det är därför den ska få
+veta vad som skiljer.
+
 ## Vad som INTE går att lita på här
 
 - **Åldern.** Nio av tolv citat är från 2013–2014. Produkter, material och
@@ -121,8 +156,11 @@ ska märkas som gissning i lärdomen.
   personer. En tråd kan drivas av två röster.
 - **Inget här är ett kundomdöme.** Ingen av personerna har köpt något av oss.
 
-## Nästa steg, om Axel vill gå vidare
+## Nästa steg (Axels beslut 2026-09-21: kör det)
 
-En andra produkt med en HELT annan nisch, för att se om utfallet "invändning,
-inte avatar" är produktens eller metodens. Först därefter är det värt att
-bygga `kalla=research` som ett kommando.
+En andra produkt i en helt annan nisch — Bälteslipmaskinen eller
+Fiskespöhållaren, annan köpare och andra forum. Syftet är INTE längre att
+pröva om "invändning" är ett giltigt fynd; det är avgjort. Syftet är att se
+**vad metoden hittar när nischen är en annan**, och om utbytet är värt en
+session per produkt. Först därefter är det värt att bygga `kalla=research`
+som ett kommando.

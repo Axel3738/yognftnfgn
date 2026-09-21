@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   lardomId, KOMPONENTER, taggarUrBrief, komponentVarde, normaliseraTaggar, oskrivna, brieftak, mix, MIX, levandeBreakthroughs,
-  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR,
+  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR, narmasteMinnesmapp,
 } from '../lardom.mjs';
 
 const ETIK = (over = {}) => ({
@@ -249,4 +249,21 @@ test('status + formateraStatus (punkt 15, 16): lärdomar i dag, briefer på lär
   assert.match(text, /Briefer i dag: 2, varav på en lärdom: 1 ⚠ briefer utan lärdom får inte skrivas/);
   assert.match(text, /IBC-Tanköverdraget: 1\/2/);
   assert.match(text, /IBC_PD_1_H1: 2 av 3 iterationer, 1 kvar/);
+});
+
+test('narmasteMinnesmapp pekar ut befintligt produktminne i stället för att skapa en ny mapp', () => {
+  // Buggen 2026-09-21: --skriv föll tillbaka på products/<slug av kampanjnamnet>
+  // och SKAPADE mappen, så Taköverdragets lärdom hamnade i
+  // products/takoverdraget-for-husvagn-6-5-3-m/ medan minnet ligger i
+  // products/takoverdraget-husvagn/. 86 kampanjer saknar `minne` i kartan.
+  assert.equal(narmasteMinnesmapp('Taköverdraget för Husvagn 6,5 × 3 m'), 'takoverdraget-husvagn');
+  // Marknadssuffix faller bort: NO-kampanjen delar minne med den svenska.
+  assert.equal(narmasteMinnesmapp('Bälteslipmaskinen NO'), 'balteslipmaskinen');
+  assert.equal(narmasteMinnesmapp('IBC-tanköverdraget NO'), 'ibc-tankoverdraget');
+  // Exakt träff fungerar som förut.
+  assert.equal(narmasteMinnesmapp('Bälteslipmaskinen'), 'balteslipmaskinen');
+  // En helt ny produkt får ingen kandidat — då är en ny mapp rätt.
+  assert.equal(narmasteMinnesmapp('Kvantdammsugaren Zyx'), null);
+  assert.equal(narmasteMinnesmapp(''), null);
+  assert.equal(narmasteMinnesmapp(null), null);
 });
