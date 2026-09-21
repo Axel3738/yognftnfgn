@@ -1486,3 +1486,39 @@ ACTIVE**.
    `.png` — hade tyst tagit 0 av 36. Rättat med test.
 4. Två väntare sökte varandra med `pgrep -f` på skriptnamnet och låste
    varandra i sex timmar efter att batchen var klar. Vänta på PID.
+
+---
+
+## 2026-09-21 — leveransrundan: 2 videor stoppade på slutkortet
+
+Kön: 2 rader i `To be Reviewed`, batch #2:s två sista videor —
+`CaraShellRoof_SP_4_H1` (social proof, 30,9 s) och `CaraShellRoof_PD_4_H1`
+("Bara taket. En person.", 29,6 s). Kampanjen `CARASHELL_SE_Taköverdraget`
+(`120249050544990172`) löstes automatiskt; LISTICLE-kampanjen sållades bort
+av `tools/lib/sidokampanjer.mjs` som den ska. Priset i båda videorna
+1 129 kr (ord. 1 469 kr) = butikens pris — **grönt på prisregeln**.
+
+**Ingen laddades upp.** Båda slutar med en skärminspelning av produktsidan:
+domänskylten `carashell.se` överst och `CARASHELL` som leverantörsrad
+(2,5 resp. 2,4 s av slutfönstret). Järnregel 2b i `/ops-leverans` och Axels
+beslut 2026-09-18 — butikens namn står aldrig i en annons, slutkortet
+inräknat. Status orörd (`To be Reviewed`), engelsk kommentar på båda
+raderna: bygg om de sista 3 sekunderna utan domän och butiksnamn, ladda upp
+i samma rad, så tar rundan dem automatiskt.
+
+Anmärkningar till redigeraren (inget av det stoppar): SP:s caption vid
+~12 s säger "Passa bra och skyddar" (saknat r), citatkorten står som
+"Johan E." / "Lars P." där briefen ber om enbart förnamn, och PD säger
+6,5 × 3 m medan produktsidan numera listar 5,5–13,5 m.
+
+⚠️ **Rotorsaken är värd mer än de två videorna: kontrollen gick inte igång.**
+Rutinens container saknar både `ffmpeg` och OCR:en, så `bildbrand.mjs`
+svarade `okand` ("spawnSync ffmpeg ENOENT") på båda — och regeln säger att
+en oläsbar video laddas upp ändå. Utan att någon tittade på bildrutorna
+hade alltså **två annonser med butikens domän gått live**. Rättat samma
+dag: `ffmpegBinar()` i `factory/bildbrand.mjs` faller tillbaka på
+imageio-ffmpeg:s binär (systembinären vinner fortfarande), OCR:en
+installeras med `pip install rapidocr-onnxruntime`, och kommandofilens
+regel 2b bär nu varningen att `okand` på VARJE video betyder containern,
+inte creativen. Efter installationen dömde verktyget självt
+`slutkort-med-brand` på båda — samma dom som ögat.
