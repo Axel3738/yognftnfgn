@@ -316,6 +316,71 @@ så DNS-prompten förbjuder uttryckligen ändringar av MX, SPF, DKIM och
 verifieringsposter. Samma fil bär listan på det jag behöver veta om
 verksamheten.
 
+⚠️ **BUTIKERNA NÄMNS ALDRIG PÅ DEN PUBLIKA SIDAN** (Axels order 2026-09-21:
+"du leakar ju fan alla mina butiker det får du inte göra"). Sidan gick live med
+en sektion "Butikerna vi driver" som listade **alla elva** med namn, land och
+domän, plus siffrorna "Varumärken 11" och "Länder vi säljer i 6" — alltså en
+färdig kopieringslista åt vem som helst som öppnar stonebite.org. Listan,
+siffrorna, hero-knappen "Se våra butiker" och menylänken "Varumärken" är
+borttagna; `profil.varumarken` ligger kvar i filen och visas **bara inloggad**,
+på sidan Butiker. Ett test hämtar `/` och letar efter varje butiksnamn och varje
+domän ur `profil.json` (`stonebite/test/server.test.mjs` → "publika sidan nämner
+inte en enda butik"). **Bygg aldrig tillbaka det** — inte som lista, inte som
+antal, inte som logotyper. Den publika sidan säger vad bolaget gör, aldrig vilka
+butiker det är.
+
+### ✅ I DRIFT sedan 2026-09-21 kväll (Cowork byggde, mätt av sessionen)
+
+**Railway:** projekt `strong-solace`, tjänst `yognftnfgn`, deployar `main`,
+Node 20.20.2, volym på `/data`, Watch Paths `stonebite/**` + `bonus/**` +
+`package.json`. Direktadress
+`https://yognftnfgn-production-cfb8.up.railway.app` (port 8080) — den fungerar
+även om domänen krånglar, så felsök alltid där först. Ägarkontot är skapat
+(`/halsa` sa `konton:1` kl 20:5x), alltså är `/kom-igang` stängd.
+
+**Domänen:** DNS ligger hos **Squarespace** (gamla Google Domains —
+namnservrarna heter `ns-cloud-e1…e4.googledomains.com`, vilket LÄSER som Google
+men redigeras hos Squarespace). Uppmätt zon:
+
+| Post | Värde | Not |
+|---|---|---|
+| `CNAME www` | `daz9hn85.up.railway.app` | huvudadressen |
+| `TXT _railway-verify.www` + `TXT _railway-verify` | Railways verifiering | båda på plats |
+| `A @` ×4 | Squarespace-IP:n | deras vidarebefordran, inte vår sajt |
+| `MX` | `1 smtp.google.com` | ⚠️ mejlen, rör aldrig |
+
+⚠️ **Roten kan inte peka på Railway.** Squarespace vägrar CNAME på `@`
+(Spara-knappen går inte att klicka), och Railway erbjuder ingen A-post. Därför
+är **`www.stonebite.org` den riktiga adressen** och `stonebite.org` en 302-
+vidarebefordran dit, satt i Squarespace. Sökvägen följer med, så
+`stonebite.org/halsa` fungerar. Squarespace har posttypen ALIAS om det någon
+gång ska göras om till en direktpekning.
+
+⚠️ **Hela gruppen "Squarespace Defaults" togs bort** (4 A-poster, `CNAME www →
+ext-sq.squarespace.com`, en HTTPS-post) — den gick inte att ändra post för post.
+Axel godkände det. Ingen CAA-post finns i zonen, så inget blockerar Let's
+Encrypt.
+
+⚠️ **Certifikatet går inte att mäta från en claude.ai-container.** Proxyn
+MITM:ar all HTTPS, så `openssl s_client` mot www.stonebite.org svarar med
+`issuer = O = Anthropic, CN = Egress Gateway SDS Issuing CA` oavsett vad
+webbläsaren ser. Mätt 2026-09-21: sajten svarade `{"ok":true,…}` med `-k`, men
+om Railway hunnit utfärda sitt cert går bara att se i en riktig webbläsare
+eller i Railway → Settings → Domains. **Skriv aldrig "certifikatet är klart"
+från en curl härifrån.** Den gamla www-posten hade 4 timmars TTL, så Railways
+kontroll kan dröja ett par timmar efter att DNS ändrats.
+
+⚠️ **Fyra andra Railway-projekt bygger samma repo från `main` vid varje push**
+(`tranquil-insight`, `considerate-delight`, `pretty-quietude`,
+`compassionate-sparkle`, mätt 2026-09-21). De konkurrerar om byggslottarna —
+mergen fick vänta ~10 minuter — och äter planens domängräns. Ingen har rörts;
+det är Axels beslut om de ska bort.
+
+⚠️ **Rutinen `/stonebite` är INTE byggd än.** `list_triggers` är tom på kontot
+den här sessionen kör på; rutinerna ligger på `claude5@stonebite.org` och måste
+byggas där. Tills dess står siffrorna still på den snapshot som committades
+(sidan ljuger inte — den skriver ut när datan hämtades — men den blir gammal).
+
 ---
 
 ## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)

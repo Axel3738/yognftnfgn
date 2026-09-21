@@ -42,7 +42,7 @@ export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad =
   <a class="marke" href="/">${marke(20)} Stonebite</a>
   <nav class="navlankar" aria-label="Meny">
     <a class="navlank" href="/#vad-vi-gor">Vad vi gör</a>
-    <a class="navlank" href="/#varumarken">Varumärken</a>
+    <a class="navlank" href="/#bolaget">Bolaget</a>
     ${temaknapp()}
     <a class="knapp liten" href="${inloggad ? '/app' : '/logga-in'}" style="margin-left:8px">${inloggad ? 'Till dashboarden' : 'Logga in'}</a>
   </nav>
