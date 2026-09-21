@@ -1,0 +1,20 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-22",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #6 — budget round only. The brief round stays paused by owner decision since 18/9, so today's catch-up brief day produced none",
+    "SE campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is still PAUSED and has now gone quiet: 0 kr over the last 3 days, 2 058 kr / 4 purchases still showing in the 7-day window. 0 changes — a paused campaign is a decision",
+    "NO checked read-only as well and is still PAUSED: 3 516 kr / 7 purchases over 7 days, 1 088 kr / 0 purchases in the 3-day window. Nothing touched there either"
+  ],
+  "siffror": { "spend_7d_se": 2058, "kop_7d_se": 4, "spend_3d_se": 0, "spend_7d_no": 3516, "kop_7d_no": 7, "andringar": 0 },
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-23",
+  "varningar": [
+    "Fifth night with the product switched off. It spends nothing, and the routine has nothing to act on until someone turns a market back on",
+    "Briefs paused since 18/9 — CaraShell is written in the Bäverbutiken teamspace and mirrored here"
+  ]
+}

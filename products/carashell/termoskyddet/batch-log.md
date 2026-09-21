@@ -800,3 +800,11 @@ blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 1
   `tools/test/ops-spegla.test.mjs`, inte ett API-anrop), så ingen kod behövde ändras.
 - Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551613933364842497`, ingen ping.
 - Batch: `market-expansion/ops/carashell/2026-09-21-us-termoskyddet/`.
+
+## 2026-09-22 — nattvakten körning nr 6: båda marknaderna fortfarande PAUSED, 0 ändringar
+
+SE PAUSED och nu helt tyst: **3d 0 kr**, 7d 2 058 kr / 4 köp (eftersläpande fönster).
+NO PAUSED (läs-bar torrkörning): 3d 1 088 kr / 0 köp, 7d 3 516 kr / 7 köp. 0 ändringar,
+inget aktiverat. Briefdag enligt registret (ikappkörning efter 5 dygn) men **ronden är
+pausad sedan 18/9** — inga briefer. `kord` stämplad, `brief-kord` inte.
+Femte dygnet med produkten avstängd på båda marknaderna.
