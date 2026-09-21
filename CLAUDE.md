@@ -985,12 +985,24 @@ kundens land (`sparning/sistabiten.mjs`; 432 av 1 055 paket hade inget ännu
 ⚠️ **Leveransfönstret skrivs ALDRIG i ett kundmejl som bär spårningslänken**
 (Axels order 2026-09-21: "ta bort det, det står ju redan estimerad leverans på
 tracking-sidan"). Sidan visar Beräknad leverans själv, så en mening om det i
-mejlet är brus kunden redan läst. Talet (7–14 kalenderdagar efter fraktmejlet,
-median 11,1 / p90 13,0) står EN gång i Store facts och är VA:ns eget mått på om
-ett paket är sent — och citeras bara när ordern ännu inte skickats och det inte
-finns någon länk att ge. Första versionen hade det i 71 rader, inklusive varje
-kundmall; nu i 8, alla interna. "5–10 arbetsdagar" och handläggningstid i löftet
-är utrensade. ⚠️ Sexton **⚠️ OWNER**-
+mejlet är brus kunden redan läst. Talet står EN gång i Store facts och är VA:ns
+eget mått på om ett paket är sent — och citeras bara när ordern ännu inte
+skickats och det inte finns någon länk att ge. Första versionen hade det i 71
+rader, inklusive varje kundmall; nu i 8, alla interna.
+
+⚠️ **Löftet skrivs i ARBETSDAGAR: 5–10, aldrig "7–14 dagar"** (Axels order
+2026-09-21: "ta bort din jävla 7–14 dagars frakt överallt och säg 5–10
+arbetsdagar som vi brukar ha"). Han hade rätt och det var värre än så: alla
+butikers egna fraktsidor (`factory/butiker/*.yaml` → `frakt.leveranstid`) har
+**alltid** sagt 5–10 arbetsdagar. Det var mejlen som sa 7–14 kalenderdagar och
+SOP:erna kopierade mejlen. **Samma fönster, fel enhet** — 5 arbetsdagar = 7
+kalenderdagar, 10 = 14 — så datumen i mejlen och på spårningssidan räknas
+fortfarande på kalenderdagarna (`mejl/konfig.json` `leverans_dagar_min/max`
+7/14) och kunden ser samma datum som förut. Ändra aldrig det ena utan det
+andra. De interna trösklarna räknas också i arbetsdagar ("past 10 business
+days", inte "day 14"). ⚠️ Mejlmallarna på Shopify-servern bär ännu 7–14 — de
+kräver en ny inklistring per butik (`mejl/output/butiker/<id>/COWORK-PROMPT.md`).
+⚠️ Sexton **⚠️ OWNER**-
 markörer står kvar i texten — sök på ordet i Notion, det är Axels frågelista
 (CaraShells "Skickas från Sverige", tull i US/GB/CA/AU/NZ, Klarna-tvisternas
 portal och deadline). Returfrakten är avgjord 2026-09-21: **kunden betalar och
@@ -1022,6 +1034,23 @@ säga emot varandra (betalning utan order ×2, checkout-problem ×2).
 Skild från **`kundtjanst/sop/`**: den är tvisthandboken (chargebacks/inquiries,
 `{{PLATSHÅLLARE}}` ur brandfilen, vakten `npm run sop`). Den här basen är
 vardagen och skickar VA:n vidare dit första timmen.
+
+⚠️ **Tvisthandbokens tolv sidor publiceras i SAMMA Notion-bas sedan 2026-09-21**
+(Axels fråga: "vart kan man se chargeback-procedurerna? Jag vill att Mechile ska
+lära sig det"). Den låg bara i repot, där VA:n inte kan läsa den — och den är
+det enda som avgör om en chargeback vinns. Raderna i `notion.json` bär `kalla:
+"../sop/<fil>.md"` i stället för `fil:`, och `kundtjanst/sop/fyll.mjs` fyller
+butikens platshållare ur brandfilen vid publicering: **ett värde som saknas blir
+en synlig `⚠️ OWNER`-rad, aldrig ett tomrum** (Bäverbutiken saknar ett,
+`BILLING_DESCRIPTOR`); ärendets fält blir tomrum VA:n fyller i (`[ORDER
+NUMBER]`); filnamnen byts mot Notion-sidornas titlar; mejlmallarna blir riktiga
+kodblock (utan det klappar varje mall ihop till ett stycke och går inte att
+kopiera); varje sida får en rad överst om att repot skriver den.
+⚠️ **Källfilerna fylls ALDRIG i** — behåller de inte sina platshållare är
+handboken inte portabel till nästa brand. `kundtjanst/test/va-sop.test.mjs`
+bevisar båda halvorna. Facit på vad som avgör en tvist står i handboken och är
+mätt, inte gissat: inquiries 29 av 29 vunna, chargebacks 1 av 4, och det som
+avgör den enskilda tvisten är om det finns en leveransskanning.
 
 ### `pipeline/` — bildannonser (Grillkliniken/Mastern, legacy)
 ⚠️ **Trots mappnamnet är det här inte Bäverbutiken.** `brand.mjs` sätter

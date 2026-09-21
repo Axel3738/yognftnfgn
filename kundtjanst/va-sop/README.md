@@ -63,17 +63,46 @@ en egenskap på raden och rörs aldrig.
 
 ## Den här basen mot tvisthandboken
 
-Två olika saker, med flit:
+Två olika texter, ETT ställe att läsa dem — Notion:
 
 | | `kundtjanst/va-sop/` (den här) | `kundtjanst/sop/` |
 |---|---|---|
 | Vad | Vardagen: var är paketet, retur, fel vara, avbeställning | Betalningstvister: chargebacks och inquiries |
-| Var VA:n läser den | I Notion | I repot (och som PDF) |
-| Butiksvärden | Sidan **Store facts** | `{{PLATSHÅLLARE}}` ur brandfilen `kundtjanst/brands/<id>.yaml` |
-| Vakt | — | `npm run sop` |
+| Källa | Filerna i den här mappen | Handboken i `kundtjanst/sop/`, med `{{PLATSHÅLLARE}}` |
+| Butiksvärden | Sidan **Store facts** | Brandfilen `kundtjanst/brands/<id>.yaml`, ifylld vid publicering |
+| Vakt | `npm test` | `npm run sop` + `npm test` |
 
 Chargeback-SOP:en i den här basen är den korta vägen in: den säger vad VA:n gör
-första timmen och skickar henne sedan till tvisthandboken.
+första timmen och skickar henne sedan till handbokens sidor.
+
+### Tvisthandboken i Notion (nytt 2026-09-21)
+
+Handboken låg bara i repot, där VA:n inte kan läsa den — och den är det enda som
+avgör om en chargeback vinns eller förloras. Nu publiceras dess **tolv sidor** i
+samma bas, Kategori `Payment`, med `kalla:`-rader i `notion.json`:
+
+- `kundtjanst/sop/fyll.mjs` fyller butikens `{{PLATSHÅLLARE}}` ur brandfilen.
+  **Ett värde som saknas blir en synlig `⚠️ OWNER`-rad**, aldrig ett tomrum —
+  samma regel som Store facts. (Bäverbutiken saknar ett: `BILLING_DESCRIPTOR`,
+  som står i Shopify → Settings → Payments → Customer billing statement.)
+- Ärendets fält (`{{ORDER_NUMBER}}`, `{{AMOUNT}}` …) blir `[ORDER NUMBER]` —
+  tomrum VA:n fyller i per tvist.
+- Filnamnen i texten (`10-NOT-RECEIVED.md`) byts mot Notion-sidornas titlar.
+  VA:n kan inte öppna en `.md`-fil.
+- Mejlmallarna blir riktiga **kodblock** — annars klappar varje mall ihop till
+  ett stycke och går inte att kopiera.
+- Varje sida får en rad överst: den skrivs av repot, det man skriver i Notion
+  skrivs över nästa publicering.
+
+⚠️ **Källfilerna fylls ALDRIG i.** De behåller sina platshållare, annars är
+handboken inte portabel till nästa brand. Ett test i
+`kundtjanst/test/va-sop.test.mjs` bevisar båda halvorna: att den publicerade
+texten är tom på platshållare och att källan har kvar sina.
+
+```bash
+node kundtjanst/va-sop/skriv.mjs --torr --brand baverbutiken
+node kundtjanst/va-sop/skriv.mjs --bara ../sop/10-NOT-RECEIVED.md
+```
 
 ---
 
