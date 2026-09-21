@@ -16,12 +16,17 @@ inga kortkommandon. **Klistra aldrig in en halv mall.**
 Kontrollera först att https://carashell.se/pages/spara svarar och visar rubriken "Spåra ditt paket".
 Gör den inte det: stoppa och rapportera.
 
+⚠️ **Avsändaradressen.** Visar Shopify en gul banner i mallens redigerare —
+"Innan du kan redigera aviseringar måste du granska och verifiera din
+avsändares e-postadress" (fälten utgråade) — så är det tillåtet och väntat
+att lösa den: klicka bannerns länk (Inställningar → Aviseringar →
+avsändaradressen) och klicka **Skicka verifiering** / **Verifiera**. Det
+går ett mejl till **hello@carashell.com** med en länk som Axel klickar — stanna
+där, rapportera, och fortsätt med A när Axel sagt att länken är klickad.
+Ändra inte adressen, byt inte avsändare. (Hände i Majavakauppa och
+CaraShell 2026-09-20.)
 
 
-
-### 0. Avsändaradressen — FÖRST
-
-**Inställningar** → **Notiser** → **Avsändarens e-post** (Sender email): byt till **hello@carashell.com** och spara. Shopify visar då "ej verifierad" och skickar ett verifieringsmejl till den adressen — Axel klickar länken i inkorgen hello@carashell.com. Rapportera "verifieringsmejlet skickat" och vänta på Axels "klickat" innan du går vidare till A. **Står adressen redan på hello@carashell.com och är verifierad: rapportera det och gå direkt till A.** Ändra inget annat på sidan.
 
 ### A. De tre mallarna
 
@@ -44,7 +49,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 | 3 | **Ute för leverans / Out for delivery** | `(hela raden ur råfilens ämnesrad, se nedan)` | `CS-`, `sha256` och `country_code` | **24 394** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/carashell/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger "Order ute för lokal leverans" — ta INTE
-det. Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
+det — id:t i adressfältet är markören: shipment_out_for_delivery är rätt, local_out_for_delivery fel (båda heter "Out for delivery" internt; CaraShell 2026-09-21). Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
 Shopifys räknare).
 
 ### B. Menylänken
