@@ -66,7 +66,9 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   att en stilla spårning är normal (SOP 36/37); levererat-men-inte-mottaget får
   checklistan brevlåda/avi/ombud/grannar, aldrig "borttappat" (SOP 06); skadad
   eller fel vara får bildförfrågan i ARG-svaret (SOP 05/08); saknad bekräftelse
-  ⇒ skräppost-raden (SOP 11/30); företagsuppgifter ur brandfilen (SOP 38).
+  ⇒ skräppost-raden (SOP 11/30); företagsuppgifter ur brandfilen (SOP 38);
+  säger kunden att spårningen står still ⇒ lugnande raden, aldrig "borta"
+  (SOP 02); fel antal och "ser inte ut som på bilden" är aldrig enkla (SOP 07/15).
   Allt som kräver ägarens beslut i SOP:en (retur, återbetalning, avbeställning,
   tvist, tull, rabatt) är SVÅR. Tabellen: `kundtjanst/README.md` → SOP-avstämningen.
 

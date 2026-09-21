@@ -197,10 +197,9 @@ VA:ns SOP-databas är Notion **"Bäverkoppling.se"** (`333270ab-908c-8053-b629-f
 INTE inbjuden dit — men kopian **"Customer support bäverbutiken"**
 (`3aa270ab-908c-8057-a8a0-cc691d9e956b`, brandfilens `notion.sop_database_id`)
 är det, och bär 34 av PDF:erna. De lästes den kvällen (hämtade via REST,
-text ur `pdf-parse`). ⚠️ Elva SOP:er finns bara i originalet och är olästa:
-SOP 02 Tracking not updating, 07 Wrong quantity, 13–17 (produkt/passform/
-specifikationer), 21 Exchange, 34–35 (bilder/produktfrågor), Norwegian login,
-14-day withdrawal. Läses när Axel bjudit in integrationen till originalet.
+text ur `pdf-parse`). Axel bjöd in integrationen till originalet samma natt,
+och de elva sista lästes då: **alla 42 PDF:er är lästa.** Originalens SOP 36/37
+är samma text som kopians.
 
 SOP:ernas README säger själv att de är skrivna för ett annat brand
 (Bäverkoppling/Grill) och ska tas "with a pinch of salt" — bara det
@@ -214,6 +213,11 @@ brandneutrala eller det som står i brandfilen har automatiserats:
 | 05/08 Damaged / wrong product | ARG-svaret (Axels rad) får bildförfrågan: vara, förpackning, fraktetikett — VA:n har underlaget när hon öppnar tråden |
 | 38 Company information | ENKEL `foretag` ur brandfilens `svar.foretag` (namn, orgnr, adress, moms) — aldrig ett personnamn; saknas blocket ⇒ VA:n |
 | 36 steg 1 Ask for order number | Bakom `svar.fraga_ordernummer` (standard av): WISMO utan order ⇒ be om ordernumret + flagga. Axels beslut per butik |
+| 02 Tracking not updating / stuck | Säger kunden själv att spårningen står still får WISMO-svaret lugnande raden även när skanningen är färsk (`namnerStillaSparning`); aldrig "borta"/"förlorat". Utanför fönstret ⇒ VA:n (agenten kontaktas, aldrig ett gissat datum) |
+| 07 Wrong quantity | "fel antal", "saknas en", "för få" ⇒ kategorin `fel_vara` ⇒ aldrig ENKEL. Leverantören först, sedan ägaren — VA:n |
+| 15/34 Not as pictured / website complaints | "ser inte (alls) ut som på bilden", "not at all like" ⇒ `fel_vara`; arg kund ⇒ ARG med neutralt X ("varan som inte stämde") + bildförfrågan; lugn kund ⇒ VA:n (ägaren ska se all webbplatsfeedback) |
+| 13/16/17/35 Product fit / specs / compatibility / pre-purchase | Produktspecifika fakta för Bäverkopplings kontakter — gäller inte Bäverbutikens produkter. Produktfrågor är aldrig ENKEL; "never confirm values you are not certain about" ⇒ VA:n |
+| 21 Exchange | Inga direkta byten, retur + ny order, ägarens godkännande ⇒ SVÅR (`retur_angerratt`) |
 | 09 Address change | Oskickad ⇒ svar + flagga + VA-mappen (VA:n ändrar i Shopify); skickad ⇒ VA:n. Oförändrat |
 | 10, 18, 20, 25, 22/12, 23, 26, 32, 33, 39 (avbeställning, retur, återbetalning, tvist, betalning, tull, återförsäljare, rabatt, faktura) | Kräver ägarens beslut enligt SOP:en (3-stegs-returen: 30 % → 50 % → retur) ⇒ alltid SVÅR/VA:n. Aldrig automatiserat |
 

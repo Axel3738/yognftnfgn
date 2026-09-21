@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
 import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
-import { skrivEnkelt, skrivArgt, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, namnerBekraftelse } from '../autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
@@ -865,4 +865,28 @@ test('SOP 36 steg 1: WISMO utan order ⇒ SVÅR som standard, men med svar.fraga
   const r3 = await korBrand(pa, { env: ENV, nu: NU, torr: true, brevlada: b3, shopify: falskShopify(), hamta17, loggmapp: tmp() });
   assert.equal(r3.rader[0].hink, HINK.SVAR);
   assert.equal(b3.utkast().length, 0);
+});
+
+test('SOP 02/07/15/34/21 (de elva sista, lästa 2026-09-21 natt): stilla spårning, fel antal, "ser inte ut som på bilden", byte', async () => {
+  // SOP 02: kunden säger att spårningen står still — lugnande raden även när skanningen är 2 dagar färsk.
+  const b1 = new FalskBrevlada({ INBOX: [{ uid: 100, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Spårning', text: 'Hej, spårningen på min order #1042 har inte uppdaterats på flera dagar, står still i Kina. Är paketet borta?', id: '<w100@gmail.com>' }) }] });
+  const r1 = await kor(b1);
+  assert.deepEqual([r1.rader[0].hink, r1.rader[0].typ], [HINK.ENKEL, 'wismo']);
+  assert.match(b1.utkast()[0].text, /Det är helt normalt att spårningen står still några dagar under transporten — paketet är på väg ändå\./);
+  assert.equal(/borta|förlorat|lost/i.test(b1.utkast()[0].text), false, 'säger aldrig att paketet är borta (SOP 02)');
+  assert.equal(namnerStillaSparning('The tracking has not updated for 8 days, it seems stuck.'), true);
+  assert.equal(namnerStillaSparning('Var är mitt paket?'), false);
+  // SOP 07: fel antal ⇒ aldrig ENKEL.
+  const h = (amne, text) => hinka({ mejl: tolkaMejl(ra({ fran: 'K <k@x.se>', amne, text, id: '<h@x.se>' }), { uid: 1 }), brand: KONFIG });
+  assert.equal(h('Order 1042', 'Hej, jag beställde 2 st men fick fel antal, det saknas en vara i paketet. Var är resten?').hink, HINK.SVAR);
+  assert.equal(klassificera({ amne: 'Order', text: 'det saknas en vara i mitt paket' }).kategori, 'fel_vara');
+  // SOP 15/34: "ser inte alls ut som på bilden" + argt ⇒ ARG med neutralt X och bildförfrågan.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 101, ra: ra({ fran: 'Tobias <tobias@gmail.com>', amne: 'Vad är det här för skit?', text: 'Produkten ser inte alls ut som på bilden. Ni kan komma och hämta den. Det här betalar jag inte för.', id: '<w101@gmail.com>' }) }] });
+  const r2 = await kor(b2);
+  assert.equal(r2.rader[0].hink, HINK.ARG);
+  const t2 = b2.utkast()[0].text;
+  assert.match(t2, /med varan som inte stämde blir till och med jag riktigt frustrerad/);
+  assert.match(t2, /skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  // SOP 21: byte ⇒ SVÅR (inga direkta byten, ägarens beslut).
+  assert.equal(h('Byte', 'Hej, kan jag byta till en annan storlek? Order 1042').hink, HINK.SVAR);
 });

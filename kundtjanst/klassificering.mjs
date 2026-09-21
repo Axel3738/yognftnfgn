@@ -59,8 +59,10 @@ const REGLER = [
   ['fel_vara', [
     'fel vara', 'fel produkt', 'fel storlek', 'fel färg', 'fel modell', 'fel artikel', 'feil vare', 'feil produkt', 'feil størrelse', 'feil farge', 'forkert vare', 'forkert størrelse',
     'wrong item', 'wrong size', 'wrong product', 'wrong colour', 'wrong color', 'inte som på bild', 'ikke som på bild', 'not as described', 'not as pictured',
-    'ser inte ut som', 'ser ikke ut som', 'looks nothing like', 'passar inte', 'passer ikke', 'does not fit', 'doesn.t fit', 'saknas i paketet', 'mangler i pakken',
+    'ser inte ut som', 'ser inte alls ut som', 'inte alls som på bild', 'ser ikke ut som', 'looks nothing like', 'not at all like', 'passar inte', 'passer ikke', 'does not fit', 'doesn.t fit', 'saknas i paketet', 'mangler i pakken',
     'missing from', 'bara en av', 'fick bara', 'fikk bare', 'only received', 'stämmer inte', 'stemmer ikke', 'kvalitet', 'kvalitet', 'billig plast', 'usel',
+    // SOP 07 (fel antal) och SOP 15/34 (stämmer inte med bild/beskrivning), lästa 2026-09-21.
+    'fel antal', 'för få', 'saknas en', 'saknas ett', 'feil antall', 'for få', 'forkert antal', 'wrong quantity', 'väärä määrä', 'liian vähän',
   ]],
   ['var_ar_ordern', [
     'var är min', 'var är mitt', 'var är ordern', 'var är paketet', 'var är beställningen', 'var är den', 'var är varan', 'var är vår', 'hvor er', 'hvor blir', 'where is my', 'where.s my', 'när kommer', 'når kommer', 'hvornår kommer', 'when will',
