@@ -142,6 +142,9 @@ Kursens struktur, sex meningar i brödtexten plus ämnesraden som bär den perso
 
 Bolagsfakta som används (verifierade 2026-09-21 på carashell.se): CaraShell gör två produkter, taköverdrag och termoskydd för husvagn och husbil; drivs av STONEBITE ECOM AB, org.nr 559576-2401, Harestad utanför Göteborg; fri frakt inom Sverige och Norge; 14 dagars ångerrätt; Klarna; säljer även i Danmark, Finland, USA, Storbritannien, Kanada, Australien och Nya Zeeland.
 
+
+Utskickssidan (Axels egen, ett klick per mejl): https://claude.ai/artifact/DCruZBzC27cnRUx3joHVeg — byggd 2026-09-21 eftersom mailen inte går att skicka härifrån: det finns inget lösenord till hello@carashell.se i environmentet och proxyn blockerar utgående SMTP (587 och 465 svarar inte, mätt samma dag). Sidan öppnar färdigt mejl via mailto och kopierar DM-texterna; den skickar ingenting själv.
+
 **Version 4, granskad 2026-09-21.** Version 1 underkändes av en helhetskritiker: fem av sex meningar var ordagrant identiska i alla nio mail, och Linda (Reiselinda) driver nätverket Husbilsbloggarna med ett trettiotal skapare som skulle se det direkt. Version 2 granskades av nio faktagranskare plus en helhetskritiker, som fann påhittade fakta i alla nio (bland annat sömmar på en produkt utan dokumenterade sömmar, och en video som påstods ligga i en kategori den inte bevisligen ligger i) samt att kursens femte mening, den som bokar samtalet, saknades i samtliga. Version 3 rättade det. Version 4 byter avsändare till CaraShell. Kursens sexmeningsstruktur behålls med flit trots kritikerns invändning: den är kursens metod och Axels hårda regel 6. Längsta ordagranna överlapp mellan två mail är 13 ord (var 28), median 9.
 
 ### 1. Nilla & Micke Trevik
