@@ -4,10 +4,12 @@
 // send,mark,move}.php, settings/folder_save.php, rcmail_output_html
 // get_js_commands för framed-svaren, app.js submit_messageform).
 //
-// ⚠️ Formerna är avlästa ur källkoden, inte mätta live mot Loopia — lösenordet
-// saknades i containern som byggde skrivvägen. Första skarpa körningen ska gå
-// som UTKAST och kontrolleras i Drafts. Stämmer inte något: rätta den falska
-// servern här mot det riktiga svaret först, sen koden.
+// Formerna är avlästa ur källkoden och MÄTTA LIVE mot Loopia 2026-09-21 (första
+// torrkörningen av autosvaret). Två saker skilde sig och den falska servern
+// härmar dem nu: compose utan _id svarar 302 till samma sida med ett nytt _id,
+// och alla mappar ligger under namnrymden "INBOX." (save-folder "VA-PRIO" ger
+// "INBOX.VA-PRIO"). Stämmer något annat inte: rätta den falska servern här
+// mot det riktiga svaret först, sen koden.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { WebmailKlient, tolkaKompose, tolkaSandsvar, felUrSvar, tolkaRemoteSvar, plockaFalt, plockaIdentiteter, jsAnrop } from '../webmail.mjs';
@@ -46,9 +48,9 @@ const FRAMED = (rader) => `<!DOCTYPE html><html><head><script type="text/javascr
  * Falsk Roundcube med tillstånd: flaggor, mappar, utkast, skickat. Loggar
  * varje anrop så testerna kan se exakt vad som postades.
  */
-function falskWebmail({ mappar = ['INBOX', 'Drafts', 'Sent', 'Spam', 'Trash'], nekaSandning = null } = {}) {
+function falskWebmail({ mappar = ['INBOX', 'INBOX.Drafts', 'INBOX.Sent', 'INBOX.Spam', 'INBOX.Trash'], nekaSandning = null } = {}) {
   const anrop = [];
-  const tillstand = { mappar: [...mappar], flaggor: {}, flyttade: [], skickade: [], utkast: [], nastaUtkastUid: 77 };
+  const tillstand = { mappar: [...mappar], flaggor: {}, flyttade: [], skickade: [], utkast: [], nastaUtkastUid: 77, kompose: {} };
   const svar = (status, kropp, cookies = [], typ = 'text/html', location = null) => ({
     status, ok: status >= 200 && status < 300,
     headers: { getSetCookie: () => cookies, get: (n) => (n.toLowerCase() === 'content-type' ? typ : n.toLowerCase() === 'location' ? location : null) },
@@ -70,18 +72,19 @@ function falskWebmail({ mappar = ['INBOX', 'Drafts', 'Sent', 'Spam', 'Trash'], n
     const action = q.get('_action');
     if (action === 'list') return json({ action: 'list', env: { messagecount: 0, pagecount: 1, current_page: 1 }, exec: '' });
     if (action === 'compose') {
-      // Som riktiga Roundcube (mätt mot Loopia 2026-09-21): första anropet
-      // ger 302 till en unik adress med _id; parametrarna ligger i sessionen.
+      // Som compose.php (mätt live 2026-09-21): utan _id mintas ett id, parametrarna
+      // läggs i sessionen och svaret är 302 till samma sida med _id. Formuläret
+      // kommer först på den sidan.
       if (!q.get('_id')) {
-        if (!q.get('_reply_uid')) return svar(302, '', [], 'text/html', './?_task=mail&_action=compose&_id=68cf1a2b3c4d5');
-        tillstand.komposeUid = q.get('_reply_uid');
-        return svar(302, '', [], 'text/html', './?_task=mail&_action=compose&_id=68cf1a2b3c4d5');
+        const id = '68cf1a2b3c4d5';
+        tillstand.kompose[id] = { replyUid: q.get('_reply_uid') };
+        return svar(302, '', [], 'text/html', `/?_task=mail&_action=compose&_id=${id}`);
       }
-      if (q.get('_id') !== '68cf1a2b3c4d5') return svar(200, LOGIN_HTML);
-      const uid = tillstand.komposeUid;
-      if (!uid) return svar(200, '<html>nytt mejl</html>');
-      if (uid === '99') return svar(200, COMPOSE_HTML(99).replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to"></textarea>'));
-      return svar(200, COMPOSE_HTML(uid));
+      const k = tillstand.kompose[q.get('_id')];
+      if (!k) return svar(200, LOGIN_HTML);
+      if (!k.replyUid) return svar(200, '<html>nytt mejl</html>');
+      if (k.replyUid === '99') return svar(200, COMPOSE_HTML(99).replace(/<textarea name="_to"[^>]*>[^<]*<\/textarea>/, '<textarea name="_to" id="_to"></textarea>'));
+      return svar(200, COMPOSE_HTML(k.replyUid));
     }
     if (action === 'send' && opts.method === 'POST') {
       if (body.get('_id') !== '68cf1a2b3c4d5') return svar(200, FRAMED(['iframe_loaded("0")', 'display_message("Invalid compose ID","error")']));
@@ -106,10 +109,11 @@ function falskWebmail({ mappar = ['INBOX', 'Drafts', 'Sent', 'Spam', 'Trash'], n
       return json({ action: 'move', unlock: '0', exec: `this.remove_message_row("${body.get('_uid')}");this.set_rowcount("Messages 1 to 2 of 2","INBOX");` });
     }
     if (q.get('_task') === 'settings' && action === 'save-folder' && opts.method === 'POST') {
-      const namn = body.get('_name');
+      // Som folder_save.php → mod_folder('in'): mappen hamnar under namnrymden "INBOX." (Loopia, mätt 2026-09-21).
+      const namn = `INBOX.${body.get('_name')}`;
       if (tillstand.mappar.includes(namn)) return svar(200, FRAMED(['iframe_loaded("0")', 'display_message("A folder with that name already exists.","error")']));
       tillstand.mappar.push(namn);
-      return svar(200, FRAMED(['iframe_loaded("0")', 'display_message("Folder created successfully.","confirmation")', `add_folder_row("${namn}","${namn}","${namn}",false,false)`]));
+      return svar(200, FRAMED(['iframe_loaded("0")', 'display_message("Folder created successfully.","confirmation")', `add_folder_row("${namn}","${body.get('_name')}","${namn}",false,false)`]));
     }
     return svar(404, 'okänt');
   };
@@ -189,9 +193,12 @@ test('svara: öppnar svarsformuläret, postar rätt fält med token, citerar kun
   assert.equal(r.till, 'Anna <anna@gmail.com>');
   assert.equal(r.amne, 'Re: Var är min order #1042 & #1043?');
   assert.equal(r.utkastUid, null);
-  const compose = f.anrop.find((a) => a.q.get('_action') === 'compose');
-  assert.equal(compose.q.get('_reply_uid'), '3', 'tråden sätts av Roundcube ur _reply_uid');
-  assert.equal(compose.q.get('_mbox'), 'INBOX');
+  const composer = f.anrop.filter((a) => a.q.get('_action') === 'compose');
+  assert.equal(composer.length, 2, 'första anropet får 302, det andra (med _id) är formuläret');
+  assert.equal(composer[0].q.get('_reply_uid'), '3', 'tråden sätts av Roundcube ur _reply_uid');
+  assert.equal(composer[0].q.get('_mbox'), 'INBOX');
+  assert.equal(composer[1].q.get('_id'), '68cf1a2b3c4d5', 'omdirigeringen följs till sidan med compose-id');
+  assert.equal(composer[1].q.get('_reply_uid'), null);
   const send = f.anrop.find((a) => a.q.get('_action') === 'send');
   assert.equal(send.metod, 'POST');
   assert.equal(send.q.get('_framed'), '1');
@@ -282,7 +289,8 @@ test('flytta: saknad mapp är ett fel utan --skapa; med skapa skapas mappen (sav
   await assert.rejects(() => b.flytta(3, { till: 'VA-PRIO' }), (e) => e.kod === 'MAPP_SAKNAS' && /VA-PRIO.*finns inte/.test(e.message));
   assert.equal(f.anrop.filter((a) => a.q.get('_action') === 'move').length, 0, 'inget flyttat');
   const r = await b.flytta(3, { till: 'VA-PRIO', skapa: true });
-  assert.deepEqual(r, { uid: 3, fran: 'INBOX', till: 'VA-PRIO', skapad: true });
+  // Människan säger VA-PRIO; brevlådan skapar INBOX.VA-PRIO och dit flyttas mejlet (mätt 2026-09-21).
+  assert.deepEqual(r, { uid: 3, fran: 'INBOX', till: 'INBOX.VA-PRIO', skapad: true });
   const skapa = f.anrop.find((a) => a.q.get('_action') === 'save-folder');
   assert.equal(skapa.q.get('_task'), 'settings');
   assert.equal(skapa.body.get('_name'), 'VA-PRIO');
@@ -290,22 +298,37 @@ test('flytta: saknad mapp är ett fel utan --skapa; med skapa skapas mappen (sav
   assert.equal(skapa.body.get('_mbox'), '', 'tom _mbox = ny mapp, inte omdöpning');
   const move = f.anrop.find((a) => a.q.get('_action') === 'move');
   assert.equal(move.body.get('_uid'), '3');
-  assert.equal(move.body.get('_target_mbox'), 'VA-PRIO');
-  assert.deepEqual(f.tillstand.flyttade, [{ uid: '3', fran: 'INBOX', till: 'VA-PRIO' }]);
-  // Andra gången finns mappen: inget save-folder.
+  assert.equal(move.body.get('_target_mbox'), 'INBOX.VA-PRIO', 'flytten går till IMAP-namnet, inte människans');
+  assert.deepEqual(f.tillstand.flyttade, [{ uid: '3', fran: 'INBOX', till: 'INBOX.VA-PRIO' }]);
+  // Andra gången finns mappen: inget save-folder. Både "VA-PRIO" och "INBOX.VA-PRIO" hittar den.
   const r2 = await b.flytta(4, { till: 'VA-PRIO', skapa: true });
-  assert.equal(r2.skapad, false);
+  assert.deepEqual(r2, { uid: 4, fran: 'INBOX', till: 'INBOX.VA-PRIO', skapad: false });
+  const r3 = await b.flytta(5, { till: 'INBOX.VA-PRIO' });
+  assert.equal(r3.till, 'INBOX.VA-PRIO');
   assert.equal(f.anrop.filter((a) => a.q.get('_action') === 'save-folder').length, 1);
   await assert.rejects(() => b.flytta(3, { till: '' }), /--till/);
   await assert.rejects(() => b.flytta(3, { till: 'INBOX' }), /samma som källan/);
 });
 
-test('skapaMapp: ny mapp syns i mapplistan efteråt; befintlig ger fannsRedan; ogiltigt namn stoppas', async () => {
+test('hittaMapp: exakt namn, eller namnet under INBOX. — aldrig en gissning', async () => {
+  const { f } = ny();
+  const k = new WebmailKlient({ user: 'x', pass: 'rätt', fetchFn: f.fetchFn, paus: 0 });
+  await k.loggaIn();
+  assert.equal(k.hittaMapp('INBOX'), 'INBOX');
+  assert.equal(k.hittaMapp('Drafts'), 'INBOX.Drafts');
+  assert.equal(k.hittaMapp('INBOX.Drafts'), 'INBOX.Drafts');
+  assert.equal(k.hittaMapp('VA-PRIO'), null);
+  assert.equal(k.hittaMapp(''), null);
+  assert.equal(k.hittaMapp('Draft'), null, 'ingen prefixmatchning på delnamn');
+});
+
+test('skapaMapp: ny mapp syns i mapplistan efteråt (under INBOX.); befintlig ger fannsRedan; ogiltigt namn stoppas', async () => {
   const { b, f } = ny();
   const r = await b.skapaMapp('VA-PRIO');
   assert.equal(r.fannsRedan, false);
-  assert.ok(r.mappar.includes('VA-PRIO'));
-  assert.deepEqual(await b.skapaMapp('VA-PRIO'), { namn: 'VA-PRIO', fannsRedan: true, mappar: r.mappar });
+  assert.equal(r.imap, 'INBOX.VA-PRIO');
+  assert.ok(r.mappar.includes('INBOX.VA-PRIO'));
+  assert.deepEqual(await b.skapaMapp('VA-PRIO'), { namn: 'VA-PRIO', imap: 'INBOX.VA-PRIO', fannsRedan: true, mappar: r.mappar });
   assert.equal(f.anrop.filter((a) => a.q.get('_action') === 'save-folder').length, 1);
   await assert.rejects(() => b.skapaMapp('a/b'), /inte ett giltigt mappnamn/);
   // Roundcube nekar (t.ex. namnkrock den själv upptäcker): felet kommer igenom.
@@ -344,7 +367,7 @@ test('CLI: utkast/svara/flagga/flytta/mapp går till brevlådan och skrivs ut l�
   const m = await korKommando('mapp', { _: ['mapp', 'VA-PRIO'] }, b);
   assert.match(skrivUt('mapp', m), /Mappen "VA-PRIO" skapad/);
   const fy = await korKommando('flytta', { _: ['flytta', '3'], till: 'VA-PRIO' }, b);
-  assert.match(skrivUt('flytta', fy), /uid 3 flyttad INBOX → VA-PRIO\./);
+  assert.match(skrivUt('flytta', fy), /uid 3 flyttad INBOX → INBOX\.VA-PRIO\./, 'utskriften visar IMAP-namnet — det VA:n ser i webbmejlen');
   await assert.rejects(() => korKommando('svara', { _: ['svara', '3'] }, b), /behöver --text/);
   await assert.rejects(() => korKommando('flytta', { _: ['flytta'] }, b), /behöver ett uid/);
   await assert.rejects(() => korKommando('mapp', { _: ['mapp'] }, b), /behöver ett namn/);

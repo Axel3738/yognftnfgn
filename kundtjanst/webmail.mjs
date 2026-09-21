@@ -18,10 +18,13 @@
 // "markera som läst", inget nytt mejl utan tråd. Anropen är avlästa ur
 // Roundcubes källkod (github.com/roundcube/roundcubemail, master 2026-09-21:
 // program/actions/mail/{compose,send,mark,move}.php, settings/folder_save.php,
-// program/js/app.js submit_messageform). Steg 7 mättes live mot Loopia
-// 2026-09-21 kväll: compose svarar 302 till `…&_id=<compose-id>` först (rättat
-// samma kväll — oppnaSvar följer den). Steg 8–11 verifieras av autosvarets
-// första torrkörning: utkasten ska synas i mappen INBOX.Drafts.
+// program/js/app.js submit_messageform) och MÄTTA LIVE mot Loopia 2026-09-21
+// (första torrkörningen av autosvaret). Två saker skilde sig från läsningen:
+//   • compose utan _id svarar 302 till samma sida med ett nytt _id (compose.php
+//     mintar id:t och omdirigerar) — klienten följer den ENDA omdirigeringen.
+//   • Loopias brevlåda har namnrymden "INBOX." — Roundcube skapar "VA-PRIO"
+//     som "INBOX.VA-PRIO" (folder_save.php → mod_folder 'in'). hittaMapp()
+//     slår upp det riktiga IMAP-namnet, så anroparen får säga "VA-PRIO".
 //
 // Flödet mot Roundcube:
 //   1. GET  /                           → cookie roundcube_sessid + _token i formuläret
@@ -31,19 +34,19 @@
 //        + header X-Roundcube-Request   → JSON { env: {pagecount…}, exec: "this.add_message_row(uid, {…}, {…}, …);" }
 //   5. GET  /?_task=mail&_action=viewsource&_uid=…&_mbox=…   → råmejlet (text/plain), samma form som IMAP ger
 //   6. GET  /?_task=logout
-//   7. GET  /?_task=mail&_action=compose&_reply_uid=…&_mbox=…  → 302 Location ./?_task=mail&_action=compose&_id=<id>
-//        (parametrarna sparas i sessionen; mätt live 2026-09-21) → GET dit → svarsformuläret: compose_id
-//        (rcmail.set_env eller hidden _id), identiteten (<select name="_from">), _to (Reply-To före From —
-//        Shopifys kontaktformulär), "Re: …" i _subject, citatet i <textarea name="_message">. Servern minns
-//        In-Reply-To/References i sessionen (compose.php rad 236–237) och sätter dem själv vid sändningen —
-//        därför hänger tråden ihop utan att vi rör rubrikerna.
+//   7. GET  /?_task=mail&_action=compose&_reply_uid=…&_mbox=…  → 302 Location: /?_task=mail&_action=compose&_id=<nytt id>
+//        (mätt 2026-09-21). Den sidan är svarsformuläret: compose_id (rcmail.set_env eller hidden _id),
+//        identiteten (<select name="_from">), _to (Reply-To före From — Shopifys kontaktformulär), "Re: …" i _subject, citatet i <textarea name="_message">.
+//        Servern minns In-Reply-To/References i sessionen (compose.php rad 236–237) och sätter dem själv vid
+//        sändningen — därför hänger tråden ihop utan att vi rör rubrikerna.
 //   8. POST /?_task=mail&_action=send&_unlock=0&_framed=1     → body _token,_id,_from,_to,_subject,_message,
 //        _is_html=0,_draft=""|"1",_draft_saveid,_attachments. Svaret är en liten HTML-sida med
 //        `parent.rcmail.sent_successfully("confirmation", …)` (skickat) eller `parent.rcmail.set_draft_id(<uid>)`
 //        (utkast sparat i Drafts) eller `display_message("…","error")`.
 //   9. POST /?_task=mail&_action=mark&_remote=1&_unlock=0      → body _token,_uid,_mbox,_flag=flagged|unflagged
 //  10. POST /?_task=mail&_action=move&_remote=1&_unlock=0      → body _token,_uid,_mbox,_target_mbox
-//  11. POST /?_task=settings&_action=save-folder&_framed=1     → body _token,_name,_parent="",_mbox=""  (ny mapp)
+//  11. POST /?_task=settings&_action=save-folder&_framed=1     → body _token,_name,_parent="",_mbox=""  (ny mapp;
+//        hamnar under brevlådans namnrymd, hos Loopia "INBOX.<namn>" — mätt 2026-09-21)
 //
 // ⚠️ Det här är ett gränssnitt byggt för människor, inte ett API. Byter Loopia
 // Roundcube-version kan något steg sluta stämma. Varje steg kastar därför ett
@@ -478,7 +481,24 @@ export class WebmailKlient {
     return tolkaRemoteSvar(text, { steg: 10, vad: 'flytta' });
   }
 
-  /** Steg 11: skapa en mapp på toppnivå. Läser om mapplistan efteråt och kräver att mappen syns. */
+  /**
+   * Det riktiga IMAP-namnet för en mapp som människan kallar `namn`: exakt
+   * träff, annars mappen under brevlådans namnrymd ("INBOX.VA-PRIO" för
+   * "VA-PRIO" — Loopia lägger alla mappar under INBOX, mätt 2026-09-21).
+   * null om mappen inte finns i den kända listan.
+   */
+  hittaMapp(namn) {
+    const n = String(namn ?? '').trim();
+    if (!n) return null;
+    if (this.mappar.includes(n)) return n;
+    return this.mappar.find((m) => /^INBOX[./]/.test(m) && m.slice(6) === n) ?? null;
+  }
+
+  /**
+   * Steg 11: skapa en mapp på toppnivå (för människan — servern lägger den
+   * under sin namnrymd). Läser om mapplistan efteråt och kräver att mappen
+   * syns, som "namn" eller "INBOX.namn". Returnerar { namn, imap, mappar }.
+   */
   async skapaMapp(namn) {
     const n = String(namn ?? '').trim();
     if (!n || /[/.]/.test(n)) throw new Error(`skapaMapp: "${namn}" är inte ett giltigt mappnamn (tomt, eller bär / eller .).`);
@@ -489,8 +509,9 @@ export class WebmailKlient {
     const fel = felUrSvar(html);
     if (fel) throw Object.assign(new Error(`Roundcube kunde inte skapa mappen "${n}" (steg 11): ${fel}`), { kod: 'MAPP_NEKAD' });
     const mappar = await this.uppdateraMappar();
-    if (mappar.length && !mappar.includes(n)) throw new Error(`Mappen "${n}" syns inte i mapplistan efter save-folder (steg 11): ${mappar.join(', ')}. Roundcube-versionen kan ha ändrats.`);
-    return { namn: n, mappar };
+    const imap = mappar.length ? this.hittaMapp(n) : n;
+    if (!imap) throw new Error(`Mappen "${n}" syns inte i mapplistan efter save-folder (steg 11): ${mappar.join(', ')}. Roundcube-versionen kan ha ändrats.`);
+    return { namn: n, imap, mappar };
   }
 
   /** Första mappen i listan som finns. null om ingen. */
