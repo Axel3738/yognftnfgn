@@ -497,6 +497,23 @@ plats (`DATATAK_B` i `publicera.mjs`). Paket som fortfarande rullar rörs aldrig
 hur trångt det än blir — det är dem kunden slår upp. Första körningen: 644
 levererade bort, 1 400 paket kvar, 485 kB, grön trippelkoll. **Nästa steg när
 det blir trångt igen: flytta spårningsdatan ut ur sidan till en temafil.**
+
+⛔ **Beräknad leverans var för tidig för var tredje paket — rättat 2026-09-22**
+(Axels iakttagelse). Fönstret är ankaret + 7–14 kalenderdagar, och **ankaret är
+första skanningen i "Paketet är på väg"**. Mätt på 879 levererade paket är det
+ankaret rätt: median 10,1 dygn till leverans (p25 9,2 · p90 12,2), och 7–14
+träffar **96 %**. ⚠️ Men hade paketet ännu inte nått "på väg" användes
+**bokningen** som ankare, och koden påstod att fönstret då blev "försiktigt
+brett, inte snävt". Det var bakvänt — ett TIDIGARE ankare ger ett TIDIGARE
+datum. Dröjsmålet bokning → första rörelse är i median **4,1 dygn** (p25 2,6 ·
+p90 7,3), så de paketen fick ett löfte fyra dygn för optimistiskt, och det
+gällde **383 av 1 165** paket på väg — var tredje. Fallbacken lägger nu på det
+mätta dröjsmålet (`DROJSMAL_DYGN` i `sida.mjs`); ett test jämför två paket med
+samma tidsstämpel, det ena som rörelse och det andra som bokning.
+⚠️ **Mät om dröjsmålet när fraktvägen ändras** — det är ett mätvärde, inte en
+konstant någon valt. ⚠️ Och mät mot KODENS ankare: min första mätning räknade
+från paketets första skanning och sa att 58 % kom fram för sent. Den var fel;
+med rätt ankare är det 2 %. En mätning som inte speglar koden mäter ingenting.
 ⚠️ **Höj inte fönstret utan att tänka på kvoten:** varje nytt paket i fönstret
 kostar en 17TRACK-registrering, och `--max` (150/körning) är det enda som
 bromsar. ⚠️ Registreringen tar **nyast först**, så de äldsta paketen — de som
