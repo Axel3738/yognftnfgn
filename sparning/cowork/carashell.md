@@ -99,6 +99,21 @@ grenen testas först av en riktig svensk order. Avsändaren i testmejlet är
 Shopifys relä `store+…@g.shopifyemail.com`; skarpa utskick ska gå från
 hello@carashell.com (Autentiserad) — kolla på nästa riktiga order.
 
+## ✅ Utfall 6 — ALLA TRE fyrspråkiga mallarna inne och verifierade. CaraShell är KLART (2026-09-21 07:56 CEST)
+
+Axel återställde "Order ute för lokal leverans" (**Återgå till standard**,
+`hasDefaultBody/Title: true`, 17 469 tecken, noll `CS-`) och klistrade
+`ute_for_leverans.liquid` i rätt mall. Cowork verifierade mot serverns
+EmailTemplate-data: `shipment_out_for_delivery` 24 394 tecken, sha256 kropp +
+ämne lika råfilen, `updatedAt` 05:56:00Z; `shipping_confirmation` 41 115 och
+`shipping_update` 24 402 oförändrade sedan 05:44; `shipment_delivered` orörd
+(10 sept). Coworks egen rättelse: dess förra rapport frågade API:t efter id:t
+`out_for_delivery` som inte finns i butiken och tolkade null som "standard" —
+rätt id är **`shipment_out_for_delivery`**. Lärdom: id:t i adressfältet är
+markören, aldrig namnet (lokal-leverans-mallens interna `name` är också "Out
+for delivery"). Testmejl C gick igenom tidigare (Utfall 5).
+`byt_avsandare` borttagen ur `mejl/butiker/carashell.json` — steg 0 är gjort.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
