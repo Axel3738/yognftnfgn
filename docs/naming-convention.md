@@ -107,3 +107,58 @@ Vilket hook har lägst CPA?"* — istället för att bara stirra på en enda sif
 2. **Ändra en variabel i taget** när du testar rent (håll allt annat lika, byt bara `angle`).
 3. **Döp aldrig om** en annons som fått data — skapa en ny med bumpat `v{N}`.
 4. Om ett fält inte passar in i vokabulären: lägg till det i listan här *först*, kör sen.
+
+---
+
+## Vinkelkoderna som faktiskt används i kontot (Axels beslut 2026-09-21)
+
+⚠️ Tabellerna ovan (`pain`, `benefit`, `social` …) är det ursprungliga
+systemet. Annonserna i MagiBorsten-kontot använder **tvåbokstavskoder** i
+stället: `Takoverdrag_CS_2_H1`, `MC-Kapell_OB_3_1`. De hade aldrig skrivits
+ner någonstans. Det här är de som bär mest spend, avlästa ur kontot
+2026-09-21 (1 682 annonser, 29 olika koder):
+
+| Kod | Antal annonser | Vad den betyder |
+|---|---|---|
+| `PD` | 484 | Produktdemonstration |
+| `SP` | 332 | Social proof |
+| `CS` | 223 | Prisankare / cost-saving |
+| `SO` | 115 | Lösningen på problemet |
+| `GT` | 100 | Present (gift) |
+| `BOF` | 48 | **Funnelposition**, inte vad annonsen gör — se varningen nedan |
+| `OB` | 4 | **Invändning.** Annonsen bemöter en sak publiken faktiskt säger |
+
+### `OB` betyder invändning
+
+Axels beslut 2026-09-21, efter att han läst copyn på alla fyra OB-annonser i
+kontot. De är invändningsannonser allihop:
+
+| Annons | Invändningen den bemöter |
+|---|---|
+| `Takoverdrag_OB_1_H1` | "Blåser det inte av?, tänker du" |
+| `MC-Kapell_OB_3_1` | "passar den min moped?" |
+| `MC-Kapell_OB_4_1` | "får hela hojen plats?" |
+| `MC-Kapell_OB_1_1` | (samma familj) |
+
+Koden hade aldrig dokumenterats. Den används från och med nu för varje annons
+vars uppgift är att bemöta en invändning, och `kalla=voc` när invändningen är
+läst ur kommentarerna.
+
+### ⚠️ Använd INTE `BOF` för invändningar
+
+`BOF` säger var i funneln annonsen ligger, inte vad den gör. Axels formulering:
+**"med BOF går invändningsannonserna inte att skära ut ur datan."**
+
+Problemet finns redan i historiken. Fyra av Taköverdragets nio BOF-annonser är
+i själva verket invändningsannonser — `BOF_3_1` ("räcker det inte med en
+presenning?"), `BOF_5_1` (samma), `BOF_6_1` ("klarar jag det själv?") och
+`BOF_8_1` ("var bor den på sommaren?"). Det står i produktens `batch-log.md`,
+men namnen säger det inte, så ingen uträkning kan hitta dem.
+
+**De döps inte om.** De är live, och ett namnbyte i Meta bryter kopplingen
+mellan annonsen och alla rader som redan pekar på den. Konsekvensen är att en
+OB-analys bara gäller framåt: annonser före 2026-09-21 måste läsas för hand
+ur batch-loggarna.
+
+⚠️ `arBof()` i `agent/etikett.mjs` läser fortfarande enbart `BOF` och är
+oförändrad — den handlar om funnelposition, och det är rätt.
