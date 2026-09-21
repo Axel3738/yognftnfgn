@@ -105,5 +105,7 @@
   "the parcel did not fit in the mailbox, and due to the missing name on the door, we could not deliver it there. the parcel is on its way to a pickup location near you and you will be notified when it can be picked up. it usually takes 1 business day": "Paketet fick inte plats i brevlådan och kunde inte lämnas vid dörren eftersom namn saknades. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag",
   "3rd party label prepared": "Fraktetiketten är skapad",
   "documentation prepared": "Uppgifterna om paketet är registrerade",
-  "shipment finalised": "Paketet är klart att skickas vidare"
+  "shipment finalised": "Paketet är klart att skickas vidare",
+  "paketet har sorterats fel - leveransdatum uppdateras": "Paketet har sorterats fel och leveransdatumet uppdateras",
+  "a text message notification has been sent to the recipient": "Ett sms om paketet har skickats till dig"
 }

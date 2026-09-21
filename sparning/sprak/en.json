@@ -157,6 +157,8 @@
     "Mottagaren har lämnat leveransinstruktioner": "The recipient has left delivery instructions",
     "Paketet har kommit till terminalen och är snart på väg till din brevlåda. Nästa uppdatering kommer när det är levererat": "The parcel has arrived at the facility and will soon be on its way to your mailbox. The next update comes once it has been delivered",
     "Paketet är överlämnat till fraktbolaget": "The parcel has been handed to the carrier",
-    "Paketet har kommit till omlastningsorten": "The parcel has arrived at the transit point"
+    "Paketet har kommit till omlastningsorten": "The parcel has arrived at the transit point",
+    "Paketet har sorterats fel och leveransdatumet uppdateras": "The parcel was missorted and the delivery date is being updated",
+    "Ett sms om paketet har skickats till dig": "A text message about the parcel has been sent to you"
   }
 }
