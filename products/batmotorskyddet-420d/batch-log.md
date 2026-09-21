@@ -430,3 +430,45 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Batmotor_SP_2_1 | — | okänd | **LOSER** | 0 % | 28 kr | 0 | 0,00 / 3,18 | nej | släpp |
 | Batmotor_PD_2_1 | — | okänd | **LOSER** | 1 % | 57 kr | 0 | 0,00 / 3,18 | nej | släpp |
 | Batmotor_SP_1_H1 | 3 | okänd | **KPI_WINNER** | 23 % | 2052 kr | 14 | 4,66 / 3,18 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+
+## Feedbackloop + batch #5 — 2026-09-21 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget (livstid, avläst 2026-09-21):** 35 173 kr · 176 köp · ROAS 3,11 mot break-even
+1,62 · AOV 621 kr ⇒ BE-CPA 383 kr. Dagsbudget **3 400 → 4 000 kr** i dag (SKALA, verifierad).
+Spendtjuven: INGEN_TJUV.
+
+| Annons | Spend | Spend% | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| Batmotor_SP_1_H5 (KPI_WINNER, top spender = benchmark) | 11 810 | 34 % | 70 | 169 | 3,56 | **+15 007 kr** |
+| Batmotor_SP_1_H1 | 2 693 | 8 % | 18 | 150 | 4,36 | +4 203 kr |
+| Batmotor_CS_2_1 | 2 924 | 8 % | 17 | 172 | 3,70 | +3 589 kr |
+| Batmotor_BF_3_1 | 2 402 | 7 % | 11 | 218 | 2,73 | +1 812 kr |
+| Batmotor_UG_1_H1 | 1 308 | 4 % | 8 | 163 | 3,54 | +1 757 kr |
+| Batmotor_SP_1_H3 (BREAKTHROUGH dag 7) | 5 128 | 15 % | 17 | 302 | 2,30 | +1 385 kr |
+| Batmotor_RV_1_H1 | 676 | 2 % | 5 | 135 | 4,28 | +1 239 kr |
+| Batmotor_FM_1_H1 | 890 | 3 % | 5 | 178 | 2,99 | +1 026 kr |
+| Batmotor_BF_12_1 | 1 356 | 4 % | 6 | 226 | 3,16 | +942 kr |
+| Batmotor_CS_5_H1 | 811 | 2 % | 4 | 203 | 3,35 | +721 kr |
+
+**Mönster:** (1) BEVISAD — SP_1-familjen är produkten (H5 +15 007 kr, H1 +4 203 kr): nya
+hooks på samma kropp är den säkraste kronan; (2) BEVISAD — UGC (UG_1_H1) och review
+(RV_1_H1) betalar under BE-CPA; (3) BEVISAD — CS_2_1:s layout säljer, men dess deadline
+var falsk ⇒ säsongsrubrik i stället. Priset avläst live: 579 kr / 965 kr.
+
+### Batch #5 — 6 video + 2 bild i rundan, 0 BOF, 1 review-video — alla i Notion som Draft (Boat motor cover creative hub)
+
+| Annons | Format | Hypotes | Isolerad variabel | Källa |
+|---|---|---|---|---|
+| `Batmotor_SP_1_H11` | video | SP_1-kroppen, ny hook: "9 storlekar. Från 0 till 350 hästkrafter." | hooken (storleksfakta) | föräldrar SP_1_H5/H1 |
+| `Batmotor_SP_1_H12` | video | SP_1-kroppen, ny hook: vatten rinner av 420D-tyget | hooken (visuell demo) | föräldrar SP_1_H5/H1 |
+| `Batmotor_UG_3_H1` | video | UGC vid bryggan, säsongsvinkeln (båten tas upp) | vinkeln på bevisat format | UG_1_H1 + FM_1_H1 |
+| `Batmotor_RV_12_H1` | video | riktig Judge.me-recension ordagrant (Thomas Eriksson) som video | formatet (review som video) | RV_1_H1 + Judge.me 2026-09-21 |
+| `Batmotor_FM_4_H1` | video | "Tre saker innan båten tas upp" — checklista | strukturen | FM_1_H1 |
+| `Batmotor_PD_8_H1` | video | kostnaden av att inte skydda, bara äkta material | vinkeln (before/after) | copy-regler + gissning |
+| `Batmotor_BF_14_1` | bild | invändningen "Täcker den hela motorn?" | invändningen (täckning) | BF_3_1/BF_12_1 |
+| `Batmotor_CS_11_1` | bild | CS_2_1:s layout med säsongsrubrik, ingen deadline | rubriken | CS_2_1 |
+
+**0 BOF** (BOF_1_1 2 dygn, ingen etikett). **Review:** 8 unika riktiga citat i Judge.me —
+RV_12_H1 använder ett ordagrant. Feedback-raden Brief review 2026-09-18 läst. Annonsidéer:
+inga rader. Copy av sonnet-subagent (regel 6); huvudsessionen rättade hook-raderna i
+SP_1_H11/H12. ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen.

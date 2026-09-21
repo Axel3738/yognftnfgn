@@ -373,3 +373,40 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Beltgrinder_PD_5_1 | 2 | okänd | **LOSER** | 2 % | 110 kr | 0 | 0,00 / 1,68 | nej | släpp |
 | Beltgrinder_SO_4_1 | 2 | okänd | **LOSER** | 2 % | 99 kr | 0 | 0,00 / 1,68 | nej | släpp |
 | Beltgrinder_PD_4_1 | 2 | okänd | **LOSER** | 2 % | 97 kr | 0 | 0,00 / 1,68 | nej | släpp |
+
+## Feedbackloop + batch #6 — 2026-09-21 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget (livstid, avläst 2026-09-21):** 41 774 kr · 110 köp · ROAS 2,58 mot break-even
+1,73 · AOV 981 kr ⇒ BE-CPA 567 kr. Dagsbudget oförändrad — SKALA uppskjuten
+(`UPPSKJUTEN_GRANS`, nära zongränsen). Spendtjuven: INGEN_TJUV.
+
+| Annons | Spend | Spend% | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| Beltgrinder_PD_19_1 (BREAKTHROUGH dag 7) | 7 798 | 21 % | 24 | 325 | 2,98 | **+5 806 kr** |
+| Beltgrinder_PD_4_H1 | 1 992 | 5 % | 10 | 199 | 4,86 | +3 676 kr |
+| Balteslipmaskin_PD_2 (top spender = benchmark) | 11 334 | 31 % | 25 | 453 | 2,21 | +2 838 kr |
+| Balteslipmaskin_PD_3 | 4 725 | 13 % | 13 | 363 | 2,73 | +2 644 kr |
+| Balteslipmaskin_PD_2_1 | 2 535 | 7 % | 7 | 362 | 2,88 | +1 433 kr |
+| Balteslipmaskin_PD_1 | 2 350 | 6 % | 6 | 392 | 2,28 | +1 051 kr |
+| Balteslipmaskin_CS_3 | 989 | 3 % | 3 | 330 | 3,36 | +712 kr |
+
+**Mönster:** (1) BEVISAD — PD_19_1 (b020-layouten) är kampanjens motor och bär 3 198 kr
+av de senaste tre dygnen på ROAS 2,48; (2) BEVISAD — PD_4_H1 är effektivast per krona
+(CPA 199 mot 567); (3) BEVISAD — top spendern PD_2 är benchmark. Priset avläst live:
+909 kr / 1 182 kr (spara 273 kr = 23 %; "40 %" är förbjudet).
+
+### Batch #6 — 4 video + 2 bild i rundan, 0 BOF, 0 review — alla i Notion som Draft (Belt grinder creative hub)
+
+| Annons | Format | Hypotes | Isolerad variabel | Källa |
+|---|---|---|---|---|
+| `Beltgrinder_PD_28_H1` | video | PD_4_H1:s mekanik med räknad hook: tre knivar, riktig tid `[TID]` | hooken | förälder PD_4_H1 |
+| `Beltgrinder_PD_29_H1` | video | UGC "kökslådetestet", creator i egen synk | formatet (talare) | dna "Testa kontrollerat" + gissning |
+| `Beltgrinder_PD_30_H1` | video | före/efter på EN kniv (tomaten), bara äkta material | bevistypen | dna "före/efter-egg" |
+| `Beltgrinder_CS_5_H1` | video | öppnar på "909 kr. Inte 1 182 kr.", ärliga 23 % | erbjudandeöppning | förälder CS_2_1 |
+| `Beltgrinder_PD_31_1` | bild | b020-layouten med före/efter-rubrik | rubriken | förälder PD_19_1 |
+| `Beltgrinder_JF_1_1` | bild | brynsten mot maskin i två paneler (konflikt typ A) | vinkeln (jämförelse) | copy-regler + gissning |
+
+**0 BOF** (BOF_3_1 5 dygn, BOF_4_1/5_1 2 dygn — ingen KPI_WINNER). **0 review-bilder**
+(inga riktiga recensioner att citera). Feedback-raden Brief review 2026-09-18 läst;
+dess tre regler i varje brief. Annonsidéer: inga rader. Copy av sonnet-subagent (regel 6).
+⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen samma datum.

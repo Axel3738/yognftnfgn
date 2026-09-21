@@ -534,3 +534,48 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Rodholder_PD_13_H2_H2 | — | okänd | **LOSER** | 0 % | 60 kr | 0 | 0,00 / 1,46 | nej | släpp |
 | Rodholder_PD_12_H2_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Rodholder_PD_12_H2_H2 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Feedbackloop + batch #7 — 2026-09-21 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget i kampanjen (livstid, avläst 2026-09-21 ur MagiBorsten 1867947880635861):**
+83 787 kr spend · 414 köp · livstids-ROAS 2,16 mot break-even 1,50 · AOV 437 kr ⇒
+BE-CPA 291 kr. Dagsbudget 1 800 kr (oförändrad — VANTA_KADENS).
+**Dagens åtgärd på annonsnivå:** `Fiskespöhållare_PD_EXTRA` (…564380291) pausad
+som spendtjuv i grön kampanj (3 d: 1 948 kr / 5 köp / ROAS 0,86; livstid 19 110 kr /
+91 köp / CPA 210 / ROAS 1,98; dag-7-etikett LOSER) — en trött vinnare, dess
+demokropp lever vidare i PD_63/PD_64.
+
+**Vinstbidrag (livstid, aktiva annonser, ≥300 kr + ≥3 köp; BE-CPA per annons på egen AOV):**
+
+| Annons | Spend | Spend% | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| Fiskespöhållare_CS_1_H1 | 7 804 | 13 % | 55 | 142 | 3,07 | **+8 205 kr** |
+| Fiskespöhållare_PD_EXTRA (…564380291, pausad i dag) | 19 110 | 31 % | 91 | 210 | 1,98 | +7 377 kr |
+| Fiskespöhållare_PD_EXTRA (2026-08-19) | 6 006 | 10 % | 37 | 162 | 2,70 | +4 763 kr |
+| Fiskespöhållare_PD_1_H1 (top spender = benchmark) | 16 638 | 27 % | 67 | 248 | 1,90 | +2 863 kr |
+| Rodholder_PD_6_1 (bäst statisk) | 3 675 | 6 % | 21 | 175 | 2,43 | +2 438 kr |
+| Fiskespöhållare_CS_1_H3 | 546 | 1 % | 8 | 68 | 6,35 | +1 782 kr |
+| Rodholder_PD_16_H1 | 3 427 | 6 % | 15 | 228 | 1,72 | +939 kr |
+| Rodholder_SO_3_H1 | 489 | 1 % | 4 | 122 | 2,76 | +675 kr |
+| Rodholder_CS_3_1 | 911 | 1 % | 4 | 228 | 1,82 | +253 kr |
+
+**Mönster:** (1) BEVISAD — CS-erbjudandet är starkast per krona (CS_1_H1 +8 205 kr
+på 13 % av spenden), (2) BEVISAD — PD-demon bär volymen men den största
+PD_EXTRA-varianten har tröttnat (3 back-dygn under 1,50), (3) BEVISAD — top spendern
+PD_1_H1 är benchmark, inte kandidat. Priset avläst live: 289 kr / 482 kr (spara 193 kr, 40 %).
+
+### Batch #7 — 4 videobriefer (rundan), 0 BOF, 0 review — alla i Notion som Draft (hub Fish rod holder)
+
+| Annons | Format | Hypotes | Isolerad variabel | Källa |
+|---|---|---|---|---|
+| `Rodholder_PD_63_H1` | video | PD_EXTRA:s demokropp, men de två första sekunderna ordlösa | öppningen (ordlös/talad) | förälder PD_EXTRA |
+| `Rodholder_PD_64_H1` | video | UGC-talare i egen båt, ingen voiceover | talaren (creator/VO) | dna "Testa kontrollerat" + gissning |
+| `Rodholder_CS_10_H1` | video | öppnar på 482 kr överstruket → 289 kr, "det här får du" | rabatten visad (överstrykning + 40 %) | förälder CS_1_H1 |
+| `Rodholder_JF_6_H1` | video | gummiband glider av, klämman sitter kvar (konflikt typ A) | vinkeln (jämförelse) | copy-regler + gissning |
+
+**0 BOF-bilder** (inga KPI_WINNER bland BOF-etiketterna, regel 2026-09-20). **0 review-bilder**
+(ingen riktig kundrecension att citera). **Hubben saknar Feedback-rad** — reglerna hämtade
+ur Brief review 2026-09-18 i Belt/Boat/Termo. **Annonsidéer:** inga rader för produkten.
+Copy av sonnet-subagent (regel 6), tre-frågorstest per rad.
+⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1` 06:04 UTC samma morgon) saknas —
+kravet kom efter att subagenten fått sin brief, och spärren `--manifest` finns inte på `main`.

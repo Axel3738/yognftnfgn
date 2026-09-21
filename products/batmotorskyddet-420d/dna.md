@@ -322,3 +322,14 @@ Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
    ställer upp båten i oktober. `SP_4_H1` gör det.
 
 Priset avläst live 2026-09-18: 579 kr, jämförpris 965 kr → spara 386 kr = 40 %. Recensionsvidgeten avläst live samma dag: **8 recensioner, snitt 5,00**.
+
+## Uppdatering 2026-09-21 (`/rond-auto` steg 4b, feedbackloop + batch #5)
+
+Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD — SP_1_H5 är en KPI_WINNER dag 7 och bär 43 % av all vinst** (+15 007 kr).
+   Kampanjen skalades 3 400 → 4 000 kr i dag. `SP_1_H11/H12` matar familjen med två nya hooks.
+2. **BEVISAD — recensionerna är riktiga** (8 unika citat, Judge.me 2026-09-21) ⇒ `RV_12_H1`.
+3. **HYPOTES — "utan skydd" (before/after) är otestad** ⇒ `PD_8_H1`, bara äkta material.
+
+Priset avläst live 2026-09-21: 579 kr, jämförpris 965 kr.

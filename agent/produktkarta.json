@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-20",
+  "uppdaterad": "2026-09-21",
   "kampanjer": [
     {
       "campaign_id": "120252299552200233",
@@ -55,9 +55,16 @@
       "campaign_id": "120250284693380291",
       "produkt": "Sotarsetet med Böjliga Stänger",
       "lage": "test",
-      "lage_motivering": "ny kampanj startad 2026-09-19, noll köp än — tillagd av /rond-auto. Break-even står i kampanjnamnet.",
+      "lage_motivering": "ny kampanj startad 2026-09-19 — startskott 2026-09-21 (3 058 kr, 25 köp, CPA 122 mot BE-CPA 307, 39,1 % vinst) och första OS-batchen samma dag. Break-even står i kampanjnamnet.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "kampanjnamnet",
+      "notion_hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
+      "notion_hub_datakalla": "collection://af6270ab-908c-8256-879b-07429bfd3596",
+      "notion_hub_namn": "Chimney sweep set creative hub",
+      "notion_hub_not": "Skapad 2026-09-21 av /rond-auto som dubblett av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794), omdöpt via notion-update-data-source. 14 briefer i Draft från start.",
+      "drive_senaste_batchmapp_id": "1lJZewCo50svHhA9Cob47VdVVf85EZd9D",
+      "drive_not": "Joshs produktmapp (Product test center-raden). Ingen egen batchmapp skapad — briefarna ligger i Notion.",
+      "minne": "products/sotarsetet/"
     },
     {
       "campaign_id": "120250252311730291",

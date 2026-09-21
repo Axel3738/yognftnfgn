@@ -257,3 +257,42 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Termoskydd_CS_3 | 2 | okänd | **BREAKTHROUGH** | 43 % | 4799 kr | 26 | 3,19 / 3,25 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
 | Termoskydd_CS_2 | 2 | okänd | **BREAKTHROUGH** | 34 % | 3794 kr | 25 | 3,68 / 3,25 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
 | Termoskydd_CS_1 | — | okänd | **LOSER** | 1 % | 89 kr | 0 | 0,00 / 3,25 | nej | släpp |
+
+## Feedbackloop + batch #3 — 2026-09-21 (`/rond-auto` steg 4b, brief-runda)
+
+**Läget (livstid, avläst 2026-09-21):** 18 744 kr · 83 köp · ROAS 2,67 mot break-even
+1,61 · AOV 603 kr ⇒ BE-CPA 375 kr. Dagsbudget oförändrad (VANTA_KADENS).
+**Annonsnivå:** `Termoskydd_CS_2` är BREAKTHROUGH (dag 7) men går back tredje dygnet
+(3 d: 5 091 kr / 11 köp / ROAS 1,28; 7 d: 8 783 kr, ROAS 2,27) ⇒ nåd,
+`VANTA_BREAKTHROUGH` loggad, inte pausad.
+
+| Annons | Spend | Spend% | Köp | CPA | ROAS | **Vinstbidrag** |
+|---|---|---|---|---|---|---|
+| Termoskydd_CS_3 (BREAKTHROUGH) | 5 445 | 29 % | 30 | 181 | 3,55 | **+5 792 kr** |
+| Termoskydd_CS_2 (BREAKTHROUGH, top spender = benchmark, under nåd) | 8 978 | 48 % | 36 | 249 | 2,28 | +4 506 kr |
+| Termoskydd_SP_2_1 | 1 157 | 6 % | 6 | 193 | 2,90 | +1 090 kr |
+| Termoskydd_SP_2 | 905 | 5 % | 5 | 181 | 3,09 | +968 kr |
+
+**Mönster:** (1) BEVISAD — de två CS-statiska bär 84 % av vinsten; CS_3 är nu ensam
+vinnare medan CS_2 svalnar ⇒ `CS_9_1` är CS_3:s syskon med nattbild; (2) HYPOTES —
+videon är fortfarande utsvulten, inte svag (ingen video över 300 kr med köp; SP_4_H1
+har 3 köp på 64 kr efter ett dygn); (3) BEVISAD — spärrarna gäller: noll recensioner,
+aldrig sommar/värme, ingen brådska. Priset avläst live: 559 kr / 932 kr (spara 373 kr, 40 %).
+
+### Batch #3 — 4 video + 2 bild i rundan, 0 BOF, 0 review — alla i Notion som Draft (BÄVER Termoskyddet för Husbil)
+
+| Annons | Format | Hypotes | Isolerad variabel | Källa |
+|---|---|---|---|---|
+| `Termoskydd_PD_10_H1` | video | mörkläggning över hela framvagnen (integritet) | vinkeln (privacy) | sidraden + gissning |
+| `Termoskydd_PD_11_H1` | video | gardin innanför immar, skydd utanpå håller klart (konflikt typ A) | vinkeln (jämförelse) | sidraden + copy-regler |
+| `Termoskydd_UG_2_H1` | video | UGC-morgon: skyddet av i en rörelse, klar ruta | formatet (creator, ingen VO) | gissning |
+| `Termoskydd_OB_2_H1` | video | "Passar den din husbil?" — mät på två minuter (211/171/90 cm) | vinkeln (passform) | sidans mått + gissning |
+| `Termoskydd_CS_9_1` | bild | CS_3:s layout med nattbild | bilden | förälder CS_3 |
+| `Termoskydd_PD_12_1` | bild | innanför/utanpå som delad bild — vinkeln billigt före video | vinkeln | sidraden + gissning |
+
+**Spegling till CaraShell:** inga policyrader (frakt/Klarna/retur) i bild, slutbild eller captions.
+**0 BOF** (BOF_7_1/8_1 2 dygn, ingen etikett). **0 review** (noll recensioner).
+Feedback-raden Brief review 2026-09-18 läst. Annonsidéer: inga rader. Copy av sonnet-subagent
+(regel 6). Anmärkning: PD_11_H1:s scenrad "Två sätt att skydda framrutan" och UG_2_H1:s första
+halva är generiska på egen hand — subagenten behöll dem som scensättning, argumentet bärs av
+raderna efter. ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen.

@@ -140,3 +140,15 @@ Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
    lönsam, och stoppregeln gäller före uppladdning, inte i efterhand.
 
 Priset avläst live 2026-09-18: 559 kr, jämförpris 932 kr → spara 373 kr = 40 %. Mängdrabatt: 2 st −15 % (förvald), 3 st −20 %.
+
+## Uppdatering 2026-09-21 (`/rond-auto` steg 4b, feedbackloop + batch #3)
+
+Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD — CS_2 svalnar** (tre back-dygn, ROAS 1,28 på 5 091 kr) men är BREAKTHROUGH
+   ⇒ nåd i stället för paus. CS_3 (+5 792 kr, CPA 181) är ensam motor ⇒ `CS_9_1`.
+2. **HYPOTES — integritet och mekanism-jämförelse är nya vinklar** (`PD_10_H1`, `PD_11_H1`,
+   `PD_12_1`); ingen har spend.
+3. **BEVISAD — hubben speglas till CaraShell** ⇒ inga butiksvillkor i bild/slutbild.
+
+Priset avläst live 2026-09-21: 559 kr, jämförpris 932 kr → spara 373 kr = 40 %.

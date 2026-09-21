@@ -335,3 +335,15 @@ Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
    `SO_7_1` bär bredden i rubriken.
 
 Priset avläst live 2026-09-18: 909 kr, jämförpris 1 182 kr → spara 273 kr = 23 %. "40 %" är fortsatt FÖRBJUDET — det var falskt.
+
+## Uppdatering 2026-09-21 (`/rond-auto` steg 4b, feedbackloop + batch #6)
+
+Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD — PD_19_1 fick BREAKTHROUGH dag 7** (backfillen 2026-09-21) och bär
+   +5 806 kr. `PD_31_1` är dess syskon med före/efter-rubrik.
+2. **BEVISAD — PD_4_H1 är effektivast (CPA 199 mot 567).** `PD_28_H1` och `PD_30_H1`
+   återanvänder mekaniken med ny hook respektive nytt bevis.
+3. **HYPOTES — talare och jämförelse otestade.** `PD_29_H1` (UGC) och `JF_1_1` (brynsten).
+
+Priset avläst live 2026-09-21: 909 kr, jämförpris 1 182 kr → spara 273 kr = 23 %.

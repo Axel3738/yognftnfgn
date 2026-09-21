@@ -555,3 +555,17 @@ Hela feedbackloopen, vinstbidragstabellen och batchens hypoteser står i
    Ingen video-mot-statisk-slutsats dras därför denna körning.
 
 Priset avläst live 2026-09-18: 289 kr, jämförpris 482 kr → spara 193 kr = 40 %. Bekräftat i `variants[0]`.
+
+## Uppdatering 2026-09-21 (`/rond-auto` steg 4b, feedbackloop + batch #7)
+
+Feedbackloopen och batchtabellen står i `batch-log.md` under samma datum. Det datan flyttade:
+
+1. **BEVISAD — PD_EXTRA (…564380291) är en trött vinnare.** +7 377 kr livstid men tre
+   back-dygn (3 d: ROAS 0,86, 1 948 kr) ⇒ pausad i dag som spendtjuv i grön kampanj
+   (etikett LOSER dag 7 i backfillen). Instruktion: kroppen lever, öppningen byts —
+   `PD_63_H1` (ordlös start) och `PD_64_H1` (UGC-talare).
+2. **BEVISAD — CS_1_H1 är fortfarande produktens bästa krona** (+8 205 kr, CPA 142 mot
+   BE-CPA 291). `CS_10_H1` bär det ärliga jämförpriset (482 → 289) i video.
+3. **HYPOTES — jämförelsen är otestad.** `JF_6_H1` är första konflikt-typ-A-annonsen.
+
+Priset avläst live 2026-09-21: 289 kr, jämförpris 482 kr.
