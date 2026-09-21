@@ -1,5 +1,13 @@
 # Förslag: Evolve-materialet → Skalnings kungen
 
+**2026-09-21 senare samma förmiddag: Axels definition av klart —
+`docs/os/CS-KLART.md`, 27 punkter — ersätter det här förslagets prioritering.**
+Byggt mot den: `agent/lardom.mjs` (lärdomen per etiketterad annons, briefer
+som pekar på en lärdom, brieftaket, iterationsnumret), mixen ur etiketterna
+och behovet `vidarebygg` i `agent/rond.mjs` (= 2.5 + 2.6 + 2.10-delar),
+`agent/ugc.mjs`, spegelkontona i backfillen, `tools/ai-rad.mjs`.
+Avstämningen per punkt står längst ner i CS-KLART.md.
+
 **2026-09-21 förmiddag: etiketterna backfillade + 2.9 och 2.12 byggda (Axels
 två rättelser).** (1) `agent/etikett-backfill.mjs` (agent-grenen) etiketterade
 hela bakkatalogen ur Meta: **1 682 SE-annonser i 151 fönster (10 BREAKTHROUGH,

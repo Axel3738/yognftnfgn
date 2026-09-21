@@ -18,7 +18,7 @@ import {
   trefragorUr, dodaKoncept, arVariant, isoleradVariabel, kallaUr, kpiUr, roasEnsamt, granskaBrief, svenskDag, dagarMellan,
   valjRond, redanGranskad, hittaBatch, nastaGranskning, harSektion, domFor, giltigDom, kommentarText, feedbackSektion, laggInSektion,
   feedbackRadMarkdown, feedbackEgenskaper, byggRapport, samlaKorning,
-  REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra,
+  REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra, spegelPris,
 } from '../briefgranskning.mjs';
 import { serUtSomSvenska } from '../lib/engelska.mjs';
 
@@ -26,7 +26,7 @@ import { serUtSomSvenska } from '../lib/engelska.mjs';
 
 const BRA = `# Takoverdrag_SP_5_1 — the winner's proof, moved into the weather it talks about
 
-**VARIABELTAGGAR:** vinkel=\`social proof (kundomdöme)\` · hook-typ=\`aggregerat betyg + citat\` · format=\`statisk, enkel canvas\` · proof=\`namngivet citat + 16 omdömen\` · offer-i-creativen=\`inget pris\` · visuell stil=\`exteriör, höstregn\` · textmängd=\`toppetikett+citat+bottenrad\` · talare=\`kund (Lars)\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Takoverdrag_SP_2_1\` · iteration=\`1\` · koncept=\`SP omdöme i regn\` · kalla=\`parent\` · avatar=\`husvagnsagaren-vinterforvaring\` · awareness=\`product\` · begar=\`skydda-det-jag-ager\` · mekanism=\`bevis i vädret raden nämner\` · urgency=\`sasong\` · hook-mekanik=\`none\` · confidence=\`medium\`
+**VARIABELTAGGAR:** vinkel=\`social proof (kundomdöme)\` · hook-typ=\`aggregerat betyg + citat\` · format=\`statisk, enkel canvas\` · proof=\`namngivet citat + 16 omdömen\` · offer-i-creativen=\`inget pris\` · visuell stil=\`exteriör, höstregn\` · textmängd=\`toppetikett+citat+bottenrad\` · talare=\`kund (Lars)\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Takoverdrag_SP_2_1\` · iteration=\`1\` · koncept=\`SP omdöme i regn\` · kalla=\`parent\` · avatar=\`husvagnsagaren-vinterforvaring\` · awareness=\`product\` · begar=\`skydda-det-jag-ager\` · mekanism=\`bevis i vädret raden nämner\` · tro=\`ett riktigt omdöme väger mer än vårt löfte\` · urgency=\`sasong\` · hook-mekanik=\`none\` · confidence=\`medium\` · lardom=\`L-120250242482300291\`
 *(Read by the next \`/cs\` run to group profit contribution per variable value.)*
 **Memo:** the parent's proof lands harder when the rain it names is in the photo — same words, the scene does the convincing.
 
@@ -444,7 +444,7 @@ test('granskaBrief: Bäverbutikens eget format — video ren, bild med butikens 
   // Skriven 2026-09-18, före regikravet ⇒ den saknade regitabellen är en anmärkning, inte ett fel.
   const video = granskaBrief({ namn: 'IBC_PD_10_H1', typ: 'video', typ_notion: 'Video - Pending Approval', status: 'Creative strat review', skapad_dag: '2026-09-18', text: BAVER_VIDEO }, { prefix: 'IBC', butiksnamn: BAVER_NAMN, pris_butik: { pris: 489, jamforpris: 636 } });
   assert.deepEqual(video.fel, [], JSON.stringify(video.fel));
-  assert.deepEqual([...new Set(koder(video.anmarkningar))].sort(), ['copy', 'hardrules', 'komponent', 'regi', 'taggar'], JSON.stringify(video.anmarkningar));
+  assert.deepEqual([...new Set(koder(video.anmarkningar))].sort(), ['ai', 'copy', 'hardrules', 'komponent', 'regi', 'taggar'], JSON.stringify(video.anmarkningar));
   assert.ok(video.anmarkningar.some((x) => x.kod === 'regi' && /written before 2026-09-21/.test(x.text)));
   assert.equal(video.fakta.regi, '0/3');
   // Samma brief utan datum (spärrläget) eller skriven efter regeln ⇒ FEL.
@@ -737,8 +737,9 @@ test('byggRapport: engelsk, en hub per rad, ej dömda ronder syns, ping bara vid
 /** En videobrief med regitabell enligt docs/os/BRIEF-REGI.md — huvudsessionens format. */
 const VIDEO_REGI = `# Damasker_PD_12_H1 — the winner's hook, the wet-sock proof moved to the front
 
-**VARIABELTAGGAR:** vinkel=\`PD problem/lösning\` · hook-typ=\`påstående\` · format=\`video, demo\` · proof=\`demo (blöt/torr strumpa)\` · offer-i-creativen=\`pris i CTA\` · visuell stil=\`två ben, blöt stig\` · textmängd=\`≤8 ord per caption\` · talare=\`röst utan ansikte\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Damasker_PD_1\` · iteration=\`2\` · koncept=\`PD strumpbevis\` · kalla=\`parent\` · avatar=\`vandraren-hostled\` · awareness=\`problem\` · begar=\`slippa-krangel\` · mekanism=\`beviset först, sedan problemet\` · urgency=\`sasong\` · hook-mekanik=\`freeze\` · confidence=\`high\`
+**VARIABELTAGGAR:** vinkel=\`PD problem/lösning\` · hook-typ=\`påstående\` · format=\`video, demo\` · proof=\`demo (blöt/torr strumpa)\` · offer-i-creativen=\`pris i CTA\` · visuell stil=\`två ben, blöt stig\` · textmängd=\`≤8 ord per caption\` · talare=\`röst utan ansikte\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Damasker_PD_1\` · iteration=\`2\` · koncept=\`PD strumpbevis\` · kalla=\`parent\` · avatar=\`vandraren-hostled\` · awareness=\`problem\` · begar=\`slippa-krangel\` · mekanism=\`beviset först, sedan problemet\` · tro=\`en blöt strumpa är beviset, inte materialet\` · urgency=\`sasong\` · hook-mekanik=\`freeze\` · confidence=\`high\` · lardom=\`L-120250009391470291\`
 **Memo:** the parent carried 72 % of spend for a week; putting its proof (one sock wet, one dry) in second one should lift hook rate without touching the lines.
+**AI content:** none — real footage, real voice.
 
 **Parent:** \`Damasker_PD_1\` — BREAKTHROUGH 2026-09-05: 5 319 kr, 34 purchases, ROAS 3,42. **Isolated variable: the order — proof before problem.**
 
@@ -864,11 +865,14 @@ test('granskaBrief: video med regi + komponenttaggar + Memo är ren; regi-FEL ba
   assert.ok(!koder(gammal.fel).includes('regi'));
   assert.ok(gammal.anmarkningar.some((a) => a.kod === 'regi' && /written before 2026-09-21/.test(a.text)));
   // Komponenttaggar: saknade, ogiltiga, typ I utan parent, Memo saknas — alla anmärkningar.
-  const utanKomp = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace(' · typ=`I` · parent=`Damasker_PD_1` · iteration=`2` · koncept=`PD strumpbevis` · kalla=`parent` · avatar=`vandraren-hostled` · awareness=`problem` · begar=`slippa-krangel` · mekanism=`beviset först, sedan problemet` · urgency=`sasong` · hook-mekanik=`freeze` · confidence=`high`', '').replace(/\*\*Memo:\*\*[^\n]*\n/, '') }, CTX_VIDEO);
+  const utanKomp = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace(' · typ=`I` · parent=`Damasker_PD_1` · iteration=`2` · koncept=`PD strumpbevis` · kalla=`parent` · avatar=`vandraren-hostled` · awareness=`problem` · begar=`slippa-krangel` · mekanism=`beviset först, sedan problemet` · tro=`en blöt strumpa är beviset, inte materialet` · urgency=`sasong` · hook-mekanik=`freeze` · confidence=`high` · lardom=`L-120250009391470291`', '').replace(/\*\*Memo:\*\*[^\n]*\n/, '') }, CTX_VIDEO);
   assert.equal(utanKomp.fel.length, 0);
   const komp = utanKomp.anmarkningar.filter((a) => a.kod === 'komponent');
   assert.equal(komp.length, 2, JSON.stringify(komp));
-  assert.match(komp[0].text, /component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, urgency, hook-mekanik, confidence/);
+  assert.match(komp[0].text, /component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom/);
+  assert.match(komp[0].text, /a brief without lardom= is not written/);
+  const felLardom = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace('lardom=`L-120250009391470291`', 'lardom=`batch 2`') }, CTX_VIDEO);
+  assert.ok(felLardom.anmarkningar.some((a) => a.kod === 'komponent' && /lardom=batch 2 is not a learning id/.test(a.text)), JSON.stringify(felLardom.anmarkningar));
   assert.match(komp[1].text, /no "Memo:" line/);
   const ogiltig = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace('awareness=`problem`', 'awareness=`warm`').replace('parent=`Damasker_PD_1` · ', '') }, CTX_VIDEO);
   const o = ogiltig.anmarkningar.filter((a) => a.kod === 'komponent');
@@ -878,9 +882,17 @@ test('granskaBrief: video med regi + komponenttaggar + Memo är ren; regi-FEL ba
 });
 
 test('komponentUr: fasta listor, alias (source/desire/season/slow-motion), typ N med parent, typ I utan', () => {
-  assert.deepEqual(KOMPONENT_TAGGAR, ['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'urgency', 'hook-mekanik', 'confidence']);
-  const ok = komponentUr({ typ: 'N', koncept: 'x', kalla: 'voc', avatar: 'a', awareness: 'unaware', begar: 'protect-what-i-own', mekanism: 'm', urgency: 'season', 'hook-mekanik': 'slow-motion', confidence: 'low' });
+  assert.deepEqual(KOMPONENT_TAGGAR, ['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'confidence', 'lardom']);
+  const ok = komponentUr({ typ: 'N', koncept: 'x', kalla: 'voc', avatar: 'a', awareness: 'unaware', begar: 'protect-what-i-own', mekanism: 'm', tro: 't', urgency: 'season', 'hook-mekanik': 'slow-motion', confidence: 'low', lardom: 'L-1, L-2' });
   assert.deepEqual(ok.saknade, []);
+  assert.equal(ok.lardom, 'L-1, L-2');
+  assert.equal(komponentUr({ typ: 'imiterad' }).typ, 'IMITERAD', 'typ normaliseras i värdelistan, inte i typ-fältet');
+  assert.deepEqual(komponentUr({ typ: 'IM', parent: 'X_PD_1_H1' }).ogiltiga, []);
+  assert.ok(komponentUr({ typ: 'IM' }).brister.some((b) => /typ=IM without parent/.test(b)));
+  const t2 = taggarUr('Variables: belief=proof beats promise · learning=L-5 · type=IM');
+  assert.equal(t2.taggar.tro, 'proof beats promise');
+  assert.equal(t2.taggar.lardom, 'L-5');
+  assert.equal(t2.taggar.typ, 'IM');
   assert.deepEqual(ok.ogiltiga, []);
   assert.deepEqual(ok.brister, []);
   assert.equal(ok.typ, 'N');
@@ -918,4 +930,42 @@ test('sparra: FEL och SPARRKODER stoppar; H-varianter med samma hook-mekanik och
   assert.ok(femNya.rond.some((s) => /5 new concepts \(typ=N\) and none with kalla=voc/.test(s)), JSON.stringify(femNya.rond));
   const medVoc = sparra([1, 2, 3, 4, 5].map((i) => rad(`Damasker_PD_${20 + i}_H1`, i === 1 ? nyText.replace('kalla=`rutin`', 'kalla=`voc`') : nyText)), CTX_VIDEO);
   assert.deepEqual(medVoc.rond, []);
+});
+
+// ------------------------------------------------------------ speglade hubbar (CS-KLART punkt 24) + AI-raden (punkt 27)
+
+test('spegelPris: speglad hub ⇒ OPS-butikens pris ur produktfilen, aldrig gissat; ospeglad ⇒ null', () => {
+  const lasFil = (p) => (/termoskyddet\.yaml$/.test(p) ? 'ekonomi:\n  pris: 559\n  jamforpris: 932\n' : /takskyddet\.yaml$/.test(p) ? 'ekonomi:\n  pris: 1129\n  jamforpris: 1469\n' : null);
+  const reg = { poster: { 'carashell/takskyddet': { spegling: { kalla_hub: TAK_HUB, status_se: 'CaraShell SE ready to be active' } }, 'carashell/termoskyddet': { spegling: { kalla_hub: 'c5a270ab908c83e3b72181fde8643080', status_se: 'CaraShell SE ready to be active' } } } };
+  const s = spegelPris(TAK_HUB, reg, { lasFil });
+  assert.equal(s.butik, 'CaraShell');
+  assert.equal(s.pris, 1129);
+  assert.equal(s.jamforpris, 1469);
+  assert.match(s.kalla, /factory\/produkter\/takskyddet\.yaml/);
+  assert.equal(spegelPris('c5a270ab-908c-83e3-b721-81fde8643080', reg, { lasFil }).pris, 559);
+  assert.equal(spegelPris(MOTOR_HUB, reg, { lasFil }), null);
+  const saknas = spegelPris(TAK_HUB, reg, { lasFil: () => null });
+  assert.equal(saknas.pris, null);
+  assert.match(saknas.kalla, /saknas/);
+});
+
+test('granskaBrief speglad: nummer över 100 är ett fel, priset måste ligga inom 20 % av båda butikerna', () => {
+  const ctx = { ...CTX, speglad: true, pris_spegel: [{ butik: 'CaraShell', pris: 1129 }] };
+  assert.deepEqual(granskaBrief({ ...RAD, text: BRA }, ctx).fel, []);
+  const over100 = granskaBrief({ ...RAD, namn: 'Takoverdrag_SP_105_1', text: BRA.replace(/Takoverdrag_SP_5_1/g, 'Takoverdrag_SP_105_1') }, ctx);
+  assert.ok(over100.fel.some((x) => x.kod === 'namn' && /never go above 100/.test(x.text)), JSON.stringify(over100.fel));
+  assert.ok(!koder(granskaBrief({ ...RAD, namn: 'Takoverdrag_SP_105_1', text: BRA.replace(/Takoverdrag_SP_5_1/g, 'Takoverdrag_SP_105_1') }, CTX).fel).includes('namn'), 'ospeglad hub: 105 är ett vanligt nummer');
+  const dyrSpegel = granskaBrief({ ...RAD, text: BRA }, { ...ctx, pris_spegel: [{ butik: 'CaraShell', pris: 1499 }] });
+  assert.ok(dyrSpegel.fel.some((x) => x.kod === 'pris' && /CaraShell takes 1499 kr — 25 % apart/.test(x.text)), JSON.stringify(dyrSpegel.fel));
+  const naraSpegel = granskaBrief({ ...RAD, text: BRA }, { ...ctx, pris_spegel: [{ butik: 'CaraShell', pris: 1199 }] });
+  assert.equal(naraSpegel.fel.length, 0);
+  assert.ok(naraSpegel.anmarkningar.some((x) => x.kod === 'pris' && /within 20 %/.test(x.text)));
+});
+
+test('granskaBrief video: "AI content:"-raden saknas ⇒ anmärkning (US-steget bränner då in raden som för en person)', () => {
+  const utan = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace(/\*\*AI content:\*\*[^\n]*\n/, '') }, CTX_VIDEO);
+  assert.ok(utan.anmarkningar.some((a) => a.kod === 'ai'), JSON.stringify(utan.anmarkningar));
+  const med = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI }, CTX_VIDEO);
+  assert.ok(!med.anmarkningar.some((a) => a.kod === 'ai'));
+  assert.ok(!granskaBrief({ ...RAD, text: BRA }, CTX).anmarkningar.some((a) => a.kod === 'ai'), 'bild: ingen AI-rad krävs');
 });

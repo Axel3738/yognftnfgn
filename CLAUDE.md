@@ -415,6 +415,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
 | **Regi rad för rad i varje videobrief + spärren före Notion** (Axels beslut 2026-09-21: `node tools/briefgranskning.mjs --rad <brief.md>` / `--manifest <manifest.json>`, exit 1 = ingen Notion-rad) | **`docs/os/BRIEF-REGI.md`** |
+| **Definition av klart för creative strategy — Axels 19 punkter** (2026-09-21): lärdomen per etiketterad annons, briefer som pekar på en lärdom, mixen ur etiketterna, brieftaket, vidarebyggen, taggarna, rapporten, kommentarerna, taket. Avstämningen efter varje bygge står längst ner i filen. Motorn: `agent/lardom.mjs` på rutinens gren | **`docs/os/CS-KLART.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |

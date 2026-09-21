@@ -260,6 +260,14 @@ ronden blir nya koncept ur ärvd DNA, och rapporten säger "ingen feedback-loop 
 ingen bedömbar annons än".
 
 ### Steg 4 — Feedback-loop per annons och gemensamma variabler (ANALYSMETOD 6b)
+⚠️ **Lärdomsmotorn (`agent/lardom.mjs`, `docs/os/CS-KLART.md`) finns bara
+för Bäverbutikens rond-auto** — OPS-butikernas budgetlogg
+(`factory/budgetlogg.jsonl`) har inga ETIKETT-/LARDOM-rader. Skriv därför
+utfallet per annons för hand i samma format som lärdomen (batch, utfall,
+spend annons/kampanj, hookar med hook/hold rate, ROAS/CPA,
+konverteringsgrad, planerat mot utfört, hypotes märkt gissning, nästa
+annonser) i `products/<butik>/lardomar.md`, och ge varje brief `lardom=`
+som pekar på blocket (`L-<annons_id>`). Motorn byggs för OPS när Axel ber.
 För VARJE annons i förra batchen (`products/<butik>/batch-log.md`):
 - Hämta briefen ur hubben (`node tools/notion-klara.mjs --brief <page-id>`,
   eller ur `products/<butik>/batch-NN/…/brief.md`) och läs `VARIABELTAGGAR:`.
@@ -340,9 +348,9 @@ väg som användes (Agent fanns / API).
 En mapp per annons: `products/<butik>/batch-NN/<video|image>-ads-briefs/<namn>/brief.md`
 på engelska enligt `.claude/commands/forsta-batch.md` (VARIABELTAGGAR-rad
 överst — de åtta variablerna **plus komponenttaggarna** `typ · koncept ·
-parent · iteration · kalla · avatar · awareness · begar · mekanism · urgency ·
-hook-mekanik · confidence` med fasta listor (ANALYSMETOD 6b) och raden
-`Memo:` — hypotes, kept/changed, script-tabell, **regitabellen för video**
+parent · iteration · kalla · avatar · awareness · begar · mekanism · tro ·
+urgency · hook-mekanik · confidence · lardom` med fasta listor (ANALYSMETOD
+6b) och raden `Memo:` — hypotes, kept/changed, script-tabell, **regitabellen för video**
 (`docs/os/BRIEF-REGI.md`: en rad per manusrad, Source i ett av fem format,
 Assets / Reference ads / Editor latitude), COPY CARD, hard rules med rätt
 pris ur `factory/produkter/<id>.yaml`, KPI). Regin skrivs av huvudsessionen.

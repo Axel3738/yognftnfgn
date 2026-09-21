@@ -20,6 +20,14 @@ subagenten skriver de svenska raderna, sessionen bestämmer bilden).
 
 ## Tabellen (engelska rubriker — redigerarna läser den)
 
+I briefens huvud (efter taggraden och `Memo:`) står dessutom raden
+**`AI content:`** — `person` (AI-genererad person/avatar), `voice` (AI-röst,
+t.ex. HeyGen-dubbning eller ElevenLabs), `image only` (bara AI-bild/
+produktanimation) eller `none`. US-översättningssteget läser den och bränner
+in "Contains AI-generated content" på de engelska filerna när det är person
+eller röst (CS-KLART punkt 27, `tools/ai-rad.mjs`). Saknas raden behandlas
+videon som person.
+
 Ovanför tabellen tre fasta rader:
 
 ```

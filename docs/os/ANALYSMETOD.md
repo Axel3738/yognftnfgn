@@ -220,7 +220,9 @@ ett värde utanför listan är en anmärkning, aldrig ett påhitt i en brief:
 
 | Tagg | Värden | Vad den svarar på |
 |---|---|---|
-| `typ` | `N` nytt koncept · `M` messaging (samma video, ny hook/text) · `I` iteration på en förälder · `S` statisk validering | vilken sorts test det är — Evolve räknar iterationer per koncept |
+| `typ` | `N` ny vinkel · `IM` imiterad (format-kopia) · `I` iteration på en förälder · `M` messaging (samma video, ny hook/text) · `S` statisk validering | vilken sorts test det är — Evolve räknar iterationer per koncept; en imiterad kopia itereras aldrig (CS-KLART punkt 12) |
+| `tro` | fritext, en mening | vad kunden måste tro för att köpa — det annonsen ska få hen att tro (CS-KLART punkt 13) |
+| `lardom` | `L-<annons_id>` ur `products/<id>/lardomar.md` (flera med komma) | vilken lärdom briefen bygger på — kan den inte peka på en, skrivs den inte (CS-KLART punkt 6) |
 | `koncept` | fritext, samma namn för alla iterationer av samma idé | så iterationerna kan räknas per KONCEPT, inte bara per förälder |
 | `parent` / `iteration` | annonsnamn / löpnummer | typ I och M kräver `parent`; typ N har ingen |
 | `kalla` | `axel` · `rutin` · `swipe` · `voc` · `feedback` · `backlog` · `playbook` · `winning-line` · `egen-data` · `parent` | var idén kommer ifrån — **minst 1 av 5 nya koncept per rond har `voc`** |
@@ -233,7 +235,20 @@ ett värde utanför listan är en anmärkning, aldrig ett påhitt i en brief:
 | `confidence` | `high` · `medium` · `low` + datareferens i Memo | hur säker skrivaren är, och på vad |
 
 Varje brief slutar huvudet med en rad **`Memo:`** — en mening om varför den
-slår nuvarande nivå (Evolves breakthrough memo). Vid varje `/cs` grupperas
+slår nuvarande nivå (Evolves breakthrough memo).
+
+**Lärdomen per etiketterad annons** (`docs/os/CS-KLART.md` punkt 1–5, Axels
+definition av klart 2026-09-21) är det som variabeltabellen och nästa brief
+bygger på: batchnummer, utfall, annonsens och kampanjens spend i samma
+fönster, alla hookar ordagrant med hook rate och hold rate, ROAS eller CPA,
+konverteringsgrad; planerat mot utfört per komponent (avatar, vinkel,
+medvetandenivå, mekanism, tro, positionering, brådska — stämde inte
+utförandet är det utförandet som föll, inte idén); en hypotes märkt
+gissning; och konkreta nästa annonser. Motorn är `agent/lardom.mjs` på
+rutinens gren (`--skelett` / `--skriv` / `--brief` / `--status`), lagret
+`products/<id>/lardomar.md`. Ingen annons räknas som klar förrän lärdomen
+är skriven, och antalet briefer i en rond överstiger aldrig antalet
+lärdomar skrivna sedan förra batchen. Vid varje `/cs` grupperas
 vinstbidraget även per komponenttagg. **När en annons får etiketten
 BREAKTHROUGH** skrivs blocket `## Komponentkarta <namn>` i `dna.md`: HOOK /
 BRIDGE / HOLD / CTA med exakt rad, valens, awareness, avatar och **bärande

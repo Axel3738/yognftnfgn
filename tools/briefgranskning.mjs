@@ -58,6 +58,7 @@ import { brandtraff, textUrBlock } from './ops-spegla.mjs';
 import { hittaFält, lasManifest, tillBlock, delaBlock, landningUrBrief } from './notion-brief.mjs';
 import { promptUrBrief } from '../factory/ops-bild.mjs';
 import { serUtSomSvenska } from './lib/engelska.mjs';
+import { aiInnehallUr } from './ai-rad.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -79,7 +80,9 @@ export const DISCORD_KANAL = 'problem-and-revisions-ads';
 export const KRAVDA_TAGGAR = Object.freeze(['vinkel', 'hook-typ', 'format', 'proof', 'offer-i-creativen', 'visuell stil', 'textmängd', 'talare', 'copy_model']);
 const TAGGALIAS = { hook: 'hook-typ', hooktyp: 'hook-typ', offer: 'offer-i-creativen', 'offer i creativen': 'offer-i-creativen', textmangd: 'textmängd', 'visuell-stil': 'visuell stil', copymodel: 'copy_model', 'copy-model': 'copy_model', angle: 'vinkel', visual: 'visuell stil', text: 'textmängd', speaker: 'talare', 'copy model': 'copy_model',
   // Komponenttaggarna (2.12, Axels beslut 2026-09-21) — engelska nycklar i briefen.
-  type: 'typ', source: 'kalla', källa: 'kalla', desire: 'begar', begär: 'begar', mechanism: 'mekanism', 'hook-mechanic': 'hook-mekanik', 'hook-mechanics': 'hook-mekanik', hookmekanik: 'hook-mekanik', concept: 'koncept', urgency: 'urgency', confidence: 'confidence', parent: 'parent', iteration: 'iteration', avatar: 'avatar', awareness: 'awareness' };
+  type: 'typ', source: 'kalla', källa: 'kalla', desire: 'begar', begär: 'begar', mechanism: 'mekanism', 'hook-mechanic': 'hook-mekanik', 'hook-mechanics': 'hook-mekanik', hookmekanik: 'hook-mekanik', concept: 'koncept', urgency: 'urgency', confidence: 'confidence', parent: 'parent', iteration: 'iteration', avatar: 'avatar', awareness: 'awareness',
+  // CS-KLART.md (Axels definition av klart 2026-09-21): tro (punkt 13) och lärdomen briefen bygger på (punkt 6).
+  belief: 'tro', tro: 'tro', learning: 'lardom', lärdom: 'lardom', lardom: 'lardom', positioning: 'positionering', positionering: 'positionering', medvetandenivå: 'awareness', brådska: 'urgency' };
 
 /**
  * Komponenttaggarna (ANALYSMETOD 6b, utökade 2026-09-21 ur Evolve-materialet,
@@ -89,9 +92,10 @@ const TAGGALIAS = { hook: 'hook-typ', hooktyp: 'hook-typ', offer: 'offer-i-creat
  * listan är en anmärkning. `typ` N = nytt koncept, M = messaging (samma video,
  * ny hook/text), I = iteration på en förälder, S = statisk validering.
  */
-export const KOMPONENT_TAGGAR = Object.freeze(['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'urgency', 'hook-mekanik', 'confidence']);
+export const KOMPONENT_TAGGAR = Object.freeze(['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'confidence', 'lardom']);
 export const KOMPONENT_VARDEN = Object.freeze({
-  typ: ['N', 'M', 'I', 'S'],
+  // N = ny vinkel, IM = imiterad (format-kopia), I = iteration på en förälder, M = messaging (samma video, ny text), S = statisk validering.
+  typ: ['N', 'IM', 'I', 'M', 'S'],
   kalla: ['axel', 'rutin', 'swipe', 'voc', 'feedback', 'backlog', 'playbook', 'winning-line', 'egen-data', 'parent'],
   awareness: ['unaware', 'problem', 'solution', 'product', 'promo'],
   // Begären — arbetslistan (Axel ändrar den här och i ANALYSMETOD.md, aldrig i en brief).
@@ -100,7 +104,7 @@ export const KOMPONENT_VARDEN = Object.freeze({
   'hook-mekanik': ['none', 'reverse', 'slow-mo', 'slider', 'zoom-in', 'cut-in', 'freeze'],
   confidence: ['high', 'medium', 'low'],
 });
-const KOMPONENT_ALIAS = { season: 'sasong', säsong: 'sasong', stock: 'lager', price: 'pris', consequence: 'konsekvens', none: 'ingen', ingen: 'none', 'slow-motion': 'slow-mo', slowmo: 'slow-mo', zoom: 'zoom-in', 'cut-in': 'cut-in', cutin: 'cut-in', 'protect-what-i-own': 'skydda-det-jag-ager', 'save-money': 'spara-pengar', 'save-time': 'spara-tid', 'avoid-hassle': 'slippa-krangel', safety: 'trygghet', pleasure: 'njutning', health: 'halsa', control: 'kontroll', belonging: 'tillhorighet', 'own-data': 'egen-data', 'winning line': 'winning-line', new: 'N', messaging: 'M', iteration: 'I', static: 'S' };
+const KOMPONENT_ALIAS = { ny: 'N', imiterad: 'IM', imitation: 'IM', imitated: 'IM', season: 'sasong', säsong: 'sasong', stock: 'lager', price: 'pris', consequence: 'konsekvens', none: 'ingen', ingen: 'none', 'slow-motion': 'slow-mo', slowmo: 'slow-mo', zoom: 'zoom-in', 'cut-in': 'cut-in', cutin: 'cut-in', 'protect-what-i-own': 'skydda-det-jag-ager', 'save-money': 'spara-pengar', 'save-time': 'spara-tid', 'avoid-hassle': 'slippa-krangel', safety: 'trygghet', pleasure: 'njutning', health: 'halsa', control: 'kontroll', belonging: 'tillhorighet', 'own-data': 'egen-data', 'winning line': 'winning-line', new: 'N', messaging: 'M', iteration: 'I', static: 'S' };
 /** Regitabellen krävs som FEL från och med den här briefdagen; äldre briefer får bara anmärkning (kalibreringen 2026-09-18: en regel som inte fanns när briefen skrevs ska inte bli en kommentar till redigeraren). */
 export const REGI_FRAN = '2026-09-21';
 /** Anmärkningskoder som stoppar i spärrläget (--rad/--manifest): där är skrivaren sessionen själv och kan rätta innan Notion-raden skapas. */
@@ -220,6 +224,26 @@ export function butiksnamnFor(hubId, register = {}) {
     for (const n of [brand, butik, `${butik}.se`, `${butik}.com`]) if (n && !ut.some((x) => x.toLowerCase() === n.toLowerCase())) ut.push(n);
   }
   return ut;
+}
+
+/**
+ * Spegelbutikens pris för en speglad hub (CS-KLART punkt 24): OPS-produktens
+ * `ekonomi.pris`/`jamforpris` ur factory/produkter/<produkt>.yaml — läst ur
+ * filen, inte gissad. null när hubben inte speglas eller filen saknar priset.
+ */
+export function spegelPris(hubId, register = {}, { rot = ROT, lasFil = (p) => (existsSync(p) ? readFileSync(p, 'utf8') : null) } = {}) {
+  const id = normaliseraId(hubId);
+  for (const [nyckel, post] of Object.entries(register?.poster ?? {})) {
+    if (!post?.spegling?.kalla_hub || normaliseraId(post.spegling.kalla_hub) !== id) continue;
+    const [butik, produkt] = String(nyckel).split('/');
+    const fil = join(rot, 'factory', 'produkter', `${produkt ?? butik}.yaml`);
+    const text = lasFil(fil);
+    const pris = text ? Number(/^\s*pris:\s*([\d.]+)/m.exec(text)?.[1]) : NaN;
+    const jamfor = text ? Number(/^\s*jamforpris:\s*([\d.]+)/m.exec(text)?.[1]) : NaN;
+    const brand = String(post.spegling.status_se ?? '').trim().split(/\s+/)[0] || butik;
+    return { butik: brand, nyckel, pris: Number.isFinite(pris) ? pris : null, jamforpris: Number.isFinite(jamfor) ? jamfor : null, kalla: text ? fil.replace(`${rot}/`, '') : `${fil.replace(`${rot}/`, '')} saknas` };
+  }
+  return null;
 }
 
 /** Är raden en rubrik — markdown (#) eller Notion-dump (numrerad eller känd rubriktext)?
@@ -540,9 +564,12 @@ export function komponentUr(taggar) {
   const parent = String(t.parent ?? '').replace(/`/g, '').trim();
   const harParent = Boolean(parent) && !/^(none|ingen|—|-)$/i.test(parent);
   const brister = [];
-  if (/^[IM]$/.test(typ) && !harParent) brister.push(`typ=${typ} without parent= — an iteration or messaging test names the ad it builds on`);
-  if (typ === 'N' && harParent) brister.push('typ=N with a parent — a new concept has no parent; use typ=I');
-  return { saknade, ogiltiga, brister, typ: typ || null, parent: harParent ? parent : null };
+  if (/^(I|IM|M)$/.test(typ) && !harParent) brister.push(`typ=${typ} without parent= — an iteration, imitation or messaging test names the ad it builds on`);
+  if (typ === 'N' && harParent) brister.push('typ=N with a parent — a new angle has no parent; same promise in new words is an iteration (typ=I), CS-KLART point 19');
+  // Punkt 6: varje brief pekar på lärdomen den bygger på (L-<annons_id>, ett eller flera).
+  const lardom = String(t.lardom ?? '').replace(/`/g, '').trim();
+  if (lardom && !lardom.split(/\s*[,+]\s*/).every((x) => /^L-\d+$/.test(x))) brister.push(`lardom=${lardom} is not a learning id (L-<ad_id>, from products/<id>/lardomar.md) — a brief that cannot point at a learning is not written`);
+  return { saknade, ogiltiga, brister, typ: typ || null, parent: harParent ? parent : null, lardom: lardom || null };
 }
 
 /** Koncept dna.md uttryckligen tar bort ur nästa rond ("GT får inga briefer").
@@ -647,6 +674,8 @@ export function granskaBrief(r, ctx = {}) {
   const namnVideo = /^H\d+/i.test(String(t.variant ?? ''));
   if (typ === 'bild' && namnVideo) F('typ', `Typ says image but the name's variant "${t.variant}" says video (H-variant)`);
   if (typ === 'video' && t.variant && !namnVideo) F('typ', `Typ says video but the name's variant "${t.variant}" is an image variant (videos are _H1, _H2 …)`);
+  // Speglade hubbar (CS-KLART punkt 24): speglingen döper kopian till källans nummer + 100 — ett eget nummer över 100 krockar.
+  if (ctx.speglad && t.nummer != null && t.nummer > 100) F('namn', `number ${t.nummer} — briefs for a mirrored product never go above 100 (the mirror takes the source number + 100, so ${t.nummer} would collide with a mirrored ad)`);
 
   // 2. Variabeltaggarna (VARIABELTAGGAR eller Variables:) — utan dem kan
   //    feedback-loopen inte gruppera vinstbidrag per variabel. Skrivarens sak.
@@ -693,6 +722,16 @@ export function granskaBrief(r, ctx = {}) {
     const andra = kronorI(annons).filter((n) => !ok.has(n));
     if (andra.length) A('pris', `other kronor amounts in the ad text: ${andra.join(', ')} kr — only the price, compare-at and the saving are allowed`);
   }
+  // Speglade hubbar (CS-KLART punkt 24): samma annons körs i båda butikerna, så
+  // priset i briefen måste ligga inom 20 % av vad BÅDA butikerna tar.
+  for (const s of ctx.pris_spegel ?? []) {
+    if (p.pris == null || !s?.pris) continue;
+    const avvikelse = Math.abs(p.pris - s.pris) / s.pris;
+    if (avvikelse > 0.2) F('pris', `brief says ${p.pris} kr, ${s.butik ?? 'the mirror store'} takes ${s.pris} kr — ${Math.round(avvikelse * 100)} % apart; a mirrored ad must be within 20 % of both stores' prices`);
+    else if (p.pris !== s.pris) A('pris', `brief says ${p.pris} kr, ${s.butik ?? 'the mirror store'} takes ${s.pris} kr (within 20 %) — the same ad runs in both stores`);
+  }
+  // AI-innehållet (CS-KLART punkt 27): US-steget måste veta om creativen har en AI-person/AI-röst (raden obligatorisk) eller bara AI-bild.
+  if (typ === 'video' && !aiInnehallUr(text)) A('ai', 'no "AI content:" line (person / voice / image only / none) — the US translation step then burns in "Contains AI-generated content" as if it were a person');
 
   // 6. Tre-frågorstestet (docs/copy-regler.md).
   const tre = trefragorUr(text);
@@ -736,7 +775,7 @@ export function granskaBrief(r, ctx = {}) {
   //     mekanism/urgency/hook-mekanik/confidence + Memo-raden. Skrivarens sak.
   const komponent = komponentUr(taggar?.taggar);
   if (taggar) {
-    if (komponent.saknade.length) A('komponent', `component tags missing: ${komponent.saknade.join(', ')} (typ=N|M|I|S · koncept · kalla · avatar · awareness · begar · mekanism · urgency · hook-mekanik · confidence) — the next /cs cannot group profit by component`);
+    if (komponent.saknade.length) A('komponent', `component tags missing: ${komponent.saknade.join(', ')} (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component${komponent.saknade.includes('lardom') ? '; a brief without lardom= is not written (CS-KLART point 6)' : ''}`);
     for (const o of komponent.ogiltiga) A('komponent', `${o.tagg}=${o.varde} is not in the fixed list (${o.tillatna.join(' | ')})`);
     for (const b of komponent.brister) A('komponent', b);
   }
@@ -1215,6 +1254,9 @@ export async function byggGranskningsko({ rond = null, hubFilter = null, maxdaga
     const dominant = dominantPrefix(alla.annonser.map((r) => r.namn));
     const produkt = produktFor(hub.id, dominant?.prefix, { products, register, finnsMinne });
     const butiksnamn = butiksnamnFor(hub.id, register);
+    // Speglad hub (CS-KLART punkt 23–24): OPS-butikens pris ur produktfilen, så briefens pris kan mätas mot båda butikerna.
+    const spegel = spegelPris(hub.id, register);
+    if (spegel) logg(`   speglad till ${spegel.butik}: pris ${spegel.pris}${spegel.jamforpris ? `/${spegel.jamforpris}` : ''} kr (${spegel.kalla}) — briefnummer får inte gå över 100`);
     const minnesmapp = produkt?.minne ? join(ROT, produkt.minne) : null;
     let doda = [];
     if (minnesmapp && existsSync(join(minnesmapp, 'dna.md'))) doda = dodaKoncept(readFileSync(join(minnesmapp, 'dna.md'), 'utf8'));
@@ -1249,7 +1291,7 @@ export async function byggGranskningsko({ rond = null, hubFilter = null, maxdaga
         pris_butik = p.pris_butik ? { pris: p.pris_butik.pris, jamforpris: p.pris_butik.jamforpris, kalla: p.pris_butik.kalla } : null;
         pris_skal = p.skal;
       } else pris_skal = 'no Landing page on the row or in the brief';
-      const ctx = { prefix: dominant?.prefix ?? null, creative_prefix: produkt?.creative_prefix ?? null, butiksnamn, pris_butik, breakEvenCpa: produkt?.break_even_cpa ?? null, copyModell: null, doda_koncept: doda };
+      const ctx = { prefix: dominant?.prefix ?? null, creative_prefix: produkt?.creative_prefix ?? null, butiksnamn, pris_butik, breakEvenCpa: produkt?.break_even_cpa ?? null, copyModell: null, doda_koncept: doda, speglad: Boolean(spegel), pris_spegel: spegel?.pris ? [spegel] : [] };
       const g = fel_las ? { fel: [{ kod: 'notion', text: `the brief could not be read from Notion: ${fel_las}` }], anmarkningar: [], fakta: {} } : granskaBrief({ ...r, text }, ctx);
       if (!fel_las && pris_skal && prisUrBriefText(text).pris != null) g.anmarkningar.push({ kod: 'pris', text: `store price unread: ${pris_skal}` });
       let fil = null;
@@ -1448,7 +1490,8 @@ async function huvud() {
   // --rad <brief.md> / --manifest <manifest.json>: spärren före Notion. Inget nät.
   if (flagga('rad') || flagga('manifest')) {
     const pris = flagga('pris') != null ? { pris: Number(flagga('pris')), jamforpris: flagga('jamforpris') != null ? Number(flagga('jamforpris')) : null } : null;
-    const ctx = { prefix: flagga('prefix'), creative_prefix: null, butiksnamn: BAVER_NAMN, pris_butik: pris, breakEvenCpa: flagga('breakeven') != null ? Number(flagga('breakeven')) : null, copyModell: flagga('copy-modell'), doda_koncept: [] };
+    const spegelPrisVal = flagga('pris-spegel') != null ? Number(flagga('pris-spegel')) : null;
+    const ctx = { prefix: flagga('prefix'), creative_prefix: null, butiksnamn: finns('speglad') ? [...BAVER_NAMN, 'CaraShell', 'carashell.se', 'carashell.com', 'carashell'] : BAVER_NAMN, pris_butik: pris, breakEvenCpa: flagga('breakeven') != null ? Number(flagga('breakeven')) : null, copyModell: flagga('copy-modell'), doda_koncept: [], speglad: finns('speglad') || spegelPrisVal != null, pris_spegel: spegelPrisVal != null ? [{ butik: flagga('spegel-butik', 'CaraShell'), pris: spegelPrisVal }] : [] };
     let rader;
     if (flagga('rad')) rader = [lasSparrRad(flagga('rad'), { namn: flagga('namn'), typ: flagga('typ') })];
     else {

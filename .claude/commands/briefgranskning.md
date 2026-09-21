@@ -119,9 +119,19 @@ döm som en creative director, mot facit:
   2026-09-21 får bara anmärkning — regeln fanns inte då. Feedback-raden anger
   "Visual direction: x/y" per video.
 - **Komponenttaggarna (2.12):** `typ · koncept · kalla · avatar · awareness ·
-  begar · mekanism · urgency · hook-mekanik · confidence` + `Memo:` — saknade
-  eller värden utanför de fasta listorna (ANALYSMETOD 6b) är anmärkningar till
-  skrivaren, aldrig kommentar till redigeraren.
+  begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom` +
+  `Memo:` — saknade eller värden utanför de fasta listorna (ANALYSMETOD 6b)
+  är anmärkningar till skrivaren, aldrig kommentar till redigeraren.
+- **Speglade hubbar (CS-KLART punkt 23–24 — Taköverdraget, Termoskyddet):**
+  verktyget läser spegelbutikens pris ur `factory/produkter/<produkt>.yaml`
+  (`spegelPris`) och fäller FEL när briefens pris ligger mer än 20 % från
+  det, FEL när ett eget briefnummer går över 100 (speglingen tar källans
+  nummer + 100), och butiksnamnsspärren stoppar både Bäverbutiken och
+  CaraShell. Statuskedjan (`CaraShell SE ready to be active` → `Approved`
+  först när US-annonsen finns) rörs aldrig av granskningen.
+- **AI-raden (punkt 27):** en videobrief utan raden `AI content:` (person /
+  voice / image only / none) får anmärkning — US-steget behandlar den då som
+  person och bränner in "Contains AI-generated content".
 - **Fel mot anmärkning:** ett FEL är något redigeraren måste veta (fel namn/typ,
   butikens namn i annonsen, fel pris mot butiken, en rad som föll i
   tre-frågorstestet, video utan manus, bild utan textrader, **video utan regi

@@ -26,25 +26,35 @@ import { pathToFileURL } from 'node:url';
 const V = 'v21.0';
 export const KONTON = { SE: '1867947880635861', NO: '1050941584152547' };
 
-/** Klustren — ordningen är prioriteten när en kommentar träffar flera. */
+/** Klustren — ordningen är prioriteten när en kommentar träffar flera.
+ *  Invändningarna först, berömmet sist: "kan inte vara bra, det blir mögel"
+ *  är en invändning, inte beröm (mätt 2026-09-21 på Takoverdrag_SP_4_H1:
+ *  24 kommentarer, den första versionen la den i beröm och "Skräp" i övrigt). */
 export const KLUSTER = [
+  ['tagg/vän', /^\s*@?[A-ZÅÄÖ][a-zåäö]+(\s+[A-ZÅÄÖ][a-zåäö]+)+\s*[!.]?\s*$/],
+  ['fukt/mögel/ventilation', /\b(fukt|fukten|mögel|mögla|kondens|ventil|ventilation|självdrag|luftar|andas|tätt|instängd|unket)/i],
+  ['skepsis/kritik', /\b(skräp|onödigt|onödig|rekommenderas ej|rekommenderar inte|inte bra|kan inte vara bra|fungerar inte|funkar inte|värdelös|dålig|dåligt|meningslös|pengarna i sjön|bortkastade)\b/i],
+  ['förtroende/bluff', /\b(bluff|scam|fake|lurad|bedrägeri|seriös|seriöst|lita|kina|temu|wish|dropship)/i],
   ['pris', /\b(pris|dyrt|dyr|billig|kostar|kr\b|kronor|kroner|rabatt|erbjudande)/i],
   ['frakt/leverans', /\b(frakt|leverans|levererad|skickas|skickat|kommer den|frakten|porto|postnord|instabox|budbee)/i],
-  ['storlek/passform', /\b(storlek|passar|passform|mått|måtten|längd|bredd|cm\b|stor nog|för liten|för stor)/i],
-  ['kvalitet/material', /\b(kvalitet|kvalité|material|tyg|plast|hållbar|slitstark|tunn|tjock|går sönder|gick sönder)/i],
-  ['fungerar det', /\b(fungerar|funkar|funka|håller den|tål|vattentät|regn|vind)/i],
+  ['storlek/passform', /\b(storlek|passar|passform|mått|måtten|längd|bredd|cm\b|stor nog|för liten|för stor|finns den i|andra storlekar|modell)\b/i],
+  ['kvalitet/material', /\b(kvalitet|kvalité|material|tyg|plast|hållbar|slitstark|tunn|tjock|går sönder|gick sönder|reva|revor|skaver|skav)/i],
+  ['fungerar det', /\b(fungerar|funkar|funka|håller den|tål|vattentät|regn|vind|blåser|storm|snö|is\b)/i],
   ['retur/garanti', /\b(retur|returnera|ångra|garanti|öppet köp|pengarna tillbaka)/i],
-  ['förtroende/bluff', /\b(bluff|scam|fake|lurad|bedrägeri|seriös|seriöst|lita)/i],
-  ['var köpa', /\b(var köper|var kan man|länk|hemsida|butik|finns den|beställa)/i],
-  ['beröm', /\b(bra|toppen|kanon|nöjd|rekommenderar|älskar|perfekt|grym)\b/i],
-  ['tagg/vän', /^\s*@?[A-ZÅÄÖ][a-zåäö]+\s+[A-ZÅÄÖ][a-zåäö]+\s*$/],
+  ['önskemål', /\b(skulle vara|hade varit|önskar|borde|saknar|om det fanns|fans lösa|lösa sidor|tillbehör)\b/i],
+  ['var köpa', /\b(var köper|var kan man|länk|hemsida|butik|finns den|beställa|beställt|köpt)\b/i],
+  ['beröm', /\b(bra|toppen|kanon|nöjd|rekommenderar|älskar|perfekt|grym|smart|bäst)\b/i],
 ];
 
-/** Klustret för en kommentartext. Ren. */
+/** Klustret för en kommentartext. Ren. Beröm kräver att raden inte bär en negation. */
 export function klustra(text) {
   const t = String(text ?? '').trim();
   if (!t) return 'tom';
-  for (const [namn, re] of KLUSTER) if (re.test(t)) return namn;
+  for (const [namn, re] of KLUSTER) {
+    if (!re.test(t)) continue;
+    if (namn === 'beröm' && /\b(inte|ej|aldrig|knappast|tveksamt)\b/i.test(t)) return 'skepsis/kritik';
+    return namn;
+  }
   return 'övrigt';
 }
 
