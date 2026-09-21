@@ -760,3 +760,37 @@ orderattributet, inte ur en gissning.
 
 ⚠️ Kassabilden är inte vald än — det sista klicket kräver en människa,
 eftersom API:t är stängt av planen.
+
+## Verktygsfynd 2026-09-21 — den tysta nollan i `tools/meta-lib.mjs`
+
+`/ops-oversatt carashell` dog **fyra körningar i rad** med exit 0, tom stdout och
+ingen felrad. Två gånger på OPS-kontot, två på US-kontot — alltså inte ett konto­problem.
+Mätt direkt mot `act_1107817401910319`: **412 annonser, en sida, 692 ms.**
+
+**Rotorsak:** varje Graph-anrop i `api()` gjordes utan timeout. Tappas proxy-socketet
+blir löftet aldrig löst, Node tömmer händelsekön och **avslutar snällt med kod 0**.
+Ett verktyg med `--json` skriver då en TOM fil.
+
+> **Det här är mönstret att känna igen:** exit 0 + tom utfil + ingen felrad betyder
+> inte "inget att göra". Det betyder att en väntan aldrig blev klar. Kolla filens
+> storlek, inte exit-koden — `wc -c` på utdata är den enda kontroll som skiljer
+> "kön var tom" från "kön gick aldrig att läsa".
+
+**Två fel rättade, båda i samma fil:**
+
+1. `api()` saknade timeout → 90 s för läsningar, 15 min för skrivningar (en
+   videouppladdning tar minuter). En **läsning** görs om med backoff. En
+   **skrivning görs aldrig om automatiskt**: anropet kan ha gått fram innan svaret
+   tappades, och ett omförsök hade skapat annonsen två gånger.
+2. `alla()` tappade nästa sidas adress vid rate limit — den låg i samma variabel
+   som skrevs över av felobjektet, så `continue` hoppade till ett falskt villkor
+   och loopen slutade tyst med en **halv lista**. Den listan avgör om en annons
+   redan finns, så en avkortad lista hade kunnat ge en dubblettuppladdning.
+   Adressen ligger nu i en egen variabel och sidan görs om på riktigt.
+
+`npm test` 1 720 gröna. Fixen gäller varje rutin som rör Meta, inte bara den här.
+
+**Sidkollen samma dag:** Bäverbutikens `/oversatt NO` blockerades 13:37 för att dess
+norska Facebook-sida inte längre nås av token. Kontrollerat här: token når 12 sidor
+och CaraShells `1381171778405935` är en av dem. Blockeringen är verklig men rör inte
+OPS — mätt, inte antaget.

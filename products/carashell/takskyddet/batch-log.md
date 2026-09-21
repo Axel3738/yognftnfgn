@@ -1522,3 +1522,28 @@ installeras med `pip install rapidocr-onnxruntime`, och kommandofilens
 regel 2b bär nu varningen att `okand` på VARJE video betyder containern,
 inte creativen. Efter installationen dömde verktyget självt
 `slutkort-med-brand` på båda — samma dom som ögat.
+
+## Norge 2026-09-21 — inget att översätta, men ett verktygsfel som gömde kön
+
+Kön: **5 rader** i `SE-ACTIVE to be translated`. **0 uppladdade, 0 att göra.**
+Alla fem bar redan sin norska annons (speglingens rader, nummer 107–113), och varje
+annons lästes tillbaka ur Meta som ACTIVE:
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_BOF_107_1` | `CaraShellRoof_NO_BOF_107_1` | BOF | `120249189601910172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_108_1` | `CaraShellRoof_NO_BOF_108_1` | BOF | `120249189496460172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_PD_110_1` | `CaraShellRoof_NO_PD_110_1` | PD | `120249189399940172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_CS_113_1` | `CaraShellRoof_NO_CS_113_1` | CS | `120249189310900172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_109_1` | `CaraShellRoof_NO_BOF_109_1` | BOF | `120249189228110172` | ACTIVE/ACTIVE |
+
+Ingen status rörd — `flytta_till_approved` är falskt på alla fem (`klar_i.US: false`),
+så de går till `Approved` först när US-rutinen bär dem. Pris läst live: 1 106 NOK.
+
+**Men kön var osynlig i fyra körningar.** Verktyget avslutade med exit 0, tom
+`ko.json` och ingen felrad. En tom kölista läser exakt som "kön var tom" — det är
+det farliga: en tyst nolla ser ut som ett lugnt svar. Rotorsaken och fixen står i
+`dna.md`; båda felen satt i `tools/meta-lib.mjs`, inte i den här produkten.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551599832102076558`,
+ingen ACTION NEEDED.
