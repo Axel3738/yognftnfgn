@@ -1311,3 +1311,7 @@ Sex nätter i rad med 0 ändringar är reglerna som fungerar: ingenting som äga
 pausat rörs. Frågan om rutinen ska stängas av (ställd 18/9) har nu praktisk
 betydelse — rapporten beskriver ett tomt konto varje natt.
 Underlag: `factory/output/drytrek/budgetrond-2026-09-21.json`.
+
+**Norge 2026-09-21 (översättningsrutinen):** Fjärde dygnet oförändrat. NO-kampanjen
+PAUSED med 8 476 kr (samma tal tredje dagen i rad), kön 0 rader, priset 381 NOK
+(380 i går — kursen rör sig, avläsningen följer med). Ingenting rört.
