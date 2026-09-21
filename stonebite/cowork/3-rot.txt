@@ -1,0 +1,64 @@
+Jag vill att stonebite.org ska fungera UTAN www — alltså att
+https://stonebite.org visar sajten direkt, inte skickas vidare.
+
+Läget i dag: www.stonebite.org pekar på Railway med en CNAME och fungerar.
+Rotdomänen (@) har en vidarebefordran (302) från Squarespace till www, och
+fyra A-poster som pekar på Squarespaces egna servrar. Det är den
+vidarebefordran som ska bort och ersättas med en riktig pekning.
+
+DNS ligger hos Squarespace (gamla Google Domains). Namnservrarna heter
+ns-cloud-e1…e4.googledomains.com, vilket LÄSER som Google men redigeras på
+account.squarespace.com → Domäner → stonebite.org → DNS-inställningar.
+Jag är inloggad på Google Workspace admin console (admin.google.com) — därifrån
+hittar du domänen under Konto → Domäner → Hantera domäner, och Squarespace
+via länken där. Fråga mig om inloggning när du behöver den.
+
+STEG 1 — läs av vad Railway vill ha för rotdomänen.
+I Railway (railway.app): projektet "strong-solace" → tjänsten "yognftnfgn" →
+Settings → Domains. Där står stonebite.org med en rad "CNAME @ → <något>.up.railway.app".
+Skriv ner exakt det värdet. Det är INTE samma värde som www har
+(www har daz9hn85.up.railway.app). Om stonebite.org inte står med i listan:
+lägg till den med "Custom Domain" och skriv ner värdet som Railway visar.
+
+STEG 2 — lägg pekningen hos Squarespace.
+Squarespace vägrar CNAME på @ (Spara-knappen går inte att klicka). Men de har
+posttypen ALIAS, som gör samma sak för rotdomänen. Gör så här i
+DNS-inställningarna för stonebite.org:
+
+  1. Ta bort vidarebefordran (Forwarding / "Vidarebefordra domän") från
+     stonebite.org till www.stonebite.org.
+  2. Ta bort de fyra A-posterna på @ (värdnamn tomt eller @) som pekar på
+     Squarespaces IP-adresser (198.185.159.144, 198.185.159.145,
+     198.49.23.144, 198.49.23.145 eller liknande). De hör till
+     vidarebefordran och ska inte finnas kvar — annars vinner de över ALIAS.
+  3. Lägg till en post: Typ ALIAS, Värdnamn @ (eller tomt), Data = värdet
+     från steg 1, TTL 1 timme eller kortare om det går.
+  4. Låt TXT-posten _railway-verify (på roten) stå kvar — den är Railways
+     bevis på att domänen är vår. Finns den inte: lägg in den enligt Railway.
+
+RÖR INTE DE HÄR POSTERNA, oavsett hur de ser ut:
+  - MX-posterna (1 smtp.google.com — de bär all min mejl)
+  - TXT-poster som innehåller "google-site-verification" eller "v=spf1"
+  - DKIM-posten (google._domainkey)
+  - CNAME www → daz9hn85.up.railway.app (den fungerar och ska vara kvar)
+  - TXT _railway-verify.www
+Ta aldrig bort något annat för att "städa". Bara det som står i steg 2.
+
+STEG 3 — vänta och kontrollera.
+DNS slår igenom på tio minuter till en timme. Railway ser sedan att roten
+pekar rätt och utfärdar ett certifikat — det kan ta ytterligare en stund.
+Kolla i ordning och skriv resultatet i rapporten:
+
+  1. I Railway → Settings → Domains: stonebite.org ska stå som verifierad
+     med certifikat (grön bock), inte "Waiting for DNS".
+  2. https://stonebite.org (utan www) i en ny privat flik ska visa
+     rubriken "Vi bygger butiker som säljer." — utan att adressfältet
+     byter till www.
+  3. https://www.stonebite.org ska fortfarande fungera.
+  4. https://stonebite.org/halsa ska svara med JSON som börjar {"ok":true.
+  5. Mejlen: skicka ett testmejl till contact@stonebite.org från en annan
+     adress och bekräfta att det kommer fram. (MX rördes inte, men kolla.)
+
+Rapportera exakt vilka poster du tog bort och vilka du lade till, med värdena,
+och vad de fyra kontrollerna visade. Gissa inte — fungerar något inte efter en
+timme, säg det i stället.

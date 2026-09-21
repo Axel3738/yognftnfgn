@@ -1,0 +1,36 @@
+{
+  "kommentar": "Bilderna på den publika sidan. `node stonebite/bilder.mjs` genererar dem via kie.ai (google/nano-banana, JPEG) och lägger dem i stonebite/webb/bilder/. En bild som redan finns hoppas över — `--igen <id>` gör om en. Prompterna är engelska för att bildmodellen kräver det. Reglerna: ingen text, inga logotyper, inga människor, inga butiker, inga produkter som går att känna igen — bilderna ska bara sätta känslan (Axels ord 2026-09-21: 'goa, coola, futuristiska bilder … så det märks som att vi är seriösa').",
+  "modell": "google/nano-banana",
+  "bilder": [
+    {
+      "id": "hero",
+      "format": "3:2",
+      "alt": "Glödande linjer av ljus som strömmar mot en ljus horisont över en mörk, blank yta",
+      "prompt": "Abstract futuristic 3D render: a dark glossy obsidian surface with thin glowing lines of electric cyan and violet light flowing like data streams toward a bright horizon, soft volumetric haze, cinematic depth of field, premium tech-brand key visual, ultra clean, high-end product-launch aesthetic. No text, no letters, no logos, no people, no faces, no cars."
+    },
+    {
+      "id": "youtube",
+      "format": "16:9",
+      "alt": "En kamera på stativ framför en vägg av mjuka neonpaneler i cyan och violett",
+      "prompt": "Cinematic studio scene: a sleek modern cinema camera rig on a tripod, silhouetted against a wall of soft neon light panels in cyan and violet, shallow depth of field, premium filmmaking atmosphere, dark moody tones, subtle lens flare, floating dust particles in the light. No text, no letters, no logos, no people, no faces, no screens showing text."
+    },
+    {
+      "id": "tjanster",
+      "format": "16:9",
+      "alt": "Svävande glaspaneler och lysande lager över ett mörkt, speglande golv",
+      "prompt": "Futuristic abstract visualization of digital commerce and growth: translucent glass panels and glowing holographic layers floating above a dark reflective floor, rising light trails, cyan and violet accents, clean high-end tech aesthetic, wide cinematic composition, soft depth of field. No text, no letters, no numbers, no logos, no people, no charts with labels."
+    },
+    {
+      "id": "paket",
+      "format": "4:5",
+      "alt": "Ett blankt svart paket med en tunn lysande kant, svävande i en mörk studio",
+      "prompt": "Minimal futuristic 3D render of a single glossy black cube-shaped parcel with a thin glowing cyan edge, floating in a dark studio with soft violet rim light and a subtle reflective floor, premium product-launch aesthetic, centered composition, lots of negative space. No text, no letters, no logos, no labels, no people."
+    },
+    {
+      "id": "varlden",
+      "format": "4:5",
+      "alt": "En glob av tunna lysande linjer och punkter i cyan, svävande mot mörk bakgrund",
+      "prompt": "Abstract dark globe made of thin glowing cyan wireframe lines and small luminous dots, floating in a black void with a soft violet glow behind it, a few bright connection arcs between points, minimal, futuristic, premium tech aesthetic, centered. No text, no letters, no logos, no country labels, no people."
+    }
+  ]
+}

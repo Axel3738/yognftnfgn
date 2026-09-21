@@ -25,6 +25,7 @@ import * as anv from './anvandare.mjs';
 import { farSe, harRatt, startsidaFor, SIDOR } from './roller.mjs';
 import { lasSnapshot } from './data.mjs';
 import { publikSida } from './vy/publik.mjs';
+import { tjansterSida } from './vy/tjanster.mjs';
 import { loginSida, uppstartSida } from './vy/login.mjs';
 import { oversiktSida } from './vy/oversikt.mjs';
 import { butikerSida } from './vy/butiker.mjs';
@@ -56,6 +57,9 @@ const MIME = {
   '.js': 'text/javascript; charset=utf-8',
   '.svg': 'image/svg+xml',
   '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.json': 'application/json; charset=utf-8',
   '.woff2': 'font/woff2',
@@ -164,7 +168,10 @@ function statiskFil(res, sokvag, nonce, https) {
   if (!fil.startsWith(WEBB) || !existsSync(fil) || !statSync(fil).isFile()) return false;
   const typ = MIME[extname(fil)] ?? 'application/octet-stream';
   sakerhetsrubriker(res, { nonce, https });
-  res.writeHead(200, { 'Content-Type': typ, 'Cache-Control': 'public, max-age=300' });
+  // Bilderna byts nästan aldrig och är de tyngsta filerna — låt webbläsaren
+  // hålla dem ett dygn. Stil och skript ändras med varje version: fem minuter.
+  const cache = typ.startsWith('image/') && typ !== 'image/svg+xml' ? 'public, max-age=86400' : 'public, max-age=300';
+  res.writeHead(200, { 'Content-Type': typ, 'Cache-Control': cache });
   res.end(readFileSync(fil));
   return true;
 }
@@ -314,6 +321,13 @@ export async function hantera(req, res) {
       inloggad: Boolean(anvandare),
       nonce,
     }), { nonce, https });
+  }
+
+  // Konsulttjänsterna — publik, samma profil som startsidan.
+  if (stig === '/tjanster' && req.method === 'GET') {
+    const snap = snapshot();
+    const profil = snap?.profil ?? lasProfil(ROT);
+    return svaraHtml(res, tjansterSida({ profil, inloggad: Boolean(anvandare), nonce }), { nonce, https });
   }
 
   // ------------------------------------------------------- inloggning
