@@ -165,6 +165,14 @@
     "Vi kunde inte skicka avin till din mejladress": "We could not send the notification to your email address",
     "Du har hämtat paketet hos ombudet": "You have collected the parcel from the pickup point",
     "Chauffören kunde inte lämna paketet eftersom ditt namn inte fanns på adressen": "The driver could not deliver the parcel because your name was not at the address",
-    "Du har identifierat dig med e-legitimation": "You identified yourself with electronic ID"
+    "Du har identifierat dig med e-legitimation": "You identified yourself with electronic ID",
+    "Paketet är sorterat på terminalen": "The parcel has been sorted at the facility",
+    "Paketet är överlämnat till dig": "The parcel has been handed over to you",
+    "Du har fått en avi om att paketet finns att hämta": "You have been notified that the parcel is ready for pickup",
+    "Paketet har kommit till ombudet": "The parcel has arrived at the service point",
+    "Paketet är lastat för transport till ombudet": "The parcel has been loaded for transport to the service point",
+    "Paketet väntar på transport till ombudet": "The parcel is waiting for transport to the service point",
+    "Paketet är samlastat med andra paket": "The parcel has been consolidated with other parcels",
+    "Paketet har kommit till destinationsterminalen": "The parcel has arrived at the destination terminal"
   }
 }

@@ -169,6 +169,14 @@
     "Vi kunde inte skicka avin till din mejladress": "Vi kunne ikke sende varselet til e-postadressen din",
     "Du har hämtat paketet hos ombudet": "Du har hentet pakken på hentestedet",
     "Chauffören kunde inte lämna paketet eftersom ditt namn inte fanns på adressen": "Sjåføren kunne ikke levere pakken fordi navnet ditt ikke fantes på adressen",
-    "Du har identifierat dig med e-legitimation": "Du har identifisert deg med elektronisk ID"
+    "Du har identifierat dig med e-legitimation": "Du har identifisert deg med elektronisk ID",
+    "Paketet är sorterat på terminalen": "Pakken er sortert på terminalen",
+    "Paketet är överlämnat till dig": "Pakken er overlevert til deg",
+    "Du har fått en avi om att paketet finns att hämta": "Du har fått beskjed om at pakken kan hentes",
+    "Paketet har kommit till ombudet": "Pakken har kommet til utleveringsstedet",
+    "Paketet är lastat för transport till ombudet": "Pakken er lastet for transport til utleveringsstedet",
+    "Paketet väntar på transport till ombudet": "Pakken venter på transport til utleveringsstedet",
+    "Paketet är samlastat med andra paket": "Pakken er samlastet med andre pakker",
+    "Paketet har kommit till destinationsterminalen": "Pakken har kommet til destinasjonsterminalen"
   }
 }

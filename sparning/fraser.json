@@ -121,5 +121,17 @@
   "the package is delivered": "Paketet är levererat",
   "notification sent via app": "Du har fått en avi om paketet",
   "the package is on its way and is being handled by dsv": "Paketet är på väg",
-  "recipient identified via eid": "Du har identifierat dig med e-legitimation"
+  "recipient identified via eid": "Du har identifierat dig med e-legitimation",
+  "consumer_picked_up_from_locker": "Paketet är uthämtat ur paketboxen",
+  "delivered_to_locker": "Paketet är inlagt i paketboxen",
+  "sorted_at_terminal": "Paketet är sorterat på terminalen",
+  "processing at sort facility": "Paketet hanteras på sorteringsterminalen",
+  "handed over to the recipient": "Paketet är överlämnat till dig",
+  "first arrival notification sent": "Du har fått en avi om att paketet finns att hämta",
+  "ready to be collected": "Paketet finns att hämta",
+  "received at parcel point": "Paketet har kommit till ombudet",
+  "loaded for delivery to parcel point": "Paketet är lastat för transport till ombudet",
+  "waiting to be loaded for parcel point": "Paketet väntar på transport till ombudet",
+  "received at destination terminal": "Paketet har kommit till destinationsterminalen",
+  "consolidated": "Paketet är samlastat med andra paket"
 }

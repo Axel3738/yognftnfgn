@@ -169,6 +169,14 @@
     "Vi kunde inte skicka avin till din mejladress": "Emme voineet lähettää ilmoitusta sähköpostiosoitteeseesi",
     "Du har hämtat paketet hos ombudet": "Olet noutanut paketin noutopisteestä",
     "Chauffören kunde inte lämna paketet eftersom ditt namn inte fanns på adressen": "Kuljettaja ei voinut jättää pakettia, koska nimeäsi ei ollut osoitteessa",
-    "Du har identifierat dig med e-legitimation": "Olet tunnistautunut sähköisellä tunnisteella"
+    "Du har identifierat dig med e-legitimation": "Olet tunnistautunut sähköisellä tunnisteella",
+    "Paketet är sorterat på terminalen": "Paketti on lajiteltu terminaalissa",
+    "Paketet är överlämnat till dig": "Paketti on luovutettu sinulle",
+    "Du har fått en avi om att paketet finns att hämta": "Olet saanut ilmoituksen, että paketti on noudettavissa",
+    "Paketet har kommit till ombudet": "Paketti on saapunut noutopisteeseen",
+    "Paketet är lastat för transport till ombudet": "Paketti on lastattu kuljetettavaksi noutopisteeseen",
+    "Paketet väntar på transport till ombudet": "Paketti odottaa kuljetusta noutopisteeseen",
+    "Paketet är samlastat med andra paket": "Paketti on yhdistetty muiden pakettien kanssa",
+    "Paketet har kommit till destinationsterminalen": "Paketti on saapunut määränpääterminaaliin"
   }
 }
