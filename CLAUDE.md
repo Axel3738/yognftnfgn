@@ -1041,8 +1041,10 @@ lära sig det"). Den låg bara i repot, där VA:n inte kan läsa den — och den
 det enda som avgör om en chargeback vinns. Raderna i `notion.json` bär `kalla:
 "../sop/<fil>.md"` i stället för `fil:`, och `kundtjanst/sop/fyll.mjs` fyller
 butikens platshållare ur brandfilen vid publicering: **ett värde som saknas blir
-en synlig `⚠️ OWNER`-rad, aldrig ett tomrum** (Bäverbutiken saknar ett,
-`BILLING_DESCRIPTOR`); ärendets fält blir tomrum VA:n fyller i (`[ORDER
+en synlig `⚠️ OWNER`-rad, aldrig ett tomrum** (Bäverbutiken saknar inget sedan
+Axel läste av descriptorn 2026-09-21: `SP Baverbutiken.se`, supportnummer
++46 79 340 44 07, i Shopify admin → Settings → Payments → Uppgifter för kundens
+kontoutdrag); ärendets fält blir tomrum VA:n fyller i (`[ORDER
 NUMBER]`); filnamnen byts mot Notion-sidornas titlar; mejlmallarna blir riktiga
 kodblock (utan det klappar varje mall ihop till ett stycke och går inte att
 kopiera); varje sida får en rad överst om att repot skriver den.
