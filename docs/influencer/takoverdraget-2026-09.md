@@ -150,7 +150,7 @@ Till: info@varahusbilsresor.se (sidan Samarbeta på varahusbilsresor.se; alterna
 
 Hej Nilla och Micke, jag heter Axel och driver CaraShell. Ni bytte solcellsregulatorn själva i en video, och på sajten har ni en egen kategori som heter Våra Bästa Prylar. Jag vill skicka er ett taköverdrag utan förväntningar på att ni gör något av det, eftersom det vi är ute efter är ett betalt samarbete. Det är ett överdrag som bara täcker takytan och inte hela vagnen, med justerbara remmar som hakas fast på alla fyra sidor, och jag vill att ni testar det på er egen bil först. Gillar ni det bokar vi ett kort samtal. CaraShell gör bara två saker, taköverdrag och termoskydd till husvagn och husbil, och jag hör av mig till just er eftersom ni efterfrågar tillbehörssamarbeten på sidan Samarbeta.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 2. Peter & Lotta
 Till: kontakt@levamedhusbil.se (anges på startsidan och på YouTube; sidan /kontakt/ ger 404, adressen gäller ändå)
@@ -158,7 +158,7 @@ Till: kontakt@levamedhusbil.se (anges på startsidan och på YouTube; sidan /kon
 
 Hej Peter och Lotta, jag heter Axel och driver CaraShell. Ni gör Fredagstips vecka efter vecka, och nu har ni dessutom tagit hem en Adria från 1976 vid sidan av Sonicen. Jag skulle vilja skicka er ett taköverdrag att behålla, utan krav på något tillbaka, eftersom vi är intresserade av ett betalt samarbete. Det är silverbelagd oxfordväv som bara läggs över takytan, inte ett helöverdrag som ska tas runt hela vagnen, och jag vill att ni provar det på er egen först. Gillar ni det tar vi ett kort samtal om fortsättningen. Vi är ett svenskt märke som bara gör skydd till husvagn och husbil, med fri frakt inom Sverige och Norge, och jag skriver till er båda eftersom Peter håller på med husbilar även utanför kanalen.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 3. Cajsa Olsson
 Skickas som Instagram-DM till @min_lilla_adria_305. Ingen mejladress finns. Dela i två meddelanden om Instagram kapar längden; ämnesraden blir första raden.
@@ -166,7 +166,7 @@ Skickas som Instagram-DM till @min_lilla_adria_305. Ingen mejladress finns. Dela
 
 Hej Cajsa, jag heter Axel och driver CaraShell. Du köpte en 45 år gammal Adria 305 för 5 000 kronor och gjorde om den själv, ner till diskhon av en gammal skål. Jag vill skicka dig ett taköverdrag, utan att det ska betyda något åt något håll, för det vi hoppas på är ett betalt samarbete. Överdraget går bara över takytan och en person får det på plats själv med remmar på alla fyra sidor, och jag vill att du provar det på din vagn först. Gillar du det bokar vi ett kort samtal. CaraShell är svenskt, drivs av Stonebite Ecom AB utanför Göteborg och har bara två produkter, båda för husvagn och husbil, och jag skriver till dig eftersom den som renoverat en vagn själv vet vad arbetet är värt.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 4. Annelie & Ludwig Eliasen
 Till: info.o3h@gmail.com (YouTube-kanalens om-sida). De var i Georgien 17–19/9, så svaret kan dröja.
@@ -174,7 +174,7 @@ Till: info.o3h@gmail.com (YouTube-kanalens om-sida). De var i Georgien 17–19/9
 
 Hej Annelie och Ludwig, jag heter Axel och driver CaraShell. Grattis till Bertha, som ni visade upp på Elmia nu i september. Jag vill gärna skicka er ett taköverdrag till henne, utan krav i gengäld, eftersom vi är intresserade av ett betalt samarbete. Det täcker bara takytan, så resten av lacken får vara i fred, och jag vill att ni provar det på Bertha först. Gillar ni det bokar vi ett kort samtal. CaraShell finns i Norden och numera även i USA och Storbritannien, och jag hör av mig eftersom ni kör en ny bil på äventyrsresor i Europa.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 5. Marlene & Martin Jikita
 Till: marlenerinda@gmail.com (bloggens kontakt; alternativ mmjikita@gmail.com). ⚠️ Bloggen 18/9 heter "Ledsen och orkeslös" — Axels beslut om mailet går i dag eller väntar till 28/9.
@@ -182,7 +182,7 @@ Till: marlenerinda@gmail.com (bloggens kontakt; alternativ mmjikita@gmail.com). 
 
 Hej Marlene, jag heter Axel och driver CaraShell. Du skriver om vintercamping och om vad nya husbilsägare behöver tänka på i FREEDOMtravel, vid sidan av allt annat ni gör. Jag vill skicka dig och Martin ett taköverdrag att behålla oavsett vad ni tycker om det, eftersom vi är ute efter ett betalt samarbete. Det är ett överdrag som bara går över takytan, i silverbelagd oxfordväv med remmar på alla fyra sidor, och jag vill att ni provar det själva innan ni säger något om det. Gillar ni det tar vi ett kort samtal. CaraShell gör taköverdrag och termoskydd för husvagn och husbil och ingenting annat, och jag skriver till dig eftersom du är journalist och skriver om utrustning för folk som ska ut i vinterväder.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 6. Annika Elgeskog
 Till: aelgeskog20@gmail.com (YouTube-kanalens om-sida)
@@ -190,7 +190,7 @@ Till: aelgeskog20@gmail.com (YouTube-kanalens om-sida)
 
 Hej Annika, jag heter Axel och driver CaraShell. Du har lagt ut över sexhundra videor sedan 2014, och nu byter kanalen namn till ÄventyrsAnnika medan Lilla Fina får stanna kvar. Jag skulle vilja skicka dig ett taköverdrag utan krav på något tillbaka, för det vi är ute efter är ett betalt samarbete. Överdraget täcker takytan i stället för hela vagnen, vilket gör att en person kan lägga på det själv, och jag vill att du provar det på Lilla Fina först. Gillar du det bokar vi in ett kort samtal. CaraShell är ett svenskt märke som bara gör skydd till husvagn och husbil, med Klarna och 14 dagars ångerrätt, och jag skriver till dig eftersom din publik följt dig i över tio år och litar på vad du väljer.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 7. Markku & Agneta Korpela
 Skickas som Instagram-DM till @agneta_markku (länkad från YouTube). Ingen mejladress finns. De är sannolikt utomlands i oktober.
@@ -198,7 +198,7 @@ Skickas som Instagram-DM till @agneta_markku (länkad från YouTube). Ingen mejl
 
 Hej Markku och Agneta, jag heter Axel och driver CaraShell. Ni ordnar en egen husbilsträff för era följare, och det är inte många som går så långt för att faktiskt möta dem som tittar. Jag vill skicka er ett taköverdrag att ha, utan förväntningar åt något håll, eftersom vi är intresserade av ett betalt samarbete. Det är ett överdrag som bara täcker taket, med två förstärkta spännremmar utöver dem som sitter på, och jag vill att ni provar det själva först. Gillar ni det bokar vi ett kort samtal. Bakom CaraShell står svenska Stonebite Ecom AB utanför Göteborg, och vi skickar fritt inom både Sverige och Norge, så jag hör av mig eftersom era följare möter er på riktigt och ser bilen med egna ögon.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 8. Linda & Pär
 Till: lindatorm@gmail.com (reiselinda.se/husbilsbloggarna skriver "gmail.se", som inte är en giltig domän)
@@ -206,7 +206,7 @@ Till: lindatorm@gmail.com (reiselinda.se/husbilsbloggarna skriver "gmail.se", so
 
 Hej Linda och Pär, jag heter Axel och driver CaraShell. Ni håller ihop Husbilsbloggarna med ett trettiotal skapare samtidigt som ni bott i bilen på heltid sedan 2022, och jag undrar ärligt hur ni får tiden att räcka till. Jag vill gärna skicka er ett taköverdrag, och det kommer utan krav, för vi är intresserade av ett betalt samarbete. Det är ett överdrag för takytan som en person klarar själv, till skillnad från ett helöverdrag som kräver två, och jag vill att ni provar det när det passar er. Gillar ni det tar vi ett kort samtal. CaraShell gör två produkter, taköverdrag och termoskydd, båda för husvagn och husbil, och jag skriver till er eftersom ni hållit på sedan 2011 och vet vad som håller.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### 9. Lena Johansson & Lena Ljunggren
 ⚠️ KONTAKTVÄG SAKNAS. Ingen mejl, ingen sajt. Sök "2tanter1husvagn" på Instagram och skicka som DM. Finns inget konto passar de inte upplägget med stories och stryks. Bulan är en Adria Action 2009 — minsta storleken är 5,5 m, så fråga längden innan något skickas.
@@ -214,7 +214,7 @@ Axel Odhner, CaraShell, [telefonnummer]
 
 Hej Lena och Lena, jag heter Axel och driver CaraShell. Ni startade en podd utan att ha gjort det förut, efter 55 års vänskap, och första resan med Bulan gick till Grövelsjön. Jag vill skicka er ett taköverdrag till Bulan, utan att ni behöver göra något för det, eftersom det är ett betalt samarbete vi vill åt. Det läggs bara över takytan och hakas fast med remmar på alla fyra sidor, och jag vill att ni provar det på Bulan först. Gillar ni det bokar vi ett kort samtal. CaraShell är ett svenskt märke som bara gör skydd till husvagn och husbil, och jag skriver till er eftersom ni pratar om campinglivet från insidan.
 
-Axel Odhner, CaraShell, [telefonnummer]
+Axel Odhner, CaraShell, 079-340 44 07
 
 ### Byråvarianten (ingen av de nio har en byrå enligt det vi kunde läsa; mallen används om en byrå dyker upp i svaret)
 Samma mail ord för ord, med profilens namn i ämnesraden ("angående <namn>: <kroken>"), plus en rad sist före signaturen: "Skicka gärna er prislista för stories och annonsrätt så att vi kan komma förberedda till samtalet."
@@ -229,7 +229,7 @@ Tack för svaret, <namn>. Vill ni ändå ha ett överdrag till vagnen skickar ja
 Vad roligt. Hur lång är vagnen, så att jag skickar rätt storlek (vi har 5,5 till 13,5 meter)? Och passar det med ett kort samtal på <två förslag>? Skicka gärna en skärmdump av dina Instagram-insikter (ålder, kön, land, story-visningar 30 dagar) innan vi ses, så pratar vi om samma siffror.
 ## Vad som inte gick att verifiera
 
-Instagram-följartal för samtliga (plattformen svarade 429 eller 302 på varje försök; alla Instagram-tal i rapporten är från press och daterade). Publikens kön och ålder för samtliga (ingen plattform visar det utan Modash eller profilens egna insikter). Kommentarernas kvalitet och stories för samtliga (mäts i fas 8, av en människa i appen). Lyssnarsiffror och kontaktväg för 2Tanter1Husvagn. Our Third Homes hemkomstdatum och om Dethleffs-avtalet har exklusivitet. Om Peter (Levamedhusbil) arbetsgivare säljer överdrag. Freedom Livings och Jikitas exakta publik. Nilla & Mickes, Linda & Pärs, Peter & Lottas och Annelie & Ludwigs ålder. Skandaler och kontroverser: utan sökmotor betyder "inget hittat" inte "ren" för någon utom Gurgîn, där det hittades. Inköpspriset 436 kr (härlett, inte kvitterat). Ditt telefonnummer och avsändaradressen.
+Instagram-följartal för samtliga (plattformen svarade 429 eller 302 på varje försök; alla Instagram-tal i rapporten är från press och daterade). Publikens kön och ålder för samtliga (ingen plattform visar det utan Modash eller profilens egna insikter). Kommentarernas kvalitet och stories för samtliga (mäts i fas 8, av en människa i appen). Lyssnarsiffror och kontaktväg för 2Tanter1Husvagn. Our Third Homes hemkomstdatum och om Dethleffs-avtalet har exklusivitet. Om Peter (Levamedhusbil) arbetsgivare säljer överdrag. Freedom Livings och Jikitas exakta publik. Nilla & Mickes, Linda & Pärs, Peter & Lottas och Annelie & Ludwigs ålder. Skandaler och kontroverser: utan sökmotor betyder "inget hittat" inte "ren" för någon utom Gurgîn, där det hittades. Inköpspriset 436 kr (härlett, inte kvitterat). Avsändaradressen hello@carashell.se är läst av carashell.se/pages/contact men inte testad med ett skickat mail.
 
 ## Utfallslogg
 
