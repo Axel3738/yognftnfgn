@@ -247,7 +247,53 @@ if (iFonster.length !== paket.length) {
   console.log(`Fönster ${dagar} dagar: ${paket.length - iFonster.length} paket föll bort (senaste skanningen är äldre).`);
 }
 
-const { data, statistik } = byggData(iFonster, { nu: NU, mottagarland: MOTTAGARLAND, prefix: BUTIK.prefix });
+// ⚠️ SHOPIFYS TAK: en sida får väga 512 kB, och datan ligger I sidan.
+//
+// Natten 2026-09-22, när orderfönstret gick från 14 till 30 dagar och hela
+// kön registrerades, växte sidan till 873 kB och Shopify svarade
+// "Content is too big (maximum is 512 KB)" — rundan publicerade ingenting
+// alls. En spårningssida som vägrar uppdatera sig är värre än en som bär
+// några paket färre, så bygget KRYMPER sig självt i stället för att falla.
+//
+// Det som offras är de LEVERERADE paketen, äldst först. En kund som slår upp
+// ett nummer har nästan alltid ett paket på väg; ett som kom fram för tre
+// veckor sedan vet hen redan var det tog vägen. Paket UTAN leveransdatum —
+// allt som fortfarande rullar — rörs aldrig, hur trångt det än blir.
+//
+// Storleken mäts på datan (JSON), inte på hela sidkroppen: byggData() är ren
+// och snabb, så loopen kostar inget, och skalet runt datan är konstant.
+const DATATAK_B = 430 * 1024;   // datan; resten av sidkroppen är skalet
+function senasteMs(p) {
+  let senaste = -Infinity;
+  for (const h of p?.handelser ?? []) {
+    const ms = Date.parse(h?.tid);
+    if (Number.isFinite(ms) && ms > senaste) senaste = ms;
+  }
+  return senaste;
+}
+function arLevererat(p) {
+  return String(p?.statusKod ?? p?.status ?? '').toUpperCase() === 'DELIVERED';
+}
+let paketTillData = iFonster;
+let bortKrympta = 0;
+let { data, statistik } = byggData(paketTillData, { nu: NU, mottagarland: MOTTAGARLAND, prefix: BUTIK.prefix });
+if (JSON.stringify(data).length > DATATAK_B) {
+  // Levererade, äldst först — de är de enda som får offras.
+  const offerbara = paketTillData.filter(arLevererat).sort((a, b) => senasteMs(a) - senasteMs(b));
+  for (const offer of offerbara) {
+    if (JSON.stringify(data).length <= DATATAK_B) break;
+    paketTillData = paketTillData.filter((p) => p !== offer);
+    bortKrympta++;
+    ({ data, statistik } = byggData(paketTillData, { nu: NU, mottagarland: MOTTAGARLAND, prefix: BUTIK.prefix }));
+  }
+  const kvar = JSON.stringify(data).length;
+  if (bortKrympta) {
+    console.log(`⚠️ Sidan slog i Shopifys 512 kB: ${ord(bortKrympta, 'levererat paket', 'levererade paket')} (äldst först) togs bort så den får plats. Datan: ${Math.round(kvar / 1024)} kB. Paket på väg rörs aldrig.`);
+  }
+  if (kvar > DATATAK_B) {
+    console.log(`⚠️ Datan är ${Math.round(kvar / 1024)} kB även utan levererade paket — allt som är kvar är på väg. Sidan publiceras ändå; slår Shopify tillbaka behöver spårningsdatan flytta ut ur sidan (temafil).`);
+  }
+}
 for (const v of statistik.varningar.slice(0, 10)) console.log(`  ⚠️ ${v}`);
 if (statistik.varningar.length > 10) console.log(`  ⚠️ … och ${ord(statistik.varningar.length - 10, 'varning till', 'varningar till')}`);
 
@@ -335,7 +381,7 @@ const sidkonfig = {
 // att hitta, sammanfattningen får inte motsäga rådatan, och "Ankommit till
 // <land>" kräver en fysisk skanning. En sida som säger fel om var paketet är
 // går inte ut — hellre gårdagens sida än en som ljuger.
-const kontroll = kontrollera(iFonster, data, { mottagarland: MOTTAGARLAND, maxHandelser: MAX_HANDELSER });
+const kontroll = kontrollera(paketTillData, data, { mottagarland: MOTTAGARLAND, maxHandelser: MAX_HANDELSER });
 console.log(kontrollrapport(kontroll));
 if (!kontroll.ok && !baraFiler) {
   console.error('❌ Sidan publicerades INTE. Rätta felen ovan och kör om.');
@@ -355,7 +401,7 @@ const OV_EXTRA = oversattExtra(data, F_SV, SPRAK_EXTRA, { steg: STEG, delsteg: D
 if (SPRAK_EXTRA.length) console.log(`Extra språk på sidan: ${SPRAK_EXTRA.join(', ')} (byts efter adressen kunden kom in på).`);
 
 const sidmodul = await laddaSidmodul();
-const indata = { konfig: sidkonfig, data, statistik, paket: iFonster, nu: NU };
+const indata = { konfig: sidkonfig, data, statistik, paket: paketTillData, nu: NU };
 const { kropp, form } = byggKropp(sidmodul, indata);
 
 // ⚠️ KÖR SIDANS EGET SKRIPT INNAN NÅGOT SKICKAS TILL SHOPIFY.

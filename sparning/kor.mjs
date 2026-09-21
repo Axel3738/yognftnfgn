@@ -4,7 +4,7 @@
 //   node sparning/kor.mjs                # skarpt
 //   node sparning/kor.mjs --torr         # läs allt, skriv inget, registrera inget
 //   node sparning/kor.mjs --kolla        # bara nyckel + Shopify-rättigheter
-//   node sparning/kor.mjs --dagar 30     # hur långt bakåt ordrarna läses (standard 14)
+//   node sparning/kor.mjs --dagar 45     # hur långt bakåt ordrarna läses (standard 30)
 //   node sparning/kor.mjs --max 500      # tak på nya registreringar per körning (standard 150)
 //   node sparning/kor.mjs --ingen-sida   # hoppa över spårningssidan (bara event i Shopify)
 //
@@ -46,7 +46,17 @@ const torr = arg.includes('--torr');
 const kolla = arg.includes('--kolla');
 const ingenSida = arg.includes('--ingen-sida');
 const dagarIx = arg.indexOf('--dagar');
-const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 14;
+// ⚠️ 30 DAGAR, INTE 14 (rättat 2026-09-22 efter Axels "legit inga paket går
+// ju att spåra"). Frågan mot Shopify filtrerar på `created_at` — när ordern
+// LADES — och ett paket är på väg 5–10 arbetsdagar. Med 14 dagar föll varje
+// order ur fönstret medan paketet fortfarande rullade, och eftersom minnet
+// bara innehåller det som EN GÅNG kommit in genom den här dörren kom paketet
+// aldrig in. Det drabbade precis de kunder som hör av sig: de som väntat
+// längst. Mätt samma natt: order #6243 (lagd OCH skickad 31/8) fanns inte i
+// minnet alls, och på 60 dagar var 1 747 av 2 880 paket oregistrerade.
+// Höj inte utan att tänka på kvoten: varje NYTT paket i fönstret kostar en
+// 17TRACK-registrering, och taket nedan är det enda som bromsar.
+const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 30;
 // Tak på registreringar per körning: varje registrering kostar 17TRACK-kvot.
 // Torrkörningen 2026-09-18 hittade 2 607 oregistrerade paket på 45 dagar mot
 // 200 gratis i startkvoten — utan tak hade första körningen bränt allt på

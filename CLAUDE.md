@@ -479,7 +479,30 @@ rapporterar VA:n in recensionen med länk och chefen godkänner.
 | `/kundtjanst [--alla\|--brand <id>] [--discord]` | **Måndag 07:00, alla brands:** supportmejlen (Loopia/IMAP) + Shopify → återkommande toppärenden, chargeback-varningar, ranking 0–100 per brand, VA:ns lista på engelska. Läs-bara. `kundtjanst/README.md` |
 | `/tvistkoll [--alla] [--discord]` | **Varje dag 07:00, alla brands:** bara Shopify-tvisterna → larm i Discord om någon har evidence-deadline inom 3 dagar. Sekunder, inga mejl, inga filer. Täpper luckan mellan veckorapporterna |
 | `/mejl` | **Bäverbutikens kundmejl** (orderbekräftelse, leverans, återbetalning …) med erbjudandet "köp igen → välj en gratisprodukt" — bygger mallarna ur Shopify, publicerar sidan Axel klistrar från. `mejl/README.md`. **Andra butiker:** `node mejl/bygg-butik.mjs <id>` (eller `npm run mejl:butiker`) bygger de tre fraktmejlen för CaraShell/NO/DK/FI utan gratisprodukt-block, med butikens logga, färger, språk (`mejl/sprak/<kod>.json`) och paketprefix — Cowork-prompten i `mejl/output/butiker/<id>/COWORK-PROMPT.md`. Byggt 2026-09-20 sen kväll efter Axels dom på Coworks lappade CaraShell-mall ("tvääär fula"): hela mallen byts, aldrig rader i Shopifys standardmall |
-| `/sparning` | **Varje timme (:16), två saker i en körning:** (1) Bäverbutikens skickade ordrar (14 dagar) → spårningsnumren registreras hos 17TRACK → senaste skanningen skrivs in i Shopify som **fulfillment-event** med svenskt meddelande, vilket får notiserna Ute för leverans/Levererad att gå ut (de triggas av just de eventen; mätt 2026-09-18: 0 av 500 ordrar hade något leveransevent från fraktbolagen). (2) Bygger om **kundens spårningssida https://baverbutiken.se/pages/spara** — hela kedjan på svenska med ort och tid ("17 sep 23:28 · Paketet är levererat i din brevlåda · Umeå"), ända tillbaka till avsändaren i Kina. ⚠️ **Shopifys orderstatussida kan inte visa det** (Axel 2026-09-19: "den visar inga detaljer") — den ritar tre streck med datum, utan orter och utan historik, hur mycket rutinen än skriver in. Därför den egna sidan; Axels beslut samma dag, valt ur två alternativ. Uppslaget går på **spårningsnummer, aldrig ordernummer** — ordernummer är sekventiella och lätta att gissa, och då hade vem som helst kunnat se var någon annans paket är. Datan bär inga namn och inga adresser. Mejlets knapp bär numret, så kunden slipper skriva. Motor: `sparning/kor.mjs` (`--torr`, `--kolla`, `--dagar 14`, `--max 150`, `--ingen-sida`), `sprak.mjs`+`fraser.json` (78 nycklar, avlästa ur 204 riktiga paket — fraktbolagen skriver engelska och VERSALER), `paketdata.mjs`, `sida.mjs`, `publicera.mjs` (trippelkoll mot kundens publika vy). ⛔ **`npm test` publicerade över kundernas spårningssida — rättat 2026-09-21.**
+| `/sparning` | **Varje timme (:16), två saker i en körning:** (1) Bäverbutikens skickade ordrar (14 dagar) → spårningsnumren registreras hos 17TRACK → senaste skanningen skrivs in i Shopify som **fulfillment-event** med svenskt meddelande, vilket får notiserna Ute för leverans/Levererad att gå ut (de triggas av just de eventen; mätt 2026-09-18: 0 av 500 ordrar hade något leveransevent från fraktbolagen). (2) Bygger om **kundens spårningssida https://baverbutiken.se/pages/spara** — hela kedjan på svenska med ort och tid ("17 sep 23:28 · Paketet är levererat i din brevlåda · Umeå"), ända tillbaka till avsändaren i Kina. ⚠️ **Shopifys orderstatussida kan inte visa det** (Axel 2026-09-19: "den visar inga detaljer") — den ritar tre streck med datum, utan orter och utan historik, hur mycket rutinen än skriver in. Därför den egna sidan; Axels beslut samma dag, valt ur två alternativ. Uppslaget går på **spårningsnummer, aldrig ordernummer** — ordernummer är sekventiella och lätta att gissa, och då hade vem som helst kunnat se var någon annans paket är. Datan bär inga namn och inga adresser. Mejlets knapp bär numret, så kunden slipper skriva. Motor: `sparning/kor.mjs` (`--torr`, `--kolla`, `--dagar 14`, `--max 150`, `--ingen-sida`), `sprak.mjs`+`fraser.json` (78 nycklar, avlästa ur 204 riktiga paket — fraktbolagen skriver engelska och VERSALER), `paketdata.mjs`, `sida.mjs`, `publicera.mjs` (trippelkoll mot kundens publika vy). ⛔ **Orderfönstret var 14 dagar och åt upp de paket kunderna faktiskt slår upp
+— rättat till 30 dagar 2026-09-22** (Axel: "legit inga paket går ju att spåra").
+Frågan mot Shopify filtrerar på **`created_at`** — när ordern LADES — men ett
+paket är på väg 5–10 arbetsdagar. Ordern föll alltså ur fönstret medan paketet
+fortfarande rullade, och eftersom minnet bara innehåller det som EN GÅNG kommit
+in genom den dörren kom paketet **aldrig** in. Det drabbade precis de kunder som
+hör av sig: de som väntat längst. Mätt samma natt: order **#6243** (lagd och
+skickad 31/8, 22 dagar gammal) fanns inte i minnet alls, och på 60 dagar var
+**1 747 av 2 880 paket oregistrerade**. Med 30 dagar: 2 066 ordrar, 1 917 paket,
+784 oregistrerade — alla registrerade samma natt utan att 17TRACK avvisade en
+enda. ⚠️ **Då small nästa tak: Shopify tar max 512 kB per sida, och datan ligger
+I sidan.** Med 2 044 paket vägde den 873 kB och Shopify svarade "Content is too
+big" — rundan publicerade ingenting alls. Bygget **krymper sig därför självt**
+i stället för att falla: levererade paket offras, ÄLDST FÖRST, tills datan får
+plats (`DATATAK_B` i `publicera.mjs`). Paket som fortfarande rullar rörs aldrig,
+hur trångt det än blir — det är dem kunden slår upp. Första körningen: 644
+levererade bort, 1 400 paket kvar, 485 kB, grön trippelkoll. **Nästa steg när
+det blir trångt igen: flytta spårningsdatan ut ur sidan till en temafil.**
+⚠️ **Höj inte fönstret utan att tänka på kvoten:** varje nytt paket i fönstret
+kostar en 17TRACK-registrering, och `--max` (150/körning) är det enda som
+bromsar. ⚠️ Registreringen tar **nyast först**, så de äldsta paketen — de som
+väntat längst och som kunden slår upp — kommer SIST i kön.
+
+⛔ **`npm test` publicerade över kundernas spårningssida — rättat 2026-09-21.**
 Klockan 21:44 UTC låg https://baverbutiken.se/pages/spara live med **ett enda
 paket**, `YT0000000000000`, som är testets eget låtsasnummer. Varje kund som
 slog upp sitt paketnummer fick "Vi hittar inte det numret" — Axel upptäckte det
