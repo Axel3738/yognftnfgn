@@ -9,6 +9,9 @@
 //   node kundtjanst/autosvar.mjs --kolla                          vad går att läsa/skriva, vilka nycklar saknas
 //   --max 20        tak på automatiska svar per körning och butik (standard svar.max_per_korning)
 //   --fonster 72    hur gamla mejl (timmar) som får ett svar (standard svar.fonster_timmar)
+//   --igen          KALIBRERING: bortse från flaggor och loggen, bedöm fönstrets mejl på nytt
+//                   (Axels feedbackrunda 2026-09-22 — bara i torrläge, aldrig i rutinen: Sent/Drafts
+//                   vaktar fortfarande mot dubbelsvar, men loggens "en gång per tråd" är avstängd)
 //   --json          maskinläsbart resultat på stdout
 //
 // Flödet per butik (Axels spec 2026-09-21):
@@ -50,7 +53,7 @@ import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
 import { HINK, hinka, beslut, redanBesvaradAvOss } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
-import { skrivEnkelt, skrivArgt, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, lageRader, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
 import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
@@ -66,7 +69,7 @@ const TIMME = 3_600_000;
  */
 export async function korBrand(brand, {
   env = process.env, nu = new Date(), torr = true, brevlada = null, shopify = undefined, hamta17 = null,
-  loggmapp = LOGGMAPP, max = null, fonsterTimmar = null, logg = () => {}, cache = new Map(),
+  loggmapp = LOGGMAPP, max = null, fonsterTimmar = null, logg = () => {}, cache = new Map(), igen = false,
 } = {}) {
   const konfig = korkonfig(brand, env);
   const kord = nu.toISOString();
@@ -84,7 +87,10 @@ export async function korBrand(brand, {
 
   const taket = Number(max ?? konfig.svar.max_per_korning) || 20;
   const fonster = (Number(fonsterTimmar ?? konfig.svar.fonster_timmar) || 72) * TIMME;
-  const minnet = minne(lasLogg(brand.id, loggmapp));
+  // --igen (bara torrt): loggen och flaggorna är minnet från förra körningarna — kalibreringen ska bedöma om.
+  if (igen && !torr) throw new Error('--igen är en kalibrering och kräver --torr: skarpt skulle svara två gånger i samma tråd');
+  const minnet = igen ? minne([]) : minne(lasLogg(brand.id, loggmapp));
+  if (igen) res.varningar.push('--igen: flaggor och loggen ignorerade — kalibreringskörning, utkasten kan gälla mejl VA:n redan sett');
   let svarade = 0;
 
   // Tvisterna läses EN gång per körning: en order med en tvist får aldrig
@@ -106,8 +112,14 @@ export async function korBrand(brand, {
   const lista = await b.lista({ mapp: inkorg, sida: 1, antal: 50 });
   const kandidater = [];
   for (const rad of lista.rader) {
-    if (rad.flaggad) continue;                       // redan hos VA:n (eller redan hanterad av oss)
-    const m = await lasMejl(b, inkorg, rad.uid, cache);
+    if (rad.flaggad && !igen) continue;              // redan hos VA:n (eller redan hanterad av oss)
+    let m;
+    try { m = await lasMejl(b, inkorg, rad.uid, cache); }
+    catch (e) {
+      // VA:n kan flytta ett mejl mellan listningen och läsningen — då är det hennes, inte ett fel i körningen.
+      if (e.kod === 'MEJL_SAKNAS') { res.varningar.push(`uid ${rad.uid} (${rad.amne?.slice(0, 40) ?? ''}) fanns inte kvar i inkorgen när det skulle läsas — hoppat`); continue; }
+      throw e;
+    }
     res.antalLasta++;
     if (m.datum && nu.getTime() - m.datum.getTime() > fonster) break;   // äldre än fönstret — och listan är datumsorterad
     if (m.messageId && minnet.hanterade.has(m.messageId)) continue;
@@ -139,9 +151,11 @@ export async function korBrand(brand, {
     post.tradnyckel = trad?.id ?? null;
     post.tradIds = trad?.ids ?? [];
 
-    // Fakta bara för ENKEL — det är där de används.
+    // Fakta för ENKEL (där de avgör svaret) och för ARG om paketet (där de
+    // läggs till som ett stycke — en arg "var är paketet"-kund ska få veta det).
     let fakta = null;
-    if (hink.hink === HINK.ENKEL && ['wismo', 'adress'].includes(hink.typ)) {
+    const omPaketet = (hink.klass.alla ?? []).some((x) => ['var_ar_ordern', 'ej_levererad'].includes(x.id));
+    if ((hink.hink === HINK.ENKEL && ['wismo', 'adress'].includes(hink.typ)) || (hink.hink === HINK.ARG && omPaketet)) {
       fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg, tvister });
       post.fakta = fakta.kalla;
     }
@@ -158,13 +172,21 @@ export async function korBrand(brand, {
       } else {
         let text = null;
         try {
+          const stilla = namnerStillaSparning(`${mejl.amne}\n${mejl.text}`);
           if (d.hink === HINK.ARG) {
             const x = xNyckelFor(hink.klass, d.argOrsaker ?? []);
             post.x = x;
+            // Läget ur Shopify/17TRACK som eget stycke — bara med färsk fakta (ingen spärr) och kundens egen order.
+            let lage = null;
+            if (fakta?.order && !fakta.sparr) {
+              try { lage = { namn: fakta.order.namn, rader: lageRader({ sprak: post.sprak, fakta, brand: konfig, stilla, nu }) }; }
+              catch (e) { lage = null; logg(`uid ${m.uid}: läget kunde inte byggas (${e.message}) — det arga svaret går utan`); }
+            }
+            post.lage = Boolean(lage);
             // SOP 05/08: skadad eller fel vara ⇒ be om de tre bilderna i samma svar.
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton: villHaFoton(hink.klass) }).text;
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton: villHaFoton(hink.klass), lage }).text;
           } else {
-            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn: fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn }), bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla: namnerStillaSparning(`${mejl.amne}\n${mejl.text}`), nu }).text;
+            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn: fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn }), bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), nu }).text;
           }
         } catch (e) {
           text = null;
@@ -293,27 +315,38 @@ export async function byggTrad(b, konfig, mejl, { cache = new Map(), index = new
   // ett utkast från --torr räknas som ett svar, annars hade nästa körning
   // gjort ett utkast till på samma tråd.
   const skickat = [];
-  const lasUt = async (mapp) => {
+  // VA:ns senaste mejl till kunden i Skickat, oavsett tråd: en kund mitt i
+  // ett ärende med VA:n får inget automatiskt svar i en ANNAN tråd heller
+  // (hinkar.VA_KUND_DAGAR). Kalibreringen 2026-09-22: Ulf svarade på en
+  // Judge.me-recensionsförfrågan ("Skräp! Tills ni skickar 3 nya …") medan
+  // VA:n hade skrivit till honom fyra gånger på en vecka i kontaktformulärs-
+  // tråden — trådregeln såg det inte, och han fick eskaleringsmallen.
+  let vaSenast = null;
+  const lasUt = async (mapp, { skarpt = false } = {}) => {
     let r;
     try { r = await mappIndex(b, mapp, { index, nu }); } catch (e) { if (e.kod === 'MAPP_SAKNAS') return false; throw e; }
     for (const t of r.rader) {
       if (t.franAdress !== adress) continue;
       const m = await lasMejl(b, mapp, t.uid, cache);
-      if (m.till?.some((x) => x.adress === adress)) skickat.push(m);
+      if (m.till?.some((x) => x.adress === adress)) {
+        skickat.push(m);
+        if (skarpt && m.datum && (!vaSenast || m.datum > vaSenast)) vaSenast = m.datum;
+      }
     }
     return true;
   };
-  for (const mapp of konfig.mail.skickat ?? ['Sent']) if (await lasUt(mapp)) break;
+  for (const mapp of konfig.mail.skickat ?? ['Sent']) if (await lasUt(mapp, { skarpt: true })) break;
   for (const mapp of ['Drafts', 'INBOX.Drafts']) if (await lasUt(mapp)) break;
+  const vaDagar = vaSenast ? (nu.getTime() - vaSenast.getTime()) / 86_400_000 : null;
   const byggt = byggArenden({ inkorg: inkommande, skickat, brand: konfig, nu: new Date() });
   const a = byggt.arenden.find((x) => x.uids.includes(mejl.uid)) ?? byggt.arenden.find((x) => x.kund.adress === adress);
   // Sent-mappen är stor (~50 mejl om dagen i Bäverbutiken) och sökningen ser
   // bara första sidan — därför räknas också mejlets egna spår av ett svar
   // från oss (References från vår domän, vår adress i citatet).
   const spar = redanBesvaradAvOss({ mejl, brand: konfig });
-  if (!a) return { id: loggnyckel(`${adress}|${mejl.amneNyckel}`), antalInkommande: 1, antalSvar: spar.besvarad ? 1 : 0, ids: [mejl.messageId].filter(Boolean), besvaradSpar: spar.orsak };
+  if (!a) return { id: loggnyckel(`${adress}|${mejl.amneNyckel}`), antalInkommande: 1, antalSvar: spar.besvarad ? 1 : 0, ids: [mejl.messageId].filter(Boolean), besvaradSpar: spar.orsak, vaSenast, vaDagar };
   const ids = inkommande.filter((x) => a.uids.includes(x.uid)).map((x) => x.messageId).filter(Boolean);
-  return { id: loggnyckel(a.id), antalInkommande: a.antalInkommande, antalSvar: Math.max(a.antalSvar, spar.besvarad ? 1 : 0), ids, besvaradSpar: spar.orsak };
+  return { id: loggnyckel(a.id), antalInkommande: a.antalInkommande, antalSvar: Math.max(a.antalSvar, spar.besvarad ? 1 : 0), ids, besvaradSpar: spar.orsak, vaSenast, vaDagar };
 }
 
 /**
@@ -370,7 +403,7 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
       if (!brevlador.has(b.id)) brevlador.set(b.id, new Brevlada(k, { logg }));
       let r;
       try {
-        r = await korBrand(b, { env, torr, brevlada: brevlador.get(b.id), max: flagga(argv, 'max'), fonsterTimmar: flagga(argv, 'fonster'), logg, cache });
+        r = await korBrand(b, { env, torr, brevlada: brevlador.get(b.id), max: flagga(argv, 'max'), fonsterTimmar: flagga(argv, 'fonster'), logg, cache, igen: finns('igen') });
       } catch (e) {
         r = { brand: k, kord: new Date().toISOString(), torr, hoppad: true, orsak: e.message, rader: [], varningar: [] };
         // En död session får inte döda loopen: nästa varv loggar in igen.

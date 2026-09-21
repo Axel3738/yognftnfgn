@@ -7,10 +7,16 @@
 //   ENKEL  — var är min order, leveranstid, byte av adress före leverans,
 //            öppettider. AI svarar själv, med fakta ur Shopify + 17TRACK.
 //            Saknas fakta går mejlet till SVÅR — aldrig ett gissat svar.
-//   ARG    — frustration, hot om bank/ARN/recension, "aldrig fått", trasig
-//            vara, tredje mejlet utan svar. EN lugnande rad (Axels mall), sen
-//            flaggas tråden och flyttas till VA-mappen.
-//   SVÅR   — allt annat: retur, återbetalning, reklamation, tvist, fel vara,
+//   ARG    — RIKTIG ilska: frustration i ordvalet, hot om bank/ARN/recension,
+//            versaler, utropstecken, eskaleringsord, tredje mejlet utan svar.
+//            EN lugnande rad (Axels mall) + läget ur spårningen när det finns,
+//            sen flaggas tråden och flyttas till VA-mappen.
+//            ⚠️ Kategorin ensam gör INTE ett mejl argt (Axels kalibrering
+//            2026-09-22: "jag tyckte inte riktigt att han verkade så himla
+//            sur" om ett lugnt "överdraget är för litet"). En lugn "trasig
+//            vara" är ENKEL `foton` (bildförfrågan, SOP 05/08), ett lugnt
+//            "aldrig fått paketet" är WISMO med fakta.
+//   SVÅR   — allt annat: retur, återbetalning, byte/storlek, tvist, fel antal,
 //            frågor som inte går att belägga. Inget AI-svar, bara flagga.
 //   SKIP   — inte en kund: autosvar, listmejl, systemmejl, butikens egna.
 //
@@ -25,6 +31,12 @@ import { klassificera, normalisera } from '../klassificering.mjs';
 import { arSystem, arEgen } from '../arenden.mjs';
 
 export const HINK = Object.freeze({ ENKEL: 'ENKEL', ARG: 'ARG', SVAR: 'SVÅR', SKIP: 'SKIP' });
+
+// Så länge efter VA:ns senaste mejl till kunden (Skickat, vilken tråd som
+// helst) räknas kunden som VA:ns — inget automatiskt svar, bara flagga.
+// Kalibreringen 2026-09-22 (Ulf: fyra VA-svar på en vecka, nytt mejl i en
+// Judge.me-tråd fick eskaleringsmallen).
+export const VA_KUND_DAGAR = 14;
 
 // Axels ord (2026-09-21) + de nordiska formerna. En träff = SVÅR utan svar.
 const TVISTORD = [
@@ -114,9 +126,10 @@ export function arArg({ klass, amne = '', text = '', trad = null } = {}) {
   const orsaker = [];
   const a = normalisera(amne);
   const t = normalisera(text);
+  // Bara ilskans EGNA tecken. "ej_levererad" och "skadad_defekt" räknades som
+  // arga i sig till 2026-09-22 — då fick ett artigt "överdraget är för litet"
+  // eskaleringsmallen. Ett hot om banken är däremot alltid ett tecken.
   if (klass.kategori === 'chargeback_hot') orsaker.push('hot om bank/anmälan/recension');
-  if (klass.kategori === 'ej_levererad') orsaker.push('säger sig aldrig ha fått paketet');
-  if (klass.kategori === 'skadad_defekt') orsaker.push('trasig eller defekt vara');
   if (klass.eskalering >= 1) orsaker.push(`eskaleringsord (${klass.eskalering})`);
   if (ARGORD.some((re) => re.test(a) || re.test(t))) orsaker.push('argt ordval');
   if ((String(text).match(/!{2,}/g) ?? []).length >= 1 || (String(text).match(/!/g) ?? []).length >= 3) orsaker.push('många utropstecken');
@@ -134,20 +147,45 @@ const HAR_ORDER = ['min order', 'min beställning', 'beställde', 'har beställt
 // som en spårningsfråga. "Skickade min retur i fredags med Postnord spårbart
 // paket" fick ett WISMO-svar med utgående spårning i första torrkörningen
 // 2026-09-21 — ordet "spårbart" vann över ordet "retur".
-const ALDRIG_ENKEL = new Set(['retur_angerratt', 'aterbetalning', 'fel_vara', 'skadad_defekt', 'avbestallning', 'faktura_klarna', 'okand_debitering', 'chargeback_hot', 'ej_levererad']);
+// (skadad_defekt, fel_vara och ej_levererad togs bort 2026-09-22: de är enkla
+// när kunden är lugn — bildförfrågan resp. WISMO. Fel ANTAL är fel_vara och
+// får också bildförfrågan: SOP 07 börjar med bild på det som kom.)
+const ALDRIG_ENKEL = new Set(['retur_angerratt', 'aterbetalning', 'avbestallning', 'faktura_klarna', 'okand_debitering', 'chargeback_hot']);
+
+// Byte och storlek (SOP 21): "för litet", "en storlek större", "passar inte"
+// är ett byte som VA:n beslutar om — ingen bildförfrågan, inget WISMO.
+// Jan-Olofs "överdraget är för litet, behöver en storlek större" 2026-09-21.
+const BYTE = ['för lite[tn]', 'för sto[rt]+\\b', 'för små', 'för trång', 'för kort', 'för lång', 'storlek större', 'storlek mindre', 'större storlek', 'mindre storlek', 'annan storlek', 'fel storlek', 'passar inte', 'byta (till|mot|ut|storlek)', '\\bbyte\\b',
+  'for lit[ent]', 'for sto[rt]+\\b', 'for små', 'for trang', 'større størrelse', 'mindre størrelse', 'feil størrelse', 'passer ikke', 'bytte (til|mot|størrelse)',
+  'for lille', 'forkert størrelse', 'ombytning', 'bytte (til|størrelse)',
+  'liian pieni', 'liian iso', 'liian suuri', 'ei sovi', 'väärä koko', 'vaihtaa (kokoa|toiseen)',
+  'too small', 'too big', 'too large', 'too tight', 'does not fit', 'doesn.t fit', 'wrong size', 'size up', 'size down', 'a size (bigger|larger|smaller)', 'exchange (it|for|to)',
+].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+
+/** Är mejlet ett byte eller en storleksfråga på en levererad vara (SOP 21)? Ren. */
+export function arByte({ klass, amne = '', text = '' } = {}) {
+  const a = normalisera(amne);
+  const t = normalisera(text);
+  return BYTE.some((re) => re.test(a) || re.test(t)) && (klass?.alla ?? []).some((x) => ['skadad_defekt', 'fel_vara', 'retur_angerratt', 'produktfraga'].includes(x.id));
+}
 
 /** Vilken enkel fråga det är, eller null. Ren. */
 export function enkelTyp({ klass, amne = '', text = '' }) {
   const a = normalisera(amne);
   const t = normalisera(text);
   const traff = (lista) => lista.some((re) => re.test(a) || re.test(t));
-  if ((klass.alla ?? []).some((x) => ALDRIG_ENKEL.has(x.id))) return null;
+  const alla = new Set((klass.alla ?? []).map((x) => x.id));
+  if ([...alla].some((id) => ALDRIG_ENKEL.has(id))) return null;
+  if (arByte({ klass, amne, text })) return null;
+  // SOP 05/08/07/15: skadad, defekt, fel eller för få varor ⇒ första svaret ber om bilderna.
+  if (alla.has('skadad_defekt') || alla.has('fel_vara')) return 'foton';
   if (traff(FORETAG)) return 'foretag';
   if (traff(ADRESS)) return 'adress';
   if (traff(OPPETTIDER)) return 'oppettider';
   // Leveranstid utan order = fråga före köp. Med ordernummer eller ordertext är det WISMO.
   if (traff(LEVERANSTID) && !klass.ordernummer.length && !traff(HAR_ORDER)) return 'leveranstid';
-  if (klass.kategori === 'var_ar_ordern' || traff(LEVERANSTID)) return 'wismo';
+  // "Aldrig fått paketet" utan ilska är en spårningsfråga (SOP 36/37) — svaret säger var paketet är.
+  if (['var_ar_ordern', 'ej_levererad'].includes(klass.kategori) || traff(LEVERANSTID)) return 'wismo';
   return null;
 }
 
@@ -181,6 +219,7 @@ export function hinka({ mejl, brand, trad = null } = {}) {
 
   const typ = enkelTyp({ klass, amne, text });
   if (typ) return { ...bas, hink: HINK.ENKEL, typ, orsak: `enkel fråga: ${typ}` };
+  if (arByte({ klass, amne, text })) return { ...bas, hink: HINK.SVAR, orsak: 'byte eller storlek (SOP 21) — VA:n beslutar' };
   return { ...bas, hink: HINK.SVAR, orsak: `kategori ${klass.kategori} — VA:n` };
 }
 
@@ -196,6 +235,7 @@ export function hinka({ mejl, brand, trad = null } = {}) {
  *   • WISMO men paketet är levererat enligt fraktbolaget ⇒ ENKEL `levererad`
  *     (SOP 06: checklistan brevlåda/avi/ombud/grannar) + flagga + VA-mappen, så
  *     VA:n följer upp om kunden inte hittar det. Är kunden arg är mejlet redan ARG.
+ *   • `foton` (lugn skadad/fel vara) ⇒ bildförfrågan + flagga + VA-mappen, ingen fakta behövs
  *   • adressbyte på en redan skickad order ⇒ SVÅR
  *   • företagsuppgifter (SOP 38) ⇒ svar bara när brandfilen bär `svar.foretag`
  */
@@ -206,10 +246,19 @@ export function beslut({ hink, fakta = null, trad = null, brand = null } = {}) {
   if (redanSvarad && h.hink !== HINK.SVAR) {
     return { ...h, hink: HINK.SVAR, orsak: trad.antalSvar > 0 ? 'tråden har redan ett svar från oss — VA:n fortsätter' : 'tråden eller kunden har redan fått ett automatiskt svar — andra mejlet går till VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };
   }
+  // Kunden är VA:ns: har vi skrivit till adressen de senaste VA_KUND_DAGAR
+  // dagarna (Skickat, vilken tråd som helst) pågår ett ärende — ett automatiskt
+  // svar i en annan tråd ("Jag eskalerar detta…") pratar då i munnen på VA:n.
+  if (trad?.vaDagar != null && trad.vaDagar <= VA_KUND_DAGAR && h.hink !== HINK.SVAR) {
+    const d = Math.max(0, Math.round(trad.vaDagar));
+    return { ...h, hink: HINK.SVAR, orsak: `VA:n skrev till kunden för ${d} dag${d === 1 ? '' : 'ar'} sedan (annan tråd) — pågående ärende, kunden är VA:ns`, svara: false, flagga: true, flytta: false, vaAtgard: false };
+  }
   if (h.hink === HINK.ARG) return { ...h, svara: true, flagga: true, flytta: true, vaAtgard: true };
   if (h.hink === HINK.SVAR) return { ...h, svara: false, flagga: true, flytta: false, vaAtgard: false };
 
   // ENKEL — håller den mot faktan?
+  // Bildförfrågan behöver ingen fakta: VA:n tar ärendet när bilderna kommit (flaggad + VA-mappen).
+  if (h.typ === 'foton') return { ...h, orsak: 'skadad, defekt eller fel vara utan ilska — bildförfrågan (SOP 05/08), VA:n tar det vidare', svara: true, flagga: true, flytta: true, vaAtgard: true };
   if (h.typ === 'foretag') {
     const f = brand?.svar?.foretag;
     if (!f?.namn || !f?.orgnr || !f?.adress) return { ...h, hink: HINK.SVAR, orsak: 'företagsuppgifter efterfrågade men brandfilen saknar svar.foretag — VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };

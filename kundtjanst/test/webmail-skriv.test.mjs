@@ -284,6 +284,19 @@ test('flagga: POST mark med _flag=flagged (och unflagged med av), token i kropp 
   await assert.rejects(() => b.flagga('x'), /positivt heltal/);
 });
 
+test('lista/las/sok: människans mappnamn slås upp mot brevlådans kända mappar — "Sent" ⇒ INBOX.Sent, okänt namn ⇒ MAPP_SAKNAS, aldrig en tyst tom lista', async () => {
+  // Roundcube 1.7 på Loopia svarar med en TOM lista för en mapp som inte finns (mätt 2026-09-22):
+  // autosvarets trådbyggare tog "Sent" som Skickat, läste aldrig INBOX.Sent och missade VA:ns fyra svar till Ulf.
+  const { b, f } = ny();
+  const r = await b.lista({ mapp: 'Sent' });
+  assert.equal(r.mapp, 'INBOX.Sent', 'svaret bär IMAP-namnet');
+  assert.equal(f.anrop.find((a) => a.q.get('_action') === 'list').q.get('_mbox'), 'INBOX.Sent', 'listningen gick mot IMAP-namnet');
+  assert.equal((await b.lista({ mapp: 'INBOX.Drafts' })).mapp, 'INBOX.Drafts');
+  await assert.rejects(() => b.lista({ mapp: 'Sent Items' }), (e) => e.kod === 'MAPP_SAKNAS' && /Mappen Sent Items finns inte/.test(e.message));
+  await assert.rejects(() => b.sok('anna', { mapp: 'Skickat' }), (e) => e.kod === 'MAPP_SAKNAS');
+  await assert.rejects(() => b.las(3, { mapp: 'Utkast' }), (e) => e.kod === 'MAPP_SAKNAS');
+});
+
 test('flytta: saknad mapp är ett fel utan --skapa; med skapa skapas mappen (save-folder) och mejlet flyttas', async () => {
   const { b, f } = ny();
   await assert.rejects(() => b.flytta(3, { till: 'VA-PRIO' }), (e) => e.kod === 'MAPP_SAKNAS' && /VA-PRIO.*finns inte/.test(e.message));

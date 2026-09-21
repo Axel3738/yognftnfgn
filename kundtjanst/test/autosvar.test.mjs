@@ -723,7 +723,7 @@ test('korBrand: försenat paket och order med tvist får inget ENKELT svar — f
   assert.equal(b2.utkast().length, 0);
 });
 
-test('hinka: retur/återbetalning/fel vara är aldrig ENKEL, "skit"/"skräp"/"betalar inte" är ARG, X för defekt och återbetalning är neutrala', () => {
+test('hinka: retur/återbetalning är aldrig ENKEL, "skit"/"skräp"/"betalar inte" är ARG, byte/storlek är SVÅR, X för defekt och återbetalning är neutrala', () => {
   const h = (amne, text) => hinka({ mejl: tolkaMejl(ra({ fran: 'K <k@x.se>', amne, text, id: '<h@x.se>' }), { uid: 1 }), brand: KONFIG });
   const retur = h('Re: Cykelbyxor', 'Skickade min retur i fredags med Postnord spårbart paket');
   assert.equal(retur.hink, HINK.SVAR);
@@ -733,9 +733,10 @@ test('hinka: retur/återbetalning/fel vara är aldrig ENKEL, "skit"/"skräp"/"be
   const skrap = h('Skräp order #6600', 'Det är rent skräp och svartglansig plast lika tunt som en ICA kasse. Önskar full återbetalning och hävdar distansköplagen.');
   assert.equal(skrap.hink, HINK.ARG);
   assert.equal(xNyckelFor(skrap.klass, skrap.argOrsaker), 'standard', 'nybegärd återbetalning ⇒ "din beställning", inte "pengarna du väntar på"');
+  // Jan-Olof 2026-09-21: lugnt, artigt, "för litet — en storlek större". Fick eskaleringsmallen; Axel: "jag tyckte inte riktigt att han verkade så himla sur".
   const liten = h('Överdrag', 'Fick just mitt överdrag. Tyvärr är det för litet, det går inte att få ner under propellern. Jag behöver en storlek större.');
-  assert.equal(liten.hink, HINK.ARG, 'Axels lista: trasig/defekt vara ⇒ ARG');
-  assert.match(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: xNyckelFor(liten.klass, liten.argOrsaker) }).text, /med varan som inte är som den ska blir/);
+  assert.deepEqual([liten.hink, liten.orsak], [HINK.SVAR, 'byte eller storlek (SOP 21) — VA:n beslutar'], 'ett lugnt storleksbyte är varken argt eller enkelt');
+  assert.match(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'skadad_defekt' }).text, /med varan som inte är som den ska blir/);
   assert.equal(klassificera({ amne: 'Re: Order #5953 bekräftad', text: 'Var är denna vara' }).sprak, 'sv');
 });
 
@@ -816,16 +817,31 @@ test('SOP 11/30: nämner kunden en saknad orderbekräftelse får WISMO-svaret sk
   assert.match(skrivEnkelt({ typ: 'leveranstid', sprak: 'sv', brand: KONFIG }).text, /Kolla även skräpposten om mejlet inte syns\./);
 });
 
-test('SOP 05/08: skadad eller fel vara ⇒ Axels ARG-rad + bildförfrågan (vara, förpackning, fraktetikett) i samma svar', async () => {
+test('SOP 05/08: lugn skadad/fel vara ⇒ ENKEL `foton` (beklagan + tre bilder + ordernumret om det saknas) i VA-mappen; arg ⇒ Axels rad + bildförfrågan', async () => {
+  // Lugn kund, inget ordernummer i mejlet ⇒ bildförfrågan + be om numret. Flaggad + VA-PRIO: VA:n tar ärendet när bilderna kommer.
   const b = new FalskBrevlada({ INBOX: [
     { uid: 90, ra: ra({ fran: 'Jan <jan@x.se>', amne: 'Trasig vara', text: 'Hej, borsten kom fram trasig och fungerar inte. Vad gör vi nu?', id: '<w90@x.se>' }) },
   ] });
   const r = await kor(b);
-  assert.deepEqual([r.rader[0].hink, r.rader[0].atgard, r.rader[0].flyttad], ['ARG', 'utkast', 'VA-PRIO']);
-  const t = b.utkast()[0].text;
+  assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].atgard, r.rader[0].flaggad, r.rader[0].flyttad], ['ENKEL', 'foton', 'utkast', true, 'VA-PRIO']);
+  const lugn = b.utkast()[0].text;
+  assert.match(lugn, /^Hej Jan!\n\nTack för ditt mejl\.\nTråkigt att höra att leveransen inte blev som den skulle — det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  assert.match(lugn, /\nSkriv gärna även ditt ordernummer i svaret, så hittar vi ordern direkt\.\n/);
+  assert.equal(/eskalerar|frustrerad/.test(lugn), false, 'den lugna kunden får inte eskaleringsmallen');
+  assert.equal(harForbjudet(lugn), false);
+  // Med ordernummer i mejlet ⇒ ingen fråga efter det.
+  const b1 = new FalskBrevlada({ INBOX: [{ uid: 91, ra: ra({ fran: 'Jan <jan@x.se>', amne: 'Order #1042', text: 'Hej, borsten i order #1042 kom fram trasig. Vad gör vi nu?', id: '<w91@x.se>' }) }] });
+  await kor(b1);
+  assert.equal(/ordernummer/.test(b1.utkast()[0].text), false);
+  // Arg kund med trasig vara ⇒ ARG: Axels rad + samma bildförfrågan.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 92, ra: ra({ fran: 'Jan <jan@x.se>', amne: 'Trasig vara', text: 'Borsten kom fram trasig!!! Helt oacceptabelt, jag är förbannad. Vad gör vi nu?', id: '<w92@x.se>' }) }] });
+  const r2 = await kor(b2);
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].atgard, r2.rader[0].flyttad], ['ARG', 'utkast', 'VA-PRIO']);
+  const t = b2.utkast()[0].text;
   assert.match(t, /^Hej! Jag eskalerar detta direkt till våra ansvariga\. När jag ser vad du varit med om med varan som inte är som den ska/);
   assert.match(t, /\n\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
   assert.equal(harForbjudet(t), false);
+  for (const s of SPRAK) assert.equal(harForbjudet(skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Jan', behoverOrdernummer: true }).text), false, `${s}: inga löften i foton`);
   // Ett argt WISMO utan skadad/fel vara får ingen bildförfrågan.
   assert.equal(/bild på varan/.test(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'ej_levererad', foton: villHaFoton(klassificera({ amne: 'x', text: 'aldrig fått paketet' })) }).text), false);
   for (const s of SPRAK) assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true }).text), false, s);
@@ -876,9 +892,10 @@ test('SOP 02/07/15/34/21 (de elva sista, lästa 2026-09-21 natt): stilla spårni
   assert.equal(/borta|förlorat|lost/i.test(b1.utkast()[0].text), false, 'säger aldrig att paketet är borta (SOP 02)');
   assert.equal(namnerStillaSparning('The tracking has not updated for 8 days, it seems stuck.'), true);
   assert.equal(namnerStillaSparning('Var är mitt paket?'), false);
-  // SOP 07: fel antal ⇒ aldrig ENKEL.
+  // SOP 07: fel antal ⇒ inget WISMO-svar med spårning — första steget är bilderna på det som kom (ENKEL foton, VA:n tar resten).
   const h = (amne, text) => hinka({ mejl: tolkaMejl(ra({ fran: 'K <k@x.se>', amne, text, id: '<h@x.se>' }), { uid: 1 }), brand: KONFIG });
-  assert.equal(h('Order 1042', 'Hej, jag beställde 2 st men fick fel antal, det saknas en vara i paketet. Var är resten?').hink, HINK.SVAR);
+  const antal = h('Order 1042', 'Hej, jag beställde 2 st men fick fel antal, det saknas en vara i paketet. Var är resten?');
+  assert.deepEqual([antal.hink, antal.typ], [HINK.ENKEL, 'foton']);
   assert.equal(klassificera({ amne: 'Order', text: 'det saknas en vara i mitt paket' }).kategori, 'fel_vara');
   // SOP 15/34: "ser inte alls ut som på bilden" + argt ⇒ ARG med neutralt X och bildförfrågan.
   const b2 = new FalskBrevlada({ INBOX: [{ uid: 101, ra: ra({ fran: 'Tobias <tobias@gmail.com>', amne: 'Vad är det här för skit?', text: 'Produkten ser inte alls ut som på bilden. Ni kan komma och hämta den. Det här betalar jag inte för.', id: '<w101@gmail.com>' }) }] });
@@ -889,4 +906,68 @@ test('SOP 02/07/15/34/21 (de elva sista, lästa 2026-09-21 natt): stilla spårni
   assert.match(t2, /skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
   // SOP 21: byte ⇒ SVÅR (inga direkta byten, ägarens beslut).
   assert.equal(h('Byte', 'Hej, kan jag byta till en annan storlek? Order 1042').hink, HINK.SVAR);
+  assert.equal(h('Size', 'Hi, the cover is too small for my engine, I need a size bigger.').hink, HINK.SVAR);
+  assert.equal(h('Trasig', 'Hej, borsten kom trasig. Order 1042').hink, HINK.ENKEL, 'trasig utan storleksord är bildförfrågan, inte byte');
+});
+
+test('kalibrering 2026-09-22: kategorin ensam gör inget mejl argt — lugnt "aldrig fått" är WISMO, argt WISMO bär läget ur spårningen, --igen bedömer om', async () => {
+  const k = (amne, text) => ({ klass: klassificera({ amne, text }), amne, text });
+  assert.equal(arArg(k('Paket', 'Hej, jag har aldrig fått paketet, spårningen säger att det är på väg. Vet ni något mer?')).arg, false);
+  assert.equal(arArg(k('Trasig', 'Hej, varan kom fram trasig. Hur gör vi?')).arg, false);
+  assert.equal(arArg(k('Paket', 'Har aldrig fått paketet. Jag kontaktar min bank om jag inte får svar.')).arg, true, 'hotet om banken är fortfarande ett tecken');
+  // Lugnt "aldrig fått" med order ⇒ WISMO med fakta, inte eskaleringsmallen.
+  const b1 = new FalskBrevlada({ INBOX: [{ uid: 110, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Order #1042', text: 'Hej, jag har inte fått något paket ännu. Vet ni var det är?', id: '<w110@gmail.com>' }) }] });
+  const r1 = await kor(b1);
+  assert.deepEqual([r1.rader[0].hink, r1.rader[0].typ], [HINK.ENKEL, 'wismo']);
+  assert.match(b1.utkast()[0].text, /Jag har kollat upp din order #1042\.\nPaketet skickades/);
+  // Argt WISMO på kundens egen order ⇒ Axels rad + "Det här ser jag just nu" med samma läge som WISMO-svaret.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 111, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'VAR ÄR MITT PAKET #1042?!!!', text: 'Var är paketet?!!! Tredje gången jag skriver och ingen svarar!!!', id: '<w111@gmail.com>' }) }] });
+  const r2 = await kor(b2);
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].lage, r2.rader[0].flyttad], [HINK.ARG, true, 'VA-PRIO']);
+  const t2 = b2.utkast()[0].text;
+  assert.match(t2, /^Hej! Jag eskalerar detta direkt till våra ansvariga\./);
+  assert.match(t2, /\n\nDet här ser jag just nu om din order #1042:\nPaketet skickades .* med YunExpress\.\n/);
+  assert.match(t2, /https:\/\/baverbutiken\.se\/pages\/spara\?nummer=BB-/);
+  assert.equal(harForbjudet(t2), false);
+  // Tvist på ordern ⇒ inget läge i det arga svaret (fakta.sparr), men Axels rad går ändå.
+  const b3 = new FalskBrevlada({ INBOX: [{ uid: 112, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'VAR ÄR MITT PAKET #1042?!!!', text: 'Var är paketet?!!! Tredje gången jag skriver och ingen svarar!!!', id: '<w112@gmail.com>' }) }] });
+  const r3 = await kor(b3, { shopify: falskShopify(ORDRAR, [{ id: 1, orderId: 1, typ: 'inquiry', status: 'needs_response' }]) });
+  assert.deepEqual([r3.rader[0].hink, r3.rader[0].lage], [HINK.ARG, false]);
+  assert.equal(/Det här ser jag just nu/.test(b3.utkast()[0].text), false);
+  // Arg utan order (ingen träff på nummer eller e-post) ⇒ Axels rad utan läge.
+  const b4 = new FalskBrevlada({ INBOX: [M.argSv] });
+  const r4 = await kor(b4);
+  assert.deepEqual([r4.rader[0].hink, r4.rader[0].lage], [HINK.ARG, false]);
+  // --igen: en flaggad rad och en rad i loggen bedöms om (kalibreringen); utan --igen hoppas den; skarpt + igen vägras.
+  const mapp = tmp();
+  const flaggad = { ...M.wismoSv, flaggad: true };
+  const b5 = new FalskBrevlada({ INBOX: [flaggad] });
+  const r5 = await kor(b5, { loggmapp: mapp });
+  assert.equal(r5.rader.length, 0, 'flaggad ⇒ hoppad utan --igen');
+  const b6 = new FalskBrevlada({ INBOX: [flaggad] });
+  const r6 = await kor(b6, { loggmapp: mapp, igen: true });
+  assert.deepEqual([r6.rader[0].hink, r6.rader[0].atgard], [HINK.ENKEL, 'utkast']);
+  assert.match(r6.varningar.join('\n'), /--igen/);
+  const b7 = new FalskBrevlada({ INBOX: [{ ...M.wismoSv, flaggad: false }] });
+  const r7 = await kor(b7, { loggmapp: mapp });
+  assert.equal(r7.rader.length, 0, 'loggad i --igen-körningen ⇒ hoppad i nästa vanliga körning');
+  await assert.rejects(kor(new FalskBrevlada({ INBOX: [flaggad] }), { loggmapp: mapp, igen: true, torr: false }), /kräver --torr/);
+});
+
+test('kunden är VA:ns: ett VA-svar till adressen de senaste 14 dagarna (annan tråd) ⇒ inget automatiskt svar, bara flagga — Ulf i Judge.me-tråden 2026-09-22', async () => {
+  // VA:n svarade Anna för 3 dagar sedan i kontaktformulärstråden; nu svarar Anna på en recensionsförfrågan med en WISMO-fråga.
+  const vaSvar = (timmarSedan) => ({ uid: 700, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till: 'anna@gmail.com', amne: 'Re: Nytt kundmeddelande den 11 september 2026 16.50', text: 'Hej Anna! Vi har skickat tre nya.', id: '<va700@baverbutiken.se>', timmarSedan }) });
+  const nytt = { uid: 701, ra: ra({ fran: 'Anna Andersson <anna@gmail.com>', amne: 'Re: ⭐️ Anna, vad tycker du om Fiskespöhållare?', text: 'Var är mitt paket #1042? Har inte fått något.', id: '<w701@gmail.com>', refs: ['<review-1@judge.me>'] }) };
+  const b1 = new FalskBrevlada({ INBOX: [nytt], Sent: [vaSvar(72)] });
+  const r1 = await kor(b1);
+  assert.deepEqual([r1.rader[0].hink, r1.rader[0].atgard, r1.rader[0].flaggad], [HINK.SVAR, 'flaggad', true]);
+  assert.match(r1.rader[0].orsak, /VA:n skrev till kunden för 3 dagar sedan \(annan tråd\)/);
+  assert.equal(b1.utkast().length, 0, 'inget utkast i munnen på VA:n');
+  // Samma sak, men VA:ns svar är 20 dagar gammalt ⇒ ärendet räknas som avslutat, WISMO-svaret går.
+  const b2 = new FalskBrevlada({ INBOX: [nytt], Sent: [vaSvar(20 * 24)] });
+  const r2 = await kor(b2);
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].atgard], [HINK.ENKEL, 'utkast']);
+  // Ett utkast i Drafts räknas inte som VA:ns mejl (det är vårt eget torrläge) — trådregeln tar det i stället.
+  const t = await byggTrad(b1, KONFIG, tolkaMejl(nytt.ra, { uid: 701 }), { nu: NU });
+  assert.equal(Math.round(t.vaDagar), 3);
 });

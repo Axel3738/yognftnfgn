@@ -64,13 +64,30 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   läst via kopian "Customer support bäverbutiken"): WISMO säger var paketet ÄR
   (ombud / ute för leverans / framme i landet, sista biten 1–2 arbetsdagar) och
   att en stilla spårning är normal (SOP 36/37); levererat-men-inte-mottaget får
-  checklistan brevlåda/avi/ombud/grannar, aldrig "borttappat" (SOP 06); skadad
-  eller fel vara får bildförfrågan i ARG-svaret (SOP 05/08); saknad bekräftelse
+  checklistan brevlåda/avi/ombud/grannar, aldrig "borttappat" (SOP 06); skadad,
+  fel eller för få varor får bildförfrågan (SOP 05/07/08/15) — som ENKEL `foton`
+  när kunden är lugn, inne i ARG-svaret när hen är arg; saknad bekräftelse
   ⇒ skräppost-raden (SOP 11/30); företagsuppgifter ur brandfilen (SOP 38);
   säger kunden att spårningen står still ⇒ lugnande raden, aldrig "borta"
-  (SOP 02); fel antal och "ser inte ut som på bilden" är aldrig enkla (SOP 07/15).
+  (SOP 02); byte och storlek ("för litet", "en storlek större") är SVÅR (SOP 21).
   Allt som kräver ägarens beslut i SOP:en (retur, återbetalning, avbeställning,
-  tvist, tull, rabatt) är SVÅR. Tabellen: `kundtjanst/README.md` → SOP-avstämningen.
+  byte, tvist, tull, rabatt) är SVÅR. Tabellen: `kundtjanst/README.md` → SOP-avstämningen.
+- **ARG är riktig ilska, inte en kategori** (Axels kalibrering 2026-09-22 efter
+  Jan-Olofs artiga "överdraget är för litet", som fick eskaleringsmallen: "jag
+  tyckte inte riktigt att han verkade så himla sur"): argt ordval, eskaleringsord,
+  hot om bank/anmälan, versaler, utropstecken eller tredje mejlet utan svar.
+  "Aldrig fått paketet" och "trasig vara" i sig räcker inte — lugnt är de WISMO
+  resp. `foton`. Det arga svaret bär dessutom **läget ur spårningen** ("Det här
+  ser jag just nu om din order …") när faktan är färsk och ordern kundens egen,
+  så en arg WISMO-kund får veta var paketet är utan att vänta på VA:n.
+- **Kunden är VA:ns i 14 dagar** (`hinkar.VA_KUND_DAGAR`): har VA:n skrivit
+  till adressen i Skickat de senaste 14 dagarna — i vilken tråd som helst — får
+  kunden inget automatiskt svar, bara flagga. Ulf 2026-09-22: fyra VA-svar i
+  kontaktformulärstråden, nytt mejl som svar på en Judge.me-förfrågan ⇒
+  trådregeln såg inget, eskaleringsmallen gick i munnen på VA:n. Rättat.
+- **`--igen` är kalibreringsläget** (bara med `--torr`): flaggor och loggen
+  ignoreras så fönstrets mejl bedöms på nytt, utkasten läggs i Drafts och Axel
+  ger feedback på dem. Aldrig i rutinen — skarpt + `--igen` vägras av koden.
 
 ⚠️ **En brevlåda, EN session i taget.** 2026-09-21 23:28 körde två sessioner
 torrkörningen samtidigt: Drafts fick sex utkast (fyra från den ena, ett från
@@ -80,8 +97,13 @@ loggen och flaggorna är minnet, och de delas inte mellan containrar förrän
 loggen är pushad.
 
 Mappnamnen i Loopia är `INBOX.Drafts`, `INBOX.Sent`, `INBOX.VA-PRIO` (webbmejlen
-visar dem utan `INBOX.`). `mail.mjs lista --mapp Drafts` säger "finns inte" —
-skriv `INBOX.Drafts`. Motorn känner båda formerna.
+visar dem utan `INBOX.`). Sedan 2026-09-22 slår `Brevlada` upp människans namn
+mot brevlådans kända mappar (`Sent` ⇒ `INBOX.Sent`) och kastar `MAPP_SAKNAS`
+för ett okänt namn — Roundcube själv svarar med en TOM lista för en mapp som
+inte finns, och det gjorde Skickat- och Drafts-vakterna blinda i två körningar
+(Ulf fick eskaleringsmallen fast VA:n mejlat honom fyra gånger den veckan; Hans
+fick två utkast). Lita aldrig på "0 rader" från en mapp utan att veta att
+mappen finns.
 
 ## Gör i ordning
 

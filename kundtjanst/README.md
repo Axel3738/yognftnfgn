@@ -210,16 +210,69 @@ brandneutrala eller det som står i brandfilen har automatiserats:
 | 36/37 Where is my package / When will it arrive | WISMO-svaret säger var paketet ÄR: **hos ombudet** (bolag + kollinummer ur 17TRACK `misc_info`), **ute för leverans i dag**, **framme i landet — sista biten 1–2 arbetsdagar** (inhemskt bolag i `misc_info` = i landet), annars senaste skanningen. Senaste skanning äldre än 3 dagar ⇒ SOP:ens rad *"helt normalt att spårningen står still — paketet är på väg ändå"*. Passerat fönster / inga skanningar ⇒ aldrig ett gissat datum, VA:n (`staltFakta`) |
 | 06 Package missing after delivered | Levererat enligt fraktbolaget + lugn kund ⇒ ENKEL `levererad`: leveransskanningen (datum, ort) + checklistan brevlåda/avi/ombud/grannar/skyddad plats, aldrig ordet "borttappat"; flaggas + VA-mappen så VA:n följer upp. Arg kund ⇒ ARG som förut |
 | 11/30 Order confirmation / tracking mail not received | Nämner kunden en saknad bekräftelse ⇒ WISMO-svaret får skräppost-raden (sök på butikens namn); leveranstid-svaret nämner skräpposten |
-| 05/08 Damaged / wrong product | ARG-svaret (Axels rad) får bildförfrågan: vara, förpackning, fraktetikett — VA:n har underlaget när hon öppnar tråden |
+| 05/08 Damaged / wrong product | Lugn kund ⇒ ENKEL `foton`: beklagan utan löfte + bildförfrågan (vara, förpackning, fraktetikett) + ordernumret om det saknas i mejlet; flaggad + VA-mappen så VA:n tar ärendet när bilderna kommer. Arg kund ⇒ ARG-svaret (Axels rad) med samma bildförfrågan. *(Kalibreringen 2026-09-22 — före det var "trasig vara" ARG i sig)* |
 | 38 Company information | ENKEL `foretag` ur brandfilens `svar.foretag` (namn, orgnr, adress, moms) — aldrig ett personnamn; saknas blocket ⇒ VA:n |
 | 36 steg 1 Ask for order number | Bakom `svar.fraga_ordernummer` (standard av): WISMO utan order ⇒ be om ordernumret + flagga. Axels beslut per butik |
 | 02 Tracking not updating / stuck | Säger kunden själv att spårningen står still får WISMO-svaret lugnande raden även när skanningen är färsk (`namnerStillaSparning`); aldrig "borta"/"förlorat". Utanför fönstret ⇒ VA:n (agenten kontaktas, aldrig ett gissat datum) |
-| 07 Wrong quantity | "fel antal", "saknas en", "för få" ⇒ kategorin `fel_vara` ⇒ aldrig ENKEL. Leverantören först, sedan ägaren — VA:n |
-| 15/34 Not as pictured / website complaints | "ser inte (alls) ut som på bilden", "not at all like" ⇒ `fel_vara`; arg kund ⇒ ARG med neutralt X ("varan som inte stämde") + bildförfrågan; lugn kund ⇒ VA:n (ägaren ska se all webbplatsfeedback) |
+| 07 Wrong quantity | "fel antal", "saknas en", "för få" ⇒ kategorin `fel_vara` ⇒ ENKEL `foton` (bild på det som kom är SOP:ens första steg), flaggad + VA-mappen. Leverantören först, sedan ägaren — VA:n tar resten |
+| 15/34 Not as pictured / website complaints | "ser inte (alls) ut som på bilden", "not at all like" ⇒ `fel_vara`; arg kund ⇒ ARG med neutralt X ("varan som inte stämde") + bildförfrågan; lugn kund ⇒ ENKEL `foton` + flagga, så ägaren ser webbplatsfeedbacken via VA-mappen |
 | 13/16/17/35 Product fit / specs / compatibility / pre-purchase | Produktspecifika fakta för Bäverkopplings kontakter — gäller inte Bäverbutikens produkter. Produktfrågor är aldrig ENKEL; "never confirm values you are not certain about" ⇒ VA:n |
-| 21 Exchange | Inga direkta byten, retur + ny order, ägarens godkännande ⇒ SVÅR (`retur_angerratt`) |
+| 21 Exchange | Inga direkta byten, retur + ny order, ägarens godkännande ⇒ SVÅR (`retur_angerratt`, och `hinkar.arByte`: "för litet", "en storlek större", "passar inte", "too small" ⇒ "byte eller storlek (SOP 21) — VA:n beslutar", varken argt eller enkelt) |
 | 09 Address change | Oskickad ⇒ svar + flagga + VA-mappen (VA:n ändrar i Shopify); skickad ⇒ VA:n. Oförändrat |
 | 10, 18, 20, 25, 22/12, 23, 26, 32, 33, 39 (avbeställning, retur, återbetalning, tvist, betalning, tull, återförsäljare, rabatt, faktura) | Kräver ägarens beslut enligt SOP:en (3-stegs-returen: 30 % → 50 % → retur) ⇒ alltid SVÅR/VA:n. Aldrig automatiserat |
+
+### Kalibreringen 2026-09-22 — vad "arg" betyder, och vem kunden tillhör
+
+Axels dom på första torrkörningen: *"jag tyckte inte riktigt att han verkade
+så himla sur, Jan-Olof"* — ett artigt "överdraget är för litet, jag behöver en
+storlek större" hade fått eskaleringsmallen, för kategorin `skadad_defekt` var
+ett ARG-tecken i sig. Tre regler ändrades, alla som tester:
+
+- **ARG är riktig ilska** (`hinkar.arArg`): argt ordval, eskaleringsord, hot om
+  bank/anmälan, versaler, utropstecken, tredje mejlet utan svar. Kategorierna
+  `ej_levererad` och `skadad_defekt` räknas inte längre — lugnt är de WISMO med
+  fakta resp. ENKEL `foton`. Byte/storlek är SVÅR (SOP 21).
+- **Det arga svaret bär läget** (`svar.lageRader`, samma rader som WISMO-svaret):
+  "Det här ser jag just nu om din order #…" — bara med färsk fakta (ingen
+  `sparr`) och kundens egen order. Faktan hämtas för ARG när mejlet handlar om
+  paketet.
+- **Kunden är VA:ns i 14 dagar** (`hinkar.VA_KUND_DAGAR`, `byggTrad.vaDagar`):
+  har VA:n skrivit till adressen i Skickat de senaste 14 dagarna, i vilken tråd
+  som helst, får kunden inget automatiskt svar — bara flagga. Upptäckt i samma
+  kalibrering: Ulf svarade "Skräp! Tills ni skickar 3 nya …" på en
+  **Judge.me-recensionsförfrågan**, och trådregeln såg inte VA:ns fyra svar i
+  kontaktformulärstråden samma vecka. Utkastet "Jag eskalerar detta …" hade
+  pratat i munnen på VA:n.
+
+**Och en bugg som hade gjort båda vakterna blinda live:** `Brevlada.lista`
+skickade mappnamnet rakt till Roundcube, och Roundcube 1.7 på Loopia svarar
+med en **tom lista, inget fel**, för en mapp som inte finns. Trådbyggaren
+provade aliasen `Sent` → `INBOX.Sent` → … och tog det första som "fanns" —
+alltså den tomma `Sent`. Skickat lästes aldrig, Drafts inte heller (samma
+alias-loop): VA:ns fyra svar till Ulf syntes inte, och ett utkast i
+`INBOX.Drafts` hindrade inte ett andra utkast till Hans i nästa körning. Bara
+loggen (`minne`) höll dubbelsvaren borta — men loggen delas inte mellan
+containrar. Rättat i `brevlada.mjs` (`losMapp`: namnet slås upp mot
+brevlådans kända mappar, okänt ⇒ `MAPP_SAKNAS`), testat mot den falska
+Roundcuben, och **verifierat live i en tredje `--igen`-körning:** Ulf ⇒ SVÅR
+"VA:n skrev till kunden för 3 dagar sedan (annan tråd)", Hans ⇒ "tråden har
+redan ett svar från oss" (utkastet i Drafts), noll nya utkast.
+
+`--igen` är kalibreringsläget (kräver `--torr`): flaggor och loggen ignoreras
+så fönstrets mejl bedöms på nytt. **Körningen 2026-09-22 ~01:10 CEST på
+Bäverbutiken:** 50 mejl lästa, 6 hoppade, **1 ENKEL** (Hans, kontaktformulär
+"var är mitt husvagnsöverdrag, ingen orderbekräftelse" → order på e-post,
+skickad 15/9, framme i Sverige hos DHL, spårningslänk + skräppost-raden),
+**5 ARG** (Tobias "Vad är det här för skit?" + bilder; Morgan "rent skräp …
+full återbetalning"; Tony "sop-påse med spännband!!! … Klarna" + bilder; Peter
+"är detta ett skämt … sociala medier … smidig retur?" + bilder; och Ulf — fel,
+se ovan, rättat och utkastet borttaget), **38 SVÅR** flaggade (Jan-Olof nu
+"byte eller storlek (SOP 21)", Eric #5953 "tvist hos Shopify", "Kamera
+leverans?" "tråden har redan ett svar från oss", AnnChristin retur — gårdagens
+fyra felaktiga utkast är alltså alla rätt nu). Ett mönster att veta om: Hans
+skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
+och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
+kunden får fakta om paketet, VA:n har hotet.
 
 ## Så hänger det ihop
 

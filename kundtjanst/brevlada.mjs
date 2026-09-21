@@ -193,16 +193,19 @@ export class Brevlada {
   /**
    * En sida ur en mapp, nyast först: { mapp, sida, sidor, antal, rader }.
    * `antal` begränsar raderna som returneras (Roundcube ger ~50 per sida).
+   * `mapp` får vara människans namn ("Sent", "Drafts") — det slås upp mot
+   * brevlådans kända mappar (losMapp) och `mapp` i svaret är IMAP-namnet.
    */
   async lista({ mapp = this.inkorg, sida = 1, antal = 50 } = {}) {
     return this.medSession(async (k) => {
-      const { rader, env } = await k.listaSida(mapp, Math.max(1, Number(sida) || 1));
+      const imap = losMapp(k, mapp);
+      const { rader, env } = await k.listaSida(imap, Math.max(1, Number(sida) || 1));
       return {
-        mapp,
+        mapp: imap,
         sida: Number(env?.current_page ?? sida),
         sidor: Number(env?.pagecount ?? 1),
         totalt: Number(env?.messagecount ?? rader.length),
-        olasta: Number(env?.unread_counts?.[mapp] ?? env?.unreadcount ?? NaN),
+        olasta: Number(env?.unread_counts?.[imap] ?? env?.unreadcount ?? NaN),
         rader: rader.slice(0, Math.max(1, Number(antal) || 50)).map(tolkaListrad),
       };
     });
@@ -212,8 +215,11 @@ export class Brevlada {
   async las(uid, { mapp = this.inkorg, ra = false, maxTecken = 0 } = {}) {
     const n = kollaUid(uid);
     return this.medSession(async (k) => {
-      const rakalla = await k.hamtaRa(mapp, n);
-      const m = tolkaMejl(rakalla, { uid: n, mapp });
+      const imap = losMapp(k, mapp);
+      const rakalla = await k.hamtaRa(imap, n);
+      // Ett uid som flyttats mellan listningen och läsningen ger ett tomt svar, inte 404 (mätt 2026-09-22).
+      if (!String(rakalla ?? '').trim()) throw Object.assign(new Error(`Roundcube viewsource gav ett tomt svar för uid ${n} i ${imap} — mejlet finns inte längre där (flyttat eller raderat).`), { kod: 'MEJL_SAKNAS' });
+      const m = tolkaMejl(rakalla, { uid: n, mapp: imap });
       return formateraMejl(m, { ra: ra ? rakalla : null, maxTecken });
     });
   }
@@ -232,6 +238,7 @@ export class Brevlada {
       const ut = [];
       let sidor = 1;
       let lasta = 0;
+      mapp = losMapp(k, mapp);
       for (let sida = 1; sida <= maxSidor && sida <= sidor; sida++) {
         const { rader, env } = await k.listaSida(mapp, sida);
         sidor = Number(env?.pagecount ?? 1);
@@ -348,6 +355,27 @@ export class Brevlada {
     if (this.inloggad) await this.klient.loggaUt();
     this.inloggad = false;
   }
+}
+
+/**
+ * IMAP-namnet för mappen människan skrev: "Sent" → "INBOX.Sent", "Drafts" →
+ * "INBOX.Drafts" (webbmejlens hittaMapp, Loopia lägger allt under INBOX).
+ * Okänd mapp ⇒ MAPP_SAKNAS. Utan känd mapplista (äldre Roundcube) används
+ * namnet som det är.
+ *
+ * Varför det måste kastas här: Roundcube 1.7 på Loopia svarar med en TOM
+ * lista för en mapp som inte finns — inget felmeddelande i `exec`. Mätt
+ * 2026-09-22 i kalibreringen: `lista({ mapp: 'Sent' })` gav 0 rader utan
+ * fel, så autosvarets trådbyggare tog "Sent" som Skickat-mappen och läste
+ * aldrig INBOX.Sent — VA:ns fyra svar till Ulf syntes inte, och ett utkast
+ * i INBOX.Drafts hindrade inte ett andra utkast till Hans.
+ */
+function losMapp(k, mapp) {
+  const n = String(mapp ?? '').trim();
+  if (!k?.mappar?.length) return n;
+  const imap = k.hittaMapp(n);
+  if (!imap) throw Object.assign(new Error(`Mappen ${n} finns inte i brevlådan (${k.mappar.join(', ')}).`), { kod: 'MAPP_SAKNAS' });
+  return imap;
 }
 
 function kollaUid(uid) {
