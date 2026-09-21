@@ -1486,3 +1486,111 @@ ACTIVE**.
    `.png` — hade tyst tagit 0 av 36. Rättat med test.
 4. Två väntare sökte varandra med `pgrep -f` på skriptnamnet och låste
    varandra i sex timmar efter att batchen var klar. Vänta på PID.
+
+---
+
+## 2026-09-21 — leveransrundan: 2 videor stoppade på slutkortet
+
+Kön: 2 rader i `To be Reviewed`, batch #2:s två sista videor —
+`CaraShellRoof_SP_4_H1` (social proof, 30,9 s) och `CaraShellRoof_PD_4_H1`
+("Bara taket. En person.", 29,6 s). Kampanjen `CARASHELL_SE_Taköverdraget`
+(`120249050544990172`) löstes automatiskt; LISTICLE-kampanjen sållades bort
+av `tools/lib/sidokampanjer.mjs` som den ska. Priset i båda videorna
+1 129 kr (ord. 1 469 kr) = butikens pris — **grönt på prisregeln**.
+
+**Ingen laddades upp.** Båda slutar med en skärminspelning av produktsidan:
+domänskylten `carashell.se` överst och `CARASHELL` som leverantörsrad
+(2,5 resp. 2,4 s av slutfönstret). Järnregel 2b i `/ops-leverans` och Axels
+beslut 2026-09-18 — butikens namn står aldrig i en annons, slutkortet
+inräknat. Status orörd (`To be Reviewed`), engelsk kommentar på båda
+raderna: bygg om de sista 3 sekunderna utan domän och butiksnamn, ladda upp
+i samma rad, så tar rundan dem automatiskt.
+
+Anmärkningar till redigeraren (inget av det stoppar): SP:s caption vid
+~12 s säger "Passa bra och skyddar" (saknat r), citatkorten står som
+"Johan E." / "Lars P." där briefen ber om enbart förnamn, och PD säger
+6,5 × 3 m medan produktsidan numera listar 5,5–13,5 m.
+
+⚠️ **Rotorsaken är värd mer än de två videorna: kontrollen gick inte igång.**
+Rutinens container saknar både `ffmpeg` och OCR:en, så `bildbrand.mjs`
+svarade `okand` ("spawnSync ffmpeg ENOENT") på båda — och regeln säger att
+en oläsbar video laddas upp ändå. Utan att någon tittade på bildrutorna
+hade alltså **två annonser med butikens domän gått live**. Rättat samma
+dag: `ffmpegBinar()` i `factory/bildbrand.mjs` faller tillbaka på
+imageio-ffmpeg:s binär (systembinären vinner fortfarande), OCR:en
+installeras med `pip install rapidocr-onnxruntime`, och kommandofilens
+regel 2b bär nu varningen att `okand` på VARJE video betyder containern,
+inte creativen. Efter installationen dömde verktyget självt
+`slutkort-med-brand` på båda — samma dom som ögat.
+
+## Norge 2026-09-21 — inget att översätta, men ett verktygsfel som gömde kön
+
+Kön: **5 rader** i `SE-ACTIVE to be translated`. **0 uppladdade, 0 att göra.**
+Alla fem bar redan sin norska annons (speglingens rader, nummer 107–113), och varje
+annons lästes tillbaka ur Meta som ACTIVE:
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_BOF_107_1` | `CaraShellRoof_NO_BOF_107_1` | BOF | `120249189601910172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_108_1` | `CaraShellRoof_NO_BOF_108_1` | BOF | `120249189496460172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_PD_110_1` | `CaraShellRoof_NO_PD_110_1` | PD | `120249189399940172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_CS_113_1` | `CaraShellRoof_NO_CS_113_1` | CS | `120249189310900172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_109_1` | `CaraShellRoof_NO_BOF_109_1` | BOF | `120249189228110172` | ACTIVE/ACTIVE |
+
+Ingen status rörd — `flytta_till_approved` är falskt på alla fem (`klar_i.US: false`),
+så de går till `Approved` först när US-rutinen bär dem. Pris läst live: 1 106 NOK.
+
+**Men kön var osynlig i fyra körningar.** Verktyget avslutade med exit 0, tom
+`ko.json` och ingen felrad. En tom kölista läser exakt som "kön var tom" — det är
+det farliga: en tyst nolla ser ut som ett lugnt svar. Rotorsaken och fixen står i
+`dna.md`; båda felen satt i `tools/meta-lib.mjs`, inte i den här produkten.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551599832102076558`,
+ingen ACTION NEEDED.
+## USA-runda 8 2026-09-21 (`/ops-oversatt carashell/takskyddet --marknad US`) — fem bilder live
+
+**Kön:** 5 rader i `SE-ACTIVE to be translated`, alla bild, alla redan live i Norge —
+samtliga fem gick därför till `Approved`. `Approved`-kollen: 44 rader, 0 saknar US-annons.
+Kampanj `1 CARASHELL_US_Taköverdrag … – kopia` `120251451415500435` (ACTIVE, 12 adsets).
+Originalkampanjen står kvar PAUSED med 2 246 kr spend — ägarens beslut, orörd.
+Butiken redo: produktsidan svarar 200 på engelska, $199, 16 recensioner 5,0.
+
+| Spegel (US) | Typ | Adset | US-annons | Röstkoll |
+|---|---|---|---|---|
+| CaraShellRoof_US_BOF_107_1 | bild | CARASHELL_US_BOF | `120251535696070435` | — |
+| CaraShellRoof_US_BOF_108_1 | bild | CARASHELL_US_BOF | `120251535705330435` | — |
+| CaraShellRoof_US_PD_110_1 | bild | CARASHELL_US_PD | `120251535934370435` | — |
+| CaraShellRoof_US_CS_113_1 | bild | CARASHELL_US_CS | `120251535969460435` | — |
+| CaraShellRoof_US_BOF_109_1 | bild | CARASHELL_US_BOF | `120251536199230435` | — |
+
+**Tre svenska påståenden ströks — produktminnet mot marknadens egen sida.**
+`dna.md` förbjuder sedan 2026-09-12 att påstå förvaringspåse, dragsko, vikt eller exakt
+vagnlängd, och den amerikanska produktsidan bekräftade i dag att inget av det står där.
+
+| Rad | Svenskan sa | Amerikanskan säger |
+|---|---|---|
+| `BOF_108_1` (hela vinkeln) | "Ryms i förvaringspåsen som följer med" | "Off-season, it won't take over the garage" + "Folded flat, beside the paint cans" — det fotot faktiskt visar |
+| `PD_110_1` bottenband | "remmar på alla fyra sidor, 2,5 m och justerbara" | "elastic straps hook under the edge" — sidans egen formulering |
+| `CS_113_1` | "58 kr per kvadratmeter", "6,5-meters husvagn" | **$0,95 per square foot**, räknat på $199 / ~210 sq ft, och "21-ft trailer" |
+
+Rabatten räknades om (23 % → 20 %) och priset per yta räknades fram ur sidans egna tal —
+aldrig en omräknad SEK-siffra.
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats, textstorlekarna kalibrerade mot
+SE-radernas uppmätta bredd. ⚠️ **Underraden är 32 px i den här mallen, inte 38 som i
+20/9-batchen** — storleken mäts per batch och ärvs aldrig.
+
+**Två verktygsfynd, båda inbyggda i `forsudda.py`:**
+1. **`utvidga` per ruta.** En 77 px FET rubrik direkt på ett foto, utan egen platta, lämnar
+   en antialias-gloria som tre utvidgningar inte når (2,5 % av rutan över tröskeln på
+   `BOF_108_1`). Sätt `"utvidga": 6–8` på såna rutor.
+2. **`troskel` per ruta.** Glorian låg till 13 % i intervallet 30–60 och rördes aldrig av
+   standardtröskeln 60. `"troskel": 25` tar den.
+
+⚠️ **OCR fångar inte lågkontrastspöken.** `PD_110_1` visade "5,5 till 3 × 13,5 meter."
+tydligt för ögat medan OCR-kontrollen läste bilden som ren. OCR är en bra sista grind mot
+kvarglömd text, men den ersätter inte att titta på bilden i full storlek.
+
+**Notion:** kommentar + `Translated url` på alla fem, alla fem → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551619717293150299`,
+ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-21-us/`.

@@ -33,6 +33,7 @@
   "clearence processing completed - export": "Klart i tullen i avsändarlandet",
   "international shipment release - export": "Klart i tullen i avsändarlandet",
   "clearance processing completed - import": "Klart i tullen",
+  "international shipment release - import": "Klart i tullen",
   "released from customs: customs cleared": "Paketet är klart i tullen",
   "arrived at the warehouse of customs broker": "Paketet ligger hos tullombudet",
   "noa received": "Paketet är anmält till tullen",
@@ -97,5 +98,7 @@
   "the shipment was marked with an invalid postal code. the shipment is forwarded to the recipient but may be delayed": "Postnumret på paketet var felaktigt. Paketet skickas vidare till dig men kan bli försenat",
   "the parcel has been delivered": "Paketet är levererat",
   "the shipment has been sorted and forwarded": "Paketet har lämnat sorteringsterminalen",
-  "the parcel was attempted delivered, but could not be delivered due to the lack of a name on the mailbox. the parcel is on its way to a pickup location near you and you will be notified when it can be picked up. it usually takes 1 business day": "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag"
+  "the parcel was attempted delivered, but could not be delivered due to the lack of a name on the mailbox. the parcel is on its way to a pickup location near you and you will be notified when it can be picked up. it usually takes 1 business day": "Paketet kunde inte levereras eftersom namn saknades på brevlådan. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag",
+  "communication sent": "Du har fått en avi om paketet",
+  "parcel arrival notified": "Du har fått en avi om paketet"
 }

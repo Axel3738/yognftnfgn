@@ -136,10 +136,18 @@ node kundtjanst/tvistfakta.mjs --alla --brand {{STORE_ID}}                      
 ```
 ⚠️ **Always pass `--brand {{STORE_ID}}`.** Without it the tool defaults to one specific store and you will read the wrong shop's orders. `--registrera` spends 17TRACK quota, so use it only on a number that failed to read.
 
-**Browser route (works with no terminal access):**
+**Store tracking page route (no terminal, no quota — stores that have `{{TRACKING_PAGE}}`):**
+1. Shopify admin → **Orders** → open the order → the **Fulfillment** card. On these stores the hourly tracking routine writes every carrier scan into the order's timeline ("Out for delivery", "Delivered" …), so the latest status is already on the order page. Copy the tracking number.
+2. Open `{{TRACKING_PAGE}}` and paste the tracking number (the page takes the carrier number as well as the store parcel number `{{PARCEL_PREFIX}}…`). It shows the whole chain with city and time — the same view the customer sees — and the store parcel number to quote back.
+3. Write down exactly three things: **status**, **date**, **location**. Those three words are your evidence sentence.
+4. "We can't find that number": the page refreshes once an hour, keeps 60 days, and is not registered for parcels older than the routine's 14-day window. For a parcel older than that, use the 17TRACK route below — that is the normal case for a dispute.
+
+**Browser route (any store, works with no terminal access):**
 1. Shopify admin → **Orders** → open the order → the **Fulfillment** card → copy the tracking number.
 2. Open `17track.net`, paste the number, read the latest status.
 3. Write down exactly three things: **status**, **date**, **location**. Those three words are your evidence sentence.
+
+> **Two numbers, two audiences.** The bank gets the **carrier** tracking number and a 17TRACK / carrier screenshot. The **customer** gets the store parcel number (`{{PARCEL_PREFIX}}` + 8 characters, printed under the button in every shipping email and on `{{TRACKING_PAGE}}`) and the link `{{TRACKING_PAGE}}?nummer={{PARCEL_NUMBER}}` — never the raw carrier number. Stores without a tracking page keep sending the 17TRACK link.
 
 | What you see | What it means | What we do |
 |---|---|---|

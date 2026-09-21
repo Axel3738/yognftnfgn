@@ -11,6 +11,7 @@ butik (Axels order 2026-09-20 kväll: samma system i alla Shopify-butiker):
 | Beverbutikken (NO) | `/sparning beverbutikken` | https://beverbutikken.no/pages/spor |
 | Bæverbutiken (DK) | `/sparning baeverbutiken` | https://baeverbutiken.dk/pages/spor |
 | Majavakauppa (FI) | `/sparning majavakauppa` | https://majavakauppa.fi/pages/seuranta |
+| Matstrumpor | `/sparning matstrumpor` | https://matstrumpor.se/pages/spara |
 
 Rutinen gör två saker i en körning:
 

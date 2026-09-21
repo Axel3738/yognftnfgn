@@ -366,8 +366,25 @@ export const IKON = Object.freeze({
 // Härifrån och ned spawnas ffmpeg och python. Testerna injicerar `kor` och
 // `ocr` i stället, så hela beslutsträdet går att mäta utan media.
 
+// ffmpeg finns inte alltid som systembinär. Rutinens container saknade den
+// 2026-09-21 (leveransrundan carashell/takskyddet): kontrollen svarade
+// "spawnSync ffmpeg ENOENT" ⇒ dom "okand" ⇒ regeln släpper igenom videon.
+// Två videor med carashell.se på slutkortet hade laddats upp den dagen.
+// Python-paketet imageio-ffmpeg bär en egen binär och finns i containern —
+// tools/qa-frames.py använder samma väg. Systembinären vinner alltid.
+let ffmpegVag;
+export function ffmpegBinar() {
+  if (ffmpegVag !== undefined) return ffmpegVag;
+  const system = spawnSync('ffmpeg', ['-version'], { encoding: 'utf8', timeout: 20_000 });
+  if (!system.error) { ffmpegVag = 'ffmpeg'; return ffmpegVag; }
+  const via = spawnSync('python3', ['-c', 'import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())'], { encoding: 'utf8', timeout: 60_000 });
+  const sokvag = String(via.stdout ?? '').trim();
+  ffmpegVag = via.status === 0 && sokvag && existsSync(sokvag) ? sokvag : 'ffmpeg';
+  return ffmpegVag;
+}
+
 const körFfmpeg = (args) => {
-  const r = spawnSync('ffmpeg', ['-hide_banner', '-nostdin', ...args], { encoding: 'buffer', maxBuffer: 256 * 1024 * 1024, timeout: 120_000 });
+  const r = spawnSync(ffmpegBinar(), ['-hide_banner', '-nostdin', ...args], { encoding: 'buffer', maxBuffer: 256 * 1024 * 1024, timeout: 120_000 });
   return { status: r.status, stdout: r.stdout ?? Buffer.alloc(0), stderr: String(r.stderr ?? ''), fel: r.error ? String(r.error.message) : null };
 };
 

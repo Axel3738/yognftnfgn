@@ -288,7 +288,7 @@ node sparning/baver.mjs --butik carashell "#1030"   # kundtjänst
 | Bæverbutiken DK | ✅ (`_DK`, appen "DK claudeprodukter" installerad av Axel 2026-09-20 sen kväll, 13 rättigheter) | ✅ | **live 2026-09-20 22:31 CEST: https://baeverbutiken.dk/pages/spor** — 1 order/14 d, 1 registrerat, 0 skanningar än: publicerad TOM som första sida (regeln "första publiceringen får vara tom" i `publicera.mjs`, så mejl och meny har någonstans att landa). Timrutin `trig_01Xjx5pUdre9Uw3LJiBy9Nzs` (:48). **Mejl + meny klara 2026-09-21 ~01:25** (Cowork: 10 432 / 6 228 / 6 236 tecken verifierade mot servern, Spor pakken i Huvudmeny + Sidfotsmeny, testmejl OK; avsändare kundesupport@ Autentiserad) — `cowork/baeverbutiken.md`. **Klart.** |
 | Majavakauppa FI | ✅ (`_FI`) | ✅ sedan 2026-09-20 kväll (Cowork steg 0: version `fi-claudeprodukter-4`, 13 rättigheter) | **live 2026-09-20 21:48 CEST: https://majavakauppa.fi/pages/seuranta** — 7 ordrar/14 d, 7 registrerade, 5 event, 5 paket på sidan. Support **`asiakaspalvelu@majavakauppa.fi`** (Axels beslut B 2026-09-21 efter Coworks avläsning; en tidigare körning hade läst asiakastuki@). Timrutin `trig_016yuCdWwbFPgA2ntJcLGUED` (:40). Meny klar (Main + Footer menu, Cowork samma kväll); **fraktmejlen inne 2026-09-21 ~01:30** (Cowork: 10 601 / 6 235 / 6 243 tecken verifierade mot servern, testmejl med knappen Seuraa pakettia). **Ombyggda med asiakaspalvelu@ och inne på servern 2026-09-21 07:34** (10 607 / 6 241 / 6 249 tecken, testmejl OK) — `cowork/majavakauppa.md`. **Klart.** |
 | BeaverShop UK | ✅ (`_UK`) | ❌ saknar samma tre | inte beställd av Axel; går att lägga till i registret (engelska saknas i `sprak/`) |
-| Matstrumpor.se | ❓ inga nycklar kända 2026-09-21 | ❓ | inte byggd — uppdraget står färdigskrivet i **`sparning/PROMPT-matstrumpor.md`** (Axels beställning 2026-09-21): en ny session läser filen och gör sida + timrutin (:56) + mejl + meny |
+| Matstrumpor.se | ✅ (`_1r46tp_qx`, fabrikens app "Fabriken", 154 rättigheter) | ✅ alla fyra | **live 2026-09-21 09:36 UTC: https://matstrumpor.se/pages/spara** — 59 ordrar/14 d, 59 registrerade, 48 paket med skanningar, 640 händelser, 48 event, 0 fel, 0 okända fraser, 73 kB. Trippelkollen grön, sedd i Chromium på 390 + 1280 px. Sidan bär butikens eget brand (orange #dd821d, sushi-loggan) och prefixet `MS-`. Timrutin på :56. **Inget steg 0 behövdes** — nycklarna fanns redan (⚠️ `SHOPIFY_SHOP_1r46tp_qx` i Environments bär domänen med understreck; registret är facit). Mejl + meny: `sparning/cowork/matstrumpor.md` |
 
 Mejlmallar och menylänk per butik är klick i admin utan API — mejlen byggs
 hela av `node mejl/bygg-butik.mjs <id>` och Cowork-prompten ligger i
@@ -335,6 +335,22 @@ session `session_01To75UpfXYXGX5jcb9QYrdv`, cron `16 * * * *` (timvis —
 påverkas inte av vinteromställningen), taggar `routine:sparning` +
 `butik:baverbutiken`, inga connectors. Sedd i `list_triggers` samma körning.
 Kommandofilen ligger på `main` — rutinen klonar `main`.
+
+**En rutin per butik, egen minut** (så de sex pusharna inte krockar; varje
+körning gör `git pull --rebase` först):
+
+| Minut | Butik | Trigger | Fast session |
+|---|---|---|---|
+| :16 | Bäverbutiken | `trig_014rEkz1EjfRfUW6dZxnvm6Q` | `session_01To75UpfXYXGX5jcb9QYrdv` |
+| :24 | CaraShell | `trig_01UAU1N6P4MpPmeLgKffprHo` | `session_01EZDDNdhgXgYFZ7p8DWf4BU` |
+| :32 | Beverbutikken NO | `trig_01JqE4TDfLVwpJEHhECGyQFL` | `session_01YGSL1w5uQszYjieUqqc9iN` |
+| :40 | Majavakauppa FI | `trig_016yuCdWwbFPgA2ntJcLGUED` | `session_019k52ns9p5muXHmQD532Hvd` |
+| :48 | Bæverbutiken DK | `trig_01Xjx5pUdre9Uw3LJiBy9Nzs` | `session_01SLDa7FRSAf2964pHQ1mjVg` |
+| :56 | **Matstrumpor** | **`trig_01LSdjZgepsWf761ocrFWAAo`** | **`session_017E57dcmd1Lf7PpJTBsoAUE`** |
+
+Matstrumpors rutin byggd 2026-09-21 11:41 CEST på `claude5@stonebite.org`
+efter att koden låg på `main`, sedd i `list_triggers` samma körning, första
+körning 11:56 CEST. Alla sex ligger på samma konto.
 
 Stänga av: Routines-vyn på claude.ai → "Spårningen: skanningar in i Shopify
 (varje timme)" → av. Ingen kvot bränns när den står still; redan skrivna

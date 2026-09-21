@@ -96,5 +96,25 @@
     "leverans_dagar": [7, 14],
     "sparning_vaknar": "2–4 päivää",
     "app_comment": "Mätt 2026-09-20 kväll: appen 'FI claudeprodukter' (6 scopes) saknar read_orders, write_fulfillments, write_content."
+  },
+  "matstrumpor": {
+    "namn": "Matstrumpor",
+    "url": "https://matstrumpor.se",
+    "myshopify": "1r46tp-qx.myshopify.com",
+    "myshopify_comment": "Avläst ur butikens egen startsida 2026-09-21 (Shopify.shop i sidans skript) och bekräftad av shop.primaryDomain. ⚠️ SHOPIFY_SHOP_1r46tp_qx i Environments bär '1r46tp_qx.myshopify.com' med UNDERSTRECK — fel domän. Registret är facit, env_suffix används bara till nyckelnamnen.",
+    "env_suffix": "1r46tp_qx",
+    "env_suffix_comment": "Nycklarna fanns redan 2026-09-21: SHOPIFY_CLIENT_ID_1r46tp_qx + SECRET, appen 'Fabriken' (154 rättigheter, alla fyra krävda finns). Inget klick av Axel behövdes.",
+    "sprak": "sv",
+    "land": "Sverige",
+    "landskod": "SE",
+    "support": "kundsupport@matstrumpor.se",
+    "support_comment": "Läst live ur Shopifys shop.contactEmail 2026-09-21 (kolla-steget). Kontrolleras mot den vid varje körning.",
+    "prefix": "MS-",
+    "handle": "spara",
+    "titel": "Spåra ditt paket",
+    "erbjudande": false,
+    "leverans_dagar": [7, 14],
+    "leverans_dagar_comment": "Butiken har ingen fraktsida och ingen publicerad shipping-policy (mätt 2026-09-21: /policies/shipping-policy, /pages/frakt m.fl. svarar 404), så koncernens mätta löfte 7–14 kalenderdagar gäller — samma som de andra butikerna. Mät om när butiken fått levererade paket med datum.",
+    "sparning_vaknar": "2–4 dagar"
   }
 }

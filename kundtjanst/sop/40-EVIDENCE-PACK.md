@@ -100,6 +100,8 @@ The command gives you *text*. The bank wants an *image*. Open `https://www.17tra
 
 The carrier's own site works too and is often more convincing — use it when the carrier has a public tracking page. This page is not brand-specific; it works for any store.
 
+**Not the store's own tracking page.** `{{TRACKING_PAGE}}` is what the customer sees and what you quote back to them, and it is the fastest way to *read* a recent parcel — but it is our own rendering of the carrier data, in the store's language, with the carrier number hidden. The bank wants the third party's record: the carrier number, the carrier name and the delivery line, on 17TRACK or the carrier's site. Read on the store page, screenshot on 17TRACK.
+
 ### 1d. If the command cannot run (no keys, no Node, tool errors)
 
 Do the same job by hand — it takes about ten minutes:

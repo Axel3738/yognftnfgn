@@ -133,6 +133,7 @@ Store values live in **one** place: `kundtjanst/brands/<id>.yaml` → the `tvist
 | `{{CUSTOMER_FIRST_NAME}}` | **Shopify admin → Orders → the order → Customer.** No name? Write "Hi," and nothing else |
 | `{{SHIP_DATE}}` | **Shopify admin → the order → Timeline / the fulfillment**. Unknown? Delete the words "shipped on {{SHIP_DATE}}" |
 | `{{DELIVERY_PLACE}}` | the carrier's own tracking page (e.g. "in the mailbox", "to a neighbour"). **If the carrier does not say where, delete the phrase** — do not write "to your address" as if the carrier had said it |
+| `{{PARCEL_NUMBER}}` `{{TRACKING_LINK}}` | **stores with a tracking page:** paste the carrier number on `{{TRACKING_PAGE}}` → it shows the store parcel number (`{{PARCEL_PREFIX}}` + 8 characters); the link is `{{TRACKING_PAGE}}?nummer={{PARCEL_NUMBER}}`. **In a customer email, write the store parcel number and this link instead of `{{CARRIER}}` + `{{TRACKING_NUMBER}}`** — the customer never sees the carrier number (it is in their shipping email as the store number too). The carrier number stays in the evidence pack for the bank. No tracking page on this store: keep carrier + number as written in the templates |
 | `{{CARD_LAST4}}` | **VERIFY IN SHOPIFY ADMIN: Orders → the order → payment details.** Not shown? Delete "ending {{CARD_LAST4}}" |
 | `{{WHAT_WE_DID}}` | you write it, one clause, past tense — see T6 |
 | `{{AGENT_NAME}}` | your own first name |

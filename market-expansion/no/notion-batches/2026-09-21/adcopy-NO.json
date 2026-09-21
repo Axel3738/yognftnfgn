@@ -1,0 +1,12 @@
+{
+ "IBC-tanktrekk_NO_RI_1_H1": {
+  "message": "En tynn presenning blåste av i høststormen.\nUten lokk for lyset blir vannet grønt og grumsete.\nDenne gangen er det ikke en presenning – men et trekk i 210D-stoff som lukkes igjen på to minutter og holder lyset ute.",
+  "headline": "Stormen tok presenningen. Ikke trekket.",
+  "description": ""
+ },
+ "IBC-tanktrekk_NO_PD_11_H1": {
+  "message": "Vannet i tanken var grønt av alger før trekket kom på.\nStoffet er tykt 210D-materiale – jeg kjente etter selv.\nGlidelåsen lukkes på under to minutter, med åpning til lokket.",
+  "headline": "Grønt vann. Så satte jeg på trekket.",
+  "description": ""
+ }
+}

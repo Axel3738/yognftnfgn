@@ -85,6 +85,13 @@ tvister:
   # Under det här beloppet är det billigare att återbetala än att lägga VA-tid på
   # att slåss. 0 = slåss alltid. Sätt det i butikens egen valuta.
   strid_lonar_sig_over: 0
+  # {{TRACKING_PAGE}} + {{PARCEL_PREFIX}} — butikens egen spårningssida och
+  # paketnummerprefix (sparning/butiker.json: url + /pages/ + handle, prefix).
+  # Kunden får ALDRIG fraktbolagets nummer (YT…/4PX…), bara butikens
+  # paketnummer och länken sida?nummer=PREFIX-XXXXXXXX. Tom = butiken har ingen
+  # spårningssida ännu; då gäller 17TRACK-vägen i SOP:erna.
+  sparningssida: ""
+  paketprefix: ""
 
   # Eskaleringen — kundtjanst/sop/60-ESCALATION.md. Utan de här tre raderna vet
   # VA:n inte vem hon frågar, och frågar då ingen alls.

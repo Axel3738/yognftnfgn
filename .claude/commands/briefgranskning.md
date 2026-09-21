@@ -112,10 +112,31 @@ döm som en creative director, mot facit:
   är OPS-mallens block — `/bildannonser` bygger prompten ur briefen själv); video
   ⇒ manustabell med Caption-kolumn, captions max 2 rader, hooken i första
   sekunden. "Rules" med rätt pris och "never name the store".
+- **Regin (video, briefer från 2026-09-21 — `docs/os/BRIEF-REGI.md`):** en
+  regirad per manusrad med Source i ett av fem format, On-screen text, Picture,
+  Effect, och Editor latitude (MAY / MUST NOT). Verktyget mäter (`regi x/y` i
+  fakta) och fäller FEL `regi` på nya briefer; briefer skrivna före
+  2026-09-21 får bara anmärkning — regeln fanns inte då. Feedback-raden anger
+  "Visual direction: x/y" per video.
+- **Komponenttaggarna (2.12):** `typ · koncept · kalla · avatar · awareness ·
+  begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom` +
+  `Memo:` — saknade eller värden utanför de fasta listorna (ANALYSMETOD 6b)
+  är anmärkningar till skrivaren, aldrig kommentar till redigeraren.
+- **Speglade hubbar (CS-KLART punkt 23–24 — Taköverdraget, Termoskyddet):**
+  verktyget läser spegelbutikens pris ur `factory/produkter/<produkt>.yaml`
+  (`spegelPris`) och fäller FEL när briefens pris ligger mer än 20 % från
+  det, FEL när ett eget briefnummer går över 100 (speglingen tar källans
+  nummer + 100), och butiksnamnsspärren stoppar både Bäverbutiken och
+  CaraShell. Statuskedjan (`CaraShell SE ready to be active` → `Approved`
+  först när US-annonsen finns) rörs aldrig av granskningen.
+- **AI-raden (punkt 27):** en videobrief utan raden `AI content:` (person /
+  voice / image only / none) får anmärkning — US-steget behandlar den då som
+  person och bränner in "Contains AI-generated content".
 - **Fel mot anmärkning:** ett FEL är något redigeraren måste veta (fel namn/typ,
   butikens namn i annonsen, fel pris mot butiken, en rad som föll i
-  tre-frågorstestet, video utan manus, bild utan textrader). Taggar, hypotes,
-  källa, en variabel, KPI och COPY CARD är briefskrivarens sak — anmärkningar
+  tre-frågorstestet, video utan manus, bild utan textrader, **video utan regi
+  rad för rad — från 2026-09-21**). Taggar, hypotes,
+  källa, en variabel, KPI, COPY CARD och komponenttaggarna är briefskrivarens sak — anmärkningar
   som blir Feedback-raden och de tre reglerna, aldrig en kommentar till
   redigeraren. *(Kalibrerat 2026-09-18 mot 78 riktiga Bäver-briefer: med
   OPS-mallens krav som fel hade alla 78 fått fyra–sex kommentarer.)*

@@ -1,0 +1,42 @@
+{
+  "CaraShellRoof_US_BOF_107_1": {
+    "se_namn": "CaraShellRoof_BOF_107_1",
+    "typ": "bild",
+    "koncept": "BOF",
+    "message": "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr.",
+    "headline": "Se alla nio storlekar",
+    "description": null
+  },
+  "CaraShellRoof_US_BOF_108_1": {
+    "se_namn": "CaraShellRoof_BOF_108_1",
+    "typ": "bild",
+    "koncept": "BOF",
+    "message": "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen skrymmande vinterförvaring – bara påsen som kom med paketet.",
+    "headline": "1 129 kr. Ryms i en påse.",
+    "description": null
+  },
+  "CaraShellRoof_US_PD_110_1": {
+    "se_namn": "CaraShellRoof_PD_110_1",
+    "typ": "bild",
+    "koncept": "PD",
+    "message": "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr. Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 meter och justerbara efter din vagn.",
+    "headline": "Nio storlekar. Från 1 129 kr.",
+    "description": null
+  },
+  "CaraShellRoof_US_CS_113_1": {
+    "se_namn": "CaraShellRoof_CS_113_1",
+    "typ": "bild",
+    "koncept": "CS",
+    "message": "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn. Taket är det du aldrig ser, och det som kostar mest att laga.",
+    "headline": "58 kr per kvadratmeter tak",
+    "description": null
+  },
+  "CaraShellRoof_US_BOF_109_1": {
+    "se_namn": "CaraShellRoof_BOF_109_1",
+    "typ": "bild",
+    "koncept": "BOF",
+    "message": "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som kostar mest att laga. 1 129 kr är hela notan, ingen gissning.",
+    "headline": "Skydda taket – 1 129 kr.",
+    "description": null
+  }
+}

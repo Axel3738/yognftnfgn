@@ -1,0 +1,49 @@
+{
+  "_kalla": "Avläst ur de fem SE-bilderna 2026-09-21 (OPS-textlagrets mall: rubrik överst, vit underradsplatta, vit bottenplatta direkt på fotot, blå CTA-knapp). Formerna uppifrån och ned. block = radindex som hör ihop till EN radbruten mening. Rutorna står i overrides.json (mätta, inte gissade).",
+  "CaraShellRoof_BOF_107_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["Din husvagns längd är en", "av nio."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Nio storlekar, 3 × 5,5 till 3 × 13,5 meter."] },
+      { "typ": "platta", "roll": "botten", "rader": ["Från 1 129 kr."] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se alla nio storlekar."] }
+    ]
+  },
+  "CaraShellRoof_BOF_108_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["På sommaren bor den i", "en påse, inte i vägen."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Ryms i förvaringspåsen som följer med."] },
+      { "typ": "platta", "roll": "botten", "rader": ["Ingen skrymmande vinterförvaring – bara påsen som kom med", "paketet."], "block": [0, 1] },
+      { "typ": "knapp", "roll": "cta", "rader": ["1 129 kr. Ryms i en påse."] }
+    ]
+  },
+  "CaraShellRoof_BOF_109_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "toppris", "rader": ["1 129 kr nu."] },
+      { "typ": "fri", "roll": "rubrik", "rader": ["Ett tak du inte vet priset", "på sen."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Taket är det du aldrig ser – och det som kostar mest att laga."] },
+      { "typ": "platta", "roll": "botten", "rader": ["1 129 kr är hela notan. Ingen gissning."] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Skydda taket – 1 129 kr."] }
+    ]
+  },
+  "CaraShellRoof_CS_113_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["58 kr per kvadratmeter", "skyddat tak."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn."] },
+      { "typ": "platta", "roll": "botten", "rader": ["Taket är det du aldrig ser – och det som kostar mest att laga."] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Skydda taket för 1 129 kr."] }
+    ]
+  },
+  "CaraShellRoof_PD_110_1": {
+    "mall": "OPS",
+    "former": [
+      { "typ": "fri", "roll": "rubrik", "rader": ["Nio storlekar – från 3 ×", "5,5 till 3 × 13,5 meter."], "block": [0, 1] },
+      { "typ": "platta", "roll": "underrad", "rader": ["Från 1 129 kr."] },
+      { "typ": "platta", "roll": "botten", "rader": ["Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 m och", "justerbara efter din vagn."], "block": [0, 1] },
+      { "typ": "knapp", "roll": "cta", "rader": ["Se alla nio storlekar."] }
+    ]
+  }
+}
