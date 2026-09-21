@@ -130,7 +130,8 @@ loggas alla ut — det är meningen.
 Sajten är en vanlig Node-process som lyssnar på `PORT`. Den kan köras var som
 helst som kör Node (Railway, Fly, en VPS).
 
-1. **Start:** `node stonebite/server.mjs` (eller `npm run sida`).
+1. **Start:** `npm start` (= `node stonebite/server.mjs`). Railway, Fly och
+   Render kör `npm start` av sig själva — inget startkommando behöver skrivas in.
 2. **Miljövariabler:** `STONEBITE_HEMLIGHET` (obligatorisk i drift),
    `PORT` (sätts oftast av plattformen), `STONEBITE_ANVANDARE` (sökväg till
    kontofilen).

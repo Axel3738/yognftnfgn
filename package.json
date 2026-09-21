@@ -5,6 +5,7 @@
   "private": true,
   "description": "Creative Strategy OS för Bäverbutiken: brief-kvot, produktminne, redigerardashboard och bildannons-rutinen. Inga externa beroenden. Plus stonebite/: bolagets egen sajt med inloggade dashboards.",
   "scripts": {
+    "start": "node stonebite/server.mjs",
     "quota": "node pipeline/quota.mjs",
     "seed": "node dashboard/seed.mjs --force",
     "dash": "node dashboard/build.mjs",
