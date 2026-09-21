@@ -1,11 +1,9 @@
 {
   "comment": "Matstrumpor — enda sanningskällan för /matstrumpor och /matstrumporkungen. Allt här är AVLÄST 2026-09-21, inte gissat; varje fält bär var det lästes. Ändras ett tal: ändra HÄR, aldrig i kommandofilen.",
-
   "brand": "Matstrumpor",
   "butik": "https://matstrumpor.se",
   "shopify_env_suffix": "1r46tp_qx",
   "shopify_comment": "SHOPIFY_CLIENT_ID_1r46tp_qx + SECRET, appen 'Fabriken'. ⚠️ SHOPIFY_SHOP_1r46tp_qx i Environments bär domänen med understreck — fel. sparning/butiker.json är facit (1r46tp-qx.myshopify.com).",
-
   "meta": {
     "ad_account_id": "730973156224390",
     "ad_account_namn": "nya kungen",
@@ -13,7 +11,6 @@
     "valuta": "SEK",
     "konto_comment": "⚠️ Kontot HETER 'nya kungen' — inte Matstrumpor. Kolla alltid ad_account_id, aldrig namnet. Portföljen Matstrumpor.se bär dessutom 'Norge' 1418612340124566 och 'Finland DK' 1356652809967926, båda utan betalmetod 2026-09-21.",
     "token_comment": "⚠️ META_ACCESS_TOKEN (det rutinerna använder) NEKAS på det här kontot: '(#200) Ad account owner has NOT granted ads_management' (mätt 2026-09-21). Allt som skriver i Meta går därför via Adsmanager-MCP:n i en session med Axel. En schemalagd rutin har inga mcp__*-verktyg — den kan alltså INTE ladda upp förrän appen fått åtkomst till kontot.",
-
     "kampanj": {
       "id": "120251217860260023",
       "namn": "MATSTRUMP_SALES_20260826",
@@ -22,29 +19,43 @@
       "objective": "OUTCOME_SALES",
       "matt_2026_09_21": "ACTIVE · 17 031,37 kr spend / 14 dagar · ROAS 1,392"
     },
-
     "pixel_id": "1785935302094082",
     "malgrupp_mall": {
       "comment": "Avläst ur broad_advplus_purchase_batch03_bilder 2026-09-21 — mallen varje nytt adset kopieras ur. Advantage+ broad, inga intressen.",
-      "geo": ["SE"],
+      "geo": [
+        "SE"
+      ],
       "age_min": 18,
       "age_max": 65,
       "optimization_goal": "OFFSITE_CONVERSIONS",
       "billing_event": "IMPRESSIONS",
       "custom_event_type": "PURCHASE"
     },
-
     "adsets": {
-      "video": { "id": "120251218118710023", "namn": "broad_advplus_purchase_nya16", "matt": "10 753,76 kr / 29 köp / ROAS 1,180 (14 d)" },
-      "bild": { "id": "120251218829760023", "namn": "broad_advplus_purchase_bilder", "matt": "3 039,43 kr / 11 köp / ROAS 2,199 (14 d)" },
-      "jul_video": { "id": null, "namn": "broad_advplus_purchase_jul_video", "matt": "finns inte än — skapas av /matstrumpor första gången en jul-video ska upp" },
-      "jul_bild": { "id": null, "namn": "broad_advplus_purchase_jul_bilder", "matt": "finns inte än — skapas av /matstrumpor första gången en jul-bild ska upp" }
+      "video": {
+        "id": "120251218118710023",
+        "namn": "broad_advplus_purchase_nya16",
+        "matt": "10 753,76 kr / 29 köp / ROAS 1,180 (14 d)"
+      },
+      "bild": {
+        "id": "120251218829760023",
+        "namn": "broad_advplus_purchase_bilder",
+        "matt": "3 039,43 kr / 11 köp / ROAS 2,199 (14 d)"
+      },
+      "jul_video": {
+        "id": "120251657101850023",
+        "namn": "broad_advplus_purchase_jul_video",
+        "matt": "skapad 2026-09-21 av /matstrumpor, ACTIVE, 8 annonser (jul 044/046/047)"
+      },
+      "jul_bild": {
+        "id": "120251657107430023",
+        "namn": "broad_advplus_purchase_jul_bilder",
+        "matt": "skapad 2026-09-21 av /matstrumpor, PAUSED och tom — slås på av körningen som laddar upp den första julbilden"
+      }
     },
     "adsets_comment": "Fyra hinkar, inget annat. Övriga aktiva adsets i kampanjen 2026-09-21 (nya8, nya20, alla17, batch03_bilder, '09-17 UGC') rörs aldrig av uppladdaren — de bär gamla batcher. PAUSED med spend är ett beslut och aktiveras ALDRIG.",
-
     "landningssida": "https://matstrumpor.se/products/sushi-strumpor"
   },
-
   "notion": {
     "hub_id": "3a7270ab-908c-80d2-9f35-e73e51e457ff",
     "hub_namn": "Matstrumpor creative hub",
@@ -53,7 +64,6 @@
     "efter_uppladdning": "Approved",
     "efter_uppladdning_comment": "Matstrumpor har ingen översättningsrutin (NO/FI-kontona saknar betalmetod 2026-09-21), så en uppladdad rad går direkt till Approved — inte till 'SE-ACTIVE to be translated' som Bäverbutiken."
   },
-
   "ekonomi": {
     "aov_sek": 462.1,
     "aov_comment": "Uppmätt ur Shopify 2026-09-21: 110 betalda ordrar de senaste 30 dagarna, totalPrice/order. 90 av 110 ordrar bär exakt 2 strumpprodukter — därför är 2-pars-kostnaden standardfallet. Mät om med `node matstrumpor/kor.mjs --aov`.",
@@ -63,26 +73,57 @@
     "tull_comment": "Axels siffra: 2,9 EUR tull till EU per order.",
     "eur_sek": 11.275,
     "eur_sek_comment": "ECB via frankfurter.dev 2026-09-21. Kursen rör sig — räkna om med --ekonomi, skriv aldrig ett break-even-tal ur minnet.",
-    "moms_antagen": null,
-    "moms_comment": "⚠️ ÖPPET ÄGARBESLUT. Bäverbutiken säljer utan moms (Axels besked 2026-08-29); för Matstrumpor är det inte sagt. Shopify visar totalPrice == subtotal utan momsrad, vilket INTE avgör saken. Tills Axel svarat räknas BÅDA linjerna och en annons som hamnar mellan dem får domen `beror_pa_moms` och rörs inte. Sätt till false (utan moms) eller true (25 % i priset)."
+    "moms_antagen": false,
+    "moms_comment": "BESVARAD av Axel 2026-09-21: \"Matstrumpor utan moms\". Marginalen räknas rakt på priset, precis som Bäverbutiken och Grillkliniken ⇒ break-even-ROAS 1,498 och break-even-CPA 308,48 kr. Båda linjerna räknas fortfarande av koden (och visas i --ekonomi), men domen använder den gällande. Ändras beskedet: sätt true här, räkna aldrig om i huvudet."
   },
-
   "namn": {
     "prefix": "MATSTRUMP_sushi",
     "mall": "MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>",
-    "vinklar": ["gift", "jul", "offer", "curiosity", "identity", "social", "pain", "conflict", "fomo", "vandning", "anvandning", "pris", "skamt", "position"],
-    "format": ["ugc", "static", "product", "beforeafter", "comparison", "lifestyle", "textheavy", "anim"],
-    "video_format": ["ugc", "beforeafter", "comparison", "lifestyle", "anim"],
-    "bild_format": ["static", "product", "textheavy"],
+    "vinklar": [
+      "gift",
+      "jul",
+      "offer",
+      "curiosity",
+      "identity",
+      "social",
+      "pain",
+      "conflict",
+      "fomo",
+      "vandning",
+      "anvandning",
+      "pris",
+      "skamt",
+      "position"
+    ],
+    "format": [
+      "ugc",
+      "static",
+      "product",
+      "beforeafter",
+      "comparison",
+      "lifestyle",
+      "textheavy",
+      "anim"
+    ],
+    "video_format": [
+      "ugc",
+      "beforeafter",
+      "comparison",
+      "lifestyle",
+      "anim"
+    ],
+    "bild_format": [
+      "static",
+      "product",
+      "textheavy"
+    ],
     "comment": "Avläst ur kontot + hubben 2026-09-21. Vinkeln `jul` är ny och är ROUTINGNYCKELN: bär namnet `jul` hamnar annonsen i jul-adsetet, video eller bild efter formatet. Högsta upptagna nummer 2026-09-21: 043 (Notion, Draft). ⚠️ Fem annonser i kontot står utanför mönstret ('09-17 Nathalie captions musik', 'Sofie H1 …') — Axels egna uppladdningar. De räknas aldrig som upptagna nummer och döps aldrig om."
   },
-
   "kadens": {
     "briefer_per_rond": 6,
     "rond_var_n_dag": 3,
     "comment": "Axels beslut 2026-09-21 ('6 per rond, var tredje dag'). Taket är ändå antalet skrivna lärdomar sedan förra ronden — budgeten styr aldrig antalet (CS-KLART punkt 8)."
   },
-
   "grindar": {
     "signifikans_spend_sek": 300,
     "signifikans_kop": 3,
@@ -90,5 +131,17 @@
     "ingen_leverans_dagar": 7,
     "benchmark_andel": 0.3,
     "comment": "Samma grindar som ANALYSMETOD.md. Ingen dom under 300 kr ELLER 3 köp. En annons med > 30 % av kampanjens vinstbidrag är benchmarken och dödas aldrig."
+  },
+  "skalning": {
+    "vem": "Axel",
+    "comment": "Axels beslut 2026-09-21: \"jag vill inte att claude ska skala på matstrumpor utan det är jag som gör det, claude får gärna ge mig tips.\" /matstrumporkungen gör därför NOLL skrivande anrop på budget och status — den föreslår i en tabell och loggar förslaget som FORSLAG. Bygg aldrig in en budgetfunktion här utan att Axel sagt om.",
+    "rutinen_far_skriva": [
+      "nya annonser i rätt adset (/matstrumpor)"
+    ],
+    "rutinen_far_aldrig": [
+      "ändra dagsbudget",
+      "pausa annons/adset/kampanj",
+      "aktivera något som är pausat"
+    ]
   }
 }

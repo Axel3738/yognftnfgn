@@ -1,7 +1,19 @@
 # /matstrumporkungen – Skalningskungen i liten skala, bara för Matstrumpor
 
-Argument: `$ARGUMENTS` — inget (full rond) eller `--larm` (läs och döm, rör
-inga budgetar). Exempel: `/matstrumporkungen` · `/matstrumporkungen --larm`
+Argument: `$ARGUMENTS` — inget. Exempel: `/matstrumporkungen`
+
+## ⛔ DEN HÄR RONDEN SKALAR ALDRIG
+
+**Axels beslut 2026-09-21: "jag vill inte att claude ska skala på matstrumpor
+utan det är jag som gör det, claude får gärna ge mig tips."**
+
+Ronden gör **noll skrivande Graph-anrop på budget och status**. Ingen höjning,
+ingen sänkning, ingen paus, ingen aktivering — inte ens inom spärrarna, inte
+ens när siffrorna är tydliga. Den läser, dömer och **föreslår**. Axel trycker
+på knappen.
+
+Det enda ronden skriver i Meta är det `/matstrumpor` gör: nya annonser i rätt
+adset. Allt annat är ett förslag i rapporten.
 
 Samma hjärna som Bäverbutikens **"Skalnings kungen"** (`/rond-auto`,
 `agent/`-motorn), nedskalad till **en produkt, en kampanj, 6 briefer per
@@ -14,6 +26,7 @@ volymen.
 | Kampanj | `MATSTRUMP_SALES_20260826` `120251217860260023`, CBO |
 | Hub | `Matstrumpor creative hub` `3a7270ab-908c-80d2-9f35-e73e51e457ff` |
 | Kadens | **6 briefer per rond, var tredje dag** (Axels beslut 2026-09-21) |
+| Budget | **Axel skalar själv.** Ronden föreslår, rör aldrig en budget |
 | Minne | `products/matstrumpor/` + `matstrumpor/logg.jsonl` |
 | Facit | `matstrumpor/konfig.json`, `docs/os/ANALYSMETOD.md`, `docs/os/CS-KLART.md` |
 
@@ -134,15 +147,19 @@ och rörs inte. Sätt `ekonomi.moms_antagen` i konfigen när Axel svarat.
      Notion-itemet** — aldrig en länk till en .md-fil.
    - Logga varje brief: `{kod:"BRIEF", annons, koncept, typ, parent, lardom, iteration}`.
 
-7. **Budgetbesluten** *(hoppas över i läge `--larm`)*. En tabell FÖRE någon
-   skrivning: nuvarande dagsbudget, föreslagen, varför. Spärrarna:
-   - Rör aldrig något som ändrats de senaste 3 dygnen (loggen är facit).
-   - Skala max **+20 %** per rond, och bara över break-even med ≥ 3 köp / 7 d.
-   - Sänk max **−30 %** när CPA ligger mellan break-even och 1,5 × break-even.
-   - Döda bara mot break-even, aldrig benchmarken.
-   - Fler än 3 ändringar i ronden: lista dem och invänta Axels ok.
-   Efter varje ändring: läs tillbaka `daily_budget`, visa gammalt → nytt,
-   logga `{kod:"BUDGET", ...}` även när det misslyckades.
+7. **Tipsen till Axel — förslag, aldrig ändringar.**
+   En tabell: rad, nuläge, vad jag skulle göra, och **varför i en mening**.
+   Siffran bakom varje rad ska stå där, annars är det en åsikt.
+   - **Kandidater att pausa:** bedömbar, under break-even, negativt
+     vinstbidrag — med kronorna det kostar per 14 dagar.
+   - **Kandidater att skala:** över break-even med ≥ 3 köp de senaste 7 dygnen.
+     Skriv ut hur mycket (+20 % är motorns normalsteg) och vad det bygger på.
+   - **Rör inte:** benchmarken, allt under grinden, allt som redan är pausat.
+   Sortera på kronor, mest först. Är listan tom: säg det i en rad.
+   **Utför ingenting av det här.** Ingen `ads_update_entity` på budget eller
+   status, ingen `ads_activate_entity`, ingen paus — oavsett hur tydlig
+   siffran är. Loggas som `{kod:"FORSLAG", …}` så nästa rond ser vad som
+   föreslogs och vad Axel valde.
 
 8. **Skriv minnet och pusha.** `products/matstrumpor/dna.md` (vad vi lärt oss
    om produkten), `batch-log.md` (batchen + hypoteserna + utfallet),
@@ -169,7 +186,8 @@ och rörs inte. Sätt `ekonomi.moms_antagen` i konfigen när Axel svarat.
 - [ ] Varje brief bär taggraden och pekar på sin lärdom; iterationsnumret ur loggen
 - [ ] Namnen byggda med `--namn`; julmaterial har vinkeln `jul`
 - [ ] Copyn skriven av subagent med `model: "sonnet"` + copy-reglerna
-- [ ] Budgetändringar inom spärrarna, tillbakalästa, loggade (eller `--larm`: "inga budgetar rörda")
+- [ ] **Noll budgetändringar, noll pausningar, noll aktiveringar** — tipsen är en lista, inte en handling
+- [ ] Tipsen sorterade på kronor, med siffran bakom varje rad
 - [ ] Inget PAUSED aktiverat
 - [ ] `logg.jsonl` + `products/matstrumpor/` committat och pushat
 - [ ] Rapport i två listor; Axels uppgifter sist, numrerade

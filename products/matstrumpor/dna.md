@@ -19,7 +19,7 @@ Uppladdaren: `/matstrumpor`. Ronden: `/matstrumporkungen`. Facit för tal:
 | AOV | **462,10 kr** (110 betalda ordrar / 30 dagar) |
 | Ordern | 90 av 110 ordrar bär **exakt 2 strumpprodukter**. Ätpinnar ligger på 246 av raderna — nästan varje order |
 | Kostnad | 120,92 kr för 2 par + 2,9 EUR tull = **153,62 kr** (Axels siffra + ECB-kurs 11,275) |
-| Break-even-ROAS | **1,498 utan moms** · **2,139 med moms** — ⚠️ öppen fråga |
+| Break-even-ROAS | **1,498** · break-even-CPA **308,48 kr** (Axel 2026-09-21: Matstrumpor säljer UTAN moms) |
 
 ⚠️ **Kostnaden saknar tre poster:** fraktkostnaden till kund, betalväxelns
 avgift och svinn/returer. Break-even ovan är alltså i bästa fall. När de
@@ -83,6 +83,11 @@ julmaterial hamnar i jul-adseten. En julstrumpa har redan körts
 (`MATSTRUMP_sushi_gift_ugc_julstrumpa_v1`, 17,55 kr — ingen leverans) och
 Axels egen `Sofie H2 julstrumpa …` ligger på 8,68 kr. Ingen av dem har data.
 
+**Sedan 2026-09-21 körs 8 julvideor i eget adset** (batch 022/024/025, se
+batch-log). Det är första riktiga testet av vinkeln — tre olika ingångar:
+produktavslöjande ("inte vad den ser ut som"), julstrumpan vid spisen, och
+"slut på julklappsidéer". Läs av dem 28/9.
+
 ---
 
 ## Avatarer
@@ -101,11 +106,14 @@ samlarbeteende, inte som ett behovsköp. Kolla det mot kommentarerna
 
 ## Nästa steg (i ordning, vinst snabbast först)
 
-1. **Momsfrågan till Axel.** Hela skillnaden mellan "sänk budgeten" och
-   "skala" ligger i den. 1,50 eller 2,14 — ingenting kan avgöras däremellan.
-2. **`haikuh3`.** 46 % av spenden, −2 968 kr. Ska den pausas eller är den
-   medvetet igång? Det är en 7 776-kronors fråga per 14 dagar.
-3. **Fler statiska erbjudandebilder** — den enda bevisat lönsamma formen i
-   kontot, och den billigaste att producera.
-4. **Lärdomarna.** Noll skrivna. Brieftaket är därför 0 tills de finns:
+1. ~~Momsfrågan~~ **besvarad 2026-09-21: utan moms.** Break-even är 1,498.
+2. **`haikuh3`** — dömd 2026-09-21: SPEND_WINNER dag 7, −2 968 kr på 14 dagar,
+   hook rate 95,2 % men 2,8 % köp per landningssidevisning. Hooken är kontots
+   bästa; det som faller ligger efter klicket. Beslutet är Axels.
+3. **Julmaterialet är igång sedan 2026-09-21:** 8 julvideor i eget adset. Läs
+   av dem 28/9 — det är första gången vi kan se om `jul` slår `gift`.
+4. **Fler statiska erbjudandebilder** — den enda bevisat lönsamma formen i
+   kontot, och den billigaste att producera. Julbild-adsetet står tomt och
+   väntar.
+5. **Lärdomarna.** Noll skrivna. Brieftaket är därför 0 tills de finns:
    ingen brief får skrivas förrän lärdomen bakom den är skriven.

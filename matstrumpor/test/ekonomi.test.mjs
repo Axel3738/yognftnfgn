@@ -5,6 +5,10 @@ import { lasKonfig } from '../kor.mjs';
 
 const KONFIG = lasKonfig();
 const GRINDAR = KONFIG.grindar;
+// Momsen är BESVARAD sedan 2026-09-21 (Axel: "Matstrumpor utan moms"), så
+// konfigen ger en gällande linje. Den öppna frågan är ändå kvar som beteende —
+// nästa produkt kan ha den — och testas mot en konfig där svaret saknas.
+const OPPEN = { ...KONFIG, ekonomi: { ...KONFIG.ekonomi, moms_antagen: null } };
 
 test('tullen räknas om ur EUR och läggs på inköpet', () => {
   assert.equal(kostnadPerOrder({ kostnad_per_order_sek: 120.92, tull_eur: 2.9, eur_sek: 11.275 }), 153.62);
@@ -33,11 +37,18 @@ test('negativt täckningsbidrag ger inget break-even-tal, bara en varning', () =
   assert.match(l.varning, /går inte att annonsera lönsamt/);
 });
 
-test('konfigen ger båda linjerna och ingen gällande förrän momsen är besvarad', () => {
+test('konfigen ger båda linjerna, och den utan moms gäller (Axels besked 2026-09-21)', () => {
   const b = brytpunkter(KONFIG);
-  assert.ok(b.utan_moms.break_even_roas > 0);
   assert.ok(b.med_moms.break_even_roas > b.utan_moms.break_even_roas);
-  assert.equal(b.gallande, null, 'moms_antagen är öppen ⇒ ingen ensam linje lämnas ut');
+  assert.equal(b.moms_antagen, false);
+  assert.equal(b.oppen_fraga, false);
+  assert.equal(b.gallande.break_even_roas, 1.498);
+  assert.equal(b.gallande.break_even_cpa_sek, 308.48);
+});
+
+test('en obesvarad momsfråga lämnar fortfarande aldrig ut ett ensamt tal', () => {
+  const b = brytpunkter(OPPEN);
+  assert.equal(b.gallande, null);
   assert.equal(b.oppen_fraga, true);
 });
 
@@ -52,27 +63,27 @@ test('ingen dom under grinden', () => {
   assert.equal(d.bedombar, false);
 });
 
-test('en annons mellan momslinjerna rörs inte', () => {
-  const b = brytpunkter(KONFIG);
+test('en annons mellan momslinjerna rörs inte så länge frågan är öppen', () => {
+  const b = brytpunkter(OPPEN);
   const d = dom({ namn: 'MELLAN', spend_sek: 2000, kop: 6, roas: 1.8 }, b, GRINDAR);
   assert.equal(d.dom, 'BEROR_PA_MOMS');
 });
 
 test('under båda linjerna är under break-even, över båda är över', () => {
-  const b = brytpunkter(KONFIG);
+  const b = brytpunkter(OPPEN);
   assert.equal(dom({ namn: 'LAG', spend_sek: 2000, kop: 6, roas: 0.9 }, b, GRINDAR).dom, 'UNDER_BREAK_EVEN');
   assert.equal(dom({ namn: 'HOG', spend_sek: 2000, kop: 6, roas: 3.0 }, b, GRINDAR).dom, 'OVER_BREAK_EVEN');
 });
 
 test('vinstbidrag räknas på den försiktiga linjen när momsen är öppen, och märks', () => {
-  const b = brytpunkter(KONFIG);
+  const b = brytpunkter(OPPEN);
   const v = vinstbidrag({ namn: 'A', spend_sek: 1000, kop: 5 }, b);
   assert.equal(v.forsiktigt, true);
   assert.match(v.motivering, /MED-moms-linjen/);
 });
 
 test('rankingen går på vinstbidrag och pekar ut benchmarken', () => {
-  const b = brytpunkter(KONFIG);
+  const b = brytpunkter(OPPEN);
   const r = rangordna([
     { namn: 'TOP', spend_sek: 7776, kop: 17, roas: 0.93 },
     { namn: 'LITEN', spend_sek: 2873, kop: 10, roas: 2.05 },
