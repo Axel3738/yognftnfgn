@@ -107,17 +107,24 @@ inte röras utan att Axel ber om det.
 10. **En task är aldrig klar för att någon säger det.** Levererat och godkänt är
     två olika saker. Godkännande kräver grön checklista (eller override med
     skriven motivering), och bara godkända creatives räknas mot kvoten.
-11. **Nya tester launchas i ett separat test-ABO med lika budget per annons.**
-    CBO används för skalning av bevisade vinnare — aldrig för tester. *(Axels beslut
-    2026-08-12. Mönster 5 i motorhöljets DNA, märkt `BEVISAD — tredje gången`: tre
-    batcher svalt ihjäl bredvid `PD_1_H3` som tar 42 % av spenden. Batch #2 fick 16
-    av 17 annonser under 30 kr; batch #5:s trevägstest med identisk copy gav
-    5,70 / 5,52 / 159,76 kr. Läggs nya creatives i skalningens CBO blir datan
-    oläsbar och kvoten meningslös.)*
-    ⚠️ **Ett uttryckligt undantag, Axels beslut 2026-08-30:** nattrutinen
-    `/notionkorning` laddar upp redigerarnas färdiga creatives i den kampanj som
-    redan bär produktens annonser, inte i ett nytt test-ABO. Det gäller ENBART den
-    rutinen. Rätta inte tillbaka det — allt annat nytt testande följer regel 11.
+11. **Alla nya annonser går i produktens CBO, i adsetet som bär konceptets
+    vinkel. En annons som inte fått spend på sju dygn är en förlorare:
+    etikettera (`INGEN_LEVERANS`) och släpp — aldrig ett test-ABO.** *(Axels
+    beslut 2026-09-20, ur Evolve-materialet. Regeln hette till dess "nya tester
+    i ett separat test-ABO med lika budget per annons" — Axels beslut
+    2026-08-12 — och lärdomen bakom den är sann: batch #2 fick 16 av 17
+    annonser under 30 kr bredvid `PD_1_H3` som tog 42 % av spenden, och batch
+    #5:s trevägstest gav 5,70 / 5,52 / 159,76 kr
+    (`products/motorholjet/batch-log.md:64–66`; CLAUDE.md:s gamla hänvisning
+    till "mönster 5 i motorhöljets DNA" var fel — mönster 5 är Karusell). Men
+    Evolves data på 42 CBO-svultna annonser säger att svält är Metas dom: 36
+    dog i ABO inom sju dygn, en skalade, och tvingad spend ger köp som inte är
+    inkrementella. I drift följdes ABO-regeln aldrig — allt låg redan i CBO
+    (mätt 2026-09-19). Att en ny annons svälter är ett utfall att logga, inte
+    ett processfel att bygga runt.)*
+    Nattrutinen `/notionkorning` laddar upp redigerarnas färdiga creatives i den
+    kampanj som redan bär produktens annonser (Axels beslut 2026-08-30, tidigare
+    ett undantag — nu huvudregeln).
 
     Kampanjen slås upp ur **kontot** (annonsprefixet i namnet), inte ur
     `campaign_ids[0]`. Mätt 2026-08-31: alla fyra skalningsprodukters
@@ -410,6 +417,8 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| **Regi rad för rad i varje videobrief + spärren före Notion** (Axels beslut 2026-09-21: `node tools/briefgranskning.mjs --rad <brief.md>` / `--manifest <manifest.json>`, exit 1 = ingen Notion-rad) | **`docs/os/BRIEF-REGI.md`** |
+| **Definition av klart för creative strategy — Axels 19 punkter** (2026-09-21): lärdomen per etiketterad annons, briefer som pekar på en lärdom, mixen ur etiketterna, brieftaket, vidarebyggen, taggarna, rapporten, kommentarerna, taket. Avstämningen efter varje bygge står längst ner i filen. Motorn: `agent/lardom.mjs` på rutinens gren | **`docs/os/CS-KLART.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
@@ -879,6 +888,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/ops-byt-bild.mjs` | Byter bilden i en annons som redan är live (ny creative, samma spec, annonsen pekas om) — utan paus, namnbyte eller nytt adset |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
+| `tools/annonskommentarer.mjs` | Kommentarerna på top spendern → `products/<id>/kommentarer.md`, kluster ≥ 3 ⇒ INVAND-variant (`kalla=voc`). Läs-bara. Kräver sidtoken (hämtas ur `/<page>?fields=access_token`) — och att `META_ACCESS_TOKEN` bär `pages_read_engagement`, annars svarar Meta `(#200) Missing Permissions` |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |

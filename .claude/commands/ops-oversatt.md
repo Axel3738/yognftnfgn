@@ -158,6 +158,25 @@ apply → render → download → `no-precis.py`/`no-captions.py` bara om källa
 har inbränd text (skripten är språkoberoende trots namnet) → `rostkoll.py`.
 Tom `.orig.srt` = inget tal = ingen render.
 
+**AI-raden — bara `--marknad US` (USA, GB, CA, AU, NZ), aldrig NO** (Axels
+beslut 2026-09-21, `docs/os/CS-KLART.md` punkt 27). Efter `rostkoll.py`,
+INNAN uppladdning, på varje engelsk videofil:
+```bash
+node tools/ai-rad.mjs --brief <brief.md>                       # vad briefen säger: person | rost | bild | ingen
+node tools/ai-rad.mjs <batch>/us/<fil>.mp4 --ai <person|rost|bild|ingen>   # → <fil>-ai.mp4 (raden), eller "ingen rad" vid bild/ingen
+```
+Raden "Contains AI-generated content" är **obligatorisk** när creativen
+har en AI-genererad person eller AI-röst (HeyGen-dubbningen ÄR en AI-röst
+— alltså i praktiken varje översatt talvideo), **frivillig** på ren
+AI-bild/produktanimation, och läggs på 82,5 % av höjden så den varken
+beskärs bort i 4:5-feeden eller täcks av Reels-fälten, liten (1,7 % av
+höjden), vit på svart halvgenomskinlig platta. Saknar briefen raden
+`AI content:` behandlas videon som person — hellre en rad för mycket.
+Ladda upp `-ai.mp4`-filen. De svenska och norska filerna rörs aldrig.
+ffmpeg saknas i claude.ai-containern: skriptet faller tillbaka på
+`imageio-ffmpeg` (`pip install imageio-ffmpeg`), samma reserv som
+`no-captions.py`.
+
 ### 5. Uppladdning — live i marknadens kampanj
 ```
 node tools/ops-till-meta.mjs <nyckel> --marknad <M> --kampanj <jobb.kampanj.id> --namn <mal_namn> --fil <batch>/no/<fil> --primar "<message>" --rubrik "<headline>" [--beskrivning "<text>"] --torr

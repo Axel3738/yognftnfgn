@@ -212,6 +212,53 @@ i stället för anekdoter per annons.
 | Textmängd (bild) | ingen · ≤5 ord · rubrik+underrubrik · lång listicle |
 | Talare | ingen · creator kvinna · creator man · röst utan ansikte |
 
+**Komponenttaggarna** (Axels beslut 2026-09-21 ur Evolve-materialet,
+`docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` §2.12) — samma rad i briefen,
+bakåtkompatibla, med **fasta värdelistor** så vinstbidraget går att gruppera
+per tagg. Listorna är facit i `tools/briefgranskning.mjs` (`KOMPONENT_VARDEN`);
+ett värde utanför listan är en anmärkning, aldrig ett påhitt i en brief:
+
+| Tagg | Värden | Vad den svarar på |
+|---|---|---|
+| `typ` | `N` ny vinkel · `IM` imiterad (format-kopia) · `I` iteration på en förälder · `M` messaging (samma video, ny hook/text) · `S` statisk validering | vilken sorts test det är — Evolve räknar iterationer per koncept; en imiterad kopia itereras aldrig (CS-KLART punkt 12) |
+| `tro` | fritext, en mening | vad kunden måste tro för att köpa — det annonsen ska få hen att tro (CS-KLART punkt 13) |
+| `lardom` | `L-<annons_id>` ur `products/<id>/lardomar.md` (flera med komma) | vilken lärdom briefen bygger på — kan den inte peka på en, skrivs den inte (CS-KLART punkt 6) |
+| `koncept` | fritext, samma namn för alla iterationer av samma idé | så iterationerna kan räknas per KONCEPT, inte bara per förälder |
+| `parent` / `iteration` | annonsnamn / löpnummer | typ I och M kräver `parent`; typ N har ingen |
+| `kalla` | `axel` · `rutin` · `swipe` · `voc` · `feedback` · `backlog` · `playbook` · `winning-line` · `egen-data` · `parent` | var idén kommer ifrån — **minst 1 av 5 nya koncept per rond har `voc`** |
+| `avatar` | slug ur listan **Avatarer** i `products/<id>/dna.md` (max 4 per produkt, var och en med citat eller butiksdata som källa) | vem annonsen pratar med |
+| `awareness` | `unaware` · `problem` · `solution` · `product` · `promo` | var i medvetandetrappan hooken börjar |
+| `begar` | `skydda-det-jag-ager` · `spara-pengar` · `spara-tid` · `slippa-krangel` · `trygghet` · `status` · `njutning` · `halsa` · `kontroll` · `tillhorighet` | vilket begär annonsen kanaliserar (begär skapas inte, det kanaliseras) |
+| `mekanism` | fritext, en mening | hur annonsen får begäret att landa på produkten |
+| `urgency` | `sasong` · `lager` · `pris` · `konsekvens` · `ingen` | varför nu — aldrig påhittad |
+| `hook-mekanik` | `none` · `reverse` · `slow-mo` · `slider` · `zoom-in` · `cut-in` · `freeze` | den visuella hookens mekanik — två H-varianter på samma koncept har olika |
+| `confidence` | `high` · `medium` · `low` + datareferens i Memo | hur säker skrivaren är, och på vad |
+
+Varje brief slutar huvudet med en rad **`Memo:`** — en mening om varför den
+slår nuvarande nivå (Evolves breakthrough memo).
+
+**Lärdomen per etiketterad annons** (`docs/os/CS-KLART.md` punkt 1–5, Axels
+definition av klart 2026-09-21) är det som variabeltabellen och nästa brief
+bygger på: batchnummer, utfall, annonsens och kampanjens spend i samma
+fönster, alla hookar ordagrant med hook rate och hold rate, ROAS eller CPA,
+konverteringsgrad; planerat mot utfört per komponent (avatar, vinkel,
+medvetandenivå, mekanism, tro, positionering, brådska — stämde inte
+utförandet är det utförandet som föll, inte idén); en hypotes märkt
+gissning; och konkreta nästa annonser. Motorn är `agent/lardom.mjs` på
+rutinens gren (`--skelett` / `--skriv` / `--brief` / `--status`), lagret
+`products/<id>/lardomar.md`. Ingen annons räknas som klar förrän lärdomen
+är skriven, och antalet briefer i en rond överstiger aldrig antalet
+lärdomar skrivna sedan förra batchen. Vid varje `/cs` grupperas
+vinstbidraget även per komponenttagg. **När en annons får etiketten
+BREAKTHROUGH** skrivs blocket `## Komponentkarta <namn>` i `dna.md`: HOOK /
+BRIDGE / HOLD / CTA med exakt rad, valens, awareness, avatar och **bärande
+komponent = hypotes** — det är den iterationerna byggs på.
+
+**`utford_som_briefad`:** vid etiketten (dag 7) läses den LIVE creativen
+(primärtext, rubrik, första frame) mot briefen. `nej` ⇒ utfallet räknas inte in
+i variabeltabellen — motorhöljets copy-lärdomar i augusti byggde på text som
+aldrig kört (`products/motorholjet/dna.md`). `okänd` när ingen läst.
+
 Leverera denna tabell — det är den som styr nästa batch:
 
 | Variabelvärde | Antal annonser | Total spend | **Vinstbidrag** | Slutsats |
