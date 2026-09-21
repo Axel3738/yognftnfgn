@@ -137,7 +137,9 @@ mekanismen som skiljer ett ventilerat överdrag från en tät presenning, och va
 som händer med luften under draget. Vilken av dem som bär är en hypotes och
 ska märkas som gissning i lärdomen.
 
-**Briefas som INVAND-variant** (Axels beslut 2026-09-21), med `kalla=voc` —
+**Briefad som `Takoverdrag_OB_2_H1`** (Axels beslut 2026-09-21), med `kalla=voc` —
+`OB` är kontots kod för invändning, inte `BOF` som är funnelposition; se
+`docs/naming-convention.md`. —
 kommentaren på `Takoverdrag_SP_4_H1` är den formella källan, forumet är
 språket bakom den. Annonsen ska bemöta att **överdraget andas i stället för
 att kapsla in**, inte förneka att invändningen är rimlig: den som säger "nu

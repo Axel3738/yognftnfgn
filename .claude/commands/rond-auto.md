@@ -599,7 +599,9 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   (max 4, med källa — saknas listan skriver du den först); minst 1 av 5 nya
   koncept har `kalla=voc` (kommentarerna: `node tools/annonskommentarer.mjs
   --konto SE --kampanj <id> --ut products/<id>/kommentarer.md`, kluster ≥ 3
-  ⇒ INVAND-variant). **Spärren körs INNAN en enda Notion-rad skapas:**
+  ⇒ INVAND-variant, namngiven med vinkelkoden `OB` — aldrig `BOF`, som är
+  funnelposition och inte går att skära ut ur datan, `docs/naming-convention.md`).
+  **Spärren körs INNAN en enda Notion-rad skapas:**
   ```bash
   node tools/briefgranskning.mjs --manifest products/<id>/batch-NN/manifest.json --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>
   ```
