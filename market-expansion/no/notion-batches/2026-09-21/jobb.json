@@ -61,7 +61,9 @@
         "adsetNamn": "IBC-tanktrekk NO - RI",
         "annonsNamn": "IBC-tanktrekk_NO_RI_1_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "FEL",
+        "fel": "Meta 400: Application does not have permission for this action — Du saknar behörighet för åtkomst till den här profilen"
       },
       "pris": {
         "pris": "439.00",
@@ -124,7 +126,9 @@
         "adsetNamn": "IBC-tanktrekk NO - PD",
         "annonsNamn": "IBC-tanktrekk_NO_PD_11_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "FEL",
+        "fel": "Meta 400: Application does not have permission for this action — Du saknar behörighet för åtkomst till den här profilen"
       },
       "pris": {
         "pris": "439.00",
@@ -187,7 +191,8 @@
         "adsetNamn": "IBC-tanktrekk NO - CS",
         "annonsNamn": "IBC-tanktrekk_NO_CS_9_H1",
         "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
-        "prefix": "IBC-tanktrekk"
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY"
       },
       "pris": {
         "pris": "439.00",

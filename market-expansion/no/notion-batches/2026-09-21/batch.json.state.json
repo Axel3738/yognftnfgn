@@ -1,0 +1,23 @@
+{
+ "ibc-tanktrekk_RI_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/66e03d76443347979f9535d479f072a1/original.mp4",
+  "proofreadId": "2674c9b3f367446691f20bd4c83da34f-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "fd6dfdeb4ea6441d931a1dcbed9fce0b-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_PD_11_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/ddaa40f4bbe5426996fbdc6ea0d4d92e/original.mp4",
+  "proofreadId": "16c9ebfde48649f1af7703566c91814a-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "bb8437c291c3477d9073898c75eda53d-nb",
+  "downloaded": true
+ },
+ "ibc-tanktrekk_CS_9_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/a7bd9407287a44a2a761027173898e77/original.mp4",
+  "proofreadId": "751014a42df54238acb7939cb295a2ae-nb-nb-NO",
+  "srtDone": true
+ }
+}
