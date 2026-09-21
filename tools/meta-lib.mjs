@@ -118,19 +118,40 @@ export async function api(sökväg, { method = 'GET', params = {}, form = null }
  *  svarar Meta "Please reduce the amount of data" på 200. */
 export async function alla(sökväg, params = {}, limit = 100) {
   const ut = [];
-  let svar = await api(sökväg, { params: { ...params, limit } });
-  ut.push(...(svar.data || []));
-  while (svar.paging?.next) {
+  const första = await api(sökväg, { params: { ...params, limit } });
+  ut.push(...(första.data || []));
+  // Nästa sidas URL hålls i en EGEN variabel. Låg den i `svar` skrevs den över
+  // av felobjektet vid rate limit (kod 17), och `continue` hoppade då till ett
+  // villkor som var falskt — loopen slutade TYST och `alla()` returnerade en
+  // halv lista utan att någon märkte det. Samma sak när svaret inte var JSON:
+  // `.catch(() => ({}))` gav ett tomt objekt utan paging. (Mätt 2026-09-21 på
+  // act_1107817401910319 i /ops-oversatt carashell.)
+  let nästa = första.paging?.next ?? null;
+  let försök = 0;
+  while (nästa) {
     const väntaTill = senastAnrop + FÖRDRÖJNING_MS;
     if (väntaTill > Date.now()) await vänta(väntaTill - Date.now());
     senastAnrop = Date.now();
-    const res = await fetch(svar.paging.next);
-    svar = await res.json().catch(() => ({}));
+    let svar;
+    try {
+      // Utan timeout kan ett tappat proxy-socket lämna löftet olöst för alltid.
+      // Då tömmer Node händelsekön och avslutar med kod 0, utan felrad och utan
+      // utskrift — precis det som gjorde kön oläsbar tre körningar i rad
+      // 2026-09-21. En timeout gör tystnaden till ett fel som går att se.
+      const res = await fetch(nästa, { signal: AbortSignal.timeout(90_000) });
+      svar = await res.json();
+    } catch (e) {
+      if (++försök > 5) throw new Error(`Meta paging: ${e.message} (efter ${försök} försök på samma sida)`);
+      await vänta(5000 * försök);
+      continue;
+    }
     if (svar.error) {
-      if (svar.error.code === 17) { await vänta(20000); continue; }
+      if (svar.error.code === 17 && ++försök <= 8) { await vänta(20000); continue; }
       throw new Error(`Meta paging: ${svar.error.message}`);
     }
+    försök = 0;
     ut.push(...(svar.data || []));
+    nästa = svar.paging?.next ?? null;
   }
   return ut;
 }
