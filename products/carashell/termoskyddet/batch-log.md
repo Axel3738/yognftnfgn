@@ -746,3 +746,12 @@ SE PAUSED: 7d 2 058 kr / 4 köp, 3d nere på 355 kr / 0 köp när de pausade dyg
 limit-kö när Discord-rapporten gick ut och rapporterades där som "ej kontrollerad"; den
 blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 18/9.
 `kord` stämplad, `brief-kord` inte.
+
+## 2026-09-21 — `/ops-leverans carashell/termoskyddet` — tom kö, oförändrat fjärde dagen
+
+- Kön: 0 rader. Hubben oförändrad (5 Approved, 2 Draft-videor). Inget laddades upp,
+  inget rördes i kontot.
+- SE-kampanjen kvar PAUSED, `updated_time` fortfarande 2026-09-18 11:29 CEST. Livstid
+  2 058 kr / 4 köp — exakt samma siffror som igår, alltså ingen eftersläpande attribution kvar.
+- Kontot har vuxit från 659 till 730 annonser sedan igår (andra butikers körningar);
+  ingenting av det rör den här produkten.
