@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-21T12:57:48.192Z",
+ "byggd": "2026-09-21T14:18:45.833Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-21T12:57:07.418Z"
+  "till": "2026-09-21T14:18:16.891Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -15,8 +15,8 @@
    "kalla_kommentar": "Uppgifterna är hämtade ur factory/butiker/carashell.yaml (butikernas juridiska avsändare) 2026-09-21."
   },
   "kontakt": {
-   "epost": "",
-   "epost_kommentar": "Fylls i av Axel. Tom adress ⇒ ingen kontaktrad på sidan. Publicera aldrig en privat gmail här.",
+   "epost": "contact@stonebite.org",
+   "epost_kommentar": "Axels besked 2026-09-21. Tom adress ⇒ ingen kontaktrad på sidan. Publicera aldrig en privat gmail här.",
    "telefon": ""
   },
   "hero": {
@@ -505,46 +505,46 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:07.435Z"
+   "tid": "2026-09-21T14:18:16.963Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:07.435Z"
+   "tid": "2026-09-21T14:18:16.963Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:07.435Z"
+   "tid": "2026-09-21T14:18:16.963Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:07.435Z"
+   "tid": "2026-09-21T14:18:16.963Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "6 av 13 butiker gick inte att läsa",
-   "tid": "2026-09-21T12:57:20.954Z",
+   "tid": "2026-09-21T14:18:31.301Z",
    "butiker": 13
   },
   {
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:27.482Z",
-   "konton": 4
+   "tid": "2026-09-21T14:18:41.544Z",
+   "konton": 5
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:57:48.192Z",
-   "personer": 6
+   "tid": "2026-09-21T14:18:45.833Z",
+   "personer": 7
   }
  ],
  "butiker": [
@@ -715,11 +715,11 @@
     },
     {
      "datum": "2026-09-21",
-     "omsattning": 14132.800000000001,
-     "ordrar": 8
+     "omsattning": 24501.9,
+     "ordrar": 14
     }
    ],
-   "ordrar": 186,
+   "ordrar": 192,
    "status": "ok",
    "orsak": null
   },
@@ -878,11 +878,11 @@
     },
     {
      "datum": "2026-09-21",
-     "omsattning": 9835.900000000001,
-     "ordrar": 11
+     "omsattning": 10582.2,
+     "ordrar": 12
     }
    ],
-   "ordrar": 844,
+   "ordrar": 845,
    "status": "ok",
    "orsak": null
   },
@@ -1947,62 +1947,62 @@
     },
     {
      "datum": "2026-09-20",
-     "spend": 36322.41,
+     "spend": 36326.53,
      "kop": 110,
-     "roas": 2.713694
+     "roas": 2.713386
     }
    ],
    "idag": {
-    "spend": 16025.86,
-    "kop": 48,
-    "roas": 2.415945,
+    "spend": 18058.26,
+    "kop": 53,
+    "roas": 2.352104,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 71382.48,
+     "spend": 71384.67,
      "kop": 205,
-     "roas": 3.507078,
-     "cpa": 348.2072195121951,
-     "intakt": 250343.92519343997
+     "roas": 3.506971,
+     "cpa": 348.2179024390244,
+     "intakt": 250343.96753457
     },
     {
      "id": "120250175763810291",
      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-     "spend": 14885.91,
+     "spend": 14886.52,
      "kop": 61,
-     "roas": 2.509971,
-     "cpa": 244.03131147540984,
-     "intakt": 37363.20240861
+     "roas": 2.509868,
+     "cpa": 244.04131147540986,
+     "intakt": 37363.20017936
     },
     {
      "id": "120250009325850291",
      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-     "spend": 13971.2,
+     "spend": 13971.3,
      "kop": 84,
-     "roas": 3.744835,
-     "cpa": 166.32380952380953,
-     "intakt": 52319.838752
+     "roas": 3.744808,
+     "cpa": 166.325,
+     "intakt": 52319.836010399995
     },
     {
      "id": "120249902177470291",
      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-     "spend": 11848.11,
+     "spend": 11848.55,
      "kop": 38,
-     "roas": 3.072658,
-     "cpa": 311.79236842105263,
-     "intakt": 36405.18997638
+     "roas": 3.072544,
+     "cpa": 311.803947368421,
+     "intakt": 36405.1912112
     },
     {
      "id": "120249850522830291",
      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-     "spend": 9151.92,
+     "spend": 9151.98,
      "kop": 40,
-     "roas": 2.01127,
-     "cpa": 228.798,
-     "intakt": 18406.982138400002
+     "roas": 2.011257,
+     "cpa": 228.7995,
+     "intakt": 18406.98383886
     },
     {
      "id": "120250001079150291",
@@ -2016,11 +2016,11 @@
     {
      "id": "120250253948980291",
      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
-     "spend": 4597.14,
+     "spend": 4597.29,
      "kop": 12,
-     "roas": 2.108507,
-     "cpa": 383.095,
-     "intakt": 9693.10186998
+     "roas": 2.108438,
+     "cpa": 383.1075,
+     "intakt": 9693.10093302
     },
     {
      "id": "120249989799680291",
@@ -2034,20 +2034,20 @@
     {
      "id": "120250253867730291",
      "namn": "Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17",
-     "spend": 4215.65,
+     "spend": 4216.16,
      "kop": 3,
-     "roas": 1.731548,
-     "cpa": 1405.2166666666665,
-     "intakt": 7299.6003261999995
+     "roas": 1.731338,
+     "cpa": 1405.3866666666665,
+     "intakt": 7299.59802208
     },
     {
      "id": "120250252311730291",
      "namn": "Taköverdraget LISTICLE LAGERRENSNING",
-     "spend": 4138.44,
+     "spend": 4138.46,
      "kop": 13,
-     "roas": 3.662491,
-     "cpa": 318.34153846153845,
-     "intakt": 15156.99925404
+     "roas": 3.662473,
+     "cpa": 318.3430769230769,
+     "intakt": 15156.998011579999
     },
     {
      "id": "120250134672020291",
@@ -2088,11 +2088,11 @@
     {
      "id": "120250284693380291",
      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-     "spend": 2738.41,
+     "spend": 2738.45,
      "kop": 24,
-     "roas": 4.348363,
-     "cpa": 114.10041666666666,
-     "intakt": 11907.600722829999
+     "roas": 4.348299,
+     "cpa": 114.10208333333333,
+     "intakt": 11907.599396549998
     },
     {
      "id": "120250252442610291",
@@ -2276,9 +2276,9 @@
     }
    ],
    "idag": {
-    "spend": 3833.14,
-    "kop": 4,
-    "roas": 1.613664,
+    "spend": 7325.06,
+    "kop": 5,
+    "roas": 0.998545,
     "tomt": false
    },
    "kampanjer": [
@@ -2419,21 +2419,21 @@
     },
     {
      "datum": "2026-09-19",
-     "spend": 11023.71,
+     "spend": 11024,
      "kop": 8,
-     "roas": 1.5919
+     "roas": 1.591858
     },
     {
      "datum": "2026-09-20",
-     "spend": 13152.36,
+     "spend": 13153.92,
      "kop": 7,
-     "roas": 1.324276
+     "roas": 1.324119
     }
    ],
    "idag": {
-    "spend": 4550.54,
-    "kop": 4,
-    "roas": 1.746474,
+    "spend": 4985.95,
+    "kop": 5,
+    "roas": 2.361502,
     "tomt": false
    },
    "kampanjer": [
@@ -2449,20 +2449,20 @@
     {
      "id": "120251471243740435",
      "namn": "UK LISTICLE Taköverdrag CARASHELL",
-     "spend": 9971.17,
+     "spend": 9971.73,
      "kop": 6,
-     "roas": 1.332794,
-     "cpa": 1661.8616666666667,
-     "intakt": 13289.51554898
+     "roas": 1.33272,
+     "cpa": 1661.955,
+     "intakt": 13289.524005599998
     },
     {
      "id": "120251471312320435",
      "namn": "AU LISTICLE Taköverdrag CARASHELL",
-     "spend": 6290.6,
+     "spend": 6291.57,
      "kop": 7,
-     "roas": 2.538618,
-     "cpa": 898.657142857143,
-     "intakt": 15969.430390800002
+     "roas": 2.538227,
+     "cpa": 898.7957142857142,
+     "intakt": 15969.43284639
     },
     {
      "id": "120251471347220435",
@@ -2476,11 +2476,11 @@
     {
      "id": "120251471271400435",
      "namn": "CA LISTICLE Taköverdrag CARASHELL",
-     "spend": 4983.9,
+     "spend": 4984.22,
      "kop": 2,
-     "roas": 0.800004,
-     "cpa": 2491.95,
-     "intakt": 3987.1399356
+     "roas": 0.799953,
+     "cpa": 2492.11,
+     "intakt": 3987.14174166
     },
     {
      "id": "120251436741400435",
@@ -2544,6 +2544,116 @@
      "roas": null,
      "cpa": null,
      "intakt": null
+    }
+   ],
+   "status": "ok",
+   "orsak": null
+  },
+  {
+   "id": "1619718346388201",
+   "namn": "Magiborsten FI",
+   "valuta": "SEK",
+   "aktiv": true,
+   "verksamhet": "Övrigt",
+   "etikett": "Magiborsten FI",
+   "dagar": [
+    {
+     "datum": "2026-08-22",
+     "spend": 1090.04,
+     "kop": 7,
+     "roas": 3.519458
+    },
+    {
+     "datum": "2026-08-23",
+     "spend": 1700.58,
+     "kop": 4,
+     "roas": 1.032477
+    },
+    {
+     "datum": "2026-08-24",
+     "spend": 1995.44,
+     "kop": 3,
+     "roas": 0.703354
+    },
+    {
+     "datum": "2026-08-25",
+     "spend": 0,
+     "kop": 0,
+     "roas": null
+    },
+    {
+     "datum": "2026-08-26",
+     "spend": 0,
+     "kop": 1,
+     "roas": null
+    },
+    {
+     "datum": "2026-08-28",
+     "spend": 0,
+     "kop": 0,
+     "roas": null
+    },
+    {
+     "datum": "2026-08-29",
+     "spend": 1604.52,
+     "kop": 3,
+     "roas": 0.662329
+    },
+    {
+     "datum": "2026-08-30",
+     "spend": 0,
+     "kop": 0,
+     "roas": null
+    },
+    {
+     "datum": "2026-08-31",
+     "spend": 0,
+     "kop": 0,
+     "roas": null
+    },
+    {
+     "datum": "2026-09-18",
+     "spend": 1397.48,
+     "kop": 1,
+     "roas": 1.026977
+    },
+    {
+     "datum": "2026-09-19",
+     "spend": 3843.2,
+     "kop": 3,
+     "roas": 1.11894
+    },
+    {
+     "datum": "2026-09-20",
+     "spend": 3453.95,
+     "kop": 5,
+     "roas": 2.310995
+    }
+   ],
+   "idag": {
+    "spend": 88.27,
+    "kop": 1,
+    "roas": 16.247536,
+    "tomt": false
+   },
+   "kampanjer": [
+    {
+     "id": "120251784514940199",
+     "namn": "CARASHELL_FI_Kattopeite Asuntovaunu | Launch 2026-09-18",
+     "spend": 4695.13,
+     "kop": 5,
+     "roas": 1.569839,
+     "cpa": 939.0260000000001,
+     "intakt": 7370.59818407
+    },
+    {
+     "id": "120251780248980199",
+     "namn": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
+     "spend": 3999.5,
+     "kop": 4,
+     "roas": 1.586936,
+     "cpa": 999.875,
+     "intakt": 6346.950532
     }
    ],
    "status": "ok",
@@ -2733,26 +2843,26 @@
     },
     {
      "datum": "2026-09-20",
-     "spend": 12650.22,
+     "spend": 12651.69,
      "kop": 36,
-     "roas": 2.872151
+     "roas": 2.871817
     }
    ],
    "idag": {
-    "spend": 5065.5,
-    "kop": 9,
-    "roas": 1.593633,
+    "spend": 5887.26,
+    "kop": 11,
+    "roas": 1.593921,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120252183519570233",
      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
-     "spend": 26071.21,
+     "spend": 26072.16,
      "kop": 58,
-     "roas": 2.996519,
-     "cpa": 449.5036206896552,
-     "intakt": 78122.87611799
+     "roas": 2.99641,
+     "cpa": 449.52,
+     "intakt": 78122.8809456
     },
     {
      "id": "120252183673160233",
@@ -2847,11 +2957,11 @@
     {
      "id": "120252299606860233",
      "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
-     "spend": 1702.59,
+     "spend": 1703.11,
      "kop": 2,
-     "roas": 0.52641,
-     "cpa": 851.295,
-     "intakt": 896.2604019
+     "roas": 0.526249,
+     "cpa": 851.555,
+     "intakt": 896.2599343899999
     },
     {
      "id": "120252268516440233",
@@ -2924,10 +3034,99 @@
     "id": "josh",
     "namn": "Josh Naelga",
     "roll": "redigerare",
-    "extraRoller": [],
+    "extraRoller": [
+     "produkttest"
+    ],
     "valuta": "USD",
-    "summa": 50.94,
+    "summa": 245.94,
     "rader": [
+     {
+      "uppdrag": "produkt_fardig",
+      "namn": "Färdig produkt",
+      "enhet": "per produkt",
+      "antal": 13,
+      "summa": 195,
+      "bevis": [
+       {
+        "vad": "K Gör din egen-kalender",
+        "datum": "2026-09-16",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/K-G-r-din-egen-kalender-3dd270ab908c81ef986ac2277d585c33"
+       },
+       {
+        "vad": "10 Fågelmatare med kamera",
+        "datum": "2026-09-14",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/10-F-gelmatare-med-kamera-3db270ab908c8164aea2df94bedf8df5"
+       },
+       {
+        "vad": "10 Hönsgårdsduk 145 × 109 cm",
+        "datum": "2026-09-12",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/10-H-nsg-rdsduk-145-109-cm-3d9270ab908c818692a8e8933bd06715"
+       },
+       {
+        "vad": "10 Snöflingor 25-pack",
+        "datum": "2026-09-12",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/10-Sn-flingor-25-pack-3d9270ab908c81908235c8a4cf55f8f0"
+       },
+       {
+        "vad": "8 Inomhustofflor Fodrade Herr 40–47",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/8-Inomhustofflor-Fodrade-Herr-40-47-3d8270ab908c81e5b9b4fd9b383353aa"
+       },
+       {
+        "vad": "8 Vedklyvborr Ø32 mm",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/8-Vedklyvborr-32-mm-3d8270ab908c81f68c4af5ecce2424ab"
+       },
+       {
+        "vad": "7 Stegstöd 2-pack",
+        "datum": "2026-09-09",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/7-Stegst-d-2-pack-3d6270ab908c8135a725e7c744b2eaaf"
+       },
+       {
+        "vad": "7 Termoskydd Husbil 211 × 171 cm",
+        "datum": "2026-09-09",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/7-Termoskydd-Husbil-211-171-cm-3d6270ab908c819eb318f53ce4d2daf5"
+       },
+       {
+        "vad": "6 Adventskalender Fiskedrag",
+        "datum": "2026-09-07",
+        "text": "Testing · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/6-Adventskalender-Fiskedrag-3d4270ab908c813b96c6d4c5ff60266a"
+       },
+       {
+        "vad": "6 Taköverdrag Husvagn 6,5 × 3 m",
+        "datum": "2026-09-07",
+        "text": "Testing · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/6-Tak-verdrag-Husvagn-6-5-3-m-3d4270ab908c818ea3c2c8026e517f72"
+       },
+       {
+        "vad": "6 Staketstolpsbygel 2-pack (2 st ingår)",
+        "datum": "2026-09-07",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/6-Staketstolpsbygel-2-pack-2-st-ing-r-3d4270ab908c81989600fb292a0b9b5a"
+       },
+       {
+        "vad": "Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/Barnens-Smyckeskalender-24-P-rlor-H-ngen-och-Armband-3d8270ab908c811d942de83b425f0a95"
+       },
+       {
+        "vad": "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/G-r-Din-Egen-Adventskalender-24-tomma-askar-att-fylla-3d8270ab908c815da21af889a6e1b96a"
+       }
+      ]
+     },
      {
       "uppdrag": "spend_andel",
       "namn": "Andel av annonsspenden",
@@ -2945,10 +3144,14 @@
      }
     ],
     "program": {
-     "id": "redigerare",
-     "namn": "Videoredigerare"
+     "id": "produkttest",
+     "namn": "Produkttest"
     },
     "programs": [
+     {
+      "id": "produkttest",
+      "namn": "Produkttest"
+     },
      {
       "id": "redigerare",
       "namn": "Videoredigerare"
@@ -2959,10 +3162,93 @@
     "id": "annabelle",
     "namn": "Annabelle Gonzales",
     "roll": "redigerare",
-    "extraRoller": [],
+    "extraRoller": [
+     "produkttest"
+    ],
     "valuta": "USD",
-    "summa": 26.85,
+    "summa": 206.85,
     "rader": [
+     {
+      "uppdrag": "produkt_fardig",
+      "namn": "Färdig produkt",
+      "enhet": "per produkt",
+      "antal": 12,
+      "summa": 180,
+      "bevis": [
+       {
+        "vad": "K Dinosauriekalender",
+        "datum": "2026-09-16",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/K-Dinosauriekalender-3dd270ab908c81f1ad72fb3ec91dcdf3"
+       },
+       {
+        "vad": "10 Snöskyffel utan batteri",
+        "datum": "2026-09-12",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/10-Sn-skyffel-utan-batteri-3d9270ab908c81bb9122d07934079a5b"
+       },
+       {
+        "vad": "8 Biltvättborste Teleskop 100 cm",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/8-Biltv-ttborste-Teleskop-100-cm-3d8270ab908c811b815fcf29811ba35b"
+       },
+       {
+        "vad": "8 Sotarset Böjliga Stänger",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/8-Sotarset-B-jliga-St-nger-3d8270ab908c8175ab6bccfeec3bc967"
+       },
+       {
+        "vad": "8 Solcellslampa 210 LED Sensor",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/8-Solcellslampa-210-LED-Sensor-3d8270ab908c81b5bdfffc417f8fd125"
+       },
+       {
+        "vad": "7 Solcellslarm 2-pack",
+        "datum": "2026-09-09",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/7-Solcellslarm-2-pack-3d6270ab908c818dac9ef70dd2b67b1f"
+       },
+       {
+        "vad": "7 Infartslarm Trådlöst",
+        "datum": "2026-09-09",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/7-Infartslarm-Tr-dl-st-3d6270ab908c8197aa4afea4b7e3904b"
+       },
+       {
+        "vad": "7 Sittkäpp Hopfällbar",
+        "datum": "2026-09-09",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/7-Sittk-pp-Hopf-llbar-3d6270ab908c81b6bd00e9cf0bdcc5a9"
+       },
+       {
+        "vad": "6 Adventskalender Racingbilar",
+        "datum": "2026-09-07",
+        "text": "Testing · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/6-Adventskalender-Racingbilar-3d4270ab908c810fbdd5cb9a22e5b441"
+       },
+       {
+        "vad": "6 Isolerad Utekattkoja",
+        "datum": "2026-09-07",
+        "text": "Testing · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/6-Isolerad-Utekattkoja-3d4270ab908c814c94cdc5db81c57a67"
+       },
+       {
+        "vad": "Sprit Adventskalender – 24 dekorflaskor",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/Sprit-Adventskalender-24-dekorflaskor-3d8270ab908c81bebe78fb69431af33e"
+       },
+       {
+        "vad": "Pussel Adventskalender – 24 Dagar med Pusselbitar",
+        "datum": "2026-09-11",
+        "text": "Ads review · Video - Pending Approval",
+        "lank": "https://app.notion.com/p/Pussel-Adventskalender-24-Dagar-med-Pusselbitar-3d8270ab908c81b090d1e8e3cb9a9563"
+       }
+      ]
+     },
      {
       "uppdrag": "spend_andel",
       "namn": "Andel av annonsspenden",
@@ -2980,13 +3266,56 @@
      }
     ],
     "program": {
-     "id": "redigerare",
-     "namn": "Videoredigerare"
+     "id": "produkttest",
+     "namn": "Produkttest"
     },
     "programs": [
      {
+      "id": "produkttest",
+      "namn": "Produkttest"
+     },
+     {
       "id": "redigerare",
       "namn": "Videoredigerare"
+     }
+    ]
+   },
+   {
+    "id": "mechile",
+    "namn": "Mechile Delos Santos",
+    "roll": "support_chef",
+    "extraRoller": [],
+    "valuta": "USD",
+    "summa": 20,
+    "rader": [
+     {
+      "uppdrag": "sop_tackning",
+      "namn": "Rutin för varje topp-ärende",
+      "enhet": "per månad",
+      "antal": 1,
+      "summa": 20,
+      "bevis": [
+       {
+        "vad": "2026-09 · 1 butik",
+        "datum": "2026-09-14",
+        "text": "baverbutiken: alla topp-ärenden har en rutin · baverbutiken: alla topp-ärenden har en rutin",
+        "lank": ""
+       }
+      ]
+     }
+    ],
+    "program": {
+     "id": "va",
+     "namn": "Kundtjänst"
+    },
+    "programs": [
+     {
+      "id": "va",
+      "namn": "Kundtjänst"
+     },
+     {
+      "id": "support_chef",
+      "namn": "Head of customer support"
      }
     ]
    },
@@ -3153,7 +3482,7 @@
     "programs": []
    }
   ],
-  "summa": 92.23,
+  "summa": 487.23,
   "otilldelat": [
    {
     "uppdrag": "recension_med_namn",
@@ -10390,306 +10719,9 @@
      "lank": "https://judge.me/reviews/1319754117"
     },
     "program": "va"
-   },
-   {
-    "uppdrag": "sop_tackning",
-    "orsak": "ingen är tilldelad baverbutiken",
-    "bevis": {
-     "vad": "baverbutiken 2026-W37",
-     "datum": "2026-09-13",
-     "text": "alla topp-ärenden har en rutin",
-     "lank": ""
-    },
-    "program": "support_chef"
-   },
-   {
-    "uppdrag": "sop_tackning",
-    "orsak": "ingen är tilldelad baverbutiken",
-    "bevis": {
-     "vad": "baverbutiken 2026-W38",
-     "datum": "2026-09-14",
-     "text": "alla topp-ärenden har en rutin",
-     "lank": ""
-    },
-    "program": "support_chef"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "K Gör din egen-kalender",
-     "datum": "2026-09-16",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/K-G-r-din-egen-kalender-3dd270ab908c81ef986ac2277d585c33"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "K Dinosauriekalender",
-     "datum": "2026-09-16",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/K-Dinosauriekalender-3dd270ab908c81f1ad72fb3ec91dcdf3"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "10 Fågelmatare med kamera",
-     "datum": "2026-09-14",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/10-F-gelmatare-med-kamera-3db270ab908c8164aea2df94bedf8df5"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "10 Hönsgårdsduk 145 × 109 cm",
-     "datum": "2026-09-12",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/10-H-nsg-rdsduk-145-109-cm-3d9270ab908c818692a8e8933bd06715"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "10 Snöflingor 25-pack",
-     "datum": "2026-09-12",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/10-Sn-flingor-25-pack-3d9270ab908c81908235c8a4cf55f8f0"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "10 Snöskyffel utan batteri",
-     "datum": "2026-09-12",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/10-Sn-skyffel-utan-batteri-3d9270ab908c81bb9122d07934079a5b"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "8 Biltvättborste Teleskop 100 cm",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/8-Biltv-ttborste-Teleskop-100-cm-3d8270ab908c811b815fcf29811ba35b"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "8 Sotarset Böjliga Stänger",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/8-Sotarset-B-jliga-St-nger-3d8270ab908c8175ab6bccfeec3bc967"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "8 Solcellslampa 210 LED Sensor",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/8-Solcellslampa-210-LED-Sensor-3d8270ab908c81b5bdfffc417f8fd125"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "8 Inomhustofflor Fodrade Herr 40–47",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/8-Inomhustofflor-Fodrade-Herr-40-47-3d8270ab908c81e5b9b4fd9b383353aa"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "8 Vedklyvborr Ø32 mm",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/8-Vedklyvborr-32-mm-3d8270ab908c81f68c4af5ecce2424ab"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "7 Stegstöd 2-pack",
-     "datum": "2026-09-09",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/7-Stegst-d-2-pack-3d6270ab908c8135a725e7c744b2eaaf"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "7 Solcellslarm 2-pack",
-     "datum": "2026-09-09",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/7-Solcellslarm-2-pack-3d6270ab908c818dac9ef70dd2b67b1f"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "7 Infartslarm Trådlöst",
-     "datum": "2026-09-09",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/7-Infartslarm-Tr-dl-st-3d6270ab908c8197aa4afea4b7e3904b"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "7 Termoskydd Husbil 211 × 171 cm",
-     "datum": "2026-09-09",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/7-Termoskydd-Husbil-211-171-cm-3d6270ab908c819eb318f53ce4d2daf5"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "7 Sittkäpp Hopfällbar",
-     "datum": "2026-09-09",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/7-Sittk-pp-Hopf-llbar-3d6270ab908c81b6bd00e9cf0bdcc5a9"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "6 Adventskalender Fiskedrag",
-     "datum": "2026-09-07",
-     "text": "Testing · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/6-Adventskalender-Fiskedrag-3d4270ab908c813b96c6d4c5ff60266a"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "6 Adventskalender Racingbilar",
-     "datum": "2026-09-07",
-     "text": "Testing · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/6-Adventskalender-Racingbilar-3d4270ab908c810fbdd5cb9a22e5b441"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "6 Isolerad Utekattkoja",
-     "datum": "2026-09-07",
-     "text": "Testing · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/6-Isolerad-Utekattkoja-3d4270ab908c814c94cdc5db81c57a67"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "6 Taköverdrag Husvagn 6,5 × 3 m",
-     "datum": "2026-09-07",
-     "text": "Testing · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/6-Tak-verdrag-Husvagn-6-5-3-m-3d4270ab908c818ea3c2c8026e517f72"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "6 Staketstolpsbygel 2-pack (2 st ingår)",
-     "datum": "2026-09-07",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/6-Staketstolpsbygel-2-pack-2-st-ing-r-3d4270ab908c81989600fb292a0b9b5a"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "Sprit Adventskalender – 24 dekorflaskor",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/Sprit-Adventskalender-24-dekorflaskor-3d8270ab908c81bebe78fb69431af33e"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "Barnens Smyckeskalender – 24 Pärlor, Hängen och Armband",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/Barnens-Smyckeskalender-24-P-rlor-H-ngen-och-Armband-3d8270ab908c811d942de83b425f0a95"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Annabelle Gonzales\" har inget konto",
-    "bevis": {
-     "vad": "Pussel Adventskalender – 24 Dagar med Pusselbitar",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/Pussel-Adventskalender-24-Dagar-med-Pusselbitar-3d8270ab908c81b090d1e8e3cb9a9563"
-    },
-    "program": "produkttest"
-   },
-   {
-    "uppdrag": "produkt_godkand",
-    "orsak": "\"Josh Naelga\" har inget konto",
-    "bevis": {
-     "vad": "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
-     "datum": "2026-09-11",
-     "text": "Ads review · Video - Pending Approval",
-     "lank": "https://app.notion.com/p/G-r-Din-Egen-Adventskalender-24-tomma-askar-att-fylla-3d8270ab908c815da21af889a6e1b96a"
-    },
-    "program": "produkttest"
    }
   ],
-  "raknat": "2026-09-21T12:57:48.169Z",
+  "raknat": "2026-09-21T14:18:45.810Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -10788,7 +10820,8 @@
      {
       "id": "tvist_besvarad",
       "namn": "Tvist besvarad med bevis i tid",
-      "belopp": 3,
+      "belopp": 1,
+      "belopp_kommentar": "Var 3. Axels beslut 2026-09-21: 'alldeles för mycket, halvera minst' — sänkt till 1 (sidan visar hela dollar).",
       "enhet": "per tvist",
       "hur": "Svara på tvisten INNAN sista svarsdagen och bifoga spårningsbevis: fraktbolagets skanning, orderbekräftelsen och mejltråden.",
       "mats": "Tvisten måste vara besvarad (inte 'needs response') när svarsdagen passerar.",
@@ -10804,36 +10837,39 @@
      {
       "id": "tvist_vunnen",
       "namn": "Vunnen tvist",
-      "belopp": 10,
+      "belopp": 5,
+      "belopp_kommentar": "Var 10. Halverat 2026-09-21 på Axels beslut.",
       "enhet": "per vunnen tvist",
-      "hur": "Vinner vi tvisten får du tio dollar. Chargebacks är svårast och värda mest.",
+      "hur": "Vinner vi tvisten får du fem dollar. Chargebacks är svårast och värda mest.",
       "mats": "Shopify säger won/lost. Bara tvister med svar räknas.",
       "kalla": "tvister",
       "auto": true,
       "en": {
        "namn": "Dispute won",
        "enhet": "per dispute won",
-       "hur": "If we win the dispute you get ten dollars. Chargebacks are the hardest and worth the most.",
+       "hur": "If we win the dispute you get five dollars. Chargebacks are the hardest and worth the most.",
        "mats": "Shopify says won/lost. Only disputes with a response count."
       }
      },
      {
       "id": "tom_inkorg",
-      "namn": "Tom inkorg på fredag",
+      "namn": "Tom inkorg när veckan är slut",
       "belopp": 15,
       "enhet": "per vecka",
-      "hur": "Färre än 10 obesvarade ärenden när veckan tar slut.",
-      "mats": "Kundtjänstrapportens 'obesvarade' på fredagen.",
+      "hur": "Färre än 10 obesvarade ärenden i ALLA dina butiker när veckan tar slut. Missar en butik betalas veckan inte.",
+      "mats": "Kundtjänstrapportens 'obesvarade' per butik, en gång i veckan. En utbetalning per vecka, hur många butiker du än har.",
       "kalla": "kundtjanst",
       "auto": true,
+      "omfang": "vecka",
+      "omfang_kommentar": "vecka = en utbetalning per person och vecka när alla personens butiker klarar kravet (Axel 2026-09-21: 'alla inkorgar'; Mechile svarar för allt och jobbar alla dagar, så fredagen är borta ur texten).",
       "krav": {
        "obesvarade_under": 10
       },
       "en": {
-       "namn": "Empty inbox on Friday",
+       "namn": "Empty inbox at the end of the week",
        "enhet": "per week",
-       "hur": "Fewer than 10 unanswered tickets when the week ends.",
-       "mats": "The support report's 'unanswered' on Friday."
+       "hur": "Fewer than 10 unanswered tickets in ALL your stores when the week ends. If one store misses, the week is not paid.",
+       "mats": "The support report's 'unanswered' per store, once a week. One payout per week no matter how many stores you cover."
       }
      },
      {
@@ -10841,18 +10877,19 @@
       "namn": "Svar inom ett halvt dygn",
       "belopp": 10,
       "enhet": "per vecka",
-      "hur": "Håll medianen på svarstiden under 12 timmar en hel vecka.",
-      "mats": "Kundtjänstrapportens mediansvarstid.",
+      "hur": "Håll medianen på svarstiden under 12 timmar en hel vecka — i alla dina inkorgar.",
+      "mats": "Kundtjänstrapportens mediansvarstid per butik. En utbetalning per vecka när alla dina butiker klarar det.",
       "kalla": "kundtjanst",
       "auto": true,
+      "omfang": "vecka",
       "krav": {
        "median_timmar_under": 12
       },
       "en": {
        "namn": "Answer within half a day",
        "enhet": "per week",
-       "hur": "Keep the median response time under 12 hours for a whole week.",
-       "mats": "The support report's median response time."
+       "hur": "Keep the median response time under 12 hours for a whole week — in all your inboxes.",
+       "mats": "The support report's median response time per store. One payout per week when all your stores make it."
       }
      }
     ],
@@ -10873,16 +10910,16 @@
       "namn": "Andel av teamets bonus",
       "belopp": 0.1,
       "enhet": "10 % av vad VA-teamet tjänar",
-      "hur": "Allt dina VA:er tjänar ger dig tio procent på toppen. Lär dem skaffa recensioner så tjänar ni båda.",
-      "mats": "Räknas på teamets utbetalda bonus samma månad.",
+      "hur": "Allt dina VA:er tjänar ger dig tio procent på toppen. Lär dem skaffa recensioner så tjänar ni båda. Dina egna uppdrag räknas inte in — de betalas för sig.",
+      "mats": "Räknas på teamets utbetalda bonus samma månad, utan dina egna rader. Är du ensam i teamet blir andelen noll tills fler anställs.",
       "kalla": "team",
       "auto": true,
       "andel": true,
       "en": {
        "namn": "Share of the team bonus",
        "enhet": "10 % of what the VA team earns",
-       "hur": "Everything your VAs earn gives you ten percent on top. Teach them to collect reviews and you both earn.",
-       "mats": "Calculated on the team's paid bonus the same month."
+       "hur": "Everything your VAs earn gives you ten percent on top. Teach them to collect reviews and you both earn. Your own tasks are not included — they are paid on their own.",
+       "mats": "Calculated on the team's paid bonus the same month, without your own rows. If you are alone in the team the share is zero until more people are hired."
       }
      },
      {
@@ -10894,6 +10931,7 @@
       "mats": "Veckorapportens riskpoäng vid månadens sista körning.",
       "kalla": "kundtjanst",
       "auto": true,
+      "omfang": "brand-manad",
       "krav": {
        "risk_under": 25
       },
@@ -10910,9 +10948,10 @@
       "belopp": 20,
       "enhet": "per månad",
       "hur": "Varje ärendetyp i topp 5 ska ha en SOP i Notion. Är alla täckta hela månaden får du tjugo dollar.",
-      "mats": "SOP-täckningen i veckorapporten.",
+      "mats": "SOP-täckningen i veckorapporten — varje vecka i månaden, i alla dina butiker.",
       "kalla": "kundtjanst",
       "auto": true,
+      "omfang": "manad",
       "en": {
        "namn": "A routine for every top ticket type",
        "enhet": "per month",
@@ -10931,76 +10970,33 @@
     "roller": [
      "produkttest"
     ],
-    "beskrivning": "Du tjänar mest när en produkt du hittat faktiskt säljer. Trappan stiger hela vägen till skalning.",
+    "kommentar": "Axels beslut 2026-09-21: trappan 2 / 5 / 25 / 100 är ersatt med 15 dollar per FÄRDIG produkt. Andelen av spenden (0,4 % på de egna annonserna, bara Sverige) är redigerarprogrammet — Josh och Annabelle får den redan där, så den skrivs inte en gång till här. Trappans steg finns kvar i kallor.mjs för sidan Produkttest (var produkterna står), men bara 'produkt_fardig' betalar.",
+    "beskrivning": "Du tjänar 15 dollar för varje produkt du gör klar för annonser. Redigerar du dessutom annonserna själv får du 0,4 % av spenden på dem (bara Sverige) — det står under Videoredigerare.",
     "uppdrag": [
      {
-      "id": "produkt_godkand",
-      "namn": "Produkt godkänd för test",
-      "belopp": 2,
+      "id": "produkt_fardig",
+      "namn": "Färdig produkt",
+      "belopp": 15,
       "enhet": "per produkt",
-      "hur": "Research klar, sida och underlag godkänt — produkten går vidare till annonser.",
-      "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig.",
+      "hur": "Research klar, sida och underlag godkänt — produkten är klar för annonser.",
+      "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig. Betalas en gång per produkt, den månad raden nådde dit.",
       "kalla": "produkttest",
       "auto": true,
+      "krav": {
+       "steg": "produkt_godkand"
+      },
+      "krav_kommentar": "steg = vilket trappsteg i kallor.mjs som utlöser betalningen. 'produkt_godkand' = Ads review eller längre.",
       "en": {
-       "namn": "Product approved for testing",
+       "namn": "Finished product",
        "enhet": "per product",
-       "hur": "Research done, page and material approved — the product moves on to ads.",
-       "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner."
-      }
-     },
-     {
-      "id": "produkt_testad",
-      "namn": "Produkten fick sin chans",
-      "belopp": 5,
-      "enhet": "per produkt",
-      "hur": "Produkten har spenderat över 2 000 kr i annonser — den blev verkligen testad.",
-      "mats": "Status 'Has gotten over 2000 sek spend' eller mätt spend i annonskontot.",
-      "kalla": "produkttest",
-      "auto": true,
-      "en": {
-       "namn": "Product got its chance",
-       "enhet": "per product",
-       "hur": "The product has spent over 2 000 SEK on ads — it really was tested.",
-       "mats": "Status 'Has gotten over 2000 sek spend' or measured spend in the ad account."
-      }
-     },
-     {
-      "id": "produkt_lonsam",
-      "namn": "Produkten går med vinst",
-      "belopp": 25,
-      "enhet": "per produkt",
-      "hur": "Produkten är märkt Profitable — den tjänar pengar över break-even.",
-      "mats": "Typ 'Profitable' i Product test center.",
-      "kalla": "produkttest",
-      "auto": true,
-      "en": {
-       "namn": "Product is profitable",
-       "enhet": "per product",
-       "hur": "The product is marked Profitable — it makes money above break-even.",
-       "mats": "Type 'Profitable' in Product test center."
-      }
-     },
-     {
-      "id": "produkt_skalad",
-      "namn": "Produkten skalas",
-      "belopp": 100,
-      "enhet": "per produkt",
-      "hur": "Produkten går till 'Continue to scale' — den blir en av butikens bärare.",
-      "mats": "Status 'Continue to scale' eller 'Hires for this product'.",
-      "kalla": "produkttest",
-      "auto": true,
-      "en": {
-       "namn": "Product is scaling",
-       "enhet": "per product",
-       "hur": "The product moves to 'Continue to scale' — it becomes one of the store's earners.",
-       "mats": "Status 'Continue to scale' or 'Hires for this product'."
+       "hur": "Research done, page and material approved — the product is ready for ads.",
+       "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner. Paid once per product, in the month the row got there."
       }
      }
     ],
     "en": {
      "namn": "Product testing",
-     "beskrivning": "You earn the most when a product you found actually sells. The ladder climbs all the way to scaling."
+     "beskrivning": "You earn 15 dollars for every product you get ready for ads. If you also edit the ads yourself you get 0.4 % of the spend on them (Sweden only) — that is listed under Video editors."
     }
    },
    "redigerare": {
@@ -11035,7 +11031,7 @@
    }
   },
   "godkannande": {
-   "kommentar": "Inrapporterade insatser (en recension VA:n hittat själv, en tvist som inte syns i datan) måste godkännas innan de betalas. Ägare och Head of customer support godkänner.",
+   "kommentar": "Inrapporterade insatser (en recension VA:n hittat själv, en tvist som inte syns i datan) måste godkännas innan de betalas. Ägare och Head of customer support godkänner — men aldrig sina egna rader: servern svarar 403 när personId på insatsen är den inloggades. Mechile är både VA och Head of support (2026-09-21), så hennes egna insatser godkänns av Axel.",
    "roller_som_godkanner": [
     "agare",
     "chef",
@@ -11074,7 +11070,9 @@
    "brands": [],
    "notionNamn": "Josh Naelga",
    "alias": [],
-   "extraRoller": []
+   "extraRoller": [
+    "produkttest"
+   ]
   },
   {
    "id": "annabelle",
@@ -11086,7 +11084,22 @@
    "alias": [
     "Anna G"
    ],
-   "extraRoller": []
+   "extraRoller": [
+    "produkttest"
+   ]
+  },
+  {
+   "id": "mechile",
+   "namn": "Mechile Delos Santos",
+   "fornamn": "Mechile",
+   "roll": "support_chef",
+   "brands": [
+    "*"
+   ],
+   "notionNamn": "",
+   "alias": [],
+   "extraRoller": [],
+   "kommentar": "Axels besked 2026-09-21: 'Hon är ansvarig för allt just nu' — både VA och Head of customer support, alla butiker (*). Rollen support_chef är med i programmet Kundtjänst, så hon tjänar VA-uppdragen direkt; teamandelen räknas utan hennes egna rader. E-post och exakt Notion-namn saknas — inloggningen skapar Axel på sidan Konton och kopplar till personId mechile."
   },
   {
    "id": "gilz",
