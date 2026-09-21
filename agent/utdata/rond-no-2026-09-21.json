@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "idag": "2026-09-21",
+    "hamtad": "2026-09-21T05:55:00Z",
+    "marknad": "NO",
+    "varningar": [
+      "Kontodatan är hämtad med attribution \"kontots standard — MCP-verktyget tar inte action_attribution_windows (mätt 2026-09-21)\", inte \"7d_click\" — ROAS kan vara uppblåst av visningsköp."
+    ]
+  },
+  "rader": [
+    {
+      "id": "120252299777560233",
+      "namn": "Dinosaur Adventskalender NO | BE-ROAS 1,46 | 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 1761.24,
+      "spendTotal": 1809.19,
+      "roas3d": 1.251624,
+      "kop3d": 4,
+      "roasTotal": 1.218451,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "ATGARDSTRAPPAN",
+        "rubrik": "Stäng av — om den inte har potential",
+        "motivering": "-11,4 % vinst av omsättningen (ROAS 1,25 mot break-even 1,46). Passerad 1 500 kr utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": -11.403048173511598,
+        "breakEven": 1.46,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252299606860233",
+      "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 1700.11,
+      "spendTotal": 1785.38,
+      "roas3d": 0.527178,
+      "kop3d": 2,
+      "roasTotal": null,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "ATGARDSTRAPPAN",
+        "rubrik": "Bränner pengar — stäng av om potential saknas",
+        "motivering": "1 700 kr på 3 dagar och bara 2 köp, utan att gå ihop. ROAS 0,53 mot break-even 1,62. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": null,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252183673160233",
+      "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
+      "lage": "test",
+      "budget": 3600,
+      "spend3d": 9181.15,
+      "spendTotal": 20919,
+      "roas3d": 2.886527,
+      "kop3d": 17,
+      "roasTotal": 2.843127,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 1 dag sedan. Nästa ändring tidigast efter 3 dagar.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": 26.705984739539918,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "lage": "test",
+      "budget": 4000,
+      "spend3d": 11629.74,
+      "spendTotal": 31666.96,
+      "roas3d": 3.328918,
+      "kop3d": 27,
+      "roasTotal": 3.19993,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Låt vara — taket nått",
+        "motivering": "31,7 % vinst av omsättningen (ROAS 3,33 mot break-even 1,62). Går bra, men 4 000 kr per dag är taket. Vi skalar inte högre.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 31.6886043549582,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 3000.65,
+      "spendTotal": 14834.64,
+      "roas3d": 2.508526,
+      "kop3d": 17,
+      "roasTotal": 2.049114,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Låt vara",
+        "motivering": "21,5 % vinst av omsättningen (ROAS 2,51 mot break-even 1,63). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 21.485645599645743,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "lage": "test",
+      "budget": 1950,
+      "spend3d": 4929.2,
+      "spendTotal": 24912.21,
+      "roas3d": 1.725134,
+      "kop3d": 12,
+      "roasTotal": 2.418879,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 2 dagar sedan. Nästa ändring tidigast efter 3 dagar.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": 3.3831816646077373,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    }
+  ],
+  "plan": {
+    "sparrad": false,
+    "orsak": null,
+    "atgarder": [
+      {
+        "kampanj_id": "120252299777560233",
+        "namn": "Dinosaur Adventskalender NO | BE-ROAS 1,46 | 2026-09-19",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "-11,4 % vinst av omsättningen (ROAS 1,25 mot break-even 1,46). Passerad 1 500 kr utan att gå plus. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv utan köp, pausa spendtjuven och ge kampanjen ETT dygn till. Saknas potentialen — eller är förlängningen redan använd — stängs hela kampanjen av i dag.",
+        "typ": "trappa"
+      },
+      {
+        "kampanj_id": "120252299606860233",
+        "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "1 700 kr på 3 dagar och bara 2 köp, utan att gå ihop. ROAS 0,53 mot break-even 1,62. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "typ": "trappa"
+      }
+    ],
+    "uppskjutna": [],
+    "gammalTotal": 12550,
+    "nyTotal": 12550
+  },
+  "annonsbehov": [],
+  "veckokvot": [
+    {
+      "kampanj_id": "120252299777560233",
+      "namn": "Dinosaur Adventskalender NO | BE-ROAS 1,46 | 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252299606860233",
+      "namn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252183673160233",
+      "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252183519570233",
+      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120252102071560233",
+      "namn": "Arbeidslampe NO | BE-ROAS 1,63 | 2026-09-06",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120251996323340233",
+      "namn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+      "antal": 3,
+      "nyaKoncept": 1
+    }
+  ]
+}

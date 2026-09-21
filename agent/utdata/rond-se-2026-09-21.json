@@ -1,0 +1,548 @@
+{
+  "meta": {
+    "idag": "2026-09-21",
+    "hamtad": "2026-09-21T05:55:00Z",
+    "marknad": "SE",
+    "varningar": [
+      "Kontodatan är hämtad med attribution \"kontots standard — MCP-verktyget tar inte action_attribution_windows (mätt 2026-09-21)\", inte \"7d_click\" — ROAS kan vara uppblåst av visningsköp.",
+      "Bälteslipmaskinen: Axel planerar att höja priset. När det sker: ändra pris_sek här, så räknas break-even om automatiskt, och uppdatera talet i kampanjnamnet."
+    ]
+  },
+  "rader": [
+    {
+      "id": "120250284693380291",
+      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+      "lage": "test",
+      "budget": 1800,
+      "spend3d": 2735.35,
+      "spendTotal": 3058.43,
+      "roas3d": 4.353227,
+      "kop3d": 24,
+      "roasTotal": 4.043447,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": 39.14033662529783,
+        "breakEven": 1.61,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250284567670291",
+      "namn": "Hönsgårdsduken 145 × 109 cm | BE ROAS 1.62 | Launch 2026-09-19",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 1592.79,
+      "spendTotal": 1623,
+      "roas3d": null,
+      "kop3d": null,
+      "roasTotal": null,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "ATGARDSTRAPPAN",
+        "rubrik": "Bränner pengar — stäng av om potential saknas",
+        "motivering": "1 593 kr på 3 dagar och bara okänt antal köp, utan att gå ihop. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": null,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250268503590291",
+      "namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 2944.95,
+      "spendTotal": 3276.31,
+      "roas3d": 2.291448,
+      "kop3d": 11,
+      "roasTotal": 2.208948,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Låt vara",
+        "motivering": "18,5 % vinst av omsättningen (ROAS 2,29 mot break-even 1,61). Mellan 16 och 25 % rör vi ingenting. Nästa koll om 3 dagar.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 18.471273506062207,
+        "breakEven": 1.61,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250268474110291",
+      "namn": "Biltvättborsten med Teleskopskaft | BE ROAS 1.67 | Launch 2026-09-18",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 2976.96,
+      "spendTotal": 3088.52,
+      "roas3d": 1.878762,
+      "kop3d": 7,
+      "roasTotal": 1.8109,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "6,7 % vinst av omsättningen (ROAS 1,88 mot break-even 1,67). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 6.653699916686772,
+        "breakEven": 1.67,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250253948980291",
+      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+      "lage": "test",
+      "budget": 1200,
+      "spend3d": 3595.79,
+      "spendTotal": 4740.19,
+      "roas3d": 1.811146,
+      "kop3d": 8,
+      "roasTotal": 2.256112,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "6,5 % vinst av omsättningen (ROAS 1,81 mot break-even 1,62). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 6.514734760460572,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250253867730291",
+      "namn": "Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17",
+      "lage": "test",
+      "budget": 1200,
+      "spend3d": 3260.94,
+      "spendTotal": 4255.16,
+      "roas3d": 1.373622,
+      "kop3d": 2,
+      "roasTotal": 1.71547,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "ATGARDSTRAPPAN",
+        "rubrik": "Bränner pengar — stäng av om potential saknas",
+        "motivering": "3 261 kr på 3 dagar och bara 2 köp, utan att gå ihop. ROAS 1,37 mot break-even 1,65. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": null,
+        "breakEven": 1.65,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250252311730291",
+      "namn": "Taköverdraget LISTICLE LAGERRENSNING",
+      "lage": "test",
+      "budget": 1000,
+      "spend3d": 2943.4,
+      "spendTotal": 4392.12,
+      "roas3d": 3.615207,
+      "kop3d": 9,
+      "roasTotal": 3.744433,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "SAKNAR_BREAK_EVEN",
+        "rubrik": "Break-even saknas",
+        "motivering": "Ingen dom går att fälla — break-even saknas i kampanjnamnet. Sätt talet i kampanjnamnet först.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": null,
+        "breakEven": null,
+        "breakEvenKalla": "saknas i kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250175763810291",
+      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+      "lage": "test",
+      "budget": 2300,
+      "spend3d": 7247.35,
+      "spendTotal": 18743.74,
+      "roas3d": 1.861908,
+      "kop3d": 19,
+      "roasTotal": 2.670358,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "LAT_VARA",
+        "rubrik": "Testas — går plus, rörs inte",
+        "motivering": "8,4 % vinst av omsättningen (ROAS 1,86 mot break-even 1,61). Testprodukt på plus behåller sin testbudget. Är marginalen tunn är det priset som ska ses över, inte budgeten.",
+        "nyBudget": null,
+        "zon": "hold",
+        "vinstProcent": 8.403454750357797,
+        "breakEven": 1.61,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250147343350291",
+      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+      "lage": "test",
+      "budget": 16000,
+      "spend3d": 44433.59,
+      "spendTotal": 87663.72,
+      "roas3d": 3.257824,
+      "kop3d": 115,
+      "roasTotal": 3.85506,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "MANUELL",
+        "rubrik": "Manuell budget — stark",
+        "motivering": "30,7 % vinst av omsättningen (ROAS 3,26 mot break-even 1,63). Budgeten 16 000 kr ligger över motorns tak 4 000 kr — Axels manuella zon. Går plus (stark). Lämnas som den är.",
+        "nyBudget": null,
+        "zon": "up",
+        "vinstProcent": 30.654357960247285,
+        "breakEven": 1.63,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250134672020291",
+      "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+      "lage": "test",
+      "budget": 500,
+      "spend3d": 1694.6,
+      "spendTotal": 11395.46,
+      "roas3d": 1.59011,
+      "kop3d": 4,
+      "roasTotal": 1.854747,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "RAKNA_BACKDAGAR",
+        "rubrik": "Ligg kvar på golvet — går plus över livstiden",
+        "motivering": "-1,2 % vinst av omsättningen (ROAS 1,59 mot break-even 1,62). Men livstids-ROAS 1,85 ligger över break-even 1,62 — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag. Ligger redan på 500 kr. 1 back-dygn i rad — 4 kvar innan den stängs av.",
+        "nyBudget": null,
+        "zon": "stop",
+        "vinstProcent": -1.1603359065693986,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false,
+        "livstidssparr": true
+      }
+    },
+    {
+      "id": "120250009325850291",
+      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+      "lage": "test",
+      "budget": 3400,
+      "spend3d": 8654.81,
+      "spendTotal": 35172.77,
+      "roas3d": 3.425555,
+      "kop3d": 49,
+      "roasTotal": 3.105476,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "SKALA",
+        "rubrik": "Skala upp 20 %",
+        "motivering": "32,5 % vinst av omsättningen (ROAS 3,43 mot break-even 1,62). Ändra från 3 400 kr till 4 000 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "nyBudget": 4000,
+        "zon": "up",
+        "vinstProcent": 32.53604520893082,
+        "breakEven": 1.62,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120250001079150291",
+      "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+      "lage": "test",
+      "budget": 600,
+      "spend3d": 1514.18,
+      "spendTotal": 38247.7,
+      "roas3d": 4.127356,
+      "kop3d": 8,
+      "roasTotal": 2.427413,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "SKALA",
+        "rubrik": "Skala upp 20 %",
+        "motivering": "42,0 % vinst av omsättningen (ROAS 4,13 mot break-even 1,51). Ändra från 600 kr till 700 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "nyBudget": 700,
+        "zon": "up",
+        "vinstProcent": 41.996579514121414,
+        "breakEven": 1.51,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": true,
+        "naraGrans": false
+      }
+    },
+    {
+      "id": "120249902177470291",
+      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+      "lage": "drift",
+      "budget": 1900,
+      "spend3d": 5561.26,
+      "spendTotal": 41774.01,
+      "roas3d": 3.061412,
+      "kop3d": 18,
+      "roasTotal": 2.584339,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "SKALA",
+        "rubrik": "Skala upp 20 %",
+        "motivering": "25,1 % vinst av omsättningen (ROAS 3,06 mot break-even 1,73). Ändra från 1 900 kr till 2 250 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon. ⚠ Ligger 0,1 procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här.",
+        "nyBudget": 2250,
+        "zon": "up",
+        "vinstProcent": 25.091109730556433,
+        "breakEven": 1.7314285714285715,
+        "breakEvenKalla": "Axels besked 2026-08-29: inköpspris höjt till 40 USD, totalt — ingen frakt eller avgift tillkommer.",
+        "kraverGodkannande": true,
+        "naraGrans": true
+      }
+    },
+    {
+      "id": "120249850522830291",
+      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+      "lage": "drift",
+      "budget": 1450,
+      "spend3d": 4994.92,
+      "spendTotal": 83787.06,
+      "roas3d": 1.926734,
+      "kop3d": 20,
+      "roasTotal": 2.157245,
+      "briefPausTill": null,
+      "dom": {
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 1 dag sedan. Nästa ändring tidigast efter 3 dagar.",
+        "nyBudget": null,
+        "zon": null,
+        "vinstProcent": 14.76536633148806,
+        "breakEven": 1.5,
+        "breakEvenKalla": "kampanjnamnet",
+        "kraverGodkannande": false,
+        "naraGrans": false
+      }
+    }
+  ],
+  "plan": {
+    "sparrad": false,
+    "orsak": null,
+    "atgarder": [
+      {
+        "kampanj_id": "120250284567670291",
+        "namn": "Hönsgårdsduken 145 × 109 cm | BE ROAS 1.62 | Launch 2026-09-19",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "1 593 kr på 3 dagar och bara okänt antal köp, utan att gå ihop. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "typ": "trappa"
+      },
+      {
+        "kampanj_id": "120250253867730291",
+        "namn": "Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17",
+        "kod": "ATGARDSTRAPPAN",
+        "motivering": "3 261 kr på 3 dagar och bara 2 köp, utan att gå ihop. ROAS 1,37 mot break-even 1,65. Över 1 500 kr sedan start. Läs annonserna: finns minst en annons med köp över break-even OCH en spendtjuv, pausa spendtjuven och ge kampanjen ETT dygn till. Annars stängs hela kampanjen av i dag.",
+        "typ": "trappa"
+      },
+      {
+        "kampanj_id": "120250009325850291",
+        "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kod": "SKALA",
+        "motivering": "32,5 % vinst av omsättningen (ROAS 3,43 mot break-even 1,62). Ändra från 3 400 kr till 4 000 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "typ": "budget",
+        "fran_sek": 3400,
+        "till_sek": 4000,
+        "till_ore": 400000
+      },
+      {
+        "kampanj_id": "120250001079150291",
+        "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kod": "SKALA",
+        "motivering": "42,0 % vinst av omsättningen (ROAS 4,13 mot break-even 1,51). Ändra från 600 kr till 700 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.",
+        "typ": "budget",
+        "fran_sek": 600,
+        "till_sek": 700,
+        "till_ore": 70000
+      }
+    ],
+    "uppskjutna": [
+      {
+        "kampanj_id": "120249902177470291",
+        "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+        "kod": "SKALA",
+        "motivering": "25,1 % vinst av omsättningen (ROAS 3,06 mot break-even 1,73). Ändra från 1 900 kr till 2 250 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen redan imorgon. ⚠ Ligger 0,1 procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här.",
+        "orsak": "nära zongräns — omprövas nästa körning med mognare data"
+      }
+    ],
+    "gammalTotal": 34350,
+    "nyTotal": 35050
+  },
+  "annonsbehov": [
+    {
+      "kampanj_id": "120250284693380291",
+      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+      "typ": "forsta_batch",
+      "vinstProcent": 39.14033662529783,
+      "orsak": "har klarat testet (3 058 kr spenderat, 39,1 % vinst) utan en riktig batch — dags för /forsta-batch",
+      "veckokvot": {
+        "antal": 3,
+        "nyaKoncept": 1
+      }
+    },
+    {
+      "kampanj_id": "120249850522830291",
+      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+      "typ": "brief_runda",
+      "dagarSedanBatch": 3,
+      "rundaAntal": 4,
+      "orsak": "3 dagar sedan senaste batchen — dags för 3-dagarsrundan (4 annonser via /cs).",
+      "veckokvot": {
+        "antal": 2,
+        "nyaKoncept": 1
+      }
+    },
+    {
+      "kampanj_id": "120249902177470291",
+      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+      "typ": "brief_runda",
+      "dagarSedanBatch": 3,
+      "rundaAntal": 6,
+      "orsak": "3 dagar sedan senaste batchen — dags för 3-dagarsrundan (6 annonser via /cs). Fokus: mata vinnaren — skalats 3 gånger på en vecka.",
+      "veckokvot": {
+        "antal": 3,
+        "nyaKoncept": 1
+      }
+    },
+    {
+      "kampanj_id": "120250009325850291",
+      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+      "typ": "brief_runda",
+      "dagarSedanBatch": 3,
+      "rundaAntal": 8,
+      "orsak": "3 dagar sedan senaste batchen — dags för 3-dagarsrundan (8 annonser via /cs). Fokus: mata vinnaren — skalats 7 gånger på en vecka.",
+      "veckokvot": {
+        "antal": 4,
+        "nyaKoncept": 1
+      }
+    },
+    {
+      "kampanj_id": "120250175763810291",
+      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+      "typ": "brief_runda",
+      "dagarSedanBatch": 3,
+      "rundaAntal": 6,
+      "orsak": "3 dagar sedan senaste batchen — dags för 3-dagarsrundan (6 annonser via /cs). Fokus: mata vinnaren — skalats 3 gånger på en vecka.",
+      "veckokvot": {
+        "antal": 3,
+        "nyaKoncept": 1
+      }
+    }
+  ],
+  "veckokvot": [
+    {
+      "kampanj_id": "120250284693380291",
+      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+      "antal": 3,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250284567670291",
+      "namn": "Hönsgårdsduken 145 × 109 cm | BE ROAS 1.62 | Launch 2026-09-19",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250268503590291",
+      "namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250268474110291",
+      "namn": "Biltvättborsten med Teleskopskaft | BE ROAS 1.67 | Launch 2026-09-18",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250253948980291",
+      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250253867730291",
+      "namn": "Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250252311730291",
+      "namn": "Taköverdraget LISTICLE LAGERRENSNING",
+      "antal": 2,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250175763810291",
+      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+      "antal": 3,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250147343350291",
+      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250134672020291",
+      "namn": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+      "antal": 1,
+      "nyaKoncept": 0
+    },
+    {
+      "kampanj_id": "120250009325850291",
+      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+      "antal": 4,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120250001079150291",
+      "namn": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+      "antal": 1,
+      "nyaKoncept": 0
+    },
+    {
+      "kampanj_id": "120249902177470291",
+      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
+      "antal": 3,
+      "nyaKoncept": 1
+    },
+    {
+      "kampanj_id": "120249850522830291",
+      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
+      "antal": 2,
+      "nyaKoncept": 1
+    }
+  ]
+}
