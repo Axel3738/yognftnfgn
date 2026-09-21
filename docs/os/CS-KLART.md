@@ -236,7 +236,40 @@ breakthroughs och de 176 bedömbara — det låser upp 5, 6, 8, 9, 20;
 breakthroughs) — punkt 9; (3) nästa briefrond med taggar + lardom= — 13, 14,
 16; (4) UGC-kandidaterna när lärdomarna finns — 20–21.
 
-*(En oberoende genomlysning av punkt 1–19 mot koden före dagens bygge kör
-parallellt — sju läsare och två motläsare per punkt; dess dom läggs till här
-när den är klar.)*
+### 2026-09-21 — oberoende genomlysning av punkt 1–19 FÖRE bygget
 
+Sju läsare (en per punktgrupp) läste koden som den stod **innan** dagens bygge
+(`main` 77347cd, agent-grenen f1bbba1), och två motläsare per punkt
+("för generös?" / "för sträng?") prövade varje dom. Slutlig status = majoriteten
+av de tre; läsaren avgör vid oavgjort. Utfall: **0 gröna, 13 halvvägs, 6 finns inte**.
+
+Det här är facit för var vi stod i morse. Tabellen högre upp i filen är läget
+efter bygget.
+
+| # | Läsarens dom | Slutlig | Vad som saknades i morse (läsarens ord, kortat) |
+|---|---|---|---|
+| 1 | 🟡 | 🟡 | Det som finns är en RÄKNAD etikettrad, inte en SKRIVEN lärdom. Fyra av fälten saknas eller står tomma: (a) batchnummer — 339 av 2 346 rader har batch, resten null; typ är 'okänd' på alla 2 346 (backfillen sätter typ: 'okänd' hårt). (b) Hook… |
+| 2 | 🟡 | 🟡 | Verifieringen är EN ja/nej-bit på hela creativen, inte en avstämning per komponent. Inget i koden jämför den planerade avataren, vinkeln, medvetandenivån, mekanismen, tron, positioneringen eller brådskan mot vad som faktiskt kördes — ETIKET… |
+| 3 | 🟡 | 🟡 | Ingen lärdomsstruktur bär en 'varför'-hypotes per annons, och inget tvingar fram märkningen 'gissning'. ETIKETT-raden har inget hypotes-/orsaksfält (fältet `orsak` är teknisk, t.ex. 'kampanjens spend saknas'); playbookLasning ger en av sex … |
+| 4 | 🟡 | 🟡 | Playbook-strängen är samma för alla annonser med samma etikett — den namnger inga konkreta annonser (inga namn, inga hookar, ingen variabel) och är alltså en generisk rad, inte ett avslut med 'nästa annonser'. ANALYSMETOD:s regel gäller per… |
+| 5 | ❌ | ❌ | Ingen spärr, inget schema och inget steg gör en annons 'inte klar' utan lärdom. Konkret: (a) raknaEtiketter markerar annonsen som färdig ('redan etiketterad …') så snart etiketten finns; (b) annonsbehov/brief_runda i rond.mjs räknar bara da… |
+| 6 | ❌ | ❌ | (1) Ett lärdomsobjekt att peka på — byggs i grupp 1–5 (t.ex. rubriken `## Lärdom <annonsnamn> (batch #N)` i products/<id>/batch-log.md eller en rad i `products/<id>/lardomar.jsonl`). (2) En obligatorisk tagg `lardom=<annonsnamn/batch#N>` i … |
+| 7 | 🟡 | 🟡 | (1) `harLevandeVinnare(logg, kampanjId, idag)` i agent/etikett.mjs: sant om en ETIKETT/ETIKETT_UPPGRADERAD-rad med BREAKTHROUGH (eller SPEND_WINNER, Axel avgör) är ≤ 14 dygn, `bedombar: true` och annonsen fortfarande ACTIVE. (2) `mix(antal,… |
+| 8 | ❌ | ❌ | (1) `raknaLardomar(produktMapp / logg, sedan)` — antal skrivna lärdomar för produkten sedan senaste `*_KLAR`-rad (rubriker `## Lärdom …` i batch-log.md, eller LARDOM-rader i budgetloggen när grupp 1–5 bestämt formatet). (2) `annonsbehov` (r… |
+| 9 | 🟡 | 🟡 | Inget i koden skapar ett behov ur etiketten. `annonsbehov` i agent/rond.mjs kan bara `forsta_batch`, `brief_runda`, `ersatt`, `mata_vinnare` — `mata_vinnare` triggas av två kampanjskalningar på en vecka (SKALA-rader), aldrig av en BREAKTHRO… |
+| 10 | 🟡 | 🟡 | (1) Ingen konverteringsgrad i etikettraden: `lasEtikettannons` läser spend/kop/roas/impressions/video_3s/thruplay — inga klick, ingen CVR, och rond-auto 3c steg 2 hämtar inte `inline_link_clicks`. Diagnosen 'CVR under kampanjens?' kan allts… |
+| 11 | 🟡 | 🟡 | Läsordningen för en KPI_WINNER finns inte i kod: `playbookLasning` svarar bara '3 nya hookar, allt annat lika' oavsett vad hook/hold säger, `formateraTabell` skriver inte ens ut hook/hold-kolumnerna, och ingen funktion jämför annonsens hook… |
+| 12 | 🟡 | 🟡 | Villkoret i koden är fel variabel: grenen läser `typ` (N mot M/I), inte `kalla` (research mot imitation), och `kalla` skrivs inte i etikettraden alls (`raknaEtiketter` bär batch/typ/iteration_nr/parent). Dessutom har alla 2 346 ETIKETT-rade… |
+| 13 | 🟡 | 🟡 | Tre av Axels elva taggar saknas eller är svaga: (1) `tro` finns inte alls — noll träffar på tro/belief i briefgranskning.mjs, ingen rad i ANALYSMETOD 6b-tabellen. (2) `imiterad` har ingen kod — typ-listan är N (nytt), M (messaging = samma v… |
+| 14 | ❌ | ❌ | Ingen funktion någonstans räknar hur många försök som gjorts på ett koncept eller en förälder — varken per batch eller över batcher. Numret är antingen null (loggen) eller skrivet för hand av sessionen i taggraden (testfixturen har iteratio… |
+| 15 | 🟡 | 🟡 | Ingen kod tvingar in frekvensen i rondens rapport: `rapport()` i agent/rond.mjs har sektionerna Att godkänna / Behöver en titt / Lämnas ifred / Nya annonser behövs — ordet 'frekvens' förekommer inte i rond.mjs (grep: 0 träffar), och steg 6 … |
+| 16 | ❌ | ❌ | Begreppet lärdom finns inte i agent-trädet: grep 'lärdom/lardom' i agent/*.mjs ger 0 träffar; rond-auto.md nämner ordet en gång (rad 378, om motorhöljets copy-lärdomar), DoD (rad 879–909) har ingen punkt om lärdomar, `rapport()` i rond.mjs … |
+| 17 | 🟡 | 🟡 | (1) Inget spår: ingen products/*/kommentarer.md finns i trädet eller i git log --all, inga tester på klustra/sammanfatta/markdown, ingen loggkod i agent/budgetlogg.jsonl (27 koder, ingen om kommentarer) — 08:40-läsningen lämnade inget i rep… |
+| 18 | 🟡 | 🟡 | (A) Räknaren: `agent/etikett.mjs` (jobbsteget i rond-auto 3c) måste läsa `typ`, `parent`, `iteration`, `koncept` ur briefens VARIABELTAGGAR-rad (`products/<id>/batch-NN/**/brief.md`, taggparsern som `granskaBrief` redan använder) i stället … |
+| 19 | ❌ | ❌ | (A) Text: skriv definitionen ordagrant i `docs/os/ANALYSMETOD.md` direkt efter komponenttabellen (efter rad 233): 'typ=N kräver att minst en av avatar / begar / kansla skiljer sig från alla befintliga annonser på produkten; samma avatar+beg… |
+
+⚠️ Två av genomlysningens 46 agenter föll på en användningsgräns:
+`sträng?:19` och `byggordning`. Punkt 19 har därför bara en
+motläsare, och **ingen oberoende byggordning finns** — ordningen som följdes är
+min egen, inte genomlysningens. Kör om `byggordning` innan nästa bygge om du
+vill ha en andra åsikt om prioriteringen.
