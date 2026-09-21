@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-21T12:32:39.899Z",
+ "byggd": "2026-09-21T12:57:48.192Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-21T12:31:58.247Z"
+  "till": "2026-09-21T12:57:07.418Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -131,7 +131,7 @@
   "publik_fot": "Stonebite Ecom AB · Org.nr 559576-2401 · Harestad, Sverige"
  },
  "system": {
-  "kommentar": "Kartan över allt Axel byggt, i kategorier. Skriven 2026-09-21 ur CLAUDE.md, repots mappar och rutintabellen — ingenting här är gissat. Lägg till ett system när det byggs; sidan /app/system läser filen direkt.",
+  "kommentar": "Kartan över allt Axel byggt, i kategorier. Skriven 2026-09-21 ur CLAUDE.md, repots mappar, rutintabellen och sessionslistan i Axels Claude-konto — ingenting här är gissat. Lägg till ett system när det byggs; sidan /app/system läser filen direkt.",
   "uppdaterad": "2026-09-21",
   "kategorier": [
    {
@@ -190,13 +190,6 @@
       "vad": "Kärnloopen: analysera senaste annonserna, dra lärdomar, beställa nästa batch.",
       "var": "docs/os/, products/<id>/",
       "kommando": "/cs",
-      "status": "drift"
-     },
-     {
-      "namn": "Brief-kvoten",
-      "vad": "Målet som styr allt: hur många nya creatives varje produkt ska ha per cykel.",
-      "var": "pipeline/quota.mjs",
-      "kommando": "/checkin",
       "status": "drift"
      },
      {
@@ -354,6 +347,39 @@
     ]
    },
    {
+    "id": "matning",
+    "namn": "Ekonomi och mätning",
+    "vad": "Det som säger om pengarna faktiskt blir kvar, och om en ändring gjorde skillnad.",
+    "system": [
+     {
+      "namn": "StonePNL",
+      "vad": "Egen Shopify-app som visar täckningsbidrag per produkt: intäkt minus varukostnad, frakt, tull och annonser. Publicerad i Shopifys App Store 2026-09-05.",
+      "var": "pnl-app/ (byggs från grenen claude/bäverbutiken-settkopplingen-nba21z)",
+      "status": "drift"
+     },
+     {
+      "namn": "A/B-tester i butiken",
+      "vad": "Halva trafiken får en ändring, andra halvan originalet — sortval på strumpor, trust-block i varukorgen. Avläses efter två veckor.",
+      "var": "Shopify-temat per butik",
+      "kommando": "/abtest",
+      "status": "drift"
+     },
+     {
+      "namn": "Prisövervakningen",
+      "vad": "Vaktar att marknadernas omräknade priser inte glider när valutakursen rör sig (mätt drift i AU: 0,35 % på ett dygn).",
+      "var": "factory/",
+      "status": "drift"
+     },
+     {
+      "namn": "Brief-kvoten",
+      "vad": "Målet som styr creative-produktionen: hur många nya creatives varje produkt ska ha per cykel.",
+      "var": "pipeline/quota.mjs",
+      "kommando": "npm run quota",
+      "status": "drift"
+     }
+    ]
+   },
+   {
     "id": "sajten",
     "namn": "Den här sajten",
     "vad": "Stonebites egen sida: publik framsida och inloggade dashboards.",
@@ -479,45 +505,45 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:31:58.264Z"
+   "tid": "2026-09-21T12:57:07.435Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:31:58.264Z"
+   "tid": "2026-09-21T12:57:07.435Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:31:58.264Z"
+   "tid": "2026-09-21T12:57:07.435Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:31:58.264Z"
+   "tid": "2026-09-21T12:57:07.435Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "6 av 13 butiker gick inte att läsa",
-   "tid": "2026-09-21T12:32:12.530Z",
+   "tid": "2026-09-21T12:57:20.954Z",
    "butiker": 13
   },
   {
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:32:20.502Z",
+   "tid": "2026-09-21T12:57:27.482Z",
    "konton": 4
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-21T12:32:39.899Z",
+   "tid": "2026-09-21T12:57:48.192Z",
    "personer": 6
   }
  ],
@@ -852,11 +878,11 @@
     },
     {
      "datum": "2026-09-21",
-     "omsattning": 9326.9,
-     "ordrar": 10
+     "omsattning": 9835.900000000001,
+     "ordrar": 11
     }
    ],
-   "ordrar": 843,
+   "ordrar": 844,
    "status": "ok",
    "orsak": null
   },
@@ -1921,26 +1947,26 @@
     },
     {
      "datum": "2026-09-20",
-     "spend": 36321.87,
+     "spend": 36322.41,
      "kop": 110,
-     "roas": 2.713734
+     "roas": 2.713694
     }
    ],
    "idag": {
-    "spend": 15402.4,
-    "kop": 46,
-    "roas": 2.410637,
+    "spend": 16025.86,
+    "kop": 48,
+    "roas": 2.415945,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 71382.16,
+     "spend": 71382.48,
      "kop": 205,
-     "roas": 3.507094,
-     "cpa": 348.20565853658536,
-     "intakt": 250343.94504304
+     "roas": 3.507078,
+     "cpa": 348.2072195121951,
+     "intakt": 250343.92519343997
     },
     {
      "id": "120250175763810291",
@@ -1972,11 +1998,11 @@
     {
      "id": "120249850522830291",
      "namn": "Fiskespöhållaren | BE ROAS 1.50 | Launch 2026-08-18",
-     "spend": 9151.89,
+     "spend": 9151.92,
      "kop": 40,
-     "roas": 2.011276,
-     "cpa": 228.79725,
-     "intakt": 18406.97671164
+     "roas": 2.01127,
+     "cpa": 228.798,
+     "intakt": 18406.982138400002
     },
     {
      "id": "120250001079150291",
@@ -1990,11 +2016,11 @@
     {
      "id": "120250253948980291",
      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
-     "spend": 4597,
+     "spend": 4597.14,
      "kop": 12,
-     "roas": 2.108571,
-     "cpa": 383.0833333333333,
-     "intakt": 9693.100887
+     "roas": 2.108507,
+     "cpa": 383.095,
+     "intakt": 9693.10186998
     },
     {
      "id": "120249989799680291",
@@ -2053,11 +2079,11 @@
     {
      "id": "120250268503590291",
      "namn": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
-     "spend": 2953,
+     "spend": 2953.05,
      "kop": 11,
-     "roas": 2.285201,
-     "cpa": 268.45454545454544,
-     "intakt": 6748.198552999999
+     "roas": 2.285163,
+     "cpa": 268.45909090909095,
+     "intakt": 6748.20059715
     },
     {
      "id": "120250284693380291",
@@ -2250,9 +2276,9 @@
     }
    ],
    "idag": {
-    "spend": 2190.67,
+    "spend": 3833.14,
     "kop": 4,
-    "roas": 2.82352,
+    "roas": 1.613664,
     "tomt": false
    },
    "kampanjer": [
@@ -2399,44 +2425,44 @@
     },
     {
      "datum": "2026-09-20",
-     "spend": 13151.81,
+     "spend": 13152.36,
      "kop": 7,
-     "roas": 1.324332
+     "roas": 1.324276
     }
    ],
    "idag": {
-    "spend": 4436.56,
+    "spend": 4550.54,
     "kop": 4,
-    "roas": 1.791343,
+    "roas": 1.746474,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120251451415500435",
      "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
-     "spend": 12114.32,
+     "spend": 12114.59,
      "kop": 11,
-     "roas": 1.954338,
-     "cpa": 1101.3018181818181,
-     "intakt": 23675.47592016
+     "roas": 1.954295,
+     "cpa": 1101.3263636363636,
+     "intakt": 23675.48266405
     },
     {
      "id": "120251471243740435",
      "namn": "UK LISTICLE Taköverdrag CARASHELL",
-     "spend": 9971.07,
+     "spend": 9971.17,
      "kop": 6,
-     "roas": 1.332808,
-     "cpa": 1661.845,
-     "intakt": 13289.52186456
+     "roas": 1.332794,
+     "cpa": 1661.8616666666667,
+     "intakt": 13289.51554898
     },
     {
      "id": "120251471312320435",
      "namn": "AU LISTICLE Taköverdrag CARASHELL",
-     "spend": 6290.42,
+     "spend": 6290.6,
      "kop": 7,
-     "roas": 2.538691,
-     "cpa": 898.6314285714286,
-     "intakt": 15969.43264022
+     "roas": 2.538618,
+     "cpa": 898.657142857143,
+     "intakt": 15969.430390800002
     },
     {
      "id": "120251471347220435",
@@ -2713,9 +2739,9 @@
     }
    ],
    "idag": {
-    "spend": 4855.52,
-    "kop": 8,
-    "roas": 1.435883,
+    "spend": 5065.5,
+    "kop": 9,
+    "roas": 1.593633,
     "tomt": false
    },
    "kampanjer": [
@@ -10663,7 +10689,7 @@
     "program": "produkttest"
    }
   ],
-  "raknat": "2026-09-21T12:32:39.868Z",
+  "raknat": "2026-09-21T12:57:48.169Z",
   "kallor": [
    {
     "id": "kundtjanst",

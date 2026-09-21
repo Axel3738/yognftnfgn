@@ -1,5 +1,5 @@
 {
-  "kommentar": "Kartan över allt Axel byggt, i kategorier. Skriven 2026-09-21 ur CLAUDE.md, repots mappar och rutintabellen — ingenting här är gissat. Lägg till ett system när det byggs; sidan /app/system läser filen direkt.",
+  "kommentar": "Kartan över allt Axel byggt, i kategorier. Skriven 2026-09-21 ur CLAUDE.md, repots mappar, rutintabellen och sessionslistan i Axels Claude-konto — ingenting här är gissat. Lägg till ett system när det byggs; sidan /app/system läser filen direkt.",
   "uppdaterad": "2026-09-21",
   "kategorier": [
     {
@@ -7,12 +7,45 @@
       "namn": "Butiker och sajter",
       "vad": "Allt kunden ser: butikerna, produktsidorna, spårningen och mejlen.",
       "system": [
-        { "namn": "Bäverbutiken", "vad": "Testbädden. Alla nya produkter får sin första chans här innan de får en egen butik.", "var": "products/, sparning/", "status": "drift" },
-        { "namn": "Nordiska systerbutiker", "vad": "Beverbutikken (NO), Bæverbutiken (DK), Majavakauppa (FI) — samma sortiment på landets språk.", "var": "sparning/butiker.json", "status": "drift" },
-        { "namn": "OPS-butiker", "vad": "En butik byggd runt en vinnarprodukt: CaraShell, HeimGuard, TankGuard, DryTrek, TackleBay, CatCabin, AdventLane.", "var": "factory/butiker/", "status": "drift" },
-        { "namn": "Spårningssidan", "vad": "Kunden slår upp sitt paket med ett bävernummer och ser var det är — utan ordernummer, utan land, med ort och tid.", "var": "sparning/", "kommando": "/sparning", "status": "drift" },
-        { "namn": "Kundmejlen", "vad": "Orderbekräftelse, leverans och återbetalning i butikens egen form, med erbjudandet om en gratisprodukt.", "var": "mejl/", "kommando": "/mejl", "status": "drift" },
-        { "namn": "Listiclarna", "vad": "Lagerrensning, 'vi testade den i N dagar' och 'N anledningar' — säljsidor som byggs in i butiken på minuter.", "var": "listicle/", "kommando": "/listiclar", "status": "drift" }
+        {
+          "namn": "Bäverbutiken",
+          "vad": "Testbädden. Alla nya produkter får sin första chans här innan de får en egen butik.",
+          "var": "products/, sparning/",
+          "status": "drift"
+        },
+        {
+          "namn": "Nordiska systerbutiker",
+          "vad": "Beverbutikken (NO), Bæverbutiken (DK), Majavakauppa (FI) — samma sortiment på landets språk.",
+          "var": "sparning/butiker.json",
+          "status": "drift"
+        },
+        {
+          "namn": "OPS-butiker",
+          "vad": "En butik byggd runt en vinnarprodukt: CaraShell, HeimGuard, TankGuard, DryTrek, TackleBay, CatCabin, AdventLane.",
+          "var": "factory/butiker/",
+          "status": "drift"
+        },
+        {
+          "namn": "Spårningssidan",
+          "vad": "Kunden slår upp sitt paket med ett bävernummer och ser var det är — utan ordernummer, utan land, med ort och tid.",
+          "var": "sparning/",
+          "kommando": "/sparning",
+          "status": "drift"
+        },
+        {
+          "namn": "Kundmejlen",
+          "vad": "Orderbekräftelse, leverans och återbetalning i butikens egen form, med erbjudandet om en gratisprodukt.",
+          "var": "mejl/",
+          "kommando": "/mejl",
+          "status": "drift"
+        },
+        {
+          "namn": "Listiclarna",
+          "vad": "Lagerrensning, 'vi testade den i N dagar' och 'N anledningar' — säljsidor som byggs in i butiken på minuter.",
+          "var": "listicle/",
+          "kommando": "/listiclar",
+          "status": "drift"
+        }
       ]
     },
     {
@@ -20,13 +53,48 @@
       "namn": "Annonser och creative",
       "vad": "Maskineriet som gör reklam, laddar upp den och bestämmer vad som får pengar.",
       "system": [
-        { "namn": "Creative Strategy OS", "vad": "Kärnloopen: analysera senaste annonserna, dra lärdomar, beställa nästa batch.", "var": "docs/os/, products/<id>/", "kommando": "/cs", "status": "drift" },
-        { "namn": "Brief-kvoten", "vad": "Målet som styr allt: hur många nya creatives varje produkt ska ha per cykel.", "var": "pipeline/quota.mjs", "kommando": "/checkin", "status": "drift" },
-        { "namn": "Bildannonser", "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.", "var": "bildannonser/", "kommando": "/bildannonser", "status": "drift" },
-        { "namn": "Leveransrundan", "vad": "Hämtar färdiga creatives ur Notion, kvalitetskollar och laddar upp dem i rätt kampanj.", "var": "tools/leveranskon.mjs", "kommando": "/notionkorning", "status": "drift" },
-        { "namn": "Nattvakten", "vad": "Varje natt: döda dödvikt, skala vinnare, sänka det som blöder — och skriva nya briefer två gånger i veckan.", "var": "factory/budgetrond.mjs", "kommando": "/notionscalercs", "status": "drift" },
-        { "namn": "Videolokalisering", "vad": "Samma annons på norska, danska, finska eller engelska med klonad röst och läppsynk.", "var": "pipeline/heygen.mjs", "kommando": "/translate", "status": "drift" },
-        { "namn": "Briefgranskningen", "vad": "Creative director-genomgång av varje briefrond två gånger i veckan, med tre regler till nästa rond.", "var": "tools/briefgranskning.mjs", "kommando": "/briefgranskning", "status": "drift" }
+        {
+          "namn": "Creative Strategy OS",
+          "vad": "Kärnloopen: analysera senaste annonserna, dra lärdomar, beställa nästa batch.",
+          "var": "docs/os/, products/<id>/",
+          "kommando": "/cs",
+          "status": "drift"
+        },
+        {
+          "namn": "Bildannonser",
+          "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.",
+          "var": "bildannonser/",
+          "kommando": "/bildannonser",
+          "status": "drift"
+        },
+        {
+          "namn": "Leveransrundan",
+          "vad": "Hämtar färdiga creatives ur Notion, kvalitetskollar och laddar upp dem i rätt kampanj.",
+          "var": "tools/leveranskon.mjs",
+          "kommando": "/notionkorning",
+          "status": "drift"
+        },
+        {
+          "namn": "Nattvakten",
+          "vad": "Varje natt: döda dödvikt, skala vinnare, sänka det som blöder — och skriva nya briefer två gånger i veckan.",
+          "var": "factory/budgetrond.mjs",
+          "kommando": "/notionscalercs",
+          "status": "drift"
+        },
+        {
+          "namn": "Videolokalisering",
+          "vad": "Samma annons på norska, danska, finska eller engelska med klonad röst och läppsynk.",
+          "var": "pipeline/heygen.mjs",
+          "kommando": "/translate",
+          "status": "drift"
+        },
+        {
+          "namn": "Briefgranskningen",
+          "vad": "Creative director-genomgång av varje briefrond två gånger i veckan, med tre regler till nästa rond.",
+          "var": "tools/briefgranskning.mjs",
+          "kommando": "/briefgranskning",
+          "status": "drift"
+        }
       ]
     },
     {
@@ -34,11 +102,40 @@
       "namn": "Team och produktion",
       "vad": "Människorna som producerar, och vad de får betalt.",
       "system": [
-        { "namn": "Redigerardashboarden", "vad": "Vem gör vad, när det ska vara klart och vad som väntar på granskning.", "var": "dashboard/", "kommando": "/dashboard", "status": "drift" },
-        { "namn": "Commission", "vad": "0,4 % av annonsspenden på godkända annonser, räknat var tredje dag och sista dagen i månaden.", "var": "commission/", "kommando": "/commission", "status": "drift" },
-        { "namn": "Bonusprogrammen", "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, produkter som skalar.", "var": "bonus/", "kommando": "node bonus/kor.mjs", "status": "nytt" },
-        { "namn": "Produkttest", "vad": "Notion-trappan från idé till skalad produkt: research, annonsgranskning, test, lönsam, skala.", "var": "Notion: Product test center", "status": "drift" },
-        { "namn": "UGC-rekrytering", "vad": "Hitta och vetta kreatörer som spelar in riktiga kundvideor.", "var": "docs/", "kommando": "/ugc-scout", "status": "byggs" }
+        {
+          "namn": "Redigerardashboarden",
+          "vad": "Vem gör vad, när det ska vara klart och vad som väntar på granskning.",
+          "var": "dashboard/",
+          "kommando": "/dashboard",
+          "status": "drift"
+        },
+        {
+          "namn": "Commission",
+          "vad": "0,4 % av annonsspenden på godkända annonser, räknat var tredje dag och sista dagen i månaden.",
+          "var": "commission/",
+          "kommando": "/commission",
+          "status": "drift"
+        },
+        {
+          "namn": "Bonusprogrammen",
+          "vad": "Nytt 2026-09-21: alla roller kan tjäna extra — recensioner, tvister, tom inkorg, produkter som skalar.",
+          "var": "bonus/",
+          "kommando": "node bonus/kor.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Produkttest",
+          "vad": "Notion-trappan från idé till skalad produkt: research, annonsgranskning, test, lönsam, skala.",
+          "var": "Notion: Product test center",
+          "status": "drift"
+        },
+        {
+          "namn": "UGC-rekrytering",
+          "vad": "Hitta och vetta kreatörer som spelar in riktiga kundvideor.",
+          "var": "docs/",
+          "kommando": "/ugc-scout",
+          "status": "byggs"
+        }
       ]
     },
     {
@@ -46,11 +143,40 @@
       "namn": "Kund och support",
       "vad": "Allt som händer efter köpet — och det som avgör om kunden handlar igen.",
       "system": [
-        { "namn": "Kundtjänstrapporten", "vad": "Varje måndag: vad kunderna hör av sig om, hur mycket som är obesvarat och hur stor chargeback-risken är.", "var": "kundtjanst/", "kommando": "/kundtjanst", "status": "drift" },
-        { "namn": "Tvistkollen", "vad": "Varje dag: tvister med svarsdag inom tre dagar, larm i Discord.", "var": "kundtjanst/tvistkoll.mjs", "kommando": "/tvistkoll", "status": "drift" },
-        { "namn": "Tvisthandboken", "vad": "VA:ns SOP:er på engelska plus ett verktyg som dömer FIGHT / REFUND / ESCALATE per order.", "var": "kundtjanst/sop/", "kommando": "npm run tvist", "status": "drift" },
-        { "namn": "Paketspårningen", "vad": "Varje timme: skanningarna in i Shopify så kunden får sina notiser, och sidan byggs om.", "var": "sparning/", "kommando": "/sparning", "status": "drift" },
-        { "namn": "Recensionerna", "vad": "Judge.me läses automatiskt. Trustpilot väntar på en API-nyckel — tills dess rapporterar VA:n in dem själv.", "var": "bonus/kallor.mjs", "status": "delvis" }
+        {
+          "namn": "Kundtjänstrapporten",
+          "vad": "Varje måndag: vad kunderna hör av sig om, hur mycket som är obesvarat och hur stor chargeback-risken är.",
+          "var": "kundtjanst/",
+          "kommando": "/kundtjanst",
+          "status": "drift"
+        },
+        {
+          "namn": "Tvistkollen",
+          "vad": "Varje dag: tvister med svarsdag inom tre dagar, larm i Discord.",
+          "var": "kundtjanst/tvistkoll.mjs",
+          "kommando": "/tvistkoll",
+          "status": "drift"
+        },
+        {
+          "namn": "Tvisthandboken",
+          "vad": "VA:ns SOP:er på engelska plus ett verktyg som dömer FIGHT / REFUND / ESCALATE per order.",
+          "var": "kundtjanst/sop/",
+          "kommando": "npm run tvist",
+          "status": "drift"
+        },
+        {
+          "namn": "Paketspårningen",
+          "vad": "Varje timme: skanningarna in i Shopify så kunden får sina notiser, och sidan byggs om.",
+          "var": "sparning/",
+          "kommando": "/sparning",
+          "status": "drift"
+        },
+        {
+          "namn": "Recensionerna",
+          "vad": "Judge.me läses automatiskt. Trustpilot väntar på en API-nyckel — tills dess rapporterar VA:n in dem själv.",
+          "var": "bonus/kallor.mjs",
+          "status": "delvis"
+        }
       ]
     },
     {
@@ -58,10 +184,67 @@
       "namn": "Fabriken (nya butiker)",
       "vad": "Bygger en komplett butik runt en vinnarprodukt, med annonser, marknader och rutiner.",
       "system": [
-        { "namn": "Ny butik", "vad": "Från källänk till färdig butik: tema, produktsida, betalning, frakt, policysidor.", "var": "factory/", "kommando": "/ny-ops", "status": "drift" },
-        { "namn": "Ny produkt i befintlig butik", "vad": "Lägger en produkt till i en butik som redan finns, med egen kampanj och egen hub.", "var": "factory/ops-produkt.mjs", "kommando": "/ops-produkt", "status": "drift" },
-        { "namn": "Ny marknad", "vad": "Land, språk och valuta till en butik som redan säljer — USA, Storbritannien, Kanada, Australien, Nya Zeeland.", "var": "factory/lander.mjs", "kommando": "/ny-marknad", "status": "drift" },
-        { "namn": "Speglingen", "vad": "Bäverbutikens annonser kopieras till OPS-butiken med nya namn och rätt pixel.", "var": "tools/ops-spegla.mjs", "kommando": "/ops-spegla", "status": "drift" }
+        {
+          "namn": "Ny butik",
+          "vad": "Från källänk till färdig butik: tema, produktsida, betalning, frakt, policysidor.",
+          "var": "factory/",
+          "kommando": "/ny-ops",
+          "status": "drift"
+        },
+        {
+          "namn": "Ny produkt i befintlig butik",
+          "vad": "Lägger en produkt till i en butik som redan finns, med egen kampanj och egen hub.",
+          "var": "factory/ops-produkt.mjs",
+          "kommando": "/ops-produkt",
+          "status": "drift"
+        },
+        {
+          "namn": "Ny marknad",
+          "vad": "Land, språk och valuta till en butik som redan säljer — USA, Storbritannien, Kanada, Australien, Nya Zeeland.",
+          "var": "factory/lander.mjs",
+          "kommando": "/ny-marknad",
+          "status": "drift"
+        },
+        {
+          "namn": "Speglingen",
+          "vad": "Bäverbutikens annonser kopieras till OPS-butiken med nya namn och rätt pixel.",
+          "var": "tools/ops-spegla.mjs",
+          "kommando": "/ops-spegla",
+          "status": "drift"
+        }
+      ]
+    },
+    {
+      "id": "matning",
+      "namn": "Ekonomi och mätning",
+      "vad": "Det som säger om pengarna faktiskt blir kvar, och om en ändring gjorde skillnad.",
+      "system": [
+        {
+          "namn": "StonePNL",
+          "vad": "Egen Shopify-app som visar täckningsbidrag per produkt: intäkt minus varukostnad, frakt, tull och annonser. Publicerad i Shopifys App Store 2026-09-05.",
+          "var": "pnl-app/ (byggs från grenen claude/bäverbutiken-settkopplingen-nba21z)",
+          "status": "drift"
+        },
+        {
+          "namn": "A/B-tester i butiken",
+          "vad": "Halva trafiken får en ändring, andra halvan originalet — sortval på strumpor, trust-block i varukorgen. Avläses efter två veckor.",
+          "var": "Shopify-temat per butik",
+          "kommando": "/abtest",
+          "status": "drift"
+        },
+        {
+          "namn": "Prisövervakningen",
+          "vad": "Vaktar att marknadernas omräknade priser inte glider när valutakursen rör sig (mätt drift i AU: 0,35 % på ett dygn).",
+          "var": "factory/",
+          "status": "drift"
+        },
+        {
+          "namn": "Brief-kvoten",
+          "vad": "Målet som styr creative-produktionen: hur många nya creatives varje produkt ska ha per cykel.",
+          "var": "pipeline/quota.mjs",
+          "kommando": "npm run quota",
+          "status": "drift"
+        }
       ]
     },
     {
@@ -69,28 +252,119 @@
       "namn": "Den här sajten",
       "vad": "Stonebites egen sida: publik framsida och inloggade dashboards.",
       "system": [
-        { "namn": "Publika sidan", "vad": "Vad bolaget gör och vilka butiker vi driver. Inga siffror utåt.", "var": "stonebite/vy/publik.mjs", "status": "nytt" },
-        { "namn": "Dashboards", "vad": "Översikt, butiker, annonser, produkttest, redigerare, kundtjänst, recensioner, leverans, bonus.", "var": "stonebite/vy/", "status": "nytt" },
-        { "namn": "Inloggningen", "vad": "Sex roller som ser olika mycket. Spärren sitter i servern, inte i menyn.", "var": "stonebite/roller.mjs", "status": "nytt" },
-        { "namn": "Datahämtningen", "vad": "Shopify, Meta, Judge.me, Notion och repots egna filer → en snapshot sajten läser.", "var": "stonebite/hamta.mjs", "kommando": "node stonebite/hamta.mjs", "status": "nytt" }
+        {
+          "namn": "Publika sidan",
+          "vad": "Vad bolaget gör och vilka butiker vi driver. Inga siffror utåt.",
+          "var": "stonebite/vy/publik.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Dashboards",
+          "vad": "Översikt, butiker, annonser, produkttest, redigerare, kundtjänst, recensioner, leverans, bonus.",
+          "var": "stonebite/vy/",
+          "status": "nytt"
+        },
+        {
+          "namn": "Inloggningen",
+          "vad": "Sex roller som ser olika mycket. Spärren sitter i servern, inte i menyn.",
+          "var": "stonebite/roller.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Datahämtningen",
+          "vad": "Shopify, Meta, Judge.me, Notion och repots egna filer → en snapshot sajten läser.",
+          "var": "stonebite/hamta.mjs",
+          "kommando": "node stonebite/hamta.mjs",
+          "status": "nytt"
+        }
       ]
     }
   ],
   "rutiner": [
-    { "tid": "00:01–00:57", "namn": "Nattvakten per OPS-butik", "vad": "Budgetrond: döda, skala, sänk. Två gånger i veckan även nya briefer.", "kommando": "/notionscalercs" },
-    { "tid": "04:15", "namn": "Norsk videobatch", "vad": "Dagens videor översatta till norska.", "kommando": "/translate-no" },
-    { "tid": "05:30", "namn": "Norska recensioner", "vad": "Importerar produktrecensioner till den norska butiken.", "kommando": "/no-recensioner" },
-    { "tid": "06:00", "namn": "Commission", "vad": "Räknar redigerarnas andel av spenden. Var tredje dag och månadens sista dag.", "kommando": "/commission" },
-    { "tid": "07:00 (mån)", "namn": "Kundtjänstens veckorapport", "vad": "Alla brands: ärenden, obesvarat, tvister, risk och en arbetslista till VA:n.", "kommando": "/kundtjanst" },
-    { "tid": "07:00 (mån + tors)", "namn": "Briefgranskningen", "vad": "Creative director dömer senaste briefronden i alla Bäverbutikens hubbar.", "kommando": "/briefgranskning" },
-    { "tid": "07:30", "namn": "Tvistkollen", "vad": "Tvister med svarsdag inom tre dagar — larm i Discord.", "kommando": "/tvistkoll" },
-    { "tid": "13:20", "namn": "Leveransrundan Bäverbutiken", "vad": "Notion → QA → upp i rätt kampanj.", "kommando": "/notionkorning" },
-    { "tid": "13:40–14:15", "namn": "Leveransrundan per OPS-butik", "vad": "Hubbens kö → live i butikens SE-kampanj.", "kommando": "/ops-leverans" },
-    { "tid": "15:00", "namn": "Översättning till Norge", "vad": "Svenska annonser → norska, live i NO-kampanjen.", "kommando": "/oversatt NO" },
-    { "tid": "15:40–17:15", "namn": "Översättning OPS (NO och US)", "vad": "Butikens kö → marknadens språk och konto.", "kommando": "/ops-oversatt" },
-    { "tid": "16:20+", "namn": "Speglingen", "vad": "Bäverbutikens annonser → CaraShell, med nya namn.", "kommando": "/ops-spegla" },
-    { "tid": "20:00", "namn": "Bildannonser", "vad": "Alla hubbar → ogjorda bildannonser → granskningskön.", "kommando": "/bildannonser" },
-    { "tid": "Varje timme", "namn": "Paketspårningen (5 butiker)", "vad": "Skanningar in i Shopify och spårningssidan byggs om.", "kommando": "/sparning" }
+    {
+      "tid": "00:01–00:57",
+      "namn": "Nattvakten per OPS-butik",
+      "vad": "Budgetrond: döda, skala, sänk. Två gånger i veckan även nya briefer.",
+      "kommando": "/notionscalercs"
+    },
+    {
+      "tid": "04:15",
+      "namn": "Norsk videobatch",
+      "vad": "Dagens videor översatta till norska.",
+      "kommando": "/translate-no"
+    },
+    {
+      "tid": "05:30",
+      "namn": "Norska recensioner",
+      "vad": "Importerar produktrecensioner till den norska butiken.",
+      "kommando": "/no-recensioner"
+    },
+    {
+      "tid": "06:00",
+      "namn": "Commission",
+      "vad": "Räknar redigerarnas andel av spenden. Var tredje dag och månadens sista dag.",
+      "kommando": "/commission"
+    },
+    {
+      "tid": "07:00 (mån)",
+      "namn": "Kundtjänstens veckorapport",
+      "vad": "Alla brands: ärenden, obesvarat, tvister, risk och en arbetslista till VA:n.",
+      "kommando": "/kundtjanst"
+    },
+    {
+      "tid": "07:00 (mån + tors)",
+      "namn": "Briefgranskningen",
+      "vad": "Creative director dömer senaste briefronden i alla Bäverbutikens hubbar.",
+      "kommando": "/briefgranskning"
+    },
+    {
+      "tid": "07:30",
+      "namn": "Tvistkollen",
+      "vad": "Tvister med svarsdag inom tre dagar — larm i Discord.",
+      "kommando": "/tvistkoll"
+    },
+    {
+      "tid": "13:20",
+      "namn": "Leveransrundan Bäverbutiken",
+      "vad": "Notion → QA → upp i rätt kampanj.",
+      "kommando": "/notionkorning"
+    },
+    {
+      "tid": "13:40–14:15",
+      "namn": "Leveransrundan per OPS-butik",
+      "vad": "Hubbens kö → live i butikens SE-kampanj.",
+      "kommando": "/ops-leverans"
+    },
+    {
+      "tid": "15:00",
+      "namn": "Översättning till Norge",
+      "vad": "Svenska annonser → norska, live i NO-kampanjen.",
+      "kommando": "/oversatt NO"
+    },
+    {
+      "tid": "15:40–17:15",
+      "namn": "Översättning OPS (NO och US)",
+      "vad": "Butikens kö → marknadens språk och konto.",
+      "kommando": "/ops-oversatt"
+    },
+    {
+      "tid": "16:20+",
+      "namn": "Speglingen",
+      "vad": "Bäverbutikens annonser → CaraShell, med nya namn.",
+      "kommando": "/ops-spegla"
+    },
+    {
+      "tid": "20:00",
+      "namn": "Bildannonser",
+      "vad": "Alla hubbar → ogjorda bildannonser → granskningskön.",
+      "kommando": "/bildannonser"
+    },
+    {
+      "tid": "Varje timme",
+      "namn": "Paketspårningen (5 butiker)",
+      "vad": "Skanningar in i Shopify och spårningssidan byggs om.",
+      "kommando": "/sparning"
+    }
   ],
   "rutiner_kommentar": "Tiderna är svensk tid. Rutinerna körs som Routines på claude.ai och ligger på två olika konton — se rutintabellen i CLAUDE.md för trigger-id och vilket konto som äger vilken."
 }
