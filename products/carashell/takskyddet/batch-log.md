@@ -1396,3 +1396,39 @@ och isolerar i stället rabattframingen mot varandra (23 % mot 340 kr). Läs dem
 mot `CS_1_H1` (video, CPA 216 kr) nästa gång någon gör en feedback-loop —
 CaraShell briefas inte längre härifrån, så den loopen ligger numera i
 Bäverbutikens teamspace.
+
+---
+
+## Spegling 2026-09-21 — 5 av 5, gårdagens stopp löst
+
+Kontot betalades av Axel: `account_status` på Magiborsten DK `915422744950975`
+läser **1 (ACTIVE)** igen, mot 3 (UNSETTLED) i går. Samma fem rader som nekades
+2026-09-20 gick upp utan ändringar — inget behövde göras om, ingen rad hade
+tagit skada av att stå kvar.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_BOF_9_1 | CaraShellRoof_BOF_109_1 | 120249189223200172 | 120249189228110172 |
+| Takoverdrag_CS_13_1 | CaraShellRoof_CS_113_1 | 120249189301610172 | 120249189310900172 |
+| Takoverdrag_PD_10_1 | CaraShellRoof_PD_110_1 | 120249189397310172 | 120249189399940172 |
+| Takoverdrag_BOF_8_1 | CaraShellRoof_BOF_108_1 | 120249189478830172 | 120249189496460172 |
+| Takoverdrag_BOF_7_1 | CaraShellRoof_BOF_107_1 | 120249189597020172 | 120249189601910172 |
+
+Tillbakaläst ur Meta: alla tio bär `status: ACTIVE` i rätt kampanj i
+OPS-kontot. `BOF_107_1` stod `PENDING_REVIEW` och dess norska version
+`IN_PROCESS` vid avläsningen — Metas granskningsfönster, adsetet är ACTIVE.
+
+Pris 1 129 SEK / 1 106 NOK läst live, alla fem gröna. Ingen rad nämnde
+Bäverbutiken. Torrkörning före skarp: 5 speglade, 0 hoppade, 0 fel.
+
+**Dessutom: 16 källrader i `CaraShell EN ready to be active` blev `Approved`** —
+US-annonserna i Magiborsten UK har kommit upp för hela 18/9-omgången
+(`120251517…`-serien). Den kön är därmed tömd.
+
+**Lärdomen som håller:** ett obetalt konto stoppar bara skrivningar. Raderna
+låg kvar orörda i `CaraShell SE ready to be active` i ett dygn och togs av
+nästa körning helt automatiskt. Att inte flytta status vid ett fel är det som
+gör en dags avbrott till en icke-händelse.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1551453420571983893`, ingen ACTION NEEDED.
