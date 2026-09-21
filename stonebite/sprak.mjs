@@ -262,6 +262,8 @@ const ORDBOK = {
   'Ingen spårningsdata än': 'No tracking data yet',
   'Ingen bonus uträknad än': 'No bonus calculated yet',
 
+  'Kopplad till': 'Linked to',
+  '— ingen —': '— none —',
   'Rapport körd': 'Report run',
   'Senaste rundan': 'Last run',
   'Vecka': 'Week',

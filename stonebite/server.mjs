@@ -283,7 +283,16 @@ export async function hantera(req, res) {
       if (!kollaCsrf(f.csrf, kakvarde, HEMLIGHET)) return visaFel('Formuläret var för gammalt. Försök igen.');
       if (f.losenord !== f.losenord2) return visaFel('De två lösenorden är inte lika.');
       try {
-        const konto = anv.skapa(ANVANDARFIL, { namn: f.namn, epost: f.epost, roll: 'agare', losenord: f.losenord });
+        const fornamn = String(f.namn).trim().split(/\s+/)[0];
+        const personId = fornamn.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 24) || 'agaren';
+        try {
+          sparaPerson({
+            id: personId, namn: String(f.namn).trim(), fornamn, roll: 'agare',
+            brands: [], extraRoller: [], notionNamn: String(f.namn).trim(), alias: [],
+          }, PERSONFIL);
+        } catch { /* personregistret får aldrig blockera första inloggningen */ }
+        const konto = anv.skapa(ANVANDARFIL, { namn: f.namn, epost: f.epost, roll: 'agare', personId, losenord: f.losenord });
         const full = anv.hittaPaId(ANVANDARFIL, konto.id);
         return omdirigera(res, '/app', { kaka: sattKaka(skapaSession(full, HEMLIGHET), { https }) });
       } catch (e) {
@@ -479,6 +488,11 @@ export async function hantera(req, res) {
               } catch { /* registret får aldrig fälla en rolländring */ }
             }
             extra.meddelande = `${k.namn} är nu ${f.roll}.`;
+          } else if (stig === '/app/konton/person') {
+            const k = anv.sattPerson(ANVANDARFIL, f.id, f.personId || null);
+            extra.meddelande = f.personId
+              ? `${k.namn} är kopplad till ${f.personId} — nu räknas bonusen.`
+              : `${k.namn} är inte kopplad till någon person längre.`;
           } else if (stig === '/app/konton/aktiv') {
             const k = anv.sattAktiv(ANVANDARFIL, f.id, f.aktiv === '1');
             extra.meddelande = `${k.namn} är nu ${k.aktiv ? 'aktiv' : 'avstängd'}.`;

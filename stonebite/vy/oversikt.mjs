@@ -236,6 +236,43 @@ export function oversiktSida({ snapshot, anvandare, nu = new Date() }) {
     }),
   }) : '';
 
+  // --------------------------------------------------------------- teamet
+  // Vad folket tjänar, och om bonusprogrammet faktiskt lever. Står det noll
+  // i "recensioner med namn" är programmet bara ett löfte.
+  const bonus = snapshot?.bonus ?? null;
+  const rec = snapshot?.recensioner ?? null;
+  const vantande = (snapshot?.insatser ?? []).filter((i) => i.status === 'vantar').length;
+  const teamdel = bonus ? block({
+    titel: 'Teamet',
+    under: 'Bonusen utöver lönen — och om den faktiskt betalas ut.',
+    innehall: `<div class="kort-rad">
+      ${kort({
+        etikett: `Bonus ${bonus.period?.namn ?? ''}`,
+        varde: `$${(bonus.summa ?? 0).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+        forklaring: `${tal(bonus.personer?.filter((p) => p.summa > 0).length ?? 0)} av ${tal(bonus.personer?.length ?? 0)} personer har tjänat något den här månaden.`,
+      })}
+      ${rec ? kort({
+        etikett: 'Recensioner med namn',
+        varde: tal(rec.medNamn),
+        forklaring: rec.medNamn === 0
+          ? `Av ${tal(rec.antal)} recensioner nämner ingen någon i teamet — då får ingen VA sina fem dollar.`
+          : `Av ${tal(rec.antal)} recensioner senaste 60 dagarna. Varje sådan är pengar till någon.`,
+        status: rec.medNamn === 0 ? status('varning', 'ingen får betalt') : status('bra', 'betalas ut'),
+      }) : ''}
+      ${vantande ? kort({
+        etikett: 'Väntar på godkännande',
+        varde: tal(vantande),
+        forklaring: 'Inrapporterade insatser som ingen godkänt än. De betalas först efter ett klick på sidan Bonus.',
+        status: status('varning', 'kräver ett klick'),
+      }) : ''}
+      ${snapshot?.produkttest ? kort({
+        etikett: 'Produkter som skalas',
+        varde: tal(snapshot.produkttest.steg?.produkt_skalad ?? 0),
+        forklaring: `Av ${tal(snapshot.produkttest.antal)} i trappan. ${tal(snapshot.produkttest.steg?.produkt_lonsam ?? 0)} går med vinst.`,
+      }) : ''}
+    </div>`,
+  }) : '';
+
   // -------------------------------------------------------------- drift
   const problem = halsa.kallor.filter((k) => k.status === 'fel' || k.status === 'saknas');
   const driftdel = block({
@@ -267,6 +304,7 @@ export function oversiktSida({ snapshot, anvandare, nu = new Date() }) {
     ${butiksdel}
     ${annonsdel}
     ${nattdel}
+    ${teamdel}
     ${stangdaDorrar}
     ${driftdel}`,
   };

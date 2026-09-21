@@ -4,9 +4,9 @@ Två saker i samma program:
 
 1. **Den publika sidan** (`stonebite.org`) — vad Stonebite Ecom AB gör och vilka
    butiker vi driver. Inga siffror om försäljning, inga kunduppgifter.
-2. **Det inloggade** (`/app`) — dashboards för butikerna, annonserna,
-   redigerarna, kundtjänsten och leveranserna. **Rollen bestämmer hur mycket
-   man ser.**
+2. **Det inloggade** (`/app`) — tolv sidor: Översikt, Butiker, Annonser,
+   Produkttest, Redigerare, Kundtjänst, Recensioner, Leverans, Bonus, System,
+   Min sida och Konton. **Rollen bestämmer hur mycket man ser.**
 
 Noll npm-beroenden. Node ≥ 20. Ingen byggkedja, ingen databas, inga externa
 anrop från sidan (inga typsnitt, ingen analytics) — allt renderas på servern.
@@ -27,7 +27,7 @@ lägger ägaren till inne på sidan **Konton**.
 ```bash
 npm run sida:hamta -- --utan-nat   # bygg om snapshoten utan Shopify/Meta
 npm run sida:hamta -- --dagar 14   # kortare fönster
-npm test                            # 67 tester, ska vara gröna
+npm test                            # 111 tester för sajten och bonusen
 ```
 
 ---
@@ -36,10 +36,12 @@ npm test                            # 67 tester, ska vara gröna
 
 | Roll | Ser | Ser INTE |
 |---|---|---|
-| **Ägare** | Allt: pengar, annonser, folk, konton | — |
+| **Ägare** | Allt: pengar, annonser, folk, bonus, konton | — |
 | **Chef** | Allt utom vem som får logga in | Konton |
-| **Redigerare** | Topplistan + sin egen sida | **Spend, ROAS, omsättning, break-even, satsen** |
-| **Kundtjänst** | Ärenden, tvister, paket | All ekonomi |
+| **Produkttest** | Produkttest-trappan + sin egen sida | Spend, omsättning, andras pengar |
+| **Videoredigerare** | Topplistan + sin egen sida | **Spend, ROAS, omsättning, break-even, satsen** |
+| **Head of customer support** | Kundtjänst, recensioner, leverans, hela teamets bonus, godkänner insatser | All ekonomi |
+| **Kundtjänst (VA)** | Ärenden, tvister, paket, recensioner + sina egna uppdrag och pengar | All ekonomi, andras bonus |
 
 Behörigheten sitter i `roller.mjs` och kontrolleras av servern vid **varje**
 sidvisning — menyn är bara en spegling. En redigerare som gissar `/app/annonser`
@@ -49,6 +51,27 @@ skickas till sin egen startsida, och ett test bevisar det
 ⚠️ Att redigerare aldrig ser spend är Axels beslut 2026-09-02, samma regel som
 topplistan. Satsen (0,4 %) räknas som spend: med belopp **och** sats går spenden
 att räkna ut baklänges. Den visas därför bara för ägare och chef.
+
+### Två språk
+
+Ägare och chef får svenska, alla andra engelska — samma regel som gäller i
+chatten (CLAUDE.md). Var och en byter själv på Min sida. Ordboken
+(`sprak.mjs`) är hela meningar svenska → engelska; saknas en rad visas
+svenskan och sidan går aldrig sönder. Komponenterna översätter sina egna
+etiketter men **aldrig datan** — butiksnamn, kampanjnamn och kundtext ser
+likadana ut på båda språken.
+
+---
+
+## Bonusen
+
+Varje roll utom ägare och chef har ett bonusprogram, och Min sida är byggd för
+att få folk att jaga det: siffran de tjänat överst, uppdragen med belopp under,
+en färdig text att kopiera, och en veckoräknare. Motorn ligger i `bonus/` —
+se `bonus/README.md`. Sajten räknar den vid varje hämtning.
+
+Ingen godkänner sina egna pengar: en VA rapporterar in en insats, ägaren,
+chefen eller Head of support godkänner den på sidan Bonus.
 
 ---
 
@@ -71,6 +94,8 @@ källa rapporterar sitt eget läge på sidan **Drift**.
 - `kallor/meta.mjs` — spend, köp och ROAS per konto och kampanj. Läs-bart.
 - `kallor/repo.mjs` — det rutinerna redan skrivit: topplistan, kundtjänstens
   veckorapport, spårningen, nattvaktens beslut.
+- `bonus/kor.mjs` — recensioner (Judge.me), produkttest (Notion), tvister och
+  veckomått → vad varje person tjänat den här månaden.
 - `data.mjs` — härleder perioder och summor. `berakna.mjs` — alla tal.
 
 ### Regler som sitter i koden
@@ -120,6 +145,8 @@ loggas alla ut — det är meningen.
 | `berakna.mjs` | Alla siffror och all formatering |
 | `forklaring.mjs` | Teknisk text → svenska (API-fel, kategorier) |
 | `profil.json` | Företagsfakta + texten på publika sidan |
+| `system.json` | Kartan över allt som är byggt — sidan /app/system |
+| `sprak.mjs` | Svenska ↔ engelska. Rollen väljer, användaren kan byta |
 | `vy/` | Sidorna. `delar.mjs` är byggklossarna, `layout.mjs` skalet |
 | `webb/` | `stil.css`, `app.js`, märket. Inga externa anrop |
 
@@ -135,15 +162,18 @@ helst som kör Node (Railway, Fly, en VPS).
 2. **Miljövariabler:** `STONEBITE_HEMLIGHET` (obligatorisk i drift),
    `PORT` (sätts oftast av plattformen), `STONEBITE_ANVANDARE` (sökväg till
    kontofilen).
-3. ⚠️ **Kontofilen måste ligga på en disk som överlever en ny version.**
-   Containern byts vid varje deploy. Peka `STONEBITE_ANVANDARE` på en monterad
-   volym, t.ex. `/data/anvandare.json` — annars är alla konton borta efter
-   nästa deploy och ägarkontot måste skapas om.
+3. ⚠️ **Föränderliga filer måste ligga på en disk som överlever en ny version.**
+   Containern byts vid varje deploy. Sätt `STONEBITE_DATA=/data` och
+   `STONEBITE_ANVANDARE=/data/anvandare.json` mot en monterad volym — annars
+   försvinner konton, inrapporterade bonusinsatser och personer som lagts till
+   på sajten vid nästa deploy.
+   Färdig instruktion för Cowork: `stonebite/COWORK-PROMPT.md`.
 4. **Domänen:** peka `stonebite.org` på tjänsten och låt plattformen sköta
    TLS. Servern sätter HSTS när den ser `X-Forwarded-Proto: https`.
-5. **Färsk data:** `data/snapshot.json` committas till `main`. En rutin på
-   claude.ai kör `node stonebite/hamta.mjs`, committar och pushar — samma
-   mönster som spårningen och kundtjänsten. Deployen tar med den nya filen.
+5. **Färsk data:** `data/snapshot.json` committas till `main`. Rutinen är
+   kommandot `/stonebite` (`.claude/commands/stonebite.md`): den hämtar,
+   räknar bonusen, committar och pushar — samma mönster som spårningen och
+   kundtjänsten. Deployen tar med den nya filen.
 
 `/halsa` svarar med JSON (läge + när datan hämtades) och kräver ingen inloggning
 — använd den som health check.
@@ -154,7 +184,11 @@ helst som kör Node (Railway, Fly, en VPS).
 
 - Ingen glömt-lösenord-funktion (ägaren sätter ett nytt på sidan Konton).
 - Ingen tvåfaktor.
-- Snapshoten uppdateras av en rutin som ska sättas upp med `/rutin`.
+- Rutinen som kör `/stonebite` varje timme är inte uppsatt än (kommandot finns,
+  rutinen byggs med `/rutin` på det konto som äger de andra rutinerna).
+- Trustpilot läses inte automatiskt: deras publika sida svarar 403 på maskiner.
+  Med `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` går det; tills dess
+  rapporterar VA:n in recensionen med länk och chefen godkänner.
 - Bäverbutikens försäljning saknas i sajten tills Shopify-appen fått
   godkännande för kunddata (`read_orders`). Sidan säger det rakt ut i stället
   för att visa noll.

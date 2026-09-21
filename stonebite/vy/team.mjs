@@ -185,6 +185,17 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
           <button class="knapp liten tyst" type="submit">Spara</button>
         </form>
       </td>
+      <td>
+        <form method="post" action="/app/konton/person" style="display:flex;gap:6px;align-items:center">
+          <input type="hidden" name="csrf" value="${attr(csrf)}">
+          <input type="hidden" name="id" value="${attr(k.id)}">
+          <select name="personId" style="height:34px;padding:0 8px;font-size:13px;border-radius:6px;border:1px solid var(--linje-stark);background:var(--papper);color:var(--ink);max-width:150px">
+            <option value="">${esc(t('— ingen —'))}</option>
+            ${personer.map((p) => `<option value="${attr(p.id)}"${p.id === k.personId ? ' selected' : ''}>${esc(p.namn)}</option>`).join('')}
+          </select>
+          <button class="knapp liten tyst" type="submit">${esc(t('Spara'))}</button>
+        </form>
+      </td>
       <td>${k.aktiv === false ? status('kritisk', 'avstängd') : status('bra', 'aktiv')}</td>
       <td class="tal"><span class="mini">${k.senastInloggad ? esc(sedan(k.senastInloggad)) : 'aldrig'}</span></td>
       <td>
@@ -228,10 +239,10 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
       titel: 'Inloggningar',
       innehall: panel({
         innehall: tabell(
-          [{ titel: 'Person' }, { titel: 'Roll' }, { titel: 'Läge' }, { titel: 'Senast inne', tal: true }, { titel: '' }],
+          [{ titel: 'Person' }, { titel: 'Roll' }, { titel: 'Kopplad till' }, { titel: 'Läge' }, { titel: 'Senast inne', tal: true }, { titel: '' }],
           rader,
         ),
-        fot: `${konton.length} konton. Ett avstängt konto loggas ut direkt.`,
+        fot: `${konton.length} konton. Kopplingen till person är det som gör att bonusen hamnar rätt — utan den ser personen noll.`,
       }),
     })}
 
