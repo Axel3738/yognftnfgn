@@ -1,0 +1,50 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "hub_titel": "Belt grinder creative hub",
+  "slug": "belt-grinder-creative-hub-3cc270ab",
+  "rond": "2026-09-18",
+  "idag": "2026-09-21",
+  "antal": 9,
+  "rena": 0,
+  "anm": 4,
+  "fel": 5,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8135-a1b7-ddd561c19755",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-18-3e2270ab908c8135a1b7ddd561c19755",
+    "titel": "Brief review 2026-09-18",
+    "block": 22
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Beltgrinder_BOF_5_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Belt grinder creative hub) — this brief has 2 errors the editor must know about:\n1. Every line promises terms the store does not offer: `Testa den … i 30 dagar`, `Du får pengarna tillbaka`, `riskfritt` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Do not reuse this ad; a trust static must say the real terms (free shipping within Sweden, 5–10 working days, Klarna, 14 days' right of withdrawal by law).\n2. The sub-line `Fungerar den inte på Bälteslipmaskin Mini? Du får pengarna tillbaka.` is broken Swedish — it does not mean \"Not happy with your Belt Grinder Mini?\". Never bake a line in until the Swedish has been read back by a Swedish speaker.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Beltgrinder_PD_25_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Belt grinder creative hub) — this brief has an error the editor must know about:\n1. End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Vässa dina knivar för 909 kr.` only.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Beltgrinder_SP_9_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Belt grinder creative hub) — this brief has an error the editor must know about:\n1. End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Töm din låda. Vässa allt för 909 kr.` only.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Beltgrinder_CS_4_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Belt grinder creative hub) — this brief has an error the editor must know about:\n1. End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18: the ad never names the store, in copy, image, VO or captions). Next version: product + `Beställ för 909 kr.` only.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Beltgrinder_PD_26_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Belt grinder creative hub) — this brief has an error the editor must know about:\n1. End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Vässa dina verktyg för 909 kr.` only.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

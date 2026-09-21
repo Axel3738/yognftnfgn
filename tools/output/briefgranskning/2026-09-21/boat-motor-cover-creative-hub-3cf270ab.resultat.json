@@ -1,0 +1,55 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "hub_titel": "Boat motor cover creative hub",
+  "slug": "boat-motor-cover-creative-hub-3cf270ab",
+  "rond": "2026-09-18",
+  "idag": "2026-09-21",
+  "antal": 11,
+  "rena": 0,
+  "anm": 5,
+  "fel": 6,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8106-9342-f4dfed3e936c",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-18-3e2270ab908c81069342f4dfed3e936c",
+    "titel": "Brief review 2026-09-18",
+    "block": 21
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Batmotor_CS_9_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 3 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. Store name in the ad: the 22–25 s VO line `Båtmotorskyddet 420D — 579 kr på baverbutiken.se.` and the caption `579 kr. baverbutiken.se` (rule since 2026-09-18: never in copy, image, VO or captions). Next version: end on `Båtmotorskyddet 420D — 579 kr.` and the price alone in the caption.\n3. `30 dagars öppet köp.` at 18–22 s — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Replace with a true term (`Fri frakt inom Sverige.`) or drop the line.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_SP_4_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 2 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. Store name in the ad: caption `579 kr. baverbutiken.se` at 21–25 s (rule since 2026-09-18). Next version: `579 kr.` alone.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_PD_7_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 2 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. Store name in the ad: caption `579 kr. baverbutiken.se` at 23–25 s (rule since 2026-09-18). Next version: `579 kr.` alone.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_BOF_2_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 3 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. `30 dagars öppet köp.` / `Fri att ångra dig i 30 dagar.` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). The ad's two main lines are false against the store; rebuild on the real terms (free shipping within Sweden, Klarna) or drop the ad.\n3. The CTA's English meaning says \"Read more at baverbutiken.se\" — use the Swedish `Läs mer om skyddet.` exactly, no URL and no logo anywhere on the image (rule since 2026-09-18).\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_SP_1_H10",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 2 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. Store name in the ad: caption `579 kr. baverbutiken.se` at 22–25 s (rule since 2026-09-18). Next version: `579 kr.` alone.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Batmotor_BOF_3_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (Boat motor cover creative hub) — this brief has 2 errors the editor must know about:\n1. the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)\n2. The CTA's English meaning says \"Find your size at baverbutiken.se\" — use the Swedish `Hitta din storlek.` exactly; no URL, no logo on the image (rule since 2026-09-18).\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

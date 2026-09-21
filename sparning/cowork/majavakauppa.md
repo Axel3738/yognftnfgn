@@ -48,9 +48,19 @@ redan klar.
 
 ⚠️ **Avsändaradressen är `asiakaspalvelu@majavakauppa.fi`** enligt den här
 körningen — inte `asiakastuki@` som den tidigare Cowork-körningen läste och
-som står i `sparning/butiker.json` + mallarnas sidfot. Fråga till Axel
-2026-09-21: vilken ska kunderna skriva till? Är svaret asiakaspalvelu@ byggs
-mallarna om och körs en gång till.
+som står i `sparning/butiker.json` + mallarnas sidfot. **Axels svar 2026-09-21: B = asiakaspalvelu@.** Registret och
+mallarnas sidfot ombyggda med den adressen; Cowork kör prompten en gång till
+(mallarna är idempotenta, samma metod).
+
+## ✅ Utfall 2026-09-21 07:31–07:44 CEST — asiakaspalvelu@-mallarna inne, testmejl OK. Finland är KLART.
+
+Cowork körde prompten igen efter adressbytet: tre mallar via kodrutans API,
+verifierade mot serverns mall-data — 10 607 / 6 241 / 6 249 tecken,
+identiska med råfilerna, ämnesraderna redan rätt, `BB-` + `sha256` i alla.
+Testmejl framme 07:44: en knapp **Seuraa pakettia** →
+`https://majavakauppa.fi/pages/seuranta?nummer=BB-6C1002DF`, sidfoten
+`asiakaspalvelu@majavakauppa.fi`. Ett testmejl, inte tre (två felklick i
+Skicka-dialogen gav inget utskick, kontrollerat i inkorgen).
 
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/majavakauppa/COWORK-PROMPT.md`
 

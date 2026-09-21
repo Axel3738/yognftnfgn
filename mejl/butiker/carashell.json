@@ -12,6 +12,5 @@
   "logga_hojd": 96,
   "meny_klar": true,
   "meny_klar_comment": "Cowork lade in 'Spåra paket' i Main menu + Footer menu 2026-09-20 kväll (sparning/cowork/carashell.md → Utfall). Prompten hoppar därför över menysteget.",
-  "byt_avsandare": "hello@carashell.com",
-  "byt_avsandare_comment": "Axels beslut 2026-09-20 sen kväll: en avsändare för alla marknader. Cowork byter i Inställningar → Notiser; verifieringslänken landar i hello@carashell.com (Axels klick). Ta bort fältet när bytet är gjort."
+  "avsandare_comment": "hello@carashell.com satt och Autentiserad i Shopify sedan 2026-09-21 (steg 0 gjort) — byt_avsandare borttagen så prompten inte bär steget längre."
 }

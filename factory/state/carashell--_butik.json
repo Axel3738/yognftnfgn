@@ -47,6 +47,7 @@
         "sections/ms-marquee.liquid",
         "sections/announcement-bar.liquid",
         "sections/header-group.json",
+        "snippets/opf-korg-trygghet.liquid",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
         "snippets/ms-head.liquid"
@@ -215,12 +216,12 @@
     },
     "oversatt": {
       "klar": false,
-      "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 12 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 12 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt · da: 12 svenska texter saknar översättning (läckor på /da): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-da.json och kör --igen oversatt",
+      "manuell": "nb: 17 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 17 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 17 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt · da: 17 svenska texter saknar översättning (läckor på /da): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-da.json och kör --igen oversatt",
       "underlag": 160,
       "utfall": {
         "nb": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -235,11 +236,11 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4394/4445"
+          "granskning": "4397/4452"
         },
         "en": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -254,11 +255,11 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4413/4445"
+          "granskning": "4417/4452"
         },
         "fi": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -273,26 +274,26 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4403/4445"
+          "granskning": "4406/4452"
         },
         "da": {
-          "registrerade": 113,
-          "saknade": 12,
+          "registrerade": 0,
+          "saknade": 17,
           "perTyp": {
-            "variant": 1,
-            "produkt": 8,
-            "metafält": 18,
-            "sida": 9,
-            "menylänk": 9,
-            "paket": 22,
-            "policy": 3,
-            "fraktsätt": 3,
-            "kollektion": 1,
-            "temamall": 31,
-            "sektionsgrupp": 7,
-            "temainställning": 1
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "fraktsätt": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 0
           },
-          "granskning": "4394/4445"
+          "granskning": "4397/4452"
         }
       }
     },
@@ -323,7 +324,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-20T07:51:55.130Z"
+    "tid": "2026-09-21T07:04:49.776Z"
   },
-  "uppdaterad": "2026-09-20T07:51:55.131Z"
+  "uppdaterad": "2026-09-21T07:04:49.776Z"
 }

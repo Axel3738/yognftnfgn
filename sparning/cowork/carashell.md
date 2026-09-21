@@ -61,6 +61,59 @@ chatt UTAN automatiskt godkännande och godkänn varje inskrivning.**
 Coworks fråga om att engelska knappen pekar på carashell.com: det är
 avsiktligt — carashell.com är USA-marknadens egen domän (`mejl_marknader`).
 
+## ⛔ Utfall 4 — stoppad IGEN, chatten gick fortfarande i auto-läge (2026-09-21 ~02:00 CEST)
+
+Axel startade en ny chatt, men Coworks spärr låg kvar: `javascript_tool` mot
+Shopify-admin nekades tre gånger — hämta råfilen i sidan (Untrusted Code
+Integration), skriva in redan granskat innehåll som literal, och till och
+med **läsa** fältens värden. Inget ändrat, inget sparat, fliken orörd på
+Redigera Leveransbekräftelse. Coworks egen slutsats: "kör om med
+godkännanden i manuellt läge istället för auto" — samma metod gick igenom i
+NO/DK/FI samma natt. Två vägar: (A) ny chatt där Cowork frågar före varje
+åtgärd, (B) Axel klistrar själv in de tre råfilerna i Shopifys kodruta
+(mänskligt urklipp fungerar — varningen i prompten gällde Coworks), och
+Cowork kör prompten efteråt bara för att verifiera och skicka testmejlet
+(prompten är idempotent, precis som Norge-körningen visade).
+Verifierat av Cowork under körningen: carashell.com/pages/spara serverar
+engelska och behåller `?nummer=` — språkroutingen i mallen är rätt.
+Nuvarande ämnesrad på servern är ren text `Ditt paket är på väg`; den nya är
+Liquid-raden (227 tecken).
+
+## ⚠️ Utfall 5 — Axel klistrade in själv (2026-09-21 07:44–07:46 CEST): 2 av 3 rätt, mall 3 i FEL mall
+
+Väg B fungerade: Cowork läste serverns EmailTemplate-data och sha256-jämförde
+mot råfilerna. `shipping_confirmation` 41 115 ✅ och `shipping_update` 24 402 ✅,
+ämnesraderna (Liquid) ✅, `CS-`/`sha256`/`country_code` i alla. **Men
+`ute_for_leverans.liquid` (24 394) hamnade i `local_out_for_delivery` = "Order
+ute för lokal leverans"**, och "Ute för leverans" (`out_for_delivery`) står
+kvar på Shopifys standardmall. Orsak: Shopifys interna `name` för
+lokal-leverans-mallen är bokstavligen "Out for delivery" — bara `displayName`
+skiljer. Följd tills det rättas: lokal-leverans-kunder får flygfraktsmejlet,
+riktiga ute-för-leverans-kunder får standardmallen utan spårningslänk.
+Rättning (Axels klick): lägg filen i "Ute för leverans", och **Återgå till
+standard** i "Order ute för lokal leverans" (`versions: 2`, standarden finns
+kvar). Testmejl C skickat och framme 05:50:57Z: **engelskt** ("Your parcel is
+on its way", en knapp Track your parcel → carashell.com/pages/spara?nummer=CS-…)
+eftersom Shopifys testorder har ett engelskt country_code — den svenska
+grenen testas först av en riktig svensk order. Avsändaren i testmejlet är
+Shopifys relä `store+…@g.shopifyemail.com`; skarpa utskick ska gå från
+hello@carashell.com (Autentiserad) — kolla på nästa riktiga order.
+
+## ✅ Utfall 6 — ALLA TRE fyrspråkiga mallarna inne och verifierade. CaraShell är KLART (2026-09-21 07:56 CEST)
+
+Axel återställde "Order ute för lokal leverans" (**Återgå till standard**,
+`hasDefaultBody/Title: true`, 17 469 tecken, noll `CS-`) och klistrade
+`ute_for_leverans.liquid` i rätt mall. Cowork verifierade mot serverns
+EmailTemplate-data: `shipment_out_for_delivery` 24 394 tecken, sha256 kropp +
+ämne lika råfilen, `updatedAt` 05:56:00Z; `shipping_confirmation` 41 115 och
+`shipping_update` 24 402 oförändrade sedan 05:44; `shipment_delivered` orörd
+(10 sept). Coworks egen rättelse: dess förra rapport frågade API:t efter id:t
+`out_for_delivery` som inte finns i butiken och tolkade null som "standard" —
+rätt id är **`shipment_out_for_delivery`**. Lärdom: id:t i adressfältet är
+markören, aldrig namnet (lokal-leverans-mallens interna `name` är också "Out
+for delivery"). Testmejl C gick igenom tidigare (Utfall 5).
+`byt_avsandare` borttagen ur `mejl/butiker/carashell.json` — steg 0 är gjort.
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys

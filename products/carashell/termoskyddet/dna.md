@@ -197,3 +197,19 @@ byggt på hook-raden i mönster 4, inte på "prisfall".
 | 2026-09-17 | **GB, CA, AU, NZ** (i USA-marknaden) | en | **Lokala valutor, omräknade från de fasta USD-priserna** — mätt som kund per land 13:30 UTC: **£76 / C$142 / A$143 / NZ$177** | Inget eget pris: Shopifys omräkning av 99 USD (se takskyddets rad) | 5–10 business days (delad en-rad) | Samma block som takskyddet (PROCESS.md punkt 22). 🖐 UK: £76 ligger under £135-gränsen ⇒ brittisk moms ska tas i kassan och kräver UK-momsregistrering (gov.uk 2026-09-17) — ägarens beslut innan termoskyddet säljs till UK. Frakt, engelska och garanti som takskyddet |
 | 2026-09-20 | **DK** | da | **DKK, fast pris** — mätt som dansk kund (POST /localization DK/da + `?country=DK`): `html lang="da"`, `"currency":"DKK"`, **409,00 kr / 679,00 kr**, paketnivåerna 347,65 / 695,30 osv. | **409 DKK / jämförpris 679** — Axels beslut 2026-09-20 ("ett snäpp högre, kanske 10 %"): 559 × 0,66204 × 1,10 → x9. Jämförpriset följer HÄR den svenska sidans rabatt (40 %), inte 25 %-regeln som NOK/USD/EUR bär — den svenska sidan är källan | 5–10 hverdage | Samma marknadsblock som takskyddet: Danmark ACTIVE, basvaluta DKK via API, locale `da`, prislistan "CaraShell DKK" (delad med takskyddet, 10 fasta priser totalt). 0 svenska markörer av 16 på /da. 🖐 Judge.me → Settings → Language → Refresh list (konfigen säger fortfarande `locale: "en"`). Ingen DK-kampanj byggd |
 | 2026-09-20 | **DK — INSTÄLLD** | — | — | DKK-raden står kvar i produktfilen (409 / 679) och butikens danska sida säljer produkten som vanligt | — | ⛔ **Axels beslut 2026-09-20: termoskyddet ska INTE annonseras i Danmark.** Ordagrant: *"vi behöver inte översätta termoskyddet, den suger ändå, den fungerade knappt i Norge. Det viktiga är taköverdraget."* Danskan var påbörjad (12 manus i kö) och stoppades samma minut. `annonsmarknader` står kvar på **NO,US** — ingen DK-rutin byggs. Kampanjen `CARASHELL_DK_Termoskydd Husbil 211 × 171 cm` (`120249183407750172`) hann byggas TOM och PAUSED med 4 adsets; den är kvar orörd i OPS-kontot, utan annonser och utan spend, så den kan fyllas senare utan att byggas om. ⚠️ Underlaget för "fungerade knappt": SE-kampanjen 2 058 kr och NO-kampanjen 3 515 kr spend, båda PAUSED — alltså avvecklade efter en kort körning. **Köpsiffrorna gick INTE att mäta:** Metas insights lämnar inte ut `actions` med den här token:en (tomt även på Bäverbutikens konto, som spenderar ~505 000 kr/30 dagar), så ingen ROAS och inget köpantal är verifierat här. Axels dom står på hans egen erfarenhet, inte på en siffra ur det här repot |
+
+---
+
+## 2026-09-21 — Trygghetsblocket i varukorgen gäller den här produkten också
+
+Blocket sitter i varukorgslådan, inte på produktsidan, så det visas för
+BÅDA CaraShells produkter. Betyget läses per produkt i korgen ur
+`reviews.rating` — termoskyddet hade 5,0 på 20 recensioner vid bygget, och
+ligger båda produkterna i korgen visas den förstas betyg.
+
+A/B-testet `korgtrygg` är gemensamt för butiken (en kaka, ett orderattribut),
+alltså inte något som kan slås på för en produkt i taget.
+
+Hela mätningen och de tre fällorna: `factory/PROCESS.md` → "Kassan går inte
+att anpassa per marknad". Detaljerna för butiken:
+`products/carashell/takskyddet/dna.md`.

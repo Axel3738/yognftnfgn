@@ -56,7 +56,7 @@ Gör så här för en mall i taget, uppifrån och ner i tabellen:
 | 3 | **Ute för leverans / Out for delivery** | `Pakken kommer i dag` | `BB-` och `sha256` | **6 236** | https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/mejl/output/butiker/baeverbutiken/ute_for_leverans.liquid |
 
 ⚠️ Bredvid "Ute för leverans" ligger "Order ute för lokal leverans" — ta INTE
-det. Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
+det — id:t i adressfältet är markören: shipment_out_for_delivery är rätt, local_out_for_delivery fel (båda heter "Out for delivery" internt; CaraShell 2026-09-21). Rör inte "Levererad". Talen är tecken, inte byte (å/ä/ö väger två byte i
 Shopifys räknare).
 
 ### B. Menylänken

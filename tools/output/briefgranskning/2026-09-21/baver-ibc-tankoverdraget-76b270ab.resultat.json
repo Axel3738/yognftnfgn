@@ -1,0 +1,30 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "hub_titel": "BÄVER IBC-Tanköverdraget",
+  "slug": "baver-ibc-tankoverdraget-76b270ab",
+  "rond": "2026-09-20",
+  "idag": "2026-09-21",
+  "antal": 9,
+  "rena": 0,
+  "anm": 8,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8129-a866-fc5b91ad2d38",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-20-3e2270ab908c8129a866fc5b91ad2d38",
+    "titel": "Brief review 2026-09-20",
+    "block": 22
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "IBC_BOF_18_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-20 (BÄVER IBC-Tanköverdraget) — this brief has an error the editor must know about:\n1. The hook `Passar den min tank?` fails the three-question test: a question cannot be true or false. Next version: lead with the measurement as the headline (`120 × 100 × 116 cm. Passar en standard 1000 L IBC-tank.`) and move the doubt into the sub-line, or drop it.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}

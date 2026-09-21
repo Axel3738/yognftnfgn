@@ -47,6 +47,9 @@ function laddaPersoner() {
       id: u.id,
       namn: u.name,
       notionUserId: u.notionUserId || '',
+      // Samma person kan bära flera Notion-id:n — t.ex. ett gästkonto som
+      // dykt upp i efterhand vid sidan av det syntetiska kommentar-id:t.
+      notionUserIdAlias: Array.isArray(u.notionUserIdAlias) ? u.notionUserIdAlias : [],
       roll: u.role,
       // Redigerare utan Notion-konto pekas ut i en kommentar i stället —
       // se commission/kommentarer.mjs.

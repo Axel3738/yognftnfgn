@@ -1,0 +1,142 @@
+{
+  "hub_id": "e53270ab-908c-8297-be2d-0162a09dc253",
+  "rond": "2026-09-20",
+  "bra": [
+    "Rating and both quotes verified live and dated (5,00 of 5 on 10 reviews, 2026-09-20), quoted verbatim with names; every brief carries \"No store name, no URL, no logo\" and the age rule (`från 3 år, innehåller små delar` — never 2 years).",
+    "Page facts hold: `24 olika bilar` is backed by the page (`varje bil är sin egen modell och färg`), `Hjulen rullar på riktigt` is the page's own line, age 3+ matches (read live from the product page 2026-09-21); price 499 / 649 kr right everywhere.",
+    "CO_4_1 turns the proven chocolate conflict into a before/after image with a dated, concrete hook (`24 december: chokladkalendern tom, i soporna.`).",
+    "PD_11_H1 isolates the hook against the proven scene; BF_12_1 isolates the rolling wheels as a standalone claim."
+  ],
+  "missat": [
+    "UG_3_H1 contradicts itself: \"a parent speaks in her own words, no script read aloud\" — and then a word-for-word Swedish script with \"Swedish captions word for word\". The editor cannot produce both.",
+    "GT_4_H1 opens on the verbatim quote `Bra adventskalender. Rolig idé …` — a fine quote, a weak first second: nothing to see, and \"bra adventskalender\" is a line any calendar could carry. Open on the child's hand at door 1 and place the quote at 3–6 s.",
+    "Hypotheses without numbers: \"the gift angle is the one profitable active ad\" (GT_4_H1), \"the first UGC parent is the strongest new signal\" (UG_3_H1) — cite CPA and purchases against break-even.",
+    "The code BF holds three different angles this round (count, rating, rolling wheels: BF_10/11/12) — the next /cs cannot group by angle. Rating belongs in RV/SP, the wheels in PD.",
+    "No Variables line on any brief; 5 of 9 concepts have no source named; no COPY CARD. The three-question table is ✅✅❌ on every line.",
+    "This product has no memory in the repo linked to the hub (products/kalender/ is the closed OPS store's) — the Feedback row in the hub is its memory."
+  ],
+  "regler": [
+    "A brief is either scripted or UGC: for UGC write the beats and the facts the parent must get right, mark the captions \"summarize her words\", and never write \"word for word\".",
+    "One concept code = one angle: keep BF for one thing, put ratings in RV, the rolling wheels in PD — and add the Variables line to every brief.",
+    "Cite the parent's CPA and purchases against break-even in every Why that calls something a winner — \"the one profitable ad\" and \"the strongest new signal\" need numbers."
+  ],
+  "rader": [
+    {
+      "namn": "Adventskalender_UG_3_H1",
+      "fel": [
+        "The brief contradicts itself: \"a parent speaks to camera in her own words, no script read aloud\" versus a word-for-word Swedish script and \"Swedish captions word for word\". Decide before shooting: either a scripted VO (then it is not UGC) or a real parent in her own words with captions that summarize what she says. The facts she must get right: 24 doors, 24 different cars, wheels that roll, 499 kr / 649 kr, från 3 år."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Why names no numbers for \"the strongest new signal\" — cite the first UGC ad's CPA and purchases."
+      ],
+      "bra": [
+        "Second speaker and scenario to test whether the format carries — the right question."
+      ]
+    },
+    {
+      "namn": "Adventskalender_RV_8_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Second voice to test whether the review-card type carries."
+      ]
+    },
+    {
+      "namn": "Adventskalender_RV_7_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Verbatim, named, verified."
+      ]
+    },
+    {
+      "namn": "Adventskalender_PD_11_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Says it isolates the hook but also adds the chocolate line at 12–16 s — if the parent lacks it, that is a second variable."
+      ],
+      "bra": [
+        "Proven scene kept, one line changed."
+      ]
+    },
+    {
+      "namn": "Adventskalender_GT_4_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Opening on the quote `Bra adventskalender. Rolig idé med en bil bakom varje lucka.` gives the first second nothing to see; open on the child's hand at door 1 and let the quote land at 3–6 s with the name card.",
+        "Why says \"the one profitable active ad\" without numbers — cite GT_1_H1's CPA and purchases against break-even."
+      ],
+      "bra": [
+        "Only Peter's review, verbatim, verified and dated."
+      ]
+    },
+    {
+      "namn": "Adventskalender_CO_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Dated, concrete before/after of the proven conflict."
+      ]
+    },
+    {
+      "namn": "Adventskalender_BF_12_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The wheels are a product feature — PD, not BF. The CTA slot carries the age line; fine for a static, but say so."
+      ],
+      "bra": [
+        "Isolates one page-backed feature."
+      ]
+    },
+    {
+      "namn": "Adventskalender_BF_11_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "A rating card is social proof — code it RV or SP, not BF."
+      ],
+      "bra": [
+        "Verified, dated, used once this batch."
+      ]
+    },
+    {
+      "namn": "Adventskalender_BF_10_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "BF is used for count (this), rating (BF_11_1) and wheels (BF_12_1) — three angles under one code."
+      ],
+      "bra": [
+        "`24 luckor. 24 olika bilar.` — concrete, page-backed, unsignable by a chocolate calendar."
+      ]
+    }
+  ]
+}

@@ -1396,3 +1396,93 @@ och isolerar i stället rabattframingen mot varandra (23 % mot 340 kr). Läs dem
 mot `CS_1_H1` (video, CPA 216 kr) nästa gång någon gör en feedback-loop —
 CaraShell briefas inte längre härifrån, så den loopen ligger numera i
 Bäverbutikens teamspace.
+
+---
+
+## Spegling 2026-09-21 — 5 av 5, gårdagens stopp löst
+
+Kontot betalades av Axel: `account_status` på Magiborsten DK `915422744950975`
+läser **1 (ACTIVE)** igen, mot 3 (UNSETTLED) i går. Samma fem rader som nekades
+2026-09-20 gick upp utan ändringar — inget behövde göras om, ingen rad hade
+tagit skada av att stå kvar.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_BOF_9_1 | CaraShellRoof_BOF_109_1 | 120249189223200172 | 120249189228110172 |
+| Takoverdrag_CS_13_1 | CaraShellRoof_CS_113_1 | 120249189301610172 | 120249189310900172 |
+| Takoverdrag_PD_10_1 | CaraShellRoof_PD_110_1 | 120249189397310172 | 120249189399940172 |
+| Takoverdrag_BOF_8_1 | CaraShellRoof_BOF_108_1 | 120249189478830172 | 120249189496460172 |
+| Takoverdrag_BOF_7_1 | CaraShellRoof_BOF_107_1 | 120249189597020172 | 120249189601910172 |
+
+Tillbakaläst ur Meta: alla tio bär `status: ACTIVE` i rätt kampanj i
+OPS-kontot. `BOF_107_1` stod `PENDING_REVIEW` och dess norska version
+`IN_PROCESS` vid avläsningen — Metas granskningsfönster, adsetet är ACTIVE.
+
+Pris 1 129 SEK / 1 106 NOK läst live, alla fem gröna. Ingen rad nämnde
+Bäverbutiken. Torrkörning före skarp: 5 speglade, 0 hoppade, 0 fel.
+
+**Dessutom: 16 källrader i `CaraShell EN ready to be active` blev `Approved`** —
+US-annonserna i Magiborsten UK har kommit upp för hela 18/9-omgången
+(`120251517…`-serien). Den kön är därmed tömd.
+
+**Lärdomen som håller:** ett obetalt konto stoppar bara skrivningar. Raderna
+låg kvar orörda i `CaraShell SE ready to be active` i ett dygn och togs av
+nästa körning helt automatiskt. Att inte flytta status vid ett fel är det som
+gör en dags avbrott till en icke-händelse.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1551453420571983893`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-20/21 — DANMARK: hela kampanjen uppe, 60 annonser
+
+Första marknaden efter USA som fick **egna creatives**, inte bara översatt
+copy. Kedjan `pipeline/omdubb/marknadsvideo.mjs` byggdes för det här och är
+nu bevisad: klipp källan vid slutkortet → dubba talet med ElevenLabs
+(`Søren`, vald genom mätning, `pipeline/omdubb/README.md`) → byt inbränd
+svensk text → rita ett nytt slutkort ur marknadens egen prislista → bränn in
+danska captions.
+
+**Uppe i `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5` (`120249183405560172`),
+kampanj PAUSED, CBO 1 000 kr/dag:**
+
+| Adset | Annonser | Adsetets status |
+|---|---|---|
+| CARASHELL_DK_PD | 14 | PAUSED |
+| CARASHELL_DK_CS | 11 | PAUSED |
+| CARASHELL_DK_GT | 9 | PAUSED |
+| CARASHELL_DK_SP | 9 | PAUSED |
+| CARASHELL_DK_BOF | 6 | ACTIVE |
+| CARASHELL_DK_CO | 3 | PAUSED |
+| CARASHELL_DK_RI | 3 | ACTIVE |
+| CARASHELL_DK_LI | 2 | ACTIVE |
+| CARASHELL_DK_OB | 1 | ACTIVE |
+| CARASHELL_DK_TR | 1 | ACTIVE |
+| CARASHELL_DK_UG | 1 | ACTIVE |
+| **Summa** | **60** | |
+
+24 videor + 36 bilder, alla 60 med egen dansk copy. **0 fel, 0 utan copy.**
+Varje annons tillbakaläst som `ACTIVE`.
+
+**Alla elva adsets är ACTIVE sedan 2026-09-21.** Sex skapades av
+uppladdningen själv (den rör bara det den skapat); de fem övriga — CO, CS,
+GT, PD, SP, som bär 46 av de 60 annonserna — föddes PAUSED av
+`kampanj.mjs --tom` 2026-09-20 15:00 och hade **0 kr spend och 0
+visningar**, alltså inte avstängda av ett beslut. Slagna på mot en namngiven
+lista efter Axels ok samma morgon. Hade de lämnats pausade hade en launch
+kört **14 av 60 annonser utan felmeddelande** — den fällan är värd att leta
+efter i varje ny marknad: räkna ACTIVE adsets, inte bara ACTIVE annonser.
+
+Tillbakaläst: kampanj PAUSED, **11 av 11 adsets ACTIVE, 60 av 60 annonser
+ACTIVE**.
+
+**Det som kostade mest tid, i ordning:**
+1. Kontot var UNSETTLED (obetald faktura). Felet läser som ett
+   behörighetsfel — se `factory/opsmarknader.mjs`.
+2. Meta stryper skrivningarna (kod 17): 59 annonser tog ~7 h, en i taget.
+   Egna läsningar mot kontot under tiden gör backoffen längre — låt bli.
+3. Uppladdaren globbade bara `.mp4` och `.jpg` medan bilderna låg som
+   `.png` — hade tyst tagit 0 av 36. Rättat med test.
+4. Två väntare sökte varandra med `pgrep -f` på skriptnamnet och låste
+   varandra i sex timmar efter att batchen var klar. Vänta på PID.

@@ -3,6 +3,33 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-21 — 0 nya, allt redan klart, 36 i `sources.json`
+
+Inga nya mappar i MAKE TO NORWAY. Bygget gav identiska filer, `git status` tomt
+efteråt, och `--dry` mot gårdagens två svarade "hoppar över": Innetøfler 10,
+Vedkløyver-bor 8.
+
+### Två mappar flyttade till WINNERS — inte raderade
+
+`NO Arbetslampa för Makita-batteri` och `NO Stegstöd 2-pack` låg inte längre i
+MAKE TO NORWAY. Två listningar i rad gav samma 38 rader, så det var ingen
+skiftande delmängd — de hade **flyttats in i WINNERS**, som nu har fem mappar i
+stället för tre.
+
+Båda är sedan tidigare klara i Judge.me (8 resp. 10 synliga), så det ändrar
+ingenting. Men: **en mapp som försvinner ur MAKE TO NORWAY är oftast befordrad,
+inte borttagen — kolla WINNERS innan du drar någon slutsats.** `sources.json`
+behåller dem oavsett, och handlen finns kvar i butiken.
+
+### De fyra som väntar — alla oförändrade
+
+| Ark | Vad som fattas |
+|---|---|
+| `Dinosauriekalender_REVIEW` | varje namn är `Anna (EXEMPEL)`, `Erik (EXEMPEL)` … Allt annat klart |
+| `Gravstenspenna_Reviews` | bara `TEST – …`-rader, sedan 2026-09-04 |
+| `Medicinask i Fickformat_REVIEW` | bara `Exempel N – EJ KUNDRECENSION` + `not-a-real-product-handle`. **Produkten är avvecklad** |
+| `5.1 Lövblåsare_REVIEW` (= Jetviften) | personnamn i `title`, utekattkojans `product_handle` |
+
 ## Läget 2026-09-20 — 18 nya på två produkter, 36 i `sources.json`
 
 MAKE TO NORWAY hade **tre** nya mappar. Två importerades, en hoppades över.

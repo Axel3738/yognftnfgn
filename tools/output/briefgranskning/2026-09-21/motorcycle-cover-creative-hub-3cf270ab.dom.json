@@ -1,0 +1,119 @@
+{
+  "hub_id": "3cf270ab-908c-81c1-bfd2-d78f9a45b3d8",
+  "rond": "2026-09-18",
+  "bra": [
+    "PD_10_H1 and CS_8_H1 are model hypotheses: spend share, profit share, CPA against break-even, and PD_3's negative contribution (−661 kr, ROAS 1,12 against 1,49) named as the reason to feed the winner with new footage.",
+    "The fake-urgency line on CS_2_1 (`IDAG ENDAST / Snart slutsåld`) is retired by name and the honest 40 % is tested on its own.",
+    "218 × 118,5 cm, `passar de flesta motorcyklar och elcyklar`, `resårkant`, `vattenavvisande` all match the product page (read live from the product page 2026-09-21); price 349 / 582 kr right everywhere; Variables line on all seven.",
+    "OB_5_H1 and PD_10_H1 open on filmable specifics (a bike parked October to April; rain all night, dry under the cover) instead of adjectives."
+  ],
+  "missat": [
+    "BOF_2_1 promises `30 dagars öppet köp – gillar du inte kapellet får du pengarna tillbaka` and `beställ med öppet köp` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). The row is in To be Reviewed, so it has not gone live yet — fix before upload.",
+    "Two break-even CPAs in one round: 277 kr (CS_8_H1, PD_11_1) and 313 kr (PD_10_H1). One of them is wrong, and every kill and scale decision hangs on it.",
+    "PD_11_1 is a price static (CS_2_1's layout, 349 kr headline) coded PD, and it duplicates BOF_1_1 almost line for line (`349 kr` / `Ordinarie 582 kr … 233 kr`) — two near-identical ads in one round, under two codes.",
+    "PD_10_H1: \"two motorcycles standing under the cover\" — one 218 × 118,5 cm cover, two bikes? Clarify (two covers, or one bike). `en näve stor packe` — the page says `viker ihop till en liten packe`; fist-sized is an exaggeration the footage will contradict.",
+    "CS_8_H1 and PD_10_H1 end on a \"link sticker to the landing page\" — a link sticker shows the domain. No visible URL in the ad (rule since 2026-09-18). No brief carries the hard rule.",
+    "The three-question table is ✅✅❌ on every line including `Fri frakt inom Sverige` — a line any Swedish store can sign. No COPY CARD.",
+    "This product has no memory in the repo — the Feedback row in the hub is its memory."
+  ],
+  "regler": [
+    "Store terms from the product page, same day: 14 days' right of withdrawal by law, free shipping within Sweden, 5–10 working days, Klarna — never `30 dagars öppet köp`.",
+    "One break-even per product per round: write it once at the top (277 or 313 kr — settle it from COGS) and judge every parent against that number.",
+    "End cards and link stickers show no domain or logo — write \"the ad never names the store\" as a hard rule; a price static is CS, not PD, and the same 349 kr headline is not briefed twice in one round."
+  ],
+  "rader": [
+    {
+      "namn": "MC-Kapell_BOF_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Near-duplicate of PD_11_1 (see that row). New concept with no source — acceptable for a BOF recap if the Why says so."
+      ],
+      "bra": [
+        "Plain, honest 40 %."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_BOF_3_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine — `passar de flesta motorcyklar och elcyklar` is the page's own wording, and the question hook was rewritten into a measurement."
+      ],
+      "bra": [
+        "Exact centimetres instead of \"universal fit\"."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_OB_5_H1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "New angle without a source — mark \"guess: no season-storage ad has run\" in the Why."
+      ],
+      "bra": [
+        "A specific, filmable story; frost and the elastic hem are things the camera can show."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_CS_8_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "\"CTA card / link sticker\" at 18–22 s would show the domain — no visible URL.",
+        "Break-even CPA 277 here vs 313 in PD_10_H1 — one number per round."
+      ],
+      "bra": [
+        "Isolates the bold price mechanism from the fake scarcity, with contribution and CPA cited."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_PD_10_H1",
+      "fel": [],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "\"Two motorcycles standing under the cover\" — one cover is 218 × 118,5 cm; clarify two covers or one bike, or the shot contradicts BOF_3_1.",
+        "`Från hel presenning till en näve stor packe.` — the page says `viker ihop till en liten packe`; fist-sized overstates it. Say what the footage shows.",
+        "End card \"link sticker to the landing page\" would show the domain — no visible URL (rule since 2026-09-18).",
+        "Break-even CPA 313 here vs 277 in CS_8_H1 — one number per round."
+      ],
+      "bra": [
+        "Model hypothesis: spend share, profit share, CPA vs break-even, and the worn-out sibling named."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_PD_11_1",
+      "fel": [],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "A price static built on CS_2_1's layout is a CS concept, not PD — code the angle.",
+        "Near-duplicate of BOF_1_1 in the same round (`349 kr` headline, `Ordinarie 582 kr … 233 kr` sub-line); one of them should carry a different claim."
+      ],
+      "bra": [
+        "Tests whether the bold layout holds without the urgency line — a fair question."
+      ]
+    },
+    {
+      "namn": "MC-Kapell_BOF_2_1",
+      "fel": [
+        "`30 dagars öppet köp – gillar du inte kapellet får du pengarna tillbaka.` and the CTA `349 kr – beställ med öppet köp.` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Fix before this goes live: real terms only (`Fri frakt inom Sverige`, `Leverans på 5–10 arbetsdagar`, `14 dagars ångerrätt enligt lag`)."
+      ],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Free shipping and 5–10 working days are true (site banner) — keep those two."
+      ],
+      "bra": []
+    }
+  ]
+}

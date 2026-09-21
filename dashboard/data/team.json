@@ -196,6 +196,9 @@
       "slackUserId": "",
       "slackHandle": "",
       "notionUserId": "kommentar:jerzee",
+      "notionUserIdAlias": [
+        "05b30396-13bd-41c1-b205-94169150bde3"
+      ],
       "notionKommentarMonster": "\\bjerz",
       "inScalingChannel": false,
       "profile": {
@@ -212,7 +215,7 @@
         "middayCheckTime": "18:30",
         "endOfDayReportTime": "21:30",
         "skills": [],
-        "notes": "Har INGET Notion-konto (Axels besked 2026-09-15) och kan darfor aldrig sta i kolumnen Ansvarig. Hans rader markeras med en kommentar - 'jerzee is working on this', 'By Jerzee' - skriven fran gastkontot 05b30396-13bd-41c1-b205-94169150bde3. notionUserId ar darfor syntetiskt och satts av commission/kommentarer.mjs. Matt 2026-09-15: 50 rader i 8 hubbar."
+        "notes": "Hans aldre rader har INGEN Ansvarig (Axels besked 2026-09-15) och markeras i stallet med en kommentar - 'jerzee is working on this', 'By Jerzee' - skriven fran gastkontot 05b30396-13bd-41c1-b205-94169150bde3. Darfor ar notionUserId syntetiskt och satts av commission/kommentarer.mjs. Matt 2026-09-15: 50 rader i 8 hubbar. UPPDATERAT 2026-09-21: samma gastkonto visar nu namnet 'Jerzee Robe' i Notion och star som Ansvarig pa fyra Approved-rader i Boat motor cover (Batmotor_SP_1_H9, SP_3_H1, PD_6_H1, SP_1_H10, 49,32 SEK). Kontots id ligger darfor i notionUserIdAlias sa att spenden gar till honom i stallet for att ligga kvar som okand. Ar det NAGON ANNAN som skriver fran kontot: ta bort alias-raden, sa gar pengarna tillbaka till obetald hogen."
       }
     }
   ]
