@@ -57,7 +57,7 @@ and never type a store name, a domain or an address into this procedure.
 
 - Owner decides every replacement, refund and re-delivery fee.
 - Parcel not deliverable and the carrier cannot redirect it → owner immediately.
-- No new scan for 7 days, or past day 14 without delivery → open the carrier's own tracking, then escalate to the owner. Do not say "lost" until the carrier has confirmed non-delivery.
+- No new scan for 7 days, or past 10 business days without delivery → open the carrier's own tracking, then escalate to the owner. Do not say "lost" until the carrier has confirmed non-delivery.
 - Customer threatens a chargeback → keep the delivery scan (city + time) and the checkout screenshot in the case; they are the evidence.
 
 ## REPLY TEMPLATES

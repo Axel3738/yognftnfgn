@@ -16,7 +16,7 @@
     "logga_hojd": 80
   },
   "frakt": {
-    "comment": "Leveranslöftet i mejlen. Mätt 2026-09-17 i Shopify: alla 22 senaste leveranser gick med YunExpress/4PX från lagret utomlands, ingen från svenskt lager, och inga leveransevent kommer tillbaka (0 av 500 ordrar sedan 15 juni). Axels beslut 2026-09-18 ('fixa det'): lova 7–14 dagar. Mejlen räknar datumfönstret vid utskick: fraktmejlet från skickdagen, orderbekräftelsen från orderdagen plus packtiden.",
+    "comment": "Leveranslöftet i mejlen. Mätt 2026-09-17 i Shopify: alla 22 senaste leveranser gick med YunExpress/4PX från lagret utomlands, ingen från svenskt lager, och inga leveransevent kommer tillbaka (0 av 500 ordrar sedan 15 juni). Axels beslut 2026-09-18 ('fixa det'): lova fönstret 7–14 kalenderdagar. ⚠️ Talen här är KALENDERDAGAR och används bara för att räkna ut DATUMEN i Liquid — i kundtexten skrivs samma fönster som '5–10 arbetsdagar' (Axels order 2026-09-21), vilket är exakt samma span: 5 arbetsdagar = 7 kalenderdagar, 10 arbetsdagar = 14. Ändra aldrig det ena utan det andra. Mejlen räknar datumfönstret vid utskick: fraktmejlet från skickdagen, orderbekräftelsen från orderdagen plus packtiden.",
     "packas": "1–2 arbetsdagar",
     "packas_dagar": 2,
     "leverans_dagar_min": 7,
@@ -809,7 +809,7 @@
     "hjul_url": "https://baverbutiken.se/pages/din-gratisprodukt",
     "testmejl_aktuell_version_gjort_v4": "Skickat av Cowork 2026-09-14 från Orderbekräftelse (v4) till axelodhner.business@gmail.com. Förhandsvisningen visade hjulet. Vad mejlet visade i inkorgen (komplement-rubrik, klockslag) läser Axel.",
     "matning": "2026-09-17: node mejl/matning.mjs — 434 ordrar sedan 12/9, 0 med koden, 0 via hjulet, 0 från mejlet. Återköp sep 3,5 %. Nästa avläsning efter 21/9. UTM på mejllänkarna byggt samma dag, kräver inklistring av v5.",
-    "leveranslofte": "2026-09-18: 7–14 dagar från skickdagen (konfig.frakt), räknat i Liquid vid utskick. Inklistrat i Shopify först när v6 klistrats in — tills dess visar mejlen v4:s '5–10 arbetsdagar'.",
+    "leveranslofte": "2026-09-21: 5–10 arbetsdagar från skickdagen i kundtexten (Axels order), datumen räknas i Liquid på samma fönster i kalenderdagar (konfig.frakt = 7/14). Kräver en ny inklistring i Shopify — mallarna på servern bär ännu 2026-09-18 års '7–14 dagar'.",
     "testmejl_aktuell_version_gjort": "Cowork 2026-09-18 kväll: testmejl från Levererad (v8) till axelodhner.business@gmail.com, anropet svarade 200."
   }
 }

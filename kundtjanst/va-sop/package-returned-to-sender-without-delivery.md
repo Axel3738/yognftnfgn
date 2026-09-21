@@ -63,7 +63,7 @@ and never type a store name, a domain or an address into this procedure.
 ### Step 5 – Follow up
 
 1. Silence in tracking is normal for the first 2–4 days after shipping.
-2. Check the new parcel on the store's tracking page after 7 days of no new scan, and at the latest on day 14 if it is not delivered. Then open the carrier's own tracking and escalate to the owner. Do not tell the customer the parcel is lost until the carrier has confirmed non-delivery.
+2. Check the new parcel on the store's tracking page after 7 days of no new scan, and at the latest after 10 business days if it is not delivered. Then open the carrier's own tracking and escalate to the owner. Do not tell the customer the parcel is lost until the carrier has confirmed non-delivery.
 3. Customs-refused parcels are handled differently from an address error — do not resend to the same address; ask the owner for the procedure — ask the owner once and write the answer into Store facts.
 
 ## ESCALATION

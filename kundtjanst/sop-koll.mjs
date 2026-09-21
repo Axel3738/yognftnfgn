@@ -48,7 +48,7 @@ export const BUTIK = Object.freeze({
   DISPUTE_RATE_YELLOW: 'trosklar.tvistgrans_gul_procent',
   DISPUTE_RATE_RED: 'trosklar.tvistgrans_rod_procent',
   FIRST_REPLY_TARGET_HOURS: 'svarstidsmål — ägarens beslut',
-  DELIVERY_PROMISE_DAYS: 'leveranstiden som utlovas på sajten (kalenderdagar efter fraktmejlet)',
+  DELIVERY_PROMISE_DAYS: 'leveranstiden som utlovas på sajten (ARBETSDAGAR efter fraktmejlet — 5–10, aldrig kalenderdagar i kundtext)',
   // Spårningssidan (sparning/, live i fem butiker 2026-09-20/21). Tom = butiken
   // har ingen sida ännu, då gäller fraktbolagets/17TRACK-vägen i SOP:erna.
   TRACKING_PAGE: 'tvister.sparningssida — butikens egen spårningssida (sparning/butiker.json → url + /pages/ + handle)',

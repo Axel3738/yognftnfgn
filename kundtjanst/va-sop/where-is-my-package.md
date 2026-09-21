@@ -60,7 +60,7 @@ and never type a store name, a domain or an address into this procedure.
 
 ## ESCALATION
 
-- Investigate when: no new scan for 7 days after the first scans, or day 14 has passed without delivery.
+- Investigate when: no new scan for 7 days after the first scans, or 10 business days have passed without delivery.
 - First open the carrier's own tracking (backup portals). Then contact the supplier agent for an investigation and notify the owner.
 - While an investigation is pending, tell the customer it is being investigated and that you will come back with an answer. Maximum reply time: — ask the owner once and write the answer into Store facts.
 - **Refund, replacement and "the package is lost" always need owner approval.** Do not say "lost" until the carrier has confirmed non-delivery.

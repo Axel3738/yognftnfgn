@@ -297,9 +297,11 @@ test('riktig katalog: axelbältet får borsthuvudena, mallarna under 100 kB', { 
   }
 });
 
-test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orderbekräftelsen', () => {
+test('leveransfönstret: datumen räknas vid utskick, plus packtiden i orderbekräftelsen', () => {
   // Axels beslut 2026-09-18. Inga leveransevent kommer från YunExpress/4PX,
   // så datumet räknas i Liquid vid utskick i stället för att läsas.
+  // Talen i konfig.frakt är KALENDERDAGAR (7/14) och styr bara datumen;
+  // kundtexten säger samma fönster i arbetsdagar (5–10), Axels order 2026-09-21.
   const f = konfig.frakt;
   const order = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
   const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
@@ -310,7 +312,8 @@ test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orde
   assert.ok(frakt.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'fraktmejlet visar fönstret');
   assert.ok(order.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'orderbekräftelsen visar fönstret i tidslinjen');
   for (const m of byggAlla({ ...indata, lage: 'liquid' })) {
-    assert.ok(!m.html.includes('5–10 arbetsdagar') && !m.html.includes('svenska lager'), `${m.id}: gamla leveranslöftet kvar`);
+    assert.ok(!m.html.includes('svenska lager'), `${m.id}: gamla leveranslöftet kvar`);
+    assert.ok(!m.html.includes('7–14 dagar'), `${m.id}: kalenderdagar i kundtext — löftet skrivs i arbetsdagar`);
     assert.ok(!m.html.includes('{{leverans_'), `${m.id}: oersatt platshållare`);
   }
   const ex = byggMall('fraktbekraftelse', { ...indata, lage: 'exempel' });

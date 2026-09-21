@@ -16,7 +16,7 @@ A customer writes that their order has not arrived, that it is taking too long, 
 | First step | Open the order in Shopify and read the fulfillment timeline (the latest scan is there) |
 | Owner approval | Not needed for a status reply. Needed before any refund, replacement, or before telling the customer the parcel is lost |
 | Where to look | 1) Shopify order timeline, 2) the store's tracking page the tracking page (Store facts), 3) carrier portal / 17track.net only as backup |
-| Delivery promise | 7–14 calendar days after the shipping email (measured median 11.1 days, p90 13.0 days) |
+| Delivery promise | 5–10 business days after the shipping email (measured 2026-09-20: median 8, p90 10 business days) |
 | Reply language | The customer's language ([the customer's language]) — translate with DeepL |
 
 ## Store facts
@@ -54,10 +54,10 @@ Full look-up procedure: see the page **"Tracking page — how to look up any par
 
 ### Step 3 – Assess the situation
 
-- **Within 14 calendar days after the shipping email → normal.** Silence in tracking the first 2–4 days after shipping is also normal (the parcel is on its way to the flight). Reply with the status and the estimated delivery window (Step 5).
+- **Within 10 business days after the shipping email → normal.** Silence in tracking the first 2–4 days after shipping is also normal (the parcel is on its way to the flight). Reply with the status and the link (Step 5); the page shows Estimated delivery itself.
 - **Ready for pickup** → the page shows "Collect your parcel" with the pickup point's number and link. Tell the customer to collect it there.
 - **Not shipped yet** → this is a handling question, not a delivery question; tell the customer the shipping email is on its way (⚠️ OWNER: handling time).
-- **No new scan for 7 days after the first scans, or past day 14 without delivery → investigate (Step 4).**
+- **No new scan for 7 days after the first scans, or past 10 business days without delivery → investigate (Step 4).**
 - **Delivered but not received** → switch to the SOP "Package missing after tracking shows Delivered" (ask the customer to check the mailbox, neighbours and any pickup point first).
 
 ### Step 4 – Contact the carrier (only if the parcel is late or stuck)

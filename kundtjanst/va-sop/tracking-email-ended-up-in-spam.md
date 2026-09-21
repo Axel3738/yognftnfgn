@@ -75,7 +75,7 @@ Explain that the shipping email with the tracking button comes when the parcel s
 
 - **Wrong email address on the order** → owner corrects it and resends the notification (Step 3). You still send the tracking link yourself.
 - **Correct address, not in spam, parcel visible on the page** → ask the owner to resend the shipping notification from the order page. (⚠️ OWNER: whether the VA may resend it herself.) The customer already has the link from your reply, so nothing is blocked.
-- **Page shows no new scan for 7 days after the first scans, or the parcel is past day 14 without delivery** → this is no longer a spam case. Open the carrier's own tracking, then escalate per the store's escalation rule. Do not tell the customer the parcel is lost until the carrier has confirmed non-delivery.
+- **Page shows no new scan for 7 days after the first scans, or the parcel is past 10 business days without delivery** → this is no longer a spam case. Open the carrier's own tracking, then escalate per the store's escalation rule. Do not tell the customer the parcel is lost until the carrier has confirmed non-delivery.
 - **Refund, replacement or "the package is lost"** → always owner approval.
 
 ## REPLY TEMPLATES

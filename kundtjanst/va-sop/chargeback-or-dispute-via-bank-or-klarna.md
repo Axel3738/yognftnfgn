@@ -44,8 +44,8 @@ and never type a store name, a domain or an address into this procedure.
 4. If the repo tool is available, run `node kundtjanst/tvistfakta.mjs <order number> --brand <store>` — it prints FIGHT / REFUND / ESCALATE with the evidence list.
 5. Decision rule:
  - Delivery scan exists → **FIGHT**.
- - No delivery scan and more than 14 calendar days since shipping → ask the carrier for an investigation, then **REFUND or ESCALATE** to the owner. Do not draft a rebuttal for a case with no delivery proof.
- - No scan and under 14 days → normal transit (the promise is 7–14 calendar days after shipping). Ask the customer to check mailbox, pickup point and neighbours, and to withdraw the dispute.
+ - No delivery scan and more than 10 business days since shipping → ask the carrier for an investigation, then **REFUND or ESCALATE** to the owner. Do not draft a rebuttal for a case with no delivery proof.
+ - No scan and still inside 10 business days → normal transit (the promise is 5–10 business days after shipping). Ask the customer to check mailbox, pickup point and neighbours, and to withdraw the dispute.
 
 ### Step 4 – Gather evidence
 

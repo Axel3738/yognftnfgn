@@ -58,13 +58,13 @@ A customer writes that [fill from Store facts] arrived damaged or broken. Not fo
 2. When the replacement is fulfilled, the customer automatically gets the shipping emails with the "Track your parcel" button and their store parcel number (BB-… or CS-…). Silent tracking the first 2–4 days after shipping is normal.
 3. Customer asks for status → read the fulfillment timeline on the replacement order, open the store's tracking page with the carrier number, copy the **store parcel number** the page shows, and send it with the link <tracking page>?nummer=<parcel number>. Never send the YT…/4PX… carrier number. Details: "Tracking page — how to look up any parcel".
 4. Backup only: carrier portals (17track.net, or the carrier named on the fulfillment) — same scans. Use them when the page still says "We can't find that number" after the look-up page's checks, or for a store without a page.
-5. No new scan for 7 days, or past day 14 undelivered → check the carrier's own tracking, request a carrier investigation, escalate. Never say "lost" until the carrier confirms non-delivery.
+5. No new scan for 7 days, or past 10 business days undelivered → check the carrier's own tracking, request a carrier investigation, escalate. Never say "lost" until the carrier confirms non-delivery.
 
 ## ESCALATION
 
 - Repeated compensation demands, refund beyond standard policy, or unclear damage cause → owner before replying.
 - Threatens a chargeback → follow the dispute handbook (chargeback SOPs in this database) and tell the owner the same day.
-- Replacement undelivered by day 14 → carrier investigation + owner.
+- Replacement undelivered after 10 business days → carrier investigation + owner.
 
 ## REPLY TEMPLATES
 

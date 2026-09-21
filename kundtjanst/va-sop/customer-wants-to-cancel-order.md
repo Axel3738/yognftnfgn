@@ -57,7 +57,7 @@ Per-store policy values you need in this SOP: [fill from Store facts], [fill fro
 
 1. Check the tracking page first.
 2. No scans for the first 2–4 days after the shipping email is normal — say so. The page shows the estimated delivery; do not repeat it.
-3. No new scan for 7 days after the first scans, or past day 14 without delivery → this is NOT a cancellation case. Handle it per the delivery-delay SOP (investigation with the carrier, then escalation). Never tell the customer the parcel is lost before the carrier has confirmed non-delivery.
+3. No new scan for 7 days after the first scans, or past 10 business days without delivery → this is NOT a cancellation case. Handle it per the delivery-delay SOP (investigation with the carrier, then escalation). Never tell the customer the parcel is lost before the carrier has confirmed non-delivery.
 
 ### Step 4 – The order has been delivered
 
@@ -83,7 +83,7 @@ Matstrumpor.se and any store not listed in Store facts with a page: the old look
 
 - **Owner, same day:** every cancellation, partial cancellation, refund, invoice adjustment, replacement, and any "the parcel is lost" statement.
 - **Owner, immediately:** the customer has contacted the bank or payment provider, or threatens a dispute.
-- **Delivery-delay SOP:** parcel silent more than 7 days after first scans, or past day 14.
+- **Delivery-delay SOP:** parcel silent more than 7 days after first scans, or past 10 business days.
 - **Return SOP:** parcel delivered and the customer does not want it.
 
 ## REPLY TEMPLATES

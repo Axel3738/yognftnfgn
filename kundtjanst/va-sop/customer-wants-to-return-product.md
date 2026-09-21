@@ -26,7 +26,7 @@ Return address and company name per store: the return address (Store facts) (⚠
 
 ## RETURN POLICY SUMMARY
 
-- Return window: 30 days from the day the customer RECEIVED the item. Shipping takes 7–14 calendar days, so the delivery date is a materially different date from the order date — always count from delivery.
+- Return window: 30 days from the day the customer RECEIVED the item. Shipping takes 5–10 business days, so the delivery date is a materially different date from the order date — always count from delivery.
 - Condition: unused, all tags attached, in original packaging.
 - Proof: the order in Shopify is the proof. Do not ask the customer for a receipt.
 - Exceptions: sale items, gift cards, perishables and custom/personalised products cannot be returned. ⚠️ The statutory right of withdrawal runs **in addition** to the store's own return window (Store facts) and cannot be signed away. A customer who invokes it is entitled to a full refund and must not be pushed through a partial-refund offer.

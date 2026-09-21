@@ -42,7 +42,7 @@ email.
 
 | Value | Bäverbutiken | Where it comes from |
 |---|---|---|
-| Delivery promise | 7–14 calendar days after the shipping email | The promise printed in the shipping emails and on the tracking page |
+| Delivery promise | 5–10 business days after the shipping email | The promise printed in the shipping emails and on the tracking page |
 | Who pays return postage | The customer pays and arranges the return shipping. We send no return label | The store's existing return SOP |
 | Return window | 30 days **from the day the customer received the item** | The store's own published return policy |
 | Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |

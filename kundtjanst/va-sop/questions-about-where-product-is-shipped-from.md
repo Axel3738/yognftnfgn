@@ -54,7 +54,7 @@ Reply template or AI prompt, in the customer's language (DeepL free web version:
 
 Post in Discord #customer-service: order number, parcel number, ship date, last scan with date, the customer's question. Information replies need no approval; refunds, replacements and any "lost" statement need the owner.
 
-- No new scan for 7 days after the first scans, or past day 14 (from the Shopify ship date, not the order date): check the carrier portal, escalate, and send: "Your parcel is delayed beyond our estimate. I've asked the carrier for an update and will get back to you within 2 business days."
+- No new scan for 7 days after the first scans, or past 10 business days from the Shopify ship date (not the order date): check the carrier portal, escalate, and send: "Your parcel is delayed beyond our estimate. I've asked the carrier for an update and will get back to you within 2 business days."
 - "Delivered" but nothing received: check mailbox, pickup point and neighbours. Still missing after 2 business days: SOP 10 Not received. Never say lost or promise a refund/replacement — owner decides, only after the carrier confirms non-delivery.
 - "Collect your parcel" shown: send its name and number; no escalation.
 

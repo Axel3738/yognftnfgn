@@ -296,7 +296,10 @@ tillbaka** — 0 av 500 ordrar sedan 15 juni har `inTransitAt` eller
 fraktmejlet går inom två timmar från ordern medan paketet tar veckor. I den
 tystnaden föds klagomålen.
 
-Beslut: lova **7–14 dagar** (`konfig.frakt.leverans_dagar_min/max`) och
+Beslut: lova **5–10 arbetsdagar** (Axels order 2026-09-21; samma fönster som
+`konfig.frakt.leverans_dagar_min/max` = 7–14 kalenderdagar, och samma som
+butikens egen fraktsida alltid sagt — kundtexten skrivs i arbetsdagar, datumen
+räknas på kalenderdagarna) och
 räkna datumet i mejlet i stället för att läsa det från fraktbolaget:
 
 - `leveransLiquid()` i `mallar.mjs` sätter `lev_fran_datum`–`lev_till_datum`

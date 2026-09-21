@@ -310,13 +310,14 @@ carashells"). Rättat samma kväll, sidan ompublicerad regnblå med feta
 gemener; NO/DK/FI har Bäverbutikens färger i sina brandfiler och ser
 likadana ut som förut.
 
-**Leveranslöftet 7–14 dagar mätt mot verkligheten 2026-09-20** (Shopify
+**Leveranslöftet 5–10 arbetsdagar (= 7–14 kalenderdagar) mätt mot verkligheten 2026-09-20** (Shopify
 `fulfillment.createdAt → deliveredAt`, `scratchpad/leveranstid.mjs`):
 Bäverbutiken 133 levererade paket sedan rutinen började skriva event
 (2026-09-18) — p25 10,0 / median 11,1 / p75 12,3 / p90 13,0 / max 14,0
-dagar. Urvalet är bara två dygns leveranser (paket som levererades före
-18/9 saknar `deliveredAt`, och de som ännu är på väg räknas inte), så
-det är en lägsta nivå, inte hela bilden. 7–14 täcker p90. CaraShell och
+kalenderdagar (= p90 10 arbetsdagar). Urvalet är bara två dygns leveranser
+(paket som levererades före 18/9 saknar `deliveredAt`, och de som ännu är på
+väg räknas inte), så det är en lägsta nivå, inte hela bilden. 5–10
+arbetsdagar täcker p90. CaraShell och
 NO har 0 resp. 1 levererat med datum — mät om efter två veckor innan
 löftet ändras. Axels fråga samma kväll ("borde vi lägga på lite tid?"):
 beslutet väntar på den mätningen.
@@ -369,7 +370,8 @@ event i Shopify ligger kvar.
   landet); (4) 17TRACK:s last-mile-data → "Hämta ditt paket" med ombudets
   nummer och länk, bara vid `READY_FOR_PICKUP`; (5) **bävernummer** i stället
   för YT-nummer, SHA-256 så mejlet (Liquid) räknar samma som sidan;
-  beräknad leverans ur `mejl/konfig.json` (7–14 dagar från första
+  beräknad leverans ur `mejl/konfig.json` (7–14 kalenderdagar = löftets 5–10
+  arbetsdagar, från första
   skanningen) som popup, röd när den passerats. Kundtjänst:
   `sparning/baver.mjs`. Publiceringen tolkar sidans JavaScript före
   uppladdning (`provkorSkriptet`) sedan en syntaxmiss gick ut live. 143

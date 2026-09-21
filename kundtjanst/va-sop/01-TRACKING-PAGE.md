@@ -109,7 +109,7 @@ flight, and the shipping email says so.
 
 ## 5. When a parcel is genuinely stuck
 
-- No new scan for 7 days after the first scans, **or** past day 14 without delivery.
+- No new scan for 7 days after the first scans, **or** past 10 business days without delivery.
 - Then: open the carrier's own tracking, continue with "Order not arrived within
  expected timeframe", and tell the owner.
 - **Never tell a customer the parcel is lost** until the carrier has confirmed

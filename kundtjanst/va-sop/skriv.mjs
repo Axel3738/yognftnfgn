@@ -12,9 +12,16 @@
 // en egenskap på raden, inte block, och rörs aldrig. Skriptet vägrar radera
 // en kropp som innehåller något annat än de tomma mallrubrikerna om inte
 // --ersatt-allt anges — annars kan någons riktiga arbete försvinna tyst.
+//
+// En sida i notion.json pekar antingen på en fil i den här mappen (`fil`)
+// eller på tvisthandboken i kundtjanst/sop/ (`kalla`). Källan fylls då med
+// butikens värden ur brandfilen (`fyll.mjs`) och filnamnen i texten byts mot
+// Notion-sidornas titlar — handboken förblir portabel i repot, VA:n läser den
+// färdigifylld i Notion.
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fyll, brandFor } from '../sop/fyll.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const KONF = JSON.parse(readFileSync(join(HÄR, 'notion.json'), 'utf8'));
@@ -57,6 +64,13 @@ export function richText(s) {
   return ut.length ? ut : [{ type: 'text', text: { content: '' } }];
 }
 
+/** Rå text utan **fet** eller länkar — kodblock ska visa tecknen som de står. */
+export function rentText(s) {
+  const ut = [];
+  for (let i = 0; i < Math.max(s.length, 1); i += 1900) ut.push({ type: 'text', text: { content: s.slice(i, i + 1900) } });
+  return ut;
+}
+
 const blk = (typ, text, extra = {}) => ({ object: 'block', type: typ, [typ]: { rich_text: richText(text), ...extra } });
 
 /** Markdown (den delmängd SOP:arna använder) → Notion-block. Ren funktion. */
@@ -70,6 +84,16 @@ export function tillBlock(md) {
     let m;
     if ((m = /^(#{1,3})\s+(.*)$/.exec(r))) { ut.push(blk(`heading_${m[1].length}`, m[2].trim())); i++; continue; }
     if (/^---+$/.test(r.trim())) { ut.push({ object: 'block', type: 'divider', divider: {} }); i++; continue; }
+    // ``` … ``` — mejlmallarna i tvisthandboken ÄR kodblock. Utan det här
+    // klappar varje mall ihop till ett stycke och går inte att kopiera.
+    if (/^```/.test(r.trim())) {
+      i++; const rad = [];
+      while (i < rader.length && !/^```/.test(rader[i].trim())) { rad.push(rader[i]); i++; }
+      i++; // stängande ```
+      ut.push({ object: 'block', type: 'code',
+        code: { rich_text: rentText(rad.join('\n')), language: 'plain text' } });
+      continue;
+    }
     if (/^>\s?/.test(r)) {
       let t = r.replace(/^>\s?/, ''); i++;
       while (i < rader.length && /^>\s?/.test(rader[i])) { t += ' ' + rader[i].replace(/^>\s?/, ''); i++; }
@@ -165,21 +189,64 @@ async function skapaRad(dbId, titel, kategori, block) {
   return sida;
 }
 
+/**
+ * Filnamn i tvisthandbokens text → Notion-sidans titel. Utan det skickar
+ * texten VA:n till "10-NOT-RECEIVED.md", en fil hon aldrig kan öppna.
+ */
+export function bytFilnamnMotTitlar(md, sidor) {
+  let ut = md;
+  for (const s of sidor) {
+    if (!s.kalla) continue;
+    const fil = s.kalla.replace(/^.*\//, '');
+    ut = ut.split(fil).join(`“${s.titel}”`);
+  }
+  // Mappen orders/ heter beslut/ i repot och finns inte alls i Notion.
+  ut = ut.replace(/`orders\/`|`beslut\/`/g, 'the decision sheets the owner keeps per order');
+  // Repofilerna VA:n aldrig ser, och ordet "fil" om det som i Notion är en sida.
+  return ut
+    .replace(/\*\*99-BACKLOG\.md\*\*|`99-BACKLOG\.md`|99-BACKLOG\.md/g, 'the open-questions list the owner keeps')
+    .replace(/\*\*README\.md\*\*|`README\.md`|README\.md/g, "the owner's notes on this handbook")
+    .replace(/\| Open this file \|/g, '| Open this page |')
+    .replace(/\| File \| Use it for \|/g, '| Page | Use it for |');
+}
+
+/** Raden som säger att sidan skrivs av repot, så ingen redigerar den i Notion. */
+export function genereradNotis(brandNamn) {
+  return `> This page is generated from the dispute handbook in the repo and filled in for ${brandNamn}. `
+    + 'Anything you type into it is overwritten the next time it is published — send corrections to the owner instead.';
+}
+
+/** Markdown för en sida: egen fil, eller tvisthandboken ifylld för butiken. */
+export function kallText(s, sidor, brandId) {
+  if (!s.kalla) return readFileSync(join(HÄR, s.fil), 'utf8');
+  const rå = readFileSync(join(HÄR, s.kalla), 'utf8');
+  const b = brandFor(brandId);
+  const { text, saknade, okanda } = fyll(rå, b);
+  if (okanda.length) console.log(`   ⚠️ okända platshållare i ${s.kalla}: ${okanda.join(', ')}`);
+  if (saknade.length) console.log(`   ⚠️ butiksvärden som saknas: ${saknade.join(', ')}`);
+  // Notisen läggs direkt efter H1:an, så skrivarens självigenkänning (kroppen
+  // börjar med filens egen H1) fortfarande stämmer.
+  const med = text.replace(/^(#\s+.+)$/m, `$1\n\n${genereradNotis(b.brand)}`);
+  return bytFilnamnMotTitlar(med, sidor);
+}
+
 export async function huvud(argv = process.argv.slice(2)) {
   const torr = argv.includes('--torr');
   const ersättAllt = argv.includes('--ersatt-allt');
   const bara = argv.includes('--bara') ? argv[argv.indexOf('--bara') + 1] : null;
+  const brandId = argv.includes('--brand') ? argv[argv.indexOf('--brand') + 1] : (KONF.brand ?? 'baverbutiken');
   const logg = [];
   for (const s of KONF.sidor) {
-    if (bara && s.fil !== bara) continue;
-    const md = readFileSync(join(HÄR, s.fil), 'utf8');
+    const namn = s.fil ?? s.kalla;
+    if (bara && namn !== bara && s.fil !== bara && s.kalla !== bara) continue;
+    const md = kallText(s, KONF.sidor, brandId);
     const block = tillBlock(md);
     if (!s.notion_id) {
       if (torr) { console.log(`torr  NY         ${block.length.toString().padStart(3)} block  ${s.titel}`); continue; }
       const sida = await skapaRad(KONF.databas, s.titel, s.kategori, block);
       s.notion_id = sida.id;
       console.log(`✅ ny         ${sida.id}  ${block.length} block  ${s.titel}`);
-      logg.push({ fil: s.fil, id: sida.id, url: sida.url, block: block.length, slag: 'ny' });
+      logg.push({ fil: namn, id: sida.id, url: sida.url, block: block.length, slag: 'ny' });
       continue;
     }
     const gamla = await barn(s.notion_id);
@@ -191,16 +258,16 @@ export async function huvud(argv = process.argv.slice(2)) {
       && text(gamla[0]) === minRubrik;
     const eget = vårEgen ? [] : gamla.filter((b) => !ärMall(b));
     if (eget.length && !ersättAllt) {
-      console.log(`⏭  HOPPAD    ${s.fil}: kroppen bär ${eget.length} block som inte är tom mall. Kör --ersatt-allt om de ska bort.`);
+      console.log(`⏭  HOPPAD    ${namn}: kroppen bär ${eget.length} block som inte är tom mall. Kör --ersatt-allt om de ska bort.`);
       console.log(`   först:     ${text(eget[0]).slice(0, 90)}`);
-      logg.push({ fil: s.fil, id: s.notion_id, slag: 'hoppad', eget: eget.length });
+      logg.push({ fil: namn, id: s.notion_id, slag: 'hoppad', eget: eget.length });
       continue;
     }
     if (torr) { console.log(`torr  skriv om   ${gamla.length} block ut, ${block.length} in   ${s.titel}`); continue; }
     await raderaBarn(gamla);
     await läggTill(s.notion_id, block);
     console.log(`✅ omskriven  ${s.notion_id}  ${gamla.length} ut / ${block.length} in  ${s.titel}`);
-    logg.push({ fil: s.fil, id: s.notion_id, block: block.length, slag: 'omskriven' });
+    logg.push({ fil: namn, id: s.notion_id, block: block.length, slag: 'omskriven' });
   }
   return logg;
 }

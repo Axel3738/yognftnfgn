@@ -19,11 +19,12 @@ A customer asks how long delivery takes, when the order will arrive, or whether 
 
 ## The delivery promise
 
-- Estimated delivery is **7–14 calendar days after the shipping email**. Every shipping email and the tracking page say exactly this. (Measured 2026-09-20: median 11.1 days, p90 13.0 days.)
+- Estimated delivery is **5–10 business days after the shipping email**. That is the number the store's own shipping page uses, and it is the only one you write. (Measured 2026-09-20: median 8 business days, p90 10 — the promise matches reality.)
 - Handling before shipping is **not** part of the promise — always say "after it has shipped".
-- Give the 7–14 day window by default. Mention a faster timeline only if the Shopify order explicitly shows domestic fulfillment (measured 2026-09-17: all recent orders shipped from the warehouse abroad).
+- Give the 5–10 business day window by default. Mention a faster timeline only if the Shopify order explicitly shows domestic fulfillment (measured 2026-09-17: all recent orders shipped from the warehouse abroad).
 - Tracking can be quiet for the **first 2–4 days after shipping** — that is normal and the shipping email says so. Silence beyond that is not "normal", see ESCALATION.
-- Never write "5–10 business days" or any other number.
+- **Never write a calendar-day window** ("7–14 days") and never invent your own number. Business days only, and only the one above.
+- **Do not repeat the window in a reply that carries the tracking link** — the page shows "Estimated delivery" itself. Quote it only when the order has not shipped yet.
 
 ## Store facts
 
@@ -39,16 +40,16 @@ and never type a store name, a domain or an address into this procedure.
 ## STEP-BY-STEP INSTRUCTIONS
 
 1. **Find the order** in Shopify admin (search by order number or email). If the customer gives no order number and cannot be identified, skip to step 5 and give the standard window only.
-2. **Read the fulfillment timeline** on the order page. Not fulfilled → the order has not shipped yet; the 7–14 days start when the shipping email goes out. Fulfilled → copy the carrier tracking number from the fulfillment and note the ship date.
+2. **Read the fulfillment timeline** on the order page. Not fulfilled → the order has not shipped yet; the 5–10 business days start when the shipping email goes out. Fulfilled → copy the carrier tracking number from the fulfillment and note the ship date.
 3. **Open the store's tracking page** (Store facts) and paste the carrier number. Read the status in the page's own wording (on its way / with the carrier / out for delivery / ready for pickup / delivered) and copy the **store parcel number** shown as "Your parcel number" (BB-/CS-XXXXXXXX). Full look-up procedure and troubleshooting: see the page "Tracking page — how to look up any parcel".
-4. **Check the parcel against the promise:** ship date + 7–14 calendar days. Note if the last scan is older than 7 days, or if the parcel is past day 14 without delivery — that is an ESCALATION case, not a timeframe answer.
+4. **Check the parcel against the promise:** ship date + 5–10 business days. Note if the last scan is older than 7 days, or if the parcel is past 10 business days without delivery — that is an ESCALATION case, not a timeframe answer.
 5. **Write the reply in the customer's language** (the store's language; translate with DeepL and read it through). Include: the current status in the page's words, the parcel number, and the link `the tracking page (Store facts)?nummer=the parcel number`. Remind the customer that the shipping email has one button "Track your parcel" with the parcel number printed under it, and to check spam. **Never paste the carrier number (YT…, 4PX…).**
 6. **If the page says "We can't find that number":** the page refreshes new parcels once per hour, so a customer who clicked the email the minute it arrived will not find the parcel yet — this is the most common cause. Ask them to try again in a little while. Second cause: shipped more than 60 days ago (use the carrier number on the carrier's portal). Third cause: a typo.
 7. Keep it short and friendly. Review before sending.
 
 ## ESCALATION
 
-- **No new scan for 7 days after the first scans, or past day 14 without delivery:** investigate. Open the carrier's own portal or 17track.net (backup — same scans, the store page is faster). Ask the customer to check the mailbox, neighbours and any pickup-point notice. Then escalate to the owner per the store's escalation rule.
+- **No new scan for 7 days after the first scans, or past 10 business days without delivery:** investigate. Open the carrier's own portal or 17track.net (backup — same scans, the store page is faster). Ask the customer to check the mailbox, neighbours and any pickup-point notice. Then escalate to the owner per the store's escalation rule.
 - **Never tell the customer the parcel is lost** until the carrier has confirmed non-delivery.
 - **Refund, replacement and "the package is lost"** always require the owner's approval (unchanged rule).
 - Page shows "Collect your parcel": the parcel is waiting at a pickup point — tell the customer, with the pickup point's number and link from the page.

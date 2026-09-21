@@ -1,6 +1,6 @@
 {
  "databas": "3aa270ab-908c-8057-a8a0-cc691d9e956b",
- "beskrivning": "VA:ns SOP-bas i Notion. fil -> sida. 'ny' = raden skapas av skrivaren.",
+ "beskrivning": "VA:ns SOP-bas i Notion. fil -> sida. 'kalla' pekar i stället på tvisthandboken i kundtjanst/sop/ — den fylls med butikens värden ur brandfilen (sop/fyll.mjs) innan den skrivs, så handboken förblir portabel i repot och VA:n läser den färdigifylld. notion_id saknas = raden skapas av skrivaren.",
  "sidor": [
   {
    "fil": "00-STORE-FACTS.md",
@@ -217,6 +217,67 @@
    "titel": "READ ME",
    "kategori": null,
    "notion_id": "1da270ab-908c-8381-98fb-819065cc4c2c"
+  },
+  {
+   "kalla": "../sop/START-HERE.md",
+   "titel": "Chargebacks — START HERE: route the dispute",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/00-MASTER.md",
+   "titel": "Chargebacks — the first hour",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/10-NOT-RECEIVED.md",
+   "titel": "Dispute reason: product not received",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/11-UNACCEPTABLE.md",
+   "titel": "Dispute reason: product unacceptable or not as described",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/12-CREDIT-NOT-PROCESSED.md",
+   "titel": "Dispute reason: credit not processed",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/13-FRAUD-UNRECOGNIZED.md",
+   "titel": "Dispute reason: fraudulent or unrecognized",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/14-DUPLICATE-SUBSCRIPTION-OTHER.md",
+   "titel": "Dispute reason: duplicate, subscription cancelled or other",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/20-NO-CONTACT.md",
+   "titel": "Dispute with no email history with the customer",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/30-EMAIL-TEMPLATES.md",
+   "titel": "Dispute email templates",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/40-EVIDENCE-PACK.md",
+   "titel": "Dispute evidence pack — what to attach and where to find it",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/50-PREVENTION.md",
+   "titel": "After the dispute — preventing the next one",
+   "kategori": "Payment"
+  },
+  {
+   "kalla": "../sop/60-ESCALATION.md",
+   "titel": "Disputes — what you decide and what the owner decides",
+   "kategori": "Payment"
   }
- ]
+ ],
+ "brand": "baverbutiken"
 }

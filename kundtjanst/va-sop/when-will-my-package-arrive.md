@@ -62,13 +62,13 @@ Carrier portals (17track.net, or the carrier named on the fulfillment) are the *
 
 ### Step 4 – Pick the situation
 
-Count **calendar days since the ship date**.
+Count **business days since the ship date** — the promise is 5–10 business days (Store facts).
 
 - **Not shipped yet:** say the parcel will ship soon and that they will get a shipping email with a "Track your parcel" button. Do not promise a ship date.
 - **Shipped 0–4 days ago, no scans:** normal. The parcel is on its way to the flight. Send the standard promise and the tracking link (template B).
-- **Shipped, scans moving, within 14 days:** confirm the page status, give the estimated delivery window and the link (template B).
+- **Shipped, scans moving, within 10 business days:** confirm the page status and send the link (template B). Do not repeat the window — the page shows Estimated delivery itself.
 - **Out for delivery / ready for pickup / delivered on the page:** tell the customer exactly what the page says. If "Delivered" but not received: ask them to check the mailbox, the pickup point in the page, and neighbours before anything else.
-- **No new scan for 7 days after the first scans, or past day 14 without delivery:** go to Escalation before replying (template C).
+- **No new scan for 7 days after the first scans, or past 10 business days without delivery:** go to Escalation before replying (template C).
 
 ### Step 5 – Reply
 
@@ -78,7 +78,7 @@ Count **calendar days since the ship date**.
 
 ## ESCALATION
 
-> **Past day 14 without delivery, or 7 days without a new scan:** open the carrier's own tracking (backup portals) to see if it shows more than the page. Then escalate per the store's escalation rule (⚠️ OWNER: the contact). Tell the customer you are investigating and will come back — do not invent a date.
+> **Past 10 business days without delivery, or 7 days without a new scan:** open the carrier's own tracking (backup portals) to see if it shows more than the page. Then escalate per the store's escalation rule (⚠️ OWNER: the contact). Tell the customer you are investigating and will come back — do not invent a date.
 
 - Do not tell the customer the parcel is lost until the carrier has confirmed non-delivery.
 - Refunds, replacements, new delivery dates and "lost" statements require **owner approval** — always.
