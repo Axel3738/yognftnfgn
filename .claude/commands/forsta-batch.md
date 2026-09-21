@@ -33,6 +33,16 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 > inte target-CPA; top spendern är benchmark.
 
 
+- **FAS −1 – Produktunderlaget (Evolve, Axels beslut 2026-09-21).** Innan FAS 0:
+  ```bash
+  node tools/produktunderlag.mjs --skapa <id> --sida <produktsidans url>   # om filerna saknas
+  node tools/produktunderlag.mjs --granska <id>
+  ```
+  `products/<id>/produkt.md` + `avatar.md`. **Mekanismen är ett hårt stopp**
+  (exit 1 ⇒ ingen brief skrivs); övriga fält ger anmärkning och batchen får gå
+  ut ändå. Filerna är produktens STABILA minne — `dna.md` är prestandaminnet
+  och skrivs om vid varje `/cs`; de här två gör det aldrig.
+  Redovisa granskningens utskrift i svaret.
 - **FAS 0 – Kontrollera tillgång (gör, låtsas inte):** redovisa i tabell vad du faktiskt nådde: Meta Ads-data (kampanj/adset/annons + creatives), statiska bilder (ladda ner och GRANSKA visuellt), video (kan inte öppnas – be om transkript för vinnare/förlorare, transkribera aldrig på gissning), landningssida, Shopify-försäljning (korsvalidera mot Meta), recensioner (lucka om otillgängligt), Meta Ad Library (svenska söktermer).
 - **FAS 1 – Kampanjöversikt:** kampanj/konto/period, objective, attribution, budget, spend, CPM, CTR, funnel LPV→ATC→IC→köp, CPA, ROAS, struktur, trafiktyp. Var läcker funneln (kreativ, LP eller kassa)?
 - **FAS 2 – Klassificera:** tabell över alla annonser med klassificering, spend, köp, CPA, ROAS, CTR, hook rate, hold. Vilka 20 % driver resultatet, vilken är största budgetläckan?
@@ -64,6 +74,7 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 6. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
+- [ ] FAS −1: `produkt.md` + `avatar.md` granskade, `--granska` gav exit 0 och utskriften står i svaret
 
 - [ ] FAS 0-tabellen visar vad som faktiskt verifierades
 - [ ] Ingen dom under 300 kr / 3 köp
