@@ -206,12 +206,42 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
   return utfall;
 }
 
+/**
+ * Kvittot på vad som betalats ut — och inget mer.
+ *
+ * ⚠️ Filen committas varje körning. Sparas varje otilldelad recension med sin
+ * text blir det 224 kB per månad och megabyte i git-historiken på ett år
+ * (samma fälla som spårningens skanningar, CLAUDE.md). Därför: personernas
+ * rader med högst tio bevis var, och otilldelat som en RÄKNING per orsak.
+ * Vill man se texterna finns de i snapshoten sajten läser.
+ */
 export function spara(utfall, mapp = UTFALL) {
   mkdirSync(mapp, { recursive: true });
   const fil = join(mapp, `${utfall.period.namn}.json`);
-  // Utbetalningsunderlaget sparas; detaljerna (recensionstexter, produktlistor)
-  // hör hemma i snapshoten som sajten läser, inte i utbetalningsarkivet.
-  const { detaljer, ...kvitto } = utfall;
+  const { detaljer, otilldelat, personer, ...resten } = utfall;
+
+  const grupperat = new Map();
+  for (const o of otilldelat ?? []) {
+    const nyckel = `${o.uppdrag}|${o.orsak}`;
+    const rad = grupperat.get(nyckel) ?? { uppdrag: o.uppdrag, orsak: o.orsak, antal: 0, summa: 0 };
+    rad.antal += 1;
+    rad.summa += Number(o.summa) || 0;
+    grupperat.set(nyckel, rad);
+  }
+
+  const kvitto = {
+    ...resten,
+    personer: (personer ?? []).map((p) => ({
+      ...p,
+      rader: (p.rader ?? []).map((r) => ({
+        ...r,
+        bevis: (r.bevis ?? []).slice(0, 10).map((b) => ({
+          vad: b.vad, datum: b.datum, text: String(b.text ?? '').slice(0, 80), lank: b.lank ?? '',
+        })),
+      })),
+    })),
+    otilldelat: [...grupperat.values()].sort((a, b) => b.antal - a.antal),
+  };
   writeFileSync(fil, `${JSON.stringify(kvitto, null, 1)}\n`);
   return fil;
 }
