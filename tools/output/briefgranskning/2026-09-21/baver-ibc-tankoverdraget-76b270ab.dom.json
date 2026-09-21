@@ -1,0 +1,143 @@
+{
+  "hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+  "rond": "2026-09-20",
+  "bra": [
+    "Every brief carries \"No store name, no URL, no logo\" — the only non-mirrored hub that writes the 2026-09-18 rule down.",
+    "Rating and quotes verified live and dated (4,70 of 5 on 10 reviews, 2026-09-20), quoted verbatim, and Emma's 4 stars kept honest instead of rounded up.",
+    "The page's own line `Presenningen som skulle skydda blåser av vid första höststormen.` is used as the pointable fact for the new loss angle (RI), with a static twin — a genuinely untested angle built on a page fact.",
+    "120 × 100 × 116 cm and the top opening match the product page (read live from the product page 2026-09-21); price 489 / 636 kr right; the \"no price on this ad\" rule is stated where intended.",
+    "PD_11_H1 isolates one variable (speaker on camera) on a proven script and names why."
+  ],
+  "missat": [
+    "BOF_18_1 opens on `Passar den min tank?` — a question cannot be true or false (three-question test, Q2), and the table marks it ✅ falsifiable. The Termoskydd and MC-Kapell rounds rewrote exactly this hook into a measurement; this one did not.",
+    "`2 minuter` (CS_9_H1, PD_11_H1, RI_1_H1) is not on the page — the page says `stäng dragkedjan` with no time. Film it and time it, or write [TID] as the Termoskydd PD_8_H1 brief does.",
+    "CS_9_H1's hypothesis (\"the price angle is the cheapest purchase per krona, a shorter cut beats the long cut\") names no numbers — cite CPA and purchases against break-even.",
+    "No Variables line on any brief; 5 of 9 concepts have no source named and are not marked as a guess; no COPY CARD.",
+    "The three-question table is ✅✅❌ on every line including the question hook and `4,7 av 5` — filled in, not run.",
+    "This product has no memory in the repo (no dna.md / feedback.md) — the Feedback row in the hub is its memory."
+  ],
+  "regler": [
+    "Hooks are declaratives, never questions: lead with the measurement or the outcome (`120 × 100 × 116 cm. Passar en standard 1000 L IBC-tank.`) — a question cannot be falsified and fails the test.",
+    "Every timing claim is filmed and timed: the page never says `2 minuter` — write [TID] and let the take set the number, or drop the time.",
+    "Add a Variables line (angle · hook · format · proof · offer · visual · text · speaker) to every brief and cite the parent's CPA and purchases against break-even in the Why — \"cheapest purchase per krona\" needs the numbers."
+  ],
+  "rader": [
+    {
+      "namn": "IBC_RV_12_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "A 4-star review kept at 4 stars — credibility over polish."
+      ]
+    },
+    {
+      "namn": "IBC_RV_11_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Verbatim quote with name and stars, verified and dated."
+      ]
+    },
+    {
+      "namn": "IBC_RI_1_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`Blixtlås – på och av på 2 minuter.` — not on the page; time it in the take.",
+        "New angle (loss) with no data source — mark it \"guess: untested\" in the Why; the page line is a fact, not a performance source."
+      ],
+      "bra": [
+        "Built on the page's own tarpaulin line; product in frame from 0 s."
+      ]
+    },
+    {
+      "namn": "IBC_RI_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Static twin of RI_1_H1 — say \"Isolated variable: format\" explicitly."
+      ],
+      "bra": [
+        "Cheap, fast test of the same untested angle."
+      ]
+    },
+    {
+      "namn": "IBC_PD_11_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`Blixtlås – på och av på 2 minuter.` — not on the page; time it in the take.",
+        "The question hook is inherited from the proven winner, so it may stay — but say \"proven line, kept verbatim\" in the test instead of marking it ✅ falsifiable."
+      ],
+      "bra": [
+        "One variable isolated (speaker on camera) on a proven script."
+      ]
+    },
+    {
+      "namn": "IBC_CS_9_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`Zippas fast på 2 minuter.` — the page states no time; film and time the zip, and write the real number (or [TID]).",
+        "Why names no numbers — cite the price angle's CPA and purchases and the long cut's, against break-even."
+      ],
+      "bra": [
+        "Price, compare-at and saving stated right; zero urgency."
+      ]
+    },
+    {
+      "namn": "IBC_BOF_18_1",
+      "fel": [
+        "The hook `Passar den min tank?` fails the three-question test: a question cannot be true or false. Next version: lead with the measurement as the headline (`120 × 100 × 116 cm. Passar en standard 1000 L IBC-tank.`) and move the doubt into the sub-line, or drop it."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The measurement itself is exactly the page's."
+      ],
+      "bra": []
+    },
+    {
+      "namn": "IBC_BOF_17_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No source named; the mechanism is the page's ingress — say so."
+      ],
+      "bra": [
+        "`Ljuset stannar ute. Vattnet stannar klart.` — parallel, concrete, unsignable by a tarp."
+      ]
+    },
+    {
+      "namn": "IBC_BOF_16_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine."
+      ],
+      "bra": [
+        "Verified aggregate, dated, nothing else on the ad."
+      ]
+    }
+  ]
+}

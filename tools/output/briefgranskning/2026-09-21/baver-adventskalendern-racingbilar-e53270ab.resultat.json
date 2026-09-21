@@ -1,0 +1,30 @@
+{
+  "hub_id": "e53270ab-908c-8297-be2d-0162a09dc253",
+  "hub_titel": "BÄVER Adventskalendern Racingbilar",
+  "slug": "baver-adventskalendern-racingbilar-e53270ab",
+  "rond": "2026-09-20",
+  "idag": "2026-09-21",
+  "antal": 9,
+  "rena": 0,
+  "anm": 8,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8195-9d46-e213b0044c96",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-20-3e2270ab908c81959d46e213b0044c96",
+    "titel": "Brief review 2026-09-20",
+    "block": 21
+  },
+  "feedback_fil": null,
+  "kommentarer": [
+    {
+      "namn": "Adventskalender_UG_3_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-20 (BÄVER Adventskalendern Racingbilar) — this brief has an error the editor must know about:\n1. The brief contradicts itself: \"a parent speaks to camera in her own words, no script read aloud\" versus a word-for-word Swedish script and \"Swedish captions word for word\". Decide before shooting: either a scripted VO (then it is not UGC) or a real parent in her own words with captions that summarize what she says. The facts she must get right: 24 doors, 24 different cars, wheels that roll, 499 kr / 649 kr, från 3 år.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [
+    "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+  ],
+  "torr": false
+}
