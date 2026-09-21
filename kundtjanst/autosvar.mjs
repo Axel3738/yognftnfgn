@@ -159,7 +159,8 @@ export async function korBrand(brand, {
               const r = await b.svara(m.uid, { mapp: inkorg, text, utkast: torr });
               post.atgard = r.typ === 'utkast' ? 'utkast' : 'svar';
               post.utkastUid = r.utkastUid ?? null;
-              post.till = maskeraAdress(r.till);
+              // Roundcube ger "Namn <adress>" — maskera adressen, inte hela strängen (första loggen 2026-09-21 fick "An***@hotmail.com>").
+              post.till = maskeraAdress((String(r.till ?? '').match(/<([^>]+)>/) ?? [null, r.till])[1]);
               svarade++;
               // Minnet uppdateras direkt: nästa mejl i samma tråd eller från samma kund i den här körningen får inget svar till.
               minnsSvar(minnet, { tradnyckel: post.tradnyckel, ids: [...post.tradIds, m.messageId], hash, nu: nu.getTime() });

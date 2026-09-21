@@ -52,13 +52,19 @@ export function skrivLogg(brandId, post, mapp = LOGGMAPP) {
  * ett automatiskt svar (på trådnyckel OCH på varje inkommande Message-ID i
  * tråden — så ett senare mejl med References till det första känns igen
  * även om trådnyckeln räknas om).
+ *
+ * En rad med `atgard: 'fel'` (svaret gick inte att spara/skicka — Roundcube
+ * sa nej) räknas INTE som hanterad: mejlet ska prövas igen nästa körning
+ * när felet är rättat. Dubbelsvar hindras ändå av Sent/Drafts-kollen.
+ * (Första torrkörningen 2026-09-21: fyra svar föll på ett 302 i steg 7 och
+ * hade annars varit spärrade för alltid.)
  */
 export function minne(rader = []) {
   const hanterade = new Set();
   const svarade = new Set();
   const svaradeKunder = new Map();   // kundHash → senaste automatiska svarets tid (ms)
   for (const r of rader) {
-    if (r.messageId) hanterade.add(r.messageId);
+    if (r.messageId && r.atgard !== 'fel') hanterade.add(r.messageId);
     if (['svar', 'utkast'].includes(r.atgard)) {
       if (r.tradnyckel) svarade.add(r.tradnyckel);
       if (r.messageId) svarade.add(r.messageId);

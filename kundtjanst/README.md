@@ -91,12 +91,17 @@ node kundtjanst/mail.mjs mapp VA-PRIO                          # skapa en mapp
 
 Svaret öppnas med Roundcubes eget svarsformulär (`_reply_uid`), så servern
 sätter `In-Reply-To`/`References` själv och tråden hänger ihop i kundens
-klient; kundens mejl citeras under vår text. ⚠️ Skrivvägen är avläst ur
+klient; kundens mejl citeras under vår text. Skrivvägen är avläst ur
 Roundcubes källkod (master 2026-09-21: `program/actions/mail/{compose,send,
-mark,move}.php`, `settings/folder_save.php`, `app.js submit_messageform`) —
-inte mätt live mot Loopia, för lösenordet saknades i containern som byggde
-den. Första skarpa körningen ska vara `utkast` och kontrolleras i Drafts;
-säger felet `steg 7`–`11` är det Loopias Roundcube som skiljer sig.
+mark,move}.php`, `settings/folder_save.php`, `app.js submit_messageform`)
+och **mätt live mot Loopia 2026-09-21** i autosvarets första torrkörning.
+Två saker skilde sig från läsningen och är rättade: (1) `compose` utan `_id`
+svarar **302** till samma sida med ett nymintat `_id` — klienten följer den
+enda omdirigeringen; (2) Loopias brevlåda har namnrymden **`INBOX.`** —
+`save-folder VA-PRIO` skapar `INBOX.VA-PRIO`, och `hittaMapp()` slår upp det
+riktiga IMAP-namnet så att människan får säga `VA-PRIO`. Utkast (steg 8),
+flagga (9) och flytta (10) svarade som källkoden sa. Säger felet `steg 7`–`11`
+är det Loopias Roundcube som ändrat sig igen.
 
 **Samma saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
 stdio-MCP-server (JSON-RPC 2.0, en rad per meddelande, noll beroenden) som

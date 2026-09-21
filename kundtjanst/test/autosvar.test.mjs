@@ -513,8 +513,10 @@ test('byggTrad: kundens mejl i inkorgen + våra svar i Sent och Drafts, mappar s
 // ------------------------------------------------------------------ logg + rapport
 
 test('logg: minne och redanAutosvar känner igen tråden på nyckel och Message-ID', () => {
-  const m = minne([{ messageId: '<a>', tradnyckel: 'k|x', atgard: 'svar', tradIds: ['<a>', '<b>'] }, { messageId: '<c>', tradnyckel: 'k|y', atgard: 'flaggad' }]);
+  const m = minne([{ messageId: '<a>', tradnyckel: 'k|x', atgard: 'svar', tradIds: ['<a>', '<b>'] }, { messageId: '<c>', tradnyckel: 'k|y', atgard: 'flaggad' }, { messageId: '<d>', tradnyckel: 'k|z', atgard: 'fel', fel: 'Roundcube compose gav HTTP 302 (steg 7)' }]);
+  // Ett svar som inte gick att spara är inte hanterat — mejlet prövas igen när felet är rättat (2026-09-21).
   assert.deepEqual([...m.hanterade].sort(), ['<a>', '<c>']);
+  assert.equal(redanAutosvar(m, { tradnyckel: 'k|z', ids: ['<d>'] }), false, 'fel är inte svarad');
   assert.equal(redanAutosvar(m, { tradnyckel: 'k|x' }), true);
   assert.equal(redanAutosvar(m, { ids: ['<b>'] }), true);
   assert.equal(redanAutosvar(m, { tradnyckel: 'k|y', ids: ['<c>'] }), false, 'flaggad är inte svarad');

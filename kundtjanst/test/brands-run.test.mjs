@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { upptackBrands, korkonfig, valjBrands, envNamn, brandUrEgenfil, STANDARD_TROSKLAR } from '../brands.mjs';
-import { korBrand, maskeraAdress, maskeraText } from '../run.mjs';
+import { korBrand, maskeraAdress, maskeraText, delaDiscord, DISCORD_MAX } from '../run.mjs';
 import { brandstatus, rutinforslag } from '../setup.mjs';
 import { lasYaml } from '../../factory/yaml.mjs';
 import { readFileSync } from 'node:fs';
@@ -225,4 +225,18 @@ test('tvister-blocket når koden: eskaleringsnycklarna läses, standarden fyller
   assert.equal(k.tvister.angerratt_dagar, 14);
   // ⚠️ Returfrakten är ägarens beslut och får aldrig gissas.
   assert.equal(k.tvister.returfrakt_betalas_av, '');
+});
+
+test('delaDiscord: en rapport över 2000 tecken delas på radgränser, aldrig mitt i en rad; kort text är en bit', () => {
+  assert.deepEqual(delaDiscord('kort'), ['kort']);
+  assert.deepEqual(delaDiscord(''), []);
+  const rader = Array.from({ length: 60 }, (_, i) => `• rad ${i} ${'x'.repeat(60)}`);
+  const delar = delaDiscord(rader.join('\n'));
+  assert.ok(delar.length > 1, 'delas');
+  for (const d of delar) assert.ok(d.length <= DISCORD_MAX, `bit ≤ ${DISCORD_MAX}: ${d.length}`);
+  assert.deepEqual(delar.join('\n').split('\n'), rader, 'inget tappas, inget klipps mitt i en rad');
+  // En ensam rad längre än taket klipps hårt (annars går den aldrig att posta).
+  const lang = delaDiscord('y'.repeat(2500));
+  assert.equal(lang.length, 1);
+  assert.equal(lang[0].length, DISCORD_MAX);
 });

@@ -282,23 +282,26 @@ export class Brevlada {
     if (!mal) throw new Error('flytta: ange målmappen med --till <mapp>.');
     return this.medSession(async (k) => {
       let skapad = false;
-      if (k.mappar.length && !k.mappar.includes(mal)) {
+      // Människan säger "VA-PRIO"; brevlådan heter den "INBOX.VA-PRIO" (Loopia, mätt 2026-09-21).
+      let imap = k.mappar.length ? k.hittaMapp(mal) : mal;
+      if (!imap) {
         if (!skapa) throw Object.assign(new Error(`Mappen "${mal}" finns inte i brevlådan (${k.mappar.join(', ')}). Skapa den med --skapa, eller välj en som finns.`), { kod: 'MAPP_SAKNAS' });
-        await k.skapaMapp(mal);
+        imap = (await k.skapaMapp(mal)).imap;
         skapad = true;
       }
-      await k.flytta(mapp, n, mal);
-      return { uid: n, fran: mapp, till: mal, skapad };
+      await k.flytta(mapp, n, imap);
+      return { uid: n, fran: mapp, till: imap, skapad };
     });
   }
 
-  /** Skapar en mapp på toppnivå. Finns den redan: ingen ändring, `fannsRedan: true`. */
+  /** Skapar en mapp på toppnivå. Finns den redan (som namnet eller under INBOX.): ingen ändring, `fannsRedan: true`. */
   async skapaMapp(namn) {
     return this.medSession(async (k) => {
       const n = String(namn ?? '').trim();
-      if (k.mappar.length && k.mappar.includes(n)) return { namn: n, fannsRedan: true, mappar: [...k.mappar] };
+      const finns = k.mappar.length ? k.hittaMapp(n) : null;
+      if (finns) return { namn: n, imap: finns, fannsRedan: true, mappar: [...k.mappar] };
       const r = await k.skapaMapp(n);
-      return { namn: r.namn, fannsRedan: false, mappar: r.mappar };
+      return { namn: r.namn, imap: r.imap, fannsRedan: false, mappar: r.mappar };
     });
   }
 
