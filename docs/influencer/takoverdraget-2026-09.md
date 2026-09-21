@@ -145,6 +145,8 @@ Bolagsfakta som används (verifierade 2026-09-21 på carashell.se): CaraShell g�
 
 Utskickssidan (Axels egen, ett klick per mejl): https://claude.ai/artifact/DCruZBzC27cnRUx3joHVeg — byggd 2026-09-21 eftersom mailen inte går att skicka härifrån: det finns inget lösenord till hello@carashell.se i environmentet och proxyn blockerar utgående SMTP (587 och 465 svarar inte, mätt samma dag). Sidan öppnar färdigt mejl via mailto och kopierar DM-texterna; den skickar ingenting själv.
 
+**Version 5, 2026-09-21 (Axels invändning).** Fem av nio mail lutade sig på "svenskt märke" i kursens trovärdighetsmening. Axel invände att det känns oärligt när produkten fulfillas från Kina, trots att inget påstående är falskt: bolaget är svenskt, ångerrätten följer svensk lag, och fraktpolicyn anger öppet 5–10 arbetsdagar. Problemet var att meningen är svag, inte osann — "svenskt märke" är vad varje dropshippare skriver. De fem meningarna bär nu specialiseringen i stället (två produkter, båda för husvagn och husbil, sålda i nio länder). Svenskheten står kvar som faktum där den har värde för kunden: Stonebite Ecom AB utanför Göteborg, ångerrätt enligt svensk lag.
+
 **Version 4, granskad 2026-09-21.** Version 1 underkändes av en helhetskritiker: fem av sex meningar var ordagrant identiska i alla nio mail, och Linda (Reiselinda) driver nätverket Husbilsbloggarna med ett trettiotal skapare som skulle se det direkt. Version 2 granskades av nio faktagranskare plus en helhetskritiker, som fann påhittade fakta i alla nio (bland annat sömmar på en produkt utan dokumenterade sömmar, och en video som påstods ligga i en kategori den inte bevisligen ligger i) samt att kursens femte mening, den som bokar samtalet, saknades i samtliga. Version 3 rättade det. Version 4 byter avsändare till CaraShell. Kursens sexmeningsstruktur behålls med flit trots kritikerns invändning: den är kursens metod och Axels hårda regel 6. Längsta ordagranna överlapp mellan två mail är 13 ord (var 28), median 9.
 
 ### 1. Nilla & Micke Trevik
@@ -159,7 +161,7 @@ Axel Odhner, CaraShell, 079-340 44 07
 Till: kontakt@levamedhusbil.se (anges på startsidan och på YouTube; sidan /kontakt/ ger 404, adressen gäller ändå)
 Ämne: Fredagstips varje vecka, och nu en Adria från 1976
 
-Hej Peter och Lotta, jag heter Axel och driver CaraShell. Ni gör Fredagstips vecka efter vecka, och nu har ni dessutom tagit hem en Adria från 1976 vid sidan av Sonicen. Jag skulle vilja skicka er ett taköverdrag att behålla, utan krav på något tillbaka, eftersom vi är intresserade av ett betalt samarbete. Det är silverbelagd oxfordväv som bara läggs över takytan, inte ett helöverdrag som ska tas runt hela vagnen, och jag vill att ni provar det på er egen först. Gillar ni det tar vi ett kort samtal om fortsättningen. Vi är ett svenskt märke som bara gör skydd till husvagn och husbil, med fri frakt inom Sverige och Norge, och jag skriver till er båda eftersom Peter håller på med husbilar även utanför kanalen.
+Hej Peter och Lotta, jag heter Axel och driver CaraShell. Ni gör Fredagstips vecka efter vecka, och nu har ni dessutom tagit hem en Adria från 1976 vid sidan av Sonicen. Jag skulle vilja skicka er ett taköverdrag att behålla, utan krav på något tillbaka, eftersom vi är intresserade av ett betalt samarbete. Det är silverbelagd oxfordväv som bara läggs över takytan, inte ett helöverdrag som ska tas runt hela vagnen, och jag vill att ni provar det på er egen först. Gillar ni det tar vi ett kort samtal om fortsättningen. Vi gör bara skydd till husvagn och husbil och säljer dem i nio länder, och jag skriver till er båda eftersom Peter håller på med husbilar även utanför kanalen.
 
 Axel Odhner, CaraShell, 079-340 44 07
 
@@ -167,7 +169,7 @@ Axel Odhner, CaraShell, 079-340 44 07
 Skickas som Instagram-DM till @min_lilla_adria_305. Ingen mejladress finns. Dela i två meddelanden om Instagram kapar längden; ämnesraden blir första raden.
 Ämne: Adria 305:an du köpte för 5 000 och gjorde om själv
 
-Hej Cajsa, jag heter Axel och driver CaraShell. Du köpte en 45 år gammal Adria 305 för 5 000 kronor och gjorde om den själv, ner till diskhon av en gammal skål. Jag vill skicka dig ett taköverdrag, utan att det ska betyda något åt något håll, för det vi hoppas på är ett betalt samarbete. Överdraget går bara över takytan och en person får det på plats själv med remmar på alla fyra sidor, och jag vill att du provar det på din vagn först. Gillar du det bokar vi ett kort samtal. CaraShell är svenskt, drivs av Stonebite Ecom AB utanför Göteborg och har bara två produkter, båda för husvagn och husbil, och jag skriver till dig eftersom den som renoverat en vagn själv vet vad arbetet är värt.
+Hej Cajsa, jag heter Axel och driver CaraShell. Du köpte en 45 år gammal Adria 305 för 5 000 kronor och gjorde om den själv, ner till diskhon av en gammal skål. Jag vill skicka dig ett taköverdrag, utan att det ska betyda något åt något håll, för det vi hoppas på är ett betalt samarbete. Överdraget går bara över takytan och en person får det på plats själv med remmar på alla fyra sidor, och jag vill att du provar det på din vagn först. Gillar du det bokar vi ett kort samtal. CaraShell drivs av Stonebite Ecom AB utanför Göteborg och har två produkter i hela sortimentet, båda för husvagn och husbil, och jag skriver till dig eftersom den som renoverat en vagn själv vet vad arbetet är värt.
 
 Axel Odhner, CaraShell, 079-340 44 07
 
@@ -191,7 +193,7 @@ Axel Odhner, CaraShell, 079-340 44 07
 Till: aelgeskog20@gmail.com (YouTube-kanalens om-sida)
 Ämne: Över sexhundra videor sedan 2014
 
-Hej Annika, jag heter Axel och driver CaraShell. Du har lagt ut över sexhundra videor sedan 2014, och nu byter kanalen namn till ÄventyrsAnnika medan Lilla Fina får stanna kvar. Jag skulle vilja skicka dig ett taköverdrag utan krav på något tillbaka, för det vi är ute efter är ett betalt samarbete. Överdraget täcker takytan i stället för hela vagnen, vilket gör att en person kan lägga på det själv, och jag vill att du provar det på Lilla Fina först. Gillar du det bokar vi in ett kort samtal. CaraShell är ett svenskt märke som bara gör skydd till husvagn och husbil, med Klarna och 14 dagars ångerrätt, och jag skriver till dig eftersom din publik följt dig i över tio år och litar på vad du väljer.
+Hej Annika, jag heter Axel och driver CaraShell. Du har lagt ut över sexhundra videor sedan 2014, och nu byter kanalen namn till ÄventyrsAnnika medan Lilla Fina får stanna kvar. Jag skulle vilja skicka dig ett taköverdrag utan krav på något tillbaka, för det vi är ute efter är ett betalt samarbete. Överdraget täcker takytan i stället för hela vagnen, vilket gör att en person kan lägga på det själv, och jag vill att du provar det på Lilla Fina först. Gillar du det bokar vi in ett kort samtal. CaraShell gör två saker, taköverdrag och termoskydd, och dina följare handlar med Klarna och har 14 dagars ångerrätt enligt svensk lag, och jag skriver till dig eftersom din publik följt dig i över tio år och litar på vad du väljer.
 
 Axel Odhner, CaraShell, 079-340 44 07
 
@@ -199,7 +201,7 @@ Axel Odhner, CaraShell, 079-340 44 07
 Skickas som Instagram-DM till @agneta_markku (länkad från YouTube). Ingen mejladress finns. De är sannolikt utomlands i oktober.
 Ämne: Träffen ni ordnar för era följare
 
-Hej Markku och Agneta, jag heter Axel och driver CaraShell. Ni ordnar en egen husbilsträff för era följare, och det är inte många som går så långt för att faktiskt möta dem som tittar. Jag vill skicka er ett taköverdrag att ha, utan förväntningar åt något håll, eftersom vi är intresserade av ett betalt samarbete. Det är ett överdrag som bara täcker taket, med två förstärkta spännremmar utöver dem som sitter på, och jag vill att ni provar det själva först. Gillar ni det bokar vi ett kort samtal. Bakom CaraShell står svenska Stonebite Ecom AB utanför Göteborg, och vi skickar fritt inom både Sverige och Norge, så jag hör av mig eftersom era följare möter er på riktigt och ser bilen med egna ögon.
+Hej Markku och Agneta, jag heter Axel och driver CaraShell. Ni ordnar en egen husbilsträff för era följare, och det är inte många som går så långt för att faktiskt möta dem som tittar. Jag vill skicka er ett taköverdrag att ha, utan förväntningar åt något håll, eftersom vi är intresserade av ett betalt samarbete. Det är ett överdrag som bara täcker taket, med två förstärkta spännremmar utöver dem som sitter på, och jag vill att ni provar det själva först. Gillar ni det bokar vi ett kort samtal. Bakom CaraShell står Stonebite Ecom AB utanför Göteborg, vi gör bara skydd till husvagn och husbil och skickar fritt till både Sverige och Norge, så jag hör av mig eftersom era följare möter er på riktigt och ser bilen med egna ögon.
 
 Axel Odhner, CaraShell, 079-340 44 07
 
@@ -215,7 +217,7 @@ Axel Odhner, CaraShell, 079-340 44 07
 ⚠️ KONTAKTVÄG SAKNAS. Ingen mejl, ingen sajt. Sök "2tanter1husvagn" på Instagram och skicka som DM. Finns inget konto passar de inte upplägget med stories och stryks. Bulan är en Adria Action 2009 — minsta storleken är 5,5 m, så fråga längden innan något skickas.
 Ämne: Ni har hållit ihop längre än de flesta husvagnar
 
-Hej Lena och Lena, jag heter Axel och driver CaraShell. Ni startade en podd utan att ha gjort det förut, efter 55 års vänskap, och första resan med Bulan gick till Grövelsjön. Jag vill skicka er ett taköverdrag till Bulan, utan att ni behöver göra något för det, eftersom det är ett betalt samarbete vi vill åt. Det läggs bara över takytan och hakas fast med remmar på alla fyra sidor, och jag vill att ni provar det på Bulan först. Gillar ni det bokar vi ett kort samtal. CaraShell är ett svenskt märke som bara gör skydd till husvagn och husbil, och jag skriver till er eftersom ni pratar om campinglivet från insidan.
+Hej Lena och Lena, jag heter Axel och driver CaraShell. Ni startade en podd utan att ha gjort det förut, efter 55 års vänskap, och första resan med Bulan gick till Grövelsjön. Jag vill skicka er ett taköverdrag till Bulan, utan att ni behöver göra något för det, eftersom det är ett betalt samarbete vi vill åt. Det läggs bara över takytan och hakas fast med remmar på alla fyra sidor, och jag vill att ni provar det på Bulan först. Gillar ni det bokar vi ett kort samtal. CaraShell har två produkter i hela sortimentet, taköverdraget och ett termoskydd, och jag skriver till er eftersom ni pratar om campinglivet från insidan.
 
 Axel Odhner, CaraShell, 079-340 44 07
 
