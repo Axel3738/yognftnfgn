@@ -755,3 +755,17 @@ blev klar strax efteråt och läget var oförändrat. Briefronden pausad sedan 1
   2 058 kr / 4 köp — exakt samma siffror som igår, alltså ingen eftersläpande attribution kvar.
 - Kontot har vuxit från 659 till 730 annonser sedan igår (andra butikers körningar);
   ingenting av det rör den här produkten.
+
+## 2026-09-21 — `/ops-oversatt carashell/termoskyddet` (NO) — oförändrat, NO fortsatt pausad
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 hållna. Inget översatt, inget renderat
+  (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` (`120249115382210172`) står
+  kvar PAUSED med **samma `updated_time` 2026-09-19 20:07 CEST** — ingen har rört den.
+  Livstid oförändrad: 3 515,88 kr / 7 köp / ROAS 1,14 mot break-even 1,61. Läge
+  "NO paused by owner"; rutinen rör inget och föreslår ingen omstart.
+- Butiken redo för Norge: 548 NOK läst på `/nb`-sidan.
+- SE är också fortsatt pausad (sedan 2026-09-18), så varken leveransrundan eller
+  speglingen fyller på kön.
+- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
+  Batch: `market-expansion/ops/carashell/2026-09-21-no-termoskyddet/`.
