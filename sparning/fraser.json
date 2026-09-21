@@ -21,6 +21,7 @@
   "shipment is in transit to next facility": "Paketet är på väg till nästa terminal",
   "the shipment item is under transportation": "Paketet är på väg",
   "in transit to destination": "Paketet är på väg vidare",
+  "in transit": "Paketet är på väg",
   "sorted": "Paketet är sorterat",
   "your item is being processed at our sorting center": "Paketet hanteras på sorteringsterminalen",
   "arrive in transit center": "Paketet har kommit till omlastningsterminalen",
