@@ -140,63 +140,18 @@ if (!BUTIK.standard) {
 
 // Proxyn tidigt: kravProxy() kör om hela processen med NODE_USE_ENV_PROXY=1,
 // så allt efter den punkten körs två gånger om den står längre ner.
+// ⚠️ Bara proxyn här. Själva Shopify-klienten skapas EFTER paketminnet och
+// spärren mot tom sida (2026-09-21): en körning som ändå ska avbryta för att
+// det inte finns en enda skanning att visa ska inte först kräva butikens
+// nycklar. Låg den före, dog skriptet på `saknar SHOPIFY_CLIENT_ID_…` i varje
+// skal utan nycklar, och de tre spärrtesterna i test/publicera.test.mjs föll
+// på miljön i stället för på det de mäter.
 let shopify = null;
 let kontakt = null;
 if (!baraFiler) {
   const m = await import('../mejl/shopify.mjs');
   m.kravProxy();
-  // Butikens egen klient (sparning/butik.mjs): Bäverbutiken via
-  // _SE_BAVER_SE-nycklarna som förut, de andra via sina.
-  shopify = await skapaKlient(BUTIK);
-  kontakt = await shopify.kolla();
-  if (kontakt.saknar.length) {
-    console.error(`❌ ${BUTIK.namn}: appen "${kontakt.app}" saknar ${kontakt.saknar.join(', ')} — sidan går inte att skriva. Lägg till rättigheterna på appen och installera om den.`);
-    process.exit(1);
-  }
 }
-
-// Konfigurationen sidan byggs med. Bäverbutiken: mejlens butiksblock (loggans
-// färger och rubriktypsnittet bor där, i EN fil) med sparningens egna värden
-// ovanpå — därför står inga färger i sparning/konfig.json. Andra butiker: det
-// registret säger (språk, prefix, tidszon, support, leveranslöfte), samma
-// färger, och erbjudandet BARA där registret säger erbjudande: true (Axels
-// beslut 2026-09-20: "skippa gratis produkt / spin the wheel på de andra").
-const supportmejl = BUTIK.support ?? kontakt?.kontaktmejl ?? null;
-if (!supportmejl && !baraFiler) {
-  console.error(`❌ ${BUTIK.namn}: ingen supportadress — varken i sparning/butiker.json eller i Shopifys shop.contactEmail. Sidan skriver ut den på fyra ställen.`);
-  process.exit(1);
-}
-const sidkonfig = {
-  ...konfig,
-  sprak: BUTIK.sprak,
-  prefix: BUTIK.prefix,
-  tidszon: BUTIK.tidszon ?? (BUTIK.sprak === 'sv' ? 'Europe/Stockholm' : sprakTidszon(BUTIK.sprak)),
-  sprak_extra: BUTIK.sprak_extra ?? [],
-  // Brandet: Bäverbutiken ur mejl/konfig.json, andra butiker ur
-  // mejl/butiker/<id>.json — samma fil som deras fraktmejl byggs av, så
-  // sidan och mejlet aldrig ser olika ut. ⚠️ Före 2026-09-20 sen kväll
-  // spreds mejlkonfigens butik-block in för ALLA butiker: CaraShells sida
-  // gick live röd med Impact i versaler (Axel: "det är bäverbutikens
-  // branding ju, inte carashells").
-  butik: {
-    ...(BUTIK.standard ? (mejlkonfig?.butik ?? {}) : (butikBrand ?? {})),
-    ...(konfig.butik ?? {}),
-    namn: BUTIK.namn,
-    url: BUTIK.url,
-    support: supportmejl ?? konfig.butik?.support ?? (BUTIK.standard ? mejlkonfig?.butik?.support : null) ?? null,
-  },
-  frakt: BUTIK.standard
-    ? { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) }
-    : {
-      sparning_vaknar: BUTIK.sparning_vaknar ?? null,
-      leverans_dagar_min: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[0] : null,
-      leverans_dagar_max: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[1] : null,
-    },
-  // Erbjudandet under paketet läses ur samma block som mejlen och lyckohjulet —
-  // beloppet och hjulets adress får aldrig bli en andra sanning här.
-  erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
-  hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
-};
 
 // --- 2. Paketminnet ---------------------------------------------------------
 
@@ -295,6 +250,62 @@ if ((!statistik.handelser || !statistik.paket) && totaltHandelser) {
   }
   console.log(`⚠️ ${rad} En skarp körning hade avbrutit här; torrkörningen bygger filerna ändå.`);
 }
+
+// Butikens egen klient (sparning/butik.mjs): Bäverbutiken via
+// _SE_BAVER_SE-nycklarna som förut, de andra via sina. ⚠️ Först HÄR, efter
+// både paketminnets och fönstrets spärr (2026-09-21): en körning som ändå ska
+// avbryta för att sidan skulle bli tom ska inte först kräva butikens nycklar.
+if (!baraFiler) {
+  shopify = await skapaKlient(BUTIK);
+  kontakt = await shopify.kolla();
+  if (kontakt.saknar.length) {
+    console.error(`❌ ${BUTIK.namn}: appen "${kontakt.app}" saknar ${kontakt.saknar.join(', ')} — sidan går inte att skriva. Lägg till rättigheterna på appen och installera om den.`);
+    process.exit(1);
+  }
+}
+
+// Konfigurationen sidan byggs med. Bäverbutiken: mejlens butiksblock (loggans
+// färger och rubriktypsnittet bor där, i EN fil) med sparningens egna värden
+// ovanpå — därför står inga färger i sparning/konfig.json. Andra butiker: det
+// registret säger (språk, prefix, tidszon, support, leveranslöfte), samma
+// färger, och erbjudandet BARA där registret säger erbjudande: true (Axels
+// beslut 2026-09-20: "skippa gratis produkt / spin the wheel på de andra").
+const supportmejl = BUTIK.support ?? kontakt?.kontaktmejl ?? null;
+if (!supportmejl && !baraFiler) {
+  console.error(`❌ ${BUTIK.namn}: ingen supportadress — varken i sparning/butiker.json eller i Shopifys shop.contactEmail. Sidan skriver ut den på fyra ställen.`);
+  process.exit(1);
+}
+const sidkonfig = {
+  ...konfig,
+  sprak: BUTIK.sprak,
+  prefix: BUTIK.prefix,
+  tidszon: BUTIK.tidszon ?? (BUTIK.sprak === 'sv' ? 'Europe/Stockholm' : sprakTidszon(BUTIK.sprak)),
+  sprak_extra: BUTIK.sprak_extra ?? [],
+  // Brandet: Bäverbutiken ur mejl/konfig.json, andra butiker ur
+  // mejl/butiker/<id>.json — samma fil som deras fraktmejl byggs av, så
+  // sidan och mejlet aldrig ser olika ut. ⚠️ Före 2026-09-20 sen kväll
+  // spreds mejlkonfigens butik-block in för ALLA butiker: CaraShells sida
+  // gick live röd med Impact i versaler (Axel: "det är bäverbutikens
+  // branding ju, inte carashells").
+  butik: {
+    ...(BUTIK.standard ? (mejlkonfig?.butik ?? {}) : (butikBrand ?? {})),
+    ...(konfig.butik ?? {}),
+    namn: BUTIK.namn,
+    url: BUTIK.url,
+    support: supportmejl ?? konfig.butik?.support ?? (BUTIK.standard ? mejlkonfig?.butik?.support : null) ?? null,
+  },
+  frakt: BUTIK.standard
+    ? { ...(mejlkonfig?.frakt ?? {}), ...(konfig.frakt ?? {}) }
+    : {
+      sparning_vaknar: BUTIK.sparning_vaknar ?? null,
+      leverans_dagar_min: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[0] : null,
+      leverans_dagar_max: Array.isArray(BUTIK.leverans_dagar) ? BUTIK.leverans_dagar[1] : null,
+    },
+  // Erbjudandet under paketet läses ur samma block som mejlen och lyckohjulet —
+  // beloppet och hjulets adress får aldrig bli en andra sanning här.
+  erbjudande: BUTIK.erbjudande ? (mejlkonfig?.erbjudande ?? null) : null,
+  hjul: BUTIK.erbjudande ? (mejlkonfig?.hjul ?? null) : null,
+};
 
 // --- 3b. Kontrollen ---------------------------------------------------------
 // Axels fyra krav 2026-09-19: ingen skanning får försvinna, länderna ska gå
