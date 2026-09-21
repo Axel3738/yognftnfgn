@@ -22,31 +22,36 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-> A store that is not in this table, or has no tracking page yet, still uses the old route: the carrier's own portal or 17track.net with the carrier number. Everything else in this SOP applies unchanged.
+> A store that is not in this table, or has no tracking page yet, still uses the old
+> route: the carrier's own portal or 17track.net with the carrier number. Everything
+> else in this SOP applies unchanged.
 
 ## STEP-BY-STEP INSTRUCTIONS
 
 1. **Check the order in Shopify.** Search by order number or email. Copy the delivery address used for fulfilment and take a screenshot of the checkout address — this is evidence later.
 2. **Compare the addresses.** Put the fulfilment address next to the address the customer says is correct. Decide who entered the wrong one: the customer at checkout, or an error on our side.
 3. **Check the tracking status.** Read the fulfilment timeline on the Shopify order page — the latest carrier scan is written there every hour. Then open the store's tracking page (Store facts) and paste the carrier number from the fulfilment, or the parcel number the customer quotes (BB-/CS- format). Full look-up procedure: see the page "Tracking page — how to look up any parcel". Keep only this in mind here:
-  - "Delivered" on the page means a carrier delivery scan exists. Copy the scan text with city and time (for example "17 sep 23:28 · Paketet är levererat i din brevlåda · Umeå") into the owner summary — that scan is the evidence in a dispute.
-  - "We can't find that number": fulfilled less than an hour ago → wait for the next hourly run; shipped more than 60 days ago → use the carrier number on 17track.net; otherwise the number is mistyped.
-  - Carrier portals and 17track.net are the backup, not the first step.
+ - "Delivered" on the page means a carrier delivery scan exists. Copy the scan text with city and time (for example "17 sep 23:28 · Paketet är levererat i din brevlåda · Umeå") into the owner summary — that scan is the evidence in a dispute.
+ - "We can't find that number": fulfilled less than an hour ago → wait for the next hourly run; shipped more than 60 days ago → use the carrier number on 17track.net; otherwise the number is mistyped.
+ - Carrier portals and 17track.net are the backup, not the first step.
 4. **If the parcel is not yet delivered:** check with the carrier shown on the tracking page whether an address correction is still possible (⚠️ OWNER: the route per carrier). Ask the customer to check the mailbox, neighbours and any pickup point once it shows "Delivered".
 5. **If already delivered to the wrong address:** note the delivery scan (city, time) and go to step 6. If the carrier cannot redirect, tell the owner at once.
 6. **Notify the owner.** Send the owner a summary: order ID, correct address, incorrect address, delivery scan text, who appears responsible, and the checkout screenshot.
 7. **Send the holding reply** (Reply templates, A) so the customer knows the case is being investigated. Promise nothing.
 8. **Wait for the owner's decision.** Possible resolutions, decided by the owner only:
-  - Our error → replacement to the correct address at no cost to the customer.
-  - Customer error → discuss re-delivery options; a new shipping fee may apply (owner sets the fee).
-  - Parcel already returned to sender → follow the SOP "Package Returned to Sender" (Delivery category).
+ - Our error → replacement to the correct address at no cost to the customer.
+ - Customer error → discuss re-delivery options; a new shipping fee may apply (owner sets the fee).
+ - Parcel already returned to sender → follow the SOP "Package Returned to Sender" (Delivery category).
 9. **Send the resolution reply** (Reply templates, B or C) after the decision. Do not mention internal discussions, staff mistakes or the supplier.
 
-> ⚠ Never promise a free replacement or a refund before the owner has decided. If the customer entered the wrong address, they may be responsible for re-delivery costs.
+> ⚠ Never promise a free replacement or a refund before the owner has decided. If the
+> customer entered the wrong address, they may be responsible for re-delivery costs.
 
-> ⚠ Never send the raw carrier number (YT…/4PX…) to a customer. Send the store parcel number and the link `<tracking page>?nummer=<parcel number>`. Never look up or quote another customer's parcel.
+> ⚠ Never send the raw carrier number (YT…/4PX…) to a customer. Send the store parcel
+> number and the link `<tracking page>?nummer=<parcel number>`. Never look up or quote
+> another customer's parcel.
 
-**Delivery promise for "when should it have arrived":** 7–14 calendar days after the shipping email. Tracking can be silent for the first 2–4 days after shipping — that is normal.
+**When should it have arrived?** Count the window in Store facts from the shipping email. Tracking can be silent for the first 2–4 days after shipping — that is normal. This is for your own judgment; the customer sees the estimate on the page.
 
 ## ESCALATION
 
@@ -66,8 +71,8 @@ English meaning: Thank you for contacting us, I understand the frustration. We a
 
 **B. Our error — replacement approved by owner**
 
-Hej [NAME], vi har gått igenom ärendet och skickar en ny försändelse till [CORRECT ADDRESS] utan kostnad för dig. Du får ett nytt leveransmejl med spårningsknapp när paketet skickats; beräknad leverans är 7–14 dagar efter det.
-English meaning: We have reviewed the case and are sending a new parcel to the correct address at no cost. You will get a new shipping email with a tracking button; estimated delivery is 7–14 days after shipping.
+Hej [NAME], vi har gått igenom ärendet och skickar en ny försändelse till [CORRECT ADDRESS] utan kostnad för dig. Du får ett nytt leveransmejl med spårningsknapp när paketet skickats.
+English meaning: We have reviewed the case and are sending a new parcel to the correct address at no cost. You will get a new shipping email with a tracking button.
 
 **C. Customer error — re-delivery on owner's terms**
 

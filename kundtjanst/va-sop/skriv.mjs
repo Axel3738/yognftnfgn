@@ -183,7 +183,13 @@ export async function huvud(argv = process.argv.slice(2)) {
       continue;
     }
     const gamla = await barn(s.notion_id);
-    const eget = gamla.filter((b) => !ärMall(b));
+    // En kropp som börjar med EXAKT den här filens egen H1 är en sida vi själva
+    // skrev förra körningen — då är det en uppdatering, inte en överskrivning av
+    // någon annans arbete. Allt annat innehåll stoppar fortfarande.
+    const minRubrik = (md.match(/^#\s+(.+)$/m) ?? [])[1]?.trim();
+    const vårEgen = minRubrik && gamla.length && gamla[0].type === 'heading_1'
+      && text(gamla[0]) === minRubrik;
+    const eget = vårEgen ? [] : gamla.filter((b) => !ärMall(b));
     if (eget.length && !ersättAllt) {
       console.log(`⏭  HOPPAD    ${s.fil}: kroppen bär ${eget.length} block som inte är tom mall. Kör --ersatt-allt om de ska bort.`);
       console.log(`   först:     ${text(eget[0]).slice(0, 90)}`);

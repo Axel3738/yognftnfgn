@@ -13,18 +13,18 @@ facts** page.
 
 1. **No order number and no parcel number in the mail?** Ask for either one first.
 2. **Open the order in Shopify admin** (search by order number or the customer's
-   email). Note whether it is fulfilled, and when.
+ email). Note whether it is fulfilled, and when.
 3. **Read the fulfillment timeline on the order page.** An hourly routine writes the
-   carrier's scans there, so the latest status is already on the order — you do not
-   have to look it up anywhere else. Copy the carrier tracking number from the
-   fulfillment while you are there.
+ carrier's scans there, so the latest status is already on the order — you do not
+ have to look it up anywhere else. Copy the carrier tracking number from the
+ fulfillment while you are there.
 4. **Open the store's tracking page** (Store facts) and paste the carrier number, or
-   the parcel number the customer quoted. You now see exactly what the customer sees,
-   plus their parcel number under "Your parcel number".
+ the parcel number the customer quoted. You now see exactly what the customer sees,
+ plus their parcel number under "Your parcel number".
 5. **Answer with the parcel number and the page link**, never the carrier number:
-   `<tracking page>?nummer=<parcel number>`.
+ `<tracking page>?nummer=<parcel number>`.
 6. **Quote the page's own wording** for the status and for "Estimated delivery", then
-   pick the reply template below and send it in the customer's language.
+ pick the reply template below and send it in the customer's language.
 
 Carrier portals (17track.net, the carrier's own site) are the **backup**, not the
 first step. They show the same scans, and the customer cannot see them.
@@ -34,11 +34,11 @@ first step. They show the same scans, and the customer cannot see them.
 ## 2. What the customer already has
 
 - Three shipping emails — Shipping confirmation, Shipping update, Out for delivery —
-  each with a single button "Track your parcel" ("Spåra paketet" / "Spor pakken" /
-  "Seuraa pakettia"). The button opens the store's own tracking page with the parcel
-  number already filled in, and the number is printed underneath it.
+ each with a single button "Track your parcel" ("Spåra paketet" / "Spor pakken" /
+ "Seuraa pakettia"). The button opens the store's own tracking page with the parcel
+ number already filled in, and the number is printed underneath it.
 - "Out for delivery" and "Delivered" emails go out automatically, driven by the
-  carrier's scans.
+ carrier's scans.
 - Every live store has "Track your parcel" in the header menu and in the footer.
 
 So a customer writing "where is my package?" has usually not opened the email, or has
@@ -67,19 +67,19 @@ Under each stage, a sub-step says where the parcel actually is.
 
 - **Country names are never shown.** Do not add one in your reply either.
 - **The last-mile carrier appears once the parcel is in the customer's country** —
-  the page then shows the carrier's name, that carrier's own tracking number, and a
-  link to its site. Before the parcel arrives in the country, no carrier is named,
-  and that is normal: measured on 1 055 parcels 2026-09-20, 432 had no local carrier
-  yet.
+ the page then shows the carrier's name, that carrier's own tracking number, and a
+ link to its site. Before the parcel arrives in the country, no carrier is named,
+ and that is normal: measured on 1 055 parcels 2026-09-20, 432 had no local carrier
+ yet.
 - **"Collect your parcel"** ("Hämta ditt paket"), with the pickup point's number and
-  link, appears **only** when the parcel is waiting at a pickup point.
+ link, appears **only** when the parcel is waiting at a pickup point.
 - **"Estimated delivery"** ("Beräknad leverans") shows the store's delivery promise
-  counted from the ship date — 7–14 calendar days on Bäverbutiken (Store facts).
+ counted from the ship date. Because the page shows it, you never repeat the window in a reply that carries the link.
 - The search box accepts the parcel number **and** the carrier number. Spaces and
-  hyphens are ignored.
+ hyphens are ignored.
 - The page carries **no names, no addresses and no order numbers**, and a parcel
-  cannot be looked up by order number. That is deliberate: order numbers run in
-  sequence, so anyone could have read a stranger's parcel.
+ cannot be looked up by order number. That is deliberate: order numbers run in
+ sequence, so anyone could have read a stranger's parcel.
 
 Shopify's own order status page cannot show any of this — it draws three dashes with
 dates, no cities, no history. That is why the store page exists. Send the store page.
@@ -92,10 +92,10 @@ In order of likelihood — the first cause is by far the most common, and it is 
 typo:
 
 1. **The shipping email arrived less than an hour ago.** The page picks up new
-   parcels once an hour. Tell the customer to try again shortly; the page says so
-   itself.
+ parcels once an hour. Tell the customer to try again shortly; the page says so
+ itself.
 2. **The parcel shipped more than 60 days ago.** The page keeps 60 days. Look it up
-   for them on the carrier number instead (17track.net).
+ for them on the carrier number instead (17track.net).
 3. **A mistyped number.** Check it against the order.
 
 > **Many fresh parcels missing at once** is not a customer problem — tell the owner.
@@ -111,10 +111,10 @@ flight, and the shipping email says so.
 
 - No new scan for 7 days after the first scans, **or** past day 14 without delivery.
 - Then: open the carrier's own tracking, continue with "Order not arrived within
-  expected timeframe", and tell the owner.
+ expected timeframe", and tell the owner.
 - **Never tell a customer the parcel is lost** until the carrier has confirmed
-  non-delivery. Refunds, replacements and "lost" statements need the owner's approval
-  (Store facts).
+ non-delivery. Refunds, replacements and "lost" statements need the owner's approval
+ (Store facts).
 
 ---
 
@@ -137,30 +137,29 @@ Swedish first, English meaning after. Write in the language the customer wrote i
 
 **1 — On its way**
 > Hej [NAMN]! Ditt paket är på väg. Paketnummer: [NUMMER], följ det här: [LÄNK].
-> Beräknad leverans är 7–14 dagar efter att paketet skickades, och spårningen kan
-> vara tyst de första dagarna — det är helt normalt.
+> Spårningen kan vara tyst de första dagarna — det är helt normalt.
 
-*Meaning: on its way; 7–14 days after shipping; silence in the first days is normal.*
+*Meaning: on its way; silence in the first days is normal.*
 
 **2 — Out for delivery**
-> Hej [NAMN]! Ditt paket är ute för leverans i dag. Paketnummer: [NUMMER], följ det
-> här: [LÄNK].
+> Hej [NAMN]! Ditt paket är ute för leverans i dag. Paketnummer: [NUMMER], följ det här:
+> [LÄNK].
 
 **3 — Waiting at a pickup point**
-> Hej [NAMN]! Ditt paket finns att hämta. Öppna [LÄNK] — ombudets nummer och länk
-> står under "Hämta ditt paket". Paket ligger bara kvar en begränsad tid innan de
-> skickas tillbaka, så hämta det när du kan.
+> Hej [NAMN]! Ditt paket finns att hämta. Öppna [LÄNK] — ombudets nummer och länk står
+> under "Hämta ditt paket". Paket ligger bara kvar en begränsad tid innan de skickas
+> tillbaka, så hämta det när du kan.
 
 **4 — Shows delivered, customer has nothing**
-> Hej [NAMN]! Spårningen visar att paketet är levererat: [LÄNK]. Titta i brevlådan,
-> hos närmaste ombud och hos grannarna, och fråga andra i hushållet. Hittar du det
-> inte, svara här så undersöker vi vidare.
+> Hej [NAMN]! Spårningen visar att paketet är levererat: [LÄNK]. Titta i brevlådan, hos
+> närmaste ombud och hos grannarna, och fråga andra i hushållet. Hittar du det inte,
+> svara här så undersöker vi vidare.
 
 *Then continue with "Package missing after tracking shows delivered".*
 
 **5 — The page cannot find it yet**
-> Hej [NAMN]! Fick du leveransmejlet nyss? Då är paketet på väg in på spårningssidan
-> — den hämtar nya paket varje timme, så prova igen om en liten stund: [LÄNK].
+> Hej [NAMN]! Fick du leveransmejlet nyss? Då är paketet på väg in på spårningssidan —
+> den hämtar nya paket varje timme, så prova igen om en liten stund: [LÄNK].
 
 ---
 
@@ -182,6 +181,6 @@ Swedish first, English meaning after. Write in the language the customer wrote i
 - [ ] The order was opened in Shopify and the fulfillment timeline was read.
 - [ ] The parcel was looked up on the store's own tracking page.
 - [ ] The reply carries the **store parcel number** and the page link — no carrier
-      number, no country name, no order number.
+ number, no country name, no order number.
 - [ ] The status and the delivery window are quoted in the page's own words.
 - [ ] Anything stuck by §5 was passed to the owner, and nothing was called "lost".

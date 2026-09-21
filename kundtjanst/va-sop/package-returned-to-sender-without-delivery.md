@@ -1,6 +1,8 @@
 # Package returned to sender without delivery
 
-> Internal use only. This page works for every store: never write one store's domain or support address into a step. The per-store values live in the "Store facts" table below.
+> Internal use only. This page works for every store: never write one store's domain or
+> support address into a step. The per-store values live in the "Store facts" table
+> below.
 
 ## Use this when
 
@@ -51,7 +53,7 @@ and never type a store name, a domain or an address into this procedure.
 ### Step 4 – Contact the customer
 
 1. Inform the customer that their parcel has unfortunately been returned to our supplier. Apologise for the inconvenience.
-2. Offer the option the owner approved. Option A: we resend the order to a confirmed address for free. The customer gets a new shipping email with a "Track your parcel" button and a new parcel number; estimated delivery is 7–14 calendar days after that email.
+2. Offer the option the owner approved. Option A: we resend the order to a confirmed address for free. The customer gets a new shipping email with a "Track your parcel" button and a new parcel number, and the tracking page shows the estimated delivery.
 3. Do not offer a refund yourself. If the customer declines the free resend and asks for a refund instead, that is OK — notify the owner, who processes the refund in Shopify.
 4. Ask the customer to confirm which option they prefer and to verify the full delivery address if resending.
 5. If resending: correct the address in Shopify and arrange the replacement shipment with the supplier.
@@ -82,16 +84,16 @@ English meaning: "Hi [NAME], thank you for contacting us. We can see that the pa
 
 **Template 2 – Offer a resend (after owner approval)**
 
-Swedish: "Hej [NAMN], tyvärr har ditt paket för order [ORDERNUMMER] kommit tillbaka till vår leverantör utan att nå fram till dig. Vi ber om ursäkt för besväret. Vi skickar gärna om beställningen kostnadsfritt. Bekräfta din fullständiga leveransadress så skickar vi ett nytt paket. Du får ett nytt leveransmejl med knappen Spåra paketet och ett nytt paketnummer. Beräknad leverans är 7–14 dagar efter det mejlet."
+Swedish: "Hej [NAMN], tyvärr har ditt paket för order [ORDERNUMMER] kommit tillbaka till vår leverantör utan att nå fram till dig. Vi ber om ursäkt för besväret. Vi skickar gärna om beställningen kostnadsfritt. Bekräfta din fullständiga leveransadress så skickar vi ett nytt paket. Du får ett nytt leveransmejl med knappen Spåra paketet och ett nytt paketnummer. "
 
-English meaning: "Hi [NAME], unfortunately the parcel for order [ORDER NUMBER] has come back to our supplier without reaching you. We apologise for the inconvenience. We are happy to resend the order free of charge. Please confirm your full delivery address and we will ship a new parcel. You will receive a new shipping email with the Track your parcel button and a new parcel number. Estimated delivery is 7–14 days after that email."
+English meaning: "Hi [NAME], unfortunately the parcel for order [ORDER NUMBER] has come back to our supplier without reaching you. We apologise for the inconvenience. We are happy to resend the order free of charge. Please confirm your full delivery address and we will ship a new parcel. You will receive a new shipping email with the Track your parcel button and a new parcel number. "
 
 **Template 3 – Resend confirmed**
 
-Swedish: "Hej [NAMN], ditt nya paket är nu skickat. Ditt paketnummer är [PAKETNUMMER] och du kan följa det här: [SPÅRNINGSSIDA]?nummer=[PAKETNUMMER]. Beräknad leverans är 7–14 dagar. De första dagarna kan spårningen vara tyst — det är normalt."
+Swedish: "Hej [NAMN], ditt nya paket är nu skickat. Ditt paketnummer är [PAKETNUMMER] och du kan följa det här: [SPÅRNINGSSIDA]?nummer=[PAKETNUMMER]. De första dagarna kan spårningen vara tyst — det är normalt."
 
-English meaning: "Hi [NAME], your new parcel has now shipped. Your parcel number is [PARCEL NUMBER] and you can follow it here: [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Estimated delivery is 7–14 days. Tracking can be silent for the first days — that is normal."
+English meaning: "Hi [NAME], your new parcel has now shipped. Your parcel number is [PARCEL NUMBER] and you can follow it here: [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Tracking can be silent for the first days — that is normal."
 
 ## AI PROMPT TEMPLATE
 
-"Draft an email in [LANGUAGE: Swedish / Norwegian / Danish / Finnish / English, per the store] to a customer informing them that their order [ORDER ID] has unfortunately been returned to our supplier. Apologise for the inconvenience. Offer that we resend the order free of charge to a confirmed address, and ask them to confirm their full delivery address. Explain that they will receive a new shipping email with a Track your parcel button and a new parcel number, and that estimated delivery is 7–14 calendar days after that email. Do not mention a refund, a warehouse location, or any carrier tracking number. Keep the tone empathetic and professional. Under 150 words."
+"Draft an email in [LANGUAGE: Swedish / Norwegian / Danish / Finnish / English, per the store] to a customer informing them that their order [ORDER ID] has unfortunately been returned to our supplier. Apologise for the inconvenience. Offer that we resend the order free of charge to a confirmed address, and ask them to confirm their full delivery address. Explain that they will receive a new shipping email with a Track your parcel button and a new parcel number. Do not state a delivery date or window — the tracking page shows it. Do not mention a refund, a warehouse location, or any carrier tracking number. Keep the tone empathetic and professional. Under 150 words."

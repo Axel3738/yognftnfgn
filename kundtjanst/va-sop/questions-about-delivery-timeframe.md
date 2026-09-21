@@ -1,6 +1,8 @@
 # Questions about delivery timeframe (SOP 28)
 
-> Internal use only. This page works for every store in the "Store facts" table. Never hard-code one store's domain or support address in a reply — take the values from the table.
+> Internal use only. This page works for every store in the "Store facts" table. Never
+> hard-code one store's domain or support address in a reply — take the values from the
+> table.
 
 ## Use this when
 
@@ -30,7 +32,9 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-> Every store in Store facts has a tracking page except Grillkliniken, which keeps the old carrier-portal procedure. For any store not in the table, the old procedure applies — ask the owner if unsure.
+> Every store in Store facts has a tracking page except Grillkliniken, which keeps the
+> old carrier-portal procedure. For any store not in the table, the old procedure
+> applies — ask the owner if unsure.
 
 ## STEP-BY-STEP INSTRUCTIONS
 
@@ -38,7 +42,7 @@ and never type a store name, a domain or an address into this procedure.
 2. **Read the fulfillment timeline** on the order page. Not fulfilled → the order has not shipped yet; the 7–14 days start when the shipping email goes out. Fulfilled → copy the carrier tracking number from the fulfillment and note the ship date.
 3. **Open the store's tracking page** (Store facts) and paste the carrier number. Read the status in the page's own wording (on its way / with the carrier / out for delivery / ready for pickup / delivered) and copy the **store parcel number** shown as "Your parcel number" (BB-/CS-XXXXXXXX). Full look-up procedure and troubleshooting: see the page "Tracking page — how to look up any parcel".
 4. **Check the parcel against the promise:** ship date + 7–14 calendar days. Note if the last scan is older than 7 days, or if the parcel is past day 14 without delivery — that is an ESCALATION case, not a timeframe answer.
-5. **Write the reply in the customer's language** (the store's language; translate with DeepL and read it through). Include: the 7–14 calendar-day window after shipping, the current status in the page's words, the parcel number, and the link `the tracking page (Store facts)?nummer=the parcel number`. Remind the customer that the shipping email has one button "Track your parcel" with the parcel number printed under it, and to check spam. **Never paste the carrier number (YT…, 4PX…).**
+5. **Write the reply in the customer's language** (the store's language; translate with DeepL and read it through). Include: the current status in the page's words, the parcel number, and the link `the tracking page (Store facts)?nummer=the parcel number`. Remind the customer that the shipping email has one button "Track your parcel" with the parcel number printed under it, and to check spam. **Never paste the carrier number (YT…, 4PX…).**
 6. **If the page says "We can't find that number":** the page refreshes new parcels once per hour, so a customer who clicked the email the minute it arrived will not find the parcel yet — this is the most common cause. Ask them to try again in a little while. Second cause: shipped more than 60 days ago (use the carrier number on the carrier's portal). Third cause: a typo.
 7. Keep it short and friendly. Review before sending.
 
@@ -56,15 +60,15 @@ The reply must be in the customer's language (DeepL). Swedish text first, Englis
 
 **Template A — order not shipped yet**
 
-Swedish: "Hej! Din order är mottagen och packas just nu. När paketet har skickats får du ett mejl med knappen Spåra paketet och ditt paketnummer. Beräknad leverans är 7–14 dagar efter att paketet har skickats. Kolla gärna skräpposten om mejlet inte syns."
+Swedish: "Hej! Din order är mottagen och packas just nu. När paketet har skickats får du ett mejl med knappen Spåra paketet och ditt paketnummer. Kolla gärna skräpposten om mejlet inte syns."
 
-English meaning: "Hi! Your order has been received and is being packed. Once the parcel has shipped you get an email with the button Track your parcel and your parcel number. Estimated delivery is 7–14 days after it has shipped. Please check your spam folder if the email does not show up."
+English meaning: "Hi! Your order has been received and is being packed. Once the parcel has shipped you get an email with the button Track your parcel and your parcel number. Please check your spam folder if the email does not show up."
 
 **Template B — shipped, on its way**
 
-Swedish: "Hej! Ditt paket skickades den [SHIP DATE] och är på väg. Beräknad leverans är 7–14 dagar efter att det skickades. Ditt paketnummer är the parcel number — följ paketet här: the tracking page (Store facts)?nummer=the parcel number. Spårningen kan vara tyst de första 2–4 dagarna, det är normalt."
+Swedish: "Hej! Ditt paket skickades den [SHIP DATE] och är på väg. Ditt paketnummer är the parcel number — följ paketet här: the tracking page (Store facts)?nummer=the parcel number. Spårningen kan vara tyst de första 2–4 dagarna, det är normalt."
 
-English meaning: "Hi! Your parcel shipped on [SHIP DATE] and is on its way. Estimated delivery is 7–14 days after shipping. Your parcel number is the parcel number — follow it here: (link). Tracking can be quiet for the first 2–4 days, that is normal."
+English meaning: "Hi! Your parcel shipped on [SHIP DATE] and is on its way. Your parcel number is the parcel number — follow it here: (link). Tracking can be quiet for the first 2–4 days, that is normal."
 
 **Template C — number not found yet**
 
@@ -76,4 +80,4 @@ Sign every reply with the store's name and support address: the store name (Stor
 
 ## AI PROMPT TEMPLATE
 
-"Draft a friendly email in [the customer's language] answering a customer who asks about delivery time for their order from the store name (Store facts). Estimated delivery is 7–14 calendar days after the shipping email; handling before shipping is not part of that window. The shipping email has one button 'Track your parcel' with their parcel number the parcel number printed under it — remind them to check spam. Current status: [fill from Store facts]. Include this link: the tracking page (Store facts)?nummer=the parcel number. Say that tracking can be quiet for the first 2–4 days after shipping. Do not mention any carrier name or carrier number, do not promise a delivery date, do not mention refunds. Under 120 words."
+"Draft a friendly email in [the customer's language] answering a customer who asks about delivery time for their order from the store name (Store facts). The shipping email has one button 'Track your parcel' with their parcel number the parcel number printed under it — remind them to check spam. Current status: [fill from Store facts]. Include this link: the tracking page (Store facts)?nummer=the parcel number. Say that tracking can be quiet for the first 2–4 days after shipping. Do not mention any carrier name or carrier number, do not promise a delivery date, do not mention refunds. Under 120 words."

@@ -1,6 +1,8 @@
+# SOP: Order confirmation not received
+
 ## Use this when
 
-A customer says they placed an order but never received an order confirmation email. This page works for every store in the group — take the store's own tracking page and support address from the "Store facts" table, never from memory.
+A customer says they placed an order but never received an order confirmation email. This page works for every store in the group — take the store's own tracking page and support address from the page **Store facts**, never from memory.
 
 ## OVERVIEW
 
@@ -43,7 +45,9 @@ Pick one of three outcomes:
 - **B – Order found, payment status unclear (pending/failed):** notify the owner BEFORE replying. Send nothing to the customer until the owner has answered. Go to Step 4B.
 - **C – No order found:** go to Step 4C.
 
-> IMPORTANT: If no order is found but the customer says payment was taken, do not dismiss the issue. Notify the owner immediately so a payment investigation can be carried out.
+> IMPORTANT: If no order is found but the customer says payment was taken, do not
+> dismiss the issue. Notify the owner immediately so a payment investigation can be
+> carried out.
 
 ### Step 4A – Order found and payment confirmed
 
@@ -75,17 +79,11 @@ The reply must be in the customer's language — translate with DeepL. Swedish t
 
 **A1 – Order found, paid and shipped**
 
-Hej [NAMN]! Tack för att du hörde av dig. Din order [ORDERNUMMER] är registrerad och betald, och paketet har skickats. Vi har skickat orderbekräftelsen igen – titta gärna i skräpposten om du inte ser den. Ditt paketnummer är [PAKETNUMMER]. Följ paketet här: [SPÅRNINGSLÄNK]. Beräknad leverans är 7–14 kalenderdagar efter att paketet skickades. Hör av dig om du undrar något mer!
+Hej [NAMN]! Tack för att du hörde av dig. Din order [ORDERNUMMER] är registrerad och betald, och paketet har skickats. Vi har skickat orderbekräftelsen igen – titta gärna i skräpposten om du inte ser den. Ditt paketnummer är [PAKETNUMMER]. Följ paketet här: [SPÅRNINGSLÄNK]. Hör av dig om du undrar något mer!
 
-English meaning: Thanks for reaching out. Your order [ORDER ID] is registered and paid, and the parcel has shipped. We have resent the confirmation — please check spam if you do not see it. Your parcel number is [PARCEL NUMBER]. Track it here: [TRACKING PAGE LINK]. Estimated delivery is 7–14 calendar days after shipping.
+English meaning: Thanks for reaching out. Your order [ORDER ID] is registered and paid, and the parcel has shipped. We have resent the confirmation — please check spam if you do not see it. Your parcel number is [PARCEL NUMBER]. Track it here: [TRACKING PAGE LINK]. **A2 – Order found and paid, not shipped yet**
 
-**A2 – Order found and paid, not shipped yet**
-
-Hej [NAMN]! Tack för ditt mejl. Din order [ORDERNUMMER] är registrerad och betald. Vi har skickat orderbekräftelsen igen – kolla gärna skräpposten. När paketet skickas får du ett leveransmejl med knappen "Spåra paketet" och ditt paketnummer. Beräknad leverans är 7–14 kalenderdagar efter att paketet har skickats.
-
-English meaning: Your order [ORDER ID] is registered and paid. We have resent the confirmation — please check spam. When the parcel ships you will get a shipping email with the "Track your parcel" button and your parcel number. Estimated delivery is 7–14 calendar days after shipping.
-
-**C – No order found**
+Hej [NAMN]! Tack för ditt mejl. Din order [ORDERNUMMER] är registrerad och betald. Vi har skickat orderbekräftelsen igen – kolla gärna skräpposten. När paketet skickas får du ett leveransmejl med knappen "Spåra paketet" och ditt paketnummer. English meaning: Your order [ORDER ID] is registered and paid. We have resent the confirmation — please check spam. When the parcel ships you will get a shipping email with the "Track your parcel" button and your parcel number. **C – No order found**
 
 Hej [NAMN]! Tack för att du hörde av dig. Vi hittar tyvärr ingen order kopplad till dina uppgifter. För att hjälpa dig vidare: 1) Har pengar dragits från ditt konto? 2) Är det här e-postadressen du använde vid beställningen? Vi undersöker saken och återkommer så snart vi vet mer.
 
@@ -97,11 +95,11 @@ Review every AI draft before sending. Fill every placeholder — a draft with an
 
 **Order found and confirmed (shipped)**
 
-"Draft a friendly email in [CUSTOMER'S LANGUAGE] confirming that order [ORDER ID] is registered, paid and has shipped. Say we have resent the order confirmation and ask them to check their spam folder. Give the parcel number [PARCEL NUMBER] and the tracking link [TRACKING PAGE LINK]. State that estimated delivery is 7–14 calendar days after shipping. Under 120 words."
+"Draft a friendly email in [CUSTOMER'S LANGUAGE] confirming that order [ORDER ID] is registered, paid and has shipped. Say we have resent the order confirmation and ask them to check their spam folder. Give the parcel number [PARCEL NUMBER] and the tracking link [TRACKING PAGE LINK]. Do not state a delivery date or window — the tracking page already shows the estimated delivery. Under 120 words."
 
 **Order found and confirmed (not shipped yet)**
 
-"Draft a friendly email in [CUSTOMER'S LANGUAGE] confirming that order [ORDER ID] is registered and paid. Say we have resent the order confirmation and ask them to check spam. Explain that a shipping email with a 'Track your parcel' button and their parcel number will follow when the parcel ships, and that estimated delivery is 7–14 calendar days after shipping. Do not include any tracking link. Under 120 words."
+"Draft a friendly email in [CUSTOMER'S LANGUAGE] confirming that order [ORDER ID] is registered and paid. Say we have resent the order confirmation and ask them to check spam. Explain that a shipping email with a 'Track your parcel' button and their parcel number will follow when the parcel ships. Do not state a delivery date or window — the tracking page shows it. Do not include any tracking link. Under 120 words."
 
 **Order not found**
 

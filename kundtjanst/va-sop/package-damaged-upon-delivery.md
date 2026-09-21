@@ -4,7 +4,8 @@
 
 A customer writes to the store's support address saying the package or the product arrived damaged. This page works for every store — the only per-store values are in the "Store facts" table.
 
-> Never promise a replacement or a refund before the photos are in AND the owner has decided. Your first reply only asks for photos.
+> Never promise a replacement or a refund before the photos are in AND the owner has
+> decided. Your first reply only asks for photos.
 
 ## OVERVIEW
 
@@ -67,7 +68,7 @@ Wait for the owner's decision before replying with any resolution. Maximum waiti
 
 The owner chooses one of:
 
-- **Replacement:** create a new order with the same product at 0 cost (duplicate the order in Shopify, mark it as replacement). It ships like any order: the customer gets a new shipping email with its own parcel number, and the delivery promise is **7–14 calendar days after it has shipped**. Say exactly that, and nothing more precise.
+- **Replacement:** create a new order with the same product at 0 cost (duplicate the order in Shopify, mark it as replacement). It ships like any order: the customer gets a new shipping email with its own parcel number, and the tracking page shows the estimated delivery. Do not quote a delivery window in the reply.
 - **Full refund:** refund in Shopify (order → Refund) to the original payment method. Tell the customer that how quickly it appears depends on their bank — never give a number of days.
 - **Partial refund:** only if the product is partially usable and the customer agrees; refund the agreed amount in Shopify.
 
@@ -92,9 +93,9 @@ English meaning: "Hi! Thank you for getting in touch, and we are sorry the parce
 
 **Template B – Confirm the resolution (replacement)**
 
-Swedish: "Hej igen! Tack för bilderna. Vi skickar en ny vara till dig utan kostnad. Du får ett nytt leveransmejl med ett eget paketnummer så snart den har skickats, och beräknad leverans är 7–14 dagar efter det. Du kan följa paketet på [store tracking page]."
+Swedish: "Hej igen! Tack för bilderna. Vi skickar en ny vara till dig utan kostnad. Du får ett nytt leveransmejl med ett eget paketnummer så snart den har skickats. Du kan följa paketet på [store tracking page]."
 
-English meaning: "Hi again! Thank you for the photos. We are sending you a new item at no cost. You will get a new shipping email with its own parcel number as soon as it has shipped, and estimated delivery is 7–14 days after that. You can follow the parcel on [store tracking page]."
+English meaning: "Hi again! Thank you for the photos. We are sending you a new item at no cost. You will get a new shipping email with its own parcel number as soon as it has shipped. You can follow the parcel on [store tracking page]."
 
 For a refund, replace the middle sentences with: "Vi återbetalar hela beloppet till ditt ursprungliga betalsätt. Hur snabbt det syns beror på din bank." / "We are refunding the full amount to your original payment method. How quickly it appears depends on your bank."
 
@@ -104,4 +105,4 @@ Use Claude with this prompt. Replace the language before sending.
 
 "Draft a short, friendly email in [CUSTOMER LANGUAGE] to a customer who says their order arrived damaged. Ask them to send us: 1) a photo of the damaged item, 2) a photo of the packaging, and 3) a photo of the shipping label. Tell them we will investigate and resolve this as quickly as possible. Do not offer a refund or replacement yet. Under 100 words."
 
-For the resolution reply: "Draft a short, friendly email in [CUSTOMER LANGUAGE] confirming that we will [send a replacement at no cost / refund the full amount to the original payment method]. If replacement: say a new shipping email with a parcel number follows when it ships and delivery is 7–14 calendar days after that. Under 100 words."
+For the resolution reply: "Draft a short, friendly email in [CUSTOMER LANGUAGE] confirming that we will [send a replacement at no cost / refund the full amount to the original payment method]. If replacement: say a new shipping email with a parcel number follows when it ships. Do not state a delivery window — the tracking page shows it. Under 100 words."

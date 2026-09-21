@@ -61,9 +61,9 @@ tvister:
   # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en
   # trasig vara blev en tvist, och en tvist kostar mer än en retur.
   returadress_pa_forfragan: true
-  # Vem som betalar returfrakten är ägarens beslut och ännu inte fattat.
-  # ⚠️ Lämna tom tills Axel sagt det — VA:n får inte gissa i ett mejl.
-  returfrakt_betalas_av: ""
+  # Kunden betalar och ordnar returfrakten; ingen returetikett skickas. Det är
+  # vad butikens befintliga retur-SOP alltid sagt, inskrivet 2026-09-21.
+  returfrakt_betalas_av: "kund"
   # ⚠️ TOM — står i Shopify admin → Settings → Payments → Customer billing
   # statement. Läs den där; en descriptor kunden inte känner igen är en vanlig
   # orsak till "unrecognized".

@@ -4,7 +4,9 @@
 
 A customer writes that their order has not arrived, that it is taking too long, or that "the tracking has not moved". This page works for every store: read the store's values from the **Store facts** table and never type another store's domain or address into a reply.
 
-> Do NOT use this page when tracking already says **Delivered** and the customer has not received the parcel. That case is the SOP "Package missing after tracking shows Delivered".
+> Do NOT use this page when tracking already says **Delivered** and the customer has not
+> received the parcel. That case is the SOP "Package missing after tracking shows
+> Delivered".
 
 ## OVERVIEW
 
@@ -24,7 +26,8 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-> A store with no tracking page in this table keeps the old carrier-portal procedure until its page is built — ask the owner once and write the answer into Store facts.
+> A store with no tracking page in this table keeps the old carrier-portal procedure
+> until its page is built — ask the owner once and write the answer into Store facts.
 
 ## STEP-BY-STEP INSTRUCTIONS
 
@@ -63,12 +66,13 @@ Full look-up procedure: see the page **"Tracking page — how to look up any par
 2. Contact the carrier with the tracking number and order details and request an investigation. Carrier answers take as long as they take — never promise the customer a date for the answer.
 3. Send the customer an interim reply the same day (template B) — do not wait for the carrier in silence.
 
-> IMPORTANT: Do not tell the customer the outcome yet and do not promise a refund or replacement at this stage.
+> IMPORTANT: Do not tell the customer the outcome yet and do not promise a refund or
+> replacement at this stage.
 
 ### Step 5 – Reply to the customer
 
 1. Write in the customer's language ([the customer's language], DeepL).
-2. Include: the status in the page's wording, the estimated delivery window (7–14 calendar days after shipping), the parcel number and the link `the tracking page (Store facts)?nummer=<parcel number>`.
+2. Include: the status in the page's wording, the parcel number and the link `the tracking page (Store facts)?nummer=<parcel number>`.
 3. Mention that tracking can look still for a few days while the parcel is moving.
 4. Sign with the store's support address the support address (Store facts).
 5. Read the whole reply before sending. Never paste a carrier number or a carrier website link.
@@ -85,19 +89,25 @@ Swedish text first, English meaning after. Translate to the customer's language 
 
 **A – Within the delivery window**
 
-> Hej! Ditt paket är på väg. Beräknad leverans är 7–14 dagar efter att paketet skickades. Du följer paketet här: the tracking page (Store facts)?nummer=BB-XXXXXXXX (ditt paketnummer: BB-XXXXXXXX). Spårningen kan se stilla ut de första dagarna, men paketet rör sig. Hör av dig om det inte kommit inom 14 dagar från leveransmejlet.
+> Hej! Ditt paket är på väg. Du följer paketet här: the tracking page (Store
+> facts)?nummer=BB-XXXXXXXX (ditt paketnummer: BB-XXXXXXXX). Spårningen kan se stilla ut
+> de första dagarna, men paketet rör sig. Hör av dig om det inte kommit inom 14 dagar
+> från leveransmejlet.
 
-Meaning: Hi! Your parcel is on its way. Estimated delivery is 7–14 days after it shipped. Track it here: (page link with parcel number). Tracking can look still the first days but the parcel is moving. Contact us if it has not arrived within 14 days of the shipping email.
+Meaning: Hi! Your parcel is on its way. Track it here: (page link with parcel number). Tracking can look still the first days but the parcel is moving. Contact us if it has not arrived within 14 days of the shipping email.
 
 **B – Late or stuck, investigation started**
 
-> Hej! Tack för att du hörde av dig. Vi ser att paketet inte har uppdaterats som det ska och har bett fraktbolaget undersöka det. Vi återkommer så snart vi har svar, normalt inom några arbetsdagar. Ditt paketnummer: BB-XXXXXXXX.
+> Hej! Tack för att du hörde av dig. Vi ser att paketet inte har uppdaterats som det ska
+> och har bett fraktbolaget undersöka det. Vi återkommer så snart vi har svar, normalt
+> inom några arbetsdagar. Ditt paketnummer: BB-XXXXXXXX.
 
 Meaning: Hi! Thanks for contacting us. We see the parcel has not updated as it should and have asked the carrier to investigate. We will get back to you as soon as we have an answer, normally within a few business days. Your parcel number: BB-XXXXXXXX.
 
 **C – Ready for pickup**
 
-> Hej! Ditt paket finns att hämta hos ditt utlämningsställe. Du ser vilket ställe och hämtnumret här: the tracking page (Store facts)?nummer=BB-XXXXXXXX.
+> Hej! Ditt paket finns att hämta hos ditt utlämningsställe. Du ser vilket ställe och
+> hämtnumret här: the tracking page (Store facts)?nummer=BB-XXXXXXXX.
 
 Meaning: Hi! Your parcel is ready for pickup at your pickup point. You can see which point and the pickup number here: (page link with parcel number).
 
@@ -105,4 +115,11 @@ Meaning: Hi! Your parcel is ready for pickup at your pickup point. You can see w
 
 Use any AI tool, then read the reply fully before sending.
 
-> "A customer says their order [ORDER ID] from [STORE] shipped on [SHIPPING DATE] has not arrived. Our tracking page shows: [STATUS IN THE PAGE'S WORDING]. Our delivery promise is 7–14 calendar days after the shipping email, and tracking can be silent the first 2–4 days. Draft a polite reply in [LANGUAGE] explaining the current status and that we are following the parcel. Do not promise a refund or replacement and do not say the parcel is lost. Include the parcel number [PARCEL NUMBER] and the link [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Do not mention any carrier name or carrier number. Keep it under 120 words."
+> "A customer says their order [ORDER ID] from [STORE] shipped on [SHIPPING DATE] has
+> not arrived. Our tracking page shows: [STATUS IN THE PAGE'S WORDING]. Tracking can be
+> silent the first 2–4 days after shipping. Draft a polite reply in [LANGUAGE]
+> explaining the current status and that we are following the parcel. Do not promise a
+> refund or replacement and do not say the parcel is lost. Include the parcel number
+> [PARCEL NUMBER] and the link [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Do not mention
+> any carrier name or carrier number, and do not state a delivery date or window — the
+> page shows it. Keep it under 120 words."

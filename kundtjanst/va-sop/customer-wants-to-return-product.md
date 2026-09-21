@@ -49,7 +49,9 @@ Return address and company name per store: the return address (Store facts) (⚠
 1. Send the owner a summary: order ID, product(s), delivery date, days since delivery, reason for return, item condition, in/out of the 30-day window, and whether it is a partial return.
 2. Wait for the owner's decision: approve / decline / request more information.
 
-> Do not approve the return and do not tell the customer where to send the parcel before the owner has approved. Never accept a returned item that was sent without prior approval.
+> Do not approve the return and do not tell the customer where to send the parcel before
+> the owner has approved. Never accept a returned item that was sent without prior
+> approval.
 
 ### Step 3 – If the return is approved
 

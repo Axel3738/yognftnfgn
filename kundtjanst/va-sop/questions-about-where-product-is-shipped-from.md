@@ -12,7 +12,7 @@ Shipping & Customs SOP for every store. Domain, support address and prefix come 
 
 | Item | Rule |
 |---|---|
-| Delivery promise | 7–14 calendar days after the shipping email. Handling before shipping is not part of it — always say "after it has shipped". If a store's own site still shows a different figure, tell the owner instead of repeating it to the customer |
+| Delivery promise | See **Store facts**. Only quote it when the order has not shipped yet; once it has, the tracking page shows the estimate and the reply carries the link |
 | Parcel number | Under the button in the shipping email; prefix per store in Store facts. Never the carrier's raw number (YT…, 4PX…) |
 
 ## STEP-BY-STEP INSTRUCTIONS
@@ -21,7 +21,7 @@ Shipping & Customs SOP for every store. Domain, support address and prefix come 
 
 1. Shopify admin, then Orders, then open the order (search by number or email).
 2. Fulfilled card: copy the tracking number (link under the carrier line). Timeline below: events like "Paketet är på väg" with dates — newest = latest scan. Unfulfilled = not shipped.
-3. Not shipped: say it has not left the warehouse and the shipping email is coming. Packing takes 1–2 business days; promise nothing beyond "7–14 calendar days after it ships".
+3. Not shipped: say it has not left the warehouse and the shipping email is coming. Promise nothing beyond the window in Store facts, counted from the day it ships.
 4. Unfulfilled more than 3 business days after the order: escalate first; do not promise a ship date.
 
 ### Step 2 – Find the parcel on the store's tracking page
@@ -35,7 +35,7 @@ Shipping & Customs SOP for every store. Domain, support address and prefix come 
 ### Step 3 – Answer the question directly
 
 1. Origin: "Ships from" in Store facts (Shopify fulfillment wins). Which country: ⚠️ OWNER — until answered, until then say "our partner warehouse abroad" and move on.
-2. Promise: 7–14 calendar days after the shipping email.
+2. Promise: the window in Store facts, counted from the shipping email — and only if the order has not shipped yet.
 3. Send the link: tracking page + ?nummer= + parcel number. The page shows the parcel's stage and where it is, updated hourly.
 4. Two cases: (a) Silent tracking — parcel found, no scans yet, shipped under 4 days ago: normal, on its way to the flight. (b) "We can't find that number" — NOT the flight: the page adds parcels hourly; fulfilled under an hour ago, wait for the next run; over 60 days, carrier portal; else a typo.
 5. Carrier question: the page shows the STAGE "With the carrier" ("Hos fraktbolaget" in Swedish; label follows page language), never the carrier's name. Name one only if asked, read from the Shopify fulfillment — never the raw number.
@@ -64,15 +64,15 @@ Post in Discord #customer-service: order number, parcel number, ship date, last 
 
 **Swedish (use this):**
 
-Hej [namn]! Din order skickas från [enligt Store facts]. Beräknad leverans är 7–14 dagar efter leveransmejlet. Du följer paketet här: [spårningslänk]. Ditt paketnummer är [paketnummer]. De första dagarna kan spårningen vara tom — det är helt normalt, paketet är på väg till flyget. Hör av dig om du undrar något mer! [Butiksnamn] support
+Hej [namn]! Din order skickas från [enligt Store facts]. Du följer paketet här: [spårningslänk]. Ditt paketnummer är [paketnummer]. De första dagarna kan spårningen vara tom — det är helt normalt, paketet är på väg till flyget. Hör av dig om du undrar något mer! [Butiksnamn] support
 
 **English (send as is to EN customers):**
 
-Hi [name]! Your order ships from [per Store facts]. Estimated delivery is 7–14 days after the shipping email. Follow the parcel here: [tracking link]. Your parcel number is [parcel number]. The first few days the tracking may be empty — that is completely normal, the parcel is on its way to the flight. Any other questions? Just reply! [Store name] support
+Hi [name]! Your order ships from [per Store facts]. Follow the parcel here: [tracking link]. Your parcel number is [parcel number]. The first few days the tracking may be empty — that is completely normal, the parcel is on its way to the flight. Any other questions? Just reply! [Store name] support
 
 ## AI PROMPT TEMPLATE
 
-"Draft a friendly email in [CUSTOMER'S LANGUAGE] answering where the order ships from. It ships from [SHIPS-FROM CLAIM]; delivery takes 7–14 calendar days after the shipping email. Include the link [tracking page]?nummer=[parcel number] and the parcel number; the page shows where the parcel is, updated hourly. Tracking can be empty the first 2–4 days; that is normal. Do not name a carrier unless the customer asks; the page does not show it. No customs. Sign with [STORE NAME] support. Under 120 words."
+"Draft a friendly email in [CUSTOMER'S LANGUAGE] answering where the order ships from. It ships from [SHIPS-FROM CLAIM]. Do not state a delivery date or window — the page shows it. Include the link [tracking page]?nummer=[parcel number] and the parcel number; the page shows where the parcel is, updated hourly. Tracking can be empty the first 2–4 days; that is normal. Do not name a carrier unless the customer asks; the page does not show it. No customs. Sign with [STORE NAME] support. Under 120 words."
 
 ## Store facts
 

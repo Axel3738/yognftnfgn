@@ -4,7 +4,7 @@
 
 ## Use this when
 
-A customer says the parcel has not arrived, but the store's tracking page (or the Shopify order timeline) shows **Levererat / Delivered**. The delivery promise is 7–14 calendar days after shipping; a parcel still on its way is not this case.
+A customer says the parcel has not arrived, but the store's tracking page (or the Shopify order timeline) shows **Levererat / Delivered**. A parcel still on its way is not this case — check it against the window in Store facts first.
 
 ## OVERVIEW
 
@@ -68,7 +68,9 @@ Also ask whether the scan's place matches where they normally receive parcels, a
 
 ## ESCALATION
 
-> Never confirm the parcel is lost, and never offer a replacement or refund, until the carrier investigation is complete AND the owner has approved. The owner decides, the VA informs.
+> Never confirm the parcel is lost, and never offer a replacement or refund, until the
+> carrier investigation is complete AND the owner has approved. The owner decides, the
+> VA informs.
 
 Escalate after Step 3, when the carrier answers, or when a dispute appears. Send: order ID, parcel number, delivery scan, the customer's answer and photo, the carrier's reply.
 
@@ -92,6 +94,13 @@ English meaning: Hi [NAME]! Thanks for checking. We have opened an investigation
 
 Use the team's AI tool (Claude or ChatGPT) for the draft, DeepL for the final language. Review before sending. Never quote another customer's parcel.
 
-> Draft a friendly email in [CUSTOMER'S LANGUAGE] to a customer whose tracking shows delivered but who has not received the parcel for order [ORDER ID]. State the delivery scan exactly as the tracking page shows it: [STATUS WORDING], [DATE AND TIME], [CITY]. Include the parcel number [PARCEL NUMBER] and the link [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Ask them to check their mailbox, any pickup notice, the nearest [CARRIER] pickup point, neighbours and their property, and whether the delivery place matches where they usually receive parcels. Ask them to get back to us if they cannot find it. Do not say the parcel is lost. Calm. Under 120 words.
+> Draft a friendly email in [CUSTOMER'S LANGUAGE] to a customer whose tracking shows
+> delivered but who has not received the parcel for order [ORDER ID]. State the delivery
+> scan exactly as the tracking page shows it: [STATUS WORDING], [DATE AND TIME], [CITY].
+> Include the parcel number [PARCEL NUMBER] and the link [TRACKING PAGE]?nummer=[PARCEL
+> NUMBER]. Ask them to check their mailbox, any pickup notice, the nearest [CARRIER]
+> pickup point, neighbours and their property, and whether the delivery place matches
+> where they usually receive parcels. Ask them to get back to us if they cannot find it.
+> Do not say the parcel is lost. Calm. Under 120 words.
 
 After the owner's decision: give the tool the decision and the carrier's answer; the reply states the outcome only.

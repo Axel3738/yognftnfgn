@@ -8,7 +8,9 @@
 |---|---|---|---|
 | Customer asks where their package is or what the delivery status is | Open the order in Shopify and read the fulfillment timeline, then open the store's tracking page | Not required for standard tracking replies. Required before any refund, replacement or "the package is lost" statement | Shopify order (fulfillment timeline) → the store's tracking page → carrier portals / 17track.net only as backup |
 
-> Normal behaviour: tracking can be silent for the first 2–4 days after shipping — the parcel is on its way to the flight. Do not tell the customer the package is lost because tracking has not updated.
+> Normal behaviour: tracking can be silent for the first 2–4 days after shipping — the
+> parcel is on its way to the flight. Do not tell the customer the package is lost
+> because tracking has not updated.
 
 ## Store facts
 
@@ -36,13 +38,13 @@ and never type a store name, a domain or an address into this procedure.
 1. Open the tracking page (Store facts) and paste the carrier tracking number or the customer's parcel number (spaces and hyphens are ignored).
 2. Copy "Ditt paketnummer" / "Your parcel number" from the page. **Send the store parcel number, never the carrier number (YT…, 4PX…) and never a carrier link.**
 3. Read the status in the page's own words:
-   - Order received (Ordern är mottagen)
-   - The parcel is on its way (Paketet är på väg)
-   - With the carrier (Hos fraktbolaget)
-   - Out for delivery (Ute för leverans)
-   - Ready for pickup (Paketet finns att hämta) — "Hämta ditt paket" with the pickup point's number appears only here
-   - Delivered (Levererat)
-4. Note the "Beräknad leverans" / "Estimated delivery" window the page shows (7–14 calendar days from the ship date).
+ - Order received (Ordern är mottagen)
+ - The parcel is on its way (Paketet är på väg)
+ - With the carrier (Hos fraktbolaget)
+ - Out for delivery (Ute för leverans)
+ - Ready for pickup (Paketet finns att hämta) — "Hämta ditt paket" with the pickup point's number appears only here
+ - Delivered (Levererat)
+4. Read the "Beräknad leverans" / "Estimated delivery" the page shows. The customer sees it there, so do not repeat it in your reply.
 5. If the page says "Vi hittar inte det numret" / "We can't find that number": fulfilled less than 1 hour ago → wait for the next hourly run (the most common cause). Shipped more than 60 days ago → use the carrier number on 17track.net or the carrier's site. Otherwise the number is mistyped.
 6. Backup only: carrier portals and 17track.net show the same scans as the page.
 
@@ -75,9 +77,9 @@ English meaning: Thanks for reaching out — the shipping email has a "Track you
 
 **B – On its way / with the carrier**
 
-Hej (KUNDNAMN)! Ditt paket är på väg. Ditt paketnummer är the parcel number och du kan följa det här: the tracking page (Store facts)?nummer=the parcel number. Beräknad leverans är 7–14 dagar efter leveransmejlet, och det är helt normalt att spårningen står stilla några dagar — paketet rör sig ändå. Ha en fin dag, [DITT NAMN], the store name (Store facts)
+Hej (KUNDNAMN)! Ditt paket är på väg. Ditt paketnummer är the parcel number och du kan följa det här: the tracking page (Store facts)?nummer=the parcel number. Det är helt normalt att spårningen står stilla några dagar — paketet rör sig ändå. Ha en fin dag, [DITT NAMN], the store name (Store facts)
 
-English meaning: Your parcel is on its way. Your parcel number is X, follow it here. Estimated delivery is 7–14 days after the shipping email; it is normal for tracking to look stuck for a few days.
+English meaning: Your parcel is on its way. Your parcel number is X, follow it here. It is normal for tracking to look stuck for a few days.
 
 **C – Delivered but not received**
 

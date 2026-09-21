@@ -4,7 +4,9 @@
 
 Shopify shows a new dispute (inquiry or chargeback), the daily dispute alert in Discord lists an order, or a customer says they have asked their bank or Klarna to reverse a payment.
 
-> The one fact that decides almost every dispute is: **is there a delivery scan?** Since the hourly tracking routine, that scan is written into the order's fulfilment timeline in Shopify. Read it there first — never guess the status.
+> The one fact that decides almost every dispute is: **is there a delivery scan?** Since
+> the hourly tracking routine, that scan is written into the order's fulfilment timeline
+> in Shopify. Read it there first — never guess the status.
 
 ## OVERVIEW
 
@@ -41,9 +43,9 @@ and never type a store name, a domain or an address into this procedure.
 3. Backup only: parcels shipped more than 60 days ago, Matstrumpor and Grillkliniken → 17track.net or the carrier's own portal.
 4. If the repo tool is available, run `node kundtjanst/tvistfakta.mjs <order number> --brand <store>` — it prints FIGHT / REFUND / ESCALATE with the evidence list.
 5. Decision rule:
-  - Delivery scan exists → **FIGHT**.
-  - No delivery scan and more than 14 calendar days since shipping → ask the carrier for an investigation, then **REFUND or ESCALATE** to the owner. Do not draft a rebuttal for a case with no delivery proof.
-  - No scan and under 14 days → normal transit (the promise is 7–14 calendar days after shipping). Ask the customer to check mailbox, pickup point and neighbours, and to withdraw the dispute.
+ - Delivery scan exists → **FIGHT**.
+ - No delivery scan and more than 14 calendar days since shipping → ask the carrier for an investigation, then **REFUND or ESCALATE** to the owner. Do not draft a rebuttal for a case with no delivery proof.
+ - No scan and under 14 days → normal transit (the promise is 7–14 calendar days after shipping). Ask the customer to check mailbox, pickup point and neighbours, and to withdraw the dispute.
 
 ### Step 4 – Gather evidence
 

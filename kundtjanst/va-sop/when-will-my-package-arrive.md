@@ -11,7 +11,9 @@
 | Owner approval | Not required for a normal timeframe reply. Required before promising a new delivery date, a refund, a replacement, or saying the parcel is lost. |
 | Where to look | 1) The fulfillment timeline on the Shopify order. 2) The store's tracking page (Store facts table). 3) Carrier portals only as backup. |
 
-> The delivery promise is **7–14 calendar days after the shipping email**. Handling before shipping is not part of the promise — always say "after it has shipped". Never use business days or the old "5–10 days".
+> The delivery promise is in **Store facts**, counted from the shipping email. Quote it
+> only when the order has not shipped yet. Once it has shipped, send the tracking link —
+> the page shows the estimated delivery, so repeating it in the email is noise.
 
 ## Store facts
 
@@ -88,9 +90,9 @@ Swedish text first, English meaning after. Translate to nb/da/fi/en with DeepL w
 
 **A – General promise, no order number**
 
-Svenska: "Hej! Beräknad leverans är 7–14 dagar efter att paketet har skickats. När det skickas får du ett mejl med knappen Spåra paketet och ditt paketnummer, så kan du följa paketet hela vägen. Hör av dig om du vill att jag kollar din order — skicka ordernumret."
+Svenska: "Hej! När det skickas får du ett mejl med knappen Spåra paketet och ditt paketnummer, så kan du följa paketet hela vägen. Hör av dig om du vill att jag kollar din order — skicka ordernumret."
 
-English: "Hi! Estimated delivery is 7–14 days after the parcel has shipped. When it ships you get an email with the Track your parcel button and your parcel number, so you can follow it all the way. Send me your order number if you want me to check."
+English: "Hi! When it ships you get an email with the Track your parcel button and your parcel number, so you can follow it all the way. Send me your order number if you want me to check."
 
 **B – Shipped, within the window**
 
@@ -108,6 +110,6 @@ Reusable wording: Ditt paketnummer / Your parcel number · Paketet är på väg 
 
 ## AI PROMPT TEMPLATE
 
-"Draft a friendly email in [LANGUAGE] to a customer asking when order [ORDER ID] will arrive. It shipped on [SHIP DATE]; the store tracking page says [STATUS] and estimated delivery [WINDOW]. Our promise is 7–14 calendar days after shipping. Include the parcel number [BB-XXXXXXXX] and the link [TRACKING PAGE]?nummer=[BB-XXXXXXXX]. Do not include any carrier name or carrier number. Mention that tracking can be silent the first few days after shipping. Do not promise a refund, replacement or a new date. Reassuring tone, under 120 words."
+"Draft a friendly email in [LANGUAGE] to a customer asking when order [ORDER ID] will arrive. It shipped on [SHIP DATE]; the store tracking page says [STATUS] and shows the estimated delivery. Do not repeat a delivery date or window in the email. Include the parcel number [BB-XXXXXXXX] and the link [TRACKING PAGE]?nummer=[BB-XXXXXXXX]. Do not include any carrier name or carrier number. Mention that tracking can be silent the first few days after shipping. Do not promise a refund, replacement or a new date. Reassuring tone, under 120 words."
 
 For a delayed order add: "Apologise for the delay, say we have contacted the carrier and will get back with an update. Empathetic and professional tone."

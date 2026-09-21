@@ -982,11 +982,26 @@ fraktbolagets nummer** (`YT…`, `4PX…`) — det är bankens, i en tvist. Sida
 däremot sista-bitens fraktbolag med namn, eget nummer och länk när paketet nått
 kundens land (`sparning/sistabiten.mjs`; 432 av 1 055 paket hade inget ännu
 2026-09-20), så bolagets NAMN är inte hemligt — numret är.
-Leveranslöftet är **7–14 kalenderdagar efter fraktmejlet** överallt; "5–10
-arbetsdagar" och handläggningstid i löftet är utrensade. ⚠️ Sexton **⚠️ OWNER**-
+⚠️ **Leveransfönstret skrivs ALDRIG i ett kundmejl som bär spårningslänken**
+(Axels order 2026-09-21: "ta bort det, det står ju redan estimerad leverans på
+tracking-sidan"). Sidan visar Beräknad leverans själv, så en mening om det i
+mejlet är brus kunden redan läst. Talet (7–14 kalenderdagar efter fraktmejlet,
+median 11,1 / p90 13,0) står EN gång i Store facts och är VA:ns eget mått på om
+ett paket är sent — och citeras bara när ordern ännu inte skickats och det inte
+finns någon länk att ge. Första versionen hade det i 71 rader, inklusive varje
+kundmall; nu i 8, alla interna. "5–10 arbetsdagar" och handläggningstid i löftet
+är utrensade. ⚠️ Sexton **⚠️ OWNER**-
 markörer står kvar i texten — sök på ordet i Notion, det är Axels frågelista
-(vem betalar returfrakten, CaraShells "Skickas från Sverige", tull i US/GB/CA/AU/NZ,
-Klarna-tvisternas portal och deadline).
+(CaraShells "Skickas från Sverige", tull i US/GB/CA/AU/NZ, Klarna-tvisternas
+portal och deadline). Returfrakten är avgjord 2026-09-21: **kunden betalar och
+ordnar den, ingen returetikett skickas** — som butikens befintliga retur-SOP
+alltid sagt (`brands/baverbutiken.yaml` → `returfrakt_betalas_av: kund`).
+
+⚠️ **Skrivaren känner igen sin EGEN text:** börjar Notion-sidans kropp med exakt
+filens H1 är det en uppdatering och den kör på; allt annat innehåll stoppar den
+fortfarande. Utan det gick sidorna inte att uppdatera en andra gång utan
+`--ersatt-allt`. Varje SOP-fil måste därför ha en `# rubrik` — den som saknade
+en (`order-confirmation-not-received.md`) hoppades tyst över.
 
 Skild från **`kundtjanst/sop/`**: den är tvisthandboken (chargebacks/inquiries,
 `{{PLATSHÅLLARE}}` ur brandfilen, vakten `npm run sop`). Den här basen är

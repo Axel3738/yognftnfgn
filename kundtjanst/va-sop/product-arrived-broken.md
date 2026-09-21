@@ -1,6 +1,7 @@
 # PRODUCT ARRIVED BROKEN (SOP: Customer Received Damaged Product)
 
-> Works for every store. "The store's tracking page" and "the store's support address" are the values in the **Store facts** table at the bottom.
+> Works for every store. "The store's tracking page" and "the store's support address"
+> are the values in the **Store facts** table at the bottom.
 
 ## Use this when
 
@@ -15,7 +16,7 @@ A customer writes that [fill from Store facts] arrived damaged or broken. Not fo
 | Owner approval | **Required before you promise a replacement, refund or compensation** (fact pack §5; the old "not required for replacement" wording is withdrawn (⚠️ OWNER: confirm this)). Asking for photos needs no approval. |
 | Where to look | Shopify admin → the order → fulfillment timeline; the store's tracking page ("Tracking page — how to look up any parcel"). |
 | Reply time | Within 1 business day. |
-| Delivery promise | **7–14 calendar days after the shipping email.** No other number. |
+| Delivery promise | See **Store facts**. Never quote it in a reply that carries the tracking link |
 
 ## STEP-BY-STEP INSTRUCTIONS
 
@@ -85,13 +86,13 @@ Reply in the customer's language ([the customer's language]). Swedish is the mas
 
 | Swedish (use this) | English meaning |
 |---|---|
-| Nu är din ersättning beställd! Den skickas från vårt lager, och du kan räkna med leverans 7–14 dagar efter att du fått leveransmejlet. I mejlet finns knappen "Spåra paketet" och ditt paketnummer. Tack för ditt tålamod! | Your replacement is ordered! It ships from our warehouse; expect delivery 7–14 days after you receive the shipping email. The email has the "Track your parcel" button and your parcel number. Thank you for your patience! |
+| Nu är din ersättning beställd! Den skickas från vårt lager. I mejlet finns knappen "Spåra paketet" och ditt paketnummer. Tack för ditt tålamod! | Your replacement is ordered! It ships from our warehouse;. The email has the "Track your parcel" button and your parcel number. Thank you for your patience! |
 
 Status of the replacement: use the status template on "Tracking page — how to look up any parcel".
 
 ## AI PROMPT TEMPLATE
 
-"A customer of the store name (Store facts) says their [fill from Store facts] arrived damaged during delivery and attached photos. The owner has approved a replacement: a whole new [fill from Store facts] or [fill from Store facts] only. Draft a polite reply in [the customer's language] apologizing and asking which option they prefer. If you mention delivery time, say only: 7–14 days after the shipping email, which has a Track your parcel button. Do not mention refunds, returns, a carrier or a carrier tracking number unless the customer asked. Under 120 words, signed the support address (Store facts)."
+"A customer of the store name (Store facts) says their [fill from Store facts] arrived damaged during delivery and attached photos. The owner has approved a replacement: a whole new [fill from Store facts] or [fill from Store facts] only. Draft a polite reply in [the customer's language] apologizing and asking which option they prefer. Do not state a delivery date or window — the shipping email has a Track your parcel button and the page shows the estimate. Do not mention refunds, returns, a carrier or a carrier tracking number unless the customer asked. Under 120 words, signed the support address (Store facts)."
 
 ## Store facts
 
@@ -100,4 +101,5 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-> Never quote another customer's parcel. Never send the carrier number to a customer — always the store parcel number and the store's page link.
+> Never quote another customer's parcel. Never send the carrier number to a customer —
+> always the store parcel number and the store's page link.

@@ -14,15 +14,15 @@ fortfarande sa åt VA:n att börja hos fraktbolaget.
 Tre skäl, alla mätta i den här basen:
 
 1. **Innehållet låg i PDF-bilagor.** Varje rad hade Notions tomma svenska mall i
-   kroppen (Bakgrund / Analys / Rekommendationer / Implementering) och hela SOP:en
-   som en Word-export i `Filer och media`. En VA som ska slå upp något mitt i ett
-   kundmejl laddar inte ner en PDF, och ingen kan söka i dem. Nu står texten i
-   sidan; bilagan ligger kvar orörd.
+ kroppen (Bakgrund / Analys / Rekommendationer / Implementering) och hela SOP:en
+ som en Word-export i `Filer och media`. En VA som ska slå upp något mitt i ett
+ kundmejl laddar inte ner en PDF, och ingen kan söka i dem. Nu står texten i
+ sidan; bilagan ligger kvar orörd.
 2. **Q4 kräver fyra brands.** Samma text ska gälla Bäverbutiken, CaraShell,
-   Matstrumpor och Grillkliniken. Då måste butiksvärdena ligga på **ett** ställe,
-   annars driver de isär — och det märks först när en VA skickar fel adress.
+ Matstrumpor och Grillkliniken. Då måste butiksvärdena ligga på **ett** ställe,
+ annars driver de isär — och det märks först när en VA skickar fel adress.
 3. **Notion har ingen historik man kan läsa.** En diff visar exakt vad som ändrades
-   och varför. Det är hela skillnaden mellan en SOP-bas som lever och en som ruttnar.
+ och varför. Det är hela skillnaden mellan en SOP-bas som lever och en som ruttnar.
 
 ---
 
@@ -37,8 +37,8 @@ Tre skäl, alla mätta i den här basen:
 | `skriv.mjs` | Skriver filerna till Notion |
 
 ```bash
-node kundtjanst/va-sop/skriv.mjs --torr    # visa vad som skulle hända
-node kundtjanst/va-sop/skriv.mjs           # skarpt
+node kundtjanst/va-sop/skriv.mjs --torr # visa vad som skulle hända
+node kundtjanst/va-sop/skriv.mjs # skarpt
 node kundtjanst/va-sop/skriv.mjs --bara where-is-my-package.md
 ```
 
@@ -69,11 +69,11 @@ första timmen och skickar henne sedan till tvisthandboken.
 
 1. Duplicera Notion-databasen till det nya brandets teamspace.
 2. Ändra **bara** sidan Store facts: en rad i butikstabellen, en kolumn i
-   ägarvärdena.
+ ägarvärdena.
 3. Kontrollera två saker som annars går sönder tyst: att spårningssidan hittar ett
-   riktigt paket, och att supportadressen tar emot mejl.
+ riktigt paket, och att supportadressen tar emot mejl.
 4. Vill du att basen ska kunna skrivas om från repot också: kopiera `notion.json`,
-   byt `databas` mot den nya databasens id och nolla `notion_id` på raderna.
+ byt `databas` mot den nya databasens id och nolla `notion_id` på raderna.
 
 Ändrar du en procedur för ETT brand har du hittat ett värde som hör hemma i Store
 facts. Flytta det dit i stället.
@@ -85,7 +85,7 @@ facts. Flytta det dit i stället.
 De står i SOP-texten märkta **⚠️ OWNER** — sök på ordet i Notion, då får du hela
 listan. Sexton stycken 2026-09-21, de tyngsta:
 
-- Vem betalar returfrakten? (Står tom i brandfilen, och VA:n får inte gissa i ett mejl.)
+- Vem betalar returfrakten? Basen säger nu **kunden**, som butikens befintliga retur-SOP alltid sagt. Säg till om du vill byta till butiken.
 - CaraShells sajt säger "Skickas från Sverige" medan paketen skeppas från utlandet.
 - Tull vid dörren i US/GB/CA/AU/NZ — vad ska VA:n säga innan kunden köper?
 - Klarna-tvister syns inte i Shopify. Vem loggar in i Klarnas portal, och med vilken deadline?

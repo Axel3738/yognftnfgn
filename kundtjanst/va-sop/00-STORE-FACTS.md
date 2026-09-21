@@ -43,21 +43,31 @@ email.
 | Value | Bäverbutiken | Where it comes from |
 |---|---|---|
 | Delivery promise | 7–14 calendar days after the shipping email | The promise printed in the shipping emails and on the tracking page |
+| Who pays return postage | The customer pays and arranges the return shipping. We send no return label | The store's existing return SOP |
 | Return window | 30 days **from the day the customer received the item** | The store's own published return policy |
 | Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |
 | Return address | Given out by support on request — it is published nowhere | Owner's decision: fewer returns, but only if we answer within 24 hours |
-| Who pays return postage | **Not decided — ask the owner before you write it** | Owner |
 | First reply target | 24 hours | Owner |
 | Refunds / replacements / "the parcel is lost" | Owner approves before you promise it | Owner |
 | Escalation channel | Discord `#customer-service` | Owner |
+
+## The delivery window belongs on the page, not in the email
+
+**Never repeat the delivery window in a reply that carries the tracking link.** The
+page shows "Estimated delivery" itself, so a sentence about it in the email is noise
+the customer has already read. Quote the window only when the order has **not shipped
+yet** and there is no link to send.
+
+The number above is for your own judgment: is this parcel late, when should it have
+arrived, is the complaint even due yet.
 
 ## Adding a new brand to this base
 
 1. Duplicate this whole SOP base into the new brand's teamspace.
 2. Change **this page only**: one row in the store table, one column in the owner
-   values.
+ values.
 3. Check the two things that silently break: the tracking page opens and finds a real
-   parcel, and the support address receives mail.
+ parcel, and the support address receives mail.
 
 Nothing else is edited. If you find yourself changing a procedure page for one brand,
 the value belongs here instead.

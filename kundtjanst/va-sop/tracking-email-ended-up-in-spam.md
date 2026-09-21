@@ -22,7 +22,8 @@ delivery promise, return window — is on the page **Store facts**. Take it from
 and never type a store name, a domain or an address into this procedure.
 
 
-> Grillkliniken has no tracking page. There the old procedure still applies: the order number plus the carrier's own tracking link in the reply.
+> Grillkliniken has no tracking page. There the old procedure still applies: the order
+> number plus the carrier's own tracking link in the reply.
 
 ## STEP-BY-STEP INSTRUCTIONS
 
@@ -31,8 +32,8 @@ and never type a store name, a domain or an address into this procedure.
 1. Search for the order by order number or by the customer's email address.
 2. Confirm the order exists. Compare the email address on the order with the address the customer is writing from. If they differ, the address is probably the problem — go to Step 3 as well.
 3. Check the fulfillment status.
-  - **Not fulfilled:** no shipping email has been sent yet, so there is nothing to find. Go to Step 5.
-  - **Fulfilled:** continue with Step 2.
+ - **Not fulfilled:** no shipping email has been sent yet, so there is nothing to find. Go to Step 5.
+ - **Fulfilled:** continue with Step 2.
 
 ### Step 2 – Get the store parcel number
 
@@ -43,7 +44,10 @@ Full procedure: see the page "Tracking page — how to look up any parcel". The 
 3. Copy "Your parcel number" (Ditt paketnummer), e.g. BB-3F7A2C1D or CS-3F7A2C1D. This is what goes in the reply. **Never send the carrier number (YT…, 4PX…) to the customer.**
 4. Note the status wording and the "Estimated delivery" the page shows.
 
-> "We can't find that number": if the order was fulfilled less than an hour ago, the page has not picked it up yet — it refreshes once per hour. Wait for the next hourly run, then reply. Shipped more than 60 days ago → use the carrier number on 17track.net or the carrier's site as backup. Otherwise the number is mistyped.
+> "We can't find that number": if the order was fulfilled less than an hour ago, the
+> page has not picked it up yet — it refreshes once per hour. Wait for the next hourly
+> run, then reply. Shipped more than 60 days ago → use the carrier number on 17track.net
+> or the carrier's site as backup. Otherwise the number is mistyped.
 
 ### Step 3 – If the email address on the order is wrong
 
@@ -59,13 +63,13 @@ One reply that contains all of this:
 - The status in the page's own wording (on its way / with the carrier / out for delivery / ready for pickup / delivered).
 - That "Spåra paket" / "Spor pakken" / "Seuraa pakettia" / "Track your parcel" sits in the store's header and footer menu, so they never depend on the email.
 - Advice to add the store's support address to their contacts.
-- The delivery promise: 7–14 calendar days after shipping. Tracking can be silent the first 2–4 days after shipping; that is normal.
+- Tracking can be silent the first 2–4 days after shipping; that is normal. The delivery window is in Store facts and is only quoted when the order has not shipped yet.
 
 Reply in the customer's language: Swedish, Norwegian, Danish, Finnish or English, following the store (DeepL). Use Claude to draft, review before sending.
 
 ### Step 5 – The order has not shipped yet
 
-Explain that the shipping email with the tracking button comes when the parcel ships, and that delivery is 7–14 calendar days after that. Do not promise a Swedish-warehouse timeline unless the order shows it.
+Explain that the shipping email with the tracking button comes when the parcel ships. Do not promise a Swedish-warehouse timeline unless the order shows it.
 
 ## ESCALATION
 
@@ -80,15 +84,15 @@ Swedish shown; translate to the customer's language with DeepL before sending. F
 
 **Template A – order shipped, parcel found on the page**
 
-Swedish: "Hej [namn]! Tack för ditt mejl. Leveransmejlet hamnar ibland i skräpposten – sök gärna efter [supportadress] i din inkorg och skräppost. Här är ditt paketnummer: [BB-XXXXXXXX]. Du kan följa paketet här: [spårningssida]?nummer=[paketnummer]. Just nu visar sidan: [status]. Beräknad leverans är 7–14 dagar efter att paketet skickades. Du hittar också "Spåra paket" i menyn på vår sida, så du behöver inte mejlet. Lägg gärna till [supportadress] i dina kontakter så kommer mejlen fram nästa gång."
+Swedish: "Hej [namn]! Tack för ditt mejl. Leveransmejlet hamnar ibland i skräpposten – sök gärna efter [supportadress] i din inkorg och skräppost. Här är ditt paketnummer: [BB-XXXXXXXX]. Du kan följa paketet här: [spårningssida]?nummer=[paketnummer]. Just nu visar sidan: [status]. Du hittar också "Spåra paket" i menyn på vår sida, så du behöver inte mejlet. Lägg gärna till [supportadress] i dina kontakter så kommer mejlen fram nästa gång."
 
-English meaning: Hi, thanks for your email. Shipping emails sometimes land in spam – search your inbox and spam for [support address]. Here is your parcel number [BB-XXXXXXXX] and the link [tracking page]?nummer=[parcel number]. Right now the page shows [status]. Estimated delivery is 7–14 days after shipping. You also find "Track your parcel" in the store menu, so you do not need the email. Add [support address] to your contacts so future emails arrive.
+English meaning: Hi, thanks for your email. Shipping emails sometimes land in spam – search your inbox and spam for [support address]. Here is your parcel number [BB-XXXXXXXX] and the link [tracking page]?nummer=[parcel number]. Right now the page shows [status]. You also find "Track your parcel" in the store menu, so you do not need the email. Add [support address] to your contacts so future emails arrive.
 
 **Template B – order not shipped yet**
 
-Swedish: "Hej [namn]! Din order är mottagen men har inte skickats ännu, så leveransmejlet har inte gått ut. När paketet skickas får du ett mejl med knappen "Spåra paketet". Leveransen tar 7–14 dagar efter att paketet skickats. Titta gärna i skräpposten och lägg till [supportadress] i dina kontakter."
+Swedish: "Hej [namn]! Din order är mottagen men har inte skickats ännu, så leveransmejlet har inte gått ut. När paketet skickas får du ett mejl med knappen "Spåra paketet". Titta gärna i skräpposten och lägg till [supportadress] i dina kontakter."
 
-English meaning: Your order is received but not shipped yet, so no shipping email has been sent. When it ships you get an email with the "Track your parcel" button. Delivery is 7–14 days after shipping. Check spam and add [support address] to your contacts.
+English meaning: Your order is received but not shipped yet, so no shipping email has been sent. When it ships you get an email with the "Track your parcel" button. Check spam and add [support address] to your contacts.
 
 **Template C – wrong email address on the order**
 
@@ -98,4 +102,4 @@ English meaning: The email address on your order was [wrong address], so the ema
 
 ## AI PROMPT TEMPLATE
 
-"Draft a friendly reply in [store language] to a customer who has not received their shipping/tracking email. Ask them to check spam/junk and search for [support address]. Give them their parcel number [BB-XXXXXXXX] and the link [tracking page]?nummer=[parcel number]. Current status: [status from the page]. Mention that 'Track your parcel' is in the store's menu. Ask them to add [support address] to their contacts. Delivery is 7–14 calendar days after shipping. Do not mention the carrier tracking number or any other store." Review before sending.
+"Draft a friendly reply in [store language] to a customer who has not received their shipping/tracking email. Ask them to check spam/junk and search for [support address]. Give them their parcel number [BB-XXXXXXXX] and the link [tracking page]?nummer=[parcel number]. Current status: [status from the page]. Mention that 'Track your parcel' is in the store's menu. Ask them to add [support address] to their contacts. Do not state a delivery date or window — the page shows it. Do not mention the carrier tracking number or any other store." Review before sending.

@@ -16,7 +16,8 @@ A customer asks to correct or complete the delivery address after placing an ord
 | Where to look | Shopify order page (fulfillment timeline) → the store's tracking page → carrier portal only as backup |
 | Time sensitivity | Act immediately. Before shipping the fix takes a minute; after shipping it may be impossible |
 
-> Never promise a free re-delivery, replacement or refund on your own. Once the order has shipped, the owner decides every resolution that costs money.
+> Never promise a free re-delivery, replacement or refund on your own. Once the order
+> has shipped, the owner decides every resolution that costs money.
 
 ## STEP-BY-STEP INSTRUCTIONS
 
@@ -38,9 +39,9 @@ A customer asks to correct or complete the delivery address after placing an ord
 2. Open the store's tracking page (Store facts) and paste the number. Note the status in the page's own wording (on its way / with the carrier / out for delivery / ready for pickup / delivered) and copy the store parcel number it shows (BB-/CS-…). Full look-up procedure, including "We can't find that number": page "Tracking page — how to look up any parcel".
 3. Only if the store page cannot show the parcel: use the carrier's own portal or 17track.net as backup.
 4. Decide what is still possible:
-  - "Delivered" → SOP "Package delivered to wrong address".
-  - "Ready for pickup" (the page shows "Hämta ditt paket") → a redirect is no longer possible. Tell the customer to collect it with the pickup number on the page; uncollected, it goes back to sender (Step 4).
-  - Any other status → a redirect may still be possible, but only before final delivery. Continue.
+ - "Delivered" → SOP "Package delivered to wrong address".
+ - "Ready for pickup" (the page shows "Hämta ditt paket") → a redirect is no longer possible. Tell the customer to collect it with the pickup number on the page; uncollected, it goes back to sender (Step 4).
+ - Any other status → a redirect may still be possible, but only before final delivery. Continue.
 5. Contact the carrier named in the fulfillment and request an address correction or redirect. Contact channel: — ask the owner once and write the answer into Store facts.
 6. Notify the owner and supplier in one message: order number, original and correct address, status in the tracking page's wording, latest scan time.
 7. Reply with template B. Send the store parcel number and the link [tracking page]?nummer=[parcel number] — never the raw carrier number (YT…, 4PX…).
@@ -72,11 +73,9 @@ Every reply goes out in the customer's language (DeepL). Swedish first, English 
 
 **A — Address updated (order not shipped)**
 
-Swedish: "Hej [NAMN]! Vi har uppdaterat leveransadressen för order [ORDERNR] till: [NY ADRESS]. Ordern behandlas som vanligt. När den skickas får du ett leveransmejl med knappen 'Spåra paketet' och ditt paketnummer. Beräknad leverans är 7–14 dagar efter att paketet skickats."
+Swedish: "Hej [NAMN]! Vi har uppdaterat leveransadressen för order [ORDERNR] till: [NY ADRESS]. Ordern behandlas som vanligt. När den skickas får du ett leveransmejl med knappen 'Spåra paketet' och ditt paketnummer. "
 
-English meaning: We have updated the delivery address for order [ORDER NO] to [NEW ADDRESS]. The order is being processed as normal. When it ships you get a shipping email with a "Track your parcel" button and your parcel number. Estimated delivery is 7–14 calendar days after shipping.
-
-**B — Already shipped, address cannot be changed yet**
+English meaning: We have updated the delivery address for order [ORDER NO] to [NEW ADDRESS]. The order is being processed as normal. When it ships you get a shipping email with a "Track your parcel" button and your parcel number. **B — Already shipped, address cannot be changed yet**
 
 Swedish: "Hej [NAMN]! Tyvärr har order [ORDERNR] redan skickats, så vi kan inte ändra leveransadressen i det här läget. Vi undersöker möjligheterna med vår fraktpartner och återkommer så snart vi vet mer. Under tiden kan du följa paketet här: [SPÅRNINGSSIDA]?nummer=[PAKETNUMMER]. Vi beklagar besväret."
 
@@ -86,7 +85,7 @@ English meaning: Order [ORDER NO] has already shipped, so we cannot change the a
 
 Claude drafts, DeepL translates, you review before sending.
 
-**Address updated:** "Draft a short confirmation email in [CUSTOMER'S LANGUAGE]: we have updated the delivery address for order [ORDER ID] to [NEW ADDRESS]. They will get a shipping email with a 'Track your parcel' button when it ships; estimated delivery is 7–14 calendar days after shipping. Friendly tone. Under 80 words."
+**Address updated:** "Draft a short confirmation email in [CUSTOMER'S LANGUAGE]: we have updated the delivery address for order [ORDER ID] to [NEW ADDRESS]. They will get a shipping email with a 'Track your parcel' button when it ships. Do not state a delivery window — the page shows it. Friendly tone. Under 80 words."
 
 **Address cannot be changed:** "Draft an email in [CUSTOMER'S LANGUAGE]: order [ORDER ID] has already shipped and we cannot change the delivery address at this stage. We are investigating options with our shipping partner and will update them as soon as we know more. They can follow the parcel at [TRACKING PAGE]?nummer=[PARCEL NUMBER]. Apologetic, professional. Under 100 words."
 
