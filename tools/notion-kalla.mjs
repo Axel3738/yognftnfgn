@@ -100,6 +100,32 @@ function hittaFält(sida) {
   return { statusFält, typFält, titelFält };
 }
 
+/** Andra verksamheters hubbar (Matstrumpor …) — samma integration, annan
+ *  verksamhet, eget annonskonto och egen uppladdare. Bort PER ID, aldrig pa
+ *  titel, med loggrad varje gang sa spurren syns i rapporten.
+ *  Listan: tools/lib/andra-verksamheter.json. Saknad eller trasig fil = no-op,
+ *  aldrig krasch — men da sager loggraden det ocksa. */
+export function utanAndraVerksamheter(hubbar, { fil = `${ROT}tools/lib/andra-verksamheter.json`, logg = console.error } = {}) {
+  let kanda = [];
+  try {
+    kanda = JSON.parse(fsReadFileSync(fil, 'utf8')).hubbar ?? [];
+  } catch {
+    if (logg) logg('Andra verksamheters hubbar: listan gick inte att lasa — inga undantogs.');
+    return hubbar;
+  }
+  const nyckel = (id) => String(id ?? '').trim().toLowerCase().replace(/-/g, '');
+  const karta = new Map(kanda.map(h => [nyckel(h.id), h]));
+  const bort = [];
+  const kvar = [];
+  for (const h of hubbar ?? []) {
+    const traff = karta.get(nyckel(h.id));
+    if (traff) bort.push(`${traff.namn} (${traff.verksamhet} — ${traff.egen_rutin})`);
+    else kvar.push(h);
+  }
+  if (logg) logg(`Andra verksamheters hubbar undantagna: ${bort.length}${bort.length ? ` (${bort.join(', ')})` : ''} · listan kanner ${karta.size}`);
+  return kvar;
+}
+
 /** Hubbarna som star i products.json. De fyra skalningsprodukterna ar ARKIVERADE
  *  i Notion, och en sokning hoppar over arkiverade databaser — de kan alltsa aldrig
  *  hittas av search(). products.json ar golvet som gor det omojligt att tappa dem.
@@ -148,7 +174,7 @@ export async function hittaHubbar() {
   }
   // OPS-butikernas hubbar ses av samma integration men hor till ett annat konto
   // (915422744950975) och en egen rutin. Bort per id, med loggrad — varje gang.
-  return filtreraOpsHubbar([...på.values()]);
+  return utanAndraVerksamheter(filtreraOpsHubbar([...på.values()]));
 }
 
 async function allaSidor(databaseId) {

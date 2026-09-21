@@ -47,8 +47,17 @@ Det här är det farligaste misstaget i repot — fel annonskonto kostar riktiga
 | Sida / pixel | `678639638662543` / `1554276343018184` | står inte i `main` — läs den ur en SnarkLös-vågkonfig |
 
 Kontonamnet är aldrig samma som brandnamnet. Kolla `ad_account_id` innan du rör
-något i Meta. Övriga konton finns men används inte: Matstrumpor.se
-`730973156224390` (⚠️ UNSETTLED).
+något i Meta.
+
+**Matstrumpor är en tredje verksamhet i drift** (rättat 2026-09-21 — stod
+tidigare här som "finns men används inte"). Kontot `730973156224390` HETER
+**"nya kungen"**, ligger i portföljen Matstrumpor.se och körde 17 031 kr på
+14 dagar vid mätningen. Egen butik (matstrumpor.se), egen hub, egna kommandon:
+**`/matstrumpor`** (uppladdaren) och **`/matstrumporkungen`** (ronden), facit i
+`matstrumpor/konfig.json`. ⚠️ `META_ACCESS_TOKEN` nekas på det kontot — allt som
+skriver i Meta går via Adsmanager-MCP:n, så det kan inte bli en nattrutin förrän
+appen fått åtkomst. Portföljen bär också `Norge` `1418612340124566` och
+`Finland DK` `1356652809967926`, båda utan betalmetod.
 
 **Kopiera aldrig `page`/`pixel` mellan verksamheterna.** Fel pixel betyder att köpen
 bokförs på fel verksamhet och att all analys blir fel — och det syns inte som ett
@@ -391,6 +400,8 @@ rapporterar VA:n in recensionen med länk och chefen godkänner.
 | `/notionkorning` | **Rutin 13:20 varje dag:** Notion `To be Reviewed` (video + bild) → brief-QA → upp i produktens kampanj → Discord `#ads-launching` / `#problem-and-revisions-ads` |
 | `/commission` | **Var tredje dag + månadens sista dag:** godkända Notion-rader → spend i alla annonskonton → 0,4 % till redigeraren |
 | `/skalningskungen <butik>` | **Bäverbutikens larm + budgetrond:** dömer siffror, skickar OPS-larmet. Inga briefer |
+| `/matstrumpor [--torr]` | **Matstrumpors annonsuppladdare** (byggd 2026-09-21): hubbens `To be Reviewed` → rätt adset i den CBO Axel redan kör (`MATSTRUMP_SALES_20260826` i kontot **"nya kungen"** `730973156224390`) → `Approved`. **Adsetet väljs ur ANNONSNAMNET** — `MATSTRUMP_sushi_<vinkel>_<format>_<nnn>_v<n>`, där vinkeln `jul` skickar materialet till `broad_advplus_purchase_jul_video` **`120251657101850023`** respektive `_jul_bilder` **`120251657107430023`** (båda skapade 2026-09-21 som kopior av `batch03_bilder`; jul_video ACTIVE med 8 annonser, jul_bilder PAUSED och tom tills första julbilden), allt annat till `nya16` (video) och `bilder` (bild). **Första skarpa körningen 2026-09-21: 11 videor live** ur Gilz rader 022–025. ⚠️ Två fällor mätta då: Meta KRÄVER en thumbnail på varje videoannons och tar bara publika URL:er — `matstrumpor/thumbnails.mjs` drar en frame med ffmpeg och lägger den på butikens Shopify-CDN; och Drive-delningslänken funkar inte, men `drive.usercontent.google.com/download?id=…&confirm=t` gör det. Odöpta rader (redigerarna döper sina `022`, `023` …) namnges av uppladdaren efter att creativen setts — `kor.mjs --namn` ger nästa lediga nummer, `--dop` skriver det i Notion. Stoppar bara på pris > 20 % från butiken och fel landningssida. ⚠️ Kräver Adsmanager-MCP:n; `META_ACCESS_TOKEN` nekas på kontot |
+| `/matstrumporkungen` | **Skalningskungen i liten skala, bara Matstrumpor** (byggd 2026-09-21): etikett dag 7 → lärdom → **6 briefer per rond, var tredje dag** (Axels beslut) → **tips**. Samma ordning och samma trösklar som `/rond-auto`, men brieftaket är antalet skrivna lärdomar och mixen kommer ur etiketterna. ⛔ **Den SKALAR ALDRIG** (Axels beslut 2026-09-21: "jag vill inte att claude ska skala på matstrumpor utan det är jag som gör det, claude får gärna ge mig tips") — noll budgetändringar, noll pausningar, noll aktiveringar. Förslagen står i en tabell med kronor bakom varje rad och loggas som `FORSLAG`; Axel trycker på knappen. Break-even **1,498** / break-even-CPA **308,48 kr** (AOV 462,10 kr uppmätt på 110 ordrar, kostnad 120,92 kr + 2,9 EUR tull, **utan moms** — Axels besked 2026-09-21). Kampanjen låg på ROAS 1,392 (17 031 kr / 14 d) vid bygget, alltså under break-even |
 | `/notionscalercs setup <butik>` / `/notionscalercs <butik>` | **Nattvakten, EN rutin per OPS-butik** (Axels beslut 2026-09-10): varje natt 00:01 döda/skala/sänk budget i OPS-kontot; ons + sön dessutom `/cs`-loopen med nya briefer i butikens creative hub via `NOTION_TOKEN` — noll godkännandeklick. `setup` körs en gång per butik och bygger rutinen |
 | `/ops-leverans <nyckel>` | **13:40 per OPS-butik:** hubbens `To be Reviewed` → priskoll → **live** i butikens SE-kampanj i OPS-kontot (ett adset per koncept) → `SE-ACTIVE to be translated`. Byggs av `/notionscalercs setup` |
 | `/ops-oversatt <nyckel> [--marknad NO\|US]` | **15:40 (NO) / 16:40 (US) per OPS-butik:** `SE-ACTIVE to be translated` → marknadens språk (bild 0 krediter, video HeyGen) → **live** i butikens kampanj på MARKNADENS konto → `Approved` när alla butikens `annonsmarknader` bär annonsen. **Kontot är per marknad** (`factory/opsmarknader.mjs`): NO i OPS-kontot, **US i Magiborsten UK `1107817401910319`** (Axels beslut 2026-09-16, SEK). Byggs av `/notionscalercs setup`; US-rutinen bara för butiker med `annonsmarknader: NO,US` i register.json |
@@ -576,6 +587,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Produkt-konfig + launch-logg | `products/products.json` |
 | Produktminne per produkt | `products/<id>/` |
 | Kvot-skriptet | `pipeline/quota.mjs` |
+| **Matstrumpor: uppladdaren + den lilla kungen** (konto "nya kungen", break-even, namnmotor, jul-routing, lärdomarna) | `matstrumpor/` — `README.md`, `konfig.json`; produktminnet i `products/matstrumpor/` |
 | Namnkonventionen | `docs/naming-convention.md` |
 | Punchline-bank + vinnande lines | `docs/winning-lines.md` |
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
@@ -1295,6 +1307,15 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
   måste skrivas in i registret** (`node factory/register.mjs notion <nyckel>
   <id>`), annars sugs den in i Leveransrundan och laddas upp i fel konto.
   Lista: `node tools/lib/ops-hubbar.mjs`.
+- **Matstrumpors hub undantas nu också per id** (2026-09-21). `Matstrumpor
+  creative hub` `3a7270ab-…` sågs av samma integration som Bäverbutikens och
+  låg därmed i `/notionkorning`s kö. Den räddades bara av att inget
+  annonsprefix matchade i MagiBorsten — alltså av en slump, inte av en regel.
+  Sedan Matstrumpor fick egen uppladdare (`/matstrumpor`, kontot
+  `730973156224390`) dras hubben bort i `tools/notion-kalla.mjs` via
+  `tools/lib/andra-verksamheter.json`, med loggrad varje körning.
+  ⚠️ **Commission är undantaget från undantaget:** den är läs-bar och SKA
+  räkna hubben (`commission/hubbar.json`) — annars hamnar spenden på fel person.
 - **Butikens namn står aldrig i en annons** (Axels beslut 2026-09-18). Inte
   "Bäverbutiken", inte "CaraShell", inte domänen — i copy, bild, voiceover
   eller captions. Annonser speglas mellan butiker (`/ops-spegla`:
