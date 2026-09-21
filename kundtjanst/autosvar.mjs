@@ -15,7 +15,12 @@
 //   1. Lista inkorgen nyast först, läs de mejl som är nyare än fönstret och
 //      inte står i loggen (kundtjanst/autosvar/logg/<butik>.jsonl).
 //   2. Bygg kundens tråd: alla mejl från adressen i inkorgen + våra svar i
-//      Sent och Drafts (arenden.mjs trådar på References/ämne).
+//      Sent och Drafts (arenden.mjs trådar på References/ämne). Mapparna
+//      läses 30 dagar bakåt, HELA listan, en gång per körning (mappIndex) —
+//      inte bara första sidan: första torrkörningen 2026-09-21 skrev två av
+//      tre ENKEL-utkast till kunder vi redan svarat, för svaren låg på sida
+//      4 och 5 av 12 i Skickat. Kostar ~30 s per körning (25 sidor inkorg +
+//      9 sidor Skickat, mätt samma kväll) — bara när något ska bedömas.
 //   3. Hinka (autosvar/hinkar.mjs): SKIP / ENKEL / ARG / SVÅR.
 //   4. ENKEL: fakta ur Shopify + 17TRACK (autosvar/fakta.mjs). Saknas de ⇒ SVÅR.
 //   5. Svara (autosvar/svar.mjs) — skickas, eller sparas som utkast med --torr.
@@ -37,7 +42,7 @@
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 import { upptackBrands, korkonfig, valjBrands } from './brands.mjs';
-import { Brevlada } from './brevlada.mjs';
+import { Brevlada, tolkaListdatum } from './brevlada.mjs';
 import { tolkaMejl } from './mime.mjs';
 import { byggArenden } from './arenden.mjs';
 import { ShopifyLasare } from './shopify.mjs';
@@ -112,6 +117,7 @@ export async function korBrand(brand, {
   // 2–6. Ett mejl i taget, NYAST först: skriver kunden tre gånger i samma
   // tråd är det senaste mejlet som ska få det enda svaret, och de äldre ser
   // sen (via minnet) att tråden redan är svarad.
+  const index = new Map();   // mapplistorna (inkorg, Skickat, Drafts) 30 dagar bakåt — per KÖRNING, aldrig över loopen
   for (const { rad, m } of kandidater) {
     const mejl = { ...m, bilaga: rad.bilaga };
     const grund = hinka({ mejl, brand: konfig });
@@ -122,7 +128,8 @@ export async function korBrand(brand, {
     // Tråden: kundens mejl i inkorgen + våra svar i Sent och Drafts.
     let trad = null;
     try {
-      trad = await byggTrad(b, konfig, mejl, { cache });
+      trad = await byggTrad(b, konfig, mejl, { cache, index, nu });
+      for (const v of index.values()) if (v.varning && !res.varningar.includes(v.varning)) res.varningar.push(v.varning);
       trad.redanAutosvar = redanAutosvar(minnet, { tradnyckel: trad.id, ids: [...(mejl.references ?? []), mejl.messageId, ...trad.ids] })
         || kundNyssSvarad(minnet, hash, { nu: nu.getTime() });
     } catch (e) {
@@ -231,17 +238,55 @@ export function harForbjudet(text) {
   return /(^|[^a-zåäöøæ])(rabatt|discount|coupon|kupong|återbetal|refund|refusjon|refusion|hyvity|ersättning|erstatning|kompensation|compensation|gratis|free of charge|garanterar|guarantee|promise|lovar)/.test(t);
 }
 
+export const TRAD_DAGAR = 30;      // hur långt tillbaka kundens mejl och våra svar söks — samma fönster som ärendena
+export const TRAD_MAXSIDOR = 40;   // säkerhetstak per mapp (~2 000 rader); nås det står det i rapporten
+
+/**
+ * Alla rader i en mapp (nyast först) som är nyare än `dagar` — läses sida
+ * för sida ur Roundcubes lista (billig: inga råmejl) tills en hel sida är
+ * äldre än gränsen. EN gång per mapp och körning (`index`). Roundcubes
+ * visningsdatum tolkas av tolkaListdatum; en rad som inte går att datera
+ * stoppar aldrig läsningen. Kastar MAPP_SAKNAS vidare.
+ *
+ * Varför inte sok() på första sidan: Skickat har 12 sidor hos Bäverbutiken
+ * (576 mejl, mätt 2026-09-21) och svaren VA:n skrev för en vecka sedan låg
+ * på sida 4 och 5 — två av tre ENKEL-utkast i första torrkörningen gick till
+ * kunder som redan hade ett svar från oss.
+ */
+export async function mappIndex(b, mapp, { index = new Map(), nu = new Date(), dagar = TRAD_DAGAR, maxSidor = TRAD_MAXSIDOR } = {}) {
+  const nyckel = `index:${mapp}`;
+  if (index.has(nyckel)) return index.get(nyckel);
+  const sedan = nu.getTime() - dagar * 86_400_000;
+  const rader = [];
+  let varning = null;
+  let sidor = 1;
+  for (let sida = 1; sida <= maxSidor; sida++) {
+    const l = await b.lista({ mapp, sida, antal: 50 });
+    sidor = Number(l.sidor ?? 1);
+    rader.push(...l.rader);
+    if (!l.rader.length || sida >= sidor) break;
+    const datum = l.rader.map((r) => tolkaListdatum(r.datum, nu));
+    if (datum.every((d) => d && d.getTime() < sedan)) break;
+    if (sida === maxSidor) varning = `${mapp}: ${rader.length} rader lästa (${maxSidor} sidor av ${sidor}) utan att nå ${dagar} dagar tillbaka — äldre svar från oss syns inte i trådarna`;
+  }
+  const ut = { mapp, rader, sidor, varning };
+  index.set(nyckel, ut);
+  return ut;
+}
+
 /**
  * Kundens tråd: alla mejl från adressen i inkorgen + våra svar i Sent och
- * Drafts → arenden.byggArenden → ärendet som bär mejlet. Sökningen går på
- * listkolumnerna (billig); råmejlen hämtas bara för träffarna (cache).
+ * Drafts (mappIndex, 30 dagar) → arenden.byggArenden → ärendet som bär
+ * mejlet. Listkolumnerna avgör vilka rader som hör till kunden (billigt);
+ * råmejlen hämtas bara för dem (cache). I Skickat/Drafts visar Roundcubes
+ * kolumn MOTTAGAREN, så samma jämförelse hittar våra svar till kunden.
  */
-export async function byggTrad(b, konfig, mejl, { cache = new Map(), maxSidor = 2 } = {}) {
+export async function byggTrad(b, konfig, mejl, { cache = new Map(), index = new Map(), nu = new Date() } = {}) {
   const adress = mejl.fran.adress;
   const inkorg = konfig.mail.inkorg || 'INBOX';
-  const in_ = await b.sok(adress, { mapp: inkorg, maxSidor, max: 30 });
+  const in_ = await mappIndex(b, inkorg, { index, nu });
   const inkommande = [];
-  for (const t of in_.traffar) if (t.franAdress === adress) inkommande.push(await lasMejl(b, inkorg, t.uid, cache));
+  for (const t of in_.rader) if (t.franAdress === adress) inkommande.push(await lasMejl(b, inkorg, t.uid, cache));
   if (!inkommande.some((x) => x.uid === mejl.uid)) inkommande.push(mejl);
   // Våra svar: första Skickat-mapp som finns (namnen är alias), plus Drafts —
   // ett utkast från --torr räknas som ett svar, annars hade nästa körning
@@ -249,8 +294,9 @@ export async function byggTrad(b, konfig, mejl, { cache = new Map(), maxSidor = 
   const skickat = [];
   const lasUt = async (mapp) => {
     let r;
-    try { r = await b.sok(adress, { mapp, maxSidor: 1, max: 20 }); } catch (e) { if (e.kod === 'MAPP_SAKNAS') return false; throw e; }
-    for (const t of r.traffar) {
+    try { r = await mappIndex(b, mapp, { index, nu }); } catch (e) { if (e.kod === 'MAPP_SAKNAS') return false; throw e; }
+    for (const t of r.rader) {
+      if (t.franAdress !== adress) continue;
       const m = await lasMejl(b, mapp, t.uid, cache);
       if (m.till?.some((x) => x.adress === adress)) skickat.push(m);
     }

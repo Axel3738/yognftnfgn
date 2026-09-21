@@ -3,7 +3,7 @@
 // webmail.test.mjs, med listkolumnerna i den HTML-form Roundcube 1.7 skickar.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { Brevlada, tolkaListrad, valjBrevlada, utdragKring, arSessionsfel, datumUrRa } from '../brevlada.mjs';
+import { Brevlada, tolkaListrad, valjBrevlada, utdragKring, arSessionsfel, datumUrRa, tolkaListdatum } from '../brevlada.mjs';
 import { korKommando, skrivUt, tolkaArgv } from '../mail.mjs';
 
 const LOGIN_HTML = `<html><body><form action="/?_task=login"><input type="hidden" name="_token" value="TOK1"></form>
@@ -240,4 +240,22 @@ test('CLI: tolkaArgv, kommandona och utskriften', async () => {
   await assert.rejects(() => korKommando('sok', { _: ['sok'] }, b), /behöver ett eller flera ord/);
   await assert.rejects(() => korKommando('radera', { _: ['radera'] }, b), /Okänt kommando "radera"/);
   await b.loggaUt();
+});
+
+test('tolkaListdatum: Roundcubes visningsdatum (Today, veckodag, Y-m-d, Idag/Igår, ISO) → Date; okänt → null', () => {
+  const nu = new Date('2026-09-21T21:30:00Z');   // måndag
+  assert.equal(tolkaListdatum('2026-08-19 17:12', nu).toISOString(), '2026-08-19T17:12:00.000Z');
+  assert.equal(tolkaListdatum('2026-08-19', nu).toISOString(), '2026-08-19T00:00:00.000Z');
+  assert.equal(tolkaListdatum('Today 23:28', nu).toISOString(), '2026-09-21T23:28:00.000Z');
+  assert.equal(tolkaListdatum('Idag 07:03', nu).toISOString(), '2026-09-21T07:03:00.000Z');
+  assert.equal(tolkaListdatum('Yesterday 05:40', nu).toISOString(), '2026-09-20T05:40:00.000Z');
+  assert.equal(tolkaListdatum('Igår 05:40', nu).toISOString(), '2026-09-20T05:40:00.000Z');
+  // "Wed 05:40" en måndag = förra onsdagen (16/9), aldrig i dag; "Mon" = förra måndagen (14/9).
+  assert.equal(tolkaListdatum('Wed 05:40', nu).toISOString(), '2026-09-16T05:40:00.000Z');
+  assert.equal(tolkaListdatum('Mon 10:00', nu).toISOString(), '2026-09-14T10:00:00.000Z');
+  assert.equal(tolkaListdatum('ons 05:40', nu).toISOString(), '2026-09-16T05:40:00.000Z');
+  assert.equal(tolkaListdatum('2026-09-14T10:00:00.000Z', nu).toISOString(), '2026-09-14T10:00:00.000Z', 'ISO ur en testbrevlåda');
+  assert.equal(tolkaListdatum('', nu), null);
+  assert.equal(tolkaListdatum('Xyz 10:00', nu), null, 'okänd veckodag stoppar inte läsningen');
+  assert.equal(tolkaListdatum('igår', nu), null);
 });

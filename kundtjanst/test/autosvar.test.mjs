@@ -42,18 +42,23 @@ class FalskBrevlada {
     this.nastaUid = 1000;
     this.utloggad = false;
   }
-  rad(m) {
+  rad(m, mapp = 'INBOX') {
     const t = tolkaMejl(m.ra, { uid: m.uid });
-    return { uid: m.uid, amne: t.amne, fran: t.fran.namn || t.fran.adress, franAdress: t.fran.adress, datum: t.datum?.toISOString() ?? '', storlek: '2 KB', last: false, flaggad: Boolean(m.flaggad), bilaga: Boolean(m.bilaga) };
+    // Roundcubes listkolumn visar mottagaren i Sent/Drafts och avsändaren i INBOX (brevlada.tolkaListrad läser samma kolumn).
+    const visad = mapp === 'INBOX' ? t.fran : (t.till[0] ?? { namn: '', adress: '' });
+    return { uid: m.uid, amne: t.amne, fran: visad.namn || visad.adress, franAdress: visad.adress, datum: t.datum?.toISOString() ?? '', storlek: '2 KB', last: false, flaggad: Boolean(m.flaggad), bilaga: Boolean(m.bilaga) };
   }
   mapp(namn) {
     if (!(namn in this.mappar)) throw Object.assign(new Error(`Mappen ${namn} finns inte i webbmejlen.`), { kod: 'MAPP_SAKNAS' });
     return this.mappar[namn];
   }
-  async lista({ mapp = 'INBOX', antal = 50 } = {}) {
-    this.anrop.push(['lista', mapp]);
-    const rader = [...this.mapp(mapp)].sort((a, b) => b.uid - a.uid).slice(0, antal).map((m) => this.rad(m));
-    return { mapp, sida: 1, sidor: 1, totalt: rader.length, olasta: 0, rader };
+  /** Sidor om 50 som Roundcube (`sida`/`sidor`), nyast först. */
+  async lista({ mapp = 'INBOX', sida = 1, antal = 50 } = {}) {
+    this.anrop.push(['lista', mapp, sida]);
+    const alla = [...this.mapp(mapp)].sort((a, b) => b.uid - a.uid);
+    const sidor = Math.max(1, Math.ceil(alla.length / antal));
+    const rader = alla.slice((sida - 1) * antal, sida * antal).map((m) => this.rad(m, mapp));
+    return { mapp, sida, sidor, totalt: alla.length, olasta: 0, rader };
   }
   async las(uid, { mapp = 'INBOX' } = {}) {
     this.anrop.push(['las', mapp, uid]);
@@ -737,4 +742,23 @@ test('mime: BlueMails plain-del som bara är tomrader ⇒ HTML-delen bär texten
   const m = tolkaMejl(raMail, { uid: 1 });
   assert.equal(m.text, 'Var är denna vara', 'html-delen valdes och citatet klipptes');
   assert.match(m.helText, /Order #5953/);
+});
+
+test('tråden läser HELA Skickat (30 dagar), inte bara första sidan: ett äldre svar från oss på sida 2 ⇒ VA:n, inget utkast', async () => {
+  // 55 nyare svar till andra kunder fyller sida 1; vårt svar till Anna (en vecka gammalt) ligger sist, på sida 2.
+  const andra = Array.from({ length: 55 }, (_, i) => ({ uid: 200 + i, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till: `kund${i}@example.se`, amne: `Re: fråga ${i}`, text: 'Hej!', id: `<s${i}@baverbutiken.se>`, timmarSedan: 1 + i }) }));
+  const gammalt = { uid: 100, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till: 'anna@gmail.com', amne: 'Re: Var är min order #1042?', text: 'Hej Anna, paketet är på väg.', id: '<svar-gammalt@baverbutiken.se>', refs: ['<w10@gmail.com>'], timmarSedan: 24 * 7 }) };
+  const b = new FalskBrevlada({ INBOX: [M.wismoSv], Sent: [gammalt, ...andra] });
+  const r = await kor(b);
+  assert.equal(r.rader.length, 1);
+  assert.equal(r.rader[0].hink, HINK.SVAR);
+  assert.match(r.rader[0].orsak, /redan ett svar från oss/);
+  assert.equal(b.utkast().length, 0, 'inget andra svar på en tråd VA:n redan svarat');
+  assert.ok(b.anrop.some((a) => a[0] === 'lista' && a[1] === 'Sent' && a[2] === 2), 'sida 2 av Skickat lästes');
+  // En hel sida äldre än 30 dagar stoppar läsningen: sida 1 = 50 färska, sida 2 = 50 uråldriga ⇒ sida 3 läses aldrig.
+  const uraldrigt = Array.from({ length: 60 }, (_, i) => ({ uid: 1 + i, ra: ra({ fran: `Kundsupport <${SUPPORT}>`, till: `gammal${i}@example.se`, amne: 'Re: gammalt', text: 'Hej', id: `<g${i}@baverbutiken.se>`, timmarSedan: 24 * 40 + i }) }));
+  const b2 = new FalskBrevlada({ INBOX: [M.wismoSv], Sent: [...uraldrigt, ...andra.slice(0, 50)] });
+  await kor(b2);
+  const sidorSent = b2.anrop.filter((a) => a[0] === 'lista' && a[1] === 'Sent').map((a) => a[2]);
+  assert.deepEqual(sidorSent, [1, 2], 'sida 3 (bara >30 dagar) läses aldrig');
 });
