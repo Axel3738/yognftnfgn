@@ -61,6 +61,24 @@ chatt UTAN automatiskt godkännande och godkänn varje inskrivning.**
 Coworks fråga om att engelska knappen pekar på carashell.com: det är
 avsiktligt — carashell.com är USA-marknadens egen domän (`mejl_marknader`).
 
+## ⛔ Utfall 4 — stoppad IGEN, chatten gick fortfarande i auto-läge (2026-09-21 ~02:00 CEST)
+
+Axel startade en ny chatt, men Coworks spärr låg kvar: `javascript_tool` mot
+Shopify-admin nekades tre gånger — hämta råfilen i sidan (Untrusted Code
+Integration), skriva in redan granskat innehåll som literal, och till och
+med **läsa** fältens värden. Inget ändrat, inget sparat, fliken orörd på
+Redigera Leveransbekräftelse. Coworks egen slutsats: "kör om med
+godkännanden i manuellt läge istället för auto" — samma metod gick igenom i
+NO/DK/FI samma natt. Två vägar: (A) ny chatt där Cowork frågar före varje
+åtgärd, (B) Axel klistrar själv in de tre råfilerna i Shopifys kodruta
+(mänskligt urklipp fungerar — varningen i prompten gällde Coworks), och
+Cowork kör prompten efteråt bara för att verifiera och skicka testmejlet
+(prompten är idempotent, precis som Norge-körningen visade).
+Verifierat av Cowork under körningen: carashell.com/pages/spara serverar
+engelska och behåller `?nummer=` — språkroutingen i mallen är rätt.
+Nuvarande ämnesrad på servern är ren text `Ditt paket är på väg`; den nya är
+Liquid-raden (227 tecken).
+
 ## ⚠️ Steg A ERSATT 2026-09-20 sen kväll — kör i stället `mejl/output/butiker/carashell/COWORK-PROMPT.md`
 
 Axels dom på Coworks första CaraShell-körning (byten rad för rad i Shopifys
