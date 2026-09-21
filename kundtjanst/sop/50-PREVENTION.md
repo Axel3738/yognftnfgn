@@ -107,7 +107,7 @@ Paste this under `tvister:` in the store's brand file. Until it is there, use th
 
 ```yaml
 tvister:
-  leveranslofte_dagar: "5-10"   # {{DELIVERY_PROMISE_DAYS}} — the delivery promise the store's own shipping page prints: BUSINESS days after the shipping email (owner's decision 2026-09-21; measured 2026-09-20 on one store: median 8, p90 10 business days). The same window written in calendar days is 7–14 — never write the calendar form to a customer
+  leveranslofte_dagar: "5-10"   # {{DELIVERY_PROMISE_DAYS}} — the delivery promise the store's own shipping page prints: BUSINESS days after the shipping email (owner's decision 2026-09-21; measured 2026-09-20 on one store: median 8, p90 9 business days — omräknat ur 11,1 / 13,0 kalenderdagar). The same window written in calendar days is 7–14 — never write the calendar form to a customer
   stillastaende_dagar: 10       # {{STALL_ALERT_DAYS}} — no new tracking scan for this many days = we write first
   forsenad_dagar: 15            # {{LATE_ALERT_DAYS}} — total transit days (calendar) before we write first — our own choice: the promise plus a working week
   aterbetalning_dagar: 14       # {{REFUND_DEADLINE_DAYS}} — money must leave within this many days of agreeing a refund

@@ -16,7 +16,7 @@ A customer writes that their order has not arrived, that it is taking too long, 
 | First step | Open the order in Shopify and read the fulfillment timeline (the latest scan is there) |
 | Owner approval | Not needed for a status reply. Needed before any refund, replacement, or before telling the customer the parcel is lost |
 | Where to look | 1) Shopify order timeline, 2) the store's tracking page the tracking page (Store facts), 3) carrier portal / 17track.net only as backup |
-| Delivery promise | 5–10 business days after the shipping email (measured 2026-09-20: median 8, p90 10 business days) |
+| Delivery promise | 5–10 business days after the shipping email (measured 2026-09-20: median 8, p90 9 business days) |
 | Reply language | The customer's language ([the customer's language]) — translate with DeepL |
 
 ## Store facts

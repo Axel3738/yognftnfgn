@@ -19,7 +19,7 @@ A customer asks how long delivery takes, when the order will arrive, or whether 
 
 ## The delivery promise
 
-- Estimated delivery is **5–10 business days after the shipping email**. That is the number the store's own shipping page uses, and it is the only one you write. (Measured 2026-09-20: median 8 business days, p90 10 — the promise matches reality.)
+- Estimated delivery is **5–10 business days after the shipping email**. That is the number the store's own shipping page uses, and it is the only one you write. (Measured 2026-09-20: median 8 business days, p90 9 — the promise matches reality.)
 - Handling before shipping is **not** part of the promise — always say "after it has shipped".
 - Give the 5–10 business day window by default. Mention a faster timeline only if the Shopify order explicitly shows domestic fulfillment (measured 2026-09-17: all recent orders shipped from the warehouse abroad).
 - Tracking can be quiet for the **first 2–4 days after shipping** — that is normal and the shipping email says so. Silence beyond that is not "normal", see ESCALATION.
