@@ -96,9 +96,14 @@ Axel bad om:
    Axels grind — ≥ 300 kr och ≥ 3 köp under break-even, eller 0 köp över
    3 × break-even-CPA — mot en namngiven lista; nåd för etiketterad
    BREAKTHROUGH, takad; orsakskod per tjuv. Trappan behåller sin gamla grind.
-4. **Mjuk manuell zon** (`besked.mjs`, `MANUELL_SANK`): över taket 4 000 kr
+4. **Mjuk manuell zon** (`besked.mjs`, `MANUELL_SANK`): över taket 10 000 kr
    ger förlust −20 % samma morgon, aldrig under taket, aldrig paus, larm.
-   Kapning till 4 000 i ett steg avvisades av Axel.
+   Kapning i ett steg avvisades av Axel.
+5. **Högzonen 4 000–10 000 kr** (Axel 2026-09-21): taket höjdes från 4 000,
+   och över 4 000 gäller tre spärrar — etiketterad `BREAKTHROUGH` eller
+   `SPEND_WINNER` inom 28 dygn (`harLevandeVinnare`), steg max 20 % (inget
+   raketspår), och förlust kapar aldrig: två förlustmorgnar i rad ger −20 %,
+   en ensam ger domen `HOGZON_AVVAKTA` och ingen ändring.
 
 ## Spärrarna
 
@@ -118,7 +123,7 @@ Axel bad om:
   Avrundningen till jämna 50 kr går nedåt vid höjning och uppåt vid sänkning,
   så steget aldrig blir större än faktorn.
   (Bäverpanelens egen avrundning bryter mot den regeln: 605 → 750 kr är +24 %.)
-- **Golv 500 kr, tak 4 000 kr.**
+- **Golv 500 kr, tak 10 000 kr** (4 000 utan en levande vinnaretikett).
 - **En testprodukt som går plus rörs aldrig** — testbudgeten ligger kvar tills
   den bevisat sig eller gått back. Tunn plusmarginal på en ny produkt är ett
   prisproblem, inte ett budgetproblem. (Axel 2026-08-29.)

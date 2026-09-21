@@ -6,7 +6,24 @@
 // docs/os/ANALYSMETOD.md och CLAUDE.md regel 3-4 kräver.
 
 export const GOLV_SEK = 500;
-export const TAK_SEK = 4000;
+
+// Motorns tak, höjt 4 000 → 10 000 kr/dag och produkt (Axels beslut
+// 2026-09-21). Skälet stod i kontot samma dag: Båtmotorskyddet låg fastklämt
+// på exakt 4 000 kr med ROAS 3,74 mot break-even 1,62 och 84 köp på en vecka,
+// Sotarsetet gick 4,35 på 2 150 kr, och fyra produkter till låg mellan 2 000
+// och 4 000 med en vecka kvar till taket. Taket var en broms på vinnare.
+//
+// Över TAK_UTAN_VINNARE gäller tre spärrar, alla tre Axels formulering:
+//   1. produkten måste ha en etiketterad BREAKTHROUGH eller SPEND_WINNER
+//      inom VINNARE_DAGAR (`rad.harVinnare`, räknas av anroparen ur
+//      budgetloggen — den här filen gör aldrig I/O),
+//   2. steget är max 20 % per rond (raketspåret ×1,8 gäller inte i högzonen),
+//   3. förlust kapar aldrig — två förlustmorgnar i rad ger −20 %, en ensam
+//      förlustmorgon ger ingen ändring alls.
+export const TAK_SEK = 10000;
+export const TAK_UTAN_VINNARE = 4000;
+export const VINNARE_DAGAR = 28;
+export const HOGZON_BACK_DAGAR = 2;
 export const STEG_SEK = 50;
 
 // Grindar innan någon dom alls får fällas (CLAUDE.md regel 3).
@@ -166,15 +183,16 @@ export function vinstProcent(breakEven, roas) {
  * höjningar nedåt och sänkningar uppåt, så steget aldrig blir större än
  * faktorn (20 % — eller ×1,8 på raketspåret).
  */
-export function nyBudget(riktning, budget) {
+export function nyBudget(riktning, budget, { tak = TAK_SEK } = {}) {
   if (!Number.isFinite(budget) || budget <= 0) return null;
+  const takNu = Number.isFinite(tak) && tak > 0 ? tak : TAK_SEK;
   if (riktning === 'upp') {
     const rå = budget * 1.2;
-    return Math.min(TAK_SEK, Math.floor(rå / STEG_SEK) * STEG_SEK);
+    return Math.min(takNu, Math.floor(rå / STEG_SEK) * STEG_SEK);
   }
   if (riktning === 'raket') {
     const rå = budget * RAKET_FAKTOR;
-    return Math.min(TAK_SEK, Math.floor(rå / STEG_SEK) * STEG_SEK);
+    return Math.min(takNu, Math.floor(rå / STEG_SEK) * STEG_SEK);
   }
   if (riktning === 'ner') {
     const rå = budget * 0.8;
@@ -220,12 +238,23 @@ function pct(n) {
  * @param {number|null} rad.budget        Nuvarande dagsbudget
  * @param {number|null} rad.dagarSedanAndring  Från budgetloggen. null = aldrig ändrad av oss
  * @param {number|null} rad.backDagarIRad Antal dygn i rad under break-even
+ * @param {boolean}     rad.harVinnare    Etiketterad BREAKTHROUGH eller SPEND_WINNER
+ *                                        inom VINNARE_DAGAR. Krävs för att motorn
+ *                                        ska få skala över TAK_UTAN_VINNARE.
+ *                                        Räknas av anroparen ur budgetloggen
+ *                                        (`harLevandeVinnare` i agent/lardom.mjs) —
+ *                                        den här filen läser aldrig en fil.
  * @returns {{kod: string, rubrik: string, motivering: string, nyBudget: number|null,
  *           zon: string|null, vinstProcent: number|null, breakEven: number|null,
  *           breakEvenKalla: string, kraverGodkannande: boolean}}
  */
 export function besked(rad) {
   const lage = rad.lage === 'drift' ? 'drift' : 'test';
+  // Spärr 1 (Axel 2026-09-21): utan en levande vinnaretikett är taket
+  // fortfarande 4 000. `harVinnare` måste vara EXAKT true — en anropare som
+  // inte räknat fältet ska inte råka skala till 10 000 på ett undefined.
+  const harVinnare = rad.harVinnare === true;
+  const takNu = harVinnare ? TAK_SEK : TAK_UTAN_VINNARE;
   const ur = lasBreakEven(rad.namn);
   const breakEven = Number.isFinite(rad.breakEven) && rad.breakEven > 1 ? rad.breakEven : ur.be;
   const breakEvenKalla = Number.isFinite(rad.breakEven) && rad.breakEven > 1
@@ -358,6 +387,26 @@ export function besked(rad) {
 
   // 5. Förlust.
   if (vinst < 0) {
+    // Spärr 3 (Axel 2026-09-21): i högzonen kapas aldrig, och den gäller FÖRE
+    // test/drift-uppdelningen. En budget över TAK_UTAN_VINNARE är per
+    // definition ingen testbudget — antingen skalade motorn dit den på en
+    // etiketterad vinnare, eller så satte Axel den för hand. Åtgärdstrappan
+    // ska inte kunna stänga av en kampanj som ligger på 6 000 kr om dagen för
+    // att produktkartan råkar sakna raden. Först TVÅ förlustmorgnar i rad ger
+    // −20 %, aldrig en kapning, aldrig under TAK_UTAN_VINNARE i ett steg.
+    if (rad.budget > TAK_UTAN_VINNARE) {
+      const back = Number.isFinite(rad.backDagarIRad) ? rad.backDagarIRad : null;
+      if (back === null || back < HOGZON_BACK_DAGAR) {
+        const backText = back === null ? 'okänt antal' : String(back);
+        return svar('HOGZON_AVVAKTA', 'Högzon — en förlustmorgon räcker inte',
+          `${bas} Budgeten ${kr(rad.budget)} ligger i högzonen över ${kr(TAK_UTAN_VINNARE)}. ${backText} förlustmorgon i rad — vid ${HOGZON_BACK_DAGAR} sänks den 20 %. Ingen kapning, ingen paus, ingen avstängning.${gransText}`,
+          { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu, hogzon: true });
+      }
+      const ner = Math.max(TAK_UTAN_VINNARE, nyBudget('ner', rad.budget, { tak: takNu }));
+      return svar('SANK', 'Högzon — sänk 20 % efter två förlustmorgnar',
+        `${bas} ${back} förlustmorgnar i rad i högzonen. Sänk från ${kr(rad.budget)} till ${kr(ner)} per dag — 20 %, aldrig en kapning, aldrig under ${kr(TAK_UTAN_VINNARE)} i ett steg.${gransText}`,
+        { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, naraGrans, harVinnare, tak: takNu, hogzon: true });
+    }
     if (lage === 'test') {
       if (!Number.isFinite(rad.spendTotal)) {
         // Okänd totalspend får aldrig tolkas som "tröskeln är passerad".
@@ -415,7 +464,7 @@ export function besked(rad) {
         `${bas} Redan på ${kr(GOLV_SEK)}. ${backText} dygn i rad under break-even hittills; vid ${BACK_DAGAR_FOR_AVSTANGNING} stängs den av.`,
         { zon: 'stop', vinstProcent: vinst });
     }
-    const halv = nyBudget('halvera', rad.budget);
+    const halv = nyBudget('halvera', rad.budget, { tak: takNu });
     return svar('HALVERA', 'Halvera',
       `${bas} Sänk från ${kr(rad.budget)} till ${kr(halv)} per dag.${gransText}`,
       { zon: 'stop', vinstProcent: vinst, nyBudget: halv, kraverGodkannande: true, naraGrans });
@@ -450,17 +499,24 @@ export function besked(rad) {
   }
 
   // 8. Över 25 %: skala. Raketspåret: ROAS ≥ 5 → nästan dubbla (×1,8).
-  const raket = rad.roas3d >= RAKET_ROAS;
-  if (rad.budget >= TAK_SEK) {
+  // Spärr 2 (Axel 2026-09-21): i högzonen är steget max 20 % per rond, så
+  // raketspåret gäller bara upp till TAK_UTAN_VINNARE. Att nästan dubbla en
+  // budget som redan ligger på 4 000 kr är ett hopp på 3 200 kr per dygn.
+  const hogzon = rad.budget >= TAK_UTAN_VINNARE;
+  const raket = rad.roas3d >= RAKET_ROAS && !hogzon;
+  if (rad.budget >= takNu) {
+    const varfor = harVinnare
+      ? `${kr(TAK_SEK)} per dag är taket. Vi skalar inte högre.`
+      : `${kr(TAK_UTAN_VINNARE)} per dag är taket utan vinnare. Över det krävs en etiketterad BREAKTHROUGH eller SPEND_WINNER inom ${VINNARE_DAGAR} dygn — produkten har ingen. Skriv lärdomen på nästa vinnare, så öppnas ${kr(TAK_SEK)}.`;
     return svar('LAT_VARA', 'Låt vara — taket nått',
-      `${bas} Går bra, men ${kr(TAK_SEK)} per dag är taket. Vi skalar inte högre.`,
-      { zon: 'hold', vinstProcent: vinst });
+      `${bas} Går bra, men ${varfor}`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu });
   }
-  const upp = nyBudget(raket ? 'raket' : 'upp', rad.budget);
+  const upp = nyBudget(raket ? 'raket' : 'upp', rad.budget, { tak: takNu });
   if (upp <= rad.budget) {
     return svar('LAT_VARA', 'Låt vara — taket nått',
-      `${bas} En höjning skulle passera taket ${kr(TAK_SEK)}.`,
-      { zon: 'hold', vinstProcent: vinst });
+      `${bas} En höjning skulle passera taket ${kr(takNu)}.`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu });
   }
   const nastaKoll = snabbspar || raket
     ? 'Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.'
@@ -468,9 +524,12 @@ export function besked(rad) {
   if (raket) {
     return svar('SKALA', 'Raketskala — nästan dubbla',
       `${bas} Raketregeln (Axel 2026-08-30): ROAS över ${RAKET_ROAS} — ändra från ${kr(rad.budget)} till ${kr(upp)} per dag (×1,8). ${nastaKoll}${gransText}`,
-      { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, raket: true });
+      { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, raket: true, harVinnare, tak: takNu });
   }
+  const hogzonText = upp > TAK_UTAN_VINNARE
+    ? ` Högzon: över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 %, aldrig raket.`
+    : '';
   return svar('SKALA', 'Skala upp 20 %',
-    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${gransText}`,
-    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans });
+    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${hogzonText}${gransText}`,
+    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, harVinnare, tak: takNu });
 }

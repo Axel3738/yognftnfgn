@@ -11,7 +11,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, TAK_SEK as TAK_SEK_PLAN } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod } from './logg.mjs';
-import { brieftak, mix, vidarebyggBehov } from './lardom.mjs';
+import { brieftak, harLevandeVinnare, mix, vidarebyggBehov } from './lardom.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -202,6 +202,11 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
       dagarSedanAndring: dagarSedanAndring(logg, kampanj.id, idag),
       senasteAndringKod: senasteRadMedKod(logg, kampanj.id, ['SKALA', 'SANK', 'HALVERA'])?.kod ?? null,
       backDagarIRad: backDagarIRad(kampanj.dygn, källa.be),
+      // Spärr 1 för det höjda taket (Axel 2026-09-21): motorn får bara skala
+      // över 4 000 kr om kampanjen bär en etiketterad BREAKTHROUGH eller
+      // SPEND_WINNER inom 28 dygn. Räknas HÄR, ur budgetloggen — besked.mjs
+      // är ren räkning och läser aldrig en fil.
+      harVinnare: harLevandeVinnare(logg, kampanj.id, { idag }),
     }),
   };
 }

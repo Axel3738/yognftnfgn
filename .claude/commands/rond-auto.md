@@ -649,12 +649,34 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
   forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
   winning-line/feedback), fler försök om den är stark — men numret räknas.
-- **Axels manuella zon (2026-09-19): budget över motorns tak 4 000 kr.**
+- **Motorns tak är 10 000 kr per dag och produkt (Axels beslut 2026-09-21).**
+  Höjt från 4 000. Skälet stod i kontot samma dag: Båtmotorskyddet låg
+  fastklämt på exakt 4 000 kr med ROAS 3,74 mot break-even 1,62 och 84 köp på
+  en vecka, Sotarsetet gick 4,35 på 2 150 kr, och fyra produkter till låg
+  mellan 2 000 och 4 000 med en vecka kvar till taket. Taket bromsade
+  vinnare. **Tre spärrar gäller över 4 000 kr** (`TAK_UTAN_VINNARE`):
+  1. **Vinnarspärren.** Kampanjen måste bära en etiketterad `BREAKTHROUGH`
+     eller `SPEND_WINNER` inom 28 dygn (`harLevandeVinnare` i
+     `agent/lardom.mjs`, räknad ur budgetloggen och skickad in som
+     `rad.harVinnare`). Saknas den är taket kvar på 4 000 och domen blir
+     `LAT_VARA` med skälet utskrivet. Fältet måste vara **exakt `true`** —
+     ett `undefined` öppnar aldrig taket.
+  2. **20 % per rond.** Raketspåret ×1,8 gäller bara upp till 4 000 kr. Att
+     nästan dubbla en budget som redan ligger på 4 000 är ett hopp på
+     3 200 kr per dygn.
+  3. **Ingen kapning.** Förlust i högzonen halverar aldrig och stänger aldrig
+     av. En ensam förlustmorgon ger domen `HOGZON_AVVAKTA` och ingen ändring;
+     **två förlustmorgnar i rad** ger `SANK` −20 %, aldrig under 4 000 i ett
+     steg. Spärren gäller före test/drift-uppdelningen, så åtgärdstrappan kan
+     inte stänga av en högzonskampanj för att produktkartan saknar raden.
+- **Axels manuella zon (2026-09-19): budget över motorns tak.**
   Motorn höjer aldrig dit, så en sådan budget har Axel satt själv
   (Taköverdraget: 16 000 kr/dag, fick tidigare `ORIMLIG_DATA` och ingen dom
-  alls). Domen blir `MANUELL` (går plus, lämnas) eller — sedan 2026-09-20,
+  alls). Gränsen följer taket och går sedan 2026-09-21 vid **10 000 kr**, inte
+  4 000 — en budget mellan 4 000 och 10 000 är numera motorns högzon, inte
+  Axels zon. Domen blir `MANUELL` (går plus, lämnas) eller — sedan 2026-09-20,
   Axels mjuka form — `MANUELL_SANK` (går back: **−20 % samma morgon**, jämna
-  50 kr, aldrig under taket 4 000, aldrig paus, högst en gång per dygn; utförs
+  50 kr, aldrig under taket, aldrig paus, högst en gång per dygn; utförs
   som en vanlig `typ: "budget"`-åtgärd i steg 3 och postas dessutom i
   `--kanal larm` med ping till Axel). Under taket tar de vanliga reglerna
   över. *(Förslaget "kapa till 4 000 i ett steg" avvisades: 75 % på en morgon
@@ -1029,7 +1051,8 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte
 - [ ] Spendtjuven körd i grönt läge på alla plus-kampanjer ≥ 1 000 kr/3 d, mot en namngiven lista; tjuvar pausade en och en med tillbakaläsning, `TJUV_PAUSAD`/`VANTA_BREAKTHROUGH` loggade utan `ny_budget`
-- [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under 4 000 kr, larm postat
+- [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under taket 10 000 kr, larm postat
+- [ ] Varje `SKALA` över 4 000 kr har `harVinnare: true` — annars är det en bugg, inte en dom
 - [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
 - [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)

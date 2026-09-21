@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   avstandTillGrans, besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven,
   nyBudget, vinstProcent,
-  GOLV_SEK, TAK_SEK, LIVSTIDS_MAX_BACKDAGAR,
+  GOLV_SEK, TAK_SEK, TAK_UTAN_VINNARE, LIVSTIDS_MAX_BACKDAGAR,
 } from '../besked.mjs';
 
 // En frisk kampanj att utgå från: passerar alla grindar, ingen färsk ändring.
@@ -71,10 +71,61 @@ test('nyBudget bryter aldrig mot 20-procentsregeln vid avrundning', () => {
 });
 
 test('nyBudget respekterar golv och tak', () => {
-  assert.equal(nyBudget('upp', 3800), TAK_SEK);
+  // Taket höjdes 4 000 → 10 000 (Axel 2026-09-21): 3 800 × 1,2 = 4 560 → 4 550
+  // klipps inte längre av taket, men 9 000 × 1,2 gör det.
+  assert.equal(nyBudget('upp', 3800), 4550);
+  assert.equal(nyBudget('upp', 9000), TAK_SEK);
+  // Utan vinnare skickar anroparen det lägre taket — då klipps 3 800 igen.
+  assert.equal(nyBudget('upp', 3800, { tak: TAK_UTAN_VINNARE }), TAK_UTAN_VINNARE);
+  assert.equal(nyBudget('raket', 3000, { tak: TAK_UTAN_VINNARE }), TAK_UTAN_VINNARE);
   assert.equal(nyBudget('ner', 550), GOLV_SEK);
   assert.equal(nyBudget('halvera', 600), GOLV_SEK);
   assert.equal(nyBudget('halvera', 2500), 1250);
+});
+
+test('spärr 1: utan vinnaretikett är taket kvar på 4 000', () => {
+  // Skalningszon (vinst 29 %) på exakt 4 000 kr — det gamla taket.
+  const grund = { namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 3.0, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 4000, dagarSedanAndring: 9, backDagarIRad: 0 };
+  const utan = besked({ ...grund });
+  assert.equal(utan.kod, 'LAT_VARA');
+  assert.equal(utan.harVinnare, false);
+  assert.equal(utan.tak, TAK_UTAN_VINNARE);
+  assert.match(utan.motivering, /BREAKTHROUGH eller SPEND_WINNER/);
+  const med = besked({ ...grund, harVinnare: true });
+  assert.equal(med.kod, 'SKALA');
+  assert.equal(med.nyBudget, 4800);
+  assert.equal(med.tak, TAK_SEK);
+  // Ett undefined får ALDRIG öppna taket.
+  assert.equal(besked({ ...grund, harVinnare: undefined }).kod, 'LAT_VARA');
+  // Under det gamla taket höjs den ändå — men bara upp TILL taket, inte förbi.
+  assert.equal(besked({ ...grund, budget: 3800 }).nyBudget, TAK_UTAN_VINNARE);
+});
+
+test('spärr 2: i högzonen är steget 20 %, aldrig raket', () => {
+  // ROAS 6 skulle ge raket ×1,8 under 4 000, men inte på eller över.
+  const under = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 3000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
+  assert.equal(under.raket, true);
+  assert.equal(under.nyBudget, 5400); // 3 000 × 1,8
+  const hog = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 5000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
+  assert.notEqual(hog.raket, true);
+  assert.equal(hog.nyBudget, 6000); // 5 000 × 1,2, inte ×1,8
+  assert.match(hog.motivering, /aldrig raket/);
+});
+
+test('spärr 3: högzonen kapas aldrig — två förlustmorgnar krävs för −20 %', () => {
+  const grund = { namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 1.2, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 6000, dagarSedanAndring: 9, harVinnare: true };
+  const en = besked({ ...grund, backDagarIRad: 1 });
+  assert.equal(en.kod, 'HOGZON_AVVAKTA');
+  assert.equal(en.nyBudget, null);
+  const tva = besked({ ...grund, backDagarIRad: 2 });
+  assert.equal(tva.kod, 'SANK');
+  assert.equal(tva.nyBudget, 4800); // 6 000 × 0,8 — inte en halvering
+  // Aldrig under 4 000 i ett steg: 4 500 × 0,8 = 3 600 → stannar på 4 000.
+  assert.equal(besked({ ...grund, budget: 4500, backDagarIRad: 3 }).nyBudget, TAK_UTAN_VINNARE);
+  // Okänt antal förlustmorgnar rör ingenting.
+  assert.equal(besked({ ...grund, backDagarIRad: null }).kod, 'HOGZON_AVVAKTA');
+  // Och åtgärdstrappan får aldrig stänga av en högzonskampanj, ens i testläge.
+  assert.equal(besked({ ...grund, lage: 'test', backDagarIRad: 1 }).kod, 'HOGZON_AVVAKTA');
 });
 
 test('ingen dom under 300 kr spend eller 3 köp', () => {

@@ -211,6 +211,29 @@ export function levandeBreakthroughs(logg, kampanjId, { idag }) {
   return ut;
 }
 
+/**
+ * Spärr 1 för motorns höjda tak (Axels beslut 2026-09-21): har kampanjen en
+ * etiketterad BREAKTHROUGH eller SPEND_WINNER inom `dagar` dygn?
+ *
+ * Bredare än `levandeBreakthroughs` med flit — taket ska öppnas av en bevisad
+ * vinnare, och en SPEND_WINNER är bevisad: Meta gav den spenden. Tjuvpausade
+ * annonser räknas inte (de är avstängda, inte vinnare), och en etikett som
+ * saknar datum räknas aldrig — hellre stängt tak än ett tak öppnat på okänd
+ * ålder. Ren funktion: loggen in, ja/nej ut.
+ */
+export function harLevandeVinnare(logg, kampanjId, { idag, dagar = LEVANDE_DAGAR } = {}) {
+  const pausade = new Set(logg.filter((r) => r.kod === 'TJUV_PAUSAD' && r.genomford === true).map((r) => String(r.annons_id)));
+  for (const e of etiketter(logg).values()) {
+    if (String(e.kampanj_id) !== String(kampanjId)) continue;
+    if (e.etikett !== ETIKETT.BREAKTHROUGH && e.etikett !== ETIKETT.SPEND_WINNER) continue;
+    if (pausade.has(String(e.annons_id))) continue;
+    const alder = idag ? dagarMellan(e.datum, idag) : null;
+    if (alder === null || alder > dagar) continue;
+    return true;
+  }
+  return false;
+}
+
 /** Mixen ur etiketterna (punkt 7). */
 export function mix(logg, kampanjId, { idag }) {
   const bt = levandeBreakthroughs(logg, kampanjId, { idag });

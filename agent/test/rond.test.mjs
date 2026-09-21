@@ -573,6 +573,20 @@ test('launchstrukturen: budget styr veckokvoten precis som Axels tabell', () => 
   assert.deepEqual(annonskvot(null), { antal: 0, nyaKoncept: 0 });
 });
 
+test('briefkvoten planar ut vid 3 000 kr — det höjda taket ger ALDRIG fler briefer', () => {
+  // Axels beslut 2026-09-21, punkt 6: motorns tak gick 4 000 → 10 000, men
+  // "mer budget ska inte ge fler briefer, det är kursens egen linje".
+  // Testet finns för att en framtida takändring inte ska smyga upp kvoten.
+  const vid3000 = annonskvot(3000);
+  for (const budget of [3000, 4000, 6000, 8000, 10000, 16000]) {
+    assert.deepEqual(annonskvot(budget), vid3000, `kvoten ändrades vid ${budget} kr`);
+  }
+  assert.deepEqual(vid3000, { antal: 4, nyaKoncept: 1 });
+  // Och rundkvoten, som är dubbla veckokvoten, planar ut i samma punkt.
+  const r3000 = rundkvot(3000);
+  for (const budget of [3000, 10000, 16000]) assert.equal(rundkvot(budget), r3000);
+});
+
 test('ronden kör mot både SE- och NO-kontot, aldrig mot en annan verksamhet', () => {
   const bas = { kampanjer: [{ id: '1' }], hamtad: '2026-08-31T05:00:00Z' };
   const ok = (id, namn) => kontrolleraKonto({ ...bas, ad_account_id: id, ad_account_namn: namn });
@@ -640,20 +654,33 @@ test('manuell budget över taket: går back ⇒ MANUELL_SANK, −20 % men aldrig
   assert.equal(rad.dom.larm, true);
   assert.equal(rad.dom.nyBudget, 12800); // 16 000 × 0,8, jämna 50 kr
   assert.match(rad.dom.motivering, /larma Axel/);
-  // Planen utför den: beloppet får ligga över motorns tak 4 000.
+  // Planen utför den: beloppet får ligga över motorns tak 10 000.
   const plan = planera([rad], { logg: [], idag: '2026-09-20' });
   assert.equal(plan.atgarder.length, 1);
   assert.equal(plan.atgarder[0].typ, 'budget');
   assert.equal(plan.atgarder[0].till_sek, 12800);
   assert.equal(plan.atgarder[0].till_ore, 1280000);
   assert.equal(plan.atgarder[0].larm, true);
-  // Aldrig under taket: 4 500 kr × 0,8 = 3 600 → stannar på 4 000.
+  // 4 500 kr är INTE längre manuell zon (taket höjdes till 10 000 den
+  // 2026-09-21) — den ligger i motorns högzon. Utan dygnsserie är antalet
+  // förlustmorgnar okänt, och då rörs ingenting: högzonen kapas aldrig.
   const nara = bedomKampanj(
     { id: '2', namn: 'X | BE ROAS 1.63', daily_budget: '4 500,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr' },
     { logg: [], idag: '2026-09-20', karta: {} },
   );
-  assert.equal(nara.dom.kod, 'MANUELL_SANK');
-  assert.equal(nara.dom.nyBudget, 4000);
+  assert.equal(nara.dom.kod, 'HOGZON_AVVAKTA');
+  assert.equal(nara.dom.nyBudget, null);
+  // Med två förlustmorgnar i rad: −20 %, men aldrig under 4 000 i ett steg.
+  const dygn = [
+    { datum: '2026-09-18', roas: 1.1, spend: 4500 },
+    { datum: '2026-09-19', roas: 1.2, spend: 4500 },
+  ];
+  const tva = bedomKampanj(
+    { id: '3', namn: 'X | BE ROAS 1.63', daily_budget: '4 500,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr', dygn },
+    { logg: [], idag: '2026-09-20', karta: {} },
+  );
+  assert.equal(tva.dom.kod, 'SANK');
+  assert.equal(tva.dom.nyBudget, 4000);
   // En gång per dygn: redan sänkt i dag ⇒ uppskjuten.
   const logg = [{ datum: '2026-09-20', kampanj_id: '1', kod: 'MANUELL_SANK', genomford: true, ny_budget: 12800 }];
   const igen = planera([rad], { logg, idag: '2026-09-20' });
