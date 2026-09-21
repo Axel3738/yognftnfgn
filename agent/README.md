@@ -53,6 +53,32 @@ aldrig gissat uppåt. Etikettraden bär sedan samma dag `utford_som_briefad`
 Briefspärren (regi rad för rad + komponenttaggar) ligger på `main`:
 `tools/briefgranskning.mjs --rad/--manifest`, mallen `docs/os/BRIEF-REGI.md`.
 
+**Lärdomen (`agent/lardom.mjs`, 2026-09-21 — Axels definition av klart,
+`docs/os/CS-KLART.md`):** ingen annons är klar förrän lärdomen är skriven.
+`--skelett` ger ett block per ETIKETT-rad utan LARDOM-rad med datan ifylld
+(batch, utfall, spend annons/kampanj i samma fönster, hookar med hook/hold
+rate, ROAS/CPA, konverteringsgrad, planerat mot utfört per komponent);
+`--skriv` validerar (hypotes märkt gissning, konkreta nästa annonser) och
+skriver `products/<id>/lardomar.md` + LARDOM-raden; `--brief` loggar varje
+brief som BRIEF-rad med `lardom=L-…`, typ, parent, koncept och
+iterationsnummer räknat ur loggen; `--status` ger rapportens rader. `rond.mjs
+annonsbehov` läser den: `brieftak` (briefer ≤ lärdomar sedan förra batchen),
+`mix` (80/20 ur etiketterna) och behovet `vidarebygg` (tre iterationer inom
+14 dagar på en levande breakthrough). LARDOM/BRIEF/VIDAREBYGG_KLAR bär aldrig
+`ny_budget`.
+
+**UGC-förslaget (`agent/ugc.mjs`, CS-KLART punkt 20–22):** `--deadlines`
+räknar säsongstopparna baklänges (tre veckors ledtid + två veckors test —
+Black Friday 2026-11-27 ⇒ beställ senast 2026-10-23, för sent efter
+2026-11-06) och larmar när ≤ 14 dagar återstår utan `UGC_BESTALLD`;
+`--kandidater` prövar de tre villkoren per kampanj (bevisad vinnare ·
+skalas sannolikt om fyra veckor · lärdomen säger att tro/auktoritet/tillit
+saknas); `--bestallning <json>` skriver det färdiga engelska meddelandet
+till Lovely (vinnaren, komponenterna, manuset, vad som måste synas på
+kameran, deadline, Evolve-receptet vid flera videor). Rutinen beställer
+aldrig själv. Etiketterna körs även för CaraShell-kampanjerna i DK/UK-kontona
+(`etikett-backfill.mjs --konto spegel`, punkt 26).
+
 Bakgrund: `docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` på `main`. Budgetmotorn
 var inte problemet, annonsnivån var det. Fyra saker byggdes, i den ordning
 Axel bad om:

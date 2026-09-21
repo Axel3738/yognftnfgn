@@ -347,7 +347,16 @@ X — consider re-enabling"`. Ronden startar aldrig något pausat själv.
 Varje annons får en etikett när den är sju dygn gammal, räknad på **annonsens
 egna första vecka** — aldrig `last_7d`. Etiketten beskriver vad Meta gjorde;
 den är **ingen dom** (dom, kill, skalning och DNA kräver fortfarande 300 kr
-och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
+och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO
+— **och för CaraShell-kampanjerna i OPS-kontona MagiBorsten DK
+`915422744950975` och Magiborsten UK `1107817401910319`** (CS-KLART punkt
+26, mätt 2026-09-21: 44 % av Taköverdragets spend ligger där). Bara
+kampanjer vars namn matchar `CARASHELL` — aldrig OPS-butikernas övriga
+kampanjer, och budgetronden rör ALDRIG de kontona
+(`node agent/etikett-backfill.mjs --konto spegel` gör exakt det, dagligen
+utan `--torr`, med `--cache` så torrt och skarpt inte hämtar två gånger).
+Fälten `inline_link_clicks` och `landing_page_view` (i `actions`) hämtas
+sedan 2026-09-21 för konverteringsgraden i lärdomen.
 
 1. Per ACTIVE kampanj: hämta annonslistan (`level: "ad"`, fälten `id`,
    `name`, `created_time`, `effective_status`). Kandidater = annonser med
@@ -356,7 +365,11 @@ och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
 2. För varje D0 (skapelsedatum, svensk tid) i kampanjen: hämta insights på
    `level: "ad"` med `time_range: {"since": D0, "until": D0+6}`, fälten
    `amount_spent`, `omni_purchase`, `purchase_roas`, `impressions`,
-   `video_view` (3 s), `video_thruplay_watched_actions`, med
+   `video_view` (3 s — **ta `value`, inte `7d_click`-nyckeln**: under
+   attributionsfönstret bär `video_view` bara de attribuerade spelningarna,
+   mätt 2026-09-21 på IBC_PD_1_H1: 226 mot 23 298, hook rate 0,4 % i
+   stället för 37 %; samma för `landing_page_view`),
+   `video_thruplay_watched_actions`, `inline_link_clicks`, med
    `action_attribution_windows: ["7d_click"]` — och kampanjen i **samma**
    `time_range` (`level: "campaign"`: `amount_spent`, `purchase_roas`).
    Annonser med samma D0 delar anrop. Stryper Meta (kod 17): lista
@@ -387,6 +400,36 @@ och 3 köp, som står bredvid i fältet `bedombar`). Körs per konto, SE och NO.
    mappen), och skriv frekvensraden överst i filen:
    `Breakthrough-frekvens: 3/21 (14 %)` — alltid brutet tal, aldrig procent
    ensam, ingen procent alls under tio annonser. Rör inte dna.md.
+4b. **Lärdomen — ingen annons är klar förrän den är skriven** (Axels
+   definition av klart, `docs/os/CS-KLART.md` punkt 1–5, 2026-09-21).
+   Varje etiketterad annons får en lärdom SAMMA morgon:
+   ```bash
+   node agent/lardom.mjs --skelett --konto SE --kampanj <id>     # skelett med datan ifylld → agent/utdata/lardom-skelett-<IDAG>-se.md
+   # fyll varje [FYLL I] i filen: Utfört per komponent (läs den LIVE annonsen), hypotesen märkt gissning, Nästa annonser
+   node agent/lardom.mjs --skriv agent/utdata/lardom-skelett-<IDAG>-se.md --torr   # spärren: alla fält, gissning, nästa annonser
+   node agent/lardom.mjs --skriv agent/utdata/lardom-skelett-<IDAG>-se.md          # → products/<id>/lardomar.md + LARDOM-rad
+   ```
+   Skelettet bär batchnummer, utfall, annonsens och kampanjens spend i samma
+   fönster, hookarna ordagrant med hook rate och hold rate, ROAS/CPA och
+   konverteringsgraden (köp per landningssidevisning — därför hämtar
+   etikettjobbet `inline_link_clicks` och `landing_page_view` sedan
+   2026-09-21; backfillade rader saknar dem och skriver "okänd", aldrig 0).
+   **Planerat mot utfört:** briefens taggar (avatar, vinkel, medvetandenivå,
+   mekanism, tro, positionering, brådska) mot den live annonsen — stämde inte
+   utförandet är det utförandet som föll, inte idén. **Hypotesen är alltid
+   märkt gissning.** **Nästa annonser** är konkreta namn (typ, parent, vad
+   som ändras) eller `SLÄPP` med skäl — en lärdom som inte slutar där är en
+   dagbok. Diagnosordningen per utfall står i skelettet (breakthrough → tre
+   iterationer i manuslistan; spend winner → kommentarerna först, sedan
+   konverteringsgraden, sedan manuset, lägg bara till det som saknas; KPI
+   winner → hook rate → hold rate → förbi hooken; loser → en lärdom, släpp,
+   iterera bara ur research). Spärren vägrar tomma fält och hypoteser
+   skrivna som fakta. Bedömbara annonser (≥ 300 kr, ≥ 3 köp) och varje
+   BREAKTHROUGH skrivs alltid samma morgon; övriga (LOSER/INGEN_LEVERANS
+   under 300 kr) får en kort lärdom i samma fil — observation, ingen dom.
+   Ingen brief-runda får fler briefer än lärdomar skrivna sedan förra batchen
+   (`brieftak` i `agent/lardom.mjs`, punkt 8) — skriv lärdomarna FÖRE
+   briefsteget 4b, annars är rundan 0.
 5. Dag 14 och dag 28 efter etiketten: kör samma steg med `--uppgradering`
    för annonser som fick SPEND_WINNER eller KPI_WINNER — blir de
    BREAKTHROUGH nu skrivs `ETIKETT_UPPGRADERAD`. Ingen etikett ändras annars.
@@ -561,12 +604,51 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ⚠️ Den här specialregeln är INGEN väg runt statusspärren ovan. Saknade
   minnesfiler på en pausad kampanj betyder att produkten är död utan minne —
   inte att den ska få en förstabatch. Kolla status först, alltid.
-- **Rundans storlek = `rundaAntal`** i behovsraden — dubbla veckokvoten,
-  aldrig under fyra (`rundkvot` i `agent/rond.mjs`). Axel 2026-09-02: "jag tar
-  hellre några briefs för mycket, jag har ett överflöd av redigerare." För
-  `forsta_batch` gäller i stället hela veckokvoten (`veckokvot` i utfallet).
-  Kvoten planar ut vid 3 000 kr/dag (4 annonser i veckan, 8 per runda) — en
-  budget på 16 000 kr ger inte fler briefer än en på 4 000. Det är med flit.
+- **Rundans storlek = `rundaAntal`** i behovsraden — budgeten ger golvet
+  (dubbla veckokvoten, aldrig under fyra, `rundkvot` i `agent/rond.mjs`;
+  Axel 2026-09-02: "jag tar hellre några briefs för mycket"), **men taket är
+  antalet lärdomar skrivna sedan förra batchen** (`brieftak`, CS-KLART punkt
+  8, Axels beslut 2026-09-21: "budgeten styr inte antalet"). `budgetAntal`
+  och `brieftak` står bredvid i behovsraden; är `rundaAntal` 0 säger orsaken
+  hur många etiketterade annonser som väntar på lärdom — skriv dem (3c 4b),
+  kör `node agent/rond.mjs` om, och bygg sedan. För `forsta_batch` gäller
+  hela veckokvoten (`veckokvot` i utfallet) — där finns ännu inga egna
+  lärdomar, men de backfillade etiketterna ur produkttestet ska ha sina
+  (`--skelett --kampanj <id>` först). Kvoten planar ut vid 3 000 kr/dag (4
+  annonser i veckan, 8 per runda) — en budget på 16 000 kr ger inte fler
+  briefer än en på 4 000. Det är med flit.
+- **Mixen kommer ur etiketterna, inte ur en tabell** (`mix` i behovsraden,
+  CS-KLART punkt 7): finns en levande breakthrough (etikett inom 28 dagar,
+  inte tjuvpausad) är rundan 80 % vidarebyggen på den och 20 % nya vinklar;
+  finns ingen är den 80 % nya vinklar. `annonskvot.nyaKoncept` gäller inte
+  längre. En ny vinkel är en annan avatar, ett annat begär eller en annan
+  känslomässig ingång — samma löfte med nya ord är en iteration (punkt 19;
+  `lardom.mjs --brief` varnar när typ=N bär samma avatar, begär och
+  mekanism som en tidigare brief).
+- **Behov `vidarebygg`** (rang 0, samma morgon, CS-KLART punkt 9): en levande
+  BREAKTHROUGH som inte fått tre iterationer inom 14 dagar från etiketten.
+  Rundan ERSÄTTER dagens `brief_runda` för produkten: iterationerna i
+  manuslistan — nya hookar (I1), längre problemdel (I2), in media res (I3),
+  varje med `parent=<annonsen>` och `lardom=L-<annons_id>`; aldrig en ren
+  kopia av top spendern. Logga `VIDAREBYGG_KLAR` (aldrig `ny_budget`) när
+  raderna finns i Notion. Iterationerna räknas ur BRIEF-raderna, så
+  `orsak` säger "1 av 3, deadline …" — inte ur minnet.
+- **Varje brief pekar på sin lärdom och loggas** (punkt 6, 13, 14, 16):
+  taggraden bär `lardom=L-<annons_id>` (id ur `products/<id>/lardomar.md`),
+  `typ=N|IM|I` (ny / imiterad / iteration), `parent`, `koncept`, `avatar`,
+  `awareness`, `begar`, `mekanism`, `tro`, `urgency`, `hook-mekanik`. INNAN
+  Notion-raderna skapas:
+  ```bash
+  node agent/lardom.mjs --brief products/<id>/batch-NN/manifest.json --kampanj <id> --batch NN --torr   # stoppar brief utan lärdom, räknar iterationsnumret per koncept ur loggen
+  node agent/lardom.mjs --brief products/<id>/batch-NN/manifest.json --kampanj <id> --batch NN          # BRIEF-rader
+  ```
+  En brief som inte kan peka på en lärdom skrivs inte. Iterationsnumret i
+  raden är loggens (1 + tidigare briefer på konceptet) — säger briefen något
+  annat vinner loggen, så "två eller trettio försök" alltid går att läsa.
+  **Taket (punkt 18):** `node agent/lardom.mjs --status` listar koncept med
+  ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
+  forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
+  winning-line/feedback), fler försök om den är stark — men numret räknas.
 - **Axels manuella zon (2026-09-19): budget över motorns tak 4 000 kr.**
   Motorn höjer aldrig dit, så en sådan budget har Axel satt själv
   (Taköverdraget: 16 000 kr/dag, fick tidigare `ORIMLIG_DATA` och ingen dom
@@ -645,6 +727,58 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   push som loggraden. En batch vars minnesfiler inte är pushade är INTE klar.
 - Hinner en batch inte bli klar (avbrott, fel): logga ingenting med *_KLAR —
   då flaggas behovet igen imorgon och batchen görs om hel.
+
+## 4e. UGC-förslaget (Axels beslut 2026-09-21 — CS-KLART punkt 20–22)
+
+Varje morgon, efter lärdomarna (3c 4b) och före leveransen:
+
+```bash
+node agent/ugc.mjs --deadlines                 # säsongstopparna: sista beställningsdag, "för sent"-dag, larm
+node agent/ugc.mjs --kandidater --utfall agent/utdata/rond-se-<IDAG>.json
+```
+
+**Deadlines (punkt 22):** ledtiden räknas baklänges från säsong — tre
+veckors ledtid + två veckors test. Black Friday 2026-11-27 ⇒ sista
+beställningsdag 2026-10-23, efter 2026-11-06 hinner videon inte bli live.
+Tabellen `SASONGER` i `agent/ugc.mjs` (Jul 2026 står som antagande —
+Axel bekräftar datumet). Står en topp på 🔴 LARM (≤ 14 dagar kvar, inget
+`UGC_BESTALLD` loggat): posta larmet i `--kanal larm` med ping till Axel,
+varje dag tills något är beställt eller det är för sent.
+
+**Kandidater (punkt 20):** rutinen föreslår UGC BARA när alla tre villkor är
+sanna, och skriptet visar dem ett i taget: (1) en bevisad vinnare —
+BREAKTHROUGH eller SPEND_WINNER, bedömbar, etikett inom 42 dagar; (2)
+produkten skalas sannolikt fortfarande om fyra veckor — skriptets bedömning
+ur loggen (inte avstängd, inte sänkt på 14 dagar, skalad eller lönsam ≥ 20 %
+med budget ≥ 1 000 kr, ingen säsong som tar slut inom sex veckor) — läs
+skälen och döm själv, det är en sannolikhet, ingen garanti; (3) det som
+saknas är tro, auktoritet eller tillit — läst ur vinnarens lärdom
+(komponentavvikelse `tro`, eller hypotesen/nästa annonser nämner
+tro/auktoritet/tillit). Utan lärdom är villkor 3 okänt ⇒ inget förslag.
+Går bristen att lösa med befintligt material (ny hook, längre problemdel,
+proof ur recensioner) ska det lösas så — då är svaret nej på villkor 3
+även om ordet "tro" står i lärdomen. Kostnaden (~3 000 kr) är sällan
+hindret; tiden (tre veckor) är det.
+
+**Beställningen (punkt 21):** för varje ✅ FÖRESLÅ skriver du en JSON
+(fälten i `BESTALLNING_FALT`: produkt, kampanj_id, vinnare {namn, etikett,
+spend, roas, hook}, komponenter {avatar, vinkel, mekanism, tro, urgency},
+manus [{sv, en}] ur vinnarens brief, pa_kameran [], deadline = i dag + 21
+dagar eller säsongens sista dag om den är tidigare, antal, och vid antal > 1
+`iteration_andring` och `viral_referens`) och kör
+```bash
+node agent/ugc.mjs --bestallning agent/utdata/ugc-<produkt>-<IDAG>.json
+```
+Meddelandet är på engelska och går som egen post i `--kanal uppgifter`
+adresserat till Lovely (hon sköter hela produktionen: kreatör, frakt av
+produkten, inspelning, revision). Flera videor ⇒ Evolve-receptet i
+meddelandet: en ordagrann kopia av vinnaren, en iteration, en imitation av
+en viral annons. Logga sedan `node agent/ugc.mjs --forslag --kampanj <id>
+--annons <vinnaren>` så förslaget inte upprepas varje morgon. **När Axel
+eller VA:n bekräftat att beställningen gått** loggas
+`node agent/ugc.mjs --bestalld --kampanj <id> --antal N --deadline
+YYYY-MM-DD [--sasong "Black Friday 2026"]` — det är den raden som tystar
+larmet. Rutinen beställer aldrig själv; den skriver beställningen.
 
 ## 4c. Notion-svepet — vilka hubbar finns, och vad ska produceras
 
@@ -830,6 +964,17 @@ kördes (produkt + antal briefer + Notion-länk) respektive ligger kvar i kön
 till imorgon — och **vilka startskott som gick ut** (produkt + siffrorna).
 Gick inget startskott: skriv ingenting om det. Inga bibelsvar.
 
+**Creative strategy-raderna är obligatoriska i varje rond** (CS-KLART punkt
+15–16) — klistra in utskriften av:
+```bash
+node agent/lardom.mjs --status
+```
+Den ger breakthrough-frekvensen per produkt som bråk OCH procent ("3/21
+(14 %)", aldrig procent ensam), hur många lärdomar som skrevs i dag, hur
+många etiketterade annonser som saknar lärdom, hur många briefer som
+skrevs och hur många av dem som pekar på en lärdom, vidarebyggen med
+deadline, och koncept vid taket. Samma rader på engelska i Discord.
+
 **Skicka samma korta rapport till Discord** (Axels order 2026-08-30) —
 **på ENGELSKA.** Allt som postas som Bävern läses av det engelsktalande
 teamet, så varje Discord-post skrivs på engelska även när svaret till Axel
@@ -886,6 +1031,11 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Spendtjuven körd i grönt läge på alla plus-kampanjer ≥ 1 000 kr/3 d, mot en namngiven lista; tjuvar pausade en och en med tillbakaläsning, `TJUV_PAUSAD`/`VANTA_BREAKTHROUGH` loggade utan `ny_budget`
 - [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under 4 000 kr, larm postat
 - [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
+- [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
+- [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)
+- [ ] `lardom.mjs --status` i leveransen: frekvens som bråk + procent, lärdomar i dag, briefer på lärdom, koncept vid taket
+- [ ] `ugc.mjs --deadlines` körd (larm postat om 🔴), `ugc.mjs --kandidater` körd; varje ✅ FÖRESLÅ har fått ett färdigt beställningsmeddelande till Lovely i `--kanal uppgifter` och en `UGC_FORSLAG`-rad — eller villkoret som föll utskrivet
+- [ ] Etiketter + lärdomar även för CaraShell-kampanjerna i DK/UK-kontona (`--konto spegel`), för Taköverdraget och Termoskyddet speglas (CS-KLART punkt 26)
 - [ ] Uppskjutna loggade som `UPPSKJUTEN_GRANS`
 - [ ] Alla `forsta_batch` körda (inget tak) + alla `brief_runda`, med
       *_KLAR-loggrad och minnesfiler pushade — eller exakt redovisat varför inte

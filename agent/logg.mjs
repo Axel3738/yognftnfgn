@@ -143,7 +143,7 @@ export async function skrivRad(rad, fil = LOGGFIL) {
   // Etiketter, tjuvpauser och larm bär ALDRIG ny_budget: dagarSedanAndring
   // räknar varje genomförd rad med det fältet som en budgetändring och skulle
   // frysa kampanjen i tre dygn utan att någon rört budgeten.
-  if (['ETIKETT', 'ETIKETT_UPPGRADERAD', 'TJUV_PAUSAD', 'VANTA_BREAKTHROUGH', 'OPS_STARTSKOTT'].includes(rad.kod)
+  if (['ETIKETT', 'ETIKETT_UPPGRADERAD', 'TJUV_PAUSAD', 'VANTA_BREAKTHROUGH', 'OPS_STARTSKOTT', 'LARDOM', 'BRIEF', 'VIDAREBYGG_KLAR'].includes(rad.kod)
       && Number.isFinite(rad.ny_budget)) {
     throw new Error(`En ${rad.kod}-rad med ny_budget skulle blinda kadensspärren — vägrar`);
   }

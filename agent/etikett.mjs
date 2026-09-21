@@ -167,6 +167,10 @@ export function lasEtikettannons(rad) {
   const impressions = num(rad.impressions);
   const treSek = num(rad.video_3s ?? rad.video_view);
   const thruplay = num(rad.thruplay ?? rad.video_thruplay_watched_actions);
+  // Konverteringsgraden (CS-KLART punkt 1): köp per landningssidevisning, i
+  // andra hand per länkklick. Saknas båda är den okänd — aldrig 0.
+  const klick = num(rad.klick ?? rad.inline_link_clicks);
+  const lpv = num(rad.lpv ?? rad.landing_page_view);
   const d0 = String(rad.d0 ?? rad.created_time ?? '').slice(0, 10);
   return {
     id: String(rad.id ?? ''),
@@ -178,6 +182,9 @@ export function lasEtikettannons(rad) {
     kop: Number.isFinite(kop) ? kop : 0,
     hook_rate: Number.isFinite(impressions) && impressions > 0 && Number.isFinite(treSek) ? treSek / impressions : null,
     hold_rate: Number.isFinite(impressions) && impressions > 0 && Number.isFinite(thruplay) ? thruplay / impressions : null,
+    klick: Number.isFinite(klick) ? klick : null,
+    lpv: Number.isFinite(lpv) ? lpv : null,
+    cvr: Number.isFinite(lpv) && lpv > 0 ? (Number.isFinite(kop) ? kop : 0) / lpv : Number.isFinite(klick) && klick > 0 ? (Number.isFinite(kop) ? kop : 0) / klick : null,
     hook_text: rad.hook_text ?? null,
     hook_vo: rad.hook_vo ?? null,
     batch: rad.batch ?? null,
@@ -267,6 +274,9 @@ export function raknaEtiketter(jobb, logg = [], { uppgradering = false } = {}) {
       roas_kampanj: kampanj.roas,
       hook_rate: a.hook_rate === null ? null : Number(a.hook_rate.toFixed(4)),
       hold_rate: a.hold_rate === null ? null : Number(a.hold_rate.toFixed(4)),
+      klick: a.klick,
+      lpv: a.lpv,
+      cvr: a.cvr === null ? null : Number(a.cvr.toFixed(4)),
       hook_text: a.hook_text,
       hook_vo: a.hook_vo,
       budget_d0: Number.isFinite(b0) ? b0 : null,

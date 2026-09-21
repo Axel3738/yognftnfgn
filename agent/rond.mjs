@@ -11,6 +11,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, TAK_SEK as TAK_SEK_PLAN } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod } from './logg.mjs';
+import { brieftak, mix, vidarebyggBehov } from './lardom.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -383,7 +384,7 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     const d = (nu - Date.parse(`${datum}T00:00:00Z`)) / 86400000;
     return Number.isFinite(d) && d >= 0 && d <= 7;
   };
-  const KLAR = ['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR'];
+  const KLAR = ['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR', 'VIDAREBYGG_KLAR'];
   const behov = [];
   for (const r of rader) {
     // Fryst = händerna borta helt: datan går inte att lita på (spärrat kort,
@@ -425,17 +426,40 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     const pausat = senaste7.some((rad) => ['TRAPPA_FORLANGNING', 'TRAPPA_STEG_1', 'TRAPPA_STEG_2', 'TRAPPA_STEG_3'].includes(rad.kod));
     const skalningar = senaste7.filter((rad) => rad.kod === 'SKALA').length;
 
+    // Vidarebygg (CS-KLART punkt 9): en levande breakthrough får tre iterationer
+    // inom 14 dagar från etiketten — samma morgon, utan 3-dagarsklockan, rang 0.
+    // Rundan ersätter dagens brief_runda för produkten. Iterationerna räknas ur
+    // BRIEF-raderna (parent = annonsen), aldrig ur huvudet.
+    const vidare = vidarebyggBehov(logg, r.id, { idag });
+    if (vidare.length) {
+      const tak = brieftak(logg, r.id, { idag });
+      const m = mix(logg, r.id, { idag });
+      behov.push({
+        kampanj_id: r.id, namn: r.namn, typ: 'vidarebygg',
+        breakthroughs: vidare, rundaAntal: Math.min(vidare.reduce((s, v) => s + v.kvar, 0), Math.max(tak.tak, 0)), brieftak: tak, mix: m,
+        orsak: `${vidare.map((v) => `${v.annons_namn}: ${v.iterationer} av 3 iterationer, deadline ${v.deadline}${v.forsent ? ' (FÖRSENAD)' : ''}${v.har_lardom ? '' : ' — lärdomen saknas, skriv den först'}`).join('; ')}. Börja i manuslistan: nya hookar → längre problemdel → in media res. Aldrig en ren kopia.${tak.tak === 0 ? ` Brieftak 0 — ${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom: skriv lärdomarna först (node agent/lardom.mjs --skelett --kampanj ${r.id}).` : ''}`,
+      });
+      continue;
+    }
+
     if (harBatch) {
       if (dagarSedanBatch !== null && dagarSedanBatch < BRIEF_INTERVALL_DAGAR) continue; // låt batchen landa
-      const rundaAntal = rundkvot(r.budget);
-      if (rundaAntal === 0) continue; // ingen budget — ingen runda
+      const budgetAntal = rundkvot(r.budget);
+      if (budgetAntal === 0) continue; // ingen budget — ingen runda
+      // Punkt 8: antalet briefer överstiger aldrig antalet lärdomar vi hunnit
+      // skriva sedan förra batchen. Budgeten sätter bara ett övre golv.
+      const tak = brieftak(logg, r.id, { idag });
+      const rundaAntal = Math.min(budgetAntal, tak.tak);
+      const m = mix(logg, r.id, { idag });
       let fokus = '';
       if (pausat) fokus = ' Fokus: ersätt det som pausats i trappan.';
       else if (skalningar >= 2) fokus = ` Fokus: mata vinnaren — skalats ${skalningar} gånger på en vecka.`;
       behov.push({
         kampanj_id: r.id, namn: r.namn, typ: 'brief_runda',
-        dagarSedanBatch, rundaAntal,
-        orsak: `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs).${fokus}`,
+        dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m,
+        orsak: rundaAntal === 0
+          ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}`
+          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}`,
       });
       continue;
     }
@@ -467,8 +491,8 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       behov.push({ kampanj_id: r.id, namn: r.namn, typ: 'mata_vinnare', orsak: `skalats ${skalningar} gånger på en vecka — mata vinnaren med mer material innan tröttheten kommer` });
     }
   }
-  // Första batchen först, sen brief-rundor (äldst först), sist övriga signaler.
-  const RANG = { forsta_batch: 0, brief_runda: 1, ersatt: 2, mata_vinnare: 2 };
+  // Vidarebyggen och första batchen först, sen brief-rundor (äldst först), sist övriga signaler.
+  const RANG = { vidarebygg: 0, forsta_batch: 0, brief_runda: 1, ersatt: 2, mata_vinnare: 2 };
   return behov.sort((a, b) => {
     if (RANG[a.typ] !== RANG[b.typ]) return RANG[a.typ] - RANG[b.typ];
     if (a.typ === 'brief_runda' && b.typ === 'brief_runda'
@@ -599,7 +623,7 @@ export function rapport(rader, meta, behov = []) {
     ut.push(`## 🎨 Nya annonser behövs (${behov.length})`);
     ut.push('');
     for (const b of behov) {
-      const kommando = b.typ === 'forsta_batch' ? '`/forsta-batch`' : '`/cs`';
+      const kommando = b.typ === 'forsta_batch' ? '`/forsta-batch`' : b.typ === 'vidarebygg' ? '`/cs` (vidarebygg, rond-auto 4b)' : b.rundaAntal === 0 ? '`node agent/lardom.mjs --skelett` FÖRST, sedan `/cs`' : '`/cs`';
       const orsak = b.orsak.endsWith('.') ? b.orsak : `${b.orsak}.`;
       ut.push(`- **${b.namn.split('|')[0].trim()}** — ${orsak} Kommando: ${kommando}.`);
     }

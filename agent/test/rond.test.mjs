@@ -422,11 +422,13 @@ test('Norge får aldrig briefer — bara Sverige bygger annonsbehov', () => {
   assert.equal(annonsbehov(rader, { logg: [], idag: '2026-09-01' }).length, 1);
 });
 
-test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
+test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus — och aldrig fler briefer än lärdomar (CS-KLART punkt 8)', () => {
   const rader = [{ id: 'a', namn: 'X | BE ROAS 1.50', spendTotal: 9000, budget: 2000, dom: { vinstProcent: 18 } }];
+  const lardom = (n, datum) => ({ kampanj_id: 'a', kod: 'LARDOM', annons_id: `${n}`, lardom_id: `L-${n}`, genomford: true, datum });
   const logg = [
     { kampanj_id: 'a', kod: 'FORSTA_BATCH_KLAR', genomford: true, datum: '2026-08-27' },
     { kampanj_id: 'a', kod: 'TRAPPA_STEG_1', genomford: true, datum: '2026-08-28' },
+    ...[1, 2, 3, 4, 5, 6, 7].map((n) => lardom(n, '2026-08-29')),
   ];
   // Dag 2 efter batchen: låt den landa.
   assert.equal(annonsbehov(rader, { logg, idag: '2026-08-29' }).length, 0);
@@ -435,9 +437,50 @@ test('3-dagarsrundan: tyst i tre dagar, sen brief_runda med fokus', () => {
   assert.equal(behov.length, 1);
   assert.equal(behov[0].typ, 'brief_runda');
   assert.equal(behov[0].dagarSedanBatch, 3);
-  assert.equal(behov[0].rundaAntal, 6); // budget 2 000 → veckokvot 3 → runda 6 (dubbla, Axel 2026-09-02)
+  assert.equal(behov[0].rundaAntal, 6); // budget 2 000 → veckokvot 3 → runda 6 (dubbla, Axel 2026-09-02); 7 lärdomar räcker
+  assert.equal(behov[0].budgetAntal, 6);
   assert.match(behov[0].orsak, /3 dagar sedan/);
   assert.match(behov[0].orsak, /ersätt det som pausats/);
+  assert.match(behov[0].orsak, /Mix 20 % vidarebyggen \/ 80 % nya vinklar \(ingen levande breakthrough\)/);
+  // Punkt 8: bara två lärdomar sedan batchen ⇒ två briefer, inte sex.
+  const tva = annonsbehov(rader, { logg: logg.slice(0, 4), idag: '2026-08-30' });
+  assert.equal(tva[0].rundaAntal, 2);
+  assert.match(tva[0].orsak, /lärdomarna sedan förra batchen 2/);
+  // Inga lärdomar sedan batchen ⇒ 0 briefer, och orsaken säger vad som ska göras först.
+  const inga = annonsbehov(rader, { logg: logg.slice(0, 2), idag: '2026-08-30' });
+  assert.equal(inga.length, 1);
+  assert.equal(inga[0].rundaAntal, 0);
+  assert.match(inga[0].orsak, /0 lärdomar skrivna sedan dess/);
+  assert.match(inga[0].orsak, /node agent\/lardom\.mjs --skelett --kampanj a/);
+});
+
+test('vidarebygg (CS-KLART punkt 9): en levande breakthrough utan tre iterationer får ett behov med rang 0, samma morgon, i stället för brief_runda', () => {
+  const rader = [
+    { id: 'bt', namn: 'Vinnaren | BE ROAS 1.50', spendTotal: 30000, budget: 3000, dom: { vinstProcent: 40 } },
+    { id: 'ny', namn: 'Ny | BE ROAS 1.50', spendTotal: 5000, dom: { vinstProcent: 30 } },
+  ];
+  const logg = [
+    { kampanj_id: 'bt', kod: 'CS_BATCH_KLAR', genomford: true, datum: '2026-09-19' },
+    { kampanj_id: 'bt', kod: 'ETIKETT', annons_id: '111', annons_namn: 'Vinnare_PD_1_H1', etikett: 'BREAKTHROUGH', datum: '2026-09-20', genomford: true, spend_ad: 4000, kop: 12 },
+    { kampanj_id: 'bt', kod: 'LARDOM', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true },
+    { kampanj_id: 'bt', kod: 'BRIEF', annons_namn: 'Vinnare_PD_1_H2', parent: 'Vinnare_PD_1_H1', koncept: 'PD', typ: 'I', lardom: 'L-111', datum: '2026-09-21', genomford: true },
+  ];
+  const behov = annonsbehov(rader, { logg, idag: '2026-09-21' });
+  assert.deepEqual(behov.map((b) => b.typ), ['vidarebygg', 'forsta_batch'], 'vidarebygg går före första batchen i rangen (båda rang 0, sorterade på spend)');
+  const v = behov[0];
+  assert.equal(v.kampanj_id, 'bt');
+  assert.equal(v.breakthroughs[0].iterationer, 1);
+  assert.equal(v.breakthroughs[0].kvar, 2);
+  assert.equal(v.rundaAntal, 1, 'två iterationer kvar men bara en lärdom sedan batchen ⇒ en brief');
+  assert.match(v.orsak, /Vinnare_PD_1_H1: 1 av 3 iterationer, deadline 2026-10-04/);
+  assert.match(v.orsak, /nya hookar → längre problemdel → in media res/);
+  assert.equal(v.mix.vidarebyggen, 0.8);
+  // Tre iterationer loggade ⇒ inget vidarebygg, och den vanliga 3-dagarsklockan gäller igen.
+  const tre = [...logg, ...['H3', 'H4'].map((h) => ({ kampanj_id: 'bt', kod: 'BRIEF', annons_namn: `Vinnare_PD_1_${h}`, parent: 'Vinnare_PD_1_H1', koncept: 'PD', typ: 'I', datum: '2026-09-21', genomford: true }))];
+  assert.ok(!annonsbehov(rader, { logg: tre, idag: '2026-09-21' }).some((b) => b.typ === 'vidarebygg'));
+  // En avstängd kampanj får inget vidarebygg heller.
+  const stangd = [...logg, { kampanj_id: 'bt', kod: 'STANG_AV', genomford: true, datum: '2026-09-21' }];
+  assert.ok(!annonsbehov(rader, { logg: stangd, idag: '2026-09-21' }).some((b) => b.kampanj_id === 'bt'));
 });
 
 test('frysta produkter ger inga behov alls — inte ens första batchen', () => {

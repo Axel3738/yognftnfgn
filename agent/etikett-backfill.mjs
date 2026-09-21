@@ -11,7 +11,10 @@
 // (från 2026-08-28). Fönster utan budgetuppgift ger SPEND_WINNER märkt
 // `osaker_breakthrough` — aldrig gissat uppåt.
 //
-//   node agent/etikett-backfill.mjs --konto SE|NO|alla [--torr] [--idag YYYY-MM-DD] [--cache <fil>]
+//   node agent/etikett-backfill.mjs --konto SE|NO|alla|DK|UK|spegel [--torr] [--idag YYYY-MM-DD] [--cache <fil>] [--ersatt-backfill]
+//   (DK/UK/spegel = bara CaraShell-kampanjerna i OPS-kontona, CS-KLART punkt 26;
+//    --ersatt-backfill skriver om kontots backfillade rader — användes 2026-09-21
+//    när hook rate visade sig räknad på attribuerade spelningar)
 //
 // --cache sparar Metas svar så en torrkörning och den skarpa körningen inte
 // hämtar samma sak två gånger (kontot ligger på development access, ~1 anrop/s).
@@ -20,11 +23,24 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { breakthroughFrekvens, formateraFrekvenser, formateraTabell, raknaEtiketter } from './etikett.mjs';
-import { lasLogg, skrivRad } from './logg.mjs';
+import { lasLogg, skrivRad, LOGGFIL } from './logg.mjs';
 import { breakEvenForPost, TILLATNA_KONTON } from './rond.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const TOKEN = process.env.META_ACCESS_TOKEN;
+
+/**
+ * Spegelkontona (CS-KLART punkt 26, mätt 2026-09-21): Taköverdraget och
+ * Termoskyddet speglas till CaraShell och spenderar i MagiBorsten DK
+ * (SE/NO/DK-kampanjer) och Magiborsten UK (US/GB/CA/AU/NZ). Etiketterna
+ * räknas där BARA för CaraShell-kampanjerna (filtret) — OPS-butikernas övriga
+ * kampanjer har sin egen nattvakt och sin egen budgetlogg. Budgetronden får
+ * ALDRIG dessa konton: de står inte i TILLATNA_KONTON.
+ */
+export const SPEGEL_KONTON = {
+  '915422744950975': { namn: 'MagiBorsten DK (OPS)', marknad: 'DK', filter: /CARASHELL/i },
+  '1107817401910319': { namn: 'Magiborsten UK (OPS)', marknad: 'UK', filter: /CARASHELL/i },
+};
 const API = 'https://graph.facebook.com/v21.0';
 const PAUS_MS = 1200;
 const BACKOFF_MS = [20000, 40000, 80000, 160000, 300000];
@@ -106,15 +122,19 @@ function batchIndex() {
 }
 function readdirSafe(p) { try { return readdirSync(p); } catch { return []; } }
 
-async function hamta(kontoId, idag, cacheFil) {
+async function hamta(kontoId, idag, cacheFil, { kampanjfilter = null } = {}) {
   if (cacheFil && existsSync(cacheFil)) {
     console.error(`Läser Metas svar ur ${cacheFil}`);
     return JSON.parse(readFileSync(cacheFil, 'utf8'));
   }
   const act = `act_${kontoId}`;
   console.error(`Hämtar annonslistan för ${act} …`);
-  const annonser = await alla(`${act}/ads`, { fields: 'id,name,created_time,effective_status,campaign_id,campaign{id,name,effective_status,daily_budget}' });
+  let annonser = await alla(`${act}/ads`, { fields: 'id,name,created_time,effective_status,campaign_id,campaign{id,name,effective_status,daily_budget}' });
   console.error(`  ${annonser.length} annonser i kontot`);
+  if (kampanjfilter) {
+    annonser = annonser.filter((a) => kampanjfilter.test(String(a.campaign?.name ?? '')));
+    console.error(`  ${annonser.length} i kampanjer som matchar ${kampanjfilter}`);
+  }
   console.error('Hämtar livstidsspend per annons …');
   const livstid = await alla(`${act}/insights`, { level: 'ad', date_preset: 'maximum', fields: 'ad_id,spend', limit: 500 });
   const spendLivstid = new Map(livstid.map((r) => [r.ad_id, Number(r.spend)]));
@@ -147,7 +167,8 @@ async function hamta(kontoId, idag, cacheFil) {
     const tr = { since: f.d0, until: f.d6 };
     const adRader = await alla(`${act}/insights`, {
       level: 'ad', time_range: tr, filtering: [{ field: 'campaign.id', operator: 'IN', value: [f.kampanj_id] }],
-      fields: 'ad_id,ad_name,spend,actions,purchase_roas,impressions,video_thruplay_watched_actions',
+      // inline_link_clicks + landing_page_view (i actions) för konverteringsgraden (CS-KLART punkt 1) — tillagda 2026-09-21, backfillen före det saknar dem.
+      fields: 'ad_id,ad_name,spend,actions,purchase_roas,impressions,inline_link_clicks,video_thruplay_watched_actions',
       action_attribution_windows: ['7d_click'], limit: 200,
     });
     const kRader = await alla(`${act}/insights`, {
@@ -167,8 +188,15 @@ async function hamta(kontoId, idag, cacheFil) {
           kop: val(r.actions, 'omni_purchase') ?? 0,
           roas: val(r.purchase_roas, 'omni_purchase') ?? 0,
           impressions: r.impressions !== undefined ? Number(r.impressions) : null,
-          video_3s: val(r.actions, 'video_view'),
+          // Hook rate = ALLA 3-sekundersspelningar / visningar. `video_view` bär
+          // under action_attribution_windows en 7d_click-nyckel med bara de
+          // ATTRIBUERADE spelningarna (mätt 2026-09-21 på IBC_PD_1_H1: 226 mot
+          // 23 298 i `value`) — hook rate blev 0,4 % i stället för 37 %. Därför
+          // `value`, aldrig fönstret, för video_view och landing_page_view.
+          video_3s: val(r.actions, 'video_view', 'value'),
           thruplay: r.video_thruplay_watched_actions ? Number(r.video_thruplay_watched_actions[0]?.value) : null,
+          klick: r.inline_link_clicks !== undefined ? Number(r.inline_link_clicks) : null,
+          lpv: val(r.actions, 'landing_page_view', 'value'),
         };
       }),
     });
@@ -180,7 +208,7 @@ async function hamta(kontoId, idag, cacheFil) {
 }
 
 async function korKonto(kontoId, { idag, torr, cacheFil, karta, fx, logg, batchar }) {
-  const data = await hamta(kontoId, idag, cacheFil);
+  const data = await hamta(kontoId, idag, cacheFil, { kampanjfilter: SPEGEL_KONTON[kontoId]?.filter ?? null });
   const rader = [];
   const hoppade = [];
   for (const f of data.fonster) {
@@ -195,6 +223,7 @@ async function korKonto(kontoId, { idag, torr, cacheFil, karta, fx, logg, batcha
       annonser: f.annonser.map((a) => ({
         id: a.id, namn: a.namn, d0: a.d0, spend: a.spend, kop: a.kop, roas: a.roas,
         impressions: a.impressions, video_3s: a.video_3s, thruplay: a.thruplay,
+        klick: a.klick ?? null, lpv: a.lpv ?? null,
         batch: batchar.get(a.namn) ?? null, typ: 'okänd',
       })),
     };
@@ -210,8 +239,8 @@ function rapport(resultat, idag, torr) {
   const ut = [`# Etiketter — backfill ${idag}${torr ? ' (TORRKÖRNING, inget skrivet)' : ''}`, ''];
   ut.push('Etiketten är ingen dom: `bedombar` (≥ 300 kr och ≥ 3 köp) står bredvid. **OSÄKER** = spend och KPI räckte för breakthrough men budgethistoriken saknas i fönstret (budgetloggen börjar 2026-08-28) — aldrig gissad uppåt.', '');
   for (const r of resultat) {
-    const namn = TILLATNA_KONTON[r.konto]?.namn ?? r.konto;
-    ut.push(`## ${namn} (${r.konto})`, '');
+    const namn = TILLATNA_KONTON[r.konto]?.namn ?? SPEGEL_KONTON[r.konto]?.namn ?? r.konto;
+    ut.push(`## ${namn} (${r.konto})${SPEGEL_KONTON[r.konto] ? ` — bara kampanjer som matchar ${SPEGEL_KONTON[r.konto].filter}` : ''}`, '');
     ut.push(`${r.rader.length} annonser etiketterade ur ${r.fonster} fönster. Uteslutna: ${r.uteslutna.for_unga} yngre än 7 dygn, ${r.uteslutna.aldrig_aktiva} pausade utan spend (aldrig aktiva), ${r.uteslutna.utan_datum} utan datum. Hoppade: ${r.hoppade.length}.`, '');
     const perEtikett = {};
     for (const x of r.rader) perEtikett[x.etikett] = (perEtikett[x.etikett] ?? 0) + 1;
@@ -232,13 +261,35 @@ async function main(argv) {
   const idag = flagga('--idag', new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm' }).format(new Date()));
   const kontoVal = flagga('--konto', 'alla');
   const torr = argv.includes('--torr');
-  const konton = kontoVal === 'alla' ? Object.keys(TILLATNA_KONTON) : Object.entries(TILLATNA_KONTON).filter(([, k]) => k.marknad === kontoVal.toUpperCase()).map(([id]) => id);
-  if (konton.length === 0) throw new Error(`Okänt konto "${kontoVal}" — SE, NO eller alla.`);
+  const ALLA_KONTON = { ...TILLATNA_KONTON, ...SPEGEL_KONTON };
+  const konton = kontoVal === 'alla' ? Object.keys(TILLATNA_KONTON) : kontoVal === 'spegel' ? Object.keys(SPEGEL_KONTON) : Object.entries(ALLA_KONTON).filter(([, k]) => k.marknad === kontoVal.toUpperCase()).map(([id]) => id);
+  if (konton.length === 0) throw new Error(`Okänt konto "${kontoVal}" — SE, NO, alla, eller DK, UK, spegel (CaraShell-kampanjerna i OPS-kontona).`);
   let karta = {}; let fx = null;
   try { const rå = JSON.parse(readFileSync(join(HÄR, 'produktkarta.json'), 'utf8')); for (const p of rå.kampanjer ?? []) karta[p.campaign_id] = p; fx = rå.valutakurser ?? null; } catch { karta = {}; }
-  const logg = await lasLogg();
+  let logg = await lasLogg();
   const batchar = batchIndex();
   const resultat = [];
+  // --ersatt-backfill: skriv om kontots backfillade ETIKETT-rader i stället
+  // för att hoppa över dem. Loggen är append-only för BESLUT; backfillraderna
+  // är härledd Meta-data från samma verktyg samma dag, och hook rate i den
+  // första körningen 2026-09-21 var fel (attribuerade i stället för alla
+  // 3-sekundersspelningar). Bara rader med backfill: true rörs, bara för de
+  // konton som körs, och aldrig i --torr.
+  if (argv.includes('--ersatt-backfill') && !torr) {
+    const rå = existsSync(LOGGFIL) ? readFileSync(LOGGFIL, 'utf8') : '';
+    const kvar = [];
+    let bort = 0;
+    for (const linje of rå.split('\n')) {
+      if (!linje.trim()) continue;
+      let r = null;
+      try { r = JSON.parse(linje); } catch { kvar.push(linje); continue; }
+      if (r.backfill === true && ['ETIKETT', 'ETIKETT_UPPGRADERAD'].includes(r.kod) && konton.includes(String(r.ad_account_id))) { bort += 1; continue; }
+      kvar.push(linje);
+    }
+    writeFileSync(LOGGFIL, kvar.length ? `${kvar.join('\n')}\n` : '');
+    console.error(`--ersatt-backfill: ${bort} backfillade etikettrader borttagna för ${konton.join(', ')} — skrivs om nu`);
+    logg = await lasLogg();
+  }
   for (const kontoId of konton) {
     const cacheFil = flagga('--cache', null) ? `${flagga('--cache')}-${kontoId}.json` : null;
     resultat.push(await korKonto(kontoId, { idag, torr, cacheFil, karta, fx, logg, batchar }));
