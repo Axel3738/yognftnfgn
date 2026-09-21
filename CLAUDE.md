@@ -414,6 +414,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | **Creative strategy: insikt → manus (hjärnan i video-pipelinen)** | **`docs/creative-strategy.md`** |
 | **Copy-reglerna (obligatoriska för varje rad som skrivs)** | **`docs/copy-regler.md`** |
 | **Analysmetoden (obligatorisk vid all bedömning)** | **`docs/os/ANALYSMETOD.md`** |
+| **Regi rad för rad i varje videobrief + spärren före Notion** (Axels beslut 2026-09-21: `node tools/briefgranskning.mjs --rad <brief.md>` / `--manifest <manifest.json>`, exit 1 = ingen Notion-rad) | **`docs/os/BRIEF-REGI.md`** |
 | Playbook — vinklar/hooks/format som bevisats över tid | `docs/playbook.md` |
 | Hook-regeln (visuellt) | `docs/hook-visual-rule-2026-08-04.md` |
 | Avatar-research + VoC (Reddit) | `docs/avatar-research-*.md`, `docs/voc-reddit-*.md` |
@@ -842,6 +843,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/ops-byt-bild.mjs` | Byter bilden i en annons som redan är live (ny creative, samma spec, annonsen pekas om) — utan paus, namnbyte eller nytt adset |
 | `products/prefix-alias.json` | Annonsprefix som inte går att härleda ur kontot (Notion engelska, kontot svenska) |
 | `tools/notion-till-meta.mjs` | Laddar upp EN godkänd creative i produktens CBO, med spärrar mot fel konto och mot att röra avstängt |
+| `tools/annonskommentarer.mjs` | Kommentarerna på top spendern → `products/<id>/kommentarer.md`, kluster ≥ 3 ⇒ INVAND-variant (`kalla=voc`). Läs-bara. Kräver sidtoken (hämtas ur `/<page>?fields=access_token`) — och att `META_ACCESS_TOKEN` bär `pages_read_engagement`, annars svarar Meta `(#200) Missing Permissions` |
 | `pipeline/batch.mjs`, `multi-batch.mjs`, `uk-wave.mjs`, `mastern-batch.mjs` | ⚠️ Laddar **inte** upp som PAUSED — se regeln under "Saker som är lätta att göra fel" |
 | `pipeline/waves/*.config.mjs` | Vågkonfig per marknad — `se-`, `dk-`, `no-`, `uk-` |
 | `pipeline/localize.mjs`, `heygen.mjs`, `veed.mjs`, `cover-srt.py` | Översätter färdiga videoannonser till nya språk (`docs/video-localization.md`) |

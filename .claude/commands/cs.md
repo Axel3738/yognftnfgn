@@ -84,7 +84,23 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
+  **Plus komponenttaggarna** (Axels beslut 2026-09-21, ANALYSMETOD 6b:
+  `typ=N|M|I|S · koncept · parent · iteration · kalla · avatar · awareness ·
+  begar · mekanism · urgency · hook-mekanik · confidence`, fasta listor) och
+  raden `Memo:` — en mening om varför annonsen slår nuvarande nivå. Avatarerna
+  kommer ur listan **Avatarer** i `dna.md` (max 4, med citat/butiksdata som
+  källa — saknas listan skrivs den i den här körningen). Minst 1 av 5 nya
+  koncept har `kalla=voc`.
 - Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, komplett brief enligt leveransformatet i `.claude/commands/forsta-batch.md` (engelska briefer, `Swedish (use this) | English meaning`-tabeller, naming-strukturen, upptagna AD-ID:n avlästa i kontot).
+- **Varje videobrief har regitabellen** (`docs/os/BRIEF-REGI.md`, Axels beslut
+  2026-09-21): en rad per manusrad — Time | Script line | Audio | On-screen
+  text | Picture | Effect + length | Source | Reference | Latitude — plus
+  raderna Assets, Reference ads och Editor latitude (MAY / MUST NOT). Källan
+  är alltid ett av fem format; `OUR AD` utan mm:ss är ett fel (hämta videon,
+  `tools/qa-frames.py`, läs av). Regin skrivs av huvudsessionen. **Spärren
+  körs på varje egen brief INNAN Notion-raden skapas:**
+  `node tools/briefgranskning.mjs --rad <brief.md> --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>`
+  (eller `--manifest <manifest.json>`) — exit 1 ⇒ rätta, skapa ingen rad.
 - **Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig butikens namn** — inte "Bäverbutiken" i copy, bild, voiceover eller som domän. Färdiga annonser speglas till OPS-butikerna (`/ops-spegla`: Taköverdraget och Termoskyddet → CaraShell), och en creative som säger vilken butik den är stoppas där. Produkten, priset och länken bär butiken.
 
 ### 4. Modellpolicy (obligatorisk)
@@ -95,7 +111,8 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - Rapport: kort feedbackloop-sammanfattning (vad lärde vi oss), sedan batchen.
 - Zip-paketera brieferna (video + image) som i forsta-batch-kommandot.
 - Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
-- Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`).
+- Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`) — och kolumnerna **rev** (antal läsningar i `In progress 2`, `okänd` tills raden lästs) och **brief → live (dagar)** (Notion `Skapad` → Metas `created_time`), så regitabellens effekt går att mäta (BRIEF-REGI.md → "Mät från dag 1").
+- **Kommentarerna på top spendern:** `node tools/annonskommentarer.mjs --konto SE --kampanj <id>` skriver `products/<id>/kommentarer.md` (senaste 30 d, kluster per tema). Ett kluster med ≥ 3 kommentarer om samma invändning ⇒ en INVAND-variant i batchen (`kalla=voc`).
 - Committa och pusha alla ändringar i `products/`.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
@@ -112,4 +129,6 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Batchstorlek ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover skriven av sonnet/haiku-subagent, strategi av huvudmodellen
 - [ ] Briefer på engelska, naming korrekt, zip-paketerade
+- [ ] Varje videobrief: regitabell enligt `docs/os/BRIEF-REGI.md`; varje brief: komponenttaggar + `Memo:`; `node tools/briefgranskning.mjs --rad/--manifest` grön INNAN Notion-raderna skapades (utskriften visad)
+- [ ] `kommentarer.md` uppdaterad för top spendern; kluster ≥ 3 ⇒ INVAND-variant i batchen
 - [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade

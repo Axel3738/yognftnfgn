@@ -212,6 +212,38 @@ i stället för anekdoter per annons.
 | Textmängd (bild) | ingen · ≤5 ord · rubrik+underrubrik · lång listicle |
 | Talare | ingen · creator kvinna · creator man · röst utan ansikte |
 
+**Komponenttaggarna** (Axels beslut 2026-09-21 ur Evolve-materialet,
+`docs/ecomtalent/SKALNINGSKUNGEN-FORSLAG.md` §2.12) — samma rad i briefen,
+bakåtkompatibla, med **fasta värdelistor** så vinstbidraget går att gruppera
+per tagg. Listorna är facit i `tools/briefgranskning.mjs` (`KOMPONENT_VARDEN`);
+ett värde utanför listan är en anmärkning, aldrig ett påhitt i en brief:
+
+| Tagg | Värden | Vad den svarar på |
+|---|---|---|
+| `typ` | `N` nytt koncept · `M` messaging (samma video, ny hook/text) · `I` iteration på en förälder · `S` statisk validering | vilken sorts test det är — Evolve räknar iterationer per koncept |
+| `koncept` | fritext, samma namn för alla iterationer av samma idé | så iterationerna kan räknas per KONCEPT, inte bara per förälder |
+| `parent` / `iteration` | annonsnamn / löpnummer | typ I och M kräver `parent`; typ N har ingen |
+| `kalla` | `axel` · `rutin` · `swipe` · `voc` · `feedback` · `backlog` · `playbook` · `winning-line` · `egen-data` · `parent` | var idén kommer ifrån — **minst 1 av 5 nya koncept per rond har `voc`** |
+| `avatar` | slug ur listan **Avatarer** i `products/<id>/dna.md` (max 4 per produkt, var och en med citat eller butiksdata som källa) | vem annonsen pratar med |
+| `awareness` | `unaware` · `problem` · `solution` · `product` · `promo` | var i medvetandetrappan hooken börjar |
+| `begar` | `skydda-det-jag-ager` · `spara-pengar` · `spara-tid` · `slippa-krangel` · `trygghet` · `status` · `njutning` · `halsa` · `kontroll` · `tillhorighet` | vilket begär annonsen kanaliserar (begär skapas inte, det kanaliseras) |
+| `mekanism` | fritext, en mening | hur annonsen får begäret att landa på produkten |
+| `urgency` | `sasong` · `lager` · `pris` · `konsekvens` · `ingen` | varför nu — aldrig påhittad |
+| `hook-mekanik` | `none` · `reverse` · `slow-mo` · `slider` · `zoom-in` · `cut-in` · `freeze` | den visuella hookens mekanik — två H-varianter på samma koncept har olika |
+| `confidence` | `high` · `medium` · `low` + datareferens i Memo | hur säker skrivaren är, och på vad |
+
+Varje brief slutar huvudet med en rad **`Memo:`** — en mening om varför den
+slår nuvarande nivå (Evolves breakthrough memo). Vid varje `/cs` grupperas
+vinstbidraget även per komponenttagg. **När en annons får etiketten
+BREAKTHROUGH** skrivs blocket `## Komponentkarta <namn>` i `dna.md`: HOOK /
+BRIDGE / HOLD / CTA med exakt rad, valens, awareness, avatar och **bärande
+komponent = hypotes** — det är den iterationerna byggs på.
+
+**`utford_som_briefad`:** vid etiketten (dag 7) läses den LIVE creativen
+(primärtext, rubrik, första frame) mot briefen. `nej` ⇒ utfallet räknas inte in
+i variabeltabellen — motorhöljets copy-lärdomar i augusti byggde på text som
+aldrig kört (`products/motorholjet/dna.md`). `okänd` när ingen läst.
+
 Leverera denna tabell — det är den som styr nästa batch:
 
 | Variabelvärde | Antal annonser | Total spend | **Vinstbidrag** | Slutsats |

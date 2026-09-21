@@ -339,8 +339,19 @@ väg som användes (Agent fanns / API).
 ### Steg 7 — Briefer och Notion
 En mapp per annons: `products/<butik>/batch-NN/<video|image>-ads-briefs/<namn>/brief.md`
 på engelska enligt `.claude/commands/forsta-batch.md` (VARIABELTAGGAR-rad
-överst, hypotes, kept/changed, script-tabell, shot list, COPY CARD, hard
-rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI).
+överst — de åtta variablerna **plus komponenttaggarna** `typ · koncept ·
+parent · iteration · kalla · avatar · awareness · begar · mekanism · urgency ·
+hook-mekanik · confidence` med fasta listor (ANALYSMETOD 6b) och raden
+`Memo:` — hypotes, kept/changed, script-tabell, **regitabellen för video**
+(`docs/os/BRIEF-REGI.md`: en rad per manusrad, Source i ett av fem format,
+Assets / Reference ads / Editor latitude), COPY CARD, hard rules med rätt
+pris ur `factory/produkter/<id>.yaml`, KPI). Regin skrivs av huvudsessionen.
+**Spärren INNAN uppladdningen:**
+```
+node tools/briefgranskning.mjs --manifest products/<butik>/batch-NN/manifest.json --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>
+```
+Exit 1 ⇒ rätta briefen och kör om; ladda aldrig upp en stoppad brief. Visa
+utskriften i rapporten (regi x/y per video).
 **Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig
 butikens namn** — inte i copyn, inte i bild, inte i voiceover, inte som
 domän. Annonser speglas mellan butiker (`/ops-spegla`), och en creative
@@ -389,6 +400,7 @@ varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
 - [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning / **INGA om ronden är pausad** — då står skälet under varningar och budgetronden har ändå gått), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
+- [ ] *(briefdag)* Komponenttaggar + `Memo:` i varje brief, regitabell i varje videobrief; `briefgranskning.mjs --manifest` grön före uppladdning (utskriften i rapporten)
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED
 - [ ] `kord` (+ `brief-kord`, `log`) stämplade; commit + push till `main`

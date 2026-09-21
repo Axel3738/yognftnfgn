@@ -1,5 +1,31 @@
 # Förslag: Evolve-materialet → Skalnings kungen
 
+**2026-09-21 förmiddag: etiketterna backfillade + 2.9 och 2.12 byggda (Axels
+två rättelser).** (1) `agent/etikett-backfill.mjs` (agent-grenen) etiketterade
+hela bakkatalogen ur Meta: **1 682 SE-annonser i 151 fönster (10 BREAKTHROUGH,
+70 SPEND_WINNER, 170 KPI_WINNER, 869 LOSER, 563 INGEN_LEVERANS, 134
+bedömbara) och 664 NO-annonser (8 BREAKTHROUGH, 42 bedömbara)** — rapport
+`agent/utdata/etiketter-backfill-2026-09-21.md`. Var backfillen inte räcker:
+BREAKTHROUGH kräver budgethöjning i annonsens första vecka, och den historiken
+finns bara i budgetloggen (från 2026-08-28, och bara för kampanjer ronden
+loggat) — 3 SE + 2 NO annonser som annars uppfyllde kravet står som
+SPEND_WINNER med `osaker_breakthrough: true`, aldrig gissade uppåt.
+(2) **2.9 regi rad för rad:** mallen `docs/os/BRIEF-REGI.md`, tolk + spärr i
+`tools/briefgranskning.mjs` (`granskaRegi`, FEL `regi` från 2026-09-21, äldre
+briefer bara anmärkning), spärrläget `--rad <brief.md>` / `--manifest
+<manifest.json>` (exit 1 = ingen Notion-rad) inskrivet i rond-auto 4b,
+`/cs`, `/forsta-batch`, `/notionscalercs`; mätningen rev + brief→live i
+batch-log. (3) **2.12 komponenttaggar:** `typ · koncept · parent · iteration
+· kalla · avatar · awareness · begar · mekanism · urgency · hook-mekanik ·
+confidence` med fasta listor (`KOMPONENT_VARDEN`) + `Memo:`, i ANALYSMETOD 6b
+och kommandofilerna; `utford_som_briefad` på ETIKETT-raden;
+`## Komponentkarta` i dna.md vid BREAKTHROUGH; `tools/annonskommentarer.mjs`
+(sidtoken ur `/<page>?fields=access_token` — användartoken ger 190/2069032)
+→ `products/<id>/kommentarer.md`, kluster ≥ 3 ⇒ INVAND-variant. Avatarlistorna
+per produkt är INTE skrivna (kräver produktkunskap per produkt — görs av
+nästa `/cs`/`/forsta-batch` på varje produkt, aldrig gissade här). 2.5
+(vidarebygg-rundan) är nästa, nu när etiketterna finns.
+
 **2026-09-20 kväll. STATUS: fyra av tolv byggda på Axels order ("Bygg").**
 Axels beslut samma dag, efter en andra bedömning av förslaget: tolv punkter
 var ett program — ta fyra, kör dem, mät. Byggt, i den ordning han bad om:
