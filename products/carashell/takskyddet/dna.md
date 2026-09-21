@@ -794,3 +794,25 @@ Ett verktyg med `--json` skriver då en TOM fil.
 norska Facebook-sida inte längre nås av token. Kontrollerat här: token når 12 sidor
 och CaraShells `1381171778405935` är en av dem. Blockeringen är verklig men rör inte
 OPS — mätt, inte antaget.
+
+---
+
+## 2026-09-22 — mönster 12 stärkt: GT dör även med volym
+
+Nattvakten pausade **`CaraShellRoof_GT_105_H1`** som dödvikt: **1 343 kr spend,
+0 köp** på 14 dygn (över 3 × target-CPA 411 kr). Det är en **speglad** annons
+från Bäverbutikens hub, alltså inte ett eget CaraShell-koncept.
+
+Varför det betyder något: mönster 12 (2026-09-16) sa att presentvinkeln aldrig
+fått en rättvis chans — 611 kr över fem annonser, alla svältande i CBO:n. Den
+invändningen håller inte längre. `GT_105_H1` fick **1 343 kr helt själv**, mer
+än hela vinkeln fått dessförinnan, och gav noll köp. Tillsammans med `GT_4_1`
+(338 kr, 0 köp) är GT nu nära **2 000 kr och 0 köp** hos CaraShell, medan
+källans `Takoverdrag_GT_2_H1` bär 24 köp.
+
+→ **Instruktionen står kvar men skärps:** briefa inte fler GT-varianter på
+gissning. Den enda kvarvarande frågan är om källans egen creative replikerar
+rakt av, och den testas bäst genom att spegla just `Takoverdrag_GT_2_H1` —
+inte genom nya presentkoncept. Backloggens post om eget test-ABO gäller
+fortfarande, men priset för att låta bli har sjunkit: vinkeln kostar pengar
+varje gång den får volym.

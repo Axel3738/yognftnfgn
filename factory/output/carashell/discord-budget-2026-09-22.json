@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-22",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: main campaign raised 8 000 → 9 600 kr/day. The new 10 000 kr ceiling is in the rules, so the night watch can scale this campaign again — first raise since it got stuck on Sunday. 3-day profit 34.0 %, ROAS 3.65. Read back and logged",
+    "The LISTICLE campaign holds at 2 850 kr: 3-day profit 23.1 % is in the 16–25 % hold band. Its ROAS eased from 4.53 to 2.62 as the budget climbed, which is what the hold band is for",
+    "Paused one ad: CaraShellRoof_GT_105_H1 — 1 343 kr spent, zero purchases in 14 days. That is a mirrored ad from the Bäverbutiken hub, and it is the second gift-angle ad to die here",
+    "65 purchases over 7 days at ROAS 3.42. Profit contribution 30 273 kr across judgeable ads — up from 19 215 kr two nights ago"
+  ],
+  "siffror": { "spend_7d": 35361, "kop_7d": 85, "roas_7d": 3.21, "vinstbidrag_7d": 30273 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-23",
+  "varningar": [
+    "The gift angle (GT) is now close to 2 000 kr and zero purchases in this store, across two ads that each got real budget. In the source account the same angle carries 24 purchases. Written up in the product DNA: do not brief more gift variants on a hunch — if anything, mirror the source creative itself and let that settle it",
+    "Briefs stay paused by owner decision from 18 September: CaraShell is briefed in the Bäverbutiken teamspace and mirrored across"
+  ]
+}
