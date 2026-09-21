@@ -371,7 +371,18 @@ def lagg_pa_text(spec):
                           fill=stil["farg"], anchor="ma")
         else:
             x = MARGINAL if zon.startswith("vanster") else bredd // 2 + MARGINAL // 2
-            y = int(hojd * (0.46 if zon.endswith("mitt") else 0.775))
+            # Sidozonerna ligger på fasta höjder, och de räcker inte alltid till:
+            # en delad bild med lång rubrik OCH prisband klämmer etiketten mellan
+            # två block som växer mot varandra, olika mycket i 4:5 och 1:1.
+            # "y_andel" (0–1 av höjden) låter spec:en peka ut en egen höjd för
+            # just det blocket. Utan fältet är läget exakt som förut.
+            # (Mätt 2026-09-21: Termoskydd_PD_12_1 och Beltgrinder_JF_1_1 fick
+            # sina panelEtiketter ovanpå prisbandet i 1:1 och ovanpå underraden
+            # i 4:5 — ingen av de två fasta höjderna var fri i båda formaten.)
+            andel = b.get("y_andel")
+            if andel is None:
+                andel = 0.46 if zon.endswith("mitt") else 0.775
+            y = int(hojd * float(andel))
             if b["stil"] == "etikett":
                 rita_etikett(bild, rita, b["text"], font, x, y)
             elif b["stil"] == "badge":
