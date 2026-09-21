@@ -291,9 +291,14 @@ Första gången: öppna `/kom-igang` och skapa ägarkontot. Sidan stänger sig s
 när kontot finns; alla andra konton läggs till inne på sidan Konton — och då
 skapas personen i bonusregistret samtidigt, annars finns ingen att betala till.
 
-**Lägg upp sajten:** `stonebite/COWORK-PROMPT.md` är den färdiga prompten Axel
-klistrar in i Cowork (Railway + volym + DNS för stonebite.org), plus listan på
-det jag behöver veta om verksamheten.
+**Lägg upp sajten:** `stonebite/COWORK-PROMPT.md` är kartan; själva prompterna
+är två, en per flik och i ordning — `stonebite/cowork/1-railway.txt` (tjänst,
+miljövariabler, volym, lämnar tillbaka DNS-värdena) och
+`stonebite/cowork/2-dns.txt` (letar upp DNS-leverantören via Google Workspace
+admin, lägger in posterna). Mejlen på stonebite.org ligger i Google Workspace,
+så DNS-prompten förbjuder uttryckligen ändringar av MX, SPF, DKIM och
+verifieringsposter. Samma fil bär listan på det jag behöver veta om
+verksamheten.
 
 ---
 

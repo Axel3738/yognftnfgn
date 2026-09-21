@@ -1,76 +1,28 @@
-# Cowork-prompten: lägg upp sajten och koppla stonebite.org
+# Cowork-prompterna: lägg upp sajten och koppla stonebite.org
 
-Så här gör du, Axel:
+Två prompter, en per flik, i den här ordningen. Den andra behöver värden som
+den första ger dig, så kör dem inte samtidigt.
 
-1. Öppna Cowork.
-2. Kopiera **hela texten mellan de två streckade linjerna** nedan.
-3. Klistra in den i Cowork och skicka.
-4. Cowork frågar dig om inloggningar längs vägen — svara när den frågar.
+| # | Flik | Fil | Vad den gör |
+|---|---|---|---|
+| 1 | Railway | `cowork/1-railway.txt` | Skapar tjänsten, miljövariablerna, volymen. Lämnar tillbaka DNS-värdena |
+| 2 | Google Workspace / domänen | `cowork/2-dns.txt` | Letar upp var DNS ligger, lägger in posterna, rör aldrig mejlen |
 
-Det tar ungefär tjugo minuter. När den är klar svarar `https://stonebite.org`.
+Råfilerna att kopiera (öppna, Ctrl+A, Ctrl+C):
 
-⚠️ Två saker du behöver ha framme: inloggningen till **Railway** (eller det
-hostingkonto du vill använda) och inloggningen till **domänleverantören där
-stonebite.org ligger** (kolla om det är Loopia — det är där mejlen ligger).
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/optimistic-noether-x1vnq8/stonebite/cowork/1-railway.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/optimistic-noether-x1vnq8/stonebite/cowork/2-dns.txt
 
----
+**Mellan de två:** prompt 1 slutar med att Cowork skriver ut exakt vilka
+DNS-poster Railway vill ha. Kopiera de raderna och klistra in dem i prompt 2
+där det står `<<< KLISTRA IN RAILWAYS RADER HÄR >>>`. Utan dem gissar Cowork,
+och en gissad DNS-post kan slå ut mejlen.
 
-Jag vill lägga upp en webbplats och koppla min domän stonebite.org till den.
-Koden ligger i mitt GitHub-repo **Axel3738/yognftnfgn**, i mappen `stonebite/`.
-Det är en vanlig Node-app utan byggsteg och utan npm-beroenden. Gör så här och
-fråga mig om inloggningar när du behöver dem.
+Hela sjoket tar ungefär tjugo minuter, plus väntan på DNS.
 
-**Steg 1 — skapa tjänsten.**
-Gå till railway.app, logga in med mitt konto, och skapa ett nytt projekt från
-GitHub-repot Axel3738/yognftnfgn, branch `main`. Railway hittar `npm start`
-själv (det startar `node stonebite/server.mjs`). Om Railway frågar efter ett
-startkommando: skriv `npm start`. Node-version 20 eller senare.
-
-**Steg 2 — miljövariabler.**
-Lägg in de här variablerna på tjänsten (Variables):
-
-- `STONEBITE_HEMLIGHET` — slumpa en lång sträng, minst 40 tecken, och spara den
-  åt mig. Den signerar inloggningskakorna. Byts den loggas alla ut.
-- `STONEBITE_DATA` — sätt till `/data`
-- `STONEBITE_ANVANDARE` — sätt till `/data/anvandare.json`
-
-**Steg 3 — en disk som överlever en ny version.**
-Lägg till en Volume på tjänsten och montera den på `/data`. Det här steget är
-viktigt: utan den försvinner alla inloggningar och alla inrapporterade
-bonusinsatser varje gång en ny version läggs upp.
-
-**Steg 4 — domänen.**
-I Railway: Settings → Networking → Custom Domain. Lägg till `stonebite.org`
-och `www.stonebite.org`. Railway ger dig ett CNAME-värde per domän.
-
-Logga sedan in hos företaget där stonebite.org är registrerad (titta efter
-Loopia först — mina mejl ligger där) och lägg in posterna Railway bad om:
-
-- `www` → CNAME till värdet Railway gav
-- rotdomänen `stonebite.org` → ALIAS/ANAME till Railway-värdet. Går inte det
-  hos leverantören, använd deras vidarebefordran från `stonebite.org` till
-  `www.stonebite.org` i stället.
-
-⚠️ **Rör inte MX-posterna.** Där går mejlen. Ändra bara CNAME/ALIAS för webben.
-
-**Steg 5 — kontrollera att det funkar.**
-Vänta tills DNS slagit igenom (oftast tio minuter, ibland en timme) och kolla
-sedan tre saker, en i taget, och berätta resultatet för mig:
-
-1. `https://stonebite.org` visar en vit sida med rubriken "Vi bygger butiker
-   som säljer." och ett hänglås i adressfältet.
-2. `https://stonebite.org/halsa` svarar med en rad JSON som börjar
-   `{"ok":true`.
-3. `https://stonebite.org/kom-igang` visar ett formulär som heter
-   "Skapa ägarkontot".
-
-**Steg 6 — mitt konto.**
-Öppna `https://stonebite.org/kom-igang` och säg till mig. Jag fyller i mitt
-namn, min e-post och ett lösenord själv — skriv inte in några uppgifter åt mig
-där. När jag är klar försvinner den sidan av sig själv.
-
-Rapportera till sist: adressen till tjänsten, vilken hemlighet du satte,
-och om något av de tre kontrollstegen inte gick igenom.
+⚠️ Mejlen på stonebite.org ligger i Google Workspace. Prompt 2 säger uttryckligen
+åt Cowork att inte röra MX, SPF, DKIM eller verifieringsposterna — ta inte bort
+den delen ur texten.
 
 ---
 
@@ -83,6 +35,10 @@ Skriv till mig (Claude) så gör jag två saker:
    timme, committar och pushar — då uppdaterar Railway sig själv.
 2. **Kontona till teamet.** Du lägger till dem själv under **Konton** på
    sajten, men jag kan förbereda listan om du skickar namn, e-post och roll.
+
+Ditt eget konto skapar du på `https://stonebite.org/kom-igang` — den sidan
+stänger sig själv i samma sekund som kontot finns. Båda prompterna är skrivna
+så att Cowork inte fyller i det formuläret åt dig.
 
 ## Det jag behöver veta om verksamheten
 
