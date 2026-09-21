@@ -393,3 +393,70 @@ för att se om utfallet är produktens eller metodens.
 **Läget mot de 27 punkterna efter bygge 2:** 6 gröna (15, 22, 23, 25, 26 och
 nu **1**, view-through mätt och koden verifierad), 21 halvvägs, 0 saknas.
 Punkt 2 är halvvägs med ett tak: den kan aldrig bli grön för bakkatalogen.
+
+### 2026-09-21 — bygge 3: produktunderlaget, brieftaket och iterationstaket
+
+**Mätningen av produktvalet — OBESVARAD, inte negativ.**
+Jag hämtade landningssidan ur annonserna för varje svensk kampanj med
+etiketter, och läste produktsidans publika `.json`. 68 av 82 sidor gick att
+läsa: 31 produkter som dog i test, 37 som lever.
+
+| | Döda | Levande |
+|---|---|---|
+| Ord i beskrivningen (median) | 126 | 127 |
+| Bilder (median) | 5 | 5 |
+| Varianter (median) | 2 | 2 |
+| Har mått | 39 % | 24 % |
+| Har material | 29 % | 43 % |
+| **Har mekanism** | **0 %** | **0 %** |
+| Har use case | 6 % | 14 % |
+
+Sidorna går inte att skilja åt. Den enda skenbara signalen — sidor över 150
+ord har 25 % dödlighet mot basens 46 % — är 4 döda av 16, och sannolikheten
+att få det utfallet av ren slump är 7,4 %. Den håller inte. Pris förklarar
+ingenting: dödligheten ligger 38–53 % i alla prisband.
+
+⚠️ **Axels invändning 2026-09-21, och den är riktig:** produktsidorna skriver
+vi själva EFTER produktvalet. Mätningen visar alltså att **underlaget aldrig
+fanns**, inte att underlaget saknar värde. Frågan "hade en checklista kunnat
+välja bort de 40?" är därmed **obesvarad**. Den kan bara besvaras framåt, av
+produkter där underlaget faktiskt skrevs före första batchen.
+
+Det mätningen däremot slår fast: **noll av 68 produktsidor förklarar varför
+produkten fungerar.** Mekanismen saknas på vinnarna också. Det är inte ett
+urvalsproblem utan ett underlagsproblem som drabbar varje brief vi skriver.
+
+**Byggt på `main`:** `tools/produktunderlag.mjs` (+ 8 tester i
+`tools/test/produktunderlag.test.mjs`). `--skapa <id> --sida <url>` läser
+produktsidan och skriver `products/<id>/produkt.md` + `products/<id>/avatar.md`
+med Evolves fält; det som går att läsa maskinellt fylls i, resten märks
+`[FYLL I]`. `--granska <id>` dömer: **mekanismen är exit 1**, alla andra fält
+är anmärkningar med exit 0. Grinden står i `/ny-produkt` steg 1 och
+`/forsta-batch` FAS −1, med rad i bådas Definition of done.
+
+Filerna är produktens STABILA minne. `dna.md` är prestandaminnet och skrivs om
+vid varje `/cs` — därför får produktfakta aldrig bo där.
+
+Provkört mot Taköverdragets riktiga produktsida: verktyget fyllde i pris,
+jämförpris, rabatt, bildantal, mått, material och nio varianter av sig självt,
+och stoppade på mekanismen som väntat.
+
+**Brieftaket: namngivna varianter är gratis** (Axels beslut samma dag).
+`brieftak()` i `agent/lardom.mjs` returnerar sedan nu även `namngivna` och
+`tak_totalt`. Varje lärdom MÅSTE redan sluta med namngivna nästa annonser —
+det är spärren i `validera()` — så namnet bär redan tanken. En hook-swap eller
+en 20 %-uppsnabbning som lärdomen föreskrivit konkurrerar inte om kvoten.
+`namnUrNasta()` plockar annonsnamnet och **ignorerar SLÄPP-rader**, som ofta
+namnger annonsen de släpper. Mätt mot riktig logg: Taköverdragets enda lärdom
+ger 1 fri plats + 3 namngivna = tak 4.
+
+**Iterationstaket: trean står kvar men är utskriven som ett val.**
+`TAK_ITERATIONER = 3` följer Shaun ("three strikes and release"); Spencer
+säger att man nästan alltid kan göra mer. Kommentaren i koden säger nu rakt
+ut att det är ett val, att ett fjärde varv får köras med skriven motivering i
+lärdomen, och att Spencers hållning ALDRIG kodas in som en andra regel
+parallellt — två motstridiga regler i samma motor är ingen regel alls.
+
+⚠️ **Fyra tester är röda på `main` sedan tidigare** (`kassabild.py` ×1,
+`sparning` ×3). De faller likadant på en ren `origin/main`-worktree, alltså
+före mina ändringar. De är inte mina och är inte rättade här.

@@ -446,6 +446,14 @@ sedan 2026-09-21 för konverteringsgraden i lärdomen.
    Ingen brief-runda får fler briefer än lärdomar skrivna sedan förra batchen
    (`brieftak` i `agent/lardom.mjs`, punkt 8) — skriv lärdomarna FÖRE
    briefsteget 4b, annars är rundan 0.
+   **Undantag: annonser som en lärdom uttryckligen namngett under "Nästa
+   annonser" är GRATIS mot taket** (Axels beslut 2026-09-21). `brieftak`
+   returnerar `namngivna` och `tak_totalt`, och rundan mäts mot `tak_totalt`.
+   Skälet: varje lärdom måste redan sluta med namngivna nästa annonser, så
+   namnet bär redan tanken. Taket finns för att stoppa produktion UTAN tanke
+   bakom — en hook-swap eller en 20 %-uppsnabbning som lärdomen föreskrivit
+   ska inte konkurrera om kvoten med ett helt nytt koncept. En `SLÄPP`-rad ger
+   aldrig en fri plats, även när den namnger annonsen den släpper.
 
    **Turordningen (Axels beslut 2026-09-21, i stället för ett briefgolv):**
    `--skelett` sorterar sedan dess kön själv — **kampanjer med en levande

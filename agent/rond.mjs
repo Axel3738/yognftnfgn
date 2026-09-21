@@ -505,7 +505,7 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       const m = mix(logg, r.id, { idag });
       behov.push({
         kampanj_id: r.id, namn: r.namn, typ: 'vidarebygg',
-        breakthroughs: vidare, rundaAntal: Math.min(vidare.reduce((s, v) => s + v.kvar, 0), Math.max(tak.tak, 0)), brieftak: tak, mix: m,
+        breakthroughs: vidare, rundaAntal: Math.min(vidare.reduce((s, v) => s + v.kvar, 0), Math.max(tak.tak_totalt ?? tak.tak, 0)), brieftak: tak, mix: m,
         orsak: `${vidare.map((v) => `${v.annons_namn}: ${v.iterationer} av 3 iterationer, deadline ${v.deadline}${v.forsent ? ' (FÖRSENAD)' : ''}${v.har_lardom ? '' : ' — lärdomen saknas, skriv den först'}`).join('; ')}. Börja i manuslistan: nya hookar → längre problemdel → in media res. Aldrig en ren kopia.${tak.tak === 0 ? ` Brieftak 0 — ${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom: skriv lärdomarna först (node agent/lardom.mjs --skelett --kampanj ${r.id}).` : ''}`,
       });
       continue;
@@ -518,7 +518,9 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       // Punkt 8: antalet briefer överstiger aldrig antalet lärdomar vi hunnit
       // skriva sedan förra batchen. Budgeten sätter bara ett övre golv.
       const tak = brieftak(logg, r.id, { idag });
-      const rundaAntal = Math.min(budgetAntal, tak.tak);
+      // Taket + de annonser en lärdom uttryckligen namngett (Axel 2026-09-21):
+      // en variant som lärdomen bett om konkurrerar inte om kvoten.
+      const rundaAntal = Math.min(budgetAntal, tak.tak_totalt ?? tak.tak);
       const m = mix(logg, r.id, { idag });
       let fokus = '';
       if (pausat) fokus = ' Fokus: ersätt det som pausats i trappan.';
@@ -528,7 +530,7 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
         dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m,
         orsak: rundaAntal === 0
           ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}`
-          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}`,
+          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}`,
       });
       continue;
     }

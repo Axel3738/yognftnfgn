@@ -56,7 +56,24 @@ export const LEVANDE_DAGAR = 28;
 /** Punkt 9: tre iterationer inom 14 dagar. */
 export const VIDAREBYGG_DAGAR = 14;
 export const VIDAREBYGG_ITERATIONER = 3;
-/** Punkt 18: taket — tre iterationer med lärdom, sedan släpp om forskningen är svag. */
+/**
+ * Punkt 18: taket — tre iterationer med lärdom, sedan släpp om forskningen är svag.
+ *
+ * ⚠️ **Trean är ett VAL, inte en naturlag** (Axels beslut 2026-09-21). Två
+ * röster i källmaterialet säger emot varandra: Shaun säger "three strikes and
+ * release", Spencer säger att man nästan alltid kan göra mer på ett koncept
+ * som bär. Vi följer Shaun som utgångsläge eftersom en siffra går att köra
+ * utan att någon bedömer varje gång — men bara som utgångsläge.
+ *
+ * **Den som vill köra ett fjärde varv får göra det, med skriven motivering i
+ * lärdomen.** Motiveringen ska säga vad som talar för att konceptet inte är
+ * uttömt: att forskningen bakom är stark, att iterationerna rört sig uppåt,
+ * eller att den senaste ändringen aldrig fick spend. Ingen motivering ⇒ släpp.
+ *
+ * Koda ALDRIG in Spencers hållning som en andra regel parallellt med den här.
+ * Två motstridiga regler i samma motor betyder att den som läser koden får
+ * välja själv, och då är det ingen regel alls.
+ */
 export const TAK_ITERATIONER = 3;
 /** Punkt 7: mixen. */
 export const MIX = Object.freeze({ medBreakthrough: { vidarebyggen: 0.8, nya: 0.2 }, utanVinnare: { vidarebyggen: 0.2, nya: 0.8 } });
@@ -261,11 +278,51 @@ function senasteKlar(logg, kampanjId) {
  * antalet lärdomar skrivna sedan förra batchen (inklusive i dag). Inga nya
  * lärdomar ⇒ 0 briefer, och orsaken säger hur många etiketterade som väntar.
  */
+/**
+ * Annonsnamnet ur en rad i en lärdoms "Nästa annonser" — första backtickade
+ * ordet. Raden ser ut så här: "`Takoverdrag_OB_2_H1` — typ N, …". Ren.
+ * `SLÄPP`-rader bär inget namn och ger null.
+ */
+export function namnUrNasta(rad) {
+  const t = String(rad ?? '');
+  // En SLÄPP-rad NAMNGER ofta annonsen den släpper ("SLÄPP `IBC_SP_2_1` — …").
+  // Den ska aldrig ge en fri briefplats — den säger motsatsen.
+  if (/\bSL[ÄA]PP\b/i.test(t)) return null;
+  const m = t.match(/`([A-Za-zÅÄÖåäö0-9][A-Za-zÅÄÖåäö0-9_-]*_[A-Za-z]+_\d+[A-Za-z0-9_]*)`/);
+  return m ? m[1] : null;
+}
+
+/**
+ * Brieftaket (punkt 8) och de annonser som ligger UTANFÖR det.
+ *
+ * `tak` = antal lärdomar skrivna sedan förra batchen. Det är kvoten för
+ * briefer som ingen lärdom bett om.
+ *
+ * `namngivna` = annonser som en lärdom uttryckligen listat under "Nästa
+ * annonser" och som ännu inte fått en BRIEF-rad. **De är gratis mot taket**
+ * (Axels beslut 2026-09-21). Skälet: varje lärdom MÅSTE redan sluta med
+ * namngivna nästa annonser — det är spärren i `validera()`. Namnet är alltså
+ * redan ett tänkt beslut, och en hook-swap eller en 20 %-uppsnabbning som
+ * lärdomen föreskrivit ska inte behöva konkurrera om kvoten med ett helt nytt
+ * koncept. Taket finns för att stoppa produktion UTAN tanke bakom, inte
+ * produktion som en lärdom bett om.
+ *
+ * `tak_totalt` = summan, och det är den rondens `rundaAntal` ska mätas mot.
+ */
 export function brieftak(logg, kampanjId, { idag = null } = {}) {
   const sedan = senasteKlar(logg, kampanjId);
   const nya = logg.filter((r) => r.kod === LARDOM_KOD && String(r.kampanj_id) === String(kampanjId) && (!sedan || String(r.datum) >= sedan) && (!idag || String(r.datum) <= String(idag)));
   const vantar = oskrivna(logg, { kampanjId }).length;
-  return { tak: nya.length, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
+  const redanBriefade = new Set(briefer(logg, kampanjId).map((r) => String(r.annons_namn ?? '').toLowerCase()));
+  const namngivna = [];
+  for (const r of nya) {
+    for (const rad of r.nasta ?? []) {
+      const n = namnUrNasta(rad);
+      if (!n || redanBriefade.has(n.toLowerCase()) || namngivna.includes(n)) continue;
+      namngivna.push(n);
+    }
+  }
+  return { tak: nya.length, tak_totalt: nya.length + namngivna.length, namngivna, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
 }
 
 /** Levande breakthroughs (punkt 7, 9): etikett BREAKTHROUGH inom LEVANDE_DAGAR, inte pausad som tjuv. */

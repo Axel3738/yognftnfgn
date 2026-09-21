@@ -5,8 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   lardomId, KOMPONENTER, taggarUrBrief, komponentVarde, normaliseraTaggar, oskrivna, brieftak, mix, MIX, levandeBreakthroughs,
-  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR, narmasteMinnesmapp,
-} from '../lardom.mjs';
+  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR, narmasteMinnesmapp, namnUrNasta,} from '../lardom.mjs';
 
 const ETIK = (over = {}) => ({
   datum: '2026-09-21', kampanj_id: 'K1', kampanj_namn: 'IBC-Tanköverdraget | BE ROAS 1.89', ad_account_id: '1867947880635861', kod: 'ETIKETT',
@@ -147,7 +146,7 @@ test('lardomRad: bär id, utfall, avvikelser, hypotes, nästa — aldrig ny_budg
 
 test('brieftak (punkt 8): briefer ≤ lärdomar skrivna sedan förra batchen; noll lärdomar ⇒ tak 0 med antalet som väntar', () => {
   const logg = [ETIK(), ETIK({ annons_id: '222', annons_namn: 'IBC_SP_2_1', etikett: 'LOSER' }), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true }];
-  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
+  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, tak_totalt: 0, namngivna: [], lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
   const med = [...logg, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true }, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '999', lardom_id: 'L-999', datum: '2026-09-10', genomford: true }];
   const t = brieftak(med, 'K1', { idag: '2026-09-21' });
   assert.equal(t.tak, 1, 'lärdomen från före batchen räknas inte');
@@ -266,4 +265,36 @@ test('narmasteMinnesmapp pekar ut befintligt produktminne i stället för att sk
   assert.equal(narmasteMinnesmapp('Kvantdammsugaren Zyx'), null);
   assert.equal(narmasteMinnesmapp(''), null);
   assert.equal(narmasteMinnesmapp(null), null);
+});
+
+test('namngivna varianter i en lärdom är GRATIS mot brieftaket (Axel 2026-09-21)', () => {
+  // Taket finns för att stoppa produktion UTAN tanke bakom. En hook-swap som
+  // lärdomen uttryckligen bett om har redan tanken bakom sig.
+  const bas = [ETIK(), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true }];
+  const lardom = {
+    kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true,
+    nasta: [
+      '`IBC_PD_12_H1` — typ IM, parent IBC_PD_1_H1: byt hooktext, allt annat lika.',
+      '`IBC_PD_12_H2` — typ IM, parent IBC_PD_1_H1: samma manus, 20 % snabbare.',
+      'SLÄPP `IBC_SP_2_1` — under 300 kr, ingen dom går att fälla.',
+    ],
+  };
+  const t = brieftak([...bas, lardom], 'K1', { idag: '2026-09-21' });
+  assert.equal(t.tak, 1, 'en lärdom ger en fri briefplats');
+  assert.deepEqual(t.namngivna, ['IBC_PD_12_H1', 'IBC_PD_12_H2'], 'SLÄPP-raden bär inget annonsnamn');
+  assert.equal(t.tak_totalt, 3, '1 fri plats + 2 namngivna');
+
+  // En namngiven annons som redan fått sin BRIEF-rad räknas inte igen.
+  const medBrief = [...bas, lardom, { kod: 'BRIEF', kampanj_id: 'K1', annons_namn: 'IBC_PD_12_H1', datum: '2026-09-21', genomford: true }];
+  const t2 = brieftak(medBrief, 'K1', { idag: '2026-09-21' });
+  assert.deepEqual(t2.namngivna, ['IBC_PD_12_H2']);
+  assert.equal(t2.tak_totalt, 2);
+});
+
+test('namnUrNasta plockar annonsnamnet och ignorerar SLÄPP-rader', () => {
+  assert.equal(namnUrNasta('`Takoverdrag_OB_2_H1` — typ N, ingen parent: bemöter invändningen.'), 'Takoverdrag_OB_2_H1');
+  assert.equal(namnUrNasta('`IBC_PD_12_H1` — typ IM'), 'IBC_PD_12_H1');
+  assert.equal(namnUrNasta('SLÄPP — konceptet är uttömt, forskningen var svag.'), null);
+  assert.equal(namnUrNasta('Ingen backtick här alls'), null);
+  assert.equal(namnUrNasta(null), null);
 });
