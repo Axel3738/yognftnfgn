@@ -1432,3 +1432,52 @@ gör en dags avbrott till en icke-händelse.
 
 **Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
 meddelande `1551453420571983893`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-20/21 — DANMARK: hela kampanjen uppe, 60 annonser
+
+Första marknaden efter USA som fick **egna creatives**, inte bara översatt
+copy. Kedjan `pipeline/omdubb/marknadsvideo.mjs` byggdes för det här och är
+nu bevisad: klipp källan vid slutkortet → dubba talet med ElevenLabs
+(`Søren`, vald genom mätning, `pipeline/omdubb/README.md`) → byt inbränd
+svensk text → rita ett nytt slutkort ur marknadens egen prislista → bränn in
+danska captions.
+
+**Uppe i `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5` (`120249183405560172`),
+kampanj PAUSED, CBO 1 000 kr/dag:**
+
+| Adset | Annonser | Adsetets status |
+|---|---|---|
+| CARASHELL_DK_PD | 14 | PAUSED |
+| CARASHELL_DK_CS | 11 | PAUSED |
+| CARASHELL_DK_GT | 9 | PAUSED |
+| CARASHELL_DK_SP | 9 | PAUSED |
+| CARASHELL_DK_BOF | 6 | ACTIVE |
+| CARASHELL_DK_CO | 3 | PAUSED |
+| CARASHELL_DK_RI | 3 | ACTIVE |
+| CARASHELL_DK_LI | 2 | ACTIVE |
+| CARASHELL_DK_OB | 1 | ACTIVE |
+| CARASHELL_DK_TR | 1 | ACTIVE |
+| CARASHELL_DK_UG | 1 | ACTIVE |
+| **Summa** | **60** | |
+
+24 videor + 36 bilder, alla 60 med egen dansk copy. **0 fel, 0 utan copy.**
+Varje annons tillbakaläst som `ACTIVE`.
+
+⚠️ **Sex adsets är ACTIVE, fem är PAUSED.** De fem (CO, CS, GT, PD, SP) bär
+46 av de 60 annonserna och har **0 kr spend och 0 visningar** — de föddes
+PAUSED av `kampanj.mjs --tom` 2026-09-20 15:00, de är alltså inte avstängda
+av ett beslut. De sex ACTIVE skapades av uppladdningen själv, som bara rör
+det den skapat. Slås kampanjen på utan att de fem slås på kör **14 av 60
+annonser**, utan felmeddelande.
+
+**Det som kostade mest tid, i ordning:**
+1. Kontot var UNSETTLED (obetald faktura). Felet läser som ett
+   behörighetsfel — se `factory/opsmarknader.mjs`.
+2. Meta stryper skrivningarna (kod 17): 59 annonser tog ~7 h, en i taget.
+   Egna läsningar mot kontot under tiden gör backoffen längre — låt bli.
+3. Uppladdaren globbade bara `.mp4` och `.jpg` medan bilderna låg som
+   `.png` — hade tyst tagit 0 av 36. Rättat med test.
+4. Två väntare sökte varandra med `pgrep -f` på skriptnamnet och låste
+   varandra i sex timmar efter att batchen var klar. Vänta på PID.
