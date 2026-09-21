@@ -34,6 +34,14 @@
   --bra-ink: #006300;       /* samma budskap som text */
   --kritisk-ink: #a62222;
 
+  /* Glöden: den enda färgen på den publika sidan. Cyan → violett, samma
+     toner som bilderna. Används i kanter, skuggor och knappar — aldrig i text
+     som bär betydelse. */
+  --glod-1: #38e5ff;
+  --glod-2: #8b5cf6;
+  --glod: linear-gradient(135deg, var(--glod-1), var(--glod-2));
+  --glod-svag: 0.28;
+
   --radie: 6px;
   --radie-stor: 14px;
   --skugga: 0 1px 2px rgba(11, 12, 13, .04), 0 8px 24px rgba(11, 12, 13, .04);
@@ -230,6 +238,258 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 .fot { border-top: 1px solid var(--linje); padding: 40px 0 56px; color: var(--ink-3); font-size: 13px; }
 .fot-rader { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.fot-lankar a { color: var(--ink-2); }
+.fot-lankar a:hover { color: var(--ink); }
+
+/* ------------------------------------------------ publik sida: rörelse
+ *
+ * Axels order 2026-09-21: "assnygga animationer på hela hemsidan" och bilder
+ * som känns futuristiska och seriösa. Reglerna som håller det snyggt:
+ *   - Allt rör sig långsamt och lite. Inget blinkar, inget snurrar.
+ *   - Rörelse bär aldrig information — sidan är komplett stillastående.
+ *   - `prefers-reduced-motion` stänger av ALLT, längst ner i blocket.
+ *   - `.avslojas` gömmer sig bara när `html.js` finns (skriptet kördes);
+ *     utan skript syns allt direkt.
+ */
+
+.publik main { overflow-x: clip; }
+
+/* Intro: heroens delar stiger upp en efter en när sidan laddas. */
+@keyframes stig-upp {
+  from { opacity: 0; transform: translateY(26px); filter: blur(6px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+.intro > * {
+  animation: stig-upp .9s cubic-bezier(.2, .7, .2, 1) both;
+  animation-delay: calc(120ms + var(--n, 0) * 110ms);
+}
+/* Bilden stiger upp som helhet (figuren inuti behåller sin egen svävning). */
+.hero-bild { animation: stig-upp 1.1s cubic-bezier(.2, .7, .2, 1) both; animation-delay: 260ms; }
+
+/* Scroll-avslöjande: gömt tills skriptet ser blocket i vyn. */
+.js .avslojas {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .8s cubic-bezier(.2, .7, .2, 1), transform .8s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: calc(var(--n, 0) * 90ms);
+}
+.js .avslojas.synlig { opacity: 1; transform: none; }
+
+/* Heron: två kolumner, glödande orber bakom. */
+.hero-stor { position: relative; padding: clamp(56px, 9vw, 110px) 0 0; overflow: clip; }
+.hero-liten { position: relative; padding: clamp(56px, 9vw, 110px) 0 clamp(36px, 5vw, 64px); overflow: clip; }
+.hero-rutnat { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.hero-stor .ingress { max-width: 46ch; }
+
+.aura { position: absolute; inset: 0; pointer-events: none; z-index: -1; overflow: hidden; }
+.orb {
+  position: absolute;
+  width: 46vw; height: 46vw; max-width: 640px; max-height: 640px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: var(--glod-svag);
+  will-change: transform;
+}
+.orb-1 { background: var(--glod-1); top: -18%; right: -8%; animation: driva 22s ease-in-out infinite alternate; }
+.orb-2 { background: var(--glod-2); bottom: -30%; left: -10%; animation: driva 27s ease-in-out infinite alternate-reverse; }
+.orb-3 { background: color-mix(in srgb, var(--glod-1) 50%, var(--glod-2)); top: 30%; left: 38%; width: 28vw; height: 28vw; opacity: calc(var(--glod-svag) * .6); animation: driva 31s ease-in-out infinite alternate; }
+@keyframes driva {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(-6%, 8%, 0) scale(1.08); }
+  100% { transform: translate3d(5%, -6%, 0) scale(.96); }
+}
+:root[data-tema="mork"] .orb { --glod-svag: .34; }
+@media (prefers-color-scheme: dark) { :root:not([data-tema="ljus"]) .orb { --glod-svag: .34; } }
+
+/* Rutmönster bakom heron: tunna linjer som tonar ut nedåt. */
+.hero-stor::before, .hero-liten::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 85%);
+  pointer-events: none;
+}
+
+/* Etiketten över rubriken, med en lugn puls. */
+.chip {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-2);
+  border: 1px solid var(--linje-stark);
+  border-radius: 999px; padding: 7px 14px 7px 11px;
+  margin-bottom: 26px;
+  background: color-mix(in srgb, var(--yta) 70%, transparent);
+  backdrop-filter: blur(8px);
+}
+.puls { width: 8px; height: 8px; border-radius: 50%; background: var(--glod); position: relative; }
+.puls::after {
+  content: ""; position: absolute; inset: -4px; border-radius: 50%;
+  border: 1.5px solid var(--glod-1); opacity: .7;
+  animation: pulsa 2.4s ease-out infinite;
+}
+@keyframes pulsa { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(1.9); opacity: 0; } }
+
+/* Bildram: rundad, tunn kant, glöd bakom, långsam zoom vid hover. */
+.bild-ram {
+  position: relative; margin: 0;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  background: #0a0b10;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 30px 80px -30px rgba(11, 12, 13, .45);
+  transform-style: preserve-3d;
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1), box-shadow .5s ease;
+}
+.bild-ram::before {
+  content: ""; position: absolute; inset: -40%; z-index: -1;
+  background: var(--glod); filter: blur(60px); opacity: .18;
+}
+.bild-ram::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(160deg, rgba(255,255,255,.14), transparent 40%);
+  mix-blend-mode: screen;
+}
+.bild-ram img { display: block; width: 100%; height: auto; transform: scale(1.001); transition: transform 1.6s cubic-bezier(.2, .7, .2, 1); }
+.bild-ram:hover img { transform: scale(1.035); }
+.bild-ram.bred img { aspect-ratio: 16 / 9; object-fit: cover; }
+.hero-bild .bild-ram img { aspect-ratio: 3 / 2; object-fit: cover; }
+.bildrad .bild-ram img { aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* Svävande heron-bild. */
+.svav { animation: svava 7s ease-in-out infinite; }
+@keyframes svava { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+
+/* Bandet: orden rullar sakta åt vänster, två varv så det aldrig tar slut. */
+.band {
+  margin-top: clamp(48px, 7vw, 88px);
+  border-top: 1px solid var(--linje);
+  border-bottom: 1px solid var(--linje);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--yta-2) 60%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.band-spar { display: inline-flex; align-items: center; width: max-content; padding: 14px 0; animation: rulla 42s linear infinite; }
+.band:hover .band-spar { animation-play-state: paused; }
+.band-ord { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); white-space: nowrap; padding: 0 22px; }
+.band-prick { width: 6px; height: 6px; border-radius: 50%; background: var(--glod); flex: none; }
+@keyframes rulla { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Rutor: lyfter lite och får en glödande kantlinje upptill. */
+.ruta { position: relative; transition: transform .35s cubic-bezier(.2, .7, .2, 1), background .35s ease; }
+.ruta::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: var(--glod); opacity: 0; transform: scaleX(.4); transform-origin: left;
+  transition: opacity .35s ease, transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+.ruta:hover { transform: translateY(-3px); background: color-mix(in srgb, var(--yta) 92%, var(--glod-1)); z-index: 1; }
+.ruta:hover::after { opacity: 1; transform: scaleX(1); }
+
+/* Knappen med glöd. */
+.knapp.glod { position: relative; overflow: hidden; }
+.knapp.glod::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; z-index: -1;
+  background: var(--glod); opacity: 0; transition: opacity .35s ease;
+}
+.knapp.glod { box-shadow: 0 0 0 0 rgba(56, 229, 255, 0); transition: transform .12s ease, opacity .12s ease, box-shadow .4s ease; }
+.knapp.glod:hover { opacity: 1; box-shadow: 0 8px 30px -8px color-mix(in srgb, var(--glod-1) 70%, var(--glod-2)); }
+.knapp.glod:hover::before { opacity: .9; }
+.knapp.glod:hover { color: #fff; }
+/* Ljus knapp på mörk sektion — fasta färger, så den inte blir svart på svart
+   när sidan står i mörkt läge. */
+.knapp.ljus { background: #f3f4f5; color: #0b0c10; }
+.knapp.ljus:hover { opacity: .92; }
+
+/* Två kolumner: bild + text. */
+.delad { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.delad-text .ingress { margin-top: 18px; font-size: clamp(16px, 1.6vw, 18px); color: var(--ink-2); max-width: 52ch; }
+.delad-text .sektion-etikett { margin-bottom: 18px; }
+.delad-bild { position: relative; }
+
+/* Play-knappen på YouTube-bilden. */
+.spela { display: block; position: relative; }
+.spela-knapp {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+  width: 72px; height: 72px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, .92); color: #0b0c0d;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, .6), 0 0 0 0 rgba(255,255,255,.5);
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .5s ease;
+}
+.spela-knapp svg { margin-left: 4px; }
+.spela:hover .spela-knapp { transform: scale(1.08); box-shadow: 0 20px 50px -10px rgba(0, 0, 0, .6), 0 0 0 14px rgba(255,255,255,.12); }
+
+/* Bildraden under "Vad vi gör". */
+.bildrad { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
+.bildtext { margin-top: 14px; font-size: 14px; color: var(--ink-2); max-width: 44ch; }
+
+/* Mörk sektion: inverterade färger, glöd i kanten. */
+.sektion.morkt {
+  background: #0b0c10;
+  color: #f3f4f5;
+  border-top: 1px solid rgba(255, 255, 255, .06);
+  position: relative; overflow: clip;
+}
+.sektion.morkt::before {
+  content: ""; position: absolute; inset: -30% -10% auto; height: 70%;
+  background: radial-gradient(60% 80% at 20% 0%, color-mix(in srgb, var(--glod-2) 55%, transparent), transparent 70%),
+              radial-gradient(50% 70% at 90% 20%, color-mix(in srgb, var(--glod-1) 40%, transparent), transparent 70%);
+  opacity: .35; pointer-events: none; filter: blur(30px);
+}
+.sektion.morkt .omslag { position: relative; }
+.sektion.morkt .sektion-etikett { color: rgba(243, 244, 245, .55); }
+.sektion.morkt .ingress { color: rgba(243, 244, 245, .72); }
+.sektion.morkt .knapp.tyst { color: #f3f4f5; border-color: rgba(255,255,255,.25); }
+.sektion.morkt .knapp.tyst:hover { background: rgba(255,255,255,.08); }
+.sektion.tunn { padding-top: 0; border-top: none; }
+
+.punktlista { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.punktlista li {
+  padding: 18px 20px; border-radius: var(--radie-stor);
+  border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04);
+  display: grid; gap: 4px;
+  transition: border-color .35s ease, background .35s ease, transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.punktlista li:hover { border-color: color-mix(in srgb, var(--glod-1) 50%, transparent); background: rgba(255,255,255,.07); transform: translateX(4px); }
+.punktlista b { font-weight: 600; font-size: 16px; }
+.punktlista span { font-size: 14px; color: rgba(243, 244, 245, .7); }
+
+/* Så jobbar vi: tre steg med stora nummer i glöd. */
+.stegrad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.steg { padding: 26px 24px 28px; border-radius: var(--radie-stor); border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); }
+.steg-nr {
+  font-size: 54px; font-weight: 600; letter-spacing: -.05em; line-height: 1;
+  background: var(--glod); -webkit-background-clip: text; background-clip: text; color: transparent;
+  margin-bottom: 18px;
+}
+.steg h3 { font-size: 19px; margin-bottom: 8px; }
+.steg p { font-size: 15px; color: rgba(243, 244, 245, .72); }
+
+/* Kontaktrutan på tjänstesidan. */
+.kontaktruta {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 32px; align-items: center;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: 22px; border: 1px solid var(--linje);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--glod-1) 8%, var(--yta)), color-mix(in srgb, var(--glod-2) 8%, var(--yta)));
+}
+.kontaktruta h2 { font-size: clamp(26px, 3.4vw, 36px); }
+.kontaktruta .ingress { margin-top: 12px; color: var(--ink-2); max-width: 46ch; }
+.kontakt-knappar { display: grid; gap: 12px; justify-items: start; }
+.kontakt-knappar .knapp { max-width: 100%; }
+.kontakt-knappar .knapp > * { overflow: hidden; text-overflow: ellipsis; }
+
+/* Ingen rörelse för den som bett om det. Allt syns, ingenting rör sig. */
+@media (prefers-reduced-motion: reduce) {
+  .intro > *, .hero-bild, .svav, .orb, .band-spar, .puls::after { animation: none !important; }
+  .js .avslojas { opacity: 1; transform: none; transition: none; }
+  .bild-ram, .bild-ram img, .ruta, .knapp, .punktlista li, .spela-knapp { transition: none !important; }
+  .bild-ram:hover img { transform: none; }
+}
 
 /* ------------------------------------------------------------ inloggning */
 
@@ -409,6 +669,12 @@ td .bi { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 2px
   .rutnat-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rutnat-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hjalte { grid-template-columns: minmax(0, 1fr); }
+  .hero-rutnat { grid-template-columns: minmax(0, 1fr); }
+  .hero-bild { order: -1; }
+  .hero-bild .bild-ram img { aspect-ratio: 16 / 10; }
+  .delad { grid-template-columns: minmax(0, 1fr); }
+  .stegrad { grid-template-columns: minmax(0, 1fr); }
+  .kontaktruta { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 640px) {
@@ -425,10 +691,15 @@ td .bi { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 2px
   .tabellsvep table { min-width: 620px; }
   .panel-fot { position: sticky; left: 0; }
   .hjalte { padding: 24px 20px; }
+  .bildrad { grid-template-columns: minmax(0, 1fr); }
+  .orb { filter: blur(50px); }
+  .spela-knapp { width: 56px; height: 56px; }
+  .fot-rader { flex-direction: column; gap: 10px; }
 }
 
 @media print {
-  .topp, .hero-knappar, .temaknapp { display: none; }
+  .topp, .hero-knappar, .temaknapp, .aura, .band { display: none; }
+  .js .avslojas { opacity: 1; transform: none; }
   body { background: #fff; color: #000; }
   .kort, .panel, .hjalte { break-inside: avoid; border-color: #bbb; }
 }

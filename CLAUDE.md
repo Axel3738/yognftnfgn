@@ -316,6 +316,42 @@ så DNS-prompten förbjuder uttryckligen ändringar av MX, SPF, DKIM och
 verifieringsposter. Samma fil bär listan på det jag behöver veta om
 verksamheten.
 
+### Den publika sidan: tre grenar, rörelse och bilder (2026-09-21 kväll)
+
+Axels beställning samma kväll, i ordning: roten utan `www`, inte ett ord om
+butikerna, **YouTube som egen verksamhet**, **en konsultsida**, "assnygga
+animationer på hela hemsidan" och "goa, coola, futuristiska bilder … så det
+märks som att vi är seriösa". Motivet är uttalat: sidan ska kunna visa
+Skatteverket att YouTube-kanalen är en gren bolaget satsar på (utrustning,
+resor för att filma), inte en hobby. Därför står kanalen som en egen sektion
+med egen text om att bolaget lägger tid, utrustning och resor på den.
+
+- **YouTube:** `profil.youtube` → sektion `#youtube` på startsidan, kanalen
+  **https://www.youtube.com/@Stonebite.channel** (Axels länk 2026-09-21),
+  tre format (Vloggar, Tutorials, Lifestyle). Tom `url` ⇒ texten står kvar,
+  ingen knapp, ingen youtube.com-länk — testet "YouTube-sektionen länkar bara
+  när adressen är ifylld" bevisar det. Inga påhittade tittarsiffror.
+- **Konsult:** `/tjanster` (`stonebite/vy/tjanster.mjs`, `profil.tjanster`):
+  åtta områden, "Så jobbar vi" i tre steg, kontaktruta → `contact@stonebite.org`.
+  Inga kundnamn, inga priser, inga påhittade resultat. Startsidan har en
+  mörk teaser som länkar dit.
+- **Bilder:** `node stonebite/bilder.mjs` genererar `stonebite/webb/bilder/*.jpg`
+  ur `stonebite/bilder.json` via kie.ai (`google/nano-banana`, JPEG, 50–190 kB;
+  ingen bildbehandling finns i containern så filen används som den kommer).
+  Abstrakta, futuristiska, cyan/violett — **ingen text, inga människor, inga
+  logotyper, inga produkter som går att känna igen, inga butiker.** Sessionen
+  tittade på alla fem innan de committades. Sajten har inga externa anrop, så
+  bilderna ligger i repot; servern cachar `image/*` ett dygn, css/js fem minuter.
+- **Rörelse:** `stil.css` → "publik sida: rörelse" + `app.js`. Heron stiger
+  upp vid laddning, block scrollas fram (`.avslojas`, gömda bara när
+  `html.js` finns — utan skript syns allt), orber driver bakom heron, band
+  med orden rullar, bilder lutar sig mot pekaren (bara mus). **Allt stängs av
+  med `prefers-reduced-motion`; rörelse bär aldrig information.**
+- **Roten:** `stonebite/cowork/3-rot.txt` — Squarespace **ALIAS** på `@` mot
+  Railways rotvärde (läses i Railway → Settings → Domains), vidarebefordran
+  och Squarespaces fyra A-poster bort, TXT `_railway-verify` kvar, MX/SPF/DKIM
+  orörda. Tills den körts är `www` adressen och roten en 302.
+
 ⚠️ **BUTIKERNA NÄMNS ALDRIG PÅ DEN PUBLIKA SIDAN** (Axels order 2026-09-21:
 "du leakar ju fan alla mina butiker det får du inte göra"). Sidan gick live med
 en sektion "Butikerna vi driver" som listade **alla elva** med namn, land och
@@ -323,11 +359,13 @@ domän, plus siffrorna "Varumärken 11" och "Länder vi säljer i 6" — alltså
 färdig kopieringslista åt vem som helst som öppnar stonebite.org. Listan,
 siffrorna, hero-knappen "Se våra butiker" och menylänken "Varumärken" är
 borttagna; `profil.varumarken` ligger kvar i filen och visas **bara inloggad**,
-på sidan Butiker. Ett test hämtar `/` och letar efter varje butiksnamn och varje
-domän ur `profil.json` (`stonebite/test/server.test.mjs` → "publika sidan nämner
-inte en enda butik"). **Bygg aldrig tillbaka det** — inte som lista, inte som
-antal, inte som logotyper. Den publika sidan säger vad bolaget gör, aldrig vilka
-butiker det är.
+på sidan Butiker. Ett test hämtar `/` **och `/tjanster`** och letar efter varje
+butiksnamn och varje domän ur `profil.json` (`stonebite/test/server.test.mjs` →
+"publika sidan nämner inte en enda butik"). **Bygg aldrig tillbaka det** — inte
+som lista, inte som antal, inte som logotyper. Den publika sidan säger vad
+bolaget gör, aldrig vilka butiker det är. Axel sa det en gång till samma kväll
+("jag vill verkligen inte att det ska stå någonting om någon av våra … eller
+vad några av våra butiker heter") — varje ny publik sida ska in i det testet.
 
 ### ✅ I DRIFT sedan 2026-09-21 kväll (Cowork byggde, mätt av sessionen)
 

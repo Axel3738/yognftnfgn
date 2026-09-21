@@ -20,8 +20,41 @@
    "telefon": ""
   },
   "hero": {
+   "overrad": "E-handel · Film · Konsult",
    "rubrik": "Vi bygger butiker som säljer.",
-   "underrad": "Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA. Vi hittar produkten, bygger butiken, gör reklamen och sköter kunderna — allt själva."
+   "underrad": "Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA. Vi hittar produkten, bygger butiken, gör reklamen och sköter kunderna — allt själva. Och vi filmar resan.",
+   "band": [
+    "E-handel",
+    "Egna varumärken",
+    "Film och foto varje dag",
+    "YouTube",
+    "Fem länder",
+    "Konsult inom e-handel",
+    "Kunden efter köpet"
+   ]
+  },
+  "bilder_kommentar": "Bilderna genereras av `node stonebite/bilder.mjs` ur stonebite/bilder.json och ligger i stonebite/webb/bilder/. Tom sökväg ⇒ ingen bild ritas. Alt-texterna står här så sidan går att läsa med skärmläsare.",
+  "bilder": {
+   "hero": {
+    "fil": "/webb/bilder/hero.jpg",
+    "alt": "Glödande linjer av ljus som strömmar mot en ljus horisont över en mörk, blank yta"
+   },
+   "paket": {
+    "fil": "/webb/bilder/paket.jpg",
+    "alt": "Ett blankt svart paket med en tunn lysande kant, svävande i en mörk studio"
+   },
+   "varlden": {
+    "fil": "/webb/bilder/varlden.jpg",
+    "alt": "En glob av tunna lysande linjer och punkter i cyan"
+   },
+   "youtube": {
+    "fil": "/webb/bilder/youtube.jpg",
+    "alt": "En kamera på stativ framför en vägg av mjuka neonpaneler i cyan och violett"
+   },
+   "tjanster": {
+    "fil": "/webb/bilder/tjanster.jpg",
+    "alt": "Svävande glaspaneler och lysande lager över ett mörkt, speglande golv"
+   }
   },
   "vad_vi_gor": [
    {
@@ -34,13 +67,94 @@
    },
    {
     "titel": "Flera länder, samma maskin",
-    "text": "Sverige, Norge, Danmark, Finland, USA och Storbritannien. Butiken översätts, annonsen översätts, priset sätts i landets valuta."
+    "text": "Sverige, Norge, Danmark, Finland och USA. Butiken översätts, annonsen översätts, priset sätts i landets valuta."
    },
    {
     "titel": "Kunden efter köpet",
     "text": "Spårning som faktiskt säger var paketet är, svar på mejlen och en support som hinner med. Det avgör om kunden handlar igen."
    }
   ],
+  "youtube_kommentar": "Axels beslut 2026-09-21: YouTube är en egen gren i bolaget — vloggar, tutorials och lifestyle-film om hur vi bygger och driver e-handel. Sidan ska visa att kanalen är en verksamhet vi satsar på, inte en hobby. Tom `url` ⇒ ingen knapp, men texten står kvar. Inga påhittade tittarsiffror.",
+  "youtube": {
+   "etikett": "YouTube",
+   "rubrik": "Vi filmar hur det går till.",
+   "text": "På vår YouTube-kanal följer du arbetet från insidan: hur en produkt hittas, hur en butik byggs, vad som händer när annonserna går live och hur vardagen ser ut i ett bolag som lever på e-handel. Kanalen är en egen del av verksamheten — vi lägger tid, utrustning och resor på den, och den är vår väg att nå både kunder och andra som bygger e-handel.",
+   "url": "https://www.youtube.com/@Stonebite.channel",
+   "knapp": "Till kanalen",
+   "format": [
+    {
+     "titel": "Vloggar",
+     "text": "Dagarna som de är. Lanseringar, resor, bakslag och det som faktiskt fungerade."
+    },
+    {
+     "titel": "Tutorials",
+     "text": "Steg för steg: butiken, annonserna, leveransen, kundtjänsten. Det vi gör själva, förklarat så andra kan göra det."
+    },
+    {
+     "titel": "Lifestyle",
+     "text": "Livet runt jobbet. Platserna vi jobbar från, människorna, kvällarna efter att paketen gått ut."
+    }
+   ]
+  },
+  "tjanster_kommentar": "Sidan /tjanster. Axels beslut 2026-09-21: vi bedriver e-handel och kan också bedriva konsulttjänster inom e-handel. Inga kundnamn, inga priser, inga påhittade resultat — bara vad vi kan och hur vi jobbar. Kontakt går till kontakt.epost.",
+  "tjanster": {
+   "etikett": "Tjänster",
+   "rubrik": "Vi driver e-handel. Vi kan hjälpa er med er.",
+   "ingress": "Allt vi erbjuder gör vi redan varje dag i våra egna butiker. Det är skillnaden mot en byrå: vi lever på att det fungerar, inte på att sälja timmar.",
+   "omraden": [
+    {
+     "titel": "Starta eller bygga om butiken",
+     "text": "Shopify från grunden eller en befintlig butik som ska sälja bättre: produktsida, kassa, betalningar, frakt, språk och valutor för nya länder."
+    },
+    {
+     "titel": "Annonser som mäts på vinst",
+     "text": "Meta-annonsering med struktur för test, skalning och avstängning. Vi räknar på break-even per produkt, inte på klick."
+    },
+    {
+     "titel": "Film och bild för annonser",
+     "text": "Ett eget produktionsteam gör video och stillbild varje dag. Vi kan producera åt er eller bygga upp ert eget flöde med briefer, granskning och utvärdering."
+    },
+    {
+     "titel": "Nya marknader",
+     "text": "Sverige, Norge, Danmark, Finland och USA i drift. Översättning av butik och annonser, prissättning i landets valuta, moms och tull i praktiken."
+    },
+    {
+     "titel": "Leverans och spårning",
+     "text": "Spårningssidor kunden faktiskt förstår, leveransmejl som skickas när något händer och en process för paket som fastnar."
+    },
+    {
+     "titel": "Kundtjänst och tvister",
+     "text": "Rutiner för inkorgen, svarstider som går att mäta och en handbok för chargebacks och återbetalningar som vinner de tvister som går att vinna."
+    },
+    {
+     "titel": "Automatisering",
+     "text": "Rutiner som kör själva: uppladdning av annonser, budgetbeslut varje natt, rapporter till teamet. Byggt utan tunga system, så det går att äga och förstå."
+    },
+    {
+     "titel": "Team och arbetsflöde",
+     "text": "Hur man briefar redigerare, mäter deras arbete och betalar på resultat. Vi gör det med ett eget team i dag."
+    }
+   ],
+   "sa_jobbar_vi": [
+    {
+     "steg": "1",
+     "titel": "Ett samtal",
+     "text": "Ni berättar var det skaver. Vi säger rakt ut om vi kan hjälpa — och om vi inte kan."
+    },
+    {
+     "steg": "2",
+     "titel": "En plan med siffror",
+     "text": "Vad som ska göras, i vilken ordning, och hur vi vet om det fungerade. Inga luddiga mål."
+    },
+    {
+     "steg": "3",
+     "titel": "Vi gör det, eller lär er göra det",
+     "text": "Antingen bygger vi, eller så bygger vi upp det hos er så ni klarar er själva sen. Ni väljer."
+    }
+   ],
+   "kontakt_rubrik": "Vill ni prata?",
+   "kontakt_text": "Skriv ett par rader om vad ni säljer och vad ni vill ha hjälp med. Vi svarar inom ett par dagar."
+  },
   "siffror_kommentar": "Sidan visar aldrig påhittade tal. Antal varumärken och marknader räknas ur listan nedan; egna siffror här under visas bara om de är ifyllda.",
   "siffror": [
    {

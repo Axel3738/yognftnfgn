@@ -184,14 +184,41 @@ helst som kör Node (Railway, Fly, en VPS).
 
 | | |
 |---|---|
-| Adress | **https://www.stonebite.org** — `stonebite.org` skickas vidare dit (302) |
+| Adress | **https://www.stonebite.org** — `stonebite.org` skickas vidare dit (302) tills ALIAS-posten är inlagd (`cowork/3-rot.txt`) |
 | Direktadress | `https://yognftnfgn-production-cfb8.up.railway.app` — felsök alltid här först |
 | Railway | projekt `strong-solace`, tjänst `yognftnfgn`, branch `main`, volym `/data` |
 | DNS | Squarespace (namnservrar `ns-cloud-e*.googledomains.com`) |
 | Mejl | Google Workspace, `MX 1 smtp.google.com` — **rör aldrig MX, SPF, DKIM** |
 
-⚠️ Roten kan inte peka direkt på Railway: Squarespace tillåter inte CNAME på
-`@` och Railway ger ingen A-post. `www` är därför den riktiga adressen.
+⚠️ Roten kan inte vara en CNAME: Squarespace tillåter inte CNAME på `@` och
+Railway ger ingen A-post. Vägen är Squarespaces posttyp **ALIAS** på `@` mot
+Railways rotvärde — prompten `cowork/3-rot.txt` gör det (tar bort
+vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
+
+## Den publika sidan (ombyggd 2026-09-21 kväll)
+
+Tre grenar visas: **e-handeln**, **YouTube-kanalen**
+(`profil.youtube`, https://www.youtube.com/@Stonebite.channel — vloggar,
+tutorials, lifestyle; en egen verksamhet bolaget lägger tid, utrustning och
+resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: åtta
+områden, "Så jobbar vi", kontaktruta → `kontakt.epost`). Allt kommer ur
+`profil.json`; tom `youtube.url` ⇒ texten står kvar men ingen knapp.
+
+**Bilderna** (`webb/bilder/*.jpg`, 50–190 kB) genereras av
+`node stonebite/bilder.mjs` ur `bilder.json` via kie.ai — abstrakta,
+futuristiska, utan text, människor, logotyper eller produkter som går att
+känna igen. En bild som finns hoppas över; `--igen <id>` gör om en.
+Sajten har inga externa anrop, så bilderna ligger i repot.
+
+**Rörelsen** (`stil.css` → "publik sida: rörelse", `app.js`): heron stiger
+upp vid laddning, block scrollas fram (`.avslojas` + IntersectionObserver,
+gömda bara när `html.js` finns), glödande orber driver bakom heron, ett band
+med orden rullar, bilder lutar sig mot pekaren (bara mus). Allt stängs av
+med `prefers-reduced-motion`. Ingen rörelse bär information.
+
+⚠️ Inte ett butiksnamn, inte en domän, inte ett antal på någon publik sida —
+testet "publika sidan nämner inte en enda butik" går över både `/` och
+`/tjanster`.
 
 ⚠️ Certifikatet går inte att kontrollera från en claude.ai-container — proxyn
 MITM:ar HTTPS och visar alltid Anthropics eget cert. Kolla i en webbläsare

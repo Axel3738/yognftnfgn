@@ -5,13 +5,15 @@ den första ger dig, så kör dem inte samtidigt.
 
 | # | Flik | Fil | Vad den gör |
 |---|---|---|---|
-| 1 | Railway | `cowork/1-railway.txt` | Skapar tjänsten, miljövariablerna, volymen. Lämnar tillbaka DNS-värdena |
-| 2 | Google Workspace / domänen | `cowork/2-dns.txt` | Letar upp var DNS ligger, lägger in posterna, rör aldrig mejlen |
+| 1 | Railway | `cowork/1-railway.txt` | Skapar tjänsten, miljövariablerna, volymen. Lämnar tillbaka DNS-värdena — ✅ körd 2026-09-21 |
+| 2 | Google Workspace / domänen | `cowork/2-dns.txt` | Letar upp var DNS ligger, lägger in posterna, rör aldrig mejlen — ✅ körd 2026-09-21 (www fungerar, roten blev en 302) |
+| 3 | Google Workspace / domänen | `cowork/3-rot.txt` | **Roten utan www:** ALIAS-post på `@` hos Squarespace mot Railways rotvärde, vidarebefordran + Squarespaces A-poster bort. Rör aldrig mejlen |
 
 Råfilerna att kopiera (öppna, Ctrl+A, Ctrl+C):
 
-- https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/optimistic-noether-x1vnq8/stonebite/cowork/1-railway.txt
-- https://raw.githubusercontent.com/Axel3738/yognftnfgn/claude/optimistic-noether-x1vnq8/stonebite/cowork/2-dns.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/1-railway.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/2-dns.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/3-rot.txt
 
 **Mellan de två:** prompt 1 slutar med att Cowork skriver ut exakt vilka
 DNS-poster Railway vill ha. Kopiera de raderna och klistra in dem i prompt 2

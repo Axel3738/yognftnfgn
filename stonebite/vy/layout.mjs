@@ -4,8 +4,12 @@
 import { esc, attr, marke, t } from './delar.mjs';
 import { menyFor } from '../roller.mjs';
 
+// Körs före första målningen: sätter valt tema och markerar att skript finns.
+// Klassen `js` är det som låter CSS:en gömma `.avslojas`-block tills de
+// scrollas fram — utan skript finns inte klassen och allt syns direkt.
 const TEMA_SKRIPT = `
 (function(){
+  document.documentElement.className += ' js';
   try{
     var t = localStorage.getItem('stonebite-tema');
     if (t) document.documentElement.setAttribute('data-tema', t);
@@ -32,17 +36,33 @@ function temaknapp() {
   </button>`;
 }
 
-/** Publika sidan: allt som inte kräver inloggning. */
-export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad = false, nonce = '' }) {
+/** Den publika menyn. Samma på alla publika sidor; `stig` markerar var man är. */
+const PUBLIK_MENY = [
+  { titel: 'Vad vi gör', url: '/#vad-vi-gor' },
+  { titel: 'YouTube', url: '/#youtube' },
+  { titel: 'Tjänster', url: '/tjanster' },
+  { titel: 'Bolaget', url: '/#bolaget' },
+];
+
+/**
+ * Publika sidan: allt som inte kräver inloggning.
+ * @param fotLankar [{ titel, url, extern }] — länkar i sidfoten (YouTube, Tjänster …)
+ */
+export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad = false, nonce = '', stig = '/', fotLankar = [] }) {
+  const meny = PUBLIK_MENY.map((p) => (
+    `<a class="navlank" href="${attr(p.url)}"${p.url === stig ? ' aria-current="page"' : ''}>${esc(p.titel)}</a>`
+  )).join('\n    ');
+  const fotRad = fotLankar.filter((l) => l?.url).map((l) => (
+    `<a href="${attr(l.url)}"${l.extern ? ' target="_blank" rel="noopener"' : ''}>${esc(l.titel)}</a>`
+  ));
   return `<!doctype html>
 <html lang="sv">
 <head>${huvudTaggar({ titel, beskrivning, nonce })}</head>
-<body>
+<body class="publik">
 <header class="topp"><div class="omslag topp-inner">
   <a class="marke" href="/">${marke(20)} Stonebite</a>
   <nav class="navlankar" aria-label="Meny">
-    <a class="navlank" href="/#vad-vi-gor">Vad vi gör</a>
-    <a class="navlank" href="/#bolaget">Bolaget</a>
+    ${meny}
     ${temaknapp()}
     <a class="knapp liten" href="${inloggad ? '/app' : '/logga-in'}" style="margin-left:8px">${inloggad ? 'Till dashboarden' : 'Logga in'}</a>
   </nav>
@@ -50,6 +70,7 @@ export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad =
 <main>${innehall}</main>
 <footer class="fot"><div class="omslag fot-rader">
   <span>${esc(fot)}</span>
+  ${fotRad.length ? `<span class="fot-lankar">${fotRad.join('<span aria-hidden="true"> · </span>')}</span>` : ''}
   <span><a href="/logga-in">Intern inloggning</a></span>
 </div></footer>
 <script src="/webb/app.js" defer></script>

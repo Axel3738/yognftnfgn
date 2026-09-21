@@ -88,14 +88,59 @@ test('publika sidan nämner inte en enda butik', async () => {
   const marken = profil.varumarken ?? [];
   assert.ok(marken.length >= 5, 'profilen ska ha butikerna kvar — de visas inloggad');
 
-  const html = await (await hamta('/')).text();
-  for (const m of marken) {
-    if (m.namn) assert.ok(!html.includes(m.namn), `butiksnamnet "${m.namn}" läcker på publika sidan`);
-    const doman = String(m.url ?? '').replace(/^https?:\/\//, '').replace(/\/$/, '');
-    if (doman) assert.ok(!html.includes(doman), `domänen "${doman}" läcker på publika sidan`);
+  // Varje publik sida — även tjänstesidan får inte nämna en butik.
+  for (const stig of ['/', '/tjanster']) {
+    const svar = await hamta(stig);
+    assert.equal(svar.status, 200, `${stig} ska svara 200`);
+    const html = await svar.text();
+    for (const m of marken) {
+      if (m.namn) assert.ok(!html.includes(m.namn), `butiksnamnet "${m.namn}" läcker på ${stig}`);
+      const doman = String(m.url ?? '').replace(/^https?:\/\//, '').replace(/\/$/, '');
+      if (doman) assert.ok(!html.includes(doman), `domänen "${doman}" läcker på ${stig}`);
+    }
+    assert.ok(!/Varumärken\s*<\/div>\s*<div[^>]*>\s*\d+/.test(html), 'antalet butiker ska inte stå som siffra');
+    assert.ok(!html.includes('Butikerna vi driver'), 'butikssektionen ska vara borta');
   }
-  assert.ok(!/Varumärken\s*<\/div>\s*<div[^>]*>\s*\d+/.test(html), 'antalet butiker ska inte stå som siffra');
-  assert.ok(!html.includes('Butikerna vi driver'), 'butikssektionen ska vara borta');
+});
+
+test('tjänstesidan är publik och länkar till kontaktadressen', async () => {
+  const r = await hamta('/tjanster');
+  assert.equal(r.status, 200);
+  const html = await r.text();
+  assert.match(html, /Så jobbar vi/);
+  assert.match(html, /mailto:contact@stonebite\.org/);
+  assert.doesNotMatch(html, /Översikt<\/a>/, 'tjänstesidan ska inte visa appens meny');
+});
+
+/**
+ * YouTube-kanalen är en egen gren i bolaget (Axels beslut 2026-09-21) och ska
+ * synas — men bara med en riktig adress. Tom url ⇒ texten står kvar, ingen
+ * knapp och ingen länk till youtube.com. Sidan får aldrig hitta på en kanal.
+ */
+test('YouTube-sektionen länkar bara när adressen är ifylld', async () => {
+  const { publikSida } = await import('../vy/publik.mjs');
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  assert.ok(profil.youtube?.url, 'profilen ska bära kanalens adress');
+
+  const med = publikSida({ profil });
+  assert.match(med, /id="youtube"/);
+  assert.ok(med.includes(`href="${profil.youtube.url}"`), 'kanalens adress ska stå som länk');
+  assert.match(med, /rel="noopener"/);
+
+  const utan = publikSida({ profil: { ...profil, youtube: { ...profil.youtube, url: '' } } });
+  assert.match(utan, /id="youtube"/, 'sektionen står kvar utan adress');
+  assert.doesNotMatch(utan, /youtube\.com/, 'ingen påhittad kanallänk');
+  assert.doesNotMatch(utan, /Till kanalen/, 'ingen knapp utan adress');
+});
+
+test('bilderna serveras med rätt typ och lång cache', async () => {
+  const r = await hamta('/webb/bilder/hero.jpg');
+  assert.equal(r.status, 200);
+  assert.equal(r.headers.get('content-type'), 'image/jpeg');
+  assert.match(r.headers.get('cache-control'), /max-age=86400/);
+  const css = await hamta('/webb/stil.css');
+  assert.match(css.headers.get('cache-control'), /max-age=300/);
 });
 
 test('säkerhetsrubrikerna sitter på varje svar', async () => {
