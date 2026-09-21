@@ -1,0 +1,316 @@
+{
+  "kommentar": "Bonusprogrammen — vad var och en kan tjäna utöver lönen. Axels beslut 2026-09-21: alla i bolaget ska kunna tjäna pengar på att göra sitt jobb bättre, inte bara redigerarna och produkttestarna. Ändra belopp här; motorn och sidan följer med. Ett program utan belopp visas aldrig.",
+  "valuta_kommentar": "Allt till människor räknas i USD (som redigerarnas topplista). Underlag i SEK växlas med ECB-kursen i commission/valutakurs.json. Valutor summeras aldrig ihop.",
+  "valuta": "USD",
+  "period": "manad",
+  "program": {
+    "va": {
+      "namn": "Kundtjänst",
+      "roller": [
+        "va",
+        "support_chef"
+      ],
+      "beskrivning": "Du tjänar på tre saker: att kunder skriver bra om dig, att vi vinner tvister, och att inkorgen är tom.",
+      "uppdrag": [
+        {
+          "id": "recension_med_namn",
+          "namn": "Recension med ditt namn",
+          "belopp": 5,
+          "enhet": "per recension",
+          "hur": "Lös kundens problem först. Skicka sedan mallen och be kunden nämna dig vid namn. Recensionen måste ha 4 eller 5 stjärnor och ditt förnamn i texten.",
+          "mats": "Judge.me och Trustpilot läses automatiskt. Hittar systemet ditt namn i en recension med 4–5 stjärnor betalas den ut. Du kan också rapportera in en själv med länk — då godkänner din chef.",
+          "kalla": "recensioner",
+          "auto": true,
+          "mall": {
+            "rubrik": "Be om recensionen så här",
+            "sv": "Vad kul att det löste sig! Om du har en minut över skulle det betyda mycket för mig om du lämnade en recension och skrev mitt namn i den — då ser min chef att jag hjälpte dig. Här är länken: {{LÄNK}}",
+            "en": "So glad we got it sorted! If you have a minute, it would mean a lot to me if you left a review and mentioned my name in it — that way my manager sees that I helped you. Here is the link: {{LINK}}",
+            "kommentar": "Skickas EFTER att kundens problem är löst, aldrig före. {{LÄNK}} byts mot butikens recensionslänk."
+          },
+          "mal_per_vecka": 3,
+          "en": {
+            "namn": "Review with your name",
+            "enhet": "per review",
+            "hur": "Solve the customer's problem first. Then send the template and ask them to mention you by name. The review needs 4 or 5 stars and your first name in the text.",
+            "mats": "Judge.me and Trustpilot are read automatically. If the system finds your name in a 4–5 star review it pays out. You can also report one yourself with a link — then your manager approves it."
+          }
+        },
+        {
+          "id": "recension_streak",
+          "namn": "Tre recensioner på en vecka",
+          "belopp": 10,
+          "enhet": "bonus per vecka",
+          "hur": "Får du in tre recensioner med ditt namn samma vecka läggs 10 dollar på toppen.",
+          "mats": "Räknas automatiskt per kalendervecka.",
+          "kalla": "recensioner",
+          "auto": true,
+          "krav": {
+            "antal_per_vecka": 3
+          },
+          "en": {
+            "namn": "Three reviews in one week",
+            "enhet": "bonus per week",
+            "hur": "Get three reviews with your name in the same week and 10 dollars are added on top.",
+            "mats": "Counted automatically per calendar week."
+          }
+        },
+        {
+          "id": "tvist_besvarad",
+          "namn": "Tvist besvarad med bevis i tid",
+          "belopp": 3,
+          "enhet": "per tvist",
+          "hur": "Svara på tvisten INNAN sista svarsdagen och bifoga spårningsbevis: fraktbolagets skanning, orderbekräftelsen och mejltråden.",
+          "mats": "Tvisten måste vara besvarad (inte 'needs response') när svarsdagen passerar.",
+          "kalla": "tvister",
+          "auto": true,
+          "en": {
+            "namn": "Dispute answered with evidence in time",
+            "enhet": "per dispute",
+            "hur": "Answer the dispute BEFORE the response deadline and attach delivery proof: the carrier scan, the order confirmation and the email thread.",
+            "mats": "The dispute must be answered (not 'needs response') when the deadline passes."
+          }
+        },
+        {
+          "id": "tvist_vunnen",
+          "namn": "Vunnen tvist",
+          "belopp": 10,
+          "enhet": "per vunnen tvist",
+          "hur": "Vinner vi tvisten får du tio dollar. Chargebacks är svårast och värda mest.",
+          "mats": "Shopify säger won/lost. Bara tvister med svar räknas.",
+          "kalla": "tvister",
+          "auto": true,
+          "en": {
+            "namn": "Dispute won",
+            "enhet": "per dispute won",
+            "hur": "If we win the dispute you get ten dollars. Chargebacks are the hardest and worth the most.",
+            "mats": "Shopify says won/lost. Only disputes with a response count."
+          }
+        },
+        {
+          "id": "tom_inkorg",
+          "namn": "Tom inkorg på fredag",
+          "belopp": 15,
+          "enhet": "per vecka",
+          "hur": "Färre än 10 obesvarade ärenden när veckan tar slut.",
+          "mats": "Kundtjänstrapportens 'obesvarade' på fredagen.",
+          "kalla": "kundtjanst",
+          "auto": true,
+          "krav": {
+            "obesvarade_under": 10
+          },
+          "en": {
+            "namn": "Empty inbox on Friday",
+            "enhet": "per week",
+            "hur": "Fewer than 10 unanswered tickets when the week ends.",
+            "mats": "The support report's 'unanswered' on Friday."
+          }
+        },
+        {
+          "id": "snabb_svarstid",
+          "namn": "Svar inom ett halvt dygn",
+          "belopp": 10,
+          "enhet": "per vecka",
+          "hur": "Håll medianen på svarstiden under 12 timmar en hel vecka.",
+          "mats": "Kundtjänstrapportens mediansvarstid.",
+          "kalla": "kundtjanst",
+          "auto": true,
+          "krav": {
+            "median_timmar_under": 12
+          },
+          "en": {
+            "namn": "Answer within half a day",
+            "enhet": "per week",
+            "hur": "Keep the median response time under 12 hours for a whole week.",
+            "mats": "The support report's median response time."
+          }
+        }
+      ],
+      "en": {
+        "namn": "Customer support",
+        "beskrivning": "You earn on three things: customers writing well about you, disputes we win, and an empty inbox."
+      }
+    },
+    "support_chef": {
+      "namn": "Head of customer support",
+      "roller": [
+        "support_chef"
+      ],
+      "beskrivning": "Du tjänar på ditt eget arbete OCH på att teamet levererar. Coachar du dem tjänar du mer.",
+      "uppdrag": [
+        {
+          "id": "teamets_andel",
+          "namn": "Andel av teamets bonus",
+          "belopp": 0.1,
+          "enhet": "10 % av vad VA-teamet tjänar",
+          "hur": "Allt dina VA:er tjänar ger dig tio procent på toppen. Lär dem skaffa recensioner så tjänar ni båda.",
+          "mats": "Räknas på teamets utbetalda bonus samma månad.",
+          "kalla": "team",
+          "auto": true,
+          "andel": true,
+          "en": {
+            "namn": "Share of the team bonus",
+            "enhet": "10 % of what the VA team earns",
+            "hur": "Everything your VAs earn gives you ten percent on top. Teach them to collect reviews and you both earn.",
+            "mats": "Calculated on the team's paid bonus the same month."
+          }
+        },
+        {
+          "id": "risken_ner",
+          "namn": "Risken under 25",
+          "belopp": 25,
+          "enhet": "per brand och månad",
+          "hur": "Få ner chargeback-risken under 25 poäng för ett brand.",
+          "mats": "Veckorapportens riskpoäng vid månadens sista körning.",
+          "kalla": "kundtjanst",
+          "auto": true,
+          "krav": {
+            "risk_under": 25
+          },
+          "en": {
+            "namn": "Risk below 25",
+            "enhet": "per brand and month",
+            "hur": "Bring the chargeback risk below 25 points for a brand.",
+            "mats": "The weekly report's risk score at the last run of the month."
+          }
+        },
+        {
+          "id": "sop_tackning",
+          "namn": "Rutin för varje topp-ärende",
+          "belopp": 20,
+          "enhet": "per månad",
+          "hur": "Varje ärendetyp i topp 5 ska ha en SOP i Notion. Är alla täckta hela månaden får du tjugo dollar.",
+          "mats": "SOP-täckningen i veckorapporten.",
+          "kalla": "kundtjanst",
+          "auto": true,
+          "en": {
+            "namn": "A routine for every top ticket type",
+            "enhet": "per month",
+            "hur": "Every ticket type in the top 5 needs an SOP in Notion. If all are covered for the whole month you get twenty dollars.",
+            "mats": "SOP coverage in the weekly report."
+          }
+        }
+      ],
+      "en": {
+        "namn": "Head of customer support",
+        "beskrivning": "You earn on your own work AND on the team delivering. Coach them and you earn more."
+      }
+    },
+    "produkttest": {
+      "namn": "Produkttest",
+      "roller": [
+        "produkttest"
+      ],
+      "beskrivning": "Du tjänar mest när en produkt du hittat faktiskt säljer. Trappan stiger hela vägen till skalning.",
+      "uppdrag": [
+        {
+          "id": "produkt_godkand",
+          "namn": "Produkt godkänd för test",
+          "belopp": 2,
+          "enhet": "per produkt",
+          "hur": "Research klar, sida och underlag godkänt — produkten går vidare till annonser.",
+          "mats": "Raden i Product test center når status 'Ads review' eller längre, med dig som Ansvarig.",
+          "kalla": "produkttest",
+          "auto": true,
+          "en": {
+            "namn": "Product approved for testing",
+            "enhet": "per product",
+            "hur": "Research done, page and material approved — the product moves on to ads.",
+            "mats": "The row in Product test center reaches status 'Ads review' or further, with you as Owner."
+          }
+        },
+        {
+          "id": "produkt_testad",
+          "namn": "Produkten fick sin chans",
+          "belopp": 5,
+          "enhet": "per produkt",
+          "hur": "Produkten har spenderat över 2 000 kr i annonser — den blev verkligen testad.",
+          "mats": "Status 'Has gotten over 2000 sek spend' eller mätt spend i annonskontot.",
+          "kalla": "produkttest",
+          "auto": true,
+          "en": {
+            "namn": "Product got its chance",
+            "enhet": "per product",
+            "hur": "The product has spent over 2 000 SEK on ads — it really was tested.",
+            "mats": "Status 'Has gotten over 2000 sek spend' or measured spend in the ad account."
+          }
+        },
+        {
+          "id": "produkt_lonsam",
+          "namn": "Produkten går med vinst",
+          "belopp": 25,
+          "enhet": "per produkt",
+          "hur": "Produkten är märkt Profitable — den tjänar pengar över break-even.",
+          "mats": "Typ 'Profitable' i Product test center.",
+          "kalla": "produkttest",
+          "auto": true,
+          "en": {
+            "namn": "Product is profitable",
+            "enhet": "per product",
+            "hur": "The product is marked Profitable — it makes money above break-even.",
+            "mats": "Type 'Profitable' in Product test center."
+          }
+        },
+        {
+          "id": "produkt_skalad",
+          "namn": "Produkten skalas",
+          "belopp": 100,
+          "enhet": "per produkt",
+          "hur": "Produkten går till 'Continue to scale' — den blir en av butikens bärare.",
+          "mats": "Status 'Continue to scale' eller 'Hires for this product'.",
+          "kalla": "produkttest",
+          "auto": true,
+          "en": {
+            "namn": "Product is scaling",
+            "enhet": "per product",
+            "hur": "The product moves to 'Continue to scale' — it becomes one of the store's earners.",
+            "mats": "Status 'Continue to scale' or 'Hires for this product'."
+          }
+        }
+      ],
+      "en": {
+        "namn": "Product testing",
+        "beskrivning": "You earn the most when a product you found actually sells. The ladder climbs all the way to scaling."
+      }
+    },
+    "redigerare": {
+      "namn": "Videoredigerare",
+      "roller": [
+        "redigerare"
+      ],
+      "beskrivning": "Du får en andel av all annonsspend dina godkända annonser drar. Ju bättre annons, desto mer pengar bakom den — och desto mer till dig.",
+      "uppdrag": [
+        {
+          "id": "spend_andel",
+          "namn": "Andel av annonsspenden",
+          "belopp": 0.004,
+          "enhet": "0,4 % av spenden på dina annonser",
+          "hur": "Leverera annonser som blir godkända. Sedan sköter kontot resten: en annons som får mer budget ger dig mer.",
+          "mats": "Räknas av commission-körningen var tredje dag och sista dagen i månaden.",
+          "kalla": "commission",
+          "auto": true,
+          "andel": true,
+          "en": {
+            "namn": "Share of the ad spend",
+            "enhet": "0.4 % of the spend on your ads",
+            "hur": "Deliver ads that get approved. The account does the rest: an ad that gets more budget gives you more.",
+            "mats": "Calculated by the commission run every third day and on the last day of the month."
+          }
+        }
+      ],
+      "en": {
+        "namn": "Video editors",
+        "beskrivning": "You get a share of all the ad spend your approved ads pull. The better the ad, the more money behind it — and the more to you."
+      }
+    }
+  },
+  "godkannande": {
+    "kommentar": "Inrapporterade insatser (en recension VA:n hittat själv, en tvist som inte syns i datan) måste godkännas innan de betalas. Ägare och Head of customer support godkänner.",
+    "roller_som_godkanner": [
+      "agare",
+      "chef",
+      "support_chef"
+    ],
+    "auto_godkann_under": 0
+  },
+  "kommentar_sprak": "Varje uppdrag bär en engelsk version i fältet \"en\". VA:erna och redigerarna läser engelska (CLAUDE.md) — ett uppdrag de inte förstår tjänar ingen pengar på."
+}

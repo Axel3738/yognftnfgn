@@ -127,6 +127,12 @@ export function sattAktiv(fil, id, aktiv) {
   });
 }
 
+export function sattSprak(fil, id, sprak) {
+  const giltigt = ['sv', 'en'].includes(String(sprak ?? '').toLowerCase()) ? String(sprak).toLowerCase() : null;
+  if (!giltigt) throw new Error('Okänt språk.');
+  return andra(fil, id, (k) => { k.sprak = giltigt; });
+}
+
 export function sattPerson(fil, id, personId) {
   return andra(fil, id, (k) => { k.personId = personId ? String(personId).trim() : null; });
 }

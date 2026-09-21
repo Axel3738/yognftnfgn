@@ -13,6 +13,8 @@ import { join } from 'node:path';
 const tmp = mkdtempSync(join(tmpdir(), 'stonebite-test-'));
 process.env.STONEBITE_ANVANDARE = join(tmp, 'anvandare.json');
 process.env.STONEBITE_HEMLIGHET = 'test-hemlighet-som-ar-tillrackligt-lang';
+// Föränderliga filer (insatser, personer) i tmp — testet får aldrig skriva i repot.
+process.env.STONEBITE_DATA = tmp;
 
 const { skapaServer } = await import('../server.mjs');
 const anv = await import('../anvandare.mjs');
@@ -21,7 +23,9 @@ const FIL = process.env.STONEBITE_ANVANDARE;
 writeFileSync(FIL, JSON.stringify({ anvandare: [] }));
 anv.skapa(FIL, { namn: 'Axel Testsson', epost: 'axel@test.se', roll: 'agare', losenord: 'agarlosenord1' });
 anv.skapa(FIL, { namn: 'Josh Redigerare', epost: 'josh@test.se', roll: 'redigerare', losenord: 'redigerare123' });
-anv.skapa(FIL, { namn: 'Vera VA', epost: 'vera@test.se', roll: 'kundtjanst', losenord: 'kundtjanst123' });
+anv.skapa(FIL, { namn: 'Vera VA', epost: 'vera@test.se', roll: 'va', personId: 'vera', losenord: 'kundtjanst123' });
+anv.skapa(FIL, { namn: 'Hanna Chef', epost: 'hanna@test.se', roll: 'support_chef', personId: 'hanna', losenord: 'supportchef1' });
+anv.skapa(FIL, { namn: 'Pia Test', epost: 'pia@test.se', roll: 'produkttest', personId: 'pia', losenord: 'produkttest1' });
 
 const server = skapaServer();
 await new Promise((klar) => server.listen(0, '127.0.0.1', klar));
@@ -49,6 +53,17 @@ async function loggaIn(epost, losenord) {
 
 async function hamta(stig, kaka) {
   return fetch(`${bas}${stig}`, { redirect: 'manual', headers: kaka ? { Cookie: kaka } : {} });
+}
+
+/**
+ * CSRF-nyckeln är bunden till sessionskakan, så den måste hämtas EFTER
+ * inloggningen — precis som en riktig webbläsare gör när sidan renderas.
+ */
+async function farskCsrf(stig, kaka) {
+  const html = await (await hamta(stig, kaka)).text();
+  const m = /name="csrf" value="([^"]+)"/.exec(html);
+  assert.ok(m, `hittade ingen csrf på ${stig}`);
+  return m[1];
 }
 
 test('publika sidan svarar utan inloggning', async () => {
@@ -145,17 +160,107 @@ test('redigerarens egna sidor visar varken spend, ROAS eller satsen', async () =
   }
 });
 
-test('kundtjänst når sina sidor men ingen ekonomi', async () => {
+test('vanlig VA når sina sidor men ingen ekonomi och ingen bonusöversikt', async () => {
   const { kaka, svar } = await loggaIn('vera@test.se', 'kundtjanst123');
   assert.equal(svar.headers.get('location'), '/app/kundtjanst');
+  for (const stig of ['/app/kundtjanst', '/app/leverans', '/app/recensioner', '/app/mig']) {
+    assert.equal((await hamta(stig, kaka)).status, 200, `${stig} ska visas för en VA`);
+  }
+  for (const stig of ['/app/annonser', '/app/butiker', '/app/bonus', '/app/system', '/app/produkttest']) {
+    assert.equal((await hamta(stig, kaka)).headers.get('location'), '/app/kundtjanst', `${stig} ska inte visas för en VA`);
+  }
+});
+
+test('Head of support når bonusen men inte annonserna', async () => {
+  const { kaka } = await loggaIn('hanna@test.se', 'supportchef1');
+  assert.equal((await hamta('/app/bonus', kaka)).status, 200);
   assert.equal((await hamta('/app/kundtjanst', kaka)).status, 200);
-  assert.equal((await hamta('/app/leverans', kaka)).status, 200);
   assert.equal((await hamta('/app/annonser', kaka)).headers.get('location'), '/app/kundtjanst');
-  assert.equal((await hamta('/app/butiker', kaka)).headers.get('location'), '/app/kundtjanst');
+  assert.equal((await hamta('/app/konton', kaka)).headers.get('location'), '/app/kundtjanst');
+});
+
+test('produkttestaren ser sin pipeline och inget annat', async () => {
+  const { kaka, svar } = await loggaIn('pia@test.se', 'produkttest1');
+  assert.equal(svar.headers.get('location'), '/app/produkttest');
+  assert.equal((await hamta('/app/produkttest', kaka)).status, 200);
+  assert.equal((await hamta('/app/mig', kaka)).status, 200);
+  for (const stig of ['/app', '/app/annonser', '/app/bonus', '/app/kundtjanst']) {
+    assert.equal((await hamta(stig, kaka)).headers.get('location'), '/app/produkttest');
+  }
+});
+
+test('en VA kan rapportera in en insats — men inte godkänna den själv', async () => {
+  const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+  const csrf = await farskCsrf('/app/mig', kaka);
+  const skicka = await fetch(`${bas}/app/mig/rapportera`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({ csrf, uppdrag: 'recension_med_namn', referens: 'https://trustpilot.com/reviews/1', text: 'Kunden skrev mitt namn' }).toString(),
+  });
+  assert.equal(skicka.status, 200);
+  const html = await skicka.text();
+  assert.match(html, /Inskickat/);
+
+  const { lasInsatser } = await import('../../bonus/kor.mjs');
+  const insatser = lasInsatser(join(tmp, 'insatser.jsonl'));
+  assert.equal(insatser.length, 1);
+  assert.equal(insatser[0].status, 'vantar');
+  assert.equal(insatser[0].personId, 'vera');
+
+  // VA:n försöker godkänna sin egen insats.
+  const fusk = await fetch(`${bas}/app/bonus/godkann`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({ csrf, id: insatser[0].id, beslut: 'godkand' }).toString(),
+  });
+  assert.equal(fusk.status, 403, 'en VA får aldrig godkänna sina egna pengar');
+  assert.equal(lasInsatser(join(tmp, 'insatser.jsonl'))[0].status, 'vantar');
+});
+
+test('Head of support godkänner insatsen och den blir utbetalbar', async () => {
+  const { lasInsatser } = await import('../../bonus/kor.mjs');
+  const insats = lasInsatser(join(tmp, 'insatser.jsonl'))[0];
+  const { kaka } = await loggaIn('hanna@test.se', 'supportchef1');
+  const csrf = await farskCsrf('/app/bonus', kaka);
+  const svar = await fetch(`${bas}/app/bonus/godkann`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({ csrf, id: insats.id, beslut: 'godkand' }).toString(),
+  });
+  assert.equal(svar.status, 200);
+  const efter = lasInsatser(join(tmp, 'insatser.jsonl'))[0];
+  assert.equal(efter.status, 'godkand');
+  assert.equal(efter.beslutAv, 'Hanna Chef');
+});
+
+test('ägaren skapar ett konto och personen hamnar i bonusregistret', async () => {
+  const { kaka } = await loggaIn('axel@test.se', 'agarlosenord1');
+  const csrf = await farskCsrf('/app/konton', kaka);
+  const svar = await fetch(`${bas}/app/konton/ny`, {
+    method: 'POST',
+    redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+    body: new URLSearchParams({
+      csrf, namn: 'Maria Santos', epost: 'maria@test.se', roll: 'va',
+      fornamn: 'Maria', brands: 'baverbutiken, carashell', extraroll: 'produkttest',
+    }).toString(),
+  });
+  assert.equal(svar.status, 200);
+  const { lasPersoner } = await import('../../bonus/kor.mjs');
+  const person = lasPersoner(undefined, join(tmp, 'personer-extra.json')).find((p) => p.id === 'maria');
+  assert.ok(person, 'personen ska ha skapats i bonusregistret');
+  assert.equal(person.roll, 'va');
+  assert.deepEqual(person.brands, ['baverbutiken', 'carashell']);
+  assert.deepEqual(person.extraRoller, ['produkttest']);
+  assert.ok(anv.hittaPaEpost(FIL, 'maria@test.se'), 'inloggningen ska finnas');
 });
 
 test('ingen utom ägaren får ändra konton', async () => {
-  const { kaka, csrf } = await loggaIn('josh@test.se', 'redigerare123');
+  const { kaka } = await loggaIn('josh@test.se', 'redigerare123');
+  const csrf = await farskCsrf('/app/mig', kaka);
   const r = await fetch(`${bas}/app/konton/ny`, {
     method: 'POST',
     redirect: 'manual',

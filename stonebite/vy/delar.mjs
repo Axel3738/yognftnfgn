@@ -11,6 +11,31 @@
 //   • saknas datan skrivs det ut med orsak — aldrig en nolla
 
 import { sparkline as raknaSparkline, tal, pengar, forandring } from '../berakna.mjs';
+import { oversatt } from '../sprak.mjs';
+
+/**
+ * Språket för den sida som just nu renderas. Servern sätter det innan vyn
+ * byggs, och rendering är helt synkron — ingen annan förfrågan hinner emellan.
+ *
+ * Bara MINA texter översätts: etiketter, rubriker, förklaringar och
+ * kolumnnamn. Värden och tabellrader (butiksnamn, kampanjnamn, kundtext) rörs
+ * aldrig — data ska se likadan ut på båda språken.
+ */
+let aktivtSprak = 'sv';
+
+export function sattSprak(sprak) {
+  aktivtSprak = sprak === 'en' ? 'en' : 'sv';
+  return aktivtSprak;
+}
+
+export function sprak() {
+  return aktivtSprak;
+}
+
+/** Översätt en av mina egna texter till läsarens språk. */
+export function t(text) {
+  return oversatt(text, aktivtSprak);
+}
 
 export function esc(v) {
   return String(v ?? '')
@@ -59,7 +84,7 @@ const TON_ORD = { bra: 'bra', varning: 'varning', allvar: 'allvar', kritisk: 'kr
 
 /** Prick + ord. Ordet är det som bär betydelsen, färgen är bara stöd. */
 export function status(ton, ord) {
-  return `<span class="status ${TON_ORD[ton] ?? ''}"><span class="prick" aria-hidden="true"></span>${esc(ord)}</span>`;
+  return `<span class="status ${TON_ORD[ton] ?? ''}"><span class="prick" aria-hidden="true"></span>${esc(t(ord))}</span>`;
 }
 
 export function delta(f, { bra = 'upp' } = {}) {
@@ -78,14 +103,14 @@ export function delta(f, { bra = 'upp' } = {}) {
 export function kort({ etikett, varde, forklaring = '', serie = null, jamfor = null, jamforBra = 'upp', status: st = null, fot = '', text = false }) {
   const f = jamfor ? delta(jamfor, { bra: jamforBra }) : '';
   return `<article class="kort">
-    <div class="etikett">${esc(etikett)}</div>
+    <div class="etikett">${esc(t(etikett))}</div>
     <div class="varde${text ? ' text' : ''}">${varde}</div>
-    ${forklaring ? `<p class="forklaring">${esc(forklaring)}</p>` : ''}
+    ${forklaring ? `<p class="forklaring">${esc(t(forklaring))}</p>` : ''}
     <div class="botten">
       <div>${f || (st ?? '')}</div>
       ${serie ? spark(serie, { titel: `${etikett} över tid` }) : ''}
     </div>
-    ${fot ? `<p class="mini mellan">${esc(fot)}</p>` : ''}
+    ${fot ? `<p class="mini mellan">${esc(t(fot))}</p>` : ''}
   </article>`;
 }
 
@@ -93,9 +118,9 @@ export function kort({ etikett, varde, forklaring = '', serie = null, jamfor = n
 export function hjalte({ etikett, varde, forklaring = '', serie = null, jamfor = null, jamforBra = 'upp', sida = '' }) {
   return `<section class="hjalte">
     <div>
-      <div class="etikett">${esc(etikett)}</div>
+      <div class="etikett">${esc(t(etikett))}</div>
       <div class="varde">${varde}</div>
-      ${forklaring ? `<p class="forklaring">${esc(forklaring)}</p>` : ''}
+      ${forklaring ? `<p class="forklaring">${esc(t(forklaring))}</p>` : ''}
       ${jamfor ? `<p class="mellan">${delta(jamfor, { bra: jamforBra })}</p>` : ''}
     </div>
     <div>${serie ? spark(serie, { bredd: 220, hojd: 72, titel: `${etikett} över tid` }) : ''}${sida}</div>
@@ -106,9 +131,9 @@ export function hjalte({ etikett, varde, forklaring = '', serie = null, jamfor =
 
 export function panel({ titel, under = '', innehall, fot = '', verktyg = '' }) {
   return `<section class="panel">
-    ${titel ? `<header class="panel-huvud"><div><h3>${esc(titel)}</h3>${under ? `<p class="under">${esc(under)}</p>` : ''}</div>${verktyg}</header>` : ''}
+    ${titel ? `<header class="panel-huvud"><div><h3>${esc(t(titel))}</h3>${under ? `<p class="under">${esc(t(under))}</p>` : ''}</div>${verktyg}</header>` : ''}
     ${innehall}
-    ${fot ? `<footer class="panel-fot">${esc(fot)}</footer>` : ''}
+    ${fot ? `<footer class="panel-fot">${esc(t(fot))}</footer>` : ''}
   </section>`;
 }
 
@@ -117,7 +142,7 @@ export function panel({ titel, under = '', innehall, fot = '', verktyg = '' }) {
  * Tomma tabeller visas aldrig som en tom ruta — anropa tomt() i stället.
  */
 export function tabell(kolumner, rader) {
-  const huvud = kolumner.map((k) => `<th${k.tal ? ' class="tal"' : ''}${k.bredd ? ` style="width:${k.bredd}"` : ''}>${esc(k.titel)}</th>`).join('');
+  const huvud = kolumner.map((k) => `<th${k.tal ? ' class="tal"' : ''}${k.bredd ? ` style="width:${k.bredd}"` : ''}>${esc(t(k.titel))}</th>`).join('');
   return `<div class="tabellsvep"><table>
     <thead><tr>${huvud}</tr></thead>
     <tbody>${rader.join('')}</tbody>
@@ -126,13 +151,13 @@ export function tabell(kolumner, rader) {
 
 /** Saknad data — alltid med orsak. Aldrig en nolla, aldrig tomt. */
 export function tomt(rubrik, orsak = '') {
-  return `<div class="tomt"><b>${esc(rubrik)}</b>${orsak ? esc(orsak) : ''}</div>`;
+  return `<div class="tomt"><b>${esc(t(rubrik))}</b>${orsak ? esc(t(orsak)) : ''}</div>`;
 }
 
 export function block({ titel, under = '', innehall }) {
   return `<section class="block">
-    ${titel ? `<h2>${esc(titel)}</h2>` : ''}
-    ${under ? `<p class="under">${esc(under)}</p>` : ''}
+    ${titel ? `<h2>${esc(t(titel))}</h2>` : ''}
+    ${under ? `<p class="under">${esc(t(under))}</p>` : ''}
     ${innehall}
   </section>`;
 }

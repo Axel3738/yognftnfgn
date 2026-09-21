@@ -101,12 +101,12 @@ export function kategorinamn(id, engelska = '') {
   return KATEGORIER[id] ?? engelska ?? id;
 }
 
-/** Tvisttypen i klartext. */
-export function tvisttyp(typ) {
+/** Tvisttypen i klartext, på läsarens språk. */
+export function tvisttyp(typ, sprak = 'sv') {
   const t = String(typ ?? '').toLowerCase();
-  if (t === 'inquiry') return 'förfrågan från banken';
-  if (t === 'chargeback') return 'chargeback — pengarna är tagna';
-  return t || 'tvist';
+  if (t === 'inquiry') return sprak === 'en' ? 'bank inquiry' : 'förfrågan från banken';
+  if (t === 'chargeback') return sprak === 'en' ? 'chargeback — the money is taken' : 'chargeback — pengarna är tagna';
+  return t || (sprak === 'en' ? 'dispute' : 'tvist');
 }
 
 /**

@@ -4,11 +4,16 @@
 // USD och antal annonser — aldrig hur mycket kontot har spenderat, och aldrig
 // procentsatsen (av sats + belopp går spenden att räkna ut baklänges).
 // Ägare och chef ser satsen; ingen annan.
+//
+// Min sida är den viktigaste sidan i hela sajten för alla utom Axel: den
+// säger vad man tjänat, vad man kan tjäna, och exakt hur man gör.
 
-import { esc, attr, kort, panel, tabell, tomt, block, status, stapel, tal, pengar } from './delar.mjs';
+import { esc, attr, kort, panel, tabell, tomt, block, status, stapel, tal, t, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
-import { sedan, datum } from '../berakna.mjs';
+import { sedan } from '../berakna.mjs';
 import { ROLLER, ROLLNYCKLAR, roll as hamtaRoll, menyFor, harRatt, personIdFor } from '../roller.mjs';
+import { minBonus } from './bonus.mjs';
+import { SPRAKEN } from '../sprak.mjs';
 
 const USD = (v) => (v === null || v === undefined ? '–' : `$${Number(v).toLocaleString('sv-SE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`);
 
@@ -98,34 +103,47 @@ export function redigerareSida({ snapshot, anvandare }) {
 export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }) {
   const r = hamtaRoll(anvandare.roll);
   const mittId = personIdFor(anvandare);
+  const person = (snapshot?.personer ?? []).find((p) => p.id === mittId) ?? null;
   const minRad = mittId ? (snapshot?.redigerare?.rader ?? []).find((x) => x.id === mittId) : null;
 
-  const minaSiffror = minRad ? `<div class="kort-rad">
-    ${kort({ etikett: 'Din plats', varde: `#${tal(minRad.plats)}`, forklaring: minRad.flytt ? `Du har flyttat dig ${minRad.flytt > 0 ? 'uppåt' : 'nedåt'} ${tal(Math.abs(minRad.flytt))} steg sedan sist.` : 'Samma plats som sist.' })}
-    ${kort({ etikett: 'Din ersättning', varde: USD(minRad.usd), forklaring: `Den här månaden, på ${tal(minRad.annonser)} annonser.` })}
+  const topplistedel = minRad ? `<div class="kort-rad">
+    ${kort({ etikett: 'Din plats på topplistan', varde: `#${tal(minRad.plats)}`, forklaring: minRad.flytt ? `Du har flyttat dig ${minRad.flytt > 0 ? 'uppåt' : 'nedåt'} ${tal(Math.abs(minRad.flytt))} steg sedan sist.` : 'Samma plats som sist.' })}
     ${minRad.basta ? kort({ etikett: 'Din bästa annons', varde: esc(minRad.basta.namn), forklaring: `Den har gett dig ${USD(minRad.basta.usd)} den här månaden.` }) : ''}
   </div>` : '';
 
-  const koppling = !mittId && anvandare.roll === 'redigerare'
-    ? tomt('Ditt konto är inte kopplat till dina annonser än', 'Be Axel koppla kontot till ditt namn i teamlistan, så dyker dina siffror upp här.')
+  const koppling = !mittId
+    ? tomt('Ditt konto är inte kopplat till en person än', 'Utan koppling kan systemet inte veta vilka recensioner, tvister eller produkter som är dina. Be Axel koppla kontot under Konton.')
     : '';
 
   return {
     titel: 'Min sida',
-    innehall: `${sidhuvud({ rubrik: 'Min sida', under: `Inloggad som ${esc(anvandare.namn)}.` })}
+    innehall: `${sidhuvud({ rubrik: 'Min sida', under: `${t('Inloggad som')} ${esc(anvandare.namn)}.` })}
     ${meddelande ? `<div class="ok-ruta">${esc(meddelande)}</div>` : ''}
     ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
-    ${minaSiffror}
     ${koppling}
+    ${minBonus({ snapshot, anvandare, person, csrf })}
+    ${topplistedel}
 
     ${block({
       titel: 'Ditt konto',
       innehall: panel({
         innehall: `<ul class="lista">
-          <li><span style="min-width:140px;color:var(--ink-3)">Namn</span><span class="namn">${esc(anvandare.namn)}</span></li>
-          <li><span style="min-width:140px;color:var(--ink-3)">E-post</span><span class="namn">${esc(anvandare.epost)}</span></li>
-          <li><span style="min-width:140px;color:var(--ink-3)">Roll</span><span><span class="namn">${esc(r?.namn ?? anvandare.roll)}</span><span class="bi">${esc(r?.beskrivning ?? '')}</span></span></li>
-          <li><span style="min-width:140px;color:var(--ink-3)">Du ser</span><span>${menyFor(anvandare).map((s) => `<span class="tagg">${esc(s.titel)}</span>`).join(' ')}</span></li>
+          <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Namn'))}</span><span class="namn">${esc(anvandare.namn)}</span></li>
+          <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('E-post'))}</span><span class="namn">${esc(anvandare.epost)}</span></li>
+          <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Roll'))}</span><span><span class="namn">${esc(t(r?.namn ?? anvandare.roll))}</span><span class="bi">${esc(t(r?.beskrivning ?? ''))}</span></span></li>
+          ${person?.extraRoller?.length ? `<li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Tjänar även i'))}</span><span>${person.extraRoller.map((x) => `<span class="tagg">${esc(t(ROLLER[x]?.namn ?? x))}</span>`).join(' ')}</span></li>` : ''}
+          ${person?.brands?.length ? `<li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Dina butiker'))}</span><span>${person.brands.map((b) => `<span class="tagg">${esc(b)}</span>`).join(' ')}</span></li>` : ''}
+          <li><span style="min-width:140px;color:var(--ink-3)">${esc(t('Du ser'))}</span><span>${menyFor(anvandare).map((s) => `<span class="tagg">${esc(t(s.titel))}</span>`).join(' ')}</span></li>
+          <li>
+            <span style="min-width:140px;color:var(--ink-3)">${esc(t('Språk'))}</span>
+            <form method="post" action="/app/mig/sprak" style="display:flex;gap:8px;align-items:center">
+              <input type="hidden" name="csrf" value="${attr(csrf)}">
+              <select name="sprak" style="height:34px;padding:0 8px;font-size:13px;border-radius:6px;border:1px solid var(--linje-stark);background:var(--papper);color:var(--ink)">
+                ${Object.entries(SPRAKEN).map(([kod, namn]) => `<option value="${attr(kod)}"${kod === sprak() ? ' selected' : ''}>${esc(namn)}</option>`).join('')}
+              </select>
+              <button class="knapp liten tyst" type="submit">${esc(t('Spara'))}</button>
+            </form>
+          </li>
         </ul>`,
       }),
     })}
@@ -136,10 +154,10 @@ export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }
       innehall: panel({
         innehall: `<form method="post" action="/app/mig/losenord" style="padding:20px;max-width:420px">
           <input type="hidden" name="csrf" value="${attr(csrf)}">
-          <label class="falt"><span>Nuvarande lösenord</span><input type="password" name="gammalt" required autocomplete="current-password"></label>
-          <label class="falt"><span>Nytt lösenord (minst 8 tecken)</span><input type="password" name="nytt" required minlength="8" autocomplete="new-password"></label>
-          <label class="falt"><span>Nytt lösenord igen</span><input type="password" name="nytt2" required minlength="8" autocomplete="new-password"></label>
-          <button class="knapp" type="submit">Spara nytt lösenord</button>
+          <label class="falt"><span>${esc(t('Nuvarande lösenord'))}</span><input type="password" name="gammalt" required autocomplete="current-password"></label>
+          <label class="falt"><span>${esc(t('Nytt lösenord (minst 8 tecken)'))}</span><input type="password" name="nytt" required minlength="8" autocomplete="new-password"></label>
+          <label class="falt"><span>${esc(t('Nytt lösenord igen'))}</span><input type="password" name="nytt2" required minlength="8" autocomplete="new-password"></label>
+          <button class="knapp" type="submit">${esc(t('Spara nytt lösenord'))}</button>
         </form>`,
       }),
     })}`,
@@ -148,20 +166,20 @@ export function migSida({ snapshot, anvandare, meddelande = '', fel = '', csrf }
 
 // ---------------------------------------------------------------- konton
 
-export function kontonSida({ konton, anvandare, folk = [], meddelande = '', fel = '', nyttLosenord = null, csrf }) {
+export function kontonSida({ konton, anvandare, personer = [], butiker = [], meddelande = '', fel = '', nyttLosenord = null, csrf }) {
   const rader = konton.map((k) => {
-    const r = hamtaRoll(k.roll);
     const jag = k.id === anvandare.id;
+    const person = personer.find((p) => p.id === k.personId) ?? null;
     return `<tr>
       <td>
         <span class="namn">${esc(k.namn)}${jag ? ' · du' : ''}</span>
-        <span class="bi">${esc(k.epost)}${k.personId ? ` · kopplad till ${esc(k.personId)}` : ''}</span>
+        <span class="bi">${esc(k.epost)}${person ? ` · ${esc(person.namn)}${person.extraRoller?.length ? ` (+${person.extraRoller.map((x) => ROLLER[x]?.namn ?? x).join(', ')})` : ''}` : ' · ingen person kopplad'}</span>
       </td>
       <td>
         <form method="post" action="/app/konton/roll" style="display:flex;gap:6px;align-items:center">
           <input type="hidden" name="csrf" value="${attr(csrf)}">
           <input type="hidden" name="id" value="${attr(k.id)}">
-          <select name="roll" class="falt" style="height:34px;padding:0 8px;font-size:13px;border-radius:6px;border:1px solid var(--linje-stark);background:var(--papper);color:var(--ink)">
+          <select name="roll" style="height:34px;padding:0 8px;font-size:13px;border-radius:6px;border:1px solid var(--linje-stark);background:var(--papper);color:var(--ink)">
             ${ROLLNYCKLAR.map((rn) => `<option value="${attr(rn)}"${rn === k.roll ? ' selected' : ''}>${esc(ROLLER[rn].namn)}</option>`).join('')}
           </select>
           <button class="knapp liten tyst" type="submit">Spara</button>
@@ -195,9 +213,13 @@ export function kontonSida({ konton, anvandare, folk = [], meddelande = '', fel 
     <div class="botten"><div class="etiketter">${ROLLER[rn].sidor.map((s) => `<span class="tagg">${esc(s)}</span>`).join('')}</div></div>
   </article>`).join('');
 
+  // Personerna som kan tjäna bonus men saknar inloggning — den vanligaste
+  // orsaken till att någons pengar inte syns.
+  const utanKonto = personer.filter((p) => !konton.some((k) => k.personId === p.id));
+
   return {
     titel: 'Konton',
-    innehall: `${sidhuvud({ rubrik: 'Konton', under: 'Vem som kan logga in, och hur mycket de ser.' })}
+    innehall: `${sidhuvud({ rubrik: 'Konton', under: 'Vem som kan logga in, hur mycket de ser och vad de kan tjäna.' })}
     ${meddelande ? `<div class="ok-ruta">${esc(meddelande)}</div>` : ''}
     ${fel ? `<div class="fel-ruta">${esc(fel)}</div>` : ''}
     ${nyttLosenord ? `<div class="ok-ruta"><b>Lösenord till ${esc(nyttLosenord.namn)}:</b> <code style="font-size:16px">${esc(nyttLosenord.losenord)}</code><br>Skicka det till personen nu — det visas bara den här gången.</div>` : ''}
@@ -215,28 +237,43 @@ export function kontonSida({ konton, anvandare, folk = [], meddelande = '', fel 
 
     ${block({
       titel: 'Lägg till någon',
-      under: 'Lösenordet skapas åt dig och visas en gång. Personen byter det själv på Min sida.',
+      under: 'Kontot och personen skapas i ett svep. Lösenordet visas en gång — personen byter det själv på Min sida.',
       innehall: panel({
         innehall: `<form method="post" action="/app/konton/ny" style="padding:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;align-items:end">
           <input type="hidden" name="csrf" value="${attr(csrf)}">
-          <label class="falt" style="margin:0"><span>Namn</span><input name="namn" required></label>
+          <label class="falt" style="margin:0"><span>Namn</span><input name="namn" required placeholder="Maria Santos"></label>
           <label class="falt" style="margin:0"><span>E-post</span><input type="email" name="epost" required inputmode="email"></label>
           <label class="falt" style="margin:0"><span>Roll</span>
             <select name="roll" required>
-              ${ROLLNYCKLAR.map((rn) => `<option value="${attr(rn)}"${rn === 'redigerare' ? ' selected' : ''}>${esc(ROLLER[rn].namn)} — ${esc(ROLLER[rn].beskrivning)}</option>`).join('')}
+              ${ROLLNYCKLAR.map((rn) => `<option value="${attr(rn)}"${rn === 'va' ? ' selected' : ''}>${esc(ROLLER[rn].namn)}</option>`).join('')}
             </select>
           </label>
-          <label class="falt" style="margin:0"><span>Koppla till person (valfritt)</span>
-            <select name="personId">
-              <option value="">— ingen —</option>
-              ${folk.map((f) => `<option value="${attr(f.id)}">${esc(f.namn)} (${esc(f.roll)})</option>`).join('')}
+          <label class="falt" style="margin:0"><span>Förnamn i recensioner</span><input name="fornamn" placeholder="Maria"></label>
+          <label class="falt" style="margin:0"><span>Butiker (kommatecken)</span><input name="brands" placeholder="baverbutiken, carashell" list="butikslista"></label>
+          <datalist id="butikslista">${butiker.map((b) => `<option value="${attr(b)}"></option>`).join('')}</datalist>
+          <label class="falt" style="margin:0"><span>Tjänar även i</span>
+            <select name="extraroll">
+              <option value="">— inget extra —</option>
+              ${ROLLNYCKLAR.filter((rn) => !['agare', 'chef'].includes(rn)).map((rn) => `<option value="${attr(rn)}">${esc(ROLLER[rn].namn)}</option>`).join('')}
             </select>
           </label>
           <button class="knapp" type="submit">Skapa konto</button>
         </form>`,
-        fot: 'Kopplingen till person gör att redigeraren ser SINA siffror på Min sida — aldrig någon annans.',
+        fot: 'Förnamnet är hur systemet hittar personen i en recension. Butikerna styr veckobonusarna (tom inkorg, svarstid).',
       }),
     })}
+
+    ${utanKonto.length ? block({
+      titel: 'Personer utan inloggning',
+      under: 'De finns i bonusregistret men kan inte logga in — och ser alltså aldrig sina egna pengar.',
+      innehall: panel({
+        innehall: `<ul class="lista">${utanKonto.map((p) => `
+          <li>
+            <span>${status('varning', 'ingen inloggning')}</span>
+            <span><span class="namn">${esc(p.namn)}</span><span class="bi">${esc(ROLLER[p.roll]?.namn ?? p.roll)}${p.brands?.length ? ` · ${p.brands.join(', ')}` : ''}</span></span>
+          </li>`).join('')}</ul>`,
+      }),
+    }) : ''}
 
     ${block({
       titel: 'Vad rollerna ser',

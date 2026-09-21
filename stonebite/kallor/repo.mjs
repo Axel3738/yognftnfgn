@@ -193,6 +193,11 @@ export function lasProfil(rot) {
   return jsonEller(join(rot, 'stonebite', 'profil.json'), null);
 }
 
+/** Kartan över allt som är byggt, i kategorier. */
+export function lasSystem(rot) {
+  return jsonEller(join(rot, 'stonebite', 'system.json'), null);
+}
+
 /** Allt repot kan ge, i ett svep. */
 export function samlaRepo(rot) {
   return {

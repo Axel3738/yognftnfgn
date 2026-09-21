@@ -226,15 +226,29 @@ node stonebite/hamta.mjs     # hämtar data (Shopify + Meta + repot) → data/sn
 npm run sida                 # startar sajten på http://localhost:4000
 ```
 
-**Fyra roller, och rollen avgör vad servern ens svarar på** (`stonebite/roller.mjs`,
-kontrolleras vid varje sidvisning — menyn är bara en spegling):
+**Sex roller, och rollen avgör vad servern ens svarar på** (`stonebite/roller.mjs`,
+kontrolleras vid varje sidvisning — menyn är bara en spegling). Axels fem
+inloggningar 2026-09-21 plus chefsrollen som redan fanns:
 
 | Roll | Ser | Ser inte |
 |---|---|---|
-| Ägare | allt + konton | — |
-| Chef | allt utom konton | vem som får logga in |
-| Redigerare | topplistan + sin egen sida | **spend, ROAS, omsättning, break-even, satsen** |
-| Kundtjänst | ärenden, tvister, paket | all ekonomi |
+| `agare` | allt + konton | — |
+| `chef` | allt utom konton | vem som får logga in |
+| `produkttest` | produkttest-trappan + sin egen sida | spend, omsättning, andras pengar |
+| `redigerare` | topplistan + sin egen sida | **spend, ROAS, omsättning, break-even, satsen** |
+| `support_chef` | kundtjänst, recensioner, leverans, **hela teamets bonus**, godkänner insatser | all ekonomi |
+| `va` | kundtjänst, recensioner, leverans + sina egna uppdrag och pengar | all ekonomi, andras bonus |
+
+**Tolv sidor:** Översikt, Butiker, Annonser, Produkttest, Redigerare,
+Kundtjänst, Recensioner, Leverans, Bonus, System, Min sida, Konton.
+`/app/system` är kartan över allt du byggt (`stonebite/system.json`, i
+kategorier + dygnets rutiner).
+
+⚠️ **Sajten är tvåspråkig** (`stonebite/sprak.mjs`). Ägare och chef får
+svenska, alla andra engelska — samma regel som i chatten. Var och en byter
+själv på Min sida. Ordboken är hela meningar svenska → engelska; saknas en
+rad visas svenskan, sidan går aldrig sönder. Komponenterna översätter sina
+egna etiketter men **aldrig datan** (butiksnamn, kampanjnamn, kundtext).
 
 Att redigerare aldrig ser spend är samma järnregel som topplistan (Axels beslut
 2026-09-02). Satsen räknas som spend — med belopp OCH sats går spenden att
@@ -274,7 +288,62 @@ volym som överlever en deploy** (`STONEBITE_ANVANDARE`) — annars är alla kon
 borta vid nästa version.
 
 Första gången: öppna `/kom-igang` och skapa ägarkontot. Sidan stänger sig själv
-när kontot finns; alla andra konton läggs till inne på sidan Konton.
+när kontot finns; alla andra konton läggs till inne på sidan Konton — och då
+skapas personen i bonusregistret samtidigt, annars finns ingen att betala till.
+
+**Lägg upp sajten:** `stonebite/COWORK-PROMPT.md` är den färdiga prompten Axel
+klistrar in i Cowork (Railway + volym + DNS för stonebite.org), plus listan på
+det jag behöver veta om verksamheten.
+
+---
+
+## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
+
+Axels uppdrag: "vi behöver verkligen något system för VA:erna". De hade fem
+dollar per Trustpilot-recension med sitt namn — **och drog noll recensioner.**
+Full dokumentation: `bonus/README.md`.
+
+```bash
+node bonus/kor.mjs --torr    # räkna månadens bonus, skriv inget
+npm run bonus                # skarpt: skriver bonus/utfall/<månad>.json
+```
+
+**Fyra program, alla mätta ur data vi redan har:**
+
+| Vem | Tjänar på |
+|---|---|
+| VA | $5 recension med namn · $10 tre på en vecka · $3 tvist besvarad i tid · $10 vunnen tvist · $15 tom inkorg · $10 svarstid under 12 h |
+| Head of support | 10 % av teamets bonus · $25 risk under 25 · $20 full SOP-täckning |
+| Produkttest | $2 godkänd → $5 testad → $25 lönsam → $100 skalad (trappan i Notion) |
+| Redigerare | 0,4 % av spenden (commission, oförändrat) |
+
+⚠️ **Varför de inte drog recensioner — och vad som ändrats.** Tre saker
+saknades: de såg aldrig pengarna, ingen visste exakt hur man ber om en
+recension, och det fanns inget veckomål. Nu: Min sida visar "Du har tjänat
+$X", varje uppdrag har ett *Så gör du*, recensionsuppdraget har en **färdig
+text att kopiera** (sv + en) och en veckoräknare "1 av 3".
+**Mätt 2026-09-21: 2 av 1 210 recensioner nämnde någon i teamet.** Den siffran
+står nu överst på sidan Recensioner.
+
+**Fyra regler som sitter i koden:**
+1. **Hellre okopplad än fel person** — två namn i samma recension betalar ingen.
+2. **Ingen utbetalning utan underlag** — varje krona pekar på ett bevis.
+3. **Anspråk verifieras mot datan** — "jag svarade på tvist #5763" betalas
+   först när tvistdatan säger att den är besvarad.
+4. **Ingen godkänner sina egna pengar** — VA rapporterar in, chefen godkänner.
+   Ett test loggar in som VA och försöker godkänna sin egen insats: 403.
+
+⚠️ `bonus/personer.json` är folkregistret (roll, förnamn för
+recensionsmatchning, butiker). **En person kan bära flera roller**:
+`extraRoller: ["produkttest"]` gör att en redigerare även tjänar i
+produkttestprogrammet. Mätt 2026-09-21: Josh (13) och Annabelle (12) står som
+Ansvarig på produkttester men får bara betalt som redigerare — **det är Axels
+beslut om pengar, systemet ändrar det inte självt.**
+
+⚠️ Trustpilots publika sida svarar 403 på maskiner (mätt 2026-09-21). Automatisk
+läsning kräver `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS`. Judge.me
+läses redan automatiskt (1 210 recensioner på 60 dagar). Utan Trustpilot-nyckeln
+rapporterar VA:n in recensionen med länk och chefen godkänner.
 
 ---
 

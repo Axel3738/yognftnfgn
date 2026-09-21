@@ -19,7 +19,8 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { upptackButiker, hamtaAlla as hamtaButiker } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
-import { samlaRepo, lasProfil } from './kallor/repo.mjs';
+import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
+import { kor as korBonus, lasPersoner, lasRegler } from '../bonus/kor.mjs';
 
 export const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const SNAPSHOT = join(ROT, 'stonebite', 'data', 'snapshot.json');
@@ -76,13 +77,36 @@ export async function byggSnapshot({
     }
   }
 
+  // Bonusen räknas här, inte i vyn: den läser Judge.me och Notion, och det
+  // ska hända EN gång per hämtning — inte vid varje sidvisning.
+  logg('Bonus …');
+  let bonus = null;
+  let detaljer = { recensioner: null, produkttest: null, tvister: [], insatser: [] };
+  try {
+    const utfall = await korBonus({ utanNat, rot, env, nu, logg: (t) => logg(t) });
+    detaljer = utfall.detaljer ?? detaljer;
+    const { detaljer: _, ...kvitto } = utfall;
+    bonus = kvitto;
+    anteckna('bonus', 'ok', null, { personer: utfall.personer.filter((p) => p.summa > 0).length });
+  } catch (e) {
+    anteckna('bonus', 'fel', e.message);
+  }
+
   return {
     byggd: new Date().toISOString(),
     fonster: { dagar, till: nu.toISOString() },
     profil: lasProfil(rot),
+    system: lasSystem(rot),
     kallor,
     butiker,
     annonskonton,
+    bonus,
+    bonusProgram: (() => { try { return lasRegler(join(rot, 'bonus', 'regler.json')); } catch { return null; } })(),
+    personer: (() => { try { return lasPersoner(join(rot, 'bonus', 'personer.json')); } catch { return []; } })(),
+    recensioner: detaljer.recensioner,
+    produkttest: detaljer.produkttest,
+    oppnaTvister: detaljer.tvister,
+    insatser: detaljer.insatser,
     ...repo,
   };
 }

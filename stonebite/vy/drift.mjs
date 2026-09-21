@@ -6,7 +6,7 @@
 // visas planens rubrik och mätvärden, aldrig den sparade brödtexten: en
 // dashboard ska inte sprida en gammal felformulering vidare.
 
-import { esc, kort, panel, tabell, tomt, block, status, stapel, tal, pengar } from './delar.mjs';
+import { esc, kort, panel, tabell, tomt, block, status, stapel, tal, pengar, t, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
 import { sedan, datum, DAG } from '../berakna.mjs';
 import { kategorinamn, tvisttyp, forklaraFel } from '../forklaring.mjs';
@@ -22,6 +22,14 @@ function ordertext(order) {
   if (o.startsWith('#')) return o;
   if (/^\d{10,}$/.test(o)) return `order-id …${o.slice(-6)}`;
   return o;
+}
+
+/** "i dag", "1 dag kvar", "5 dagar kvar" — på läsarens språk och rätt böjt. */
+function tidKvar(dagar) {
+  if (dagar < 0) return t('passerad');
+  if (dagar === 0) return t('i dag');
+  if (sprak() === 'en') return `${dagar} ${dagar === 1 ? 'day' : 'days'} left`;
+  return `${dagar} ${dagar === 1 ? 'dag' : 'dagar'} kvar`;
 }
 
 function dagarKvar(deadline, nu) {
@@ -59,21 +67,23 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
     return kort({
       etikett: b.namn,
       varde: `${tal(n.risk ?? null)}/100`,
-      forklaring: `${tal(n.obesvarade ?? null)} obesvarade av ${tal(n.arenden ?? null)} ärenden senaste ${b.period?.dagar ?? 30} dagarna.`,
+      forklaring: sprak() === 'en'
+        ? `${tal(n.obesvarade ?? null)} unanswered out of ${tal(n.arenden ?? null)} tickets in the last ${b.period?.dagar ?? 30} days.`
+        : `${tal(n.obesvarade ?? null)} obesvarade av ${tal(n.arenden ?? null)} ärenden senaste ${b.period?.dagar ?? 30} dagarna.`,
       status: status(RISKTON(n.risk ?? 0), RISKORD(n.risk ?? 0)),
       serie: (b.historik ?? []).map((h) => h.obesvarade),
-      fot: b.vecka ? `Vecka ${b.vecka}` : '',
+      fot: b.vecka ? `${t('Vecka')} ${b.vecka}` : '',
     });
   }).join('');
 
   const tvistrader = bradskande.slice(0, 12).map((t) => `<tr>
     <td>
       <span class="namn">${esc(ordertext(t.order))}</span>
-      <span class="bi">${esc(t.brand)}${t.typ ? ` · ${esc(tvisttyp(t.typ))}` : ''}</span>
+      <span class="bi">${esc(t.brand)}${t.typ ? ` · ${esc(tvisttyp(t.typ, sprak()))}` : ''}</span>
     </td>
     <td class="tal">${pengar(t.belopp, t.valuta)}</td>
     <td class="tal">${esc(datum(t.deadline, { nu }))}</td>
-    <td>${status(t.kvar <= 2 ? 'kritisk' : t.kvar <= 4 ? 'varning' : 'neutral', t.kvar < 0 ? 'passerad' : t.kvar === 0 ? 'i dag' : `${t.kvar} dagar kvar`)}</td>
+    <td>${status(t.kvar <= 2 ? 'kritisk' : t.kvar <= 4 ? 'varning' : 'neutral', tidKvar(t.kvar))}</td>
   </tr>`);
 
   const kategorirader = k.brands.flatMap((b) => (b.kategorier ?? []).slice(0, 5).map((c) => ({ ...c, brand: b.namn, svenska: kategorinamn(c.id, c.en) })))
@@ -86,7 +96,7 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
     innehall: `${sidhuvud({
       rubrik: 'Kundtjänst',
       under: 'Vad kunderna hör av sig om, och vad som brådskar.',
-      farsk: k.brands[0]?.kord ? `Rapport körd <b>${esc(sedan(k.brands[0].kord))}</b>` : '',
+      farsk: k.brands[0]?.kord ? `${esc(t('Rapport körd'))} <b>${esc(t(sedan(k.brands[0].kord)))}</b>` : '',
     })}
     <div class="kort-rad">${brandkort}</div>
 
@@ -141,7 +151,7 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
             <span class="tid">${esc(p.hink === 'nu' ? 'NU' : p.hink === 'vecka' ? 'Veckan' : 'Senare')}</span>
             <span>
               <span class="namn">${esc(p.titel)}</span>
-              <span class="bi">${esc(b.namn)}${p.matt?.belopp ? ` · ${pengar(Math.round(p.matt.belopp), p.matt.valuta ?? 'SEK')} i potten` : ''}${p.agare ? ` · ${esc(p.agare)}` : ''}</span>
+              <span class="bi">${esc(b.namn)}${p.matt?.belopp ? ` · ${pengar(Math.round(p.matt.belopp), p.matt.valuta ?? 'SEK')} ${t('i potten')}` : ''}${p.agare ? ` · ${esc(p.agare)}` : ''}</span>
             </span>
           </li>`)).join('')}</ul>`,
       }),
@@ -174,10 +184,16 @@ export function leveransSida({ snapshot }) {
     innehall: `${sidhuvud({
       rubrik: 'Leverans',
       under: 'Paketen vi följer åt kunderna, butik för butik.',
-      farsk: senaste ? `Senaste rundan <b>${esc(sedan(senaste))}</b>` : '',
+      farsk: senaste ? `${esc(t('Senaste rundan'))} <b>${esc(t(sedan(senaste)))}</b>` : '',
     })}
     <div class="kort-rad">
-      ${kort({ etikett: 'Paket vi följer', varde: tal(totalt), forklaring: `I ${ok.length} butiker. Varje paket får sin skanning inskriven i Shopify varje timme.` })}
+      ${kort({
+        etikett: 'Paket vi följer',
+        varde: tal(totalt),
+        forklaring: sprak() === 'en'
+          ? `Across ${ok.length} stores. Every parcel gets its scan written into Shopify every hour.`
+          : `I ${ok.length} butiker. Varje paket får sin skanning inskriven i Shopify varje timme.`,
+      })}
       ${kort({ etikett: 'På väg', varde: tal(paVag), forklaring: 'Paket som rör sig men inte är framme än.' })}
       ${kort({ etikett: 'Framme', varde: tal(levererade), forklaring: 'Levererade paket. De slutar följas automatiskt.' })}
       ${kort({

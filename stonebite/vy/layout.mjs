@@ -1,7 +1,7 @@
 // vy/layout.mjs — sidans skal: huvud, meny, fot. Två skal finns: det publika
 // (vem som helst) och appens (inloggad). De delar CSS och märke, inget annat.
 
-import { esc, attr, marke } from './delar.mjs';
+import { esc, attr, marke, t } from './delar.mjs';
 import { menyFor } from '../roller.mjs';
 
 const TEMA_SKRIPT = `
@@ -60,7 +60,7 @@ export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad =
 /** Inloggade sidan. Menyn speglar rollen — servern avgör, inte menyn. */
 export function appSkal({ titel, anvandare, aktivSida, innehall, huvud = '', nonce = '' }) {
   const meny = menyFor(anvandare).map((s) => (
-    `<a class="navlank" href="${attr(s.url)}"${s.nyckel === aktivSida ? ' aria-current="page"' : ''}>${esc(s.titel)}</a>`
+    `<a class="navlank" href="${attr(s.url)}"${s.nyckel === aktivSida ? ' aria-current="page"' : ''}>${esc(t(s.titel))}</a>`
   )).join('');
 
   return `<!doctype html>
@@ -69,11 +69,11 @@ export function appSkal({ titel, anvandare, aktivSida, innehall, huvud = '', non
 <body>
 <header class="topp"><div class="omslag topp-inner">
   <a class="marke" href="/app">${marke(20)} Stonebite</a>
-  <nav class="navlankar" aria-label="Meny">
+  <nav class="navlankar" aria-label="${attr(t('Meny'))}">
     ${meny}
     ${temaknapp()}
     <a class="navlank" href="/app/mig" title="${attr(anvandare.namn)}" style="font-weight:600">${esc(fornamn(anvandare.namn))}</a>
-    <a class="navlank" href="/logga-ut">Logga ut</a>
+    <a class="navlank" href="/logga-ut">${esc(t('Logga ut'))}</a>
   </nav>
 </div></header>
 <main class="app"><div class="omslag">
@@ -93,8 +93,8 @@ export function fornamn(namn) {
 export function sidhuvud({ rubrik, under = '', farsk = '' }) {
   return `<div class="sidhuvud">
     <div>
-      <h1>${esc(rubrik)}</h1>
-      ${under ? `<p class="under">${esc(under)}</p>` : ''}
+      <h1>${esc(t(rubrik))}</h1>
+      ${under ? `<p class="under">${esc(t(under))}</p>` : ''}
     </div>
     ${farsk ? `<span class="farsk">${farsk}</span>` : ''}
   </div>`;

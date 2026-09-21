@@ -33,4 +33,29 @@
   knappar().forEach(function (k) {
     k.setAttribute('aria-label', nuvarande() === 'mork' ? 'Byt till ljust läge' : 'Byt till mörkt läge');
   });
+
+  // Kopiera-knappen: mallen VA:n skickar till kunden för att få sitt namn i
+  // recensionen. Utan den skriver ingen den — och då betalas inga pengar ut.
+  document.addEventListener('click', function (e) {
+    var knapp = e.target.closest ? e.target.closest('[data-kopiera]') : null;
+    if (!knapp) return;
+    var kalla = document.getElementById(knapp.getAttribute('data-kopiera'));
+    if (!kalla) return;
+    var text = kalla.textContent.trim();
+    var klart = function () {
+      var gammal = knapp.textContent;
+      knapp.textContent = knapp.getAttribute('data-klar') || 'Kopierat!';
+      setTimeout(function () { knapp.textContent = gammal; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(klart, function () { /* tyst */ });
+    } else {
+      var ruta = document.createElement('textarea');
+      ruta.value = text;
+      document.body.appendChild(ruta);
+      ruta.select();
+      try { document.execCommand('copy'); klart(); } catch (err) { /* tyst */ }
+      document.body.removeChild(ruta);
+    }
+  });
 })();

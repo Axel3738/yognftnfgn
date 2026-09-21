@@ -31,7 +31,13 @@ import { butikerSida } from './vy/butiker.mjs';
 import { annonserSida } from './vy/annonser.mjs';
 import { redigerareSida, migSida, kontonSida } from './vy/team.mjs';
 import { kundtjanstSida, leveransSida } from './vy/drift.mjs';
+import { produkttestSida, recensionerSida } from './vy/produkter.mjs';
+import { bonusSida } from './vy/bonus.mjs';
+import { systemSida } from './vy/system.mjs';
+import { lasInsatser, skrivInsats, lasPersoner, sparaPerson, datamapp, lasRegler } from '../bonus/kor.mjs';
 import { appSkal } from './vy/layout.mjs';
+import { sattSprak } from './vy/delar.mjs';
+import { sprakFor, SPRAKEN } from './sprak.mjs';
 import { lasProfil } from './kallor/repo.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
@@ -39,6 +45,8 @@ const ROT = dirname(HAR);
 const WEBB = join(HAR, 'webb');
 const SNAPSHOT = join(HAR, 'data', 'snapshot.json');
 const ANVANDARFIL = process.env.STONEBITE_ANVANDARE || anv.standardfil(HAR);
+const INSATSFIL = join(datamapp(process.env, ROT), 'insatser.jsonl');
+const PERSONFIL = join(datamapp(process.env, ROT), 'personer-extra.json');
 const HEMLIGHET = hamtaHemlighet(process.env, join(HAR, 'data', 'hemlighet.txt'));
 
 const strypning = new Strypning();
@@ -178,8 +186,34 @@ function felsida(res, { kod, rubrik, text, nonce, https }) {
 
 // ------------------------------------------------------------- sidorna
 
+/**
+ * Snapshoten + det som ändras mellan hämtningarna.
+ *
+ *  • Insatser läses ur filen varje gång: en VA som just rapporterat in något
+ *    ska se den direkt, inte först efter nästa hämtning.
+ *  • Reglerna och personregistret ligger i repot och ändras inte av en
+ *    hämtning. Läs dem direkt så att uppdragen syns även på en sajt som
+ *    startats innan första hämtningen.
+ */
+function medFarskaInsatser(snap) {
+  const bas = snap ?? {};
+  let insatser = [];
+  try { insatser = lasInsatser(INSATSFIL); } catch { insatser = []; }
+  // Reglerna läses ALLTID ur filen, aldrig ur snapshoten: ett belopp eller en
+  // engelsk text som ändras ska slå igenom direkt, inte vid nästa hämtning.
+  let bonusProgram = null;
+  try { bonusProgram = lasRegler(); } catch { bonusProgram = bas.bonusProgram ?? null; }
+  let personer = bas.personer ?? [];
+  try { personer = lasPersoner(undefined, PERSONFIL); } catch { /* basregistret räcker */ }
+  if (!snap && !bonusProgram) return snap;
+  return { ...bas, insatser, bonusProgram, personer };
+}
+
 function renderaApp({ nyckel, anvandare, extra = {} }) {
-  const snap = snapshot();
+  // Språket sätts FÖRE renderingen och gäller hela sidan. Renderingen är
+  // synkron, så ingen annan förfrågan kan hinna emellan och byta språk mitt i.
+  sattSprak(sprakFor(anvandare));
+  const snap = medFarskaInsatser(snapshot());
   switch (nyckel) {
     case 'oversikt': return oversiktSida({ snapshot: snap, anvandare });
     case 'butiker': return butikerSida({ snapshot: snap });
@@ -187,11 +221,16 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
     case 'redigerare': return redigerareSida({ snapshot: snap, anvandare });
     case 'kundtjanst': return kundtjanstSida({ snapshot: snap });
     case 'leverans': return leveransSida({ snapshot: snap });
+    case 'produkttest': return produkttestSida({ snapshot: snap, anvandare });
+    case 'recensioner': return recensionerSida({ snapshot: snap, anvandare });
+    case 'bonus': return bonusSida({ snapshot: snap, anvandare, ...extra });
+    case 'system': return systemSida({ snapshot: snap });
     case 'mig': return migSida({ snapshot: snap, anvandare, ...extra });
     case 'konton': return kontonSida({
       konton: anv.lista(ANVANDARFIL),
       anvandare,
-      folk: snap?.redigerare?.folk ?? [],
+      personer: (() => { try { return lasPersoner(undefined, PERSONFIL); } catch { return snap?.personer ?? []; } })(),
+      butiker: [...new Set((snap?.leverans?.butiker ?? []).map((b) => b.id))],
       ...extra,
     });
     default: return null;
@@ -333,6 +372,76 @@ export async function hantera(req, res) {
         return visaAppsida(res, { nyckel: 'mig', anvandare, nonce, https, extra: { ...extra, csrf } });
       }
 
+      if (stig === '/app/mig/sprak') {
+        const extra = { csrf };
+        try {
+          anv.sattSprak(ANVANDARFIL, anvandare.id, f.sprak);
+          const uppdaterad = anv.hittaPaId(ANVANDARFIL, anvandare.id);
+          return visaAppsida(res, {
+            nyckel: 'mig',
+            anvandare: anv.utanHemlighet(uppdaterad),
+            nonce, https,
+            extra: { ...extra, meddelande: 'Språket är bytt.' },
+          });
+        } catch (e) {
+          extra.fel = e.message;
+        }
+        return visaAppsida(res, { nyckel: 'mig', anvandare, nonce, https, extra });
+      }
+
+      if (stig === '/app/mig/rapportera') {
+        const extra = { csrf };
+        const person = anvandare.personId;
+        if (!person) {
+          extra.fel = 'Ditt konto är inte kopplat till en person än — be Axel koppla det under Konton.';
+        } else {
+          const program = medFarskaInsatser(snapshot())?.bonusProgram?.program ?? {};
+          const uppdrag = Object.values(program).flatMap((p) => p.uppdrag ?? []).find((u) => u.id === f.uppdrag);
+          if (!uppdrag) {
+            extra.fel = 'Okänt uppdrag.';
+          } else {
+            const ref = String(f.referens ?? '').trim();
+            skrivInsats({
+              id: randomBytes(8).toString('hex'),
+              personId: person,
+              personNamn: anvandare.namn,
+              uppdrag: uppdrag.id,
+              uppdragNamn: uppdrag.namn,
+              referens: ref,
+              lank: /^https?:\/\//i.test(ref) ? ref : '',
+              text: String(f.text ?? '').slice(0, 400),
+              datum: new Date().toISOString(),
+              status: 'vantar',
+            }, INSATSFIL);
+            extra.meddelande = 'Inskickat. Din chef ser det under Bonus och godkänner — sedan syns pengarna här.';
+          }
+        }
+        return visaAppsida(res, { nyckel: 'mig', anvandare, nonce, https, extra });
+      }
+
+      if (stig === '/app/bonus/godkann') {
+        if (!harRatt(anvandare, 'godkanna')) {
+          return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Du får inte godkänna insatser.', nonce, https });
+        }
+        const extra = { csrf };
+        const insats = lasInsatser(INSATSFIL).find((i) => i.id === f.id);
+        if (!insats) {
+          extra.fel = 'Insatsen finns inte.';
+        } else {
+          const beslut = f.beslut === 'godkand' ? 'godkand' : 'nekad';
+          skrivInsats({
+            ...insats,
+            status: beslut,
+            beslutAv: anvandare.namn,
+            beslutTid: new Date().toISOString(),
+          }, INSATSFIL);
+          extra.meddelande = beslut === 'godkand'
+            ? `Godkänt. ${insats.personNamn ?? 'Personen'} får betalt vid nästa uträkning.`
+            : 'Nekad. Inget betalas ut.';
+        }
+        return visaAppsida(res, { nyckel: 'bonus', anvandare, nonce, https, extra });
+      }
+
       if (stig.startsWith('/app/konton/')) {
         if (!harRatt(anvandare, 'konton')) {
           return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Bara ägaren kan ändra konton.', nonce, https });
@@ -341,11 +450,34 @@ export async function hantera(req, res) {
         try {
           if (stig === '/app/konton/ny') {
             const losen = slumpLosenord();
-            const ny = anv.skapa(ANVANDARFIL, { namn: f.namn, epost: f.epost, roll: f.roll, personId: f.personId || null, losenord: losen });
+            // Personen skapas samtidigt som inloggningen — annars finns ingen
+            // att koppla bonusen till, och personen ser noll fast hen jobbar.
+            const personId = String(f.fornamn || f.namn || '').trim().toLowerCase()
+              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 24) || randomBytes(4).toString('hex');
+            const person = {
+              id: personId,
+              namn: String(f.namn).trim(),
+              fornamn: String(f.fornamn || String(f.namn).trim().split(/\s+/)[0]).trim(),
+              roll: f.roll,
+              brands: String(f.brands ?? '').split(',').map((x) => x.trim()).filter(Boolean),
+              extraRoller: f.extraroll ? [f.extraroll] : [],
+              notionNamn: String(f.namn).trim(),
+              alias: [],
+            };
+            sparaPerson(person, PERSONFIL);
+            const ny = anv.skapa(ANVANDARFIL, { namn: f.namn, epost: f.epost, roll: f.roll, personId, losenord: losen });
             extra.nyttLosenord = { namn: ny.namn, losenord: losen };
-            extra.meddelande = `${ny.namn} kan nu logga in med ${ny.epost}.`;
+            extra.meddelande = `${ny.namn} kan nu logga in med ${ny.epost}, och tjänar bonus som ${f.roll}.`;
           } else if (stig === '/app/konton/roll') {
             const k = anv.sattRoll(ANVANDARFIL, f.id, f.roll);
+            // Rollen styr både vad man ser OCH vilket bonusprogram man är i.
+            if (k.personId) {
+              try {
+                const nuvarande = lasPersoner(undefined, PERSONFIL).find((p) => p.id === k.personId);
+                if (nuvarande) sparaPerson({ ...nuvarande, roll: f.roll }, PERSONFIL);
+              } catch { /* registret får aldrig fälla en rolländring */ }
+            }
             extra.meddelande = `${k.namn} är nu ${f.roll}.`;
           } else if (stig === '/app/konton/aktiv') {
             const k = anv.sattAktiv(ANVANDARFIL, f.id, f.aktiv === '1');
