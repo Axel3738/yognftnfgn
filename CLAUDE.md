@@ -899,6 +899,18 @@ Bäverbutiken: 47 tvister, 14 öppna, 1 brådskande (#4914, 348 kr, deadline
 2026-09-16). Bygg aldrig in ärenden, kategorier eller ranking i den; blir den
 långsam slutar den köras, och då är luckan tillbaka.
 
+**`kundtjanst/mail.mjs` + `mail-mcp.mjs` — inkorgen som CLI och som egen
+MCP-connector `loopia-mail`** (Axels fråga 2026-09-21: "bygg din egna mcp
+connector så att du kan läsa av min mail inkorg"). Läs-bara över webbmejlen,
+samma nyckel som veckorapporten. `node kundtjanst/mail.mjs lista | las <uid> |
+sok "<ord>" [--kropp]`, och `.mcp.json` i roten ger varje Claude Code-session
+i repot verktygen `mail_brands`, `mail_folders`, `mail_list`, `mail_read`,
+`mail_search` — inga `mcp__Gmail`, ingen vidarebefordran. Servern loggar in
+igen själv när Roundcube-sessionen gått ut och kör anropen ett i taget (två
+parallella inloggningar gav 403, mätt vid bygget). Kundadresser står i
+klartext i utdata — maskera före Discord/Notion. `kundtjanst/README.md` →
+"Brevlådan som CLI och som egen MCP-connector".
+
 **`kundtjanst/sop/` — VA:ns tvisthandbok, portabel över ALLA butiker**
 (Axels uppdrag 2026-09-20: "sop:er som går att föra över till andra varumärken;
 backend hanteras likadant på alla butiker"). 13 dokument på engelska + ett

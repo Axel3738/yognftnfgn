@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "loopia-mail": {
+      "command": "node",
+      "args": ["kundtjanst/mail-mcp.mjs"],
+      "env": {
+        "NODE_USE_ENV_PROXY": "1",
+        "NODE_NO_WARNINGS": "1",
+        "KUNDTJANST_MAIL_PASS_BAVERBUTIKEN": "${KUNDTJANST_MAIL_PASS_BAVERBUTIKEN:-}"
+      }
+    }
+  }
+}

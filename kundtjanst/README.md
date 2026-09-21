@@ -55,6 +55,51 @@ node kundtjanst/setup.mjs --mappar tacklebay          # brevlådans mappnamn (Sk
 node kundtjanst/run.mjs --fixtur kundtjanst/test/fixturer/demo --torr --datum 2026-09-14   # demo utan nät
 ```
 
+## Brevlådan som CLI och som egen MCP-connector (`mail.mjs`, `mail-mcp.mjs`)
+
+Veckorapporten läser allt på en gång. Ibland vill man bara *titta i inkorgen*:
+vad kom in i dag, vad skrev kunden i #5122, finns ordet "chargeback" någonstans.
+Det gör `kundtjanst/mail.mjs` — läs-bara, över samma webbmejl (Roundcube på
+port 443), med samma nyckel `KUNDTJANST_MAIL_PASS_<ID>`:
+
+```bash
+node kundtjanst/mail.mjs kolla                        # logga in och ut — funkar nyckeln?
+node kundtjanst/mail.mjs mappar                       # INBOX, INBOX.Sent, INBOX.Drafts …
+node kundtjanst/mail.mjs lista --antal 20             # nyast först: uid, oläst (•), datum, från, ämne
+node kundtjanst/mail.mjs las 1650                     # ett mejl (--ra ger råkällan, --max 4000 klipper)
+node kundtjanst/mail.mjs sok "order 5122" --sidor 4   # ämne + avsändare, ~50 mejl per sida
+node kundtjanst/mail.mjs sok chargeback --kropp       # även i texten (hämtar varje mejl — långsamt)
+```
+
+`--json` ger maskinläsbart, `--brand <id>` väljer brevlåda när flera är
+konfigurerade (med en enda väljs den själv), `--tyst` tystar loggen.
+Listningen använder Roundcubes egna listkolumner och hämtar inte råmejlen —
+en sida med 50 mejl tar en sekund. Läsning markerar inte mejlet som läst.
+
+**Samma fem saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
+stdio-MCP-server (JSON-RPC 2.0, en rad per meddelande, noll beroenden) som
+`.mcp.json` i repo-roten registrerar under namnet **`loopia-mail`**. En
+Claude Code-session i repot får då `mail_brands`, `mail_folders`,
+`mail_list`, `mail_read` och `mail_search` som riktiga verktyg — utan att
+komma ihåg en Bash-rad, och utan någon connector på claude.ai (Loopia har
+ingen). Servern håller Roundcube-sessionen levande mellan anropen, loggar in
+igen själv om den gått ut (30 min), kör anropen ett i taget per brevlåda
+(två parallella inloggningar gav 403, mätt 2026-09-21) och loggar ut när
+Claude Code stänger den.
+
+Kräver bara `KUNDTJANST_MAIL_PASS_<ID>` i miljön — `.mcp.json` skickar
+Bäverbutikens vidare uttryckligen; en annan butiks nyckel läggs till där på
+samma sätt. `.claude/settings.json` har `enableAllProjectMcpServers` så
+servern startar utan godkännandeklick i rutinerna.
+
+Prova för hand: `printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node kundtjanst/mail-mcp.mjs`.
+Skarpt mätt 2026-09-21 mot Bäverbutiken: INBOX 1 574 mejl på 32 sidor,
+listning + sökning på en sida ≈ 2 s, `--kropp` ≈ 0,3 s per mejl.
+
+⚠️ Utdata bär kundadresser i klartext — det är ett verktyg för den som redan
+har lösenordet. Maskera (`ka***@gmail.com`) innan något postas i Discord
+eller Notion; rapporterna gör det själva, CLI:n gör det inte.
+
 ## Så hänger det ihop
 
 ```

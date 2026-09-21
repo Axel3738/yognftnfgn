@@ -20,6 +20,8 @@
     "kundtjanst": "node kundtjanst/run.mjs",
     "kundtjanst:setup": "node kundtjanst/setup.mjs",
     "kundtjanst:sida": "node kundtjanst/rapportsida.mjs",
+    "mail": "node kundtjanst/mail.mjs",
+    "mail:mcp": "node kundtjanst/mail-mcp.mjs",
     "sjalvtest": "node factory/sjalvtest.mjs",
     "sop": "node kundtjanst/sop-koll.mjs",
     "tvist": "node kundtjanst/tvistfakta.mjs",
