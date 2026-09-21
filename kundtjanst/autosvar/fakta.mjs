@@ -20,6 +20,7 @@ import { handelserUr } from '../../sparning/paketdata.mjs';
 import { oversattFras, stadaPlats, landFor } from '../../sparning/sprak.mjs';
 import { skapaOversattare } from '../../sparning/oversatt.mjs';
 import { bavernummer } from '../../sparning/bavernummer.mjs';
+import { sistaBiten } from '../../sparning/sistabiten.mjs';
 
 const DAG = 86_400_000;
 export const ORDERFONSTER_DAGAR = 120;
@@ -143,8 +144,11 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
         const post = r.accepterade?.[0];
         if (post) {
           const t = tolka(post);
-          ut.sparning = { status17: t.status17, levererad: t.status17 === 'Delivered' || t.status === 'DELIVERED', senaste: senasteSkanning(post, sprak, { nu: nu.getTime() }) };
-          ut.kalla.push(`17TRACK ${t.status17 ?? 'okänd status'}`);
+          // Sista biten (SOP 36/37): finns ett inhemskt bolag i misc_info är paketet i mottagarlandet.
+          const sb = sistaBiten(post.track_info?.misc_info, ut.sandning.nummer);
+          const sista = sb ? { namn: sb.namn, nummer: sb.nummer, lank: sb.mall ? (sb.mall.includes('{nr}') ? (sb.nummer ? sb.mall.replace('{nr}', sb.nummer) : null) : sb.mall) : null } : null;
+          ut.sparning = { status17: t.status17, status: t.status, levererad: t.status17 === 'Delivered' || t.status === 'DELIVERED', senaste: senasteSkanning(post, sprak, { nu: nu.getTime() }), sista };
+          ut.kalla.push(`17TRACK ${t.status17 ?? 'okänd status'}${sista ? ` · sista biten ${sista.namn}` : ''}`);
         } else {
           ut.kalla.push(`17TRACK: ${r.avvisade?.[0]?.fel ?? 'inga skanningar'}`);
         }
@@ -156,7 +160,7 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
   // Shopifys egen leveransstatus (spårningsrutinen skriver in DELIVERED-event)
   // räcker för att veta att paketet är framme — även utan 17TRACK här.
   if (!ut.sparning && (ut.sandning?.leveransstatus === 'delivered' || ut.order.leveransstatus === 'delivered')) {
-    ut.sparning = { status17: null, levererad: true, senaste: null };
+    ut.sparning = { status17: null, status: 'DELIVERED', levererad: true, senaste: null, sista: null };
     ut.kalla.push('Shopify: levererad');
   }
   ut.sparr = ut.sparr ?? staltFakta(ut, { nu, packasDagar: konfig?.svar?.packas_dagar });

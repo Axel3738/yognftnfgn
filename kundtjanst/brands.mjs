@@ -97,6 +97,8 @@ export const STANDARD_SVAR = Object.freeze({
   svarstid_timmar: 24,        // "vi svarar inom N timmar på vardagar" — måste hållas
   max_per_korning: 20,        // spärr: fler automatiska svar än så per körning och butik skickas aldrig
   fonster_timmar: 72,         // hur gamla inkommande mejl som får ett automatiskt svar
+  fraga_ordernummer: false,   // SOP 36 steg 1: WISMO utan order ⇒ be om ordernumret (annars SVÅR). Axels beslut per butik
+  foretag: null,              // SOP 38: { namn, orgnr, adress, moms } — bara de godkända uppgifterna, aldrig ett personnamn. null = VA:n
 });
 
 /** Vad fabrikens butiksfil ger. Fälten som saknas blir '' — aldrig påhittade. */

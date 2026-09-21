@@ -56,6 +56,11 @@ const OPPETTIDER = ['öppettider', 'när svarar ni', 'telefonnummer', 'ringa er'
 const LEVERANSTID = ['leveranstid', 'hur lång tid tar leverans', 'hur lång leveranstid', 'hur snabbt levererar', 'när levererar ni', 'leveringstid', 'hvor lang tid tar leverans', 'hvor lang leveringstid', 'toimitusaika', 'kuinka kauan toimitus',
   'delivery time', 'how long (does|will) (the )?(delivery|shipping) take', 'shipping time', 'how long until',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+// SOP 38: företagsuppgifter är offentliga och ska gå ut direkt — bara de godkända (brandfilens svar.foretag).
+const FORETAG = ['organisationsnummer', 'org\\.?\\s?nr', 'org-?nummer', 'orgnummer', 'företagsuppgifter', 'bolagsuppgifter', 'momsregistrerings', 'vat.?(number|nummer|nr)', 'juridisk[at]? namn', 'vilket bolag', 'vilket företag (står|är det som)',
+  'organisasjonsnummer', 'foretaksopplysninger', 'cvr', 'virksomhedsoplysninger', 'y-tunnus', 'yritystiedot',
+  'company (details|information|registration number)', 'registered address', 'legal (name|entity)',
+].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
 // Shopifys egna kundnotiser — ett svar på dem ("Re: Order #5953 bekräftad")
 // är kundens FÖRSTA fråga, inte ett svar på ett svar från oss.
@@ -137,6 +142,7 @@ export function enkelTyp({ klass, amne = '', text = '' }) {
   const t = normalisera(text);
   const traff = (lista) => lista.some((re) => re.test(a) || re.test(t));
   if ((klass.alla ?? []).some((x) => ALDRIG_ENKEL.has(x.id))) return null;
+  if (traff(FORETAG)) return 'foretag';
   if (traff(ADRESS)) return 'adress';
   if (traff(OPPETTIDER)) return 'oppettider';
   // Leveranstid utan order = fråga före köp. Med ordernummer eller ordertext är det WISMO.
@@ -184,12 +190,16 @@ export function hinka({ mejl, brand, trad = null } = {}) {
  *
  * Reglerna:
  *   • ett automatiskt svar redan i tråden, ett svar från oss, eller ett utkast ⇒ inget nytt svar (SVÅR/flagga)
- *   • ENKEL utan order när ordern behövs ⇒ SVÅR
+ *   • ENKEL utan order när ordern behövs ⇒ SVÅR — eller, med brandfilens
+ *     `svar.fraga_ordernummer`, SOP 36 steg 1: be om ordernumret (flaggas så VA:n ser tråden)
  *   • ENKEL där ordernumret tillhör en annan kund ⇒ SVÅR ("nämn aldrig en annan kunds order")
- *   • WISMO men paketet är levererat enligt fraktbolaget ⇒ ARG (kunden har inte fått det)
+ *   • WISMO men paketet är levererat enligt fraktbolaget ⇒ ENKEL `levererad`
+ *     (SOP 06: checklistan brevlåda/avi/ombud/grannar) + flagga + VA-mappen, så
+ *     VA:n följer upp om kunden inte hittar det. Är kunden arg är mejlet redan ARG.
  *   • adressbyte på en redan skickad order ⇒ SVÅR
+ *   • företagsuppgifter (SOP 38) ⇒ svar bara när brandfilen bär `svar.foretag`
  */
-export function beslut({ hink, fakta = null, trad = null } = {}) {
+export function beslut({ hink, fakta = null, trad = null, brand = null } = {}) {
   const h = { ...hink };
   if (h.hink === HINK.SKIP) return { ...h, svara: false, flagga: false, flytta: false, vaAtgard: false };
   const redanSvarad = Boolean(trad && (trad.antalSvar > 0 || trad.redanAutosvar));
@@ -200,11 +210,21 @@ export function beslut({ hink, fakta = null, trad = null } = {}) {
   if (h.hink === HINK.SVAR) return { ...h, svara: false, flagga: true, flytta: false, vaAtgard: false };
 
   // ENKEL — håller den mot faktan?
+  if (h.typ === 'foretag') {
+    const f = brand?.svar?.foretag;
+    if (!f?.namn || !f?.orgnr || !f?.adress) return { ...h, hink: HINK.SVAR, orsak: 'företagsuppgifter efterfrågade men brandfilen saknar svar.foretag — VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };
+    return { ...h, svara: true, flagga: false, flytta: false, vaAtgard: false };
+  }
   if (fakta?.sparr) return { ...h, hink: HINK.SVAR, orsak: fakta.sparr, svara: false, flagga: true, flytta: false, vaAtgard: false };
   const behoverOrder = ['wismo', 'adress'].includes(h.typ);
-  if (behoverOrder && !fakta?.order) return { ...h, hink: HINK.SVAR, orsak: `${h.typ}: ingen order hittad på ordernummer eller kundens e-post — VA:n`, svara: false, flagga: true, flytta: false, vaAtgard: false };
+  if (behoverOrder && !fakta?.order) {
+    if (h.typ === 'wismo' && brand?.svar?.fraga_ordernummer && fakta && !fakta.sparr) {
+      return { ...h, typ: 'ordernummer', orsak: 'ingen order på ordernummer eller e-post — ber om ordernumret (SOP 36 steg 1), flaggad så VA:n ser tråden', svara: true, flagga: true, flytta: false, vaAtgard: false };
+    }
+    return { ...h, hink: HINK.SVAR, orsak: `${h.typ}: ingen order hittad på ordernummer eller kundens e-post — VA:n`, svara: false, flagga: true, flytta: false, vaAtgard: false };
+  }
   if (h.typ === 'wismo' && fakta?.sparning?.levererad) {
-    return { ...h, hink: HINK.ARG, orsak: 'frågar var paketet är fast fraktbolaget skannat det som levererat', argOrsaker: ['paket markerat levererat men inte mottaget'], svara: true, flagga: true, flytta: true, vaAtgard: true };
+    return { ...h, typ: 'levererad', orsak: 'levererat enligt fraktbolaget men kunden frågar var det är — checklistan (SOP 06), VA:n följer upp', svara: true, flagga: true, flytta: true, vaAtgard: true };
   }
   if (h.typ === 'adress') {
     if (fakta.order.sandningar?.length || fakta.order.fulfillment === 'fulfilled') return { ...h, hink: HINK.SVAR, orsak: 'adressbyte på en redan skickad order — VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };

@@ -115,6 +115,14 @@ svar:
   svarstid_timmar: 24         # "vi svarar inom N timmar på vardagar" — måste hållas, annars ljuger svaret
   max_per_korning: 20         # tak på automatiska svar per körning; resten flaggas
   fonster_timmar: 72          # mejl äldre än så får aldrig ett automatiskt svar (VA:n har dem)
+  fraga_ordernummer: false    # SOP 36 steg 1: "var är min order" utan order på e-posten ⇒ be om ordernumret. false = VA:n
+  # SOP 38: företagsuppgifterna är offentliga och ska gå ut direkt — BARA dessa fyra, aldrig VD:ns namn.
+  # Utelämna blocket så går frågan till VA:n.
+  # foretag:
+  #   namn: "Stonebite Ecom AB"
+  #   orgnr: "559576-2401"
+  #   adress: "Sjöhed 160, 442 74 Harestad"
+  #   moms: true
 
 trosklar:
   arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —

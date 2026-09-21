@@ -189,6 +189,34 @@ avsändaren), trådar VA:n redan besvarat (`redanBesvaradAvOss`), gammal fakta
 trasiga varan" om en vara som bara var för liten. Loggens trådnyckel hashas
 sedan dess; `autosvar/logg-maskera.mjs` rättar en äldre logg.
 
+### SOP-avstämningen 2026-09-21 — VA:ns SOP:er styr svaren
+
+Axels order 2026-09-21 kväll: "läs igenom våra SOP:er för kundsupporten".
+VA:ns SOP-databas är Notion **"Bäverkoppling.se"** (`333270ab-908c-8053-b629-f49e7f93ce71`,
+~45 rader, PDF-bilagor SOP 01–40). Integrationen "Bäverbutiken RUTINER" är
+INTE inbjuden dit — men kopian **"Customer support bäverbutiken"**
+(`3aa270ab-908c-8057-a8a0-cc691d9e956b`, brandfilens `notion.sop_database_id`)
+är det, och bär 34 av PDF:erna. De lästes den kvällen (hämtade via REST,
+text ur `pdf-parse`). ⚠️ Elva SOP:er finns bara i originalet och är olästa:
+SOP 02 Tracking not updating, 07 Wrong quantity, 13–17 (produkt/passform/
+specifikationer), 21 Exchange, 34–35 (bilder/produktfrågor), Norwegian login,
+14-day withdrawal. Läses när Axel bjudit in integrationen till originalet.
+
+SOP:ernas README säger själv att de är skrivna för ett annat brand
+(Bäverkoppling/Grill) och ska tas "with a pinch of salt" — bara det
+brandneutrala eller det som står i brandfilen har automatiserats:
+
+| SOP | Regel i motorn |
+|---|---|
+| 36/37 Where is my package / When will it arrive | WISMO-svaret säger var paketet ÄR: **hos ombudet** (bolag + kollinummer ur 17TRACK `misc_info`), **ute för leverans i dag**, **framme i landet — sista biten 1–2 arbetsdagar** (inhemskt bolag i `misc_info` = i landet), annars senaste skanningen. Senaste skanning äldre än 3 dagar ⇒ SOP:ens rad *"helt normalt att spårningen står still — paketet är på väg ändå"*. Passerat fönster / inga skanningar ⇒ aldrig ett gissat datum, VA:n (`staltFakta`) |
+| 06 Package missing after delivered | Levererat enligt fraktbolaget + lugn kund ⇒ ENKEL `levererad`: leveransskanningen (datum, ort) + checklistan brevlåda/avi/ombud/grannar/skyddad plats, aldrig ordet "borttappat"; flaggas + VA-mappen så VA:n följer upp. Arg kund ⇒ ARG som förut |
+| 11/30 Order confirmation / tracking mail not received | Nämner kunden en saknad bekräftelse ⇒ WISMO-svaret får skräppost-raden (sök på butikens namn); leveranstid-svaret nämner skräpposten |
+| 05/08 Damaged / wrong product | ARG-svaret (Axels rad) får bildförfrågan: vara, förpackning, fraktetikett — VA:n har underlaget när hon öppnar tråden |
+| 38 Company information | ENKEL `foretag` ur brandfilens `svar.foretag` (namn, orgnr, adress, moms) — aldrig ett personnamn; saknas blocket ⇒ VA:n |
+| 36 steg 1 Ask for order number | Bakom `svar.fraga_ordernummer` (standard av): WISMO utan order ⇒ be om ordernumret + flagga. Axels beslut per butik |
+| 09 Address change | Oskickad ⇒ svar + flagga + VA-mappen (VA:n ändrar i Shopify); skickad ⇒ VA:n. Oförändrat |
+| 10, 18, 20, 25, 22/12, 23, 26, 32, 33, 39 (avbeställning, retur, återbetalning, tvist, betalning, tull, återförsäljare, rabatt, faktura) | Kräver ägarens beslut enligt SOP:en (3-stegs-returen: 30 % → 50 % → retur) ⇒ alltid SVÅR/VA:n. Aldrig automatiserat |
+
 ## Så hänger det ihop
 
 ```

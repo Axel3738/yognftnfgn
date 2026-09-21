@@ -60,6 +60,16 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   ordern ⇒ inget ENKELT svar (`fakta.staltFakta`). Retur/återbetalning/fel vara/
   defekt i mejlet ⇒ aldrig ENKEL, även om kunden också nämner spårning.
 
+- **VA:ns SOP:er styr svaren** (Axels order 2026-09-21, Notion "Bäverkoppling.se",
+  läst via kopian "Customer support bäverbutiken"): WISMO säger var paketet ÄR
+  (ombud / ute för leverans / framme i landet, sista biten 1–2 arbetsdagar) och
+  att en stilla spårning är normal (SOP 36/37); levererat-men-inte-mottaget får
+  checklistan brevlåda/avi/ombud/grannar, aldrig "borttappat" (SOP 06); skadad
+  eller fel vara får bildförfrågan i ARG-svaret (SOP 05/08); saknad bekräftelse
+  ⇒ skräppost-raden (SOP 11/30); företagsuppgifter ur brandfilen (SOP 38).
+  Allt som kräver ägarens beslut i SOP:en (retur, återbetalning, avbeställning,
+  tvist, tull, rabatt) är SVÅR. Tabellen: `kundtjanst/README.md` → SOP-avstämningen.
+
 ⚠️ **En brevlåda, EN session i taget.** 2026-09-21 23:28 körde två sessioner
 torrkörningen samtidigt: Drafts fick sex utkast (fyra från den ena, ett från
 den andra), flaggorna sattes av båda, och den ena såg därför inte mejlen den

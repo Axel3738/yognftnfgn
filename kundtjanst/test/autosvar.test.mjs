@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
 import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
-import { skrivEnkelt, skrivArgt, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor } from '../autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, namnerBekraftelse } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
@@ -226,8 +226,9 @@ test('beslut: svarar aldrig två gånger i en tråd, aldrig utan order, aldrig p
   assert.match(b2.orsak, /redan fått ett automatiskt svar/);
   assert.equal(beslut({ hink: enkel, fakta: { order: null }, trad: { antalSvar: 0 } }).hink, HINK.SVAR);
   assert.equal(beslut({ hink: enkel, fakta: { sparr: 'annan kund', order: null }, trad: { antalSvar: 0 } }).hink, HINK.SVAR);
+  // Levererat enligt fraktbolaget, lugn kund ⇒ SOP 06-checklistan som ENKEL svar + VA-mappen (inte ARG).
   const lev = beslut({ hink: enkel, fakta: { order: { namn: '#1' }, sparning: { levererad: true } }, trad: { antalSvar: 0 } });
-  assert.deepEqual([lev.hink, lev.svara, lev.flytta], [HINK.ARG, true, true]);
+  assert.deepEqual([lev.hink, lev.typ, lev.svara, lev.flagga, lev.flytta], [HINK.ENKEL, 'levererad', true, true, true]);
   // Adressbyte: skickad ⇒ SVÅR, oskickad ⇒ svar + flagga + VA-mapp.
   const adr = { ...enkel, typ: 'adress' };
   assert.equal(beslut({ hink: adr, fakta: { order: { namn: '#1', sandningar: [{ nummer: 'x' }] } }, trad: { antalSvar: 0 } }).hink, HINK.SVAR);
@@ -386,9 +387,12 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   const utkastBengt = b.utkast().find((u) => /bengt@x\.se/.test(u.ra));
   assert.match(utkastBengt.text, /^Hej! Jag eskalerar detta direkt till våra ansvariga\. När jag ser vad du varit med om med paketet som inte kommit fram blir till och med jag riktigt frustrerad\./);
   assert.ok(b.mappar['VA-PRIO'].some((m) => /bengt@x\.se/.test(m.ra)), 'Bengt ligger i VA-PRIO');
-  // Levererad enligt 17TRACK men "var är paketet" ⇒ ARG
-  assert.deepEqual([per[22].hink, per[22].atgard, per[22].flyttad], ['ARG', 'utkast', 'VA-PRIO']);
-  assert.match(b.utkast().find((u) => /lev@kund\.se/.test(u.ra)).text, /markerats som levererat/);
+  // Levererad enligt 17TRACK men "var är paketet" ⇒ ENKEL checklista (SOP 06) + flagga + VA-PRIO
+  assert.deepEqual([per[22].hink, per[22].typ, per[22].atgard, per[22].flaggad, per[22].flyttad], ['ENKEL', 'levererad', 'utkast', true, 'VA-PRIO']);
+  const levUtkast = b.utkast().find((u) => /lev@kund\.se/.test(u.ra)).text;
+  assert.match(levUtkast, /Enligt fraktbolaget levererades paketet 10 september 2026 \d\d:\d\d \(Umeå\)/, 'SOP 06: leveransskanningen med datum och ort');
+  assert.match(levUtkast, /Kolla gärna: brevlådan, om det ligger en avi om ombud/);
+  assert.equal(/borttappat|förlorat|lost/i.test(levUtkast), false, 'aldrig ordet borttappat (SOP 06)');
   // SVÅR: tvist, retur, bilaga, annan kunds order — flaggade, inget utkast
   for (const uid of [14, 15, 20, 21]) {
     assert.deepEqual([per[uid].hink, per[uid].atgard, per[uid].flaggad], ['SVÅR', 'flaggad', true], `uid ${uid}`);
@@ -761,4 +765,104 @@ test('tråden läser HELA Skickat (30 dagar), inte bara första sidan: ett äldr
   await kor(b2);
   const sidorSent = b2.anrop.filter((a) => a[0] === 'lista' && a[1] === 'Sent').map((a) => a[2]);
   assert.deepEqual(sidorSent, [1, 2], 'sida 3 (bara >30 dagar) läses aldrig');
+});
+
+// ------------------------------------------------------------------ SOP-avstämningen 2026-09-21 (VA:ns SOP-databas "Bäverkoppling.se")
+
+const SP_OMBUD = { number: 'YT2626000000001', carrier: 190008, track_info: { latest_status: { status: 'AvailableForPickup', sub_status: 'AvailableForPickup_Other' }, latest_event: { time_iso: '2026-09-20T09:00:00+02:00', description: 'READY FOR PICKUP', location: 'MALMÖ, SE' }, misc_info: { local_provider: 'PostNord Sweden', local_number: 'UJ338439355SE', local_key: 19241 }, tracking: { providers: [{ events: [{ time_iso: '2026-09-20T09:00:00+02:00', description: 'READY FOR PICKUP', location: 'MALMÖ, SE', sub_status: 'AvailableForPickup_Other', stage: 'AvailableForPickup' }] }] } } };
+const SP_I_LANDET = { ...SPARNING17.YT2626000000001, track_info: { ...SPARNING17.YT2626000000001.track_info, misc_info: { local_provider: 'CityMail', local_number: 'CM123', local_key: 100405 } } };
+const SP_STILLA = { number: 'YT2626000000001', carrier: 190008, track_info: { latest_status: { status: 'InTransit', sub_status: 'InTransit_Other' }, latest_event: { time_iso: '2026-09-15T07:03:00+02:00', description: 'Shipment information received', location: 'SHENZHEN, CN' }, tracking: { providers: [{ events: [{ time_iso: '2026-09-15T07:03:00+02:00', description: 'Shipment information received', location: 'SHENZHEN, CN', sub_status: 'InfoReceived', stage: 'InfoReceived' }] }] } } };
+const med17 = (post) => async (poster) => ({ accepterade: poster.map(() => post), avvisade: [] });
+
+test('SOP 36/37: ombud, ute för leverans, framme i landet och "spårningen får stå still" i WISMO-svaret', async () => {
+  // Hos ombudet: ombudets bolag och kollinummer, ingen "beräknad leverans".
+  const b1 = new FalskBrevlada({ INBOX: [M.wismoSv] });
+  await kor(b1, { hamta17: med17(SP_OMBUD) });
+  const t1 = b1.utkast()[0].text;
+  assert.match(t1, /Paketet finns att hämta hos ombudet \(PostNord, kolli UJ338439355SE\)\./);
+  assert.equal(/Beräknad leverans/.test(t1), false, 'inget leveransfönster när paketet redan är hos ombudet');
+  // Framme i Sverige (inhemskt bolag i misc_info): sista biten 1–2 arbetsdagar.
+  const b2 = new FalskBrevlada({ INBOX: [M.wismoSv] });
+  await kor(b2, { hamta17: med17(SP_I_LANDET) });
+  const t2 = b2.utkast()[0].text;
+  assert.match(t2, /Paketet är framme i Sverige och ligger hos CityMail för sista biten — det brukar levereras inom 1–2 arbetsdagar\./);
+  assert.equal(/Beräknad leverans/.test(t2), false);
+  // Stilla spårning (senaste skanning 6 dagar gammal, inte i landet): SOP:ens lugnande rad.
+  const b3 = new FalskBrevlada({ INBOX: [M.wismoSv] });
+  await kor(b3, { hamta17: med17(SP_STILLA) });
+  const t3 = b3.utkast()[0].text;
+  assert.match(t3, /Senaste skanningen: 15 september 2026/);
+  assert.match(t3, /Det är helt normalt att spårningen står still några dagar under transporten — paketet är på väg ändå\./);
+  assert.match(t3, /Beräknad leverans: 24 sep–1 okt\./, 'fönstret står kvar när paketet är på väg');
+  // Färsk skanning (2 dagar): ingen stilla-rad.
+  const b4 = new FalskBrevlada({ INBOX: [M.wismoSv] });
+  await kor(b4);
+  assert.equal(/står still/.test(b4.utkast()[0].text), false);
+  // Finskan böjer landet (illativ) och engelskan säger Sweden.
+  assert.equal(landnamn('SE', 'fi'), 'Ruotsiin');
+  assert.equal(landnamn('NO', 'en'), 'Norway');
+  assert.equal(landnamn('XX', 'sv'), 'Sverige', 'okänt land ⇒ Sverige');
+});
+
+test('SOP 11/30: nämner kunden en saknad orderbekräftelse får WISMO-svaret skräppost-raden; leveranstid-svaret nämner skräpposten', async () => {
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 80, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Ingen orderbekräftelse', text: 'Hej, var är min order #1042? Jag har inte fått någon orderbekräftelse alls.', id: '<w80@gmail.com>' }) },
+  ] });
+  await kor(b);
+  assert.match(b.utkast()[0].text, /Orderbekräftelsen och spårningsmejlet kan ha hamnat i skräpposten — sök gärna på "Bäverbutiken" i mejlen\./);
+  assert.equal(namnerBekraftelse('Var är paketet?'), false);
+  assert.equal(namnerBekraftelse('Har inte fått något spårningsmejl'), true);
+  assert.equal(namnerBekraftelse('No confirmation email received'), true);
+  assert.match(skrivEnkelt({ typ: 'leveranstid', sprak: 'sv', brand: KONFIG }).text, /Kolla även skräpposten om mejlet inte syns\./);
+});
+
+test('SOP 05/08: skadad eller fel vara ⇒ Axels ARG-rad + bildförfrågan (vara, förpackning, fraktetikett) i samma svar', async () => {
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 90, ra: ra({ fran: 'Jan <jan@x.se>', amne: 'Trasig vara', text: 'Hej, borsten kom fram trasig och fungerar inte. Vad gör vi nu?', id: '<w90@x.se>' }) },
+  ] });
+  const r = await kor(b);
+  assert.deepEqual([r.rader[0].hink, r.rader[0].atgard, r.rader[0].flyttad], ['ARG', 'utkast', 'VA-PRIO']);
+  const t = b.utkast()[0].text;
+  assert.match(t, /^Hej! Jag eskalerar detta direkt till våra ansvariga\. När jag ser vad du varit med om med varan som inte är som den ska/);
+  assert.match(t, /\n\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  assert.equal(harForbjudet(t), false);
+  // Ett argt WISMO utan skadad/fel vara får ingen bildförfrågan.
+  assert.equal(/bild på varan/.test(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'ej_levererad', foton: villHaFoton(klassificera({ amne: 'x', text: 'aldrig fått paketet' })) }).text), false);
+  for (const s of SPRAK) assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true }).text), false, s);
+});
+
+test('SOP 38: företagsuppgifter besvaras direkt ur brandfilen — bara de godkända; saknas blocket ⇒ VA:n', async () => {
+  const fraga = { uid: 95, ra: ra({ fran: 'Bo <bo@x.se>', amne: 'Organisationsnummer', text: 'Hej, jag behöver ert organisationsnummer och företagsadress för min bokföring.', id: '<w95@x.se>' }) };
+  const b = new FalskBrevlada({ INBOX: [fraga] });
+  const r = await kor(b);
+  assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].atgard, Boolean(r.rader[0].flaggad)], ['ENKEL', 'foretag', 'utkast', false]);
+  const t = b.utkast()[0].text;
+  assert.match(t, /Här är företagsuppgifterna: Stonebite Ecom AB, organisationsnummer 559576-2401, Sjöhed 160, 442 74 Harestad\. Företaget är momsregistrerat\./);
+  assert.equal(/axel|odhner/i.test(t), false, 'aldrig ett personnamn (SOP 38)');
+  // Utan foretag-blocket: SVÅR med orsak.
+  const utan = { ...BRAND, svar: { ...(BRAND.svar ?? {}), foretag: null } };
+  const b2 = new FalskBrevlada({ INBOX: [fraga] });
+  const r2 = await korBrand(utan, { env: ENV, nu: NU, torr: true, brevlada: b2, shopify: falskShopify(), hamta17, loggmapp: tmp() });
+  assert.equal(r2.rader[0].hink, HINK.SVAR);
+  assert.match(r2.rader[0].orsak, /svar\.foretag/);
+  assert.equal(b2.utkast().length, 0);
+});
+
+test('SOP 36 steg 1: WISMO utan order ⇒ SVÅR som standard, men med svar.fraga_ordernummer ber svaret om ordernumret och flaggar', async () => {
+  const mejl = { uid: 97, ra: ra({ fran: 'Ny <ny@kund.se>', amne: 'Var är min order', text: 'Hej, var är mitt paket? Har inte fått någon spårning.', id: '<w97@kund.se>' }) };
+  const b1 = new FalskBrevlada({ INBOX: [mejl] });
+  const r1 = await kor(b1);
+  assert.equal(r1.rader[0].hink, HINK.SVAR);
+  assert.equal(b1.utkast().length, 0);
+  const pa = { ...BRAND, svar: { ...(BRAND.svar ?? {}), fraga_ordernummer: true } };
+  const b2 = new FalskBrevlada({ INBOX: [mejl] });
+  const r2 = await korBrand(pa, { env: ENV, nu: NU, torr: true, brevlada: b2, shopify: falskShopify(), hamta17, loggmapp: tmp() });
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].typ, r2.rader[0].atgard, r2.rader[0].flaggad], [HINK.ENKEL, 'ordernummer', 'utkast', true]);
+  assert.match(b2.utkast()[0].text, /För att kunna söka upp din order behöver jag ditt ordernummer\./);
+  assert.equal(harForbjudet(b2.utkast()[0].text), false);
+  // Annan kunds ordernummer i mejlet spärrar fortfarande — ingen ordernummer-fråga då.
+  const b3 = new FalskBrevlada({ INBOX: [M.annanKund] });
+  const r3 = await korBrand(pa, { env: ENV, nu: NU, torr: true, brevlada: b3, shopify: falskShopify(), hamta17, loggmapp: tmp() });
+  assert.equal(r3.rader[0].hink, HINK.SVAR);
+  assert.equal(b3.utkast().length, 0);
 });

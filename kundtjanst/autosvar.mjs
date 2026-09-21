@@ -50,7 +50,7 @@ import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
 import { HINK, hinka, beslut, redanBesvaradAvOss } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
-import { skrivEnkelt, skrivArgt, valjSprak, fornamn, xNyckelFor } from './autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
 import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
@@ -145,7 +145,7 @@ export async function korBrand(brand, {
       fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg, tvister });
       post.fakta = fakta.kalla;
     }
-    const d = beslut({ hink, fakta, trad });
+    const d = beslut({ hink, fakta, trad, brand: konfig });
     Object.assign(post, { hink: d.hink, typ: d.typ, orsak: d.orsak });
     post.orsakEn = orsakEn(post);
 
@@ -161,9 +161,10 @@ export async function korBrand(brand, {
           if (d.hink === HINK.ARG) {
             const x = xNyckelFor(hink.klass, d.argOrsaker ?? []);
             post.x = x;
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x }).text;
+            // SOP 05/08: skadad eller fel vara ⇒ be om de tre bilderna i samma svar.
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton: villHaFoton(hink.klass) }).text;
           } else {
-            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn: fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn }) }).text;
+            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn: fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn }), bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), nu }).text;
           }
         } catch (e) {
           text = null;
