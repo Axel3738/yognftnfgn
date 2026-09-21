@@ -1,0 +1,59 @@
+Jag vill peka min domän stonebite.org på en webbplats jag just lagt upp på
+Railway. Mejlen på domänen ligger i Google Workspace och får INTE gå sönder.
+
+Jag är inloggad på Google Workspace admin console (admin.google.com). Där ser
+du vilken leverantör som har domänen — DNS-posterna ligger hos den, inte hos
+Google. Hitta dit själv och fråga mig om inloggning när du behöver den.
+
+DNS-VÄRDENA SOM SKA IN (från Railway):
+
+<<< KLISTRA IN RAILWAYS RADER HÄR — typ, namn och värde per domän >>>
+
+STEG 1 — ta reda på var DNS ligger.
+I admin.google.com: Konto → Domäner → Hantera domäner. Där står stonebite.org
+och vilken registrar/leverantör den har. Är det Squarespace (gamla Google
+Domains) sköts DNS där. Är det någon annan, t.ex. Loopia eller One.com, är det
+dit vi ska. Säg till mig vilken det blev innan du ändrar något.
+
+STEG 2 — lägg in posterna.
+Logga in hos leverantören från steg 1, öppna DNS-inställningarna för
+stonebite.org och lägg in exakt de rader Railway bad om här ovanför:
+
+  - www → posten Railway angav för www.stonebite.org
+  - rotdomänen (skrivs ofta som @ eller tomt namn) → posten Railway angav för
+    stonebite.org. Går det inte att lägga en CNAME på rotdomänen — många
+    leverantörer vägrar det — använd i stället leverantörens vidarebefordran
+    (URL forwarding / redirect) från stonebite.org till www.stonebite.org.
+    Säg till mig vilken av de två vägarna du tog.
+
+RÖR INTE DE HÄR POSTERNA, oavsett hur de ser ut:
+  - MX-posterna (de pekar på Google och bär all min mejl)
+  - TXT-poster som innehåller "google-site-verification" eller "v=spf1"
+  - DKIM-posten (heter ofta google._domainkey)
+Ta aldrig bort en befintlig post för att "städa". Lägg bara till, och ändra
+bara en post som pekar på webben (A, AAAA, CNAME för @ eller www).
+
+STEG 3 — vänta och kontrollera.
+DNS slår oftast igenom på tio minuter, ibland en timme. Kolla sedan fyra saker,
+en i taget, och skriv resultatet i rapporten:
+
+  1. https://www.stonebite.org visar rubriken "Vi bygger butiker som säljer."
+     och har ett hänglås i adressfältet.
+  2. https://stonebite.org hamnar på samma sida (direkt eller via en
+     vidarebefordran till www).
+  3. https://stonebite.org/halsa svarar med en rad JSON som börjar {"ok":true
+  4. Mejlen lever: kontrollera i admin.google.com att MX-posterna fortfarande
+     pekar på Google, och skicka ett testmejl till en adress på stonebite.org
+     och se att det kommer fram.
+
+Säger webbläsaren att certifikatet är fel: vänta tio minuter till och prova
+igen — Railway hämtar certifikatet först när DNS pekar rätt.
+
+RAPPORTERA TILL SIST:
+  - vilken leverantör som hade DNS
+  - exakt vilka poster du lade till eller ändrade
+  - vilken väg rotdomänen tog (ALIAS/CNAME eller vidarebefordran)
+  - resultatet av de fyra kontrollerna
+  - att du inte rörde MX, SPF, DKIM eller verifieringsposterna
+
+Skapa inget konto åt mig på sajten. Det gör jag själv efteråt.

@@ -86,3 +86,15 @@ sparning/butiker/*/output/
 # är genererade och skulle bara lägga binärer i historiken.
 factory/output/*/kassabild.png
 factory/output/*/kassabild.png.spec.json
+
+# Stonebite-sidan: hemligheter och inloggningar committas ALDRIG.
+# snapshot.json committas med flit — det är datan sidan visar, och rutinen
+# som hämtar den pushar den till main (som alla andra rutiner i huset).
+stonebite/data/hemlighet.txt
+stonebite/data/anvandare.json
+
+# Bonusen: inrapporterade insatser och personer som lagts till på sajten bor i
+# dataspegeln (STONEBITE_DATA), inte i git. Utfallen (bonus/utfall/) committas
+# — de är kvittot på vad som betalats ut.
+stonebite/data/insatser.jsonl
+stonebite/data/personer-extra.json

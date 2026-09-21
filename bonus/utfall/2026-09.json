@@ -1,0 +1,308 @@
+{
+ "period": {
+  "namn": "2026-09",
+  "fran": "2026-09-01",
+  "till": "2026-09-30"
+ },
+ "valuta": "USD",
+ "summa": 92.23,
+ "raknat": "2026-09-21T12:38:22.116Z",
+ "kallor": [
+  {
+   "id": "kundtjanst",
+   "status": "ok",
+   "orsak": null,
+   "antal": 27
+  },
+  {
+   "id": "commission",
+   "status": "ok",
+   "orsak": null,
+   "antal": 6
+  },
+  {
+   "id": "judge.me",
+   "status": "ok",
+   "orsak": null,
+   "antal": 1210
+  },
+  {
+   "id": "trustpilot",
+   "status": "saknas",
+   "orsak": "TRUSTPILOT_API_KEY saknas. Utan den läser vi inga Trustpilot-recensioner automatiskt — VA:n får rapportera in dem med länk i stället.",
+   "antal": 0
+  },
+  {
+   "id": "produkttest",
+   "status": "ok",
+   "orsak": null,
+   "antal": 56
+  }
+ ],
+ "matningar": {
+  "recensioner": 1210,
+  "tvister": 27,
+  "veckor": 2,
+  "produkttest": 56
+ },
+ "personer": [
+  {
+   "id": "josh",
+   "namn": "Josh Naelga",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 50.94,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 50.94,
+     "bevis": [
+      {
+       "vad": "263 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "annabelle",
+   "namn": "Annabelle Gonzales",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 26.85,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 26.85,
+     "bevis": [
+      {
+       "vad": "151 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "carl",
+   "namn": "Carl Vicente",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 6.69,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 6.69,
+     "bevis": [
+      {
+       "vad": "50 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "gilz",
+   "namn": "Gilz Bruce Biazon",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 3.72,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 3.72,
+     "bevis": [
+      {
+       "vad": "40 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "jasper",
+   "namn": "Jasper Tomboc",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 3.09,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 3.09,
+     "bevis": [
+      {
+       "vad": "74 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "jerzee",
+   "namn": "Jerzee",
+   "roll": "redigerare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 0.94,
+   "rader": [
+    {
+     "uppdrag": "spend_andel",
+     "namn": "Andel av annonsspenden",
+     "enhet": "0,4 % av spenden på dina annonser",
+     "antal": 1,
+     "summa": 0.94,
+     "bevis": [
+      {
+       "vad": "27 annonser",
+       "datum": "2026-09-21",
+       "text": "Andel av annonsspenden",
+       "lank": ""
+      }
+     ]
+    }
+   ],
+   "program": {
+    "id": "redigerare",
+    "namn": "Videoredigerare"
+   },
+   "programs": [
+    {
+     "id": "redigerare",
+     "namn": "Videoredigerare"
+    }
+   ]
+  },
+  {
+   "id": "axel",
+   "namn": "Axel Odhner",
+   "roll": "agare",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 0,
+   "rader": [],
+   "program": null,
+   "programs": []
+  },
+  {
+   "id": "anna",
+   "namn": "Anna Odhner",
+   "roll": "chef",
+   "extraRoller": [],
+   "valuta": "USD",
+   "summa": 0,
+   "rader": [],
+   "program": null,
+   "programs": []
+  }
+ ],
+ "otilldelat": [
+  {
+   "uppdrag": "recension_med_namn",
+   "orsak": "inget (eller flera) namn i texten",
+   "antal": 603,
+   "summa": 0
+  },
+  {
+   "uppdrag": "produkt_godkand",
+   "orsak": "\"Josh Naelga\" har inget konto",
+   "antal": 13,
+   "summa": 0
+  },
+  {
+   "uppdrag": "produkt_godkand",
+   "orsak": "\"Annabelle Gonzales\" har inget konto",
+   "antal": 12,
+   "summa": 0
+  },
+  {
+   "uppdrag": "sop_tackning",
+   "orsak": "ingen är tilldelad baverbutiken",
+   "antal": 2,
+   "summa": 0
+  }
+ ]
+}

@@ -1,0 +1,126 @@
+{
+  "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
+  "bolag": {
+    "namn": "Stonebite Ecom AB",
+    "orgnr": "559576-2401",
+    "adress": "Sjöhed 160, 442 74 Harestad",
+    "land": "Sverige",
+    "doman": "stonebite.org",
+    "kalla_kommentar": "Uppgifterna är hämtade ur factory/butiker/carashell.yaml (butikernas juridiska avsändare) 2026-09-21."
+  },
+  "kontakt": {
+    "epost": "contact@stonebite.org",
+    "epost_kommentar": "Axels besked 2026-09-21. Tom adress ⇒ ingen kontaktrad på sidan. Publicera aldrig en privat gmail här.",
+    "telefon": ""
+  },
+  "hero": {
+    "rubrik": "Vi bygger butiker som säljer.",
+    "underrad": "Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA. Vi hittar produkten, bygger butiken, gör reklamen och sköter kunderna — allt själva."
+  },
+  "vad_vi_gor": [
+    {
+      "titel": "Egna varumärken",
+      "text": "Vi säljer inte åt andra. Varje butik är vår egen: eget namn, egen sajt, egna kunder. Går en produkt bra får den en butik byggd runt sig."
+    },
+    {
+      "titel": "Reklamen görs i huset",
+      "text": "Ett eget team producerar film och bild varje dag. Det som fungerar får mer pengar, det som inte fungerar stängs av — mätt på vinst, inte på gissningar."
+    },
+    {
+      "titel": "Flera länder, samma maskin",
+      "text": "Sverige, Norge, Danmark, Finland, USA och Storbritannien. Butiken översätts, annonsen översätts, priset sätts i landets valuta."
+    },
+    {
+      "titel": "Kunden efter köpet",
+      "text": "Spårning som faktiskt säger var paketet är, svar på mejlen och en support som hinner med. Det avgör om kunden handlar igen."
+    }
+  ],
+  "siffror_kommentar": "Sidan visar aldrig påhittade tal. Antal varumärken och marknader räknas ur listan nedan; egna siffror här under visas bara om de är ifyllda.",
+  "siffror": [
+    {
+      "etikett": "",
+      "varde": "",
+      "hjalp": "Egen siffra: fyll i etikett och värde så dyker den upp på sidan. Tom rad visas inte."
+    }
+  ],
+  "varumarken": [
+    {
+      "id": "baverbutiken",
+      "namn": "Bäverbutiken",
+      "url": "https://baverbutiken.se",
+      "land": "Sverige",
+      "text": "Breda fynd för hus, bil och trädgård. Testbädden där nya produkter får sin första chans."
+    },
+    {
+      "id": "beverbutikken",
+      "namn": "Beverbutikken",
+      "url": "https://beverbutikken.no",
+      "land": "Norge",
+      "text": "Bäverbutiken på norska."
+    },
+    {
+      "id": "baeverbutiken",
+      "namn": "Bæverbutiken",
+      "url": "https://baeverbutiken.dk",
+      "land": "Danmark",
+      "text": "Bäverbutiken på danska."
+    },
+    {
+      "id": "majavakauppa",
+      "namn": "Majavakauppa",
+      "url": "https://majavakauppa.fi",
+      "land": "Finland",
+      "text": "Bäverbutiken på finska."
+    },
+    {
+      "id": "carashell",
+      "namn": "CaraShell",
+      "url": "https://carashell.se",
+      "land": "Sverige, Norge, USA, Storbritannien",
+      "text": "Skydd för husvagnen och husbilen när den står still."
+    },
+    {
+      "id": "hemvakten",
+      "namn": "HeimGuard",
+      "url": "https://heimguard.se",
+      "land": "Sverige",
+      "text": "Övervakning för hemmet."
+    },
+    {
+      "id": "tankguard",
+      "namn": "TankGuard",
+      "url": "https://tankguard.se",
+      "land": "Sverige",
+      "text": "Skydd för IBC-tanken."
+    },
+    {
+      "id": "drytrek",
+      "namn": "DryTrek",
+      "url": "https://drytrek.se",
+      "land": "Sverige",
+      "text": "Utrustning för vandring."
+    },
+    {
+      "id": "tacklebay",
+      "namn": "TackleBay",
+      "url": "https://tacklebay.se",
+      "land": "Sverige",
+      "text": "Prylar för fisket."
+    },
+    {
+      "id": "catcabin",
+      "namn": "CatCabin",
+      "url": "https://catcabin.se",
+      "land": "Sverige",
+      "text": "Isolerade utekattkojor."
+    },
+    {
+      "id": "kalender",
+      "namn": "AdventLane",
+      "url": "https://adventlane.se",
+      "land": "Sverige",
+      "text": "Adventskalendrar. Säsong: oktober till december."
+    }
+  ],
+  "publik_fot": "Stonebite Ecom AB · Org.nr 559576-2401 · Harestad, Sverige"
+}

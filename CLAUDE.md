@@ -221,6 +221,151 @@ Kräver env-variabeln `HEYGEN_API_KEY` i environmentet.
 
 ---
 
+## `stonebite/` — bolagets egen sajt med inloggning (NY 2026-09-21)
+
+Stonebite Ecom AB:s webbplats: en **publik sida** (vad bolaget gör, vilka
+butiker vi driver) och ett **inloggat läge** med dashboards för butiker,
+annonser, redigerare, kundtjänst och leverans. Noll npm-beroenden, ingen
+databas, inga externa anrop från sidan. Full dokumentation: `stonebite/README.md`.
+
+```bash
+node stonebite/hamta.mjs     # hämtar data (Shopify + Meta + repot) → data/snapshot.json
+npm run sida                 # startar sajten på http://localhost:4000
+```
+
+**Sex roller, och rollen avgör vad servern ens svarar på** (`stonebite/roller.mjs`,
+kontrolleras vid varje sidvisning — menyn är bara en spegling). Axels fem
+inloggningar 2026-09-21 plus chefsrollen som redan fanns:
+
+| Roll | Ser | Ser inte |
+|---|---|---|
+| `agare` | allt + konton | — |
+| `chef` | allt utom konton | vem som får logga in |
+| `produkttest` | produkttest-trappan + sin egen sida | spend, omsättning, andras pengar |
+| `redigerare` | topplistan + sin egen sida | **spend, ROAS, omsättning, break-even, satsen** |
+| `support_chef` | kundtjänst, recensioner, leverans, **hela teamets bonus**, godkänner insatser | all ekonomi |
+| `va` | kundtjänst, recensioner, leverans + sina egna uppdrag och pengar | all ekonomi, andras bonus |
+
+**Tolv sidor:** Översikt, Butiker, Annonser, Produkttest, Redigerare,
+Kundtjänst, Recensioner, Leverans, Bonus, System, Min sida, Konton.
+`/app/system` är kartan över allt du byggt (`stonebite/system.json`, i
+kategorier + dygnets rutiner).
+
+⚠️ **Sajten är tvåspråkig** (`stonebite/sprak.mjs`). Ägare och chef får
+svenska, alla andra engelska — samma regel som i chatten. Var och en byter
+själv på Min sida. Ordboken är hela meningar svenska → engelska; saknas en
+rad visas svenskan, sidan går aldrig sönder. Komponenterna översätter sina
+egna etiketter men **aldrig datan** (butiksnamn, kampanjnamn, kundtext).
+
+Att redigerare aldrig ser spend är samma järnregel som topplistan (Axels beslut
+2026-09-02). Satsen räknas som spend — med belopp OCH sats går spenden att
+räkna ut baklänges. Ett test i `stonebite/test/server.test.mjs` bevisar spärren
+genom att logga in som redigerare och gissa adresserna.
+
+⚠️ **Hämtning och visning är två olika saker med flit.** `hamta.mjs` skriver
+`stonebite/data/snapshot.json`; servern läser bara filen. En sida som hämtade
+vid varje besök hade tagit minuter och slagit i Metas kod 17. Sidan visar alltid
+när datan hämtades, och varje källa rapporterar sitt eget läge på sidan Drift.
+
+Regler som sitter i koden (och som INTE ska "förenklas" bort):
+- **Valutor summeras aldrig ihop.** SEK, NOK, DKK, EUR står var för sig.
+- **Ingen procent på ett halvt dygn** — dagens tal jämförs aldrig i procent mot
+  gårdagens hela dygn, bara hela veckor mot hela veckor.
+- **"Kvar efter reklam" räknas bara när ALLA butiker gick att läsa.** Reklamen
+  syns alltid (Meta), försäljningen per butik. Saknas en butik blir siffran fel
+  åt minus-hållet — då står det varför i stället.
+- **ROAS kommer ur Meta**, aldrig ur vår egen division omsättning ÷ spend.
+- **Rangordning på vinstbidrag** (`spend × (ROAS ÷ break-even − 1)`, samma formel
+  som ANALYSMETOD omskriven). Break-even läses ur kampanjnamnet — kontot skriver
+  både `BE ROAS 1.63` och `BE-ROAS 1,51`, båda formerna hanteras.
+- **Saknad data skrivs ut med orsak**, aldrig som en nolla.
+
+Butikerna **upptäcks** (sparning/butiker.json + factory/butiker/*.yaml + varje
+`SHOPIFY_SHOP_*` i miljön som har nycklar bredvid sig) — ingen handskriven lista.
+⚠️ Mätt 2026-09-21: 7 av 13 butiker gick att läsa. **Bäverbutiken och UK svarar
+403 "requires merchant approval for read_orders"** — fabrikens app saknar
+godkännande för kunddata, precis som kundtjänsten en gång behövde en egen app.
+Sidan säger det rakt ut i stället för att visa noll.
+
+Säkerhet: scrypt-hashade lösenord, HMAC-signerad kaka (HttpOnly/SameSite/Secure),
+CSRF-nyckel i varje formulär, fem inloggningsförsök per adress och IP, CSP med
+nonce. `STONEBITE_HEMLIGHET` signerar kakorna; `data/anvandare.json` och
+`data/hemlighet.txt` är gitignorerade. **Vid drift måste kontofilen ligga på en
+volym som överlever en deploy** (`STONEBITE_ANVANDARE`) — annars är alla konton
+borta vid nästa version.
+
+Första gången: öppna `/kom-igang` och skapa ägarkontot. Sidan stänger sig själv
+när kontot finns; alla andra konton läggs till inne på sidan Konton — och då
+skapas personen i bonusregistret samtidigt, annars finns ingen att betala till.
+
+**Lägg upp sajten:** `stonebite/COWORK-PROMPT.md` är kartan; själva prompterna
+är två, en per flik och i ordning — `stonebite/cowork/1-railway.txt` (tjänst,
+miljövariabler, volym, lämnar tillbaka DNS-värdena) och
+`stonebite/cowork/2-dns.txt` (letar upp DNS-leverantören via Google Workspace
+admin, lägger in posterna). Mejlen på stonebite.org ligger i Google Workspace,
+så DNS-prompten förbjuder uttryckligen ändringar av MX, SPF, DKIM och
+verifieringsposter. Samma fil bär listan på det jag behöver veta om
+verksamheten.
+
+---
+
+## `bonus/` — alla i bolaget ska kunna tjäna pengar (NY 2026-09-21)
+
+Axels uppdrag: "vi behöver verkligen något system för VA:erna". De hade fem
+dollar per Trustpilot-recension med sitt namn — **och drog noll recensioner.**
+Full dokumentation: `bonus/README.md`.
+
+```bash
+node bonus/kor.mjs --torr    # räkna månadens bonus, skriv inget
+npm run bonus                # skarpt: skriver bonus/utfall/<månad>.json
+```
+
+**Fyra program, alla mätta ur data vi redan har:**
+
+| Vem | Tjänar på |
+|---|---|
+| VA | $5 recension med namn · $10 tre på en vecka · $1 tvist besvarad i tid · $5 vunnen tvist · $15 tom inkorg · $10 svarstid under 12 h — veckobonusarna EN gång per vecka när ALLA personens butiker klarar det |
+| Head of support | 10 % av teamets bonus (utan egna rader) · $25 per butik med risk under 25 · $20 full SOP-täckning hela månaden |
+| Produkttest | **$15 per färdig produkt** (`Ads review` eller längre) — Axels beslut 2026-09-21, ersatte trappan 2/5/25/100. Trappan visas fortfarande på sidan Produkttest |
+| Redigerare | 0,4 % av spenden (commission, oförändrat) — Josh och Annabelle tjänar dessutom i produkttest (`extraRoller`) |
+
+**Axels svar 2026-09-21 (inskrivna):** kontaktmejl `contact@stonebite.org`;
+**Mechile Delos Santos** är både VA och Head of customer support för alla
+butiker (`bonus/personer.json`, `brands: ["*"]` = alla, även framtida);
+tvistbeloppen halverade ("alldeles för mycket"); Trustpilot-konto finns inte och
+behövs inte — Judge.me läses redan. Servern stoppar självgodkännande även för
+den som har rätten `godkanna` (403 när insatsens personId är den inloggades).
+
+⚠️ **Varför de inte drog recensioner — och vad som ändrats.** Tre saker
+saknades: de såg aldrig pengarna, ingen visste exakt hur man ber om en
+recension, och det fanns inget veckomål. Nu: Min sida visar "Du har tjänat
+$X", varje uppdrag har ett *Så gör du*, recensionsuppdraget har en **färdig
+text att kopiera** (sv + en) och en veckoräknare "1 av 3".
+**Mätt 2026-09-21: 2 av 1 210 recensioner nämnde någon i teamet.** Den siffran
+står nu överst på sidan Recensioner.
+
+**Fyra regler som sitter i koden:**
+1. **Hellre okopplad än fel person** — två namn i samma recension betalar ingen.
+2. **Ingen utbetalning utan underlag** — varje krona pekar på ett bevis.
+3. **Anspråk verifieras mot datan** — "jag svarade på tvist #5763" betalas
+   först när tvistdatan säger att den är besvarad.
+4. **Ingen godkänner sina egna pengar** — VA rapporterar in, chefen godkänner.
+   Ett test loggar in som VA och försöker godkänna sin egen insats: 403.
+
+⚠️ `bonus/personer.json` är folkregistret (roll, förnamn för
+recensionsmatchning, butiker). **En person kan bära flera roller**:
+`extraRoller: ["produkttest"]` gör att en redigerare även tjänar i
+produkttestprogrammet. Mätt 2026-09-21: Josh (13) och Annabelle (12) står som
+Ansvarig på produkttester men får bara betalt som redigerare — **det är Axels
+beslut om pengar, systemet ändrar det inte självt.**
+
+⚠️ Trustpilots publika sida svarar 403 på maskiner (mätt 2026-09-21). Automatisk
+läsning kräver `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS`. Judge.me
+läses redan automatiskt (1 210 recensioner på 60 dagar). Utan Trustpilot-nyckeln
+rapporterar VA:n in recensionen med länk och chefen godkänner.
+
+---
+
 ## Kommandona (Axels gränssnitt)
 
 40 filer i `.claude/commands/` (räknade 2026-09-16). Detta är produkten — resten är stödsystem.
@@ -436,6 +581,7 @@ Det finns ingen linter och ingen byggkedja i OS:et — `npm test` är hela grind
 | Ad-tracker (hypotes → utfall → lärdom) | `docs/ad-tracker.md` |
 | Färdiga briefer + rådata från kontot | `docs/briefs/`, `docs/source/` |
 | Grillklinikens COGS, marginaler och moms (legacy) | `docs/grillkliniken-ekonomi.md` |
+| **Bolagets sajt: publik sida + inloggade dashboards** (stonebite.org) | `stonebite/` — `README.md`, `roller.mjs` (vem ser vad), `hamta.mjs` (datan), `profil.json` (texten på publika sidan) |
 | **Kundmejlen + gratisprodukt-erbjudandet** (Shopify-notiser, kod `TACKIGEN`, kollektion `din-gratisprodukt`) | `mejl/` — `README.md`, `konfig.json`, `copy.json`. ⚠️ Shopify har inget API för notismallar: Axel klistrar in från sidan `/mejl` bygger. Rabattkoden kräver `write_discounts` som appen "Bäver uppladdare" saknar (mätt 2026-09-12) |
 
 ### Produkterna (`products/products.json`)
