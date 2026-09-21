@@ -30,11 +30,23 @@ Tre skäl, alla mätta i den här basen:
 
 | Fil | Vad |
 |---|---|
+| `start-here.md` | **Startsidan.** Routningstabell: vad kunden frågar → vilken sida. Fyra järnregler. Var den nyanställda börjar |
 | `00-STORE-FACTS.md` | **Den enda sidan som ändras per brand.** Butikstabell, avsändarland, ägarens värden (returfönster, svarstidsmål, vem som godkänner vad) |
 | `01-TRACKING-PAGE.md` | Uppslagsrutinen: Shopify-tidslinjen → butikens spårningssida → fraktbolagets portal som reserv. Alla leverans-SOP:ar pekar hit |
-| Övriga 16 | En SOP per kundfråga. Ingen av dem nämner ett butiksnamn, en domän, ett fraktbolag eller en adress — de säger "ta värdet ur Store facts" |
+| Övriga 33 | En SOP per kundfråga. Ingen av dem nämner ett butiksnamn, en domän, ett fraktbolag eller en adress — de säger "ta värdet ur Store facts" |
 | `notion.json` | Vilken fil som är vilken Notion-sida |
 | `skriv.mjs` | Skriver filerna till Notion |
+
+**Tre saker som var värre än formuleringar, och som är borta:**
+
+1. `LOG IN TO EMAIL ACCOUNT` hade **lösenordet i klartext, tre gånger** — och bara
+   Grillklinikens brevlådor, mitt i Bäverbutikens bas. ⚠️ **Byt det lösenordet.**
+2. `Technical issues during purchase` hade meningen "the customer is actually really
+   stupid" i sin AI-prompt.
+3. `Refund 3 step proccess` sa åt VA:n att skriva "vi diskuterade det internt" till
+   varje kund. Det är osant, och det syns direkt när någon får samma mening två
+   gånger. Samma sida körde dessutom ångerrätten rakt in i ett
+   delåterbetalningserbjudande.
 
 ```bash
 node kundtjanst/va-sop/skriv.mjs --torr # visa vad som skulle hända

@@ -26,7 +26,7 @@ Shipping & Customs SOP for every store. Domain, support address and prefix come 
 
 ### Step 2 – Find the parcel on the store's tracking page
 
-1. Pick the page for the shipping address country (Store facts). CaraShell: NO /nb, FI /fi, US/GB/CA/AU/NZ carashell.com, else carashell.se.
+1. Pick the page for the shipping address country — **Store facts** lists one line per store, and the multi-market store has one page per language. Match the order's market, not the store's home country.
 2. Paste the tracking number from Shopify, or the parcel number the customer quotes.
 3. Copy the store parcel number the page shows ("Your parcel number") — send that one.
 4. Note the stage (Order received / On its way / With the carrier / Out for delivery / Delivered) and "Estimated delivery". A "Collect your parcel" box = pickup point: send the customer its name and number.
@@ -38,7 +38,7 @@ Shipping & Customs SOP for every store. Domain, support address and prefix come 
 2. Promise: the window in Store facts, counted from the shipping email — and only if the order has not shipped yet.
 3. Send the link: tracking page + ?nummer= + parcel number. The page shows the parcel's stage and where it is, updated hourly.
 4. Two cases: (a) Silent tracking — parcel found, no scans yet, shipped under 4 days ago: normal, on its way to the flight. (b) "We can't find that number" — NOT the flight: the page adds parcels hourly; fulfilled under an hour ago, wait for the next run; over 60 days, carrier portal; else a typo.
-5. Carrier question: the page shows the STAGE "With the carrier" ("Hos fraktbolaget" in Swedish; label follows page language), never the carrier's name. Name one only if asked, read from the Shopify fulfillment — never the raw number.
+5. Carrier question: the page shows the stage "With the carrier" ("Hos fraktbolaget"; the label follows the page's language). Once the parcel is in the customer's country it **also shows the last-mile carrier by name, with that carrier's own number and a link**. Before it arrives in the country no carrier is named — read it off the Shopify fulfillment if the customer asks. Never send our carrier tracking number to a customer.
 
 ### Step 4 – Address customs concerns if raised
 
@@ -72,7 +72,7 @@ Hi [name]! Your order ships from [per Store facts]. Follow the parcel here: [tra
 
 ## AI PROMPT TEMPLATE
 
-"Draft a friendly email in [CUSTOMER'S LANGUAGE] answering where the order ships from. It ships from [SHIPS-FROM CLAIM]. Do not state a delivery date or window — the page shows it. Include the link [tracking page]?nummer=[parcel number] and the parcel number; the page shows where the parcel is, updated hourly. Tracking can be empty the first 2–4 days; that is normal. Do not name a carrier unless the customer asks; the page does not show it. No customs. Sign with [STORE NAME] support. Under 120 words."
+"Draft a friendly email in [CUSTOMER'S LANGUAGE] answering where the order ships from. It ships from [SHIPS-FROM CLAIM]. Do not state a delivery date or window — the page shows it. Include the link [tracking page]?nummer=[parcel number] and the parcel number; the page shows where the parcel is, updated hourly. Tracking can be empty the first 2–4 days; that is normal. Do not name a carrier unless the customer asks. No customs. Sign with [STORE NAME] support. Under 120 words."
 
 ## Store facts
 

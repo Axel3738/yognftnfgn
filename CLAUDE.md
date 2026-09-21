@@ -955,8 +955,8 @@ vara kunder som faktiskt hörde av sig.
 
 **`kundtjanst/va-sop/` — VA:ns vardags-SOP:ar, filerna är källan och Notion är
 visningen** (byggd 2026-09-21 när spårningssidan låg live i sex butiker men
-SOP:erna fortfarande skickade VA:n till fraktbolaget först). 18 sidor i
-Notion-databasen **"Customer support bäverbutiken"** `3aa270ab-908c-8057-a8a0-cc691d9e956b`,
+SOP:erna fortfarande skickade VA:n till fraktbolaget först). **Alla 36 sidor**
+i Notion-databasen **"Customer support bäverbutiken"** `3aa270ab-908c-8057-a8a0-cc691d9e956b`,
 skrivna av `node kundtjanst/va-sop/skriv.mjs` (`--torr` först, `--bara <fil>`
 för en sida) enligt `notion.json`.
 
@@ -1002,6 +1002,22 @@ filens H1 är det en uppdatering och den kör på; allt annat innehåll stoppar 
 fortfarande. Utan det gick sidorna inte att uppdatera en andra gång utan
 `--ersatt-allt`. Varje SOP-fil måste därför ha en `# rubrik` — den som saknade
 en (`order-confirmation-not-received.md`) hoppades tyst över.
+
+**Hela basen är genomgången, inte bara leveransdelen** (Axels fråga 2026-09-21:
+"har du kollat igenom ALLA pdf-SOP:er?"). Alla 34 PDF-bilagor lästes och
+inventerades; 18 sidor skrevs om i första omgången (spårningen) och de
+återstående 18 samma dag. Tre fynd var allvarligare än formuleringar:
+**`LOG IN TO EMAIL ACCOUNT` bar ett lösenord i klartext tre gånger** (och bara
+Grillklinikens brevlådor, i Bäverbutikens bas) — den nya sidan säger var
+lösenord hör hemma och ber Axel byta det; **`Technical issues during purchase`**
+hade meningen "the customer is actually really stupid" i sin AI-prompt;
+**`Refund 3 step proccess`** sa åt VA:n att skriva "vi diskuterade det internt"
+till varje kund (osant, och det syns direkt när någon får samma mening två
+gånger) och körde ångerrätten rakt in i ett delåterbetalningserbjudande. Alla
+tre är borta. `READ ME` — som sa åt VA:n att SOP:erna gällde ett annat brand och
+skulle tas "med en nypa salt" — är nu **Start here**, basens routningstabell
+från kundfråga till sida. Fyra dubbletter pekar på varandra i stället för att
+säga emot varandra (betalning utan order ×2, checkout-problem ×2).
 
 Skild från **`kundtjanst/sop/`**: den är tvisthandboken (chargebacks/inquiries,
 `{{PLATSHÅLLARE}}` ur brandfilen, vakten `npm run sop`). Den här basen är

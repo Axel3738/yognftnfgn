@@ -109,6 +109,114 @@
    "titel": "Where is my package?",
    "kategori": "Delivery",
    "notion_id": "4bb270ab-908c-83d6-8bc1-81f48dd9bec1"
+  },
+  {
+   "fil": "unexpected-customs-or-import-fee.md",
+   "titel": "Customer received unexpected customs or import fee",
+   "kategori": "Shipping & Customs",
+   "notion_id": "d10270ab-908c-83c4-8ab6-01c4d426525c"
+  },
+  {
+   "fil": "technical-error-in-checkout-during-purchase.md",
+   "titel": "Technical error in checkout during purchase",
+   "kategori": "Payment",
+   "notion_id": "1d9270ab-908c-83b3-9780-01798036b206"
+  },
+  {
+   "fil": "customer-disputes-charged-amount.md",
+   "titel": "Customer disputes charged amount",
+   "kategori": "Payment",
+   "notion_id": "e82270ab-908c-82c4-9b1b-011045624d6e"
+  },
+  {
+   "fil": "money-charged-but-no-order.md",
+   "titel": "Money charged but no order visible",
+   "kategori": "Payment",
+   "notion_id": "734270ab-908c-836f-9ec6-01fe213d9a29"
+  },
+  {
+   "fil": "return-address-and-instructions.md",
+   "titel": "Return adress & information",
+   "kategori": "Return and Refund",
+   "notion_id": "ad0270ab-908c-82ca-8fc3-81717b3b458f"
+  },
+  {
+   "fil": "refund-not-received-after-approved-return.md",
+   "titel": "Refund not received after approved return",
+   "kategori": "Return and Refund",
+   "notion_id": "86e270ab-908c-82cb-9876-016d243bd1a1"
+  },
+  {
+   "fil": "refund-the-three-step-offer.md",
+   "titel": "Refund 3 step proccess",
+   "kategori": "Return and Refund",
+   "notion_id": "156270ab-908c-8314-8a8a-810d0c2a12e7"
+  },
+  {
+   "fil": "payment-completed-but-no-order-registered.md",
+   "titel": "Payment completed but no order registered",
+   "kategori": "Order",
+   "notion_id": "d3c270ab-908c-839a-8968-81cb53c02583"
+  },
+  {
+   "fil": "invoice-and-business-purchase.md",
+   "titel": "Another company wants an invoice",
+   "kategori": "Other stuff",
+   "notion_id": "cb2270ab-908c-82ab-875d-01a5acc7659e"
+  },
+  {
+   "fil": "company-information-requests.md",
+   "titel": "Company information",
+   "kategori": "Other stuff",
+   "notion_id": "9c3270ab-908c-831b-a12a-8167fcd1e2fa"
+  },
+  {
+   "fil": "discounts-and-campaigns.md",
+   "titel": "Questions about discounts and campaigns",
+   "kategori": "Other stuff",
+   "notion_id": "c5d270ab-908c-83f3-b37f-810bc31776d3"
+  },
+  {
+   "fil": "reseller-and-wholesale-inquiries.md",
+   "titel": "Inquiries about reseller agreements",
+   "kategori": "Other stuff",
+   "notion_id": "8af270ab-908c-822f-a9a2-811a4b2e1d6a"
+  },
+  {
+   "fil": "wrong-product-delivered.md",
+   "titel": "Wrong product delivered",
+   "kategori": "Order",
+   "notion_id": "f1a270ab-908c-82ee-a41d-81524dbf9214"
+  },
+  {
+   "fil": "suspicious-or-phishing-email.md",
+   "titel": "Suspicious phishing email with unusual sender address",
+   "kategori": "Account and Website",
+   "notion_id": "bff270ab-908c-8298-b61d-81749064183c"
+  },
+  {
+   "fil": "technical-problems-in-checkout.md",
+   "titel": "Technical issues during purchase (checkout not working, unable to change quantity)",
+   "kategori": "Account and Website",
+   "notion_id": "45d270ab-908c-832a-a47d-81167bf4faf4"
+  },
+  {
+   "fil": "how-to-use-deepl.md",
+   "titel": "How to use DEEPL",
+   "kategori": "Other stuff",
+   "notion_id": "aa7270ab-908c-83c0-9cf2-01be2b812cf2"
+  },
+  {
+   "fil": "logging-in-to-the-support-mailbox.md",
+   "titel": "LOG IN TO EMAIL ACCOUNT",
+   "kategori": "Log into customer support accounts and acces team stuff",
+   "notion_id": "26a270ab-908c-82b6-a626-81c7abce512e"
+  },
+  {
+   "fil": "start-here.md",
+   "titel": "READ ME",
+   "kategori": null,
+   "notion_id": "1da270ab-908c-8381-98fb-819065cc4c2c"
   }
  ]
 }
