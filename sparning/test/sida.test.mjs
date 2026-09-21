@@ -705,3 +705,36 @@ test('flera språk på samma sida: lang="en" ger engelsk rubrik, etiketter och f
   assert.equal(nb.get('bbs-rubrik').textContent, 'Pakken er på vei');
 });
 
+
+test('beräknad leverans: bokningen som ankare läggs på det mätta dröjsmålet', () => {
+  // Rättelsen 2026-09-22 (Axel: "visar något förtidigt estimerat
+  // leveransdatum"). Har paketet nått "Paketet är på väg" räknas fönstret
+  // därifrån; har det bara bokats låg fönstret fyra dygn för tidigt, för
+  // bokningen ligger i median 4,1 dygn före första rörelsen (mätt på 879
+  // levererade paket).
+  //
+  // Två paket med EXAKT samma tidsstämpel, det ena som rörelse och det andra
+  // som bokning. Skillnaden mellan deras datum ska vara dröjsmålet — inte noll.
+  const stamp = '2026-09-15T10:00:00Z';
+  const d = fixtur();
+  // Radens fjärde fält är SKEDET (0 = beställd, 1 = på väg) — utan det når
+  // paketet inget skede alls och fönstret får inget ankare.
+  d.k = {
+    PAVAG: [1, 0, [[min(stamp), 0, 0, 1, -1, 0, 0]]],
+    BOKAT: [0, 0, [[min(stamp), 1, -1, 0, -1, 0, 0]]],
+  };
+  const konfig = { ...KONFIG, frakt: { ...KONFIG.frakt, leverans_dagar_min: 7, leverans_dagar_max: 14 } };
+  const kropp = byggSidkropp(d, konfig);
+
+  const paVag = kor(kropp, '?nummer=PAVAG').get('bbs-leverans').textContent;
+  const bokat = kor(kropp, '?nummer=BOKAT').get('bbs-leverans').textContent;
+  assert.ok(paVag, 'paketet på väg saknar beräknad leverans');
+  assert.ok(bokat, 'det bokade paketet saknar beräknad leverans');
+  assert.notEqual(bokat, paVag, 'bokningen gav samma datum som en riktig rörelse — dröjsmålet räknas inte');
+
+  // 15 sep + 7 = 22 sep, + 14 = 29 sep. Med dröjsmålet: 26 sep – 3 okt.
+  assert.match(paVag, /22/, `på väg skulle ge 22 sep, gav "${paVag}"`);
+  assert.match(paVag, /29/, `på väg skulle ge 29 sep, gav "${paVag}"`);
+  assert.match(bokat, /26/, `bokat skulle ge 26 sep, gav "${bokat}"`);
+  assert.match(bokat, /3/, `bokat skulle ge 3 okt, gav "${bokat}"`);
+});

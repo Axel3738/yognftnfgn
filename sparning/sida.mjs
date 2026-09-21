@@ -700,9 +700,25 @@ function starta() {
   // Beräknad leverans: avsändningsdagen + löftet kunden redan fått i mejlen.
   //
   // ⚠️ Ankaret är den FÖRSTA skanningen i "Paketet är på väg", alltså när
-  // fraktbolaget faktiskt fick paketet — inte bokningen, som kan ligga dygn
-  // före. Finns inget sådant skede än används bokningen, och då räknas
-  // packtiden inte bort; fönstret blir därför försiktigt brett, inte snävt.
+  // fraktbolaget faktiskt fick paketet — inte bokningen, som ligger dygn före.
+  //
+  // Mätt 2026-09-22 på 879 levererade paket: från "på väg" till levererat är
+  // medianen 10,1 dygn (p25 9,2 · p90 12,2), och fönstret 7–14 träffar 96 %.
+  // Ankaret är alltså rätt — så länge skedet finns.
+  //
+  // ⚠️ FALLBACKEN VAR FÖR TIDIG, rättad samma dag (Axel: "visar något
+  // förtidigt estimerat leveransdatum"). Har paketet ännu inte nått "på väg"
+  // användes BOKNINGEN som ankare, och den gamla kommentaren här påstod att
+  // fönstret då blev "försiktigt brett, inte snävt". Det var bakvänt: ett
+  // TIDIGARE ankare ger ett TIDIGARE datum. Dröjsmålet bokning → första
+  // rörelse är i median 4,1 dygn (p25 2,6 · p90 7,3) på samma 879 paket, så
+  // de paketen fick ett löfte som låg fyra dygn fel åt optimistiska hållet —
+  // och det gällde 383 av de 1 165 paket som var på väg vid mätningen, alltså
+  // var tredje.
+  //
+  // Därför läggs medianen på när bokningen är allt vi har. Den är mätt, inte
+  // vald: ett paket som just bokats beter sig som de 879 gjorde.
+  var DROJSMAL_DYGN = 4;
   //
   // ⚠️ Räknas i KALENDERDAGAR, som löftet i mejlen. Ingen avrundning åt något
   // håll, och inga helgdagar — vi har ingen kalender för fraktbolagets
@@ -714,12 +730,14 @@ function starta() {
     for (var i = 0; i < s.length; i++) {
       if (s[i].nyckel === 'pa_vag' && s[i].nadd) { ankare = s[i].tid; break; }
     }
+    var franBokningen = false;
     if (!ankare) {
-      for (var j = 0; j < s.length; j++) if (s[j].nyckel === 'bestalld' && s[j].nadd) { ankare = s[j].tid; break; }
+      for (var j = 0; j < s.length; j++) if (s[j].nyckel === 'bestalld' && s[j].nadd) { ankare = s[j].tid; franBokningen = true; break; }
     }
     if (!ankare || isNaN(ankare.getTime())) return null;
-    var fran = new Date(ankare.getTime() + C.levMin * 86400000);
-    var till = new Date(ankare.getTime() + C.levMax * 86400000);
+    var noll = ankare.getTime() + (franBokningen ? DROJSMAL_DYGN * 86400000 : 0);
+    var fran = new Date(noll + C.levMin * 86400000);
+    var till = new Date(noll + C.levMax * 86400000);
     return { fran: fran, till: till, sen: Date.now() > till.getTime() };
   }
 
