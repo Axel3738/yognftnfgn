@@ -48,7 +48,11 @@ export const BUTIK = Object.freeze({
   DISPUTE_RATE_YELLOW: 'trosklar.tvistgrans_gul_procent',
   DISPUTE_RATE_RED: 'trosklar.tvistgrans_rod_procent',
   FIRST_REPLY_TARGET_HOURS: 'svarstidsmål — ägarens beslut',
-  DELIVERY_PROMISE_DAYS: 'leveranstiden som utlovas på sajten',
+  DELIVERY_PROMISE_DAYS: 'leveranstiden som utlovas på sajten (kalenderdagar efter fraktmejlet)',
+  // Spårningssidan (sparning/, live i fem butiker 2026-09-20/21). Tom = butiken
+  // har ingen sida ännu, då gäller fraktbolagets/17TRACK-vägen i SOP:erna.
+  TRACKING_PAGE: 'tvister.sparningssida — butikens egen spårningssida (sparning/butiker.json → url + /pages/ + handle)',
+  PARCEL_PREFIX: 'tvister.paketprefix — butikens paketnummerprefix (sparning/butiker.json → prefix, t.ex. BB-)',
   STALL_ALERT_DAYS: 'dagar utan skanning innan paketet larmas',
   LATE_ALERT_DAYS: 'dagar över utlovad leveranstid innan kunden kontaktas',
   REFUND_DEADLINE_DAYS: 'hur snabbt en beviljad återbetalning ska vara utbetald',
@@ -60,7 +64,9 @@ export const ARENDE = Object.freeze({
   AMOUNT: 'tvistens belopp', DISPUTE_AMOUNT: 'tvistens belopp', REASON_CODE: 'Shopifys reason',
   EVIDENCE_DUE: 'evidence_due_by', DAYS_LEFT: 'dagar kvar', DATE: 'dagens datum',
   CUSTOMER_FIRST_NAME: 'kundens förnamn', CUSTOMER_EMAIL: 'kundens mejl',
-  TRACKING_NUMBER: 'spårnummer', TRACKING_STATUS: '17TRACK-status', TRACKING_LINK: 'spårningslänk',
+  TRACKING_NUMBER: 'spårnummer', TRACKING_STATUS: '17TRACK-status',
+  TRACKING_LINK: 'spårningslänk till KUNDEN — butikens sida med paketnumret ({{TRACKING_PAGE}}?nummer={{PARCEL_NUMBER}}); utan sida: 17TRACK-länken',
+  PARCEL_NUMBER: 'butikens paketnummer (prefix + 8 tecken, står på ordern i spårningssidan) — det kunden ser, aldrig fraktbolagets nummer',
   CARRIER: 'fraktbolag', DELIVERY_DATE: 'leveransdatum', SHIP_DATE: 'skickatdatum',
   FULFILMENT_DATE: 'fulfillment-datum', LAST_SCAN_DATE: 'senaste skanningen',
   REFUND_AMOUNT: 'återbetalat belopp', REFUND_DATE: 'datum för återbetalningen',

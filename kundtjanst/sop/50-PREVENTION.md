@@ -107,7 +107,7 @@ Paste this under `tvister:` in the store's brand file. Until it is there, use th
 
 ```yaml
 tvister:
-  leveranslofte_dagar: "5-10"   # {{DELIVERY_PROMISE_DAYS}} — the delivery time the product page promises
+  leveranslofte_dagar: "7-14"   # {{DELIVERY_PROMISE_DAYS}} — the delivery promise in the shipping emails and on the tracking page: CALENDAR days after the shipping email (measured on one store 2026-09-20: median 11.1, p90 13.0 days). Not "5–10 business days" — that promise is retired
   stillastaende_dagar: 10       # {{STALL_ALERT_DAYS}} — no new tracking scan for this many days = we write first
   forsenad_dagar: 17            # {{LATE_ALERT_DAYS}} — total transit days before we write first (our own choice: promise + 7)
   aterbetalning_dagar: 14       # {{REFUND_DEADLINE_DAYS}} — money must leave within this many days of agreeing a refund
@@ -123,7 +123,7 @@ tvister:
 | `{{ORDER_NUMBER}}` | Shopify admin → Orders → the order, e.g. `#5584` |
 | `{{CUSTOMER_FIRST_NAME}}` | the order's shipping name, first word |
 | `{{AGENT_NAME}}` | the VA's own first name. Always a real name, never "Customer Service" |
-| `{{TRACKING_LINK}}` | the carrier link on the fulfilment, or `https://t.17track.net/en#nums=<tracking number>` |
+| `{{TRACKING_LINK}}` | on a store with a tracking page: `{{TRACKING_PAGE}}?nummer={{PARCEL_NUMBER}}` — the store parcel number (`{{PARCEL_PREFIX}}` + 8 characters) is shown on `{{TRACKING_PAGE}}` when you paste the carrier number, and under the button in the customer's shipping email. Never the raw carrier number in a customer email. No tracking page: `https://t.17track.net/en#nums=<tracking number>` |
 | `{{LAST_SCAN_DATE}}` | last event date from 17TRACK, or the `Tracking` line in `tvistfakta.mjs` output |
 | `{{AMOUNT}}` | the refunded amount, exactly as Shopify shows it |
 | `{{DATE}}` | today, written out: `20 September 2026` |
@@ -288,6 +288,8 @@ It is read-only against Shopify: it changes no dispute, submits no evidence, mov
 ⚠️ **Old parcels are not registered with 17TRACK and cannot be read until they are.** *Measured 2026-09-20: all twelve disputed orders answered "does not register, please register first"* — they were older than the tracking routine's 14-day window. `--registrera` registers them, and that costs 17TRACK quota (bought per parcel in the 17TRACK panel, roughly 87/day on the example plan). Budget for it before a dispute push; it is a real operational step, not a bug.
 
 **Manual check, any store, no quota:** Shopify admin → Orders → the order → Fulfillment → copy the tracking number → paste it at `https://t.17track.net/en#nums=<number>` in a browser. Brand-independent, safe, no side effects.
+
+**Stores with a tracking page (`{{TRACKING_PAGE}}`):** the hourly routine already writes every scan into the order's fulfillment timeline in Shopify admin, and `{{TRACKING_PAGE}}` shows the whole chain when you paste the carrier number or the store parcel number. That is the zero-click read for anything shipped in the last 60 days — and it is what the customer is looking at, so quote its wording. Older parcels: 17TRACK as above.
 
 **Do not investigate with `sparning/`.** That runner is wired to **one store only** and it *writes* to Shopify: it creates fulfillment events, and those trigger "out for delivery" and "delivered" emails to customers about orders from months ago. If you must run it, run `node sparning/kor.mjs --torr` (reads, writes nothing) — never a wide `--dagar` window sharp.
 

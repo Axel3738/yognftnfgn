@@ -62,6 +62,11 @@ Supporting files, used from inside the reason files — do not start here:
 > provider. Old parcels are not tracked automatically — measured 2026-09-20, all
 > twelve dispute orders on one store were older than the tracking routine's
 > 14-day window and had to be registered before any scan could be read.
+> On stores with their own tracking page (`{{TRACKING_PAGE}}`), a *recent* parcel
+> needs no command at all: the hourly routine writes the scans into the order's
+> timeline in Shopify admin, and the page shows the whole chain. That page is
+> also what the customer gets — with the store parcel number, never the carrier
+> number (00-MASTER.md §6).
 
 > **RULE 3 — FIGHTING A DISPUTE WE DESERVE TO LOSE IS WORSE THAN REFUNDING IT.**
 > If we cannot show a delivery scan, or we really did promise a refund, or the
@@ -152,6 +157,8 @@ Secrets never go in the yaml. They live in Environments as
 | `{{BILLING_DESCRIPTOR}}` | The text that appears on the customer's bank statement. A descriptor that does not look like the store is a common cause of "unrecognized" disputes | `tvister.billing_descriptor` |
 | `{{FIGHT_THRESHOLD}}` | Below this amount it is cheaper to refund than to spend VA time fighting. `0` = always fight | `tvister.strid_lonar_sig_over` |
 | `{{STORE_ID}}` | The `<id>` the VA types in commands (`--brand <id>`) | the filename |
+| `{{TRACKING_PAGE}}` | The store's own tracking page (`/pages/spara`, `/pages/spor`, `/pages/seuranta` …) — what customers get in every shipping email, and the VA's zero-click read. Empty = the store has no page yet; the 17TRACK route applies | `tvister.sparningssida` (same value as `sparning/butiker.json` → url + handle) |
+| `{{PARCEL_PREFIX}}` | The store parcel number prefix (`BB-`, `CS-` …). The parcel number quoted to customers is prefix + 8 characters, computed from the carrier number; the carrier number itself is never sent to a customer | `tvister.paketprefix` (same as `sparning/butiker.json` → prefix) |
 
 EXAMPLE ONLY — a filled block for a fictional Swedish store. Do not copy the values,
 only the shape:

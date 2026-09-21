@@ -71,6 +71,10 @@ tvister:
   # 0 = slåss om allt. Ändra först när någon räknat på vad VA-timmen kostar
   # mot medeltvisten (348–589 kr på de flesta rader).
   strid_lonar_sig_over: 0
+  # Butikens spårningssida (sparning/, live 2026-09-19) och paketprefixet
+  # (sparning/butiker.json). Kunden får bara BB-numret, aldrig YT-numret.
+  sparningssida: "https://baverbutiken.se/pages/spara"
+  paketprefix: "BB-"
 
   # Eskaleringen (kundtjanst/sop/60-ESCALATION.md). Axels beslut 2026-09-20:
   # VA:n sköter hela den dagliga tvistkön själv — eskalering är för

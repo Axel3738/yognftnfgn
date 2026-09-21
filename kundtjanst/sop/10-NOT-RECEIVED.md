@@ -69,7 +69,7 @@ The tool prints `🔴 CHARGEBACK` or `INQUIRY` on the first line. The difference
 
 > 🚫 **Never run a sharp tracking sync to investigate a dispute.** `node sparning/kor.mjs` without `--torr` writes fulfillment events into Shopify, and `OUT_FOR_DELIVERY` / `DELIVERED` events trigger customer notification emails. On an old date window that mails hundreds of customers "Delivered" months late. Read-only or browser only.
 
-1. **Shopify admin → Orders → open the order → the Fulfilled section → copy the tracking number and the carrier name.** The carrier is whatever is written on that order — read it, never assume it.
+1. **Shopify admin → Orders → open the order → the Fulfilled section → copy the tracking number and the carrier name.** The carrier is whatever is written on that order — read it, never assume it. On stores with a tracking page (`{{TRACKING_PAGE}}`), the order's timeline already carries the carrier scans as fulfillment events, written by the hourly routine — read the latest one there first; `{{TRACKING_PAGE}}` shows the same chain with city and time when you paste the number. A parcel older than the routine's 14-day window is not on that page — go on to step 2.
 2. **Paste the tracking number into `17track.net` in your browser.** Carrier-independent, works for every store. Write down: **status, delivery date, delivery city/location, carrier, and the last few events.**
 3. **If 17TRACK answers "does not register, please register first":** the number is older than the tracking routine's 14-day window, so it was never registered. Click **Track** to register it, wait for the carrier data to load, then read it. This is normal, not a bug. *(Measured 2026-09-20: all twelve orders under dispute that day answered "does not register" — every one of them was older than the window.)* Registration spends shared 17TRACK quota — register only numbers you actually need for a dispute. `node kundtjanst/tvistfakta.mjs <order> --brand {{STORE_ID}} --registrera` does the same thing from the terminal.
 4. **Repo route, read-only and optional:** `node sparning/kor.mjs --torr --dagar 90` prints one line per parcel and writes nothing. It only covers the store whose Shopify keys are configured for that routine, and it does **not** register new numbers, so old parcels will simply be missing — fall back to step 2/3. Never drop `--torr`.
@@ -154,6 +154,8 @@ The best possible outcome is the customer withdrawing the dispute. **Only the cu
 
 **Rules for every email:** reply within 24 hours · plain language · no blaming the carrier · no "unfortunately, our policy" · never send the customer off to the carrier or the manufacturer. We sold it, we handle it.
 
+**`{{TRACKING_LINK}}` and `{{PARCEL_NUMBER}}`:** on a store with a tracking page, the link is `{{TRACKING_PAGE}}?nummer={{PARCEL_NUMBER}}` and the parcel number is the store's own (`{{PARCEL_PREFIX}}` + 8 characters — read it on `{{TRACKING_PAGE}}` after pasting the carrier number, or under the button in the customer's shipping email). **Never paste the raw carrier number (YT…, 4PX…) into a customer email** — the carrier number and the 17TRACK screenshot are for the bank. A store without a tracking page uses the 17TRACK link and says "tracking number" instead.
+
 ### 6A. Tracking says DELIVERED — ask for the withdrawal
 
 > **Subject:** Your order [ORDER NUMBER] — the parcel was delivered on [DELIVERY DATE]
@@ -162,7 +164,7 @@ The best possible outcome is the customer withdrawing the dispute. **Only the cu
 >
 > Your bank has contacted us about order [ORDER NUMBER], and I want to get this sorted for you.
 >
-> The carrier record shows the parcel was delivered on [DELIVERY DATE] to [DELIVERY CITY/LOCATION]. You can see the full record here: [17TRACK LINK] (tracking number [TRACKING NUMBER], carrier [CARRIER]).
+> The carrier record shows the parcel was delivered on [DELIVERY DATE] to [DELIVERY CITY/LOCATION]. You can see the full record here: {{TRACKING_LINK}} (your parcel number is {{PARCEL_NUMBER}}).
 >
 > If the parcel is with you after all, please call your bank and ask them to cancel the case. Only you can do that — we are not able to withdraw it from our side. It takes two minutes and it closes the matter.
 >
@@ -182,7 +184,7 @@ The best possible outcome is the customer withdrawing the dispute. **Only the cu
 >
 > Hi [FIRST NAME],
 >
-> I have just checked your parcel. The last scan was [LAST SCAN DESCRIPTION] in [LOCATION] on [DATE]. Tracking number [TRACKING NUMBER], carrier [CARRIER]: [17TRACK LINK]
+> I have just checked your parcel. The last scan was [LAST SCAN DESCRIPTION] in [LOCATION] on [DATE]. You can follow it here: {{TRACKING_LINK}} (your parcel number is {{PARCEL_NUMBER}}).
 >
 > [IF WAITING FOR PICKUP:] It is waiting for you at [PICKUP LOCATION]. Parcels are only held there for a limited time before they are sent back, so please collect it when you can.
 >
