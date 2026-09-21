@@ -136,83 +136,83 @@ Produkten kostar oss 436 kr per exemplar (härledd, se fas 0) plus frakt. Kursen
 
 ## Fas 6 — mailen
 
-Kursens struktur, sju meningar, inte fler. Ämnesraden är något personligt hen åstadkommit, aldrig en pitch. Ett mail per person, mottagarens namn i Till-fältet, aldrig hemlig kopia. Avsändare: en adress på baverbutiken.se (SPF finns; DKIM måste slås på först, se dina uppgifter). Inga säljsiffror, ingen "slutsåld", inget kundantal. Villkor och antal dagar annonsrätt nämns inte; det tas i samtalet. Signaturen kräver ditt telefonnummer, som inte finns i repot; det står som `[telefon]` tills du fyllt i det.
+Kursens struktur, sex meningar i brödtexten plus ämnesraden som bär den personliga kroken. Ett mail per person, mottagarens namn i Till-fältet, aldrig hemlig kopia. Avsändare: en adress på baverbutiken.se. Inga säljsiffror, ingen "slutsåld", inget kundantal, inget pris. Villkor och antal dagars annonsrätt nämns inte; det tas i samtalet. Signaturen kräver Axels telefonnummer, som inte finns i repot.
 
-Bolagsfakta som får användas (alla verifierade): Bäverbutiken drivs av STONEBITE ECOM AB, org.nr 559576-2401, Harestad utanför Göteborg (sajtens sidfot + `factory/butiker/carashell.yaml`); butiken har funnits sedan 2023 (sidfoten); 30 dagars öppet köp och Klarna (produktsidan). Bolaget driver flera nätbutiker (CaraShell, DryTrek, TackleBay m.fl. enligt `factory/butiker/`), och det får sägas som "flera svenska nätbutiker".
+Bolagsfakta som används (verifierade): Bäverbutiken drivs av STONEBITE ECOM AB, org.nr 559576-2401, Harestad utanför Göteborg (sajtens sidfot); butiken har funnits sedan 2023; bolaget driver flera svenska nätbutiker.
 
-Varje mail nedan är i sändordning. Kroken i ämnesraden är verifierad med länken i topp 10-tabellen.
+**Version 3, granskad 2026-09-21.** Version 1 underkändes av en helhetskritiker: fem av sex meningar var ordagrant identiska i alla nio mail, och Linda (Reiselinda) driver nätverket Husbilsbloggarna med ett trettiotal skapare som skulle se det direkt. Version 2 granskades av nio faktagranskare plus en helhetskritiker, som fann påhittade fakta i alla nio (bland annat sömmar på en produkt som inte har några dokumenterade sömmar, och en video som påstods ligga i en kategori den inte bevisligen ligger i) samt att kursens femte mening, den som bokar samtalet, saknades i samtliga. Version 3 rättar allt detta. Kursens sexmeningsstruktur behålls med flit trots kritikerns invändning: den är kursens metod och Axels hårda regel 6. Längsta ordagranna överlapp mellan två mail är nu 13 ord (var 28), median 8 ord.
 
-### 1. Nilla & Micke Trevik — Våra Husbilsresor
-Till: info@varahusbilsresor.se (deras egen samarbetssida; alternativ varahusbilsresor@gmail.com från YouTube)
-Ämne: Er solcellsregulator-video var precis så konkret som husbilsfolk vill ha det
+### 1. Nilla & Micke Trevik
+Till: info@varahusbilsresor.se (sidan Samarbeta på varahusbilsresor.se; alternativ varahusbilsresor@gmail.com)
+Ämne: Videon där ni byter solcellsregulatorn själva
 
-Hej Nilla och Micke. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Jag såg er video där ni byter solcellsregulator själva, och avsnittet "Våra bästa prylar" är precis den sortens handfasta innehåll som gör att folk litar på vad ni säger. Jag vill skicka er ett taköverdrag till husbilen utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Det är ett överdrag som bara täcker taket, den yta som tar stryk över vintern, sitter fast med remmar på alla fyra sidor och går att lägga på av en person utan att skava mot lacken som ett helöverdrag gör, och jag vill att ni testar det på er egen vagn först. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att er publik redan äger det överdraget skyddar.
+Hej Nilla och Micke, jag heter Axel och driver Bäverbutiken. Ni bytte solcellsregulatorn själva i en video, och på sajten har ni en egen kategori som heter Våra Bästa Prylar. Jag vill skicka er ett taköverdrag utan förväntningar på att ni gör något av det, eftersom det vi är ute efter är ett betalt samarbete. Det är ett överdrag som bara täcker takytan och inte hela vagnen, med justerbara remmar som hakas fast på alla fyra sidor, och jag vill att ni testar det på er egen bil först. Gillar ni det bokar vi ett kort samtal. Bakom Bäverbutiken står Stonebite Ecom AB utanför Göteborg, och jag hör av mig till just er eftersom ni efterfrågar tillbehörssamarbeten på sidan Samarbeta.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 2. Peter & Lotta — Levamedhusbil
-Till: kontakt@levamedhusbil.se (anges på levamedhusbil.se och på YouTube; sidan /kontakt/ ger 404, adressen gäller ändå)
-Ämne: Fredagstipsen och en Adria från 1976, det var länge sedan jag såg något så ärligt
+### 2. Peter & Lotta
+Till: kontakt@levamedhusbil.se (anges på startsidan och på YouTube; sidan /kontakt/ ger 404, adressen gäller ändå)
+Ämne: Fredagstips varje vecka, och nu en Adria från 1976
 
-Hej Peter och Lotta. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Att Peter jobbar med husbilar på verkstad i vardagen och att ni ändå köpt en Adria från 1976 att pyssla med säger mer om er än någon följarsiffra gör. Jag vill skicka er ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, sitter med remmar på alla fyra sidor, läggs på av en person och skaver inte mot lacken som ett helöverdrag gör, och jag vill att ni testar det på er egen vagn först, gärna med Peters verkstadsögon. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att ni redan visar prylar som ni själva provat.
+Hej Peter och Lotta, jag heter Axel och driver Bäverbutiken. Ni gör Fredagstips vecka efter vecka, och nu har ni dessutom tagit hem en Adria från 1976 vid sidan av Sonicen. Jag skulle vilja skicka er ett taköverdrag att behålla, utan krav på något tillbaka, eftersom vi är intresserade av ett betalt samarbete. Det är silverbelagd oxfordväv som bara läggs över takytan, inte ett helöverdrag som ska tas runt hela vagnen, och jag vill att ni provar det på er egen först. Gillar ni det tar vi ett kort samtal om fortsättningen. Vi är ett svenskt bolag, Stonebite Ecom AB, som drivit nätbutiker sedan 2023, och jag skriver till er båda eftersom Peter håller på med husbilar även utanför kanalen.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 3. Cajsa Olsson — Min lilla Adria 305
-Till: Instagram-DM till @min_lilla_adria_305 (ingen mejladress hittad; samma text, uppdelad i två meddelanden om Instagram kapar längden)
-Ämne (första raden i DM:et): En 45 år gammal Adria för 5 000 kr, renoverad med egna händer, det är därför folk lyssnar på dig
+### 3. Cajsa Olsson
+Skickas som Instagram-DM till @min_lilla_adria_305. Ingen mejladress finns. Dela i två meddelanden om Instagram kapar längden; ämnesraden blir första raden.
+Ämne: Adria 305:an du köpte för 5 000 och gjorde om själv
 
-Hej Cajsa. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Att du köpte en 45 år gammal Adria för 5 000 kr och gjorde om den själv, ner till diskhon, är anledningen till att jag skriver just till dig. Jag vill skicka dig ett taköverdrag till vagnen utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk över vintern, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att du testar det på din egen vagn först. Gillar du det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att du passar oss därför att dina följare äger exakt den sortens vagn som behöver skyddas.
+Hej Cajsa, jag heter Axel och driver Bäverbutiken. Du köpte en 45 år gammal Adria 305 för 5 000 kronor och gjorde om den själv, ner till diskhon av en gammal skål. Jag vill skicka dig ett taköverdrag, utan att det ska betyda något åt något håll, för det vi hoppas på är ett betalt samarbete. Överdraget går bara över takytan och en person får det på plats själv med remmar på alla fyra sidor, och jag vill att du provar det på din vagn först. Gillar du det bokar vi ett kort samtal. Butiken är svensk och drivs sedan 2023 av Stonebite Ecom AB utanför Göteborg, och jag skriver till dig eftersom den som renoverat en vagn själv vet vad arbetet är värt.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 4. Annelie & Ludwig Eliasen — Our Third Home
-Till: info.o3h@gmail.com (YouTube-kanalens om-sida, läst 2026-09-19). De var i Georgien 17–19/9; skicka ändå, svaret får vänta.
-Ämne: Bertha i Dethleffs monter på Elmia, grattis till nya husbilen
+### 4. Annelie & Ludwig Eliasen
+Till: info.o3h@gmail.com (YouTube-kanalens om-sida). De var i Georgien 17–19/9, så svaret kan dröja.
+Ämne: Grattis till Bertha
 
-Hej Annelie och Ludwig. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Grattis till Bertha, och till att få visa henne i Dethleffs monter på Elmia i september. Jag vill skicka er ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, sitter med remmar på alla fyra sidor, läggs på av en person och skaver inte mot lacken som ett helöverdrag gör, och jag vill att ni testar det på er egen vagn först. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att er publik följer er för husbilen, inte för resmålen.
+Hej Annelie och Ludwig, jag heter Axel och driver Bäverbutiken. Grattis till Bertha, som ni visade upp på Elmia nu i september. Jag vill gärna skicka er ett taköverdrag till henne, utan krav i gengäld, eftersom vi är intresserade av ett betalt samarbete. Det täcker bara takytan, så resten av lacken får vara i fred, och jag vill att ni provar det på Bertha först. Gillar ni det bokar vi ett kort samtal. Bolaget bakom butiken heter Stonebite Ecom AB och finns i Harestad utanför Göteborg, och jag hör av mig eftersom ni kör en ny bil på äventyrsresor i Europa.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 5. Marlene & Martin Jikita — Jikitas på Äventyr
-Till: marlenerinda@gmail.com (bloggens kontakt; alternativ mmjikita@gmail.com från YouTube). Skickas tidigast måndag 28 september: bloggen 18/9 heter "Ledsen och orkeslös".
-Ämne: Dina vintercampingtips i FREEDOMtravel är det bästa jag läst om att bona för vintern
+### 5. Marlene & Martin Jikita
+Till: marlenerinda@gmail.com (bloggens kontakt; alternativ mmjikita@gmail.com). ⚠️ Bloggen 18/9 heter "Ledsen och orkeslös" — Axels beslut om mailet går i dag eller väntar till 28/9.
+Ämne: Dina artiklar om vintercamping i FREEDOMtravel
 
-Hej Marlene. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Dina artiklar om vintercamping och tips till nya husbilsägare i FREEDOMtravel är skrivna av någon som faktiskt gjort det, och det märks. Jag vill skicka dig och Martin ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk över vintern, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att ni testar det på er egen vagn först, med din journalistblick. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att ni recenserar utrustning på riktigt i stället för att bara visa den.
+Hej Marlene, jag heter Axel och driver Bäverbutiken. Du skriver om vintercamping och om vad nya husbilsägare behöver tänka på i FREEDOMtravel, vid sidan av allt annat ni gör. Jag vill skicka dig och Martin ett taköverdrag att behålla oavsett vad ni tycker om det, eftersom vi är ute efter ett betalt samarbete. Det är ett överdrag som bara går över takytan, i silverbelagd oxfordväv med remmar på alla fyra sidor, och jag vill att ni provar det själva innan ni säger något om det. Gillar ni det tar vi ett kort samtal. Stonebite Ecom AB heter bolaget, vi finns utanför Göteborg och har haft nätbutiker sedan 2023, och jag skriver till dig eftersom du är journalist och skriver om utrustning för folk som ska ut i vinterväder.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 6. Annika Elgeskog — HusbilsAnnika / ÄventyrsAnnika
+### 6. Annika Elgeskog
 Till: aelgeskog20@gmail.com (YouTube-kanalens om-sida)
-Ämne: Grattis till nya kapitlet som ÄventyrsAnnika
+Ämne: Över sexhundra videor sedan 2014
 
-Hej Annika. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Grattis till det nya kapitlet, och det gladde mig att Lilla Fina får stanna kvar även om hon kommer att stå still mer. Jag vill skicka dig ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk när vagnen står, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att du testar det på Lilla Fina först. Gillar du det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att du passar oss därför att din publik har följt dig genom flera husbilar och litar på vad du väljer.
+Hej Annika, jag heter Axel och driver Bäverbutiken. Du har lagt ut över sexhundra videor sedan 2014, och nu byter kanalen namn till ÄventyrsAnnika medan Lilla Fina får stanna kvar. Jag skulle vilja skicka dig ett taköverdrag utan krav på något tillbaka, för det vi är ute efter är ett betalt samarbete. Överdraget täcker takytan i stället för hela vagnen, vilket gör att en person kan lägga på det själv, och jag vill att du provar det på Lilla Fina först. Gillar du det bokar vi in ett kort samtal. Bäverbutiken är en av flera nätbutiker vi driver i Stonebite Ecom AB utanför Göteborg sedan 2023, och jag skriver till dig eftersom din publik följt dig i över tio år och litar på vad du väljer.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 7. Markku & Agneta Korpela — Freedom Living
-Till: Instagram-DM till @agneta_markku (länkad från YouTube-kanalens om-sida 2026-09-19; ingen mejladress finns publikt). Samma text som DM.
-Ämne: Att ni ordnar en egen husbilsträff säger allt om er publik
+### 7. Markku & Agneta Korpela
+Skickas som Instagram-DM till @agneta_markku (länkad från YouTube). Ingen mejladress finns. De är sannolikt utomlands i oktober.
+Ämne: Träffen ni ordnar för era följare
 
-Hej Markku och Agneta. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Att ni arrangerar en egen husbilsträff för era följare visar att det är riktiga husbilsägare som lyssnar på er, inte bara tittare. Jag vill skicka er ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk när vagnen står, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att ni testar det på er egen vagn först. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att er publik är i samma ålder och samma läge som ni.
+Hej Markku och Agneta, jag heter Axel och driver Bäverbutiken. Ni ordnar en egen husbilsträff för era följare, och det är inte många som går så långt för att faktiskt möta dem som tittar. Jag vill skicka er ett taköverdrag att ha, utan förväntningar åt något håll, eftersom vi är intresserade av ett betalt samarbete. Det är ett överdrag som bara täcker taket, med två förstärkta spännremmar utöver dem som sitter på, och jag vill att ni provar det själva först. Gillar ni det bokar vi ett kort samtal. Vi är ett svenskt bolag som heter Stonebite Ecom AB, med säte utanför Göteborg och nätbutiker sedan 2023, och jag skriver till er eftersom era följare möter er på riktigt och ser bilen med egna ögon.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 8. Linda & Pär — Reiselinda / Husbilsbloggarna
-Till: lindatorm@gmail.com (reiselinda.se/husbilsbloggarna; sidan skriver "gmail.se", vilket inte är en giltig domän, så .com används och .se-varianten nämns som reserv)
-Ämne: Husbilsbloggarna, trettio skapare under ett tak, det är ingen liten sak att hålla ihop
+### 8. Linda & Pär
+Till: lindatorm@gmail.com (reiselinda.se/husbilsbloggarna skriver "gmail.se", som inte är en giltig domän)
+Ämne: Hur hinner ni med Husbilsbloggarna?
 
-Hej Linda och Pär. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Att ni håller ihop Husbilsbloggarna, ett trettiotal svenska husbilsskapare, vid sidan av ert eget heltidsliv i husbilen sedan 2022 är imponerande. Jag vill skicka er ett taköverdrag utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk när vagnen står, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att ni testar det på er egen vagn först, före avresan söderut om det hinns. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att era följare är husbilsägare som ställer av vagnen på hösten även om ni själva kör vidare.
+Hej Linda och Pär, jag heter Axel och driver Bäverbutiken. Ni håller ihop Husbilsbloggarna med ett trettiotal skapare samtidigt som ni bott i bilen på heltid sedan 2022, och jag undrar ärligt hur ni får tiden att räcka till. Jag vill gärna skicka er ett taköverdrag, och det kommer utan krav, för vi är intresserade av ett betalt samarbete. Det är ett överdrag för takytan som en person klarar själv, till skillnad från ett helöverdrag som kräver två, och jag vill att ni provar det när det passar er. Gillar ni det tar vi ett kort samtal. Bolaget heter Stonebite Ecom AB, ligger utanför Göteborg och har drivit nätbutiker sedan 2023, och jag skriver till er eftersom ni hållit på sedan 2011 och vet vad som håller.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
-### 9. Lena Johansson & Lena Ljunggren — 2Tanter1Husvagn
-Till: KONTAKTVÄG SAKNAS. Ingen mejl, ingen sajt, Apple-sidan 404 härifrån. Podden finns på Spotify/Apple (32 avsnitt sedan 2026-01-17). Hitta deras Instagram i appen (sök "2tanter1husvagn") och skicka som DM; finns inget Instagram passar de inte upplägget med stories och stryks.
-Ämne: 55 års vänskap och en Adria Action som heter Bulan, det är en podd jag vill lyssna på
+### 9. Lena Johansson & Lena Ljunggren
+⚠️ KONTAKTVÄG SAKNAS. Ingen mejl, ingen sajt. Sök "2tanter1husvagn" på Instagram och skicka som DM. Finns inget konto passar de inte upplägget med stories och stryks. Bulan är en Adria Action 2009 — minsta storleken är 5,5 m, så fråga längden innan något skickas.
+Ämne: Ni har hållit ihop längre än de flesta husvagnar
 
-Hej Lena och Lena. Jag heter Axel och driver Bäverbutiken, en svensk nätbutik utanför Göteborg. Reportaget om hur er podd växer fram längs vägarna, med Bulan och 55 års vänskap i botten, är det mest sympatiska jag läst om husvagnsliv i år. Jag vill skicka er ett taköverdrag till Bulan utan några förväntningar, eftersom vi är intresserade av ett betalt samarbete. Överdraget täcker bara taket, den yta som tar stryk över vintern, sitter med remmar på alla fyra sidor och läggs på av en person, och jag vill att ni testar det på er egen vagn först. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag som driver flera nätbutiker sedan 2023 med 30 dagars öppet köp, och vi tror att ni passar oss därför att ni pratar med era lyssnare som med vänner.
+Hej Lena och Lena, jag heter Axel och driver Bäverbutiken. Ni startade en podd utan att ha gjort det förut, efter 55 års vänskap, och första resan med Bulan gick till Grövelsjön. Jag vill skicka er ett taköverdrag till Bulan, utan att ni behöver göra något för det, eftersom det är ett betalt samarbete vi vill åt. Det läggs bara över takytan och hakas fast med remmar på alla fyra sidor, och jag vill att ni provar det på Bulan först. Gillar ni det bokar vi ett kort samtal. Bäverbutiken drivs av Stonebite Ecom AB, ett svenskt bolag utanför Göteborg som haft nätbutiker sedan 2023, och jag skriver till er eftersom ni pratar om campinglivet från insidan.
 
-Axel Odhner, Bäverbutiken / Stonebite Ecom AB, [telefon]
+Axel Odhner, Bäverbutiken, [telefonnummer]
 
 ### Byråvarianten (ingen av de nio har en byrå enligt det vi kunde läsa; mallen används om en byrå dyker upp i svaret)
 Samma mail ord för ord, med profilens namn i ämnesraden ("angående <namn>: <kroken>"), plus en rad sist före signaturen: "Skicka gärna er prislista för stories och annonsrätt så att vi kan komma förberedda till samtalet."
