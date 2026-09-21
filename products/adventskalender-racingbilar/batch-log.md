@@ -1,5 +1,7 @@
 # Batch-log — Adventskalender Racingbilar
 
+Breakthrough-frekvens: 1/16 (6 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 ## Batch #1 — 2026-09-10 (`/forsta-batch`, automatisk körning via `/rond-auto` steg 4b)
 
 **Trigger:** `agent/rond.mjs`-behovet `forsta_batch` — kampanjen hade passerat
@@ -271,3 +273,26 @@ Ingen Drive-mapp skapad.
 
 **Nästa lediga AD-ID (läs ändå av kontot först):** PD 12, CS 6, GT 5, SP 4,
 CO 5, AU 2, UG 4, FM 3, TR 3, RI 2, LI 2, BF 13, RV 9.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Adventskalender_PD_2_1 | — | okänd | **BREAKTHROUGH** ⚠ nära 30 % | 31 % | 2542 kr | 10 | 2,48 / 1,77 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Adventskalender_PD_2_H1 | — | okänd | **SPEND_WINNER** | 51 % | 4243 kr | 11 | 1,40 / 1,77 | ja | KPI-fix: LP-byte, proof, kostnad-av-att-vänta — utförandet, inte idén |
+| Adventskalender_SP_2_H1 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,77 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_SP_2_1 | — | okänd | **LOSER** | 1 % | 44 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_PD_3_H1 | — | okänd | **LOSER** | 0 % | 31 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_SP_1_H1 | — | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_SP_3_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,77 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_CS_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,77 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_CS_2_1 | — | okänd | **KPI_WINNER** | 1 % | 85 kr | 1 | 5,89 / 1,77 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Adventskalender_PD_1_H1 | — | okänd | **LOSER** | 1 % | 58 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_GT_3_H1 | — | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_GT_2_H1 | — | okänd | **LOSER** | 1 % | 47 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_GT_2_1 | — | okänd | **LOSER** | 1 % | 62 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_GT_1_H1 | — | okänd | **LOSER** | 13 % | 1086 kr | 3 | 1,70 / 1,77 | ja (prel.) | släpp |
+| Adventskalender_CS_3_H1 | — | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,77 | nej | släpp |
+| Adventskalender_CS_2_H1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,77 | nej | hooken föll — logga och släpp, aldrig ABO |

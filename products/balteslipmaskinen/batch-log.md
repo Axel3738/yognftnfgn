@@ -1,5 +1,7 @@
 # Batch-logg — Bälteslipmaskinen
 
+Breakthrough-frekvens: 1/34 (3 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 ## Batch #1 — originaladsen (launch 2026-08-21, före OS:et)
 16 annonser i CBO (PD/SP/CS/G-serier). Utfall t.o.m. 2026-08-29: se dna.md.
 Lärdom: PD_2_1 (statisk, b020-stil) bäst vinstbidrag; CBO svalt 11 av 16.
@@ -330,3 +332,44 @@ Tre-frågorstestet står i varje brief, rad för rad.
   "Fri Frakt inom Sverige" — ändrat till den raden (se Fiskespöhållarens not om
   butikens toppbanner).
 - Tre `Why`-rader bar tal subagenten räknat själv. Ersatta med körningens egna.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_PD_19_1 | 5 | okänd | **BREAKTHROUGH** | 41 % | 2081 kr | 8 | 3,49 / 3,70 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Beltgrinder_PD_20_1 | 5 | okänd | **LOSER** | 4 % | 204 kr | 0 | 0,00 / 3,70 | nej | släpp |
+| Beltgrinder_PD_21_1 | 5 | okänd | **LOSER** | 1 % | 28 kr | 0 | 0,00 / 3,70 | nej | släpp |
+| Beltgrinder_PD_18_1 | 5 | okänd | **LOSER** | 1 % | 33 kr | 0 | 0,00 / 3,70 | nej | släpp |
+| Beltgrinder_REV_6_1 | 5 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 3,70 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Beltgrinder_REV_5_1 | 5 | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 3,70 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Beltgrinder_SP_4_H1 | 2 | okänd | **LOSER** | 1 % | 60 kr | 0 | 0,00 / 1,81 | nej | släpp |
+| Beltgrinder_PD_4_H1 | 2 | okänd | **LOSER** | 1 % | 28 kr | 0 | 0,00 / 2,20 | nej | släpp |
+| Beltgrinder_PD_5_H1 | 2 | okänd | **LOSER** | 2 % | 93 kr | 0 | 0,00 / 2,20 | nej | släpp |
+| Balteslipmaskin_CS_2_1 | 5 | okänd | **LOSER** | 19 % | 2254 kr | 5 | 2,26 / 2,62 | ja | släpp |
+| Balteslipmaskin_G_2 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_CS_2 | — | okänd | **KPI_WINNER** | 1 % | 130 kr | 1 | 11,60 / 2,62 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Balteslipmaskin_PD_2_1 | 5 | okänd | **KPI_WINNER** | 11 % | 1244 kr | 5 | 3,92 / 2,62 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Balteslipmaskin_SP_2 | — | okänd | **KPI_WINNER** | 2 % | 281 kr | 1 | 3,24 / 2,62 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Balteslipmaskin_SP_3 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_PD_3 | 5 | okänd | **LOSER** | 25 % | 2882 kr | 7 | 2,58 / 2,62 | ja | släpp |
+| Balteslipmaskin_CS_1 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 2,62 | nej | släpp |
+| Balteslipmaskin_SP_1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_G_1 | 5 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_G_3 | — | okänd | **LOSER** | 0 % | 34 kr | 0 | 0,00 / 2,62 | nej | släpp |
+| Balteslipmaskin_PD_1 | 5 | okänd | **KPI_WINNER** | 11 % | 1318 kr | 4 | 2,69 / 2,62 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Balteslipmaskin_G_2_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_CS_3 | 5 | okänd | **LOSER** | 1 % | 119 kr | 0 | 0,00 / 2,62 | nej | släpp |
+| Balteslipmaskin_SP_2_1 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,62 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Balteslipmaskin_PD_2 | 5 | okänd | **LOSER** ⚠ nära 30 % | 29 % | 3320 kr | 8 | 2,11 / 2,62 | ja | släpp |
+| Beltgrinder_PD_9_1 | 3 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,43 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Beltgrinder_REV_1_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,43 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Beltgrinder_PD_10_1 | 3 | okänd | **LOSER** | 1 % | 88 kr | 0 | 0,00 / 1,68 | nej | släpp |
+| Beltgrinder_SP_5_1 | 3 | okänd | **LOSER** | 1 % | 81 kr | 0 | 0,00 / 1,68 | nej | släpp |
+| Beltgrinder_SO_5_1 | 3 | okänd | **KPI_WINNER** | 1 % | 31 kr | 1 | 28,98 / 1,68 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Beltgrinder_PD_8_1 | 3 | okänd | **LOSER** | 1 % | 90 kr | 0 | 0,00 / 1,68 | nej | släpp |
+| Beltgrinder_PD_5_1 | 2 | okänd | **LOSER** | 2 % | 110 kr | 0 | 0,00 / 1,68 | nej | släpp |
+| Beltgrinder_SO_4_1 | 2 | okänd | **LOSER** | 2 % | 99 kr | 0 | 0,00 / 1,68 | nej | släpp |
+| Beltgrinder_PD_4_1 | 2 | okänd | **LOSER** | 2 % | 97 kr | 0 | 0,00 / 1,68 | nej | släpp |

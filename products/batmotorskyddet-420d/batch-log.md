@@ -1,5 +1,7 @@
 # Batch-log — Båtmotorskyddet 420D
 
+Breakthrough-frekvens: 1/46 (2 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
 **Trigger:** `agent/rond.mjs` behov `forsta_batch` — kampanjen hade passerat
@@ -375,3 +377,56 @@ Tre-frågorstestet står i varje brief, rad för rad.
 - `SP_1_H10`:s stjärnrad ("8 av 8 recensioner ger 5 stjärnor") kontrollerades
   live mot Judge.me-vidgeten innan den fick stå kvar, och briefen bär en regel
   om att kolla om siffran före export.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Batmotor_SP_1_H8 | 3 | okänd | **LOSER** | 2 % | 90 kr | 0 | 0,00 / 4,43 | nej | släpp |
+| Batmotor_GT_4_H1 | 3 | okänd | **LOSER** | 1 % | 45 kr | 0 | 0,00 / 4,43 | nej | släpp |
+| Batmotor_CS_7_1 | 3 | okänd | **LOSER** | 1 % | 43 kr | 0 | 0,00 / 4,36 | nej | släpp |
+| Batmotor_BF_7_1 | 3 | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 4,36 | nej | släpp |
+| Batmotor_RV_6_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 4,36 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_BF_9_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 4,36 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_FM_3_1 | 3 | okänd | **LOSER** | 1 % | 62 kr | 0 | 0,00 / 4,36 | nej | släpp |
+| Batmotor_RV_7_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 4,36 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_BF_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 4,36 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_UG_1_H1 | 1 | okänd | **LOSER** | 10 % | 803 kr | 2 | 1,44 / 2,35 | nej | släpp |
+| Batmotor_SP_1_H6 | 2 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 2,35 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_CS_5_H1 | 2 | okänd | **KPI_WINNER** | 10 % | 734 kr | 4 | 3,71 / 2,35 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_SP_1_H5 | 2 | okänd | **KPI_WINNER** | 18 % | 1366 kr | 8 | 3,39 / 2,35 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_UG_2_H1 | 2 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 2,35 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_SP_1_H4 | 1 | okänd | **LOSER** | 1 % | 79 kr | 0 | 0,00 / 1,69 | nej | släpp |
+| Batmotor_PD_3_H1 | 1 | okänd | **LOSER** | 0 % | 46 kr | 0 | 0,00 / 1,69 | nej | släpp |
+| Batmotor_CS_3_H1 | 1 | okänd | **LOSER** | 0 % | 45 kr | 0 | 0,00 / 1,69 | nej | släpp |
+| Batmotor_TH_1_H1 | 1 | okänd | **LOSER** | 0 % | 42 kr | 0 | 0,00 / 1,69 | nej | släpp |
+| Batmotor_AU_1_H1 | 1 | okänd | **KPI_WINNER** | 1 % | 161 kr | 1 | 3,60 / 1,69 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_FM_1_H1 | 1 | okänd | **KPI_WINNER** | 7 % | 789 kr | 5 | 3,38 / 1,69 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_RV_1_H1 | 1 | okänd | **KPI_WINNER** | 6 % | 612 kr | 4 | 3,79 / 1,69 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_RV_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,97 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_BF_3_1 | 1 | okänd | **KPI_WINNER** | 12 % | 1633 kr | 7 | 2,59 / 1,97 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_RV_3_1 | 1 | okänd | **LOSER** | 0 % | 30 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_LI_1_1 | 1 | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,97 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_TR_1_1 | 1 | okänd | **LOSER** | 0 % | 25 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_CS_4_1 | 1 | okänd | **KPI_WINNER** | 1 % | 97 kr | 1 | 5,98 / 1,97 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_RI_1_1 | 1 | okänd | **LOSER** | 0 % | 59 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_BF_2_1 | 1 | okänd | **LOSER** | 0 % | 58 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_BF_1_1 | 1 | okänd | **LOSER** | 2 % | 314 kr | 1 | 1,85 / 1,97 | nej | släpp |
+| Batmotor_CO_1_1 | 1 | okänd | **LOSER** | 1 % | 169 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_PD_5_1 | 1 | okänd | **LOSER** | 3 % | 385 kr | 0 | 0,00 / 1,97 | nej | släpp |
+| Batmotor_GT_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,67 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_PD_1_H1 | — | okänd | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 2,67 | nej | släpp |
+| Batmotor_PD_1_H3 | — | okänd | **LOSER** | 7 % | 846 kr | 2 | 1,37 / 2,67 | nej | släpp |
+| Batmotor_PD_1_H2 | — | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 2,67 | nej | släpp |
+| Batmotor_GT_1_H3 | — | okänd | **KPI_WINNER** | 1 % | 89 kr | 1 | 6,48 / 2,67 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_GT_1_H1 | — | okänd | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 2,67 | nej | släpp |
+| Batmotor_CS_2_1 | 3 | okänd | **KPI_WINNER** | 18 % | 1835 kr | 14 | 4,64 / 3,11 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_PD_EXTRA | — | okänd | **LOSER** | 0 % | 37 kr | 0 | 0,00 / 3,11 | nej | släpp |
+| Batmotor_GT_2_1 | — | okänd | **LOSER** | 0 % | 40 kr | 0 | 0,00 / 3,18 | nej | släpp |
+| Batmotor_SP_1_H2 | 3 | okänd | **KPI_WINNER** | 3 % | 274 kr | 2 | 3,38 / 3,18 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Batmotor_SP_1_H3 | 3 | okänd | **BREAKTHROUGH** ⚠ nära 30 % | 30 % | 2599 kr | 7 | 2,41 / 3,18 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Batmotor_SP_2_1 | — | okänd | **LOSER** | 0 % | 28 kr | 0 | 0,00 / 3,18 | nej | släpp |
+| Batmotor_PD_2_1 | — | okänd | **LOSER** | 1 % | 57 kr | 0 | 0,00 / 3,18 | nej | släpp |
+| Batmotor_SP_1_H1 | 3 | okänd | **KPI_WINNER** | 23 % | 2052 kr | 14 | 4,66 / 3,18 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |

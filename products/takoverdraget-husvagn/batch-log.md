@@ -1,5 +1,7 @@
 # Batch-log — Taköverdraget för Husvagn
 
+Breakthrough-frekvens: 0/16 (0 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
 **Trigger:** Axel skapade sex nya `BÄVER …`-hubbar i Notion 2026-09-14 och bad
@@ -266,3 +268,26 @@ ingen logga, ingen fri frakt/Klarna/öppet köp/leveranstid/returer.
 
 **Ingen Drive-mapp skapad** — hela briefen ligger i Notion-itemet, som är det
 redigerarna läser. Samma val som batch #2.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_SP_2_1 | — | okänd | **KPI_WINNER** | 21 % | 5907 kr | 26 | 5,07 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_SP_3_H1 | — | okänd | **LOSER** | 0 % | 100 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_SP_2_H1 | — | okänd | **LOSER** | 17 % | 4795 kr | 6 | 1,58 / 4,94 | ja | släpp |
+| Takoverdrag_SP_1_H1 | — | okänd | **LOSER** | 0 % | 65 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_PD_2_1 | — | okänd | **KPI_WINNER** | 3 % | 767 kr | 6 | 8,83 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_PD_3_H1 | — | okänd | **LOSER** | 1 % | 293 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_PD_2_H1 | — | okänd | **LOSER** | 10 % | 2897 kr | 9 | 3,51 / 4,94 | ja | släpp |
+| Takoverdrag_PD_1_H1 | — | okänd | **KPI_WINNER** | 3 % | 721 kr | 4 | 5,37 / 4,94 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_GT_2_1 | — | okänd | **LOSER** | 0 % | 74 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_GT_3_H1 | — | okänd | **LOSER** | 0 % | 46 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_GT_2_H1 | — | okänd | **KPI_WINNER** | 16 % | 4513 kr | 24 | 6,18 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_GT_1_H1 | — | okänd | **LOSER** | 0 % | 66 kr | 0 | 0,00 / 4,94 | nej | släpp |
+| Takoverdrag_CS_2_1 | — | okänd | **KPI_WINNER** | 10 % | 2982 kr | 20 | 7,65 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_CS_3_H1 | — | okänd | **LOSER** | 3 % | 726 kr | 3 | 4,67 / 4,94 | ja (prel.) | släpp |
+| Takoverdrag_CS_2_H1 | — | okänd | **KPI_WINNER** | 12 % | 3424 kr | 20 | 7,06 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_CS_1_H1 | — | okänd | **KPI_WINNER** | 2 % | 597 kr | 3 | 5,67 / 4,94 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |

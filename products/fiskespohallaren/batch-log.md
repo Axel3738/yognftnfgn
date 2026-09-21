@@ -1,5 +1,7 @@
 # Batch-log — Fiskespöhållaren (SE)
 
+Breakthrough-frekvens: 0/104 (0 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 Retroaktivt rekonstruerad 2026-09-03 (ingen `products/fiskespohallaren/`
 fanns innan — batch #1 och #2 är historiska, gjorda före minnessystemet).
 Hypoteser för dessa två skrivs `hypotes: ej loggad (retroaktiv
@@ -421,3 +423,114 @@ Tre-frågorstestet står i varje brief, rad för rad.
   produktsidans egen ovillkorliga rad.
 - Tre `Why`-rader bar tal subagenten räknat själv (+9 784 kr, +39 824 kr, "1,69",
   "ROAS 2,98"). Ersatta med den här körningens verifierade siffror.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Rodholder_PD_25_H2 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_30_H2 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_30_H1 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_29_H2 | — | okänd | **LOSER** | 0 % | 21 kr | 0 | 0,00 / 1,90 | nej | släpp |
+| Rodholder_PD_29_H1 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_28_H2 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_28_H1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_27_H2 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_27_H1 | — | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_26_H2 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_26_H1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_25_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_22_H2 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_22_H1 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_19_H2 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_19_H1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,90 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_17_H2 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,90 | nej | släpp |
+| Fiskespöhållare_GT_1_H3 | — | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_SP_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SP_2_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SP_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_CS_2_1 | 6 | okänd | **LOSER** | 2 % | 471 kr | 1 | 0,72 / 2,85 | nej | släpp |
+| Fiskespöhållare_SO_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| ZZ_GAMMAL_Fiskespöhållare_SO_2_1 (fel pris) | — | okänd | **KPI_WINNER** | 0 % | 11 kr | 1 | 46,22 / 2,85 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| ZZ_GAMMAL_Fiskespöhållare_SO_1_H2 (fel pris) | — | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| ZZ_GAMMAL_Fiskespöhållare_SO_1_H1 (fel pris) | — | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_SP_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_PD_EXTRA | — | okänd | **LOSER** | 13 % | 3687 kr | 21 | 2,38 / 2,85 | ja | släpp |
+| Fiskespöhållare_GT_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_CS_1_H1 | 6 | okänd | **KPI_WINNER** | 10 % | 2797 kr | 26 | 3,83 / 2,85 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Fiskespöhållare_PD_1_H3 | — | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_PD_1_H2 | 6 | okänd | **LOSER** | 0 % | 87 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_GT_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_PD_1_H1 | 6 | okänd | **LOSER** | 14 % | 4162 kr | 22 | 2,52 / 2,85 | ja | släpp |
+| Fiskespöhållare_CS_1_H2 | — | okänd | **LOSER** | 0 % | 84 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_PD_2_1 | — | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 2,85 | nej | släpp |
+| Fiskespöhållare_CS_1_H3 | 6 | okänd | **KPI_WINNER** | 0 % | 42 kr | 1 | 7,95 / 2,85 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Fiskespöhållare_GT_2_1 | — | okänd | **INGEN_LEVERANS** | — | 0 kr | 0 | 0,00 / 2,85 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SO_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,54 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SO_1_H2 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,54 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_PD_EXTRA | — | okänd | **KPI_WINNER** | 22 % | 8308 kr | 49 | 2,57 / 2,54 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Fiskespöhållare_SO_2_1 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,54 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SO_1_H3 | — | okänd | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 2,54 | nej | släpp |
+| Fiskespöhållare_GT_1_H3 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,54 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_SP_1_H3 | — | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 2,54 | nej | släpp |
+| Fiskespöhållare_PD_EXTRA | — | okänd | **KPI_WINNER** | 10 % | 3828 kr | 29 | 3,16 / 2,54 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Fiskespöhållare_SO_1_H1 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 2,54 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Fiskespöhållare_CS_1_H3 | 6 | okänd | **KPI_WINNER** | 1 % | 383 kr | 8 | 9,07 / 2,54 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_PD_15_H1 | 2 | okänd | **KPI_WINNER** | 21 % | 9268 kr | 39 | 1,94 / 1,88 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_PD_9_H1 | — | okänd | **LOSER** | 0 % | 13 kr | 0 | 0,00 / 1,88 | nej | släpp |
+| Rodholder_PD_16_H1 | 2 | okänd | **LOSER** | 4 % | 1585 kr | 7 | 1,69 / 1,88 | ja | släpp |
+| Rodholder_PD_10_1 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,88 | nej | släpp |
+| Rodholder_PD_17_H1 | — | okänd | **LOSER** | 0 % | 74 kr | 0 | 0,00 / 1,88 | nej | släpp |
+| Rodholder_SO_4_1 | 2 | okänd | **LOSER** | 3 % | 808 kr | 3 | 1,44 / 1,52 | ja (prel.) | släpp |
+| Rodholder_PD_11_H2 | 2 | okänd | **LOSER** | 6 % | 1922 kr | 6 | 1,49 / 1,52 | ja | släpp |
+| Rodholder_GT_3_H1 | — | okänd | **LOSER** | 0 % | 20 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_3_H2_H2 | — | okänd | **LOSER** | 0 % | 27 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_16_H2 | — | okänd | **LOSER** | 0 % | 83 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_18_H2 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,52 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_4_H1 | — | okänd | **LOSER** | 0 % | 15 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_15_H2 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,52 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_18_H1 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,52 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_3_H2_H1 | — | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_6_1 | 2 | okänd | **KPI_WINNER** | 4 % | 1317 kr | 9 | 2,73 / 1,52 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_PD_7_1 | 6 | okänd | **KPI_WINNER** | 1 % | 296 kr | 1 | 1,66 / 1,52 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_CS_3_1 | 6 | okänd | **LOSER** | 1 % | 438 kr | 1 | 0,77 / 1,52 | nej | släpp |
+| Rodholder_PD_13_H1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,52 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_SO_3_H1 | 6 | okänd | **KPI_WINNER** | 1 % | 162 kr | 2 | 4,18 / 1,52 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_PD_11_H1 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_12_H1 | — | okänd | **LOSER** | 0 % | 14 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_8_H2_H2 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_8_H1 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_8_H2_H1 | — | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 1,52 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_3_H2 | — | okänd | **LOSER** | 0 % | 117 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_PD_3_H1 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,52 | nej | släpp |
+| Rodholder_REA_V08 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V10 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V09 | — | okänd | **LOSER** | 0 % | 76 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_REA_V05 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V01 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_REA_V07 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V04 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V06 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V03 | — | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_REA_V02 | — | okänd | **LOSER** | 0 % | 17 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PROD_V10 | — | okänd | **INGEN_LEVERANS** | — | 9 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V07 | — | okänd | **LOSER** | 0 % | 79 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PROD_V09 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V06 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V04 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V01 | — | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V08 | — | okänd | **LOSER** | 0 % | 13 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PROD_V05 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V03 | — | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PROD_V02 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_23_H2 | — | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_23_H1 | — | okänd | **KPI_WINNER** | 1 % | 166 kr | 1 | 1,87 / 1,46 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Rodholder_PD_21_H2 | — | okänd | **LOSER** | 0 % | 12 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PD_13_H2_H1 | — | okänd | **LOSER** | 0 % | 28 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PD_5_H1 | — | okänd | **INGEN_LEVERANS** | — | 7 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_21_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_13_H2_H2 | — | okänd | **LOSER** | 0 % | 60 kr | 0 | 0,00 / 1,46 | nej | släpp |
+| Rodholder_PD_12_H2_H1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Rodholder_PD_12_H2_H2 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 1,46 | nej | hooken föll — logga och släpp, aldrig ABO |

@@ -1,5 +1,7 @@
 # Batch-log — Termoskyddet för Husbil
 
+Breakthrough-frekvens: 2/16 (13 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
 **Trigger:** Axel skapade sex nya `BÄVER …`-hubbar i Notion 2026-09-14 och bad
@@ -232,3 +234,26 @@ Tre-frågorstestet står i varje brief, rad för rad.
   `[TID]` som redigeraren fyller i ur den verkliga tagningen, plus en regel om
   att hooken ska ändras om jobbet tar längre än två minuter.
 - `CS_8_1`:s `Why` sa CPA 93 kr för SP_2_1; dagens avläsning är 127 kr. Rättat.
+
+## Etiketter dag 7 (2026-09-21)
+
+Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Räknad på annonsens egna första vecka, backfillad 2026-09-21 ur Meta. Rådata: ETIKETT-raderna i agent/budgetlogg.jsonl.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Termoskydd_SP_2 | 2 | okänd | **KPI_WINNER** | 8 % | 847 kr | 5 | 3,30 / 3,25 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Termoskydd_SP_1 | — | okänd | **LOSER** | 1 % | 58 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_SP_2_1 | 2 | okänd | **KPI_WINNER** | 7 % | 753 kr | 6 | 4,45 / 3,25 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Termoskydd_SP_3 | — | okänd | **LOSER** | 1 % | 151 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_PD_2_1 | — | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,25 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_PD_3 | — | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 3,25 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_PD_2 | — | okänd | **LOSER** | 0 % | 34 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_PD_1 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 3,25 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_G_2_1 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_G_3 | — | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 3,25 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Termoskydd_G_2 | — | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_G_1 | — | okänd | **LOSER** | 1 % | 96 kr | 0 | 0,00 / 3,25 | nej | släpp |
+| Termoskydd_CS_2_1 | 2 | okänd | **LOSER** | 5 % | 578 kr | 2 | 1,93 / 3,25 | nej | släpp |
+| Termoskydd_CS_3 | 2 | okänd | **BREAKTHROUGH** | 43 % | 4799 kr | 26 | 3,19 / 3,25 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Termoskydd_CS_2 | 2 | okänd | **BREAKTHROUGH** | 34 % | 3794 kr | 25 | 3,68 / 3,25 | ja | 80 % vidarebygg på denna: I1 tre hookar → I2 problemdel → I3 in media res |
+| Termoskydd_CS_1 | — | okänd | **LOSER** | 1 % | 89 kr | 0 | 0,00 / 3,25 | nej | släpp |
