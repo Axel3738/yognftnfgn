@@ -1594,3 +1594,13 @@ kvarglömd text, men den ersätter inte att titta på bilden i full storlek.
 **Notion:** kommentar + `Translated url` på alla fem, alla fem → `Approved`.
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551619717293150299`,
 ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-21-us/`.
+
+## 2026-09-22 — leveransrundan: samma två videor, samma stopp
+
+Kön hade exakt samma två rader (`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`)
+och **byte-identiska filer** (md5 `d9ab48ff…` / `271bf976…`) — slutkortet är
+inte ombyggt, så domen blev `slutkort-med-brand` igen. Inget uppladdat, ingen
+status ändrad, inga nya kommentarer (gårdagens feedback står kvar på båda
+raderna). Kampanjen och priset oförändrade: `CARASHELL_SE_Taköverdraget`,
+1 129 kr. Slutkortskontrollen gick igång av sig själv den här gången —
+ffmpeg-fallbacken från i går höll.
