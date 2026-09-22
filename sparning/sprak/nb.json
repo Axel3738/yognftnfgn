@@ -180,6 +180,11 @@
     "Paketet har kommit till destinationsterminalen": "Pakken har kommet til destinasjonsterminalen",
     "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Pakken leveres i natt. Merk postkassen og døren med fullt navn — budet ringer ikke på, og du får en SMS i morgen tidlig når pakken er levert",
     "Paketet är lastat för huvudtransporten": "Pakken er lastet for hovedtransporten",
-    "Fraktbolaget har tagit emot paketet för transport": "Transportøren har mottatt pakken for transport"
+    "Fraktbolaget har tagit emot paketet för transport": "Transportøren har mottatt pakken for transport",
+    "Paketet har kommit till flygplatsen": "Pakken har kommet til flyplassen",
+    "Paketet har lämnat flygplatsen": "Pakken har forlatt flyplassen",
+    "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken fikk ikke plass i postkassen, og det avtalte leveringsstedet ble ikke funnet. Den er på vei til et hentested i nærheten av deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag",
+    "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "Mottakeren har en ny adresse. Pakken er omadressert og sendes videre dit",
+    "Paketet är på väg till ombudet": "Pakken er på vei til hentestedet"
   }
 }

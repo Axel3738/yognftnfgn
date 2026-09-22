@@ -118,6 +118,28 @@ test('varje fras i fraser.json ger kand=true genom oversattFras()', () => {
   }
 });
 
+test('Postens ombudsrader blir EN mening, oavsett vilket ombud som står där', () => {
+  // Mätt 2026-09-22 på Beverbutikken: fem olika ombud på en natt, ett av dem
+  // inbakat i en HTML-länk till Postens karta. Utan mönstret blir varje nytt
+  // ombud en ordboksrad som aldrig slutar växa.
+  const rader = [
+    'The parcel has arrived at Eurospar Larsgården',
+    'The parcel has arrived at Hotel Finse 1222',
+    'The parcel has arrived at Rema 1000 Stasjonsveien',
+    'The parcel has arrived at <a target="_blank" href="https://www.posten.no/kart?id=128093" >Extra Bjergsted</a>',
+  ];
+  for (const rå of rader) {
+    const svar = oversattFras(rå, null);
+    assert.equal(svar.kand, true, `ingen träff för: ${rå}`);
+    assert.equal(svar.text, 'Paketet har kommit till ombudet');
+  }
+  // Flygplatsen är inte ett ombud — den raden får aldrig fastna i mönstret.
+  assert.equal(
+    oversattFras('The parcel has arrived at the destination airport', null).text,
+    'Flyget med paketet har landat',
+  );
+});
+
 test('alla 75 mätta fraser översätts — ingen engelska når kunden', () => {
   assert.equal(MATTA_FRASER.length, 75);
   for (const rå of MATTA_FRASER) {

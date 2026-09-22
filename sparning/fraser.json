@@ -161,5 +161,22 @@
   "planlagt levering natt til 21. september!, tips! merk postkassen og døren din tydelig med fullt navn, så blir det enkelt for budet å finne deg. vi leverer om natten, og vil ikke ringe deg når vi leverer. du får en sms i morgen tidlig om at pakken er levert": "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat",
   "planlagt levering natt til 22. september!, tips! merk postkassen og døren din tydelig med fullt navn, så blir det enkelt for budet å finne deg. vi leverer om natten, og vil ikke ringe deg når vi leverer. du får en sms i morgen tidlig om at pakken er levert": "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat",
   "loaded for main transport": "Paketet är lastat för huvudtransporten",
-  "received for carriage": "Fraktbolaget har tagit emot paketet för transport"
+  "received for carriage": "Fraktbolaget har tagit emot paketet för transport",
+  "proof of delivery": "Paketet är levererat",
+  "custom clearance completed": "Paketet är klart i tullen",
+  "parcel arrives at airport, parcel arrival": "Paketet har kommit till flygplatsen",
+  "parcel is leaving airport, parcel leaving port": "Paketet har lämnat flygplatsen",
+  "parcel departure in transit facility, parcel departure": "Paketet har lämnat omlastningsterminalen",
+  "parcel departure in yiwu sorting centre": "Paketet har lämnat sorteringsterminalen",
+  "parcel processed at yiwu sorting centre": "Paketet hanteras på sorteringsterminalen",
+  "parcel received at yiwu sorting centre": "Paketet har kommit till sorteringsterminalen",
+  "parcel data received": "Vi har fått uppgifterna om paketet",
+  "in transit delays - other": "Det har blivit en störning i leveransen. Leveransdatumet uppdateras",
+  "the package did not fit in the mailbox, and the agreed upon delivery location was not found. the parcel is on its way to a pickup location near you and you will be notified when it can be picked up. it usually takes 1 business day": "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag",
+  "the recipient has a new address. the shipment has been re-addressed and forwarded to the recipient": "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit",
+  "du har hentet pakken din!": "Du har hämtat paketet hos ombudet",
+  "pakken din er klar til å hentes!, du må vise hentekoden du har fått på sms/e-post når du skal hente pakken": "Paketet finns att hämta hos ombudet",
+  "pakken er på vei til hentested., du vil få en sms/e-post med hentekode når pakken er klar til å hentes": "Paketet är på väg till ombudet",
+  "planlagt levering natt til 15. september!, tips! merk postkassen og døren din tydelig med fullt navn, så blir det enkelt for budet å finne deg. vi leverer om natten, og vil ikke ringe deg når vi leverer. du får en sms i morgen tidlig om at pakken er levert": "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat",
+  "the parcel has arrived at the destination airport": "Flyget med paketet har landat"
 }

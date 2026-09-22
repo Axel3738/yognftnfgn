@@ -140,7 +140,17 @@ const UNDERSTATUS_PREFIX = {
 // någon dokumentation. De är medvetet generella: 转运中心 blir
 // "omlastningsterminalen" utan ortsnamn, och 揽收 blir "upphämtat".
 // Mätt 2026-09-20: fem sådana rader i butikens 1 055 paket, alla från Yanwen.
+//
+// Posten skriver ut OMBUDETS NAMN på samma sätt, ibland som en HTML-länk till
+// deras karta: "The parcel has arrived at Eurospar Larsgården" eller
+// "… at <a href="https://www.posten.no/kart?id=128093">Extra Bjergsted</a>".
+// Varje norskt ombud hade annars blivit en egen ordboksrad som aldrig slutar
+// växa — mätt 2026-09-22 på Beverbutikken: fem ombud på en natt, och kunden
+// ser ändå bara "Paketet har kommit till ombudet". Terminaler, flygplatser
+// och tull undantas: de raderna säger något annat och hör hemma i ordboken.
+const OMBUDSRAD = /\bthe (?:parcel|package|shipment) has arrived at\b(?!.*\b(?:airport|terminal|facility|centre|center|customs|hub|depot|warehouse|destination)\b)/i;
 const MONSTER = [
+  [OMBUDSRAD, 'Paketet har kommit till ombudet'],
   [/离开.*(转运中心|分拨中心)/, 'Paketet har lämnat omlastningsterminalen'],
   [/(到达|已到).*(转运中心|分拨中心)/, 'Paketet har kommit till omlastningsterminalen'],
   [/已揽收/, 'Paketet är upphämtat'],
