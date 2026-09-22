@@ -798,6 +798,14 @@ Kör automatiskt som Routines på claude.ai. **De klonar `main`** — ligger
 kommandofilen kvar på en gren hittar rutinen den inte och ger upp direkt.
 Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 
+⛔ **Termoskyddets fem rutiner är AVSTÄNGDA sedan 2026-09-22** (Axels order
+"stäng av termoskyddets rutiner"), `enabled: false` sedda i `list_triggers` på
+`claude5@stonebite.org`: nattvakten `trig_01PwsePC1utXScpH6KrjZf1L`, leveransen
+`trig_01RGpFVAcLjcLgnPCBb7kbZV`, NO `trig_01CU6yhsGFT879efRiZigCrm`, US
+`trig_01C9Dfcm5k9wuxPDaQaRNF1r`, speglingen `trig_01GWEbTKYMKTfqUZfcucqN71`.
+Avstängda, inte raderade — slå inte på någon utan Axels ok. Taköverdragets
+rutiner går som vanligt.
+
 | Tid (svensk) | Cron (UTC) | Rutin | Kommando |
 |---|---|---|---|
 | 04:15 | `15 2 * * *` | Daglig NO-videobatch | `/translate-no` |
