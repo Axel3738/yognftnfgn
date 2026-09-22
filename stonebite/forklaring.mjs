@@ -72,6 +72,9 @@ const KALLNAMN = {
   'repo:nattvakten': 'Nattvaktens beslutslogg',
   shopify: 'Butikerna (Shopify)',
   meta: 'Annonserna (Meta)',
+  rutiner: 'Rutinvakten (git-loggen)',
+  discord: 'Eskaleringskanalerna (Discord)',
+  bonus: 'Bonusen (Judge.me + Notion)',
 };
 
 export function kallnamn(id) {

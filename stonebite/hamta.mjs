@@ -20,7 +20,19 @@ import { fileURLToPath } from 'node:url';
 import { upptackButiker, hamtaAlla as hamtaButiker } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
+import { rutinlage } from './kallor/rutiner.mjs';
+import { hamtaEskalering } from './kallor/discord.mjs';
 import { kor as korBonus, lasPersoner, lasRegler } from '../bonus/kor.mjs';
+import { readFileSync } from 'node:fs';
+
+/** Varumärkesregistret (stonebite/varumarken.json). Tom lista om filen saknas. */
+export function lasVarumarken(rot = ROT) {
+  try {
+    return JSON.parse(readFileSync(join(rot, 'stonebite', 'varumarken.json'), 'utf8')).varumarken ?? [];
+  } catch {
+    return [];
+  }
+}
 
 export const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const SNAPSHOT = join(ROT, 'stonebite', 'data', 'snapshot.json');
@@ -77,6 +89,23 @@ export async function byggSnapshot({
     }
   }
 
+  // Rutinvakten: git-loggen mot schemat. Inget nät — bara spåren.
+  logg('Rutinerna …');
+  const rutiner = rutinlage(rot, { nu });
+  anteckna('rutiner', rutiner.status, rutiner.orsak, rutiner.summering ?? {});
+  if (rutiner.summering) logg(`  ${rutiner.summering.ok} ok · ${rutiner.summering.sen} sena · ${rutiner.summering.saknas} saknas · ${rutiner.summering.avstangd} avstängda · ${rutiner.summering.omatbar} omätbara`);
+
+  // Eskaleringskanalerna: de senaste meddelandena per varumärke ur Discord.
+  const varumarken = lasVarumarken(rot);
+  let eskalering = { status: 'hoppad', orsak: 'kördes med --utan-nat', kanaler: [] };
+  if (!utanNat) {
+    logg('Discord …');
+    eskalering = await hamtaEskalering(varumarken, { env, logg });
+    anteckna('discord', eskalering.status, eskalering.orsak, { kanaler: eskalering.kanaler.length });
+  } else {
+    anteckna('discord', 'hoppad', 'kördes med --utan-nat');
+  }
+
   // Bonusen räknas här, inte i vyn: den läser Judge.me och Notion, och det
   // ska hända EN gång per hämtning — inte vid varje sidvisning.
   logg('Bonus …');
@@ -97,6 +126,9 @@ export async function byggSnapshot({
     fonster: { dagar, till: nu.toISOString() },
     profil: lasProfil(rot),
     system: lasSystem(rot),
+    varumarken,
+    rutiner,
+    eskalering,
     kallor,
     butiker,
     annonskonton,

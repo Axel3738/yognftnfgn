@@ -25,9 +25,10 @@
 import { esc, hjalte, kort, panel, tabell, tomt, block, spark, status, tal, pengar } from './delar.mjs';
 import { sidhuvud, fornamn } from './layout.mjs';
 import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista } from '../data.mjs';
-import { forandring, sedan } from '../berakna.mjs';
+import { forandring, sedan, DAG } from '../berakna.mjs';
 import { harRatt } from '../roller.mjs';
-import { forklaraFel, kallnamn, kortMotivering, atgardsnamn } from '../forklaring.mjs';
+import { forklaraFel, kallnamn, kortMotivering, atgardsnamn, tvisttyp } from '../forklaring.mjs';
+import { idag } from '../kalender.mjs';
 
 const HUVUDVALUTA = 'SEK';
 
@@ -86,11 +87,58 @@ function kampanjrad(k) {
   </tr>`;
 }
 
-export function oversiktSida({ snapshot, anvandare, nu = new Date() }) {
+/**
+ * Det som kräver Axel i dag — samlat över alla varumärken (2026-09-22:
+ * "så att jag slipper gå och klicka in överallt"). Brådskande tvister,
+ * rutiner utan spår, människor i eskaleringskanalerna det senaste dygnet
+ * och kalenderrader som är i dag eller försenade. Tomt betyder tomt.
+ */
+function kraverDig({ snapshot, kalender = [], nu, brandnamn }) {
+  const dag0 = idag(nu);
+  const rader = [];
+  for (const tv of snapshot?.oppnaTvister ?? []) {
+    if (tv.oppen === false || !tv.deadline) continue;
+    const kvar = Math.ceil((new Date(tv.deadline).getTime() - nu.getTime()) / DAG);
+    if (kvar < 0 || kvar > 3) continue;
+    rader.push({ ton: 'kritisk', text: `${tvisttyp(tv.typ, 'sv')} ${tv.order} (${tv.brand}) — svar senast ${tv.deadline}, ${kvar === 0 ? 'i dag' : `${kvar} ${kvar === 1 ? 'dag' : 'dagar'} kvar`}`, lank: '/app/kundtjanst' });
+  }
+  for (const r of snapshot?.rutiner?.rutiner ?? []) {
+    if (r.status === 'saknas') rader.push({ ton: 'kritisk', text: `${r.namn} (${brandnamn(r.brand)}): ${r.ord}`, lank: `/app/varumarke/${r.brand}?flik=rutiner` });
+    if (r.status === 'sen') rader.push({ ton: 'varning', text: `${r.namn} (${brandnamn(r.brand)}): ${r.ord}`, lank: `/app/varumarke/${r.brand}?flik=rutiner` });
+  }
+  const gransManniska = nu.getTime() - DAG;
+  for (const k of snapshot?.eskalering?.kanaler ?? []) {
+    for (const m of k.meddelanden ?? []) {
+      if (m.bot || new Date(m.tid).getTime() < gransManniska) continue;
+      rader.push({ ton: 'varning', text: `${brandnamn(k.brand)} #${k.kanal} · ${m.av}: ${String(m.text).slice(0, 120)}${String(m.text).length > 120 ? '…' : ''}`, lank: k.lank, extern: true });
+    }
+  }
+  for (const h of kalender) {
+    if (h.klar || h.datum > dag0) continue;
+    rader.push({ ton: h.datum < dag0 ? 'varning' : 'neutral', text: `${h.datum < dag0 ? 'Försenat: ' : 'I dag: '}${h.titel}${h.tid ? ` kl ${h.tid}` : ''}${h.brand ? ` · ${brandnamn(h.brand)}` : ''}`, lank: h.brand ? `/app/varumarke/${h.brand}?flik=kalender` : '/app/kalender' });
+  }
+  const ordning = { kritisk: 0, varning: 1, neutral: 2 };
+  return rader.sort((a, b) => ordning[a.ton] - ordning[b.ton]).slice(0, 14);
+}
+
+export function oversiktSida({ snapshot, anvandare, kalender = [], nu = new Date() }) {
   const o = raknaOversikt(snapshot, { nu });
   const halsa = kallolage(snapshot);
   const serRatt = harRatt(anvandare, 'pengar');
   const serSpend = harRatt(anvandare, 'spend');
+  const brandnamn = (id) => (snapshot?.varumarken ?? []).find((v) => v.id === id)?.namn ?? id ?? '';
+  const kraver = kraverDig({ snapshot, kalender, nu, brandnamn });
+  const rutinsum = snapshot?.rutiner?.summering ?? null;
+  const kraverdel = block({
+    titel: 'Kräver dig i dag',
+    under: rutinsum ? `Rutinvakten: ${tal(rutinsum.ok)} rutiner körde som de skulle, ${tal(rutinsum.sen)} sena, ${tal(rutinsum.saknas)} saknas, ${tal(rutinsum.avstangd)} avstängda med flit.` : 'Brådskande tvister, saknade rutiner, människor i eskaleringskanalerna och dagens kalender.',
+    innehall: kraver.length
+      ? panel({
+        innehall: `<ul class="lista">${kraver.map((k) => `<li><span>${status(k.ton, k.ton === 'kritisk' ? 'nu' : k.ton === 'varning' ? 'titta' : 'i dag')}</span><span><a href="${esc(k.lank)}"${k.extern ? ' target="_blank" rel="noopener"' : ''}>${esc(k.text)}</a></span></li>`).join('')}</ul>`,
+        fot: 'Allt annat på sidan är läge, inte uppgifter. Per varumärke: sidan Varumärken.',
+      })
+      : tomt('Ingenting kräver dig just nu', 'Inga brådskande tvister, inga saknade rutiner, ingen har skrivit i eskaleringskanalerna det senaste dygnet, inget i kalendern i dag.'),
+  });
 
   const huvud = o.rader.find((r) => r.valuta === HUVUDVALUTA) ?? o.rader[0] ?? null;
   const ovriga = o.rader.filter((r) => r !== huvud);
@@ -300,6 +348,7 @@ export function oversiktSida({ snapshot, anvandare, nu = new Date() }) {
     })}
     ${hjaltedel}
     <div class="kort-rad">${korten}</div>
+    ${kraverdel}
     ${valutadel}
     ${butiksdel}
     ${annonsdel}

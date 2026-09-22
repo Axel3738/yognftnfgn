@@ -371,6 +371,59 @@ bolaget gör, aldrig vilka butiker det är. Axel sa det en gång till samma kvä
 ("jag vill verkligen inte att det ska stå någonting om någon av våra … eller
 vad några av våra butiker heter") — varje ny publik sida ska in i det testet.
 
+### Baksidan: varumärken, rutinvakt, eskalering, kalender, kontakter (2026-09-22)
+
+Axels beställning på morgonen: "koppla eskaleringskanalen, vanliga CS-tickets,
+alla rutiner riktigt bra strukturerat som uppdaterar varje dag och visar så att
+inget är CP … en MAIN flik för varje varumärke (Matstrumpor, Grillkliniken,
+Bäverbutiken, Carashell) … en flik i varje brand med influencers och
+UGC-kreatörer … en liten kalender i varje brand som säger vad som kommer hända
+och visar allt åstadkommet … och en personlig kalender, som Google Calendar
+fast bättre, simpel — annars använder jag den inte". Målet är uttalat: "att jag
+slipper fixa alla småpill … så att jag bara kan sitta och ha high leverage
+tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
+
+- **`stonebite/varumarken.json`** är registret: fem poster (de fyra + "Övriga
+  OPS-butiker" så inget försvinner). Butiks-id:n är snapshotens
+  (`sparning/butiker.json`, `factory/butiker`, `SHOPIFY_SHOP_*`). Delade
+  annonskonton delas på **kampanjprefix** (`prefix: ["CARASHELL_"]` resp.
+  `utom`) — OPS-kontot `915422744950975` och Magiborsten UK `1107817401910319`
+  bär flera varumärken. **Det som inte går att läsa står som `*_saknas` med
+  orsak**, och sidan visar orsaken — inte noll. Mätt 2026-09-22: Grillklinikens
+  Shopify har inga nycklar, SnarkLös och "nya kungen" nås inte av
+  `META_ACCESS_TOKEN`, bara Bäverbutiken har kundtjänst-brandfil.
+- **Rutinvakten** (`stonebite/rutiner.json` + `kallor/rutiner.mjs`): 37
+  rutiner med schema i **svensk tid** och spår (commit-rubrik på main via
+  `git log`, sökväg, eller `ingen` — tvistkollen, `/notionkorning` och
+  `/bildannonser` pushar inget och står som "går inte att mäta" i stället för
+  att gissas gröna). Dom: ok ≤ 1,5 intervall, sen ≤ 3, annars saknas. En rutin
+  med `avstangd: true` visas som avstängd — **men ett färskt spår vinner över
+  flaggan** och sidan säger att registret är gammalt. Rutinerna som var
+  `enabled: false` 2026-09-18 (HeimGuard ×3, TankGuard, AdventLane ×3,
+  TackleBay ×3, CatCabin, Kundtjänst veckorapport) är flaggade.
+- **Eskaleringskanalen** (`kallor/discord.mjs`): boten läser 12 meddelanden
+  per kanal i varje varumärkes server (mätt 2026-09-22: boten ser alla elva
+  servrarna — Bäverbutiken, Grillkliniken, HeimGuard, TankGuard, DryTrek,
+  AdventLane, TackleBay, CaraShell, CatCabin, FjordCover, EdgeBench).
+  Kundadresser maskeras innan de sparas i snapshoten. Matstrumpor har ingen
+  server.
+- **Kalendern** (`stonebite/kalender.mjs`): `data/kalender.jsonl` på volymen,
+  jsonl med senaste-raden-vinner som insatserna. **Snabbinmatningen förstår
+  svenska datumord** (`tolkaNar`: imorgon, fredag, nästa fredag, 15/10,
+  2026-11-02, den 3 januari, om 3 dagar, om två veckor, nästa vecka, kl 14,
+  14:30) — utan datumord gäller datumfältet, aldrig en gissning. Härledda
+  rader (tvistdeadlines, dagsrutiner enligt schema, kontakters nästa steg,
+  commissions kördagar) lagras aldrig och kan inte bockas av. Alla roller har
+  en egen kalender (bara egna rader); varumärkesrader får bara ägare/chef
+  skapa och röra — testat.
+- **Kontakterna** (`stonebite/kontakter.mjs`): `data/kontakter.jsonl`. Nästa
+  steg med datum syns i varumärkets kalender av sig självt. Bara http(s)-länkar.
+- **Kräver dig i dag** överst på Översikt: tvister ≤ 3 dagar, rutiner
+  saknas/sena, människor i eskaleringskanalerna senaste dygnet, dagens och
+  försenade kalenderrader — över alla varumärken.
+- ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
+  för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
+
 ### ✅ I DRIFT sedan 2026-09-21 kväll (Cowork byggde, mätt av sessionen)
 
 **Railway:** projekt `strong-solace`, tjänst `yognftnfgn`, deployar `main`,
