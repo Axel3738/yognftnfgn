@@ -19,6 +19,7 @@ konfig.json:
   {"in": "...mp4", "ut": "...mp4", "srt": "norsk.srt",
    "captions": {"zon": [850, 1040], "max_chars": 34, "font_px": 30, "standard_cy": 992,
                 "x0": 0, "x1": 1080, "bredd_max": 1080,   # pillrets sökfönster + breddtak i RIKTIGA px
+                "h_min": 40, "h_max": 85,                 # pillrets höjd i RIKTIGA px (mät den, se hitta_piller)
                 "pad_x": 6, "pad_y": 6, "av": [[t0,t1], ...],       # "av" = inga captions då
                 "tvinga": [[t0,t1], ...],                            # "tvinga" = caption även utan hittat piller (slutkort: vitt på vitt)
                 "fyll": [{"rect": [x0,y0,x1,y1], "t": [t0,t1]}]},    # manuell vit pillerplatta (piller på vitt kollage), tvingar caption
@@ -146,6 +147,15 @@ def hitta_piller(g, zon, x0=None, x1=None, pad_x=6, pad_y=6, h_min=40, h_max=85,
     räknar om dem — AdventLane-videorna 2026-09-12 är 1080×1920 med piller 105–127 px
     höga och 150–930 px breda, och utan skalning hittades inget alls.
 
+    `h_min`/`h_max` anges också i RIKTIGA bildpixlar och sätts ur konfigen.
+    Standardvärdena 40–85 är Carl Vicentes vanliga piller (62 px på 720×1280),
+    men samma mall förekommer i en HÖG variant: Takovertrekk-batchen 2026-09-22
+    hade 107 px i `GT_10_H1` och 94 px i `CS_7_H1`, och med taket 85 hittades
+    pillret i 175 av 444 respektive 275 av 557 frames — den svenska texten låg
+    kvar på varannan cue med den norska under. **Mät pillerhöjden per video
+    innan du kör** (ljusa rader i nedre halvan, grupperade på radnärhet); den
+    är inte densamma i en hel batch.
+
     `x0`/`x1`/`bredd_max` anges i RIKTIGA bildpixlar och sätts ur konfigens
     captions-block. De finns för att pillret inte är lika brett i alla mallar:
     Bäverbutikens ärvda 9:16-videor (DryTrek 2026-09-13) har piller upp till
@@ -244,7 +254,8 @@ def main():
         if K.get('srt') and not any(a <= t <= b for a, b in av):
             boxar.append(hitta_piller(g, zon, x0=C.get('x0'), x1=C.get('x1'),
                                       pad_x=pad_x, pad_y=pad_y, skala=sk,
-                                      bredd_max=C.get('bredd_max')))
+                                      bredd_max=C.get('bredd_max'),
+                                      h_min=C.get('h_min', 40) / sk, h_max=C.get('h_max', 85) / sk))
         else:
             boxar.append(None)
     p.wait()
