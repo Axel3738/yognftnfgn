@@ -48,3 +48,15 @@ test('hittaHubbar utan OPS-id:n i registret är en no-op med loggrad', async () 
   assert.ok(hubbar.some((h) => String(h.id).replace(/-/g, '') === HEIM.replace(/-/g, '')));
   assert.ok(loggat.some((r) => /OPS-hubbar undantagna: 0/.test(r)));
 });
+
+test('arkiverade hubbar (nedlagda produkter, Axels besked 2026-09-22) läses inte och krävs inte', async () => {
+  const { hubbarUrFil, hubbarUrProdukter, arkiveradeHubbar } = await import('../notion.mjs');
+  const ark = arkiveradeHubbar();
+  assert.equal(ark.size, 9);
+  assert.ok(ark.has('3b0270ab908c80a78793fa11d8c0f6e4'), 'Boat cover 420D är arkiverad');
+  const fil = hubbarUrFil().map((h) => String(h.id).replace(/-/g, ''));
+  assert.ok(!fil.some((id) => ark.has(id)), 'ingen arkiverad hubb i golvet ur filen');
+  const prod = hubbarUrProdukter().map((h) => String(h.id).replace(/-/g, ''));
+  assert.ok(!prod.some((id) => ark.has(id)), 'ingen arkiverad hubb i golvet ur products.json');
+  assert.ok(fil.length >= 14, `golvet ur filen är ${fil.length} hubbar`);
+});
