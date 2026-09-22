@@ -146,7 +146,7 @@ test('lardomRad: bär id, utfall, avvikelser, hypotes, nästa — aldrig ny_budg
 
 test('brieftak (punkt 8): briefer ≤ lärdomar skrivna sedan förra batchen; noll lärdomar ⇒ tak 0 med antalet som väntar', () => {
   const logg = [ETIK(), ETIK({ annons_id: '222', annons_namn: 'IBC_SP_2_1', etikett: 'LOSER' }), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true }];
-  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, tak_kvar: 0, fria_anvanda: 0, tak_totalt: 0, namngivna: [], struket: [], utforda: [], lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
+  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, tak_kvar: 0, fria_anvanda: 0, tak_totalt: 0, namngivna: [], struket: [], utforda: [], upptagna: ['ibc_pd_1_h1', 'ibc_sp_2_1'], lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
   const med = [...logg, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true }, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '999', lardom_id: 'L-999', datum: '2026-09-10', genomford: true }];
   const t = brieftak(med, 'K1', { idag: '2026-09-21' });
   assert.equal(t.tak, 1, 'lärdomen från före batchen räknas inte');
@@ -342,6 +342,36 @@ test('taket är per batch, inte per anrop: fria briefer som redan loggats sedan 
   const t3 = brieftak(nyBatch, 'K1', { idag: '2026-09-23' });
   assert.equal(t3.fria_anvanda, 0);
   assert.equal(t3.tak_kvar, 1);
+});
+
+test('samma dag: en lärdom skriven FÖRE batchens KLAR-rad ger ingen fri plats till dagen efter, men dess namngivna platser lever kvar', () => {
+  // Mätt 2026-09-22 på Taköverdraget: LARDOM (rad 3092), fyra BRIEF-rader och
+  // CS_BATCH_KLAR (rad 3178) bar samma datum — ett datumfönster gav tak 1 igen.
+  const logg = [ETIK(),
+    { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-22', genomford: true, nasta: ['`IBC_SP_6_1` — typ IM'] },
+    { kod: 'BRIEF', kampanj_id: 'K1', annons_namn: 'IBC_GT_11_H1', datum: '2026-09-22', genomford: true },
+    { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-22', genomford: true }];
+  const t = brieftak(logg, 'K1', { idag: '2026-09-23' });
+  assert.equal(t.tak, 0, 'lärdomen matade batchen som stängdes — ingen ny kvot');
+  assert.equal(t.tak_kvar, 0);
+  assert.deepEqual(t.namngivna, ['IBC_SP_6_1'], 'den namngivna platsen är ett beslut och dör inte med batchen');
+  assert.equal(t.tak_totalt, 1);
+  assert.equal(provaBriefkvot(logg, 'K1', ['IBC_XX_99_H1'], { idag: '2026-09-23' }).ok, false, 'en fri brief dagen efter utan ny lärdom');
+  assert.equal(provaBriefkvot(logg, 'K1', ['IBC_SP_6_1'], { idag: '2026-09-23' }).ok, true);
+});
+
+test('regel (b) gäller varje post: ett namn som redan finns i Notion/kontot/loggen stoppas även som FRI brief, och dubbla namn i samma manifest stoppas', () => {
+  // OB_3_H1-dubbletten: en fri brief med ett namn som redan låg i Notion.
+  const bas = [ETIK(), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true },
+    { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true, nasta: ['`IBC_OB_2_H1` — typ N', '`IBC_CS_14_1` — typ IM'] }];
+  const n = provaBriefkvot(bas, 'K1', ['IBC_OB_3_H1'], { idag: '2026-09-22', befintliga: ['IBC_OB_3_H1'] });
+  assert.equal(n.ok, false); assert.match(n.fel[0], /IBC_OB_3_H1 finns redan/);
+  const k = provaBriefkvot(bas, 'K1', ['IBC_PD_1_H1'], { idag: '2026-09-22' });
+  assert.equal(k.ok, false, 'namnet finns i kontot (ETIKETT-rad) — ingen brief');
+  const d = provaBriefkvot(bas, 'K1', ['IBC_CS_14_1', 'IBC_CS_14_1'], { idag: '2026-09-22' });
+  assert.equal(d.ok, false); assert.match(d.fel[0], /två gånger i manifestet/);
+  const p = provaBriefkvot(bas, 'K1', [{ namn: 'IBC_OB_4_H1', plats: 'IBC_OB_2_H1' }, { namn: 'IBC_OB_5_H1', plats: 'IBC_OB_2_H1' }], { idag: '2026-09-22' });
+  assert.equal(p.ok, false); assert.match(p.fel[0], /togs redan av IBC_OB_4_H1 i samma manifest/);
 });
 
 test('namnUrNasta plockar annonsnamnet och ignorerar SLÄPP-rader', () => {

@@ -314,7 +314,19 @@ export function namnUrNasta(rad) {
 export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {}) {
   const small = (s) => String(s ?? '').toLowerCase();
   const sedan = senasteKlar(logg, kampanjId);
-  const nya = logg.filter((r) => r.kod === LARDOM_KOD && String(r.kampanj_id) === String(kampanjId) && (!sedan || String(r.datum) >= sedan) && (!idag || String(r.datum) <= String(idag)));
+  let sistaKlar = -1;
+  logg.forEach((r, i) => { if (String(r.kampanj_id) === String(kampanjId) && r.genomford === true && KLAR_KODER.includes(r.kod)) sistaKlar = i; });
+  const iDatumfonstret = (r) => (!sedan || String(r.datum) >= sedan) && (!idag || String(r.datum) <= String(idag));
+  const lardomarK = logg.map((r, i) => ({ r, i })).filter(({ r }) => r.kod === LARDOM_KOD && String(r.kampanj_id) === String(kampanjId) && iDatumfonstret(r));
+  // Kvoten (fria platser) räknas på lärdomar EFTER senaste *_KLAR-raden — en
+  // lärdom skriven samma morgon som batchen den matade får inte ge en fri
+  // plats till i nästa batch. Mätt 2026-09-22: Taköverdragets lärdom (rad
+  // 3092) och batch #4:s KLAR-rad (3178) bar samma datum, och ett datumfönster
+  // gav tak 1 igen dagen efter utan en enda ny lärdom.
+  const nya = lardomarK.filter(({ i }) => i > sistaKlar).map(({ r }) => r);
+  // De NAMNGIVNA platserna lever däremot kvar så länge lärdomen är i
+  // datumfönstret: en plats är ett fattat beslut och dör inte med batchen.
+  const nyaNamn = lardomarK.map(({ r }) => r);
   const vantar = oskrivna(logg, { kampanjId }).length;
   const alla = briefer(logg, kampanjId);
   const redanBriefade = new Set(alla.map((r) => small(r.annons_namn)));
@@ -334,7 +346,7 @@ export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {})
   const iLoggen = new Set(logg.filter((r) => String(r.kampanj_id) === String(kampanjId) && r.annons_namn && r.kod !== BRIEF_KOD).map((r) => small(r.annons_namn)));
   const finns = new Set([...redanBriefade, ...utfordaPlatser, ...iLoggen, ...befintliga.map(small)]);
   const begarda = [];
-  for (const r of nya) for (const rad of r.nasta ?? []) { const n = namnUrNasta(rad); if (n && !begarda.some((x) => small(x) === small(n))) begarda.push(n); }
+  for (const r of nyaNamn) for (const rad of r.nasta ?? []) { const n = namnUrNasta(rad); if (n && !begarda.some((x) => small(x) === small(n))) begarda.push(n); }
   const namngivna = [];
   const struket = [];
   for (const n of begarda) (finns.has(small(n)) ? struket : namngivna).push(n);
@@ -353,13 +365,11 @@ export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {})
   // 14 dagar), inte av en tom kvot.
   const begardaSet = new Set(begarda.map(small));
   const breakthroughs = new Set(levandeBreakthroughs(logg, kampanjId, { idag }).map((e) => small(e.annons_namn)));
-  let sistaKlar = -1;
-  logg.forEach((r, i) => { if (String(r.kampanj_id) === String(kampanjId) && r.genomford === true && KLAR_KODER.includes(r.kod)) sistaKlar = i; });
   const friaAnvanda = logg.filter((r, i) => i > sistaKlar && r.kod === BRIEF_KOD && String(r.kampanj_id) === String(kampanjId) && (!idag || String(r.datum) <= String(idag))
     && !begardaSet.has(small(r.annons_namn)) && !(r.plats && begardaSet.has(small(r.plats))) && !(r.parent && breakthroughs.has(small(r.parent)))).length;
   const tak = nya.length;
   const tak_kvar = Math.max(0, tak - friaAnvanda);
-  return { tak, tak_kvar, fria_anvanda: friaAnvanda, tak_totalt: tak_kvar + namngivna.length, namngivna, struket, utforda, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
+  return { tak, tak_kvar, fria_anvanda: friaAnvanda, tak_totalt: tak_kvar + namngivna.length, namngivna, struket, utforda, upptagna: [...finns].filter(Boolean).sort(), lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
 }
 
 /**
@@ -387,19 +397,29 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
   const fria = [];
   const riktade = [];
   const fel = [];
+  const upptagna = new Set(tak.upptagna);
+  const sedda = new Map();   // namn → först sedd i detta anrop
+  const tagna = new Map();   // plats → namnet som tog den i detta anrop
   for (const p of poster) {
     const namn = typeof p === 'string' ? p : p?.namn;
     const plats = typeof p === 'string' ? null : (p?.plats ?? null);
+    // Namnet självt får inte finnas någonstans — som BRIEF-rad, i kontot
+    // eller i Notion — oavsett om posten är fri eller riktad. Det är
+    // OB_3_H1-dubbletten (en fri brief med ett namn som redan låg i Notion).
+    if (upptagna.has(small(namn))) { fel.push(`${namn} finns redan som brief, i Notion eller i kontot — ett annat namn, eller ingen brief alls.`); continue; }
+    if (sedda.has(small(namn))) { fel.push(`${namn} står två gånger i manifestet — en brief per annonsnamn.`); continue; }
+    sedda.set(small(namn), true);
     if (plats) {
+      if (tagna.has(small(plats))) { fel.push(`${namn}: platsen ${plats} togs redan av ${tagna.get(small(plats))} i samma manifest.`); continue; }
       // En UTFÖRD plats (BRIEF-rad med namnet, eller med namnet som plats) är
       // stängd. En UPPTAGEN plats (namnet finns i Notion/kontot som något
       // annat) är precis fallet plats= finns för: samma tanke, ledigt namn.
       if (tak.utforda.some((n) => small(n) === small(plats))) { fel.push(`${namn}: platsen ${plats} är redan utförd (en BRIEF-rad bär namnet eller platsen) — briefa den inte igen.`); continue; }
       const upptagen = tak.struket.some((n) => small(n) === small(plats));
       if (!kvar.has(small(plats)) && !upptagen) { fel.push(`${namn}: plats=${plats} är ingen namngiven plats i lärdomarna sedan förra batchen (${tak.namngivna.join(', ') || 'inga'}).`); continue; }
-      kvar.delete(small(plats)); riktade.push(namn); continue;
+      kvar.delete(small(plats)); tagna.set(small(plats), namn); riktade.push(namn); continue;
     }
-    if (kvar.has(small(namn))) { kvar.delete(small(namn)); riktade.push(namn); continue; }
+    if (kvar.has(small(namn))) { kvar.delete(small(namn)); tagna.set(small(namn), namn); riktade.push(namn); continue; }
     fria.push(namn);
   }
   if (fria.length > tak.tak_kvar) {

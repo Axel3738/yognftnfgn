@@ -14,14 +14,22 @@ Kampanj `120250147343350291`,
 - Fri frakt inom Sverige · 5–10 arbetsdagar · 30 dagars öppet köp · Klarna.
   ⚠️ Detta är **butikspolicy**, inte produktfakta — se butiksneutralitetsregeln nedan.
 - Rubrik: "Taköverdrag Husvagn 6,5 × 3 m – Skyddar Den Dyraste Ytan"
-- Sidans egna formuleringar (använd dessa, hitta aldrig på nya):
-  - "Vattnet blir aldrig stående kring takluckorna – täcker hela takytan, 6,5 × 3 m"
-  - "Sitter kvar när det blåser – spänns fast med rem och dragsko i kanten"
-  - "Hanteras av en person – bara taket, inte hela vagnen att kämpa med ensam"
-  - "Tål en hel vintersäsong ute – 210D-väv, inte tunn presenning som spricker i frost"
-  - "Ryms i förvaringspåsen som följer med"
+- Sidans egna formuleringar (använd dessa, hitta aldrig på nya). ⚠️ **Omläst
+  2026-09-22 eftermiddag** (sidan ändrad samma dag 14:06 CEST): sex av de
+  åtta raderna som stod här fanns inte längre på sidan — däribland
+  **"spänns fast med rem och dragsko i kanten"**, som är rotorsaken till att
+  den live `OB_1_H1` säger "dragsko" fast produkten inte har någon
+  (0 träffar i sidans JSON). Raderna nedan är sidans text i dag, ordagrant:
+  - "Täcker takytan på en normalstor vagn – 6,5 × 3 m"
+  - "Vattnet rinner av i stället för att bli stående – silverbelagd 210D-oxfordväv, inte tunn presenning"
+  - "regnet rinner av den belagda 210D-oxfordväven i stället för att bli stående"
+  - "Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 m och justerbara efter din vagn"
+  - "Överdragets egna remmar sitter på alla fyra sidor, är 2,5 m långa, går att justera efter din vagn och hakas fast i en krok i nederkant"
+  - "Två extra spännremmar ingår – förstärkta 10,5 m, utöver överdragets egna, utan extra kostnad"
+  - "solen tar på ytan i stället för på taket"
   - "Taket är det du aldrig ser – och det som kostar mest att laga"
   - "Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern."
+  - **Aldrig:** "dragsko", "vattentät", "andas", "ventilerad", "förvaringspåse" — inget av dem står på sidan i dag.
 - **Recensionerna får INTE citeras som kundröst.** Omkontrollerat 2026-09-16:
   fortfarande exakt 10 st, betyg 5,00 — oförändrat sedan 2026-09-14, alltså
   ingen organisk recension har tillkommit på två dygn. De ursprungliga 10 lades
