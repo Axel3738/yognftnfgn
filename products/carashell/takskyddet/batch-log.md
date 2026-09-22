@@ -1678,3 +1678,54 @@ speglingarna 16:45 och 16:55) läser samma konto strax före den här.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1551982001806905545`, ingen ACTION NEEDED.
+
+---
+
+## Spegling 2026-09-22 — 9 av 9, 18 annonser live, två NO-annonser i en andra omgång
+
+Kön hade **9 rader** i `CaraShell SE ready to be active`, alla video ur
+LISTICLE-ronden, alla gröna på pris (1 129 kr mot butikens 1 129).
+Torrkörningen: 9 speglade, 0 hoppade, 0 fel.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_OB_2_H1 | CaraShellRoof_OB_102_H1 | 120249219182040172 | 120249219188850172 |
+| Takoverdrag_TR_3_H1 | CaraShellRoof_TR_103_H1 | 120249219198500172 | 120249219342600172 |
+| Takoverdrag_GT_10_H1 | CaraShellRoof_GT_110_H1 | 120249219359450172 | 120249219376980172 |
+| Takoverdrag_CO_3_H1 | CaraShellRoof_CO_103_H1 | 120249219580260172 | 120249219610580172 |
+| Takoverdrag_GT_7_H1 | CaraShellRoof_GT_107_H1 | 120249219634340172 | 120249219738560172 |
+| Takoverdrag_RI_2_H1 | CaraShellRoof_RI_102_H1 | 120249219751100172 | 120249219766110172 |
+| Takoverdrag_GT_8_H1 | CaraShellRoof_GT_108_H1 | 120249219941370172 | 120249219954690172 |
+| Takoverdrag_CS_8_H1 | CaraShellRoof_CS_108_H1 | 120249219971810172 | 120249220305570172 |
+| Takoverdrag_CS_7_H1 | CaraShellRoof_CS_107_H1 | 120249220065150172 | 120249220320230172 |
+
+Tillbakaläst ur Meta: alla 18 har `status: ACTIVE` i rätt kampanj i OPS-kontot.
+Tre stod i Metas granskningsfönster (`PENDING_REVIEW` / `IN_PROCESS`) vid
+avläsningen — normalt, adsetet är ACTIVE.
+
+**Dessutom: 5 källrader blev `Approved`** — gårdagens rader har fått sina
+US-annonser i Magiborsten UK (`120251535…`/`120251536…`).
+
+### Rotorsak: "0 fel" dolde två misslyckade NO-uppladdningar
+
+De två sista raderna (`CS_8_H1`, `CS_7_H1`) fick sin **svenska** annons live men
+inte sin norska: Meta svarade `User request limit reached` (kod 17) mitt i
+körningen. Verktyget räknade ändå båda raderna som **speglade** och skrev
+`0 fel` i sammanfattningen, för SE gick igenom och hubbraden skapades. Felet
+stod bara som en `✗`-rad mitt i loggen.
+
+**Så här hittades det:** tillbakaläsningen ur Meta gav 16 annons-id, inte 18.
+En körning som säger "9 speglade, 0 fel" kan alltså sakna en halv rad —
+**räkna alltid annonserna, lita inte på sammanfattningen.**
+
+Rättat samma kväll: efter ~15 minuters väntan svarade Meta igen, och en
+omkörning med `--fran "CaraShell EN ready to be active"` laddade upp precis de
+två saknade NO-annonserna (allt annat hoppades med "finns redan"). Hubbraderna
+hade skapats med bara den svenska filen, så den norska bifogades för hand med
+`tools/notion-fil-upp.mjs` — båda raderna bär nu två filer.
+
+⚠️ Kvarstående varning: `CARASHELL_SE_Taköverdraget LISTICLE` är eget spår och
+tar aldrig emot speglade annonser.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1552006055792214069`, ingen ACTION NEEDED.
