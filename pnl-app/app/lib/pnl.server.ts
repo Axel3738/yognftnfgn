@@ -584,6 +584,44 @@ export function slaIhopMarknader(rows: ProductResult[]): ProductResult[] {
 }
 
 /** Datumfönster för de förvalda intervallen, relativt en ankardag. */
+/**
+ * Är det ett datum, eller något någon klistrat in i adressfältet?
+ *
+ * Kontrollen går fram och tillbaka: `Date.parse` accepterar "2026-02-31" och
+ * rullar tyst fram till 3 mars, så panelen hade visat en annan dag än den
+ * som stod i adressen. Bara datum som kommer tillbaka som sig själva duger.
+ */
+const arDatum = (s: unknown): s is string => {
+  if (typeof s !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const d = new Date(`${s}T12:00:00Z`);
+  /* Måste kollas FÖRE toISOString — den kastar på ett ogiltigt datum, och
+     "2026-13-01" i adressen hade blivit ett femhundrafel. */
+  if (Number.isNaN(d.getTime())) return false;
+  return d.toISOString().slice(0, 10) === s;
+};
+
+/**
+ * Egna datum ur adressen. De kommer från webbläsaren och får aldrig gå rakt
+ * in i en databasfråga: ett ogiltigt datum blev `new Date("abc")` och tog ner
+ * hela panelen. Skräp faller tillbaka på idag, bakvända datum vänds rätt,
+ * framtiden klipps vid idag, och spannet begränsas till ett år bakåt (en
+ * treårig period hade startat en orderexport som aldrig blev klar).
+ */
+export function egnaDatum(
+  custom: { from: string; to: string } | undefined,
+  anchor: string,
+  shift: (iso: string, days: number) => string,
+) {
+  let from = arDatum(custom?.from) ? custom!.from : anchor;
+  let to = arDatum(custom?.to) ? custom!.to : anchor;
+  if (from > to) [from, to] = [to, from];
+  if (to > anchor) to = anchor;
+  if (from > to) from = to;
+  const aldst = shift(to, -364);
+  if (from < aldst) from = aldst;
+  return [from, to] as const;
+}
+
 export function rangeWindow(key: string, anchor: string, custom?: { from: string; to: string }) {
   const shift = (iso: string, days: number) => {
     const d = new Date(iso + "T12:00:00Z");
@@ -592,7 +630,7 @@ export function rangeWindow(key: string, anchor: string, custom?: { from: string
   };
   switch (key) {
     case "custom":
-      return [custom!.from, custom!.to] as const;
+      return egnaDatum(custom, anchor, shift);
     case "today":
       return [anchor, anchor] as const;
     case "yesterday": {

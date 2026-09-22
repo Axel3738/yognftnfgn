@@ -15,10 +15,12 @@ import {
   Card,
   Checkbox,
   DataTable,
+  DatePicker,
   InlineGrid,
   InlineStack,
   Layout,
   Page,
+  Popover,
   Select,
   Spinner,
   Text,
@@ -370,6 +372,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     refreshing,
     result,
     rangeKey,
+    /* Butikens egen dag — kalendern spärrar framtiden med den, aldrig med
+       webbläsarens klocka (de skiljer sig mellan midnatt och 02:00). */
+    idag: today,
     market,
     marknader,
     /* Dagar i fönstret som saknar uppdelning per marknad (landet nekades av
@@ -419,6 +424,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       refreshing: false,
       result: null as ReturnType<typeof compute> | null,
       rangeKey,
+      idag: "",
       market: "",
       marknader: [] as string[],
       daysWithoutMarkets: 0,
@@ -1097,10 +1103,37 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
+  const { fatal, result, rangeKey, idag, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
+
+  /* Egna datum. "Den tjugonde september" gick inte att välja alls — bara
+     färdiga spann, och det var enligt Axel appens största brist.
+     Kalendern seedas från den period SERVERN räknade, inte från
+     webbläsarens klocka: annars kan den visa en annan dag än panelen. */
+  const tillDate = (iso: string) => new Date(`${iso}T12:00:00`);
+  const tillIso = (d: Date) =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const period = `${result?.from ?? idag}|${result?.to ?? idag}`;
+  const [datumOppet, setDatumOppet] = useState(false);
+  const [spann, setSpann] = useState(() => ({
+    start: tillDate(result?.from ?? idag),
+    end: tillDate(result?.to ?? idag),
+  }));
+  const [manad, setManad] = useState(() => {
+    const d = tillDate(result?.to ?? idag);
+    return { month: d.getMonth(), year: d.getFullYear() };
+  });
+  /* Byter man period utanför kalendern ska den visa den nya, inte den man
+     råkade bläddra till förra gången. */
+  useEffect(() => {
+    const [f, tt] = period.split("|");
+    setSpann({ start: tillDate(f), end: tillDate(tt) });
+    const d = tillDate(tt);
+    setManad({ month: d.getMonth(), year: d.getFullYear() });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [period]);
 
   /* Saknas butiker i gruppsumman pågår en bakgrundshämtning på servern —
      sidan laddar då om sig själv tills alla är med, istället för att be
@@ -1245,6 +1278,53 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                     <Badge tone={k === rangeKey ? "info" : undefined}>{label}</Badge>
                   </button>
                 ))}
+                {/* Egna datum. Väljer man en enda dag blir start och slut
+                    samma — "den tjugonde september" är ett giltigt spann. */}
+                <Popover
+                  active={datumOppet}
+                  onClose={() => setDatumOppet(false)}
+                  preferredAlignment="left"
+                  activator={
+                    <button
+                      type="button"
+                      style={{ all: "unset", cursor: "pointer" }}
+                      onClick={() => setDatumOppet((o) => !o)}
+                    >
+                      <Badge tone={rangeKey === "custom" ? "info" : undefined}>
+                        {rangeKey === "custom"
+                          ? `${result?.from ?? ""} – ${result?.to ?? ""}`
+                          : T.dashboard.ranges.custom}
+                      </Badge>
+                    </button>
+                  }
+                >
+                  <div style={{ padding: 12 }}>
+                    <BlockStack gap="300">
+                      <DatePicker
+                        month={manad.month}
+                        year={manad.year}
+                        onMonthChange={(month, year) => setManad({ month, year })}
+                        selected={spann}
+                        onChange={setSpann}
+                        disableDatesAfter={idag ? tillDate(idag) : undefined}
+                        allowRange
+                      />
+                      <Button
+                        variant="primary"
+                        onClick={() => {
+                          const nya = new URLSearchParams(params);
+                          nya.set("range", "custom");
+                          nya.set("from", tillIso(spann.start));
+                          nya.set("to", tillIso(spann.end));
+                          setParams(nya);
+                          setDatumOppet(false);
+                        }}
+                      >
+                        {T.dashboard.ranges.useDates}
+                      </Button>
+                    </BlockStack>
+                  </div>
+                </Popover>
               </InlineStack>
               {/* Marknadsfiltret: bara Norge, bara USA. Visas när butiken sålt
                   till mer än ett land (eller märkt en kampanj/kostnad med ett). */}

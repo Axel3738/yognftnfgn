@@ -620,8 +620,32 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
-Bra att veta när någon installerar utan att stå på listan: **grinden stänger
-bara LTV-sidan** (`app.ltv.tsx`, `plan === "pro"`). Panelen, Kostnader,
+### Egna datum i panelen (2026-09-22, build egna-datum-v104)
+
+Axel: *"det största felet i vår app … jag kan bara välja i går eller de
+senaste sju dagarna."* Räknevägen fanns redan — `rangeWindow` hade en
+`custom`-gren som läste `?from`/`?to` — men **ingen knapp ledde dit**. En
+funktion utan ingång finns inte.
+
+Kalenderknappen ligger bredvid de färdiga spannen (Polaris `DatePicker` i en
+`Popover`, `allowRange`). Väljer man en enda dag blir start och slut samma,
+vilket är precis vad "den tjugonde september" betyder.
+
+Två saker som är lätta att göra fel här:
+- **Kalendern seedas från den period SERVERN räknade** (`result.from/to`),
+  och framtiden spärras med butikens `idag` — aldrig med webbläsarens
+  klocka. Mellan midnatt och 02:00 svensk tid är de olika dagar.
+- **Datumen kommer ur adressfältet och gick rakt in i en databasfråga.**
+  `egnaDatum` städar dem nu: skräp faller tillbaka på idag, bakvända datum
+  vänds rätt, framtiden klipps, och spannet begränsas till ett år (en
+  treårig period hade startat en orderexport som aldrig blev klar).
+  `Date.parse` accepterar dessutom `2026-02-31` och rullar tyst fram till
+  3 mars, så kontrollen går fram och tillbaka — och `Number.isNaN` måste
+  kollas FÖRE `toISOString`, som kastar. Testet
+  `ett datum som ser rätt ut men inte finns avvisas` fångade exakt det.
+
+Bra att veta när någon installerar utan att stå på fri-listan: **grinden
+stänger bara LTV-sidan** (`app.ltv.tsx`, `plan === "pro"`). Panelen, Kostnader,
 Fasta kostnader och Inställningar är öppna. Adresserna kan alltså samlas in
 EFTER installationen utan att något går förlorat — och `PLAN_GATE=1` sitter
 bara på App Store-tjänsten.

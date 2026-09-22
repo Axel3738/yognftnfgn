@@ -14,5 +14,5 @@ export async function loader() {
   } catch (e) {
     db = (e as Error).message;
   }
-  return json({ ok: true, build: "gratis-butiker-v103", db });
+  return json({ ok: true, build: "egna-datum-v104", db });
 }

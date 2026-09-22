@@ -81,6 +81,8 @@ const en = {
       d7: "7 days",
       d30: "30 days",
       d90: "90 days",
+      custom: "Pick dates",
+      useDates: "Show these dates",
     },
     updatedAgo: (min: number, refreshing: boolean) =>
       `Figures were last updated ${min} min ago${
@@ -907,6 +909,8 @@ const sv: Texts = {
       d7: "7 dagar",
       d30: "30 dagar",
       d90: "90 dagar",
+      custom: "Välj datum",
+      useDates: "Visa de här datumen",
     },
     updatedAgo: (min: number, refreshing: boolean) =>
       `Siffrorna uppdaterades för ${min} min sedan${
