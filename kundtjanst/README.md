@@ -39,6 +39,28 @@ därför chargebacks överst, och texten "an unanswered dispute is lost
 automatically" är borttagen ur både koden och rapportsidan — skriv aldrig
 tillbaka den.
 
+**Tvisterna på kundtjänstsidan sedan 2026-09-22** (sektionen *Disputes now —
+all stores* i `rapport-sida.html`, kontraktet i `DASHBOARD-TVISTER.md`):
+öppna tvister ur `stonebite/data/snapshot.json` (timrutinens läsning) och
+brådskan ur `node kundtjanst/tvistkoll.mjs --alla --torr --json`, som
+`rapportsida.mjs` kör själv vid bygget (`korTvistkoll`; argumenten är frysta,
+`--discord` kan inte smyga in; `--utan-tvistkoll` hoppar). Per butik:
+chargebacks överst, sedan kortast tid kvar, sedan belopp; pengar i risk per
+valuta — aldrig summerat; *overdue* (kvar < 0) och *due today* (kvar = 0) är
+två stämplar; "submit by" = deadline − 1 dag, för bevis skickas in sist medan
+kundmejlet går i dag; handbokslänk per rad ur `handbok.json`. En butik
+tvistkollen inte kunde läsa står som **okänd med orsaken ordagrant** (lång
+Shopify-felsida: första raden + "show the full reason"), aldrig som noll — och
+har snapshoten rader för den står raderna kvar med dagar kvar räknade av sidan
+(`kvarFran: 'sidan'`), märkt att brådskan inte lästes live. **Ingen dom**
+(FIGHT/REFUND/ESCALATE) visas: `tvistfakta.mjs` har inget `--json`, och en dom
+gissad ur reason-koden är påhittad. Sidan skriver aldrig i Shopify och rör
+aldrig `korningar/` eller `historik/`. ⚠️ Vilken butik som går att läsa beror
+på containerns nycklar: sessionen som byggde 2026-09-22 saknade
+`SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER` och fick 403 på Bäverbutiken,
+medan timrutinens snapshot samma timme bar 10 öppna tvister för den — sidan
+visade då raderna ur snapshoten med 403-orsaken bredvid, precis som tänkt.
+
 Handboken VA:n följer när larmet kommer ligger i **`kundtjanst/sop/`** (engelska,
 portabel över alla butiker). `kundtjanst/tvistfakta.mjs` ger domen på ett
 kommando; `kundtjanst/sop-koll.mjs` vaktar att SOP:erna förblir portabla.

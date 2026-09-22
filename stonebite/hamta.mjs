@@ -22,6 +22,7 @@ import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
 import { hamtaEskalering } from './kallor/discord.mjs';
+import { lasSkickade } from './larm.mjs';
 import { kor as korBonus, lasPersoner, lasRegler } from '../bonus/kor.mjs';
 import { readFileSync } from 'node:fs';
 
@@ -139,6 +140,9 @@ export async function byggSnapshot({
     produkttest: detaljer.produkttest,
     oppnaTvister: detaljer.tvister,
     insatser: detaljer.insatser,
+    // Pingarna till VA:n (stonebite/larm.mjs skriver minnet EFTER hämtningen,
+    // så det som syns här är förra körningens) — sidan visar dem per varumärke.
+    larm: lasSkickade(rot),
     ...repo,
   };
 }

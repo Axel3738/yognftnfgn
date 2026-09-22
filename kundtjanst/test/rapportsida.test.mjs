@@ -6,9 +6,10 @@ import { mkdtempSync, writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { byggAtgardsplan, planPerHink, pengarIRisk, HINKAR } from '../atgardsplan.mjs';
-import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad, planUrDashboard, samlaAutosvar, brevladaRad, X_EN } from '../dashboard.mjs';
-import { byggSida, hamtaVaKo } from '../rapportsida.mjs';
+import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad, planUrDashboard, samlaAutosvar, brevladaRad, X_EN, samlaTvister, tvistRadLive, sorteraTvister, dagarTill, skickaInSenast, tvistLage } from '../dashboard.mjs';
+import { byggSida, hamtaVaKo, korTvistkoll, TVISTKOLL_ARGS, lasHandbok } from '../rapportsida.mjs';
 import { oversikt } from '../autosvar/oversikt.mjs';
+import { dagarKvar } from '../tvistkoll.mjs';
 import { NIVAER } from '../chargeback.mjs';
 
 const NU = new Date('2026-09-14T08:00:00Z');
@@ -357,6 +358,128 @@ test('hamtaVaKo: läser VA-mappen live när nyckeln finns, säger varför annars
   assert.ok(!JSON.stringify(ut).includes('anna@kund.se') && !JSON.stringify(ut).includes('anna.andersson@'), 'adresser i fel och rader maskeras');
 });
 
+// -------------------------------------------------------------- Tvisterna
+
+const NU_TV = new Date('2026-09-22T12:00:00Z');
+const SNAP_TV = {
+  byggd: '2026-09-22T16:06:08.517Z',
+  kundtjanst: { brands: [{ id: 'baverbutiken', namn: 'Bäverbutiken' }] },
+  oppnaTvister: [
+    { order: '#5763', brand: 'baverbutiken', typ: 'inquiry', belopp: 100, valuta: 'SEK', deadline: '2026-10-02', initierad: '2026-09-13', status: 'needs response', besvarad: false, utfall: null, oppen: true },
+    { order: '#5584', brand: 'baverbutiken', typ: 'chargeback', belopp: 348, valuta: 'SEK', deadline: '2026-09-23', initierad: '2026-09-10', status: 'needs response', besvarad: false, utfall: null, oppen: true },
+    { order: '17666239660381', brand: 'baverbutiken', typ: 'inquiry', belopp: 255, valuta: 'SEK', deadline: '2026-09-28', status: 'needs response', oppen: true },
+    { order: '#5122', brand: 'baverbutiken', typ: 'inquiry', belopp: 348, valuta: 'SEK', deadline: '2026-09-21', status: 'needs response', oppen: true },   // försenad
+    { order: '#5200', brand: 'baverbutiken', typ: 'inquiry', belopp: 900, valuta: 'SEK', deadline: '2026-09-22', status: 'needs_response', oppen: true },   // i dag
+    { order: '#5300', brand: 'baverbutiken', typ: 'inquiry', belopp: 50, valuta: 'SEK', deadline: '2026-09-25', status: 'under_review', oppen: true },
+    { order: '#9', brand: 'baverbutiken', typ: 'chargeback', belopp: 1, valuta: 'SEK', deadline: '2026-09-01', status: 'won', oppen: false },              // stängd
+    { order: '#77', brand: 'carashell', typ: 'inquiry', belopp: 1129, valuta: 'SEK', deadline: '2026-09-29', status: 'needs response', oppen: true },
+    { order: '#88', brand: 'carashell', typ: 'inquiry', belopp: 99, valuta: 'USD', deadline: '2026-09-30', status: 'needs response', oppen: true },
+  ],
+};
+const KOLL_TV = { status: 'ok', hamtad: '2026-09-22T12:00:00Z', orsak: null, brands: [
+  { brand: 'baverbutiken', tillganglig: true, orsak: null, tvister: 50, bradskande: [
+    { order: '#5584', typ: 'chargeback', orsak: 'credit_not_processed', belopp: 348, valuta: 'SEK', deadline: '2026-09-23', kvar: 1 },
+    { order: '#5122', typ: 'inquiry', orsak: 'product_unacceptable', belopp: 348, valuta: 'SEK', deadline: '2026-09-21', kvar: -1 },
+    { order: '#5200', typ: 'inquiry', orsak: 'product_not_received', belopp: 900, valuta: 'SEK', deadline: '2026-09-22', kvar: 0 },
+    { order: '#6000', typ: 'chargeback', orsak: 'fraudulent', belopp: 599, valuta: 'SEK', deadline: '2026-09-24', kvar: 2 },   // nyare än snapshoten
+  ] },
+  { brand: 'carashell', tillganglig: false, orsak: 'Shopify inte kopplat (saknar SHOPIFY_CLIENT_ID_CARASHELL, SHOPIFY_CLIENT_SECRET_CARASHELL)', tvister: 0, bradskande: [] },
+  { brand: 'tacklebay', tillganglig: false, orsak: 'app_not_installed', tvister: 0, bradskande: [] },
+] };
+const BRANDS_TV = [{ id: 'baverbutiken', namn: 'Bäverbutiken' }, { id: 'carashell', namn: 'CaraShell' }, { id: 'tacklebay', namn: 'TackleBay' }, { id: 'drytrek', namn: 'DryTrek' }];
+
+test('dagarTill räknar exakt som tvistkoll.dagarKvar, och submit by är dagen före deadline', () => {
+  for (const d of ['2026-09-21', '2026-09-22', '2026-09-23', '2026-10-02', null, 'trasigt']) assert.equal(dagarTill(d, NU_TV), dagarKvar(d, NU_TV), String(d));
+  assert.equal(skickaInSenast('2026-09-23'), '2026-09-22');
+  assert.equal(skickaInSenast('2026-10-01'), '2026-09-30');
+  assert.equal(skickaInSenast(null), null);
+  // Försenad och i dag är två lägen — aldrig samma.
+  assert.equal(tvistLage(-1), 'forsenad');
+  assert.equal(tvistLage(0), 'idag');
+  assert.equal(tvistLage(3), 'bradskande');
+  assert.equal(tvistLage(4), 'kommande');
+  assert.equal(tvistLage(null), 'okand');
+});
+
+test('sorteringen: chargebacks först, sedan kvar stigande, sedan belopp fallande', () => {
+  const rader = sorteraTvister([
+    { order: 'a', typ: 'inquiry', kvar: -2, belopp: 900 },
+    { order: 'b', typ: 'chargeback', kvar: 5, belopp: 10 },
+    { order: 'c', typ: 'chargeback', kvar: 1, belopp: 348 },
+    { order: 'd', typ: 'inquiry', kvar: 1, belopp: 50 },
+    { order: 'e', typ: 'inquiry', kvar: 1, belopp: 500 },
+    { order: 'f', typ: 'inquiry', kvar: null, belopp: 5 },
+  ]);
+  assert.deepEqual(rader.map((r) => r.order), ['c', 'b', 'a', 'e', 'd', 'f']);
+});
+
+test('samlaTvister: tvistkollens kvar och orsak vinner, snapshoten ger resten, valutor summeras aldrig, okända brands står med orsak ordagrant', () => {
+  const d = samlaTvister({ snapshot: SNAP_TV, tvistkoll: KOLL_TV, brands: BRANDS_TV, nu: NU_TV, handbok: lasHandbok() });
+  assert.equal(d.snapshotByggd, SNAP_TV.byggd);
+  assert.equal(d.kollStatus, 'ok');
+  assert.ok(d.handbok?.start?.startsWith('https://app.notion.com/'), 'handbokslänken följer med');
+  assert.deepEqual(d.brands.map((b) => b.id), ['baverbutiken', 'carashell', 'drytrek', 'tacklebay'], 'lästa först, sedan okända — och alla kända brands finns');
+
+  const bb = d.brands[0];
+  assert.equal(bb.tillganglig, true);
+  assert.equal(bb.tvister180, 50);
+  assert.deepEqual(bb.oppna.map((r) => r.order), ['#5584', '#6000', '#5122', '#5200', '#5300', '17666239660381', '#5763'], 'chargebacks överst, sedan kvar, stängda bort');
+  const cb = bb.oppna[0];
+  assert.equal(cb.kvar, 1); assert.equal(cb.kvarFran, 'tvistkoll'); assert.equal(cb.orsak, 'credit not processed'); assert.equal(cb.bradskande, true);
+  assert.equal(cb.submitBy, '2026-09-22');
+  const ny = bb.oppna[1];
+  assert.equal(ny.order, '#6000'); assert.equal(ny.kvar, 2); assert.equal(ny.status, 'needs response', 'tvistkollens nya rad, snapshoten hann inte se den');
+  assert.equal(bb.oppna.find((r) => r.order === '#5122').lage, 'forsenad');
+  assert.equal(bb.oppna.find((r) => r.order === '#5200').lage, 'idag', 'går ut i dag ≠ försenad');
+  const ur = bb.oppna.find((r) => r.order === '#5300');
+  assert.equal(ur.underReview, true); assert.equal(ur.status, 'under review'); assert.equal(ur.kvarFran, 'sidan'); assert.equal(ur.kvar, 3);
+  assert.equal(bb.oppna.find((r) => r.order === '17666239660381').orderArId, true, 'ett order-id kallas för vad det är, inget påhittat #');
+  assert.deepEqual(bb.pengarIRisk, { SEK: 100 + 348 + 255 + 348 + 900 + 50 + 599 });
+  assert.deepEqual(bb.antal, { oppna: 7, chargebacks: 2, forsenade: 1, idag: 1, bradskande: 4, underReview: 1 });
+  assert.ok(!bb.oppna.some((r) => r.order === '#9'), 'stängda tvister visas inte');
+
+  const cs = d.brands.find((b) => b.id === 'carashell');
+  assert.equal(cs.tillganglig, false, 'tvistkollen kunde inte läsa — okänt, inte noll');
+  assert.equal(cs.orsak, 'Shopify inte kopplat (saknar SHOPIFY_CLIENT_ID_CARASHELL, SHOPIFY_CLIENT_SECRET_CARASHELL)', 'orsaken ordagrant');
+  assert.deepEqual(cs.pengarIRisk, { SEK: 1129, USD: 99 }, 'två valutor, två tal — aldrig en summa');
+  assert.equal(cs.oppna.length, 2, 'snapshotens rader visas ändå');
+  assert.equal(cs.tvister180, null, 'en oläst butik svarar 0 på 180 dagar — det är okänt, aldrig noll');
+  assert.equal(cs.oppna[0].kvarFran, 'sidan');
+
+  assert.equal(d.brands.find((b) => b.id === 'tacklebay').orsak, 'app_not_installed');
+  const dt = d.brands.find((b) => b.id === 'drytrek');
+  assert.equal(dt.tillganglig, null, 'inte i tvistkollens svar och inget i snapshoten — okänt, med orsak');
+  assert.equal(dt.antal.oppna, 0);
+  assert.ok(!JSON.stringify(d).match(/FIGHT|REFUND|ESCALATE|WAIT/), 'ingen dom någonstans');
+  assert.ok(!JSON.stringify(d).match(/@/), 'inga kunduppgifter');
+});
+
+test('samlaTvister utan tvistkoll: snapshoten räcker, brådskan står som inte läst', () => {
+  const d = samlaTvister({ snapshot: SNAP_TV, tvistkoll: null, brands: BRANDS_TV, nu: NU_TV });
+  assert.equal(d.kollStatus, 'saknas');
+  const bb = d.brands.find((b) => b.id === 'baverbutiken');
+  assert.equal(bb.tillganglig, true);
+  assert.equal(bb.oppna[0].order, '#5584');
+  assert.equal(bb.oppna[0].kvar, 1, 'räknat av sidan med samma formel');
+  assert.equal(bb.oppna[0].kvarFran, 'sidan');
+  assert.equal(bb.tvister180, null);
+  assert.match(d.brands.find((b) => b.id === 'drytrek').orsak, /urgency not read/);
+});
+
+test('korTvistkoll kör alltid torrt, tolkar JSON:en även med varningstext efter, och ett fel blir ett läge — inte en krasch', async () => {
+  const anrop = [];
+  const ut = await korTvistkoll({ nu: NU_TV, kor: async (args) => { anrop.push(args); return `${JSON.stringify(KOLL_TV.brands)}\n\n⚠️ Tvisterna kunde inte läsas för: CaraShell (Shopify inte kopplat (saknar X))\n`; } });
+  assert.equal(ut.status, 'ok');
+  assert.equal(ut.brands.length, 3);
+  assert.deepEqual(anrop[0], [...TVISTKOLL_ARGS]);
+  assert.ok(anrop[0].includes('--torr'), '--torr är inbyggt');
+  assert.ok(!anrop[0].includes('--discord'), 'aldrig --discord härifrån');
+  const fel = await korTvistkoll({ nu: NU_TV, kor: async () => 'inget json här' });
+  assert.equal(fel.status, 'fel');
+  assert.match(fel.orsak, /ingen JSON/);
+  assert.deepEqual(fel.brands, []);
+});
+
 // ------------------------------------------------------------------ Sidan
 
 test('sidan bakas in i mallen och </script> i datan kan inte bryta sidan', () => {
@@ -395,4 +518,24 @@ test('mallen bär autosvaret: egen sektion, utkast skilt från skickat, torrkör
   assert.match(mall, /Nothing has been sent to a customer/, 'utkast ≠ skickat');
   assert.match(mall, /r\.atgard === 'utkast' \? `<span class="stampel gul">/, 'utkast får egen stämpel');
   assert.match(mall, /r\.atgard === 'svar' \? `<span class="stampel gron">/, 'skickat får en annan');
+});
+
+test('mallen bär tvisterna: egen sektion, försenad ≠ i dag, aldrig "submit now", aldrig "lost automatically", ingen dom', () => {
+  const mall = readFileSync(new URL('../rapport-sida.html', import.meta.url), 'utf8');
+  assert.match(mall, /<section id="tvist-alla-sektion">/);
+  assert.match(mall, /function ritaTvisterAlla\(\)/);
+  assert.match(mall, /DATA\.tvister/);
+  assert.ok(!/submit now/i.test(mall), 'bevisen skickas in sist — aldrig "submit now"');
+  assert.ok(!/lost automatically/i.test(mall), 'en obesvarad inquiry förloras inte — den eskalerar');
+  assert.ok(!/\b(FIGHT|REFUND|ESCALATE)\b/.test(mall), 'ingen dom på sidan');
+  assert.match(mall, /r\.lage === 'forsenad' \? `<span class="stampel rod">\$\{t\(\)\.overdue\}/, 'försenad har egen stämpel');
+  assert.match(mall, /r\.lage === 'idag' \? `<span class="stampel rod">\$\{t\(\)\.dueToday\}/, 'går ut i dag har en annan');
+  assert.match(mall, /r\.underReview \? `<span class="stampel gron">\$\{t\(\)\.underReview\}/, 'under review kallas aldrig obesvarad');
+  for (const nyckel of ['tvistAlla', 'tvistAllaIngress', 'submitBy', 'dueToday', 'overdue', 'unknownBrand', 'moneyAtRisk', 'handbook', 'urgencyFromSnapshot', 'fullReason', 'dayOverdue', 'daysOverdue']) {
+    assert.equal((mall.match(new RegExp(`\\b${nyckel}:`, 'g')) ?? []).length, 2, `${nyckel} på båda språken`);
+  }
+  assert.match(mall, /\$\{t\(\)\.overdue\} · \$\{forsenad\(r\.kvar\)\}/, 'en försenad tvist säger "N days overdue", aldrig "N days left"');
+  assert.match(mall, /<details><summary>\$\{esc\(t\(\)\.fullReason\)\}<\/summary><pre class="orsak-full">\$\{esc\(s\)\}<\/pre><\/details>/, 'en lång orsak fälls ihop men står kvar ordagrant och escapad');
+  assert.match(mall, /Reply to the customer today/, 'kundmejlet väntar aldrig');
+  assert.match(mall, /day before the deadline/, 'bevisen sist');
 });

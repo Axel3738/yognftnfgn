@@ -16,7 +16,13 @@ gammal. Därför finns rutinen.
 cd /home/user/yognftnfgn
 git pull --rebase origin main      # spårningsrutinerna pushar till main varje timme — hämta först, annars nekas pushen i steg 3
 node stonebite/hamta.mjs --dagar 30
+node stonebite/larm.mjs            # pingen till VA:n (Axels beslut 2026-09-22, A): obesvarat i eskaleringskanalerna 2 h + tvister med deadline inom 3 dagar — en gång per ärende
 ```
+
+`larm.mjs` läser bara snapshoten hämtningen nyss skrev och postar i Discord
+(engelska, `<@Mechile>`), minnet är `stonebite/data/larm.json`. Skriv aldrig
+i den filen för hand — raderas en rad pingas ärendet igen. `--torr` visar utan
+att posta.
 
 Det här sker i körningen, i ordning:
 
@@ -42,7 +48,7 @@ tre butiker har appen oinstallerad. Det står i klartext på sidan Drift.
 ## Steg 3 — committa och pusha
 
 ```bash
-git add stonebite/data/snapshot.json bonus/utfall/
+git add stonebite/data/snapshot.json stonebite/data/larm.json bonus/utfall/
 git commit -m "Stonebite: färsk data <datum>"
 git push -u origin main
 ```
@@ -62,12 +68,15 @@ Kort, på svenska:
 4. **Recensioner med namn** — om siffran är noll: säg det rakt ut. Det betyder
    att ingen VA får betalt, och det är hela poängen med programmet.
 5. Väntande insatser som ingen godkänt (de betalas inte förrän någon klickar).
+6. Pingar till VA:n: hur många som skickades och för vad (order eller kanal),
+   eller "inga". Blev ett larm `fel`: orsaken i klartext.
 
 ---
 
 ## Definition of done
 
 - [ ] `node stonebite/hamta.mjs` kördes utan att kasta.
+- [ ] `node stonebite/larm.mjs` kördes; `stonebite/data/larm.json` committad.
 - [ ] Varje källa i listan är ✅, eller har en orsak skriven i rapporten.
 - [ ] `stonebite/data/snapshot.json` är uppdaterad och committad.
 - [ ] Inga hemligheter eller föränderliga driftfiler följde med i commiten.

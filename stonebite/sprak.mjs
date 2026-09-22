@@ -322,6 +322,13 @@ const ORDBOK = {
   'avstängd': 'paused',
   'går inte att mäta': 'not measurable',
   'ny': 'new',
+  // Pingarna till VA:n (stonebite/larm.mjs)
+  'Pingar till VA:n': 'Pings to the VA',
+  'Det som skickats till VA:n i Discord de senaste 30 dagarna. Ett ärende pingas en gång, aldrig två.': 'What was sent to the VA in Discord in the last 30 days. Each case is pinged once, never twice.',
+  'Inga pingar än': 'No pings yet',
+  'Inget har behövt pingas — eller rutinen har inte kört larmsteget än.': 'Nothing has needed a ping — or the routine has not run the alert step yet.',
+  'När': 'When',
+  'Text': 'Text',
   'förfallen': 'overdue',
   'om': 'in',
   'i dag': 'today',
