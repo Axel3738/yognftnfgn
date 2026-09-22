@@ -1,0 +1,6 @@
+{
+  "kommentar": "Länkarna kundtjänstsidan visar per tvistrad — proceduren bor i Notion-handboken, inte i gränssnittet (kundtjanst/DASHBOARD-TVISTER.md). Slagna upp via Notions API 2026-09-22 i databasen 'Customer support bäverbutiken'. Byts sidorna ut i Notion: slå upp igen, gissa aldrig.",
+  "databas": "https://app.notion.com/p/3aa270ab908c8057a8a0cc691d9e956b",
+  "start": "https://app.notion.com/p/Chargebacks-START-HERE-route-the-dispute-3e2270ab908c818285eecd7d6e3c7a84",
+  "forsta_timmen": "https://app.notion.com/p/Chargebacks-the-first-hour-3e2270ab908c8197badaf622a1266aed"
+}

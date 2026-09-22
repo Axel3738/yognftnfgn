@@ -122,3 +122,58 @@ Per varumärke:
 3. **`besvarad` säger inte om VA:n skickat in bevis.** Shopify har ingen sådan
    flagga vi läser — `status: under_review` är det närmaste, och det betyder
    att något redan är inskickat. Skriv aldrig "obesvarad" om en `under_review`.
+
+---
+
+## ✅ Byggd 2026-09-22 (dashboard-sessionen)
+
+Sektionen **Disputes now — all stores** i `kundtjanst/rapport-sida.html`,
+datan ur `samlaTvister()` i `kundtjanst/dashboard.mjs`, körd av
+`kundtjanst/rapportsida.mjs` vid varje bygge.
+
+- **Källorna, exakt som kontraktet:** snapshotens `oppnaTvister[]` är basen
+  (`oppen !== false`), tvistkollen körs av `rapportsida.mjs` självt som
+  `node kundtjanst/tvistkoll.mjs --alla --torr --json` (`korTvistkoll`;
+  argumenten är frysta i `TVISTKOLL_ARGS`, ett test bevisar att `--torr`
+  alltid är med och `--discord` aldrig). Exit 1 med JSON på stdout godtas —
+  det är "ingen butik läsbar", och då står alla butiker som okända med orsak.
+  `--utan-tvistkoll` hoppar steget (sidan säger "urgency not read").
+- **Tvistkollens tal vinner.** Matchning rad för rad på `order|deadline`;
+  träff ⇒ `kvar`, `orsak` och ⚑ *urgent* är tvistkollens (`kvarFran:
+  'tvistkoll'`). Rader tvistkollen såg men snapshoten inte har (nyare än
+  hämtningen) läggs till med tvistkollens tal rakt av. Rader utan träff får
+  `kvar` ur `dagarTill()` — **samma formel som `dagarKvar`** (ett test
+  jämför dem) — märkta `kvarFran: 'sidan'`.
+- **Lägen:** `forsenad` (kvar < 0, röd "OVERDUE · N days"), `idag` (kvar = 0,
+  röd "due TODAY"), `bradskande` (≤ 3, gul), `kommande` (grå), `okand`
+  (ingen deadline). Aldrig ihopslagna. `under_review` ⇒ grön "under review —
+  evidence submitted", aldrig "obesvarad".
+- **Ordning:** per butik chargeback först, sedan kvar stigande (`null` sist),
+  sedan belopp fallande (`sorteraTvister`). Butikerna: de med öppna rader
+  eller läst brådska överst (flest chargebacks, kortast kvar), sedan omätta
+  (`tillganglig: null`), sist okända utan rader.
+- **Pengar i risk per valuta**, aldrig summerat (`pengarIRisk: {SEK: …,
+  USD: …}`).
+- **Okänd butik = orsaken ordagrant**, aldrig noll. Lång orsak (Shopifys
+  HTML-felsida på 900 tecken) visas som första raden + `<details>` "show the
+  full reason" — allt HTML-escapat, inget klipps bort. Har snapshoten rader
+  för en butik tvistkollen inte kunde läsa står raderna kvar med sidans
+  dagar-kvar och rutan "Urgency was not read live for this store".
+- **"Submit by" = deadline − 1 dag** (`skickaInSenast`). Ingen text säger
+  "submit now"; foten säger *Reply to the customer today, submit evidence
+  last* — testet letar efter både förbjudna och krävda fraser.
+- **Handbokslänk per rad** ur `kundtjanst/handbok.json` (START HERE; för
+  chargebacks dessutom *the first hour*), slagna upp via Notions API — byts
+  sidorna i Notion: slå upp igen.
+- **Ingen dom.** Inte FIGHT, REFUND, WAIT eller ESCALATE någonstans i mallen
+  (testat). Sidan skriver ingenting i Shopify, kör aldrig `tvistfakta.mjs`,
+  rör inte `korningar/` eller `historik/`.
+- **Mätt vid bygget 2026-09-22 16:30 UTC:** snapshot 16:06 med 10 öppna
+  tvister för Bäverbutiken (2 chargebacks, 5 försenade, 1 går ut i dag,
+  4 545,20 SEK i risk). ⚠️ Dashboard-sessionens container saknade
+  `SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER`, så tvistkollen fick 403
+  (`read_shopify_payments_disputes`) på Bäverbutiken här — timrutinens
+  container läste samma tvister utan fel. Sidan gjorde då det den ska:
+  raderna ur snapshoten, 403-orsaken bredvid, brådskan räknad av sidan. Fem
+  butiker utan Shopify-nycklar, TackleBay och CatCabin `app_not_installed`,
+  Majavakauppa/NO/DK 403 på scopet — alla står med orsak.

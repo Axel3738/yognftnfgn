@@ -1170,7 +1170,19 @@ loggens 30 dagar per butik via `autosvar/oversikt.mjs` — aldrig omräknat —
 plus `INBOX.VA-PRIO` läst live när mejlnyckeln finns (`rapportsida.mjs` →
 `hamtaVaKo`, läs-bara, `--utan-brevlada` hoppar). Utkast (`torr: true`) visas
 som utkast, aldrig som skickat. Sidan kör aldrig `autosvar.mjs` och skriver
-aldrig i `autosvar/logg/`.
+aldrig i `autosvar/logg/`. **Tvisterna över alla butiker på sidan sedan
+samma dag** (sektionen *Disputes now — all stores*; kontraktet
+`kundtjanst/DASHBOARD-TVISTER.md`): öppna tvister ur
+`stonebite/data/snapshot.json`, brådskan ur `tvistkoll.mjs --alla --torr
+--json` som `rapportsida.mjs` kör själv (argumenten frysta — aldrig
+`--discord`; `--utan-tvistkoll` hoppar). Chargebacks överst per butik, pengar
+i risk per valuta utan summering, *overdue* och *due today* som två stämplar,
+"submit by" = deadline − 1 (bevis sist, kundmejlet i dag), handbokslänk per
+rad (`kundtjanst/handbok.json`). Okänd butik = orsaken ordagrant, aldrig noll;
+**ingen dom** (tvistfakta har inget `--json`). ⚠️ Vilka butiker som går att
+läsa beror på containerns nycklar: dashboard-sessionen saknade
+`SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER` och fick 403 där timrutinen
+läste 10 tvister — sidan visar då snapshotens rader med orsaken bredvid.
 
 ⚠️ **Ombyggd 2026-09-13 efter Axels dom "den suger fan legit".** Tre fel var
 verkliga och alla tre är rättade: sidan var på svenska fast **VA:n läser

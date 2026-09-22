@@ -21,13 +21,63 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { samlaDashboard, brevladaRad } from './dashboard.mjs';
+import { execFile } from 'node:child_process';
+import { samlaDashboard, brevladaRad, samlaTvister } from './dashboard.mjs';
 import { maskeraText } from './maskera.mjs';
 
 const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const MALL = join(ROT, 'kundtjanst', 'rapport-sida.html');
 export const UT = join(ROT, 'kundtjanst', 'rapport-publicerad.html');
 export const URLFIL = join(ROT, 'kundtjanst', 'rapportsida.json');
+export const HANDBOKFIL = join(ROT, 'kundtjanst', 'handbok.json');
+export const SNAPSHOTFIL = join(ROT, 'stonebite', 'data', 'snapshot.json');
+
+export function lasHandbok(fil = HANDBOKFIL) {
+  if (!existsSync(fil)) return null;
+  try { const { kommentar: _, ...resten } = JSON.parse(readFileSync(fil, 'utf8')); return resten; } catch { return null; }
+}
+
+/** Sajtens snapshot — källa 1 för tvisterna (oppnaTvister). null när den saknas. */
+export function lasSnapshot(fil = SNAPSHOTFIL) {
+  if (!existsSync(fil)) return null;
+  try { return JSON.parse(readFileSync(fil, 'utf8')); } catch { return null; }
+}
+
+/**
+ * Tvistkollen som källa 2: `node kundtjanst/tvistkoll.mjs --alla --torr --json`.
+ * ⚠️ `--torr` är inbyggt här och går inte att ta bort — utan det postas larmet
+ * i Discord igen och VA:n får samma larm två gånger (det hände 2026-09-21).
+ * Verktyget svarar med exit 1 när inget brand kunde läsas; JSON:en står ändå
+ * på stdout, så den läses oavsett exitkod. `kor` byts ut i tester.
+ */
+export const TVISTKOLL_ARGS = Object.freeze(['kundtjanst/tvistkoll.mjs', '--alla', '--torr', '--json']);
+
+export async function korTvistkoll({ rot = ROT, env = process.env, kor = null, nu = new Date() } = {}) {
+  const args = [...TVISTKOLL_ARGS];
+  let stdout = '';
+  try {
+    if (kor) stdout = await kor(args);
+    else {
+      stdout = await new Promise((los, fall) => {
+        execFile(process.execPath, args, { cwd: rot, env, maxBuffer: 16 * 1024 * 1024, timeout: 240_000 }, (fel, ut) => {
+          // exit 1 = "inget brand kunde läsas" — JSON:en finns ändå. Bara ett tomt stdout är ett riktigt fel.
+          if (fel && !String(ut ?? '').trim()) fall(fel); else los(String(ut ?? ''));
+        });
+      });
+    }
+    const start = stdout.indexOf('[');
+    if (start === -1) throw new Error('tvistkoll gav ingen JSON på stdout');
+    let slut = stdout.lastIndexOf(']');
+    let lista = null;
+    while (slut > start) {
+      try { lista = JSON.parse(stdout.slice(start, slut + 1)); break; } catch { slut = stdout.lastIndexOf(']', slut - 1); }
+    }
+    if (!Array.isArray(lista)) throw new Error('tvistkoll-JSON gick inte att tolka');
+    return { status: 'ok', hamtad: nu.toISOString(), orsak: null, brands: lista };
+  } catch (e) {
+    return { status: 'fel', hamtad: nu.toISOString(), orsak: String(e?.message ?? e).slice(0, 300), brands: [] };
+  }
+}
 
 /** Bakar in datan i mallen. `</script` i datan bryts så sidan inte kan gå sönder. */
 export function byggSida({ mall = MALL, ut = UT, data } = {}) {
@@ -114,6 +164,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     } else {
       await hamtaVaKo(data.autosvar, { logg: (m) => console.error(`  brevlådan: ${m}`) });
     }
+    // Tvisterna: snapshoten (allt öppet) + tvistkollen torrt (vad som brådskar). --utan-tvistkoll hoppar verktyget.
+    const { upptackBrands } = await import('./brands.mjs');
+    const tvistkoll = args.includes('--utan-tvistkoll')
+      ? { status: 'hoppad', hamtad: null, orsak: 'tvistkoll not run for this build (--utan-tvistkoll)', brands: [] }
+      : await korTvistkoll({ rot: ROT });
+    data.tvister = samlaTvister({ snapshot: lasSnapshot(), tvistkoll, brands: upptackBrands().map((b) => ({ id: b.id, namn: b.brand })), handbok: lasHandbok() });
     const fil = byggSida({ data });
     console.log(`Sida: ${fil.replace(`${ROT}/`, '')}`);
     if (!data.brands.length) {
@@ -129,6 +185,12 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       const a = o.antal; const bl = o.brevlada;
       const mappen = bl?.status === 'ok' ? `${bl.totalt} mejl i ${bl.mapp}` : `${bl?.mapp ?? 'VA-PRIO'} inte läst (${bl?.orsak ?? 'okänt'})`;
       console.log(`  autosvar ${id.padEnd(16)} ${data.autosvar.dagar} d: ${a.mejl} mejl · svar ${a.svar} · utkast ${a.utkast} · ARG ${a.ARG} · till VA:n ${a.tillVa} · fel ${a.fel} · ${mappen}`);
+    }
+    const tv = data.tvister;
+    console.log(`  tvister: snapshot ${tv.snapshotByggd ?? '–'} · tvistkoll ${tv.kollStatus}${tv.kollOrsak ? ` (${tv.kollOrsak})` : ''}`);
+    for (const b of tv.brands) {
+      const pengar = Object.entries(b.pengarIRisk).map(([v, s]) => `${s} ${v}`).join(' · ') || '–';
+      console.log(`    ${b.namn.padEnd(16)} ${b.tillganglig === false ? `OKÄND — ${b.orsak}` : `${b.antal.oppna} öppna · ${b.antal.chargebacks} chargebacks · ${b.antal.forsenade} försenade · ${b.antal.idag} i dag · i risk ${pengar}${b.tillganglig === null ? ` · ${b.orsak}` : ''}`}`);
     }
     const url = lasUrl();
     console.log(url

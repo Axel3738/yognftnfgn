@@ -132,7 +132,7 @@
 
   /* ---------- Åtgärdsplanen ---------- */
   .hink + .hink { margin-top: 18px; }
-  .hink > h3 { font-size: 14px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+  .hink > h3 { font-size: 14px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 9px; }
   .hink > h3 .antal { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink-3); background: var(--yta-3); border-radius: 99px; padding: 2px 8px; letter-spacing: 0; }
   .atgard { background: var(--yta); border: 1px solid var(--linje); border-radius: 14px; box-shadow: var(--skugga); padding: 17px 19px; display: flex; flex-direction: column; gap: 11px; }
   .atgard + .atgard { margin-top: 11px; }
@@ -193,6 +193,10 @@
   .kallor .v { font-family: var(--display); font-weight: 700; font-size: 20px; font-variant-numeric: tabular-nums; }
   .kallor .n { font-size: 12.5px; color: var(--ink-3); }
   .varning-ruta { background: var(--varning-yta); border: 1px solid transparent; border-left: 4px solid var(--varning); border-radius: 0 11px 11px 0; padding: 11px 15px; font-size: 14px; color: var(--ink); }
+  .varning-ruta details { margin-top: 6px; }
+  .varning-ruta summary { cursor: pointer; font-size: 13px; color: var(--ink-2); }
+  .order-id .mini { display: block; }
+  .orsak-full { white-space: pre-wrap; word-break: break-word; font-size: 12px; line-height: 1.45; max-height: 16rem; overflow: auto; margin: 6px 0 0; padding: 8px 10px; background: var(--yta); border: 1px solid var(--linje); border-radius: 8px; }
   .varning-ruta ul { margin: 5px 0 0; padding-left: 20px; }
   .tomt { background: var(--yta); border: 1px dashed var(--linje-2); border-radius: 14px; padding: 22px; color: var(--ink-3); font-size: 14.5px; }
   footer.fot { color: var(--ink-3); font-size: 13px; display: flex; flex-direction: column; gap: 4px; max-width: 80ch; }
@@ -265,9 +269,15 @@
     <div id="auto" class="auto-block"></div>
   </section>
 
+  <section id="tvist-alla-sektion">
+    <h2 data-t="tvistAlla">Disputes now — all stores</h2>
+    <p class="ingress" data-t="tvistAllaIngress">Every open dispute across all stores, chargebacks first — that is where money is actually lost. Reply to the customer today. Evidence gets better with time (a delivery scan usually lands before the deadline), so save it in Shopify and send it in on the day before the deadline. The procedure is in the handbook, not here.</p>
+    <div id="tvist-alla" class="auto-block"></div>
+  </section>
+
   <section id="tvist-sektion">
-    <h2 data-t="tvister">Disputes and bank inquiries</h2>
-    <p class="ingress" data-t="tvistIngress">Shopify admin → Orders → Disputes. An unanswered dispute is lost automatically.</p>
+    <h2 data-t="tvister">Disputes in this week's report</h2>
+    <p class="ingress" data-t="tvistIngress">Shopify admin → Orders → Disputes. An unanswered chargeback is lost; an unanswered inquiry escalates into a chargeback.</p>
     <div class="rullbar"><table id="tvister"></table></div>
   </section>
 
@@ -299,7 +309,7 @@
   const T = {
     en: { plan: 'What to do', planIngress: 'Worked top to bottom. Every item lists the measured number it comes from.',
       ko: 'Work queue', koIngress: 'Every open ticket, most dangerous and longest waiting first. Search the order number in Shopify.',
-      tvister: 'Disputes and bank inquiries', tvistIngress: 'Shopify admin → Orders → Disputes. An unanswered dispute is lost automatically.',
+      tvister: "Disputes in this week's report", tvistIngress: 'Shopify admin → Orders → Disputes. An unanswered chargeback is lost; an unanswered inquiry escalates into a chargeback.',
       kategorier: 'What customers write about', katIngress: 'Volume per category, and whether the VA has an SOP for it in Notion.',
       trend: 'Week by week', trendIngress: 'Risk score and unanswered tickets. Three weeks are needed before "recurring" can be measured.',
       kalla: 'What was read', kallaIngress: 'Every email in the support mailbox for the period, and what was filtered out before counting.',
@@ -325,10 +335,19 @@
       answeredTitle: 'Answered automatically — sent and drafts', errorsTitle: 'Errors', perDay: 'Per day', when: 'When (UTC)', bucket: 'Bucket', why: 'Why', typeCol: 'Type',
       sent: 'sent', draft: 'draft', flagged: 'flagged', error: 'error', upset: 'upset', forVa: 'for the VA', simple: 'simple',
       noVa: 'Nothing waiting for the VA in the log.', noUpset: 'No upset customers in the period.', noAnswered: 'Nothing answered automatically yet.', emails: 'emails',
-      autoFot: 'Source: kundtjanst/autosvar/logg/<store>.jsonl — the latest row per email wins. The numbers are computed once by oversikt.mjs; this page only shows them.' },
+      autoFot: 'Source: kundtjanst/autosvar/logg/<store>.jsonl — the latest row per email wins. The numbers are computed once by oversikt.mjs; this page only shows them.',
+      // Tvisterna, alla butiker
+      tvistAlla: 'Disputes now — all stores', tvistAllaIngress: 'Every open dispute across all stores, chargebacks first — that is where money is actually lost. Reply to the customer today. Evidence gets better with time (a delivery scan usually lands before the deadline), so save it in Shopify and send it in on the day before the deadline. The procedure is in the handbook, not here.',
+      tvistAllaNone: 'Disputes were not read for this build.', asOf: 'Open disputes as of', urgencyRead: 'urgency read', urgencyNotRead: 'urgency not read',
+      open: 'open', moneyAtRisk: 'money at risk', disputes180: 'disputes in 180 days', unknownBrand: 'Unknown — could not be read.', noOpen: 'No open disputes.',
+      urgencyFromSnapshot: 'Urgency was not read live for this store — the rows below come from the hourly snapshot, and days left are counted by the page from the deadline.', fullReason: 'show the full reason', dayOverdue: 'day overdue', daysOverdue: 'days overdue',
+      dueToday: 'due TODAY', overdue: 'OVERDUE', dayLeft: 'day left', daysLeft: 'days left', noDeadline: 'no deadline read', urgent: 'urgent',
+      evidenceDue: 'Evidence due', timeLeft: 'Time left', submitBy: 'Submit by', handbook: 'Handbook', needsResponse: 'needs response', underReview: 'under review — evidence submitted',
+      orderId: 'Shopify order id', chargebackWord: 'chargeback', inquiryWord: 'inquiry', reasonUnknown: '—',
+      tvistFot: 'Sources: open disputes from stonebite/data/snapshot.json; urgency (days left) from kundtjanst/tvistkoll.mjs, run dry — nothing is posted or written. No verdict is shown: the handbook decides.' },
     sv: { plan: 'Vad som ska göras', planIngress: 'Görs uppifrån och ner. Varje punkt bär talet den bygger på.',
       ko: 'Arbetskön', koIngress: 'Alla obesvarade ärenden, farligast och äldst först. Sök ordernumret i Shopify.',
-      tvister: 'Tvister och bankförfrågningar', tvistIngress: 'Shopify → Orders → Disputes. En obesvarad chargeback förloras; en obesvarad förfrågan eskalerar till chargeback.',
+      tvister: 'Tvister i veckans rapport', tvistIngress: 'Shopify → Orders → Disputes. En obesvarad chargeback förloras; en obesvarad förfrågan eskalerar till chargeback.',
       kategorier: 'Vad kunderna skriver om', katIngress: 'Volym per kategori, och om VA:n har en SOP för den i Notion.',
       trend: 'Vecka för vecka', trendIngress: 'Riskpoäng och obesvarade ärenden. Tre veckor krävs innan "återkommande" går att mäta.',
       kalla: 'Vad som lästes', kallaIngress: 'Alla mejl i supportbrevlådan för perioden, och vad som sorterades bort före räkningen.',
@@ -354,7 +373,16 @@
       answeredTitle: 'Besvarade automatiskt — skickade och utkast', errorsTitle: 'Fel', perDay: 'Per dag', when: 'När (UTC)', bucket: 'Hink', why: 'Varför', typeCol: 'Typ',
       sent: 'skickat', draft: 'utkast', flagged: 'flaggad', error: 'fel', upset: 'arg', forVa: 'till VA:n', simple: 'enkel',
       noVa: 'Inget väntar på VA:n i loggen.', noUpset: 'Inga arga kunder i perioden.', noAnswered: 'Inget besvarat automatiskt än.', emails: 'mejl',
-      autoFot: 'Källa: kundtjanst/autosvar/logg/<butik>.jsonl — senaste raden per mejl vinner. Talen räknas en gång av oversikt.mjs; sidan bara visar dem.' },
+      autoFot: 'Källa: kundtjanst/autosvar/logg/<butik>.jsonl — senaste raden per mejl vinner. Talen räknas en gång av oversikt.mjs; sidan bara visar dem.',
+      // Tvisterna, alla butiker
+      tvistAlla: 'Tvisterna just nu — alla butiker', tvistAllaIngress: 'Varje öppen tvist över alla butiker, chargebacks först — det är där pengarna faktiskt förloras. Svara kunden i dag. Bevisen blir bättre med tiden (en leveransskanning landar oftast före deadline), så spara dem i Shopify och skicka in dagen före deadline. Proceduren står i handboken, inte här.',
+      tvistAllaNone: 'Tvisterna lästes inte vid det här bygget.', asOf: 'Öppna tvister per', urgencyRead: 'brådskan läst', urgencyNotRead: 'brådskan inte läst',
+      open: 'öppna', moneyAtRisk: 'pengar i risk', disputes180: 'tvister på 180 dagar', unknownBrand: 'Okänt — gick inte att läsa.', noOpen: 'Inga öppna tvister.',
+      urgencyFromSnapshot: 'Brådskan lästes inte live för den här butiken — raderna nedan kommer ur timsnapshoten, och dagar kvar räknar sidan ur deadline.', fullReason: 'visa hela orsaken', dayOverdue: 'dag försenad', daysOverdue: 'dagar försenad',
+      dueToday: 'går ut I DAG', overdue: 'FÖRSENAD', dayLeft: 'dag kvar', daysLeft: 'dagar kvar', noDeadline: 'ingen deadline läst', urgent: 'brådskar',
+      evidenceDue: 'Bevis senast', timeLeft: 'Tid kvar', submitBy: 'Skicka in senast', handbook: 'Handboken', needsResponse: 'väntar på svar', underReview: 'under granskning — bevis inskickade',
+      orderId: 'Shopify order-id', chargebackWord: 'chargeback', inquiryWord: 'förfrågan', reasonUnknown: '—',
+      tvistFot: 'Källor: öppna tvister ur stonebite/data/snapshot.json; brådskan (dagar kvar) ur kundtjanst/tvistkoll.mjs körd torrt — inget postas eller skrivs. Ingen dom visas: handboken avgör.' },
   };
 
   let sprak = 'en';
@@ -576,6 +604,70 @@
       <p class="ingress" style="margin:0">${esc(t().autoFot)}</p>`;
   }
 
+  /**
+   * Tvisterna över alla butiker (DATA.tvister ur samlaTvister). Chargebacks
+   * överst, kvar och orsak är tvistkollens där den räknat — sidan räknar inte
+   * om. Försenad och "går ut i dag" är två olika stämplar. Okända varumärken
+   * visas med orsaken ordagrant, aldrig som noll. Ingen dom.
+   */
+  function ritaTvisterAlla() {
+    const D = DATA.tvister; const box = el('tvist-alla');
+    if (!D) { box.innerHTML = `<div class="tomt">${t().tvistAllaNone}</div>`; return; }
+    const nar = (iso) => esc(String(iso ?? '').slice(0, 16).replace('T', ' '));
+    const dagar = (n) => `${num(Math.abs(n))} ${Math.abs(n) === 1 ? t().dayLeft : t().daysLeft}`;
+    const forsenad = (n) => `${num(Math.abs(n))} ${Math.abs(n) === 1 ? t().dayOverdue : t().daysOverdue}`;
+    const tidKvar = (r) => (r.lage === 'forsenad' ? `<span class="stampel rod">${t().overdue} · ${forsenad(r.kvar)}</span>`
+      : r.lage === 'idag' ? `<span class="stampel rod">${t().dueToday}</span>`
+        : r.lage === 'bradskande' ? `<span class="stampel gul">${dagar(r.kvar)}</span>`
+          : r.lage === 'kommande' ? `<span class="stampel grå">${dagar(r.kvar)}</span>`
+            : `<span class="stampel grå">${t().noDeadline}</span>`);
+    const typ = (r) => (r.typ === 'chargeback' ? `<span class="stampel rod">${t().chargebackWord}</span>` : `<span class="stampel gul">${t().inquiryWord}</span>`);
+    const order = (r) => (r.orderArId ? `<span class="order-id"><span class="mini">${esc(t().orderId)}</span>${esc(r.order)}</span>` : esc(r.order));
+    const status = (r) => (r.underReview ? `<span class="stampel gron">${t().underReview}</span>` : r.status === 'needs response' ? `<strong>${t().needsResponse}</strong>` : esc(r.status || '—'));
+    const hb = D.handbok ?? {};
+    const lank = (r) => (hb.start ? `<a href="${esc(hb.start)}" target="_blank" rel="noopener">${t().handbook}</a>${r.typ === 'chargeback' && hb.forsta_timmen ? ` · <a href="${esc(hb.forsta_timmen)}" target="_blank" rel="noopener">${sprak === 'en' ? 'first hour' : 'första timmen'}</a>` : ''}` : '—');
+    const pengar = (b) => (Object.keys(b.pengarIRisk).length ? Object.entries(b.pengarIRisk).map(([v, s]) => `${num(s)} ${esc(v)}`).join(' · ') : '—');
+
+    // Orsaken står ordagrant. Är den lång (Shopifys HTML-felsida, flera rader) visas
+    // första raden och resten under "visa hela orsaken" — inget klipps bort.
+    const orsakHtml = (orsak) => {
+      const s = String(orsak ?? '').trim(); if (!s) return '';
+      const [forsta, ...rest] = s.split('\n');
+      const lang = rest.length || forsta.length > 220;
+      if (!lang) return esc(s);
+      return `${esc(forsta.slice(0, 220))}${forsta.length > 220 ? '…' : ''}<details><summary>${esc(t().fullReason)}</summary><pre class="orsak-full">${esc(s)}</pre></details>`;
+    };
+    const block = (b) => {
+      const okand = b.tillganglig === false;
+      const okandUtanRader = okand && !b.oppna.length;
+      const huvud = `<h3>${esc(b.namn)}<span class="antal">${num(b.antal.oppna)} ${t().open}</span>${b.antal.chargebacks ? `<span class="antal">${num(b.antal.chargebacks)} ${t().chargebackWord}${b.antal.chargebacks === 1 ? '' : 's'}</span>` : ''}${okandUtanRader ? `<span class="stampel grå">${sprak === 'en' ? 'unknown' : 'okänt'}</span>` : okand ? `<span class="stampel grå">${t().urgencyNotRead}</span>` : ''}</h3>`;
+      const rad = `<div class="auto-huvud"><span>${t().moneyAtRisk}: <b>${pengar(b)}</b></span>${b.tvister180 !== null ? `<span><b>${num(b.tvister180)}</b> ${t().disputes180}</span>` : ''}${b.tillganglig === null && b.orsak ? `<span><span class="stampel grå">${t().urgencyNotRead}</span> ${esc(b.orsak)}</span>` : ''}</div>`;
+      // Okänt utan rader: varumärket gick inte att läsa alls — aldrig en nolla. Okänt MED rader
+      // (snapshoten läste tvisterna, tvistkollen inte): raderna står, brådskan är sidans räkning.
+      const varning = okandUtanRader ? `<div class="varning-ruta"><strong>${esc(t().unknownBrand)}</strong> ${orsakHtml(b.orsak)}</div>`
+        : okand ? `<div class="varning-ruta"><strong>${esc(t().urgencyFromSnapshot)}</strong> ${orsakHtml(b.orsak)}</div>` : '';
+      const tabellHtml = b.oppna.length ? `<div class="rullbar"><table><thead><tr>
+          <th>${t().type}</th><th>${t().order}</th><th>${t().reason}</th><th>${t().amount}</th><th>${t().evidenceDue}</th><th>${t().timeLeft}</th><th>${t().submitBy}</th><th>${t().status}</th><th>${t().handbook}</th></tr></thead>
+        <tbody>${b.oppna.map((r) => `<tr>
+          <td>${typ(r)}${r.bradskande ? `<span class="amne">⚑ ${t().urgent}</span>` : ''}</td>
+          <td class="n">${order(r)}</td>
+          <td>${esc(r.orsak ?? t().reasonUnknown)}</td>
+          <td class="n">${r.belopp ? `${num(r.belopp)} ${esc(r.valuta ?? '')}` : '—'}</td>
+          <td class="n">${esc(r.deadline ?? '—')}</td>
+          <td>${tidKvar(r)}</td>
+          <td class="n">${esc(r.submitBy ?? '—')}</td>
+          <td>${status(r)}</td>
+          <td>${lank(r)}</td></tr>`).join('')}</tbody></table></div>`
+        : (okand ? '' : `<div class="tomt">${t().noOpen}</div>`);
+      return `<div class="hink">${huvud}${rad}${varning}${tabellHtml}</div>`;
+    };
+
+    box.innerHTML = `
+      <div class="auto-huvud"><span>${t().asOf} <b>${nar(D.snapshotByggd)} UTC</b></span><span>${t().urgencyRead} <b>${D.kollStatus === 'ok' ? `${nar(D.kollHamtad)} UTC` : '—'}</b></span>${D.kollStatus !== 'ok' ? `<span><span class="stampel grå">${t().urgencyNotRead}</span> ${esc(D.kollOrsak ?? D.kollStatus)}</span>` : ''}</div>
+      ${D.brands.length ? D.brands.map(block).join('') : `<div class="tomt">${t().tvistAllaNone}</div>`}
+      <p class="ingress" style="margin:0">${esc(t().tvistFot)}</p>`;
+  }
+
   function ritaTvister() {
     const v = vy();
     const lista = (v.tvister ?? []).slice().sort((a, b) => (b.oppen - a.oppen) || String(a.deadline ?? '9999').localeCompare(String(b.deadline ?? '9999')));
@@ -652,7 +744,7 @@
     if (!b) { document.querySelector('.sida').innerHTML = '<h1>Support Control Room</h1><p>No runs yet.</p>'; return; }
     if (!vecka || !(b.arkiv && b.arkiv[vecka])) vecka = (b.veckor ?? [b.vecka]).slice().sort().pop();
     for (const node of document.querySelectorAll('[data-t]')) node.textContent = t()[node.dataset.t] ?? node.textContent;
-    ritaReglage(); ritaLaget(); ritaPlan(); ritaKo(); ritaAutosvar(); ritaTvister(); ritaKategorier(); ritaKurva(); ritaKallor();
+    ritaReglage(); ritaLaget(); ritaPlan(); ritaKo(); ritaAutosvar(); ritaTvisterAlla(); ritaTvister(); ritaKategorier(); ritaKurva(); ritaKallor();
   }
 
   document.addEventListener('click', (e) => {
