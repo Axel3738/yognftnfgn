@@ -1397,3 +1397,10 @@ konceptets vinkel, och en annons utan spend på sju dygn etiketteras `INGEN_LEVE
 och släpps. Följ inte den gamla texten i Discord; CLAUDE.md regel 11 är facit.
 
 Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa rutinen, 18 sep).
+
+## 2026-09-22 — NO-översättning: femte dygnet oförändrat
+
+Kön 0 rader, `DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09`
+(`120249020611450172`) fortsatt PAUSED med 8 476 kr spend. Inget rört i kontot.
+Priset på den norska sidan läser **381 NOK** (`?country=NO`), samma som i går.
+Rapport: Discord `1551954986294972497`.
