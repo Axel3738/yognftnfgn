@@ -528,8 +528,23 @@ kontroll kan dröja ett par timmar efter att DNS ändrats.
 ⚠️ **Fyra andra Railway-projekt bygger samma repo från `main` vid varje push**
 (`tranquil-insight`, `considerate-delight`, `pretty-quietude`,
 `compassionate-sparkle`, mätt 2026-09-21). De konkurrerar om byggslottarna —
-mergen fick vänta ~10 minuter — och äter planens domängräns. Ingen har rörts;
-det är Axels beslut om de ska bort.
+mergen fick vänta ~10 minuter — och äter planens domängräns.
+⛔ **Mätt 2026-09-22 kväll: det kostar timmar, inte minuter.** Sedan rutinerna
+pushar 7–8 gånger i timmen (sex spårningsrutiner + `/stonebite`) bygger de
+fyra projekten oavbrutet, och sajtens egna deployer står i **"Waiting for
+build slot"** i över en timme: PR #113 (17:10 CEST) gick live först 18:49,
+och PR #119 (mergad 18:17) var inte live 20:18 — `/halsa` visade snapshoten
+från 17:07 hela kvällen. Railway hoppar dessutom över äldre köade deployer
+när nyare kommer (18:06-snapshoten och #119 syntes inte i kön, bara 19:06 och
+20:06), så det är alltid den nyaste commiten på `main` som till slut byggs.
+**Sajten ligger alltså ~2 h efter `main` så länge projekten finns.** Railway
+går inte att nå från en session (ingen token, ingen CLI — mätt samma kväll),
+och Axels besked var "du får ju göra det där": därför Cowork-prompten
+**`stonebite/cowork/4-byggko.txt`** — inventerar alla projekt, tar bort dem
+som enbart bygger yognftnfgn `main` utan domän och volym, kopplar annars bara
+bort GitHub-källan, rör aldrig `strong-solace` eller StonePNL-projektet
+(branchen `claude/bäverbutiken-settkopplingen-nba21z`), och verifierar sedan
+att kön i strong-solace börjar bygga och att `/influencers` svarar.
 
 ✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
 Barkås-konto (`barkas.kundservice@gmail.com`), inte på `claude5@stonebite.org`**

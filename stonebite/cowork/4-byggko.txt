@@ -1,0 +1,71 @@
+Sajten stonebite.org ligger på Railway och uppdateras inte längre i tid. Jag
+vill att du rensar bort de Railway-projekt som stjäl byggplatsen, utan att
+röra sajten. Gör allt i den här fliken och fråga mig om inloggning när du
+behöver den.
+
+BAKGRUND, så du förstår vad du letar efter.
+Sajten är projektet "strong-solace" med tjänsten "yognftnfgn". Den bygger
+från GitHub-repot Axel3738/yognftnfgn, branch main, och bara när filer under
+stonebite/, bonus/ eller package.json ändras. Det repot får pushar sju till
+åtta gånger i timmen från mina rutiner. Problemet: det finns fler projekt i
+samma Railway-konto som bygger SAMMA repo vid VARJE push, utan filter. De
+tar byggplatsen hela tiden, och sajtens egna deployer står som "Waiting for
+build slot" i timmar. I går hette de tranquil-insight, considerate-delight,
+pretty-quietude och compassionate-sparkle. Det kan finnas fler i dag.
+
+RÖR ALDRIG DE HÄR, oavsett vad du hittar:
+  - projektet strong-solace (sajten) och dess tjänst yognftnfgn
+  - något projekt vars tjänster bygger branchen
+    claude/bäverbutiken-settkopplingen-nba21z — det är StonePNL, min
+    Shopify-app med sex tjänster. Den ska stå kvar exakt som den är.
+
+STEG 1 — inventera.
+Gå till railway.app och logga in med mitt konto. Öppna varje projekt i
+kontot, ett i taget, och skriv upp för varje tjänst:
+  - vilket GitHub-repo och vilken branch den bygger från
+    (Service → Settings → Source)
+  - om den har någon egen domän (Settings → Networking → Custom Domains)
+  - om den har en volym (Volume) kopplad
+  - vad den senaste deployen har för status (Deployments)
+Ta med strong-solace och StonePNL i inventeringen också, men gör inget med dem.
+
+STEG 2 — stoppa dubbletterna.
+För varje projekt som INTE är strong-solace och INTE är StonePNL:
+
+  a) Bygger alla dess tjänster Axel3738/yognftnfgn från main, och ingen tjänst
+     har egen domän eller volym? Då är projektet en dubblett av sajten och
+     ska bort: projektets Settings → längst ner under Danger → Delete Project.
+     Bekräfta med projektnamnet om Railway ber om det. Deployer som ligger i
+     kö i projektet försvinner med det.
+
+  b) Har någon tjänst i projektet en egen domän, en volym, eller bygger ett
+     annat repo eller en annan branch? Ta då INTE bort projektet. Koppla i
+     stället bort GitHub-källan på varje tjänst som bygger yognftnfgn main
+     (Service → Settings → Source → Disconnect), så att den slutar bygga, och
+     skriv i rapporten exakt vad projektet innehöll så jag kan avgöra resten.
+
+Heter en knapp något annat än jag skrivit: leta i samma meny, det är samma
+sak. Ta inte bort något annat för att "städa".
+
+STEG 3 — kontrollera att sajten börjar bygga igen.
+Öppna strong-solace → yognftnfgn → Deployments. Där ligger en eller flera
+deployer med texten "Stonebite: färsk data …" i kö. Inom några minuter efter
+steg 2 ska den nyaste gå från "Waiting for build slot" till Building och
+sedan Active. Vänta upp till 15 minuter. Blir den Active: öppna i en ny
+privat flik och skriv resultatet i rapporten:
+
+  1. https://www.stonebite.org/influencers ska visa rubriken
+     "Mikroinfluencers som säljer. Kontakterna samma dag."
+  2. https://www.stonebite.org/tjanster ska skicka vidare till /influencers.
+  3. https://www.stonebite.org ska visa "Vi bygger butiker som säljer." och
+     menyn ska säga "Influencers", inte "Tjänster".
+
+Står deployen kvar som "Waiting for build slot" efter 15 minuter: säg det
+rakt ut och skriv vad som byggs någon annanstans i kontot just då.
+
+RAPPORTERA TILL SIST, i den här ordningen:
+  - varje projekt i kontot: namn, vad tjänsterna byggde, domän/volym ja/nej,
+    och vad du gjorde med det (behöll, tog bort, kopplade bort källan)
+  - tiden när sajtens deploy gick från kö till Building, och när den blev Active
+  - resultatet av de tre kontrollerna i steg 3
+Gissa inte. Fungerar något inte, skriv exakt vad Railway visade.
