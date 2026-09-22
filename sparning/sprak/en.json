@@ -173,6 +173,7 @@
     "Paketet är lastat för transport till ombudet": "The parcel has been loaded for transport to the service point",
     "Paketet väntar på transport till ombudet": "The parcel is waiting for transport to the service point",
     "Paketet är samlastat med andra paket": "The parcel has been consolidated with other parcels",
-    "Paketet har kommit till destinationsterminalen": "The parcel has arrived at the destination terminal"
+    "Paketet har kommit till destinationsterminalen": "The parcel has arrived at the destination terminal",
+    "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Your parcel is being delivered tonight. Mark your mailbox and door with your full name — the courier will not ring the bell, and you will get a text tomorrow morning once it has been delivered"
   }
 }

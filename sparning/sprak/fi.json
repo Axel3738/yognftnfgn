@@ -177,6 +177,7 @@
     "Paketet är lastat för transport till ombudet": "Paketti on lastattu kuljetettavaksi noutopisteeseen",
     "Paketet väntar på transport till ombudet": "Paketti odottaa kuljetusta noutopisteeseen",
     "Paketet är samlastat med andra paket": "Paketti on yhdistetty muiden pakettien kanssa",
-    "Paketet har kommit till destinationsterminalen": "Paketti on saapunut määränpääterminaaliin"
+    "Paketet har kommit till destinationsterminalen": "Paketti on saapunut määränpääterminaaliin",
+    "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat": "Paketti toimitetaan yön aikana. Merkitse postilaatikkoon ja oveen koko nimesi — kuljettaja ei soita ovikelloa, ja saat huomenaamuna tekstiviestin kun paketti on toimitettu"
   }
 }
