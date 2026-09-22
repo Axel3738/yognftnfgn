@@ -68,14 +68,18 @@ notion:
 # Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina platshållare med.
 # Avläst ur butikens egen återbetalningspolicy 2026-09-20 — inte gissat.
 tvister:
-  # Butikens EGEN policy, ordagrant: "Vi har 30 dagars returpolicy, vilket
-  # betyder att du har 30 dagar på dig att begära retur från det att du
-  # mottog artikeln." ⚠️ FRÅN MOTTAGANDET. Leveranstiden är 3–4 veckor
-  # (mätt på tvistordrarna: #5418 beställd 16/8, levererad 11/9 = 26 dagar),
-  # så fönstret öppnar en månad efter köpet.
-  returfonster_dagar: 30
+  # ⚠️ Axels beslut 2026-09-22 (alternativ B): returfönstret är 14 dagar från
+  # mottagandet — samma som den lagstadgade ångerrätten. Autosvaret och
+  # tvist-SOP:erna säger 14 sedan dess. Den publicerade policyn
+  # (policy_url nedan) och VA:ns SOP 18 i Notion sade fortfarande 30 vid
+  # beslutet ("Vi har 30 dagars returpolicy … från det att du mottog
+  # artikeln") — Axel ändrar policysidan i Shopify själv; tills dess kan en
+  # kund peka på sidans 30 dagar. FRÅN MOTTAGANDET gäller fortfarande:
+  # leveranstiden är 3–4 veckor (mätt på tvistordrarna: #5418 beställd 16/8,
+  # levererad 11/9 = 26 dagar), så fönstret öppnar en månad efter köpet.
+  returfonster_dagar: 14
   # Lagstadgad ångerrätt, står på samma sida: 14 dagar från mottagandet
-  # (distansavtalslagen 2005:59). Gäller parallellt med de 30 dagarna.
+  # (distansavtalslagen 2005:59).
   angerratt_dagar: 14
   policy_url: "https://baverbutiken.se/policies/refund-policy"   # svarar 200, avläst 2026-09-20
   # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen

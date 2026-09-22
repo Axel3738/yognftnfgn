@@ -315,8 +315,12 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   (Customer Wants to Return) säger 30 dagar från mottagandet**, och nämner
   EU:s 14 dagars ångerrätt vid sidan om ("Refer to the 30-day return policy
   and the EU 14-day right of withdrawal"); den publicerade policyn
-  (`/policies/refund-policy`) säger också 30. Mejlet säger 30 tills Axel
-  ändrar policyn (`tvister.returfonster_dagar`).
+  (`/policies/refund-policy`) säger också 30. **Axels beslut 2026-09-22,
+  alternativ B: 14 dagar.** `tvister.returfonster_dagar` är 14 i
+  Bäverbutikens brandfil sedan dess, så returmejlet och tvist-SOP:ernas
+  platshållare säger 14. ⚠️ Policysidan i Shopify och SOP 18 i Notion sade
+  fortfarande 30 vid beslutet — de är Axels respektive VA:ns att ändra, och
+  tills sidan är ändrad kan en kund peka på dess 30 dagar.
 - Utkastet "Niklas Hurtig, Re:" i Drafts är daterat 2026-08-19 och kommer
   inte från autosvaret (som byggdes 2026-09-21). Axels invändning gäller
   ändå som regel: nämn fraktbolaget för sista biten vid namn (det gör

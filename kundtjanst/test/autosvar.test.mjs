@@ -435,7 +435,8 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   assert.deepEqual([per[15].hink, per[15].typ, per[15].atgard, per[15].flaggad, per[15].flyttad], ['ENKEL', 'retur', 'utkast', true, 'VA-PRIO']);
   const utkastDisa = b.utkast().find((u) => /disa@x\.se/.test(u.ra)).text;
   assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\n4\. Använd gärna en spårbar frakttjänst/);
-  assert.match(utkastDisa, /\nReturen ska skickas inom 30 dagar från att du tog emot varan\.\nHela returpolicyn: https:\/\/baverbutiken\.se\/policies\/refund-policy\n/);
+  // Axels beslut 2026-09-22 (B): 14 dagar från mottagandet, ur brandfilens tvister.returfonster_dagar.
+  assert.match(utkastDisa, /\nReturen ska skickas inom 14 dagar från att du tog emot varan\.\nHela returpolicyn: https:\/\/baverbutiken\.se\/policies\/refund-policy\n/);
   assert.equal(/Returfrakten|återbetal/i.test(utkastDisa), false, 'vem som betalar frakten sägs inte förrän brandfilen säger det; aldrig ordet återbetalning');
   // SVÅR: tvist, bilaga, annan kunds order — flaggade, inget utkast
   for (const uid of [14, 20, 21]) {
@@ -1035,7 +1036,8 @@ test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + retur
     const r = returText({ sprak: s, brand: KONFIG, ordernummer: '#6600' });
     assert.match(r, /STONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige/);
     assert.match(r, /#6600/);
-    assert.match(r, /30/);
+    assert.match(r, /\b14\b/, `Axels beslut 2026-09-22 (B): 14 dagar ur brandfilen, på ${s}`);
+    assert.equal(/\b30\b/.test(r), false, `aldrig 30 dagar kvar i returtexten på ${s}`);
     assert.match(r, /refund-policy/);
     assert.equal(harForbjudet(r), false, s);
   }
