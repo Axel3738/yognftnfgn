@@ -14,13 +14,17 @@
 // `profil.varumarken` finns kvar i filen men renderas BARA inloggad, på
 // sidan Butiker. Bygg aldrig tillbaka listan, antalet eller de härledda
 // siffrorna ("Varumärken 11", "Länder vi säljer i 6") på den publika sidan.
-// Ett test i `test/server.test.mjs` hämtar `/` och `/tjanster` och letar
+// Ett test i `test/server.test.mjs` hämtar `/` och `/influencers` och letar
 // efter varje butiksnamn och varje domän ur profil.json — det ska förbli
 // rött om någon försöker igen.
 //
-// Tre grenar visas (Axels beslut 2026-09-21): e-handeln, YouTube-kanalen och
-// konsulttjänsterna. YouTube står som en egen verksamhet med flit — bolaget
-// lägger tid, utrustning och resor på den, och sidan ska visa det.
+// Två grenar visas (Axels beslut 2026-09-21): e-handeln och YouTube-kanalen.
+// YouTube står som en egen verksamhet med flit — bolaget lägger tid,
+// utrustning och resor på den, och sidan ska visa det. Därtill ETT
+// erbjudande: mikroinfluenserna (/influencers). Konsultsidan togs bort
+// 2026-09-22 (Axel: "jag vill inte sälja några tjänster eller mentorskap
+// eller någonting, jag vill bara ha information om mitt företag") — sidan
+// är information om bolaget, inte en byrå.
 
 import { esc, attr } from './delar.mjs';
 import { publiktSkal } from './layout.mjs';
@@ -58,7 +62,7 @@ export function publikaFotlankar(profil) {
   const yt = profil?.youtube?.url;
   return [
     yt ? { titel: 'YouTube', url: yt, extern: true } : null,
-    { titel: 'Tjänster', url: '/tjanster' },
+    { titel: 'Influencers', url: '/influencers' },
     profil?.kontakt?.epost ? { titel: 'Kontakt', url: `mailto:${profil.kontakt.epost}` } : null,
   ].filter(Boolean);
 }
@@ -90,23 +94,57 @@ function youtubeSektion(yt, bildYt) {
 </div></section>`;
 }
 
-function tjansterTeaser(tj) {
-  if (!tj?.rubrik) return '';
-  const tre = (tj.omraden ?? []).slice(0, 3);
+/**
+ * Prisalternativen för mikroinfluenserna — bara de som har ett belopp i
+ * profilen. Ett tomt belopp är inget alternativ (hellre tomt än påhittat).
+ */
+export function prisalternativ(pris) {
+  const p = pris ?? {};
+  const fast = String(p.fast ?? '').trim();
+  const andel = String(p.andel ?? '').trim();
+  return [
+    fast ? { nyckel: 'fast', etikett: 'Fast pris', varde: fast, text: String(p.fast_text ?? '') } : null,
+    andel ? { nyckel: 'andel', etikett: 'Andel', varde: andel, text: String(p.andel_text ?? '') } : null,
+  ].filter(Boolean);
+}
+
+/**
+ * En punkt om priset, byggd ur samma fält som prissidan — så beloppet står
+ * på ETT ställe i profilen och teasern och sidan aldrig kan säga olika.
+ */
+export function prisPunkt(pris) {
+  const alt = prisalternativ(pris);
+  if (!alt.length) return null;
+  if (alt.length === 1) return { titel: alt[0].varde, text: alt[0].text };
+  return {
+    titel: alt.map((a) => a.varde).join(' eller '),
+    text: 'Fast pris i förskott, eller en andel av det ni totalt lägger på influencers. Ni väljer.',
+  };
+}
+
+/** Punkterna om erbjudandet: profilens egna plus prispunkten. Delas av teasern och sidan. */
+export function influencerPunkter(inf) {
+  return [...(inf?.punkter ?? []).filter((p) => p?.titel), prisPunkt(inf?.pris)].filter(Boolean);
+}
+
+/** Det enda bolaget erbjuder andra — en mörk sektion på startsidan, resten på /influencers. */
+function influencerTeaser(inf) {
+  if (!inf?.rubrik) return '';
+  const punkter = influencerPunkter(inf);
   return `
-<section class="sektion morkt" id="tjanster"><div class="omslag">
+<section class="sektion morkt" id="influencers"><div class="omslag">
   <div class="delad">
     <div class="delad-text">
-      <p class="sektion-etikett avslojas">${esc(tj.etikett ?? 'Tjänster')}</p>
-      <h2 class="avslojas" style="--n:1">${esc(tj.rubrik)}</h2>
-      ${tj.ingress ? `<p class="ingress avslojas" style="--n:2">${esc(tj.ingress)}</p>` : ''}
+      <p class="sektion-etikett avslojas">${esc(inf.etikett ?? 'Mikroinfluencers')}</p>
+      <h2 class="avslojas" style="--n:1">${esc(inf.rubrik)}</h2>
+      ${inf.ingress ? `<p class="ingress avslojas" style="--n:2">${esc(inf.ingress)}</p>` : ''}
       <div class="hero-knappar avslojas" style="--n:3">
-        <a class="knapp ljus" href="/tjanster">Se tjänsterna</a>
+        <a class="knapp ljus" href="/influencers">Så går det till</a>
       </div>
     </div>
-    <ul class="punktlista avslojas" style="--n:2">
-      ${tre.map((o) => `<li><b>${esc(o.titel)}</b><span>${esc(o.text)}</span></li>`).join('')}
-    </ul>
+    ${punkter.length ? `<ul class="punktlista avslojas" style="--n:2">
+      ${punkter.map((o) => `<li><b>${esc(o.titel)}</b><span>${esc(o.text)}</span></li>`).join('')}
+    </ul>` : ''}
   </div>
 </div></section>`;
 }
@@ -139,7 +177,6 @@ export function publikSida({ profil, fakta = null, inloggad = false, nonce = '' 
       ${hero.underrad ? `<p class="ingress" style="--n:2">${esc(hero.underrad)}</p>` : ''}
       <div class="hero-knappar" style="--n:3">
         <a class="knapp glod" href="#vad-vi-gor">Vad vi gör</a>
-        <a class="knapp tyst" href="/tjanster">Tjänster</a>
         ${profil?.youtube?.url ? `<a class="knapp tyst" href="${attr(profil.youtube.url)}" target="_blank" rel="noopener">YouTube</a>` : ''}
       </div>
     </div>
@@ -168,7 +205,7 @@ ${siffror.length ? `<section class="sektion"><div class="omslag">
 
 ${youtubeSektion(profil?.youtube, bilder.youtube)}
 
-${tjansterTeaser(profil?.tjanster)}
+${influencerTeaser(profil?.influencers)}
 
 <section class="sektion" id="bolaget"><div class="omslag">
   <p class="sektion-etikett avslojas">Bolaget</p>
@@ -181,7 +218,7 @@ ${tjansterTeaser(profil?.tjanster)}
 </div></section>`;
 
   return publiktSkal({
-    titel: `${bolag.namn ?? 'Stonebite Ecom AB'} — e-handel, film och konsult`,
+    titel: `${bolag.namn ?? 'Stonebite Ecom AB'} — e-handel och film`,
     beskrivning: hero.underrad ?? 'Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA.',
     innehall,
     fot: profil?.publik_fot ?? bolag.namn ?? '',

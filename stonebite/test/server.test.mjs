@@ -88,8 +88,8 @@ test('publika sidan nämner inte en enda butik', async () => {
   const marken = profil.varumarken ?? [];
   assert.ok(marken.length >= 5, 'profilen ska ha butikerna kvar — de visas inloggad');
 
-  // Varje publik sida — även tjänstesidan får inte nämna en butik.
-  for (const stig of ['/', '/tjanster']) {
+  // Varje publik sida — även influencersidan får inte nämna en butik.
+  for (const stig of ['/', '/influencers']) {
     const svar = await hamta(stig);
     assert.equal(svar.status, 200, `${stig} ska svara 200`);
     const html = await svar.text();
@@ -103,13 +103,56 @@ test('publika sidan nämner inte en enda butik', async () => {
   }
 });
 
-test('tjänstesidan är publik och länkar till kontaktadressen', async () => {
-  const r = await hamta('/tjanster');
+/**
+ * Axels beslut 2026-09-22: "jag vill inte sälja några tjänster eller
+ * mentorskap eller någonting, jag vill bara ha information om mitt företag".
+ * Konsultsidan är borta. Det enda bolaget erbjuder andra är kontakter till
+ * mikroinfluencers — och beloppen på sidan ska vara de som står i profilen,
+ * aldrig påhittade.
+ */
+test('influencersidan är publik, visar priset ur profilen och länkar till kontaktadressen', async () => {
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  const pris = profil.influencers?.pris ?? {};
+  assert.ok(pris.fast && pris.andel, 'profilen ska bära båda prisalternativen');
+
+  const r = await hamta('/influencers');
   assert.equal(r.status, 200);
   const html = await r.text();
-  assert.match(html, /Så jobbar vi/);
+  assert.match(html, /Så går det till/);
+  assert.ok(html.includes(`<div class="pris-varde">${pris.fast}</div>`), `det fasta priset "${pris.fast}" ska stå som prisalternativ`);
+  assert.ok(html.includes(`<div class="pris-varde">${pris.andel}</div>`), `andelen "${pris.andel}" ska stå som prisalternativ`);
   assert.match(html, /mailto:contact@stonebite\.org/);
-  assert.doesNotMatch(html, /Översikt<\/a>/, 'tjänstesidan ska inte visa appens meny');
+  assert.doesNotMatch(html, /Översikt<\/a>/, 'influencersidan ska inte visa appens meny');
+});
+
+test('gamla adressen /tjanster skickas vidare till /influencers', async () => {
+  const r = await hamta('/tjanster');
+  assert.equal(r.status, 301);
+  assert.equal(r.headers.get('location'), '/influencers');
+});
+
+/** Inga tjänster, inget mentorskap, ingen rådgivning — på någon publik sida. */
+test('publika sidan säljer inga tjänster', async () => {
+  for (const stig of ['/', '/influencers']) {
+    const html = await (await hamta(stig)).text();
+    assert.doesNotMatch(html, /konsult|mentorskap|rådgivning|tjänster/i, `${stig} ska inte tala om tjänster`);
+  }
+});
+
+/** Ett tomt belopp i profilen ritas inte alls — hellre tomt än påhittat. */
+test('ett tomt pris på influencersidan ritas inte', async () => {
+  const { influencerSida } = await import('../vy/influencers.mjs');
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  const utanFast = { ...profil, influencers: { ...profil.influencers, pris: { ...profil.influencers.pris, fast: '' } } };
+  const html = influencerSida({ profil: utanFast });
+  // Beloppet kan råka stå i annan text ("5 000 till 20 000 kr per samarbete"),
+  // så det som ska vara borta är prisalternativet — kortet och prispunkten.
+  assert.doesNotMatch(html, /class="pris-etikett">Fast pris/, 'kortet för fast pris ska vara borta');
+  assert.doesNotMatch(html, /betalas i förskott/, 'texten till det fasta priset ska vara borta');
+  assert.ok(!html.includes(`${profil.influencers.pris.fast} eller `), 'prispunkten ska inte längre säga "… eller …"');
+  assert.ok(html.includes(`<div class="pris-varde">${profil.influencers.pris.andel}</div>`), 'andelen står kvar');
 });
 
 /**
