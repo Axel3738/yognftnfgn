@@ -33,14 +33,16 @@ export const TILLATET_KONTONAMN = 'MagiBorsten';
 export const ROAS_RIMLIGT_MIN = 0;
 export const ROAS_RIMLIGT_MAX = 15;
 
-// Samma sak för dagsbudgeten. Ett tal under 100 eller över 50 000 är med all
-// sannolikhet en felparsning (öre lästa som kronor eller tvärtom) — ingen dom,
-// larm i stället. Rimlighetstaket var 10 000 till 2026-09-19: Axel hade själv
-// skalat Taköverdraget till 16 000 kr/dag och kontots starkaste produkt fick
-// ORIMLIG_DATA i stället för en dom. Motorn har inget eget tak sedan
-// 2026-09-22 (Axels beslut, ur Evolve) — det här är bara felparsningsspärren.
+// Samma sak för dagsbudgeten. Ett tal under 100 eller över taket här är med
+// all sannolikhet en felparsning (öre lästa som kronor eller tvärtom) — ingen
+// dom, larm i stället. Rimlighetstaket var 10 000 till 2026-09-19 och 50 000
+// till 2026-09-22; granskningen samma dag mätte att 50 000 i praktiken var
+// ett tak (en SKALA 45 000 → 54 000 sköts upp tyst som "ogiltigt belopp"),
+// mot Axels "inget tak" och Evolves 100k-dagar. Nu 200 000: ett öre/kronor-
+// fel är ×100, så varje budget över 2 000 kr fångas fortfarande. ANTAGANDE —
+// nivån är Axels att sätta.
 export const BUDGET_RIMLIG_MIN = 100;
-export const BUDGET_RIMLIG_MAX = 50000;
+export const BUDGET_RIMLIG_MAX = 200000;
 
 // Kontodatan får vara högst så här gammal när en plan byggs.
 export const MAX_DATAALDER_TIMMAR = 20;
@@ -410,15 +412,24 @@ export function planera(rader, { logg = [], idag = null } = {}) {
     if (['SKALA', 'SANK', 'HALVERA', 'SURF_DUBBLA', 'SURF_SANK', 'SURF_RESET'].includes(d.kod)) {
       // Sista ledet före API:t: beloppet MÅSTE vara ett vettigt tal. Inget
       // motortak längre (Axel 2026-09-22) — bara felparsningsspärren.
+      // Ett öre/kronor-fel är ×100; inget legitimt steg är mer än ×2 (trappan)
+      // eller en surf-reset uppåt. Över ×10 av nuvarande budget är det
+      // enhetsfelet, oavsett rimlighetstaket.
       if (!Number.isFinite(d.nyBudget) || d.nyBudget < GOLV_SEK_PLAN || d.nyBudget > BUDGET_RIMLIG_MAX
-          || d.nyBudget === r.budget) {
+          || d.nyBudget === r.budget || (Number.isFinite(r.budget) && r.budget > 0 && d.nyBudget > r.budget * 10)) {
         uppskjutna.push({ ...grund, orsak: `ogiltigt belopp (${d.nyBudget}) — utförs inte` });
         continue;
       }
+      // SURF_RESET är en nollställning, inte en höjning: går den uppåt
+      // (budgeten sänkt under halva gårdagens spend) förklaras hela steget
+      // för kontospärren, annars kasserades hela surfplanen (granskningen
+      // 2026-09-22).
+      const resetFaktor = d.kod === 'SURF_RESET' && d.nyBudget > r.budget ? d.nyBudget / r.budget : null;
       atgarder.push({
         ...grund, typ: 'budget',
         fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
         ...(Number.isFinite(d.faktor) && d.faktor > 1.2 ? { faktor: d.faktor } : {}),
+        ...(resetFaktor && resetFaktor > 1.2 ? { faktor: resetFaktor, reset: true } : {}),
         ...(d.raket ? { raket: true, faktor: 1.8 } : {}),
       });
     } else if (d.kod === 'MANUELL_SANK') {
@@ -731,7 +742,8 @@ export function rapport(rader, meta, behov = []) {
   // CPA-trenden ÖVERST (Axel 2026-09-22): motorns hälsomått, marknadsoberoende.
   // Stigande CPA tre dygn i rad ⇒ ingen höjning oavsett ROAS; sänks inte.
   const cpa = cpaTrendRader(rader);
-  ut.push(`## 🩺 CPA-trend — hälsomåttet (${cpa.filter((c) => c.stiger).length} stoppade höjningar)`);
+  const stoppade = rader.filter((r) => r.dom?.kod === 'CPA_STIGER').length;
+  ut.push(`## 🩺 CPA-trend — hälsomåttet (${stoppade} stoppad${stoppade === 1 ? '' : 'e'} höjning${stoppade === 1 ? '' : 'ar'})`);
   ut.push('');
   if (!cpa.length) {
     ut.push(`Ingen kampanj har stigande kostnad per köp ${CPA_STIG_DAGAR - 1}+ dygn i rad (räknat t.o.m. gårdagen, 7d_click).`);
@@ -739,7 +751,7 @@ export function rapport(rader, meta, behov = []) {
     ut.push(`Stigande kostnad per köp ${CPA_STIG_DAGAR} dygn i rad stoppar varje höjning, hur bra ROAS än ser ut. Sänks inte — de går plus. Fixet är nya creatives, inte budget.`);
     ut.push('');
     for (const c of cpa) {
-      ut.push(`- ${c.stiger ? '⛔' : '👀'} **${c.namn.split('|')[0].trim()}** — CPA ${cpaText(c.serie)} (${c.dagar} dygn i rad)${c.stiger ? ' — ingen höjning i dag' : ' — ett dygn till och höjningen stoppas'}${c.kod ? ` · dom ${c.kod}` : ''}`);
+      ut.push(`- ${c.stiger ? '⛔' : '👀'} **${c.namn.split('|')[0].trim()}** — CPA ${cpaText(c.serie)} (${c.dagar} dygn i rad)${c.stiger ? (c.kod === 'CPA_STIGER' ? ' — höjning stoppad i dag' : ' — ingen höjning möjlig; domen avgörs av annat') : ' — ett dygn till och höjningen stoppas'}${c.kod ? ` · dom ${c.kod}` : ''}`);
     }
   }
   ut.push('');
@@ -883,8 +895,8 @@ async function main() {
   // Surf-läget (Axel 2026-09-22): bara med --surf OCH agent/surf.json aktiv —
   // aldrig av sig själv. Kampanjer utanför listan döms som vanligt.
   const surf = argv.includes('--surf') ? await lasSurf() : null;
-  if (argv.includes('--surf') && !surf?.aktiv) {
-    console.error('RONDEN AVBRÖTS: --surf men agent/surf.json är inte aktiv (aktiv: true + kampanjer). Surf-läget startas av Axel, aldrig av motorn.');
+  if (argv.includes('--surf') && !(surf?.aktiv === true && Array.isArray(surf.kampanjer) && surf.kampanjer.length > 0)) {
+    console.error('RONDEN AVBRÖTS: --surf men agent/surf.json är inte aktiv (kräver aktiv: true OCH minst ett kampanj-id i kampanjer). Surf-läget startas av Axel, aldrig av motorn.');
     process.exit(2);
   }
   const surfKampanjer = new Set((surf?.kampanjer ?? []).map(String));
@@ -892,6 +904,10 @@ async function main() {
     ? bedomSurf(k, { logg, idag, karta, fx, surf: { efterMidnatt: efterMidnatt(data, surf) } })
     : bedomKampanj(k, { logg, idag, karta, fx })));
   if (surf) varningar.push(`🏄 Surf-läge på för ${surfKampanjer.size} kampanj(er) (agent/surf.json, startat ${surf.startad ?? 'okänt'} av ${surf.av ?? 'okänd'}). Kadens var sjätte timme; midnattsreset till ${Math.round((surf.reset_andel ?? 0.5) * 100)} % av gårdagens spend.`);
+  // Spärrarna (CPA-trend, klickandel, konsekvent) räknas ur dygnsserien. Saknas
+  // den, eller saknar den köp/CPA, ska det synas — inte tyst falla tillbaka
+  // (granskningen 2026-09-22: fail-open utan ett ord i rapporten).
+  for (const v of dygnsvarningar(data.kampanjer)) varningar.push(v);
 
   for (const r of rader) {
     const anm = karta[r.id]?.anmarkning;
@@ -918,6 +934,28 @@ async function main() {
   }
 }
 
+/**
+ * Varningar om dygnsserien: kampanjer utan `dygn`, eller vars dygn saknar
+ * `kop`/`cpa` (CPA-trenden) eller `kop_visning` (klickandelen). Ren.
+ */
+export function dygnsvarningar(kampanjer) {
+  const utan = [];
+  const utanKop = [];
+  const utanVisning = [];
+  for (const k of kampanjer ?? []) {
+    const namn = String(k.namn ?? k.id).split('|')[0].trim();
+    const dygn = Array.isArray(k.dygn) ? k.dygn.filter((d) => d && d.datum) : [];
+    if (!dygn.length) { utan.push(namn); continue; }
+    if (!dygn.some((d) => d.kop !== undefined && d.kop !== null) && !dygn.some((d) => d.cpa !== undefined && d.cpa !== null)) utanKop.push(namn);
+    if (!dygn.some((d) => d.kop_visning !== undefined && d.kop_visning !== null)) utanVisning.push(namn);
+  }
+  const ut = [];
+  if (utan.length) ut.push(`⚠ ${utan.length} kampanj(er) saknar dygnsserie — CPA-trend, klickandel och "konsekvent över target" kan inte räknas, ingen höjning förrän serien finns: ${utan.join(', ')}.`);
+  if (utanKop.length) ut.push(`⚠ ${utanKop.length} kampanj(er) har dygn utan kop/cpa — CPA-trenden är blind där: ${utanKop.join(', ')}. Hämta dygnsserien med actions + cost_per_action_type.`);
+  if (utanVisning.length) ut.push(`⚠ ${utanVisning.length} kampanj(er) har dygn utan kop_visning — klickandelen kan inte räknas (spärren ≥ 60 % står av): ${utanVisning.join(', ')}. Hämta med action_attribution_windows ["7d_click","1d_view"].`);
+  return ut;
+}
+
 /** agent/surf.json — Axels strömbrytare för surf-läget. Saknas filen är läget av. */
 async function lasSurf() {
   try {
@@ -935,7 +973,10 @@ async function lasSurf() {
  * hellre ingen reset än en på gissad tid.
  */
 export function efterMidnatt(data, surf) {
-  const timme = Number(data?.timme);
+  // null/undefined/'' = timmen är okänd ⇒ ingen reset. Number(null) är 0,
+  // vilket hade fyrat en midnattsreset mitt på dagen (granskningen 2026-09-22).
+  if (data?.timme === null || data?.timme === undefined || data?.timme === '') return false;
+  const timme = Number(data.timme);
   if (!Number.isFinite(timme)) return false;
   const reset = Number.isFinite(Number(surf?.reset_timme)) ? Number(surf.reset_timme) : 0;
   const diff = ((timme - reset) % 24 + 24) % 24;

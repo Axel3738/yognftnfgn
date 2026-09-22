@@ -6,9 +6,12 @@
 // docs/os/ANALYSMETOD.md och CLAUDE.md regel 3-4 kräver.
 //
 // ⚠️ TVÅ BESLUT, TVÅ MÅTT (Axels beslut 2026-09-22, ur Evolve):
-//   • SKALNING mäts mot TARGET-ROAS (`rad.targetRoas`, per produkt i
-//     agent/produktkarta.json / products/products.json; saknas talet härleds
-//     det ur break-even och skalningszonen, se `targetRoas()`).
+//   • SKALNING mäts mot TARGET-ROAS (`rad.targetRoas`). Motorn läser talet
+//     ur `target_roas` på kampanjens post i agent/produktkarta.json — det är
+//     den enda filen rond.mjs läser; products/products.json:s `target_roas`
+//     är ägarens lista för Bäverbutikens sex produkter och speglas in i
+//     kartan för hand. Saknas talet härleds det ur break-even och
+//     skalningszonen, se `targetRoas()`.
 //   • KILL mäts mot BREAK-EVEN (CLAUDE.md regel 4, orörd): förlust,
 //     åtgärdstrappan, avstängning och halvering räknar alla på break-even.
 //   Blanda dem aldrig: en kampanj under target men över break-even lämnas
@@ -44,12 +47,16 @@ export const TEST_TROSKEL_SEK = 1500;
 export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 
 // Snabbspåret (Axels beslut 2026-08-29): en produkt i skalningszonen med
-// ROAS ≥ 3 får höjas redan dagen efter förra ändringen, inte var tredje
-// dag. Gäller BARA höjningar — sänkningar väntar alltid sina tre dagar,
-// eftersom färska minus-siffror revideras uppåt i efterhand. Avstängning av
-// en testprodukt som går back väntar däremot ALDRIG (Axel 2026-09-02).
+// ROAS ≥ 3 får höjas tätare än var tredje dag. Gäller BARA höjningar —
+// sänkningar väntar alltid sina tre dagar, eftersom färska minus-siffror
+// revideras uppåt i efterhand. Avstängning av en testprodukt som går back
+// väntar däremot ALDRIG (Axel 2026-09-02).
+// Var 1 dag till 2026-09-22; med trappan (×2) hade det gett 1 000 → 2 000 →
+// 4 000 på 24 timmar mellan stegen, mot "alltid efter 48–72 timmar
+// konsekvent" (Axels beslut samma dag). Nu 2 dagar = 48 timmar. ANTAGANDE —
+// säg till om snabbspåret ska bort helt.
 export const SNABB_SKALNING_ROAS = 3.0;
-export const SNABB_MIN_DAGAR = 1;
+export const SNABB_MIN_DAGAR = 2;
 
 // Stegtrappan (Axels beslut 2026-09-22, ur kursen): steget går på AVSTÅNDET
 // TILL TARGET, inte till break-even. 100 % över target → dubbla, 50 % över →
@@ -220,10 +227,22 @@ export function vinstProcent(breakEven, roas) {
  */
 export function targetRoas(breakEven, target = null) {
   if (!Number.isFinite(breakEven) || breakEven <= 1) return { target: null, kalla: 'break-even saknas' };
-  if (Number.isFinite(target) && target > breakEven) return { target, kalla: 'produktens target_roas' };
+  // Ett eget target måste ligga över sänkzonens gräns (ZON_SANK_UNDER, 16 %
+  // vinst): under den sänker motorn 20 % (drift), och ett target där hade
+  // gett "sänk" och "över target" samtidigt (granskningen 2026-09-22).
+  // Sänk-zonen är ett tredje mått — varken kill (break-even) eller skalning
+  // (target) — och den flyttas inte av ett target.
+  const golvNamnare = 1 / breakEven - ZON_SANK_UNDER / 100;
+  const golv = golvNamnare > 0 ? 1 / golvNamnare : Infinity;
+  if (Number.isFinite(target) && target > breakEven && target >= golv) return { target, kalla: 'produktens target_roas' };
   const namnare = 1 / breakEven - ZON_SKALA_OVER / 100;
   if (namnare <= 0) return { target: null, kalla: `break-even ${breakEven} tillåter inte ${ZON_SKALA_OVER} % vinst` };
-  return { target: 1 / namnare, kalla: Number.isFinite(target) ? `härledd (${ZON_SKALA_OVER} % vinst) — target_roas ${target} ligger under break-even och ignoreras` : `härledd (${ZON_SKALA_OVER} % vinst av omsättningen)` };
+  const harledd = 1 / namnare;
+  if (Number.isFinite(target)) {
+    const varfor = target <= breakEven ? 'ligger under break-even' : `ligger under sänkzonens gräns ${golv.toFixed(2)} (${ZON_SANK_UNDER} % vinst)`;
+    return { target: harledd, kalla: `härledd (${ZON_SKALA_OVER} % vinst) — target_roas ${target} ${varfor} och ignoreras` };
+  }
+  return { target: harledd, kalla: `härledd (${ZON_SKALA_OVER} % vinst av omsättningen)` };
 }
 
 /** Trappsteget ur avståndet till target: { faktor, namn, over } eller null under target. */
@@ -575,8 +594,16 @@ export function besked(rad) {
       `${bas} ${malText} Bara ${pct(klick.andel * 100)} av köpen är klickbaserade (${klick.klick} klick, ${klick.visning} visning) — gränsen är ${pct(KLICK_MIN_ANDEL * 100)}. Merparten är visningsköp; vänta ett dygn innan någon höjning.${gransText}`,
       { zon: 'hold', vinstProcent: vinst, harVinnare, klickandel: klick });
   }
+  // Fail-closed: saknas dygnsserien går det inte att veta om kampanjen legat
+  // konsekvent över target — hellre en dag utan höjning än en höjning utan
+  // serie (granskningen 2026-09-22). Rapporten varnar dessutom om serien.
   const konsekvent = Number.isFinite(rad.dagarOverTarget) ? rad.dagarOverTarget : null;
-  if (konsekvent !== null && konsekvent < KONSEKVENT_DAGAR) {
+  if (konsekvent === null) {
+    return svar('VANTA_KONSEKVENT', 'Vänta — dygnsserien saknas',
+      `${bas} ${malText} Trappan kräver ${KONSEKVENT_DAGAR} hela dygn i rad över target (48–72 timmar konsekvent), men dygnsserien saknas eller bär ingen ROAS — ingen höjning förrän den finns.${gransText}`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, dagarOverTarget: null });
+  }
+  if (konsekvent < KONSEKVENT_DAGAR) {
     return svar('VANTA_KONSEKVENT', 'Vänta — inte konsekvent över target än',
       `${bas} ${malText} Dags-ROAS har legat över target ${konsekvent} helt dygn i rad — trappan kräver ${KONSEKVENT_DAGAR} (48–72 timmar konsekvent).${gransText}`,
       { zon: 'hold', vinstProcent: vinst, harVinnare, dagarOverTarget: konsekvent });
@@ -592,8 +619,8 @@ export function besked(rad) {
       `${bas} ${malText} En höjning skulle passera ${kr(takNu)}, taket utan vinnare.`,
       { zon: 'hold', vinstProcent: vinst, harVinnare });
   }
-  const nastaKoll = snabbspar || faktor > 1.2
-    ? 'Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.'
+  const nastaKoll = snabbspar
+    ? `Snabbspår: ROAS över 3 — kan höjas igen om ${SNABB_MIN_DAGAR} dagar.`
     : `Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`;
   const stegText = hogzon && steg.faktor > HOGZON_MAX_FAKTOR
     ? ` Trappan hade gett ${steg.namn}, men över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 % (högzonen).`

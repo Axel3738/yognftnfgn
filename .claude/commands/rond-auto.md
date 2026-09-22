@@ -86,10 +86,11 @@ marknadens konto och filtrering på `campaign.effective_status IN ["ACTIVE"]`:
 
 1. `date_preset: "last_3d"` — `fields: ["id","name","effective_status","daily_budget","amount_spent","purchase_roas","omni_purchase","created_time"]`
 2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
-3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien. Varje dygn i `dygn`: `datum`, `roas` (7d_click), `spend` ur `amount_spent`, **`kop`** (omni_purchase `7d_click`), **`kop_visning`** (omni_purchase `1d_view`) och **`cpa`** (`cost_per_action_type → omni_purchase`, `7d_click`). De tre sista är nya sedan 2026-09-22: CPA-trenden, klickandelen och "konsekvent över target" räknas ur dem (`agent/trend.mjs`). Kör därför det här anropet med `action_attribution_windows: ["7d_click", "1d_view"]` och fälten `actions`, `cost_per_action_type`, `purchase_roas`, `spend`. Saknas ett tal: `null`, aldrig 0.
+3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien. Varje dygn i `dygn`: `datum`, `roas` (7d_click), `spend` ur `amount_spent`, **`kop`** (omni_purchase `7d_click`), **`kop_visning`** (omni_purchase `1d_view`) och **`cpa`** (`cost_per_action_type → omni_purchase`, `7d_click`). De tre sista är nya sedan 2026-09-22: CPA-trenden, klickandelen och "konsekvent över target" räknas ur dem (`agent/trend.mjs`). Kör därför det här anropet med `action_attribution_windows: ["7d_click", "1d_view"]` och fälten `actions`, `cost_per_action_type`, `purchase_roas`, `spend`. ⚠️ Två saker som ser ut som saknade tal men är mätta nollor: **Meta utelämnar hela `omni_purchase`-raden ett dygn utan köp ⇒ `kop: 0`, `cpa: null`** (spend utan köp = oändlig CPA, en stigning), och **utelämnar nyckeln `1d_view` när visningsköpen är 0 ⇒ `kop_visning: 0`**. Bara ett dygn som helt saknar `actions`/`spend` skrivs `null`. Utan dygnsserie fäller motorn `VANTA_KONSEKVENT` (ingen höjning) och rapporten varnar per kampanj. Kampanjfältet `kop_3d_visning` (köp 1d_view senaste 3 dygnen ur anrop 1) är reservväg för klickandelen om dygnsserien saknar visningstal.
 4. *(bara i surf-läget, `--surf`)* `date_preset: "today"` och `"yesterday"` — `spend_idag`, `roas_idag`, `kop_idag`, `spend_igar` per kampanj, och `timme` (annonskontots lokala timme vid hämtningen) överst i filen.
 
-**Alla tre anropen med `action_attribution_windows: ["7d_click"]`** (Axels
+**Anrop 1 och 2 med `action_attribution_windows: ["7d_click"]`; anrop 3
+(dygnsserien) med `["7d_click", "1d_view"]`, se ovan** (Axels
 beslut 2026-09-20). Mätt samma dag: kontonivån skiljer 1,7 % (SE) och 0 %
 (NO), men Fiskespöhållaren visade ROAS 2,01 med visningsköp inräknade och
 1,64 på klick — 18,6 % — mot break-even 1,50; IBC 7,1 %, Båtmotorskyddet
@@ -292,7 +293,8 @@ I en kampanj som går back pausar bara trappan annonser.
 ### 3b. Spendtjuven i GRÖNA kampanjer (Axels beslut 2026-09-20 — förslagets 2.3)
 
 Spärren körs numera på **alla aktiva kampanjer som går plus** (domarna
-`LAT_VARA`, `SKALA`, `VANTA_KADENS`, `MANUELL`, `MANUELL_SANK`) med
+`LAT_VARA`, `SKALA`, `VANTA_KADENS`, `CPA_STIGER`, `VISNING_AVVAKTA`,
+`VANTA_KONSEKVENT`, `HOGZON_AVVAKTA`; historiskt `MANUELL`/`MANUELL_SANK`) med
 ≥ 1 000 kr spend på 3 dygn — Taköverdraget inräknat. Bakgrund: en tjuv på
 10 % av 16 000 kr/dag dränerar ~1 600 kr om dagen under break-even och var
 osynlig för ronden, för spärren gick bara i trappan.
@@ -566,7 +568,10 @@ på produkten, och lyft "ny produkt eller nytt land" till Axel. Svaret skrivs
 som en `FATIGUE_TEST_SVAR`-rad + i produktens `batch-log.md` och `dna.md`.
 Första testet: Taköverdraget, de fem briefarna från 2026-09-22 (OB_3_H1,
 OB_4_H1, GT_11_H1, CS_2_H2, CS_2_H3) mot start-CPA 466 kr (21/9); 7-dygns
-CPA 15–21/9 var 375 kr (79 524 kr / 212 köp).
+CPA 15–21/9 var 375 kr (79 524 kr / 212 köp). **Senaste `FATIGUE_TEST`-raden
+per kampanj gäller; en rad med `rattar_foregaende: true` ersätter raden
+före.** Tröskeln (466 = sämsta dygnet, 375 = 7-dygns, ~750 = break-even-CPA)
+är en fråga till Axel — tills han svarat gäller 466 som raden säger.
 
 Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
 med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
@@ -1161,8 +1166,9 @@ Posta dessutom, i **egna** poster:
 - `--kanal uppgifter` varje gång nya uppgifter går ut till redigerarna
   (brief-runda eller förstabatch klar): produkt, antal briefer, Notion-länk.
 - `--kanal larm` när något kräver Axel: `STOR_SPEND_UTAN_KOP`, `plan.sparrad`,
-  misslyckad verifiering efter en Meta-skrivning, varje `MANUELL_SANK`
-  (sänkning i hans manuella zon), en pausad tjuv med etiketten BREAKTHROUGH
+  misslyckad verifiering efter en Meta-skrivning, varje `SANK` i högzonen
+  (över 4 000 kr) och varje `CPA_STIGER` på en kampanj över 4 000 kr (fixet
+  är nya creatives — Axel ska se det), en pausad tjuv med etiketten BREAKTHROUGH
   eller SPEND_WINNER, och varje ny BREAKTHROUGH-etikett.
 
 Startskotten postas **inte** härifrån — `agent/startskott.mjs` gör det själv

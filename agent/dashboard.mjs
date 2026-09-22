@@ -195,7 +195,7 @@ ${behov.length === 0 ? '' : `<h3>🎨 Nya annonser behövs</h3>
 <h3>Senast ändrat</h3>
 ${loggHtml}
 <footer>Ronden kör själv varje dag: läser Meta, räknar reglerna och ändrar budgetarna.
-Aldrig mer än 20 % åt gången — utom raketer (ROAS över 5) som får nästan dubblas.
+Trappan går på avståndet till target: 100 % över ⇒ dubbla, 50 % över ⇒ ×1,5, annars 20 % — och över 4 000 kr alltid 20 %.
 En produkt ändras högst var tredje dag — utom riktiga vinnare (ROAS över 3), som
 får höjas dagligen. Golv 500 kr, tak 4 000 kr per produkt.
 Blir något konstigt stoppar ronden sig själv och det står här.</footer>

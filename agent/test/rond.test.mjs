@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, dygnsvarningar, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -194,9 +194,9 @@ test('ett belopp utanför golv-tak utförs aldrig — det skjuts upp', () => {
 });
 
 test('kontospärren kasserar hela planen vid orimlig total höjning', () => {
-  // Belopp inom golv-tak men en absurd relativ höjning: hela planen kasseras.
+  // Belopp inom golv-tak och under ×10-spärren, men en oförklarad ×3-höjning: hela planen kasseras.
   const plan = planera([
-    radMedDom('a', 200, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 4000, motivering: 'trasig' }),
+    radMedDom('a', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 3000, motivering: 'trasig' }),
   ]);
   assert.equal(plan.sparrad, true);
   assert.equal(plan.atgarder.length, 0);
@@ -639,8 +639,9 @@ test('inget tak: 16 000 kr som går plus får en vanlig dom — 16–25 % vinst 
   assert.ok(stabil.dom.vinstProcent > 16 && stabil.dom.vinstProcent < 25);
   // ROAS 3,3 ⇒ över target: 20 % (högzon), 16 000 → 19 200 — bara med en levande vinnare.
   const etikett = { kod: 'ETIKETT', kampanj_id: '1', annons_id: 'a', annons_namn: 'Tak_CS_2_1', etikett: 'BREAKTHROUGH', datum: '2026-09-15', genomford: true };
+  const dygnBra = [{ datum: '2026-09-17', roas: 3.4, spend: 16000, kop: 40 }, { datum: '2026-09-18', roas: 3.2, spend: 16000, kop: 45 }];
   const stark = bedomKampanj(
-    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '3.30', kop_3d: 100, spend_total: '90 000,00 kr' },
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '3.30', kop_3d: 100, spend_total: '90 000,00 kr', dygn: dygnBra },
     { logg: [etikett], idag: '2026-09-19', karta: { 1: { lage: 'drift' } } },
   );
   assert.equal(stark.dom.kod, 'SKALA');
@@ -757,11 +758,44 @@ test('surf-läget döms bara med --surf och surf.json: bedomSurf på dagens fön
   assert.equal(plan.sparrad, false);
   assert.equal(plan.atgarder[0].till_sek, 16000);
   assert.equal(plan.atgarder[0].faktor, 2);
-  // efterMidnatt ur kontodatans timme: 0–5 efter reset_timme 0.
+  // efterMidnatt ur kontodatans timme: 0–5 efter reset_timme 0. Okänd timme ⇒ aldrig reset.
   assert.equal(efterMidnatt({ timme: 2 }, {}), true);
   assert.equal(efterMidnatt({ timme: 7 }, {}), false);
   assert.equal(efterMidnatt({ timme: 6 }, { reset_timme: 6 }), true);
+  assert.equal(efterMidnatt({ timme: 23 }, {}), false);
   assert.equal(efterMidnatt({}, {}), false);
+  assert.equal(efterMidnatt({ timme: null }, {}), false, 'null får aldrig bli midnatt');
+  assert.equal(efterMidnatt({ timme: '' }, {}), false);
+  // En SURF_RESET uppåt (budgeten sänkt under halva gårdagens spend) kasserar inte planen.
+  const upp = planera([radMedDom('r', 2000, { kod: 'SURF_RESET', kraverGodkannande: true, nyBudget: 8000, motivering: 'reset' })], { logg: [], idag: '2026-11-28' });
+  assert.equal(upp.sparrad, false);
+  assert.equal(upp.atgarder[0].reset, true);
+});
+
+test('rapport(): CPA-trenden överst, stoppade = domar med CPA_STIGER, och dygnsvarningar när serien saknas', () => {
+  const rader = [
+    { id: '1', namn: 'Tre | BE ROAS 1.63', budget: 16000, cpaTrend: { stiger: true, dagar: 3, serie: [{ cpa: 333 }, { cpa: 410 }, { cpa: 421 }, { cpa: 466 }] }, dom: { kod: 'CPA_STIGER', rubrik: 'x', motivering: 'x', kraverGodkannande: false, vinstProcent: 27, nyBudget: null } },
+    { id: '2', namn: 'Tva | BE ROAS 1.63', budget: 4000, cpaTrend: { stiger: false, dagar: 2, serie: [{ cpa: 161 }, { cpa: 218 }, { cpa: 427 }] }, dom: { kod: 'VANTA_KADENS', rubrik: 'x', motivering: 'x', kraverGodkannande: false, vinstProcent: 20, nyBudget: null } },
+    { id: '3', namn: 'Tre-men-under | BE ROAS 1.63', budget: 1000, cpaTrend: { stiger: true, dagar: 3, serie: [{ cpa: 100 }, { cpa: 200 }, { cpa: 300 }, { cpa: 400 }] }, dom: { kod: 'LAT_VARA', rubrik: 'x', motivering: 'x', kraverGodkannande: false, vinstProcent: 18, nyBudget: null } },
+    { id: '4', namn: 'Lugn | BE ROAS 1.63', budget: 1000, cpaTrend: { stiger: false, dagar: 0, serie: [] }, dom: { kod: 'LAT_VARA', rubrik: 'x', motivering: 'x', kraverGodkannande: false, vinstProcent: 18, nyBudget: null } },
+  ];
+  const text = rapport(rader, { idag: '2026-09-22', hamtad: 'nu', varningar: [] });
+  assert.match(text, /## 🩺 CPA-trend — hälsomåttet \(1 stoppad höjning\)/, 'bara CPA_STIGER-domar räknas som stoppade');
+  assert.match(text, /⛔ \*\*Tre\*\* — CPA 333 → 410 → 421 → 466 kr \(3 dygn i rad\) — höjning stoppad i dag/);
+  assert.match(text, /👀 \*\*Tva\*\* — CPA 161 → 218 → 427 kr \(2 dygn i rad\) — ett dygn till/);
+  assert.match(text, /⛔ \*\*Tre-men-under\*\*.*domen avgörs av annat/);
+  assert.doesNotMatch(text, /\*\*Lugn\*\* — CPA/);
+  assert.equal(text.indexOf('## 🩺 CPA-trend'), text.indexOf('## '), 'CPA-sektionen står först');
+  assert.deepEqual(cpaTrendRader(rader).map((r) => r.namn.split(' ')[0]), ['Tre', 'Tre-men-under', 'Tva']);
+  const varn = dygnsvarningar([
+    { id: 'a', namn: 'Utan | x' },
+    { id: 'b', namn: 'UtanKop | x', dygn: [{ datum: '2026-09-21', roas: 2, spend: 100 }] },
+    { id: 'c', namn: 'Hel | x', dygn: [{ datum: '2026-09-21', roas: 2, spend: 100, kop: 3, kop_visning: 0, cpa: 33 }] },
+  ]);
+  assert.equal(varn.length, 3);
+  assert.match(varn[0], /saknar dygnsserie.*Utan/);
+  assert.match(varn[1], /utan kop\/cpa.*UtanKop/);
+  assert.match(varn[2], /utan kop_visning.*UtanKop/);
 });
 
 test('attributionsvarning: bara 7d_click är tyst', () => {
@@ -770,12 +804,23 @@ test('attributionsvarning: bara 7d_click är tyst', () => {
   assert.match(attributionsvarning({ attribution: 'default' }), /inte "7d_click"/);
 });
 
-test('rimlighetstaket är 50 000: 16 000 är en dom, 60 000 är fortfarande felparsning', () => {
+test('rimlighetstaket är 200 000 (felparsningsspärren, inte ett tak): 60 000 är en dom, 260 000 är felparsning', () => {
   const orimlig = bedomKampanj(
-    { id: '1', namn: 'X | BE ROAS 1.50', daily_budget: '60 000,00 kr (SEK)', spend_3d: '1 000,00 kr', roas_3d: '2.0', kop_3d: 10 },
+    { id: '1', namn: 'X | BE ROAS 1.50', daily_budget: '260 000,00 kr (SEK)', spend_3d: '1 000,00 kr', roas_3d: '2.0', kop_3d: 10 },
     { logg: [], idag: '2026-09-19', karta: {} },
   );
   assert.equal(orimlig.dom.kod, 'ORIMLIG_DATA');
+  const stor = bedomKampanj(
+    { id: '1', namn: 'X | BE ROAS 1.50', daily_budget: '60 000,00 kr (SEK)', spend_3d: '150 000,00 kr', roas_3d: '2.0', kop_3d: 300, spend_total: '900 000,00 kr' },
+    { logg: [], idag: '2026-09-19', karta: {} },
+  );
+  assert.notEqual(stor.dom.kod, 'ORIMLIG_DATA');
+  // Och planen: en SKALA 45 000 → 54 000 utförs (inget dolt tak), en ×100-budget skjuts upp.
+  const plan = planera([radMedDom('a', 45000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 54000, motivering: 'x' })]);
+  assert.equal(plan.atgarder.length, 1);
+  const enhetsfel = planera([radMedDom('b', 1000, { kod: 'SKALA', kraverGodkannande: true, nyBudget: 100000, motivering: 'x' })]);
+  assert.equal(enhetsfel.uppskjutna.length, 1);
+  assert.match(enhetsfel.uppskjutna[0].orsak, /ogiltigt belopp/);
   // Precis på motorns tak är det fortfarande motorns zon — "taket nått", inte manuellt.
   const paTaket = bedomKampanj(
     { id: '2', namn: 'Y | BE ROAS 1.50', daily_budget: '4 000,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '2.40', kop_3d: 30, spend_total: '50 000,00 kr' },

@@ -50,7 +50,10 @@ export function cpaPerDag(dygn) {
     const uttrycklig = tal(d.cpa);
     let cpa = null;
     if (uttrycklig !== null && uttrycklig > 0) cpa = uttrycklig;
-    else if (spend !== null && spend > 0 && kop !== null) cpa = kop > 0 ? spend / kop : Infinity;
+    // Meta utelämnar hela omni_purchase-raden ett dygn utan köp, så `kop`
+    // blir null i kontodatan fast talet är 0. Spend utan köp och utan CPA är
+    // oändlig CPA — en stigning, inte en lucka (granskningen 2026-09-22).
+    else if (spend !== null && spend > 0) cpa = kop !== null && kop > 0 ? spend / kop : Infinity;
     return { datum: d.datum, cpa, spend, kop };
   });
 }
@@ -68,6 +71,10 @@ export function cpaPerDag(dygn) {
 export function stigandeDagar(dygn, { tillOchMed = null } = {}) {
   const serie = cpaPerDag(dygn).filter((d) => d.cpa !== null && (!tillOchMed || d.datum <= tillOchMed));
   if (serie.length < 2) return { dagar: 0, serie: serie.map((d) => ({ datum: d.datum, cpa: d.cpa })) };
+  // En trend är aktuell bara om sista mätpunkten ÄR gårdagen (tillOchMed).
+  // Slutar serien tidigare (inga spend-dygn sedan dess) är stigningarna
+  // gamla och får inte stoppa en höjning i dag (granskningen 2026-09-22).
+  if (tillOchMed && serie[serie.length - 1].datum !== tillOchMed) return { dagar: 0, serie: [], inaktuell: serie[serie.length - 1].datum };
   let dagar = 0;
   for (let i = serie.length - 1; i >= 1; i--) {
     const nu = serie[i];

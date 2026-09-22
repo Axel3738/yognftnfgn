@@ -81,3 +81,23 @@ test('dagarOver: dygn i rad med dags-ROAS på eller över gränsen, bakåt från
   assert.equal(dagarOver([{ datum: '2026-09-21', spend: 100 }], 2), null, 'ingen roas i serien');
   assert.equal(dagarOver(d, null), null);
 });
+
+test('rättelser 2026-09-22: kop null med spend är oändlig CPA, och en trend som inte når fram till gårdagen är inaktuell', () => {
+  // Meta utelämnar omni_purchase-raden ett dygn utan köp ⇒ kop null i kontodatan.
+  const d = [
+    { datum: '2026-09-18', spend: 400, kop: 2 }, { datum: '2026-09-19', spend: 500, kop: 2 },
+    { datum: '2026-09-20', spend: 600, kop: 2 }, { datum: '2026-09-21', spend: 1000, kop: null },
+  ];
+  const s = stigandeDagar(d, { tillOchMed: '2026-09-21' });
+  assert.equal(s.dagar, 3, 'spend utan köp är en stigning, inte en lucka');
+  assert.equal(s.serie.at(-1).cpa, Infinity);
+  // Serien slutar 19/9, tillOchMed 21/9: stigningarna 16–19/9 är gamla nyheter.
+  const gammal = [
+    { datum: '2026-09-16', spend: 100, kop: 2 }, { datum: '2026-09-17', spend: 150, kop: 2 },
+    { datum: '2026-09-18', spend: 200, kop: 2 }, { datum: '2026-09-19', spend: 250, kop: 2 },
+  ];
+  const g = stigandeDagar(gammal, { tillOchMed: '2026-09-21' });
+  assert.equal(g.dagar, 0);
+  assert.equal(g.inaktuell, '2026-09-19');
+  assert.equal(stigandeDagar(gammal, { tillOchMed: '2026-09-19' }).dagar, 3);
+});

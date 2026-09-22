@@ -18,6 +18,9 @@ function rad(extra = {}) {
     budget: 1000,
     dagarSedanAndring: 10,
     backDagarIRad: 0,
+    // Dygnsserien finns och ligger konsekvent över target — spärren är
+    // fail-closed sedan 2026-09-22, så en frisk kampanj måste bära talet.
+    dagarOverTarget: 3,
     ...extra,
   };
 }
@@ -87,7 +90,7 @@ test('nyBudget respekterar golvet; tak bara när anroparen skickar ett (inget mo
 
 test('spärr 1: utan vinnaretikett är taket 4 000 — med vinnare finns inget tak', () => {
   // Skalningszon (vinst 29 %) på exakt 4 000 kr.
-  const grund = { namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 3.0, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 4000, dagarSedanAndring: 9, backDagarIRad: 0 };
+  const grund = { namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 3.0, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 4000, dagarSedanAndring: 9, backDagarIRad: 0, dagarOverTarget: 3 };
   const utan = besked({ ...grund });
   assert.equal(utan.kod, 'LAT_VARA');
   assert.equal(utan.harVinnare, false);
@@ -107,10 +110,10 @@ test('spärr 1: utan vinnaretikett är taket 4 000 — med vinnare finns inget t
 
 test('spärr 2: i högzonen är steget 20 % — trappans ×1,5/×2 gäller bara under 4 000', () => {
   // BE 1,60 ⇒ härlett target 2,67. ROAS 6 = 225 % av target ⇒ dubbla under 4 000, 20 % över.
-  const under = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 3000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
+  const under = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 3000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true, dagarOverTarget: 3 });
   assert.equal(under.faktor, 2);
   assert.equal(under.nyBudget, 6000); // 3 000 × 2
-  const hog = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 5000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
+  const hog = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 5000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true, dagarOverTarget: 3 });
   assert.equal(hog.faktor, HOGZON_MAX_FAKTOR);
   assert.equal(hog.nyBudget, 6000); // 5 000 × 1,2, inte ×2
   assert.match(hog.motivering, /högzonen/);
@@ -183,13 +186,19 @@ test('kadensspärren stoppar en andra ändring inom tre dygn', () => {
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: null })).kod, 'SKALA');
 });
 
-test('snabbspåret: ROAS över 3 i skalningszonen får höjas redan dagen efter en HÖJNING', () => {
+test('snabbspåret: ROAS över 3 i skalningszonen får höjas efter 48 timmar efter en HÖJNING — inte dagen efter (Axel 2026-09-22: 48–72 h konsekvent)', () => {
   // BE 2,00 · ROAS 10 -> 40 % vinst, ROAS ≥ 3, förra ändringen var en höjning.
-  const snabb = rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA' });
+  const snabb = rad({ roas3d: 10, dagarSedanAndring: 2, senasteAndringKod: 'SKALA' });
   assert.equal(besked(snabb).kod, 'SKALA');
   assert.match(besked(snabb).motivering, /Snabbspår/);
+  // Dagen efter räcker inte längre: med trappan hade 1 000 → 2 000 → 4 000 gått på 24 h mellan stegen.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA' })).kod, 'VANTA_KADENS');
   // Aldrig samma dag som förra ändringen.
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0, senasteAndringKod: 'SKALA' })).kod, 'VANTA_KADENS');
+  // Utan snabbspår (ROAS < 3) står texten inte "Snabbspår" fast trappan ger ×1,5.
+  const utan = besked(rad({ namn: 'X | BE ROAS 1.63', roas3d: 2.9, budget: 2000, targetRoas: 2.3, dagarSedanAndring: 5 }));
+  assert.equal(utan.kod, 'SKALA');
+  assert.doesNotMatch(utan.motivering, /Snabbspår/);
 });
 
 test('snabbspåret gäller aldrig dagen efter en sänkning eller okänd ändring', () => {
@@ -303,13 +312,31 @@ test('klickandelen: under 60 % klickköp ⇒ vänta ett dygn; utan visningstal i
   assert.equal(KLICK_MIN_ANDEL, 0.6);
 });
 
-test('48–72 timmar konsekvent: dags-ROAS över target färre än två dygn i rad ⇒ vänta; okänd serie avgör inte', () => {
+test('48–72 timmar konsekvent: dags-ROAS över target färre än två dygn i rad ⇒ vänta; saknad serie ⇒ vänta (fail-closed)', () => {
   const vanta = besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: 1 }));
   assert.equal(vanta.kod, 'VANTA_KONSEKVENT');
   assert.match(vanta.motivering, /1 helt dygn i rad/);
   assert.equal(besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: 2 })).kod, 'SKALA');
-  assert.equal(besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: null })).kod, 'SKALA');
+  // Utan dygnsserie: hellre en dag utan höjning än en höjning utan serie.
+  const saknas = besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: null }));
+  assert.equal(saknas.kod, 'VANTA_KONSEKVENT');
+  assert.match(saknas.motivering, /dygnsserien saknas/);
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: undefined })).kod, 'VANTA_KONSEKVENT');
+  // Kill-besluten är opåverkade av att serien saknas.
+  assert.equal(besked(rad({ roas3d: 1.5, budget: 1000, dagarOverTarget: null })).kod, 'HALVERA');
   assert.equal(KONSEKVENT_DAGAR, 2);
+});
+
+test('ett eget target under sänkzonens gräns (16 % vinst) ignoreras — sänk-20 % är ett tredje mått', () => {
+  // BE 1,63: 16 %-linjen är ROAS 2,205. Target 2,0 ligger under den — ignoreras, härledd 2,75 gäller.
+  const t = targetRoas(1.63, 2.0);
+  assert.equal(t.target.toFixed(2), '2.75');
+  assert.match(t.kalla, /under sänkzonens gräns 2\.2[01]/);
+  // ROAS 2,1 med "target 2,0": förr SKALA och SANK samtidigt, nu bara sänk-zonen (drift).
+  const d = besked(rad({ namn: 'X | BE ROAS 1.63', roas3d: 2.1, budget: 2000, targetRoas: 2.0 }));
+  assert.equal(d.kod, 'SANK');
+  // Target 2,3 ligger över gränsen och gäller.
+  assert.equal(targetRoas(1.63, 2.3).kalla, 'produktens target_roas');
 });
 
 test('surf-läget: midnattsreset till halva gårdagens spend, dubbla i bra fönster, sänk i dåligt, håll däremellan', () => {
