@@ -137,25 +137,30 @@ mekanismen som skiljer ett ventilerat överdrag från en tät presenning, och va
 som händer med luften under draget. Vilken av dem som bär är en hypotes och
 ska märkas som gissning i lärdomen.
 
-**Briefad som `Takoverdrag_OB_2_H1`** (Axels beslut 2026-09-21), med `kalla=voc` —
-`OB` är kontots kod för invändning, inte `BOF` som är funnelposition; se
+**Briefad som `Takoverdrag_OB_4_H1`** (Axels beslut 2026-09-21; först
+namngiven `OB_2_H1`, omdöpt 2026-09-22 — se rättelsen nedan), med
+`kalla=voc` — `OB` är kontots kod för invändning, inte `BOF` som är
+funnelposition; se `docs/naming-convention.md`. Kommentaren på
+`Takoverdrag_SP_4_H1` är den formella källan, forumet är språket bakom den.
+Annonsen ska visa att **draget bara täcker taket och att sidorna är öppna**,
+inte förneka att invändningen är rimlig: den som säger "nu blir det väl
+tätt" har rätt om en presenning, och det är därför den ska få veta vad som
+skiljer. (Produktsidan säger varken "andas" eller "ventilerad" — de orden
+får inte stå i annonsen, läst 2026-09-22.)
 
-> ⚠️ **RÄTTELSE 2026-09-22.** Raden ovan namngav `Takoverdrag_OB_2_H1`. Det
-> namnet var redan taget: en Notion-rad med det namnet finns sedan 2026-09-19
-> och bär ett HELT annat koncept (förvaring — hur draget viks ner i påsen),
-> status `In progress`. Jag läste lediga nummer ur annonskontot men inte ur
-> Notion, och kontot hade bara `OB_1`. Briefen som skrevs på invändningen
-> "nu blir det väl tätt" heter därför **`Takoverdrag_OB_4_H1`**.
-> Loggraden skrivs inte om — budgetloggen är append-only. Regel (b) i
-> `brieftak` stryker platsen av sig själv, eftersom namnet redan finns.
-> **Lärdomen härav: läs lediga AD-ID:n ur BÅDE kontot och Notion-hubben.**
-
-`docs/naming-convention.md`. —
-kommentaren på `Takoverdrag_SP_4_H1` är den formella källan, forumet är
-språket bakom den. Annonsen ska bemöta att **överdraget andas i stället för
-att kapsla in**, inte förneka att invändningen är rimlig: den som säger "nu
-blir det väl tätt" har rätt om en presenning, och det är därför den ska få
-veta vad som skiljer.
+> ⚠️ **RÄTTELSE 2026-09-22.** Stycket ovan namngav först `Takoverdrag_OB_2_H1`.
+> Det namnet var redan taget: en Notion-rad med det namnet finns sedan
+> 2026-09-19 och bär ett HELT annat koncept (förvaring — hur draget viks ner
+> i påsen), status `In progress`. Jag läste lediga nummer ur annonskontot men
+> varken ur Notion eller ur produktens egen `batch-log.md` (batch #3 listade
+> OB_2_H1 = förvaringspåsen), och kontot hade bara `OB_1`. Briefen på
+> invändningen "nu blir det väl tätt" heter därför **`Takoverdrag_OB_4_H1`**.
+> Loggraden skrivs inte om — budgetloggen är append-only; OB_4_H1:s
+> BRIEF-rad bär i stället `plats: Takoverdrag_OB_2_H1`. Regel (b) i
+> `brieftak` stryker en upptagen plats bara när anroparen skickar hubbens
+> namn med `--befintliga` — det gjordes inte i ronden 2026-09-22.
+> **Lärdomen härav: läs lediga AD-ID:n ur kontot, Notion-hubben OCH
+> produktens batch-log.**
 
 ## Vad som INTE går att lita på här
 

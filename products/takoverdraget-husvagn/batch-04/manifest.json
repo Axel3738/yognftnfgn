@@ -26,5 +26,14 @@
     "notion_typ": "Video - Pending Approval",
     "brief": "video-ads-briefs/Takoverdrag_CS_2_H3/brief.md",
     "format": "video"
+  },
+  {
+    "namn": "Takoverdrag_OB_4_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Takoverdrag_OB_4_H1/brief.md",
+    "format": "video",
+    "plats": "Takoverdrag_OB_2_H1",
+    "notion_page": "3e3270ab908c81178ae1cf5a3ed39e2e"
   }
 ]

@@ -41,7 +41,7 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Hypotes (gissning):** Gissning: annonsen drar 21 % av spenden på ROAS 5,07 trots att den saknar både mekanism och problembyggande, vilket pekar på att produkten säljer sig själv för den som redan vet att taket är problemet — och att SP-vinkelns svaghet per krona (1,09 mot CS:s 3,17 i DNA:t) alltså inte gäller den statiska formen.
 
 **Nästa annonser:**
-- `Takoverdrag_OB_2_H1` — typ N, ingen parent: första annonsen som bemöter en dokumenterad invändning ("nu blir det väl tätt") i stället för att sälja taket. Enda variabeln är öppningsdraget.
+- `Takoverdrag_OB_2_H1` *(utförd som `Takoverdrag_OB_4_H1` — se rättelsen nedan)* — typ N, ingen parent: första annonsen som bemöter en dokumenterad invändning ("nu blir det väl tätt") i stället för att sälja taket. Enda variabeln är öppningsdraget.
 - `Takoverdrag_SP_6_1` — typ IM, parent Takoverdrag_SP_2_1: samma social proof men UTAN det påhittade kundcitatet och utan öppet köp, så raden går att spegla. Enda variabeln är att de två förbjudna elementen tas bort.
 
 > ⚠️ **RÄTTELSE 2026-09-22.** Raden ovan namngav `Takoverdrag_OB_2_H1`. Det
@@ -50,9 +50,15 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 > status `In progress`. Jag läste lediga nummer ur annonskontot men inte ur
 > Notion, och kontot hade bara `OB_1`. Briefen som skrevs på invändningen
 > "nu blir det väl tätt" heter därför **`Takoverdrag_OB_4_H1`**.
-> Loggraden skrivs inte om — budgetloggen är append-only. Regel (b) i
-> `brieftak` stryker platsen av sig själv, eftersom namnet redan finns.
-> **Lärdomen härav: läs lediga AD-ID:n ur BÅDE kontot och Notion-hubben.**
+> Loggraden skrivs inte om — budgetloggen är append-only. I stället bär
+> OB_4_H1:s BRIEF-rad `plats: Takoverdrag_OB_2_H1`, så `brieftak` räknar
+> platsen som utförd. Regel (b) stryker en upptagen plats bara när anroparen
+> skickar hubbens namn med `--befintliga` — det gjordes INTE i ronden
+> 2026-09-22 (rondfilen visar OB_2_H1 som ledig plats); sedan samma
+> eftermiddag vägrar `lardom.mjs --brief` att skriva utan `--befintliga` när
+> namngivna platser finns. **Lärdomen härav: läs lediga AD-ID:n ur kontot,
+> Notion-hubben OCH produktens batch-log** — namnet stod redan i
+> `batch-log.md` (batch #3: OB_2_H1 = förvaringspåsen).
 
 - `Takoverdrag_CS_14_1` — typ IM, parent Takoverdrag_CS_2_1: prisankaret är produktens starkaste vinkel enligt DNA:t (3,17 kr vinst per spendkrona) och har färre annonser live än SP. Enda variabeln är prisformuleringen.
 

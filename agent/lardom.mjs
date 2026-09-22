@@ -263,11 +263,13 @@ export function nastaIteration(logg, kampanjId, koncept) {
 }
 
 /** Senaste *_KLAR-datumet för en kampanj (batchklockan). */
+const KLAR_KODER = ['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR', 'VIDAREBYGG_KLAR'];
+
 function senasteKlar(logg, kampanjId) {
   let d = null;
   for (const r of logg) {
     if (String(r.kampanj_id) !== String(kampanjId) || r.genomford !== true) continue;
-    if (!['FORSTA_BATCH_KLAR', 'CS_BATCH_KLAR', 'VIDAREBYGG_KLAR'].includes(r.kod)) continue;
+    if (!KLAR_KODER.includes(r.kod)) continue;
     if (d === null || String(r.datum) > d) d = String(r.datum);
   }
   return d;
@@ -310,27 +312,54 @@ export function namnUrNasta(rad) {
  * `tak_totalt` = summan, och det är den rondens `rundaAntal` ska mätas mot.
  */
 export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {}) {
+  const small = (s) => String(s ?? '').toLowerCase();
   const sedan = senasteKlar(logg, kampanjId);
   const nya = logg.filter((r) => r.kod === LARDOM_KOD && String(r.kampanj_id) === String(kampanjId) && (!sedan || String(r.datum) >= sedan) && (!idag || String(r.datum) <= String(idag)));
   const vantar = oskrivna(logg, { kampanjId }).length;
-  const redanBriefade = new Set(briefer(logg, kampanjId).map((r) => String(r.annons_namn ?? '').toLowerCase()));
+  const alla = briefer(logg, kampanjId);
+  const redanBriefade = new Set(alla.map((r) => small(r.annons_namn)));
+  // En plats som en brief med ANNAT namn utfört (`plats` i manifestet). Axels
+  // fall 2026-09-22: lärdomen namngav Takoverdrag_OB_2_H1, namnet var upptaget
+  // i Notion av ett annat koncept, briefen heter OB_4_H1 och bär
+  // plats=OB_2_H1. Loggen skrivs aldrig om — platsen räknas utförd via
+  // briefens egen rad.
+  const utfordaPlatser = new Set(alla.map((r) => small(r.plats)).filter(Boolean));
   // Regel (b), Axels tillägg 2026-09-22: en namngiven annons som REDAN finns —
   // som brief i loggen, som rad i Notion eller som annons i kontot — ger ingen
   // plats. Lärdomen är då redan utförd, och en plats till hade byggt en
-  // dubblett. `befintliga` fylls av anroparen ur kontot/Notion; den här filen
+  // dubblett. Kontots annonser känner loggen själv: varje rad med annons_namn
+  // i kampanjen (ETIKETT, SKALA, TJUV_PAUSAD, LARDOM …). Notion-raderna kan
+  // loggen inte se — de kommer med `befintliga` från anroparen. Den här filen
   // gör aldrig I/O.
-  const finns = new Set([...redanBriefade, ...befintliga.map((n) => String(n ?? '').toLowerCase())]);
+  const iLoggen = new Set(logg.filter((r) => String(r.kampanj_id) === String(kampanjId) && r.annons_namn && r.kod !== BRIEF_KOD).map((r) => small(r.annons_namn)));
+  const finns = new Set([...redanBriefade, ...utfordaPlatser, ...iLoggen, ...befintliga.map(small)]);
+  const begarda = [];
+  for (const r of nya) for (const rad of r.nasta ?? []) { const n = namnUrNasta(rad); if (n && !begarda.some((x) => small(x) === small(n))) begarda.push(n); }
   const namngivna = [];
   const struket = [];
-  for (const r of nya) {
-    for (const rad of r.nasta ?? []) {
-      const n = namnUrNasta(rad);
-      if (!n || namngivna.includes(n)) continue;
-      if (finns.has(n.toLowerCase())) { if (!struket.includes(n)) struket.push(n); continue; }
-      namngivna.push(n);
-    }
-  }
-  return { tak: nya.length, tak_totalt: nya.length + namngivna.length, namngivna, struket, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
+  for (const n of begarda) (finns.has(small(n)) ? struket : namngivna).push(n);
+  // Två sorters strukna: UTFÖRDA (en BRIEF-rad bär namnet, eller en BRIEF-rad
+  // bär namnet som plats) och UPPTAGNA (namnet finns i kontot eller i Notion
+  // — kanske som ett helt annat koncept). En upptagen plats får utföras under
+  // annat namn med `plats`; en utförd får det aldrig.
+  const utforda = struket.filter((n) => redanBriefade.has(small(n)) || utfordaPlatser.has(small(n)));
+  // Taket är per BATCH, inte per anrop: fria platser som redan förbrukats
+  // sedan förra batchen räknas bort. En fri brief = BRIEF-rad efter senaste
+  // *_KLAR-raden (loggen är append-only, så ordningen är tiden, och en batch
+  // skriver sina BRIEF-rader FÖRE sin KLAR-rad) vars namn eller plats ingen
+  // lärdom i fönstret bett om. Utan den räkningen hade två anrop med en fri
+  // brief var gett två mot ett tak på ett. Vidarebyggen räknas inte som fria:
+  // en iteration på en levande breakthrough är beställd av punkt 9 (tre inom
+  // 14 dagar), inte av en tom kvot.
+  const begardaSet = new Set(begarda.map(small));
+  const breakthroughs = new Set(levandeBreakthroughs(logg, kampanjId, { idag }).map((e) => small(e.annons_namn)));
+  let sistaKlar = -1;
+  logg.forEach((r, i) => { if (String(r.kampanj_id) === String(kampanjId) && r.genomford === true && KLAR_KODER.includes(r.kod)) sistaKlar = i; });
+  const friaAnvanda = logg.filter((r, i) => i > sistaKlar && r.kod === BRIEF_KOD && String(r.kampanj_id) === String(kampanjId) && (!idag || String(r.datum) <= String(idag))
+    && !begardaSet.has(small(r.annons_namn)) && !(r.plats && begardaSet.has(small(r.plats))) && !(r.parent && breakthroughs.has(small(r.parent)))).length;
+  const tak = nya.length;
+  const tak_kvar = Math.max(0, tak - friaAnvanda);
+  return { tak, tak_kvar, fria_anvanda: friaAnvanda, tak_totalt: tak_kvar + namngivna.length, namngivna, struket, utforda, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
 }
 
 /**
@@ -344,29 +373,45 @@ export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {})
  * kvot i stället för en riktad, och `OB_3_H1` blev en dubblett av en brief som
  * redan låg i Notion.
  *
- * Domen: högst `tak` briefer får bära namn som ingen lärdom bett om. Varje
- * brief därutöver måste finnas i `namngivna`. Ren funktion.
+ * Domen: högst `tak_kvar` briefer får bära namn som ingen lärdom bett om
+ * (taket minus de fria som redan loggats sedan förra batchen). Varje brief
+ * därutöver måste finnas i `namngivna` — antingen med det namnet, eller med
+ * `plats: <namnet>` när namnet visade sig upptaget (Notion, kontot) och
+ * briefen fick ett annat. Ren funktion; `poster` är strängar eller
+ * `{ namn, plats }`.
  */
-export function provaBriefkvot(logg, kampanjId, namn = [], { idag = null, befintliga = [] } = {}) {
+export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befintliga = [] } = {}) {
+  const small = (s) => String(s ?? '').toLowerCase();
   const tak = brieftak(logg, kampanjId, { idag, befintliga });
-  const kvar = new Set(tak.namngivna.map((n) => n.toLowerCase()));
+  const kvar = new Set(tak.namngivna.map(small));
   const fria = [];
   const riktade = [];
-  for (const n of namn) {
-    const l = String(n ?? '').toLowerCase();
-    if (kvar.has(l)) { kvar.delete(l); riktade.push(n); continue; }
-    fria.push(n);
-  }
   const fel = [];
-  if (fria.length > tak.tak) {
-    fel.push(`${fria.length} briefer bär namn som ingen lärdom bett om, men taket är ${tak.tak} (en per lärdom sedan förra batchen). Övertaliga: ${fria.slice(tak.tak).join(', ')}. Döp om dem till namnen lärdomen gav (${tak.namngivna.join(', ') || 'inga kvar'}) eller skriv fler lärdomar först.`);
+  for (const p of poster) {
+    const namn = typeof p === 'string' ? p : p?.namn;
+    const plats = typeof p === 'string' ? null : (p?.plats ?? null);
+    if (plats) {
+      // En UTFÖRD plats (BRIEF-rad med namnet, eller med namnet som plats) är
+      // stängd. En UPPTAGEN plats (namnet finns i Notion/kontot som något
+      // annat) är precis fallet plats= finns för: samma tanke, ledigt namn.
+      if (tak.utforda.some((n) => small(n) === small(plats))) { fel.push(`${namn}: platsen ${plats} är redan utförd (en BRIEF-rad bär namnet eller platsen) — briefa den inte igen.`); continue; }
+      const upptagen = tak.struket.some((n) => small(n) === small(plats));
+      if (!kvar.has(small(plats)) && !upptagen) { fel.push(`${namn}: plats=${plats} är ingen namngiven plats i lärdomarna sedan förra batchen (${tak.namngivna.join(', ') || 'inga'}).`); continue; }
+      kvar.delete(small(plats)); riktade.push(namn); continue;
+    }
+    if (kvar.has(small(namn))) { kvar.delete(small(namn)); riktade.push(namn); continue; }
+    fria.push(namn);
+  }
+  if (fria.length > tak.tak_kvar) {
+    const varfor = tak.fria_anvanda ? `${tak.tak} per lärdom sedan förra batchen, ${tak.fria_anvanda} redan förbrukad${tak.fria_anvanda === 1 ? '' : 'e'}` : 'en per lärdom sedan förra batchen';
+    fel.push(`${fria.length} briefer bär namn som ingen lärdom bett om, men taket är ${tak.tak_kvar} (${varfor}). Övertaliga: ${fria.slice(tak.tak_kvar).join(', ')}. Döp om dem till namnen lärdomen gav (${tak.namngivna.join(', ') || 'inga kvar'}) eller skriv fler lärdomar först.`);
   }
   for (const n of tak.struket) {
-    if (namn.some((x) => String(x).toLowerCase() === n.toLowerCase())) {
+    if (poster.some((p) => small(typeof p === 'string' ? p : p?.namn) === small(n))) {
       fel.push(`${n} finns redan som brief, i Notion eller i kontot — lärdomen är utförd. Briefa den inte igen.`);
     }
   }
-  return { ok: fel.length === 0, fel, tak: tak.tak, tak_totalt: tak.tak_totalt, fria, riktade, namngivna: tak.namngivna, struket: tak.struket };
+  return { ok: fel.length === 0, fel, tak: tak.tak, tak_kvar: tak.tak_kvar, tak_totalt: tak.tak_totalt, fria, riktade, namngivna: tak.namngivna, struket: tak.struket };
 }
 
 /** Levande breakthroughs (punkt 7, 9): etikett BREAKTHROUGH inom LEVANDE_DAGAR, inte pausad som tjuv. */
@@ -670,7 +715,7 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   }
   const rad = {
     datum: idag, kampanj_id: String(kampanj.id), kampanj_namn: String(kampanj.namn ?? ''), ad_account_id: String(kampanj.ad_account_id ?? ''),
-    kod: BRIEF_KOD, annons_namn: brief.namn, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null,
+    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null,
     avatar: t.avatar ?? null, awareness: t.awareness ?? null, begar: t.begar ?? null, mekanism: t.mekanism ?? null, tro: t.tro ?? null, urgency: t.urgency ?? null, 'hook-mekanik': t['hook-mekanik'] ?? null, kalla: t.kalla ?? null,
     notion_url: brief.url ?? null, genomford: true, godkand_av: 'auto — brief loggad, Axels definition av klart 2026-09-21',
   };
@@ -825,9 +870,16 @@ async function huvud(argv) {
     const kampanj = { id: String(kampanjId), namn: k.produkt, ad_account_id: k.ad_account_id ?? '1867947880635861' };
     const batch = flagga('batch') ? Number(flagga('batch')) : null;
 
+    // Redan loggade briefer hoppas — manifestet får köras om när en rad lagts
+    // till, utan att de gamla dubbleras.
+    const redan = new Set(briefer(logg, kampanjId).map((r) => String(r.annons_namn).toLowerCase()));
+    const nyaPoster = lista.filter((p) => { if (redan.has(String(p.namn).toLowerCase())) { console.log(`↷ ${p.namn} har redan en BRIEF-rad — hoppas`); return false; } return true; });
+    if (!nyaPoster.length) { console.log('Inget nytt att logga.'); return; }
+
     // Briefkvoten prövas FÖRE första raden skrivs (Axels tillägg 2026-09-22).
     // --befintliga tar annonsnamn som redan finns i kontot eller i Notion,
-    // kommaseparerat eller som en JSON-lista i en fil.
+    // kommaseparerat eller som en JSON-lista i en fil. `plats` i manifestet
+    // säger vilken namngiven plats en brief med annat namn utför.
     const befRå = flagga('befintliga');
     let befintliga = [];
     if (befRå) {
@@ -835,8 +887,16 @@ async function huvud(argv) {
         ? (JSON.parse(readFileSync(befRå, 'utf8')) ?? []).map((x) => (typeof x === 'string' ? x : x?.namn)).filter(Boolean)
         : befRå.split(',').map((x) => x.trim()).filter(Boolean);
     }
-    const kvot = provaBriefkvot(logg, kampanjId, lista.map((p) => p.namn), { idag, befintliga });
-    console.log(`Briefkvot: ${kvot.tak} fri(a) plats(er) + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
+    const kvot = provaBriefkvot(logg, kampanjId, nyaPoster.map((p) => ({ namn: p.namn, plats: p.plats ?? null })), { idag, befintliga });
+    console.log(`Briefkvot: ${kvot.tak_kvar} fri(a) plats(er) kvar av ${kvot.tak} + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
+    // Regel (b) går inte att pröva utan kontots och hubbens namn. Namnger
+    // lärdomarna platser och anroparen inte skickat --befintliga har ingen
+    // läst Notion — och det var exakt så OB_2_H1 fick ett andra koncept.
+    if (befRå === null && (kvot.namngivna.length || kvot.struket.length)) {
+      console.error(`   🔴 lärdomarna namnger platser (${[...kvot.namngivna, ...kvot.struket].join(', ')}) men --befintliga saknas. Läs annonsnamnen ur kontot OCH Notion-hubben och skicka dem med --befintliga <namn,namn> eller --befintliga <fil.json>; annars kan regel (b) inte prövas.`);
+      console.error('\n❌ Inget skrivet.');
+      process.exit(1);
+    }
     if (!kvot.ok) {
       for (const f of kvot.fel) console.error(`   🔴 ${f}`);
       console.error('\n❌ Inget skrivet. Rätta manifestet och kör om.');
@@ -846,10 +906,10 @@ async function huvud(argv) {
     const rader = [];
     let fel = 0;
     const loggNu = [...logg];
-    for (const p of lista) {
+    for (const p of nyaPoster) {
       const bf = isAbsolute(p.brief) ? p.brief : resolve(dirname(manifestFil), p.brief);
       const text = readFileSync(bf, 'utf8');
-      const r = briefRad({ namn: p.namn, typ: p.typ, text, url: p.url ?? null }, { logg: loggNu, kampanj, idag, batch });
+      const r = briefRad({ namn: p.namn, typ: p.typ, text, url: p.url ?? null, plats: p.plats ?? null }, { logg: loggNu, kampanj, idag, batch });
       console.log(`${r.ok ? '✅' : '❌'} ${p.namn}${r.rad.koncept ? ` · koncept ${r.rad.koncept} · iteration ${r.rad.iteration_nr}` : ''}${r.rad.lardom ? ` · ${r.rad.lardom}` : ''}`);
       for (const f of r.fel) console.log(`   🔴 ${f}`);
       for (const w of r.varningar) console.log(`   ⚠️  ${w}`);
@@ -857,7 +917,7 @@ async function huvud(argv) {
       rader.push(r.rad);
       loggNu.push(r.rad); // så nästa brief på samma koncept får nästa nummer
     }
-    if (fel) { console.log(`\n❌ ${fel} av ${lista.length} briefer stoppade — skriv lärdomen eller rätta taggarna; skapa ingen Notion-rad för dem.`); process.exit(1); }
+    if (fel) { console.log(`\n❌ ${fel} av ${nyaPoster.length} briefer stoppade — skriv lärdomen eller rätta taggarna; skapa ingen Notion-rad för dem.`); process.exit(1); }
     if (torr) { console.log(`\n--torr: ${rader.length} BRIEF-rader validerade, inget skrivet.`); return; }
     for (const r of rader) await skrivRad(r);
     console.log(`\n${rader.length} BRIEF-rader skrivna.`);

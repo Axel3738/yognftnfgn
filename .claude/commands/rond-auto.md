@@ -466,10 +466,24 @@ sedan 2026-09-21 för konverteringsgraden i lärdomen.
    Båda prövas av `provaBriefkvot()` i `agent/lardom.mjs`, som körs FÖRE första
    BRIEF-raden skrivs och avbryter med exit 1. Skicka kontots och hubbens
    befintliga annonsnamn med `--befintliga <namn,namn>` eller
-   `--befintliga <fil.json>`.
-   ⚠️ **Lediga AD-ID:n läses ur BÅDE kontot och Notion-hubben.** Mätt samma
-   dag: `Takoverdrag_OB_2_H1` fanns bara i Notion, inte i kontot, och en brief
-   fick därför ett namn som redan bar ett annat koncept.
+   `--befintliga <fil.json>`. **Namnger lärdomarna platser och `--befintliga`
+   saknas vägrar `--brief` att skriva** (sedan 2026-09-22 em) — regel (b) går
+   inte att pröva utan namnen, och det var exakt så OB_2_H1 fick ett andra
+   koncept. Kontots namn känner loggen själv (varje rad med `annons_namn`);
+   Notion-hubbens måste läsas.
+   **Taket är per batch, inte per anrop:** fria briefer som redan loggats sedan
+   förra `*_KLAR`-raden räknas bort (`tak_kvar`). Två anrop med en fri var
+   ger inte två.
+   **Är det namngivna namnet upptaget** (Notion bär det med ett annat koncept)
+   får briefen ett ledigt namn och `"plats": "<det namngivna>"` i manifestet —
+   BRIEF-raden bär `plats`, och platsen räknas utförd utan att loggen skrivs
+   om. Mätt 2026-09-22: `Takoverdrag_OB_4_H1` utför platsen `OB_2_H1`.
+   `--brief` hoppar dessutom poster som redan har en BRIEF-rad, så manifestet
+   kan köras om när en rad lagts till.
+   ⚠️ **Lediga AD-ID:n läses ur kontot, Notion-hubben OCH produktens
+   `batch-log.md`.** Mätt samma dag: `Takoverdrag_OB_2_H1` fanns bara i Notion,
+   inte i kontot — och stod redan i batch-log.md (batch #3, förvaringspåsen) —
+   och en brief fick därför ett namn som redan bar ett annat koncept.
 
    **Turordningen (Axels beslut 2026-09-21, i stället för ett briefgolv):**
    `--skelett` sorterar sedan dess kön själv — **kampanjer med en levande

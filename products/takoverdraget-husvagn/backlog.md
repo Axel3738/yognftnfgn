@@ -32,11 +32,6 @@ Koncept som väntar, ännu inte briefade. Skapad 2026-09-14.
   starkaste argument — men karusell är otestat i hela kampanjen. Billigt att
   pröva när ett format till behövs.
   *Källa: CS_2_1 + CS_2_H1, 48 % av vinstbidraget.*
-- **Vinnaren översatt till en annan husvagnsstorlek.** Allt material säger
-  6,5 × 3 m. Finns produkten i fler mått är "vilken storlek har din vagn?" en
-  segmenteringsvinkel som ingen annan kan kopiera utan samma sortiment.
-  ⚠️ Kräver att sortimentet kontrolleras först — i dag är 6,5 × 3 m det enda
-  verifierade måttet.
 - **Riktiga kundcitat, när de finns.** Produkten har fortfarande bara de 10
   seedade recensionerna (omkontrollerat 2026-09-16, oförändrat sedan 09-14).
   Första äkta organiska recensionen öppnar en hel vinkel som i dag är stängd.
