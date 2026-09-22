@@ -817,3 +817,16 @@ Femte dygnet med produkten avstängd på båda marknaderna.
   Livstid 2 058 kr / 4 köp — tredje dagen i rad med exakt samma siffror.
 - Ingen ny spend betyder att pausen håller och att rutinen inte har något att döma.
   Den här rundan blir meningsfull igen först när SE-kampanjen slås på.
+
+## 2026-09-22 — `/ops-oversatt carashell/termoskyddet` (NO) — oförändrat
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`, 0 hållna. Inget översatt, inget renderat
+  (0 HeyGen-credits), inget uppladdat, ingen Notion-rad rörd.
+- NO-kampanjen `CARASHELL_NO_Termoskydd Husbil 211 × 171 cm` (`120249115382210172`) står
+  kvar PAUSED med **3 516 kr spend — samma tal som i går**, alltså ingen spend sedan pausen
+  2026-09-19 20:07 CEST. Läge "NO paused by owner": rutinen rör inget och föreslår ingen
+  omstart. Livstid 7 köp, ROAS 1,14 mot break-even 1,61.
+- Butiken redo för Norge: 548 NOK läst på `/nb`-sidan.
+- SE fortsatt pausad (sedan 2026-09-18) ⇒ varken leveransrundan eller speglingen fyller kön.
+- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
+  Batch: `market-expansion/ops/carashell/2026-09-22-no-termoskyddet/`.
