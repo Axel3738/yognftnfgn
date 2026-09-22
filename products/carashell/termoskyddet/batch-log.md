@@ -830,3 +830,13 @@ Femte dygnet med produkten avstängd på båda marknaderna.
 - SE fortsatt pausad (sedan 2026-09-18) ⇒ varken leveransrundan eller speglingen fyller kön.
 - Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
   Batch: `market-expansion/ops/carashell/2026-09-22-no-termoskyddet/`.
+
+## 2026-09-22 — `/ops-spegla carashell/termoskyddet` — tom kö, fjärde dygnet med båda marknader avstängda
+
+- 0 rader i båda speglingsstegen. Inget speglat, inget uppladdat, ingen Notion-rad rörd, ingen Discord-ping.
+- Kampanjerna oförändrade: SE PAUSED 2 058 kr (sedan 2026-09-18), NO PAUSED 3 516 kr (sedan 2026-09-19).
+  Båda avvecklade med spend ⇒ ingen efterjustering körd, varje rad hade hoppats före första skrivningen.
+- Källhubben: 42 rader (oförändrat totalt) — **32 `Approved`** (27 i går), 8 `Creative strat review`,
+  2 `Draft`. Fem rader flyttades fram till `Approved` i dag, alltså fortsatt fel status för en speglad
+  hub: de når aldrig speglingens ordinarie kö och väntar på `--fran "Approved"` när SE-kampanjen är igång.
+- Pris 559 SEK / 548 NOK ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
