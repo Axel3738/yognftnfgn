@@ -1,0 +1,122 @@
+{
+ "uppdaterad": "2026-09-22T20:06:10.163Z",
+ "skickade": [
+  {
+   "nyckel": "eskalering:1551354091823693906:1551354104536637470",
+   "typ": "eskalering",
+   "brand": "baverbutiken",
+   "kanal": "norway-customer-support",
+   "kanalId": "1551354091823693906",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> ⏰ **Unanswered for 45 h in #norway-customer-support** (Bäverbutiken) — Axel wrote: \"For norway: su***@beverbutikken.no\" (+5 more messages). Please pick it up and reply in the channel so everyone can see it is handled. https://discord.com/channels/1540322130388983921/1551354091823693906/1551354104536637470",
+   "meddelandeId": "1552048368287748137",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:#5584:2026-09-23",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🔴 **Chargeback deadline — #5584 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-23 · 1 day left. Unanswered, the money is lost for good. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048370074263554",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17587110379869:2026-09-23",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17587110379869 (Bäverbutiken)** · 1,262.2 SEK · evidence due 2026-09-23 · 1 day left. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048371974279332",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17684837138781:2026-09-22",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17684837138781 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-22 · due TODAY. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048374373421097",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17672783298909:2026-09-21",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17672783298909 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-21 · OVERDUE by 1 day. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048375992422432",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17647259943261:2026-09-19",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17647259943261 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-19 · OVERDUE by 3 days. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048376588009625",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17664775553373:2026-09-17",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17664775553373 (Bäverbutiken)** · 589 SEK · evidence due 2026-09-17 · OVERDUE by 5 days. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048378169393273",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17649967202653:2026-09-16",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🟡 **Bank inquiry deadline — Shopify order id 17649967202653 (Bäverbutiken)** · 348 SEK · evidence due 2026-09-16 · OVERDUE by 6 days. Unanswered, it escalates into a chargeback. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048379452854563",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  },
+  {
+   "nyckel": "tvist:baverbutiken:17639122469213:2026-09-20",
+   "typ": "tvist",
+   "brand": "baverbutiken",
+   "kanal": "customer-service",
+   "kanalId": "1548923828590088192",
+   "tid": "2026-09-22T20:06:05.842Z",
+   "text": "<@1543617780396593206> 🔴 **Chargeback deadline — Shopify order id 17639122469213 (Bäverbutiken)** · 599 SEK · evidence due 2026-09-20 · OVERDUE by 2 days. Unanswered, the money is lost for good. Shopify admin → Orders → Disputes; the handbook is in Notion (Customer support → Chargebacks). Reply here once it is submitted.",
+   "meddelandeId": "1552048382758101083",
+   "mottagare": [
+    "1543617780396593206"
+   ]
+  }
+ ]
+}

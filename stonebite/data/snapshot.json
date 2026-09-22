@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-22T19:05:57.764Z",
+ "byggd": "2026-09-22T20:06:05.744Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-22T19:05:04.426Z"
+  "till": "2026-09-22T20:05:11.005Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -921,8 +921,8 @@
  "rutiner": {
   "status": "ok",
   "orsak": null,
-  "historikFran": "2026-09-07T19:07:46+00:00",
-  "matt": "2026-09-22T19:05:04.426Z",
+  "historikFran": "2026-09-07T22:23:36+02:00",
+  "matt": "2026-09-22T20:05:11.005Z",
   "dagar": 14,
   "rutiner": [
    {
@@ -936,9 +936,9 @@
     },
     "schematext": "varje timme :16",
     "vad": "Skanningar in i Shopify + kundens spårningssida",
-    "senast": "2026-09-22T18:21:26+00:00",
-    "antal": 103,
-    "nasta": "2026-09-22T19:16:00.000Z",
+    "senast": "2026-09-22T19:21:33+00:00",
+    "antal": 104,
+    "nasta": "2026-09-22T20:16:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -954,9 +954,9 @@
     },
     "schematext": "varje timme :32",
     "vad": "Samma som Bäverbutikens, norsk kedja",
-    "senast": "2026-09-22T18:33:47+00:00",
-    "antal": 45,
-    "nasta": "2026-09-22T19:32:00.000Z",
+    "senast": "2026-09-22T19:33:34+00:00",
+    "antal": 46,
+    "nasta": "2026-09-22T20:32:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -972,9 +972,9 @@
     },
     "schematext": "varje timme :40",
     "vad": "Finsk kedja",
-    "senast": "2026-09-22T18:41:46+00:00",
-    "antal": 45,
-    "nasta": "2026-09-22T19:40:00.000Z",
+    "senast": "2026-09-22T19:41:12+00:00",
+    "antal": 46,
+    "nasta": "2026-09-22T20:40:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -990,9 +990,9 @@
     },
     "schematext": "varje timme :48",
     "vad": "Dansk kedja",
-    "senast": "2026-09-22T18:49:58+00:00",
-    "antal": 45,
-    "nasta": "2026-09-22T19:48:00.000Z",
+    "senast": "2026-09-22T19:50:44+00:00",
+    "antal": 46,
+    "nasta": "2026-09-22T20:48:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1008,9 +1008,9 @@
     },
     "schematext": "varje timme :24",
     "vad": "Fyrspråkig kedja (sv/nb/en/fi)",
-    "senast": "2026-09-22T18:25:49+00:00",
-    "antal": 48,
-    "nasta": "2026-09-22T19:24:00.000Z",
+    "senast": "2026-09-22T19:25:37+00:00",
+    "antal": 49,
+    "nasta": "2026-09-22T20:24:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1026,9 +1026,9 @@
     },
     "schematext": "varje timme :56",
     "vad": "Prefix MS-",
-    "senast": "2026-09-22T18:57:40+00:00",
-    "antal": 32,
-    "nasta": "2026-09-22T19:56:00.000Z",
+    "senast": "2026-09-22T19:57:38+00:00",
+    "antal": 33,
+    "nasta": "2026-09-22T20:56:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1044,9 +1044,9 @@
     },
     "schematext": "varje timme :04",
     "vad": "Shopify + Meta + Discord + rutinvakten + bonus → snapshot.json → main → Railway. Byggd 2026-09-22 på Barkås-kontot (trig_01QwKgfZP3JdhZX6tbGo1LJb)",
-    "senast": "2026-09-22T18:06:19+00:00",
-    "antal": 6,
-    "nasta": "2026-09-22T20:04:00.000Z",
+    "senast": "2026-09-22T19:06:02+00:00",
+    "antal": 7,
+    "nasta": "2026-09-22T21:04:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1067,7 +1067,7 @@
     "nasta": "2026-09-23T02:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 17 h sedan"
+    "ord": "körde för 18 h sedan"
    },
    {
     "id": "no-recensioner",
@@ -1085,7 +1085,7 @@
     "nasta": "2026-09-23T03:30:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 15 h sedan"
+    "ord": "körde för 16 h sedan"
    },
    {
     "id": "commission",
@@ -1103,7 +1103,7 @@
     "nasta": "2026-09-23T04:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 3 h sedan"
+    "ord": "körde för 4 h sedan"
    },
    {
     "id": "tvistkoll",
@@ -1164,7 +1164,7 @@
     "nasta": "2026-09-24T05:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 38 h sedan"
+    "ord": "körde för 39 h sedan"
    },
    {
     "id": "notionkorning",
@@ -1200,7 +1200,7 @@
     "nasta": "2026-09-23T13:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 5 h sedan"
+    "ord": "körde för 6 h sedan"
    },
    {
     "id": "bildannonser",
@@ -1236,7 +1236,7 @@
     "nasta": "2026-09-22T22:41:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 20 h sedan"
+    "ord": "körde för 21 h sedan"
    },
    {
     "id": "nattvakt-carashell-termoskyddet",
@@ -1254,7 +1254,7 @@
     "nasta": "2026-09-22T22:57:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 20 h sedan"
+    "ord": "körde för 21 h sedan"
    },
    {
     "id": "leverans-carashell-takskyddet",
@@ -1272,7 +1272,7 @@
     "nasta": "2026-09-23T12:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 7 h sedan"
+    "ord": "körde för 8 h sedan"
    },
    {
     "id": "leverans-carashell-termoskyddet",
@@ -1290,7 +1290,7 @@
     "nasta": "2026-09-23T12:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 7 h sedan"
+    "ord": "körde för 8 h sedan"
    },
    {
     "id": "no-carashell-takskyddet",
@@ -1308,7 +1308,7 @@
     "nasta": "2026-09-23T14:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 5 h sedan"
+    "ord": "körde för 6 h sedan"
    },
    {
     "id": "no-carashell-termoskyddet",
@@ -1326,7 +1326,7 @@
     "nasta": "2026-09-23T14:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 5 h sedan"
+    "ord": "körde för 6 h sedan"
    },
    {
     "id": "spegla-carashell-takskyddet",
@@ -1344,7 +1344,7 @@
     "nasta": "2026-09-23T14:45:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 2 h sedan"
+    "ord": "körde för 3 h sedan"
    },
    {
     "id": "spegla-carashell-termoskyddet",
@@ -1362,7 +1362,7 @@
     "nasta": "2026-09-23T14:55:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "us-carashell-takskyddet",
@@ -1380,7 +1380,7 @@
     "nasta": "2026-09-23T15:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 27 h sedan"
+    "ord": "körde för 28 h sedan"
    },
    {
     "id": "us-carashell-termoskyddet",
@@ -1398,7 +1398,7 @@
     "nasta": "2026-09-23T15:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "nattvakt-hemvakten",
@@ -1488,7 +1488,7 @@
     "nasta": "2026-09-22T22:17:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 21 h sedan"
+    "ord": "körde för 22 h sedan"
    },
    {
     "id": "leverans-drytrek",
@@ -1506,7 +1506,7 @@
     "nasta": "2026-09-23T11:50:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 7 h sedan"
+    "ord": "körde för 8 h sedan"
    },
    {
     "id": "no-drytrek",
@@ -1524,7 +1524,7 @@
     "nasta": "2026-09-23T13:50:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 5 h sedan"
+    "ord": "körde för 6 h sedan"
    },
    {
     "id": "nattvakt-kalender",
@@ -1662,6 +1662,55 @@
    "ny": 0
   },
   "handelser": [
+   {
+    "tid": "2026-09-22T19:57:38+00:00",
+    "rutin": "sparning-matstrumpor",
+    "namn": "Spårningen Matstrumpor",
+    "brand": "matstrumpor",
+    "rubrik": "sparning matstrumpor: 2026-09-22 — 0 event, 113 paket"
+   },
+   {
+    "tid": "2026-09-22T19:50:44+00:00",
+    "rutin": "sparning-baeverbutiken",
+    "namn": "Spårningen Bæverbutiken (DK)",
+    "brand": "baverbutiken",
+    "rubrik": "Spårning Bæverbutiken: rond 21:52 CEST (1 paket, 18 händelser)"
+   },
+   {
+    "tid": "2026-09-22T19:41:12+00:00",
+    "rutin": "sparning-majavakauppa",
+    "namn": "Spårningen Majavakauppa (FI)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning majavakauppa: 2026-09-22 21:41 — 0 event, 0 registrerade, sidan publicerad (30 paket)"
+   },
+   {
+    "tid": "2026-09-22T19:33:34+00:00",
+    "rutin": "sparning-beverbutikken",
+    "namn": "Spårningen Beverbutikken (NO)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning beverbutikken: 2026-09-22 21:32 — 874 paket, 9047 händelser, 4 event"
+   },
+   {
+    "tid": "2026-09-22T19:25:37+00:00",
+    "rutin": "sparning-carashell",
+    "namn": "Spårningen CaraShell",
+    "brand": "carashell",
+    "rubrik": "sparning carashell: 2026-09-22 21:25 — 229 paket, 488 händelser, 0 registrerade"
+   },
+   {
+    "tid": "2026-09-22T19:21:33+00:00",
+    "rutin": "sparning-baverbutiken",
+    "namn": "Spårningen Bäverbutiken",
+    "brand": "baverbutiken",
+    "rubrik": "sparning baverbutiken: 2026-09-22 — 7 event, 0 registrerade, sidan publicerad (1 438 paket)"
+   },
+   {
+    "tid": "2026-09-22T19:06:02+00:00",
+    "rutin": "stonebite",
+    "namn": "Stonebite: färsk data till sajten",
+    "brand": "bolaget",
+    "rubrik": "Stonebite: färsk data 2026-09-22 21:06"
+   },
    {
     "tid": "2026-09-22T18:57:40+00:00",
     "rutin": "sparning-matstrumpor",
@@ -4412,62 +4461,13 @@
     "namn": "Spårningen Bäverbutiken",
     "brand": "baverbutiken",
     "rubrik": "sparning: 2026-09-19 — 51 event, 56 registrerade"
-   },
-   {
-    "tid": "2026-09-19T10:17:58+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 11 event, 0 registrerade"
-   },
-   {
-    "tid": "2026-09-19T09:17:51+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 42 event, 51 registrerade"
-   },
-   {
-    "tid": "2026-09-19T08:17:49+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 1 event, 0 registrerade"
-   },
-   {
-    "tid": "2026-09-19T08:00:56+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-19: STATUS.md + körlogg — 3 produkter launchade, 46 annonser ACTIVE"
-   },
-   {
-    "tid": "2026-09-19T07:17:59+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 2 event, 0 registrerade"
-   },
-   {
-    "tid": "2026-09-19T06:42:19+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-19: bilder-no dubblettnamn för no-image-ads.mjs"
-   },
-   {
-    "tid": "2026-09-19T06:39:21+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-19: Fas 3.2 bildannonser klara, norsk text komponerad"
    }
   ]
  },
  "eskalering": {
   "status": "ok",
   "orsak": null,
-  "hamtad": "2026-09-22T19:05:34.848Z",
+  "hamtad": "2026-09-22T20:05:44.374Z",
   "kanaler": [
    {
     "brand": "baverbutiken",
@@ -5640,45 +5640,45 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:04.472Z"
+   "tid": "2026-09-22T20:05:11.044Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:04.472Z"
+   "tid": "2026-09-22T20:05:11.044Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:04.472Z"
+   "tid": "2026-09-22T20:05:11.044Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:04.472Z"
+   "tid": "2026-09-22T20:05:11.044Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "6 av 13 butiker gick inte att läsa",
-   "tid": "2026-09-22T19:05:18.493Z",
+   "tid": "2026-09-22T20:05:25.719Z",
    "butiker": 13
   },
   {
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:25.808Z",
+   "tid": "2026-09-22T20:05:35.631Z",
    "konton": 5
   },
   {
    "id": "rutiner",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:26.953Z",
+   "tid": "2026-09-22T20:05:36.804Z",
    "ok": 26,
    "sen": 0,
    "saknas": 0,
@@ -5690,15 +5690,22 @@
    "id": "discord",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:34.848Z",
+   "tid": "2026-09-22T20:05:44.374Z",
    "kanaler": 26
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T19:05:57.764Z",
+   "tid": "2026-09-22T20:06:05.737Z",
    "personer": 7
+  },
+  {
+   "id": "autosvar",
+   "status": "ok",
+   "orsak": null,
+   "tid": "2026-09-22T20:06:05.744Z",
+   "butiker": 1
   }
  ],
  "butiker": [
@@ -5712,7 +5719,7 @@
    "dagar": [],
    "ordrar": null,
    "status": "fel",
-   "orsak": "Shopify svarade 403: {\"errors\":\"[API] This action requires merchant approval for read_orders scope.\"}"
+   "orsak": "Shopify-appen bakom SHOPIFY_*_SE får inte läsa ordrar (403: merchant approval for read_orders saknas). Spårningen läser samma butik med appen bakom SHOPIFY_*_SE_BAVER_SE — lägg in SHOPIFY_SHOP_SE_BAVER_SE, SHOPIFY_CLIENT_ID_SE_BAVER_SE, SHOPIFY_CLIENT_SECRET_SE_BAVER_SE i miljön, eller godkänn kunddata (Protected customer data access) för appen i dev.shopify.com."
   },
   {
    "id": "carashell",
@@ -5869,13 +5876,14 @@
     },
     {
      "datum": "2026-09-22",
-     "omsattning": 65873.5,
-     "ordrar": 40
+     "omsattning": 68389.84,
+     "ordrar": 41
     }
    ],
-   "ordrar": 247,
+   "ordrar": 248,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_yitrbk_m3"
   },
   {
    "id": "beverbutikken",
@@ -6032,13 +6040,14 @@
     },
     {
      "datum": "2026-09-22",
-     "omsattning": 24514.199999999997,
-     "ordrar": 29
+     "omsattning": 26992.199999999997,
+     "ordrar": 31
     }
    ],
-   "ordrar": 884,
+   "ordrar": 886,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_NO"
   },
   {
    "id": "baeverbutiken",
@@ -6201,7 +6210,8 @@
    ],
    "ordrar": 1,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_DK"
   },
   {
    "id": "majavakauppa",
@@ -6364,7 +6374,8 @@
    ],
    "ordrar": 19,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_FI"
   },
   {
    "id": "matstrumpor",
@@ -6527,7 +6538,8 @@
    ],
    "ordrar": 118,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_1r46tp_qx"
   },
   {
    "id": "catcabin",
@@ -6539,7 +6551,7 @@
    "dagar": [],
    "ordrar": null,
    "status": "fel",
-   "orsak": "token-svaret var inte JSON (400) — appen är troligen inte installerad i ras1t2-2x.myshopify.com"
+   "orsak": "SHOPIFY_*_ras1t2_2x: token-svaret var inte JSON (400) — appen är troligen inte installerad i ras1t2-2x.myshopify.com"
   },
   {
    "id": "pzjagy-mz",
@@ -6702,7 +6714,8 @@
    ],
    "ordrar": 14,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_pzjagy_mz"
   },
   {
    "id": "kalender",
@@ -6865,7 +6878,8 @@
    ],
    "ordrar": 8,
    "status": "ok",
-   "orsak": null
+   "orsak": null,
+   "via": "SHOPIFY_*_KALENDER"
   },
   {
    "id": "uk",
@@ -6877,7 +6891,7 @@
    "dagar": [],
    "ordrar": null,
    "status": "fel",
-   "orsak": "Shopify svarade 403: {\"errors\":\"[API] This action requires merchant approval for read_orders scope.\"}"
+   "orsak": "Shopify-appen bakom SHOPIFY_*_UK får inte läsa ordrar (403: merchant approval for read_orders saknas). Godkänn kunddata (Protected customer data access) för appen i dev.shopify.com, eller lägg in nycklarna till en app som får läsa ordrar."
   },
   {
    "id": "j0p8qz-kp",
@@ -6889,7 +6903,7 @@
    "dagar": [],
    "ordrar": null,
    "status": "fel",
-   "orsak": "token-svaret var inte JSON (400) — appen är troligen inte installerad i j0p8qz-kp.myshopify.com"
+   "orsak": "SHOPIFY_*_j0p8qz_kp: token-svaret var inte JSON (400) — appen är troligen inte installerad i j0p8qz-kp.myshopify.com"
   },
   {
    "id": "tacklebay",
@@ -6901,7 +6915,7 @@
    "dagar": [],
    "ordrar": null,
    "status": "fel",
-   "orsak": "token-svaret var inte JSON (400) — appen är troligen inte installerad i iahe0c-b1.myshopify.com"
+   "orsak": "SHOPIFY_*_TACKLEBAY: token-svaret var inte JSON (400) — appen är troligen inte installerad i iahe0c-b1.myshopify.com"
   },
   {
    "id": "aphkky-ke",
@@ -7101,35 +7115,35 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 31505.68,
+     "spend": 31506.25,
      "kop": 87,
-     "roas": 2.213322
+     "roas": 2.213281
     }
    ],
    "idag": {
-    "spend": 34136.69,
-    "kop": 84,
-    "roas": 2.050762,
+    "spend": 35592.23,
+    "kop": 85,
+    "roas": 1.998617,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 79527.88,
+     "spend": 79528.06,
      "kop": 212,
-     "roas": 3.282731,
-     "cpa": 375.13150943396226,
-     "intakt": 261068.63704028
+     "roas": 3.282724,
+     "cpa": 375.13235849056605,
+     "intakt": 261068.67123543998
     },
     {
      "id": "120250009325850291",
      "namn": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
-     "spend": 16664.53,
+     "spend": 16664.67,
      "kop": 90,
-     "roas": 3.342659,
-     "cpa": 185.16144444444444,
-     "intakt": 55703.841185269994
+     "roas": 3.342631,
+     "cpa": 185.16299999999998,
+     "intakt": 55703.84254676999
     },
     {
      "id": "120250175763810291",
@@ -7143,11 +7157,11 @@
     {
      "id": "120249902177470291",
      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-     "spend": 12594.98,
+     "spend": 12595.18,
      "kop": 37,
-     "roas": 2.818281,
-     "cpa": 340.40486486486486,
-     "intakt": 35496.192829379994
+     "roas": 2.818236,
+     "cpa": 340.4102702702703,
+     "intakt": 35496.189702480006
     },
     {
      "id": "120249850522830291",
@@ -7188,11 +7202,11 @@
     {
      "id": "120250284693380291",
      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-     "spend": 5324.23,
+     "spend": 5324.28,
      "kop": 39,
-     "roas": 3.589984,
-     "cpa": 136.51871794871795,
-     "intakt": 19113.900512319997
+     "roas": 3.58995,
+     "cpa": 136.51999999999998,
+     "intakt": 19113.898986
     },
     {
      "id": "120250253867730291",
@@ -7430,9 +7444,9 @@
     }
    ],
    "idag": {
-    "spend": 21415.15,
-    "kop": 24,
-    "roas": 1.583209,
+    "spend": 22303.85,
+    "kop": 26,
+    "roas": 1.656783,
     "tomt": false
    },
    "kampanjer": [
@@ -7588,26 +7602,26 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 9746.52,
+     "spend": 9746.67,
      "kop": 8,
-     "roas": 1.901744
+     "roas": 1.901715
     }
    ],
    "idag": {
-    "spend": 9102.23,
+    "spend": 9591.93,
     "kop": 11,
-    "roas": 2.598448,
+    "roas": 2.465788,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120251451415500435",
      "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
-     "spend": 16916.39,
+     "spend": 16916.54,
      "kop": 16,
-     "roas": 2.141102,
-     "cpa": 1057.274375,
-     "intakt": 36219.71646178
+     "roas": 2.141083,
+     "cpa": 1057.28375,
+     "intakt": 36219.71621282
     },
     {
      "id": "120251471243740435",
@@ -7794,7 +7808,7 @@
     }
    ],
    "idag": {
-    "spend": 2635.94,
+    "spend": 2707.68,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -8006,15 +8020,15 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 11176.68,
+     "spend": 11176.78,
      "kop": 28,
-     "roas": 2.489115
+     "roas": 2.489093
     }
    ],
    "idag": {
-    "spend": 10276.72,
-    "kop": 23,
-    "roas": 2.143015,
+    "spend": 10874.41,
+    "kop": 28,
+    "roas": 2.379288,
     "tomt": false
    },
    "kampanjer": [
@@ -8030,11 +8044,11 @@
     {
      "id": "120252183673160233",
      "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
-     "spend": 19852.78,
+     "spend": 19853.24,
      "kop": 27,
-     "roas": 2.083951,
-     "cpa": 735.2881481481481,
-     "intakt": 41372.22073377999
+     "roas": 2.083903,
+     "cpa": 735.3051851851852,
+     "intakt": 41372.22639572
     },
     {
      "id": "120251996323340233",
@@ -16373,7 +16387,7 @@
     "program": "va"
    }
   ],
-  "raknat": "2026-09-22T19:05:57.739Z",
+  "raknat": "2026-09-22T20:06:05.714Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -18377,6 +18391,1382 @@
  "larm": {
   "skickade": []
  },
+ "autosvar": {
+  "dagar": 30,
+  "hamtad": "2026-09-22T20:05:11.005Z",
+  "etiketter": {
+   "x": {
+    "som_pa_bilden": "looks nothing like the picture",
+    "kvalitet": "quality not what they paid for",
+    "ej_levererad": "parcel never arrived",
+    "vantat": "waited too long for a reply",
+    "skadad_defekt": "broken or defective item",
+    "fel_vara": "wrong item",
+    "okand_debitering": "unknown charge",
+    "standard": "general complaint"
+   },
+   "typ": {
+    "wismo": "where is my order",
+    "levererad": "marked delivered, not received",
+    "leveranstid": "delivery time",
+    "oppettider": "opening hours",
+    "adress": "address change",
+    "ordernummer": "asked for order number",
+    "foretag": "company details",
+    "foton": "photos requested",
+    "retur": "return"
+   }
+  },
+  "brands": {
+   "baverbutiken": {
+    "brand": "baverbutiken",
+    "period": {
+     "fran": "2026-08-23T20:05:11.005Z",
+     "till": "2026-09-22T20:05:11.005Z",
+     "dagar": 30
+    },
+    "senasteKorning": "2026-09-22T08:15:52.572Z",
+    "antalKorningar": 5,
+    "antal": {
+     "mejl": 102,
+     "arenden": 67,
+     "ENKEL": 1,
+     "ARG": 2,
+     "SVÅR": 64,
+     "SKIP": 35,
+     "svar": 0,
+     "utkast": 3,
+     "flaggade": 67,
+     "tillVa": 64,
+     "fel": 0,
+     "kontaktformular": 35
+    },
+    "perTyp": {
+     "retur": 1,
+     "wismo": 4
+    },
+    "perKategori": {
+     "ovrigt": 40,
+     "fel_vara": 2,
+     "retur_angerratt": 7,
+     "var_ar_ordern": 7,
+     "avbestallning": 1,
+     "aterbetalning": 2,
+     "skadad_defekt": 2,
+     "produktfraga": 4,
+     "chargeback_hot": 2
+    },
+    "perSprak": {
+     "sv": 64,
+     "fi": 2,
+     "en": 1
+    },
+    "perAtgard": {
+     "flaggad": 64,
+     "utkast": 3,
+     "hoppad": 35
+    },
+    "perDag": [
+     {
+      "datum": "2026-09-21",
+      "mejl": 3,
+      "ENKEL": 1,
+      "ARG": 1,
+      "SVÅR": 1,
+      "SKIP": 0,
+      "svar": 0,
+      "utkast": 2,
+      "flaggade": 3
+     },
+     {
+      "datum": "2026-09-22",
+      "mejl": 99,
+      "ENKEL": 0,
+      "ARG": 1,
+      "SVÅR": 63,
+      "SKIP": 35,
+      "svar": 0,
+      "utkast": 1,
+      "flaggade": 64
+     }
+    ],
+    "arga": [
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1691,
+      "hink": "ARG",
+      "typ": null,
+      "kategori": "aterbetalning",
+      "ordernummer": [
+       "6600"
+      ],
+      "kund": "mo***@gmail.com",
+      "sprak": "sv",
+      "amne": "Skräp order #6600",
+      "kontaktformular": false,
+      "atgard": "utkast",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": "INBOX.VA-PRIO",
+      "orsak": "argt ordval",
+      "orsakEn": "angry wording",
+      "x": "kvalitet",
+      "lage": false,
+      "retur": false,
+      "opostadDagar": null
+     },
+     {
+      "tid": "2026-09-21T23:57:34.681Z",
+      "uid": 1689,
+      "hink": "ARG",
+      "typ": null,
+      "kategori": "fel_vara",
+      "ordernummer": [],
+      "kund": "to***@gmail.com",
+      "sprak": "sv",
+      "amne": "Vad är det här för skit?",
+      "kontaktformular": false,
+      "atgard": "utkast",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": "INBOX.VA-PRIO",
+      "orsak": "argt ordval",
+      "orsakEn": "angry wording",
+      "x": "som_pa_bilden",
+      "lage": false,
+      "retur": false,
+      "opostadDagar": null
+     }
+    ],
+    "svarade": [
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1691,
+      "hink": "ARG",
+      "typ": null,
+      "kategori": "aterbetalning",
+      "ordernummer": [
+       "6600"
+      ],
+      "kund": "mo***@gmail.com",
+      "sprak": "sv",
+      "amne": "Skräp order #6600",
+      "kontaktformular": false,
+      "atgard": "utkast",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": "INBOX.VA-PRIO",
+      "orsak": "argt ordval",
+      "orsakEn": "angry wording"
+     },
+     {
+      "tid": "2026-09-21T23:57:34.681Z",
+      "uid": 1657,
+      "hink": "ENKEL",
+      "typ": "retur",
+      "kategori": "retur_angerratt",
+      "ordernummer": [
+       "6504"
+      ],
+      "kund": "ju***@affarsredovisning.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 13.12",
+      "kontaktformular": true,
+      "atgard": "utkast",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": "INBOX.VA-PRIO",
+      "orsak": "kunden ber om retur — returinformationen direkt (Axels beslut 2026-09-22), VA:n tar emot returen",
+      "orsakEn": "simple"
+     },
+     {
+      "tid": "2026-09-21T23:57:34.681Z",
+      "uid": 1689,
+      "hink": "ARG",
+      "typ": null,
+      "kategori": "fel_vara",
+      "ordernummer": [],
+      "kund": "to***@gmail.com",
+      "sprak": "sv",
+      "amne": "Vad är det här för skit?",
+      "kontaktformular": false,
+      "atgard": "utkast",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": "INBOX.VA-PRIO",
+      "orsak": "argt ordval",
+      "orsakEn": "angry wording"
+     }
+    ],
+    "tillVa": [
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1720,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "br***@gmail.com",
+      "sprak": "en",
+      "amne": "Hello",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1721,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "aterbetalning",
+      "ordernummer": [],
+      "kund": "ma***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 18 september 2026 09.24",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori aterbetalning — VA:n",
+      "orsakEn": "category aterbetalning — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1722,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "chargeback_hot",
+      "ordernummer": [],
+      "kund": "we***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 21 september 2026 06.49",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1723,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "la***@bahbhof.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 06.30",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1724,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [
+       "6600"
+      ],
+      "kund": "mo***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Skräp order #6600",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1725,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [],
+      "kund": "ju***@affarsredovisning.se",
+      "sprak": "fi",
+      "amne": "Re: Nytt kundmeddelande den 21 september 2026 13.12",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori retur_angerratt — VA:n",
+      "orsakEn": "category retur_angerratt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1726,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [],
+      "kund": "ju***@affarsredovisning.se",
+      "sprak": "fi",
+      "amne": "Sv: Nytt kundmeddelande den 21 september 2026 13.12",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori retur_angerratt — VA:n",
+      "orsakEn": "category retur_angerratt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1727,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "bo***@live.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 07.48",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1728,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "el***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 19 september 2026 19.14",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1729,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "pe***@mariaspappa.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 08.20",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1730,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ad***@telia.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 08.41",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1731,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "he***@limeburners.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 09.11",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1733,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "da***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 21 september 2026 14.12",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1734,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "to***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Vad är det här för skit?",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1735,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [],
+      "kund": "an***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Re: Storformat",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori retur_angerratt — VA:n",
+      "orsakEn": "category retur_angerratt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1736,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ro***@outlook.com",
+      "sprak": "sv",
+      "amne": "Sv: Nytt kundmeddelande den 21 september 2026 17.53",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1737,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "vi***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 10.13",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1738,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "vi***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 22 september 2026 10.14",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1690,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [
+       "6389"
+      ],
+      "kund": "hg***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: En förfrågan har öppnats gällande order #6389",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "mejlet har en bilaga motorn inte läst",
+      "orsakEn": "has an attachment the bot did not read"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1681,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ir***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 20.09",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T08:15:52.572Z",
+      "uid": 1682,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "be***@icloud.com",
+      "sprak": "sv",
+      "amne": "Per Anders Österberg ",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1632,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "an***@outlook.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 07.28",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1637,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "el***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 19 september 2026 19.14",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1642,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "chargeback_hot",
+      "ordernummer": [
+       "5122"
+      ],
+      "kund": "pi***@svenskafoder.se",
+      "sprak": "sv",
+      "amne": "Sv: Sv: Begärd retur Reklamation Order #5122",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tvistord i mejlet (chargeback/dispute/ARN/tvist) — bara VA:n",
+      "orsakEn": "dispute/chargeback wording — VA only"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1683,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "skadad_defekt",
+      "ordernummer": [],
+      "kund": "ja***@gmail.com",
+      "sprak": "sv",
+      "amne": "Överdrag",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "byte eller storlek (SOP 21) — VA:n beslutar",
+      "orsakEn": "for the VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1669,
+      "hink": "SVÅR",
+      "typ": "wismo",
+      "kategori": "var_ar_ordern",
+      "ordernummer": [],
+      "kund": "jb***@outlook.com",
+      "sprak": "sv",
+      "amne": "Re: Kamera leverans ?",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1678,
+      "hink": "SVÅR",
+      "typ": "wismo",
+      "kategori": "var_ar_ordern",
+      "ordernummer": [
+       "5953"
+      ],
+      "kund": "er***@mdab.nu",
+      "sprak": "sv",
+      "amne": "Re: Order #5953 bekräftad",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "ordern #5953 har en tvist hos Shopify (inquiry, needs_response) — inget automatiskt svar, VA:n",
+      "orsakEn": "for the VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1679,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [],
+      "kund": "an***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Re: Cykelbyxor",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori retur_angerratt — VA:n",
+      "orsakEn": "category retur_angerratt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1633,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "to***@ta-performance.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 07.40",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1634,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "da***@porser.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 07.57",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1635,
+      "hink": "SVÅR",
+      "typ": "wismo",
+      "kategori": "var_ar_ordern",
+      "ordernummer": [],
+      "kund": "ha***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 07.59",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "VA:n skrev till kunden för 1 dag sedan (annan tråd) — pågående ärende, kunden är VA:ns",
+      "orsakEn": "for the VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1636,
+      "hink": "SVÅR",
+      "typ": "wismo",
+      "kategori": "var_ar_ordern",
+      "ordernummer": [],
+      "kund": "ha***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 07.59",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "VA:n skrev till kunden för 1 dag sedan (annan tråd) — pågående ärende, kunden är VA:ns",
+      "orsakEn": "for the VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1638,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "bi***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 08.29",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1640,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "var_ar_ordern",
+      "ordernummer": [],
+      "kund": "ha***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 08.33",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori var_ar_ordern — VA:n",
+      "orsakEn": "category var_ar_ordern — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1643,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "go***@hotmail.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 09.44",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1644,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "var_ar_ordern",
+      "ordernummer": [],
+      "kund": "li***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 10.11",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori var_ar_ordern — VA:n",
+      "orsakEn": "category var_ar_ordern — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1645,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "to***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 10.32",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1647,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "produktfraga",
+      "ordernummer": [],
+      "kund": "an***@telia.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 10.47",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori produktfraga — VA:n",
+      "orsakEn": "category produktfraga — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1651,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "kl***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 11.34",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1652,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "to***@yahoo.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 11.54",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1655,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ol***@telia.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 13.12",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1656,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ol***@telia.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 13.12",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1658,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "produktfraga",
+      "ordernummer": [],
+      "kund": "he***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 13.34",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori produktfraga — VA:n",
+      "orsakEn": "category produktfraga — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1662,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "produktfraga",
+      "ordernummer": [],
+      "kund": "da***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 14.12",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori produktfraga — VA:n",
+      "orsakEn": "category produktfraga — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1663,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "produktfraga",
+      "ordernummer": [],
+      "kund": "le***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 14.18",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori produktfraga — VA:n",
+      "orsakEn": "category produktfraga — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1664,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ir***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 14.18",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1672,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ki***@gmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 16.38",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1673,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "pe***@ockero.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 17.06",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1675,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ro***@outlook.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 17.53",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1639,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "st***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Beställning ",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1650,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ke***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 16 september 2026 10.18",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1654,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "in***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Sv: Nytt kundmeddelande den 18 september 2026 12.13",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1659,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "to***@ta-performance.se",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 21 september 2026 07.40",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1665,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "retur_angerratt",
+      "ordernummer": [],
+      "kund": "an***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Re: Storformat",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori retur_angerratt — VA:n",
+      "orsakEn": "category retur_angerratt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1667,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "si***@gmail.com",
+      "sprak": "sv",
+      "amne": "Videos och bilder",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "mejlet har en bilaga motorn inte läst",
+      "orsakEn": "has an attachment the bot did not read"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1668,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "si***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 20 september 2026 15.41",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1670,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "gu***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 20 september 2026 15.01",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1671,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "st***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: Nytt kundmeddelande den 18 september 2026 10.55",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1685,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "ho***@gmail.com",
+      "sprak": "sv",
+      "amne": "Re: ⭐️ Ulf, vad tycker du om Fiskespöhållare 4-Pack – Kraftig Förvaring?",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "VA:n skrev till kunden för 3 dagar sedan (annan tråd) — pågående ärende, kunden är VA:ns",
+      "orsakEn": "for the VA"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1686,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "skadad_defekt",
+      "ordernummer": [],
+      "kund": "al***@mhmail.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 10.48",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T00:04:16.009Z",
+      "uid": 1687,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "fel_vara",
+      "ordernummer": [],
+      "kund": "to***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 11.26",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "tråden har redan ett svar från oss — VA:n fortsätter",
+      "orsakEn": "thread already answered by us — VA continues"
+     },
+     {
+      "tid": "2026-09-22T00:01:55.538Z",
+      "uid": 1630,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "avbestallning",
+      "ordernummer": [],
+      "kund": "we***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 06.49",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori avbestallning — VA:n",
+      "orsakEn": "category avbestallning — VA"
+     },
+     {
+      "tid": "2026-09-22T00:01:55.538Z",
+      "uid": 1631,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "var_ar_ordern",
+      "ordernummer": [
+       "7689"
+      ],
+      "kund": "we***@hotmail.com",
+      "sprak": "sv",
+      "amne": "Re: Ditt paket är på väg",
+      "kontaktformular": false,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori var_ar_ordern — VA:n",
+      "orsakEn": "category var_ar_ordern — VA"
+     },
+     {
+      "tid": "2026-09-21T23:22:28.100Z",
+      "uid": 1629,
+      "hink": "SVÅR",
+      "typ": null,
+      "kategori": "ovrigt",
+      "ordernummer": [],
+      "kund": "da***@porser.se",
+      "sprak": "sv",
+      "amne": "Nytt kundmeddelande den 21 september 2026 06.01",
+      "kontaktformular": true,
+      "atgard": "flaggad",
+      "torr": true,
+      "flaggad": true,
+      "flyttad": null,
+      "orsak": "kategori ovrigt — VA:n",
+      "orsakEn": "category ovrigt — VA"
+     }
+    ],
+    "fel": [],
+    "brevlada": null
+   }
+  }
+ },
  "redigerare": {
   "status": "ok",
   "orsak": null,
@@ -19214,15 +20604,15 @@
     "url": "https://baverbutiken.se",
     "status": "ok",
     "paket": 2180,
-    "levererade": 972,
-    "paVag": 1195,
+    "levererade": 979,
+    "paVag": 1188,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:18:23.808Z",
+     "datum": "2026-09-22T19:18:33.462Z",
      "ordrar": 2102,
      "paket": 1205,
      "registrerade": 0,
-     "skrivna": 1,
+     "skrivna": 7,
      "fel": 0,
      "torr": false
     }
@@ -19237,7 +20627,7 @@
     "paVag": 229,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:25:33.994Z",
+     "datum": "2026-09-22T19:25:19.349Z",
      "ordrar": 229,
      "paket": 229,
      "registrerade": 0,
@@ -19252,15 +20642,15 @@
     "url": "https://beverbutikken.no",
     "status": "ok",
     "paket": 874,
-    "levererade": 438,
-    "paVag": 431,
+    "levererade": 442,
+    "paVag": 427,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:33:38.715Z",
+     "datum": "2026-09-22T19:33:25.759Z",
      "ordrar": 865,
      "paket": 436,
      "registrerade": 0,
-     "skrivna": 0,
+     "skrivna": 4,
      "fel": 0,
      "torr": false
     }
@@ -19275,7 +20665,7 @@
     "paVag": 1,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:49:47.538Z",
+     "datum": "2026-09-22T19:50:34.530Z",
      "ordrar": 1,
      "paket": 1,
      "registrerade": 0,
@@ -19294,7 +20684,7 @@
     "paVag": 10,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:41:37.550Z",
+     "datum": "2026-09-22T19:41:03.620Z",
      "ordrar": 22,
      "paket": 12,
      "registrerade": 0,
@@ -19313,7 +20703,7 @@
     "paVag": 50,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T18:57:32.288Z",
+     "datum": "2026-09-22T19:57:28.934Z",
      "ordrar": 113,
      "paket": 53,
      "registrerade": 0,
