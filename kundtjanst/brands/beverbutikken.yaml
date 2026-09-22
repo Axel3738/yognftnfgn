@@ -1,0 +1,63 @@
+# Beverbutikken — Bäverbutikens norska butik (beverbutikken.no, Shopify
+# 1acuam-s5). Inte byggd av fabriken, därför egen brandfil. Upplagd 2026-09-21
+# för autosvaret (Axels uppdrag: alla butiker).
+#
+# ⚠️ BREVLÅDAN ÄR INTE PÅ LOOPIA. MX för beverbutikken.no pekar på
+# mx.domeneshop.no (mätt 2026-09-21 via DNS), så mejlen tas emot hos
+# Domeneshop. Domeneshops webbmejl är också Roundcube
+# (https://webmail.domeneshop.no/ — INTE verifierat härifrån), så samma
+# klient kan fungera med den adressen — men inloggningsformuläret kan skilja.
+# Första körningen ska göras med `node kundtjanst/mail.mjs kolla --brand
+# beverbutikken`; säger felet "steg 1" eller "steg 2" är det Domeneshops sida
+# som skiljer sig, och webmail.mjs behöver en Domeneshop-gren.
+#
+# Avsändaren i Shopify är support@beverbutikken.no (Axels beslut 2026-09-20,
+# verifierad) — det är adressen kunderna svarar till, alltså brevlådan.
+# Nyckeln heter KUNDTJANST_MAIL_PASS_BEVERBUTIKKEN (Domeneshop-lösenordet).
+#
+# Shopify: appen bakom SHOPIFY_CLIENT_ID_NO/SECRET_NO har read_orders (mätt
+# 2026-09-21, en order läst). Suffixet NO är det spårningen använder
+# (sparning/butiker.json env_suffix).
+
+brand:
+  namn: "Beverbutikken"
+  supportmail: "support@beverbutikken.no"
+  shop: "1acuam-s5.myshopify.com"
+  land: NO
+  valuta: NOK
+  aktiv: true
+
+mail:
+  via: webmail
+  webmail: https://webmail.domeneshop.no/
+  inkorg: INBOX
+  skickat:
+    - Sent
+    - INBOX.Sent
+    - Sendt
+
+shopify:
+  env_suffix: "NO"
+
+discord:
+  server: "Bäverbutiken"
+  kanal: customer-service-no
+
+svar:
+  autosvar: true
+  sprak: nb
+  signatur: "Kundeservice Beverbutikken"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://beverbutikken.no/pages/spor"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+
+tvister:
+  returfonster_dagar: 30
+  angerratt_dagar: 14
+  policy_url: "https://beverbutikken.no/policies/refund-policy"
+  forsta_svar_timmar: 24

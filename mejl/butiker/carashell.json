@@ -1,0 +1,16 @@
+{
+  "comment": "Brandet i CaraShells mejl (färger och logga ur factory/butiker/carashell.yaml → branding, loggan är temats fil på butikens CDN, avläst ur startsidan 2026-09-20). Allt annat — namn, adress, support, prefix, spårningssida, leveranslöfte, språk — läses ur sparning/butiker.json så det bara finns på ett ställe. Bygg: node mejl/bygg-butik.mjs carashell",
+  "farg_rod": "#1F6F8E",
+  "farg_svart": "#22282E",
+  "farg_ram": "#D6D9D3",
+  "font_rubrik": "Arial,Helvetica,sans-serif",
+  "rubrik_versaler": false,
+  "rubrik_fet": true,
+  "sidhuvud_farg": "#ffffff",
+  "logga_url": "https://carashell.se/cdn/shop/files/carashell-logga-c.png?v=1789078262&width=200",
+  "logga_bredd": 96,
+  "logga_hojd": 96,
+  "meny_klar": true,
+  "meny_klar_comment": "Cowork lade in 'Spåra paket' i Main menu + Footer menu 2026-09-20 kväll (sparning/cowork/carashell.md → Utfall). Prompten hoppar därför över menysteget.",
+  "avsandare_comment": "hello@carashell.com satt och Autentiserad i Shopify sedan 2026-09-21 (steg 0 gjort) — byt_avsandare borttagen så prompten inte bär steget längre."
+}

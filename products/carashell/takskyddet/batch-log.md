@@ -1211,3 +1211,427 @@ uppgiften saknas — Bäver-briefarna skriver landningssidan i texten.**
 
 ⚠️ Kvar som varning från verktyget: `CARASHELL_SE_Taköverdraget LISTICLE` är
 eget spår (namnet bär LISTICLE) och tar aldrig emot speglade annonser.
+
+## Norge 2026-09-20 — videon som hölls i går är live (`/ops-oversatt carashell/takskyddet`)
+
+Kön: **17 rader** i `SE-ACTIVE to be translated`. **1 uppladdad, 16 utan jobb här.**
+
+**De 16 behövde ingenting.** Gårdagens spegling laddade upp både den svenska och den
+norska versionen (`finns_i_meta: true` med annons-id på varenda rad), så de ligger
+redan live i `CARASHELL_NO_Takovertrekket` och väntar bara på USA
+(`klar_i: {"US": false}`). Ingen status rördes — `flytta_till_approved` är falskt
+tills US-rutinen 17:05 bär dem.
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_PD_5_H1` | `CaraShellRoof_NO_PD_5_H1` | PD | `120249184161160172` | ACTIVE/IN_PROCESS |
+
+**Videon byggdes om, den översattes inte.** Tre hinder hittades 2026-09-19 och alla tre
+gick att lösa utan butikens namn — vilket är rättelsen mot gårdagens dom att frågan
+krävde ägaren:
+
+1. **Voiceovern** sa `Carashell taköverdrag` i block 3 och de svenska priserna i block 6.
+   HeyGens proofread-steg körs FÖRE rendering, så manuset skrevs om där: block 3
+   "Dette takovertrekket", block 6 `1 106` / `1 382,50 kr` uttalade som ord. Samma sex
+   block, samma timecodes. Sonnet-subagent mot `docs/copy-regler.md`.
+2. **27 inbrända svenska ordcaptions** → `pipeline/no-precis.py` med US-rundans mätningar
+   på samma källfil (zon 1320–1650, font 45, cy 1420, x 75–1005).
+3. **Slutkortet** var en skärmdump av den svenska produktsidan (`carashell.se`,
+   `1 469,00 → 1 129,00 kr`, "16 recensioner") → nytt norskt kort som PNG-lager
+   (`video/bygg-no.py`): 14 dagers angrerett, `1 382,50 kr` överstruket, `1 106 kr`,
+   16 anmeldelser, fri frakt. Produktbilden klippt ur källans eget kort.
+
+**En läcka hittad i granskningen och rättad:** lagret startade 36,4 s, men
+cirkelövergången börjar **36,0** och den svenska sidan var läsbar inuti cirkeln i ett
+par tiondelar. Mätt i den renderade filen: vita pixlar 0,16 % vid 36,0 → 33,7 % vid
+36,3 → 78 % vid 36,4. Lagret flyttat till 36,0, videon bränd om, övergången kontrollerad
+bildruta för bildruta. ⚠️ **US-rundans åtta videor 2026-09-18 har samma 36,4 och samma
+läcka.** De ligger live och rörs inte (Axels regel 2026-09-15); receptet är rättat.
+
+**Copyn:** två av fyra rader failade tre-frågorstestet i första svaret och skickades
+tillbaka. Rubriken `Beskytt bobilens tak i vinter` var en uppmaning vilken konkurrent
+som helst kunde köra → **`Bare taket – ingen hjelp trengs`**. Första stycket namnger nu
+takluckorna och skarvarna.
+
+**HeyGen:** 2 558 → 2 538 krediter (en rendering, ingen omrendering).
+`rostkoll.py` ✅. **Notion:** kommentar + `Translated url`, raden → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551238015316393996`,
+ingen ACTION NEEDED.
+
+⚠️ **Manuset committas nu i `oversatt-output.json`** — `.srt` är gitignoretat som media
+i `market-expansion/ops/**`, så en omrendering hade annars fått börja om från HeyGens
+råöversättning, med butikens namn och de svenska priserna tillbaka.
+
+---
+
+## Spegling 2026-09-20 (`/ops-spegla carashell/takskyddet`) — 0 av 5, annonskontot är obetalt
+
+Rutinen fyrade 16:45 CEST. Kön hade **5 rader** i `CaraShell SE ready to be
+active` (`Takoverdrag_BOF_9_1`, `CS_13_1`, `PD_10_1`, `BOF_8_1`, `BOF_7_1` —
+alla bild, alla ur LISTICLE-ronden). Alla fem var gröna på pris: 1 129 kr mot
+butikens 1 129. **Torrkörningen sa 5 speglade, 0 hoppade, 0 fel.** Den skarpa
+körningen laddade upp noll.
+
+**Varje uppladdning nekades av Meta med samma svar:**
+`400 Permissions error — antingen är objektet inte synligt för dig, eller så
+begränsas åtgärden till vissa kontotyper`.
+
+### Rotorsak: `account_status: 3` på OPS-kontot
+
+Magiborsten DK `915422744950975` står **UNSETTLED** — obetalt. Mätt samma
+körning:
+
+| Kontroll | Svar |
+|---|---|
+| `account_status` | **3 (UNSETTLED)**, `disable_reason: 0` |
+| Token-rättigheter | `ads_management`, `ads_read`, `business_management` — alla `granted` |
+| `user_tasks` på kontot | `DRAFT, ANALYZE, ADVERTISE, MANAGE` |
+| Magiborsten UK `1107817401910319` | `account_status: 1` — opåverkat |
+| Spend i dag / i går | 6 493 kr / 8 512 kr — leveransen rullar |
+
+Alltså: **inget fel på token, inget fel på raderna, inget fel på verktyget.**
+Meta låter befintliga annonser leverera men blockerar allt nyskapande tills
+saldot är betalt. Läsningar går igenom, skrivningar inte — det är därför kön
+kunde läsas och torrköras utan att något syntes.
+
+**Ingenting blev halvgjort.** Ingen annons, ingen creative: `BOF_107_1`,
+`BOF_108_1`, `BOF_109_1`, `CS_113_1` och `PD_110_1` finns inte i kontot
+(kontrollerat med namnfilter efter att Metas rate limit släppt). Alla fem
+källrader ligger kvar i `CaraShell SE ready to be active` med orörd status, så
+rutinen tar dem själv nästa gång kontot är betalt. Inget behöver köras om för
+hand.
+
+⚠️ **Det här gäller alla OPS-butiker, inte bara CaraShell.** Leveransrundan
+13:40, NO-översättningen 15:40 och nattvaktens budgetändringar skriver till
+samma konto och kommer att nekas likadant tills saldot är reglerat. US-spåret
+i Magiborsten UK fungerar.
+
+⚠️ Lärdom: **en grön torrkörning bevisar inte att kontot tar emot.** Torrt
+läser bara — kontots betalningsstatus märks först vid första skrivningen.
+`account_status` är värt att läsa innan en lång uppladdningsrunda startas.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1551257682919428208`, med `🔴 ACTION NEEDED` till Axel.
+
+---
+
+## USA-runda 7 2026-09-20 (`/ops-oversatt carashell/takskyddet --marknad US`) — 16 nya annonser live
+
+**Kön:** 16 rader i `SE-ACTIVE to be translated` (12 bild, 4 video), alla speglade från
+Bäverbutiken samma dag och alla redan live i Norge — därför gick samtliga 16 till
+`Approved` efter uppladdningen. Kampanj: `1 CARASHELL_US_Taköverdrag … – kopia`
+`120251451415500435` (ACTIVE, 10 adsets). Originalkampanjen står kvar PAUSED med
+2 246 kr spend — ägarens beslut, rörd inte.
+
+| Spegel (US) | Typ | Adset | US-annons | Röstkoll |
+|---|---|---|---|---|
+| CaraShellRoof_US_PD_108_1 | bild | CARASHELL_US_PD | `120251517347070435` | — |
+| CaraShellRoof_US_CO_104_1 | bild | CARASHELL_US_CO | `120251517351750435` | — |
+| CaraShellRoof_US_PD_109_1 | bild | CARASHELL_US_PD | `120251517360050435` | — |
+| CaraShellRoof_US_GT_109_1 | bild | CARASHELL_US_GT | `120251517428960435` | — |
+| CaraShellRoof_US_BOF_106_1 | bild | CARASHELL_US_BOF | `120251517432670435` | — |
+| CaraShellRoof_US_BOF_105_1 | bild | CARASHELL_US_BOF | `120251517527450435` | — |
+| CaraShellRoof_US_CS_110_1 | bild | CARASHELL_US_CS | `120251517537530435` | — |
+| CaraShellRoof_US_CS_111_1 | bild | CARASHELL_US_CS | `120251517590320435` | — |
+| CaraShellRoof_US_BOF_104_1 | bild | CARASHELL_US_BOF | `120251517595390435` | — |
+| CaraShellRoof_US_TR_102_1 | bild | CARASHELL_US_TR | `120251517606640435` | — |
+| CaraShellRoof_US_LI_102_1 | bild | CARASHELL_US_LI | `120251517647060435` | — |
+| CaraShellRoof_US_RI_104_1 | bild | CARASHELL_US_RI | `120251517651500435` | — |
+| CaraShellRoof_US_OB_101_H1 | video | CARASHELL_US_OB | `120251517183220435` | ✅ |
+| CaraShellRoof_US_PD_107_H1 | video | CARASHELL_US_PD | `120251517190490435` | ✅ |
+| CaraShellRoof_US_RI_103_H1 | video | CARASHELL_US_RI | `120251517195980435` | ✅ |
+| CaraShellRoof_US_PD_106_H1 | video | CARASHELL_US_PD | `120251517205690435` | ✅ |
+
+**Slutkortsspärren fällde alla fyra videorna** — och hade rätt: källorna slutar på
+Bäverbutikens kort med svensk produktsida och kr-pris. Kortet byggdes om till ett
+amerikanskt utan butiksnamn och utan domän, och rutan mättes om på den FÄRDIGA filen
+innan uppladdning. ⚠️ `rapidocr-onnxruntime` saknades i containern, så första
+körningen svarade `okand` i stället för att blockera — installera den före kön.
+Rotorsaken och receptet står i `dna.md`.
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats med `pipeline/oversatt-batch.py`
+och handritade rutor (`bilder/overrides.json`), textstorlekarna kalibrerade mot SE-radernas
+uppmätta bredd (rubrik 77, underrad 38, etikett 30, knapp 42, punkt 38). Tre bilder fick
+spöken i QA: `BOF_105_1` och `GT_109_1` (halvgenomskinligt band över tvåtonat foto) löstes
+med opak platta i bandets uppmätta färg, `TR_102_1` med etikettplatta alfa 255. **OCR över
+alla tolv färdiga bilder: noll svenska träffar.**
+
+**Videorna** (HeyGen, amerikansk engelska): proofread före rendering, SRT lokaliserad med
+samma blockantal och timecodes, captions bytta med `no-precis.py`, röda svenska pop-texter
+ersatta med `$199` / `SAVE $50` / `21 x 10 FT` / `210D FABRIC`. `rostkoll.py` ✅ på alla
+fyra (längddrift 0,1–0,2 %). `kvarkoll.py` flaggade fyra fönster — alla falsklarm, OCR
+visar engelsk text i varje (verktyget mäter överlapp med källans pillerruta, inte språk).
+⚠️ RI_103_H1:s röda fönster 0,4–1,6 s är en PIL, inte text — den rördes inte.
+
+**Priset:** $199 / ord. $249 ur `ekonomi.marknadspriser`, rabatten omräknad 23 % → **20 %**
+(det svenska talet gäller inte i USD). Recensionerna lästes live på den amerikanska
+produktsidan: **16 recensioner, 5,0** — bilderna sa 10, vilket är inaktuellt.
+
+⚠️ **Meta strypte kontot mitt i uppladdningen** (kod 17, "User request limit reached").
+Uppladdaren backade av och tog sig igenom på egen hand; hela rundan tog drygt två timmar
+i stället för tjugo minuter. Inget gick förlorat, men räkna med det i tidsplanen när en
+batch är större än tio rader.
+
+**Notion:** kommentar + `Translated url` på alla 16, alla 16 → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551270110281338922`,
+ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-20-us/`.
+
+---
+
+## 2026-09-21 — `CaraShellRoof_CS_4_1` pausad av nattvakten (batch #2)
+
+**Dödvikt enligt ny annons-regeln:** 1 499 kr spend (≥ 3 × target-CPA 411 kr),
+2 köp, **CPA 750 kr mot break-even 693 kr** på 14 dygn. Första annonsen i
+butikens historia som reglerna dödat.
+
+Hypotesen den bar (batch #2): *rabatten säljer lika bra utan falsk brådska —
+"IDAG" bort, priset som stående erbjudande*. **Utfallet räcker inte för att
+falsifiera den.** Annonsen fick aldrig volym medan den levde (113 kr på tre
+dygn i mitten av september, se körning nr 3) och klarade grinden först när
+CBO:n plötsligt gav den 1 499 kr. Två köp är under de tre som krävs för en dom
+på annons­nivå — pausen är ett kostnadsbeslut, inte ett omdöme om brådskan.
+
+**Frågan lever vidare i batch #3:** `CS_5_1` och `CS_6_1` är båda brådskefria
+och isolerar i stället rabattframingen mot varandra (23 % mot 340 kr). Läs dem
+mot `CS_1_H1` (video, CPA 216 kr) nästa gång någon gör en feedback-loop —
+CaraShell briefas inte längre härifrån, så den loopen ligger numera i
+Bäverbutikens teamspace.
+
+---
+
+## Spegling 2026-09-21 — 5 av 5, gårdagens stopp löst
+
+Kontot betalades av Axel: `account_status` på Magiborsten DK `915422744950975`
+läser **1 (ACTIVE)** igen, mot 3 (UNSETTLED) i går. Samma fem rader som nekades
+2026-09-20 gick upp utan ändringar — inget behövde göras om, ingen rad hade
+tagit skada av att stå kvar.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_BOF_9_1 | CaraShellRoof_BOF_109_1 | 120249189223200172 | 120249189228110172 |
+| Takoverdrag_CS_13_1 | CaraShellRoof_CS_113_1 | 120249189301610172 | 120249189310900172 |
+| Takoverdrag_PD_10_1 | CaraShellRoof_PD_110_1 | 120249189397310172 | 120249189399940172 |
+| Takoverdrag_BOF_8_1 | CaraShellRoof_BOF_108_1 | 120249189478830172 | 120249189496460172 |
+| Takoverdrag_BOF_7_1 | CaraShellRoof_BOF_107_1 | 120249189597020172 | 120249189601910172 |
+
+Tillbakaläst ur Meta: alla tio bär `status: ACTIVE` i rätt kampanj i
+OPS-kontot. `BOF_107_1` stod `PENDING_REVIEW` och dess norska version
+`IN_PROCESS` vid avläsningen — Metas granskningsfönster, adsetet är ACTIVE.
+
+Pris 1 129 SEK / 1 106 NOK läst live, alla fem gröna. Ingen rad nämnde
+Bäverbutiken. Torrkörning före skarp: 5 speglade, 0 hoppade, 0 fel.
+
+**Dessutom: 16 källrader i `CaraShell EN ready to be active` blev `Approved`** —
+US-annonserna i Magiborsten UK har kommit upp för hela 18/9-omgången
+(`120251517…`-serien). Den kön är därmed tömd.
+
+**Lärdomen som håller:** ett obetalt konto stoppar bara skrivningar. Raderna
+låg kvar orörda i `CaraShell SE ready to be active` i ett dygn och togs av
+nästa körning helt automatiskt. Att inte flytta status vid ett fel är det som
+gör en dags avbrott till en icke-händelse.
+
+**Discord:** engelsk rapport i `#annons-uppladdning` (CaraShell — OPS),
+meddelande `1551453420571983893`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-20/21 — DANMARK: hela kampanjen uppe, 60 annonser
+
+Första marknaden efter USA som fick **egna creatives**, inte bara översatt
+copy. Kedjan `pipeline/omdubb/marknadsvideo.mjs` byggdes för det här och är
+nu bevisad: klipp källan vid slutkortet → dubba talet med ElevenLabs
+(`Søren`, vald genom mätning, `pipeline/omdubb/README.md`) → byt inbränd
+svensk text → rita ett nytt slutkort ur marknadens egen prislista → bränn in
+danska captions.
+
+**Uppe i `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5` (`120249183405560172`),
+kampanj PAUSED, CBO 1 000 kr/dag:**
+
+| Adset | Annonser | Adsetets status |
+|---|---|---|
+| CARASHELL_DK_PD | 14 | PAUSED |
+| CARASHELL_DK_CS | 11 | PAUSED |
+| CARASHELL_DK_GT | 9 | PAUSED |
+| CARASHELL_DK_SP | 9 | PAUSED |
+| CARASHELL_DK_BOF | 6 | ACTIVE |
+| CARASHELL_DK_CO | 3 | PAUSED |
+| CARASHELL_DK_RI | 3 | ACTIVE |
+| CARASHELL_DK_LI | 2 | ACTIVE |
+| CARASHELL_DK_OB | 1 | ACTIVE |
+| CARASHELL_DK_TR | 1 | ACTIVE |
+| CARASHELL_DK_UG | 1 | ACTIVE |
+| **Summa** | **60** | |
+
+24 videor + 36 bilder, alla 60 med egen dansk copy. **0 fel, 0 utan copy.**
+Varje annons tillbakaläst som `ACTIVE`.
+
+**Alla elva adsets är ACTIVE sedan 2026-09-21.** Sex skapades av
+uppladdningen själv (den rör bara det den skapat); de fem övriga — CO, CS,
+GT, PD, SP, som bär 46 av de 60 annonserna — föddes PAUSED av
+`kampanj.mjs --tom` 2026-09-20 15:00 och hade **0 kr spend och 0
+visningar**, alltså inte avstängda av ett beslut. Slagna på mot en namngiven
+lista efter Axels ok samma morgon. Hade de lämnats pausade hade en launch
+kört **14 av 60 annonser utan felmeddelande** — den fällan är värd att leta
+efter i varje ny marknad: räkna ACTIVE adsets, inte bara ACTIVE annonser.
+
+Tillbakaläst: kampanj PAUSED, **11 av 11 adsets ACTIVE, 60 av 60 annonser
+ACTIVE**.
+
+**Det som kostade mest tid, i ordning:**
+1. Kontot var UNSETTLED (obetald faktura). Felet läser som ett
+   behörighetsfel — se `factory/opsmarknader.mjs`.
+2. Meta stryper skrivningarna (kod 17): 59 annonser tog ~7 h, en i taget.
+   Egna läsningar mot kontot under tiden gör backoffen längre — låt bli.
+3. Uppladdaren globbade bara `.mp4` och `.jpg` medan bilderna låg som
+   `.png` — hade tyst tagit 0 av 36. Rättat med test.
+4. Två väntare sökte varandra med `pgrep -f` på skriptnamnet och låste
+   varandra i sex timmar efter att batchen var klar. Vänta på PID.
+
+---
+
+## 2026-09-21 — leveransrundan: 2 videor stoppade på slutkortet
+
+Kön: 2 rader i `To be Reviewed`, batch #2:s två sista videor —
+`CaraShellRoof_SP_4_H1` (social proof, 30,9 s) och `CaraShellRoof_PD_4_H1`
+("Bara taket. En person.", 29,6 s). Kampanjen `CARASHELL_SE_Taköverdraget`
+(`120249050544990172`) löstes automatiskt; LISTICLE-kampanjen sållades bort
+av `tools/lib/sidokampanjer.mjs` som den ska. Priset i båda videorna
+1 129 kr (ord. 1 469 kr) = butikens pris — **grönt på prisregeln**.
+
+**Ingen laddades upp.** Båda slutar med en skärminspelning av produktsidan:
+domänskylten `carashell.se` överst och `CARASHELL` som leverantörsrad
+(2,5 resp. 2,4 s av slutfönstret). Järnregel 2b i `/ops-leverans` och Axels
+beslut 2026-09-18 — butikens namn står aldrig i en annons, slutkortet
+inräknat. Status orörd (`To be Reviewed`), engelsk kommentar på båda
+raderna: bygg om de sista 3 sekunderna utan domän och butiksnamn, ladda upp
+i samma rad, så tar rundan dem automatiskt.
+
+Anmärkningar till redigeraren (inget av det stoppar): SP:s caption vid
+~12 s säger "Passa bra och skyddar" (saknat r), citatkorten står som
+"Johan E." / "Lars P." där briefen ber om enbart förnamn, och PD säger
+6,5 × 3 m medan produktsidan numera listar 5,5–13,5 m.
+
+⚠️ **Rotorsaken är värd mer än de två videorna: kontrollen gick inte igång.**
+Rutinens container saknar både `ffmpeg` och OCR:en, så `bildbrand.mjs`
+svarade `okand` ("spawnSync ffmpeg ENOENT") på båda — och regeln säger att
+en oläsbar video laddas upp ändå. Utan att någon tittade på bildrutorna
+hade alltså **två annonser med butikens domän gått live**. Rättat samma
+dag: `ffmpegBinar()` i `factory/bildbrand.mjs` faller tillbaka på
+imageio-ffmpeg:s binär (systembinären vinner fortfarande), OCR:en
+installeras med `pip install rapidocr-onnxruntime`, och kommandofilens
+regel 2b bär nu varningen att `okand` på VARJE video betyder containern,
+inte creativen. Efter installationen dömde verktyget självt
+`slutkort-med-brand` på båda — samma dom som ögat.
+
+## Norge 2026-09-21 — inget att översätta, men ett verktygsfel som gömde kön
+
+Kön: **5 rader** i `SE-ACTIVE to be translated`. **0 uppladdade, 0 att göra.**
+Alla fem bar redan sin norska annons (speglingens rader, nummer 107–113), och varje
+annons lästes tillbaka ur Meta som ACTIVE:
+
+| SE-namn | NO-namn | Adset | Annons-id | Tillbakaläst |
+|---|---|---|---|---|
+| `CaraShellRoof_BOF_107_1` | `CaraShellRoof_NO_BOF_107_1` | BOF | `120249189601910172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_108_1` | `CaraShellRoof_NO_BOF_108_1` | BOF | `120249189496460172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_PD_110_1` | `CaraShellRoof_NO_PD_110_1` | PD | `120249189399940172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_CS_113_1` | `CaraShellRoof_NO_CS_113_1` | CS | `120249189310900172` | ACTIVE/ACTIVE |
+| `CaraShellRoof_BOF_109_1` | `CaraShellRoof_NO_BOF_109_1` | BOF | `120249189228110172` | ACTIVE/ACTIVE |
+
+Ingen status rörd — `flytta_till_approved` är falskt på alla fem (`klar_i.US: false`),
+så de går till `Approved` först när US-rutinen bär dem. Pris läst live: 1 106 NOK.
+
+**Men kön var osynlig i fyra körningar.** Verktyget avslutade med exit 0, tom
+`ko.json` och ingen felrad. En tom kölista läser exakt som "kön var tom" — det är
+det farliga: en tyst nolla ser ut som ett lugnt svar. Rotorsaken och fixen står i
+`dna.md`; båda felen satt i `tools/meta-lib.mjs`, inte i den här produkten.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551599832102076558`,
+ingen ACTION NEEDED.
+## USA-runda 8 2026-09-21 (`/ops-oversatt carashell/takskyddet --marknad US`) — fem bilder live
+
+**Kön:** 5 rader i `SE-ACTIVE to be translated`, alla bild, alla redan live i Norge —
+samtliga fem gick därför till `Approved`. `Approved`-kollen: 44 rader, 0 saknar US-annons.
+Kampanj `1 CARASHELL_US_Taköverdrag … – kopia` `120251451415500435` (ACTIVE, 12 adsets).
+Originalkampanjen står kvar PAUSED med 2 246 kr spend — ägarens beslut, orörd.
+Butiken redo: produktsidan svarar 200 på engelska, $199, 16 recensioner 5,0.
+
+| Spegel (US) | Typ | Adset | US-annons | Röstkoll |
+|---|---|---|---|---|
+| CaraShellRoof_US_BOF_107_1 | bild | CARASHELL_US_BOF | `120251535696070435` | — |
+| CaraShellRoof_US_BOF_108_1 | bild | CARASHELL_US_BOF | `120251535705330435` | — |
+| CaraShellRoof_US_PD_110_1 | bild | CARASHELL_US_PD | `120251535934370435` | — |
+| CaraShellRoof_US_CS_113_1 | bild | CARASHELL_US_CS | `120251535969460435` | — |
+| CaraShellRoof_US_BOF_109_1 | bild | CARASHELL_US_BOF | `120251536199230435` | — |
+
+**Tre svenska påståenden ströks — produktminnet mot marknadens egen sida.**
+`dna.md` förbjuder sedan 2026-09-12 att påstå förvaringspåse, dragsko, vikt eller exakt
+vagnlängd, och den amerikanska produktsidan bekräftade i dag att inget av det står där.
+
+| Rad | Svenskan sa | Amerikanskan säger |
+|---|---|---|
+| `BOF_108_1` (hela vinkeln) | "Ryms i förvaringspåsen som följer med" | "Off-season, it won't take over the garage" + "Folded flat, beside the paint cans" — det fotot faktiskt visar |
+| `PD_110_1` bottenband | "remmar på alla fyra sidor, 2,5 m och justerbara" | "elastic straps hook under the edge" — sidans egen formulering |
+| `CS_113_1` | "58 kr per kvadratmeter", "6,5-meters husvagn" | **$0,95 per square foot**, räknat på $199 / ~210 sq ft, och "21-ft trailer" |
+
+Rabatten räknades om (23 % → 20 %) och priset per yta räknades fram ur sidans egna tal —
+aldrig en omräknad SEK-siffra.
+
+**Bilderna** (0 kie-krediter): svensk text bytt på plats, textstorlekarna kalibrerade mot
+SE-radernas uppmätta bredd. ⚠️ **Underraden är 32 px i den här mallen, inte 38 som i
+20/9-batchen** — storleken mäts per batch och ärvs aldrig.
+
+**Två verktygsfynd, båda inbyggda i `forsudda.py`:**
+1. **`utvidga` per ruta.** En 77 px FET rubrik direkt på ett foto, utan egen platta, lämnar
+   en antialias-gloria som tre utvidgningar inte når (2,5 % av rutan över tröskeln på
+   `BOF_108_1`). Sätt `"utvidga": 6–8` på såna rutor.
+2. **`troskel` per ruta.** Glorian låg till 13 % i intervallet 30–60 och rördes aldrig av
+   standardtröskeln 60. `"troskel": 25` tar den.
+
+⚠️ **OCR fångar inte lågkontrastspöken.** `PD_110_1` visade "5,5 till 3 × 13,5 meter."
+tydligt för ögat medan OCR-kontrollen läste bilden som ren. OCR är en bra sista grind mot
+kvarglömd text, men den ersätter inte att titta på bilden i full storlek.
+
+**Notion:** kommentar + `Translated url` på alla fem, alla fem → `Approved`.
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande `1551619717293150299`,
+ingen ACTION NEEDED. Filer: `market-expansion/ops/carashell/2026-09-21-us/`.
+
+## 2026-09-22 — leveransrundan: samma två videor, samma stopp
+
+Kön hade exakt samma två rader (`CaraShellRoof_SP_4_H1`, `CaraShellRoof_PD_4_H1`)
+och **byte-identiska filer** (md5 `d9ab48ff…` / `271bf976…`) — slutkortet är
+inte ombyggt, så domen blev `slutkort-med-brand` igen. Inget uppladdat, ingen
+status ändrad, inga nya kommentarer (gårdagens feedback står kvar på båda
+raderna). Kampanjen och priset oförändrade: `CARASHELL_SE_Taköverdraget`,
+1 129 kr. Slutkortskontrollen gick igång av sig själv den här gången —
+ffmpeg-fallbacken från i går höll.
+
+## Norge 2026-09-22 — tom kö, och rotorsaken till de tysta körningarna
+
+Kön: **0 rader** i `SE-ACTIVE to be translated`. Gårdagens fem rader har gått vidare.
+NO-kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd länk
+`…/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst live, 0 varningar.
+**Inget uppladdat, ingen Notion-status rörd** — det fanns inget att göra.
+
+**Rotorsaken hittad efter två dagar.** `säkerställProxy` i `tools/meta-lib.mjs`
+startar om processen för att få agentproxyn på plats, och körde barnet med
+`stdio: 'inherit'`. Barnets stdout nådde aldrig förälderns utfil.
+
+Mätt samma dag, samma kod, samma kommando:
+
+| Väg | ko.json |
+|---|---|
+| med omstarten | **0 byte** |
+| `NODE_USE_ENV_PROXY=1` (utan omstarten) | **2 845 byte** |
+| efter fixen, normala vägen | **2 845 byte** |
+
+Det som gjorde felet svårt: verktyget sa själv att det skrivit. De två nya
+loggraderna (`Kön klar: N rader … skriver N tecken` / `Utskriften klar.`) är det
+som avslöjade det — de kom till som diagnostik och stannar kvar, för de skiljer
+"kön var tom" från "verktyget hann aldrig skriva".
+
+⚠️ **Felet gällde varje verktyg som startar via `säkerställProxy` och skriver
+`--json`** — `ops-leveranskon`, `ops-till-meta` och de andra. Inte bara den här
+produkten och inte bara NO.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1551959238685753457`, ingen ACTION NEEDED.

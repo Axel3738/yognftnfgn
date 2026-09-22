@@ -1,0 +1,43 @@
+{
+  "butik": "DryTrek",
+  "nyckel": "drytrek/damasker",
+  "konto": "915422744950975",
+  "kontonamn": "MagiBorsten DK",
+  "marknad": "NO",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO"
+  ],
+  "lank_standard": "https://drytrek.se/nb/products/damasker?country=NO",
+  "valuta": "NOK",
+  "heygen_sprak": "Norwegian Bokmål (Norway)",
+  "sprak": "norsk bokmål",
+  "locale": "nb",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3cf270ab-908c-81a0-9b0d-c486f6467ce7",
+    "titel": "Damasker vandring"
+  },
+  "kampanj": null,
+  "kampanj_skal": "ingen ACTIVE NO-kampanj — \"DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 8476 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+  "kampanjer_bort": 23,
+  "lank_arvd": null,
+  "pris_butik": {
+    "pris": 380,
+    "min": 380,
+    "max": 380,
+    "valuta": "NOK",
+    "jamforpris": null,
+    "titel": null,
+    "handle": null,
+    "kalla": "https://drytrek.se/nb/products/damasker?country=NO"
+  },
+  "pris_skal": null,
+  "rader": [],
+  "varningar": [
+    "kampanj: ingen ACTIVE NO-kampanj — \"DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 8476 kr spend (avvecklad, ett beslut). Laddas inte upp.",
+    "\"DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09\" är PAUSED med 8476 kr spend — avvecklad, aldrig mål"
+  ],
+  "hamtad": "2026-09-20T13:53:02.159Z"
+}

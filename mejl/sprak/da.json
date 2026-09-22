@@ -1,0 +1,43 @@
+{
+  "comment": "Danska för Bæverbutiken (baeverbutiken.dk). Skriven av sessionen 2026-09-20 — inte av en modersmålstalare; rätta här, aldrig i koden. Samma struktur som nb.json.",
+  "kod": "da",
+  "ord": {
+    "Hej": "Hej",
+    "I paketet": "I pakken",
+    "Levereras till": "Leveres til",
+    "Antal": "Antal",
+    "Ditt paketnummer": "Dit pakkenummer",
+    "Klicka på knappen ovan så visas ditt paket direkt.": "Klik på knappen ovenfor, så vises din pakke med det samme."
+  },
+  "manader": ["januar", "februar", "marts", "april", "maj", "juni", "juli", "august", "september", "oktober", "november", "december"],
+  "dagsuffix": ".",
+  "menyrad": "Spor pakken",
+  "sidfot": "Spørgsmål om din ordre? Svar på denne mail eller skriv til {{support}}.",
+  "mallar": {
+    "fraktbekraftelse": {
+      "amne": ["Din pakke er på vej", "{{ordernummer}} har forladt lageret", "På vej til dig nu"],
+      "preheader": ["Sporingslinket finder du her.", "Tjek spam-mappen, hvis du ikke kan se mailen."],
+      "rubrik": "Pakken er på vej!",
+      "intro": "Din ordre {{ordernummer}} har forladt lageret og er på vej til dig.",
+      "knapp": "Spor pakken",
+      "tips": "Sporingen kan stå stille i 2–4 dage, mens pakken er på vej til flyet – helt normalt. Tjek igen derefter.",
+      "beraknad_rubrik": "Forventet levering",
+      "beraknad": "{{leverans_fran}}–{{leverans_till}}",
+      "tysta_dagar": "Sporingen viser ofte ingenting de første 2–4 dage – pakken er på vej til flyet, ikke bortkommet. Du behøver ikke gøre noget, den opdateres, så snart pakken er tjekket ind."
+    },
+    "fraktuppdatering": {
+      "amne": ["Ny info om din pakke", "Sporingen er opdateret", "Opdatering: {{ordernummer}}"],
+      "preheader": ["Sådan ser det ud lige nu.", "Se de seneste oplysninger her."],
+      "rubrik": "Sporingen er opdateret",
+      "intro": "Sporingsoplysningerne for din ordre {{ordernummer}} er opdateret.",
+      "knapp": "Spor pakken"
+    },
+    "ute_for_leverans": {
+      "amne": ["Pakken kommer i dag", "Ude til levering nu", "{{ordernummer}} leveres i dag"],
+      "preheader": ["Hold øje i løbet af dagen.", "Snart i din postkasse eller hos pakkeshoppen."],
+      "rubrik": "Pakken kommer i dag",
+      "intro": "Din ordre {{ordernummer}} er ude til levering og kommer frem i løbet af dagen.",
+      "knapp": "Spor pakken"
+    }
+  }
+}

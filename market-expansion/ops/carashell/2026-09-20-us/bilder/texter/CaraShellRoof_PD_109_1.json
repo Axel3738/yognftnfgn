@@ -1,0 +1,73 @@
+[
+ {
+  "box": [
+   40,
+   58,
+   1040,
+   276
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.68,
+  "text": "Water pools around the roof hatches."
+ },
+ {
+  "box": [
+   60,
+   320,
+   1020,
+   442
+  ],
+  "rader": 2,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72,
+  "text": "The roof is the part you never see — and the most expensive to fix."
+ },
+ {
+  "box": [
+   180,
+   1084,
+   900,
+   1138
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Covers the whole roof, 21×10 ft"
+ },
+ {
+  "box": [
+   380,
+   1228,
+   700,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Protect the roof"
+ }
+]

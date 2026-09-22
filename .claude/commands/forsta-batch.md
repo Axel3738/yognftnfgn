@@ -33,6 +33,16 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 > inte target-CPA; top spendern är benchmark.
 
 
+- **FAS −1 – Produktunderlaget (Evolve, Axels beslut 2026-09-21).** Innan FAS 0:
+  ```bash
+  node tools/produktunderlag.mjs --skapa <id> --sida <produktsidans url>   # om filerna saknas
+  node tools/produktunderlag.mjs --granska <id>
+  ```
+  `products/<id>/produkt.md` + `avatar.md`. **Mekanismen är ett hårt stopp**
+  (exit 1 ⇒ ingen brief skrivs); övriga fält ger anmärkning och batchen får gå
+  ut ändå. Filerna är produktens STABILA minne — `dna.md` är prestandaminnet
+  och skrivs om vid varje `/cs`; de här två gör det aldrig.
+  Redovisa granskningens utskrift i svaret.
 - **FAS 0 – Kontrollera tillgång (gör, låtsas inte):** redovisa i tabell vad du faktiskt nådde: Meta Ads-data (kampanj/adset/annons + creatives), statiska bilder (ladda ner och GRANSKA visuellt), video (kan inte öppnas – be om transkript för vinnare/förlorare, transkribera aldrig på gissning), landningssida, Shopify-försäljning (korsvalidera mot Meta), recensioner (lucka om otillgängligt), Meta Ad Library (svenska söktermer).
 - **FAS 1 – Kampanjöversikt:** kampanj/konto/period, objective, attribution, budget, spend, CPM, CTR, funnel LPV→ATC→IC→köp, CPA, ROAS, struktur, trafiktyp. Var läcker funneln (kreativ, LP eller kassa)?
 - **FAS 2 – Klassificera:** tabell över alla annonser med klassificering, spend, köp, CPA, ROAS, CTR, hook rate, hold. Vilka 20 % driver resultatet, vilken är största budgetläckan?
@@ -46,6 +56,8 @@ Ditt uppdrag: analysera verklig performance-data, förklara varför vissa annons
 - **FAS 10 – Testplan:** Tier 1/2/3. Ingen dom <300 kr/3 köp; kill när CPA överstiger **break-even-CPA** (`break_even_cpa_sek` i products.json) efter ≥500 kr spend — inte när den överstiger target-CPA. "Gör innan spend"-lista. **Testplanen ska minst matcha kvoten: kör `node pipeline/quota.mjs`.**
 
 Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständigt manus/designbrief, shot list med tidskoder, exakta text-overlays, creator direction, editing direction, CTA, produktionsnivå, primärt KPI, "vad vi lär oss oavsett utfall".
+**Video: regitabellen är obligatorisk** (`docs/os/BRIEF-REGI.md`, Axels beslut 2026-09-21) — en rad per manusrad med Audio, On-screen text, Picture, Effect + length, Source (ett av fem format, `OUR AD` med mm:ss), Reference, Latitude, plus raderna Assets / Reference ads / Editor latitude. Regin skrivs av huvudsessionen (regel 6 gäller texten).
+**FAS 6 skriver dessutom listan `## Avatarer`** i `dna.md`: max 4 sub-avatarer med slug, ett direktcitat eller butiksdata som källa, och begäret ur den fasta listan (ANALYSMETOD 6b). Varje briefs `avatar=` pekar på en av dem — aldrig på en påhittad.
 
 ## NAMING (obligatorisk)
 
@@ -55,12 +67,14 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 
 1. Slutrapport som EN markdown-fil: executive summary → datakvalitet → FAS 1–10 → lärdomar.
 2. Varje annons i testplanen: egen självständig brief i egen mapp — en klippare ska kunna jobba utan att läsa något annat.
-3. **Engelska briefer**; svenska manusrader/voiceovers/text-i-bild i tabell `Swedish (use this) | English meaning`.
+3. **Engelska briefer**; svenska manusrader/voiceovers/text-i-bild i tabell `Swedish (use this) | English meaning`. Överst `VARIABELTAGGAR:` med de åtta variablerna **och komponenttaggarna** (`typ=N|IM|I|M|S · koncept · parent · iteration · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-<annons_id>` — fasta listor i ANALYSMETOD 6b) samt raden `Memo:`. Varje videobrief: regitabellen enligt `docs/os/BRIEF-REGI.md`. **Lärdomen först** (`docs/os/CS-KLART.md`): produkttestets etiketterade annonser får sina lärdomar (FAS 2–4 är råmaterialet: utfall, hookar, komponenter mot briefen, hypotes märkt gissning, nästa annonser) INNAN briefarna skrivs — varje brief pekar på en av dem; kan den inte det skrivs den inte.
+   **Spärren före Notion:** `node tools/briefgranskning.mjs --manifest products/<id>/batch-NN/manifest.json --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>` — exit 1 ⇒ rätta briefen, skapa ingen rad. Visa utskriften.
 4. Två zip: `video-ads-briefs.zip` + `image-ads-briefs.zip`, vardera med README (globala regler: rätt pris, **aldrig butikens namn i annonsen** — Axels beslut 2026-09-18, annonserna speglas mellan butiker med `/ops-spegla` — produkt i bild före sekund 4, svenska captions ord-för-ord, exportformat 9:16 + 4:5 resp. 1:1 + 1080×1350, stavfällor) och i bild-zippen `reference-assets` med befintliga annonsbilder (vinnare tydligt döpta, ej-återanvändbara som `DO_NOT_REUSE_...`).
 5. Skicka rapport + briefer + zip i samma leverans utan att invänta godkännande. Max EN fråga sist, bara om den kräver ägarens beslut.
 6. **Skapa produktens minnesfiler:** `products/<id>/dna.md`, `products/<id>/batch-log.md` (denna batch med hypoteser), `products/<id>/backlog.md` (tom). Committa och pusha.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
+- [ ] FAS −1: `produkt.md` + `avatar.md` granskade, `--granska` gav exit 0 och utskriften står i svaret
 
 - [ ] FAS 0-tabellen visar vad som faktiskt verifierades
 - [ ] Ingen dom under 300 kr / 3 köp
@@ -69,6 +83,7 @@ Varje annons: hypotes, vad som behålls/ändras, format, exakt hook, fullständi
 - [ ] Testplanen ≥ kvoten (quota-output visad)
 - [ ] Copy/voiceover via sonnet/haiku-subagent, strategi i huvudsessionen
 - [ ] Briefer självständiga, engelska, Swedish/English-tabeller
+- [ ] Varje videobrief har regitabellen (BRIEF-REGI.md), varje brief komponenttaggar + `Memo:`, `dna.md` har `## Avatarer` (≤ 4, med källa); `briefgranskning.mjs --manifest` grön innan Notion (utskriften visad)
 - [ ] Naming: upptagna AD-ID:n avlästa, inga återanvända
 - [ ] Två zip-filer med README levererade
 - [ ] `products/<id>/` skapad (dna, batch-log, backlog) och pushad

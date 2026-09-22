@@ -41,6 +41,14 @@ för hand.
 
 1. **Rendera aldrig före proofread.** Rendering drar HeyGen-credits.
 2. **Skanna källvideon efter inbränd svensk text** — HeyGen översätter bara ljudet.
+2b. **Slutkortet** (`factory/bildbrand.mjs`, 2026-09-20). Kön granskar de
+   sista 3 sekunderna av varje video som ska laddas upp. `slutkort.blockerar`
+   ⇒ ladda inte upp raden (slutkortet namnger en butik — ingen omdubbning
+   rör BILDEN, varken HeyGen eller ElevenLabs-vägen, så ett svenskt slutkort
+   med logga följer med rakt in i marknaden).
+   `slutkort-utan-brand` och `okand` laddas upp men **namnges i rapporten**:
+   ett slutkort på svenska är fel språk i Danmark även utan butiksnamn.
+   Inget som redan är live rörs.
 3. **`python3 pipeline/rostkoll.py` på varje renderad video.** ❌ laddas inte upp.
 4. **Priset kommer ur produktfilen eller inte alls.** `ekonomi.marknadspriser`
    för marknadens valuta (NOK 1 106 / USD …) är facit för all copy, dubb och
@@ -149,6 +157,25 @@ Proofread → SRT lokaliseras av subagenten (samma blockantal/timecodes) →
 apply → render → download → `no-precis.py`/`no-captions.py` bara om källan
 har inbränd text (skripten är språkoberoende trots namnet) → `rostkoll.py`.
 Tom `.orig.srt` = inget tal = ingen render.
+
+**AI-raden — bara `--marknad US` (USA, GB, CA, AU, NZ), aldrig NO** (Axels
+beslut 2026-09-21, `docs/os/CS-KLART.md` punkt 27). Efter `rostkoll.py`,
+INNAN uppladdning, på varje engelsk videofil:
+```bash
+node tools/ai-rad.mjs --brief <brief.md>                       # vad briefen säger: person | rost | bild | ingen
+node tools/ai-rad.mjs <batch>/us/<fil>.mp4 --ai <person|rost|bild|ingen>   # → <fil>-ai.mp4 (raden), eller "ingen rad" vid bild/ingen
+```
+Raden "Contains AI-generated content" är **obligatorisk** när creativen
+har en AI-genererad person eller AI-röst (HeyGen-dubbningen ÄR en AI-röst
+— alltså i praktiken varje översatt talvideo), **frivillig** på ren
+AI-bild/produktanimation, och läggs på 82,5 % av höjden så den varken
+beskärs bort i 4:5-feeden eller täcks av Reels-fälten, liten (1,7 % av
+höjden), vit på svart halvgenomskinlig platta. Saknar briefen raden
+`AI content:` behandlas videon som person — hellre en rad för mycket.
+Ladda upp `-ai.mp4`-filen. De svenska och norska filerna rörs aldrig.
+ffmpeg saknas i claude.ai-containern: skriptet faller tillbaka på
+`imageio-ffmpeg` (`pip install imageio-ffmpeg`), samma reserv som
+`no-captions.py`.
 
 ### 5. Uppladdning — live i marknadens kampanj
 ```

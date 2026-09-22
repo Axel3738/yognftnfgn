@@ -1,0 +1,21 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-21",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #5 — budget round only, Monday is not a brief day and the brief round is paused by owner decision since 18/9",
+    "SE campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is still PAUSED. Last 7 days 2 058 kr / 4 purchases; the 3-day window has fallen to 355 kr / 0 purchases as the paused days roll in. 0 changes — a paused campaign is a decision",
+    "NO was PAUSED at yesterday's read and was not re-checked tonight: Meta rate-limited the account and the read-only call was still queued when the report went out. It is checked again tomorrow"
+  ],
+  "siffror": { "spend_7d_se": 2058, "kop_7d_se": 4, "spend_3d_se": 355, "kop_3d_se": 0, "andringar": 0 },
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-22",
+  "varningar": [
+    "Both markets were off as of yesterday, so this product spends nothing and the routine has nothing to act on. It reports a paused campaign every night until someone switches one on",
+    "Briefs paused since 18/9 — CaraShell is written in the Bäverbutiken teamspace and mirrored here",
+    "Meta rate limits are heavy on the shared OPS account right now; the NO read-only check did not finish inside the run"
+  ]
+}

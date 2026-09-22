@@ -1,0 +1,330 @@
+{
+ "comment": "Skrivs av sparning/kor.mjs. nummer → { bolag, kod, order, fulfillment, registrerad, status, senast, levererad }",
+ "paket": {
+  "YT2626300703845960": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1059",
+   "fulfillment": "gid://shopify/Fulfillment/8409466995037",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626300703845945": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1058",
+   "fulfillment": "gid://shopify/Fulfillment/8409465520477",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41"
+  },
+  "YT2626200707253031": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1057",
+   "fulfillment": "gid://shopify/Fulfillment/8409285886301",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626200707253361": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1056",
+   "fulfillment": "gid://shopify/Fulfillment/8408551653725",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626200704533708": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1055",
+   "fulfillment": "gid://shopify/Fulfillment/8408289280349",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41"
+  },
+  "YT2626200704533641": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1054",
+   "fulfillment": "gid://shopify/Fulfillment/8408287576413",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626200704730197": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1053",
+   "fulfillment": "gid://shopify/Fulfillment/8408287543645",
+   "registrerad": "2026-09-20",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626400707009348": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1062",
+   "fulfillment": "gid://shopify/Fulfillment/8412771942749",
+   "registrerad": "2026-09-21",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626400707009264": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1061",
+   "fulfillment": "gid://shopify/Fulfillment/8412769976669",
+   "registrerad": "2026-09-21",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626400707009215": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1060",
+   "fulfillment": "gid://shopify/Fulfillment/8412768895325",
+   "registrerad": "2026-09-21",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2624200703059343": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1052",
+   "fulfillment": "gid://shopify/Fulfillment/8348461924701",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2624200703259158": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1051",
+   "fulfillment": "gid://shopify/Fulfillment/8348461891933",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2624200703259133": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1050",
+   "fulfillment": "gid://shopify/Fulfillment/8348461826397",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623800708860289": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1049",
+   "fulfillment": "gid://shopify/Fulfillment/8323142943069",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623600712088699": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1048",
+   "fulfillment": "gid://shopify/Fulfillment/8306569380189",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623600707679577": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1047",
+   "fulfillment": "gid://shopify/Fulfillment/8299334566237",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623600707493326": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1046",
+   "fulfillment": "gid://shopify/Fulfillment/8299334500701",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-22T00:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-22"
+  },
+  "YT2623600705130698": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1045",
+   "fulfillment": "gid://shopify/Fulfillment/8299061182813",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-22T00:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-22"
+  },
+  "YT2623600704942143": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1044",
+   "fulfillment": "gid://shopify/Fulfillment/8299061117277",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623600704942051": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1043",
+   "fulfillment": "gid://shopify/Fulfillment/8299061084509",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623500703256232": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1042",
+   "fulfillment": "gid://shopify/Fulfillment/8290615099741",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623500703256208": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1041",
+   "fulfillment": "gid://shopify/Fulfillment/8290615066973",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623600712023100": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1040",
+   "fulfillment": "gid://shopify/Fulfillment/8306421629277",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623500703248817": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1039",
+   "fulfillment": "gid://shopify/Fulfillment/8290615034205",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623500703247991": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1038",
+   "fulfillment": "gid://shopify/Fulfillment/8290615001437",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623400707161662": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1037",
+   "fulfillment": "gid://shopify/Fulfillment/8289536541021",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:43",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623400706967390": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1036",
+   "fulfillment": "gid://shopify/Fulfillment/8289536442717",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2623400707159070": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1035",
+   "fulfillment": "gid://shopify/Fulfillment/8289536377181",
+   "registrerad": "2026-09-21",
+   "status17": "Delivered",
+   "senast": "2026-09-21T23:41",
+   "status": "DELIVERED",
+   "levererad": "2026-09-21"
+  },
+  "YT2626500705509445": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1063",
+   "fulfillment": "gid://shopify/Fulfillment/8414205280605",
+   "registrerad": "2026-09-22",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  },
+  "YT2626500709270614": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1064",
+   "fulfillment": "gid://shopify/Fulfillment/8415297110365",
+   "registrerad": "2026-09-22",
+   "status17": "InfoReceived",
+   "senast": "2026-09-22T14:41",
+   "status": "CONFIRMED"
+  }
+ },
+ "senaste_korning": {
+  "datum": "2026-09-22T14:41:24.267Z",
+  "ordrar": 22,
+  "paket": 12,
+  "registrerade": 0,
+  "skrivna": 0,
+  "fel": 0,
+  "torr": false
+ }
+}

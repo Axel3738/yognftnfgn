@@ -32,9 +32,93 @@ shopify:
   # SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER.
   env_suffix: "BAVERBUTIKEN_EMAILSCRAPER"
 
+# Autosvaret (kundtjanst/autosvar.mjs). Leveranslöftet är samma som fraktmejlen
+# (mejl/konfig.json frakt: 7–14 dagar, packas 1–2 arbetsdagar, Axels beslut
+# 2026-09-18); spårningssidan är den rutinen bygger varje timme.
+svar:
+  autosvar: true
+  sprak: sv
+  signatur: "Kundtjänst Bäverbutiken"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://baverbutiken.se/pages/spara"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+  # SOP 36 steg 1 ("be om ordernumret") — av tills Axel sagt till (frågan ställd 2026-09-21).
+  fraga_ordernummer: false
+  # SOP 38 (VA:ns SOP-databas "Bäverkoppling.se", läst 2026-09-21): de godkända
+  # företagsuppgifterna. Samma bolag och adress som VA:ns egna returmejl i Sent
+  # (2026-09-14) och tvister.returadress. Aldrig VD:ns namn.
+  foretag:
+    namn: "Stonebite Ecom AB"
+    orgnr: "559576-2401"
+    adress: "Sjöhed 160, 442 74 Harestad"
+    moms: true
+
 notion:
   # VA:ns SOP-databas "Customer support bäverbutiken" (47 rader, kolumnen
   # Kategori: Payment, Delivery, Return and Refund …), länken Axel gav 2026-09-13.
   # (Den första länken 2026-09-12, 36f270ab…, var redigerarnas Creative Hub master.)
   sop_database_id: "3aa270ab-908c-8057-a8a0-cc691d9e956b"
   rapport_database_id: ""
+
+# Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina platshållare med.
+# Avläst ur butikens egen återbetalningspolicy 2026-09-20 — inte gissat.
+tvister:
+  # ⚠️ Axels beslut 2026-09-22 (alternativ B): returfönstret är 14 dagar från
+  # mottagandet — samma som den lagstadgade ångerrätten. Autosvaret och
+  # tvist-SOP:erna säger 14 sedan dess. Den publicerade policyn
+  # (policy_url nedan) och VA:ns SOP 18 i Notion sade fortfarande 30 vid
+  # beslutet ("Vi har 30 dagars returpolicy … från det att du mottog
+  # artikeln") — Axel ändrar policysidan i Shopify själv; tills dess kan en
+  # kund peka på sidans 30 dagar. FRÅN MOTTAGANDET gäller fortfarande:
+  # leveranstiden är 3–4 veckor (mätt på tvistordrarna: #5418 beställd 16/8,
+  # levererad 11/9 = 26 dagar), så fönstret öppnar en månad efter köpet.
+  returfonster_dagar: 14
+  # Lagstadgad ångerrätt, står på samma sida: 14 dagar från mottagandet
+  # (distansavtalslagen 2005:59).
+  angerratt_dagar: 14
+  policy_url: "https://baverbutiken.se/policies/refund-policy"   # svarar 200, avläst 2026-09-20
+  # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen
+  # accepteras skickar vi dig instruktioner om hur och var du ska skicka
+  # paketet") och ska inte heller göra det — kunden ska höra av sig först.
+  # Hela adressen som VA:n själv skriver i returmejlen (Skickat 2026-09-14 och
+  # 2026-09-16), kommaseparerad — autosvaret skriver en rad per del.
+  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
+  # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
+  # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
+  # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en
+  # trasig vara blev en tvist, och en tvist kostar mer än en retur.
+  returadress_pa_forfragan: true
+  # Kunden betalar och ordnar returfrakten; ingen returetikett skickas. Det är
+  # vad butikens befintliga retur-SOP alltid sagt, inskrivet 2026-09-21.
+  returfrakt_betalas_av: "kund"
+  # Avläst av Axel 2026-09-21 i Shopify admin → Settings → Payments →
+  # "Uppgifter för kundens kontoutdrag" → Namn på kundens kontoutdrag.
+  # Det är EXAKT den här texten kunden ser på sitt kontoutdrag — en descriptor
+  # kunden inte känner igen är en vanlig orsak till "unrecognized"-tvister.
+  billing_descriptor: "SP Baverbutiken.se"
+  # Supportnumret som står bredvid descriptorn i samma ruta. Banken ger det
+  # till kunden som vill ringa innan hen öppnar en tvist.
+  support_telefon: "+46 79 340 44 07"
+  # 0 = slåss om allt. Ändra först när någon räknat på vad VA-timmen kostar
+  # mot medeltvisten (348–589 kr på de flesta rader).
+  strid_lonar_sig_over: 0
+  # Butikens spårningssida (sparning/, live 2026-09-19) och paketprefixet
+  # (sparning/butiker.json). Kunden får bara BB-numret, aldrig YT-numret.
+  sparningssida: "https://baverbutiken.se/pages/spara"
+  paketprefix: "BB-"
+
+  # Eskaleringen (kundtjanst/sop/60-ESCALATION.md). Axels beslut 2026-09-20:
+  # VA:n sköter hela den dagliga tvistkön själv — eskalering är för
+  # bedömningsfrågor, inte för rutinjobb.
+  agare_kontakt: "Axel (Discord #customer-service)"
+  # 0 = VA:n får återbetala och acceptera hela kön utan att fråga. Tvisterna
+  # ligger på 348–1 262 kr och en vunnen dag är värd mer än ett godkännande.
+  godkannande_over: 0
+  ersattning_over: 0
+  # Svarstidsmålet som gör friktionsmodellen ovan försvarbar.
+  forsta_svar_timmar: 24

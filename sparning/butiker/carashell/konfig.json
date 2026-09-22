@@ -1,0 +1,24 @@
+{
+  "comment": "Spårningssidan i CaraShell: /pages/spara. Skriven av sparning/publicera.mjs ur sparning/butiker.json — ändra i registret, inte här. Blocket lage skrivs av publiceringen.",
+  "sida": {
+    "handle": "spara",
+    "titel": "Spåra ditt paket",
+    "template_suffix": null,
+    "markor": "bb-spar",
+    "data_id": "bb-spar-data",
+    "fonster_dagar": null
+  },
+  "butik": {
+    "namn": "CaraShell",
+    "url": "https://carashell.se",
+    "support": "hello@carashell.se"
+  },
+  "frakt": {
+    "sparning_vaknar": "2–4 dagar"
+  },
+  "lage": {
+    "sida_publicerad": "2026-09-22",
+    "sida_url": "https://carashell.se/pages/spara",
+    "sida_matt": "229 paket, 465 händelser, 91 kB"
+  }
+}

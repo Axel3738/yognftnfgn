@@ -1,0 +1,11 @@
+{
+  "comment": "Notion-hubbar som SAMMA integration ser men som INTE är Bäverbutikens. De undantas PER ID ur alla Bäverbutiks-läsare (tools/notion-kalla.mjs), precis som OPS-hubbarna — aldrig på titel, för titlar byts och id:n består. Bakgrund 2026-09-21: Matstrumpor fick en egen uppladdare (/matstrumpor) mot annonskontot 'nya kungen' 730973156224390. Utan den här spärren läser Leveransrundan (/notionkorning, 13:20) samma rader och försöker ladda upp dem i MagiBorsten 1867947880635861. I dag räddas det bara av att inget annonsprefix matchar — alltså av en slump, inte av en regel. Commission är undantaget: den är läs-bar och SKA räkna hubbarna (commission/hubbar.json), annars hamnar spenden på fel person.",
+  "hubbar": [
+    {
+      "id": "3a7270ab-908c-80d2-9f35-e73e51e457ff",
+      "namn": "Matstrumpor creative hub",
+      "verksamhet": "Matstrumpor",
+      "egen_rutin": "/matstrumpor (konto 730973156224390)"
+    }
+  ]
+}

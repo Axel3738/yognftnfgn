@@ -54,7 +54,10 @@ export function granskaOrdrar(ordrar = [], { nu = new Date(), ofullbordadDagar =
 
 /**
  * Hela bedömningen. `tvister` = { tillganglig, lista: [{ typ, orsak, status, belopp, ordernamn, initierad }] }.
- * Returnerar { poang, niva, signaler, atgarder, tvistgrad, underlag }.
+ * Returnerar { poang, niva, signaler, atgarder, tvistgrad, tvistgradAllt, underlag }.
+ * `tvistgrad` = chargebacks / ordrar (korttnätverkens mått).
+ * `tvistgradAllt` = (chargebacks + inquiries) / ordrar — alltid högre, och det
+ * som visar hur ofta en bank hör av sig alls.
  */
 export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar = {}, nu = new Date() } = {}) {
   const t = {
@@ -74,6 +77,7 @@ export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar 
   //    Inquiries (bankens förfrågningar) är förvarningen: obesvarade blir de
   //    chargebacks, så de får en egen signal och en egen åtgärd.
   let tvistgrad = null;
+  let tvistgradAllt = null;
   let antalChargebacks = null;
   let antalForfragningar = null;
   const dagar = t.ordrar_dagar ?? 30;
@@ -98,6 +102,29 @@ export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar 
       oppnaCb.length ? `Answer the ${oppnaCb.length} open chargeback(s) in Shopify → Orders → Disputes before the evidence deadline${senast(oppnaCb) ? ` (earliest ${senast(oppnaCb)})` : ''}. Include tracking + delivery proof.` : null);
     lagg('forfragningar', `Förfrågningar från banken (inquiries, ${dagar} dagar)`, `Bank inquiries (retrieval requests, last ${dagar} days)`, forfragningar.length, tak(forfragningar.length, 5, 15), forfragningar.map(rad),
       oppnaInq.length ? `Answer the ${oppnaInq.length} open inquiry(ies) in Shopify → Orders → Disputes${senast(oppnaInq) ? ` before ${senast(oppnaInq)}` : ''} with tracking + the customer email thread — an unanswered inquiry becomes a chargeback.` : null);
+
+    // 1b. Den andra tvistgraden: ALLT banken hör av sig om, inte bara
+    //     chargebacks. Den är alltid högre, och den var osynlig fram till
+    //     2026-09-22 — då Bäverbutiken låg på 0,19 % chargebacks (grönt) och
+    //     1,91 % allt. Talet VISAS; det döms bara om butiken satt en gräns,
+    //     för vad Shopify självt mäter är inte avläst.
+    if (o.antal > 0) {
+      tvistgradAllt = Math.round((lista.length / o.antal) * 10000) / 100;
+      let pa = 0;
+      const gul = t.tvistgrans_allt_gul_procent;
+      const rod = t.tvistgrans_allt_rod_procent;
+      if (rod !== null && rod !== undefined && tvistgradAllt >= rod) pa = 30;
+      else if (gul !== null && gul !== undefined && tvistgradAllt >= gul) pa = 15;
+      const grans = (rod !== null && rod !== undefined) || (gul !== null && gul !== undefined)
+        ? `limits: yellow ${gul ?? '—'} %, red ${rod ?? '—'} %`
+        : 'no limit set for this measure — read what Shopify itself counts before setting one';
+      lagg('tvistgrad_allt', `Tvistgrad inkl. förfrågningar (${dagar} dagar)`,
+        `Dispute rate incl. inquiries (last ${dagar} days)`, tvistgradAllt, pa,
+        [`${lista.length} disputes (${chargebacks.length} chargebacks + ${forfragningar.length} inquiries) on ${o.antal} orders = ${tvistgradAllt} %`,
+         `card-network measure (chargebacks only): ${tvistgrad ?? '—'} %`,
+         grans],
+        pa > 0 ? `Dispute rate including bank inquiries is ${tvistgradAllt} % — above this store's own limit. Cut the cause (late delivery, "where is my parcel"), do not just answer faster.` : null);
+    }
   } else {
     lagg('tvister', `Chargebacks (${dagar} dagar)`, `Chargebacks (last ${dagar} days)`, null, 0, [tvister?.orsak ?? 'Shopify inte kopplat — tvister okända'], null);
   }
@@ -146,6 +173,7 @@ export function bedomRisk({ arenden = [], ordrar = [], tvister = null, trosklar 
     signaler,
     atgarder,
     tvistgrad,
+    tvistgradAllt,
     underlag: { arenden: kundarenden.length, ordrar: o.antal, tvisterTillgangliga: Boolean(tvister?.tillganglig), chargebacks: antalChargebacks, forfragningar: antalForfragningar, dagar, aterbetalda: o.aterbetalda, avbrutna: o.avbrutna },
   };
 }

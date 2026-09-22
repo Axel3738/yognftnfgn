@@ -1,0 +1,28 @@
+{
+  "hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
+  "hub_titel": "BÄVER Termoskyddet för Husbil",
+  "slug": "baver-termoskyddet-for-husbil-c5a270ab",
+  "rond": "2026-09-18",
+  "idag": "2026-09-21",
+  "antal": 9,
+  "rena": 0,
+  "anm": 8,
+  "fel": 1,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8160-81fd-d5fa7ad9d4a8",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-18-3e2270ab908c816081fdd5fa7ad9d4a8",
+    "titel": "Brief review 2026-09-18",
+    "block": 23
+  },
+  "feedback_fil": "products/carashell/termoskyddet/feedback.md",
+  "kommentarer": [
+    {
+      "namn": "Termoskydd_BOF_8_1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-18 (BÄVER Termoskyddet för Husbil) — this brief has an error the editor must know about:\n1. `30 dagars öppet köp – gillar du det inte får du pengarna tillbaka.` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). The brief's own rule (\"must match the page exactly\") is broken. The ad also mirrors into CaraShell where the page says 14 days too. Next version: real terms only (`Fri frakt inom Sverige.`, Klarna, `14 dagars ångerrätt`), or drop the ad.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [],
+  "torr": false
+}

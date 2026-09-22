@@ -1,0 +1,295 @@
+{
+ "databas": "3aa270ab-908c-8057-a8a0-cc691d9e956b",
+ "beskrivning": "VA:ns SOP-bas i Notion. fil -> sida. 'kalla' pekar i stället på tvisthandboken i kundtjanst/sop/ — den fylls med butikens värden ur brandfilen (sop/fyll.mjs) innan den skrivs, så handboken förblir portabel i repot och VA:n läser den färdigifylld. notion_id saknas = raden skapas av skrivaren.",
+ "sidor": [
+  {
+   "fil": "00-STORE-FACTS.md",
+   "titel": "Store facts — the only page that changes per brand",
+   "kategori": "Other stuff",
+   "notion_id": "3e2270ab-908c-8187-b673-d9d89bee2cbd"
+  },
+  {
+   "fil": "01-TRACKING-PAGE.md",
+   "titel": "Tracking page — how to look up any parcel",
+   "kategori": "Delivery",
+   "notion_id": "3e2270ab-908c-81d7-a761-cd0e050a358d"
+  },
+  {
+   "fil": "questions-about-where-product-is-shipped-from.md",
+   "titel": "Questions about where product is shipped from",
+   "kategori": "Shipping & Customs",
+   "notion_id": "84a270ab-908c-82e4-9a33-01957a3fed0e"
+  },
+  {
+   "fil": "chargeback-or-dispute-via-bank-or-klarna.md",
+   "titel": "Chargeback or dispute via bank or Klarna",
+   "kategori": "Payment",
+   "notion_id": "48c270ab-908c-83be-a7dd-01752dd00635"
+  },
+  {
+   "fil": "customer-wants-to-return-product.md",
+   "titel": "Customer wants to return product (SOP 18)",
+   "kategori": "Return and Refund",
+   "notion_id": "3c5270ab-908c-83d5-a7d0-81c9feebf09a"
+  },
+  {
+   "fil": "product-arrived-broken.md",
+   "titel": "PRODUCT ARRIVED BROKEN (SOP: Customer Received Damaged Product)",
+   "kategori": "Return and Refund, Shipping & Customs, Product, Delivery",
+   "notion_id": "046270ab-908c-82cb-a978-018c1ad3281d"
+  },
+  {
+   "fil": "order-confirmation-not-received.md",
+   "titel": "Order confirmation not received",
+   "kategori": "Order",
+   "notion_id": "db9270ab-908c-8385-98cb-8112becbbb48"
+  },
+  {
+   "fil": "customer-wants-to-cancel-order.md",
+   "titel": "Customer wants to cancel order",
+   "kategori": "Order",
+   "notion_id": "88c270ab-908c-8352-93ee-81fcb79d1550"
+  },
+  {
+   "fil": "order-placed-with-incorrect-delivery-address.md",
+   "titel": "Order placed with incorrect delivery address",
+   "kategori": "Order",
+   "notion_id": "ef7270ab-908c-82d4-81d2-011a239bb126"
+  },
+  {
+   "fil": "package-missing-after-tracking-shows-delivered.md",
+   "titel": "Package missing after tracking shows delivered",
+   "kategori": "Delivery",
+   "notion_id": "3fe270ab-908c-829e-a9b1-01efeacf5f43"
+  },
+  {
+   "fil": "tracking-email-ended-up-in-spam.md",
+   "titel": "Tracking email ended up in spam",
+   "kategori": "Account and Website",
+   "notion_id": "1cb270ab-908c-8232-9988-8151d0445b35"
+  },
+  {
+   "fil": "package-damaged-upon-delivery.md",
+   "titel": "Package damaged upon delivery",
+   "kategori": "Delivery",
+   "notion_id": "81f270ab-908c-8308-bd43-01dd390ba8cb"
+  },
+  {
+   "fil": "package-returned-to-sender-without-delivery.md",
+   "titel": "Package returned to sender without delivery",
+   "kategori": "Delivery",
+   "notion_id": "34d270ab-908c-8349-a529-016685cc8e20"
+  },
+  {
+   "fil": "package-delivered-to-wrong-address.md",
+   "titel": "Package delivered to wrong address",
+   "kategori": "Delivery",
+   "notion_id": "6a9270ab-908c-8289-a3b2-81c9ea30eab7"
+  },
+  {
+   "fil": "questions-about-delivery-timeframe.md",
+   "titel": "Questions about delivery timeframe (SOP 28)",
+   "kategori": "Shipping & Customs",
+   "notion_id": "a6a270ab-908c-8393-8993-019bb594aa1f"
+  },
+  {
+   "fil": "order-not-arrived-within-expected-timeframe.md",
+   "titel": "Order not arrived within expected timeframe",
+   "kategori": "Delivery",
+   "notion_id": "bd5270ab-908c-82d9-93be-01c25afddafd"
+  },
+  {
+   "fil": "when-will-my-package-arrive.md",
+   "titel": "When will my package arrive?",
+   "kategori": "Delivery",
+   "notion_id": "2a7270ab-908c-82c1-a039-810608433afd"
+  },
+  {
+   "fil": "where-is-my-package.md",
+   "titel": "Where is my package?",
+   "kategori": "Delivery",
+   "notion_id": "4bb270ab-908c-83d6-8bc1-81f48dd9bec1"
+  },
+  {
+   "fil": "unexpected-customs-or-import-fee.md",
+   "titel": "Customer received unexpected customs or import fee",
+   "kategori": "Shipping & Customs",
+   "notion_id": "d10270ab-908c-83c4-8ab6-01c4d426525c"
+  },
+  {
+   "fil": "technical-error-in-checkout-during-purchase.md",
+   "titel": "Technical error in checkout during purchase",
+   "kategori": "Payment",
+   "notion_id": "1d9270ab-908c-83b3-9780-01798036b206"
+  },
+  {
+   "fil": "customer-disputes-charged-amount.md",
+   "titel": "Customer disputes charged amount",
+   "kategori": "Payment",
+   "notion_id": "e82270ab-908c-82c4-9b1b-011045624d6e"
+  },
+  {
+   "fil": "money-charged-but-no-order.md",
+   "titel": "Money charged but no order visible",
+   "kategori": "Payment",
+   "notion_id": "734270ab-908c-836f-9ec6-01fe213d9a29"
+  },
+  {
+   "fil": "return-address-and-instructions.md",
+   "titel": "Return adress & information",
+   "kategori": "Return and Refund",
+   "notion_id": "ad0270ab-908c-82ca-8fc3-81717b3b458f"
+  },
+  {
+   "fil": "refund-not-received-after-approved-return.md",
+   "titel": "Refund not received after approved return",
+   "kategori": "Return and Refund",
+   "notion_id": "86e270ab-908c-82cb-9876-016d243bd1a1"
+  },
+  {
+   "fil": "refund-the-three-step-offer.md",
+   "titel": "Refund 3 step proccess",
+   "kategori": "Return and Refund",
+   "notion_id": "156270ab-908c-8314-8a8a-810d0c2a12e7"
+  },
+  {
+   "fil": "payment-completed-but-no-order-registered.md",
+   "titel": "Payment completed but no order registered",
+   "kategori": "Order",
+   "notion_id": "d3c270ab-908c-839a-8968-81cb53c02583"
+  },
+  {
+   "fil": "invoice-and-business-purchase.md",
+   "titel": "Another company wants an invoice",
+   "kategori": "Other stuff",
+   "notion_id": "cb2270ab-908c-82ab-875d-01a5acc7659e"
+  },
+  {
+   "fil": "company-information-requests.md",
+   "titel": "Company information",
+   "kategori": "Other stuff",
+   "notion_id": "9c3270ab-908c-831b-a12a-8167fcd1e2fa"
+  },
+  {
+   "fil": "discounts-and-campaigns.md",
+   "titel": "Questions about discounts and campaigns",
+   "kategori": "Other stuff",
+   "notion_id": "c5d270ab-908c-83f3-b37f-810bc31776d3"
+  },
+  {
+   "fil": "reseller-and-wholesale-inquiries.md",
+   "titel": "Inquiries about reseller agreements",
+   "kategori": "Other stuff",
+   "notion_id": "8af270ab-908c-822f-a9a2-811a4b2e1d6a"
+  },
+  {
+   "fil": "wrong-product-delivered.md",
+   "titel": "Wrong product delivered",
+   "kategori": "Order",
+   "notion_id": "f1a270ab-908c-82ee-a41d-81524dbf9214"
+  },
+  {
+   "fil": "suspicious-or-phishing-email.md",
+   "titel": "Suspicious phishing email with unusual sender address",
+   "kategori": "Account and Website",
+   "notion_id": "bff270ab-908c-8298-b61d-81749064183c"
+  },
+  {
+   "fil": "technical-problems-in-checkout.md",
+   "titel": "Technical issues during purchase (checkout not working, unable to change quantity)",
+   "kategori": "Account and Website",
+   "notion_id": "45d270ab-908c-832a-a47d-81167bf4faf4"
+  },
+  {
+   "fil": "how-to-use-deepl.md",
+   "titel": "How to use DEEPL",
+   "kategori": "Other stuff",
+   "notion_id": "aa7270ab-908c-83c0-9cf2-01be2b812cf2"
+  },
+  {
+   "fil": "logging-in-to-the-support-mailbox.md",
+   "titel": "LOG IN TO EMAIL ACCOUNT",
+   "kategori": "Log into customer support accounts and acces team stuff",
+   "notion_id": "26a270ab-908c-82b6-a626-81c7abce512e"
+  },
+  {
+   "fil": "start-here.md",
+   "titel": "READ ME",
+   "kategori": null,
+   "notion_id": "1da270ab-908c-8381-98fb-819065cc4c2c"
+  },
+  {
+   "kalla": "../sop/START-HERE.md",
+   "titel": "Chargebacks — START HERE: route the dispute",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8182-85ee-cd7d6e3c7a84"
+  },
+  {
+   "kalla": "../sop/00-MASTER.md",
+   "titel": "Chargebacks — the first hour",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8197-bada-f622a1266aed"
+  },
+  {
+   "kalla": "../sop/10-NOT-RECEIVED.md",
+   "titel": "Dispute reason: product not received",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8121-b6f4-ea69c6d6a0f0"
+  },
+  {
+   "kalla": "../sop/11-UNACCEPTABLE.md",
+   "titel": "Dispute reason: product unacceptable or not as described",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8128-979d-e474a85e5fe8"
+  },
+  {
+   "kalla": "../sop/12-CREDIT-NOT-PROCESSED.md",
+   "titel": "Dispute reason: credit not processed",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8124-bb5e-cd429b0b751c"
+  },
+  {
+   "kalla": "../sop/13-FRAUD-UNRECOGNIZED.md",
+   "titel": "Dispute reason: fraudulent or unrecognized",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8105-b39a-cc7a3220c07e"
+  },
+  {
+   "kalla": "../sop/14-DUPLICATE-SUBSCRIPTION-OTHER.md",
+   "titel": "Dispute reason: duplicate, subscription cancelled or other",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8101-b755-e65dfb88c9f9"
+  },
+  {
+   "kalla": "../sop/20-NO-CONTACT.md",
+   "titel": "Dispute with no email history with the customer",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81e3-aa17-de023eea53b5"
+  },
+  {
+   "kalla": "../sop/30-EMAIL-TEMPLATES.md",
+   "titel": "Dispute email templates",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81f9-89a4-d146c5bc56a9"
+  },
+  {
+   "kalla": "../sop/40-EVIDENCE-PACK.md",
+   "titel": "Dispute evidence pack — what to attach and where to find it",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8194-a4fc-c7fcaf6034fc"
+  },
+  {
+   "kalla": "../sop/50-PREVENTION.md",
+   "titel": "After the dispute — preventing the next one",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-81c0-9f8d-f68d89220a2e"
+  },
+  {
+   "kalla": "../sop/60-ESCALATION.md",
+   "titel": "Disputes — what you decide and what the owner decides",
+   "kategori": "Payment",
+   "notion_id": "3e2270ab-908c-8190-8b04-d48fbee10450"
+  }
+ ],
+ "brand": "baverbutiken"
+}

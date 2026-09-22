@@ -1,0 +1,139 @@
+{
+  "OB_2_H1": {
+    "malnamn": "Takovertrekk_NO_OB_2_H1",
+    "srt_no": "1\n00:00:00,060 --> 00:00:02,200\nFår plass i oppbevaringsposen som følger med.\n\n2\n00:00:02,280 --> 00:00:08,440\nIngen tung vinteroppbevaring, bare posen som fulgte med pakken fikk plass ved siden av reservekannen i bagasjerommet.\n\n3\n00:00:08,740 --> 00:00:12,400\nEllevehundre og åttini kroner får plass i en pose.\n",
+    "copy": {
+      "message": "Han bretter den sammen og putter den i sin egen oppbevaringspose.\nPosen får plass i bagasjerommet, ved siden av reservekannen.\n1 189 kr. Får plass i en pose.",
+      "headline": "1 189 kr. Får plass i en pose.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "'reservdunk' og 'baklåda' (svensk) → 'reservekanne' og 'bagasjerom' (norsk terminologi, samme betydning)",
+      "Voiceover-prisen skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner'"
+    ]
+  },
+  "TR_3_H1": {
+    "malnamn": "Takovertrekk_NO_TR_3_H1",
+    "srt_no": "1\n00:00:00,120 --> 00:00:03,180\nDette dekker bare taket, ikke hele campingvognen.\n\n2\n00:00:03,380 --> 00:00:08,740\nEt helt trekk er tungt å få på plass alene og ligger og gnager mot lakken hele vinteren.\n\n3\n00:00:08,940 --> 00:00:10,380\nHåndteres av én person.\n\n4\n00:00:10,520 --> 00:00:13,720\nBare taket, ikke hele vognen å kjempe med alene.\n\n5\n00:00:13,920 --> 00:00:16,280\nMindre å løfte, ingenting som gnager.\n\n6\n00:00:16,600 --> 00:00:18,220\nBare taket, beskytt det.\n\n7\n00:00:18,600 --> 00:00:21,000\nEllevehundre og åttini kroner.\n",
+    "copy": {
+      "message": "Dette dekker bare taket.\nIkke hele campingvognen — derfor holder det med én person, og ingenting gnager mot lakken på sidene.\n1 189 kr, sammenlignet med 1 549 kr.",
+      "headline": "Bare taket. Én hånd er nok.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "1 469 kr → 1 549 kr (norsk førpris)",
+      "'husvagn' → 'campingvogn', 'lack' → 'lakk', 'överdrag' → 'trekk' (norsk terminologi)",
+      "Voiceover-prisen skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner'"
+    ]
+  },
+  "GT_10_H1": {
+    "malnamn": "Takovertrekk_NO_GT_10_H1",
+    "srt_no": "1\n00:00:00,040 --> 00:00:03,700\nHan har markise, støtteben og gassvarmer til campingvognen.\n\n2\n00:00:03,820 --> 00:00:09,680\nTaket har han aldri tenkt på. Taket er det du aldri ser, og det som koster mest å reparere.\n\n3\n00:00:09,940 --> 00:00:13,120\nEt trekk som dekker det han allerede har alt annet til.\n\n4\n00:00:13,860 --> 00:00:17,680\nSe alle ni størrelser. Han vet allerede hvilken som passer.\n",
+    "copy": {
+      "message": "Han har markise, klosser og gassvarmer til campingvognen.\nMen taket har stått ubeskyttet hele sommeren.\nNi størrelser, fra 1 189 kr.",
+      "headline": "Ni størrelser. Fra 1 189 kr.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "'husvagn' → 'campingvogn', 'markis'/'klossar'/'gasolvärmare' → 'markise'/'klosser'/'gassvarmer' (norsk terminologi)",
+      "Ingen pris uttalas i voiceovern i denna annons — inget att skriva om till bokstäver"
+    ]
+  },
+  "CO_3_H1": {
+    "malnamn": "Takovertrekk_NO_CO_3_H1",
+    "srt_no": "1\n00:00:00,100 --> 00:00:11,200\nEt helt trekk er tungt å få på plass alene og gnager mot lakken hele vinteren. Bare taket, det som møter regn og snø, håndteres av én person uten å berøre lakken. Taket møter været hele året.\n\n2\n00:00:11,520 --> 00:00:13,480\nEllevehundre og åttini kroner.\n\n3\n00:00:13,720 --> 00:00:16,720\nSpar tre hundre og seksti mot femtenhundre og førtini.\n",
+    "copy": {
+      "message": "Et helt campingvogntrekk du må dra på plass selv, kant mot kant mot lakken hele vinteren.\nEt takovertrekk løfter du på med én hånd — ingenting berører sidene.\n1 189 kr. Spar 360 kr mot ordinær pris 1 549 kr.",
+      "headline": "Én hånd. Ingen kontakt med lakken.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "340 kr → 360 kr (norskt sparbeløp)",
+      "1 469 kr → 1 549 kr (norsk førpris)",
+      "'husvagnsöverdrag' → 'campingvogntrekk', 'lack' → 'lakk' (norsk terminologi)",
+      "Voiceover-priserna skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner', 'tre hundre og seksti mot femtenhundre og førtini'"
+    ]
+  },
+  "GT_7_H1": {
+    "malnamn": "Takovertrekk_NO_GT_7_H1",
+    "srt_no": "1\n00:00:00,120 --> 00:00:02,980\nHan går ut i pysjen for å kjenne om trekket sitter fast.\n\n2\n00:00:03,240 --> 00:00:07,500\nReim og snortrekk holder den på plass. Julegaven er for taket han allerede går ut og kjenner på.\n\n3\n00:00:07,640 --> 00:00:10,920\nFår plass i posen som følger med. Én person får hele taket på plass.\n\n4\n00:00:11,080 --> 00:00:12,940\nEllevehundre og åttini kroner.\n\n5\n00:00:13,040 --> 00:00:14,820\nVurdering fem komma null av fem.\n",
+    "copy": {
+      "message": "Han går ut i pysjen i skumringen for å kjenne at den sitter fast.\nHan drar i reimen. Den beveger seg ikke.\nGaven er det samme trekket — opp fra sin egen oppbevaringspose, på plass med én hånd.\n1 189 kr. 5,0 av 5 på 10 anmeldelser.",
+      "headline": "Kjenner at den sitter fast, i mørket.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "'rem'/'dragsko' → 'reim'/'snortrekk', 'julklapp' → 'julegave', 'påse' → 'pose' (norsk terminologi)",
+      "Voiceover-prisen skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner'",
+      "'Betyg' → 'Vurdering' (naturlig norsk ord for produktbetyg, inte skolbetyg)"
+    ]
+  },
+  "RI_2_H1": {
+    "malnamn": "Takovertrekk_NO_RI_2_H1",
+    "srt_no": "1\n00:00:00,120 --> 00:00:05,260\nDen første frostnatten er på vei. Tynn presenning sprekker i frost. To hundre og ti D-vev gjør ikke det.\n\n2\n00:00:05,500 --> 00:00:07,500\nStrammes fast med reim og snortrekk i kanten.\n\n3\n00:00:07,660 --> 00:00:13,100\nTåler en hel vintersesong ute. Ellevehundre og åttini kroner. Vurdering fem komma null av fem.\n",
+    "copy": {
+      "message": "Frosten kommer i morgengryet — en tynn presenning stivner og sprekker.\nVår 210D-vev bøyer seg likevel, i samme kulde.\n1 189 kr. 5,0 av 5 på 10 anmeldelser.",
+      "headline": "Første frosten. 210D-vev holder formen.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "'rem'/'dragsko' → 'reim'/'snortrekk' (norsk terminologi); 'presenning' er samme ord på norsk",
+      "Voiceover-prisen skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner'",
+      "'Betyg' → 'Vurdering' (naturlig norsk ord for produktbetyg, inte skolbetyg)"
+    ]
+  },
+  "GT_8_H1": {
+    "malnamn": "Takovertrekk_NO_GT_8_H1",
+    "srt_no": "1\n00:00:00,120 --> 00:00:04,720\nHan kjenner på trekket før han legger seg. Julegaven er i taket han allerede går ut og sjekker.\n\n2\n00:00:04,900 --> 00:00:06,620\nÉn person, reim og snortrekk.\n\n3\n00:00:06,800 --> 00:00:09,320\nKlart. Ellevehundre og åttini kroner.\n\n4\n00:00:09,580 --> 00:00:10,700\nFem komma null av fem.\n",
+    "copy": {
+      "message": "Midt på natten går han ut og kjenner etter — reimen sitter i ro.\nEn gave som én person fester selv, reim og snortrekk på plass.\n1 189 kr, 5,0 av 5 på 10 anmeldelser.",
+      "headline": "Én person. Reim og snortrekk på plass.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "'julklapp' → 'julegave', 'rem'/'dragsko' → 'reim'/'snortrekk' (norsk terminologi)",
+      "Voiceover-prisen skrevet med bokstaver (regel 2): 'ellevehundre og åttini kroner'"
+    ]
+  },
+  "CS_8_H1": {
+    "malnamn": "Takovertrekk_NO_CS_8_H1",
+    "srt_no": "1\n00:00:00,320 --> 00:00:02,420\nEllevehundre og åttini kroner.\n\n2\n00:00:02,960 --> 00:00:04,820\nTaket er det du aldri ser.\n\n3\n00:00:05,160 --> 00:00:07,900\nStrammes fast med reim og snortrekk i kanten.\n\n4\n00:00:08,460 --> 00:00:12,120\n210 D-vev, ute en hel vintersesong.\n\n5\n00:00:12,500 --> 00:00:14,680\nEllevehundre og åttini kroner.\n\n6\n00:00:15,000 --> 00:00:17,020\nVurdering 5,0 av 5.\n",
+    "copy": {
+      "message": "Taket — den delen du aldri sjekker.\nReim og snortrekk holder den på plass, 210D-vev hele vintersesongen.\n1 189 kr mot 1 549 kr. 5,0 av 5 på 10 anmeldelser.",
+      "headline": "Taket du aldri sjekker. 210D-vev.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "1 469 kr → 1 549 kr (norsk førpris)",
+      "'rem'/'dragsko' → 'reim'/'snortrekk' (norsk terminologi)",
+      "Voiceover-priserna (skrevet med siffror i källan, '1129 kronor') skrevet med bokstaver enligt regel 2: 'ellevehundre og åttini kroner'",
+      "'Betyg' → 'Vurdering' (naturlig norsk ord för produktbetyg, inte skolbetyg)"
+    ]
+  },
+  "CS_7_H1": {
+    "malnamn": "Takovertrekk_NO_CS_7_H1",
+    "srt_no": "1\n00:00:00,260 --> 00:00:04,760\nEllevehundre og åttini kroner, ikke femtenhundre og førtini.\n\n2\n00:00:05,100 --> 00:00:07,700\nTre hundre og seksti kroner mindre for hele taket.\n\n3\n00:00:07,880 --> 00:00:11,620\nStrammes fast med reim og snortrekk i kanten. Én person er nok.\n\n4\n00:00:11,860 --> 00:00:14,020\nBare taket, ikke hele vognen.\n\n5\n00:00:14,240 --> 00:00:17,600\n210D-vev, en hel vintersesong.\n\n6\n00:00:17,780 --> 00:00:19,860\nEllevehundre og åttini kroner.\n\n7\n00:00:20,040 --> 00:00:22,000\nVurdering fem komma null av fem.\n",
+    "copy": {
+      "message": "1 189 kr. Ikke 1 549 kr — 360 kr mindre.\nÉn person fester den, hånd mot 210D-veven.\nDekket av snø. 5,0 av 5 på 10 anmeldelser.",
+      "headline": "1 189 kr, ikke 1 549 kr.",
+      "description": ""
+    },
+    "andringar": [
+      "1 129 kr → 1 189 kr (norsk pris)",
+      "1 469 kr → 1 549 kr (norsk førpris)",
+      "340 kr → 360 kr (norskt sparbeløp)",
+      "'rem'/'dragsko' → 'reim'/'snortrekk' (norsk terminologi)",
+      "Voiceover-priserna (skrevet med siffror i källan, '1129 kronor') skrevet med bokstaver enligt regel 2",
+      "Källans block 5 'utan hel vintersäsong' tolkat som skrivfel för 'en hel vintersäsong' (jämför RI_2_H1 och CS_8_H1 som säger samma sak om samma material) → 'en hel vintersesong'",
+      "'Betyg' → 'Vurdering' (naturlig norsk ord för produktbetyg, inte skolbetyg)"
+    ]
+  }
+}

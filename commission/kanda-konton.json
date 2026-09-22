@@ -1,0 +1,76 @@
+{
+  "_kommentar": "Annonskonton som META_ACCESS_TOKEN har setts nå. run.mjs avbryter om ett av dem saknas i en körning — ett konto som tappat ads_read försvinner tyst ur me/adaccounts och ger annars för lite betalt utan felmeddelande. Avläst ur commission/korningar/2026-09/2026-09-19.json (14 konton). Ett konto som Axel medvetet tagit bort stryks här för hand.",
+  "_matt": "2026-09-19",
+  "konton": [
+    {
+      "id": "1023341917138110",
+      "namn": "NYC Grill ad account",
+      "valuta": "USD"
+    },
+    {
+      "id": "1050941584152547",
+      "namn": "Magiborsten NO",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1070420775502885",
+      "namn": "SNarklös FI",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1107817401910319",
+      "namn": "Magiborsten UK",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1346450049878358",
+      "namn": "SnarkLös",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1356652809967926",
+      "namn": "Finland DK",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1418612340124566",
+      "namn": "Norge",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1550615276530638",
+      "namn": "Sushi kanske?",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1619718346388201",
+      "namn": "Magiborsten FI",
+      "valuta": "SEK"
+    },
+    {
+      "id": "1867947880635861",
+      "namn": "MagiBorsten",
+      "valuta": "SEK"
+    },
+    {
+      "id": "429285600005902",
+      "namn": "Axel Odhner",
+      "valuta": "SEK"
+    },
+    {
+      "id": "730973156224390",
+      "namn": "nya kungen",
+      "valuta": "SEK"
+    },
+    {
+      "id": "915422744950975",
+      "namn": "Magiborsten DK",
+      "valuta": "SEK"
+    },
+    {
+      "id": "918424617391896",
+      "namn": "Snark mexico",
+      "valuta": "SEK"
+    }
+  ]
+}

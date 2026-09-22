@@ -19,7 +19,9 @@ kundnotiser, en i taget, i ordningen nedan. Du ska **inte ändra något**:
 inga mallar, inga inställningar, inga rabatter, inga produkter. Bara
 knappen "Skicka testmejl".
 
-⚠️ Datorn är en Mac. Använd Cmd, aldrig Ctrl.
+⚠️ Datorn är en Windows-dator, inte en Mac. Klicka först inne i fältet innan
+du markerar eller kopierar; öppnas en Shopify-dialog av misstag, stäng den
+utan att spara.
 
 Gör så här för varje rad i tabellen, uppifrån och ner:
 

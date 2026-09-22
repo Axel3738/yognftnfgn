@@ -1,0 +1,69 @@
+[
+ {
+  "box": [
+   40,
+   62,
+   1040,
+   290
+  ],
+  "rader": 2,
+  "storlek": 78,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.55,
+  "text": "$0.95 per square foot of roof."
+ },
+ {
+  "box": [
+   60,
+   316,
+   1020,
+   382
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "text": "$199 for 210 sq ft — the whole roof on a 21-ft trailer."
+ },
+ {
+  "box": [
+   60,
+   1076,
+   1020,
+   1142
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   15
+  ],
+  "text": "The roof is the part you never see, and the priciest to fix."
+ },
+ {
+  "box": [
+   252,
+   1224,
+   828,
+   1296
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Protect your roof for $199."
+ }
+]

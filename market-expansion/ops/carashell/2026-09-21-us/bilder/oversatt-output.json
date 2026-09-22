@@ -1,0 +1,44 @@
+{
+  "_kalla": "Written by huvudsessionen (Fable) 2026-09-21, localizing the five Swedish CaraShellRoof images in bilder/se-texter.json into American English against docs/copy-regler.md and products/carashell/takskyddet/dna.md, using the measured facts from the American product page given in the task (9 sizes 18–44 ft, $199/$249, $0.95/sq ft, elastic straps under the edge, 90-day guarantee).",
+  "CaraShellRoof_BOF_107_1": {
+    "former": [
+      { "texter": [ { "rader": [0, 1], "text": "Your trailer is one of nine sizes." } ] },
+      { "texter": [ { "rader": [0], "text": "Nine sizes, 18 to 44 feet long." } ] },
+      { "texter": [ { "rader": [0], "text": "From $199." } ] },
+      { "texter": [ { "rader": [0], "text": "See all nine sizes." } ] }
+    ]
+  },
+  "CaraShellRoof_BOF_108_1": {
+    "former": [
+      { "texter": [ { "rader": [0, 1], "text": "Off-season, it won't take over the garage." } ] },
+      { "texter": [ { "rader": [0], "text": "Folded flat, beside the paint cans." } ] },
+      { "texter": [ { "rader": [0, 1], "text": "No bulky winter storage – just shelf space by the hose." } ] },
+      { "texter": [ { "rader": [0], "text": "$199. Folds flat." } ] }
+    ]
+  },
+  "CaraShellRoof_BOF_109_1": {
+    "former": [
+      { "texter": [ { "rader": [0], "text": "$199 now." } ] },
+      { "texter": [ { "rader": [0, 1], "text": "You learn the price after the damage." } ] },
+      { "texter": [ { "rader": [0], "text": "The roof is the part you never see, and the priciest to fix." } ] },
+      { "texter": [ { "rader": [0], "text": "$199 is the whole bill. No guessing." } ] },
+      { "texter": [ { "rader": [0], "text": "Protect the roof – $199." } ] }
+    ]
+  },
+  "CaraShellRoof_CS_113_1": {
+    "former": [
+      { "texter": [ { "rader": [0, 1], "text": "$0.95 per square foot of roof." } ] },
+      { "texter": [ { "rader": [0], "text": "$199 for 210 sq ft — the whole roof on a 21-ft trailer." } ] },
+      { "texter": [ { "rader": [0], "text": "The roof is the part you never see, and the priciest to fix." } ] },
+      { "texter": [ { "rader": [0], "text": "Protect your roof for $199." } ] }
+    ]
+  },
+  "CaraShellRoof_PD_110_1": {
+    "former": [
+      { "texter": [ { "rader": [0, 1], "text": "Nine sizes — from 18 to 44 feet." } ] },
+      { "texter": [ { "rader": [0], "text": "From $199." } ] },
+      { "texter": [ { "rader": [0, 1], "text": "Stays put in the wind — elastic straps hook under the edge." } ] },
+      { "texter": [ { "rader": [0], "text": "See all nine sizes." } ] }
+    ]
+  }
+}

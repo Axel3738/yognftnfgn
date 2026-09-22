@@ -1,0 +1,89 @@
+[
+ {
+  "box": [
+   40,
+   60,
+   1040,
+   160
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Roof only."
+ },
+ {
+  "box": [
+   40,
+   186,
+   1040,
+   290
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "text": "Not the whole RV."
+ },
+ {
+  "box": [
+   60,
+   318,
+   1020,
+   440
+  ],
+  "rader": 2,
+  "storlek": 38,
+  "farg": [
+   20,
+   19,
+   18
+  ],
+  "radavstand": 1.72,
+  "text": "A full cover is heavy to fit alone and scrapes the paint all winter."
+ },
+ {
+  "box": [
+   170,
+   1084,
+   910,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Covers the roof, 21×10 ft"
+ },
+ {
+  "box": [
+   340,
+   1228,
+   742,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See the cover"
+ }
+]

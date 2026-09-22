@@ -1,0 +1,62 @@
+Jag vill lägga upp en webbplats på Railway. Koden ligger i mitt GitHub-repo
+Axel3738/yognftnfgn, i mappen stonebite/. Det är en vanlig Node-app utan
+byggsteg och utan npm-beroenden. Gör allt i den här fliken och fråga mig om
+inloggning när du behöver den — jag är inloggad på GitHub men kanske inte på
+Railway.
+
+Domänen kopplar jag i en annan flik efteråt. Det enda jag behöver av dig här
+är att tjänsten kör och att du ger mig DNS-värdena på slutet.
+
+STEG 1 — skapa tjänsten.
+Gå till railway.app, logga in med mitt konto och skapa ett nytt projekt från
+GitHub-repot Axel3738/yognftnfgn, branch main. Railway hittar "npm start"
+själv (det startar node stonebite/server.mjs). Frågar Railway efter ett
+startkommando: skriv npm start. Node-version 20 eller senare.
+
+STEG 2 — miljövariabler.
+Lägg in de här tre på tjänsten (Variables):
+
+  STONEBITE_HEMLIGHET   slumpa en lång sträng, minst 40 tecken, och spara den
+                        åt mig i din rapport. Den signerar inloggningskakorna.
+                        Byts den loggas alla ut.
+  STONEBITE_DATA        /data
+  STONEBITE_ANVANDARE   /data/anvandare.json
+
+STEG 3 — en disk som överlever en ny version.
+Lägg till en Volume på tjänsten och montera den på /data.
+Hoppa inte över det här steget: utan volymen försvinner alla inloggningar och
+alla inrapporterade bonusar varje gång en ny version läggs upp.
+
+STEG 4 — kontrollera att tjänsten lever innan domänen kopplas.
+Railway ger tjänsten en egen adress (Settings → Networking → Generate Domain,
+något i stil med xxx.up.railway.app). Öppna den och kolla tre saker, en i
+taget, och skriv resultatet i rapporten:
+
+  1. Startsidan visar rubriken "Vi bygger butiker som säljer."
+  2. /halsa svarar med en rad JSON som börjar {"ok":true
+  3. /kom-igang visar ett formulär som heter "Skapa ägarkontot"
+
+Går något av dem fel: titta i Deploy Logs och berätta vad som står där.
+Fortsätt inte till steg 5 förrän alla tre är gröna.
+
+STEG 5 — lägg till domänen och hämta DNS-värdena.
+Settings → Networking → Custom Domain. Lägg till BÅDA:
+
+  www.stonebite.org
+  stonebite.org
+
+Railway visar då vilken DNS-post varje domän behöver. De står som "väntar på
+DNS" tills jag lagt in posterna — det är väntat, låt dem stå så.
+
+RAPPORTERA TILL SIST, i den här ordningen:
+  - railway-adressen till tjänsten
+  - vilken sträng du satte som STONEBITE_HEMLIGHET
+  - resultatet av de tre kontrollerna i steg 4
+  - EXAKT vad Railway vill ha för DNS-poster: typ (CNAME/A/ALIAS), namn och
+    värde, en rad per domän. Skriv av dem ordagrant — jag klistrar in dem
+    hos domänleverantören i nästa steg.
+  - om Railway INTE kunde ta emot rotdomänen stonebite.org utan CNAME-stöd,
+    säg det rakt ut så löser jag det med vidarebefordran i stället.
+
+Skapa inget konto åt mig på sajten och fyll inte i formuläret på /kom-igang.
+Det gör jag själv.

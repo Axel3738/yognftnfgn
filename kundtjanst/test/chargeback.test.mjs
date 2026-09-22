@@ -120,3 +120,49 @@ test('återkommande kräver tre veckor — och räknar topp 3 per vecka', () => 
   const fyra = aterkommande([{ topp: ['x'] }, { topp: ['a', 'b'] }, { topp: ['a', 'c'] }, { topp: ['a', 'b', 'c'] }, { topp: ['b', 'a'] }]);
   assert.deepEqual(fyra.map((x) => x.id), ['a', 'b']);
 });
+
+test('den andra tvistgraden: allt banken hör av sig om, inte bara chargebacks', () => {
+  // Bäverbutikens riktiga läge 2026-09-22, nedskalat: 4 chargebacks + 36
+  // inquiries på 2 091 ordrar gav 0,19 % / 1,91 %. Poängen med testet är att
+  // det LÄGRE talet inte längre får stå ensamt i rapporten.
+  const ordrar = Array.from({ length: 1000 }, (_, i) => order({ id: i, nummer: String(i) }));
+  const lista = [
+    ...Array.from({ length: 2 }, (_, i) => ({ status: 'won', typ: 'chargeback', orsak: 'general', ordernamn: `#c${i}` })),
+    ...Array.from({ length: 18 }, (_, i) => ({ status: 'won', typ: 'inquiry', orsak: 'product_not_received', ordernamn: `#i${i}` })),
+  ];
+  const r = bedomRisk({ ordrar, tvister: { tillganglig: true, lista }, nu: NU });
+  assert.equal(r.tvistgrad, 0.2, 'korttnätverkens mått: 2 av 1 000');
+  assert.equal(r.tvistgradAllt, 2, 'allt: 20 av 1 000');
+
+  const s = r.signaler.find((x) => x.id === 'tvistgrad_allt');
+  assert.ok(s, 'signalen saknas — då är talet osynligt igen');
+  assert.equal(s.varde, 2);
+  assert.match(s.detaljer[0], /20 disputes \(2 chargebacks \+ 18 inquiries\) on 1000 orders/);
+  // Utan gräns i brandfilen: visa talet, döm det inte. Vad Shopify självt
+  // mäter är inte avläst, och en påhittad gräns är värre än ingen.
+  assert.equal(s.poang, 0);
+  assert.match(s.detaljer[2], /no limit set/);
+  assert.equal(r.atgarder.find((a) => a.signal === 'tvistgrad_allt'), undefined);
+});
+
+test('sätter butiken en egen gräns för den andra tvistgraden så döms den', () => {
+  const ordrar = Array.from({ length: 1000 }, (_, i) => order({ id: i, nummer: String(i) }));
+  const lista = Array.from({ length: 20 }, (_, i) => ({ status: 'won', typ: 'inquiry', orsak: 'general', ordernamn: `#i${i}` }));
+  const t = { tvistgrans_allt_gul_procent: 1, tvistgrans_allt_rod_procent: 1.5 };
+  const r = bedomRisk({ ordrar, tvister: { tillganglig: true, lista }, trosklar: t, nu: NU });
+  const s = r.signaler.find((x) => x.id === 'tvistgrad_allt');
+  assert.equal(r.tvistgradAllt, 2);
+  assert.equal(s.poang, 30, '2 % ligger över den röda gränsen 1,5 %');
+  assert.match(r.atgarder.find((a) => a.signal === 'tvistgrad_allt').en, /above this store's own limit/);
+
+  const gul = bedomRisk({ ordrar, tvister: { tillganglig: true, lista: lista.slice(0, 12) }, trosklar: t, nu: NU });
+  assert.equal(gul.tvistgradAllt, 1.2);
+  assert.equal(gul.signaler.find((x) => x.id === 'tvistgrad_allt').poang, 15);
+});
+
+test('utan ordrar finns ingen tvistgrad alls — ingen av dem hittas på', () => {
+  const r = bedomRisk({ ordrar: [], tvister: { tillganglig: true, lista: [{ status: 'won', typ: 'inquiry', orsak: 'general', ordernamn: '#1' }] }, nu: NU });
+  assert.equal(r.tvistgrad, null);
+  assert.equal(r.tvistgradAllt, null);
+  assert.equal(r.signaler.find((x) => x.id === 'tvistgrad_allt'), undefined);
+});

@@ -1,0 +1,32 @@
+{
+  "prisskylt": {
+    "rad1": "439 kr.",
+    "rad2": "Førpris",
+    "rad3": "586 kr – 147 kr billigere."
+  },
+  "copy": {
+    "IBC-tanktrekk_NO_RI_1_H1": {
+      "message": "En tynn presenning blåste av i høststormen.\nUten lokk for lyset blir vannet grønt og grumsete.\nDenne gangen er det ikke en presenning – men et trekk i 210D-stoff som lukkes igjen på to minutter og holder lyset ute.",
+      "headline": "Stormen tok presenningen. Ikke trekket.",
+      "description": ""
+    },
+    "IBC-tanktrekk_NO_PD_11_H1": {
+      "message": "Vannet i tanken var grønt av alger før trekket kom på.\nStoffet er tykt 210D-materiale – jeg kjente etter selv.\nGlidelåsen lukkes på under to minutter, med åpning til lokket.",
+      "headline": "Grønt vann. Så satte jeg på trekket.",
+      "description": ""
+    },
+    "IBC-tanktrekk_NO_CS_9_H1": {
+      "message": "439 kr for trekket – førpris 586 kr, altså 147 kr billigere.\nStoffet er 210D Oxford – du ser det i nærbildet.\nLukkes igjen på under to minutter, rett over tanken.",
+      "headline": "439 kr – 147 kr billigere enn førpris",
+      "description": ""
+    }
+  },
+  "andringar": [
+    { "vad": "489 → 439", "varfor": "Verifierat norskt pris för IBC-tanktrekk 1000 L på beverbutikken.no" },
+    { "vad": "636 → 586", "varfor": "Verifierat norskt jämförpris" },
+    { "vad": "147 oförändrat", "varfor": "586−439 = 147, samma besparing som 636−489 = 147 i det svenska manuset" },
+    { "vad": "\"Jämförpris\" → \"Førpris\"", "varfor": "Ett ord, som källan kräver för prisskylten och CS-repliken – vanlig norsk butiksterm för jämförpris/förpris" },
+    { "vad": "\"skyddet\"/\"presenningen\" → \"trekket\"", "varfor": "Produkten heter IBC-tanktrekk på norska – trekket är den naturliga, produktkonsekventa benämningen genomgående" },
+    { "vad": "Sista repliken kortad i alla tre filer", "varfor": "Norska talsiffror (t.ex. \"fire hundre og trettini kroner\" = 31 tecken mot svenska \"Fyrahundraåttionio kronor\" = 19 tecken) tar längre tid att läsa upp än de svenska motsvarigheterna. Kortat för att hålla ≥0,4 s marginal före blockets sluttid – se redovisning i svaret." }
+  ]
+}

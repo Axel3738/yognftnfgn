@@ -1,0 +1,39 @@
+{
+ "jobb": [
+  {
+   "namn": "CaraShellRoof_BOF_107_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_107_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_BOF_108_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_108_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_PD_110_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_PD_110_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_CS_113_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_CS_113_1"
+   }
+  },
+  {
+   "namn": "CaraShellRoof_BOF_109_1",
+   "status": "KÖR",
+   "mal": {
+    "annonsNamn": "CaraShellRoof_US_BOF_109_1"
+   }
+  }
+ ]
+}

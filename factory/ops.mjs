@@ -121,6 +121,9 @@ import {
   GALLERIFILTER_MARKE,
   localeMarke,
   byggKorgUpsell,
+  byggKorgTrygghet,
+  byggKorgWrapper,
+  KORGTRYGGHET_TEST,
   byggTillagg,
   harTillagg,
   tillaggTexter,
@@ -406,7 +409,11 @@ export const STEG = [
         settings.current = { ...settings.current, ...byggSettingsPatch(ctx.butik?.branding) };
         // Enproduktsbutik: A/B-testet ur produkten. Flerprodukt: bara butiken.
         const produkt = ctx.produkter.length === 1 ? ctx.p : null;
-        const rent = rensaSettings(settings, { butik: ctx.butik, produkt });
+        // Trygghetsblocket i varukorgen körs som A/B (Axels beslut 2026-09-21:
+        // "samma — plus ett A/B-test"), så testet måste stå i inställningen —
+        // annars sätter ms-ab.js aldrig sitt attribut på <html> och blockets
+        // CSS-grind låter det stå dolt för ALLA.
+        const rent = rensaSettings(settings, { butik: ctx.butik, produkt, extraTester: [KORGTRYGGHET_TEST] });
         filer['config/settings_data.json'] = `${JSON.stringify(rent, null, 2)}\n`;
         if (text(rent.current?.ms_ab_tests)) nycklar.ms_ab_tests = rent.current.ms_ab_tests;
         nycklar.brand_description = rent.current.brand_description;
@@ -464,10 +471,28 @@ export const STEG = [
 
       let msHead = await las('snippets/ms-head.liquid');
       const bonusHandle = text(produkt?.offer?.bonus_produkt?.handle) ?? ctx.produkter.map((pk) => text(pk.p.offer?.bonus_produkt?.handle)).find(Boolean) ?? null;
+      // Varukorgslådans egna block. Trygghetsblocket byggs ALLTID — det är
+      // ytan direkt före kassan, och Shopifys kassa går inte att anpassa per
+      // marknad under planen Advanced (mätt 2026-09-21, PROCESS.md punkt 24).
+      // Upsellen bara när butiken har en bonusprodukt. Wrappern skrivs EN
+      // gång med de snippets som faktiskt finns, i ordningen upsell →
+      // trygghet, så trygghetsraden hamnar närmast kassaknappen.
+      const korgblock = [];
+      Object.assign(filer, byggKorgTrygghet({ butik: ctx.butik, oversattningar, test: KORGTRYGGHET_TEST }));
       if (bonusHandle) {
         const upsell = byggKorgUpsell(bonusHandle);
-        for (const [f, innehall] of Object.entries(upsell)) if (f.includes('/')) filer[f] = innehall;
+        filer['snippets/opf-korg-upsell.liquid'] = upsell['snippets/opf-korg-upsell.liquid'];
+        korgblock.push('opf-korg-upsell');
         if (msHead && upsell.msHeadTillagg && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${upsell.msHeadTillagg}`;
+      }
+      korgblock.push('opf-korg-trygghet');
+      Object.assign(filer, byggKorgWrapper(korgblock));
+      // ms-heads engångshämtning av lådan behövs även utan upsell: sidans
+      // FÖRSTA rendering går förbi wrappern (layout/theme.liquid renderar
+      // snippeten cart-drawer direkt), så utan den syns blocket först när
+      // kunden ändrar något i korgen.
+      if (msHead && !msHead.includes('sections=cart-drawer')) msHead = `${msHead}\n${byggKorgUpsell('').msHeadTillagg}`;
+      if (bonusHandle) {
         if (produkt && harTillagg(produkt)) {
           const sv = tillaggTexter(produkt);
           const perSprak = Object.fromEntries(Object.entries(oversattningar).map(([l, o]) => [l, { label: o['liquid.tillagg.label'], info: o['liquid.tillagg.info'] }]));

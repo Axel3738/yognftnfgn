@@ -18,6 +18,7 @@ import {
   trefragorUr, dodaKoncept, arVariant, isoleradVariabel, kallaUr, kpiUr, roasEnsamt, granskaBrief, svenskDag, dagarMellan,
   valjRond, redanGranskad, hittaBatch, nastaGranskning, harSektion, domFor, giltigDom, kommentarText, feedbackSektion, laggInSektion,
   feedbackRadMarkdown, feedbackEgenskaper, byggRapport, samlaKorning,
+  REGI_FRAN, SPARRKODER, KOMPONENT_TAGGAR, manusrader, regiUr, granskaRegi, giltigKalla, komponentUr, sparra, spegelPris,
 } from '../briefgranskning.mjs';
 import { serUtSomSvenska } from '../lib/engelska.mjs';
 
@@ -25,8 +26,9 @@ import { serUtSomSvenska } from '../lib/engelska.mjs';
 
 const BRA = `# Takoverdrag_SP_5_1 — the winner's proof, moved into the weather it talks about
 
-**VARIABELTAGGAR:** vinkel=\`social proof (kundomdöme)\` · hook-typ=\`aggregerat betyg + citat\` · format=\`statisk, enkel canvas\` · proof=\`namngivet citat + 16 omdömen\` · offer-i-creativen=\`inget pris\` · visuell stil=\`exteriör, höstregn\` · textmängd=\`toppetikett+citat+bottenrad\` · talare=\`kund (Lars)\` · copy_model=\`sonnet\`
+**VARIABELTAGGAR:** vinkel=\`social proof (kundomdöme)\` · hook-typ=\`aggregerat betyg + citat\` · format=\`statisk, enkel canvas\` · proof=\`namngivet citat + 16 omdömen\` · offer-i-creativen=\`inget pris\` · visuell stil=\`exteriör, höstregn\` · textmängd=\`toppetikett+citat+bottenrad\` · talare=\`kund (Lars)\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Takoverdrag_SP_2_1\` · iteration=\`1\` · koncept=\`SP omdöme i regn\` · kalla=\`parent\` · avatar=\`husvagnsagaren-vinterforvaring\` · awareness=\`product\` · begar=\`skydda-det-jag-ager\` · mekanism=\`bevis i vädret raden nämner\` · tro=\`ett riktigt omdöme väger mer än vårt löfte\` · urgency=\`sasong\` · hook-mekanik=\`none\` · confidence=\`medium\` · lardom=\`L-120250242482300291\`
 *(Read by the next \`/cs\` run to group profit contribution per variable value.)*
+**Memo:** the parent's proof lands harder when the rain it names is in the photo — same words, the scene does the convincing.
 
 **Type:** Static image · **Batch:** #3 (2026-09-16) · **Copy written by:** sonnet
 **Parent:** \`Takoverdrag_SP_2_1\` — the account's best ad: 846 kr, 5 purchases, CPA 169 kr, 58 % of all profit contribution (measured 2026-09-16).
@@ -439,15 +441,22 @@ test('granskaBrief: priset mot butiken, läst live ur radens Landing page — fe
 });
 
 test('granskaBrief: Bäverbutikens eget format — video ren, bild med butikens domän i CTA:n får ETT fel; resten är anmärkningar till skrivaren', () => {
-  const video = granskaBrief({ namn: 'IBC_PD_10_H1', typ: 'video', typ_notion: 'Video - Pending Approval', status: 'Creative strat review', text: BAVER_VIDEO }, { prefix: 'IBC', butiksnamn: BAVER_NAMN, pris_butik: { pris: 489, jamforpris: 636 } });
+  // Skriven 2026-09-18, före regikravet ⇒ den saknade regitabellen är en anmärkning, inte ett fel.
+  const video = granskaBrief({ namn: 'IBC_PD_10_H1', typ: 'video', typ_notion: 'Video - Pending Approval', status: 'Creative strat review', skapad_dag: '2026-09-18', text: BAVER_VIDEO }, { prefix: 'IBC', butiksnamn: BAVER_NAMN, pris_butik: { pris: 489, jamforpris: 636 } });
   assert.deepEqual(video.fel, [], JSON.stringify(video.fel));
-  assert.deepEqual(koder(video.anmarkningar).sort(), ['copy', 'hardrules', 'taggar'], JSON.stringify(video.anmarkningar));
+  assert.deepEqual([...new Set(koder(video.anmarkningar))].sort(), ['ai', 'copy', 'hardrules', 'komponent', 'regi', 'taggar'], JSON.stringify(video.anmarkningar));
+  assert.ok(video.anmarkningar.some((x) => x.kod === 'regi' && /written before 2026-09-21/.test(x.text)));
+  assert.equal(video.fakta.regi, '0/3');
+  // Samma brief utan datum (spärrläget) eller skriven efter regeln ⇒ FEL.
+  const nyVideo = granskaBrief({ namn: 'IBC_PD_10_H1', typ: 'video', skapad_dag: '2026-09-22', text: BAVER_VIDEO }, { prefix: 'IBC', pris_butik: { pris: 489, jamforpris: 636 } });
+  assert.ok(koder(nyVideo.fel).includes('regi'));
+  assert.ok(koder(granskaBrief({ namn: 'IBC_PD_10_H1', typ: 'video', text: BAVER_VIDEO }, { prefix: 'IBC' }).fel).includes('regi'));
   assert.deepEqual(video.fakta.pris_brief, { pris: 489, jamforpris: 636 });
   assert.equal(video.fakta.trefragor, true);
   const bild = granskaBrief({ namn: 'Batmotor_BOF_2_1', typ: 'bild', typ_notion: 'Image - Pending Approval', status: 'Draft', text: BAVER_BILD }, { prefix: 'Batmotor', butiksnamn: BAVER_NAMN, pris_butik: { pris: 579, jamforpris: 965 } });
   assert.deepEqual(koder(bild.fel), ['butiksnamn'], JSON.stringify(bild.fel));
   assert.match(bild.fel[0].text, /baverbutiken\.se/);
-  assert.deepEqual(koder(bild.anmarkningar).sort(), ['copy', 'hardrules', 'kalla'], JSON.stringify(bild.anmarkningar));
+  assert.deepEqual([...new Set(koder(bild.anmarkningar))].sort(), ['copy', 'hardrules', 'kalla', 'komponent'], JSON.stringify(bild.anmarkningar));
   assert.equal(bild.fakta.taggar.vinkel, 'trust/guarantee');
   // Fel pris mot butiken (läst live) är redigerarens sak.
   const felPris = granskaBrief({ namn: 'Batmotor_BOF_2_1', typ: 'bild', text: BAVER_BILD }, { prefix: 'Batmotor', pris_butik: { pris: 599, jamforpris: 965 } });
@@ -496,7 +505,7 @@ test('granskaBrief: variant utan isolerad variabel, nytt koncept utan källa, tv
   assert.equal(utanIso.fel.length, 0);
   const tva = granskaBrief({ ...RAD, text: BRA.replace('Isolated variable: the setting of the photo.', 'Isolated variable: the setting and the quote.') }, CTX);
   assert.ok(koder(tva.anmarkningar).includes('variabel'));
-  const nytt = BRA.replace("the winner's proof, moved into the weather it talks about", 'a fresh angle').replace('**Parent:** `Takoverdrag_SP_2_1` — the account\'s best ad: 846 kr, 5 purchases, CPA 169 kr, 58 % of all profit contribution (measured 2026-09-16).\n', '').replace('**Isolated variable: the setting of the photo.** Every proof element the parent carries stays word for word. Only the scene changes.\n', '').replace('SP is the strongest angle by a distance — 42 % of spend, 12 of 20 purchases, CPA 266 kr against break-even 693 kr — and `SP_2_1` is the single ad carrying it.', 'A fresh idea nobody asked for.');
+  const nytt = BRA.replace("the winner's proof, moved into the weather it talks about", 'a fresh angle').replace(' · typ=`I` · parent=`Takoverdrag_SP_2_1` · iteration=`1`', ' · typ=`N`').replace('kalla=`parent`', 'kalla=`rutin`').replace("**Memo:** the parent's proof lands harder when the rain it names is in the photo — same words, the scene does the convincing.", '**Memo:** a scene nobody has tried.').replace('**Parent:** `Takoverdrag_SP_2_1` — the account\'s best ad: 846 kr, 5 purchases, CPA 169 kr, 58 % of all profit contribution (measured 2026-09-16).\n', '').replace('**Isolated variable: the setting of the photo.** Every proof element the parent carries stays word for word. Only the scene changes.\n', '').replace('SP is the strongest angle by a distance — 42 % of spend, 12 of 20 purchases, CPA 266 kr against break-even 693 kr — and `SP_2_1` is the single ad carrying it.', 'A fresh idea nobody asked for.');
   assert.match(nytt, /the parent's 169 kr/);
   assert.ok(koder(granskaBrief({ ...RAD, text: nytt }, CTX).anmarkningar).includes('kalla'));
   assert.equal(granskaBrief({ ...RAD, text: nytt }, CTX).fel.length, 0, 'källan är skrivarens sak');
@@ -721,4 +730,242 @@ test('byggRapport: engelsk, en hub per rad, ej dömda ronder syns, ping bara vid
   assert.match(stopp.text, /\*\*🔴 ACTION NEEDED — Axel:\*\*\n1\. No creative hub/);
   assert.equal(stopp.ping_axel, true);
   assert.ok(stopp.text.length < 2000, 'ryms i ett Discord-meddelande');
+});
+
+// ------------------------------------------------------------ regi (2.9) + komponenttaggar (2.12), Axels beslut 2026-09-21
+
+/** En videobrief med regitabell enligt docs/os/BRIEF-REGI.md — huvudsessionens format. */
+const VIDEO_REGI = `# Damasker_PD_12_H1 — the winner's hook, the wet-sock proof moved to the front
+
+**VARIABELTAGGAR:** vinkel=\`PD problem/lösning\` · hook-typ=\`påstående\` · format=\`video, demo\` · proof=\`demo (blöt/torr strumpa)\` · offer-i-creativen=\`pris i CTA\` · visuell stil=\`två ben, blöt stig\` · textmängd=\`≤8 ord per caption\` · talare=\`röst utan ansikte\` · copy_model=\`sonnet\` · typ=\`I\` · parent=\`Damasker_PD_1\` · iteration=\`2\` · koncept=\`PD strumpbevis\` · kalla=\`parent\` · avatar=\`vandraren-hostled\` · awareness=\`problem\` · begar=\`slippa-krangel\` · mekanism=\`beviset först, sedan problemet\` · tro=\`en blöt strumpa är beviset, inte materialet\` · urgency=\`sasong\` · hook-mekanik=\`freeze\` · confidence=\`high\` · lardom=\`L-120250009391470291\`
+**Memo:** the parent carried 72 % of spend for a week; putting its proof (one sock wet, one dry) in second one should lift hook rate without touching the lines.
+**AI content:** none — real footage, real voice.
+
+**Parent:** \`Damasker_PD_1\` — BREAKTHROUGH 2026-09-05: 5 319 kr, 34 purchases, ROAS 3,42. **Isolated variable: the order — proof before problem.**
+
+## 1. Why this ad exists
+The parent holds; this tests whether the proof works as the hook.
+
+## 2. Hypothesis
+Proof-first beats problem-first on hook rate at equal CPA.
+
+## 3. Script — these lines, word for word
+| Time | Swedish (use this) | English meaning |
+|---|---|---|
+| 0:00–0:03 | En strumpa blöt. En strumpa torr. Samma tur. | One sock wet. One sock dry. Same hike. |
+| 0:03–0:10 | Benet utan damask: snön kryper in vid kängans kant. | The leg without a gaiter: snow creeps in at the boot's edge. |
+| 0:10–0:15 | Damasker, 389 kr per par. | Gaiters, 389 kr per pair. |
+
+## 4. Direction — one row per script line (docs/os/BRIEF-REGI.md)
+**Assets:** Drive folder DryTrek/Damasker (id 1AbCdEf) · CDN: https://cdn.shopify.com/s/files/1/x/damask-krok.jpg
+**Reference ads:** parent \`Damasker_PD_1\` (Notion row https://www.notion.so/abc) — Replicate: the two-sock shot, the trail. Do not replicate: the price card font.
+**Editor latitude:** MAY: cut order within a beat, b-roll within the motif, music, transitions, caption placement within the middle 80 %. MUST NOT: change a Swedish line, the price, the hook line or its timing, product in frame after second 4, name the store, any field in VARIABELTAGGAR. Cannot find a source: comment on this row and set it back to Draft — never replace the product shot with a generic one.
+
+| # | Time | Script line (Swedish) | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 0:00–0:03 | En strumpa blöt. En strumpa torr. Samma tur. | VO | En strumpa blöt. En strumpa torr. | Close-up, top-down: two socks side by side on the trail, left dark with water, right dry; hands hold them up. First frame: this shot. | freeze 0.5 s then cut-in | OUR AD Damasker_PD_1 0:14–0:18 | parent's proof shot, same framing | none |
+| 2 | 0:03–0:10 | Benet utan damask: snön kryper in vid kängans kant. | VO | NO TEXT | Medium shot from the side: the bare leg, slush at the boot's top edge, the gaiter leg beside it with the hook in the lacing visible. | slow-mo 0.5× 2 s | DRIVE 1AbCdEf 0:22 | — | b-roll order free |
+| 3 | 0:10–0:15 | Damasker, 389 kr per par. | VO | Damasker, 389 kr per par. | Wide shot: both legs walking away on the trail; price card bottom third. | none | DRIVE 1AbCdEf [EDITOR PICKS: look for the walking-away shot on the wet trail] | — | music free |
+
+## 5. Three-question test (docs/copy-regler.md) — every delivered line
+| Line | Visualise? | Falsifiable? | Only we can say it? |
+|---|---|---|---|
+| En strumpa blöt. En strumpa torr. Samma tur. | ✅ two socks | ✅ | ✅ our test |
+
+## 6. COPY CARD (goes in Ads Manager, not in the creative)
+**Primary text:**
+> En strumpa blöt, en strumpa torr – samma tur. Damasker, 389 kr per par.
+
+**Headline:** \`Ett ben torrt, ett blött.\`
+**Description:** \`389 kr per par.\`
+
+## Rules
+- Price exactly 389 kr (compare-at 649 kr). Captions burned in, Swedish, word for word, max 2 lines.
+- **The ad never names the store.**
+`;
+
+const RAD_VIDEO = { namn: 'Damasker_PD_12_H1', typ: 'video', typ_notion: 'Video - Pending Approval', status: 'Draft' };
+const CTX_VIDEO = { prefix: 'Damasker', butiksnamn: BAVER_NAMN, pris_butik: { pris: 389, jamforpris: 649 }, breakEvenCpa: null, copyModell: null, doda_koncept: [] };
+
+test('manusrader + regiUr: manustabellen (tid + Swedish), regitabellen på Source + On-screen, tre fasta rader', () => {
+  const m = manusrader(VIDEO_REGI);
+  assert.equal(m.length, 3);
+  assert.equal(m[0], 'En strumpa blöt. En strumpa torr. Samma tur.');
+  assert.equal(manusrader(BRA).length, 0, 'bildens Exact text är ingen manustabell');
+  assert.equal(manusrader(BAVER_VIDEO).length, 3, 'Bäverbutikens "Script / shot list" med Time-kolumn räknas');
+  const r = regiUr(VIDEO_REGI);
+  assert.equal(r.finns, true);
+  assert.equal(r.rader.length, 3);
+  assert.deepEqual(Object.keys(r.kolumner).sort(), ['bild', 'effekt', 'frihet', 'kalla', 'ljud', 'manusrad', 'referens', 'text', 'tid']);
+  assert.equal(r.rader[1].text, 'NO TEXT');
+  assert.equal(r.rader[2].kalla, 'DRIVE 1AbCdEf [EDITOR PICKS: look for the walking-away shot on the wet trail]');
+  assert.equal(r.latitude, true);
+  assert.equal(r.assets, true);
+  assert.equal(r.referensannonser, true);
+  assert.equal(regiUr(BAVER_VIDEO).finns, false, 'Time | Show | Swedish | English | Caption är ingen regitabell');
+  const dump = regiUr(somNotionDump(VIDEO_REGI));
+  assert.equal(dump.finns, true);
+  assert.equal(dump.rader.length, 3);
+});
+
+test('giltigKalla: de fem formaten — OUR AD utan sekunder, DRIVE utan sekund/EDITOR PICKS och tom källa faller', () => {
+  for (const ok of ['OUR AD Damasker_PD_1 0:14–0:18', 'VÅR ANNONS Damasker_PD_1 00:14-00:18', 'DRIVE 1AbCdEf 0:22', 'DRIVE 1AbCdEf [EDITOR PICKS: the walking-away shot]', 'NEW FOOTAGE: both legs on a wet trail, filmed by the creator', 'NY INSPELNING: två ben', 'CDN https://cdn.shopify.com/x.jpg']) assert.equal(giltigKalla(ok).ok, true, ok);
+  assert.match(giltigKalla('OUR AD Damasker_PD_1').orsak, /without mm:ss/);
+  assert.match(giltigKalla('DRIVE 1AbCdEf').orsak, /DRIVE without/);
+  assert.equal(giltigKalla('').orsak, 'empty');
+  assert.match(giltigKalla('same shots as PD_2_H1').orsak, /not one of/);
+});
+
+test('granskaRegi: hel tabell = 3/3 utan fel; saknad rad, tom källa, OUR AD utan sekund, tom text, tom effekt, or i Picture, ingen latitude', () => {
+  const bra = granskaRegi(VIDEO_REGI);
+  assert.deepEqual(bra.fel, [], JSON.stringify(bra.fel));
+  assert.deepEqual(bra.anm, [], JSON.stringify(bra.anm));
+  assert.equal(bra.tackning, '3/3');
+  const utanRad = granskaRegi(VIDEO_REGI.replace(/\| 2 \| 0:03–0:10[^\n]*\n/, ''));
+  assert.ok(utanRad.fel.some((t) => /script line 2 has no direction row/.test(t)), JSON.stringify(utanRad.fel));
+  assert.equal(utanRad.tackning, '2/3');
+  const tomKalla = granskaRegi(VIDEO_REGI.replace('| DRIVE 1AbCdEf 0:22 |', '|  |'));
+  assert.ok(tomKalla.fel.some((t) => /direction row 2: source empty/.test(t)));
+  const utanSek = granskaRegi(VIDEO_REGI.replace('OUR AD Damasker_PD_1 0:14–0:18', 'OUR AD Damasker_PD_1'));
+  assert.ok(utanSek.fel.some((t) => /row 1: source OUR AD without mm:ss/.test(t)));
+  const tomText = granskaRegi(VIDEO_REGI.replace('| VO | NO TEXT |', '| VO |  |'));
+  assert.ok(tomText.fel.some((t) => /row 2: no on-screen text decision/.test(t)));
+  const tomEffekt = granskaRegi(VIDEO_REGI.replace('| slow-mo 0.5× 2 s |', '|  |'));
+  assert.ok(tomEffekt.fel.some((t) => /row 2: no effect/.test(t)));
+  const eller = granskaRegi(VIDEO_REGI.replace('Medium shot from the side: the bare leg', 'Medium shot or close-up: the bare leg'));
+  assert.equal(eller.fel.length, 0);
+  assert.ok(eller.anm.some((t) => /row 2: "or\/eller" in Picture/.test(t)));
+  const tystStilla = granskaRegi(VIDEO_REGI.replace('| slow-mo 0.5× 2 s |', '| none |'));
+  assert.ok(tystStilla.anm.some((t) => /NO TEXT and no effect/.test(t)));
+  const utanLatitude = granskaRegi(VIDEO_REGI.replace(/\*\*Editor latitude:\*\*[^\n]*\n/, ''));
+  assert.ok(utanLatitude.fel.some((t) => /Editor latitude/.test(t)));
+  const utanAssets = granskaRegi(VIDEO_REGI.replace(/\*\*Assets:\*\*[^\n]*\n/, '').replace(/\*\*Reference ads:\*\*[^\n]*\n/, '').replace('First frame: this shot.', ''));
+  assert.equal(utanAssets.fel.length, 0);
+  assert.deepEqual(utanAssets.anm.map((t) => t.split(' ')[1]), ['"Assets:"', '"Reference', 'hook']);
+  const ingen = granskaRegi(BAVER_VIDEO);
+  assert.equal(ingen.fel.length, 1);
+  assert.match(ingen.fel[0], /no shot-level direction table.*3 script lines/);
+  assert.equal(ingen.tackning, '0/3');
+});
+
+test('granskaBrief: video med regi + komponenttaggar + Memo är ren; regi-FEL bara från REGI_FRAN; komponentbrister är anmärkningar', () => {
+  assert.equal(REGI_FRAN, '2026-09-21');
+  const g = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI }, CTX_VIDEO);
+  assert.deepEqual(g.fel, [], JSON.stringify(g.fel));
+  assert.deepEqual(g.anmarkningar, [], JSON.stringify(g.anmarkningar));
+  assert.equal(g.fakta.regi, '3/3');
+  assert.equal(g.fakta.komponent_typ, 'I');
+  assert.equal(g.fakta.parent, 'Damasker_PD_1');
+  const dump = granskaBrief({ ...RAD_VIDEO, text: somNotionDump(VIDEO_REGI) }, CTX_VIDEO);
+  assert.deepEqual(dump.fel, [], JSON.stringify(dump.fel));
+  // Trasig regi på en ny brief = FEL (kommentar till redigeraren); på en gammal = anmärkning.
+  const trasig = VIDEO_REGI.replace('| DRIVE 1AbCdEf 0:22 |', '|  |');
+  assert.ok(koder(granskaBrief({ ...RAD_VIDEO, skapad_dag: '2026-09-22', text: trasig }, CTX_VIDEO).fel).includes('regi'));
+  const gammal = granskaBrief({ ...RAD_VIDEO, skapad_dag: '2026-09-18', text: trasig }, CTX_VIDEO);
+  assert.ok(!koder(gammal.fel).includes('regi'));
+  assert.ok(gammal.anmarkningar.some((a) => a.kod === 'regi' && /written before 2026-09-21/.test(a.text)));
+  // Komponenttaggar: saknade, ogiltiga, typ I utan parent, Memo saknas — alla anmärkningar.
+  const utanKomp = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace(' · typ=`I` · parent=`Damasker_PD_1` · iteration=`2` · koncept=`PD strumpbevis` · kalla=`parent` · avatar=`vandraren-hostled` · awareness=`problem` · begar=`slippa-krangel` · mekanism=`beviset först, sedan problemet` · tro=`en blöt strumpa är beviset, inte materialet` · urgency=`sasong` · hook-mekanik=`freeze` · confidence=`high` · lardom=`L-120250009391470291`', '').replace(/\*\*Memo:\*\*[^\n]*\n/, '') }, CTX_VIDEO);
+  assert.equal(utanKomp.fel.length, 0);
+  const komp = utanKomp.anmarkningar.filter((a) => a.kod === 'komponent');
+  assert.equal(komp.length, 2, JSON.stringify(komp));
+  assert.match(komp[0].text, /component tags missing: typ, koncept, kalla, avatar, awareness, begar, mekanism, tro, urgency, hook-mekanik, confidence, lardom/);
+  assert.match(komp[0].text, /a brief without lardom= is not written/);
+  const felLardom = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace('lardom=`L-120250009391470291`', 'lardom=`batch 2`') }, CTX_VIDEO);
+  assert.ok(felLardom.anmarkningar.some((a) => a.kod === 'komponent' && /lardom=batch 2 is not a learning id/.test(a.text)), JSON.stringify(felLardom.anmarkningar));
+  assert.match(komp[1].text, /no "Memo:" line/);
+  const ogiltig = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace('awareness=`problem`', 'awareness=`warm`').replace('parent=`Damasker_PD_1` · ', '') }, CTX_VIDEO);
+  const o = ogiltig.anmarkningar.filter((a) => a.kod === 'komponent');
+  assert.ok(o.some((a) => /awareness=warm is not in the fixed list \(unaware \| problem/.test(a.text)), JSON.stringify(o));
+  assert.ok(o.some((a) => /typ=I without parent=/.test(a.text)), JSON.stringify(o));
+  assert.equal(ogiltig.fel.length, 0);
+});
+
+test('komponentUr: fasta listor, alias (source/desire/season/slow-motion), typ N med parent, typ I utan', () => {
+  assert.deepEqual(KOMPONENT_TAGGAR, ['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'confidence', 'lardom']);
+  const ok = komponentUr({ typ: 'N', koncept: 'x', kalla: 'voc', avatar: 'a', awareness: 'unaware', begar: 'protect-what-i-own', mekanism: 'm', tro: 't', urgency: 'season', 'hook-mekanik': 'slow-motion', confidence: 'low', lardom: 'L-1, L-2' });
+  assert.deepEqual(ok.saknade, []);
+  assert.equal(ok.lardom, 'L-1, L-2');
+  assert.equal(komponentUr({ typ: 'imiterad' }).typ, 'IMITERAD', 'typ normaliseras i värdelistan, inte i typ-fältet');
+  assert.deepEqual(komponentUr({ typ: 'IM', parent: 'X_PD_1_H1' }).ogiltiga, []);
+  assert.ok(komponentUr({ typ: 'IM' }).brister.some((b) => /typ=IM without parent/.test(b)));
+  const t2 = taggarUr('Variables: belief=proof beats promise · learning=L-5 · type=IM');
+  assert.equal(t2.taggar.tro, 'proof beats promise');
+  assert.equal(t2.taggar.lardom, 'L-5');
+  assert.equal(t2.taggar.typ, 'IM');
+  assert.deepEqual(ok.ogiltiga, []);
+  assert.deepEqual(ok.brister, []);
+  assert.equal(ok.typ, 'N');
+  const t = taggarUr('Variables: angle=PD · type=I · source=swipe · desire=trygghet · concept=PD x · hook-mechanic=zoom-in');
+  assert.equal(t.taggar.typ, 'I');
+  assert.equal(t.taggar.kalla, 'swipe');
+  assert.equal(t.taggar.begar, 'trygghet');
+  assert.equal(t.taggar['hook-mekanik'], 'zoom-in');
+  const nMedParent = komponentUr({ typ: 'N', parent: 'Damasker_PD_1', kalla: 'axel' });
+  assert.ok(nMedParent.brister.some((b) => /typ=N with a parent/.test(b)));
+  assert.ok(komponentUr({ typ: 'M' }).brister.some((b) => /typ=M without parent/.test(b)));
+  assert.equal(komponentUr({ typ: 'I', parent: 'none' }).parent, null);
+  assert.ok(komponentUr({ confidence: 'sure' }).ogiltiga.some((o) => o.tagg === 'confidence'));
+});
+
+test('sparra: FEL och SPARRKODER stoppar; H-varianter med samma hook-mekanik och 5 typ N utan voc är rondfel', () => {
+  assert.deepEqual(SPARRKODER, ['regi', 'taggar', 'komponent']);
+  const rad = (namn, text) => ({ namn, typ: 'video', text: text.replace(/Damasker_PD_12_H1/g, namn), fil: `${namn}/brief.md` });
+  const ren = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI)], CTX_VIDEO);
+  assert.equal(ren.ok, true, JSON.stringify(ren.rader[0]));
+  assert.deepEqual(ren.rond, []);
+  const utanMemo = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI.replace(/\*\*Memo:\*\*[^\n]*\n/, ''))], CTX_VIDEO);
+  assert.equal(utanMemo.ok, false, 'en komponentanmärkning stoppar i spärrläget');
+  assert.equal(utanMemo.rader[0].stopp[0].kod, 'komponent');
+  const trasig = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI.replace('| DRIVE 1AbCdEf 0:22 |', '|  |'))], CTX_VIDEO);
+  assert.equal(trasig.ok, false);
+  assert.equal(trasig.rader[0].fel[0].kod, 'regi');
+  const tvaH = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI), rad('Damasker_PD_12_H2', VIDEO_REGI)], CTX_VIDEO);
+  assert.equal(tvaH.ok, false);
+  assert.match(tvaH.rond[0], /Damasker_PD_12: H-variants share hook-mekanik=freeze/);
+  const olika = sparra([rad('Damasker_PD_12_H1', VIDEO_REGI), rad('Damasker_PD_12_H2', VIDEO_REGI.replace('hook-mekanik=`freeze`', 'hook-mekanik=`reverse`'))], CTX_VIDEO);
+  assert.deepEqual(olika.rond, []);
+  const nyText = VIDEO_REGI.replace(' · typ=`I` · parent=`Damasker_PD_1` · iteration=`2`', ' · typ=`N`').replace('kalla=`parent`', 'kalla=`rutin`').replace('**Parent:** `Damasker_PD_1` — BREAKTHROUGH 2026-09-05: 5 319 kr, 34 purchases, ROAS 3,42. **Isolated variable: the order — proof before problem.**', '**Source:** playbook winner "proof first".');
+  const femNya = sparra([1, 2, 3, 4, 5].map((i) => rad(`Damasker_PD_${20 + i}_H1`, nyText)), CTX_VIDEO);
+  assert.ok(femNya.rond.some((s) => /5 new concepts \(typ=N\) and none with kalla=voc/.test(s)), JSON.stringify(femNya.rond));
+  const medVoc = sparra([1, 2, 3, 4, 5].map((i) => rad(`Damasker_PD_${20 + i}_H1`, i === 1 ? nyText.replace('kalla=`rutin`', 'kalla=`voc`') : nyText)), CTX_VIDEO);
+  assert.deepEqual(medVoc.rond, []);
+});
+
+// ------------------------------------------------------------ speglade hubbar (CS-KLART punkt 24) + AI-raden (punkt 27)
+
+test('spegelPris: speglad hub ⇒ OPS-butikens pris ur produktfilen, aldrig gissat; ospeglad ⇒ null', () => {
+  const lasFil = (p) => (/termoskyddet\.yaml$/.test(p) ? 'ekonomi:\n  pris: 559\n  jamforpris: 932\n' : /takskyddet\.yaml$/.test(p) ? 'ekonomi:\n  pris: 1129\n  jamforpris: 1469\n' : null);
+  const reg = { poster: { 'carashell/takskyddet': { spegling: { kalla_hub: TAK_HUB, status_se: 'CaraShell SE ready to be active' } }, 'carashell/termoskyddet': { spegling: { kalla_hub: 'c5a270ab908c83e3b72181fde8643080', status_se: 'CaraShell SE ready to be active' } } } };
+  const s = spegelPris(TAK_HUB, reg, { lasFil });
+  assert.equal(s.butik, 'CaraShell');
+  assert.equal(s.pris, 1129);
+  assert.equal(s.jamforpris, 1469);
+  assert.match(s.kalla, /factory\/produkter\/takskyddet\.yaml/);
+  assert.equal(spegelPris('c5a270ab-908c-83e3-b721-81fde8643080', reg, { lasFil }).pris, 559);
+  assert.equal(spegelPris(MOTOR_HUB, reg, { lasFil }), null);
+  const saknas = spegelPris(TAK_HUB, reg, { lasFil: () => null });
+  assert.equal(saknas.pris, null);
+  assert.match(saknas.kalla, /saknas/);
+});
+
+test('granskaBrief speglad: nummer över 100 är ett fel, priset måste ligga inom 20 % av båda butikerna', () => {
+  const ctx = { ...CTX, speglad: true, pris_spegel: [{ butik: 'CaraShell', pris: 1129 }] };
+  assert.deepEqual(granskaBrief({ ...RAD, text: BRA }, ctx).fel, []);
+  const over100 = granskaBrief({ ...RAD, namn: 'Takoverdrag_SP_105_1', text: BRA.replace(/Takoverdrag_SP_5_1/g, 'Takoverdrag_SP_105_1') }, ctx);
+  assert.ok(over100.fel.some((x) => x.kod === 'namn' && /never go above 100/.test(x.text)), JSON.stringify(over100.fel));
+  assert.ok(!koder(granskaBrief({ ...RAD, namn: 'Takoverdrag_SP_105_1', text: BRA.replace(/Takoverdrag_SP_5_1/g, 'Takoverdrag_SP_105_1') }, CTX).fel).includes('namn'), 'ospeglad hub: 105 är ett vanligt nummer');
+  const dyrSpegel = granskaBrief({ ...RAD, text: BRA }, { ...ctx, pris_spegel: [{ butik: 'CaraShell', pris: 1499 }] });
+  assert.ok(dyrSpegel.fel.some((x) => x.kod === 'pris' && /CaraShell takes 1499 kr — 25 % apart/.test(x.text)), JSON.stringify(dyrSpegel.fel));
+  const naraSpegel = granskaBrief({ ...RAD, text: BRA }, { ...ctx, pris_spegel: [{ butik: 'CaraShell', pris: 1199 }] });
+  assert.equal(naraSpegel.fel.length, 0);
+  assert.ok(naraSpegel.anmarkningar.some((x) => x.kod === 'pris' && /within 20 %/.test(x.text)));
+});
+
+test('granskaBrief video: "AI content:"-raden saknas ⇒ anmärkning (US-steget bränner då in raden som för en person)', () => {
+  const utan = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI.replace(/\*\*AI content:\*\*[^\n]*\n/, '') }, CTX_VIDEO);
+  assert.ok(utan.anmarkningar.some((a) => a.kod === 'ai'), JSON.stringify(utan.anmarkningar));
+  const med = granskaBrief({ ...RAD_VIDEO, text: VIDEO_REGI }, CTX_VIDEO);
+  assert.ok(!med.anmarkningar.some((a) => a.kod === 'ai'));
+  assert.ok(!granskaBrief({ ...RAD, text: BRA }, CTX).anmarkningar.some((a) => a.kod === 'ai'), 'bild: ingen AI-rad krävs');
 });

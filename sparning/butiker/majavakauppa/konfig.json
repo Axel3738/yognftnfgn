@@ -1,0 +1,24 @@
+{
+  "comment": "Spårningssidan i Majavakauppa: /pages/seuranta. Skriven av sparning/publicera.mjs ur sparning/butiker.json — ändra i registret, inte här. Blocket lage skrivs av publiceringen.",
+  "sida": {
+    "handle": "seuranta",
+    "titel": "Seuraa pakettiasi",
+    "template_suffix": null,
+    "markor": "bb-spar",
+    "data_id": "bb-spar-data",
+    "fonster_dagar": null
+  },
+  "butik": {
+    "namn": "Majavakauppa",
+    "url": "https://majavakauppa.fi",
+    "support": null
+  },
+  "frakt": {
+    "sparning_vaknar": "2–4 päivää"
+  },
+  "lage": {
+    "sida_publicerad": "2026-09-22",
+    "sida_url": "https://majavakauppa.fi/pages/seuranta",
+    "sida_matt": "30 paket, 398 händelser, 70 kB"
+  }
+}

@@ -1,0 +1,98 @@
+{
+ "sotarset_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/4b794b3e02d848778013e53765ee5048/original.mp4",
+  "proofreadId": "c487676f06a44e88b726e7bbbac23c02-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "59b9f5043e6d452c8df48d0d4fd80307-nb",
+  "downloaded": true
+ },
+ "sotarset_CS_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/0b00b5cc5ed24f1ebb38ad3bdbe5fa1f/original.mp4",
+  "proofreadId": "8bc0b4dd67d44f93bddbadada5f69894-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "1deb2ac0e91447ce8df25b70113a0e9d-nb",
+  "downloaded": true
+ },
+ "sotarset_CS_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/5ae209f817874805a3334e94308b5880/original.mp4",
+  "proofreadId": "92a4181f7f58426fa838003a0d1fb993-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "bc95684745f247ccb0e426db7cf70fd3-nb",
+  "downloaded": true
+ },
+ "sotarset_G_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/77c293e7eafc4af4a321d03da5ad9e07/original.mp4",
+  "proofreadId": "ded3503f1d4d4f44a984a0468dbc6238-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "f0561d9ae2234a629dc83d40262faddd-nb",
+  "downloaded": true
+ },
+ "sotarset_G_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/67606889479946b38d23d75165bdbe69/original.mp4",
+  "proofreadId": "013728fd643c4f418053b631a29f5923-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "ebcb1bb1e4a34684baac6f1643856eed-nb",
+  "downloaded": true
+ },
+ "sotarset_G_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/3f390f08419e442a9aebb8bcc2105799/original.mp4",
+  "proofreadId": "420a000a2c4548acbde9fd0bfec43eec-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "33004599c7254829a53d126f766f1df6-nb",
+  "downloaded": true
+ },
+ "sotarset_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/71d3fa75c4e0445b90c3b97554963efd/original.mp4",
+  "proofreadId": "646e4b8200a34d79859871a54b3a7fe0-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "c89a0f11ce5946a79b09486e824c66df-nb",
+  "downloaded": true
+ },
+ "sotarset_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/ccb1eff0936c45929f8630fd592481d1/original.mp4",
+  "proofreadId": "b449121d98234be18e0ecf0bc1d9552b-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "2f2d642874af4274b6ad84d7562da762-nb",
+  "downloaded": true
+ },
+ "sotarset_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/d29f21df6cbc449490768514ca151fe8/original.mp4",
+  "proofreadId": "1c17dc97df644510aee80dbaed7efa3b-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "166c784f5c534066a363c639ba522e7d-nb",
+  "downloaded": true
+ },
+ "sotarset_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/afb0f7009ce244cc9cb797bd7337f4df/original.mp4",
+  "proofreadId": "9bfddd93439247828da6b09a1a6a1efb-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "920d4bd8cf0c4270b79943c2bd8e6bd7-nb",
+  "downloaded": true
+ },
+ "sotarset_SP_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/e33bc0e5cab24e80a2aba0ca06a2b5bd/original.mp4",
+  "proofreadId": "59009eddfa724d4f809f1bce7bdb154f-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "15322aa24f67465883708acabe23dbee-nb",
+  "downloaded": true
+ },
+ "sotarset_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/99a7f76b19fa418db7e6c005ad4da0d2/original.mp4",
+  "proofreadId": "0c625ef8330d4c0ba305de1bf0e6aaa0-nb-nb-NO",
+  "srtDone": true,
+  "srtApplied": true,
+  "renderId": "7a2f4c5522504f8ea2048bcc152c3fba-nb",
+  "downloaded": true
+ }
+}

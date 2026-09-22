@@ -4,8 +4,9 @@
 //   node sparning/kor.mjs                # skarpt
 //   node sparning/kor.mjs --torr         # läs allt, skriv inget, registrera inget
 //   node sparning/kor.mjs --kolla        # bara nyckel + Shopify-rättigheter
-//   node sparning/kor.mjs --dagar 30     # hur långt bakåt ordrarna läses (standard 14)
+//   node sparning/kor.mjs --dagar 45     # hur långt bakåt ordrarna läses (standard 30)
 //   node sparning/kor.mjs --max 500      # tak på nya registreringar per körning (standard 150)
+//   node sparning/kor.mjs --ingen-sida   # hoppa över spårningssidan (bara event i Shopify)
 //
 // Minnet är sparning/lage.json (committas av rutinen): vilka nummer som är
 // registrerade hos 17TRACK, senast skrivna status, och när paketet blev
@@ -15,20 +16,47 @@
 // Läs-bara mot 17TRACK utöver registreringen. Mot Shopify skrivs ENBART
 // fulfillmentEventCreate — aldrig ordrar, fulfillments eller notiser i sig.
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
-import { kravProxy, graphql } from '../mejl/shopify.mjs';
+import { spawnSync } from 'node:child_process';
+import { kravProxy } from '../mejl/shopify.mjs';
+import { lasButik, butikIdUr, skapaMappar, skapaKlient } from './butik.mjs';
+import { skapaOversattare } from './oversatt.mjs';
 import { nyckel, registrera, hamta } from './17track.mjs';
 import { bolagskod, tolka, planera } from './status.mjs';
+import { handelserUr } from './paketdata.mjs';
+import { oversattFras, stadaPlats, landFor, okandaFraser } from './sprak.mjs';
+import { sistaBiten } from './sistabiten.mjs';
 
 const ROT = dirname(fileURLToPath(import.meta.url));
-const LAGE = join(ROT, 'lage.json');
 const arg = process.argv.slice(2);
+// Butiken (--butik <id>, annars Bäverbutiken). Minnet och utdatan följer
+// butiken: Bäverbutiken i sparning/ som förut, de andra i sparning/butiker/<id>/.
+const BUTIK = lasButik(butikIdUr(arg));
+const FILER = skapaMappar(BUTIK);
+const LAGE = FILER.lage;
+const UT = FILER.output;
+const PAKETFIL = FILER.paketfil;
+// Har sidan publicerats någon gång? Styr om en runda utan skanningar får
+// hoppa över sidan (ja, den finns) eller ska publicera en tom (första gången).
+const konfigLage = existsSync(FILER.konfig) ? JSON.parse(readFileSync(FILER.konfig, 'utf8'))?.lage : null;
+const LAGE_NAMN = LAGE.replace(ROT + '/', 'sparning/');
 const torr = arg.includes('--torr');
 const kolla = arg.includes('--kolla');
+const ingenSida = arg.includes('--ingen-sida');
 const dagarIx = arg.indexOf('--dagar');
-const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 14;
+// ⚠️ 30 DAGAR, INTE 14 (rättat 2026-09-22 efter Axels "legit inga paket går
+// ju att spåra"). Frågan mot Shopify filtrerar på `created_at` — när ordern
+// LADES — och ett paket är på väg 5–10 arbetsdagar. Med 14 dagar föll varje
+// order ur fönstret medan paketet fortfarande rullade, och eftersom minnet
+// bara innehåller det som EN GÅNG kommit in genom den här dörren kom paketet
+// aldrig in. Det drabbade precis de kunder som hör av sig: de som väntat
+// längst. Mätt samma natt: order #6243 (lagd OCH skickad 31/8) fanns inte i
+// minnet alls, och på 60 dagar var 1 747 av 2 880 paket oregistrerade.
+// Höj inte utan att tänka på kvoten: varje NYTT paket i fönstret kostar en
+// 17TRACK-registrering, och taket nedan är det enda som bromsar.
+const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 30;
 // Tak på registreringar per körning: varje registrering kostar 17TRACK-kvot.
 // Torrkörningen 2026-09-18 hittade 2 607 oregistrerade paket på 45 dagar mot
 // 200 gratis i startkvoten — utan tak hade första körningen bränt allt på
@@ -36,6 +64,7 @@ const DAGAR = dagarIx > -1 ? Number(arg[dagarIx + 1]) : 14;
 const maxIx = arg.indexOf('--max');
 const MAX_REG = maxIx > -1 ? Number(arg[maxIx + 1]) : 150;
 const LEVERERAD_BEHALL_DAGAR = 60;
+const KRAV_TEXT = 'read_orders + write_fulfillments + write_content';
 
 kravProxy();
 
@@ -43,17 +72,28 @@ kravProxy();
 const brister = [];
 if (!nyckel()) brister.push('TRACK17_API_KEY saknas i miljön (Environments på claude.ai — syns först i en ny container).');
 let scopes = [];
+let graphql = null;
+let kontakt = null;
+console.log(`Butik: ${BUTIK.namn} (${BUTIK.url}), språk ${BUTIK.sprak}, prefix ${BUTIK.prefix}, minne ${LAGE_NAMN}`);
 try {
-  const s = await graphql(`query { currentAppInstallation { accessScopes { handle } } }`, {});
-  scopes = s.currentAppInstallation.accessScopes.map((x) => x.handle);
+  const klient = await skapaKlient(BUTIK);
+  graphql = klient.graphql;
+  kontakt = await klient.kolla();
+  scopes = kontakt.scopes;
 } catch (fel) {
   brister.push(`Shopify svarar inte: ${fel.message}`);
 }
-if (scopes.length && !scopes.includes('write_fulfillments')) {
-  brister.push('Shopify-appen saknar rättigheten write_fulfillments (behövs för fulfillmentEventCreate). Lägg till read_fulfillments + write_fulfillments på appen i Dev Dashboard och installera om den.');
+if (kontakt && kontakt.saknar.length) {
+  brister.push(`Shopify-appen "${kontakt.app}" i ${BUTIK.namn} saknar ${kontakt.saknar.join(', ')}. Lägg till dem på appen i Dev Dashboard (read_orders kräver "Protected customer data access") och installera om den.`);
 }
+// Supportadressen står på kundens sida och i FAILURE-meddelandet. Registret
+// först, annars Shopifys egen kontaktmejl — aldrig en annan butiks.
+const SUPPORT = BUTIK.support ?? kontakt?.kontaktmejl ?? null;
+if (!SUPPORT) brister.push(`${BUTIK.namn} saknar supportadress — varken i sparning/butiker.json eller i Shopifys shop.contactEmail.`);
+// Butikens språk för Shopify-meddelandena (sparning/oversatt.mjs).
+const OV = skapaOversattare(BUTIK.sprak);
 if (kolla || brister.length) {
-  console.log(brister.length ? `❌ ${brister.join('\n❌ ')}` : `✅ Nyckel finns, Shopify-appen har write_fulfillments (${scopes.length} rättigheter).`);
+  console.log(brister.length ? `❌ ${brister.join('\n❌ ')}` : `✅ Nyckel finns, appen "${kontakt.app}" i ${BUTIK.namn} har ${KRAV_TEXT} (${scopes.length} rättigheter). Support: ${SUPPORT}.`);
   if (kolla) process.exit(brister.length ? 1 : 0);
   if (!torr) process.exit(1);
   console.log('--torr: fortsätter läsningen trots bristerna, skriver inget.');
@@ -79,7 +119,8 @@ for (let sida = 0; sida < 60; sida++) {
   cursor = d.orders.pageInfo.endCursor;
 }
 
-// Kandidater: en rad per spårningsnummer som inte är levererat.
+// Kandidater: en rad per spårningsnummer som inte är levererat. De får event
+// i Shopify och är de enda som kan kosta registreringskvot.
 const kandidater = [];
 let redanLevererade = 0;
 for (const o of ordrar) {
@@ -94,6 +135,18 @@ for (const o of ordrar) {
   }
 }
 console.log(`Ordrar senaste ${DAGAR} dagarna: ${ordrar.length}. Paket att följa: ${kandidater.length} (${redanLevererade} redan levererade).`);
+
+// Spårningssidan ska bära MER än de här: ett paket som varit på väg i tre
+// veckor ligger utanför orderfönstret (${DAGAR} dagar) men är precis det en
+// kund vill slå upp, och ett levererat paket ska gå att spåra dagen efter.
+// Paketminnet räcker 60 dagar bakåt, så resten hämtas därifrån. De får inga
+// event och registreras aldrig — bara läses, och att läsa är gratis hos
+// 17TRACK. Bara registreringen kostar kvot.
+const iRundan = new Set(kandidater.map((k) => k.nummer));
+const baraSidan = Object.entries(lage.paket)
+  .filter(([n, p]) => p?.registrerad && !iRundan.has(n))
+  .map(([n, p]) => ({ nummer: n, bolag: p.bolag ?? '', kod: p.kod ?? null, order: p.order ?? null, fulfillment: p.fulfillment ?? null, redan: [], baraSidan: true }));
+if (baraSidan.length) console.log(`  Dessutom ${baraSidan.length} paket ur minnet, bara för spårningssidan (inga event, ingen kvot).`);
 
 // --- 4. Registrera nya hos 17TRACK ------------------------------------------
 const oregistrerade = kandidater.filter((k) => !lage.paket[k.nummer]?.registrerad);
@@ -112,10 +165,14 @@ if (!torr && nya.length) {
 }
 
 // --- 5. Hämta status och skriv in i Shopify ---------------------------------
-const attHamta = kandidater.filter((k) => torr || lage.paket[k.nummer]?.registrerad);
+const attHamta = [...kandidater.filter((k) => torr || lage.paket[k.nummer]?.registrerad), ...baraSidan];
 let skrivna = 0;
 let fel = 0;
 const rader = [];
+// Paketen till spårningssidan, med skanningarna översatta till svenska.
+// Ligger bara i minnet och skickas vidare till publiceringen — de sparas
+// aldrig i lage.json, se kommentaren vid --paket i publicera.mjs.
+const forSidan = [];
 if (attHamta.length && nyckel()) {
   const h = await hamta(attHamta.map((k) => ({ number: k.nummer, carrier: k.kod ?? lage.paket[k.nummer]?.kod ?? undefined })));
   const perNummer = new Map(h.accepterade.map((p) => [p.number, p]));
@@ -123,10 +180,20 @@ if (attHamta.length && nyckel()) {
     const rå = perNummer.get(k.nummer);
     if (!rå) continue;
     const t = tolka(rå);
+    forSidan.push({
+      nummer: k.nummer,
+      bolag: k.bolag || t.bolag || null,
+      statusKod: t.status ?? lage.paket[k.nummer]?.status ?? null,
+      handelser: handelserUr(rå, { oversattFras, stadaPlats, landFor, nu: Date.now() }),
+      // Sista biten i Sverige: bolag + deras eget nummer, ur misc_info.
+      // Läses här för det är enda stället 17TRACK-svaret finns i original.
+      sistaBiten: sistaBiten(rå.track_info && rå.track_info.misc_info, k.nummer),
+    });
+    if (k.baraSidan) continue; // ur minnet: bara till sidan, inga event och ingen lagefil-ändring
     const p = (lage.paket[k.nummer] ??= { bolag: k.bolag, kod: k.kod, order: k.order, fulfillment: k.fulfillment });
     p.status17 = t.status17;
     p.senast = new Date().toISOString().slice(0, 16);
-    const plan = planera(t, k.redan, p.status ?? null);
+    const plan = planera(t, k.redan, p.status ?? null, { support: SUPPORT ?? undefined, T: OV.T });
     rader.push(`${k.order} ${k.nummer} ${t.status17 ?? '–'}${t.plats ? ` @ ${t.plats}` : ''}${plan ? ` → ${plan.status}` : ''}`);
     if (!plan) continue;
     if (torr) { skrivna++; continue; }
@@ -157,5 +224,35 @@ for (const [n, p] of Object.entries(lage.paket)) {
 }
 lage.senaste_korning = { datum: new Date().toISOString(), ordrar: ordrar.length, paket: kandidater.length, registrerade: nya.length, skrivna, fel, torr };
 if (!torr) writeFileSync(LAGE, `${JSON.stringify(lage, null, 1)}\n`);
-console.log(`${torr ? '--torr: ' : ''}Event ${torr ? 'som skulle skrivas' : 'skrivna'} i Shopify: ${skrivna}, fel: ${fel}. ${torr ? 'Inget sparat.' : 'Sparat i sparning/lage.json.'}`);
+console.log(`${torr ? '--torr: ' : ''}Event ${torr ? 'som skulle skrivas' : 'skrivna'} i Shopify: ${skrivna}, fel: ${fel}. ${torr ? 'Inget sparat.' : `Sparat i ${LAGE_NAMN}.`}`);
+
+// --- 7. Spårningssidan ------------------------------------------------------
+// Kundens sida, baverbutiken.se/pages/spara. Skanningarna är redan hämtade
+// ovan, så sidan byggs i samma körning — de skickas vidare på disk (en
+// gitignorerad fil) i stället för att sparas i paketminnet.
+const okanda = okandaFraser();
+if (okanda.length) {
+  // Fraktbolagen hittar på nya texter. Utan den här raden visas den generella
+  // meningen ("Paketet är på väg") i tysthet och ordboken växer aldrig.
+  console.log(`⚠️ ${okanda.length} fraser saknas i sparning/fraser.json — kunden får en generell mening för dem:`);
+  for (const f of okanda.slice(0, 15)) console.log(`     ${f}`);
+  if (okanda.length > 15) console.log(`     … och ${okanda.length - 15} till`);
+}
+if (ingenSida) {
+  console.log('--ingen-sida: spårningssidan rörs inte.');
+} else if (!forSidan.length && konfigLage?.sida_publicerad) {
+  console.log('Inga skanningar hämtade — spårningssidan lämnas som den är.');
+} else {
+  // Utan skanningar men utan publicerad sida: publicera ändå (tom), så
+  // mejlens knapp och menylänken har en sida från dag ett. publicera.mjs
+  // släpper igenom en tom sida bara första gången.
+  mkdirSync(UT, { recursive: true });
+  writeFileSync(PAKETFIL, `${JSON.stringify(forSidan)}\n`);
+  const r = spawnSync(process.execPath, [join(ROT, 'publicera.mjs'), '--butik', BUTIK.id, '--paket', PAKETFIL, ...(torr ? ['--torr'] : [])], { stdio: 'inherit' });
+  if (r.status !== 0) {
+    // Sidan är kundens vy, men eventen i Shopify är redan skrivna och sparade.
+    // Rundan får inte se ut att ha misslyckats i sin huvuduppgift.
+    console.log(`⚠️ Spårningssidan publicerades inte (kod ${r.status}). Eventen ovan är skrivna. Kör: node sparning/publicera.mjs --butik ${BUTIK.id} --paket ${PAKETFIL}`);
+  }
+}
 process.exit(fel && !skrivna ? 1 : 0);

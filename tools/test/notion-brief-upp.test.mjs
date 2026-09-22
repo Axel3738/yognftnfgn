@@ -1,0 +1,136 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { mdTillBlock, delaText, richText, egenskaper, raknaBlock, TYP, MAX_TEXT, NYCKELRAD } from '../notion-brief-upp.mjs';
+
+const BRIEF = `# Takoverdrag_OB_4_H1 — objection: "it'll just trap the damp"
+
+**Make:** a 20-second video that agrees with the objection before answering it.
+**Why:** built on a documented belief barrier.
+
+Landing page: https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan
+Price: 1 129 kr (was 1 469 kr)
+
+## Hooks
+
+| # | Swedish (use this) | English meaning |
+|---|---|---|
+| H1 | Ja – ett helöverdrag blir tätt runt om. | Yes, a full cover does seal it in. |
+| H2 | Tätt? Ja – om det var helöverdrag. | Sealed in? Yes, if it were a full cover. |
+
+## Rules
+
+- The ad never names the store.
+- No numbers other than those listed above.
+
+> ⚠️ En rättelse i citatform.
+`;
+
+test('mdTillBlock: namnet ur titelraden, landningssidan ur brödtexten', () => {
+  const { namn, landing } = mdTillBlock(BRIEF);
+  assert.equal(namn, 'Takoverdrag_OB_4_H1');
+  assert.equal(landing, 'https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan');
+});
+
+test('mdTillBlock: stycken, rubriker, tabell med huvud, punkter och citat i ordning', () => {
+  const { block } = mdTillBlock(BRIEF);
+  const typer = block.map((b) => b.type);
+  assert.deepEqual(typer, ['paragraph', 'paragraph', 'paragraph', 'paragraph', 'heading_2', 'table', 'heading_2', 'bulleted_list_item', 'bulleted_list_item', 'quote']);
+  // "Make:" och "Why:" är nyckelrader ⇒ var sitt block, och "Make:" behåller fetstilen.
+  const p0 = block[0].paragraph.rich_text;
+  assert.equal(p0[0].text.content, 'Make:');
+  assert.equal(p0[0].annotations.bold, true);
+  assert.match(block[1].paragraph.rich_text.map((r) => r.text.content).join(''), /^Why:.*belief barrier/);
+  assert.match(block[2].paragraph.rich_text[0].text.content, /^Landing page: https/);
+  assert.match(block[3].paragraph.rich_text[0].text.content, /^Price: 1 129 kr/);
+  // Tabellen: separatorraden borta, tre kolumner, huvud + två rader, cellerna trimmade.
+  const t = block[5].table;
+  assert.equal(t.table_width, 3);
+  assert.equal(t.has_column_header, true);
+  assert.equal(t.children.length, 3);
+  assert.equal(t.children[1].table_row.cells[1][0].text.content, 'Ja – ett helöverdrag blir tätt runt om.');
+  assert.equal(t.children[2].table_row.cells[0][0].text.content, 'H2');
+  // Punkterna och citatet.
+  assert.equal(block[7].bulleted_list_item.rich_text[0].text.content, 'The ad never names the store.');
+  assert.match(block[9].quote.rich_text[0].text.content, /rättelse/);
+});
+
+test('nyckelrader blir egna block så spärren hittar dem i Notion; radbruten prosa utan nyckel fortsätter i samma stycke', () => {
+  // Mätt 2026-09-22 på OB_4_H1: "Landing page … Price … AI content: voice" i ETT
+  // block ⇒ aiInnehallUr() (radstart-ankrad) hittade inte raden i Notion.
+  const md = '# X_Y_1\n\nLanding page: https://x.se/p\nPrice: 1 129 kr\nAI content: voice\n\nA long why-sentence that\nwraps onto a second line\nand a third.\n**Isolated variable:** the opening move.\n';
+  const { block } = mdTillBlock(md);
+  const texter = block.map((b) => b.paragraph.rich_text.map((r) => r.text.content).join(''));
+  assert.deepEqual(texter, [
+    'Landing page: https://x.se/p',
+    'Price: 1 129 kr',
+    'AI content: voice',
+    'A long why-sentence that wraps onto a second line and a third.',
+    'Isolated variable: the opening move.',
+  ]);
+  assert.equal(block[4].paragraph.rich_text[0].annotations.bold, true);
+  assert.ok(NYCKELRAD.test('VARIABELTAGGAR: typ=N · koncept=x'));
+  assert.ok(!NYCKELRAD.test('https://x.se/p: not a key'));
+  assert.ok(!NYCKELRAD.test('Every line concedes the point: roof only'), 'kolon långt in i en mening är ingen nyckel');
+});
+
+test('titelraden blir aldrig ett block, och en tabell utan innehåll hoppas', () => {
+  const { block } = mdTillBlock('# Bara_Namn_1\n\n|---|---|\n');
+  assert.deepEqual(block, []);
+});
+
+test('delaText håller Notions gräns på 2 000 tecken och bryter på ordgräns', () => {
+  const lang = Array.from({ length: 500 }, (_, i) => `ord${i}`).join(' ');
+  const bitar = delaText(lang);
+  assert.ok(bitar.length >= 2);
+  for (const b of bitar) assert.ok(b.length <= MAX_TEXT, `bit på ${b.length} tecken`);
+  assert.equal(bitar.join(' ').replace(/\s+/g, ' '), lang);
+  assert.deepEqual(delaText('kort'), ['kort']);
+});
+
+test('ett långt stycke blir flera paragraph-block i stället för ett avvisat anrop', () => {
+  const md = `# X_Y_1\n\n${'a'.repeat(4500)}\n`;
+  const { block } = mdTillBlock(md);
+  assert.ok(block.length >= 3);
+  assert.ok(block.every((b) => b.type === 'paragraph'));
+});
+
+test('richText: fet markering bara på **…**, kod på `…`, resten ren', () => {
+  const r = richText('**Make:** film it. **Why:** because.');
+  assert.equal(r.filter((x) => x.annotations?.bold).length, 2);
+  assert.equal(r.map((x) => x.text.content).join(''), 'Make: film it. Why: because.');
+  assert.deepEqual(richText('')[0].text.content, '');
+  const k = richText('see `Takoverdrag_SP_2_1` for the look');
+  assert.equal(k.filter((x) => x.annotations?.code).length, 1);
+  assert.equal(k.map((x) => x.text.content).join(''), 'see Takoverdrag_SP_2_1 for the look');
+});
+
+test('Landing page hittas var som helst på raden och i punktform', () => {
+  assert.equal(mdTillBlock('# A_B_1\n\n**Drive folder:** none — lives in Notion   **Landing page:** https://a.se/x\n').landing, 'https://a.se/x');
+  assert.equal(mdTillBlock('# A_B_1\n\n- **Landing page:** https://a.se/y\n').landing, 'https://a.se/y');
+  assert.equal(mdTillBlock('# A_B_1\n\nLanding page: https://a.se/z.\n').landing, 'https://a.se/z');
+  assert.ok(NYCKELRAD.test('Caption 0–3 s: Nu blir det tätt'), 'nycklar med siffror');
+  assert.ok(NYCKELRAD.test('Format & length: 20 s'));
+});
+
+test('egenskaper: exakt NOTION-FORMAT.md — Draft, Pending Approval-typen, landningssida, Skapad', () => {
+  const p = egenskaper({ namn: 'Takoverdrag_OB_4_H1', typ: 'video', landing: 'https://x.se/p', idag: '2026-09-22' });
+  assert.equal(p.Namn.title[0].text.content, 'Takoverdrag_OB_4_H1');
+  assert.equal(p.Status.status.name, 'Draft');
+  assert.equal(p.Typ.select.name, TYP.video);
+  assert.equal(p['Landing page'].rich_text[0].text.content, 'https://x.se/p');
+  assert.equal(p.Skapad.date.start, '2026-09-22');
+  // Ansvarig och Prioritet sätts ALDRIG av oss — de är managerns.
+  assert.equal(p.Ansvarig, undefined);
+  assert.equal(p.Prioritet, undefined);
+  assert.equal(egenskaper({ namn: 'B_1_1', typ: 'bild' }).Typ.select.name, TYP.bild);
+  assert.equal(egenskaper({ namn: 'B_1_1' })['Landing page'], undefined);
+});
+
+test('raknaBlock räknar tabellrader så tillbakaläsningen har något att jämföra mot', () => {
+  const { block } = mdTillBlock(BRIEF);
+  const n = raknaBlock(block);
+  assert.equal(n.table, 1);
+  assert.equal(n.table_row, 3);
+  assert.equal(n.heading_2, 2);
+  assert.equal(n.bulleted_list_item, 2);
+});

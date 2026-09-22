@@ -23,6 +23,7 @@
 - [x] ✅ markörer /nb: 0 svenska markörer av 16
 - [x] ✅ markörer /en: 0 svenska markörer av 16
 - [x] ✅ markörer /fi: 0 svenska markörer av 16
+- [x] ✅ markörer /da: 0 svenska markörer av 16
 
 ## Varningar
 

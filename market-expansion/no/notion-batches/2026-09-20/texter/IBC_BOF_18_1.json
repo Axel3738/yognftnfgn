@@ -1,0 +1,69 @@
+[
+ {
+  "box": [
+   128,
+   76,
+   958,
+   160
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "Passer det tanken min?"
+ },
+ {
+  "box": [
+   33,
+   186,
+   1047,
+   270
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "120 × 100 × 116 cm. Passer en standard 1000 L IBC-tank."
+ },
+ {
+  "box": [
+   33,
+   1067,
+   1047,
+   1151
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "Åpning øverst for lokket."
+ },
+ {
+  "box": [
+   250,
+   1210,
+   831,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sjekk målene og bestill."
+ }
+]

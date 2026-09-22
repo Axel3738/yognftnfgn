@@ -1,0 +1,22 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-20",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Night watch for the thermal cover (CaraShellFront), run #4 — budget round only. Sunday is a brief day, but the brief round is paused by owner decision since 18/9 (CaraShell is mirrored from the Bäverbutiken hub via /ops-spegla)",
+    "Both markets are now PAUSED, neither by the routine. SE: 2 058 kr / 4 purchases / ROAS 1.08 over its last 7 days against break-even 1.61. NO (read-only check): 3 513 kr / 7 purchases over 7 days, profit contribution +267 kr",
+    "0 changes, 0 log lines. A paused campaign is a decision — nothing touched, nothing activated",
+    "Worth knowing before anything restarts: the Norwegian CS_3 video was the product's only judgeable winner when the market was switched off — 774 kr, 3 purchases, CPA 258 kr against break-even 347 kr. NO_PD_5_1 and NO_G_2_1 had one purchase each and were still under the gate"
+  ],
+  "siffror": { "spend_7d_se": 2058, "kop_7d_se": 4, "spend_7d_no": 3513, "kop_7d_no": 7, "andringar": 0 },
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-21",
+  "varningar": [
+    "Briefs paused since 18/9 by owner decision — CaraShell is no longer briefed on its own; everything is written in the Bäverbutiken teamspace and mirrored here. No briefs this Sunday",
+    "With both markets off, this product spends nothing and the routine has nothing to act on. It will keep reporting a paused campaign every night until someone switches one on",
+    "The pixel is still shared with the roof cover and there is no Shopify key for CaraShell, so purchases were never split per product"
+  ]
+}

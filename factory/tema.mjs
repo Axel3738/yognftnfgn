@@ -25,12 +25,12 @@ import { landsnamnSv, ochLista } from './lander.mjs';
 // som saknas här faller tillbaka på svenskan — och syns då som markör i
 // kundvyn, aldrig tyst. Nytt språk = en kolumn här, inte en ny if-sats.
 const TEMAORD = {
-  eyebrow_problem: { sv: 'Känner du igen det?', nb: 'Kjenner du deg igjen?', en: 'Sound familiar?', fi: 'Tuntuuko tutulta?' },
-  eyebrow_losning: { sv: 'Lösningen', nb: 'Løsningen', en: 'The solution', fi: 'Ratkaisu' },
-  rubrik_funktioner: { sv: 'Det här får du', nb: 'Dette får du', en: 'What you get', fi: 'Tämän saat' },
-  rubrik_faq: { sv: 'Vanliga frågor', nb: 'Vanlige spørsmål', en: 'FAQ', fi: 'Usein kysyttyä' },
-  upsell_etikett: { sv: 'Passar till', nb: 'Passer til', en: 'Goes well with', fi: 'Sopii yhteen' },
-  upsell_knapp: { sv: 'Lägg till', nb: 'Legg til', en: 'Add', fi: 'Lisää' },
+  eyebrow_problem: { sv: 'Känner du igen det?', nb: 'Kjenner du deg igjen?', en: 'Sound familiar?', fi: 'Tuntuuko tutulta?', da: 'Kender du det?' },
+  eyebrow_losning: { sv: 'Lösningen', nb: 'Løsningen', en: 'The solution', fi: 'Ratkaisu', da: 'Løsningen' },
+  rubrik_funktioner: { sv: 'Det här får du', nb: 'Dette får du', en: 'What you get', fi: 'Tämän saat', da: 'Det får du' },
+  rubrik_faq: { sv: 'Vanliga frågor', nb: 'Vanlige spørsmål', en: 'FAQ', fi: 'Usein kysyttyä', da: 'Ofte stillede spørgsmål' },
+  upsell_etikett: { sv: 'Passar till', nb: 'Passer til', en: 'Goes well with', fi: 'Sopii yhteen', da: 'Passer til' },
+  upsell_knapp: { sv: 'Lägg till', nb: 'Legg til', en: 'Add', fi: 'Lisää', da: 'Tilføj' },
   svensk_signal: {
     sv: '<strong>Svenskt varumärke</strong> – framtaget för svenska hem',
     nb: '<strong>Svensk merkevare</strong> – laget for nordiske hjem',
@@ -39,9 +39,11 @@ const TEMAORD = {
     // OPS-produkt (såld för nordiskt klimat) och läses som kvalitet i USA.
     en: '<strong>Swedish brand</strong> – designed for Scandinavian conditions',
     fi: '<strong>Ruotsalainen merkki</strong> – suunniteltu pohjoismaisiin oloihin',
+    da: '<strong>Svensk mærke</strong> – udviklet til nordiske forhold',
   },
-  leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery', fi: 'Arvioitu toimitus' },
-  leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days', fi: 'arkipäivää' },
+  leverans_text: { sv: 'Beräknad leverans', nb: 'Beregnet levering', en: 'Estimated delivery', fi: 'Arvioitu toimitus', da: 'Forventet levering' },
+  leverans_enhet: { sv: 'arbetsdagar', nb: 'virkedager', en: 'business days', fi: 'arkipäivää', da: 'hverdage' },
+  recensioner: { sv: 'recensioner', nb: 'anmeldelser', en: 'reviews', fi: 'arvostelua', da: 'anmeldelser' },
 };
 
 // custom_liquid kan inte översättas via translationsRegister — texten
@@ -507,7 +509,7 @@ export const TEMAFILER = {
 // product.handle: `prelude` sätter opf_enhet/_nb/_en, `args` skickar dem till
 // snippeten. Tom sträng när ingen produkt har `enhet`.
 // Språken snippeten känner (enhet_<locale> i ms-paket.liquid) — utöka båda.
-export const ENHET_LOCALES = ['nb', 'en', 'fi'];
+export const ENHET_LOCALES = ['nb', 'en', 'fi', 'da'];
 export function enhetLiquid(produkter) {
   const q = (s) => `'${String(s).replaceAll("'", '')}'`;
   const rader = [];
@@ -1019,24 +1021,6 @@ export function byggKorgUpsell(upsellHandle) {
 {%- endif -%}
 `;
 
-  const wrapper = `{%- comment -%}
-  Varukorgslådan + betald upsell (OPS Factory).
-  Själva lådan är orörd — upsellen skjuts in framför footern genom att
-  ersätta markeringskommentaren i den renderade HTML:en. Så slipper vi
-  forka bastemats 600-raderssnippet, och eftersom Dawn hämtar om HELA
-  sektionen vid varje varukorgsändring följer upsellen med automatiskt.
-{%- endcomment -%}
-{%- capture opf_upsell -%}{% render 'opf-korg-upsell' %}{%- endcapture -%}
-{%- capture opf_lada -%}{% render 'cart-drawer' %}{%- endcapture -%}
-{%- assign opf_marke = '<!-- Start blocks -->' -%}
-{%- if opf_upsell contains 'opf-upsell' -%}
-  {%- assign opf_nytt = opf_upsell | append: opf_marke -%}
-  {{ opf_lada | replace_first: opf_marke, opf_nytt }}
-{%- else -%}
-  {{ opf_lada }}
-{%- endif -%}
-`;
-
   const msHeadTillagg = `
 {%- comment -%}
   Korg-upsellen (snippets/opf-korg-upsell) renderas av vår wrapper i
@@ -1067,9 +1051,170 @@ export function byggKorgUpsell(upsellHandle) {
 
   return {
     'snippets/opf-korg-upsell.liquid': snippet,
-    'sections/cart-drawer.liquid': wrapper,
+    ...byggKorgWrapper(['opf-korg-upsell']),
     msHeadTillagg,
   };
+}
+
+/**
+ * Wrappern runt varukorgslådan: knäpper in fabrikens egna snippets rakt
+ * ovanför delsumman och kassaknappen, i den ordning de står.
+ *
+ * Själva lådan är orörd — innehållet skjuts in genom att ersätta
+ * markeringskommentaren i den RENDERADE HTML:en. Så slipper vi forka
+ * bastemats 600-raderssnippet, och eftersom Dawn hämtar om HELA sektionen
+ * vid varje varukorgsändring följer innehållet med automatiskt.
+ *
+ * Varje snippet fångas för sig och tas bara med om den faktiskt renderade
+ * något — ett snippet som tiger (tom korg, upsellen redan i korgen) ska
+ * inte lämna en tom ruta efter sig.
+ */
+export function byggKorgWrapper(snippets) {
+  const namn = (Array.isArray(snippets) ? snippets : [snippets]).map((s) => String(s).trim()).filter(Boolean);
+  if (namn.length === 0) return {};
+  const variabel = (s) => `opf_${s.replace(/[^a-z0-9]+/gi, '_')}`;
+  const fangst = namn.map((s) => `{%- capture ${variabel(s)} -%}{% render '${s}' %}{%- endcapture -%}`).join('\n');
+  const ihop = namn.map((s) => `{%- assign opf_innehall = opf_innehall | append: ${variabel(s)} -%}`).join('\n');
+  const wrapper = `{%- comment -%}
+  Varukorgslådan + fabrikens egna block (OPS Factory): ${namn.join(', ')}.
+  Se byggKorgWrapper i factory/tema.mjs för hur inknäppningen fungerar.
+{%- endcomment -%}
+${fangst}
+{%- assign opf_innehall = '' -%}
+${ihop}
+{%- capture opf_lada -%}{% render 'cart-drawer' %}{%- endcapture -%}
+{%- assign opf_marke = '<!-- Start blocks -->' -%}
+{%- if opf_innehall != blank -%}
+  {%- assign opf_nytt = opf_innehall | append: opf_marke -%}
+  {{ opf_lada | replace_first: opf_marke, opf_nytt }}
+{%- else -%}
+  {{ opf_lada }}
+{%- endif -%}
+`;
+  return { 'sections/cart-drawer.liquid': wrapper };
+}
+
+/**
+ * Trygghetsblocket i varukorgslådan — betyg + trygghetsrad rakt ovanför
+ * kassaknappen. Ytan direkt före kassan, och den enda vi äger: Shopifys
+ * kassa går inte att anpassa per marknad under planen Advanced
+ * (mätt på CaraShell 2026-09-21, se factory/PROCESS.md).
+ *
+ * Tre saker som inte får byggas om av misstag:
+ *
+ * 1. BETYGET ÄR MÄTT, ALDRIG SKRIVET. Det läses ur produktens egna
+ *    metafält `reviews.rating` + `reviews.rating_count`, som Judge.me
+ *    håller uppdaterade (mätt 2026-09-21: takskyddet 5,0/16,
+ *    termoskyddet 5,0/20). En inskriven siffra hade blivit fel dagen
+ *    efter nästa recension — och en påhittad siffra bryter husregeln.
+ *    Saknar produkten betyg visas BARA trygghetsraden, aldrig noll stjärnor.
+ *
+ * 2. A/B:T GÅR VIA CSS, INTE VIA `hidden`. ms-ab.js stämplar
+ *    `data-ms-ab-<test>` på <html>, och DEN överlever att lådan ritas om
+ *    med innerHTML vid varje varukorgsändring. Attributet `hidden` som
+ *    ms-ab-attrs sätter gör inte det: lådan kommer tillbaka från servern
+ *    i sitt ursprungsskick, och en besökare i variant B hade fått se
+ *    blocket ändå så fort hen ändrade antal.
+ *    Utan test visas blocket alltid — då finns inget attribut att vänta på.
+ *
+ * 3. SPRÅKET LOCALE-BRANCHAS. Snippets kan inte översättas via
+ *    translationsRegister, så varje text byts i Liquid — samma väg som
+ *    produktsidans trygghetsrad, och med samma källa (`liquid.trust.<i>`
+ *    i oversattning-<locale>.json). Landet i texten byts dessutom per
+ *    besökare av ms-landtext ([[flagga]]/[[land]]).
+ */
+export function byggKorgTrygghet({ butik, oversattningar = {}, test = null } = {}) {
+  const sv = trustPunkter(butik);
+  const punkter = (o) => sv.map((x, i) => (o?.[`liquid.trust.${i}`] ? `${x.split(':')[0]}:${o[`liquid.trust.${i}`]}` : x));
+  const rad = (p) => `{% render 'ms-trust-row', items: '${p.join('|')}' %}`;
+  const trustGrenar = Object.fromEntries(Object.entries(oversattningar).map(([l, o]) => [l, rad(punkter(o))]));
+  const trust = localeBranch(rad(sv), trustGrenar);
+
+  // Decimaltecknet: engelskan skriver 4.8, alla våra andra språk 4,8.
+  // Alltid EN decimal och " / 5" — "5,0 / 5" läses som ett betyg, ett bart
+  // "5" som en räkning (Axels invändning 2026-09-21: "typ 4,76 / 5 eller nått
+  // trovärdigt"). Siffran är fortfarande mätt: alla 36 recensioner var femmor
+  // den dagen, och första fyran syns här automatiskt som 4,9 / 5.
+  const decimal = localeBranch(`{{ opf_betyg | round: 1 | replace: '.', ',' }} / 5`, { en: `{{ opf_betyg | round: 1 }} / 5` });
+
+  const t = text(test);
+  const gate = t
+    ? `\n    /* A/B: blocket syns bara för variant A. Utan attribut (JS av, testet\n       avstängt i inställningarna) ser besökaren dagens vy — alltså kontrollen. */\n    .opf-korgtrygg { display: none; }\n    html[data-ms-ab-${t}="a"] .opf-korgtrygg { display: grid; }`
+    : '';
+
+  const snippet = `{%- comment -%}
+  opf-korg-trygghet — betyg + trygghetsrad i varukorgslådan (OPS Factory).
+  Knäpps in av sections/cart-drawer.liquid rakt ovanför delsumman och
+  kassaknappen. Byggd av byggKorgTrygghet i factory/tema.mjs — ändra där,
+  inte här; filen skrivs över vid varje bygge.
+{%- endcomment -%}
+{%- if cart.item_count > 0 -%}
+  {%- assign opf_betyg = '' -%}
+  {%- assign opf_antal = 0 -%}
+  {%- for item in cart.items -%}
+    {%- if opf_betyg == blank and item.product.metafields.reviews.rating_count != blank and item.product.metafields.reviews.rating != blank -%}
+      {%- assign opf_betyg = item.product.metafields.reviews.rating.value.rating -%}
+      {%- assign opf_antal = item.product.metafields.reviews.rating_count.value | plus: 0 -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- capture opf_ord -%}${ordPerSprak(TEMAORD.recensioner)}{%- endcapture -%}
+  <div class="ms-scope opf-korgtrygg">
+    {%- if opf_antal > 0 -%}
+      {%- assign opf_helt = opf_betyg | round -%}
+      <div class="opf-korgtrygg__betyg">
+        <span class="opf-korgtrygg__stjarnor" aria-hidden="true">{%- for i in (1..5) -%}{%- if i <= opf_helt -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}</span>
+        <span class="opf-korgtrygg__tal">${decimal}</span>
+        <span class="opf-korgtrygg__antal">{{ opf_antal }} {{ opf_ord }}</span>
+      </div>
+    {%- endif -%}
+    ${trust}
+  </div>
+  <style>
+    .opf-korgtrygg { display: grid; gap: 8px; margin: 0 0 12px; padding: 12px;
+      border: 1px solid var(--ms-line, #ddd); border-radius: var(--ms-radius, 10px);
+      background: var(--ms-surface-2, #f7f7f7); }
+    .opf-korgtrygg__betyg { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .opf-korgtrygg__stjarnor { color: #f5a623; letter-spacing: 1px; font-size: 1em; line-height: 1; }
+    .opf-korgtrygg__tal { font-weight: 700; font-size: .9em; }
+    .opf-korgtrygg__antal { font-size: .8em; color: var(--ms-ink-soft, #555); }
+    /* Trygghetsraden är byggd för produktsidans bredd: tre centrerade pelare
+       i en egen ruta med ram och bakgrund. I lådan blir det en ruta i rutan,
+       och danskans "14 dages fortrydelsesret" ryms inte i en tredjedel.
+       Här staplas den i stället, vänsterställd och utan egen ram.
+       ⚠️ Kolumnerna sätts av .ms-trust som repeat(var(--ms-tr-antal, 3), 1fr),
+       och snippeten skriver variabeln som INLINE style på elementet — en
+       variabel på föräldern biter alltså inte. Därför sätts
+       grid-template-columns direkt, med högre specificitet. */
+    .opf-korgtrygg .ms-trust { grid-template-columns: 1fr; gap: 6px; margin: 0;
+      padding: 0; border: 0; background: none; }
+    .opf-korgtrygg .ms-trust__item { flex-direction: row; align-items: center;
+      text-align: left; gap: 8px; }
+    .opf-korgtrygg .ms-trust__item .ms-i { width: 1.2em; height: 1.2em; flex: none; }${gate}
+  </style>
+{%- endif -%}
+`;
+  return { 'snippets/opf-korg-trygghet.liquid': snippet };
+}
+
+/** Testnamnet för trygghetsblocket i varukorgen (samma namn i CSS och i inställningen). */
+export const KORGTRYGGHET_TEST = 'korgtrygg';
+
+/**
+ * Slår ihop A/B-testrader utan att tappa någon: inställningen `ms_ab_tests`
+ * är en textarea med ETT test per rad, och paketvalsstestet ligger redan
+ * där. Skriver man rakt över den försvinner paketväljarens varianter tyst.
+ */
+export function slaIhopTester(befintlig, ...nya) {
+  const rader = [];
+  const lagg = (v) => {
+    for (const r of String(v ?? '').split(/\r?\n/).map((x) => x.trim()).filter(Boolean)) {
+      const id = r.replace(/^#/, '').split(':')[0].trim().toLowerCase();
+      if (!rader.some((x) => x.replace(/^#/, '').split(':')[0].trim().toLowerCase() === id)) rader.push(r);
+    }
+  };
+  lagg(befintlig);
+  for (const n of nya) lagg(n);
+  return rader.join('\n');
 }
 
 // ---------------------------------------------------------------------------
@@ -1171,7 +1316,7 @@ export function byggHeaderGroup(butik, alternativ = {}, ...rest) {
 // Tar sträng eller objekt; ger tillbaka samma sort.
 export const JUDGEME_EMBED = 'shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8';
 
-export function rensaSettings(settingsData, { butik = null, produkt = null, logga = null, favicon = null, abTest = undefined } = {}) {
+export function rensaSettings(settingsData, { butik = null, produkt = null, logga = null, favicon = null, abTest = undefined, extraTester = [] } = {}) {
   const somStrang = typeof settingsData === 'string';
   const j = somStrang ? lasTemaJson(settingsData) : { ...(settingsData ?? {}) };
   const c = { ...(j.current ?? {}) };
@@ -1197,8 +1342,15 @@ export function rensaSettings(settingsData, { butik = null, produkt = null, logg
   if (favicon) c.favicon = favicon;
 
   const test = abTest !== undefined ? abTest : produkt?.offer?.paket?.test;
+  // `extraTester` läggs OVANPÅ det beräknade värdet i stället för att ersätta
+  // det: inställningen är en textarea med ett test per rad, och paketvalets
+  // test ligger redan där. Skriver man rakt över den försvinner
+  // paketväljarens varianter tyst (ms-paket renderar noll nivåer).
   if (test !== undefined && test !== null) {
-    c.ms_ab_tests = String(text(test) ?? '');
+    c.ms_ab_tests = slaIhopTester(String(text(test) ?? ''), ...lista(extraTester));
+    c.ms_ab_cookie_days = Number(c.ms_ab_cookie_days) > 0 ? c.ms_ab_cookie_days : 30;
+  } else if (lista(extraTester).length > 0) {
+    c.ms_ab_tests = slaIhopTester(c.ms_ab_tests, ...lista(extraTester));
     c.ms_ab_cookie_days = Number(c.ms_ab_cookie_days) > 0 ? c.ms_ab_cookie_days : 30;
   }
 
@@ -1238,23 +1390,24 @@ export function settingsSchemaMedAb(schemaText) {
 // i efterhand får sin en-gren utan att någon rör snippeten för hand.
 // null = inget att ändra (redan rätt, eller orden finns inte i snippeten).
 export const MS_PAKET_ORD = [
-  { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi' },
-  { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}' },
-  { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', attribut: 'aria-label' },
+  { sv: 'Gratis på köpet', nb: 'Gratis med på kjøpet', en: 'Free with your order', fi: 'Kaupan päälle ilmaiseksi', da: 'Gratis med i købet' },
+  { sv: 'värde {{ gvarde | money }}', nb: 'verdi {{ gvarde | money }}', en: 'worth {{ gvarde | money }}', fi: 'arvo {{ gvarde | money }}', da: 'værdi {{ gvarde | money }}' },
+  { sv: 'Välj paket', nb: 'Velg pakke', en: 'Choose a bundle', fi: 'Valitse paketti', da: 'Vælg pakke', attribut: 'aria-label' },
   // De tre raderna JS:et skriver ut. De satt hårdkodade i ms-paket.js till
   // 2026-09-18 och visades därför på SVENSKA för varje kund i världen —
   // Axel såg "Lägger i…" på köpknappen på den finska sidan. En .js-fil kan
   // inte bära Liquid, så texten måste komma in som attribut från snippeten.
-  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', attribut: 'data-laddar' },
-  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', attribut: 'data-spar' },
+  { sv: 'Lägger i…', nb: 'Legger i…', en: 'Adding…', fi: 'Lisätään…', da: 'Lægger i…', attribut: 'data-laddar' },
+  { sv: 'Du sparar', nb: 'Du sparer', en: 'You save', fi: 'Säästät', da: 'Du sparer', attribut: 'data-spar' },
   // Raden blir "<pris> per <enhet>" — "126,90 € per suoja", "$199.00 per
   // cover". "per" fungerar i alla fyra språken; det är ett prisord, inte copy.
-  { sv: 'per', nb: 'per', en: 'per', fi: 'per', attribut: 'data-per' },
+  { sv: 'per', nb: 'per', en: 'per', fi: 'per', da: 'pr.', attribut: 'data-per' },
   {
     sv: 'Det gick inte att lägga i varukorgen. Försök igen.',
     nb: 'Varen kunne ikke legges i handlekurven. Prøv igjen.',
     en: 'We could not add this to your cart. Please try again.',
     fi: 'Tuotetta ei voitu lisätä ostoskoriin. Yritä uudelleen.',
+    da: 'Varen kunne ikke lægges i kurven. Prøv igen.',
     attribut: 'data-fel',
   },
 ];

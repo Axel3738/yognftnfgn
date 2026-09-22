@@ -192,13 +192,21 @@ export function taBortCitat(text) {
     /^(on|den|le|am|på|pe)\s.{3,160}\b(wrote|skrev|schrieb|kirjoitti)\b.*:\s*$/i,
     /^(from|från|fra|von|lähettäjä):\s.+/i,
     /^_{5,}\s*$/,
+    /^-{10,}\s*$/,                                    // Outlook för iOS/Android skiljer citatet med en streckrad
     /^sent from my (iphone|ipad|samsung|android)/i,
     /^skickat från min (iphone|ipad|samsung|android)/i,
+    /^(skickat|sendt|sent|lähetetty) (från|fra|from|via) (outlook|gmail|yahoo|blue ?mail|samsung|iphone|ipad|android|min |my |mitt )/i,
+    /^((få|get|hent|hae) )?blue ?mail (för|for|til) (mobil|mobile|android|ios)/i,
   ];
+  // BlueMail/Apple Mail bryter "Den 25 augusti 2026, kl 15:58, Namn <adress> skrev:" över två rader —
+  // raden som slutar med "skrev:" avslutar citatet, och raden före med datumet tas också bort.
+  const skrevSlut = /(skrev|wrote|schrieb|kirjoitti|escribió|a écrit)\s*:\s*$/i;
+  const datumRad = /^(on|den|le|am|på|pe)\s|\d{1,2}[:.]\d{2}|\d{4}/i;
   for (const rad of rader) {
     const r = rad.trim();
     if (r.startsWith('>')) break;
     if (start.some((re) => re.test(r))) break;
+    if (skrevSlut.test(r)) { if (ut.length && datumRad.test(ut[ut.length - 1].trim())) ut.pop(); break; }
     ut.push(rad);
   }
   return ut.join('\n').replace(/\n{3,}/g, '\n\n').trim();
@@ -221,14 +229,31 @@ export function tolkaDatum(varde) {
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
+/** Är plain-delen ett tomt skal — fler än 20 rader varav över 60 % blanka? Ren. */
+export function plainArSkal(plain) {
+  const rader = String(plain ?? '').split('\n');
+  if (rader.length <= 20) return false;
+  const blanka = rader.filter((r) => !r.trim()).length;
+  return blanka / rader.length > 0.6;
+}
+
 /** Hela mejlet → ett platt objekt. Det är detta klassificeringen läser. */
 export function tolkaMejl(ra, { uid = null, mapp = null } = {}) {
   const { rubrikblock, kropp } = delaRubrikOchKropp(ra);
   const rubriker = tolkaRubriker(rubrikblock);
   const delar = samlaTextdelar(rubriker, kropp);
-  const helText = (delar.plain.join('\n\n').trim() || delar.html.join('\n\n').trim());
+  const plain = delar.plain.join('\n\n').trim();
+  const html = delar.html.join('\n\n').trim();
+  // Plain-delen först — utom när den är ett skal av tomrader (BlueMail
+  // skriver HTML-strukturen som blankrader och tappar citathuvudet; mätt
+  // 2026-09-21: 5 003 tecken varav 60 rader tomma). Då bär HTML-delen texten.
+  const helText = plain && !(html && plainArSkal(plain)) ? plain : (html || plain);
   const fran = tolkaAdress(forsta(rubriker.get('from')));
   const till = String(forsta(rubriker.get('to')) ?? '').split(',').map(tolkaAdress).filter((a) => a.adress);
+  // Reply-To: dit ett svar går (Roundcube väljer den före From). Shopifys
+  // kontaktformulär skickar från mailer@shopify.com med kunden i Reply-To.
+  const svarTillRa = forsta(rubriker.get('reply-to'));
+  const svarTill = svarTillRa ? tolkaAdress(svarTillRa) : null;
   const amne = avkodaRubrik(forsta(rubriker.get('subject')));
   const references = [...new Set(`${forsta(rubriker.get('references')) ?? ''} ${forsta(rubriker.get('in-reply-to')) ?? ''}`
     .match(/<[^>]+>/g) ?? [])];
@@ -239,6 +264,7 @@ export function tolkaMejl(ra, { uid = null, mapp = null } = {}) {
     references,
     fran,
     till,
+    svarTill: svarTill?.adress ? svarTill : null,
     amne,
     amneNyckel: normaliseraAmne(amne),
     datum: tolkaDatum(rubriker.get('date')),

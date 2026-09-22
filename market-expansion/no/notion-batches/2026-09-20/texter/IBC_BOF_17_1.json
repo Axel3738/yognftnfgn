@@ -1,0 +1,90 @@
+[
+ {
+  "box": [
+   185,
+   70,
+   900,
+   184
+  ],
+  "rader": 1,
+  "storlek": 60,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "Lyset holdes ute."
+ },
+ {
+  "box": [
+   150,
+   186,
+   935,
+   274
+  ],
+  "rader": 1,
+  "storlek": 60,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "Vannet holdes klart."
+ },
+ {
+  "box": [
+   33,
+   303,
+   1047,
+   397
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "210D Oxford-stoff blokkerer lyset."
+ },
+ {
+  "box": [
+   33,
+   1067,
+   1047,
+   1151
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Stopper alger. Holder UV ute."
+ },
+ {
+  "box": [
+   138,
+   1210,
+   943,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Sett på trekket. Vannet forblir klart."
+ }
+]

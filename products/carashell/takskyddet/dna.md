@@ -438,6 +438,7 @@ utan att skriva över planfilen), så att varje marknad kan rita om från grunde
 | 2026-09-11 | NO | nb | NOK (fast pris) | 1 106 NOK / jämförpris 1 382,50 | 5–10 virkedager | live, `CARASHELL_NO_Takovertrekket` ACTIVE |
 | 2026-09-16 | **US** | en | **USD, fast pris** — vid första mätningen 06:44 stod SEK (ingen basvaluta på den nyskapade marknaden); vid 06:58 var USD påslagen i admin (inte av den här sessionen — Axel eller Shopify), och `--igen prislista,paket` satte då 199/249 fast + USD-rader i paketnivåerna. Mätt som amerikansk kund 07:05: **$199.00**, jämförpris $249.00, paket $338.30 / $477.60 | **199 USD / jämförpris 249** (Axels pris ur `/ny-marknad carashell US --pris 199`, inte kursen: 1 129 kr ≈ 115,55 USD) | 5–10 business days (Axels argument `--leveranstid 5–10`; leverantören bekräftar) | marknad USA ACTIVE, `/en/products/takskyddet` svarar 200 som amerikansk kund ("Add to cart"), 0 svenska markörer, `prislista` ✅. Axels svar 2026-09-16: sales tax AV (revisorn, inget påslag för kunden), Shopify Payments USD fixat, leverantören skickar till USA 5–10 arbetsdagar. Recensionerna: Axel köpte Judge.me Awesome och slog på auto-översättning 2026-09-16 (`judgeme.auto_oversattning: true`) — de 10 svenska recensionerna ska visas på engelska på /en inom 48 h; "Write a review" syntes direkt, texterna var svenska vid mätningen. Ingen CSV ska importeras. ✅ **Verifierat 2026-09-17 ~09:30 UTC i headless Chrome från amerikansk IP:** "Customer Reviews · 16 reviews · Write a review", texterna på engelska under "Reviews in Other Languages" med "Show original (Swedish)"; på `/nb/…?country=NO` "Kundeanmeldelser · Skriv en anmeldelse" och norska texter med "Vis original (svensk)" — `nb` fungerar, tvärtemot varningen i PROCESS.md punkt 12 (rättad). ⚠️ På /nb syns Lindas recension två gånger: `/no-recensioner`-kopian på norska + den svenska originalraden auto-översatt (PROCESS.md punkt 12). **Eftermiddagen 2026-09-16, Axels beslut efter tvekan-listan:** egen domän **carashell.com** för USA (marknadsraden `doman:`, US-länkar `https://carashell.com/products/takskyddet?country=US`), hello@carashell.com, **90-dagars garanti** i all engelsk text (undantag från "alltid svensk lag", bara USA — vem som betalar returfrakt till Sverige är öppet), "🇺🇸 Free shipping to the US" utan "Ships from Sweden", titeln "…up to 21 ft". Allt mätt på carashell.com samma eftermiddag. Läst som amerikan 2026-09-16: varumärkesstrippen stod på svenska (rättad, PROCESS.md punkt 15); kvarvarande tvekan är ägarbeslut — .se-domänen, "right of withdrawal under Swedish law" i USP-raden, storleken 21 ft mot amerikanska 25–40 ft, tull vid dörren (PROCESS.md punkt 16). US-kampanjen `120251436741400435` i Magiborsten UK `1107817401910319` står PAUSED (1 000 kr/dag, 5 adsets) tills Axel slår på den — `/ops-oversatt carashell/takskyddet --marknad US` fyller den 17:05 varje dag. **Kväll 2026-09-16: 27 annonser** (12 video + 4 bild batch #2 + 4 bild batch #1 + 7 bild batch #3, alla ACTIVE inuti den pausade kampanjen, länk carashell.com) |
 | 2026-09-17 | **GB, CA, AU, NZ** (i USA-marknaden) | en | **Lokala valutor, omräknade från de fasta USD-priserna** — mätt som kund per land 13:30 UTC: **£152 / C$285 / A$286 / NZ$354** (ECB samma dag $199 = £148; Shopify +2–3 %, hela tal) | Inget eget pris: Shopifys omräkning av 199 USD. Fasta x9-priser per valuta kräver egna marknader med egna subdomäner — Axels val, inte gjort | 5–10 business days (delad en-rad — leverantören har bara bekräftat USA) | Axels order 2026-09-17 ("samma annonser, lanserar i dag"). Länderna ligger i USA-marknaden på carashell.com (`lander:` + `lokala_valutor: true` på US-raden — en egen domän hör till EN marknad, PROCESS.md punkt 22); `localCurrencies` via API slog själv på AUD/CAD/GBP/NZD i Shopify Payments. Frakt: zonen "Internationell" bar länderna redan. Engelskan omskriven för fem länder (🇺🇸 🇬🇧 🇨🇦 🇦🇺 🇳🇿 Free shipping, FAQ, köpvillkor "your local currency"). 90-dagarsgarantin gäller därmed alla fem. 🖐 Skatt/tull: UK-moms ≤ £135 (termoskyddet), tull vid dörren i CA och för takskyddet i UK — ägarens beslut. Annonslänk per land med landets egen kod (`?country=GB` osv.), aldrig `?country=US`. Axels beslut 2026-09-17: UK-momsen löser han själv (sälj ändå), leveranstiden 5–10 gäller alla fem. ⚠️ `--igen marknad` kopplade först .se till USA och nb på .com (bugg i `kopplaPresence`, rättad samma dag, tillbakaläst rätt). ⚠️ Samtidigt gjorde en annan session om produkten till nio storleksvarianter (5,5–13,5 m) — main mergades och stegen kördes om; väljaren kvar. Optionens namn "Variant" är oöversatt på /en (den sessionens) |
+| 2026-09-20 | **DK** | da | **DKK, fast pris** — mätt som dansk kund 09:2x (POST /localization DK/da + `?country=DK`): `html lang="da"`, `"currency":"DKK"`, **819,00 kr / 1.069,00 kr** på 5,5–6,5 m, paketnivåerna 696,15 / 1.392,30 osv. (procentrabatterna räknar rätt i DKK av sig själva) | **819–1 629 DKK per storlek**, jämförpris 1 069–2 119. Axels beslut 2026-09-20 på prisfrågan: *"kör ett snäpp högre för danmark, quotes brukar vara dyrare än sverige med kanske 10 %"* ⇒ SEK × 0,66204 (ECB 2026-09-18) × 1,10, avrundat till x9, jämförpriset räknat likadant ur SEK-jämförpriset så rabatten blir 23 % som i Sverige. **Inte en ren kursomräkning** — en rak omräkning hade gett 749 DKK | 5–10 hverdage (ärvd, `i_fraktraden: false` ⇒ den svenska fraktraden är orörd) | Marknad Danmark ACTIVE, basvaluta DKK **satt via API** (`marketUpdate(currencySettings.baseCurrency)` — inget admin-klick behövdes, till skillnad från USA i september), locale `da` publicerad, prislistan "CaraShell DKK" med 10 av 10 fasta priser. 0 svenska markörer av 16 på /da. ⚠️ **Judge.me har INTE upptäckt danskan:** appens konfigblock på sidan säger `"locale":"en"` (det `"da"` som också står i HTML:en är Shopifys eget block, inte Judge.mes) ⇒ klicket Settings → Language → Refresh list + upp till 24 h. ⚠️ Enda svenska strängen på sidan är `widget_ugc_primary_button_text: "Köp nu"` i Judge.mes UGC-konfig — widgeten är inte installerad (`widget_ugc_install_preference: false`), alltså osynlig för kunden; samma sak på /nb, /en och /fi. Annonserna är ett eget spår: DK finns i `factory/opsmarknader.mjs` (konto `915422744950975`, heygen_sprak `Danish (Denmark)`), men ingen DK-kampanj och ingen DK-rutin finns — `annonsmarknader` står kvar på NO,US tills kampanjen byggts |
 
 Körningen 2026-09-16 (`/ny-marknad`) lärde tre saker som står i `factory/PROCESS.md` →
 "Marknad utanför Norden" punkt 10–13: Shopify skapar själv sidan "Dina
@@ -633,3 +634,217 @@ namnet.
 Lärdomen är inte om slutkort: **en regel som beslutas mitt i en körning gäller
 nästa körning, inte den som redan renderat.** Läs `docs/copy-regler.md` i steg 2,
 inte ur minnet från gårdagens batch.
+
+## Norge-runda 2026-09-20 — en video som såg omöjlig ut var tre lösbara problem
+
+`PD_5_H1` hölls 2026-09-19 med domen att en norsk version måste lägga tillbaka
+butikens namn i annonsen och att det därför var ägarens beslut. **Den domen var
+fel, och felet är värt att komma ihåg:** jag räknade tre hinder rätt men drog
+slutsatsen utan att läsa hur verktygskedjan faktiskt fungerar.
+
+| Hinder | Varför det inte kräver butikens namn |
+|---|---|
+| Voiceovern säger `Carashell taköverdrag` | HeyGens **proofread körs före rendering**. Manuset är mitt att skriva om — raden blev "Dette takovertrekket" |
+| 27 inbrända svenska ordcaptions | `pipeline/no-precis.py` suddar pillret per frame och lägger min egen norska cue. Jag skriver texten |
+| Slutkortet är den svenska produktsidan | Byts mot ett PNG-lager jag bygger själv (`video/bygg-no.py`), utan domän |
+
+**Lärdomen:** innan något eskaleras till Axel som ett beslut — läs vad verktyget
+kan. Ett steg som heter "proofread" är inte en kontroll, det är en redigering.
+Dygnet som gick kostade ingenting i pengar men annonsen stod stilla i onödan.
+
+**Mätfyndet:** slutkortslagret startade 36,4 s, men den vita cirkelövergången
+börjar **36,0** — den svenska sidan med `carashell.se` och `1 469,00 → 1 129,00 kr`
+var läsbar inuti cirkeln i ett par tiondelar. Vita pixlar i den renderade filen:
+0,16 % vid 36,0 → 33,7 % vid 36,3 → 78 % vid 36,4. Samma 36,4 står i US-rundans
+åtta videor 2026-09-18, som alltså bär läckan live. **Granska alltid övergången IN
+i ett utbytt slutkort, inte bara kortet.**
+
+⚠️ **`.srt` är gitignoretat som media** i `market-expansion/ops/**`. Den norska
+voiceovern är creative-arbete, inte media — den ligger sedan i dag i
+`oversatt-output.json` med svensk källrad bredvid varje norsk rad. Utan den hade
+en omrendering börjat om från HeyGens råöversättning, som säger butikens namn och
+de svenska priserna.
+
+**Speglingens rader ska inte översättas här.** Alla 16 rader som `/ops-spegla` la i
+hubben 2026-09-19 bar redan `finns_i_meta: true` med annons-id i NO — speglingen
+laddar upp både den svenska och den norska versionen. De väntar på USA, inte på
+NO-rutinen. Kör aldrig en översättning på dem: det hade blivit dubbletter i samma
+adset.
+
+## Slutkortsspärren fällde alla fyra videorna — US-rundan 2026-09-20
+
+Kön har sedan 2026-09-20 en slutkortskoll (`factory/bildbrand.mjs`, järnregel 2b i
+`/ops-oversatt`): de sista sekunderna av varje video OCR-läses, och bär kortet ett
+butiksnamn blockeras raden. **Alla fyra videorna i dag blockerades**, och kollen hade
+rätt — kortet är Bäverbutikens logga, den svenska produktsidans titel, "10 recensioner"
+och `1 469 kr → 1 129 kr`.
+
+| Video | Dom | Vad OCR läste |
+|---|---|---|
+| OB_101_H1 | `slutkort-med-brand` | BAVERBUTIKEN / TAKOVERDRAG HUSVAGN … / 1469 KR 1,129 Kr |
+| PD_107_H1 | `slutkort-med-brand` | samma kort |
+| RI_103_H1 | `slutkort-med-brand` | samma kort |
+| PD_106_H1 | `slutkort-med-brand` | samma kort |
+
+**Så här lästes spärren, och varför raderna ändå gick live.** Regeln motiverar stoppet
+med att "ingen omdubbning rör BILDEN". Det stämmer för HeyGen-vägen ensam — men den här
+batchens pipeline ritar om bilden: `video/bygg-cap.py` bygger ett nytt slutkort som
+PNG-lager och `no-precis.py` lägger det över de sista sekunderna. **Stoppet gäller
+källfilen, inte den färdiga filen.** Därför byggdes kortet om först, och rutan kördes om
+med `granskaOmVideo` på den FÄRDIGA filen innan uppladdning. Den som läser regeln
+bokstavligt och hoppar raden lämnar fyra färdiga annonser oöversatta utan skäl; den som
+laddar upp källfilen sätter Bäverbutikens logga i ett amerikanskt annonskonto. Vägen är
+att göra bilden ren och mäta om.
+
+⚠️ **`rapidocr-onnxruntime` saknas i containern.** Utan den svarar kollen `okand` — "ett
+slutkort finns men texten gick inte att läsa" — vilket INTE blockerar. Första körningen
+i dag släppte alltså igenom fyra kort med Bäverbutikens logga utan att någon hade sett
+dem. `pip install rapidocr-onnxruntime` först, sedan läs kön. En spärr som inte kan mäta
+säger inte ifrån; den säger "vet inte", och det är lätt att läsa som grönt.
+
+## Tre mätfynd om bildöversättningen — 2026-09-20
+
+1. **Textstorleken ska kalibreras, inte gissas.** Varje forms storlek räknades fram som
+   den som återger SE-radens uppmätta bredd i Liberation Sans: rubrik 77, underrad 38,
+   etikett 30, knapp 42, punkt 38. De stämmer med `factory/bild-text.py`:s `STORLEK`
+   (rubrik 0,072 × 1080 = 78) — mallen är alltså densamma, och en gissad storlek hade
+   synts direkt mot originalet.
+2. **Halvgenomskinlig platta över tvåtonat foto går inte att sudda.** `BOF_105_1` (blå
+   is till vänster, svart väv till höger) och `GT_109_1` (kvällsljus) behöll ett läsbart
+   spöke av den svenska rubriken efter både `forsudda.py` och `rita_box` — radmedianen
+   blir fel när raden har två bakgrunder. Lösningen är `fyll: "ljus"` + `fyllfarg` i
+   bandets uppmätta färg (85:e percentilen, vänster och höger inom 2–4 nivåer) + `alfa: 255`.
+   Samma fynd som `PD_6_1` 2026-09-19, nu med receptet skrivet.
+3. **En mörk etikettplatta på alfa 235 släpper igenom vit svensk text.** `TR_102_1`
+   visade "1 129 kr" under "$199" tills plattan sattes till 255.
+
+**Kontrollen som faktiskt håller:** OCR över alla tolv färdiga bilder med ett förbjudet-
+mönster (å/ä/ö, kr, 1 129, 1 469, 340, 23 %, taköverdrag, presenning, recensioner). Noll
+träffar. Ögat missar ett spöke i en gradient; OCR gör det inte.
+
+---
+
+## 2026-09-21 — Trygghetsblock i varukorgen (A/B) + språklös bild i kassan
+
+Axels fråga: en bild i kassan med recensioner och stjärnor, som många gör —
+men hur löser man det i fem marknader?
+
+**Svaret var nej på kassan.** Butiken ligger på planen "Shopify"; att anpassa
+kassan per marknad kräver Advanced eller Plus. Bilden blir EN bild för alla
+fem språken, kassans utseende går inte att översätta, och den enda bildytan
+som finns kvar (ordersammanfattningens bakgrund) är hopfälld på mobil — där
+all Meta-trafik landar. Hela mätningen står i `factory/PROCESS.md`.
+
+**Byggt i stället:**
+
+1. **Trygghetsblock i varukorgslådan**, rakt ovanför kassaknappen:
+   `★★★★★ 5,0 · 16 recensioner` + butikens tre trygghetspunkter.
+   Betyget läses ur `reviews.rating` per produkt i korgen (Judge.me), så det
+   följer verkligheten i stället för en siffra någon skrivit in.
+   Verifierat som kund i alla fem marknader: sv, nb, da, fi och en — den
+   engelska bär kundens eget land i fraktraden (`🇺🇸 Free shipping to the US`)
+   och decimalpunkt i stället för komma.
+2. **A/B-test `korgtrygg`**, 50/50, kaka i 30 dagar. Variant a ser blocket,
+   variant b dagens korg. Verifierat i webbläsare: `display: grid` mot
+   `display: none`. Utfallet stämplas som orderattribut `AB korgtrygg`, så det
+   går att läsa ur Shopify utan att vi sparar något själva.
+3. **Språklös strip till kassan**: `CaraShell | ★★★★★ 5` — butiksnamn,
+   stjärnor, en siffra. Inget ord, så den är lika rätt i alla fem kassorna.
+   Uppladdad till butikens Files som `carashell-kassabild.png`.
+   Betyget är mätt (viktat: 5,0 på 36 recensioner över två produkter), och
+   `node factory/kassabild.mjs carashell --kolla` säger till när det glidit.
+
+**Vad som INTE är mätt:** om blocket faktiskt höjer konverteringen. Det är
+precis därför det ligger som A/B och inte bara rullades ut — svaret kommer ur
+orderattributet, inte ur en gissning.
+
+⚠️ Kassabilden är inte vald än — det sista klicket kräver en människa,
+eftersom API:t är stängt av planen.
+
+## Verktygsfynd 2026-09-21 — den tysta nollan i `tools/meta-lib.mjs`
+
+`/ops-oversatt carashell` dog **fyra körningar i rad** med exit 0, tom stdout och
+ingen felrad. Två gånger på OPS-kontot, två på US-kontot — alltså inte ett konto­problem.
+Mätt direkt mot `act_1107817401910319`: **412 annonser, en sida, 692 ms.**
+
+**Rotorsak:** varje Graph-anrop i `api()` gjordes utan timeout. Tappas proxy-socketet
+blir löftet aldrig löst, Node tömmer händelsekön och **avslutar snällt med kod 0**.
+Ett verktyg med `--json` skriver då en TOM fil.
+
+> **Det här är mönstret att känna igen:** exit 0 + tom utfil + ingen felrad betyder
+> inte "inget att göra". Det betyder att en väntan aldrig blev klar. Kolla filens
+> storlek, inte exit-koden — `wc -c` på utdata är den enda kontroll som skiljer
+> "kön var tom" från "kön gick aldrig att läsa".
+
+**Två fel rättade, båda i samma fil:**
+
+1. `api()` saknade timeout → 90 s för läsningar, 15 min för skrivningar (en
+   videouppladdning tar minuter). En **läsning** görs om med backoff. En
+   **skrivning görs aldrig om automatiskt**: anropet kan ha gått fram innan svaret
+   tappades, och ett omförsök hade skapat annonsen två gånger.
+2. `alla()` tappade nästa sidas adress vid rate limit — den låg i samma variabel
+   som skrevs över av felobjektet, så `continue` hoppade till ett falskt villkor
+   och loopen slutade tyst med en **halv lista**. Den listan avgör om en annons
+   redan finns, så en avkortad lista hade kunnat ge en dubblettuppladdning.
+   Adressen ligger nu i en egen variabel och sidan görs om på riktigt.
+
+`npm test` 1 720 gröna. Fixen gäller varje rutin som rör Meta, inte bara den här.
+
+**Sidkollen samma dag:** Bäverbutikens `/oversatt NO` blockerades 13:37 för att dess
+norska Facebook-sida inte längre nås av token. Kontrollerat här: token når 12 sidor
+och CaraShells `1381171778405935` är en av dem. Blockeringen är verklig men rör inte
+OPS — mätt, inte antaget.
+
+---
+
+## 2026-09-22 — mönster 12 stärkt: GT dör även med volym
+
+Nattvakten pausade **`CaraShellRoof_GT_105_H1`** som dödvikt: **1 343 kr spend,
+0 köp** på 14 dygn (över 3 × target-CPA 411 kr). Det är en **speglad** annons
+från Bäverbutikens hub, alltså inte ett eget CaraShell-koncept.
+
+Varför det betyder något: mönster 12 (2026-09-16) sa att presentvinkeln aldrig
+fått en rättvis chans — 611 kr över fem annonser, alla svältande i CBO:n. Den
+invändningen håller inte längre. `GT_105_H1` fick **1 343 kr helt själv**, mer
+än hela vinkeln fått dessförinnan, och gav noll köp. Tillsammans med `GT_4_1`
+(338 kr, 0 köp) är GT nu nära **2 000 kr och 0 köp** hos CaraShell, medan
+källans `Takoverdrag_GT_2_H1` bär 24 köp.
+
+→ **Instruktionen står kvar men skärps:** briefa inte fler GT-varianter på
+gissning. Den enda kvarvarande frågan är om källans egen creative replikerar
+rakt av, och den testas bäst genom att spegla just `Takoverdrag_GT_2_H1` —
+inte genom nya presentkoncept. Backloggens post om eget test-ABO gäller
+fortfarande, men priset för att låta bli har sjunkit: vinkeln kostar pengar
+varje gång den får volym.
+
+## Verktygsfynd 2026-09-22 — proxyomstarten slukade stdout (rotorsaken)
+
+Gårdagens fynd (`api()` utan timeout) var verkligt men inte hela sanningen.
+Den riktiga orsaken till att kön blev oläsbar satt **efter** utskriften.
+
+`säkerställProxy()` startar om processen med `NODE_USE_ENV_PROXY=1` för att
+agentproxyn ska gälla, och körde barnet med `stdio: 'inherit'`. Barnets stdout
+nådde aldrig förälderns utfil. Verktyget skrev sina 2 841 tecken, loggade
+"Utskriften klar." — och `ko.json` blev 0 byte med **exit 0**.
+
+| Väg | Utfil |
+|---|---|
+| med omstarten | 0 byte |
+| utan omstarten (`NODE_USE_ENV_PROXY=1`) | 2 845 byte |
+| efter fixen, normala vägen | 2 845 byte |
+
+**Fixen:** stdout pipas och skrivs vidare med `writeSync` — inte
+`process.stdout.write`, för en skrivning till ett rör är asynkron och
+`process.exit()` hade kunnat kapa den mitt i. stderr ärvs som förut, så loggen
+strömmar live.
+
+**Två lärdomar som är dyrare än buggen:**
+
+1. **Leta efter felet där symptomet slutar, inte där det börjar.** Jag letade två
+   dagar i nätet, timeouterna och pagineringen — allt före utskriften. En enda
+   loggrad efter `console.log` hade pekat rätt på första minuten. Sätt en markör
+   på BÅDA sidor av det steg som producerar utdata.
+2. **En tyst nolla är farligare än ett fel.** Exit 0 + tom utfil läser exakt som
+   "det fanns inget att göra" — och just den här dagen var kön faktiskt tom, vilket
+   är precis när ett tyst fel är omöjligt att upptäcka. Verktyg som skriver en fil
+   ska säga hur mycket de skrev.

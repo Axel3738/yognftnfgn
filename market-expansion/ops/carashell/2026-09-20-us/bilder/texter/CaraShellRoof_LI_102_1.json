@@ -1,0 +1,126 @@
+[
+ {
+  "box": [
+   40,
+   60,
+   1040,
+   160
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   15
+  ],
+  "text": "21 × 10 ft roof."
+ },
+ {
+  "box": [
+   40,
+   190,
+   1040,
+   290
+  ],
+  "rader": 1,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "That's it."
+ },
+ {
+  "box": [
+   300,
+   322,
+   1000,
+   368
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "bock": true,
+  "vanster_x": 366,
+  "text": "Straps & cord at the edge"
+ },
+ {
+  "box": [
+   300,
+   374,
+   1000,
+   424
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "bock": true,
+  "vanster_x": 366,
+  "text": "One person can fit it"
+ },
+ {
+  "box": [
+   300,
+   430,
+   1000,
+   474
+  ],
+  "rader": 1,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "bock": true,
+  "vanster_x": 366,
+  "text": "210D fabric"
+ },
+ {
+  "box": [
+   300,
+   1086,
+   780,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "$199"
+ },
+ {
+  "box": [
+   232,
+   1228,
+   848,
+   1288
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Cover the roof, not the RV"
+ }
+]

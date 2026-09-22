@@ -1,5 +1,6 @@
 {
   "comment": "Behorighetslistan for Axels rutiner. Bash-reglerna star i TVA former med flit: Claude Code:s prefixsyntax ar kolon (Bash(node:*)), men listan i repot anvande tidigare mellanslag (Bash(node *)). Bada finns kvar sa att listan matchar oavsett vilken form runtimen tolkar. Ta aldrig bort den ena halvan for att den ser ut som en dubblett. disableAutoMode: auto-lagets klassificerare fragar aven nar verktyget star i allow-listan - den gor en egen bedomning ovanpa listan. En schemalagd rutin har ingen som kan svara pa en sadan fraga, sa laget stangs av har och defaultMode 'dontAsk' ovan far faktiskt galla. (Axels beslut 2026-08-31.)",
+  "enableAllProjectMcpServers": true,
   "permissions": {
     "defaultMode": "dontAsk",
     "disableAutoMode": "disable",
@@ -189,6 +190,8 @@
       "mcp__github__*",
       "mcp__Claude_Code_Remote",
       "mcp__Claude_Code_Remote__*",
+      "mcp__loopia-mail",
+      "mcp__loopia-mail__*",
       "Artifact",
       "Agent",
       "mcp__ADsmanagaer__ads_get_ad_accounts",

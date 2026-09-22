@@ -47,6 +47,9 @@ function laddaPersoner() {
       id: u.id,
       namn: u.name,
       notionUserId: u.notionUserId || '',
+      // Samma person kan bära flera Notion-id:n — t.ex. ett gästkonto som
+      // dykt upp i efterhand vid sidan av det syntetiska kommentar-id:t.
+      notionUserIdAlias: Array.isArray(u.notionUserIdAlias) ? u.notionUserIdAlias : [],
       roll: u.role,
       // Redigerare utan Notion-konto pekas ut i en kommentar i stället —
       // se commission/kommentarer.mjs.
@@ -297,6 +300,26 @@ async function main() {
 
   // --- Meta
   const { konton, annonser: allaAnnonser, fel: metaFel } = await hamtaAllSpend({ fran: p.fran, till: p.till });
+
+  // Ett annonskonto som tappat ads_read försvinner TYST ur me/adaccounts — inget
+  // felmeddelande, bara mindre spend och för lite betalt. Samma spärr som för
+  // hubbarna: en ofullständig läsning får aldrig bli en utbetalning.
+  // *(Mätt 2026-09-22: token:en nådde 5 konton av 14. SnarkLös svarade "(#200)
+  // Ad account owner has NOT grant ads_management or ads_read permission", och
+  // Gilz föll 36,62 → 6,80 kr mitt i månaden eftersom hans spend ligger på
+  // Mastern. Utan den här spärren hade rapporten sparats som ett riktigt kvitto.)*
+  const kandaKonton = JSON.parse(readFileSync(`${ROT}/commission/kanda-konton.json`, 'utf8')).konton;
+  const nadda = new Set(konton.map((k) => String(k.id)));
+  const saknadeKonton = kandaKonton.filter((k) => !nadda.has(String(k.id)));
+  if (saknadeKonton.length && !finns('utan-kontospärr')) {
+    do_(`Annonskonton som token:en brukar nå saknas i körningen: `
+      + `${saknadeKonton.map((k) => `${k.namn} (${k.id})`).join(', ')}.\n`
+      + `  Nådde ${konton.length} av ${kandaKonton.length} kända konton.\n`
+      + `  Ett konto försvinner ur me/adaccounts när appen tappat ads_read — spenden finns,\n`
+      + `  vi ser den bara inte, och redigerarna får för lite betalt utan att något syns.\n`
+      + `  Ge appen ads_read på kontot igen, eller stryk kontot ur commission/kanda-konton.json\n`
+      + `  om det är avvecklat med flit. --utan-kontospärr kör ändå (siffrorna blir ofullständiga).`);
+  }
 
   // Bara svenska annonser ger commission. --alla-marknader stänger av filtret.
   const svenskaBara = !finns('alla-marknader');

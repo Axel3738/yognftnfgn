@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-21",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: LISTICLE campaign raised 2 400 → 2 850 kr/day. It is now the best thing in the account — 3-day profit 39.3 %, ROAS 4.53, 17 purchases this week. Read back and logged",
+    "Paused one ad: CaraShellRoof_CS_4_1. Dead weight by the new-ad rule — 1 499 kr spent (over 3 × target CPA), 2 purchases, CPA 750 kr against break-even 693 kr. First ad the rules have ever killed in this store. Two purchases is below the gate, so this is a cost decision, not a verdict on the concept",
+    "Nothing else paused, nothing activated. 76 purchases over 7 days, profit contribution 27 001 kr across judgeable ads",
+    "Both budgets you raised by hand are working: the main campaign at 6 000 kr returned ROAS 4.54 on 3 days, the listicle at 2 400 kr returned 4.53"
+  ],
+  "siffror": { "spend_7d": 27365, "kop_7d": 76, "roas_7d": 3.64, "vinstbidrag_7d": 27001 },
+  "briefer": [],
+  "action_axel": [
+    "The ceiling in the rules is now LOWER than the budget you set yourself. You raised the main campaign to 6 000 kr/day, but factory/budgetbeslut.mjs still caps raises at 4 000 — so the night watch can never raise that campaign again, however well it does. Tonight it earned a raise at 39.3 % profit and ROAS 4.54 and got nothing. Cuts still work normally, so nothing is at risk; it is the upside that is frozen. Tell me a number for the ceiling — 10000 would leave room above where you are now — and I will set TAK_SEK and let the rules scale it again"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-22",
+  "varningar": [
+    "Briefs stay paused by owner decision from 18 September — CaraShell is briefed in the Bäverbutiken teamspace and mirrored across. The budget round runs every night regardless"
+  ]
+}

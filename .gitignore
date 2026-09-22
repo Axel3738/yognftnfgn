@@ -75,3 +75,40 @@ market-expansion/no/video-batches/*/final/*/*.mp4
 market-expansion/no/video-batches/*/frame-check/
 market-expansion/no/video-batches/*/img-src/
 market-expansion/*/notion-batches/*/frames/
+# QA- och mätbilder i en /oversatt-batch: kontaktark, rutnätsbilder och
+# skärmdumpar som sessionen tittar på under granskningen. De är arbetsmaterial,
+# inte minne — kommandot säger uttryckligen "committa aldrig bilder/videor",
+# och 2026-09-22 blev de 46 PNG:er på 78 MB i en enda körning.
+market-expansion/*/notion-batches/*/qa/
+market-expansion/*/notion-batches/*/qa2/
+market-expansion/*/notion-batches/*/matt/
+market-expansion/*/notion-batches/*/skann/
+# HeyGens eget körläge per manifest — pekar på jobb-id som dör med batchen.
+market-expansion/*/notion-batches/*/*.state.json
+
+# Spårningssidan: byggd sidkropp och förhandsvisning — artefakter, inte källkod
+sparning/output/
+
+# Spårningens utdata per butik (sidkroppen + alla skanningar, ~1 MB per körning)
+sparning/butiker/*/output/
+# Kassabilden byggs om ur butikens live-betyg (factory/kassabild.mjs) — bara
+# MÄTNINGEN (kassabild.json) är minne värt att committa. PNG:en och spec:en
+# är genererade och skulle bara lägga binärer i historiken.
+factory/output/*/kassabild.png
+factory/output/*/kassabild.png.spec.json
+
+# Stonebite-sidan: hemligheter och inloggningar committas ALDRIG.
+# snapshot.json committas med flit — det är datan sidan visar, och rutinen
+# som hämtar den pushar den till main (som alla andra rutiner i huset).
+stonebite/data/hemlighet.txt
+stonebite/data/anvandare.json
+
+# Bonusen: inrapporterade insatser och personer som lagts till på sajten bor i
+# dataspegeln (STONEBITE_DATA), inte i git. Utfallen (bonus/utfall/) committas
+# — de är kvittot på vad som betalats ut.
+stonebite/data/insatser.jsonl
+stonebite/data/personer-extra.json
+
+factory/output/*/logga-*
+stonebite/data/kalender.jsonl
+stonebite/data/kontakter.jsonl

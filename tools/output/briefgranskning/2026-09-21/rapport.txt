@@ -1,0 +1,32 @@
+🔎 BÄVERBUTIKEN brief review — 2026-09-21
+Hubs found: 19 · reviewed: 7 · skipped: 8 · unreadable: 4
+
+**Reviewed**
+• `BÄVER Taköverdraget för Husvagn` — round 2026-09-19, 11 briefs: 0 clean · 8 with notes · 3 with errors · Feedback row `Brief review 2026-09-19` · 3 comments on rows · rules in products/carashell/takskyddet/feedback.md
+• `Boat motor cover creative hub` — round 2026-09-18, 11 briefs: 0 clean · 5 with notes · 6 with errors · Feedback row `Brief review 2026-09-18` · 6 comments on rows
+• `Belt grinder creative hub` — round 2026-09-18, 9 briefs: 0 clean · 4 with notes · 5 with errors · Feedback row `Brief review 2026-09-18` · 5 comments on rows
+• `BÄVER Termoskyddet för Husbil` — round 2026-09-18, 9 briefs: 0 clean · 8 with notes · 1 with errors · Feedback row `Brief review 2026-09-18` · 1 comment on rows · rules in products/carashell/termoskyddet/feedback.md
+• `BÄVER IBC-Tanköverdraget` — round 2026-09-20, 9 briefs: 0 clean · 8 with notes · 1 with errors · Feedback row `Brief review 2026-09-20` · 1 comment on rows
+• `BÄVER Adventskalendern Racingbilar` — round 2026-09-20, 9 briefs: 0 clean · 8 with notes · 1 with errors · Feedback row `Brief review 2026-09-20` · 1 comment on rows
+• `Motorcycle Cover creative hub` — round 2026-09-18, 7 briefs: 0 clean · 6 with notes · 1 with errors · Feedback row `Brief review 2026-09-18` · 1 comment on rows
+
+**Skipped**
+• `Matstrumpor creative hub` — not a creative hub: other business or the template (by title)
+• `Annonsidéer` — not a creative hub: no Typ field
+• `Kranskydd Frost 420D creative hub` — latest round 2026-09-05 is 16 days old (limit 10) — no newer briefs to give feedback on
+• `Product test center SE BÄVER` — not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs
+• `BÄVER Termoskyddet för Husbil` — no ad rows (Typ … Pending Approval)
+• `Creative Hub master` — not a creative hub: other business or the template (by title)
+• `ADVENTLANE Product test center` — not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs
+• `Customer support bäverbutiken` — not a creative hub: no Typ field
+
+**Unreadable**
+• `Boat cover 420D creative hub` — Notion 404 — archived or not shared with the integration
+• `Beach crocs creative hub` — Notion 404 — archived or not shared with the integration
+• `Trimmer belt creative hub` — Notion 404 — archived or not shared with the integration
+• `Mower seat creative hub` — Notion 404 — archived or not shared with the integration
+
+**⚠️ Warnings**
+• no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory
+
+✅ Nothing for you to do. Next run: 2026-09-24

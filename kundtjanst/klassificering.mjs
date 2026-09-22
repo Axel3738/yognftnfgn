@@ -51,18 +51,21 @@ const REGLER = [
     // "inte fått" ensamt är WISMO ("inte fått någon spårning") — här krävs att det är varan/paketet som saknas.
     'aldrig kommit', 'aldrig kom', 'kom aldrig', 'har inte kommit', 'inte kommit fram', 'inte fått (paketet|varan|leveransen|min beställning|min order|ordern|något paket|det|den)',
     'aldrig fått (paketet|varan|leveransen|min beställning|min order|ordern|det|den)', 'har inte mottagit', 'ej mottagit', 'ikke mottatt', 'ikke fått (pakken|varen|noe|bestillingen|ordren)',
-    'aldri kommet', 'ikke kommet', 'ikke modtaget', 'aldrig modtaget', 'not received', 'never arrived', 'never received', 'haven.t received', 'has not arrived', 'hasn.t arrived',
+    // Engelskan kräver också att det är varan/paketet som saknas: "have not received any tracking" är WISMO, inte "aldrig levererad" (rättat 2026-09-21 — autosvaret hade annars lugnat en lugn kund).
+    'aldri kommet', 'ikke kommet', 'ikke modtaget', 'aldrig modtaget', '(not|haven.t|havent|hasn.t|have never) received (the |my |our |any |this )?(parcel|package|order|item|items|goods|product|delivery|it|anything)\\b', 'never arrived', 'never received', 'has not arrived', 'hasn.t arrived',
     'försvunn', 'forsvunn', 'borttappad', 'lost (package|parcel|in the mail|in transit)', '(package|parcel) (is |was |got )?lost', 'tappat bort', 'fått tillbaka till avsändaren',
     'returnerad till avsändaren', 'returned to sender', 'levererad men', 'levert men', 'delivered but', 'inget paket', 'ingen pakke', 'no package',
   ]],
   ['fel_vara', [
     'fel vara', 'fel produkt', 'fel storlek', 'fel färg', 'fel modell', 'fel artikel', 'feil vare', 'feil produkt', 'feil størrelse', 'feil farge', 'forkert vare', 'forkert størrelse',
     'wrong item', 'wrong size', 'wrong product', 'wrong colour', 'wrong color', 'inte som på bild', 'ikke som på bild', 'not as described', 'not as pictured',
-    'ser inte ut som', 'ser ikke ut som', 'looks nothing like', 'passar inte', 'passer ikke', 'does not fit', 'doesn.t fit', 'saknas i paketet', 'mangler i pakken',
+    'ser inte ut som', 'ser inte alls ut som', 'inte alls som på bild', 'ser ikke ut som', 'looks nothing like', 'not at all like', 'passar inte', 'passer ikke', 'does not fit', 'doesn.t fit', 'saknas i paketet', 'mangler i pakken',
     'missing from', 'bara en av', 'fick bara', 'fikk bare', 'only received', 'stämmer inte', 'stemmer ikke', 'kvalitet', 'kvalitet', 'billig plast', 'usel',
+    // SOP 07 (fel antal) och SOP 15/34 (stämmer inte med bild/beskrivning), lästa 2026-09-21.
+    'fel antal', 'för få', 'saknas en', 'saknas ett', 'feil antall', 'for få', 'forkert antal', 'wrong quantity', 'väärä määrä', 'liian vähän',
   ]],
   ['var_ar_ordern', [
-    'var är min', 'var är ordern', 'var är paketet', 'var är beställningen', 'hvor er', 'hvor blir', 'where is my', 'where.s my', 'när kommer', 'når kommer', 'hvornår kommer', 'when will',
+    'var är min', 'var är mitt', 'var är ordern', 'var är paketet', 'var är beställningen', 'var är den', 'var är varan', 'var är vår', 'hvor er', 'hvor blir', 'where is my', 'where.s my', 'när kommer', 'når kommer', 'hvornår kommer', 'when will',
     'spårning', 'sporing', 'sporingsnummer', 'tracking', 'track', 'leveransstatus', 'leveringsstatus', 'status på min', 'status on my', 'kollinummer', 'pakkesporing',
     'har inte fått någon bekräftelse', 'ingen bekräftelse', 'ingen bekreftelse', 'no confirmation', 'orderbekräftelse', 'ordrebekreftelse', 'leveranstid', 'leveringstid', 'delivery time',
     'skickat', 'skickats', 'sendt', 'shipped', 'dröjer', 'tar så lång tid', 'tar lang tid', 'taking so long', 'väntat i', 'ventet i', 'waited', 'inte fått något paket',
@@ -135,11 +138,13 @@ export function hittaOrdernummer(text) {
 export function gissaSprak(text) {
   const s = ` ${normalisera(text)} `;
   // Ord som skiljer språken åt — inte de gemensamma (er, min, har, det).
+  // ⚠️ "order" är svenska också ("min order") — det räknades som engelska
+  // och gav "Hi Eric!" på "Var är denna vara" (torrkörningen 2026-09-21).
   const poang = {
-    sv: (s.match(/ (och|inte|jag|är|beställning|beställde|hej|inget|ingen|också|pengarna|varan) /g) || []).length,
+    sv: (s.match(/ (och|inte|jag|är|ett|mitt|ditt|när|vad|från|till|fått|någon|något|beställning|beställde|hej|inget|ingen|också|pengarna|varan|paketet|ordern) /g) || []).length,
     no: (s.match(/ (og|ikke|jeg|bestilling|bestilte|hei|noe|ikkje|pakken|ordre|varen) /g) || []).length,
     da: (s.match(/ (og|ikke|jeg|bestilling|bestilte|hej|noget|pakken|ordre|varen|af) /g) || []).length,
-    en: (s.match(/ (and|not|the|my|order|is|have|with|hi|hello|please|you) /g) || []).length,
+    en: (s.match(/ (and|not|the|my|is|have|with|hi|hello|please|you|where|when|received|parcel|package|shipping|delivery) /g) || []).length,
     fi: (s.match(/ (ja|ei|minä|on|tilaus|hei|olen|kiitos|paketti) /g) || []).length,
   };
   // "hej" är svenska OCH danska, "hei" norska; ø/æ utesluter svenska.

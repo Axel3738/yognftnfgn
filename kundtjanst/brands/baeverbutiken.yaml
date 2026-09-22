@@ -1,0 +1,46 @@
+# Bæverbutiken — Bäverbutikens danska butik (baeverbutiken.dk, Shopify
+# v0xqtk-tx). Inte byggd av fabriken, därför egen brandfil. Upplagd 2026-09-21
+# för autosvaret (Axels uppdrag: alla butiker).
+#
+# Brevlådan är på Loopia: MX för baeverbutiken.dk pekar på
+# mailcluster.loopia.se (mätt 2026-09-21 via DNS). Avsändaren i Shopify är
+# kundesupport@baeverbutiken.dk (Cowork läste den i Inställningar → Aviseringar
+# 2026-09-20) — det är adressen kunderna svarar till, alltså brevlådan.
+# Nyckeln heter KUNDTJANST_MAIL_PASS_BAEVERBUTIKEN (Loopia-lösenordet).
+#
+# Shopify: appen bakom SHOPIFY_CLIENT_ID_DK/SECRET_DK har read_orders (mätt
+# 2026-09-21, en order läst).
+
+brand:
+  namn: "Bæverbutiken"
+  supportmail: "kundesupport@baeverbutiken.dk"
+  shop: "v0xqtk-tx.myshopify.com"
+  land: DK
+  valuta: DKK
+  aktiv: true
+
+shopify:
+  env_suffix: "DK"
+
+discord:
+  server: "Bäverbutiken"
+  kanal: customer-service-dk
+
+svar:
+  autosvar: true
+  sprak: da
+  signatur: "Kundeservice Bæverbutiken"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://baeverbutiken.dk/pages/spor"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+
+tvister:
+  returfonster_dagar: 30
+  angerratt_dagar: 14
+  policy_url: "https://baeverbutiken.dk/policies/refund-policy"
+  forsta_svar_timmar: 24

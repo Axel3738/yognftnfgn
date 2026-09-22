@@ -3,6 +3,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import {
@@ -19,8 +20,11 @@ import {
   slutdatumLiquid,
   bildLiten,
   gemensamtPrefix,
+  EXEMPEL,
+  BAVER_LIQUID,
 } from '../mallar.mjs';
 import { byggSida } from '../sida.mjs';
+import { bavernummer } from '../../sparning/bavernummer.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const konfig = JSON.parse(readFileSync(join(ROT, 'konfig.json'), 'utf8'));
@@ -238,10 +242,25 @@ test('orderbekräftelsen använder Shopifys ordervariabler', () => {
 test('fraktmallarna använder fulfillment, övergiven kassa använder url, återbetalning amount', () => {
   const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
   assert.ok(frakt.html.includes('{% for line in fulfillment.fulfillment_line_items %}'));
-  // Spårningsnumret är ren text — aldrig en länk till fraktbolaget (2026-09-18 kväll).
-  assert.ok(frakt.html.includes('{{ fulfillment.tracking_number }}'));
+  // ⚠️ Fraktbolagets nummer står INTE i mejlet (Axels beslut 2026-09-20:
+  // "maska med ett eget bävernummer så de inte ser YT nr"). Numret börjar på
+  // YT eller 4PX och skvallrar om varifrån paketet kommer. Mejlet visar i
+  // stället bävernumret, räknat av Liquid med samma SHA-256-kedja som sidan.
+  assert.ok(!frakt.html.includes('{{ fulfillment.tracking_number }}'),
+    'fraktbolagets nummer får inte stå som text i mejlet');
+  assert.ok(!frakt.html.includes('url_encode'), 'numret ska inte längre gå rakt in i adressen');
   assert.ok(!frakt.html.includes('tracking_url'), 'spårningsnumret får inte länka till fraktbolaget');
-  assert.ok(!frakt.html.includes('tracking_company'));
+  assert.ok(!frakt.html.includes('tracking_company'), 'fraktbolagets NAMN avslöjar ursprunget lika mycket som numret');
+  // Knappen och raden under bär bävernumret — annars hittar kunden inte
+  // sitt paket när hen klickar, och kan inte läsa upp det för kundtjänst.
+  assert.ok(frakt.html.includes(`pages/spara?nummer=${BAVER_LIQUID}`), 'knappen ska ta med bävernumret i adressen');
+  assert.ok(frakt.html.includes(`Ditt paketnummer: <strong`), 'bävernumret ska stå i klartext under knappen');
+  assert.equal(frakt.html.split(BAVER_LIQUID).length - 1, 2, 'bävernumret räknas två gånger: knappen och raden');
+  // Förhandsvisningen visar ett riktigt räknat bävernummer, inte platshållaren.
+  const exempel = byggMall('fraktbekraftelse', { ...indata, lage: 'exempel' });
+  assert.ok(exempel.html.includes(`Ditt paketnummer: <strong`));
+  assert.ok(exempel.html.includes(bavernummer(EXEMPEL.sparningsnummer)), 'exempelmejlet bär exempelnumrets bävernummer');
+  assert.ok(!exempel.html.includes(EXEMPEL.sparningsnummer), 'exempelmejlet visar inte fraktbolagets nummer');
   const kassa = byggMall('overgiven_kassa', { ...indata, lage: 'liquid' });
   assert.ok(kassa.html.includes('href="{{ url }}"'));
   const ater = byggMall('aterbetalning', { ...indata, lage: 'liquid' });
@@ -278,9 +297,11 @@ test('riktig katalog: axelbältet får borsthuvudena, mallarna under 100 kB', { 
   }
 });
 
-test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orderbekräftelsen', () => {
+test('leveransfönstret: datumen räknas vid utskick, plus packtiden i orderbekräftelsen', () => {
   // Axels beslut 2026-09-18. Inga leveransevent kommer från YunExpress/4PX,
   // så datumet räknas i Liquid vid utskick i stället för att läsas.
+  // Talen i konfig.frakt är KALENDERDAGAR (7/14) och styr bara datumen;
+  // kundtexten säger samma fönster i arbetsdagar (5–10), Axels order 2026-09-21.
   const f = konfig.frakt;
   const order = byggMall('orderbekraftelse', { ...indata, lage: 'liquid' });
   const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
@@ -291,10 +312,50 @@ test('leveransfönstret: 7–14 dagar räknat vid utskick, plus packtiden i orde
   assert.ok(frakt.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'fraktmejlet visar fönstret');
   assert.ok(order.html.includes('{{ lev_fran_datum }}–{{ lev_till_datum }}'), 'orderbekräftelsen visar fönstret i tidslinjen');
   for (const m of byggAlla({ ...indata, lage: 'liquid' })) {
-    assert.ok(!m.html.includes('5–10 arbetsdagar') && !m.html.includes('svenska lager'), `${m.id}: gamla leveranslöftet kvar`);
+    assert.ok(!m.html.includes('svenska lager'), `${m.id}: gamla leveranslöftet kvar`);
+    assert.ok(!m.html.includes('7–14 dagar'), `${m.id}: kalenderdagar i kundtext — löftet skrivs i arbetsdagar`);
     assert.ok(!m.html.includes('{{leverans_'), `${m.id}: oersatt platshållare`);
   }
   const ex = byggMall('fraktbekraftelse', { ...indata, lage: 'exempel' });
   assert.match(ex.html, /Beräknad leverans/);
   assert.match(ex.html, /\d{1,2} [a-zå]+–\d{1,2} [a-zå]+/, 'exemplet visar två datum');
+});
+
+test('v10: "Spåra paketet" går till butikens egen spårningssida, med orderstatussidan som reserv', () => {
+  const frakt = byggMall('fraktbekraftelse', { ...indata, lage: 'liquid' });
+  // Knappen ska bära numret (bävernumret sedan v11), så kunden aldrig behöver skriva något.
+  assert.ok(frakt.html.includes(`/pages/spara?nummer=${BAVER_LIQUID}`));
+  // Utan spårningsnummer finns inget att slå upp — då orderstatussidan.
+  assert.ok(frakt.html.includes('{% if fulfillment.tracking_number %}'));
+  assert.ok(frakt.html.includes('{% else %}{{ order_status_url }}{% endif %}'));
+  for (const id of ['fraktuppdatering', 'ute_for_leverans']) {
+    assert.ok(byggMall(id, { ...indata, lage: 'liquid' }).html.includes('/pages/spara?nummer='), id);
+  }
+  // Orderbekräftelsen har ingen leverans än och rör inte spårningssidan.
+  assert.ok(!byggMall('orderbekraftelse', { ...indata, lage: 'liquid' }).html.includes('/pages/spara'));
+});
+
+test('v11: Liquid och Node ger samma bävernummer', () => {
+  // Kedjan i BAVER_LIQUID körs här steg för steg som Shopify gör det
+  // (upcase → replace → sha256 → slice → upcase → prepend). Ger den något
+  // annat än bavernummer() hittar kunden inte sitt paket från mejlet.
+  const liquid = (nr) => {
+    const filter = BAVER_LIQUID.replace(/^\{\{\s*fulfillment\.tracking_number\s*\|\s*/, '').replace(/\s*\}\}$/, '').split('|').map((f) => f.trim());
+    let v = nr;
+    for (const f of filter) {
+      const [namn, args = ''] = f.split(/:(.*)/s);
+      const a = args.split(',').map((x) => x.trim().replace(/^'(.*)'$/, '$1'));
+      if (namn === 'upcase') v = v.toUpperCase();
+      else if (namn === 'replace') v = v.split(a[0]).join(a[1]);
+      else if (namn === 'sha256') v = createHash('sha256').update(v, 'utf8').digest('hex');
+      else if (namn === 'slice') v = v.slice(Number(a[0]), Number(a[0]) + Number(a[1]));
+      else if (namn === 'prepend') v = a[0] + v;
+      else throw new Error('okänt Liquid-filter i BAVER_LIQUID: ' + namn);
+    }
+    return v;
+  };
+  for (const nr of ['YT2626100708674690', '4PX3003149907008CN', 'ua123456789se', 'YT 2626-1007 08674690']) {
+    assert.equal(liquid(nr), bavernummer(nr), nr);
+  }
+  assert.match(bavernummer('YT2626100708674690'), /^BB-[0-9A-F]{8}$/);
 });

@@ -31,6 +31,21 @@ beslut 2026-09-11: en per butik, live direkt). Byggs av
    `Draft`, ingen uppladdning. Inget pris i annonsen = grön. För video är
    priset det enda stoppet; stavfel laddas upp med anmärkning. För bild är
    varje fel ett stopp.
+2b. **Slutkortet i videon** (`factory/bildbrand.mjs`, 2026-09-20). Kön
+   granskar de sista 3 sekunderna av varje video som ska laddas upp (~0,7 s
+   per video, ingen kostnad för bild eller för rader som ändå inte laddas
+   upp). Bär kortet ett butiksnamn eller en domän — även butikens eget —
+   får raden `slutkort.blockerar: true`: **ladda inte upp den**, namnge den
+   i rapporten och lämna statusen orörd, redigeraren bygger om kortet. Ett
+   slutkort utan butiksnamn och en video som inte gick att läsa laddas upp
+   men **namnges** i rapporten. Något som redan är live rörs aldrig.
+   ⚠️ **Säger kön `okand` på VARJE video är det containern, inte creativen**
+   (mätt 2026-09-21, takskyddet): utan ffmpeg eller OCR blir domen okänd och
+   regeln släpper igenom — den dagen hade två videor med `carashell.se` på
+   slutkortet laddats upp. `bildbrand.mjs` faller sedan dess tillbaka på
+   imageio-ffmpeg:s binär; saknas OCR:en, kör
+   `pip install rapidocr-onnxruntime` (och vid behov `imageio-ffmpeg`) och
+   läs om kön INNAN du laddar upp.
 3. **Ett adset per koncept**, döpt `<kampanjbas> - <KONCEPT>`. Aldrig ett
    adset per batch, aldrig egen budget (CBO). Uppladdaren sköter det.
 4. **PAUSED med spend är ett beslut.** En avvecklad kampanj får inget nytt.

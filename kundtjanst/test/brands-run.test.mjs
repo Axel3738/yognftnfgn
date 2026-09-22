@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { upptackBrands, korkonfig, valjBrands, envNamn, brandUrEgenfil, STANDARD_TROSKLAR } from '../brands.mjs';
-import { korBrand, maskeraAdress, maskeraText } from '../run.mjs';
+import { korBrand, maskeraAdress, maskeraText, delaDiscord, DISCORD_MAX } from '../run.mjs';
 import { brandstatus, rutinforslag } from '../setup.mjs';
 import { lasYaml } from '../../factory/yaml.mjs';
 import { readFileSync } from 'node:fs';
@@ -201,4 +201,42 @@ test('jobbfilen trådar på Gmails trådid och kör hela flödet', async () => {
   const utanBrand = await korBrand(brandUrEgenfil(lasYaml('brand:\n  namn: "X"\n  supportmail: "hello@x.se"\n'), 'x'), { jobb, env: {}, historik: [] });
   assert.equal(utanBrand.hoppad, true);
   assert.match(utanBrand.orsak, /saknar brandet "x"/);
+});
+
+test('tvister-blocket når koden: eskaleringsnycklarna läses, standarden fyller resten', () => {
+  const brand = brandUrEgenfil(lasYaml([
+    'brand:',
+    '  namn: "Beta"',
+    '  supportmail: "hello@beta.se"',
+    '  shop: "beta-2.myshopify.com"',
+    'tvister:',
+    '  returadress: "Sjöhed 160"',
+    '  agare_kontakt: "Ägaren (Discord)"',
+    '  godkannande_over: 500',
+    '',
+  ].join('\n')), 'beta');
+  const k = korkonfig(brand, {});
+  assert.equal(k.tvister.returadress, 'Sjöhed 160');
+  assert.equal(k.tvister.agare_kontakt, 'Ägaren (Discord)');
+  assert.equal(k.tvister.godkannande_over, 500);
+  // Det som INTE står i filen kommer ur standarden — aldrig undefined i ett mejl.
+  assert.equal(k.tvister.returadress_pa_forfragan, true);
+  assert.equal(k.tvister.forsta_svar_timmar, 24);
+  assert.equal(k.tvister.angerratt_dagar, 14);
+  // ⚠️ Returfrakten är ägarens beslut och får aldrig gissas.
+  assert.equal(k.tvister.returfrakt_betalas_av, '');
+});
+
+test('delaDiscord: en rapport över 2000 tecken delas på radgränser, aldrig mitt i en rad; kort text är en bit', () => {
+  assert.deepEqual(delaDiscord('kort'), ['kort']);
+  assert.deepEqual(delaDiscord(''), []);
+  const rader = Array.from({ length: 60 }, (_, i) => `• rad ${i} ${'x'.repeat(60)}`);
+  const delar = delaDiscord(rader.join('\n'));
+  assert.ok(delar.length > 1, 'delas');
+  for (const d of delar) assert.ok(d.length <= DISCORD_MAX, `bit ≤ ${DISCORD_MAX}: ${d.length}`);
+  assert.deepEqual(delar.join('\n').split('\n'), rader, 'inget tappas, inget klipps mitt i en rad');
+  // En ensam rad längre än taket klipps hårt (annars går den aldrig att posta).
+  const lang = delaDiscord('y'.repeat(2500));
+  assert.equal(lang.length, 1);
+  assert.equal(lang[0].length, DISCORD_MAX);
 });

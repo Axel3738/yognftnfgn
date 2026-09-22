@@ -47,6 +47,7 @@
         "sections/ms-marquee.liquid",
         "sections/announcement-bar.liquid",
         "sections/header-group.json",
+        "snippets/opf-korg-trygghet.liquid",
         "snippets/opf-korg-upsell.liquid",
         "sections/cart-drawer.liquid",
         "snippets/ms-head.liquid"
@@ -203,17 +204,24 @@
           "marknad": "Finland",
           "status": "ACTIVE",
           "localeSkapad": false
+        },
+        {
+          "land": "DK",
+          "locale": "da",
+          "marknad": "Danmark",
+          "status": "ACTIVE",
+          "localeSkapad": true
         }
       ]
     },
     "oversatt": {
       "klar": false,
-      "manuell": "nb: 12 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 12 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 12 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt",
+      "manuell": "nb: 17 svenska texter saknar översättning (läckor på /nb): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-nb.json och kör --igen oversatt · en: 17 svenska texter saknar översättning (läckor på /en): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-en.json och kör --igen oversatt · fi: 17 svenska texter saknar översättning (läckor på /fi): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-fi.json och kör --igen oversatt · da: 17 svenska texter saknar översättning (läckor på /da): sida title, sida body_html, sida title, sida body_html, sida title, sida body_html, sida title, sida body_html … — komplettera oversattning-da.json och kör --igen oversatt",
       "underlag": 160,
       "utfall": {
         "nb": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -228,11 +236,11 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4372/4423"
+          "granskning": "4396/4451"
         },
         "en": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -247,11 +255,11 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4392/4423"
+          "granskning": "4416/4451"
         },
         "fi": {
           "registrerade": 0,
-          "saknade": 12,
+          "saknade": 17,
           "perTyp": {
             "variant": 0,
             "produkt": 0,
@@ -266,7 +274,26 @@
             "sektionsgrupp": 0,
             "temainställning": 0
           },
-          "granskning": "4381/4423"
+          "granskning": "4405/4451"
+        },
+        "da": {
+          "registrerade": 0,
+          "saknade": 17,
+          "perTyp": {
+            "variant": 0,
+            "produkt": 0,
+            "metafält": 0,
+            "sida": 0,
+            "menylänk": 0,
+            "paket": 0,
+            "policy": 0,
+            "fraktsätt": 0,
+            "kollektion": 0,
+            "temamall": 0,
+            "sektionsgrupp": 0,
+            "temainställning": 0
+          },
+          "granskning": "4396/4451"
         }
       }
     },
@@ -297,7 +324,7 @@
   "qa": {
     "gron": true,
     "kritiska": [],
-    "tid": "2026-09-18T13:10:23.709Z"
+    "tid": "2026-09-21T23:09:23.990Z"
   },
-  "uppdaterad": "2026-09-18T13:10:23.709Z"
+  "uppdaterad": "2026-09-21T23:09:23.990Z"
 }

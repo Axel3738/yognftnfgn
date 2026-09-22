@@ -1,5 +1,5 @@
 {
-  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet 2026-09-12 (överst, wow, urgency) och igen 2026-09-13 efter Axels feedback: villkoret 'nästa köp minst 299 kr' först, 'välj 1 av 4' i rubriken, de tre dyraste borta, nytt block 'komplement' (en till + tre som passar ihop). Datumet står BARA i urgency (döljs när det passerat), aldrig i finstilt. Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver. Frakttexterna omskrivna 2026-09-18 av en Sonnet-subagent (Axels beslut 'fixa det': 7–14 dagar, lagret utomlands, tyst spårning 2–4 dagar). Nya platshållare: {{leverans_fran}} {{leverans_till}} — leveransfönstret räknat vid utskick. Fraktbolagets namn borttaget ur alla mejl 2026-09-18 (Axel: 'ta bort att det står UPS') — kunden behöver inte veta att det heter YunExpress.",
+  "comment": "All kundtext i mejlen. Skriven av en Sonnet-subagent 2026-09-12 enligt docs/copy-regler.md (CLAUDE.md regel 6), struktur och faktakoll av huvudsessionen. Erbjudandeblocket omskrivet 2026-09-12 (överst, wow, urgency) och igen 2026-09-13 efter Axels feedback: villkoret 'nästa köp minst 299 kr' först, 'välj 1 av 4' i rubriken, de tre dyraste borta, nytt block 'komplement' (en till + tre som passar ihop). Datumet står BARA i urgency (döljs när det passerat), aldrig i finstilt. Platshållare: {{förnamn}} {{ordernummer}} {{fraktbolag}} {{belopp}} {{slutdatum}} — mallmotorn byter dem mot Liquid. Ändra text här, aldrig i mallar.mjs. Första ämnesraden och första preheadern är den som används; övriga är A/B-reserver. Frakttexterna omskrivna 2026-09-18 av en Sonnet-subagent (Axels beslut 'fixa det': lagret utomlands, tyst spårning 2–4 dagar). Leveranslöftet skrivs i ARBETSDAGAR sedan 2026-09-21 (Axels order: '5–10 arbetsdagar som vi brukar ha') — samma fönster som butikens fraktsida alltid sagt, och exakt samma span som de 7–14 kalenderdagar datumen räknas på. Nya platshållare: {{leverans_fran}} {{leverans_till}} — leveransfönstret räknat vid utskick. Fraktbolagets namn borttaget ur alla mejl 2026-09-18 (Axel: 'ta bort att det står UPS') — kunden behöver inte veta att det heter YunExpress.",
   "upsell": {
     "forrubrik": "Din kundgåva",
     "rubrik": "Snurra hjulet, vinn en gratis produkt",
@@ -55,7 +55,7 @@
     ],
     "preheader": [
       "Så här går det till härifrån, steg för steg.",
-      "Skickas inom 1–2 dagar, framme på 7–14."
+      "Skickas inom 1–2 dagar, framme på 5–10 arbetsdagar."
     ],
     "rubrik": "Tack för din beställning!",
     "intro": "Vi har tagit emot din order {{ordernummer}}. Här är exakt vad som händer nu.",
@@ -73,7 +73,7 @@
       ],
       [
         "Hur lång är leveranstiden?",
-        "7–14 dagar räknat från att paketet skickats. Det kommer från vårt lager utomlands med YunExpress eller 4PX, så första biten är flygtransport till Sverige. Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget – och uppdateras sen."
+        "5–10 arbetsdagar räknat från att paketet skickats. Det kommer från vårt lager utomlands med YunExpress eller 4PX, så första biten är flygtransport till Sverige. Spårningen visar ofta inget de första 2–4 dagarna – paketet är på väg till flyget – och uppdateras sen."
       ],
       [
         "Kan jag ångra eller returnera?",

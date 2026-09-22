@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-22",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Nothing to translate today: the creative hub has zero rows in SE-ACTIVE to be translated. Measured in three separate runs, all reading the same hub.",
+    "The Norwegian campaign CARASHELL_NO_Takovertrekket is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK. The market is running normally - this is an empty queue, not a hold.",
+    "Yesterday's five rows have moved on. No Notion status was touched.",
+    "HeyGen credits used: 0 before -> 0 after."
+  ],
+  "varningar": [
+    "The queue tool still exits quietly without writing its output file, even after yesterday's timeout fix. Today's third run did the whole job in 46 seconds - hub, account, campaign, inherited link, US account, store price all read and logged - and then wrote zero bytes and exited with code 0.",
+    "46 seconds means no timeout fired, so this is not the dropped-socket fault that was fixed yesterday. The work completes and the process dies just before it prints.",
+    "The two campaign reads that happen at that point were isolated and timed: 12 ad sets in 0.7 seconds, 58 ads with the nested creative field in 5.3 seconds. Neither is the problem.",
+    "One difference is now visible: yesterday's successful run had five rows in the queue, and every failing run today has zero. That is the next thing to test.",
+    "Nothing was uploaded and no status was changed in any of the runs, so the fault costs visibility, not ads. It matters because an empty output file reads exactly like an empty queue - which today it happens to be, and that is precisely when a quiet failure is easiest to miss."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-23"
+}

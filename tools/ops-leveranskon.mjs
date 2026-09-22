@@ -31,6 +31,14 @@
 //     med skäl — gissa aldrig. PAUSED med spend är AVVECKLAD (ett beslut).
 //   • Dubblett = annonsnamnet finns redan i kontot (hela kontot, inte bara
 //     butikens) ⇒ finns_i_meta: true, laddas inte upp igen.
+//   • Slutkortet i bilden (factory/bildbrand.mjs, 2026-09-20). Varje VIDEO som
+//     ska laddas upp granskas på sina sista 3 sekunder: bär slutkortet ett
+//     butiksnamn eller en domän får raden `slutkort.blockerar = true` och en
+//     namngiven varning — den laddas INTE upp. Slutkort utan butiksnamn och
+//     videor som inte gick att läsa laddas upp men namnges i rapporten.
+//     ⚠️ Kontrollen gäller FÖRE uppladdning. Något som redan är live rörs
+//     aldrig (Axels beslut 2026-09-15). ~0,7 s per video, ingen kostnad alls
+//     för bildannonser och för rader som ändå inte ska laddas upp.
 //
 // Kräver env NOTION_TOKEN + META_ACCESS_TOKEN. Noll npm-beroenden.
 
@@ -41,6 +49,7 @@ import { spawnSync } from 'node:child_process';
 import { valjAdsetForKoncept } from './meta-lib.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
 import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
+import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -550,6 +559,10 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
   if (!huvudpris.pris_butik) varningar.push(`pris: ${huvudpris.skal}`);
   else logg(`Pris ur butiken: ${huvudpris.pris_butik.pris} ${huvudpris.pris_butik.valuta} (${huvudpris.pris_butik.min}–${huvudpris.pris_butik.max}) via ${huvudpris.pris_butik.kalla}`);
 
+  // Butikens egna former till slutkortskollen — Axels regel gäller alla
+  // butiksnamn, även butikens eget (PD_5_H1 bar "carashell.se" i slutkortet).
+  const butiksord = butiksordUr({ brand: butik.post.brand, lankar: [lank_arvd, lank_standard, forstaLandning] });
+
   // 6. Raderna.
   const rader = [];
   const cs_lamnade = [];   // CS-rader som INTE tas: annat prefix eller ingen fil
@@ -596,6 +609,9 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       se_ad_id: marknaden.oversatts ? (dubblett(basnamn, kartaPerKonto.get(baskonto) ?? karta).ad_id ?? dubblett(namn, kartaPerKonto.get(baskonto) ?? karta).ad_id) : null,
       klar_i, flytta_till_approved,
       skapad: r.skapad, hub: hub.titel, fil: null, fil_alla: [], fil_fel: null,
+      // Fylls bara när filen faktiskt hämtats och raden är en video (se nedan).
+      // null betyder "inte granskad", aldrig "ren".
+      slutkort: null,
     };
     if (rad.prefix_avviker) varningar.push(`${namn}: prefixet "${t.prefix}" är inte butikens (${butik.prefix.join(' / ')}) — målnamnet är ommärkt till "${mal_namn}"; kontrollera att creativen inte bär Bäverbutikens brand eller pris`);
     if (!t.koncept) varningar.push(`${namn}: inget koncept i namnet — adsetnamn kan inte bildas`);
@@ -609,6 +625,19 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       Object.assign(rad, h.fel ? { fil_fel: h.fel } : { fil: h.fil, fil_alla: h.fil_alla });
       if (h.fel) varningar.push(`${namn}: filen gick inte att hämta — ${h.fel}`);
       else logg(`  hämtad: ${h.fil}`);
+      // Slutkortet. Bara video, bara filer som faktiskt ska laddas upp (vi är
+      // redan inne i `!d.finns_i_meta`), och OCR körs bara när ett slutkort
+      // hittats — därför ~0,7 s per video (factory/bildbrand.mjs).
+      const g = await granskaOmVideo({ fil: rad.fil, typ: rad.typ, butiksord });
+      if (g) {
+        rad.slutkort = { dom: g.dom, skal: g.skal, fynd: g.fynd, textrader: g.textrader, sekunder: g.sekunder, blockerar: slutkortBlockerar(g.dom) };
+        if (rad.slutkort.blockerar) varningar.push(`${namn}: STOPP FÖRE UPPLADDNING — slutkortet namnger en butik: ${g.fynd.map((f) => `"${f.ord}"`).join(', ')}. Ladda inte upp raden; redigeraren bygger om slutkortet.`);
+        // "stoppar inte", inte "laddas upp": priskollen kan fälla samma rad, och
+        // en varning får aldrig påstå att något laddats upp som inte laddades upp.
+        else if (g.dom === SLUTKORTSDOMAR.utanBrand) varningar.push(`${namn}: har ett slutkort (sista ${g.slut_sek} s) utan butiksnamn — stoppar inte uppladdningen, men kontrollera att kortet är på marknadens språk.`);
+        else if (g.dom === SLUTKORTSDOMAR.okand) varningar.push(`${namn}: slutkortet gick inte att kontrollera — ${g.skal}. Stoppar inte uppladdningen; någon måste titta på de sista sekunderna.`);
+        if (g.dom !== SLUTKORTSDOMAR.ren) logg(`  slutkort: ${g.dom} — ${g.skal}`);
+      }
     }
     rader.push(rad);
   }
@@ -646,6 +675,10 @@ export function tabell(ko) {
     const dubb = r.finns_i_meta ? `  ✓ FINNS REDAN i kontot (${r.ad_id}) — laddas inte upp` : '';
     ut.push(`• ${r.namn}${pil}  [${r.typ}]${dubb}${r.prefix_avviker ? '  ⚠️ PREFIX ≠ BUTIKENS' : ''}${r.fran_cs ? `  (ur "${CS_STATUS_SE}")` : ''}`);
     ut.push(`    fil:      ${r.leverans_text}${r.fil ? `  → ${r.fil}` : ''}${r.fil_fel ? `  ✗ ${r.fil_fel}` : ''}`);
+    if (r.slutkort) {
+      const ikon = SLUTKORTSIKON[r.slutkort.dom] ?? '?';
+      ut.push(`    slutkort: ${ikon} ${r.slutkort.dom} — ${r.slutkort.skal}${r.slutkort.blockerar ? '  → LADDA INTE UPP' : ''}`);
+    }
     ut.push(`    koncept:  ${r.koncept ?? '⚠️  saknas'}${r.nummer != null ? ` · nr ${r.nummer}` : ''}${r.variant ? ` · variant ${r.variant}` : ''}`);
     ut.push(`    adset:    ${r.adset_namn ?? '—'}  ${r.adset ? `finns (${r.adset.id}, ${r.adset.status})` : (r.adset_namn ? 'saknas — skapas av uppladdaren' : '')}`);
     ut.push(`    länk:     ${r.lank ?? '⚠️  ingen'}${r.landning ? `  (raden: ${r.landning}${r.landning_avviker ? ' ⚠️ avviker från ärvd' : ''})` : ''}`);
@@ -658,7 +691,12 @@ export function tabell(ko) {
   }
   ut.push('');
   const nya = ko.rader.filter((r) => !r.finns_i_meta);
-  ut.push(`${ko.rader.length} rad(er) i kön · ${nya.length} att ladda upp · ${ko.rader.length - nya.length} finns redan`);
+  const blockerade = ko.rader.filter((r) => r.slutkort?.blockerar);
+  // "att ladda upp" räknade förut de slutkortsstoppade raderna också. Talet är
+  // det rutinen läser högt i rapporten — det får inte lova fler uppladdningar
+  // än spärren släpper igenom.
+  ut.push(`${ko.rader.length} rad(er) i kön · ${nya.length - blockerade.length} att ladda upp · ${ko.rader.length - nya.length} finns redan${blockerade.length ? ` · ${blockerade.length} stoppad(e) av slutkortet` : ''}`);
+  if (blockerade.length) ut.push(`⛔ ${blockerade.length} rad(er) stoppas av slutkortet: ${blockerade.map((r) => r.namn).join(', ')} — ladda inte upp dem; redigeraren bygger om kortet. Inget som redan är live rörs.`);
   if (ko.cs_lamnade?.length) {
     ut.push(`\nLämnade i "${CS_STATUS_SE}" (${ko.cs_lamnade.length}) — rörs inte:`);
     for (const x of ko.cs_lamnade) ut.push(`  · ${x.namn}: ${x.skal}`);
@@ -687,8 +725,14 @@ async function huvud() {
   if (!process.env.META_ACCESS_TOKEN) do_('META_ACCESS_TOKEN saknas i miljön — kontot går inte att läsa.');
 
   const ko = await byggKo({ nyckel, marknad: flagga('marknad', 'SE'), status: flagga('status'), ut: flagga('ut') });
-  if (finns('json')) console.log(JSON.stringify(ko, null, 2));
-  else console.log(tabell(ko));
+  // Sista raden i loggen säger alltid hur kön SLUTADE. Utan den går det inte att
+  // skilja "kön var tom" från "verktyget dog tyst innan det hann skriva" — och en
+  // tom utfil läser som det första. (2026-09-21/22: fem körningar slutade med exit
+  // 0 och 0 byte, och loggen gav ingen ledtråd om var.)
+  const text = finns('json') ? JSON.stringify(ko, null, 2) : tabell(ko);
+  console.error(`Kön klar: ${ko.rader.length} rader, ${ko.varningar.length} varningar — skriver ${text.length} tecken`);
+  console.log(text);
+  console.error('Utskriften klar.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

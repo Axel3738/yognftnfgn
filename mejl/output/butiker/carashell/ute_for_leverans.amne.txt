@@ -1,0 +1,1 @@
+{% case shipping_address.country_code %}{% when 'NO' %}Pakken kommer i dag{% when 'US' or 'GB' or 'CA' or 'AU' or 'NZ' %}Your parcel arrives today{% when 'FI' %}Paketti saapuu tänään{% else %}Paketet kommer idag{% endcase %}

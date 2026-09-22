@@ -1,0 +1,181 @@
+{
+  "hub_id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+  "rond": "2026-09-18",
+  "bra": [
+    "Hypotheses are written the way ANALYSMETOD asks: CS_9_H1 and CS_10_1 cite CS_2_1 at +3 763 kr contribution and CPA 172 against break-even 393; SP_1_H10 cites the SP_1 family by contribution (H5 +7 574, H1 +4 322, H3 +1 900) and isolates the hook on the proven body.",
+    "The retired fake-urgency line (`imorgon är det för sent`) is named and banned in the Rules — the round replaces it instead of quietly reusing it.",
+    "Review statics quote verbatim with the reviewer's name, refuse `verifierad köpare`, and SP_1_H10's `8 av 8 recensioner ger 5 stjärnor` was verified live 2026-09-18 with a re-check-before-export rule.",
+    "PD_7_H1: \"if the real take runs longer than 30 s, change the hook\" — the timer rule that keeps a timing claim honest.",
+    "Nine sizes 0–5 to 250–350 hk, one strap, 420D — all match the product page (read live from the product page 2026-09-21). Every brief has a Variables line."
+  ],
+  "missat": [
+    "The store is named in 6 of 11 briefs: captions `579 kr. baverbutiken.se` in CS_9_H1, PD_7_H1, SP_1_H10 and SP_4_H1, the VO line `… 579 kr på baverbutiken.se` in CS_9_H1, and the English CTA column \"at baverbutiken.se\" in BOF_2_1 and BOF_3_1. Rule since 2026-09-18: never in copy, image, voice-over or captions. No brief carries the hard rule.",
+    "BOF_2_1 and CS_9_H1 promise `30 dagars öppet köp` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). BOF_2_1's whole premise (\"states only what the product page actually says\") is false.",
+    "The three-question table is ✅✅❌ Pass on every line, including `30 dagars öppet köp.` and `Betala med Klarna.` — lines any store can sign. The test is filled in, not run.",
+    "7 of 11 concepts (BF_13_1, BOF_1–3, RV_10/11, SP_4_H1, PD_7_H1) have no source named and are not marked as a guess; no COPY CARD anywhere.",
+    "RV_10_1 / RV_11_1 start numbering at 10 with no RV_1–9 in the hub — fine if numbers are global per hub, but say so; otherwise it reads as a gap."
+  ],
+  "regler": [
+    "The ad never names the store: end cards and captions carry the price only (`579 kr.`), never `baverbutiken.se`, never a logo — and write \"the ad never names the store\" as a hard rule in every brief.",
+    "Store terms come from the product page read that day: 14 days' right of withdrawal by law, free shipping within Sweden, 5–10 working days, Klarna — `30 dagars öppet köp` does not exist on this store.",
+    "Name the source in the Why of every concept (parent ad with CPA and purchases against the 393 kr break-even, playbook, swipe, or \"guess\") — seven of eleven this round have none."
+  ],
+  "rader": [
+    {
+      "namn": "Batmotor_BF_13_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "New concept without a source or a guess mark; the \"same engine, same background\" rule is the right one for a before/after."
+      ],
+      "bra": [
+        "Makes the coverage claim visible in one frame."
+      ]
+    },
+    {
+      "namn": "Batmotor_BOF_1_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "No source named; for a BOF price recap that is acceptable if the Why says \"retargeting, no data needed\"."
+      ],
+      "bra": [
+        "States the real 40 % as a standing compare-at, bans the countdown."
+      ]
+    },
+    {
+      "namn": "Batmotor_CS_9_H1",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "Store name in the ad: the 22–25 s VO line `Båtmotorskyddet 420D — 579 kr på baverbutiken.se.` and the caption `579 kr. baverbutiken.se` (rule since 2026-09-18: never in copy, image, VO or captions). Next version: end on `Båtmotorskyddet 420D — 579 kr.` and the price alone in the caption.",
+        "`30 dagars öppet köp.` at 18–22 s — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Replace with a true term (`Fri frakt inom Sverige.`) or drop the line."
+      ],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The hypothesis is model: contribution, CPA and break-even all named."
+      ],
+      "bra": [
+        "Keeps CS_2_1's winning visual and offer and drops the lie."
+      ]
+    },
+    {
+      "namn": "Batmotor_SP_4_H1",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "Store name in the ad: caption `579 kr. baverbutiken.se` at 21–25 s (rule since 2026-09-18). Next version: `579 kr.` alone."
+      ],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "New angle with no source and not marked as a guess — say \"guess: no storage-calendar ad has run\" in the Why."
+      ],
+      "bra": [
+        "Real wind footage required instead of a wind-resistance claim — proof by footage."
+      ]
+    },
+    {
+      "namn": "Batmotor_PD_7_H1",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "Store name in the ad: caption `579 kr. baverbutiken.se` at 23–25 s (rule since 2026-09-18). Next version: `579 kr.` alone."
+      ],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+      ],
+      "bra": [
+        "The timer rule (\"change the hook if the take runs longer\") keeps the claim honest."
+      ]
+    },
+    {
+      "namn": "Batmotor_RV_11_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Same as RV_10_1: add the read-date of the quote."
+      ],
+      "bra": [
+        "Second, independent proof point (storage use case)."
+      ]
+    },
+    {
+      "namn": "Batmotor_BOF_2_1",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "`30 dagars öppet köp.` / `Fri att ångra dig i 30 dagar.` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). The ad's two main lines are false against the store; rebuild on the real terms (free shipping within Sweden, Klarna) or drop the ad.",
+        "The CTA's English meaning says \"Read more at baverbutiken.se\" — use the Swedish `Läs mer om skyddet.` exactly, no URL and no logo anywhere on the image (rule since 2026-09-18)."
+      ],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The Klarna logo in the corner is a third-party mark, fine; the store's own logo is not."
+      ],
+      "bra": []
+    },
+    {
+      "namn": "Batmotor_RV_10_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine. Consider stating in the brief when the quote was read (date), as the SP_1_H10 brief does for the star count."
+      ],
+      "bra": [
+        "Verbatim quote, real name, no `verifierad köpare`."
+      ]
+    },
+    {
+      "namn": "Batmotor_SP_1_H10",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "Store name in the ad: caption `579 kr. baverbutiken.se` at 22–25 s (rule since 2026-09-18). Next version: `579 kr.` alone."
+      ],
+      "anmarkningar": [
+        "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+      ],
+      "bra": [
+        "Hook isolated on the proven SP_1 body, family cited by contribution; the review count verified live with a re-check rule."
+      ]
+    },
+    {
+      "namn": "Batmotor_BOF_3_1",
+      "fel": [
+        "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)",
+        "The CTA's English meaning says \"Find your size at baverbutiken.se\" — use the Swedish `Hitta din storlek.` exactly; no URL, no logo on the image (rule since 2026-09-18)."
+      ],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+      ],
+      "bra": [
+        "Nine sizes, 0–5 to 250–350 hk, exactly as the page states."
+      ]
+    },
+    {
+      "namn": "Batmotor_CS_10_1",
+      "fel": [],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`965 kr → 579 kr.` in the bottom band repeats the sub-line — one of the two slots could carry the material fact instead."
+      ],
+      "bra": [
+        "Keeps the winning layout, retires the fake deadline by name."
+      ]
+    }
+  ]
+}

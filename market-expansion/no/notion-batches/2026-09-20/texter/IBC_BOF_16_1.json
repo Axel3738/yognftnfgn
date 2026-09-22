@@ -1,0 +1,71 @@
+[
+ {
+  "box": [
+   350,
+   60,
+   730,
+   168
+  ],
+  "rader": 1,
+  "storlek": 62,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "4,7 av 5"
+ },
+ {
+  "box": [
+   33,
+   186,
+   1047,
+   270
+  ],
+  "rader": 1,
+  "storlek": 26,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "10 anmeldelser"
+ },
+ {
+  "box": [
+   33,
+   1058,
+   1047,
+   1162
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "IBC-tanktrekk. Stopper alger & UV."
+ },
+ {
+  "box": [
+   307,
+   1210,
+   774,
+   1300
+  ],
+  "rader": 1,
+  "storlek": 40,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Zipp fast trekket."
+ }
+]

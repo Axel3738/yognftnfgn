@@ -1,0 +1,47 @@
+{
+ "in": "../forbehandlad/carashell_RI_103_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_RI_103_H1.mp4",
+ "srt": "../srt-us/carashell_RI_103_H1.srt",
+ "captions": {
+  "zon": [
+   880,
+   1100
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 946,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    14.2,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/storlek-ri.png",
+   "t": [
+    4.4,
+    6.4
+   ]
+  },
+  {
+   "png": "../lager/pris-spara-ri.png",
+   "t": [
+    10.4,
+    14.2
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    14.2,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-RI_103_H1"
+}

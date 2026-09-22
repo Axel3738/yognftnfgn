@@ -1047,6 +1047,68 @@ en icke-nordisk marknad skulle vara EN rad + en körning, inte ett nytt bygge:
     US-annonser. Termoskyddets 16 SE-annonser gick till engelska utan Notion —
     hela vägen står i `factory/FAS2.md` (samma dag, "16 annonser till USA").
 
+23. ⚙️ **Danmark 2026-09-20 (`/ny-marknad carashell DK`) — tre saker som inte
+    stod någonstans innan, och ett falskt larm att inte gå på igen.**
+
+    ⚙️ **Basvalutan sätts numera av API:t. Klicket i punkt 5 gäller inte längre.**
+    `marketUpdate(input: { currencySettings: { baseCurrency: DKK } })` gick rakt
+    igenom på den nyskapade marknaden, och prislistan fick sina tio fasta
+    DKK-priser i SAMMA körning — ingen 🖐, ingen väntan på admin. (Det äldre
+    `marketCurrencySettingsUpdate` svarar fortfarande "This action is restricted
+    if unified markets is enabled"; det var det som en gång gjorde klicket
+    nödvändigt.) USA fick sitt admin-klick i september för att koden inte kunde
+    — inte för att Shopify inte kan.
+
+    ⚠️ **Läs ALLTID marknadens sida med `?country=<LAND>`, annars mäter du fel
+    butik.** Utan parametern följde `/da/products/takskyddet` en 302 till
+    `carashell.com` (USA-marknaden äger den domänen och containern går ut från
+    USA) och svarade `lang="en"` med USD — vilket läser precis som "danskan
+    fungerar inte". Med `?country=DK`: `lang="da"`, `"currency":"DKK"`,
+    819,00 kr. En `POST /localization` räcker alltså INTE; cookien förlorar mot
+    domänroutningen.
+
+    ⚠️ **Judge.mes `locale` står på TVÅ ställen i HTML:en — och det första är
+    inte Judge.mes.** En sökning på `"locale":"…"` gav `da` och `en`. `da` sitter
+    i Shopifys eget block (`"domain":"carashell.se","predictiveSearch":true`);
+    Judge.mes står bredvid `"branding_text":"Drivs av Judge.me"` och sa **`en`**.
+    Läser man första träffen rapporterar man "språket är upptäckt" när det inte
+    är det. Matcha alltid på grannskapet (`branding_url`/`branding_text`), aldrig
+    på första förekomsten. Domen för Danmark blev därför: klicket **Settings →
+    Language → "Refresh list"** kvarstår (punkt 12).
+
+    ⚠️ **Ett falskt larm värt att känna igen:** markörskanningen är grön (0 av 16)
+    men en sökning på "Köp nu" träffar ändå — en gång, i Judge.mes
+    `widget_ugc_primary_button_text`. UGC-galleriet är inte installerat
+    (`widget_ugc_install_preference: false`), så strängen är osynlig för kunden
+    och finns likadant på /nb, /en och /fi. Det är appens egen inställning, inte
+    en läcka i temat. Rör den inte.
+
+    ⚙️ **Prisregeln blev Axels, inte kursens.** Frågan ställdes med två räknade
+    alternativ; svaret var *"kör ett snäpp högre för danmark, quotes brukar vara
+    dyrare än sverige med kanske 10 %"* ⇒ SEK × dagskurs × 1,10, avrundat till x9,
+    jämförpriset räknat likadant ur SEK-jämförpriset så rabattprocenten blir
+    densamma som den svenska sidan visar. ⚠️ **Det finns en motsatt precedens i
+    repot:** Bæverbutikken DK byggdes 2026-08-09 med DKK = SEK × 0,65 (alltså
+    UNDER kursen) med motiveringen att en 1:1-regel hade gjort sortimentet ~55 %
+    dyrare i Danmark. Precedensen är inte fel — den gällde en annan butik och
+    ett annat beslut. Citera den, låt ägaren välja, skriv aldrig in ett pris han
+    inte sett.
+
+    ⚙️ **Ordningen som fungerade, oförändrad:** `--igen marknad,tema,oversatt,
+    prislista,recensioner` med ALLA produktfiler, `--dry-run` först.
+    `da` lades till i `TEMAORD` och `MS_PAKET_ORD` (`factory/tema.mjs`),
+    `enhet_da` i `snippets/ms-paket.liquid`, `enhet.da` i produktfilen.
+    Den danska filen skrevs av en sonnet-subagent (160/160 nycklar) och säger
+    Danmarks egen sanning — "Gratis fragt til Danmark", "5–10 hverdage" — inte
+    en översättning av "Sverige & Norge". `i_fraktraden: false` ⇒ svenskan,
+    norskan och finskan är orörda.
+
+    ⚠️ **De "12 svenska texter" som `oversatt` rapporterar som läckor på nb, en,
+    fi OCH da är listicle-sidorna** (`/pages/<handle>-lagerrensning` m.fl.), inte
+    butikens egna. De översätts av `listicle/` genom Translations API med
+    `--marknad`, inte av fabriken. Siffran är alltså inte ett nytt fel och blir
+    inte mindre av att man kör `--igen oversatt` en gång till.
+
 ## Regler som bevisats den hårda vägen
 - **En NO-kampanj byggd före 2026-09-10 har länkar utan `?country=NO` och
   visar SVENSKA priser för norska kunder.** Fixen i Fas 4 (webbnärvaro +
@@ -1590,3 +1652,82 @@ Finland blev butikens tredje marknad. Fem saker som är nya i fabriken:
 fortfarande 1 129 kr, och den första varianten i listan (5,5 m) lika mycket, så
 sidans rubrikpris är oförändrat. Ligger annonspriset på en storlek som ÄNDRAS
 måste annonserna skannas om (`brand-detektor.mjs`) innan stegen skrivs.
+
+---
+
+## Kassan går inte att anpassa per marknad — ytan före den gör det (mätt 2026-09-21)
+
+Axels fråga: *"Det går att lägga till en bild i kassan … men jag undrar hur vi
+ska komma runt i alla marknader."* Rätt fråga, och svaret är att man inte kan.
+
+**Mätt på CaraShell, allt med läsande anrop:**
+
+| Vad | Utfall |
+|---|---|
+| Butikens plan | **"Shopify"** (`shopifyPlus: false`, `partnerDevelopment: false`) |
+| Kassa per marknad | Kräver **Advanced eller Plus** — butiken ligger ett steg under |
+| `checkoutBranding` | `ACCESS_DENIED`, *"the shop must be on a Plus plan"* — trots att appen har `write_checkout_branding_settings` |
+| Checkout-profiler | **EN**, publicerad, betjänar alla fem marknaderna |
+| `TranslatableResourceType` | 29 värden, **inget** rör checkout |
+| Bildytor kvar i kassan | Logotypen + ordersammanfattningens bakgrund. Header och Main togs bort av Shopify **2026-02-05, på alla planer** |
+
+**Scope och plan är två olika grindar.** Appen hade rätt scope hela tiden;
+planen stoppade ändå. Ett `ACCESS_DENIED` från `checkoutBranding` ska därför
+läsas som "fel plan", inte som "fel behörighet" — annars går timmarna åt till
+att leta efter ett scope som redan finns.
+
+**Och ytan som finns kvar är nästan värdelös där trafiken är:**
+ordersammanfattningen är **hopfälld som standard på mobil**, och i stort sett
+all Meta-trafik är mobil. En trust-bild där ser kunden aldrig.
+
+### Det som gäller i stället
+
+1. **Varukorgslådan bär trygghetsblocket.** Steget direkt före kassan, och
+   vi äger det helt: `byggKorgTrygghet` i `factory/tema.mjs` →
+   `snippets/opf-korg-trygghet.liquid`, inknäppt av `byggKorgWrapper` rakt
+   ovanför delsumman och kassaknappen. Femspråkigt via `localeBranch`, med
+   landet i texten bytt per besökare av `ms-landtext`.
+   **Betyget mäts, aldrig skrivs:** `item.product.metafields.reviews.rating`
+   (Judge.me håller metafältet uppdaterat).
+2. **Kassan får en SPRÅKLÖS strip:** `node factory/kassabild.mjs <butik>` —
+   butiksnamn + stjärnor + en siffra, inget ord. `kassabild.py` vägrar skriva
+   filen om spec:en bär text. Bilden är statisk, så `--kolla` mäter om
+   betyget och säger till när det glidit mer än 0,2.
+
+### Tre fällor, alla dyrköpta samma dag
+
+- **A/B i varukorgen går via CSS, aldrig via `hidden`.** `ms-ab.js` stämplar
+  `data-ms-ab-<test>` på `<html>`, och DET överlever att Dawn hämtar om hela
+  cart-drawer-sektionen vid varje varukorgsändring. `ms-ab-attrs` sätter
+  attributet `hidden` på elementet — lådan kommer tillbaka från servern i
+  sitt ursprungsskick, och en besökare i variant B hade sett blocket ändå så
+  fort hen ändrade antal.
+- **`ms_ab_tests` skrivs i steget `brand`, inte i `tema`.** Ett
+  `--igen tema` lägger blocket i butiken men inte testet i inställningen, och
+  då står blocket dolt för ALLA (CSS-grinden väntar på ett attribut som aldrig
+  sätts). Kör `--igen brand` också. Inställningen är en textarea med ett test
+  per rad, så `slaIhopTester` lägger det nya ovanpå i stället för att skriva
+  över paketvalets test.
+- **Trygghetsraden sätter `--ms-tr-antal` som INLINE style på sitt eget
+  element.** En variabel på föräldern biter inte. Vill man stapla den i lådan
+  måste `grid-template-columns` sättas direkt.
+
+### Kontrollen som faktiskt bevisar något
+
+`curl` räcker inte: blocket ligger i en stängd låda, så `isVisible()` är
+falskt i båda varianterna. Mät `getComputedStyle(el).display` i stället —
+`grid` mot `none` skiljer "avstängd av A/B" från "lådan är stängd".
+Chromium finns i containern på
+`/opt/pw-browsers/chromium-1194/chrome-linux/chrome` och behöver
+`--ignore-certificate-errors` + `ignoreHTTPSErrors` för proxyns certifikat.
+
+⚠️ **`curl` utan `-L` mot carashell.se ger en 9 kB mellansida**, inte butiken.
+Den saknar allt — `ms-ab-config`, `ms-cro.css`, hela temat — och läser som att
+sajten är trasig. Följ omdirigeringen.
+
+**Utfall 2026-09-21, tillbakaläst som kund i varje marknad:**
+SE `★★★★★ 5,0 16 recensioner · Fri frakt – Sverige & Norge · 14 dagars ångerrätt`,
+NO `16 anmeldelser · Gratis frakt`, DK `16 anmeldelser · Gratis fragt til Danmark`,
+FI `16 arvostelua · Ilmainen toimitus Suomeen`,
+US `16 reviews · 🇺🇸 Free shipping to the US · 90-day guarantee` — med decimalPUNKT.
+A/B verifierat i webbläsare: variant a `display: grid`, variant b `display: none`.

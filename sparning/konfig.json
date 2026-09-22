@@ -1,0 +1,32 @@
+{
+  "comment": "Spårningssidan i Bäverbutiken: /pages/spara. Ändra här och kör sedan `node sparning/publicera.mjs` — aldrig i sida.mjs. Paketen, händelserna och tiderna kommer ur sparning/lage.json vid varje publicering, aldrig ur den här filen.",
+  "sida": {
+    "handle": "spara",
+    "titel": "Spåra ditt paket",
+    "template_suffix": null,
+    "template_suffix_comment": "null = butikens vanliga sidmall. Sidan bär sin egen HTML/CSS/JS inline (rättigheten write_content, verifierad 2026-09-19) och kräver inga temafiler — den överlever ett temabyte. Lyckohjulet kör mallen 'full-width' (mejl/konfig.json → hjul.template_suffix); sätt samma sträng här om Axel vill ha en lika bred sida.",
+    "markor": "bb-spar",
+    "markor_comment": "id på sidans yttersta element. Sätts av sparning/sida.mjs — värdet här är bara reserven, avläst ur dess export SIDMARKOR 2026-09-19 (id=\"bb-spar\"). publicera.mjs läser i första hand markören ur den sidkropp som just byggdes (och ur sida.mjs export SIDMARKOR/MARKOR om den finns), och stannar hellre än publicerar om markören inte går att hitta: annars hade tillbakaläsningen letat efter något som inte finns och alltid sagt OK. ⚠️ Stod här som \"bb-sparning\" fram till 2026-09-19 — ett id sidan aldrig har burit, alltså en reserv som inte hade hållit.",
+    "data_id": "bb-spar-data",
+    "data_id_comment": "id på <script type=\"application/json\">-blocket med den komprimerade paketdatan (formatet ägs av sparning/uppacka.mjs). Samma sak som markören: läses i första hand ur den byggda sidkroppen, och reserven här är avläst ur sida.mjs export DATAMARKOR 2026-09-19.",
+    "fonster_dagar": null,
+    "fonster_dagar_comment": "Hur många dagar bakåt ett paket får ha sin senaste skanning för att följa med i filen. null = paketdata.FONSTER_DAGAR (45 dagar, satt där). --fonster <dagar> på kommandoraden vinner över båda."
+  },
+  "butik": {
+    "namn": "Bäverbutiken.se",
+    "url": "https://baverbutiken.se",
+    "support": "kundsupport@baverbutiken.se",
+    "support_comment": "Samma adress som mejl/konfig.json → butik.support. ⚠️ Sajtens sidfot visar kundsupport@baverkoppling.se, men den domänen saknar MX-post helt (mätt 2026-09-12, DNS) — skriv aldrig in den här."
+  },
+  "frakt": {
+    "sparning_vaknar": "2–4 dagar",
+    "sparning_vaknar_comment": "Samma löfte som kunden fått i mejlen. Läst ur mejl/konfig.json → frakt.sparning_vaknar 2026-09-19 och kopierat hit ordagrant. publicera.mjs jämför de två vid varje körning och varnar om de glidit isär — sidan och mejlen får aldrig lova olika saker."
+  },
+  "lage": {
+    "comment": "Vad som faktiskt ligger i Shopify. Skrivs av sparning/publicera.mjs efter att sidan lästs tillbaka i kundens vy — aldrig för hand, och aldrig ur en chatt.",
+    "sida_publicerad": "2026-09-22",
+    "sida_url": "https://baverbutiken.se/pages/spara",
+    "sida_matt": "1451 paket, 15915 händelser, 487 kB",
+    "sida_matt_comment": "Vad som mättes vid senaste lyckade publicering: antal paket, antal händelser och sidans storlek. null = sidan har aldrig publicerats av skriptet."
+  }
+}

@@ -1241,3 +1241,166 @@ pingas om — rapporten går tyst tills något ändras.
 kronorna sedan i går är efterattribuering, inte spend), kön fortfarande 0 rader,
 priset 380 NOK. Ingenting rört. Loggas som en rad med flit: en dag utan
 förändring förtjänar ingen egen rubrik.
+
+---
+
+## 2026-09-20 — nattvakten, körning nr 9: briefdag utan briefer, 0 ändringar
+
+Söndag = briefdag i kadensen, men `Briefrond:` står på PAUS ⇒ noll briefer,
+`kord` stämplat, ingen `brief-kord`. SE PAUSED sedan 15/9 20:52 (oförändrad
+`updated_time`), NO PAUSED sedan 18/9. **0 ändringar**, inget aktiverat, ingen
+loggrad. Hubben oförändrad fjärde natten: 19 rader i Draft, 10 i Creative strat
+review, 31 Approved. `products/drytrek/feedback.md` saknas fortfarande.
+
+SE 7d: **1 875 kr, 3 köp, ROAS 0,62** på fyra dagsrader — mot 2 998 kr / 6 köp
+igår. 3d-fönstret är tomt.
+
+**Ingen av siffrorna är en signal längre.** Med båda kampanjerna av kommer ingen
+ny spend in; fönstret tappar bara dagar i bakkanten. Att SE:s ROAS faller
+0,87 → 0,62 betyder att de sista aktiva dygnen var svagare än snittet, inget
+annat — precis som Norges 1,65 → 1,71 igår inte var en förbättring. Skrivet ut
+här så att ingen senare natt läser rörelsen som utveckling.
+
+Fem nätter i rad med 0 ändringar är rätt utfall, inte en trasig rutin: reglerna
+rör aldrig något som ägaren pausat. Båda ägarfrågorna står obesvarade i Discord
+— omstart av SE (A/B/C, sedan 15/9) och om rutinen ska stängas av tills en
+marknad slås på (sedan 18/9). Ingen pingas.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-20.json`.
+
+---
+
+## 2026-09-20 — leveransrunda: fönstret tomt, DryTrek har inga siffror kvar att läsa
+
+Oförändrat: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+
+**Norges 7d-fönster är nu helt tomt — 0 kr, mot 6 713 kr igår.** Det är precis
+vad gårdagens anteckning förutsade: kampanjen har varit av sedan 18/9 och
+fönstret har rullat klart. Sverige läser 1 875 kr, 3 köp, ROAS 0,62 och töms på
+samma sätt de närmaste dagarna.
+
+**Från och med nu bär ingen av marknaderna ett tal värt att läsa.** Det finns
+ingen prestandasignal kvar att rapportera förrän en kampanj slås på igen.
+Sekvensen 1,78 → 1,84 → 1,65 → 1,71 → 0 är hela historien om varför ett rullande
+fönster inte är en trend: de två sista stegen skedde utan att en enda krona
+spenderades.
+
+Båda ägarfrågorna står obesvarade (omstart av Sverige sedan 15/9, paus av den här
+rutinen sedan 18/9). Ingen pingas om igen.
+
+**Norge 2026-09-20 (översättningsrutinen):** Tredje dygnet oförändrat. NO-kampanjen
+PAUSED, **8 476 kr — exakt samma tal som i går**, så efterattribueringen har lagt
+sig också. Kön 0 rader, priset 380 NOK. Ingenting rört. Rutinen kommer att
+rapportera detta varje dag tills Norge slås på igen; frågan om att tysta den står
+obesvarad sedan 19/9 och ingen pingas om igen.
+
+---
+
+## 2026-09-21 — nattvakten, körning nr 10: sjätte natten med 0 ändringar
+
+Briefdag i kadensen (ikappkörning, 8 dygn sedan senaste briefen), men
+`Briefrond:` står på PAUS ⇒ noll briefer, `kord` stämplat, ingen `brief-kord`.
+SE PAUSED sedan 15/9 20:52 (`updated_time` orörd sjätte dygnet), NO PAUSED
+sedan 18/9. **0 ändringar, 0 loggrader.** Hubben oförändrad femte natten: 19 i
+Draft, 10 i Creative strat review, 31 Approved. `feedback.md` saknas.
+
+SE 7d: **1 027 kr, 1 köp, ROAS 0,38** på tre dagsrader (2 998 → 1 875 → 1 027).
+Fönstret töms; på onsdag är det noll. Det är inte en försämring utan
+kalendern — samma sak som skrevs ut 19/9 och 20/9. Läs inte trenden.
+
+Sex nätter i rad med 0 ändringar är reglerna som fungerar: ingenting som ägaren
+pausat rörs. Frågan om rutinen ska stängas av (ställd 18/9) har nu praktisk
+betydelse — rapporten beskriver ett tomt konto varje natt.
+Underlag: `factory/output/drytrek/budgetrond-2026-09-21.json`.
+
+**Norge 2026-09-21 (översättningsrutinen):** Fjärde dygnet oförändrat. NO-kampanjen
+PAUSED med 8 476 kr (samma tal tredje dagen i rad), kön 0 rader, priset 381 NOK
+(380 i går — kursen rör sig, avläsningen följer med). Ingenting rört.
+
+## 2026-09-21 — leveransrunda: rättelse, gårdagens nolla var Metas fel
+
+Oförändrat i sak: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+Kontot läser 730 annonser / 25 kampanjer. Tio `Damasker_*`-källrader ligger kvar
+parkerade i `Creative strat review` och rörs inte.
+
+**Rättelse.** I går skrev jag att Norges 7-dagarsfönster var "helt tomt — 0 kr" och
+drog slutsatser av det. Det var inte tomt. I dag läser samma fönster 4 209 kr, och
+ett rullande fönster kan inte fyllas på igen — alltså var gårdagens 0 fel data från
+Meta, inte ett fönster som tömts. Jag läste dag för dag i dag för att vara säker:
+
+| Kampanj | Sista dagen med spend | Belopp |
+|---|---|---|
+| NO | 2026-09-18 | 420,59 kr |
+| SE | 2026-09-15 | 487,39 kr |
+
+Dagssummorna 14–20 sep stämmer exakt mot `last_7d` i dag (NO 4 209,01 kr,
+SE 1 026,91 kr). Ingenting saknas i kontot.
+
+**Lärdomen ovanpå gårdagens:** ett rullande fönster är inte bara oläsbart som
+trend — det går också att få en ren felavläsning ur det utan att något ser trasigt
+ut. En nolla från Meta ska korskollas mot `time_increment: 1` innan den skrivs ner
+som ett faktum. Gårdagens rad i den här loggen står kvar som den skrevs; det här
+är rättelsen, inte en omskrivning.
+
+**Livstidstalen — det enda som inte rör sig av sig själv:**
+
+| Marknad | Spend | Köp | ROAS | CPA | Mot BE-ROAS 1,60 |
+|---|---|---|---|---|---|
+| NO | 8 475,60 kr | 31 | **1,81** | 273 kr | över |
+| SE | 4 657,46 kr | 8 | **0,73** | 582 kr | långt under |
+
+Norge var marknaden som fungerade. Med verklig AOV (15 371 / 31 ≈ 496 kr) blir
+break-even-CPA 310 kr, inte 243 kr som 389/1,60 ger — och då är NO:s vinstbidrag
+(310 − 273) × 31 ≈ **+1 130 kr**. SE:s är (423/1,60 − 582) × 8 ≈ **−2 540 kr**.
+Det är hela historien om DryTrek hittills: en marknad som bar sig och en som inte
+gjorde det, och båda är avstängda.
+
+Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa den här rutinen,
+18 sep). Ingen pingas om.
+
+---
+
+## 2026-09-22 — nattvakten, körning nr 11: sista mätbara dygnet i fönstret
+
+Kördag OCH briefdag i kadensen, men `Briefrond:` står på PAUS ⇒ noll briefer,
+`kord` stämplat, ingen `brief-kord`. SE PAUSED sedan 15/9 20:52 (`updated_time`
+orörd sjunde dygnet), NO PAUSED sedan 18/9. **0 ändringar, 0 loggrader.**
+
+SE 7d: **487 kr, 1 köp, ROAS 0,80** på två dagsrader. I morgon är fönstret tomt
+och rapporten har inga siffror alls att visa — det är väntat, inte ett fel.
+Serien 2 998 → 1 875 → 1 027 → 487 är fönstret som töms, ingenting annat.
+
+Hubben oförändrad sjätte natten: 19 i Draft, 10 i Creative strat review, 31
+Approved. **`feedback.md` kommer inte att skapas av den nya briefgranskningen**
+(byggd 18/9, första körning måndag 21/9): den läser Bäverbutikens hubbar, och
+DryTreks hub är en OPS-hub som undantas per id. Ingen åtgärd medan produkten är
+av, men värt att veta innan briefronden släpps — då behöver granskningen
+antingen utökas eller så får `/cs` göra jobbet.
+
+Sjunde natten med 0 ändringar. Frågorna till Axel står kvar sedan 15/9 (A/B/C
+för SE) och 18/9 (stäng av rutinen tills en marknad är igång).
+Underlag: `factory/output/drytrek/budgetrond-2026-09-22.json`.
+
+## 2026-09-22 — leveransrunda: gårdagens rättelse håller
+
+Oförändrat: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+Kontot läser 730 annonser / 25 kampanjer. Tio parkerade `Damasker_*`-källrader
+orörda.
+
+Fönstren töms nu jämnt, precis som dag-för-dag-datan sa i går: NO 7d **3 251 kr**
+(4 209 i går), SE 7d **487 kr** (1 027 i går). Ingen upprepning av måndagens
+felaktiga nolla — den var ett engångsfel hos Meta, inte ett mönster.
+
+**En not till den som startar om kampanjen:** nattvaktens meddelande i `#ads-to-do`
+står kvar och rekommenderar ett separat test-ABO. Det var gamla regel 11. Regeln
+ändrades 2026-09-20 — nya annonser går i produktens CBO, i adsetet som bär
+konceptets vinkel, och en annons utan spend på sju dygn etiketteras `INGEN_LEVERANS`
+och släpps. Följ inte den gamla texten i Discord; CLAUDE.md regel 11 är facit.
+
+Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa rutinen, 18 sep).
+
+## 2026-09-22 — NO-översättning: femte dygnet oförändrat
+
+Kön 0 rader, `DRYTREK_NO_Damasker Vandring | BE-ROAS 1.60 | 2026-09-09`
+(`120249020611450172`) fortsatt PAUSED med 8 476 kr spend. Inget rört i kontot.
+Priset på den norska sidan läser **381 NOK** (`?country=NO`), samma som i går.
+Rapport: Discord `1551954986294972497`.

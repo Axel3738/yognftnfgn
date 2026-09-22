@@ -1,0 +1,291 @@
+{
+  "kommentar": "Varumärkena på baksidan av sajten — Axels beställning 2026-09-22: 'en MAIN flik för varje varumärke, dvs Matstrumpor, Grillkliniken, Bäverbutiken, Carashell, och sen varje enskilda folders därunder'. Varje post knyter ihop det som redan finns i snapshoten: butiker (id ur sparning/butiker.json, factory/butiker eller SHOPIFY_SHOP_*), annonskonton (hela konton, eller kampanjer med visst prefix i ett delat konto), kundtjänstens brand-id, spårningens butik-id, Discord-servern med kanalerna som ska läsas, och rutinerna (id ur stonebite/rutiner.json). Det som INTE går att läsa i dag står kvar med orsak — sidan säger det rakt ut i stället för att visa noll. Övriga OPS-butiker ligger i en femte grupp så inget försvinner. ⚠️ Kanaler som kan bära inloggningar (#konton, #logins, #meta-access) läses ALDRIG — snapshoten committas till repot. Bara eskalering + annonser.",
+  "varumarken": [
+    {
+      "id": "baverbutiken",
+      "namn": "Bäverbutiken",
+      "kort": "Testbädden där nya produkter får sin första chans — plus systerbutikerna i Norge, Danmark och Finland.",
+      "butiker": [
+        "baverbutiken",
+        "beverbutikken",
+        "baeverbutiken",
+        "majavakauppa",
+        "uk"
+      ],
+      "konton": [
+        {
+          "id": "1867947880635861",
+          "namn": "MagiBorsten",
+          "hela": true
+        },
+        {
+          "id": "1050941584152547",
+          "namn": "Magiborsten NO",
+          "hela": true
+        },
+        {
+          "id": "1619718346388201",
+          "namn": "Magiborsten FI",
+          "hela": true
+        },
+        {
+          "id": "1107817401910319",
+          "namn": "Magiborsten UK",
+          "utom": [
+            "CARASHELL_"
+          ],
+          "not": "CaraShells US-kampanjer ligger i samma konto (Axels beslut 2026-09-16) och räknas till CaraShell."
+        }
+      ],
+      "kundtjanst": [
+        "baverbutiken"
+      ],
+      "leverans": [
+        "baverbutiken",
+        "beverbutikken",
+        "baeverbutiken",
+        "majavakauppa"
+      ],
+      "discord": [
+        {
+          "server": "Bäverbutiken",
+          "eskalering": [
+            "customer-service",
+            "norway-customer-support",
+            "problems-no"
+          ],
+          "annonser": [
+            "ads-launching",
+            "problem-and-revisions-ads"
+          ]
+        }
+      ],
+      "rutiner": [
+        "sparning-baverbutiken",
+        "sparning-beverbutikken",
+        "sparning-baeverbutiken",
+        "sparning-majavakauppa",
+        "notionkorning",
+        "oversatt-no",
+        "bildannonser",
+        "commission",
+        "kundtjanst",
+        "tvistkoll",
+        "briefgranskning",
+        "translate-no",
+        "no-recensioner"
+      ],
+      "hubbar_kommentar": "Notion-hubbarna hittas dynamiskt av rutinerna (CLAUDE.md → Connectors) och listas inte här."
+    },
+    {
+      "id": "grillkliniken",
+      "namn": "Grillkliniken",
+      "kort": "Mastern — elgrillborsten. Egen sajt, eget annonskonto, eget team-Discord.",
+      "butiker": [],
+      "butiker_saknas": "grillkliniken.se har inga Shopify-nycklar i Environments — försäljningen går inte att läsa förrän en app med read_orders läggs in (SHOPIFY_CLIENT_ID/SECRET_GRILLKLINIKEN).",
+      "konton": [
+        {
+          "id": "1346450049878358",
+          "namn": "SnarkLös",
+          "hela": true
+        }
+      ],
+      "konton_saknas": "META_ACCESS_TOKEN nådde inte SnarkLös vid senaste hämtningen — bara Magiborsten-kontona lästes. Kontot står här så det syns att det saknas.",
+      "kundtjanst": [],
+      "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ — veckorapporten läser inte Grillklinikens brevlåda än (KUNDTJANST_MAIL_PASS_GRILLKLINIKEN saknas).",
+      "leverans": [],
+      "discord": [
+        {
+          "server": "Grillkliniken",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads",
+            "ads-to-do",
+            "annons-uppladdning"
+          ]
+        }
+      ],
+      "rutiner": []
+    },
+    {
+      "id": "matstrumpor",
+      "namn": "Matstrumpor",
+      "kort": "matstrumpor.se — kontot heter 'nya kungen'. Uppladdaren och den lilla kungen körs på kommando, inte som nattrutin.",
+      "butiker": [
+        "1r46tp-qx"
+      ],
+      "konton": [
+        {
+          "id": "730973156224390",
+          "namn": "nya kungen",
+          "hela": true
+        }
+      ],
+      "konton_saknas": "META_ACCESS_TOKEN nekas på kontot 'nya kungen' — allt som skriver i Meta går via Adsmanager-MCP:n, och siffrorna kan inte hämtas av rutinen förrän appen fått åtkomst.",
+      "kundtjanst": [],
+      "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ än.",
+      "leverans": [
+        "matstrumpor"
+      ],
+      "discord": [],
+      "discord_saknas": "Ingen Discord-server för Matstrumpor bland de boten ser (mätt 2026-09-22).",
+      "rutiner": [
+        "sparning-matstrumpor"
+      ]
+    },
+    {
+      "id": "carashell",
+      "namn": "CaraShell",
+      "kort": "Skydd för husvagnen och husbilen. Sverige, Norge och USA (+ GB/CA/AU/NZ). Två produkter, varsin uppsättning rutiner.",
+      "butiker": [
+        "carashell"
+      ],
+      "konton": [
+        {
+          "id": "915422744950975",
+          "namn": "MagiBorsten DK (OPS-kontot)",
+          "prefix": [
+            "CARASHELL_"
+          ]
+        },
+        {
+          "id": "1107817401910319",
+          "namn": "Magiborsten UK",
+          "prefix": [
+            "CARASHELL_"
+          ]
+        }
+      ],
+      "kundtjanst": [],
+      "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ än — brevlådan hello@carashell.com läses inte av veckorapporten.",
+      "leverans": [
+        "carashell"
+      ],
+      "discord": [
+        {
+          "server": "CaraShell — OPS",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads",
+            "ads-to-do",
+            "annons-uppladdning",
+            "creative-strategy"
+          ]
+        }
+      ],
+      "rutiner": [
+        "nattvakt-carashell-takskyddet",
+        "nattvakt-carashell-termoskyddet",
+        "leverans-carashell-takskyddet",
+        "leverans-carashell-termoskyddet",
+        "no-carashell-takskyddet",
+        "no-carashell-termoskyddet",
+        "us-carashell-takskyddet",
+        "us-carashell-termoskyddet",
+        "spegla-carashell-takskyddet",
+        "spegla-carashell-termoskyddet",
+        "sparning-carashell"
+      ]
+    },
+    {
+      "id": "ops",
+      "namn": "Övriga OPS-butiker",
+      "kort": "HeimGuard, TankGuard, DryTrek, TackleBay, CatCabin och AdventLane. OPS-projektet är nedlagt utom CaraShell — de flesta rutinerna här är avstängda med flit.",
+      "butiker": [
+        "pzjagy-mz",
+        "catcabin",
+        "tacklebay",
+        "kalender",
+        "j0p8qz-kp",
+        "aphkky-ke"
+      ],
+      "konton": [
+        {
+          "id": "915422744950975",
+          "namn": "MagiBorsten DK (OPS-kontot)",
+          "utom": [
+            "CARASHELL_"
+          ]
+        }
+      ],
+      "kundtjanst": [],
+      "leverans": [],
+      "discord": [
+        {
+          "server": "HeimGuard",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        },
+        {
+          "server": "TankGuard",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        },
+        {
+          "server": "DryTrek — OPS",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        },
+        {
+          "server": "AdventLane",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        },
+        {
+          "server": "TackleBay — OPS",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        },
+        {
+          "server": "CatCabin — OPS",
+          "eskalering": [
+            "customer-support"
+          ],
+          "annonser": [
+            "ads"
+          ]
+        }
+      ],
+      "rutiner": [
+        "nattvakt-hemvakten",
+        "leverans-hemvakten",
+        "no-hemvakten",
+        "nattvakt-tankguard",
+        "nattvakt-drytrek",
+        "leverans-drytrek",
+        "no-drytrek",
+        "nattvakt-kalender",
+        "leverans-kalender",
+        "no-kalender",
+        "nattvakt-tacklebay",
+        "leverans-tacklebay",
+        "no-tacklebay",
+        "nattvakt-catcabin"
+      ]
+    }
+  ]
+}

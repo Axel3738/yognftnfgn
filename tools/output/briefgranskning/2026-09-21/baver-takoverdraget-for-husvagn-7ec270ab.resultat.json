@@ -1,0 +1,38 @@
+{
+  "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "hub_titel": "BÄVER Taköverdraget för Husvagn",
+  "slug": "baver-takoverdraget-for-husvagn-7ec270ab",
+  "rond": "2026-09-19",
+  "idag": "2026-09-21",
+  "antal": 11,
+  "rena": 0,
+  "anm": 8,
+  "fel": 3,
+  "feedback_rad": {
+    "skapad": true,
+    "page_id": "3e2270ab-908c-8178-aa21-c0bd824e0a00",
+    "url": "https://app.notion.com/p/Brief-review-2026-09-19-3e2270ab908c8178aa21c0bd824e0a00",
+    "titel": "Brief review 2026-09-19",
+    "block": 24
+  },
+  "feedback_fil": "products/carashell/takskyddet/feedback.md",
+  "kommentarer": [
+    {
+      "namn": "Takoverdrag_CO_5_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-19 (BÄVER Taköverdraget för Husvagn) — this brief has an error the editor must know about:\n1. The hook `Det har ju gått bra hittills.` fails the three-question test: there is nothing to picture, and any cover brand can sign it. Do not shoot it as written — open on something the viewer can see (the bare roof, and how long since he last looked at it), then keep the rest of the script.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Takoverdrag_PD_10_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-19 (BÄVER Taköverdraget för Husvagn) — this brief has an error the editor must know about:\n1. `spänns fast med rem och dragsko i kanten` (4–10 s, and the caption `Rem och dragsko i kanten` at 10–16 s) — the page (read live from the product page 2026-09-21) says straps on all four sides hooked into a hook at the bottom edge; no drawstring exists. Use the strap-and-hook wording from PD_10_1 (`remmar på alla fyra sidor, 2,5 m och justerbara`) in both VO and caption.\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    },
+    {
+      "namn": "Takoverdrag_CS_12_H1",
+      "utfall": "skriven",
+      "text": "Brief review 2026-09-19 (BÄVER Taköverdraget för Husvagn) — this brief has an error the editor must know about:\n1. `spänns fast med rem och dragsko i kanten` — the product page (read live from the product page 2026-09-21) says the cover has straps on all four sides that hook into a hook at the bottom edge, plus two 10,5 m ratchet straps. There is no drawstring (dragsko). Film the strap and hook, and change the line and caption to what the page says (straps on four sides, hooked at the edge).\nFix before production. If the ad is already live, apply it to the next version — nothing is paused. Status unchanged."
+    }
+  ],
+  "varningar": [],
+  "torr": false
+}

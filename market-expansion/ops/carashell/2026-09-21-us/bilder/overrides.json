@@ -1,0 +1,430 @@
+{
+ "_kalla": "Rutor mätta 2026-09-21 ur de fem SE-bilderna (matrader.py för textradernas y/x, oversatt-bild.py --analys för plattor och knappar). Alla former går via box_for_form — detektorn tar fotot för plattor på de här bilderna. Textstorlekarna är KALIBRERADE mot SE-radernas uppmätta bredd i Liberation Sans: rubrik 77, toppris 76, underrad och botten 32, knapp 41–42. ⚠️ Underraden är 32 här, inte 38 som i 2026-09-20-batchen — mallen har en mindre underrad, så storleken mäts per batch och ärvs aldrig. QA-rättning samma dag: BOF_108:s rubrik och bottenband och BOF_109:s rubrik och underrad fick utvidga 6 — de ligger direkt på fotot utan egen platta, och glorian runt 77 px fet text nås inte av tre utvidgningar. BOF_108:s rubrik och bottenband fick dessutom troskel 25: glorian låg till 13 % i intervallet 30–60 och rördes inte av standardtröskeln. PD_110:s rubrik och bottenband fick samma behandling efter QA — spöket \"5,5 till 3 × 13,5 meter.\" var tydligt för ögat men OCR läste bilden som ren: OCR fångar inte lågkontrastspöken, ögat gör det.",
+ "CaraShellRoof_BOF_107_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      62,
+      1040,
+      276
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.57
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      316,
+      1020,
+      382
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      17
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      60,
+      1078,
+      1020,
+      1145
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      17
+     ]
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      300,
+      1222,
+      780,
+      1294
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_BOF_108_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      288
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.57,
+     "utvidga": 8,
+     "troskel": 25
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      316,
+      1020,
+      382
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      21,
+      20,
+      19
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      60,
+      1026,
+      1020,
+      1140
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.75,
+     "utvidga": 8,
+     "troskel": 25
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      262,
+      1222,
+      818,
+      1292
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_BOF_109_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      200,
+      64,
+      880,
+      150
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 76,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      16
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      40,
+      186,
+      1040,
+      394
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.57,
+     "utvidga": 6
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      60,
+      436,
+      1020,
+      504
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "utvidga": 6
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      60,
+      1070,
+      1020,
+      1140
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      16
+     ]
+    }
+   ],
+   "4": [
+    {
+     "box": [
+      268,
+      1222,
+      812,
+      1294
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_CS_113_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      62,
+      1040,
+      290
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 78,
+     "fet": true,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.55
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      316,
+      1020,
+      382
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      21,
+      20,
+      19
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      60,
+      1076,
+      1020,
+      1142
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      15
+     ]
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      252,
+      1224,
+      828,
+      1296
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 42,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ },
+ "CaraShellRoof_PD_110_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      40,
+      58,
+      1040,
+      284
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 77,
+     "fet": true,
+     "farg": [
+      18,
+      17,
+      15
+     ],
+     "radavstand": 1.68,
+     "utvidga": 8,
+     "troskel": 25
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      60,
+      316,
+      1020,
+      378
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ]
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      60,
+      1026,
+      1020,
+      1140
+     ],
+     "post": 0,
+     "rader": 2,
+     "storlek": 32,
+     "farg": [
+      19,
+      18,
+      16
+     ],
+     "radavstand": 1.75,
+     "utvidga": 8,
+     "troskel": 25
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      306,
+      1226,
+      775,
+      1286
+     ],
+     "post": 0,
+     "rader": 1,
+     "storlek": 41,
+     "fet": true,
+     "farg": [
+      255,
+      255,
+      255
+     ]
+    }
+   ]
+  }
+ }
+}

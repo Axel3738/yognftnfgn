@@ -1,0 +1,582 @@
+{
+  "_kalla": "Engelska bildtexter skrivna av huvudsessionen 2026-09-20, subagent-copywriter (regel 6, CLAUDE.md) ur se-texter.json för carashell/takskyddet US-lanseringen. Källor: docs/copy-regler.md (tre-frågorstestet) och products/carashell/takskyddet/dna.md. Pris satt till $199 / reg. $249 (20% off) per amerikanska produktsidans mätning 2026-09-20; recensionerna skrivna som 16 st / 5.0, inte de inaktuella 10 som står i de svenska bilderna. 'Förvaringspåse' (medföljande väska/påse) uteslutet enligt DNA:ts förbud mot det påståendet. Butikens namn/domän förekommer ingenstans.",
+  "CaraShellRoof_BOF_104_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$199"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$50 less than $249"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "210 ft² roof"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Pay $199"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_CS_110_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "Save $50 on the roof cover"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$249  →  $199"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Rated 5.0 out of 5 (16 reviews)"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the cover"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_CS_111_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "Save 20% on the roof cover"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$249  →  $199"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Rated 5.0 out of 5 (16 reviews)"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the cover"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_BOF_105_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "Isn't a tarp enough?"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "210D fabric, not a thin tarp that cracks in the cold."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Built to handle winter — no cracking"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the difference"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_BOF_106_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Can I do it myself?"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Just the roof, not the whole RV"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Straps & cord at the edge"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Fit it yourself"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_CO_104_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Roof only."
+          },
+          {
+            "rader": [
+              1
+            ],
+            "text": "Not the whole RV."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "A full cover is heavy to fit alone and scrapes the paint all winter."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Covers the roof, 21×10 ft"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the cover"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_GT_109_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1,
+              2
+            ],
+            "text": "He goes out in his pajamas to check the cover's still on."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Give him a roof cover that stays put."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Stays put in the wind — held tight by straps and a drawcord at the edge."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Gift the roof cover"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_LI_102_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "21 × 10 ft roof."
+          },
+          {
+            "rader": [
+              1
+            ],
+            "text": "That's it."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Straps & cord at the edge"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "One person can fit it"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "210D fabric"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$199"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Cover the roof, not the RV"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_PD_108_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "21 × 10 ft — the whole roof, no more"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "210D — built for a full winter outside"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Just the roof — one person handles it"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See size"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_PD_109_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "Water pools around the roof hatches."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "The roof is the part you never see — and the most expensive to fix."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Covers the whole roof, 21×10 ft"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Protect the roof"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_RI_104_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1,
+              2
+            ],
+            "text": "Water never pools around the roof hatches"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0,
+              1
+            ],
+            "text": "210D fabric, not a thin tarp that cracks in the cold."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$199 for the roof"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the cost to protect it"
+          }
+        ]
+      }
+    ]
+  },
+  "CaraShellRoof_TR_102_1": {
+    "former": [
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "Just 16 reviews."
+          },
+          {
+            "rader": [
+              1
+            ],
+            "text": "All 5 stars."
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "5.0 out of 5 on 16 reviews"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "$199"
+          }
+        ]
+      },
+      {
+        "texter": [
+          {
+            "rader": [
+              0
+            ],
+            "text": "See the cover"
+          }
+        ]
+      }
+    ]
+  }
+}

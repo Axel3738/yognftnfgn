@@ -1,0 +1,24 @@
+{
+ "comment": "Skrivs av sparning/kor.mjs. nummer → { bolag, kod, order, fulfillment, registrerad, status, senast, levererad }",
+ "paket": {
+  "YT2626000704875251": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#1042",
+   "fulfillment": "gid://shopify/Fulfillment/8285231645017",
+   "registrerad": "2026-09-20",
+   "status17": "InTransit",
+   "senast": "2026-09-22T14:49",
+   "status": "IN_TRANSIT"
+  }
+ },
+ "senaste_korning": {
+  "datum": "2026-09-22T14:49:09.943Z",
+  "ordrar": 1,
+  "paket": 1,
+  "registrerade": 0,
+  "skrivna": 0,
+  "fel": 0,
+  "torr": false
+ }
+}

@@ -1,0 +1,155 @@
+{
+  "hub_id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+  "rond": "2026-09-18",
+  "bra": [
+    "The honest 23 % is everywhere and \"40 %\" is banned by name in every Rules block — the false discount that ran on CS_2_1 is not coming back.",
+    "PD_27_1 and SO_7_1 isolate the headline (time claim vs breadth claim) inside the proven b020 layout, and cite the parents by contribution: PD_19_1 +4 234 kr at CPA 289 against break-even 554, PD_2_1 +1 685 kr.",
+    "PD_26_H1 declares its single variable against PD_25_H1 (the demo object); SP_9_H1 and PD_25_H1 require the real on-screen time, never a rounded one.",
+    "BOF_6_1 owns the \"Mini\" doubt and deliberately makes no power claim, because the one organic review disputes it — honest and specific.",
+    "7 speeds, 15° angle, knives/wood/metal/jewelry all match the product page (read live from the product page 2026-09-21). Price 909 / 1 182 kr right everywhere. Variables line on all nine."
+  ],
+  "missat": [
+    "Four video end cards say \"CTA button, logo\" (CS_4_H1, PD_25_H1, PD_26_H1, SP_9_H1). The logo is the store's name in picture form — rule since 2026-09-18: never on the image, never in the end card. No brief carries the hard rule.",
+    "BOF_5_1 is built on terms the store does not offer: `Testa den … i 30 dagar`, `Du får pengarna tillbaka`, `riskfritt` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Its sub-line `Fungerar den inte på Bälteslipmaskin Mini?` is also broken Swedish that does not mean what the English column says.",
+    "PD_25_H1 and SP_9_H1 argue from \"ROAS 5,87 on 722 kr\" with no purchase count — ROAS alone is forbidden (ANALYSMETOD), and 722 kr with an unknown number of purchases may not even pass the gate (≥ 300 kr AND ≥ 3 purchases).",
+    "PD_26_H1 says ONE variable changed but changes three: the demo object, the fifth line (`Inte bara knivar…` instead of the price line) and the CTA. The data will not isolate the object.",
+    "CS_4_H1 hook `… Ingen deadline, bara sanningen.` is meta ad-speak — `sanningen` cannot be pictured. `909 kr. Inte 1 182 kr.` is the hook; stop there.",
+    "The three-question table is ✅✅❌ Keep on every line, including `909 kr, fri frakt inom Sverige.` — a line any Swedish store can sign."
+  ],
+  "regler": [
+    "End cards carry product, price and CTA — no logo, no store name, no URL; write \"the ad never names the store\" as a hard rule in every brief.",
+    "Cite the parent's CPA and purchases against the 554 kr break-even, never ROAS alone — \"ROAS 5,87 on 722 kr\" says nothing until the purchases are counted (≥ 3 purchases and ≥ 300 kr).",
+    "Store terms and every Swedish line are read back before the brief goes out: the page says 14 days' right of withdrawal by law (no 30-day guarantee, no money-back), and a sentence a Swede would not say (`Fungerar den inte på Bälteslipmaskin Mini?`) is rewritten, not exported."
+  ],
+  "rader": [
+    {
+      "namn": "Beltgrinder_BOF_6_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`buffrar` — the page says `buffert`; `polerar` alone is plainer Swedish. Minor."
+      ],
+      "bra": [
+        "Refuses the power claim the one review disputes and answers the size doubt with page facts."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_SO_7_1",
+      "fel": [],
+      "anmarkningar": [
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Clean headline isolation against PD_27_1; say \"Isolated variable: headline\" explicitly."
+      ],
+      "bra": [
+        "Time claim vs breadth claim in the same layout — the right way to learn which claim carries the CVR."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_BOF_5_1",
+      "fel": [
+        "Every line promises terms the store does not offer: `Testa den … i 30 dagar`, `Du får pengarna tillbaka`, `riskfritt` — the product page says `Du har 14 dagars ångerrätt enligt lag` and never mentions 30 days (read live from the product page 2026-09-21); free shipping within Sweden, 5–10 working days and Klarna are true (site banner). Do not reuse this ad; a trust static must say the real terms (free shipping within Sweden, 5–10 working days, Klarna, 14 days' right of withdrawal by law).",
+        "The sub-line `Fungerar den inte på Bälteslipmaskin Mini? Du får pengarna tillbaka.` is broken Swedish — it does not mean \"Not happy with your Belt Grinder Mini?\". Never bake a line in until the Swedish has been read back by a Swedish speaker."
+      ],
+      "anmarkningar": [
+        "variable tags missing: hook-typ",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The hook idea (30 days against your dullest knife) would be strong if the store offered a 30-day guarantee; it does not."
+      ],
+      "bra": []
+    },
+    {
+      "namn": "Beltgrinder_PD_25_H1",
+      "fel": [
+        "End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Vässa dina knivar för 909 kr.` only."
+      ],
+      "anmarkningar": [
+        "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Why argues from \"ROAS 5,87 on only 722 kr\" — ROAS alone is forbidden; cite PD_4_H1's purchases and CPA against break-even 554, and say whether it has passed the gate (≥ 3 purchases)."
+      ],
+      "bra": [
+        "Hook is a filmable promise with a visible clock — the demo proves it or the line changes."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_BOF_4_1",
+      "fel": [],
+      "anmarkningar": [
+        "variable tags missing: hook-typ",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`909 kr, fri frakt inom Sverige.` is true (site banner) — but mark it competitor-signable in the test instead of ❌."
+      ],
+      "bra": [
+        "Honest 23 %, real saving, no theatrics."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_SP_9_H1",
+      "fel": [
+        "End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Töm din låda. Vässa allt för 909 kr.` only."
+      ],
+      "anmarkningar": [
+        "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Why argues from \"ROAS 5,87\" — cite purchases and CPA against break-even 554 instead.",
+        "SP means social proof in this hub's naming; an unbroken demo is proof-by-footage (PD), not social proof — the code should follow the angle."
+      ],
+      "bra": [
+        "One unbroken take with a running timer — nothing to fake, and the brief says so."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_PD_27_1",
+      "fel": [],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Fine. The parent (PD_19_1) is cited by contribution and CPA against break-even."
+      ],
+      "bra": [
+        "Feeds the proven b020 layout with a new headline and nothing else."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_CS_4_H1",
+      "fel": [
+        "End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18: the ad never names the store, in copy, image, VO or captions). Next version: product + `Beställ för 909 kr.` only."
+      ],
+      "anmarkningar": [
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Hook `… Ingen deadline, bara sanningen.` — `sanningen` cannot be pictured; `909 kr. Inte 1 182 kr.` is the whole hook.",
+        "Cites CS_2_1 by contribution (+1 003 kr on 4 571 kr) — good; add its CPA against break-even 554."
+      ],
+      "bra": [
+        "Tests the price-forward mechanic honestly at the real 23 %."
+      ]
+    },
+    {
+      "namn": "Beltgrinder_PD_26_H1",
+      "fel": [
+        "End card \"CTA button, logo\" — no logo on the image (rule since 2026-09-18). Next version: product + `Vässa dina verktyg för 909 kr.` only."
+      ],
+      "anmarkningar": [
+        "variant of a parent ad without an \"Isolated variable:\" line — say the one thing that changed",
+        "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Claims one isolated variable (the demo object) but also swaps the fifth line (`Inte bara knivar…` for the price line) and the CTA — three changes. Keep the price line and the CTA identical to PD_25_H1 so the object is the only variable.",
+        "Add an \"Isolated variable:\" line as the tool asks."
+      ],
+      "bra": [
+        "Names its parent and its intended variable — the discipline is right, the execution is not."
+      ]
+    }
+  ]
+}

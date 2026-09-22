@@ -1,0 +1,69 @@
+[
+ {
+  "box": [
+   40,
+   62,
+   1040,
+   276
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.57,
+  "text": "Your trailer is one of nine sizes."
+ },
+ {
+  "box": [
+   60,
+   316,
+   1020,
+   382
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "Nine sizes, 18 to 44 feet long."
+ },
+ {
+  "box": [
+   60,
+   1078,
+   1020,
+   1145
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   17
+  ],
+  "text": "From $199."
+ },
+ {
+  "box": [
+   300,
+   1222,
+   780,
+   1294
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See all nine sizes."
+ }
+]

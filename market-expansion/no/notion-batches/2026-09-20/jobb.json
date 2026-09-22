@@ -1,0 +1,1591 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-20",
+  "skapad": "2026-09-20T13:10:33.376Z",
+  "kvot": {
+    "heygen": null,
+    "kie": 12973.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3e0270ab908c813f84fdf9c9e2091416",
+        "namn": "Takoverdrag_BOF_9_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_BOF_9_1-3e0270ab908c813f84fdf9c9e2091416",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_BOF_9_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250300958110291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget LISTICLE LAGERRENSNING",
+        "kampanjId": "120250252311730291",
+        "adset": "BOF | Notionrunda 2026-09-15",
+        "copy": {
+          "message": "1 129 kr nu. Ett tak du inte vet priset på sen. Taket är det du aldrig ser – och det som kostar mest att laga. 1 129 kr är hela notan, ingen gissning.",
+          "headline": "Skydda taket – 1 129 kr.",
+          "description": "",
+          "link": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f07760445008835ca0d038b902c7739f",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/814920555_2066195700760689_5684661339526007533_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=vqVgmu1qPhgQ7kNvwE6-hNf&_nc_oc=AdoDjbRLk37t6fvrhlGbefF64_FWOgc79OdMvo9Kw3DbzoE8MgKc8IBcCNpeDo7gkp0&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQJkWgB9CW0RAJEHwsbE_0BPRao6uKkNywcvOV-PZiLqG565GhBGh9ZR_IgtXR4V6l0KFe8YuiX5JA&oh=00_AQIWS8uTcaEHgMDqXlrpW0TvoL_SBrDGE7-ZiS7Mdh12Jg&oe=6AB5A7A0",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "BOF",
+      "nr": "9",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - BOF",
+        "annonsNamn": "Takovertrekk_NO_BOF_9_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313657920233",
+        "creativeId": "1042416871950602",
+        "adsetId": "120252262843110233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e0270ab908c81aeaa31cf10ff770739",
+        "namn": "Takoverdrag_CS_13_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_CS_13_1-3e0270ab908c81aeaa31cf10ff770739",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_CS_13_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250300990840291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget LISTICLE LAGERRENSNING",
+        "kampanjId": "120250252311730291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | CS | 2026-09-09",
+        "copy": {
+          "message": "58 kr per kvadratmeter skyddat tak. 1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn. Taket är det du aldrig ser, och det som kostar mest att laga.",
+          "headline": "58 kr per kvadratmeter tak",
+          "description": "",
+          "link": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "0b5dea03944f4dd37a62a7ef9a68c223",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/799958708_2066197860760473_1054318157129766076_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=FXsUNhcMlcEQ7kNvwFGtb3c&_nc_oc=Adr6R1-KKlf_H7PnNdZZ-W7WFhdUvyPIXuDcxIxhzOFTGlQlwmAzEkoMNcKI0g5BWnY&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQIyJ_ErfWLy96DvZg2KgJ_iR1QOVFEYD77aH669dzJa8HLnrPyyCxAanvVceoWs4vy5LeQCm5-2rA&oh=00_AQKhwJsXKYmtGOfLhNLC58kQx5AJBzt_loCXaR3ReSCC4w&oe=6AB5B804",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "CS",
+      "nr": "13",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - CS",
+        "annonsNamn": "Takovertrekk_NO_CS_13_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313659560233",
+        "creativeId": "1556130219057912",
+        "adsetId": "120252183543740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e0270ab908c81cdb2eccb380e0a72d8",
+        "namn": "Takoverdrag_PD_10_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_PD_10_1-3e0270ab908c81cdb2eccb380e0a72d8",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_PD_10_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301010500291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget LISTICLE LAGERRENSNING",
+        "kampanjId": "120250252311730291",
+        "adset": "Taköverdrag Husvagn 6,5 × 3 m | PD | 2026-09-09",
+        "copy": {
+          "message": "Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr. Sitter kvar när det blåser – remmar på alla fyra sidor, 2,5 meter och justerbara efter din vagn.",
+          "headline": "Nio storlekar. Från 1 129 kr.",
+          "description": "",
+          "link": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "9045a92909b742ec8b33c85eb4c1c8d6",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/796527825_2066199970760262_1797002312041040412_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=-iTDLCkOcGsQ7kNvwFF5M6Z&_nc_oc=AdrNnUfibnf8oKWdYOmFuK2a3ZZ2o9BslKMhc6bFlR8-4EMlih1dSw96NIzIp0oiD3w&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQKEbXj-yhEkLCMoqWF_5kWgKke0Ibt45p9O7fIW_BjhwqM7Zk5yrwGRHnJ4UUvYnWeSH9hqMBEnqg&oh=00_AQJUWQDbOZuBJ6YD5GdF--sisj3lkq-SxjBvl9BR2RjISA&oe=6AB59490",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "PD",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - PD",
+        "annonsNamn": "Takovertrekk_NO_PD_10_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313661320233",
+        "creativeId": "1388430806711062",
+        "adsetId": "120252183575470233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e0270ab908c81d6a423fdcba75d2fcd",
+        "namn": "Takoverdrag_BOF_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_BOF_8_1-3e0270ab908c81d6a423fdcba75d2fcd",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_BOF_8_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301023010291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget LISTICLE LAGERRENSNING",
+        "kampanjId": "120250252311730291",
+        "adset": "BOF | Notionrunda 2026-09-15",
+        "copy": {
+          "message": "På sommaren bor den i en påse, inte i vägen. Ryms i förvaringspåsen som följer med. Ingen skrymmande vinterförvaring – bara påsen som kom med paketet.",
+          "headline": "1 129 kr. Ryms i en påse.",
+          "description": "",
+          "link": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "c8fb9c7ea0cf31440c93f8709aa3dfcb",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/814920603_2066201570760102_7913648236813382941_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=nEb2YncQ64YQ7kNvwGXTGWE&_nc_oc=AdpW3E0rV5QNV_Pq10C11Oz5GxGyQjtzuPQPbM1QjVlp5SM3xf-bRA1vwJtsrsTcpxQ&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQJ1tA5KN9160s0Wlg07ZE17vmuGa0jSsqVvTBMHy6oeLr-jKinoE30tV7hfAyN-pZ-UJEa56o5Ngg&oh=00_AQJ57i53yPgiKZbm1cTdHs2nnT3fXRCi6yndnavP2ki3Ag&oe=6AB5ADBB",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "BOF",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - BOF",
+        "annonsNamn": "Takovertrekk_NO_BOF_8_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313667120233",
+        "creativeId": "1058442053853400",
+        "adsetId": "120252262843110233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e0270ab908c81e391ced1e9dcf33ab0",
+        "namn": "Takoverdrag_BOF_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/Takoverdrag_BOF_7_1-3e0270ab908c81e391ced1e9dcf33ab0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Takoverdrag_BOF_7_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301043490291",
+        "status": "ACTIVE",
+        "kampanj": "Taköverdraget LISTICLE LAGERRENSNING",
+        "kampanjId": "120250252311730291",
+        "adset": "BOF | Notionrunda 2026-09-15",
+        "copy": {
+          "message": "Din husvagns längd är en av nio. Nio storlekar, 3 × 5,5 till 3 × 13,5 meter. Från 1 129 kr.",
+          "headline": "Se alla nio storlekar",
+          "description": "",
+          "link": "https://baverbutiken.se/pages/takoverdrag-husvagn-6-5-3-m-lagerrensning"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "94b0e92e106a94d794081378dbd78515",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/795188499_2066203427426583_2651680034475465576_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=_8f64VcAp1oQ7kNvwH8h_Uy&_nc_oc=AdreD4y0engO7YMjaWwmKpczxHOec0Cx02OhX2ZEq-LpBCj_gdlB2UUpt8lyqm40BT4&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQJg3Zv0IaG5EOW3tyZJ_qhSJfUdSWi2Sp1e2Pg5YDLxMPrhZCWL6XE3H1q27Nz_ESJkmPiHZ93yXQ&oh=00_AQJ-n_9v_PxUeVhA7bcv_GCKrS2LPAeOyFxYsXaT3UDN6w&oe=6AB5B3AC",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "Takoverdrag",
+      "K": "BOF",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Takoverdrag",
+        "se_kampanj": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
+        "no_prefix": "Takovertrekk",
+        "adset_prefix": "Takovertrekk Campingvogn NO",
+        "campaign_id": "120252183519570233",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252183519570233",
+        "kampanjNamn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Takovertrekk Campingvogn NO - BOF",
+        "annonsNamn": "Takovertrekk_NO_BOF_7_1",
+        "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
+        "prefix": "Takovertrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313670780233",
+        "creativeId": "1582086133694367",
+        "adsetId": "120252262843110233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "1189.00",
+        "jamforpris": "1549.00",
+        "titel": "Takovertrekk til Campingvogn – Beskytter Den Dyreste Flaten",
+        "handle": "takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81c1aabcdda50bd29267",
+        "namn": "Batmotor_BOF_2_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_BOF_2_1-3df270ab908c81c1aabcdda50bd29267",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_BOF_2_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301071160291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Batmotor",
+      "K": "BOF",
+      "nr": "2",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BOF",
+        "annonsNamn": "Batmotortrekk_NO_BOF_2_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81c8a458fb8866f3d23a",
+        "namn": "Batmotor_SP_1_H10",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_SP_1_H10-3df270ab908c81c8a458fb8866f3d23a",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_SP_1_H10",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301084080291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H10",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H10",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3df270ab908c81ee8a89dc92b943fde4",
+        "namn": "Batmotor_BOF_3_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_BOF_3_1-3df270ab908c81ee8a89dc92b943fde4",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_BOF_3_1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301102890291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "BOF | Notionrunda 2026-09-19"
+      },
+      "prefix": "Batmotor",
+      "K": "BOF",
+      "nr": "3",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - BOF",
+        "annonsNamn": "Batmotortrekk_NO_BOF_3_1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c812fbb2dfc6cdca40711",
+        "namn": "Batmotor_SP_1_H9",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_SP_1_H9-3dc270ab908c812fbb2dfc6cdca40711",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_SP_1_H9",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301122860291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "1",
+      "hook": "H9",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_1_H9",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c81939ac3f5f2b498eaf9",
+        "namn": "Batmotor_SP_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_SP_3_H1-3dc270ab908c81939ac3f5f2b498eaf9",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_SP_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301138450291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | SP | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "SP",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - SP",
+        "annonsNamn": "Batmotortrekk_NO_SP_3_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c8193abe5d76857987588",
+        "namn": "Batmotor_PD_6_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/Batmotor_PD_6_H1-3dc270ab908c8193abe5d76857987588",
+        "kalla": "notion-rest"
+      },
+      "namn": "Batmotor_PD_6_H1",
+      "status": "HOPPA",
+      "skal": "\"Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02\" är PAUSED med 20754.77 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301152290291",
+        "status": "ACTIVE",
+        "kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "kampanjId": "120250009325850291",
+        "adset": "Båtmotorskydd 420D | PD | 2026-08-29"
+      },
+      "prefix": "Batmotor",
+      "K": "PD",
+      "nr": "6",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Batmotor",
+        "se_kampanj": "Båtmotorskyddet 420D | BE ROAS 1.62 | Launch 2026-08-29",
+        "no_prefix": "Batmotortrekk",
+        "adset_prefix": "Båtmotortrekk NO",
+        "campaign_id": "120252047563660233",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252047563660233",
+        "kampanjNamn": "Båtmotortrekk NO | BE-ROAS 1,63 | 2026-09-02",
+        "utfall": "AVVECKLAD",
+        "spend": 20754.77,
+        "adsetNamn": "Båtmotortrekk NO - PD",
+        "annonsNamn": "Batmotortrekk_NO_PD_6_H1",
+        "link": "https://beverbutikken.no/products/batmotortrekk-420d-heldekkende-for-pahengsmotor",
+        "prefix": "Batmotortrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c818eb7e2fd56dd151bc4",
+        "namn": "Termoskydd_SP_6_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_SP_6_H1-3dc270ab908c818eb7e2fd56dd151bc4",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_SP_6_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301160110291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | SP | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "SP",
+      "nr": "6",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - SP",
+        "annonsNamn": "Frontrutetrekk_NO_SP_6_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3dc270ab908c81cbbb31c52821abc5be",
+        "namn": "Termoskydd_PD_7_H1 ",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_PD_7_H1-3dc270ab908c81cbbb31c52821abc5be",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_PD_7_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301181000291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | PD | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "PD",
+      "nr": "7",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - PD",
+        "annonsNamn": "Frontrutetrekk_NO_PD_7_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c8180a14bfff8d448d428",
+        "namn": "Termoskydd_CO_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_CO_1_H1-3db270ab908c8180a14bfff8d448d428",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_CO_1_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301193840291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "CO | Notionrunda 2026-09-20"
+      },
+      "prefix": "Termoskydd",
+      "K": "CO",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - CO",
+        "annonsNamn": "Frontrutetrekk_NO_CO_1_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c81b2b537d020bdc77937",
+        "namn": "Termoskydd_RI_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_RI_1_H1-3db270ab908c81b2b537d020bdc77937",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_RI_1_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301207460291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "RI | Notionrunda 2026-09-20"
+      },
+      "prefix": "Termoskydd",
+      "K": "RI",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - RI",
+        "annonsNamn": "Frontrutetrekk_NO_RI_1_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c81e1b6befd8b048b213c",
+        "namn": "Termoskydd_SP_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_SP_4_H1-3db270ab908c81e1b6befd8b048b213c",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_SP_4_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301214840291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "Termoskydd Husbil | SP | 2026-09-11"
+      },
+      "prefix": "Termoskydd",
+      "K": "SP",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - SP",
+        "annonsNamn": "Frontrutetrekk_NO_SP_4_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3db270ab908c81e7ab04c457686e19b1",
+        "namn": "Termoskydd_PR_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/Termoskydd_PR_1_H1-3db270ab908c81e7ab04c457686e19b1",
+        "kalla": "notion-rest"
+      },
+      "namn": "Termoskydd_PR_1_H1",
+      "status": "HOPPA",
+      "skal": "\"Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12\" är PAUSED med 4494.59 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250301224150291",
+        "status": "ACTIVE",
+        "kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "kampanjId": "120250175763810291",
+        "adset": "PR | Notionrunda 2026-09-20"
+      },
+      "prefix": "Termoskydd",
+      "K": "PR",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Termoskydd",
+        "se_kampanj": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
+        "no_prefix": "Frontrutetrekk",
+        "adset_prefix": "Frontrutetrekk til Bobil NO",
+        "campaign_id": "120252202507830233",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252202507830233",
+        "kampanjNamn": "Frontrutetrekk til Bobil NO | BE-ROAS 1,62 | 2026-09-12",
+        "utfall": "AVVECKLAD",
+        "spend": 4494.59,
+        "adsetNamn": "Frontrutetrekk til Bobil NO - PR",
+        "annonsNamn": "Frontrutetrekk_NO_PR_1_H1",
+        "link": "https://beverbutikken.no/products/frontrutetrekk-til-bobil-211-171-cm-utvendig-og-morkleggende",
+        "prefix": "Frontrutetrekk"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81e59ef5f1b17dc33749",
+        "namn": "IBC_RV_12_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_RV_12_1-3e1270ab908c81e59ef5f1b17dc33749",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_RV_12_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301237140291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "RV | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Emma, 4 stjärnor: \"Mycket nöjd. Tanken ser mycket bättre ut och överdraget sitter bra.\" 210D Oxford-tyg stoppar alger och UV. Sätt på skyddet – vattnet förblir klart.",
+          "headline": "Emma, 4 stjärnor",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "732604a18ef85834c9a8b2cd7fb59161",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/795775010_2066229484090644_7199042687666908664_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=UxK6lFnUXO4Q7kNvwEX9Yt9&_nc_oc=Adq6dTjT5HOt-R1JL2pc3dsQbxpCilGe5GxFjPmGcOrledUl-iran2D8gVyicl_36Hc&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQIEem3eXUYOIxOXbjE55cuIKBumfHbp2Z6EgK1ffNCKe_ewmTLk3q_de1NphmUEGUAq4fgbc8wY6g&oh=00_AQJVnvG8CUAiyxZb96vDflaSZGxFo-1eiduy5jLTJfcNxw&oe=6AB5AF11",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "RV",
+      "nr": "12",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - RV",
+        "annonsNamn": "IBC-tanktrekk_NO_RV_12_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313717780233",
+        "creativeId": "4438131766444638",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c810bae71d060c389b843",
+        "namn": "IBC_RV_11_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_RV_11_1-3e1270ab908c810bae71d060c389b843",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_RV_11_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301259210291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "RV | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Anders, 5 stjärnor: \"Väldigt bra överdrag. Passar min IBC-tank perfekt och är enkelt att sätta på.\" 210D Oxford-tyg stoppar alger och UV. Sätt på skyddet – vattnet förblir klart.",
+          "headline": "Anders, 5 stjärnor",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "f986c97d3211ab23adb313fa3e3911f9",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/814920833_2066231410757118_5902703107110223557_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=t7A_vcM1zqQQ7kNvwG2Bpll&_nc_oc=AdpqqXV9crAJoiCAdmxI5jXNDEzLhslmnd8nZb_s-HxxFF6dtPH4IV9igcafDKfo_Bs&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQKGSvEohLAWD1YPyRHrt14R9cmAQOP_RXp92jfBU7sWp-QB6mHawAp1ytZ5BiUSce2iWXk1cksjTA&oh=00_AQLcI8vOdpPbRtOXwCg_0ZjiNuml4ogajsJzfVnoxZgntw&oe=6AB5A90E",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "RV",
+      "nr": "11",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - RV",
+        "annonsNamn": "IBC-tanktrekk_NO_RV_11_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313719230233",
+        "creativeId": "1628149625710821",
+        "adsetId": "120252092599000233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81f1b30dde1bd242acf8",
+        "namn": "IBC_RI_1_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_RI_1_1-3e1270ab908c81f1b30dde1bd242acf8",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_RI_1_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301282210291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "RI | Notionrunda 2026-09-20",
+        "copy": {
+          "message": "Utan skydd. Med skydd. Vattnet blir grönt av alger utan cover. Presenningen som skulle skydda blåser av vid första höststormen. Sätt på skyddet – vattnet förblir klart.",
+          "headline": "Utan skydd. Med skydd.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "88ceceff4cb47de18da45ce916a5609d",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/816260289_2066233367423589_1876887546005828521_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=mZXaoyJEq1QQ7kNvwHOzlRP&_nc_oc=AdokwHyX3lEA6NkX3LP7219gU7MuIqPbmLYny1NUu8-_J_8iaj521m38QW7AnjQkOTw&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQKbrT4Gwo71I7jZ3JTczTLQ7U64qhrv7KHGNZAVQlWifCSxDYo3jtmWslJYFts3yqlDd6RtvMKKww&oh=00_AQIH6lvStBDSvNVjhAnpm2hfAsB25hjDidTOm80_YzFlTg&oe=6AB59906",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "RI",
+      "nr": "1",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - RI",
+        "annonsNamn": "IBC-tanktrekk_NO_RI_1_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313723210233",
+        "creativeId": "2829918077389272",
+        "adsetId": "120252313720530233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81d98573e4673785de2a",
+        "namn": "IBC_BOF_18_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_BOF_18_1-3e1270ab908c81d98573e4673785de2a",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_BOF_18_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301297630291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Passar den min tank? 120 × 100 × 116 cm – byggd för en standard 1000-literstank. Öppningen upptill gör att du når locket utan att ta av skyddet. Kolla måtten och beställ.",
+          "headline": "Passar den min tank?",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "1d2ce0a561e6eabb9b8d231f875ad001",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/796642211_2066235734090019_2472563301561044692_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=IqdfZ_YV0N8Q7kNvwFhnHdd&_nc_oc=Adp0ryMxuExV0szhxgxLk_TnsdVu31tevGYiyBG0ZB_AD0n5KoCsss4pJ133GZELr7g&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQKEtrElCitRO3cMglgHZoRyMtShXNNbkCKNnRI-0sOT2gm7dFtK3ybjliy_zI_obvAk9MK496H_jA&oh=00_AQLUCTsSnCTQybgvofCdsM6IcB9bsbjhlOzw2d1OT2n4eA&oe=6AB59977",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "18",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_18_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313782720233",
+        "creativeId": "4624107674491056",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81218c99e812ba688dd2",
+        "namn": "IBC_BOF_17_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_BOF_17_1-3e1270ab908c81218c99e812ba688dd2",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_BOF_17_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301305600291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "Ljuset stannar ute. Vattnet stannar klart. 210D Oxford-tyg blockerar ljuset som annars föder alger. Skyddet stoppar alger och håller UV ute. Sätt på skyddet – vattnet förblir klart.",
+          "headline": "Ljuset stannar ute, vattnet klart.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "15193b59ea93dde49a8df48b15d31b4c",
+          "url": "https://scontent-ord5-1.xx.fbcdn.net/v/t45.1600-4/811994145_2066238110756448_324077912837914999_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=b3ADkJQvbzEQ7kNvwELHGz-&_nc_oc=AdrlEkxpFDF6KiTC6KHs7QJrKGAVs9SLNACEyACCQ5rtpmlUjUhVI-mn5c0zO5xEDCk&_nc_zt=1&_nc_ht=scontent-ord5-1.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQJqjT1nc_GcKvGR7A6SojthACYmJ7u15t3zz3PkSdgrdAPbqFWC-CuxYurlI62BLLkqoNebWXosng&oh=00_AQKzF9glls6TU9zcUq0NDIQQuF1PNtBElw9UO5yl5ziQ4g&oe=6AB5C1B3",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "17",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_17_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313784750233",
+        "creativeId": "28415165524833761",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81d2aaa0f15502149c9c",
+        "namn": "IBC_BOF_16_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_BOF_16_1-3e1270ab908c81d2aaa0f15502149c9c",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_BOF_16_1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250301312580291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "BOF | Notionrunda 2026-09-05",
+        "copy": {
+          "message": "4,7 av 5 på 10 recensioner. IBC-tanköverdraget stoppar alger och UV med tätt 210D Oxford-tyg. Zippa fast skyddet.",
+          "headline": "4,7 av 5 på 10 recensioner",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "bild",
+          "image_hash": "dfe0b4fdef961ad1449af53d8da81467",
+          "url": "https://scontent-ord5-2.xx.fbcdn.net/v/t45.1600-4/816973028_2066240704089522_3008140218329960181_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d5bd00&_nc_ohc=AysZj2meu4QQ7kNvwFQBUx1&_nc_oc=AdpCE9C5EUqQwWOG7uufvO0KNu_6vEUShCF7VbgiopnQ9ONumqi4ma74nRbirukuQAE&_nc_zt=1&_nc_ht=scontent-ord5-2.xx&edm=AJcBmwoEAAAA&_nc_gid=JKoHhTJx6DzHwsEDtpx2jg&_nc_tpa=Q5bMBQJdfaVVOGnhUO79qKZUHn9IWAn5qvfz97TRxGlDFLyikbsbFxugh-A4O5tCU7W7JIqmg85aq29KrQ&oh=00_AQLw4_38UXo1D4VwGd4IuWmhSIE0vi1TXiB5jA2YsK7lYg&oe=6AB5BDBB",
+          "bredd": 1080,
+          "hojd": 1350
+        }
+      },
+      "prefix": "IBC",
+      "K": "BOF",
+      "nr": "16",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - BOF",
+        "annonsNamn": "IBC-tanktrekk_NO_BOF_16_1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "ACTIVE",
+        "annonsId": "120252313786480233",
+        "creativeId": "1555331989228638",
+        "adsetId": "120252092535700233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c8112964eccd303984071",
+        "namn": "Adventskalender_RV_8_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_RV_8_1-3e1270ab908c8112964eccd303984071",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_RV_8_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300816300291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "RV | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "RV",
+      "nr": "8",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - RV",
+        "annonsNamn": "Adventskalender_NO_RV_8_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81b3945eef374979b5e0",
+        "namn": "Adventskalender_RV_7_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_RV_7_1-3e1270ab908c81b3945eef374979b5e0",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_RV_7_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300841960291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "RV | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "RV",
+      "nr": "7",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - RV",
+        "annonsNamn": "Adventskalender_NO_RV_7_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81ff90cfe27214339288",
+        "namn": "Adventskalender_CO_4_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_CO_4_1-3e1270ab908c81ff90cfe27214339288",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_CO_4_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300856630291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "CO | Notionrunda 2026-09-17"
+      },
+      "prefix": "Adventskalender",
+      "K": "CO",
+      "nr": "4",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - CO",
+        "annonsNamn": "Adventskalender_NO_CO_4_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c819cbb76d3063f282d21",
+        "namn": "Adventskalender_BF_12_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_BF_12_1-3e1270ab908c819cbb76d3063f282d21",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_BF_12_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300885230291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "12",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_12_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c817f9a1bfe31ee76b348",
+        "namn": "Adventskalender_BF_11_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_BF_11_1-3e1270ab908c817f9a1bfe31ee76b348",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_BF_11_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300925390291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "11",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_11_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c8113859cc961588f6389",
+        "namn": "Adventskalender_BF_10_1",
+        "typ": "Image - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/Adventskalender_BF_10_1-3e1270ab908c8113859cc961588f6389",
+        "kalla": "notion-rest"
+      },
+      "namn": "Adventskalender_BF_10_1",
+      "status": "HOPPA",
+      "skal": "\"Adventskalender NO | BE-ROAS 1,62 | 2026-09-09\" är PAUSED med 5695.05 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250300951210291",
+        "status": "ACTIVE",
+        "kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "kampanjId": "120250134672020291",
+        "adset": "BF | Notionrunda 2026-09-15"
+      },
+      "prefix": "Adventskalender",
+      "K": "BF",
+      "nr": "10",
+      "hook": "1",
+      "typ": "bild",
+      "produkt": {
+        "se_prefix": "Adventskalender",
+        "se_kampanj": "Adventskalendern Racingbilar | BE ROAS 1.62 | Launch 2026-09-08",
+        "no_prefix": "Adventskalender",
+        "adset_prefix": "Adventskalender NO",
+        "campaign_id": "120252140554000233",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252140554000233",
+        "kampanjNamn": "Adventskalender NO | BE-ROAS 1,62 | 2026-09-09",
+        "utfall": "AVVECKLAD",
+        "spend": 5695.05,
+        "adsetNamn": "Adventskalender NO - BF",
+        "annonsNamn": "Adventskalender_NO_BF_10_1",
+        "link": "https://beverbutikken.no/products/adventskalender-racerbiler-24-biler-bak-24-luker",
+        "prefix": "Adventskalender"
+      }
+    }
+  ]
+}

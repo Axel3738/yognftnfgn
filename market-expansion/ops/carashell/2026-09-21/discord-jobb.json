@@ -1,0 +1,27 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-21",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Nothing needed translating or uploading today. All five rows in the queue already carry their Norwegian ad: the mirroring round put them live, and each one was read back from Meta as ACTIVE.",
+    "BOF_107_1 -> CaraShellRoof_NO_BOF_107_1 (ad set BOF, ad 120249189601910172)",
+    "BOF_108_1 -> CaraShellRoof_NO_BOF_108_1 (ad set BOF, ad 120249189496460172)",
+    "PD_110_1 -> CaraShellRoof_NO_PD_110_1 (ad set PD, ad 120249189399940172)",
+    "CS_113_1 -> CaraShellRoof_NO_CS_113_1 (ad set CS, ad 120249189310900172)",
+    "BOF_109_1 -> CaraShellRoof_NO_BOF_109_1 (ad set BOF, ad 120249189228110172)",
+    "All five stay in SE-ACTIVE to be translated on purpose - they move to Approved once the US round carries them too. No Notion status was touched.",
+    "HeyGen credits used: 0 before -> 0 after."
+  ],
+  "varningar": [
+    "The queue tool died silently four times before it produced anything today: exit code 0, an empty file, no error line. An empty queue file reads exactly like 'the queue was empty', which is the dangerous part - a quiet zero looks like a calm answer.",
+    "Root cause, measured: every Graph API call was made without a timeout. When the proxy socket is dropped the promise never settles, Node empties its event loop and exits cleanly with code 0. Reading the US account directly took 692 ms for 412 ads, so the account was never the problem.",
+    "Fixed in two places. Calls now carry a timeout - 90 seconds for reads, 15 minutes for uploads - and a read is retried with backoff. A write is never retried automatically: the call may have gone through before the answer was lost, and a retry would have created the ad twice.",
+    "A second fault was found in the same file while looking: when paging hit a rate limit, the address of the next page was overwritten by the error object, so the retry jumped to a condition that was false. The loop ended silently and returned HALF a list. That list is what decides whether an ad already exists, so it could have caused a duplicate upload. Both fixed, 1 720 tests green.",
+    "Unrelated but worth knowing: the Baverbutiken Norway round was blocked at 13:37 today because its Facebook page is no longer reachable by the token. Checked here - the token reaches 12 pages and CaraShell's is one of them, so this store is unaffected."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-22"
+}

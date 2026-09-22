@@ -1,0 +1,89 @@
+[
+ {
+  "box": [
+   40,
+   60,
+   1040,
+   290
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.68,
+  "fyll": "ljus",
+  "fyllfarg": [
+   233,
+   238,
+   241
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "text": "Isn't a tarp enough?"
+ },
+ {
+  "box": [
+   60,
+   320,
+   1020,
+   442
+  ],
+  "rader": 2,
+  "storlek": 38,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.72,
+  "fyll": "ljus",
+  "fyllfarg": [
+   234,
+   242,
+   245
+  ],
+  "alfa": 255,
+  "radie": 0,
+  "text": "210D fabric, not a thin tarp that cracks in the cold."
+ },
+ {
+  "box": [
+   140,
+   1084,
+   940,
+   1134
+  ],
+  "rader": 1,
+  "storlek": 30,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "fyll": "mork",
+  "alfa": 235,
+  "text": "Built to handle winter — no cracking"
+ },
+ {
+  "box": [
+   282,
+   1222,
+   798,
+   1290
+  ],
+  "rader": 1,
+  "storlek": 42,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "See the difference"
+ }
+]

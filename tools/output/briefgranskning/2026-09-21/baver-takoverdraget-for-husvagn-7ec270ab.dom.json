@@ -1,0 +1,188 @@
+{
+  "hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+  "rond": "2026-09-19",
+  "bra": [
+    "Every brief carries \"No store name, no URL, no logo\" and \"No free shipping, Klarna, returns or delivery time — store policy differs between the two stores\" — the only hub of seven that writes the mirroring rule down, and it is the right rule for a hub that mirrors into CaraShell.",
+    "Price is right everywhere (1 129 / 1 469 kr) and `från 1 129 kr` is used whenever the nine sizes are named — the 13,5 m size costs 2 239 kr, so a bare price would have lied.",
+    "Nine sizes verified: the page carries 9 variants live; PD_10_1 quotes the strap facts exactly as the page states them (straps on all four sides, 2,5 m, adjustable).",
+    "PD_10_H1 is a clean one-variable test against a named parent (PD_2_H1, hook only) and PD_10_1 is its static twin — that is how a variable gets isolated.",
+    "CS_12_H1 and CS_13_1 point at the parent fact (the CS price anchor, CS_2_1) instead of inventing a new angle; CS_13_1 changes the unit (58 kr/m²) exactly as copy-regler describes."
+  ],
+  "missat": [
+    "CS_12_H1 and PD_10_H1 say `spänns fast med rem och dragsko i kanten` — the page says straps on all four sides hooked into a hook at the bottom edge, plus two 10,5 m ratchet straps; there is no drawstring (read live from the product page 2026-09-21; CaraShell removed the same claim 2026-09-12). The editor would film a part that does not exist.",
+    "CO_5_H1 opens on `Det har ju gått bra hittills.` — nothing to picture, and any cover brand can sign it. The brief's own three-question table marks it Pass; so does every other line in the round (48 of 48) — the test is decorative here.",
+    "CS_13_1: `1 129 kr för 19,5 m² – hela takytan på en 6,5-meters husvagn` — 6,5 × 3 m is the cover, not the roof; the edge hangs 30–40 cm down the sides, so the roof is smaller than 19,5 m². Say the fabric area, not `takytan`.",
+    "BOF_8_1 and OB_2_H1 build a whole concept on the storage bag. It IS on Bäverbutiken's page (`ryms i medföljande förvaringspåse`), but CaraShell's dna.md forbids the claim (supplier images never show a bag) — these two mirror into CaraShell carrying a claim that store decided not to make. Owner's call before the mirror runs.",
+    "GT_10_H1: valid for Bäverbutiken (GT_2_H1 carries 24 purchases there), but CaraShell's dna.md pattern 12 says no GT briefs until the inherited GT_2_H1 is recreated in its own test ABO — the mirror will drop this one into a CBO that has starved GT (611 kr, 0 purchases). Hold it at the mirror.",
+    "`Taket är det du aldrig ser – och det som kostar mest att laga.` is the carrying line in 4 of 11 briefs (BOF_9_1, CO_5_H1, CS_13_1, GT_10_H1). When four concepts share the payoff line, the data cannot tell the concepts apart.",
+    "TR_3_H1 states a fact about competitors (`Ett helöverdrag … skaver mot lacken hela vintern`) with no source — falsifiable and unverified; the honest version is what THIS cover does (one person, roof only).",
+    "No Variables line on any brief; 8 of 11 concepts have no source named (parent ad, playbook, swipe or \"guess\"); no COPY CARD. PD_10_H1's hook is two sentences plus a price — too long for the first second."
+  ],
+  "regler": [
+    "Every mechanism line is read from the product page the same day: this page says straps on all four sides, 2,5 m, adjustable, hooked into a hook at the bottom edge, plus two 10,5 m ratchet straps — never `dragsko`, never a part the page does not name.",
+    "Run the three-question test for real on the hook: a line any cover brand could sign (`Det har ju gått bra hittills`) or a line you cannot picture is a ❌ and is rewritten before the brief goes out — a table with 48 passes is not a test.",
+    "Add a Variables line (angle · hook · format · proof · offer · visual · text · speaker) to every brief and name the source in the Why (parent ad with CPA and purchases, playbook, swipe, or \"guess\") — and check products/carashell/takskyddet/dna.md before briefing anything that mirrors: no storage bag, no GT until the GT_2_H1 test ABO exists."
+  ],
+  "rader": [
+    {
+      "namn": "Takoverdrag_BOF_9_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Third brief in the round carrying `Taket är det du aldrig ser – och det som kostar mest att laga.` — the concepts cannot be told apart by copy."
+      ],
+      "bra": [
+        "Refuses to invent a repair cost; the unknown side stays a question mark."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_CS_13_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "other kronor amounts in the ad text: 58 kr — only the price, compare-at and the saving are allowed",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`19,5 m² – hela takytan på en 6,5-meters husvagn` — 6,5 × 3 m is the fabric, not the roof; the edge hangs 30–40 cm down the sides. Write the fabric area (`19,5 m² duk`), not `takytan`.",
+        "The 58 kr/m² reframing is exactly the copy-regler unit trick and is arithmetically right (1 129 / 19,5)."
+      ],
+      "bra": [
+        "Changes the unit of a true number to make it land — the technique the copy rules ask for."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_PD_10_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The bottom band's English meaning says \"strap and buckle at the edge\" while the Swedish says straps on all four sides, 2,5 m — the Swedish is the correct one (matches the page); fix the English so the editor is not misled."
+      ],
+      "bra": [
+        "The one brief in the round that quotes the strap mechanism exactly as the page states it."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_BOF_8_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The storage bag is on Bäverbutiken's page (`ryms i medföljande förvaringspåse`), so the claim is true here — but this hub mirrors into CaraShell, whose dna.md forbids the bag claim (never shown in supplier images). Owner decides whether this ad may mirror.",
+        "The CTA `1 129 kr. Ryms i en påse.` repeats the headline's idea — the CTA slot could carry the compare-at instead."
+      ],
+      "bra": [
+        "Answers a real purchase blocker (summer storage) with a page-backed fact."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_BOF_7_1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Rules say `från 1 129 kr` but the brief has no \"Price exactly …\" line; add the compare-at (1 469 kr) so the editor has the full price rule."
+      ],
+      "bra": [
+        "Nine sizes named exactly as the page carries them; `från` used because 13,5 m costs 2 239 kr."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_OB_2_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Same as BOF_8_1: the bag claim is page-backed for Bäverbutiken but forbidden in CaraShell's dna.md — hold at the mirror until the owner decides.",
+        "`Fick plats bredvid reservdunken i baklådan.` — a staged specific; fine as long as the shot shows exactly that."
+      ],
+      "bra": [
+        "Shows storage instead of claiming it — no narration, captions only."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_CO_5_H1",
+      "fel": [
+        "The hook `Det har ju gått bra hittills.` fails the three-question test: there is nothing to picture, and any cover brand can sign it. Do not shoot it as written — open on something the viewer can see (the bare roof, and how long since he last looked at it), then keep the rest of the script."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The \"competitor is inaction\" idea is sound and the rest of the script is filmable; only the first line needs the rewrite."
+      ],
+      "bra": [
+        "Refuses to invent a repair figure — the unknown stays a question mark."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_PD_10_H1",
+      "fel": [
+        "`spänns fast med rem och dragsko i kanten` (4–10 s, and the caption `Rem och dragsko i kanten` at 10–16 s) — the page (read live from the product page 2026-09-21) says straps on all four sides hooked into a hook at the bottom edge; no drawstring exists. Use the strap-and-hook wording from PD_10_1 (`remmar på alla fyra sidor, 2,5 m och justerbara`) in both VO and caption."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "The hook is two sentences plus a price — too long for the first second. Open on `Nio storlekar – från 3 × 5,5 till 3 × 13,5 meter.` and let the size ladder carry the rest.",
+        "Otherwise a model one-variable test: the parent (PD_2_H1) is named and only the opening line changes."
+      ],
+      "bra": [
+        "Names its parent and changes one variable."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_CS_12_H1",
+      "fel": [
+        "`spänns fast med rem och dragsko i kanten` — the product page (read live from the product page 2026-09-21) says the cover has straps on all four sides that hook into a hook at the bottom edge, plus two 10,5 m ratchet straps. There is no drawstring (dragsko). Film the strap and hook, and change the line and caption to what the page says (straps on four sides, hooked at the edge)."
+      ],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`210D-väv, inte tunn presenning som spricker i frost` — the comparison with a tarp is fine, but \"spricker i frost\" is a claim about tarps with no source."
+      ],
+      "bra": [
+        "First-person delivery of the proven CS price anchor is a genuinely untested wrapper on this product; the compare-at line is read from the page."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_TR_3_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "`Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern.` is an unsourced claim about competitor products; keep the b-roll but let the line describe what THIS cover does.",
+        "Five lines in a 25 s video plus a b-roll shoot of a full cover being fitted by two people — that footage has to be produced, not found."
+      ],
+      "bra": [
+        "Opening on the product's own limitation is a line no full-cover competitor can sign — the strongest hook in the round."
+      ]
+    },
+    {
+      "namn": "Takoverdrag_GT_10_H1",
+      "fel": [],
+      "anmarkningar": [
+        "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable",
+        "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")",
+        "dna.md rules this concept out: `→ Instruktion: GT får inga briefer i batch #3. Innan vinkeln döms ska den` — decide whether that still holds for this round",
+        "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief",
+        "Valid for Bäverbutiken (GT_2_H1 carries 24 purchases here), but CaraShell's dna.md pattern 12 says no GT briefs until the inherited GT_2_H1 is recreated in its own test ABO — the mirror would drop this into a CBO that has given GT 611 kr and 0 purchases. Hold it at the mirror.",
+        "The 18–25 s caption `Nio storlekar – från 1 129 kr` is not the VO line — fine as a caption, but say so in the brief.",
+        "Fourth brief in the round to close on `Taket är det du aldrig ser – och det som kostar mest att laga.`"
+      ],
+      "bra": [
+        "Recognising the recipient through his gear instead of his personality is a concrete, filmable variant of the proven GT mechanism."
+      ]
+    }
+  ]
+}

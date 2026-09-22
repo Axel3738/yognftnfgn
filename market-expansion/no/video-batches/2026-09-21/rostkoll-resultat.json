@@ -1,0 +1,50 @@
+{
+ "sotarset_CS_1_H1": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_CS_1_H1.mp4\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_CS_1_H2": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_CS_1_H2.mp4\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_CS_1_H3": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_CS_1_H3.mp4\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_G_1_H1": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_G_1_H1.mp4\n     ⚠️ sista repliken ligger 0.10s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-55.0 mot -24.8 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_G_1_H2": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_G_1_H2.mp4\n     ⚠️ sista repliken ligger 0.11s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-62.5 mot -24.8 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_G_1_H3": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_G_1_H3.mp4\n     ⚠️ sista repliken ligger 0.07s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-51.8 mot -24.6 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_PD_1_H1": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_PD_1_H1.mp4\n     ⚠️ sista repliken ligger 0.08s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-28.7 mot -13.3 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_PD_1_H2": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_PD_1_H2.mp4\n     ⚠️ sista repliken ligger 0.06s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-27.6 mot -13.3 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_PD_1_H3": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_PD_1_H3.mp4\n     ⚠️ sista repliken ligger 0.09s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-68.2 mot -14.1 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_SP_1_H1": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_SP_1_H1.mp4\n     ⚠️ sista repliken ligger 0.07s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-16.4 mot -5.9 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_SP_1_H2": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_SP_1_H2.mp4\n     ⚠️ sista repliken ligger -0.01s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-16.5 mot -3.4 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ },
+ "sotarset_SP_1_H3": {
+  "exit": 0,
+  "output": "✅ NO_sotarset_SP_1_H3.mp4\n     ⚠️ sista repliken ligger 0.06s från slutet enligt tidkoden (källans), men dubben tonar ut som källan (-48.2 mot 2.9 dB) — inte avhugget\n\n1 av 1 klarade röstkollen.\n\n⚠️ Grönt betyder 'inga mätbara fel', inte 'godkänd'.\n   Lyssna själv på den video som ska bära mest spend."
+ }
+}

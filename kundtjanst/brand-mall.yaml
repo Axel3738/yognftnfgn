@@ -51,12 +51,102 @@ notion:
   sop_database_id: ""         # VA:ns SOP-databas → rapporten säger vilka toppärenden som saknar SOP
   rapport_database_id: ""     # databas där veckorapporten läggs som sida (--notion)
 
+# Värdena SOP:erna i kundtjanst/sop/ fyller sina {{PLATSHÅLLARE}} med. Samma
+# SOP-text körs på alla butiker — det är bara det här blocket som skiljer dem
+# åt, och det är hela poängen: en ny butik får fungerande tvisthantering genom
+# att fylla i tio rader, inte genom att skriva om rutinerna.
+tvister:
+  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden, kommaseparerad ("BOLAG AB, Gatan 1, 123 45 Ort, Sverige"); autosvaret skriver en rad per del i returinformationen
+  # true = adressen står INTE publikt någonstans; kunden måste mejla kundtjänst
+  # för att få den. Det ger färre returer, men bara om svaret går ut inom
+  # forsta_svar_timmar nedan — ett missat mejl blir en tvist, och en tvist
+  # kostar mer än returen. false = adressen står i policyn och får skickas fritt.
+  returadress_pa_forfragan: true
+  # {{RETURN_POSTAGE_PAID_BY}} — "kund" eller "butik". ⚠️ Lämna tom tills ägaren
+  # sagt vilket; VA:n får aldrig gissa det i ett kundmejl.
+  returfrakt_betalas_av: ""
+  # {{RETURN_WINDOW_DAYS}} — butikens EGEN returpolicy. Läs den på policy_url,
+  # gissa aldrig. ⚠️ Räknas från att kunden MOTTOG varan, inte från ordern —
+  # med 3–4 veckors leveranstid är det en helt annan dag. (Mätt 2026-09-20:
+  # VA:n bedömde #5435 som "13 dagar efter orderbekräftelsen, inom 14-dagars-
+  # policyn" — i själva verket hade varan inte ens levererats än, och butikens
+  # policy är 30 dagar, inte 14.)
+  returfonster_dagar: 30
+  # {{WITHDRAWAL_WINDOW_DAYS}} — den LAGSTADGADE ångerrätten, som gäller
+  # parallellt med returpolicyn ovan och inte går att avtala bort. 14 dagar i
+  # EU/Sverige (distansavtalslagen 2005:59), räknat från mottagandet. Utanför
+  # EU: sätt det landets regel, eller 0 om ingen finns.
+  angerratt_dagar: 14
+  policy_url: ""              # {{POLICY_URL}} — sidan kunden godkände i kassan (returer/villkor)
+  # {{BILLING_DESCRIPTOR}} — texten som står på kundens kontoutdrag. Står den inte
+  # här gissar ingen: läs den i Shopify admin → Settings → Payments → Customer
+  # billing statement. Fel descriptor är en vanlig orsak till "unrecognized".
+  billing_descriptor: ""
+  # Under det här beloppet är det billigare att återbetala än att lägga VA-tid på
+  # att slåss. 0 = slåss alltid. Sätt det i butikens egen valuta.
+  strid_lonar_sig_over: 0
+  # {{TRACKING_PAGE}} + {{PARCEL_PREFIX}} — butikens egen spårningssida och
+  # paketnummerprefix (sparning/butiker.json: url + /pages/ + handle, prefix).
+  # Kunden får ALDRIG fraktbolagets nummer (YT…/4PX…), bara butikens
+  # paketnummer och länken sida?nummer=PREFIX-XXXXXXXX. Tom = butiken har ingen
+  # spårningssida ännu; då gäller 17TRACK-vägen i SOP:erna.
+  sparningssida: ""
+  paketprefix: ""
+
+  # Eskaleringen — kundtjanst/sop/60-ESCALATION.md. Utan de här tre raderna vet
+  # VA:n inte vem hon frågar, och frågar då ingen alls.
+  agare_kontakt: ""           # {{OWNER_CONTACT}} — namn + var (Discord-handle, mejl)
+  # {{REFUND_APPROVAL_LIMIT}} — belopp VA:n får återbetala eller acceptera utan
+  # att fråga, i butikens valuta. 0 = hela kön får beslutas själv.
+  godkannande_over: 0
+  ersattning_over: 0          # {{REPLACEMENT_LIMIT}} — samma sak för ersättningsvaror
+  # {{FIRST_REPLY_TARGET_HOURS}} — svarstidsmålet på kundmejl. Det är det här
+  # talet som avgör om returadress_pa_forfragan ovan är en bra idé eller en
+  # tvistgenerator.
+  forsta_svar_timmar: 24
+
+# Autosvaret (kundtjanst/autosvar.mjs, 2026-09-21): svarar själv på ENKLA mejl
+# (var är min order, leveranstid, adressbyte före leverans, öppettider) med
+# fakta ur Shopify + 17TRACK, lugnar ARGA kunder med Axels mall och flaggar
+# allt SVÅRT till VA:n. Allt som står i ett svar kommer härifrån eller ur
+# systemen — aldrig ur huvudet. Tomma fält = motorn säger det i --kolla.
+svar:
+  autosvar: true              # false = motorn rör inte den här brevlådan alls
+  sprak: ""                   # sv|nb|da|fi|en — kundens språk vinner; tomt = ur brand.land
+  signatur: ""                # "Kundtjänst Bäverbutiken" — tomt = "Kundtjänst <namn>" på kundens språk. ALDRIG "AI"
+  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar)
+  packas_dagar: 2             # arbetsdagar från order till sändning
+  sparningssida: ""           # https://<butik>/pages/spara — kundens spårningssida (sparning/butiker.json). Tomt = ingen länk i svaret
+  sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)
+  va_mapp: VA-PRIO            # mappen ARGA trådar flyttas till — VA:n tar den först. Skapas om den saknas
+  svarstid_timmar: 24         # "vi svarar inom N timmar på vardagar" — måste hållas, annars ljuger svaret
+  eskalering_timmar: 48       # det ARGA svarets "du kan räkna med svar inom N timmar" (Axel 2026-09-22: 48 sätter förväntningen, VA:n svarar snabbare)
+  max_per_korning: 20         # tak på automatiska svar per körning; resten flaggas
+  fonster_timmar: 72          # mejl äldre än så får aldrig ett automatiskt svar (VA:n har dem)
+  fraga_ordernummer: false    # SOP 36 steg 1: "var är min order" utan order på e-posten ⇒ be om ordernumret. false = VA:n
+  # SOP 38: företagsuppgifterna är offentliga och ska gå ut direkt — BARA dessa fyra, aldrig VD:ns namn.
+  # Utelämna blocket så går frågan till VA:n.
+  # foretag:
+  #   namn: "Stonebite Ecom AB"
+  #   orgnr: "559576-2401"
+  #   adress: "Sjöhed 160, 442 74 Harestad"
+  #   moms: true
+
 trosklar:
   arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —
                               # då faller allt obesvarat äldre än en vecka ur rapporten,
                               # alltså precis de ärenden som hunnit bli farligast
   obesvarad_timmar: 48        # inkommande utan svar längre än så = larm
   ofullbordad_dagar: 5        # betald order utan fulfillment längre än så = larm
-  tvistgrans_gul_procent: 0.5 # tvister / ordrar (30 dagar): gult härifrån
+  tvistgrans_gul_procent: 0.5 # CHARGEBACKS / ordrar (30 dagar): gult härifrån
   tvistgrans_rod_procent: 0.9 # rött härifrån (Visa 0,9 %, Mastercard 1 %)
+  # ⚠️ Den ANDRA tvistgraden: (chargebacks + inquiries) / ordrar. Alltid högre,
+  # och den mäter något annat — hur ofta en bank hör av sig alls. Mätt på
+  # Bäverbutiken 2026-09-22: 0,19 % chargebacks men 1,91 % allt (4 + 36 av
+  # 2 091 ordrar); månaden före 0,14 % / 0,21 %. Inquiries gick från 1 till 36
+  # medan ordrarna växte 46 %, och det syntes inte i någon rapport.
+  # Står de på null VISAS talet men döms inte. Sätt en gräns först när någon
+  # läst vad Shopify självt räknar när de håller utbetalningar — gissa inte.
+  tvistgrans_allt_gul_procent: null
+  tvistgrans_allt_rod_procent: null
   ordrar_dagar: 30

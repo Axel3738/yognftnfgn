@@ -1,0 +1,160 @@
+{
+  "bilder": {
+    "Takoverdrag_BOF_9_1": {
+      "texter": [
+        { "rader": ["1 189 kr nå."] },
+        { "rader": ["Et tak du ikke vet prisen", "på senere."] },
+        { "rader": ["Taket er det du aldri ser – og det som koster mest å reparere."] },
+        { "rader": ["1 189 kr er hele regningen. Ingen gjetting."] },
+        { "rader": ["Beskytt taket – 1 189 kr."] }
+      ]
+    },
+    "Takoverdrag_CS_13_1": {
+      "texter": [
+        { "rader": ["61 kr per kvadratmeter", "beskyttet tak."] },
+        { "rader": ["1 189 kr for 19,5 m² – hele takflaten på en campingvogn på 6,5 meter."] },
+        { "rader": ["Taket er det du aldri ser – og det som koster mest å reparere."] },
+        { "rader": ["Beskytt taket for 1 189 kr."] }
+      ]
+    },
+    "Takoverdrag_PD_10_1": {
+      "texter": [
+        { "rader": ["Ni størrelser – fra 3 ×", "5,5 til 3 × 13,5 meter."] },
+        { "rader": ["Fra 1 189 kr."] },
+        { "rader": ["Sitter fast når det blåser – stropper på alle fire sider, 2,5 m og", "justerbare etter din vogn."] },
+        { "rader": ["Se alle ni størrelser."] }
+      ]
+    },
+    "Takoverdrag_BOF_8_1": {
+      "texter": [
+        { "rader": ["Om sommeren bor det i", "en pose, ikke i veien."] },
+        { "rader": ["Får plass i oppbevaringsposen som følger med."] },
+        { "rader": ["Ingen stor vinteroppbevaring – bare posen som fulgte med", "pakken."] },
+        { "rader": ["1 189 kr. Får plass i en pose."] }
+      ]
+    },
+    "Takoverdrag_BOF_7_1": {
+      "texter": [
+        { "rader": ["Campingvognens lengde er", "én av ni."] },
+        { "rader": ["Ni størrelser, 3 × 5,5 til 3 × 13,5 meter."] },
+        { "rader": ["Fra 1 189 kr."] },
+        { "rader": ["Se alle ni størrelser."] }
+      ]
+    },
+    "IBC_RV_12_1": {
+      "texter": [
+        { "rader": ["Emma, 4 stjerner"] },
+        { "rader": ["Veldig fornøyd.", "Tanken ser mye bedre ut, og", "overtrekket sitter bra."] },
+        { "rader": ["210D Oxford-stoff. Stopper alger & UV."] },
+        { "rader": ["Sett på trekket. Vannet forblir klart."] }
+      ]
+    },
+    "IBC_RV_11_1": {
+      "texter": [
+        { "rader": ["Anders, 5 stjerner"] },
+        { "rader": ["Veldig bra trekk.", "Passer IBC-tanken min perfekt og er enkelt", "å sette på."] },
+        { "rader": ["210D Oxford-stoff. Stopper alger & UV."] },
+        { "rader": ["Sett på trekket. Vannet forblir klart."] }
+      ]
+    },
+    "IBC_RI_1_1": {
+      "texter": [
+        { "rader": ["Uten trekk."] },
+        { "rader": ["Med trekk."] },
+        { "rader": ["Vannet blir grønt av alger."] },
+        { "rader": ["Presenningen som skulle beskytte blåser av i den første høststormen."] },
+        { "rader": ["Sett på trekket. Vannet forblir klart."] }
+      ]
+    },
+    "IBC_BOF_18_1": {
+      "texter": [
+        { "rader": ["Passer det tanken min?"] },
+        { "rader": ["120 × 100 × 116 cm. Passer en standard 1000 L IBC-tank."] },
+        { "rader": ["Åpning øverst for lokket."] },
+        { "rader": ["Sjekk målene og bestill."] }
+      ]
+    },
+    "IBC_BOF_17_1": {
+      "texter": [
+        { "rader": ["Lyset holdes ute.", "Vannet holdes klart."] },
+        { "rader": ["210D Oxford-stoff blokkerer lyset."] },
+        { "rader": ["Stopper alger. Holder UV ute."] },
+        { "rader": ["Sett på trekket. Vannet forblir klart."] }
+      ]
+    },
+    "IBC_BOF_16_1": {
+      "texter": [
+        { "rader": ["4,7 av 5"] },
+        { "rader": ["10 anmeldelser"] },
+        { "rader": ["IBC-tanktrekk. Stopper alger & UV."] },
+        { "rader": ["Zipp fast trekket."] }
+      ]
+    }
+  },
+  "copy": {
+    "Takoverdrag_BOF_9_1": {
+      "message": "1 189 kr nå. Et tak du ikke vet prisen på senere. Taket er det du aldri ser – og det som koster mest å reparere. 1 189 kr er hele regningen, ingen gjetting.",
+      "headline": "Beskytt taket – 1 189 kr.",
+      "description": ""
+    },
+    "Takoverdrag_CS_13_1": {
+      "message": "61 kr per kvadratmeter beskyttet tak. 1 189 kr for 19,5 m² – hele takflaten på en campingvogn på 6,5 meter. Taket er det du aldri ser, og det som koster mest å reparere.",
+      "headline": "61 kr per kvadratmeter tak",
+      "description": ""
+    },
+    "Takoverdrag_PD_10_1": {
+      "message": "Ni størrelser – fra 3 × 5,5 til 3 × 13,5 meter. Fra 1 189 kr. Sitter fast når det blåser – stropper på alle fire sider, 2,5 meter og justerbare etter din vogn.",
+      "headline": "Ni størrelser. Fra 1 189 kr.",
+      "description": ""
+    },
+    "Takoverdrag_BOF_8_1": {
+      "message": "Om sommeren bor det i en pose, ikke i veien. Får plass i oppbevaringsposen som følger med. Ingen stor vinteroppbevaring – bare posen som fulgte med pakken.",
+      "headline": "1 189 kr. Får plass i en pose.",
+      "description": ""
+    },
+    "Takoverdrag_BOF_7_1": {
+      "message": "Campingvognens lengde er én av ni. Ni størrelser, 3 × 5,5 til 3 × 13,5 meter. Fra 1 189 kr.",
+      "headline": "Se alle ni størrelser",
+      "description": ""
+    },
+    "IBC_RV_12_1": {
+      "message": "Emma, 4 stjerner: «Veldig fornøyd. Tanken ser mye bedre ut, og overtrekket sitter bra.» 210D Oxford-stoff stopper alger og UV. Sett på trekket – vannet forblir klart.",
+      "headline": "Emma, 4 stjerner",
+      "description": ""
+    },
+    "IBC_RV_11_1": {
+      "message": "Anders, 5 stjerner: «Veldig bra trekk. Passer IBC-tanken min perfekt og er enkelt å sette på.» 210D Oxford-stoff stopper alger og UV. Sett på trekket – vannet forblir klart.",
+      "headline": "Anders, 5 stjerner",
+      "description": ""
+    },
+    "IBC_RI_1_1": {
+      "message": "Uten trekk. Med trekk. Vannet blir grønt av alger uten trekk. Presenningen som skulle beskytte blåser av i den første høststormen. Sett på trekket – vannet forblir klart.",
+      "headline": "Uten trekk. Med trekk.",
+      "description": ""
+    },
+    "IBC_BOF_18_1": {
+      "message": "Passer det tanken min? 120 × 100 × 116 cm – laget for en standard 1000-liters tank. Åpningen øverst gjør at du når lokket uten å ta av trekket. Sjekk målene og bestill.",
+      "headline": "Passer det tanken min?",
+      "description": ""
+    },
+    "IBC_BOF_17_1": {
+      "message": "Lyset holdes ute. Vannet holdes klart. 210D Oxford-stoff blokkerer lyset som ellers gir grobunn for alger. Trekket stopper alger og holder UV ute. Sett på trekket – vannet forblir klart.",
+      "headline": "Lyset holdes ute, vannet klart.",
+      "description": ""
+    },
+    "IBC_BOF_16_1": {
+      "message": "4,7 av 5 på 10 anmeldelser. IBC-tanktrekket stopper alger og UV med tett 210D Oxford-stoff. Zipp fast trekket.",
+      "headline": "4,7 av 5 på 10 anmeldelser",
+      "description": ""
+    }
+  },
+  "andringar": [
+    { "bild": "Takoverdrag_BOF_9_1", "vad": "1 129 kr → 1 189 kr (alla förekomster)", "varfor": "Verifierat NOK-pris för Takovertrekket" },
+    { "bild": "Takoverdrag_CS_13_1", "vad": "58 kr/m² → 61 kr/m², 1 129 kr → 1 189 kr", "varfor": "1 189 NOK / 19,5 m² = 60,97 ≈ 61 kr/m² (svenska talet 58 kr/m² var räknat på 1 129 SEK och gäller inte i NOK)" },
+    { "bild": "Takoverdrag_PD_10_1", "vad": "1 129 kr → 1 189 kr", "varfor": "Verifierat NOK-pris" },
+    { "bild": "Takoverdrag_BOF_8_1", "vad": "1 129 kr → 1 189 kr", "varfor": "Verifierat NOK-pris" },
+    { "bild": "Takoverdrag_BOF_7_1", "vad": "1 129 kr → 1 189 kr", "varfor": "Verifierat NOK-pris" },
+    { "bild": "IBC_RV_12_1 / IBC_RV_11_1", "vad": "Ingen källhänvisning tillagd i bildtexten (bara namn + stjärnor, som originalet)", "varfor": "Uppgiften säger explicit: lägg INTE till källa i bildtexten — det är en separat rad utanför bilden" },
+    { "bild": "IBC_BOF_16_1", "vad": "4,7 av 5 / 10 anmeldelser lämnat OFÖRÄNDRAT", "varfor": "Kontrollerat på beverbutikken.no 2026-09-20: ratingValue 4.70, reviewCount 10 — identiskt, ingen ändring behövdes" }
+  ]
+}

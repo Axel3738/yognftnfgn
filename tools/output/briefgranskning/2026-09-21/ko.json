@@ -1,0 +1,3992 @@
+{
+  "idag": "2026-09-21",
+  "hamtad": "2026-09-21T05:08:29.593Z",
+  "ut": "tools/output/briefgranskning/2026-09-21",
+  "hubbar": [
+    {
+      "id": "3b0270ab-908c-80a7-8793-fa11d8c0f6e4",
+      "titel": "Boat cover 420D creative hub",
+      "url": null,
+      "kalla": "products.json",
+      "slug": "boat-cover-420d-creative-hub-3b0270ab",
+      "laget": "olasbar",
+      "skal": "Notion 404 — archived or not shared with the integration"
+    },
+    {
+      "id": "3aa270ab-908c-802b-a7a4-eb74d08d7eb7",
+      "titel": "Beach crocs creative hub",
+      "url": null,
+      "kalla": "products.json",
+      "slug": "beach-crocs-creative-hub-3aa270ab",
+      "laget": "olasbar",
+      "skal": "Notion 404 — archived or not shared with the integration"
+    },
+    {
+      "id": "3aa270ab-908c-808b-9d87-d1f1a0d70cbc",
+      "titel": "Trimmer belt creative hub",
+      "url": null,
+      "kalla": "products.json",
+      "slug": "trimmer-belt-creative-hub-3aa270ab",
+      "laget": "olasbar",
+      "skal": "Notion 404 — archived or not shared with the integration"
+    },
+    {
+      "id": "3aa270ab-908c-80c0-88aa-cb4935db8f33",
+      "titel": "Mower seat creative hub",
+      "url": null,
+      "kalla": "products.json",
+      "slug": "mower-seat-creative-hub-3aa270ab",
+      "laget": "olasbar",
+      "skal": "Notion 404 — archived or not shared with the integration"
+    },
+    {
+      "id": "3a7270ab-908c-80d2-9f35-e73e51e457ff",
+      "titel": "Matstrumpor creative hub",
+      "url": "https://app.notion.com/p/3a7270ab908c80d29f35e73e51e457ff",
+      "kalla": "sök",
+      "slug": "matstrumpor-creative-hub-3a7270ab",
+      "laget": "hoppad",
+      "skal": "not a creative hub: other business or the template (by title)"
+    },
+    {
+      "id": "86ee1df9-6a81-4a90-b018-a5c64065c5a8",
+      "titel": "Annonsidéer",
+      "url": "https://app.notion.com/p/86ee1df96a814a90b018a5c64065c5a8",
+      "kalla": "sök",
+      "slug": "annonsid-er-86ee1df9",
+      "laget": "hoppad",
+      "skal": "not a creative hub: no Typ field"
+    },
+    {
+      "id": "3cc270ab-908c-8179-bde9-d11a87ed06fb",
+      "titel": "Kranskydd Frost 420D creative hub",
+      "url": "https://app.notion.com/p/3cc270ab908c8179bde9d11a87ed06fb",
+      "kalla": "sök",
+      "slug": "kranskydd-frost-420d-creative-hub-3cc270ab",
+      "rond": "2026-09-05",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 16,
+      "antal": 9,
+      "per_dag": {
+        "2026-09-05": 9,
+        "2026-09-02": 9,
+        "2026-08-29": 6
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "hoppad",
+      "skal": "latest round 2026-09-05 is 16 days old (limit 10) — no newer briefs to give feedback on"
+    },
+    {
+      "id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+      "titel": "BÄVER Taköverdraget för Husvagn",
+      "url": "https://app.notion.com/p/7ec270ab908c82f6a2a80153159b20fa",
+      "kalla": "sök",
+      "slug": "baver-takoverdraget-for-husvagn-7ec270ab",
+      "rond": "2026-09-19",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 2,
+      "antal": 11,
+      "per_dag": {
+        "2026-09-19": 11,
+        "2026-09-16": 24,
+        "2026-09-14": 18
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
+        "titel": "BÄVER Taköverdraget för Husvagn",
+        "url": "https://app.notion.com/p/7ec270ab908c82f6a2a80153159b20fa",
+        "har_feedback_typ": true
+      },
+      "prefix": "Takoverdrag",
+      "produkt": {
+        "id": "carashell/takskyddet",
+        "kalla": "register.json (spegling.kalla_hub)",
+        "minne": "products/carashell/takskyddet",
+        "break_even_cpa": null,
+        "creative_prefix": null
+      },
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken",
+        "CaraShell",
+        "carashell.se",
+        "carashell.com"
+      ],
+      "doda_koncept": [
+        {
+          "koncept": "GT",
+          "citat": "→ Instruktion: GT får inga briefer i batch #3. Innan vinkeln döms ska den"
+        }
+      ],
+      "batch": null,
+      "feedback_fil": "products/carashell/takskyddet/feedback.md",
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab.dom.json",
+      "varningar": [],
+      "rader": [
+        {
+          "page_id": "3e0270ab-908c-813f-84fd-f9c9e2091416",
+          "url": "https://app.notion.com/p/Takoverdrag_BOF_9_1-3e0270ab908c813f84fdf9c9e2091416",
+          "namn": "Takoverdrag_BOF_9_1",
+          "titel": "Takoverdrag_BOF_9_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "CaraShell EN ready to be active",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:03:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2392,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_BOF_9_1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 9,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81ae-aa31-cf10ff770739",
+          "url": "https://app.notion.com/p/Takoverdrag_CS_13_1-3e0270ab908c81aeaa31cf10ff770739",
+          "namn": "Takoverdrag_CS_13_1",
+          "titel": "Takoverdrag_CS_13_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "CaraShell EN ready to be active",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:03:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2378,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_CS_13_1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "pris",
+              "text": "other kronor amounts in the ad text: 58 kr — only the price, compare-at and the saving are allowed"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 13,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81cd-b2ec-cb380e0a72d8",
+          "url": "https://app.notion.com/p/Takoverdrag_PD_10_1-3e0270ab908c81cdb2eccb380e0a72d8",
+          "namn": "Takoverdrag_PD_10_1",
+          "titel": "Takoverdrag_PD_10_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "CaraShell EN ready to be active",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:03:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2168,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_PD_10_1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "pris",
+              "text": "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 10,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81d6-a423-fdcba75d2fcd",
+          "url": "https://app.notion.com/p/Takoverdrag_BOF_8_1-3e0270ab908c81d6a423fdcba75d2fcd",
+          "namn": "Takoverdrag_BOF_8_1",
+          "titel": "Takoverdrag_BOF_8_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "CaraShell EN ready to be active",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:03:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2139,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_BOF_8_1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 8,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81e3-91ce-d1e9dcf33ab0",
+          "url": "https://app.notion.com/p/Takoverdrag_BOF_7_1-3e0270ab908c81e391ced1e9dcf33ab0",
+          "namn": "Takoverdrag_BOF_7_1",
+          "titel": "Takoverdrag_BOF_7_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "CaraShell EN ready to be active",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:03:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 1927,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_BOF_7_1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "pris",
+              "text": "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 7,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-813e-81c8-d3416e8aff18",
+          "url": "https://app.notion.com/p/Takoverdrag_OB_2_H1-3e0270ab908c813e81c8d3416e8aff18",
+          "namn": "Takoverdrag_OB_2_H1",
+          "titel": "Takoverdrag_OB_2_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2437,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_OB_2_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "OB",
+            "nummer": 2,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-8143-b656-dac37e95807e",
+          "url": "https://app.notion.com/p/Takoverdrag_CO_5_H1-3e0270ab908c8143b656dac37e95807e",
+          "namn": "Takoverdrag_CO_5_H1",
+          "titel": "Takoverdrag_CO_5_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2475,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_CO_5_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CO",
+            "nummer": 5,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-8186-909b-c8bf55d3c6d0",
+          "url": "https://app.notion.com/p/Takoverdrag_PD_10_H1-3e0270ab908c8186909bc8bf55d3c6d0",
+          "namn": "Takoverdrag_PD_10_H1",
+          "titel": "Takoverdrag_PD_10_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 3280,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_PD_10_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "pris",
+              "text": "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 10,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81a3-96aa-e0be09885e8f",
+          "url": "https://app.notion.com/p/Takoverdrag_CS_12_H1-3e0270ab908c81a396aae0be09885e8f",
+          "namn": "Takoverdrag_CS_12_H1",
+          "titel": "Takoverdrag_CS_12_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 3133,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_CS_12_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 12,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81c7-b6e0-f3fee2d3c32c",
+          "url": "https://app.notion.com/p/Takoverdrag_TR_3_H1-3e0270ab908c81c7b6e0f3fee2d3c32c",
+          "namn": "Takoverdrag_TR_3_H1",
+          "titel": "Takoverdrag_TR_3_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 2948,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_TR_3_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "TR",
+            "nummer": 3,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 1129,
+              "jamforpris": 1469
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e0270ab-908c-81f0-8e3d-f10de587e083",
+          "url": "https://app.notion.com/p/Takoverdrag_GT_10_H1-3e0270ab908c81f08e3df10de587e083",
+          "namn": "Takoverdrag_GT_10_H1",
+          "titel": "Takoverdrag_GT_10_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+          "skapad": "2026-09-19T06:02:00.000Z",
+          "skapad_dag": "2026-09-19",
+          "tecken": 3069,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-takoverdraget-for-husvagn-7ec270ab/Takoverdrag_GT_10_H1.md",
+          "pris_butik": {
+            "pris": 1129,
+            "jamforpris": 1469,
+            "kalla": "https://baverbutiken.se/products/takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "pris",
+              "text": "the ad text carries kronor amounts but the brief states no price rule (\"Price exactly … kr\")"
+            },
+            {
+              "kod": "dna",
+              "text": "dna.md rules this concept out: \"→ Instruktion: GT får inga briefer i batch #3. Innan vinkeln döms ska den\" — decide whether that still holds for this round"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "GT",
+            "nummer": 10,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+      "titel": "Boat motor cover creative hub",
+      "url": "https://app.notion.com/p/3cf270ab908c8113a35cf9c1cd61d727",
+      "kalla": "sök",
+      "slug": "boat-motor-cover-creative-hub-3cf270ab",
+      "rond": "2026-09-18",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 3,
+      "antal": 11,
+      "per_dag": {
+        "2026-09-18": 11,
+        "2026-09-15": 9,
+        "2026-09-08": 11,
+        "2026-09-05": 11,
+        "2026-09-02": 20
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "3cf270ab-908c-8113-a35c-f9c1cd61d727",
+        "titel": "Boat motor cover creative hub",
+        "url": "https://app.notion.com/p/3cf270ab908c8113a35cf9c1cd61d727",
+        "har_feedback_typ": true
+      },
+      "prefix": "Batmotor",
+      "produkt": null,
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": null,
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab.dom.json",
+      "varningar": [
+        "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+      ],
+      "rader": [
+        {
+          "page_id": "3df270ab-908c-814e-9a3b-c4865bbeb4e3",
+          "url": "https://app.notion.com/p/Batmotor_BF_13_1-3df270ab908c814e9a3bc4865bbeb4e3",
+          "namn": "Batmotor_BF_13_1",
+          "titel": "Batmotor_BF_13_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2212,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_BF_13_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BF",
+            "nummer": 13,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "protection",
+              "hook-typ": "before-after",
+              "format": "static",
+              "proof": "split-image-comparison",
+              "offer-i-creativen": "none",
+              "visuell stil": "split image, bare engine in rain vs covered engine",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-815a-a276-c13fb0b97daf",
+          "url": "https://app.notion.com/p/Batmotor_BOF_1_1-3df270ab908c815aa276c13fb0b97daf",
+          "namn": "Batmotor_BOF_1_1",
+          "titel": "Batmotor_BOF_1_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1806,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_BOF_1_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 1,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "offer",
+              "hook-typ": "price",
+              "format": "static (BOF)",
+              "proof": "price-comparison",
+              "offer-i-creativen": "40 % real",
+              "visuell stil": "product shot, plain background",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8169-ad3b-f4137a30bf23",
+          "url": "https://app.notion.com/p/Batmotor_CS_9_H1-3df270ab908c8169ad3bf4137a30bf23",
+          "namn": "Batmotor_CS_9_H1",
+          "titel": "Batmotor_CS_9_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2659,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_CS_9_H1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 9,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "offer",
+              "hook-typ": "price-reveal",
+              "format": "video",
+              "proof": "price-comparison",
+              "offer-i-creativen": "40 % real",
+              "visuell stil": "dock/boat daylight",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-816b-b1e5-d6a942128ab0",
+          "url": "https://app.notion.com/p/Batmotor_SP_4_H1-3df270ab908c816bb1e5d6a942128ab0",
+          "namn": "Batmotor_SP_4_H1",
+          "titel": "Batmotor_SP_4_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3261,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_SP_4_H1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SP",
+            "nummer": 4,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "season-storage",
+              "hook-typ": "calendar",
+              "format": "video",
+              "proof": "cover-on-in-wind",
+              "offer-i-creativen": "none",
+              "visuell stil": "boat storage yard, autumn wind",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8188-9cc9-cc24a6010624",
+          "url": "https://app.notion.com/p/Batmotor_PD_7_H1-3df270ab908c81889cc9cc24a6010624",
+          "namn": "Batmotor_PD_7_H1",
+          "titel": "Batmotor_PD_7_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2709,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_PD_7_H1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 7,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "product-demo",
+              "hook-typ": "on-screen-timer",
+              "format": "video",
+              "proof": "fit-demo-timed",
+              "offer-i-creativen": "none",
+              "visuell stil": "dock daylight",
+              "textmängd": "medium (timer overlay)",
+              "talare": "voiceover (light)"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81b3-a654-cb55fcf7b976",
+          "url": "https://app.notion.com/p/Batmotor_RV_11_1-3df270ab908c81b3a654cb55fcf7b976",
+          "namn": "Batmotor_RV_11_1",
+          "titel": "Batmotor_RV_11_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2092,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_RV_11_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 11,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "social-proof",
+              "hook-typ": "verbatim-review",
+              "format": "static",
+              "proof": "review quote (Thomas Eriksson)",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81c1-aabc-dda50bd29267",
+          "url": "https://app.notion.com/p/Batmotor_BOF_2_1-3df270ab908c81c1aabcdda50bd29267",
+          "namn": "Batmotor_BOF_2_1",
+          "titel": "Batmotor_BOF_2_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1785,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_BOF_2_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 2,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "trust/guarantee",
+              "hook-typ": "guarantee-terms",
+              "format": "static (BOF)",
+              "proof": "stated-store-policy",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot, plain background",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81c5-bda3-e9dc64a17d5c",
+          "url": "https://app.notion.com/p/Batmotor_RV_10_1-3df270ab908c81c5bda3e9dc64a17d5c",
+          "namn": "Batmotor_RV_10_1",
+          "titel": "Batmotor_RV_10_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2123,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_RV_10_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 10,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "social-proof",
+              "hook-typ": "verbatim-review",
+              "format": "static",
+              "proof": "review quote (Peter Andersson)",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81c8-a458-fb8866f3d23a",
+          "url": "https://app.notion.com/p/Batmotor_SP_1_H10-3df270ab908c81c8a458fb8866f3d23a",
+          "namn": "Batmotor_SP_1_H10",
+          "titel": "Batmotor_SP_1_H10",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3190,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_SP_1_H10.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "hypotes",
+              "text": "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SP",
+            "nummer": 1,
+            "variant": "H10",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "protection",
+              "hook-typ": "new",
+              "format": "video",
+              "proof": "fit-demo",
+              "offer-i-creativen": "none",
+              "visuell stil": "dock/boat daylight",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81ee-8a89-dc92b943fde4",
+          "url": "https://app.notion.com/p/Batmotor_BOF_3_1-3df270ab908c81ee8a89dc92b943fde4",
+          "namn": "Batmotor_BOF_3_1",
+          "titel": "Batmotor_BOF_3_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1825,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_BOF_3_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [
+            {
+              "kod": "butiksnamn",
+              "text": "the ad text names the store (baverbutiken.se, baverbutiken) — never in copy, on the image, in voice-over or captions (rule since 2026-09-18; ads are mirrored between stores)"
+            }
+          ],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 3,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "objection-fit",
+              "hook-typ": "size-range",
+              "format": "static (BOF)",
+              "proof": "size-spec",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot with size range indicated",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81f6-93ea-fa2fba363717",
+          "url": "https://app.notion.com/p/Batmotor_CS_10_1-3df270ab908c81f693eafa2fba363717",
+          "namn": "Batmotor_CS_10_1",
+          "titel": "Batmotor_CS_10_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare",
+          "skapad": "2026-09-18T06:09:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1951,
+          "fil": "tools/output/briefgranskning/2026-09-21/boat-motor-cover-creative-hub-3cf270ab/Batmotor_CS_10_1.md",
+          "pris_butik": {
+            "pris": 579,
+            "jamforpris": 965,
+            "kalla": "https://baverbutiken.se/products/batmotorskydd-420d-heltackande-for-utombordare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 10,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "offer",
+              "hook-typ": "price-frame",
+              "format": "static",
+              "proof": "price-comparison",
+              "offer-i-creativen": "40 % real",
+              "visuell stil": "product on boat at dock, daylight (CS_2_1 visual pattern)",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 579,
+              "jamforpris": 965
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+      "titel": "Belt grinder creative hub",
+      "url": "https://app.notion.com/p/3cc270ab908c813c94fad90daa9bf776",
+      "kalla": "sök",
+      "slug": "belt-grinder-creative-hub-3cc270ab",
+      "rond": "2026-09-18",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 3,
+      "antal": 9,
+      "per_dag": {
+        "2026-09-18": 9,
+        "2026-09-15": 7,
+        "2026-09-08": 9,
+        "2026-09-05": 9,
+        "2026-09-02": 9,
+        "2026-08-29": 6
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "3cc270ab-908c-813c-94fa-d90daa9bf776",
+        "titel": "Belt grinder creative hub",
+        "url": "https://app.notion.com/p/3cc270ab908c813c94fad90daa9bf776",
+        "har_feedback_typ": true
+      },
+      "prefix": "Beltgrinder",
+      "produkt": null,
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": null,
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab.dom.json",
+      "varningar": [
+        "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+      ],
+      "rader": [
+        {
+          "page_id": "3df270ab-908c-811d-825f-ef40e9fdcfb9",
+          "url": "https://app.notion.com/p/Beltgrinder_BOF_6_1-3df270ab908c811d825fef40e9fdcfb9",
+          "namn": "Beltgrinder_BOF_6_1",
+          "titel": "Beltgrinder_BOF_6_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2947,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_BOF_6_1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 6,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "objection",
+              "hook-typ": "mini-size-doubt",
+              "format": "static (BOF)",
+              "proof": "spec-list",
+              "offer-i-creativen": "none",
+              "visuell stil": "product-in-scale-context",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8172-9c98-edf4121f150b",
+          "url": "https://app.notion.com/p/Beltgrinder_SO_7_1-3df270ab908c81729c98edf4121f150b",
+          "namn": "Beltgrinder_SO_7_1",
+          "titel": "Beltgrinder_SO_7_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2273,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_SO_7_1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SO",
+            "nummer": 7,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "breadth",
+              "hook-typ": "3-in-1",
+              "format": "static",
+              "proof": "action-shot-sparks",
+              "offer-i-creativen": "none",
+              "visuell stil": "bright workshop (b020 layout)",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8176-b6da-c50721fe4d84",
+          "url": "https://app.notion.com/p/Beltgrinder_BOF_5_1-3df270ab908c8176b6dac50721fe4d84",
+          "namn": "Beltgrinder_BOF_5_1",
+          "titel": "Beltgrinder_BOF_5_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2679,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_BOF_5_1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "variable tags missing: hook-typ"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 5,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "trust",
+              "format": "static (BOF)",
+              "proof": "guarantee-and-shipping-quote",
+              "offer-i-creativen": "none",
+              "visuell stil": "product-plus-badge-copy",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-817e-94e7-f2045fca6c06",
+          "url": "https://app.notion.com/p/Beltgrinder_PD_25_H1-3df270ab908c817e94e7f2045fca6c06",
+          "namn": "Beltgrinder_PD_25_H1",
+          "titel": "Beltgrinder_PD_25_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2950,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_PD_25_H1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hypotes",
+              "text": "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 25,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "transformation",
+              "hook-typ": "dull-knife",
+              "format": "video",
+              "proof": "live-demo-with-sparks",
+              "offer-i-creativen": "none",
+              "visuell stil": "bright workshop",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81bf-89ae-f0f28102a019",
+          "url": "https://app.notion.com/p/Beltgrinder_BOF_4_1-3df270ab908c81bf89aef0f28102a019",
+          "namn": "Beltgrinder_BOF_4_1",
+          "titel": "Beltgrinder_BOF_4_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2101,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_BOF_4_1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "variable tags missing: hook-typ"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 4,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "price",
+              "format": "static (BOF)",
+              "proof": "price-comparison",
+              "offer-i-creativen": "honest-23-percent",
+              "visuell stil": "product-close-up-with-price-graphic",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81bf-b4e6-ea4b9b363945",
+          "url": "https://app.notion.com/p/Beltgrinder_SP_9_H1-3df270ab908c81bfb4e6ea4b9b363945",
+          "namn": "Beltgrinder_SP_9_H1",
+          "titel": "Beltgrinder_SP_9_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3075,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_SP_9_H1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hypotes",
+              "text": "the rationale argues on ROAS alone — rank on profit contribution (break-even-CPA − CPA) × purchases (ANALYSMETOD)"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SP",
+            "nummer": 9,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "proof",
+              "hook-typ": "drawer-of-dull-knives",
+              "format": "video",
+              "proof": "unbroken-timed-take",
+              "offer-i-creativen": "none",
+              "visuell stil": "kitchen-to-bench",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81c3-9905-c1a2b2157500",
+          "url": "https://app.notion.com/p/Beltgrinder_PD_27_1-3df270ab908c81c39905c1a2b2157500",
+          "namn": "Beltgrinder_PD_27_1",
+          "titel": "Beltgrinder_PD_27_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2322,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_PD_27_1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 27,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "transformation",
+              "hook-typ": "dull-knife",
+              "format": "static",
+              "proof": "action-shot-sparks",
+              "offer-i-creativen": "none",
+              "visuell stil": "bright workshop (b020 layout)",
+              "textmängd": "medium",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81ed-8947-d87cdb5623f9",
+          "url": "https://app.notion.com/p/Beltgrinder_CS_4_H1-3df270ab908c81ed8947d87cdb5623f9",
+          "namn": "Beltgrinder_CS_4_H1",
+          "titel": "Beltgrinder_CS_4_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3172,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_CS_4_H1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 4,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "price",
+              "hook-typ": "price-reveal",
+              "format": "video",
+              "proof": "price-comparison",
+              "offer-i-creativen": "honest-23-percent",
+              "visuell stil": "product-on-bench-with-price-graphics",
+              "textmängd": "medium",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81f7-8cfd-c918334308c7",
+          "url": "https://app.notion.com/p/Beltgrinder_PD_26_H1-3df270ab908c81f78cfdc918334308c7",
+          "namn": "Beltgrinder_PD_26_H1",
+          "titel": "Beltgrinder_PD_26_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare",
+          "skapad": "2026-09-18T06:07:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3233,
+          "fil": "tools/output/briefgranskning/2026-09-21/belt-grinder-creative-hub-3cc270ab/Beltgrinder_PD_26_H1.md",
+          "pris_butik": {
+            "pris": 909,
+            "jamforpris": 1182,
+            "kalla": "https://baverbutiken.se/products/balteslipmaskin-mini-3-i-1-knivslip-polerare.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "variabel",
+              "text": "variant of a parent ad without an \"Isolated variable:\" line — say the one thing that changed"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 26,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": true,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "breadth",
+              "hook-typ": "blunt-axe",
+              "format": "video",
+              "proof": "live-demo-with-sparks",
+              "offer-i-creativen": "none",
+              "visuell stil": "bright workshop",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 909,
+              "jamforpris": 1182
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "c5a270ab-908c-83e3-b721-81fde8643080",
+      "titel": "BÄVER Termoskyddet för Husbil",
+      "url": "https://app.notion.com/p/c5a270ab908c83e3b72181fde8643080",
+      "kalla": "sök",
+      "slug": "baver-termoskyddet-for-husbil-c5a270ab",
+      "rond": "2026-09-18",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 3,
+      "antal": 9,
+      "per_dag": {
+        "2026-09-18": 9,
+        "2026-09-15": 9,
+        "2026-09-14": 17
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "c5a270ab-908c-83e3-b721-81fde8643080",
+        "titel": "BÄVER Termoskyddet för Husbil",
+        "url": "https://app.notion.com/p/c5a270ab908c83e3b72181fde8643080",
+        "har_feedback_typ": true
+      },
+      "prefix": "Termoskydd",
+      "produkt": {
+        "id": "carashell/termoskyddet",
+        "kalla": "register.json (spegling.kalla_hub)",
+        "minne": "products/carashell/termoskyddet",
+        "break_even_cpa": null,
+        "creative_prefix": null
+      },
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken",
+        "CaraShell",
+        "carashell.se",
+        "carashell.com"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": "products/carashell/termoskyddet/feedback.md",
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab.dom.json",
+      "varningar": [],
+      "rader": [
+        {
+          "page_id": "3df270ab-908c-8102-be98-eefe50092c85",
+          "url": "https://app.notion.com/p/Termoskydd_CS_7_H1-3df270ab908c8102be98eefe50092c85",
+          "namn": "Termoskydd_CS_7_H1",
+          "titel": "Termoskydd_CS_7_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2599,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_CS_7_H1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 7,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "offer",
+              "hook-typ": "price",
+              "format": "video",
+              "proof": "fit-demo",
+              "offer-i-creativen": "40 % + mängdrabatt",
+              "visuell stil": "motorhome at a rest stop, autumn light",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8115-bf0e-e359e39ea91a",
+          "url": "https://app.notion.com/p/Termoskydd_PD_9_H1-3df270ab908c8115bf0ee359e39ea91a",
+          "namn": "Termoskydd_PD_9_H1",
+          "titel": "Termoskydd_PD_9_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2736,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_PD_9_H1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 9,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "mechanism",
+              "hook-typ": "misted-window",
+              "format": "video",
+              "proof": "mechanism-demo",
+              "offer-i-creativen": "n/a",
+              "visuell stil": "split-screen, misted window vs clear window, morning light",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8129-b35a-e93dd7d9e5ea",
+          "url": "https://app.notion.com/p/Termoskydd_BOF_9_1-3df270ab908c8129b35ae93dd7d9e5ea",
+          "namn": "Termoskydd_BOF_9_1",
+          "titel": "Termoskydd_BOF_9_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2238,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_BOF_9_1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 9,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "objection-fit",
+              "hook-typ": "measurements",
+              "format": "static (BOF)",
+              "proof": "measurements-verified",
+              "offer-i-creativen": "n/a",
+              "visuell stil": "product shot with dimension lines drawn over it",
+              "textmängd": "high",
+              "talare": "n/a"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-814e-9532-f54d39bb9977",
+          "url": "https://app.notion.com/p/Termoskydd_SP_8_H1-3df270ab908c814e9532f54d39bb9977",
+          "namn": "Termoskydd_SP_8_H1",
+          "titel": "Termoskydd_SP_8_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3001,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_SP_8_H1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SP",
+            "nummer": 8,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "season-storage",
+              "hook-typ": "calendar",
+              "format": "video",
+              "proof": "demonstrated-timelapse",
+              "offer-i-creativen": "n/a",
+              "visuell stil": "stationary motorhome, calendar months, dusk light",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8187-bf53-ec725ee25e89",
+          "url": "https://app.notion.com/p/Termoskydd_BOF_8_1-3df270ab908c8187bf53ec725ee25e89",
+          "namn": "Termoskydd_BOF_8_1",
+          "titel": "Termoskydd_BOF_8_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2126,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_BOF_8_1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 8,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "risk-reversal",
+              "hook-typ": "guarantee",
+              "format": "static (BOF)",
+              "proof": "policy-text-verified",
+              "offer-i-creativen": "fri frakt + 30 dagars öppet köp",
+              "visuell stil": "clean product shot, delivery/return icons",
+              "textmängd": "high",
+              "talare": "n/a"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-818a-9de7-ea7d0f5f5042",
+          "url": "https://app.notion.com/p/Termoskydd_CS_8_1-3df270ab908c818a9de7ea7d0f5f5042",
+          "namn": "Termoskydd_CS_8_1",
+          "titel": "Termoskydd_CS_8_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2079,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_CS_8_1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 8,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "darkness-privacy",
+              "hook-typ": "privacy",
+              "format": "static",
+              "proof": "composition-locked (SP_2_1)",
+              "offer-i-creativen": "40 %",
+              "visuell stil": "motorhome at rest stop, dusk",
+              "textmängd": "medium",
+              "talare": "n/a"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-818d-814e-e7925c482cef",
+          "url": "https://app.notion.com/p/Termoskydd_SP_9_1-3df270ab908c818d814ee7925c482cef",
+          "namn": "Termoskydd_SP_9_1",
+          "titel": "Termoskydd_SP_9_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2085,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_SP_9_1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "SP",
+            "nummer": 9,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "build-detail",
+              "hook-typ": "measurement-closeup",
+              "format": "static",
+              "proof": "composition-locked (SP_2_1)",
+              "offer-i-creativen": "n/a",
+              "visuell stil": "close-up, side flap clamped in door frame",
+              "textmängd": "medium",
+              "talare": "n/a"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81c6-bc51-f073ab810b77",
+          "url": "https://app.notion.com/p/Termoskydd_PD_8_H1-3df270ab908c81c6bc51f073ab810b77",
+          "namn": "Termoskydd_PD_8_H1",
+          "titel": "Termoskydd_PD_8_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2788,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_PD_8_H1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 8,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "ease",
+              "hook-typ": "stopwatch",
+              "format": "video",
+              "proof": "hands-on-demo",
+              "offer-i-creativen": "n/a",
+              "visuell stil": "real-time fitting, stopwatch overlay",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81f0-8f89-fa995ca30ed9",
+          "url": "https://app.notion.com/p/Termoskydd_BOF_7_1-3df270ab908c81f08f89fa995ca30ed9",
+          "namn": "Termoskydd_BOF_7_1",
+          "titel": "Termoskydd_BOF_7_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande",
+          "skapad": "2026-09-18T06:14:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1870,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-termoskyddet-for-husbil-c5a270ab/Termoskydd_BOF_7_1.md",
+          "pris_butik": {
+            "pris": 559,
+            "jamforpris": 932,
+            "kalla": "https://baverbutiken.se/products/termoskydd-husbil-211-171-cm-utvandigt-och-morklaggande.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 7,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "offer",
+              "hook-typ": "price",
+              "format": "static (BOF)",
+              "proof": "price-verified",
+              "offer-i-creativen": "40 % + mängdrabatt",
+              "visuell stil": "clean product shot, price block",
+              "textmängd": "high",
+              "talare": "n/a"
+            },
+            "pris_brief": {
+              "pris": 559,
+              "jamforpris": 932
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+      "titel": "BÄVER IBC-Tanköverdraget",
+      "url": "https://app.notion.com/p/76b270ab908c83938a4701f6ae366d42",
+      "kalla": "sök",
+      "slug": "baver-ibc-tankoverdraget-76b270ab",
+      "rond": "2026-09-20",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 1,
+      "antal": 9,
+      "per_dag": {
+        "2026-09-20": 9,
+        "2026-09-17": 9,
+        "2026-09-14": 11
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "76b270ab-908c-8393-8a47-01f6ae366d42",
+        "titel": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/76b270ab908c83938a4701f6ae366d42",
+        "har_feedback_typ": true
+      },
+      "prefix": "IBC",
+      "produkt": null,
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": null,
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab.dom.json",
+      "varningar": [
+        "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+      ],
+      "rader": [
+        {
+          "page_id": "3e1270ab-908c-81e5-9ef5-f1b17dc33749",
+          "url": "https://app.notion.com/p/IBC_RV_12_1-3e1270ab908c81e59ef5f1b17dc33749",
+          "namn": "IBC_RV_12_1",
+          "titel": "IBC_RV_12_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2589,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_RV_12_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 12,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-810b-ae71-d060c389b843",
+          "url": "https://app.notion.com/p/IBC_RV_11_1-3e1270ab908c810bae71d060c389b843",
+          "namn": "IBC_RV_11_1",
+          "titel": "IBC_RV_11_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2521,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_RV_11_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 11,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81ee-9c12-dfed1773f95d",
+          "url": "https://app.notion.com/p/IBC_RI_1_H1-3e1270ab908c81ee9c12dfed1773f95d",
+          "namn": "IBC_RI_1_H1",
+          "titel": "IBC_RI_1_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2911,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_RI_1_H1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RI",
+            "nummer": 1,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81f1-b30d-de1bd242acf8",
+          "url": "https://app.notion.com/p/IBC_RI_1_1-3e1270ab908c81f1b30dde1bd242acf8",
+          "namn": "IBC_RI_1_1",
+          "titel": "IBC_RI_1_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2140,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_RI_1_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RI",
+            "nummer": 1,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-8141-bb5b-c5882f5abbe8",
+          "url": "https://app.notion.com/p/IBC_PD_11_H1-3e1270ab908c8141bb5bc5882f5abbe8",
+          "namn": "IBC_PD_11_H1",
+          "titel": "IBC_PD_11_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 3025,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_PD_11_H1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 11,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81ba-a747-e6932b6a8e2b",
+          "url": "https://app.notion.com/p/IBC_CS_9_H1-3e1270ab908c81baa747e6932b6a8e2b",
+          "namn": "IBC_CS_9_H1",
+          "titel": "IBC_CS_9_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2313,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_CS_9_H1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 9,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 489,
+              "jamforpris": 636
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81d9-8573-e4673785de2a",
+          "url": "https://app.notion.com/p/IBC_BOF_18_1-3e1270ab908c81d98573e4673785de2a",
+          "namn": "IBC_BOF_18_1",
+          "titel": "IBC_BOF_18_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 1942,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_BOF_18_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 18,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-8121-8c99-e812ba688dd2",
+          "url": "https://app.notion.com/p/IBC_BOF_17_1-3e1270ab908c81218c99e812ba688dd2",
+          "namn": "IBC_BOF_17_1",
+          "titel": "IBC_BOF_17_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2088,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_BOF_17_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 17,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81d2-aaa0-f15502149c9c",
+          "url": "https://app.notion.com/p/IBC_BOF_16_1-3e1270ab908c81d2aaa0f15502149c9c",
+          "namn": "IBC_BOF_16_1",
+          "titel": "IBC_BOF_16_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2134,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-ibc-tankoverdraget-76b270ab/IBC_BOF_16_1.md",
+          "pris_butik": {
+            "pris": 489,
+            "jamforpris": 636,
+            "kalla": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 16,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": null,
+              "jamforpris": null
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "e53270ab-908c-8297-be2d-0162a09dc253",
+      "titel": "BÄVER Adventskalendern Racingbilar",
+      "url": "https://app.notion.com/p/e53270ab908c8297be2d0162a09dc253",
+      "kalla": "sök",
+      "slug": "baver-adventskalendern-racingbilar-e53270ab",
+      "rond": "2026-09-20",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 1,
+      "antal": 9,
+      "per_dag": {
+        "2026-09-20": 9,
+        "2026-09-17": 9,
+        "2026-09-14": 11
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "e53270ab-908c-8297-be2d-0162a09dc253",
+        "titel": "BÄVER Adventskalendern Racingbilar",
+        "url": "https://app.notion.com/p/e53270ab908c8297be2d0162a09dc253",
+        "har_feedback_typ": true
+      },
+      "prefix": "Adventskalender",
+      "produkt": null,
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": null,
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab.dom.json",
+      "varningar": [
+        "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+      ],
+      "rader": [
+        {
+          "page_id": "3e1270ab-908c-8196-822a-d9ccb9314220",
+          "url": "https://app.notion.com/p/Adventskalender_UG_3_H1-3e1270ab908c8196822ad9ccb9314220",
+          "namn": "Adventskalender_UG_3_H1",
+          "titel": "Adventskalender_UG_3_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2780,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_UG_3_H1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "UG",
+            "nummer": 3,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-8112-964e-ccd303984071",
+          "url": "https://app.notion.com/p/Adventskalender_RV_8_1-3e1270ab908c8112964eccd303984071",
+          "namn": "Adventskalender_RV_8_1",
+          "titel": "Adventskalender_RV_8_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2673,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_RV_8_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 8,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81b3-945e-ef374979b5e0",
+          "url": "https://app.notion.com/p/Adventskalender_RV_7_1-3e1270ab908c81b3945eef374979b5e0",
+          "namn": "Adventskalender_RV_7_1",
+          "titel": "Adventskalender_RV_7_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2716,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_RV_7_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "RV",
+            "nummer": 7,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81a7-8d8d-db409cb229a1",
+          "url": "https://app.notion.com/p/Adventskalender_PD_11_H1-3e1270ab908c81a78d8ddb409cb229a1",
+          "namn": "Adventskalender_PD_11_H1",
+          "titel": "Adventskalender_PD_11_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2812,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_PD_11_H1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 11,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-8149-bfc6-ca8e01ea1fef",
+          "url": "https://app.notion.com/p/Adventskalender_GT_4_H1-3e1270ab908c8149bfc6ca8e01ea1fef",
+          "namn": "Adventskalender_GT_4_H1",
+          "titel": "Adventskalender_GT_4_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Draft",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2935,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_GT_4_H1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "GT",
+            "nummer": 4,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-81ff-90cf-e27214339288",
+          "url": "https://app.notion.com/p/Adventskalender_CO_4_1-3e1270ab908c81ff90cfe27214339288",
+          "namn": "Adventskalender_CO_4_1",
+          "titel": "Adventskalender_CO_4_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2182,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_CO_4_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CO",
+            "nummer": 4,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-819c-bb76-d3063f282d21",
+          "url": "https://app.notion.com/p/Adventskalender_BF_12_1-3e1270ab908c819cbb76d3063f282d21",
+          "namn": "Adventskalender_BF_12_1",
+          "titel": "Adventskalender_BF_12_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 1914,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_BF_12_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BF",
+            "nummer": 12,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-817f-9a1b-fe31ee76b348",
+          "url": "https://app.notion.com/p/Adventskalender_BF_11_1-3e1270ab908c817f9a1bfe31ee76b348",
+          "namn": "Adventskalender_BF_11_1",
+          "titel": "Adventskalender_BF_11_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 2217,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_BF_11_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BF",
+            "nummer": 11,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3e1270ab-908c-8113-859c-c961588f6389",
+          "url": "https://app.notion.com/p/Adventskalender_BF_10_1-3e1270ab908c8113859cc961588f6389",
+          "namn": "Adventskalender_BF_10_1",
+          "titel": "Adventskalender_BF_10_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "Approved",
+          "landning": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor",
+          "skapad": "2026-09-20T06:04:00.000Z",
+          "skapad_dag": "2026-09-20",
+          "tecken": 1875,
+          "fil": "tools/output/briefgranskning/2026-09-21/baver-adventskalendern-racingbilar-e53270ab/Adventskalender_BF_10_1.md",
+          "pris_butik": {
+            "pris": 499,
+            "jamforpris": 649,
+            "kalla": "https://baverbutiken.se/products/adventskalender-racingbilar-24-bilar-bakom-24-luckor.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "taggar",
+              "text": "no variable tags line (VARIABELTAGGAR / Variables: angle · hook · format · proof · offer · visual · text · speaker) — the next /cs run cannot group this ad by variable"
+            },
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BF",
+            "nummer": 10,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": null,
+            "pris_brief": {
+              "pris": 499,
+              "jamforpris": 649
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "3a7270ab-908c-807d-b90d-c55d885cad13",
+      "titel": "Product test center SE BÄVER",
+      "url": "https://app.notion.com/p/3a7270ab908c807db90dc55d885cad13",
+      "kalla": "sök",
+      "slug": "product-test-center-se-baver-3a7270ab",
+      "laget": "hoppad",
+      "skal": "not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs"
+    },
+    {
+      "id": "513270ab-908c-825e-b71e-81cdf455dd98",
+      "titel": "BÄVER Termoskyddet för Husbil",
+      "url": "https://app.notion.com/p/513270ab908c825eb71e81cdf455dd98",
+      "kalla": "sök",
+      "slug": "baver-termoskyddet-for-husbil-513270ab",
+      "laget": "hoppad",
+      "skal": "no ad rows (Typ … Pending Approval)",
+      "feedback_rader": 0
+    },
+    {
+      "id": "36f270ab-908c-803b-8949-ff2326f4f76c",
+      "titel": "Creative Hub master",
+      "url": "https://app.notion.com/p/36f270ab908c803b8949ff2326f4f76c",
+      "kalla": "sök",
+      "slug": "creative-hub-master-36f270ab",
+      "laget": "hoppad",
+      "skal": "not a creative hub: other business or the template (by title)"
+    },
+    {
+      "id": "3cf270ab-908c-81c1-bfd2-d78f9a45b3d8",
+      "titel": "Motorcycle Cover creative hub",
+      "url": "https://app.notion.com/p/3cf270ab908c81c1bfd2d78f9a45b3d8",
+      "kalla": "sök",
+      "slug": "motorcycle-cover-creative-hub-3cf270ab",
+      "rond": "2026-09-18",
+      "rond_kalla": "hubbens nyaste dag",
+      "alder_dagar": 3,
+      "antal": 7,
+      "per_dag": {
+        "2026-09-18": 7,
+        "2026-09-15": 7,
+        "2026-09-08": 9,
+        "2026-09-05": 9,
+        "2026-09-02": 17
+      },
+      "feedback_rader": 0,
+      "redan_granskad": null,
+      "laget": "att_doma",
+      "hub": {
+        "id": "3cf270ab-908c-81c1-bfd2-d78f9a45b3d8",
+        "titel": "Motorcycle Cover creative hub",
+        "url": "https://app.notion.com/p/3cf270ab908c81c1bfd2d78f9a45b3d8",
+        "har_feedback_typ": true
+      },
+      "prefix": "MC-Kapell",
+      "produkt": null,
+      "butiksnamn": [
+        "Bäverbutiken",
+        "baverbutiken.se",
+        "baverbutiken"
+      ],
+      "doda_koncept": [],
+      "batch": null,
+      "feedback_fil": null,
+      "dom_fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab.dom.json",
+      "varningar": [
+        "no product folder in the repo (products.json / register.json) — dna.md and feedback.md do not apply; the Feedback row in the hub is the memory"
+      ],
+      "rader": [
+        {
+          "page_id": "3df270ab-908c-810a-84ea-ea891742c263",
+          "url": "https://app.notion.com/p/MC-Kapell_BOF_1_1-3df270ab908c810a84eaea891742c263",
+          "namn": "MC-Kapell_BOF_1_1",
+          "titel": "MC-Kapell_BOF_1_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "To be Reviewed",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 1992,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_BOF_1_1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 1,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "price/retarget",
+              "hook-typ": "price-recap",
+              "format": "static (BOF)",
+              "proof": "price-comparison",
+              "offer-i-creativen": "349 kr av 582 kr, spara 233 kr (40 %)",
+              "visuell stil": "clean product shot, price graphic",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-812c-8724-f000f43acd11",
+          "url": "https://app.notion.com/p/MC-Kapell_BOF_3_1-3df270ab908c812c8724f000f43acd11",
+          "namn": "MC-Kapell_BOF_3_1",
+          "titel": "MC-Kapell_BOF_3_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "To be Reviewed",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2320,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_BOF_3_1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 3,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "objection-fit",
+              "hook-typ": "measurement",
+              "format": "static (BOF)",
+              "proof": "measurement",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot on motorcycle with width/length callouts",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8145-82ab-f87235bffe44",
+          "url": "https://app.notion.com/p/MC-Kapell_OB_5_H1-3df270ab908c814582abf87235bffe44",
+          "namn": "MC-Kapell_OB_5_H1",
+          "titel": "MC-Kapell_OB_5_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3316,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_OB_5_H1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "OB",
+            "nummer": 5,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "season-storage",
+              "hook-typ": "calendar",
+              "format": "video",
+              "proof": "cover-in-wind",
+              "offer-i-creativen": "none",
+              "visuell stil": "driveway/carport across changing autumn/winter weather",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-817a-92c2-dfc4b3322467",
+          "url": "https://app.notion.com/p/MC-Kapell_CS_8_H1-3df270ab908c817a92c2dfc4b3322467",
+          "namn": "MC-Kapell_CS_8_H1",
+          "titel": "MC-Kapell_CS_8_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2841,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_CS_8_H1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "CS",
+            "nummer": 8,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "price",
+              "hook-typ": "price-shock",
+              "format": "video",
+              "proof": "price-comparison",
+              "offer-i-creativen": "349 kr av 582 kr, spara 233 kr (40 %)",
+              "visuell stil": "studio-clean product shot cutting to bold price card",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-8186-8d2c-da5501a3ecc7",
+          "url": "https://app.notion.com/p/MC-Kapell_PD_10_H1-3df270ab908c81868d2cda5501a3ecc7",
+          "namn": "MC-Kapell_PD_10_H1",
+          "titel": "MC-Kapell_PD_10_H1",
+          "typ_notion": "Video - Pending Approval",
+          "typ": "video",
+          "status": "Creative strat review",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 3331,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_PD_10_H1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 10,
+            "variant": "H1",
+            "typ": "video",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "protection",
+              "hook-typ": "new",
+              "format": "video",
+              "proof": "cover-on-demo",
+              "offer-i-creativen": "none",
+              "visuell stil": "driveway/garage daylight",
+              "textmängd": "low",
+              "talare": "voiceover"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81b3-912e-dfd073ffecfd",
+          "url": "https://app.notion.com/p/MC-Kapell_PD_11_1-3df270ab908c81b3912edfd073ffecfd",
+          "namn": "MC-Kapell_PD_11_1",
+          "titel": "MC-Kapell_PD_11_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "To be Reviewed",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2092,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_PD_11_1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "PD",
+            "nummer": 11,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "price",
+              "hook-typ": "price",
+              "format": "static",
+              "proof": "price-comparison",
+              "offer-i-creativen": "349 kr av 582 kr, spara 233 kr (40 %)",
+              "visuell stil": "studio product shot, bold typography (CS_2_1 layout)",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        },
+        {
+          "page_id": "3df270ab-908c-81fd-81c9-deb735c10094",
+          "url": "https://app.notion.com/p/MC-Kapell_BOF_2_1-3df270ab908c81fd81c9deb735c10094",
+          "namn": "MC-Kapell_BOF_2_1",
+          "titel": "MC-Kapell_BOF_2_1",
+          "typ_notion": "Image - Pending Approval",
+          "typ": "bild",
+          "status": "To be Reviewed",
+          "landning": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv",
+          "skapad": "2026-09-18T06:11:00.000Z",
+          "skapad_dag": "2026-09-18",
+          "tecken": 2187,
+          "fil": "tools/output/briefgranskning/2026-09-21/motorcycle-cover-creative-hub-3cf270ab/MC-Kapell_BOF_2_1.md",
+          "pris_butik": {
+            "pris": 349,
+            "jamforpris": 582,
+            "kalla": "https://baverbutiken.se/products/mc-kapell-220-120-regn-damm-uv.json"
+          },
+          "pris_skal": null,
+          "fel": [],
+          "anmarkningar": [
+            {
+              "kod": "kalla",
+              "text": "new concept with no source named (playbook, winning line, swipe, own data, a parent ad or the backlog) and not marked as a guess"
+            },
+            {
+              "kod": "hardrules",
+              "text": "the Rules section does not carry \"the ad never names the store\" (rule since 2026-09-18)"
+            },
+            {
+              "kod": "copy",
+              "text": "no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief"
+            }
+          ],
+          "fakta": {
+            "koncept": "BOF",
+            "nummer": 2,
+            "variant": "1",
+            "typ": "bild",
+            "ar_variant": false,
+            "isolerad": null,
+            "taggar": {
+              "vinkel": "logistics/trust",
+              "hook-typ": "shipping-terms",
+              "format": "static (BOF)",
+              "proof": "policy-terms",
+              "offer-i-creativen": "none",
+              "visuell stil": "product shot + icon row (truck, calendar, return arrow)",
+              "textmängd": "high",
+              "talare": "none"
+            },
+            "pris_brief": {
+              "pris": 349,
+              "jamforpris": 582
+            },
+            "trefragor": true,
+            "image_prompt": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "472270ab-908c-83cb-868e-8127667a3eee",
+      "titel": "ADVENTLANE Product test center",
+      "url": "https://app.notion.com/p/472270ab908c83cb868e8127667a3eee",
+      "kalla": "sök",
+      "slug": "adventlane-product-test-center-472270ab",
+      "laget": "hoppad",
+      "skal": "not a creative hub: Status lacks the brief lifecycle (Draft → To be Reviewed) — products or SOPs, not briefs"
+    },
+    {
+      "id": "3aa270ab-908c-8057-a8a0-cc691d9e956b",
+      "titel": "Customer support bäverbutiken",
+      "url": "https://app.notion.com/p/3aa270ab908c8057a8a0cc691d9e956b",
+      "kalla": "sök",
+      "slug": "customer-support-baverbutiken-3aa270ab",
+      "laget": "hoppad",
+      "skal": "not a creative hub: no Typ field"
+    }
+  ],
+  "varningar": [],
+  "stopp": []
+}

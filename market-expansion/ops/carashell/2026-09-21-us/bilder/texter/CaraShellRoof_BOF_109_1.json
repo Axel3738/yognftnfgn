@@ -1,0 +1,89 @@
+[
+ {
+  "box": [
+   200,
+   64,
+   880,
+   150
+  ],
+  "rader": 1,
+  "storlek": 76,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "$199 now."
+ },
+ {
+  "box": [
+   40,
+   186,
+   1040,
+   394
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.57,
+  "utvidga": 6,
+  "text": "You learn the price after the damage."
+ },
+ {
+  "box": [
+   60,
+   436,
+   1020,
+   504
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "utvidga": 6,
+  "text": "The roof is the part you never see, and the priciest to fix."
+ },
+ {
+  "box": [
+   60,
+   1070,
+   1020,
+   1140
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "fet": true,
+  "farg": [
+   18,
+   17,
+   16
+  ],
+  "text": "$199 is the whole bill. No guessing."
+ },
+ {
+  "box": [
+   268,
+   1222,
+   812,
+   1294
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "Protect the roof – $199."
+ }
+]

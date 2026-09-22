@@ -1,0 +1,19 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-21/out/ibc-tanktrekk_PD_11_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-21/no-video/IBC-tanktrekk_NO_PD_11_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-21/srt-no/ibc-tanktrekk_PD_11_H1.srt",
+ "captions": {
+  "zon": [
+   890,
+   1000
+  ],
+  "standard_cy": 942,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 34,
+  "pad_y": 8
+ }
+}

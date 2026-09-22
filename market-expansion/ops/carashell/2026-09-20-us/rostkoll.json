@@ -1,0 +1,58 @@
+{
+ "OB_101_H1": {
+  "ok": true,
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 18.12,
+   "medel_db": -16.9,
+   "max_db": -0.6,
+   "langd_kalla": 18.156599,
+   "langddrift": 0.002,
+   "tal_ny": 13.98,
+   "sista_replik_slut": 14.74
+  }
+ },
+ "PD_107_H1": {
+  "ok": true,
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 18.0,
+   "medel_db": -20.6,
+   "max_db": -4.1,
+   "langd_kalla": 18.017279,
+   "langddrift": 0.001,
+   "tal_ny": 13.600000000000001,
+   "sista_replik_slut": 14.34
+  }
+ },
+ "RI_103_H1": {
+  "ok": true,
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 17.36,
+   "medel_db": -20.6,
+   "max_db": -0.6,
+   "langd_kalla": 17.39034,
+   "langddrift": 0.002,
+   "tal_ny": 13.340000000000002,
+   "sista_replik_slut": 14.14
+  }
+ },
+ "PD_106_H1": {
+  "ok": true,
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 16.28,
+   "medel_db": -17.6,
+   "max_db": -1.7,
+   "langd_kalla": 16.299002,
+   "langddrift": 0.001,
+   "tal_ny": 12.12,
+   "sista_replik_slut": 12.78
+  }
+ }
+}

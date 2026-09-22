@@ -65,6 +65,7 @@ export function renderaSvensk(r) {
   rad.push(`| Chargebacks (${dagar} dagar) | ${r.tvister?.tillganglig ? chargebacks(r) : '— (ej läsbart)'} | ${r.forra?.tvister ?? ''} |`);
   rad.push(`| Förfrågningar från banken (${dagar} dagar) | ${r.tvister?.tillganglig ? forfragningar(r) : '—'} | ${r.forra?.forfragningar ?? ''} |`);
   rad.push(`| Tvistgrad (chargebacks / ordrar) | ${pct(r.risk?.tvistgrad)} | ${r.forra?.tvistgrad === undefined || r.forra?.tvistgrad === null ? '' : pct(r.forra.tvistgrad)} |`);
+  rad.push(`| Tvistgrad inkl. förfrågningar | ${pct(r.risk?.tvistgradAllt)} | ${r.forra?.tvistgradAllt === undefined || r.forra?.tvistgradAllt === null ? '' : pct(r.forra.tvistgradAllt)} |`);
   rad.push(`| **Chargeback-risk** | **${nivaText(r.risk, 'sv')}** | ${r.forra?.riskPoang ?? '—'} |`);
   rad.push('');
 
@@ -139,7 +140,7 @@ export function renderaEngelsk(r, { kort = false, pingId = null } = {}) {
   rad.push('');
   rad.push('**Numbers**');
   rad.push(`• Tickets: ${s.antalArenden}${trend(s.antalArenden, r.forra?.antalArenden ?? null)} · unanswered now: ${s.obesvarade} · unanswered > ${r.brand.trosklar?.obesvarad_timmar ?? 48}h: ${s.larmObesvarade}`);
-  rad.push(`• Median first reply: ${s.medianSvarstidTimmar === null ? 'n/a' : `${s.medianSvarstidTimmar}h`} · orders (${r.brand.trosklar?.ordrar_dagar ?? 30}d): ${r.ordrar?.antal ?? 'n/a'} · chargebacks: ${r.tvister?.tillganglig ? chargebacks(r) : 'n/a'} · bank inquiries: ${r.tvister?.tillganglig ? forfragningar(r) : 'n/a'} · chargeback rate: ${pctEn(r.risk?.tvistgrad)}`);
+  rad.push(`• Median first reply: ${s.medianSvarstidTimmar === null ? 'n/a' : `${s.medianSvarstidTimmar}h`} · orders (${r.brand.trosklar?.ordrar_dagar ?? 30}d): ${r.ordrar?.antal ?? 'n/a'} · chargebacks: ${r.tvister?.tillganglig ? chargebacks(r) : 'n/a'} · bank inquiries: ${r.tvister?.tillganglig ? forfragningar(r) : 'n/a'} · chargeback rate: ${pctEn(r.risk?.tvistgrad)} · dispute rate incl. inquiries: ${pctEn(r.risk?.tvistgradAllt)}`);
   rad.push(`• **Chargeback risk: ${n.emoji} ${n.en} (${r.risk?.poang ?? 0}/100)**`);
   rad.push('');
   rad.push('**Top tickets (recurring problems)**');

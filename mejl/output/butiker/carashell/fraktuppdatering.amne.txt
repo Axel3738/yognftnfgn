@@ -1,0 +1,1 @@
+{% case shipping_address.country_code %}{% when 'NO' %}Ny info om pakken din{% when 'US' or 'GB' or 'CA' or 'AU' or 'NZ' %}New update on your parcel{% when 'FI' %}Uutta tietoa paketistasi{% else %}Ny info om ditt paket{% endcase %}

@@ -1,0 +1,38 @@
+{
+ "OB_101_H1": {
+  "status": "OK",
+  "exit": 0,
+  "logg": [
+   "carashell_OB_101_H1.mp4: 513 frames @ 25 fps, pillret hittat i 361 frames",
+   "  11 norska caption-cues",
+   "klart /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-20-us/video/cap/../../us/CaraShellRoof_US_OB_101_H1.mp4"
+  ]
+ },
+ "PD_106_H1": {
+  "status": "OK",
+  "exit": 0,
+  "logg": [
+   "carashell_PD_106_H1.mp4: 467 frames @ 25 fps, pillret hittat i 292 frames",
+   "  8 norska caption-cues",
+   "klart /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-20-us/video/cap/../../us/CaraShellRoof_US_PD_106_H1.mp4"
+  ]
+ },
+ "PD_107_H1": {
+  "status": "OK",
+  "exit": 0,
+  "logg": [
+   "carashell_PD_107_H1.mp4: 510 frames @ 25 fps, pillret hittat i 326 frames",
+   "  11 norska caption-cues",
+   "klart /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-20-us/video/cap/../../us/CaraShellRoof_US_PD_107_H1.mp4"
+  ]
+ },
+ "RI_103_H1": {
+  "status": "OK",
+  "exit": 0,
+  "logg": [
+   "carashell_RI_103_H1.mp4: 495 frames @ 25 fps, pillret hittat i 328 frames",
+   "  10 norska caption-cues",
+   "klart /home/user/yognftnfgn/market-expansion/ops/carashell/2026-09-20-us/video/cap/../../us/CaraShellRoof_US_RI_103_H1.mp4"
+  ]
+ }
+}

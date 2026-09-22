@@ -225,3 +225,22 @@ test('valjEnKampanj: en TOM kampanj hittas via kampanjbasen (kampanjbasFor), int
   assert.equal(med.kampanj?.id, '1');
   assert.deepEqual(med.butikens.map((k) => k.id), ['1'], 'termoskyddets kampanj matchar inte takskyddets bas');
 });
+
+test('batchuppladdarens glob täcker VARJE filändelse uppladdaren tar emot (mätt 2026-09-20)', () => {
+  // Mätt 2026-09-20 på Danmarks bildbatch: ops-marknadsuppladdning.sh globbade
+  // bara *.mp4 och *.jpg. De 36 danska bilderna låg som .png och hoppades TYST
+  // över — kön blev bara kortare, inget felmeddelande — medan fyra kvarglömda
+  // .jpg från ett mellansteg laddades upp i stället. Därför kopplas de två
+  // filerna ihop här: lägger någon till en ändelse i uppladdaren utan att röra
+  // globben faller det här testet i stället för att en batch tappar hälften.
+  const mjs = readFileSync(join(ROT, 'tools', 'ops-till-meta.mjs'), 'utf8');
+  const sh = readFileSync(join(ROT, 'tools', 'ops-marknadsuppladdning.sh'), 'utf8');
+  const andelser = [...mjs.matchAll(/^const (?:VIDEO|BILD) = \[([^\]]+)\]/gm)]
+    .flatMap((m) => [...m[1].matchAll(/'(\.[a-z0-9]+)'/g)].map((x) => x[1]));
+  assert.ok(andelser.length >= 5, `hittade bara ${andelser.length} ändelser i ops-till-meta.mjs — mönstret har glidit`);
+  const glob = sh.match(/^for f in (.+); do$/m)?.[1] ?? '';
+  for (const a of andelser) {
+    assert.ok(glob.includes(`*${a}`), `globben i ops-marknadsuppladdning.sh saknar ${a} — de filerna laddas aldrig upp, tyst`);
+    assert.equal(medietyp(`x${a}`) === null, false);
+  }
+});

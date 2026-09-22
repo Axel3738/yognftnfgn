@@ -1,4 +1,4 @@
-# Mejlmallarna — byggda 2026-09-20 22:34 UTC
+# Mejlmallarna — byggda 2026-09-22 21:36 UTC
 
 Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratisprodukt
 
@@ -15,13 +15,13 @@ Rabattkod: **TACKIGEN** · minst 299 kr · 1 gratis ur /collections/din-gratispr
 - Nödregnjacka – Lätt & Packbar Regnskydd — 199 kr (nodregnjacka-latt-packbar-regnskydd)
 
 ## Komplement (en till + tre som passar ihop)
-- 204 produkter med egen lista (103 per handle, 102 per kollektion), 3 utan — de får storsäljarna
+- 204 produkter med egen lista (103 per handle, 102 per kollektion), 12 utan — de får storsäljarna
 - Katalog i mallen: 105 produkter
 - Fallback: IBC-tanköverdrag 1000 L (ibc-tankoverdrag-1000-l-stoppar-alger-uv), Övervakningskamera Trådlös (overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning), Båtmotorskydd 420D (batmotorskydd-420d-heltackande-for-utombordare)
 
 ## Mallar
 - `orderbekraftelse.liquid` → Orderbekräftelse / Order confirmation · ämne: {% if customer.first_name != blank %}{{ customer.first_name }}, {% endif %}{{ name }} är mottagen – vi packar · 82 kB
-- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 75 kB
+- `fraktbekraftelse.liquid` → Leveransbekräftelse / Shipping confirmation · ämne: Ditt paket är på väg · 76 kB
 - `fraktuppdatering.liquid` → Leveransuppdatering / Shipping update · ämne: Ny info om ditt paket · 6 kB
 - `ute_for_leverans.liquid` → Ute för leverans / Out for delivery · ämne: Paketet kommer idag · 6 kB
 - `levererad.liquid` → Levererad / Delivered · ämne: Paketet är levererat · 71 kB

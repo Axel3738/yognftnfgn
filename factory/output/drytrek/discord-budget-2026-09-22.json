@@ -1,0 +1,27 @@
+{
+  "brand": "DryTrek",
+  "butik": "drytrek",
+  "datum": "2026-09-22",
+  "lage": "budget",
+  "siffror": {
+    "spend_7d": 487,
+    "kop_7d": 1,
+    "roas_7d": 0.8
+  },
+  "gjort": [
+    "SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep 20:52, timestamp unchanged). Nothing activated, nothing written, no log rows. The 7-day window is down to 2 days and 487 SEK; tomorrow it is empty.",
+    "NO: DRYTREK_NO stays PAUSED (owner, 18 Sep 11:28). Not touched.",
+    "Brief day in the cadence (9 days since the last brief), but the brief round is paused, so 0 briefs. Hub unchanged for the sixth night: 19 batch #3 briefs in Draft, 10 delivered videos in Creative strat review, 31 Approved."
+  ],
+  "briefer": [],
+  "varningar": [
+    "briefs paused: both campaigns paused by the owner, 0 judgeable ads of 42, 19 batch #3 briefs waiting in Draft.",
+    "The brief review routine that started Monday reads the Bäverbutiken hubs only, so this hub gets no review and no feedback file. Nothing to fix while the product is off, but worth knowing before the round restarts."
+  ],
+  "action_axel": [
+    "Open since 15 Sep — DRYTREK_SE: (A) keep paused, (B) restart at 500 SEK as is, (C) restart as a 6-ad test ad set with equal budget. Reply A, B or C.",
+    "If DryTrek should stay off, reply 'pause routine' and the night watch is switched off in Routines until you turn a campaign back on. From tomorrow it reports an account with no numbers at all."
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-23 (budget only — briefs paused)"
+}

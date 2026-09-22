@@ -1,0 +1,134 @@
+{
+  "kommentar": "Folkregistret: vem som jobbar med vad, och hur systemet känner igen dem. Det här är INTE inloggningarna (de ligger i stonebite/data/anvandare.json och pekar hit med personId). Lägg till folk på sajten under Konton — då skrivs de in här också.",
+  "falt": {
+    "id": "kort id, används som personId på inloggningen",
+    "namn": "hela namnet",
+    "fornamn": "det kunderna skriver i en recension — matchningen letar efter det som eget ord",
+    "alias": "smeknamn och stavningar kunder använder",
+    "roll": "agare | chef | produkttest | redigerare | support_chef | va",
+    "brands": "vilka butiker personen svarar för (veckobonusarna räknas per butik)",
+    "notionNamn": "exakt namn i Notion (Ansvarig-fältet) — annars hittas inte produkttesten",
+    "commissionId": "id i commission/leaderboard.json om det skiljer sig",
+    "extraRoller": "fler bonusprogram personen får tjäna i (en redigerare som också gör produkttest). roll styr vad man SER, extraRoller vad man kan TJÄNA på."
+  },
+  "personer": [
+    {
+      "id": "axel",
+      "namn": "Axel Odhner",
+      "fornamn": "Axel",
+      "roll": "agare",
+      "brands": [],
+      "notionNamn": "Axel Odhner",
+      "alias": [],
+      "extraRoller": []
+    },
+    {
+      "id": "anna",
+      "namn": "Anna Odhner",
+      "fornamn": "Anna",
+      "roll": "chef",
+      "brands": [],
+      "notionNamn": "",
+      "alias": [],
+      "extraRoller": []
+    },
+    {
+      "id": "josh",
+      "namn": "Josh Naelga",
+      "fornamn": "Josh",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "Josh Naelga",
+      "alias": [],
+      "extraRoller": [
+        "produkttest"
+      ]
+    },
+    {
+      "id": "annabelle",
+      "namn": "Annabelle Gonzales",
+      "fornamn": "Annabelle",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "Annabelle Gonzales",
+      "alias": [
+        "Anna G"
+      ],
+      "extraRoller": [
+        "produkttest"
+      ]
+    },
+    {
+      "id": "mechile",
+      "namn": "Mechile Delos Santos",
+      "fornamn": "Mechile",
+      "roll": "support_chef",
+      "brands": [
+        "*"
+      ],
+      "notionNamn": "",
+      "alias": [],
+      "extraRoller": [],
+      "kommentar": "Axels besked 2026-09-21: 'Hon är ansvarig för allt just nu' — både VA och Head of customer support, alla butiker (*). Rollen support_chef är med i programmet Kundtjänst, så hon tjänar VA-uppdragen direkt; teamandelen räknas utan hennes egna rader. E-post och exakt Notion-namn saknas — inloggningen skapar Axel på sidan Konton och kopplar till personId mechile."
+    },
+    {
+      "id": "gilz",
+      "namn": "Gilz Bruce Biazon",
+      "fornamn": "Gilz",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "Gilz Bruce Biazon",
+      "alias": [],
+      "extraRoller": []
+    },
+    {
+      "id": "carl",
+      "namn": "Carl Vicente",
+      "fornamn": "Carl",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "Carl Vicente",
+      "alias": [],
+      "extraRoller": []
+    },
+    {
+      "id": "jasper",
+      "namn": "Jasper Tomboc",
+      "fornamn": "Jasper",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "Jasper Tomboc",
+      "alias": [],
+      "extraRoller": []
+    },
+    {
+      "id": "jerzee",
+      "namn": "Jerzee",
+      "fornamn": "Jerzee",
+      "roll": "redigerare",
+      "brands": [],
+      "notionNamn": "",
+      "commissionId": "kommentar:jerzee",
+      "alias": [
+        "Jerzee"
+      ],
+      "extraRoller": []
+    }
+  ],
+  "att_fylla_i": {
+    "kommentar": "Kundtjänsten är Mechile (2026-09-21, se hennes rad). Fler VA:er läggs till på sajten (Konton → Lägg till någon) med rätt roll, så börjar bonusen räknas. Utan fornamn kan ingen recension kopplas till dem, och utan brands får de inga veckobonusar — `*` betyder alla butiker.",
+    "mall": {
+      "id": "fornamn",
+      "namn": "Hela Namnet",
+      "fornamn": "Fornamn",
+      "roll": "va",
+      "brands": [
+        "baverbutiken"
+      ],
+      "notionNamn": "Hela Namnet",
+      "alias": [],
+      "extraRoller": []
+    },
+    "produkttest_kommentar": "Mätt 2026-09-21: Josh Naelga (13 rader) och Annabelle Gonzales (12 rader) står som Ansvarig på produkttester i Notion. Axels beslut samma dag: ja, de tjänar på produkttest också — 15 dollar per färdig produkt (extraRoller produkttest, inskrivet) + sin vanliga redigerarandel 0,4 % på de egna annonserna (bara Sverige, redan i programmet redigerare)."
+  }
+}

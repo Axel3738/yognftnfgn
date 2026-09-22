@@ -14,26 +14,69 @@
 // Nytt land = en rad här + `annonsmarknader` på butikens registerpost
 // (`node factory/register.mjs annonsmarknader <nyckel> NO,US`). Ingen if-sats.
 
+// ⛔ MÄTT 2026-09-20 kl ~19: OPS-KONTOT ÄR **UNSETTLED** (obetald faktura).
+// `act_915422744950975?fields=account_status` svarar **3** och varje skrivning
+// nekas. Felet SER UT som ett behörighetsfel och är det inte — Meta svarar
+// "Permissions error / Behörighetsfel" (code 200, subcode 1487194) och den
+// riktiga orsaken står bara i `error_data`:
+//     {"ad_account_load":"success","ad_account_status":3,
+//      "has_write_ad_account_permissions":"false"}
+// Utestående saldo vid mätningen: 1 456 895 (öre) = 14 568,95 SEK.
+//
+// ⚠️ LÄSNINGAR FUNGERAR ÄNDÅ, och det är fällan. En uppladdning kommer igenom
+// sju steg — hittar kampanjen, hittar adsetet, laddar till och med upp
+// videofilen — och faller först på `adcreatives`. Läser man bara felmeddelandet
+// letar man efter fel sida, fel scope och fel token i timmar. Läs `error_data`.
+//
+// Vad som INTE går medan kontot är unsettled: skapa annonser, ändra budget,
+// pausa eller aktivera. Alltså nattvakten, leveransrundan och varje
+// /ops-oversatt mot det här kontot. De tre andra kontona var ACTIVE samma
+// mätning (Bäverbutiken 1867947880635861, Magiborsten UK 1107817401910319,
+// Magiborsten NO 1050941584152547).
+//
+// Kontroll innan man felsöker något annat:
+//   node -e "fetch('https://graph.facebook.com/v21.0/act_915422744950975?fields=account_status,balance&access_token='+process.env.META_ACCESS_TOKEN).then(r=>r.json()).then(j=>console.log(j))"
+//   1 = ACTIVE, 2 = DISABLED, 3 = UNSETTLED, 8 = PENDING_SETTLEMENT, 9 = IN_GRACE_PERIOD
 const OPS_KONTO = '915422744950975';
 
+// `rost` är ElevenLabs-rösten för omdubbningen (Axels beslut 2026-09-16 kväll:
+// HeyGens klonröst dömdes ut, `pipeline/omdubb/elevenlabs-omdubb.mjs` gäller).
+// `heygen_sprak` står kvar för HeyGen-vägen, som finns kvar som historik.
+// ⚠️ Dubba aldrig ett språk med ett annat språks röst. US har ingen röst vald
+// än — engelskan har inte dubbats om, bara textats.
 export const OPS_MARKNADER = Object.freeze({
   SE: Object.freeze({
     kod: 'SE', namn: 'Sverige', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
     geo: ['SE'], locale: null, country: null, valuta: 'SEK', valuta_i_annons: 'kr',
-    heygen_sprak: null, sprak: 'svenska', status_ko: 'To be Reviewed', oversatts: false,
+    heygen_sprak: null, sprak: 'svenska', rost: 'Martin - Warm, Confident and Relatable', status_ko: 'To be Reviewed', oversatts: false,
     emoji: '🇸🇪', rubrik_en: 'Sweden delivery',
   }),
   NO: Object.freeze({
     kod: 'NO', namn: 'Norge', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
     geo: ['NO'], locale: 'nb', country: 'NO', valuta: 'NOK', valuta_i_annons: 'kr',
-    heygen_sprak: 'Norwegian Bokmål (Norway)', sprak: 'norsk bokmål', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    heygen_sprak: 'Norwegian Bokmål (Norway)', sprak: 'norsk bokmål', rost: 'Martin - Clear and Comforting', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇳🇴', rubrik_en: 'Norway translation',
   }),
   US: Object.freeze({
     kod: 'US', namn: 'USA', act: '1107817401910319', kontonamn: 'Magiborsten UK', kontovaluta: 'SEK',
     geo: ['US'], locale: 'en', country: 'US', valuta: 'USD', valuta_i_annons: '$',
-    heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    heygen_sprak: 'English (United States)', sprak: 'amerikansk engelska', rost: null, status_ko: 'SE-ACTIVE to be translated', oversatts: true,
     emoji: '🇺🇸', rubrik_en: 'US translation',
+  }),
+  // Danmark 2026-09-20 (/ny-marknad carashell DK). Kontot är det delade
+  // OPS-kontot — samma som SE och NO. ⚠️ Kontot HETER "MagiBorsten DK" men
+  // är inte Danmarks konto: namnet är historiskt, det bär alla OPS-butikers
+  // svenska och norska kampanjer, och Bäverbutikens EGNA danska kampanjer
+  // ligger också där (med Bäverbutikens sida och pixel). Därför måste varje
+  // uppslag filtrera på butikens brandprefix, aldrig på "DK" i namnet.
+  // heygen_sprak avläst ur `node pipeline/localize.mjs langs` samma dag —
+  // listan har både "Danish" och "Danish (Denmark)"; den senare följer
+  // mönstret från "Norwegian Bokmål (Norway)".
+  DK: Object.freeze({
+    kod: 'DK', namn: 'Danmark', act: OPS_KONTO, kontonamn: 'MagiBorsten DK', kontovaluta: 'SEK',
+    geo: ['DK'], locale: 'da', country: 'DK', valuta: 'DKK', valuta_i_annons: 'kr.',
+    heygen_sprak: 'Danish (Denmark)', sprak: 'danska', rost: 'Søren - Clear, Confident and Versatile', status_ko: 'SE-ACTIVE to be translated', oversatts: true,
+    emoji: '🇩🇰', rubrik_en: 'Denmark translation',
   }),
 });
 

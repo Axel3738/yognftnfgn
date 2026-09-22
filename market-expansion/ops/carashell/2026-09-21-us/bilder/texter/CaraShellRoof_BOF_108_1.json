@@ -1,0 +1,74 @@
+[
+ {
+  "box": [
+   40,
+   58,
+   1040,
+   288
+  ],
+  "rader": 2,
+  "storlek": 77,
+  "fet": true,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.57,
+  "utvidga": 8,
+  "troskel": 25,
+  "text": "Off-season, it won't take over the garage."
+ },
+ {
+  "box": [
+   60,
+   316,
+   1020,
+   382
+  ],
+  "rader": 1,
+  "storlek": 32,
+  "farg": [
+   21,
+   20,
+   19
+  ],
+  "text": "Folded flat, beside the paint cans."
+ },
+ {
+  "box": [
+   60,
+   1026,
+   1020,
+   1140
+  ],
+  "rader": 2,
+  "storlek": 32,
+  "farg": [
+   19,
+   18,
+   16
+  ],
+  "radavstand": 1.75,
+  "utvidga": 8,
+  "troskel": 25,
+  "text": "No bulky winter storage – just shelf space by the hose."
+ },
+ {
+  "box": [
+   262,
+   1222,
+   818,
+   1292
+  ],
+  "rader": 1,
+  "storlek": 41,
+  "fet": true,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "text": "$199. Folds flat."
+ }
+]

@@ -138,6 +138,14 @@ export const BUTIKSRUTINER = Object.freeze({
   // timme senare så NO:s körning hunnit klart. Byggs bara för butiker vars
   // registerpost bär US i `annonsmarknader` (kraver).
   'ops-oversatt-us': { bas: '16:40', steg: 5, vad: 'Översättning US OPS (SE-ACTIVE to be translated → live i US-kampanjen i Magiborsten UK)', kommando: (butik) => `/ops-oversatt ${butik} --marknad US`, kraver: 'US' },
+  // Danmark (Axels order 2026-09-20, marknaden byggd samma dag): samma kö igen,
+  // en timme efter USA. Kontot är det DELADE OPS-kontot 915422744950975 — samma
+  // som SE och NO, inte Magiborsten UK. ⚠️ Kontot heter "MagiBorsten DK" av
+  // historiska skäl och bär även Bäverbutikens egna danska kampanjer, så varje
+  // uppslag måste filtrera på butikens brandprefix. Byggs bara för butiker vars
+  // registerpost bär DK i `annonsmarknader` (kraver) — alltså först när
+  // DK-kampanjen finns.
+  'ops-oversatt-dk': { bas: '17:40', steg: 5, vad: 'Översättning DK OPS (SE-ACTIVE to be translated → live i DK-kampanjen i OPS-kontot)', kommando: (butik) => `/ops-oversatt ${butik} --marknad DK`, kraver: 'DK' },
   // Speglingen (Axels beslut 2026-09-18): produkten briefas i Bäverbutikens
   // hub; varje NO-klar rad där laddas upp live här (SE + NO) och kopieras till
   // butikens hub så US-rutinen 16:40 tar den till engelska. Efter Bäverbutikens

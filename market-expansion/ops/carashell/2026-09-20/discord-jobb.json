@@ -1,0 +1,23 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-20",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "The video that was held yesterday is now live: CaraShellRoof_NO_PD_5_H1 in CARASHELL_NO_Takovertrekket, ad set PD, ad 120249184161160172, read back ACTIVE.",
+    "Three things blocked it yesterday and all three were rebuilt rather than translated. The Norwegian voiceover was rewritten before rendering, so it never says the store name. The 27 burned-in Swedish captions were replaced in place with Norwegian ones. The end card, which was a screenshot of the Swedish product page, is a new Norwegian card: 1 382,50 kr struck through, 1 106 kr, 16 anmeldelser, free shipping Sweden and Norway, no domain anywhere.",
+    "rostkoll.py passed: no length drift, no cut-off ending, no lost speech.",
+    "HeyGen credits: 2 558 before -> 2 538 after. One render, no re-render.",
+    "The Notion row moved to Approved - both NO and US now carry the ad.",
+    "The other 16 rows in the queue need nothing here: yesterday's mirroring round already put their Norwegian ads live. They are waiting for the US run, not for this one."
+  ],
+  "varningar": [
+    "A leak was found and fixed while checking the finished file. The end-card layer started at 36.4 s, but the white circle transition starts at 36.0 s and the Swedish product page was readable inside the circle for a few tenths of a second - store domain, 1 469,00 kr and 1 129,00 kr. Measured in the rendered file: white pixels 0.16 % at 36.0 s, 33.7 % at 36.3 s, 78 % at 36.4 s. The layer now starts at 36.0 s and the video was re-burned.",
+    "The eight US videos built on 2026-09-18 use the same 36.4 s timing and therefore carry the same leak. They are live and stay live - a live ad is never switched off after the fact. The recipe is fixed, so the next round that copies it starts correct.",
+    "The ad copy came back with two lines that failed the three-question test and were rewritten. The headline was an instruction any cover seller could run; it is now 'Bare taket - ingen hjelp trengs', which a full-vehicle cover cannot sign. The first paragraph now names the roof hatches and the seams instead of describing the problem in general terms."
+  ],
+  "action_axel": [],
+  "nasta_korning": "2026-09-21"
+}

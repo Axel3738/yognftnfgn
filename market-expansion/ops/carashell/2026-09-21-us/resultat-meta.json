@@ -1,0 +1,202 @@
+{
+  "CaraShellRoof_US_BOF_107_1": {
+    "page_id": "3e2270ab-908c-8193-9984-e1e8246dcf4d",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251451415500435",
+        "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251488345710435",
+        "namn": "CARASHELL_US_BOF",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251535696070435",
+        "namn": "CaraShellRoof_US_BOF_107_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "932415856517492",
+      "media": {
+        "typ": "bild",
+        "hash": "9dc43f3c3c96e31cf2b2b5b61afa7ee9"
+      },
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "dsa": null,
+      "torr": false
+    },
+    "notion_klart": true
+  },
+  "CaraShellRoof_US_BOF_108_1": {
+    "page_id": "3e2270ab-908c-8133-a2e8-c8e0f36b843e",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251451415500435",
+        "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251488345710435",
+        "namn": "CARASHELL_US_BOF",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251535705330435",
+        "namn": "CaraShellRoof_US_BOF_108_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1499028125593254",
+      "media": {
+        "typ": "bild",
+        "hash": "ce27cc1a60a384810e029f175d53aeb9"
+      },
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "dsa": null,
+      "torr": false
+    },
+    "notion_klart": true
+  },
+  "CaraShellRoof_US_PD_110_1": {
+    "page_id": "3e2270ab-908c-81f9-aa97-c4e8d3b0cf32",
+    "koncept": "PD",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251451415500435",
+        "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251451415190435",
+        "namn": "CARASHELL_US_PD",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251535934370435",
+        "namn": "CaraShellRoof_US_PD_110_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1807056610324203",
+      "media": {
+        "typ": "bild",
+        "hash": "487cdbc31f32d4307e4c41dd3a4cd511"
+      },
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "dsa": null,
+      "torr": false
+    },
+    "notion_klart": true
+  },
+  "CaraShellRoof_US_CS_113_1": {
+    "page_id": "3e2270ab-908c-81e2-85da-d2be9dfb8c4e",
+    "koncept": "CS",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251451415500435",
+        "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251451415170435",
+        "namn": "CARASHELL_US_CS",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251535969460435",
+        "namn": "CaraShellRoof_US_CS_113_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "1746386346637844",
+      "media": {
+        "typ": "bild",
+        "hash": "a8e88ac3e7711da1736d1359da2f0d58"
+      },
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "dsa": null,
+      "torr": false
+    },
+    "notion_klart": true
+  },
+  "CaraShellRoof_US_BOF_109_1": {
+    "page_id": "3e2270ab-908c-8151-963b-cfab85559c3c",
+    "koncept": "BOF",
+    "typ": "bild",
+    "flytta_till_approved": true,
+    "exit": 0,
+    "skarpt": true,
+    "resultat": {
+      "ok": true,
+      "butik": "CaraShell",
+      "nyckel": "carashell/takskyddet",
+      "konto": "1107817401910319",
+      "marknad": "US",
+      "kampanj": {
+        "id": "120251451415500435",
+        "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+        "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m"
+      },
+      "adset": {
+        "id": "120251488345710435",
+        "namn": "CARASHELL_US_BOF",
+        "skapad": false
+      },
+      "annons": {
+        "id": "120251536199230435",
+        "namn": "CaraShellRoof_US_BOF_109_1",
+        "status": "ACTIVE",
+        "effective_status": "IN_PROCESS"
+      },
+      "creative_id": "3673561219474721",
+      "media": {
+        "typ": "bild",
+        "hash": "79f10f2a68055b368d96d4cf23a69205"
+      },
+      "lank": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+      "dsa": null,
+      "torr": false
+    },
+    "notion_klart": true
+  }
+}

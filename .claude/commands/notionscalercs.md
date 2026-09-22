@@ -222,7 +222,7 @@ spärrarna, läser tillbaka gammalt → nytt och loggar varje rad i
 är facit — ändra aldrig en siffra i huvudet. Kortversion, så rapporten kan
 förklara dem:
 - **Raket** ROAS ≥ 5 tre OCH sju dagar → budgeten dubblas (Axel 2026-09-10),
-  varje natt om det håller, tak 4 000 kr/dag.
+  varje natt om det håller, tak 10 000 kr/dag (Axel 2026-09-21, var 4 000).
 - **Snabb** vinst ≥ 25 % och ROAS ≥ 3 → +20 % varje natt.
 - **Skala** vinst ≥ 25 % båda fönstren → +20 %, minst 3 dygn mellan ändringar.
 - **Sänk** vinst < 16 % → −30 %, golv 500 kr, minst 3 dygn mellan ändringar.
@@ -260,6 +260,14 @@ ronden blir nya koncept ur ärvd DNA, och rapporten säger "ingen feedback-loop 
 ingen bedömbar annons än".
 
 ### Steg 4 — Feedback-loop per annons och gemensamma variabler (ANALYSMETOD 6b)
+⚠️ **Lärdomsmotorn (`agent/lardom.mjs`, `docs/os/CS-KLART.md`) finns bara
+för Bäverbutikens rond-auto** — OPS-butikernas budgetlogg
+(`factory/budgetlogg.jsonl`) har inga ETIKETT-/LARDOM-rader. Skriv därför
+utfallet per annons för hand i samma format som lärdomen (batch, utfall,
+spend annons/kampanj, hookar med hook/hold rate, ROAS/CPA,
+konverteringsgrad, planerat mot utfört, hypotes märkt gissning, nästa
+annonser) i `products/<butik>/lardomar.md`, och ge varje brief `lardom=`
+som pekar på blocket (`L-<annons_id>`). Motorn byggs för OPS när Axel ber.
 För VARJE annons i förra batchen (`products/<butik>/batch-log.md`):
 - Hämta briefen ur hubben (`node tools/notion-klara.mjs --brief <page-id>`,
   eller ur `products/<butik>/batch-NN/…/brief.md`) och läs `VARIABELTAGGAR:`.
@@ -339,8 +347,19 @@ väg som användes (Agent fanns / API).
 ### Steg 7 — Briefer och Notion
 En mapp per annons: `products/<butik>/batch-NN/<video|image>-ads-briefs/<namn>/brief.md`
 på engelska enligt `.claude/commands/forsta-batch.md` (VARIABELTAGGAR-rad
-överst, hypotes, kept/changed, script-tabell, shot list, COPY CARD, hard
-rules med rätt pris ur `factory/produkter/<id>.yaml`, KPI).
+överst — de åtta variablerna **plus komponenttaggarna** `typ · koncept ·
+parent · iteration · kalla · avatar · awareness · begar · mekanism · tro ·
+urgency · hook-mekanik · confidence · lardom` med fasta listor (ANALYSMETOD
+6b) och raden `Memo:` — hypotes, kept/changed, script-tabell, **regitabellen för video**
+(`docs/os/BRIEF-REGI.md`: en rad per manusrad, Source i ett av fem format,
+Assets / Reference ads / Editor latitude), COPY CARD, hard rules med rätt
+pris ur `factory/produkter/<id>.yaml`, KPI). Regin skrivs av huvudsessionen.
+**Spärren INNAN uppladdningen:**
+```
+node tools/briefgranskning.mjs --manifest products/<butik>/batch-NN/manifest.json --prefix <Prefix> --pris <pris> --jamforpris <jämförpris>
+```
+Exit 1 ⇒ rätta briefen och kör om; ladda aldrig upp en stoppad brief. Visa
+utskriften i rapporten (regi x/y per video).
 **Hard rule i varje brief (Axels beslut 2026-09-18): annonsen nämner aldrig
 butikens namn** — inte i copyn, inte i bild, inte i voiceover, inte som
 domän. Annonser speglas mellan butiker (`/ops-spegla`), och en creative
@@ -389,6 +408,7 @@ varningar, raderna ligger kvar i Draft och `/ops-bild <nyckel>` tar dem senare.
 - [ ] *(briefdag)* Feedback-loop: varje annons i förra batchen har sitt utfall i batch-log.md; ≥ 3 mönster med bevisad/hypotes; dna.md uppdaterad — eller "kallstart" utskrivet
 - [ ] *(briefdag)* Batch enligt registrets `Briefrond:`-rad (21 med redigerare / 7 utan / Axels `briefantal`-överstyrning / **INGA om ronden är pausad** — då står skälet under varningar och budgetronden har ändå gått), varianter med förälder, koncept med källa eller märkta gissning, backlog tömd
 - [ ] *(briefdag)* Copy av subagent, varannan fable/sonnet, taggen i VARIABELTAGGAR, tre-frågorstestet redovisat, vägen (Agent/API) rapporterad
+- [ ] *(briefdag)* Komponenttaggar + `Memo:` i varje brief, regitabell i varje videobrief; `briefgranskning.mjs --manifest` grön före uppladdning (utskriften i rapporten)
 - [ ] *(briefdag)* Rader skapade i hubben via `tools/notion-brief.mjs` — resultat med url visat
 - [ ] Discord-rapport postad på engelska i butikens server; ping bara under ACTION NEEDED
 - [ ] `kord` (+ `brief-kord`, `log`) stämplade; commit + push till `main`

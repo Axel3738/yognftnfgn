@@ -1,0 +1,597 @@
+[
+ {
+  "fall": "levererat-lang-kedja",
+  "n": "YT2625400704778854",
+  "c": 190008,
+  "ev": [
+   {
+    "t": "2026-09-17T23:28:21+02:00",
+    "d": "The package has been delivered to the mailbox.",
+    "l": "Umeå",
+    "s": "Delivered_Other",
+    "st": "Delivered"
+   },
+   {
+    "t": "2026-09-17T14:41:52+02:00",
+    "d": "The package has arrived at terminal (T2).",
+    "l": "SVHL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T14:41:51+02:00",
+    "d": "The package is activated for delivery.",
+    "l": "Umeå",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T14:41:51+02:00",
+    "d": "The package has arrived at terminal (T2).",
+    "l": "Umeå",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T09:38:54+02:00",
+    "d": "The package has arrived at terminal (T2).",
+    "l": "Umeå",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T15:52:23+02:00",
+    "d": "Delivered to local carrier",
+    "l": "MALMO, SCHNER, SE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T15:51:23+02:00",
+    "d": "Departed from facility",
+    "l": "MALMO, SCHNER, SE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T14:51:04+02:00",
+    "d": "Early Bird has received the package.",
+    "l": "Early Bird Malmö",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T14:51:04+02:00",
+    "d": "The package has arrived at terminal (T1).",
+    "l": "Early Bird Malmö",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T09:42:39+02:00",
+    "d": "Arrived at sort facility",
+    "l": "MALMO, SCHNER, SE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-14T11:12:49+02:00",
+    "d": "Departed from facility",
+    "l": "ROZENBURG, ROZENBURG, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T23:39:16+02:00",
+    "d": "Shipment is ready for outbound",
+    "l": "ROZENBURG, ROZENBURG, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T22:54:12+02:00",
+    "d": "Clearance processing completed - Import",
+    "l": "HOLLAND, NORTH HOLLAND, NL",
+    "s": "InTransit_CustomsReleased",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T22:42:57+02:00",
+    "d": "Arrived at sort facility",
+    "l": "ROZENBURG, ROZENBURG, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T22:18:00+02:00",
+    "d": "Arrived at the warehouse of Customs Broker",
+    "l": "HOLLAND, NORTH HOLLAND, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T21:55:17+02:00",
+    "d": "Start Customs Clearence",
+    "l": "HOLLAND, NORTH HOLLAND, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T21:18:00+02:00",
+    "d": "Collected at Cargo Terminal",
+    "l": "HOLLAND, NORTH HOLLAND, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T19:39:00+02:00",
+    "d": "NOA received",
+    "l": "HOLLAND, NORTH HOLLAND, NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T14:59:00+02:00",
+    "d": "International flight has arrived",
+    "l": "NL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T10:33:00+08:00",
+    "d": "International flight has departed",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T17:20:01+08:00",
+    "d": "Clearence processing completed - Export",
+    "l": "CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T13:46:00+08:00",
+    "d": "Arrived at the origin international airport",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T10:57:38+08:00",
+    "d": "The country of origin commences customs declaration.",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T08:46:01+08:00",
+    "d": "Shipment is in transit to next facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T05:59:16+08:00",
+    "d": "Departed from sort facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T01:44:10+08:00",
+    "d": "Arrived at origin facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-11T17:44:13+02:00",
+    "d": "The booking of the delivery is completed.",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-11T15:19:49+08:00",
+    "d": "Shipment picked up",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-11T11:33:56+08:00",
+    "d": "Shipment information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "postnord-forhandsavi",
+  "n": "4PX3003158126858CN",
+  "c": 190094,
+  "ev": [
+   {
+    "t": "2026-09-19T18:55:58+02:00",
+    "d": "Parcel outbound from transit center",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T22:48:13+02:00",
+    "d": "Arrive in transit center",
+    "l": "BE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T19:32:00+02:00",
+    "d": "Released from customs: customs cleared.",
+    "l": null,
+    "s": "InTransit_CustomsProcessing",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T17:32:00+02:00",
+    "d": "Arrival to the destination airport",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T07:20:00+08:00",
+    "d": "Departure from the original airport",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T21:25:21+08:00",
+    "d": "Hand over to airline.",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T06:15:40+08:00",
+    "d": "Depart from facility to service provider.",
+    "l": "Nancheng",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-16T01:26:00+08:00",
+    "d": "Shipment arrived at facility and measured.",
+    "l": "Hongqiao",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-16T01:25:59+08:00",
+    "d": "Shipment picked up.",
+    "l": "Hongqiao",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T19:26:01+02:00",
+    "d": "Vi har fått en beställning på en leverans och väntar på paketet",
+    "l": "SWEDEN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-14T10:56:36+08:00",
+    "d": "Parcel information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "bara-bestalld",
+  "n": "YT2626100708674690",
+  "c": 190008,
+  "ev": [
+   {
+    "t": "2026-09-18T18:14:55+08:00",
+    "d": "Shipment information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "i-transit-utland",
+  "n": "YT2626100708675887",
+  "c": 190008,
+  "ev": [
+   {
+    "t": "2026-09-19T11:13:14+08:00",
+    "d": "Shipment picked up",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T18:15:14+08:00",
+    "d": "Shipment information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "hos-ombud",
+  "n": "4PX3003132969051CN",
+  "c": 190094,
+  "ev": [
+   {
+    "t": "2026-09-18T14:34:00+00:00",
+    "d": "THE SHIPMENT ITEM HAS BEEN DELIVERED.",
+    "l": "ICA NÄRA GÄLLÖ GÄLLÖ",
+    "s": "Delivered_Other",
+    "st": "Delivered"
+   },
+   {
+    "t": "2026-09-18T08:55:00+00:00",
+    "d": "THE SHIPMENT ITEM HAS BEEN DELIVERED TO A SERVICE POINT.",
+    "l": "ICA NÄRA GÄLLÖ GÄLLÖ",
+    "s": "AvailableForPickup_Other",
+    "st": "AvailableForPickup"
+   },
+   {
+    "t": "2026-09-18T05:11:49+00:00",
+    "d": "THE DELIVERY OF THE SHIPMENT ITEM IS IN PROGRESS.",
+    "l": "ÅNGE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T04:26:05+00:00",
+    "d": "THE SHIPMENT ITEM HAS ARRIVED AT THE DISTRIBUTION TERMINAL.",
+    "l": "ÅNGE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T19:38:01+00:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "SUNDSVALL PAKETTERMINAL SUNDSVALL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T19:38:00+00:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "SUNDSVALL PAKETTERMINAL SUNDSVALL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T13:27:00+00:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "SUNDSVALL PAKETTERMINAL SUNDSVALL",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T05:40:01+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "ÖREBRO PAKETTERMINAL ÖREBRO",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T05:40:00+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "ÖREBRO PAKETTERMINAL ÖREBRO",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-17T05:03:00+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "ÖREBRO PAKETTERMINAL ÖREBRO",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-16T14:39:01+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "MALMÖ PAKETTERMINAL MALMÖ",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-16T14:39:00+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "MALMÖ PAKETTERMINAL MALMÖ",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-16T09:59:00+02:00",
+    "d": "THE SHIPMENT ITEM IS UNDER TRANSPORTATION.",
+    "l": "MALMÖ PAKETTERMINAL MALMÖ",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-15T16:13:00+02:00",
+    "d": "THE SHIPMENT ITEM HAS ARRIVED AT THE COUNTRY OF DESTINATION.",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-14T12:29:19+02:00",
+    "d": "Parcel outbound from transit center",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T21:21:48+02:00",
+    "d": "Arrive in transit center",
+    "l": "BE",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T14:56:00+02:00",
+    "d": "Released from customs: customs cleared.",
+    "l": null,
+    "s": "InTransit_CustomsProcessing",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T12:56:00+02:00",
+    "d": "Arrival to the destination airport",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-13T02:22:00+08:00",
+    "d": "Departure from the original airport",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-12T19:33:04+08:00",
+    "d": "Hand over to airline.",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-10T15:01:02+02:00",
+    "d": "SHIPPING INFORMATION RECEIVED",
+    "l": null,
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-10T00:52:43+08:00",
+    "d": "Depart from facility to service provider.",
+    "l": "Nancheng",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-07T22:39:04+08:00",
+    "d": "Shipment arrived at facility and measured.",
+    "l": "Hongqiao",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-07T22:39:02+08:00",
+    "d": "Shipment picked up.",
+    "l": "Hongqiao",
+    "s": "InTransit_PickedUp",
+    "st": "PickedUp"
+   },
+   {
+    "t": "2026-09-06T11:02:34+08:00",
+    "d": "Parcel information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "avvikelse",
+  "n": "YT2625400704784985",
+  "c": 190008,
+  "ev": [
+   {
+    "t": "2026-09-19T09:42:33+08:00",
+    "d": "Departed from sort facility",
+    "l": "Mainland China, CN",
+    "s": "Exception_Returned",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T10:04:44+08:00",
+    "d": "Shipment has been returned to sender.",
+    "l": "Mainland China, CN",
+    "s": "Exception_Returned",
+    "st": "Returned"
+   },
+   {
+    "t": "2026-09-12T01:49:01+08:00",
+    "d": "Arrived at origin facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-11T15:19:49+08:00",
+    "d": "Shipment picked up",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-11T11:34:39+08:00",
+    "d": "Shipment information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ },
+ {
+  "fall": "dubbelrapport",
+  "n": "YT2626100704733235",
+  "c": 190008,
+  "ev": [
+   {
+    "t": "2026-09-19T10:49:29+08:00",
+    "d": "Departed from sort facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-19T09:05:32+08:00",
+    "d": "Departed from sort facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-19T01:26:42+08:00",
+    "d": "Arrived at origin facility",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T18:57:26+08:00",
+    "d": "Shipment picked up",
+    "l": "Mainland China, CN",
+    "s": "InTransit_Other",
+    "st": null
+   },
+   {
+    "t": "2026-09-18T11:10:52+08:00",
+    "d": "Shipment information received",
+    "l": null,
+    "s": "InfoReceived",
+    "st": "InfoReceived"
+   }
+  ]
+ }
+]

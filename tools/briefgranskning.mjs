@@ -58,6 +58,7 @@ import { brandtraff, textUrBlock } from './ops-spegla.mjs';
 import { hittaFält, lasManifest, tillBlock, delaBlock, landningUrBrief } from './notion-brief.mjs';
 import { promptUrBrief } from '../factory/ops-bild.mjs';
 import { serUtSomSvenska } from './lib/engelska.mjs';
+import { aiInnehallUr } from './ai-rad.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const NOTION_API = 'https://api.notion.com/v1';
@@ -77,7 +78,37 @@ export const DISCORD_KANAL = 'problem-and-revisions-ads';
 
 /** Taggarna varje brief ska bära (VARIABELTAGGAR-raden, ANALYSMETOD 6b + copy-A/B:t). */
 export const KRAVDA_TAGGAR = Object.freeze(['vinkel', 'hook-typ', 'format', 'proof', 'offer-i-creativen', 'visuell stil', 'textmängd', 'talare', 'copy_model']);
-const TAGGALIAS = { hook: 'hook-typ', hooktyp: 'hook-typ', offer: 'offer-i-creativen', 'offer i creativen': 'offer-i-creativen', textmangd: 'textmängd', 'visuell-stil': 'visuell stil', copymodel: 'copy_model', 'copy-model': 'copy_model', angle: 'vinkel', visual: 'visuell stil', text: 'textmängd', speaker: 'talare', 'copy model': 'copy_model' };
+const TAGGALIAS = { hook: 'hook-typ', hooktyp: 'hook-typ', offer: 'offer-i-creativen', 'offer i creativen': 'offer-i-creativen', textmangd: 'textmängd', 'visuell-stil': 'visuell stil', copymodel: 'copy_model', 'copy-model': 'copy_model', angle: 'vinkel', visual: 'visuell stil', text: 'textmängd', speaker: 'talare', 'copy model': 'copy_model',
+  // Komponenttaggarna (2.12, Axels beslut 2026-09-21) — engelska nycklar i briefen.
+  type: 'typ', source: 'kalla', källa: 'kalla', desire: 'begar', begär: 'begar', mechanism: 'mekanism', 'hook-mechanic': 'hook-mekanik', 'hook-mechanics': 'hook-mekanik', hookmekanik: 'hook-mekanik', concept: 'koncept', urgency: 'urgency', confidence: 'confidence', parent: 'parent', iteration: 'iteration', avatar: 'avatar', awareness: 'awareness',
+  // CS-KLART.md (Axels definition av klart 2026-09-21): tro (punkt 13) och lärdomen briefen bygger på (punkt 6).
+  belief: 'tro', tro: 'tro', learning: 'lardom', lärdom: 'lardom', lardom: 'lardom', positioning: 'positionering', positionering: 'positionering', medvetandenivå: 'awareness', brådska: 'urgency' };
+
+/**
+ * Komponenttaggarna (ANALYSMETOD 6b, utökade 2026-09-21 ur Evolve-materialet,
+ * SKALNINGSKUNGEN-FORSLAG §2.12): bakåtkompatibla — en brief utan dem får
+ * anmärkning (skrivarens sak), aldrig en kommentar till redigeraren. Fasta
+ * värdelistor så vinstbidraget går att gruppera per tagg; ett värde utanför
+ * listan är en anmärkning. `typ` N = nytt koncept, M = messaging (samma video,
+ * ny hook/text), I = iteration på en förälder, S = statisk validering.
+ */
+export const KOMPONENT_TAGGAR = Object.freeze(['typ', 'koncept', 'kalla', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'confidence', 'lardom']);
+export const KOMPONENT_VARDEN = Object.freeze({
+  // N = ny vinkel, IM = imiterad (format-kopia), I = iteration på en förälder, M = messaging (samma video, ny text), S = statisk validering.
+  typ: ['N', 'IM', 'I', 'M', 'S'],
+  kalla: ['axel', 'rutin', 'swipe', 'voc', 'feedback', 'backlog', 'playbook', 'winning-line', 'egen-data', 'parent'],
+  awareness: ['unaware', 'problem', 'solution', 'product', 'promo'],
+  // Begären — arbetslistan (Axel ändrar den här och i ANALYSMETOD.md, aldrig i en brief).
+  begar: ['skydda-det-jag-ager', 'spara-pengar', 'spara-tid', 'slippa-krangel', 'trygghet', 'status', 'njutning', 'halsa', 'kontroll', 'tillhorighet'],
+  urgency: ['sasong', 'lager', 'pris', 'konsekvens', 'ingen'],
+  'hook-mekanik': ['none', 'reverse', 'slow-mo', 'slider', 'zoom-in', 'cut-in', 'freeze'],
+  confidence: ['high', 'medium', 'low'],
+});
+const KOMPONENT_ALIAS = { ny: 'N', imiterad: 'IM', imitation: 'IM', imitated: 'IM', season: 'sasong', säsong: 'sasong', stock: 'lager', price: 'pris', consequence: 'konsekvens', none: 'ingen', ingen: 'none', 'slow-motion': 'slow-mo', slowmo: 'slow-mo', zoom: 'zoom-in', 'cut-in': 'cut-in', cutin: 'cut-in', 'protect-what-i-own': 'skydda-det-jag-ager', 'save-money': 'spara-pengar', 'save-time': 'spara-tid', 'avoid-hassle': 'slippa-krangel', safety: 'trygghet', pleasure: 'njutning', health: 'halsa', control: 'kontroll', belonging: 'tillhorighet', 'own-data': 'egen-data', 'winning line': 'winning-line', new: 'N', messaging: 'M', iteration: 'I', static: 'S' };
+/** Regitabellen krävs som FEL från och med den här briefdagen; äldre briefer får bara anmärkning (kalibreringen 2026-09-18: en regel som inte fanns när briefen skrevs ska inte bli en kommentar till redigeraren). */
+export const REGI_FRAN = '2026-09-21';
+/** Anmärkningskoder som stoppar i spärrläget (--rad/--manifest): där är skrivaren sessionen själv och kan rätta innan Notion-raden skapas. */
+export const SPARRKODER = Object.freeze(['regi', 'taggar', 'komponent']);
 /** Veckodagar rutinen går (JS: 1 = måndag, 4 = torsdag). */
 export const GRANSKNINGSDAGAR = Object.freeze([1, 4]);
 /** Markören som gör kommentaren igenkännbar, så en omkörning aldrig skriver den två gånger. */
@@ -193,6 +224,26 @@ export function butiksnamnFor(hubId, register = {}) {
     for (const n of [brand, butik, `${butik}.se`, `${butik}.com`]) if (n && !ut.some((x) => x.toLowerCase() === n.toLowerCase())) ut.push(n);
   }
   return ut;
+}
+
+/**
+ * Spegelbutikens pris för en speglad hub (CS-KLART punkt 24): OPS-produktens
+ * `ekonomi.pris`/`jamforpris` ur factory/produkter/<produkt>.yaml — läst ur
+ * filen, inte gissad. null när hubben inte speglas eller filen saknar priset.
+ */
+export function spegelPris(hubId, register = {}, { rot = ROT, lasFil = (p) => (existsSync(p) ? readFileSync(p, 'utf8') : null) } = {}) {
+  const id = normaliseraId(hubId);
+  for (const [nyckel, post] of Object.entries(register?.poster ?? {})) {
+    if (!post?.spegling?.kalla_hub || normaliseraId(post.spegling.kalla_hub) !== id) continue;
+    const [butik, produkt] = String(nyckel).split('/');
+    const fil = join(rot, 'factory', 'produkter', `${produkt ?? butik}.yaml`);
+    const text = lasFil(fil);
+    const pris = text ? Number(/^\s*pris:\s*([\d.]+)/m.exec(text)?.[1]) : NaN;
+    const jamfor = text ? Number(/^\s*jamforpris:\s*([\d.]+)/m.exec(text)?.[1]) : NaN;
+    const brand = String(post.spegling.status_se ?? '').trim().split(/\s+/)[0] || butik;
+    return { butik: brand, nyckel, pris: Number.isFinite(pris) ? pris : null, jamforpris: Number.isFinite(jamfor) ? jamfor : null, kalla: text ? fil.replace(`${rot}/`, '') : `${fil.replace(`${rot}/`, '')} saknas` };
+  }
+  return null;
 }
 
 /** Är raden en rubrik — markdown (#) eller Notion-dump (numrerad eller känd rubriktext)?
@@ -350,6 +401,177 @@ export function trefragorUr(text) {
   return { finns: true, underkanda };
 }
 
+// ------------------------------------------------------------ regi (2.9)
+
+const celler = (s) => utanFet(s).replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+const arSkiljerad = (s) => /^\|?\s*:?-{3,}/.test(s);
+/** Jämförbar form av en manusrad: utan fetstil, citattecken, dubbla mellanslag och avslutande skiljetecken. */
+const normRad = (s) => utanFet(s).replace(/[“”"«»]/g, '').replace(/\s+/g, ' ').replace(/[.!?…]+$/, '').trim().toLowerCase();
+
+/** Tabellen som börjar på rad `start`: rubrikerna (små bokstäver) och raderna som cellistor. */
+function tabellFran(rader, start) {
+  const rubriker = celler(rader[start]).map((c) => c.toLowerCase());
+  const ut = [];
+  for (const r of rader.slice(start + 1)) {
+    const s = r.trim();
+    if (!s || arRubrik(s) || !/\|/.test(s)) break;
+    if (arSkiljerad(s)) continue;
+    ut.push(celler(s));
+  }
+  return { rubriker, rader: ut };
+}
+
+/** Regitabellens kolumner — engelska rubriker i briefen (redigerarna), svenska accepteras. */
+const REGI_KOLUMN = {
+  tid: /^(#\s*\|?\s*)?(tid|time)\b/i,
+  manusrad: /manusrad|script line|swedish/i,
+  ljud: /^(ljud|audio|sound)\b/i,
+  text: /text på skärm|on-?screen/i,
+  bild: /^(bild|picture|visual|shot|show)\b/i,
+  effekt: /^(effekt|effect)\b/i,
+  kalla: /^(källa|kalla|source)\b/i,
+  referens: /^(referens|reference)\b/i,
+  frihet: /^(frihet|latitude|freedom)\b/i,
+};
+/** Källformaten (docs/os/BRIEF-REGI.md). "OUR AD" utan sekunder är inget format — det är felet. */
+const KALLA_RE = [
+  /^(?:our ad|vår annons)\s+\S+\s+\d{1,2}:\d{2}\s*[–—-]\s*\d{1,2}:\d{2}/i,
+  /^drive\s+\S+\s+\d{1,2}:\d{2}/i,
+  /^drive\s+\S+\s+\[\s*editor picks\s*:[^\]]+\]/i,
+  /^(?:new footage|ny inspelning)\s*:\s*\S/i,
+  /^(?:cdn|asset)\s+https?:\/\/\S+/i,
+];
+export function giltigKalla(s) {
+  const t = utanFet(s).trim();
+  if (!t) return { ok: false, orsak: 'empty' };
+  if (KALLA_RE.some((re) => re.test(t))) return { ok: true, orsak: null };
+  if (/^(?:our ad|vår annons)\b/i.test(t)) return { ok: false, orsak: 'OUR AD without mm:ss–mm:ss (a made-up timestamp is a fault; write [EDITOR PICKS: …] on a DRIVE source when the clip could not be read)' };
+  if (/^drive\b/i.test(t)) return { ok: false, orsak: 'DRIVE without mm:ss or [EDITOR PICKS: …]' };
+  return { ok: false, orsak: 'not one of OUR AD <name> mm:ss–mm:ss / DRIVE <id> mm:ss / DRIVE <id> [EDITOR PICKS: …] / NEW FOOTAGE: … / CDN <url>' };
+}
+
+/**
+ * Manusraderna (video): raderna i manustabellen — den som har "Swedish (use
+ * this)" OCH en tidskolumn. Hook-tabellen (utan tid) och bildens "Exact text"
+ * räknas inte. Returnerar de svenska raderna i ordning.
+ */
+export function manusrader(text) {
+  const rader = rad(text);
+  const start = rader.findIndex((r) => /\|/.test(r) && /swedish\s*\(use this\)/i.test(r) && /(^|\|)\s*(time|tid)\b/i.test(utanFet(r)));
+  if (start === -1) return [];
+  const t = tabellFran(rader, start);
+  const i = t.rubriker.findIndex((c) => /swedish/.test(c));
+  return t.rader.map((c) => c[i] ?? '').filter(Boolean);
+}
+
+/**
+ * Regitabellen (docs/os/BRIEF-REGI.md, Axels beslut 2026-09-21): EN rad per
+ * manusrad — Time | Script line | Audio | On-screen text | Picture | Effect +
+ * length | Source | Reference | Latitude. Hittas på rubrikraden: har BÅDE en
+ * Source- och en On-screen-kolumn. Manustabellen får vara samma tabell
+ * (utökad med kolumnerna) eller en egen tabell efter den.
+ * Returnerar { finns, kolumner, rader: [{tid, manusrad, ljud, text, bild, effekt, kalla, referens, frihet}], latitude, assets, referensannonser }.
+ */
+export function regiUr(text) {
+  const rader = rad(text);
+  const hela = utanFet(text);
+  const latitude = /editor latitude\s*[:|]/i.test(hela) || /\bfrihet\s*[:|]/i.test(hela);
+  const latitudeHel = latitude && /\bMAY\b/.test(hela) && /\bMUST NOT\b/.test(hela);
+  const assets = /^\s*\|?\s*assets\s*[:|]/im.test(hela);
+  const referensannonser = /^\s*\|?\s*reference ads?\s*[:|]/im.test(hela);
+  const start = rader.findIndex((r) => /\|/.test(r) && REGI_KOLUMN.kalla.test(celler(r).find((c) => REGI_KOLUMN.kalla.test(c)) ?? '') && celler(r).some((c) => REGI_KOLUMN.text.test(c)));
+  if (start === -1) return { finns: false, kolumner: {}, rader: [], latitude: latitudeHel, assets, referensannonser };
+  const t = tabellFran(rader, start);
+  const kolumner = {};
+  for (const [namn, re] of Object.entries(REGI_KOLUMN)) {
+    const i = t.rubriker.findIndex((c) => re.test(c));
+    if (i !== -1 && !Object.values(kolumner).includes(i)) kolumner[namn] = i;
+  }
+  const ut = t.rader.map((c) => Object.fromEntries(Object.entries(kolumner).map(([k, i]) => [k, (c[i] ?? '').trim()])));
+  return { finns: true, kolumner, rader: ut, latitude: latitudeHel, assets, referensannonser };
+}
+
+/**
+ * Regispärren för en videobrief. Ren. Returnerar { fel: [text], anm: [text], tackning: 'x/y' }.
+ * FEL: ingen regitabell; en manusrad utan regirad; tom eller ogiltig Källa;
+ * tom On-screen text (skriv NO TEXT); tom Effect (skriv none); OUR AD utan
+ * sekunder; ingen Editor latitude med MAY + MUST NOT.
+ * ANMÄRKNING: "or/eller" i Picture; Effect none när texten är NO TEXT;
+ * Assets / Reference ads saknas; ingen first frame nämnd.
+ */
+export function granskaRegi(text) {
+  const fel = [];
+  const anm = [];
+  const manus = manusrader(text);
+  const regi = regiUr(text);
+  if (!regi.finns) {
+    fel.push(`no shot-level direction table (Time | Script line | Audio | On-screen text | Picture | Effect + length | Source | Reference | Latitude — docs/os/BRIEF-REGI.md); the editor has ${manus.length || 'the'} script line${manus.length === 1 ? '' : 's'} and no picture for any of them`);
+    return { fel, anm, tackning: `0/${manus.length}` };
+  }
+  for (const k of ['kalla', 'text', 'bild', 'effekt']) if (regi.kolumner[k] == null) fel.push(`the direction table has no ${{ kalla: 'Source', text: 'On-screen text', bild: 'Picture', effekt: 'Effect + length' }[k]} column`);
+  // En regirad per manusrad — matchas på texten när tabellen har en manusradskolumn, annars på antalet.
+  const harManuskolumn = regi.kolumner.manusrad != null;
+  let tackta = 0;
+  if (harManuskolumn && manus.length) {
+    const regiTexter = regi.rader.map((r) => normRad(r.manusrad));
+    manus.forEach((m, i) => {
+      if (regiTexter.some((t) => t && (t === normRad(m) || normRad(m).startsWith(t) || t.startsWith(normRad(m))))) tackta += 1;
+      else fel.push(`script line ${i + 1} has no direction row: \`${m}\``);
+    });
+  } else if (manus.length) {
+    tackta = Math.min(manus.length, regi.rader.length);
+    if (regi.rader.length < manus.length) fel.push(`the direction table has ${regi.rader.length} rows for ${manus.length} script lines — one row per line`);
+  } else if (regi.rader.length) {
+    tackta = regi.rader.length;
+  }
+  regi.rader.forEach((r, i) => {
+    const n = i + 1;
+    if (regi.kolumner.kalla != null) {
+      const k = giltigKalla(r.kalla);
+      if (!k.ok) fel.push(`direction row ${n}: source ${k.orsak}`);
+    }
+    if (regi.kolumner.text != null && !r.text) fel.push(`direction row ${n}: no on-screen text decision — write the exact text or NO TEXT`);
+    if (regi.kolumner.effekt != null && !r.effekt) fel.push(`direction row ${n}: no effect — write e.g. slow-mo 0.5× 2 s, reverse 3 s, zoom-in 1 s, cut-in, freeze or none`);
+    if (regi.kolumner.bild != null && !r.bild) fel.push(`direction row ${n}: no picture — what is physically in frame, shot type, what the hands do`);
+    if (regi.kolumner.bild != null && /\b(or|eller)\b/i.test(r.bild)) anm.push(`direction row ${n}: "or/eller" in Picture — decide, do not offer the editor a choice`);
+    if (regi.kolumner.text != null && regi.kolumner.effekt != null && /^(no text|ingen text)$/i.test(r.text) && /^(none|ingen)$/i.test(r.effekt)) anm.push(`direction row ${n}: NO TEXT and no effect — a silent, static beat; give it an effect or a text`);
+  });
+  if (!regi.latitude) fel.push('no "Editor latitude" line with MAY: … and MUST NOT: … — the editor cannot tell what is free and what is fixed');
+  if (!regi.assets) anm.push('no "Assets:" line (Drive folder + id, CDN images) above the direction table');
+  if (!regi.referensannonser) anm.push('no "Reference ads:" line (parent row + Replicate / Do not replicate, or "none — new concept")');
+  if (!/first frame|thumbnail/i.test(utanFet(text))) anm.push('the hook row does not name the first frame (thumbnail) — the frame the feed shows before play');
+  return { fel, anm, tackning: `${tackta}/${manus.length || regi.rader.length}` };
+}
+
+/**
+ * Komponenttaggarna ur en taggrad: saknade och ogiltiga värden. Ren.
+ * typ I/M kräver parent; typ N kräver kalla. Fasta listor i KOMPONENT_VARDEN.
+ */
+export function komponentUr(taggar) {
+  const t = taggar ?? {};
+  const norm = (v) => String(v ?? '').replace(/^`|`$/g, '').trim().toLowerCase().replace(/[åä]/g, 'a').replace(/ö/g, 'o');
+  const saknade = KOMPONENT_TAGGAR.filter((k) => !String(t[k] ?? '').trim());
+  const ogiltiga = [];
+  for (const [k, lista] of Object.entries(KOMPONENT_VARDEN)) {
+    const rå = String(t[k] ?? '').trim();
+    if (!rå) continue;
+    const v = k === 'typ' ? rå.replace(/`/g, '').trim().toUpperCase() : norm(rå);
+    const alias = KOMPONENT_ALIAS[v] ?? (k === 'typ' ? KOMPONENT_ALIAS[v.toLowerCase()] : undefined);
+    const kandidat = lista.includes(v) ? v : lista.includes(alias) ? alias : null;
+    if (!kandidat) ogiltiga.push({ tagg: k, varde: rå, tillatna: lista });
+  }
+  const typ = String(t.typ ?? '').replace(/`/g, '').trim().toUpperCase();
+  const parent = String(t.parent ?? '').replace(/`/g, '').trim();
+  const harParent = Boolean(parent) && !/^(none|ingen|—|-)$/i.test(parent);
+  const brister = [];
+  if (/^(I|IM|M)$/.test(typ) && !harParent) brister.push(`typ=${typ} without parent= — an iteration, imitation or messaging test names the ad it builds on`);
+  if (typ === 'N' && harParent) brister.push('typ=N with a parent — a new angle has no parent; same promise in new words is an iteration (typ=I), CS-KLART point 19');
+  // Punkt 6: varje brief pekar på lärdomen den bygger på (L-<annons_id>, ett eller flera).
+  const lardom = String(t.lardom ?? '').replace(/`/g, '').trim();
+  if (lardom && !lardom.split(/\s*[,+]\s*/).every((x) => /^L-\d+$/.test(x))) brister.push(`lardom=${lardom} is not a learning id (L-<ad_id>, from products/<id>/lardomar.md) — a brief that cannot point at a learning is not written`);
+  return { saknade, ogiltiga, brister, typ: typ || null, parent: harParent ? parent : null, lardom: lardom || null };
+}
+
 /** Koncept dna.md uttryckligen tar bort ur nästa rond ("GT får inga briefer").
  *  Citatet följer med så sessionen kan avgöra om instruktionen gäller än. */
 export function dodaKoncept(dnaText) {
@@ -369,7 +591,7 @@ export function dodaKoncept(dnaText) {
 /** Är briefen en VARIANT (pekar på en förälder-annons / isolerar en variabel)? */
 export function arVariant(text) {
   const t = utanFet(text);
-  return /isolated variable/i.test(t) || /\bparent\b[^\n:]{0,20}:\s*[A-Za-zÅÄÖ]+_[A-Z]{1,4}_\d+/i.test(t) || /\bförälder\b[^\n:]{0,20}:\s*[A-Za-zÅÄÖ]+_[A-Z]{1,4}_\d+/i.test(t);
+  return /isolated variable/i.test(t) || /\bparent\b[^\n:=]{0,20}[:=]\s*[A-Za-zÅÄÖ]+_[A-Z]{1,4}_\d+/i.test(t) || /\bförälder\b[^\n:]{0,20}:\s*[A-Za-zÅÄÖ]+_[A-Z]{1,4}_\d+/i.test(t);
 }
 
 /** Den isolerade variabeln ("Isolated variable: the setting of the photo.") eller null. */
@@ -452,6 +674,8 @@ export function granskaBrief(r, ctx = {}) {
   const namnVideo = /^H\d+/i.test(String(t.variant ?? ''));
   if (typ === 'bild' && namnVideo) F('typ', `Typ says image but the name's variant "${t.variant}" says video (H-variant)`);
   if (typ === 'video' && t.variant && !namnVideo) F('typ', `Typ says video but the name's variant "${t.variant}" is an image variant (videos are _H1, _H2 …)`);
+  // Speglade hubbar (CS-KLART punkt 24): speglingen döper kopian till källans nummer + 100 — ett eget nummer över 100 krockar.
+  if (ctx.speglad && t.nummer != null && t.nummer > 100) F('namn', `number ${t.nummer} — briefs for a mirrored product never go above 100 (the mirror takes the source number + 100, so ${t.nummer} would collide with a mirrored ad)`);
 
   // 2. Variabeltaggarna (VARIABELTAGGAR eller Variables:) — utan dem kan
   //    feedback-loopen inte gruppera vinstbidrag per variabel. Skrivarens sak.
@@ -498,6 +722,16 @@ export function granskaBrief(r, ctx = {}) {
     const andra = kronorI(annons).filter((n) => !ok.has(n));
     if (andra.length) A('pris', `other kronor amounts in the ad text: ${andra.join(', ')} kr — only the price, compare-at and the saving are allowed`);
   }
+  // Speglade hubbar (CS-KLART punkt 24): samma annons körs i båda butikerna, så
+  // priset i briefen måste ligga inom 20 % av vad BÅDA butikerna tar.
+  for (const s of ctx.pris_spegel ?? []) {
+    if (p.pris == null || !s?.pris) continue;
+    const avvikelse = Math.abs(p.pris - s.pris) / s.pris;
+    if (avvikelse > 0.2) F('pris', `brief says ${p.pris} kr, ${s.butik ?? 'the mirror store'} takes ${s.pris} kr — ${Math.round(avvikelse * 100)} % apart; a mirrored ad must be within 20 % of both stores' prices`);
+    else if (p.pris !== s.pris) A('pris', `brief says ${p.pris} kr, ${s.butik ?? 'the mirror store'} takes ${s.pris} kr (within 20 %) — the same ad runs in both stores`);
+  }
+  // AI-innehållet (CS-KLART punkt 27): US-steget måste veta om creativen har en AI-person/AI-röst (raden obligatorisk) eller bara AI-bild.
+  if (typ === 'video' && !aiInnehallUr(text)) A('ai', 'no "AI content:" line (person / voice / image only / none) — the US translation step then burns in "Contains AI-generated content" as if it were a person');
 
   // 6. Tre-frågorstestet (docs/copy-regler.md).
   const tre = trefragorUr(text);
@@ -525,6 +759,28 @@ export function granskaBrief(r, ctx = {}) {
     if (!/caption/i.test(text)) A('video', 'no caption column or caption rule (max 2 lines) in the brief');
   }
 
+  // 8b. Regin rad för rad (2.9, Axels beslut 2026-09-21, docs/os/BRIEF-REGI.md):
+  //     en videobrief utan bild per manusrad ger en revisionsrunda per Manila-dygn.
+  //     FEL för briefer skrivna från REGI_FRAN (och i spärrläget, där dagen är
+  //     okänd); äldre briefer får bara anmärkning — regeln fanns inte då.
+  let regi = null;
+  if (typ === 'video' && harTextTabell) {
+    regi = granskaRegi(text);
+    const kravs = !r.skapad_dag || String(r.skapad_dag) >= REGI_FRAN;
+    for (const t of regi.fel) (kravs ? F : A)('regi', kravs ? t : `(brief written before ${REGI_FRAN}, direction table not required then) ${t}`);
+    for (const t of regi.anm) A('regi', t);
+  }
+
+  // 8c. Komponenttaggarna (2.12): typ/koncept/källa/avatar/awareness/begär/
+  //     mekanism/urgency/hook-mekanik/confidence + Memo-raden. Skrivarens sak.
+  const komponent = komponentUr(taggar?.taggar);
+  if (taggar) {
+    if (komponent.saknade.length) A('komponent', `component tags missing: ${komponent.saknade.join(', ')} (typ=N|IM|I|M|S · koncept · kalla · avatar · awareness · begar · mekanism · tro · urgency · hook-mekanik · confidence · lardom=L-…) — the next /cs cannot group profit by component${komponent.saknade.includes('lardom') ? '; a brief without lardom= is not written (CS-KLART point 6)' : ''}`);
+    for (const o of komponent.ogiltiga) A('komponent', `${o.tagg}=${o.varde} is not in the fixed list (${o.tillatna.join(' | ')})`);
+    for (const b of komponent.brister) A('komponent', b);
+  }
+  if (!/^\s*(?:\*\*)?memo(?:\*\*)?\s*:\s*\S/im.test(text)) A('komponent', 'no "Memo:" line — one sentence on why this ad beats the current level (Evolve\'s breakthrough memo)');
+
   // 9. COPY CARD + KPI — skrivarens sak.
   if (!/copy card/i.test(text) || !/primary text/i.test(text) || !/headline/i.test(text)) A('copy', 'no COPY CARD (primary text + headline + description) — the ad copy in Ads Manager is not specified by the brief');
   const kpi = kpiUr(text);
@@ -534,7 +790,7 @@ export function granskaBrief(r, ctx = {}) {
 
   return {
     fel, anmarkningar: anm,
-    fakta: { koncept: t.koncept, nummer: t.nummer, variant: t.variant, typ, ar_variant: variant, isolerad: isoleradVariabel(text), taggar: taggar?.taggar ?? null, pris_brief: p, trefragor: tre.finns, image_prompt: Boolean(prompt) },
+    fakta: { koncept: t.koncept, nummer: t.nummer, variant: t.variant, typ, ar_variant: variant, isolerad: isoleradVariabel(text), taggar: taggar?.taggar ?? null, pris_brief: p, trefragor: tre.finns, image_prompt: Boolean(prompt), regi: regi ? regi.tackning : null, komponent_typ: komponent.typ, parent: komponent.parent },
   };
 }
 
@@ -998,6 +1254,9 @@ export async function byggGranskningsko({ rond = null, hubFilter = null, maxdaga
     const dominant = dominantPrefix(alla.annonser.map((r) => r.namn));
     const produkt = produktFor(hub.id, dominant?.prefix, { products, register, finnsMinne });
     const butiksnamn = butiksnamnFor(hub.id, register);
+    // Speglad hub (CS-KLART punkt 23–24): OPS-butikens pris ur produktfilen, så briefens pris kan mätas mot båda butikerna.
+    const spegel = spegelPris(hub.id, register);
+    if (spegel) logg(`   speglad till ${spegel.butik}: pris ${spegel.pris}${spegel.jamforpris ? `/${spegel.jamforpris}` : ''} kr (${spegel.kalla}) — briefnummer får inte gå över 100`);
     const minnesmapp = produkt?.minne ? join(ROT, produkt.minne) : null;
     let doda = [];
     if (minnesmapp && existsSync(join(minnesmapp, 'dna.md'))) doda = dodaKoncept(readFileSync(join(minnesmapp, 'dna.md'), 'utf8'));
@@ -1032,7 +1291,7 @@ export async function byggGranskningsko({ rond = null, hubFilter = null, maxdaga
         pris_butik = p.pris_butik ? { pris: p.pris_butik.pris, jamforpris: p.pris_butik.jamforpris, kalla: p.pris_butik.kalla } : null;
         pris_skal = p.skal;
       } else pris_skal = 'no Landing page on the row or in the brief';
-      const ctx = { prefix: dominant?.prefix ?? null, creative_prefix: produkt?.creative_prefix ?? null, butiksnamn, pris_butik, breakEvenCpa: produkt?.break_even_cpa ?? null, copyModell: null, doda_koncept: doda };
+      const ctx = { prefix: dominant?.prefix ?? null, creative_prefix: produkt?.creative_prefix ?? null, butiksnamn, pris_butik, breakEvenCpa: produkt?.break_even_cpa ?? null, copyModell: null, doda_koncept: doda, speglad: Boolean(spegel), pris_spegel: spegel?.pris ? [spegel] : [] };
       const g = fel_las ? { fel: [{ kod: 'notion', text: `the brief could not be read from Notion: ${fel_las}` }], anmarkningar: [], fakta: {} } : granskaBrief({ ...r, text }, ctx);
       if (!fel_las && pris_skal && prisUrBriefText(text).pris != null) g.anmarkningar.push({ kod: 'pris', text: `store price unread: ${pris_skal}` });
       let fil = null;
@@ -1163,13 +1422,90 @@ export function tabell(korning) {
 
 // ------------------------------------------------------------ CLI
 
+/**
+ * Spärrläget (2.9/2.12, Axels beslut 2026-09-21): EN brief-fil eller ett
+ * manifest, INNAN Notion-raden skapas. Inget nät. Rader: [{ namn, typ, text, fil }].
+ * Stoppar på varje FEL och på anmärkningar med kod i SPARRKODER — här är
+ * skrivaren sessionen själv och kan rätta. Rondkontroller i manifestläget:
+ * två H-varianter på samma koncept med samma hook-mekanik; typ N utan någon
+ * kalla=voc när ronden har ≥ 5 nya koncept.
+ */
+export function sparra(rader, ctx = {}) {
+  const ut = [];
+  for (const r of rader) {
+    const g = granskaBrief({ namn: r.namn, typ: r.typ, text: r.text }, ctx);
+    const stopp = g.anmarkningar.filter((a) => SPARRKODER.includes(a.kod));
+    ut.push({ namn: r.namn, typ: r.typ, fil: r.fil ?? null, fel: g.fel, stopp, anmarkningar: g.anmarkningar.filter((a) => !SPARRKODER.includes(a.kod)), fakta: g.fakta, ok: g.fel.length === 0 && stopp.length === 0 });
+  }
+  const rond = [];
+  const perKoncept = new Map();
+  for (const r of ut) {
+    if (r.typ !== 'video') continue;
+    const m = /^(.*)_H\d+$/i.exec(String(r.namn ?? ''));
+    if (!m) continue;
+    const mek = String(r.fakta?.taggar?.['hook-mekanik'] ?? '').replace(/`/g, '').trim().toLowerCase();
+    if (!mek) continue;
+    const lista = perKoncept.get(m[1]) ?? [];
+    lista.push({ namn: r.namn, mek });
+    perKoncept.set(m[1], lista);
+  }
+  for (const [bas, lista] of perKoncept) {
+    const dubbla = lista.filter((a, i) => lista.findIndex((b) => b.mek === a.mek) !== i);
+    if (dubbla.length) rond.push(`${bas}: H-variants share hook-mekanik=${dubbla[0].mek} (${lista.map((a) => a.namn).join(', ')}) — two H-variants need two hook mechanics`);
+  }
+  const nya = ut.filter((r) => r.fakta?.komponent_typ === 'N');
+  if (nya.length >= 5 && !nya.some((r) => /voc/i.test(String(r.fakta?.taggar?.kalla ?? '')))) rond.push(`${nya.length} new concepts (typ=N) and none with kalla=voc — at least one in five comes from customer language`);
+  return { rader: ut, rond, ok: ut.every((r) => r.ok) && rond.length === 0 };
+}
+
+function lasSparrRad(fil, { namn = null, typ = null } = {}) {
+  const text = readFileSync(resolve(fil), 'utf8');
+  // Prefixet får ha flera led (DryTrek_Damasker_FO_2_H1).
+  const rubrik = /^#\s+((?:[A-Za-zÅÄÖåäö0-9-]+_)+[A-Z]{1,4}_\d+(?:_[A-Za-z0-9]+)?)\b/m.exec(text)?.[1] ?? null;
+  const n = namn ?? rubrik ?? null;
+  const t = typ ?? (n && /_H\d+$/i.test(n) ? 'video' : n ? 'bild' : null);
+  if (!n) throw new Error(`${fil}: annonsnamnet står inte i första rubriken ("# <Prefix>_<KONCEPT>_<nr>[_<variant>] — …") — ge --namn`);
+  if (!t) throw new Error(`${fil}: typen går inte att läsa ur namnet — ge --typ video|bild`);
+  return { namn: n, typ: t, text, fil };
+}
+
+function skrivSparr(res, { json = false } = {}) {
+  if (json) { console.log(JSON.stringify(res, null, 2)); return; }
+  for (const r of res.rader) {
+    console.log(`${r.ok ? '✅' : '❌'} ${r.namn} (${r.typ})${r.fakta?.regi ? ` · regi ${r.fakta.regi}` : ''}${r.fakta?.komponent_typ ? ` · typ ${r.fakta.komponent_typ}` : ''}`);
+    for (const f of r.fel) console.log(`   🔴 FEL ${f.kod}: ${f.text}`);
+    for (const a of r.stopp) console.log(`   🟠 STOPP ${a.kod}: ${a.text}`);
+    for (const a of r.anmarkningar) console.log(`   ⚠️  ${a.kod}: ${a.text}`);
+  }
+  for (const s of res.rond) console.log(`🟠 RONDEN: ${s}`);
+  console.log(res.ok ? `\n✅ ${res.rader.length} brief(er) klara för Notion.` : `\n❌ ${res.rader.filter((r) => !r.ok).length} av ${res.rader.length} stoppade${res.rond.length ? ` + ${res.rond.length} rondfel` : ''} — rätta briefen, skapa ingen Notion-rad.`);
+}
+
 async function huvud() {
-  const { säkerställProxy } = await import('./meta-lib.mjs');
-  säkerställProxy();
   const args = process.argv.slice(2);
   const flagga = (n, s = null) => { const i = args.indexOf(`--${n}`); return i !== -1 && args[i + 1] !== undefined && !args[i + 1].startsWith('--') ? args[i + 1] : s; };
   const finns = (n) => args.includes(`--${n}`);
   const do_ = (m) => { console.error(`✗ ${m}`); process.exit(1); };
+
+  // --rad <brief.md> / --manifest <manifest.json>: spärren före Notion. Inget nät.
+  if (flagga('rad') || flagga('manifest')) {
+    const pris = flagga('pris') != null ? { pris: Number(flagga('pris')), jamforpris: flagga('jamforpris') != null ? Number(flagga('jamforpris')) : null } : null;
+    const spegelPrisVal = flagga('pris-spegel') != null ? Number(flagga('pris-spegel')) : null;
+    const ctx = { prefix: flagga('prefix'), creative_prefix: null, butiksnamn: finns('speglad') ? [...BAVER_NAMN, 'CaraShell', 'carashell.se', 'carashell.com', 'carashell'] : BAVER_NAMN, pris_butik: pris, breakEvenCpa: flagga('breakeven') != null ? Number(flagga('breakeven')) : null, copyModell: flagga('copy-modell'), doda_koncept: [], speglad: finns('speglad') || spegelPrisVal != null, pris_spegel: spegelPrisVal != null ? [{ butik: flagga('spegel-butik', 'CaraShell'), pris: spegelPrisVal }] : [] };
+    let rader;
+    if (flagga('rad')) rader = [lasSparrRad(flagga('rad'), { namn: flagga('namn'), typ: flagga('typ') })];
+    else {
+      const manifestFil = resolve(flagga('manifest'));
+      const poster = lasManifest(readFileSync(manifestFil, 'utf8'), dirname(manifestFil));
+      rader = poster.map((p) => lasSparrRad(p.brief, { namn: p.namn, typ: p.typ }));
+    }
+    const res = sparra(rader, ctx);
+    skrivSparr(res, { json: finns('json') });
+    process.exit(res.ok ? 0 : 1);
+  }
+
+  const { säkerställProxy } = await import('./meta-lib.mjs');
+  säkerställProxy();
   if (!process.env.NOTION_TOKEN && !finns('rapport')) do_('NOTION_TOKEN saknas i miljön — hubbarna går inte att läsa.');
   const idag = flagga('idag') ?? idagSvensk();
   const torr = finns('torr');

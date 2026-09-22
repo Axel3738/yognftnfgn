@@ -1,0 +1,13 @@
+{
+  "comment": "Brandet i Bæverbutikens mejl: Bäverbutikens färger (klon), loggan är temats fil på butikens CDN (svart text på transparent, 2410×215, avläst ur startsidan 2026-09-20) — vitt sidhuvud. Allt annat läses ur sparning/butiker.json. Bygg: node mejl/bygg-butik.mjs baeverbutiken",
+  "farg_rod": "#dd1d1d",
+  "farg_svart": "#000000",
+  "farg_ram": "#e8e8e1",
+  "font_rubrik": "Impact,'Anton','Arial Narrow','Arial Black',sans-serif",
+  "sidhuvud_farg": "#ffffff",
+  "logga_url": "https://baeverbutiken.dk/cdn/shop/files/baeverbutikken-logo.png?v=1786270982&width=480",
+  "logga_bredd": 240,
+  "logga_hojd": 21,
+  "meny_klar": true,
+  "meny_klar_comment": "Cowork lade in \"Spor pakken\" sist i Huvudmeny + Sidfotsmeny 2026-09-21 ~01:25 (sparning/cowork/baeverbutiken.md → Utfall). Prompten hoppar därför över menysteget."
+}
