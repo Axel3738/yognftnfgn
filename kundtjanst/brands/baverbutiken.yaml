@@ -32,6 +32,32 @@ shopify:
   # SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER + SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER.
   env_suffix: "BAVERBUTIKEN_EMAILSCRAPER"
 
+# Autosvaret (kundtjanst/autosvar.mjs). Leveranslöftet är samma som fraktmejlen
+# (mejl/konfig.json frakt: 7–14 dagar, packas 1–2 arbetsdagar, Axels beslut
+# 2026-09-18); spårningssidan är den rutinen bygger varje timme.
+svar:
+  autosvar: true
+  sprak: sv
+  signatur: "Kundtjänst Bäverbutiken"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://baverbutiken.se/pages/spara"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+  # SOP 36 steg 1 ("be om ordernumret") — av tills Axel sagt till (frågan ställd 2026-09-21).
+  fraga_ordernummer: false
+  # SOP 38 (VA:ns SOP-databas "Bäverkoppling.se", läst 2026-09-21): de godkända
+  # företagsuppgifterna. Samma bolag och adress som VA:ns egna returmejl i Sent
+  # (2026-09-14) och tvister.returadress. Aldrig VD:ns namn.
+  foretag:
+    namn: "Stonebite Ecom AB"
+    orgnr: "559576-2401"
+    adress: "Sjöhed 160, 442 74 Harestad"
+    moms: true
+
 notion:
   # VA:ns SOP-databas "Customer support bäverbutiken" (47 rader, kolumnen
   # Kategori: Payment, Delivery, Return and Refund …), länken Axel gav 2026-09-13.
@@ -42,20 +68,26 @@ notion:
 # Värdena tvist-SOP:erna (kundtjanst/sop/) fyller sina platshållare med.
 # Avläst ur butikens egen återbetalningspolicy 2026-09-20 — inte gissat.
 tvister:
-  # Butikens EGEN policy, ordagrant: "Vi har 30 dagars returpolicy, vilket
-  # betyder att du har 30 dagar på dig att begära retur från det att du
-  # mottog artikeln." ⚠️ FRÅN MOTTAGANDET. Leveranstiden är 3–4 veckor
-  # (mätt på tvistordrarna: #5418 beställd 16/8, levererad 11/9 = 26 dagar),
-  # så fönstret öppnar en månad efter köpet.
-  returfonster_dagar: 30
+  # ⚠️ Axels beslut 2026-09-22 (alternativ B): returfönstret är 14 dagar från
+  # mottagandet — samma som den lagstadgade ångerrätten. Autosvaret och
+  # tvist-SOP:erna säger 14 sedan dess. Den publicerade policyn
+  # (policy_url nedan) och VA:ns SOP 18 i Notion sade fortfarande 30 vid
+  # beslutet ("Vi har 30 dagars returpolicy … från det att du mottog
+  # artikeln") — Axel ändrar policysidan i Shopify själv; tills dess kan en
+  # kund peka på sidans 30 dagar. FRÅN MOTTAGANDET gäller fortfarande:
+  # leveranstiden är 3–4 veckor (mätt på tvistordrarna: #5418 beställd 16/8,
+  # levererad 11/9 = 26 dagar), så fönstret öppnar en månad efter köpet.
+  returfonster_dagar: 14
   # Lagstadgad ångerrätt, står på samma sida: 14 dagar från mottagandet
-  # (distansavtalslagen 2005:59). Gäller parallellt med de 30 dagarna.
+  # (distansavtalslagen 2005:59).
   angerratt_dagar: 14
   policy_url: "https://baverbutiken.se/policies/refund-policy"   # svarar 200, avläst 2026-09-20
   # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen
   # accepteras skickar vi dig instruktioner om hur och var du ska skicka
   # paketet") och ska inte heller göra det — kunden ska höra av sig först.
-  returadress: "Sjöhed 160"
+  # Hela adressen som VA:n själv skriver i returmejlen (Skickat 2026-09-14 och
+  # 2026-09-16), kommaseparerad — autosvaret skriver en rad per del.
+  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
   # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
   # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
   # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en

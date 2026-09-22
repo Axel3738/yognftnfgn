@@ -326,12 +326,35 @@ export function sparaResultat(r) {
   return { rapport: join(mapp, `${r.vecka}.md`), engelsk: join(mapp, `${r.vecka}.en.md`), dashboard: dash };
 }
 
-/** Postar i Discord: brandets server (bot) eller webhook. Returnerar en rad för loggen. */
+/** Discords tak per meddelande. */
+export const DISCORD_MAX = 2000;
+
+/**
+ * Delar en rapport i bitar som Discord tar emot (max 2000 tecken), på
+ * radgränser; en enskild rad längre än taket klipps hårt. Ren. (Autosvarets
+ * första torrkörning 2026-09-21: 13 flaggade + 4 varningar gav 400
+ * BASE_TYPE_MAX_LENGTH och ingen rapport alls.)
+ */
+export function delaDiscord(text, max = DISCORD_MAX) {
+  const delar = [];
+  let cur = '';
+  for (const rad of String(text ?? '').split('\n')) {
+    const bit = rad.length > max ? rad.slice(0, max - 1) + '…' : rad;
+    if (cur && (cur + '\n' + bit).length > max) { delar.push(cur); cur = bit; }
+    else cur = cur ? cur + '\n' + bit : bit;
+  }
+  if (cur) delar.push(cur);
+  return delar;
+}
+
+/** Postar i Discord: brandets server (bot) eller webhook. Långa rapporter går i flera meddelanden. Returnerar en rad för loggen. */
 export async function postaDiscord(r, { text, kanal = null, server = null, env = process.env } = {}) {
   const sprak = await granskaSprak(text);
   if (sprak.stoppad) throw new Error(stoppText(sprak.orsak));
   const kanalnamn = String(kanal || r?.brand?.discord?.kanal || 'customer-service').replace(/^#/, '');
   const webhook = env[`DISCORD_WEBHOOK_URL_${String(r?.brand?.id ?? '').toUpperCase().replace(/[^A-Z0-9]+/g, '_')}`];
+  const delar = delaDiscord(sprak.text);
+  const flera = delar.length > 1 ? ` (${delar.length} meddelanden)` : '';
   if (env.DISCORD_BOT_TOKEN) {
     const { hamtaGuilds, hittaEllerSkapaKanal, skickaMeddelande } = await import('../factory/discord.mjs');
     const { valjButiksServer } = await import('../tools/discord-rapport.mjs');
@@ -340,14 +363,16 @@ export async function postaDiscord(r, { text, kanal = null, server = null, env =
     const vald = valjButiksServer(guilds, onskad);
     if (!vald) throw new Error(`Boten sitter inte i servern "${onskad}" (den sitter i: ${guilds.map((g) => g.name).join(', ') || 'ingen'}). Sätt discord.server i brandfilen.`);
     const k = await hittaEllerSkapaKanal(vald.id, kanalnamn);
-    await skickaMeddelande(k.id, sprak.text);
-    return `Discord: #${k.name} i ${vald.name}${k.skapad ? ' (kanalen skapades)' : ''}`;
+    for (const del of delar) await skickaMeddelande(k.id, del);
+    return `Discord: #${k.name} i ${vald.name}${k.skapad ? ' (kanalen skapades)' : ''}${flera}`;
   }
   const url = webhook || env.DISCORD_WEBHOOK_URL;
   if (!url) throw new Error('Ingen Discord-auth (DISCORD_BOT_TOKEN eller DISCORD_WEBHOOK_URL).');
-  const svar = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: sprak.text.slice(0, 2000), username: 'Kundtjänst' }) });
-  if (!svar.ok) throw new Error(`Discord-webhooken svarade ${svar.status}`);
-  return 'Discord: webhook';
+  for (const del of delar) {
+    const svar = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ content: del, username: 'Kundtjänst' }) });
+    if (!svar.ok) throw new Error(`Discord-webhooken svarade ${svar.status}`);
+  }
+  return `Discord: webhook${flera}`;
 }
 
 // ------------------------------------------------------------------ CLI

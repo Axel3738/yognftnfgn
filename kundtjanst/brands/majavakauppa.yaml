@@ -1,0 +1,50 @@
+# Majavakauppa — Bäverbutikens finska butik (majavakauppa.fi, Shopify
+# q0uthu-xq). Inte byggd av fabriken, därför egen brandfil. Upplagd 2026-09-21
+# för autosvaret (Axels uppdrag: alla butiker).
+#
+# Brevlådan är på Loopia: MX för majavakauppa.fi pekar på
+# mailcluster.loopia.se (mätt 2026-09-21 via DNS). Avsändaren i Shopify är
+# asiakaspalvelu@majavakauppa.fi (Axels beslut B 2026-09-21) — det är adressen
+# kunderna svarar till, alltså brevlådan.
+# Nyckeln heter KUNDTJANST_MAIL_PASS_MAJAVAKAUPPA (Loopia-lösenordet).
+#
+# Shopify: appen bakom SHOPIFY_CLIENT_ID_FI/SECRET_FI har read_orders (mätt
+# 2026-09-21, en order läst).
+#
+# ⚠️ Finskan i svarsmallarna (kundtjanst/autosvar/svar.mjs) är skriven av
+# sessionen, inte av en finsktalande — kör --torr och läs utkasten innan
+# något skickas skarpt.
+
+brand:
+  namn: "Majavakauppa"
+  supportmail: "asiakaspalvelu@majavakauppa.fi"
+  shop: "q0uthu-xq.myshopify.com"
+  land: FI
+  valuta: EUR
+  aktiv: true
+
+shopify:
+  env_suffix: "FI"
+
+discord:
+  server: "Bäverbutiken"
+  kanal: customer-service-fi
+
+svar:
+  autosvar: true
+  sprak: fi
+  signatur: "Asiakaspalvelu Majavakauppa"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://majavakauppa.fi/pages/seuranta"
+  sparning_prefix: "BB-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+
+tvister:
+  returfonster_dagar: 30
+  angerratt_dagar: 14
+  policy_url: "https://majavakauppa.fi/policies/refund-policy"
+  forsta_svar_timmar: 24

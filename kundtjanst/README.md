@@ -76,21 +76,61 @@ konfigurerade (med en enda väljs den själv), `--tyst` tystar loggen.
 Listningen använder Roundcubes egna listkolumner och hämtar inte råmejlen —
 en sida med 50 mejl tar en sekund. Läsning markerar inte mejlet som läst.
 
-**Samma fem saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
+**Skrivning (2026-09-21, byggd för autosvaret):** samma CLI kan svara i
+tråden, spara utkast, flagga, flytta och skapa en mapp — aldrig radera,
+aldrig markera som läst:
+
+```bash
+node kundtjanst/mail.mjs svara 1650 --visa                     # vad svaret blir: till, ämne, citat — skickar inget
+node kundtjanst/mail.mjs utkast 1650 --text "Hej! …"           # sparar i Drafts (torrkörningen)
+node kundtjanst/mail.mjs svara 1650 --text "Hej! …"            # SKICKAR i tråden — går inte att ångra
+node kundtjanst/mail.mjs flagga 1650 [--av]                    # stjärnan på/av
+node kundtjanst/mail.mjs flytta 1650 --till VA-PRIO --skapa    # till en mapp (skapas bara med --skapa)
+node kundtjanst/mail.mjs mapp VA-PRIO                          # skapa en mapp
+```
+
+Svaret öppnas med Roundcubes eget svarsformulär (`_reply_uid`), så servern
+sätter `In-Reply-To`/`References` själv och tråden hänger ihop i kundens
+klient; kundens mejl citeras under vår text. Skrivvägen är avläst ur
+Roundcubes källkod (master 2026-09-21: `program/actions/mail/{compose,send,
+mark,move}.php`, `settings/folder_save.php`, `app.js submit_messageform`)
+och **mätt live mot Loopia 2026-09-21** i autosvarets första torrkörning.
+Två saker skilde sig från läsningen och är rättade: (1) `compose` utan `_id`
+svarar **302** till samma sida med ett nymintat `_id` — klienten följer den
+enda omdirigeringen; (2) Loopias brevlåda har namnrymden **`INBOX.`** —
+`save-folder VA-PRIO` skapar `INBOX.VA-PRIO`, och `hittaMapp()` slår upp det
+riktiga IMAP-namnet så att människan får säga `VA-PRIO`. Utkast (steg 8),
+flagga (9) och flytta (10) svarade som källkoden sa. Säger felet `steg 7`–`11`
+är det Loopias Roundcube som ändrat sig igen.
+
+⚠️ **Tråden byggs ur HELA Skickat, inte första sidan** (rättat samma kväll).
+Bäverbutikens Skickat hade 576 mejl på 12 sidor, och VA:ns svar från en vecka
+tillbaka låg på sida 4 och 5 — så två av fyra utkast i första torrkörningen
+gick till kunder som redan hade ett svar från oss. `autosvar.mjs mappIndex`
+läser nu inkorg, Skickat och Drafts sida för sida 30 dagar bakåt, en gång per
+körning (~30 s hos Bäverbutiken: 25 sidor inkorg + 9 sidor Skickat), och
+stannar när en hel sida är äldre än fönstret (`brevlada.tolkaListdatum` läser
+Roundcubes visningsdatum). Taket är 40 sidor per mapp; nås det står det som
+varning i rapporten i stället för att äldre svar tyst försvinner.
+
+**Samma saker som MCP-verktyg:** `kundtjanst/mail-mcp.mjs` är en
 stdio-MCP-server (JSON-RPC 2.0, en rad per meddelande, noll beroenden) som
 `.mcp.json` i repo-roten registrerar under namnet **`loopia-mail`**. En
 Claude Code-session i repot får då `mail_brands`, `mail_folders`,
-`mail_list`, `mail_read` och `mail_search` som riktiga verktyg — utan att
-komma ihåg en Bash-rad, och utan någon connector på claude.ai (Loopia har
-ingen). Servern håller Roundcube-sessionen levande mellan anropen, loggar in
-igen själv om den gått ut (30 min), kör anropen ett i taget per brevlåda
-(två parallella inloggningar gav 403, mätt 2026-09-21) och loggar ut när
-Claude Code stänger den.
+`mail_list`, `mail_read`, `mail_search` (läsning) och `mail_reply`,
+`mail_draft`, `mail_flag`, `mail_move` (skrivning) som riktiga verktyg — utan
+att komma ihåg en Bash-rad, och utan någon connector på claude.ai (Loopia har
+ingen). `mail_reply` är markerat `destructiveHint` (går inte att ångra);
+`mail_draft` är torrkörningen. Servern håller Roundcube-sessionen levande
+mellan anropen, loggar in igen själv om den gått ut (30 min), kör anropen ett
+i taget per brevlåda (två parallella inloggningar gav 403, mätt 2026-09-21)
+och loggar ut när Claude Code stänger den.
 
-Kräver bara `KUNDTJANST_MAIL_PASS_<ID>` i miljön — `.mcp.json` skickar
-Bäverbutikens vidare uttryckligen; en annan butiks nyckel läggs till där på
-samma sätt. `.claude/settings.json` har `enableAllProjectMcpServers` så
-servern startar utan godkännandeklick i rutinerna.
+Kräver bara `KUNDTJANST_MAIL_PASS_<ID>` i miljön — `.mcp.json` skickar alla
+kända brands nycklar vidare uttryckligen (Bäverbutiken, OPS-butikerna,
+Beverbutikken, Bæverbutiken, Majavakauppa); en ny butiks nyckel läggs till
+där. `.claude/settings.json` har `enableAllProjectMcpServers` så servern
+startar utan godkännandeklick i rutinerna.
 
 Prova för hand: `printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' | node kundtjanst/mail-mcp.mjs`.
 Skarpt mätt 2026-09-21 mot Bäverbutiken: INBOX 1 574 mejl på 32 sidor,
@@ -99,6 +139,244 @@ listning + sökning på en sida ≈ 2 s, `--kropp` ≈ 0,3 s per mejl.
 ⚠️ Utdata bär kundadresser i klartext — det är ett verktyg för den som redan
 har lösenordet. Maskera (`ka***@gmail.com`) innan något postas i Discord
 eller Notion; rapporterna gör det själva, CLI:n gör det inte.
+
+## Autosvaret: enkla mejl besvaras, arga lugnas, svåra flaggas (`autosvar.mjs`)
+
+Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
+själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
+
+```bash
+node kundtjanst/autosvar.mjs --kolla                                # vad går att läsa/skriva per butik
+node kundtjanst/autosvar.mjs --brand baverbutiken --torr            # svaren som UTKAST i Drafts, inget skickat
+node kundtjanst/autosvar.mjs --brand baverbutiken --skarpt --discord  # skarpt (bara efter 20 rätta utkast i rad)
+node kundtjanst/autosvar.mjs --alla --skarpt --loop 60              # minut-servern: samma kod, om och om igen
+```
+
+Tre hinkar, rena regler (`autosvar/hinkar.mjs`), ingen modell:
+
+| Hink | Vad | Vad motorn gör |
+|---|---|---|
+| **ENKEL** | var är min order, leveranstid, adressbyte före leverans, öppettider | svarar själv med fakta ur Shopify + 17TRACK (`autosvar/fakta.mjs`); saknas fakta ⇒ SVÅR |
+| **ARG** | frustration, hot om bank/ARN/recension, "aldrig fått", trasig vara, tredje mejlet utan svar | Axels lugnande rad (`autosvar/svar.mjs`, X = kundens faktiska problem), flaggar och flyttar till `VA-PRIO` |
+| **SVÅR** | retur, återbetalning, reklamation, tvist, fel vara, allt som inte går att belägga | inget svar, bara flagga |
+| SKIP | autosvar, listmejl, Shopify/Klarna-notiser, butikens egna adresser | rörs inte |
+
+Järnreglerna står i `.claude/commands/autosvar.md` och som tester i
+`test/autosvar.test.mjs`: ett automatiskt svar per tråd någonsin (Sent, Drafts
+OCH loggen `autosvar/logg/<butik>.jsonl` räknas — ett dygns spärr per kund
+dessutom), aldrig på tvistord eller bilagor, aldrig ett löfte
+(`harForbjudet`), aldrig en annan kunds order (orderns e-post måste vara
+avsändarens), kundens språk (sv/nb/da/fi/en), signatur = butikens supportnamn.
+Allt i svaret kommer ur brandfilens `svar:`-block (leveranslöfte, packtid,
+spårningssida, signatur, VA-mapp), ur Shopify (order, sändning, skickdag) eller
+ur 17TRACK (senaste skanningen, gratis läsning — registreras aldrig här).
+Svenska skanningsfraser översätts med `sparning/oversatt.mjs`; engelska
+kunder får fraktbolagets egen rad.
+
+Bäverbutikens Shopify-app för kundtjänsten kräver `SHOPIFY_CLIENT_ID/SECRET_
+BAVERBUTIKEN_EMAILSCRAPER`; saknas de faller `korkonfig` tillbaka på den
+uppsättning `SHOPIFY_SHOP_<X>` som bär butikens domän (`_SE`, `_NO`, `_DK`,
+`_FI` — mätt 2026-09-21: NO/DK/FI-apparna läser ordrar, SE-appen saknar
+`read_orders`).
+
+**Första riktiga torrkörningen 2026-09-21 kväll** (Bäverbutiken, 31 + 48 mejl
+i två sessioner samtidigt — kör aldrig så, se `.claude/commands/autosvar.md`):
+skrivvägen fungerar (utkast i `INBOX.Drafts`, flagga, `INBOX.VA-PRIO`), men
+utkasten avslöjade fyra regelfel som är rättade samma kväll: Shopifys
+kontaktformulär (`autosvar/kontaktformular.mjs` — kunden i Reply-To är
+avsändaren), trådar VA:n redan besvarat (`redanBesvaradAvOss`), gammal fakta
+(`fakta.staltFakta`: försenat, inga skanningar, oskickad, tvist) och "den
+trasiga varan" om en vara som bara var för liten. Loggens trådnyckel hashas
+sedan dess; `autosvar/logg-maskera.mjs` rättar en äldre logg.
+
+### SOP-avstämningen 2026-09-21 — VA:ns SOP:er styr svaren
+
+Axels order 2026-09-21 kväll: "läs igenom våra SOP:er för kundsupporten".
+VA:ns SOP-databas är Notion **"Bäverkoppling.se"** (`333270ab-908c-8053-b629-f49e7f93ce71`,
+~45 rader, PDF-bilagor SOP 01–40). Integrationen "Bäverbutiken RUTINER" är
+INTE inbjuden dit — men kopian **"Customer support bäverbutiken"**
+(`3aa270ab-908c-8057-a8a0-cc691d9e956b`, brandfilens `notion.sop_database_id`)
+är det, och bär 34 av PDF:erna. De lästes den kvällen (hämtade via REST,
+text ur `pdf-parse`). Axel bjöd in integrationen till originalet samma natt,
+och de elva sista lästes då: **alla 42 PDF:er är lästa.** Originalens SOP 36/37
+är samma text som kopians.
+
+SOP:ernas README säger själv att de är skrivna för ett annat brand
+(Bäverkoppling/Grill) och ska tas "with a pinch of salt" — bara det
+brandneutrala eller det som står i brandfilen har automatiserats:
+
+| SOP | Regel i motorn |
+|---|---|
+| 36/37 Where is my package / When will it arrive | WISMO-svaret säger var paketet ÄR: **hos ombudet** (bolag + kollinummer ur 17TRACK `misc_info`), **ute för leverans i dag**, **framme i landet — sista biten 1–2 arbetsdagar** (inhemskt bolag i `misc_info` = i landet), annars senaste skanningen. Senaste skanning äldre än 3 dagar ⇒ SOP:ens rad *"helt normalt att spårningen står still — paketet är på väg ändå"*. Passerat fönster / inga skanningar ⇒ aldrig ett gissat datum, VA:n (`staltFakta`) |
+| 06 Package missing after delivered | Levererat enligt fraktbolaget + lugn kund ⇒ ENKEL `levererad`: leveransskanningen (datum, ort) + checklistan brevlåda/avi/ombud/grannar/skyddad plats, aldrig ordet "borttappat"; flaggas + VA-mappen så VA:n följer upp. Arg kund ⇒ ARG som förut |
+| 11/30 Order confirmation / tracking mail not received | Nämner kunden en saknad bekräftelse ⇒ WISMO-svaret får skräppost-raden (sök på butikens namn); leveranstid-svaret nämner skräpposten |
+| 05/08 Damaged / wrong product | Lugn kund ⇒ ENKEL `foton`: beklagan utan löfte + bildförfrågan (vara, förpackning, fraktetikett) + ordernumret om det saknas i mejlet; flaggad + VA-mappen så VA:n tar ärendet när bilderna kommer. Arg kund ⇒ ARG-svaret (Axels rad) med samma bildförfrågan. *(Kalibreringen 2026-09-22 — före det var "trasig vara" ARG i sig)* |
+| 38 Company information | ENKEL `foretag` ur brandfilens `svar.foretag` (namn, orgnr, adress, moms) — aldrig ett personnamn; saknas blocket ⇒ VA:n |
+| 36 steg 1 Ask for order number | Bakom `svar.fraga_ordernummer` (standard av): WISMO utan order ⇒ be om ordernumret + flagga. Axels beslut per butik |
+| 02 Tracking not updating / stuck | Säger kunden själv att spårningen står still får WISMO-svaret lugnande raden även när skanningen är färsk (`namnerStillaSparning`); aldrig "borta"/"förlorat". Utanför fönstret ⇒ VA:n (agenten kontaktas, aldrig ett gissat datum) |
+| 07 Wrong quantity | "fel antal", "saknas en", "för få" ⇒ kategorin `fel_vara` ⇒ ENKEL `foton` (bild på det som kom är SOP:ens första steg), flaggad + VA-mappen. Leverantören först, sedan ägaren — VA:n tar resten |
+| 15/34 Not as pictured / website complaints | "ser inte (alls) ut som på bilden", "not at all like" ⇒ `fel_vara`; arg kund ⇒ ARG med neutralt X ("varan som inte stämde") + bildförfrågan; lugn kund ⇒ ENKEL `foton` + flagga, så ägaren ser webbplatsfeedbacken via VA-mappen |
+| 13/16/17/35 Product fit / specs / compatibility / pre-purchase | Produktspecifika fakta för Bäverkopplings kontakter — gäller inte Bäverbutikens produkter. Produktfrågor är aldrig ENKEL; "never confirm values you are not certain about" ⇒ VA:n |
+| 21 Exchange | Inga direkta byten, retur + ny order, ägarens godkännande ⇒ SVÅR (`retur_angerratt`, och `hinkar.arByte`: "för litet", "en storlek större", "passar inte", "too small" ⇒ "byte eller storlek (SOP 21) — VA:n beslutar", varken argt eller enkelt) |
+| 09 Address change | Oskickad ⇒ svar + flagga + VA-mappen (VA:n ändrar i Shopify); skickad ⇒ VA:n. Oförändrat |
+| 10, 18, 20, 25, 22/12, 23, 26, 32, 33, 39 (avbeställning, retur, återbetalning, tvist, betalning, tull, återförsäljare, rabatt, faktura) | Kräver ägarens beslut enligt SOP:en (3-stegs-returen: 30 % → 50 % → retur) ⇒ alltid SVÅR/VA:n. Aldrig automatiserat |
+
+### Kalibreringen 2026-09-22 — vad "arg" betyder, och vem kunden tillhör
+
+Axels dom på första torrkörningen: *"jag tyckte inte riktigt att han verkade
+så himla sur, Jan-Olof"* — ett artigt "överdraget är för litet, jag behöver en
+storlek större" hade fått eskaleringsmallen, för kategorin `skadad_defekt` var
+ett ARG-tecken i sig. Tre regler ändrades, alla som tester:
+
+- **ARG är riktig ilska** (`hinkar.arArg`): argt ordval, eskaleringsord, hot om
+  bank/anmälan, versaler, utropstecken, tredje mejlet utan svar. Kategorierna
+  `ej_levererad` och `skadad_defekt` räknas inte längre — lugnt är de WISMO med
+  fakta resp. ENKEL `foton`. Byte/storlek är SVÅR (SOP 21).
+- **Det arga svaret bär läget** (`svar.lageRader`, samma rader som WISMO-svaret):
+  "Det här ser jag just nu om din order #…" — bara med färsk fakta (ingen
+  `sparr`) och kundens egen order. Faktan hämtas för ARG när mejlet handlar om
+  paketet.
+- **Kunden är VA:ns i 14 dagar** (`hinkar.VA_KUND_DAGAR`, `byggTrad.vaDagar`):
+  har VA:n skrivit till adressen i Skickat de senaste 14 dagarna, i vilken tråd
+  som helst, får kunden inget automatiskt svar — bara flagga. Upptäckt i samma
+  kalibrering: Ulf svarade "Skräp! Tills ni skickar 3 nya …" på en
+  **Judge.me-recensionsförfrågan**, och trådregeln såg inte VA:ns fyra svar i
+  kontaktformulärstråden samma vecka. Utkastet "Jag eskalerar detta …" hade
+  pratat i munnen på VA:n.
+
+**Och en bugg som hade gjort båda vakterna blinda live:** `Brevlada.lista`
+skickade mappnamnet rakt till Roundcube, och Roundcube 1.7 på Loopia svarar
+med en **tom lista, inget fel**, för en mapp som inte finns. Trådbyggaren
+provade aliasen `Sent` → `INBOX.Sent` → … och tog det första som "fanns" —
+alltså den tomma `Sent`. Skickat lästes aldrig, Drafts inte heller (samma
+alias-loop): VA:ns fyra svar till Ulf syntes inte, och ett utkast i
+`INBOX.Drafts` hindrade inte ett andra utkast till Hans i nästa körning. Bara
+loggen (`minne`) höll dubbelsvaren borta — men loggen delas inte mellan
+containrar. Rättat i `brevlada.mjs` (`losMapp`: namnet slås upp mot
+brevlådans kända mappar, okänt ⇒ `MAPP_SAKNAS`), testat mot den falska
+Roundcuben, och **verifierat live i en tredje `--igen`-körning:** Ulf ⇒ SVÅR
+"VA:n skrev till kunden för 3 dagar sedan (annan tråd)", Hans ⇒ "tråden har
+redan ett svar från oss" (utkastet i Drafts), noll nya utkast.
+
+### Axels feedback på utkasten 2026-09-22 — mallarna omskrivna
+
+Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
+
+- **ARG börjar aldrig med "jag eskalerar detta".** Ordningen är: hälsning
+  med namn → *"Jag förstår helt din frustration."* → problemet i klartext,
+  minst lika argt som kunden (*"En produkt som inte alls ser ut som på bilden
+  är helt oacceptabelt, och det är inget vi står för"*) → *"Jag har eskalerat
+  det här direkt till vårt ansvariga team som ett brådskande ärende — du kan
+  räkna med svar inom de kommande dagarna"* → *"Har du mer information …
+  svara på det här mejlet"* + bilderna. X (`svar.mjs` → `t.x`) är HELA
+  meningar, personliga per ärende: `som_pa_bilden` (Tobias), `kvalitet`
+  (Morgan: "rent skräp, tunt som en ICA-kasse"; Tony: "sop-påse"),
+  `skadad_defekt`, `ej_levererad`, `vantat` … och `opostad(n)` — Axels eget
+  exempel "din order har legat opostad i 13 dagar" — när ordern är oskickad
+  längre än packtiden. Bilderna begärs på alla produktklagomål.
+- **Returinformationen direkt** (Peter: "hur gör vi enklast för en smidig
+  retur?" — Axel: "då kan vi ju skicka han returinformationen direkt"):
+  `hinkar.arReturfraga` känner igen avsikten (vill returnera / hur gör jag /
+  returadress …), lugn ⇒ ENKEL `retur`, arg ⇒ ARG-svaret + returblocket.
+  Texten följer VA:ns egna returmejl i Skickat: originalförpackning, namn +
+  ordernummer på paketet, kopia av bekräftelsen, adressen rad för rad
+  (brandfilens `tvister.returadress`, nu hela adressen), spårbar frakt +
+  spårningsnumret till oss, 30 dagar från mottagandet, policylänken. Vem som
+  betalar returfrakten sägs BARA när `tvister.returfrakt_betalas_av` är
+  ifyllt — det är tomt (ägarens beslut), fast VA:n skriver "kundens ansvar".
+  Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot returen.
+- **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
+  "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
+  YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
+  biten — det brukar levereras inom 1–2 arbetsdagar"*, eller *"Paketet är
+  skickat och på väg"* + datumet för senaste uppdateringen (ingen ort, inget
+  land), plus **bävernumret i klartext** bredvid länken (`fakta.bavernummer`).
+  Skräppost-raden ("sök på Bäverbutiken") behölls — Axel: "jättebra tips".
+- Löftesspärren (`harForbjudet`) ignorerar länkar sedan samma natt —
+  policylänken heter `…/refund-policy` och stoppade hela returinformationen.
+
+**Andra feedbackrundan (Tobias, Juan, Morgan, samma natt) — allt inlagt:**
+
+- **Inga tankstreck i mejl.** Axel: "det märker man direkt att det är AI och
+  det känns bara opersonligt". Inga "—" mellan satser, inga "–" i intervall:
+  "1-2 arbetsdagar", "2-4 dagar", "24 sep till 1 okt". Testet kör varje mall
+  på alla fem språk och felar på ett enda streck.
+- **"Svar inom 48 timmar"** i stället för "inom de kommande dagarna"
+  (`svar.eskalering_timmar`, standard 48 — Axel: sätt förväntningen där, VA:n
+  svarar snabbare ändå).
+- **Ordernumret efterfrågas när det saknas.** Tobias skrev inget nummer, och
+  ingen order fanns på hans adress. Då byts "har du mer information … svara"
+  mot "för att vi ska kunna hitta din order behöver vi ditt ordernummer".
+  ARG hämtar därför alltid faktan (ordern hittas på e-posten även utan nummer
+  i mejlet); läget ur spårningen visas bara när mejlet handlar om paketet.
+- **Returen: "posta direkt till adressen, inte till ett ombud — vi hämtar
+  inte ut paket från ombud"** som egen rad efter adressen, på alla språk.
+- **Returfönstret:** Axel frågade om SOP:erna säger 14 eller 30. **SOP 18
+  (Customer Wants to Return) säger 30 dagar från mottagandet**, och nämner
+  EU:s 14 dagars ångerrätt vid sidan om ("Refer to the 30-day return policy
+  and the EU 14-day right of withdrawal"); den publicerade policyn
+  (`/policies/refund-policy`) säger också 30. **Axels beslut 2026-09-22,
+  alternativ B: 14 dagar.** `tvister.returfonster_dagar` är 14 i
+  Bäverbutikens brandfil sedan dess, så returmejlet och tvist-SOP:ernas
+  platshållare säger 14. ⚠️ Policysidan i Shopify och SOP 18 i Notion sade
+  fortfarande 30 vid beslutet — de är Axels respektive VA:ns att ändra, och
+  tills sidan är ändrad kan en kund peka på dess 30 dagar.
+- Utkastet "Niklas Hurtig, Re:" i Drafts är daterat 2026-08-19 och kommer
+  inte från autosvaret (som byggdes 2026-09-21). Axels invändning gäller
+  ändå som regel: nämn fraktbolaget för sista biten vid namn (det gör
+  `framme(bolag)` ur 17TRACK), aldrig "den lokala transportören", och
+  spårningslänken följer alltid med när ett spårningsnummer finns.
+
+**Femte `--igen`-körningen 2026-09-22 ~01:58 CEST med de nya mallarna:**
+50 mejl, **3 utkast** — Tobias (ARG `som_pa_bilden` + bilder), Morgan (ARG
+`kvalitet`), Juan #6504 (kontaktformulär, "önskar returnera den ni skickade"
+⇒ ENKEL `retur` med hela returblocket). **Tony, Peter och Hans hade VA:n
+redan svarat på måndagen** (Skickat 21/9 kl 13:09, 11:03 resp. 12:33 CEST —
+alltså FÖRE den första kalibreringskörningen 01:10). Tre av de fem utkast
+Axel läste gick alltså till kunder VA:n redan svarat samma dag: Skickat-vakten
+var blind (mappbuggen ovan) tills den fjärde körningen. Med Skickat läst
+säger motorn "tråden har redan ett svar från oss" resp. "VA:n skrev till
+kunden för 1 dag sedan" och skriver inget utkast — precis vad regeln ska
+göra. Axels feedback på texten gäller ändå; mallarna är omskrivna efter den.
+
+`--igen` är kalibreringsläget (kräver `--torr`): flaggor och loggen ignoreras
+så fönstrets mejl bedöms på nytt. **Körningen 2026-09-22 ~01:10 CEST på
+Bäverbutiken:** 50 mejl lästa, 6 hoppade, **1 ENKEL** (Hans, kontaktformulär
+"var är mitt husvagnsöverdrag, ingen orderbekräftelse" → order på e-post,
+skickad 15/9, framme i Sverige hos DHL, spårningslänk + skräppost-raden),
+**5 ARG** (Tobias "Vad är det här för skit?" + bilder; Morgan "rent skräp …
+full återbetalning"; Tony "sop-påse med spännband!!! … Klarna" + bilder; Peter
+"är detta ett skämt … sociala medier … smidig retur?" + bilder; och Ulf — fel,
+se ovan, rättat och utkastet borttaget), **38 SVÅR** flaggade (Jan-Olof nu
+"byte eller storlek (SOP 21)", Eric #5953 "tvist hos Shopify", "Kamera
+leverans?" "tråden har redan ett svar från oss", AnnChristin retur — gårdagens
+fyra felaktiga utkast är alltså alla rätt nu). Ett mönster att veta om: Hans
+skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
+och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
+kunden får fakta om paketet, VA:n har hotet.
+
+### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
+
+Axels fråga 2026-09-22: en annan session bygger en kundtjänst-dashboard och
+ska kunna visa arga kunder, ärenden och vad autosvaret gjort. Kontraktet står
+i **`kundtjanst/autosvar/DASHBOARD.md`** — läs den först. Kort:
+
+```bash
+node kundtjanst/autosvar/oversikt.mjs --brand baverbutiken           # svensk tabell
+node kundtjanst/autosvar/oversikt.mjs --alla --dagar 30 --json       # { [butik]: översikt }
+```
+
+Läser bara loggen (`autosvar/logg/<butik>.jsonl`), senaste raden per
+Message-ID vinner, och ger per butik antal per hink, per typ/kategori/språk,
+per dag, de arga raderna (med `x`, `lage`, `retur`), de svarade, de som
+ligger hos VA:n utan svar, och felen. Kundadresserna är redan maskerade i
+loggen och maskeras aldrig upp. Ren funktion (`oversikt(rader, {nu, dagar})`),
+testad. Mätt mot den riktiga loggen 2026-09-22: 5 körningar, 102 mejl,
+67 ärenden, 1 ENKEL, 2 ARG, 64 SVÅR, 3 utkast, 0 skickade.
+
+Tre saker dashboard-sessionen aldrig gör (står i DASHBOARD.md → "Rör inte"):
+kör `autosvar.mjs` mot en brevlåda (en session per brevlåda), skriver i
+loggen (motorns minne för "ett svar per tråd"), raderar mejl.
 
 ## Så hänger det ihop
 

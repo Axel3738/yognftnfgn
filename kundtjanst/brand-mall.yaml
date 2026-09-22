@@ -56,7 +56,7 @@ notion:
 # åt, och det är hela poängen: en ny butik får fungerande tvisthantering genom
 # att fylla i tio rader, inte genom att skriva om rutinerna.
 tvister:
-  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden
+  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden, kommaseparerad ("BOLAG AB, Gatan 1, 123 45 Ort, Sverige"); autosvaret skriver en rad per del i returinformationen
   # true = adressen står INTE publikt någonstans; kunden måste mejla kundtjänst
   # för att få den. Det ger färre returer, men bara om svaret går ut inom
   # forsta_svar_timmar nedan — ett missat mejl blir en tvist, och en tvist
@@ -104,6 +104,33 @@ tvister:
   # talet som avgör om returadress_pa_forfragan ovan är en bra idé eller en
   # tvistgenerator.
   forsta_svar_timmar: 24
+
+# Autosvaret (kundtjanst/autosvar.mjs, 2026-09-21): svarar själv på ENKLA mejl
+# (var är min order, leveranstid, adressbyte före leverans, öppettider) med
+# fakta ur Shopify + 17TRACK, lugnar ARGA kunder med Axels mall och flaggar
+# allt SVÅRT till VA:n. Allt som står i ett svar kommer härifrån eller ur
+# systemen — aldrig ur huvudet. Tomma fält = motorn säger det i --kolla.
+svar:
+  autosvar: true              # false = motorn rör inte den här brevlådan alls
+  sprak: ""                   # sv|nb|da|fi|en — kundens språk vinner; tomt = ur brand.land
+  signatur: ""                # "Kundtjänst Bäverbutiken" — tomt = "Kundtjänst <namn>" på kundens språk. ALDRIG "AI"
+  leverans_dagar: [7, 14]     # butikens leveranslöfte, kalenderdagar från skickdagen (samma som fraktmejlen lovar)
+  packas_dagar: 2             # arbetsdagar från order till sändning
+  sparningssida: ""           # https://<butik>/pages/spara — kundens spårningssida (sparning/butiker.json). Tomt = ingen länk i svaret
+  sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)
+  va_mapp: VA-PRIO            # mappen ARGA trådar flyttas till — VA:n tar den först. Skapas om den saknas
+  svarstid_timmar: 24         # "vi svarar inom N timmar på vardagar" — måste hållas, annars ljuger svaret
+  eskalering_timmar: 48       # det ARGA svarets "du kan räkna med svar inom N timmar" (Axel 2026-09-22: 48 sätter förväntningen, VA:n svarar snabbare)
+  max_per_korning: 20         # tak på automatiska svar per körning; resten flaggas
+  fonster_timmar: 72          # mejl äldre än så får aldrig ett automatiskt svar (VA:n har dem)
+  fraga_ordernummer: false    # SOP 36 steg 1: "var är min order" utan order på e-posten ⇒ be om ordernumret. false = VA:n
+  # SOP 38: företagsuppgifterna är offentliga och ska gå ut direkt — BARA dessa fyra, aldrig VD:ns namn.
+  # Utelämna blocket så går frågan till VA:n.
+  # foretag:
+  #   namn: "Stonebite Ecom AB"
+  #   orgnr: "559576-2401"
+  #   adress: "Sjöhed 160, 442 74 Harestad"
+  #   moms: true
 
 trosklar:
   arenden_dagar: 30           # hur långt bakåt mejlen läses. ⚠️ Sänk den inte till 7 —
