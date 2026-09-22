@@ -14,7 +14,7 @@
 //    hade visat annonserna i Sverige på NO-budget).
 //  • Sida och Instagram-konto ärvs ur kampanjens befintliga annonser.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeSync } from 'node:fs';
 import { basename } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
@@ -26,9 +26,27 @@ const TOKEN = process.env.META_ACCESS_TOKEN;
  *  om processen med NODE_USE_ENV_PROXY=1 och återvänder aldrig i så fall. */
 export function säkerställProxy() {
   if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+    // ⚠️ stdout FÅR INTE ärvas här. Med stdio:'inherit' kom barnets stdout aldrig
+    // fram till förälderns utfil: verktyget skrev sina 2 841 tecken, sa
+    // "Utskriften klar.", och filen blev ändå 0 byte. Mätt 2026-09-22 på
+    // /ops-oversatt carashell, fem körningar; samma körning med
+    // NODE_USE_ENV_PROXY=1 (alltså utan omstarten) gav 2 845 byte.
+    // Det farliga var inte att datan försvann utan att den försvann TYST — en tom
+    // ko.json läser exakt som "kön var tom", och exitkoden var 0.
+    // stderr ärvs fortfarande, så loggen strömmar live som förut.
     const r = spawnSync(process.execPath, process.argv.slice(1), {
-      stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
+      stdio: ['inherit', 'pipe', 'inherit'],
+      env: { ...process.env, NODE_USE_ENV_PROXY: '1' },
+      maxBuffer: 256 * 1024 * 1024,
     });
+    if (r.stdout?.length) {
+      // writeSync, inte process.stdout.write: en skrivning till ett rör är asynkron
+      // och process.exit() nedan hade kunnat kapa den mitt i.
+      for (let skrivet = 0; skrivet < r.stdout.length;) {
+        skrivet += writeSync(1, r.stdout, skrivet, r.stdout.length - skrivet);
+      }
+    }
+    if (r.error) { console.error(`✗ proxyomstarten misslyckades: ${r.error.message}`); process.exit(1); }
     process.exit(r.status ?? 1);
   }
 }
