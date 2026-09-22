@@ -725,8 +725,14 @@ async function huvud() {
   if (!process.env.META_ACCESS_TOKEN) do_('META_ACCESS_TOKEN saknas i miljön — kontot går inte att läsa.');
 
   const ko = await byggKo({ nyckel, marknad: flagga('marknad', 'SE'), status: flagga('status'), ut: flagga('ut') });
-  if (finns('json')) console.log(JSON.stringify(ko, null, 2));
-  else console.log(tabell(ko));
+  // Sista raden i loggen säger alltid hur kön SLUTADE. Utan den går det inte att
+  // skilja "kön var tom" från "verktyget dog tyst innan det hann skriva" — och en
+  // tom utfil läser som det första. (2026-09-21/22: fem körningar slutade med exit
+  // 0 och 0 byte, och loggen gav ingen ledtråd om var.)
+  const text = finns('json') ? JSON.stringify(ko, null, 2) : tabell(ko);
+  console.error(`Kön klar: ${ko.rader.length} rader, ${ko.varningar.length} varningar — skriver ${text.length} tecken`);
+  console.log(text);
+  console.error('Utskriften klar.');
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
