@@ -89,7 +89,7 @@ export function markdown({ idag, konto, annons, kommentarer, dagar }) {
   return { text: ut.join('\n'), invandningar };
 }
 
-async function graph(path, token) {
+export async function graph(path, token) {
   const url = `https://graph.facebook.com/${V}/${path}${path.includes('?') ? '&' : '?'}access_token=${token}`;
   const r = await fetch(url);
   const j = await r.json();
@@ -103,7 +103,7 @@ async function graph(path, token) {
   return j;
 }
 
-async function allaSidor(path, token, max = 2000) {
+export async function allaSidor(path, token, max = 2000) {
   const ut = [];
   let nasta = path;
   while (nasta && ut.length < max) {
@@ -116,13 +116,56 @@ async function allaSidor(path, token, max = 2000) {
 }
 
 /** Top spendern i kampanjen senaste `dagar` dygn. */
-async function topSpender(kontoId, kampanjId, dagar, token) {
+export async function topSpender(kontoId, kampanjId, dagar, token) {
   const sedan = new Date(Date.now() - dagar * 86400000).toISOString().slice(0, 10);
   const idag = new Date().toISOString().slice(0, 10);
   const rader = await allaSidor(`${kampanjId}/insights?level=ad&fields=ad_id,ad_name,spend&time_range=${encodeURIComponent(JSON.stringify({ since: sedan, until: idag }))}&limit=500`, token);
   if (!rader.length) return null;
   rader.sort((a, b) => Number(b.spend) - Number(a.spend));
   return { id: rader[0].ad_id, name: rader[0].ad_name, spend: Number(rader[0].spend) };
+}
+
+/**
+ * Kommentarerna på en annons (eller kampanjens top spender) senaste `dagar`
+ * dygn. Samma väg som CLI:t: creativens inlägg → sidtoken → /comments.
+ * Kastar med samma feltexter som CLI:t skriver. Används av
+ * tools/invandningsmatris.mjs.
+ * @returns {{ annons: {id, name, spend?}, post: string, sida: string, kommentarer: Array<{message, created_time, like_count}> }}
+ */
+export async function hamtaKommentarer({ konto = 'SE', kampanj = null, annons: annonsId = null, dagar = 30, token }) {
+  if (!token) throw new Error('META_ACCESS_TOKEN saknas i miljön.');
+  const kontoId = KONTON[String(konto).toUpperCase()] ?? String(konto).replace(/^act_/, '');
+  let annons = null;
+  if (annonsId) {
+    const a = await graph(`${annonsId}?fields=id,name`, token);
+    annons = { id: a.id, name: a.name };
+  } else if (kampanj) {
+    annons = await topSpender(kontoId, kampanj, dagar, token);
+    if (!annons) throw new Error(`Kampanjen ${kampanj} har ingen spend senaste ${dagar} d.`);
+  } else {
+    throw new Error('Ge kampanj (top spendern hämtas) eller annons (ad_id).');
+  }
+  const c = await graph(`${annons.id}?fields=creative{effective_object_story_id}`, token);
+  const post = c.creative?.effective_object_story_id;
+  if (!post) throw new Error(`${annons.name}: creativen har inget inlägg (effective_object_story_id saknas) — kommentarer finns bara på inlägg.`);
+  const sidaId = post.split('_')[0];
+  const sida = await graph(`${sidaId}?fields=access_token,name`, token);
+  if (!sida.access_token) throw new Error(`Sidan ${sidaId} gav ingen sidtoken — kontot saknar sidrollen.`);
+  const sedanMs = Date.now() - dagar * 86400000;
+  const alla = await allaSidor(`${post}/comments?fields=message,created_time,like_count&filter=stream&limit=100`, sida.access_token);
+  const kommentarer = alla.filter((k) => Date.parse(k.created_time) >= sedanMs && String(k.message ?? '').trim());
+  return { annons, post, sida: sida.name, kommentarer };
+}
+
+/**
+ * Kampanjens annonser med namn och status — så täckningen i invändningsmatrisen
+ * läses ur kontot (formatet står i namnet: `_H1` video, `_1` bild). Läs-bara.
+ * @returns {Array<{id, name, status}>}
+ */
+export async function hamtaAnnonser(kampanjId, token) {
+  if (!token) throw new Error('META_ACCESS_TOKEN saknas i miljön.');
+  const rader = await allaSidor(`${kampanjId}/ads?fields=id,name,effective_status&limit=500`, token);
+  return rader.map((a) => ({ id: a.id, name: a.name, status: a.effective_status ?? null }));
 }
 
 async function huvud() {
@@ -134,27 +177,12 @@ async function huvud() {
   const kontoId = KONTON[konto] ?? konto.replace(/^act_/, '');
   const dagar = Number(flagga('dagar', 30));
   const idag = flagga('idag') ?? new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm' }).format(new Date());
-  let annons = null;
-  if (flagga('annons')) {
-    const a = await graph(`${flagga('annons')}?fields=id,name`, token);
-    annons = { id: a.id, name: a.name };
-  } else if (flagga('kampanj')) {
-    annons = await topSpender(kontoId, flagga('kampanj'), dagar, token);
-    if (!annons) { console.error(`✗ Kampanjen ${flagga('kampanj')} har ingen spend senaste ${dagar} d.`); process.exit(1); }
-  } else { console.error('✗ Ge --kampanj <id> (top spendern hämtas) eller --annons <ad_id>.'); process.exit(1); }
-
-  const c = await graph(`${annons.id}?fields=creative{effective_object_story_id}`, token);
-  const post = c.creative?.effective_object_story_id;
-  if (!post) { console.error(`✗ ${annons.name}: creativen har inget inlägg (effective_object_story_id saknas) — kommentarer finns bara på inlägg.`); process.exit(1); }
-  const sidaId = post.split('_')[0];
-  const sida = await graph(`${sidaId}?fields=access_token,name`, token);
-  if (!sida.access_token) { console.error(`✗ Sidan ${sidaId} gav ingen sidtoken — kontot saknar sidrollen.`); process.exit(1); }
-  const sedanMs = Date.now() - dagar * 86400000;
-  const alla = await allaSidor(`${post}/comments?fields=message,created_time,like_count&filter=stream&limit=100`, sida.access_token);
-  const kommentarer = alla.filter((k) => Date.parse(k.created_time) >= sedanMs && String(k.message ?? '').trim());
+  if (!flagga('annons') && !flagga('kampanj')) { console.error('✗ Ge --kampanj <id> (top spendern hämtas) eller --annons <ad_id>.'); process.exit(1); }
+  void kontoId;
+  const { annons, post, sida, kommentarer } = await hamtaKommentarer({ konto, kampanj: flagga('kampanj'), annons: flagga('annons'), dagar, token });
   const { text, invandningar } = markdown({ idag, konto, annons, kommentarer, dagar });
 
-  if (args.includes('--json')) console.log(JSON.stringify({ annons, post, sida: sida.name, antal: kommentarer.length, kluster: sammanfatta(kommentarer), invandningar }, null, 2));
+  if (args.includes('--json')) console.log(JSON.stringify({ annons, post, sida, antal: kommentarer.length, kluster: sammanfatta(kommentarer), invandningar }, null, 2));
   else console.log(text);
   const ut = flagga('ut');
   if (ut) {

@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-22T18:06:10.020Z",
+ "byggd": "2026-09-22T19:05:57.764Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-22T18:05:11.030Z"
+  "till": "2026-09-22T19:05:04.426Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -922,7 +922,7 @@
   "status": "ok",
   "orsak": null,
   "historikFran": "2026-09-07T19:07:46+00:00",
-  "matt": "2026-09-22T18:05:11.030Z",
+  "matt": "2026-09-22T19:05:04.426Z",
   "dagar": 14,
   "rutiner": [
    {
@@ -936,9 +936,9 @@
     },
     "schematext": "varje timme :16",
     "vad": "Skanningar in i Shopify + kundens spårningssida",
-    "senast": "2026-09-22T17:21:54+00:00",
-    "antal": 102,
-    "nasta": "2026-09-22T18:16:00.000Z",
+    "senast": "2026-09-22T18:21:26+00:00",
+    "antal": 103,
+    "nasta": "2026-09-22T19:16:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -954,9 +954,9 @@
     },
     "schematext": "varje timme :32",
     "vad": "Samma som Bäverbutikens, norsk kedja",
-    "senast": "2026-09-22T17:33:44+00:00",
-    "antal": 44,
-    "nasta": "2026-09-22T18:32:00.000Z",
+    "senast": "2026-09-22T18:33:47+00:00",
+    "antal": 45,
+    "nasta": "2026-09-22T19:32:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -972,9 +972,9 @@
     },
     "schematext": "varje timme :40",
     "vad": "Finsk kedja",
-    "senast": "2026-09-22T17:41:36+00:00",
-    "antal": 44,
-    "nasta": "2026-09-22T18:40:00.000Z",
+    "senast": "2026-09-22T18:41:46+00:00",
+    "antal": 45,
+    "nasta": "2026-09-22T19:40:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -990,9 +990,9 @@
     },
     "schematext": "varje timme :48",
     "vad": "Dansk kedja",
-    "senast": "2026-09-22T17:49:39+00:00",
-    "antal": 44,
-    "nasta": "2026-09-22T18:48:00.000Z",
+    "senast": "2026-09-22T18:49:58+00:00",
+    "antal": 45,
+    "nasta": "2026-09-22T19:48:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1008,9 +1008,9 @@
     },
     "schematext": "varje timme :24",
     "vad": "Fyrspråkig kedja (sv/nb/en/fi)",
-    "senast": "2026-09-22T17:25:58+00:00",
-    "antal": 47,
-    "nasta": "2026-09-22T18:24:00.000Z",
+    "senast": "2026-09-22T18:25:49+00:00",
+    "antal": 48,
+    "nasta": "2026-09-22T19:24:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1026,9 +1026,9 @@
     },
     "schematext": "varje timme :56",
     "vad": "Prefix MS-",
-    "senast": "2026-09-22T17:57:50+00:00",
-    "antal": 31,
-    "nasta": "2026-09-22T18:56:00.000Z",
+    "senast": "2026-09-22T18:57:40+00:00",
+    "antal": 32,
+    "nasta": "2026-09-22T19:56:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för mindre än en timme sedan"
@@ -1044,9 +1044,9 @@
     },
     "schematext": "varje timme :04",
     "vad": "Shopify + Meta + Discord + rutinvakten + bonus → snapshot.json → main → Railway. Byggd 2026-09-22 på Barkås-kontot (trig_01QwKgfZP3JdhZX6tbGo1LJb)",
-    "senast": "2026-09-22T17:06:28+00:00",
-    "antal": 5,
-    "nasta": "2026-09-22T19:04:00.000Z",
+    "senast": "2026-09-22T18:06:19+00:00",
+    "antal": 6,
+    "nasta": "2026-09-22T20:04:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -1067,7 +1067,7 @@
     "nasta": "2026-09-23T02:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 16 h sedan"
+    "ord": "körde för 17 h sedan"
    },
    {
     "id": "no-recensioner",
@@ -1085,7 +1085,7 @@
     "nasta": "2026-09-23T03:30:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 14 h sedan"
+    "ord": "körde för 15 h sedan"
    },
    {
     "id": "commission",
@@ -1103,7 +1103,7 @@
     "nasta": "2026-09-23T04:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 2 h sedan"
+    "ord": "körde för 3 h sedan"
    },
    {
     "id": "tvistkoll",
@@ -1142,7 +1142,7 @@
     "nasta": "2026-09-28T05:00:00.000Z",
     "avstangd": true,
     "status": "ok",
-    "ord": "körde för 8 dygn sedan — trots att registret säger avstängd; flaggan är gammal"
+    "ord": "körde för 9 dygn sedan — trots att registret säger avstängd; flaggan är gammal"
    },
    {
     "id": "briefgranskning",
@@ -1164,7 +1164,7 @@
     "nasta": "2026-09-24T05:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 37 h sedan"
+    "ord": "körde för 38 h sedan"
    },
    {
     "id": "notionkorning",
@@ -1200,7 +1200,7 @@
     "nasta": "2026-09-23T13:00:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "bildannonser",
@@ -1236,7 +1236,7 @@
     "nasta": "2026-09-22T22:41:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 19 h sedan"
+    "ord": "körde för 20 h sedan"
    },
    {
     "id": "nattvakt-carashell-termoskyddet",
@@ -1254,7 +1254,7 @@
     "nasta": "2026-09-22T22:57:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 19 h sedan"
+    "ord": "körde för 20 h sedan"
    },
    {
     "id": "leverans-carashell-takskyddet",
@@ -1272,7 +1272,7 @@
     "nasta": "2026-09-23T12:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 6 h sedan"
+    "ord": "körde för 7 h sedan"
    },
    {
     "id": "leverans-carashell-termoskyddet",
@@ -1290,7 +1290,7 @@
     "nasta": "2026-09-23T12:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 6 h sedan"
+    "ord": "körde för 7 h sedan"
    },
    {
     "id": "no-carashell-takskyddet",
@@ -1308,7 +1308,7 @@
     "nasta": "2026-09-23T14:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "no-carashell-termoskyddet",
@@ -1326,7 +1326,7 @@
     "nasta": "2026-09-23T14:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "spegla-carashell-takskyddet",
@@ -1344,7 +1344,7 @@
     "nasta": "2026-09-23T14:45:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 1 h sedan"
+    "ord": "körde för 2 h sedan"
    },
    {
     "id": "spegla-carashell-termoskyddet",
@@ -1362,7 +1362,7 @@
     "nasta": "2026-09-23T14:55:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 3 h sedan"
+    "ord": "körde för 4 h sedan"
    },
    {
     "id": "us-carashell-takskyddet",
@@ -1380,7 +1380,7 @@
     "nasta": "2026-09-23T15:05:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 26 h sedan"
+    "ord": "körde för 27 h sedan"
    },
    {
     "id": "us-carashell-termoskyddet",
@@ -1398,7 +1398,7 @@
     "nasta": "2026-09-23T15:15:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 3 h sedan"
+    "ord": "körde för 4 h sedan"
    },
    {
     "id": "nattvakt-hemvakten",
@@ -1488,7 +1488,7 @@
     "nasta": "2026-09-22T22:17:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 20 h sedan"
+    "ord": "körde för 21 h sedan"
    },
    {
     "id": "leverans-drytrek",
@@ -1506,7 +1506,7 @@
     "nasta": "2026-09-23T11:50:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 6 h sedan"
+    "ord": "körde för 7 h sedan"
    },
    {
     "id": "no-drytrek",
@@ -1524,7 +1524,7 @@
     "nasta": "2026-09-23T13:50:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för 4 h sedan"
+    "ord": "körde för 5 h sedan"
    },
    {
     "id": "nattvakt-kalender",
@@ -1662,6 +1662,55 @@
    "ny": 0
   },
   "handelser": [
+   {
+    "tid": "2026-09-22T18:57:40+00:00",
+    "rutin": "sparning-matstrumpor",
+    "namn": "Spårningen Matstrumpor",
+    "brand": "matstrumpor",
+    "rubrik": "sparning matstrumpor: 2026-09-22 — 0 event, 113 paket"
+   },
+   {
+    "tid": "2026-09-22T18:49:58+00:00",
+    "rutin": "sparning-baeverbutiken",
+    "namn": "Spårningen Bæverbutiken (DK)",
+    "brand": "baverbutiken",
+    "rubrik": "Spårning Bæverbutiken: rond 2026-09-22 20:49 CEST (1 paket, 18 händelser)"
+   },
+   {
+    "tid": "2026-09-22T18:41:46+00:00",
+    "rutin": "sparning-majavakauppa",
+    "namn": "Spårningen Majavakauppa (FI)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning majavakauppa: 2026-09-22 20:41 — 0 event, 0 registrerade, sidan publicerad (30 paket)"
+   },
+   {
+    "tid": "2026-09-22T18:33:47+00:00",
+    "rutin": "sparning-beverbutikken",
+    "namn": "Spårningen Beverbutikken (NO)",
+    "brand": "baverbutiken",
+    "rubrik": "sparning beverbutikken: 2026-09-22 20:32 — 874 paket, 9041 händelser, 0 event"
+   },
+   {
+    "tid": "2026-09-22T18:25:49+00:00",
+    "rutin": "sparning-carashell",
+    "namn": "Spårningen CaraShell",
+    "brand": "carashell",
+    "rubrik": "sparning carashell: 2026-09-22 20:25 — 229 paket, 488 händelser, 0 registrerade"
+   },
+   {
+    "tid": "2026-09-22T18:21:26+00:00",
+    "rutin": "sparning-baverbutiken",
+    "namn": "Spårningen Bäverbutiken",
+    "brand": "baverbutiken",
+    "rubrik": "sparning baverbutiken: 2026-09-22 — 1 event, 0 registrerade, sidan publicerad (1 439 paket)"
+   },
+   {
+    "tid": "2026-09-22T18:06:19+00:00",
+    "rutin": "stonebite",
+    "namn": "Stonebite: färsk data till sajten",
+    "brand": "bolaget",
+    "rubrik": "Stonebite: färsk data 2026-09-22 20:06"
+   },
    {
     "tid": "2026-09-22T17:57:50+00:00",
     "rutin": "sparning-matstrumpor",
@@ -4412,62 +4461,13 @@
     "namn": "Norsk videobatch",
     "brand": "baverbutiken",
     "rubrik": "NO-videobatch 2026-09-19: Fas 3.2 bildannonser klara, norsk text komponerad"
-   },
-   {
-    "tid": "2026-09-19T06:34:51+00:00",
-    "rutin": "oversatt-no",
-    "namn": "Översättning till Norge",
-    "brand": "baverbutiken",
-    "rubrik": "/oversatt NO 2026-09-18: 26 av 52 live, Notion klar"
-   },
-   {
-    "tid": "2026-09-19T06:17:39+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 4 event, 2 registrerade"
-   },
-   {
-    "tid": "2026-09-19T05:18:04+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 3 event, 6 registrerade"
-   },
-   {
-    "tid": "2026-09-19T04:18:34+00:00",
-    "rutin": "sparning-baverbutiken",
-    "namn": "Spårningen Bäverbutiken",
-    "brand": "baverbutiken",
-    "rubrik": "sparning: 2026-09-19 — 22 event, 0 registrerade"
-   },
-   {
-    "tid": "2026-09-19T04:14:55+00:00",
-    "rutin": "commission",
-    "namn": "Commission",
-    "brand": "baverbutiken",
-    "rubrik": "commission: kördag 2026-09-19"
-   },
-   {
-    "tid": "2026-09-19T03:57:02+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-19: caption-QA-bilder (10/50/90 %) för alla 34 videor"
-   },
-   {
-    "tid": "2026-09-19T03:56:23+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-19: vågkonfig för tre nya produkter + fix för advideos-frågan"
    }
   ]
  },
  "eskalering": {
   "status": "ok",
   "orsak": null,
-  "hamtad": "2026-09-22T18:05:47.625Z",
+  "hamtad": "2026-09-22T19:05:34.848Z",
   "kanaler": [
    {
     "brand": "baverbutiken",
@@ -4479,85 +4479,109 @@
     "lank": "https://discord.com/channels/1540322130388983921/1548923828590088192",
     "meddelanden": [
      {
+      "id": "1551829822345322559",
       "tid": "2026-09-22T05:37:41.251000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-22)**\n\n3 open disputes need evidence within 3 days — 1 real chargeback, 1 already past the due date.\n\n**CHARGEBACK = the money is already taken and a loss is final. Handle these first.**\n**INQUIRY = the bank is only asking. Unanswered it can escalate into a chargeback — that is the real cost of ignoring it.**\n\n• **#5584** — 🔴 CHARGEBACK, credit not processed — 348 SEK — due 2026-09-23 — 1 day left\n• **#5122** — inquiry, product unacceptable — 348 SEK — due 2026-09-21 — 1 day OVERDUE\n• **#4446** — inquiry, credit not processed — 1,262 SEK — due 20",
       "bilagor": 0
      },
      {
+      "id": "1551710711846146211",
       "tid": "2026-09-21T21:44:23.095000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Correction to the auto-reply dry run above (Bäverbutiken, 21:28 UTC):**\nTwo of the three \"simple question\" drafts went to customers you had already replied to (Sep 14 and Sep 16). The bot only searched the first page of Sent — fixed now.\n• Discard drafts **\"Re: Cykelbyxor\"** and **\"Re: Kamera leverans ?\"** in Drafts — both original messages are flagged for you in the inbox (second message in a thread is always yours).\n• The draft for **#5953** and the calming reply in **VA-PRIO** stand as they are.\nNothing was sent to any customer — dry run, drafts only.",
       "bilagor": 0
      },
      {
+      "id": "1551707771005829223",
       "tid": "2026-09-21T21:32:41.944000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Auto-reply run (part 2: the flagged list from the first pass) — Bäverbutiken** (2026-09-21 21:17 UTC, DRY RUN — replies saved as drafts in Drafts, nothing sent)\nSimple questions answered: **0** · Upset customers calmed: **0** · Flagged for the VA: **13**\n\n**Flagged for the VA (no auto-reply):**\n• no order no. · be***@icloud.com · \"Per Anders Österberg\" — category ovrigt — VA\n• no order no. · ho***@gmail.com · \"Re: ⭐️ Ulf, vad tycker du om Fiskespöhållare 4-Pa…\" — category ovrigt — VA\n• no order no. · to***@gmail.com · \"Vad är det här för skit?\" — category ovrigt — VA\n• no order no. · st***@g",
       "bilagor": 0
      },
      {
+      "id": "1551706726800036012",
       "tid": "2026-09-21T21:28:32.986000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Auto-reply run — Bäverbutiken** (2026-09-21 21:27 UTC, DRY RUN — replies saved as drafts in Drafts, nothing sent)\nSimple questions answered: **3** · Upset customers calmed: **1** · Flagged for the VA: **1**\n\n**Answered automatically** (facts from Shopify/17TRACK):\n• no order · an***@hotmail.com · wismo · sv · draft\n• #5953 · er***@mdab.nu · wismo · en · draft\n• no order · jb***@outlook.com · wismo · sv · draft\n\n**Upset — calming reply sent, now in VA-PRIO** (answer these within 24–72 h):\n• no order no. · ja***@gmail.com · \"Överdrag\" — broken or defective item",
       "bilagor": 0
      },
      {
+      "id": "1551467376141279334",
       "tid": "2026-09-21T05:37:27.342000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-21)**\n\n4 open disputes need evidence within 3 days — 1 real chargeback, 1 already past the due date, 1 due today.\n\n**CHARGEBACK = the money is already taken and a loss is final. Handle these first.**\n**INQUIRY = the bank is only asking. Unanswered it can escalate into a chargeback — that is the real cost of ignoring it.**\n\n• **#5584** — 🔴 CHARGEBACK, credit not processed — 348 SEK — due 2026-09-23 — 2 days left\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 2 days OVERDUE\n• **#5122** — inquiry, product unacceptable — 348",
       "bilagor": 0
      },
      {
+      "id": "1551467344163766323",
       "tid": "2026-09-21T05:37:19.718000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-21)**\n\n4 open disputes need evidence within 3 days — 1 real chargeback, 1 already past the due date, 1 due today.\n\n**CHARGEBACK = the money is already taken and a loss is final. Handle these first.**\n**INQUIRY = the bank is only asking. Unanswered it can escalate into a chargeback — that is the real cost of ignoring it.**\n\n• **#5584** — 🔴 CHARGEBACK, credit not processed — 348 SEK — due 2026-09-23 — 2 days left\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 2 days OVERDUE\n• **#5122** — inquiry, product unacceptable — 348",
       "bilagor": 0
      },
      {
+      "id": "1551104932784902166",
       "tid": "2026-09-20T05:37:14.112000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-20)**\n\n4 open disputes need evidence within 3 days — 1 already past the due date. An unanswered dispute is lost automatically, so this is money, not admin.\n\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 1 day OVERDUE\n• **#5122** — inquiry, product unacceptable — 348 SEK — due 2026-09-21 — 1 day left\n• **#4446** — inquiry, credit not processed — 1,262 SEK — due 2026-09-23 — 3 days left\n• **#5584** — chargeback, credit not processed — 348 SEK — due 2026-09-23 — 3 days left\n\n**What to do, for each one:**\n1. Shopify admin → ",
       "bilagor": 0
      },
      {
+      "id": "1550742530247884852",
       "tid": "2026-09-19T05:37:10.614000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-19)**\n\n3 open disputes need evidence within 3 days — 1 already past the due date, 1 due today. An unanswered dispute is lost automatically, so this is money, not admin.\n\n• **#5044** — inquiry, product unacceptable — 589 SEK — due 2026-09-17 — 2 days OVERDUE\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — due TODAY\n• **#5122** — inquiry, product unacceptable — 348 SEK — due 2026-09-21 — 2 days left\n\n**What to do, for each one:**\n1. Shopify admin → Settings → Payments → Disputes → open the order.\n2. Attach the proof: trackin",
       "bilagor": 0
      },
      {
+      "id": "1550380153996189797",
       "tid": "2026-09-18T05:37:13.383000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-18)**\n\n5 open disputes need evidence within 3 days — 2 already past the due date. An unanswered dispute is lost automatically, so this is money, not admin.\n\n• **#4914** — inquiry, product not received — 348 SEK — due 2026-09-16 — 2 days OVERDUE\n• **#5044** — inquiry, product unacceptable — 589 SEK — due 2026-09-17 — 1 day OVERDUE\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 1 day left\n• **#4706** — chargeback, product unacceptable — 599 SEK — due 2026-09-20 — 2 days left\n• **#5122** — inquiry, product unacceptable — 348",
       "bilagor": 0
      },
      {
+      "id": "1550017603219755129",
       "tid": "2026-09-17T05:36:34.542000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-17)**\n\n4 open disputes need evidence within 3 days — 1 already past the due date, 1 due today. An unanswered dispute is lost automatically, so this is money, not admin.\n\n• **#4914** — inquiry, product not received — 348 SEK — due 2026-09-16 — 1 day OVERDUE\n• **#5044** — inquiry, product unacceptable — 589 SEK — due 2026-09-17 — due TODAY\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 2 days left\n• **#4706** — chargeback, product unacceptable — 599 SEK — due 2026-09-20 — 3 days left\n\n**What to do, for each one:**\n1. Shopif",
       "bilagor": 0
      },
      {
+      "id": "1549655666107355138",
       "tid": "2026-09-16T05:38:22.010000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Correction to the dispute alert above**\n\nOrder **#4914** is due TODAY (2026-09-16) — it is NOT past the due date yet.\nYou can still win it. Submit the evidence today.\n\nOnly #4914 is due today; #5044 has 1 day left and #4845 has 3 days left. Nothing is overdue.",
       "bilagor": 0
      },
      {
+      "id": "1549655336376467528",
       "tid": "2026-09-16T05:37:03.396000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🔴 **Dispute deadlines — Bäverbutiken (2026-09-16)**\n\n3 open disputes need evidence within 3 days — 1 already past the due date. An unanswered dispute is lost automatically, so this is money, not admin.\n\n• **#4914** — inquiry, product not received — 348 SEK — due 2026-09-16 — due TODAY\n• **#5044** — inquiry, product unacceptable — 589 SEK — due 2026-09-17 — 1 day left\n• **#4845** — inquiry, product not received — 348 SEK — due 2026-09-19 — 3 days left\n\n**What to do, for each one:**\n1. Shopify admin → Settings → Payments → Disputes → open the order.\n2. Attach the proof: tracking number with a d",
       "bilagor": 0
@@ -4574,43 +4598,55 @@
     "lank": "https://discord.com/channels/1540322130388983921/1551354091823693906",
     "meddelanden": [
      {
+      "id": "1551365879562768436",
       "tid": "2026-09-20T22:54:08.672000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": ",\n\n\nFor Finland majavakauppa.fi\n\nEmail: as***@majavakauppa.fi\n\nPassword: [dolt]\n\nLogin Here: https://webbmail.loopia.se/",
       "bilagor": 0
      },
      {
+      "id": "1551364762867077273",
       "tid": "2026-09-20T22:49:42.431000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "For Denmark bæverbutiken.dk\n\nEmail: ku***@baeverbutiken.dk\n\nPassword: [dolt]\n\nLogin Here: https://webbmail.loopia.se/",
       "bilagor": 0
      },
      {
+      "id": "1551355437155098737",
       "tid": "2026-09-20T22:12:39.008000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "<@1543617780396593206>",
       "bilagor": 0
      },
      {
+      "id": "1551355412031475783",
       "tid": "2026-09-20T22:12:33.018000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "Login Here:\nhttps://webmail.domeneshop.no/",
       "bilagor": 0
      },
      {
+      "id": "1551355139166703748",
       "tid": "2026-09-20T22:11:27.962000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "Password: [dolt]",
       "bilagor": 0
      },
      {
+      "id": "1551354104536637470",
       "tid": "2026-09-20T22:07:21.287000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "For norway:\n\nsu***@beverbutikken.no",
       "bilagor": 0
@@ -4627,85 +4663,109 @@
     "lank": "https://discord.com/channels/1540322130388983921/1544567111475535892",
     "meddelanden": [
      {
+      "id": "1551055831427055707",
       "tid": "2026-09-20T02:22:07.436000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Make-your-own calendar is missing from beverbutikken.no.\nAdd the product to the Norwegian store.\nThen the routine picks it up next night.",
       "bilagor": 0
      },
      {
+      "id": "1550694419185930340",
       "tid": "2026-09-19T02:26:00.043000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\nCar wash telescopic brush is oversized in the Norway cost sheet (batch #8): no cost data, shipping too expensive to ship.\nSame structural block as the folding sitting stick.\nNo action possible on this one for now.",
       "bilagor": 0
      },
      {
+      "id": "1550694399355125762",
       "tid": "2026-09-19T02:25:55.315000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\nSnow shovel (no battery) is not listed on beverbutikken.no.\nPlease add the product page.\nThe routine will pick it up next night.",
       "bilagor": 0
      },
      {
+      "id": "1550047762236837890",
       "tid": "2026-09-17T07:36:25.012000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Dinosaur calendar is missing from beverbutikken.no.\nPlease add the product to the Norwegian store.\nThe routine will pick it up next night.",
       "bilagor": 0
      },
      {
+      "id": "1549606317432508457",
       "tid": "2026-09-16T02:22:16.369000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Foldable Cane Chair has no Norway shipping quote in batch-sheet #7 (supplier: 'too large to deliver'). Cannot calculate cost. Skipping until a shipping solution exists.",
       "bilagor": 0
      },
      {
+      "id": "1546706857392082974",
       "tid": "2026-09-08T02:20:51.226000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Bordtennisnät Infällbart saknar fortfarande Norge-kostnad i batch-sheet #1–#5.1 (sjätte natten). Fyll i NORWAY-kolumnerna. Sen tar rutinen den nästa natt.",
       "bilagor": 0
      },
      {
+      "id": "1546706835321528353",
       "tid": "2026-09-08T02:20:45.964000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Adventskalender Racingbilar saknar Norge-kostnad i batch-sheet #1–#5.1. Fyll i NORWAY-kolumnerna. Sen tar rutinen den nästa natt.",
       "bilagor": 0
      },
      {
+      "id": "1546343816737325256",
       "tid": "2026-09-07T02:18:15.589000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Bordtennisnät Infällbart saknar Norge-kostnad i batch-sheet #N. Fyll i NORWAY-kolumnerna.",
       "bilagor": 0
      },
      {
+      "id": "1545982056008515704",
       "tid": "2026-09-06T02:20:45.110000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Bordtennisnett saknar Norge-kostnad i batch-sheet #1–#5.1.\nFyll i NORWAY-kolumnerna för produkten.\nSen tar rutinen den nästa natt.",
       "bilagor": 0
      },
      {
+      "id": "1545619795867602954",
       "tid": "2026-09-05T02:21:15.562000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Bordtennisnät Infällbart saknar Norge-kostnad i batch-sheet.\nFyll i NORWAY-kolumnerna för produkten.\nSen tar rutinen den nästa natt.",
       "bilagor": 0
      },
      {
+      "id": "1545261768933249184",
       "tid": "2026-09-04T02:38:35.289000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "<@1469423029783236689> <@1543537450335477836>\n⚠️ Bordtennisnät Infällbart saknar Norge-kostnad i batch-sheetarna. Lägg in NORWAY-kostnaden i rätt sheet. Sen tar rutinen den nästa natt.",
       "bilagor": 0
      },
      {
+      "id": "1544957670153256961",
       "tid": "2026-09-03T06:30:12.490000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "Then it's up you now — the page exists, so that flag is resolved.\n\nI can't verify it myself; I only read the repo, and the NO store isn't in it.\n\nTell your Claude Code chat the product is live on beverbutikken.no so the routine stops flagging it.",
       "bilagor": 0
@@ -4722,85 +4782,109 @@
     "lank": "https://discord.com/channels/1540322130388983921/1544579646849286244",
     "meddelanden": [
      {
+      "id": "1551939710853845054",
       "tid": "2026-09-22T12:54:20.713000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**The shop logo in the end card is now a pattern, not a slip: 11 of today's videos.** All four `Batmotor` videos end on a phone mockup of the shop's product page (logo, `30 DAGARS ÖPPET KÖP`, 579 kr) and seven `Takoverdrag` videos end on the shop's logo above a product card — against the briefs' own rule and, for `Batmotor`, against the explicit ban on that phrase. They went live anyway, because holding them back was not making them better: `CO_3_H1`, `GT_7_H1`, `GT_8_H1` and `RI_2_H1` were sent back yesterday for exactly this and came back today as the same files, byte for byte. The fix belon",
       "bilagor": 0
      },
      {
+      "id": "1551939706642628632",
       "tid": "2026-09-22T12:54:19.709000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Tuesday 2026-09-22**\n\n32 rows in Notion `To be Reviewed`, read across the 25 databases the integration sees (8 OPS hubs and 1 other brand's hub excluded). 25 creatives are now live in `MagiBorsten` (Bäverbutiken), 3 went back to the editor, 4 could not be uploaded.\n\n• `Båtmotorskyddet 420D` — 4 videos + 2 images, all live\n• `Bälteslipmaskinen` — 3 videos + 2 images, all live\n• `Taköverdraget` — 9 videos live, 2 sent back to Draft\n• `Termoskyddet` — 4 videos + 1 image live, 1 image sent back to Draft\n• `MC-Kapellet` — 4 images, none uploaded\n\nNothing was stopped on price toda",
       "bilagor": 0
      },
      {
+      "id": "1551558900564631653",
       "tid": "2026-09-21T11:41:08.465000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "Notes on the three `IBC` videos that went up anyway (neither `RI_1` nor `PD_11` carries a price, and `CS_9`'s prices are correct): `RI_1_H1` opens on a tank that already has a cover on it while the line says \"utan skydd\", and spells `Presändningen`; `PD_11_H1` writes `210 d Oxford-tyg` and `Passa din 1000 liter IBC-tank`; `CS_9_H1` shows a bright green folded cover at the start and a dark green fitted one at the end, which reads as two different products.\n\nDead rows: the four `MC-Kapellet` images have been waiting since 18 September, and the four `Taköverdrag` rows since 16 September. The thre",
       "bilagor": 0
      },
      {
+      "id": "1551558896953335981",
       "tid": "2026-09-21T11:41:07.604000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Monday 2026-09-21**\n\n11 rows in Notion `To be Reviewed`, read across the databases the integration sees (8 OPS hubs excluded). 3 creatives are now live in `MagiBorsten` (Bäverbutiken), 4 went back to the editor, 4 could not be uploaded.\n\n• `IBC-Tanköverdraget` — 3 videos, all live\n• `Taköverdraget` — 4 videos, all sent back to Draft\n• `MC-Kapellet` — 4 images, none uploaded\n\nNothing was stopped on price today. Prices were read off the live shop this morning and checked against every number burned into every creative: `IBC` 489 / 636 (147 kr cheaper — correct) · `Taköverdrag`",
       "bilagor": 0
      },
      {
+      "id": "1551215322487324743",
       "tid": "2026-09-20T12:55:53.068000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "Notes on ads that went up anyway (prices all correct): three `Batmotor` videos and one `Termoskydd` video have no burned-in captions at all, so the briefs' Swedish lines never appear on screen. `Batmotor_SP_1_H9` was briefed as a bucket test — water poured on the cover, cover lifted off — and the delivered clip contains neither; its Meta text was written against what is actually on screen instead. `Termoskydd_SP_4_H1` writes `istället för immer` (should be `imma`) and writes `Frifrakt` as one word.\n\nAll 33 rows had been waiting in `To be Reviewed` for more than 24 hours except the 12 `IBC` and",
       "bilagor": 0
      },
      {
+      "id": "1551215318985211935",
       "tid": "2026-09-20T12:55:52.233000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Sunday 2026-09-20**\n\n33 rows in Notion `To be Reviewed`, read across the databases the integration sees (8 OPS hubs excluded). 29 creatives are now live in `MagiBorsten` (Bäverbutiken), 4 could not be uploaded.\n\n• `Taköverdraget` — 5 images\n• `Båtmotorskyddet 420D` — 2 images + 4 videos\n• `Termoskyddet` — 6 videos\n• `IBC-Tanköverdraget` — 6 images\n• `Adventskalendern Racingbilar` — 6 images\n• `MC-Kapellet` — 4 images, none uploaded\n\nNothing was stopped on price today. Prices were read off the live shop this morning and checked against every number burned into every creative:",
       "bilagor": 0
      },
      {
+      "id": "1550841112761995285",
       "tid": "2026-09-19T12:08:54.517000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "Note: 9 of the 14 ads have no Instagram account on the creative, because no existing ad in the `Bälteslipmaskinen` or `Båtmotorskyddet 420D` campaigns carries one and the setting is inherited from them. The 5 `Termoskydd` ads did get it.\n\nAll 20 rows had been waiting in `To be Reviewed` for more than 24 hours.",
       "bilagor": 0
      },
      {
+      "id": "1550841109435912343",
       "tid": "2026-09-19T12:08:53.724000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Saturday 2026-09-19**\n\n20 rows in Notion `To be Reviewed`, read across 22 databases (8 OPS hubs excluded). 14 creatives are now live in `MagiBorsten` (Bäverbutiken), 2 were stopped and 4 could not be uploaded at all.\n\n• `Bälteslipmaskinen` — 4 images, all live\n• `Termoskyddet` — 5 images, all live\n• `Båtmotorskyddet 420D` — 7 images, 5 live and 2 stopped\n• `MC-Kapellet` — 4 images, none uploaded\n\nPrices were read off the live shop this morning and checked against every number burned into every creative: `Bälteslipmaskin Mini` 909 / 1 182 · `Termoskydd` 559 / 932 · `Båtmotors",
       "bilagor": 0
      },
      {
+      "id": "1550484727826358333",
       "tid": "2026-09-18T12:32:45.727000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Friday 2026-09-18**\n\n20 rows in Notion `To be Reviewed`, read across 22 databases (8 OPS hubs excluded). 19 creatives are now live in `MagiBorsten` (Bäverbutiken); one was stopped.\n\n• `Taköverdraget` — 4 videos → `Taköverdraget LISTICLE LAGERRENSNING`\n• `IBC-Tanköverdraget` — 6 images + 1 video\n• `Adventskalendern Racingbilar` — 6 images + 2 videos\n\nPrices were read off the live shop this morning and checked against every number burned into every creative: `Taköverdraget` 1 129 / 1 469 · `IBC` 489 / 636 · `Adventskalendern` 499 / 649. The four review ads were checked word fo",
       "bilagor": 0
      },
      {
+      "id": "1550132912895299656",
       "tid": "2026-09-17T13:14:46.511000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round — Thursday 2026-09-17**\n\n33 creatives taken from Notion `To be Reviewed` and pushed live in `MagiBorsten` (Bäverbutiken). Nothing was held back.\n\n• `Taköverdraget` — 12 images → campaign `Taköverdraget LISTICLE LAGERRENSNING`\n• `Termoskyddet` — 16 images → campaign `Termoskyddet LISTICLE LAGERRENSNING`\n• `Adventskalendern Racingbilar` — 2 videos\n• `IBC-Tanköverdraget` — 1 image + 2 videos\n\nPrices were read off the live shop this morning and checked against every number burned into every creative: `Taköverdraget` 1 129 / 1 469 · `Termoskyddet` 559 / 932 · `Adventskalendern` 499",
       "bilagor": 0
      },
      {
+      "id": "1549742394574897193",
       "tid": "2026-09-16T11:22:59.688000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round 2026-09-16, second pass — nothing new.**\n\nThe round already ran this morning and put 5 ads live. Re-checked all 15 hubs the integration sees at 13:20: no new rows have entered `To be Reviewed` since.\n\nQueue: 1 row, `Batmotor_GT_3_H1`, still waiting on a file (day 14). Already reported this morning — not repeating it as a separate problem message.\n\nNothing uploaded, nothing stopped.",
       "bilagor": 0
      },
      {
+      "id": "1549641576798617651",
       "tid": "2026-09-16T04:42:22.857000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "**Delivery round 2026-09-16 — 5 ads live in MagiBorsten (1867947880635861).**\n\nDatabases read: all 15 hubs the integration sees, minus the 7 OPS hubs excluded by id. Rows came from `BÄVER Taköverdraget för Husvagn` and `Belt grinder creative hub`.\n\n**Uploaded and set to `SE-ACTIVE to be translated`:**\nCaravan roof cover, 4 videos: `Takoverdrag_UG_1_H1`, `SP_4_H1`, `RI_1_H1`, `CO_1_H1` (delivered by Carl Vicente)\nBelt grinder, 1 image: `Beltgrinder_BOF_3_1`\n\nPrices read off the product pages today, none deviating: 1 129 kr / compare-at 1 469 kr, and 909 kr / compare-at 1 182 kr. The 210D weave,",
       "bilagor": 0
@@ -4817,85 +4901,109 @@
     "lank": "https://discord.com/channels/1540322130388983921/1544579266044493884",
     "meddelanden": [
      {
+      "id": "1551920879657820202",
       "tid": "2026-09-22T11:39:31.006000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ The four `MC-Kapellet` image ads (`BOF_1_1`, `BOF_2_1`, `BOF_3_1`, `PD_11_1`) have not been uploaded for a fourth day. Nothing is wrong with the creatives — the `MC-Kapellet` campaign is paused with 18 949 kr spent, so it counts as retired and nothing may be put into it, and no other campaign in the account carries `MC-Kapell_` ads. This is waiting on a decision about where the product should run, not on an editor. The rows stay in `To be Reviewed`.",
       "bilagor": 0
      },
      {
+      "id": "1551920853565050933",
       "tid": "2026-09-22T11:39:24.785000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Beltgrinder_PD_29_H1` — the very first caption reads `Antal knivar i lådan ska se om den fixar dem alla.` The placeholder was never filled in. The brief's editor note says `[ANTAL]` is the real number of knives actually sharpened in the take, counted from the footage. As it stands the hook reads as a template error to every viewer. Uploaded because the price is right and the stop rule only covers the price, but please re-export with the real number. Also worth a look: a child appears using the machine on a knife around 6 seconds, which is not in the brief and is not a good look for a power",
       "bilagor": 0
      },
      {
+      "id": "1551920819062439968",
       "tid": "2026-09-22T11:39:16.559000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Beltgrinder_CS_5_H1` and `Beltgrinder_PD_30_H1` — both carry a red corner banner reading `Få kvar i lager – slut inom kort`. That is invented urgency, banned in plain words in both briefs and a known compliance problem in this account. Uploaded today because the price is correct and the stop rule only covers the price, but the banner has to come off the template. `Beltgrinder_CS_5_H1` has a second problem: from about 11 to 18 seconds it shows a completely different machine — a small handheld belt sander with an orange motor, filmed by someone in an `ADVANTAGE Contractor Supply` sweatshirt ",
       "bilagor": 0
      },
      {
+      "id": "1551920787907158049",
       "tid": "2026-09-22T11:39:09.131000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ **The shop logo in the end card is now a pattern, not a slip — 11 videos today.** All four `Batmotor` videos end on a phone mockup of the shop's own product page (logo, `30 DAGARS ÖPPET KÖP`, 579 kr), and seven `Takoverdrag` videos end on the shop's logo above a product card. Every one of those briefs says in plain words: brand-neutral, no shop name, no web address, no logo — and the `Batmotor` briefs ban the phrase `30 dagars öppet köp` specifically. These went live today anyway, because holding them back a second day was not making them better: `Takoverdrag_CO_3_H1`, `GT_7_H1`, `GT_8_H1` ",
       "bilagor": 0
      },
      {
+      "id": "1551920748862504961",
       "tid": "2026-09-22T11:38:59.822000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🛑 `Termoskydd_CS_9_1` — the cover in the image is black. The product the shop actually ships is silver and quilted; that is what both the product shot and the mounted photo on the product page show. A customer who buys from this ad gets something that does not look like the picture. Sent back to Draft. Everything else is right — the night scene works and the prices are correct (559 kr, ord. 932 kr, 40 %). One thing has to change in the brief too, or the next render comes back black: it asks for `en svart vägg över hela framvagnen`, and the darkness should come from the night scene, not from r",
       "bilagor": 0
      },
      {
+      "id": "1551920707854925876",
       "tid": "2026-09-22T11:38:50.045000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🛑 `Takoverdrag_CS_9_H1` and `Takoverdrag_UG_2_H1` — both end on a screenshot of **another shop's** product page. The card reads CARASHELL above the product title, with that shop's rating, price and Buy button. These ads run in Bäverbutiken's account and point at Bäverbutiken's page, so anyone who reads that name and searches for it buys somewhere else. Both sent back to Draft with a note in Notion. Cut the end card and let the video finish on the price frame it already has — no shop name, no logo, no product-page screenshot from any shop. Everything before it is good and the prices are right.",
       "bilagor": 0
      },
      {
+      "id": "1551556454748520449",
       "tid": "2026-09-21T11:31:25.337000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "ℹ️ Two rows in `Product test center SE BÄVER` still cannot be read by the delivery round: `5.1 Sömnadskit 104 Delar` and `Bordtennisnät Infällbart`. The titles carry no ad-name prefix, so there is no way to tell which campaign they belong to and they are never uploaded. If they are meant to become ads, rename them to the usual pattern (`<Prefix>_<Concept>_<Number>_<Variant>`); if they are product notes, they can stay as they are — this is only a heads-up, not a problem with anyone's work.",
       "bilagor": 0
      },
      {
+      "id": "1551556428932587573",
       "tid": "2026-09-21T11:31:19.182000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ The four `MC-Kapell` image ads (`BOF_1_1`, `BOF_2_1`, `BOF_3_1`, `PD_11_1`) have not been uploaded for a third day. Nothing is wrong with the creatives — the `MC-Kapellet` campaign is paused with 18 949 kr spent, so it counts as retired and nothing may be put into it, and no other campaign in the account carries `MC-Kapell_` ads. This is waiting on a decision about where the product should run, not on an editor. The rows stay in `To be Reviewed`.",
       "bilagor": 0
      },
      {
+      "id": "1551556404836569125",
       "tid": "2026-09-21T11:31:13.437000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Takoverdrag_GT_8_H1` — same shop-logo end card (12.0–14.4 s), sent back to Draft. Two more on the same row: the gift-box beat is missing entirely (the brief has him unwrapping the box at 3–6 s; the cut only carries the caption over the pyjama shot), and the ad runs 14.4 s when the brief says hold 12 s exactly — the length is the only variable being tested against `Takoverdrag_GT_7_H1`, so cut picture, never a Swedish line. Small one: the caption at 7 s reads `räm`, should be `rem`. Full note in Notion.",
       "bilagor": 0
      },
      {
+      "id": "1551556382535188541",
       "tid": "2026-09-21T11:31:08.120000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Takoverdrag_RI_2_H1` — same shop-logo end card (14.5–16.8 s), sent back to Draft. Also: the caption at 2 s reads `Tunn presänning` — the Swedish word is `presenning`. Full note in Notion.",
       "bilagor": 0
      },
      {
+      "id": "1551556365380747307",
       "tid": "2026-09-21T11:31:04.030000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Takoverdrag_GT_7_H1` — same shop-logo end card (15.5–18.1 s), sent back to Draft. Second thing on the same row: this brief is a one-face test — the same man on camera in every beat — but the cut uses three different men (the older man in pyjamas at 0–4 s, another man with the gift by the red house at 5–11 s, a third man giving a thumbs-up at 15 s). One face has to carry the whole ad, otherwise the test measures nothing. Full note in Notion.",
       "bilagor": 0
      },
      {
+      "id": "1551556343520034819",
       "tid": "2026-09-21T11:30:58.818000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "⚠️ `Takoverdrag_CO_3_H1` — the last 2.5 seconds are a white end card with the shop logo and the shop's product card (17.5–19.9 s). The brief says: brand-neutral, no shop name, no web address, no logo — these roof-cover ads are reused in another shop. Sent back to Draft with a comment in Notion. Cut the end card, let the video end on the price card you already have, re-export, and it goes live the same day. Everything before it is good and the prices are right.",
       "bilagor": 0
@@ -4962,85 +5070,109 @@
     "lank": "https://discord.com/channels/1547740959335522304/1547745037993902090",
     "meddelanden": [
      {
+      "id": "1551730527365763083",
       "tid": "2026-09-21T23:03:07.483000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-22\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #6 — budget round only. The brief round stays paused by owner decision since 18/9, so today's catch-up brief day produced none\n• SE campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is still PAUSED and has now gone quiet: 0 kr over the last 3 days, 2 058 kr / 4 purchases still showing in the 7-day window. 0 changes — a paused campaign is a decision\n• NO checked read-only as well and is still PAUSED: 3 516 kr / 7 purchases over 7 days, 1 088 kr / 0 purchases in the 3-day wi",
       "bilagor": 0
      },
      {
+      "id": "1551726182523998209",
       "tid": "2026-09-21T22:45:51.592000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-22\n\n**Numbers (7 days)**\nSpend: 35 361 SEK\nPurchases: 85\nROAS: 3.21\nProfit contribution: 30 273 SEK\n\n**Done automatically**\n• Budget round: main campaign raised 8 000 → 9 600 kr/day. The new 10 000 kr ceiling is in the rules, so the night watch can scale this campaign again — first raise since it got stuck on Sunday. 3-day profit 34.0 %, ROAS 3.65. Read back and logged\n• The LISTICLE campaign holds at 2 850 kr: 3-day profit 23.1 % is in the 16–25 % hold band. Its ROAS eased from 4.53 to 2.62 as the budget climbed, which is what the hold band is for\n• Paused o",
       "bilagor": 0
      },
      {
+      "id": "1551369199882866759",
       "tid": "2026-09-20T23:07:20.298000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-21\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #5 — budget round only, Monday is not a brief day and the brief round is paused by owner decision since 18/9\n• SE campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is still PAUSED. Last 7 days 2 058 kr / 4 purchases; the 3-day window has fallen to 355 kr / 0 purchases as the paused days roll in. 0 changes — a paused campaign is a decision\n• NO was PAUSED at yesterday's read and was not re-checked tonight: Meta rate-limited the account and the read-only call was still queue",
       "bilagor": 0
      },
      {
+      "id": "1551364626950918217",
       "tid": "2026-09-20T22:49:10.026000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-21\n\n**Numbers (7 days)**\nSpend: 27 365 SEK\nPurchases: 76\nROAS: 3.64\nProfit contribution: 27 001 SEK\n\n**Done automatically**\n• Budget round: LISTICLE campaign raised 2 400 → 2 850 kr/day. It is now the best thing in the account — 3-day profit 39.3 %, ROAS 4.53, 17 purchases this week. Read back and logged\n• Paused one ad: CaraShellRoof_CS_4_1. Dead weight by the new-ad rule — 1 499 kr spent (over 3 × target CPA), 2 purchases, CPA 750 kr against break-even 693 kr. First ad the rules have ever killed in this store. Two purchases is below the gate, so this is a c",
       "bilagor": 0
      },
      {
+      "id": "1551101727254642761",
       "tid": "2026-09-20T05:24:29.854000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-20\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #4 — budget round only. Sunday is a brief day, but the brief round is paused by owner decision since 18/9 (CaraShell is mirrored from the Bäverbutiken hub via /ops-spegla)\n• Both markets are now PAUSED, neither by the routine. SE: 2 058 kr / 4 purchases / ROAS 1.08 over its last 7 days against break-even 1.61. NO (read-only check): 3 513 kr / 7 purchases over 7 days, profit contribution +267 kr\n• 0 changes, 0 log lines. A paused campaign is a decision — nothing touched, nothi",
       "bilagor": 0
      },
      {
+      "id": "1551001144921427972",
       "tid": "2026-09-19T22:44:49.157000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-20\n\n**Numbers (7 days)**\nSpend: 23 361 SEK\nPurchases: 63\nROAS: 3.36\nProfit contribution: 19 215 SEK\n\n**Done automatically**\n• Budget round: no change tonight, but for a good reason. The main campaign qualifies for another raise — 3-day profit 36.0 %, ROAS 3.94 — and is blocked only by the 4 000 kr/day ceiling the rules carry. It sits at that ceiling now\n• The LISTICLE campaign also qualifies (profit 27.7 %) but the cadence lock wants 3 days between changes and only 2 have passed. It opens tomorrow\n• Nothing paused, nothing activated, no ad killed. 53 purchase",
       "bilagor": 0
      },
      {
+      "id": "1550642777094627341",
       "tid": "2026-09-18T23:00:47.609000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-19\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #3 — budget round only, Saturday is not a brief day\n• Campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm is PAUSED (someone switched it off during 18/9 — not the routine). Final reading: 2 058 kr / 4 purchases / ROAS 1.08 over 3 days against break-even 1.61. A paused campaign is a decision: nothing touched, nothing activated\n• CS_4_1 (the winning-line image from batch #2) reached 506 kr with 0 purchases before the pause; CS_2_1 (inherited offer image) still carries 2 of the",
       "bilagor": 0
      },
      {
+      "id": "1550638903294165113",
       "tid": "2026-09-18T22:45:24.023000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-19\n\n**Numbers (7 days)**\nSpend: 19 411 SEK\nPurchases: 53\nROAS: 3.32\nProfit contribution: 13 561 SEK\n\n**Done automatically**\n• Budget round: main campaign CARASHELL_SE_Taköverdraget raised 3 400 → 4 000 kr/day. The store turned back up — 3-day profit 32.1 % and ROAS 3.42, against 19.3 % and 2.38 last night. 47 purchases over 7 days\n• The LISTICLE campaign stays at 1 200 kr: it is in scaling territory (profit 25.9 %) but the cadence lock wants 3 days between changes and it was raised yesterday. It will be eligible again on Monday\n• Nothing paused, nothing activ",
       "bilagor": 0
      },
      {
+      "id": "1550280401585442867",
       "tid": "2026-09-17T23:00:50.555000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-18\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #2 — budget round only, Friday is not a brief day\n• Campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm: 1 694 kr / 4 purchases / ROAS 1.32 over its first 2 days against break-even 1.61 — profit −13.6 %. Rule 'profit under 16 % → −30 %': daily budget lowered 1 000 → 700 kr, read back\n• Ad CaraShellFront_G_2_1 (the inherited gift image) paused: 721 kr spend, 2 purchases, CPA 361 kr over break-even 347 kr — the new-ad rule (spent ≥ 3 × target CPA without turning a profit). Rea",
       "bilagor": 0
      },
      {
+      "id": "1550276928894926919",
       "tid": "2026-09-17T22:47:02.601000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-18\n\n**Numbers (7 days)**\nSpend: 15 429 SEK\nPurchases: 38\nROAS: 2.83\nProfit contribution: 9 621 SEK\n\n**Done automatically**\n• Budget round: the LISTICLE campaign goes 1 000 → 1 200 kr/day (fast track: 3-day profit 30 %, ROAS 3.19). It is now above the data gate with 1 416 kr and 4 purchases, and it is outperforming the main campaign on ROAS — 3.19 against 2.38\n• Main campaign CARASHELL_SE_Taköverdraget holds at 3 400 kr/day: 3-day profit 19.3 % is inside the 16–25 % hold band. Third night in a row the rules chose to hold, which is what should happen while the ",
       "bilagor": 0
      },
      {
+      "id": "1550028169950658601",
       "tid": "2026-09-17T06:18:33.847000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-17\n\n**Numbers (7 days)**\nSpend: 10 882 SEK\nPurchases: 27\nROAS: 2.86\nProfit contribution: 6 440 SEK\n\n**Done automatically**\n• Budget round: no change, and that is the rule working. CARASHELL_SE_Taköverdraget stays at 3 400 kr/day — 3-day profit 23.2 % sits in the 16–25 % hold band, which is exactly where we want it after two nights of raises (2 400 → 2 850 → 3 400 kr)\n• The new CARASHELL_SE_Taköverdraget LISTICLE campaign is too early to judge: 511 kr and 2 purchases on its first day, ROAS 4.42. The gate is 300 kr AND 3 purchases, so no verdict — but that ROAS",
       "bilagor": 0
      },
      {
+      "id": "1549189425915891853",
       "tid": "2026-09-14T22:45:41.686000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CARASHELL night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 4 019 SEK\nPurchases: 13\nROAS: 3.82\nProfit contribution: 2 224 SEK\n\n**Done automatically**\n• Budget round: campaign CARASHELL_SE_Taköverdraget raised 2 400 → 2 850 kr/day (+20 %, fast-track rule: 3-day profit 37.2 % and 3-day ROAS 4.14, both above the gate). Read back from Meta and logged\n• Nothing paused, nothing activated. No ad killed — SP_2_1 is the benchmark (4 purchases, CPA 137 kr, carries 100 % of the profit contribution) and the other 19 ads are all still under the data gate (300 kr / 3 purchases)\n• Hub check: 4 image a",
       "bilagor": 0
@@ -5057,22 +5189,28 @@
     "lank": "https://discord.com/channels/1547740959335522304/1547745035301421178",
     "meddelanden": [
      {
+      "id": "1549923210743652414",
       "tid": "2026-09-16T23:21:29.622000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "📝 CARASHELL brief day — 2026-09-17\n\n**Done automatically**\n• Night watch for the thermal cover (CaraShellFront), run #1. Budget round: campaign CARASHELL_SE_Termoskydd Husbil 211 × 171 cm read at 636 kr / 2 purchases / ROAS 1.76 over 3 days — too early for any verdict (gate is 300 kr AND 3 purchases). 0 changes, nothing paused, nothing activated, no ad killed\n• Analysis: cold start. 16 ads live since 16/9, none past the gate yet. Inherited history from the source shop used for direction only: the offer angle (CS) carried 31 of 40 purchases there, the one static (SP_2_1) had the best CPC in th",
       "bilagor": 0
      },
      {
+      "id": "1549557995254448150",
       "tid": "2026-09-15T23:10:15.464000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "📝 CARASHELL brief day — 2026-09-16\n\n**Numbers (7 days)**\nSpend: 7 513 SEK\nPurchases: 20\nROAS: 3.10\nProfit contribution: 4 528 SEK\n\n**Done automatically**\n• Budget round: campaign CARASHELL_SE_Taköverdraget raised 2 850 → 3 400 kr/day (+20 %, fast-track: 3-day profit 29 % and ROAS 3.09). Read back and logged. Nothing paused, nothing activated, no ad killed\n• First round with judgeable ads: SP_2_1 (image) 846 kr / 5 purchases / CPA 169 kr, and CS_1_H1 (video) 863 kr / 4 purchases / CPA 216 kr. Break-even CPA is 693 kr — both are far inside it\n• Batch #2 read against its hypotheses: SP_4_1 was t",
       "bilagor": 0
      },
      {
+      "id": "1548950773478727711",
       "tid": "2026-09-14T06:57:22.511000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "📝 CARASHELL brief day — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 2 435 SEK\nPurchases: 8\nROAS: 3.71\nProfit contribution: 3 109 SEK\n\n**Done automatically**\n• Campaign budget 1 000 -> 1 200 kr (profit 34%, ROAS 3.71 on both 3d and 7d windows).\n• No ads paused: 0 of 16 have passed the gate (300 kr AND 3 purchases).\n• Fixed the Notion hub ID — the old one was in the trash, so the store had never been readable.\n• Batch #2: 7 briefs written, 4 image + 3 video. Copy A/B: 4 fable, 3 sonnet.\n• 4 image ads generated, reviewed and moved to To be Reviewed — they go live at 14:05.\n\n**New briefs (7)**\n• Cara",
       "bilagor": 0
@@ -5089,85 +5227,109 @@
     "lank": "https://discord.com/channels/1547740959335522304/1547745036937068696",
     "meddelanden": [
      {
+      "id": "1552006055792214069",
       "tid": "2026-09-22T17:17:58.579000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🪞 CARASHELL mirror from Bäverbutiken — 2026-09-22\n\n**Done automatically**\n• Takoverdrag_OB_2_H1 → CaraShellRoof_OB_102_H1: SE ad 120249219182040172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - OB), NO ad 120249219188850172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub\n• Takoverdrag_TR_3_H1 → CaraShellRoof_TR_103_H1: SE ad 120249219198500172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - TR), NO ad 120249219342600172 live in CARASHELL_NO_Takovertrekket | BE-R",
       "bilagor": 0
      },
      {
+      "id": "1551982001806905545",
       "tid": "2026-09-22T15:42:23.662000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇺🇸 CARASHELL US translation — 2026-09-22\n\n**Done automatically**\n• US round for the roof cover: nothing to translate today. The queue held 0 rows in 'SE-ACTIVE to be translated'.\n• The Approved queue was checked as well: 49 rows, and every single one already carries a US ad. Nothing is lagging behind - the five images from yesterday moved the count from 44 to 49.\n• Health check on the US campaign (1 CARASHELL_US_Takoverdrag ... - kopia, ACTIVE, 12 ad sets): 65 ads, all 65 ACTIVE. Yesterday's five new images all passed Meta review - none disapproved, none limited.\n• Store readiness for the US",
       "bilagor": 0
      },
      {
+      "id": "1551976456282706011",
       "tid": "2026-09-22T15:20:21.506000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇺🇸 CARASHELL US translation — 2026-09-22\n\n**Done automatically**\n• Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows. 'Approved' checked for rows missing in the US — 5 rows, none missing. Nothing to translate.\n• US campaign CARASHELL_US_Termoskydd Husbil 211 × 171 cm (Magiborsten UK) still PAUSED by the owner since 2026-09-18 11:34 CEST — 1 978 SEK lifetime, 0 purchases, same spend for the third day running. The copy '1 … – kopia' still PAUSED since 2026-09-17 — 616 SEK, 0 purchases. Neither touched.\n• 0 rows held. No HeyGen credits used, nothing up",
       "bilagor": 0
      },
      {
+      "id": "1551960903178784790",
       "tid": "2026-09-22T14:18:33.357000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇳🇴 CARASHELL Norway translation — 2026-09-22\n\n**Done automatically**\n• Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows, nothing to translate and nothing held.\n• Nothing rendered, nothing uploaded, no Notion rows changed, no HeyGen credits used. Campaign status untouched.\n• Store still ready for NO: price 548 NOK read on the Norwegian product page.\n\n**⚠️ Warnings**\n• Unchanged: NO paused by owner since 2026-09-19. Lifetime 3 516 kr, 7 purchases, ROAS 1.14 against break-even 1.61 — spend has not moved, so the campaign is still off. Left exactly as i",
       "bilagor": 0
      },
      {
+      "id": "1551960666221322392",
       "tid": "2026-09-22T14:17:36.862000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇳🇴 CARASHELL Norway translation — 2026-09-22\n\n**Done automatically**\n• Follow-up to today's report: the quiet-failure bug is found and fixed.\n• Root cause: the tools restart themselves to put the network proxy in place, and the restarted process handed its output straight to the parent. The output never reached the file. The tool wrote its 2 841 characters, logged that it was done, and the file was still zero bytes with exit code 0.\n• Measured the same day, same code, same command: with the restart 0 bytes, without it 2 845 bytes, and after the fix 2 845 bytes through the normal path.\n• This",
       "bilagor": 0
      },
      {
+      "id": "1551959238685753457",
       "tid": "2026-09-22T14:11:56.511000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇳🇴 CARASHELL Norway translation — 2026-09-22\n\n**Done automatically**\n• Nothing to translate today: the creative hub has zero rows in SE-ACTIVE to be translated. Measured in three separate runs, all reading the same hub.\n• The Norwegian campaign CARASHELL_NO_Takovertrekket is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK. The market is running normally - this is an empty queue, not a hold.\n• Yesterday's five rows have moved on. No Notion status was touched.\n• HeyGen credits used: 0 before -> 0 after.\n\n**⚠️ War",
       "bilagor": 0
      },
      {
+      "id": "1551928629636763743",
       "tid": "2026-09-22T12:10:18.745000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🚀 CARASHELL delivery run — 2026-09-22\n\n**Done automatically**\n• Queue read: the same 2 video rows as yesterday, still in To be Reviewed.\n• Files are byte-identical to yesterday — the end card has not been rebuilt yet.\n• Nothing uploaded. No status changed, no new comments (yesterday's feedback stands on both rows).\n\n**⚠️ Warnings**\n• Day 2 for CaraShellRoof_SP_4_H1 and CaraShellRoof_PD_4_H1: both still end on a screen recording showing the domain carashell.se and the CARASHELL vendor line. A store name or domain must never appear in an ad.\n• Both videos are otherwise approved: quotes verbatim",
       "bilagor": 0
      },
      {
+      "id": "1551619717293150299",
       "tid": "2026-09-21T15:42:48.303000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇺🇸 CARASHELL US translation — 2026-09-21\n\n**Done automatically**\n• US round for the roof cover: 5 rows in the queue, all 5 translated to American English and uploaded live into the active US campaign. All images, no video today. Every row already runs in Norway, so all five moved to Approved.\n• Images (Swedish text swapped in place): BOF_107_1 -> ad 120251535696070435 (BOF) | BOF_108_1 -> 120251535705330435 (BOF) | PD_110_1 -> 120251535934370435 (PD) | CS_113_1 -> 120251535969460435 (CS) | BOF_109_1 -> 120251536199230435 (BOF)\n• Numbers are the store's own, not converted: $199 (reg. $249), n",
       "bilagor": 0
      },
      {
+      "id": "1551613933364842497",
       "tid": "2026-09-21T15:19:49.307000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇺🇸 CARASHELL US translation — 2026-09-21\n\n**Done automatically**\n• Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows. 'Approved' checked for rows missing in the US — 5 rows, none missing. Nothing to translate.\n• US campaign CARASHELL_US_Termoskydd Husbil 211 × 171 cm (Magiborsten UK) still PAUSED by the owner, unchanged since 2026-09-18 11:34 CEST — 1 978 SEK lifetime, 0 purchases, same spend as the last two days. The copy '1 … – kopia' still PAUSED since 2026-09-17 — 616 SEK, 0 purchases. Neither touched.\n• 0 rows held. No HeyGen credits used, noth",
       "bilagor": 0
      },
      {
+      "id": "1551599832102076558",
       "tid": "2026-09-21T14:23:47.304000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇳🇴 CARASHELL Norway translation — 2026-09-21\n\n**Done automatically**\n• Nothing needed translating or uploading today. All five rows in the queue already carry their Norwegian ad: the mirroring round put them live, and each one was read back from Meta as ACTIVE.\n• BOF_107_1 -> CaraShellRoof_NO_BOF_107_1 (ad set BOF, ad 120249189601910172)\n• BOF_108_1 -> CaraShellRoof_NO_BOF_108_1 (ad set BOF, ad 120249189496460172)\n+5 more\n\n**⚠️ Warnings**\n• The queue tool died silently four times before it produced anything today: exit code 0, an empty file, no error line. An empty queue file reads exactly l",
       "bilagor": 0
      },
      {
+      "id": "1551599751261200406",
       "tid": "2026-09-21T14:23:28.030000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🚀 CARASHELL delivery run — 2026-09-21\n\n**Done automatically**\n• Queue read: 2 rows in To be Reviewed, both video, both files downloaded.\n• Price checked live: 1 129 kr (from 1 469 kr) in both videos — matches the shop.\n• Nothing uploaded today. Both rows stay in To be Reviewed, no status changed.\n\n**⚠️ Warnings**\n• CaraShellRoof_SP_4_H1 — end card (last 2,5 s) shows the domain carashell.se and the CARASHELL vendor line. A store name or domain must never appear in an ad. Feedback written on the Notion row.\n• CaraShellRoof_PD_4_H1 — same end card, same reason. Feedback written on the Notion row",
       "bilagor": 0
      },
      {
+      "id": "1551598565158162543",
       "tid": "2026-09-21T14:18:45.241000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🇳🇴 CARASHELL Norway translation — 2026-09-21\n\n**Done automatically**\n• Termoskyddet (windshield thermal cover): queue 'SE-ACTIVE to be translated' checked — 0 rows, nothing to translate and nothing held.\n• Nothing rendered, nothing uploaded, no Notion rows changed, no HeyGen credits used. Campaign status untouched.\n• Store still ready for NO: price 548 NOK read on the Norwegian product page.\n\n**⚠️ Warnings**\n• Unchanged since yesterday: NO paused by owner 2026-09-19 20:07 CEST. Lifetime 3 516 kr, 7 purchases, ROAS 1.14 against break-even 1.61. Left exactly as it is.\n• Both markets stay pause",
       "bilagor": 0
@@ -5204,29 +5366,37 @@
     "lank": "https://discord.com/channels/1546215680121118722/1546215837218639872",
     "meddelanden": [
      {
+      "id": "1549286243530186753",
       "tid": "2026-09-15T05:10:24.804000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "DOnt make any more ads for this product, this discord will be closed, only keep watching over the customer support maybe @everyone",
       "bilagor": 0
      },
      {
+      "id": "1549179149070110761",
       "tid": "2026-09-14T22:04:51.495000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 HEIMGUARD night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 6 904 SEK\nPurchases: 9\nROAS: 1.60\nProfit contribution: 578 SEK\n\n**Done automatically**\n• Budget unchanged at 700 SEK/day: last 3 days 1 877 SEK / 2 purchases — under the data gate.\n• HeimGuard_PD_2 recovered on its own: 2 more purchases yesterday → 14d 2 651 SEK, 6 purchases, CPA 442 (break-even 538). Back to benchmark. The pause question from yesterday is closed by the data — nothing to decide.\n• 10 new ads went live via the 13:40 delivery run: CS_11_H1, SP_17_H1, SP_17_H2 (batch #2) + TR_2_H1, PD_9_H1, CO_5_H1, PD_6_H1, SP_19",
       "bilagor": 0
      },
      {
+      "id": "1548817096891170920",
       "tid": "2026-09-13T22:06:11.529000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 HEIMGUARD night watch — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 6 338 SEK\nPurchases: 7\nROAS: 1.43\nProfit contribution: -113 SEK\n\n**Done automatically**\n• Budget unchanged at 700 SEK/day: last 3 days are 2 106 SEK / 2 purchases — under the data gate, no verdict.\n• Two days in a row with zero purchases (Sept 12: 585 SEK, Sept 13: 726 SEK). 7-day ROAS 1.43 is now under break-even 1.49.\n• The script wanted to PAUSE HeimGuard_PD_2 (14d: 2 265 SEK, 4 purchases, CPA 566 vs break-even 538). I did NOT do it: it is the only ad with purchases, the verdict rests on 4 purchases, and the benchmark rule p",
       "bilagor": 0
      },
      {
+      "id": "1548097122283429971",
       "tid": "2026-09-11T22:25:16.206000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 HEIMGUARD night watch — 2026-09-12\n\n**Numbers (7 days)**\nSpend: 5 015 SEK\nPurchases: 7\nROAS: 1.80\nProfit contribution: 933 SEK\n\n**Done automatically**\n• Budget unchanged at 700 SEK/day: 3-day margin 11.7 % is still under the 16 % floor, but the cadence rule blocks a second cut within 3 days of yesterday's 1 000 → 700.\n• HeimGuard_PD_2 is the first ad past the data gate: 1 219 SEK, 4 purchases, CPA 305 SEK (break-even 538). Preliminary — it must survive the next reading before it counts.\n• Nothing paused, nothing activated. LI adset stays paused (a human decision).\n\n**⚠️ Warnings**\n• Meta ra",
       "bilagor": 0
@@ -5273,57 +5443,73 @@
     "lank": "https://discord.com/channels/1547345265671934083/1547346538567827486",
     "meddelanden": [
      {
+      "id": "1551719974647758889",
       "tid": "2026-09-21T22:21:11.519000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-22\n\n**Numbers (7 days)**\nSpend: 487 SEK\nPurchases: 1\nROAS: 0.80\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep 20:52, timestamp unchanged). Nothing activated, nothing written, no log rows. The 7-day window is down to 2 days and 487 SEK; tomorrow it is empty.\n• NO: DRYTREK_NO stays PAUSED (owner, 18 Sep 11:28). Not touched.\n• Brief day in the cadence (9 days since the last brief), but the brief round is paused, so 0 briefs. Hub unchanged for the sixth night: 19 batch #3 briefs in Draft, 10 delivered videos in Cre",
       "bilagor": 0
      },
      {
+      "id": "1551358496568770655",
       "tid": "2026-09-20T22:24:48.429000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-21\n\n**Numbers (7 days)**\nSpend: 1 027 SEK\nPurchases: 1\nROAS: 0.38\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep 20:52, timestamp unchanged). Nothing activated, nothing written, no log rows. The 7-day window is down to 3 days and 1 027 SEK; by Wednesday it is empty.\n• NO: DRYTREK_NO stays PAUSED (owner, 18 Sep 11:28). No dry run — a paused campaign is a decision the night watch never touches.\n• Brief day in the cadence, but the brief round is paused, so 0 briefs. Hub unchanged for the fifth night: 19 batch #3 br",
       "bilagor": 0
      },
      {
+      "id": "1551101230158184571",
       "tid": "2026-09-20T05:22:31.337000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-20\n\n**Numbers (7 days)**\nSpend: 1 875 SEK\nPurchases: 3\nROAS: 0.62\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep 20:52, unchanged). Nothing activated, nothing written. The 7-day window is down to 1 875 SEK / 3 purchases over 4 days, all from before the pause; the 3-day window is empty.\n• NO: DRYTREK_NO stays PAUSED (owner, 18 Sep 11:28). No dry run — a paused campaign is a decision the night watch never touches.\n• Sunday is a brief day, but the brief round is paused, so 0 briefs were written. Hub unchanged for t",
       "bilagor": 0
      },
      {
+      "id": "1550632659221348477",
       "tid": "2026-09-18T22:20:35.320000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-19\n\n**Numbers (7 days)**\nSpend: 2 998 SEK\nPurchases: 6\nROAS: 0.87\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep). Nothing activated, nothing written. 7-day window: 2 998 SEK / 6 purchases / ROAS 0.87, all spend from before the pause; 3-day window is 0 SEK.\n• NO: DRYTREK_NO was paused by the owner on 18 Sep 11:28 (8 450 SEK lifetime, 31 purchases, ROAS 1.82 lifetime but 1.36 over the last 3 days). No dry run tonight — a paused campaign is a decision and the night watch never touches it. The Norway question from ",
       "bilagor": 0
      },
      {
+      "id": "1550271172816535657",
       "tid": "2026-09-17T22:24:10.245000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-18\n\n**Numbers (7 days)**\nSpend: 3 785 SEK\nPurchases: 6\nROAS: 0.69\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep). Nothing activated, nothing written. 7-day window is now only spend before the pause: 3 785 SEK / 6 purchases, rolling out of the window day by day. Brief round stays paused; 19 batch #3 briefs still in Draft in the hub, 10 delivered videos still in Creative strat review.\n• NO dry run (nothing written): DRYTREK_NO is ACTIVE at 1 000 SEK/day. 7 days 6 957 SEK / 24 purchases / ROAS 1.65 vs break-even 1",
       "bilagor": 0
      },
      {
+      "id": "1549908343232143454",
       "tid": "2026-09-16T22:22:24.931000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-17\n\n**Numbers (7 days)**\nSpend: 4 641 SEK\nPurchases: 8\nROAS: 0.73\n\n**Done automatically**\n• SE budget round: 0 changes — DRYTREK_SE is still PAUSED (owner, 15 Sep). Nothing activated. Per day before the pause: 09-10 856 SEK/2 · 09-11 788 SEK/0 · 09-12 1123 SEK/3 · 09-13 848 SEK/2 · 09-14 540 SEK/0 · 09-15 487 SEK/1 · 09-16 0 SEK/0. Brief round stays paused (18 batch #3 briefs in Draft).\n• NO dry run (nothing written): DRYTREK_NO is ACTIVE at 1 000 SEK/day and profitable — 7 days 7 109 SEK / 26 purchases / ROAS 1.84 vs break-even 1.60; 3 days 2 870 SEK / 10 / RO",
       "bilagor": 0
      },
      {
+      "id": "1549183199517876225",
       "tid": "2026-09-14T22:20:57.197000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 4 167 SEK\nPurchases: 7\nROAS: 0.72\n\n**Done automatically**\n• Budget round: 0 changes. Six losing days in a row (ROAS under break-even 1.60), but the campaign already sits at the 500 SEK floor — no further cut, no campaign pause (Axel, 10 Sep). Losses are judged per ad instead.\n• No ad passed the kill rules: 42 ads in the campaign, all under the 3 x target-CPA line since the budget dropped. Nothing paused, nothing activated.\n• Trend: 7 days 4 167 SEK / 7 purchases / ROAS 0.72; 3 days 2 508 SEK / 5 purchases / ROAS 0.88. Per day: 09",
       "bilagor": 0
      },
      {
+      "id": "1548820915633135690",
       "tid": "2026-09-13T22:21:21.988000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 DRYTREK night watch — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 3 623 SEK\nPurchases: 7\nROAS: 0.83\n\n**Done automatically**\n• Budget round: DRYTREK_SE campaign 700 -> 500 SEK/day (floor). Rule: 5 losing days in a row (ROAS under break-even 1.60 every day with spend). Read back, logged. No campaign pause — ever.\n• No ads paused: all 23 creatives that went live on 13 Sep (17 colour images + Jasper's 6 videos) are under the data gate. Nothing activated. PD_2_1 is PAUSED since daytime — a decision, untouched.\n• Trend: 7 days 3 623 SEK / 7 purchases / ROAS 0.83 (was 0.56 yesterday). Per day: 09-09 1",
       "bilagor": 0
@@ -5350,15 +5536,19 @@
     "lank": "https://discord.com/channels/1547541533476257803/1547547743688589354",
     "meddelanden": [
      {
+      "id": "1549185126527672351",
       "tid": "2026-09-14T22:28:36.632000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 ADVENTLANE night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 2 835 SEK\nPurchases: 5\nROAS: 1.18\nProfit contribution: -1 185 SEK\n\n**Done automatically**\n• Budget round: campaign still PAUSED by Axel (since Sept 13) — nothing touched, nothing activated, 0 changes\n• Brief round PAUSED in the register from tonight: no new briefs will be ordered on Wednesday. Reason: the store is not advertising and 36 briefs already sit as Draft — every answer to the open question (A/B/C) means no new briefs. Release with: node factory/register.mjs briefantal kalender/adventskalender-racingbilar auto\n• The b",
       "bilagor": 0
      },
      {
+      "id": "1548822530792497173",
       "tid": "2026-09-13T22:27:47.072000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 ADVENTLANE night watch — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 2 834 SEK\nPurchases: 5\nROAS: 1.18\nProfit contribution: -1 185 SEK\n\n**Done automatically**\n• Budget round: both campaigns are PAUSED by Axel since Sept 13, 11:05 — a decision, nothing touched, nothing activated\n• No brief day (Monday). Next brief day is Wednesday Sept 16 — the night watch will order 21 more briefs then unless told otherwise\n• Lifetime SE: 2 799 SEK, 5 purchases, CPA 560 SEK (break-even 323). No single ad ever passed the ad gate — the 7 videos that went live Sept 12 are untested, not failed\n\n**⚠️ Warnings**\n• 36",
       "bilagor": 0
@@ -5385,22 +5575,28 @@
     "lank": "https://discord.com/channels/1547600929057144892/1547607792104378469",
     "meddelanden": [
      {
+      "id": "1549280526521737246",
       "tid": "2026-09-15T04:47:41.763000+00:00",
       "av": "Axel",
+      "avId": "1469423029783236689",
       "bot": false,
       "text": "Do not make any ads for this product this discord will be closed",
       "bilagor": 0
      },
      {
+      "id": "1549187159754281092",
       "tid": "2026-09-14T22:36:41.391000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 TACKLEBAY night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 3 452 SEK\nPurchases: 6\nROAS: 0.68\nProfit contribution: 0 SEK\n\n**Done automatically**\n• Budget round: campaign TACKLEBAY_SE_Spöhållaren lowered 700 → 500 kr/day (five losing days in a row, ROAS under break-even 1.49 every day — the loss-streak rule ignores the cadence lock). Read back and logged. 500 kr is the floor; the rules never go lower and never pause a campaign\n• Nothing paused by me, nothing activated. PD_11_H1 and PD_25_H1 stay paused (someone else's decision)\n• Still a cold start: 66 ads, 3 452 kr, 6 purchases over 7 d",
       "bilagor": 0
      },
      {
+      "id": "1548824674782158908",
       "tid": "2026-09-13T22:36:18.239000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 TACKLEBAY night watch — 2026-09-14\n\n**Numbers (7 days)**\nSpend: 3 050 SEK\nPurchases: 5\nROAS: 0.61\nProfit contribution: 0 SEK\n\n**Done automatically**\n• Budget round: 0 changes. Campaign TACKLEBAY_SE_Spöhållaren stays at 700 kr/day — still under 16 % profit (3-day ROAS 0.64 on 5 purchases) but the cadence lock holds: lowered yesterday, next change earliest 2026-09-16\n• Nothing paused by me, nothing activated. PD_11_H1 (1 030 kr, 2 purchases) and PD_25_H1 (747 kr, 2 purchases) were paused by someone else — left alone as a decision\n• Still a cold start: 66 ads, 3 050 kr, 5 purchases over 14 day",
       "bilagor": 0
@@ -5427,8 +5623,10 @@
     "lank": "https://discord.com/channels/1547844745412350012/1547975094016548904",
     "meddelanden": [
      {
+      "id": "1549191154334048296",
       "tid": "2026-09-14T22:52:33.773000+00:00",
       "av": "Bävern",
+      "avId": "1543628123289952277",
       "bot": true,
       "text": "🌙 CATCABIN night watch — 2026-09-15\n\n**Numbers (7 days)**\nSpend: 3 191 SEK\nPurchases: 2\nROAS: 0.49\nProfit contribution: -2 216 SEK\n\n**Done automatically**\n• Paused ad CatCabin_PD_1_H1 — 1 220 SEK spend (over 3x target CPA 290), 1 purchase at CPA 1 220 vs break-even 487. Read back ACTIVE -> PAUSED.\n• Campaign budget left at 1 000 SEK/day: only 2 purchases in 3 days, below the 3-purchase gate, so no verdict allowed.\n• Break-even ROAS 1.62 / CPA 487 SEK (no VAT) is the kill line.\n\n**⚠️ Warnings**\n• Briefs paused (owner decision 2026-09-14): 13 ads, 1 purchase, ROAS 0.30 — no judgeable data, so n",
       "bilagor": 0
@@ -5442,45 +5640,45 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:11.077Z"
+   "tid": "2026-09-22T19:05:04.472Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:11.077Z"
+   "tid": "2026-09-22T19:05:04.472Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:11.077Z"
+   "tid": "2026-09-22T19:05:04.472Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:11.077Z"
+   "tid": "2026-09-22T19:05:04.472Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "6 av 13 butiker gick inte att läsa",
-   "tid": "2026-09-22T18:05:24.587Z",
+   "tid": "2026-09-22T19:05:18.493Z",
    "butiker": 13
   },
   {
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:35.780Z",
+   "tid": "2026-09-22T19:05:25.808Z",
    "konton": 5
   },
   {
    "id": "rutiner",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:37.374Z",
+   "tid": "2026-09-22T19:05:26.953Z",
    "ok": 26,
    "sen": 0,
    "saknas": 0,
@@ -5492,14 +5690,14 @@
    "id": "discord",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:05:47.625Z",
+   "tid": "2026-09-22T19:05:34.848Z",
    "kanaler": 26
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-22T18:06:10.020Z",
+   "tid": "2026-09-22T19:05:57.764Z",
    "personer": 7
   }
  ],
@@ -5671,11 +5869,11 @@
     },
     {
      "datum": "2026-09-22",
-     "omsattning": 62825.50000000001,
-     "ordrar": 38
+     "omsattning": 65873.5,
+     "ordrar": 40
     }
    ],
-   "ordrar": 245,
+   "ordrar": 247,
    "status": "ok",
    "orsak": null
   },
@@ -5834,11 +6032,11 @@
     },
     {
      "datum": "2026-09-22",
-     "omsattning": 24125.2,
-     "ordrar": 28
+     "omsattning": 24514.199999999997,
+     "ordrar": 29
     }
    ],
-   "ordrar": 883,
+   "ordrar": 884,
    "status": "ok",
    "orsak": null
   },
@@ -6323,11 +6521,11 @@
     },
     {
      "datum": "2026-09-22",
-     "omsattning": 1566,
-     "ordrar": 4
+     "omsattning": 2364,
+     "ordrar": 6
     }
    ],
-   "ordrar": 116,
+   "ordrar": 118,
    "status": "ok",
    "orsak": null
   },
@@ -6903,26 +7101,26 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 31504.77,
+     "spend": 31505.68,
      "kop": 87,
-     "roas": 2.213385
+     "roas": 2.213322
     }
    ],
    "idag": {
-    "spend": 32192.64,
-    "kop": 82,
-    "roas": 2.110325,
+    "spend": 34136.69,
+    "kop": 84,
+    "roas": 2.050762,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120250147343350291",
      "namn": "Taköverdraget för Husvagn 6,5 × 3 m | BE ROAS 1.63 | Launch 2026-09-09",
-     "spend": 79527.59,
+     "spend": 79527.88,
      "kop": 212,
-     "roas": 3.282743,
-     "cpa": 375.13014150943394,
-     "intakt": 261068.63937937
+     "roas": 3.282731,
+     "cpa": 375.13150943396226,
+     "intakt": 261068.63704028
     },
     {
      "id": "120250009325850291",
@@ -6936,11 +7134,11 @@
     {
      "id": "120250175763810291",
      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-     "spend": 16023.37,
+     "spend": 16023.45,
      "kop": 59,
-     "roas": 2.262021,
-     "cpa": 271.5825423728814,
-     "intakt": 36245.19943077
+     "roas": 2.26201,
+     "cpa": 271.58389830508474,
+     "intakt": 36245.2041345
     },
     {
      "id": "120249902177470291",
@@ -6963,20 +7161,20 @@
     {
      "id": "120250252311730291",
      "namn": "Taköverdraget LISTICLE LAGERRENSNING",
-     "spend": 6157.66,
+     "spend": 6157.86,
      "kop": 18,
-     "roas": 3.404215,
-     "cpa": 342.09222222222223,
-     "intakt": 20961.998536900002
+     "roas": 3.404105,
+     "cpa": 342.1033333333333,
+     "intakt": 20962.002015299997
     },
     {
      "id": "120250253948980291",
      "namn": "Solcellslampan med Rörelsesensor 210 LED | BE ROAS 1.62 | Launch 2026-09-17",
-     "spend": 5844.39,
+     "spend": 5844.42,
      "kop": 14,
-     "roas": 1.930638,
-     "cpa": 417.4564285714286,
-     "intakt": 11283.40142082
+     "roas": 1.930628,
+     "cpa": 417.4585714285714,
+     "intakt": 11283.40089576
     },
     {
      "id": "120250001079150291",
@@ -6990,11 +7188,11 @@
     {
      "id": "120250284693380291",
      "namn": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
-     "spend": 5323.96,
+     "spend": 5324.23,
      "kop": 39,
-     "roas": 3.590166,
-     "cpa": 136.51179487179488,
-     "intakt": 19113.90017736
+     "roas": 3.589984,
+     "cpa": 136.51871794871795,
+     "intakt": 19113.900512319997
     },
     {
      "id": "120250253867730291",
@@ -7134,7 +7332,7 @@
     {
      "id": "120250314107930291",
      "namn": "Katalog",
-     "spend": 497.55,
+     "spend": 497.59,
      "kop": 0,
      "roas": null,
      "cpa": null,
@@ -7226,35 +7424,35 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 13397.39,
+     "spend": 13398.02,
      "kop": 21,
-     "roas": 2.189901
+     "roas": 2.189798
     }
    ],
    "idag": {
-    "spend": 20328.16,
-    "kop": 22,
-    "roas": 1.533668,
+    "spend": 21415.15,
+    "kop": 24,
+    "roas": 1.583209,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120249050544990172",
      "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 25562.8,
+     "spend": 25562.83,
      "kop": 65,
-     "roas": 3.410405,
-     "cpa": 393.27384615384614,
-     "intakt": 87179.500934
+     "roas": 3.410401,
+     "cpa": 393.27430769230773,
+     "intakt": 87179.50099483
     },
     {
      "id": "120249050596730172",
      "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 13468.78,
+     "spend": 13469.38,
      "kop": 30,
-     "roas": 2.881493,
-     "cpa": 448.95933333333335,
-     "intakt": 38810.19528854
+     "roas": 2.881365,
+     "cpa": 448.97933333333333,
+     "intakt": 38810.2001037
     },
     {
      "id": "120249121867590172",
@@ -7396,9 +7594,9 @@
     }
    ],
    "idag": {
-    "spend": 8510.37,
+    "spend": 9102.23,
     "kop": 11,
-    "roas": 2.779159,
+    "roas": 2.598448,
     "tomt": false
    },
    "kampanjer": [
@@ -7590,13 +7788,13 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 635.51,
+     "spend": 635.75,
      "kop": 1,
-     "roas": 2.256723
+     "roas": 2.255871
     }
    ],
    "idag": {
-    "spend": 2482.97,
+    "spend": 2635.94,
     "kop": 0,
     "roas": null,
     "tomt": false
@@ -7614,11 +7812,11 @@
     {
      "id": "120251780248980199",
      "namn": "Kattopeite Asuntovaunu | FI | Launch 2026-09-18",
-     "spend": 4635.55,
+     "spend": 4635.79,
      "kop": 5,
-     "roas": 1.678573,
-     "cpa": 927.11,
-     "intakt": 7781.109070150001
+     "roas": 1.678486,
+     "cpa": 927.158,
+     "intakt": 7781.1086139399995
     }
    ],
    "status": "ok",
@@ -7808,26 +8006,26 @@
     },
     {
      "datum": "2026-09-21",
-     "spend": 11176.42,
+     "spend": 11176.68,
      "kop": 28,
-     "roas": 2.489173
+     "roas": 2.489115
     }
    ],
    "idag": {
-    "spend": 9587.51,
+    "spend": 10276.72,
     "kop": 23,
-    "roas": 2.297069,
+    "roas": 2.143015,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120252183519570233",
      "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
-     "spend": 26993.87,
+     "spend": 26994.13,
      "kop": 64,
-     "roas": 3.263558,
-     "cpa": 421.77921875,
-     "intakt": 88096.06038946
+     "roas": 3.263527,
+     "cpa": 421.78328125,
+     "intakt": 88096.07209651
     },
     {
      "id": "120252183673160233",
@@ -16175,7 +16373,7 @@
     "program": "va"
    }
   ],
-  "raknat": "2026-09-22T18:06:10.000Z",
+  "raknat": "2026-09-22T19:05:57.739Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -16547,6 +16745,12 @@
    "namn": "Mechile Delos Santos",
    "fornamn": "Mechile",
    "roll": "support_chef",
+   "discord": {
+    "id": "1543617780396593206",
+    "anvandarnamn": "mechilecs_18681",
+    "visningsnamn": "Mechile CS",
+    "kommentar": "Slaget upp via members/search i Bäverbutikens server 2026-09-22 — det stonebite/larm.mjs pingar (Axels beslut A samma dag)."
+   },
    "brands": [
     "*"
    ],
@@ -18170,6 +18374,9 @@
   }
  ],
  "insatser": [],
+ "larm": {
+  "skickade": []
+ },
  "redigerare": {
   "status": "ok",
   "orsak": null,
@@ -19011,11 +19218,11 @@
     "paVag": 1195,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:18:56.702Z",
+     "datum": "2026-09-22T18:18:23.808Z",
      "ordrar": 2102,
-     "paket": 1220,
+     "paket": 1205,
      "registrerade": 0,
-     "skrivna": 31,
+     "skrivna": 1,
      "fel": 0,
      "torr": false
     }
@@ -19030,7 +19237,7 @@
     "paVag": 229,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:25:37.258Z",
+     "datum": "2026-09-22T18:25:33.994Z",
      "ordrar": 229,
      "paket": 229,
      "registrerade": 0,
@@ -19049,11 +19256,11 @@
     "paVag": 431,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:33:35.975Z",
+     "datum": "2026-09-22T18:33:38.715Z",
      "ordrar": 865,
      "paket": 436,
      "registrerade": 0,
-     "skrivna": 1,
+     "skrivna": 0,
      "fel": 0,
      "torr": false
     }
@@ -19068,7 +19275,7 @@
     "paVag": 1,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:49:28.753Z",
+     "datum": "2026-09-22T18:49:47.538Z",
      "ordrar": 1,
      "paket": 1,
      "registrerade": 0,
@@ -19087,7 +19294,7 @@
     "paVag": 10,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:41:25.223Z",
+     "datum": "2026-09-22T18:41:37.550Z",
      "ordrar": 22,
      "paket": 12,
      "registrerade": 0,
@@ -19106,7 +19313,7 @@
     "paVag": 50,
     "utanSkanning": 0,
     "senasteKorning": {
-     "datum": "2026-09-22T17:57:42.558Z",
+     "datum": "2026-09-22T18:57:32.288Z",
      "ordrar": 113,
      "paket": 53,
      "registrerade": 0,

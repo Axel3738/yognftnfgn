@@ -8,12 +8,12 @@
    "fulfillment": "gid://shopify/Fulfillment/8285231645017",
    "registrerad": "2026-09-20",
    "status17": "InTransit",
-   "senast": "2026-09-22T17:49",
+   "senast": "2026-09-22T19:50",
    "status": "IN_TRANSIT"
   }
  },
  "senaste_korning": {
-  "datum": "2026-09-22T17:49:28.753Z",
+  "datum": "2026-09-22T19:50:34.530Z",
   "ordrar": 1,
   "paket": 1,
   "registrerade": 0,
