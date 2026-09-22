@@ -1,109 +1,186 @@
-#!/usr/bin/env node
-// mail.mjs — supportmejlen som KÄLLA, inte som rapport. Läser brevlådan för
-// ett brand (samma två vägar som veckorapporten: IMAP där nätet tillåter,
-// annars Loopias webbmejl över HTTPS), plockar KUNDERNAS mejl och söker i dem.
+// mail.mjs — CLI:n för supportbrevlådan på Loopia, över webbmejlen.
 //
-//   node kundtjanst/mail.mjs sok "husvagn" [--brand baverbutiken] [--dagar 90] [--json]
-//   node kundtjanst/mail.mjs sok "taköverdrag,husvagn,husbil" --dagar 120
+//   node kundtjanst/mail.mjs kolla                      logga in och ut — funkar nycklarna?
+//   node kundtjanst/mail.mjs mappar                     mappnamnen (INBOX, Sent, Drafts …)
+//   node kundtjanst/mail.mjs lista [--mapp INBOX] [--sida 1] [--antal 20]
+//   node kundtjanst/mail.mjs las <uid> [--mapp INBOX] [--ra] [--max 4000]
+//   node kundtjanst/mail.mjs sok "<ord …>" [--mapp INBOX] [--sidor 4] [--kropp]
 //
-// Används av tools/invandningsmatris.mjs (Axels beslut 2026-09-22): kunder som
-// mejlar före köp gör det sällan offentligt, så kommentarerna ensamma missar
-// invändningar. Läs-bara: inget markeras som läst, inget svaras på.
-// Kundadresser maskeras i allt som skrivs ut (ka***@gmail.com).
+// Skrivning (2026-09-21 — svara, utkast, flagga, flytta; aldrig radera):
+//   node kundtjanst/mail.mjs svara <uid> --visa                    vad svaret skulle bli (till, ämne, citat) — skickar inget
+//   node kundtjanst/mail.mjs utkast <uid> --text "…" [--amne "…"]  sparar svaret i Drafts (torrkörningen)
+//   node kundtjanst/mail.mjs svara <uid> --text "…" [--utan-citat]  SKICKAR i tråden — går inte att ångra
+//   node kundtjanst/mail.mjs flagga <uid> [--av]                    stjärnan på (eller av)
+//   node kundtjanst/mail.mjs flytta <uid> --till VA-PRIO [--skapa]  till en mapp (skapas bara med --skapa)
+//   node kundtjanst/mail.mjs mapp <namn>                            skapa en mapp
 //
-// Kräver KUNDTJANST_MAIL_PASS_<BRAND> i miljön. Saknas den säger resultatet
-// vilken variabel som fattas — aldrig ett tyst tomt svar.
+// Gemensamt: --brand <id> (behövs bara när flera brevlådor är konfigurerade),
+// --json (maskinläsbart, det MCP-servern och andra skript vill ha), --tyst.
+//
+// Nycklarna är samma som veckorapportens: KUNDTJANST_MAIL_PASS_<ID> (och
+// KUNDTJANST_MAIL_USER_<ID> om användaren inte är supportmailen i brandfilen).
+// Kör `node kundtjanst/setup.mjs` för att se vad som saknas.
+//
+// ⚠️ Kundadresser skrivs ut i klartext här — det är ett verktyg för den som
+// redan har lösenordet till brevlådan. Klistra aldrig utdata rakt in i Discord
+// eller Notion; rapporterna (run.mjs) maskerar av en anledning.
 
-import { pathToFileURL } from 'node:url';
-import { upptackBrands, korkonfig } from './brands.mjs';
-import { lasViaImap, lasViaWebmail } from './run.mjs';
-import { arEgen, arSystem } from './arenden.mjs';
-import { maskeraText } from './maskera.mjs';
+import { oppnaBrevlada } from './brevlada.mjs';
 
-const DAG = 86_400_000;
-
-/** Brandet med id:t, eller null. */
-export function hittaBrand(brandId) {
-  return upptackBrands().find((b) => b.id === brandId) ?? null;
-}
-
-/**
- * Läser inkorgen för ett brand `dagar` bakåt. Samma väg som run.mjs korBrand
- * (IMAP → webbmejl vid PROXY_SPARRAR_PORTEN). Returnerar alltid ett objekt:
- * { ok: true, inkorg, kalla } eller { ok: false, orsak, kod }.
- */
-export async function lasBrevlada(brandId, { dagar = 90, env = process.env, logg = () => {}, nu = new Date() } = {}) {
-  const brand = hittaBrand(brandId);
-  if (!brand) return { ok: false, orsak: `okänt brand "${brandId}" — kända: ${upptackBrands().map((b) => b.id).join(', ')}`, kod: 'OKANT_BRAND' };
-  const konfig = korkonfig(brand, env);
-  if (!konfig.mail.konfigurerad) return { ok: false, orsak: `mejlen kan inte läsas — saknar ${konfig.mail.saknas.join(', ')}`, kod: 'NYCKEL_SAKNAS', saknas: konfig.mail.saknas };
-  const period = { fran: new Date(nu.getTime() - dagar * DAG), till: nu };
-  const via = konfig.mail.via;
-  let last = null;
-  if (via === 'imap' || via === 'auto') {
-    const r = await lasViaImap(konfig, period, logg);
-    if (r.ok) last = r;
-    else if (via === 'imap' || r.kod !== 'PROXY_SPARRAR_PORTEN') return { ok: false, orsak: `IMAP ${konfig.mail.host}: ${r.fel}`, kod: r.kod ?? null };
-    else logg(`IMAP spärrat av nätet — byter till webbmejlen ${konfig.mail.webmail}`);
+export function tolkaArgv(argv) {
+  const val = { _: [] };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    if (!a.startsWith('--')) { val._.push(a); continue; }
+    const namn = a.slice(2);
+    const nasta = argv[i + 1];
+    if (nasta !== undefined && !nasta.startsWith('--') && !['json', 'ra', 'kropp', 'tyst', 'hjalp', 'help', 'visa', 'av', 'skapa', 'utan-citat', 'utkast'].includes(namn)) { val[namn] = nasta; i++; }
+    else val[namn] = true;
   }
-  if (!last) {
-    const r = await lasViaWebmail(konfig, period, logg);
-    if (!r.ok) return { ok: false, orsak: `Webbmejl ${konfig.mail.webmail}: ${r.fel}`, kod: r.kod ?? null };
-    last = r;
+  return val;
+}
+
+const HJALP = `Brevlådan (Loopia webbmejl)
+
+  node kundtjanst/mail.mjs kolla                          logga in och ut
+  node kundtjanst/mail.mjs mappar                         mappnamnen
+  node kundtjanst/mail.mjs lista [--mapp INBOX] [--sida 1] [--antal 20]
+  node kundtjanst/mail.mjs las <uid> [--mapp INBOX] [--ra] [--max 4000]
+  node kundtjanst/mail.mjs sok "<ord …>" [--mapp INBOX] [--sidor 4] [--kropp]
+
+  node kundtjanst/mail.mjs svara <uid> --visa                    vad svaret blir — skickar inget
+  node kundtjanst/mail.mjs utkast <uid> --text "…" [--amne "…"]  spara i Drafts (torrkörning)
+  node kundtjanst/mail.mjs svara <uid> --text "…" [--utan-citat]  SKICKA i tråden (går inte att ångra)
+  node kundtjanst/mail.mjs flagga <uid> [--av]                    stjärnan på/av
+  node kundtjanst/mail.mjs flytta <uid> --till <mapp> [--skapa]   till en mapp
+  node kundtjanst/mail.mjs mapp <namn>                            skapa en mapp
+
+  --brand <id>   vilken brevlåda (bara när flera är konfigurerade)
+  --json         maskinläsbart
+  --tyst         inga loggrader på stderr
+`;
+
+function radTabell(rader) {
+  const bredd = (n) => Math.min(n, 40);
+  const fr = Math.max(4, ...rader.map((r) => bredd(r.fran.length)));
+  return rader.map((r) => `${String(r.uid).padStart(6)}  ${r.last ? ' ' : '•'}  ${r.datum.padEnd(17).slice(0, 17)}  ${r.fran.slice(0, 40).padEnd(fr)}  ${r.amne}${r.traff === 'text' && r.utdrag ? `\n${' '.repeat(29 + fr)}↳ ${r.utdrag}` : ''}`);
+}
+
+export async function korKommando(kommando, val, brevlada) {
+  switch (kommando) {
+    case 'kolla': {
+      await brevlada.loggaIn();
+      const mappar = await brevlada.mappar();
+      await brevlada.loggaUt();
+      return { ok: true, brand: brevlada.id, user: brevlada.user, mappar };
+    }
+    case 'mappar': {
+      const mappar = await brevlada.mappar();
+      return { brand: brevlada.id, mappar };
+    }
+    case 'lista': {
+      return brevlada.lista({ mapp: val.mapp, sida: Number(val.sida) || 1, antal: Number(val.antal) || 20 });
+    }
+    case 'las': {
+      const uid = val._[1];
+      if (!uid) throw new Error('las behöver ett uid: node kundtjanst/mail.mjs las 1234');
+      return brevlada.las(uid, { mapp: val.mapp, ra: Boolean(val.ra), maxTecken: Number(val.max) || 0 });
+    }
+    case 'sok': {
+      const fraga = val._.slice(1).join(' ');
+      if (!fraga) throw new Error('sok behöver ett eller flera ord: node kundtjanst/mail.mjs sok "order 1042"');
+      return brevlada.sok(fraga, { mapp: val.mapp, maxSidor: Number(val.sidor) || 4, kropp: Boolean(val.kropp), max: Number(val.max) || 50 });
+    }
+    case 'svara':
+    case 'utkast': {
+      const uid = val._[1];
+      if (!uid) throw new Error(`${kommando} behöver ett uid: node kundtjanst/mail.mjs ${kommando} 1234 --text "…"`);
+      if (val.visa) return brevlada.forhandsgranskaSvar(uid, { mapp: val.mapp });
+      if (!val.text) throw new Error(`${kommando} behöver --text "…" (eller --visa för att bara titta).`);
+      return brevlada.svara(uid, { mapp: val.mapp, text: val.text, amne: val.amne ?? null, utkast: kommando === 'utkast' || Boolean(val.utkast), medCitat: !val['utan-citat'] });
+    }
+    case 'flagga': {
+      const uid = val._[1];
+      if (!uid) throw new Error('flagga behöver ett uid: node kundtjanst/mail.mjs flagga 1234 [--av]');
+      return brevlada.flagga(uid, { mapp: val.mapp, av: Boolean(val.av) });
+    }
+    case 'flytta': {
+      const uid = val._[1];
+      if (!uid) throw new Error('flytta behöver ett uid och --till <mapp>: node kundtjanst/mail.mjs flytta 1234 --till VA-PRIO');
+      return brevlada.flytta(uid, { mapp: val.mapp, till: val.till, skapa: Boolean(val.skapa) });
+    }
+    case 'mapp': {
+      const namn = val._.slice(1).join(' ');
+      if (!namn) throw new Error('mapp behöver ett namn: node kundtjanst/mail.mjs mapp VA-PRIO');
+      return brevlada.skapaMapp(namn);
+    }
+    default:
+      throw new Error(`Okänt kommando "${kommando}".\n\n${HJALP}`);
   }
-  const iPeriod = (m) => !m.datum || m.datum.getTime() >= period.fran.getTime() - DAG;
-  return { ok: true, brand: konfig, inkorg: last.inkorg.filter(iPeriod), kalla: last.kalla, dagar };
 }
 
-/** Bara kundernas mejl: inte brandets egna, inte systemmejl, inte autosvar, inte listor. Ren. */
-export function kundmejl(inkorg, brand) {
-  return (inkorg ?? []).filter((m) => m && !m.autosvar && !m.listmejl && !arEgen(m.fran?.adress, brand) && !arSystem(m.fran?.adress, m.amne));
-}
-
-/** Sökorden ur en sträng: kommaseparerade, trimmade, tomma bort. Ren. */
-export function sokord(s) {
-  return String(s ?? '').split(/[,;]/).map((x) => x.trim()).filter(Boolean);
-}
-
-/**
- * Mejl vars ämne eller text nämner något av orden (skiftlägesokänsligt, som
- * delsträng — "husvagn" träffar "husvagnen" och "husvagnstak"). Ren.
- * Returnerar [{ amne, text, datum, traff }] med adresser maskerade.
- */
-export function sokMejl(mejl, ord) {
-  const lista = Array.isArray(ord) ? ord : sokord(ord);
-  if (!lista.length) return [];
-  const re = new RegExp(lista.map((o) => o.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'iu');
-  const ut = [];
-  for (const m of mejl ?? []) {
-    const amne = String(m.amne ?? '');
-    const text = String(m.text ?? m.helText ?? '');
-    const traff = `${amne}\n${text}`.match(re);
-    if (!traff) continue;
-    ut.push({ amne: maskeraText(amne), text: maskeraText(text).replace(/\s+/g, ' ').trim(), datum: m.datum instanceof Date && !Number.isNaN(m.datum.getTime()) ? m.datum.toISOString().slice(0, 10) : null, traff: traff[0] });
+/** Utskriften för människor. JSON sköts av huvud(). */
+export function skrivUt(kommando, r) {
+  switch (kommando) {
+    case 'kolla':
+      return `✅ ${r.brand}: inloggad som ${r.user}, ${r.mappar.length} mappar (${r.mappar.join(', ')})`;
+    case 'mappar':
+      return r.mappar.map((m) => `  ${m}`).join('\n');
+    case 'lista':
+      return `${r.mapp} — sida ${r.sida} av ${r.sidor}, ${r.totalt} mejl${Number.isFinite(r.olasta) ? `, ${r.olasta} olästa` : ''}\n\n   uid  •  datum              från${' '.repeat(Math.max(0, Math.max(4, ...r.rader.map((x) => Math.min(x.fran.length, 40))) - 4))}  ämne\n${radTabell(r.rader).join('\n')}`;
+    case 'las':
+      return [
+        `Från:  ${r.fran.namn ? `${r.fran.namn} <${r.fran.adress}>` : r.fran.adress}`,
+        `Till:  ${r.till.map((t) => t.adress).join(', ')}`,
+        `Datum: ${r.datum ?? '?'}`,
+        `Ämne:  ${r.amne}`,
+        `Mapp:  ${r.mapp} · uid ${r.uid}${r.autosvar ? ' · autosvar' : ''}${r.listmejl ? ' · listmejl' : ''}`,
+        '',
+        r.ra ?? r.helText,
+      ].join('\n');
+    case 'sok':
+      return `${r.traffar.length} träffar på "${r.fraga}" i ${r.mapp} (${r.lasta} mejl lästa, sida 1–${r.sidorLasta} av ${r.sidor}${r.klippt ? ', klippt vid max' : ''})\n\n${radTabell(r.traffar).join('\n')}`;
+    case 'visa':
+      return [`Svar på uid ${r.uid} i ${r.mapp} — inget skickat`, `Från:  ${r.fran}`, `Till:  ${r.till}`, `Ämne:  ${r.amne}`, `Tråd:  ${r.replyMsgid ?? '(In-Reply-To sätts av Roundcube)'}`, '', 'Citatet Roundcube lägger under svaret:', r.citat || '(inget)'].join('\n');
+    case 'svara':
+      // --visa ger förhandsgranskningen (ingen typ) — skriv aldrig "Skickat" då.
+      if (!r.typ) return skrivUt('visa', r);
+      return r.typ === 'utkast'
+        ? `📝 Utkast sparat i ${r.utkastMapp ?? 'Drafts'} (uid ${r.utkastUid ?? '?'}) — svar på uid ${r.uid}, till ${r.till}, ämne "${r.amne}". Inget skickat.`
+        : `✉️  Skickat till ${r.till}, ämne "${r.amne}" (svar på uid ${r.uid})${r.sparfel ? ' ⚠️ men kopian kunde inte sparas i Sent' : ''}.`;
+    case 'flagga':
+      return `${r.flaggad ? '🚩 Flaggad' : 'Flagga borttagen'}: uid ${r.uid} i ${r.mapp}.`;
+    case 'flytta':
+      return `📁 uid ${r.uid} flyttad ${r.fran} → ${r.till}${r.skapad ? ' (mappen skapades)' : ''}.`;
+    case 'mapp':
+      return r.fannsRedan ? `Mappen "${r.namn}" fanns redan.` : `📁 Mappen "${r.namn}" skapad. Mappar nu: ${r.mappar.join(', ')}`;
+    default:
+      return JSON.stringify(r, null, 2);
   }
-  return ut;
 }
 
-async function huvud(argv) {
-  const flagga = (n, s = null) => { const i = argv.indexOf(`--${n}`); return i !== -1 && argv[i + 1] !== undefined && !argv[i + 1].startsWith('--') ? argv[i + 1] : s; };
-  const kommando = argv[0];
-  if (kommando !== 'sok' || !argv[1] || argv[1].startsWith('--')) {
-    console.error('Användning: node kundtjanst/mail.mjs sok "<ord,ord>" [--brand baverbutiken] [--dagar 90] [--json]');
-    process.exit(2);
+async function huvud() {
+  const val = tolkaArgv(process.argv.slice(2));
+  const kommando = val._[0];
+  if (!kommando || val.hjalp || val.help) { console.log(HJALP); return; }
+  const logg = val.tyst ? () => {} : (s) => console.error(`· ${s}`);
+  const brevlada = oppnaBrevlada(val.brand, { logg });
+  try {
+    const r = await korKommando(kommando, val, brevlada);
+    console.log(val.json ? JSON.stringify(r, null, 2) : skrivUt(kommando, r));
+  } finally {
+    await brevlada.loggaUt();
   }
-  const ord = sokord(argv[1]);
-  const brandId = flagga('brand', 'baverbutiken');
-  const dagar = Number(flagga('dagar', 90));
-  const r = await lasBrevlada(brandId, { dagar, logg: (m) => console.error(`  ${m}`) });
-  if (!r.ok) { console.error(`✗ ${r.orsak}`); process.exit(1); }
-  const kunder = kundmejl(r.inkorg, r.brand);
-  const traffar = sokMejl(kunder, ord);
-  if (argv.includes('--json')) { console.log(JSON.stringify({ brand: brandId, dagar, kalla: r.kalla, inkorg: r.inkorg.length, kundmejl: kunder.length, ord, traffar }, null, 2)); return; }
-  console.log(`${r.kalla} · ${kunder.length} kundmejl senaste ${dagar} d · ${traffar.length} nämner ${ord.join(' / ')}`);
-  for (const t of traffar) console.log(`- ${t.datum ?? '—'} · ${t.amne || '(utan ämne)'} — ${t.text.slice(0, 200)}`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  huvud(process.argv.slice(2)).catch((e) => { console.error(`✗ ${e.message}`); process.exit(1); });
+if (process.argv[1] && process.argv[1].endsWith('mail.mjs')) {
+  // Samma grepp som run.mjs: Nodes fetch läser inte HTTPS_PROXY själv i alla
+  // versioner — starta om under flaggan så webbmejlen nås genom sessionens proxy.
+  if (process.env.HTTPS_PROXY && process.env.NODE_USE_ENV_PROXY !== '1') {
+    const { spawnSync } = await import('node:child_process');
+    // NODE_NO_WARNINGS: annars skriver Node "EnvHttpProxyAgent is experimental" på stderr vid varje körning.
+    const r = spawnSync(process.execPath, process.argv.slice(1), { stdio: 'inherit', env: { ...process.env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' } });
+    process.exit(r.status ?? 1);
+  }
+  huvud().catch((e) => { console.error(`✗ ${e.message}`); process.exit(1); });
 }

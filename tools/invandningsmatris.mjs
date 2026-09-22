@@ -281,6 +281,67 @@ export function brieferMedInvandning(mapp) {
   return ut;
 }
 
+// ------------------------------------------------------------------ supportmejlen
+
+/** Sökorden ur en sträng: kommaseparerade, trimmade, tomma bort. Ren. */
+export function sokord(s) {
+  return String(s ?? '').split(/[,;]/).map((x) => x.trim()).filter(Boolean);
+}
+
+/**
+ * Bara kundernas mejl: inte brandets egna, inte systemmejl (Shopify, Klarna,
+ * fraktbolag …), inte autosvar, inte listor. Ren. `mejl` är formateraMejl-objekt
+ * (fran.adress, amne, helText, autosvar, listmejl) — samma form som
+ * `node kundtjanst/mail.mjs las`. Returnerar { amne, text, datum } med adresser
+ * maskerade; kundnamn följer aldrig med.
+ */
+export function filtreraKundmejl(mejl, { supportmail = '', arEgen, arSystem, maskeraText = (s) => s } = {}) {
+  const ut = [];
+  for (const m of mejl ?? []) {
+    if (!m || m.autosvar || m.listmejl) continue;
+    const adress = m.fran?.adress ?? m.franAdress ?? '';
+    if (arEgen && arEgen(adress, { supportmail })) continue;
+    if (arSystem && arSystem(adress, m.amne)) continue;
+    ut.push({ amne: maskeraText(String(m.amne ?? '')), text: maskeraText(String(m.text || m.helText || '')).replace(/\s+/g, ' ').trim(), datum: m.datum ? String(m.datum).slice(0, 10) : null });
+  }
+  return ut;
+}
+
+/**
+ * Kundmejl som nämner något av orden, via brevlådan i kundtjanst/ (Loopias
+ * webbmejl över HTTPS, samma väg som `node kundtjanst/mail.mjs sok --kropp`).
+ * En sökning per ord (sok kräver att ALLA ord träffar), uid-unikt, sedan läses
+ * varje träff för hela texten. Läs-bara. Returnerar alltid ett objekt:
+ * { ok: true, mejl, brand, mapp, lasta } eller { ok: false, orsak }.
+ */
+export async function hamtaMejl({ brand = 'baverbutiken', ord = [], sidor = 8, max = 100, logg = () => {} } = {}) {
+  let oppnaBrevlada, arEgen, arSystem, maskeraText;
+  try {
+    ({ oppnaBrevlada } = await import('../kundtjanst/brevlada.mjs'));
+    ({ arEgen, arSystem } = await import('../kundtjanst/arenden.mjs'));
+    ({ maskeraText } = await import('../kundtjanst/maskera.mjs'));
+  } catch (e) { return { ok: false, orsak: `kundtjanst/ går inte att läsa in: ${e.message}` }; }
+  let brevlada;
+  try { brevlada = oppnaBrevlada(brand, { logg }); } catch (e) { return { ok: false, orsak: e.message }; }
+  const traffar = new Map();
+  let mapp = null;
+  let lasta = 0;
+  try {
+    for (const o of ord) {
+      const r = await brevlada.sok(o, { kropp: true, maxSidor: sidor, max });
+      mapp = r.mapp; lasta = Math.max(lasta, r.lasta);
+      for (const t of r.traffar) if (!traffar.has(t.uid)) traffar.set(t.uid, t);
+    }
+    const hela = [];
+    for (const uid of traffar.keys()) {
+      try { hela.push(await brevlada.las(uid, { mapp, maxTecken: 6000 })); } catch (e) { logg(`uid ${uid}: ${e.message}`); }
+    }
+    return { ok: true, brand: brevlada.id, mapp, lasta, mejl: filtreraKundmejl(hela, { supportmail: brevlada.user, arEgen, arSystem, maskeraText }) };
+  } catch (e) {
+    return { ok: false, orsak: `${brand}: ${e.message}` };
+  }
+}
+
 // ------------------------------------------------------------------ filen
 
 const pct = (x) => `${Math.round(x * 100)} %`;
@@ -361,19 +422,18 @@ async function huvud(argv) {
     kallor.push(`Formaten lästa ur kontot: ${annonser.length} annonser i kampanjen, ${annonser.filter((a) => arOb(a.name)).length} med vinkelkoden OB.`);
   }
 
-  // 3. Supportmejlen.
+  // 3. Supportmejlen — samma sökning som `node kundtjanst/mail.mjs sok "<ord>" --kropp`.
   let mejl = [];
   if (!finns('utan-mejl')) {
-    const ord = flagga('ord');
-    if (!ord) {
+    const ord = sokord(flagga('ord'));
+    if (!ord.length) {
       varningar.push('Supportmejlen är INTE med: inga sökord (--ord "husvagn,taköverdrag"). Kunder som mejlar före köp gör det sällan offentligt.');
     } else {
-      const { lasBrevlada, kundmejl, sokMejl, sokord } = await import('../kundtjanst/mail.mjs');
-      const r = await lasBrevlada(flagga('brand', 'baverbutiken'), { dagar: Math.max(dagar, 90), logg: (m) => console.error(`  ${m}`) });
-      if (!r.ok) varningar.push(`Supportmejlen är INTE med: ${r.orsak}. Kör om i en container som har nyckeln: \`node kundtjanst/mail.mjs sok "${ord}"\`.`);
+      const r = await hamtaMejl({ brand: flagga('brand', 'baverbutiken'), ord, sidor: Number(flagga('sidor', 8)), logg: (m) => console.error(`  ${m}`) });
+      if (!r.ok) varningar.push(`Supportmejlen är INTE med: ${r.orsak}. Kör om i en container som har nyckeln: \`node kundtjanst/mail.mjs sok "${ord[0]}" --kropp\`.`);
       else {
-        mejl = sokMejl(kundmejl(r.inkorg, r.brand), sokord(ord));
-        kallor.push(`Supportmejl: ${mejl.length} kundmejl som nämner ${sokord(ord).join(' / ')} (${r.kalla}, ${r.dagar} dagar) via \`kundtjanst/mail.mjs\`.`);
+        mejl = r.mejl;
+        kallor.push(`Supportmejl: ${mejl.length} kundmejl som nämner ${ord.join(' / ')} (${r.brand}, ${r.lasta} mejl lästa i ${r.mapp}) via \`kundtjanst/mail.mjs sok --kropp\`.`);
       }
     }
   }

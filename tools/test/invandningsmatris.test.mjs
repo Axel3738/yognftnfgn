@@ -7,9 +7,10 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   matrisUrText, tackning, tackningText, raknaInvandningar, byggMatris, rendera, formatUrNamn, arOb,
-  invandningUrBrief, sammaAnnons, nyckelUrEtikett, kortnamn, cellTom, cellLive, FORMAT,
+  invandningUrBrief, sammaAnnons, nyckelUrEtikett, kortnamn, cellTom, cellLive, FORMAT, filtreraKundmejl, sokord,
 } from '../invandningsmatris.mjs';
-import { sokMejl, kundmejl } from '../../kundtjanst/mail.mjs';
+import { arEgen, arSystem } from '../../kundtjanst/arenden.mjs';
+import { maskeraText } from '../../kundtjanst/maskera.mjs';
 
 const ROT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const TAK = readFileSync(join(ROT, 'products', 'takoverdraget-husvagn', 'invandningar.md'), 'utf8');
@@ -123,22 +124,21 @@ test('rendera: filen går att läsa tillbaka med samma rader, och sektionerna ef
   assert.equal((text2.match(/\*\*Täckning:\*\*/g) ?? []).length, 1);
 });
 
-test('invandningUrBrief läser invandning= och ruta= ur taggraden; sokMejl och kundmejl filtrerar rätt', () => {
+test('invandningUrBrief läser invandning= och ruta= ur taggraden; filtreraKundmejl tar bara kundernas mejl, maskerat', () => {
   const brief = '# X\n\nVARIABELTAGGAR: typ=N · koncept=fukt · invandning=fukt / kondens / självdrag · ruta=demo · kalla=voc\n';
   assert.deepEqual(invandningUrBrief(brief), { invandning: 'fukt / kondens / självdrag', ruta: 'demo' });
   assert.equal(invandningUrBrief('VARIABELTAGGAR: typ=N · kalla=voc'), null);
-  const brand = { supportmail: 'kundsupport@baverbutiken.se' };
+  assert.deepEqual(sokord(' husvagn, taköverdrag ;husbil,'), ['husvagn', 'taköverdrag', 'husbil']);
   const mejl = [
-    { fran: { adress: 'kalle@gmail.com' }, amne: 'Husvagn', text: 'Passar den min husvagn på 7 m?', datum: new Date('2026-09-20') },
-    { fran: { adress: 'kundsupport@baverbutiken.se' }, amne: 'Re: Husvagn', text: 'Ja', datum: new Date('2026-09-20') },
-    { fran: { adress: 'no-reply@shopify.com' }, amne: 'Order husvagn', text: 'x' },
-    { fran: { adress: 'lisa@hotmail.com' }, amne: 'Retur', text: 'Vill returnera tofflorna', datum: new Date('2026-09-19') },
-    { fran: { adress: 'auto@x.se' }, amne: 'Automatiskt svar', text: 'husvagn', autosvar: true },
+    { fran: { adress: 'kalle@gmail.com' }, amne: 'Husvagn', helText: 'Passar den min husvagn på 7 m? mvh kalle@gmail.com', datum: '2026-09-20T10:00:00.000Z' },
+    { fran: { adress: 'kundsupport@baverbutiken.se' }, amne: 'Re: Husvagn', helText: 'Ja', datum: '2026-09-20T11:00:00.000Z' },
+    { fran: { adress: 'no-reply@shopify.com' }, amne: 'Order husvagn', helText: 'x' },
+    { fran: { adress: 'lisa@hotmail.com' }, amne: 'Retur', helText: 'Vill returnera tofflorna', datum: '2026-09-19T08:00:00.000Z' },
+    { fran: { adress: 'auto@x.se' }, amne: 'Automatiskt svar', helText: 'husvagn', autosvar: true },
   ];
-  const kunder = kundmejl(mejl, brand);
+  const kunder = filtreraKundmejl(mejl, { supportmail: 'kundsupport@baverbutiken.se', arEgen, arSystem, maskeraText });
   assert.equal(kunder.length, 2);
-  const t = sokMejl(kunder, 'husvagn,taköverdrag');
-  assert.equal(t.length, 1);
-  assert.equal(t[0].datum, '2026-09-20');
-  assert.doesNotMatch(JSON.stringify(t), /kalle@gmail/);
+  assert.equal(kunder[0].datum, '2026-09-20');
+  assert.doesNotMatch(JSON.stringify(kunder), /kalle@gmail/);
+  assert.match(kunder[0].text, /ka\*\*\*@gmail\.com/);
 });
