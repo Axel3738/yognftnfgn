@@ -265,3 +265,13 @@ Resten av batch #1 och hela batch #2 ligger fortfarande under grinden eller
 | `partner-eller-barn-som-koper-present` | Partnern/barnet som köper present till den som "pratar om husvagnen som om den vore ett husdjur" | GT_2_H1 (fjärde bästa vinstbidrag, höll vid 2 365 → 5 029 kr), Axels annonsidé fars dag 2026-09-22 | bevisad (video), obevisad (statisk) |
 | `agare-som-tvekar-pa-tyget` | Ägaren som frågar "blir det inte tätt?" / "är det vattentätt?" innan köp | Kommentaren på `Takoverdrag_SP_4_H1` (research.md), Axels annonsidé 2026-09-19 ("Är det vattentätt?") → OB_4_H1 (tätt), OB_3_H1 (vattentätt). ⚠️ OB_2_H1 är förvaring (påsen), inte den här avataren — rättat 2026-09-22 mot Notion | dokumenterad invändning, annons obevisad |
 | `agare-som-tror-att-den-inte-passar` | Ägaren som sållar bort sig själv med "finns den för min?" | Axels annonsidé 2026-09-18 (Annonsidéer) → CS_2_H3; nio storlekar avlästa live 2026-09-22 | gissning — hooken testas i batch #4 |
+
+## Hälsomåttet och testet: fatigue eller mättnad? (2026-09-22)
+
+**Mätt i kontot 2026-09-22** (`cost_per_action_type → omni_purchase`, 7d_click, per dygn): CPA 150 → 171 → 147 → 323 → 235 → 325 → 269 → 371 → 333 → 410 → 421 → 466 kr från 10 till 21 september, medan dagsspenden gick 1 352 → 15 990 kr. Break-even-CPA ~750 kr; marginalen har krympt från 80 % till 38 %. Tre stigande dygn i rad 18–21/9 — med den nya motorn (Axels beslut samma dag) hade det stoppat de sista höjningarna. Klickandelen 82–100 %.
+
+**Kursen:** när CPA stiger är fixet nya creatives, inte budget. Testet som skiljer **creative fatigue** från **marknadsmättnad** är att lansera en färsk batch i samma marknad. Funkar den var det fatigue; floppar allt trots kvalitet är marknaden mätt och nästa steg är ny produkt eller nytt land — inte fler annonser.
+
+**Testet pågår:** de fem briefarna från 2026-09-22 (`OB_3_H1`, `OB_4_H1`, `GT_11_H1`, `CS_2_H2`, `CS_2_H3`) mot start-CPA 466 kr; 7-dygns-CPA 15–21/9 var 375 kr (79 524 kr / 212 köp). Kriteriet och svaret står i `batch-log.md` (Batch #4) och som `FATIGUE_TEST` i budgetloggen. **Svar: obesvarat** tills alla fem har dag-7-etiketter.
+
+⚠️ **Etikettläget:** 30 etiketterade annonser, ingen BREAKTHROUGH eller SPEND_WINNER — etiketten kräver ≥ 30 % av kampanjens spend, och i en CBO med 30 annonser når ingen dit (`CS_2_1` 10 %, `CS_2_H1` 12 %, båda ROAS > 7). Motorns vinnarspärr läser bara annonsetiketter; kampanjen kan därför inte skalas av motorn förrän en annons når 30 % eller Axel låter spärren läsa kampanjnivån.

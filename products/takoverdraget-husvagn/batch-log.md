@@ -329,3 +329,13 @@ Lärdom `L-120250147392200291` (CS är starkast, GT bevisad, "bara taket" är me
 
 ⚠️ **Husbil hålls.** Axels formulering "husbil eller husvagn" står inte i briefen: produktsidans rubrik och brödtext nämner inte husbil (läst live 2026-09-22 — ordet finns bara som tagg och i tre bild-alt-texter, och produktbilden visar en husbil), och en annons får inte lova något sidans text inte säger. Går in som hookvariant den dag Axel bekräftar passformen OCH ordet står på sidan. Frågan ställd i Annonsidé-radens kommentar och i dagens rapport.
 GT_11_H1 speglas INTE till CaraShell (takskyddets dna mönster 12: inga GT-briefer där förrän test-ABO finns).
+
+### Testet: fatigue eller mättnad? (Axels beslut 2026-09-22, ur kursen)
+
+**Frågan:** CPA:n har stigit 150 → 171 → 147 → 323 → 235 → 325 → 269 → 371 → 333 → 410 → 421 → 466 kr (10–21 september, `cost_per_action_type → omni_purchase`, 7d_click) medan dagsspenden gick 1 352 → 15 990 kr. Break-even-CPA ~750, marginalen 80 % → 38 %. Kursen: när CPA stiger är fixet nya creatives, inte budget — och testet som skiljer creative fatigue från marknadsmättnad är att lansera en färsk batch i samma marknad.
+
+**Testet:** de fem färska briefarna från 2026-09-22 — `OB_3_H1`, `OB_4_H1`, `GT_11_H1`, `CS_2_H2`, `CS_2_H3`. Start-CPA 466 kr (21/9), 7-dygns-CPA 15–21/9 375 kr (79 524 kr / 212 köp), ROAS 3d 2,99, budget 16 000 kr/dag. Loggad som `FATIGUE_TEST` i budgetloggen (2026-09-22).
+
+**Domen fälls när alla fem har sina dag-7-etiketter:** minst en färsk annons med CPA under 466 kr ⇒ **fatigue** — brieffa vidare mot lärdomen. Alla fem över 466 kr, trots att briefarna klarade spärren ⇒ **mättnad** — inga fler annonser på produkten; nästa steg är ny produkt eller nytt land, och det lyfts till Axel. Svaret skrivs här, i dna.md och som `FATIGUE_TEST_SVAR`.
+
+⚠️ Etikettläget 2026-09-22: 30 etiketterade annonser — 12 KPI_WINNER, 17 LOSER, 1 INGEN_LEVERANS, **ingen BREAKTHROUGH eller SPEND_WINNER**. `CS_2_1` (ROAS 7,65, 20 köp) och `CS_2_H1` (ROAS 7,06) bär 10–12 % av kampanjens spend var, och etiketten kräver ≥ 30 % — i en CBO med 30 annonser når ingen dit. Med nya motorn (vinnarspärren utan tak) håller det kampanjen still åt båda håll; frågan om spärren ska läsa kampanjnivån ligger hos Axel.

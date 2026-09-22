@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, breakEvenForPost, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -620,28 +620,41 @@ test('en produkt som stängs av eller går trappan får aldrig briefer', () => {
   assert.equal(annonsbehov(frisk, { logg: [], idag: '2026-09-02' }).length, 1);
 });
 
-// Axels manuella zon (2026-09-19): en budget över motorns tak har Axel satt
-// själv. Taköverdraget låg på 16 000 kr/dag och fick ORIMLIG_DATA — kontots
-// starkaste produkt utan dom. Nu: dom, men ingen budgetändring, och larm
-// när den går back.
-test('manuell budget över taket: går plus ⇒ MANUELL, ingen ändring', () => {
-  const rad = bedomKampanj(
+// Inget tak (Axel 2026-09-22, ur Evolve: "Never by spend"). Den manuella zonen
+// (2026-09-19–22: budget över motorns tak = Axels egen, rörs inte) finns inte
+// längre — 16 000 kr/dag döms som vilken budget som helst, med högzonens tre
+// spärrar hela vägen upp.
+test('inget tak: 16 000 kr som går plus får en vanlig dom — 16–25 % vinst ⇒ låt vara, över target ⇒ skala 20 % (högzon)', () => {
+  const stabil = bedomKampanj(
     {
       id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)',
       spend_3d: '40 000,00 kr', roas_3d: '2.40', kop_3d: 60, spend_total: '90 000,00 kr',
     },
     { logg: [], idag: '2026-09-19', karta: {} },
   );
-  assert.equal(rad.dom.kod, 'MANUELL');
-  assert.equal(rad.dom.kraverGodkannande, false);
-  assert.equal(rad.dom.nyBudget, null);
-  assert.match(rad.dom.motivering, /manuella zon/);
-  // (1/1,63 − 1/2,40) × 100 = 19,7 % — zonen "stabil", 16–25 %.
-  assert.ok(rad.dom.vinstProcent > 16 && rad.dom.vinstProcent < 25);
-  assert.match(rad.dom.rubrik, /stabil/);
+  assert.equal(stabil.dom.kod, 'LAT_VARA');
+  assert.equal(stabil.dom.nyBudget, null);
+  assert.notEqual(stabil.dom.kod, 'MANUELL');
+  // (1/1,63 − 1/2,40) × 100 = 19,7 % — under target 2,75 (25 % vinst).
+  assert.ok(stabil.dom.vinstProcent > 16 && stabil.dom.vinstProcent < 25);
+  // ROAS 3,3 ⇒ över target: 20 % (högzon), 16 000 → 19 200 — bara med en levande vinnare.
+  const etikett = { kod: 'ETIKETT', kampanj_id: '1', annons_id: 'a', annons_namn: 'Tak_CS_2_1', etikett: 'BREAKTHROUGH', datum: '2026-09-15', genomford: true };
+  const stark = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '3.30', kop_3d: 100, spend_total: '90 000,00 kr' },
+    { logg: [etikett], idag: '2026-09-19', karta: { 1: { lage: 'drift' } } },
+  );
+  assert.equal(stark.dom.kod, 'SKALA');
+  assert.equal(stark.dom.nyBudget, 19200);
+  assert.equal(stark.dom.faktor, 1.2);
+  const utanVinnare = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '3.30', kop_3d: 100, spend_total: '90 000,00 kr' },
+    { logg: [], idag: '2026-09-19', karta: { 1: { lage: 'drift' } } },
+  );
+  assert.equal(utanVinnare.dom.kod, 'LAT_VARA');
+  assert.match(utanVinnare.dom.motivering, /taket utan vinnare/);
 });
 
-test('manuell budget över taket: går back ⇒ MANUELL_SANK, −20 % men aldrig under taket, larm', () => {
+test('inget tak: 16 000 kr som går back är högzon — en förlustmorgon rör ingenting, två ger −20 %, aldrig kapning', () => {
   const rad = bedomKampanj(
     {
       id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)',
@@ -649,21 +662,22 @@ test('manuell budget över taket: går back ⇒ MANUELL_SANK, −20 % men aldrig
     },
     { logg: [], idag: '2026-09-20', karta: {} },
   );
-  assert.equal(rad.dom.kod, 'MANUELL_SANK');
-  assert.equal(rad.dom.kraverGodkannande, true);
-  assert.equal(rad.dom.larm, true);
-  assert.equal(rad.dom.nyBudget, 12800); // 16 000 × 0,8, jämna 50 kr
-  assert.match(rad.dom.motivering, /larma Axel/);
-  // Planen utför den: beloppet får ligga över motorns tak 10 000.
-  const plan = planera([rad], { logg: [], idag: '2026-09-20' });
+  assert.equal(rad.dom.kod, 'HOGZON_AVVAKTA');
+  assert.equal(rad.dom.nyBudget, null);
+  const dygn2 = [{ datum: '2026-09-18', roas: 1.1, spend: 16000 }, { datum: '2026-09-19', roas: 1.2, spend: 16000 }];
+  const tvaMorgnar = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr', dygn: dygn2 },
+    { logg: [], idag: '2026-09-20', karta: {} },
+  );
+  assert.equal(tvaMorgnar.dom.kod, 'SANK');
+  assert.equal(tvaMorgnar.dom.nyBudget, 12800); // 16 000 × 0,8, jämna 50 kr
+  // Planen utför den: inget motortak att stanna vid, bara rimlighetsspärren 50 000.
+  const plan = planera([tvaMorgnar], { logg: [], idag: '2026-09-20' });
   assert.equal(plan.atgarder.length, 1);
-  assert.equal(plan.atgarder[0].typ, 'budget');
   assert.equal(plan.atgarder[0].till_sek, 12800);
   assert.equal(plan.atgarder[0].till_ore, 1280000);
-  assert.equal(plan.atgarder[0].larm, true);
-  // 4 500 kr är INTE längre manuell zon (taket höjdes till 10 000 den
-  // 2026-09-21) — den ligger i motorns högzon. Utan dygnsserie är antalet
-  // förlustmorgnar okänt, och då rörs ingenting: högzonen kapas aldrig.
+  // 4 500 kr ligger i högzonen. Utan dygnsserie är antalet förlustmorgnar
+  // okänt, och då rörs ingenting: högzonen kapas aldrig.
   const nara = bedomKampanj(
     { id: '2', namn: 'X | BE ROAS 1.63', daily_budget: '4 500,00 kr (SEK)', spend_3d: '12 000,00 kr', roas_3d: '1.20', kop_3d: 30, spend_total: '90 000,00 kr' },
     { logg: [], idag: '2026-09-20', karta: {} },
@@ -682,19 +696,72 @@ test('manuell budget över taket: går back ⇒ MANUELL_SANK, −20 % men aldrig
   assert.equal(tva.dom.kod, 'SANK');
   assert.equal(tva.dom.nyBudget, 4000);
   // En gång per dygn: redan sänkt i dag ⇒ uppskjuten.
-  const logg = [{ datum: '2026-09-20', kampanj_id: '1', kod: 'MANUELL_SANK', genomford: true, ny_budget: 12800 }];
-  const igen = planera([rad], { logg, idag: '2026-09-20' });
+  const logg = [{ datum: '2026-09-20', kampanj_id: '1', kod: 'SANK', genomford: true, ny_budget: 12800 }];
+  const igen = planera([tvaMorgnar], { logg, idag: '2026-09-20' });
   assert.equal(igen.atgarder.length, 0);
   assert.equal(igen.uppskjutna.length, 1);
 });
 
-test('manuell budget över taket: går plus ⇒ MANUELL, rörs inte', () => {
+test('hälsomåttet i bedomKampanj: dygnsserien ger CPA-trend, klickandel och konsekvens — räknat t.o.m. gårdagen', () => {
+  // Taköverdraget 18–22/9: CPA 333 → 410 → 421 → 466, dagens 672 på ett halvt dygn räknas inte.
+  const dygn = [
+    { datum: '2026-09-17', roas: 3.5, spend: 7420, kop: 20, kop_visning: 0 },
+    { datum: '2026-09-18', roas: 3.4, spend: 13301, kop: 40, kop_visning: 0 },
+    { datum: '2026-09-19', roas: 3.1, spend: 15184, kop: 37, kop_visning: 3 },
+    { datum: '2026-09-20', roas: 3.0, spend: 15990, kop: 38, kop_visning: 2 },
+    { datum: '2026-09-21', roas: 2.9, spend: 13052, kop: 28, kop_visning: 6 },
+    { datum: '2026-09-22', roas: 1.5, spend: 10749, kop: 16, kop_visning: 1 },
+  ];
+  const etikett = { kod: 'ETIKETT', kampanj_id: '1', annons_id: 'a', annons_namn: 'Tak_CS_2_1', etikett: 'BREAKTHROUGH', datum: '2026-09-15', genomford: true };
   const rad = bedomKampanj(
-    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '40 000,00 kr', roas_3d: '4.31', kop_3d: 120, spend_total: '90 000,00 kr' },
-    { logg: [], idag: '2026-09-20', karta: {} },
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '44 186,07 kr', roas_3d: '2.99', kop_3d: 103, spend_total: '101 215,62 kr', dygn },
+    { logg: [etikett], idag: '2026-09-22', karta: { 1: { lage: 'drift' } } },
   );
-  assert.equal(rad.dom.kod, 'MANUELL');
-  assert.deepEqual(planera([rad], { logg: [], idag: '2026-09-20' }).atgarder, []);
+  assert.equal(rad.cpaTrend.dagar, 3);
+  assert.equal(rad.cpaTrend.stiger, true);
+  assert.ok(Math.abs(rad.klickandel.andel - 103 / 114) < 1e-9);
+  assert.equal(rad.dagarOverTarget, 5, 'alla fem hela dygn ligger över target 2,75');
+  assert.equal(rad.dom.kod, 'CPA_STIGER', 'ROAS 2,99 över target 2,75 — men CPA stiger tre dygn i rad');
+  assert.equal(rad.dom.nyBudget, null);
+  // Samma kampanj med fallande CPA: höjning 20 % (högzon), 16 000 → 19 200.
+  const fall = dygn.map((d, i) => ({ ...d, kop: d.kop + i * 10 }));
+  const ok = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '44 186,07 kr', roas_3d: '2.99', kop_3d: 103, spend_total: '101 215,62 kr', dygn: fall },
+    { logg: [etikett], idag: '2026-09-22', karta: { 1: { lage: 'drift' } } },
+  );
+  assert.equal(ok.dom.kod, 'SKALA');
+  assert.equal(ok.dom.nyBudget, 19200);
+  // Eget target i produktkartan vinner.
+  const eget = bedomKampanj(
+    { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '16 000,00 kr (SEK)', spend_3d: '44 186,07 kr', roas_3d: '2.99', kop_3d: 103, spend_total: '101 215,62 kr', dygn: fall },
+    { logg: [etikett], idag: '2026-09-22', karta: { 1: { lage: 'drift', target_roas: 3.5 } } },
+  );
+  assert.equal(eget.dom.kod, 'LAT_VARA');
+  assert.match(eget.dom.motivering, /Target 3,50 \(produktens target_roas\) nås inte/);
+});
+
+test('surf-läget döms bara med --surf och surf.json: bedomSurf på dagens fönster', () => {
+  const kampanj = { id: '1', namn: 'Taköverdraget | BE ROAS 1.63', daily_budget: '8 000,00 kr (SEK)', spend_idag: '3 000,00 kr', roas_idag: '4.10', kop_idag: 15, spend_igar: '14 000,00 kr', dygn: [] };
+  const dubbla = bedomSurf(kampanj, { logg: [], idag: '2026-11-28', karta: {}, fx: null, surf: { efterMidnatt: false } });
+  assert.equal(dubbla.dom.kod, 'SURF_DUBBLA');
+  assert.equal(dubbla.dom.nyBudget, 16000);
+  assert.equal(dubbla.surf, true);
+  const reset = bedomSurf(kampanj, { logg: [], idag: '2026-11-28', karta: {}, fx: null, surf: { efterMidnatt: true } });
+  assert.equal(reset.dom.kod, 'SURF_RESET');
+  assert.equal(reset.dom.nyBudget, 7000);
+  // Redan resettad i dag ⇒ ingen andra reset, fönstret döms i stället.
+  const logg = [{ datum: '2026-11-28', kampanj_id: '1', kod: 'SURF_RESET', genomford: true, ny_budget: 7000 }];
+  assert.equal(bedomSurf(kampanj, { logg, idag: '2026-11-28', karta: {}, fx: null, surf: { efterMidnatt: true } }).dom.kod, 'SURF_DUBBLA');
+  // Planen utför surf-beloppen, och dubblingen förklaras för kontospärren.
+  const plan = planera([dubbla], { logg: [], idag: '2026-11-28' });
+  assert.equal(plan.sparrad, false);
+  assert.equal(plan.atgarder[0].till_sek, 16000);
+  assert.equal(plan.atgarder[0].faktor, 2);
+  // efterMidnatt ur kontodatans timme: 0–5 efter reset_timme 0.
+  assert.equal(efterMidnatt({ timme: 2 }, {}), true);
+  assert.equal(efterMidnatt({ timme: 7 }, {}), false);
+  assert.equal(efterMidnatt({ timme: 6 }, { reset_timme: 6 }), true);
+  assert.equal(efterMidnatt({}, {}), false);
 });
 
 test('attributionsvarning: bara 7d_click är tyst', () => {

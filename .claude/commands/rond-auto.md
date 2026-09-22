@@ -86,7 +86,8 @@ marknadens konto och filtrering på `campaign.effective_status IN ["ACTIVE"]`:
 
 1. `date_preset: "last_3d"` — `fields: ["id","name","effective_status","daily_budget","amount_spent","purchase_roas","omni_purchase","created_time"]`
 2. `date_preset: "maximum"` — samma fält (ger `spend_total`)
-3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien (varje dygn: datum, roas OCH spend ur `amount_spent`)
+3. `date_preset: "last_14d"` + `time_increment: "1"` — dygnsserien. Varje dygn i `dygn`: `datum`, `roas` (7d_click), `spend` ur `amount_spent`, **`kop`** (omni_purchase `7d_click`), **`kop_visning`** (omni_purchase `1d_view`) och **`cpa`** (`cost_per_action_type → omni_purchase`, `7d_click`). De tre sista är nya sedan 2026-09-22: CPA-trenden, klickandelen och "konsekvent över target" räknas ur dem (`agent/trend.mjs`). Kör därför det här anropet med `action_attribution_windows: ["7d_click", "1d_view"]` och fälten `actions`, `cost_per_action_type`, `purchase_roas`, `spend`. Saknas ett tal: `null`, aldrig 0.
+4. *(bara i surf-läget, `--surf`)* `date_preset: "today"` och `"yesterday"` — `spend_idag`, `roas_idag`, `kop_idag`, `spend_igar` per kampanj, och `timme` (annonskontots lokala timme vid hämtningen) överst i filen.
 
 **Alla tre anropen med `action_attribution_windows: ["7d_click"]`** (Axels
 beslut 2026-09-20). Mätt samma dag: kontonivån skiljer 1,7 % (SE) och 0 %
@@ -549,6 +550,24 @@ budgetloggen som historik och ska läsas, inte återanvändas.
 
 ## 4b. Annonsbatcherna (Axels beslut 2026-08-29: rutinen kör dem själv, var tredje dag)
 
+**Fatigue eller mättnad — testet som styr allt ovanför (Axels beslut
+2026-09-22, ur kursen).** När CPA stiger är fixet nya creatives, inte budget.
+Testet som skiljer creative fatigue från marknadsmättnad är att lansera en
+färsk batch i samma marknad: funkar den var det fatigue; floppar allt trots
+kvalitet är marknaden mätt, och nästa steg är ny produkt eller nytt land —
+inte fler annonser. Ett pågående test står som en `FATIGUE_TEST`-rad i
+budgetloggen (kampanj, de färska annonserna, kampanjens CPA/ROAS vid
+start, kriteriet). **Så fort alla annonserna i raden har sina
+`ETIKETT`-rader (dag 7):** jämför varje annons CPA mot kampanjens CPA vid
+testets start. Minst en färsk annons under kampanjens start-CPA ⇒ svaret är
+**fatigue** (fortsätt brieffa mot lärdomen). Alla över, trots att briefarna
+klarade spärren ⇒ **mättnad**: skriv det som svar, brieffa inte fler annonser
+på produkten, och lyft "ny produkt eller nytt land" till Axel. Svaret skrivs
+som en `FATIGUE_TEST_SVAR`-rad + i produktens `batch-log.md` och `dna.md`.
+Första testet: Taköverdraget, de fem briefarna från 2026-09-22 (OB_3_H1,
+OB_4_H1, GT_11_H1, CS_2_H2, CS_2_H3) mot start-CPA 466 kr (21/9); 7-dygns
+CPA 15–21/9 var 375 kr (79 524 kr / 212 köp).
+
 Det här är rutinens andra jobb, lika viktigt som budgetarna: **varje produkt
 med en batch ska få sin nya brief-runda var tredje dag.** `annonsbehov` i
 utfallet listar allt som är förfallet, färdigsorterat (första batchen först,
@@ -721,41 +740,73 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
   forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
   winning-line/feedback), fler försök om den är stark — men numret räknas.
-- **Motorns tak är 10 000 kr per dag och produkt (Axels beslut 2026-09-21).**
-  Höjt från 4 000. Skälet stod i kontot samma dag: Båtmotorskyddet låg
-  fastklämt på exakt 4 000 kr med ROAS 3,74 mot break-even 1,62 och 84 köp på
-  en vecka, Sotarsetet gick 4,35 på 2 150 kr, och fyra produkter till låg
-  mellan 2 000 och 4 000 med en vecka kvar till taket. Taket bromsade
-  vinnare. **Tre spärrar gäller över 4 000 kr** (`TAK_UTAN_VINNARE`):
+- **Motorn har INGET tak (Axels beslut 2026-09-22, ur Evolve).** Både
+  `TAK_SEK` 10 000 (2026-09-21) och idén om "10 % över 15 000" är kastade:
+  spendnivå, frekvens och marknadsstorlek är alla förkastade som tak ("Never
+  by spend", "Frequency doesn't determine", ett svenskt varumärke som gör
+  100k-dagar). Den manuella zonen (2026-09-19–22, `MANUELL`/`MANUELL_SANK`)
+  finns inte längre — 16 000 kr/dag döms som vilken budget som helst.
+  **Högzonens tre spärrar gäller hela vägen upp, utan slut** (över 4 000 kr,
+  `TAK_UTAN_VINNARE`, alla tre Axels formulering 2026-09-21):
   1. **Vinnarspärren.** Kampanjen måste bära en etiketterad `BREAKTHROUGH`
      eller `SPEND_WINNER` inom 28 dygn (`harLevandeVinnare` i
      `agent/lardom.mjs`, räknad ur budgetloggen och skickad in som
-     `rad.harVinnare`). Saknas den är taket kvar på 4 000 och domen blir
-     `LAT_VARA` med skälet utskrivet. Fältet måste vara **exakt `true`** —
-     ett `undefined` öppnar aldrig taket.
-  2. **20 % per rond.** Raketspåret ×1,8 gäller bara upp till 4 000 kr. Att
-     nästan dubbla en budget som redan ligger på 4 000 är ett hopp på
-     3 200 kr per dygn.
+     `rad.harVinnare`). Saknas den är taket 4 000 och domen blir `LAT_VARA`
+     med skälet utskrivet. Fältet måste vara **exakt `true`** — ett
+     `undefined` öppnar aldrig taket. ⚠️ Mätt i torrkörningen 2026-09-22:
+     Taköverdraget (16 000 kr/dag) bär BARA `KPI_WINNER`/`LOSER`-etiketter —
+     ingen levande vinnare — så spärren håller den still åt båda håll tills
+     en annons etiketteras `BREAKTHROUGH` eller `SPEND_WINNER`.
+  2. **20 % per rond.** Trappans ×1,5 och ×2 gäller bara upp till 4 000 kr
+     (`HOGZON_MAX_FAKTOR`). Att dubbla en budget som redan ligger på 4 000 är
+     ett hopp på 4 000 kr per dygn.
   3. **Ingen kapning.** Förlust i högzonen halverar aldrig och stänger aldrig
      av. En ensam förlustmorgon ger domen `HOGZON_AVVAKTA` och ingen ändring;
      **två förlustmorgnar i rad** ger `SANK` −20 %, aldrig under 4 000 i ett
      steg. Spärren gäller före test/drift-uppdelningen, så åtgärdstrappan kan
      inte stänga av en högzonskampanj för att produktkartan saknar raden.
-- **Axels manuella zon (2026-09-19): budget över motorns tak.**
-  Motorn höjer aldrig dit, så en sådan budget har Axel satt själv
-  (Taköverdraget: 16 000 kr/dag, fick tidigare `ORIMLIG_DATA` och ingen dom
-  alls). Gränsen följer taket och går sedan 2026-09-21 vid **10 000 kr**, inte
-  4 000 — en budget mellan 4 000 och 10 000 är numera motorns högzon, inte
-  Axels zon. Domen blir `MANUELL` (går plus, lämnas) eller — sedan 2026-09-20,
-  Axels mjuka form — `MANUELL_SANK` (går back: **−20 % samma morgon**, jämna
-  50 kr, aldrig under taket, aldrig paus, högst en gång per dygn; utförs
-  som en vanlig `typ: "budget"`-åtgärd i steg 3 och postas dessutom i
-  `--kanal larm` med ping till Axel). Under taket tar de vanliga reglerna
-  över. *(Förslaget "kapa till 4 000 i ett steg" avvisades: 75 % på en morgon
-  på en produkt som drar ~26 000 kr i vinst per dag kostar mer än det
-  skyddar, och Evolve säger att en breakthrough får ha en dålig vecka.)*
-  Briefrundan går som vanligt. Rimlighetstaket för felparsning är 50 000 kr;
-  över det är det fortfarande `ORIMLIG_DATA`.
+  Rimlighetstaket för felparsning är 50 000 kr; över det är det fortfarande
+  `ORIMLIG_DATA`.
+- **CPA-trenden är motorns hälsomått (Axels beslut 2026-09-22).** Den enda
+  signal kursen behåller, och den är marknadsoberoende. Läses ur dygnsserien
+  (`cost_per_action_type → omni_purchase`, fönstret `7d_click`, per dygn, alltid
+  **t.o.m. gårdagen** — dagens dygn är ofullständigt). **Stigande CPA tre
+  dygn i rad ⇒ ingen höjning, oavsett ROAS** (`CPA_STIGER`). Sänks inte — den
+  går fortfarande plus. Rapporteras ÖVERST i morgonrapporten (`## 🩺
+  CPA-trend`): ⛔ = tre stigningar, höjning stoppad; 👀 = två, ett dygn till.
+  Mätt i kontot 2026-09-22, Taköverdraget SE: CPA 150 → 171 → 147 → 323 →
+  235 → 325 → 269 → 371 → 333 → 410 → 421 → 466 kr 10–21 september medan
+  dagsspenden gick 1 352 → 15 990 kr; break-even-CPA ~750, marginalen 80 % →
+  38 %. **När CPA stiger är fixet nya creatives, inte budget** — se
+  fatigue-testet under 4b.
+- **Skalning mäts mot TARGET, kill mot BREAK-EVEN (Axels beslut 2026-09-22).**
+  `target_roas` per produkt i `agent/produktkarta.json` (och
+  `products/products.json` för Bäverbutikens sex). Saknas talet härleder
+  motorn target ur break-even som ROAS:en vid 25 % vinst av omsättningen
+  (`targetRoas()` i `agent/besked.mjs`, t.ex. BE 1,63 ⇒ 2,75) — samma tröskel
+  som förr, gjord uttrycklig. **Stegtrappan går på avståndet till target:**
+  ROAS ≥ 200 % av target ⇒ dubbla · ≥ 150 % ⇒ ×1,5 · annars 20 % — och
+  **alltid efter 48–72 timmar konsekvent**: dags-ROAS ska ha legat på eller
+  över target minst två hela dygn i rad (`dagarOverTarget`, annars
+  `VANTA_KONSEKVENT`). Raketspåret (ROAS ≥ 5 ⇒ ×1,8) är ersatt av trappan.
+  Under target men över break-even: `LAT_VARA` — går plus, skalas inte.
+  CLAUDE.md regel 4 är orörd: förlust, halvering, åtgärdstrappan och
+  avstängning mäts fortfarande mot break-even, aldrig mot target.
+- **Klickandelen (Axels beslut 2026-09-22, "Compare Attribution Settings"):**
+  minst 60 % av köpen de senaste tre dygnen ska vara klickbaserade
+  (`7d_click` mot `1d_view` i dygnsserien) innan en höjning. Är merparten
+  visningsköp: `VISNING_AVVAKTA`, vänta ett dygn. Saknas visningstalet:
+  ingen spärr, aldrig en gissning.
+- **Surf-läget (Axels beslut 2026-09-22, peak/Black Friday) — ALDRIG
+  automatiskt.** Axel slår på det: `agent/surf.json` `aktiv: true` +
+  kampanj-id:n, och rutinen körs med `node agent/rond.mjs --surf` var sjätte
+  timme (egen rutin via `/rutin`). Kontodatan bär då dessutom `spend_idag`,
+  `roas_idag`, `kop_idag`, `spend_igar` per kampanj och `timme` (annonskontots
+  lokala timme) överst. Domarna: `SURF_RESET` (första körningen efter
+  annonskontots midnatt: budget = halva gårdagens faktiska spend),
+  `SURF_DUBBLA` (fönstret över target ⇒ ×2), `SURF_SANK` (under break-even ⇒
+  −20 %), `SURF_HALL`. CPA-spärren gäller där också. Utan `--surf` eller med
+  `aktiv: false` döms allt som vanligt.
 - **Hubben är den som står i `agent/produktkarta.json` (`notion_hub_id` +
   `notion_hub_datakalla`).** Finns den där: använd den, sök inte, skapa inte.
   Axel bygger hubbarna själv sedan 2026-09-13 och döper dem **"BÄVER <produkt>"**
@@ -1035,11 +1086,15 @@ inget gjordes). Utförda ändringar: `genomford: true`,
 `godkand_av: "auto — Axels stående beslut 2026-08-29"`. Fältformatet står i
 `/rond` steg 5.
 
-Nya koder sedan 2026-09-20: `MANUELL_SANK` (budgetändring, bär `ny_budget`),
-`TJUV_PAUSAD` och `VANTA_BREAKTHROUGH` (annonsnivå, steg 3b), `ETIKETT` och
+Nya koder sedan 2026-09-20: `MANUELL_SANK` (budgetändring, bär `ny_budget`;
+fälls inte längre sedan 2026-09-22 — historisk), `TJUV_PAUSAD` och
+`VANTA_BREAKTHROUGH` (annonsnivå, steg 3b), `ETIKETT` och
 `ETIKETT_UPPGRADERAD` (steg 3c, skrivs av `agent/etikett.mjs`). De fyra sista
 får **aldrig** bära `ny_budget` — `skrivRad` vägrar, för kadensspärren skulle
-annars frysa kampanjen i tre dygn.
+annars frysa kampanjen i tre dygn. Sedan 2026-09-22: `CPA_STIGER`,
+`VISNING_AVVAKTA`, `VANTA_KONSEKVENT` (håll-domar, ingen loggrad med
+`ny_budget`), `SURF_RESET`/`SURF_DUBBLA`/`SURF_SANK` (budgetändringar i
+surf-läget, bär `ny_budget`), `FATIGUE_TEST` och `FATIGUE_TEST_SVAR` (4b).
 
 ## 6. Leverans
 
@@ -1123,8 +1178,10 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Varje åtgärd utförd med öre-fältet ur planen och verifierad med läsning
 - [ ] Kontodatan hämtad med `action_attribution_windows: ["7d_click"]` och `attribution` skrivet — eller rapporterat varför inte
 - [ ] Spendtjuven körd i grönt läge på alla plus-kampanjer ≥ 1 000 kr/3 d, mot en namngiven lista; tjuvar pausade en och en med tillbakaläsning, `TJUV_PAUSAD`/`VANTA_BREAKTHROUGH` loggade utan `ny_budget`
-- [ ] `MANUELL_SANK` utförd högst en gång per kampanj och dygn, aldrig under taket 10 000 kr, larm postat
+- [ ] Dygnsserien bär `kop`, `kop_visning` och `cpa` per dygn; `## 🩺 CPA-trend` läst överst i rapporten och varje ⛔ nämnd i leveransen
 - [ ] Varje `SKALA` över 4 000 kr har `harVinnare: true` — annars är det en bugg, inte en dom
+- [ ] Ingen `SKALA` på en kampanj med `CPA_STIGER`, klickandel < 60 % eller färre än två dygn över target — spärrarna står i domen, inte i huvudet
+- [ ] `--surf` ALDRIG använt om inte `agent/surf.json` säger `aktiv: true` — och då bara på kampanjerna i listan
 - [ ] `roas_3d_visning` satt på varje kampanj, och visningsköpsvarningen läst i rapporten
 - [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför

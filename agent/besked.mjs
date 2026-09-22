@@ -4,26 +4,33 @@
 //
 // Reglerna kommer från Bäverpanelen (Axels driftpanel) plus de grindar som
 // docs/os/ANALYSMETOD.md och CLAUDE.md regel 3-4 kräver.
+//
+// ⚠️ TVÅ BESLUT, TVÅ MÅTT (Axels beslut 2026-09-22, ur Evolve):
+//   • SKALNING mäts mot TARGET-ROAS (`rad.targetRoas`, per produkt i
+//     agent/produktkarta.json / products/products.json; saknas talet härleds
+//     det ur break-even och skalningszonen, se `targetRoas()`).
+//   • KILL mäts mot BREAK-EVEN (CLAUDE.md regel 4, orörd): förlust,
+//     åtgärdstrappan, avstängning och halvering räknar alla på break-even.
+//   Blanda dem aldrig: en kampanj under target men över break-even lämnas
+//   ifred — den går plus, den skalas bara inte.
 
 export const GOLV_SEK = 500;
 
-// Motorns tak, höjt 4 000 → 10 000 kr/dag och produkt (Axels beslut
-// 2026-09-21). Skälet stod i kontot samma dag: Båtmotorskyddet låg fastklämt
-// på exakt 4 000 kr med ROAS 3,74 mot break-even 1,62 och 84 köp på en vecka,
-// Sotarsetet gick 4,35 på 2 150 kr, och fyra produkter till låg mellan 2 000
-// och 4 000 med en vecka kvar till taket. Taket var en broms på vinnare.
-//
-// Över TAK_UTAN_VINNARE gäller tre spärrar, alla tre Axels formulering:
-//   1. produkten måste ha en etiketterad BREAKTHROUGH eller SPEND_WINNER
-//      inom VINNARE_DAGAR (`rad.harVinnare`, räknas av anroparen ur
-//      budgetloggen — den här filen gör aldrig I/O),
-//   2. steget är max 20 % per rond (raketspåret ×1,8 gäller inte i högzonen),
+// Inget tak (Axels beslut 2026-09-22, ur Evolve: "Never by spend" — spendnivå,
+// frekvens och marknadsstorlek är alla förkastade som tak; ett svenskt
+// varumärke gör 100k-dagar). Både det gamla TAK_SEK 10 000 och idén om
+// "10 % över 15 000" är kastade. Det som gäller hela vägen upp, utan slut, är
+// högzonens tre spärrar (alla tre Axels formulering 2026-09-21):
+//   1. över TAK_UTAN_VINNARE måste produkten ha en etiketterad BREAKTHROUGH
+//      eller SPEND_WINNER inom VINNARE_DAGAR (`rad.harVinnare`, räknas av
+//      anroparen ur budgetloggen — den här filen gör aldrig I/O),
+//   2. steget är max 20 % per rond (trappans ×1,5/×2 gäller inte i högzonen),
 //   3. förlust kapar aldrig — två förlustmorgnar i rad ger −20 %, en ensam
 //      förlustmorgon ger ingen ändring alls.
-export const TAK_SEK = 10000;
 export const TAK_UTAN_VINNARE = 4000;
 export const VINNARE_DAGAR = 28;
 export const HOGZON_BACK_DAGAR = 2;
+export const HOGZON_MAX_FAKTOR = 1.2;
 export const STEG_SEK = 50;
 
 // Grindar innan någon dom alls får fällas (CLAUDE.md regel 3).
@@ -37,19 +44,28 @@ export const TEST_TROSKEL_SEK = 1500;
 export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 
 // Snabbspåret (Axels beslut 2026-08-29): en produkt i skalningszonen med
-// ROAS ≥ 3 får höjas 20 % redan dagen efter förra ändringen, inte var tredje
+// ROAS ≥ 3 får höjas redan dagen efter förra ändringen, inte var tredje
 // dag. Gäller BARA höjningar — sänkningar väntar alltid sina tre dagar,
 // eftersom färska minus-siffror revideras uppåt i efterhand. Avstängning av
 // en testprodukt som går back väntar däremot ALDRIG (Axel 2026-09-02).
 export const SNABB_SKALNING_ROAS = 3.0;
 export const SNABB_MIN_DAGAR = 1;
 
-// Raketspåret (Axels beslut 2026-08-30): "när de haft över 5x ROAS är det värt
-// att skala väldigt aggressivt, nästan dubbla budgeten". Faktorn 1,8 = "nästan
-// dubbla" — ANTAGANDE: säg till om det ska vara exakt 2,0. Taket 4 000 kr och
-// golv/50-kronorsavrundningen gäller precis som vanligt.
-export const RAKET_ROAS = 5.0;
-export const RAKET_FAKTOR = 1.8;
+// Stegtrappan (Axels beslut 2026-09-22, ur kursen): steget går på AVSTÅNDET
+// TILL TARGET, inte till break-even. 100 % över target → dubbla, 50 % över →
+// ×1,5, annars 20 %. Raketspåret (ROAS ≥ 5 → ×1,8, Axel 2026-08-30) är
+// ersatt av trappan: ×2 är "dubbla", inte "nästan dubbla".
+export const TRAPPA = Object.freeze([
+  { over: 2.0, faktor: 2.0, namn: 'dubbla' },
+  { over: 1.5, faktor: 1.5, namn: '×1,5' },
+  { over: 1.0, faktor: 1.2, namn: '20 %' },
+]);
+
+// "Alltid efter 48–72 timmar konsekvent": dags-ROAS ska ha legat på eller
+// över target så här många hela dygn i rad innan trappan tar ett steg.
+// Räknas av anroparen ur dygnsserien (`dagarOverTarget`); null = serien
+// saknas, då avgör 3-dagarsfönstret ensamt (gamla filer ska gå att läsa).
+export const KONSEKVENT_DAGAR = 2;
 
 // Drift på golvet som går back så här många dygn i rad stängs av (Bäverpanelen, regel 3b).
 export const BACK_DAGAR_FOR_AVSTANGNING = 7;
@@ -62,6 +78,8 @@ export const BACK_DAGAR_FOR_AVSTANGNING = 7;
 export const LIVSTIDS_MAX_BACKDAGAR = 5;
 
 // Zongränser i procent vinst av omsättningen (Bäverpanelen, regel 4).
+// ZON_SKALA_OVER är också det härledda target-ROAS:et när produkten saknar
+// ett eget: 25 % vinst av omsättningen.
 export const ZON_SANK_UNDER = 16;
 export const ZON_SKALA_OVER = 25;
 
@@ -70,6 +88,20 @@ export const ZON_SKALA_OVER = 25;
 // products/axelbaltet/batch-log.md har ett fall där en för tidig avläsning var
 // 3,08x fel. Inom den här marginalen flaggas raden i stället för att bara köras.
 export const NARA_GRANS_PP = 3;
+
+// Klickandelen (Axels beslut 2026-09-22, "Compare Attribution Settings"):
+// minst så här stor andel av köpen ska vara klickbaserade innan en höjning.
+// Är merparten visningsköp väntar motorn ett dygn. Räknas av anroparen ur
+// dygnsserien (`rad.klickandel`); null = visningstal saknas, ingen spärr.
+export const KLICK_MIN_ANDEL = 0.6;
+
+// Surf-läget (Axels beslut 2026-09-22, för peak/Black Friday). Slås ALDRIG på
+// av motorn själv — Axel startar det (agent/surf.json + --surf). Kadensen är
+// var sjätte timme: dubbla när fönstret är bra, håll eller sänk när det är
+// dåligt, och nollställ budgeten till ungefär halva gårdagens faktiska spend
+// vid annonskontots midnatt.
+export const SURF_RESET_ANDEL = 0.5;
+export const SURF_DUBBLA_FAKTOR = 2.0;
 
 /**
  * Plockar break-even-ROAS ur kampanjnamnet.
@@ -178,20 +210,43 @@ export function vinstProcent(breakEven, roas) {
 }
 
 /**
+ * Target-ROAS för en produkt. Ett eget tal (`target`) vinner om det ligger
+ * över break-even; annars härleds target ur break-even och skalningszonen —
+ * den ROAS som ger ZON_SKALA_OVER procent vinst av omsättningen:
+ *   vinst% = (1/BE − 1/ROAS) × 100  ⇒  ROAS = 1 / (1/BE − vinst/100)
+ * Det är exakt tröskeln motorn redan skalade på, gjord uttrycklig — så en
+ * produkt utan eget target beter sig som förut, och en produkt MED eget
+ * target skalar mot det. `kalla` säger vilket.
+ */
+export function targetRoas(breakEven, target = null) {
+  if (!Number.isFinite(breakEven) || breakEven <= 1) return { target: null, kalla: 'break-even saknas' };
+  if (Number.isFinite(target) && target > breakEven) return { target, kalla: 'produktens target_roas' };
+  const namnare = 1 / breakEven - ZON_SKALA_OVER / 100;
+  if (namnare <= 0) return { target: null, kalla: `break-even ${breakEven} tillåter inte ${ZON_SKALA_OVER} % vinst` };
+  return { target: 1 / namnare, kalla: Number.isFinite(target) ? `härledd (${ZON_SKALA_OVER} % vinst) — target_roas ${target} ligger under break-even och ignoreras` : `härledd (${ZON_SKALA_OVER} % vinst av omsättningen)` };
+}
+
+/** Trappsteget ur avståndet till target: { faktor, namn, over } eller null under target. */
+export function trappsteg(roas, target) {
+  if (!Number.isFinite(roas) || !Number.isFinite(target) || target <= 0) return null;
+  const kvot = roas / target;
+  for (const steg of TRAPPA) if (kvot >= steg.over) return { ...steg, kvot };
+  return null;
+}
+
+/**
  * Ny budget avrundad till jämna 50 kr UTAN att bryta mot stegets maxfaktor.
  * Panelens Math.round gör det: 605 kr -> 750 kr är +24 %. Vi avrundar därför
  * höjningar nedåt och sänkningar uppåt, så steget aldrig blir större än
- * faktorn (20 % — eller ×1,8 på raketspåret).
+ * faktorn. `tak` är valfritt (högzonens 4 000 utan vinnare); utan tak finns
+ * ingen övre gräns — Axels beslut 2026-09-22.
  */
-export function nyBudget(riktning, budget, { tak = TAK_SEK } = {}) {
+export function nyBudget(riktning, budget, { tak = null, faktor = null } = {}) {
   if (!Number.isFinite(budget) || budget <= 0) return null;
-  const takNu = Number.isFinite(tak) && tak > 0 ? tak : TAK_SEK;
+  const takNu = Number.isFinite(tak) && tak > 0 ? tak : Infinity;
   if (riktning === 'upp') {
-    const rå = budget * 1.2;
-    return Math.min(takNu, Math.floor(rå / STEG_SEK) * STEG_SEK);
-  }
-  if (riktning === 'raket') {
-    const rå = budget * RAKET_FAKTOR;
+    const f = Number.isFinite(faktor) && faktor > 1 ? faktor : 1.2;
+    const rå = budget * f;
     return Math.min(takNu, Math.floor(rå / STEG_SEK) * STEG_SEK);
   }
   if (riktning === 'ner') {
@@ -223,6 +278,8 @@ function pct(n) {
   return `${n.toFixed(1).replace('.', ',')} %`;
 }
 
+const d2 = (x) => x.toFixed(2).replace('.', ',');
+
 /**
  * Fäller dagens dom för EN kampanj.
  *
@@ -230,6 +287,7 @@ function pct(n) {
  * @param {string}  rad.namn              Kampanjnamnet (break-even läses härifrån)
  * @param {'test'|'drift'} rad.lage       Ny produkt vi testar, eller en som gått bra
  * @param {number|null} rad.breakEven     Override; annars läses den ur namnet
+ * @param {number|null} rad.targetRoas    Produktens eget target-ROAS (skalningsmåttet); null ⇒ härleds
  * @param {number|null} rad.roas3d        ROAS senaste 3 dagarna
  * @param {number|null} rad.spend3d       Spend senaste 3 dagarna
  * @param {number|null} rad.kop3d         Antal köp senaste 3 dagarna
@@ -241,25 +299,30 @@ function pct(n) {
  * @param {boolean}     rad.harVinnare    Etiketterad BREAKTHROUGH eller SPEND_WINNER
  *                                        inom VINNARE_DAGAR. Krävs för att motorn
  *                                        ska få skala över TAK_UTAN_VINNARE.
- *                                        Räknas av anroparen ur budgetloggen
- *                                        (`harLevandeVinnare` i agent/lardom.mjs) —
- *                                        den här filen läser aldrig en fil.
+ * @param {{stiger: boolean, dagar: number, serie: Array}|null} rad.cpaStiger
+ *                                        CPA-trenden ur dygnsserien (agent/trend.mjs).
+ *                                        stiger = så många dygn i rad att ingen höjning görs.
+ * @param {{andel: number, klick: number, visning: number}|null} rad.klickandel
+ *                                        Andel klickbaserade köp senaste 3 dygnen.
+ * @param {number|null} rad.dagarOverTarget Dygn i rad med dags-ROAS ≥ target.
  * @returns {{kod: string, rubrik: string, motivering: string, nyBudget: number|null,
  *           zon: string|null, vinstProcent: number|null, breakEven: number|null,
  *           breakEvenKalla: string, kraverGodkannande: boolean}}
  */
 export function besked(rad) {
   const lage = rad.lage === 'drift' ? 'drift' : 'test';
-  // Spärr 1 (Axel 2026-09-21): utan en levande vinnaretikett är taket
-  // fortfarande 4 000. `harVinnare` måste vara EXAKT true — en anropare som
-  // inte räknat fältet ska inte råka skala till 10 000 på ett undefined.
+  // Spärr 1 (Axel 2026-09-21): utan en levande vinnaretikett är taket 4 000.
+  // `harVinnare` måste vara EXAKT true — en anropare som inte räknat fältet
+  // ska inte råka skala förbi högzonen på ett undefined. Med vinnare finns
+  // inget tak alls (Axel 2026-09-22).
   const harVinnare = rad.harVinnare === true;
-  const takNu = harVinnare ? TAK_SEK : TAK_UTAN_VINNARE;
+  const takNu = harVinnare ? Infinity : TAK_UTAN_VINNARE;
   const ur = lasBreakEven(rad.namn);
   const breakEven = Number.isFinite(rad.breakEven) && rad.breakEven > 1 ? rad.breakEven : ur.be;
   const breakEvenKalla = Number.isFinite(rad.breakEven) && rad.breakEven > 1
     ? (rad.breakEvenKalla || 'produktkarta.json')
     : ur.kalla;
+  const mal = targetRoas(breakEven, rad.targetRoas);
 
   const svar = (kod, rubrik, motivering, extra = {}) => ({
     kod,
@@ -270,6 +333,8 @@ export function besked(rad) {
     vinstProcent: null,
     breakEven,
     breakEvenKalla,
+    targetRoas: mal.target,
+    targetKalla: mal.kalla,
     kraverGodkannande: false,
     naraGrans: false,
     ...extra,
@@ -308,7 +373,7 @@ export function besked(rad) {
       && !underTesttroskel) {
     const kopText = Number.isFinite(kop3d) ? `${kop3d} köp` : 'okänt antal köp';
     const roasText = Number.isFinite(rad.roas3d)
-      ? ` ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}.`
+      ? ` ROAS ${d2(rad.roas3d)} mot break-even ${d2(breakEven)}.`
       : '';
     // Axels order 2026-09-02: ett larm som ingen agerar på är ingen spärr.
     // Jättefotbollen fick STOR_SPEND_UTAN_KOP tre morgnar i rad (31/8, 31/8,
@@ -337,28 +402,6 @@ export function besked(rad) {
       'Meta returnerade ingen ROAS för perioden. Rör ingenting förrän siffran finns.');
   }
 
-  // 3b. Axels manuella zon (Axels beslut 2026-09-19). Motorn höjer aldrig över
-  // TAK_SEK, så en budget över taket har Axel satt själv — Taköverdraget låg
-  // på 16 000 kr/dag. Går den plus rör motorn ingenting. Går den BACK gäller
-  // sedan 2026-09-20 den mjuka formen (Axels beslut, efter invändningen mot
-  // "kapa till 4 000 i ett steg — 75 % på en morgon"): motorns vanliga −20 %,
-  // en gång per dygn, aldrig under taket, aldrig paus — plus ett hårt larm.
-  // Under taket tar de vanliga reglerna över. Evolve: en breakthrough får ha
-  // en dålig vecka; två dagars felaktig kapning kostar mer än den skyddar.
-  if (rad.budget > TAK_SEK) {
-    const bas = `${pct(vinst)} vinst av omsättningen (ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}). Budgeten ${kr(rad.budget)} ligger över motorns tak ${kr(TAK_SEK)} — Axels manuella zon.`;
-    if (vinst < 0) {
-      const ner = Math.max(TAK_SEK, nyBudget('ner', rad.budget));
-      return svar('MANUELL_SANK', 'Går back på manuell budget — sänk 20 %, larma Axel',
-        `${bas} Går BACK: ${kr(rad.budget)} om dagen under break-even. Mjuk form (Axel 2026-09-20): sänk från ${kr(rad.budget)} till ${kr(ner)} per dag — 20 %, aldrig under taket, aldrig paus — och larma Axel. Nästa sänkning tidigast i morgon.`,
-        { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, larm: true, naraGrans: false });
-    }
-    const lage = vinst < ZON_SANK_UNDER ? 'tunn marginal' : vinst < ZON_SKALA_OVER ? 'stabil' : 'stark';
-    return svar('MANUELL', `Manuell budget — ${lage}`,
-      `${bas} Går plus (${lage}). Lämnas som den är.`,
-      { zon: vinst >= ZON_SKALA_OVER ? 'up' : 'hold', vinstProcent: vinst });
-  }
-
   // 4. Kadensspärren: Meta ska hinna lära sig mellan ändringar.
   // Snabbspåret gäller bara uppåt: skalningszon + ROAS ≥ 3 → 1 dag räcker.
   const dagar = rad.dagarSedanAndring;
@@ -383,9 +426,9 @@ export function besked(rad) {
   const gransText = naraGrans
     ? ` ⚠ Ligger ${avstand.toFixed(1).replace('.', ',')} procentenheter från en zongräns — ROAS för de senaste dygnen kan fortfarande revideras uppåt. Kolla i Ads Manager innan du kör den här.`
     : '';
-  const bas = `${pct(vinst)} vinst av omsättningen (ROAS ${rad.roas3d.toFixed(2).replace('.', ',')} mot break-even ${breakEven.toFixed(2).replace('.', ',')}).`;
+  const bas = `${pct(vinst)} vinst av omsättningen (ROAS ${d2(rad.roas3d)} mot break-even ${d2(breakEven)}).`;
 
-  // 5. Förlust.
+  // 5. Förlust — KILL-BESLUTEN, alla mot BREAK-EVEN (CLAUDE.md regel 4).
   if (vinst < 0) {
     // Spärr 3 (Axel 2026-09-21): i högzonen kapas aldrig, och den gäller FÖRE
     // test/drift-uppdelningen. En budget över TAK_UTAN_VINNARE är per
@@ -394,18 +437,20 @@ export function besked(rad) {
     // ska inte kunna stänga av en kampanj som ligger på 6 000 kr om dagen för
     // att produktkartan råkar sakna raden. Först TVÅ förlustmorgnar i rad ger
     // −20 %, aldrig en kapning, aldrig under TAK_UTAN_VINNARE i ett steg.
+    // Utan tak gäller det här hela vägen upp: 16 000 kr som går back sänks
+    // 20 % efter två förlustmorgnar, inte mer.
     if (rad.budget > TAK_UTAN_VINNARE) {
       const back = Number.isFinite(rad.backDagarIRad) ? rad.backDagarIRad : null;
       if (back === null || back < HOGZON_BACK_DAGAR) {
         const backText = back === null ? 'okänt antal' : String(back);
         return svar('HOGZON_AVVAKTA', 'Högzon — en förlustmorgon räcker inte',
           `${bas} Budgeten ${kr(rad.budget)} ligger i högzonen över ${kr(TAK_UTAN_VINNARE)}. ${backText} förlustmorgon i rad — vid ${HOGZON_BACK_DAGAR} sänks den 20 %. Ingen kapning, ingen paus, ingen avstängning.${gransText}`,
-          { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu, hogzon: true });
+          { zon: 'hold', vinstProcent: vinst, harVinnare, hogzon: true });
       }
-      const ner = Math.max(TAK_UTAN_VINNARE, nyBudget('ner', rad.budget, { tak: takNu }));
+      const ner = Math.max(TAK_UTAN_VINNARE, nyBudget('ner', rad.budget));
       return svar('SANK', 'Högzon — sänk 20 % efter två förlustmorgnar',
         `${bas} ${back} förlustmorgnar i rad i högzonen. Sänk från ${kr(rad.budget)} till ${kr(ner)} per dag — 20 %, aldrig en kapning, aldrig under ${kr(TAK_UTAN_VINNARE)} i ett steg.${gransText}`,
-        { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, naraGrans, harVinnare, tak: takNu, hogzon: true });
+        { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, naraGrans, harVinnare, hogzon: true });
     }
     if (lage === 'test') {
       if (!Number.isFinite(rad.spendTotal)) {
@@ -436,7 +481,7 @@ export function besked(rad) {
       const backLivstid = Number.isFinite(rad.backDagarIRad) ? rad.backDagarIRad : 0;
       if (Number.isFinite(rad.roasTotal) && rad.roasTotal >= breakEven
           && backLivstid < LIVSTIDS_MAX_BACKDAGAR) {
-        const livstid = `${bas} Men livstids-ROAS ${rad.roasTotal.toFixed(2).replace('.', ',')} ligger över break-even ${breakEven.toFixed(2).replace('.', ',')} — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag.`;
+        const livstid = `${bas} Men livstids-ROAS ${d2(rad.roasTotal)} ligger över break-even ${d2(breakEven)} — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag.`;
         const kvar = LIVSTIDS_MAX_BACKDAGAR - backLivstid;
         if (rad.budget > GOLV_SEK) {
           return svar('SANK', 'Kapa till golvet — går plus över livstiden',
@@ -464,7 +509,7 @@ export function besked(rad) {
         `${bas} Redan på ${kr(GOLV_SEK)}. ${backText} dygn i rad under break-even hittills; vid ${BACK_DAGAR_FOR_AVSTANGNING} stängs den av.`,
         { zon: 'stop', vinstProcent: vinst });
     }
-    const halv = nyBudget('halvera', rad.budget, { tak: takNu });
+    const halv = nyBudget('halvera', rad.budget);
     return svar('HALVERA', 'Halvera',
       `${bas} Sänk från ${kr(rad.budget)} till ${kr(halv)} per dag.${gransText}`,
       { zon: 'stop', vinstProcent: vinst, nyBudget: halv, kraverGodkannande: true, naraGrans });
@@ -491,45 +536,138 @@ export function besked(rad) {
       { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: true, naraGrans });
   }
 
-  // 7. 16-25 %: låt vara. Det här är läget vi vill ha de flesta produkter i.
-  if (vinst < ZON_SKALA_OVER) {
+  // 7. SKALNINGSMÅTTET: target-ROAS. Under target (men över 16 % vinst) rörs
+  // ingenting — det här är läget vi vill ha de flesta produkter i. Utan eget
+  // target är gränsen ZON_SKALA_OVER (25 % vinst), exakt som förut.
+  const target = mal.target;
+  const steg = trappsteg(rad.roas3d, target);
+  if (!steg) {
+    const malText = Number.isFinite(target) ? ` Target ${d2(target)} (${mal.kalla}) nås inte.` : '';
     return svar('LAT_VARA', 'Låt vara',
-      `${bas} Mellan ${ZON_SANK_UNDER} och ${ZON_SKALA_OVER} % rör vi ingenting. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`,
+      `${bas}${malText} Går plus men skalas inte. Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`,
       { zon: 'hold', vinstProcent: vinst });
   }
 
-  // 8. Över 25 %: skala. Raketspåret: ROAS ≥ 5 → nästan dubbla (×1,8).
-  // Spärr 2 (Axel 2026-09-21): i högzonen är steget max 20 % per rond, så
-  // raketspåret gäller bara upp till TAK_UTAN_VINNARE. Att nästan dubbla en
-  // budget som redan ligger på 4 000 kr är ett hopp på 3 200 kr per dygn.
-  const hogzon = rad.budget >= TAK_UTAN_VINNARE;
-  const raket = rad.roas3d >= RAKET_ROAS && !hogzon;
+  // 8. Över target: skala — om spärrarna släpper. Ordningen är med flit:
+  //    a) vinnare krävs över 4 000 (spärr 1),
+  //    b) CPA-trenden (hälsomåttet, Axel 2026-09-22): stigande CPA tre dygn i
+  //       rad ⇒ ingen höjning, hur bra ROAS än ser ut. Sänks inte — den går
+  //       fortfarande plus. Fixet är nya creatives, inte budget.
+  //    c) klickandelen ≥ 60 % (Compare Attribution Settings),
+  //    d) 48–72 timmar konsekvent över target,
+  //    e) steget: trappan under högzonen, max 20 % i den (spärr 2).
+  const malText = `Target ${d2(target)} (${mal.kalla}), ROAS ${d2(rad.roas3d)} = ${Math.round(steg.kvot * 100)} % av target.`;
   if (rad.budget >= takNu) {
-    const varfor = harVinnare
-      ? `${kr(TAK_SEK)} per dag är taket. Vi skalar inte högre.`
-      : `${kr(TAK_UTAN_VINNARE)} per dag är taket utan vinnare. Över det krävs en etiketterad BREAKTHROUGH eller SPEND_WINNER inom ${VINNARE_DAGAR} dygn — produkten har ingen. Skriv lärdomen på nästa vinnare, så öppnas ${kr(TAK_SEK)}.`;
-    return svar('LAT_VARA', 'Låt vara — taket nått',
-      `${bas} Går bra, men ${varfor}`,
-      { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu });
+    return svar('LAT_VARA', 'Låt vara — taket utan vinnare',
+      `${bas} ${malText} ${kr(TAK_UTAN_VINNARE)} per dag är taket utan vinnare. Över det krävs en etiketterad BREAKTHROUGH eller SPEND_WINNER inom ${VINNARE_DAGAR} dygn — produkten har ingen. Skriv lärdomen på nästa vinnare, så finns inget tak.`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare });
   }
-  const upp = nyBudget(raket ? 'raket' : 'upp', rad.budget, { tak: takNu });
+  const cpa = rad.cpaStiger && typeof rad.cpaStiger === 'object' ? rad.cpaStiger : null;
+  if (cpa?.stiger === true) {
+    const serie = Array.isArray(cpa.serie) && cpa.serie.length ? ` (${cpa.serie.map((d) => (d.cpa === Infinity ? '∞' : Math.round(d.cpa))).join(' → ')} kr)` : '';
+    return svar('CPA_STIGER', 'Ingen höjning — CPA stiger',
+      `${bas} ${malText} Men kostnaden per köp har stigit ${cpa.dagar} dygn i rad${serie}. Hälsomåttet säger nej till höjning oavsett ROAS. Sänks inte — den går plus. Fixet är nya creatives, inte budget.${gransText}`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, cpaStiger: cpa });
+  }
+  const klick = rad.klickandel && typeof rad.klickandel === 'object' && Number.isFinite(rad.klickandel.andel) ? rad.klickandel : null;
+  if (klick && klick.andel < KLICK_MIN_ANDEL) {
+    return svar('VISNING_AVVAKTA', 'Vänta ett dygn — för få klickköp',
+      `${bas} ${malText} Bara ${pct(klick.andel * 100)} av köpen är klickbaserade (${klick.klick} klick, ${klick.visning} visning) — gränsen är ${pct(KLICK_MIN_ANDEL * 100)}. Merparten är visningsköp; vänta ett dygn innan någon höjning.${gransText}`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, klickandel: klick });
+  }
+  const konsekvent = Number.isFinite(rad.dagarOverTarget) ? rad.dagarOverTarget : null;
+  if (konsekvent !== null && konsekvent < KONSEKVENT_DAGAR) {
+    return svar('VANTA_KONSEKVENT', 'Vänta — inte konsekvent över target än',
+      `${bas} ${malText} Dags-ROAS har legat över target ${konsekvent} helt dygn i rad — trappan kräver ${KONSEKVENT_DAGAR} (48–72 timmar konsekvent).${gransText}`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare, dagarOverTarget: konsekvent });
+  }
+  // Spärr 2 (Axel 2026-09-21): i högzonen är steget max 20 % per rond, så
+  // trappans ×1,5 och ×2 gäller bara upp till TAK_UTAN_VINNARE. Att dubbla en
+  // budget som redan ligger på 4 000 kr är ett hopp på 4 000 kr per dygn.
+  const hogzon = rad.budget >= TAK_UTAN_VINNARE;
+  const faktor = hogzon ? Math.min(steg.faktor, HOGZON_MAX_FAKTOR) : steg.faktor;
+  const upp = nyBudget('upp', rad.budget, { tak: takNu, faktor });
   if (upp <= rad.budget) {
-    return svar('LAT_VARA', 'Låt vara — taket nått',
-      `${bas} En höjning skulle passera taket ${kr(takNu)}.`,
-      { zon: 'hold', vinstProcent: vinst, harVinnare, tak: takNu });
+    return svar('LAT_VARA', 'Låt vara — taket utan vinnare',
+      `${bas} ${malText} En höjning skulle passera ${kr(takNu)}, taket utan vinnare.`,
+      { zon: 'hold', vinstProcent: vinst, harVinnare });
   }
-  const nastaKoll = snabbspar || raket
+  const nastaKoll = snabbspar || faktor > 1.2
     ? 'Snabbspår: ROAS över 3 — kan höjas igen redan imorgon.'
     : `Nästa koll om ${MIN_DAGAR_MELLAN_ANDRINGAR} dagar.`;
-  if (raket) {
-    return svar('SKALA', 'Raketskala — nästan dubbla',
-      `${bas} Raketregeln (Axel 2026-08-30): ROAS över ${RAKET_ROAS} — ändra från ${kr(rad.budget)} till ${kr(upp)} per dag (×1,8). ${nastaKoll}${gransText}`,
-      { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, raket: true, harVinnare, tak: takNu });
+  const stegText = hogzon && steg.faktor > HOGZON_MAX_FAKTOR
+    ? ` Trappan hade gett ${steg.namn}, men över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 % (högzonen).`
+    : hogzon ? ` Högzon: över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 %.` : '';
+  const rubrik = faktor >= 2 ? 'Skala — dubbla' : faktor >= 1.5 ? 'Skala ×1,5' : 'Skala upp 20 %';
+  return svar('SKALA', rubrik,
+    `${bas} ${malText} Trappsteg ${steg.namn}${konsekvent !== null ? `, ${konsekvent} dygn i rad över target` : ''}${klick ? `, ${pct(klick.andel * 100)} klickköp` : ''}${cpa ? `, CPA ${cpa.dagar} stigande dygn` : ''}. Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${stegText}${gransText}`,
+    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, harVinnare, faktor, trappsteg: steg.namn });
+}
+
+/**
+ * Surf-läget (Axels beslut 2026-09-22): peak-kadensen, var sjätte timme.
+ * Aldrig automatiskt — anroparen kör bara den här när Axel slagit på läget.
+ *
+ * @param {object} rad
+ * @param {number|null} rad.budget        Nuvarande dagsbudget
+ * @param {number|null} rad.spendIdag     Spend hittills i dag (annonskontots dygn)
+ * @param {number|null} rad.roasIdag      ROAS hittills i dag (7d_click)
+ * @param {number|null} rad.kopIdag       Köp hittills i dag
+ * @param {number|null} rad.spendIgar     Gårdagens faktiska spend
+ * @param {number|null} rad.breakEven
+ * @param {number|null} rad.targetRoas    Eget target; annars härleds
+ * @param {boolean}     rad.efterMidnatt  Första körningen efter annonskontots midnatt (ingen SURF_RESET loggad i dag)
+ * @param {{stiger: boolean}|null} rad.cpaStiger  Hälsomåttet gäller här också
+ */
+export function surfBesked(rad) {
+  const breakEven = Number.isFinite(rad.breakEven) && rad.breakEven > 1 ? rad.breakEven : lasBreakEven(rad.namn).be;
+  const mal = targetRoas(breakEven, rad.targetRoas);
+  const svar = (kod, rubrik, motivering, extra = {}) => ({
+    kod, rubrik, motivering, nyBudget: null, zon: null, vinstProcent: null, breakEven, breakEvenKalla: 'surf',
+    targetRoas: mal.target, targetKalla: mal.kalla, kraverGodkannande: false, naraGrans: false, surf: true, ...extra,
+  });
+  if (!Number.isFinite(breakEven)) return svar('SAKNAR_BREAK_EVEN', 'Break-even saknas', 'Ingen surf-dom utan break-even.');
+  if (!Number.isFinite(rad.budget) || rad.budget <= 0) return svar('SAKNAR_BUDGET', 'Budget saknas', 'Dagsbudgeten sitter troligen på annonsgruppen.');
+
+  // Midnattsresetten: ungefär halva gårdagens FAKTISKA spend, aldrig under golvet.
+  if (rad.efterMidnatt === true) {
+    if (!Number.isFinite(rad.spendIgar) || rad.spendIgar <= 0) {
+      return svar('SURF_HALL', 'Surf — ingen reset utan gårdagens spend', 'Gårdagens spend saknas; budgeten lämnas tills talet finns.');
+    }
+    const ny = Math.max(GOLV_SEK, Math.round((rad.spendIgar * SURF_RESET_ANDEL) / STEG_SEK) * STEG_SEK);
+    return svar('SURF_RESET', 'Surf — midnattsreset till halva gårdagens spend',
+      `Gårdagen spenderade ${kr(rad.spendIgar)}. Budgeten sätts till ${kr(ny)} (${Math.round(SURF_RESET_ANDEL * 100)} %) vid annonskontots midnatt; dagens fönster avgör sedan var sjätte timme.`,
+      { zon: ny > rad.budget ? 'up' : ny < rad.budget ? 'down' : 'hold', nyBudget: ny === rad.budget ? null : ny, kraverGodkannande: ny !== rad.budget });
   }
-  const hogzonText = upp > TAK_UTAN_VINNARE
-    ? ` Högzon: över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 %, aldrig raket.`
-    : '';
-  return svar('SKALA', 'Skala upp 20 %',
-    `${bas} Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${hogzonText}${gransText}`,
-    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, harVinnare, tak: takNu });
+
+  const roas = rad.roasIdag;
+  const kop = rad.kopIdag;
+  const spend = rad.spendIdag;
+  if (!Number.isFinite(spend) || spend < MIN_SPEND_FOR_DOM || !Number.isFinite(kop) || kop < MIN_KOP_FOR_DOM || !Number.isFinite(roas)) {
+    return svar('SURF_HALL', 'Surf — för lite i fönstret',
+      `${Number.isFinite(spend) ? kr(spend) : 'okänd spend'} och ${Number.isFinite(kop) ? `${kop} köp` : 'okänt antal köp'} hittills i dag — under grinden ${MIN_SPEND_FOR_DOM} kr / ${MIN_KOP_FOR_DOM} köp. Håll.`,
+      { zon: 'hold' });
+  }
+  const vinst = vinstProcent(breakEven, roas);
+  const bas = `Dagens fönster: ROAS ${d2(roas)} på ${kr(spend)} och ${kop} köp (break-even ${d2(breakEven)}${Number.isFinite(mal.target) ? `, target ${d2(mal.target)}` : ''}).`;
+  if (roas < breakEven) {
+    const ner = nyBudget('ner', rad.budget);
+    return svar('SURF_SANK', 'Surf — dåligt fönster, sänk 20 %',
+      `${bas} Under break-even. Sänk från ${kr(rad.budget)} till ${kr(ner)}.`,
+      { zon: 'down', vinstProcent: vinst, nyBudget: ner, kraverGodkannande: ner < rad.budget });
+  }
+  if (rad.cpaStiger?.stiger === true) {
+    return svar('CPA_STIGER', 'Surf — CPA stiger, ingen dubbling',
+      `${bas} Kostnaden per köp har stigit ${rad.cpaStiger.dagar} dygn i rad — hälsomåttet säger nej till höjning. Håll.`,
+      { zon: 'hold', vinstProcent: vinst });
+  }
+  if (Number.isFinite(mal.target) && roas >= mal.target) {
+    const upp = nyBudget('upp', rad.budget, { faktor: SURF_DUBBLA_FAKTOR });
+    return svar('SURF_DUBBLA', 'Surf — bra fönster, dubbla',
+      `${bas} Över target. Dubbla från ${kr(rad.budget)} till ${kr(upp)}.`,
+      { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, faktor: SURF_DUBBLA_FAKTOR });
+  }
+  return svar('SURF_HALL', 'Surf — mellan break-even och target, håll',
+    `${bas} Går plus men når inte target. Håll.`,
+    { zon: 'hold', vinstProcent: vinst });
 }

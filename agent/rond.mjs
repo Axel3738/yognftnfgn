@@ -9,9 +9,10 @@
 import { readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, TAK_SEK as TAK_SEK_PLAN } from './besked.mjs';
+import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, surfBesked, targetRoas } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod } from './logg.mjs';
 import { brieftak, harLevandeVinnare, mix, vidarebyggBehov } from './lardom.mjs';
+import { cpaStiger, cpaText, dagarOver, klickandel, CPA_STIG_DAGAR } from './trend.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -34,10 +35,10 @@ export const ROAS_RIMLIGT_MAX = 15;
 
 // Samma sak för dagsbudgeten. Ett tal under 100 eller över 50 000 är med all
 // sannolikhet en felparsning (öre lästa som kronor eller tvärtom) — ingen dom,
-// larm i stället. Taket var 10 000 till 2026-09-19: Axel hade själv skalat
-// Taköverdraget till 16 000 kr/dag och kontots starkaste produkt fick
-// ORIMLIG_DATA i stället för en dom. Budgetar över motorns eget tak
-// (TAK_SEK i besked.mjs, 4 000 kr) är Axels manuella zon — se besked().
+// larm i stället. Rimlighetstaket var 10 000 till 2026-09-19: Axel hade själv
+// skalat Taköverdraget till 16 000 kr/dag och kontots starkaste produkt fick
+// ORIMLIG_DATA i stället för en dom. Motorn har inget eget tak sedan
+// 2026-09-22 (Axels beslut, ur Evolve) — det här är bara felparsningsspärren.
 export const BUDGET_RIMLIG_MIN = 100;
 export const BUDGET_RIMLIG_MAX = 50000;
 
@@ -250,13 +251,30 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
 
   const källa = breakEvenForPost(post, kampanj.namn, fx);
 
+  // Hälsomåttet och de nya spärrarna (Axels beslut 2026-09-22) räknas ur
+  // dygnsserien, alltid TILL OCH MED GÅRDAGEN — dagens dygn är ofullständigt
+  // (Taköverdraget 22/9 visade 672 kr CPA på ett halvt dygn) och får aldrig
+  // avgöra en trend. `target_roas` i produktkartan är produktens eget
+  // skalningsmått; saknas det härleder besked() ett ur break-even.
+  const igar = dagenFore(idag);
+  const target = Number.isFinite(post.target_roas) ? post.target_roas : null;
+  const cpa = cpaStiger(kampanj.dygn, { tillOchMed: igar });
+  const klick = klickandel(kampanj.dygn, { n: 3, tillOchMed: igar }) ?? klickandelUrKampanj(kampanj);
+  const malRoas = targetRoas(källa.be, target).target;
+  const overTarget = dagarOver(kampanj.dygn, malRoas, { tillOchMed: igar });
+
   return {
     ...grund,
+    targetRoas: target,
+    cpaTrend: cpa,
+    klickandel: klick,
+    dagarOverTarget: overTarget,
     dom: besked({
       namn: kampanj.namn,
       lage: grund.lage,
       breakEven: källa.be,
       breakEvenKalla: källa.kalla,
+      targetRoas: target,
       roas3d,
       spend3d,
       kop3d,
@@ -266,11 +284,56 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
       dagarSedanAndring: dagarSedanAndring(logg, kampanj.id, idag),
       senasteAndringKod: senasteRadMedKod(logg, kampanj.id, ['SKALA', 'SANK', 'HALVERA'])?.kod ?? null,
       backDagarIRad: backDagarIRad(kampanj.dygn, källa.be),
-      // Spärr 1 för det höjda taket (Axel 2026-09-21): motorn får bara skala
-      // över 4 000 kr om kampanjen bär en etiketterad BREAKTHROUGH eller
-      // SPEND_WINNER inom 28 dygn. Räknas HÄR, ur budgetloggen — besked.mjs
-      // är ren räkning och läser aldrig en fil.
+      // Spärr 1 (Axel 2026-09-21): motorn får bara skala över 4 000 kr om
+      // kampanjen bär en etiketterad BREAKTHROUGH eller SPEND_WINNER inom
+      // 28 dygn. Räknas HÄR, ur budgetloggen — besked.mjs är ren räkning och
+      // läser aldrig en fil.
       harVinnare: harLevandeVinnare(logg, kampanj.id, { idag }),
+      cpaStiger: cpa,
+      klickandel: klick,
+      dagarOverTarget: overTarget,
+    }),
+  };
+}
+
+/** Gårdagen som YYYY-MM-DD. */
+export function dagenFore(idag) {
+  const t = Date.parse(`${idag}T00:00:00Z`);
+  return Number.isFinite(t) ? new Date(t - 86400000).toISOString().slice(0, 10) : null;
+}
+
+/**
+ * Klickandelen ur kampanjfälten när dygnsserien saknar visningstal:
+ * `kop_3d` (7d_click) mot `kop_3d_visning` (1d_view). Null utan visningstal.
+ */
+export function klickandelUrKampanj(kampanj) {
+  const klick = lasBelopp(kampanj?.kop_3d);
+  const visning = lasBelopp(kampanj?.kop_3d_visning);
+  if (!Number.isFinite(klick) || !Number.isFinite(visning) || klick + visning <= 0) return null;
+  return { andel: klick / (klick + visning), klick, visning, dygn: 3 };
+}
+
+/**
+ * Surf-läget (Axels beslut 2026-09-22): samma kampanjrad, men domen fälls på
+ * DAGENS fönster (spend_idag, roas_idag, kop_idag, spend_igar i kontodatan)
+ * och bara för kampanjer Axel listat i agent/surf.json. Aldrig automatiskt.
+ */
+export function bedomSurf(kampanj, { logg, idag, karta, fx, surf }) {
+  const post = karta?.[kampanj.id] ?? {};
+  const källa = breakEvenForPost(post, kampanj.namn, fx);
+  const igar = dagenFore(idag);
+  const resetIdag = logg.some((r) => r.kampanj_id === kampanj.id && r.kod === 'SURF_RESET' && r.genomford === true && r.datum === idag);
+  const rad = {
+    id: kampanj.id, namn: kampanj.namn, lage: post.lage === 'drift' ? 'drift' : 'test',
+    budget: lasBelopp(kampanj.daily_budget), spendIdag: lasBelopp(kampanj.spend_idag), roasIdag: lasBelopp(kampanj.roas_idag),
+    kopIdag: lasBelopp(kampanj.kop_idag), spendIgar: lasBelopp(kampanj.spend_igar), surf: true,
+  };
+  return {
+    ...rad,
+    dom: surfBesked({
+      ...rad, breakEven: källa.be, targetRoas: Number.isFinite(post.target_roas) ? post.target_roas : null,
+      efterMidnatt: surf.efterMidnatt === true && !resetIdag,
+      cpaStiger: cpaStiger(kampanj.dygn, { tillOchMed: igar }),
     }),
   };
 }
@@ -344,9 +407,10 @@ export function planera(rader, { logg = [], idag = null } = {}) {
       continue;
     }
 
-    if (d.kod === 'SKALA' || d.kod === 'SANK' || d.kod === 'HALVERA') {
-      // Sista ledet före API:t: beloppet MÅSTE vara ett vettigt tal.
-      if (!Number.isFinite(d.nyBudget) || d.nyBudget < GOLV_SEK_PLAN || d.nyBudget > TAK_SEK_PLAN
+    if (['SKALA', 'SANK', 'HALVERA', 'SURF_DUBBLA', 'SURF_SANK', 'SURF_RESET'].includes(d.kod)) {
+      // Sista ledet före API:t: beloppet MÅSTE vara ett vettigt tal. Inget
+      // motortak längre (Axel 2026-09-22) — bara felparsningsspärren.
+      if (!Number.isFinite(d.nyBudget) || d.nyBudget < GOLV_SEK_PLAN || d.nyBudget > BUDGET_RIMLIG_MAX
           || d.nyBudget === r.budget) {
         uppskjutna.push({ ...grund, orsak: `ogiltigt belopp (${d.nyBudget}) — utförs inte` });
         continue;
@@ -354,13 +418,14 @@ export function planera(rader, { logg = [], idag = null } = {}) {
       atgarder.push({
         ...grund, typ: 'budget',
         fran_sek: r.budget, till_sek: d.nyBudget, till_ore: Math.round(d.nyBudget * 100),
-        ...(d.raket ? { raket: true } : {}),
+        ...(Number.isFinite(d.faktor) && d.faktor > 1.2 ? { faktor: d.faktor } : {}),
+        ...(d.raket ? { raket: true, faktor: 1.8 } : {}),
       });
     } else if (d.kod === 'MANUELL_SANK') {
-      // Manuella zonen (Axel 2026-09-20): −20 % ovanför motorns tak. Beloppet
-      // får ligga över TAK_SEK — det är hela poängen — men aldrig under det,
-      // aldrig över gamla budgeten och aldrig utanför rimlighetsspannet.
-      if (!Number.isFinite(d.nyBudget) || d.nyBudget < TAK_SEK_PLAN || d.nyBudget >= r.budget
+      // Historisk kod (manuella zonen 2026-09-20–22) — besked() fäller den
+      // inte längre, men en gammal rondfil ska gå att planera. Aldrig över
+      // gamla budgeten, aldrig utanför rimlighetsspannet.
+      if (!Number.isFinite(d.nyBudget) || d.nyBudget < GOLV_SEK_PLAN || d.nyBudget >= r.budget
           || d.nyBudget > BUDGET_RIMLIG_MAX) {
         uppskjutna.push({ ...grund, orsak: `ogiltigt belopp (${d.nyBudget}) — utförs inte` });
         continue;
@@ -377,23 +442,23 @@ export function planera(rader, { logg = [], idag = null } = {}) {
   }
 
   // Kontospärren: summan av dagsbudgetarna får aldrig stiga mer än 20 % på en
-  // körning — PLUS det som raketreglerna uttryckligen förklarar (ROAS ≥ 5 får
-  // ×1,8 per kampanj, Axels beslut 2026-08-30). Utanför det är en större höjning
-  // matematiskt omöjlig — slår spärren till är något trasigt (enhetsfel,
-  // dubbelräkning) och HELA planen kasseras. Hellre en dag utan ändringar än
-  // en trasig ändring.
+  // körning — PLUS det som en dom med större faktor uttryckligen förklarar
+  // (trappans ×1,5/×2, surf-lägets dubbling; förr raketens ×1,8). Utanför det
+  // är en större höjning matematiskt omöjlig — slår spärren till är något
+  // trasigt (enhetsfel, dubbelräkning) och HELA planen kasseras. Hellre en dag
+  // utan ändringar än en trasig ändring.
   const gammalTotal = rader.reduce((s, r) => s + (Number.isFinite(r.budget) ? r.budget : 0), 0);
   let nyTotal = gammalTotal;
-  let raketExtra = 0;
+  let stegExtra = 0;
   for (const a of atgarder) {
     if (a.typ !== 'budget') continue;
     nyTotal += a.till_sek - a.fran_sek;
-    if (a.raket) raketExtra += Math.max(0, (a.till_sek - a.fran_sek) - a.fran_sek * 0.2);
+    if (Number.isFinite(a.faktor) && a.faktor > 1.2) stegExtra += Math.max(0, Math.min(a.till_sek - a.fran_sek, a.fran_sek * (a.faktor - 1)) - a.fran_sek * 0.2);
   }
-  if (nyTotal > gammalTotal * 1.2 + raketExtra + 1) {
+  if (nyTotal > gammalTotal * 1.2 + stegExtra + 1) {
     return {
       sparrad: true,
-      orsak: `Kontospärr: planen skulle höja totalbudgeten från ${Math.round(gammalTotal)} till ${Math.round(nyTotal)} kr/dag (mer än +20 % plus raketernas del). Det ska inte kunna hända — hela planen kasseras. Gör inga ändringar och larma Axel.`,
+      orsak: `Kontospärr: planen skulle höja totalbudgeten från ${Math.round(gammalTotal)} till ${Math.round(nyTotal)} kr/dag (mer än +20 % plus de förklarade trappstegens del). Det ska inte kunna hända — hela planen kasseras. Gör inga ändringar och larma Axel.`,
       atgarder: [], uppskjutna, gammalTotal, nyTotal,
     };
   }
@@ -620,11 +685,27 @@ export function annonskvot(budgetSek) {
 }
 
 const ORDNING = [
-  'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'MANUELL_SANK', 'SANK', 'SKALA',
+  'STANG_AV', 'ATGARDSTRAPPAN', 'HALVERA', 'MANUELL_SANK', 'SANK', 'SURF_SANK', 'SURF_RESET', 'SKALA', 'SURF_DUBBLA',
+  'CPA_STIGER', 'VISNING_AVVAKTA', 'VANTA_KONSEKVENT',
   'STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
-  'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL',
-  'FOR_LITE_DATA', 'FRYST', 'MANUELL', 'LAT_VARA',
+  'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL', 'HOGZON_AVVAKTA',
+  'FOR_LITE_DATA', 'FRYST', 'MANUELL', 'SURF_HALL', 'LAT_VARA',
 ];
+
+/**
+ * CPA-trenden överst i rapporten (Axels beslut 2026-09-22): hälsomåttet.
+ * Kampanjer där CPA stigit CPA_STIG_DAGAR dygn i rad (höjning stoppad) först,
+ * sedan de med två stigningar (nästa dygn avgör). Ren.
+ */
+export function cpaTrendRader(rader) {
+  const ut = [];
+  for (const r of rader) {
+    const t = r.cpaTrend;
+    if (!t || !Number.isFinite(t.dagar) || t.dagar < CPA_STIG_DAGAR - 1) continue;
+    ut.push({ kampanj_id: r.id, namn: r.namn, dagar: t.dagar, stiger: t.stiger === true, serie: t.serie, kod: r.dom?.kod ?? null });
+  }
+  return ut.sort((a, b) => b.dagar - a.dagar);
+}
 
 function kr(n) {
   return n === null ? '—' : `${Math.round(n).toLocaleString('sv-SE')} kr`;
@@ -637,14 +718,30 @@ export function rapport(rader, meta, behov = []) {
   const attGora = sorterade.filter((r) => r.dom.kraverGodkannande);
   const attKolla = sorterade.filter(
     (r) => !r.dom.kraverGodkannande
-      && ['STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'RAKNA_BACKDAGAR'].includes(r.dom.kod),
+      && ['STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN', 'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'RAKNA_BACKDAGAR', 'CPA_STIGER', 'VISNING_AVVAKTA'].includes(r.dom.kod),
   );
   const ifred = sorterade.filter((r) => !attGora.includes(r) && !attKolla.includes(r));
 
   const ut = [];
   ut.push(`# Dagens rond — ${meta.idag}`);
   ut.push('');
-  ut.push(`${TILLATET_KONTONAMN} ${TILLATET_KONTO} · ${rader.length} aktiva kampanjer · data hämtad ${meta.hamtad}`);
+  ut.push(`${TILLATET_KONTONAMN} ${TILLATET_KONTO} · ${rader.length} aktiva kampanjer · data hämtad ${meta.hamtad}${meta.surf ? ' · 🏄 SURF-LÄGE' : ''}`);
+  ut.push('');
+
+  // CPA-trenden ÖVERST (Axel 2026-09-22): motorns hälsomått, marknadsoberoende.
+  // Stigande CPA tre dygn i rad ⇒ ingen höjning oavsett ROAS; sänks inte.
+  const cpa = cpaTrendRader(rader);
+  ut.push(`## 🩺 CPA-trend — hälsomåttet (${cpa.filter((c) => c.stiger).length} stoppade höjningar)`);
+  ut.push('');
+  if (!cpa.length) {
+    ut.push(`Ingen kampanj har stigande kostnad per köp ${CPA_STIG_DAGAR - 1}+ dygn i rad (räknat t.o.m. gårdagen, 7d_click).`);
+  } else {
+    ut.push(`Stigande kostnad per köp ${CPA_STIG_DAGAR} dygn i rad stoppar varje höjning, hur bra ROAS än ser ut. Sänks inte — de går plus. Fixet är nya creatives, inte budget.`);
+    ut.push('');
+    for (const c of cpa) {
+      ut.push(`- ${c.stiger ? '⛔' : '👀'} **${c.namn.split('|')[0].trim()}** — CPA ${cpaText(c.serie)} (${c.dagar} dygn i rad)${c.stiger ? ' — ingen höjning i dag' : ' — ett dygn till och höjningen stoppas'}${c.kod ? ` · dom ${c.kod}` : ''}`);
+    }
+  }
   ut.push('');
 
   // Visningsköpsvarningen (Axel 2026-09-21) står FÖRE åtgärderna: den handlar
@@ -783,7 +880,18 @@ async function main() {
   const attr = attributionsvarning(data);
   if (attr) varningar.push(attr);
 
-  const rader = data.kampanjer.map((k) => bedomKampanj(k, { logg, idag, karta, fx }));
+  // Surf-läget (Axel 2026-09-22): bara med --surf OCH agent/surf.json aktiv —
+  // aldrig av sig själv. Kampanjer utanför listan döms som vanligt.
+  const surf = argv.includes('--surf') ? await lasSurf() : null;
+  if (argv.includes('--surf') && !surf?.aktiv) {
+    console.error('RONDEN AVBRÖTS: --surf men agent/surf.json är inte aktiv (aktiv: true + kampanjer). Surf-läget startas av Axel, aldrig av motorn.');
+    process.exit(2);
+  }
+  const surfKampanjer = new Set((surf?.kampanjer ?? []).map(String));
+  const rader = data.kampanjer.map((k) => (surf && surfKampanjer.has(String(k.id))
+    ? bedomSurf(k, { logg, idag, karta, fx, surf: { efterMidnatt: efterMidnatt(data, surf) } })
+    : bedomKampanj(k, { logg, idag, karta, fx })));
+  if (surf) varningar.push(`🏄 Surf-läge på för ${surfKampanjer.size} kampanj(er) (agent/surf.json, startat ${surf.startad ?? 'okänt'} av ${surf.av ?? 'okänd'}). Kadens var sjätte timme; midnattsreset till ${Math.round((surf.reset_andel ?? 0.5) * 100)} % av gårdagens spend.`);
 
   for (const r of rader) {
     const anm = karta[r.id]?.anmarkning;
@@ -795,7 +903,7 @@ async function main() {
     varningar.push(`${utankarta.length} kampanj(er) saknas i produktkarta.json och kördes som testprodukt: ${utankarta.map((r) => r.namn.split('|')[0].trim()).join(', ')}.`);
   }
 
-  const meta = { idag, hamtad: data.hamtad, marknad, varningar };
+  const meta = { idag, hamtad: data.hamtad, marknad, varningar, surf: Boolean(surf) };
   if (argv.includes('--json')) {
     const behovslista = annonsbehov(rader, { logg, idag, marknad }).map((b) => {
       const rad = rader.find((r) => r.id === b.kampanj_id);
@@ -808,6 +916,30 @@ async function main() {
   } else {
     console.log(rapport(rader, meta, annonsbehov(rader, { logg, idag, marknad })));
   }
+}
+
+/** agent/surf.json — Axels strömbrytare för surf-läget. Saknas filen är läget av. */
+async function lasSurf() {
+  try {
+    return JSON.parse(await readFile(join(HÄR, 'surf.json'), 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Första körningen efter annonskontots midnatt? Kontodatan bär `timme`
+ * (annonskontots lokala timme vid hämtningen); surf.json `reset_timme` (0–23,
+ * standard 0) säger vilken sextimmarskörning som är resetten: den vars timme
+ * ligger inom sex timmar efter reset_timme. Saknas `timme` görs ingen reset —
+ * hellre ingen reset än en på gissad tid.
+ */
+export function efterMidnatt(data, surf) {
+  const timme = Number(data?.timme);
+  if (!Number.isFinite(timme)) return false;
+  const reset = Number.isFinite(Number(surf?.reset_timme)) ? Number(surf.reset_timme) : 0;
+  const diff = ((timme - reset) % 24 + 24) % 24;
+  return diff < 6;
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

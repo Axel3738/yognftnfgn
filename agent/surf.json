@@ -1,0 +1,9 @@
+{
+  "kommentar": "Surf-läget för peak (Black Friday). Axels beslut 2026-09-22: ALDRIG automatiskt — Axel slår på det här. aktiv: true + kampanj-id:n i `kampanjer` ⇒ `node agent/rond.mjs --surf` dömer de kampanjerna på DAGENS fönster (spend_idag / roas_idag / kop_idag / spend_igar i kontodatan): dubbla när fönstret är bra (ROAS över target), sänk 20 % när det är dåligt (under break-even), håll däremellan, och nollställ budgeten till reset_andel × gårdagens faktiska spend vid annonskontots midnatt (första körningen vars `timme` ligger inom sex timmar efter reset_timme). Kadensen var sjätte timme är en egen rutin Axel startar med /rutin. Kampanjer utanför listan döms som vanligt. Slå av med aktiv: false.",
+  "aktiv": false,
+  "kampanjer": [],
+  "reset_andel": 0.5,
+  "reset_timme": 0,
+  "startad": null,
+  "av": null
+}

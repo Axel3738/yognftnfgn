@@ -2,8 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   avstandTillGrans, besked, breakEvenRoas, kostnadSek, lasBelopp, lasBreakEven,
-  nyBudget, vinstProcent,
-  GOLV_SEK, TAK_SEK, TAK_UTAN_VINNARE, LIVSTIDS_MAX_BACKDAGAR,
+  nyBudget, vinstProcent, targetRoas, trappsteg, surfBesked,
+  GOLV_SEK, TAK_UTAN_VINNARE, LIVSTIDS_MAX_BACKDAGAR, HOGZON_MAX_FAKTOR, KLICK_MIN_ANDEL, KONSEKVENT_DAGAR, TRAPPA,
 } from '../besked.mjs';
 
 // En frisk kampanj att utgå från: passerar alla grindar, ingen färsk ändring.
@@ -70,46 +70,50 @@ test('nyBudget bryter aldrig mot 20-procentsregeln vid avrundning', () => {
   assert.equal(nyBudget('upp', 1000), 1200);
 });
 
-test('nyBudget respekterar golv och tak', () => {
-  // Taket höjdes 4 000 → 10 000 (Axel 2026-09-21): 3 800 × 1,2 = 4 560 → 4 550
-  // klipps inte längre av taket, men 9 000 × 1,2 gör det.
+test('nyBudget respekterar golvet; tak bara när anroparen skickar ett (inget motortak, Axel 2026-09-22)', () => {
   assert.equal(nyBudget('upp', 3800), 4550);
-  assert.equal(nyBudget('upp', 9000), TAK_SEK);
-  // Utan vinnare skickar anroparen det lägre taket — då klipps 3 800 igen.
+  assert.equal(nyBudget('upp', 9000), 10800, 'inget tak vid 10 000 längre');
+  assert.equal(nyBudget('upp', 16000), 19200);
+  // Utan vinnare skickar anroparen högzonens gräns — då klipps 3 800.
   assert.equal(nyBudget('upp', 3800, { tak: TAK_UTAN_VINNARE }), TAK_UTAN_VINNARE);
-  assert.equal(nyBudget('raket', 3000, { tak: TAK_UTAN_VINNARE }), TAK_UTAN_VINNARE);
+  assert.equal(nyBudget('upp', 3000, { tak: TAK_UTAN_VINNARE, faktor: 2 }), TAK_UTAN_VINNARE);
+  assert.equal(nyBudget('upp', 1000, { faktor: 2 }), 2000);
+  assert.equal(nyBudget('upp', 1000, { faktor: 1.5 }), 1500);
   assert.equal(nyBudget('ner', 550), GOLV_SEK);
   assert.equal(nyBudget('halvera', 600), GOLV_SEK);
   assert.equal(nyBudget('halvera', 2500), 1250);
+  assert.throws(() => nyBudget('raket', 1000), /Okänd riktning/);
 });
 
-test('spärr 1: utan vinnaretikett är taket kvar på 4 000', () => {
-  // Skalningszon (vinst 29 %) på exakt 4 000 kr — det gamla taket.
+test('spärr 1: utan vinnaretikett är taket 4 000 — med vinnare finns inget tak', () => {
+  // Skalningszon (vinst 29 %) på exakt 4 000 kr.
   const grund = { namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 3.0, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 4000, dagarSedanAndring: 9, backDagarIRad: 0 };
   const utan = besked({ ...grund });
   assert.equal(utan.kod, 'LAT_VARA');
   assert.equal(utan.harVinnare, false);
-  assert.equal(utan.tak, TAK_UTAN_VINNARE);
   assert.match(utan.motivering, /BREAKTHROUGH eller SPEND_WINNER/);
   const med = besked({ ...grund, harVinnare: true });
   assert.equal(med.kod, 'SKALA');
   assert.equal(med.nyBudget, 4800);
-  assert.equal(med.tak, TAK_SEK);
   // Ett undefined får ALDRIG öppna taket.
   assert.equal(besked({ ...grund, harVinnare: undefined }).kod, 'LAT_VARA');
-  // Under det gamla taket höjs den ändå — men bara upp TILL taket, inte förbi.
+  // Under 4 000 höjs den ändå — men bara upp TILL 4 000, inte förbi.
   assert.equal(besked({ ...grund, budget: 3800 }).nyBudget, TAK_UTAN_VINNARE);
+  // Med vinnare skalar motorn förbi 10 000 och 16 000 — inget tak (Axel 2026-09-22, "Never by spend").
+  assert.equal(besked({ ...grund, budget: 10000, harVinnare: true }).nyBudget, 12000);
+  assert.equal(besked({ ...grund, budget: 16000, harVinnare: true }).nyBudget, 19200);
+  assert.equal(besked({ ...grund, budget: 40000, harVinnare: true }).nyBudget, 48000);
 });
 
-test('spärr 2: i högzonen är steget 20 %, aldrig raket', () => {
-  // ROAS 6 skulle ge raket ×1,8 under 4 000, men inte på eller över.
+test('spärr 2: i högzonen är steget 20 % — trappans ×1,5/×2 gäller bara under 4 000', () => {
+  // BE 1,60 ⇒ härlett target 2,67. ROAS 6 = 225 % av target ⇒ dubbla under 4 000, 20 % över.
   const under = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 3000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
-  assert.equal(under.raket, true);
-  assert.equal(under.nyBudget, 5400); // 3 000 × 1,8
+  assert.equal(under.faktor, 2);
+  assert.equal(under.nyBudget, 6000); // 3 000 × 2
   const hog = besked({ namn: 'X | BE ROAS 1.60', lage: 'drift', roas3d: 6, spend3d: 9000, kop3d: 40, spendTotal: 90000, budget: 5000, dagarSedanAndring: 9, backDagarIRad: 0, harVinnare: true });
-  assert.notEqual(hog.raket, true);
-  assert.equal(hog.nyBudget, 6000); // 5 000 × 1,2, inte ×1,8
-  assert.match(hog.motivering, /aldrig raket/);
+  assert.equal(hog.faktor, HOGZON_MAX_FAKTOR);
+  assert.equal(hog.nyBudget, 6000); // 5 000 × 1,2, inte ×2
+  assert.match(hog.motivering, /högzonen/);
 });
 
 test('spärr 3: högzonen kapas aldrig — två förlustmorgnar krävs för −20 %', () => {
@@ -218,32 +222,116 @@ test('gränsen vid 16 % tillhör låt-vara-zonen', () => {
   assert.equal(dom.kod, 'LAT_VARA');
 });
 
-test('skalning föreslår rätt nytt tal och stannar vid taket', () => {
+test('skalning föreslår rätt nytt tal; utan vinnare stannar den vid 4 000, med vinnare finns inget tak', () => {
   const upp = besked(rad({ roas3d: 4, budget: 2000 }));
   assert.equal(upp.kod, 'SKALA');
   assert.equal(upp.nyBudget, 2400);
   assert.equal(upp.kraverGodkannande, true);
 
-  const tak = besked(rad({ roas3d: 4, budget: TAK_SEK }));
+  const tak = besked(rad({ roas3d: 4, budget: 10000 }));
   assert.equal(tak.kod, 'LAT_VARA');
-  assert.equal(tak.nyBudget, null);
+  assert.match(tak.motivering, /taket utan vinnare/);
+  assert.equal(besked(rad({ roas3d: 4, budget: 10000, harVinnare: true })).nyBudget, 12000);
 });
 
-test('raketspåret: ROAS ≥ 5 skalar ×1,8 i stället för 20 % (Axel 2026-08-30)', () => {
-  // BE 2,00 · ROAS 6 -> 33 % vinst och raket: 1 000 -> 1 800.
-  const raket = besked(rad({ roas3d: 6, budget: 1000 }));
-  assert.equal(raket.kod, 'SKALA');
-  assert.equal(raket.nyBudget, 1800);
-  assert.equal(raket.raket, true);
-  assert.match(raket.motivering, /Raketregeln/);
-  // Strax under 5: vanliga 20 %.
-  const vanlig = besked(rad({ roas3d: 4.9, budget: 1000 }));
+test('stegtrappan (Axel 2026-09-22): steget går på avståndet till TARGET — 100 % över ⇒ dubbla, 50 % över ⇒ ×1,5, annars 20 %', () => {
+  // BE 2,00 ⇒ härlett target 4,00 (25 % vinst). ROAS 8 = 200 % ⇒ dubbla.
+  const dubbla = besked(rad({ roas3d: 8, budget: 1000 }));
+  assert.equal(dubbla.kod, 'SKALA');
+  assert.equal(dubbla.nyBudget, 2000);
+  assert.equal(dubbla.faktor, 2);
+  assert.equal(dubbla.trappsteg, 'dubbla');
+  assert.match(dubbla.motivering, /200 % av target/);
+  // ROAS 6 = 150 % ⇒ ×1,5.
+  const halv = besked(rad({ roas3d: 6, budget: 1000 }));
+  assert.equal(halv.nyBudget, 1500);
+  assert.equal(halv.faktor, 1.5);
+  // ROAS 5,9 = 147 % ⇒ 20 %. Det gamla raketspåret (≥ 5 ⇒ ×1,8) finns inte.
+  const vanlig = besked(rad({ roas3d: 5.9, budget: 1000 }));
   assert.equal(vanlig.nyBudget, 1200);
+  assert.equal(vanlig.faktor, 1.2);
   assert.equal(vanlig.raket, undefined);
-  // Taket klipper: 2 500 × 1,8 = 4 500 -> 4 000.
+  // Utan vinnare klipper 4 000: 2 500 × 2 = 5 000 → 4 000.
   assert.equal(besked(rad({ roas3d: 8, budget: 2500 })).nyBudget, 4000);
-  // Redan på taket: låt vara.
-  assert.equal(besked(rad({ roas3d: 8, budget: TAK_SEK })).kod, 'LAT_VARA');
+  assert.deepEqual(TRAPPA.map((t) => t.faktor), [2, 1.5, 1.2]);
+});
+
+test('två beslut, två mått: skalning mäts mot target, kill mot break-even', () => {
+  // BE 2,00, eget target 3,50. ROAS 3,0 = 33 % vinst — förr skalningszon (≥ 25 %), nu under target ⇒ låt vara.
+  const under = besked(rad({ roas3d: 3.0, budget: 1000, targetRoas: 3.5 }));
+  assert.equal(under.kod, 'LAT_VARA');
+  assert.match(under.motivering, /Target 3,50 \(produktens target_roas\) nås inte/);
+  assert.equal(under.targetRoas, 3.5);
+  // ROAS 3,6 ⇒ över target ⇒ 20 %.
+  assert.equal(besked(rad({ roas3d: 3.6, budget: 1000, targetRoas: 3.5 })).nyBudget, 1200);
+  // Ett target under break-even ignoreras — det härledda gäller.
+  const t = targetRoas(2.0, 1.5);
+  assert.equal(t.target, 4);
+  assert.match(t.kalla, /ignoreras/);
+  assert.equal(targetRoas(2.0).target, 4);
+  assert.equal(targetRoas(1.63).target.toFixed(2), '2.75');
+  assert.equal(targetRoas(null).target, null);
+  // Kill-besluten rör inte target: förlust mot break-even är förlust, oavsett target.
+  const forlust = besked(rad({ roas3d: 1.5, budget: 1000, targetRoas: 3.5 }));
+  assert.equal(forlust.kod, 'HALVERA');
+  assert.equal(forlust.breakEven, 2);
+  assert.equal(trappsteg(8, 4).faktor, 2);
+  assert.equal(trappsteg(3.9, 4), null);
+});
+
+test('hälsomåttet: stigande CPA tre dygn i rad ⇒ ingen höjning oavsett ROAS, ingen sänkning', () => {
+  const serie = [{ datum: '2026-09-18', cpa: 333 }, { datum: '2026-09-19', cpa: 410 }, { datum: '2026-09-20', cpa: 421 }, { datum: '2026-09-21', cpa: 466 }];
+  const stopp = besked(rad({ roas3d: 8, budget: 1000, cpaStiger: { stiger: true, dagar: 3, serie } }));
+  assert.equal(stopp.kod, 'CPA_STIGER');
+  assert.equal(stopp.nyBudget, null);
+  assert.equal(stopp.kraverGodkannande, false);
+  assert.match(stopp.motivering, /333 → 410 → 421 → 466 kr/);
+  assert.match(stopp.motivering, /nya creatives/);
+  // Två stigningar stoppar inte.
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, cpaStiger: { stiger: false, dagar: 2, serie: serie.slice(1) } })).kod, 'SKALA');
+  // Förlust är förlust — CPA-trenden rör inte kill-besluten.
+  assert.equal(besked(rad({ roas3d: 1.5, budget: 1000, cpaStiger: { stiger: true, dagar: 3, serie } })).kod, 'HALVERA');
+});
+
+test('klickandelen: under 60 % klickköp ⇒ vänta ett dygn; utan visningstal ingen spärr', () => {
+  const vanta = besked(rad({ roas3d: 8, budget: 1000, klickandel: { andel: 0.4, klick: 4, visning: 6 } }));
+  assert.equal(vanta.kod, 'VISNING_AVVAKTA');
+  assert.equal(vanta.nyBudget, null);
+  assert.match(vanta.motivering, /40,0 % av köpen/);
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, klickandel: { andel: 0.82, klick: 28, visning: 6 } })).kod, 'SKALA');
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, klickandel: null })).kod, 'SKALA');
+  assert.equal(KLICK_MIN_ANDEL, 0.6);
+});
+
+test('48–72 timmar konsekvent: dags-ROAS över target färre än två dygn i rad ⇒ vänta; okänd serie avgör inte', () => {
+  const vanta = besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: 1 }));
+  assert.equal(vanta.kod, 'VANTA_KONSEKVENT');
+  assert.match(vanta.motivering, /1 helt dygn i rad/);
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: 2 })).kod, 'SKALA');
+  assert.equal(besked(rad({ roas3d: 8, budget: 1000, dagarOverTarget: null })).kod, 'SKALA');
+  assert.equal(KONSEKVENT_DAGAR, 2);
+});
+
+test('surf-läget: midnattsreset till halva gårdagens spend, dubbla i bra fönster, sänk i dåligt, håll däremellan', () => {
+  const grund = { namn: 'X | BE ROAS 1.60', budget: 4000, spendIdag: 2000, roasIdag: 4.0, kopIdag: 12, spendIgar: 7000 };
+  const reset = surfBesked({ ...grund, efterMidnatt: true });
+  assert.equal(reset.kod, 'SURF_RESET');
+  assert.equal(reset.nyBudget, 3500);
+  const dubbla = surfBesked({ ...grund, efterMidnatt: false });
+  assert.equal(dubbla.kod, 'SURF_DUBBLA');
+  assert.equal(dubbla.nyBudget, 8000);
+  assert.equal(dubbla.kraverGodkannande, true);
+  const sank = surfBesked({ ...grund, efterMidnatt: false, roasIdag: 1.2 });
+  assert.equal(sank.kod, 'SURF_SANK');
+  assert.equal(sank.nyBudget, 3200);
+  const hall = surfBesked({ ...grund, efterMidnatt: false, roasIdag: 2.0 });
+  assert.equal(hall.kod, 'SURF_HALL');
+  assert.equal(hall.nyBudget, null);
+  // Grinden gäller i fönstret också, och hälsomåttet stoppar dubblingen.
+  assert.equal(surfBesked({ ...grund, efterMidnatt: false, kopIdag: 2 }).kod, 'SURF_HALL');
+  assert.equal(surfBesked({ ...grund, efterMidnatt: false, cpaStiger: { stiger: true, dagar: 3 } }).kod, 'CPA_STIGER');
+  // Reset utan gårdagens spend rör ingenting.
+  assert.equal(surfBesked({ ...grund, efterMidnatt: true, spendIgar: null }).kod, 'SURF_HALL');
 });
 
 test('testprodukt med förlust lämnas ifred under tröskeln', () => {
