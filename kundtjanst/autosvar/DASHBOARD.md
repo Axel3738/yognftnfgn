@@ -4,6 +4,32 @@ Skriven för den session som bygger dashboarden (samma repo). Allt här är
 **läs-bart**. Dashboarden ska aldrig svara på mejl, aldrig skriva i loggen
 och aldrig köra `autosvar.mjs` mot en brevlåda — se "Rör inte" längst ner.
 
+## ✅ Byggd 2026-09-22 — sektionen "Auto-reply" på kundtjänstsidan
+
+Sitter i **samma sida som veckorapporten** (`kundtjanst/rapport-sida.html` →
+`rapport-publicerad.html`, länken i `rapportsida.json`), mellan arbetskön och
+tvisterna, för den valda butiken:
+
+- `kundtjanst/dashboard.mjs` → `samlaAutosvar()` läser loggmappen och lägger
+  `oversikt()`:s objekt per butik under `DATA.autosvar.brands[<id>]` —
+  **talen rörs inte** (regel 4); fritexten (ämne, fel, orsak) maskeras en gång
+  till (regel 1). Butik utan logg ⇒ sidan säger att autosvaret inte kört.
+- `kundtjanst/rapportsida.mjs` → `hamtaVaKo()` läser `INBOX.VA-PRIO` live per
+  butik (källa 3): en listning, sedan utloggning, aldrig läs/flytta/radera.
+  Utan nyckel står variabelnamnet som orsak i stället för ett tal;
+  `--utan-brevlada` hoppar steget. Sidan visar loggens kö och brevlådans kö
+  bredvid varandra — de ska stämma överens.
+- Sidan: sex tal (mejl, skickade, arga, till VA:n, fel, kontaktformulär),
+  torrkörningsrutan när `svar = 0` och `utkast > 0`, VA:ns kö med filter, arga
+  kunder (order, X, vad svaret bar, utkast/skickat), besvarade, fel, per dag.
+  Engelska etiketter med SV-knapp, ingen runtime-capability.
+- Tester: `kundtjanst/test/rapportsida.test.mjs` (talen = `oversikt()`:s,
+  maskeringen, `hamtaVaKo` mot en låtsasbrevlåda utan nät, mallen).
+
+Publiceringen görs av måndagsrutinen `/kundtjanst` mot samma länk (steg 4 i
+kommandot) — artefakten ägs av det kontot, inte av den session som byggde
+sektionen.
+
 ## Vad systemet gör (en mening)
 
 `kundtjanst/autosvar.mjs` läser butikens supportbrevlåda (Loopias webbmejl),

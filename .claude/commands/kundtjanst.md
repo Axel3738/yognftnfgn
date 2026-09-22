@@ -94,7 +94,13 @@ utan den vet nästa vecka ingenting.
    historiken till `kundtjanst/rapport-publicerad.html` och skriver ut vilken `url`
    som gäller. Sidan visar läget, **åtgärdsplanen** (`kundtjanst/atgardsplan.mjs`),
    arbetskön ärende för ärende, tvisterna med deadline, kategorierna med
-   SOP-status och kurvan vecka för vecka. Publicera med Artifact-verktyget
+   SOP-status och kurvan vecka för vecka. **Sedan 2026-09-22 också autosvaret**
+   (sektionen *Auto-reply*): loggens 30 dagar per butik ur
+   `kundtjanst/autosvar/oversikt.mjs` — arga kunder, VA:ns kö, svar/utkast, fel,
+   per dag — och mappen `INBOX.VA-PRIO` läst live i brevlådan när
+   `KUNDTJANST_MAIL_PASS_<ID>` finns (läs-bara, en listning; `--utan-brevlada`
+   hoppar det). Utkast visas som utkast, aldrig som skickat. Sidan kör aldrig
+   `autosvar.mjs` och skriver aldrig i loggen. Publicera med Artifact-verktyget
    **mot den länken**:
    ```
    Artifact  file_path: /home/user/yognftnfgn/kundtjanst/rapport-publicerad.html
