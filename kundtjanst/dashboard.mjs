@@ -18,9 +18,13 @@ import { fileURLToPath } from 'node:url';
 import { KATEGORI } from './klassificering.mjs';
 import { maskeraAdress, maskeraText } from './maskera.mjs';
 import { byggAtgardsplan, pengarIRisk } from './atgardsplan.mjs';
+import { oversikt as autosvarOversikt } from './autosvar/oversikt.mjs';
+import { lasLogg, LOGGMAPP } from './autosvar/logg.mjs';
 
 export const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const VERSION = 2;
+/** Autosvarets fönster på sidan — samma 30 dagar som `oversikt.mjs --dagar 30`. */
+export const AUTOSVAR_DAGAR = 30;
 
 const iso = (d) => (d instanceof Date ? d.toISOString() : d ? String(d) : null);
 const dag = (d) => (d ? iso(d)?.slice(0, 10) ?? null : null);
@@ -204,6 +208,92 @@ export function skrivDashboard(r, { korningar } = {}) {
   return fil;
 }
 
+// -------------------------------------------------------------- Autosvaret
+
+/**
+ * Engelska ord för det ARGA svarets X — kundens faktiska problem (nycklarna
+ * ur autosvar/svar.mjs). Bara etiketter för sidan; talen kommer ur loggen.
+ */
+export const X_EN = Object.freeze({
+  som_pa_bilden: 'looks nothing like the picture',
+  kvalitet: 'quality not what they paid for',
+  ej_levererad: 'parcel never arrived',
+  vantat: 'waited too long for a reply',
+  skadad_defekt: 'broken or defective item',
+  fel_vara: 'wrong item',
+  okand_debitering: 'unknown charge',
+  standard: 'general complaint',
+});
+
+/** Engelska ord för ENKEL-typen (autosvar/hinkar.mjs). */
+export const TYP_EN = Object.freeze({
+  wismo: 'where is my order',
+  levererad: 'marked delivered, not received',
+  leveranstid: 'delivery time',
+  oppettider: 'opening hours',
+  adress: 'address change',
+  ordernummer: 'asked for order number',
+  foretag: 'company details',
+  foton: 'photos requested',
+  retur: 'return',
+});
+
+/**
+ * En rad ur loggen som sidan visar den. Loggen är redan maskerad; fritexten
+ * (ämne, felmeddelande) maskeras EN gång till här — regel 1 i DASHBOARD.md
+ * gäller allt som visas, och ett felmeddelande från Roundcube kan bära
+ * adressen som stod i Till-fältet.
+ */
+export function autosvarRad(r) {
+  const ut = { ...r, kund: maskeraAdress(r.kund), amne: maskeraText(r.amne ?? '').slice(0, 120) };
+  if ('fel' in r) ut.fel = maskeraText(r.fel ?? '').slice(0, 200);
+  if ('orsak' in r) ut.orsak = maskeraText(r.orsak ?? '');
+  if ('orsakEn' in r) ut.orsakEn = maskeraText(r.orsakEn ?? '');
+  return ut;
+}
+
+/** En rad ur brevlådans listning (brevlada.mjs → tolkaListrad) som sidan visar den: avsändaren maskerad. */
+export function brevladaRad(r) {
+  return {
+    uid: Number.isFinite(Number(r?.uid)) ? Number(r.uid) : null,
+    fran: maskeraAdress(r?.franAdress || r?.fran || ''),
+    amne: maskeraText(r?.amne ?? '').slice(0, 120),
+    datum: String(r?.datum ?? ''),
+    last: Boolean(r?.last),
+    flaggad: Boolean(r?.flaggad),
+  };
+}
+
+/**
+ * Autosvarets läge per butik, ur loggen `kundtjanst/autosvar/logg/<butik>.jsonl`.
+ * Talen är `oversikt.mjs`:s — ingenting räknas om här (DASHBOARD.md regel 4),
+ * så sidan och `node kundtjanst/autosvar/oversikt.mjs --json` kan inte säga
+ * olika saker. Butikerna är loggfilerna som finns; en butik utan logg står
+ * inte här, och sidan säger då att autosvaret inte kört för den.
+ * `brevlada` fylls av rapportsida.mjs (live ur webbmejlen) — null tills dess.
+ */
+export function samlaAutosvar({ loggmapp = LOGGMAPP, nu = new Date(), dagar = AUTOSVAR_DAGAR } = {}) {
+  const brands = {};
+  if (existsSync(loggmapp)) {
+    for (const f of readdirSync(loggmapp).filter((x) => x.endsWith('.jsonl')).sort()) {
+      const id = f.slice(0, -'.jsonl'.length);
+      const rader = lasLogg(id, loggmapp);
+      if (!rader.length) continue;
+      const o = autosvarOversikt(rader, { nu, dagar });
+      brands[id] = {
+        ...o,
+        brand: o.brand ?? id,
+        arga: o.arga.map(autosvarRad),
+        svarade: o.svarade.map(autosvarRad),
+        tillVa: o.tillVa.map(autosvarRad),
+        fel: o.fel.map(autosvarRad),
+        brevlada: null,
+      };
+    }
+  }
+  return { dagar, hamtad: iso(nu), etiketter: { x: X_EN, typ: TYP_EN }, brands };
+}
+
 // ------------------------------------------------------------------ Sidan
 
 function lasJsonl(fil) {
@@ -219,7 +309,7 @@ function lasJsonl(fil) {
  * `historik/<brand>.jsonl`. Veckor utan JSON (körda före version 2) syns
  * bara i historikkurvan — aldrig som en tom flik.
  */
-export function samlaDashboard({ korningar, historik, nu = new Date() } = {}) {
+export function samlaDashboard({ korningar, historik, loggmapp, nu = new Date() } = {}) {
   const kbas = korningar ?? join(ROT, 'kundtjanst', 'korningar');
   const hbas = historik ?? join(ROT, 'kundtjanst', 'historik');
   const brands = [];
@@ -251,5 +341,7 @@ export function samlaDashboard({ korningar, historik, nu = new Date() } = {}) {
   }
 
   brands.sort((a, b) => (b.nyckeltal?.risk ?? 0) - (a.nyckeltal?.risk ?? 0));
-  return { version: VERSION, uppdaterad: iso(nu), brands };
+  // Autosvaret ligger bredvid veckorapporten, per butiks-id — sidan slår upp
+  // det för den valda butiken. Loggen är dagsfärsk, veckorapporten är veckans.
+  return { version: VERSION, uppdaterad: iso(nu), brands, autosvar: samlaAutosvar({ loggmapp, nu }) };
 }

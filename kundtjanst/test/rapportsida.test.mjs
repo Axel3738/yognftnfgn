@@ -6,8 +6,9 @@ import { mkdtempSync, writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { byggAtgardsplan, planPerHink, pengarIRisk, HINKAR } from '../atgardsplan.mjs';
-import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad, planUrDashboard } from '../dashboard.mjs';
-import { byggSida } from '../rapportsida.mjs';
+import { byggDashboard, skrivDashboard, samlaDashboard, arendeRad, tvistRad, planUrDashboard, samlaAutosvar, brevladaRad, X_EN } from '../dashboard.mjs';
+import { byggSida, hamtaVaKo } from '../rapportsida.mjs';
+import { oversikt } from '../autosvar/oversikt.mjs';
 import { NIVAER } from '../chargeback.mjs';
 
 const NU = new Date('2026-09-14T08:00:00Z');
@@ -254,6 +255,108 @@ test('tomt repo ger en tom men giltig sida-data', () => {
   assert.equal(d.version, 2);
 });
 
+// ------------------------------------------------------------- Autosvaret
+
+/** En logg som motorn skriver den: maskerad kund, en rad per mejl och körning. */
+function autosvarLogg() {
+  const rad = (extra) => JSON.stringify({ tid: '2026-09-21T06:00:00.000Z', brand: 'demo', uid: 1, messageId: '<a@x>', kund: 'ka***@gmail.com', kundHash: 'abc', amne: 'Var är min order #5054', hink: 'ENKEL', typ: 'wismo', kategori: 'var_ar_ordern', ordernummer: ['5054'], sprak: 'sv', orsak: 'enkel wismo', atgard: 'utkast', torr: true, flaggad: true, ...extra });
+  return [
+    // Samma mejl två gånger — den äldre raden (SVÅR) ska förlora mot den nya (ENKEL, utkast).
+    rad({ tid: '2026-09-20T06:00:00.000Z', hink: 'SVÅR', typ: null, atgard: 'flaggad', torr: true }),
+    rad({}),
+    rad({ uid: 2, messageId: '<b@x>', kund: 'mo***@gmail.com', amne: 'Skräp order #6600', hink: 'ARG', typ: null, kategori: 'aterbetalning', ordernummer: ['6600'], orsak: 'argt ordval', atgard: 'utkast', torr: true, flaggad: true, flyttad: 'INBOX.VA-PRIO', x: 'kvalitet', lage: false, retur: true }),
+    rad({ uid: 3, messageId: '<c@x>', kund: 'br***@gmail.com', amne: 'Hello', hink: 'SVÅR', typ: null, kategori: 'ovrigt', ordernummer: [], sprak: 'en', orsak: 'kategori ovrigt — VA:n', atgard: 'flaggad', torr: true, flaggad: true }),
+    rad({ uid: 4, messageId: '<d@x>', kund: 'ny***@shopify.com', amne: 'Nyhetsbrev', hink: 'SKIP', typ: null, kategori: null, ordernummer: [], orsak: 'listmejl', atgard: 'hoppad', torr: true, flaggad: false }),
+    rad({ uid: 5, messageId: '<e@x>', kund: 'fe***@gmail.com', amne: 'Adressbyte', hink: 'ENKEL', typ: 'adress', atgard: 'fel', fel: 'Roundcube sa nej (302) för lisa.fel@gmail.com', flaggad: false }),
+    // Utanför fönstret (60 dagar gammal) — räknas inte.
+    rad({ tid: '2026-07-20T06:00:00.000Z', uid: 6, messageId: '<f@x>', hink: 'ENKEL', atgard: 'svar', torr: false }),
+  ].join('\n') + '\n';
+}
+
+test('samlaAutosvar visar oversikt.mjs:s tal rakt av — inget räknas om, adresser maskerade', () => {
+  const NU2 = new Date('2026-09-22T12:00:00Z');
+  const rot = mkdtempSync(join(tmpdir(), 'autosvar-'));
+  writeFileSync(join(rot, 'demo.jsonl'), autosvarLogg());
+  writeFileSync(join(rot, 'tom.jsonl'), '');
+  const a = samlaAutosvar({ loggmapp: rot, nu: NU2, dagar: 30 });
+  assert.equal(a.dagar, 30);
+  assert.deepEqual(Object.keys(a.brands), ['demo'], 'en tom logg ger ingen butik');
+  const d = a.brands.demo;
+  // Samma funktion, samma rader ⇒ exakt samma tal. Det är hela regel 4.
+  const facit = oversikt(JSON.parse(`[${autosvarLogg().trim().split('\n').join(',')}]`), { nu: NU2, dagar: 30 });
+  assert.deepEqual(d.antal, facit.antal);
+  assert.deepEqual(d.perDag, facit.perDag);
+  assert.equal(d.antal.mejl, 5, 'dubbletten och den gamla raden räknas bort');
+  assert.equal(d.antal.utkast, 2);
+  assert.equal(d.antal.svar, 0, 'torrkörningens utkast är inte skickade svar');
+  assert.equal(d.antal.ARG, 1);
+  assert.equal(d.antal.tillVa, 1, 'bara SVÅR-raden väntar på VA:n — de två utkasten räknas som svarade');
+  assert.equal(d.arga[0].x, 'kvalitet');
+  assert.equal(d.arga[0].retur, true);
+  assert.equal(d.arga[0].torr, true);
+  assert.equal(d.fel.length, 1);
+  assert.equal(d.brevlada, null, 'brevlådan fylls av rapportsida.mjs, inte här');
+  assert.equal(a.etiketter.x.kvalitet, X_EN.kvalitet);
+  const json = JSON.stringify(a);
+  assert.ok(!json.includes('lisa.fel@gmail.com'), 'ett felmeddelande med en adress maskeras');
+  assert.ok(json.includes('li***@gmail.com'));
+  assert.ok(!/[\w.+-]{3,}@gmail\.com/.test(json.replace(/\*\*\*@/g, '@X')), 'ingen omaskerad adress någonstans');
+});
+
+test('samlaDashboard bär autosvaret bredvid veckorapporten', () => {
+  const rot = mkdtempSync(join(tmpdir(), 'dash-auto-'));
+  mkdirSync(join(rot, 'logg'));
+  writeFileSync(join(rot, 'logg', 'demo.jsonl'), autosvarLogg());
+  const d = samlaDashboard({ korningar: join(rot, 'x'), historik: join(rot, 'y'), loggmapp: join(rot, 'logg'), nu: new Date('2026-09-22T12:00:00Z') });
+  assert.equal(d.version, 2, 'veckofilernas format är oförändrat');
+  assert.equal(d.autosvar.brands.demo.antal.mejl, 5);
+  const utan = samlaDashboard({ korningar: join(rot, 'x'), historik: join(rot, 'y'), loggmapp: join(rot, 'finns-inte'), nu: NU });
+  assert.deepEqual(utan.autosvar.brands, {}, 'ingen loggmapp ⇒ inga butiker, ingen krasch');
+});
+
+test('brevlådans rader maskeras innan de hamnar på sidan', () => {
+  const r = brevladaRad({ uid: '17', fran: 'Kalle Karlsson', franAdress: 'kalle.karlsson@gmail.com', amne: 'Svar till kalle.karlsson@gmail.com', datum: 'Today 09:12', last: 0, flaggad: 1 });
+  assert.equal(r.uid, 17);
+  assert.equal(r.fran, 'ka***@gmail.com');
+  assert.equal(r.amne, 'Svar till ka***@gmail.com');
+  assert.equal(r.last, false);
+  assert.equal(r.flaggad, true);
+});
+
+test('hamtaVaKo: läser VA-mappen live när nyckeln finns, säger varför annars — och rör ingenting', async () => {
+  const bas = { brands: { demo: { antal: {}, brevlada: null }, utan: { antal: {}, brevlada: null }, trasig: { antal: {}, brevlada: null }, okand: { antal: {}, brevlada: null } } };
+  const anrop = [];
+  const konfigFor = (id) => ({
+    demo: { finns: true, konfigurerad: true, saknas: [], vaMapp: 'VA-PRIO' },
+    utan: { finns: true, konfigurerad: false, saknas: ['KUNDTJANST_MAIL_PASS_UTAN'], vaMapp: 'VA-PRIO' },
+    trasig: { finns: true, konfigurerad: true, saknas: [], vaMapp: 'VA-PRIO' },
+    okand: { finns: false },
+  })[id];
+  const oppna = (id) => ({
+    async lista({ mapp, antal }) {
+      anrop.push(['lista', id, mapp, antal]);
+      if (id === 'trasig') throw Object.assign(new Error('Mappen VA-PRIO finns inte i brevlådan (INBOX, Sent) — skriv till anna@kund.se'), { kod: 'MAPP_SAKNAS' });
+      return { mapp: 'INBOX.VA-PRIO', totalt: 3, olasta: 2, rader: [{ uid: 5, fran: 'Anna', franAdress: 'anna.andersson@kund.se', amne: 'ARG', datum: 'Today 09:12', last: 0, flaggad: 1 }] };
+    },
+    async loggaUt() { anrop.push(['ut', id]); },
+  });
+  const ut = await hamtaVaKo(bas, { konfigFor, oppna, nu: new Date('2026-09-22T12:00:00Z') });
+  const demo = ut.brands.demo.brevlada;
+  assert.equal(demo.status, 'ok');
+  assert.equal(demo.totalt, 3);
+  assert.equal(demo.olasta, 2);
+  assert.equal(demo.mapp, 'INBOX.VA-PRIO');
+  assert.equal(demo.rader[0].fran, 'an***@kund.se', 'avsändaren maskeras');
+  assert.equal(ut.brands.utan.brevlada.status, 'saknas');
+  assert.match(ut.brands.utan.brevlada.orsak, /KUNDTJANST_MAIL_PASS_UTAN/, 'variabelnamnet står i orsaken');
+  assert.equal(ut.brands.trasig.brevlada.status, 'saknas');
+  assert.match(ut.brands.trasig.brevlada.orsak, /does not exist/);
+  assert.equal(ut.brands.okand.brevlada.status, 'saknas');
+  // Bara listningar och utloggningar — aldrig las/flytta/radera, och alltid utloggad efteråt.
+  assert.deepEqual(anrop, [['lista', 'demo', 'VA-PRIO', 50], ['ut', 'demo'], ['lista', 'trasig', 'VA-PRIO', 50], ['ut', 'trasig']]);
+  assert.ok(!JSON.stringify(ut).includes('anna@kund.se') && !JSON.stringify(ut).includes('anna.andersson@'), 'adresser i fel och rader maskeras');
+});
+
 // ------------------------------------------------------------------ Sidan
 
 test('sidan bakas in i mallen och </script> i datan kan inte bryta sidan', () => {
@@ -278,4 +381,18 @@ test('den riktiga mallen har platshållaren, titeln, båda språken och ingen ru
   assert.match(mall, /T = \{[\s\S]*en: \{[\s\S]*sv: \{/, 'etiketter på båda språken');
   assert.match(mall, /data-theme="dark"/, 'mörkt läge');
   assert.match(mall, /prefers-color-scheme: dark/);
+});
+
+test('mallen bär autosvaret: egen sektion, utkast skilt från skickat, torrkörningen sägs rakt ut', () => {
+  const mall = readFileSync(new URL('../rapport-sida.html', import.meta.url), 'utf8');
+  assert.match(mall, /<section id="auto-sektion">/);
+  assert.match(mall, /function ritaAutosvar\(\)/);
+  assert.match(mall, /DATA\.autosvar/, 'sidan läser samlaAutosvar:s data, räknar inte om loggen');
+  assert.ok(!/lasLogg|\.jsonl'\)/.test(mall.split('<script>')[1]), 'sidan läser aldrig loggen själv');
+  for (const nyckel of ['draftsDry', 'dryRunText', 'inMailboxNow', 'notRead', 'upsetAbout', 'replyIncluded', 'autoNone']) {
+    assert.equal((mall.match(new RegExp(`\\b${nyckel}:`, 'g')) ?? []).length, 2, `${nyckel} på båda språken`);
+  }
+  assert.match(mall, /Nothing has been sent to a customer/, 'utkast ≠ skickat');
+  assert.match(mall, /r\.atgard === 'utkast' \? `<span class="stampel gul">/, 'utkast får egen stämpel');
+  assert.match(mall, /r\.atgard === 'svar' \? `<span class="stampel gron">/, 'skickat får en annan');
 });

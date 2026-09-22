@@ -142,6 +142,13 @@ eller Notion; rapporterna gör det själva, CLI:n gör det inte.
 
 ## Autosvaret: enkla mejl besvaras, arga lugnas, svåra flaggas (`autosvar.mjs`)
 
+**På kundtjänstsidan sedan 2026-09-22** (sektionen *Auto-reply* i
+`rapport-sida.html`, kontraktet i `autosvar/DASHBOARD.md`): loggens 30 dagar per
+butik via `autosvar/oversikt.mjs` — aldrig omräknat på sidan — plus mappen
+`INBOX.VA-PRIO` läst live när `KUNDTJANST_MAIL_PASS_<ID>` finns
+(`rapportsida.mjs` → `hamtaVaKo`, läs-bara). Utkast (`torr: true`) visas som
+utkast, aldrig som skickat.
+
 Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
 själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
 

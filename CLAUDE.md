@@ -1147,7 +1147,13 @@ https://claude.ai/code/artifact/b318db7b-7623-47df-af8c-55e528771207 —
 (mall `rapport-sida.html`), och rutinen publicerar om filen mot **samma URL**
 varje körning (länken står i `kundtjanst/rapportsida.json`; utan `url` blir det
 en ny sida). Samma regler som topplistan: ingen runtime-capability, datan
-inbakad, sidan räknar aldrig om något.
+inbakad, sidan räknar aldrig om något. **Autosvaret på sidan sedan 2026-09-22**
+(sektionen *Auto-reply*; kontraktet är `kundtjanst/autosvar/DASHBOARD.md`):
+loggens 30 dagar per butik via `autosvar/oversikt.mjs` — aldrig omräknat —
+plus `INBOX.VA-PRIO` läst live när mejlnyckeln finns (`rapportsida.mjs` →
+`hamtaVaKo`, läs-bara, `--utan-brevlada` hoppar). Utkast (`torr: true`) visas
+som utkast, aldrig som skickat. Sidan kör aldrig `autosvar.mjs` och skriver
+aldrig i `autosvar/logg/`.
 
 ⚠️ **Ombyggd 2026-09-13 efter Axels dom "den suger fan legit".** Tre fel var
 verkliga och alla tre är rättade: sidan var på svenska fast **VA:n läser
