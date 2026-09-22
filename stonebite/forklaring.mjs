@@ -10,6 +10,13 @@
 
 const FELREGLER = [
   {
+    // kallor/shopify.mjs har redan provat ALLA appar som pekar på butiken och
+    // skrivit en mening som säger vilka, och vad som fixar det — den behålls.
+    test: /^Shopify-appen bakom .* får inte läsa ordrar/,
+    text: (ra) => ra.split(/\. /)[0].replace(/\.$/, '') + '.',
+    atgard: (ra) => `Axel: ${ra.split(/\. /).slice(1).join('. ').trim()}`,
+  },
+  {
     test: /merchant approval for read_orders/i,
     text: 'Shopify-appen får inte läsa ordrar än. Någon måste slå på "Protected customer data access" för appen.',
     atgard: 'Axel: dev.shopify.com → appen → API access → begär kunddata.',
@@ -60,7 +67,13 @@ const FELREGLER = [
 export function forklaraFel(ra) {
   const text = String(ra ?? '').trim();
   if (!text) return { text: 'Okänt fel.', atgard: '' };
-  for (const r of FELREGLER) if (r.test.test(text)) return { text: r.text, atgard: r.atgard };
+  for (const r of FELREGLER) {
+    if (!r.test.test(text)) continue;
+    return {
+      text: typeof r.text === 'function' ? r.text(text) : r.text,
+      atgard: typeof r.atgard === 'function' ? r.atgard(text) : r.atgard,
+    };
+  }
   return { text: text.length > 160 ? `${text.slice(0, 157)}…` : text, atgard: '' };
 }
 
@@ -75,6 +88,7 @@ const KALLNAMN = {
   rutiner: 'Rutinvakten (git-loggen)',
   discord: 'Eskaleringskanalerna (Discord)',
   bonus: 'Bonusen (Judge.me + Notion)',
+  autosvar: 'Autosvaret (kundtjänstbotens logg)',
 };
 
 export function kallnamn(id) {

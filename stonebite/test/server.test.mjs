@@ -394,6 +394,44 @@ test('Head of support når bonusen men inte annonserna', async () => {
   assert.equal((await hamta('/app/konton', kaka)).headers.get('location'), '/app/kundtjanst');
 });
 
+/**
+ * Axels oro 2026-09-22: "jag hade helst velat att kundsupporten inte ser daily
+ * revenue, daily profit … för alla butiker". Det här är beviset: varken VA:n
+ * eller Head of support kommer åt Översikt, Butiker, Annonser eller något
+ * varumärkes sida — och det de SER bär inte dagens försäljning, reklamen,
+ * "kvar efter reklam", ROAS eller vinstbidrag. Tvistbelopp får stå kvar: det
+ * är pengar i risk i ett ärende, inte omsättning.
+ */
+test('kundsupporten (VA och Head of support) ser aldrig dagens försäljning, reklamen eller vinsten', async () => {
+  const stangda = ['/app', '/app/butiker', '/app/annonser', '/app/varumarken', '/app/varumarke/baverbutiken', '/app/varumarke/baverbutiken?flik=kundtjanst', '/app/system'];
+  const forbjudna = [/Sålt i dag/, /Sold today/, /Reklam i dag/, /Ad spend today/, /Kvar efter reklam/, /Left after ads/, /Vinstbidrag/, /Profit contribution/, /ROAS/, /Sålt 7 d/];
+  for (const [epost, losen, egna] of [
+    ['vera@test.se', 'kundtjanst123', ['/app/kundtjanst', '/app/leverans', '/app/recensioner', '/app/kalender', '/app/mig']],
+    ['hanna@test.se', 'supportchef1', ['/app/kundtjanst', '/app/leverans', '/app/recensioner', '/app/bonus', '/app/kalender', '/app/mig']],
+  ]) {
+    const { kaka } = await loggaIn(epost, losen);
+    for (const stig of stangda) {
+      const r = await hamta(stig, kaka);
+      assert.ok([303, 403].includes(r.status), `${epost} fick ${r.status} på ${stig} — ska vara stängt`);
+    }
+    for (const stig of egna) {
+      const r = await hamta(stig, kaka);
+      assert.equal(r.status, 200, `${epost} ska se ${stig}`);
+      const html = await r.text();
+      for (const m of forbjudna) assert.doesNotMatch(html, m, `${stig} läcker ${m} till ${epost}`);
+    }
+  }
+});
+
+test('Kundtjänst-sidan bär autosvarsblocket för VA:n — igång eller inte, det står', async () => {
+  const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+  const html = await (await hamta('/app/kundtjanst', kaka)).text();
+  // VA:n läser engelska: rubriken är den engelska. Finns ingen logg i
+  // snapshoten står "has not run" — aldrig en nolla som ser ut som ett svar.
+  assert.match(html, /Auto-reply bot/);
+  assert.match(html, /has not run|drafts only|sending replies|no reply written/);
+});
+
 test('produkttestaren ser sin pipeline och inget annat', async () => {
   const { kaka, svar } = await loggaIn('pia@test.se', 'produkttest1');
   assert.equal(svar.headers.get('location'), '/app/produkttest');

@@ -87,31 +87,93 @@ export function upptackButiker(rot, env = process.env) {
 }
 
 /**
- * Nycklarna för en butik. Tre vägar provas, och det är med flit:
- * suffixet miljön bär för DOMÄNEN vinner, för det är det enda som är sant i
- * varje container. (Bäverbutikens nycklar heter `_SE_BAVER_SE` i rutinernas
- * miljö och `_SE` i en vanlig session — samma butik, olika namn.)
+ * ALLA nyckeluppsättningar som pekar på butiken, i den ordning de ska provas.
+ * En butik kan ha flera Shopify-appar med nycklar i miljön, och de får olika
+ * saker: mätt 2026-09-22 på Bäverbutiken svarar appen bakom `SHOPIFY_*_SE`
+ * 403 på ordrar ("requires merchant approval for read_orders") medan
+ * spårningens app (`SHOPIFY_*_SE_BAVER_SE`, registrerad i sparning/butiker.json)
+ * läser 900 ordrar i timmen. Därför provas de i tur och ordning, och 403 på
+ * en app är aldrig slutet — bara nästa kandidat.
+ *
+ *   1. butikens registrerade suffix (sparning/butiker.json `env_suffix`) —
+ *      den app spårningen redan läser ordrar med
+ *   2. suffixet miljön bär för DOMÄNEN — det enda som är sant i varje
+ *      container (Bäverbutikens nycklar heter `_SE_BAVER_SE` i rutinernas
+ *      miljö och `_SE` i en vanlig session — samma butik, olika namn)
+ *   3. varje annat suffix i miljön vars SHOPIFY_SHOP_ pekar på samma domän
+ *   4. fabrikens nycklar (OPS-butikerna, listicle/butik.mjs)
  */
-export async function losNycklar(butik, env = process.env) {
-  const viaDoman = butik.myshopify ? suffixForDoman(butik.myshopify, env) : null;
-  const suffix = butik.suffix ?? viaDoman;
-  if (suffix && env[`SHOPIFY_CLIENT_ID_${suffix}`] && env[`SHOPIFY_CLIENT_SECRET_${suffix}`]) {
+export async function kandidatNycklar(butik, env = process.env) {
+  const ut = [];
+  const sedda = new Set();
+  const lagg = (k) => {
+    if (!k?.shop || !k.clientId || !k.clientSecret) return;
+    const id = `${k.shop}|${k.clientId}`;
+    if (sedda.has(id)) return;
+    sedda.add(id);
+    ut.push(k);
+  };
+  const urSuffix = (suffix) => {
+    if (!suffix || !env[`SHOPIFY_CLIENT_ID_${suffix}`] || !env[`SHOPIFY_CLIENT_SECRET_${suffix}`]) return null;
     return {
       shop: normaliseraDoman(env[`SHOPIFY_SHOP_${suffix}`] ?? butik.myshopify),
       clientId: env[`SHOPIFY_CLIENT_ID_${suffix}`],
       clientSecret: env[`SHOPIFY_CLIENT_SECRET_${suffix}`],
       via: `SHOPIFY_*_${suffix}`,
     };
+  };
+
+  if (butik.env_suffix) lagg(urSuffix(String(butik.env_suffix).trim()));
+  const viaDoman = butik.myshopify ? suffixForDoman(butik.myshopify, env) : null;
+  lagg(urSuffix(butik.suffix ?? viaDoman));
+  const sokt = normaliseraDoman(butik.myshopify);
+  if (sokt) {
+    for (const [nyckel, varde] of Object.entries(env)) {
+      const m = /^SHOPIFY_SHOP_(.+)$/.exec(nyckel);
+      if (m && normaliseraDoman(varde) === sokt) lagg(urSuffix(m[1]));
+    }
   }
   try {
     const k = await losNycklarFor(butik, env);
-    if (k.shop && k.clientId && k.clientSecret) return { ...k, via: butik.ops ? 'fabrikens nycklar' : `SHOPIFY_*_${butik.env_suffix}` };
-  } catch { /* faller igenom till felet nedan */ }
-  return { shop: butik.myshopify ?? '', clientId: '', clientSecret: '', via: null };
+    if (k.shop && k.clientId && k.clientSecret) lagg({ ...k, shop: normaliseraDoman(k.shop), via: butik.ops ? 'fabrikens nycklar' : `SHOPIFY_*_${butik.env_suffix}` });
+  } catch { /* inga fabriksnycklar — då finns de inte i listan */ }
+  return ut;
 }
 
-async function mintaToken(butik, { env = process.env, fetchFn = fetch } = {}) {
-  const k = await losNycklar(butik, env);
+/** Nycklarna för en butik: första kandidaten, eller tomma fält med `via: null`. */
+export async function losNycklar(butik, env = process.env) {
+  const [forsta] = await kandidatNycklar(butik, env);
+  return forsta ?? { shop: butik.myshopify ?? '', clientId: '', clientSecret: '', via: null };
+}
+
+/** Variabelnamnen som saknas för butikens registrerade app — tom lista om de finns eller inget suffix är registrerat. */
+export function saknadeRegistreradeNycklar(butik, env = process.env) {
+  const s = String(butik.env_suffix ?? '').trim();
+  if (!s) return [];
+  return [`SHOPIFY_SHOP_${s}`, `SHOPIFY_CLIENT_ID_${s}`, `SHOPIFY_CLIENT_SECRET_${s}`].filter((n) => !env[n]);
+}
+
+/**
+ * Felet när INGEN kandidat fick läsa ordrarna — en mening som säger vad som
+ * är fel och vad som fixar det, aldrig bara "403". `provade` är
+ * [{ via, fel }] i provordning. Ordet read_orders står kvar med flit:
+ * stonebite/forklaring.mjs känner igen det.
+ */
+export function forklaraNyckelfel(butik, provade, env = process.env) {
+  const kunddata = provade.filter((p) => /403|read_orders/.test(p.fel));
+  const ovriga = provade.filter((p) => !kunddata.includes(p));
+  if (!kunddata.length) return provade.map((p) => `${p.via}: ${p.fel}`).join(' · ');
+  const appar = kunddata.map((p) => p.via).join(', ');
+  const saknas = saknadeRegistreradeNycklar(butik, env);
+  const atgard = saknas.length
+    ? `Spårningen läser samma butik med appen bakom SHOPIFY_*_${String(butik.env_suffix).trim()} — lägg in ${saknas.join(', ')} i miljön, eller godkänn kunddata (Protected customer data access) för appen i dev.shopify.com.`
+    : 'Godkänn kunddata (Protected customer data access) för appen i dev.shopify.com, eller lägg in nycklarna till en app som får läsa ordrar.';
+  const rest = ovriga.length ? ` Prövade också ${ovriga.map((p) => `${p.via} (${p.fel})`).join(', ')}.` : '';
+  return `Shopify-appen bakom ${appar} får inte läsa ordrar (403: merchant approval for read_orders saknas). ${atgard}${rest}`;
+}
+
+async function mintaToken(butik, { env = process.env, fetchFn = fetch, nycklar = null } = {}) {
+  const k = nycklar ?? await losNycklar(butik, env);
   if (!k.shop || !k.clientId || !k.clientSecret) {
     const suffix = butik.suffix || butik.env_suffix || '<suffix>';
     throw new Error(`nycklarna saknas i miljön (SHOPIFY_SHOP_${suffix} + SHOPIFY_CLIENT_ID_${suffix} + SHOPIFY_CLIENT_SECRET_${suffix})`);
@@ -156,7 +218,32 @@ function nastaSida(link) {
  * summa, så en återbetald order sjunker av sig själv.
  */
 export async function hamtaButik(butik, { dagar = 30, env = process.env, fetchFn = fetch, nu = new Date() } = {}) {
-  const { shop, token } = await mintaToken(butik, { env, fetchFn });
+  const kandidater = await kandidatNycklar(butik, env);
+  if (!kandidater.length) await mintaToken(butik, { env, fetchFn }); // kastar "nycklarna saknas …" med variabelnamnen
+
+  // Varje kandidat provas hela vägen till första ordersidan. 403 på ordrarna
+  // (kunddata ej godkänd för just den appen) ⇒ nästa app. Alla andra fel
+  // kastas direkt — de säger något om butiken, inte om appen.
+  const provade = [];
+  for (const nycklar of kandidater) {
+    let shop; let token;
+    try {
+      ({ shop, token } = await mintaToken(butik, { env, fetchFn, nycklar }));
+    } catch (e) {
+      provade.push({ via: nycklar.via, fel: e.message });
+      continue;
+    }
+    try {
+      return { ...(await lasForsaljning({ butik, shop, token, dagar, nu, fetchFn })), via: nycklar.via };
+    } catch (e) {
+      if (e.status !== 403) throw e;
+      provade.push({ via: nycklar.via, fel: `403 — ${String(e.message).replace(/^Shopify svarade 403:\s*/, '').slice(0, 120)}` });
+    }
+  }
+  throw new Error(forklaraNyckelfel(butik, provade, env));
+}
+
+async function lasForsaljning({ butik, shop, token, dagar, nu, fetchFn }) {
   const { data: shopdata } = await get(`https://${shop}/admin/api/${API}/shop.json?fields=name,currency,domain,myshopify_domain`, token, fetchFn);
   const valuta = shopdata?.shop?.currency ?? 'SEK';
 
