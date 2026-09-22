@@ -195,6 +195,14 @@ Railway ger ingen A-post. Vägen är Squarespaces posttyp **ALIAS** på `@` mot
 Railways rotvärde — prompten `cowork/3-rot.txt` gör det (tar bort
 vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
 
+⚠️ **Deployen kan ligga timmar efter `main`** (mätt 2026-09-22 kväll): fyra
+andra Railway-projekt bygger samma repo vid varje push, rutinerna pushar 7–8
+gånger i timmen, och sajtens deployer står i "Waiting for build slot" i över
+en timme. `/halsa` visar vilken snapshot som faktiskt kör — jämför med
+senaste `Stonebite: färsk data`-commiten på `main` innan du tror att en
+ändring är live. Prompten `cowork/4-byggko.txt` rensar bort dubblettprojekten
+(rör aldrig `strong-solace` eller StonePNL).
+
 ## Den publika sidan (ombyggd 2026-09-21 kväll)
 
 Två grenar visas: **e-handeln** och **YouTube-kanalen**
