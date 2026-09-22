@@ -11,8 +11,9 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { besked, breakEvenRoas, GOLV_SEK as GOLV_SEK_PLAN, kostnadSek, lasBelopp, lasBreakEven, nyBudget, surfBesked, targetRoas } from './besked.mjs';
 import { backDagarIRad, dagarSedanAndring, lasLogg, raknaTrasigaRader, senasteRadMedKod } from './logg.mjs';
-import { brieftak, harLevandeVinnare, mix, vidarebyggBehov } from './lardom.mjs';
+import { brieftak, harLevandeVinnare, minnesmapp, mix, vidarebyggBehov } from './lardom.mjs';
 import { cpaStiger, cpaText, dagarOver, klickandel, CPA_STIG_DAGAR } from './trend.mjs';
+import { cpaDiagnos, funnellage, lasMatris, rutorAttBygga, storstaObesvarade, tackningRad, tackningText, FUNNEL_BUDGET_SEK } from './invandningar.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 
@@ -170,7 +171,7 @@ export function breakEvenForPost(post, kampanjnamn, fx) {
   return { be: ur.be, kalla: ur.kalla };
 }
 
-export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
+export function bedomKampanj(kampanj, { logg, idag, karta, fx, matriser = null }) {
   const post = karta?.[kampanj.id] ?? {};
   const budget = lasBelopp(kampanj.daily_budget);
   const spend3d = lasBelopp(kampanj.spend_3d);
@@ -264,6 +265,13 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
   const klick = klickandel(kampanj.dygn, { n: 3, tillOchMed: igar }) ?? klickandelUrKampanj(kampanj);
   const malRoas = targetRoas(källa.be, target).target;
   const overTarget = dagarOver(kampanj.dygn, malRoas, { tillOchMed: igar });
+  // Funnelläget (Axel 2026-09-22): över FUNNEL_BUDGET_SEK per dag läses
+  // produktens invändningsmatris (products/<id>/invandningar.md, skriven av
+  // tools/invandningsmatris.mjs på main). `matris` kommer från anroparen —
+  // main() läser filen, den här funktionen gör ingen I/O.
+  const funnel = funnellage(budget);
+  const matris = funnel ? (matriser?.[String(kampanj.id)] ?? null) : null;
+  const obesvarad = matris ? storstaObesvarade(matris) : null;
 
   return {
     ...grund,
@@ -271,7 +279,10 @@ export function bedomKampanj(kampanj, { logg, idag, karta, fx }) {
     cpaTrend: cpa,
     klickandel: klick,
     dagarOverTarget: overTarget,
+    funnellage: funnel,
+    invandningar: funnel ? (matris ? { fil: matris.fil, tackning: matris.tackning, rad: tackningRad(matris), bygg: rutorAttBygga(matris).map((t) => t.kort), diagnos: cpaDiagnos(matris, cpa) } : { saknas: true }) : null,
     dom: besked({
+      obesvarad,
       namn: kampanj.namn,
       lage: grund.lage,
       breakEven: källa.be,
@@ -536,6 +547,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
     // prishöjning på väg). En brief skriven nu skulle bygga på fel siffror
     // eller fel pris. Gäller alla behovstyper, inte bara rundorna.
     if (r.dom?.kod === 'FRYST') continue;
+    // Ägarens kampanjer (listicle/lagerrensning, Axel 2026-09-22): inga
+    // briefer — annonserna där pekar på en landningssida och fylls på hans
+    // kommando (/lagerrensning, /vi-testade, /anledningar), aldrig av rundan.
+    if (r.dom?.kod === 'AGARENS') continue;
     // Briefpaus: ägaren har sagt att produkten ska få köra utan nytt material
     // ett tag. Budgetronden rör den som vanligt — bara briefkön hoppar över
     // den. Läses ur `brief_paus_till` i agent/produktkarta.json.
@@ -596,17 +611,29 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE' } = 
       const tak = brieftak(logg, r.id, { idag });
       // Taket + de annonser en lärdom uttryckligen namngett (Axel 2026-09-21):
       // en variant som lärdomen bett om konkurrerar inte om kvoten.
-      const rundaAntal = Math.min(budgetAntal, tak.tak_totalt ?? tak.tak);
+      // Funnelläge (Axel 2026-09-22, regel 2): över 10 000 kr/dag går tomma
+      // rutor i invändningsmatrisen FÖRE lärdomar. En obesvarad invändning
+      // med ≥ 10 % av kommentarerna tar en briefplats före nästa iteration på
+      // en vinnare — och de platserna är fria mot brieftaket (lardom.mjs),
+      // så rundan är aldrig mindre än antalet rutor att bygga.
+      const funnelBygg = r.funnellage ? (r.invandningar?.bygg ?? []) : [];
+      const rundaAntal = Math.max(Math.min(budgetAntal, tak.tak_totalt ?? tak.tak), funnelBygg.length);
       const m = mix(logg, r.id, { idag });
       let fokus = '';
       if (pausat) fokus = ' Fokus: ersätt det som pausats i trappan.';
       else if (skalningar >= 2) fokus = ` Fokus: mata vinnaren — skalats ${skalningar} gånger på en vecka.`;
+      let funnel = '';
+      if (r.funnellage) {
+        if (r.invandningar?.saknas) funnel = ` FUNNELLÄGE (över ${FUNNEL_BUDGET_SEK.toLocaleString('sv-SE')} kr/dag) men invändningsmatrisen saknas — bygg den FÖRE rundan: node tools/invandningsmatris.mjs --produkt <id> --konto SE --kampanj ${r.id} (på main).`;
+        else if (funnelBygg.length) funnel = ` FUNNELLÄGE: tomma rutor FÖRE lärdomar — ${funnelBygg.join(', ')} (≥ 10 % av kommentarerna, obesvarad i minst ett format) får varsin brief (invandning=…) innan någon iteration byggs. Täckning: ${r.invandningar.rad}.${r.invandningar.diagnos === 'bygg' ? ' CPA stiger + tomma rutor ⇒ bygg rutorna.' : ''}`;
+        else funnel = ` Funnelläge, matrisen full för invändningar ≥ 10 % (${r.invandningar.rad}).${r.invandningar.diagnos === 'matt' ? ' CPA stiger + full matris ⇒ marknaden är mätt: nytt land eller ny produkt, inte fler annonser.' : ''}`;
+      }
       behov.push({
         kampanj_id: r.id, namn: r.namn, typ: 'brief_runda',
-        dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m,
+        dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m, funnellage: Boolean(r.funnellage), invandningar: r.invandningar ?? null,
         orsak: rundaAntal === 0
-          ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}`
-          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}`,
+          ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}${funnel}`
+          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}${funnelBygg.length ? ` + ${funnelBygg.length} rutor i matrisen` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}${funnel}`,
       });
       continue;
     }
@@ -700,7 +727,7 @@ const ORDNING = [
   'CPA_STIGER', 'VISNING_AVVAKTA', 'VANTA_KONSEKVENT',
   'STOR_SPEND_UTAN_KOP', 'MANUELL_FORLUST', 'RAKNA_BACKDAGAR', 'ORIMLIG_DATA', 'SAKNAR_BREAK_EVEN',
   'SAKNAR_BUDGET', 'SAKNAR_SPEND_TOTAL', 'VANTA_KADENS', 'VANTA_TROSKEL', 'HOGZON_AVVAKTA',
-  'FOR_LITE_DATA', 'FRYST', 'MANUELL', 'SURF_HALL', 'LAT_VARA',
+  'FOR_LITE_DATA', 'FRYST', 'AGARENS', 'MANUELL', 'SURF_HALL', 'LAT_VARA',
 ];
 
 /**
@@ -755,6 +782,37 @@ export function rapport(rader, meta, behov = []) {
     }
   }
   ut.push('');
+
+  // Ägarens kampanjer (Axels order 2026-09-22): listicle-/lagerrensnings-
+  // kampanjerna döms AGARENS och skrivs ut så det syns att motorn lät dem vara.
+  const agarens = rader.filter((r) => r.dom?.kod === 'AGARENS');
+  if (agarens.length) {
+    ut.push(`## 🛑 Ägarens kampanjer — rörs aldrig av motorn (${agarens.length})`);
+    ut.push('');
+    ut.push('Listicle / lagerrensning / vi-testade / anledningar styrs för hand (Axels order 2026-09-22). Ingen höjning, ingen sänkning, ingen paus, inga briefer, ingen spendtjuv.');
+    ut.push('');
+    for (const r of agarens) ut.push(`- **${r.namn.split('|')[0].trim()}** — ${kr(r.budget)}/dag${Number.isFinite(r.roas3d) ? ` · ROAS 3d ${r.roas3d.toFixed(2).replace('.', ',')}` : ''}${Number.isFinite(r.dom.breakEven) ? ` · break-even ${r.dom.breakEven.toFixed(2).replace('.', ',')}` : ''} · dom AGARENS`);
+    ut.push('');
+  }
+
+  // Invändningstäckningen per produkt i funnelläge (Axel 2026-09-22, regel 3):
+  // "fukt 0 av 4 format (38 %)". Kopplad till CPA-regeln: stigande CPA + tomma
+  // rutor ⇒ bygg rutorna; stigande CPA + full matris ⇒ marknaden är mätt.
+  const funnel = rader.filter((r) => r.funnellage);
+  if (funnel.length) {
+    ut.push(`## 🧱 Invändningstäckning — funnelläge över ${FUNNEL_BUDGET_SEK.toLocaleString('sv-SE')} kr/dag (${funnel.length})`);
+    ut.push('');
+    ut.push('Live-annonser per format som svarar på det kunderna faktiskt invänder (products/<id>/invandningar.md). Tomma rutor är nästa brief — före lärdomar. Stigande CPA + tomma rutor ⇒ bygg rutorna; stigande CPA + full matris ⇒ marknaden är mätt.');
+    ut.push('');
+    for (const r of funnel) {
+      const kort = r.namn.split('|')[0].trim();
+      const inv = r.invandningar;
+      if (!inv || inv.saknas) { ut.push(`- ⚠ **${kort}** — matrisen saknas: \`node tools/invandningsmatris.mjs --produkt <id> --konto SE --kampanj ${r.id}\` (main) före nästa brief.`); continue; }
+      const diag = inv.diagnos === 'bygg' ? ' — **CPA stiger + tomma rutor ⇒ bygg rutorna**' : inv.diagnos === 'matt' ? ' — **CPA stiger + full matris ⇒ marknaden är mätt: nytt land eller ny produkt**' : '';
+      ut.push(`- ${inv.bygg?.length ? '⬜' : '✅'} **${kort}** — ${inv.rad}${inv.bygg?.length ? ` · att bygga: ${inv.bygg.join(', ')}` : ''}${diag}`);
+    }
+    ut.push('');
+  }
 
   // Visningsköpsvarningen (Axel 2026-09-21) står FÖRE åtgärderna: den handlar
   // om ifall siffran under en dom går att lita på, inte om domen i sig.
@@ -900,9 +958,21 @@ async function main() {
     process.exit(2);
   }
   const surfKampanjer = new Set((surf?.kampanjer ?? []).map(String));
+  // Invändningsmatrisen per kampanj i funnelläge (Axel 2026-09-22): filen
+  // products/<id>/invandningar.md läses HÄR, aldrig i bedomKampanj.
+  const matriser = {};
+  for (const k of data.kampanjer) {
+    if (!funnellage(lasBelopp(k.daily_budget))) continue;
+    const post = karta[String(k.id)] ?? { produkt: String(k.namn ?? '').split('|')[0].trim() };
+    const m = lasMatris(minnesmapp(post), { rot: join(HÄR, '..') });
+    if (m) matriser[String(k.id)] = m;
+  }
   const rader = data.kampanjer.map((k) => (surf && surfKampanjer.has(String(k.id))
     ? bedomSurf(k, { logg, idag, karta, fx, surf: { efterMidnatt: efterMidnatt(data, surf) } })
-    : bedomKampanj(k, { logg, idag, karta, fx })));
+    : bedomKampanj(k, { logg, idag, karta, fx, matriser })));
+  for (const r of rader) {
+    if (r.funnellage && r.invandningar?.saknas) varningar.push(`${r.namn.split('|')[0].trim()}: funnelläge (över ${FUNNEL_BUDGET_SEK.toLocaleString('sv-SE')} kr/dag) utan invändningsmatris — bygg products/<id>/invandningar.md före nästa brief (tools/invandningsmatris.mjs på main).`);
+  }
   if (surf) varningar.push(`🏄 Surf-läge på för ${surfKampanjer.size} kampanj(er) (agent/surf.json, startat ${surf.startad ?? 'okänt'} av ${surf.av ?? 'okänd'}). Kadens var sjätte timme; midnattsreset till ${Math.round((surf.reset_andel ?? 0.5) * 100)} % av gårdagens spend.`);
   // Spärrarna (CPA-trend, klickandel, konsekvent) räknas ur dygnsserien. Saknas
   // den, eller saknar den köp/CPA, ska det synas — inte tyst falla tillbaka
@@ -912,6 +982,20 @@ async function main() {
   for (const r of rader) {
     const anm = karta[r.id]?.anmarkning;
     if (anm) varningar.push(`${r.namn.split('|')[0].trim()}: ${anm}`);
+  }
+  // Break-even ur prissheetet (Axel 2026-09-22): ett kostnadsblock yngre än
+  // sju dygn är en NY kalkyl — lägre break-even räknar högre vinst på samma
+  // ROAS, så produkten blev lättare att skala utan att något i kontot ändrats.
+  // Första veckan står det i rapporten (Axels anmärkning samma kväll).
+  const nyaKalkyler = rader.filter((r) => {
+    const d = karta[r.id]?.kostnad?.datum;
+    if (!d) return false;
+    const alder = (Date.parse(`${idag}T00:00:00Z`) - Date.parse(`${d}T00:00:00Z`)) / 86400000;
+    return Number.isFinite(alder) && alder >= 0 && alder < 7;
+  });
+  if (nyaKalkyler.length) {
+    const namnBe = (r) => { const be = lasBreakEven(r.namn).be; return `${r.namn.split('|')[0].trim()} (${be ? `${be.toFixed(2).replace('.', ',')} → ` : ''}${Number.isFinite(r.dom?.breakEven) ? r.dom.breakEven.toFixed(2).replace('.', ',') : '?'})`; };
+    varningar.push(`Ny break-even ur prissheetet på ${nyaKalkyler.length} kampanj(er) den här veckan — lägre tal räknar HÖGRE vinst på samma ROAS, så de blev lättare att skala utan att något ändrats i kontot. Läs SKALA-domarna med det i åtanke: ${nyaKalkyler.map(namnBe).join(', ')}.`);
   }
 
   const utankarta = rader.filter((r) => !karta[r.id]);

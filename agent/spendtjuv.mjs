@@ -31,6 +31,7 @@
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 import { lasBelopp } from './besked.mjs';
+import { arListiclekampanj } from './kampanjval.mjs';
 
 /**
  * En annons måste ha spenderat så här mycket för att få en egen dom.
@@ -317,6 +318,9 @@ export function raknaGron(jobb = {}) {
   const idag = jobb.idag ? String(jobb.idag).slice(0, 10) : null;
   const noteringar = [];
 
+  // Ägarens kampanjer (Axels order 2026-09-22): listicle / lagerrensning /
+  // vi-testade / anledningar styrs för hand — spendtjuven pausar inget där.
+  if (arListiclekampanj(jobb.kampanj_namn ?? jobb.namn)) return { dom: DOM.ROR_INGENTING, lage: 'gron', tjuvar: [], vantar: [], motivering: 'Ägarens kampanj (listicle/lagerrensning) — Axels order 2026-09-22: rörs aldrig av spendtjuven.' };
   if (!(breakEven > 0)) return { dom: DOM.ROR_INGENTING, lage: 'gron', tjuvar: [], vantar: [], motivering: 'Break-even saknas — spärren kan inte räkna. Ingenting rörs.' };
   if (!(kampanjSpend > 0)) return { dom: DOM.ROR_INGENTING, lage: 'gron', tjuvar: [], vantar: [], motivering: 'Kampanjens spend saknas — spärren kan inte räkna. Ingenting rörs.' };
   if (!(beCpa > 0)) noteringar.push('break_even_cpa saknas i jobbfilen — annonser med 0 köp kan inte dömas som tjuvar i dag.');

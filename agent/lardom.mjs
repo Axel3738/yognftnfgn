@@ -23,7 +23,10 @@
 //   node agent/lardom.mjs --brief <manifest.json> --kampanj <id> [--torr] [--idag YYYY-MM-DD]
 //       Läser taggraden i varje brief i manifestet, räknar iterationsnumret
 //       per koncept ur loggen, kräver lardom=L-… på varje brief och skriver
-//       BRIEF-rader. Stoppar på brief utan lärdom (punkt 6).
+//       BRIEF-rader. Stoppar på brief utan lärdom (punkt 6). Läser
+//       invandning=/ruta= mot products/<id>/invandningar.md: en fylld ruta
+//       fylls aldrig igen, och i funnelläge (--budget > 10 000, annars
+//       kontodata) går tomma rutor före lärdomar (Axel 2026-09-22).
 //   node agent/lardom.mjs --status [--idag YYYY-MM-DD] [--json]
 //       Räkningen till rapporten: etiketterade utan lärdom, lärdomar skrivna
 //       i dag, briefer i dag och hur många som pekar på en lärdom, brieftaket
@@ -36,6 +39,7 @@ import { dirname, join, resolve, isAbsolute } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { lasLogg, skrivRad } from './logg.mjs';
 import { ETIKETT, ETIKETTKODER, dagarMellan, breakthroughFrekvens, formateraFrekvenser } from './etikett.mjs';
+import { FORMAT as MATRIS_FORMAT, cellTom, funnellage, lasMatris, nyckelUrEtikett, rutorAttBygga, tackningText, FUNNEL_BUDGET_SEK } from './invandningar.mjs';
 
 const HÄR = dirname(fileURLToPath(import.meta.url));
 const ROT = join(HÄR, '..');
@@ -400,15 +404,21 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
   const upptagna = new Set(tak.upptagna);
   const sedda = new Map();   // namn → först sedd i detta anrop
   const tagna = new Map();   // plats → namnet som tog den i detta anrop
+  const matrisBriefer = [];
   for (const p of poster) {
     const namn = typeof p === 'string' ? p : p?.namn;
     const plats = typeof p === 'string' ? null : (p?.plats ?? null);
+    const invandning = typeof p === 'string' ? null : (p?.invandning ?? null);
     // Namnet självt får inte finnas någonstans — som BRIEF-rad, i kontot
     // eller i Notion — oavsett om posten är fri eller riktad. Det är
     // OB_3_H1-dubbletten (en fri brief med ett namn som redan låg i Notion).
     if (upptagna.has(small(namn))) { fel.push(`${namn} finns redan som brief, i Notion eller i kontot — ett annat namn, eller ingen brief alls.`); continue; }
     if (sedda.has(small(namn))) { fel.push(`${namn} står två gånger i manifestet — en brief per annonsnamn.`); continue; }
     sedda.set(small(namn), true);
+    // En brief på en tom ruta i invändningsmatrisen (Axel 2026-09-22) är
+    // beställd av kunderna, inte av en lärdom — den konkurrerar inte om
+    // kvoten, precis som en namngiven plats. Rutan prövas i provaMatris.
+    if (invandning) { matrisBriefer.push(namn); continue; }
     if (plats) {
       if (tagna.has(small(plats))) { fel.push(`${namn}: platsen ${plats} togs redan av ${tagna.get(small(plats))} i samma manifest.`); continue; }
       // En UTFÖRD plats (BRIEF-rad med namnet, eller med namnet som plats) är
@@ -431,7 +441,60 @@ export function provaBriefkvot(logg, kampanjId, poster = [], { idag = null, befi
       fel.push(`${n} finns redan som brief, i Notion eller i kontot — lärdomen är utförd. Briefa den inte igen.`);
     }
   }
-  return { ok: fel.length === 0, fel, tak: tak.tak, tak_kvar: tak.tak_kvar, tak_totalt: tak.tak_totalt, fria, riktade, namngivna: tak.namngivna, struket: tak.struket };
+  return { ok: fel.length === 0, fel, tak: tak.tak, tak_kvar: tak.tak_kvar, tak_totalt: tak.tak_totalt, fria, riktade, matris: matrisBriefer, namngivna: tak.namngivna, struket: tak.struket };
+}
+
+/**
+ * Invändningsmatrisen i briefsteget (Axels beslut 2026-09-22). Ren.
+ *
+ *  • En fylld ruta fylls aldrig igen: en brief med `invandning=<rad>` vars
+ *    ruta (`ruta=` eller formatet ur namnet: `_H1` video, `_1` statisk) redan
+ *    bär en annons stoppas.
+ *  • En brief med `invandning=` som pekar på en rad som inte finns stoppas —
+ *    raden skrivs av tools/invandningsmatris.mjs, aldrig av briefen.
+ *  • Funnelläge (dagsbudget över FUNNEL_BUDGET_SEK): tomma rutor går FÖRE
+ *    lärdomar. Finns en obesvarad invändning med ≥ 10 % av kommentarerna och
+ *    en tom ruta, och manifestet bär iterationer eller nya koncept men ingen
+ *    brief på en sådan ruta ⇒ stopp. Utanför funnelläget är samma sak en
+ *    varning: prioritetsordningen, inte ett stopp.
+ *
+ * `poster` = [{ namn, invandning, ruta, typ }], `matris` = lasMatris(...) eller null.
+ */
+export function provaMatris(matris, poster = [], { funnellage: funnel = false } = {}) {
+  const fel = [];
+  const varningar = [];
+  const small = (s) => String(s ?? '').toLowerCase();
+  const formatUrNamn = (n) => (/_H\d+$/i.test(String(n ?? '')) ? 'video' : /_\d+$/.test(String(n ?? '')) ? 'statisk' : null);
+  const medInvandning = poster.filter((p) => p && typeof p === 'object' && p.invandning);
+  if (medInvandning.length && !matris) {
+    for (const p of medInvandning) fel.push(`${p.namn}: invandning=${p.invandning} men produkten har ingen invändningsmatris (products/<id>/invandningar.md) — bygg den först: node tools/invandningsmatris.mjs (main).`);
+    return { ok: false, fel, varningar, byggda: [], kvar: [] };
+  }
+  const tagna = new Map(); // rad×ruta → namn, inom samma manifest
+  const byggda = [];
+  for (const p of medInvandning) {
+    const nyckel = nyckelUrEtikett(p.invandning);
+    const rad = matris.rader.find((r) => r.nyckel === nyckel) ?? matris.rader.find((r) => r.nyckel.includes(small(p.invandning)) || small(p.invandning).includes(r.nyckel));
+    if (!rad) { fel.push(`${p.namn}: invandning=${p.invandning} finns inte som rad i matrisen (${matris.rader.map((r) => r.nyckel).join(', ') || 'inga rader'}). Raden skrivs av tools/invandningsmatris.mjs — briefa bara det kunderna sagt.`); continue; }
+    const ruta = p.ruta ?? formatUrNamn(p.namn);
+    if (!ruta || !MATRIS_FORMAT.some((f) => f.nyckel === ruta)) { fel.push(`${p.namn}: rutan går inte att läsa — sätt ruta=${MATRIS_FORMAT.map((f) => f.nyckel).join('|')} i taggraden (namnet ger ${formatUrNamn(p.namn) ?? 'inget format'}).`); continue; }
+    const k = `${rad.nyckel}×${ruta}`;
+    if (!cellTom(rad.celler?.[ruta])) { fel.push(`${p.namn}: rutan ${rad.etikett} × ${ruta} är redan fylld (${rad.celler[ruta]}) — en fylld ruta fylls inte igen.`); continue; }
+    if (tagna.has(k)) { fel.push(`${p.namn}: rutan ${rad.etikett} × ${ruta} tas redan av ${tagna.get(k)} i samma manifest.`); continue; }
+    tagna.set(k, p.namn);
+    byggda.push({ namn: p.namn, rad: rad.nyckel, ruta });
+  }
+  // Tomma rutor före lärdomar.
+  const attBygga = rutorAttBygga(matris);
+  const byggdaRader = new Set(byggda.map((b) => b.rad));
+  const kvar = attBygga.filter((t) => !byggdaRader.has(t.nyckel));
+  const andra = poster.filter((p) => !(p && typeof p === 'object' && p.invandning));
+  if (kvar.length && andra.length && !byggda.length) {
+    const text = `tomma rutor i invändningsmatrisen går före lärdomar: ${kvar.map(tackningText).join(', ')} — men manifestet bär ${andra.length} brief${andra.length === 1 ? '' : 'er'} utan en enda på en tom ruta. Briefa invändningen (invandning=<rad>, vinkelkod OB, kalla=voc) före nästa iteration på en vinnare.`;
+    if (funnel) fel.push(`FUNNELLÄGE (över ${FUNNEL_BUDGET_SEK.toLocaleString('sv-SE')} kr/dag): ${text}`);
+    else varningar.push(text);
+  }
+  return { ok: fel.length === 0, fel, varningar, byggda, kvar: kvar.map((t) => t.kort) };
 }
 
 /** Levande breakthroughs (punkt 7, 9): etikett BREAKTHROUGH inom LEVANDE_DAGAR, inte pausad som tjuv. */
@@ -692,7 +755,7 @@ export function lardomRad(v, e, { idag, fil }) {
 
 /** Taggarna som varje brief ska bära (punkt 13) + lardom (punkt 6). */
 export const BRIEF_TAGGAR = Object.freeze(['typ', 'avatar', 'awareness', 'begar', 'mekanism', 'tro', 'urgency', 'hook-mekanik', 'lardom']);
-const TAGG_ALIAS = { type: 'typ', desire: 'begar', begär: 'begar', mechanism: 'mekanism', belief: 'tro', 'hook-mechanic': 'hook-mekanik', hookmekanik: 'hook-mekanik', learning: 'lardom', lärdom: 'lardom', concept: 'koncept', source: 'kalla', källa: 'kalla', medvetandenivå: 'awareness', brådska: 'urgency' };
+const TAGG_ALIAS = { type: 'typ', desire: 'begar', begär: 'begar', mechanism: 'mekanism', belief: 'tro', 'hook-mechanic': 'hook-mekanik', hookmekanik: 'hook-mekanik', learning: 'lardom', lärdom: 'lardom', concept: 'koncept', source: 'kalla', källa: 'kalla', medvetandenivå: 'awareness', brådska: 'urgency', objection: 'invandning', invändning: 'invandning', cell: 'ruta' };
 
 /** Normaliserar taggnycklarna till de svenska. */
 export function normaliseraTaggar(t) {
@@ -712,7 +775,12 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   const varningar = [];
   const t = normaliseraTaggar(taggarUrBrief(brief.text));
   if (!Object.keys(t).length) fel.push('ingen taggrad (VARIABELTAGGAR: / Variables:)');
-  for (const k of BRIEF_TAGGAR) if (!t[k]) fel.push(`taggen ${k}= saknas`);
+  // En brief på en tom ruta i invändningsmatrisen (invandning=<rad>, Axel
+  // 2026-09-22) har kunderna som källa, inte en lärdom: lardom= krävs inte.
+  // Rutan själv prövas i provaMatris.
+  const invandning = t.invandning ?? null;
+  for (const k of BRIEF_TAGGAR) if (!t[k] && !(k === 'lardom' && invandning)) fel.push(`taggen ${k}= saknas`);
+  if (invandning && !/^(voc|kommentarer|feedback)$/i.test(String(t.kalla ?? ''))) varningar.push(`invandning=${invandning} men kalla=${t.kalla ?? '—'} — en invändningsbrief har kunderna som källa (kalla=voc)`);
   const lard = lardomar(logg);
   const lardomIds = new Set([...lard.values()].map((r) => String(r.lardom_id)));
   if (t.lardom) {
@@ -735,11 +803,27 @@ export function briefRad(brief, { logg, kampanj, idag, batch = null }) {
   }
   const rad = {
     datum: idag, kampanj_id: String(kampanj.id), kampanj_namn: String(kampanj.namn ?? ''), ad_account_id: String(kampanj.ad_account_id ?? ''),
-    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null,
+    kod: BRIEF_KOD, annons_namn: brief.namn, plats: brief.plats ?? null, format: brief.typ ?? null, batch, typ, parent, koncept, iteration_nr: iter, lardom: t.lardom ?? null, invandning, ruta: t.ruta ?? null,
     avatar: t.avatar ?? null, awareness: t.awareness ?? null, begar: t.begar ?? null, mekanism: t.mekanism ?? null, tro: t.tro ?? null, urgency: t.urgency ?? null, 'hook-mekanik': t['hook-mekanik'] ?? null, kalla: t.kalla ?? null,
     notion_url: brief.url ?? null, genomford: true, godkand_av: 'auto — brief loggad, Axels definition av klart 2026-09-21',
   };
   return { ok: fel.length === 0, fel, varningar, rad };
+}
+
+/** Dagsbudgeten ur morgonens kontodata (agent/kontodata.json / kontodata-no.json), eller null. Läser filer. */
+export function budgetUrKontodata(kampanjId, { rot = HÄR } = {}) {
+  for (const fil of ['kontodata.json', 'kontodata-no.json']) {
+    const p = join(rot, fil);
+    if (!existsSync(p)) continue;
+    try {
+      const d = JSON.parse(readFileSync(p, 'utf8'));
+      const k = (d.kampanjer ?? []).find((x) => String(x.id) === String(kampanjId));
+      if (!k) continue;
+      const b = typeof k.daily_budget === 'number' ? k.daily_budget : Number(String(k.daily_budget ?? '').replace(/[^0-9.,]/g, '').replace(/\s/g, '').replace(',', '.'));
+      if (Number.isFinite(b) && b > 0) return b;
+    } catch { /* trasig fil — som saknad */ }
+  }
+  return null;
 }
 
 /** Konceptet bakom en förälder: BRIEF-raden med det annonsnamnet, annars null. */
@@ -907,8 +991,28 @@ async function huvud(argv) {
         ? (JSON.parse(readFileSync(befRå, 'utf8')) ?? []).map((x) => (typeof x === 'string' ? x : x?.namn)).filter(Boolean)
         : befRå.split(',').map((x) => x.trim()).filter(Boolean);
     }
-    const kvot = provaBriefkvot(logg, kampanjId, nyaPoster.map((p) => ({ namn: p.namn, plats: p.plats ?? null })), { idag, befintliga });
-    console.log(`Briefkvot: ${kvot.tak_kvar} fri(a) plats(er) kvar av ${kvot.tak} + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
+    // Invändningsmatrisen (Axel 2026-09-22): taggarna invandning=/ruta= läses
+    // ur varje brief FÖRE kvoten, för en matrisbrief är fri mot taket. Rutan
+    // prövas mot products/<id>/invandningar.md; funnelläget avgörs av
+    // dagsbudgeten (--budget, annars agent/kontodata*.json från morgonens rond).
+    const taggade = nyaPoster.map((p) => {
+      const bf = isAbsolute(p.brief) ? p.brief : resolve(dirname(manifestFil), p.brief);
+      const t = existsSync(bf) ? normaliseraTaggar(taggarUrBrief(readFileSync(bf, 'utf8')) ?? {}) : {};
+      return { namn: p.namn, plats: p.plats ?? null, invandning: t.invandning ?? null, ruta: t.ruta ?? null, typ: t.typ ?? null };
+    });
+    const matris = lasMatris(minnesmapp(k), { rot: ROT });
+    const budget = flagga('budget') !== null ? Number(flagga('budget')) : budgetUrKontodata(kampanjId);
+    const funnel = funnellage(budget);
+    const matrisprov = provaMatris(matris, taggade, { funnellage: funnel });
+    console.log(`Invändningsmatris: ${matris ? `${matris.rader.length} rader (${matris.fil.replace(`${ROT}/`, '')})` : 'saknas'} · dagsbudget ${Number.isFinite(budget) ? `${Math.round(budget).toLocaleString('sv-SE')} kr` : 'okänd (ge --budget)'}${funnel ? ' · FUNNELLÄGE' : ''}${matrisprov.byggda.length ? ` · rutor som byggs: ${matrisprov.byggda.map((b) => `${b.rad} × ${b.ruta} (${b.namn})`).join(', ')}` : ''}${matrisprov.kvar.length ? ` · tomma rutor kvar: ${matrisprov.kvar.join(', ')}` : ''}`);
+    for (const w of matrisprov.varningar) console.log(`   ⚠️  ${w}`);
+    if (!matrisprov.ok) {
+      for (const f of matrisprov.fel) console.error(`   🔴 ${f}`);
+      console.error('\n❌ Inget skrivet. Rätta manifestet och kör om.');
+      process.exit(1);
+    }
+    const kvot = provaBriefkvot(logg, kampanjId, taggade.map((p) => ({ namn: p.namn, plats: p.plats, invandning: p.invandning })), { idag, befintliga });
+    console.log(`Briefkvot: ${kvot.tak_kvar} fri(a) plats(er) kvar av ${kvot.tak} + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.matris.length ? ` + ${kvot.matris.length} på tomma rutor i matrisen (${kvot.matris.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
     // Regel (b) går inte att pröva utan kontots och hubbens namn. Namnger
     // lärdomarna platser och anroparen inte skickat --befintliga har ingen
     // läst Notion — och det var exakt så OB_2_H1 fick ett andra koncept.
@@ -944,7 +1048,7 @@ async function huvud(argv) {
     return;
   }
 
-  console.error('Användning: node agent/lardom.mjs --skelett [--konto SE|NO|alla] [--kampanj <id>] [--bara-bedombara] | --skriv <fil.md> [--torr] | --brief <manifest.json> --kampanj <id> [--batch N] [--torr] | --status [--json]');
+  console.error('Användning: node agent/lardom.mjs --skelett [--konto SE|NO|alla] [--kampanj <id>] [--bara-bedombara] | --skriv <fil.md> [--torr] | --brief <manifest.json> --kampanj <id> [--batch N] [--budget <kr>] [--befintliga …] [--torr] | --status [--json]');
   process.exit(2);
 }
 

@@ -2,7 +2,7 @@
 
 Gammal = det ronden FAKTISKT gjorde den morgonen (genomförd loggrad, eller `UPPSKJUTEN` när planen sköt upp domen nära en zongräns; annars rondfilens dom). Ny = samma kampanjdata + dygnsserien ur Meta (hämtad 22/9, `cost_per_action_type → omni_purchase`, fönster 7d_click / 1d_view, bara dygn före ronddagen) + budgetloggen som den såg ut när ronden körde (git-blobben före rondens första commit). Inget `target_roas` satt ⇒ härlett ur break-even (25 % vinst). En skillnad = annan **ändring** (kod eller belopp), inte bara en annan håll-dom.
 
-**66 kampanjdomar, 8 hade gett en annan ändring.**
+**66 kampanjdomar, 6 hade gett en annan ändring.**
 
 | Dag | M | Kampanj | Budget | ROAS 3d | BE | Target | Gammal (faktisk) | Ny | CPA-serie (dygn i rad) | Klick | Dygn ≥ target |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -16,7 +16,7 @@ Gammal = det ronden FAKTISKT gjorde den morgonen (genomförd loggrad, eller `UPP
 | 09-20 | SE | Snöskyffeln Utan Batteri | 1000 | 1,41 | 1,65 | 2,81 | STANG_AV | ATGARDSTRAPPAN | 1071 → ∞ (1) | 100 % | 0 |
 | 09-20 | SE | Solcellslampan med Rörelsesensor 2 | 1200 | 1,92 | 1,52 | 2,44 | VANTA_KADENS | VANTA_KADENS | 343 (0) | 100 % | 0 |
 | 09-20 | SE | Fågelmataren med Kamera | 1200 | 2,48 | 1,65 | 2,81 | VANTA_KADENS | VANTA_KADENS | 527 → ∞ (1) | 100 % | 0 |
-| 09-20 | SE | Taköverdraget LISTICLE LAGERRENSNI | 1000 | 2,61 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | VANTA_KONSEKVENT | 337 (0) | 100 % | 1 |
+| 09-20 | SE | Taköverdraget LISTICLE LAGERRENSNI | 1000 | 2,61 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | AGARENS | 337 (0) | 100 % | 1 |
 | 09-20 | SE | Termoskyddet för Husbil 211 × 171  | 2300 | 1,96 | 1,51 | 2,43 | LAT_VARA | LAT_VARA | 283 (0) | 95 % | 1 |
 | 09-20 | SE | Taköverdraget för Husvagn 6,5 × 3  | 16000 | 3,31 | 1,52 | 2,46 | MANUELL | LAT_VARA | 333 → 410 (1) | 97 % | 11 |
 | 09-20 | SE | Adventskalendern Racingbilar | 500 | 2,77 | 1,52 | 2,46 | UPPSKJUTEN (SKALA) | VANTA_KONSEKVENT | 258 (0) | 100 % | 1 |
@@ -37,7 +37,7 @@ Gammal = det ronden FAKTISKT gjorde den morgonen (genomförd loggrad, eller `UPP
 | 09-21 | SE | Biltvättborsten med Teleskopskaft | 1000 | 1,88 | 1,55 | 2,53 | LAT_VARA | LAT_VARA | 204 → 1073 (1) | 88 % | 0 |
 | 09-21 | SE | Solcellslampan med Rörelsesensor 2 | 1200 | 1,81 | 1,52 | 2,44 | LAT_VARA | LAT_VARA | 318 (0) | 100 % | 1 |
 | 09-21 | SE | Fågelmataren med Kamera | 1200 | 1,37 | 1,65 | 2,81 | STANG_AV | ATGARDSTRAPPAN | ∞ (0) | 100 % | 0 |
-| 09-21 | SE | Taköverdraget LISTICLE LAGERRENSNI | 1000 | 3,62 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | **SKALA → 1200** | 177 (0) | 100 % | 2 |
+| 09-21 | SE | Taköverdraget LISTICLE LAGERRENSNI | 1000 | 3,62 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | AGARENS | 177 (0) | 100 % | 2 |
 | 09-21 | SE | Termoskyddet för Husbil 211 × 171  | 2300 | 1,86 | 1,51 | 2,43 | LAT_VARA | LAT_VARA | 283 → 422 (1) | 90 % | 0 |
 | 09-21 | SE | Taköverdraget för Husvagn 6,5 × 3  | 16000 | 3,26 | 1,52 | 2,46 | MANUELL | LAT_VARA | 333 → 410 → 421 (2) | 96 % | 12 |
 | 09-21 | SE | Adventskalendern Racingbilar | 500 | 1,59 | 1,52 | 2,46 | RAKNA_BACKDAGAR | LAT_VARA | 258 → 642 (1) | 100 % | 0 |
@@ -59,7 +59,7 @@ Gammal = det ronden FAKTISKT gjorde den morgonen (genomförd loggrad, eller `UPP
 | 09-22 | SE | Inomhustofflorna i Kamouflage | 1000 | 2,78 | 1,51 | 2,43 | UPPSKJUTEN (SKALA) | VANTA_KONSEKVENT | 224 (0) | 100 % | 1 |
 | 09-22 | SE | Biltvättborsten med Teleskopskaft | 1000 | 1,68 | 1,55 | 2,53 | LAT_VARA | LAT_VARA | 204 → 1073 → ∞ (2) | 86 % | 0 |
 | 09-22 | SE | Solcellslampan med Rörelsesensor 2 | 1200 | 2,00 | 1,52 | 2,44 | LAT_VARA | LAT_VARA | 318 → 623 (1) | 100 % | 0 |
-| 09-22 | SE | Taköverdraget LISTICLE LAGERRENSNI | 2000 | 4,03 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | **SKALA → 3000** | 177 → 404 (1) | 93 % | 3 |
+| 09-22 | SE | Taköverdraget LISTICLE LAGERRENSNI | 2000 | 4,03 | 1,52 | 2,46 | SAKNAR_BREAK_EVEN | AGARENS | 177 → 404 (1) | 93 % | 3 |
 | 09-22 | SE | Termoskyddet för Husbil 211 × 171  | 2300 | 2,00 | 1,51 | 2,43 | LAT_VARA | LAT_VARA | 332 (0) | 96 % | 0 |
 | 09-22 | SE | Taköverdraget för Husvagn 6,5 × 3  | 16000 | 2,99 | 1,52 | 2,46 | MANUELL | LAT_VARA | 333 → 410 → 421 → 466 (3) | 90 % | 13 |
 | 09-22 | SE | Adventskalendern Racingbilar | 500 | 1,14 | 1,52 | 2,46 | RAKNA_BACKDAGAR | RAKNA_BACKDAGAR | 258 → 642 → ∞ (2) | 100 % | 0 |
@@ -77,19 +77,17 @@ Gammal = det ronden FAKTISKT gjorde den morgonen (genomförd loggrad, eller `UPP
 
 - **2026-09-20 SE Sotarsetet med Böjliga Stänger** — SKALA → 1800 ⇒ **VANTA_KONSEKVENT** _(konsekvent-spärren (2 dygn över target))_. 46,7 % vinst av omsättningen (ROAS 5,12 mot break-even 1,51). Target 2,43 (härledd (25 % vinst av omsättningen)), ROAS 5,12 = 211 % av target. Dags-ROAS har legat över target 1 helt dygn i rad — trappan kräver 2 (48–72 timmar konsekvent).
 - **2026-09-21 SE Sotarsetet med Böjliga Stänger** — SKALA → 2150 ⇒ **SKALA → 2700** _(trappsteg ×1,5)_. 43,2 % vinst av omsättningen (ROAS 4,35 mot break-even 1,51). Target 2,43 (härledd (25 % vinst av omsättningen)), ROAS 4,35 = 179 % av target. Trappsteg ×1,5, 2 dygn i rad över target, 100,0 % klickköp, CPA 1 stigande dygn. Ändra från 1 800 kr till 2 700 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.
-- **2026-09-21 SE Taköverdraget LISTICLE LAGERRENSNING** — SAKNAR_BREAK_EVEN ⇒ **SKALA → 1200** _(inget tak + vinnare (spärr 1))_. 38,0 % vinst av omsättningen (ROAS 3,62 mot break-even 1,52). Target 2,46 (härledd (25 % vinst av omsättningen)), ROAS 3,62 = 147 % av target. Trappsteg 20 %, 2 dygn i rad över target, 100,0 % klickköp, CPA 0 stigande dygn. Ändra från 1 000 kr till 1 200 kr per dag. Nästa koll om 3 dagar.
 - **2026-09-21 SE Båtmotorskyddet 420D** — SKALA → 4000 ⇒ **SKALA → 4050** _(trappsteg 20 %)_. 32,5 % vinst av omsättningen (ROAS 3,43 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 3,43 = 126 % av target. Trappsteg 20 %, 6 dygn i rad över target, 95,9 % klickköp, CPA 1 stigande dygn. Ändra från 3 400 kr till 4 050 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar.
 - **2026-09-21 SE IBC-Tanköverdraget** — SKALA → 700 ⇒ **VANTA_KONSEKVENT** _(konsekvent-spärren (2 dygn över target))_. 41,1 % vinst av omsättningen (ROAS 4,13 mot break-even 1,53). Target 2,48 (härledd (25 % vinst av omsättningen)), ROAS 4,13 = 167 % av target. Dags-ROAS har legat över target 1 helt dygn i rad — trappan kräver 2 (48–72 timmar konsekvent).
 - **2026-09-21 NO Takovertrekk Campingvogn NO** — LAT_VARA ⇒ **SKALA → 4800** _(inget tak + vinnare (spärr 1))_. 31,7 % vinst av omsättningen (ROAS 3,33 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 3,33 = 122 % av target. Trappsteg 20 %, 2 dygn i rad över target, 93,1 % klickköp, CPA 0 stigande dygn. Ändra från 4 000 kr till 4 800 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar. Högzon: över 4 000 kr är steget alltid 20 %.
-- **2026-09-22 SE Taköverdraget LISTICLE LAGERRENSNING** — SAKNAR_BREAK_EVEN ⇒ **SKALA → 3000** _(inget tak + vinnare (spärr 1))_. 40,9 % vinst av omsättningen (ROAS 4,03 mot break-even 1,52). Target 2,46 (härledd (25 % vinst av omsättningen)), ROAS 4,03 = 164 % av target. Trappsteg ×1,5, 3 dygn i rad över target, 93,3 % klickköp, CPA 1 stigande dygn. Ändra från 2 000 kr till 3 000 kr per dag. Nästa koll om 3 dagar.
 - **2026-09-22 NO Feiesett NO** — SKALA → 1200 ⇒ **VANTA_KONSEKVENT** _(konsekvent-spärren (2 dygn över target))_. 36,2 % vinst av omsättningen (ROAS 3,91 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 3,91 = 144 % av target. Dags-ROAS har legat över target 1 helt dygn i rad — trappan kräver 2 (48–72 timmar konsekvent).
 
 ## Skillnaderna per orsak
 
 - konsekvent-spärren (2 dygn över target): 3
 - trappsteg ×1,5: 1
-- inget tak + vinnare (spärr 1): 3
 - trappsteg 20 %: 1
+- inget tak + vinnare (spärr 1): 1
 
 ## Mätt i återspelningen
 
@@ -108,10 +106,11 @@ Regeln kräver två hela dygn i rad med dags-ROAS på eller över target innan t
 
 Adventskalendern 20/9, Bälteslipmaskinen 20–21/9 och Inomhustofflorna 22/9 hade också fått "vänta", men där hade gamla motorn redan skjutit upp höjningen nära zongränsen (`UPPSKJUTEN_GRANS`) — ingen skillnad i vad som hände.
 
-## Omräknad 2026-09-22 kväll: snabbspåret 24 h + break-even ur Axels prissheet
+## Omräknad 2026-09-22 kväll: snabbspåret 24 h, break-even ur Axels prissheet, listicle-spärren
 
-- **Snabbspåret står på 24 timmar** (Axel: "24"). Den tidigare versionen av den här rapporten antog 48 h och fick fem extra `VANTA_KADENS`; de är borta. I stället syns nu två höjningar som blir **större** än de gamla: Sotarsetet 21/9 ×1,5 (2 150 → 2 700, ROAS 5,4 = 220 % av target) och Båtmotorskyddet 21/9 (4 000 → 4 050 i stället för 3 400 → 4 000 — samma steg, avrundat på 50-tal).
-- **Break-even ur sheetet:** tolv aktiva SE-kampanjer fick `kostnad`-block ur Axels prissheet (produkt + frakt i USD för 1 st till Sverige + 2,9 EUR EU-avgift, ECB-kurs 9,81 USD/SEK 2026-09-22). Sheetet ger BE 1,51–1,55 där kampanjnamnen sa 1,61–1,67 — namnen bär ~5 % av priset extra som inte står i sheetet. Target (25 % vinst) blir därmed 2,42–2,54 i stället för 2,69–2,79. **Två nya skillnader kommer av det:** Taköverdragets LISTICLE-kampanj, som saknade tal i namnet och därför aldrig dömdes (`SAKNAR_BREAK_EVEN`), får nu en dom — 21/9 +20 % (1 000 → 1 200) och 22/9 ×1,5 (2 000 → 3 000, ROAS 4,03 = 164 % av target, tre dygn över target, 93 % klickköp). Ingen kill- eller sänkdom ändrades av de nya talen: en lägre break-even kan bara göra domen mildare.
+- **Snabbspåret står på 24 timmar** (Axel: "24"). Den tidigare versionen av den här rapporten antog 48 h och fick fem extra `VANTA_KADENS`; de är borta. I stället syns två höjningar som blir **större** än de gamla: Sotarsetet 21/9 ×1,5 (2 150 → 2 700, ROAS 5,4 = 220 % av target) och Båtmotorskyddet 21/9 (4 000 → 4 050 i stället för 3 400 → 4 000 — samma steg, avrundat på 50-tal).
+- **Break-even ur sheetet:** tolv aktiva SE-kampanjer fick `kostnad`-block ur Axels prissheet (produkt + frakt i USD för 1 st till Sverige + 2,9 EUR EU-avgift, ECB-kurs 9,81 USD/SEK 2026-09-22). Sheetet ger BE 1,51–1,55 där kampanjnamnen sa 1,61–1,67 — namnen bär ~5 % av priset extra som inte står i sheetet. Target (25 % vinst) blir därmed 2,42–2,54 i stället för 2,69–2,79. **Lägre break-even räknar högre vinst på samma ROAS — tolv kampanjer blev lättare att skala samtidigt utan att något ändrats i kontot.** Rapporten säger det i varningarna första veckan (`kostnad.datum` yngre än 7 dygn). Ingen kill- eller sänkdom ändrades: en lägre break-even kan bara göra domen mildare.
+- **⛔ Listicle-spärren (Axels stopp samma kväll):** med sheetets break-even fick `Taköverdraget LISTICLE LAGERRENSNING` — som förut räddades av `SAKNAR_BREAK_EVEN` — domen SKALA (21/9 1 000 → 1 200, 22/9 2 000 → 3 000). Motorn visste inte att den sortens kampanj fanns. Nu döms varje kampanj vars namn matchar listicle / lagerrensning / vi-testade / anledningar (`agent/kampanjval.mjs`, samma mönster som leveransrundans spärr i PR #120) **`AGARENS`**: ingen höjning, ingen sänkning, ingen paus, inga briefer, ingen spendtjuv — och den står under `## 🛑 Ägarens kampanjer` i rapporten. I återspelningen ovan är de två LISTICLE-raderna därför `AGARENS` (ingen skillnad i ändring mot det gamla `SAKNAR_BREAK_EVEN`).
 - Norska kampanjer har inget kostnad-block (sheetet har bara svensk frakt för de aktiva produkterna) — de går fortfarande på talet i namnet.
 
 ## Förbehåll

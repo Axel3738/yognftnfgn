@@ -17,6 +17,8 @@
 //   Blanda dem aldrig: en kampanj under target men över break-even lämnas
 //   ifred — den går plus, den skalas bara inte.
 
+import { arListiclekampanj } from './kampanjval.mjs';
+
 export const GOLV_SEK = 500;
 
 // Inget tak (Axels beslut 2026-09-22, ur Evolve: "Never by spend" — spendnivå,
@@ -359,6 +361,17 @@ export function besked(rad) {
     ...extra,
   });
 
+  // 0. Ägarens kampanjer (Axels order 2026-09-22): listicle / lagerrensning /
+  //    vi-testade / anledningar styrs för hand. Ingen höjning, ingen sänkning,
+  //    ingen paus — hur siffrorna än ser ut. Torrkörningen 2026-09-22 gav
+  //    Taköverdragets LISTICLE-kampanj SKALA så fort break-even fanns; förut
+  //    räddades den bara av att namnet saknade talet.
+  if (arListiclekampanj(rad.namn)) {
+    return svar('AGARENS', 'Ägarens kampanj — rörs inte',
+      `Landningssideskampanj (listicle / lagerrensning / vi-testade / anledningar). Axels order 2026-09-22: den styrs för hand — motorn höjer, sänker och pausar aldrig här.${Number.isFinite(breakEven) && Number.isFinite(rad.roas3d) ? ` Till info: ROAS ${d2(rad.roas3d)} mot break-even ${d2(breakEven)}.` : ''}`,
+      { zon: 'hold', agarens: true, vinstProcent: Number.isFinite(breakEven) ? vinstProcent(breakEven, rad.roas3d) : null });
+  }
+
   // 1. Utan break-even finns ingen dom att fälla. Gissa aldrig.
   if (!Number.isFinite(breakEven)) {
     return svar('SAKNAR_BREAK_EVEN', 'Break-even saknas',
@@ -626,9 +639,17 @@ export function besked(rad) {
     ? ` Trappan hade gett ${steg.namn}, men över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 % (högzonen).`
     : hogzon ? ` Högzon: över ${kr(TAK_UTAN_VINNARE)} är steget alltid 20 %.` : '';
   const rubrik = faktor >= 2 ? 'Skala — dubbla' : faktor >= 1.5 ? 'Skala ×1,5' : 'Skala upp 20 %';
+  // Funnelläge (Axel 2026-09-22, regel 4): en invändning över 25 % som saknar
+  // varje svar skrivs ut i domen — men höjningen sker ändå. Varning, aldrig
+  // spärr. `rad.obesvarad` räknas av rond.mjs ur products/<id>/invandningar.md
+  // och sätts bara i funnelläge (dagsbudget över 10 000 kr).
+  const ob = rad.obesvarad && typeof rad.obesvarad === 'object' && rad.obesvarad.kort ? rad.obesvarad : null;
+  const obText = ob
+    ? ` ⚠ Funnelläge: invändningen «${ob.kort}» (${Math.round((ob.andel ?? 0) * 100)} % av kommentarerna) saknar svar i alla ${ob.av ?? 4} format${ob.briefade ? ` (${ob.briefade} briefad${ob.briefade === 1 ? '' : 'e'}, ingen live)` : ''} — höjer ändå, men bygg rutorna: den nya publiken stoppas av en invändning ingen annons bemöter.`
+    : '';
   return svar('SKALA', rubrik,
-    `${bas} ${malText} Trappsteg ${steg.namn}${konsekvent !== null ? `, ${konsekvent} dygn i rad över target` : ''}${klick ? `, ${pct(klick.andel * 100)} klickköp` : ''}${cpa ? `, CPA ${cpa.dagar} stigande dygn` : ''}. Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${stegText}${gransText}`,
-    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, harVinnare, faktor, trappsteg: steg.namn });
+    `${bas} ${malText} Trappsteg ${steg.namn}${konsekvent !== null ? `, ${konsekvent} dygn i rad över target` : ''}${klick ? `, ${pct(klick.andel * 100)} klickköp` : ''}${cpa ? `, CPA ${cpa.dagar} stigande dygn` : ''}. Ändra från ${kr(rad.budget)} till ${kr(upp)} per dag. ${nastaKoll}${stegText}${gransText}${obText}`,
+    { zon: 'up', vinstProcent: vinst, nyBudget: upp, kraverGodkannande: true, naraGrans, harVinnare, faktor, trappsteg: steg.namn, ...(ob ? { obesvarad: { kort: ob.kort, andel: ob.andel } } : {}) });
 }
 
 /**
@@ -651,6 +672,7 @@ export function surfBesked(rad) {
   const mal = targetRoas(breakEven, rad.targetRoas);
   const svar = (kod, rubrik, motivering, extra = {}) => ({
     kod, rubrik, motivering, nyBudget: null, zon: null, vinstProcent: null, breakEven, breakEvenKalla: 'surf',
+    ...(arListiclekampanj(rad.namn) ? { kod: 'AGARENS', rubrik: 'Ägarens kampanj — rörs inte', motivering: 'Landningssideskampanj — Axels order 2026-09-22: styrs för hand, även i surf-läge.', agarens: true } : {}),
     targetRoas: mal.target, targetKalla: mal.kalla, kraverGodkannande: false, naraGrans: false, surf: true, ...extra,
   });
   if (!Number.isFinite(breakEven)) return svar('SAKNAR_BREAK_EVEN', 'Break-even saknas', 'Ingen surf-dom utan break-even.');

@@ -747,6 +747,50 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   ≥ 3 iterationer: alla med lärdom och ingen slår originalet ⇒ SLÄPP om
   forskningen bakom är svag (kalla utanför voc/swipe/egen-data/playbook/
   winning-line/feedback), fler försök om den är stark — men numret räknas.
+- **Listicle-kampanjerna är ÄGARENS (Axels order 2026-09-22).** En kampanj
+  vars namn matchar `listicle` / `lagerrensning` / `vi-testade` /
+  `anledningar` (`agent/kampanjval.mjs`, samma mönster som leveransrundans
+  spärr i `tools/lib/kampanjval.mjs`) får domen **`AGARENS`**: ingen
+  höjning, ingen sänkning, ingen paus, inga briefer, ingen spendtjuv — och
+  den står under `## 🛑 Ägarens kampanjer` i rapporten så det syns. Bakgrund:
+  torrkörningen 2026-09-22 gav `Taköverdraget LISTICLE LAGERRENSNING` domen
+  SKALA så fort break-even kom ur prissheetet (förut räddades den av att
+  namnet saknade talet). Axel styr dem för hand.
+- **Funnelläge över 10 000 kr/dag (Axels beslut 2026-09-22).** När en
+  produkts dagsbudget passerar `FUNNEL_BUDGET_SEK` (`agent/invandningar.mjs`)
+  slås fyra saker på för just den produkten:
+  1. **Invändningsmatrisen** `products/<id>/invandningar.md` byggs och
+     uppdateras av `node tools/invandningsmatris.mjs --produkt <id> --konto SE
+     --kampanj <id> --ord "<produktord>"` (på `main`, ur samma
+     main-worktree som briefgranskningen): kommentarerna på kampanjens
+     största annons via `tools/annonskommentarer.mjs`, supportmejlen via
+     `kundtjanst/mail.mjs` (kräver `KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`;
+     saknas den står det i filen), formaten ur kontots annonsnamn (`_H1`
+     video, `_1` statisk; demo/jämförelse ur briefens `ruta=`). Förlagan är
+     Taköverdragets. Kör den FÖRE varje brief-runda på en funnelprodukt —
+     saknas filen säger behovsraden och rapporten det.
+  2. **Tomma rutor före lärdomar i briefsteget.** En obesvarad invändning
+     med minst 10 % av kommentarerna tar en briefplats FÖRE nästa iteration
+     på en vinnare: `lardom.mjs --brief` stoppar ett manifest med iterationer
+     eller nya koncept men utan en enda brief på en tom ruta (under 10 000 kr
+     är det en varning, prioritetsordningen). Briefen taggas
+     `invandning=<radens namn>` (+ `ruta=demo|jamforelse` när formatet inte
+     står i namnet), vinkelkod `OB`, `kalla=voc` — den behöver ingen
+     `lardom=` och är FRI mot brieftaket, som en namngiven plats. **En fylld
+     ruta fylls aldrig igen** (briefad räknas som fylld). `--budget <kr>`
+     ger dagsbudgeten; annars läses den ur morgonens `kontodata*.json`.
+     Det är hela poängen: annars optimerar rutinen det som fungerar mot en
+     publik som tar slut.
+  3. **Täckningen i morgonrapporten** per funnelprodukt (`## 🧱
+     Invändningstäckning`): "fukt 0 av 4 format (38 %)". Live räknas som
+     svar; "+1 briefad" står bredvid.
+  4. **Varning i höjningsdomen, aldrig spärr:** saknar en invändning över
+     25 % varje svar skrivs det ut i `SKALA`-domen — höj ändå.
+  **Kopplingen till CPA-regeln:** stigande CPA + tomma rutor ⇒ bygg rutorna
+  (står i rapporten och behovsraden); stigande CPA + full matris ⇒ marknaden
+  är mätt — nytt land eller ny produkt, inte fler annonser. Mätt 2026-09-22
+  på Taköverdraget (16 000 kr/dag): 11 av 29 kommentarer (38 %) om fukt och
+  mögel, noll av 34 annonser svarade, CPA 147 → 466 kr.
 - **Motorn har INGET tak (Axels beslut 2026-09-22, ur Evolve).** Både
   `TAK_SEK` 10 000 (2026-09-21) och idén om "10 % över 15 000" är kastade:
   spendnivå, frekvens och marknadsstorlek är alla förkastade som tak ("Never
@@ -1206,6 +1250,8 @@ Misslyckas Discord-posten: nämn det i svaret men stoppa ingenting.
 - [ ] Etiketter dag 7 satta för alla annonser ≥ 7 dygn utan etikett (båda kontona), tabellen i batch-log.md, frekvensen i leveransen — eller "utan etikett" listade vid strypning
 - [ ] **Lärdom skriven för varje etiketterad annons** (`lardom.mjs --skriv` grön, LARDOM-rader, `products/<id>/lardomar.md` pushad) — eller exakt vilka som saknas och varför
 - [ ] Ingen brief-runda större än brieftaket; varje brief med `lardom=` + taggarna, `lardom.mjs --brief` grön INNAN Notion, BRIEF-rader loggade; vidarebyggen körda för varje levande breakthrough (VIDAREBYGG_KLAR)
+- [ ] **Funnelläge (> 10 000 kr/dag):** `products/<id>/invandningar.md` byggd/uppdaterad FÖRE rundan (`tools/invandningsmatris.mjs` på main), täckningsraden läst i `## 🧱 Invändningstäckning`, varje obesvarad invändning ≥ 10 % har en brief med `invandning=` i rundan (fri mot taket), ingen fylld ruta briefad igen
+- [ ] Ingen listicle-/lagerrensningskampanj rörd: alla med domen `AGARENS` står under `## 🛑 Ägarens kampanjer` och har ingen åtgärd i planen
 - [ ] `lardom.mjs --status` i leveransen: frekvens som bråk + procent, lärdomar i dag, briefer på lärdom, koncept vid taket
 - [ ] `ugc.mjs --deadlines` körd (larm postat om 🔴), `ugc.mjs --kandidater` körd; varje ✅ FÖRESLÅ har fått ett färdigt beställningsmeddelande till Lovely i `--kanal uppgifter` och en `UGC_FORSLAG`-rad — eller villkoret som föll utskrivet
 - [ ] Etiketter + lärdomar även för CaraShell-kampanjerna i DK/UK-kontona (`--konto spegel`), för Taköverdraget och Termoskyddet speglas (CS-KLART punkt 26)

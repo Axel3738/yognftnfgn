@@ -144,7 +144,7 @@ export async function skrivRad(rad, fil = LOGGFIL) {
   // räknar varje genomförd rad med det fältet som en budgetändring och skulle
   // frysa kampanjen i tre dygn utan att någon rört budgeten.
   if (['ETIKETT', 'ETIKETT_UPPGRADERAD', 'TJUV_PAUSAD', 'VANTA_BREAKTHROUGH', 'OPS_STARTSKOTT', 'LARDOM', 'BRIEF', 'VIDAREBYGG_KLAR',
-    'CPA_STIGER', 'VISNING_AVVAKTA', 'VANTA_KONSEKVENT', 'HOGZON_AVVAKTA', 'SURF_HALL', 'FATIGUE_TEST', 'FATIGUE_TEST_SVAR'].includes(rad.kod)
+    'CPA_STIGER', 'VISNING_AVVAKTA', 'VANTA_KONSEKVENT', 'HOGZON_AVVAKTA', 'SURF_HALL', 'FATIGUE_TEST', 'FATIGUE_TEST_SVAR', 'AGARENS'].includes(rad.kod)
       && Number.isFinite(rad.ny_budget)) {
     throw new Error(`En ${rad.kod}-rad med ny_budget skulle blinda kadensspärren — vägrar`);
   }
