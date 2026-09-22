@@ -14,6 +14,7 @@ import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning,
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
 import { kundUrKontaktformular, arKontaktformular } from '../autosvar/kontaktformular.mjs';
+import { oversikt, renderaOversikt } from '../autosvar/oversikt.mjs';
 import { tolkaMejl } from '../mime.mjs';
 import { normaliseraOrder } from '../shopify.mjs';
 import { klassificera } from '../klassificering.mjs';
@@ -1039,6 +1040,29 @@ test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + retur
     assert.equal(harForbjudet(r), false, s);
   }
   assert.match(returText({ sprak: 'sv', brand: { ...KONFIG, tvister: { ...KONFIG.tvister, returfrakt_betalas_av: 'kund' } } }), /\nReturfrakten står du själv för\.\n/);
+});
+
+test('oversikt: senaste raden per Message-ID vinner, fönstret räknas, arga/svarade/tillVa listas maskerade, perDag summerar', () => {
+  const t = (h) => new Date(NU.getTime() - h * 3_600_000).toISOString();
+  const rader = [
+    { tid: t(50), brand: 'baverbutiken', uid: 1, messageId: '<a>', kund: 'an***@gmail.com', hink: 'ENKEL', typ: 'wismo', kategori: 'var_ar_ordern', ordernummer: ['1042'], sprak: 'sv', orsak: 'enkel fråga: wismo', atgard: 'utkast', torr: true, amne: 'Var är min order' },
+    { tid: t(2), brand: 'baverbutiken', uid: 1, messageId: '<a>', kund: 'an***@gmail.com', hink: 'SVÅR', typ: 'wismo', kategori: 'var_ar_ordern', ordernummer: ['1042'], sprak: 'sv', orsak: 'tråden har redan ett svar från oss — VA:n fortsätter', atgard: 'flaggad', flaggad: true, torr: true, amne: 'Var är min order' },
+    { tid: t(2), brand: 'baverbutiken', uid: 2, messageId: '<b>', kund: 'to***@gmail.com', hink: 'ARG', typ: null, kategori: 'fel_vara', ordernummer: [], sprak: 'sv', orsak: 'argt ordval', atgard: 'utkast', torr: true, flaggad: true, flyttad: 'INBOX.VA-PRIO', x: 'som_pa_bilden', amne: 'Vad är det här för skit?' },
+    { tid: t(2), brand: 'baverbutiken', uid: 3, messageId: '<c>', kund: 'ne***@agency.com', hink: 'SKIP', kategori: 'spam', ordernummer: [], sprak: 'en', orsak: 'listmejl/nyhetsbrev', atgard: 'hoppad', torr: true, amne: 'Grow' },
+    { tid: t(24 * 40), brand: 'baverbutiken', uid: 4, messageId: '<gammal>', kund: 'ga***@x.se', hink: 'ARG', ordernummer: [], sprak: 'sv', orsak: 'argt ordval', atgard: 'svar', torr: false, amne: 'Gammalt' },
+  ];
+  const o = oversikt(rader, { nu: NU, dagar: 30 });
+  assert.equal(o.brand, 'baverbutiken');
+  assert.deepEqual([o.antal.mejl, o.antal.arenden, o.antal.ENKEL, o.antal.ARG, o.antal['SVÅR'], o.antal.SKIP], [3, 2, 0, 1, 1, 1], 'raden <a> räknas en gång, som SVÅR (senaste), och <gammal> ligger utanför 30 dagar');
+  assert.deepEqual([o.antal.utkast, o.antal.svar, o.antal.flaggade, o.antal.tillVa], [1, 0, 2, 1]);
+  assert.equal(o.antalKorningar, 2);
+  assert.equal(o.arga.length, 1);
+  assert.deepEqual([o.arga[0].x, o.arga[0].flyttad, o.arga[0].orsakEn], ['som_pa_bilden', 'INBOX.VA-PRIO', 'angry wording']);
+  assert.equal(o.tillVa[0].orsakEn, 'thread already answered by us — VA continues');
+  assert.equal(o.perDag.reduce((s, d) => s + d.mejl, 0), 3);
+  assert.ok(JSON.stringify(o).split('@').every((del, i) => i === 0 || /\*\*\*$/.test(JSON.stringify(o).split('@')[i - 1].slice(-3))), 'inga kundadresser i klartext');
+  assert.match(renderaOversikt(o), /ENKEL 0 · ARG 1 · SVÅR 1 · hoppade 1/);
+  assert.deepEqual(oversikt([], { nu: NU }).antal.mejl, 0);
 });
 
 test('kunden är VA:ns: ett VA-svar till adressen de senaste 14 dagarna (annan tråd) ⇒ inget automatiskt svar, bara flagga — Ulf i Judge.me-tråden 2026-09-22', async () => {

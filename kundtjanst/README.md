@@ -351,6 +351,29 @@ skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
 
+### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
+
+Axels fråga 2026-09-22: en annan session bygger en kundtjänst-dashboard och
+ska kunna visa arga kunder, ärenden och vad autosvaret gjort. Kontraktet står
+i **`kundtjanst/autosvar/DASHBOARD.md`** — läs den först. Kort:
+
+```bash
+node kundtjanst/autosvar/oversikt.mjs --brand baverbutiken           # svensk tabell
+node kundtjanst/autosvar/oversikt.mjs --alla --dagar 30 --json       # { [butik]: översikt }
+```
+
+Läser bara loggen (`autosvar/logg/<butik>.jsonl`), senaste raden per
+Message-ID vinner, och ger per butik antal per hink, per typ/kategori/språk,
+per dag, de arga raderna (med `x`, `lage`, `retur`), de svarade, de som
+ligger hos VA:n utan svar, och felen. Kundadresserna är redan maskerade i
+loggen och maskeras aldrig upp. Ren funktion (`oversikt(rader, {nu, dagar})`),
+testad. Mätt mot den riktiga loggen 2026-09-22: 5 körningar, 102 mejl,
+67 ärenden, 1 ENKEL, 2 ARG, 64 SVÅR, 3 utkast, 0 skickade.
+
+Tre saker dashboard-sessionen aldrig gör (står i DASHBOARD.md → "Rör inte"):
+kör `autosvar.mjs` mot en brevlåda (en session per brevlåda), skriver i
+loggen (motorns minne för "ett svar per tråd"), raderar mejl.
+
 ## Så hänger det ihop
 
 ```
