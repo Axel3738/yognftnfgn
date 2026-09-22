@@ -9,7 +9,7 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-21",
+  "uppdaterad": "2026-09-22",
   "kampanjer": [
     {
       "campaign_id": "120252299552200233",
@@ -1023,6 +1023,46 @@
       "produkt": "Fågelmatare NO",
       "lage": "test",
       "lage_motivering": "Ny aktiv kampanj, saknades i kartan — tillagd av /rond-auto 2026-09-18. Noll köp och nästan ingen spend ännu, alltså test. Break-even läses ur kampanjnamnet; inget tal gissas.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250320735920291",
+      "produkt": "Kajakhållaren 2-pack",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-22 (02:37), 141 kr spend, noll köp än — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250320718080291",
+      "produkt": "ATV-Kapellet 3XL 256 × 110 × 120 cm",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-22 (02:30), 143 kr spend, 1 köp — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250320680220291",
+      "produkt": "Snöslungekapellet 120 × 82 × 60 cm",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-22 (02:23), 148 kr spend, noll köp än — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120250314107930291",
+      "produkt": "Katalog",
+      "lage": "test",
+      "lage_motivering": "kampanj utan break-even i namnet, startad 2026-09-21 15:25 (Axel), 655 kr spend, noll köp — tillagd av /rond-auto 2026-09-22 så den syns i ronden. Domen blir SAKNAR_BREAK_EVEN tills talet står i namnet; gissas aldrig.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
+    {
+      "campaign_id": "120252321093160233",
+      "produkt": "Feiesett NO",
+      "lage": "test",
+      "lage_motivering": "ny norsk kampanj startad 2026-09-21, 845 kr, 7 köp vid tillägget — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet (norskt skrivsätt BE-ROAS med komma).",
       "break_even_roas": null,
       "break_even_kalla": "kampanjnamnet"
     }
