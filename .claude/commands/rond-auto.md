@@ -125,7 +125,9 @@ Sätt `ad_account_id` och `ad_account_namn` i varje fil till det konto datan
 faktiskt kommer från — kontrollen läser dem och avbryter vid minsta glapp.
 
 Aktiv kampanj som saknas i `agent/produktkarta.json`: lägg till den som
-`"lage": "test"` med motivering. Gissa aldrig break-even — utan tal i
+`"lage": "test"` med motivering, och slå upp produkten i Axels prissheet
+(länk i kartans `kommentar`) för ett `kostnad`-block — se regelblocket
+"Skalning mäts mot TARGET" nedan. Gissa aldrig break-even — utan tal i
 kampanjnamnet eller kostnadsblock får den domen SAKNAR_BREAK_EVEN, och det är
 rätt.
 ⚠️ **Ändrar du produktkartan: committa och pusha den i samma push som
@@ -785,15 +787,27 @@ utlöste. Den kopplingen är borttagen: `ersatt` kommer numera bara från
   38 %. **När CPA stiger är fixet nya creatives, inte budget** — se
   fatigue-testet under 4b.
 - **Skalning mäts mot TARGET, kill mot BREAK-EVEN (Axels beslut 2026-09-22).**
-  `target_roas` per produkt i `agent/produktkarta.json` (och
-  `products/products.json` för Bäverbutikens sex). Saknas talet härleder
-  motorn target ur break-even som ROAS:en vid 25 % vinst av omsättningen
-  (`targetRoas()` i `agent/besked.mjs`, t.ex. BE 1,63 ⇒ 2,75) — samma tröskel
-  som förr, gjord uttrycklig. **Stegtrappan går på avståndet till target:**
+  **Target är alltid 25 % vinst av omsättningen** (Axels beslut 2026-09-22):
+  `target_roas` i `agent/produktkarta.json` och `products/products.json`
+  lämnas `null`, och motorn härleder target ur break-even
+  (`targetRoas()` i `agent/besked.mjs`, t.ex. BE 1,52 ⇒ 2,46). Ett eget tal
+  sätts bara om Axel säger ett. **Break-even kommer ur Axels prissheet**
+  (länken står i produktkartans `kommentar`): produktkostnad + frakt i USD
+  för 1 st till Sverige plus 2,9 EUR EU-avgift per order, som `kostnad`-block
+  på kampanjens post — det blocket vinner över talet i kampanjnamnet. Ny
+  aktiv kampanj: slå upp produkten i sheetet och skriv blocket (priset ur
+  butiken samma dag); saknas produkten i sheetet gäller kampanjnamnet, och
+  det står i `break_even_kalla`. Mätt 2026-09-22 på tolv aktiva SE-kampanjer:
+  sheetet ger 1,51–1,55 där namnen sa 1,61–1,67. En break-even som sjunker
+  kan aldrig ensam utlösa en sänkning (produktkartans
+  `regel_andrad_break_even`). **Stegtrappan går på avståndet till target:**
   ROAS ≥ 200 % av target ⇒ dubbla · ≥ 150 % ⇒ ×1,5 · annars 20 % — och
   **alltid efter 48–72 timmar konsekvent**: dags-ROAS ska ha legat på eller
   över target minst två hela dygn i rad (`dagarOverTarget`, annars
-  `VANTA_KONSEKVENT`). Raketspåret (ROAS ≥ 5 ⇒ ×1,8) är ersatt av trappan.
+  `VANTA_KONSEKVENT`). Snabbspåret (ROAS ≥ 3 ⇒ höjning igen redan nästa
+  dag) är kvar på 24 timmar (Axel 2026-09-22: "24") — det är konsekvent-
+  spärren, inte kadensen, som hindrar 1 000 → 2 000 → 4 000 på ett dygn
+  mellan stegen. Raketspåret (ROAS ≥ 5 ⇒ ×1,8) är ersatt av trappan.
   Under target men över break-even: `LAT_VARA` — går plus, skalas inte.
   CLAUDE.md regel 4 är orörd: förlust, halvering, åtgärdstrappan och
   avstängning mäts fortfarande mot break-even, aldrig mot target.

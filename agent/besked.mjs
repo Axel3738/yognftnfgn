@@ -51,12 +51,12 @@ export const MIN_DAGAR_MELLAN_ANDRINGAR = 3;
 // sänkningar väntar alltid sina tre dagar, eftersom färska minus-siffror
 // revideras uppåt i efterhand. Avstängning av en testprodukt som går back
 // väntar däremot ALDRIG (Axel 2026-09-02).
-// Var 1 dag till 2026-09-22; med trappan (×2) hade det gett 1 000 → 2 000 →
-// 4 000 på 24 timmar mellan stegen, mot "alltid efter 48–72 timmar
-// konsekvent" (Axels beslut samma dag). Nu 2 dagar = 48 timmar. ANTAGANDE —
-// säg till om snabbspåret ska bort helt.
+// 1 dag = 24 timmar (Axels beslut 2026-09-22, "24", på frågan om 48 h).
+// "48–72 timmar konsekvent" bärs i stället av konsekvent-spärren
+// (KONSEKVENT_DAGAR: två dygn i rad över target innan en höjning) — det är
+// den som hindrar 1 000 → 2 000 → 4 000 på ett dygn mellan stegen, inte kadensen.
 export const SNABB_SKALNING_ROAS = 3.0;
-export const SNABB_MIN_DAGAR = 2;
+export const SNABB_MIN_DAGAR = 1;
 
 // Stegtrappan (Axels beslut 2026-09-22, ur kursen): steget går på AVSTÅNDET
 // TILL TARGET, inte till break-even. 100 % över target → dubbla, 50 % över →

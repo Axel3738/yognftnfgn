@@ -186,13 +186,13 @@ test('kadensspärren stoppar en andra ändring inom tre dygn', () => {
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: null })).kod, 'SKALA');
 });
 
-test('snabbspåret: ROAS över 3 i skalningszonen får höjas efter 48 timmar efter en HÖJNING — inte dagen efter (Axel 2026-09-22: 48–72 h konsekvent)', () => {
+test('snabbspåret: ROAS över 3 i skalningszonen får höjas redan dagen efter en HÖJNING (24 h, Axels beslut 2026-09-22 "24")', () => {
   // BE 2,00 · ROAS 10 -> 40 % vinst, ROAS ≥ 3, förra ändringen var en höjning.
-  const snabb = rad({ roas3d: 10, dagarSedanAndring: 2, senasteAndringKod: 'SKALA' });
+  const snabb = rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA' });
   assert.equal(besked(snabb).kod, 'SKALA');
   assert.match(besked(snabb).motivering, /Snabbspår/);
-  // Dagen efter räcker inte längre: med trappan hade 1 000 → 2 000 → 4 000 gått på 24 h mellan stegen.
-  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA' })).kod, 'VANTA_KADENS');
+  // Det som hindrar 1 000 → 2 000 → 4 000 på ett dygn mellan stegen är konsekvent-spärren, inte kadensen.
+  assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 1, senasteAndringKod: 'SKALA', dagarOverTarget: 1 })).kod, 'VANTA_KONSEKVENT');
   // Aldrig samma dag som förra ändringen.
   assert.equal(besked(rad({ roas3d: 10, dagarSedanAndring: 0, senasteAndringKod: 'SKALA' })).kod, 'VANTA_KADENS');
   // Utan snabbspår (ROAS < 3) står texten inte "Snabbspår" fast trappan ger ×1,5.

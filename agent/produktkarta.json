@@ -1,5 +1,5 @@
 {
-  "kommentar": "Sanningskällan för /rond. En post per kampanj som FAKTISKT kör i Bäverbutiken — BÅDA marknaderna: MagiBorsten 1867947880635861 (SE) och Magiborsten NO 1050941584152547. Kartan slås upp på campaign_id, så marknaderna kan dela fil. Norska namn skriver talet som '| BE-ROAS 1,63 |'. Break-even läses i första hand ur kampanjnamnet ('| BE ROAS 1.49 |') — det är Axels egen konvention och den enda källa som följer med kampanjen. Fyll bara i break_even_roas här när namnet saknar talet ELLER säger TBC, och skriv då alltid var talet kommer ifrån i break_even_kalla. En kampanj som saknas här körs som testprodukt och flaggas i rapporten. Kampanjer som inte ligger här och inte är aktiva rörs aldrig.",
+  "kommentar": "Sanningskällan för /rond. En post per kampanj som FAKTISKT kör i Bäverbutiken — BÅDA marknaderna: MagiBorsten 1867947880635861 (SE) och Magiborsten NO 1050941584152547. Kartan slås upp på campaign_id, så marknaderna kan dela fil. Break-even i tur och ordning: (1) räknat ur postens kostnad-block — pris_sek och kostnad per order (USD/EUR/SEK) — som fylls ur AXELS PRISSHEET https://docs.google.com/spreadsheets/d/10VrOx3R7vi3gqzf5q5WBzk0rsvsp4mM51vECgQvncr4 (fliken ALLA PRODUKTER: produktkostnad + frakt i USD för 1 st till Sverige, plus 2,9 EUR EU-avgift per order; Axels beslut 2026-09-22: alla marginaler räknas ur sheetet, target är alltid 25 % vinst ⇒ target_roas lämnas null och härleds); (2) ett fast break_even_roas här med break_even_kalla; (3) talet i kampanjnamnet ('| BE ROAS 1.49 |', norskt skrivsätt '| BE-ROAS 1,63 |') — Axels egen konvention och den källa som följer med kampanjen. Ny kampanj: slå upp produkten i sheetet och skriv kostnad-blocket; saknas produkten i sheetet gäller namnet, och det ska stå i break_even_kalla. Norska kampanjer har inget kostnad-block ännu (sheetet har bara svensk frakt för de aktiva produkterna) — de går på namnet. Mätt 2026-09-22: sheetet ger BE 1,51–1,55 på tolv aktiva SE-kampanjer där namnen säger 1,61–1,67 — namnen bär ett påslag på ~5 % av priset som inte står i sheetet. En kampanj som saknas här körs som testprodukt och flaggas i rapporten. Kampanjer som inte ligger här och inte är aktiva rörs aldrig.",
   "ad_account_id": [
     "1867947880635861",
     "1050941584152547"
@@ -57,14 +57,22 @@
       "lage": "test",
       "lage_motivering": "ny kampanj startad 2026-09-19 — startskott 2026-09-21 (3 058 kr, 25 köp, CPA 122 mot BE-CPA 307, 39,1 % vinst) och första OS-batchen samma dag. Break-even står i kampanjnamnet.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "3e2270ab-908c-8171-bbae-fff6adedbe5a",
       "notion_hub_datakalla": "collection://af6270ab-908c-8256-879b-07429bfd3596",
       "notion_hub_namn": "Chimney sweep set creative hub",
       "notion_hub_not": "Skapad 2026-09-21 av /rond-auto som dubblett av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794), omdöpt via notion-update-data-source. 14 briefer i Draft från start.",
       "drive_senaste_batchmapp_id": "1lJZewCo50svHhA9Cob47VdVVf85EZd9D",
       "drive_not": "Joshs produktmapp (Product test center-raden). Ingen egen batchmapp skapad — briefarna ligger i Notion.",
-      "minne": "products/sotarsetet/"
+      "minne": "products/sotarsetet/",
+      "kostnad": {
+        "pris_sek": 459,
+        "usd": 12.49,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 424: \"Flexible Chimney Sweep Set\"), 1 st till Sverige: produkt + frakt 4,55 + 7,94 = 12.49 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 459 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250252311730291",
@@ -72,7 +80,15 @@
       "lage": "test",
       "lage_motivering": "listicle-landningssidans egen kampanj, startad 2026-09-16 — saknades i kartan, tillagd av /rond-auto. Kampanjnamnet bär inget BE-tal, så domen blir SAKNAR_BREAK_EVEN tills ett tal skrivs in. Gissa aldrig.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 1129,
+        "usd": 36.17,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 278: \"Taköverdrag till husvagn / husbil, 6,5 × 3 m (basstorleken; nio storlekar 5,5–13,5 m med egna priser och kostnader — större storlek ger högre AOV och ungefär proportionellt högre kostnad)\"), 1 st till Sverige: produkt + frakt 17,42 + 18,75 = 36.17 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 1129 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250252442610291",
@@ -100,7 +116,15 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-17, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 589,
+        "usd": 17.12,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 444: \"outdoor smart censor lamp (solcellslampan, batch 8)\"), 1 st till Sverige: produkt + frakt 5,30 + 11,82 = 17.12 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 589 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250254068910291",
@@ -124,13 +148,21 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-11, för ny för att ha data i 3-dagarsfönstret — saknades i kartan, tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "c5a270ab-908c-83e3-b721-81fde8643080",
       "notion_hub_datakalla": "collection://7d0270ab-908c-831e-8021-8758336851c8",
       "notion_hub_namn": "BÄVER Termoskyddet för Husbil",
       "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR.",
       "minne": "products/termoskyddet-husbil",
-      "minne_not": "satt 2026-09-22 av /rond-auto: lärdomsskrivaren stoppade utan raden fast mappen fanns sedan 2026-09-14"
+      "minne_not": "satt 2026-09-22 av /rond-auto: lärdomsskrivaren stoppade utan raden fast mappen fanns sedan 2026-09-14",
+      "kostnad": {
+        "pris_sek": 559,
+        "usd": 15.99,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 399: \"Utvändigt termoskydd till husbilens vindruta\"), 1 st till Sverige: produkt + frakt 6,82 + 9,17 = 15.99 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 559 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250175680140291",
@@ -210,7 +242,7 @@
       "lage": "test",
       "lage_motivering": "1 991,70 kr spend (livstid, avläst 2026-09-10, maximum), 11 köp, ROAS 3,587 mot BE 1,62 — ~36% vinstmarginal enligt /rond-auto 2026-09-10. Passerat 1 500 kr-testtröskeln och fått sin första riktiga batch via /forsta-batch. Bara 1 av 16 launchade annonser bedömbar än (kampanjen ~2 dygn gammal) — se dna.md.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "e53270ab-908c-8297-be2d-0162a09dc253",
       "notion_hub_datakalla": "collection://efe270ab-908c-83ef-aa11-87c98e87f5b0",
       "notion_hub_namn": "BÄVER Adventskalendern Racingbilar",
@@ -218,7 +250,15 @@
       "drive_produktmapp_not": "Joshs befintliga produktmapp \" Adventskalender Racingbilar\" (ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1j0QAGfifgu0or1PvspIPfujgBHy7A9Lt",
       "minne": "products/adventskalender-racingbilar/",
-      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Racing Car Advent Calendar creative hub."
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte Racing Car Advent Calendar creative hub.",
+      "kostnad": {
+        "pris_sek": 499,
+        "usd": 14.17,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 334: \"car racing calendar\"), 1 st till Sverige: produkt + frakt 6,36 + 7,81 = 14.17 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 499 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120252123868510233",
@@ -530,7 +570,7 @@
       "lage": "test",
       "lage_motivering": "22 köp sedan start (avläst 2026-09-01, livstid) — under 30-köpsgränsen för drift. Passerat testtröskeln (4 171 kr, ROAS 3,30 mot BE 1,51) och har nu fått sin första riktiga batch via /forsta-batch.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "76b270ab-908c-8393-8a47-01f6ae366d42",
       "notion_hub_datakalla": "collection://4ce270ab-908c-8260-9ad0-07426ac2b1c2",
       "notion_hub_namn": "BÄVER IBC-Tanköverdraget",
@@ -538,7 +578,15 @@
       "drive_produktmapp_not": "Joshs befintliga produktmapp (skapad vid launch, ägs av joshnaelga146). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products (lanseringskön).",
       "drive_senaste_batchmapp_id": "1SdP2djgVRGwJnvb-BuM99sTJRg6XcKcd",
       "minne": "products/ibc-tankoverdraget/",
-      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte IBC Tank Cover creative hub."
+      "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR. Ersatte IBC Tank Cover creative hub.",
+      "kostnad": {
+        "pris_sek": 489,
+        "usd": 13.94,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 137: \"Water tank cover (IBC)\"), 1 st till Sverige: produkt + frakt 5,73 + 8,21 = 13.94 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 489 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120249978017760291",
@@ -875,12 +923,20 @@
       "lage": "test",
       "lage_motivering": "startad 2026-09-09, saknades i kartan — tillagd av /rond-auto",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "7ec270ab-908c-82f6-a2a8-0153159b20fa",
       "notion_hub_datakalla": "collection://5f2270ab-908c-82ef-b029-0767819050db",
       "notion_hub_namn": "BÄVER Taköverdraget för Husvagn",
       "notion_hub_not": "Axels egen hub 2026-09-13 (BÄVER-serien i teamspacet Bäverbutiken). Briefer skrivs HÄR.",
-      "minne": "products/takoverdraget-husvagn"
+      "minne": "products/takoverdraget-husvagn",
+      "kostnad": {
+        "pris_sek": 1129,
+        "usd": 36.17,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 278: \"Taköverdrag till husvagn / husbil, 6,5 × 3 m (basstorleken; nio storlekar 5,5–13,5 m med egna priser och kostnader — större storlek ger högre AOV och ungefär proportionellt högre kostnad)\"), 1 st till Sverige: produkt + frakt 17,42 + 18,75 = 36.17 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 1129 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250147309170291",
@@ -972,14 +1028,22 @@
       "lage": "test",
       "lage_motivering": "Passerat testtröskeln 2026-09-20 (1 912 kr, 24,3 % vinst, ROAS 2,58) — förstabatch + OPS-startskott samma dag. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "3e1270ab-908c-8131-a121-fe435a4e22aa",
       "notion_hub_datakalla": "collection://63a270ab-908c-8215-a509-87aeee113477",
       "notion_hub_namn": "Indoor slippers creative hub",
       "notion_hub_not": "Skapad 2026-09-20 av /rond-auto steg 4b genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794). Förstabatchen (17 briefer) ligger här.",
       "drive_produktmapp_id": "1fl1ACX8Q25KnwKUUwPuu9H1pIaTMiZJ-",
       "drive_produktmapp_not": "Joshs befintliga produktmapp 'Fodrade Inomhustofflor' (Finish Ad-länken i Product test center). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products.",
-      "minne": "products/inomhustofflorna/"
+      "minne": "products/inomhustofflorna/",
+      "kostnad": {
+        "pris_sek": 489,
+        "usd": 13.52,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 440: \"Heavy duty inside warm slippers (kamouflagetofflorna, batch 8)\"), 1 st till Sverige: produkt + frakt 4,85 + 8,67 = 13.52 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 489 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250268474110291",
@@ -987,14 +1051,22 @@
       "lage": "test",
       "lage_motivering": "Passerat testtröskeln 2026-09-20 (1 943 kr, 20,2 % vinst, ROAS 2,47) — förstabatch + OPS-startskott samma dag. Under 30-köpsgränsen för drift.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet",
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
       "notion_hub_id": "3e1270ab-908c-810c-9d50-f14ab53b461f",
       "notion_hub_datakalla": "collection://905270ab-908c-8354-935d-071286e4e9b2",
       "notion_hub_namn": "Car wash brush creative hub",
       "notion_hub_not": "Skapad 2026-09-20 av /rond-auto steg 4b genom duplicering av MALL Creative hub MALL (3cc270ab-908c-8005-a50e-db6b1b179794). Förstabatchen (17 briefer) ligger här.",
       "drive_produktmapp_id": "1qwAOtlYm68VnJ451QCDjlo0b28AmJkK_",
       "drive_produktmapp_not": "Joshs befintliga produktmapp 'Biltvättborste Teleskop' (Finish Ad-länken i Product test center). Batchmappar läggs HÄR — aldrig nya produktmappar i BÄVER/Products.",
-      "minne": "products/biltvattborsten/"
+      "minne": "products/biltvattborsten/",
+      "kostnad": {
+        "pris_sek": 799,
+        "usd": 25.61,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 448: \"Car Washer Mop Foam Wash Brush\"), 1 st till Sverige: produkt + frakt 2,58 + 23,03 = 25.61 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 799 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250268397440291",
@@ -1034,7 +1106,15 @@
       "lage": "test",
       "lage_motivering": "ny kampanj startad 2026-09-22 (02:37), 141 kr spend, noll köp än — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 599,
+        "usd": 17.36,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 526: \"Kajakhållaren för vägg, 2-pack\"), 1 st till Sverige: produkt + frakt 4,00 + 13,36 = 17.36 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 599 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250320718080291",
@@ -1042,7 +1122,15 @@
       "lage": "test",
       "lage_motivering": "ny kampanj startad 2026-09-22 (02:30), 143 kr spend, 1 köp — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 579,
+        "usd": 16.77,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 518: \"ATV-kapellet Heavy Duty\"), 1 st till Sverige: produkt + frakt 7,08 + 9,69 = 16.77 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 579 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250320680220291",
@@ -1050,7 +1138,15 @@
       "lage": "test",
       "lage_motivering": "ny kampanj startad 2026-09-22 (02:23), 148 kr spend, noll köp än — tillagd av /rond-auto 2026-09-22. Break-even står i kampanjnamnet.",
       "break_even_roas": null,
-      "break_even_kalla": "kampanjnamnet"
+      "break_even_kalla": "uträknad ur kostnadsblocket (Axels prissheet)",
+      "kostnad": {
+        "pris_sek": 459,
+        "usd": 12.72,
+        "eur": 2.9,
+        "sek": 0,
+        "kalla": "Axels prissheet (Google Sheet 10VrOx…, fliken ALLA PRODUKTER, rad 494: \"Snow Blower Cover\"), 1 st till Sverige: produkt + frakt 5,08 + 7,64 = 12.72 USD, plus 2,9 EUR EU-avgift per order (sheetets rubrik \"total cost without 2,9 eur tax\"). Priset 459 kr läst ur baverbutiken.se/products.json 2026-09-22. Axels beslut 2026-09-22: marginalerna räknas ur sheetet.",
+        "datum": "2026-09-22"
+      }
     },
     {
       "campaign_id": "120250314107930291",
@@ -1070,11 +1166,11 @@
     }
   ],
   "valutakurser": {
-    "kommentar": "Används för att räkna om kostnad i USD/EUR till kronor. Mid-market 2026-08-27. Din bank eller ditt kort tar troligen 1-3 % sämre kurs — höj talen om du vill räkna med det.",
-    "usd_sek": 9.6,
-    "eur_sek": 11.09,
-    "datum": "2026-08-27",
-    "kalla": "mid-market (investing.com 9,69 · XE 9,52 · OFX 9,50 för USD; XE 11,09 för EUR)"
+    "kommentar": "Används för att räkna om kostnad i USD/EUR till kronor. ECB:s dagskurs (eurofxref-daily.xml): EUR/USD 1,1463 · EUR/SEK 11,2463 ⇒ USD/SEK 9,81. Din bank eller ditt kort tar troligen 1–3 % sämre kurs — höj talen om du vill räkna med det. Uppdatera datumet när kursen läses om.",
+    "usd_sek": 9.81,
+    "eur_sek": 11.25,
+    "datum": "2026-09-22",
+    "kalla": "ECB eurofxref-daily 2026-09-22 (USD 1,1463 · SEK 11,2463 per EUR)"
   },
   "momsnot": "Ingen moms. Bäverbutiken säljer DDP till Sverige (Axels besked 2026-08-29). Break-even räknas rakt på försäljningspriset. Ingen öppen fråga.",
   "regel_andrad_break_even": "VIKTIG REGEL (Axel 2026-08-29): när break-even ändras retroaktivt — ny COGS, räknefel som rättas — får det ALDRIG ensamt utlösa en sänkning eller kill. En produkt som säljer bra på fel kalkyl fixas med PRISET, inte budgeten. Frys kampanjen (frys_till + frys_motivering), höj priset, uppdatera kalkylen, töm frysen."
