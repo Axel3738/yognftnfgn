@@ -808,3 +808,12 @@ NO PAUSED (läs-bar torrkörning): 3d 1 088 kr / 0 köp, 7d 3 516 kr / 7 köp. 0
 inget aktiverat. Briefdag enligt registret (ikappkörning efter 5 dygn) men **ronden är
 pausad sedan 18/9** — inga briefer. `kord` stämplad, `brief-kord` inte.
 Femte dygnet med produkten avstängd på båda marknaderna.
+
+## 2026-09-22 — `/ops-leverans carashell/termoskyddet` — tom kö, femte dagen
+
+- Kön: 0 rader. Hubben oförändrad (5 Approved, 2 Draft-videor). Inget laddades upp,
+  inget rördes i kontot.
+- SE-kampanjen kvar PAUSED, `updated_time` fortfarande 2026-09-18 11:29 CEST.
+  Livstid 2 058 kr / 4 köp — tredje dagen i rad med exakt samma siffror.
+- Ingen ny spend betyder att pausen håller och att rutinen inte har något att döma.
+  Den här rundan blir meningsfull igen först när SE-kampanjen slås på.
