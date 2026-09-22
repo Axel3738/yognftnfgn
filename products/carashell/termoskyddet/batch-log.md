@@ -828,7 +828,7 @@ Femte dygnet med produkten avstängd på båda marknaderna.
   omstart. Livstid 7 köp, ROAS 1,14 mot break-even 1,61.
 - Butiken redo för Norge: 548 NOK läst på `/nb`-sidan.
 - SE fortsatt pausad (sedan 2026-09-18) ⇒ varken leveransrundan eller speglingen fyller kön.
-- Discord `#annons-uppladdning` (CaraShell — OPS), ingen ping.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551976456282706011`, ingen ping.
   Batch: `market-expansion/ops/carashell/2026-09-22-no-termoskyddet/`.
 
 ## 2026-09-22 — `/ops-spegla carashell/termoskyddet` — tom kö, fjärde dygnet med båda marknader avstängda
@@ -840,3 +840,15 @@ Femte dygnet med produkten avstängd på båda marknaderna.
   2 `Draft`. Fem rader flyttades fram till `Approved` i dag, alltså fortsatt fel status för en speglad
   hub: de når aldrig speglingens ordinarie kö och väntar på `--fran "Approved"` när SE-kampanjen är igång.
 - Pris 559 SEK / 548 NOK ur butiken. Rutin `trig_01GWEbTKYMKTfqUZfcucqN71`, fyrade 14:55 UTC.
+
+## 2026-09-22 — `/ops-oversatt carashell/termoskyddet --marknad US` — tom kö, femte dagen
+
+- Kön: 0 rader i `SE-ACTIVE to be translated`. `Approved`-kön: 5 rader, 0 saknas i US.
+- **Oförändrat fjärde dygnet i rad:** US-kampanjen (`120251442339640435`) PAUSED,
+  `updated_time` 2026-09-18 09:34 UTC, spend 1 978,33 kr / 0 köp — identiskt 19–22/9.
+  Kopian (`120251451414990435`) PAUSED sedan 2026-09-17, 616,24 kr / 0 köp. Båda orörda.
+- Produkten är avstängd på alla tre marknader femte dygnet (SE 18/9, NO 19/9, US 18/9).
+- Läge "US paused by owner": 0 rader hållna, 0 HeyGen-credits, inget uppladdat, ingen
+  Notion-rad rörd. Pris ur butiken: $99.
+- Discord `#annons-uppladdning` (CaraShell — OPS): meddelande `1551976456282706011`, ingen ping.
+- Batch: `market-expansion/ops/carashell/2026-09-22-us-termoskyddet/`.
