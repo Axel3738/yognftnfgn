@@ -81,8 +81,41 @@ Every dispute has an **evidence due date** (`evidence_due_by` in Shopify, shown 
 **A missed deadline is the only failure in this process that cannot be repaired afterwards.** That is why these SOPs exist.
 
 - **Do not** wait for the customer's reply before submitting. Email *and* build the evidence in parallel.
-- **Do not** click **Submit now** until you are finished: *"After you click Submit now to submit your response early, you can't make any further edits."* Otherwise **Save** and let Shopify send on the due date — you can keep editing until then.
-- Exception for "not received": if the parcel is still moving, a delivery scan that lands before the due date is the strongest evidence there is. Save the evidence, watch the tracking, add the scan before the due date.
+
+> ## ⏳ SUBMIT LAST. SAVE TODAY, SEND ON THE DUE DATE.
+>
+> **Never click "Submit now".** Shopify: *"After you click Submit now to submit
+> your response early, you can't make any further edits."* Use **Save** instead
+> — Shopify sends your response automatically on the due date, and you can keep
+> editing until then.
+>
+> **Why this wins cases:** for *"product not received"* the evidence gets better
+> while you wait. A parcel takes about 10 days to arrive; the evidence window is
+> up to 21 days. A dispute that has **no delivery scan today usually has one by
+> the due date.** Submit on day 1 and you submit your own weakness. Save on day
+> 1, let it send on day 20, and you submit the scan.
+> *(The owner's own practice, written into this SOP 2026-09-22. It matches our
+> outcome data: 29 of 29 decided inquiries won.)*
+>
+> **So, for every dispute: build the evidence TODAY, press Save, and set a
+> reminder to re-check the tracking one day before the due date.** If the scan
+> arrived, add it. If the parcel is still stuck, switch to refund/accept before
+> the date passes.
+>
+> **Three things this rule does NOT excuse:**
+> 1. **The customer email never waits.** Send it today. A customer who gets an
+>    answer often withdraws the dispute, and then no evidence is needed at all.
+> 2. **A stuck parcel does not get better with time.** `InfoReceived`,
+>    `NotFound`, `Expired`, `Undelivered` → refund (inquiry) or accept
+>    (chargeback) now. Waiting only lets an inquiry escalate into a chargeback.
+> 3. **Evidence that is already complete does not wait.** A refund receipt, an
+>    address match or a delivered scan is as strong today as in two weeks —
+>    save it, and stop thinking about it.
+>
+> `tvistfakta.mjs` says this by itself: it returns **⏳ WAIT** with a
+> *"Submit no later than"* date when the parcel is still moving and there is
+> time left, instead of telling you to refund a parcel that simply has not
+> arrived yet.
 
 ### If the deadline is within 48 hours — in this order
 

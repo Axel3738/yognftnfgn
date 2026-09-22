@@ -37,6 +37,30 @@ export const arChargeback = (t) => String(t?.typ ?? '').toLowerCase() === 'charg
  * Returnerar { beslut, styrka, varfor[], bevis[], risk }.
  *   beslut: 'FIGHT' | 'REFUND' | 'ESCALATE'
  */
+/** Sista dagen vi skickar in bevis: deadline minus den här marginalen. */
+export const SKICKA_SENAST_DAGAR = 1;
+
+/**
+ * Tidsstrategin (Axels beslut 2026-09-22, ur hans egen praktik):
+ * bevis som BLIR BÄTTRE MED TIDEN skickas in så sent som det går.
+ * Paketet är i median 10 dygn på väg medan evidensfristen är ~20 dagar, så en
+ * "varan kom aldrig fram"-tvist som saknar leveransskanning i dag har oftast
+ * en om två veckor. Skickar man in på dag 1 skickar man in "vi kan inte bevisa
+ * leverans"; väntar man till dagen före deadline skickar man in skanningen.
+ *
+ * ⚠️ Gäller BARA medan paketet fortfarande rör sig. Ett paket som står stilla
+ * blir inte levererat av att man väntar — då är det bättre att återbetala
+ * direkt, för en obesvarad inquiry eskalerar till chargeback.
+ * ⚠️ Och den gäller bara INSKICKET. Kundmejlet går samma dag, alltid: en kund
+ * som får svar drar ofta tillbaka tvisten själv, och då behövs inga bevis.
+ */
+export function vantaLage({ orsak, levererad, stillastaende, harSparnummer, kvar, marginal = SKICKA_SENAST_DAGAR }) {
+  if (levererad || stillastaende || !harSparnummer) return null;   // inget mer att vänta på
+  if (!['product_not_received', 'general'].includes(String(orsak))) return null;
+  if (kvar === null || kvar === undefined) return null;            // ingen deadline läst
+  return kvar > marginal ? { kvar, senast: marginal } : null;
+}
+
 export function dom({ tvist, order, sparning, nu = new Date() } = {}) {
   const orsak = String(tvist?.orsak ?? 'general');
   // 17TRACK ger full tidsstämpel; bevistexten ska bära datumet, inte sekunder.
@@ -74,6 +98,12 @@ export function dom({ tvist, order, sparning, nu = new Date() } = {}) {
   let styrka = 'medium';
   let risk = '';
 
+  const kvar = dagarKvar(tvist?.evidensSenast, nu);
+  const vanta = vantaLage({ orsak, levererad, stillastaende, harSparnummer, kvar });
+  const senastDag = vanta && tvist?.evidensSenast
+    ? new Date(+new Date(tvist.evidensSenast) - vanta.senast * 864e5).toISOString().slice(0, 10)
+    : null;
+
   if (!harSparnummer) {
     beslut = 'ESCALATE';
     styrka = 'unknown';
@@ -88,6 +118,13 @@ export function dom({ tvist, order, sparning, nu = new Date() } = {}) {
         varfor.push('A delivery scan against the customer\'s own address is the strongest evidence we have.');
         standard();
         risk = 'Customer may claim the scan is wrong or the parcel was stolen after delivery. Still worth fighting.';
+      } else if (vanta) {
+        // Paketet rör sig och deadlinen är långt bort: det finns inget att
+        // besluta i dag. Om vi skickade in nu skickade vi in vår egen svaghet.
+        beslut = 'WAIT'; styrka = 'unknown';
+        varfor.push(`Parcel is still moving and there are ${vanta.kvar} days left — do not submit yet.`);
+        varfor.push(`Re-check the tracking on ${senastDag ?? 'the day before the deadline'} and decide then: scan by then → FIGHT, still nothing → REFUND.`);
+        risk = 'Waiting is only free if the deadline is never missed. The daily alarm lists this dispute again when it is 3 days out.';
       } else {
         beslut = 'REFUND'; styrka = 'lost';
         varfor.push('We cannot prove delivery, so we cannot win this — and we should not try.');
@@ -157,6 +194,14 @@ export function dom({ tvist, order, sparning, nu = new Date() } = {}) {
       break;
     }
     default: {
+      if (vanta) {
+        // Samma sak här: saknas skanningen och paketet rör sig är dagens dom
+        // inte värd något. Läs om spårningen strax före deadline.
+        beslut = 'WAIT'; styrka = 'unknown';
+        varfor.push(`Reason "${orsak}" with no delivery scan yet, and ${vanta.kvar} days left — re-check the tracking on ${senastDag} before deciding.`);
+        risk = 'Waiting is only free if the deadline is never missed.';
+        break;
+      }
       beslut = levererad ? 'FIGHT' : 'ESCALATE';
       styrka = levererad ? 'medium' : 'unknown';
       varfor.push(`Reason "${orsak}" has no specific playbook — submit the standard pack and read the claim text.`);
@@ -168,7 +213,10 @@ export function dom({ tvist, order, sparning, nu = new Date() } = {}) {
   if (arChargeback(tvist) && beslut === 'FIGHT') {
     risk = `${risk} This is a real CHARGEBACK, not an inquiry — the money is already gone and a loss is final.`.trim();
   }
-  return { beslut, styrka, varfor, bevis, risk };
+  // Kundmejlet väntar ALDRIG, bara inskicket. En kund som får svar drar ofta
+  // tillbaka tvisten själv, och då behövs inga bevis alls.
+  if (beslut === 'WAIT') varfor.push('Email the customer TODAY anyway — only the evidence submission waits.');
+  return { beslut, styrka, varfor, bevis, risk, skickaSenast: senastDag };
 }
 
 /** Dagar kvar till deadline. Ren. */
@@ -185,13 +233,14 @@ export function rendera({ tvist, order, sparning, domen, nu = new Date() }) {
   const nar = kvar === null ? 'no deadline read'
     : kvar < 0 ? `${Math.abs(kvar)} day(s) OVERDUE`
       : kvar === 0 ? 'DUE TODAY' : `${kvar} day(s) left`;
-  const ikon = { FIGHT: '⚔️', REFUND: '💸', ESCALATE: '🙋' }[domen.beslut] ?? '•';
+  const ikon = { FIGHT: '⚔️', REFUND: '💸', ESCALATE: '🙋', WAIT: '⏳' }[domen.beslut] ?? '•';
   const ut = [
     `${arChargeback(tvist) ? '🔴 CHARGEBACK' : 'INQUIRY'} — order ${order?.namn ?? tvist?.ordernummer}`,
     `Reason: ${tvist?.orsak}   Amount: ${tvist?.belopp} ${tvist?.valuta ?? ''}   Status: ${tvist?.status}`,
     `Evidence due: ${tvist?.evidensSenast ?? 'unknown'}  (${nar})`,
     '',
     `${ikon} DECISION: ${domen.beslut}   (case strength: ${domen.styrka})`,
+    ...(domen.skickaSenast ? [`   Submit no later than: ${domen.skickaSenast}`] : []),
     '',
     'WHY:',
     ...domen.varfor.map((v) => `  - ${v}`),

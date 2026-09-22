@@ -20,7 +20,7 @@ node kundtjanst/tvistfakta.mjs <ORDER NUMBER> --brand {{STORE_ID}}
 
 ⚠️ **Always pass `--brand {{STORE_ID}}`.** Without it the tool defaults to one specific store and will happily print facts about the wrong shop. Don't know the store ids? `node kundtjanst/run.mjs --kolla` lists them.
 
-It prints `DECISION: FIGHT | REFUND | ESCALATE`, the evidence deadline with days left, the tracking status, the refunds already on the order, and whether billing matches shipping. If the tool cannot run (no Shopify keys for this store, no network), do §2 by hand in the browser — same decision, more clicks.
+It prints `DECISION: FIGHT | REFUND | WAIT | ESCALATE`, the evidence deadline with days left, the tracking status, the refunds already on the order, and whether billing matches shipping. If the tool cannot run (no Shopify keys for this store, no network), do §2 by hand in the browser — same decision, more clicks.
 
 ### Decision table — the delivery scan decides the case
 
@@ -29,13 +29,15 @@ It prints `DECISION: FIGHT | REFUND | ESCALATE`, the evidence deadline with days
 | Tracking shows **DELIVERED**, with a date and a location | **FIGHT.** Submit the delivery scan (§5). Email the customer too (§6A). | **FIGHT.** Same evidence pack. |
 | **DELIVERED**, customer insists it never arrived | **FIGHT**, and email first (§6A + §7). Submit on time regardless. | Same. |
 | **READY_FOR_PICKUP / OUT_FOR_DELIVERY** — the parcel is at a named place | Email the customer the pickup location (§6B). Save the evidence, submit on the due date. | Same. |
-| **IN_TRANSIT**, still moving, deadline more than 3 days away | **HOLD.** Email the customer (§6B), save the evidence, re-run the tool the day before the deadline. A delivery scan may still land. | Same. |
+| **IN_TRANSIT**, still moving, deadline more than 1 day away | **⏳ WAIT — this is the normal case, not a problem.** Email the customer today (§6B), build the evidence and press **Save** (never *Submit now*), then re-run the tool the day before the deadline. The parcel takes about 10 days and the window is up to 21, so the scan usually lands in time — that is how these are won. | Same. |
 | **IN_TRANSIT / CONFIRMED (InfoReceived)** and the deadline is here, still no delivery scan | **DO NOT FIGHT. Refund in full** (§4). A full refund ends an inquiry. | **DO NOT FIGHT. Accept** (§4). You cannot refund a chargeback. |
 | Tracking shows **NotFound / Expired / Exception** and no delivery scan | Refund in full. | Accept. |
 | **No tracking number on the order at all** | Refund in full, then escalate the order (§8) — fulfilment is broken. | Accept, then escalate (§8). |
 | Order value is **below {{FIGHT_THRESHOLD}} {{CURRENCY}}** and we have no delivery scan | Refund. Don't spend an hour on it. | Accept. |
 | The deadline is **today or overdue** | See §5 "Timing". Overdue: nothing can be submitted, log it and move on. | Same. |
 | Order number not found in this store | §8, first row. Do **not** conclude "wrong store" before you've read that row. | Same. |
+
+**Before that rule, one line that decides more cases than it does:** *no scan yet* is not *no scan*. While the parcel is still moving you **wait and save**, and you only give up on the day the window closes.
 
 **The one-sentence rule:** no delivery scan, no fight. We cannot prove delivery that did not happen, and losing costs the fee on top of the goods.
 

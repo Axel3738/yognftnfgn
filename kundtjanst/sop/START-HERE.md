@@ -37,7 +37,7 @@ Supporting files, used from inside the reason files — do not start here:
 | **60-ESCALATION.md** | What you decide yourself, what you hand to the owner, and how you write it |
 | `orders/` | One decision sheet per order we have handled — read the ones like yours |
 
-## 2. The three rules that matter most
+## 2. The four rules that matter most
 
 > **RULE 1 — A CHARGEBACK COMES BEFORE AN INQUIRY, ALWAYS.**
 > An **inquiry** is the bank asking a question; the money is still ours and we can
@@ -68,14 +68,26 @@ Supporting files, used from inside the reason files — do not start here:
 > also what the customer gets — with the store parcel number, never the carrier
 > number (00-MASTER.md §6).
 
-> **RULE 3 — FIGHTING A DISPUTE WE DESERVE TO LOSE IS WORSE THAN REFUNDING IT.**
+> **RULE 3 — SUBMIT LAST. SAVE TODAY, LET SHOPIFY SEND ON THE DUE DATE.**
+> Never click **Submit now** — that locks the response. Press **Save** and keep
+> editing until the due date. For *"product not received"* the evidence gets
+> better while you wait: a parcel takes about 10 days, the evidence window is up
+> to 21, so a dispute with **no delivery scan today usually has one by the due
+> date**. Submit on day 1 and you submit our own weakness.
+> Two limits: **the customer email never waits** (send it today — a customer who
+> gets an answer often withdraws the dispute), and **a stuck parcel never gets
+> better** (`InfoReceived`, `NotFound`, `Expired` → refund or accept now, before
+> an inquiry escalates into a chargeback).
+> *(The owner's own practice, written in 2026-09-22.)*
+
+> **RULE 4 — FIGHTING A DISPUTE WE DESERVE TO LOSE IS WORSE THAN REFUNDING IT.**
 > If we cannot show a delivery scan, or we really did promise a refund, or the
 > fault in the product is real — **refund and close it**. It is faster, it costs
 > less than losing, and it keeps the store's dispute rate down. Every reason file
 > tells you plainly where that line is. Submitting weak evidence "just in case" is
 > not free.
 
-When the three rules do not give you an answer: choose **ESCALATE**, write what you
+When the four rules do not give you an answer: choose **ESCALATE**, write what you
 found in the decision sheet, and hand it to the owner. Guessing on a dispute costs
 real money; asking costs one message. **60-ESCALATION.md** says exactly which
 cases those are, and what the message looks like — including the one rule that
@@ -106,16 +118,18 @@ it**. The alarm lists chargebacks first, then the nearest deadline.
    address matches the shipping address, and a suggested decision.
 4. **Open the reason file** from the routing table above and follow its decision
    table. The file, not the tool, is what you follow — the tool only supplies facts.
-5. **Act:** FIGHT (build the pack in 40-EVIDENCE-PACK.md and submit in Shopify),
-   REFUND (refund in Shopify and close), or ESCALATE (hand to the owner, today,
-   not tomorrow).
+5. **Act:** FIGHT (build the pack in 40-EVIDENCE-PACK.md, then **Save** in Shopify
+   — never *Submit now*), ⏳ WAIT (build and Save it anyway, and re-check the
+   tracking the day before the due date), REFUND (refund in Shopify and close),
+   or ESCALATE (hand to the owner, today, not tomorrow).
 6. **Email the customer** when the reason file says to, using 30-EMAIL-TEMPLATES.md.
    A customer who gets an answer often withdraws the dispute themselves.
 7. **Write the decision sheet** in `orders/` — one short file per order: what the
    facts were, what you decided, why. That is how the next VA learns, and how we
    know what actually works.
-8. **Submit before the due date.** Never wait for the Monday report. A deadline that
-   passes is the one way to lose a case we could have won.
+8. **Never let a due date pass.** Save the response the same day you get the
+   dispute, so Shopify sends it even if you are ill — then improve it until the
+   date. A deadline that passes is the one way to lose a case we could have won.
 
 Nothing in this folder requires the owner's approval. Escalate a judgment call, not
 the routine work.

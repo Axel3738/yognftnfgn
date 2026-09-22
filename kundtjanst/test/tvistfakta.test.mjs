@@ -155,3 +155,63 @@ test('utskriften är engelsk, bär beslutet först och pekar på SOP:en', () => 
   assert.match(text, /kundtjanst\/sop\/00-MASTER\.md/);
   assert.ok(!/[åäöÅÄÖ]/.test(text), `svensk text i VA-utskriften:\n${text}`);
 });
+
+// Tidsstrategin (Axels beslut 2026-09-22): bevis som blir bättre med tiden
+// skickas in sist. Före den här regeln sa verktyget REFUND på ett paket som
+// bara inte hunnit fram än — alltså gav vi bort pengar vi hade vunnit.
+test('paket på väg + gott om tid = WAIT, inte REFUND', () => {
+  const d = dom({
+    tvist: { orsak: 'product_not_received', typ: 'inquiry', evidensSenast: '2026-10-10' },
+    order: { total: 348 },
+    sparning: { nummer: 'YT1', huvudstatus: 'InTransit' },
+    nu: new Date('2026-09-22T09:00:00Z'),
+  });
+  assert.equal(d.beslut, 'WAIT');
+  assert.equal(d.skickaSenast, '2026-10-09', 'dagen före deadline');
+  assert.match(d.varfor.join(' '), /still moving and there are 18 days left/);
+  assert.match(d.varfor.join(' '), /Email the customer TODAY/);
+});
+
+test('samma paket dagen före deadline: vänta inte mer, döm på det som finns', () => {
+  const bas = { orsak: 'product_not_received', typ: 'inquiry' };
+  const sparning = { nummer: 'YT1', huvudstatus: 'InTransit' };
+  const nu = new Date('2026-09-22T09:00:00Z');
+  const igen = dom({ tvist: { ...bas, evidensSenast: '2026-09-23' }, order: { total: 348 }, sparning, nu });
+  assert.equal(igen.beslut, 'REFUND', 'en dag kvar ⇒ marginalen är slut');
+  const kom = dom({
+    tvist: { ...bas, evidensSenast: '2026-09-23' }, order: { total: 348 },
+    sparning: { ...sparning, levereratDatum: '2026-09-20', huvudstatus: 'Delivered' }, nu,
+  });
+  assert.equal(kom.beslut, 'FIGHT', 'skanningen hann fram — det är hela poängen med att vänta');
+});
+
+test('stillastående paket väntar aldrig — det blir inte levererat av tid', () => {
+  const d = dom({
+    tvist: { orsak: 'product_not_received', typ: 'inquiry', evidensSenast: '2026-10-10' },
+    order: { total: 348 },
+    sparning: { nummer: 'YT1', huvudstatus: 'InfoReceived', sistaHandelse: '2026-08-20' },
+    nu: new Date('2026-09-22T09:00:00Z'),
+  });
+  assert.equal(d.beslut, 'REFUND');
+  assert.equal(d.skickaSenast, null);
+});
+
+test('vänteregeln gäller bara tidsberoende bevis, aldrig en redan betald återbetalning', () => {
+  const d = dom({
+    tvist: { orsak: 'credit_not_processed', typ: 'inquiry', evidensSenast: '2026-10-10' },
+    order: { total: 348, aterbetalningar: [{ belopp: 348 }] },
+    sparning: { nummer: 'YT1', huvudstatus: 'InTransit' },
+    nu: new Date('2026-09-22T09:00:00Z'),
+  });
+  assert.equal(d.beslut, 'FIGHT', 'kvittot finns redan — väntan tillför ingenting och bara riskerar deadlinen');
+});
+
+test('utan deadline vet vi inte hur länge vi kan vänta — då väntar vi inte', () => {
+  const d = dom({
+    tvist: { orsak: 'product_not_received', typ: 'inquiry', evidensSenast: null },
+    order: { total: 348 },
+    sparning: { nummer: 'YT1', huvudstatus: 'InTransit' },
+    nu: new Date('2026-09-22T09:00:00Z'),
+  });
+  assert.equal(d.beslut, 'REFUND');
+});
