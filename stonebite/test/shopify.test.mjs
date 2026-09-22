@@ -145,3 +145,48 @@ test('forklaraNyckelfel är ren och forklaraFel behåller den meningen i ställe
   // Det råa Shopify-felet (utan vår mening) får fortfarande den generella förklaringen.
   assert.match(forklaraFel('Shopify svarade 403: {"errors":"[API] This action requires merchant approval for read_orders scope."}').text, /Protected customer data access/);
 });
+
+// ---------------------------------------------------------------- av-registret
+//
+// Axel 2026-09-22: "Jag säljer inget på beavershop" — UK ska inte stå som
+// saknad. stonebite/butiker-av.json märker butiken `av`: inget anrop, egen
+// status, aldrig en "stängd dörr".
+
+test('en butik i butiker-av.json upptäcks men hämtas inte — status av med orsaken, noll anrop', async () => {
+  const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const { upptackButiker, hamtaAlla } = await import('../kallor/shopify.mjs');
+  const rot = mkdtempSync(join(tmpdir(), 'sb-av-'));
+  try {
+    mkdirSync(join(rot, 'stonebite'), { recursive: true });
+    writeFileSync(join(rot, 'stonebite', 'butiker-av.json'), JSON.stringify({ av: { uk: { namn: 'BeaverShop UK', myshopify: '1wucum-x0.myshopify.com', orsak: 'Axel: säljer inget här.' } } }));
+    const env = {
+      SHOPIFY_SHOP_UK: '1wucum-x0.myshopify.com', SHOPIFY_CLIENT_ID_UK: 'id-uk', SHOPIFY_CLIENT_SECRET_UK: 'hemlig-uk',
+      SHOPIFY_SHOP_NO: 'norge.myshopify.com', SHOPIFY_CLIENT_ID_NO: 'id-no', SHOPIFY_CLIENT_SECRET_NO: 'hemlig-no',
+    };
+    const butiker = upptackButiker(rot, env);
+    const uk = butiker.find((b) => b.myshopify === '1wucum-x0.myshopify.com');
+    assert.equal(uk.av, true);
+    assert.equal(uk.namn, 'BeaverShop UK', 'registrets namn när Shopify inte får säga sitt');
+    assert.equal(butiker.find((b) => b.myshopify === 'norge.myshopify.com').av, undefined);
+
+    let anrop = 0;
+    const fetchFn = async () => { anrop++; return svar(200, JSON.stringify({ access_token: 't', shop: { name: 'Norge', currency: 'NOK' }, orders: [] })); };
+    const rader = await hamtaAlla([uk], { env, fetchFn, nu: NU });
+    assert.equal(anrop, 0, 'en avstängd butik kostar inget anrop');
+    assert.equal(rader[0].status, 'av');
+    assert.equal(rader[0].orsak, 'Axel: säljer inget här.');
+    assert.equal(rader[0].namn, 'BeaverShop UK');
+  } finally {
+    rmSync(rot, { recursive: true, force: true });
+  }
+});
+
+test('en butik som INTE står i registret rörs inte av det — och saknas filen är kartan tom', async () => {
+  const { lasAvstangda, upptackButiker } = await import('../kallor/shopify.mjs');
+  assert.equal(lasAvstangda('/finns/inte').size, 0);
+  const b = upptackButiker('/finns/inte', { SHOPIFY_SHOP_SE: DOMAN, SHOPIFY_CLIENT_ID_SE: 'a', SHOPIFY_CLIENT_SECRET_SE: 'b' });
+  assert.equal(b.length, 1);
+  assert.equal(b[0].av, undefined);
+});

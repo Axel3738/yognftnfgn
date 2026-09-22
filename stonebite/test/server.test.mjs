@@ -423,6 +423,32 @@ test('kundsupporten (VA och Head of support) ser aldrig dagens försäljning, re
   }
 });
 
+/**
+ * Minutservern på Railway skriver loggen på volymen (STONEBITE_DATA/autosvar/logg),
+ * inte i repot. Sajten måste läsa den LIVE — en arg kund ska synas inom minuten,
+ * inte vid nästa timhämtning. Här landar en rad på "volymen" (tmp) och sidan
+ * visar den direkt, utan snapshot.
+ */
+test('en arg kund i volymens logg syns på Kundtjänst direkt — utan ny snapshot', async () => {
+  const { mkdirSync, writeFileSync: skriv, rmSync: ta } = await import('node:fs');
+  const mapp = join(tmp, 'autosvar', 'logg');
+  mkdirSync(mapp, { recursive: true });
+  const rad = { tid: new Date().toISOString(), brand: 'baverbutiken', messageId: '<t1@test>', uid: 4242, hink: 'ARG', kategori: 'fel_vara', ordernummer: ['4242'], kund: 'ka***@gmail.com', sprak: 'sv', amne: 'Fel vara', atgard: 'utkast', torr: true, flaggad: true, flyttad: 'INBOX.VA-PRIO', orsak: 'som på bilden', x: 'som_pa_bilden' };
+  skriv(join(mapp, 'baverbutiken.jsonl'), `${JSON.stringify(rad)}\n`);
+  try {
+    const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+    const html = await (await hamta('/app/kundtjanst', kaka)).text();
+    assert.match(html, /#4242/, 'raden ur volymen står på sidan');
+    assert.match(html, /draft — not sent/);
+    assert.match(html, /INBOX\.VA-PRIO/);
+    assert.doesNotMatch(html, /ka\*\*\*@gmail\.com/, 'kundens adress visas inte');
+    const halsa = await (await hamta('/halsa')).json();
+    assert.equal(halsa.autosvar, null, 'vakten är av i testet (AUTOSVAR_BRANDS tomt) och /halsa säger det');
+  } finally {
+    ta(join(tmp, 'autosvar'), { recursive: true, force: true });
+  }
+});
+
 test('Kundtjänst-sidan bär autosvarsblocket för VA:n — igång eller inte, det står', async () => {
   const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
   const html = await (await hamta('/app/kundtjanst', kaka)).text();

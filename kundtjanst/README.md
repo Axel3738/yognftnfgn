@@ -171,6 +171,23 @@ butik via `autosvar/oversikt.mjs` — aldrig omräknat på sidan — plus mappen
 (`rapportsida.mjs` → `hamtaVaKo`, läs-bara). Utkast (`torr: true`) visas som
 utkast, aldrig som skickat.
 
+**Var boten kör — Railway, inte en rutin (Axels krav 2026-09-22: "svara arga
+kunder på 60 sekunder … måste ligga och skanna hela tiden").** En rutin på
+claude.ai kör som tätast en gång i timmen. Minutservern (`--loop 60`) körs
+därför som barnprocess av sajtens server på Railway
+(`stonebite/autosvar-vakt.mjs`): på när `AUTOSVAR_BRANDS` är satt på
+tjänsten, torrt tills `AUTOSVAR_LAGE=skarpt`, omstart med växande paus när
+den dör, startar inte alls om `KUNDTJANST_MAIL_PASS_<ID>` saknas (och säger
+vilket). Loggen — minnet "ett svar per tråd någonsin" — skrivs på volymen via
+**`AUTOSVAR_LOGGMAPP`** (`autosvar/logg.mjs` läser variabeln; standard
+`<STONEBITE_DATA>/autosvar/logg`), så den överlever varje deploy, och
+stonebite.org läser samma mapp live: de arga kunderna står på Kundtjänst
+inom minuten. `/halsa` på sajten visar `autosvar.kor`. Slås på med Cowork:
+`stonebite/cowork/5-autosvar.txt`. ⛔ När vakten är på kör ingen session
+`autosvar.mjs` mot samma brevlåda för hand — två kopior är ett dubbelsvar.
+Repots logg (`kundtjanst/autosvar/logg/`) är sessionskörningarnas historik;
+Railways logg committas inte.
+
 Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
 själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
 

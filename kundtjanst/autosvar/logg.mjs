@@ -16,7 +16,13 @@ import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { maskeraAdress } from '../maskera.mjs';
 
-export const LOGGMAPP = join(dirname(fileURLToPath(import.meta.url)), 'logg');
+// Standard: repots mapp (committas av rutinen). På Railway, där minutservern
+// bor, ligger loggen på volymen i stället — annars dör minnet med varje deploy
+// och "ett svar per tråd någonsin" håller bara tills nästa version. Sätts med
+// AUTOSVAR_LOGGMAPP (stonebite/autosvar-vakt.mjs pekar den på STONEBITE_DATA).
+export const LOGGMAPP = process.env.AUTOSVAR_LOGGMAPP
+  ? process.env.AUTOSVAR_LOGGMAPP
+  : join(dirname(fileURLToPath(import.meta.url)), 'logg');
 
 /**
  * Kundens adress som ett kort, oåterkalleligt id (sha256, 12 hex). Loggen

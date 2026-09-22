@@ -1,0 +1,60 @@
+Jag vill slå på kundtjänstboten (autosvaret) på min Railway-tjänst så att den
+snurrar dygnet runt. Koden ligger redan i tjänsten — det som saknas är
+miljövariabler och en bevakning av att den startar. Gör allt i den här fliken
+och fråga mig om inloggning när du behöver den. Jag klistrar in de hemliga
+värdena själv när du ber om dem — skriv dem aldrig i din rapport.
+
+Tjänsten: Railway → projekt strong-solace → tjänst yognftnfgn (branch main,
+volym på /data). Den kör redan sajten med npm start.
+
+STEG 1 — miljövariabler (Variables på tjänsten).
+Lägg in dessa. De fyra första är inställningar, de fem sista är nycklar som jag
+ger dig när du frågar (de finns i mitt Claude-konto under Environments och heter
+exakt likadant där):
+
+  AUTOSVAR_BRANDS   baverbutiken
+  AUTOSVAR_LAGE     torr
+  AUTOSVAR_LOOP     60
+  AUTOSVAR_DISCORD  0
+
+  KUNDTJANST_MAIL_PASS_BAVERBUTIKEN          (lösenordet till supportbrevlådan)
+  SHOPIFY_SHOP_BAVERBUTIKEN_EMAILSCRAPER     4snrw0-mg.myshopify.com
+  SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER
+  SHOPIFY_CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER
+  TRACK17_API_KEY
+
+"torr" betyder att boten bara skriver UTKAST i brevlådans Drafts och inte
+skickar något. Ändra INTE till skarpt — det gör jag själv när jag är nöjd.
+Rör inte STONEBITE_HEMLIGHET, STONEBITE_DATA eller STONEBITE_ANVANDARE.
+
+STEG 2 — Watch Paths.
+Settings → Watch Paths innehåller i dag stonebite/**, bonus/** och
+package.json. Lägg till raden kundtjanst/** så att ändringar i boten också
+deployas.
+
+STEG 3 — deploya om och kontrollera.
+Starta en ny deploy (Deployments → Redeploy på senaste). Öppna sedan Deploy
+Logs och leta efter en rad som börjar "autosvar-vakt:". Den ska säga
+"minutservern igång — TORR, var 60:e sekund, baverbutiken". Står det i stället
+"startar INTE — mejllösenordet saknas" så saknas KUNDTJANST_MAIL_PASS_BAVERBUTIKEN
+— kolla stavningen i Variables och deploya om.
+
+Kontrollera sedan tre saker och skriv resultatet i rapporten:
+
+  1. https://www.stonebite.org/halsa svarar med JSON där "autosvar" INTE är
+     null utan innehåller "kor": true och "lage": "torr".
+  2. Vänta två minuter och läs Deploy Logs igen: det ska komma rader från
+     boten var 60:e sekund (den skriver vad den läste och hoppade över).
+  3. Logga INTE in på sajten och rör INTE brevlådan — det räcker med /halsa och
+     loggarna.
+
+RAPPORTERA TILL SIST:
+  - vilka variabler du lade in (bara namnen, aldrig värdena)
+  - att kundtjanst/** står i Watch Paths
+  - raden "autosvar-vakt: …" ur loggen, ordagrant
+  - svaret från /halsa, ordagrant
+  - om något inte gick: exakt vad loggen sa
+
+Viktigt: den här boten svarar riktiga kunder. Ändra inga andra variabler,
+starta inga andra tjänster och kör aldrig boten för hand någon annanstans
+samtidigt — två kopior mot samma brevlåda kan ge en kund två svar.

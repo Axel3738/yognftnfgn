@@ -498,7 +498,19 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   skickade, 3 utkast, 2 arga**, ingen rutin på något konto jag ser, och
   miljön här saknar `KUNDTJANST_MAIL_PASS_*` så en rutin här hade inte
   kunnat köra den. Axels ordning gäller fortfarande: 20 utkast i rad rätt →
-  `--skarpt`.
+  `--skarpt`. **Var boten ska köra (Axels krav samma kväll: "svara arga
+  kunder på 60 sekunder … måste ligga och skanna hela tiden"):** en rutin på
+  claude.ai kör som tätast en gång i timmen, så minutservern körs på
+  **Railway**, där sajten redan snurrar dygnet runt —
+  `stonebite/autosvar-vakt.mjs` startar `autosvar.mjs --loop 60` som
+  barnprocess av servern när `AUTOSVAR_BRANDS` är satt, torrt tills
+  `AUTOSVAR_LAGE=skarpt`, omstart med växande paus, loggen på volymen
+  (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) och sajten
+  läser den live — en arg kund syns på Kundtjänst inom minuten. `/halsa`
+  visar `autosvar.kor`. Slås på med `stonebite/cowork/5-autosvar.txt`
+  (Axel klistrar in nycklarna själv). ⛔ När vakten är på kör ingen session
+  `autosvar.mjs` mot samma brevlåda för hand — dubbelsvar. 5 tester i
+  `stonebite/test/autosvar-vakt.test.mjs`.
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
   403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`
@@ -516,10 +528,15 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   rapporteras, och felet namnger då både appen och de tre variabler som
   hade löst det (`forklaraNyckelfel`, 8 tester i `test/shopify.test.mjs`).
   Kvar för Axel: lägg in `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_SE_BAVER_SE`
-  i den miljön (eller godkänn kunddata för `_SE`-appen), och samma
-  godkännande för UK-appen. OPS-butikerna är nedlagda utom CaraShell —
-  de står med orsak på sidan Butiker, det är Axels beslut om de ska
-  installeras om eller tas bort ur miljön.
+  i den miljön (eller godkänn kunddata för `_SE`-appen) — på hans lista
+  2026-09-22 kväll. **UK är AVSTÄNGD med flit** (Axel samma kväll: "Jag
+  säljer inget på beavershop"): registret **`stonebite/butiker-av.json`**
+  märker butiken `av` med orsak — den hämtas inte, räknas varken som läst
+  eller saknad, och står under "Avstängda med flit" på sidan Butiker. Lägg
+  aldrig en butik där utan Axels ord; ta bort raden när butiken ska säljas i
+  igen. OPS-butikerna är nedlagda utom CaraShell — de står med orsak på
+  sidan Butiker, det är Axels beslut om de ska installeras om, tas bort ur
+  miljön eller läggas i av-registret.
 - ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
   för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
 
