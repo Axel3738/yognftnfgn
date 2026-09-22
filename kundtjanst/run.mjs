@@ -131,7 +131,7 @@ export function datumUrRa(ra) {
   return tolkaDatum(tolkaRubriker(rubrikblock).get('date'));
 }
 
-async function lasViaImap(konfig, period, logg) {
+export async function lasViaImap(konfig, period, logg) {
   const klient = new ImapKlient({ host: konfig.mail.host, port: konfig.mail.port, user: konfig.mail.user, pass: konfig.mail.pass, logg });
   try {
     await klient.anslut();
@@ -152,7 +152,7 @@ async function lasViaImap(konfig, period, logg) {
   }
 }
 
-async function lasViaWebmail(konfig, period, logg) {
+export async function lasViaWebmail(konfig, period, logg) {
   const klient = new WebmailKlient({ url: konfig.mail.webmail, user: konfig.mail.user, pass: konfig.mail.pass, logg });
   try {
     await klient.loggaIn();
