@@ -69,6 +69,7 @@ Fält per rad (alla finns inte på alla rader):
 | `till` | mottagaren av svaret, maskerad |
 | `x` | ARG: vilken problemmening kunden fick (`som_pa_bilden`, `kvalitet`, `ej_levererad`, `vantat` …) |
 | `lage`, `retur`, `opostadDagar`, `behoverOrdernummer` | ARG: om svaret bar spårningsläget, returinformationen, "opostad i N dagar", frågan efter ordernumret |
+| `fotonTyp` | när svaret ber om bilder: `vara` (varan har slutat fungera ⇒ bild/video på felet) eller `leverans` (transportskada/fel vara ⇒ varan, förpackningen, fraktetiketten) |
 | `fakta` | varifrån faktan kom (`["Shopify #7123 på e-post", "17TRACK InTransit · sista biten DHL"]`) |
 | `tradnyckel`, `tradIds` | trådens nyckel (hashad) och Message-ID:n i tråden |
 
