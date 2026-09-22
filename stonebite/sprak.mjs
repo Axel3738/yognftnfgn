@@ -339,6 +339,7 @@ const ORDBOK = {
   'skickar svar — men stod stilla senaste dygnet': 'sending replies — but idle for the last 24 h',
   'bara utkast — inget skickas': 'drafts only — nothing is sent',
   'inget svar skrivet': 'no reply written',
+  'kunde inte skriva i brevlådan': 'could not write to the mailbox',
   'Senaste körning': 'Last run',
   'Har aldrig kört': 'Has never run',
   'Arga kunder': 'Angry customers',

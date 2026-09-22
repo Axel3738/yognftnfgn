@@ -489,16 +489,27 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   aldrig omräknade). `vy/drift.mjs autosvarBlock` visar det på **Kundtjänst**
   (det VA:n ser), i varumärkets Kundtjänst-flik och som rader i **Kräver dig
   i dag** (arga kunder senaste dygnet): per butik läget i klartext — *skickar
-  svar* / *bara utkast — inget skickas* / *inget svar skrivet*, senaste
-  körning, mejl lästa, skickade, utkast, till VA:n — och **listan över arga
+  svar* / *bara utkast — inget skickas* / *inget svar skrivet* / **kunde inte
+  skriva i brevlådan** (rött; loggrader med `atgard: fel` — en bot som inte
+  FÅR skriva i Roundcube såg annars ut som en som inget hade att skriva),
+  senaste körning, mejl lästa, skickade, utkast, till VA:n, skrivfel — och **listan över arga
   kunder** (när, butik, order, vad kunden var arg över, botens svar som
   utkast/skickat, flaggad, mappen). Ingen logg ⇒ "har inte kört", aldrig
   noll. **Mätt 2026-09-22 18:40 UTC: boten är INTE igång** — bara
   Bäverbutiken har logg, 5 körningar, senaste 08:15 UTC, 102 mejl, **0
   skickade, 3 utkast, 2 arga**, ingen rutin på något konto jag ser, och
   miljön här saknar `KUNDTJANST_MAIL_PASS_*` så en rutin här hade inte
-  kunnat köra den. Axels ordning gäller fortfarande: 20 utkast i rad rätt →
-  `--skarpt`. **Var boten ska köra (Axels krav samma kväll: "svara arga
+  kunnat köra den. ✅ **Igång på Railway sedan 2026-09-22 23:30 CEST** (PR
+  #124 mergad, Axel lade in de åtta variablerna på tjänsten): `/halsa` svarar
+  `autosvar.kor: true`, `lage: torr`, `host: Railway`, 0 omstarter (mätt fyra
+  gånger 23:31–23:34), och sajtens Kundtjänst-flik visade första varvet 15
+  min senare: **50 mejl lästa, 0 skickade, 0 utkast, 47 till VA:n, 0 arga** —
+  flaggningen skrevs alltså i Roundcube från Railway, skrivvägen fungerar
+  därifrån. 0 utkast är rätt: kalibreringsnattens utkast ligger redan i
+  Drafts, så trådarna räknas som besvarade. ⚠️ Volymloggen börjar tom —
+  minnet "ett svar per tråd någonsin" bärs där av Skickat + Drafts, inte av
+  repots `kundtjanst/autosvar/logg/`. Axels ordning gäller fortfarande: 20
+  utkast i rad rätt → `AUTOSVAR_LAGE=skarpt` på Railway + Redeploy. **Var boten ska köra (Axels krav samma kväll: "svara arga
   kunder på 60 sekunder … måste ligga och skanna hela tiden"):** en rutin på
   claude.ai kör som tätast en gång i timmen, så minutservern körs på
   **Railway**, där sajten redan snurrar dygnet runt —

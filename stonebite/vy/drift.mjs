@@ -62,9 +62,13 @@ export function autosvarLage(b, nu = new Date()) {
   const a = b?.antal ?? {};
   const senast = b?.senasteKorning ? new Date(b.senasteKorning).getTime() : null;
   const stilla = senast === null || nu.getTime() - senast > DAG;
-  if ((a.svar ?? 0) > 0) return { ton: stilla ? 'varning' : 'bra', ord: stilla ? 'skickar svar — men stod stilla senaste dygnet' : 'skickar svar', skarpt: true, stilla };
-  if ((a.utkast ?? 0) > 0) return { ton: 'varning', ord: 'bara utkast — inget skickas', skarpt: false, stilla };
-  return { ton: 'neutral', ord: 'inget svar skrivet', skarpt: false, stilla };
+  // Fel = boten kunde inte skriva i brevlådan (utkast, flagga, flytt). Utan den
+  // raden ser en bot som inte FÅR skriva (Loopia nekar Railways adress, fel
+  // lösenord) exakt ut som en bot som inte HADE något att skriva.
+  if ((a.fel ?? 0) > 0) return { ton: 'kritisk', ord: 'kunde inte skriva i brevlådan', skarpt: (a.svar ?? 0) > 0, stilla, fel: a.fel };
+  if ((a.svar ?? 0) > 0) return { ton: stilla ? 'varning' : 'bra', ord: stilla ? 'skickar svar — men stod stilla senaste dygnet' : 'skickar svar', skarpt: true, stilla, fel: 0 };
+  if ((a.utkast ?? 0) > 0) return { ton: 'varning', ord: 'bara utkast — inget skickas', skarpt: false, stilla, fel: 0 };
+  return { ton: 'neutral', ord: 'inget svar skrivet', skarpt: false, stilla, fel: 0 };
 }
 
 /**
@@ -90,8 +94,8 @@ export function autosvarBlock(autosvar, { nu = new Date(), namnFor = (id) => id,
       varde: `${tal(a.ARG ?? 0)} <span class="mini">${esc(t('arga kunder'))}</span>`,
       text: true,
       forklaring: en
-        ? `${tal(a.mejl ?? 0)} emails read in ${dagar} days · ${tal(a.svar ?? 0)} sent · ${tal(a.utkast ?? 0)} drafts · ${tal(a.tillVa ?? 0)} handed to the VA without a reply.`
-        : `${tal(a.mejl ?? 0)} mejl lästa på ${dagar} dagar · ${tal(a.svar ?? 0)} skickade · ${tal(a.utkast ?? 0)} utkast · ${tal(a.tillVa ?? 0)} till VA:n utan svar.`,
+        ? `${tal(a.mejl ?? 0)} emails read in ${dagar} days · ${tal(a.svar ?? 0)} sent · ${tal(a.utkast ?? 0)} drafts · ${tal(a.tillVa ?? 0)} handed to the VA without a reply.${(a.fel ?? 0) > 0 ? ` <strong>${tal(a.fel)} write errors</strong> — see the VA list.` : ''}`
+        : `${tal(a.mejl ?? 0)} mejl lästa på ${dagar} dagar · ${tal(a.svar ?? 0)} skickade · ${tal(a.utkast ?? 0)} utkast · ${tal(a.tillVa ?? 0)} till VA:n utan svar.${(a.fel ?? 0) > 0 ? ` <strong>${tal(a.fel)} skrivfel</strong> — se VA-listan.` : ''}`,
       status: status(lage.ton, lage.ord),
       fot: b.senasteKorning ? `${t('Senaste körning')} ${sedan(b.senasteKorning)}` : t('Har aldrig kört'),
     });

@@ -68,10 +68,31 @@ test('Kundtjänst-sidan visar autosvaret även utan veckorapport: läget i klart
 
 test('en bot som skickat riktiga svar får grönt — och står stilla efter ett dygn utan körning', () => {
   const skarpt = autosvar({ arga: [ARG_SKICKAT], svar: 4, utkast: 0, senaste: '2026-09-22T17:00:00.000Z' }).brands.baverbutiken;
-  assert.deepEqual(autosvarLage(skarpt, NU), { ton: 'bra', ord: 'skickar svar', skarpt: true, stilla: false });
+  assert.deepEqual(autosvarLage(skarpt, NU), { ton: 'bra', ord: 'skickar svar', skarpt: true, stilla: false, fel: 0 });
   const stilla = autosvar({ arga: [ARG_SKICKAT], svar: 4, utkast: 0, senaste: '2026-09-20T17:00:00.000Z' }).brands.baverbutiken;
   assert.equal(autosvarLage(stilla, NU).ord, 'skickar svar — men stod stilla senaste dygnet');
   assert.equal(autosvarLage({ antal: { svar: 0, utkast: 0 }, senasteKorning: null }, NU).ord, 'inget svar skrivet');
+});
+
+test('skrivfel vinner över allt annat — en bot som inte FÅR skriva ser annars ut som en som inget hade att skriva', () => {
+  sattSprak('sv');
+  const lage = autosvarLage({ antal: { svar: 0, utkast: 0, fel: 4 }, senasteKorning: '2026-09-22T17:00:00.000Z' }, NU);
+  assert.equal(lage.ton, 'kritisk');
+  assert.equal(lage.ord, 'kunde inte skriva i brevlådan');
+  assert.equal(lage.fel, 4);
+  const a = autosvar({ arga: [], utkast: 0 });
+  a.brands.baverbutiken.antal.fel = 4;
+  const html = autosvarBlock(a, { nu: NU, namnFor: () => 'Bäverbutiken' });
+  assert.match(html, /4 skrivfel/);
+  assert.match(html, /kunde inte skriva i brevlådan/);
+  assert.doesNotMatch(html, /inget svar skrivet/);
+  sattSprak('en');
+  const enHtml = autosvarBlock(a, { nu: NU, namnFor: () => 'Bäverbutiken' });
+  assert.match(enHtml, /4 write errors/);
+  assert.match(enHtml, /could not write to the mailbox/);
+  sattSprak('sv');
+  // Utan fel: raden finns inte alls.
+  assert.doesNotMatch(autosvarBlock(autosvar(), { nu: NU }), /skrivfel/);
 });
 
 test('ingen logg ⇒ "har inte kört", aldrig noll — och blocket finns ändå', () => {
