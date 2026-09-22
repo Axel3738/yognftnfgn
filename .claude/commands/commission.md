@@ -162,6 +162,7 @@ med av sig själva:
   `commission/run.mjs` avbryter numera om en hubb ur `products.json` saknas, och
   om körningen hittar noll godkända rader. Gå aldrig runt de spärrarna.
 - ⚠️ Hoppa över hubbar vars id står i `factory/produkter/register.json` (OPS-butikernas hubbar — egen rutin, eget konto). Lista: `node tools/lib/ops-hubbar.mjs`. `run.mjs` filtrerar jobbfilen på samma id:n och loggar "OPS-hubbar undantagna: N".
+- ⚠️ Jobbfilen ska bära ALLA SE-hubbar i `commission/hubbar.json` (golvet — 23 st sedan 2026-09-22, då fyra BÄVER-hubbar utan "creative hub" i titeln lades till: Taköverdraget, Termoskyddet, IBC-Tanköverdraget, Adventskalendern), annars stoppar `run.mjs` med "Hubbar som products.json känner till saknas". Mätt 2026-09-22 med `NOTION_TOKEN` i rutincontainern: nio av golvets hubbar svarar 404 (Boat cover 420D, Beach crocs, Trimmer belt, Mower seat, Men's Plush Slippers, prank apron, golf grill kit, Gravstenspenna, Smiley face) — integrationen är inte inbjuden dit, så REST-vägen stannar i nödbromsen tills Axel bjuder in den eller hubbarna märks arkiverade i filen.
 - Hämta varje hubbs `collection://`-URL med `fetch` på databas-id:t.
 
 Per hubb, en fråga:
