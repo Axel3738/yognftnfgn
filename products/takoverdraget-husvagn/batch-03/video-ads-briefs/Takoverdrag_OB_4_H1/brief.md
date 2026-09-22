@@ -1,4 +1,4 @@
-# Takoverdrag_OB_2_H1 — objection: "it'll just trap the damp"
+# Takoverdrag_OB_4_H1 — objection: "it'll just trap the damp"
 
 **Make:** a 20-second video that agrees with the objection before answering it.
 **Why:** this is the first ad on this product built on a documented belief barrier rather than a guessed angle. The objection appears in a comment on our own ad `Takoverdrag_SP_4_H1` ("Men det bör väl vara luft i mellan, nu blir det väl tätt") and independently in three forum threads spanning twelve years. Two unconnected sources, so it is measured, not assumed.

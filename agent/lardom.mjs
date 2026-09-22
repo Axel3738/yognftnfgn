@@ -309,20 +309,64 @@ export function namnUrNasta(rad) {
  *
  * `tak_totalt` = summan, och det är den rondens `rundaAntal` ska mätas mot.
  */
-export function brieftak(logg, kampanjId, { idag = null } = {}) {
+export function brieftak(logg, kampanjId, { idag = null, befintliga = [] } = {}) {
   const sedan = senasteKlar(logg, kampanjId);
   const nya = logg.filter((r) => r.kod === LARDOM_KOD && String(r.kampanj_id) === String(kampanjId) && (!sedan || String(r.datum) >= sedan) && (!idag || String(r.datum) <= String(idag)));
   const vantar = oskrivna(logg, { kampanjId }).length;
   const redanBriefade = new Set(briefer(logg, kampanjId).map((r) => String(r.annons_namn ?? '').toLowerCase()));
+  // Regel (b), Axels tillägg 2026-09-22: en namngiven annons som REDAN finns —
+  // som brief i loggen, som rad i Notion eller som annons i kontot — ger ingen
+  // plats. Lärdomen är då redan utförd, och en plats till hade byggt en
+  // dubblett. `befintliga` fylls av anroparen ur kontot/Notion; den här filen
+  // gör aldrig I/O.
+  const finns = new Set([...redanBriefade, ...befintliga.map((n) => String(n ?? '').toLowerCase())]);
   const namngivna = [];
+  const struket = [];
   for (const r of nya) {
     for (const rad of r.nasta ?? []) {
       const n = namnUrNasta(rad);
-      if (!n || redanBriefade.has(n.toLowerCase()) || namngivna.includes(n)) continue;
+      if (!n || namngivna.includes(n)) continue;
+      if (finns.has(n.toLowerCase())) { if (!struket.includes(n)) struket.push(n); continue; }
       namngivna.push(n);
     }
   }
-  return { tak: nya.length, tak_totalt: nya.length + namngivna.length, namngivna, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
+  return { tak: nya.length, tak_totalt: nya.length + namngivna.length, namngivna, struket, lardomar: nya.map((r) => r.lardom_id), sedan, etiketterade_utan_lardom: vantar };
+}
+
+/**
+ * Regel (a), Axels tillägg 2026-09-22: **en brief som tar en namngiven plats
+ * måste heta det namnet.**
+ *
+ * Buggen den rättar, mätt på rondens egen körning 2026-09-22: Taköverdragets
+ * lärdom namngav `Takoverdrag_OB_2_H1`, `SP_6_1` och `CS_14_1`. Taket vidgades
+ * från 1 till 4 på de namnen — och sedan briefades fyra HELT ANDRA annonser
+ * (`OB_3_H1`, `GT_11_H1`, `CS_2_H2`, `CS_2_H3`). Undantaget blev en större
+ * kvot i stället för en riktad, och `OB_3_H1` blev en dubblett av en brief som
+ * redan låg i Notion.
+ *
+ * Domen: högst `tak` briefer får bära namn som ingen lärdom bett om. Varje
+ * brief därutöver måste finnas i `namngivna`. Ren funktion.
+ */
+export function provaBriefkvot(logg, kampanjId, namn = [], { idag = null, befintliga = [] } = {}) {
+  const tak = brieftak(logg, kampanjId, { idag, befintliga });
+  const kvar = new Set(tak.namngivna.map((n) => n.toLowerCase()));
+  const fria = [];
+  const riktade = [];
+  for (const n of namn) {
+    const l = String(n ?? '').toLowerCase();
+    if (kvar.has(l)) { kvar.delete(l); riktade.push(n); continue; }
+    fria.push(n);
+  }
+  const fel = [];
+  if (fria.length > tak.tak) {
+    fel.push(`${fria.length} briefer bär namn som ingen lärdom bett om, men taket är ${tak.tak} (en per lärdom sedan förra batchen). Övertaliga: ${fria.slice(tak.tak).join(', ')}. Döp om dem till namnen lärdomen gav (${tak.namngivna.join(', ') || 'inga kvar'}) eller skriv fler lärdomar först.`);
+  }
+  for (const n of tak.struket) {
+    if (namn.some((x) => String(x).toLowerCase() === n.toLowerCase())) {
+      fel.push(`${n} finns redan som brief, i Notion eller i kontot — lärdomen är utförd. Briefa den inte igen.`);
+    }
+  }
+  return { ok: fel.length === 0, fel, tak: tak.tak, tak_totalt: tak.tak_totalt, fria, riktade, namngivna: tak.namngivna, struket: tak.struket };
 }
 
 /** Levande breakthroughs (punkt 7, 9): etikett BREAKTHROUGH inom LEVANDE_DAGAR, inte pausad som tjuv. */
@@ -780,6 +824,25 @@ async function huvud(argv) {
     const lista = Array.isArray(poster) ? poster : poster?.rader ?? [];
     const kampanj = { id: String(kampanjId), namn: k.produkt, ad_account_id: k.ad_account_id ?? '1867947880635861' };
     const batch = flagga('batch') ? Number(flagga('batch')) : null;
+
+    // Briefkvoten prövas FÖRE första raden skrivs (Axels tillägg 2026-09-22).
+    // --befintliga tar annonsnamn som redan finns i kontot eller i Notion,
+    // kommaseparerat eller som en JSON-lista i en fil.
+    const befRå = flagga('befintliga');
+    let befintliga = [];
+    if (befRå) {
+      befintliga = existsSync(befRå)
+        ? (JSON.parse(readFileSync(befRå, 'utf8')) ?? []).map((x) => (typeof x === 'string' ? x : x?.namn)).filter(Boolean)
+        : befRå.split(',').map((x) => x.trim()).filter(Boolean);
+    }
+    const kvot = provaBriefkvot(logg, kampanjId, lista.map((p) => p.namn), { idag, befintliga });
+    console.log(`Briefkvot: ${kvot.tak} fri(a) plats(er) + ${kvot.namngivna.length} namngivna i lärdomarna${kvot.namngivna.length ? ` (${kvot.namngivna.join(', ')})` : ''}${kvot.struket.length ? ` · struket för att de redan finns: ${kvot.struket.join(', ')}` : ''}`);
+    if (!kvot.ok) {
+      for (const f of kvot.fel) console.error(`   🔴 ${f}`);
+      console.error('\n❌ Inget skrivet. Rätta manifestet och kör om.');
+      process.exit(1);
+    }
+
     const rader = [];
     let fel = 0;
     const loggNu = [...logg];

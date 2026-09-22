@@ -5,7 +5,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
   lardomId, KOMPONENTER, taggarUrBrief, komponentVarde, normaliseraTaggar, oskrivna, brieftak, mix, MIX, levandeBreakthroughs,
-  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR, narmasteMinnesmapp, namnUrNasta,} from '../lardom.mjs';
+  vidarebyggBehov, konceptStatus, nastaIteration, skelett, delaBlock, validera, lardomRad, briefRad, status, formateraStatus, diagnos, RESEARCH_KALLOR, narmasteMinnesmapp, namnUrNasta, provaBriefkvot,} from '../lardom.mjs';
 
 const ETIK = (over = {}) => ({
   datum: '2026-09-21', kampanj_id: 'K1', kampanj_namn: 'IBC-Tanköverdraget | BE ROAS 1.89', ad_account_id: '1867947880635861', kod: 'ETIKETT',
@@ -146,7 +146,7 @@ test('lardomRad: bär id, utfall, avvikelser, hypotes, nästa — aldrig ny_budg
 
 test('brieftak (punkt 8): briefer ≤ lärdomar skrivna sedan förra batchen; noll lärdomar ⇒ tak 0 med antalet som väntar', () => {
   const logg = [ETIK(), ETIK({ annons_id: '222', annons_namn: 'IBC_SP_2_1', etikett: 'LOSER' }), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true }];
-  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, tak_totalt: 0, namngivna: [], lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
+  assert.deepEqual(brieftak(logg, 'K1', { idag: '2026-09-21' }), { tak: 0, tak_totalt: 0, namngivna: [], struket: [], lardomar: [], sedan: '2026-09-17', etiketterade_utan_lardom: 2 });
   const med = [...logg, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true }, { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '999', lardom_id: 'L-999', datum: '2026-09-10', genomford: true }];
   const t = brieftak(med, 'K1', { idag: '2026-09-21' });
   assert.equal(t.tak, 1, 'lärdomen från före batchen räknas inte');
@@ -297,4 +297,45 @@ test('namnUrNasta plockar annonsnamnet och ignorerar SLÄPP-rader', () => {
   assert.equal(namnUrNasta('SLÄPP — konceptet är uttömt, forskningen var svag.'), null);
   assert.equal(namnUrNasta('Ingen backtick här alls'), null);
   assert.equal(namnUrNasta(null), null);
+});
+
+test('regel (a): en brief som tar en namngiven plats måste HETA det namnet', () => {
+  // Buggen, mätt på rondens körning 2026-09-22: lärdomen namngav tre annonser,
+  // taket vidgades till 4, och fyra HELT ANDRA briefer skrevs i platserna.
+  const bas = [ETIK(), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true },
+    { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true,
+      nasta: ['`IBC_OB_2_H1` — typ N', '`IBC_SP_6_1` — typ IM', '`IBC_CS_14_1` — typ IM'] }];
+
+  // Fyra briefer med FEL namn: bara en får vara fri, tre är övertaliga.
+  const fel = provaBriefkvot(bas, 'K1', ['IBC_OB_3_H1', 'IBC_GT_11_H1', 'IBC_CS_2_H2', 'IBC_CS_2_H3'], { idag: '2026-09-22' });
+  assert.equal(fel.ok, false);
+  assert.match(fel.fel[0], /4 briefer bär namn som ingen lärdom bett om, men taket är 1/);
+  assert.match(fel.fel[0], /IBC_OB_2_H1/, 'felet ska säga vilka namn som var tillåtna');
+
+  // En fri + de tre namngivna: godkänt.
+  const ratt = provaBriefkvot(bas, 'K1', ['IBC_GT_11_H1', 'IBC_OB_2_H1', 'IBC_SP_6_1', 'IBC_CS_14_1'], { idag: '2026-09-22' });
+  assert.equal(ratt.ok, true);
+  assert.deepEqual(ratt.fria, ['IBC_GT_11_H1']);
+  assert.equal(ratt.riktade.length, 3);
+});
+
+test('regel (b): en namngiven annons som redan finns stryker sin plats', () => {
+  const lardom = { kod: 'LARDOM', kampanj_id: 'K1', annons_id: '111', lardom_id: 'L-111', datum: '2026-09-21', genomford: true,
+    nasta: ['`IBC_OB_2_H1` — typ N', '`IBC_SP_6_1` — typ IM'] };
+  const bas = [ETIK(), { kod: 'CS_BATCH_KLAR', kampanj_id: 'K1', datum: '2026-09-17', genomford: true }, lardom];
+
+  // OB_2 ligger redan i Notion ⇒ platsen stryks, taket krymper från 3 till 2.
+  const t = brieftak(bas, 'K1', { idag: '2026-09-22', befintliga: ['IBC_OB_2_H1'] });
+  assert.deepEqual(t.namngivna, ['IBC_SP_6_1']);
+  assert.deepEqual(t.struket, ['IBC_OB_2_H1']);
+  assert.equal(t.tak_totalt, 2, '1 lärdom + 1 kvarvarande namngiven');
+
+  // Och att briefa den igen är ett uttryckligt fel, inte bara en full kvot.
+  const d = provaBriefkvot(bas, 'K1', ['IBC_OB_2_H1'], { idag: '2026-09-22', befintliga: ['IBC_OB_2_H1'] });
+  assert.equal(d.ok, false);
+  assert.match(d.fel.join(' '), /finns redan som brief, i Notion eller i kontot — lärdomen är utförd/);
+
+  // En BRIEF-rad i loggen räknas likadant, utan att anroparen säger något.
+  const medBrief = [...bas, { kod: 'BRIEF', kampanj_id: 'K1', annons_namn: 'IBC_SP_6_1', datum: '2026-09-22', genomford: true }];
+  assert.deepEqual(brieftak(medBrief, 'K1', { idag: '2026-09-22' }).struket, ['IBC_SP_6_1']);
 });

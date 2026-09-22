@@ -139,6 +139,17 @@ ska märkas som gissning i lärdomen.
 
 **Briefad som `Takoverdrag_OB_2_H1`** (Axels beslut 2026-09-21), med `kalla=voc` —
 `OB` är kontots kod för invändning, inte `BOF` som är funnelposition; se
+
+> ⚠️ **RÄTTELSE 2026-09-22.** Raden ovan namngav `Takoverdrag_OB_2_H1`. Det
+> namnet var redan taget: en Notion-rad med det namnet finns sedan 2026-09-19
+> och bär ett HELT annat koncept (förvaring — hur draget viks ner i påsen),
+> status `In progress`. Jag läste lediga nummer ur annonskontot men inte ur
+> Notion, och kontot hade bara `OB_1`. Briefen som skrevs på invändningen
+> "nu blir det väl tätt" heter därför **`Takoverdrag_OB_4_H1`**.
+> Loggraden skrivs inte om — budgetloggen är append-only. Regel (b) i
+> `brieftak` stryker platsen av sig själv, eftersom namnet redan finns.
+> **Lärdomen härav: läs lediga AD-ID:n ur BÅDE kontot och Notion-hubben.**
+
 `docs/naming-convention.md`. —
 kommentaren på `Takoverdrag_SP_4_H1` är den formella källan, forumet är
 språket bakom den. Annonsen ska bemöta att **överdraget andas i stället för

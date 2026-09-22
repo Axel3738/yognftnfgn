@@ -43,5 +43,16 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Nästa annonser:**
 - `Takoverdrag_OB_2_H1` — typ N, ingen parent: första annonsen som bemöter en dokumenterad invändning ("nu blir det väl tätt") i stället för att sälja taket. Enda variabeln är öppningsdraget.
 - `Takoverdrag_SP_6_1` — typ IM, parent Takoverdrag_SP_2_1: samma social proof men UTAN det påhittade kundcitatet och utan öppet köp, så raden går att spegla. Enda variabeln är att de två förbjudna elementen tas bort.
+
+> ⚠️ **RÄTTELSE 2026-09-22.** Raden ovan namngav `Takoverdrag_OB_2_H1`. Det
+> namnet var redan taget: en Notion-rad med det namnet finns sedan 2026-09-19
+> och bär ett HELT annat koncept (förvaring — hur draget viks ner i påsen),
+> status `In progress`. Jag läste lediga nummer ur annonskontot men inte ur
+> Notion, och kontot hade bara `OB_1`. Briefen som skrevs på invändningen
+> "nu blir det väl tätt" heter därför **`Takoverdrag_OB_4_H1`**.
+> Loggraden skrivs inte om — budgetloggen är append-only. Regel (b) i
+> `brieftak` stryker platsen av sig själv, eftersom namnet redan finns.
+> **Lärdomen härav: läs lediga AD-ID:n ur BÅDE kontot och Notion-hubben.**
+
 - `Takoverdrag_CS_14_1` — typ IM, parent Takoverdrag_CS_2_1: prisankaret är produktens starkaste vinkel enligt DNA:t (3,17 kr vinst per spendkrona) och har färre annonser live än SP. Enda variabeln är prisformuleringen.
 

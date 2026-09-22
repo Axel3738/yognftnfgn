@@ -454,6 +454,22 @@ sedan 2026-09-21 för konverteringsgraden i lärdomen.
    bakom — en hook-swap eller en 20 %-uppsnabbning som lärdomen föreskrivit
    ska inte konkurrera om kvoten med ett helt nytt koncept. En `SLÄPP`-rad ger
    aldrig en fri plats, även när den namnger annonsen den släpper.
+   **Två regler till (Axels tillägg 2026-09-22, efter att rondens egen körning
+   samma morgon visade hålet):**
+   (a) **En brief som tar en namngiven plats måste HETA det namnet.** Mätt:
+   Taköverdragets lärdom namngav tre annonser, taket vidgades 1 → 4, och fyra
+   HELT ANDRA briefer skrevs i platserna. Undantaget blev en större kvot i
+   stället för en riktad.
+   (b) **Finns den namngivna annonsen redan — som BRIEF-rad, som Notion-rad
+   eller som annons i kontot — stryks platsen.** Lärdomen är då utförd, och en
+   plats till bygger en dubblett.
+   Båda prövas av `provaBriefkvot()` i `agent/lardom.mjs`, som körs FÖRE första
+   BRIEF-raden skrivs och avbryter med exit 1. Skicka kontots och hubbens
+   befintliga annonsnamn med `--befintliga <namn,namn>` eller
+   `--befintliga <fil.json>`.
+   ⚠️ **Lediga AD-ID:n läses ur BÅDE kontot och Notion-hubben.** Mätt samma
+   dag: `Takoverdrag_OB_2_H1` fanns bara i Notion, inte i kontot, och en brief
+   fick därför ett namn som redan bar ett annat koncept.
 
    **Turordningen (Axels beslut 2026-09-21, i stället för ett briefgolv):**
    `--skelett` sorterar sedan dess kön själv — **kampanjer med en levande
