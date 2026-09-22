@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 0/16 (0 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 0/27 (0 %)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -291,3 +291,24 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Takoverdrag_CS_3_H1 | — | okänd | **LOSER** | 3 % | 726 kr | 3 | 4,67 / 4,94 | ja (prel.) | släpp |
 | Takoverdrag_CS_2_H1 | — | okänd | **KPI_WINNER** | 12 % | 3424 kr | 20 | 7,06 / 4,94 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
 | Takoverdrag_CS_1_H1 | — | okänd | **KPI_WINNER** | 2 % | 597 kr | 3 | 5,67 / 4,94 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+
+## Etiketter dag 7 (2026-09-22)
+
+Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_GT_4_H1 | 1 | okänd | **LOSER** | 1 % | 1022 kr | 1 | 1,88 / 3,28 | nej | släpp |
+| Takoverdrag_PD_4_H1 | 1 | okänd | **KPI_WINNER** | 9 % | 6827 kr | 21 | 3,74 / 3,28 | ja | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_GT_5_H1 | 1 | okänd | **LOSER** | 4 % | 3040 kr | 7 | 2,96 / 3,28 | ja | släpp |
+| Takoverdrag_BOF_2_1 | 1 | okänd | **LOSER** | 2 % | 1916 kr | 3 | 1,77 / 3,28 | ja (prel.) | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_BOF_1_1 | 1 | okänd | **LOSER** | 0 % | 87 kr | 0 | 0,00 / 3,28 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_CO_2_1 | 1 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 3,28 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Takoverdrag_BOF_3_1 | 1 | okänd | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 3,28 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Takoverdrag_CS_4_1 | 1 | okänd | **KPI_WINNER** | 1 % | 705 kr | 3 | 4,80 / 3,28 | ja (prel.) | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_GT_6_1 | 1 | okänd | **KPI_WINNER** | 0 % | 327 kr | 2 | 6,90 / 3,28 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_CS_6_1 | 1 | okänd | **KPI_WINNER** | 0 % | 245 kr | 1 | 4,60 / 3,28 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Takoverdrag_PD_5_1 | 1 | okänd | **LOSER** | 0 % | 37 kr | 0 | 0,00 / 3,28 | nej | släpp |
+| Takoverdrag_LI_1_1 | 1 | okänd | **LOSER** | 0 % | 43 kr | 0 | 0,00 / 3,28 | nej | släpp |
+| Takoverdrag_SP_5_1 | 1 | okänd | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 3,28 | nej | släpp |
+| Takoverdrag_TR_1_1 | 1 | okänd | **KPI_WINNER** | 0 % | 33 kr | 1 | 34,72 / 3,28 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |

@@ -1,6 +1,6 @@
 # Batch-log — Båtmotorskyddet 420D
 
-Breakthrough-frekvens: 1/46 (2 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 1/52 (2 %)
 
 ## Batch #1 — 2026-09-02 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -472,3 +472,16 @@ var falsk ⇒ säsongsrubrik i stället. Priset avläst live: 579 kr / 965 kr.
 RV_12_H1 använder ett ordagrant. Feedback-raden Brief review 2026-09-18 läst. Annonsidéer:
 inga rader. Copy av sonnet-subagent (regel 6); huvudsessionen rättade hook-raderna i
 SP_1_H11/H12. ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen.
+
+## Etiketter dag 7 (2026-09-22)
+
+Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Batmotor_BF_10_1 | 3 | okänd | **LOSER** | 0 % | 33 kr | 0 | 0,00 / 3,18 | nej | släpp |
+| Batmotor_RV_9_1 | 3 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 3,18 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_BF_11_1 | 3 | okänd | **LOSER** | 0 % | 23 kr | 0 | 0,00 / 3,18 | nej | släpp |
+| Batmotor_CS_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 3,18 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Batmotor_BF_12_1 | 3 | okänd | **LOSER** | 10 % | 1665 kr | 6 | 2,57 / 3,18 | ja | släpp |
+| Batmotor_RV_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 3,18 | nej | hooken föll — logga och släpp, aldrig ABO |

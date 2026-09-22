@@ -1,6 +1,6 @@
 # Batch-log — Adventskalender Racingbilar
 
-Breakthrough-frekvens: 1/16 (6 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 1/23 (4 %)
 
 ## Batch #1 — 2026-09-10 (`/forsta-batch`, automatisk körning via `/rond-auto` steg 4b)
 
@@ -296,3 +296,17 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | Adventskalender_GT_1_H1 | — | okänd | **LOSER** | 13 % | 1086 kr | 3 | 1,70 / 1,77 | ja (prel.) | släpp |
 | Adventskalender_CS_3_H1 | — | okänd | **LOSER** | 0 % | 11 kr | 0 | 0,00 / 1,77 | nej | släpp |
 | Adventskalender_CS_2_H1 | — | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 1,77 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Etiketter dag 7 (2026-09-22)
+
+Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Adventskalender_RV_4_1 | 2 | okänd | **LOSER** | 1 % | 37 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| Adventskalender_RV_3_1 | 2 | okänd | **KPI_WINNER** | 3 % | 101 kr | 1 | 4,93 / 1,83 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Adventskalender_PD_9_1 | 2 | okänd | **LOSER** | 1 % | 44 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| Adventskalender_CS_5_1 | 2 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 1,83 | nej | hooken föll — logga och släpp, aldrig ABO |
+| Adventskalender_BF_6_1 | 2 | okänd | **KPI_WINNER** | 6 % | 227 kr | 1 | 3,74 / 1,83 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| Adventskalender_BF_5_1 | 2 | okänd | **LOSER** | 0 % | 16 kr | 0 | 0,00 / 1,83 | nej | släpp |
+| Adventskalender_BF_4_1 | 2 | okänd | **LOSER** | 2 % | 80 kr | 0 | 0,00 / 1,83 | nej | släpp |

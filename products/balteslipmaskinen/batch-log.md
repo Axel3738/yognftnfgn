@@ -1,6 +1,6 @@
 # Batch-logg — Bälteslipmaskinen
 
-Breakthrough-frekvens: 1/34 (3 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 1/34 (3 %)
 
 ## Batch #1 — originaladsen (launch 2026-08-21, före OS:et)
 16 annonser i CBO (PD/SP/CS/G-serier). Utfall t.o.m. 2026-08-29: se dna.md.
@@ -410,3 +410,12 @@ av de senaste tre dygnen på ROAS 2,48; (2) BEVISAD — PD_4_H1 är effektivast 
 (inga riktiga recensioner att citera). Feedback-raden Brief review 2026-09-18 läst;
 dess tre regler i varje brief. Annonsidéer: inga rader. Copy av sonnet-subagent (regel 6).
 ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen samma datum.
+
+## Etiketter dag 7 (2026-09-22)
+
+Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_BOF_1_1 | 5 | okänd | **LOSER** | 0 % | 42 kr | 0 | 0,00 / 2,75 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| Beltgrinder_BOF_2_1 | 5 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,75 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |

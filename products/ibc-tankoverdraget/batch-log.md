@@ -1,6 +1,6 @@
 # Batch-log — IBC-Tanköverdraget
 
-Breakthrough-frekvens: 1/34 (3 %) (uppdaterad 2026-09-21, backfill av hela bakkatalogen)
+Breakthrough-frekvens: 1/45 (2 %)
 
 ## Batch #1 — 2026-09-01 (`/forsta-batch`, automatisk rutinkörning)
 
@@ -556,3 +556,27 @@ Etiketten är ingen dom (dom kräver 300 kr och 3 köp, kolumnen Bedömbar). Rä
 | IBC_BOF_1_1 | 2 | okänd | **LOSER** | 0 % | 62 kr | 0 | 0,00 / 1,98 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 | IBC_PD_3_1 | 1 | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 2,32 | nej | släpp |
 | IBC_CO_1_1 | 1 | okänd | **LOSER** | 2 % | 257 kr | 0 | 0,00 / 2,32 | nej | släpp |
+
+## Etiketter dag 7 (2026-09-22)
+
+Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_click). Etiketten är ingen dom: bedömbar = ≥ 300 kr OCH ≥ 3 köp.
+
+| Annons | Batch | Typ | Etikett (7 d) | Andel | Spend | Köp | ROAS ad / kampanj | Bedömbar | Playbook |
+|---|---|---|---|---|---|---|---|---|---|
+| IBC_GT_5_H1 | 4 | okänd | **INGEN_LEVERANS** | — | 5 kr | 0 | 0,00 / 2,39 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_PD_6_H1 | 4 | okänd | **LOSER** | 1 % | 60 kr | 0 | 0,00 / 2,39 | nej | släpp |
+| IBC_BOF_8_1 | 4 | okänd | **INGEN_LEVERANS** | — | 3 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_PD_6_H2 | 4 | okänd | **LOSER** | 2 % | 87 kr | 0 | 0,00 / 2,39 | nej | släpp |
+| IBC_CS_5_H1 | 4 | okänd | **LOSER** | 2 % | 83 kr | 0 | 0,00 / 2,39 | nej | släpp |
+| IBC_RV_6_1 | 4 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 2,39 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_RV_5_1 | 4 | okänd | **INGEN_LEVERANS** | — | 8 kr | 0 | 0,00 / 2,39 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_PD_6_1 | 4 | okänd | **LOSER** | 1 % | 48 kr | 0 | 0,00 / 2,39 | nej | släpp |
+| IBC_CS_5_1 | 4 | okänd | **LOSER** | 1 % | 35 kr | 0 | 0,00 / 2,39 | nej | släpp |
+| IBC_BOF_9_1 | 4 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_7_1 | 4 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_RV_8_1 | 5 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,39 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_RV_7_1 | 5 | okänd | **INGEN_LEVERANS** | — | 2 kr | 0 | 0,00 / 2,39 | nej | hooken föll — logga och släpp, aldrig ABO |
+| IBC_PD_9_1 | 5 | okänd | **KPI_WINNER** | 4 % | 215 kr | 2 | 16,23 / 2,39 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+| IBC_BOF_12_1 | 5 | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_11_1 | 5 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+| IBC_BOF_10_1 | 5 | okänd | **LOSER** | 0 % | 20 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
