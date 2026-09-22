@@ -111,6 +111,15 @@ trosklar:
                               # alltså precis de ärenden som hunnit bli farligast
   obesvarad_timmar: 48        # inkommande utan svar längre än så = larm
   ofullbordad_dagar: 5        # betald order utan fulfillment längre än så = larm
-  tvistgrans_gul_procent: 0.5 # tvister / ordrar (30 dagar): gult härifrån
+  tvistgrans_gul_procent: 0.5 # CHARGEBACKS / ordrar (30 dagar): gult härifrån
   tvistgrans_rod_procent: 0.9 # rött härifrån (Visa 0,9 %, Mastercard 1 %)
+  # ⚠️ Den ANDRA tvistgraden: (chargebacks + inquiries) / ordrar. Alltid högre,
+  # och den mäter något annat — hur ofta en bank hör av sig alls. Mätt på
+  # Bäverbutiken 2026-09-22: 0,19 % chargebacks men 1,91 % allt (4 + 36 av
+  # 2 091 ordrar); månaden före 0,14 % / 0,21 %. Inquiries gick från 1 till 36
+  # medan ordrarna växte 46 %, och det syntes inte i någon rapport.
+  # Står de på null VISAS talet men döms inte. Sätt en gräns först när någon
+  # läst vad Shopify självt räknar när de håller utbetalningar — gissa inte.
+  tvistgrans_allt_gul_procent: null
+  tvistgrans_allt_rod_procent: null
   ordrar_dagar: 30

@@ -348,12 +348,19 @@
       <div class="matare"><i style="width:${Math.max(2, Math.min(100, k.risk))}%"></i></div>
       <span class="band">${emoji} <strong>${sprak === 'en' ? en : sv}</strong> ${delta(k.risk, f?.risk)}</span>`;
 
-    const tv = k.tvistgrad === null || k.tvistgrad === undefined ? '—' : `${String(k.tvistgrad).replace('.', ',')} %`;
+    const pctText = (x) => (x === null || x === undefined ? '—' : `${String(x).replace('.', ',')} %`);
+    const tv = pctText(k.tvistgrad);
+    // Den andra tvistgraden får ett eget kort. Den är alltid högre än
+    // chargeback-talet, och den var osynlig fram till 2026-09-22 — då
+    // Bäverbutiken stod på 0,19 % chargebacks (grönt) och 1,91 % allt.
+    const tvAllt = pctText(k.tvistgradAllt);
     const kort = [
       { n: t().tickets, v: num(k.arenden), f: `${num(k.arenden - k.obesvarade)} ${t().answered}`, d: delta(k.arenden, f?.arenden) },
       { n: `${t().unans} ${t().over} ${v.trosklar.obesvaradTimmar}${t().hours}`, v: num(k.larmObesvarade), f: `${num(k.obesvarade)} ${sprak === 'en' ? 'unanswered in total' : 'obesvarade totalt'}`, d: delta(k.larmObesvarade, f?.larmObesvarade) },
       { n: t().median, v: k.medianSvarstidTimmar === null ? '—' : `${num(k.medianSvarstidTimmar)}${t().hours}`, f: `${num(k.besvaradeMedTid)} ${sprak === 'en' ? 'measured' : 'mätta'}`, d: delta(k.medianSvarstidTimmar, f?.medianSvarstidTimmar) },
       { n: t().chargebacks, v: k.chargebacks === null ? '—' : num(k.chargebacks), f: `${t().rate} ${tv} · ${num(k.forfragningar)} ${sprak === 'en' ? 'inquiries' : 'förfrågningar'}`, d: delta(k.chargebacks, f?.chargebacks) },
+      { n: sprak === 'en' ? 'Dispute rate incl. inquiries' : 'Tvistgrad inkl. förfrågningar', v: tvAllt,
+        f: `${sprak === 'en' ? 'chargebacks only' : 'bara chargebacks'} ${tv}`, d: delta(k.tvistgradAllt, f?.tvistgradAllt) },
       { n: t().money, v: k.pengarIRisk ? `${num(k.pengarIRisk)}` : '0', f: `${k.pengarValuta ?? ''} · ${num(k.oppnaTvister)} ${sprak === 'en' ? 'open' : 'öppna'}`, d: '' },
       { n: t().orders, v: k.ordrar === null ? '—' : num(k.ordrar), f: `${sprak === 'en' ? 'last' : 'senaste'} ${v.trosklar.ordrarDagar} ${sprak === 'en' ? 'days' : 'dagarna'}`, d: '' },
     ];

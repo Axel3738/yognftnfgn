@@ -52,9 +52,21 @@ export const STANDARD_TROSKLAR = Object.freeze({
                                  // fönster, så tvistgraden räknas på samma period.
   obesvarad_timmar: 48,          // inkommande utan svar längre än så = larm
   ofullbordad_dagar: 5,          // betald order utan fulfillment längre än så = larm
-  tvistgrans_gul_procent: 0.5,   // tvister / ordrar: gult härifrån
+  tvistgrans_gul_procent: 0.5,   // CHARGEBACKS / ordrar: gult härifrån
   tvistgrans_rod_procent: 0.9,   // rött härifrån (Visas program slår in vid 0,9 %, Mastercards vid 1 %)
   ordrar_dagar: 30,              // hur många dagars ordrar tvistgraden räknas mot
+  // ⚠️ Den ANDRA tvistgraden: (chargebacks + inquiries) / ordrar. Den mäter
+  // något annat än korttnätverkens tal ovan — hur ofta en bank hör av sig
+  // alls — och den är alltid högre. Mätt på Bäverbutiken 2026-09-22:
+  // chargebacks 0,19 % men allt 1,91 % (4 cb + 36 inquiries / 2 091 ordrar).
+  // Månaden före: 0,14 % / 0,21 %. Inquiries gick från 1 till 36 medan
+  // ordrarna växte 46 % — det syntes inte i någon rapport, för vi räknade
+  // bara chargebacks.
+  // Trösklarna står med flit på null = visa talet, döm det inte. Vad Shopify
+  // självt mäter när de håller utbetalningar är INTE avläst någonstans, och
+  // ska läsas på deras egen skärm innan en gräns skrivs in här.
+  tvistgrans_allt_gul_procent: null,
+  tvistgrans_allt_rod_procent: null,
 });
 
 /**

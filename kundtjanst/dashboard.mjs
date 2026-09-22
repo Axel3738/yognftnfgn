@@ -112,13 +112,14 @@ export function byggDashboard(r, { nu = new Date() } = {}) {
       chargebacks: r.risk?.underlag?.chargebacks ?? null,
       forfragningar: r.risk?.underlag?.forfragningar ?? null,
       tvistgrad: r.risk?.tvistgrad ?? null,
+      tvistgradAllt: r.risk?.tvistgradAllt ?? null,
       pengarIRisk: pengar.belopp,
       pengarValuta: pengar.valuta,
       oppnaTvister: pengar.antal,
       forra: forra ? {
         risk: forra.riskPoang ?? null, arenden: forra.antalArenden ?? null, obesvarade: forra.obesvarade ?? null,
         larmObesvarade: forra.larmObesvarade ?? null, medianSvarstidTimmar: forra.medianSvarstidTimmar ?? null,
-        chargebacks: forra.tvister ?? null, tvistgrad: forra.tvistgrad ?? null,
+        chargebacks: forra.tvister ?? null, tvistgrad: forra.tvistgrad ?? null, tvistgradAllt: forra.tvistgradAllt ?? null,
       } : null,
     },
 
@@ -243,7 +244,7 @@ export function samlaDashboard({ korningar, historik, nu = new Date() } = {}) {
       historik: lasJsonl(join(hbas, `${id}.jsonl`)).sort((a, b) => a.vecka.localeCompare(b.vecka)).map((h) => ({
         vecka: h.vecka, risk: h.riskPoang ?? null, arenden: h.antalArenden ?? null, obesvarade: h.obesvarade ?? null,
         larm: h.larmObesvarade ?? null, median: h.medianSvarstidTimmar ?? null, chargebacks: h.tvister ?? null,
-        forfragningar: h.forfragningar ?? null, tvistgrad: h.tvistgrad ?? null, ordrar: h.ordrar ?? null,
+        forfragningar: h.forfragningar ?? null, tvistgrad: h.tvistgrad ?? null, tvistgradAllt: h.tvistgradAllt ?? null, ordrar: h.ordrar ?? null,
       })),
       arkiv: Object.fromEntries(nycklar.map((v) => [v, veckor[v]])),
     });

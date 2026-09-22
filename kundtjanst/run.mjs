@@ -295,7 +295,7 @@ export async function korBrand(brand, {
   const denna = {
     vecka, datum: nu.toISOString().slice(0, 10), dagar,
     antalArenden: sammanfattning.antalArenden, obesvarade: sammanfattning.obesvarade, larmObesvarade: sammanfattning.larmObesvarade,
-    medianSvarstidTimmar: sammanfattning.medianSvarstidTimmar, riskPoang: risk.poang, tvister: tvister?.tillganglig ? (risk.underlag.chargebacks ?? tvister.lista.length) : null, forfragningar: tvister?.tillganglig ? (risk.underlag.forfragningar ?? 0) : null, tvistgrad: risk.tvistgrad, ordrar: ordrar.length,
+    medianSvarstidTimmar: sammanfattning.medianSvarstidTimmar, riskPoang: risk.poang, tvister: tvister?.tillganglig ? (risk.underlag.chargebacks ?? tvister.lista.length) : null, forfragningar: tvister?.tillganglig ? (risk.underlag.forfragningar ?? 0) : null, tvistgrad: risk.tvistgrad, tvistgradAllt: risk.tvistgradAllt, ordrar: ordrar.length,
     perKategori: Object.fromEntries(sammanfattning.topp.map((p) => [p.id, p.antal])),
     topp: sammanfattning.topp.slice(0, 3).map((p) => p.id),
   };
@@ -449,7 +449,7 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
 
   if (finns('json')) {
     console.log(JSON.stringify(rankade.map((r) => (r.hoppad ? { brand: r.brand.id, hoppad: true, orsak: r.orsak } : {
-      plats: r.plats, brand: r.brand.id, vecka: r.vecka, risk: { poang: r.risk.poang, niva: r.risk.niva.id, tvistgrad: r.risk.tvistgrad, signaler: r.risk.signaler.map((s) => ({ id: s.id, varde: s.varde, poang: s.poang })) },
+      plats: r.plats, brand: r.brand.id, vecka: r.vecka, risk: { poang: r.risk.poang, niva: r.risk.niva.id, tvistgrad: r.risk.tvistgrad, tvistgradAllt: r.risk.tvistgradAllt, signaler: r.risk.signaler.map((s) => ({ id: s.id, varde: s.varde, poang: s.poang })) },
       sammanfattning: { ...r.sammanfattning, perKategori: undefined }, topp: r.sammanfattning.topp.map((p) => ({ id: p.id, antal: p.antal, obesvarade: p.obesvarade })), aterkommande: r.aterkommande, atgarder: r.risk.atgarder, varningar: r.varningar, sop: r.sop, filer: r.filer ?? null,
     })), null, 2));
   } else {
