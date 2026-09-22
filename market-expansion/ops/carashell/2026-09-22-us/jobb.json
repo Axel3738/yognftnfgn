@@ -1,0 +1,103 @@
+{
+  "butik": "CaraShell",
+  "nyckel": "carashell/takskyddet",
+  "konto": "1107817401910319",
+  "kontonamn": "Magiborsten UK",
+  "marknad": "US",
+  "status": "SE-ACTIVE to be translated",
+  "annonsmarknader": [
+    "NO",
+    "US"
+  ],
+  "lank_standard": "https://carashell.com/products/takskyddet?country=US",
+  "valuta": "USD",
+  "heygen_sprak": "English (United States)",
+  "sprak": "amerikansk engelska",
+  "locale": "en",
+  "cs_status": null,
+  "cs_lamnade": [],
+  "hub": {
+    "id": "3da270ab-908c-80c4-80d1-fbdb3fefd3b4",
+    "titel": "Carashell Taköverdrag creative hub"
+  },
+  "kampanj": {
+    "id": "120251451415500435",
+    "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
+    "bas": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m",
+    "status": "ACTIVE",
+    "utfall": "ACTIVE",
+    "adsets": [
+      {
+        "id": "120251517605150435",
+        "name": "CARASHELL_US_TR",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251517179380435",
+        "name": "CARASHELL_US_OB",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251489956580435",
+        "name": "CARASHELL_US_UG",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251489804770435",
+        "name": "CARASHELL_US_RI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251488345710435",
+        "name": "CARASHELL_US_BOF",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251488318130435",
+        "name": "CARASHELL_US_CO",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251488214830435",
+        "name": "CARASHELL_US_LI",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415290435",
+        "name": "CARASHELL_US_GT",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415210435",
+        "name": "CARASHELL_US_SP",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415190435",
+        "name": "CARASHELL_US_PD",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415170435",
+        "name": "CARASHELL_US_CS",
+        "status": "ACTIVE"
+      },
+      {
+        "id": "120251451415060435",
+        "name": "CARASHELL_US_G",
+        "status": "ACTIVE"
+      }
+    ]
+  },
+  "kampanj_skal": null,
+  "kampanjer_bort": 8,
+  "lank_arvd": "https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US",
+  "pris_butik": null,
+  "pris_skal": "länken \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\" pekar inte på /products/<handle>",
+  "rader": [],
+  "varningar": [
+    "\"CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16\" är PAUSED med 2246 kr spend — avvecklad, aldrig mål",
+    "pris: länken \"https://carashell.com/pages/takoverdrag-husvagn-husbil-6-5-3-m-lagerrensning?country=US\" pekar inte på /products/<handle>"
+  ],
+  "hamtad": "2026-09-22T15:12:13.641Z"
+}

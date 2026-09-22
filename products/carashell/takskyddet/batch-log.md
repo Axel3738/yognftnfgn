@@ -1635,3 +1635,46 @@ produkten och inte bara NO.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1551959238685753457`, ingen ACTION NEEDED.
+
+---
+
+## USA-runda 9 — 2026-09-22 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom runda. Inget översatt, inget uppladdat, inget rört.**
+
+| Kö | Rader | Att göra |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 0 | — |
+| `Approved` (eftersläpningskollen) | 49 | 0 — varenda rad bär redan en US-annons |
+
+De 49 är gårdagens 44 plus de fem bilderna från USA-runda 8, som flyttades till
+`Approved` i samma körning. Kön är alltså i kapp i båda statusarna.
+
+**Kontokollen (US-kampanjen `120251451415500435`, ACTIVE, 12 adsets):** 65
+annonser, **alla 65 ACTIVE**. Gårdagens fem (`BOF_107_1`, `BOF_108_1`,
+`BOF_109_1`, `PD_110_1`, `CS_113_1`) klarade Metas granskning — ingen
+underkänd, ingen begränsad.
+
+**Butiken redo för USA:** produktsidan svarar 200 på engelska ("Roof Cover for
+Travel Trailers & Motorhomes 18–44 ft") med **199 USD från 249**, och
+lagerrensningssidan annonserna pekar på svarar 200 som amerikansk besökare med
+samma två tal och 90-dagarsgarantin. Talen stämmer mot `marknadspriser` USD
+199 / 249 i produktfilen.
+
+**Meta strypte kontot i ~25 minuter under körningen.** Eftersläpningskollen
+läser även det norska kontot (`915422744950975`) för att se vilka marknader
+varje rad redan bär, och där slog kod 17 till: verktygets egen backoff
+(30 → 60 → 120 → 240 s) räckte inte, och två körningar i rad gav tom fil.
+Lösningen var att köra om kön tills den gick igenom — inget saknas i
+rapporten. Rimlig orsak: CaraShells fyra andra rutiner (NO 16:05 och 16:15,
+speglingarna 16:45 och 16:55) läser samma konto strax före den här.
+
+**Kvarstår oförändrat, ingen åtgärd:**
+- `CARASHELL_US_Taköverdrag …` (originalet) är PAUSED med 2 246 kr spend —
+  ägarens beslut, aldrig mål för uppladdning.
+- Kön kan inte läsa priset själv, för kampanjens ärvda länk är
+  lagerrensningssidan och inte `/products/<handle>`. Priset läses manuellt ur
+  de amerikanska sidorna varje runda.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1551982001806905545`, ingen ACTION NEEDED.
