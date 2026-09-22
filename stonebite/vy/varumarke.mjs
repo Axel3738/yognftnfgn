@@ -33,8 +33,8 @@ export const FLIKAR = Object.freeze([
 ]);
 
 const HUVUDBRANDS = ['baverbutiken', 'grillkliniken', 'matstrumpor', 'carashell'];
-const RUTINTON = { ok: 'bra', sen: 'varning', saknas: 'kritisk', avstangd: 'neutral', omatbar: 'neutral' };
-const RUTINORD = { ok: 'körde', sen: 'sen', saknas: 'saknas', avstangd: 'avstängd', omatbar: 'går inte att mäta' };
+const RUTINTON = { ok: 'bra', sen: 'varning', saknas: 'kritisk', avstangd: 'neutral', omatbar: 'neutral', ny: 'neutral' };
+const RUTINORD = { ok: 'körde', sen: 'sen', saknas: 'saknas', avstangd: 'avstängd', omatbar: 'går inte att mäta', ny: 'ny' };
 
 function roasText(v) {
   return v === null || v === undefined ? '–' : Number(v).toLocaleString('sv-SE', { maximumFractionDigits: 2 });
@@ -452,7 +452,7 @@ function flikKontakter(d, { csrf, nu }) {
 
 export function rutintabell(rutiner, { nu = new Date(), medBrand = false, varumarken = [] } = {}) {
   const brandnamn = (id) => varumarken.find((v) => v.id === id)?.namn ?? id ?? '';
-  const ordning = { saknas: 0, sen: 1, ok: 2, omatbar: 3, avstangd: 4 };
+  const ordning = { saknas: 0, sen: 1, ny: 2, ok: 3, omatbar: 4, avstangd: 5 };
   const sorterade = [...rutiner].sort((a, b) => (ordning[a.status] ?? 9) - (ordning[b.status] ?? 9) || String(a.schema?.tid ?? '').localeCompare(String(b.schema?.tid ?? '')));
   return panel({
     innehall: tabell(

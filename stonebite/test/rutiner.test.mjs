@@ -48,6 +48,13 @@ test('avstängd rutin utan spår är avstängd — men ett färskt spår vinner 
   assert.match(korde.ord, /flaggan är gammal/);
 });
 
+test('en nybyggd rutin utan spår är "ny", inte "saknas" — tills första intervallet gått', () => {
+  const ny = { ...timrutin, fran: new Date(NU.getTime() - 20 * 60_000).toISOString() };
+  assert.equal(bedomRutin(ny, [], { nu: NU }).status, 'ny');
+  const gammal = { ...timrutin, fran: new Date(NU.getTime() - 3 * 3_600_000).toISOString() };
+  assert.equal(bedomRutin(gammal, [], { nu: NU }).status, 'saknas', 'efter 1,5 intervall gäller vanliga regler');
+});
+
 test('omätbar rutin säger varför', () => {
   const r = bedomRutin({ id: 't', namn: 'Tvistkollen', schema: { typ: 'dag', tid: '07:30' }, spar: { typ: 'ingen', orsak: 'pushar aldrig' } }, [], { nu: NU });
   assert.equal(r.status, 'omatbar');

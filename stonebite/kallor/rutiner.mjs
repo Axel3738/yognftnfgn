@@ -183,6 +183,12 @@ export function bedomRutin(rutin, spar, { nu = new Date(), dagar = 14, sokvagTid
   }
 
   if (!senast) {
+    // En nybyggd rutin har inget spår än — det är inte "saknas", det är "väntar
+    // på första körningen". `fran` är byggtiden; efter 1,5 intervall utan spår
+    // gäller vanliga regler.
+    if (rutin.fran && nu.getTime() - new Date(rutin.fran).getTime() <= iv * 1.5) {
+      return { ...bas, status: 'ny', antal: 0, ord: 'nybyggd — väntar på första körningen' };
+    }
     return { ...bas, status: 'saknas', antal: 0, ord: `inget spår på ${dagar} dagar` };
   }
   const status = alder <= iv * 1.5 ? 'ok' : alder <= iv * 3 ? 'sen' : 'saknas';
@@ -209,7 +215,7 @@ export function rutinlage(rot, { nu = new Date(), dagar = 14 } = {}) {
   const domda = rutiner.map((r) => bedomRutin(r, spar, {
     nu, dagar, sokvagTid: r.spar?.typ === 'sokvag' ? sokvagSpar(rot, r.spar.sokvag) : null,
   }));
-  const summering = { ok: 0, sen: 0, saknas: 0, avstangd: 0, omatbar: 0 };
+  const summering = { ok: 0, sen: 0, saknas: 0, avstangd: 0, omatbar: 0, ny: 0 };
   for (const d of domda) summering[d.status] = (summering[d.status] ?? 0) + 1;
   return {
     status: spar.length ? 'ok' : 'saknas',

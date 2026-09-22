@@ -255,8 +255,10 @@ Grillkliniken/CaraShell/Matstrumpor (ingen brandfil). Bank, kort och
 
 - Ingen glömt-lösenord-funktion (ägaren sätter ett nytt på sidan Konton).
 - Ingen tvåfaktor.
-- Rutinen som kör `/stonebite` varje timme är inte uppsatt än (kommandot finns,
-  rutinen byggs med `/rutin` på det konto som äger de andra rutinerna).
+- ~~Rutinen som kör `/stonebite` varje timme~~ — **byggd 2026-09-22** på
+  Barkås-kontot: trigger `trig_01QwKgfZP3JdhZX6tbGo1LJb`, fast session
+  `session_01PBEszeiGu5Qe2Lu5Je1p9T`, cron `4 * * * *`. Snapshoten går till
+  `main` varje timme och Railway bygger om.
 - Trustpilot läses inte automatiskt: deras publika sida svarar 403 på maskiner.
   Med `TRUSTPILOT_API_KEY` + `TRUSTPILOT_BUSINESS_UNITS` går det; tills dess
   rapporterar VA:n in recensionen med länk och chefen godkänner.
