@@ -1729,3 +1729,50 @@ tar aldrig emot speglade annonser.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1552006055792214069`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-22 kväll — FEL SPRÅK i US-runda 7: fyra videor renderade med norsk röst (rättat)
+
+**Axels fynd:** `CaraShellRoof_US_PD_107_H1` och `PD_106_H1` låter som norska, engelska
+och svenska blandat — "varannat ord på engelska, varannat på norska". Han antog att den
+norska filen översatts till engelska. Mätningen visar en annan rotorsak, med samma resultat:
+
+| Bevis | Vad det säger |
+|---|---|
+| `2026-09-20-us/video/batch.json.state.json` | alla fyra proofread-id slutar på `-nb-nb-NO`, render-id på `-nb` (16/9 och 18/9: `-en-en-US`) |
+| HeyGen `GET proofreads/89a6bc…-nb-nb-NO` | `output_language: "Norwegian Bokmål (Norway)"`, titel `NO_carashell_PD_106_H1` |
+| HeyGen render `3ef025…-nb` | `output_language: Norwegian`, men `caption.srt` är **engelsk** ("One person, that's all it takes.") |
+| Källfilen i `jobb.json` | `filer[0] = CaraShellRoof_PD_106_H1.mp4` (svensk), NO-filen låg tvåa — källan var rätt |
+| Meta | fyra annonser skapade 20/9 15:37–15:40 UTC, längder 18,08 / 17,96 / 17,36 / 16,24 s = renderna |
+
+**Rotorsak:** rutinen körde `pipeline/translate-batch.mjs` utan `--lang`/`--marknad`.
+Verktyget föll tyst tillbaka på `Norwegian Bokmål (Norway)` / `NO_`. HeyGen skapade en
+norsk session, subagenten skrev engelsk SRT, `apply` lade in den, och rendern blev en
+norsk röstmodell som läser engelsk text. `rostkoll.py` var grön (den mäter ljud, inte
+språk) och batch-loggen skrev "Videorna (HeyGen, amerikansk engelska)" — vad rutinen
+tänkte göra, inte vad HeyGen svarade. Ingen kontroll läste `output_language`.
+
+**Omfattning:** exakt fyra US-videor: `OB_101_H1`, `PD_107_H1`, `RI_103_H1`, `PD_106_H1`
+(`120251517183220435`, `…190490435`, `…195980435`, `…205690435`). De 20 andra
+US-videorna (16/9 ×12, 18/9 ×8) har `-en-en-US` och `output_language: English (United
+States)` — kontrollerat mot HeyGen med `translate-batch.mjs status --marknad=US`. Spend
+på de fyra: 267 + 343 + 127 + 82 = **820 kr, 0 köp**.
+
+**Gjort 2026-09-22 (den här sessionen):**
+- De fyra annonserna **PAUSED + omdöpta `…_FELSPRAK`** i Magiborsten UK (tillbakalästa).
+  Namnet är fritt, så US-rutinen laddar upp en rätt version under rätt namn.
+- Notion-raderna i CaraShells hub: kommentar + `Approved → SE-ACTIVE to be translated`.
+  NO-rutinen ser "finns redan" och rör dem inte; US-rutinen översätter den SVENSKA filen.
+- `pipeline/translate-batch.mjs`: `--marknad` obligatorisk, språket ur nya
+  `pipeline/sprak.mjs`, `--lang` får bara upprepa tabellen; HeyGens `output_language`
+  läses vid proofread, render och download; SRT-språkkoll (HeyGens översättning OCH den
+  rättade) — fel språk ⇒ `srtDone: 'fel-sprak'`, ingen render, ingen fil, exit 1.
+  `status` reviderar gamla batcher live (så här hittades felet: 4 × `✗ FEL SPRÅK`).
+- `tools/notion-fil.mjs --utan-marknadsfiler` (alltid från `ops-leveranskon` och
+  `ops-spegla`): en `_NO_`-fil blir aldrig källa; bara marknadsfiler ⇒ fel.
+- Tester: `pipeline/test/sprak.test.mjs`, `factory/test/opsmarknader.test.mjs`,
+  `tools/test/ops-spegla.test.mjs`.
+
+**Kvar:** de fyra koncepten saknar engelsk version tills US-rutinen (17:05) kört
+raderna igen — med spärrarna på plats kan den inte rendera norska av misstag.

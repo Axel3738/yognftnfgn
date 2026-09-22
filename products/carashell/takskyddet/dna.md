@@ -848,3 +848,24 @@ strömmar live.
    "det fanns inget att göra" — och just den här dagen var kön faktiskt tom, vilket
    är precis när ett tyst fel är omöjligt att upptäcka. Verktyg som skriver en fil
    ska säga hur mycket de skrev.
+
+## Rotorsak 4 — US-videor med norsk röst (2026-09-20, hittad 2026-09-22)
+
+Fyra av 24 US-videor (`OB_101_H1`, `PD_107_H1`, `RI_103_H1`, `PD_106_H1`) gick live
+med HeyGens **norska** röstmodell som läser **engelsk** SRT. Axel hörde det
+("varannat ord engelska, varannat norska"). Orsaken var inte källfilen (den
+svenska låg först och valdes) utan att `translate-batch.mjs` föll tillbaka på
+norska när `--marknad` saknades — och att ingen kontroll läste HeyGens
+`output_language`. Batch-loggen skrev "amerikansk engelska" ur kommandots
+avsikt, inte ur verktygets svar.
+
+Tre regler ur det:
+1. **Ett verktyg får inte ha ett tyst standardspråk.** Marknaden är obligatorisk,
+   språket kommer ur en tabell, ett `--lang` som säger emot tabellen stoppar.
+2. **Läs leverantörens svar, inte din egen order.** HeyGens session bär
+   `output_language`; verktyget läser den före render och före download.
+3. **Loggen skriver bara det som mätts.** `translate-batch.mjs status --marknad=<M>`
+   är raden som får stå bakom ordet "engelska" i en batch-logg.
+
+Åtgärd: pausade + `_FELSPRAK`, raderna tillbaka i kön, 820 kr / 0 köp
+förlorade. Full tabell i batch-log 2026-09-22 kväll.

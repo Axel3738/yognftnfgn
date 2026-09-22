@@ -122,6 +122,9 @@ test('valjSeFil: 4:5 före 1:1, NO-filer räknas aldrig som svensk', () => {
   // Granskningsfynd 2026-09-18: bara NO-filer får ALDRIG bli "den svenska filen".
   assert.equal(valjSeFil(['/x/CaraShellRoof_NO_GT_105_H1.mp4']), null);
   assert.equal(valjSeFil(['/x/Takovertrekk_NO_GT_5_H1.mp4', '/x/x_no.mp4']), null);
+  // 2026-09-22: ingen marknadsversion alls får bli källa — inte US, inte DK.
+  assert.equal(valjSeFil(['/x/CaraShellRoof_US_PD_106_H1.mp4', '/x/CaraShellRoof_DK_PD_106_H1.mp4']), null);
+  assert.equal(valjSeFil(['/x/CaraShellRoof_US_PD_106_H1.mp4', '/x/CaraShellRoof_PD_106_H1.mp4']), '/x/CaraShellRoof_PD_106_H1.mp4');
 });
 
 // ------------------------------------------------------------ blocken
