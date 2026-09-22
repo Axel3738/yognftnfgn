@@ -1,25 +1,30 @@
 #!/usr/bin/env node
 // kor.mjs — Matstrumpors CLI. Räknar, läser och planerar. Skriver ALDRIG i Meta.
 //
-// Varför inte: META_ACCESS_TOKEN nekas på kontot "nya kungen" 730973156224390
-// (mätt 2026-09-21: "(#200) Ad account owner has NOT granted ads_management").
-// Uppladdningen går därför via Adsmanager-MCP:n i kommandot /matstrumpor, och
-// det här skriptet gör allt annat — så att räkningen är testbar och svaret blir
-// detsamma varje gång.
+// Meta LÄSES via META_ACCESS_TOKEN sedan 2026-09-22 (meta.mjs) — Axel gav
+// användaren "API LONG TERM" åtkomst till kontot "nya kungen" 730973156224390
+// den dagen; till och med 2026-09-21 svarade kontot "(#200) Ad account owner
+// has NOT granted ads_management". Uppladdningen (/matstrumpor) går fortfarande
+// via Adsmanager-MCP:n i en session Axel startar — den vägen är inte ombyggd.
+// Det här skriptet skriver aldrig i Meta, så att räkningen är testbar och
+// svaret blir detsamma varje gång.
 //
 //   node matstrumpor/kor.mjs --kolla            vad som finns och vad som saknas
 //   node matstrumpor/kor.mjs --ekonomi          break-even, båda momslinjerna
 //   node matstrumpor/kor.mjs --aov [--dagar 30] mät AOV ur Shopify på riktigt
 //   node matstrumpor/kor.mjs --ko [--json]      Notion "To be Reviewed" → uppladdningsplan
 //   node matstrumpor/kor.mjs --namn <vinkel> <format> [antal]   nästa lediga namn
-//   node matstrumpor/kor.mjs --dom <fil.json>   döm annonser ur en avläsning (Meta via MCP)
+//   node matstrumpor/kor.mjs --kordag [--idag YYYY-MM-DD]   är det rond i dag? exit 0 ja, 2 nej
+//   node matstrumpor/kor.mjs --hamta [--ut <fil.json>]      avläsningen ur Meta (token) → jobbfil
+//   node matstrumpor/kor.mjs --dom <fil.json> [--json]      döm annonser ur en avläsning
 //   node matstrumpor/kor.mjs --status           lärdomar, briefer, brieftak, mix
+//   node matstrumpor/kor.mjs --rond-klar        logga ROND_KLAR (sist i ronden)
 
 import { readFileSync, writeFileSync, existsSync, appendFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { brytpunkter, rangordna, dom } from './ekonomi.mjs';
-import { etikettera, formateraFrekvens, levandeBreakthrough, ETIKETT } from './etikett.mjs';
+import { etikettera, formateraFrekvens, levandeBreakthrough, dagarMellan, ETIKETT } from './etikett.mjs';
 import { brieftak, mix, skelett } from './lardom.mjs';
 import { nastaNummer_flera, bygg, tolka, adsetNyckel } from './namn.mjs';
 import { hamtaKo, planera } from './kon.mjs';
@@ -28,6 +33,44 @@ const ROT = dirname(fileURLToPath(import.meta.url));
 export const KONFIGFIL = join(ROT, 'konfig.json');
 export const LOGGFIL = join(ROT, 'logg.jsonl');
 export const LARDOMSFIL = join(ROT, '..', 'products', 'matstrumpor', 'lardomar.md');
+export const UTMAPP = join(ROT, 'output');
+
+/** Svenskt datum i dag (YYYY-MM-DD). */
+export function idagSE(nu = new Date()) {
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm', year: 'numeric', month: '2-digit', day: '2-digit' }).format(nu);
+}
+
+const plusDagar = (datum, n) => new Date(Date.parse(`${datum}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
+
+/** Loggkoder som visar att en rond faktiskt gjordes — reserven när ingen
+ *  ROND_KLAR skrivits (ronden 2026-09-21 kördes för hand, före den koden). */
+export const RONDSPAR = ['ETIKETT', 'LARDOM', 'BRIEF', 'FORSLAG'];
+
+/** Datumet för förra ronden ur loggen: ROND_KLAR först, annars senaste
+ *  rondspåret. null = ingen rond har gjorts. Ren. */
+export function sistaRond(logg) {
+  const datum = (koder) => (logg ?? []).filter((r) => koder.includes(r.kod) && /^\d{4}-\d{2}-\d{2}$/.test(String(r.datum ?? ''))).map((r) => r.datum).sort().at(-1) ?? null;
+  const klar = datum(['ROND_KLAR']);
+  if (klar) return { datum: klar, kalla: 'ROND_KLAR' };
+  const spar = datum(RONDSPAR);
+  if (spar) return { datum: spar, kalla: `rondspår i loggen (${RONDSPAR.join('/')}) — ingen ROND_KLAR skriven än` };
+  return null;
+}
+
+/** Är det kördag? Kadensen (var N:e dag) räknas från FÖRRA ronden, inte från
+ *  ett kalenderrutnät: missas en dag går ronden nästa dag i stället för att
+ *  vänta tre till, och en rond som kraschade mitt i (ingen ROND_KLAR) körs om
+ *  nästa morgon. Cronen är daglig med flit — skriptet avgör, som /commission. */
+export function arKordag(logg, idag, varNDag) {
+  const n = Number(varNDag);
+  if (!Number.isInteger(n) || n < 1) throw new Error(`kadens.rond_var_n_dag = ${varNDag} — måste vara ett heltal ≥ 1.`);
+  const sista = sistaRond(logg);
+  if (!sista) return { kor: true, sista: null, nasta: idag, skal: 'ingen rond i loggen — första ronden körs i dag.' };
+  const d = dagarMellan(sista.datum, idag);
+  const nasta = plusDagar(sista.datum, n);
+  if (d >= n) return { kor: true, sista, nasta: idag, skal: `${d} dygn sedan förra ronden ${sista.datum} (${sista.kalla}) — kadensen är var ${n}:e dag.` };
+  return { kor: false, sista, nasta, skal: `bara ${d} dygn sedan förra ronden ${sista.datum} (${sista.kalla}) — nästa rond ${nasta}.` };
+}
 
 export function lasKonfig(fil = KONFIGFIL) {
   return JSON.parse(readFileSync(fil, 'utf8'));
@@ -146,21 +189,80 @@ async function main() {
     return;
   }
 
+  if (har('--kordag')) {
+    const k = arKordag(lasLogg(), varde('--idag', idagSE()), konfig.kadens.rond_var_n_dag);
+    console.log(`${k.kor ? '✅ KÖRDAG' : '⏸ INGEN ROND I DAG'} — ${k.skal}`);
+    process.exitCode = k.kor ? 0 : 2;
+    return;
+  }
+
+  if (har('--rond-klar')) {
+    const datum = varde('--idag', idagSE());
+    if (lasLogg().some((r) => r.kod === 'ROND_KLAR' && r.datum === datum)) { console.log(`ROND_KLAR ${datum} finns redan i loggen — skriver inte en till.`); return; }
+    skrivRad({ kod: 'ROND_KLAR', datum });
+    console.log(`ROND_KLAR ${datum} loggad. Nästa rond tidigast ${plusDagar(datum, konfig.kadens.rond_var_n_dag)} (var ${konfig.kadens.rond_var_n_dag}:e dag).`);
+    return;
+  }
+
+  if (har('--hamta')) {
+    // Metas per-IP-tak utanför agentproxyn slår nästan direkt — starta om med
+    // proxyn först (tools/meta-lib.mjs). Funktionen återvänder aldrig i så fall.
+    const { säkerställProxy } = await import('../tools/meta-lib.mjs');
+    säkerställProxy();
+    const { hamtaAvlasning, sammanfattning } = await import('./meta.mjs');
+    const idag = varde('--idag', idagSE());
+    const ut = varde('--ut', join(UTMAPP, `avlasning-${idag}.json`));
+    console.error(`Läser ${konfig.meta.ad_account_namn} (${konfig.meta.ad_account_id}) via META_ACCESS_TOKEN …`);
+    const jobb = await hamtaAvlasning(konfig, { idag });
+    mkdirSync(dirname(ut), { recursive: true });
+    writeFileSync(ut, `${JSON.stringify(jobb, null, 2)}\n`);
+    console.log(sammanfattning(jobb));
+    console.log(`Jobbfil: ${ut}  →  node matstrumpor/kor.mjs --dom ${ut}`);
+    return;
+  }
+
   if (har('--dom')) {
     const jobb = JSON.parse(readFileSync(varde('--dom'), 'utf8'));
+    if (jobb.konto && String(jobb.konto) !== String(konfig.meta.ad_account_id)) throw new Error(`Jobbfilen är läst ur konto ${jobb.konto}, konfigen säger ${konfig.meta.ad_account_id} — fel konto, dömer inget.`);
     const b = visaEkonomi(konfig);
     const be = b.gallande?.break_even_roas ?? null;
     console.log('');
     const rank = rangordna(jobb.annonser ?? [], b, konfig.grindar);
-    console.log(`Vinstbidrag (${rank.rader.length} bedömbara, ${rank.for_tidigt.length} för tidigt):`);
+    console.log(`Vinstbidrag, ${jobb.kampanj?.fonster ?? '14 dagar'} (${rank.rader.length} bedömbara, ${rank.for_tidigt.length} för tidigt):`);
     for (const r of rank.rader) {
-      console.log(`  ${(r.vinstbidrag_sek ?? 0).toFixed(0).padStart(7)} kr  ${r.namn}  CPA ${r.cpa_sek ?? '—'} · ${r.dom}${r.benchmark ? '  ★ BENCHMARK — dödas aldrig' : ''}`);
+      console.log(`  ${(r.vinstbidrag_sek ?? 0).toFixed(0).padStart(7)} kr  ${r.namn}  CPA ${r.cpa_sek ?? '—'} · ${r.dom}${r.benchmark ? (r.skydd ? '  ★ BENCHMARK — dödas aldrig' : '  ★ RIKTMÄRKE (ingen går plus — inte skyddad)') : ''}`);
     }
-    if (rank.for_tidigt.length) console.log(`  För tidigt: ${rank.for_tidigt.join(', ')}`);
-    const etiketter = (jobb.annonser ?? []).map((a) => etikettera(a, jobb.kampanj ?? {}, be, konfig.grindar));
+    if (rank.for_tidigt.length) console.log(`  För tidigt (${rank.for_tidigt.length} under grinden): ${rank.for_tidigt.slice(0, 8).join(', ')}${rank.for_tidigt.length > 8 ? ` … (alla i --json)` : ''}`);
+
+    // Etiketten sätts på annonsens EGNA första vecka (etikett.mjs) — den ligger
+    // i `forsta_vecka` när jobbfilen kommer ur --hamta. En handskriven jobbfil
+    // utan det fältet etiketteras som förut, på de tal som står i raden.
+    // En etikett skrivs EN gång: annonser som redan har en ETIKETT-rad i loggen
+    // visas med den, så ingen rond etiketterar om.
+    const loggade = new Map(lasLogg().filter((r) => r.kod === 'ETIKETT' && r.annons).map((r) => [r.annons, r]));
+    const unga = [];
+    const etiketter = [];
+    for (const a of jobb.annonser ?? []) {
+      const fv = a.forsta_vecka;
+      if (fv && fv.komplett === false) { unga.push({ namn: a.namn, d0: a.d0, until: fv.until, dagar: fv.dagar_med_data }); continue; }
+      const e = fv
+        ? etikettera({ namn: a.namn, spend_sek: fv.spend_sek, kop: fv.kop, roas: fv.roas, d0: a.d0 }, { spend_sek: fv.kampanj_spend_sek, roas: fv.kampanj_roas, budget_d0: fv.budget_d0, budget_d7: fv.budget_d7 }, be, konfig.grindar)
+        : etikettera(a, jobb.kampanj ?? {}, be, konfig.grindar);
+      const tidigare = loggade.get(a.namn) ?? null;
+      etiketter.push({ ...e, d0: a.d0 ?? null, fonster: fv ? `${fv.since}..${fv.until}` : (jobb.kampanj?.fonster ?? 'okänt'), aktiv: a.effective_status ? a.effective_status === 'ACTIVE' : undefined, hook_rate: fv?.hook_rate ?? a.hook_rate ?? null, hold_rate: fv?.hold_rate ?? a.hold_rate ?? null, konv_lpv: a.konv_lpv ?? null, redan_loggad: tidigare ? { etikett: tidigare.etikett, datum: tidigare.datum } : null });
+    }
+    const nya = etiketter.filter((e) => !e.redan_loggad);
     console.log('');
-    console.log(`Etiketter: ${formateraFrekvens(etiketter.filter((e) => e.etikett === ETIKETT.BREAKTHROUGH).length, etiketter.length)} breakthrough`);
-    for (const e of etiketter) console.log(`  ${e.etikett.padEnd(15)} ${e.namn}  ${e.motivering}`);
+    console.log(`Etiketter (annonsens egna första vecka): ${formateraFrekvens(etiketter.filter((e) => e.etikett === ETIKETT.BREAKTHROUGH).length, etiketter.length)} breakthrough · ${nya.length} nya att logga, ${etiketter.length - nya.length} redan i loggen`);
+    for (const e of etiketter) console.log(`  ${e.etikett.padEnd(15)} ${e.namn}  [${e.fonster}] ${e.motivering}${e.redan_loggad ? `  (redan loggad ${e.redan_loggad.datum} som ${e.redan_loggad.etikett}${e.redan_loggad.etikett !== e.etikett ? ' — loggen gäller, ändras aldrig utom till BREAKTHROUGH' : ''})` : ''}`);
+    if (unga.length) console.log(`  För unga för etikett (${unga.length}, första veckan inte slut): ${unga.slice(0, 8).map((u) => `${u.namn} (D0 ${u.d0}, ${u.dagar} dagar)`).join(', ')}${unga.length > 8 ? ' … (alla i --json)' : ''}`);
+    if (har('--json')) {
+      const efter = arg[arg.indexOf('--json') + 1];
+      const ut = efter && !efter.startsWith('--') ? efter : join(UTMAPP, `dom-${jobb.datum ?? idagSE()}.json`);
+      mkdirSync(dirname(ut), { recursive: true });
+      writeFileSync(ut, `${JSON.stringify({ datum: jobb.datum ?? null, break_even_roas: be, kampanj: jobb.kampanj ?? null, ranking: rank, etiketter, for_unga: unga }, null, 2)}\n`);
+      console.log(`Domen som JSON: ${ut}`);
+    }
     return;
   }
 
@@ -186,7 +288,7 @@ async function main() {
   for (const [k, v] of Object.entries(konfig.meta.adsets)) console.log(`  adset ${k.padEnd(10)} ${v.namn}${v.id ? ` (${v.id})` : '  ⚠️ finns inte än'}`);
   console.log(`Hub:      ${konfig.notion.hub_namn} (${konfig.notion.hub_id})`);
   console.log('');
-  const nycklar = { NOTION_TOKEN: 'Notion-kön', META_ACCESS_TOKEN: 'Meta (⚠️ nekas på det här kontot — MCP gäller)', SHOPIFY_CLIENT_ID_1r46tp_qx: 'AOV ur Shopify', DISCORD_BOT_TOKEN: 'rapporten' };
+  const nycklar = { NOTION_TOKEN: 'Notion-kön + briefraderna (tools/notion-brief.mjs)', META_ACCESS_TOKEN: 'Meta, läsning (åtkomst given 2026-09-22; uppladdning går ännu via MCP)', SHOPIFY_CLIENT_ID_1r46tp_qx: 'AOV ur Shopify', DISCORD_BOT_TOKEN: 'rapporten' };
   for (const [n, vad] of Object.entries(nycklar)) console.log(`${process.env[n] ? '✅' : '❌'} ${n.padEnd(30)} ${vad}`);
   console.log('');
   visaEkonomi(konfig);
