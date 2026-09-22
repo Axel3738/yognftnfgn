@@ -340,7 +340,12 @@ export class WebmailKlient {
 
   /** En sida ur listan i en mapp, nyast först. Kastar vid okänd mapp. */
   async listaSida(mapp, sida = 1) {
-    const q = new URLSearchParams({ _task: 'mail', _action: 'list', _mbox: mapp, _page: String(sida), _sort: 'date_DESC', _remote: '1', _unlock: '0', _token: this.token });
+    // _refresh=1: Roundcube räknar och listar annars ur sin cache, och den
+    // släpar efter en flytt. Mätt 2026-09-22 23:40 UTC: ett mejl autosvaret
+    // just flyttat till INBOX.VA-PRIO gav messagecount 0 (exists 1) utan
+    // flaggan och messagecount 1 med den. Utan den ser VA-kön tom ut på
+    // kundtjänstsidan och i CLI:n fast mejlet ligger där.
+    const q = new URLSearchParams({ _task: 'mail', _action: 'list', _mbox: mapp, _page: String(sida), _sort: 'date_DESC', _remote: '1', _unlock: '0', _refresh: '1', _token: this.token });
     const svar = await this.anrop(`?${q}`, { ajax: true });
     const text = await svar.text();
     if (svar.status === 403) throw new Error(`Roundcube nekade listningen (403, steg 4) — request_token stämde inte. Roundcube-versionen kan ha ändrats.`);

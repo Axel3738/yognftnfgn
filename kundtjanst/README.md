@@ -408,6 +408,71 @@ skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
 
+### I drift TORRT sedan 2026-09-22 kväll — timrutin, SOP till VA:n, Roundcubes cache
+
+Axels order 2026-09-22 kväll: "fixa bara SOP:n och sätt igång AI-kundsupport-
+botten, och visa mig vad den skickar till folk … granska utkasten själv … skriv
+vad du är concerned över". Matstrumpor väntar (hans beslut samma kväll:
+Bäverbutiken först, sedan samma sak överallt).
+
+- **Timrutinen** (Barkås-kontot `barkas.kundservice@gmail.com`): trigger
+  `trig_01KiQ9zHevZDMpkSbB3Ue6sM`, fast session `session_01JCQtxLmN7ei2anB49KZQbM`
+  (repot som källa, `main` som utgren, miljön `env_011kzcu4tXHXM9LdECNkDe9E`
+  som bär `KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`), cron `10 * * * *`, prompt
+  `/autosvar --brand baverbutiken --torr --discord`, sedd i `list_triggers`
+  samma körning, första körning 00:10 CEST 2026-09-23. Torrt = utkast i
+  `INBOX.Drafts`, inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt.
+  **Skarpt är Axels ok** efter 20 rätta utkast i rad ⇒ `update_trigger` med
+  prompten `… --skarpt --discord`, aldrig en andra rutin. En brevlåda, en
+  session: kör inte `/autosvar` för hand mot Bäverbutiken medan rutinen är på.
+- **SOP:en till VA:n:** `va-sop/auto-reply-bot.md` → Notion-sidan **"Auto-reply
+  bot — what it does, and what you do"** (kategori Other stuff) i "Customer
+  support bäverbutiken", plus rader i Store facts (läge, signatur, VA-PRIO,
+  returfönster) och i Start here (routningstabellen + "VA-PRIO efter
+  tvisterna"). VA:ns roll i torrläget (sessionens beslut, Axel kan ändra): läs
+  kundens mejl och ordern mot utkastet; rätt ⇒ skicka det själv; fel ⇒ radera
+  det, svara själv och rapportera EN rad i `#customer-service`
+  (`Auto-reply wrong: order #… — …`). Rapporterna är det som gör 20-räkningen sann.
+- **SOP 18 pekar nu på Store facts** i stället för "30 dagar" (åtta ställen +
+  den svenska mallen), och Store facts säger **14 dagar** (Axels beslut B
+  2026-09-22, samma som brandfilen och returmejlet). Notion-sidorna skrivs ur
+  repot, så VA:n kunde inte ändra dem själv. ⚠️ Policysidan i Shopify säger
+  fortfarande 30 — Axels klick; Store facts säger åt VA:n att inte
+  argumentera med en kund som citerar den.
+- **Roundcube listar ur cache:** `listaSida` skickar `_refresh=1` sedan i
+  kväll. Mätt 2026-09-22 23:40 CEST: Hans mejl, nyss flyttat av autosvaret till
+  `INBOX.VA-PRIO`, gav `messagecount 0, exists 1` utan flaggan och 1 med — VA-kön
+  på kundtjänstsidan (`hamtaVaKo`) och `mail.mjs lista` hade visat tomt fast
+  mejlet låg där. Multi-folder-sökningen (`_scope=all`) hittade det hela tiden
+  (uid `12-INBOX.VA-PRIO`). **"0 mejl" ur en lista är inte "tomt" förrän
+  `exists` säger samma sak.**
+- **Första körningen under rutinens regler (för hand 23:31 CEST, torrt):** 34
+  mejl i 72-timmarsfönstret → 2 hoppade, **1 ENKEL** (Hans: batteridriven
+  bränslepump som läcker → `foton`-utkastet, flaggad, VA-PRIO; ingen order på
+  hans adress i Shopify, så utkastet ber om ordernumret), **0 ARG**, **31 SVÅR**:
+  5 "tråden har redan ett svar från oss" (VA:n svarade 16:35–16:52), 1
+  byte/storlek (SOP 21), Ulf (VA:ns kund), och **24 "övrigt"** — mest
+  produktfrågor före köp ("andas skyddet?", "vilken längd till 7,40 m
+  husbil?", "vilken till Mercury 60 hk?", beställningar per mejl, "ring mig")
+  som ska till VA:n. **Men sex av dem var enkla frågor som botten är byggd för
+  och som `klassificering.mjs` inte kände igen:** "Har inte fått vår order …
+  varan är betald", "Vart har min order tagit vägen? Är betald", "hur länge får
+  man vänta på leverans", "undrar när min beställning kommer … beställde 9-9",
+  "transporten stått stilla sedan den 18 september. Vad händer? Ordernummer:
+  #6655", "har inte fått bekräftelsemejlet … kan inte spåra". Botten är alltså
+  försiktig åt rätt håll (tiger hellre än gissar) men svarade på 1 av 34.
+  Nästa steg när Axel sagt ja: fraserna in i `klassificering.mjs`
+  (`var_ar_ordern`, `leveranstid`, `orderbekraftelse`) med tester, så
+  torrläget ger fler utkast att döma.
+- **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
+  svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
+  "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
+  leverans, inte en pump som läcker efter köpet — `beklagar` borde säga "att
+  varan inte fungerar som den ska" när kategorin är `skadad_defekt` utan
+  leveransord; och fraktetiketten i bildförfrågan (SOP 05/08) är irrelevant för
+  ett funktionsfel. Inget av det är fel mot kunden, men det är två saker Axel
+  ser direkt.
+
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 
 Axels fråga 2026-09-22: en annan session bygger en kundtjänst-dashboard och
