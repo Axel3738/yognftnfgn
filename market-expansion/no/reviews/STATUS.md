@@ -3,6 +3,44 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-22 — 10 nya på Feiesett, 37 i `sources.json`
+
+En ny mapp i MAKE TO NORWAY: `NO Sotarset`. Arket
+`Sotarset Böjliga Stänger_REVIEW` hade tio riktiga rader, alla 5★, inga
+platshållarnamn. Norskt handle finns i butiken.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Feiesett Med Fleksible Stenger | 10 | `feiesett-med-fleksible-stenger-renser-pipe-og-roykror` |
+
+**Spamfiltret tog hela importen igen** — 10 av 10, precis som på infartslarmet,
+fågelmataren och solcellslampan. Efterkontrollen larmade, `judgeme-publicera.mjs`
+rättade i samma körning, och tillbakaläsningen gav 10 synliga / 0 spam. Det här
+är nu mönstret, inte undantaget: **varje ny produkt spam-märks vid importen.**
+Räkna med steget, hoppa aldrig över det.
+
+MAKE TO NORWAY har 37 produktmappar + WINNERS (5 mappar, oförändrat sedan i går).
+Bygget gav 322 rader klara, 10 bortvalda — alla tio är gamasjer-arkets, som
+saknar betyg i källan och vars produkt ändå är klar i Judge.me sedan 2026-08-30.
+
+Datumen tog inte den här gången heller: alla tio står som 2026-09-22. Enda vägen
+är CSV-import inne i Judge.me-appen.
+
+### Bälteslipmaskinens källark har skrivits om — utan följd
+
+`beltesliper.no.csv` blev annorlunda i bygget: andra recensentnamn, andra
+tidsstämplar och delvis annan text. Källarket i Drive har alltså redigerats
+sedan importen. **Produkten är oförändrad i Judge.me** — dubblettspärren svarar
+"redan 10 synliga, hoppar över", så de nya raderna går ingenstans. Filen är
+committad som den nu byggs, inget mer. En ändring i ett redan importerat ark
+syns bara som en diff i `output/`; den kan inte rätta något som redan ligger i
+butiken, och ska inte tvingas in med `--anda`.
+
+### De fyra som väntar — alla oförändrade även i dag
+
+Samma läge som 2026-09-21, se tabellen nedan. Ingen av dem har rörts sedan
+2026-09-18.
+
 ## Läget 2026-09-21 — 0 nya, allt redan klart, 36 i `sources.json`
 
 Inga nya mappar i MAKE TO NORWAY. Bygget gav identiska filer, `git status` tomt
