@@ -29,8 +29,46 @@ export function lasRutiner(rot) {
   return JSON.parse(readFileSync(join(rot, 'stonebite', 'rutiner.json'), 'utf8')).rutiner ?? [];
 }
 
+function git(rot, args, timeout = 20_000) {
+  return execFileSync('git', args, { cwd: rot, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout });
+}
+
+/**
+ * En grund klon (`--depth 50`, som rutinernas fasta sessioner får) bär bara
+ * några timmar historik när sex spårningsrutiner committar varje timme.
+ * Mätt 2026-09-22 16:07: rutinens egen snapshot dömde 13 rutiner "saknas"
+ * som alla hade kört — historiken nådde inte ens ett dygn bakåt. Därför
+ * fördjupas klonen till fönstret innan loggen läses. Misslyckas hämtningen
+ * (inget nät) läses det som finns, och `historikFran` säger hur långt det räcker.
+ */
+export function fordjupaHistorik(rot, { dagar = 14 } = {}) {
+  try {
+    if (git(rot, ['rev-parse', '--is-shallow-repository']).trim() !== 'true') return { grund: false, fordjupad: false };
+  } catch {
+    return { grund: false, fordjupad: false };
+  }
+  try {
+    git(rot, ['fetch', '--quiet', `--shallow-since=${dagar + 1}.days`, 'origin', 'main'], 90_000);
+    return { grund: true, fordjupad: true };
+  } catch {
+    return { grund: true, fordjupad: false };
+  }
+}
+
+/** Äldsta commit-tiden som går att nå — så långt bakåt historiken faktiskt räcker. */
+export function historikFran(rot) {
+  for (const ref of [['HEAD', 'origin/main'], ['HEAD']]) {
+    try {
+      const ut = git(rot, ['log', '--reverse', '--format=%cI', ...ref]).split('\n').find(Boolean);
+      if (ut) return ut;
+    } catch { /* prova nästa */ }
+  }
+  return null;
+}
+
 /** Commit-rubrikerna på main de senaste dagarna: [{ tid, rubrik }], nyast först. */
-export function gitSpar(rot, { dagar = 14 } = {}) {
+export function gitSpar(rot, { dagar = 14, fordjupa = true } = {}) {
+  if (fordjupa) fordjupaHistorik(rot, { dagar });
   try {
     const ut = execFileSync('git', ['log', `--since=${dagar}.days`, '--format=%cI%x09%s', 'HEAD', 'origin/main'], {
       cwd: rot, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 20_000,
@@ -147,7 +185,7 @@ export function sokvagSpar(rot, sokvag) {
  * @param spar   [{ tid, rubrik }] ur gitSpar()
  * @param sokvagTid  senaste commit-tid för rutin.spar.sokvag (om typ sokvag)
  */
-export function bedomRutin(rutin, spar, { nu = new Date(), dagar = 14, sokvagTid = null } = {}) {
+export function bedomRutin(rutin, spar, { nu = new Date(), dagar = 14, sokvagTid = null, historikFran: historik = null } = {}) {
   const bas = {
     id: rutin.id, namn: rutin.namn, brand: rutin.brand ?? null, kommando: rutin.kommando ?? null,
     schema: rutin.schema ?? null, schematext: schematext(rutin.schema), vad: rutin.vad ?? '',
@@ -189,6 +227,16 @@ export function bedomRutin(rutin, spar, { nu = new Date(), dagar = 14, sokvagTid
     if (rutin.fran && nu.getTime() - new Date(rutin.fran).getTime() <= iv * 1.5) {
       return { ...bas, status: 'ny', antal: 0, ord: 'nybyggd — väntar på första körningen' };
     }
+    // Räcker historiken inte ens tre intervall bakåt går "saknas" inte att
+    // säga — ett spår kan ligga precis utanför det vi kan se. Det är
+    // mätarens fel, inte rutinens, och det ska stå så.
+    if (historik) {
+      const tackning = nu.getTime() - new Date(historik).getTime();
+      if (tackning < iv * 3) {
+        const tim = Math.round(tackning / TIMME);
+        return { ...bas, status: 'omatbar', antal: 0, ord: `git-historiken räcker bara ${tim < 48 ? `${tim} h` : `${Math.round(tackning / DAG)} dygn`} bakåt — kan inte döma` };
+      }
+    }
     return { ...bas, status: 'saknas', antal: 0, ord: `inget spår på ${dagar} dagar` };
   }
   const status = alder <= iv * 1.5 ? 'ok' : alder <= iv * 3 ? 'sen' : 'saknas';
@@ -212,14 +260,20 @@ export function rutinlage(rot, { nu = new Date(), dagar = 14 } = {}) {
     return { status: 'fel', orsak: `stonebite/rutiner.json: ${e.message}`, rutiner: [], summering: null };
   }
   const spar = gitSpar(rot, { dagar });
+  const historik = historikFran(rot);
+  const tackningDagar = historik ? (nu.getTime() - new Date(historik).getTime()) / DAG : null;
+  const kort = tackningDagar !== null && tackningDagar < dagar - 1;
   const domda = rutiner.map((r) => bedomRutin(r, spar, {
-    nu, dagar, sokvagTid: r.spar?.typ === 'sokvag' ? sokvagSpar(rot, r.spar.sokvag) : null,
+    nu, dagar, historikFran: historik, sokvagTid: r.spar?.typ === 'sokvag' ? sokvagSpar(rot, r.spar.sokvag) : null,
   }));
   const summering = { ok: 0, sen: 0, saknas: 0, avstangd: 0, omatbar: 0, ny: 0 };
   for (const d of domda) summering[d.status] = (summering[d.status] ?? 0) + 1;
   return {
-    status: spar.length ? 'ok' : 'saknas',
-    orsak: spar.length ? null : 'git-loggen gick inte att läsa — inga spår att döma mot',
+    status: !spar.length ? 'saknas' : kort ? 'delvis' : 'ok',
+    orsak: !spar.length ? 'git-loggen gick inte att läsa — inga spår att döma mot'
+      : kort ? `git-historiken räcker bara ${tackningDagar < 2 ? `${Math.round(tackningDagar * 24)} h` : `${Math.round(tackningDagar)} dygn`} bakåt (grund klon) — rutiner utan spår i den delen står som "går inte att mäta", inte "saknas"`
+        : null,
+    historikFran: historik,
     matt: nu.toISOString(),
     dagar,
     rutiner: domda,

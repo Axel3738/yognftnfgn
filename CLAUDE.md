@@ -407,7 +407,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   rapporteras till Axel: `git log --since=14.days origin/main | grep -i
   <rutinens ord>` — säg aldrig att en rutin står still utan att ha läst
   loggen.** Ny rutin i registret ⇒ vänta in första riktiga commiten och
-  skriv mönstret ur den. En rutin
+  skriv mönstret ur den.
+  ⚠️ **Rutinernas fasta sessioner är GRUNDA kloner (`--depth 50`) — och sex
+  spårningsrutiner committar varje timme, så 50 commits är ~7 timmar
+  historik.** Mätt 2026-09-22 16:07 i `/stonebite`-rutinens egen snapshot:
+  13 rutiner "saknas" (alla CaraShell-rutinerna, DryTreks nattvakt,
+  commission, translate-no, no-recensioner) — alla hade kört; sessionen här
+  med full historik gav 26 ok / 0 saknas på samma register. Rättat samma
+  dag: `fordjupaHistorik()` i `kallor/rutiner.mjs` kör
+  `git fetch --shallow-since=15.days origin main` innan loggen läses (2,4 s
+  mot GitHub), `historikFran()` mäter hur långt historiken faktiskt räcker,
+  och räcker den inte tre intervall bakåt blir en rutin utan spår **"går
+  inte att mäta"**, aldrig "saknas"; hela läget blir `delvis` med orsak, och
+  orsaken står över tabellen. **Ett "saknas" som kommer ur en grund klon är
+  mätarens fel, inte rutinens — skriv aldrig det ena som det andra.**
+  Samma regel som `git log --all` för produktminnen: kolla hur mycket
+  historik du ser innan du säger att något inte finns. En rutin
   med `avstangd: true` visas som avstängd — **men ett färskt spår vinner över
   flaggan** och sidan säger att registret är gammalt. Rutinerna som var
   `enabled: false` 2026-09-18 (HeimGuard ×3, TankGuard, AdventLane ×3,
