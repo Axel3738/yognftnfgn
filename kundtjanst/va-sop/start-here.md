@@ -57,7 +57,8 @@ carrier-portal procedure applies — look the parcel up on the carrier's site in
 | Can I resell your products? | **Reseller and wholesale inquiries** |
 | I got a strange email from you | **Suspicious or phishing email in our name** |
 
-Two pages you use every day without a customer asking: **Tracking page — how to look
+Three pages you use every day without a customer asking: **The auto-reply** (what the
+robot already answered, and your morning order of work), **Tracking page — how to look
 up any parcel** and **Store facts**.
 
 ---

@@ -72,7 +72,13 @@ const ny = (o) => { const f = falskWebmail(o); return { b: new Brevlada(KONFIG, 
 
 test('tolkaListrad: HTML-kolumnerna blir text, adressen ur title, flaggorna booleska', () => {
   const r = tolkaListrad({ uid: '3', kolumner: { subject: 'Var &auml;r min order #1042?', fromto: fromto('Anna', 'anna@gmail.com'), date: 'Today 10:00', size: '2 KB' }, flaggor: { seen: 0, flagged: 1, ctype: 'multipart/mixed' } });
-  assert.deepEqual(r, { uid: 3, amne: 'Var är min order #1042?', fran: 'Anna', franAdress: 'anna@gmail.com', datum: 'Today 10:00', storlek: '2 KB', last: false, flaggad: true, bilaga: true });
+  assert.deepEqual(r, { uid: 3, amne: 'Var är min order #1042?', fran: 'Anna', franAdress: 'anna@gmail.com', datum: 'Today 10:00', storlek: '2 KB', last: false, flaggad: true, svarat: false, bilaga: true });
+});
+
+test('tolkaListrad: \\Answered blir svarat — morgonlistan skiljer stjärna+svar från stjärna utan svar', () => {
+  const r = tolkaListrad({ uid: '4', kolumner: { subject: 'Re: order', fromto: fromto('Bo', 'bo@gmail.com') }, flaggor: { seen: 1, flagged: 1, answered: 1 } });
+  assert.equal(r.flaggad, true);
+  assert.equal(r.svarat, true);
 });
 
 test('tolkaListrad: avsändare utan HTML men med adress i texten', () => {

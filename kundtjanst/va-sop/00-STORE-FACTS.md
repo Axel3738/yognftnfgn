@@ -44,8 +44,7 @@ email.
 |---|---|---|
 | Delivery promise | 5–10 business days after the shipping email | The promise printed in the shipping emails and on the tracking page |
 | Who pays return postage | The customer pays and arranges the return shipping. We send no return label | The store's existing return SOP |
-| Return window | 30 days **from the day the customer received the item** | The store's own published return policy |
-| Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |
+| Return window | **14 days from the day the customer received the item** — the statutory right of withdrawal, nothing longer. Owner's decision 2026-09-22; product pages, listicles and the return policy page say the same since 2026-09-20. No "sale item" exception: everything sells at a compare-at price, so an exception would cover the whole range | The owner, and distance selling law (2005:59) |
 | Return address | Given out by support on request — it is published nowhere | Owner's decision: fewer returns, but only if we answer within 24 hours |
 | First reply target | 24 hours | Owner |
 | Refunds / replacements / "the parcel is lost" | Owner approves before you promise it | Owner |
