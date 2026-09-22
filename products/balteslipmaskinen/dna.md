@@ -347,3 +347,11 @@ Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
 3. **HYPOTES — talare och jämförelse otestade.** `PD_29_H1` (UGC) och `JF_1_1` (brynsten).
 
 Priset avläst live 2026-09-21: 909 kr, jämförpris 1 182 kr → spara 273 kr = 23 %.
+
+## Avatarer (skrivna 2026-09-22, `/rond-auto` steg 4b — max 4, med källa)
+
+| Tagg (`avatar=`) | Vem | Källa | Läge |
+|---|---|---|---|
+| `den-som-betalar-slipare-for-egna-knivar` | Hemmakocken med slöa köksknivar som i dag betalar (eller struntar i) slipning | Vinnarna PD_2_1/PD_4_H1 ("Slöa knivar? Vässade på 10 sekunder"), lärdom L-120250148322650291, Judge.me 2026-09-02 ("Bra för att slipa och polera hemma") | bevisad |
+| `hobbysnickare-med-verkstad` | Garage-/hobbysnickaren som slipar mejslar, yxor och trä | Produktsidans 3-i-1 (verktyg, metall, trä + polering), Judge.me ("Liten och smidig. Gör jobbet snabbt.") | obevisad som egen vinkel (batch #7 PD_33_H1 rad 4 nuddar den) |
+| `partner-eller-barn-som-koper-present` | Den som köper fars dag-/julklapp till en pappa med garage | Axels annonsidé 2026-09-22 (Annonsidéer, fars dag 8 nov) → `Beltgrinder_GT_1_H1` | gissning — GT aldrig testad på produkten |

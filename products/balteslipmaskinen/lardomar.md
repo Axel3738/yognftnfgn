@@ -41,7 +41,7 @@ En per etiketterad annons (docs/os/CS-KLART.md punkt 1–5). Skrivs av `node age
 **Hypotes (gissning):** Gissning: annonsen tog 41 % av kampanjens spend för att den byter ut produktjämförelsen mot en kostnadsjämförelse — "en gång" mot "varje gång" — och det är en räkning läsaren gör i huvudet innan hen ser priset.
 
 **Nästa annonser:**
-- `Beltgrinder_PD_20_1` — typ IM, parent Beltgrinder_PD_19_1: samma kostnadsvinkel, men siffran görs konkret (antal slipningar hos en slipare innan maskinen är betald). Enda variabeln är hur beloppet uttrycks.
-- `Beltgrinder_PD_21_H1` — typ IM, parent Beltgrinder_PD_19_1: samma vinkel som video, för att pröva om kostnadsräkningen bär i rörlig form. Enda variabeln är formatet.
+- `Beltgrinder_PD_32_1` (hette PD_20_1 i första skrivningen — numret var upptaget i hubben, rättat 2026-09-22) — typ I, parent Beltgrinder_PD_19_1: samma kostnadsvinkel, men siffran görs konkret (antal slipningar hos en slipare innan maskinen är betald). Enda variabeln är hur beloppet uttrycks.
+- `Beltgrinder_PD_33_H1` (hette PD_21_H1 — upptaget, rättat 2026-09-22) — typ I, parent Beltgrinder_PD_19_1: samma vinkel som video, för att pröva om kostnadsräkningen bär i rörlig form. Enda variabeln är formatet.
 - `Beltgrinder_CS_6_1` — typ N, parent Beltgrinder_PD_19_1: behåller kostnadsvinkeln men lägger till en mekanism, eftersom den live annonsen inte har någon alls.
 

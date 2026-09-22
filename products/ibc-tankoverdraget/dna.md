@@ -533,3 +533,11 @@ förlorare), PD_2_1 (618 kr, 0), PD_1_H2 (396 kr, 0), CS_2_1 (144 kr, 0).
 - **Förlustvinkel** (RI_1_H1/RI_1_1: en sommar utan överdrag + sidans
   storm-rad) — otestad mekanism.
 - **Längd på prisvinkeln** (CS_9_H1, 12–15 s, samma rader som CS_8_H1).
+
+## Avatarer (skrivna 2026-09-22, `/rond-auto` steg 4b — max 4, med källa)
+
+| Tagg (`avatar=`) | Vem | Källa | Läge |
+|---|---|---|---|
+| `villaagare-med-ibc-tank` | Villaägaren med en IBC-tank i trädgården som blir grön av alger och spricker av UV | PD_1_H1 (83 köp, CPA 225,65 kr mot BE 323,84), lärdom L-120250005818370291, "smutsig tank"-öppningen | bevisad |
+| `odlare-med-flera-tankar` | Odlaren/kolonisten med två–tre tankar i rad | Produktsidan (bevattning), BOF-vinklarna i batch #4 (investering/UV-åldrande) | gissning — aldrig isolerad i en annons |
+| `partner-eller-barn-som-koper-present` | Gåvoköparen (GT-vinkeln) | GT_1/GT_3_H1/GT_4_H1/GT_5_H1 — svält, aldrig riktig budget (dna 2026-09-10) | obevisad |

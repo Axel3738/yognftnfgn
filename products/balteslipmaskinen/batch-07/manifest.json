@@ -1,0 +1,30 @@
+[
+  {
+    "namn": "Beltgrinder_GT_1_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Beltgrinder_GT_1_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Beltgrinder_PD_32_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Beltgrinder_PD_32_1/brief.md",
+    "format": "static"
+  },
+  {
+    "namn": "Beltgrinder_PD_33_H1",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Beltgrinder_PD_33_H1/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Beltgrinder_CS_6_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Beltgrinder_CS_6_1/brief.md",
+    "format": "static"
+  }
+]

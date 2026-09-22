@@ -580,3 +580,15 @@ Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_c
 | IBC_BOF_12_1 | 5 | okänd | **LOSER** | 0 % | 10 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 | IBC_BOF_11_1 | 5 | okänd | **INGEN_LEVERANS** | — | 4 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 | IBC_BOF_10_1 | 5 | okänd | **LOSER** | 0 % | 20 kr | 0 | 0,00 / 2,39 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+
+## Batch #8 — 2026-09-22 (`/rond-auto` steg 4b, VIDAREBYGG på breakthrough IBC_PD_1_H1)
+
+Lärdom `L-120250005818370291` (skriven 2026-09-21): symptomet (grönt vatten) bär hooken, strukturen fråga → mekanism → 3×✅ → CTA är bevisad, 210D-specen är beviset. Tre iterationer, EN variabel var — allt efter sekund 3–7 är förälderns rader och klipp ordagrant. Feedback-raden "Brief review" läst först. Copy av sonnet-subagent, regi av huvudsessionen. Spärrar: briefgranskning ✅ 3/3 (regi 6/6 per video), `lardom --brief` ✅ 3 BRIEF-rader. Alla tre i hubben `BÄVER IBC-Tanköverdraget`, Status Draft, Typ Video - Pending Approval.
+
+| Annons | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live |
+|---|---|---|---|---|---|---|---|
+| IBC_PD_12_H1 | I | IBC_PD_1_H1 | hooken: grönt vatten i bild sekund 0, påstående i stället för fråga | symptomet i bild håller fler än frågan | hook rate > förälderns 37 %, CPA ≤ 204 kr | okänd | — |
+| IBC_PD_12_H2 | I | IBC_PD_1_H1 | problemdelen: 5 s orsak (sol → alger, UV → slitage) före mekanismen | köparen behöver se orsaken före fixen | CPA < 204 kr om problemtiden köper köp, annars bara hold | okänd | — |
+| IBC_PD_12_H3 | I | IBC_PD_1_H1 | öppningsbilden: PD_Extras makro på väven, i FULL längd | isolerar dna-hypotes 4 (öppning vs klipplängd) | CPA ~179 kr ⇒ öppningen bär; ≥ 277 ⇒ klippet bar | okänd | — |
+
+Efter dessa tre är PD_1_H1:s tre iterationer förbrukade (deadline 2026-10-05). Nästa vidarebygg kräver en ny breakthrough eller att H1–H3 får etikett dag 7. `[TID]` i blixtlåsraden fylls av redigeraren ur den riktiga tagningen — aldrig "2 minuter" (sidan anger ingen tid).

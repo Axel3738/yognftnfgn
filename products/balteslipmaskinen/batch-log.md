@@ -419,3 +419,16 @@ Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_c
 |---|---|---|---|---|---|---|---|---|---|
 | Beltgrinder_BOF_1_1 | 5 | okänd | **LOSER** | 0 % | 42 kr | 0 | 0,00 / 2,75 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
 | Beltgrinder_BOF_2_1 | 5 | okänd | **LOSER** | 0 % | 19 kr | 0 | 0,00 / 2,75 | nej | BOF — ingen spend-fix, räknas inte i frekvensen |
+
+## Batch #7 — 2026-09-22 (`/rond-auto` steg 4b, VIDAREBYGG på breakthrough Beltgrinder_PD_19_1)
+
+Lärdom `L-120250148322650291`: PD_19_1 vinner på en kostnadsjämförelse läsaren gör i huvudet ("Betala en gång. Sluta betala för att slipa knivar."), utan mekanism. Lärdomens namn PD_20_1/PD_21_H1 var upptagna i hubben ⇒ PD_32_1/PD_33_H1 (lardomar.md rättad). Axels annonsidé (fars dag) byggd först som typ N. Priset läst live 2026-09-22: 909 kr / 1 182 kr (spara 273 kr, 23 %). Feedback-raden läst först. Copy av sonnet, regi av huvudsessionen. Spärrar: briefgranskning ✅ 4/4 (regi 6/6, 5/5), `lardom --brief` ✅ 4 BRIEF-rader. Hub `Belt grinder creative hub`, Status Draft.
+
+| Annons | Format | Typ | Parent | Variabel | Hypotes | Förväntan | rev | brief → live |
+|---|---|---|---|---|---|---|---|---|
+| Beltgrinder_GT_1_H1 | video | N | — | köparen: presentköparen, fars dag 8 nov (Axels idé, Annonsidéer) | demon (PD_4_H1) håller även den som köper åt någon annan | första GT-datan på produkten; ≥ 300 kr spend innan dom | okänd | — |
+| Beltgrinder_PD_32_1 | bild | I | PD_19_1 | underraden: kostnaden i knivar och sekunder i stället för "en gång" | jämförelsen landar utan gissning | CPA ≤ förälderns 361 kr (livstid) | okänd | — |
+| Beltgrinder_PD_33_H1 | video | I | PD_19_1 | formatet: samma argument som video över PD_4_H1:s demo | argumentet bär i rörlig form | CPA mellan 256 (PD_4_H1) och 361 | okänd | — |
+| Beltgrinder_CS_6_1 | bild | I | PD_19_1 | underraden: mekanism (7 hastigheter, 15°) i stället för ägande | en reason-to-believe adderar köp | CPA < 361 ⇒ varje kostnadsannons får en mekanismrad | okänd | — |
+
+Efter dessa är PD_19_1:s tre iterationer förbrukade (deadline 2026-10-05). Inget kronbelopp för en sliptjänst finns i repot — därför skrivs inget.

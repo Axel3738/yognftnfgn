@@ -312,3 +312,17 @@ Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_c
 | Takoverdrag_LI_1_1 | 1 | okänd | **LOSER** | 0 % | 43 kr | 0 | 0,00 / 3,28 | nej | släpp |
 | Takoverdrag_SP_5_1 | 1 | okänd | **LOSER** | 0 % | 24 kr | 0 | 0,00 / 3,28 | nej | släpp |
 | Takoverdrag_TR_1_1 | 1 | okänd | **KPI_WINNER** | 0 % | 33 kr | 1 | 34,72 / 3,28 | nej | 3 nya hookar, allt annat lika — den säljer men får inte spend |
+
+## Batch #4 — 2026-09-22 (`/rond-auto` steg 4b, brief_runda, alla fyra ur Axels Annonsidéer)
+
+Lärdom `L-120250147392200291` (CS är starkast, GT bevisad, "bara taket" är mekanismen). Fyra rader med Status Ny i Annonsidéer (2026-09-18/19) — alla byggda i dag och satta till Byggd med kommentar. Priset läst live 2026-09-22: nio storlekar, 1 129 kr (6,5 m, jämförpris 1 469) … 2 239 kr (13,5 m) ⇒ "från 1 129 kr" när storlekarna nämns. Sidan säger varken "husbil" eller "vattentät". Butiksneutralt (speglas till CaraShell): inga policyrader, inget butiksnamn. Feedback-raden läst först. Copy av sonnet, regi av huvudsessionen. Spärrar: briefgranskning ✅ 4/4, `lardom --brief` ✅ 4 BRIEF-rader. Hub `BÄVER For CARL Taköverdraget för Husvagn`, Status Draft.
+
+| Annons | Typ | Parent | Variabel | Axels idé | Hypotes | Förväntan | rev | brief → live |
+|---|---|---|---|---|---|---|---|---|
+| Takoverdrag_OB_3_H1 | N (kalla=voc) | — | invändningen "Är det vattentätt?" besvarad med vattendemo | video som svarar på kommentaren | den som frågar är köparen CS-annonserna tappar | kräver NY tagning (kanna vatten på taket) — ligger i Draft tills den finns | okänd | — |
+| Takoverdrag_GT_11_H1 | I | GT_2_H1 | tillfället: fars dag 8 nov på förälderns mottagarbeskrivning | "perfekta fars dag-presenten till en husvagnsgubbe" | ett riktigt datum lyfter köp utan påhittad brådska | CPA ≤ GT_2_H1:s 240 kr; annars är tillfället värdelöst | okänd | — |
+| Takoverdrag_CS_2_H2 | M | CS_2_H1 | ljudspåret: VO bort, sex textkort + musik | variant av vinnarvideon utan VO | feeden är tyst — VO:n gör inget | CPA ≈ CS_2_H1 ⇒ VO:n är dödvikt | okänd | — |
+| Takoverdrag_CS_2_H3 | I | CS_2_H1 | öppningsraden: nio storlekar (3 × 5,5–13,5 m) | "spelar ingen roll om husbil eller husvagn – välj din storlek" | "finns den för min?" sållar bort köpare före prisargumentet | CPA < CS_2_H1:s 249 kr | okänd | — |
+
+⚠️ **Husbil hålls.** Axels formulering "husbil eller husvagn" står inte i briefen: produktsidan nämner inte husbil (läst live 2026-09-22), och en annons får inte lova något sidan inte säger. Går in som hookvariant den dag Axel bekräftar passformen OCH ordet står på sidan. Frågan ställd i Annonsidé-radens kommentar och i dagens rapport.
+GT_11_H1 speglas INTE till CaraShell (takskyddets dna mönster 12: inga GT-briefer där förrän test-ABO finns).
