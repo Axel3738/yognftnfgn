@@ -67,6 +67,44 @@ skript-inskrivning i auto-läge — händer det får Axel klistra in de tre
 
 ## Utfall mejl + meny
 
-_(fylls i när Coworks rapport kommer: teckenantal mot servern, menyn i
-header + sidfot, testmejlet, avvikelser — sedan `meny_klar: true` i
-`mejl/butiker/matstrumpor.json` och prompten byggs om)_
+**Klart 2026-09-22. Cowork behövde inte ändra någonting — allt var redan på
+plats sedan 2026-09-21 17:57–18:01 UTC.** Körningen blev alltså en
+verifiering, inte en inskrivning; det enda som skickades var testmejlet.
+
+| Mall | Ämnesrad på servern | Tecken | Identisk med råfilen | `updatedAt` |
+|---|---|---|---|---|
+| `shipping_confirmation` | Ditt paket är på väg | 10 305 | ja | 2026-09-21 17:57 UTC |
+| `shipping_update` | Ny info om ditt paket | 6 153 | ja | 2026-09-21 18:00 UTC |
+| `shipment_out_for_delivery` | Paketet kommer idag | 6 142 | ja | 2026-09-21 18:01 UTC |
+
+Jämförelsen gjordes mot serverns mall-data (GraphQL `EmailTemplate`), inte mot
+redigerarens vy, och alla tre bär `MS-` + `sha256` — alltså bävernumret räknat
+i Liquid. Grannmallarna är orörda (`local_out_for_delivery` och
+`shipment_delivered` har båda `updatedAt: null`).
+
+**Menyn:** raden `Spåra paket → /pages/spara` låg redan i BÅDA menyerna
+(`main-menu` och `footer`), sist i listan. Verifierat oberoende av sessionen
+samma dag: `curl` mot matstrumpor.se ger 4 träffar på "Spåra paket" och 4 på
+`/pages/spara` (temat visar båda menyerna i sidfoten, under Snabblänkar och
+Information).
+
+**Testmejlet:** skickat från Leveransbekräftelse, framme. En knapp, **Spåra
+paketet**, destination
+`https://matstrumpor.se/pages/spara?nummer=MS-6C1002DF`. `href` går via
+Shopifys klickspårning (`/_t/c/v3/…`) som vidarebefordrar dit — Shopifys egen
+omskrivning, inget i mallen. Avsändaren `kundsupport@matstrumpor.se` är
+"Autentiserad", ingen gul banner, inget verifieringssteg.
+
+⚠️ **Lärdom: repots flagga sa fel i ett dygn.** `meny_klar` stod `false` och
+avsnittet här stod tomt medan Shopify hade allt på plats — en session (eller
+en tidigare Cowork-körning) gjorde jobbet utan att skriva tillbaka. Det är
+repots egen regel igen: **det som inte står i en fil har inte hänt, och det
+som står i en fil har inte nödvändigtvis hänt.** Kolla servern innan du ber
+Axel om ett klick.
+
+⚠️ **Observation, inte ett fel:** testmejlets produktlista ("I paketet") visar
+OrtoFlex Pro, Sömnplåster, Skrubbmattan, FotRullen, Mammaband och FixToes —
+inga strumpor. Det är Shopifys testdata som plockar produkter ur butiken, så
+mallen är oskyldig, men butiken bär uppenbart fler produkter än sushistrumpan.
+Värt att veta innan nästa annonsrond antar att Matstrumpor är en
+enproduktsbutik.

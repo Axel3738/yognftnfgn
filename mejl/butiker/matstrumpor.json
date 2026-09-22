@@ -13,5 +13,6 @@
   "logga_url": "https://matstrumpor.se/cdn/shop/files/Namnlos_design_-_2026-03-19T120925.579.png?v=1773918572&width=280",
   "logga_bredd": 140,
   "logga_hojd": 79,
-  "meny_klar": false
+  "meny_klar": true,
+  "meny_klar_comment": "Verifierad 2026-09-22: tre mallar identiska mot servern, raden Spåra paket i båda menyerna, testmejl framme. Cowork behövde inte ändra något — allt låg inne sedan 2026-09-21 17:57–18:01 UTC. Se sparning/cowork/matstrumpor.md → Utfall."
 }
