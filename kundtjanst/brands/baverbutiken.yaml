@@ -81,7 +81,9 @@ tvister:
   # Axels besked 2026-09-20. Adressen står INTE i policyn ("Om returen
   # accepteras skickar vi dig instruktioner om hur och var du ska skicka
   # paketet") och ska inte heller göra det — kunden ska höra av sig först.
-  returadress: "Sjöhed 160"
+  # Hela adressen som VA:n själv skriver i returmejlen (Skickat 2026-09-14 och
+  # 2026-09-16), kommaseparerad — autosvaret skriver en rad per del.
+  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
   # Friktionsmodellen, Axels beslut 2026-09-20: adressen publiceras aldrig,
   # den lämnas ut av kundtjänst på förfrågan. Färre returer — men villkoret är
   # att svaret går ut SNABBT. #5122 är motexemplet: ett missat mejl om en

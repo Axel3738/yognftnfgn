@@ -162,6 +162,25 @@ const BYTE = ['för lite[tn]', 'för sto[rt]+\\b', 'för små', 'för trång', '
   'too small', 'too big', 'too large', 'too tight', 'does not fit', 'doesn.t fit', 'wrong size', 'size up', 'size down', 'a size (bigger|larger|smaller)', 'exchange (it|for|to)',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
+// Kunden vill returnera och frågar hur (Axels beslut 2026-09-22 på Peters
+// "hur gör vi enklast för en smidig retur?": "vill ha retur direkt → skicka
+// returinformationen direkt"). Inte "retur" som ord — det är retur_angerratt —
+// utan själva avsikten att skicka tillbaka.
+const RETURFRAGA = [
+  '(vill|önskar|önskar att|ska|tänker|väljer att|kommer att) (returnera|skicka tillbaka|lämna tillbaka|göra en retur|returnera varan|returnera produkten)', 'hur (gör|går) (jag|vi|man) .{0,40}(retur|returnera|skicka tillbaka)', '(smidig|enkel|snabb) retur', 'returnera (varan|produkten|den|beställningen|ordern|paketet)', 'returadress', 'vart (skickar|ska) (jag|vi) (den|varan|paketet|tillbaka)', 'vill ha en retur', 'begär(a|) (en )?retur', 'retur(en)? (till|av)',
+  '(vil|ønsker|skal|kommer til å) (returnere|sende tilbake|levere tilbake)', 'hvordan (gjør|går) (jeg|vi|man) .{0,40}(retur|returnere|sende tilbake)', 'returadresse', 'returnere (varen|produktet|den|bestillingen)',
+  '(vil|ønsker|skal) (returnere|sende tilbage|levere tilbage)', 'hvordan (gør|går) (jeg|vi|man) .{0,40}(retur|returnere|sende tilbage)', 'returnere (varen|produktet|den|ordren)',
+  '(haluan|haluaisin|aion) palauttaa', 'miten (voin |voi )?palauttaa', 'palautusosoite', 'palauttaa (tuotteen|tilauksen|sen)',
+  '(want|would like|need|going) to return', 'how (do|can|should) (i|we) return', 'return (it|the item|the product|this|the order)', 'return address', 'send (it|the item|this) back',
+].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+
+/** Ber kunden om att få returnera (hur, vart, vill returnera)? Ren. */
+export function arReturfraga({ amne = '', text = '' } = {}) {
+  const a = normalisera(amne);
+  const t = normalisera(text);
+  return RETURFRAGA.some((re) => re.test(a) || re.test(t));
+}
+
 /** Är mejlet ett byte eller en storleksfråga på en levererad vara (SOP 21)? Ren. */
 export function arByte({ klass, amne = '', text = '' } = {}) {
   const a = normalisera(amne);
@@ -175,6 +194,8 @@ export function enkelTyp({ klass, amne = '', text = '' }) {
   const t = normalisera(text);
   const traff = (lista) => lista.some((re) => re.test(a) || re.test(t));
   const alla = new Set((klass.alla ?? []).map((x) => x.id));
+  // Returen först: kunden som vill returnera och frågar hur får returinformationen (Axels beslut 2026-09-22) — inte ett byte, inte en tvist.
+  if (alla.has('retur_angerratt') && !alla.has('chargeback_hot') && !arByte({ klass, amne, text }) && arReturfraga({ amne, text })) return 'retur';
   if ([...alla].some((id) => ALDRIG_ENKEL.has(id))) return null;
   if (arByte({ klass, amne, text })) return null;
   // SOP 05/08/07/15: skadad, defekt, fel eller för få varor ⇒ första svaret ber om bilderna.
@@ -259,6 +280,11 @@ export function beslut({ hink, fakta = null, trad = null, brand = null } = {}) {
   // ENKEL — håller den mot faktan?
   // Bildförfrågan behöver ingen fakta: VA:n tar ärendet när bilderna kommit (flaggad + VA-mappen).
   if (h.typ === 'foton') return { ...h, orsak: 'skadad, defekt eller fel vara utan ilska — bildförfrågan (SOP 05/08), VA:n tar det vidare', svara: true, flagga: true, flytta: true, vaAtgard: true };
+  // Returen: informationen direkt (Axels beslut 2026-09-22) — kräver en returadress i brandfilen; VA:n tar emot returen.
+  if (h.typ === 'retur') {
+    if (!String(brand?.tvister?.returadress ?? '').trim()) return { ...h, hink: HINK.SVAR, orsak: 'kunden ber om retur men brandfilen saknar tvister.returadress — VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };
+    return { ...h, orsak: 'kunden ber om retur — returinformationen direkt (Axels beslut 2026-09-22), VA:n tar emot returen', svara: true, flagga: true, flytta: true, vaAtgard: true };
+  }
   if (h.typ === 'foretag') {
     const f = brand?.svar?.foretag;
     if (!f?.namn || !f?.orgnr || !f?.adress) return { ...h, hink: HINK.SVAR, orsak: 'företagsuppgifter efterfrågade men brandfilen saknar svar.foretag — VA:n', svara: false, flagga: true, flytta: false, vaAtgard: false };

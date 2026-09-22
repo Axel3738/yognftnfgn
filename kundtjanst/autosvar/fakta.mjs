@@ -82,7 +82,7 @@ export function valjOrder(ordrar = []) {
  * Returnerar { order, sandning, sparning, lank, fonster, sparr, kalla[] }.
  */
 export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 = null, sprak = 'sv', nu = new Date(), logg = () => {}, tvister = [] } = {}) {
-  const ut = { order: null, sandning: null, sparning: null, lank: null, fonster: null, sparr: null, kalla: [] };
+  const ut = { order: null, sandning: null, sparning: null, lank: null, bavernummer: null, fonster: null, sparr: null, kalla: [] };
   if (!shopify) { ut.kalla.push('Shopify inte kopplat'); return ut; }
   const avsandare = String(mejl?.fran?.adress ?? '').toLowerCase();
   const nummer = klass?.ordernummer ?? [];
@@ -131,7 +131,11 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
   const s = [...(ut.order.sandningar ?? [])].sort((a, b) => (b.skickad?.getTime() ?? 0) - (a.skickad?.getTime() ?? 0));
   ut.sandning = s.find((x) => x.nummer) ?? s[0] ?? null;
   if (ut.sandning?.skickad) ut.fonster = leveransfonster(ut.sandning.skickad, konfig?.svar?.leverans_dagar);
-  if (ut.sandning?.nummer) ut.lank = sparningslank(konfig?.svar, ut.sandning.nummer) ?? ut.sandning.lank ?? null;
+  if (ut.sandning?.nummer) {
+    ut.lank = sparningslank(konfig?.svar, ut.sandning.nummer) ?? ut.sandning.lank ?? null;
+    // Bävernumret i klartext bredvid länken (Axels feedback 2026-09-22) — bara när butiken har en spårningssida som förstår det.
+    if (String(konfig?.svar?.sparningssida ?? '').trim()) ut.bavernummer = bavernummer(ut.sandning.nummer, konfig?.svar?.sparning_prefix || 'BB-');
+  }
 
   // 3. Skanningarna (gratis läsning, aldrig registrering)
   if (ut.sandning?.nummer) {

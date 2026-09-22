@@ -51,9 +51,9 @@ import { byggArenden } from './arenden.mjs';
 import { ShopifyLasare } from './shopify.mjs';
 import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
-import { HINK, hinka, beslut, redanBesvaradAvOss } from './autosvar/hinkar.mjs';
+import { HINK, hinka, beslut, redanBesvaradAvOss, arReturfraga } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
-import { skrivEnkelt, skrivArgt, lageRader, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
 import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
@@ -155,7 +155,8 @@ export async function korBrand(brand, {
     // läggs till som ett stycke — en arg "var är paketet"-kund ska få veta det).
     let fakta = null;
     const omPaketet = (hink.klass.alla ?? []).some((x) => ['var_ar_ordern', 'ej_levererad'].includes(x.id));
-    if ((hink.hink === HINK.ENKEL && ['wismo', 'adress'].includes(hink.typ)) || (hink.hink === HINK.ARG && omPaketet)) {
+    const returfraga = arReturfraga({ amne: mejl.amne, text: mejl.text });
+    if ((hink.hink === HINK.ENKEL && ['wismo', 'adress', 'retur'].includes(hink.typ)) || (hink.hink === HINK.ARG && (omPaketet || returfraga))) {
       fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg, tvister });
       post.fakta = fakta.kalla;
     }
@@ -173,8 +174,10 @@ export async function korBrand(brand, {
         let text = null;
         try {
           const stilla = namnerStillaSparning(`${mejl.amne}\n${mejl.text}`);
+          const namn = fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn });
+          const ordernummer = fakta?.order?.namn || (hink.klass.ordernummer?.[0] ? `#${hink.klass.ordernummer[0]}` : '');
           if (d.hink === HINK.ARG) {
-            const x = xNyckelFor(hink.klass, d.argOrsaker ?? []);
+            const x = xNyckelFor(hink.klass, d.argOrsaker ?? [], `${mejl.amne}\n${mejl.text}`);
             post.x = x;
             // Läget ur Shopify/17TRACK som eget stycke — bara med färsk fakta (ingen spärr) och kundens egen order.
             let lage = null;
@@ -183,10 +186,22 @@ export async function korBrand(brand, {
               catch (e) { lage = null; logg(`uid ${m.uid}: läget kunde inte byggas (${e.message}) — det arga svaret går utan`); }
             }
             post.lage = Boolean(lage);
-            // SOP 05/08: skadad eller fel vara ⇒ be om de tre bilderna i samma svar.
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton: villHaFoton(hink.klass), lage }).text;
+            // Axels exempel 2026-09-22: "din order har legat opostad i 13 dagar och det är inte acceptabelt" — bara när ordern faktiskt är sen (äldre än packtiden).
+            let opostadDagar = null;
+            const o = fakta?.order;
+            if (o && omPaketet && !fakta.sandning?.skickad && !o.sandningar?.length && o.fulfillment !== 'fulfilled' && o.skapad) {
+              const dagar = Math.floor((nu.getTime() - new Date(o.skapad).getTime()) / 86_400_000);
+              if (dagar > (Number(konfig.svar.packas_dagar) || 2)) opostadDagar = dagar;
+            }
+            post.opostadDagar = opostadDagar;
+            // Vill kunden returnera ⇒ returinformationen i samma svar (Axels beslut 2026-09-22, Peter).
+            const retur = returfraga ? returText({ sprak: post.sprak, brand: konfig, ordernummer }) : null;
+            post.retur = Boolean(retur);
+            // SOP 05/08: skadad, fel eller undermålig vara ("skräp", "ser inte ut som på bilden") ⇒ be om de tre bilderna i samma svar (Axels feedback 2026-09-22: "jättebra att vi frågar efter bilder direkt").
+            const foton = villHaFoton(hink.klass) || ['kvalitet', 'som_pa_bilden', 'skadad_defekt', 'fel_vara'].includes(x);
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, lage, namn, opostadDagar, retur }).text;
           } else {
-            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn: fornamn({ mejlnamn: mejl.fran?.namn, ordernamn: fakta?.order?.kund?.fornamn }), bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), nu }).text;
+            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, nu }).text;
           }
         } catch (e) {
           text = null;
@@ -257,7 +272,9 @@ async function lasMejl(b, mapp, uid, cache) {
  * (`\b` fungerar inte före å/ä/ö — därför samma ordgräns som klassificeringen.)
  */
 export function harForbjudet(text) {
-  const t = String(text ?? '').toLowerCase();
+  // Länkar räknas inte: returpolicyn heter …/policies/refund-policy, och en
+  // länk lovar ingenting (kalibreringen 2026-09-22 stoppade returinformationen på den).
+  const t = String(text ?? '').replace(/https?:\/\/\S+/gi, ' ').toLowerCase();
   return /(^|[^a-zåäöøæ])(rabatt|discount|coupon|kupong|återbetal|refund|refusjon|refusion|hyvity|ersättning|erstatning|kompensation|compensation|gratis|free of charge|garanterar|guarantee|promise|lovar)/.test(t);
 }
 

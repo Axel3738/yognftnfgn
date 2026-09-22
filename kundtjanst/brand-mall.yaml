@@ -56,7 +56,7 @@ notion:
 # åt, och det är hela poängen: en ny butik får fungerande tvisthantering genom
 # att fylla i tio rader, inte genom att skriva om rutinerna.
 tvister:
-  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden
+  returadress: ""             # {{RETURN_ADDRESS}} — hela adressen VA:n skickar till kunden, kommaseparerad ("BOLAG AB, Gatan 1, 123 45 Ort, Sverige"); autosvaret skriver en rad per del i returinformationen
   # true = adressen står INTE publikt någonstans; kunden måste mejla kundtjänst
   # för att få den. Det ger färre returer, men bara om svaret går ut inom
   # forsta_svar_timmar nedan — ett missat mejl blir en tvist, och en tvist

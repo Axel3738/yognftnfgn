@@ -80,6 +80,19 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   resp. `foton`. Det arga svaret bär dessutom **läget ur spårningen** ("Det här
   ser jag just nu om din order …") när faktan är färsk och ordern kundens egen,
   så en arg WISMO-kund får veta var paketet är utan att vänta på VA:n.
+- **Axels feedback på utkasten 2026-09-22 (mallarna):** ARG börjar med
+  hälsning + *"Jag förstår helt din frustration"* + problemet i klartext,
+  minst lika argt som kunden ("helt oacceptabelt, och det är inget vi står
+  för"), sen eskaleringen som brådskande ärende och "svar inom de kommande
+  dagarna", "har du mer information … svara" + bilderna på alla
+  produktklagomål. Aldrig "jag eskalerar detta" som första rad. Opostad
+  order ⇒ antalet dagar i klartext. **Returen:** vill kunden returnera och
+  frågar hur ⇒ returinformationen direkt (lugn: ENKEL `retur`; arg: i
+  ARG-svaret), ur brandfilens `tvister` (adress rad för rad, 30 dagar,
+  policylänk; fraktkostnaden bara när `returfrakt_betalas_av` är ifyllt),
+  flaggad + VA-PRIO. **WISMO:** aldrig avsändningsdatum, aldrig första
+  sträckans fraktbolag, aldrig "framme i Sverige" eller en ort — bara var
+  paketet ÄR, bävernumret och länken.
 - **Kunden är VA:ns i 14 dagar** (`hinkar.VA_KUND_DAGAR`): har VA:n skrivit
   till adressen i Skickat de senaste 14 dagarna — i vilken tråd som helst — får
   kunden inget automatiskt svar, bara flagga. Ulf 2026-09-22: fyra VA-svar i

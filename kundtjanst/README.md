@@ -258,6 +258,55 @@ Roundcuben, och **verifierat live i en tredje `--igen`-körning:** Ulf ⇒ SVÅR
 "VA:n skrev till kunden för 3 dagar sedan (annan tråd)", Hans ⇒ "tråden har
 redan ett svar från oss" (utkastet i Drafts), noll nya utkast.
 
+### Axels feedback på utkasten 2026-09-22 — mallarna omskrivna
+
+Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
+
+- **ARG börjar aldrig med "jag eskalerar detta".** Ordningen är: hälsning
+  med namn → *"Jag förstår helt din frustration."* → problemet i klartext,
+  minst lika argt som kunden (*"En produkt som inte alls ser ut som på bilden
+  är helt oacceptabelt, och det är inget vi står för"*) → *"Jag har eskalerat
+  det här direkt till vårt ansvariga team som ett brådskande ärende — du kan
+  räkna med svar inom de kommande dagarna"* → *"Har du mer information …
+  svara på det här mejlet"* + bilderna. X (`svar.mjs` → `t.x`) är HELA
+  meningar, personliga per ärende: `som_pa_bilden` (Tobias), `kvalitet`
+  (Morgan: "rent skräp, tunt som en ICA-kasse"; Tony: "sop-påse"),
+  `skadad_defekt`, `ej_levererad`, `vantat` … och `opostad(n)` — Axels eget
+  exempel "din order har legat opostad i 13 dagar" — när ordern är oskickad
+  längre än packtiden. Bilderna begärs på alla produktklagomål.
+- **Returinformationen direkt** (Peter: "hur gör vi enklast för en smidig
+  retur?" — Axel: "då kan vi ju skicka han returinformationen direkt"):
+  `hinkar.arReturfraga` känner igen avsikten (vill returnera / hur gör jag /
+  returadress …), lugn ⇒ ENKEL `retur`, arg ⇒ ARG-svaret + returblocket.
+  Texten följer VA:ns egna returmejl i Skickat: originalförpackning, namn +
+  ordernummer på paketet, kopia av bekräftelsen, adressen rad för rad
+  (brandfilens `tvister.returadress`, nu hela adressen), spårbar frakt +
+  spårningsnumret till oss, 30 dagar från mottagandet, policylänken. Vem som
+  betalar returfrakten sägs BARA när `tvister.returfrakt_betalas_av` är
+  ifyllt — det är tomt (ägarens beslut), fast VA:n skriver "kundens ansvar".
+  Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot returen.
+- **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
+  "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
+  YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
+  biten — det brukar levereras inom 1–2 arbetsdagar"*, eller *"Paketet är
+  skickat och på väg"* + datumet för senaste uppdateringen (ingen ort, inget
+  land), plus **bävernumret i klartext** bredvid länken (`fakta.bavernummer`).
+  Skräppost-raden ("sök på Bäverbutiken") behölls — Axel: "jättebra tips".
+- Löftesspärren (`harForbjudet`) ignorerar länkar sedan samma natt —
+  policylänken heter `…/refund-policy` och stoppade hela returinformationen.
+
+**Femte `--igen`-körningen 2026-09-22 ~01:58 CEST med de nya mallarna:**
+50 mejl, **3 utkast** — Tobias (ARG `som_pa_bilden` + bilder), Morgan (ARG
+`kvalitet`), Juan #6504 (kontaktformulär, "önskar returnera den ni skickade"
+⇒ ENKEL `retur` med hela returblocket). **Tony, Peter och Hans hade VA:n
+redan svarat på måndagen** (Skickat 21/9 kl 13:09, 11:03 resp. 12:33 CEST —
+alltså FÖRE den första kalibreringskörningen 01:10). Tre av de fem utkast
+Axel läste gick alltså till kunder VA:n redan svarat samma dag: Skickat-vakten
+var blind (mappbuggen ovan) tills den fjärde körningen. Med Skickat läst
+säger motorn "tråden har redan ett svar från oss" resp. "VA:n skrev till
+kunden för 1 dag sedan" och skriver inget utkast — precis vad regeln ska
+göra. Axels feedback på texten gäller ändå; mallarna är omskrivna efter den.
+
 `--igen` är kalibreringsläget (kräver `--torr`): flaggor och loggen ignoreras
 så fönstrets mejl bedöms på nytt. **Körningen 2026-09-22 ~01:10 CEST på
 Bäverbutiken:** 50 mejl lästa, 6 hoppade, **1 ENKEL** (Hans, kontaktformulär
