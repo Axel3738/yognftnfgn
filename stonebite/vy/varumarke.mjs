@@ -20,6 +20,7 @@ import { forklaraFel, kategorinamn, tvisttyp } from '../forklaring.mjs';
 import { harleddaHandelser, brandForKundtjanst, idag, plusDagar } from '../kalender.mjs';
 import { STATUSAR, TYPER as KONTAKTTYPER, statusnamn, typnamn } from '../kontakter.mjs';
 import { kalenderBlock } from './kalender.mjs';
+import { autosvarBlock } from './drift.mjs';
 
 export const FLIKAR = Object.freeze([
   { id: 'oversikt', titel: 'Översikt' },
@@ -100,7 +101,13 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
   // Pingarna till VA:n (stonebite/larm.mjs) — det som faktiskt skickats, nyast först.
   const larm = (snapshot?.larm?.skickade ?? []).filter((l) => l.brand === vm.id).sort((a, b) => String(b.tid).localeCompare(String(a.tid)));
 
-  return { vm, butiker, perValuta, konton, kundtjanst, tvister, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, lage, lageord };
+  // Autosvaret (kundtjanst/autosvar.mjs): loggens butiker som hör till varumärket.
+  // Brandet i loggen är butiks-id:t — samma karta som tvisterna använder.
+  const autosvarBrands = Object.fromEntries(Object.entries(snapshot?.autosvar?.brands ?? {}).filter(([id]) => tillhor(vm.id, brandForKundtjanst(id))));
+  const autosvar = snapshot?.autosvar ? { ...snapshot.autosvar, brands: autosvarBrands } : null;
+  const butiksnamn = (id) => butiker.find((b) => b.id === id)?.namn ?? (snapshot?.butiker ?? []).find((b) => b.id === id)?.namn ?? kundtjanst.find((b) => b.id === id)?.namn ?? id;
+
+  return { vm, butiker, perValuta, konton, kundtjanst, tvister, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, butiksnamn, lage, lageord };
 }
 
 function tillhor(brandId, kundtjanstBrand) {
@@ -377,6 +384,7 @@ function flikKundtjanst(d, { nu }) {
     under: 'Störst högar först, ur senaste veckorapporten. En hög som växer är något att fixa i butiken.',
     innehall: panel({ innehall: tabell([{ titel: 'Ärende' }, { titel: 'Antal', tal: true }, { titel: 'Obesvarade', tal: true }, { titel: 'Rutin finns' }], kategorier.map((c) => `<tr><td><span class="namn">${esc(c.svenska)}</span></td><td class="tal">${tal(c.antal)}</td><td class="tal">${tal(c.obesvarade)}</td><td>${c.sop === 'covered' ? status('bra', t('ja')) : status('varning', t('saknas'))}</td></tr>`)) }),
   }) : ''}
+  ${autosvarBlock(d.autosvar, { nu, namnFor: d.butiksnamn })}
   ${block({
     titel: 'Pingar till VA:n',
     under: 'Det som skickats till VA:n i Discord de senaste 30 dagarna. Ett ärende pingas en gång, aldrig två.',

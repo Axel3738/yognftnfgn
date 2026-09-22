@@ -28,7 +28,7 @@ import { oversikt as raknaOversikt, allaKampanjer, kallolage, produktlista } fro
 import { forandring, sedan, DAG } from '../berakna.mjs';
 import { harRatt } from '../roller.mjs';
 import { forklaraFel, kallnamn, kortMotivering, atgardsnamn, tvisttyp } from '../forklaring.mjs';
-import { idag } from '../kalender.mjs';
+import { idag, brandForKundtjanst } from '../kalender.mjs';
 
 const HUVUDVALUTA = 'SEK';
 
@@ -111,6 +111,14 @@ function kraverDig({ snapshot, kalender = [], nu, brandnamn }) {
     for (const m of k.meddelanden ?? []) {
       if (m.bot || new Date(m.tid).getTime() < gransManniska) continue;
       rader.push({ ton: 'varning', text: `${brandnamn(k.brand)} #${k.kanal} · ${m.av}: ${String(m.text).slice(0, 120)}${String(m.text).length > 120 ? '…' : ''}`, lank: k.lank, extern: true });
+    }
+  }
+  // Arga kunder autosvaret mött det senaste dygnet — boten har lugnat, VA:n tar över.
+  for (const [id, b] of Object.entries(snapshot?.autosvar?.brands ?? {})) {
+    for (const r of b.arga ?? []) {
+      if (new Date(r.tid).getTime() < gransManniska) continue;
+      const order = r.ordernummer?.[0] ? `#${r.ordernummer[0]}` : 'utan ordernummer';
+      rader.push({ ton: 'varning', text: `Arg kund ${order} (${brandnamn(brandForKundtjanst(id))}) — autosvaret ${r.atgard === 'svar' ? 'skickade ett lugnande svar' : 'la ett lugnande utkast'}, VA:n tar över`, lank: '/app/kundtjanst' });
     }
   }
   for (const h of kalender) {

@@ -24,6 +24,7 @@ import { rutinlage } from './kallor/rutiner.mjs';
 import { hamtaEskalering } from './kallor/discord.mjs';
 import { lasSkickade } from './larm.mjs';
 import { kor as korBonus, lasPersoner, lasRegler } from '../bonus/kor.mjs';
+import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
 import { readFileSync } from 'node:fs';
 
 /** Varumärkesregistret (stonebite/varumarken.json). Tom lista om filen saknas. */
@@ -122,6 +123,23 @@ export async function byggSnapshot({
     anteckna('bonus', 'fel', e.message);
   }
 
+  // Autosvaret (kundtjanst/autosvar.mjs): loggen i repot, 30 dagar, talen är
+  // oversikt.mjs:s — aldrig omräknade här. Ingen logg ⇒ boten har inte kört
+  // för någon butik, och sidan säger det i stället för att visa noll.
+  logg('Autosvaret …');
+  let autosvar = null;
+  try {
+    autosvar = samlaAutosvar({ loggmapp: join(rot, 'kundtjanst', 'autosvar', 'logg'), nu });
+    const ids = Object.keys(autosvar.brands);
+    anteckna('autosvar', ids.length ? 'ok' : 'saknas', ids.length ? null : 'ingen logg i kundtjanst/autosvar/logg/ — autosvaret har inte kört för någon butik', { butiker: ids.length });
+    for (const id of ids) {
+      const a = autosvar.brands[id].antal;
+      logg(`  ${id}: ${a.mejl} mejl · ${a.svar} skickade · ${a.utkast} utkast · ${a.ARG} arga · senaste körning ${autosvar.brands[id].senasteKorning ?? '–'}`);
+    }
+  } catch (e) {
+    anteckna('autosvar', 'fel', e.message);
+  }
+
   return {
     byggd: new Date().toISOString(),
     fonster: { dagar, till: nu.toISOString() },
@@ -143,6 +161,8 @@ export async function byggSnapshot({
     // Pingarna till VA:n (stonebite/larm.mjs skriver minnet EFTER hämtningen,
     // så det som syns här är förra körningens) — sidan visar dem per varumärke.
     larm: lasSkickade(rot),
+    // Autosvarets läge per butik (arga kunder, utkast/skickat, senaste körning).
+    autosvar,
     ...repo,
   };
 }

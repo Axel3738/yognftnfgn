@@ -70,6 +70,11 @@ Kort, på svenska:
 5. Väntande insatser som ingen godkänt (de betalas inte förrän någon klickar).
 6. Pingar till VA:n: hur många som skickades och för vad (order eller kanal),
    eller "inga". Blev ett larm `fel`: orsaken i klartext.
+7. Autosvaret (`snapshot.autosvar`, ur `kundtjanst/autosvar/logg/`): per butik
+   läget som sidan säger det — *skickar svar* / *bara utkast — inget skickas* /
+   *inget svar skrivet* — senaste körning och antal arga kunder det senaste
+   dygnet. Ingen logg: "boten har inte kört för någon butik". Säg aldrig att
+   boten är igång för att loggen finns — utkast är inte skickat.
 
 ---
 
@@ -77,6 +82,7 @@ Kort, på svenska:
 
 - [ ] `node stonebite/hamta.mjs` kördes utan att kasta.
 - [ ] `node stonebite/larm.mjs` kördes; `stonebite/data/larm.json` committad.
+- [ ] Autosvarets läge står i rapporten (eller "ingen logg").
 - [ ] Varje källa i listan är ✅, eller har en orsak skriven i rapporten.
 - [ ] `stonebite/data/snapshot.json` är uppdaterad och committad.
 - [ ] Inga hemligheter eller föränderliga driftfiler följde med i commiten.

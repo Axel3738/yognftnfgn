@@ -481,6 +481,45 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   skrevs. Sidan visar skickade pingar per varumärke (Kundtjänst-fliken).
   ⚠️ Tvistkollen 07:30 postar samma tvister som lista utan @ — pingen
   kompletterar den, ersätter den inte.
+- **Autosvaret på sajten** (Axels beställning 2026-09-22 kväll: "alla cases
+  som AI-botten har svarat på, där det är arga kunder, ska komma upp som en
+  lista på kundtjänst-taben"): `hamta.mjs` lägger `snapshot.autosvar` ur
+  kundtjänstbotens logg (`kundtjanst/autosvar/logg/<butik>.jsonl`, committad,
+  via `kundtjanst/dashboard.mjs samlaAutosvar` — talen är `oversikt.mjs`:s,
+  aldrig omräknade). `vy/drift.mjs autosvarBlock` visar det på **Kundtjänst**
+  (det VA:n ser), i varumärkets Kundtjänst-flik och som rader i **Kräver dig
+  i dag** (arga kunder senaste dygnet): per butik läget i klartext — *skickar
+  svar* / *bara utkast — inget skickas* / *inget svar skrivet*, senaste
+  körning, mejl lästa, skickade, utkast, till VA:n — och **listan över arga
+  kunder** (när, butik, order, vad kunden var arg över, botens svar som
+  utkast/skickat, flaggad, mappen). Ingen logg ⇒ "har inte kört", aldrig
+  noll. **Mätt 2026-09-22 18:40 UTC: boten är INTE igång** — bara
+  Bäverbutiken har logg, 5 körningar, senaste 08:15 UTC, 102 mejl, **0
+  skickade, 3 utkast, 2 arga**, ingen rutin på något konto jag ser, och
+  miljön här saknar `KUNDTJANST_MAIL_PASS_*` så en rutin här hade inte
+  kunnat köra den. Axels ordning gäller fortfarande: 20 utkast i rad rätt →
+  `--skarpt`.
+- ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
+  18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
+  403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`
+  resp. `_UK` får inte läsa kunddata); CatCabin `ras1t2-2x`, TackleBay
+  `iahe0c-b1` och `j0p8qz-kp` — appen inte installerad (400
+  `app_not_installed`); `aphkky-ke` — 402 "Unavailable Shop" (stängd eller
+  obetald). **Bäverbutikens 403 är fel nyckelval, inte fel butik:**
+  spårningens app (`SHOPIFY_*_SE_BAVER_SE`, registrerad i
+  `sparning/butiker.json`) läser 900 ordrar i timmen, men den finns bara i
+  claude5-kontots miljö — inte i `env_011kzcu4tXHXM9LdECNkDe9E` där
+  `/stonebite`-rutinen och den här sessionen kör (mätt: enda suffixet för
+  domänen här är `SE`, och det svarar 403). `kallor/shopify.mjs` provar
+  sedan samma dag ALLA appar som pekar på butiken (registrerat suffix
+  först, sedan domänens, sedan alla andra, sedan fabrikens) innan 403
+  rapporteras, och felet namnger då både appen och de tre variabler som
+  hade löst det (`forklaraNyckelfel`, 8 tester i `test/shopify.test.mjs`).
+  Kvar för Axel: lägg in `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_SE_BAVER_SE`
+  i den miljön (eller godkänn kunddata för `_SE`-appen), och samma
+  godkännande för UK-appen. OPS-butikerna är nedlagda utom CaraShell —
+  de står med orsak på sidan Butiker, det är Axels beslut om de ska
+  installeras om eller tas bort ur miljön.
 - ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
   för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
 
