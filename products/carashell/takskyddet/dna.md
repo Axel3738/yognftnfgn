@@ -816,3 +816,35 @@ rakt av, och den testas bäst genom att spegla just `Takoverdrag_GT_2_H1` —
 inte genom nya presentkoncept. Backloggens post om eget test-ABO gäller
 fortfarande, men priset för att låta bli har sjunkit: vinkeln kostar pengar
 varje gång den får volym.
+
+## Verktygsfynd 2026-09-22 — proxyomstarten slukade stdout (rotorsaken)
+
+Gårdagens fynd (`api()` utan timeout) var verkligt men inte hela sanningen.
+Den riktiga orsaken till att kön blev oläsbar satt **efter** utskriften.
+
+`säkerställProxy()` startar om processen med `NODE_USE_ENV_PROXY=1` för att
+agentproxyn ska gälla, och körde barnet med `stdio: 'inherit'`. Barnets stdout
+nådde aldrig förälderns utfil. Verktyget skrev sina 2 841 tecken, loggade
+"Utskriften klar." — och `ko.json` blev 0 byte med **exit 0**.
+
+| Väg | Utfil |
+|---|---|
+| med omstarten | 0 byte |
+| utan omstarten (`NODE_USE_ENV_PROXY=1`) | 2 845 byte |
+| efter fixen, normala vägen | 2 845 byte |
+
+**Fixen:** stdout pipas och skrivs vidare med `writeSync` — inte
+`process.stdout.write`, för en skrivning till ett rör är asynkron och
+`process.exit()` hade kunnat kapa den mitt i. stderr ärvs som förut, så loggen
+strömmar live.
+
+**Två lärdomar som är dyrare än buggen:**
+
+1. **Leta efter felet där symptomet slutar, inte där det börjar.** Jag letade två
+   dagar i nätet, timeouterna och pagineringen — allt före utskriften. En enda
+   loggrad efter `console.log` hade pekat rätt på första minuten. Sätt en markör
+   på BÅDA sidor av det steg som producerar utdata.
+2. **En tyst nolla är farligare än ett fel.** Exit 0 + tom utfil läser exakt som
+   "det fanns inget att göra" — och just den här dagen var kön faktiskt tom, vilket
+   är precis när ett tyst fel är omöjligt att upptäcka. Verktyg som skriver en fil
+   ska säga hur mycket de skrev.

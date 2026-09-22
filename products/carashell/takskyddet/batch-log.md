@@ -1604,3 +1604,34 @@ status ändrad, inga nya kommentarer (gårdagens feedback står kvar på båda
 raderna). Kampanjen och priset oförändrade: `CARASHELL_SE_Taköverdraget`,
 1 129 kr. Slutkortskontrollen gick igång av sig själv den här gången —
 ffmpeg-fallbacken från i går höll.
+
+## Norge 2026-09-22 — tom kö, och rotorsaken till de tysta körningarna
+
+Kön: **0 rader** i `SE-ACTIVE to be translated`. Gårdagens fem rader har gått vidare.
+NO-kampanjen `CARASHELL_NO_Takovertrekket` ACTIVE med 12 adsets, ärvd länk
+`…/nb/products/takskyddet?country=NO`, pris 1 106 NOK läst live, 0 varningar.
+**Inget uppladdat, ingen Notion-status rörd** — det fanns inget att göra.
+
+**Rotorsaken hittad efter två dagar.** `säkerställProxy` i `tools/meta-lib.mjs`
+startar om processen för att få agentproxyn på plats, och körde barnet med
+`stdio: 'inherit'`. Barnets stdout nådde aldrig förälderns utfil.
+
+Mätt samma dag, samma kod, samma kommando:
+
+| Väg | ko.json |
+|---|---|
+| med omstarten | **0 byte** |
+| `NODE_USE_ENV_PROXY=1` (utan omstarten) | **2 845 byte** |
+| efter fixen, normala vägen | **2 845 byte** |
+
+Det som gjorde felet svårt: verktyget sa själv att det skrivit. De två nya
+loggraderna (`Kön klar: N rader … skriver N tecken` / `Utskriften klar.`) är det
+som avslöjade det — de kom till som diagnostik och stannar kvar, för de skiljer
+"kön var tom" från "verktyget hann aldrig skriva".
+
+⚠️ **Felet gällde varje verktyg som startar via `säkerställProxy` och skriver
+`--json`** — `ops-leveranskon`, `ops-till-meta` och de andra. Inte bara den här
+produkten och inte bara NO.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1551959238685753457`, ingen ACTION NEEDED.
