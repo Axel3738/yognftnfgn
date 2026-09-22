@@ -1379,3 +1379,21 @@ antingen utökas eller så får `/cs` göra jobbet.
 Sjunde natten med 0 ändringar. Frågorna till Axel står kvar sedan 15/9 (A/B/C
 för SE) och 18/9 (stäng av rutinen tills en marknad är igång).
 Underlag: `factory/output/drytrek/budgetrond-2026-09-22.json`.
+
+## 2026-09-22 — leveransrunda: gårdagens rättelse håller
+
+Oförändrat: båda kampanjerna PAUSED, kön tom, inget rört i kontot, pris 389 kr.
+Kontot läser 730 annonser / 25 kampanjer. Tio parkerade `Damasker_*`-källrader
+orörda.
+
+Fönstren töms nu jämnt, precis som dag-för-dag-datan sa i går: NO 7d **3 251 kr**
+(4 209 i går), SE 7d **487 kr** (1 027 i går). Ingen upprepning av måndagens
+felaktiga nolla — den var ett engångsfel hos Meta, inte ett mönster.
+
+**En not till den som startar om kampanjen:** nattvaktens meddelande i `#ads-to-do`
+står kvar och rekommenderar ett separat test-ABO. Det var gamla regel 11. Regeln
+ändrades 2026-09-20 — nya annonser går i produktens CBO, i adsetet som bär
+konceptets vinkel, och en annons utan spend på sju dygn etiketteras `INGEN_LEVERANS`
+och släpps. Följ inte den gamla texten i Discord; CLAUDE.md regel 11 är facit.
+
+Axels två frågor obesvarade (starta om Sverige, 15 sep; pausa rutinen, 18 sep).
