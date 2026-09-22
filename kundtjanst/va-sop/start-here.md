@@ -56,6 +56,7 @@ carrier-portal procedure applies — look the parcel up on the carrier's site in
 | Who are you? Org number? | **Company information requests** |
 | Can I resell your products? | **Reseller and wholesale inquiries** |
 | I got a strange email from you | **Suspicious or phishing email in our name** |
+| *(not a customer)* A draft in Drafts you did not write, a flagged email, or the folder VA-PRIO | **Auto-reply bot — what it does, and what you do** |
 
 Two pages you use every day without a customer asking: **Tracking page — how to look
 up any parcel** and **Store facts**.
@@ -94,8 +95,10 @@ still on it.
 
 1. **Payment disputes first.** They have hard deadlines and losing one is final. The
    daily alarm lists them.
-2. **Then the oldest unanswered email**, not the newest.
-3. **Then the rest.**
+2. **Then the VA-PRIO folder.** Upset customers the auto-reply bot has already
+   promised an answer within 48 hours (see **Auto-reply bot**).
+3. **Then the oldest unanswered email**, not the newest.
+4. **Then the rest.**
 
 The dispute handbook is a separate, deeper set of documents for chargebacks. The page
 **Chargeback or dispute via bank or Klarna** tells you what to do in the first hour

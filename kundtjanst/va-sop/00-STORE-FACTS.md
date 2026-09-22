@@ -44,8 +44,9 @@ email.
 |---|---|---|
 | Delivery promise | 5–10 business days after the shipping email | The promise printed in the shipping emails and on the tracking page |
 | Who pays return postage | The customer pays and arranges the return shipping. We send no return label | The store's existing return SOP |
-| Return window | 30 days **from the day the customer received the item** | The store's own published return policy |
+| Return window | 14 days **from the day the customer received the item** (owner's decision 2026-09-22). ⚠️ The published policy page still says 30 days until the owner changes it, so a customer who quotes 30 days is quoting our own page: tell the owner, do not argue | Owner |
 | Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |
+| Auto-reply bot | **Dry run**: it writes drafts in Drafts and sends nothing. Signs as "Kundtjänst Bäverbutiken". Priority folder: VA-PRIO. Run report in the escalation channel after every hour in which something happened | Owner switches it live (see the page **Auto-reply bot**) |
 | Return address | Given out by support on request — it is published nowhere | Owner's decision: fewer returns, but only if we answer within 24 hours |
 | First reply target | 24 hours | Owner |
 | Refunds / replacements / "the parcel is lost" | Owner approves before you promise it | Owner |

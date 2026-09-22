@@ -144,12 +144,17 @@ mappen finns.
    (ordernummer + en rad) och VA:ns prioriterade lista. Allt i Discord är på
    engelska (Axels order 2026-09-05).
 
-3. **Committa loggen och pusha** (rutinen på claude.ai):
+3. **Committa loggen och pusha** (rutinen på claude.ai). Dra `main` först —
+   spårningsrutinerna och `/stonebite` pushar 7–8 gånger i timmen, så en
+   push utan pull krockar:
    ```bash
    git add kundtjanst/autosvar/logg
    git commit -m "Autosvar <butik> <datum>: <n> svar, <m> flaggade"
+   git pull --rebase origin main
    git push -u origin main
    ```
+   Hade körningen inget nytt i loggen finns inget att committa — hoppa då
+   över steget i stället för att göra en tom commit.
    Loggen är minnet som gör "ett svar per tråd" sant mellan körningar. Pushas
    den inte finns Sent/Drafts-kollen som andra vakt, men committa den ändå.
 

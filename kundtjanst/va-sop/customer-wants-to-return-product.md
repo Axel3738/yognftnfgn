@@ -4,14 +4,14 @@ Internal use only. Works for every store — the per-store values are in the "St
 
 ## Use this when
 
-A customer writes that they want to send a product back and get their money back, and the product is NOT damaged, faulty or wrong. Damaged / wrong item → use the damaged-or-wrong-item SOP instead; the 30-day rule below does not apply to those cases.
+A customer writes that they want to send a product back and get their money back, and the product is NOT damaged, faulty or wrong. Damaged / wrong item → use the damaged-or-wrong-item SOP instead; the return-window rule below does not apply to those cases.
 
 ## OVERVIEW
 
 | | |
 |---|---|
 | Trigger | Customer asks to return a product they bought |
-| First step | Find the DELIVERY date (not the order date) and check whether the request is within 30 days of it |
+| First step | Find the DELIVERY date (not the order date) and check whether the request is within the return window (Store facts) of it |
 | Owner approval | Required before you approve any return, and before any refund. Never accept a parcel that was sent back without prior approval |
 | Where to look | Shopify order page → fulfillment timeline ("Levererat / Delivered" event); the store's tracking page; the page "Tracking page — how to look up any parcel" |
 
@@ -26,7 +26,7 @@ Return address and company name per store: the return address (Store facts) (⚠
 
 ## RETURN POLICY SUMMARY
 
-- Return window: 30 days from the day the customer RECEIVED the item. Shipping takes 5–10 business days, so the delivery date is a materially different date from the order date — always count from delivery.
+- Return window: the number of days in **Store facts**, counted from the day the customer RECEIVED the item. Shipping takes 5–10 business days, so the delivery date is a materially different date from the order date — always count from delivery.
 - Condition: unused, all tags attached, in original packaging.
 - Proof: the order in Shopify is the proof. Do not ask the customer for a receipt.
 - Exceptions: sale items, gift cards, perishables and custom/personalised products cannot be returned. ⚠️ The statutory right of withdrawal runs **in addition** to the store's own return window (Store facts) and cannot be signed away. A customer who invokes it is entitled to a full refund and must not be pushed through a partial-refund offer.
@@ -41,12 +41,12 @@ Return address and company name per store: the return address (Store facts) (⚠
 1. Open the order in Shopify admin (search by order number or the customer's email).
 2. Read the fulfillment timeline on the order page. The delivery date is the "Levererat / Delivered" event — the hourly tracking routine writes it there. If the timeline is empty, open the store's tracking page and paste the carrier tracking number from the fulfillment; the page shows the same delivery scan. Full procedure: "Tracking page — how to look up any parcel". Carrier portals (17track.net, or the carrier named on the fulfillment) are the backup only.
 3. If the parcel is NOT delivered yet according to the timeline / tracking page, this is not a return case. Route it to the delivery / tracking SOP and reply from there.
-4. Count 30 days from the delivery date. Is today inside the window?
+4. Count the return window (Store facts) from the delivery date. Is today inside the window?
 5. Ask the customer (in their language): reason for return, condition of the item, is it in original packaging, and which items if the order contains several.
 
 ### Step 2 – Notify the owner
 
-1. Send the owner a summary: order ID, product(s), delivery date, days since delivery, reason for return, item condition, in/out of the 30-day window, and whether it is a partial return.
+1. Send the owner a summary: order ID, product(s), delivery date, days since delivery, reason for return, item condition, in/out of the return window, and whether it is a partial return.
 2. Wait for the owner's decision: approve / decline / request more information.
 
 > Do not approve the return and do not tell the customer where to send the parcel before
@@ -61,7 +61,7 @@ Return address and company name per store: the return address (Store facts) (⚠
 
 ### Step 4 – If the return is declined
 
-1. Draft the decline email with the AI prompt template below, in the customer's language, quoting the reason the owner gave (outside the 30-day window / item used / sale item).
+1. Draft the decline email with the AI prompt template below, in the customer's language, quoting the reason the owner gave (outside the return window / item used / sale item).
 2. Offer to help with any other question. Note "Return declined [date], reason" on the order in Shopify.
 
 ### Step 5 – After the item is received back
@@ -94,8 +94,8 @@ English meaning: Your return for order [ORDER ID] is approved. Pack the product 
 
 Return declined (Step 4):
 
-Swedish: "Hej! Tack för att du hörde av dig. Tyvärr kan vi inte godkänna returen för order [ORDER ID] eftersom [ANLEDNING]. Enligt vår returpolicy gäller 30 dagar från leveransdatum för oanvända produkter i originalförpackning. Hör gärna av dig om du har andra frågor."
-English meaning: Unfortunately we cannot approve the return for order [ORDER ID] because [REASON]. Our return policy allows 30 days from the delivery date for unused products in original packaging. Please contact us with any other questions.
+Swedish: "Hej! Tack för att du hörde av dig. Tyvärr kan vi inte godkänna returen för order [ORDER ID] eftersom [ANLEDNING]. Enligt vår returpolicy gäller [RETURFÖNSTER ENLIGT STORE FACTS] dagar från leveransdatum för oanvända produkter i originalförpackning. Hör gärna av dig om du har andra frågor."
+English meaning: Unfortunately we cannot approve the return for order [ORDER ID] because [REASON]. Our return policy allows [RETURN WINDOW FROM STORE FACTS] days from the delivery date for unused products in original packaging. Please contact us with any other questions.
 
 Sign every email with the store's support address from the "Store facts" table.
 
@@ -107,4 +107,4 @@ Return approved:
 
 Return declined:
 
-"Draft a polite email in the customer's language ([LANGUAGE]) declining the return request for order [ORDER ID]. Reason: [REASON — e.g. outside the 30-day window counted from delivery / item appears used / sale item]. Reference our return policy (30 days from delivery, unused, original packaging). Offer to help with any other questions. Under 110 words. Sign with the support address (Store facts)."
+"Draft a polite email in the customer's language ([LANGUAGE]) declining the return request for order [ORDER ID]. Reason: [REASON — e.g. outside the return window counted from delivery / item appears used / sale item]. Reference our return policy ([RETURN WINDOW FROM STORE FACTS] days from delivery, unused, original packaging). Offer to help with any other questions. Under 110 words. Sign with the support address (Store facts)."
