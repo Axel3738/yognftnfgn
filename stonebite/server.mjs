@@ -35,6 +35,11 @@ import { kundtjanstSida, leveransSida } from './vy/drift.mjs';
 import { produkttestSida, recensionerSida } from './vy/produkter.mjs';
 import { bonusSida } from './vy/bonus.mjs';
 import { systemSida } from './vy/system.mjs';
+import { varumarkenSida, varumarkeSida } from './vy/varumarke.mjs';
+import { kalenderSida } from './vy/kalender.mjs';
+import { lasHandelser, skrivHandelse, nyHandelse, tolkaNar, harleddaHandelser } from './kalender.mjs';
+import { lasKontakter, skrivKontakt, nyKontakt, uppdateraKontakt } from './kontakter.mjs';
+import { lasVarumarken } from './hamta.mjs';
 import { lasInsatser, skrivInsats, lasPersoner, sparaPerson, datamapp, lasRegler } from '../bonus/kor.mjs';
 import { appSkal } from './vy/layout.mjs';
 import { sattSprak } from './vy/delar.mjs';
@@ -48,6 +53,21 @@ const SNAPSHOT = join(HAR, 'data', 'snapshot.json');
 const ANVANDARFIL = process.env.STONEBITE_ANVANDARE || anv.standardfil(HAR);
 const INSATSFIL = join(datamapp(process.env, ROT), 'insatser.jsonl');
 const PERSONFIL = join(datamapp(process.env, ROT), 'personer-extra.json');
+// Kalendern och kontakterna: föränderliga, ligger på volymen — aldrig i git.
+const KALENDERFIL = join(datamapp(process.env, ROT), 'kalender.jsonl');
+const KONTAKTFIL = join(datamapp(process.env, ROT), 'kontakter.jsonl');
+
+const lasKal = () => { try { return lasHandelser(KALENDERFIL); } catch { return []; } };
+const lasKont = () => { try { return lasKontakter(KONTAKTFIL); } catch { return []; } };
+/** Varumärkena ur snapshoten, annars direkt ur filen. */
+const varumarkenFor = (snap) => (snap?.varumarken?.length ? snap.varumarken : lasVarumarken(ROT));
+/** Bara adresser inne i appen får vara "tillbaka"-mål. */
+const sakerNasta = (v, standard = '/app/kalender') => (String(v ?? '').startsWith('/app') ? String(v) : standard);
+/** Kalenderrader en person får se: sina egna, och (för ägare/chef) alla varumärkens. */
+function kalenderFor(anvandare, alla) {
+  const allaBrands = harRatt(anvandare, 'varumarken');
+  return alla.filter((h) => h.agare === anvandare.id || (allaBrands && (h.brand || !h.agare)));
+}
 const HEMLIGHET = hamtaHemlighet(process.env, join(HAR, 'data', 'hemlighet.txt'));
 
 const strypning = new Strypning();
@@ -222,7 +242,21 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
   sattSprak(sprakFor(anvandare));
   const snap = medFarskaInsatser(snapshot());
   switch (nyckel) {
-    case 'oversikt': return oversiktSida({ snapshot: snap, anvandare });
+    case 'oversikt': return oversiktSida({ snapshot: snap, anvandare, kalender: kalenderFor(anvandare, lasKal()) });
+    case 'varumarken': return varumarkenSida({ snapshot: snap, varumarken: varumarkenFor(snap), kalender: lasKal(), kontakter: lasKont() });
+    case 'kalender': {
+      const allaBrands = harRatt(anvandare, 'varumarken');
+      return kalenderSida({
+        anvandare,
+        handelser: kalenderFor(anvandare, lasKal()),
+        harledda: allaBrands ? harleddaHandelser({ snapshot: snap, kontakter: lasKont() }) : [],
+        varumarken: varumarkenFor(snap),
+        allaBrands,
+        csrf: extra.csrf ?? '',
+        manad: extra.manad ?? null,
+        rutiner: snap?.rutiner ?? null,
+      });
+    }
     case 'butiker': return butikerSida({ snapshot: snap });
     case 'annonser': return annonserSida({ snapshot: snap });
     case 'redigerare': return redigerareSida({ snapshot: snap, anvandare });
@@ -372,11 +406,87 @@ export async function hantera(req, res) {
   if (stig === '/app' || stig.startsWith('/app/')) {
     if (!anvandare) return omdirigera(res, `/logga-in?nasta=${encodeURIComponent(stig)}`);
 
+    // Varumärkessidan: /app/varumarke/<id>?flik=…  — bara ägare och chef.
+    if (req.method === 'GET' && stig.startsWith('/app/varumarke/')) {
+      if (!farSe(anvandare, 'varumarken')) {
+        return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Ditt konto når inte varumärkena.', nonce, https });
+      }
+      sattSprak(sprakFor(anvandare));
+      const snap = medFarskaInsatser(snapshot());
+      const vms = varumarkenFor(snap);
+      const vm = vms.find((v) => v.id === decodeURIComponent(stig.slice('/app/varumarke/'.length)));
+      if (!vm) return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Det varumärket finns inte.', nonce, https });
+      const sida = varumarkeSida({
+        snapshot: snap, vm, varumarken: vms,
+        flik: url.searchParams.get('flik') ?? 'oversikt',
+        manad: url.searchParams.get('manad'),
+        kalender: lasKal(), kontakter: lasKont(), anvandare, csrf,
+      });
+      return svaraHtml(res, appSkal({ titel: sida.titel, anvandare, aktivSida: 'varumarken', innehall: sida.innehall, nonce }), { nonce, https });
+    }
+
     // POST-åtgärderna först
     if (req.method === 'POST') {
       const f = tolkaFormular(await lasKropp(req));
       if (!kollaCsrf(f.csrf, kakvarde, HEMLIGHET)) {
         return felsida(res, { kod: 400, rubrik: 'Försök igen', text: 'Formuläret var för gammalt. Gå tillbaka och försök igen.', nonce, https });
+      }
+
+      // ---------------------------------------------------------- kalendern
+      // Alla roller har en egen kalender. Rader med varumärke får bara ägare
+      // och chef skapa och röra; en egen rad rör bara den som skrev den.
+      if (stig.startsWith('/app/kalender/')) {
+        if (!farSe(anvandare, 'kalender')) return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Ditt konto har ingen kalender.', nonce, https });
+        const nasta = sakerNasta(f.nasta);
+        const farBrand = harRatt(anvandare, 'varumarken');
+        if (stig === '/app/kalender/ny') {
+          try {
+            const tolkat = tolkaNar(f.text ?? '');
+            const brand = farBrand && f.brand ? String(f.brand) : null;
+            skrivHandelse(nyHandelse({
+              titel: tolkat.titel || f.text,
+              datum: tolkat.datum ?? f.datum,
+              tid: tolkat.tid ?? f.tid,
+              brand,
+              typ: f.typ,
+              agare: brand ? null : anvandare.id,
+              skapadAv: anvandare.namn,
+            }), KALENDERFIL);
+          } catch (e) {
+            return felsida(res, { kod: 400, rubrik: 'Kunde inte lägga till', text: e.message, nonce, https });
+          }
+          return omdirigera(res, nasta);
+        }
+        const h = lasKal().find((x) => x.id === f.id);
+        if (!h) return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Raden finns inte längre.', nonce, https });
+        const min = h.agare === anvandare.id || (farBrand && (h.brand || !h.agare));
+        if (!min) return felsida(res, { kod: 403, rubrik: 'Inte din rad', text: 'Du kan bara ändra dina egna rader.', nonce, https });
+        const nu = new Date().toISOString();
+        if (stig === '/app/kalender/klar') skrivHandelse({ ...h, klar: true, klarTid: nu, klarAv: anvandare.namn }, KALENDERFIL);
+        else if (stig === '/app/kalender/oklar') skrivHandelse({ ...h, klar: false, klarTid: null }, KALENDERFIL);
+        else if (stig === '/app/kalender/bort') skrivHandelse({ ...h, raderad: true, raderadTid: nu }, KALENDERFIL);
+        else return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Okänd åtgärd.', nonce, https });
+        return omdirigera(res, nasta);
+      }
+
+      // --------------------------------------------------------- kontakterna
+      if (stig.startsWith('/app/kontakter/')) {
+        if (!harRatt(anvandare, 'varumarken')) return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Bara ägare och chef rör kontakterna.', nonce, https });
+        const nasta = sakerNasta(f.nasta, '/app/varumarken');
+        try {
+          if (stig === '/app/kontakter/ny') {
+            skrivKontakt(nyKontakt({ ...f, skapadAv: anvandare.namn }), KONTAKTFIL);
+          } else if (stig === '/app/kontakter/andra') {
+            const k = lasKont().find((x) => x.id === f.id);
+            if (!k) return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Kontakten finns inte längre.', nonce, https });
+            skrivKontakt(uppdateraKontakt(k, { status: f.status, nastaSteg: f.nastaSteg, nastaDatum: f.nastaDatum, raderad: f.radera === '1' }), KONTAKTFIL);
+          } else {
+            return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Okänd åtgärd.', nonce, https });
+          }
+        } catch (e) {
+          return felsida(res, { kod: 400, rubrik: 'Kunde inte spara', text: e.message, nonce, https });
+        }
+        return omdirigera(res, nasta);
       }
 
       if (stig === '/app/mig/losenord') {
@@ -543,7 +653,7 @@ export async function hantera(req, res) {
       if (start !== stig) return omdirigera(res, start);
       return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Ditt konto når inte den sidan.', nonce, https });
     }
-    return visaAppsida(res, { nyckel, anvandare, nonce, https, extra: { csrf } });
+    return visaAppsida(res, { nyckel, anvandare, nonce, https, extra: { csrf, manad: url.searchParams.get('manad') } });
   }
 
   return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Sidan finns inte.', nonce, https });

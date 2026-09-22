@@ -134,6 +134,109 @@ test('YouTube-sektionen länkar bara när adressen är ifylld', async () => {
   assert.doesNotMatch(utan, /Till kanalen/, 'ingen knapp utan adress');
 });
 
+/**
+ * Varumärkessidorna bär spend, tvister och eskaleringar — bara ägare och chef.
+ * En redigerare som gissar adressen ska mötas av 403 (eller skickas till sin
+ * startsida), aldrig av innehållet.
+ */
+test('varumärkena är stängda för redigerare, öppna för ägaren', async () => {
+  const red = await loggaIn('josh@test.se', 'redigerare123');
+  const lista = await hamta('/app/varumarken', red.kaka);
+  assert.ok([303, 403].includes(lista.status), `redigerare fick ${lista.status} på listan`);
+  const brand = await hamta('/app/varumarke/carashell', red.kaka);
+  assert.equal(brand.status, 403);
+
+  const agare = await loggaIn('axel@test.se', 'agarlosenord1');
+  const r = await hamta('/app/varumarken', agare.kaka);
+  assert.equal(r.status, 200);
+  const html = await r.text();
+  for (const namn of ['Bäverbutiken', 'Grillkliniken', 'Matstrumpor', 'CaraShell']) assert.ok(html.includes(namn), `${namn} saknas på varumärkessidan`);
+
+  const cs = await hamta('/app/varumarke/carashell?flik=rutiner', agare.kaka);
+  assert.equal(cs.status, 200);
+  const csHtml = await cs.text();
+  assert.match(csHtml, /class="flikar"/);
+  assert.match(csHtml, /aria-current="page"[^>]*>Rutiner/);
+  const okand = await hamta('/app/varumarke/finns-inte', agare.kaka);
+  assert.equal(okand.status, 404);
+});
+
+/**
+ * Kalendern: alla har en egen. En redigerares rad syns aldrig för en annan
+ * redigerare, och en redigerare kan inte smyga in en rad på ett varumärke.
+ * Ägaren ser varumärkets rad på varumärkets sida.
+ */
+test('kalendern: egna rader är egna, varumärkesrader kräver ägare', async () => {
+  const red = await loggaIn('josh@test.se', 'redigerare123');
+  const csrf = await farskCsrf('/app/kalender', red.kaka);
+  const skapa = await fetch(`${bas}/app/kalender/ny`, {
+    method: 'POST', redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: red.kaka },
+    body: new URLSearchParams({ csrf, text: 'Klipp reel imorgon kl 14', datum: '2026-01-01', typ: 'plan', brand: 'carashell', nasta: '/app/kalender' }).toString(),
+  });
+  assert.equal(skapa.status, 303);
+  const egen = await (await hamta('/app/kalender', red.kaka)).text();
+  assert.match(egen, /Klipp reel/, 'raden syns för den som skrev den');
+  assert.match(egen, /14:00/, '"kl 14" blev 14:00');
+
+  // En annan icke-privilegierad användare ser den inte.
+  const va = await loggaIn('vera@test.se', 'kundtjanst123');
+  const andra = await (await hamta('/app/kalender', va.kaka)).text();
+  assert.doesNotMatch(andra, /Klipp reel/, 'en annan användares rad läcker');
+
+  // Redigeraren fick INTE sätta varumärke — raden är personlig och syns inte på CaraShells sida.
+  const agare = await loggaIn('axel@test.se', 'agarlosenord1');
+  const csKal = await (await hamta('/app/varumarke/carashell?flik=kalender', agare.kaka)).text();
+  assert.doesNotMatch(csKal, /Klipp reel/, 'redigerarens rad hamnade på varumärket');
+
+  // Ägaren lägger en varumärkesrad, och den syns på varumärkets flik.
+  const csrfA = await farskCsrf('/app/kalender', agare.kaka);
+  const skapaA = await fetch(`${bas}/app/kalender/ny`, {
+    method: 'POST', redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: agare.kaka },
+    body: new URLSearchParams({ csrf: csrfA, text: 'Slå på US-kampanjen 15/10', datum: '2026-01-01', typ: 'deadline', brand: 'carashell', nasta: '/app/varumarke/carashell?flik=kalender' }).toString(),
+  });
+  assert.equal(skapaA.status, 303);
+  assert.equal(skapaA.headers.get('location'), '/app/varumarke/carashell?flik=kalender');
+  const csKal2 = await (await hamta('/app/varumarke/carashell?flik=kalender', agare.kaka)).text();
+  assert.match(csKal2, /Slå på US-kampanjen/);
+  assert.match(csKal2, /15<\/div>|2026-10-15/, 'datumordet 15/10 blev 15 oktober');
+
+  // Redigeraren kan inte bocka av ägarens rad.
+  const id = /name="id" value="([^"]+)"[^]*?Slå på US-kampanjen|Slå på US-kampanjen[^]*?name="id" value="([^"]+)"/.exec(csKal2);
+  const radId = id?.[1] ?? id?.[2];
+  assert.ok(radId, 'hittade radens id');
+  const fusk = await fetch(`${bas}/app/kalender/klar`, {
+    method: 'POST', redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: red.kaka },
+    body: new URLSearchParams({ csrf: await farskCsrf('/app/kalender', red.kaka), id: radId, nasta: '/app/kalender' }).toString(),
+  });
+  assert.equal(fusk.status, 403);
+});
+
+test('kontakterna kan bara ägare och chef röra', async () => {
+  const va = await loggaIn('vera@test.se', 'kundtjanst123');
+  const csrf = await farskCsrf('/app/kalender', va.kaka);
+  const r = await fetch(`${bas}/app/kontakter/ny`, {
+    method: 'POST', redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: va.kaka },
+    body: new URLSearchParams({ csrf, brand: 'carashell', namn: '@någon', nasta: '/app/varumarke/carashell?flik=kontakter' }).toString(),
+  });
+  assert.equal(r.status, 403);
+
+  const agare = await loggaIn('axel@test.se', 'agarlosenord1');
+  const csrfA = await farskCsrf('/app/varumarke/carashell?flik=kontakter', agare.kaka);
+  const ok = await fetch(`${bas}/app/kontakter/ny`, {
+    method: 'POST', redirect: 'manual',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: agare.kaka },
+    body: new URLSearchParams({ csrf: csrfA, brand: 'carashell', namn: '@husvagnsliv', typ: 'influencer', plattform: 'TikTok', status: 'kontaktad', nastaSteg: 'skicka produkt', nastaDatum: '2099-01-05', nasta: '/app/varumarke/carashell?flik=kontakter' }).toString(),
+  });
+  assert.equal(ok.status, 303);
+  const html = await (await hamta('/app/varumarke/carashell?flik=kontakter', agare.kaka)).text();
+  assert.match(html, /@husvagnsliv/);
+  assert.match(html, /skicka produkt/);
+});
+
 test('bilderna serveras med rätt typ och lång cache', async () => {
   const r = await hamta('/webb/bilder/hero.jpg');
   assert.equal(r.status, 200);

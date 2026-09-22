@@ -131,16 +131,19 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .topp-inner {
-  height: 62px;
+  min-height: 62px;
+  padding: 6px 24px;
   display: flex;
   align-items: center;
   gap: 28px;
+  flex-wrap: wrap;            /* menyn har 15 poster för ägaren — den får bryta rad, aldrig ge sidan sidoscroll */
 }
 
 .marke { display: inline-flex; align-items: center; gap: 9px; font-weight: 600; letter-spacing: .14em; font-size: 13px; text-transform: uppercase; }
 .marke svg { display: block; }
 
-.navlankar { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.navlankar { display: flex; align-items: center; gap: 4px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
+@media (max-width: 1400px) { .navlank { padding: 7px 10px; font-size: 13.5px; } }
 
 .navlank {
   padding: 7px 13px;
@@ -663,12 +666,108 @@ td .bi { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 2px
 .mini { font-size: 12.5px; color: var(--ink-3); }
 .mellan { margin-top: 14px; }
 
+/* ------------------------------------------- varumärken, kalender, kontakter */
+
+.brandkort-rutnat { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 30px; }
+.brandkort {
+  display: block; border: 1px solid var(--linje); border-radius: var(--radie-stor); background: var(--yta);
+  padding: 22px 22px 18px; transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .25s ease;
+}
+.brandkort:hover { transform: translateY(-2px); border-color: var(--linje-stark); }
+.brandkort-huvud { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
+.brandkort h3 { font-size: 20px; }
+.brandkort .under { color: var(--ink-2); font-size: 13.5px; min-height: 40px; }
+.brandkort-rad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 14px; margin: 16px 0 0; }
+.brandkort-rad div { min-width: 0; }
+.brandkort-rad dt { font-size: 10.5px; text-transform: uppercase; letter-spacing: .12em; color: var(--ink-3); font-weight: 600; }
+.brandkort-rad dd { margin: 3px 0 0; font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; line-height: 1.3; overflow-wrap: anywhere; }
+
+.flikar { display: flex; gap: 4px; flex-wrap: wrap; border-bottom: 1px solid var(--linje); margin-bottom: 26px; padding-bottom: 10px; }
+.flik { padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 500; color: var(--ink-2); display: inline-flex; align-items: center; gap: 6px; }
+.flik:hover { background: var(--yta-2); color: var(--ink); }
+.flik[aria-current="page"] { background: var(--ink); color: var(--papper); }
+.flik-tal { font-size: 11px; font-weight: 600; background: var(--kritisk); color: #fff; border-radius: 999px; padding: 1px 7px; line-height: 1.5; }
+.flik[aria-current="page"] .flik-tal { background: var(--papper); color: var(--ink); }
+
+.tvakolumner { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.tvakolumner .block { margin-top: 34px; }
+
+/* Snabbinmatningen: en rad. */
+.snabbform { display: grid; grid-template-columns: minmax(0, 1fr) 150px 110px 130px auto auto; gap: 10px; align-items: center; padding: 16px 20px; }
+.snabbform input, .snabbform select {
+  height: 44px; padding: 0 12px; border-radius: var(--radie); border: 1px solid var(--linje-stark);
+  background: var(--papper); color: var(--ink); font: inherit; font-size: 15px; min-width: 0;
+}
+.snabbform input:focus, .snabbform select:focus { border-color: var(--ink); outline: none; }
+.snabbform .knapp { height: 44px; }
+.snabbform-hjalp { grid-column: 1 / -1; margin: 0; }
+
+.kal-rubrik { font-size: 22px; margin-bottom: 14px; }
+.kal-lista { list-style: none; margin: 0; padding: 0; }
+.kal-dagblock { padding: 14px 20px 8px; border-bottom: 1px solid var(--linje); }
+.kal-dagblock:last-child { border-bottom: none; }
+.kal-dagblock h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-2); margin-bottom: 8px; display: flex; gap: 10px; align-items: baseline; }
+.kal-forsenat h4 { color: var(--kritisk-ink); }
+.kal-dagblock ul { list-style: none; margin: 0; padding: 0; }
+.kal-h { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 8px 0; border-top: 1px dashed var(--linje); }
+.kal-h:first-child { border-top: none; }
+.kal-tid { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--ink-2); padding-top: 3px; }
+.kal-text { font-size: 15px; }
+.kal-text .bi { display: block; }
+.kal-klar .kal-text { text-decoration: line-through; color: var(--ink-3); }
+.kal-knappar { display: flex; gap: 6px; }
+.kalla { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; padding: 2px 8px; margin-left: 6px; border: 1px solid var(--linje); color: var(--ink-2); vertical-align: middle; }
+.kalla-tvist, .kalla-deadline, .kalla-larm { border-color: color-mix(in srgb, var(--kritisk) 50%, var(--linje)); color: var(--kritisk-ink); }
+.kalla-rutin { border-color: color-mix(in srgb, var(--glod-2) 50%, var(--linje)); }
+.kalla-kontakt { border-color: color-mix(in srgb, var(--glod-1) 60%, var(--linje)); }
+
+.kal-manad-huvud { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--linje); }
+.kal-manad-huvud h3 { font-size: 16px; text-transform: capitalize; }
+.kal-rutnat { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.kal-veckodag { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); font-weight: 600; padding: 10px 8px 6px; text-align: center; border-bottom: 1px solid var(--linje); }
+.kal-cell { min-height: 92px; padding: 6px 6px 8px; border-right: 1px solid var(--linje); border-bottom: 1px solid var(--linje); font-size: 12px; }
+.kal-cell:nth-child(7n) { border-right: none; }
+.kal-tom { background: var(--yta-2); }
+.kal-passerad .kal-nr { color: var(--ink-3); }
+.kal-nr { font-size: 12px; font-weight: 600; color: var(--ink-2); margin-bottom: 4px; }
+.kal-idag { background: color-mix(in srgb, var(--glod-1) 7%, var(--yta)); }
+.kal-idag .kal-nr { color: var(--ink); }
+.kal-idag .kal-nr::after { content: " · i dag"; font-weight: 500; color: var(--ink-3); }
+.kal-chip { font-size: 11.5px; line-height: 1.3; padding: 3px 6px; border-radius: 5px; background: var(--yta-2); border: 1px solid var(--linje); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kal-chip.kal-klar { text-decoration: line-through; color: var(--ink-3); }
+.kal-chip-tvist, .kal-chip-deadline, .kal-chip-larm { border-color: color-mix(in srgb, var(--kritisk) 45%, var(--linje)); background: color-mix(in srgb, var(--kritisk) 8%, var(--yta)); }
+.kal-chip-rutin { border-color: color-mix(in srgb, var(--glod-2) 40%, var(--linje)); }
+.kal-chip-kontakt { border-color: color-mix(in srgb, var(--glod-1) 50%, var(--linje)); }
+
+/* Kontakter */
+.kontaktform { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 16px; padding: 18px 20px 20px; }
+.kontaktform .falt { margin-bottom: 0; }
+.kontaktform-bred { grid-column: 1 / -1; }
+.kontaktform-knapp { grid-column: 1 / -1; }
+.kontakt { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; }
+.kontakt-inaktiv .kontakt-huvud { opacity: .6; }
+.kontakt-huvud { min-width: 0; }
+.kontakt-huvud .namn { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.kontakt-huvud .bi { display: block; margin-top: 3px; }
+.kontakt-andra { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
+.kontakt-andra select, .kontakt-andra input { height: 34px; padding: 0 10px; border-radius: var(--radie); border: 1px solid var(--linje-stark); background: var(--papper); color: var(--ink); font: inherit; font-size: 13px; }
+.kontakt-andra input[name="nastaSteg"] { width: 180px; }
+
+/* Eskaleringskanalen */
+.eskalering .medd .medd-text { white-space: pre-wrap; word-break: break-word; max-height: 7.5em; overflow: hidden; }
+.eskalering .medd.bot .namn { color: var(--ink-2); }
+.eskalering .medd:not(.bot) { background: color-mix(in srgb, var(--glod-1) 5%, var(--yta)); }
+
 /* ------------------------------------------------------------- mobil */
 
 @media (max-width: 900px) {
   .rutnat-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rutnat-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hjalte { grid-template-columns: minmax(0, 1fr); }
+  .tvakolumner { grid-template-columns: minmax(0, 1fr); }
+  .snabbform { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .snabbform-text { grid-column: 1 / -1; }
+  .kontaktform { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .hero-rutnat { grid-template-columns: minmax(0, 1fr); }
   .hero-bild { order: -1; }
   .hero-bild .bild-ram img { aspect-ratio: 16 / 10; }
@@ -693,6 +792,17 @@ td .bi { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 2px
   .hjalte { padding: 24px 20px; }
   .bildrad { grid-template-columns: minmax(0, 1fr); }
   .orb { filter: blur(50px); }
+  .brandkort-rad { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kal-h { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .kal-tid:empty { display: none; }
+  .kal-cell { min-height: 56px; padding: 4px; }
+  .kal-chip { display: none; }
+  .kal-cell .mini { display: none; }
+  .kal-cell:has(.kal-chip) .kal-nr::before { content: "•"; color: var(--glod-2); margin-right: 3px; }
+  .kontakt { grid-template-columns: minmax(0, 1fr); }
+  .kontakt-andra { justify-content: flex-start; }
+  .kontaktform { grid-template-columns: minmax(0, 1fr); }
+  .snabbform { grid-template-columns: minmax(0, 1fr); }
   .spela-knapp { width: 56px; height: 56px; }
   .fot-rader { flex-direction: column; gap: 10px; }
 }

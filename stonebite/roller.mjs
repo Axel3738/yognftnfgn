@@ -24,6 +24,7 @@
 /** Varje sida i den inloggade delen. `nyckel` är det servern slår upp. */
 export const SIDOR = Object.freeze([
   { nyckel: 'oversikt', titel: 'Översikt', url: '/app', beskrivning: 'Hela bolaget på en skärm' },
+  { nyckel: 'varumarken', titel: 'Varumärken', url: '/app/varumarken', beskrivning: 'Ett kort per verksamhet, med allt därunder' },
   { nyckel: 'butiker', titel: 'Butiker', url: '/app/butiker', beskrivning: 'Försäljning per butik' },
   { nyckel: 'annonser', titel: 'Annonser', url: '/app/annonser', beskrivning: 'Spend, köp och vinstbidrag' },
   { nyckel: 'produkttest', titel: 'Produkttest', url: '/app/produkttest', beskrivning: 'Nya produkter på väg genom trappan' },
@@ -33,6 +34,10 @@ export const SIDOR = Object.freeze([
   { nyckel: 'leverans', titel: 'Leverans', url: '/app/leverans', beskrivning: 'Paket på väg till kund' },
   { nyckel: 'bonus', titel: 'Bonus', url: '/app/bonus', beskrivning: 'Vad alla tjänar utöver lönen' },
   { nyckel: 'system', titel: 'System', url: '/app/system', beskrivning: 'Allt som är byggt och vad det gör' },
+  // Kalendern ligger sist bland arbetssidorna med flit: startsidan efter
+  // inloggning är den FÖRSTA sidan rollen får se, och en redigerare ska landa
+  // på topplistan, inte i en tom kalender.
+  { nyckel: 'kalender', titel: 'Kalender', url: '/app/kalender', beskrivning: 'Vad som ska hända, vad som hänt' },
   { nyckel: 'mig', titel: 'Min sida', url: '/app/mig', beskrivning: 'Dina uppdrag och dina pengar' },
   { nyckel: 'konton', titel: 'Konton', url: '/app/konton', beskrivning: 'Vem kan logga in' },
 ]);
@@ -45,37 +50,39 @@ export const ROLLER = Object.freeze({
   agare: {
     namn: 'Ägare',
     beskrivning: 'Allt. Pengar, annonser, folk, bonus och konton.',
-    sidor: ['oversikt', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
-    ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
+    ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
   chef: {
     namn: 'Chef',
     beskrivning: 'Allt utom vem som får logga in.',
-    sidor: ['oversikt', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
-    ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system'],
+    sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
+    ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
+  // Alla roller har en egen kalender — bara sina egna rader. Varumärkenas
+  // kalendrar (med tvister, rutiner och spend-nära saker) ser bara ägare/chef.
   produkttest: {
     namn: 'Produkttest',
     beskrivning: 'Produkterna de testar och vad de tjänat på dem. Ingen spend, ingen omsättning.',
-    sidor: ['produkttest', 'mig'],
+    sidor: ['produkttest', 'kalender', 'mig'],
     ratt: [],
   },
   redigerare: {
     namn: 'Videoredigerare',
     beskrivning: 'Topplistan och sin egen sida. Ser aldrig spend eller omsättning.',
-    sidor: ['redigerare', 'mig'],
+    sidor: ['redigerare', 'kalender', 'mig'],
     ratt: [],
   },
   support_chef: {
     namn: 'Head of customer support',
     beskrivning: 'Kundtjänst, recensioner, paket och hela VA-teamets bonus. Godkänner insatser. Ingen ekonomi.',
-    sidor: ['kundtjanst', 'recensioner', 'leverans', 'bonus', 'mig'],
+    sidor: ['kundtjanst', 'recensioner', 'leverans', 'bonus', 'kalender', 'mig'],
     ratt: ['bonus-alla', 'godkanna'],
   },
   va: {
     namn: 'Kundtjänst (VA)',
     beskrivning: 'Ärenden, tvister, paket och recensioner — plus sina egna uppdrag och pengar.',
-    sidor: ['kundtjanst', 'recensioner', 'leverans', 'mig'],
+    sidor: ['kundtjanst', 'recensioner', 'leverans', 'kalender', 'mig'],
     ratt: [],
   },
 });

@@ -200,9 +200,12 @@ vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
 Tre grenar visas: **e-handeln**, **YouTube-kanalen**
 (`profil.youtube`, https://www.youtube.com/@Stonebite.channel — vloggar,
 tutorials, lifestyle; en egen verksamhet bolaget lägger tid, utrustning och
-resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: åtta
-områden, "Så jobbar vi", kontaktruta → `kontakt.epost`). Allt kommer ur
-`profil.json`; tom `youtube.url` ⇒ texten står kvar men ingen knapp.
+resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: tolv
+områden med AI först — agenter som gör riktigt arbete, AI-producerat innehåll,
+automatisering — sedan e-handeln, rådgivning och en öppen "Något annat?";
+"Så jobbar vi"; kontaktruta → `kontakt.epost`). Allt kommer ur `profil.json`;
+tom `youtube.url` ⇒ texten står kvar men ingen knapp. Startsidans teaser visar
+de tre första områdena, så ordningen i listan är ett val.
 
 **Bilderna** (`webb/bilder/*.jpg`, 50–190 kB) genereras av
 `node stonebite/bilder.mjs` ur `bilder.json` via kie.ai — abstrakta,
@@ -223,6 +226,30 @@ testet "publika sidan nämner inte en enda butik" går över både `/` och
 ⚠️ Certifikatet går inte att kontrollera från en claude.ai-container — proxyn
 MITM:ar HTTPS och visar alltid Anthropics eget cert. Kolla i en webbläsare
 eller i Railway → Settings → Domains.
+
+## Baksidan: varumärken, rutinvakt, kalender, kontakter (2026-09-22)
+
+Axels beställning: "en MAIN flik för varje varumärke … alla rutiner, riktigt
+bra strukturerat, som uppdaterar varje dag och visar så att inget är CP …
+koppla eskaleringskanalen … en flik i varje brand med influencers och
+UGC-kreatörer … en liten kalender i varje brand … och en personlig kalender,
+som Google Calendar fast bättre, simpel". Målet: han ska slippa klicka runt
+och bara ha high-leverage-uppgifter.
+
+| Del | Fil | Vad |
+|---|---|---|
+| **Varumärkena** | `varumarken.json`, `vy/varumarke.mjs` | Fem kort (Bäverbutiken, Grillkliniken, Matstrumpor, CaraShell, övriga OPS). Registret knyter butiks-id:n, annonskonton (hela eller per kampanjprefix i delade konton), kundtjänstens brand, spårningens butik, Discord-servern och rutinerna. `/app/varumarke/<id>?flik=` med flikarna Översikt · Butiker · Annonser · Kundtjänst · Leverans · Rutiner · Kontakter · Kalender. Översikten säger **Kräver dig / Kommer hända / Hände senast**. Det som inte går att läsa står med orsak (`*_saknas`-fälten). |
+| **Rutinvakten** | `rutiner.json`, `kallor/rutiner.mjs` | Varje rutin: schema i svensk tid + vilket spår den lämnar på main (commit-rubrik, sökväg, eller "ingen" när den inte pushar). `hamta.mjs` läser 14 dagars git-logg och dömer: ok (≤ 1,5 intervall) · sen (≤ 3) · saknas · avstängd (flaggad, men ett färskt spår vinner över flaggan) · omätbar. Ingen hämtning kan göra en rutin grön — bara ett spår. |
+| **Eskaleringskanalen** | `kallor/discord.mjs` | Boten läser de senaste 12 meddelandena i varje varumärkes kanaler (customer-service/support, ads, konton …). Kundadresser maskeras innan de sparas. Människor de senaste 48 h räknas som "något att titta på". |
+| **Kalendern** | `kalender.mjs`, `vy/kalender.mjs` | `data/kalender.jsonl` på volymen. En rad: skriv "Ring leverantören imorgon kl 14" — datumordet vinner över datumfältet (imorgon, fredag, 15/10, den 3 januari, om 3 dagar, kl 14). Härledda rader (tvistdeadlines, rutiner som ska köra, kontakters nästa steg, commissions kördagar) ligger i samma lista och kan inte bockas av. Alla roller har en egen kalender; varumärkesrader kräver ägare/chef. |
+| **Kontakterna** | `kontakter.mjs` | `data/kontakter.jsonl`. Typ (influencer, UGC, leverantör, partner), plattform, länk (bara http/https), läge (att kontakta → levererat/nej), nästa steg + datum → hamnar i kalendern. |
+| **Kräver dig i dag** | `vy/oversikt.mjs` | Överst på Översikt: brådskande tvister, saknade/sena rutiner, människor i eskaleringskanalerna det senaste dygnet, dagens och försenade kalenderrader — över alla varumärken. |
+
+⚠️ Sådant som inte går att koppla i dag står i registret med orsak:
+Grillklinikens Shopify (inga nycklar) och SnarkLös-kontot (token når det inte),
+Matstrumpors konto "nya kungen" (token nekas), kundtjänstens brevlådor för
+Grillkliniken/CaraShell/Matstrumpor (ingen brandfil). Bank, kort och
+överföringar har ingen datakälla — de läggs in som **Larm** i kalendern för hand.
 
 ## Vad som INTE är byggt än
 

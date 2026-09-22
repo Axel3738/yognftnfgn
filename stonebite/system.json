@@ -272,9 +272,39 @@
         },
         {
           "namn": "Datahämtningen",
-          "vad": "Shopify, Meta, Judge.me, Notion och repots egna filer → en snapshot sajten läser.",
+          "vad": "Shopify, Meta, Judge.me, Notion, Discord, git-loggen och repots egna filer → en snapshot sajten läser.",
           "var": "stonebite/hamta.mjs",
           "kommando": "node stonebite/hamta.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Varumärkena",
+          "vad": "En huvudflik per verksamhet (Bäverbutiken, Grillkliniken, Matstrumpor, CaraShell, övriga OPS) med butiker, annonser, kundtjänst, leverans, rutiner, kontakter och kalender därunder. Kortet säger om något kräver dig.",
+          "var": "stonebite/varumarken.json, stonebite/vy/varumarke.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Rutinvakten",
+          "vad": "Läser rutinernas spår i git-loggen mot schemat: körde, sen, saknas, avstängd, omätbar. En rutin som tyst slutat köra blir röd.",
+          "var": "stonebite/rutiner.json, stonebite/kallor/rutiner.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Eskaleringskanalen",
+          "vad": "De senaste meddelandena i varje varumärkes Discord-kanaler, lästa av boten vid hämtningen. Människor räknas, botar visas.",
+          "var": "stonebite/kallor/discord.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Kalendern",
+          "vad": "En personlig per person och en per varumärke. Skriv en rad med datumord ('imorgon kl 14') så ligger den där. Tvister, rutiner och uppföljningar dyker upp av sig själva.",
+          "var": "stonebite/kalender.mjs, stonebite/vy/kalender.mjs",
+          "status": "nytt"
+        },
+        {
+          "namn": "Kontakterna",
+          "vad": "Influencers, UGC-kreatörer, leverantörer och partners per varumärke, med läge och nästa steg. Nästa steg med datum hamnar i kalendern.",
+          "var": "stonebite/kontakter.mjs",
           "status": "nytt"
         }
       ]

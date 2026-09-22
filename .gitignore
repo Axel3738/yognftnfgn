@@ -100,3 +100,5 @@ stonebite/data/insatser.jsonl
 stonebite/data/personer-extra.json
 
 factory/output/*/logga-*
+stonebite/data/kalender.jsonl
+stonebite/data/kontakter.jsonl
