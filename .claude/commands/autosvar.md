@@ -93,6 +93,14 @@ skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
   flaggad + VA-PRIO. **WISMO:** aldrig avsändningsdatum, aldrig första
   sträckans fraktbolag, aldrig "framme i Sverige" eller en ort — bara var
   paketet ÄR, bävernumret och länken.
+- **Andra rundan samma natt:** **inga tankstreck i mejl** ("det märker man
+  direkt att det är AI"; testet felar på ett enda "—" eller "–" i en mall),
+  **"svar inom 48 timmar"** (`svar.eskalering_timmar`), **ordernumret
+  efterfrågas när det saknas** i stället för "har du mer information" (ARG
+  hämtar alltid faktan så ordern hittas på e-posten), och returen säger
+  **"posta direkt till adressen, inte till ett ombud"**. Returfönstret är 30
+  dagar från mottagandet enligt SOP 18 och policyn (EU:s 14 dagars ångerrätt
+  gäller parallellt).
 - **Kunden är VA:ns i 14 dagar** (`hinkar.VA_KUND_DAGAR`): har VA:n skrivit
   till adressen i Skickat de senaste 14 dagarna — i vilken tråd som helst — får
   kunden inget automatiskt svar, bara flagga. Ulf 2026-09-22: fyra VA-svar i

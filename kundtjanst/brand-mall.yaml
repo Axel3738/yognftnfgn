@@ -113,6 +113,7 @@ svar:
   sparning_prefix: "BB-"      # bävernumrets prefix på den sidan (sparning/butiker.json prefix; CaraShell CS-)
   va_mapp: VA-PRIO            # mappen ARGA trådar flyttas till — VA:n tar den först. Skapas om den saknas
   svarstid_timmar: 24         # "vi svarar inom N timmar på vardagar" — måste hållas, annars ljuger svaret
+  eskalering_timmar: 48       # det ARGA svarets "du kan räkna med svar inom N timmar" (Axel 2026-09-22: 48 sätter förväntningen, VA:n svarar snabbare)
   max_per_korning: 20         # tak på automatiska svar per körning; resten flaggas
   fonster_timmar: 72          # mejl äldre än så får aldrig ett automatiskt svar (VA:n har dem)
   fraga_ordernummer: false    # SOP 36 steg 1: "var är min order" utan order på e-posten ⇒ be om ordernumret. false = VA:n

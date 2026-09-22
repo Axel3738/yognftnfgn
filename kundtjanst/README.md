@@ -295,6 +295,34 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
 - Löftesspärren (`harForbjudet`) ignorerar länkar sedan samma natt —
   policylänken heter `…/refund-policy` och stoppade hela returinformationen.
 
+**Andra feedbackrundan (Tobias, Juan, Morgan, samma natt) — allt inlagt:**
+
+- **Inga tankstreck i mejl.** Axel: "det märker man direkt att det är AI och
+  det känns bara opersonligt". Inga "—" mellan satser, inga "–" i intervall:
+  "1-2 arbetsdagar", "2-4 dagar", "24 sep till 1 okt". Testet kör varje mall
+  på alla fem språk och felar på ett enda streck.
+- **"Svar inom 48 timmar"** i stället för "inom de kommande dagarna"
+  (`svar.eskalering_timmar`, standard 48 — Axel: sätt förväntningen där, VA:n
+  svarar snabbare ändå).
+- **Ordernumret efterfrågas när det saknas.** Tobias skrev inget nummer, och
+  ingen order fanns på hans adress. Då byts "har du mer information … svara"
+  mot "för att vi ska kunna hitta din order behöver vi ditt ordernummer".
+  ARG hämtar därför alltid faktan (ordern hittas på e-posten även utan nummer
+  i mejlet); läget ur spårningen visas bara när mejlet handlar om paketet.
+- **Returen: "posta direkt till adressen, inte till ett ombud — vi hämtar
+  inte ut paket från ombud"** som egen rad efter adressen, på alla språk.
+- **Returfönstret:** Axel frågade om SOP:erna säger 14 eller 30. **SOP 18
+  (Customer Wants to Return) säger 30 dagar från mottagandet**, och nämner
+  EU:s 14 dagars ångerrätt vid sidan om ("Refer to the 30-day return policy
+  and the EU 14-day right of withdrawal"); den publicerade policyn
+  (`/policies/refund-policy`) säger också 30. Mejlet säger 30 tills Axel
+  ändrar policyn (`tvister.returfonster_dagar`).
+- Utkastet "Niklas Hurtig, Re:" i Drafts är daterat 2026-08-19 och kommer
+  inte från autosvaret (som byggdes 2026-09-21). Axels invändning gäller
+  ändå som regel: nämn fraktbolaget för sista biten vid namn (det gör
+  `framme(bolag)` ur 17TRACK), aldrig "den lokala transportören", och
+  spårningslänken följer alltid med när ett spårningsnummer finns.
+
 **Femte `--igen`-körningen 2026-09-22 ~01:58 CEST med de nya mallarna:**
 50 mejl, **3 utkast** — Tobias (ARG `som_pa_bilden` + bilder), Morgan (ARG
 `kvalitet`), Juan #6504 (kontaktformulär, "önskar returnera den ni skickade"

@@ -156,7 +156,8 @@ export async function korBrand(brand, {
     let fakta = null;
     const omPaketet = (hink.klass.alla ?? []).some((x) => ['var_ar_ordern', 'ej_levererad'].includes(x.id));
     const returfraga = arReturfraga({ amne: mejl.amne, text: mejl.text });
-    if ((hink.hink === HINK.ENKEL && ['wismo', 'adress', 'retur'].includes(hink.typ)) || (hink.hink === HINK.ARG && (omPaketet || returfraga))) {
+    // ARG hämtar alltid faktan: ordern hittas på e-posten även när numret saknas i mejlet (Tobias-feedbacken 2026-09-22), och då behöver svaret inte be om det.
+    if ((hink.hink === HINK.ENKEL && ['wismo', 'adress', 'retur'].includes(hink.typ)) || hink.hink === HINK.ARG) {
       fakta = await hamtaFakta({ mejl, klass: hink.klass, konfig, shopify: sh, hamta17, sprak: post.sprak, nu, logg, tvister });
       post.fakta = fakta.kalla;
     }
@@ -179,9 +180,9 @@ export async function korBrand(brand, {
           if (d.hink === HINK.ARG) {
             const x = xNyckelFor(hink.klass, d.argOrsaker ?? [], `${mejl.amne}\n${mejl.text}`);
             post.x = x;
-            // Läget ur Shopify/17TRACK som eget stycke — bara med färsk fakta (ingen spärr) och kundens egen order.
+            // Läget ur Shopify/17TRACK som eget stycke — bara när mejlet handlar om paketet, med färsk fakta (ingen spärr) och kundens egen order.
             let lage = null;
-            if (fakta?.order && !fakta.sparr) {
+            if (omPaketet && fakta?.order && !fakta.sparr) {
               try { lage = { namn: fakta.order.namn, rader: lageRader({ sprak: post.sprak, fakta, brand: konfig, stilla, nu }) }; }
               catch (e) { lage = null; logg(`uid ${m.uid}: läget kunde inte byggas (${e.message}) — det arga svaret går utan`); }
             }
@@ -199,7 +200,9 @@ export async function korBrand(brand, {
             post.retur = Boolean(retur);
             // SOP 05/08: skadad, fel eller undermålig vara ("skräp", "ser inte ut som på bilden") ⇒ be om de tre bilderna i samma svar (Axels feedback 2026-09-22: "jättebra att vi frågar efter bilder direkt").
             const foton = villHaFoton(hink.klass) || ['kvalitet', 'som_pa_bilden', 'skadad_defekt', 'fel_vara'].includes(x);
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, lage, namn, opostadDagar, retur }).text;
+            // Saknas ordernumret (inte i mejlet, ingen order på adressen) ber svaret om det i stället för "har du mer information".
+            post.behoverOrdernummer = !ordernummer;
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, lage, namn, opostadDagar, retur, behoverOrdernummer: !ordernummer }).text;
           } else {
             text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, nu }).text;
           }

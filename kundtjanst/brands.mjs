@@ -95,6 +95,7 @@ export const STANDARD_SVAR = Object.freeze({
   sparning_prefix: 'BB-',     // bävernumrets prefix på sidan (sparning/butiker.json prefix)
   va_mapp: 'VA-PRIO',         // mappen ARGA trådar flyttas till — VA:n tar den först
   svarstid_timmar: 24,        // "vi svarar inom N timmar på vardagar" — måste hållas
+  eskalering_timmar: 48,      // det ARGA svarets "du kan räkna med svar inom N timmar" (Axels beslut 2026-09-22: sätt 48, svara snabbare)
   max_per_korning: 20,        // spärr: fler automatiska svar än så per körning och butik skickas aldrig
   fonster_timmar: 72,         // hur gamla inkommande mejl som får ett automatiskt svar
   fraga_ordernummer: false,   // SOP 36 steg 1: WISMO utan order ⇒ be om ordernumret (annars SVÅR). Axels beslut per butik

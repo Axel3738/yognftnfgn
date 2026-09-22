@@ -265,8 +265,34 @@ test('svarsmallar: fem språk, alla meningar finns, inga löftesord, signatur = 
       assert.match(arg.text, /Kundtjänst Bäverbutiken$/);
     }
   }
-  // Axels mall 2026-09-22 ordagrant på svenska: empati, problemet, eskaleringen, "mer information".
-  assert.equal(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'ej_levererad', namn: 'Bengt' }).text, 'Hej Bengt!\n\nJag förstår helt din frustration. Ett paket som inte kommit fram är helt oacceptabelt, och det är inget vi står för.\nJag har eskalerat det här direkt till vårt ansvariga team som ett brådskande ärende — du kan räkna med svar inom de kommande dagarna.\n\nHar du mer information som kan hjälpa oss lösa det snabbare får du gärna svara på det här mejlet.\n\nVänliga hälsningar\nKundtjänst Bäverbutiken');
+  // Axels mall 2026-09-22 ordagrant på svenska: empati, problemet, eskaleringen med "inom 48 timmar", "mer information".
+  assert.equal(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'ej_levererad', namn: 'Bengt' }).text, 'Hej Bengt!\n\nJag förstår helt din frustration. Ett paket som inte kommit fram är helt oacceptabelt, och det är inget vi står för.\nJag har eskalerat det här direkt till vårt ansvariga team som ett brådskande ärende. Du kan räkna med svar inom 48 timmar.\n\nHar du mer information som kan hjälpa oss lösa det snabbare får du gärna svara på det här mejlet.\n\nVänliga hälsningar\nKundtjänst Bäverbutiken');
+  // Saknas ordernumret ersätts "mer information" med frågan efter numret (Tobias-feedbacken).
+  assert.match(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'som_pa_bilden', namn: 'Tobias', foton: true, behoverOrdernummer: true }).text, /\n\nFör att vi ska kunna hitta din order behöver vi ditt ordernummer\. Skriv gärna det i ditt svar, tillsammans med annat som kan hjälpa oss lösa det snabbare\.\nFör att vi ska kunna lösa det snabbt/);
+  assert.match(skrivArgt({ sprak: 'sv', brand: { ...KONFIG, svar: { ...KONFIG.svar, eskalering_timmar: 24 } }, xNyckel: 'standard' }).text, /svar inom 24 timmar\./);
+  // Inga tankstreck i något mejl, på något språk (Axels feedback 2026-09-22: "det märker man direkt att det är AI").
+  const STRECK = /[—–]/;
+  for (const s of SPRAK) {
+    const fakta = { order: { namn: '#1042', skapad: new Date('2026-09-15T08:00:00Z') }, sandning: { skickad: new Date('2026-09-17T07:00:00Z'), bolag: 'YunExpress', nummer: 'YT1' }, sparning: { senaste: { tid: '2026-09-10T13:39:00.000Z', text: 'x', plats: 'y' }, sista: null, status: 'InTransit' }, lank: 'https://baverbutiken.se/pages/spara?nummer=BB-1', bavernummer: 'BB-1', fonster: { fran: new Date('2026-09-24T07:00:00Z'), till: new Date('2026-10-01T07:00:00Z') } };
+    const texter = [
+      skrivEnkelt({ typ: 'wismo', sprak: s, brand: KONFIG, fakta, bekraftelse: true, stilla: true }).text,
+      skrivEnkelt({ typ: 'wismo', sprak: s, brand: KONFIG, fakta: { ...fakta, sparning: { ...fakta.sparning, sista: { namn: 'DHL' } } } }).text,
+      skrivEnkelt({ typ: 'wismo', sprak: s, brand: KONFIG, fakta: { order: { namn: '#1050', skapad: new Date('2026-09-20T08:00:00Z') } } }).text,
+      skrivEnkelt({ typ: 'levererad', sprak: s, brand: KONFIG, fakta: { ...fakta, sparning: { levererad: true, senaste: { tid: '2026-09-19T13:39:00.000Z', plats: 'Umeå' } } } }).text,
+      skrivEnkelt({ typ: 'leveranstid', sprak: s, brand: KONFIG }).text,
+      skrivEnkelt({ typ: 'oppettider', sprak: s, brand: KONFIG }).text,
+      skrivEnkelt({ typ: 'adress', sprak: s, brand: KONFIG, fakta: { order: { namn: '#1050' } } }).text,
+      skrivEnkelt({ typ: 'ordernummer', sprak: s, brand: KONFIG }).text,
+      skrivEnkelt({ typ: 'foretag', sprak: s, brand: KONFIG }).text,
+      skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, behoverOrdernummer: true }).text,
+      skrivEnkelt({ typ: 'retur', sprak: s, brand: { ...KONFIG, tvister: { ...KONFIG.tvister, returfrakt_betalas_av: 'butik' } }, ordernummer: '#6600' }).text,
+      ...Object.keys(mallar(s).x).map((x) => skrivArgt({ sprak: s, brand: KONFIG, xNyckel: x, foton: true, behoverOrdernummer: true, retur: returText({ sprak: s, brand: { ...KONFIG, tvister: { ...KONFIG.tvister, returfrakt_betalas_av: 'kund' } } }), lage: { namn: '#1042', rader: ['x'] } }).text),
+      skrivArgt({ sprak: s, brand: KONFIG, opostadDagar: 13 }).text,
+    ];
+    for (const t of texter) assert.equal(STRECK.test(t), false, `${s}: tankstreck i "${(t.match(/[^\n]*[—–][^\n]*/) ?? [''])[0]}"`);
+    assert.match(texter[0], /\b1042\b/);
+    assert.match(texter[1], /DHL/);
+  }
   // Tobias-exemplet ur feedbacken: "En produkt som inte alls ser ut som på bilden är helt oacceptabelt" + bilderna.
   assert.match(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'som_pa_bilden', namn: 'Tobias', foton: true }).text, /^Hej Tobias!\n\nJag förstår helt din frustration\. En produkt som inte alls ser ut som på bilden är helt oacceptabelt, och det är inget vi står för\.\nJag har eskalerat[^\n]*\n\nHar du mer information[^\n]*\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan/);
   // Opostad order: antalet dagar i klartext (Axels exempel "opostad i 13 dagar").
@@ -282,7 +308,7 @@ test('svarsmallar: fem språk, alla meningar finns, inga löftesord, signatur = 
 test('svar: ej skickad order säger packas + fönster i dagar, aldrig ett datum; wismo utan order kastar', () => {
   const t = skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand: KONFIG, fakta: { order: { namn: '#1050', skapad: new Date('2026-09-20T08:00:00Z') }, sandning: null } }).text;
   assert.match(t, /Din order #1050 är mottagen 20 september 2026 och packas inom 2 arbetsdagar/);
-  assert.match(t, /7–14 dagar från att paketet skickas/);
+  assert.match(t, /7-14 dagar från att paketet skickas/);
   assert.throws(() => skrivEnkelt({ typ: 'wismo', sprak: 'sv', brand: KONFIG, fakta: {} }), /utan order/);
   assert.throws(() => skrivEnkelt({ typ: 'adress', sprak: 'sv', brand: KONFIG, fakta: {} }), /utan order/);
   assert.throws(() => skrivEnkelt({ typ: 'x', sprak: 'sv', brand: KONFIG }), /okänd/);
@@ -381,7 +407,7 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   // Axels feedback 2026-09-22 (Hans-utkastet): aldrig avsändningsdatum, aldrig första sträckans bolag, aldrig en ort — bara läget, datumet för senaste uppdateringen, bävernumret och länken.
   assert.match(utkastAnna.text, /^Hej Anna!\n\nTack för ditt mejl\.\nJag har kollat upp din order #1042\.\nPaketet är skickat och på väg\.\nSenaste uppdateringen från fraktbolaget: 19 september 2026 15:39\.\nDitt spårningsnummer hos oss är BB-[0-9A-F]{8}, och du följer paketet här: https:\/\/baverbutiken\.se\/pages\/spara\?nummer=BB-/);
   assert.equal(/YunExpress|skickades|Malmö|Sverige/.test(utkastAnna.text), false, 'inget avsändningsdatum, inget fraktbolag för första sträckan, ingen ort, inget land');
-  assert.match(utkastAnna.text, /Beräknad leverans: 24 sep–1 okt\./);
+  assert.match(utkastAnna.text, /Beräknad leverans: 24 sep till 1 okt\./);
   assert.match(utkastAnna.text, /Vänliga hälsningar\nKundtjänst Bäverbutiken$/);
   // ENKEL: ej skickad, norsk kund, norskt svar
   assert.deepEqual([per[12].hink, per[12].atgard, per[12].sprak], ['ENKEL', 'utkast', 'nb']);
@@ -407,7 +433,7 @@ test('flödet (--torr): ENKEL blir utkast med fakta, ARG blir utkast + flagga + 
   // ENKEL retur (Disa "vill returnera … hur gör jag?"): returinformationen ur brandfilen, flagga + VA-PRIO (VA:n tar emot returen), ingen order ⇒ inget ordernummer i raden.
   assert.deepEqual([per[15].hink, per[15].typ, per[15].atgard, per[15].flaggad, per[15].flyttad], ['ENKEL', 'retur', 'utkast', true, 'VA-PRIO']);
   const utkastDisa = b.utkast().find((u) => /disa@x\.se/.test(u.ra)).text;
-  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\n4\. Använd gärna en spårbar frakttjänst/);
+  assert.match(utkastDisa, /^Hej Disa!\n\nTack för ditt mejl\.\nSå här gör du returen:\n1\. Packa varan i originalförpackningen och i samma skick som du fick den\.\n2\. Skriv ditt namn och ordernummer tydligt på utsidan av paketet, och lägg med en kopia av orderbekräftelsen inuti\.\n3\. Skicka paketet till:\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\nSkicka det som brev eller paket direkt till adressen ovan, inte till ett ombud\. Vi hämtar inte ut paket från ombud\.\n4\. Använd gärna en spårbar frakttjänst/);
   assert.match(utkastDisa, /\nReturen ska skickas inom 30 dagar från att du tog emot varan\.\nHela returpolicyn: https:\/\/baverbutiken\.se\/policies\/refund-policy\n/);
   assert.equal(/Returfrakten|återbetal/i.test(utkastDisa), false, 'vem som betalar frakten sägs inte förrän brandfilen säger det; aldrig ordet återbetalning');
   // SVÅR: tvist, bilaga, annan kunds order — flaggade, inget utkast
@@ -804,7 +830,7 @@ test('SOP 36/37: ombud, ute för leverans, framme i landet och "spårningen får
   const b2 = new FalskBrevlada({ INBOX: [M.wismoSv] });
   await kor(b2, { hamta17: med17(SP_I_LANDET) });
   const t2 = b2.utkast()[0].text;
-  assert.match(t2, /Jag har kollat upp din order #1042\.\nPaketet ligger hos CityMail för sista biten — det brukar levereras inom 1–2 arbetsdagar\.\nDitt spårningsnummer hos oss är BB-/);
+  assert.match(t2, /Jag har kollat upp din order #1042\.\nPaketet ligger hos CityMail för sista biten\. Det brukar levereras inom 1-2 arbetsdagar\.\nDitt spårningsnummer hos oss är BB-/);
   assert.equal(/Beräknad leverans|framme i Sverige|skickades|YunExpress/.test(t2), false);
   // Stilla spårning (senaste skanning 6 dagar gammal, inte i landet): SOP:ens lugnande rad.
   const b3 = new FalskBrevlada({ INBOX: [M.wismoSv] });
@@ -812,8 +838,8 @@ test('SOP 36/37: ombud, ute för leverans, framme i landet och "spårningen får
   const t3 = b3.utkast()[0].text;
   assert.match(t3, /Paketet är skickat och på väg\.\nSenaste uppdateringen från fraktbolaget: 15 september 2026/);
   assert.equal(/SHENZHEN|Shenzhen|Kina|CN\b/.test(t3), false, 'aldrig en ort eller ett land på vägen');
-  assert.match(t3, /Det är helt normalt att spårningen står still några dagar under transporten — paketet är på väg ändå\./);
-  assert.match(t3, /Beräknad leverans: 24 sep–1 okt\./, 'fönstret står kvar när paketet är på väg');
+  assert.match(t3, /Det är helt normalt att spårningen står still några dagar under transporten\. Paketet är på väg ändå\./);
+  assert.match(t3, /Beräknad leverans: 24 sep till 1 okt\./, 'fönstret står kvar när paketet är på väg');
   // Färsk skanning (2 dagar): ingen stilla-rad.
   const b4 = new FalskBrevlada({ INBOX: [M.wismoSv] });
   await kor(b4);
@@ -829,7 +855,7 @@ test('SOP 11/30: nämner kunden en saknad orderbekräftelse får WISMO-svaret sk
     { uid: 80, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Ingen orderbekräftelse', text: 'Hej, var är min order #1042? Jag har inte fått någon orderbekräftelse alls.', id: '<w80@gmail.com>' }) },
   ] });
   await kor(b);
-  assert.match(b.utkast()[0].text, /Orderbekräftelsen och spårningsmejlet kan ha hamnat i skräpposten — sök gärna på "Bäverbutiken" i mejlen\./);
+  assert.match(b.utkast()[0].text, /Orderbekräftelsen och spårningsmejlet kan ha hamnat i skräpposten\. Sök gärna på "Bäverbutiken" i mejlen\./);
   assert.equal(namnerBekraftelse('Var är paketet?'), false);
   assert.equal(namnerBekraftelse('Har inte fått något spårningsmejl'), true);
   assert.equal(namnerBekraftelse('No confirmation email received'), true);
@@ -844,7 +870,7 @@ test('SOP 05/08: lugn skadad/fel vara ⇒ ENKEL `foton` (beklagan + tre bilder +
   const r = await kor(b);
   assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].atgard, r.rader[0].flaggad, r.rader[0].flyttad], ['ENKEL', 'foton', 'utkast', true, 'VA-PRIO']);
   const lugn = b.utkast()[0].text;
-  assert.match(lugn, /^Hej Jan!\n\nTack för ditt mejl\.\nTråkigt att höra att leveransen inte blev som den skulle — det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  assert.match(lugn, /^Hej Jan!\n\nTack för ditt mejl\.\nTråkigt att höra att leveransen inte blev som den skulle\. Det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
   assert.match(lugn, /\nSkriv gärna även ditt ordernummer i svaret, så hittar vi ordern direkt\.\n/);
   assert.equal(/eskalerat|frustration/.test(lugn), false, 'den lugna kunden får inte eskaleringsmallen');
   assert.equal(harForbjudet(lugn), false);
@@ -858,7 +884,9 @@ test('SOP 05/08: lugn skadad/fel vara ⇒ ENKEL `foton` (beklagan + tre bilder +
   assert.deepEqual([r2.rader[0].hink, r2.rader[0].atgard, r2.rader[0].flyttad], ['ARG', 'utkast', 'VA-PRIO']);
   const t = b2.utkast()[0].text;
   assert.match(t, /^Hej Jan!\n\nJag förstår helt din frustration\. En vara som kommer fram trasig eller inte fungerar är helt oacceptabelt, och det är inget vi står för\.\nJag har eskalerat det här direkt till vårt ansvariga team som ett brådskande ärende/);
-  assert.match(t, /\n\nHar du mer information som kan hjälpa oss lösa det snabbare får du gärna svara på det här mejlet\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  // Jan har inget ordernummer i mejlet och ingen order på adressen ⇒ svaret ber om numret i stället för "mer information".
+  assert.match(t, /\n\nFör att vi ska kunna hitta din order behöver vi ditt ordernummer\.[^\n]*\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
+  assert.equal(/Har du mer information/.test(t), false);
   assert.equal(harForbjudet(t), false);
   for (const s of SPRAK) assert.equal(harForbjudet(skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Jan', behoverOrdernummer: true }).text), false, `${s}: inga löften i foton`);
   // Ett argt WISMO utan skadad/fel vara får ingen bildförfrågan.
@@ -907,7 +935,7 @@ test('SOP 02/07/15/34/21 (de elva sista, lästa 2026-09-21 natt): stilla spårni
   const b1 = new FalskBrevlada({ INBOX: [{ uid: 100, ra: ra({ fran: 'Anna <anna@gmail.com>', amne: 'Spårning', text: 'Hej, spårningen på min order #1042 har inte uppdaterats på flera dagar, står still i Kina. Är paketet borta?', id: '<w100@gmail.com>' }) }] });
   const r1 = await kor(b1);
   assert.deepEqual([r1.rader[0].hink, r1.rader[0].typ], [HINK.ENKEL, 'wismo']);
-  assert.match(b1.utkast()[0].text, /Det är helt normalt att spårningen står still några dagar under transporten — paketet är på väg ändå\./);
+  assert.match(b1.utkast()[0].text, /Det är helt normalt att spårningen står still några dagar under transporten\. Paketet är på väg ändå\./);
   assert.equal(/borta|förlorat|lost/i.test(b1.utkast()[0].text), false, 'säger aldrig att paketet är borta (SOP 02)');
   assert.equal(namnerStillaSparning('The tracking has not updated for 8 days, it seems stuck.'), true);
   assert.equal(namnerStillaSparning('Var är mitt paket?'), false);
