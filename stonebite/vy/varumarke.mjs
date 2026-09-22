@@ -33,8 +33,8 @@ export const FLIKAR = Object.freeze([
 ]);
 
 const HUVUDBRANDS = ['baverbutiken', 'grillkliniken', 'matstrumpor', 'carashell'];
-const RUTINTON = { ok: 'bra', sen: 'varning', saknas: 'kritisk', avstangd: 'neutral', omatbar: 'neutral' };
-const RUTINORD = { ok: 'körde', sen: 'sen', saknas: 'saknas', avstangd: 'avstängd', omatbar: 'går inte att mäta' };
+const RUTINTON = { ok: 'bra', sen: 'varning', saknas: 'kritisk', avstangd: 'neutral', omatbar: 'neutral', ny: 'neutral' };
+const RUTINORD = { ok: 'körde', sen: 'sen', saknas: 'saknas', avstangd: 'avstängd', omatbar: 'går inte att mäta', ny: 'ny' };
 
 function roasText(v) {
   return v === null || v === undefined ? '–' : Number(v).toLocaleString('sv-SE', { maximumFractionDigits: 2 });
@@ -148,7 +148,7 @@ export function varumarkenSida({ snapshot, varumarken, kalender = [], kontakter 
     ${rutinsnap ? block({
       titel: 'Rutinvakten — hela bolaget',
       under: 'Varje rutin ska lämna ett spår på main när den kört. Här är det senaste spåret mot schemat.',
-      innehall: rutintabell(rutinsnap.rutiner ?? [], { nu, medBrand: true, varumarken }),
+      innehall: rutintabell(rutinsnap.rutiner ?? [], { nu, medBrand: true, varumarken, orsak: rutinsnap.orsak ?? null }),
     }) : ''}`,
   };
 }
@@ -168,7 +168,7 @@ export function varumarkeSida({ snapshot, vm, varumarken = [], flik = 'oversikt'
     annonser: () => flikAnnonser(d, { nu }),
     kundtjanst: () => flikKundtjanst(d, { nu }),
     leverans: () => flikLeverans(d),
-    rutiner: () => block({ titel: 'Rutinerna', under: 'Senaste spåret på main mot schemat. En rutin som tyst slutat köra syns här som "saknas".', innehall: d.rutiner.length ? rutintabell(d.rutiner, { nu }) : tomt('Inga rutiner registrerade', 'Det här varumärket har inga nattrutiner i stonebite/rutiner.json.') }),
+    rutiner: () => block({ titel: 'Rutinerna', under: 'Senaste spåret på main mot schemat. En rutin som tyst slutat köra syns här som "saknas".', innehall: d.rutiner.length ? rutintabell(d.rutiner, { nu, orsak: snapshot?.rutiner?.orsak ?? null }) : tomt('Inga rutiner registrerade', 'Det här varumärket har inga nattrutiner i stonebite/rutiner.json.') }),
     kontakter: () => flikKontakter(d, { csrf, nu }),
     kalender: () => kalenderBlock({ handelser: d.egnaHandelser, harledda: d.harledda, brand: vm.id, csrf, nu, manad, nasta: `/app/varumarke/${vm.id}?flik=kalender`, anvandare, rubrik: `${vm.namn}s kalender` }),
   };
@@ -450,12 +450,14 @@ function flikKontakter(d, { csrf, nu }) {
 
 // ------------------------------------------------------------ rutintabell
 
-export function rutintabell(rutiner, { nu = new Date(), medBrand = false, varumarken = [] } = {}) {
+export function rutintabell(rutiner, { nu = new Date(), medBrand = false, varumarken = [], orsak = null } = {}) {
   const brandnamn = (id) => varumarken.find((v) => v.id === id)?.namn ?? id ?? '';
-  const ordning = { saknas: 0, sen: 1, ok: 2, omatbar: 3, avstangd: 4 };
+  const ordning = { saknas: 0, sen: 1, ny: 2, ok: 3, omatbar: 4, avstangd: 5 };
   const sorterade = [...rutiner].sort((a, b) => (ordning[a.status] ?? 9) - (ordning[b.status] ?? 9) || String(a.schema?.tid ?? '').localeCompare(String(b.schema?.tid ?? '')));
   return panel({
-    innehall: tabell(
+    // Mätarens egen begränsning står ÖVER tabellen — en grund klon eller en
+    // oläsbar logg får aldrig se ut som att rutinerna slutat köra.
+    innehall: (orsak ? `<p class="varning-rad">${status('varning', t('Rutinvakten'))} ${esc(orsak)}</p>` : '') + tabell(
       [{ titel: 'Rutin' }, ...(medBrand ? [{ titel: 'Varumärke' }] : []), { titel: 'Schema' }, { titel: 'Senaste spår', tal: true }, { titel: 'Nästa', tal: true }, { titel: 'Läge' }],
       sorterade.map((r) => `<tr>
         <td><span class="namn">${esc(r.namn)}</span><span class="bi">${r.kommando ? `<code>${esc(r.kommando)}</code> · ` : ''}${esc(r.vad ?? '')}</span></td>

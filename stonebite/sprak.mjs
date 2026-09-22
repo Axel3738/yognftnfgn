@@ -321,6 +321,7 @@ const ORDBOK = {
   'saknas': 'missing',
   'avstängd': 'paused',
   'går inte att mäta': 'not measurable',
+  'ny': 'new',
   'förfallen': 'overdue',
   'om': 'in',
   'i dag': 'today',

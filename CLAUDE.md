@@ -392,11 +392,37 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   orsak**, och sidan visar orsaken — inte noll. Mätt 2026-09-22: Grillklinikens
   Shopify har inga nycklar, SnarkLös och "nya kungen" nås inte av
   `META_ACCESS_TOKEN`, bara Bäverbutiken har kundtjänst-brandfil.
-- **Rutinvakten** (`stonebite/rutiner.json` + `kallor/rutiner.mjs`): 37
+- **Rutinvakten** (`stonebite/rutiner.json` + `kallor/rutiner.mjs`): 38
   rutiner med schema i **svensk tid** och spår (commit-rubrik på main via
   `git log`, sökväg, eller `ingen` — tvistkollen, `/notionkorning` och
   `/bildannonser` pushar inget och står som "går inte att mäta" i stället för
-  att gissas gröna). Dom: ok ≤ 1,5 intervall, sen ≤ 3, annars saknas. En rutin
+  att gissas gröna). Dom: ok ≤ 1,5 intervall, sen ≤ 3, annars saknas.
+  ⚠️ **Mönstret måste läsas ur RIKTIGA commit-rubriker, aldrig gissas ur
+  kommandonamnet.** Första mätningen 2026-09-22 gav två falska larm:
+  "Speglingen Taköverdraget saknas 14 dagar" och "Leveransrundan CaraShell
+  sen 3 dygn" — båda hade kört (rubrikerna var `Spegling carashell/takskyddet
+  2026-09-21: 5 av 5 live` och `leverans carashell/takskyddet 2026-09-22: …`,
+  medan mönstren sökte `ops-spegla` och `CaraShell leveransrunda`). Rättat
+  samma dag; Axel fick larmet innan det var kontrollerat. **Innan ett "saknas"
+  rapporteras till Axel: `git log --since=14.days origin/main | grep -i
+  <rutinens ord>` — säg aldrig att en rutin står still utan att ha läst
+  loggen.** Ny rutin i registret ⇒ vänta in första riktiga commiten och
+  skriv mönstret ur den.
+  ⚠️ **Rutinernas fasta sessioner är GRUNDA kloner (`--depth 50`) — och sex
+  spårningsrutiner committar varje timme, så 50 commits är ~7 timmar
+  historik.** Mätt 2026-09-22 16:07 i `/stonebite`-rutinens egen snapshot:
+  13 rutiner "saknas" (alla CaraShell-rutinerna, DryTreks nattvakt,
+  commission, translate-no, no-recensioner) — alla hade kört; sessionen här
+  med full historik gav 26 ok / 0 saknas på samma register. Rättat samma
+  dag: `fordjupaHistorik()` i `kallor/rutiner.mjs` kör
+  `git fetch --shallow-since=15.days origin main` innan loggen läses (2,4 s
+  mot GitHub), `historikFran()` mäter hur långt historiken faktiskt räcker,
+  och räcker den inte tre intervall bakåt blir en rutin utan spår **"går
+  inte att mäta"**, aldrig "saknas"; hela läget blir `delvis` med orsak, och
+  orsaken står över tabellen. **Ett "saknas" som kommer ur en grund klon är
+  mätarens fel, inte rutinens — skriv aldrig det ena som det andra.**
+  Samma regel som `git log --all` för produktminnen: kolla hur mycket
+  historik du ser innan du säger att något inte finns. En rutin
   med `avstangd: true` visas som avstängd — **men ett färskt spår vinner över
   flaggan** och sidan säger att registret är gammalt. Rutinerna som var
   `enabled: false` 2026-09-18 (HeimGuard ×3, TankGuard, AdventLane ×3,
@@ -471,10 +497,25 @@ kontroll kan dröja ett par timmar efter att DNS ändrats.
 mergen fick vänta ~10 minuter — och äter planens domängräns. Ingen har rörts;
 det är Axels beslut om de ska bort.
 
-⚠️ **Rutinen `/stonebite` är INTE byggd än.** `list_triggers` är tom på kontot
-den här sessionen kör på; rutinerna ligger på `claude5@stonebite.org` och måste
-byggas där. Tills dess står siffrorna still på den snapshot som committades
-(sidan ljuger inte — den skriver ut när datan hämtades — men den blir gammal).
+✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
+Barkås-konto (`barkas.kundservice@gmail.com`), inte på `claude5@stonebite.org`**
+(Axels order "gör det nu"; `list_triggers` var tom på det här kontot, så ingen
+dubblett). Trigger **`trig_01QwKgfZP3JdhZX6tbGo1LJb`** ("Stonebite: färsk data
+till sajten (varje timme)"), fast session **`session_01PBEszeiGu5Qe2Lu5Je1p9T`**
+(repot som källa, `main` som utgren, tagg `routine:stonebite`), cron
+**`4 * * * *`** (varje timme :04 — minuten vald så den inte krockar med
+spårningsrutinernas :16/:24/:32/:40/:48/:56; samma i CEST och CET), prompt
+`/stonebite`, inga connectors (allt går via `META_ACCESS_TOKEN`, `NOTION_TOKEN`,
+`JUDGEME_API_TOKEN`, `DISCORD_BOT_TOKEN`, `SHOPIFY_*` i sessionens miljö).
+**Sedd i `list_triggers` samma körning**, första körning 15:04 CEST. Rutinen
+committar `stonebite/data/snapshot.json` (~600 kB) till `main` varje timme —
+kommandot drar `main` först, annars krockar pushen med spårningsrutinerna.
+⚠️ Den fasta sessionen klonade `main` 2026-09-22 12:38 UTC, FÖRE PR #112
+(varumärken/rutinvakt/eskalering) mergats: tills dess kör den gamla `hamta.mjs`
+och snapshoten saknar `rutiner`/`eskalering`/`varumarken` — baksidan visar då
+"inga rutiner registrerade" tills nästa körning efter mergen. Vill Axel ha
+rutinen på `claude5` i stället: radera triggern här och kör `/rutin /stonebite`
+där — aldrig båda.
 
 ---
 
@@ -666,6 +707,7 @@ Merga alltid till `main`, annars är rutinen bara schemalagd, inte igång.
 | Varje timme :24 | `24 * * * *` (samma i CEST och CET) | **Spårningen, CaraShell** — samma rutin som Bäverbutikens men för carashell.se (`sparning/butiker/carashell/lage.json` committas till `main`; egen minut så de två pusharna inte krockar, och kommandot kör `git pull --rebase` före). **Byggd 2026-09-20 kl 18:47 CEST på `claude5@stonebite.org`:** trigger **`trig_01UAU1N6P4MpPmeLgKffprHo`** ("Spårningen: CaraShell (varje timme)"), fast session **`session_01EZDDNdhgXgYFZ7p8DWf4BU`** (repot som källa, `main` som utgren), taggar `routine:sparning` + `butik:carashell`, inga connectors (fabrikens Shopify-nycklar + `TRACK17_API_KEY`). **Sedd i `list_triggers` samma körning**, första körning 19:24 CEST. Byggd EFTER att koden pushats till `main` (`7588b6e`). Första skarpa rundan för hand 18:39 CEST: 141 ordrar/paket, 141 registrerade, 109 + 29 event, sidan https://carashell.se/pages/spara skapad (`gid://shopify/Page/735790727500`), 140 paket, trippelkollen grön (⚠️ containern får .se → .com-omdirigering, kontrollen läste .com-versionen av samma sida). NO/DK/FI får varsin rutin på samma sätt (`/sparning <butik>`, cron på egen minut) när Axel gett apparna rättigheterna | `/sparning carashell` |
 | Varje timme :32 / :40 | `32 * * * *` / `40 * * * *` | **Spårningen, Beverbutikken (NO) och Majavakauppa (FI)** — samma rutin som Bäverbutikens, kundens kedja på norska resp. finska (`sparning/sprak/nb.json`, `fi.json`), lagefilen i `sparning/butiker/<id>/lage.json` committas till `main`. **Byggda 2026-09-20 kl 21:56 CEST på `claude5@stonebite.org`**, båda sedda i `list_triggers` samma körning: **NO** trigger **`trig_01JqE4TDfLVwpJEHhECGyQFL`** ("Spårningen: Beverbutikken (varje timme)"), fast session **`session_01YGSL1w5uQszYjieUqqc9iN`**; **FI** trigger **`trig_016yuCdWwbFPgA2ntJcLGUED`** ("Spårningen: Majavakauppa (varje timme)"), fast session **`session_019k52ns9p5muXHmQD532Hvd`** (repot som källa, `main` som utgren, taggar `routine:sparning` + `butik:<id>`, inga connectors — `SHOPIFY_CLIENT_ID/SECRET_NO` resp. `_FI` + `TRACK17_API_KEY`). Byggda EFTER att sidorna publicerats för hand och lagefilerna pushats (`6c73676`). Första rundan NO: 430 ordrar/14 d, 438 paket, 150 registrerade (taket), 145 event; 288 tas av rutinen på två timmar. FI: 7 paket, 5 event. ⚠️ NO är stor: ~430 paket per 14 dagar på en 17TRACK-kvot som delas av alla butiker. **DK** (`baeverbutiken`): trigger **`trig_01Xjx5pUdre9Uw3LJiBy9Nzs`** ("Spårningen: Bæverbutiken (varje timme)"), fast session **`session_01SLDa7FRSAf2964pHQ1mjVg`**, cron `48 * * * *`, byggd 2026-09-20 kl 22:29 CEST på samma konto, sedd i `list_triggers` samma körning; 1 order, 0 skanningar vid bygget | `/sparning beverbutikken`, `/sparning majavakauppa`, `/sparning baeverbutiken` |
 | Varje timme :56 | `56 * * * *` (samma i CEST och CET) | **Spårningen, Matstrumpor** — sjätte butiken, svensk kedja, prefix `MS-`, lagefilen i `sparning/butiker/matstrumpor/lage.json` committas till `main`. **Byggd 2026-09-21 kl 11:41 CEST på `claude5@stonebite.org`:** trigger **`trig_01LSdjZgepsWf761ocrFWAAo`** ("Spårningen: Matstrumpor (varje timme)"), fast session **`session_017E57dcmd1Lf7PpJTBsoAUE`** (repot som källa, `main` som utgren), taggar `routine:sparning` + `butik:matstrumpor`, inga connectors (`SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx` + `TRACK17_API_KEY`). **Sedd i `list_triggers` samma körning**, första körning 11:56 CEST. Byggd EFTER att koden låg på `main` (`04088e8`). ⚠️ **Inget steg 0 behövdes** — nycklarna fanns redan och hör till fabrikens app "Fabriken" (154 rättigheter, alla fyra krävda). ⚠️ `SHOPIFY_SHOP_1r46tp_qx` i Environments bär domänen med **understreck** (`1r46tp_qx.myshopify.com`) — fel; `sparning/butiker.json` är facit. Första skarpa rundan 09:36 UTC: 59 ordrar/14 d, 59 registrerade, 48 paket med skanningar, 640 händelser, 48 event, 0 fel, 0 okända fraser, sidan https://matstrumpor.se/pages/spara publicerad (`gid://shopify/Page/183508730195`, 73 kB), trippelkollen grön | `/sparning matstrumpor` |
+| Varje timme :04 | `4 * * * *` (samma i CEST och CET) | **Stonebite — färsk data till sajten** (`stonebite/data/snapshot.json` → `main` → Railway bygger om). Shopify, Meta, Discord-eskaleringen, rutinvakten (git-loggen), bonusen. **Byggd 2026-09-22 kl 14:39 CEST på Barkås-kontot** (inte claude5): trigger **`trig_01QwKgfZP3JdhZX6tbGo1LJb`**, fast session **`session_01PBEszeiGu5Qe2Lu5Je1p9T`**, tagg `routine:stonebite`, inga connectors. Sedd i `list_triggers` samma körning. Se stonebite-avsnittet ovan | `/stonebite` |
 | Varje timme :16 | `16 * * * *` (samma i CEST och CET — ingen timme att flytta) | **Spårningen, Bäverbutiken** — skickade ordrar → 17TRACK → fulfillment-event i Shopify, `sparning/lage.json` committas och pushas till `main` varje körning. **Byggd 2026-09-18 kl 16:16 CEST på `claude5@stonebite.org`** (efter att PR #97 mergats till `main`): trigger **`trig_014rEkz1EjfRfUW6dZxnvm6Q`** ("Spårningen: skanningar in i Shopify (varje timme)"), fast session **`session_01To75UpfXYXGX5jcb9QYrdv`** (repot som källa, `main` som utgren), taggar `routine:sparning` + `butik:baverbutiken`, inga connectors (allt via `TRACK17_API_KEY` + `SHOPIFY_CLIENT_ID/SECRET_SE_BAVER_SE`). **Sedd i `list_triggers` samma körning:** `enabled: true`, `persistent_session_id` rätt, första körning 2026-09-18 17:16 CEST. Ingen dubblett fanns (kollat före bygget). Första skarpa rundan för hand 2026-09-18 15:29 UTC: 932 ordrar, 940 paket, 40 registrerade, 30 event, 0 fel. ✅ **Spårningssidan tillagd i rutinen 2026-09-19** — samma körning bygger om https://baverbutiken.se/pages/spara. Första skarpa publiceringen: 1 055 paket, 11 206 skanningar, 202 kB sida, trippelkollen grön (API, publik vy, känt nummer i kundens data), sedd i Chromium på 390 och 1280 px. Rutinens prompt är oförändrad (`/sparning`), men kommandofilen har fler steg: ordboken ska växa när rapporten säger att fraser saknas, och `sparning/output/` får ALDRIG committas (~1,2 MB per körning). ⚠️ Taket 150 registreringar per körning ⇒ eftersläpningen på ~900 paket tas i kapp på ett halvt dygn, sedan ~4 nya per timme. Tar kvoten slut hos 17TRACK stannar registreringen tyst och bara redan registrerade paket följs — `kor.mjs` skriver "17TRACK avvisade N" i rapporten, läs den | `/sparning` |
 
 `/commission` har daglig cron med flit: **skriptet självt avgör** om dagen är

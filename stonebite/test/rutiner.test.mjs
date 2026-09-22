@@ -4,8 +4,11 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-import { bedomRutin, intervall, nastaKorning, schematext } from '../kallor/rutiner.mjs';
+import { readFileSync, mkdtempSync, mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { bedomRutin, intervall, nastaKorning, schematext, gitSpar, historikFran, fordjupaHistorik, rutinlage } from '../kallor/rutiner.mjs';
 
 const NU = new Date('2026-09-22T08:00:00Z'); // 10:00 svensk tid
 
@@ -46,6 +49,91 @@ test('avstängd rutin utan spår är avstängd — men ett färskt spår vinner 
   const korde = bedomRutin(av, [{ tid: '2026-09-22T07:00:00Z', rubrik: 'Nattvakten x' }], { nu: NU });
   assert.equal(korde.status, 'ok');
   assert.match(korde.ord, /flaggan är gammal/);
+});
+
+test('en nybyggd rutin utan spår är "ny", inte "saknas" — tills första intervallet gått', () => {
+  const ny = { ...timrutin, fran: new Date(NU.getTime() - 20 * 60_000).toISOString() };
+  assert.equal(bedomRutin(ny, [], { nu: NU }).status, 'ny');
+  const gammal = { ...timrutin, fran: new Date(NU.getTime() - 3 * 3_600_000).toISOString() };
+  assert.equal(bedomRutin(gammal, [], { nu: NU }).status, 'saknas', 'efter 1,5 intervall gäller vanliga regler');
+});
+
+test('räcker historiken inte tre intervall bakåt blir "inget spår" omätbart, inte saknas', () => {
+  // Mätt 2026-09-22: rutinens grunda klon såg 7 timmar bakåt och dömde 13
+  // rutiner "saknas" som alla hade kört. Mätarens brist ska stå som mätarens.
+  const kortHistorik = new Date(NU.getTime() - 7 * 3_600_000).toISOString();
+  const d = bedomRutin(dagrutin, [], { nu: NU, historikFran: kortHistorik });
+  assert.equal(d.status, 'omatbar');
+  assert.match(d.ord, /historiken räcker bara 7 h/);
+  // Med tillräcklig historik gäller domen som förut.
+  const langHistorik = new Date(NU.getTime() - 14 * 86_400_000).toISOString();
+  assert.equal(bedomRutin(dagrutin, [], { nu: NU, historikFran: langHistorik }).status, 'saknas');
+  // Ett spår som finns döms som vanligt oavsett historikens längd.
+  const spar = [{ tid: new Date(NU.getTime() - 3_600_000).toISOString(), rubrik: 'Nattvakten x' }];
+  assert.equal(bedomRutin(dagrutin, spar, { nu: NU, historikFran: kortHistorik }).status, 'ok');
+});
+
+// Ett litet repo med daterade commits, grunt klonat — som rutinernas sessioner.
+function byggGrundKlon({ medRegister = false } = {}) {
+  const bas = mkdtempSync(join(tmpdir(), 'rutinvakt-'));
+  const kalla = join(bas, 'kalla');
+  mkdirSync(kalla);
+  const g = (args, cwd = kalla, env = {}) => execFileSync('git', args, { cwd, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], env: { ...process.env, ...env } });
+  g(['init', '-q', '-b', 'main', '.']);
+  g(['config', 'user.email', 't@t']);
+  g(['config', 'user.name', 't']);
+  if (medRegister) {
+    mkdirSync(join(kalla, 'stonebite'));
+    writeFileSync(join(kalla, 'stonebite', 'rutiner.json'), JSON.stringify({ rutiner: [
+      { id: 'nv', namn: 'Nattvakten test', brand: 'test', schema: { typ: 'dag', tid: '00:41' }, spar: { typ: 'git', monster: '^Nattvakten test' } },
+    ] }));
+  }
+  // -20 ligger utanför fönstret (15 dagar), -13,5 precis innanför — så att
+  // historiken efter fördjupningen täcker fönstret och läget blir "ok".
+  for (const dagarSedan of [20, 13.5, 5, 1]) {
+    const tid = new Date(Date.now() - dagarSedan * 86_400_000).toISOString();
+    writeFileSync(join(kalla, 'f'), String(dagarSedan));
+    g(['add', '.']);
+    g(['commit', '-qm', `Nattvakten test dag -${dagarSedan}`], kalla, { GIT_AUTHOR_DATE: tid, GIT_COMMITTER_DATE: tid });
+  }
+  for (const i of [1, 2, 3]) {
+    writeFileSync(join(kalla, 'f'), `x${i}`);
+    g(['add', '.']);
+    g(['commit', '-qm', `sparning: runda ${i}`]);
+  }
+  const klon = join(bas, 'klon');
+  g(['clone', '-q', '--depth', '2', `file://${kalla}`, klon], bas);
+  return { bas, klon };
+}
+
+test('en grund klon fördjupas till fönstret innan loggen läses', () => {
+  const { bas, klon } = byggGrundKlon();
+  try {
+    // Utan fördjupning: två commits, historiken räcker minuter bakåt.
+    const fore = gitSpar(klon, { dagar: 14, fordjupa: false });
+    assert.equal(fore.filter((s) => /^Nattvakten/.test(s.rubrik)).length, 0, 'den grunda klonen ser inte nattvaktens spår');
+    assert.ok(Date.now() - new Date(historikFran(klon)).getTime() < 3_600_000);
+    // Med fördjupning: spåren från dag -1, -5 och -10 finns; dag -20 ligger utanför fönstret.
+    const f = fordjupaHistorik(klon, { dagar: 14 });
+    assert.deepEqual(f, { grund: true, fordjupad: true });
+    const efter = gitSpar(klon, { dagar: 14, fordjupa: false });
+    assert.equal(efter.filter((s) => /^Nattvakten/.test(s.rubrik)).length, 3);
+    assert.ok(Date.now() - new Date(historikFran(klon)).getTime() > 9 * 86_400_000, 'historiken räcker nu minst nio dygn');
+  } finally {
+    rmSync(bas, { recursive: true, force: true });
+  }
+});
+
+test('rutinlage på en grund klon dömer rätt efter fördjupning', () => {
+  const { bas, klon } = byggGrundKlon({ medRegister: true });
+  try {
+    const lage = rutinlage(klon, { dagar: 14 });
+    assert.equal(lage.status, 'ok', lage.orsak ?? '');
+    assert.equal(lage.rutiner[0].status, 'ok');
+    assert.equal(lage.rutiner[0].antal, 3);
+  } finally {
+    rmSync(bas, { recursive: true, force: true });
+  }
 });
 
 test('omätbar rutin säger varför', () => {

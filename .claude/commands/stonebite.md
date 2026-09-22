@@ -14,6 +14,7 @@ gammal. Därför finns rutinen.
 
 ```bash
 cd /home/user/yognftnfgn
+git pull --rebase origin main      # spårningsrutinerna pushar till main varje timme — hämta först, annars nekas pushen i steg 3
 node stonebite/hamta.mjs --dagar 30
 ```
 
