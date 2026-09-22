@@ -31,14 +31,37 @@ const API = '2025-07';
  * döper nycklarna efter adressen, inte efter butiks-id:t. Har vi nycklar till
  * en butik ska den synas — även om ingen skrivit in den någonstans.
  */
+/**
+ * Butiker Axel stängt med flit (stonebite/butiker-av.json): de ska varken
+ * hämtas eller räknas som saknade. Tom karta om filen saknas.
+ */
+export function lasAvstangda(rot) {
+  try {
+    const r = JSON.parse(readFileSync(join(rot, 'stonebite', 'butiker-av.json'), 'utf8'));
+    return new Map(Object.entries(r.av ?? {}).map(([id, v]) => [id.toLowerCase(), { ...v, id }]));
+  } catch {
+    return new Map();
+  }
+}
+
 export function upptackButiker(rot, env = process.env) {
   const ut = new Map();
+  const avstangda = lasAvstangda(rot);
   const lagg = (b) => {
     const nyckel = String(b.myshopify || b.id).toLowerCase();
     const fanns = ut.get(nyckel);
     if (!fanns) { ut.set(nyckel, b); return; }
     // Kompletterar en känd butik med det miljön vet (suffix), aldrig tvärtom.
     ut.set(nyckel, { ...b, ...fanns, suffix: fanns.suffix ?? b.suffix });
+  };
+  // Efter upptäckten: en butik i av-registret (på id ELLER domän) märks `av`
+  // med orsaken — hamtaAlla hämtar den inte, sidan visar den som avstängd.
+  const markAv = () => {
+    for (const [nyckel, b] of ut) {
+      const av = avstangda.get(String(b.id).toLowerCase())
+        ?? [...avstangda.values()].find((v) => v.myshopify && normaliseraDoman(v.myshopify) === normaliseraDoman(b.myshopify));
+      if (av) ut.set(nyckel, { ...b, namn: b.namn || av.namn || b.id, av: true, avOrsak: av.orsak ?? 'avstängd med flit' });
+    }
   };
 
   const register = join(rot, 'sparning', 'butiker.json');
@@ -83,6 +106,7 @@ export function upptackButiker(rot, env = process.env) {
     });
   }
 
+  markAv();
   return [...ut.values()];
 }
 
@@ -288,6 +312,12 @@ async function lasForsaljning({ butik, shop, token, dagar, nu, fetchFn }) {
 export async function hamtaAlla(butiker, { dagar = 30, env = process.env, fetchFn = fetch, nu = new Date(), logg = () => {} } = {}) {
   const ut = [];
   for (const b of butiker) {
+    // Avstängd med flit (stonebite/butiker-av.json): inget anrop, ingen "saknas".
+    if (b.av) {
+      logg(`  ${b.id}: avstängd med flit — ${b.avOrsak}`);
+      ut.push({ id: b.id, namn: b.namn || b.myshopify || b.id, url: b.url ?? '', shop: b.myshopify ?? '', valuta: null, land: b.land ?? '', dagar: [], ordrar: null, status: 'av', orsak: b.avOrsak });
+      continue;
+    }
     try {
       const rad = await hamtaButik(b, { dagar, env, fetchFn, nu });
       logg(`  ${b.id}: ${rad.ordrar} ordrar / ${dagar} dagar (${rad.valuta})`);

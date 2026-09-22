@@ -498,7 +498,34 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   skickade, 3 utkast, 2 arga**, ingen rutin på något konto jag ser, och
   miljön här saknar `KUNDTJANST_MAIL_PASS_*` så en rutin här hade inte
   kunnat köra den. Axels ordning gäller fortfarande: 20 utkast i rad rätt →
-  `--skarpt`.
+  `--skarpt`. **Var boten ska köra (Axels krav samma kväll: "svara arga
+  kunder på 60 sekunder … måste ligga och skanna hela tiden"):** en rutin på
+  claude.ai kör som tätast en gång i timmen, så minutservern körs på
+  **Railway**, där sajten redan snurrar dygnet runt —
+  `stonebite/autosvar-vakt.mjs` startar `autosvar.mjs --loop 60` som
+  barnprocess av servern när `AUTOSVAR_BRANDS` är satt, torrt tills
+  `AUTOSVAR_LAGE=skarpt`, omstart med växande paus, loggen på volymen
+  (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) och sajten
+  läser den live — en arg kund syns på Kundtjänst inom minuten. `/halsa`
+  visar `autosvar.kor`. Slås på med `stonebite/cowork/5-autosvar.txt`
+  (Axel klistrar in nycklarna själv). ⛔ När vakten är på kör ingen session
+  `autosvar.mjs` mot samma brevlåda för hand — dubbelsvar. 6 tester i
+  `stonebite/test/autosvar-vakt.test.mjs`. ⚠️ **Vakten startar BARA på
+  Railway** (`RAILWAY_*` i miljön) eller med `AUTOSVAR_VAKT=1` — mätt
+  2026-09-22 22:41 CEST: Axel lade in alla åtta variablerna (inte bara de
+  tre Shopify-raderna) i claude.ai-miljön på det här kontot, och en
+  provstart `node stonebite/server.mjs` i sessionen drog igång boten mot den
+  RIKTIGA brevlådan i sex sekunder (Roundcube inloggad, token mintad; dödad
+  av timeout, ingen logg skrevs, inga processer kvar). `farKoraHar()` stoppar
+  det nu, med orsak i loggen och `/halsa`. Två lärdomar samma minut: (1)
+  miljövariabler som läggs in på claude.ai SYNS i en redan körande session
+  (mätt: `env | grep KUNDTJANST` gav 0 kl 20:38 UTC och 8 träffar kl 20:44
+  UTC i samma container) — CLAUDE.md:s äldre "syns först i en ny container"
+  gäller inte längre för Bash; (2) `AUTOSVAR_*` hör hemma på Railway, inte i
+  claude.ai-miljön — där gör de ingen nytta och är ofarliga sedan spärren,
+  men Axel kan ta bort dem. De tre `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER`
+  ska däremot ligga kvar där: sajten läste Bäverbutikens ordrar med dem
+  samma minut (110 ordrar senaste dygnet, via `kandidatNycklar`).
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
   403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`
@@ -515,11 +542,20 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   först, sedan domänens, sedan alla andra, sedan fabrikens) innan 403
   rapporteras, och felet namnger då både appen och de tre variabler som
   hade löst det (`forklaraNyckelfel`, 8 tester i `test/shopify.test.mjs`).
-  Kvar för Axel: lägg in `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_SE_BAVER_SE`
-  i den miljön (eller godkänn kunddata för `_SE`-appen), och samma
-  godkännande för UK-appen. OPS-butikerna är nedlagda utom CaraShell —
-  de står med orsak på sidan Butiker, det är Axels beslut om de ska
-  installeras om eller tas bort ur miljön.
+  ✅ **Löst 2026-09-22 22:44 CEST:** Axel lade in
+  `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER`
+  (kundtjänst-appen, som får läsa ordrar) i det här kontots miljö —
+  `kandidatNycklar` provar `SE` (403) och sedan `EMAILSCRAPER` (ok, 110
+  ordrar senaste dygnet), så Bäverbutiken står på sajten från nästa
+  timkörning. Samma tre variabler ska in på Railway för boten. **UK är
+  AVSTÄNGD med flit** (Axel samma kväll: "Jag
+  säljer inget på beavershop"): registret **`stonebite/butiker-av.json`**
+  märker butiken `av` med orsak — den hämtas inte, räknas varken som läst
+  eller saknad, och står under "Avstängda med flit" på sidan Butiker. Lägg
+  aldrig en butik där utan Axels ord; ta bort raden när butiken ska säljas i
+  igen. OPS-butikerna är nedlagda utom CaraShell — de står med orsak på
+  sidan Butiker, det är Axels beslut om de ska installeras om, tas bort ur
+  miljön eller läggas i av-registret.
 - ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
   för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
 

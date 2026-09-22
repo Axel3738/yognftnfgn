@@ -1,0 +1,10 @@
+{
+  "kommentar": "Butiker som INTE ska räknas som saknade på sajten, med orsak. De upptäcks ändå (nycklarna ligger i miljön) men hämtas inte och står inte bland 'butiker som inte gick att läsa' — de står i stället som avstängda med flit på sidan Butiker. En butik här är ett beslut av Axel, inte ett fel. Ta bort raden när butiken ska säljas i igen.",
+  "av": {
+    "uk": {
+      "namn": "BeaverShop UK",
+      "myshopify": "1wucum-x0.myshopify.com",
+      "orsak": "Axel 2026-09-22: \"Jag säljer inget på beavershop\" — butiken är avvecklad. Innan dess stod den som saknad (403 read_orders) i sajtens lista."
+    }
+  }
+}

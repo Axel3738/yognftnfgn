@@ -174,9 +174,32 @@ helst som kör Node (Railway, Fly, en VPS).
    kommandot `/stonebite` (`.claude/commands/stonebite.md`): den hämtar,
    räknar bonusen, committar och pushar — samma mönster som spårningen och
    kundtjänsten. Deployen tar med den nya filen.
+6. **Kundtjänstboten dygnet runt (`autosvar-vakt.mjs`, 2026-09-22):** Axels
+   krav är svar till arga kunder inom 60 sekunder, och en rutin på claude.ai
+   kör som tätast en gång i timmen. Därför startar servern minutservern
+   (`node kundtjanst/autosvar.mjs --brand … --torr --loop 60`) som barnprocess
+   när **`AUTOSVAR_BRANDS`** är satt (t.ex. `baverbutiken`), och startar om
+   den när den dör (paus 30 s → 600 s). `AUTOSVAR_LAGE=skarpt` krävs
+   uttryckligen för att skicka — annars utkast. `AUTOSVAR_LOOP` (min 30),
+   `AUTOSVAR_DISCORD=1` för rapporten i `#customer-service`. Loggen — minnet
+   "ett svar per tråd någonsin" — skrivs på volymen (`AUTOSVAR_LOGGMAPP`,
+   standard `<STONEBITE_DATA>/autosvar/logg`), och sajten läser samma mapp
+   **live** vid varje sidvisning (volymens butiker vinner över snapshotens).
+   Saknas `KUNDTJANST_MAIL_PASS_<ID>` startar vakten inte och säger vilket.
+   ⚠️ **Vakten startar BARA på Railway** (`RAILWAY_*` i miljön) eller med
+   `AUTOSVAR_VAKT=1` uttryckligen — mätt 2026-09-22: med `AUTOSVAR_BRANDS` och
+   lösenordet i claude.ai-miljön blev en provstart av servern i en session en
+   riktig bot mot brevlådan i sex sekunder. `npm run sida` lokalt ska aldrig
+   kunna bli en andra bot.
+   Nycklarna boten behöver på tjänsten: `KUNDTJANST_MAIL_PASS_<ID>`,
+   `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER`,
+   `TRACK17_API_KEY`. Prompten för Cowork: `cowork/5-autosvar.txt`.
+   ⚠️ När vakten är på kör ingen session `autosvar.mjs` mot samma brevlåda
+   för hand — två kopior är ett dubbelsvar.
 
-`/halsa` svarar med JSON (läge + när datan hämtades) och kräver ingen inloggning
-— använd den som health check.
+`/halsa` svarar med JSON (läge + när datan hämtades + `autosvar`: vaktens
+status eller `null` när den är av) och kräver ingen inloggning — använd den
+som health check.
 
 ---
 

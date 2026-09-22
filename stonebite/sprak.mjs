@@ -355,6 +355,9 @@ const ORDBOK = {
   'Inga arga kunder i loggen': 'No angry customers in the log',
   'Boten har inte klassat något mejl som argt de senaste 30 dagarna.': 'The bot has not classed any email as angry in the last 30 days.',
   'Utkast betyder att svaret ligger i Drafts och inte har nått kunden. Skickat betyder att kunden fått det.': 'Draft means the reply sits in Drafts and has not reached the customer. Sent means the customer got it.',
+  // Butiker avstängda med flit (stonebite/butiker-av.json)
+  'Avstängda med flit': 'Switched off on purpose',
+  'Butiker som inte säljer längre. De hämtas inte och räknas varken som lästa eller saknade. Registret: stonebite/butiker-av.json.': 'Stores that no longer sell. They are not fetched and count neither as read nor as missing. Register: stonebite/butiker-av.json.',
   'När': 'When',
   'Text': 'Text',
   'förfallen': 'overdue',
