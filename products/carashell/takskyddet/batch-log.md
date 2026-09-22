@@ -1796,10 +1796,20 @@ mot break-even 693 kr. Ny annons-regeln (≥ 3 × target-CPA 411 kr utan vinst).
 11 686 kr i går till ROAS 1,71, precis över break-even 1,63, 13 köp. Upprepas
 det faller vinst 3d ur hållbandet och ronden sänker i stället för att skala.
 
-⚠️ **DK körs utan vakt.** `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5`
-(live sedan 2026-09-20, 120 annonser med produktens prefix) låg 2026-09-23 på
-6 860 kr / 8 köp / ROAS 1,52 mot break-even 1,63 — alltså under break-even —
-med 4 000 kr/dygn i budget. Nattvakten kör bara `--marknad SE`, och DK står
-inte i postens `annonsmarknader` (NO, US), så ingen rutin sänker den budgeten
-någonsin. En torrkörning med `--marknad DK` gav SÄNK 4 000 → 2 800 kr.
-Ägarens beslut: DK in i nattvakten, eller manuellt.
+⚠️ **Bara SE är vaktad — NO och DK körs utan tillsyn.** Nattvakten kör
+`--marknad SE`, ingenting annat, och det gäller alla OPS-butiker. Torrkörningar
+samma natt (läs-läge, ingenting skrivet):
+
+| Marknad | Kampanj | Budget | 3d | Vad ronden HADE gjort |
+|---|---|---|---|---|
+| NO | `CARASHELL_NO_Takovertrekket` | 4 000 kr | 8 005 kr, 11 köp, ROAS 1,92, vinst 9,3 % (7d 18,8 %) | SÄNK → 2 800 kr |
+| DK | `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5` | 4 000 kr | 6 860 kr, 8 köp, ROAS 1,52, vinst −4,4 % | SÄNK → 2 800 kr |
+
+DK-kampanjen är ny (live 2026-09-20, 120 annonser med produktens prefix) och
+ligger **under break-even 1,63**. NO ligger över break-even men under
+skalningsgolvet 16 % — en färsk försämring, inte en kronisk förlust
+(7d-vinsten är 18,8 %).
+
+Tillsammans är det **8 000 kr/dygn som ingen rutin någonsin sänker**, medan SE
+döms varje natt. DK står inte ens i postens `annonsmarknader` (NO, US). Ägarens
+beslut: nattvakten tar alla marknader, eller NO och DK sköts för hand.
