@@ -173,5 +173,6 @@ bar ett annat koncept. Kontot visar bara det som gått live; hubben bär allt
 som är briefat men inte klart; batch-loggen är repots eget minne av samma sak.
 Läs alla tre innan du numrerar. Visar sig ett namn en lärdom gett vara
 upptaget: ta nästa lediga nummer och skriv `"plats": "<det namngivna>"` i
-manifestet (`agent/lardom.mjs --brief`), så räknas lärdomens plats som utförd
-utan att loggen skrivs om.
+manifestet (`agent/lardom.mjs --brief` på rutingrenen
+`claude/daily-agent-discussion-uos5df` — `agent/` finns inte på `main`), så
+räknas lärdomens plats som utförd utan att loggen skrivs om.

@@ -94,11 +94,22 @@ test('ett långt stycke blir flera paragraph-block i stället för ett avvisat a
   assert.ok(block.every((b) => b.type === 'paragraph'));
 });
 
-test('richText: fet markering bara på **…**, resten ren', () => {
+test('richText: fet markering bara på **…**, kod på `…`, resten ren', () => {
   const r = richText('**Make:** film it. **Why:** because.');
   assert.equal(r.filter((x) => x.annotations?.bold).length, 2);
   assert.equal(r.map((x) => x.text.content).join(''), 'Make: film it. Why: because.');
   assert.deepEqual(richText('')[0].text.content, '');
+  const k = richText('see `Takoverdrag_SP_2_1` for the look');
+  assert.equal(k.filter((x) => x.annotations?.code).length, 1);
+  assert.equal(k.map((x) => x.text.content).join(''), 'see Takoverdrag_SP_2_1 for the look');
+});
+
+test('Landing page hittas var som helst på raden och i punktform', () => {
+  assert.equal(mdTillBlock('# A_B_1\n\n**Drive folder:** none — lives in Notion   **Landing page:** https://a.se/x\n').landing, 'https://a.se/x');
+  assert.equal(mdTillBlock('# A_B_1\n\n- **Landing page:** https://a.se/y\n').landing, 'https://a.se/y');
+  assert.equal(mdTillBlock('# A_B_1\n\nLanding page: https://a.se/z.\n').landing, 'https://a.se/z');
+  assert.ok(NYCKELRAD.test('Caption 0–3 s: Nu blir det tätt'), 'nycklar med siffror');
+  assert.ok(NYCKELRAD.test('Format & length: 20 s'));
 });
 
 test('egenskaper: exakt NOTION-FORMAT.md — Draft, Pending Approval-typen, landningssida, Skapad', () => {

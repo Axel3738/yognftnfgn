@@ -52,8 +52,12 @@ item rättas i itemet.
 **Finns `NOTION_TOKEN` i miljön går uppladdningen ändå** (2026-09-22):
 
 ```bash
-node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--ersatt] [--torr]
+node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--idag YYYY-MM-DD] [--ersatt] [--torr]
 ```
+
+Exit 2 = namnet finns redan (utan `--ersatt`), exit 3 = tillbakaläsningen
+skiljer sig från det som skickades (sidan finns men är ofullständig), exit 1 =
+allt annat. `--idag` sätter `Skapad` (standard: dagens datum i Stockholm).
 
 Den skriver raden exakt i formen ovan (Namn, `Draft`, Pending Approval-typen,
 Landing page, Skapad) med HELA briefen som sidinnehåll — rubriker, tabeller

@@ -57,11 +57,15 @@ export function delaText(s, max = MAX_TEXT) {
 /** Rich text ur en rad. `**fet**` blir bold; resten ren text. Ren. */
 export function richText(s) {
   const ut = [];
-  const delar = String(s ?? '').split(/(\*\*[^*]+\*\*)/g).filter(Boolean);
+  // **fet** → bold, `kod` → code (annonsnamn i briefar skrivs med backticks; utan
+  // det här står de bokstavligt med backticks i Notion — mätt 2026-09-22).
+  const delar = String(s ?? '').split(/(\*\*[^*]+\*\*|`[^`]+`)/g).filter(Boolean);
   for (const d of delar) {
     const fet = /^\*\*[^*]+\*\*$/.test(d);
-    const txt = fet ? d.slice(2, -2) : d;
-    for (const bit of delaText(txt)) ut.push({ type: 'text', text: { content: bit }, ...(fet ? { annotations: { bold: true } } : {}) });
+    const kod = !fet && /^`[^`]+`$/.test(d);
+    const txt = fet ? d.slice(2, -2) : kod ? d.slice(1, -1) : d;
+    const annotations = fet ? { bold: true } : kod ? { code: true } : null;
+    for (const bit of delaText(txt)) ut.push({ type: 'text', text: { content: bit }, ...(annotations ? { annotations } : {}) });
   }
   return ut.length ? ut : [{ type: 'text', text: { content: '' } }];
 }
@@ -83,7 +87,7 @@ const cell = (s) => [{ type: 'text', text: { content: delaText(String(s ?? '').t
  * (thumbnail), VARIABELTAGGAR), högst 30 tecken före kolonet. En prosarad
  * med kolon längre in ("Every line concedes the point: …") är ingen nyckel.
  */
-export const NYCKELRAD = /^\**(?=.{1,30}:)[A-Za-zÅÄÖåäö][A-Za-zÅÄÖåäö()/-]*(?: [A-Za-zÅÄÖåäö()/-]+){0,3}:\**(?:\s|$)/;
+export const NYCKELRAD = /^\**(?=.{1,30}:)[A-Za-zÅÄÖåäö][A-Za-zÅÄÖåäö0-9()/&–-]*(?: [A-Za-zÅÄÖåäö0-9()/&–-]+){0,3}:\**(?:\s|$)/;
 
 export function mdTillBlock(md) {
   const rader = String(md ?? '').replace(/\r/g, '').split('\n');
@@ -118,7 +122,9 @@ export function mdTillBlock(md) {
     const s = rad.replace(/\s+$/, '');
     const m1 = s.match(/^#\s+(.+)$/);
     if (m1 && namn === null) { namn = m1[1].split(/\s+[—–-]\s+/)[0].trim(); continue; }
-    const lp = s.match(/^\**\s*Landing page\s*:?\**\s*(https?:\/\/\S+)/i);
+    // Var som helst på raden: batch-04-briefernas huvud har `**Drive folder:** … **Landing page:** URL`
+    // på samma rad, och bildbriefer skriver `- **Landing page:** URL` (mätt 2026-09-22: 4 av 5 briefer missades av ett ^-ankrat uttryck).
+    const lp = s.match(/\**\s*Landing page\s*:?\**\s*(https?:\/\/\S+)/i);
     if (lp && !landing) landing = lp[1].replace(/[),.]+$/, '');
     if (/^\|/.test(s)) { stangStycke(); tabell.push(s); continue; }
     if (tabell.length) stangTabell();
@@ -230,7 +236,14 @@ async function huvud() {
   console.log(`Kropp: ${block.length} block — ${Object.entries(n).map(([k, v]) => `${k} ${v}`).join(', ')}`);
   if (!block.some((b) => b.type === 'table')) console.log('⚠ ingen tabell i kroppen — en videobrief utan Swedish/English-tabell är inte komplett');
 
-  if (torr) { console.log('\n--torr: inget skrivet.'); return; }
+  if (torr) {
+    // Läs-bara dubblettkoll även torrt, så --torr --ersatt visar vilken rad som träffas.
+    if (token) {
+      const d = await finnsRedan(hub, namnet, token);
+      console.log(d.length ? `Finns redan i hubben: ${d.join(', ')} — ${ersatt ? 'skulle ersättas' : 'skulle vägras (exit 2) utan --ersatt'}` : 'Finns inte i hubben — skulle skapas.');
+    }
+    console.log('\n--torr: inget skrivet.'); return;
+  }
 
   const dubbletter = await finnsRedan(hub, namnet, token);
   let pageId;
