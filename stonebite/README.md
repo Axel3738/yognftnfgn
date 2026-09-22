@@ -186,6 +186,11 @@ helst som kör Node (Railway, Fly, en VPS).
    standard `<STONEBITE_DATA>/autosvar/logg`), och sajten läser samma mapp
    **live** vid varje sidvisning (volymens butiker vinner över snapshotens).
    Saknas `KUNDTJANST_MAIL_PASS_<ID>` startar vakten inte och säger vilket.
+   ⚠️ **Vakten startar BARA på Railway** (`RAILWAY_*` i miljön) eller med
+   `AUTOSVAR_VAKT=1` uttryckligen — mätt 2026-09-22: med `AUTOSVAR_BRANDS` och
+   lösenordet i claude.ai-miljön blev en provstart av servern i en session en
+   riktig bot mot brevlådan i sex sekunder. `npm run sida` lokalt ska aldrig
+   kunna bli en andra bot.
    Nycklarna boten behöver på tjänsten: `KUNDTJANST_MAIL_PASS_<ID>`,
    `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER`,
    `TRACK17_API_KEY`. Prompten för Cowork: `cowork/5-autosvar.txt`.

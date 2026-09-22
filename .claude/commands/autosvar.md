@@ -39,8 +39,12 @@ den dör. Torrt tills `AUTOSVAR_LAGE=skarpt` står uttryckligen. Loggen ligger p
 volymen (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) så
 minnet "ett svar per tråd någonsin" överlever varje deploy, och sajten läser
 den live (Kundtjänst-fliken visar de arga kunderna inom minuten). Slås på med
-Cowork-prompten `stonebite/cowork/5-autosvar.txt`; `/halsa` på sajten säger
-om den snurrar (`autosvar.kor`).
+Cowork-prompten `stonebite/cowork/5-autosvar.txt` (eller Axels egna klick i
+Railway → Variables); `/halsa` på sajten säger om den snurrar (`autosvar.kor`).
+⚠️ **Vakten startar bara på Railway** (`RAILWAY_*` i miljön) eller med
+`AUTOSVAR_VAKT=1` — en `npm run sida` i en session med `AUTOSVAR_BRANDS` i
+miljön får aldrig bli en andra bot (mätt 2026-09-22: det hände i sex sekunder
+innan spärren fanns).
 
 ⛔ **När vakten är på för en butik kör INGEN session det här kommandot mot
 samma brevlåda** — två autosvar på en brevlåda är ett dubbelsvar (mätt

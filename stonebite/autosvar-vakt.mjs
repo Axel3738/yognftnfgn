@@ -42,6 +42,22 @@ export function loggmappFor(env = process.env, rot = ROT) {
 }
 
 /**
+ * Får vakten köra HÄR? Bara på Railway (som sätter RAILWAY_* i varje tjänst)
+ * eller med AUTOSVAR_VAKT=1 uttryckligen. Ren.
+ *
+ * Mätt 2026-09-22 22:41 CEST: Axel lade in AUTOSVAR_BRANDS + mejllösenordet
+ * i claude.ai-miljön, och en `node stonebite/server.mjs` för att provstarta
+ * servern i en session drog igång boten mot den RIKTIGA brevlådan i sex
+ * sekunder. En provstart, en skärmdump eller `npm run sida` får aldrig bli en
+ * andra bot bredvid Railways — det är dubbelsvaret igen.
+ */
+export function farKoraHar(env = process.env) {
+  if (String(env.AUTOSVAR_VAKT ?? '').trim() === '1') return { ja: true, varfor: 'AUTOSVAR_VAKT=1' };
+  if (env.RAILWAY_PROJECT_ID || env.RAILWAY_ENVIRONMENT || env.RAILWAY_SERVICE_ID) return { ja: true, varfor: 'Railway' };
+  return { ja: false, varfor: 'inte på Railway (RAILWAY_* saknas) och AUTOSVAR_VAKT är inte 1 — vakten startar bara där sajten bor' };
+}
+
+/**
  * Konfigurationen ur miljön, eller null när vakten inte ska köra. Ren.
  * `saknar` är de mejllösenord som fattas — utan dem hoppar autosvaret butiken
  * varje varv, så vakten säger det en gång i stället för sextio gånger i timmen.
@@ -80,7 +96,12 @@ export function harLogg(loggmapp) {
 export function startaVakt({ env = process.env, rot = ROT, spawnFn = spawn, logg = (m) => console.error(m), timer = setTimeout, nu = () => Date.now() } = {}) {
   const k = vaktKonfig(env, rot);
   if (!k) return null;
-  const status = { brands: k.brands, lage: k.lage, loop: k.loop, loggmapp: k.loggmapp, saknar: k.saknar, kor: false, startad: null, omstarter: 0, senasteUtgang: null };
+  const har = farKoraHar(env);
+  const status = { brands: k.brands, lage: k.lage, loop: k.loop, loggmapp: k.loggmapp, saknar: k.saknar, host: har.varfor, kor: false, startad: null, omstarter: 0, senasteUtgang: null };
+  if (!har.ja) {
+    logg(`autosvar-vakt: startar INTE — ${har.varfor}.`);
+    return { status: () => ({ ...status }), stopp() {} };
+  }
   if (k.saknar.length) {
     logg(`autosvar-vakt: startar INTE — mejllösenordet saknas i miljön: ${k.saknar.join(', ')}. Lägg in det på tjänsten (Railway → Variables) så startar vakten vid nästa deploy.`);
     return { status: () => ({ ...status }), stopp() {} };

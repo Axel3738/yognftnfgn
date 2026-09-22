@@ -13,10 +13,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { EventEmitter } from 'node:events';
-import { vaktKonfig, vaktArgv, startaVakt, loggmappFor, OMSTART_MIN_S, OMSTART_MAX_S, LANGT_LIV_MS } from '../autosvar-vakt.mjs';
+import { vaktKonfig, vaktArgv, startaVakt, loggmappFor, farKoraHar, OMSTART_MIN_S, OMSTART_MAX_S, LANGT_LIV_MS } from '../autosvar-vakt.mjs';
 
 const ROT = '/repo';
-const BAS = { STONEBITE_DATA: '/data', KUNDTJANST_MAIL_PASS_BAVERBUTIKEN: 'x' };
+// RAILWAY_PROJECT_ID: Railway sätter den i varje tjänst — det är så vakten vet att den är hemma.
+const BAS = { STONEBITE_DATA: '/data', KUNDTJANST_MAIL_PASS_BAVERBUTIKEN: 'x', RAILWAY_PROJECT_ID: 'proj' };
+
+test('vakten startar BARA på Railway (eller med AUTOSVAR_VAKT=1) — en provstart i en session får aldrig bli en andra bot', () => {
+  // Mätt 2026-09-22: AUTOSVAR_BRANDS + lösenordet i claude.ai-miljön gjorde en
+  // lokal `node stonebite/server.mjs` till en riktig bot i sex sekunder.
+  assert.equal(farKoraHar({}).ja, false);
+  assert.equal(farKoraHar({ AUTOSVAR_BRANDS: 'baverbutiken', KUNDTJANST_MAIL_PASS_BAVERBUTIKEN: 'x' }).ja, false);
+  assert.equal(farKoraHar({ RAILWAY_PROJECT_ID: 'p' }).ja, true);
+  assert.equal(farKoraHar({ RAILWAY_ENVIRONMENT: 'production' }).ja, true);
+  assert.equal(farKoraHar({ AUTOSVAR_VAKT: '1' }).ja, true);
+  assert.equal(farKoraHar({ AUTOSVAR_VAKT: 'ja' }).ja, false, 'bara exakt 1 tvingar');
+
+  const f = fejk();
+  const v = startaVakt({ env: { STONEBITE_DATA: '/data', KUNDTJANST_MAIL_PASS_BAVERBUTIKEN: 'x', AUTOSVAR_BRANDS: 'baverbutiken' }, rot: ROT, spawnFn: f.spawnFn, timer: f.timer, nu: f.nu, logg: (m) => f.logg.push(m) });
+  assert.equal(f.startade.length, 0, 'ingen process utanför Railway');
+  assert.equal(v.status().kor, false);
+  assert.match(v.status().host, /inte på Railway/);
+  assert.match(f.logg[0], /startar INTE — inte på Railway/);
+});
 
 function fejk() {
   const startade = [];
@@ -58,7 +77,7 @@ test('flaggorna är exakt de en människa hade skrivit', () => {
 
 test('saknat mejllösenord ⇒ vakten startar inte och säger vilken variabel', () => {
   const f = fejk();
-  const v = startaVakt({ env: { STONEBITE_DATA: '/data', AUTOSVAR_BRANDS: 'baverbutiken' }, rot: ROT, spawnFn: f.spawnFn, timer: f.timer, nu: f.nu, logg: (m) => f.logg.push(m) });
+  const v = startaVakt({ env: { STONEBITE_DATA: '/data', AUTOSVAR_BRANDS: 'baverbutiken', RAILWAY_PROJECT_ID: 'proj' }, rot: ROT, spawnFn: f.spawnFn, timer: f.timer, nu: f.nu, logg: (m) => f.logg.push(m) });
   assert.equal(f.startade.length, 0);
   assert.deepEqual(v.status().saknar, ['KUNDTJANST_MAIL_PASS_BAVERBUTIKEN']);
   assert.equal(v.status().kor, false);
