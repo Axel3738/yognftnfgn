@@ -40,13 +40,13 @@ function temaknapp() {
 const PUBLIK_MENY = [
   { titel: 'Vad vi gör', url: '/#vad-vi-gor' },
   { titel: 'YouTube', url: '/#youtube' },
-  { titel: 'Tjänster', url: '/tjanster' },
+  { titel: 'Influencers', url: '/influencers' },
   { titel: 'Bolaget', url: '/#bolaget' },
 ];
 
 /**
  * Publika sidan: allt som inte kräver inloggning.
- * @param fotLankar [{ titel, url, extern }] — länkar i sidfoten (YouTube, Tjänster …)
+ * @param fotLankar [{ titel, url, extern }] — länkar i sidfoten (YouTube, Influencers …)
  */
 export function publiktSkal({ titel, beskrivning, innehall, fot = '', inloggad = false, nonce = '', stig = '/', fotLankar = [] }) {
   const meny = PUBLIK_MENY.map((p) => (

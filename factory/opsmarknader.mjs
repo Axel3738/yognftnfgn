@@ -177,6 +177,36 @@ export function skaFlyttasTillApproved(klarI, annonsmarknader, m) {
   return mina.every((k) => klarI?.[k] === true);
 }
 
+/**
+ * Marknadskoder som kan stå i ett fil- eller annonsnamn (`CaraShellRoof_NO_PD_106_H1`).
+ * OPS-marknaderna utom SE, plus Bäverbutikens (FI, UK) och de engelskspråkiga
+ * länderna i USA-marknaden. ⚠️ Inte "DE" — det är en svensk vinkel (Demo), inte
+ * Tyskland (tools/oversattningskon.mjs).
+ */
+export const MARKNADSKODER_I_NAMN = Object.freeze([...OPS_MARKNADSKODER.filter((k) => k !== 'SE'), 'FI', 'UK', 'GB', 'CA', 'AU', 'NZ']);
+
+/**
+ * Är filen (eller annonsen) en MARKNADSVERSION — bär namnet en marknadskod på
+ * plats två, där marknadsNamn lägger den? `CaraShellRoof_NO_PD_106_H1.mp4` → 'NO',
+ * `CaraShellRoof_PD_106_H1.mp4` → null. Sökväg och ändelse spelar ingen roll.
+ *
+ * Varför: speglingen bifogar BÅDE den svenska och den norska filen på hubbraden
+ * (SE först), och översättningskön tog "första filen". Ordningen var rätt varje
+ * gång som mättes — men en norsk fil som källa för engelskan ger en annons på
+ * norska, och en regel som bygger på filordning är ingen regel. Den svenska
+ * källan är den ENDA som får översättas (Axels beslut 2026-09-22).
+ */
+export function marknadskodIFil(namn) {
+  const bas = String(namn ?? '').split(/[\\/]/).pop().replace(/\.[A-Za-z0-9]+$/, '');
+  const f = bas.split('_');
+  const k = String(f[1] ?? '').toUpperCase();
+  return f.length >= 3 && MARKNADSKODER_I_NAMN.includes(k) ? k : null;
+}
+export const arMarknadsfil = (namn) => marknadskodIFil(namn) !== null;
+
+/** Filerna som får vara KÄLLA: de utan marknadskod, i samma ordning. */
+export const utanMarknadsfiler = (namn = []) => (namn ?? []).filter((n) => !arMarknadsfil(typeof n === 'string' ? n : n?.namn ?? n?.name ?? ''));
+
 /** Butikens annonsmarknader ur registerposten, normaliserade; standard NO. */
 export function annonsmarknaderUr(varde) {
   const lista = Array.isArray(varde) ? varde : typeof varde === 'string' ? varde.split(/[,\s]+/) : [];

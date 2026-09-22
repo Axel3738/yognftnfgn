@@ -174,9 +174,32 @@ helst som kör Node (Railway, Fly, en VPS).
    kommandot `/stonebite` (`.claude/commands/stonebite.md`): den hämtar,
    räknar bonusen, committar och pushar — samma mönster som spårningen och
    kundtjänsten. Deployen tar med den nya filen.
+6. **Kundtjänstboten dygnet runt (`autosvar-vakt.mjs`, 2026-09-22):** Axels
+   krav är svar till arga kunder inom 60 sekunder, och en rutin på claude.ai
+   kör som tätast en gång i timmen. Därför startar servern minutservern
+   (`node kundtjanst/autosvar.mjs --brand … --torr --loop 60`) som barnprocess
+   när **`AUTOSVAR_BRANDS`** är satt (t.ex. `baverbutiken`), och startar om
+   den när den dör (paus 30 s → 600 s). `AUTOSVAR_LAGE=skarpt` krävs
+   uttryckligen för att skicka — annars utkast. `AUTOSVAR_LOOP` (min 30),
+   `AUTOSVAR_DISCORD=1` för rapporten i `#customer-service`. Loggen — minnet
+   "ett svar per tråd någonsin" — skrivs på volymen (`AUTOSVAR_LOGGMAPP`,
+   standard `<STONEBITE_DATA>/autosvar/logg`), och sajten läser samma mapp
+   **live** vid varje sidvisning (volymens butiker vinner över snapshotens).
+   Saknas `KUNDTJANST_MAIL_PASS_<ID>` startar vakten inte och säger vilket.
+   ⚠️ **Vakten startar BARA på Railway** (`RAILWAY_*` i miljön) eller med
+   `AUTOSVAR_VAKT=1` uttryckligen — mätt 2026-09-22: med `AUTOSVAR_BRANDS` och
+   lösenordet i claude.ai-miljön blev en provstart av servern i en session en
+   riktig bot mot brevlådan i sex sekunder. `npm run sida` lokalt ska aldrig
+   kunna bli en andra bot.
+   Nycklarna boten behöver på tjänsten: `KUNDTJANST_MAIL_PASS_<ID>`,
+   `SHOPIFY_SHOP/CLIENT_ID/CLIENT_SECRET_BAVERBUTIKEN_EMAILSCRAPER`,
+   `TRACK17_API_KEY`. Prompten för Cowork: `cowork/5-autosvar.txt`.
+   ⚠️ När vakten är på kör ingen session `autosvar.mjs` mot samma brevlåda
+   för hand — två kopior är ett dubbelsvar.
 
-`/halsa` svarar med JSON (läge + när datan hämtades) och kräver ingen inloggning
-— använd den som health check.
+`/halsa` svarar med JSON (läge + när datan hämtades + `autosvar`: vaktens
+status eller `null` när den är av) och kräver ingen inloggning — använd den
+som health check.
 
 ---
 
@@ -195,17 +218,42 @@ Railway ger ingen A-post. Vägen är Squarespaces posttyp **ALIAS** på `@` mot
 Railways rotvärde — prompten `cowork/3-rot.txt` gör det (tar bort
 vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
 
+⚠️ **Deployen kan ligga timmar efter `main`** (mätt 2026-09-22 kväll): fyra
+andra Railway-projekt bygger samma repo vid varje push, rutinerna pushar 7–8
+gånger i timmen, och sajtens deployer står i "Waiting for build slot" i över
+en timme. `/halsa` visar vilken snapshot som faktiskt kör — jämför med
+senaste `Stonebite: färsk data`-commiten på `main` innan du tror att en
+ändring är live. Prompten `cowork/4-byggko.txt` rensar bort dubblettprojekten
+(rör aldrig `strong-solace` eller StonePNL).
+
 ## Den publika sidan (ombyggd 2026-09-21 kväll)
 
-Tre grenar visas: **e-handeln**, **YouTube-kanalen**
+Två grenar visas: **e-handeln** och **YouTube-kanalen**
 (`profil.youtube`, https://www.youtube.com/@Stonebite.channel — vloggar,
 tutorials, lifestyle; en egen verksamhet bolaget lägger tid, utrustning och
-resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: tolv
-områden med AI först — agenter som gör riktigt arbete, AI-producerat innehåll,
-automatisering — sedan e-handeln, rådgivning och en öppen "Något annat?";
-"Så jobbar vi"; kontaktruta → `kontakt.epost`). Allt kommer ur `profil.json`;
-tom `youtube.url` ⇒ texten står kvar men ingen knapp. Startsidans teaser visar
-de tre första områdena, så ordningen i listan är ett val.
+resor på). Allt kommer ur `profil.json`; tom `youtube.url` ⇒ texten står kvar
+men ingen knapp.
+
+**Konsultsidan är borttagen (2026-09-22).** Axel: "jag vill inte sälja några
+tjänster eller mentorskap eller någonting, jag vill bara ha information om
+mitt företag". `/tjanster` svarar 301 till `/influencers`, och testet "publika
+sidan säljer inga tjänster" stoppar orden konsult, mentorskap, rådgivning och
+tjänster på varje publik sida.
+
+**Det enda bolaget erbjuder andra: mikroinfluencers** på `/influencers`
+(`vy/influencers.mjs`, `profil.influencers`). Butiker som redan kör e-handel
+och vill ha influencers mejlar butik + produkt och får kontaktuppgifter till
+mikroinfluencers (5 000–20 000 kr per samarbete) samma dag. Betalning: fast
+pris i förskott (`pris.fast`) **eller** 10 % av det de totalt lägger på
+influencers (`pris.andel`) — kunden väljer, köp = mejla `kontakt.epost`.
+Beloppen står bara i profilen; ett tomt belopp ⇒ det alternativet ritas inte.
+Startsidan har en mörk teaser (`influencerTeaser`) med samma punkter, menyn
+och sidfoten säger "Influencers". ⚠️ Axel sa "20 tusen eller 30 tusen" om det
+fasta priset — 20 000 står tills han bestämt.
+
+Servern läser `profil.json` från disk vid varje visning; snapshotens kopia är
+bara reserv. (Förut vann snapshoten, så en textändring syntes först när
+timrutinen skrivit om den — upp till en timme efter deployen.)
 
 **Bilderna** (`webb/bilder/*.jpg`, 50–190 kB) genereras av
 `node stonebite/bilder.mjs` ur `bilder.json` via kie.ai — abstrakta,
@@ -221,7 +269,7 @@ med `prefers-reduced-motion`. Ingen rörelse bär information.
 
 ⚠️ Inte ett butiksnamn, inte en domän, inte ett antal på någon publik sida —
 testet "publika sidan nämner inte en enda butik" går över både `/` och
-`/tjanster`.
+`/influencers`.
 
 ⚠️ Certifikatet går inte att kontrollera från en claude.ai-container — proxyn
 MITM:ar HTTPS och visar alltid Anthropics eget cert. Kolla i en webbläsare
@@ -241,6 +289,8 @@ och bara ha high-leverage-uppgifter.
 | **Varumärkena** | `varumarken.json`, `vy/varumarke.mjs` | Fem kort (Bäverbutiken, Grillkliniken, Matstrumpor, CaraShell, övriga OPS). Registret knyter butiks-id:n, annonskonton (hela eller per kampanjprefix i delade konton), kundtjänstens brand, spårningens butik, Discord-servern och rutinerna. `/app/varumarke/<id>?flik=` med flikarna Översikt · Butiker · Annonser · Kundtjänst · Leverans · Rutiner · Kontakter · Kalender. Översikten säger **Kräver dig / Kommer hända / Hände senast**. Det som inte går att läsa står med orsak (`*_saknas`-fälten). |
 | **Rutinvakten** | `rutiner.json`, `kallor/rutiner.mjs` | Varje rutin: schema i svensk tid + vilket spår den lämnar på main (commit-rubrik, sökväg, eller "ingen" när den inte pushar). `hamta.mjs` läser 14 dagars git-logg och dömer: ok (≤ 1,5 intervall) · sen (≤ 3) · saknas · avstängd (flaggad, men ett färskt spår vinner över flaggan) · omätbar. Ingen hämtning kan göra en rutin grön — bara ett spår. ⚠️ Rutinens session är en grund klon (~7 h historik): `fordjupaHistorik()` fördjupar den till fönstret först (`git fetch --shallow-since`), och räcker historiken ändå inte blir "inget spår" *går inte att mäta*, aldrig *saknas* — läget står som `delvis` med orsaken över tabellen. |
 | **Eskaleringskanalen** | `kallor/discord.mjs` | Boten läser de senaste 12 meddelandena i varje varumärkes kanaler (customer-service/support, ads, konton …). Kundadresser maskeras innan de sparas. Människor de senaste 48 h räknas som "något att titta på". |
+| **Pingen till VA:n** | `larm.mjs`, `data/larm.json` | Körs av `/stonebite` efter hämtningen (Axels beslut 2026-09-22, alternativ A). Två regler: en människa skrev i en eskaleringskanal utan svar från någon annan på 2 h ⇒ ping i kanalen med länk; öppen tvist med deadline inom 3 dagar ⇒ ping i varumärkets eskaleringskanal. En gång per ärende (minnet committas, 30 dagar). Mottagare: `support_chef`/`va` med `discord.id` i `bonus/personer.json`. Engelska, `allowed_mentions` låst till mottagarna. `--torr` visar utan att posta. |
+| **Autosvaret på sajten** | `hamta.mjs` → `snapshot.autosvar`, `vy/drift.mjs` → `autosvarBlock` | Kundtjänstbotens logg (`kundtjanst/autosvar/logg/<butik>.jsonl`, committad i repot) via `kundtjanst/dashboard.mjs samlaAutosvar` — talen är `oversikt.mjs`:s, aldrig omräknade. Visas på **Kundtjänst** (alla butiker, det VA:n ser), i varumärkets **Kundtjänst**-flik och som rader i **Kräver dig i dag** (arga kunder senaste dygnet). Per butik: läget i klartext — *skickar svar* / *bara utkast — inget skickas* / *inget svar skrivet* / **kunde inte skriva i brevlådan** (rött, vinner över allt annat när loggen har rader med `atgard: fel` — en bot som inte FÅR skriva i Roundcube såg annars exakt ut som en som inget hade att skriva; tillagt 2026-09-22 efter första Railway-varvet) — senaste körning, mejl lästa, skickade, utkast, till VA:n, skrivfel; sedan **listan över arga kunder** (när, butik, order, vad kunden var arg över, botens svar: utkast eller skickat, flaggad, mappen). Ingen logg ⇒ "Autosvaret har inte kört", aldrig noll. Axels beställning 2026-09-22: "alla cases som AI-botten har svarat på, där det är arga kunder, ska komma upp som en lista på kundtjänst-taben". |
 | **Kalendern** | `kalender.mjs`, `vy/kalender.mjs` | `data/kalender.jsonl` på volymen. En rad: skriv "Ring leverantören imorgon kl 14" — datumordet vinner över datumfältet (imorgon, fredag, 15/10, den 3 januari, om 3 dagar, kl 14). Härledda rader (tvistdeadlines, rutiner som ska köra, kontakters nästa steg, commissions kördagar) ligger i samma lista och kan inte bockas av. Alla roller har en egen kalender; varumärkesrader kräver ägare/chef. |
 | **Kontakterna** | `kontakter.mjs` | `data/kontakter.jsonl`. Typ (influencer, UGC, leverantör, partner), plattform, länk (bara http/https), läge (att kontakta → levererat/nej), nästa steg + datum → hamnar i kalendern. |
 | **Kräver dig i dag** | `vy/oversikt.mjs` | Överst på Översikt: brådskande tvister, saknade/sena rutiner, människor i eskaleringskanalerna det senaste dygnet, dagens och försenade kalenderrader — över alla varumärken. |

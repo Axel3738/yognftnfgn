@@ -20,6 +20,7 @@ import { forklaraFel, kategorinamn, tvisttyp } from '../forklaring.mjs';
 import { harleddaHandelser, brandForKundtjanst, idag, plusDagar } from '../kalender.mjs';
 import { STATUSAR, TYPER as KONTAKTTYPER, statusnamn, typnamn } from '../kontakter.mjs';
 import { kalenderBlock } from './kalender.mjs';
+import { autosvarBlock } from './drift.mjs';
 
 export const FLIKAR = Object.freeze([
   { id: 'oversikt', titel: 'Översikt' },
@@ -97,7 +98,16 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
   if (rutinsummering.sen || manniskor48h.length) { lage = 'varning'; lageord = 'något att titta på'; }
   if (bradskande.length || rutinsummering.saknas) { lage = 'kritisk'; lageord = 'kräver dig'; }
 
-  return { vm, butiker, perValuta, konton, kundtjanst, tvister, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, lage, lageord };
+  // Pingarna till VA:n (stonebite/larm.mjs) — det som faktiskt skickats, nyast först.
+  const larm = (snapshot?.larm?.skickade ?? []).filter((l) => l.brand === vm.id).sort((a, b) => String(b.tid).localeCompare(String(a.tid)));
+
+  // Autosvaret (kundtjanst/autosvar.mjs): loggens butiker som hör till varumärket.
+  // Brandet i loggen är butiks-id:t — samma karta som tvisterna använder.
+  const autosvarBrands = Object.fromEntries(Object.entries(snapshot?.autosvar?.brands ?? {}).filter(([id]) => tillhor(vm.id, brandForKundtjanst(id))));
+  const autosvar = snapshot?.autosvar ? { ...snapshot.autosvar, brands: autosvarBrands } : null;
+  const butiksnamn = (id) => butiker.find((b) => b.id === id)?.namn ?? (snapshot?.butiker ?? []).find((b) => b.id === id)?.namn ?? kundtjanst.find((b) => b.id === id)?.namn ?? id;
+
+  return { vm, butiker, perValuta, konton, kundtjanst, tvister, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, butiksnamn, lage, lageord };
 }
 
 function tillhor(brandId, kundtjanstBrand) {
@@ -374,6 +384,20 @@ function flikKundtjanst(d, { nu }) {
     under: 'Störst högar först, ur senaste veckorapporten. En hög som växer är något att fixa i butiken.',
     innehall: panel({ innehall: tabell([{ titel: 'Ärende' }, { titel: 'Antal', tal: true }, { titel: 'Obesvarade', tal: true }, { titel: 'Rutin finns' }], kategorier.map((c) => `<tr><td><span class="namn">${esc(c.svenska)}</span></td><td class="tal">${tal(c.antal)}</td><td class="tal">${tal(c.obesvarade)}</td><td>${c.sop === 'covered' ? status('bra', t('ja')) : status('varning', t('saknas'))}</td></tr>`)) }),
   }) : ''}
+  ${autosvarBlock(d.autosvar, { nu, namnFor: d.butiksnamn })}
+  ${block({
+    titel: 'Pingar till VA:n',
+    under: 'Det som skickats till VA:n i Discord de senaste 30 dagarna. Ett ärende pingas en gång, aldrig två.',
+    innehall: d.larm.length ? panel({ innehall: tabell(
+      [{ titel: 'När' }, { titel: 'Typ' }, { titel: 'Kanal' }, { titel: 'Text' }],
+      d.larm.slice(0, 20).map((l) => `<tr>
+        <td class="tal"><span class="mini">${esc(sedan(l.tid))}</span></td>
+        <td>${status(l.typ === 'tvist' ? 'kritisk' : 'varning', t(l.typ === 'tvist' ? 'tvist' : 'eskalering'))}</td>
+        <td><span class="mini">#${esc(l.kanal ?? '')}</span></td>
+        <td><span class="bi medd-text">${esc(String(l.text ?? '').replace(/<@\d+>\s*/g, ''))}</span></td>
+      </tr>`),
+    ) }) : tomt('Inga pingar än', 'Inget har behövt pingas — eller rutinen har inte kört larmsteget än.'),
+  })}
   ${block({
     titel: 'Eskaleringskanalen',
     under: 'De senaste meddelandena i varumärkets Discord-kanaler, lästa vid senaste hämtningen. Människor först, botar därefter.',

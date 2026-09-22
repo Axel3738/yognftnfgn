@@ -208,8 +208,10 @@ väntar videoraderna (bilderna körs ändå).
 cd pipeline
 node translate-batch.mjs proofread --manifest=<batch.json> --lang="Norwegian Bokmål (Norway)" --marknad=NO
 # SRT lokaliseras av sonnet-subagenten (samma blockantal/timecodes), regexgrind grön
-node translate-batch.mjs apply --manifest=… --srtdir=<rättade>
-node translate-batch.mjs render --manifest=… && node translate-batch.mjs download --manifest=…
+node translate-batch.mjs apply --manifest=… --marknad=NO --srtdir=<rättade>
+node translate-batch.mjs render --manifest=… --marknad=NO && node translate-batch.mjs download --manifest=… --marknad=NO
+# --marknad på VARJE anrop (2026-09-22): språket kommer ur pipeline/sprak.mjs, --lang får bara upprepa det.
+# Fel språk hos HeyGen eller i SRT:n ⇒ posten stoppas, exit 1 — läs `status --marknad=NO`.
 python3 pipeline/no-captions.py <render.mp4> <fixed.srt> <out.mp4>   # bara om källan har inbränd text
 ```
 Tom `.orig.srt` = inget tal ⇒ ingen render. Läs QA-bilderna, slutkortssvep.

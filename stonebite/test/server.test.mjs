@@ -88,8 +88,8 @@ test('publika sidan nämner inte en enda butik', async () => {
   const marken = profil.varumarken ?? [];
   assert.ok(marken.length >= 5, 'profilen ska ha butikerna kvar — de visas inloggad');
 
-  // Varje publik sida — även tjänstesidan får inte nämna en butik.
-  for (const stig of ['/', '/tjanster']) {
+  // Varje publik sida — även influencersidan får inte nämna en butik.
+  for (const stig of ['/', '/influencers']) {
     const svar = await hamta(stig);
     assert.equal(svar.status, 200, `${stig} ska svara 200`);
     const html = await svar.text();
@@ -103,13 +103,56 @@ test('publika sidan nämner inte en enda butik', async () => {
   }
 });
 
-test('tjänstesidan är publik och länkar till kontaktadressen', async () => {
-  const r = await hamta('/tjanster');
+/**
+ * Axels beslut 2026-09-22: "jag vill inte sälja några tjänster eller
+ * mentorskap eller någonting, jag vill bara ha information om mitt företag".
+ * Konsultsidan är borta. Det enda bolaget erbjuder andra är kontakter till
+ * mikroinfluencers — och beloppen på sidan ska vara de som står i profilen,
+ * aldrig påhittade.
+ */
+test('influencersidan är publik, visar priset ur profilen och länkar till kontaktadressen', async () => {
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  const pris = profil.influencers?.pris ?? {};
+  assert.ok(pris.fast && pris.andel, 'profilen ska bära båda prisalternativen');
+
+  const r = await hamta('/influencers');
   assert.equal(r.status, 200);
   const html = await r.text();
-  assert.match(html, /Så jobbar vi/);
+  assert.match(html, /Så går det till/);
+  assert.ok(html.includes(`<div class="pris-varde">${pris.fast}</div>`), `det fasta priset "${pris.fast}" ska stå som prisalternativ`);
+  assert.ok(html.includes(`<div class="pris-varde">${pris.andel}</div>`), `andelen "${pris.andel}" ska stå som prisalternativ`);
   assert.match(html, /mailto:contact@stonebite\.org/);
-  assert.doesNotMatch(html, /Översikt<\/a>/, 'tjänstesidan ska inte visa appens meny');
+  assert.doesNotMatch(html, /Översikt<\/a>/, 'influencersidan ska inte visa appens meny');
+});
+
+test('gamla adressen /tjanster skickas vidare till /influencers', async () => {
+  const r = await hamta('/tjanster');
+  assert.equal(r.status, 301);
+  assert.equal(r.headers.get('location'), '/influencers');
+});
+
+/** Inga tjänster, inget mentorskap, ingen rådgivning — på någon publik sida. */
+test('publika sidan säljer inga tjänster', async () => {
+  for (const stig of ['/', '/influencers']) {
+    const html = await (await hamta(stig)).text();
+    assert.doesNotMatch(html, /konsult|mentorskap|rådgivning|tjänster/i, `${stig} ska inte tala om tjänster`);
+  }
+});
+
+/** Ett tomt belopp i profilen ritas inte alls — hellre tomt än påhittat. */
+test('ett tomt pris på influencersidan ritas inte', async () => {
+  const { influencerSida } = await import('../vy/influencers.mjs');
+  const { readFileSync } = await import('node:fs');
+  const profil = JSON.parse(readFileSync(new URL('../profil.json', import.meta.url), 'utf8'));
+  const utanFast = { ...profil, influencers: { ...profil.influencers, pris: { ...profil.influencers.pris, fast: '' } } };
+  const html = influencerSida({ profil: utanFast });
+  // Beloppet kan råka stå i annan text ("5 000 till 20 000 kr per samarbete"),
+  // så det som ska vara borta är prisalternativet — kortet och prispunkten.
+  assert.doesNotMatch(html, /class="pris-etikett">Fast pris/, 'kortet för fast pris ska vara borta');
+  assert.doesNotMatch(html, /betalas i förskott/, 'texten till det fasta priset ska vara borta');
+  assert.ok(!html.includes(`${profil.influencers.pris.fast} eller `), 'prispunkten ska inte längre säga "… eller …"');
+  assert.ok(html.includes(`<div class="pris-varde">${profil.influencers.pris.andel}</div>`), 'andelen står kvar');
 });
 
 /**
@@ -349,6 +392,70 @@ test('Head of support når bonusen men inte annonserna', async () => {
   assert.equal((await hamta('/app/kundtjanst', kaka)).status, 200);
   assert.equal((await hamta('/app/annonser', kaka)).headers.get('location'), '/app/kundtjanst');
   assert.equal((await hamta('/app/konton', kaka)).headers.get('location'), '/app/kundtjanst');
+});
+
+/**
+ * Axels oro 2026-09-22: "jag hade helst velat att kundsupporten inte ser daily
+ * revenue, daily profit … för alla butiker". Det här är beviset: varken VA:n
+ * eller Head of support kommer åt Översikt, Butiker, Annonser eller något
+ * varumärkes sida — och det de SER bär inte dagens försäljning, reklamen,
+ * "kvar efter reklam", ROAS eller vinstbidrag. Tvistbelopp får stå kvar: det
+ * är pengar i risk i ett ärende, inte omsättning.
+ */
+test('kundsupporten (VA och Head of support) ser aldrig dagens försäljning, reklamen eller vinsten', async () => {
+  const stangda = ['/app', '/app/butiker', '/app/annonser', '/app/varumarken', '/app/varumarke/baverbutiken', '/app/varumarke/baverbutiken?flik=kundtjanst', '/app/system'];
+  const forbjudna = [/Sålt i dag/, /Sold today/, /Reklam i dag/, /Ad spend today/, /Kvar efter reklam/, /Left after ads/, /Vinstbidrag/, /Profit contribution/, /ROAS/, /Sålt 7 d/];
+  for (const [epost, losen, egna] of [
+    ['vera@test.se', 'kundtjanst123', ['/app/kundtjanst', '/app/leverans', '/app/recensioner', '/app/kalender', '/app/mig']],
+    ['hanna@test.se', 'supportchef1', ['/app/kundtjanst', '/app/leverans', '/app/recensioner', '/app/bonus', '/app/kalender', '/app/mig']],
+  ]) {
+    const { kaka } = await loggaIn(epost, losen);
+    for (const stig of stangda) {
+      const r = await hamta(stig, kaka);
+      assert.ok([303, 403].includes(r.status), `${epost} fick ${r.status} på ${stig} — ska vara stängt`);
+    }
+    for (const stig of egna) {
+      const r = await hamta(stig, kaka);
+      assert.equal(r.status, 200, `${epost} ska se ${stig}`);
+      const html = await r.text();
+      for (const m of forbjudna) assert.doesNotMatch(html, m, `${stig} läcker ${m} till ${epost}`);
+    }
+  }
+});
+
+/**
+ * Minutservern på Railway skriver loggen på volymen (STONEBITE_DATA/autosvar/logg),
+ * inte i repot. Sajten måste läsa den LIVE — en arg kund ska synas inom minuten,
+ * inte vid nästa timhämtning. Här landar en rad på "volymen" (tmp) och sidan
+ * visar den direkt, utan snapshot.
+ */
+test('en arg kund i volymens logg syns på Kundtjänst direkt — utan ny snapshot', async () => {
+  const { mkdirSync, writeFileSync: skriv, rmSync: ta } = await import('node:fs');
+  const mapp = join(tmp, 'autosvar', 'logg');
+  mkdirSync(mapp, { recursive: true });
+  const rad = { tid: new Date().toISOString(), brand: 'baverbutiken', messageId: '<t1@test>', uid: 4242, hink: 'ARG', kategori: 'fel_vara', ordernummer: ['4242'], kund: 'ka***@gmail.com', sprak: 'sv', amne: 'Fel vara', atgard: 'utkast', torr: true, flaggad: true, flyttad: 'INBOX.VA-PRIO', orsak: 'som på bilden', x: 'som_pa_bilden' };
+  skriv(join(mapp, 'baverbutiken.jsonl'), `${JSON.stringify(rad)}\n`);
+  try {
+    const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+    const html = await (await hamta('/app/kundtjanst', kaka)).text();
+    assert.match(html, /#4242/, 'raden ur volymen står på sidan');
+    assert.match(html, /draft — not sent/);
+    assert.match(html, /INBOX\.VA-PRIO/);
+    assert.doesNotMatch(html, /ka\*\*\*@gmail\.com/, 'kundens adress visas inte');
+    const halsa = await (await hamta('/halsa')).json();
+    assert.equal(halsa.autosvar, null, 'vakten är av i testet (AUTOSVAR_BRANDS tomt) och /halsa säger det');
+  } finally {
+    ta(join(tmp, 'autosvar'), { recursive: true, force: true });
+  }
+});
+
+test('Kundtjänst-sidan bär autosvarsblocket för VA:n — igång eller inte, det står', async () => {
+  const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+  const html = await (await hamta('/app/kundtjanst', kaka)).text();
+  // VA:n läser engelska: rubriken är den engelska. Finns ingen logg i
+  // snapshoten står "has not run" — aldrig en nolla som ser ut som ett svar.
+  assert.match(html, /Auto-reply bot/);
+  assert.match(html, /has not run|drafts only|sending replies|no reply written/);
 });
 
 test('produkttestaren ser sin pipeline och inget annat', async () => {

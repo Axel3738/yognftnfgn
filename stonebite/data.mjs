@@ -224,7 +224,9 @@ export function oversikt(snapshot, { nu = new Date() } = {}) {
     butiker: lagen,
     konton,
     lasbara: lagen.filter((b) => b.status === 'ok').length,
-    olasbara: lagen.filter((b) => b.status !== 'ok'),
+    // Avstängda med flit (status 'av', stonebite/butiker-av.json) är inte olästa — de räknas inte alls.
+    olasbara: lagen.filter((b) => b.status !== 'ok' && b.status !== 'av'),
+    avstangda: lagen.filter((b) => b.status === 'av'),
   };
 }
 

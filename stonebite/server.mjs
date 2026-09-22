@@ -25,7 +25,7 @@ import * as anv from './anvandare.mjs';
 import { farSe, harRatt, startsidaFor, SIDOR } from './roller.mjs';
 import { lasSnapshot } from './data.mjs';
 import { publikSida } from './vy/publik.mjs';
-import { tjansterSida } from './vy/tjanster.mjs';
+import { influencerSida } from './vy/influencers.mjs';
 import { loginSida, uppstartSida } from './vy/login.mjs';
 import { oversiktSida } from './vy/oversikt.mjs';
 import { butikerSida } from './vy/butiker.mjs';
@@ -45,6 +45,8 @@ import { appSkal } from './vy/layout.mjs';
 import { sattSprak } from './vy/delar.mjs';
 import { sprakFor, SPRAKEN } from './sprak.mjs';
 import { lasProfil } from './kallor/repo.mjs';
+import { startaVakt, loggmappFor, harLogg } from './autosvar-vakt.mjs';
+import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = dirname(HAR);
@@ -113,10 +115,10 @@ function svaraHtml(res, html, { status = 200, nonce, https, kaka = null } = {}) 
   res.end(html);
 }
 
-function omdirigera(res, till, { kaka = null } = {}) {
+function omdirigera(res, till, { kaka = null, status = 303 } = {}) {
   const rubriker = { Location: till, 'Cache-Control': 'no-store' };
   if (kaka) rubriker['Set-Cookie'] = kaka;
-  res.writeHead(303, rubriker);
+  res.writeHead(status, rubriker);
   res.end();
 }
 
@@ -196,9 +198,27 @@ function statiskFil(res, sokvag, nonce, https) {
   return true;
 }
 
-function snapshot() {
-  return lasSnapshot(SNAPSHOT);
+// Autosvarets logg LIVE ur volymen (minutservern på Railway skriver dit,
+// stonebite/autosvar-vakt.mjs). Snapshoten bär repots committade logg — den
+// är timmar gammal; en arg kund ska synas inom minuten, inte vid nästa
+// hämtning. Volymens butiker vinner, snapshotens övriga står kvar.
+// Ingen cache: några små jsonl-filer per sidvisning är billigare än att
+// någonsin visa gårdagens läge som dagens.
+function autosvarLive() {
+  const mapp = loggmappFor(process.env, ROT);
+  if (!harLogg(mapp)) return null;
+  try { return { ...samlaAutosvar({ loggmapp: mapp }), kalla: 'volymen' }; } catch { return null; }
 }
+
+function snapshot() {
+  const snap = lasSnapshot(SNAPSHOT);
+  const live = autosvarLive();
+  if (!snap || !live) return snap;
+  return { ...snap, autosvar: { ...(snap.autosvar ?? {}), ...live, brands: { ...(snap.autosvar?.brands ?? {}), ...live.brands } } };
+}
+
+/** Vakten som håller autosvarets minutserver igång — null när AUTOSVAR_BRANDS är tomt. Sätts i uppstarten. */
+let autosvarVakt = null;
 
 function felsida(res, { kod, rubrik, text, nonce, https }) {
   svaraHtml(res, `<!doctype html><html lang="sv"><head><meta charset="utf-8">
@@ -310,7 +330,9 @@ export async function hantera(req, res) {
   if (stig === '/halsa') {
     const snap = snapshot();
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-    return res.end(JSON.stringify({ ok: true, snapshot: snap?.byggd ?? null, konton: anv.antal(ANVANDARFIL) }));
+    // autosvar: minutserverns läge (null = vakten är av, AUTOSVAR_BRANDS tomt) — så en
+    // curl mot /halsa säger om boten faktiskt snurrar, utan inloggning och utan gissning.
+    return res.end(JSON.stringify({ ok: true, snapshot: snap?.byggd ?? null, konton: anv.antal(ANVANDARFIL), autosvar: autosvarVakt ? autosvarVakt.status() : null }));
   }
 
   // ------------------------------------------------------ förstagången
@@ -344,9 +366,13 @@ export async function hantera(req, res) {
   }
 
   // --------------------------------------------------------- publikt
+  // Profilen läses ur filen vid varje visning — det är vad profil.json lovar.
+  // Snapshotens kopia är bara reserv: den skrivs en gång i timmen av rutinen,
+  // och hade den fått vinna hade varje textändring synts först upp till en
+  // timme efter deployen (mätt 2026-09-22 när konsultsidan byttes ut).
   if (stig === '/' && req.method === 'GET') {
     const snap = snapshot();
-    const profil = snap?.profil ?? lasProfil(ROT);
+    const profil = lasProfil(ROT) ?? snap?.profil;
     const butiker = (snap?.butiker ?? []).filter((b) => b.status === 'ok').length;
     const marknader = new Set((snap?.butiker ?? []).filter((b) => b.status === 'ok').map((b) => b.valuta)).size;
     return svaraHtml(res, publikSida({
@@ -357,11 +383,16 @@ export async function hantera(req, res) {
     }), { nonce, https });
   }
 
-  // Konsulttjänsterna — publik, samma profil som startsidan.
+  // Mikroinfluenserna — det enda bolaget erbjuder andra. Publik, samma profil.
+  if (stig === '/influencers' && req.method === 'GET') {
+    const profil = lasProfil(ROT) ?? snapshot()?.profil;
+    return svaraHtml(res, influencerSida({ profil, inloggad: Boolean(anvandare), nonce }), { nonce, https });
+  }
+
+  // Konsultsidan togs bort 2026-09-22 (Axel: inga tjänster, inget mentorskap).
+  // Adressen kan ligga kvar i någons flik eller mejl — den pekar hit för alltid.
   if (stig === '/tjanster' && req.method === 'GET') {
-    const snap = snapshot();
-    const profil = snap?.profil ?? lasProfil(ROT);
-    return svaraHtml(res, tjansterSida({ profil, inloggad: Boolean(anvandare), nonce }), { nonce, https });
+    return omdirigera(res, '/influencers', { status: 301 });
   }
 
   // ------------------------------------------------------- inloggning
@@ -678,5 +709,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     console.log(`  Användare: ${ANVANDARFIL} (${anv.antal(ANVANDARFIL)} konton)`);
     console.log(`  Data:      ${existsSync(SNAPSHOT) ? `hämtad ${snap?.byggd ?? 'okänt'}` : 'ingen snapshot än — kör node stonebite/hamta.mjs'}`);
     if (anv.antal(ANVANDARFIL) === 0) console.log('  Första gången: öppna /kom-igang och skapa ägarkontot.');
+    // Autosvarets minutserver (stonebite/autosvar-vakt.mjs): bara när AUTOSVAR_BRANDS är satt.
+    autosvarVakt = startaVakt({ logg: (m) => console.log(`  ${m}`) });
+    if (!autosvarVakt) console.log('  Autosvar:  av (AUTOSVAR_BRANDS är tomt) — sajten visar loggen ur snapshoten.');
+    for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, () => { try { autosvarVakt?.stopp(); } catch { /* ok */ } process.exit(0); });
   });
 }

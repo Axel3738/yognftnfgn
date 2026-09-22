@@ -27,6 +27,32 @@ till spårningssidan, inga skanningar), Discord via `DISCORD_BOT_TOKEN`.
 **Ingen modell** — reglerna dömer (`kundtjanst/autosvar/hinkar.mjs`), mallarna
 skriver (`kundtjanst/autosvar/svar.mjs`). Koppla ingen connector på rutinen.
 
+## Var boten kör (Axels krav 2026-09-22: "svara arga kunder på 60 sekunder")
+
+**Minutservern på Railway är den som kör** — inte en rutin på claude.ai. En
+rutin kör som tätast en gång i timmen; 60 sekunder kräver en process som
+snurrar hela tiden, och sajten (`stonebite/server.mjs`) kör redan dygnet runt
+på Railway. `stonebite/autosvar-vakt.mjs` startar därför
+`node kundtjanst/autosvar.mjs --brand <AUTOSVAR_BRANDS> --torr --loop 60` som
+barnprocess när `AUTOSVAR_BRANDS` är satt på tjänsten, och startar om den när
+den dör. Torrt tills `AUTOSVAR_LAGE=skarpt` står uttryckligen. Loggen ligger på
+volymen (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) så
+minnet "ett svar per tråd någonsin" överlever varje deploy, och sajten läser
+den live (Kundtjänst-fliken visar de arga kunderna inom minuten). Slås på med
+Cowork-prompten `stonebite/cowork/5-autosvar.txt` (eller Axels egna klick i
+Railway → Variables); `/halsa` på sajten säger om den snurrar (`autosvar.kor`).
+⚠️ **Vakten startar bara på Railway** (`RAILWAY_*` i miljön) eller med
+`AUTOSVAR_VAKT=1` — en `npm run sida` i en session med `AUTOSVAR_BRANDS` i
+miljön får aldrig bli en andra bot (mätt 2026-09-22: det hände i sex sekunder
+innan spärren fanns).
+
+⛔ **När vakten är på för en butik kör INGEN session det här kommandot mot
+samma brevlåda** — två autosvar på en brevlåda är ett dubbelsvar (mätt
+2026-09-21, två sessioner i samma minut). Kalibrering (`--igen --torr`) görs
+bara när vakten är av för butiken (`AUTOSVAR_BRANDS` utan den) eller mot en
+annan butik. Loggen i repot (`kundtjanst/autosvar/logg/`) är historiken från
+sessionskörningarna — Railways logg står på volymen och committas inte.
+
 ## Järnreglerna (testade i `kundtjanst/test/autosvar.test.mjs`, inte diskuterbara)
 
 - **Max ETT automatiskt svar per tråd, någonsin.** Ett svar från oss i tråden
@@ -144,12 +170,17 @@ mappen finns.
    (ordernummer + en rad) och VA:ns prioriterade lista. Allt i Discord är på
    engelska (Axels order 2026-09-05).
 
-3. **Committa loggen och pusha** (rutinen på claude.ai):
+3. **Committa loggen och pusha** (rutinen på claude.ai). Dra `main` först —
+   spårningsrutinerna och `/stonebite` pushar 7–8 gånger i timmen, så en
+   push utan pull krockar:
    ```bash
    git add kundtjanst/autosvar/logg
    git commit -m "Autosvar <butik> <datum>: <n> svar, <m> flaggade"
+   git pull --rebase origin main
    git push -u origin main
    ```
+   Hade körningen inget nytt i loggen finns inget att committa — hoppa då
+   över steget i stället för att göra en tom commit.
    Loggen är minnet som gör "ett svar per tråd" sant mellan körningar. Pushas
    den inte finns Sent/Drafts-kollen som andra vakt, men committa den ändå.
 

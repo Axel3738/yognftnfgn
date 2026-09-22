@@ -94,7 +94,24 @@ utan den vet nästa vecka ingenting.
    historiken till `kundtjanst/rapport-publicerad.html` och skriver ut vilken `url`
    som gäller. Sidan visar läget, **åtgärdsplanen** (`kundtjanst/atgardsplan.mjs`),
    arbetskön ärende för ärende, tvisterna med deadline, kategorierna med
-   SOP-status och kurvan vecka för vecka. Publicera med Artifact-verktyget
+   SOP-status och kurvan vecka för vecka. **Sedan 2026-09-22 också autosvaret**
+   (sektionen *Auto-reply*): loggens 30 dagar per butik ur
+   `kundtjanst/autosvar/oversikt.mjs` — arga kunder, VA:ns kö, svar/utkast, fel,
+   per dag — och mappen `INBOX.VA-PRIO` läst live i brevlådan när
+   `KUNDTJANST_MAIL_PASS_<ID>` finns (läs-bara, en listning; `--utan-brevlada`
+   hoppar det). Utkast visas som utkast, aldrig som skickat. Sidan kör aldrig
+   `autosvar.mjs` och skriver aldrig i loggen. **Sedan 2026-09-22 också
+   tvisterna över alla butiker** (sektionen *Disputes now — all stores*,
+   kontraktet `kundtjanst/DASHBOARD-TVISTER.md`): öppna tvister ur
+   `stonebite/data/snapshot.json` och brådskan ur tvistkollen, som skriptet
+   kör själv som `node kundtjanst/tvistkoll.mjs --alla --torr --json` — alltid
+   torrt, aldrig `--discord` (argumenten är frysta i `TVISTKOLL_ARGS`;
+   `--utan-tvistkoll` hoppar steget). Chargebacks överst per butik, pengar i
+   risk per valuta, "submit by" = deadline − 1, handbokslänk per rad
+   (`kundtjanst/handbok.json`). En butik som inte gick att läsa står som okänd
+   med orsaken ordagrant — aldrig som noll. Ingen dom visas. Kör tvistkollen
+   exit 1 (ingen butik läsbar) bakas ändå det den skrev ut in; sidan säger
+   då vilka som var okända och varför. Publicera med Artifact-verktyget
    **mot den länken**:
    ```
    Artifact  file_path: /home/user/yognftnfgn/kundtjanst/rapport-publicerad.html

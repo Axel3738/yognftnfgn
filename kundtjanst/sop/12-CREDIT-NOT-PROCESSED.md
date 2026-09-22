@@ -31,6 +31,7 @@
 | 2 | **A refund was paid covering the full disputed amount** | **FIGHT — strong.** The refund receipt is the whole argument; the claim is factually wrong. | **FIGHT — strong.** Same evidence. |
 | 3 | **A partial refund was paid**, customer disputes the rest | **FIGHT — check the numbers first.** Submit the receipt **and** one sentence on why no further refund is owed. Never leave the difference unexplained. | Same. |
 | 4 | **We promised a refund in writing and never paid it** | **PAY WHAT WE PROMISED TODAY, then respond honestly** (section 5.4). Do not argue. If the promised amount is smaller than the disputed amount, pay it and explain the difference. | **ACCEPT — explicitly (section 6.2). Do NOT refund.** The money is already taken; refunding on top pays twice. |
+| 4b | **A return or a refund was asked for in writing and we never answered it, or answered it weeks late** — no promise was made, so row 4 does not fire, but the customer did give us the chance we are about to say they never gave us | **Two things, in this order. (1) Answer the customer today** with the return address and who pays the return postage. **(2) Then decide:** the item was never returned and the amount is above `{{FIGHT_THRESHOLD}}` → **FIGHT — medium**, with the thread attached **complete and unedited** and one factual sentence admitting the delay; item returned, or amount below the threshold → **REFUND.** Never submit a thread with our silence trimmed out. | Same answer to the customer, but **lean to ACCEPT** — a chargeback loss is final and the delay is the first thing the issuer reads. |
 | 5 | **No refund was ever requested or promised, no return received, and the carrier scan shows DELIVERED** | **FIGHT — strong.** Delivery scan + the "no refund was ever requested or promised" statement + the published policy. | **FIGHT — strong**, but expect a harder fight (section 5.2 and the win rates in section 8). |
 | 6 | **No refund promised, and we cannot prove delivery** (no scan, or tracking stuck) | **REFUND IN FULL and stop.** We cannot win this and should not try. Send template E. | **ACCEPT — explicitly.** Do not refund, do not submit. |
 | 7 | **Cancellation asked for inside {{RETURN_WINDOW_DAYS}} days but the parcel had already shipped** | **Grey — go to section 5.3.** Decide by amount. | Grey — same section, but lean to **ACCEPT**. |
@@ -106,16 +107,27 @@ It prints: dispute type, reason, amount, **evidence due date and days left**, re
 
 Open the support mailbox for `{{SUPPORT_EMAIL}}` (webmail or mail client) and search **both** the INBOX **and** the **Sent** folder, for:
 
-- the order number (with and without `#`), and
-- the customer's email address.
+- the order number (with and without `#`),
+- the customer's email address, and
+- **the customer's surname.** Not optional. The address on the order belongs to whoever paid; the person who complains is often someone else in the same household. Measured on order 4446, 2026-09-22: the order carries `mia.lindqvist73@…`, the return request came from `fredrik.lindqvist74@…`, and the address search returned nothing while the surname search found it at once.
 
-You are looking for one thing only:
+**Search the mailbox to its end.** The `mail_search` tool stops after 200 mails — on this mailbox that is 4 pages of 34, so "0 hits" from it means almost nothing. Run it properly and read the line that says how far it got:
 
-> Did anyone on our side write *"we will refund you"*, *"we will credit you"*, *"we have cancelled your order"*, or anything a customer would reasonably read as a promise?
+```
+node kundtjanst/mail.mjs sok "<surname>" --sidor 40
+node kundtjanst/mail.mjs sok "<surname>" --mapp INBOX.Sent --sidor 40
+```
+
+⚠️ It searches sender and subject, not the body, so a message sent through the shop's **contact form** (the customer's words sit under `Text:`, the sender is Shopify) will not match a name search. Never write that a customer has not contacted us on the strength of a header search alone.
+
+You are looking for two things:
+
+> 1. Did anyone on our side write *"we will refund you"*, *"we will credit you"*, *"we have cancelled your order"*, or anything a customer would reasonably read as a promise?
+> 2. Did the customer ask us for a return, a cancellation or a refund — and what did we answer, and how many days later?
 
 - **Found a promise → we owe it.** Go to row 4. Do not argue.
 - **Found nothing → write that down and say it in the evidence** (section 4). An empty inbox is a fact in our favour, but only if we state it — nobody reading the case can see our inbox.
-- **Found a customer email we never answered** → still our problem: read it and decide honestly whether the refund was owed.
+- **Found a customer email we never answered, or answered weeks late** → **row 4b.** Answer it today, then decide. It is no longer a row 5 case, whatever the Shopify data looks like.
 
 *(Worked EXAMPLE — measured 2026-09-20, one store, order 5122, a different reason code: support had missed the customer's return request entirely and the dispute was the first time anyone noticed. Always search before you write.)*
 
@@ -123,7 +135,7 @@ You are looking for one thing only:
 
 Shopify admin → the order → **Refunds**. Write down two facts: **amount refunded** and **date**. Compare the amount with the **disputed** amount from the dispute page.
 
-*(Worked EXAMPLES — measured 2026-09-20, one store. Order 4446, 1262.20 SEK, the largest in that sample: delivered, **never any refund**, and no conversation with the customer at all — "credit not processed" was simply not true, there was no credit to process. That is the row 5 FIGHT case. Order 5763, reason `product_not_received`: 100 SEK refunded 2026-09-19 — when a refund exists, the receipt is the whole argument.)*
+*(Worked EXAMPLES — one store. Order 5763, reason `product_not_received`: 100 SEK refunded 2026-09-19 — when a refund exists, the receipt is the whole argument. Order 4446, 1262.20 SEK, the largest open amount: delivered 2026-08-13, **never any refund** — and it is the example of how this table gets read wrong. On 2026-09-20 it was written up as row 5, "no conversation with the customer at all". On 2026-09-22 a search on the customer's **surname** found his email of 2026-08-25 asking for a return, unanswered for 22 days: it is **row 4b**, not row 5, and the difference is a false statement to a bank. Row 5 requires that nothing was asked for. Prove that with the search in 3.2 before you believe it — and search the surname, not only the address on the order, because the person who complains is often not the person who paid.)*
 
 > ⚠️ One order can carry **two separate disputes** (in the same sample, order 5053 had two, and order 5435 had one already won plus another still open). Winning one does not close the other. **Handle each dispute on its own dispute page.**
 

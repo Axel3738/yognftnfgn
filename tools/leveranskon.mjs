@@ -19,6 +19,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { allaKlaraRader, valjLeveransfiler } from './notion-kalla.mjs';
+import { annonsdel, prefixAv, prefixKarta, arListiclekampanj } from './lib/kampanjval.mjs';
 
 // Redigerarnas leveransrot. Innehåller "Week N"-mappar, en mapp per annons.
 const EDITED_FOLDER = '1V4V8y4QQnX0tvZ3MQUicu1Y1k-l95yFM';
@@ -60,35 +61,11 @@ async function metaAnnonser(act) {
   return ut;
 }
 
-/** Prefixet ur ett annonsnamn: "Rodholder_PD_11_H1" -> "rodholder".
- *  Bindestreck och siffror RÄKNAS med: "MC-Kapell_OF_4_1" -> "mc-kapell".
- *  *(Mätt 2026-09-15: mönstret var `^([A-Za-z]+)_`, så varje namn med bindestreck
- *  i prefixet gav null och raden föll ur kön TYST. Motorcycle Cover-hubben hade
- *  13 färdiga creatives i `To be Reviewed` som aldrig syntes i någon rapport.)* */
-const prefixAv = (namn) => (annonsdel(namn).match(/^([A-Za-z][A-Za-z0-9-]*)_/) || [])[1]?.toLowerCase() ?? null;
-
-/** Kontot lar oss sjalvt vilken kampanj ett prefix hor till — ingen konfig behovs.
- *  Nya produkter dyker upp standigt i Baverbutiken; en hardkodad lista missar dem
- *  tyst, och tyst missad leverans ar varre an en rapporterad. Kampanjen med FLEST
- *  annonser pa prefixet vinner; oavgjort bryts av att en ACTIVE kampanj gar fore. */
-function prefixKarta(annonser) {
-  const rakning = {};
-  for (const a of annonser) {
-    const p = prefixAv(a.name);
-    if (!p || !a.campaign?.id) continue;
-    ((rakning[p] ??= {})[a.campaign.id] ??= { ...a.campaign, antal: 0 }).antal++;
-  }
-  const karta = {};
-  for (const [p, kampanjer] of Object.entries(rakning)) {
-    karta[p] = Object.values(kampanjer).sort((a, b) =>
-      b.antal - a.antal || (b.status === 'ACTIVE') - (a.status === 'ACTIVE'))[0];
-  }
-  return karta;
-}
+// prefixAv / prefixKarta / listicle-spärren bor i tools/lib/kampanjval.mjs —
+// ren räkning utan API-anrop, så den går att testa utan nät.
 
 // Notion-titlar bär ibland ett suffix: "Beachslippers_PD_2_8 – COPY ONLY: ...".
 // Drive-mappen heter bara annonsdelen. Jämför alltid på annonsdelen.
-const annonsdel = (s) => s.split(/\s+[–—-]\s+/)[0].trim();
 
 const { products } = JSON.parse(readFileSync(`${ROT}products/products.json`, 'utf8'));
 const BAVERBUTIKEN_ACT = '1867947880635861';
@@ -119,6 +96,14 @@ try {
 const annonser = await metaAnnonser(BAVERBUTIKEN_ACT);
 const uppe = new Set(annonser.map(a => a.name.trim().toLowerCase()));
 const karta = prefixKarta(annonser);
+
+// Listicle-kampanjerna som hölls utanför. Skrivs ut varje körning: en tyst
+// uteslutning är lika svår att upptäcka som det tysta felvalet den ersätter.
+for (const [p, kampanjer] of Object.entries(karta._uteslutna ?? {})) {
+  for (const k of Object.values(kampanjer)) {
+    console.error(`  ⤫ listicle-kampanj utesluten för "${p}_": ${k.name} (${k.antal} annonser) — fylls bara av /lagerrensning m.fl., aldrig av leveransrundan.`);
+  }
+}
 
 // 2. Leveranserna i Drive — bara med --drive. Sedan 2026-09-02 är Notion enda
 // källan; Drive-vägen finns kvar för att kunna läsa gamla leveransmappar vid behov.

@@ -419,10 +419,12 @@ export async function hamtaPris(lank, valuta, land = null, basvaluta = 'SEK') {
   }
 }
 
-/** Hämtar radens fil via tools/notion-fil.mjs (signerad URL hämtas i det anropet). */
+/** Hämtar radens fil via tools/notion-fil.mjs (signerad URL hämtas i det anropet).
+ *  `--utan-marknadsfiler`: en spegelrad bär SE- OCH NO-filen; källan för varje
+ *  översättning (och för leveransen) är den svenska. Bara marknadsfiler ⇒ fel. */
 function hamtaFil(pageId, mapp) {
   if (!existsSync(mapp)) mkdirSync(mapp, { recursive: true });
-  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), String(pageId).replace(/-/g, ''), '--ut', mapp], {
+  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), String(pageId).replace(/-/g, ''), '--ut', mapp, '--utan-marknadsfiler'], {
     encoding: 'utf8', env: process.env, timeout: 10 * 60 * 1000,
   });
   const rader = String(r.stdout ?? '').trim().split('\n').filter(Boolean);

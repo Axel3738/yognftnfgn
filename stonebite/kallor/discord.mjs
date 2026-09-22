@@ -27,15 +27,35 @@ export function maskera(text) {
     .replace(/\b(password|passw(?:or)?d|passord|lösenord|losenord|pwd|pin|token|api[_ -]?key|secret|hemlighet|nyckel)\b(\s*(?:is|är|er)?\s*[:=]?\s*)(\S+)/gi, '$1$2[dolt]');
 }
 
-async function api(stig, { env, fetchImpl = globalThis.fetch }) {
-  const r = await fetchImpl(`${API}${stig}`, { headers: { Authorization: `Bot ${env.DISCORD_BOT_TOKEN}` } });
+async function api(stig, { env, fetchImpl = globalThis.fetch, metod = 'GET', kropp = null }) {
+  const r = await fetchImpl(`${API}${stig}`, {
+    method: metod,
+    headers: { Authorization: `Bot ${env.DISCORD_BOT_TOKEN}`, ...(kropp ? { 'Content-Type': 'application/json' } : {}) },
+    ...(kropp ? { body: JSON.stringify(kropp) } : {}),
+  });
   if (r.status === 429) {
     const vanta = Number((await r.json().catch(() => ({}))).retry_after ?? 1) * 1000;
     await new Promise((k) => setTimeout(k, Math.min(vanta, 10_000)));
-    return api(stig, { env, fetchImpl });
+    return api(stig, { env, fetchImpl, metod, kropp });
   }
   if (!r.ok) throw new Error(`Discord ${r.status} på ${stig}`);
   return r.json();
+}
+
+/**
+ * Det ENDA som skrivs till Discord härifrån: pingen till VA:n (stonebite/larm.mjs,
+ * Axels beslut 2026-09-22, alternativ A). `mentions` är de användar-id:n som
+ * får pingas — allt annat i texten (@everyone, roller) är avstängt med flit,
+ * så ett citerat kundmeddelande aldrig kan pinga en hel server.
+ * Returnerar Discords meddelande ({ id, channel_id }) som tillbakaläsning.
+ */
+export async function skickaTillKanal(kanalId, text, { env = process.env, fetchImpl, mentions = [] } = {}) {
+  if (!kanalId) throw new Error('skickaTillKanal kräver ett kanal-id.');
+  if (!env.DISCORD_BOT_TOKEN) throw new Error('DISCORD_BOT_TOKEN saknas i miljön');
+  return api(`/channels/${kanalId}/messages`, {
+    env, fetchImpl, metod: 'POST',
+    kropp: { content: String(text).slice(0, 1900), allowed_mentions: { parse: [], users: mentions.map(String).slice(0, 10) } },
+  });
 }
 
 /**
@@ -71,8 +91,12 @@ export async function hamtaEskalering(varumarken, { env = process.env, antal = 1
               brand: vm.id, server: server.name, serverId: server.id, kanal: k.name, kanalId: k.id, roll,
               lank: `https://discord.com/channels/${server.id}/${k.id}`,
               meddelanden: m.map((x) => ({
+                // id och avId (Discord-snowflakes, inga hemligheter) bär larmet:
+                // ett meddelande pingas en gång, och VA:ns egna pingas aldrig.
+                id: x.id ?? null,
                 tid: x.timestamp,
                 av: x.author?.global_name || x.author?.username || 'okänd',
+                avId: x.author?.id ?? null,
                 bot: Boolean(x.author?.bot),
                 text: maskera(x.content || (x.embeds?.[0]?.description ?? x.embeds?.[0]?.title ?? '')).slice(0, 600),
                 bilagor: (x.attachments ?? []).length,

@@ -89,10 +89,15 @@ async function allaSidor(databaseId, opt) {
   return ut;
 }
 
-/** Hubbarna ur commission/hubbar.json — alla verksamheter, bara marknad SE. */
+/**
+ * Hubbarna ur commission/hubbar.json — alla verksamheter, bara marknad SE,
+ * aldrig `arkiverad: true` (nedlagda produkter, Axels besked 2026-09-22: nio
+ * hubbar svarade 404 för integrationen och ska inte bjudas in — de står kvar i
+ * filen som historik men varken läses eller saknas i nödbromsen).
+ */
 export function hubbarUrFil() {
   const { hubbar } = JSON.parse(readFileSync(`${ROT}/commission/hubbar.json`, 'utf8'));
-  return hubbar.filter((h) => h.marknad === 'SE')
+  return hubbar.filter((h) => h.marknad === 'SE' && h.arkiverad !== true)
     .map((h) => ({ id: h.id, namn: h.namn, verksamhet: h.verksamhet, kalla: 'hubbar.json' }));
 }
 
@@ -104,9 +109,19 @@ export function hubbarUrFil() {
  */
 export function hubbarUrProdukter() {
   const { products } = JSON.parse(readFileSync(`${ROT}/products/products.json`, 'utf8'));
+  // Nedlagda produkter (arkiverad: true i hubbar.json) räknas inte som golv
+  // fast products.json fortfarande bär hubben — annars kräver nödbromsen en
+  // hubb som integrationen aldrig mer får se.
+  const arkiverade = arkiveradeHubbar();
   return products
-    .filter((p) => p.notion?.database_id)
+    .filter((p) => p.notion?.database_id && !arkiverade.has(String(p.notion.database_id).replace(/-/g, '')))
     .map((p) => ({ id: p.notion.database_id, namn: p.notion.name, produkt: p.id, kalla: 'products.json' }));
+}
+
+/** Id:n (utan bindestreck) för hubbar märkta `arkiverad: true` i commission/hubbar.json. */
+export function arkiveradeHubbar() {
+  const { hubbar } = JSON.parse(readFileSync(`${ROT}/commission/hubbar.json`, 'utf8'));
+  return new Set(hubbar.filter((h) => h.arkiverad === true).map((h) => String(h.id).replace(/-/g, '')));
 }
 
 /**

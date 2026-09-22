@@ -10,7 +10,9 @@ import { forklaraFel } from '../forklaring.mjs';
 export function butikerSida({ snapshot, nu = new Date() }) {
   const butiker = allaButikslagen(snapshot, { nu });
   const ok = butiker.filter((b) => b.status === 'ok');
-  const trasiga = butiker.filter((b) => b.status !== 'ok');
+  // Avstängda med flit (stonebite/butiker-av.json) är Axels beslut, inte ett fel — egen lista längst ned.
+  const avstangda = butiker.filter((b) => b.status === 'av');
+  const trasiga = butiker.filter((b) => b.status !== 'ok' && b.status !== 'av');
   const valutor = butikerPerValuta(butiker);
 
   const kortRad = ok
@@ -53,11 +55,22 @@ export function butikerSida({ snapshot, nu = new Date() }) {
     }),
   }) : '';
 
+  const avstangdaDel = avstangda.length ? block({
+    titel: 'Avstängda med flit',
+    under: 'Butiker som inte säljer längre. De hämtas inte och räknas varken som lästa eller saknade. Registret: stonebite/butiker-av.json.',
+    innehall: panel({
+      innehall: `<ul class="lista">${avstangda.map((b) => `<li>
+          <span>${status('neutral', 'avstängd')}</span>
+          <span><span class="namn">${esc(b.namn)}</span><span class="bi">${esc(b.orsak ?? '')}</span></span>
+        </li>`).join('')}</ul>`,
+    }),
+  }) : '';
+
   return {
     titel: 'Butiker',
     innehall: `${sidhuvud({
       rubrik: 'Butiker',
-      under: `${ok.length} butiker lästes${trasiga.length ? `, ${trasiga.length} svarade inte` : ''}.`,
+      under: `${ok.length} butiker lästes${trasiga.length ? `, ${trasiga.length} svarade inte` : ''}${avstangda.length ? `, ${avstangda.length} avstängd${avstangda.length === 1 ? '' : 'a'} med flit` : ''}.`,
       farsk: snapshot?.byggd ? `Hämtat <b>${esc(sedan(snapshot.byggd))}</b>` : '',
     })}
     ${kortRad ? `<div class="kort-rad">${kortRad}</div>` : tomt('Inga butiker gick att läsa', 'Kör hämtningen igen, eller kolla nycklarna.')}
@@ -72,6 +85,7 @@ export function butikerSida({ snapshot, nu = new Date() }) {
         fot: valutor.map((v) => `${v.valuta}: ${pengar(Math.round(v.manad.omsattning), v.valuta)} på 30 dagar`).join('  ·  '),
       }),
     }) : ''}
-    ${trasigaDel}`,
+    ${trasigaDel}
+    ${avstangdaDel}`,
   };
 }

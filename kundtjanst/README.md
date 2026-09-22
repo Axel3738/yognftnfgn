@@ -39,6 +39,28 @@ därför chargebacks överst, och texten "an unanswered dispute is lost
 automatically" är borttagen ur både koden och rapportsidan — skriv aldrig
 tillbaka den.
 
+**Tvisterna på kundtjänstsidan sedan 2026-09-22** (sektionen *Disputes now —
+all stores* i `rapport-sida.html`, kontraktet i `DASHBOARD-TVISTER.md`):
+öppna tvister ur `stonebite/data/snapshot.json` (timrutinens läsning) och
+brådskan ur `node kundtjanst/tvistkoll.mjs --alla --torr --json`, som
+`rapportsida.mjs` kör själv vid bygget (`korTvistkoll`; argumenten är frysta,
+`--discord` kan inte smyga in; `--utan-tvistkoll` hoppar). Per butik:
+chargebacks överst, sedan kortast tid kvar, sedan belopp; pengar i risk per
+valuta — aldrig summerat; *overdue* (kvar < 0) och *due today* (kvar = 0) är
+två stämplar; "submit by" = deadline − 1 dag, för bevis skickas in sist medan
+kundmejlet går i dag; handbokslänk per rad ur `handbok.json`. En butik
+tvistkollen inte kunde läsa står som **okänd med orsaken ordagrant** (lång
+Shopify-felsida: första raden + "show the full reason"), aldrig som noll — och
+har snapshoten rader för den står raderna kvar med dagar kvar räknade av sidan
+(`kvarFran: 'sidan'`), märkt att brådskan inte lästes live. **Ingen dom**
+(FIGHT/REFUND/ESCALATE) visas: `tvistfakta.mjs` har inget `--json`, och en dom
+gissad ur reason-koden är påhittad. Sidan skriver aldrig i Shopify och rör
+aldrig `korningar/` eller `historik/`. ⚠️ Vilken butik som går att läsa beror
+på containerns nycklar: sessionen som byggde 2026-09-22 saknade
+`SHOPIFY_CLIENT_ID_BAVERBUTIKEN_EMAILSCRAPER` och fick 403 på Bäverbutiken,
+medan timrutinens snapshot samma timme bar 10 öppna tvister för den — sidan
+visade då raderna ur snapshoten med 403-orsaken bredvid, precis som tänkt.
+
 Handboken VA:n följer när larmet kommer ligger i **`kundtjanst/sop/`** (engelska,
 portabel över alla butiker). `kundtjanst/tvistfakta.mjs` ger domen på ett
 kommando; `kundtjanst/sop-koll.mjs` vaktar att SOP:erna förblir portabla.
@@ -141,6 +163,30 @@ har lösenordet. Maskera (`ka***@gmail.com`) innan något postas i Discord
 eller Notion; rapporterna gör det själva, CLI:n gör det inte.
 
 ## Autosvaret: enkla mejl besvaras, arga lugnas, svåra flaggas (`autosvar.mjs`)
+
+**På kundtjänstsidan sedan 2026-09-22** (sektionen *Auto-reply* i
+`rapport-sida.html`, kontraktet i `autosvar/DASHBOARD.md`): loggens 30 dagar per
+butik via `autosvar/oversikt.mjs` — aldrig omräknat på sidan — plus mappen
+`INBOX.VA-PRIO` läst live när `KUNDTJANST_MAIL_PASS_<ID>` finns
+(`rapportsida.mjs` → `hamtaVaKo`, läs-bara). Utkast (`torr: true`) visas som
+utkast, aldrig som skickat.
+
+**Var boten kör — Railway, inte en rutin (Axels krav 2026-09-22: "svara arga
+kunder på 60 sekunder … måste ligga och skanna hela tiden").** En rutin på
+claude.ai kör som tätast en gång i timmen. Minutservern (`--loop 60`) körs
+därför som barnprocess av sajtens server på Railway
+(`stonebite/autosvar-vakt.mjs`): på när `AUTOSVAR_BRANDS` är satt på
+tjänsten, torrt tills `AUTOSVAR_LAGE=skarpt`, omstart med växande paus när
+den dör, startar inte alls om `KUNDTJANST_MAIL_PASS_<ID>` saknas (och säger
+vilket). Loggen — minnet "ett svar per tråd någonsin" — skrivs på volymen via
+**`AUTOSVAR_LOGGMAPP`** (`autosvar/logg.mjs` läser variabeln; standard
+`<STONEBITE_DATA>/autosvar/logg`), så den överlever varje deploy, och
+stonebite.org läser samma mapp live: de arga kunderna står på Kundtjänst
+inom minuten. `/halsa` på sajten visar `autosvar.kor`. Slås på med Cowork:
+`stonebite/cowork/5-autosvar.txt`. ⛔ När vakten är på kör ingen session
+`autosvar.mjs` mot samma brevlåda för hand — två kopior är ett dubbelsvar.
+Repots logg (`kundtjanst/autosvar/logg/`) är sessionskörningarnas historik;
+Railways logg committas inte.
 
 Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
 själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
@@ -281,10 +327,17 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   Texten följer VA:ns egna returmejl i Skickat: originalförpackning, namn +
   ordernummer på paketet, kopia av bekräftelsen, adressen rad för rad
   (brandfilens `tvister.returadress`, nu hela adressen), spårbar frakt +
-  spårningsnumret till oss, 30 dagar från mottagandet, policylänken. Vem som
+  spårningsnumret till oss, returfönstret ur brandfilen (14 dagar från
+  mottagandet sedan Axels beslut B 2026-09-22), policylänken. Vem som
   betalar returfrakten sägs BARA när `tvister.returfrakt_betalas_av` är
-  ifyllt — det är tomt (ägarens beslut), fast VA:n skriver "kundens ansvar".
-  Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot returen.
+  ifyllt — och det är `kund` sedan 2026-09-21 (retur-SOP:en, commit
+  `9cfa779a`, samma sak som VA:n skriver: "kundens ansvar"), så raden
+  "Returfrakten står du själv för." står med. ⚠️ Den raden kom in på `main`
+  från SOP-grenen medan autosvarets test på den här grenen krävde tomt —
+  efter mergen av PR #113 + #116 var testet "flödet (--torr)" rött på `main`
+  (dashboard-sessionen såg det 2026-09-22 kväll); testet följer brandfilen
+  sedan dess. Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot
+  returen.
 - **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
   "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
   YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
@@ -354,6 +407,71 @@ fyra felaktiga utkast är alltså alla rätt nu). Ett mönster att veta om: Hans
 skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
+
+### I drift TORRT sedan 2026-09-22 kväll — timrutin, SOP till VA:n, Roundcubes cache
+
+Axels order 2026-09-22 kväll: "fixa bara SOP:n och sätt igång AI-kundsupport-
+botten, och visa mig vad den skickar till folk … granska utkasten själv … skriv
+vad du är concerned över". Matstrumpor väntar (hans beslut samma kväll:
+Bäverbutiken först, sedan samma sak överallt).
+
+- **Timrutinen** (Barkås-kontot `barkas.kundservice@gmail.com`): trigger
+  `trig_01KiQ9zHevZDMpkSbB3Ue6sM`, fast session `session_01JCQtxLmN7ei2anB49KZQbM`
+  (repot som källa, `main` som utgren, miljön `env_011kzcu4tXHXM9LdECNkDe9E`
+  som bär `KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`), cron `10 * * * *`, prompt
+  `/autosvar --brand baverbutiken --torr --discord`, sedd i `list_triggers`
+  samma körning, första körning 00:10 CEST 2026-09-23. Torrt = utkast i
+  `INBOX.Drafts`, inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt.
+  **Skarpt är Axels ok** efter 20 rätta utkast i rad ⇒ `update_trigger` med
+  prompten `… --skarpt --discord`, aldrig en andra rutin. En brevlåda, en
+  session: kör inte `/autosvar` för hand mot Bäverbutiken medan rutinen är på.
+- **SOP:en till VA:n:** `va-sop/auto-reply-bot.md` → Notion-sidan **"Auto-reply
+  bot — what it does, and what you do"** (kategori Other stuff) i "Customer
+  support bäverbutiken", plus rader i Store facts (läge, signatur, VA-PRIO,
+  returfönster) och i Start here (routningstabellen + "VA-PRIO efter
+  tvisterna"). VA:ns roll i torrläget (sessionens beslut, Axel kan ändra): läs
+  kundens mejl och ordern mot utkastet; rätt ⇒ skicka det själv; fel ⇒ radera
+  det, svara själv och rapportera EN rad i `#customer-service`
+  (`Auto-reply wrong: order #… — …`). Rapporterna är det som gör 20-räkningen sann.
+- **SOP 18 pekar nu på Store facts** i stället för "30 dagar" (åtta ställen +
+  den svenska mallen), och Store facts säger **14 dagar** (Axels beslut B
+  2026-09-22, samma som brandfilen och returmejlet). Notion-sidorna skrivs ur
+  repot, så VA:n kunde inte ändra dem själv. ⚠️ Policysidan i Shopify säger
+  fortfarande 30 — Axels klick; Store facts säger åt VA:n att inte
+  argumentera med en kund som citerar den.
+- **Roundcube listar ur cache:** `listaSida` skickar `_refresh=1` sedan i
+  kväll. Mätt 2026-09-22 23:40 CEST: Hans mejl, nyss flyttat av autosvaret till
+  `INBOX.VA-PRIO`, gav `messagecount 0, exists 1` utan flaggan och 1 med — VA-kön
+  på kundtjänstsidan (`hamtaVaKo`) och `mail.mjs lista` hade visat tomt fast
+  mejlet låg där. Multi-folder-sökningen (`_scope=all`) hittade det hela tiden
+  (uid `12-INBOX.VA-PRIO`). **"0 mejl" ur en lista är inte "tomt" förrän
+  `exists` säger samma sak.**
+- **Första körningen under rutinens regler (för hand 23:31 CEST, torrt):** 34
+  mejl i 72-timmarsfönstret → 2 hoppade, **1 ENKEL** (Hans: batteridriven
+  bränslepump som läcker → `foton`-utkastet, flaggad, VA-PRIO; ingen order på
+  hans adress i Shopify, så utkastet ber om ordernumret), **0 ARG**, **31 SVÅR**:
+  5 "tråden har redan ett svar från oss" (VA:n svarade 16:35–16:52), 1
+  byte/storlek (SOP 21), Ulf (VA:ns kund), och **24 "övrigt"** — mest
+  produktfrågor före köp ("andas skyddet?", "vilken längd till 7,40 m
+  husbil?", "vilken till Mercury 60 hk?", beställningar per mejl, "ring mig")
+  som ska till VA:n. **Men sex av dem var enkla frågor som botten är byggd för
+  och som `klassificering.mjs` inte kände igen:** "Har inte fått vår order …
+  varan är betald", "Vart har min order tagit vägen? Är betald", "hur länge får
+  man vänta på leverans", "undrar när min beställning kommer … beställde 9-9",
+  "transporten stått stilla sedan den 18 september. Vad händer? Ordernummer:
+  #6655", "har inte fått bekräftelsemejlet … kan inte spåra". Botten är alltså
+  försiktig åt rätt håll (tiger hellre än gissar) men svarade på 1 av 34.
+  Nästa steg när Axel sagt ja: fraserna in i `klassificering.mjs`
+  (`var_ar_ordern`, `leveranstid`, `orderbekraftelse`) med tester, så
+  torrläget ger fler utkast att döma.
+- **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
+  svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
+  "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
+  leverans, inte en pump som läcker efter köpet — `beklagar` borde säga "att
+  varan inte fungerar som den ska" när kategorin är `skadad_defekt` utan
+  leveransord; och fraktetiketten i bildförfrågan (SOP 05/08) är irrelevant för
+  ett funktionsfel. Inget av det är fel mot kunden, men det är två saker Axel
+  ser direkt.
 
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 

@@ -1,5 +1,5 @@
 {
-  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md. scaling=true = produkt vi SKALAR (ingar i redigerardashboarden och har egen Notion creative hub). scaling=false = testprodukt, ingar inte i redigerarnas arbetsflode. notion.collection_id anvands av /dashboard for att lasa briefarna. creative_prefix = prefixet redigerarnas leveransmappar i Drive ('Edited Folder/Week N/<annonsnamn>') har for produkten. Anvands av /notionkorning for att koppla en leverans till ratt produkt och kampanj.",
+  "comment": "Per-produkt-konfig for brief-kvoten. Endast Baverbutiken.se - MagiBorsten 1867947880635861. aov_sek = verklig AOV fran Shopify analytics. break_even_roas / target_roas_25pct = Axels COGS-berakning 2026-08-05 - ANVAND ROAS-tröskeln i forsta hand, den drivar inte nar AOV rors. break_even_cpa_sek = aov_sek / break_even_roas (rakna om nar AOV andras). KILL-beslut mats mot break-even, ALDRIG mot target. Se docs/os/ANALYSMETOD.md. scaling=true = produkt vi SKALAR (ingar i redigerardashboarden och har egen Notion creative hub). scaling=false = testprodukt, ingar inte i redigerarnas arbetsflode. notion.collection_id anvands av /dashboard for att lasa briefarna. creative_prefix = prefixet redigerarnas leveransmappar i Drive ('Edited Folder/Week N/<annonsnamn>') har for produkten. Anvands av /notionkorning for att koppla en leverans till ratt produkt och kampanj. | target_roas (Axels beslut 2026-09-22): SKALNINGSMÅTTET per produkt — motorn (agent/besked.mjs på rutingrenen) tar trappsteget på avståndet till target (100 % över ⇒ dubbla, 50 % över ⇒ ×1,5, annars 20 %). null ⇒ motorn härleder target ur break_even_roas som ROAS:en vid 25 % vinst av omsättningen (= target_roas_25pct). Kill-beslut mäts ALDRIG mot target, alltid mot break-even (CLAUDE.md regel 4). Sätts av Axel.",
   "products": [
     {
       "id": "motorholjet",
@@ -28,7 +28,8 @@
         "collection_id": "785270ab-908c-82e5-ac71-07d7b7ef3770",
         "url": "https://app.notion.com/p/3b0270ab908c80a78793fa11d8c0f6e4"
       },
-      "creative_prefix": "Enginecover_"
+      "creative_prefix": "Enginecover_",
+      "target_roas": null
     },
     {
       "id": "ai-glasogon",
@@ -50,7 +51,8 @@
       "break_even_roas": 1.34,
       "target_roas_25pct": 2.01,
       "target_cpa_25pct_harledd": 930,
-      "scaling": false
+      "scaling": false,
+      "target_roas": null
     },
     {
       "id": "vaggfastet",
@@ -72,7 +74,8 @@
       "break_even_roas": 2,
       "target_roas_25pct": 4,
       "target_cpa_25pct_harledd": 142,
-      "scaling": false
+      "scaling": false,
+      "target_roas": null
     },
     {
       "id": "strandtofflorna",
@@ -101,7 +104,8 @@
         "collection_id": "50c270ab-908c-8266-aa1f-872b99fe61e0",
         "url": "https://app.notion.com/p/3aa270ab908c802ba7a4eb74d08d7eb7"
       },
-      "creative_prefix": "Beachslippers_"
+      "creative_prefix": "Beachslippers_",
+      "target_roas": null
     },
     {
       "id": "axelbaltet",
@@ -130,7 +134,8 @@
         "collection_id": "2f1270ab-908c-820a-9a08-07b73d53710b",
         "url": "https://app.notion.com/p/3aa270ab908c808b9d87d1f1a0d70cbc"
       },
-      "creative_prefix": "Trimmerbelt_"
+      "creative_prefix": "Trimmerbelt_",
+      "target_roas": null
     },
     {
       "id": "satesoverdragaren",
@@ -159,7 +164,8 @@
         "collection_id": "6c9270ab-908c-8362-aa2a-87c073045ebf",
         "url": "https://app.notion.com/p/3aa270ab908c80c088aacb4935db8f33"
       },
-      "creative_prefix": "Seatcover_"
+      "creative_prefix": "Seatcover_",
+      "target_roas": null
     }
   ]
 }

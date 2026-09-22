@@ -60,7 +60,7 @@ import { spawnSync } from 'node:child_process';
 import {
   annonsdel, tolkaNamn, valjMalkampanj, dubblettKarta, dubblett, arvdLank, hamtaPris, typAv, adsetNamn, hittaAdset,
 } from './ops-leveranskon.mjs';
-import { marknadFor, marknadsNamn, marknadslank } from '../factory/opsmarknader.mjs';
+import { marknadFor, marknadsNamn, marknadslank, arMarknadsfil } from '../factory/opsmarknader.mjs';
 import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, rapportrad as slutkortsrad, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
 import { hittaFält, byggEgenskaper, delaBlock } from './notion-brief.mjs';
 
@@ -178,7 +178,7 @@ export function valjKallannons(annonser, namn) {
 /** Den svenska filen bland radens: 4:5 först (feed), annars första som inte är
  *  NO. Bara NO-filer ⇒ null — en norsk fil är aldrig en svensk leverans. */
 export function valjSeFil(filer = []) {
-  const kand = filer.filter((f) => !/_no[_.]/i.test(basename(String(f))));
+  const kand = filer.filter((f) => !/_no[_.]/i.test(basename(String(f))) && !arMarknadsfil(basename(String(f))));
   return kand.find((f) => /4x5|4-5|1080x1350/i.test(basename(f))) ?? kand[0] ?? null;
 }
 
@@ -506,7 +506,7 @@ async function sattStatus(pageId, hub, status) {
  *  videon hade gått live som svensk annons). Huvudvägen är Meta: se hamtaMetaVersion. */
 function hamtaSeFil(pageId, mapp) {
   if (!existsSync(mapp)) mkdirSync(mapp, { recursive: true });
-  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), ren(pageId), '--ut', mapp, '--utan-sidmedia'], { encoding: 'utf8', env: process.env, timeout: 10 * 60 * 1000 });
+  const r = spawnSync(process.execPath, [join(ROT, 'tools', 'notion-fil.mjs'), ren(pageId), '--ut', mapp, '--utan-sidmedia', '--utan-marknadsfiler'], { encoding: 'utf8', env: process.env, timeout: 10 * 60 * 1000 });
   const rader = String(r.stdout ?? '').trim().split('\n').filter(Boolean);
   if (r.status !== 0) return { fil: null, fil_alla: [], fel: String(r.stderr ?? '').trim() || `notion-fil.mjs avslutade med ${r.status}` };
   return { fil: valjSeFil(rader), fil_alla: rader, fel: null };

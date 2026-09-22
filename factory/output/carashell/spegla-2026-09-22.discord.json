@@ -1,0 +1,27 @@
+{
+ "brand": "CaraShell",
+ "datum": "2026-09-22",
+ "lage": "spegla",
+ "gjort": [
+  "Takoverdrag_OB_2_H1 → CaraShellRoof_OB_102_H1: SE ad 120249219182040172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - OB), NO ad 120249219188850172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_TR_3_H1 → CaraShellRoof_TR_103_H1: SE ad 120249219198500172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - TR), NO ad 120249219342600172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_GT_10_H1 → CaraShellRoof_GT_110_H1: SE ad 120249219359450172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - GT), NO ad 120249219376980172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_CO_3_H1 → CaraShellRoof_CO_103_H1: SE ad 120249219580260172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CO), NO ad 120249219610580172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_GT_7_H1 → CaraShellRoof_GT_107_H1: SE ad 120249219634340172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - GT), NO ad 120249219738560172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_RI_2_H1 → CaraShellRoof_RI_102_H1: SE ad 120249219751100172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - RI), NO ad 120249219766110172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_GT_8_H1 → CaraShellRoof_GT_108_H1: SE ad 120249219941370172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - GT), NO ad 120249219954690172 live in CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11 — row in hub",
+  "Takoverdrag_CS_8_H1 → CaraShellRoof_CS_108_H1: SE ad 120249219971810172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CS) — row in hub",
+  "Takoverdrag_CS_7_H1 → CaraShellRoof_CS_107_H1: SE ad 120249220065150172 live in CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11 (adset CARASHELL_SE_Taköverdraget - CS) — row in hub",
+  "Takoverdrag_BOF_9_1: 🇺🇸 English version 120251536199230435 is live — source row set to Approved",
+  "Takoverdrag_CS_13_1: 🇺🇸 English version 120251535969460435 is live — source row set to Approved",
+  "Takoverdrag_PD_10_1: 🇺🇸 English version 120251535934370435 is live — source row set to Approved",
+  "Takoverdrag_BOF_8_1: 🇺🇸 English version 120251535705330435 is live — source row set to Approved",
+  "Takoverdrag_BOF_7_1: 🇺🇸 English version 120251535696070435 is live — source row set to Approved"
+ ],
+ "varningar": [
+  "Two NO uploads were refused mid-run by Meta rate limiting (code 17). Re-run after the limit eased: CaraShellRoof_NO_CS_108_H1 and NO_CS_107_H1 are live, and their NO file is now attached to the hub row. Nothing else was touched.",
+  "SE campaign: \"CARASHELL_SE_Taköverdraget LISTICLE\" is its own track (the name carries LISTICLE) and did not receive the ads."
+ ],
+ "action_axel": [],
+ "nasta_korning": "tomorrow 16:20 + slot"
+}

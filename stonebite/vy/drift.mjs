@@ -39,14 +39,113 @@ function dagarKvar(deadline, nu) {
   return Math.ceil((t - nu.getTime()) / DAG);
 }
 
+// ------------------------------------------------------------ autosvaret
+//
+// Kundtjänstboten (kundtjanst/autosvar.mjs) loggar varje mejl den läst:
+// ENKEL besvaras, ARG får ett lugnande svar och flaggas till VA:n, SVÅR bara
+// flaggas. Här visas det Axel bad om (2026-09-22): "alla cases som AI-botten
+// har svarat på, där det är arga kunder, ska komma upp som en lista på
+// kundtjänst-taben". Talen är oversikt.mjs:s (snapshot.autosvar), aldrig
+// omräknade. Utkast ≠ skickat — en bot som bara skriver utkast är inte igång,
+// och det står i klartext.
+
+/** Butikens namn ur snapshoten — brandet i loggen är butiks-id:t (baverbutiken …). */
+export function butiksnamnFor(snapshot, id) {
+  const k = String(id ?? '');
+  return (snapshot?.butiker ?? []).find((b) => b.id === k)?.namn
+    ?? (snapshot?.kundtjanst?.brands ?? []).find((b) => b.id === k)?.namn
+    ?? k;
+}
+
+/** Vad boten faktiskt gör just nu, ur loggens tal. Ren. */
+export function autosvarLage(b, nu = new Date()) {
+  const a = b?.antal ?? {};
+  const senast = b?.senasteKorning ? new Date(b.senasteKorning).getTime() : null;
+  const stilla = senast === null || nu.getTime() - senast > DAG;
+  // Fel = boten kunde inte skriva i brevlådan (utkast, flagga, flytt). Utan den
+  // raden ser en bot som inte FÅR skriva (Loopia nekar Railways adress, fel
+  // lösenord) exakt ut som en bot som inte HADE något att skriva.
+  if ((a.fel ?? 0) > 0) return { ton: 'kritisk', ord: 'kunde inte skriva i brevlådan', skarpt: (a.svar ?? 0) > 0, stilla, fel: a.fel };
+  if ((a.svar ?? 0) > 0) return { ton: stilla ? 'varning' : 'bra', ord: stilla ? 'skickar svar — men stod stilla senaste dygnet' : 'skickar svar', skarpt: true, stilla, fel: 0 };
+  if ((a.utkast ?? 0) > 0) return { ton: 'varning', ord: 'bara utkast — inget skickas', skarpt: false, stilla, fel: 0 };
+  return { ton: 'neutral', ord: 'inget svar skrivet', skarpt: false, stilla, fel: 0 };
+}
+
+/**
+ * Autosvarsblocket: ett kort per butik med läget, sedan listan över arga
+ * kunder (nyast först). `bara` begränsar till vissa butiks-id:n (varumärkets
+ * flik). Ingen logg ⇒ "har inte kört", aldrig noll.
+ */
+export function autosvarBlock(autosvar, { nu = new Date(), namnFor = (id) => id, bara = null } = {}) {
+  const brands = Object.entries(autosvar?.brands ?? {}).filter(([id]) => !bara || bara.includes(id));
+  const titel = 'Autosvaret';
+  const under = 'Kundtjänstboten som svarar på enkla mejl själv och lugnar arga kunder. De arga hamnar här — VA:n tar över varje ärende i listan.';
+  if (!brands.length) {
+    const ingenAlls = !Object.keys(autosvar?.brands ?? {}).length;
+    return block({ titel, under, innehall: tomt('Autosvaret har inte kört', ingenAlls ? 'Ingen logg finns — boten är inte igång för någon butik.' : 'Ingen logg finns för de här butikerna — boten är inte igång här.') });
+  }
+  const en = sprak() === 'en';
+  const dagar = autosvar?.dagar ?? 30;
+  const korten = brands.map(([id, b]) => {
+    const a = b.antal ?? {};
+    const lage = autosvarLage(b, nu);
+    return kort({
+      etikett: namnFor(id),
+      varde: `${tal(a.ARG ?? 0)} <span class="mini">${esc(t('arga kunder'))}</span>`,
+      text: true,
+      forklaring: en
+        ? `${tal(a.mejl ?? 0)} emails read in ${dagar} days · ${tal(a.svar ?? 0)} sent · ${tal(a.utkast ?? 0)} drafts · ${tal(a.tillVa ?? 0)} handed to the VA without a reply.${(a.fel ?? 0) > 0 ? ` <strong>${tal(a.fel)} write errors</strong> — see the VA list.` : ''}`
+        : `${tal(a.mejl ?? 0)} mejl lästa på ${dagar} dagar · ${tal(a.svar ?? 0)} skickade · ${tal(a.utkast ?? 0)} utkast · ${tal(a.tillVa ?? 0)} till VA:n utan svar.${(a.fel ?? 0) > 0 ? ` <strong>${tal(a.fel)} skrivfel</strong> — se VA-listan.` : ''}`,
+      status: status(lage.ton, lage.ord),
+      fot: b.senasteKorning ? `${t('Senaste körning')} ${sedan(b.senasteKorning)}` : t('Har aldrig kört'),
+    });
+  }).join('');
+
+  const arga = brands.flatMap(([id, b]) => (b.arga ?? []).map((r) => ({ ...r, butik: namnFor(id) })))
+    .sort((a, b) => String(b.tid ?? '').localeCompare(String(a.tid ?? '')));
+  const rader = arga.slice(0, 30).map((r) => {
+    const order = r.ordernummer?.[0] ? `#${r.ordernummer[0]}` : t('order saknas i mejlet');
+    const varfor = en ? (r.orsakEn || r.orsak || r.x || '—') : (r.orsak || r.orsakEn || r.x || '—');
+    const svar = r.atgard === 'svar' ? status('bra', 'skickat')
+      : r.atgard === 'utkast' ? status('varning', 'utkast — inte skickat')
+        : r.atgard === 'fel' ? status('kritisk', 'fel')
+          : status('neutral', 'inget svar');
+    const va = [r.flaggad ? t('flaggad') : null, r.flyttad ? `→ ${r.flyttad}` : null].filter(Boolean).join(' · ');
+    return `<tr>
+      <td class="tal"><span class="mini">${esc(sedan(r.tid))}</span></td>
+      <td><span class="namn">${esc(r.butik)}</span>${r.sprak ? `<span class="bi">${esc(r.sprak)}</span>` : ''}</td>
+      <td><span class="namn">${esc(order)}</span>${r.amne ? `<span class="bi">${esc(r.amne)}</span>` : ''}</td>
+      <td>${esc(varfor)}</td>
+      <td>${svar}${va ? `<span class="bi">${esc(va)}</span>` : ''}</td>
+    </tr>`;
+  });
+
+  return block({
+    titel,
+    under,
+    innehall: `<div class="kort-rad">${korten}</div>
+    ${arga.length ? panel({
+      titel: 'Arga kunder',
+      under: 'Nyast först. Boten har svarat lugnande — VA:n tar över ärendet och svarar kunden själv.',
+      innehall: tabell(
+        [{ titel: 'När' }, { titel: 'Butik' }, { titel: 'Order' }, { titel: 'Vad kunden var arg över' }, { titel: 'Botens svar' }],
+        rader,
+      ),
+      fot: `Utkast betyder att svaret ligger i Drafts och inte har nått kunden. Skickat betyder att kunden fått det.${arga.length > 30 ? ` Visar 30 av ${arga.length}.` : ''}`,
+    }) : tomt('Inga arga kunder i loggen', 'Boten har inte klassat något mejl som argt de senaste 30 dagarna.')}`,
+  });
+}
+
 // ------------------------------------------------------------ kundtjänst
 
 export function kundtjanstSida({ snapshot, nu = new Date() }) {
+  const autosvaret = autosvarBlock(snapshot?.autosvar, { nu, namnFor: (id) => butiksnamnFor(snapshot, id) });
   const k = snapshot?.kundtjanst ?? { status: 'saknas', brands: [] };
   if (k.status !== 'ok' || !k.brands.length) {
     return {
       titel: 'Kundtjänst',
       innehall: `${sidhuvud({ rubrik: 'Kundtjänst', under: 'Mejl, ärenden och tvister.' })}
+      ${autosvaret}
       ${tomt('Ingen veckorapport än', k.orsak ?? 'Kundtjänstrutinen har inte kört klart en vecka.')}`,
     };
   }
@@ -99,6 +198,8 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
       farsk: k.brands[0]?.kord ? `${esc(t('Rapport körd'))} <b>${esc(t(sedan(k.brands[0].kord)))}</b>` : '',
     })}
     <div class="kort-rad">${brandkort}</div>
+
+    ${autosvaret}
 
     ${block({
       titel: 'Tvister som brådskar',

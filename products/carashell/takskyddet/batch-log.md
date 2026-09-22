@@ -1635,3 +1635,144 @@ produkten och inte bara NO.
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1551959238685753457`, ingen ACTION NEEDED.
+
+---
+
+## USA-runda 9 — 2026-09-22 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**Tom runda. Inget översatt, inget uppladdat, inget rört.**
+
+| Kö | Rader | Att göra |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 0 | — |
+| `Approved` (eftersläpningskollen) | 49 | 0 — varenda rad bär redan en US-annons |
+
+De 49 är gårdagens 44 plus de fem bilderna från USA-runda 8, som flyttades till
+`Approved` i samma körning. Kön är alltså i kapp i båda statusarna.
+
+**Kontokollen (US-kampanjen `120251451415500435`, ACTIVE, 12 adsets):** 65
+annonser, **alla 65 ACTIVE**. Gårdagens fem (`BOF_107_1`, `BOF_108_1`,
+`BOF_109_1`, `PD_110_1`, `CS_113_1`) klarade Metas granskning — ingen
+underkänd, ingen begränsad.
+
+**Butiken redo för USA:** produktsidan svarar 200 på engelska ("Roof Cover for
+Travel Trailers & Motorhomes 18–44 ft") med **199 USD från 249**, och
+lagerrensningssidan annonserna pekar på svarar 200 som amerikansk besökare med
+samma två tal och 90-dagarsgarantin. Talen stämmer mot `marknadspriser` USD
+199 / 249 i produktfilen.
+
+**Meta strypte kontot i ~25 minuter under körningen.** Eftersläpningskollen
+läser även det norska kontot (`915422744950975`) för att se vilka marknader
+varje rad redan bär, och där slog kod 17 till: verktygets egen backoff
+(30 → 60 → 120 → 240 s) räckte inte, och två körningar i rad gav tom fil.
+Lösningen var att köra om kön tills den gick igenom — inget saknas i
+rapporten. Rimlig orsak: CaraShells fyra andra rutiner (NO 16:05 och 16:15,
+speglingarna 16:45 och 16:55) läser samma konto strax före den här.
+
+**Kvarstår oförändrat, ingen åtgärd:**
+- `CARASHELL_US_Taköverdrag …` (originalet) är PAUSED med 2 246 kr spend —
+  ägarens beslut, aldrig mål för uppladdning.
+- Kön kan inte läsa priset själv, för kampanjens ärvda länk är
+  lagerrensningssidan och inte `/products/<handle>`. Priset läses manuellt ur
+  de amerikanska sidorna varje runda.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1551982001806905545`, ingen ACTION NEEDED.
+
+---
+
+## Spegling 2026-09-22 — 9 av 9, 18 annonser live, två NO-annonser i en andra omgång
+
+Kön hade **9 rader** i `CaraShell SE ready to be active`, alla video ur
+LISTICLE-ronden, alla gröna på pris (1 129 kr mot butikens 1 129).
+Torrkörningen: 9 speglade, 0 hoppade, 0 fel.
+
+| Källrad | Spegelnamn | SE-annons | NO-annons |
+|---|---|---|---|
+| Takoverdrag_OB_2_H1 | CaraShellRoof_OB_102_H1 | 120249219182040172 | 120249219188850172 |
+| Takoverdrag_TR_3_H1 | CaraShellRoof_TR_103_H1 | 120249219198500172 | 120249219342600172 |
+| Takoverdrag_GT_10_H1 | CaraShellRoof_GT_110_H1 | 120249219359450172 | 120249219376980172 |
+| Takoverdrag_CO_3_H1 | CaraShellRoof_CO_103_H1 | 120249219580260172 | 120249219610580172 |
+| Takoverdrag_GT_7_H1 | CaraShellRoof_GT_107_H1 | 120249219634340172 | 120249219738560172 |
+| Takoverdrag_RI_2_H1 | CaraShellRoof_RI_102_H1 | 120249219751100172 | 120249219766110172 |
+| Takoverdrag_GT_8_H1 | CaraShellRoof_GT_108_H1 | 120249219941370172 | 120249219954690172 |
+| Takoverdrag_CS_8_H1 | CaraShellRoof_CS_108_H1 | 120249219971810172 | 120249220305570172 |
+| Takoverdrag_CS_7_H1 | CaraShellRoof_CS_107_H1 | 120249220065150172 | 120249220320230172 |
+
+Tillbakaläst ur Meta: alla 18 har `status: ACTIVE` i rätt kampanj i OPS-kontot.
+Tre stod i Metas granskningsfönster (`PENDING_REVIEW` / `IN_PROCESS`) vid
+avläsningen — normalt, adsetet är ACTIVE.
+
+**Dessutom: 5 källrader blev `Approved`** — gårdagens rader har fått sina
+US-annonser i Magiborsten UK (`120251535…`/`120251536…`).
+
+### Rotorsak: "0 fel" dolde två misslyckade NO-uppladdningar
+
+De två sista raderna (`CS_8_H1`, `CS_7_H1`) fick sin **svenska** annons live men
+inte sin norska: Meta svarade `User request limit reached` (kod 17) mitt i
+körningen. Verktyget räknade ändå båda raderna som **speglade** och skrev
+`0 fel` i sammanfattningen, för SE gick igenom och hubbraden skapades. Felet
+stod bara som en `✗`-rad mitt i loggen.
+
+**Så här hittades det:** tillbakaläsningen ur Meta gav 16 annons-id, inte 18.
+En körning som säger "9 speglade, 0 fel" kan alltså sakna en halv rad —
+**räkna alltid annonserna, lita inte på sammanfattningen.**
+
+Rättat samma kväll: efter ~15 minuters väntan svarade Meta igen, och en
+omkörning med `--fran "CaraShell EN ready to be active"` laddade upp precis de
+två saknade NO-annonserna (allt annat hoppades med "finns redan"). Hubbraderna
+hade skapats med bara den svenska filen, så den norska bifogades för hand med
+`tools/notion-fil-upp.mjs` — båda raderna bär nu två filer.
+
+⚠️ Kvarstående varning: `CARASHELL_SE_Taköverdraget LISTICLE` är eget spår och
+tar aldrig emot speglade annonser.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1552006055792214069`, ingen ACTION NEEDED.
+
+---
+
+## 2026-09-22 kväll — FEL SPRÅK i US-runda 7: fyra videor renderade med norsk röst (rättat)
+
+**Axels fynd:** `CaraShellRoof_US_PD_107_H1` och `PD_106_H1` låter som norska, engelska
+och svenska blandat — "varannat ord på engelska, varannat på norska". Han antog att den
+norska filen översatts till engelska. Mätningen visar en annan rotorsak, med samma resultat:
+
+| Bevis | Vad det säger |
+|---|---|
+| `2026-09-20-us/video/batch.json.state.json` | alla fyra proofread-id slutar på `-nb-nb-NO`, render-id på `-nb` (16/9 och 18/9: `-en-en-US`) |
+| HeyGen `GET proofreads/89a6bc…-nb-nb-NO` | `output_language: "Norwegian Bokmål (Norway)"`, titel `NO_carashell_PD_106_H1` |
+| HeyGen render `3ef025…-nb` | `output_language: Norwegian`, men `caption.srt` är **engelsk** ("One person, that's all it takes.") |
+| Källfilen i `jobb.json` | `filer[0] = CaraShellRoof_PD_106_H1.mp4` (svensk), NO-filen låg tvåa — källan var rätt |
+| Meta | fyra annonser skapade 20/9 15:37–15:40 UTC, längder 18,08 / 17,96 / 17,36 / 16,24 s = renderna |
+
+**Rotorsak:** rutinen körde `pipeline/translate-batch.mjs` utan `--lang`/`--marknad`.
+Verktyget föll tyst tillbaka på `Norwegian Bokmål (Norway)` / `NO_`. HeyGen skapade en
+norsk session, subagenten skrev engelsk SRT, `apply` lade in den, och rendern blev en
+norsk röstmodell som läser engelsk text. `rostkoll.py` var grön (den mäter ljud, inte
+språk) och batch-loggen skrev "Videorna (HeyGen, amerikansk engelska)" — vad rutinen
+tänkte göra, inte vad HeyGen svarade. Ingen kontroll läste `output_language`.
+
+**Omfattning:** exakt fyra US-videor: `OB_101_H1`, `PD_107_H1`, `RI_103_H1`, `PD_106_H1`
+(`120251517183220435`, `…190490435`, `…195980435`, `…205690435`). De 20 andra
+US-videorna (16/9 ×12, 18/9 ×8) har `-en-en-US` och `output_language: English (United
+States)` — kontrollerat mot HeyGen med `translate-batch.mjs status --marknad=US`. Spend
+på de fyra: 267 + 343 + 127 + 82 = **820 kr, 0 köp**.
+
+**Gjort 2026-09-22 (den här sessionen):**
+- De fyra annonserna **PAUSED + omdöpta `…_FELSPRAK`** i Magiborsten UK (tillbakalästa).
+  Namnet är fritt, så US-rutinen laddar upp en rätt version under rätt namn.
+- Notion-raderna i CaraShells hub: kommentar + `Approved → SE-ACTIVE to be translated`.
+  NO-rutinen ser "finns redan" och rör dem inte; US-rutinen översätter den SVENSKA filen.
+- `pipeline/translate-batch.mjs`: `--marknad` obligatorisk, språket ur nya
+  `pipeline/sprak.mjs`, `--lang` får bara upprepa tabellen; HeyGens `output_language`
+  läses vid proofread, render och download; SRT-språkkoll (HeyGens översättning OCH den
+  rättade) — fel språk ⇒ `srtDone: 'fel-sprak'`, ingen render, ingen fil, exit 1.
+  `status` reviderar gamla batcher live (så här hittades felet: 4 × `✗ FEL SPRÅK`).
+- `tools/notion-fil.mjs --utan-marknadsfiler` (alltid från `ops-leveranskon` och
+  `ops-spegla`): en `_NO_`-fil blir aldrig källa; bara marknadsfiler ⇒ fel.
+- Tester: `pipeline/test/sprak.test.mjs`, `factory/test/opsmarknader.test.mjs`,
+  `tools/test/ops-spegla.test.mjs`.
+
+**Kvar:** de fyra koncepten saknar engelsk version tills US-rutinen (17:05) kört
+raderna igen — med spärrarna på plats kan den inte rendera norska av misstag.

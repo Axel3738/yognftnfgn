@@ -152,11 +152,33 @@ textversionen bytts in) eller som `image_hash` i den gamla Meta-creativen
 färdig bild innan uppladdning — samma lätta granskning som `/ops-bild`.
 
 ### 4. Video — exakt `/oversatt` Fas 4
-`translate-batch.mjs … --lang="<heygen_sprak ur kön>" --marknad=<M>`.
+```bash
+cd pipeline
+node translate-batch.mjs proofread --manifest=<batch.json> --marknad=<M>
+node translate-batch.mjs apply     --manifest=<batch.json> --marknad=<M> --srtdir=<rättade>
+node translate-batch.mjs render    --manifest=<batch.json> --marknad=<M>
+node translate-batch.mjs download  --manifest=<batch.json> --marknad=<M> --out=<mapp>
+node translate-batch.mjs status    --manifest=<batch.json> --marknad=<M>   # språk per post, ✗ = fel språk
+```
+⛔ **`--marknad=<M>` på VARJE anrop — utan den stannar verktyget** (rättat
+2026-09-22). Språket kommer ur `pipeline/sprak.mjs` (US ⇒ `English (United
+States)`), aldrig ur ett standardvärde: US-rundan 2026-09-20 kördes utan
+flaggan, verktyget föll tillbaka på norska, och fyra videor
+(`OB_101_H1`, `PD_107_H1`, `RI_103_H1`, `PD_106_H1`) gick live i USA med
+NORSK röstmodell som läste engelsk text — batch-loggen sa "amerikansk
+engelska", HeyGens session sa `output_language: Norwegian`. Verktyget
+läser nu HeyGens `output_language` vid proofread, render och download och
+språkkollar SRT-texten (HeyGens och den rättade); fel språk ⇒ posten
+stoppas, exit 1, ingen fil i `out/`. **Källfilen är ALLTID den svenska**:
+`--ut` hämtar med `--utan-marknadsfiler`, så `CaraShellRoof_NO_…` på
+spegelraden hoppas — bara NO-filer ⇒ fel, aldrig "första bästa".
 Proofread → SRT lokaliseras av subagenten (samma blockantal/timecodes) →
 apply → render → download → `no-precis.py`/`no-captions.py` bara om källan
 har inbränd text (skripten är språkoberoende trots namnet) → `rostkoll.py`.
-Tom `.orig.srt` = inget tal = ingen render.
+Tom `.orig.srt` = inget tal = ingen render. **Lyssna på minst en färdig
+video innan uppladdning** — `rostkoll.py` mäter tystnad och längd, inte
+språk; det som fångar en norsk röst med engelsk text är ett öra, eller
+`status`-raden ovan.
 
 **AI-raden — bara `--marknad US` (USA, GB, CA, AU, NZ), aldrig NO** (Axels
 beslut 2026-09-21, `docs/os/CS-KLART.md` punkt 27). Efter `rostkoll.py`,
@@ -213,6 +235,7 @@ Pusha till `main`.
 - [ ] Varje rad i kön redovisad: översatt + uppladdad / hoppad med skäl / redan uppe
 - [ ] Bilder: QA-bild läst per bild, inget svenskt kvar, siffror rätt
 - [ ] Video: proofread före render, källvideo skannad efter inbränd text, röstkoll grön
+- [ ] Video: `translate-batch.mjs status --marknad=<M>` visar ✓ marknadens språk på varje post (inget ✗), och källfilen var den svenska (ingen `_NO_`-fil i `se/`)
 - [ ] Copy utan pris eller med priset ur `ekonomi.marknadspriser`; inget påhittat belopp någonstans
 - [ ] Uppladdning torrkörd först, skarp sedan, tillbakaläst ACTIVE/ACTIVE; ett adset per koncept; rätt konto
 - [ ] Rader flyttade till `Approved` BARA när alla annonsmarknader bär annonsen; annars kommentar
