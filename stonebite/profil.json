@@ -14,10 +14,10 @@
     "telefon": ""
   },
   "hero": {
-    "overrad": "E-handel · AI · Film · Konsult",
+    "overrad": "E-handel · AI · Film · YouTube",
     "rubrik": "Vi bygger butiker som säljer.",
     "underrad": "Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA. Vi hittar produkten, bygger butiken, gör reklamen och sköter kunderna — allt själva. Och vi filmar resan.",
-    "band": ["E-handel", "Egna varumärken", "AI som gör jobbet", "Film och foto varje dag", "YouTube", "Fem länder", "Konsult inom e-handel och AI", "Kunden efter köpet"]
+    "band": ["E-handel", "Egna varumärken", "AI som gör jobbet", "Film och foto varje dag", "YouTube", "Fem länder", "Mikroinfluencers", "Kunden efter köpet"]
   },
   "bilder_kommentar": "Bilderna genereras av `node stonebite/bilder.mjs` ur stonebite/bilder.json och ligger i stonebite/webb/bilder/. Tom sökväg ⇒ ingen bild ritas. Alt-texterna står här så sidan går att läsa med skärmläsare.",
   "bilder": {
@@ -25,7 +25,7 @@
     "paket": { "fil": "/webb/bilder/paket.jpg", "alt": "Ett blankt svart paket med en tunn lysande kant, svävande i en mörk studio" },
     "varlden": { "fil": "/webb/bilder/varlden.jpg", "alt": "En glob av tunna lysande linjer och punkter i cyan" },
     "youtube": { "fil": "/webb/bilder/youtube.jpg", "alt": "En kamera på stativ framför en vägg av mjuka neonpaneler i cyan och violett" },
-    "tjanster": { "fil": "/webb/bilder/tjanster.jpg", "alt": "Svävande glaspaneler och lysande lager över ett mörkt, speglande golv" }
+    "influencers": { "fil": "/webb/bilder/influencers.jpg", "alt": "Svävande glaspaneler och lysande lager över ett mörkt, speglande golv" }
   },
   "vad_vi_gor": [
     {
@@ -58,32 +58,31 @@
       { "titel": "Lifestyle", "text": "Livet runt jobbet. Platserna vi jobbar från, människorna, kvällarna efter att paketen gått ut." }
     ]
   },
-  "tjanster_kommentar": "Sidan /tjanster. Axels beslut 2026-09-21: vi bedriver e-handel och kan också bedriva konsulttjänster 'inom all möjliga grejer' — och 2026-09-22: 'konsulttjänsterna kan vara för AI och liksom allt möjligt'. Därför står AI först och bredast, och sista rutan öppnar för allt annat. Inga kundnamn, inga priser, inga påhittade resultat — bara vad vi faktiskt gör och hur vi jobbar. Kontakt går till kontakt.epost.",
-  "tjanster": {
-    "etikett": "Tjänster",
-    "rubrik": "E-handel, AI och det mesta däremellan.",
-    "ingress": "Vi driver egna butiker där AI gör riktigt arbete varje dag: bygger butikerna, producerar annonserna, tar budgetbesluten på natten, svarar kunderna. Allt vi erbjuder är sådant vi redan använder själva. Det är skillnaden mot en byrå — vi lever på att det fungerar, inte på att sälja timmar.",
-    "omraden": [
-      { "titel": "AI som gör jobbet", "text": "Vi bygger AI-agenter och rutiner som utför riktigt arbete — inte demos. Hos oss laddar de upp annonser, tar budgetbeslut, skriver briefer, granskar leveranser och rapporterar till teamet. Samma sak går att bygga för er verksamhet, oavsett bransch." },
-      { "titel": "AI-producerat innehåll", "text": "Bild, video och röst genererade av AI, granskade av människor: annonser, produktbilder, dubbning av film till nya språk med bibehållen röst. Vi gör det i fem länder i dag." },
-      { "titel": "Automatisering och interna verktyg", "text": "Det ni gör för hand varje dag kan en rutin göra på natten: rapporter, uppföljning, dashboards, bonussystem, kontroller. Byggt utan tunga system, så ni äger och förstår det." },
-      { "titel": "Starta eller bygga om butiken", "text": "Shopify från grunden eller en befintlig butik som ska sälja bättre: produktsida, kassa, betalningar, frakt, språk och valutor för nya länder." },
-      { "titel": "Annonser som mäts på vinst", "text": "Meta-annonsering med struktur för test, skalning och avstängning. Vi räknar på break-even per produkt, inte på klick." },
-      { "titel": "Film och bild för annonser", "text": "Ett eget produktionsteam gör video och stillbild varje dag. Vi kan producera åt er eller bygga upp ert eget flöde med briefer, granskning och utvärdering." },
-      { "titel": "Nya marknader", "text": "Sverige, Norge, Danmark, Finland och USA i drift. Översättning av butik och annonser, prissättning i landets valuta, moms och tull i praktiken." },
-      { "titel": "Leverans och spårning", "text": "Spårningssidor kunden faktiskt förstår, leveransmejl som skickas när något händer och en process för paket som fastnar." },
-      { "titel": "Kundtjänst och tvister", "text": "Rutiner för inkorgen, svarstider som går att mäta och en handbok för chargebacks och återbetalningar som vinner de tvister som går att vinna. Med AI som stöd, inte som ersättning." },
-      { "titel": "Team och arbetsflöde", "text": "Hur man briefar redigerare, mäter deras arbete och betalar på resultat. Vi gör det med ett eget team i dag." },
-      { "titel": "Rådgivning", "text": "En timme eller en dag med någon som byggt det själv: var ni ska börja, vad ni ska låta vara, vad som faktiskt kostar pengar." },
-      { "titel": "Något annat?", "text": "Står det inte här betyder det inte att vi inte kan. Skriv och berätta vad ni brottas med — vi säger rakt ut om vi är rätt för det." }
+  "influencers_kommentar": "Sidan /influencers — det ENDA bolaget erbjuder andra. Axels beslut 2026-09-22: 'jag vill inte sälja några tjänster eller mentorskap eller någonting, jag vill bara ha information om mitt företag' — konsultsidan /tjanster med tolv områden togs bort samma dag (adressen svarar 301 hit). Erbjudandet med hans ord: butiker som redan kör e-handel och vill ha influencers mejlar vilken butik de har och vilken produkt de säljer, och får samma dag kontaktuppgifter till mikroinfluencers (5–20 tusen kr styck, 'jävligt high performing'). Betalning: fast pris i förskott ELLER 10 % av det de totalt lägger på influencers — kunden väljer. Axel sa '20 tusen eller 30 tusen' om det fasta priset: 20 000 står i pris.fast tills han bestämt. Ett tomt belopp ⇒ det alternativet visas inte. Inga kundnamn, inga påhittade resultat, inga butiker. Mejlen går till kontakt.epost.",
+  "influencers": {
+    "etikett": "Mikroinfluencers",
+    "rubrik": "Mikroinfluencers som säljer. Kontakterna samma dag.",
+    "ingress": "Ni driver redan en e-handel och vill jobba med influencers, men vet inte vilka. Berätta vilken butik ni har och vilken produkt ni säljer. Samma dag får ni kontaktuppgifter till mikroinfluencers som passar er produkt.",
+    "punkter": [
+      { "titel": "Mikroinfluencers, inte kändisar", "text": "Kreatörer som kostar 5 000 till 20 000 kr per samarbete. Små nog att vara trovärdiga, bra nog att sälja." },
+      { "titel": "Kontakterna samma dag", "text": "Ni mejlar butik och produkt. Vi svarar samma dag med kontaktuppgifter till dem som passar." }
     ],
-    "sa_jobbar_vi": [
-      { "steg": "1", "titel": "Ett samtal", "text": "Ni berättar var det skaver. Vi säger rakt ut om vi kan hjälpa — och om vi inte kan." },
-      { "steg": "2", "titel": "En plan med siffror", "text": "Vad som ska göras, i vilken ordning, och hur vi vet om det fungerade. Inga luddiga mål." },
-      { "steg": "3", "titel": "Vi gör det, eller lär er göra det", "text": "Antingen bygger vi, eller så bygger vi upp det hos er så ni klarar er själva sen. Ni väljer." }
+    "sa_gar_det_till": [
+      { "steg": "1", "titel": "Mejla oss", "text": "Skriv vilken butik ni har och vilken produkt ni säljer. Mer behöver vi inte veta." },
+      { "steg": "2", "titel": "Vi väljer ut", "text": "Vi plockar de mikroinfluencers som passar er produkt. Inte de största, utan de som presterar." },
+      { "steg": "3", "titel": "Ni får kontakterna", "text": "Samma dag har ni kontaktuppgifterna i inkorgen. Ni tar kontakten och gör upp direkt med kreatören." }
     ],
-    "kontakt_rubrik": "Vill ni prata?",
-    "kontakt_text": "Skriv ett par rader om vad ni säljer och vad ni vill ha hjälp med. Vi svarar inom ett par dagar."
+    "pris": {
+      "rubrik": "Två sätt att betala. Ni väljer.",
+      "fast": "20 000 kr",
+      "fast_text": "Fast pris, betalas i förskott. Sedan är det klart.",
+      "andel": "10 %",
+      "andel_text": "av det ni totalt lägger på influencers. Inget i förskott."
+    },
+    "avgransning": "Det här är det enda vi erbjuder andra. Resten av tiden driver vi våra egna butiker.",
+    "kontakt_rubrik": "Vill ni ha kontakterna?",
+    "kontakt_text": "Mejla oss vilken butik ni har och vilken produkt ni säljer, och om ni vill betala fast pris eller andel.",
+    "mejl_amne": "Mikroinfluencers"
   },
   "siffror_kommentar": "Sidan visar aldrig påhittade tal. Antal varumärken och marknader räknas ur listan nedan; egna siffror här under visas bara om de är ifyllda.",
   "siffror": [

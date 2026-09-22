@@ -331,14 +331,31 @@ med egen text om att bolaget lägger tid, utrustning och resor på den.
   tre format (Vloggar, Tutorials, Lifestyle). Tom `url` ⇒ texten står kvar,
   ingen knapp, ingen youtube.com-länk — testet "YouTube-sektionen länkar bara
   när adressen är ifylld" bevisar det. Inga påhittade tittarsiffror.
-- **Konsult:** `/tjanster` (`stonebite/vy/tjanster.mjs`, `profil.tjanster`):
-  tolv områden med **AI först** (Axel 2026-09-22: "konsulttjänsterna kan vara
-  för AI och liksom allt möjligt" — AI som gör jobbet, AI-producerat innehåll,
-  automatisering, sedan butik/annonser/film/marknader/leverans/kundtjänst/team,
-  rådgivning och en öppen "Något annat?"), "Så jobbar vi" i tre steg,
-  kontaktruta → `contact@stonebite.org`. Allt som står där gör vi redan i
-  egna butiker — inga kundnamn, inga priser, inga påhittade resultat.
-  Startsidan har en mörk teaser som visar de tre första områdena.
+- ⛔ **Konsultsidan är BORTTAGEN 2026-09-22.** Axel: "jag vill inte sälja
+  några jävla tjänster eller mentorskap eller någonting. Jag vill bara ha
+  information om mitt företag." Den tolv områden långa `/tjanster` (byggd
+  2026-09-21/22 på hans dåvarande order "konsulttjänsterna kan vara för AI och
+  liksom allt möjligt") är borta; adressen svarar **301 till `/influencers`**,
+  och testet "publika sidan säljer inga tjänster" stoppar orden konsult,
+  mentorskap, rådgivning och tjänster på varje publik sida. **Bygg aldrig
+  tillbaka den.** Den publika sidan är information om bolaget: e-handeln,
+  YouTube, bolagsfakta — plus det enda erbjudandet nedan.
+- **Mikroinfluencers — det enda bolaget erbjuder andra:** `/influencers`
+  (`stonebite/vy/influencers.mjs`, `profil.influencers`). Med Axels ord
+  (2026-09-22): butiker som redan kör e-handel och vill ha influencers mejlar
+  vilken butik de har och vilken produkt de säljer, och får **samma dag**
+  kontaktuppgifter till mikroinfluencers (5 000–20 000 kr per samarbete,
+  "jävligt high performing"). Betalning: **fast pris i förskott ELLER 10 % av
+  det de totalt lägger på influencers** — kunden väljer; köp = mejla
+  `contact@stonebite.org`. ⚠️ Axel sa "20 tusen eller 30 tusen" om det fasta
+  priset — **20 000 kr står i `profil.influencers.pris.fast` tills han
+  bestämt**; ett tomt belopp ⇒ alternativet ritas inte (testat). Beloppen
+  står BARA i profilen: startsidans mörka teaser (`influencerTeaser`) och
+  sidans tredje ruta byggs ur samma fält (`prisPunkt`), så priset kan inte
+  säga två saker. Menyn och sidfoten säger "Influencers". Inga påhittade
+  resultat, inga kundnamn, inga butiker. Servern läser `profil.json` från
+  disk vid varje visning (snapshotens kopia är bara reserv — förut vann den,
+  så en textändring syntes först när timrutinen skrivit om snapshoten).
 - **Bilder:** `node stonebite/bilder.mjs` genererar `stonebite/webb/bilder/*.jpg`
   ur `stonebite/bilder.json` via kie.ai (`google/nano-banana`, JPEG, 50–190 kB;
   ingen bildbehandling finns i containern så filen används som den kommer).
@@ -363,7 +380,7 @@ domän, plus siffrorna "Varumärken 11" och "Länder vi säljer i 6" — alltså
 färdig kopieringslista åt vem som helst som öppnar stonebite.org. Listan,
 siffrorna, hero-knappen "Se våra butiker" och menylänken "Varumärken" är
 borttagna; `profil.varumarken` ligger kvar i filen och visas **bara inloggad**,
-på sidan Butiker. Ett test hämtar `/` **och `/tjanster`** och letar efter varje
+på sidan Butiker. Ett test hämtar `/` **och `/influencers`** och letar efter varje
 butiksnamn och varje domän ur `profil.json` (`stonebite/test/server.test.mjs` →
 "publika sidan nämner inte en enda butik"). **Bygg aldrig tillbaka det** — inte
 som lista, inte som antal, inte som logotyper. Den publika sidan säger vad

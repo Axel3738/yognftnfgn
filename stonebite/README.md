@@ -197,15 +197,32 @@ vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
 
 ## Den publika sidan (ombyggd 2026-09-21 kväll)
 
-Tre grenar visas: **e-handeln**, **YouTube-kanalen**
+Två grenar visas: **e-handeln** och **YouTube-kanalen**
 (`profil.youtube`, https://www.youtube.com/@Stonebite.channel — vloggar,
 tutorials, lifestyle; en egen verksamhet bolaget lägger tid, utrustning och
-resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: tolv
-områden med AI först — agenter som gör riktigt arbete, AI-producerat innehåll,
-automatisering — sedan e-handeln, rådgivning och en öppen "Något annat?";
-"Så jobbar vi"; kontaktruta → `kontakt.epost`). Allt kommer ur `profil.json`;
-tom `youtube.url` ⇒ texten står kvar men ingen knapp. Startsidans teaser visar
-de tre första områdena, så ordningen i listan är ett val.
+resor på). Allt kommer ur `profil.json`; tom `youtube.url` ⇒ texten står kvar
+men ingen knapp.
+
+**Konsultsidan är borttagen (2026-09-22).** Axel: "jag vill inte sälja några
+tjänster eller mentorskap eller någonting, jag vill bara ha information om
+mitt företag". `/tjanster` svarar 301 till `/influencers`, och testet "publika
+sidan säljer inga tjänster" stoppar orden konsult, mentorskap, rådgivning och
+tjänster på varje publik sida.
+
+**Det enda bolaget erbjuder andra: mikroinfluencers** på `/influencers`
+(`vy/influencers.mjs`, `profil.influencers`). Butiker som redan kör e-handel
+och vill ha influencers mejlar butik + produkt och får kontaktuppgifter till
+mikroinfluencers (5 000–20 000 kr per samarbete) samma dag. Betalning: fast
+pris i förskott (`pris.fast`) **eller** 10 % av det de totalt lägger på
+influencers (`pris.andel`) — kunden väljer, köp = mejla `kontakt.epost`.
+Beloppen står bara i profilen; ett tomt belopp ⇒ det alternativet ritas inte.
+Startsidan har en mörk teaser (`influencerTeaser`) med samma punkter, menyn
+och sidfoten säger "Influencers". ⚠️ Axel sa "20 tusen eller 30 tusen" om det
+fasta priset — 20 000 står tills han bestämt.
+
+Servern läser `profil.json` från disk vid varje visning; snapshotens kopia är
+bara reserv. (Förut vann snapshoten, så en textändring syntes först när
+timrutinen skrivit om den — upp till en timme efter deployen.)
 
 **Bilderna** (`webb/bilder/*.jpg`, 50–190 kB) genereras av
 `node stonebite/bilder.mjs` ur `bilder.json` via kie.ai — abstrakta,
@@ -221,7 +238,7 @@ med `prefers-reduced-motion`. Ingen rörelse bär information.
 
 ⚠️ Inte ett butiksnamn, inte en domän, inte ett antal på någon publik sida —
 testet "publika sidan nämner inte en enda butik" går över både `/` och
-`/tjanster`.
+`/influencers`.
 
 ⚠️ Certifikatet går inte att kontrollera från en claude.ai-container — proxyn
 MITM:ar HTTPS och visar alltid Anthropics eget cert. Kolla i en webbläsare

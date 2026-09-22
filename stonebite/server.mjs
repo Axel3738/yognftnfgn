@@ -25,7 +25,7 @@ import * as anv from './anvandare.mjs';
 import { farSe, harRatt, startsidaFor, SIDOR } from './roller.mjs';
 import { lasSnapshot } from './data.mjs';
 import { publikSida } from './vy/publik.mjs';
-import { tjansterSida } from './vy/tjanster.mjs';
+import { influencerSida } from './vy/influencers.mjs';
 import { loginSida, uppstartSida } from './vy/login.mjs';
 import { oversiktSida } from './vy/oversikt.mjs';
 import { butikerSida } from './vy/butiker.mjs';
@@ -113,10 +113,10 @@ function svaraHtml(res, html, { status = 200, nonce, https, kaka = null } = {}) 
   res.end(html);
 }
 
-function omdirigera(res, till, { kaka = null } = {}) {
+function omdirigera(res, till, { kaka = null, status = 303 } = {}) {
   const rubriker = { Location: till, 'Cache-Control': 'no-store' };
   if (kaka) rubriker['Set-Cookie'] = kaka;
-  res.writeHead(303, rubriker);
+  res.writeHead(status, rubriker);
   res.end();
 }
 
@@ -344,9 +344,13 @@ export async function hantera(req, res) {
   }
 
   // --------------------------------------------------------- publikt
+  // Profilen läses ur filen vid varje visning — det är vad profil.json lovar.
+  // Snapshotens kopia är bara reserv: den skrivs en gång i timmen av rutinen,
+  // och hade den fått vinna hade varje textändring synts först upp till en
+  // timme efter deployen (mätt 2026-09-22 när konsultsidan byttes ut).
   if (stig === '/' && req.method === 'GET') {
     const snap = snapshot();
-    const profil = snap?.profil ?? lasProfil(ROT);
+    const profil = lasProfil(ROT) ?? snap?.profil;
     const butiker = (snap?.butiker ?? []).filter((b) => b.status === 'ok').length;
     const marknader = new Set((snap?.butiker ?? []).filter((b) => b.status === 'ok').map((b) => b.valuta)).size;
     return svaraHtml(res, publikSida({
@@ -357,11 +361,16 @@ export async function hantera(req, res) {
     }), { nonce, https });
   }
 
-  // Konsulttjänsterna — publik, samma profil som startsidan.
+  // Mikroinfluenserna — det enda bolaget erbjuder andra. Publik, samma profil.
+  if (stig === '/influencers' && req.method === 'GET') {
+    const profil = lasProfil(ROT) ?? snapshot()?.profil;
+    return svaraHtml(res, influencerSida({ profil, inloggad: Boolean(anvandare), nonce }), { nonce, https });
+  }
+
+  // Konsultsidan togs bort 2026-09-22 (Axel: inga tjänster, inget mentorskap).
+  // Adressen kan ligga kvar i någons flik eller mejl — den pekar hit för alltid.
   if (stig === '/tjanster' && req.method === 'GET') {
-    const snap = snapshot();
-    const profil = snap?.profil ?? lasProfil(ROT);
-    return svaraHtml(res, tjansterSida({ profil, inloggad: Boolean(anvandare), nonce }), { nonce, https });
+    return omdirigera(res, '/influencers', { status: 301 });
   }
 
   // ------------------------------------------------------- inloggning
