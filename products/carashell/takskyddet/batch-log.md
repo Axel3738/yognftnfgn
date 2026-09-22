@@ -1776,3 +1776,30 @@ på de fyra: 267 + 343 + 127 + 82 = **820 kr, 0 köp**.
 
 **Kvar:** de fyra koncepten saknar engelsk version tills US-rutinen (17:05) kört
 raderna igen — med spärrarna på plats kan den inte rendera norska av misstag.
+
+---
+
+## Nattvakten 2026-09-23 — noll budgetändringar, en annons pausad
+
+**Budget:** båda SE-kampanjerna orörda. Huvudkampanjen ligger kvar på
+9 600 kr/dygn (vinst 3d 22,0 %, ROAS 2,54 — hållbandet 16–25 %), LISTICLE på
+2 850 kr trots vinst 3d 27,5 % eftersom kadensspärren gäller (2 dygn sedan
+senaste ändring, krav 3). LISTICLE är alltså skalningsklar i morgon natt om
+siffrorna håller.
+
+**Pausad:** `CaraShellRoof_PD_5_H1` — 1 249 kr på 14 dygn, 1 köp, CPA 1 249 kr
+mot break-even 693 kr. Ny annons-regeln (≥ 3 × target-CPA 411 kr utan vinst).
+
+**7 dygn SE:** 45 957 kr, 98 köp, ROAS 2,94, vinstbidrag 36 855 kr.
+
+**Att läsa igen om ett dygn:** första dygnet på 9 600 kr var veckans svagaste —
+11 686 kr i går till ROAS 1,71, precis över break-even 1,63, 13 köp. Upprepas
+det faller vinst 3d ur hållbandet och ronden sänker i stället för att skala.
+
+⚠️ **DK körs utan vakt.** `CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5`
+(live sedan 2026-09-20, 120 annonser med produktens prefix) låg 2026-09-23 på
+6 860 kr / 8 köp / ROAS 1,52 mot break-even 1,63 — alltså under break-even —
+med 4 000 kr/dygn i budget. Nattvakten kör bara `--marknad SE`, och DK står
+inte i postens `annonsmarknader` (NO, US), så ingen rutin sänker den budgeten
+någonsin. En torrkörning med `--marknad DK` gav SÄNK 4 000 → 2 800 kr.
+Ägarens beslut: DK in i nattvakten, eller manuellt.
