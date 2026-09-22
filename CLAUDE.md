@@ -545,15 +545,27 @@ som enbart bygger yognftnfgn `main` utan domän och volym, kopplar annars bara
 bort GitHub-källan, rör aldrig `strong-solace` eller StonePNL-projektet
 (branchen `claude/bäverbutiken-settkopplingen-nba21z`), och verifierar sedan
 att kön i strong-solace börjar bygga och att `/influencers` svarar.
-**Utfall samma kväll:** Coworks inventering fann FEM dubbletter, inte fyra —
-`hearty-youth` var ny sedan dagen innan (något skapar nya Railway-projekt ur
-repot; vad är inte utrett) — och `tranquil-insight` var ingen ren dubblett.
-Cowork kan inte radera projekt ens med Axels ok (spärrat i Cowork), så vägen
-blev alternativ 2: GitHub-källan bortkopplad på de rena dubbletterna och
-deras köade deployer avbrutna. Byggplatsen blev ledig direkt: strong-solace
-byggde snapshoten 21:05 CEST och `/influencers` svarade 200 kl 21:40, www
-också, `/tjanster` 301. De tomma projekten står kvar tills Axel raderar dem.
-Dyker en ny dubblett upp: koppla bort källan på samma sätt, kör inte kön.
+**Utfall samma kväll (Coworks rapport 21:4x CEST):** kontot hade ÅTTA
+projekt, inte fem. `strong-solace` (sajten) och `robust-expression`
+(StonePNL: PNL FI/DK/UK, PNL App store, beautiful-curiosity, yognftnfgn på
+branchen `claude/bäverbutiken-settkopplingen-nba21z`, plus en Postgres med
+volym) rördes inte. Rena dubbletter av `main` utan domän och volym:
+`hearty-youth` (**ny sedan dagen innan** — något skapar nya Railway-projekt
+ur repot; vad är inte utrett), `considerate-delight`, `pretty-quietude`,
+`compassionate-sparkle` — Cowork kan inte radera projekt ens med Axels ok
+(spärrat i Cowork), så källan kopplades bort och 6 + 25 + 25 + 24 köade eller
+byggande deployer avbröts. `tranquil-insight` bygger också `main` men bär en
+volym (`yognftnfgn-volume`): källan bortkopplad, 3 deployer avbrutna,
+projektet kvar. `just-possibility` bygger en ANNAN branch
+(`claude/daily-agent-discussion-uos5df`, en annan sessions experiment) och
+rördes inte — den tar byggplats vid pushar till sin egen branch. Köerna var
+avbrutna 21:17; sajtens deploy gick till Building 21:25 och `Merge pull
+request #123` blev Active 21:33 (snapshot-deployen 21:06 REMOVED som
+överkörd). Sessionen mätte 21:40: `/influencers` 200 med nya texten på både
+direktadressen och www, startsidan utan konsult/tjänster/mentorskap/
+rådgivning, `/tjanster` 301. De tomma projekten står kvar tills Axel raderar
+dem (Settings → Danger → Delete Project). Dyker en ny dubblett upp: koppla
+bort källan och avbryt kön på samma sätt, aldrig vänta ut den.
 
 ✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
 Barkås-konto (`barkas.kundservice@gmail.com`), inte på `claude5@stonebite.org`**
