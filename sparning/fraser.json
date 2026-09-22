@@ -178,5 +178,6 @@
   "pakken din er klar til å hentes!, du må vise hentekoden du har fått på sms/e-post når du skal hente pakken": "Paketet finns att hämta hos ombudet",
   "pakken er på vei til hentested., du vil få en sms/e-post med hentekode når pakken er klar til å hentes": "Paketet är på väg till ombudet",
   "planlagt levering natt til 15. september!, tips! merk postkassen og døren din tydelig med fullt navn, så blir det enkelt for budet å finne deg. vi leverer om natten, og vil ikke ringe deg når vi leverer. du får en sms i morgen tidlig om at pakken er levert": "Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat",
-  "the parcel has arrived at the destination airport": "Flyget med paketet har landat"
+  "the parcel has arrived at the destination airport": "Flyget med paketet har landat",
+  "the shipment was unfortunately misdirected, but has been forwarded to the correct destination": "Paketet gick åt fel håll men är nu på väg till rätt ort"
 }

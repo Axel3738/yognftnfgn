@@ -181,6 +181,7 @@
     "Paketet har lämnat flygplatsen": "The parcel has left the airport",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "The parcel did not fit in the mailbox and the agreed delivery spot could not be found. It is on its way to a pickup point near you, and you will be notified when it can be collected, usually within one business day",
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "The recipient has a new address. The parcel has been re-addressed and forwarded there",
-    "Paketet är på väg till ombudet": "The parcel is on its way to the pickup point"
+    "Paketet är på väg till ombudet": "The parcel is on its way to the pickup point",
+    "Paketet gick åt fel håll men är nu på väg till rätt ort": "The parcel went the wrong way but is now on its way to the right place"
   }
 }

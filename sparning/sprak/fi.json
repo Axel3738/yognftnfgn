@@ -185,6 +185,7 @@
     "Paketet har lämnat flygplatsen": "Paketti on lähtenyt lentokentältä",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Paketti ei mahtunut postilaatikkoon eikä sovittua toimituspaikkaa löytynyt. Se on matkalla lähellä sijaitsevaan noutopisteeseen, ja saat ilmoituksen kun sen voi noutaa, yleensä yhden arkipäivän kuluessa",
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "Vastaanottajalla on uusi osoite. Paketti on uudelleenohjattu ja lähetetään sinne",
-    "Paketet är på väg till ombudet": "Paketti on matkalla noutopisteeseen"
+    "Paketet är på väg till ombudet": "Paketti on matkalla noutopisteeseen",
+    "Paketet gick åt fel håll men är nu på väg till rätt ort": "Paketti lähti väärään suuntaan, mutta on nyt matkalla oikeaan paikkaan"
   }
 }

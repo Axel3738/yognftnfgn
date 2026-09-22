@@ -185,6 +185,7 @@
     "Paketet har lämnat flygplatsen": "Pakken har forlatt flyplassen",
     "Paketet fick inte plats i brevlådan och den överenskomna leveransplatsen hittades inte. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken fikk ikke plass i postkassen, og det avtalte leveringsstedet ble ikke funnet. Den er på vei til et hentested i nærheten av deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag",
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "Mottakeren har en ny adresse. Pakken er omadressert og sendes videre dit",
-    "Paketet är på väg till ombudet": "Pakken er på vei til hentestedet"
+    "Paketet är på väg till ombudet": "Pakken er på vei til hentestedet",
+    "Paketet gick åt fel håll men är nu på väg till rätt ort": "Pakken gikk feil vei, men er nå på vei til riktig sted"
   }
 }
