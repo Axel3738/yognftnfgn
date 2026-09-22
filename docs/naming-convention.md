@@ -162,3 +162,11 @@ ur batch-loggarna.
 
 ⚠️ `arBof()` i `agent/etikett.mjs` läser fortfarande enbart `BOF` och är
 oförändrad — den handlar om funnelposition, och det är rätt.
+
+### ⚠️ Lediga AD-ID:n läses ur BÅDE annonskontot och Notion-hubben
+
+Mätt 2026-09-22: `Takoverdrag_OB_2_H1` fanns i Notion sedan 2026-09-19 (ett
+förvaringskoncept, `In progress`) men inte i kontot, som bara hade `OB_1`. En
+brief som läste lediga nummer ur kontot ensamt fick därför ett namn som redan
+bar ett annat koncept. Kontot visar bara det som gått live; hubben bär allt
+som är briefat men inte klart. Läs båda innan du numrerar.

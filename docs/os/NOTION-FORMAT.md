@@ -49,5 +49,20 @@ item rättas i itemet.
 
 ## Om Notion-MCP:n inte är ansluten i sessionen
 
-Säg det rakt ut, lista exakt vilka items som skulle ha skapats (namn + innehåll),
-och leverera resten. Låtsas aldrig att uppladdningen är gjord.
+**Finns `NOTION_TOKEN` i miljön går uppladdningen ändå** (2026-09-22):
+
+```bash
+node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--torr]
+```
+
+Den skriver raden exakt i formen ovan (Namn, `Draft`, Pending Approval-typen,
+Landing page, Skapad) med HELA briefen som sidinnehåll — rubriker, tabeller
+med kolumnhuvud, punkter — och läser tillbaka kroppen efteråt: stämmer inte
+blockräkningen skrivs FEL, aldrig "klart". Den **vägrar** om namnet redan
+finns i hubben (exit 2): en brief som redan ligger i Notion är utförd, och en
+rad till är en dubblett. Ansvarig och Prioritet sätts aldrig — de är
+managerns.
+
+Saknas både MCP och token: säg det rakt ut, lista exakt vilka items som skulle
+ha skapats (namn + innehåll), och leverera resten. Låtsas aldrig att
+uppladdningen är gjord.

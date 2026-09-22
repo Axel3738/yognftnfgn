@@ -1374,6 +1374,7 @@ Setup och tokens: `pnl-app/README.md` + `pnl-app/docs/meta-token.md`.
 | `tools/notion-klara.mjs` | Läser creative-hubbarna via Notions REST API (`NOTION_TOKEN`) — reservväg när MCP:n saknas |
 | `tools/notion-kalla.mjs` | Notion som leveranskälla: hittar alla creative hubs dynamiskt, plockar rader med färdig fil |
 | `tools/notion-fil.mjs` | Hämtar hem en Notion-bilaga (signerad URL, kortlivad — hämta vid körning, cacha aldrig) |
+| `tools/notion-brief-upp.mjs` | Lyfter EN brief.md till en creative hub som Notion-rad via REST (`NOTION_TOKEN`), i NOTION-FORMAT.md:s form, hela briefen i sidan. Vägrar dubbletter (namnet finns redan i hubben), läser tillbaka kroppen och skriver FEL om blocken inte stämmer. Byggd 2026-09-22 när en brief bara låg i repot — "briefer som bara ligger i repot finns inte för redigerarna" (Axel) |
 | `tools/notion-fil-upp.mjs` | Laddar upp en LOKAL fil till en rads `Filer och media` via REST (File Upload API, max 20 MiB) — befintliga filer behålls, tillbakaläsning före statusbyte. Ingen Notion-MCP behövs |
 | `factory/ops-bild.mjs` | OPS-butikens bildmotor: Draft-bildrader med IMAGE PROMPT → kie.ai → **textlagret** → Notion (Draft kvar), `--godkann`/`--underkann` efter granskning, `--namn` för lediga AD-ID:n |
 | `factory/bild-text.py` | Textlagret (Pillow): briefens exakta rader — rubrik, underrad, pris/jämförpris/rabatt, badge, etiketter, citat, botten — som vektortext ovanpå fotot, brandets färger. Bildmodellen ritar aldrig text. *(Byggt 2026-09-15: CaraShells fyra bildannonser gick live utan rubrik och pris)* |
