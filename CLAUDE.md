@@ -545,6 +545,15 @@ som enbart bygger yognftnfgn `main` utan domän och volym, kopplar annars bara
 bort GitHub-källan, rör aldrig `strong-solace` eller StonePNL-projektet
 (branchen `claude/bäverbutiken-settkopplingen-nba21z`), och verifierar sedan
 att kön i strong-solace börjar bygga och att `/influencers` svarar.
+**Utfall samma kväll:** Coworks inventering fann FEM dubbletter, inte fyra —
+`hearty-youth` var ny sedan dagen innan (något skapar nya Railway-projekt ur
+repot; vad är inte utrett) — och `tranquil-insight` var ingen ren dubblett.
+Cowork kan inte radera projekt ens med Axels ok (spärrat i Cowork), så vägen
+blev alternativ 2: GitHub-källan bortkopplad på de rena dubbletterna och
+deras köade deployer avbrutna. Byggplatsen blev ledig direkt: strong-solace
+byggde snapshoten 21:05 CEST och `/influencers` svarade 200 kl 21:40, www
+också, `/tjanster` 301. De tomma projekten står kvar tills Axel raderar dem.
+Dyker en ny dubblett upp: koppla bort källan på samma sätt, kör inte kön.
 
 ✅ **Rutinen `/stonebite` är byggd 2026-09-22 kl 14:39 CEST — på Axels
 Barkås-konto (`barkas.kundservice@gmail.com`), inte på `claude5@stonebite.org`**
