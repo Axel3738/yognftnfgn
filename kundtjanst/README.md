@@ -288,10 +288,17 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   Texten följer VA:ns egna returmejl i Skickat: originalförpackning, namn +
   ordernummer på paketet, kopia av bekräftelsen, adressen rad för rad
   (brandfilens `tvister.returadress`, nu hela adressen), spårbar frakt +
-  spårningsnumret till oss, 30 dagar från mottagandet, policylänken. Vem som
+  spårningsnumret till oss, returfönstret ur brandfilen (14 dagar från
+  mottagandet sedan Axels beslut B 2026-09-22), policylänken. Vem som
   betalar returfrakten sägs BARA när `tvister.returfrakt_betalas_av` är
-  ifyllt — det är tomt (ägarens beslut), fast VA:n skriver "kundens ansvar".
-  Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot returen.
+  ifyllt — och det är `kund` sedan 2026-09-21 (retur-SOP:en, commit
+  `9cfa779a`, samma sak som VA:n skriver: "kundens ansvar"), så raden
+  "Returfrakten står du själv för." står med. ⚠️ Den raden kom in på `main`
+  från SOP-grenen medan autosvarets test på den här grenen krävde tomt —
+  efter mergen av PR #113 + #116 var testet "flödet (--torr)" rött på `main`
+  (dashboard-sessionen såg det 2026-09-22 kväll); testet följer brandfilen
+  sedan dess. Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot
+  returen.
 - **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
   "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
   YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
