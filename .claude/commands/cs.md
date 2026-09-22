@@ -25,6 +25,14 @@ källan. Bygg aldrig en analys på gissningar när materialet står längre upp.
 - Produktens rad i `products/products.json` (ad account = **MagiBorsten 1867947880635861**, kampanjer, budget, target-CPA, break-even-CPA).
 - `products/<id>/dna.md`, `batch-log.md`, `backlog.md` om de finns — de är
   komplement till chatten, inte ersättning för den.
+- **`products/<id>/invandningar.md` — invändningsmatrisen** (Axels beslut
+  2026-09-22, förlagan är Taköverdragets): vilka invändningar kunderna
+  faktiskt har (kommentarer + supportmejl, antal och andel) och vilka format
+  som redan svarar. Finns den inte, eller är den äldre än rundan: bygg/uppdatera
+  den FÖRST — `node tools/invandningsmatris.mjs --produkt <id> --konto SE
+  --kampanj <kampanj-id> --ord "<produktord,produktord>"` (kommentarerna via
+  `tools/annonskommentarer.mjs`, mejlen via `kundtjanst/mail.mjs`, formaten ur
+  kontots annonsnamn). Läs täckningsraden: **tomma rutor är nästa brief.**
 - Kör `node pipeline/quota.mjs` — kvoten bestämmer batchstorleken.
 
 ### 1b. Saknas underlaget helt? (varken i chatten eller i `products/<id>/`)
@@ -81,6 +89,20 @@ har dödat vinnare två gånger. Kortversion av kraven:
 ### 3. Bygg nästa batch
 - Antal = minst kvoten per 3-dagarscykel för produkten.
 - Mix: iterationer på vinnarna (isolerad variabel per iteration) + nya koncept från Losing DNA-lärdomar + **alla väntande items i backlog.md** (markera dem `[använd i batch #N]`) + det jag skickade med i argumenten ovan.
+- **Invändningsmatrisen går före (Axels beslut 2026-09-22).** En tom ruta i
+  `products/<id>/invandningar.md` — en invändning som ingen annons svarar på i
+  det formatet — tar en briefplats FÖRE ett nytt koncept ur en lärdom och före
+  nästa iteration på en vinnare. **I funnelläge (dagsbudget över 10 000 kr) är
+  det ett krav:** varje obesvarad invändning med minst 10 % av kommentarerna
+  får en brief i rundan innan någon iteration byggs — annars optimerar rundan
+  det som fungerar mot en publik som tar slut. Under 10 000 kr är det
+  prioritetsordningen, inte ett stopp. **En fylld ruta fylls aldrig igen** —
+  briefad räknas som fylld tills annonsen är live och dömd. Briefen taggas
+  `invandning=<radens namn i matrisen>` (+ `ruta=demo|jamforelse` när formatet
+  inte går att läsa ur namnet: `_H1` = video, `_1` = statisk), vinkelkoden är
+  `OB`, `kalla=voc`, och den behöver ingen `lardom=` — invändningen är dess
+  källa. Svaret på invändningen är produktens mekanism (står i matrisen och på
+  produktsidan), aldrig ett påhittat påstående.
 - **Varje brief taggar sina variabler** (vinkel, hook-typ, format, proof, offer,
   visuell stil, textmängd, talare) i en rad högst upp — utan taggar kan nästa
   `/cs` inte gruppera vinstbidrag per variabel och lärandet dör.
@@ -128,6 +150,13 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - Lägg batchen i Notion exakt enligt `docs/os/NOTION-FORMAT.md`: ett item per annons, namn = annonsnamnet, status Draft, tag `Video - Pending Approval` (även bilder), briefen inklistrad i itemet + Drive-länk.
 - Skriv batchen i `products/<id>/batch-log.md` med datum + hypotes + **variabeltaggar** per annons (utfallet fylls i av nästa `/cs`) — och kolumnerna **rev** (antal läsningar i `In progress 2`, `okänd` tills raden lästs) och **brief → live (dagar)** (Notion `Skapad` → Metas `created_time`), så regitabellens effekt går att mäta (BRIEF-REGI.md → "Mät från dag 1").
 - **Kommentarerna på top spendern:** `node tools/annonskommentarer.mjs --konto SE --kampanj <id>` skriver `products/<id>/kommentarer.md` (senaste 30 d, kluster per tema). Ett kluster med ≥ 3 kommentarer om samma invändning ⇒ en INVAND-variant i batchen (`kalla=voc`). **Vinkelkoden i annonsnamnet är `OB`, aldrig `BOF`** (Axels beslut 2026-09-21: BOF är funnelposition, och med BOF går invändningsannonserna inte att skära ut ur datan — `docs/naming-convention.md`).
+- **Invändningsmatrisen uppdateras efter varje rond, som dna.md** (Axels
+  beslut 2026-09-22): kör `node tools/invandningsmatris.mjs --produkt <id>
+  --konto SE --kampanj <id> --ord "…"` igen när brieferna ligger i Notion —
+  briefer med `invandning=` fyller sina rutor som "briefad, ej live", kontots
+  OB-annonser får status live/pausad, räkningen skrivs om, och allt du själv
+  skrivit under matrisen (mekanismen, lärdomen bakom luckan) står kvar.
+  Täckningsraden ("fukt 0 av 4 format (38 %)") går in i rapporten.
 - Committa och pusha alla ändringar i `products/`.
 
 ## DEFINITION OF DONE (markera ✅/❌ sist)
@@ -147,4 +176,5 @@ har dödat vinnare två gånger. Kortversion av kraven:
 - [ ] Varje videobrief: regitabell enligt `docs/os/BRIEF-REGI.md`; varje brief: komponenttaggar + `tro` + `Memo:` + `lardom=L-…`; `node tools/briefgranskning.mjs --rad/--manifest` grön INNAN Notion-raderna skapades (utskriften visad)
 - [ ] Lärdom skriven för varje etiketterad annons i förra batchen (`products/<id>/lardomar.md`), briefer ≤ lärdomar, mixen ur etiketterna redovisad (levande breakthrough ja/nej ⇒ 80/20 åt vilket håll)
 - [ ] `kommentarer.md` uppdaterad för top spendern; kluster ≥ 3 ⇒ INVAND-variant i batchen, namngiven med vinkelkoden `OB`
+- [ ] `invandningar.md` läst FÖRE batchen och uppdaterad EFTER (`tools/invandningsmatris.mjs`): tomma rutor briefade före iterationer (i funnelläge > 10 000 kr/dag: varje obesvarad invändning ≥ 10 % har en brief), ingen fylld ruta briefad igen, täckningsraden i rapporten
 - [ ] dna.md + batch-log.md uppdaterade i repot (inte bara i chatten) och pushade
