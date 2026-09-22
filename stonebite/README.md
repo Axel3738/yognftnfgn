@@ -200,9 +200,12 @@ vidarebefordran + Squarespaces fyra A-poster, rör aldrig MX/SPF/DKIM).
 Tre grenar visas: **e-handeln**, **YouTube-kanalen**
 (`profil.youtube`, https://www.youtube.com/@Stonebite.channel — vloggar,
 tutorials, lifestyle; en egen verksamhet bolaget lägger tid, utrustning och
-resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: åtta
-områden, "Så jobbar vi", kontaktruta → `kontakt.epost`). Allt kommer ur
-`profil.json`; tom `youtube.url` ⇒ texten står kvar men ingen knapp.
+resor på) och **konsulttjänsterna** på `/tjanster` (`profil.tjanster`: tolv
+områden med AI först — agenter som gör riktigt arbete, AI-producerat innehåll,
+automatisering — sedan e-handeln, rådgivning och en öppen "Något annat?";
+"Så jobbar vi"; kontaktruta → `kontakt.epost`). Allt kommer ur `profil.json`;
+tom `youtube.url` ⇒ texten står kvar men ingen knapp. Startsidans teaser visar
+de tre första områdena, så ordningen i listan är ett val.
 
 **Bilderna** (`webb/bilder/*.jpg`, 50–190 kB) genereras av
 `node stonebite/bilder.mjs` ur `bilder.json` via kie.ai — abstrakta,

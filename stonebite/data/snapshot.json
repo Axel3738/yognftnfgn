@@ -20,16 +20,17 @@
    "telefon": ""
   },
   "hero": {
-   "overrad": "E-handel · Film · Konsult",
+   "overrad": "E-handel · AI · Film · Konsult",
    "rubrik": "Vi bygger butiker som säljer.",
    "underrad": "Stonebite Ecom AB driver egna e-handelsbutiker i Norden och USA. Vi hittar produkten, bygger butiken, gör reklamen och sköter kunderna — allt själva. Och vi filmar resan.",
    "band": [
     "E-handel",
     "Egna varumärken",
+    "AI som gör jobbet",
     "Film och foto varje dag",
     "YouTube",
     "Fem länder",
-    "Konsult inom e-handel",
+    "Konsult inom e-handel och AI",
     "Kunden efter köpet"
    ]
   },
@@ -96,12 +97,24 @@
     }
    ]
   },
-  "tjanster_kommentar": "Sidan /tjanster. Axels beslut 2026-09-21: vi bedriver e-handel och kan också bedriva konsulttjänster inom e-handel. Inga kundnamn, inga priser, inga påhittade resultat — bara vad vi kan och hur vi jobbar. Kontakt går till kontakt.epost.",
+  "tjanster_kommentar": "Sidan /tjanster. Axels beslut 2026-09-21: vi bedriver e-handel och kan också bedriva konsulttjänster 'inom all möjliga grejer' — och 2026-09-22: 'konsulttjänsterna kan vara för AI och liksom allt möjligt'. Därför står AI först och bredast, och sista rutan öppnar för allt annat. Inga kundnamn, inga priser, inga påhittade resultat — bara vad vi faktiskt gör och hur vi jobbar. Kontakt går till kontakt.epost.",
   "tjanster": {
    "etikett": "Tjänster",
-   "rubrik": "Vi driver e-handel. Vi kan hjälpa er med er.",
-   "ingress": "Allt vi erbjuder gör vi redan varje dag i våra egna butiker. Det är skillnaden mot en byrå: vi lever på att det fungerar, inte på att sälja timmar.",
+   "rubrik": "E-handel, AI och det mesta däremellan.",
+   "ingress": "Vi driver egna butiker där AI gör riktigt arbete varje dag: bygger butikerna, producerar annonserna, tar budgetbesluten på natten, svarar kunderna. Allt vi erbjuder är sådant vi redan använder själva. Det är skillnaden mot en byrå — vi lever på att det fungerar, inte på att sälja timmar.",
    "omraden": [
+    {
+     "titel": "AI som gör jobbet",
+     "text": "Vi bygger AI-agenter och rutiner som utför riktigt arbete — inte demos. Hos oss laddar de upp annonser, tar budgetbeslut, skriver briefer, granskar leveranser och rapporterar till teamet. Samma sak går att bygga för er verksamhet, oavsett bransch."
+    },
+    {
+     "titel": "AI-producerat innehåll",
+     "text": "Bild, video och röst genererade av AI, granskade av människor: annonser, produktbilder, dubbning av film till nya språk med bibehållen röst. Vi gör det i fem länder i dag."
+    },
+    {
+     "titel": "Automatisering och interna verktyg",
+     "text": "Det ni gör för hand varje dag kan en rutin göra på natten: rapporter, uppföljning, dashboards, bonussystem, kontroller. Byggt utan tunga system, så ni äger och förstår det."
+    },
     {
      "titel": "Starta eller bygga om butiken",
      "text": "Shopify från grunden eller en befintlig butik som ska sälja bättre: produktsida, kassa, betalningar, frakt, språk och valutor för nya länder."
@@ -124,15 +137,19 @@
     },
     {
      "titel": "Kundtjänst och tvister",
-     "text": "Rutiner för inkorgen, svarstider som går att mäta och en handbok för chargebacks och återbetalningar som vinner de tvister som går att vinna."
-    },
-    {
-     "titel": "Automatisering",
-     "text": "Rutiner som kör själva: uppladdning av annonser, budgetbeslut varje natt, rapporter till teamet. Byggt utan tunga system, så det går att äga och förstå."
+     "text": "Rutiner för inkorgen, svarstider som går att mäta och en handbok för chargebacks och återbetalningar som vinner de tvister som går att vinna. Med AI som stöd, inte som ersättning."
     },
     {
      "titel": "Team och arbetsflöde",
      "text": "Hur man briefar redigerare, mäter deras arbete och betalar på resultat. Vi gör det med ett eget team i dag."
+    },
+    {
+     "titel": "Rådgivning",
+     "text": "En timme eller en dag med någon som byggt det själv: var ni ska börja, vad ni ska låta vara, vad som faktiskt kostar pengar."
+    },
+    {
+     "titel": "Något annat?",
+     "text": "Står det inte här betyder det inte att vi inte kan. Skriv och berätta vad ni brottas med — vi säger rakt ut om vi är rätt för det."
     }
    ],
    "sa_jobbar_vi": [

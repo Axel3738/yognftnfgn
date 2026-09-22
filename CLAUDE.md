@@ -332,9 +332,13 @@ med egen text om att bolaget lägger tid, utrustning och resor på den.
   ingen knapp, ingen youtube.com-länk — testet "YouTube-sektionen länkar bara
   när adressen är ifylld" bevisar det. Inga påhittade tittarsiffror.
 - **Konsult:** `/tjanster` (`stonebite/vy/tjanster.mjs`, `profil.tjanster`):
-  åtta områden, "Så jobbar vi" i tre steg, kontaktruta → `contact@stonebite.org`.
-  Inga kundnamn, inga priser, inga påhittade resultat. Startsidan har en
-  mörk teaser som länkar dit.
+  tolv områden med **AI först** (Axel 2026-09-22: "konsulttjänsterna kan vara
+  för AI och liksom allt möjligt" — AI som gör jobbet, AI-producerat innehåll,
+  automatisering, sedan butik/annonser/film/marknader/leverans/kundtjänst/team,
+  rådgivning och en öppen "Något annat?"), "Så jobbar vi" i tre steg,
+  kontaktruta → `contact@stonebite.org`. Allt som står där gör vi redan i
+  egna butiker — inga kundnamn, inga priser, inga påhittade resultat.
+  Startsidan har en mörk teaser som visar de tre första områdena.
 - **Bilder:** `node stonebite/bilder.mjs` genererar `stonebite/webb/bilder/*.jpg`
   ur `stonebite/bilder.json` via kie.ai (`google/nano-banana`, JPEG, 50–190 kB;
   ingen bildbehandling finns i containern så filen används som den kommer).
