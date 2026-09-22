@@ -2,7 +2,10 @@
 // notion-brief-upp.mjs — lyfter EN brief.md till en creative hub som Notion-rad
 // via REST (`NOTION_TOKEN`), utan Notion-MCP.
 //
-//   node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--idag YYYY-MM-DD] [--torr]
+//   node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--idag YYYY-MM-DD] [--ersatt] [--torr]
+//
+//   --ersatt: raden finns redan (samma Namn) — byt ut kroppen, behåll raden
+//   (id, Status, Ansvarig, kommentarer). För en brief som skrivits om.
 //
 // Formen är NOTION-FORMAT.md och rutinens egna rader (mätt 2026-09-22 på
 // Takoverdrag_OB_3_H1 i hubben 7ec270ab…): egenskaperna Namn (title),
@@ -74,6 +77,14 @@ const cell = (s) => [{ type: 'text', text: { content: delaText(String(s ?? '').t
  * bulleted_list_item. `> citat` → quote. Allt annat → paragraph, en per
  * stycke; blankrad avslutar stycket. `**Make:** …` behåller "Make:" som fet.
  */
+/**
+ * Nyckel–värde-rad: `Nyckel:` eller `**Nyckel:**` först på raden — 1–4 ord
+ * (Make, Landing page, AI content, Price in the creative, First frame
+ * (thumbnail), VARIABELTAGGAR), högst 30 tecken före kolonet. En prosarad
+ * med kolon längre in ("Every line concedes the point: …") är ingen nyckel.
+ */
+export const NYCKELRAD = /^\**(?=.{1,30}:)[A-Za-zÅÄÖåäö][A-Za-zÅÄÖåäö()/-]*(?: [A-Za-zÅÄÖåäö()/-]+){0,3}:\**(?:\s|$)/;
+
 export function mdTillBlock(md) {
   const rader = String(md ?? '').replace(/\r/g, '').split('\n');
   let namn = null;
@@ -118,7 +129,14 @@ export function mdTillBlock(md) {
     const m4 = s.match(/^>\s?(.*)$/);
     if (m4) { stangStycke(); block.push({ object: 'block', type: 'quote', quote: { rich_text: richText(m4[1]) } }); continue; }
     if (!s.trim()) { stangStycke(); continue; }
-    // `**Make:** text` och `Landing page: …` på samma rad som `Price:` — behåll raden som den är.
+    // En nyckel–värde-rad (`**Make:** …`, `Why: …`, `Landing page: …`,
+    // `AI content: voice`, `VARIABELTAGGAR: …`) börjar alltid ett eget block,
+    // även utan blankrad före. Spärren och AI-raden läser Notion-texten med
+    // radstart-ankrade uttryck (`^\s*why:`), och slås raderna ihop till ett
+    // stycke hittas de inte — mätt 2026-09-22 på Takoverdrag_OB_4_H1: filen
+    // gav ✅, samma text läst ur Notion gav tre anmärkningar. En radbruten
+    // prosarad utan nyckel fortsätter som förut i samma stycke.
+    if (NYCKELRAD.test(s.trim())) stangStycke();
     stycke.push(s.trim());
   }
   stangStycke(); stangTabell();
@@ -165,7 +183,7 @@ async function finnsRedan(hub, namn, token) {
   return (j.results ?? []).map((p) => p.id.replace(/-/g, ''));
 }
 
-async function lasTillbaka(pageId, token) {
+async function allaBarn(pageId, token) {
   const alla = [];
   let cursor = null;
   do {
@@ -173,6 +191,11 @@ async function lasTillbaka(pageId, token) {
     alla.push(...(j.results ?? []));
     cursor = j.has_more ? j.next_cursor : null;
   } while (cursor);
+  return alla;
+}
+
+async function lasTillbaka(pageId, token) {
+  const alla = await allaBarn(pageId, token);
   const n = {};
   for (const b of alla) {
     n[b.type] = (n[b.type] ?? 0) + 1;
@@ -189,11 +212,12 @@ async function huvud() {
   const fil = args.find((a) => !a.startsWith('--') && a.endsWith('.md'));
   const flagga = (n, s = null) => { const i = args.indexOf(`--${n}`); return i !== -1 && args[i + 1] !== undefined && !args[i + 1].startsWith('--') ? args[i + 1] : s; };
   const torr = args.includes('--torr');
+  const ersatt = args.includes('--ersatt');
   const hub = String(flagga('hub', '')).replace(/-/g, '');
   const typ = flagga('typ', 'video');
   const idag = flagga('idag') ?? new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm' }).format(new Date());
   const token = process.env.NOTION_TOKEN;
-  if (!fil || !hub) { console.error('Användning: node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--idag YYYY-MM-DD] [--torr]'); process.exit(1); }
+  if (!fil || !hub) { console.error('Användning: node tools/notion-brief-upp.mjs <brief.md> --hub <database-id> [--typ video|bild] [--idag YYYY-MM-DD] [--ersatt] [--torr]'); process.exit(1); }
   if (!TYP[typ]) { console.error(`✗ --typ måste vara video eller bild, fick "${typ}"`); process.exit(1); }
   if (!token && !torr) { console.error('✗ NOTION_TOKEN saknas i miljön.'); process.exit(1); }
 
@@ -209,19 +233,37 @@ async function huvud() {
   if (torr) { console.log('\n--torr: inget skrivet.'); return; }
 
   const dubbletter = await finnsRedan(hub, namnet, token);
-  if (dubbletter.length) {
-    console.error(`\n✗ ${namnet} finns redan i hubben (${dubbletter.join(', ')}). En rad till är en dubblett — lärdomen är redan utförd. Inget skrivet.`);
+  let pageId;
+  if (dubbletter.length && !ersatt) {
+    console.error(`\n✗ ${namnet} finns redan i hubben (${dubbletter.join(', ')}). En rad till är en dubblett — lärdomen är redan utförd. Inget skrivet. (--ersatt byter ut kroppen på den rad som finns.)`);
+    process.exit(2);
+  }
+  if (dubbletter.length > 1) {
+    console.error(`\n✗ ${namnet} finns ${dubbletter.length} gånger i hubben (${dubbletter.join(', ')}) — --ersatt vet inte vilken. Inget skrivet.`);
     process.exit(2);
   }
 
-  const forsta = block.slice(0, MAX_BLOCK_PER_ANROP);
-  const rest = block.slice(MAX_BLOCK_PER_ANROP);
-  const sida = await notion('pages', { method: 'POST', token, body: { parent: { database_id: hub }, properties: egenskaper({ namn: namnet, typ, landing, idag }), children: forsta } });
-  const pageId = sida.id.replace(/-/g, '');
-  for (let i = 0; i < rest.length; i += MAX_BLOCK_PER_ANROP) {
-    await notion(`blocks/${pageId}/children`, { method: 'PATCH', token, body: { children: rest.slice(i, i + MAX_BLOCK_PER_ANROP) } });
+  if (dubbletter.length) {
+    // --ersatt: samma rad (id, status, Ansvarig, kommentarer kvar), ny kropp.
+    // Gamla blocken arkiveras ett i taget — Notion har ingen "töm sidan".
+    pageId = dubbletter[0];
+    const gamla = await allaBarn(pageId, token);
+    for (const b of gamla) await notion(`blocks/${b.id}`, { method: 'DELETE', token });
+    if (landing) await notion(`pages/${pageId}`, { method: 'PATCH', token, body: { properties: { 'Landing page': { rich_text: [{ type: 'text', text: { content: landing } }] } } } });
+    for (let i = 0; i < block.length; i += MAX_BLOCK_PER_ANROP) {
+      await notion(`blocks/${pageId}/children`, { method: 'PATCH', token, body: { children: block.slice(i, i + MAX_BLOCK_PER_ANROP) } });
+    }
+    console.log(`\n✓ Ersatt: ${pageId}  https://www.notion.so/${pageId} — ${gamla.length} gamla block arkiverade, ${block.length} nya. Status, Ansvarig och kommentarer orörda.`);
+  } else {
+    const forsta = block.slice(0, MAX_BLOCK_PER_ANROP);
+    const rest = block.slice(MAX_BLOCK_PER_ANROP);
+    const sida = await notion('pages', { method: 'POST', token, body: { parent: { database_id: hub }, properties: egenskaper({ namn: namnet, typ, landing, idag }), children: forsta } });
+    pageId = sida.id.replace(/-/g, '');
+    for (let i = 0; i < rest.length; i += MAX_BLOCK_PER_ANROP) {
+      await notion(`blocks/${pageId}/children`, { method: 'PATCH', token, body: { children: rest.slice(i, i + MAX_BLOCK_PER_ANROP) } });
+    }
+    console.log(`\n✓ Skapad: ${pageId}  https://www.notion.so/${pageId}`);
   }
-  console.log(`\n✓ Skapad: ${pageId}  https://www.notion.so/${pageId}`);
 
   const tillbaka = await lasTillbaka(pageId, token);
   const skillnad = Object.keys({ ...n, ...tillbaka }).filter((k) => (n[k] ?? 0) !== (tillbaka[k] ?? 0));

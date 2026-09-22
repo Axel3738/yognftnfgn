@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mdTillBlock, delaText, richText, egenskaper, raknaBlock, TYP, MAX_TEXT } from '../notion-brief-upp.mjs';
+import { mdTillBlock, delaText, richText, egenskaper, raknaBlock, TYP, MAX_TEXT, NYCKELRAD } from '../notion-brief-upp.mjs';
 
 const BRIEF = `# Takoverdrag_OB_4_H1 — objection: "it'll just trap the damp"
 
@@ -34,22 +34,43 @@ test('mdTillBlock: namnet ur titelraden, landningssidan ur brödtexten', () => {
 test('mdTillBlock: stycken, rubriker, tabell med huvud, punkter och citat i ordning', () => {
   const { block } = mdTillBlock(BRIEF);
   const typer = block.map((b) => b.type);
-  assert.deepEqual(typer, ['paragraph', 'paragraph', 'heading_2', 'table', 'heading_2', 'bulleted_list_item', 'bulleted_list_item', 'quote']);
-  // Stycket "Make/Why" slås ihop till ETT stycke, och "Make:" behåller fetstilen.
+  assert.deepEqual(typer, ['paragraph', 'paragraph', 'paragraph', 'paragraph', 'heading_2', 'table', 'heading_2', 'bulleted_list_item', 'bulleted_list_item', 'quote']);
+  // "Make:" och "Why:" är nyckelrader ⇒ var sitt block, och "Make:" behåller fetstilen.
   const p0 = block[0].paragraph.rich_text;
   assert.equal(p0[0].text.content, 'Make:');
   assert.equal(p0[0].annotations.bold, true);
-  assert.match(p0.map((r) => r.text.content).join(''), /Why:.*belief barrier/);
+  assert.match(block[1].paragraph.rich_text.map((r) => r.text.content).join(''), /^Why:.*belief barrier/);
+  assert.match(block[2].paragraph.rich_text[0].text.content, /^Landing page: https/);
+  assert.match(block[3].paragraph.rich_text[0].text.content, /^Price: 1 129 kr/);
   // Tabellen: separatorraden borta, tre kolumner, huvud + två rader, cellerna trimmade.
-  const t = block[3].table;
+  const t = block[5].table;
   assert.equal(t.table_width, 3);
   assert.equal(t.has_column_header, true);
   assert.equal(t.children.length, 3);
   assert.equal(t.children[1].table_row.cells[1][0].text.content, 'Ja – ett helöverdrag blir tätt runt om.');
   assert.equal(t.children[2].table_row.cells[0][0].text.content, 'H2');
   // Punkterna och citatet.
-  assert.equal(block[5].bulleted_list_item.rich_text[0].text.content, 'The ad never names the store.');
-  assert.match(block[7].quote.rich_text[0].text.content, /rättelse/);
+  assert.equal(block[7].bulleted_list_item.rich_text[0].text.content, 'The ad never names the store.');
+  assert.match(block[9].quote.rich_text[0].text.content, /rättelse/);
+});
+
+test('nyckelrader blir egna block så spärren hittar dem i Notion; radbruten prosa utan nyckel fortsätter i samma stycke', () => {
+  // Mätt 2026-09-22 på OB_4_H1: "Landing page … Price … AI content: voice" i ETT
+  // block ⇒ aiInnehallUr() (radstart-ankrad) hittade inte raden i Notion.
+  const md = '# X_Y_1\n\nLanding page: https://x.se/p\nPrice: 1 129 kr\nAI content: voice\n\nA long why-sentence that\nwraps onto a second line\nand a third.\n**Isolated variable:** the opening move.\n';
+  const { block } = mdTillBlock(md);
+  const texter = block.map((b) => b.paragraph.rich_text.map((r) => r.text.content).join(''));
+  assert.deepEqual(texter, [
+    'Landing page: https://x.se/p',
+    'Price: 1 129 kr',
+    'AI content: voice',
+    'A long why-sentence that wraps onto a second line and a third.',
+    'Isolated variable: the opening move.',
+  ]);
+  assert.equal(block[4].paragraph.rich_text[0].annotations.bold, true);
+  assert.ok(NYCKELRAD.test('VARIABELTAGGAR: typ=N · koncept=x'));
+  assert.ok(!NYCKELRAD.test('https://x.se/p: not a key'));
+  assert.ok(!NYCKELRAD.test('Every line concedes the point: roof only'), 'kolon långt in i en mening är ingen nyckel');
 });
 
 test('titelraden blir aldrig ett block, och en tabell utan innehåll hoppas', () => {

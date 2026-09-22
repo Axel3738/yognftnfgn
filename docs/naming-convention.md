@@ -163,10 +163,15 @@ ur batch-loggarna.
 ⚠️ `arBof()` i `agent/etikett.mjs` läser fortfarande enbart `BOF` och är
 oförändrad — den handlar om funnelposition, och det är rätt.
 
-### ⚠️ Lediga AD-ID:n läses ur BÅDE annonskontot och Notion-hubben
+### ⚠️ Lediga AD-ID:n läses ur annonskontot, Notion-hubben OCH produktens batch-log
 
 Mätt 2026-09-22: `Takoverdrag_OB_2_H1` fanns i Notion sedan 2026-09-19 (ett
-förvaringskoncept, `In progress`) men inte i kontot, som bara hade `OB_1`. En
+förvaringskoncept, `In progress`) men inte i kontot, som bara hade `OB_1` —
+och stod redan i `products/takoverdraget-husvagn/batch-log.md` (batch #3). En
 brief som läste lediga nummer ur kontot ensamt fick därför ett namn som redan
 bar ett annat koncept. Kontot visar bara det som gått live; hubben bär allt
-som är briefat men inte klart. Läs båda innan du numrerar.
+som är briefat men inte klart; batch-loggen är repots eget minne av samma sak.
+Läs alla tre innan du numrerar. Visar sig ett namn en lärdom gett vara
+upptaget: ta nästa lediga nummer och skriv `"plats": "<det namngivna>"` i
+manifestet (`agent/lardom.mjs --brief`), så räknas lärdomens plats som utförd
+utan att loggen skrivs om.
