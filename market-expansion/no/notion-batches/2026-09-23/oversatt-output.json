@@ -1,0 +1,138 @@
+{
+  "Sotarset_PD_2_1": {
+    "malnamn": "Sotarset_NO_PD_2_1",
+    "former": [
+      { "texter": [ { "rader": [0], "text": "Når bak ovnen." } ] },
+      { "texter": [ { "rader": [0], "text": "3,69 m fleksibel rekkevidde." } ] },
+      { "texter": [ { "rader": [0], "text": "389 kr. Førpris 509 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "Fleksible stenger når bak ovnen.\nDit en stiv børste aldri når.\n389 kr. Førpris 509 kr.",
+      "headline": "Når bak ovnen",
+      "description": ""
+    },
+    "andringar": [
+      "459 kr → 389 kr (norsk pris)",
+      "599 kr → 509 kr (norsk førpris)",
+      "kaminen → ovnen (kamin heter ovn på norsk)",
+      "'meter' → 'm' i formen (samma mått 3,69, förkortat för att rymmas i rutan)"
+    ]
+  },
+  "Sotarset_PD_3_1": {
+    "malnamn": "Sotarset_NO_PD_3_1",
+    "former": [
+      {
+        "texter": [
+          { "rader": [0], "text": "Stiv stopper." },
+          { "rader": [1], "text": "Fleksibel fortsetter." }
+        ]
+      },
+      { "texter": [ { "rader": [0], "text": "9 fleksible stenger følger røret gjennom hver sving." } ] },
+      { "texter": [ { "rader": [0], "text": "389 kr. Førpris 509 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "En stiv stang stopper i svingen.\nDen fleksible fortsetter rett gjennom.\n9 stenger, 3,69 meters rekkevidde.",
+      "headline": "Stopper aldri i svingen",
+      "description": ""
+    },
+    "andringar": [
+      "459 kr → 389 kr (norsk pris)",
+      "599 kr → 509 kr (norsk førpris)",
+      "kröken → svingen (krök heter sving på norsk)",
+      "'fastnar' → 'stopper' i rubrikraden (kortare norsk formulering, samma sakförhållande: stel stång stoppar vid kröken)"
+    ]
+  },
+  "Sotarset_CS_2_1": {
+    "malnamn": "Sotarset_NO_CS_2_1",
+    "former": [
+      { "texter": [ { "rader": [0], "text": "389 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Førpris 509 kr. Spar 120 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "509 kr blir 389 kr.\nSpar 120 kr på feiesettet med fleksible stenger.\nBestill ditt feiesett.",
+      "headline": "Redusert til 389 kr",
+      "description": ""
+    },
+    "andringar": [
+      "599 kr → 509 kr (norsk førpris)",
+      "459 kr → 389 kr (norsk pris)",
+      "140 kr → 120 kr (norsk besparing)",
+      "sotarset → feiesett (produktets norska namn, ur produktlänken)",
+      "'Ord. pris' → 'Førpris'",
+      "'Sänkt till' → 'Redusert til' i rubriken"
+    ]
+  },
+  "Sotarset_PD_6_1": {
+    "malnamn": "Sotarset_NO_PD_6_1",
+    "former": [
+      { "texter": [ { "rader": [0], "text": "Dette får du." } ] },
+      {
+        "texter": [
+          { "rader": [0, 1], "text": "9 stenger × 41 cm · 3,69 m rekkevidde · Børste 100 mm ·\nSekskantadapter." }
+        ]
+      },
+      { "texter": [ { "rader": [0], "text": "389 kr. Førpris 509 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "9 fleksible stenger à 41 cm.\nBørste og sekskantadapter følger med.\n3,69 meters rekkevidde, alt i én pakke.",
+      "headline": "9 stenger i en eske",
+      "description": ""
+    },
+    "andringar": [
+      "459 kr → 389 kr (norsk pris)",
+      "599 kr → 509 kr (norsk førpris)",
+      "sexkantsadapter → sekskantadapter (norsk stavning)",
+      "borste → børste (norsk stavning)",
+      "låda → eske (norsk ord för låda)",
+      "måtten 9 stänger, 41 cm, 3,69 m, 100 mm oförändrade"
+    ]
+  },
+  "Sotarset_G_2_1": {
+    "malnamn": "Sotarset_NO_G_2_1",
+    "former": [
+      {
+        "texter": [
+          { "rader": [0, 1, 2], "text": "Til ham med ovn:\nfeier selv mellom\nbesøkene." }
+        ]
+      },
+      { "texter": [ { "rader": [0], "text": "9 fleksible stenger. Renser røykrøret mellom feierbesøkene." } ] },
+      { "texter": [ { "rader": [0], "text": "389 kr. Førpris 509 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "En gave til ham med ovn.\nHan renser røykrøret selv, mellom feierbesøkene.\n9 fleksible stenger, 389 kr.",
+      "headline": "Julegaven han feier med",
+      "description": ""
+    },
+    "andringar": [
+      "459 kr → 389 kr (norsk pris)",
+      "599 kr → 509 kr (norsk førpris)",
+      "kamin → ovn (kamin heter ovn på norsk)",
+      "sotar/sotarens → feier/feierbesøkene (sota heter feie, sotare heter feier på norsk)",
+      "rökkanalen → røykrøret (produktets norska term, ur produktlänken)"
+    ]
+  },
+  "Sotarset_PD_4_1": {
+    "malnamn": "Sotarset_NO_PD_4_1",
+    "former": [
+      { "texter": [ { "rader": [0], "text": "Dette satt i røret." } ] },
+      { "texter": [ { "rader": [0], "text": "389 kr. Førpris 509 kr." } ] },
+      { "texter": [ { "rader": [0], "text": "Bestill." } ] }
+    ],
+    "copy": {
+      "message": "Sotet som faktisk satt i røykrøret.\nBørstet løs på minutter.\nPrisen: 389 kr, tidligere 509 kr.",
+      "headline": "Dette satt i røret",
+      "description": ""
+    },
+    "andringar": [
+      "459 kr → 389 kr (norsk pris)",
+      "599 kr → 509 kr (norsk førpris)",
+      "kaminröret → røykrøret (produktets norska term)",
+      "faktiskt → faktisk (norsk adverbform)"
+    ]
+  }
+}

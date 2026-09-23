@@ -1,0 +1,30 @@
+{
+ "Sotarset_PD_2_1": { "former": [
+   { "typ": "platta", "rader": ["Når bakom kaminen."], "stil": "svart fet rubrik på vit platta topp" },
+   { "typ": "platta", "rader": ["3,69 meter böjlig räckvidd."], "stil": "svart text på vit platta" },
+   { "typ": "platta", "rader": ["459 kr. Ord. 599 kr."], "stil": "svart text på ljus platta nederst" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] },
+ "Sotarset_PD_3_1": { "former": [
+   { "typ": "platta", "rader": ["Stel fastnar.", "Böjlig fortsätter."], "stil": "svart fet rubrik, TVÅ egna meningar (inget block)" },
+   { "typ": "platta", "rader": ["9 böjliga stänger följer röret genom varje krök."], "stil": "svart text på vit platta" },
+   { "typ": "platta", "rader": ["459 kr. Ord. 599 kr."], "stil": "ljus platta nederst" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] },
+ "Sotarset_CS_2_1": { "former": [
+   { "typ": "rubrik", "rader": ["459 kr."], "stil": "svart fet text DIREKT på ljus gradient, ingen platta" },
+   { "typ": "platta", "rader": ["Ord. pris 599 kr. Spara 140 kr."], "stil": "svart text på vit platta" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] },
+ "Sotarset_PD_6_1": { "former": [
+   { "typ": "platta", "rader": ["Det här får du."], "stil": "svart fet rubrik på vit platta topp" },
+   { "typ": "platta", "rader": ["9 stänger × 41 cm · 3,69 m räckvidd · Borste 100 mm ·", "Sexkantsadapter."], "block": [0, 1], "stil": "svart text på vit platta, EN radbruten mening" },
+   { "typ": "platta", "rader": ["459 kr. Ord. 599 kr."], "stil": "ljus platta nederst" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] },
+ "Sotarset_G_2_1": { "former": [
+   { "typ": "platta", "rader": ["Till honom med kamin:", "sotar själv mellan", "besöken."], "block": [0, 1, 2], "stil": "svart fet rubrik, EN radbruten mening över tre rader" },
+   { "typ": "platta", "rader": ["9 böjliga stänger. Rensar rökkanalen mellan sotarens besök."], "stil": "svart text på vit platta" },
+   { "typ": "platta", "rader": ["459 kr. Ord. 599 kr."], "stil": "ljus platta nederst" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] },
+ "Sotarset_PD_4_1": { "former": [
+   { "typ": "platta", "rader": ["Det här satt i röret."], "stil": "svart fet rubrik på vit platta topp" },
+   { "typ": "platta", "rader": ["459 kr. Ord. 599 kr."], "stil": "ljus platta nederst" },
+   { "typ": "knapp", "rader": ["Beställ."], "stil": "blå knapp, vit fet text" } ] }
+}

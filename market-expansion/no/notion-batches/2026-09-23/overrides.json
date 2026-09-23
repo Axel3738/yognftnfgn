@@ -1,0 +1,500 @@
+{
+ "_kommentar": "Sotarsetets mall är fasta vita plattor: rubrik + underrad kant i kant överst, prisband y 1068–1149, blå knapp y 1200–1308. Formdetektorn slår ihop plattorna (de ligger kant i kant och har samma färg) och hittar aldrig knappen (blå, inte vit). Rutorna nedan är mätta ur bilderna 2026-09-23: plattornas y-gränser i en textfri kolumn (x 36–72), knappen ur den blå masken.",
+ "Sotarset_PD_2_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      48,
+      1047,
+      186
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      190,
+      1047,
+      268
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      32,
+      1068,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Sotarset_PD_3_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      48,
+      1047,
+      178
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 70,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    },
+    {
+     "box": [
+      32,
+      180,
+      1047,
+      310
+     ],
+     "post": 1,
+     "rader": 1,
+     "fet": true,
+     "storlek": 70,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      312,
+      1047,
+      389
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 36,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      32,
+      1068,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Sotarset_CS_2_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      330,
+      50,
+      750,
+      168
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      17,
+      17,
+      17
+     ]
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      186,
+      1047,
+      266
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Sotarset_PD_6_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      48,
+      1047,
+      186
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      190,
+      1047,
+      320
+     ],
+     "post": 0,
+     "rader": 2,
+     "fet": false,
+     "storlek": 36,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      32,
+      1068,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Sotarset_G_2_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      48,
+      1047,
+      428
+     ],
+     "post": 0,
+     "rader": 3,
+     "fet": true,
+     "storlek": 66,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      432,
+      1047,
+      510
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 34,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      32,
+      1068,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "3": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ },
+ "Sotarset_PD_4_1": {
+  "box_for_form": {
+   "0": [
+    {
+     "box": [
+      32,
+      48,
+      1047,
+      196
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 74,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "1": [
+    {
+     "box": [
+      32,
+      1068,
+      1047,
+      1149
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": false,
+     "storlek": 38,
+     "farg": [
+      17,
+      17,
+      17
+     ],
+     "fyll": "ljus",
+     "alfa": 255
+    }
+   ],
+   "2": [
+    {
+     "box": [
+      421,
+      1200,
+      658,
+      1308
+     ],
+     "post": 0,
+     "rader": 1,
+     "fet": true,
+     "storlek": 42,
+     "farg": [
+      255,
+      255,
+      255
+     ],
+     "textljus": true
+    }
+   ]
+  }
+ }
+}
