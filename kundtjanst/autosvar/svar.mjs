@@ -104,6 +104,9 @@ const T = {
     foton: 'För att vi ska kunna lösa det snabbt: skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten, så har vi allt när vi tar det vidare.',
     // Den lugna kundens första svar på en skadad/fel vara (ENKEL `foton`): beklagan utan löfte, bilderna, ordernumret om det saknas.
     beklagar: 'Tråkigt att höra att leveransen inte blev som den skulle. Det tittar vi på direkt.',
+    // Varan har slutat fungera/läcker (Hans bränslepump 2026-09-22): "leveransen" och fraktetiketten passar inte, be om bild eller video på felet.
+    beklagarVara: 'Tråkigt att höra att varan inte fungerar som den ska. Det tittar vi på direkt.',
+    fotonVara: 'För att vi ska kunna lösa det snabbt: skicka gärna en bild eller en kort video på varan där felet syns, så har vi allt när vi tar det vidare.',
     fotonOrdernummer: 'Skriv gärna även ditt ordernummer i svaret, så hittar vi ordern direkt.',
     // Returen — VA:ns egna returmejl i Skickat (2026-09-16, 2026-09-14) som förlaga + Axels rad om ombud (2026-09-22).
     retur: (r) => [
@@ -173,6 +176,8 @@ const T = {
     skrappost: (b) => `Ordrebekreftelsen og sporingsmailen kan ha havnet i søppelposten. Søk gjerne på "${b}" i e-posten.`,
     foton: 'For at vi skal kunne løse dette raskt: send gjerne et bilde av varen, ett av emballasjen og ett av fraktetiketten, så har vi alt når vi tar det videre.',
     beklagar: 'Leit å høre at leveransen ikke ble som den skulle. Det ser vi på med en gang.',
+    beklagarVara: 'Leit å høre at varen ikke fungerer som den skal. Det ser vi på med en gang.',
+    fotonVara: 'For at vi skal kunne løse dette raskt: send gjerne et bilde eller en kort video av varen der feilen synes, så har vi alt når vi tar det videre.',
     fotonOrdernummer: 'Skriv gjerne også ordrenummeret ditt i svaret, så finner vi bestillingen med en gang.',
     retur: (r) => [
       'Slik gjør du returen:',
@@ -238,6 +243,8 @@ const T = {
     skrappost: (b) => `Ordrebekræftelsen og sporingsmailen kan være havnet i spam. Søg gerne på "${b}" i din mail.`,
     foton: 'For at vi kan løse det hurtigt: send gerne et billede af varen, et af emballagen og et af fragtlabelen, så har vi det hele, når vi går videre med sagen.',
     beklagar: 'Ærgerligt at høre, at leveringen ikke blev, som den skulle. Det kigger vi på med det samme.',
+    beklagarVara: 'Ærgerligt at høre, at varen ikke fungerer, som den skal. Det kigger vi på med det samme.',
+    fotonVara: 'For at vi kan løse det hurtigt: send gerne et billede eller en kort video af varen, hvor fejlen kan ses, så har vi det hele, når vi går videre med sagen.',
     fotonOrdernummer: 'Skriv gerne også dit ordrenummer i svaret, så finder vi ordren med det samme.',
     retur: (r) => [
       'Sådan gør du med returen:',
@@ -303,6 +310,8 @@ const T = {
     skrappost: (b) => `Tilausvahvistus ja seurantaviesti ovat voineet päätyä roskapostiin. Hae sähköpostistasi hakusanalla "${b}".`,
     foton: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tuotteesta, kuva pakkauksesta ja kuva rahtietiketistä, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     beklagar: 'Ikävä kuulla, ettei toimitus ollut sellainen kuin piti. Katsomme asian heti.',
+    beklagarVara: 'Ikävä kuulla, ettei tuote toimi niin kuin pitäisi. Katsomme asian heti.',
+    fotonVara: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tai lyhyt video tuotteesta niin, että vika näkyy, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     fotonOrdernummer: 'Kirjoita vastaukseen myös tilausnumerosi, niin löydämme tilauksen heti.',
     retur: (r) => [
       'Näin teet palautuksen:',
@@ -368,6 +377,8 @@ const T = {
     skrappost: (b) => `The order confirmation and tracking email may have landed in your spam folder. Try searching your email for "${b}".`,
     foton: 'So we can resolve this quickly: please send a photo of the item, one of the packaging and one of the shipping label, so we have everything when we take it further.',
     beklagar: 'Sorry to hear the delivery was not as it should be. We will look into it straight away.',
+    beklagarVara: 'Sorry to hear the item is not working as it should. We will look into it straight away.',
+    fotonVara: 'So we can resolve this quickly: please send a photo or a short video of the item showing the fault, so we have everything when we take it further.',
     fotonOrdernummer: 'Please also include your order number in your reply, so we can find the order straight away.',
     retur: (r) => [
       'Here is how to return it:',
@@ -559,7 +570,7 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
  * Returnerar { text } eller kastar om faktan inte räcker — anroparen ska då
  * lägga mejlet i SVÅR, aldrig skicka en halv mening.
  */
-export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, behoverOrdernummer = false, ordernummer = '', nu = new Date() } = {}) {
+export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, behoverOrdernummer = false, ordernummer = '', fotonTyp = 'leverans', nu = new Date() } = {}) {
   const t = T[sprak] ?? T.sv;
   const sv = brand.svar ?? {};
   const [levMin, levMax] = Array.isArray(sv.leverans_dagar) && sv.leverans_dagar.length === 2 ? sv.leverans_dagar : [7, 14];
@@ -580,8 +591,9 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
       break;
     }
     case 'foton':
-      // SOP 05/08/07/15: den lugna kundens skadade, defekta eller fel vara — beklagan utan löfte + de tre bilderna (+ ordernumret om det saknas). VA:n tar ärendet.
-      rader.push(t.beklagar, t.foton);
+      // SOP 05/08/07/15: den lugna kundens skadade, defekta eller fel vara — beklagan utan löfte + bilderna (+ ordernumret om det saknas). VA:n tar ärendet.
+      // fotonTyp 'vara' (fotonTypFor): varan har slutat fungera ⇒ "varan", bild eller video på felet; 'leverans': transportskada/fel vara ⇒ "leveransen", varan + förpackningen + fraktetiketten.
+      rader.push(fotonTyp === 'vara' ? t.beklagarVara : t.beklagar, fotonTyp === 'vara' ? t.fotonVara : t.foton);
       if (behoverOrdernummer) rader.push(t.fotonOrdernummer);
       break;
     case 'retur': {
@@ -656,14 +668,14 @@ export function xNyckelFor(klass, argOrsaker = [], text = '') {
  * (`foton`, SOP 05/08) och returblocket (`retur` = returText()) när kunden
  * bett om en retur. Inga tankstreck någonstans.
  */
-export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNyckel = null, foton = false, lage = null, namn = '', opostadDagar = null, retur = null, behoverOrdernummer = false } = {}) {
+export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNyckel = null, foton = false, fotonTyp = 'leverans', lage = null, namn = '', opostadDagar = null, retur = null, behoverOrdernummer = false } = {}) {
   const t = T[sprak] ?? T.sv;
   const x = opostadDagar != null ? t.opostad(opostadDagar) : (t.x[xNyckel ?? kategori] ?? t.x.standard);
   const timmar = Number(brand?.svar?.eskalering_timmar) || ESKALERING_TIMMAR;
   const stycken = [`${t.arg(x)}\n${t.eskalerat(timmar)}`];
   if (lage?.namn && Array.isArray(lage.rader) && lage.rader.length) stycken.push([t.lageIntro(lage.namn), ...lage.rader].join('\n'));
   const info = behoverOrdernummer ? t.ordernummerArg : t.merInfo;
-  stycken.push(foton ? `${info}\n${t.foton}` : info);
+  stycken.push(foton ? `${info}\n${fotonTyp === 'vara' ? t.fotonVara : t.foton}` : info);
   if (retur) stycken.push(retur);
   return { text: `${t.halsning(namn)}\n\n${stycken.join('\n\n')}\n\n${t.halsningSlut}\n${signatur(brand, sprak)}`, x };
 }
@@ -671,6 +683,27 @@ export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNy
 /** Ber svaret om bilder? Skadad/defekt eller fel vara enligt klassificeringen. Ren. */
 export function villHaFoton(klass) {
   return (klass?.alla ?? []).some((a) => ['skadad_defekt', 'fel_vara'].includes(a.id));
+}
+
+// Varan har slutat fungera (inte skadats på vägen): läcker, fungerar inte, laddar inte …
+const FUNKTIONSFEL = /läck|fungerar inte|funkar inte|slutat fungera|går inte att|laddar inte|startar inte|pumpar (dåligt|inte)|tappar (luft|tryck)|lekker|fungerer ikke|virker ikke|lader ikke|sluttet å fungere|leak|not working|doesn.t work|does not work|stopped working|won.t (charge|start|turn on)|ei toimi|vuotaa|lakkasi toimimasta/i;
+// … men nämner kunden paketet, förpackningen eller transporten är det en transportskada, och då vill VA:n ha förpackningen och fraktetiketten.
+const TRANSPORTSKADA = /förpackning|paket(et)? (var|kom|är|hade)|kartong|emballa|transport|fraktskad|krossa|bucklig|intryckt|vid leverans|kom fram|anlände|levererades|ankom|packag|parcel|box (was|arrived)|arrived|shipping damage|in transit|pakk(en|et) (var|kom)|leveringen|toimituksessa|pakkaus|saapui/i;
+
+/**
+ * Vilka bilder svaret ber om (Hans bränslepump 2026-09-22: "leveransen inte blev som den
+ * skulle" + fraktetiketten passade inte en pump som läcker efter köpet).
+ * 'vara' = skadad_defekt med funktionsfel-ord och inget om paketet/transporten ⇒ "varan",
+ * bild eller kort video på felet. 'leverans' = allt annat (fel vara, för få, skadat i
+ * transporten, oklart) ⇒ "leveransen", varan + förpackningen + fraktetiketten (SOP 05/08).
+ * Osäkert ⇒ 'leverans', det är det VA:n alltid bett om. Ren.
+ */
+export function fotonTypFor({ klass, text = '' } = {}) {
+  const ids = (klass?.alla ?? []).map((a) => a.id);
+  if (ids.includes('fel_vara')) return 'leverans';
+  const s = String(text ?? '');
+  if (ids.includes('skadad_defekt') && FUNKTIONSFEL.test(s) && !TRANSPORTSKADA.test(s)) return 'vara';
+  return 'leverans';
 }
 
 /** Säger kunden att spårningen står still eller inte uppdateras (SOP 02)? Ren. */

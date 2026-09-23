@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
 import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
-import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
@@ -896,6 +896,42 @@ test('SOP 05/08: lugn skadad/fel vara ⇒ ENKEL `foton` (beklagan + tre bilder +
   // Ett argt WISMO utan skadad/fel vara får ingen bildförfrågan.
   assert.equal(/bild på varan/.test(skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'ej_levererad', foton: villHaFoton(klassificera({ amne: 'x', text: 'aldrig fått paketet' })) }).text), false);
   for (const s of SPRAK) assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true }).text), false, s);
+});
+
+test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild eller video på felet, aldrig "leveransen" eller fraktetiketten; kom fram trasig ⇒ transportskada som förut', async () => {
+  // fotonTypFor: funktionsfel utan ett ord om paketet ⇒ 'vara'; allt annat ⇒ 'leverans' (det VA:n alltid bett om).
+  assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Bränslepump', text: 'Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?' }), text: 'den läcker och pumpar dåligt' }), 'vara');
+  assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Trasig vara', text: 'borsten kom fram trasig och fungerar inte' }), text: 'borsten kom fram trasig och fungerar inte' }), 'leverans', '"kom fram" är transporten');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'förpackningen var krossad och lampan fungerar inte' }), 'leverans', 'förpackningen nämnd ⇒ transportskada');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }, { id: 'skadad_defekt' }] }, text: 'läcker' }), 'leverans', 'fel vara ⇒ alltid leveransbilderna');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'the pump leaks and stopped working' }), 'vara');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'trasig' }), 'leverans', 'oklart ⇒ leverans');
+  assert.equal(fotonTypFor({}), 'leverans');
+  // Flödet: lugn Hans utan order på adressen ⇒ ENKEL foton, varianten 'vara', ordernumret efterfrågas.
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 93, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Bränslepump', text: 'Hej! Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?', id: '<w93@x.se>' }) },
+  ] });
+  const r = await kor(b);
+  assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].fotonTyp, r.rader[0].atgard, r.rader[0].flyttad], ['ENKEL', 'foton', 'vara', 'utkast', 'VA-PRIO']);
+  const t = b.utkast()[0].text;
+  assert.match(t, /^Hej Hans!\n\nTack för ditt mejl\.\nTråkigt att höra att varan inte fungerar som den ska\. Det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild eller en kort video på varan där felet syns, så har vi allt när vi tar det vidare\.\nSkriv gärna även ditt ordernummer i svaret/);
+  assert.equal(/leveransen|fraktetiketten|förpackningen/.test(t), false, 'inget om leveransen eller fraktetiketten för en pump som läcker');
+  assert.equal(harForbjudet(t), false);
+  // Arg Hans ⇒ ARG med samma bildvariant.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 94, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Bränslepump', text: 'Pumpen läcker och pumpar dåligt!!! Rent skräp, jag är förbannad. Hur fortsätter jag?', id: '<w94@x.se>' }) }] });
+  const r2 = await kor(b2);
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].fotonTyp], ['ARG', 'vara']);
+  const t2 = b2.utkast()[0].text;
+  assert.match(t2, /skicka gärna en bild eller en kort video på varan där felet syns/);
+  assert.equal(/fraktetiketten/.test(t2), false);
+  // Alla språk bär båda varianterna och inga löften.
+  for (const s of SPRAK) {
+    const v = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'vara', behoverOrdernummer: true }).text;
+    const l = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'leverans', behoverOrdernummer: true }).text;
+    assert.notEqual(v, l, `${s}: varianterna skiljer sig`);
+    assert.equal(harForbjudet(v), false, `${s}: inga löften i fotonVara`);
+    assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true, fotonTyp: 'vara' }).text), false, s);
+  }
 });
 
 test('SOP 38: företagsuppgifter besvaras direkt ur brandfilen — bara de godkända; saknas blocket ⇒ VA:n', async () => {

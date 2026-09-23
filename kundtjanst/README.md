@@ -338,6 +338,16 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   (dashboard-sessionen såg det 2026-09-22 kväll); testet följer brandfilen
   sedan dess. Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot
   returen.
+- **Bilderna följer felet, inte kategorin** (rutinens första utkast
+  2026-09-22 kväll: Hans bränslepump "läcker och pumpar dåligt" fick
+  "Tråkigt att höra att leveransen inte blev som den skulle" och en
+  bildförfrågan på fraktetiketten). `svar.fotonTypFor`: skadad/defekt med
+  funktionsfel-ord (läcker, fungerar inte, laddar inte, stopped working …)
+  och inget om paketet, förpackningen eller transporten ⇒ `vara`: "varan
+  inte fungerar som den ska" + bild eller kort video på felet. Allt annat
+  (fel vara, för få, "kom fram trasig", förpackningen nämnd, oklart) ⇒
+  `leverans`: som förut, varan + förpackningen + fraktetiketten (SOP 05/08).
+  Loggraden bär `fotonTyp`.
 - **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
   "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
   YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
