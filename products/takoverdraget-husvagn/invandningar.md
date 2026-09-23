@@ -1,20 +1,20 @@
-# Invändningsmatris — Taköverdraget för Husvagn
+# Invändningsmatris — takoverdraget-husvagn
 
 Vilka invändningar kunderna faktiskt har, och vilka av dem vi har svarat på.
 **Tomma rutor är nästa brief.** Den här filen är produktminne — den läses innan
 en briefrond och uppdateras efter (`node tools/invandningsmatris.mjs`).
 
-Mätt 2026-09-22. Källa: 29 kommentarer på `Takoverdrag_SP_4_H1` (34 142 kr, kampanjens största annons), 45 dagar, via `tools/annonskommentarer.mjs`. Formaten lästa ur kontot: 64 annonser i kampanjen, 2 med vinkelkoden OB.
+Mätt 2026-09-23. Källa: 30 kommentarer på `Takoverdrag_SP_4_H1` (35 608 kr, kampanjens största annons), 45 dagar, via `tools/annonskommentarer.mjs`. Formaten lästa ur kontot: 64 annonser i kampanjen, 2 med vinkelkoden OB.
 
-⚠️ Supportmejlen är INTE med: mejlen kan inte läsas — saknar KUNDTJANST_MAIL_PASS_BAVERBUTIKEN. Kör om i en container som har nyckeln: `node kundtjanst/mail.mjs sok "husvagn,taköverdrag,takoverdrag,husbil"`.
+⚠️ Supportmejlen är INTE med: Brandet baverbutiken har ingen brevlåda i miljön — saknar KUNDTJANST_MAIL_PASS_BAVERBUTIKEN.. Kör om i en container som har nyckeln: `node kundtjanst/mail.mjs sok "husvagn" --kropp`.
 
 ## Vad kunderna invänder
 
-29 poster i källorna (29 kommentarer, 0 mejl). Andelen räknas på alla poster.
+30 poster i källorna (30 kommentarer, 0 mejl). Andelen räknas på alla poster.
 
 | Invändning | Antal | Andel | Kommentarer | Mejl |
 |---|---|---|---|---|
-| **Fukt / mögel / ventilation** | **11** | 38 % | 11 | 0 |
+| **Fukt / mögel / ventilation** | **11** | 37 % | 11 | 0 |
 | Önskemål | 2 | 7 % | 2 | 0 |
 | Skepsis / kritik | 1 | 3 % | 1 | 0 |
 | Fungerar det | 1 | 3 % | 1 | 0 |
@@ -32,14 +32,14 @@ Ordagrant, de tyngsta (kundnamn och adresser aldrig):
 
 | Invändning | Video-svar | Statisk | Demo | Jämförelse |
 |---|---|---|---|---|
-| **Fukt / kondens / självdrag** (38 %) | `OB_4_H1` briefad, ej live | ⬜ | ⬜ | ⬜ |
+| **Fukt / kondens / självdrag** (37 %) | `OB_4_H1` briefad, ej live | ⬜ | ⬜ | ⬜ |
 | Önskemål (7 %) | ⬜ | ⬜ | ⬜ | ⬜ |
 | Blåser sönder (3 %) | `Takoverdrag_OB_1_H1` live | ⬜ | ⬜ | ⬜ |
 | Vattentätt | `OB_3_H1` briefad, väntar film | ⬜ | ⬜ | ⬜ |
 | Förvaring | `Takoverdrag_OB_2_H1` live | ⬜ | ⬜ | ⬜ |
 | Täcker för lite | ⬜ | ⬜ | ⬜ | ⬜ |
 
-**Täckning:** fukt 0 av 4 format (+1 briefad) (38 %) · önskemål 0 av 4 format (7 %) · blåser 1 av 4 format (3 %) · vattentätt 0 av 4 format (+1 briefad) · förvaring 1 av 4 format · täcker 0 av 4 format.
+**Täckning:** fukt 0 av 4 format (+1 briefad) (37 %) · önskemål 0 av 4 format (7 %) · blåser 1 av 4 format (3 %) · vattentätt 0 av 4 format (+1 briefad) · förvaring 1 av 4 format · täcker 0 av 4 format.
 
 ## Varför det här är produktens viktigaste lucka
 

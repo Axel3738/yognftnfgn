@@ -275,3 +275,16 @@ Resten av batch #1 och hela batch #2 ligger fortfarande under grinden eller
 **Testet pågår:** de fem briefarna från 2026-09-22 (`OB_3_H1`, `OB_4_H1`, `GT_11_H1`, `CS_2_H2`, `CS_2_H3`) mot start-CPA 466 kr; 7-dygns-CPA 15–21/9 var 375 kr (79 524 kr / 212 köp). Kriteriet och svaret står i `batch-log.md` (Batch #4) och som `FATIGUE_TEST` i budgetloggen. **Svar: obesvarat** tills alla fem har dag-7-etiketter.
 
 ⚠️ **Etikettläget:** 30 etiketterade annonser, ingen BREAKTHROUGH eller SPEND_WINNER — etiketten kräver ≥ 30 % av kampanjens spend, och i en CBO med 30 annonser når ingen dit (`CS_2_1` 10 %, `CS_2_H1` 12 %, båda ROAS > 7). Motorns vinnarspärr läser bara annonsetiketter; kampanjen kan därför inte skalas av motorn förrän en annons når 30 % eller Axel låter spärren läsa kampanjnivån.
+
+## Komponentkarta Takoverdrag_SP_4_H1 (BREAKTHROUGH 2026-09-23, ANALYSMETOD 6b)
+
+Läst ur den live annonsen 2026-09-23 (primärtext, rubrik, första frame via Ads-MCP:n) — briefen finns inte i repot, så raderna är lästa ur annonsen, inte ur brief. Fönstret 16–22 sep: 34 750 kr (40 % av kampanjen), 75 köp, ROAS 2,75 / CPA 463 kr, hold rate 18 %, konverteringsgrad 1,7 %. Lärdom L-120250242482300291.
+
+| Komponent | Exakt rad / bild (läst ur annonsen, inte ur brief) | Valens | Awareness | Avatar |
+|---|---|---|---|---|
+| HOOK | Första frame: svartvit drönarbild rakt uppifrån, en ensam person på stegen vid takkanten drar i remmen. Primärtext rad 1: "Ett helöverdrag är tungt att få på plats ensam — det här klarar en person." | negativ → positiv (tungt ensam → en person räcker) | lösningsmedveten | husvagnsagare-infor-vintern |
+| BRIDGE | "210D-väv håller hela vintersäsongen ute, och vattnet står aldrig vid takluckorna." | positiv | lösningsmedveten | samma |
+| HOLD | Videon: personen på taket, remmen som dras (VO/inbränd text inte transkriberad — okänd) | — | — | — |
+| CTA | "5,0 av 5 på 10 recensioner. 1 129 kr i stället för 1 469 kr." · rubrik "En person räcker. 210D-väv." · Handla nu | positiv | produktmedveten | samma |
+
+**Bärande komponent = hypotes (gissning):** HOOK-bilden — beviset för "en person räcker" syns i sekund 0 (personen ensam på stegen). UG_1_H1 påstår samma sak med en tom vagn i första bilden och fick 755 kr; SP_4_H1 fick 34 750 kr. Det är den enda variabeln som skiljer de två öppningarna, och det är den I1–I3 (SP_4_H2/H3/H4) byggs på. ⚠️ Recensionsraden i CTA:n är seedade recensioner — iterationerna bär den inte.
