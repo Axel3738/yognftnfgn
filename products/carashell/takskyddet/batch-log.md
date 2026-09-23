@@ -1813,3 +1813,10 @@ skalningsgolvet 16 % — en färsk försämring, inte en kronisk förlust
 Tillsammans är det **8 000 kr/dygn som ingen rutin någonsin sänker**, medan SE
 döms varje natt. DK står inte ens i postens `annonsmarknader` (NO, US). Ägarens
 beslut: nattvakten tar alla marknader, eller NO och DK sköts för hand.
+
+## 2026-09-23 — leveransrundan: tredje dygnet, samma stopp
+
+Samma två rader, samma md5. Slutkortet bär fortfarande `carashell.se`, så
+båda hölls kvar (ingen uppladdning, ingen statusändring, inga nya
+kommentarer). Kontot har vuxit 730 → 748 annonser sedan i går — spegling och
+översättning rullar som de ska, det är bara de här två som står stilla.
