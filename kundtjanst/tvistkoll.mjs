@@ -76,7 +76,12 @@ export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGA
   return lista
     .filter((x) => BEHOVER_SVAR.includes(x.status))
     .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu) }))
-    .filter((x) => x.kvar === null || x.kvar <= grans)
+    // En ÖPPEN CHARGEBACK larmas ALLTID, oavsett hur många dagar som är kvar.
+    // Mätt 2026-09-23: #4914 (348 kr, 7 dagar kvar) var osynlig i både
+    // tvistkollen och morgonlistan bakom 3-dagarsgränsen — precis den tvist
+    // som kostar pengar var den enda som inte stod där. Inquiries följer
+    // gränsen: de eskalerar, de förloras inte på plats.
+    .filter((x) => x.kvar === null || x.kvar <= grans || arChargeback(x))
     // Chargebacks först, sedan deadline, sedan belopp. Ordningen är mätt, inte
     // en känsla: av Bäverbutikens 50 tvister 2026-09-20 var 29 av 29 avgjorda
     // INQUIRIES vunna (100 %) medan chargebacks stod på 1 vunnen av 4 — alla
@@ -127,7 +132,7 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
   const ut = [
     `${rubrik} **Dispute deadlines — ${brand} (${datum})**`,
     '',
-    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`,
+    `${rader.length} open dispute${rader.length === 1 ? '' : 's'} need${rader.length === 1 ? 's' : ''} evidence — every open chargeback, and inquiries due within ${grans} day${grans === 1 ? '' : 's'}${brast ? ` — ${brast}` : ''}.`,
     '',
     // ⚠️ Texten stod tidigare som "an unanswered dispute is lost automatically".
     // Det är FALSKT för inquiries och stod i larmet 2026-09-15..20. Mätt på 50

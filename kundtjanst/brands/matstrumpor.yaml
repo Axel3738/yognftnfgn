@@ -1,0 +1,77 @@
+# Matstrumpor — tredje verksamheten (matstrumpor.se, kontot "nya kungen").
+# Butiken är inte byggd av fabriken, så den behöver en egen brandfil.
+#
+# Brevlådan är kundsupport@matstrumpor.se (adressen läst live ur Shopifys
+# shop.contactEmail 2026-09-21, sparning/butiker.json). Lösenordet heter
+# KUNDTJANST_MAIL_PASS_MATSTRUMPOR i Environments — Axel lade in det
+# 2026-09-23 ("Den ligger inne"). ⚠️ Vilken mejlleverantör butiken har är
+# INTE mätt: mall-värdet Loopia står kvar tills första läsningen säger
+# annat (felet nämner steget 1–6 som inte stämde).
+#
+# Shopify-domänen och nycklarna är samma som spårningsrutinen använder:
+# appen "Fabriken" (SHOPIFY_CLIENT_ID_1r46tp_qx + SECRET). ⚠️
+# SHOPIFY_SHOP_1r46tp_qx i Environments bär domänen med UNDERSTRECK — fel;
+# sparning/butiker.json är facit (1r46tp-qx.myshopify.com), och `shop`
+# nedan är avskrivet därifrån.
+
+brand:
+  namn: "Matstrumpor"
+  supportmail: "kundsupport@matstrumpor.se"
+  shop: "1r46tp-qx.myshopify.com"
+  land: SE
+  valuta: SEK
+  aktiv: true
+
+discord:
+  # Matstrumpor har ingen egen Discord-server (mätt 2026-09-22, botten ser
+  # elva servrar och ingen är Matstrumpors). Larmen går därför i Bäverbutikens
+  # #customer-service — samma väg som tvistkollen och pingen till VA:n tar.
+  server: "Bäverbutiken"
+  kanal: customer-service
+  # Mechile Delos Santos sköter alla butiker (bonus/personer.json brands: "*").
+  va_id: "1543617780396593206"
+
+shopify:
+  env_suffix: "1r46tp_qx"
+
+# Autosvaret (kundtjanst/autosvar.mjs) är AV här: Axels ordning 2026-09-22 är
+# Bäverbutiken torrt → skarpt → sedan alla butiker. Morgonlistan och
+# tvistkollen läser brevlådan och tvisterna ändå — de skriver inget.
+svar:
+  autosvar: false
+  sprak: sv
+  signatur: "Kundtjänst Matstrumpor"
+  leverans_dagar: [7, 14]
+  packas_dagar: 2
+  sparningssida: "https://matstrumpor.se/pages/spara"
+  sparning_prefix: "MS-"
+  va_mapp: VA-PRIO
+  svarstid_timmar: 24
+  max_per_korning: 20
+  fonster_timmar: 72
+  fraga_ordernummer: false
+
+notion:
+  # Ingen egen SOP-databas — VA:n använder Bäverbutikens bas (portabel, Store
+  # facts bär Matstrumpors rad). Tomt = SOP-täckningen mäts inte här.
+  sop_database_id: ""
+  rapport_database_id: ""
+
+# Tvist-SOP:erna (kundtjanst/sop/). Det som saknas blir en synlig ⚠️ OWNER-rad
+# i handboken, aldrig ett tomrum — fyll i när Axel läst av det i admin.
+tvister:
+  returfonster_dagar: 14
+  angerratt_dagar: 14
+  policy_url: "https://matstrumpor.se/policies/refund-policy"
+  returadress: ""
+  returadress_pa_forfragan: true
+  returfrakt_betalas_av: "kund"
+  billing_descriptor: ""
+  support_telefon: ""
+  strid_lonar_sig_over: 0
+  sparningssida: "https://matstrumpor.se/pages/spara"
+  paketprefix: "MS-"
+  agare_kontakt: "Axel (Discord #customer-service)"
+  godkannande_over: 0
+  ersattning_over: 0
+  forsta_svar_timmar: 24
