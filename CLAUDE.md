@@ -575,6 +575,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   men Axel kan ta bort dem. De tre `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER`
   ska däremot ligga kvar där: sajten läste Bäverbutikens ordrar med dem
   samma minut (110 ordrar senaste dygnet, via `kandidatNycklar`).
+- **CaraShell på sajtens Kundtjänst-flik + i autosvaret (2026-09-23, Axels
+  beslut A: skarpt direkt).** Brandfilen `kundtjanst/brands/carashell.yaml`
+  och `KUNDTJANST_MAIL_PASS_CARASHELL` fanns sedan 2026-09-21, men
+  `stonebite/varumarken.json` stod kvar på `kundtjanst: []` + "Ingen
+  brandfil" — alla fyra rutorna var tomma. Rättat: registret pekar på
+  `carashell`, första veckorapporten W39 körd (läs-bar, utan Discord): 28
+  ärenden, risk 37/100, 290 ordrar, **0 tvister** i Shopify. Brandfilens fasta
+  signatur "Kundtjänst CaraShell" borttagen — kunderna skriver sv/nb/en, så
+  `svar.mjs` väljer nu signatur efter kundens språk. Boten på Railway kräver
+  `stonebite/cowork/6-autosvar-carashell.txt`: tre nycklar
+  (`KUNDTJANST_MAIL_PASS_CARASHELL`, `SHOPIFY_CLIENT_ID/SECRET_CARASHELL` =
+  värdena från `_yitrbk_m3`) **före** `AUTOSVAR_BRANDS=baverbutiken,carashell`
+  — saknas ett lösenord startar vakten inte alls, och då stannar även
+  Bäverbutiken. `AUTOSVAR_LAGE` är en enda för alla butiker; per-butik torrt
+  finns inte. Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
+  `#customer-support` (mätt 2026-09-23).
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
   403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`

@@ -1,0 +1,55 @@
+Jag vill lägga till butiken CaraShell i kundtjänstboten (autosvaret) som redan
+kör på min Railway-tjänst för Bäverbutiken. Boten är SKARP — den skickar riktiga
+svar till kunder. Det är mitt beslut (2026-09-23, "A"). Gör allt i den här
+fliken och fråga mig om inloggning när du behöver den. Jag klistrar in de
+hemliga värdena själv när du ber om dem — skriv dem aldrig i din rapport.
+
+Tjänsten: Railway → projekt strong-solace → tjänst yognftnfgn (branch main,
+volym på /data). Rör inget annat projekt.
+
+STEG 1 — lägg in TRE nya variabler FÖRST. Värdena ger jag dig. De finns i mitt
+Claude-konto under Environments; där heter de två Shopify-nycklarna
+SHOPIFY_CLIENT_ID_yitrbk_m3 och SHOPIFY_CLIENT_SECRET_yitrbk_m3, men på Railway
+ska de heta så här:
+
+  KUNDTJANST_MAIL_PASS_CARASHELL      (lösenordet till hello@carashell.com)
+  SHOPIFY_CLIENT_ID_CARASHELL         (samma värde som SHOPIFY_CLIENT_ID_yitrbk_m3)
+  SHOPIFY_CLIENT_SECRET_CARASHELL     (samma värde som SHOPIFY_CLIENT_SECRET_yitrbk_m3)
+
+STEG 2 — ändra sedan EN variabel (Variables på tjänsten).
+
+  AUTOSVAR_BRANDS   baverbutiken,carashell
+
+Den står i dag som "baverbutiken". Lägg till ",carashell" — utan mellanslag.
+Ta ALDRIG bort baverbutiken.
+
+⚠️ Ordningen är viktig: saknas KUNDTJANST_MAIL_PASS_CARASHELL när
+AUTOSVAR_BRANDS nämner carashell startar boten INTE ALLS — då stannar
+Bäverbutikens svar också. Spara alla fyra ändringarna i samma omgång
+(Railway visar "Apply changes" / "Deploy" — tryck först när alla fyra står där).
+
+Rör INTE AUTOSVAR_LAGE (den ska stå kvar på skarpt), AUTOSVAR_LOOP,
+STONEBITE_HEMLIGHET, STONEBITE_DATA, STONEBITE_ANVANDARE eller någon av
+Bäverbutikens variabler.
+
+STEG 3 — deploya och kontrollera.
+Railway startar en ny deploy när variablerna sparas. Står den i "Waiting for
+build slot" länge: vänta, starta inte fler deployer. När den är Active, öppna
+Deploy Logs och leta efter raden som börjar "autosvar-vakt:". Den ska nämna
+både baverbutiken och carashell. Står det att ett lösenord saknas: kolla
+stavningen på KUNDTJANST_MAIL_PASS_CARASHELL.
+
+Öppna sedan https://yognftnfgn-production-cfb8.up.railway.app/halsa och
+kontrollera att "autosvar" innehåller "brands": ["baverbutiken","carashell"],
+"kor": true, "lage": "skarpt" och en tom lista "saknar": [].
+
+Logga INTE in på sajten och rör INTE brevlådorna.
+
+RAPPORTERA TILL SIST:
+  - vilka variabler du ändrade/lade in (bara namnen, aldrig värdena)
+  - raden "autosvar-vakt: …" ur loggen, ordagrant
+  - svaret från /halsa, ordagrant
+  - om något inte gick: exakt vad loggen sa
+
+Viktigt: kör aldrig boten någon annanstans samtidigt — två kopior mot samma
+brevlåda kan ge en kund två svar.
