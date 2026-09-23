@@ -70,6 +70,9 @@ tvister:
   # begärts accepteras inte." ⇒ mejla först.
   returadress_pa_forfragan: true
   # Villkoren § 5: "Kunden står för returfrakten om inget annat anges."
+  # ⚠️ Returpolicyn lovar däremot "vi skickar dig en returfraktsedel". Axels
+  # beslut 2026-09-23: kunden betalar — boten ger adressen direkt och skriver
+  # "Returfrakten står du själv för".
   returfrakt_betalas_av: "kund"
   # Policyn: "30 dagars returpolicy … från det att du mottog artikeln", och
   # villkoren § 5: "Vi erbjuder 30 dagars öppet köp". Stod 14 (mallvärdet)

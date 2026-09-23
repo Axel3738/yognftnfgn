@@ -1221,3 +1221,13 @@ test('CaraShell: spårningslänken går till sidan på kundens språk', () => {
   assert.match(sparningslank(k.svar, nr, 'da'), /^https:\/\/carashell\.se\/pages\/spara\?/, 'inget danskt ⇒ standardsidan');
   assert.match(sparningslank(k.svar, nr), /^https:\/\/carashell\.se\/pages\/spara\?/);
 });
+
+test('en kvalitetsfråga före köp får aldrig bildförfrågan — den går till VA:n (Matstrumpors torrkörning 2026-09-23)', () => {
+  const h = (text) => hinka({ mejl: { fran: { adress: 'k@x.se' }, amne: 'Nytt kundmeddelande', text }, brand: KONFIG });
+  for (const t of ['Vad är det för kvalité på strumporna?', 'Vilken kvalitet har sockorna?']) {
+    const r = h(t);
+    assert.equal(r.hink, HINK.SVAR, t);
+    assert.notEqual(r.typ, 'foton', t);
+  }
+  assert.equal(h('Kvaliteten var inte som jag trodde, de gick sönder efter en tvätt. Order 4611').typ, 'foton');
+});

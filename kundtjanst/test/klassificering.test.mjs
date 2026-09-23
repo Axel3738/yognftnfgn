@@ -90,3 +90,14 @@ test('språkgissningen skiljer svenska, norska och engelska', () => {
   assert.equal(gissaSprak('Hej, jeg har ikke modtaget pakken og vil gerne have noget af det'), 'da');
   assert.equal(gissaSprak('12345'), 'okänt');
 });
+
+test('en fråga om kvaliteten före köp är produktfråga, en klagan på kvaliteten är fel vara (Matstrumpor 2026-09-23)', () => {
+  for (const t of ['Vad är det för kvalité på strumporna?', 'Vilken kvalitet har sockorna?', 'Håller kvaliteten? Tänkte köpa två par']) {
+    assert.equal(klassificera({ text: t }).kategori, 'produktfraga', t);
+    assert.ok(!klassificera({ text: t }).alla.some((x) => x.id === 'fel_vara'), t);
+  }
+  for (const t of ['Kvaliteten var inte som jag trodde, de gick sönder efter en tvätt. Order 4611', 'Dålig kvalité på strumporna jag fick', 'Vilken kvalitet är det här? Min order 4611 är full av hål']) {
+    assert.equal(klassificera({ text: t }).kategori, 'fel_vara', t);
+  }
+  assert.equal(klassificera({ text: 'Ska jag betala innan jag fått varorna' }).kategori, 'faktura_klarna');
+});
