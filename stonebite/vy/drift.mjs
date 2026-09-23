@@ -95,8 +95,8 @@ export function autosvarLage(b, nu = new Date()) {
 const TIDSZON = 'Europe/Stockholm';
 const SVARAD = (r) => r?.atgard === 'svar' || r?.atgard === 'utkast';
 
-/** Hur SOP-sidan heter i Notion — länkas från varje kort som ska följas upp. Fylls i av skriv.mjs-körningen (kundtjanst/va-sop/notion.json). */
-export const SOP_UPPFOLJNING = Object.freeze({ titel: 'Following up the auto-reply — as Head of Customer Support', url: '' });
+/** SOP-sidan i Notion som varje kort att följa upp länkar till — id:t ur kundtjanst/va-sop/notion.json (publicerad 2026-09-23). */
+export const SOP_UPPFOLJNING = Object.freeze({ titel: 'Following up the auto-reply — as Head of Customer Support', url: 'https://www.notion.so/3e4270ab908c8159be5ef75cd2b03b21' });
 
 /** "23 sep. 13:42" i svensk tid, på läsarens språk. Ren. */
 export function klockslag(iso) {

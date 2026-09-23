@@ -591,6 +591,34 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   Bäverbutiken. `AUTOSVAR_LAGE` är en enda för alla butiker; per-butik torrt
   finns inte. Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
   `#customer-support` (mätt 2026-09-23).
+- **AI-botens svar som kort med bock (2026-09-23 eftermiddag).** Mechile
+  svarade Micke Stigberg 15:28 utan att se att boten redan svarat honom 13:42,
+  och Axels dom på blocket ovan var "väldigt otydligt, väldigt blek text …
+  inget att interagera med eller markera som hanterade". Nu (`vy/drift.mjs`
+  → `autosvarBlock`, `botfallFor`, `lovatSvar`, `botSvarText`,
+  `nastaStegText`): **ett kort per mejl boten svarat på, ENKEL och ARG**, badge
+  med ord ("ARG KUND · AI-boten svarade"), ordernumret stort, "Vad boten
+  skrev" och "Nästa steg för dig" i klartext, och på arga kunder klockan
+  **"Svar lovat senast" som räknar ner från botens svarstid** (48 h,
+  `ESKALERING_TIMMAR` importerad från `svar.mjs`). Knappen **"Markera som
+  uppföljd"** (`POST /app/autosvar/uppfoljd`, alla som ser Kundtjänst) skriver
+  `data/autosvar-uppfoljning.jsonl` på volymen (`stonebite/uppfoljning.mjs`,
+  senaste raden per nyckel vinner, "Ångra" är en rad med `uppfoljd: false`) —
+  **botens logg rörs aldrig.** Nyckeln är `nyckel` i loggöversikten
+  (`kundtjanst/autosvar/oversikt.mjs fallNyckel`: sha256 av Message-ID, 16
+  hex, överlever att mejlet flyttas). Fyra högar: *Att följa upp* (ARG +
+  allt boten flaggade/flyttade, arga överst, äldst först), *Boten svarade
+  klart*, *Uppföljda (arkiv)* och *Torrkörningens utkast* (hopfällda). Ett
+  uppföljt kort lämnar också "Kräver dig i dag". VA:ns SOP för den andra
+  repliken: **"Following up the auto-reply — as Head of Customer Support"**
+  (`kundtjanst/va-sop/following-up-the-auto-reply.md`, skriven ur prompten
+  `PROMPT-following-up-the-auto-reply.md` — Axels beställning: "hon ska
+  behandla ett AI-bots-case som nån skänk från ovan … som Head of Customer
+  Support, fast på svenska", därav öppningen *"Det här ärendet skickades precis
+  vidare till mig personligen. Jag är kundtjänstansvarig här"*, en mall per
+  botutfall, aldrig ordet bot/AI, aldrig upprepa eller motsäga botens fakta,
+  aldrig be om det kunden redan skickat, 48 h-löftet hålls från botens mejl,
+  ägarens godkännanden orörda). Kör prompten igen när botens utfall ändras.
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
   403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`

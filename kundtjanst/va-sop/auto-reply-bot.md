@@ -60,6 +60,12 @@ drafts (section 5) are what keeps that count honest.
  time you sit down.**
 - **The replied arrow on an email, and a reply from us in a thread that nobody wrote.** In live mode that is the bot. Read
  it before you write anything, so your answer builds on it instead of contradicting it.
+ How you write that second reply, as the Head of Customer Support the case was escalated
+ to, is on the page **Following up the auto-reply — as Head of Customer Support**.
+- **The cards on the dashboard.** The Kundtjänst page has one card per email the bot
+ answered, under "The AI bot has replied": what it wrote, your next step, and for an
+ upset customer the countdown on the promised 48 hours. Press "Mark as followed up"
+ when the customer has your reply.
 - **The run report** in the escalation channel after every hour in which something
  happened: how many simple questions were answered, which upset customers got the
  calming reply (order number and one line), and the list flagged for you. A silent hour
@@ -75,15 +81,21 @@ drafts (section 5) are what keeps that count honest.
  even when it is empty — a morning without it means the routine is broken, tell the owner.
  Work it in the order it lists.
 1. **VA-PRIO first.** Reply to every upset customer within the first-reply target
- (Store facts), and never later than the 48 hours they were promised. Use the SOP for
- the actual problem (Start here has the table). When you have replied, move the email
- back to the inbox or your usual done folder.
+ (Store facts), and never later than the 48 hours they were promised. Open the
+ dashboard card, read the bot's email in Sent, and write as the person the case was
+ escalated to: the page **Following up the auto-reply — as Head of Customer Support**
+ has the opener and one template per outcome. The actual problem follows its own SOP
+ (Start here has the table). When you have replied, mark the card as followed up and
+ move the email back to the inbox or your usual done folder.
 2. **Then the flagged emails in the inbox**, oldest first. Same as any other email.
 3. **The drafts in Drafts (dry run): nothing.** Do not send them, do not delete them,
  do not copy from them. Answer the customer yourself, the normal way, one reply. The
  owner reads the drafts and clears them.
-4. **Never write a second reply to something the bot has already answered (live mode)**
- unless the customer has written again. One question, one answer.
+4. **Never write a second "first reply" to something the bot has already answered (live mode).**
+ A simple question the bot answered fully gets nothing more from you unless the
+ customer writes again. An upset customer, a photo request, a return or a
+ "delivered but not received" gets your follow-up, built on the bot's email, never a
+ fresh start. One question, one answer, one voice per store.
 
 ---
 
