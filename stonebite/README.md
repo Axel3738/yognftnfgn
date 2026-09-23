@@ -37,11 +37,23 @@ npm test                            # 111 tester för sajten och bonusen
 | Roll | Ser | Ser INTE |
 |---|---|---|
 | **Ägare** | Allt: pengar, annonser, folk, bonus, konton | — |
-| **Chef** | Allt utom vem som får logga in | Konton |
+| **Chef — ser ALL ekonomi** | Allt utom vem som får logga in | Konton |
 | **Produkttest** | Produkttest-trappan + sin egen sida | Spend, omsättning, andras pengar |
 | **Videoredigerare** | Topplistan + sin egen sida | **Spend, ROAS, omsättning, break-even, satsen** |
-| **Head of customer support** | Kundtjänst, recensioner, leverans, hela teamets bonus, godkänner insatser | All ekonomi |
+| **Head of customer support — ingen ekonomi** | Kundtjänst, recensioner, leverans, hela teamets bonus, godkänner insatser | All ekonomi |
 | **Kundtjänst (VA)** | Ärenden, tvister, paket, recensioner + sina egna uppdrag och pengar | All ekonomi, andras bonus |
+
+⚠️ **Fel roll på ett konto är det enda som läcker ekonomi — och det hände
+2026-09-23.** Mechiles konto stod som **Chef** (rollen låg direkt under Ägare i
+listan och heter nästan som hennes titel), och hon såg Översikt med dygnets
+omsättning, spend och ROAS för alla butiker. Spärren i `roller.mjs` var rätt;
+kontot hade fel roll. Sedan samma dag: rollnamnen säger själva om de ser
+ekonomi, ett konto med ekonomiroll märks rött ("ser all ekonomi") på Konton,
+och **Ägare/Chef går bara att sätta med kryssrutan "ge all ekonomi" ibockad**
+— både vid nytt konto och vid rollbyte, annars felruta och ingen ändring
+(`serEkonomi`/`ekonomiVarning` i `roller.mjs`, testat i `server.test.mjs`).
+Rollen läses ur kontofilen vid **varje** sidvisning, så ett byte på Konton
+slår igenom på personens nästa sidladdning utan ny inloggning.
 
 Behörigheten sitter i `roller.mjs` och kontrolleras av servern vid **varje**
 sidvisning — menyn är bara en spegling. En redigerare som gissar `/app/annonser`

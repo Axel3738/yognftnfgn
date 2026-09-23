@@ -276,6 +276,18 @@ Att redigerare aldrig ser spend är samma järnregel som topplistan (Axels beslu
 räkna ut baklänges. Ett test i `stonebite/test/server.test.mjs` bevisar spärren
 genom att logga in som redigerare och gissa adresserna.
 
+⚠️ **Spärren håller — men fel roll på kontot läcker allt (2026-09-23).**
+Mechiles konto stod som **`chef`** och hon såg Översikt: 176 936 kr i går,
+977 830 kr på 7 dagar, 86 945 kr spend, ROAS 2,31. Rollen "Chef" låg direkt
+under "Ägare" i rullistan och heter nästan som hennes titel (Head of customer
+support). Rättat samma dag: rollnamnen säger själva om de ser ekonomi
+("Chef — ser ALL ekonomi" / "Head of customer support — ingen ekonomi"),
+konton med ekonomiroll märks rött på Konton, och **Ägare/Chef kan bara sättas
+med kryssrutan "ge all ekonomi" ibockad** — annars felruta och ingen ändring
+(`serEkonomi`, `ekonomiVarning` i `roller.mjs`; testat). Rollen läses ur
+kontofilen vid varje sidvisning, så Axels byte på Konton slår igenom på
+hennes nästa sidladdning. Det hon redan sett går inte att ta tillbaka.
+
 ⚠️ **Hämtning och visning är två olika saker med flit.** `hamta.mjs` skriver
 `stonebite/data/snapshot.json`; servern läser bara filen. En sida som hämtade
 vid varje besök hade tagit minuter och slagit i Metas kod 17. Sidan visar alltid

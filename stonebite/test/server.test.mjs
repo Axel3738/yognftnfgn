@@ -563,6 +563,49 @@ test('ägaren skapar ett konto och personen hamnar i bonusregistret', async () =
   assert.ok(anv.hittaPaEpost(FIL, 'maria@test.se'), 'inloggningen ska finnas');
 });
 
+/**
+ * 2026-09-23: Mechiles konto stod som "Chef" och hon såg dygnets omsättning,
+ * spenden och ROAS för alla butiker. Rollen heter nästan som hennes titel
+ * (Head of customer support) och låg direkt under Ägare i listan. En roll som
+ * ser all ekonomi kräver sedan dess kryssrutan "ge all ekonomi" — både när
+ * kontot skapas och när rollen byts. Utan den ändras ingenting.
+ */
+test('en roll som ser all ekonomi kräver kryssrutan — annars ändras ingenting', async () => {
+  const { kaka } = await loggaIn('axel@test.se', 'agarlosenord1');
+  const vera = anv.hittaPaEpost(FIL, 'vera@test.se');
+  const posta = async (stig, falt) => {
+    const csrf = await farskCsrf('/app/konton', kaka);
+    const r = await fetch(`${bas}${stig}`, {
+      method: 'POST',
+      redirect: 'manual',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+      body: new URLSearchParams({ csrf, ...falt }).toString(),
+    });
+    return { status: r.status, html: await r.text() };
+  };
+
+  // Byte till chef utan kryssruta: felruta med instruktionen, rollen orörd.
+  let r = await posta('/app/konton/roll', { id: vera.id, roll: 'chef' });
+  assert.equal(r.status, 200);
+  assert.match(r.html, /Kryssa i/);
+  assert.equal(anv.hittaPaEpost(FIL, 'vera@test.se').roll, 'va');
+
+  // Med kryssrutan byts rollen, och sidan märker kontot rött.
+  r = await posta('/app/konton/roll', { id: vera.id, roll: 'chef', ekonomi_ok: '1' });
+  assert.equal(anv.hittaPaEpost(FIL, 'vera@test.se').roll, 'chef');
+  assert.match(r.html, /ser all ekonomi/);
+
+  // Tillbaka till en roll utan ekonomi kräver ingen kryssruta.
+  r = await posta('/app/konton/roll', { id: vera.id, roll: 'va' });
+  assert.equal(anv.hittaPaEpost(FIL, 'vera@test.se').roll, 'va');
+
+  // Nytt konto som chef utan kryssruta: skapas inte.
+  r = await posta('/app/konton/ny', { namn: 'Smyg Chef', epost: 'smygchef@test.se', roll: 'chef', fornamn: 'Smyg' });
+  assert.equal(r.status, 200);
+  assert.match(r.html, /Kryssa i/);
+  assert.equal(anv.hittaPaEpost(FIL, 'smygchef@test.se'), null, 'kontot får inte ha skapats');
+});
+
 test('ingen utom ägaren får ändra konton', async () => {
   const { kaka } = await loggaIn('josh@test.se', 'redigerare123');
   const csrf = await farskCsrf('/app/mig', kaka);
