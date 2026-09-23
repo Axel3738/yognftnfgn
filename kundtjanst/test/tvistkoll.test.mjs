@@ -37,7 +37,7 @@ test('dagarKvar: ingen eller oläslig deadline ger null, aldrig 0', () => {
 
 // ------------------------------------------------------------------ urvalet
 
-test('bradskande tar bara öppna tvister — avgjorda rör ingen längre', () => {
+test('bradskande tar bara tvister som väntar på vårt svar — avgjorda rör ingen längre', () => {
   const lista = [
     tvist({ id: 1, status: 'needs_response' }),
     tvist({ id: 2, status: 'under_review' }),
@@ -46,7 +46,24 @@ test('bradskande tar bara öppna tvister — avgjorda rör ingen längre', () =>
     tvist({ id: 5, status: 'accepted' }),
     tvist({ id: 6, status: 'charge_refunded' }),
   ];
-  assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), [1, 2]);
+  assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), [1]);
+});
+
+// Larmet 2026-09-23 sa "3 open disputes need evidence ... 1 already past the
+// due date" om #5122, #4446 och #4407 — alla tre `under_review`, alltså redan
+// besvarade och låsta av Shopify. En förfallen `under_review` är det värsta
+// fallet: den läser som ett missat ärende och är i själva verket avklarat.
+test('en under_review med passerad deadline larmas ALDRIG som försenad', () => {
+  const lista = [
+    tvist({ id: 'besvarad-sen', status: 'under_review', evidensSenast: '2026-09-10' }),
+    tvist({ id: 'obesvarad-sen', status: 'needs_response', evidensSenast: '2026-09-10' }),
+  ];
+  assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), ['obesvarad-sen']);
+});
+
+test('en under_review utan avläst deadline larmas inte heller', () => {
+  const lista = [tvist({ id: 'x', status: 'under_review', evidensSenast: null })];
+  assert.deepEqual(bradskande(lista, { nu: NU }), []);
 });
 
 test('bradskande larmar innanför gränsen men tiger utanför', () => {
