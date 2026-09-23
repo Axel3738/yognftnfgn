@@ -25,6 +25,14 @@ hämtas live ur Shopify, eller ur snapshoten.
   "besvarad": false, "utfall": null, "oppen": true }
 ```
 
+**Sedan 2026-09-23 läses raderna direkt ur Shopify i varje timhämtning**
+(`stonebite/kallor/shopify.mjs` `hamtaAllaTvister`), inte ur veckorapporten.
+Nya fält: `tvistId`, `orderId`, `orsak`, `kalla: "shopify"`, `hamtad`. Läget
+per butik (ok / saknas / fel + orsak) står i `snapshot.tvister.butiker` — en
+butik med `fel` är OKÄND, aldrig noll. Rader med `kalla: "veckorapport"` är
+reserv för en butik Shopify inte svarade för och bär rapportens datum i
+`rapport`.
+
 `typ` är `chargeback` eller `inquiry`. `status` är Shopifys, normaliserad.
 `utfall` är `null` tills banken avgjort.
 

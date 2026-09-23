@@ -212,11 +212,20 @@ export class ShopifyLasare {
 
   /** Tvister initierade sedan `sedan`. { tillganglig, lista, orsak }. */
   async hamtaTvister(sedan, ordrar = []) {
-    const url = `https://${this.shop}/admin/api/${API_VERSION()}/shopify_payments/disputes.json`;
+    // ⚠️ Pagineras. Utan limit ger Shopify 50 tvister och en Link-header —
+    // mätt 2026-09-23 på Bäverbutiken: 50 lästa av 68. Listan är nyast först,
+    // så det som föll bort var de äldsta, alltså de med kortast tid kvar.
+    let url = `https://${this.shop}/admin/api/${API_VERSION()}/shopify_payments/disputes.json?limit=250`;
     try {
-      const { data } = await this.get(url);
+      const raa = [];
+      let sidor = 0;
+      while (url && sidor++ < 20) {
+        const { data, link } = await this.get(url);
+        raa.push(...(data.disputes ?? []));
+        url = nastaSida(link);
+      }
       const gr = new Date(sedan).getTime();
-      const lista = (data.disputes ?? []).map((d) => normaliseraTvist(d, ordrar)).filter((d) => !d.initierad || d.initierad.getTime() >= gr);
+      const lista = raa.map((d) => normaliseraTvist(d, ordrar)).filter((d) => !d.initierad || d.initierad.getTime() >= gr);
       return { tillganglig: true, lista, orsak: null };
     } catch (e) {
       if (e.status === 401) return { tillganglig: false, lista: [], orsak: e.message };

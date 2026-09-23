@@ -84,6 +84,7 @@ const KALLNAMN = {
   'repo:leverans': 'Paketspårningen',
   'repo:nattvakten': 'Nattvaktens beslutslogg',
   shopify: 'Butikerna (Shopify)',
+  'shopify:tvister': 'Tvisterna (Shopify, varje timme)',
   meta: 'Annonserna (Meta)',
   rutiner: 'Rutinvakten (git-loggen)',
   discord: 'Eskaleringskanalerna (Discord)',

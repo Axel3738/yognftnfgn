@@ -334,3 +334,152 @@ export async function hamtaAlla(butiker, { dagar = 30, env = process.env, fetchF
   }
   return ut;
 }
+
+// ------------------------------------------------------------------ tvister
+//
+// Tvisterna läses DIREKT ur Shopify vid varje hämtning (varje timme), inte ur
+// kundtjänstens veckorapport. ⚠️ Mätt 2026-09-23: sajtens tvister kom ur
+// `kundtjanst/korningar/<brand>/<vecka>.json`, och den enda rapport som fanns
+// var Bäverbutikens från 2026-09-14 — rutinen "Kundtjänst veckorapport" stod
+// `enabled: false` sedan 2026-09-15. Sajten visade alltså nio dagar gamla
+// tvister för Bäverbutiken och "Inga öppna tvister" för CaraShell utan att ha
+// frågat Shopify alls (det råkade vara sant: 290 ordrar, 0 tvister, läst samma
+// dag). En tvist har en deadline; en veckogammal lista är en lista över
+// deadlines som redan kan ha passerat.
+
+/** Så långt bakåt tvisterna läses — samma som kundtjanst/tvistkoll.mjs. */
+export const TVISTFONSTER_DAGAR = 180;
+const OPPNA_TVISTER = ['needs_response', 'under_review'];
+
+/**
+ * En Shopify-tvist → sajtens rad. Samma form som bonus/kallor.mjs
+ * kundtjanstMatningar så att allt som läser `snapshot.oppnaTvister` (larmet,
+ * kalendern, varumärkessidan, bonusen, kundtjänstens rapportsida) fungerar
+ * oförändrat. Status skrivs med mellanslag ("needs response") som i
+ * veckorapporterna. Ren.
+ */
+export function tvistRad(d, { butikId, ordernamn = new Map(), hamtad = null } = {}) {
+  const status = String(d.status ?? '');
+  const namn = ordernamn.get(String(d.order_id)) ?? null;
+  return {
+    // Tvistens eget id: en order kan bära två tvister (mätt 2026-09-23:
+    // Bäverbutiken #5053, 348 kr + 255 kr, samma deadline).
+    tvistId: d.id ? String(d.id) : null,
+    order: namn ?? (d.order_id ? String(d.order_id) : null),
+    orderId: d.order_id ? String(d.order_id) : null,
+    brand: butikId,
+    typ: d.type ?? 'chargeback',
+    orsak: d.reason ? String(d.reason).replace(/_/g, ' ') : null,
+    belopp: Number(d.amount ?? 0),
+    valuta: d.currency ?? null,
+    deadline: d.evidence_due_by ? String(d.evidence_due_by).slice(0, 10) : null,
+    initierad: d.initiated_at ? String(d.initiated_at).slice(0, 10) : null,
+    status: status.replace(/_/g, ' '),
+    // `under_review` = bevisen är inskickade och Shopify har låst svaret. Den
+    // är öppen men inte VA:ns att göra något åt (tvistkoll.mjs BEHOVER_SVAR).
+    besvarad: status !== 'needs_response',
+    utfall: ['won', 'lost'].includes(status) ? status : null,
+    oppen: OPPNA_TVISTER.includes(status),
+    kalla: 'shopify',
+    hamtad,
+  };
+}
+
+/**
+ * Alla tvister för EN butik. Provar apparna i samma ordning som försäljningen
+ * (`kandidatNycklar`); 403 på tvisterna ⇒ nästa app. Returnerar alltid ett
+ * läge — aldrig ett kast — så att en butik utan tvistbehörighet inte fäller
+ * hela hämtningen:
+ *   ok      — lästa (lista kan vara tom: då HAR butiken inga tvister)
+ *   saknas  — 404: butiken kör inte Shopify Payments, tvisterna finns hos
+ *             betalleverantören
+ *   fel     — ingen app fick läsa, orsaken står i klartext
+ *
+ * ⚠️ Pagineras: Shopify ger 50 tvister per sida som standard. Mätt 2026-09-23
+ * på Bäverbutiken: första sidan 50, hela listan 68 — tvistkollen läste bara 50.
+ */
+export async function hamtaTvister(butik, { env = process.env, fetchFn = fetch, nu = new Date(), fonsterDagar = TVISTFONSTER_DAGAR } = {}) {
+  const hamtad = new Date(nu).toISOString();
+  const kandidater = await kandidatNycklar(butik, env);
+  if (!kandidater.length) {
+    const suffix = butik.suffix || butik.env_suffix || '<suffix>';
+    return { status: 'fel', orsak: `nycklarna saknas i miljön (SHOPIFY_SHOP_${suffix} + SHOPIFY_CLIENT_ID_${suffix} + SHOPIFY_CLIENT_SECRET_${suffix})`, via: null, lista: [], hamtad };
+  }
+  const provade = [];
+  for (const nycklar of kandidater) {
+    let shop; let token;
+    try {
+      ({ shop, token } = await mintaToken(butik, { env, fetchFn, nycklar }));
+    } catch (e) {
+      provade.push(`${nycklar.via}: ${e.message}`);
+      continue;
+    }
+    let raa = [];
+    try {
+      let url = `https://${shop}/admin/api/${API}/shopify_payments/disputes.json?limit=250`;
+      let sidor = 0;
+      while (url && sidor++ < 20) {
+        const { data, link } = await get(url, token, fetchFn);
+        raa.push(...(data.disputes ?? []));
+        url = nastaSida(link);
+      }
+    } catch (e) {
+      if (e.status === 404) return { status: 'saknas', orsak: 'Butiken kör inte Shopify Payments — tvisterna finns bara hos betalleverantören.', via: nycklar.via, lista: [], hamtad };
+      if (e.status === 403) { provade.push(`${nycklar.via}: 403 — appen får inte läsa tvister (read_shopify_payments_disputes)`); continue; }
+      provade.push(`${nycklar.via}: ${e.message}`);
+      continue;
+    }
+
+    // Fönstret: 180 dagar bakåt på startdatum — men en tvist som fortfarande
+    // är öppen följer alltid med, hur gammal den än är.
+    const grans = new Date(nu).getTime() - fonsterDagar * 86_400_000;
+    raa = raa.filter((d) => OPPNA_TVISTER.includes(d.status) || !d.initiated_at || Date.parse(d.initiated_at) >= grans);
+
+    // Ordernamnen (#5763) i EN fråga per 250 tvister. 403 (appen får inte läsa
+    // ordrar) ⇒ id:t står kvar som order, det är fortfarande en nyckel.
+    const ordernamn = new Map();
+    const ids = [...new Set(raa.map((d) => d.order_id).filter(Boolean).map(String))];
+    for (let i = 0; i < ids.length; i += 250) {
+      try {
+        const bit = ids.slice(i, i + 250).join(',');
+        const { data } = await get(`https://${shop}/admin/api/${API}/orders.json?status=any&limit=250&ids=${bit}&fields=id,name`, token, fetchFn);
+        for (const o of data.orders ?? []) ordernamn.set(String(o.id), o.name);
+      } catch { break; }
+    }
+
+    const lista = raa.map((d) => tvistRad(d, { butikId: butik.id, ordernamn, hamtad }));
+    return { status: 'ok', orsak: null, via: nycklar.via, lista, hamtad };
+  }
+  return { status: 'fel', orsak: provade.join(' · '), via: null, lista: [], hamtad };
+}
+
+/**
+ * Tvisterna i alla butiker, en i taget. Avstängda med flit hoppas. Varje
+ * butik får en rad i `butiker` (läget, antal, öppna, väntar på svar) och alla
+ * lästa tvister hamnar i `lista`. Butiker vars tvister inte gick att läsa
+ * rapporteras med orsak — aldrig som noll tvister.
+ */
+export async function hamtaAllaTvister(butiker, { env = process.env, fetchFn = fetch, nu = new Date(), logg = () => {} } = {}) {
+  const rader = [];
+  const lista = [];
+  for (const b of butiker) {
+    if (b.av) continue;
+    const r = await hamtaTvister(b, { env, fetchFn, nu });
+    const oppna = r.lista.filter((x) => x.oppen).length;
+    const behoverSvar = r.lista.filter((x) => x.oppen && !x.besvarad).length;
+    rader.push({ id: b.id, namn: b.namn || b.myshopify || b.id, status: r.status, orsak: r.orsak, via: r.via, antal: r.lista.length, oppna, behoverSvar, hamtad: r.hamtad });
+    lista.push(...r.lista);
+    logg(r.status === 'ok'
+      ? `  ${b.id}: ${r.lista.length} tvister, ${oppna} öppna, ${behoverSvar} väntar på svar`
+      : `  ${b.id}: tvisterna ${r.status === 'saknas' ? 'finns inte i Shopify' : 'okända'} — ${String(r.orsak).slice(0, 160)}`);
+  }
+  const lasta = rader.filter((r) => r.status === 'ok' || r.status === 'saknas');
+  return {
+    status: !rader.length ? 'saknas' : lasta.length === 0 ? 'fel' : lasta.length < rader.length ? 'delvis' : 'ok',
+    orsak: lasta.length < rader.length ? `${rader.length - lasta.length} av ${rader.length} butiker gick inte att läsa tvisterna för` : null,
+    hamtad: new Date(nu).toISOString(),
+    fonsterDagar: TVISTFONSTER_DAGAR,
+    butiker: rader,
+    lista,
+  };
+}

@@ -158,6 +158,10 @@ export function hittaLarm({ snapshot, skickade = [], personer = [], nu = new Dat
   // 2. Tvister med deadline inom tre dagar (eller passerad).
   for (const tv of snapshot?.oppnaTvister ?? []) {
     if (tv.oppen === false || !tv.deadline) continue;
+    // `under review` = bevisen är redan inne och Shopify har låst svaret. Att
+    // pinga VA:n om den är samma fel som tvistkollen gjorde 2026-09-23
+    // (kundtjanst/tvistkoll.mjs BEHOVER_SVAR): larm om det som redan är gjort.
+    if (tv.besvarad === true) continue;
     const kvar = Math.ceil((new Date(tv.deadline).getTime() - nuMs) / DAG);
     if (kvar > REGLER.tvistDagar) continue;
     const brand = brandForKundtjanst(tv.brand) ?? tv.brand;

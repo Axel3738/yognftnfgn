@@ -184,9 +184,9 @@ export function harleddaHandelser({ snapshot, kontakter = [], nu = new Date(), d
   const passar = (b) => !brand || b === brand || (brand === 'ops' && b && !['baverbutiken', 'grillkliniken', 'matstrumpor', 'carashell'].includes(b));
 
   for (const t of snapshot?.oppnaTvister ?? []) {
-    if (!t.oppen || !t.deadline || !inom(t.deadline) || !passar(brandForKundtjanst(t.brand))) continue;
+    if (!t.oppen || t.besvarad === true || !t.deadline || !inom(t.deadline) || !passar(brandForKundtjanst(t.brand))) continue;
     ut.push({
-      id: `tvist:${t.brand}:${t.order}`, kalla: 'tvist', typ: 'deadline', brand: brandForKundtjanst(t.brand),
+      id: `tvist:${t.brand}:${t.tvistId ?? t.order}`, kalla: 'tvist', typ: 'deadline', brand: brandForKundtjanst(t.brand),
       datum: t.deadline, tid: '',
       titel: `${t.typ === 'chargeback' ? 'Chargeback' : 'Tvist'} ${ordertext(t.order)} — svar senast (${t.belopp} ${t.valuta})`,
       lank: '/app/kundtjanst',
