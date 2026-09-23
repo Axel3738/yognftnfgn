@@ -67,7 +67,8 @@ test('en under_review utan avläst deadline larmas inte heller', () => {
 });
 
 test('bradskande larmar innanför gränsen men tiger utanför', () => {
-  const lista = [tvist({ id: 1, evidensSenast: '2026-09-17' }), tvist({ id: 2, evidensSenast: '2026-09-18' })];
+  // Inquiries: en öppen chargeback larmas alltid (eget test nedan).
+  const lista = [tvist({ id: 1, typ: 'inquiry', evidensSenast: '2026-09-17' }), tvist({ id: 2, typ: 'inquiry', evidensSenast: '2026-09-18' })];
   assert.deepEqual(bradskande(lista, { nu: NU, grans: 3 }).map((x) => x.id), [1]);
   assert.deepEqual(bradskande(lista, { nu: NU, grans: 4 }).map((x) => x.id), [1, 2]);
 });
@@ -91,6 +92,14 @@ test('ordningen: tidigast deadline först, sedan störst belopp', () => {
     tvist({ id: 'idag-stor', evidensSenast: '2026-09-14', belopp: 5000 }),
   ];
   assert.deepEqual(bradskande(lista, { nu: NU }).map((x) => x.id), ['idag-stor', 'idag-liten', 'sen']);
+});
+
+test('en öppen chargeback larmas alltid, även med 7 dagar kvar — en inquiry lika långt bort tiger', () => {
+  // Mätt 2026-09-23: #4914 (chargeback, 7 dagar kvar) var osynlig i larmet.
+  const lista = [tvist({ id: 'cb', typ: 'chargeback', evidensSenast: '2026-09-21' }), tvist({ id: 'inq', typ: 'inquiry', evidensSenast: '2026-09-21' })];
+  assert.deepEqual(bradskande(lista, { nu: NU, grans: 3 }).map((x) => x.id), ['cb']);
+  // En chargeback vars bevis redan är inne (under_review) larmas inte alls.
+  assert.deepEqual(bradskande([tvist({ id: 'cb', evidensSenast: '2026-09-21', status: 'under_review' })], { nu: NU, grans: 3 }), []);
 });
 
 test('inquiries larmas också — en obesvarad förfrågan blir ofta en chargeback', () => {
@@ -188,7 +197,7 @@ test('förfallen och förfaller-idag räknas var för sig i samma larm', () => {
 
 test('larmet böjer sig rätt på en enda tvist', () => {
   const text = renderaLarm(bradskande([tvist()], { nu: NU }), { brand: 'B', nu: NU });
-  assert.match(text, /1 open dispute needs evidence within 3 days/);
+  assert.match(text, /1 open dispute needs evidence — every open chargeback, and inquiries due within 3 days/);
 });
 
 test('utan avläst deadline säger larmet det rakt ut', () => {
@@ -212,9 +221,11 @@ test('kollaBrand mot fixturen: läser tvisten och larmar innanför gränsen', as
   assert.equal(nara.lista.length, 1);
   assert.equal(nara.bradskande.length, 1);
 
+  // Fixturens tvist är en öppen CHARGEBACK — den larmas alltid, även 19 dagar bort.
   const langt = await kollaBrand(brand, { nu: new Date('2026-09-01T12:00:00Z'), fixtur: FIXTUR });
   assert.equal(langt.tillganglig, true);
-  assert.equal(langt.bradskande.length, 0, 'deadline 19 dagar bort ska inte larma');
+  assert.equal(langt.bradskande.length, 1, 'en öppen chargeback larmas oavsett dagar kvar');
+  assert.equal(langt.bradskande[0].kvar, 19);
 });
 
 test('brand utan Shopify: tvisterna är OKÄNDA med orsak, inte noll', async () => {

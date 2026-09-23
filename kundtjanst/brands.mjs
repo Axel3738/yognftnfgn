@@ -267,7 +267,13 @@ export function korkonfig(brand, env = process.env) {
   // på Beverbutikken/Bæverbutiken/Majavakauppa och deras appar har
   // read_orders, medan KUNDTJANST-nycklarna med brand-suffix saknas där.
   const domanSuffix = shop ? suffixForDoman(shop, env) : null;
-  const perButik = (namn) => env[`${namn}_${n.shopifySuffix}`] ?? env[`${namn}_${brand.id}`]
+  // Suffixet exakt som brandfilen stavar det provas också: variabelnamn är
+  // skiftlägeskänsliga, och Matstrumpors nycklar heter SHOPIFY_CLIENT_ID_1r46tp_qx
+  // med gemener (fabrikens app, mätt 2026-09-23) — versaliseringen i envNamn
+  // hittade dem inte, och domänuppslaget föll för att SHOPIFY_SHOP_1r46tp_qx
+  // bär domänen med understreck.
+  const suffixRa = String(brand.shopify?.env_suffix ?? '').trim();
+  const perButik = (namn) => env[`${namn}_${n.shopifySuffix}`] ?? (suffixRa ? env[`${namn}_${suffixRa}`] : undefined) ?? env[`${namn}_${brand.id}`]
     ?? (domanSuffix && !env[`${namn}_${n.shopifySuffix}`] ? env[`${namn}_${domanSuffix}`] : undefined) ?? '';
   // Shopify CLI:s token (atkn_…) ger ALLTID 401 mot Admin API (factory/token.mjs
   // vet det sedan tidigare; mätt igen 2026-09-12 på Bäverbutiken i en ny
