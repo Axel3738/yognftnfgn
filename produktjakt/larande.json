@@ -1,52 +1,53 @@
 {
- "datum": "2026-09-16",
- "facit_datum": "2026-09-16",
+ "datum": "2026-09-23",
+ "facit_datum": "2026-09-23",
  "antal": {
-  "REAL_WINNER": 19,
-  "REAL_LOSER": 21,
-  "INSUFFICIENT_DATA": 36,
-  "UNTESTED": 2
+  "REAL_WINNER": 22,
+  "REAL_LOSER": 25,
+  "INSUFFICIENT_DATA": 44,
+  "UNTESTED": 3
  },
  "signaler": {
   "arketyp": {
    "B_SKYDDA_DYRT": {
-    "REAL_WINNER": 8,
+    "REAL_WINNER": 9,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 0,
-    "ja": 12,
-    "kanske": 1,
-    "nej": 2,
-    "vinst_kr": 147256.84999999998,
-    "spend": 265047.24,
+    "INSUFFICIENT_DATA": 6,
+    "UNTESTED": 1,
+    "ja": 16,
+    "kanske": 2,
+    "nej": 3,
+    "vinst_kr": 256843.81999999998,
+    "spend": 420292.63999999996,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
+     "Båtmotorskyddet 420D",
      "Övervakningskameran",
      "IBC-Tanköverdraget",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
-     "MC-Kapellet",
      "Termoskyddet för Husbil 211 × 171 cm",
+     "MC-Kapellet",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [
      "Gräsklippartäcket"
     ],
-    "domda": 9,
-    "vinstandel": 0.89,
+    "domda": 10,
+    "vinstandel": 0.9,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
    "A_AGARE_FRIKTION": {
     "REAL_WINNER": 2,
     "REAL_LOSER": 7,
-    "INSUFFICIENT_DATA": 8,
+    "INSUFFICIENT_DATA": 9,
     "UNTESTED": 0,
     "ja": 3,
-    "kanske": 3,
+    "kanske": 4,
     "nej": 2,
-    "vinst_kr": 35260.10999999999,
-    "spend": 159342.60000000006,
+    "vinst_kr": 39380.869999999995,
+    "spend": 172221.7500000001,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet"
@@ -86,19 +87,43 @@
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
+   "D_SNABBARE_METOD": {
+    "REAL_WINNER": 2,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 6,
+    "UNTESTED": 0,
+    "ja": 4,
+    "kanske": 0,
+    "nej": 1,
+    "vinst_kr": 26788.129999999997,
+    "spend": 71280.22,
+    "exempel_v": [
+     "Bälteslipmaskinen",
+     "Sotarset Med Böjliga Stänger"
+    ],
+    "exempel_f": [
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Ståltrådsborsthuvuden"
+    ],
+    "domda": 4,
+    "vinstandel": 0.5,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
    "X_UTANFOR": {
-    "REAL_WINNER": 3,
+    "REAL_WINNER": 4,
     "REAL_LOSER": 9,
-    "INSUFFICIENT_DATA": 16,
+    "INSUFFICIENT_DATA": 17,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 1269.3299999999986,
-    "spend": 116095.85000000003,
+    "vinst_kr": 2089.5799999999986,
+    "spend": 123422.35000000003,
     "exempel_v": [
      "Strandtofflorna",
      "Cykelshorts Herr",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -112,85 +137,68 @@
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 12,
-    "vinstandel": 0.25,
-    "konfidens": "HÖG",
-    "riktning": "förlorare"
-   },
-   "D_SNABBARE_METOD": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 0,
-    "ja": 4,
-    "kanske": 0,
-    "nej": 1,
-    "vinst_kr": 12884.11,
-    "spend": 41163.55,
-    "exempel_v": [
-     "Bälteslipmaskinen"
-    ],
-    "exempel_f": [
-     "Ståltrådsborsthuvuden"
-    ],
-    "domda": 2,
-    "vinstandel": 0.5,
+    "domda": 13,
+    "vinstandel": 0.31,
     "konfidens": "LÅG",
-    "riktning": "blandat"
+    "riktning": "förlorare"
    },
    "E_VADER_SASONG": {
     "REAL_WINNER": 2,
-    "REAL_LOSER": 1,
+    "REAL_LOSER": 2,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 8,
-    "kanske": 0,
+    "ja": 12,
+    "kanske": 1,
     "nej": 1,
     "vinst_kr": 4881.419999999999,
-    "spend": 27192.77,
+    "spend": 28839.59,
     "exempel_v": [
      "Damasker Vandring",
      "Kranskydd Frost 420D"
     ],
     "exempel_f": [
-     "Uteduschen"
+     "Uteduschen",
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 4,
+    "vinstandel": 0.5,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
+   "G_Q4_GAVA": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 0,
+    "ja": 7,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": -1091.04,
+    "spend": 20507.129999999997,
+    "exempel_v": [
+     "Adventskalendern Racingbilar"
+    ],
+    "exempel_f": [
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
     ],
     "domda": 3,
-    "vinstandel": 0.67,
+    "vinstandel": 0.33,
     "konfidens": "LÅG",
-    "riktning": "vinnare"
+    "riktning": "förlorare"
    },
    "H_VISUELL_NYHET": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
+    "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 3,
-    "kanske": 0,
+    "ja": 5,
+    "kanske": 1,
     "nej": 0,
     "vinst_kr": 2078.32,
-    "spend": 11255.26,
+    "spend": 12279.67,
     "exempel_v": [
      "Soptunneklistermärkena"
-    ],
-    "exempel_f": [],
-    "domda": 1,
-    "vinstandel": 1.0,
-    "konfidens": "LÅG",
-    "riktning": "vinnare"
-   },
-   "G_Q4_GAVA": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 3,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 822.96,
-    "spend": 8804.63,
-    "exempel_v": [
-     "Adventskalendern Racingbilar"
     ],
     "exempel_f": [],
     "domda": 1,
@@ -237,88 +245,96 @@
   },
   "arketyp_sekundar": {
    "E_VADER_SASONG": {
-    "REAL_WINNER": 7,
+    "REAL_WINNER": 8,
     "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
+    "INSUFFICIENT_DATA": 4,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 125158.67,
-    "spend": 216952.29,
+    "vinst_kr": 235131.41999999998,
+    "spend": 374921.49999999994,
     "exempel_v": [
-     "Motorhöljet",
-     "IBC-Tanköverdraget",
      "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Motorhöljet",
      "Båtmotorskyddet 420D",
-     "MC-Kapellet",
+     "IBC-Tanköverdraget",
      "Termoskyddet för Husbil 211 × 171 cm",
+     "MC-Kapellet",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [],
-    "domda": 7,
+    "domda": 8,
     "vinstandel": 1.0,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
    "I_FLERKOP": {
     "REAL_WINNER": 3,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 56521.56,
-    "spend": 124271.28,
+    "vinst_kr": 58342.54,
+    "spend": 145730.62000000002,
     "exempel_v": [
      "Fiskespöhållaren",
      "Övervakningskameran",
      "Adventskalendern Racingbilar"
     ],
-    "exempel_f": [],
-    "domda": 3,
-    "vinstandel": 1.0,
-    "konfidens": "MEDEL",
+    "exempel_f": [
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+    ],
+    "domda": 5,
+    "vinstandel": 0.6,
+    "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "B_SKYDDA_DYRT": {
     "REAL_WINNER": 2,
-    "REAL_LOSER": 0,
+    "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 27171.08,
-    "spend": 70734.57,
+    "spend": 72381.39000000001,
     "exempel_v": [
      "Sätesöverdragaren",
      "Kranskydd Frost 420D"
     ],
-    "exempel_f": [],
-    "domda": 2,
-    "vinstandel": 1.0,
+    "exempel_f": [
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 3,
+    "vinstandel": 0.67,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "A_AGARE_FRIKTION": {
     "REAL_WINNER": 2,
-    "REAL_LOSER": 0,
+    "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 9974.869999999999,
-    "spend": 52115.83,
+    "vinst_kr": 8518.31,
+    "spend": 56921.490000000005,
     "exempel_v": [
      "Strandtofflorna",
      "Cykelshorts Herr"
     ],
-    "exempel_f": [],
-    "domda": 2,
-    "vinstandel": 1.0,
+    "exempel_f": [
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud"
+    ],
+    "domda": 3,
+    "vinstandel": 0.67,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
@@ -341,6 +357,46 @@
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
+   "C_LAGA_ISTALLET": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 9390.64,
+    "spend": 8428.73,
+    "exempel_v": [
+     "Sotarset Med Böjliga Stänger"
+    ],
+    "exempel_f": [],
+    "domda": 1,
+    "vinstandel": 1.0,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   },
+   "F_HOBBY_IDENTITET": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 1,
+    "INSUFFICIENT_DATA": 5,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 820.25,
+    "spend": 16940.85,
+    "exempel_v": [
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
+    ],
+    "exempel_f": [
+     "Golfklubbsborsten"
+    ],
+    "domda": 2,
+    "vinstandel": 0.5,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
    "H_VISUELL_NYHET": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 0,
@@ -350,7 +406,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 0.0,
-    "spend": 7300.639999999999,
+    "spend": 8518.26,
     "exempel_v": [],
     "exempel_f": [],
     "domda": 0,
@@ -361,35 +417,16 @@
    "G_Q4_GAVA": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 0,
+    "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": -725.1,
-    "spend": 3532.89,
+    "spend": 4557.3,
     "exempel_v": [],
     "exempel_f": [
      "Badshorts med Skämttryck"
-    ],
-    "domda": 1,
-    "vinstandel": 0.0,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
-   },
-   "F_HOBBY_IDENTITET": {
-    "REAL_WINNER": 0,
-    "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 4,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 0.0,
-    "spend": 8444.28,
-    "exempel_v": [],
-    "exempel_f": [
-     "Golfklubbsborsten"
     ],
     "domda": 1,
     "vinstandel": 0.0,
@@ -416,58 +453,63 @@
   },
   "objekt_ute": {
    "ja": {
-    "REAL_WINNER": 16,
-    "REAL_LOSER": 5,
-    "INSUFFICIENT_DATA": 13,
-    "UNTESTED": 1,
+    "REAL_WINNER": 17,
+    "REAL_LOSER": 7,
+    "INSUFFICIENT_DATA": 20,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 229843.4,
-    "spend": 570198.9,
+    "vinst_kr": 342094.57,
+    "spend": 753976.2100000002,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
      "Axelbältet",
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "IBC-Tanköverdraget",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
+     "Termoskyddet för Husbil 211 × 171 cm",
      "MC-Kapellet",
      "Damasker Vandring",
      "Soptunneklistermärkena",
      "Cykelshorts Herr",
      "Kranskydd Frost 420D",
-     "Termoskyddet för Husbil 211 × 171 cm",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [
      "Gravstenspennan",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
-     "Lastnätet"
+     "Lastnätet",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 21,
-    "vinstandel": 0.76,
-    "konfidens": "HÖG",
+    "domda": 24,
+    "vinstandel": 0.71,
+    "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "nej": {
-    "REAL_WINNER": 3,
-    "REAL_LOSER": 16,
-    "INSUFFICIENT_DATA": 23,
+    "REAL_WINNER": 5,
+    "REAL_LOSER": 18,
+    "INSUFFICIENT_DATA": 24,
     "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 220.0199999999993,
-    "spend": 139701.44000000003,
+    "vinst_kr": 14486.850000000004,
+    "spend": 175865.58,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Adventskalendern Racingbilar",
+     "Sotarset Med Böjliga Stänger",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -484,62 +526,67 @@
      "Luffarschacket i Trä",
      "Medicinasken i Fickformat",
      "Kasta & Fånga-settet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
      "Uteduschen",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 19,
-    "vinstandel": 0.16,
+    "domda": 23,
+    "vinstandel": 0.22,
     "konfidens": "HÖG",
     "riktning": "förlorare"
    }
   },
   "objekt_varde_band": {
    "dyr>10tkr": {
-    "REAL_WINNER": 8,
-    "REAL_LOSER": 2,
-    "INSUFFICIENT_DATA": 5,
-    "UNTESTED": 0,
+    "REAL_WINNER": 9,
+    "REAL_LOSER": 3,
+    "INSUFFICIENT_DATA": 6,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 161957.05000000002,
-    "spend": 334851.19,
+    "vinst_kr": 274126.41,
+    "spend": 489757.18999999994,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Sätesöverdragaren",
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "Termoskyddet för Husbil 211 × 171 cm",
      "MC-Kapellet",
-     "Termoskyddet för Husbil 211 × 171 cm"
+     "Sotarset Med Böjliga Stänger"
     ],
     "exempel_f": [
      "Gravstenspennan",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Golfklubbsborsten"
     ],
-    "domda": 10,
-    "vinstandel": 0.8,
+    "domda": 12,
+    "vinstandel": 0.75,
     "konfidens": "HÖG",
     "riktning": "vinnare"
    },
    "medel 1–10tkr": {
-    "REAL_WINNER": 5,
+    "REAL_WINNER": 6,
     "REAL_LOSER": 6,
-    "INSUFFICIENT_DATA": 7,
+    "INSUFFICIENT_DATA": 11,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 62893.08,
-    "spend": 217507.24000000005,
+    "vinst_kr": 72365.53,
+    "spend": 244629.32000000004,
     "exempel_v": [
      "Fiskespöhållaren",
      "Axelbältet",
      "IBC-Tanköverdraget",
      "Damasker Vandring",
-     "Cykelshorts Herr"
+     "Cykelshorts Herr",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
     ],
     "exempel_f": [
      "Surfplattestället",
@@ -549,8 +596,8 @@
      "Lastnätet",
      "Magnethyllan"
     ],
-    "domda": 11,
-    "vinstandel": 0.45,
+    "domda": 12,
+    "vinstandel": 0.5,
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
@@ -562,8 +609,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 15017.33,
-    "spend": 70137.93999999999,
+    "vinst_kr": 20987.27,
+    "spend": 83110.65,
     "exempel_v": [
      "Bälteslipmaskinen",
      "Soptunneklistermärkena",
@@ -579,18 +626,19 @@
     "riktning": "vinnare"
    },
    "inget": {
-    "REAL_WINNER": 3,
-    "REAL_LOSER": 11,
-    "INSUFFICIENT_DATA": 20,
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 14,
+    "INSUFFICIENT_DATA": 23,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -9804.039999999999,
-    "spend": 87403.97,
+    "vinst_kr": -10897.789999999999,
+    "spend": 112344.63000000003,
     "exempel_v": [
      "Adventskalendern Racingbilar",
      "Isolerade Utekattkojan",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -602,12 +650,15 @@
      "Luffarschacket i Trä",
      "Medicinasken i Fickformat",
      "Kasta & Fånga-settet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
      "Uteduschen",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
      "Första Hjälpen-Kitet",
+     "Hönsgårdsduk 145 × 109 cm",
      "Bollpannbandet"
     ],
-    "domda": 14,
-    "vinstandel": 0.21,
+    "domda": 18,
+    "vinstandel": 0.22,
     "konfidens": "HÖG",
     "riktning": "förlorare"
    }
@@ -616,22 +667,22 @@
    "överdrag": {
     "REAL_WINNER": 8,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 9,
-    "kanske": 0,
-    "nej": 1,
-    "vinst_kr": 152053.88999999998,
-    "spend": 284826.93,
+    "INSUFFICIENT_DATA": 2,
+    "UNTESTED": 1,
+    "ja": 12,
+    "kanske": 1,
+    "nej": 2,
+    "vinst_kr": 260582.65999999997,
+    "spend": 429221.37,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Sätesöverdragaren",
-     "IBC-Tanköverdraget",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
+     "IBC-Tanköverdraget",
+     "Termoskyddet för Husbil 211 × 171 cm",
      "MC-Kapellet",
-     "Kranskydd Frost 420D",
-     "Termoskyddet för Husbil 211 × 171 cm"
+     "Kranskydd Frost 420D"
     ],
     "exempel_f": [
      "Gräsklippartäcket"
@@ -649,8 +700,8 @@
     "ja": 0,
     "kanske": 1,
     "nej": 0,
-    "vinst_kr": 33600.42,
-    "spend": 76088.63,
+    "vinst_kr": 37721.18,
+    "spend": 86882.58,
     "exempel_v": [
      "Fiskespöhållaren"
     ],
@@ -666,7 +717,7 @@
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 0,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
     "vinst_kr": 4243.88,
     "spend": 50235.14,
@@ -679,20 +730,67 @@
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
+   "verktyg": {
+    "REAL_WINNER": 2,
+    "REAL_LOSER": 3,
+    "INSUFFICIENT_DATA": 10,
+    "UNTESTED": 0,
+    "ja": 4,
+    "kanske": 0,
+    "nej": 1,
+    "vinst_kr": 26788.129999999997,
+    "spend": 80180.87999999999,
+    "exempel_v": [
+     "Bälteslipmaskinen",
+     "Sotarset Med Böjliga Stänger"
+    ],
+    "exempel_f": [
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Golfklubbsborsten",
+     "Ståltrådsborsthuvuden"
+    ],
+    "domda": 5,
+    "vinstandel": 0.4,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   },
+   "elektronik": {
+    "REAL_WINNER": 2,
+    "REAL_LOSER": 1,
+    "INSUFFICIENT_DATA": 4,
+    "UNTESTED": 0,
+    "ja": 2,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 21993.46,
+    "spend": 63618.09000000001,
+    "exempel_v": [
+     "Övervakningskameran",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
+    ],
+    "exempel_f": [
+     "Uteduschen"
+    ],
+    "domda": 3,
+    "vinstandel": 0.67,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   },
    "kläder": {
-    "REAL_WINNER": 4,
+    "REAL_WINNER": 5,
     "REAL_LOSER": 3,
     "INSUFFICIENT_DATA": 2,
     "UNTESTED": 1,
     "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 14269.63,
-    "spend": 90287.99,
+    "vinst_kr": 15089.88,
+    "spend": 95694.11,
     "exempel_v": [
      "Strandtofflorna",
      "Damasker Vandring",
      "Cykelshorts Herr",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
@@ -700,48 +798,27 @@
      "Plyschtofflorna Herr",
      "Badshorts med Skämttryck"
     ],
-    "domda": 7,
-    "vinstandel": 0.57,
+    "domda": 8,
+    "vinstandel": 0.62,
     "konfidens": "LÅG",
-    "riktning": "blandat"
+    "riktning": "vinnare"
    },
-   "elektronik": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 3,
-    "UNTESTED": 0,
-    "ja": 2,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 20935.260000000002,
-    "spend": 48500.83,
-    "exempel_v": [
-     "Övervakningskameran"
-    ],
-    "exempel_f": [
-     "Uteduschen"
-    ],
-    "domda": 2,
-    "vinstandel": 0.5,
-    "konfidens": "LÅG",
-    "riktning": "blandat"
-   },
-   "verktyg": {
+   "kalender": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 2,
-    "INSUFFICIENT_DATA": 8,
+    "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 4,
+    "ja": 0,
     "kanske": 0,
-    "nej": 1,
-    "vinst_kr": 12884.11,
-    "spend": 48950.159999999996,
+    "nej": 0,
+    "vinst_kr": -1091.04,
+    "spend": 16240.83,
     "exempel_v": [
-     "Bälteslipmaskinen"
+     "Adventskalendern Racingbilar"
     ],
     "exempel_f": [
-     "Golfklubbsborsten",
-     "Ståltrådsborsthuvuden"
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
     ],
     "domda": 3,
     "vinstandel": 0.33,
@@ -751,13 +828,13 @@
    "dekor": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 1,
+    "INSUFFICIENT_DATA": 2,
     "UNTESTED": 0,
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 316.5200000000002,
-    "spend": 15443.04,
+    "spend": 16467.45,
     "exempel_v": [
      "Soptunneklistermärkena"
     ],
@@ -769,35 +846,16 @@
     "konfidens": "LÅG",
     "riktning": "blandat"
    },
-   "kalender": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 822.96,
-    "spend": 8804.63,
-    "exempel_v": [
-     "Adventskalendern Racingbilar"
-    ],
-    "exempel_f": [],
-    "domda": 1,
-    "vinstandel": 1.0,
-    "konfidens": "LÅG",
-    "riktning": "vinnare"
-   },
    "annat": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 13,
-    "INSUFFICIENT_DATA": 22,
+    "INSUFFICIENT_DATA": 24,
     "UNTESTED": 1,
-    "ja": 7,
-    "kanske": 2,
+    "ja": 10,
+    "kanske": 5,
     "nej": 2,
     "vinst_kr": -9339.11,
-    "spend": 80366.52,
+    "spend": 83258.05,
     "exempel_v": [],
     "exempel_f": [
      "Gravstenspennan",
@@ -838,6 +896,25 @@
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
+   "tak": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 1,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 1646.82,
+    "exempel_v": [],
+    "exempel_f": [
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 1,
+    "vinstandel": 0.0,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   },
    "skydd": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 0,
@@ -860,24 +937,7 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 1,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 0.0,
-    "spend": 0.0,
-    "exempel_v": [],
-    "exempel_f": [],
-    "domda": 0,
-    "vinstandel": null,
-    "konfidens": "LÅG",
-    "riktning": "otestat"
-   },
-   "tak": {
-    "REAL_WINNER": 0,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 1,
+    "ja": 4,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 0.0,
@@ -894,7 +954,7 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
     "vinst_kr": 0.0,
@@ -911,7 +971,7 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 2,
+    "ja": 4,
     "kanske": 1,
     "nej": 0,
     "vinst_kr": 0.0,
@@ -956,48 +1016,72 @@
     "vinstandel": null,
     "konfidens": "LÅG",
     "riktning": "otestat"
+   },
+   "nät": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
    }
   },
   "agare_55plus_smahus": {
    "ja": {
-    "REAL_WINNER": 16,
-    "REAL_LOSER": 7,
-    "INSUFFICIENT_DATA": 16,
-    "UNTESTED": 1,
+    "REAL_WINNER": 19,
+    "REAL_LOSER": 11,
+    "INSUFFICIENT_DATA": 24,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 235213.59000000003,
-    "spend": 593531.0000000001,
+    "vinst_kr": 361731.5900000001,
+    "spend": 813472.4500000002,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
      "Axelbältet",
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "IBC-Tanköverdraget",
      "Bälteslipmaskinen",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
-     "MC-Kapellet",
-     "Soptunneklistermärkena",
-     "Adventskalendern Racingbilar",
-     "Kranskydd Frost 420D",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
      "Termoskyddet för Husbil 211 × 171 cm",
-     "Isolerade Utekattkojan"
+     "MC-Kapellet",
+     "Adventskalendern Racingbilar",
+     "Soptunneklistermärkena",
+     "Sotarset Med Böjliga Stänger",
+     "Kranskydd Frost 420D",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Isolerade Utekattkojan",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
     ],
     "exempel_f": [
      "Gravstenspennan",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
      "Gräsklippartäcket",
      "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
-     "Lastnätet"
+     "Lastnätet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 23,
-    "vinstandel": 0.7,
+    "domda": 30,
+    "vinstandel": 0.63,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
@@ -1041,59 +1125,63 @@
   "old_way": {
    "improvisation": {
     "REAL_WINNER": 8,
-    "REAL_LOSER": 4,
-    "INSUFFICIENT_DATA": 2,
-    "UNTESTED": 0,
+    "REAL_LOSER": 5,
+    "INSUFFICIENT_DATA": 5,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 173522.83,
-    "spend": 398152.89999999997,
+    "vinst_kr": 278436.74000000005,
+    "spend": 535459.41,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
      "Axelbältet",
-     "IBC-Tanköverdraget",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
+     "IBC-Tanköverdraget",
      "Kranskydd Frost 420D"
     ],
     "exempel_f": [
      "Väggfästet",
      "Gräsklippartäcket",
      "Skotvättpåsen",
-     "Uteduschen"
+     "Uteduschen",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 12,
-    "vinstandel": 0.67,
+    "domda": 13,
+    "vinstandel": 0.62,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "köpt produkt som fungerar": {
-    "REAL_WINNER": 8,
-    "REAL_LOSER": 13,
-    "INSUFFICIENT_DATA": 29,
+    "REAL_WINNER": 10,
+    "REAL_LOSER": 16,
+    "INSUFFICIENT_DATA": 32,
     "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 51726.39,
-    "spend": 262355.75000000006,
+    "vinst_kr": 55413.54,
+    "spend": 313923.62999999995,
     "exempel_v": [
-     "Strandtofflorna",
-     "Övervakningskameran",
      "Bälteslipmaskinen",
+     "Övervakningskameran",
+     "Strandtofflorna",
      "MC-Kapellet",
      "Damasker Vandring",
      "Adventskalendern Racingbilar",
      "Cykelshorts Herr",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
      "Surfplattestället",
      "Plyschtofflorna Herr",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Badshorts med Skämttryck",
      "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
@@ -1103,9 +1191,11 @@
      "Lättviktsryggsäcken",
      "Luffarschacket i Trä",
      "Medicinasken i Fickformat",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
      "Första Hjälpen-Kitet"
     ],
-    "domda": 21,
+    "domda": 26,
     "vinstandel": 0.38,
     "konfidens": "LÅG",
     "riktning": "förlorare"
@@ -1113,16 +1203,16 @@
    "ingenting": {
     "REAL_WINNER": 3,
     "REAL_LOSER": 3,
-    "INSUFFICIENT_DATA": 3,
+    "INSUFFICIENT_DATA": 4,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 5285.660000000002,
-    "spend": 40858.16999999999,
+    "vinst_kr": 13811.96,
+    "spend": 61576.119999999995,
     "exempel_v": [
-     "Soptunneklistermärkena",
      "Termoskyddet för Husbil 211 × 171 cm",
+     "Soptunneklistermärkena",
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [
@@ -1136,67 +1226,76 @@
     "riktning": "blandat"
    },
    "tjänst": {
-    "REAL_WINNER": 0,
+    "REAL_WINNER": 1,
     "REAL_LOSER": 1,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": -471.46,
-    "spend": 6067.79,
-    "exempel_v": [],
+    "vinst_kr": 8919.18,
+    "spend": 14496.52,
+    "exempel_v": [
+     "Sotarset Med Böjliga Stänger"
+    ],
     "exempel_f": [
      "Gravstenspennan"
     ],
-    "domda": 1,
-    "vinstandel": 0.0,
+    "domda": 2,
+    "vinstandel": 0.5,
     "konfidens": "LÅG",
-    "riktning": "förlorare"
+    "riktning": "blandat"
    }
   },
   "latent_behov": {
    "nej": {
-    "REAL_WINNER": 18,
-    "REAL_LOSER": 7,
-    "INSUFFICIENT_DATA": 14,
-    "UNTESTED": 1,
+    "REAL_WINNER": 21,
+    "REAL_LOSER": 11,
+    "INSUFFICIENT_DATA": 21,
+    "UNTESTED": 2,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 240974.03000000003,
-    "spend": 610059.7999999999,
+    "vinst_kr": 367492.03,
+    "spend": 826863.25,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
      "Axelbältet",
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "IBC-Tanköverdraget",
      "Bälteslipmaskinen",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
+     "Termoskyddet för Husbil 211 × 171 cm",
      "MC-Kapellet",
      "Damasker Vandring",
      "Adventskalendern Racingbilar",
      "Cykelshorts Herr",
+     "Sotarset Med Böjliga Stänger",
      "Kranskydd Frost 420D",
-     "Termoskyddet för Husbil 211 × 171 cm",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Isolerade Utekattkojan",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
      "Plyschtofflorna Herr",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
      "Lastnätet",
-     "Lättviktsryggsäcken"
+     "Lättviktsryggsäcken",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 25,
-    "vinstandel": 0.72,
+    "domda": 32,
+    "vinstandel": 0.66,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
@@ -1209,7 +1308,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": -10910.609999999999,
-    "spend": 97374.81,
+    "spend": 98592.43,
     "exempel_v": [
      "Soptunneklistermärkena"
     ],
@@ -1236,50 +1335,76 @@
    }
   },
   "deadline_typ": {
+   "uppställning": {
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 0,
+    "ja": 5,
+    "kanske": 1,
+    "nej": 1,
+    "vinst_kr": 194996.52,
+    "spend": 215007.36,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Båtmotorskyddet 420D",
+     "Termoskyddet för Husbil 211 × 171 cm",
+     "MC-Kapellet"
+    ],
+    "exempel_f": [],
+    "domda": 4,
+    "vinstandel": 1.0,
+    "konfidens": "MEDEL",
+    "riktning": "vinnare"
+   },
    "pågående skada": {
     "REAL_WINNER": 3,
-    "REAL_LOSER": 1,
+    "REAL_LOSER": 2,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 61152.07,
-    "spend": 203315.23,
+    "vinst_kr": 65059.780000000006,
+    "spend": 208987.98,
     "exempel_v": [
      "Motorhöljet",
      "Sätesöverdragaren",
      "IBC-Tanköverdraget"
     ],
     "exempel_f": [
-     "Gravstenspennan"
+     "Gravstenspennan",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 4,
-    "vinstandel": 0.75,
-    "konfidens": "MEDEL",
+    "domda": 5,
+    "vinstandel": 0.6,
+    "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "ingen": {
-    "REAL_WINNER": 6,
-    "REAL_LOSER": 19,
-    "INSUFFICIENT_DATA": 30,
+    "REAL_WINNER": 8,
+    "REAL_LOSER": 20,
+    "INSUFFICIENT_DATA": 31,
     "UNTESTED": 2,
-    "ja": 1,
+    "ja": 2,
     "kanske": 2,
     "nej": 0,
-    "vinst_kr": 58936.6,
-    "spend": 285916.95,
+    "vinst_kr": 69449.19000000002,
+    "spend": 332666.73,
     "exempel_v": [
      "Fiskespöhållaren",
-     "Övervakningskameran",
      "Bälteslipmaskinen",
+     "Övervakningskameran",
      "Soptunneklistermärkena",
      "Cykelshorts Herr",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
      "Vandringskängor Herr"
     ],
     "exempel_f": [
      "Ergonomiska Tofflorna",
      "Surfplattestället",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
      "Gräsklippartäcket",
      "Badshorts med Skämttryck",
@@ -1298,21 +1423,21 @@
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 25,
-    "vinstandel": 0.24,
-    "konfidens": "HÖG",
+    "domda": 28,
+    "vinstandel": 0.29,
+    "konfidens": "LÅG",
     "riktning": "förlorare"
    },
    "säsongsstart": {
     "REAL_WINNER": 2,
     "REAL_LOSER": 1,
-    "INSUFFICIENT_DATA": 3,
+    "INSUFFICIENT_DATA": 4,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 12456.13,
-    "spend": 101845.6,
+    "spend": 106111.90000000001,
     "exempel_v": [
      "Axelbältet",
      "Strandtofflorna"
@@ -1325,38 +1450,16 @@
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
-   "uppställning": {
-    "REAL_WINNER": 4,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 3,
-    "kanske": 1,
-    "nej": 1,
-    "vinst_kr": 90375.45999999999,
-    "spend": 75749.53,
-    "exempel_v": [
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
-     "MC-Kapellet",
-     "Termoskyddet för Husbil 211 × 171 cm"
-    ],
-    "exempel_f": [],
-    "domda": 4,
-    "vinstandel": 1.0,
-    "konfidens": "MEDEL",
-    "riktning": "vinnare"
-   },
    "första snö": {
     "REAL_WINNER": 1,
     "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
+    "INSUFFICIENT_DATA": 3,
     "UNTESTED": 0,
-    "ja": 4,
+    "ja": 5,
     "kanske": 0,
     "nej": 1,
     "vinst_kr": 5989.44,
-    "spend": 15759.45,
+    "spend": 19587.210000000003,
     "exempel_v": [
      "Damasker Vandring"
     ],
@@ -1368,16 +1471,38 @@
    },
    "1 december": {
     "REAL_WINNER": 1,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 1,
     "UNTESTED": 0,
-    "ja": 1,
+    "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 822.96,
-    "spend": 8804.63,
+    "vinst_kr": -1091.04,
+    "spend": 17265.24,
     "exempel_v": [
      "Adventskalendern Racingbilar"
+    ],
+    "exempel_f": [
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+    ],
+    "domda": 3,
+    "vinstandel": 0.33,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   },
+   "vedsäsong": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 0,
+    "ja": 3,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 9390.64,
+    "spend": 10405.13,
+    "exempel_v": [
+     "Sotarset Med Böjliga Stänger"
     ],
     "exempel_f": [],
     "domda": 1,
@@ -1389,12 +1514,12 @@
     "REAL_WINNER": 2,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 2,
-    "UNTESTED": 0,
-    "ja": 5,
-    "kanske": 0,
+    "UNTESTED": 1,
+    "ja": 7,
+    "kanske": 2,
     "nej": 1,
     "vinst_kr": 330.76,
-    "spend": 17775.109999999997,
+    "spend": 17962.35,
     "exempel_v": [
      "Kranskydd Frost 420D",
      "Isolerade Utekattkojan"
@@ -1414,7 +1539,7 @@
     "kanske": 0,
     "nej": 0,
     "vinst_kr": 0.0,
-    "spend": 733.84,
+    "spend": 1847.89,
     "exempel_v": [],
     "exempel_f": [],
     "domda": 0,
@@ -1446,24 +1571,7 @@
     "UNTESTED": 0,
     "ja": 3,
     "kanske": 0,
-    "nej": 1,
-    "vinst_kr": 0.0,
-    "spend": 0.0,
-    "exempel_v": [],
-    "exempel_f": [],
-    "domda": 0,
-    "vinstandel": null,
-    "konfidens": "LÅG",
-    "riktning": "otestat"
-   },
-   "vedsäsong": {
-    "REAL_WINNER": 0,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 2,
-    "kanske": 1,
-    "nej": 0,
+    "nej": 2,
     "vinst_kr": 0.0,
     "spend": 0.0,
     "exempel_v": [],
@@ -1495,8 +1603,8 @@
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
-    "ja": 1,
-    "kanske": 0,
+    "ja": 2,
+    "kanske": 1,
     "nej": 0,
     "vinst_kr": 0.0,
     "spend": 0.0,
@@ -1524,12 +1632,80 @@
     "konfidens": "LÅG",
     "riktning": "otestat"
    },
-   "vintertäckning": {
+   "höstregn": {
     "REAL_WINNER": 0,
     "REAL_LOSER": 0,
     "INSUFFICIENT_DATA": 0,
     "UNTESTED": 0,
     "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "poolstängning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "lövfällning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "isläggning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 0.0,
+    "spend": 0.0,
+    "exempel_v": [],
+    "exempel_f": [],
+    "domda": 0,
+    "vinstandel": null,
+    "konfidens": "LÅG",
+    "riktning": "otestat"
+   },
+   "vintertäckning": {
+    "REAL_WINNER": 0,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 0,
+    "UNTESTED": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
     "vinst_kr": 0.0,
@@ -1544,27 +1720,29 @@
   },
   "timing_vid_launch": {
    "rätt": {
-    "REAL_WINNER": 13,
-    "REAL_LOSER": 6,
-    "INSUFFICIENT_DATA": 10,
-    "UNTESTED": 0,
+    "REAL_WINNER": 15,
+    "REAL_LOSER": 9,
+    "INSUFFICIENT_DATA": 17,
+    "UNTESTED": 1,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 191562.38,
-    "spend": 485521.50999999995,
+    "vinst_kr": 313923.2099999999,
+    "spend": 673744.45,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Motorhöljet",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
      "Axelbältet",
+     "Båtmotorskyddet 420D",
      "Strandtofflorna",
      "IBC-Tanköverdraget",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
+     "Termoskyddet för Husbil 211 × 171 cm",
      "Adventskalendern Racingbilar",
      "Cykelshorts Herr",
-     "Termoskyddet för Husbil 211 × 171 cm",
+     "Sotarset Med Böjliga Stänger",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
      "Isolerade Utekattkojan",
      "Vandringskängor Herr"
     ],
@@ -1574,30 +1752,35 @@
      "Golfklubbsborsten",
      "Ståltrådsborsthuvuden",
      "Krananslutningen",
-     "Lättviktsryggsäcken"
+     "Lättviktsryggsäcken",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Hönsgårdsduk 145 × 109 cm"
     ],
-    "domda": 19,
-    "vinstandel": 0.68,
+    "domda": 24,
+    "vinstandel": 0.62,
     "konfidens": "LÅG",
     "riktning": "vinnare"
    },
    "ingen säsong": {
-    "REAL_WINNER": 3,
-    "REAL_LOSER": 9,
-    "INSUFFICIENT_DATA": 19,
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 10,
+    "INSUFFICIENT_DATA": 20,
     "UNTESTED": 0,
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 29218.9,
-    "spend": 145275.52,
+    "vinst_kr": 34166.749999999985,
+    "spend": 174970.09999999998,
     "exempel_v": [
-     "Övervakningskameran",
      "Bälteslipmaskinen",
-     "Soptunneklistermärkena"
+     "Övervakningskameran",
+     "Soptunneklistermärkena",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
     ],
     "exempel_f": [
      "Surfplattestället",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
      "Väggfästet",
      "Skotvättpåsen",
      "Lastnätet",
@@ -1607,9 +1790,9 @@
      "Första Hjälpen-Kitet",
      "Bollpannbandet"
     ],
-    "domda": 12,
-    "vinstandel": 0.25,
-    "konfidens": "HÖG",
+    "domda": 14,
+    "vinstandel": 0.29,
+    "konfidens": "LÅG",
     "riktning": "förlorare"
    },
    "sen": {
@@ -1620,8 +1803,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 3809.16,
-    "spend": 34114.68,
+    "vinst_kr": 3018.4799999999996,
+    "spend": 36138.61,
     "exempel_v": [
      "MC-Kapellet"
     ],
@@ -1679,48 +1862,6 @@
    }
   },
   "kedjegolv_under_vart_pris": {
-   "ja": {
-    "REAL_WINNER": 8,
-    "REAL_LOSER": 15,
-    "INSUFFICIENT_DATA": 20,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 50543.17,
-    "spend": 356081.66999999987,
-    "exempel_v": [
-     "Motorhöljet",
-     "Axelbältet",
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "MC-Kapellet",
-     "Adventskalendern Racingbilar",
-     "Cykelshorts Herr",
-     "Kranskydd Frost 420D"
-    ],
-    "exempel_f": [
-     "Ergonomiska Tofflorna",
-     "Surfplattestället",
-     "Plyschtofflorna Herr",
-     "Väggfästet",
-     "Gräsklippartäcket",
-     "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
-     "Ståltrådsborsthuvuden",
-     "Skotvättpåsen",
-     "Krananslutningen",
-     "Lastnätet",
-     "Magnethyllan",
-     "Medicinasken i Fickformat",
-     "Uteduschen",
-     "Första Hjälpen-Kitet"
-    ],
-    "domda": 23,
-    "vinstandel": 0.35,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
-   },
    "nej": {
     "REAL_WINNER": 9,
     "REAL_LOSER": 4,
@@ -1729,17 +1870,17 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 173516.06000000003,
-    "spend": 306783.99,
+    "vinst_kr": 292926.20999999996,
+    "spend": 470839.32999999996,
     "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Fiskespöhållaren",
      "Sätesöverdragaren",
-     "IBC-Tanköverdraget",
      "Bälteslipmaskinen",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
      "Båtmotorskyddet 420D",
-     "Soptunneklistermärkena",
+     "IBC-Tanköverdraget",
      "Termoskyddet för Husbil 211 × 171 cm",
+     "Soptunneklistermärkena",
      "Isolerade Utekattkojan"
     ],
     "exempel_f": [
@@ -1752,6 +1893,506 @@
     "vinstandel": 0.69,
     "konfidens": "LÅG",
     "riktning": "vinnare"
+   },
+   "ja": {
+    "REAL_WINNER": 10,
+    "REAL_LOSER": 17,
+    "INSUFFICIENT_DATA": 21,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 48941.63000000001,
+    "spend": 385359.83999999985,
+    "exempel_v": [
+     "Motorhöljet",
+     "Axelbältet",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "MC-Kapellet",
+     "Adventskalendern Racingbilar",
+     "Cykelshorts Herr",
+     "Kranskydd Frost 420D",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
+    ],
+    "exempel_f": [
+     "Ergonomiska Tofflorna",
+     "Surfplattestället",
+     "Plyschtofflorna Herr",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Väggfästet",
+     "Gräsklippartäcket",
+     "Badshorts med Skämttryck",
+     "Magnetfiskesatsen",
+     "Ståltrådsborsthuvuden",
+     "Skotvättpåsen",
+     "Krananslutningen",
+     "Lastnätet",
+     "Magnethyllan",
+     "Medicinasken i Fickformat",
+     "Uteduschen",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Första Hjälpen-Kitet"
+    ],
+    "domda": 27,
+    "vinstandel": 0.37,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   }
+  },
+  "markesankare_band": {
+   "1,2–1,6×": {
+    "REAL_WINNER": 5,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 171300.83999999997,
+    "spend": 262822.21,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Sätesöverdragaren",
+     "Axelbältet",
+     "Adventskalendern Racingbilar",
+     "Isolerade Utekattkojan"
+    ],
+    "exempel_f": [
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 7,
+    "vinstandel": 0.71,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   },
+   "≥1,6×": {
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 1,
+    "UNTESTED": 1,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 64482.1,
+    "spend": 154796.14999999997,
+    "exempel_v": [
+     "Bälteslipmaskinen",
+     "Övervakningskameran",
+     "Strandtofflorna",
+     "Termoskyddet för Husbil 211 × 171 cm"
+    ],
+    "exempel_f": [],
+    "domda": 4,
+    "vinstandel": 1.0,
+    "konfidens": "MEDEL",
+    "riktning": "vinnare"
+   }
+  },
+  "montering_app": {
+   "nej": {
+    "REAL_WINNER": 20,
+    "REAL_LOSER": 20,
+    "INSUFFICIENT_DATA": 33,
+    "UNTESTED": 3,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 335744.1400000001,
+    "spend": 840794.4300000002,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Motorhöljet",
+     "Fiskespöhållaren",
+     "Sätesöverdragaren",
+     "Axelbältet",
+     "Bälteslipmaskinen",
+     "Båtmotorskyddet 420D",
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
+     "Termoskyddet för Husbil 211 × 171 cm",
+     "MC-Kapellet",
+     "Damasker Vandring",
+     "Adventskalendern Racingbilar",
+     "Soptunneklistermärkena",
+     "Cykelshorts Herr",
+     "Sotarset Med Böjliga Stänger",
+     "Kranskydd Frost 420D",
+     "Isolerade Utekattkojan",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
+     "Vandringskängor Herr"
+    ],
+    "exempel_f": [
+     "Ergonomiska Tofflorna",
+     "Surfplattestället",
+     "Plyschtofflorna Herr",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Gräsklippartäcket",
+     "Badshorts med Skämttryck",
+     "Magnetfiskesatsen",
+     "Golfklubbsborsten",
+     "Skotvättpåsen",
+     "Lastnätet",
+     "Magnethyllan",
+     "Lättviktsryggsäcken",
+     "Luffarschacket i Trä",
+     "Medicinasken i Fickformat",
+     "Kasta & Fånga-settet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Första Hjälpen-Kitet",
+     "Hönsgårdsduk 145 × 109 cm",
+     "Bollpannbandet"
+    ],
+    "domda": 40,
+    "vinstandel": 0.5,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
+   "ja": {
+    "REAL_WINNER": 2,
+    "REAL_LOSER": 5,
+    "INSUFFICIENT_DATA": 11,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 20837.28,
+    "spend": 89047.36000000002,
+    "exempel_v": [
+     "Övervakningskameran",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
+    ],
+    "exempel_f": [
+     "Gravstenspennan",
+     "Väggfästet",
+     "Ståltrådsborsthuvuden",
+     "Krananslutningen",
+     "Uteduschen"
+    ],
+    "domda": 7,
+    "vinstandel": 0.29,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   }
+  },
+  "variant_risk": {
+   "ägarkänd parameter": {
+    "REAL_WINNER": 7,
+    "REAL_LOSER": 6,
+    "INSUFFICIENT_DATA": 7,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 229329.91999999998,
+    "spend": 413495.43999999994,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Motorhöljet",
+     "Sätesöverdragaren",
+     "Båtmotorskyddet 420D",
+     "Termoskyddet för Husbil 211 × 171 cm",
+     "Damasker Vandring",
+     "Isolerade Utekattkojan"
+    ],
+    "exempel_f": [
+     "Gravstenspennan",
+     "Magnethyllan",
+     "Lättviktsryggsäcken",
+     "Luffarschacket i Trä",
+     "Medicinasken i Fickformat",
+     "Bollpannbandet"
+    ],
+    "domda": 13,
+    "vinstandel": 0.54,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
+   "en variant": {
+    "REAL_WINNER": 10,
+    "REAL_LOSER": 11,
+    "INSUFFICIENT_DATA": 28,
+    "UNTESTED": 1,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 111491.22000000003,
+    "spend": 395662.7499999999,
+    "exempel_v": [
+     "Fiskespöhållaren",
+     "Axelbältet",
+     "Bälteslipmaskinen",
+     "Övervakningskameran",
+     "IBC-Tanköverdraget",
+     "Adventskalendern Racingbilar",
+     "Soptunneklistermärkena",
+     "Sotarset Med Böjliga Stänger",
+     "Kranskydd Frost 420D",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
+    ],
+    "exempel_f": [
+     "Surfplattestället",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Väggfästet",
+     "Magnetfiskesatsen",
+     "Golfklubbsborsten",
+     "Skotvättpåsen",
+     "Kasta & Fånga-settet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Uteduschen",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Första Hjälpen-Kitet"
+    ],
+    "domda": 21,
+    "vinstandel": 0.48,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
+   "måste mäta/storlek": {
+    "REAL_WINNER": 5,
+    "REAL_LOSER": 8,
+    "INSUFFICIENT_DATA": 6,
+    "UNTESTED": 2,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 15760.279999999997,
+    "spend": 116297.49,
+    "exempel_v": [
+     "Strandtofflorna",
+     "MC-Kapellet",
+     "Cykelshorts Herr",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
+     "Vandringskängor Herr"
+    ],
+    "exempel_f": [
+     "Ergonomiska Tofflorna",
+     "Plyschtofflorna Herr",
+     "Gräsklippartäcket",
+     "Badshorts med Skämttryck",
+     "Ståltrådsborsthuvuden",
+     "Krananslutningen",
+     "Lastnätet",
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 13,
+    "vinstandel": 0.38,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   }
+  },
+  "flerkop": {
+   "nej": {
+    "REAL_WINNER": 18,
+    "REAL_LOSER": 23,
+    "INSUFFICIENT_DATA": 37,
+    "UNTESTED": 3,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 296160.56000000006,
+    "spend": 762366.3800000002,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m",
+     "Motorhöljet",
+     "Sätesöverdragaren",
+     "Axelbältet",
+     "Bälteslipmaskinen",
+     "Båtmotorskyddet 420D",
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
+     "Termoskyddet för Husbil 211 × 171 cm",
+     "MC-Kapellet",
+     "Damasker Vandring",
+     "Cykelshorts Herr",
+     "Sotarset Med Böjliga Stänger",
+     "Kranskydd Frost 420D",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Isolerade Utekattkojan",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
+     "Vandringskängor Herr"
+    ],
+    "exempel_f": [
+     "Ergonomiska Tofflorna",
+     "Gravstenspennan",
+     "Surfplattestället",
+     "Plyschtofflorna Herr",
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Väggfästet",
+     "Gräsklippartäcket",
+     "Badshorts med Skämttryck",
+     "Magnetfiskesatsen",
+     "Golfklubbsborsten",
+     "Ståltrådsborsthuvuden",
+     "Skotvättpåsen",
+     "Krananslutningen",
+     "Lastnätet",
+     "Magnethyllan",
+     "Lättviktsryggsäcken",
+     "Luffarschacket i Trä",
+     "Medicinasken i Fickformat",
+     "Kasta & Fånga-settet",
+     "Uteduschen",
+     "Första Hjälpen-Kitet",
+     "Hönsgårdsduk 145 × 109 cm",
+     "Bollpannbandet"
+    ],
+    "domda": 41,
+    "vinstandel": 0.44,
+    "konfidens": "LÅG",
+    "riktning": "blandat"
+   },
+   "ja": {
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 2,
+    "INSUFFICIENT_DATA": 7,
+    "UNTESTED": 0,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 60420.86,
+    "spend": 167475.41,
+    "exempel_v": [
+     "Fiskespöhållaren",
+     "Övervakningskameran",
+     "Adventskalendern Racingbilar",
+     "Soptunneklistermärkena"
+    ],
+    "exempel_f": [
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+    ],
+    "domda": 6,
+    "vinstandel": 0.67,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   }
+  },
+  "prisband": {
+   "≥1000": {
+    "REAL_WINNER": 1,
+    "REAL_LOSER": 0,
+    "INSUFFICIENT_DATA": 3,
+    "UNTESTED": 0,
+    "ja": 8,
+    "kanske": 0,
+    "nej": 2,
+    "vinst_kr": 139337.18,
+    "spend": 137468.87,
+    "exempel_v": [
+     "Taköverdraget för Husvagn 6,5 × 3 m"
+    ],
+    "exempel_f": [],
+    "domda": 1,
+    "vinstandel": 1.0,
+    "konfidens": "LÅG",
+    "riktning": "vinnare"
+   },
+   "<300": {
+    "REAL_WINNER": 4,
+    "REAL_LOSER": 8,
+    "INSUFFICIENT_DATA": 10,
+    "UNTESTED": 1,
+    "ja": 0,
+    "kanske": 0,
+    "nej": 0,
+    "vinst_kr": 49687.67999999999,
+    "spend": 247113.1900000001,
+    "exempel_v": [
+     "Motorhöljet",
+     "Fiskespöhållaren",
+     "Soptunneklistermärkena",
+     "Cykelshorts Herr"
+    ],
+    "exempel_f": [
+     "Gravstenspennan",
+     "Magnetfiskesatsen",
+     "Golfklubbsborsten",
+     "Skotvättpåsen",
+     "Krananslutningen",
+     "Luffarschacket i Trä",
+     "Medicinasken i Fickformat",
+     "Bollpannbandet"
+    ],
+    "domda": 12,
+    "vinstandel": 0.33,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
+   },
+   "500–999": {
+    "REAL_WINNER": 9,
+    "REAL_LOSER": 3,
+    "INSUFFICIENT_DATA": 11,
+    "UNTESTED": 2,
+    "ja": 23,
+    "kanske": 6,
+    "nej": 4,
+    "vinst_kr": 120041.12000000001,
+    "spend": 313942.17,
+    "exempel_v": [
+     "Sätesöverdragaren",
+     "Axelbältet",
+     "Bälteslipmaskinen",
+     "Båtmotorskyddet 420D",
+     "Övervakningskameran",
+     "Termoskyddet för Husbil 211 × 171 cm",
+     "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+     "Isolerade Utekattkojan",
+     "Vandringskängor Herr"
+    ],
+    "exempel_f": [
+     "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
+     "Lättviktsryggsäcken",
+     "Uteduschen"
+    ],
+    "domda": 12,
+    "vinstandel": 0.75,
+    "konfidens": "HÖG",
+    "riktning": "vinnare"
+   },
+   "300–499": {
+    "REAL_WINNER": 8,
+    "REAL_LOSER": 14,
+    "INSUFFICIENT_DATA": 16,
+    "UNTESTED": 0,
+    "ja": 11,
+    "kanske": 3,
+    "nej": 0,
+    "vinst_kr": 47515.439999999995,
+    "spend": 225163.79000000004,
+    "exempel_v": [
+     "Strandtofflorna",
+     "IBC-Tanköverdraget",
+     "MC-Kapellet",
+     "Damasker Vandring",
+     "Adventskalendern Racingbilar",
+     "Sotarset Med Böjliga Stänger",
+     "Kranskydd Frost 420D",
+     "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
+    ],
+    "exempel_f": [
+     "Ergonomiska Tofflorna",
+     "Surfplattestället",
+     "Plyschtofflorna Herr",
+     "Väggfästet",
+     "Gräsklippartäcket",
+     "Badshorts med Skämttryck",
+     "Ståltrådsborsthuvuden",
+     "Lastnätet",
+     "Magnethyllan",
+     "Kasta & Fånga-settet",
+     "Dinosaurie Adventskalender – 24 Dinosaurier",
+     "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+     "Första Hjälpen-Kitet",
+     "Hönsgårdsduk 145 × 109 cm"
+    ],
+    "domda": 22,
+    "vinstandel": 0.36,
+    "konfidens": "LÅG",
+    "riktning": "förlorare"
    }
   },
   "material_klass": {
@@ -1787,13 +2428,13 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 95698.89,
-    "spend": 210061.58,
+    "vinst_kr": 105403.81,
+    "spend": 236086.28,
     "exempel_v": [
      "Fiskespöhållaren",
      "Sätesöverdragaren",
-     "Övervakningskameran",
-     "Bälteslipmaskinen"
+     "Bälteslipmaskinen",
+     "Övervakningskameran"
     ],
     "exempel_f": [],
     "domda": 4,
@@ -1809,8 +2450,8 @@
     "ja": 0,
     "kanske": 0,
     "nej": 0,
-    "vinst_kr": 19267.140000000003,
-    "spend": 50983.810000000005,
+    "vinst_kr": 23174.850000000002,
+    "spend": 55009.740000000005,
     "exempel_v": [
      "IBC-Tanköverdraget"
     ],
@@ -1825,428 +2466,6 @@
     "konfidens": "MEDEL",
     "riktning": "förlorare"
    }
-  },
-  "montering_app": {
-   "nej": {
-    "REAL_WINNER": 18,
-    "REAL_LOSER": 16,
-    "INSUFFICIENT_DATA": 26,
-    "UNTESTED": 2,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 210284.34,
-    "spend": 635970.2400000001,
-    "exempel_v": [
-     "Motorhöljet",
-     "Fiskespöhållaren",
-     "Sätesöverdragaren",
-     "Axelbältet",
-     "Strandtofflorna",
-     "IBC-Tanköverdraget",
-     "Bälteslipmaskinen",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
-     "MC-Kapellet",
-     "Damasker Vandring",
-     "Soptunneklistermärkena",
-     "Adventskalendern Racingbilar",
-     "Cykelshorts Herr",
-     "Kranskydd Frost 420D",
-     "Termoskyddet för Husbil 211 × 171 cm",
-     "Isolerade Utekattkojan",
-     "Vandringskängor Herr"
-    ],
-    "exempel_f": [
-     "Ergonomiska Tofflorna",
-     "Surfplattestället",
-     "Plyschtofflorna Herr",
-     "Gräsklippartäcket",
-     "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
-     "Golfklubbsborsten",
-     "Skotvättpåsen",
-     "Lastnätet",
-     "Magnethyllan",
-     "Lättviktsryggsäcken",
-     "Luffarschacket i Trä",
-     "Medicinasken i Fickformat",
-     "Kasta & Fånga-settet",
-     "Första Hjälpen-Kitet",
-     "Bollpannbandet"
-    ],
-    "domda": 34,
-    "vinstandel": 0.53,
-    "konfidens": "LÅG",
-    "riktning": "blandat"
-   },
-   "ja": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 5,
-    "INSUFFICIENT_DATA": 10,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 19779.08,
-    "spend": 73930.1,
-    "exempel_v": [
-     "Övervakningskameran"
-    ],
-    "exempel_f": [
-     "Gravstenspennan",
-     "Väggfästet",
-     "Ståltrådsborsthuvuden",
-     "Krananslutningen",
-     "Uteduschen"
-    ],
-    "domda": 6,
-    "vinstandel": 0.17,
-    "konfidens": "HÖG",
-    "riktning": "förlorare"
-   }
-  },
-  "variant_risk": {
-   "ägarkänd parameter": {
-    "REAL_WINNER": 7,
-    "REAL_LOSER": 6,
-    "INSUFFICIENT_DATA": 7,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 123918.17999999998,
-    "spend": 277232.69,
-    "exempel_v": [
-     "Motorhöljet",
-     "Sätesöverdragaren",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
-     "Damasker Vandring",
-     "Termoskyddet för Husbil 211 × 171 cm",
-     "Isolerade Utekattkojan"
-    ],
-    "exempel_f": [
-     "Gravstenspennan",
-     "Magnethyllan",
-     "Lättviktsryggsäcken",
-     "Luffarschacket i Trä",
-     "Medicinasken i Fickformat",
-     "Bollpannbandet"
-    ],
-    "domda": 13,
-    "vinstandel": 0.54,
-    "konfidens": "LÅG",
-    "riktning": "blandat"
-   },
-   "en variant": {
-    "REAL_WINNER": 8,
-    "REAL_LOSER": 8,
-    "INSUFFICIENT_DATA": 22,
-    "UNTESTED": 1,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 90414.53000000001,
-    "spend": 324108.1900000001,
-    "exempel_v": [
-     "Fiskespöhållaren",
-     "Axelbältet",
-     "Övervakningskameran",
-     "IBC-Tanköverdraget",
-     "Bälteslipmaskinen",
-     "Soptunneklistermärkena",
-     "Adventskalendern Racingbilar",
-     "Kranskydd Frost 420D"
-    ],
-    "exempel_f": [
-     "Surfplattestället",
-     "Väggfästet",
-     "Magnetfiskesatsen",
-     "Golfklubbsborsten",
-     "Skotvättpåsen",
-     "Kasta & Fånga-settet",
-     "Uteduschen",
-     "Första Hjälpen-Kitet"
-    ],
-    "domda": 16,
-    "vinstandel": 0.5,
-    "konfidens": "LÅG",
-    "riktning": "blandat"
-   },
-   "måste mäta/storlek": {
-    "REAL_WINNER": 4,
-    "REAL_LOSER": 7,
-    "INSUFFICIENT_DATA": 5,
-    "UNTESTED": 1,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 15730.709999999997,
-    "spend": 106093.73,
-    "exempel_v": [
-     "Strandtofflorna",
-     "MC-Kapellet",
-     "Cykelshorts Herr",
-     "Vandringskängor Herr"
-    ],
-    "exempel_f": [
-     "Ergonomiska Tofflorna",
-     "Plyschtofflorna Herr",
-     "Gräsklippartäcket",
-     "Badshorts med Skämttryck",
-     "Ståltrådsborsthuvuden",
-     "Krananslutningen",
-     "Lastnätet"
-    ],
-    "domda": 11,
-    "vinstandel": 0.36,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
-   }
-  },
-  "flerkop": {
-   "nej": {
-    "REAL_WINNER": 15,
-    "REAL_LOSER": 21,
-    "INSUFFICIENT_DATA": 31,
-    "UNTESTED": 2,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 171463.54,
-    "spend": 564908.6800000002,
-    "exempel_v": [
-     "Motorhöljet",
-     "Sätesöverdragaren",
-     "Axelbältet",
-     "Strandtofflorna",
-     "IBC-Tanköverdraget",
-     "Bälteslipmaskinen",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Båtmotorskyddet 420D",
-     "MC-Kapellet",
-     "Damasker Vandring",
-     "Cykelshorts Herr",
-     "Kranskydd Frost 420D",
-     "Termoskyddet för Husbil 211 × 171 cm",
-     "Isolerade Utekattkojan",
-     "Vandringskängor Herr"
-    ],
-    "exempel_f": [
-     "Ergonomiska Tofflorna",
-     "Gravstenspennan",
-     "Surfplattestället",
-     "Plyschtofflorna Herr",
-     "Väggfästet",
-     "Gräsklippartäcket",
-     "Badshorts med Skämttryck",
-     "Magnetfiskesatsen",
-     "Golfklubbsborsten",
-     "Ståltrådsborsthuvuden",
-     "Skotvättpåsen",
-     "Krananslutningen",
-     "Lastnätet",
-     "Magnethyllan",
-     "Lättviktsryggsäcken",
-     "Luffarschacket i Trä",
-     "Medicinasken i Fickformat",
-     "Kasta & Fånga-settet",
-     "Uteduschen",
-     "Första Hjälpen-Kitet",
-     "Bollpannbandet"
-    ],
-    "domda": 36,
-    "vinstandel": 0.42,
-    "konfidens": "LÅG",
-    "riktning": "blandat"
-   },
-   "ja": {
-    "REAL_WINNER": 4,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 5,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 58599.88,
-    "spend": 144991.65999999995,
-    "exempel_v": [
-     "Fiskespöhållaren",
-     "Övervakningskameran",
-     "Soptunneklistermärkena",
-     "Adventskalendern Racingbilar"
-    ],
-    "exempel_f": [],
-    "domda": 4,
-    "vinstandel": 1.0,
-    "konfidens": "MEDEL",
-    "riktning": "vinnare"
-   }
-  },
-  "prisband": {
-   "<300": {
-    "REAL_WINNER": 4,
-    "REAL_LOSER": 8,
-    "INSUFFICIENT_DATA": 8,
-    "UNTESTED": 1,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 45566.91999999999,
-    "spend": 233374.4500000001,
-    "exempel_v": [
-     "Motorhöljet",
-     "Fiskespöhållaren",
-     "Soptunneklistermärkena",
-     "Cykelshorts Herr"
-    ],
-    "exempel_f": [
-     "Gravstenspennan",
-     "Magnetfiskesatsen",
-     "Golfklubbsborsten",
-     "Skotvättpåsen",
-     "Krananslutningen",
-     "Luffarschacket i Trä",
-     "Medicinasken i Fickformat",
-     "Bollpannbandet"
-    ],
-    "domda": 12,
-    "vinstandel": 0.33,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
-   },
-   "500–999": {
-    "REAL_WINNER": 8,
-    "REAL_LOSER": 2,
-    "INSUFFICIENT_DATA": 9,
-    "UNTESTED": 1,
-    "ja": 17,
-    "kanske": 2,
-    "nej": 3,
-    "vinst_kr": 90707.28000000001,
-    "spend": 245001.38,
-    "exempel_v": [
-     "Sätesöverdragaren",
-     "Axelbältet",
-     "Övervakningskameran",
-     "Bälteslipmaskinen",
-     "Båtmotorskyddet 420D",
-     "Termoskyddet för Husbil 211 × 171 cm",
-     "Isolerade Utekattkojan",
-     "Vandringskängor Herr"
-    ],
-    "exempel_f": [
-     "Lättviktsryggsäcken",
-     "Uteduschen"
-    ],
-    "domda": 10,
-    "vinstandel": 0.8,
-    "konfidens": "HÖG",
-    "riktning": "vinnare"
-   },
-   "300–499": {
-    "REAL_WINNER": 6,
-    "REAL_LOSER": 11,
-    "INSUFFICIENT_DATA": 14,
-    "UNTESTED": 0,
-    "ja": 6,
-    "kanske": 2,
-    "nej": 0,
-    "vinst_kr": 36101.52,
-    "spend": 192047.1,
-    "exempel_v": [
-     "Strandtofflorna",
-     "IBC-Tanköverdraget",
-     "MC-Kapellet",
-     "Damasker Vandring",
-     "Adventskalendern Racingbilar",
-     "Kranskydd Frost 420D"
-    ],
-    "exempel_f": [
-     "Ergonomiska Tofflorna",
-     "Surfplattestället",
-     "Plyschtofflorna Herr",
-     "Väggfästet",
-     "Gräsklippartäcket",
-     "Badshorts med Skämttryck",
-     "Ståltrådsborsthuvuden",
-     "Lastnätet",
-     "Magnethyllan",
-     "Kasta & Fånga-settet",
-     "Första Hjälpen-Kitet"
-    ],
-    "domda": 17,
-    "vinstandel": 0.35,
-    "konfidens": "LÅG",
-    "riktning": "förlorare"
-   },
-   "≥1000": {
-    "REAL_WINNER": 1,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 1,
-    "UNTESTED": 0,
-    "ja": 5,
-    "kanske": 0,
-    "nej": 2,
-    "vinst_kr": 57687.7,
-    "spend": 33323.64,
-    "exempel_v": [
-     "Taköverdraget för Husvagn 6,5 × 3 m"
-    ],
-    "exempel_f": [],
-    "domda": 1,
-    "vinstandel": 1.0,
-    "konfidens": "LÅG",
-    "riktning": "vinnare"
-   }
-  },
-  "markesankare_band": {
-   "1,2–1,6×": {
-    "REAL_WINNER": 5,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 90146.58,
-    "spend": 156729.91,
-    "exempel_v": [
-     "Sätesöverdragaren",
-     "Axelbältet",
-     "Taköverdraget för Husvagn 6,5 × 3 m",
-     "Adventskalendern Racingbilar",
-     "Isolerade Utekattkojan"
-    ],
-    "exempel_f": [],
-    "domda": 5,
-    "vinstandel": 1.0,
-    "konfidens": "MEDEL",
-    "riktning": "vinnare"
-   },
-   "≥1,6×": {
-    "REAL_WINNER": 4,
-    "REAL_LOSER": 0,
-    "INSUFFICIENT_DATA": 0,
-    "UNTESTED": 0,
-    "ja": 0,
-    "kanske": 0,
-    "nej": 0,
-    "vinst_kr": 50371.64,
-    "spend": 119962.59,
-    "exempel_v": [
-     "Strandtofflorna",
-     "Övervakningskameran",
-     "Bälteslipmaskinen",
-     "Termoskyddet för Husbil 211 × 171 cm"
-    ],
-    "exempel_f": [],
-    "domda": 4,
-    "vinstandel": 1.0,
-    "konfidens": "MEDEL",
-    "riktning": "vinnare"
-   }
   }
  },
  "hypoteser": [
@@ -2254,17 +2473,18 @@
    "id": "H01",
    "text": "Ägd dyr sak ute + omedelbart väderhot + billigt skydd i formsydd form",
    "vinnare": [
+    "Taköverdraget för Husvagn 6,5 × 3 m",
     "Motorhöljet",
     "Sätesöverdragaren",
+    "Båtmotorskyddet 420D",
     "Övervakningskameran",
     "IBC-Tanköverdraget",
-    "Taköverdraget för Husvagn 6,5 × 3 m",
-    "Båtmotorskyddet 420D",
+    "Termoskyddet för Husbil 211 × 171 cm",
     "MC-Kapellet",
-    "Termoskyddet för Husbil 211 × 171 cm"
+    "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED"
    ],
    "forlorare": [],
-   "otillrackligt": 3,
+   "otillrackligt": 6,
    "status": "stärkt"
   },
   {
@@ -2273,42 +2493,48 @@
    "vinnare": [
     "Taköverdraget för Husvagn 6,5 × 3 m",
     "Båtmotorskyddet 420D",
+    "Termoskyddet för Husbil 211 × 171 cm",
     "MC-Kapellet",
     "Damasker Vandring",
     "Adventskalendern Racingbilar",
     "Kranskydd Frost 420D",
-    "Termoskyddet för Husbil 211 × 171 cm",
     "Isolerade Utekattkojan"
    ],
-   "forlorare": [],
-   "otillrackligt": 2,
-   "status": "stärkt"
+   "forlorare": [
+    "Dinosaurie Adventskalender – 24 Dinosaurier",
+    "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+   ],
+   "otillrackligt": 8,
+   "status": "aktiv"
   },
   {
    "id": "H03",
    "text": "Svikande default som ägaren redan köpt (chokladkalender, presenning, handduk) är ett starkare köpskäl än 'ingenting'",
    "vinnare": [
+    "Taköverdraget för Husvagn 6,5 × 3 m",
     "Motorhöljet",
     "Fiskespöhållaren",
     "Sätesöverdragaren",
     "Axelbältet",
-    "Strandtofflorna",
-    "Övervakningskameran",
-    "IBC-Tanköverdraget",
     "Bälteslipmaskinen",
-    "Taköverdraget för Husvagn 6,5 × 3 m",
     "Båtmotorskyddet 420D",
+    "Övervakningskameran",
+    "Strandtofflorna",
+    "IBC-Tanköverdraget",
     "MC-Kapellet",
     "Damasker Vandring",
     "Adventskalendern Racingbilar",
     "Cykelshorts Herr",
     "Kranskydd Frost 420D",
+    "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "Fodrade Inomhustofflor – Kamouflage, Herr 40–47",
     "Vandringskängor Herr"
    ],
    "forlorare": [
     "Ergonomiska Tofflorna",
     "Surfplattestället",
     "Plyschtofflorna Herr",
+    "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
     "Väggfästet",
     "Gräsklippartäcket",
     "Badshorts med Skämttryck",
@@ -2321,10 +2547,13 @@
     "Lättviktsryggsäcken",
     "Luffarschacket i Trä",
     "Medicinasken i Fickformat",
+    "Dinosaurie Adventskalender – 24 Dinosaurier",
     "Uteduschen",
-    "Första Hjälpen-Kitet"
+    "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
+    "Första Hjälpen-Kitet",
+    "Hönsgårdsduk 145 × 109 cm"
    ],
-   "otillrackligt": 33,
+   "otillrackligt": 40,
    "status": "aktiv"
   },
   {
@@ -2334,7 +2563,7 @@
     "Taköverdraget för Husvagn 6,5 × 3 m"
    ],
    "forlorare": [],
-   "otillrackligt": 1,
+   "otillrackligt": 3,
    "status": "aktiv"
   },
   {
@@ -2344,9 +2573,11 @@
     "Adventskalendern Racingbilar"
    ],
    "forlorare": [
-    "Badshorts med Skämttryck"
+    "Badshorts med Skämttryck",
+    "Dinosaurie Adventskalender – 24 Dinosaurier",
+    "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
    ],
-   "otillrackligt": 0,
+   "otillrackligt": 2,
    "status": "aktiv"
   },
   {
@@ -2355,17 +2586,20 @@
    "vinnare": [
     "Motorhöljet",
     "Axelbältet",
-    "Strandtofflorna",
     "Övervakningskameran",
+    "Strandtofflorna",
     "MC-Kapellet",
     "Adventskalendern Racingbilar",
     "Cykelshorts Herr",
-    "Kranskydd Frost 420D"
+    "Kranskydd Frost 420D",
+    "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+    "Fodrade Inomhustofflor – Kamouflage, Herr 40–47"
    ],
    "forlorare": [
     "Ergonomiska Tofflorna",
     "Surfplattestället",
     "Plyschtofflorna Herr",
+    "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
     "Väggfästet",
     "Gräsklippartäcket",
     "Badshorts med Skämttryck",
@@ -2377,21 +2611,24 @@
     "Magnethyllan",
     "Medicinasken i Fickformat",
     "Uteduschen",
+    "Gör Din Egen Adventskalender – 24 tomma askar att fylla",
     "Första Hjälpen-Kitet"
    ],
-   "otillrackligt": 20,
+   "otillrackligt": 21,
    "status": "aktiv"
   },
   {
    "id": "H07",
    "text": "Verktyg/pryl som Axel själv launchar (Stegstödet, Solcellslarmet, Sittkäppen) förlorar — K3-regeln håller även mot hans klick",
    "vinnare": [
-    "Bälteslipmaskinen"
+    "Bälteslipmaskinen",
+    "Sotarset Med Böjliga Stänger"
    ],
    "forlorare": [
+    "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud",
     "Ståltrådsborsthuvuden"
    ],
-   "otillrackligt": 5,
+   "otillrackligt": 7,
    "status": "aktiv"
   },
   {
@@ -2400,12 +2637,15 @@
    "vinnare": [
     "Fiskespöhållaren",
     "Övervakningskameran",
-    "Soptunneklistermärkena",
-    "Adventskalendern Racingbilar"
+    "Adventskalendern Racingbilar",
+    "Soptunneklistermärkena"
    ],
-   "forlorare": [],
-   "otillrackligt": 5,
-   "status": "stärkt"
+   "forlorare": [
+    "Dinosaurie Adventskalender – 24 Dinosaurier",
+    "Gör Din Egen Adventskalender – 24 tomma askar att fylla"
+   ],
+   "otillrackligt": 7,
+   "status": "aktiv"
   },
   {
    "id": "H09",
@@ -2422,7 +2662,7 @@
     "Soptunneklistermärkena"
    ],
    "forlorare": [],
-   "otillrackligt": 3,
+   "otillrackligt": 4,
    "status": "aktiv"
   },
   {
@@ -2432,7 +2672,7 @@
     "Fiskespöhållaren"
    ],
    "forlorare": [],
-   "otillrackligt": 0,
+   "otillrackligt": 1,
    "status": "aktiv"
   },
   {
@@ -2441,8 +2681,10 @@
    "vinnare": [
     "Bälteslipmaskinen"
    ],
-   "forlorare": [],
-   "otillrackligt": 2,
+   "forlorare": [
+    "Biltvättborste Med Teleskopskaft – Dubbelt Borsthuvud"
+   ],
+   "otillrackligt": 3,
    "status": "aktiv"
   }
  ],
@@ -2456,24 +2698,10 @@
    "axel": "—",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 28852.52,
-   "kop": 122,
-   "roas": 4.889,
+   "spend": 118714.28,
+   "kop": 339,
+   "roas": 3.4668,
    "kommentar": "FEL — Axel launchade 2026-09-09 för 1 129 kr (över 1 000-kronorstaket): 2 657 kr / 15 köp / ROAS 6,37 mot BE 1,63 (2026-09-11). Lagerdjupet hos ankaret spelade ingen roll; priset över 1 000 kr spelade ingen roll."
-  },
-  {
-   "id": "K0003",
-   "namn": "Adventskalender racingbilar",
-   "arketyp": "G_Q4_GAVA",
-   "prediktion": "KILL (implicit)",
-   "poang": null,
-   "axel": "—",
-   "klass": "REAL_WINNER",
-   "band": "HIGH",
-   "spend": 8804.63,
-   "kop": 27,
-   "roas": 1.7714,
-   "kommentar": "FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje regel i den negativa rymden."
   },
   {
    "id": "K0227",
@@ -2484,9 +2712,37 @@
    "axel": "—",
    "klass": "REAL_WINNER",
    "band": "HIGH",
-   "spend": 7053.82,
-   "kop": 40,
-   "roas": 3.2254,
+   "spend": 23510.73,
+   "kop": 106,
+   "roas": 2.7217,
+   "kommentar": ""
+  },
+  {
+   "id": "K0003",
+   "namn": "Adventskalender racingbilar",
+   "arketyp": "G_Q4_GAVA",
+   "prediktion": "KILL (implicit)",
+   "poang": null,
+   "axel": "—",
+   "klass": "REAL_WINNER",
+   "band": "HIGH",
+   "spend": 12345.93,
+   "kop": 37,
+   "roas": 1.7524,
+   "kommentar": "FEL — 3 298 kr / 16 köp / ROAS 3,07 mot BE 1,62 (2026-09-11). Hårt datum (1 dec) + svikande default (chokladkalender) + 24 synliga saker slog varje regel i den negativa rymden."
+  },
+  {
+   "id": "K0030",
+   "namn": "Flexible Chimney Sweep Set Flue Sweeping Brush & Rod Kit Soot Cleaning Rods Nylon Brush Cl",
+   "arketyp": null,
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "kanske",
+   "klass": "REAL_WINNER",
+   "band": "HIGH",
+   "spend": 8428.73,
+   "kop": 56,
+   "roas": 3.4038,
    "kommentar": ""
   },
   {
@@ -2502,6 +2758,48 @@
    "kop": 13,
    "roas": 1.6899,
    "kommentar": "RÄTT — launchad 2026-09-09 för 789 kr (över rekommenderade 599): 2 883 kr / 9 köp / ROAS 2,46 mot BE 1,62 (2026-09-11). Huvudrisken (look-alikes + 3 annonsörer) fällde den inte."
+  },
+  {
+   "id": "K0005",
+   "namn": "Car Washer Mop Foam Wash Brush Double Brush Head Roof Window Cleaning Maintenance Three-Se",
+   "arketyp": null,
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "REAL_LOSER",
+   "band": "MEANINGFUL",
+   "spend": 4805.66,
+   "kop": 7,
+   "roas": 1.1638,
+   "kommentar": ""
+  },
+  {
+   "id": "K0242",
+   "namn": "Fågelmataren med kamera (5MP, solcell)",
+   "arketyp": "G_Q4_GAVA",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 4266.3,
+   "kop": 3,
+   "roas": 1.711,
+   "kommentar": ""
+  },
+  {
+   "id": "K0126",
+   "namn": "Adventskalender Dinosaurier 24 figurer",
+   "arketyp": "G_Q4_GAVA",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "REAL_LOSER",
+   "band": "MEANINGFUL",
+   "spend": 2003.48,
+   "kop": 5,
+   "roas": 1.1352,
+   "kommentar": ""
   },
   {
    "id": "K0226",
@@ -2532,6 +2830,34 @@
    "kommentar": ""
   },
   {
+   "id": "K0013",
+   "namn": "Wood Drill Bit Twist Firewood Splitting Drill Bit Wood Splitter Screw Cones Bit Square Rou",
+   "arketyp": null,
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "kanske",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 1976.4,
+   "kop": 3,
+   "roas": 0.6664,
+   "kommentar": ""
+  },
+  {
+   "id": "K0238",
+   "namn": "Snöskyffeln för Makita-batteri",
+   "arketyp": "D_SNABBARE_METOD",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "TOO_EARLY",
+   "spend": 1933.17,
+   "kop": 1,
+   "roas": 1.3879,
+   "kommentar": ""
+  },
+  {
    "id": "K0046",
    "namn": "1/2 Pack Heavy Duty Steel Fence Post Repair Kit - Anchor Brackets & Ground Spike for Fixin",
    "arketyp": null,
@@ -2543,6 +2869,90 @@
    "spend": 1875.12,
    "kop": 1,
    "roas": 0.9057,
+   "kommentar": ""
+  },
+  {
+   "id": "K0205",
+   "namn": "Hönsgårdstaket, formsytt",
+   "arketyp": "E_VADER_SASONG",
+   "prediktion": "launch",
+   "poang": 83,
+   "axel": "ja",
+   "klass": "REAL_LOSER",
+   "band": "MEANINGFUL",
+   "spend": 1646.82,
+   "kop": 0,
+   "roas": null,
+   "kommentar": ""
+  },
+  {
+   "id": "K0237",
+   "namn": "Snöflingor till garageporten 25-pack",
+   "arketyp": "H_VISUELL_NYHET",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 1024.41,
+   "kop": 0,
+   "roas": null,
+   "kommentar": ""
+  },
+  {
+   "id": "K0239",
+   "namn": "Kajakhållaren för vägg, 2-pack",
+   "arketyp": "A_AGARE_FRIKTION",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 971.15,
+   "kop": 1,
+   "roas": 1.0486,
+   "kommentar": ""
+  },
+  {
+   "id": "K0224",
+   "namn": "Snöslungehuven 600D",
+   "arketyp": "B_SKYDDA_DYRT",
+   "prediktion": "launch",
+   "poang": 86,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 954.94,
+   "kop": 0,
+   "roas": null,
+   "kommentar": ""
+  },
+  {
+   "id": "K0234",
+   "namn": "ATV-kapellet Heavy Duty",
+   "arketyp": "B_SKYDDA_DYRT",
+   "prediktion": "levererad",
+   "poang": null,
+   "axel": "ja",
+   "klass": "INSUFFICIENT_DATA",
+   "band": "EARLY_SIGNAL",
+   "spend": 939.65,
+   "kop": 6,
+   "roas": 4.1285,
+   "kommentar": ""
+  },
+  {
+   "id": "K0053",
+   "namn": "Lockskydd runt spabad / badtunna (cover cap)",
+   "arketyp": "B_SKYDDA_DYRT",
+   "prediktion": "launch-kandidat",
+   "poang": 87,
+   "axel": "kanske",
+   "klass": "UNTESTED",
+   "band": "UNTESTED",
+   "spend": 187.24,
+   "kop": 0,
+   "roas": null,
    "kommentar": ""
   }
  ]

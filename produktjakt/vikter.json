@@ -1,10 +1,10 @@
 {
- "datum": "2026-09-16",
- "antal_svar": 55,
+ "datum": "2026-09-23",
+ "antal_svar": 75,
  "per_dom": {
-  "ja": 37,
-  "kanske": 9,
-  "nej": 9
+  "ja": 51,
+  "kanske": 14,
+  "nej": 10
  },
  "antal_utfall": 7,
  "score_regel": "(ja + 0.5*kanske + 1) / (ja + kanske + nej + 2); 0.5 = inget svar; launchad = 2 ja, >=BE = 3 ja, <BE = 3 nej",
@@ -77,10 +77,10 @@
     "score": 0.667
    },
    "Hönsen — rastgård och vatten": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "Snöslungan": {
     "ja": 1,
@@ -234,9 +234,9 @@
    },
    "Krukväxter — citrus, oliv, fikon, pelargon": {
     "ja": 1,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.625
    },
    "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)": {
     "ja": 0,
@@ -303,6 +303,114 @@
     "kanske": 0,
     "nej": 1,
     "score": 0.333
+   },
+   "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Rosor, rhododendron, buxbom i rabatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Höstplanteringen — lökar, rosor och unga fruktträd under jord (sorken äter rötterna nov–mars)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Stupröret — regnkedja i stället för rör": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Trädet på tomten — dekor på stammen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Trädgårdsdammen (koi/guldfisk)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Trappan och entrén — snö och is på stegen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Mannen med husbilen — kalendern (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
    }
   },
   "ankare_kalla": {
@@ -564,6 +672,126 @@
     "nej": 1,
     "score": 0.333
    },
+   "Poolklubben Poolvärmepump Vinterskydd L (gummerad presenning, 13 i lager)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Bauhaus — Videx Garden Fleece med dragkedja 240×200 cm": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Vivara Fågelholks WiFi-kamera (bara kameran, 10 m kabel) 3 399,90 kr; solcellsdriven 3 399,90 kr — båda i lager": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "HORL 2 HO2 (ek/valnöt), PriceRunner lägsta": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Lantkompaniet / VOSS.farming — Nätkorg mot sork Ø 60 cm, 1 st": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Dometic Skyddsöverdrag FJX/FJZ7 3000 (camping4u)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Gecko Trädgård — Japansk regnkedja, Utsvängd, aluminium (i lager 2026-09-13)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Relaxdays Träd ansikte Natur ande (enda svenska prislappen som gick att läsa; Amazon.se-sidan svarade 503)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "SmartaSaker — Potlifter 90 kg": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "ChickenGuard/automatisk lucköppnare (Lantbutiken 49-70592 2 119 kr; P. Lindberg 2 120 kr)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fiamma BikeCover S 2-3 cyklar (thansen.se, 30 butiker)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Oceansouth Jet Ski Cover 2-tone 2,9–3,4 m (Marindelen; 2,5–2,9 m 1 120 kr, 3,4–3,7 m 1 560 kr — 'snart i lager igen', levtid 1–2 v)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "IceFree Thermo 330 (flytande, termostat/frostvakt)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "LEGO City adventskalender 2026, Lekia — kategoriankare, inte samma form": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "ej mätt — Bauhaus Espegard-överdrag gäller Kindling Cracker (manuell klyv, annat objekt); inget märkesöverdrag för hydraulisk vedklyv hittat hos Bauhaus/Skogma/P. Lindberg": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Safestep Värmematta 27 × 95 cm (inkl. moms, strömkabel säljs separat)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "promenadskoter.se Överdrag HS-828 & HS-925 (HS-328 895, HS-520 995)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "LEGO City adventskalender 2026 (60510), Lekia — kategoriankare, inte samma tema": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Sulavesi uppvärmd vattenskål utomhus 2,6 L (betong, 40 W) — Arken Zoo/VetZoo, i lager": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "ej hittat — närmast CDON 'Adventskalender för män, 24 presenter' 519 kr (sökutdrag 2026-09-15, annan form) och Otego bil/traktor-kalender (pris ej läst)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "eurotrail/getcamping.se": {
     "ja": 3,
     "kanske": 0,
@@ -609,34 +837,34 @@
   },
   "ankare_klass": {
    "≥ 1,6×": {
-    "ja": 12,
-    "kanske": 4,
+    "ja": 16,
+    "kanske": 7,
     "nej": 5,
-    "score": 0.652
+    "score": 0.683
    },
    "1,3–1,6×": {
-    "ja": 17,
-    "kanske": 1,
-    "nej": 1,
-    "score": 0.881
+    "ja": 20,
+    "kanske": 2,
+    "nej": 2,
+    "score": 0.846
    },
    "golv utan ankare": {
-    "ja": 8,
+    "ja": 13,
     "kanske": 0,
     "nej": 0,
-    "score": 0.9
+    "score": 0.933
    },
    "ej mätt": {
-    "ja": 4,
+    "ja": 6,
     "kanske": 0,
     "nej": 0,
-    "score": 0.833
+    "score": 0.875
    },
    "1,2–1,3×": {
     "ja": 7,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.889
+    "score": 0.85
    },
    "ingen aktör": {
     "ja": 2,
@@ -665,16 +893,16 @@
     "score": 0.5
    },
    "B_SKYDDA_DYRT": {
-    "ja": 8,
-    "kanske": 0,
-    "nej": 2,
+    "ja": 12,
+    "kanske": 1,
+    "nej": 3,
     "score": 0.75
    },
    "A_AGARE_FRIKTION": {
     "ja": 3,
-    "kanske": 3,
+    "kanske": 4,
     "nej": 2,
-    "score": 0.55
+    "score": 0.545
    },
    "D_SNABBARE_METOD": {
     "ja": 4,
@@ -683,22 +911,22 @@
     "score": 0.714
    },
    "H_VISUELL_NYHET": {
-    "ja": 3,
-    "kanske": 0,
+    "ja": 5,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.8
+    "score": 0.812
    },
    "G_Q4_GAVA": {
-    "ja": 3,
-    "kanske": 0,
+    "ja": 7,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.8
+    "score": 0.85
    },
    "E_VADER_SASONG": {
-    "ja": 7,
-    "kanske": 0,
+    "ja": 11,
+    "kanske": 1,
     "nej": 1,
-    "score": 0.8
+    "score": 0.833
    },
    "A4": {
     "ja": 3,
@@ -741,22 +969,22 @@
   },
   "deadline_typ": {
    "första snö": {
-    "ja": 5,
+    "ja": 6,
     "kanske": 1,
     "nej": 1,
-    "score": 0.722
+    "score": 0.75
    },
    "uppställning": {
-    "ja": 9,
+    "ja": 11,
     "kanske": 1,
     "nej": 1,
-    "score": 0.808
+    "score": 0.833
    },
    "höstregn": {
     "ja": 1,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.625
    },
    "älgjakt": {
     "ja": 4,
@@ -771,28 +999,28 @@
     "score": 0.667
    },
    "vedsäsong": {
-    "ja": 2,
+    "ja": 3,
     "kanske": 1,
     "nej": 0,
-    "score": 0.7
+    "score": 0.75
    },
    "1 december": {
-    "ja": 5,
-    "kanske": 0,
-    "nej": 0,
-    "score": 0.857
-   },
-   "första frost": {
     "ja": 8,
     "kanske": 0,
+    "nej": 0,
+    "score": 0.9
+   },
+   "första frost": {
+    "ja": 10,
+    "kanske": 2,
     "nej": 2,
     "score": 0.75
    },
    "upptagning": {
     "ja": 4,
     "kanske": 0,
-    "nej": 1,
-    "score": 0.714
+    "nej": 2,
+    "score": 0.625
    },
    "vintermatning": {
     "ja": 2,
@@ -801,10 +1029,10 @@
     "score": 0.75
    },
    "fars dag": {
-    "ja": 1,
-    "kanske": 0,
+    "ja": 2,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.7
    },
    "invintring": {
     "ja": 1,
@@ -813,24 +1041,36 @@
     "score": 0.667
    },
    "ingen": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 2,
     "nej": 0,
-    "score": 0.6
+    "score": 0.667
    },
    "vintertäckning": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
-    "score": 0.333
+    "score": 0.5
    },
-   "tjäle": {
-    "ja": 2,
+   "poolstängning": {
+    "ja": 1,
     "kanske": 0,
     "nej": 0,
-    "score": 0.75
+    "score": 0.667
    },
    "lövfällning": {
+    "ja": 2,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.7
+   },
+   "isläggning": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "tjäle": {
     "ja": 2,
     "kanske": 0,
     "nej": 0,
@@ -851,10 +1091,10 @@
     "score": 0.625
    },
    "överdrag": {
-    "ja": 15,
-    "kanske": 0,
-    "nej": 1,
-    "score": 0.889
+    "ja": 18,
+    "kanske": 1,
+    "nej": 2,
+    "score": 0.848
    },
    "tak/överdrag": {
     "ja": 1,
@@ -863,10 +1103,10 @@
     "score": 0.667
    },
    "huv": {
-    "ja": 2,
+    "ja": 4,
     "kanske": 1,
     "nej": 0,
-    "score": 0.7
+    "score": 0.786
    },
    "dyna": {
     "ja": 1,
@@ -875,16 +1115,16 @@
     "score": 0.667
    },
    "annat": {
-    "ja": 7,
-    "kanske": 2,
+    "ja": 10,
+    "kanske": 5,
     "nej": 2,
-    "score": 0.692
+    "score": 0.711
    },
    "kalenderlåda": {
-    "ja": 1,
+    "ja": 4,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.833
    },
    "koja": {
     "ja": 3,
@@ -899,10 +1139,10 @@
     "score": 0.667
    },
    "dekor": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "låda": {
     "ja": 1,
@@ -911,10 +1151,10 @@
     "score": 0.667
    },
    "hus": {
-    "ja": 0,
+    "ja": 1,
     "kanske": 0,
     "nej": 1,
-    "score": 0.333
+    "score": 0.5
    },
    "kläder": {
     "ja": 4,
@@ -929,6 +1169,18 @@
     "score": 0.667
    },
    "klämma": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "nät": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "sele": {
     "ja": 0,
     "kanske": 1,
     "nej": 0,
@@ -979,10 +1231,10 @@
     "score": 0.667
    },
    "Hönsen — rastgård och vatten": {
-    "ja": 1,
+    "ja": 2,
     "kanske": 0,
     "nej": 0,
-    "score": 0.667
+    "score": 0.75
    },
    "Snöslungan": {
     "ja": 1,
@@ -1136,9 +1388,9 @@
    },
    "Krukväxter — citrus, oliv, fikon, pelargon": {
     "ja": 1,
-    "kanske": 0,
+    "kanske": 1,
     "nej": 0,
-    "score": 0.667
+    "score": 0.625
    },
    "NYTT: Elverktygen i garaget (skruvdragare, vinkelslip, tigersåg — 3–5 st à 1–3 tkr, alla märken)": {
     "ja": 0,
@@ -1206,6 +1458,114 @@
     "nej": 1,
     "score": 0.333
    },
+   "NYTT: Poolvärmepumpen (15–40 tkr, står ute vid poolen hela vintern efter poolstängningen)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Rosor, rhododendron, buxbom i rabatten": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Fågelholken på tomten — kameran i holken (gåva till fågelskådaren, fars dag/jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Mannen vid skärbrädan — köksknivarna och jaktkniven (fars dag)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Höstplanteringen — lökar, rosor och unga fruktträd under jord (sorken äter rötterna nov–mars)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Husbilens takklimatanläggning (Truma Aventa / Dometic FreshJet, 15–26 tkr — FreshJet 1700 26 299 kr; sitter på taket och står ute hela vintern efter uppställningen)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Stupröret — regnkedja i stället för rör": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "NYTT: Trädet på tomten — dekor på stammen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Elcyklarna på husbilens/husvagnens bakre cykelhållare (2 elcyklar 40–60 tkr; hänger bak i vägsmuts och höstregn under färd och när bilen står hemma mellan turerna)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Vattenskotern på trailern (80–250 tkr nypris enligt SOU 2022:49; tas upp i oktober och står på trailern på uppfarten hela vintern)": {
+    "ja": 0,
+    "kanske": 0,
+    "nej": 1,
+    "score": 0.333
+   },
+   "Trädgårdsdammen (koi/guldfisk)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Barnbarnet 6–10 år — ädelstenskalendern (gräva fram en sten per dag)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Vedklyven (hydraulisk/elektrisk, 3–8 tkr — Scheppach HL460 2 995, HL810 8 145; står under skärmtak vid vedstapeln hela vintern)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Trappan och entrén — snö och is på stegen": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "NYTT: Promenadscootern/elskotern (10–30 tkr, ägare 70+; står under carport/vid entrén, elektronik + sits i regnet)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Barnbarnet 3–8 år — Highland Cow-kalendern (samma ägare som racingbilarna, nytt tema)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
+   "Gårdshundens vatten — hundgårdsnätet (skålen hängs på nätet/burväggen)": {
+    "ja": 0,
+    "kanske": 1,
+    "nej": 0,
+    "score": 0.5
+   },
+   "Mannen med husbilen — kalendern (fars dag, jul)": {
+    "ja": 1,
+    "kanske": 0,
+    "nej": 0,
+    "score": 0.667
+   },
    "Staketet — stolpen": {
     "ja": 2,
     "kanske": 0,
@@ -1233,22 +1593,22 @@
   },
   "prisband": {
    "500–999": {
-    "ja": 32,
-    "kanske": 3,
-    "nej": 4,
-    "score": 0.841
+    "ja": 38,
+    "kanske": 7,
+    "nej": 5,
+    "score": 0.817
    },
    "≥ 1 000": {
-    "ja": 8,
+    "ja": 11,
     "kanske": 0,
     "nej": 2,
-    "score": 0.75
+    "score": 0.8
    },
    "300–499": {
-    "ja": 10,
-    "kanske": 2,
+    "ja": 15,
+    "kanske": 3,
     "nej": 0,
-    "score": 0.857
+    "score": 0.875
    }
   }
  },
@@ -1281,7 +1641,7 @@
   "Kedjan har den": {
    "ja": 0,
    "kanske": 0,
-   "nej": 2
+   "nej": 3
   },
   "Tråkig": {
    "ja": 0,
@@ -1310,7 +1670,7 @@
   },
   "Lågt upplevt värde": {
    "ja": 0,
-   "kanske": 1,
+   "kanske": 2,
    "nej": 0
   }
  },
@@ -1343,9 +1703,12 @@
   "deadline_typ:första snö",
   "deadline_typ:uppställning",
   "deadline_typ:upptagning",
+  "deadline_typ:vedsäsong",
   "deadline_typ:älgjakt",
   "form:annat",
+  "form:huv",
   "form:kalender",
+  "form:kalenderlåda",
   "form:kläder",
   "form:koja",
   "form:verktyg",

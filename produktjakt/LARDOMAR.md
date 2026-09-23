@@ -3,43 +3,43 @@
 Läses av `/produktjakt` INNAN sökningen. Auto-delen räknas av `feedback.py vikter`; skriv aldrig i den för hand.
 
 <!-- auto:start -->
-Uppdaterad 2026-09-16. **55 svar** — ja 37, kanske 9, nej 9.
+Uppdaterad 2026-09-23. **75 svar** — ja 51, kanske 14, nej 10.
 
 ## Det Axel säger ja till
 
-- prisband **500–999**: 32 ja, 3 kanske, 4 nej → score 0.841
-- ankare_klass **1,3–1,6×**: 17 ja, 1 kanske, 1 nej → score 0.881
-- form **överdrag**: 15 ja, 0 kanske, 1 nej → score 0.889
-- ankare_klass **≥ 1,6×**: 12 ja, 4 kanske, 5 nej → score 0.652
+- prisband **500–999**: 38 ja, 7 kanske, 5 nej → score 0.817
+- ankare_klass **1,3–1,6×**: 20 ja, 2 kanske, 2 nej → score 0.846
+- form **överdrag**: 18 ja, 1 kanske, 2 nej → score 0.848
+- ankare_klass **≥ 1,6×**: 16 ja, 7 kanske, 5 nej → score 0.683
+- prisband **300–499**: 15 ja, 3 kanske, 0 nej → score 0.875
+- ankare_klass **golv utan ankare**: 13 ja, 0 kanske, 0 nej → score 0.933
+- arketyp **B_SKYDDA_DYRT**: 12 ja, 1 kanske, 3 nej → score 0.75
+- arketyp **E_VADER_SASONG**: 11 ja, 1 kanske, 1 nej → score 0.833
+- deadline_typ **uppställning**: 11 ja, 1 kanske, 1 nej → score 0.833
+- prisband **≥ 1 000**: 11 ja, 0 kanske, 2 nej → score 0.8
 - deadline_klass **6–12 v**: 10 ja, 1 kanske, 0 nej → score 0.885
-- prisband **300–499**: 10 ja, 2 kanske, 0 nej → score 0.857
+- deadline_typ **första frost**: 10 ja, 2 kanske, 2 nej → score 0.75
+- form **annat**: 10 ja, 5 kanske, 2 nej → score 0.711
 - arketyp **A1**: 9 ja, 1 kanske, 0 nej → score 0.875
 - deadline_klass **2–6 v**: 9 ja, 0 kanske, 0 nej → score 0.909
-- deadline_typ **uppställning**: 9 ja, 1 kanske, 1 nej → score 0.808
-- ankare_klass **golv utan ankare**: 8 ja, 0 kanske, 0 nej → score 0.9
-- arketyp **B_SKYDDA_DYRT**: 8 ja, 0 kanske, 2 nej → score 0.75
-- deadline_typ **första frost**: 8 ja, 0 kanske, 2 nej → score 0.75
-- prisband **≥ 1 000**: 8 ja, 0 kanske, 2 nej → score 0.75
-- ankare_klass **1,2–1,3×**: 7 ja, 0 kanske, 0 nej → score 0.889
-- arketyp **E_VADER_SASONG**: 7 ja, 0 kanske, 1 nej → score 0.8
 
 ## Det Axel säger nej till
 
-- ankare_klass **≥ 1,6×**: 5 nej, 12 ja → score 0.652
-- prisband **500–999**: 4 nej, 32 ja → score 0.841
-- arketyp **A_AGARE_FRIKTION**: 2 nej, 3 ja → score 0.55
-- form **annat**: 2 nej, 7 ja → score 0.692
-- arketyp **B_SKYDDA_DYRT**: 2 nej, 8 ja → score 0.75
-- deadline_typ **första frost**: 2 nej, 8 ja → score 0.75
-- prisband **≥ 1 000**: 2 nej, 8 ja → score 0.75
+- ankare_klass **≥ 1,6×**: 5 nej, 16 ja → score 0.683
+- prisband **500–999**: 5 nej, 38 ja → score 0.817
+- arketyp **B_SKYDDA_DYRT**: 3 nej, 12 ja → score 0.75
+- arketyp **A_AGARE_FRIKTION**: 2 nej, 3 ja → score 0.545
+- deadline_typ **upptagning**: 2 nej, 4 ja → score 0.625
+- deadline_typ **första frost**: 2 nej, 10 ja → score 0.75
+- form **annat**: 2 nej, 10 ja → score 0.711
+- prisband **≥ 1 000**: 2 nej, 11 ja → score 0.8
+- form **överdrag**: 2 nej, 18 ja → score 0.848
+- ankare_klass **1,3–1,6×**: 2 nej, 20 ja → score 0.846
 - grupp **belysning och mörker**: 1 nej, 0 ja → score 0.333
 - grupp **Gårdshunden/hundgården**: 1 nej, 0 ja → score 0.333
 - grupp **Luftvärmepumpens utedel**: 1 nej, 0 ja → score 0.333
 - grupp **Släpkärra**: 1 nej, 0 ja → score 0.333
 - grupp **NYTT: Husvagnens stödben (fyra ben som vevas ner vid uppställningen och står i höstblöt gräsmark i sex månader — sjunker, gnisslar och rostar; plattorna sitter kvar på benet under färd)**: 1 nej, 0 ja → score 0.333
-- grupp **NYTT: Utombordaren på land (20–100 tkr; lyfts av vid upptagningen och står i garaget/förrådet hela vintern — lutad mot väggen, på en sågbock eller i en bildäcksstapel)**: 1 nej, 0 ja → score 0.333
-- grupp **NYTT: Bärbuskarna och rosorna (Makita-batteriet gör jobbet)**: 1 nej, 0 ja → score 0.333
-- ankare_kalla **Kerbl Pet Levin plastkoja 99×70×75 (zooplus.se)**: 1 nej, 0 ja → score 0.333
 
 ## Orsakerna han anger
 
@@ -47,14 +47,14 @@ Uppdaterad 2026-09-16. **55 svar** — ja 37, kanske 9, nej 9.
 - **Skyddar något**: 0 nej, 8 ja, 0 kanske
 - **Deadline nu**: 0 nej, 4 ja, 0 kanske
 - **För dyr**: 3 nej, 0 ja, 0 kanske
-- **Kedjan har den**: 2 nej, 0 ja, 0 kanske
+- **Kedjan har den**: 3 nej, 0 ja, 0 kanske
 - **Nöjd med det han har**: 2 nej, 0 ja, 0 kanske
 - **Bra ankare**: 0 nej, 1 ja, 0 kanske
 - **Snygg bild**: 0 nej, 1 ja, 0 kanske
 - **Tråkig**: 1 nej, 0 ja, 0 kanske
 - **Har redan**: 1 nej, 0 ja, 0 kanske
 - **Kan bli bra**: 0 nej, 0 ja, 1 kanske
-- **Lågt upplevt värde**: 0 nej, 0 ja, 1 kanske
+- **Lågt upplevt värde**: 0 nej, 0 ja, 2 kanske
 
 ## Stoppas i nästa körning (≥ 3 nej, 0 ja)
 
@@ -89,9 +89,12 @@ Uppdaterad 2026-09-16. **55 svar** — ja 37, kanske 9, nej 9.
 - deadline_typ:första snö
 - deadline_typ:uppställning
 - deadline_typ:upptagning
+- deadline_typ:vedsäsong
 - deadline_typ:älgjakt
 - form:annat
+- form:huv
 - form:kalender
+- form:kalenderlåda
 - form:kläder
 - form:koja
 - form:verktyg

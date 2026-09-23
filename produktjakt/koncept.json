@@ -51,18 +51,18 @@
     "datum": "2026-09-09"
    },
    "meta": {
-    "spend": 28852.52,
-    "kop": 122,
-    "roas": 4.889,
-    "cpa": 236.5,
+    "spend": 118714.28,
+    "kop": 339,
+    "roas": 3.4668,
+    "cpa": 350.19,
     "be": 1.63,
-    "be_cpa": 709.35,
-    "vinstbidrag": 57687.7,
+    "be_cpa": 744.8,
+    "vinstbidrag": 133772.79,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -146,7 +146,7 @@
     "klass": "REAL_WINNER",
     "lutning": "positiv (marginell, < 5 % från BE)",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -212,18 +212,18 @@
     "datum": "2026-09-08"
    },
    "meta": {
-    "spend": 8804.63,
-    "kop": 27,
-    "roas": 1.7714,
-    "cpa": 326.1,
+    "spend": 12345.93,
+    "kop": 37,
+    "roas": 1.7524,
+    "cpa": 333.67,
     "be": 1.62,
-    "be_cpa": 356.58,
-    "vinstbidrag": 822.96,
+    "be_cpa": 360.94,
+    "vinstbidrag": 1008.99,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-11)",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -341,9 +341,26 @@
      "ts": "2026-09-09T19:38:23.658Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Biltvättborsten med Teleskopskaft | BE ROAS 1.67 | Launch 2026-09-18",
+    "kampanj_id": "120250268474110291",
+    "datum": "2026-09-18"
+   },
+   "meta": {
+    "spend": 4805.66,
+    "kop": 7,
+    "roas": 1.1638,
+    "cpa": 686.52,
+    "be": 1.67,
+    "be_cpa": 478.44,
+    "vinstbidrag": -1456.56,
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "forlorare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -357,8 +374,22 @@
     {
      "datum": "2026-09-09",
      "handelse": "Axel: ja ['Skyddar något', 'Känns rätt', 'Bra ankare', 'Snygg bild']"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "i butiken + kampanj i kontot: Biltvättborste Med Teleskopskaft 799 kr"
+    },
+    {
+     "datum": "2026-09-18",
+     "handelse": "launchad i kontot: Biltvättborsten med Teleskopskaft | BE ROAS 1.67 | Launch 2026-09-18"
     }
-   ]
+   ],
+   "butik": {
+    "titel": "Biltvättborste Med Teleskopskaft",
+    "pris_sek": 799,
+    "sedd": "2026-09-23",
+    "kalla": "katalog-live 2026-09-23"
+   }
   },
   "K0006": {
    "id": "K0006",
@@ -838,9 +869,26 @@
      "ts": "2026-09-09T19:37:46.674Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "kanske",
+   "launch": {
+    "kampanj": "Vedklyvborren Ø32 mm | BE ROAS 1.60 | Launch 2026-09-18",
+    "kampanj_id": "120250268397440291",
+    "datum": "2026-09-18"
+   },
+   "meta": {
+    "spend": 1976.4,
+    "kop": 3,
+    "roas": 0.6664,
+    "cpa": 658.8,
+    "be": 1.6,
+    "be_cpa": 274.38,
+    "vinstbidrag": -1153.26,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -854,8 +902,22 @@
     {
      "datum": "2026-09-09",
      "handelse": "Axel: kanske "
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "i butiken + kampanj i kontot: Vedklyvborr Till Borrmaskin – Kon Ø32 mm 369 kr"
+    },
+    {
+     "datum": "2026-09-18",
+     "handelse": "launchad i kontot: Vedklyvborren Ø32 mm | BE ROAS 1.60 | Launch 2026-09-18"
     }
-   ]
+   ],
+   "butik": {
+    "titel": "Vedklyvborr Till Borrmaskin – Kon Ø32 mm",
+    "pris_sek": 369,
+    "sedd": "2026-09-23",
+    "kalla": "katalog-live 2026-09-23"
+   }
   },
   "K0014": {
    "id": "K0014",
@@ -1617,9 +1679,26 @@
      "ts": "2026-09-09T19:37:10.525Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "kanske",
+   "launch": {
+    "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+    "kampanj_id": "120250284693380291",
+    "datum": "2026-09-19"
+   },
+   "meta": {
+    "spend": 8428.73,
+    "kop": 56,
+    "roas": 3.4038,
+    "cpa": 150.51,
+    "be": 1.61,
+    "be_cpa": 318.2,
+    "vinstbidrag": 9390.64,
+    "band": "HIGH",
+    "klass": "REAL_WINNER",
+    "lutning": "positiv",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "vinnare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -1633,8 +1712,22 @@
     {
      "datum": "2026-09-09",
      "handelse": "Axel: kanske "
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "i butiken + kampanj i kontot: Sotarset Med Böjliga Stänger 459 kr"
+    },
+    {
+     "datum": "2026-09-19",
+     "handelse": "launchad i kontot: Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19"
     }
-   ]
+   ],
+   "butik": {
+    "titel": "Sotarset Med Böjliga Stänger",
+    "pris_sek": 459,
+    "sedd": "2026-09-23",
+    "kalla": "katalog-live 2026-09-23"
+   }
   },
   "K0031": {
    "id": "K0031",
@@ -1936,7 +2029,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2336,7 +2429,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -2712,9 +2805,26 @@
      "ts": "2026-09-10T15:15:58.154Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "kanske",
+   "launch": {
+    "kampanj": "Spabadskapellet i Svart 210D | BE ROAS 1.63 | Launch 2026-09-23",
+    "kampanj_id": "120250333936950291",
+    "datum": "2026-09-23"
+   },
+   "meta": {
+    "spend": 187.24,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.63,
+    "be_cpa": 379.75,
+    "vinstbidrag": null,
+    "band": "UNTESTED",
+    "klass": "UNTESTED",
+    "lutning": null,
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -2732,6 +2842,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Spabadskapell I Svart 210D 619 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "launchad i kontot: Spabadskapellet i Svart 210D | BE ROAS 1.63 | Launch 2026-09-23"
     }
    ],
    "namn_sv": "Lockskydd runt spabad / badtunna (cover cap)",
@@ -6204,9 +6318,26 @@
      "ts": "2026-09-11T06:44:28.144Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Dinosauriekalendern 24 Dinosaurier | BE ROAS 1.72 | Launch 2026-09-17",
+    "kampanj_id": "120250254068910291",
+    "datum": "2026-09-17"
+   },
+   "meta": {
+    "spend": 2003.48,
+    "kop": 5,
+    "roas": 1.1352,
+    "cpa": 400.7,
+    "be": 1.72,
+    "be_cpa": 264.45,
+    "vinstbidrag": -681.25,
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "forlorare",
    "aterupptas_om": [
     "plats i säsongsslotten — ren H05-test (tema = enda skillnaden mot K0003)"
    ],
@@ -6226,9 +6357,23 @@
     {
      "datum": "2026-09-11",
      "handelse": "Axel: ja "
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "i butiken + kampanj i kontot: Dinosaurie Adventskalender – 24 Dinosaurier 399 kr"
+    },
+    {
+     "datum": "2026-09-17",
+     "handelse": "launchad i kontot: Dinosauriekalendern 24 Dinosaurier | BE ROAS 1.72 | Launch 2026-09-17"
     }
    ],
-   "namn_sv": "Adventskalender Dinosaurier 24 figurer"
+   "namn_sv": "Adventskalender Dinosaurier 24 figurer",
+   "butik": {
+    "titel": "Dinosaurie Adventskalender – 24 Dinosaurier",
+    "pris_sek": 399,
+    "sedd": "2026-09-23",
+    "kalla": "katalog-live 2026-09-23"
+   }
   },
   "K0127": {
    "id": "K0127",
@@ -10041,9 +10186,26 @@
      "ts": "2026-09-11T05:26:48.967Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Hönsgårdsduken 145 × 109 cm | BE ROAS 1.62 | Launch 2026-09-19",
+    "kampanj_id": "120250284567670291",
+    "datum": "2026-09-19"
+   },
+   "meta": {
+    "spend": 1646.82,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.62,
+    "be_cpa": 283.33,
+    "vinstbidrag": null,
+    "band": "MEANINGFUL",
+    "klass": "REAL_LOSER",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "forlorare",
    "aterupptas_om": [],
    "historik": [
     {
@@ -10061,6 +10223,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Hönsgårdsduk 145 × 109 cm 459 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-19",
+     "handelse": "launchad i kontot: Hönsgårdsduken 145 × 109 cm | BE ROAS 1.62 | Launch 2026-09-19"
     }
    ],
    "namn_sv": "Hönsgårdstaket, formsytt",
@@ -11052,9 +11218,26 @@
      "ts": "2026-09-11T05:26:44.801Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Snöslungekapellet 120 × 82 × 60 cm | BE ROAS 1.62 | Launch 2026-09-22",
+    "kampanj_id": "120250320680220291",
+    "datum": "2026-09-22"
+   },
+   "meta": {
+    "spend": 954.94,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.62,
+    "be_cpa": 283.33,
+    "vinstbidrag": null,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -11072,6 +11255,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Kapell Till Snöslunga 120 × 82 × 60 cm 459 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-22",
+     "handelse": "launchad i kontot: Snöslungekapellet 120 × 82 × 60 cm | BE ROAS 1.62 | Launch 2026-09-22"
     }
    ],
    "namn_sv": "Snöslungehuven 600D",
@@ -11178,7 +11365,7 @@
     "klass": "INSUFFICIENT_DATA",
     "lutning": "negativ",
     "bekraftelse": "preliminär",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": "launchad"
    },
    "status": "launchad",
@@ -11231,18 +11418,18 @@
     "datum": "2026-09-11"
    },
    "meta": {
-    "spend": 7053.82,
-    "kop": 40,
-    "roas": 3.2254,
-    "cpa": 176.35,
+    "spend": 23510.73,
+    "kop": 106,
+    "roas": 2.7217,
+    "cpa": 221.8,
     "be": 1.61,
-    "be_cpa": 353.28,
-    "vinstbidrag": 7077.2,
+    "be_cpa": 374.96,
+    "vinstbidrag": 16234.96,
     "band": "HIGH",
     "klass": "REAL_WINNER",
     "lutning": "positiv",
     "bekraftelse": "bekräftad (snapshot 2026-09-12)",
-    "last": "2026-09-16",
+    "last": "2026-09-23",
     "utfall": ">=BE"
    },
    "status": "vinnare",
@@ -12007,9 +12194,26 @@
      "ts": "2026-09-11T06:44:22.572Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22",
+    "kampanj_id": "120250320718080291",
+    "datum": "2026-09-22"
+   },
+   "meta": {
+    "spend": 939.65,
+    "kop": 6,
+    "roas": 4.1285,
+    "cpa": 156.61,
+    "be": 1.62,
+    "be_cpa": 399.1,
+    "vinstbidrag": 1454.94,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "positiv",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12027,6 +12231,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: ATV-Kapell Storlek 3XL 579 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-22",
+     "handelse": "launchad i kontot: ATV-Kapellet 3XL 256 × 110 × 120 cm | BE ROAS 1.62 | Launch 2026-09-22"
     }
    ],
    "namn_sv": "ATV-kapellet Heavy Duty",
@@ -12345,9 +12553,26 @@
      "ts": "2026-09-11T09:12:47.142Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Snöflingorna 25-pack | BE ROAS 1.57 | Launch 2026-09-19",
+    "kampanj_id": "120250284606120291",
+    "datum": "2026-09-19"
+   },
+   "meta": {
+    "spend": 1024.41,
+    "kop": 0,
+    "roas": null,
+    "cpa": null,
+    "be": 1.57,
+    "be_cpa": 158.6,
+    "vinstbidrag": null,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12365,6 +12590,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Snöflingor 25-pack 249 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-19",
+     "handelse": "launchad i kontot: Snöflingorna 25-pack | BE ROAS 1.57 | Launch 2026-09-19"
     }
    ],
    "namn_sv": "Snöflingor till garageporten 25-pack",
@@ -12465,9 +12694,26 @@
      "ts": "2026-09-11T09:13:20.549Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Snöskyffeln Utan Batteri | BE ROAS 1.65 | Launch 2026-09-18",
+    "kampanj_id": "120250268236770291",
+    "datum": "2026-09-18"
+   },
+   "meta": {
+    "spend": 1933.17,
+    "kop": 1,
+    "roas": 1.3879,
+    "cpa": 1933.17,
+    "be": 1.65,
+    "be_cpa": 1423.64,
+    "vinstbidrag": -509.53,
+    "band": "TOO_EARLY",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12485,6 +12731,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Snöskyffel Utan Batteri 2349 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-18",
+     "handelse": "launchad i kontot: Snöskyffeln Utan Batteri | BE ROAS 1.65 | Launch 2026-09-18"
     }
    ],
    "namn_sv": "Snöskyffeln för Makita-batteri",
@@ -12585,9 +12835,26 @@
      "ts": "2026-09-11T09:13:32.255Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Kajakhållaren 2-pack | BE ROAS 1.62 | Launch 2026-09-22",
+    "kampanj_id": "120250320735920291",
+    "datum": "2026-09-22"
+   },
+   "meta": {
+    "spend": 971.15,
+    "kop": 1,
+    "roas": 1.0486,
+    "cpa": 971.15,
+    "be": 1.62,
+    "be_cpa": 369.75,
+    "vinstbidrag": -601.4,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "negativ",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12605,6 +12872,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "i butiken: Kajakhållare 2-pack 599 kr (kampanj ej sedd i kontot än)"
+    },
+    {
+     "datum": "2026-09-22",
+     "handelse": "launchad i kontot: Kajakhållaren 2-pack | BE ROAS 1.62 | Launch 2026-09-22"
     }
    ],
    "namn_sv": "Kajakhållaren för vägg, 2-pack",
@@ -12907,9 +13178,26 @@
      "ts": "2026-09-11T09:14:32.978Z"
     }
    ],
-   "launch": null,
-   "meta": null,
-   "status": "ja",
+   "launch": {
+    "kampanj": "Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17",
+    "kampanj_id": "120250253867730291",
+    "datum": "2026-09-17"
+   },
+   "meta": {
+    "spend": 4266.3,
+    "kop": 3,
+    "roas": 1.711,
+    "cpa": 1422.1,
+    "be": 1.65,
+    "be_cpa": 1474.67,
+    "vinstbidrag": 157.71,
+    "band": "EARLY_SIGNAL",
+    "klass": "INSUFFICIENT_DATA",
+    "lutning": "positiv",
+    "bekraftelse": "preliminär",
+    "last": "2026-09-23"
+   },
+   "status": "launchad",
    "aterupptas_om": [],
    "historik": [
     {
@@ -12927,6 +13215,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "i butiken (kampanj ej sedd)"
+    },
+    {
+     "datum": "2026-09-17",
+     "handelse": "launchad i kontot: Fågelmataren med Kamera | BE ROAS 1.65 | Launch 2026-09-17"
     }
    ],
    "namn_sv": "Fågelmataren med kamera (5MP, solcell)",
@@ -14323,6 +14615,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14371,10 +14668,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:43.956Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14384,6 +14689,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Vedklyvshuven 210D"
@@ -14426,6 +14735,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14474,10 +14788,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:48.506Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14487,6 +14809,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Promenadscooterns regnkapell"
@@ -14529,6 +14855,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14577,10 +14908,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:56.840Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14590,6 +14929,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Poolvärmepumpens vinterhuv"
@@ -14632,6 +14975,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14666,10 +15014,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:43:01.406Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14679,6 +15035,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Trädansiktet — gubben i trädet"
@@ -14721,6 +15081,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14755,10 +15120,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:43:23.506Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14768,6 +15141,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 5, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Regnkedjan 3,8 m med 12 koppar"
@@ -14810,6 +15187,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14844,10 +15226,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:43:26.723Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14857,6 +15247,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Snösmältmattan för trappan"
@@ -14899,6 +15293,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -14947,10 +15346,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:43:52.241Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -14960,6 +15367,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Dammvärmaren 500 W med termostat"
@@ -15002,6 +15413,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF+HERO",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -15050,10 +15466,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:44:05.058Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -15063,6 +15487,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Automatiska hönsluckan med ljussensor"
@@ -15105,6 +15533,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -15139,10 +15572,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:44:11.639Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -15152,6 +15593,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Rullknivslipen i trä, 2 diamantskivor"
@@ -15194,6 +15639,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -15228,10 +15678,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:44:17.956Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -15241,6 +15699,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 10, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Highland Cow-kalendern 3D, 24 figurer"
@@ -15283,6 +15745,11 @@
        "datum": "2026-09-15",
        "verdict": "SOKTRAFF",
        "kalla": "korningar/2026-09-15/fynd-sida.json"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -15317,10 +15784,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:44:21.773Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -15330,6 +15805,10 @@
     {
      "datum": "2026-09-13",
      "handelse": "levererad på V3-arket (rank 11, sasong, konfidens LÅG)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Ädelstenskalendern, 24 grävblock"
@@ -16269,6 +16748,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:19:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16317,10 +16801,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:41:24.770Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16330,6 +16822,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Husbilens cykelhållarskydd 2 cyklar"
@@ -16367,6 +16863,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:21:03Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16415,10 +16916,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:41:26.752Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16428,6 +16937,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Husbilens tak-AC-huv"
@@ -16465,6 +16978,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:19:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16513,11 +17031,23 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "nej",
+     "orsaker": [
+      "Kedjan har den"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:41:38.970Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
-   "aterupptas_om": [],
+   "status": "nej",
+   "aterupptas_om": [
+    "Axel 09-15: 'Kedjan har den' (SeaSea universalkapell 515) — söks inte igen; golvet var mätt och raden levererades ändå"
+   ],
    "historik": [
     {
      "datum": "2026-09-15",
@@ -16526,6 +17056,14 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: nej ['Kedjan har den']"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "aterupptas_om = Axel 09-15: 'Kedjan har den' (SeaSea universalkapell 515) — söks inte igen; golvet var mätt och raden levererades ändå"
     }
    ],
    "namn_sv": "Vattenskoterkapellet 600D"
@@ -16563,6 +17101,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:25:02Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16599,10 +17142,20 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "kanske",
+     "orsaker": [
+      "Lågt upplevt värde"
+     ],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:09.756Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16612,6 +17165,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 4, exploration, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: kanske ['Lågt upplevt värde']"
     }
    ],
    "namn_sv": "Krukbärremmen — olivträdet in, 90 kg"
@@ -16649,6 +17206,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:17:33Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16685,10 +17247,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:15.957Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16698,6 +17268,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Buskjackan med dragkedja, 2-pack"
@@ -16735,6 +17309,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:17:47Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF+HERO",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16771,10 +17350,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:28.789Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16784,6 +17371,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 6, exploitation, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Sorkkorgarna i rostfritt, 15-pack"
@@ -16821,6 +17412,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:17:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16855,10 +17451,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "kanske",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:35.707Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "kanske",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16868,6 +17472,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 7, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: kanske "
     }
    ],
    "namn_sv": "Hundgårdsskålen, uppvärmd och hängande"
@@ -16905,6 +17513,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:19:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -16939,10 +17552,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:38.973Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -16952,6 +17573,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Fågelholken med WiFi-kamera"
@@ -16989,6 +17614,11 @@
        "verdict": "LIVE_VERIFIED",
        "verifierad_at": "2026-09-15T07:14:00Z",
        "kalla": "v3 discovery"
+      },
+      {
+       "datum": "2026-09-16",
+       "verdict": "SOKTRAFF",
+       "kalla": "korningar/2026-09-16/fynd-sida.json"
       }
      ]
     }
@@ -17023,10 +17653,18 @@
      "kalla": "v3 batch"
     }
    ],
-   "feedback": [],
+   "feedback": [
+    {
+     "datum": "2026-09-15",
+     "dom": "ja",
+     "orsaker": [],
+     "kalla": "sida",
+     "ts": "2026-09-16T04:42:41.522Z"
+    }
+   ],
    "launch": null,
    "meta": null,
-   "status": "levererad",
+   "status": "ja",
    "aterupptas_om": [],
    "historik": [
     {
@@ -17036,6 +17674,10 @@
     {
      "datum": "2026-09-15",
      "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    },
+    {
+     "datum": "2026-09-15",
+     "handelse": "Axel: ja "
     }
    ],
    "namn_sv": "Husbilskalendern, 24 retrobussar"
@@ -17050,7 +17692,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Väggmonterad slangbox/slangvinda (Gardena RollUp/PowerRoll, 955–3 049 kr) — sitter kvar på väggen med vatten i slangen första frostnatten",
+    "form": "huv",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "första frost",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas — Gardena säljer ingen huv till slangboxen; deras råd är att lyfta ner boxen och förvara frostfritt (gardena.com/se)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -17140,7 +17790,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Hängrännor",
+    "form": "nät",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "lövfällning",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Bauhaus Lövavskiljare Mr Flowout 70–100 mm (styck, endast webblager) / Hornbach Lindab självrensande lövsil 195 kr"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -17230,7 +17888,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": "E_VADER_SASONG",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Stuprörets utkast — dekorativ utkastare i stället för plåtutkastaren",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "höstregn",
+    "prisband": "500–999",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "ej mätt — vattenliv.se säljer bronsmålad fisk som springbrunnsfigur (annan användning, pris ej läst); ingen svensk aktör hittad med dekorativ stuprörsutkastare i fiskform"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -17306,7 +17972,15 @@
    "arketyp": "H_VISUELL_NYHET",
    "arketyp_sekundar": null,
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "NYTT: Brunnslocket i gräsmattan (avlopps-/dagvattenbrunn, septiktank)",
+    "form": "dekor",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "ingen",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "gartendek.se Ihålig falsk konstgjord sten S-04 (sökutdrag; M/XL-storlekar har pris som inte gick att läsa)"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -17382,7 +18056,15 @@
    "arketyp": "E_VADER_SASONG",
    "arketyp_sekundar": "B_SKYDDA_DYRT",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Regntunna vid stupröret",
+    "form": "huv",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "första frost",
+    "prisband": "300–499",
+    "ankare_klass": "ej mätt",
+    "ankare_kalla": "saknas i fackhandeln — Jula/Wexthuset säljer hårda lock (Jula lock Ø70 cm ca 60 kr inkl moms ur sökutdrag), ingen tyghuv; Bauhaus/Granngården/Plantagen: inget överdrag för regntunna hittat"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
@@ -17472,7 +18154,15 @@
    "arketyp": "B_SKYDDA_DYRT",
    "arketyp_sekundar": "I_FLERKOP",
    "arketyp_gammal": null,
-   "taggar": {},
+   "taggar": {
+    "objekt": "Elcykel under skärmtak",
+    "form": "överdrag",
+    "arketyp": "B_SKYDDA_DYRT",
+    "deadline_typ": "höstregn",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Wheelyshop batteriskydd ram elcykel (neopren 53 × 37 cm, 'frost, vatten och sol')"
+   },
    "kalla": "produktjakt v3",
    "listningar": [
     {
