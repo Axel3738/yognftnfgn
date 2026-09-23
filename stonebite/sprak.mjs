@@ -238,11 +238,14 @@ const ORDBOK = {
   // --- rollerna
   'Ägare': 'Owner',
   'Chef': 'Manager',
+  'Chef — ser ALL ekonomi': 'Manager — sees ALL money',
   'Videoredigerare': 'Video editor',
   'Head of customer support': 'Head of customer support',
+  'Head of customer support — ingen ekonomi': 'Head of customer support — no money figures',
   'Kundtjänst (VA)': 'Customer support (VA)',
   'Allt. Pengar, annonser, folk, bonus och konton.': 'Everything. Money, ads, people, bonuses and accounts.',
   'Allt utom vem som får logga in.': 'Everything except who gets to log in.',
+  'Allt utom vem som får logga in. Ser omsättning, spend och ROAS för alla butiker.': 'Everything except who gets to log in. Sees revenue, ad spend and ROAS for every store.',
   'Produkterna de testar och vad de tjänat på dem. Ingen spend, ingen omsättning.':
     'The products they test and what they earned on them. No spend, no revenue.',
   'Topplistan och sin egen sida. Ser aldrig spend eller omsättning.':

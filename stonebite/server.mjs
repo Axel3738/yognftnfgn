@@ -22,7 +22,7 @@ import { randomBytes } from 'node:crypto';
 
 import { hamtaHemlighet, skapaSession, lasSession, csrfNyckel, kollaCsrf, Strypning, KAKA, SESSION_TIMMAR, slumpLosenord, kollaLosenord } from './auth.mjs';
 import * as anv from './anvandare.mjs';
-import { farSe, harRatt, startsidaFor, SIDOR } from './roller.mjs';
+import { farSe, harRatt, startsidaFor, SIDOR, serEkonomi, ekonomiVarning } from './roller.mjs';
 import { lasSnapshot } from './data.mjs';
 import { publikSida } from './vy/publik.mjs';
 import { influencerSida } from './vy/influencers.mjs';
@@ -618,6 +618,9 @@ export async function hantera(req, res) {
         const extra = { csrf };
         try {
           if (stig === '/app/konton/ny') {
+            // En roll som ser all ekonomi kräver ett uttryckligt ja (2026-09-23:
+            // Mechile fick "Chef" och såg omsättningen — det går inte att ta tillbaka).
+            if (serEkonomi(f.roll) && f.ekonomi_ok !== '1') throw new Error(ekonomiVarning(f.roll));
             const losen = slumpLosenord();
             // Personen skapas samtidigt som inloggningen — annars finns ingen
             // att koppla bonusen till, och personen ser noll fast hen jobbar.
@@ -639,6 +642,7 @@ export async function hantera(req, res) {
             extra.nyttLosenord = { namn: ny.namn, losenord: losen };
             extra.meddelande = `${ny.namn} kan nu logga in med ${ny.epost}, och tjänar bonus som ${f.roll}.`;
           } else if (stig === '/app/konton/roll') {
+            if (serEkonomi(f.roll) && f.ekonomi_ok !== '1') throw new Error(ekonomiVarning(f.roll));
             const k = anv.sattRoll(ANVANDARFIL, f.id, f.roll);
             // Rollen styr både vad man ser OCH vilket bonusprogram man är i.
             if (k.personId) {
