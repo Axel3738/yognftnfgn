@@ -1,0 +1,66 @@
+{
+  "kommentar": "Axels beslut 2026-09-15: /bildannonser gör bildannonser ENBART för hubbarna nedan. Skalningen på Bäverbutiken drogs igång igen och de här produkterna är de som aktivt får nya annonser. Övriga hubbar i teamspacet lämnas i fred — de listas i rapporten men rörs aldrig. Axel ändrar listan; lägg aldrig till en hubb själv.",
+  "sa_matchas_de": "Matcha i första hand på 'datakalla' (data source-id), i andra hand på 'namn'. Hubbarna döps om i Notion utan förvarning — 2026-09-19 hette 'BÄVER Taköverdraget för Husvagn' plötsligt 'BÄVER  For CARL Taköverdraget för Husvagn', och en ren namnmatchning hade tappat hela hubben tyst. Ett nytt namn är inte en ny hubb: står id:t kvar är det samma hubb.",
+  "andrad": "2026-09-23",
+  "aktiva": [
+    {
+      "namn": "Car wash brush creative hub",
+      "namn_prefix": "Car wash brush",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"glöm inte att göra bilderna för denna\", sedan \"ja kör alla fyra\"). ⚠️ Integrationen 'Bäverbutiken RUTINER' är INTE inbjuden till hubben än — den syns i Axels sidomeny men inte i en enda API-läsning: varken data source-listningen (25 källor, mätt samma dag) eller en titelsökning hittar den. Det betyder 'inte inbjuden', aldrig 'databasen saknas'. Raden ligger kvar här med flit: så fort hubben delats tar 20:00-rutinen den av sig själv, utan att någon behöver komma ihåg det. Fyll i datakalla vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Chimney sweep set creative hub",
+      "namn_prefix": "Chimney sweep set",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. ⚠️ Titeln var avklippt i Axels skärmbild ('Chimney sweep set creativ…') — matcha på namn_prefix och skriv in det exakta namnet vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Indoor slippers creative hub",
+      "namn_prefix": "Indoor slippers",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. Titeln syntes i sin helhet i skärmbilden.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Bird feeder with camera creative hub",
+      "namn_prefix": "Bird feeder with camera",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. ⚠️ Titeln var avklippt i Axels skärmbild ('Bird feeder with camera cre…') — matcha på namn_prefix och skriv in det exakta namnet vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "BÄVER Taköverdraget för Husvagn",
+      "datakalla": "5f2270ab-908c-82ef-b029-0767819050db",
+      "notering": "Heter 'BÄVER  For CARL Taköverdraget för Husvagn' i Notion sedan 2026-09-19. Speglas till CaraShell av /ops-spegla — därför bär dess briefer regeln 'no store name, no URL, no logo'."
+    },
+    {
+      "namn": "BÄVER Termoskyddet för Husbil",
+      "datakalla": "7d0270ab-908c-831e-8021-8758336851c8",
+      "notering": "Det finns TVÅ databaser med exakt det här namnet. Den andra (data source 135270ab-908c-8361-b579-076de13c8d8a) är tom — mätt 2026-09-19: 0 rader mot 35 här. Rör den inte, och döp inte om någon av dem."
+    },
+    {
+      "namn": "BÄVER IBC-Tanköverdraget",
+      "datakalla": "4ce270ab-908c-8260-9ad0-07426ac2b1c2"
+    },
+    {
+      "namn": "BÄVER Adventskalendern Racingbilar",
+      "datakalla": "efe270ab-908c-83ef-aa11-87c98e87f5b0",
+      "notering": "Bäverbutikens egen kalenderhubb. Förväxla inte med OPS-butiken AdventLanes 'Racing Car Advent Calendar creative hub' — den har egen rutin och eget annonskonto."
+    },
+    {
+      "namn": "Motorcycle Cover creative hub",
+      "datakalla": "632270ab-908c-8307-a318-873192ba664a"
+    },
+    {
+      "namn": "Boat motor cover creative hub",
+      "datakalla": "1dc270ab-908c-836b-a048-073bfaa48353"
+    },
+    {
+      "namn": "Belt grinder creative hub",
+      "datakalla": "a1d270ab-908c-82e2-b3be-07b523257509"
+    }
+  ]
+}

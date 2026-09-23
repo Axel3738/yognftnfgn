@@ -75,9 +75,39 @@ Ska den ligga kvar på 20:00: ändra till `0 19 * * *`. Ingen automatik gör det
 Saknas `KIE_API_KEY`: kör hela steg 1–3, redovisa kön, och skriv i rapporten att
 inget genererats för att nyckeln saknas. Låtsas aldrig att bilder är gjorda.
 
-## Steg 1 — Hitta alla hubbar (aldrig en handskriven lista)
+## Steg 1 — Hitta hubbarna
 
-Hubbarna hittas dynamiskt, så nya produkter kommer med av sig själva:
+⚠️ **Kön är bara de aktiva hubbarna** (Axels beslut 2026-09-15, när skalningen på
+Bäverbutiken drogs igång igen). Namnen står i `products/aktiva-hubbar.json` —
+läs den filen och generera **enbart** för de hubbarna. Övriga hubbar i
+teamspacet läses ändå, men bara för att rapporteras: skriv hur många bildrader
+som ligger i Draft i dem, och rör dem inte.
+
+Axel äger listan. **Lägg aldrig till eller ta bort en hubb själv** — säger han
+"vi skalar X igen" eller "strunta i Y" är det filen som ändras, i samma session,
+och ändringen committas.
+
+⚠️ **En hubb i listan som inte går att läsa är INTE en hubb som saknas.** Notion
+ger åtkomst per sida: syns hubben i Axels sidomeny men inte i en enda API-läsning
+(varken data source-listningen eller en titelsökning), så är integrationen
+"Bäverbutiken RUTINER" inte inbjuden dit — och det ser exakt likadant ut som om
+databasen inte fanns. Sådana rader bär `"avvaktar_atkomst": true` och
+`"datakalla": null` i `products/aktiva-hubbar.json`. Ta ALDRIG bort dem: de ligger
+där för att rutinen ska plocka upp hubben av sig själv samma kväll som Axel delar
+den. Rapportera dem varje körning på en egen rad ("väntar på Notion-åtkomst"), och
+fyll i `datakalla` vid första lyckade läsningen. *(Mätt 2026-09-23: Axel bad om
+bildannonser för fyra nya hubbar — `Car wash brush`, `Chimney sweep set`,
+`Indoor slippers`, `Bird feeder with camera`; alla fyra fanns i hans sidomeny men
+i noll av 25 datakällor integrationen nådde.)*
+
+⚠️ **Ett namn ur en skärmbild är ofta avklippt.** Notions sidomeny kortar långa
+titlar med `…`, så "Chimney sweep set creativ…" kan heta nästan vad som helst på
+slutet. En rad som väntar på åtkomst bär därför `namn_prefix`: **matcha på
+prefixet, inte på hela namnet**, tills hubben lästs en gång — då skrivs det
+exakta namnet och `datakalla` in. Matchar du bara på hela namnet missar rutinen
+hubben tyst dagen den delas, och ingen får veta det.
+
+Hubbarna hittas i övrigt dynamiskt, så nya produkter kommer med av sig själva:
 
 - Sök i Notion med `teamspace_id = 3a9270ab-908c-81a8-a48c-004222d195e7`
   (**teamspacet Bäverbutiken**) efter databaser vars titel slutar på
@@ -173,8 +203,34 @@ copy — varken rubriker, stödrader eller CTA. Det är inte en effektivisering,
 `/cs`-flödet, aldrig av en nattrutin. Saknar briefen svenska rader: **hoppa över
 raden**, lämna den i `Draft` och skriv den under "Behöver brief" i rapporten.
 
-Fyra kontroller innan prompten byggs:
+⚠️ **Rättar du en rad mot produktsidan — skriv in rättelsen i BRIEFEN, inte
+bara som kommentar.** Leveransrundan (`/notionkorning`) jämför bildens text mot
+briefens text och studsar tillbaka varje rad som skiljer sig. En rättelse som
+bara ligger i kommentarsfältet gör därför att annonsen åker till `Draft` igen
+och arbetet är bortkastat. Byt ut den felaktiga raden i briefens egen tabell
+(`tools/notion-brief-rattelse.py`: läs blocken, byt den ordagranna strängen i
+tabellcellen, skriv tillbaka), och lägg kommentaren som förklaring ovanpå.
+Då säger brief och bild samma sak, och båda rutinerna är nöjda.
+*(Mätt 2026-09-15: `Beltgrinder_BOF_3_1` studsade med "Two lines do not match
+the brief" — rättelsen låg bara som kommentar. Nio andra rader i samma batch
+hade samma problem och hade studsat i tur och ordning.)*
 
+Fem kontroller innan prompten byggs:
+
+0. **Butikens namn och domän får aldrig stå i annonsen** (Axels beslut
+   2026-09-18, samma hard rule som `/cs` steg 3). Varken i copy, i bild eller
+   som domän — inte "Bäverbutiken", inte `baverbutiken.se`. Färdiga annonser
+   speglas till OPS-butikerna (`/ops-spegla`), och en creative som säger vilken
+   butik den kommer från pekar då på fel butik. Produkten, priset och länken
+   bär butiken. **Den här rutinen är sista grinden** — texten bränns in här, och
+   efter det går den inte att rätta utan att göra om bilden. Hittar du en domän
+   eller ett butiksnamn i en brief-rad: byt raden i briefen med
+   `tools/notion-brief-rattelse.py` (minsta möjliga ändring — stryk domänen,
+   behåll resten) och kommentera varför, precis som vid en prisrättelse.
+   *(Mätt 2026-09-19: `Batmotor_BOF_2_1` och `BOF_3_1` studsade i
+   leveransrundan med CTA "Läs mer på baverbutiken.se." respektive "Hitta din
+   storlek på baverbutiken.se." — bilderna var i övrigt rätt, men hela
+   genereringen fick göras om.)*
 1. **Priset.** Står ett pris i briefen: hämta det verkliga priset från
    produktsidan (`Landing page`) och jämför. Skiljer de sig — hoppa över raden
    och rapportera. Ett inbränt gammalt pris gör creativen oanvändbar (se
