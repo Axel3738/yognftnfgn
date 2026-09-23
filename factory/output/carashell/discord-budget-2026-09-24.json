@@ -1,0 +1,24 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-24",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the LISTICLE campaign is cut 2 850 → 2 000 kr/day. 3-day profit fell to 11.1 % at ROAS 1.99, under the 16 % floor. Its cadence lock had just expired, so the cut went through. Read back and logged",
+    "The main campaign holds at 9 600 kr for one more night — 3-day profit 12.9 % is under the floor too, but only 2 of the required 3 days have passed since Monday's raise. Unless it recovers today it gets cut 9 600 → 6 720 kr tomorrow night",
+    "Paused one ad: CaraShellRoof_BOF_107_1 — 2 153 kr and 3 purchases at CPA 718 kr against break-even 693 kr, losing on both the 14-day and the 7-day window",
+    "108 purchases over 7 days on 54 740 kr at ROAS 2.73. Profit contribution 36 911 kr, flat against last night despite 8 800 kr more spend — which is the whole story tonight"
+  ],
+  "siffror": { "spend_7d": 54740, "kop_7d": 108, "roas_7d": 2.73, "vinstbidrag_7d": 36911 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-25",
+  "varningar": [
+    "The main campaign has hit a delivery ceiling and the last two nights proved it. Day by day: 3 100-5 100 kr/day bought 10-13 purchases at ROAS 2.5-5.8, then spend jumped to 11 757 and 9 588 kr and bought 13 and 14 purchases at ROAS 1.70 and 1.92. Roughly two and a half times the money for about 20 % more customers. The budget was raised 8 000 → 9 600 on Monday, but Meta had never actually been delivering the old 8 000 — it was spending around 5 000. The profitable ROAS we scaled on was measured at a spend level the campaign was not really running at",
+    "So the cuts coming are the rules working, not the product dying. Purchases are holding up fine; it is the price per purchase that broke. Expect the round to walk both campaigns back down over the next few nights until profit returns to the 16-25 % band",
+    "Norway and Denmark still run unwatched on 4 000 kr/day each — reported last night, nothing changed since. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September: CaraShell is briefed in the Bäverbutiken teamspace and mirrored across"
+  ]
+}

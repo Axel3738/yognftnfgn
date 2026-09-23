@@ -945,3 +945,43 @@ påse. Samma väg som `BOF_108_1` 2026-09-21.
 ⚠️ Notera att **de svenska annonserna i CaraShell SE säger båda sakerna**, både i manus
 och i annonstexten. Förbudet i produktminnet har alltså aldrig slagit igenom på
 källbriefarna. Det är en sak för briefgranskningen, inte för översättningen.
+
+---
+
+## Mönster 14 — kampanjen har ett leveranstak vid ~5 000 kr/dygn (BEVISAD 2026-09-24)
+
+Huvudkampanjen `CARASHELL_SE_Taköverdraget | BE-ROAS 1,51` mätt dygn för dygn:
+
+| Dygn | Spend | ROAS | Köp |
+|---|---|---|---|
+| 2026-09-17 | 3 150 kr | 2,51 | 7 |
+| 2026-09-18 | 3 126 kr | 5,84 | 13 |
+| 2026-09-19 | 3 891 kr | 3,55 | 10 |
+| 2026-09-20 | 3 421 kr | 4,46 | 10 |
+| 2026-09-21 | 5 120 kr | 3,15 | 11 |
+| **2026-09-22** | **11 757 kr** | **1,70** | 13 |
+| **2026-09-23** | **9 588 kr** | **1,92** | 14 |
+
+**Köpen är i stort sett oförändrade medan pengarna 2,5-dubblas.** 3 100–5 100 kr gav
+10–13 köp; 9 600–11 800 kr gav 13–14. Ungefär 150 % mer spend för ~20 % fler kunder.
+Det är signaturen på en kampanj vid sitt leveranstak: extra budget köper sämre trafik,
+inte fler kunder.
+
+**Rotorsaken till att vi skalade in i det:** budgeten höjdes 8 000 → 9 600 kr
+2026-09-22 på en 3-dygnsvinst om 34 %. Men Meta **levererade aldrig** de 8 000 —
+kampanjen spenderade ~5 000 kr/dygn. Den lönsamma ROAS:en vi skalade på var alltså
+mätt på en spendnivå kampanjen inte körde på. Först när budgeten passerade den
+faktiska leveransen började Meta spendera fullt ut, och då kom den riktiga ROAS:en
+fram: 1,7–1,9, strax över break-even 1,63.
+
+→ **Instruktion:** jämför ALLTID budgeten med den faktiska spenden innan en höjning
+tolkas som "den tål mer". Ligger spenden märkbart under budgeten är vinstprocenten
+mätt på en mindre kampanj än den du höjer — höjningen testar något som inte är
+testat. Regeln sitter inte i `budgetbeslut.mjs` i dag; den räknar bara på vinst och
+kadens, inte på budgetutnyttjande. (Ägarens beslut om den ska in.)
+
+**Läget efter mätningen:** LISTICLE sänkt 2 850 → 2 000 kr (vinst 3d 11,1 %),
+huvudkampanjen står kvar på 9 600 en natt till på kadensspärren och sänks 9 600 →
+6 720 kr nästa natt om den inte återhämtar sig. Ronden går alltså åt rätt håll av
+sig själv — det här är regler som fungerar, inte en produkt som dör: 108 köp på
+7 dygn, vinstbidrag 36 911 kr.

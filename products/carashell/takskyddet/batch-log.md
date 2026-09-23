@@ -1941,3 +1941,28 @@ lagerrensningssidans länk; kampanjen har två adsets för samma vinkel
 
 **Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
 `1552365523977765037`, ingen ACTION NEEDED.
+
+---
+
+## Nattvakten 2026-09-24 — vändningen: två sänkningar i stället för skalning
+
+**Budget:** LISTICLE **sänkt 2 850 → 2 000 kr** (vinst 3d 11,1 %, ROAS 1,99 — under
+golvet 16 %; kadensspärren hade precis löpt ut). Huvudkampanjen ligger kvar på
+9 600 kr EN natt till: vinst 3d 12,9 % ligger också under golvet, men bara 2 av
+3 kadensdygn har gått sedan måndagens höjning. **Sänks 9 600 → 6 720 kr nästa natt**
+om den inte vänder i dag.
+
+**Pausad:** `CaraShellRoof_BOF_107_1` — 2 153 kr, 3 köp, CPA 718 kr mot break-even
+693 kr, förlorare på både 14d och 7d.
+
+**7 dygn SE:** 54 740 kr, 108 köp, ROAS 2,73, vinstbidrag 36 911 kr — **platt mot
+i går trots 8 800 kr mer spend.** Det är hela kvällens berättelse.
+
+**Varningen från i går slog in.** Den sa: "upprepas det faller vinst 3d ur hållbandet
+och ronden sänker i stället för att skala." Den gjorde det. Rotorsaken är mätt och
+skriven som **mönster 14 i `dna.md`**: kampanjen har ett leveranstak runt 5 000
+kr/dygn, och höjningen 8 000 → 9 600 gjordes på siffror mätta medan Meta bara
+levererade ~5 000 kr. Köpen är oförändrade (10–14/dygn) medan pengarna 2,5-dubblats.
+
+NO och DK körs fortfarande utan vakt på 4 000 kr/dygn vardera (rapporterat 2026-09-23,
+Axels beslut väntar).
