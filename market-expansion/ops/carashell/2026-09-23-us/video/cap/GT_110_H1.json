@@ -1,0 +1,29 @@
+{
+ "in": "../forbehandlad/carashell_GT_110_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_GT_110_H1.mp4",
+ "srt": "../srt-us/carashell_GT_110_H1.srt",
+ "captions": {
+  "zon": [
+   660,
+   1090
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 998,
+  "h_min": 35,
+  "h_max": 130,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620
+ },
+ "lager": [
+  {
+   "png": "../lager/gt110-storlek.png",
+   "t": [
+    14.0,
+    17.8
+   ]
+  }
+ ],
+ "qa": "qa-GT_110_H1"
+}

@@ -1,0 +1,42 @@
+{
+ "in": "../forbehandlad/carashell_GT_108_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_GT_108_H1.mp4",
+ "srt": "../srt-us/carashell_GT_108_H1.srt",
+ "captions": {
+  "zon": [
+   816,
+   1086
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 946,
+  "h_min": 40,
+  "h_max": 85,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    11.2,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/gt-pris-spara.png",
+   "t": [
+    7.4,
+    11.2
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    11.2,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-GT_108_H1"
+}

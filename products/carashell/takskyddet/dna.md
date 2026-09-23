@@ -883,3 +883,65 @@ Tre regler ur det:
 
 Åtgärd: pausade + `_FELSPRAK`, raderna tillbaka i kön, 820 kr / 0 köp
 förlorade. Full tabell i batch-log 2026-09-22 kväll.
+
+---
+
+## Pillrets HÖJD fällde halva batchen tyst — US-rundan 2026-09-23
+
+Tretton videor, alla med Bäverbutikens svenska ordcaptions i ett vitt piller nederst.
+`no-precis.py` suddar pillret frame för frame och lägger den engelska cuen i stället —
+men bara i de frames där den HITTAR pillret. Standardtaket för pillrets höjd är
+**40–85 px** (720×1280), och samma mall finns i en hög variant:
+
+| Video | Pillrets höjd (median) | Hittat, första körningen | Efter eget h_max |
+|---|---:|---:|---:|
+| `CS_107_H1` | **94 px** | 265 av 620 frames | 541 |
+| `GT_110_H1` | **107 px** | 181 av 507 frames | 379 |
+
+I de frames där pillret inte hittades låg **den svenska texten kvar** under en engelsk
+dubb: "och dragsko", "Betyg", "stödben", "hel taket". Det fanns inget felmeddelande,
+och kontaktarket på sex frames per video visade det inte — fem av de sju träffarna låg
+mellan proven.
+
+**Det som fångade det var OCR över HELA videon, fyra gånger i sekunden**
+(`video/svenskkoll.py`, byggd i den här rundan). Den läste 39 svenska träffar i sju av
+tretton filer. Efter rättningen: **noll träffar i alla tretton.**
+
+⚠️ **Mät pillerhöjden per video innan du kör** (`video/pillerhojd.py`). Den är inte
+densamma i en batch, och `no-precis.py`:s egen docstring säger det redan — den varningen
+var skriven ur Takovertrekk-batchen 2026-09-22 och gällde precis det här igen.
+
+### Tre andra fynd i samma runda
+
+1. **`boxblur=40` spränger en låg ruta.** Förbehandlingen blurrar de röda pop-texterna.
+   I yuv420p är krominansen halva höjden, och radien får inte överstiga halva den — en
+   ruta på 142 px (PD_107) respektive 146 px (RI_103) gav
+   `Failed to evaluate filter params: -22`, ett fel som LÄSER som trasig ffmpeg och bara
+   är en ruta som är för låg. `forbehandla.py` klamrar radien till rutan sedan i dag.
+2. **Ett lager som slutar där rodtext.py:s fönster slutar räcker inte.** CS_107 är 22,4 s
+   och fönstret mättes till 22,2 — de sista två tiondelarna visade "1 129 kronor.".
+   TR_103:s slutkort började 21,0, inte 21,2, och BÄVERBUTIKEN hann synas i en frame.
+   Sätt alltid sluttiden FÖRBI det mätta fönstret.
+3. **Ett piller mot en vit vägg går inte att hitta.** PD_106 2,7–3,7 s står kameran mot
+   husbilens vita sida; pillret smälter in (sammanhängande vit yta y 700–1099) och
+   pillerletaren har ingen kant att gå på. `fyll` i cap-konfigen är byggd för det fallet
+   och löste det.
+
+### Manuset: tre påståenden ströks i stället för att översättas
+
+Källans svenska manus bygger på tre saker som inte går att backa på den amerikanska
+sidan. De ströks i den engelska dubben, inte översattes:
+
+| Påstående | Varför det ströks | Vad som står i stället |
+|---|---|---|
+| "Betyg 5,0 av 5", "10 recensioner" | svenska recensioner, gäller inte marknaden | en annan sann rad av samma längd |
+| "dragsko" i kanten | **förbjudet i produktminnet** — leverantörens bilder visar den inte | "elastic straps hook under the edge" (spännbanden ÄR dokumenterade) |
+| "förvaringspåsen som följer med" | **förbjudet av samma skäl** | "packs down small", "no bulky winter storage" |
+
+`OB_102_H1` bär hela vinkeln på påsen. Den behölls som vinkel — filmen visar att
+överdraget viks ihop litet och får plats i bakluckan — men utan löftet om en medföljande
+påse. Samma väg som `BOF_108_1` 2026-09-21.
+
+⚠️ Notera att **de svenska annonserna i CaraShell SE säger båda sakerna**, både i manus
+och i annonstexten. Förbudet i produktminnet har alltså aldrig slagit igenom på
+källbriefarna. Det är en sak för briefgranskningen, inte för översättningen.

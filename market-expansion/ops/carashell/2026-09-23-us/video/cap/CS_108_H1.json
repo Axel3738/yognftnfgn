@@ -1,0 +1,56 @@
+{
+ "in": "../forbehandlad/carashell_CS_108_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_CS_108_H1.mp4",
+ "srt": "../srt-us/carashell_CS_108_H1.srt",
+ "captions": {
+  "zon": [
+   900,
+   1060
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 996,
+  "h_min": 30,
+  "h_max": 95,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    17.0,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/cs108-pris1.png",
+   "t": [
+    0.0,
+    3.4
+   ]
+  },
+  {
+   "png": "../lager/cs108-vav.png",
+   "t": [
+    8.2,
+    12.5
+   ]
+  },
+  {
+   "png": "../lager/cs108-jampris.png",
+   "t": [
+    12.5,
+    17.0
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    17.0,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-CS_108_H1"
+}

@@ -1,0 +1,29 @@
+{
+ "in": "../forbehandlad/carashell_CS_107_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_CS_107_H1.mp4",
+ "srt": "../srt-us/carashell_CS_107_H1.srt",
+ "captions": {
+  "zon": [
+   630,
+   1010
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 928,
+  "h_min": 35,
+  "h_max": 120,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620
+ },
+ "lager": [
+  {
+   "png": "../lager/cs107-pris.png",
+   "t": [
+    18.0,
+    22.5
+   ]
+  }
+ ],
+ "qa": "qa-CS_107_H1"
+}

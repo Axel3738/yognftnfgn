@@ -1,0 +1,650 @@
+
+
+########## CS_107_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,260 --> 00:00:07,700
+1129 kronor, inte 1469. 340 kronor mindre för hela taket.
+
+2
+00:00:07,880 --> 00:00:10,420
+Spänns fast med rem och dragsko i kanten.
+
+3
+00:00:10,640 --> 00:00:11,620
+En person räcker.
+
+4
+00:00:11,860 --> 00:00:14,020
+Bara taket, inte hela vagnen.
+
+5
+00:00:14,240 --> 00:00:17,600
+210 D-väv utan hel vintersäsong.
+
+6
+00:00:17,780 --> 00:00:19,860
+1129 kronor.
+
+7
+00:00:20,040 --> 00:00:21,980
+Betyg 5,0 av 5.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,260 --> 00:00:07,700
+1,129 kronor, not 1,469. 340 kronor less for the whole roof.
+
+2
+00:00:07,880 --> 00:00:10,420
+Fastened with a strap and drawstring at the edge.
+
+3
+00:00:10,640 --> 00:00:11,620
+One person is enough.
+
+4
+00:00:11,860 --> 00:00:14,020
+Just the roof, not the whole trailer.
+
+5
+00:00:14,240 --> 00:00:17,600
+210 D-fabric, not for a full winter season.
+
+6
+00:00:17,780 --> 00:00:19,860
+1129 kronor
+
+7
+00:00:20,040 --> 00:00:21,980
+Rating 5.0 out of 5.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: 1 129 kr. Inte 1 469 kr — 340 kr mindre.
+En person fäster den, hand mot 210D-väven.
+Täckt av snö. 5,0 av 5 på 10 recensioner.
+HEADLINE: 1 129 kr, inte 1 469 kr.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.4s 1129 | 4.2s 1469. | 7s hela | 9.8s och dragsko | 12.6s Bara taket | 15.4s 210D-vav. | 18.2s 1129 kronor. | 18.2s 5.0/5 | 21s 1129 kronor. | 21s 5.0/5 | 21s Betyg 5,0
+
+
+########## CS_108_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,320 --> 00:00:02,440
+1129 kronor.
+
+2
+00:00:02,960 --> 00:00:04,820
+Taket är det du aldrig ser.
+
+3
+00:00:05,160 --> 00:00:07,900
+Spänns fast med rem och dragsko i kanten.
+
+4
+00:00:08,460 --> 00:00:12,120
+210 D-väv ute en hel vintersäsong.
+
+5
+00:00:12,460 --> 00:00:14,680
+1129 kronor.
+
+6
+00:00:15,000 --> 00:00:17,020
+Betyg 5,0 av fem.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,320 --> 00:00:02,440
+11.29 kronor
+
+2
+00:00:02,960 --> 00:00:04,820
+The roof is what you never see.
+
+3
+00:00:05,160 --> 00:00:07,900
+Fastened with a strap and drawstring at the edge.
+
+4
+00:00:08,460 --> 00:00:12,120
+210D fabric out for a whole winter season.
+
+5
+00:00:12,460 --> 00:00:14,680
+1,129 kr
+
+6
+00:00:15,000 --> 00:00:17,020
+Rating 5.0 out of 5.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Taket — den delen du aldrig ser efter.
+Rem och dragsko håller den på plats, 210D-väv hela vintersäsongen.
+1 129 kr mot 1 469 kr. 5,0 av 5 på 10 recensioner.
+HEADLINE: Taket du aldrig ser efter. 210D-väv.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.3s 1129 kr | 1.3s 1129 kronor. | 3.8s Taket ar det du | 6.3s rem och dragsko | 8.8s 210D-vav | 8.8s hel vintersäsong | 8.8s 210 D-vav. | 11.4s 210D-vav | 11.4s hel vintersäsong | 11.4s vintersasong. | 13.9s 1129 kr | 13.9s 14C0 KD | 13.9s 1129 kronor. | 16.4s 1129 kr | 16.4s 1AC0 KD | 16.4s Betyg 5,0 av 5. | 18.9s BAVERBUTIKEN | 18.9s TAKOVERDRAG HUSVAGN 6,5*3M-SKYDDARDEN | 18.9s DYRASTEYTAN | 18.9s ★★★★★10recensioner | 18.9s 1,469KF1,129Kr | 18.9s Finnsilager-Begransatantal
+
+
+########## GT_107_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,120 --> 00:00:02,980
+Han går ut i pyjamas för att känna om överdraget sitter kvar.
+
+2
+00:00:03,240 --> 00:00:09,100
+Rem och dragsko håller den på plats. Julklappen är för taket han redan går ut och känner på. Ryms i påsen som följer med.
+
+3
+00:00:09,160 --> 00:00:12,940
+En person får på plats hela taket. Ettusen etthundratjugonio kronor.
+
+4
+00:00:13,040 --> 00:00:14,820
+Betyg fem komma noll av fem.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,120 --> 00:00:02,980
+He goes out in his pajamas to feel if the cover is still on.
+
+2
+00:00:03,240 --> 00:00:09,100
+Straps and a drawstring keep it in place. The Christmas present is for the roof he is already going out to check. Fits in the bag that comes with it.
+
+3
+00:00:09,160 --> 00:00:12,940
+One person can get the whole roof in place. One thousand one hundred and twenty-nine kronor.
+
+4
+00:00:13,040 --> 00:00:14,820
+Rating five point zero out of five.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Han går ut i pyjamas i skymningen för att känna att den sitter kvar.
+Han drar i remmen. Den rör sig inte.
+Gåvan är samma överdrag — upp ur sin egen förvaringspåse, på plats med en hand.
+1 129 kr. 5,0 av 5 på 10 recensioner.
+HEADLINE: Känner att den sitter kvar, i mörkret.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s pyjamas for att kanna | 3.4s Rem och dragsko | 5.7s Julklappen infor | 8s Ryms i pasen | 10.3s plats hela taket. | 12.6s 1129 kr | 12.6s 5,0/5 | 12.6s 1129 kronor. | 14.8s 1129 kr | 14.8s 5.0/5 | 14.8s Betyg 5,0 av 5. | 17.1s BAVERBUTIKEN | 17.1s TAKOVERDRAG HUSVAGN 6,5*3M-SKYDDARDEN | 17.1s DYRASTEYTAN | 17.1s ★★★★★10recensioner | 17.1s 1469KF1,129Kr | 17.1s Finnsilager-Begransatantal
+
+
+########## GT_108_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,120 --> 00:00:02,260
+Han känner på överdraget innan han går och lägger sig.
+
+2
+00:00:02,540 --> 00:00:07,140
+Julklappen är i taket han redan går ut och kollar. En person, rem och dragsko. Klart.
+
+3
+00:00:07,460 --> 00:00:10,700
+Ettusen etthundratjugonio kronor. Fem komma noll av fem.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,120 --> 00:00:02,260
+He feels the cover before he goes to bed.
+
+2
+00:00:02,540 --> 00:00:07,140
+The Christmas present is on the ceiling, he's already going out to check. One person, strap and drawstring. Done.
+
+3
+00:00:07,460 --> 00:00:10,700
+One thousand one hundred and twenty-nine kronor. Five point zero out of five.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Mitt i natten går han ut och känner efter — remmen sitter still.
+En gåva som en person fäster själv, rem och dragsko på plats.
+1 129 kr, 5,0 av 5 på 10 recensioner.
+HEADLINE: En person. Rem och dragsko på plats.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+0.9s overdraget innan han | 2.7s Julklappen ár | 4.5s ut och kollar. | 6.3s och drogsko. | 8.1s 1129 kr | 8.1s 5,0/5 | 8.1s 1129 kronor. | 10s 1129 kr | 10s 5,0/5 | 10s 5,0 av 5. | 11.8s BAVERBUTIKEN | 11.8s TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN | 11.8s DYRASTEYTAN | 11.8s ★★★★★10recensioner | 11.8s 1469KF1,129Kr | 11.8s Finnsilager-Begransatantal | 13.6s BAVERBUTIKEN | 13.6s TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN | 13.6s DYRASTEYTAN | 13.6s ★★★★★10recensioner | 13.6s 1469KF1,129Kr | 13.6s Finnsilager-Begransatantal
+
+
+########## GT_110_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,040 --> 00:00:03,700
+Han har markis, stödben och gasolvärmare till husvagnen.
+
+2
+00:00:03,820 --> 00:00:05,500
+Taket har han aldrig tänkt på.
+
+3
+00:00:05,760 --> 00:00:09,680
+Taket är det du aldrig ser och det som kostar mest att laga.
+
+4
+00:00:09,920 --> 00:00:13,120
+Ett paket som täcker det han redan har allt annat till.
+
+5
+00:00:13,860 --> 00:00:15,380
+Se alla nio storlekar.
+
+6
+00:00:15,980 --> 00:00:17,680
+Han vet redan vilken som passar.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,040 --> 00:00:03,700
+He has an awning, stabilizer jacks, and a gas heater for the caravan.
+
+2
+00:00:03,820 --> 00:00:05,500
+He has never thought about the roof.
+
+3
+00:00:05,760 --> 00:00:09,680
+The roof is the thing you never see and the thing that costs the most to fix.
+
+4
+00:00:09,920 --> 00:00:13,120
+A package that covers what he already has everything else for.
+
+5
+00:00:13,860 --> 00:00:15,380
+See all nine sizes.
+
+6
+00:00:15,980 --> 00:00:17,680
+He already knows which one fits.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Han har markis, klossar och gasvärmare till husvagnen.
+Men taket har stått obeskyddat hela sommaren.
+Nio storlekar, från 1 129 kr.
+HEADLINE: Nio storlekar. Från 1 129 kr.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+3.4s Il husvagnen. | 7.8s och | 10.1s Ett | 12.3s allt | 14.5s Nio storlekar | 14.5s fran1129kr. | 14.5s nio | 16.8s Nio storlekar | 16.8s fran1129 kr. | 16.8s redan vilken
+
+
+########## CO_103_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,100 --> 00:00:04,520
+Ett helöverdrag är tungt att få på plats ensam och skaver mot lacken hela vintern.
+
+2
+00:00:04,660 --> 00:00:09,280
+Bara taket, det som möter regn och snö, hanteras av en person utan att nudda lacken.
+
+3
+00:00:09,420 --> 00:00:11,200
+Taket möter vädret året om.
+
+4
+00:00:11,520 --> 00:00:13,480
+Ettusen etthundratjugonio kronor.
+
+5
+00:00:13,720 --> 00:00:16,740
+Spara trehundrafyrtio mot ettusenfyrahundrasextjugonio.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,100 --> 00:00:04,520
+A full cover is heavy to put in place alone and rubs against the paint all winter.
+
+2
+00:00:04,660 --> 00:00:09,280
+Just the roof, the part that meets rain and snow, can be handled by one person without touching the paint.
+
+3
+00:00:09,420 --> 00:00:11,200
+The roof faces the weather all year round.
+
+4
+00:00:11,520 --> 00:00:13,480
+One thousand one hundred twenty-nine kronor.
+
+5
+00:00:13,720 --> 00:00:16,740
+Save three hundred forty against one thousand four hundred sixty-nine.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Ett helt husvagnsöverdrag du bänder på själv, kant mot kant mot lacken hela vintern.
+Ett taköverdrag lyfter du på med en hand — ingenting rör sidorna.
+1 129 kr. Spara 340 kr mot ordinarie 1 469 kr.
+HEADLINE: En hand. Ingen kontakt med lacken.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.3s Jayco | 1.3s tungt att fa pa plats | 3.8s lacken hela vintern. | 6.3s moter regn och sn? | 8.8s utan att nudda lacken. | 11.3s vadret aret om. | 13.8s 1129 kr | 13.8s 1129 kronor spara | 16.3s 1129 kr | 16.3s Spara 340 | 16.3s 14c9r | 16.3s 349 mot 1469. | 18.8s BAVERBUTIKEN | 18.8s TAKOVERDRAG HUSVAGN 6,5*3M-SKYDDARDEN | 18.8s DYRASTEYTAN | 18.8s ★★★★★10recensioner | 18.8s 1469KF1,129Kr | 18.8s Finnsilager-Begransatantal
+
+
+########## OB_101_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,120 --> 00:00:01,660
+Blåser det inte av, tänker du.
+
+2
+00:00:01,960 --> 00:00:05,200
+Spänns fast med rem och dragsko i kanten. Sitter kvar när det blåser.
+
+3
+00:00:05,360 --> 00:00:06,160
+Kanten är spänd.
+
+4
+00:00:06,340 --> 00:00:07,680
+Inget lyft, ingen flaxning.
+
+5
+00:00:07,880 --> 00:00:14,740
+Tål en hel vintersäsong ute. Tvåhundratio D-väv, inte tunn presenning som spricker i frost. Ettusen etthundratjugonio kronor.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,120 --> 00:00:01,660
+Won't it blow off, you might think.
+
+2
+00:00:01,960 --> 00:00:05,200
+Secured with a strap and drawstring at the edge. Stays put when it's windy.
+
+3
+00:00:05,360 --> 00:00:06,160
+The edge is tight.
+
+4
+00:00:06,340 --> 00:00:07,680
+No lifting, no flapping.
+
+5
+00:00:07,880 --> 00:00:14,740
+Can withstand a winter season outside. 210D fabric, not a thin tarp cracking in the frost. 1,129 kronor.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: ”Blåser det inte av?”, tänker du. Rem och dragsko spänner kanten hårt, ingen flaxning även i hård vind. 210D-väv, gjort för en hel vintersäsong utomhus. 1 129 kr, ord. 1 469 kr.
+HEADLINE: Sitter kvar när det blåser
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s av, tanker du. | 3.4s och drogsko i kanten. | 5.7s Kanterna ar spand. | 7.9s Tal en hel | 10.2s 210D-VAV | 10.2s 210 dvav. | 12.5s som spricker i frost. | 14.8s 11 | 14.8s KR | 14.8s 1129 kronor. | 17s BAVERBUTIKEN | 17s TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN | 17s DYRASTEYTAN | 17s ★★★★★10recensioner | 17s 1469KF1,129Kr | 17s Finnsilager-Begransatantal
+
+
+########## OB_102_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,060 --> 00:00:02,200
+Ryms i förvaringspåsen som följer med.
+
+2
+00:00:02,280 --> 00:00:08,440
+Ingen skrymmande vinterförvaring, bara påsen som kom med paketet fick plats bredvid reservdunken i baklådan.
+
+3
+00:00:08,740 --> 00:00:12,340
+1129 kronor ryms i en påse
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,060 --> 00:00:02,200
+Fits in the storage bag that comes with it.
+
+2
+00:00:02,280 --> 00:00:08,440
+No bulky winter storage, just the bag that came with the package fit next to the spare canister in the back box.
+
+3
+00:00:08,740 --> 00:00:12,340
+1129 kronor fits in a bag
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Han viker ihop den och stoppar den i sin egen förvaringspåse.
+Påsen får plats i bagageutrymmet, bredvid dunken.
+1 129 kr. Ryms i en påse.
+HEADLINE: 1 129 kr. Ryms i en påse.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s forvaringspasen | 3.2s Ingen skrymmande | 5.3s som kom | 7.4s bredvid reservdunken | 9.5s 1129kr. | 9.5s rymsienpase | 9.5s 1129 | 11.6s 1129kr. | 11.6s rymsien pase | 11.6s Ryms | 13.7s BAVERBUTIKEN | 13.7s TAKOVERDRAG HUSVAGN6,5*3M-SKYDDARDEN | 13.7s DYRASTEYTAN | 13.7s ★★★★★10recensioner | 13.7s 1,469KF1,129Kr | 13.7s Finnsilager-Begransat antal | 15.8s BAVERBUTIKEN | 15.8s TAKOVERDRAG HUSVAGN 6,5 *3 M - SKYDDAR DEN | 15.8s DYRASTEYTAN | 15.8s ★★★★★10recensioner | 15.8s 1,469KF1,129 Kr | 15.8s Finnsilager-Begransat antal
+
+
+########## PD_106_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,100 --> 00:00:01,840
+En person, det är allt det tar.
+
+2
+00:00:02,060 --> 00:00:03,560
+Ingen hjälp behövs för taket.
+
+3
+00:00:03,700 --> 00:00:09,260
+Bara taket, inte hela vagnen att kämpa med ensam, spänns fast med rem och dragsko i kanten.
+
+4
+00:00:09,440 --> 00:00:10,480
+Ingen annan behövdes.
+
+5
+00:00:10,700 --> 00:00:12,780
+Ettusen etthundratjugonio kronor.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,100 --> 00:00:01,840
+One person, that's all it takes.
+
+2
+00:00:02,060 --> 00:00:03,560
+No help needed for the roof.
+
+3
+00:00:03,700 --> 00:00:09,260
+Just the roof, not the whole trailer to struggle with alone, fastened with a strap and drawstring at the edge.
+
+4
+00:00:09,440 --> 00:00:10,480
+No one else was needed.
+
+5
+00:00:10,700 --> 00:00:12,780
+One thousand one hundred and twenty-nine kronor.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: En person. Det är allt det tar. Ingen extra hjälp behövs för att få överdraget på plats — bara rem och dragsko som spänns fast i kanten. Passar i medföljande väska när det inte används. 1 129 kr, ord. 1 469 kr.
+HEADLINE: En person räcker för taket
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1s Det ar allt det tar. | 3.1s for taket. | 5.1s XRF868 | 5.1s Inte hela vagnen att | 7.1s Spants fast med rem | 7.1s PRO-TEC | 9.2s och dragsko i kanten. | 9.2s PRO-TEC | 11.2s 1129 kr | 13.2s BAVERBUTIKEN | 13.2s TAKOVERDRAGHUSVAGN6,5*3M-SKYDDARDEN | 13.2s DYRASTEYTAN | 13.2s ★★★★★10recensioner | 13.2s 1.469KF1,129Kr | 13.2s Finnsilager-Begransat antal | 15.3s BAVERBUTIKEN | 15.3s TAKOVERDRAG HUSVAGN 6,5 *3 M-SKYDDAR DEN | 15.3s DYRASTEYTAN | 15.3s ★★★★★10recensioner | 15.3s 1469-KF1,129Kr | 15.3s Finnsilager-Begransatantal
+
+
+########## PD_107_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,340 --> 00:00:07,160
+6,5 gånger 3 meter. Läggs rakt över taket. Spänns fast med rem och dragsko i kanten. Vatten hälls rakt på taket.
+
+2
+00:00:07,340 --> 00:00:09,400
+Vattnet blir aldrig stående kring takluckorna.
+
+3
+00:00:09,580 --> 00:00:14,340
+Täcker hela takytan. 1129 kronor. Spara 340.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,340 --> 00:00:07,160
+6.5 by 3 meters, placed over the roof. Secured with straps and a drawstring edge. Water is poured onto the roof.
+
+2
+00:00:07,340 --> 00:00:09,400
+The water never pools around the roof hatches.
+
+3
+00:00:09,580 --> 00:00:14,340
+Covers the entire roof surface. one thousand one hundred and twenty nine kronor. Save three hundred forty.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: 6,5 gånger 3 meter. Läggs rakt över taket. Rem och dragsko spänner fast kanten, så vatten aldrig blir stående kring takluckorna. En hink vatten hälls rakt över taket – och rinner av, ingen pöl kvar. 1 129 kr, ord. 1 469 kr.
+HEADLINE: 6,5 × 3 m rakt över taket
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s 6,5×3m | 1.1s 6,5 ganger 3 meter. | 3.4s Spanns fast med rem | 5.6s och dragsko i kanten. | 7.9s Vattnet blir aldrig | 10.1s Tacker hela takytan. | 12.4s 1129 kr | 12.4s 1129 kronor. | 14.6s SP | 14.6s 01 | 16.9s BAVERBUTIKEN | 16.9s TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN | 16.9s DYRASTEYTAN | 16.9s ★★★★★10recensioner | 16.9s 1,469KF1,129Kr | 16.9s Finnsilager-Begransatantal
+
+
+########## RI_102_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,041 --> 00:00:03,504
+Första frostnatten är på väg. Tunn presenning spricker i frost.
+
+2
+00:00:03,560 --> 00:00:11,180
+Tvåhundratio D-väv gör inte det. Spänns fast med rem och dragsko i kanten. Tål en hel vintersäsong ute. Ettusen etthundratjugonio kronor.
+
+3
+00:00:11,320 --> 00:00:13,100
+Betyg fem komma noll av fem.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,041 --> 00:00:03,504
+The first frost of the season is on its way. Thin tarps crack in the frost.
+
+2
+00:00:03,560 --> 00:00:11,180
+210 D fabric doesn't. Secured with straps and a drawstring along the edge. Withstands an entire winter season outdoors. 1,129 kronor.
+
+3
+00:00:11,320 --> 00:00:13,100
+Rated 5.0 out of 5.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Frosten kommer i gryningen — en tunn presenning stelnar och spricker.
+Vår 210D-väv böjs ändå, i samma kyla.
+1 129 kr. 5,0 av 5 på 10 recensioner.
+HEADLINE: Första frosten. 210D-väv håller formen.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s ar pa vag. | 3.2s spricker i frost. | 5.3s 210 D-vav gor inte det. | 7.4s och dragsko i kanten. | 9.5s 1129 kr | 9.5s 5,0/5 | 9.5s 1 129 kronor. | 11.7s 1129 kr | 11.7s 5,0/5 | 11.7s Betyg 5,0 av 5. | 13.8s BAVERBUTIKEN | 13.8s 65-3-STMEN | 15.9s BAVERBUTIKEN | 15.9s TAKOVERDRAG HUSVAGN 6,5 *3 M-SKYDDAR DEN | 15.9s DYRASTEYTAN | 15.9s ★★★★★10recensioner | 15.9s 1,469KF1,129Kr | 15.9s Finnsilager-Begransatantal
+
+
+########## RI_103_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,140 --> 00:00:06,100
+Taket är det du aldrig ser. Det som täcker det du aldrig ser, täcker hela takytan, sex komma fem gånger tre meter.
+
+2
+00:00:06,300 --> 00:00:08,380
+Vattnet blir aldrig stående kring takluckorna.
+
+3
+00:00:08,560 --> 00:00:12,500
+Taket är det som kostar mest att laga. Ettusen etthundratjugonio kronor.
+
+4
+00:00:12,780 --> 00:00:14,140
+Spara trehundrafyrtio.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,140 --> 00:00:06,100
+The roof is the thing you never see. What covers what you never see covers the entire roof surface, six point five by three meters.
+
+2
+00:00:06,300 --> 00:00:08,380
+Water never pools around the roof hatches.
+
+3
+00:00:08,560 --> 00:00:12,500
+The roof is the most expensive thing to repair. One thousand one hundred twenty-nine kronor.
+
+4
+00:00:12,780 --> 00:00:14,140
+Save three hundred forty.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Taket är det du aldrig ser. Det är också den ytan som kostar mest att laga om den går sönder. Ett överdrag i 210D-väv täcker hela taket, 6,5 × 3 meter, så vatten aldrig blir stående kring takluckorna. 1 129 kr, ord. 1 469 kr (spara 340 kr).
+HEADLINE: Taket du aldrig ser
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.1s aldrig ser. | 3.3s du aldrig ser tacker | 5.4s 6,5×3 m | 5.4s 6,5 ganger 3 meter. | 7.6s staende kring | 9.8s kostar mest att laga | 12s 1129 kr | 12s 1129 kronor. | 16.3s BAVERBUTIKEN | 16.3s TAKOVERDRAG HUSVAGN 6,5*3 M-SKYDDAR DEN | 16.3s DYRASTEYTAN | 16.3s ★★★★★10recensioner | 16.3s 1469-KF1,129Kr | 16.3s Finnsilager-Begransatantal
+
+
+########## TR_103_H1
+--- SVENSK SRT (blocken och timecodes du MÅSTE behålla exakt):
+1
+00:00:00,120 --> 00:00:03,180
+Det här täcker bara taket, inte hela husvagnen.
+
+2
+00:00:03,380 --> 00:00:08,740
+Ett helöverdrag är tungt att få på plats ensam och sitter och skaver mot lacken hela vintern.
+
+3
+00:00:08,940 --> 00:00:10,380
+Hanteras av en person.
+
+4
+00:00:10,520 --> 00:00:13,720
+Bara taket, inte hela vagnen att kämpa med ensam.
+
+5
+00:00:13,920 --> 00:00:16,280
+Mindre att lyfta, inget som skaver.
+
+6
+00:00:16,600 --> 00:00:18,220
+Bara taket, skydda.
+
+7
+00:00:18,600 --> 00:00:21,000
+Ettusen etthundratjugonio kronor.
+
+--- HeyGens råa engelska (bara referens, inte facit):
+1
+00:00:00,120 --> 00:00:03,180
+This only covers the roof, not the entire caravan.
+
+2
+00:00:03,380 --> 00:00:08,740
+A full cover is heavy to put in place alone and sits there rubbing against the paint all winter.
+
+3
+00:00:08,940 --> 00:00:10,380
+Handled by one person.
+
+4
+00:00:10,520 --> 00:00:13,720
+Just the roof, not the whole trailer to struggle with alone.
+
+5
+00:00:13,920 --> 00:00:16,280
+Less to lift, nothing that rubs.
+
+6
+00:00:16,600 --> 00:00:18,220
+Just the roof, protect it.
+
+7
+00:00:18,600 --> 00:00:21,000
+One thousand one hundred and twenty-nine kronor.
+
+--- SVENSK ANNONSTEXT (primary text + headline) att skriva om till amerikansk engelska:
+MESSAGE: Den täcker bara taket.
+Inte hela husvagnen — därför räcker en person, och ingenting nöter mot lacken på sidorna.
+1 129 kr, jämfört med 1 469 kr.
+HEADLINE: Bara taket. En hand räcker.
+
+--- INBRÄND TEXT i bilden (OCR, bara för din förståelse):
+1.5s bara taket, inte | 4.6s M3M2TA092 | 4.6s 12T042 | 4.6s ar tungt att fa | 7.6s skaver mot lacken | 10.6s Bara taket, inte | 13.7s kampa med ensam. | 16.7s Bara taket. | 19.7s 1129 kr | 19.7s 1.4COKR | 19.7s 1129 kronor. | 22.8s BAVERBUTIKEN | 22.8s TAKOVERDRAG HUSVAGN 6,5*3M-SKYDDARDEN | 22.8s DYRASTEYTAN | 22.8s ★★★★★10recensioner | 22.8s 1,469KF1,129Kr | 22.8s Finnsilager-Begransatantal

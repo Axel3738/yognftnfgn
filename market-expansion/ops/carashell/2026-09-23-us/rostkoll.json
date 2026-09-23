@@ -1,0 +1,197 @@
+{
+ "CaraShellRoof_US_CO_103_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 20.0,
+   "medel_db": -20.5,
+   "max_db": -3.1,
+   "langd_kalla": 20.014195,
+   "langddrift": 0.001,
+   "tal_ny": 15.799999999999997,
+   "sista_replik_slut": 16.74,
+   "tal_kalla": 15.799999999999997,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_CS_107_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 22.4,
+   "medel_db": -18.6,
+   "max_db": -0.0,
+   "langd_kalla": 22.38263,
+   "langddrift": 0.001,
+   "tal_ny": 20.5,
+   "sista_replik_slut": 21.98,
+   "tal_kalla": 20.5,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_CS_108_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 20.2,
+   "medel_db": -20.9,
+   "max_db": -3.6,
+   "langd_kalla": 20.199955,
+   "langddrift": 0.0,
+   "tal_ny": 14.619999999999997,
+   "sista_replik_slut": 17.02,
+   "tal_kalla": 14.619999999999997,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_GT_107_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 18.24,
+   "medel_db": -17.8,
+   "max_db": -0.0,
+   "langd_kalla": 18.272698,
+   "langddrift": 0.002,
+   "tal_ny": 14.28,
+   "sista_replik_slut": 14.82,
+   "tal_kalla": 14.28,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_GT_108_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 14.48,
+   "medel_db": -18.4,
+   "max_db": -1.7,
+   "langd_kalla": 14.487846,
+   "langddrift": 0.001,
+   "tal_ny": 9.979999999999999,
+   "sista_replik_slut": 10.7,
+   "tal_kalla": 9.979999999999999,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_GT_110_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 17.88,
+   "medel_db": -17.3,
+   "max_db": -1.0,
+   "langd_kalla": 17.901179,
+   "langddrift": 0.001,
+   "tal_ny": 15.68,
+   "sista_replik_slut": 17.68,
+   "tal_kalla": 15.68,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_OB_101_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 18.12,
+   "medel_db": -17.3,
+   "max_db": -0.7,
+   "langd_kalla": 18.156599,
+   "langddrift": 0.002,
+   "tal_ny": 13.780000000000001,
+   "sista_replik_slut": 14.74,
+   "tal_kalla": 13.780000000000001,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_OB_102_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 16.84,
+   "medel_db": -19.9,
+   "max_db": -0.8,
+   "langd_kalla": 16.833061,
+   "langddrift": 0.0,
+   "tal_ny": 11.899999999999999,
+   "sista_replik_slut": 12.34,
+   "tal_kalla": 11.899999999999999,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_PD_106_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 16.28,
+   "medel_db": -18.3,
+   "max_db": -1.7,
+   "langd_kalla": 16.299002,
+   "langddrift": 0.001,
+   "tal_ny": 11.92,
+   "sista_replik_slut": 12.78,
+   "tal_kalla": 11.92,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_PD_107_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 18.0,
+   "medel_db": -19.9,
+   "max_db": -4.3,
+   "langd_kalla": 18.017279,
+   "langddrift": 0.001,
+   "tal_ny": 13.64,
+   "sista_replik_slut": 14.34,
+   "tal_kalla": 13.64,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_RI_102_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 16.92,
+   "medel_db": -17.8,
+   "max_db": -0.7,
+   "langd_kalla": 16.949161,
+   "langddrift": 0.002,
+   "tal_ny": 12.862999999999998,
+   "sista_replik_slut": 13.1,
+   "tal_kalla": 12.862999999999998,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_RI_103_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 17.36,
+   "medel_db": -20.9,
+   "max_db": -1.8,
+   "langd_kalla": 17.39034,
+   "langddrift": 0.002,
+   "tal_ny": 13.340000000000002,
+   "sista_replik_slut": 14.14,
+   "tal_kalla": 13.340000000000002,
+   "taltapp": 0.0
+  }
+ },
+ "CaraShellRoof_US_TR_103_H1.mp4": {
+  "fel": [],
+  "noteringar": [],
+  "matvarden": {
+   "langd_ny": 24.24,
+   "medel_db": -18.1,
+   "max_db": -0.5,
+   "langd_kalla": 24.286667,
+   "langddrift": 0.002,
+   "tal_ny": 19.439999999999998,
+   "sista_replik_slut": 21.0,
+   "tal_kalla": 19.439999999999998,
+   "taltapp": 0.0
+  }
+ }
+}

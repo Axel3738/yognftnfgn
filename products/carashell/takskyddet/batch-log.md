@@ -1870,3 +1870,74 @@ G + GT tillsammans i analysen.
 **Lärdomen:** en regel som bara står i `dna.md` är en regel som upprepas ändå.
 Den här stod skriven, med motivering, fyra dagar innan den bröts av en annan
 rutin. Skriv spärren där arbetet sker.
+
+---
+
+## USA-runda 10 — 2026-09-23 (`/ops-oversatt carashell/takskyddet --marknad US`)
+
+**13 videor i kön, 13 live i USA.** Största videorundan hittills; alla tidigare
+US-rundor var bild-tunga.
+
+| Kö | Rader | Utfall |
+|---|---|---|
+| `SE-ACTIVE to be translated` | 13 (alla video) | 13 översatta, uppladdade, `Approved` |
+| `Approved` (eftersläpningskollen) | 45 | 0 utan US-annons |
+
+**Fyra av de tretton är omgjorda, inte nya.** `OB_101_H1`, `PD_107_H1`, `RI_103_H1`
+och `PD_106_H1` gick live 2026-09-20 med **norsk röstmodell som läste engelsk text** —
+körningen hade inte `--marknad=US` och verktyget föll tillbaka på norska. En annan
+session upptäckte det, döpte om annonserna till `*_FELSPRAK` och pausade dem, och
+skickade tillbaka raderna i kön. `translate-batch.mjs` läser sedan dess HeyGens
+`output_language` vid proofread, render och download; alla tre stegen svarade
+`✓ English (United States)` i dag.
+
+| Spegel (US) | Adset | US-annons | Röstkoll | Slutkort | Svenska kvar |
+|---|---|---|---|---|---|
+| CaraShellRoof_US_CS_107_H1 | CARASHELL_US_CS | `120251574623040435` | ✅ | ren | ✅ inget |
+| CaraShellRoof_US_CS_108_H1 | CARASHELL_US_CS | `120251574720300435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_GT_108_H1 | CARASHELL_US_GT | `120251574733400435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_RI_102_H1 | CARASHELL_US_RI | `120251574762570435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_GT_107_H1 | CARASHELL_US_GT | `120251574936760435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_CO_103_H1 | CARASHELL_US_CO | `120251574965360435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_GT_110_H1 | CARASHELL_US_GT | `120251574989110435` | ✅ | ren | ✅ inget |
+| CaraShellRoof_US_TR_103_H1 | CARASHELL_US_TR | `120251575116270435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_OB_102_H1 | CARASHELL_US_OB | `120251575130410435` | ✅ | ren | ✅ inget |
+| CaraShellRoof_US_OB_101_H1 | CARASHELL_US_OB | `120251575148110435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_PD_107_H1 | CARASHELL_US_PD | `120251575291390435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_RI_103_H1 | CARASHELL_US_RI | `120251575310620435` | ✅ | slutkort-utan-brand | ✅ inget |
+| CaraShellRoof_US_PD_106_H1 | CARASHELL_US_PD | `120251575337600435` | ✅ | slutkort-utan-brand | ✅ inget |
+
+**Pipelinen per video:** HeyGen US-engelsk röstklon + lip-sync → engelska ordcaptions
+som ersätter det svenska pillret (`no-precis.py`) → de röda svenska pop-texterna
+utbytta mot `$199` / `SAVE $50` / `$249` / `21 x 10 FT` / `210D FABRIC` /
+`NINE SIZES FROM $199` → nytt US-slutkort utan butiksnamn → `rostkoll.py` →
+raden **"Contains AI-generated content"** (`tools/ai-rad.mjs --ai rost`, obligatorisk:
+HeyGen-dubbningen ÄR en AI-röst).
+
+**Röstkollen: 13 av 13 utan en enda anmärkning** — inget tyst spår, längddrift
+0,1–0,2 %, sista repliken slutar innanför filen, inget tappat tal.
+
+**Slutkortet:** elva källor bar Bäverbutikens kort (logga, svensk produkttitel,
+`1 469 kr → 1 129 kr`, "Finns i lager"). Alla elva ombyggda; `granskaOmVideo` på de
+FÄRDIGA filerna ger `slutkort-utan-brand` × 10 och `ren` × 3, ingen blockerar.
+
+**Det som nästan gick fel — se `products/carashell/takskyddet/dna.md`:** pillrets höjd.
+`CS_107_H1` (94 px) och `GT_110_H1` (107 px) ligger över `no-precis.py`:s standardtak 85,
+och den svenska texten låg kvar i hälften av framesen under en engelsk dubb. Ögat på sex
+frames per video såg det inte — OCR över hela videon fyra gånger i sekunden
+(`video/svenskkoll.py`, ny) hittade 39 träffar i sju filer. Efter rättningen: **noll
+träffar i alla tretton.**
+
+**Tre verktygsfixar samma runda:** `forbehandla.py` klamrar boxblur-radien till rutan
+(en 142 px hög ruta sprängde den fasta 40:an), `trimma.py` läser videolistan ur
+`cap/*.json` i stället för en ärvd handskriven lista, och `bygg-cap.py` sätter
+pillerhöjd och sökband per video.
+
+**Kvarstår oförändrat, ingen åtgärd:** originalkampanjen `CARASHELL_US_Taköverdrag …`
+är PAUSED med 2 246 kr spend (ägarens beslut); annonserna ärver
+lagerrensningssidans länk; kampanjen har två adsets för samma vinkel
+(`CARASHELL_US_GT` och `_G`) som delar vinkelns budget i CBO:n — GT-videorna lades i
+`CARASHELL_US_GT`, inget rört.
+
+**Discord:** engelsk rapport i `#annons-uppladdning`, meddelande
+`1552365523977765037`, ingen ACTION NEEDED.

@@ -1,0 +1,49 @@
+{
+ "in": "../forbehandlad/carashell_TR_103_H1.mp4",
+ "ut": "../../us/CaraShellRoof_US_TR_103_H1.mp4",
+ "srt": "../srt-us/carashell_TR_103_H1.srt",
+ "captions": {
+  "zon": [
+   930,
+   1070
+  ],
+  "max_chars": 34,
+  "font_px": 30,
+  "standard_cy": 1005,
+  "h_min": 40,
+  "h_max": 100,
+  "x0": 50,
+  "x1": 670,
+  "bredd_max": 620,
+  "av": [
+   [
+    20.9,
+    999
+   ]
+  ]
+ },
+ "lager": [
+  {
+   "png": "../lager/tr103-tak.png",
+   "t": [
+    1.8,
+    3.4
+   ]
+  },
+  {
+   "png": "../lager/tr103-jampris.png",
+   "t": [
+    18.6,
+    20.9
+   ]
+  },
+  {
+   "png": "../lager/slutkort-720.png",
+   "t": [
+    20.9,
+    999
+   ]
+  }
+ ],
+ "qa": "qa-TR_103_H1"
+}
