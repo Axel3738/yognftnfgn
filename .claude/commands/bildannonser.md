@@ -87,6 +87,18 @@ Axel äger listan. **Lägg aldrig till eller ta bort en hubb själv** — säger
 "vi skalar X igen" eller "strunta i Y" är det filen som ändras, i samma session,
 och ändringen committas.
 
+⚠️ **En hubb i listan som inte går att läsa är INTE en hubb som saknas.** Notion
+ger åtkomst per sida: syns hubben i Axels sidomeny men inte i en enda API-läsning
+(varken data source-listningen eller en titelsökning), så är integrationen
+"Bäverbutiken RUTINER" inte inbjuden dit — och det ser exakt likadant ut som om
+databasen inte fanns. Sådana rader bär `"avvaktar_atkomst": true` och
+`"datakalla": null` i `products/aktiva-hubbar.json`. Ta ALDRIG bort dem: de ligger
+där för att rutinen ska plocka upp hubben av sig själv samma kväll som Axel delar
+den. Rapportera dem varje körning på en egen rad ("väntar på Notion-åtkomst"), och
+fyll i `datakalla` vid första lyckade läsningen. *(Mätt 2026-09-23: Axel bad om
+bildannonser för `Car wash brush creative hub`; den fanns i hans sidomeny men i
+noll av 25 datakällor integrationen nådde.)*
+
 Hubbarna hittas i övrigt dynamiskt, så nya produkter kommer med av sig själva:
 
 - Sök i Notion med `teamspace_id = 3a9270ab-908c-81a8-a48c-004222d195e7`

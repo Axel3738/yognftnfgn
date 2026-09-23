@@ -1,8 +1,14 @@
 {
   "kommentar": "Axels beslut 2026-09-15: /bildannonser gör bildannonser ENBART för hubbarna nedan. Skalningen på Bäverbutiken drogs igång igen och de här produkterna är de som aktivt får nya annonser. Övriga hubbar i teamspacet lämnas i fred — de listas i rapporten men rörs aldrig. Axel ändrar listan; lägg aldrig till en hubb själv.",
   "sa_matchas_de": "Matcha i första hand på 'datakalla' (data source-id), i andra hand på 'namn'. Hubbarna döps om i Notion utan förvarning — 2026-09-19 hette 'BÄVER Taköverdraget för Husvagn' plötsligt 'BÄVER  For CARL Taköverdraget för Husvagn', och en ren namnmatchning hade tappat hela hubben tyst. Ett nytt namn är inte en ny hubb: står id:t kvar är det samma hubb.",
-  "andrad": "2026-09-19",
+  "andrad": "2026-09-23",
   "aktiva": [
+    {
+      "namn": "Car wash brush creative hub",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"glöm inte att göra bilderna för denna\"). ⚠️ Integrationen 'Bäverbutiken RUTINER' är INTE inbjuden till hubben än — den syns i Axels sidomeny men inte i en enda API-läsning: varken data source-listningen (25 källor, mätt samma dag) eller en titelsökning på 'Car wash brush' hittar den. Det betyder 'inte inbjuden', aldrig 'databasen saknas'. Raden ligger kvar här med flit: så fort hubben delats tar 20:00-rutinen den av sig själv, utan att någon behöver komma ihåg det. Fyll i datakalla vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
     {
       "namn": "BÄVER Taköverdraget för Husvagn",
       "datakalla": "5f2270ab-908c-82ef-b029-0767819050db",
