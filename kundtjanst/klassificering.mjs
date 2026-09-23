@@ -49,8 +49,8 @@ const REGLER = [
   ]],
   ['ej_levererad', [
     // "inte fått" ensamt är WISMO ("inte fått någon spårning") — här krävs att det är varan/paketet som saknas.
-    'aldrig kommit', 'aldrig kom', 'kom aldrig', 'har inte kommit', 'inte kommit fram', 'inte fått (paketet|varan|leveransen|min beställning|min order|ordern|något paket|det|den)',
-    'aldrig fått (paketet|varan|leveransen|min beställning|min order|ordern|det|den)', 'har inte mottagit', 'ej mottagit', 'ikke mottatt', 'ikke fått (pakken|varen|noe|bestillingen|ordren)',
+    'aldrig kommit', 'aldrig kom', 'kom aldrig', 'har inte kommit', 'inte kommit fram', 'inte fått (paketet|varan|leveransen|min beställning|min order|vår beställning|vår order|vårt paket|mitt paket|ordern|något paket|det|den)',
+    'aldrig fått (paketet|varan|leveransen|min beställning|min order|vår beställning|vår order|vårt paket|mitt paket|ordern|det|den)', 'har inte mottagit', 'ej mottagit', 'ikke mottatt', 'ikke fått (pakken|varen|noe|bestillingen|ordren)',
     // Engelskan kräver också att det är varan/paketet som saknas: "have not received any tracking" är WISMO, inte "aldrig levererad" (rättat 2026-09-21 — autosvaret hade annars lugnat en lugn kund).
     'aldri kommet', 'ikke kommet', 'ikke modtaget', 'aldrig modtaget', '(not|haven.t|havent|hasn.t|have never) received (the |my |our |any |this )?(parcel|package|order|item|items|goods|product|delivery|it|anything)\\b', 'never arrived', 'never received', 'has not arrived', 'hasn.t arrived',
     'försvunn', 'forsvunn', 'borttappad', 'lost (package|parcel|in the mail|in transit)', '(package|parcel) (is |was |got )?lost', 'tappat bort', 'fått tillbaka till avsändaren',
@@ -69,6 +69,15 @@ const REGLER = [
     'spårning', 'sporing', 'sporingsnummer', 'tracking', 'track', 'leveransstatus', 'leveringsstatus', 'status på min', 'status on my', 'kollinummer', 'pakkesporing',
     'har inte fått någon bekräftelse', 'ingen bekräftelse', 'ingen bekreftelse', 'no confirmation', 'orderbekräftelse', 'ordrebekreftelse', 'leveranstid', 'leveringstid', 'delivery time',
     'skickat', 'skickats', 'sendt', 'shipped', 'dröjer', 'tar så lång tid', 'tar lang tid', 'taking so long', 'väntat i', 'ventet i', 'waited', 'inte fått något paket',
+    // Sex riktiga mejl rutinens första körning 2026-09-22 inte kände igen (Axels beslut A 2026-09-23: lägg in dem):
+    // "Vart har min order tagit vägen?", "hur länge får man vänta på leverans", "undrar när min beställning kommer",
+    // "transporten stått stilla sedan den 18 september", "har inte fått bekräftelsemejlet … kan inte spåra".
+    'vart (är|har) (min|vår|mitt|den|det|paketet|ordern|beställningen|leveransen)', 'tagit vägen', 'hur länge (får|ska|måste|behöver) (man|jag|vi) vänta', 'vänta på (leverans|paketet|min order|min beställning|beställningen|ordern)',
+    'när (min|vår|mitt) (beställning|order|paket|leverans) (kommer|anländer|levereras|dyker upp)', 'undrar när (min|vår|mitt|den|det|paketet|ordern|beställningen)', 'vad händer med (min|vår|mitt) (order|beställning|paket)',
+    'stått still', 'står still', 'inte rört sig', 'ingen rörelse', 'inte uppdaterat', 'inte uppdaterats', '(kan|går) inte (att )?spåra', 'spåra (min|mitt|vår|paketet|ordern|beställningen)',
+    'bekräftelsemejl', 'bekräftelsemail', 'inte fått (någon |något |min |en )?(orderbekräftelse|bekräftelse på (min |vår )?(order|beställning))',
+    'står stille', 'ikke rørt seg', 'ikke oppdatert', 'ikke opdateret', 'bekreftelsesmail', 'bekræftelsesmail', 'not moved', 'no movement', 'not updated', 'stuck', 'confirmation email', 'confirmation mail',
+    'ei ole päivittynyt', 'vahvistusviesti', 'milloin (tilaukseni|pakettini) (tulee|saapuu)',
   ]],
   ['skadad_defekt', [
     'trasig', 'trasigt', 'sönder', 'skadad', 'skadat', 'skadet', 'ødelagt', 'i stykker', 'defekt', 'funkar inte', 'fungerar inte', 'fungerer ikke', 'virker ikke', 'går inte att',

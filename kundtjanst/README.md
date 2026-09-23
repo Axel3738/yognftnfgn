@@ -481,9 +481,19 @@ Bäverbutiken först, sedan samma sak överallt).
   "transporten stått stilla sedan den 18 september. Vad händer? Ordernummer:
   #6655", "har inte fått bekräftelsemejlet … kan inte spåra". Botten är alltså
   försiktig åt rätt håll (tiger hellre än gissar) men svarade på 1 av 34.
-  Nästa steg när Axel sagt ja: fraserna in i `klassificering.mjs`
-  (`var_ar_ordern`, `leveranstid`, `orderbekraftelse`) med tester, så
-  torrläget ger fler utkast att döma.
+  ✅ **Inlagda 2026-09-23 (Axels beslut A):** `klassificering.mjs` känner
+  "vart har/är min order", "tagit vägen", "hur länge får man vänta",
+  "vänta på leverans", "när min beställning kommer", "undrar när min …",
+  "vad händer med min order", "stått/står still", "inte rört sig", "inte
+  uppdaterat", "kan inte spåra", "bekräftelsemejl", "inte fått
+  orderbekräftelse" (+ nb/da/en/fi); "inte fått vår order/vårt paket" är
+  `ej_levererad` (lugnt ⇒ WISMO). `hinkar.LEVERANSTID` tar "hur länge får man
+  vänta" (utan order ⇒ svaret före köp, med order ⇒ WISMO), och
+  `namnerStillaSparning` räknar "transporten/paketet stått stilla" som stilla
+  spårning (SOP 02-raden). Bredden är avsiktligt smal: "undrar när ni får in
+  storlek L" är fortfarande en produktfråga, och en retur som nämner spårning
+  går aldrig till ENKEL (`ALDRIG_ENKEL` läser alla träffar, inte bara
+  kategorin). Testade på de sex riktiga formuleringarna.
 - **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
   svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
   "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
