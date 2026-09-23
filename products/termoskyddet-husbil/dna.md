@@ -152,3 +152,11 @@ Feedbackloopen står i `batch-log.md` under samma datum. Det datan flyttade:
 3. **BEVISAD — hubben speglas till CaraShell** ⇒ inga butiksvillkor i bild/slutbild.
 
 Priset avläst live 2026-09-21: 559 kr, jämförpris 932 kr → spara 373 kr = 40 %.
+
+## Avatarer
+
+| Tagg | Vem | Källa | Läge |
+|---|---|---|---|
+| `husbilsagare-som-fryser-om-morgonen` | Husbilsägaren som fryser i förarhytten på morgonen innan solen värmt upp kupén | Lärdom L-120250175770080291 — hypotesen om varför CS-priset bär | hypotes |
+| `husbilsagare-som-torkar-imma-varje-dag` | Husbilsägaren som torkar imma på insidan av vindrutan varje morgon | Sidans egen rad: "Två minuters jobb på utsidan i stället för imma att torka bort varje dag." | verifierad (sidans text) |
+| `paret-pa-rastplatsen-som-vill-vara-osedda` | Paret som övernattar på en rastplats och inte vill att någon ser in genom vindrutan | Sidans egen rad: "Ingen ser in på rastplatsen – mörkläggande hela vägen över framvagnen" | verifierad (sidans text) |

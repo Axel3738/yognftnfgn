@@ -296,3 +296,28 @@ Feedback-raden Brief review 2026-09-18 läst. Annonsidéer: inga rader. Copy av 
 (regel 6). Anmärkning: PD_11_H1:s scenrad "Två sätt att skydda framrutan" och UG_2_H1:s första
 halva är generiska på egen hand — subagenten behöll dem som scensättning, argumentet bärs av
 raderna efter. ⚠️ Regitabell + komponenttaggar (rond-auto 2.9/2.12, `f1bbba1`) saknas — se Fisk-loggen.
+
+## Vidarebygg + batch #4 — 2026-09-23 (`/rond-auto` steg 4b, `annonsbehov: vidarebygg`)
+
+**Läget (3 d, avläst 2026-09-23):** VANTA_KADENS (budget 2 300 kr, ändrad 2026-09-22). Två
+levande breakthroughs: `Termoskydd_CS_3` (L-120250175770080291, 0 av 3 iterationer gjorda före
+i dag) och `Termoskydd_CS_2` (L-120250175768000291). Brieftaket: 2 fria + 5 namngivna, varav
+`CS_9_1` struken (fanns redan i hubben sedan batch #3). Feedback-raden Brief review 2026-09-18
+läst (sidans villkor, ingen policy i bild, konceptkod = vinkel, riktig källväg). Annonsidéer:
+0 rader Ny. Priset läst live: 559 kr / 932 kr (spara 373 kr, 40 %).
+
+### Batch #4 — 2 video + 2 bild, alla i Notion som Draft (BÄVER Termoskyddet för Husbil)
+
+| Annons | Format | Parent · iteration | Hypotes (en variabel) | Hookrad | Notion |
+|---|---|---|---|---|---|
+| `Termoskydd_CS_10_1` | bild | CS_3 · längre problemdel | imman innanför är problemet, skyddet utanpå är svaret — samma pris, ingen brådska | "Imman sitter på insidan. Skyddet sitter på utsidan." | `3e4270ab908c8174ad4ee4df2df54e0b` |
+| `Termoskydd_CS_11_H1` | video 8 s | CS_3 · in media res | sekund 0 = fliken kläms i dörrkarmen, ingen inledning | "Två minuters jobb." | `3e4270ab908c819d8b25f988c19419fc` |
+| `Termoskydd_CS_12_1` | bild | CS_2 · ny hook | CS_2:s bild oförändrad, bara texten byts | "Spänns fast utan att öppna dörrarna." | `3e4270ab908c81c092eed4829fbeb163` |
+| `Termoskydd_CS_12_H1` | video 6 s | CS_2 · in media res | imman torkas bort inifrån i sekund 0 | "Torka bort imman. Varje morgon." | `3e4270ab908c81e3b933ef4d510a0341` |
+
+Iteration 2 på CS_2 byggdes inte med flit (samma variabel som CS_10_1). Regitabell rad för
+rad i varje videobrief, spärren `briefgranskning.mjs` exit 0, `lardom.mjs --brief` 4 BRIEF-rader.
+Butiksneutralt (speglas till CaraShell): inget butiksnamn, inga policyrader, inga recensioner,
+aldrig sommar, ingen brådska. Copy av sonnet-subagent (regel 6); `## Avatarer` tillagt i dna.md.
+⚠️ `lardom.mjs` räknar iterationerna 1–4 på konceptet `cs-pris-utan-bradska` (loggen vinner);
+briefarnas taggar säger parent-relativt 2/3/1/3 — samma sak sedd från två håll.
