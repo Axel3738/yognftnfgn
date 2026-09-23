@@ -708,7 +708,8 @@ export function fotonTypFor({ klass, text = '' } = {}) {
 
 /** Säger kunden att spårningen står still eller inte uppdateras (SOP 02)? Ren. */
 export function namnerStillaSparning(text) {
-  return /(spårning|sporing|tracking|seuranta|status)[^.\n]{0,60}(inte (har )?uppdaterat|inte rört sig|står still|stått still|fast(nat)?|ikke (er )?oppdatert|står stille|ikke opdateret|not (been )?updat|hasn.t (moved|updated|changed)|stuck|ei ole päivittynyt|jumissa)|(inte uppdaterat|står still|ikke oppdatert|not updated|stuck)[^.\n]{0,40}(spårning|sporing|tracking|seuranta)/i.test(String(text ?? ''));
+  // "transporten stått stilla sedan den 18 september" (2026-09-22) räknas också: det är spårningen kunden tittar på, inte paketet.
+  return /(spårning|sporing|tracking|seuranta|status|transporten|paketet|leveransen|försändelsen|pakken|forsendelsen|the parcel|the package|paketti)[^.\n]{0,60}(inte (har )?uppdaterat|inte rört sig|står still|stått still|fast(nat)?|ikke (er )?oppdatert|står stille|ikke rørt seg|ikke opdateret|not (been )?updat|hasn.t (moved|updated|changed)|stuck|ei ole päivittynyt|jumissa)|(inte uppdaterat|står still|stått still|ikke oppdatert|not updated|stuck)[^.\n]{0,40}(spårning|sporing|tracking|seuranta)/i.test(String(text ?? ''));
 }
 
 /** Nämner kunden en saknad orderbekräftelse eller ett saknat spårningsmejl? Ren. */

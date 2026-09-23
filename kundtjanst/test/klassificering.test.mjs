@@ -30,6 +30,22 @@ test('svenska kundärenden hamnar rätt', () => {
   assert.equal(k('Hej', 'Tack för hjälpen!'), 'ovrigt');
 });
 
+test('de sex WISMO-mejlen rutinen inte kände igen 2026-09-22 (Axels beslut A 2026-09-23)', () => {
+  assert.equal(k('Order', 'Har inte fått vår order. Varan är betald.'), 'ej_levererad');
+  assert.equal(k('Vart har min order tagit vägen?', 'Är betald.'), 'var_ar_ordern');
+  assert.equal(k('Leverans', 'Hej, hur länge får man vänta på leverans?'), 'var_ar_ordern');
+  assert.equal(k('Beställning', 'Undrar när min beställning kommer, beställde 9-9.'), 'var_ar_ordern');
+  const stilla = klassificera({ amne: 'Vad händer?', text: 'Transporten stått stilla sedan den 18 september. Vad händer? Ordernummer: #6655' });
+  assert.equal(stilla.kategori, 'var_ar_ordern');
+  assert.deepEqual(stilla.ordernummer, ['6655']);
+  assert.equal(k('Order', 'Har inte fått bekräftelsemejlet och kan inte spåra paketet.'), 'var_ar_ordern');
+  // Bredden ska inte äta upp andra ärenden: en retur som nämner spårning är fortfarande en retur i listan, och en trasig vara vinner på vikt.
+  assert.ok(klassificera({ amne: 'Retur', text: 'Vill returnera, kan inte spåra returpaketet.' }).alla.some((x) => x.id === 'retur_angerratt'));
+  assert.equal(k('Trasig', 'Vart har min order tagit vägen? Den förra kom fram trasig.'), 'skadad_defekt');
+  assert.equal(k('Storlek', 'Undrar när ni får in storlek L igen?'), 'produktfraga', '"undrar när ni" är ingen orderfråga');
+  assert.equal(k('Stilla', 'Sporingen står stille, ikke rørt seg på en uke.'), 'var_ar_ordern');
+});
+
 test('norska, danska och engelska', () => {
   assert.equal(k('Pakken har ikke kommet', 'Sporingen sier levert men jeg har ikke mottatt noe.'), 'ej_levererad');
   assert.equal(k('Hvor er pakken min?', 'Bestilte for en uke siden.'), 'var_ar_ordern');
