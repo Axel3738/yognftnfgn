@@ -345,3 +345,32 @@ GT_11_H1 speglas INTE till CaraShell (takskyddets dna mönster 12: inga GT-brief
 Fönster 2026-09-16..22 (annonsernas egen första vecka). Hook rate okänd — Ads-MCP:n ger inte video_view (3 s).
 
 
+
+## Vidarebygg + batch #5 — 2026-09-23 (`/rond-auto` steg 4b, `annonsbehov: vidarebygg`)
+
+**Läget (avläst 2026-09-23):** CPA_STIGER (CPA 410 → 421 → 466 → 549 kr), budget 16 000 kr
+oförändrad, FUNNELLÄGE. `Takoverdrag_SP_4_H1` etiketterad **BREAKTHROUGH** i dag (40 % av
+spenden första veckan, 34 750 kr, 75 köp, CPA 463 kr, hold 18 %) ⇒ lärdom
+`L-120250242482300291` med tre iterationer, deadline 2026-10-07. Brieftaket: 4 fria +
+5 namngivna (SP_6_1, CS_14_1, SP_4_H2/H3/H4) + 1 tom ruta (OB_5_1); OB_2_H1 struken (upptagen).
+Feedback-raden Brief review 2026-09-19 läst (mekanism ur sidan, aldrig dragsko; tre-frågorstestet
+på hooken på riktigt; Variables-rad + källa). Annonsidéer: 0 rader Ny. Priset läst live:
+1 129 kr / 1 469 kr (6,5 × 3 m).
+
+### Batch #5 — 3 video + 1 bild, alla i Notion som Draft (BÄVER For CARL Taköverdraget för Husvagn)
+
+| Annons | Typ | Parent · iteration | Isolerad variabel | Hookrad | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|
+| `Takoverdrag_SP_4_H2` | I | SP_4_H1 · 1 (ny hook) | öppningsraden — det som syns i bilden (handen hakar remmen i kroken) | "En hand hakar fast remmen i kroken vid takkanten." | okänd | — | `3e4270ab908c81ae8b88cc7f1d88433a` |
+| `Takoverdrag_SP_4_H3` | I | SP_4_H1 · 2 (längre problemdel) | 5 s stående vatten vid takluckan före kroppen (NEW FOOTAGE) | "Vid en taklucka utan skydd blir vattnet lätt stående, och tätmassan tar stryk." | okänd | — | `3e4270ab908c815f80fbd1c10d145b34` |
+| `Takoverdrag_SP_4_H4` | I | SP_4_H1 · 3 (in media res) | sekund 0 = remmen dras åt över taket, ingen inledningsmening | — (tyst cut-in) | okänd | — | `3e4270ab908c813283b7ca93fd2e714c` |
+| `Takoverdrag_OB_5_1` | S (kalla=voc, invandning=fukt, ruta=statisk) | OB_4_H1 · 1 | invändningen fukt/kondens (37 % av kommentarerna) som statisk — 0 av 4 format besvarade | "Ja, det blir tätt. Fast bara taket." | okänd | — | `3e4270ab908c81a18891eb3dfcd87a1b` |
+
+Alla tre iterationerna behåller SP_4_H1:s kropp (Drive-mappen `1pdzN3F5zsqb27SFquy3FG7t-HaiO38yo`,
+EDITOR PICKS per klipp) och rättar tre saker parenten bär: "rem och dragsko" → remmar på alla fyra
+sidor + krok i nederkant (sidans mekanism), påse-raden bort, recensionsraden bort. Regitabell rad
+för rad, spärren `briefgranskning.mjs` exit 0, `lardom.mjs --brief` 4 BRIEF-rader. Butiksneutralt
+(speglas till CaraShell). Copy av sonnet-subagent (regel 6), regi av huvudsessionen.
+**Kvar obyggt av de namngivna:** `SP_6_1` och `CS_14_1` (typ IM ur äldre lärdomar) — nästa rond.
+**Fatigue-testet** (2026-09-22) står: de fem färska annonserna från i går har inte dag-7-etikett än;
+dagens fyra läggs till som testets andra våg (start-CPA i dag 549 kr).

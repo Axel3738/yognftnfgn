@@ -1,0 +1,30 @@
+[
+  {
+    "namn": "Takoverdrag_SP_4_H2",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Takoverdrag_SP_4_H2/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Takoverdrag_SP_4_H3",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Takoverdrag_SP_4_H3/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Takoverdrag_SP_4_H4",
+    "typ": "video",
+    "notion_typ": "Video - Pending Approval",
+    "brief": "video-ads-briefs/Takoverdrag_SP_4_H4/brief.md",
+    "format": "video"
+  },
+  {
+    "namn": "Takoverdrag_OB_5_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Takoverdrag_OB_5_1/brief.md",
+    "format": "static"
+  }
+]
