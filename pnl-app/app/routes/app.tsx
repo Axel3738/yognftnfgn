@@ -13,7 +13,7 @@ import {
 } from "../shopify.server";
 import prisma from "../db.server";
 import { asLang, t } from "../lib/texts";
-import { aiChattEnabled } from "../lib/ai-chat.server";
+import { hamtaKoppling } from "../lib/ai-nyckel.server";
 import { ChatBubble } from "../components/ChatBubble";
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
@@ -58,7 +58,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
     update: {},
   });
 
-  return json({ apiKey: process.env.SHOPIFY_API_KEY || "", lang: asLang(settings.language), billingError, chat: aiChattEnabled });
+  /* Chattbubblan visas när butiken har en Claude-nyckel — sin egen eller
+     serverns. Förut satt grinden bara på serverns miljövariabel, så en
+     handlare som kopplat sin egen fick ingen bubbla. */
+  const koppling = await hamtaKoppling(session.shop, settings);
+  return json({
+    apiKey: process.env.SHOPIFY_API_KEY || "",
+    lang: asLang(settings.language),
+    billingError,
+    chat: koppling.nyckel !== null,
+  });
 }
 
 export default function App() {

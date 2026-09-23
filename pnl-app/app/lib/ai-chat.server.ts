@@ -55,6 +55,10 @@ BETALAVGIFTER (FAKTISKA): appen läser de avgifter Shopify Payments faktiskt tog
 
 HISTORIK: ändrar man kostnaden på produktsidan med ett "från och med"-datum räknas äldre perioder på den gamla kostnaden. Snabbfältet och AI-läsningen skriver utan datum (gäller framåt och för perioder som hämtas om).
 
+KOPPLA CLAUDE: Inställningar → kortet "Koppla Claude" → klistra in din egen Claude-nyckel (den börjar med sk-ant-, hämtas på console.anthropic.com → API keys) → "Koppla". Då kör appens AI-funktioner på ditt eget Anthropic-konto, och du betalar för din egen användning. "Koppla bort" tar bort den igen. Utan egen nyckel körs appens egen, om servern har en.
+
+DU KAN SKRIVA KOSTNADER ÅT HANDLAREN: säger han "motorhöljet kostar 89", "termoskyddet i Norge 140 kr", "alla varianter 12 usd", "2 st för 150" — bekräfta i answer och lägg ett set_cost-förslag. Han trycker på knappen, och då skrivs det. Land går i market, annan valuta i currency (appen räknar om med dagens ECB-kurs), packpriser i tiers.
+
 ANNONSKOSTNAD: Inställningar → "Logga in med Facebook" → välj annonskonto. Utan koppling är annonskostnaden 0 och panelen är gulmarkerad "Annonskostnad saknas". Det finns en exempelvideo vid knappen.
 
 FLERA ANNONSKONTON TILL SAMMA BUTIK: Inställningar → Meta-kortet → "+ Lägg till ett annonskonto till" → välj kontot. Annonskostnaden är summan av alla kopplade konton. Varje konto har eget kampanjfilter och "Ta bort".
@@ -87,6 +91,8 @@ export interface ChattKontext {
   uppskattningPct: number | null;
   flerpackSteg: number;
   plan: string;
+  /** Marknader butiken sålt till — chatten får sätta kostnad per land. */
+  marknader: string[];
   produkter: { productTitle: string; variantTitle: string; price: number; unitCost: number | null }[];
 }
 
@@ -94,8 +100,20 @@ const Action = z.object({
   type: z.enum(["set_cost", "none"]).describe("set_cost = föreslå att skriva en kostnad; none = inget"),
   product: z.string().describe("Exakt produkttitel ur listan"),
   variant: z.string().describe("Exakt varianttitel ur listan, eller tom sträng för alla varianter"),
-  cost: z.number().describe("Kostnad för 1 st i butikens valuta"),
+  cost: z.number().describe("Kostnad för 1 st, i `currency`"),
   tiers: z.array(z.number()).describe("Totalkostnad för 2, 3, … st om handlaren angav packpriser, annars tom lista"),
+  market: z
+    .string()
+    .describe(
+      "Landskod (SE, NO, US …) ur marknadslistan när handlaren nämner ett land eller en marknad. " +
+        "Tom sträng = butikens standardkostnad, som gäller alla marknader utan egen.",
+    ),
+  currency: z
+    .string()
+    .describe(
+      "Valutakod beloppet är i (USD, CNY, SEK …) när handlaren säger en annan valuta än butikens. " +
+        "Tom sträng = butikens valuta. Räkna ALDRIG om själv — appen gör det med dagens ECB-kurs.",
+    ),
   label: z.string().describe("Knapptext på handlarens språk, t.ex. 'Sätt 89 kr på Motorhöljet'"),
 });
 const ChattSvar = z.object({
@@ -114,8 +132,10 @@ export async function svaraChatt(input: {
   historik: ChattMeddelande[];
   kontext: ChattKontext;
   lang: Lang;
+  /** Butikens egen nyckel när den kopplat en, annars serverns. */
+  apiKey: string;
 }): Promise<ChattSvarT> {
-  const client = new Anthropic();
+  const client = new Anthropic({ apiKey: input.apiKey });
   const k = input.kontext;
   const nf = (n: number | null) => (n == null ? "saknas" : `${Math.round(n).toLocaleString("sv-SE")} ${k.currency}`);
   const katalog = k.produkter
@@ -128,12 +148,15 @@ export async function svaraChatt(input: {
     "max fem meningar om inte handlaren ber om steg — då numrerade steg, en rad per klick, med knapparnas exakta namn. " +
     "Hitta aldrig på tal eller funktioner: står det inte i hjälptexten eller butiksdatan, säg att det inte går att se här och peka på var i appen det finns. " +
     "Du ändrar aldrig något själv. Ber handlaren om en kostnadsändring: bekräfta i answer vad du föreslår och lägg ett set_cost-förslag i actions med EXAKT produkt- och varianttitel ur listan. " +
+    "Nämner handlaren ett land eller en marknad: sätt market till landskoden. Nämner han en annan valuta: sätt currency till den koden och skriv beloppet som han sa det — appen räknar om med dagens kurs. " +
+    "Nämner han packpriser (\"2 st för 150\"): lägg TOTALpriset för packet i tiers. " +
     "Är produkten tvetydig: fråga i stället för att gissa (actions tom). Ingen markdown, inga rubriker.\n\n" +
     `HJÄLPTEXT:\n${HJALP}\n\n` +
     `BUTIKENS DATA (${k.fonster}):\n` +
     `Nettoförsäljning ${nf(k.nettoforsaljning)} · Ordrar ${k.ordrar} · COGS ${nf(k.cogs)} · Annonskostnad ${nf(k.annonskostnad)} · ` +
     `Fasta kostnader ${nf(k.fastaPerManad)}/månad (${k.fastaRader.length ? k.fastaRader.join(", ") : "inga inlagda"}) · ` +
     `Varianter med kostnad ${k.varianterMedKostnad} av ${k.varianterTotalt} · ` +
+    `Marknader ${k.marknader.length ? k.marknader.join(", ") : "bara standard"} · ` +
     `Uppskattning ${k.uppskattningPct ? `${k.uppskattningPct} % av priset` : "av"} · Flerpacksteg ${k.flerpackSteg} · Plan ${k.plan}\n\n` +
     `PRODUKTER (produkttitel | varianttitel | pris | kostnad):\n${katalog}`;
 

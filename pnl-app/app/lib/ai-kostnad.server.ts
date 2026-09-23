@@ -15,6 +15,12 @@ import Anthropic from "@anthropic-ai/sdk";
 import { zodOutputFormat } from "@anthropic-ai/sdk/helpers/zod";
 import { z } from "zod";
 
+/**
+ * Serverns nyckel finns. Sedan 2026-09-23 är det INTE grinden — en butik kan
+ * ha kopplat sin egen (se `ai-nyckel.server.ts`). Rutterna frågar
+ * `hamtaKoppling(shop)`; den här konstanten finns kvar för sådant som körs
+ * utan butik i handen.
+ */
 export const aiKostnadEnabled = Boolean(process.env.ANTHROPIC_API_KEY?.trim());
 
 const Rad = z.object({
@@ -42,8 +48,10 @@ export async function lasKostnaderMedAi(input: {
   text: string;
   produkter: { productTitle: string; variantTitle: string; price: number }[];
   currency: string;
+  /** Butikens egen nyckel när den kopplat en, annars serverns. */
+  apiKey: string;
 }): Promise<AiKostnadSvar> {
-  const client = new Anthropic();
+  const client = new Anthropic({ apiKey: input.apiKey });
   const katalog = input.produkter
     .map((p) => `${p.productTitle} | ${p.variantTitle === "Default Title" ? "" : p.variantTitle} | ${p.price}`)
     .join("\n");
@@ -119,8 +127,9 @@ export async function lasOffertMedAi(input: {
   bilder: Bild[];
   text: string;
   produkter: { productTitle: string; variantTitle: string }[];
+  apiKey: string;
 }): Promise<AiOffertSvar> {
-  const client = new Anthropic();
+  const client = new Anthropic({ apiKey: input.apiKey });
   const katalog = input.produkter
     .map((p) => `${p.productTitle} | ${p.variantTitle === "Default Title" ? "" : p.variantTitle}`)
     .join("\n");
@@ -238,8 +247,9 @@ export async function tolkaInmatningMedAi(input: {
   currency: string;
   costCurrency: string;
   lang: "en" | "sv";
+  apiKey: string;
 }): Promise<AiInmatningSvar> {
-  const client = new Anthropic();
+  const client = new Anthropic({ apiKey: input.apiKey });
   const katalog = input.produkter
     .map((p) => `${p.productTitle} | ${p.variantTitle === "Default Title" ? "" : p.variantTitle} | ${p.price}`)
     .join("\n");

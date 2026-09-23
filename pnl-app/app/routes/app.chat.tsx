@@ -15,19 +15,24 @@ import { json } from "@remix-run/node";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { loadCatalog } from "../lib/shopify-data.server";
-import { readDaily, shiftIso } from "../lib/daily.server";
+import { kandaMarknader, readDaily, shiftIso } from "../lib/daily.server";
+import { hemlandAv, marknadskod } from "../lib/marknad";
 import { rowCost, type CostTierRow } from "../lib/pnl.server";
 import { importCostCsv } from "../lib/cost-import.server";
+import { rate as fxRate } from "../lib/fx.server";
 import { lasPlan } from "../lib/plan.server";
-import { aiChattEnabled, actionTillCsv, svaraChatt, type ChattAction, type ChattKontext, type ChattMeddelande } from "../lib/ai-chat.server";
+import { actionTillCsv, svaraChatt, type ChattAction, type ChattKontext, type ChattMeddelande } from "../lib/ai-chat.server";
+import { hamtaKoppling } from "../lib/ai-nyckel.server";
 import { asLang, t } from "../lib/texts";
 
 export async function action({ request }: ActionFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
-  if (!aiChattEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
   const settings = await prisma.shopSettings.upsert({ where: { shop: session.shop }, create: { shop: session.shop }, update: {} });
   const lang = asLang(settings.language);
   const T = t(lang);
+  /* Butikens egen Claude-nyckel när den kopplat en, annars serverns. */
+  const koppling = await hamtaKoppling(session.shop, settings);
+  if (!koppling.nyckel) return json({ ok: false, message: T.settings.claude.missing }, { status: 400 });
   const form = await request.formData();
   const intent = String(form.get("intent") ?? "ask");
 
@@ -39,7 +44,24 @@ export async function action({ request }: ActionFunctionArgs) {
       a = null;
     }
     if (!a || a.type !== "set_cost") return json({ ok: false, message: "invalid" }, { status: 400 });
-    const res = await importCostCsv(admin, session.shop, prisma, actionTillCsv(a), "", T);
+    /* Marknad och valuta följer med från förslaget: "motorhöljet i Norge
+       kostar 12 usd" ska bli samma sak som om det skrivits i rutan på
+       Kostnader — inte en standardkostnad i fel valuta. */
+    const market = marknadskod(a.market);
+    const valuta = (a.currency ?? "").trim().toUpperCase();
+    const butiksValuta = (settings.currency ?? "SEK").toUpperCase();
+    let kurs = 1;
+    if (valuta && valuta !== butiksValuta) {
+      const k = await fxRate(valuta, butiksValuta);
+      if (k == null) return json({ ok: false, message: T.costs.currency.noRate(valuta) }, { status: 502 });
+      kurs = k;
+    }
+    const raknad: ChattAction = {
+      ...a,
+      cost: Math.round(a.cost * kurs * 100) / 100,
+      tiers: (a.tiers ?? []).map((n) => Math.round(n * kurs * 100) / 100),
+    };
+    const res = await importCostCsv(admin, session.shop, prisma, actionTillCsv(raknad), market, T);
     return json({ ok: res.ok && res.applied.length > 0, message: res.applied.length ? T.chat.applied(res.applied.length) : T.chat.applyFailed(res.skipped.join(", ")) });
   }
 
@@ -58,7 +80,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
   try {
     const kontext = await byggKontext(admin, session.shop, settings);
-    const svar = await svaraChatt({ historik, kontext, lang });
+    const svar = await svaraChatt({ historik, kontext, lang, apiKey: koppling.nyckel });
     return json({ ok: true, answer: svar.answer, actions: svar.actions });
   } catch (e) {
     console.error("Chatten misslyckades:", e);
@@ -70,13 +92,14 @@ export async function action({ request }: ActionFunctionArgs) {
 async function byggKontext(admin: any, shop: string, settings: { currency: string; cogsEstimatePct: number | null }): Promise<ChattKontext> {
   const till = new Date().toISOString().slice(0, 10);
   const fran = shiftIso(till, -29);
-  const [daglig, spend, fasta, tiers, katalog, plan] = await Promise.all([
+  const [daglig, spend, fasta, tiers, katalog, plan, marknader] = await Promise.all([
     readDaily(shop, fran, till),
     prisma.dailySpend.aggregate({ where: { shop, day: { gte: new Date(fran), lte: new Date(till) } }, _sum: { spend: true }, _count: true }),
     prisma.fixedCost.findMany({ where: { shop } }),
     prisma.costTier.findMany({ where: { shop, market: "" } }),
     loadCatalog(admin, shop, prisma),
     lasPlan(admin, shop).catch(() => ({ plan: "okand" as const })),
+    kandaMarknader(shop, hemlandAv(settings.currency)).catch(() => [] as string[]),
   ]);
   const tierRader: CostTierRow[] = tiers.map((x) => ({ variantGid: x.variantGid, units: x.units, totalCost: Number(x.totalCost) }));
   const kostnadFor = new Map(katalog.all.map((v) => [v.variantGid, v.unitCost]));
@@ -104,6 +127,7 @@ async function byggKontext(admin: any, shop: string, settings: { currency: strin
     uppskattningPct: settings.cogsEstimatePct,
     flerpackSteg: tiers.length,
     plan: plan.plan,
+    marknader,
     produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle, price: v.price, unitCost: v.unitCost })),
   };
 }

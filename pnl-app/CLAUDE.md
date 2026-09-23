@@ -620,6 +620,42 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Koppla Claude per butik (2026-09-23, build koppla-claude-v106)
+
+Axel: *"man kan koppla in Claude i appen, bara så att våra användare kan
+skriva med Claude och be den skriva in koden."* Halva fanns redan —
+chattbubblan och AI-rutan på Kostnader — men båda satt på **serverns**
+`ANTHROPIC_API_KEY`: Axel betalade för varje handlares användning, och
+utan variabeln var funktionerna helt dolda för alla.
+
+**Kopplingen:** Inställningar → kortet "Koppla Claude" → handlaren
+klistrar in sin egen nyckel. Den lagras krypterad (`crypto.server.ts`,
+samma väg som Meta-token) och **testas mot Anthropic innan den sparas** —
+en felklistrad nyckel som sparas tyst gör att AI-rutan slutar fungera
+dagar senare utan att någon kopplar ihop det med kopplingen. Provet går
+via `models.list()`: det bevisar att nyckeln är giltig utan att generera
+en enda token, alltså utan att kosta handlaren något.
+
+`ai-nyckel.server.ts` är det enda stället som avgör vilken nyckel som
+gäller: **butikens egen först, serverns som reserv.** Vänds ordningen
+betalar Axel för en handlare som kopplat sitt eget konto, och det syns
+ingenstans förrän fakturan kommer. De rena hjälparna ligger i
+`ai-nyckel.ts` (utan databas och SDK) så de går att testa.
+
+⚠️ **Nyckeln lämnar aldrig servern.** Loadern skickar bara `kalla`
+("butik" / "server" / "ingen"), de fyra sista tecknen och datumet. Skicka
+aldrig `anthropicApiKey` till klienten, inte ens maskerad i sin helhet.
+
+⚠️ **`aiKostnadEnabled` / `aiChattEnabled` är INTE längre grinden.** De
+säger bara om serverns nyckel finns. Rutterna frågar
+`hamtaKoppling(shop)` — bygger du en ny AI-funktion, gör likadant, annars
+är den osynlig för varje handlare som kopplat sin egen.
+
+**Chatten kan nu skriva samma saker som rutan:** `set_cost` bär `market`
+(landskod) och `currency` utöver `tiers`, och `app.chat.tsx` räknar om
+med dagens ECB-kurs och skickar marknaden till `importCostCsv`. Förut
+blev "motorhöljet i Norge kostar 12 usd" en standardkostnad på 12 kronor.
+
 ### Egna datum i panelen (2026-09-22, build egna-datum-v104)
 
 Axel: *"det största felet i vår app … jag kan bara välja i går eller de

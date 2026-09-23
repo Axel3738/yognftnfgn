@@ -127,6 +127,12 @@ model ShopSettings {
   /// betalar i en annan valuta än butikens). Marknader utan post använder
   /// feeRate ovan och ingen växlingsavgift.
   marketFees      Json?
+  /// Handlarens EGEN Claude-nyckel (krypterad). Satt = appens AI-funktioner
+  /// kör på butikens konto i stället för serverns. Null = serverns nyckel
+  /// används, och saknas den är AI-funktionerna dolda.
+  anthropicApiKey String?
+  /// När nyckeln sparades — visas som "kopplad sedan" i Inställningar.
+  anthropicKeySavedAt DateTime?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 

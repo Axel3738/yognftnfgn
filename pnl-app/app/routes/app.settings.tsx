@@ -61,6 +61,7 @@ import {
 import { dagarKvar, kontoId, VARNA_DAGAR, type Annonskonto } from "../lib/meta-login";
 import { kandaMarknader, uppmattaAvgifter } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, sorteraMarknader, stadaAvgifter } from "../lib/marknad";
+import { hamtaKoppling, provaNyckel, serNyckelUt } from "../lib/ai-nyckel.server";
 import { asLang, localeOf, t, type Lang } from "../lib/texts";
 
 /** En kampanj som kryssrutorna visar den. Formen speglar MetaKampanj i
@@ -137,6 +138,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
         },
       ]),
     ),
+    /* Bara ATT en nyckel finns och de fyra sista tecknen — aldrig nyckeln. */
+    claude: await (async () => {
+      const k = await hamtaKoppling(session.shop, s);
+      return { kalla: k.kalla, slut: k.slut, sparad: k.sparad ? k.sparad.toISOString().slice(0, 10) : null };
+    })(),
     lang: asLang(s.language),
     tariffPerOrder: Number(s.tariffPerOrder),
     feeRate: Number(s.feeRate),
@@ -257,6 +263,30 @@ export async function action({ request }: ActionFunctionArgs) {
     return json({ ok: true, message: T.settings.campaigns.saved });
   }
 
+  /* Koppla Claude: handlarens EGEN nyckel, krypterad i vila. Nyckeln testas
+     mot Anthropic innan den sparas — en felklistrad nyckel som sparas tyst
+     gör att AI-rutan slutar fungera utan att någon förstår varför. */
+  if (intent === "claude-connect") {
+    const nyckel = String(f.get("anthropicApiKey") ?? "").trim();
+    if (!serNyckelUt(nyckel)) return json({ ok: false, message: T.settings.claude.badKey }, { status: 400 });
+    if (!encryptionAvailable()) return json({ ok: false, message: T.settings.claude.noEncryption }, { status: 400 });
+    const prov = await provaNyckel(nyckel);
+    if (!prov.ok) return json({ ok: false, message: T.settings.claude.rejected(prov.fel ?? "?") }, { status: 400 });
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { anthropicApiKey: encrypt(nyckel), anthropicKeySavedAt: new Date() },
+    });
+    return json({ ok: true, message: T.settings.claude.saved });
+  }
+
+  if (intent === "claude-disconnect") {
+    await prisma.shopSettings.update({
+      where: { shop: session.shop },
+      data: { anthropicApiKey: null, anthropicKeySavedAt: null },
+    });
+    return json({ ok: true, message: T.settings.claude.removed });
+  }
+
   const dec = (k: string) => parseFloat(String(f.get(k) ?? "").replace(",", "."));
   const token = String(f.get("metaAccessToken") ?? "").trim();
   /* Avgifter per marknad: fälten heter fee_<KOD> och fx_<KOD>, i procent.
@@ -332,6 +362,18 @@ export default function Settings() {
   });
   const set = (k: keyof typeof v) => (val: string) => setV((s) => ({ ...s, [k]: val }));
   const T = t(d.lang);
+  /* Koppla Claude. Nyckeln skickas EN gång och lagras krypterad; fältet töms
+     efteråt och visar sedan bara de fyra sista tecknen ur loadern. */
+  const claudeFetcher = useFetcher<typeof action>();
+  const [claudeNyckel, setClaudeNyckel] = useState("");
+  useEffect(() => {
+    if (claudeFetcher.state === "idle" && (claudeFetcher.data as { ok?: boolean } | undefined)?.ok) {
+      setClaudeNyckel("");
+      revalidator.revalidate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [claudeFetcher.state, claudeFetcher.data]);
+
   /* Avgifter per marknad, som procentsträngar per landskod. Sparas med Spara. */
   type Avgiftsfalt = { feeRate: string; fxFeeRate: string; tariffPerOrder: string };
   const tomAvgift = (): Avgiftsfalt => ({ feeRate: "", fxFeeRate: "", tariffPerOrder: "" });
@@ -904,6 +946,68 @@ export default function Settings() {
                     {T.settings.disconnectHelp}
                   </Text>
                 </InlineStack>
+              ) : null}
+            </BlockStack>
+          </Card>
+        </Layout.Section>
+
+        {/* Koppla Claude. Egen knapp och eget kort — kopplingen ska se ut som
+            Meta-kopplingen, inte gömma sig bakom Spara längst ner. */}
+        <Layout.Section>
+          <Card>
+            <BlockStack gap="300">
+              <Text as="h2" variant="headingMd">{T.settings.claude.title}</Text>
+              <Text as="p" tone="subdued">{T.settings.claude.body}</Text>
+
+              {d.claude.kalla === "butik" ? (
+                <InlineStack gap="300" blockAlign="center" wrap>
+                  <Text as="p" fontWeight="semibold">
+                    {`${T.settings.claude.connected(d.claude.slut ?? "")}${d.claude.sparad ? ` · ${T.settings.claude.since(d.claude.sparad)}` : ""}`}
+                  </Text>
+                  <Button
+                    tone="critical"
+                    loading={claudeFetcher.state !== "idle"}
+                    onClick={() => claudeFetcher.submit({ intent: "claude-disconnect" }, { method: "POST" })}
+                  >
+                    {T.settings.claude.remove}
+                  </Button>
+                </InlineStack>
+              ) : (
+                <BlockStack gap="300">
+                  {d.claude.kalla === "server" ? (
+                    <Text as="p" variant="bodySm" tone="subdued">{T.settings.claude.onServer}</Text>
+                  ) : null}
+                  <TextField
+                    label={T.settings.claude.label}
+                    value={claudeNyckel}
+                    onChange={setClaudeNyckel}
+                    autoComplete="off"
+                    type="password"
+                    placeholder={T.settings.claude.placeholder}
+                    helpText={T.settings.claude.where}
+                  />
+                  <div>
+                    <Button
+                      variant="primary"
+                      disabled={!claudeNyckel.trim()}
+                      loading={claudeFetcher.state !== "idle"}
+                      onClick={() =>
+                        claudeFetcher.submit(
+                          { intent: "claude-connect", anthropicApiKey: claudeNyckel.trim() },
+                          { method: "POST" },
+                        )
+                      }
+                    >
+                      {claudeFetcher.state !== "idle" ? T.settings.claude.saving : T.settings.claude.save}
+                    </Button>
+                  </div>
+                </BlockStack>
+              )}
+
+              {claudeFetcher.state === "idle" && claudeFetcher.data ? (
+                <Banner tone={(claudeFetcher.data as { ok?: boolean }).ok ? "success" : "critical"}>
+                  {(claudeFetcher.data as { message?: string }).message ?? ""}
+                </Banner>
               ) : null}
             </BlockStack>
           </Card>

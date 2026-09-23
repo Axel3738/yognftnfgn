@@ -34,7 +34,8 @@ import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { loadCatalog, patchaKostnader, setUnitCost, type VariantCatalog } from "../lib/shopify-data.server";
 import { importCostCsv, normTitel, variantTraffar } from "../lib/cost-import.server";
-import { aiKostnadEnabled, lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
+import { lasKostnaderMedAi, lasOffertMedAi, tillCsv, tolkaInmatningMedAi, type Bild } from "../lib/ai-kostnad.server";
+import { hamtaKoppling } from "../lib/ai-nyckel.server";
 import { rate as fxRate } from "../lib/fx.server";
 import { kandaMarknader, marknaderMedOrdrar, readDaily, shiftIso, uppmattaAvgifter } from "../lib/daily.server";
 import { mixBreakEven, type MixBreakEven } from "../lib/breakeven.server";
@@ -98,6 +99,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
      eller CNY; beloppet räknas om till butikens valuta med dagens ECB-kurs
      när det sparas. Kursen skickas med så fälten kan visa den. */
   const costCurrency = (settings.costCurrency ?? settings.currency).toUpperCase();
+  /* AI-korten visas när butiken har en Claude-nyckel — sin egen eller
+     serverns. Förut satt grinden bara på serverns miljövariabel. */
+  const aiKoppling = await hamtaKoppling(session.shop, settings);
   const kurs = costCurrency === settings.currency ? 1 : (await fxRate(costCurrency, settings.currency)) ?? null;
 
   /* Hur produkterna FAKTISKT säljs de senaste 90 dagarna: orderrader per antal
@@ -228,7 +232,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
        (släpp filen). Dolt när handlaren tryckt "Ser rätt ut". */
     juicyDismissed: Boolean(settings.juicyCardDismissedAt),
     cogsEstimatePct: settings.cogsEstimatePct ?? null,
-    aiEnabled: aiKostnadEnabled,
+    aiEnabled: aiKoppling.nyckel !== null,
   });
 }
 
@@ -622,7 +626,8 @@ export async function action({ request }: ActionFunctionArgs) {
      Kvittot listar exakt vad som skrevs, med "Ta bort" per rad. Är produkten
      oklar skriver AI:n inget och ställer en fråga i stället. */
   if (intent === "smart") {
-    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    const koppling = await hamtaKoppling(session.shop);
+    if (!koppling.nyckel) return json({ ok: false, message: T.settings.claude.missing }, { status: 400 });
     let bilder: Bild[] = [];
     try {
       bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
@@ -646,6 +651,7 @@ export async function action({ request }: ActionFunctionArgs) {
         currency: butiksValuta,
         costCurrency,
         lang,
+        apiKey: koppling.nyckel,
       });
 
       /* Flera läsningar av samma tabell (namnlösa prisspalter): skriv INGET,
@@ -798,7 +804,8 @@ export async function action({ request }: ActionFunctionArgs) {
   /* Leverantörsoffert: AI plockar ut raderna, kursen räknas här, handlaren
      väljer produkt i UI:t. Inget skrivs till Shopify i det här steget. */
   if (intent === "quote-read") {
-    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    const koppling = await hamtaKoppling(session.shop);
+    if (!koppling.nyckel) return json({ ok: false, message: T.settings.claude.missing }, { status: 400 });
     let bilder: Bild[] = [];
     try {
       bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
@@ -813,6 +820,7 @@ export async function action({ request }: ActionFunctionArgs) {
         bilder: bilder.slice(0, 6),
         text,
         produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle })),
+        apiKey: koppling.nyckel,
       });
       const butikensValuta = (settings?.currency ?? "SEK").toUpperCase();
       /* Valutan gissas ALDRIG till butikens. En leverantörsoffert är nästan
@@ -869,7 +877,8 @@ export async function action({ request }: ActionFunctionArgs) {
 
   /* AI läser av skärmbild/text → vårt CSV-format → samma import som filen. */
   if (intent === "ai-import") {
-    if (!aiKostnadEnabled) return json({ ok: false, message: "AI is not enabled on this server." }, { status: 400 });
+    const koppling = await hamtaKoppling(session.shop);
+    if (!koppling.nyckel) return json({ ok: false, message: T.settings.claude.missing }, { status: 400 });
     let bilder: Bild[] = [];
     try {
       bilder = rensaBilder(JSON.parse(String(form.get("bilder") ?? "[]")));
@@ -885,6 +894,7 @@ export async function action({ request }: ActionFunctionArgs) {
         text,
         produkter: katalog.all.map((v) => ({ productTitle: v.productTitle, variantTitle: v.variantTitle, price: v.price })),
         currency: settings?.currency ?? "SEK",
+        apiKey: koppling.nyckel,
       });
       const csv = tillCsv(svar);
       const res = csv ? await importCostCsv(admin, session.shop, prisma, csv, "", T, market) : { ok: true, message: "", applied: [], skipped: [] };
