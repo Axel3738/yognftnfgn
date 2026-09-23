@@ -164,7 +164,9 @@ test('lovatSvar, botSvarText och nastaStegText på båda språken', () => {
   assert.match(nastaStegText(ENKEL_FOTON), /Check whether the photos have arrived/);
   assert.match(nastaStegText(ENKEL_WISMO), /^Nothing, unless the customer writes again/);
   assert.match(nastaStegText({ hink: 'ENKEL', typ: 'levererad' }), /Package missing after tracking shows delivered/);
-  assert.match(nastaStegText({ hink: 'ENKEL', typ: 'adress', flaggad: true }), /handed the thread to you/);
+  // Adressbytet: boten lovade att lagret får adressen, VA:n är den som ändrar den (SOP:en följer upp-sidan Outcome 5).
+  assert.match(nastaStegText({ hink: 'ENKEL', typ: 'adress', flaggad: true }), /Change the address on the order today.*Order placed with incorrect delivery address/);
+  assert.match(nastaStegText({ hink: 'ENKEL', typ: 'oppettider', flaggad: true }), /handed the thread to you/);
   sattSprak('sv');
   assert.equal(lovatSvar(ARG_MICKE, { nu: NU }).text, '42 h kvar');
   assert.match(botSvarText(ARG_MICKE), /problemet i klartext \(fel vara\)/);

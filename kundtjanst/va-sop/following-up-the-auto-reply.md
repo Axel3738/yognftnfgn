@@ -101,8 +101,8 @@ reach him the same day. If you cannot, reply anyway with what you have done and
 when you will write next: silence is the one thing the customer was promised not
 to get.
 
-**Deadline.** The card says "Reply promised by" and counts down. Red means under
-12 hours or passed.
+**Deadline.** The card says "Reply promised by" and counts down from the bot's
+email. Yellow means under 24 hours, red under 12 hours or passed.
 
 **Templates.** Pick the one that matches what the bot already did.
 
@@ -228,12 +228,38 @@ approved what to offer.
 
 ---
 
-## Outcome 5: Simple, fully answered
+## Outcome 5: Simple, address change confirmed
+
+**What the bot sent.** *"Tack, jag har skickat din nya adress vidare till vårt
+lager med prioritet. Din order [ORDER NUMBER] har inte skickats än."* plus "if
+they manage to change it before the parcel leaves, it goes to the new address;
+write to us at once if the shipping confirmation shows the wrong one". Flagged and
+moved to VA-PRIO. The bot only says this when the order has **not** shipped; an
+address change on a shipped order is left to you with no reply.
+
+**Your job.** The bot promised the warehouse would hear about it. **You are the
+one who tells the warehouse**: change the address the same day, per **Order
+placed with incorrect delivery address**, before the order ships. Then confirm in
+one line. If the change is no longer possible, that SOP says what to tell the
+customer and what the owner has to approve. Deadline: today, the order is being
+packed.
+
+**5A: the address is changed on the order**
+
+| Swedish (use this) | English meaning |
+|---|---|
+| Hej igen [FIRST NAME]! Nu är din nya adress inlagd på order [ORDER NUMBER], så paketet går till [NEW STREET AND TOWN]. Du behöver inte göra något mer, och du får spårningslänken i vanlig ordning när paketet skickas. [SIGN-OFF] | Hi again [FIRST NAME]! Your new address is now on order [ORDER NUMBER], so the parcel goes to [new street and town]. You do not need to do anything else, and you get the tracking link as usual when the parcel ships. [SIGN-OFF] |
+
+---
+
+## Outcome 6: Simple, fully answered
 
 **What the bot sent.** One of: where the parcel is (latest scan, tracking link,
-parcel number), the delivery time and packing time, our reply time, the company
-details, "your new address has been sent to the warehouse", or "we need your order
-number". Not flagged, not moved.
+parcel number), the delivery time and packing time, our reply time with "please
+write the order number in the email", the company details, or "we need your order
+number". Not moved to VA-PRIO. Only the "we need your order number" reply is
+flagged, so the thread is in your flagged list; nothing to do there until the
+customer replies with the number.
 
 **Your job.** Nothing, unless the customer writes again. When they do, the bot
 stays silent (it never writes twice in a thread) and the reply is yours:
@@ -248,7 +274,7 @@ stays silent (it never writes twice in a thread) and the reply is yours:
 
 Never restart the thread with facts the bot already gave.
 
-**5A: the customer wrote again with a plain question**
+**6A: the customer wrote again with a plain question**
 
 | Swedish (use this) | English meaning |
 |---|---|
@@ -256,7 +282,7 @@ Never restart the thread with facts the bot already gave.
 
 ---
 
-## Outcome 6: Flagged only (the "For you" bucket)
+## Outcome 7: Flagged only (the "For you" bucket)
 
 The bot sent nothing: returns and refunds it could not verify, exchanges and sizes,
 cancellations, disputes, invoices, resellers, attachments, anything it could not
@@ -297,8 +323,8 @@ bot answered in the last 30 days.
   it.
 - **What the bot wrote**: the reply in one line. **Your next step**: this page in
   one line.
-- **Reply promised by** with the countdown: only on angry customers. Red under
-  12 hours or when the promise has passed.
+- **Reply promised by** with the countdown: only on angry customers. Yellow under
+  24 hours, red under 12 hours or when the promise has passed.
 - **To follow up** holds the cards the bot promised something on or handed to you,
   angry customers on top, oldest first. **Fully answered by the bot** holds the
   rest; nothing to do there unless the customer writes again.
