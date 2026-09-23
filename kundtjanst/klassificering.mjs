@@ -60,7 +60,7 @@ const REGLER = [
     'fel vara', 'fel produkt', 'fel storlek', 'fel färg', 'fel modell', 'fel artikel', 'feil vare', 'feil produkt', 'feil størrelse', 'feil farge', 'forkert vare', 'forkert størrelse',
     'wrong item', 'wrong size', 'wrong product', 'wrong colour', 'wrong color', 'inte som på bild', 'ikke som på bild', 'not as described', 'not as pictured',
     'ser inte ut som', 'ser inte alls ut som', 'inte alls som på bild', 'ser ikke ut som', 'looks nothing like', 'not at all like', 'passar inte', 'passer ikke', 'does not fit', 'doesn.t fit', 'saknas i paketet', 'mangler i pakken',
-    'missing from', 'bara en av', 'fick bara', 'fikk bare', 'only received', 'stämmer inte', 'stemmer ikke', 'kvalitet', 'kvalitet', 'billig plast', 'usel',
+    'missing from', 'bara en av', 'fick bara', 'fikk bare', 'only received', 'stämmer inte', 'stemmer ikke', 'kvalitet', 'kvalite', 'billig plast', 'usel',
     // SOP 07 (fel antal) och SOP 15/34 (stämmer inte med bild/beskrivning), lästa 2026-09-21.
     'fel antal', 'för få', 'saknas en', 'saknas ett', 'feil antall', 'for få', 'forkert antal', 'wrong quantity', 'väärä määrä', 'liian vähän',
   ]],
@@ -97,7 +97,7 @@ const REGLER = [
     'ångra', 'angre', 'byta', 'bytte', 'exchange', 'returadress', 'returadresse', 'return address', 'öppet köp', 'åpent kjøp', 'returfrakt', 'returetikett', 'return label',
   ]],
   ['faktura_klarna', [
-    'klarna', 'faktura', 'invoice', 'påminnelse', 'purring', 'rykker', 'delbetal', 'avbetal', 'betalningsplan', 'payment plan', 'förfallo', 'forfall', 'due date', 'kvitto', 'kvittering', 'receipt',
+    'klarna', 'faktura', 'invoice', 'betala innan', 'betala först', 'påminnelse', 'purring', 'rykker', 'delbetal', 'avbetal', 'betalningsplan', 'payment plan', 'förfallo', 'forfall', 'due date', 'kvitto', 'kvittering', 'receipt',
   ]],
   ['produktfraga', [
     'passar den', 'passer den', 'fungerar den', 'fungerer den', 'does it fit', 'will it fit', 'does it work with', 'kompatibel', 'compatible', 'mått', 'mål på', 'dimensions', 'measurements',
@@ -140,6 +140,14 @@ export function normalisera(text) {
     .replace(/[‘’‚]/g, "'").replace(/[“”]/g, '"')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+const KVALITETSFRAGA = /(vad (är|e) det för|vilken|hur (är|bra är|ser)|hur håller|håller) (den |de |dom |ni )?kvalit|kvalit[^.!?\n]*\?/;
+const HAR_KOPT = /beställ|köpt|köpte|fått|fick|min order|ordern|leverera(t|d)|sönder|trasig|gick av|hål i|tvätt/;
+
+/** Frågar texten om kvaliteten före ett köp? Normaliserad text in. Ren. */
+export function arKvalitetsfraga(normText) {
+  return KVALITETSFRAGA.test(normText) && !HAR_KOPT.test(normText);
 }
 
 /** Ordernummer i texten: "#1234", "order 1234", "ordernummer: 1234", "beställning 1234", Shopify-namn "#1001". Fyrsiffriga+. */
@@ -195,6 +203,17 @@ export function klassificera({ amne = '', text = '' } = {}) {
       if (iAmne || iText) ord.push(re.source.replace(/^\(\^\|\[\^a-zåäöøæ\]\)/, ''));
     }
     if (n > 0) traffar.push({ id, traffar: n, ord });
+  }
+  // "Vad är det för kvalitet på strumporna?" är en fråga FÖRE köp, inte en
+  // reklamation. Matstrumpors torrkörning 2026-09-23: med 'kvalitet' som
+  // fel_varas enda träff blev sådana frågor ENKEL `foton` — boten hade bett
+  // en blivande kund om tre bilder på en trasig vara. Frågeform + inget
+  // ordernummer + inget om ett köp ⇒ produktfråga.
+  const fv = traffar.find((x) => x.id === 'fel_vara');
+  if (fv && fv.ord.every((o) => o.startsWith('kvalit')) && arKvalitetsfraga(`${a}\n${t}`) && !hittaOrdernummer(`${amne}\n${text}`).length) {
+    traffar.splice(traffar.indexOf(fv), 1);
+    const pf = traffar.find((x) => x.id === 'produktfraga');
+    if (pf) pf.traffar += 1; else traffar.push({ id: 'produktfraga', traffar: 1, ord: ['kvalitet?'] });
   }
   // Spam bara om inget kundärende matchar — "unsubscribe" i en signatur ska inte gömma en reklamation.
   const kund = traffar.filter((x) => x.id !== 'spam');
