@@ -525,6 +525,11 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   utan att veta det, även det gamla Niklas Hurtig-utkastet från 19/8
   (VA:ns, order 5032, "fortfarande under transport") 13:18:33 — tolv
   sekunder före bottens start, alltså inte bottens. Drafts var tom 13:20.
+  **Första skarpa svaret 13:42 CEST:** Micke, "Motortäckning", ARG på ordet
+  *besviken*, X `fel_vara`, flaggat + VA-PRIO, två minuter från mejl till
+  svar — rätt i form, men "besviken" utan hot/versaler som ARG och
+  bildförfrågan om förpackning/fraktetikett för "passar inte min motor" är
+  två kalibreringsfrågor (`kundtjanst/README.md` → SKARPT).
   20-regeln skrotad vid räkningen 1 (Lars #6898, första utkastet under
   Railway, rätt). Skarpt = samma kod, `utkast: torr` blir Skicka; allt annat
   (72 h-fönster, ett svar per tråd, VA:ns kund i 14 dagar, löftesspärren,

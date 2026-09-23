@@ -444,6 +444,22 @@ inte bottens, men Niklas bör få rätt läge av VA:n. Drafts var tom 13:20.
 Store facts och VA-SOP:en säger Live sedan samma dag. Botten drar inga
 Claude-credits (ingen modell), bara Railways CPU.
 
+**Första skarpa svaret 13:42:15 CEST** (mätt i Skickat, uid 673): Micke,
+ämne "Motortäckning", mejl 13:40 — "motortäckningen som ska passa 100-150 hk
+stämmer inte … blev väldigt besviken … ni bör ändra annonsen". Hink ARG på
+ordet *besviken* (`hinkar.mjs` ilskelistan), X `fel_vara` ("En produkt som
+inte stämmer med det du beställde är helt oacceptabelt"), eskalerat, svar
+inom 48 timmar, bildförfrågan (typ `leverans`: varan, förpackningen,
+fraktetiketten), förnamnet ur ordern ("Hej Mikael!" fast mejlet sa Micke),
+signatur rätt, inget löfte. Flaggat, flyttat till `INBOX.VA-PRIO` (uid 14),
+markerat besvarat. Två minuter från mejl till svar. ⚠️ Två saker att döma:
+(1) *besviken* utan versaler/utropstecken/hot räknas som ilska — Axels
+Jan-Olof-kalibrering sa att lugn besvikelse inte är ARG; (2) bildförfrågan
+"förpackningen + fraktetiketten" passar transportskada, inte "passar inte
+min motor" — en bild på överdraget på motorn hade varit rätt. Mickes
+sakfråga (annonsen påstår 100–150 hk, passar inte Mercury 150) är en
+produkt-/annonsfråga för Axel, inte bottens.
+
 ### I drift TORRT 2026-09-22 kväll → 2026-09-23 lunch — timrutin, SOP till VA:n, Roundcubes cache
 
 Axels order 2026-09-22 kväll: "fixa bara SOP:n och sätt igång AI-kundsupport-
