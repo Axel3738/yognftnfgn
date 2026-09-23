@@ -9,8 +9,16 @@
     "Magiborsten NO (NO)"
   ],
   "lage_regel": "drift = minst 30 köp sedan start OCH livstids-ROAS över break-even (produkten har bevisat sig). Allt annat = test. Skillnaden spelar roll bara vid förlust: en testprodukt går åtgärdstrappan, en driftprodukt halveras ner mot 500 kr.",
-  "uppdaterad": "2026-09-22",
+  "uppdaterad": "2026-09-23",
   "kampanjer": [
+    {
+      "campaign_id": "120250333936950291",
+      "produkt": "Spabadskapellet i Svart 210D",
+      "lage": "test",
+      "lage_motivering": "ny kampanj startad 2026-09-23 02:14, 127 kr spend och noll köp vid morgonens rond — tillagd av /rond-auto. Break-even står i kampanjnamnet (1.63). Priset i butiken 619 kr (jämförpris 809) läst ur baverbutiken.se/products.json 2026-09-23 (handle spabadskapell-i-svart-210d-haller-lov-och-skrap-borta). Prissheetet gick inte att läsa i sin helhet via Drive-MCP:n (read_file_content gav bara batch 1 och början av batch 2) — inget kostnad-block skrivet, aldrig gissat; slå upp raden och fyll blocket när sheetet går att läsa.",
+      "break_even_roas": null,
+      "break_even_kalla": "kampanjnamnet"
+    },
     {
       "campaign_id": "120252299552200233",
       "produkt": "Vedkløyverbor NO",
