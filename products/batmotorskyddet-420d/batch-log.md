@@ -485,3 +485,35 @@ Annonser skapade 2026-09-15, egna första veckan 2026-09-15 – 2026-09-21 (7d_c
 | Batmotor_CS_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 6 kr | 0 | 0,00 / 3,18 | nej | hooken föll — logga och släpp, aldrig ABO |
 | Batmotor_BF_12_1 | 3 | okänd | **LOSER** | 10 % | 1665 kr | 6 | 2,57 / 3,18 | ja | släpp |
 | Batmotor_RV_8_1 | 3 | okänd | **INGEN_LEVERANS** | — | 1 kr | 0 | 0,00 / 3,18 | nej | hooken föll — logga och släpp, aldrig ABO |
+
+## Vidarebygg + batch #6 — 2026-09-23 (`/rond-auto` steg 4b, `annonsbehov: vidarebygg`)
+
+**Läget (avläst 2026-09-23):** VANTA_KADENS (budget 4 000 kr, skalad 2026-09-21). Levande
+breakthrough `Batmotor_SP_1_H3` (L-120250009362730291, 0 av 3 iterationer före i dag, deadline
+2026-10-05). Brieftaket: 1 fri + 3 namngivna (SP_1_H13/H14/H15). Lärdomsmotorn stoppade först på
+invändningsmatrisen: skepsis 43 % och fukt 43 % med 0 av 4 format besvarade ⇒ den fria platsen
+gick till `Batmotor_OB_1_1` (skepsis × statisk). Spärren kräver en lärdom bakom varje brief, så
+**`L-120250125804850291` (Batmotor_SP_1_H5, KPI_WINNER 2026-09-21, CPA 171 kr, 8 köp, hook
+"Dra över. Spänn remmen. Klart.")** skrevs i dag — det är annonsen som bär de 7 kommentarerna
+matrisen bygger på. Feedback-raden Brief review 2026-09-18 läst (aldrig butiksnamn, sidans villkor
+— sidan säger 14 dagars ångerrätt, inte "30 dagars öppet köp"; källa namngiven). Annonsidéer: 0
+rader Ny. Priset läst live: 579 kr / 965 kr (spara 386 kr, 40 %).
+
+### Batch #6 — 3 video + 1 bild, alla i Notion som Draft (Boat motor cover creative hub)
+
+| Annons | Typ | Parent · iteration | Isolerad variabel | Hookrad | rev | brief → live | Notion |
+|---|---|---|---|---|---|---|---|
+| `Batmotor_SP_1_H13` | I | SP_1_H3 · 1 (ny hook) | öppningsraden — det som går att peka på (skyddet dras över, remmen spänns) i stället för "så många har bytt" | "Dra skyddet över hela motorn – från kåpan ner över riggen." | okänd | — | `3e4270ab908c819fbd0cd3b551c0c53e` |
+| `Batmotor_SP_1_H14` | I | SP_1_H3 · 2 (längre problemdel) | 5 s oskyddad motor på upplagd båt (regn, snö, frost, UV, tjuven — sidans ord) före kroppen | "Snart står båten på land igen – och motorn står oskyddad till våren." | okänd | — | `3e4270ab908c81208e74fadb367d7220` |
+| `Batmotor_SP_1_H15` | I | SP_1_H3 · 3 (in media res) | sekund 0 = remmen spänns runt mitten, ingen inledning | "Spänn remmen runt mitten." | okänd | — | `3e4270ab908c81e28aebd7c3c1a8b340` |
+| `Batmotor_OB_1_1` | N (kalla=voc, invandning=skepsis, ruta=statisk) | — | invändningen "motorn tål ju regn / onödigt" (43 %) medges och besvaras med sidans rader (sex månader på land, tjuven ser den blanka motorn från vägen) | "Motorn tål ju regn, tänker du." | okänd | — | `3e4270ab908c8159b8fce55a8387d329` |
+
+⚠️ `Batmotor_SP_1_H3`:s videofil finns inte i Drive (sökt 2026-09-23: bara `Batmotor_GT_3_H1` och
+NO-filer), och manuset finns inte i repot ⇒ kroppen beskrivs som CDN-bilder + NEW FOOTAGE, med
+SP_1_H5/H1 i hubben som referens. Lärdomens "salt, sol, fågelskit ur sidans egna rader" var fel —
+sidan säger regn, snö, frost, UV; briefarna följer sidan. Parentens obelagda social proof
+("så många har bytt", "mest omtyckta") följer inte med. Inga policyrader, inget butiksnamn, inga
+stjärnor. Regitabell rad för rad, spärren `briefgranskning.mjs` exit 0, `lardom.mjs --brief`
+4 BRIEF-rader. Copy av sonnet-subagent (regel 6), regi av huvudsessionen.
+**Tom ruta kvar:** fukt/kondens (43 %) — namngiven `Batmotor_OB_2_1` i lärdomen, byggs inte förrän
+produktsidan ger en mekanism att svara med (sidan säger inget om ventilation).

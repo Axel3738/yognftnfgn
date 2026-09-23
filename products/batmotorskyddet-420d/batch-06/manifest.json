@@ -19,5 +19,12 @@
     "notion_typ": "Video - Pending Approval",
     "brief": "video-ads-briefs/Batmotor_SP_1_H15/brief.md",
     "format": "video"
+  },
+  {
+    "namn": "Batmotor_OB_1_1",
+    "typ": "bild",
+    "notion_typ": "Image - Pending Approval",
+    "brief": "image-ads-briefs/Batmotor_OB_1_1/brief.md",
+    "format": "static"
   }
 ]
