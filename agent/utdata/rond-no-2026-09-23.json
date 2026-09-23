@@ -135,21 +135,18 @@
       "funnellage": false,
       "invandningar": null,
       "dom": {
-        "kod": "SKALA",
-        "rubrik": "Skala upp 20 %",
-        "motivering": "39,3 % vinst av omsättningen (ROAS 4,46 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 4,46 = 164 % av target. Trappsteg ×1,5, 4 dygn i rad över target, CPA 2 stigande dygn. Ändra från 4 800 kr till 5 750 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar. Trappan hade gett ×1,5, men över 4 000 kr är steget alltid 20 % (högzonen).",
-        "nyBudget": 5750,
-        "zon": "up",
+        "kod": "VANTA_KADENS",
+        "rubrik": "Vänta — ändrad för nyligen",
+        "motivering": "Budgeten ändrades för 0 dagar sedan. Nästa ändring tidigast efter 1 dag.",
+        "nyBudget": null,
+        "zon": null,
         "vinstProcent": 39.310363790816574,
         "breakEven": 1.62,
         "breakEvenKalla": "kampanjnamnet",
         "targetRoas": 2.722689075630252,
         "targetKalla": "härledd (25 % vinst av omsättningen)",
-        "kraverGodkannande": true,
-        "naraGrans": false,
-        "harVinnare": true,
-        "faktor": 1.2,
-        "trappsteg": "×1,5"
+        "kraverGodkannande": false,
+        "naraGrans": false
       }
     },
     {
@@ -252,31 +249,18 @@
   "plan": {
     "sparrad": false,
     "orsak": null,
-    "atgarder": [
+    "atgarder": [],
+    "uppskjutna": [
       {
         "kampanj_id": "120252183673160233",
         "namn": "Stigestøtte 2-pk NO | BE-ROAS 1,63 | 2026-09-11",
         "kod": "SANK",
         "motivering": "-28,9 % vinst av omsättningen (ROAS 1,11 mot break-even 1,63). Men livstids-ROAS 2,31 ligger över break-even 1,63 — kampanjen har tjänat pengar totalt, så en tredagarsdipp stänger den inte i dag. Kapa från 3 600 kr till 500 kr per dag — hela vägen ner, inte 20 %. 2 back-dygn i rad; efter 5 stängs den av ändå, och faller livstids-ROAS under break-even stängs den av direkt.",
-        "typ": "budget",
-        "fran_sek": 3600,
-        "till_sek": 500,
-        "till_ore": 50000
-      },
-      {
-        "kampanj_id": "120252183519570233",
-        "namn": "Takovertrekk Campingvogn NO | BE-ROAS 1,62 | 2026-09-11",
-        "kod": "SKALA",
-        "motivering": "39,3 % vinst av omsättningen (ROAS 4,46 mot break-even 1,62). Target 2,72 (härledd (25 % vinst av omsättningen)), ROAS 4,46 = 164 % av target. Trappsteg ×1,5, 4 dygn i rad över target, CPA 2 stigande dygn. Ändra från 4 800 kr till 5 750 kr per dag. Snabbspår: ROAS över 3 — kan höjas igen om 1 dagar. Trappan hade gett ×1,5, men över 4 000 kr är steget alltid 20 % (högzonen).",
-        "typ": "budget",
-        "fran_sek": 4800,
-        "till_sek": 5750,
-        "till_ore": 575000
+        "orsak": "redan ändrad idag — en ändring per dygn"
       }
     ],
-    "uppskjutna": [],
     "gammalTotal": 12750,
-    "nyTotal": 10600
+    "nyTotal": 12750
   },
   "annonsbehov": [],
   "veckokvot": [

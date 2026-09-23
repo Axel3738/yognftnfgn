@@ -1,6 +1,6 @@
 # Batch-log — Taköverdraget för Husvagn
 
-Breakthrough-frekvens: 0/27 (0 %)
+Breakthrough-frekvens: 1/31 (3 %)
 
 ## Batch #1 — 2026-09-14 (`/forsta-batch`, på Axels begäran)
 
@@ -339,3 +339,9 @@ GT_11_H1 speglas INTE till CaraShell (takskyddets dna mönster 12: inga GT-brief
 **Domen fälls när alla fem har sina dag-7-etiketter:** minst en färsk annons med CPA under 466 kr ⇒ **fatigue** — brieffa vidare mot lärdomen. Alla fem över 466 kr, trots att briefarna klarade spärren ⇒ **mättnad** — inga fler annonser på produkten; nästa steg är ny produkt eller nytt land, och det lyfts till Axel. Svaret skrivs här, i dna.md och som `FATIGUE_TEST_SVAR`.
 
 ⚠️ Etikettläget 2026-09-22: 30 etiketterade annonser — 12 KPI_WINNER, 17 LOSER, 1 INGEN_LEVERANS, **ingen BREAKTHROUGH eller SPEND_WINNER**. `CS_2_1` (ROAS 7,65, 20 köp) och `CS_2_H1` (ROAS 7,06) bär 10–12 % av kampanjens spend var, och etiketten kräver ≥ 30 % — i en CBO med 30 annonser når ingen dit. Med nya motorn (vinnarspärren utan tak) håller det kampanjen still åt båda håll; frågan om spärren ska läsa kampanjnivån ligger hos Axel.
+
+## Etiketter dag 7 (2026-09-23)
+
+Fönster 2026-09-16..22 (annonsernas egen första vecka). Hook rate okänd — Ads-MCP:n ger inte video_view (3 s).
+
+

@@ -432,3 +432,9 @@ Lärdom `L-120250148322650291`: PD_19_1 vinner på en kostnadsjämförelse läsa
 | Beltgrinder_CS_6_1 | bild | I | PD_19_1 | underraden: mekanism (7 hastigheter, 15°) i stället för ägande | en reason-to-believe adderar köp | CPA < 361 ⇒ varje kostnadsannons får en mekanismrad | okänd | — |
 
 Efter dessa är PD_19_1:s tre iterationer förbrukade (deadline 2026-10-05). Inget kronbelopp för en sliptjänst finns i repot — därför skrivs inget.
+
+## Etiketter dag 7 (2026-09-23)
+
+Fönster 2026-09-16..22 (annonsernas egen första vecka). Hook rate okänd — Ads-MCP:n ger inte video_view (3 s).
+
+
