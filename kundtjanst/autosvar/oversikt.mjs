@@ -12,11 +12,23 @@
 // den senaste raden per Message-ID, precis som i logg-maskera.mjs.
 
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { lasLogg, LOGGMAPP } from './logg.mjs';
 import { orsakEn } from './rapport.mjs';
 
 const DAG = 86_400_000;
 export const HINKAR = ['ENKEL', 'ARG', 'SVÅR', 'SKIP'];
+
+/**
+ * Ärendets nyckel för en dashboard som ska kunna bocka av ett botsvar
+ * (stonebite/uppfoljning.mjs): sha256 av Message-ID, 16 hex — stabil när
+ * mejlet flyttas (uid:t byts då), och bär varken adressen eller domänen.
+ * Utan Message-ID samma reserv som senastePerMejl: uid|tid. Ren.
+ */
+export function fallNyckel(r = {}) {
+  if (r.messageId) return createHash('sha256').update(String(r.messageId)).digest('hex').slice(0, 16);
+  return `${r.uid ?? '?'}|${r.tid ?? ''}`;
+}
 
 /** Senaste raden per Message-ID (eller uid|tid utan id), sorterade på tid. Ren. */
 export function senastePerMejl(rader = []) {
@@ -71,14 +83,19 @@ export function oversikt(rader = [], { nu = new Date(), dagar = 30 } = {}) {
   }
 
   const kompakt = (r) => ({
+    nyckel: fallNyckel(r),
     tid: r.tid, uid: r.uid ?? null, hink: r.hink, typ: r.typ ?? null, kategori: r.kategori ?? null,
     ordernummer: Array.isArray(r.ordernummer) ? r.ordernummer : [], kund: r.kund ?? '', sprak: r.sprak ?? null,
     amne: String(r.amne ?? '').slice(0, 80), kontaktformular: Boolean(r.kontaktformular),
     atgard: r.atgard ?? null, torr: Boolean(r.torr), flaggad: Boolean(r.flaggad), flyttad: r.flyttad ?? null,
+    fotonTyp: r.fotonTyp ?? null,
     orsak: r.orsak ?? '', orsakEn: orsakEn(r),
   });
 
-  const arga = alla.filter((r) => r.hink === 'ARG').map((r) => ({ ...kompakt(r), x: r.x ?? null, lage: Boolean(r.lage), retur: Boolean(r.retur), opostadDagar: r.opostadDagar ?? null })).reverse();
+  // ARG-raden bär också vad det arga svaret innehöll: X, spårningsläget, returblocket,
+  // "opostad i N dagar", bildförfrågan (fotonTyp sätts bara när svaret bad om bilder) och
+  // frågan efter ordernumret — så en dashboard kan säga VA:n exakt vad kunden redan fått.
+  const arga = alla.filter((r) => r.hink === 'ARG').map((r) => ({ ...kompakt(r), x: r.x ?? null, lage: Boolean(r.lage), retur: Boolean(r.retur), opostadDagar: r.opostadDagar ?? null, foton: Boolean(r.fotonTyp), behoverOrdernummer: Boolean(r.behoverOrdernummer) })).reverse();
   const svarade = alla.filter(svarad).map(kompakt).reverse();
   const tillVa = alla.filter((r) => r.flaggad && !svarad(r)).map(kompakt).reverse();
   const fel = alla.filter((r) => r.atgard === 'fel').map((r) => ({ ...kompakt(r), fel: r.fel ?? '' })).reverse();

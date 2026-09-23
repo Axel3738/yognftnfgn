@@ -30,6 +30,19 @@ Publiceringen görs av måndagsrutinen `/kundtjanst` mot samma länk (steg 4 i
 kommandot) — artefakten ägs av det kontot, inte av den session som byggde
 sektionen.
 
+## ✅ 2026-09-23 — korten på stonebite.org, med bock
+
+Sajtens Kundtjänst-sida (`stonebite/vy/drift.mjs` → `autosvarBlock`) visar
+sedan 2026-09-23 **ett kort per mejl boten svarat på** (ENKEL och ARG), med
+badge, "vad boten skrev", "nästa steg" och 48 h-klockan på arga kunder, och
+knappen "Markera som uppföljd". Bocken lagras i `stonebite/data/
+autosvar-uppfoljning.jsonl` på volymen (`stonebite/uppfoljning.mjs`) — aldrig i
+loggen. Nyckeln som binder bocken till mejlet är `nyckel` i `oversikt()`:s rader:
+`fallNyckel(r)` = sha256 av `messageId`, 16 hex (reserv `uid|tid`). Den bär
+varken adressen eller domänen och överlever att mejlet flyttas (uid:t byts då).
+ARG-raderna bär också `foton` (svaret bad om bilder), `fotonTyp` och
+`behoverOrdernummer`, så kortet kan säga exakt vad kunden redan fått.
+
 ## Vad systemet gör (en mening)
 
 `kundtjanst/autosvar.mjs` läser butikens supportbrevlåda (Loopias webbmejl),

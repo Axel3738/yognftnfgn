@@ -47,6 +47,7 @@ import { sprakFor, SPRAKEN } from './sprak.mjs';
 import { lasProfil } from './kallor/repo.mjs';
 import { startaVakt, loggmappFor, harLogg } from './autosvar-vakt.mjs';
 import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
+import { lasUppfoljning, skrivUppfoljning } from './uppfoljning.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = dirname(HAR);
@@ -58,9 +59,12 @@ const PERSONFIL = join(datamapp(process.env, ROT), 'personer-extra.json');
 // Kalendern och kontakterna: föränderliga, ligger på volymen — aldrig i git.
 const KALENDERFIL = join(datamapp(process.env, ROT), 'kalender.jsonl');
 const KONTAKTFIL = join(datamapp(process.env, ROT), 'kontakter.jsonl');
+// VA:ns bock "uppföljd" på AI-botens svar (stonebite/uppfoljning.mjs) — på volymen, aldrig i botens logg.
+const UPPFOLJNINGSFIL = join(datamapp(process.env, ROT), 'autosvar-uppfoljning.jsonl');
 
 const lasKal = () => { try { return lasHandelser(KALENDERFIL); } catch { return []; } };
 const lasKont = () => { try { return lasKontakter(KONTAKTFIL); } catch { return []; } };
+const lasUpp = () => { try { return Object.fromEntries(lasUppfoljning(UPPFOLJNINGSFIL)); } catch { return {}; } };
 /** Varumärkena ur snapshoten, annars direkt ur filen. */
 const varumarkenFor = (snap) => (snap?.varumarken?.length ? snap.varumarken : lasVarumarken(ROT));
 /** Bara adresser inne i appen får vara "tillbaka"-mål. */
@@ -253,7 +257,9 @@ function medFarskaInsatser(snap) {
   let personer = bas.personer ?? [];
   try { personer = lasPersoner(undefined, PERSONFIL); } catch { /* basregistret räcker */ }
   if (!snap && !bonusProgram) return snap;
-  return { ...bas, insatser, bonusProgram, personer };
+  // Bockarna på AI-botens svar läses också vid varje visning: VA:n som just
+  // tryckt "Markera som uppföljd" ska se kortet i arkivet direkt.
+  return { ...bas, insatser, bonusProgram, personer, uppfoljning: lasUpp() };
 }
 
 function renderaApp({ nyckel, anvandare, extra = {} }) {
@@ -280,7 +286,7 @@ function renderaApp({ nyckel, anvandare, extra = {} }) {
     case 'butiker': return butikerSida({ snapshot: snap });
     case 'annonser': return annonserSida({ snapshot: snap });
     case 'redigerare': return redigerareSida({ snapshot: snap, anvandare });
-    case 'kundtjanst': return kundtjanstSida({ snapshot: snap });
+    case 'kundtjanst': return kundtjanstSida({ snapshot: snap, csrf: extra.csrf ?? '' });
     case 'leverans': return leveransSida({ snapshot: snap });
     case 'produkttest': return produkttestSida({ snapshot: snap, anvandare });
     case 'recensioner': return recensionerSida({ snapshot: snap, anvandare });
@@ -461,6 +467,23 @@ export async function hantera(req, res) {
       const f = tolkaFormular(await lasKropp(req));
       if (!kollaCsrf(f.csrf, kakvarde, HEMLIGHET)) {
         return felsida(res, { kod: 400, rubrik: 'Försök igen', text: 'Formuläret var för gammalt. Gå tillbaka och försök igen.', nonce, https });
+      }
+
+      // ------------------------------------------------------ AI-botens svar
+      // "Markera som uppföljd" / "Ångra" på ett kort i blocket AI-boten har
+      // svarat. Alla som ser Kundtjänst får bocka (VA, Head of support, chef,
+      // ägare). Bocken är en egen fil på volymen; botens logg rörs aldrig.
+      if (stig.startsWith('/app/autosvar/')) {
+        if (!farSe(anvandare, 'kundtjanst')) return felsida(res, { kod: 403, rubrik: 'Inte din sida', text: 'Ditt konto når inte kundtjänsten.', nonce, https });
+        const nasta = sakerNasta(f.nasta, '/app/kundtjanst#ai-boten');
+        const uppfoljd = stig === '/app/autosvar/uppfoljd' ? true : stig === '/app/autosvar/oppna' ? false : null;
+        if (uppfoljd === null) return felsida(res, { kod: 404, rubrik: 'Finns inte', text: 'Okänd åtgärd.', nonce, https });
+        try {
+          skrivUppfoljning({ nyckel: f.nyckel, brand: f.brand, order: f.order, uppfoljd, av: anvandare.namn }, UPPFOLJNINGSFIL);
+        } catch (e) {
+          return felsida(res, { kod: 400, rubrik: 'Kunde inte spara', text: e.message, nonce, https });
+        }
+        return omdirigera(res, nasta);
       }
 
       // ---------------------------------------------------------- kalendern

@@ -570,6 +570,47 @@ Bäverbutiken först, sedan samma sak överallt).
   svarade 07:59 ("läckan verkar komma från batteri/motordelen … hur går vi
   vidare?") — läs Sent innan du dömer ett utkast som "kvar".
 
+### Den andra repliken: korten på sajten + SOP:n "Following up the auto-reply" (2026-09-23 eftermiddag)
+
+Bottens första skarpa arga svar gick till Micke Stigberg 13:42 CEST (motortäckningen
+passade inte hans Mercury 150: "jag förstår helt din frustration … eskalerat …
+svar inom 48 timmar … en bild på varan, en på förpackningen och en på
+fraktetiketten"). **Mechile svarade honom 15:28 med ett eget, fristående mejl**
+("Vi beklagar att skyddet inte passar … skicka oss några bilder eller en kort
+video") — utan att veta att boten redan svarat. Axels dom på sajtens
+kundtjänstflik: "till och med jag har fan svårt att se … väldigt otydligt,
+väldigt blek text, små grejer, inget att interagera med eller markera som
+hanterade eller svarade på eller uppföljda."
+
+Två saker byggdes samma eftermiddag:
+
+1. **Korten på stonebite.org** (`stonebite/vy/drift.mjs` → `autosvarBlock`):
+   ett kort per mejl boten svarat på, ENKEL och ARG, badge med ord, ordernumret
+   stort, "Vad boten skrev" och "Nästa steg för dig" i klartext, 48 h-klockan
+   från botens svarstid på arga kunder, knappen **Markera som uppföljd** (bocken
+   i `stonebite/data/autosvar-uppfoljning.jsonl` på volymen — loggen här rörs
+   aldrig) och arkiv. Nyckeln som binder bocken till mejlet är `nyckel` i
+   `oversikt()`:s rader (`fallNyckel`: sha256 av Message-ID). Beskrivning i
+   `stonebite/README.md` och `autosvar/DASHBOARD.md`.
+2. **SOP:n "Following up the auto-reply — as Head of Customer Support"**
+   (`va-sop/following-up-the-auto-reply.md`, i Notion-basen), skriven ur
+   prompten `va-sop/PROMPT-following-up-the-auto-reply.md` — Axels beställning:
+   "hon ska behandla ett AI-bots-case som nån skänk från ovan: 'oj, jag fick
+   precis det här till mig vidarebefordrat', som Head of Customer Support, fast
+   på svenska, och sen hantera caset utifrån våra andra SOP:er." Öppningen på
+   varje uppföljning: *"Det här ärendet skickades precis vidare till mig
+   personligen. Jag är kundtjänstansvarig här, och jag har läst både ditt mejl
+   och din order."* En mall per botutfall (arg kund med bilder / utan bilder /
+   paket som inte kommit / vill ha pengarna tillbaka; bildförfrågan; retur;
+   levererat men saknas; helt besvarat; boten hade fel), regler (aldrig ordet
+   bot eller AI, aldrig upprepa eller motsäga botens fakta, aldrig be om det
+   kunden redan skickat, 48 h-löftet räknas från botens mejl, ägarens
+   godkännanden orörda, signatur *förnamn + Kundtjänstansvarig, butiken*),
+   dashboardkortet och läsbarhetstestet. `auto-reply-bot.md`, `start-here.md`
+   och Store facts pekar dit. **Kör prompten igen när botens utfall ändras**
+   (`autosvar/svar.mjs`, `autosvar/hinkar.mjs`) — annars beskriver SOP:n svar
+   boten inte längre skickar.
+
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 
 Axels fråga 2026-09-22: en annan session bygger en kundtjänst-dashboard och

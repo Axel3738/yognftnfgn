@@ -110,7 +110,7 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
   const autosvar = snapshot?.autosvar ? { ...snapshot.autosvar, brands: autosvarBrands } : null;
   const butiksnamn = (id) => butiker.find((b) => b.id === id)?.namn ?? (snapshot?.butiker ?? []).find((b) => b.id === id)?.namn ?? kundtjanst.find((b) => b.id === id)?.namn ?? id;
 
-  return { vm, butiker, perValuta, konton, kundtjanst, tvister, tvistlage, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, butiksnamn, lage, lageord };
+  return { vm, butiker, perValuta, konton, kundtjanst, tvister, tvistlage, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, uppfoljning: snapshot?.uppfoljning ?? {}, butiksnamn, lage, lageord };
 }
 
 function tillhor(brandId, kundtjanstBrand) {
@@ -179,7 +179,7 @@ export function varumarkeSida({ snapshot, vm, varumarken = [], flik = 'oversikt'
     oversikt: () => flikOversikt(d, { nu }),
     butiker: () => flikButiker(d, { nu }),
     annonser: () => flikAnnonser(d, { nu }),
-    kundtjanst: () => flikKundtjanst(d, { nu }),
+    kundtjanst: () => flikKundtjanst(d, { nu, csrf }),
     leverans: () => flikLeverans(d),
     rutiner: () => block({ titel: 'Rutinerna', under: 'Senaste spåret på main mot schemat. En rutin som tyst slutat köra syns här som "saknas".', innehall: d.rutiner.length ? rutintabell(d.rutiner, { nu, orsak: snapshot?.rutiner?.orsak ?? null }) : tomt('Inga rutiner registrerade', 'Det här varumärket har inga nattrutiner i stonebite/rutiner.json.') }),
     kontakter: () => flikKontakter(d, { csrf, nu }),
@@ -371,7 +371,7 @@ function flikAnnonser(d) {
   })}`;
 }
 
-function flikKundtjanst(d, { nu }) {
+function flikKundtjanst(d, { nu, csrf = '' }) {
   const tvistrader = d.tvister.slice(0, 15).map((tv) => `<tr>
     <td><span class="namn">${esc(tv.order)}</span><span class="bi">${esc(tv.brand)} · ${esc(tvisttyp(tv.typ, sprak()))}</span></td>
     <td class="tal">${pengar(tv.belopp, tv.valuta)}</td>
@@ -410,7 +410,7 @@ function flikKundtjanst(d, { nu }) {
     under: 'Störst högar först, ur senaste veckorapporten. En hög som växer är något att fixa i butiken.',
     innehall: panel({ innehall: tabell([{ titel: 'Ärende' }, { titel: 'Antal', tal: true }, { titel: 'Obesvarade', tal: true }, { titel: 'Rutin finns' }], kategorier.map((c) => `<tr><td><span class="namn">${esc(c.svenska)}</span></td><td class="tal">${tal(c.antal)}</td><td class="tal">${tal(c.obesvarade)}</td><td>${c.sop === 'covered' ? status('bra', t('ja')) : status('varning', t('saknas'))}</td></tr>`)) }),
   }) : ''}
-  ${autosvarBlock(d.autosvar, { nu, namnFor: d.butiksnamn })}
+  ${autosvarBlock(d.autosvar, { nu, namnFor: d.butiksnamn, uppfoljning: d.uppfoljning, csrf, nasta: `/app/varumarke/${d.vm.id}?flik=kundtjanst#ai-boten` })}
   ${block({
     titel: 'Pingar till VA:n',
     under: 'Det som skickats till VA:n i Discord de senaste 30 dagarna. Ett ärende pingas en gång, aldrig två.',

@@ -57,10 +57,12 @@ carrier-portal procedure applies — look the parcel up on the carrier's site in
 | Can I resell your products? | **Reseller and wholesale inquiries** |
 | I got a strange email from you | **Suspicious or phishing email in our name** |
 | *(not a customer)* A draft in Drafts you did not write, a flagged email, or the folder VA-PRIO | **Auto-reply bot — what it does, and what you do** |
+| *(not a customer)* A card under "The AI bot has replied" on the dashboard, or a thread that already has a reply from "Kundtjänst [store]" nobody on the team wrote | **Following up the auto-reply — as Head of Customer Support** |
 
-Three pages you use every day without a customer asking: **Auto-reply bot — what it does,
-and what you do** (what the bot already answered, and your order of work), **Tracking page —
-how to look up any parcel** and **Store facts**.
+Four pages you use every day without a customer asking: **Auto-reply bot — what it does,
+and what you do** (what the bot already answered, and your order of work), **Following up
+the auto-reply — as Head of Customer Support** (how you write the second reply), **Tracking
+page — how to look up any parcel** and **Store facts**.
 
 ---
 
@@ -97,7 +99,9 @@ still on it.
 1. **Payment disputes first.** They have hard deadlines and losing one is final. The
    daily alarm lists them.
 2. **Then the VA-PRIO folder.** Upset customers the auto-reply bot has already
-   promised an answer within 48 hours (see **Auto-reply bot**).
+   promised an answer within 48 hours. The dashboard card counts down, and you
+   write as the person the case was escalated to (see **Following up the
+   auto-reply — as Head of Customer Support**).
 3. **Then the oldest unanswered email**, not the newest.
 4. **Then the rest.**
 
