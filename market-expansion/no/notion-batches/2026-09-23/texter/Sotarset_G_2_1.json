@@ -1,0 +1,77 @@
+[
+ {
+  "box": [
+   32,
+   48,
+   1047,
+   428
+  ],
+  "rader": 3,
+  "fet": true,
+  "storlek": 66,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Til ham med ovn:\nfeier selv mellom\nbesøkene."
+ },
+ {
+  "box": [
+   32,
+   432,
+   1047,
+   510
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 34,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "9 fleksible stenger. Renser røykrøret mellom feierbesøkene."
+ },
+ {
+  "box": [
+   32,
+   1068,
+   1047,
+   1149
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 38,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "389 kr. Førpris 509 kr."
+ },
+ {
+  "box": [
+   421,
+   1200,
+   658,
+   1308
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 42,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Bestill."
+ }
+]

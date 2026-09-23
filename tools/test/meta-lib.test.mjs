@@ -42,3 +42,31 @@ test('valjAdsetForKoncept: exakt namn, annars kampanjens egen konvention (DRYTRE
   assert.equal(nyttAdsetnamn(heimguard, 'HEIMGUARD_SE_Övervakningskameran - BOF', 'BOF'), 'HEIMGUARD_SE_Övervakningskameran - BOF');
   assert.equal(nyttAdsetnamn([], 'X - FO', 'FO'), 'X - FO');
 });
+
+test('krockandeAdsets: G och GT är samma vinkel under två koder — ett nytt adset skulle dela budgeten', async () => {
+  const { konceptUrAdsetnamn, krockandeAdsets } = await import('../meta-lib.mjs');
+  assert.equal(konceptUrAdsetnamn('CARASHELL_NO_Takovertrekket - GT'), 'GT');
+  assert.equal(konceptUrAdsetnamn('DRYTREK_SE_PD'), 'PD');
+  assert.equal(konceptUrAdsetnamn('CARASHELL_NO_Takovertrekket'), null, 'ingen kod sist → null');
+  const no = [
+    { id: '1', name: 'CARASHELL_NO_Takovertrekket - G', status: 'ACTIVE' },
+    { id: '2', name: 'CARASHELL_NO_Takovertrekket - PD', status: 'ACTIVE' },
+    { id: '3', name: 'CARASHELL_NO_Takovertrekket - SP', status: 'ACTIVE' },
+  ];
+  assert.deepEqual(krockandeAdsets(no, 'GT').map((a) => a.id), ['1'], 'GT krockar med G');
+  assert.deepEqual(krockandeAdsets(no, 'G').map((a) => a.id), [], 'samma kod är en träff, inte en krock');
+  assert.deepEqual(krockandeAdsets(no, 'CS').map((a) => a.id), [], 'CS krockar inte med något');
+  assert.deepEqual(krockandeAdsets(no, 'P').map((a) => a.id), ['2'], 'P är början på PD');
+  assert.deepEqual(krockandeAdsets(no, ''), [], 'utan koncept: ingen krock');
+});
+
+test('hittaEllerSkapaAdset: vägrar föda ett andra adset för samma vinkel (G ↔ GT)', async () => {
+  const kod = readFileSync(new URL('../meta-lib.mjs', import.meta.url), 'utf8');
+  const start = kod.indexOf('export async function hittaEllerSkapaAdset');
+  const slut = kod.indexOf('\n}', kod.indexOf('act_${act}/adsets', start));
+  const kropp = kod.slice(start, slut);
+  assert.ok(kropp.includes('krockandeAdsets(adsets, koncept)'), 'krockkollen ska köras före skapandet');
+  assert.ok(kropp.indexOf('krockandeAdsets(adsets, koncept)') < kropp.indexOf('nyttAdsetnamn('),
+    'krockkollen måste ligga FÖRE namnbygget — annars är adsetet redan på väg upp');
+  assert.ok(kropp.includes('Inget adset skapat.'), 'felet ska säga att ingenting skapades');
+});

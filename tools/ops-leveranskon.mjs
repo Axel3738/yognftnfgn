@@ -46,7 +46,7 @@ import { mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { valjAdsetForKoncept } from './meta-lib.mjs';
+import { valjAdsetForKoncept, konceptUrAdsetnamn, krockandeAdsets } from './meta-lib.mjs';
 import { utanSidospar } from './lib/sidokampanjer.mjs';
 import { OPS_MARKNADER, OPS_MARKNADSKODER, marknadFor, marknadsNamn, marknadslank, skaFlyttasTillApproved } from '../factory/opsmarknader.mjs';
 import { granskaOmVideo, butiksordUr, blockerar as slutkortBlockerar, DOMAR as SLUTKORTSDOMAR, IKON as SLUTKORTSIKON } from '../factory/bildbrand.mjs';
@@ -239,6 +239,23 @@ export function dubblett(namn, karta) {
   const id = namn ? karta.get(String(namn).trim().toLowerCase()) : undefined;
   return { finns_i_meta: id !== undefined, ad_id: id ?? null };
 }
+
+/** Ren: samma annonsnamn med en annan konceptkod.
+ *  tolkaNamn('CaraShellRoof_GT_4_1') + 'G' → 'CaraShellRoof_G_4_1'. */
+export function namnMedKoncept(t, kod) {
+  const k = String(kod ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+  if (!t?.prefix || !k || t.nummer == null) return null;
+  return `${t.prefix}_${k}_${t.nummer}${t.variant ? `_${t.variant}` : ''}`;
+}
+
+/** Konceptkoder i kampanjen som krockar med radens — den ena kodens början är
+ *  den andra (G ↔ GT). Marknaden kan döpa samma vinkel annorlunda än Sverige;
+ *  då heter annonsen som redan ligger uppe något annat än den mekaniska
+ *  namnöversättningen, och utan det här ser kön den aldrig. (CaraShell NO:
+ *  `CaraShellRoof_NO_G_4_1` har legat live sedan 2026-09-14 medan kön sa att
+ *  `GT_4_1` saknade norsk annons — mätt och rättat 2026-09-23.) */
+export const krockandeKoder = (adsets, koncept) =>
+  krockandeAdsets(adsets, koncept).map((a) => konceptUrAdsetnamn(a.name)).filter(Boolean);
 
 /** Landningslänken ur en object_story_spec: link_data.link, annars video_data:s CTA-länk. */
 export function lankUr(spec) {
@@ -526,6 +543,16 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     if (arv) { lank_arvd = arv.lank; logg(`Ärvd länk: ${arv.lank} (ur ${arv.fran}, ${arv.status})`); }
     else if (lank_standard) logg(`Ingen länk att ärva (kampanjen har inga annonser än) — standardlänken för ${m} gäller: ${lank_standard}`);
     else varningar.push('ingen landningslänk gick att ärva ur kampanjens annonser');
+    // Två adsets vars konceptkoder skiljer en bokstav är samma vinkel under
+    // två namn, och delar dess budget i CBO:n. Kön rör inget — den säger det.
+    const sedda = new Set();
+    for (const a of adsets) {
+      const kod = konceptUrAdsetnamn(a.name);
+      if (!kod || sedda.has(kod)) continue;
+      sedda.add(kod);
+      const krock = krockandeAdsets(adsets, kod).filter((x) => !sedda.has(konceptUrAdsetnamn(x.name)));
+      if (krock.length) varningar.push(`kampanjen har två adsets för samma vinkel: "${a.name}" och ${krock.map((x) => `"${x.name}"`).join(', ')} — konceptkoderna skiljer en bokstav, och i en CBO delar de vinkelns budget. Inget rört; ägaren avgör vilket som gäller.`);
+    }
   }
 
   // 4b. Övriga översättningsmarknaders konton: bär de redan annonsen? Avgör
@@ -584,7 +611,19 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
     const basnamn = avviker && butik.post.annonsprefix ? ommarkt(namn, butik.post.annonsprefix) : namn;
     const mal_namn = malNamn(basnamn, m);
     const adsetnamn = kampanj ? adsetNamn(kampanj.bas, t.koncept) : null;
-    const d = dubblett(mal_namn, karta);
+    let d = dubblett(mal_namn, karta);
+    // Heter vinkeln något annat på marknaden ligger annonsen uppe under ett
+    // annat namn än den mekaniska översättningen. Leta då efter den under
+    // kampanjens krockande konceptkod innan raden döms som "saknas i Meta" —
+    // annars laddas samma creative upp en gång till, under två namn.
+    let mal_namn_alias = null;
+    if (!d.finns_i_meta && t.koncept) {
+      for (const kod of krockandeKoder(adsets, t.koncept)) {
+        const alias = marknadsNamn(namnMedKoncept(t, kod), m);
+        const da = alias ? dubblett(alias, karta) : { finns_i_meta: false };
+        if (da.finns_i_meta) { d = da; mal_namn_alias = alias; break; }
+      }
+    }
     const lank = lank_arvd ?? lank_standard ?? r.landning ?? null;
     // Bär de andra översättningsmarknadernas konton redan annonsen?
     const klar_i = {};
@@ -604,7 +643,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       landning: r.landning ?? null, lank,
       prefix: t.prefix, koncept: t.koncept, nummer: t.nummer, variant: t.variant,
       adset_namn: adsetnamn, adset: hittaAdset(adsets, adsetnamn, t.koncept),
-      finns_i_meta: d.finns_i_meta, ad_id: d.ad_id,
+      finns_i_meta: d.finns_i_meta, ad_id: d.ad_id, mal_namn_alias,
       prefix_avviker: avviker,
       namn_ommarkt: basnamn !== namn,
       // SE-annonsen ligger alltid i OPS-kontot — även när målmarknaden bor i ett annat.
@@ -615,6 +654,7 @@ export async function byggKo({ nyckel, marknad = 'SE', status = null, ut = null,
       // null betyder "inte granskad", aldrig "ren".
       slutkort: null,
     };
+    if (mal_namn_alias) varningar.push(`${namn}: ligger redan uppe som "${mal_namn_alias}" (${d.ad_id}) — samma vinkel, annan konceptkod på marknaden än i Sverige ("${t.koncept}"); laddas INTE upp igen`);
     if (rad.prefix_avviker) varningar.push(`${namn}: prefixet "${t.prefix}" är inte butikens (${butik.prefix.join(' / ')}) — målnamnet är ommärkt till "${mal_namn}"; kontrollera att creativen inte bär Bäverbutikens brand eller pris`);
     if (!t.koncept) varningar.push(`${namn}: inget koncept i namnet — adsetnamn kan inte bildas`);
     if (!mal_namn) varningar.push(`${namn}: inget "_" i namnet — målnamn kan inte bildas`);

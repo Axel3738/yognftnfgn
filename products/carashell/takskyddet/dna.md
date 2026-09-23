@@ -239,6 +239,20 @@ en CBO.
 aldrig `NO_GT`. Läs alltid NO-kampanjens egna adsetnamn innan du litar på den
 mekaniska namnöversättningen. PD, SP och CS heter lika på båda marknaderna.
 
+⛔ **Instruktionen höll inte — den stod bara här** (mätt 2026-09-23).
+Speglingen 2026-09-18 döpte sina presentannonser `NO_GT` och Meta skapade
+adsetet `CARASHELL_NO_Takovertrekket - GT` bredvid `- G`. Vinkeln kör sedan
+dess i två adsets i samma CBO: `- G` 4 annonser / 2 246,04 kr / 5 köp,
+`- GT` 7 annonser / 2 470,82 kr / 4 köp. Inget rört (live annonser stängs
+aldrig av i efterhand, och Meta kan inte flytta en annons mellan adsets) —
+ägarens beslut. Regeln sitter numera i koden: `krockandeAdsets` stoppar
+`hittaEllerSkapaAdset` från att föda ett andra adset för samma vinkel, och
+`krockandeKoder` i kön letar under marknadens egen kod innan en rad döms som
+saknad i Meta. Samma bugg gjorde att kön i fem dygn rapporterade `GT_4_1` som
+utan norsk annons fast `CaraShellRoof_NO_G_4_1` legat live sedan 2026-09-14.
+**Lärdom, andra gången på tre dagar: en regel i en minnesfil är ingen spärr.
+Skriv den där arbetet sker, med ett test som bevisar den.**
+
 **2. De norska annonserna landar på en sida som visar SEK.** Mätt 2026-09-14:
 `https://carashell.se/nb/products/takskyddet` svarar `"currencyCode":"SEK"` och
 1 129,00 kr, medan samma URL med `?country=NO` svarar `"currencyCode":"NOK"` och

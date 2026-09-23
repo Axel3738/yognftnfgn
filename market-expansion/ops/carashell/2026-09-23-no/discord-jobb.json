@@ -1,0 +1,25 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-23",
+  "lage": "oversatt",
+  "marknad": "NO",
+  "server": "CaraShell",
+  "gjort": [
+    "Nothing to translate or upload today. All 13 rows in SE-ACTIVE to be translated already carry their Norwegian ad - the mirroring round put them live - and each one was read back from Meta as ACTIVE in an ACTIVE ad set.",
+    "CS_107_H1, CS_108_H1, GT_107_H1, GT_108_H1, GT_110_H1, RI_102_H1, RI_103_H1, CO_103_H1, TR_103_H1, OB_101_H1, OB_102_H1, PD_106_H1, PD_107_H1 -> CaraShellRoof_NO_<name> in CARASHELL_NO_Takovertrekket.",
+    "All 13 stay in SE-ACTIVE to be translated on purpose: they move to Approved once the US round carries them too. No Notion status was touched.",
+    "The campaign is ACTIVE with 12 ad sets, the inherited link is carashell.se/nb/products/takskyddet?country=NO, and the store price reads 1 106 NOK.",
+    "HeyGen credits used: 0 before -> 0 after.",
+    "Fixed a false negative in the queue: GT_4_1 has been reported as missing its Norwegian ad since 2026-09-17, and it is not missing. It has been live as CaraShellRoof_NO_G_4_1 since 2026-09-14, because the gift angle is coded GT in Sweden and G in Norway. The queue now looks for the market's own concept code before calling a row missing, so the same creative cannot be uploaded twice under two names. Approved rows missing a Norwegian ad: 1 before the fix, 0 after."
+  ],
+  "varningar": [
+    "The uploader can no longer create a second ad set for an angle that already exists under a concept code differing by one letter (G vs GT). It stops and says so instead. That rule was written in the product memory on 2026-09-14 and was repeated anyway on 2026-09-18 - a rule in a file is not a rule in the code.",
+    "Both gift ad sets are now live in the same CBO and were measured today: CARASHELL_NO_Takovertrekket - G holds 4 ads, 2 246,04 kr, 5 purchases; - GT holds 7 ads, 2 470,82 kr, 4 purchases. Nothing was paused, moved or renamed - ads that are already live are never switched off after the fact.",
+    "Meta cannot move an ad between ad sets, so this cannot be merged without rebuilding ads. The queue now reports the split on every run until the owner decides."
+  ],
+  "action_axel": [
+    "Decision needed on the gift angle in Norway: it runs in two ad sets in the same CBO. Option A: leave both running and read G + GT together in analysis (nothing is lost, the CBO still optimises across them). Option B: pause one - the owner's call, since both carry spend and purchases. Recommendation: A. New gift ads keep going into - GT, where the seven newest ones already are."
+  ],
+  "nasta_korning": "2026-09-24"
+}

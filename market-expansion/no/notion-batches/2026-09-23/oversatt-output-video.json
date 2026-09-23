@@ -1,0 +1,99 @@
+{
+ "OB_4_H1": {
+  "malnamn": "Takovertrekk_NO_OB_4_H1",
+  "srt_no": "1\n00:00:01,600 --> 00:00:03,080\nNå blir det vel tett, tenker du.\n\n2\n00:00:03,620 --> 00:00:06,040\nRett tenkt, hvis det var et heldekkende trekk.\n\n3\n00:00:06,320 --> 00:00:07,820\nDette dekker bare taket.\n\n4\n00:00:08,360 --> 00:00:09,600\nSidene er åpne.\n\n5\n00:00:10,000 --> 00:00:14,980\nReimene sitter på alle fire sider og hektes fast i en krok i nederkant.\n\n6\n00:00:15,200 --> 00:00:17,580\nEllevehundre og åttini kroner.\n\n7\n00:00:17,740 --> 00:00:19,460\nBestill ditt takovertrekk.\n",
+  "copy": {
+   "message": "Du har rett – et heldekkende trekk blir tett rundt hele vogna.\nDette dekker bare taket, 6,5 × 3 m. Sidene er åpne, akkurat som før.\nSol og regn møter den sølvbelagte 210D-veven i stedet for taket.\n1 189 kr (førpris 1 549 kr, spar 360 kr / 23 %).",
+   "headline": "Ja, det blir tett. Men bare taket.",
+   "description": ""
+  },
+  "andringar": [
+   "1 129 kr → 1 189 kr (norsk pris)",
+   "1 469 kr → 1 549 kr (førpris)",
+   "340 kr → 360 kr (spar-beløp, 23 % oförändrad – samma kvot som källan)",
+   "helöverdrag → heldekkende trekk, taköverdrag → takovertrekk",
+   "väv → vev, silverbelagd → sølvbelagt",
+   "remmar → reimer, hakas fast i krok → hektes fast i krok",
+   "husvagn/vagn → campingvogn(a)",
+   "voiceover-priset skrivet med bokstäver: 'ellevehundre og åttini kroner' (talsyntesen läser siffror fel)",
+   "butiksnamn/domän borttaget ur leveransen (inget 'link'-fält i formatet)"
+  ]
+ },
+ "GT_11_H1": {
+  "malnamn": "Takovertrekk_NO_GT_11_H1",
+  "srt_no": "1\n00:00:00,100 --> 00:00:03,000\nHan snakker om campingvogna som om den var et kjæledyr.\n\n2\n00:00:03,260 --> 00:00:06,480\nSokker og en ny grillspade havner i esken på en uke.\n\n3\n00:00:06,720 --> 00:00:10,520\nTaket er flaten han aldri ser og den som koster mest å reparere.\n\n4\n00:00:10,780 --> 00:00:11,960\nHan setter det på selv.\n\n5\n00:00:12,280 --> 00:00:13,980\nIngen hjelp, ingen verktøy.\n\n6\n00:00:14,160 --> 00:00:23,240\nNi størrelser fra fem komma fem til tretten komma fem meter. Ellevehundre og åttini kroner. Bestill i tide til farsdag, åttende november.\n",
+  "copy": {
+   "message": "Han snakker om campingvogna som om den var et kjæledyr.\nSokker og en ny grillspade er glemt i esken på en uke.\nTaket ser han aldri – likevel er det flaten som koster mest når noe går galt.\nNi størrelser, fra 1 189 kr. Klar til farsdag, 8. november.",
+   "headline": "Han glemmer sokker. Ikke dette.",
+   "description": ""
+  },
+  "andringar": [
+   "1 129 kr → 1 189 kr",
+   "fars dag → farsdag (ett ord, norsk stavning – kontrollerat: norsk farsdag är andra söndagen i november, 8 nov 2026 stämmer)",
+   "husvagn → campingvogn, husdjur → kjæledyr, låda → eske",
+   "grillspade oförändrat (samma ord på norska)",
+   "storlekar 5,5–13,5 skrivna med bokstäver i voiceover: 'fem komma fem', 'tretten komma fem'",
+   "priset skrivet med bokstäver i voiceover: 'ellevehundre og åttini kroner'"
+  ]
+ },
+ "OB_3_H1": {
+  "malnamn": "Takovertrekk_NO_OB_3_H1",
+  "srt_no": "1\n00:00:01,320 --> 00:00:02,260\nEr det vanntett?\n\n2\n00:00:02,820 --> 00:00:05,980\nIkke vanntett, men vannet renner av.\n\n3\n00:00:06,520 --> 00:00:10,900\nSølvbelegget gjør at regnet renner av veven i stedet for å bli stående.\n\n4\n00:00:11,300 --> 00:00:13,660\nVannet renner av den sølvbelagte veven.\n\n5\n00:00:14,140 --> 00:00:19,600\nIngen pytt igjen. Tetningen rundt taklukene dine slipper å stå i vann hele vinteren.\n\n6\n00:00:19,880 --> 00:00:21,920\nEllevehundre og åttini kroner.\n\n7\n00:00:22,140 --> 00:00:23,900\nBestill ditt takovertrekk.\n",
+  "copy": {
+   "message": "Et spørsmål vi fikk: \"Er det vanntett?\"\nÆrlig svar: nei. Men vannet renner av den sølvbelagte veven i stedet for å samle seg.\nTetningen rundt taklukene dine slipper å stå i vann hele vinteren.\n1 189 kr, førpris 1 549 kr – spar 360 kr (23 %).",
+   "headline": "Vannet renner av taket, ikke blir liggende.",
+   "description": ""
+  },
+  "andringar": [
+   "1 129 kr → 1 189 kr, 1 469 kr → 1 549 kr, 340 kr → 360 kr (23 % oförändrad)",
+   "väv → vev, takluckor → takluker (bestämd form flertal: taklukene)",
+   "pöl → pytt",
+   "silverbelagd → sølvbelagt, silverbeläggning → sølvbelegg",
+   "priset skrivet med bokstäver i voiceover: 'ellevehundre og åttini kroner'"
+  ]
+ },
+ "CO_5_H1": {
+  "malnamn": "Takovertrekk_NO_CO_5_H1",
+  "srt_no": "1\n00:00:00,020 --> 00:00:13,000\nDet har gått bra så langt. Taket er det du aldri ser – før noe er galt. Et trekk for ellevehundre og åttini kroner, eller et ødelagt tak til våren. Ellevehundre og åttini kroner nå – ingenting å gjette på senere.\n",
+  "copy": {
+   "message": "Det har jo gått bra så langt.\nTaket er flaten du aldri ser etter – før noe er galt.\n1 189 kr nå, eller et tak du oppdager er ødelagt til våren.\nFørpris 1 549 kr, spar 360 kr / 23 %.",
+   "headline": "1 189 kr nå. Ingenting å gjette på senere.",
+   "description": ""
+  },
+  "andringar": [
+   "1 129 kr → 1 189 kr, 1 469 kr → 1 549 kr, 340 kr → 360 kr",
+   "hittills → så langt, laga → reparere, trasigt → ødelagt",
+   "voiceover-texten kortad något: priset uttalas två gånger med bokstäver ('ellevehundre og åttini kroner') vilket är längre än den svenska sifferformen 1129 – texten stramades åt runt om för att hålla sig inom blockets 12,98 s utan att flytta timecoden (regel 3). Videons faktiska sluttid är inte känd härifrån – flagga för lyssning vid rostkoll."
+  ]
+ },
+ "PD_10_H1": {
+  "malnamn": "Takovertrekk_NO_PD_10_H1",
+  "srt_no": "1\n00:00:00,020 --> 00:00:07,600\nCampingvogna di er kanskje ikke 6,5 meter. Den finnes i ni størrelser, fra tre ganger fem komma fem til tre ganger tretten komma fem meter.\n\n2\n00:00:08,000 --> 00:00:10,400\nFra ellevehundre og åttini kroner.\n\n3\n00:00:10,620 --> 00:00:14,260\nSitter fast når det blåser, strammes fast med reim og snortrekk i kanten.\n\n4\n00:00:15,480 --> 00:00:19,320\nHåndteres av én person, bare taket, ikke hele vogna å kjempe med alene.\n\n5\n00:00:19,560 --> 00:00:23,340\nSe alle ni størrelser. Fra ellevehundre og åttini kroner.\n",
+  "copy": {
+   "message": "Campingvogna di er kanskje ikke 6,5 meter.\nTakovertrekket finnes i ni størrelser, 3 × 5,5 til 3 × 13,5 meter.\nÉn person får det på plass – bare reimene strammes fast i kanten.\nFra 1 189 kr.",
+   "headline": "Ni størrelser, fra 1 189 kr.",
+   "description": ""
+  },
+  "andringar": [
+   "1 129 kr → 1 189 kr",
+   "husvagn → campingvogn, rem och dragsko → reim og snortrekk, taköverdrag → takovertrekk",
+   "storlekarna 5,5/13,5 skrivna med bokstäver i voiceover ('fem komma fem', 'tretten komma fem'), priset likaså ('ellevehundre og åttini kroner')",
+   "6,5 meter (produktens egen storlek) lämnad som siffra – står inte i den obligatoriska ordlistan för bokstavsskrivning"
+  ]
+ },
+ "CS_9_H1": {
+  "malnamn": "Takovertrekk_NO_CS_9_H1",
+  "srt_no": "1\n00:00:00,220 --> 00:00:06,940\nTre hundre og seksti kroner rabatt. Nitten komma fem kvadratmeter beskyttet. 6,5 meter ganger 3 meter.\n\n2\n00:00:07,060 --> 00:00:08,100\nHele takflaten.\n\n3\n00:00:08,240 --> 00:00:10,800\nÉn person får hele flaten på plass.\n\n4\n00:00:10,980 --> 00:00:13,660\nStrammes fast med reim og snortrekk i kanten.\n\n5\n00:00:13,940 --> 00:00:17,600\nTo hundre og ti D-vev ute en hel vintersesong.\n\n6\n00:00:17,940 --> 00:00:22,720\nEllevehundre og åttini kroner for nitten komma fem kvadratmeter beskyttelse.\n\n7\n00:00:23,020 --> 00:00:25,180\nVurdering 5,0 av 5.\n",
+  "copy": {
+   "message": "360 kr rabatt på 19,5 kvadratmeter beskyttelse – hele takflaten, 6,5 × 3 meter.\nSamme 210D-vev beskytter hele flaten en vintersesong ute.\nÉn person strammer den fast med reim i kanten, og den ligger i ro i vind.\n1 189 kr for 19,5 m² beskyttelse. Vurdering 5,0 av 5 på 10 anmeldelser.",
+   "headline": "19,5 m² beskyttelse for 1 189 kr.",
+   "description": ""
+  },
+  "andringar": [
+   "340 kr → 360 kr, 1 129 kr → 1 189 kr",
+   "väv → vev, betyg → vurdering, recensioner → anmeldelser",
+   "spänner fast → strammer fast, ligger stilla i blåst → ligger i ro i vind",
+   "alla listade nyckeltal skrivna med bokstäver i voiceover: 360, 19,5, 210D, 1129 – block 1 blev märkbart längre än den svenska siffer-versionen (16 ord-enheter mot ~10); flagga för lyssning vid rostkoll att blocket (6,72 s) hinner läsas klart"
+  ]
+ }
+}
