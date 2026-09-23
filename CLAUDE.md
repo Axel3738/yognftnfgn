@@ -618,6 +618,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   (bara flaggade — SVÅR ger aldrig utkast), 8 hoppade, 0 utkast.
   Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
   `#customer-support` (mätt 2026-09-23).
+- **Matstrumpor samma väg 2026-09-23 kväll (Axels order, fem steg, en merge
+  per steg — PR #149–#153).** Registret pekar på `matstrumpor`; brandfilens
+  tvistblock ifyllt (adress + telefon ur Shopify, descriptor **`SP
+  Matstrumpor.se`** avläst av Axel, **returfönster 30 dagar** — Matstrumpors
+  publicerade policy, inte Bäverbutikens 14; kunden betalar returfrakten, Axels
+  beslut, fast policyn lovar en "returfraktsedel"). Veckorapport W39: **10
+  ärenden, 10 obesvarade, risk 25/100, 137 ordrar, 0 tvister — och Skickat har
+  inget nyare än 2026-06-09: ingen svarar från brevlådan.** Två fynd rättade:
+  veckorapporten räknade Shopifys kontaktformulär som systemmejl i ALLA
+  butiker (Matstrumpor 2 ärenden → 10; `run.mjs` tolkar dem nu med autosvarets
+  `kundUrKontaktformular`), och `'kvalitet'` i `fel_vara` gjorde "Vilken
+  kvalitet har sockorna?" till ENKEL `foton` (`arKvalitetsfraga`). Torrkörd
+  för hand: 11 mejl, 1 utkast (retur, Anders), 9 SVÅR, 0 ARG. Railway:
+  `stonebite/cowork/7-autosvar-matstrumpor.txt` (TORRT, Shopify-nycklarna
+  heter på Railway exakt `SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx`, ingen
+  `SHOPIFY_SHOP_` — brandfilen bär domänen). Inte kört än.
 - **AI-botens svar som kort med bock (2026-09-23 eftermiddag).** Mechile
   svarade Micke Stigberg 15:28 utan att se att boten redan svarat honom 13:42,
   och Axels dom på blocket ovan var "väldigt otydligt, väldigt blek text …

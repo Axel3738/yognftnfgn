@@ -1,0 +1,86 @@
+Jag vill lägga till Matstrumpor i kundtjänstboten (autosvaret) på min Railway-
+tjänst. Bäverbutiken kör redan SKARPT och CaraShell TORRT där, och båda ska
+fortsätta exakt som nu. Matstrumpor ska börja TORRT: boten skriver bara UTKAST
+i Matstrumpors brevlåda och skickar ingenting. Gör allt i den här fliken och
+fråga mig om inloggning när du behöver den. Jag klistrar in de hemliga värdena
+själv när du ber om dem — skriv dem aldrig i din rapport.
+
+Tjänsten: Railway → projekt strong-solace → tjänst yognftnfgn (branch main,
+volym på /data). Direktadress: https://yognftnfgn-production-cfb8.up.railway.app
+Rör inget annat projekt.
+
+STEG 0 — kontrollera läget innan du ändrar något. GÖR INGET ANNAT FÖRST.
+Öppna https://yognftnfgn-production-cfb8.up.railway.app/halsa
+Svaret är JSON. Under "autosvar" MÅSTE det stå:
+  "lagen": {"baverbutiken": "skarpt", "carashell": "torr"}
+  - Står det så: gå vidare till steg 1.
+  - Saknas "lagen", eller står carashell på något annat än "torr": STOPPA HÄR.
+    Ändra ingenting och rapportera exakt vad /halsa svarade.
+
+STEG 1 — lägg in FYRA nya variabler FÖRST (Variables på tjänsten).
+Titta först vilka som redan finns. Värdena på de tre nycklarna ger jag dig när
+du frågar. Shopify-nycklarna ska heta EXAKT som i mitt Claude-konto under
+Environments — med små bokstäver och understreck på slutet:
+
+  AUTOSVAR_LAGE_MATSTRUMPOR          torr
+  KUNDTJANST_MAIL_PASS_MATSTRUMPOR   (lösenordet till kundsupport@matstrumpor.se)
+  SHOPIFY_CLIENT_ID_1r46tp_qx        (samma värde som i Claude-kontot)
+  SHOPIFY_CLIENT_SECRET_1r46tp_qx    (samma värde som i Claude-kontot)
+
+Lägg INTE in någon SHOPIFY_SHOP_-variabel för Matstrumpor. Den som finns i
+Claude-kontot (SHOPIFY_SHOP_1r46tp_qx) bär fel domän — boten läser rätt domän
+ur sin egen fil.
+
+STEG 2 — ändra SEDAN, som sista variabel, den som redan finns:
+
+  AUTOSVAR_BRANDS    baverbutiken,carashell,matstrumpor
+                     (var: baverbutiken,carashell)
+
+Utan mellanslag. Ta ALDRIG bort baverbutiken eller carashell.
+
+⚠️ Ordningen är viktig: saknas KUNDTJANST_MAIL_PASS_MATSTRUMPOR när
+AUTOSVAR_BRANDS nämner matstrumpor startar boten INTE ALLS — då stannar
+Bäverbutikens och CaraShells svar också. Railway samlar ändringarna och frågar
+om du vill deploya — deploya EN gång när alla fem ändringarna står där.
+
+Rör INTE AUTOSVAR_LAGE (den ska stå kvar på skarpt — den gäller Bäverbutiken)
+och INTE AUTOSVAR_LAGE_CARASHELL (den ska stå kvar på torr). Rör inte
+AUTOSVAR_LOOP, AUTOSVAR_DISCORD, TRACK17_API_KEY, någon variabel som slutar på
+BAVERBUTIKEN, BAVERBUTIKEN_EMAILSCRAPER eller CARASHELL, STONEBITE_HEMLIGHET,
+STONEBITE_DATA eller STONEBITE_ANVANDARE.
+
+STEG 3 — kontrollera loggen.
+Står deployen i "Waiting for build slot" länge: vänta, starta inte fler
+deployer. När den är Active, öppna Deploy Logs och leta efter raden som börjar
+"autosvar-vakt:". Den ska börja ordagrant:
+
+  autosvar-vakt: minutservern igång — baverbutiken SKARPT, carashell TORR, matstrumpor TORR
+
+  - Står det "matstrumpor SKARPT" eller "carashell SKARPT": ta GENAST bort
+    matstrumpor ur AUTOSVAR_BRANDS (tillbaka till baverbutiken,carashell),
+    deploya, och rapportera.
+  - Står det "startar INTE — mejllösenordet saknas": kolla stavningen på
+    KUNDTJANST_MAIL_PASS_MATSTRUMPOR och deploya om. Då kör inte Bäverbutiken
+    och CaraShell heller — det är bråttom.
+
+STEG 4 — kontrollera /halsa.
+Öppna https://yognftnfgn-production-cfb8.up.railway.app/halsa igen. Under
+"autosvar" ska det stå:
+  "kor": true
+  "lagen": {"baverbutiken": "skarpt", "carashell": "torr", "matstrumpor": "torr"}
+  "saknar": []
+Vänta två minuter och läs Deploy Logs igen: det ska komma rader för
+Bäverbutiken, CaraShell och Matstrumpor ungefär var 60:e sekund.
+
+Logga INTE in på sajten och rör INTE brevlådorna — /halsa och loggarna räcker.
+
+RAPPORTERA TILL SIST:
+  - vad /halsa svarade i steg 0 (bara "lagen")
+  - vilka variabler du lade in eller ändrade (bara namnen, aldrig värdena)
+  - raden "autosvar-vakt: …" ur loggen, ordagrant
+  - svaret från /halsa i steg 4, ordagrant
+  - om något inte gick: exakt vad loggen sa
+
+Viktigt: den här boten svarar riktiga kunder i Bäverbutiken. Ändra inga andra
+variabler, starta inga andra tjänster och kör aldrig boten för hand någon
+annanstans samtidigt — två kopior mot samma brevlåda kan ge en kund två svar.
