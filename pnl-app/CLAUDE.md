@@ -697,8 +697,13 @@ Fyra saker som är medvetna och inte ska "förenklas" bort:
 4. **Attributionen är inte kausal** och det står på kortet: ett klick 19:40
    blir ett köp 20:15, så toppen ligger senare än timmen man ska köpa.
 
-Kortet göms i gruppsumman (`groupSize > 1`): timmar från butiker i olika
-tidszoner adderade till en stapel är ett tal ingen kan fatta beslut på.
+⚠️ **Kortets grind är `group`, inte `groupSize`.** `groupSize` är antalet
+kopplade butiker — 9 hos Axel — inte om gruppsumman visas. Grinden
+`groupSize <= 1` gömde därför kortet för varenda handlare med mer än en
+butik, inklusive Axel själv, och det såg ut som att grafen aldrig
+byggdes. `group` är satt bara när summan faktiskt är på, och då ska
+timmarna bort: timmar från butiker i olika tidszoner adderade till en
+stapel är inget att besluta på.
 Måttväljaren är lokalt `useState` — **aldrig `setParams`**, det kör om
 loadern och sänker sidan till spinnern.
 

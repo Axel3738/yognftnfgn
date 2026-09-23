@@ -1643,10 +1643,15 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
             ) : null}
 
             {/* Timmarna på dygnet. Visas även för ett enda dygn — det är där
-                frågan "när ska jag skala" är som mest levande. Göms i
-                gruppsumman: timmar från butiker i olika tidszoner adderade
-                till en stapel är ett tal ingen kan fatta beslut på. */}
-            {timvis && groupSize <= 1 ? (
+                frågan "när ska jag skala" är som mest levande.
+
+                ⚠ Grinden är `group`, INTE `groupSize`. groupSize är antalet
+                kopplade butiker (9 hos Axel), inte om summan visas — så
+                `groupSize <= 1` gömde kortet för alla som har fler än en
+                butik. `group` är satt bara när gruppsumman faktiskt är på,
+                och då ska timmarna bort: timmar från butiker i olika
+                tidszoner adderade till en stapel är inget att besluta på. */}
+            {timvis && !group ? (
               <Timgraf d={timvis} T={T} money={money} nf={nf} />
             ) : null}
           </BlockStack>
