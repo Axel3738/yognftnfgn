@@ -158,8 +158,9 @@
           ]
         }
       ],
-      "kundtjanst": [],
-      "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ än — brevlådan hello@carashell.com läses inte av veckorapporten.",
+      "kundtjanst": [
+        "carashell"
+      ],
       "leverans": [
         "carashell"
       ],

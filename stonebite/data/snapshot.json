@@ -1,8 +1,8 @@
 {
- "byggd": "2026-09-23T13:15:43.940Z",
+ "byggd": "2026-09-23T13:21:29.774Z",
  "fonster": {
   "dagar": 30,
-  "till": "2026-09-23T13:14:26.578Z"
+  "till": "2026-09-23T13:20:26.479Z"
  },
  "profil": {
   "kommentar": "Företagsfakta och texten på den publika sidan. Ändra här — sidan läser filen vid varje visning, ingen ombyggnad behövs. Tomma fält visas inte alls (hellre tomt än påhittat).",
@@ -788,8 +788,9 @@
      ]
     }
    ],
-   "kundtjanst": [],
-   "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ än — brevlådan hello@carashell.com läses inte av veckorapporten.",
+   "kundtjanst": [
+    "carashell"
+   ],
    "leverans": [
     "carashell"
    ],
@@ -922,7 +923,7 @@
   "status": "ok",
   "orsak": null,
   "historikFran": "2026-09-08T22:04:43+02:00",
-  "matt": "2026-09-23T13:14:26.578Z",
+  "matt": "2026-09-23T13:20:26.479Z",
   "dagar": 14,
   "rutiner": [
    {
@@ -938,7 +939,7 @@
     "vad": "Skanningar in i Shopify + kundens spårningssida",
     "senast": "2026-09-23T12:22:46+00:00",
     "antal": 121,
-    "nasta": "2026-09-23T13:16:00.000Z",
+    "nasta": "2026-09-23T14:16:00.000Z",
     "avstangd": false,
     "status": "ok",
     "ord": "körde för 1 h sedan"
@@ -995,7 +996,7 @@
     "nasta": "2026-09-23T13:48:00.000Z",
     "avstangd": false,
     "status": "ok",
-    "ord": "körde för mindre än en timme sedan"
+    "ord": "körde för 1 h sedan"
    },
    {
     "id": "sparning-carashell",
@@ -1044,12 +1045,12 @@
     },
     "schematext": "varje timme :04",
     "vad": "Shopify + Meta + Discord + rutinvakten + bonus → snapshot.json → main → Railway. Byggd 2026-09-22 på Barkås-kontot (trig_01QwKgfZP3JdhZX6tbGo1LJb)",
-    "senast": "2026-09-23T07:06:08+00:00",
-    "antal": 19,
+    "senast": "2026-09-23T13:16:02+00:00",
+    "antal": 20,
     "nasta": "2026-09-23T14:04:00.000Z",
     "avstangd": false,
-    "status": "saknas",
-    "ord": "saknas — senast för 6 h sedan, väntat var 1 h"
+    "status": "ok",
+    "ord": "körde för mindre än en timme sedan"
    },
    {
     "id": "translate-no",
@@ -1236,7 +1237,7 @@
     "nasta": "2026-09-23T22:41:00.000Z",
     "avstangd": false,
     "status": "sen",
-    "ord": "sen — körde för 38 h sedan, väntat var 24 h"
+    "ord": "sen — körde för 39 h sedan, väntat var 24 h"
    },
    {
     "id": "nattvakt-carashell-termoskyddet",
@@ -1654,14 +1655,21 @@
    }
   ],
   "summering": {
-   "ok": 22,
+   "ok": 23,
    "sen": 3,
-   "saknas": 1,
+   "saknas": 0,
    "avstangd": 11,
    "omatbar": 3,
    "ny": 0
   },
   "handelser": [
+   {
+    "tid": "2026-09-23T13:16:02+00:00",
+    "rutin": "stonebite",
+    "namn": "Stonebite: färsk data till sajten",
+    "brand": "bolaget",
+    "rubrik": "Stonebite: färsk data 2026-09-23"
+   },
    {
     "tid": "2026-09-23T12:57:29+00:00",
     "rutin": "sparning-matstrumpor",
@@ -4454,20 +4462,13 @@
     "namn": "Spårningen Bæverbutiken (DK)",
     "brand": "baverbutiken",
     "rubrik": "sparning baeverbutiken: 2026-09-21 04:48 — 0 event, 0 registrerade, sidan publicerad (1 paket)"
-   },
-   {
-    "tid": "2026-09-21T02:46:59+00:00",
-    "rutin": "translate-no",
-    "namn": "Norsk videobatch",
-    "brand": "baverbutiken",
-    "rubrik": "NO-videobatch 2026-09-21: rendering + captions för Sotarset (delvis)"
    }
   ]
  },
  "eskalering": {
   "status": "ok",
   "orsak": null,
-  "hamtad": "2026-09-23T13:15:20.456Z",
+  "hamtad": "2026-09-23T13:21:06.305Z",
   "kanaler": [
    {
     "brand": "baverbutiken",
@@ -5658,31 +5659,31 @@
    "id": "repo:redigerare",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:14:26.595Z"
+   "tid": "2026-09-23T13:20:26.497Z"
   },
   {
    "id": "repo:kundtjanst",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:14:26.595Z"
+   "tid": "2026-09-23T13:20:26.497Z"
   },
   {
    "id": "repo:leverans",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:14:26.595Z"
+   "tid": "2026-09-23T13:20:26.497Z"
   },
   {
    "id": "repo:nattvakten",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:14:26.595Z"
+   "tid": "2026-09-23T13:20:26.497Z"
   },
   {
    "id": "shopify",
    "status": "ok",
    "orsak": "4 av 12 butiker gick inte att läsa",
-   "tid": "2026-09-23T13:14:57.633Z",
+   "tid": "2026-09-23T13:20:48.921Z",
    "butiker": 12,
    "avstangda": 1
   },
@@ -5690,17 +5691,17 @@
    "id": "meta",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:15:08.324Z",
+   "tid": "2026-09-23T13:20:57.738Z",
    "konton": 5
   },
   {
    "id": "rutiner",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:15:11.500Z",
-   "ok": 22,
+   "tid": "2026-09-23T13:20:58.916Z",
+   "ok": 23,
    "sen": 3,
-   "saknas": 1,
+   "saknas": 0,
    "avstangd": 11,
    "omatbar": 3,
    "ny": 0
@@ -5709,21 +5710,21 @@
    "id": "discord",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:15:20.456Z",
+   "tid": "2026-09-23T13:21:06.305Z",
    "kanaler": 26
   },
   {
    "id": "bonus",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:15:43.934Z",
+   "tid": "2026-09-23T13:21:29.768Z",
    "personer": 7
   },
   {
    "id": "autosvar",
    "status": "ok",
    "orsak": null,
-   "tid": "2026-09-23T13:15:43.940Z",
+   "tid": "2026-09-23T13:21:29.774Z",
    "butiker": 1
   }
  ],
@@ -7286,15 +7287,15 @@
     },
     {
      "datum": "2026-09-22",
-     "spend": 37445.45,
+     "spend": 37445.65,
      "kop": 92,
-     "roas": 2.083386
+     "roas": 2.083375
     }
    ],
    "idag": {
-    "spend": 22601.84,
+    "spend": 22837.84,
     "kop": 51,
-    "roas": 1.776736,
+    "roas": 1.758376,
     "tomt": false
    },
    "kampanjer": [
@@ -7319,20 +7320,20 @@
     {
      "id": "120250175763810291",
      "namn": "Termoskyddet för Husbil 211 × 171 cm | BE ROAS 1.61 | Launch 2026-09-11",
-     "spend": 16175.53,
+     "spend": 16175.56,
      "kop": 62,
-     "roas": 2.398079,
-     "cpa": 260.89564516129036,
-     "intakt": 38790.19880687
+     "roas": 2.398075,
+     "cpa": 260.89612903225805,
+     "intakt": 38790.206047
     },
     {
      "id": "120249902177470291",
      "namn": "Bälteslipmaskinen | BE ROAS 1.73 | Launch 2026-08-21",
-     "spend": 12897.25,
+     "spend": 12897.37,
      "kop": 34,
-     "roas": 2.540789,
-     "cpa": 379.33088235294116,
-     "intakt": 32769.19093025
+     "roas": 2.540765,
+     "cpa": 379.3344117647059,
+     "intakt": 32769.186288050005
     },
     {
      "id": "120249850522830291",
@@ -7481,11 +7482,11 @@
     {
      "id": "120250314107930291",
      "namn": "Katalog",
-     "spend": 1682.15,
+     "spend": 1682.2,
      "kop": 3,
-     "roas": 1.191333,
-     "cpa": 560.7166666666667,
-     "intakt": 2004.00080595
+     "roas": 1.191297,
+     "cpa": 560.7333333333333,
+     "intakt": 2003.9998134000002
     },
     {
      "id": "120250284567670291",
@@ -7642,35 +7643,35 @@
     },
     {
      "datum": "2026-09-22",
-     "spend": 23466.35,
+     "spend": 23466.59,
      "kop": 28,
-     "roas": 1.744954
+     "roas": 1.744936
     }
    ],
    "idag": {
-    "spend": 12286.92,
+    "spend": 12428.7,
     "kop": 28,
-    "roas": 3.078575,
+    "roas": 3.043456,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120249050544990172",
      "namn": "CARASHELL_SE_Taköverdraget | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 33817.67,
+     "spend": 33817.84,
      "kop": 70,
-     "roas": 2.901541,
-     "cpa": 483.1095714285714,
-     "intakt": 98123.35602946999
+     "roas": 2.901526,
+     "cpa": 483.11199999999997,
+     "intakt": 98123.34202383998
     },
     {
      "id": "120249050596730172",
      "namn": "CARASHELL_NO_Takovertrekket | BE-ROAS 1,51 | 2026-09-11",
-     "spend": 15804.23,
+     "spend": 15804.3,
      "kop": 27,
-     "roas": 2.342177,
-     "cpa": 585.3418518518519,
-     "intakt": 37016.30400871
+     "roas": 2.342167,
+     "cpa": 585.3444444444444,
+     "intakt": 37016.3099181
     },
     {
      "id": "120249121867590172",
@@ -7776,26 +7777,26 @@
     },
     {
      "datum": "2026-09-22",
-     "spend": 11956.5,
+     "spend": 11956.56,
      "kop": 13,
-     "roas": 2.420939
+     "roas": 2.420927
     }
    ],
    "idag": {
-    "spend": 6441.62,
+    "spend": 6530.05,
     "kop": 8,
-    "roas": 3.3563,
+    "roas": 3.310849,
     "tomt": false
    },
    "kampanjer": [
     {
      "id": "120251451415500435",
      "namn": "1 CARASHELL_US_Taköverdrag Husvagn & Husbil 6,5 × 3 m | BE-ROAS 1.63 | 2026-09-16 – kopia",
-     "spend": 25445.81,
+     "spend": 25445.87,
      "kop": 22,
-     "roas": 1.962641,
-     "cpa": 1156.6277272727273,
-     "intakt": 49940.989984210006
+     "roas": 1.962637,
+     "cpa": 1156.6304545454545,
+     "intakt": 49941.00595919
     },
     {
      "id": "120251471312320435",
@@ -7982,9 +7983,9 @@
     }
    ],
    "idag": {
-    "spend": 1314.03,
+    "spend": 1326.54,
     "kop": 2,
-    "roas": 2.630008,
+    "roas": 2.605206,
     "tomt": false
    },
    "kampanjer": [
@@ -8200,9 +8201,9 @@
     }
    ],
    "idag": {
-    "spend": 6271.77,
-    "kop": 15,
-    "roas": 1.873154,
+    "spend": 6336.69,
+    "kop": 16,
+    "roas": 2.049281,
     "tomt": false
    },
    "kampanjer": [
@@ -8634,19 +8635,19 @@
     "roll": "support_chef",
     "extraRoller": [],
     "valuta": "USD",
-    "summa": 20,
+    "summa": 10,
     "rader": [
      {
-      "uppdrag": "sop_tackning",
-      "namn": "Rutin för varje topp-ärende",
-      "enhet": "per månad",
+      "uppdrag": "snabb_svarstid",
+      "namn": "Svar inom ett halvt dygn",
+      "enhet": "per vecka",
       "antal": 1,
-      "summa": 20,
+      "summa": 10,
       "bevis": [
        {
-        "vad": "2026-09 · 1 butik",
-        "datum": "2026-09-14",
-        "text": "baverbutiken: alla topp-ärenden har en rutin · baverbutiken: alla topp-ärenden har en rutin",
+        "vad": "2026-W39 · 1 butik",
+        "datum": "2026-09-23",
+        "text": "carashell: median 2.3 h (krav: under 12 h)",
         "lank": ""
        }
       ]
@@ -8830,7 +8831,7 @@
     "programs": []
    }
   ],
-  "summa": 547.23,
+  "summa": 537.23,
   "otilldelat": [
    {
     "uppdrag": "recension_med_namn",
@@ -16669,7 +16670,7 @@
     "program": "va"
    }
   ],
-  "raknat": "2026-09-23T13:15:43.914Z",
+  "raknat": "2026-09-23T13:21:29.736Z",
   "kallor": [
    {
     "id": "kundtjanst",
@@ -16705,7 +16706,7 @@
   "matningar": {
    "recensioner": 1237,
    "tvister": 27,
-   "veckor": 2,
+   "veckor": 3,
    "produkttest": 60
   }
  },
@@ -18793,7 +18794,7 @@
  },
  "autosvar": {
   "dagar": 30,
-  "hamtad": "2026-09-23T13:14:26.578Z",
+  "hamtad": "2026-09-23T13:20:26.479Z",
   "etiketter": {
    "x": {
     "som_pa_bilden": "looks nothing like the picture",
@@ -18821,8 +18822,8 @@
    "baverbutiken": {
     "brand": "baverbutiken",
     "period": {
-     "fran": "2026-08-24T13:14:26.578Z",
-     "till": "2026-09-23T13:14:26.578Z",
+     "fran": "2026-08-24T13:20:26.479Z",
+     "till": "2026-09-23T13:20:26.479Z",
      "dagar": 30
     },
     "senasteKorning": "2026-09-22T21:30:08.320Z",
@@ -21571,6 +21572,197 @@
       "obesvarade": 195,
       "risk": 100,
       "tvister": 2
+     }
+    ]
+   },
+   {
+    "id": "carashell",
+    "namn": "CaraShell",
+    "vecka": "2026-W39",
+    "kord": "2026-09-23T13:19:05.569Z",
+    "period": {
+     "fran": "2026-08-24",
+     "till": "2026-09-23",
+     "dagar": 30
+    },
+    "nyckeltal": {
+     "risk": 37,
+     "riskNiva": "forhojd",
+     "riskNivaEn": "Elevated",
+     "arenden": 28,
+     "obesvarade": 23,
+     "larmObesvarade": 11,
+     "medianSvarstidTimmar": 2.3,
+     "besvaradeMedTid": 5,
+     "ordrar": 290,
+     "chargebacks": 0,
+     "forfragningar": 0,
+     "tvistgrad": 0,
+     "tvistgradAllt": 0,
+     "pengarIRisk": 0,
+     "pengarValuta": "SEK",
+     "oppnaTvister": 0,
+     "forra": null
+    },
+    "kategorier": [
+     {
+      "id": "ovrigt",
+      "en": "Other",
+      "vikt": 0,
+      "antal": 22,
+      "obesvarade": 19,
+      "andel": 79,
+      "forra": null,
+      "sop": "unknown",
+      "sopTitel": null,
+      "aterkommande": null,
+      "mening": null
+     },
+     {
+      "id": "avbestallning",
+      "en": "Cancellation",
+      "vikt": 2,
+      "antal": 2,
+      "obesvarade": 2,
+      "andel": 7,
+      "forra": null,
+      "sop": "unknown",
+      "sopTitel": null,
+      "aterkommande": null,
+      "mening": null
+     },
+     {
+      "id": "produktfraga",
+      "en": "Product question (pre-sale)",
+      "vikt": 0,
+      "antal": 2,
+      "obesvarade": 0,
+      "andel": 7,
+      "forra": null,
+      "sop": "unknown",
+      "sopTitel": null,
+      "aterkommande": null,
+      "mening": null
+     },
+     {
+      "id": "fel_vara",
+      "en": "Wrong item / not as described",
+      "vikt": 3,
+      "antal": 1,
+      "obesvarade": 1,
+      "andel": 4,
+      "forra": null,
+      "sop": "unknown",
+      "sopTitel": null,
+      "aterkommande": null,
+      "mening": null
+     },
+     {
+      "id": "rabatt_kod",
+      "en": "Discount code / offer",
+      "vikt": 0,
+      "antal": 1,
+      "obesvarade": 1,
+      "andel": 4,
+      "forra": null,
+      "sop": "unknown",
+      "sopTitel": null,
+      "aterkommande": null,
+      "mening": null
+     }
+    ],
+    "plan": [
+     {
+      "hink": "veckan",
+      "prio": 1,
+      "id": "backlogg",
+      "titel": "Clear the backlog: 11 tickets have waited more than 48 h",
+      "varfor": "23 of 28 tickets are unanswered, 11 of them past 48 h and the oldest has waited 168 h. 1 of them are in chargeback-prone categories (never delivered, unknown charge, threats). Silence is what turns a support ticket into a dispute.",
+      "steg": [
+       "Work the list on the dashboard top-down — it is already sorted with the dangerous ones first (1 of them).",
+       "Every ticket gets a reply today, even if the answer is \"I am checking this, you will hear from me tomorrow\" — a holding reply stops the clock.",
+       "Anything older than 14 days: refund or reship without asking. The goodwill is worth less than the dispute fee.",
+       "Mark a ticket done only when the customer has been answered, not when you have read it."
+      ],
+      "effekt": "Getting these to zero removes the biggest single driver of the 37/100 risk score.",
+      "matt": {
+       "obesvarade": 23,
+       "larm": 11,
+       "farliga": 1,
+       "aldstTimmar": 168
+      },
+      "agare": "VA"
+     },
+     {
+      "hink": "veckan",
+      "prio": 5,
+      "id": "aterbetalning",
+      "titel": "Confirm 2 pending refund/cancellation requests in writing",
+      "varfor": "2 customers are waiting for a refund or cancellation to be confirmed. Under EU distance-selling rules the money has to be back within 14 days, and an unconfirmed refund is a guaranteed dispute.",
+      "steg": [
+       "Process the refund in Shopify, or if it cannot be refunded yet, reply with the exact date it will be.",
+       "Always send a written confirmation — the customer needs something to point at while they wait for the bank transfer.",
+       "If the order already shipped: send the return address and tell them the refund follows on arrival."
+      ],
+      "effekt": "A written confirmation stops the customer from asking the bank to do it instead.",
+      "matt": {
+       "antal": 2
+      },
+      "agare": "VA"
+     },
+     {
+      "hink": "process",
+      "prio": 1,
+      "id": "topp_avbestallning",
+      "titel": "Cancellation is 7% of all tickets — remove the reason, not the ticket",
+      "varfor": "2 of 28 tickets are \"Cancellation\". Answering them faster does not reduce them; only changing what the customer sees before they write does.",
+      "steg": [
+       "Read the last 10 \"Cancellation\" tickets and write down the one sentence the customer keeps repeating.",
+       "Fix that sentence at the source: product page, product images, size guide, or the confirmation email — whichever created the expectation.",
+       "Write a saved reply for the ones that still come in, so the answer takes 30 seconds instead of 5 minutes.",
+       "Measure it here next week: the count should drop."
+      ],
+      "effekt": "Cutting this category in half removes roughly 1 ticket every 30 days — permanently, not just faster.",
+      "matt": {
+       "kategori": "avbestallning",
+       "antal": 2,
+       "andel": 7
+      },
+      "agare": "VA + Axel"
+     },
+     {
+      "hink": "process",
+      "prio": 2,
+      "id": "mallar",
+      "titel": "Write 2 saved replies — they cover 14% of everything that comes in",
+      "varfor": "The same 2 questions come back every week: Cancellation (2), Product question (pre-sale) (2). Writing each answer from scratch is what makes the median reply time 2.3 h.",
+      "steg": [
+       "Write one saved reply per category, in Swedish and English, and keep them where you answer from (Roundcube → Settings → Responses).",
+       "Each reply has three slots you fill in: order number, what we are doing, and by when. Never send one without the \"by when\".",
+       "A saved reply is a starting point, not a robot — always add the customer's name and their specific order.",
+       "Add each one to the Notion SOP database so the next person answers the same way."
+      ],
+      "effekt": "Cuts the time per ticket to under a minute for the most common cases, which is what makes a 24 h first reply realistic.",
+      "matt": {
+       "kategorier": [
+        "avbestallning",
+        "produktfraga"
+       ],
+       "tackning": 4
+      },
+      "agare": "VA"
+     }
+    ],
+    "tvister": [],
+    "tvisterTillgangliga": true,
+    "historik": [
+     {
+      "vecka": "2026-W39",
+      "datum": "2026-09-23",
+      "arenden": 28,
+      "obesvarade": 23,
+      "risk": 37,
+      "tvister": 0
      }
     ]
    }
