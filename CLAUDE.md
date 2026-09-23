@@ -435,6 +435,13 @@ Bakgrund: Temu blockerar molnmiljön (Chromium resettas, curl får tomt skal) me
 `img.kwcdn.com` är öppet — skörden kräver Axels dator, allt annat gör molnet.
 Skörden pushas till branchen → molnsessionen fyller gallerierna med bilder,
 GIF:ar och video i efterhand.
+**AliExpress-länkar** (batch 11–13 var nästan bara sådana) skördas med
+`temu/kaching-cli/ali-bilder.mjs` — samma flöde, andra CDN-domäner; AliExpress lastar in
+många andra produkters bilder, så mappen måste rensas innan den pushas. Har CWD skickat
+QC-fabriksfoton kan de vara **tillfällig hero** så produkten kommer upp direkt
+(`temu/batch11/bilder.mjs`); en produkt utan någon riktig bild alls skapas inte — den får
+ett `– VÄNTA`-kort i Notion och byggs när skörden kommit. *(2026-09-23: 18 av 34 kom upp
+samma dag på QC-fotona, 16 väntar.)*
 
 **AI-bilder (utan Cowork):** Higgsfield är kopplat i molnsessionen och används
 när riktiga bilder saknas eller behöver kompletteras — MEN med ärlighetsramen
