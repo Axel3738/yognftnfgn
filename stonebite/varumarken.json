@@ -124,8 +124,9 @@
         }
       ],
       "konton_saknas": "META_ACCESS_TOKEN nekas på kontot 'nya kungen' — allt som skriver i Meta går via Adsmanager-MCP:n, och siffrorna kan inte hämtas av rutinen förrän appen fått åtkomst.",
-      "kundtjanst": [],
-      "kundtjanst_saknas": "Ingen brandfil i kundtjanst/brands/ än.",
+      "kundtjanst": [
+        "matstrumpor"
+      ],
       "leverans": [
         "matstrumpor"
       ],
