@@ -717,7 +717,10 @@ till sajten (varje timme)"), fast session **`session_01PBEszeiGu5Qe2Lu5Je1p9T`**
 spårningsrutinernas :16/:24/:32/:40/:48/:56; samma i CEST och CET), prompt
 `/stonebite`, inga connectors (allt går via `META_ACCESS_TOKEN`, `NOTION_TOKEN`,
 `JUDGEME_API_TOKEN`, `DISCORD_BOT_TOKEN`, `SHOPIFY_*` i sessionens miljö).
-**Sedd i `list_triggers` samma körning**, första körning 15:04 CEST. Rutinen
+**Sedd i `list_triggers` samma körning**, första körning 15:04 CEST.
+⚠️ Avstängd av Axel 2026-09-23 07:42 UTC, **påslagen igen samma dag 14:57 UTC
+(Axels beslut A)** så att tvisterna läses ur Shopify varje timme (PR #142);
+nästa körning 17:04 CEST. Rutinen
 committar `stonebite/data/snapshot.json` (~600 kB) till `main` varje timme —
 kommandot drar `main` först, annars krockar pushen med spårningsrutinerna.
 ⚠️ Den fasta sessionen klonade `main` 2026-09-22 12:38 UTC, FÖRE PR #112
