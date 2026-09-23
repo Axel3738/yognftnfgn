@@ -1,0 +1,119 @@
+Jag vill att tre av mina Shopify-appar får läsa tvisterna (chargebacks och
+inquiries) i sina butiker. I dag svarar Shopify 403 "requires merchant approval
+for read_shopify_payments_disputes" i alla tre. Du ska lägga till EN rättighet
+på varje app, släppa en ny version och godkänna den i butikens admin. Gör allt
+i Chrome med mitt inloggade konto och fråga mig om inloggning när du behöver
+den. Datorn är en Windows-dator.
+
+⛔ DET VIKTIGASTE: TA ALDRIG BORT EN RÄTTIGHET SOM REDAN FINNS.
+Spårningssidan (varje timme) och kundtjänsten hänger på de rättigheter apparna
+har i dag. En rättighet som försvinner syns inte som ett fel — spårningen slutar
+bara tyst att fungera i den butiken. Du LÄGGER TILL, du ersätter aldrig.
+
+Rör inga andra fält i apparna (namn, URL:er, redirect, webhooks, "legacy
+install flow", Protected customer data). Rör inga andra appar. Rör inget annat
+i butikerna.
+
+------------------------------------------------------------------------------
+DE TRE APPARNA (mätt 2026-09-23 via API — det här är facit)
+------------------------------------------------------------------------------
+
+| Butik                          | myshopify-adress            | Appens namn i Shopify        | Client ID börjar med |
+|--------------------------------|-----------------------------|------------------------------|----------------------|
+| Beverbutikken (beverbutikken.no) | 1acuam-s5.myshopify.com   | Bever No produkter claude    | ad902d0d             |
+| Bæverbutiken (bæverbutiken.dk)   | v0xqtk-tx.myshopify.com   | DK claudeprodukter           | f498ee41             |
+| Majavakauppa (majavakauppa.fi)   | q0uthu-xq.myshopify.com   | FI claudeprodukter           | 4d501b26             |
+
+Alla tre apparna har i dag EXAKT samma 13 rättigheter i butiken:
+
+  read_content, read_discounts, read_fulfillments, read_inventory,
+  read_orders, read_products, read_publications,
+  write_content, write_discounts, write_fulfillments, write_inventory,
+  write_products, write_publications
+
+I Dev Dashboard kan listan se kortare ut, för en write_-rättighet ger
+read_-rättigheten automatiskt (write_products räcker för read_products).
+Det är okej. Men VARJE rad ovan måste täckas av något i appens lista — antingen
+exakt samma rad eller dess write_-version.
+
+Rättigheten som ska läggas till, exakt stavad:
+
+  read_shopify_payments_disputes
+
+Lägg INTE till read_shopify_payments_dispute_evidences eller något annat.
+
+------------------------------------------------------------------------------
+STEG 1 — kontrollera att du har rätt app (en gång per app)
+------------------------------------------------------------------------------
+
+1. Öppna https://dev.shopify.com (Shopify Dev Dashboard) → Apps.
+2. Öppna appen med namnet i tabellen. Gå till Settings (eller "Client
+   credentials") och kontrollera att Client ID börjar med tecknen i tabellen.
+   Stämmer det inte: STOPPA för den appen och skriv i rapporten vad du såg.
+   Det kan finnas appar med liknande namn — namnet räcker inte, Client ID
+   avgör.
+
+------------------------------------------------------------------------------
+STEG 2 — ny version med den extra rättigheten (en gång per app)
+------------------------------------------------------------------------------
+
+1. I appen: Versions → Create a version (eller "New version").
+2. Leta upp fältet Scopes (under Access). Det är en kommaseparerad lista.
+3. INNAN du ändrar något: kopiera hela innehållet i fältet ordagrant till din
+   rapport under rubriken "FÖRE". Kontrollera mot listan med 13 ovan att allt
+   täcks.
+   - Är fältet TOMT, eller saknas något ur listan: STOPPA för den appen.
+     Skapa inte versionen. Skriv i rapporten exakt vad fältet innehöll.
+     (Ett tomt fält betyder att versionen inte utgår från den aktiva, och
+     släpps den försvinner alla rättigheter.)
+4. Ställ markören SIST i fältet och skriv till:
+     ,read_shopify_payments_disputes
+   (kommatecken först, inget mellanslag). Ändra ingenting annat i fältet.
+5. Kopiera fältets nya innehåll till rapporten under rubriken "EFTER".
+   EFTER ska vara FÖRE + ",read_shopify_payments_disputes" — inget mer, inget
+   mindre.
+6. Ändra inga andra fält i formuläret. Ge versionen namnet
+   "tvister-2026-09-23" om den ber om ett namn.
+7. Tryck Release (eller "Create" och sedan "Release"). Bekräfta om den frågar.
+8. Öppna appens Versions igen och kontrollera att den nya versionen står som
+   Active / Released.
+
+------------------------------------------------------------------------------
+STEG 3 — godkänn den nya rättigheten i butikens admin (en gång per butik)
+------------------------------------------------------------------------------
+
+1. Öppna butikens admin: https://admin.shopify.com/store/1acuam-s5 (Norge),
+   https://admin.shopify.com/store/v0xqtk-tx (Danmark),
+   https://admin.shopify.com/store/q0uthu-xq (Finland).
+   Djupa admin-adresser kan ge en vit sida — klicka dig då fram via
+   Inställningar → Appar (Settings → Apps and sales channels).
+2. Öppna appen i listan (namnet i tabellen).
+3. Visar Shopify en ruta om att appen vill ha nya rättigheter / uppdaterad
+   dataåtkomst: läs den. Den ska bara nämna tvister/betalningstvister
+   (Shopify Payments disputes). Nämner den att något TAS BORT: tryck INTE —
+   stoppa och rapportera. Annars: Godkänn / Uppdatera / Approve.
+4. Visar Shopify ingen ruta: gå tillbaka till Dev Dashboard → appen →
+   Install app (välj butiken) och gå igenom installationen, så att butiken får
+   den nya versionen. Den ska då visa godkännanderutan i punkt 3.
+5. Kontrollera efteråt i appens sida i admin (Visa behörigheter / API access
+   scopes) att "Shopify Payments disputes" eller read_shopify_payments_disputes
+   står med — och att ordrar, fulfillments, produkter och innehåll fortfarande
+   står med.
+
+Gör klart Norge helt (steg 1–3) innan du börjar på Danmark, och Danmark innan
+Finland. Går en butik fel: rapportera den och fortsätt med nästa.
+
+------------------------------------------------------------------------------
+RAPPORTERA TILLBAKA (per butik)
+------------------------------------------------------------------------------
+
+1. Appens namn och de första 8 tecknen i Client ID du såg.
+2. Scopes-fältet FÖRE och EFTER, ordagrant.
+3. Den nya versionens namn/nummer och att den står som Active.
+4. Vad godkännanderutan i admin sa, och vad du tryckte.
+5. Behörighetslistan i admin efteråt.
+6. Allt som såg konstigt ut, och varje ställe där du stoppade.
+
+Skriv aldrig ut client secret, åtkomsttoken eller lösenord i rapporten.
+Rör inte Protected customer data access — den är redan godkänd för ordrarna
+och behövs inte för tvisterna.
