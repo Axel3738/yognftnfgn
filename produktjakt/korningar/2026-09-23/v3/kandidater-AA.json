@@ -1,0 +1,151 @@
+{
+  "agent": "AA — mörkret faller, vintertid (H02/H10)",
+  "datum": "2026-09-23",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Vägnabbarna — uppfartens landningsbana",
+      "objekt": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "E_VADER_SASONG",
+      "slot": "exploration",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_elektronik_solcell", "latent_behov_nej (mörker syns varje kväll)", "flerkop_ja (4–8 nabbar per uppfart)"],
+        "avvikelser": ["golv under nej (ingen svensk konsumentaktör i formen)", "hero är packshot med logotyp — kontextbild krävs", "monteras med skruv/lim i marken, inte på väggen"]
+      },
+      "sasong": {"fonster_id": "vintertid_morker", "deadline_typ": "mörker", "veckor_kvar": 4.6, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005008351027236",
+        "url": "https://www.aliexpress.com/item/1005008351027236.html",
+        "pris_usd": 7.87,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-23T06:55:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005008351027236.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "ur titel/sökträff: gjuten aluminium, IP68, 2-sidig röd LED + reflex (färger ej läsbara i sökträffen). Syskonlistning 32823000004 (USD 11,24, LIVE 07:00Z, hero sedd: halvrund, vit, ensidig — snyggare för uppfartskant, hero med logotyp) och 1005009117619223 (USD 6,65, sidan svarade tomt).",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "heron är en packshot av nabben (fyrkantig aluminium, solcell mitt, 2×2 röda LED) med säljarlogotyp uppe till vänster — måste beskäras; kontextbild (uppfarten i skymning med raden av lysande nabbar) måste tas eller genereras"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk konsumentaktör hittad i formen (solcellsnabb i marken); närmast: Clas Ohlson Solcellslampa markspjut 3-pack 36-6488-1 (spjut i gräset — annan form, pris ej läst)", "pris_sek": null, "url": "https://www.clasohlson.com/se/Solcellslampa-3-pack/p/36-6488-1", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — bara B2B-trafikleverantörer (trafficsigncustom.com/sv, nk-roadstud.com/sv) säljer solcellsnabbar mot Sverige, priser på förfrågan", "pris_sek": null, "url": "https://trafficsigncustom.com/sv/shop/traffic-safety-equipment/light-road-stud/", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["websök 'vägnabb solcell / solar road stud köp sverige' 2026-09-23: 0 svenska butiker, bara B2B och Wikipedia", "websök amazon.se 'solar road stud': inga svenska listningar i träffarna", "pricerunner.se/sp/solcellsdriven vägnabb: tom sida", "clasohlson.com / biltema.se / jula.se / bauhaus.se (markspot, markspjut, Globo markspot 1 495 kr): bara spjut- och infällda rundspottar, ingen nabb", "V 09-16: infartsmarkör med solcell struken (stolpform, Clas 36-5190) — nabben är en annan form: i marken, körbar"]
+      },
+      "ekonomi": {"landad_sek": [410, 500], "pris_sek": 999, "brutto_sek": [499, 589], "be_cpa_sek": [499, 589], "be_roas": 1.84, "flerkop": true, "returrisk": "låg — ingen mätning, skruvas/limmas på hård yta; kräver asfalt/marksten (grusuppfart passar inte)"},
+      "meta_tanke": {
+        "hook": "Ser du var uppfarten slutar i mörkret?",
+        "objekt_i_bild": "uppfarten i skymning, en rad lysande nabbar längs kanten, bilen svänger in",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "före/efter samma uppfart: svart → landningsbana; nabben körs över av bilen utan att ta skada"
+      },
+      "varfor": "Renaste H10-raden i mörkerlinsen: vägbanans kattögon på den egna uppfarten finns inte hos någon svensk kedja (bara B2B-trafik), heron förstås utan ord och vintertid 25 okt ger ett hårt datum 4,6 v bort. Samma struktur som Solcellslampan (ute, solcell, 55+, kväll efter kväll) men i en form kontot inte har, med flerköp inbyggt.",
+      "huvudrisk": "Snöröjning: en upphöjd nabb (~20 mm) kan ryckas loss av plogblad/snöslungans skrapskena — ska säljas för kanten utanför plogstråket och för skottade uppfarter; 999 kr för 4 nabbar utan märkesankare kan slå i upplevt värde (ekonomin är räknad på 4-pack, landad 4 × 102–125 kr).",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 1, "lucka": 3, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (nabb/road/mark/uppfart: 0 träffar i formen)", "koncept.py sok road: K0022 'Cast Aluminum Solar Road Nails' sedd 2026-09-09 som SOKTRAFF, aldrig levererad, ingen feedback, status kandidat — ingen nej-spärr", "fynd.json 09-11…09-16: ej med", "kandidater-V 09-16: infartsmarkör (stolpe) struken — annan form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005008351027236.html",
+        "https://www.aliexpress.com/item/32823000004.html",
+        "https://www.clasohlson.com/se/Solcellslampa-3-pack/p/36-6488-1",
+        "https://www.bauhaus.se/solcellslampa-globo-globe-markspott",
+        "https://trafficsigncustom.com/sv/shop/traffic-safety-equipment/light-road-stud/",
+        "https://en.wikipedia.org/wiki/Solar_road_stud"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Fasadlisten — solcell utan sladd",
+      "objekt": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+      "form": "annat",
+      "arketyp": "E_VADER_SASONG",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "exploitation",
+      "hypotes_id": "H02",
+      "vinnarlikhet": {
+        "likast": "Solcellslampa Med Rörelsesensor – Tre Huvuden, 210 LED",
+        "delade_variabler": ["objekt_ute", "agare_55plus_smahus", "form_elektronik_solcell", "golv under ja (solcellsvägglampor i annan form)", "prisband 500–999", "montering_vägg utan elektriker", "old way köpt produkt som fungerar"],
+        "avvikelser": ["ingen rörelsesensor enligt titeln — skymningsstyrd (ej mätt)", "999 kr mot vinnarens 589", "estetik snarare än säkerhet"]
+      },
+      "sasong": {"fonster_id": "vintertid_morker", "deadline_typ": "mörker", "veckor_kvar": 4.6, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012730363106",
+        "url": "https://www.aliexpress.com/item/1005012730363106.html",
+        "pris_usd": 29.59,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-23T07:00:00Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005012730363106.jpg",
+          "hero_sedd": true,
+          "hero_sedd_kommentar": "svart avlång aluminiumlist på putsad vägg i regn, varmt ljus nedåt — samma produkt som titeln",
+          "pris_sett": true,
+          "varianter": "titel: 'Solar LED Wall Washer Light Outdoor Black Linear Porch Lamp' — en färg (svart); längd/lumen/sensor ej läsbara ur titel eller sökträff (ej mätt). Syskonlistning 1005012730473195 (USD 29,39, samma titel) ej öppnad.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": 1, "hero_textfri": false, "hero_i_kontext": true, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "inbränd text 'IP65 outdoor waterproof' uppe till vänster måste beskäras; i övrigt en ren kontextbild — listen på väggen i regn, ljuset ner över putsen"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "lamp24.se solcellslampor vägg (sidan läst 2026-09-23: ingen linjär/wall washer-form alls, prisspann 159–1 349 kr för kompakta solcellsvägglampor)", "pris_sek": 159, "url": "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "ej mätt — 230 V-linjära fasadarmaturer (wall washer) finns i lampbutikerna men kräver elektriker; ingen solcellsdriven list hittad hos svensk aktör", "pris_sek": null, "url": "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["lamp24.se/solcellslampor-vagg (läst: 0 linjära, 159–1 349 kr)", "websök 'solcellslampa wall washer / linjär / fasadbelysning solcell' 2026-09-23: CDON/Megabilligt 2- och 4-pack upp/ner-fasadlampor (annan form), Lampgrossen Alippa (kompakt), Jula vägglampa solcell 018353 (kompakt), Clas Ohlson stallykta 36-9069 (kompakt) — ingen list", "ljustema.se / ljusochmiljo.se / lamporochljus.se i träffarna: kompakta solcellsvägglampor, ingen linjär"]
+      },
+      "ekonomi": {"landad_sek": [385, 471], "pris_sek": 999, "brutto_sek": [528, 614], "be_cpa_sek": [528, 614], "be_roas": 1.75, "flerkop": true, "returrisk": "låg — universal väggmontage, ingen mätning; risk att ljusstyrka/brinntid i november inte matchar bilden (solcell i svensk vinter)"},
+      "meta_tanke": {
+        "hook": "Ingen el vid entrén? Ingen elektriker heller.",
+        "objekt_i_bild": "husfasaden vid ytterdörren i skymning, listen tänder sig själv",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "listen skruvas upp på 30 sekunder, ingen sladd, tänds när det mörknar — samma vägg före/efter"
+      },
+      "varfor": "Strukturell kusin till kontots färskaste vinnare (Solcellslampan 09-17): solcell på ytterväggen, 55+ småhus, 500–999 kr, golv i annan form — men i en list-form ingen svensk aktör säljer på solcell, med upplevt värde som ser ut som 999 kr (svart aluminium, arkitektljus). Vintertid 25 okt är datumet som gör köpet nu (H02).",
+      "huvudrisk": "Lumen och brinntid är ej mätta — en solcellslist som slocknar 19:00 i november dödar recensionerna; heron har inbränd text och listning saknar sensorinfo.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 2, "efterfragan": 1, "lucka": 2, "ekonomi": 3, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": null,
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (vägg/fasad/list: Solcellslampa Med Rörelsesensor – Tre Huvuden är strålkastarform, Ljuslist 20\" är offroad 12 V — ingen solcellslist för fasad)", "koncept.py sok wall/fasad: 0 relevanta (K0037 stegstöd)", "fynd.json 09-11…09-16: ej med", "kandidater-V 09-16: hängrännelampor och husnummer strukna — annan form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012730363106.html",
+        "https://www.aliexpress.com/item/1005012730473195.html",
+        "https://www.lamp24.se/c/utomhuslampor/solcellslampor/solcellslampor-vagg",
+        "https://www.jula.se/catalog/el-och-belysning/belysning/utomhusbelysning/solcellslampor/vagglampa-solcell-led-018353/",
+        "https://cdon.se/produkt/4-pack-solcellslampa-for-fasad-vagg-utomhus-fasadbelysning-solcell-svart-654c2a7a7c7a40d1/"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Nyckelhålslampan (LED med rörelsesensor ovanför låset, 4001153955587 LIVE, hero sedd — bästa heron i linsen)", "skal": "Golv i exakt samma form under vårt pris: Fyndiq 'LED Intelligent Nyckelhålslampa Dörrlåslampa' 184 kr (sökutdrag 2026-09-23); landad 96–112 kr kräver ≥ 300 kr för BE-CPA ≥ 190. Inget märkesankare finns, så H06-undantaget gäller inte. Huvudsessionen kan lyfta den om Fyndiq inte räknas som svenskt flöde."},
+    {"namn": "Trapplisten — solcellslist 100 LED med rörelsesensor (1005008964359716, LIVE)", "skal": "Kedjan och marknaden har formen: Clas Ohlson Trappbelysning solcell rörelsesensor Northlight 2-pack 46-1059, SkyddsExperten 'Solcellsbelysning Vägg 100 LED' (exakt samma 100-LED-list), Biltema solcellslampa rörelsesensor 100 lm 2000046984."},
+    {"namn": "Trappnos-/steglist med solcell och halkskydd i ett", "skal": "Ingen listning i formen på AliExpress — fyra fraser (stair nosing, anti slip tread, step edge, aluminum profile) gav bara vanliga steg-/däckslampor."},
+    {"namn": "Isbitslamporna — solcellsdrivna glasblock på gången (1005010555045543, LIVE, hero sedd)", "skal": "Golv i exakt samma form: Star Trading Icecube solcellsljus 3-pack 275 kr (Ljustema/Jotex/FAVI, sökutdrag 2026-09-23); vårt 3-pack landar 342 kr."},
+    {"namn": "Självlysande stenar på trädgårdsgången", "skal": "Fyndiq/CDON 100–150 st för 129 kr — sett i svenskt flöde, lågt upplevt värde."},
+    {"namn": "Nödlampan vid strömavbrott (E27-ljuskälla med batteri / väggladdad ficklampa)", "skal": "Kedjan har båda formerna: Osram uppladdningsbar nödlampa E27 hos Clas Ohlson (46-1487) och Bauhaus, Clas Ohlson Ficklampa/nödbelysning 36-2954 som tänds vid strömavbrott. Dessutom objekt inne (förlorarsignal)."},
+    {"namn": "Hundkragen/kopplet som lyser upp marken", "skal": "Zoo.se, Arken Zoo (Flexi LED-lampa 199 kr, PawLight), Clas Ohlson 31-3287 och LIGHT5 Doggo-kopplet — hela formen finns i svensk zoohandel."},
+    {"namn": "Reflexväst/LED för hästen och ryttaren", "skal": "Hööks har sortimentet (enligt order) — inte sökt vidare."},
+    {"namn": "Hönshuslampan med timer på solcell (mörkret stoppar värpningen)", "skal": "Ingen egen listning: två fraser gav bara automatiska hönsluckor (69–86 USD) och generiska solcellslampor med fjärr/timer, som Jula/Fyndiq redan säljer (Fyndiq 'Vattentät solcellslampa fjärrkontroll timer', Hemfint 369 kr). Hönsluckan med ljussensor är dessutom levererad (K0263 ja)."},
+    {"namn": "Belysning i vedboden/förrådet utan el", "skal": "Kedjeform: Jula solcellslampa med separat panel, Clas Ohlson batteridriven lampa med rörelsesensor 36-8989."},
+    {"namn": "Klämlampan på trappräcket (solar clip-on motion light, 5–7 USD)", "skal": "Samma klämform som Biltema 'Solcellslampa staket' 2000054535 som lins V redan strök 09-16."},
+    {"namn": "Parkeringsstopp med solcells-LED i garaget", "skal": "Ingen listning i formen på AliExpress (bara varningsblink och gatlyktor); Biltema har parkeringsstopp med reflex."},
+    {"namn": "Belyst dörrhandtag", "skal": "Ingen listning — sökningen gav nyckelhålslampor (struken ovan) och vanliga sensorvägglampor."},
+    {"namn": "Soptunnans reflex-/LED-variant", "skal": "AliExpress har bara reflekterande husnummerdekaler för soptunnor (2,63 USD) — samma objekt och form som vinnaren Soptunneklistermärkena (K0-dubblett), och Biltema säljer reflexsiffror/reflextejp. Ingen LED-form hittad."},
+    {"namn": "Belyst dörrmatta med solcell", "skal": "Ingen listning — frasen gav gräsmattelampor och tasslampor."},
+    {"namn": "Rörelsestyrd LED-list under altanräcket", "skal": "Frasen gav bara 100-LED-listen (struken som kedjeform) och 230 V-remsor."},
+    {"namn": "Postlåda, husnummer, flaggstång, hängrännelampor, infartsmarkör, gångstensbelysning utan grävning, julbelysning med app, fasadprojektor", "skal": "Strukna av lins V 09-16 eller kedjeform enligt order (Clas markspot/markspjut, Bauhaus Globo markspot 4-pack, Rusta/Clas julbelysning) — inte sökta igen."}
+  ]
+}
