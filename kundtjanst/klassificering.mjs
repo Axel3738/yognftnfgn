@@ -124,6 +124,14 @@ const ESKALERING = [
   'skandal', 'skandale', 'ripped off', 'lurad', 'lurade', 'lurt', 'snydt', 'bluff', 'fake', 'oseriös', 'useriøs', 'oseriøs',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 
+// Brådska utan ilska. De räknas i chargeback-poängen som förut, men gör INTE
+// ett mejl ARGT i autosvaret (kundtjanst/autosvar/hinkar.mjs arArg). Mätt i
+// CaraShells torrkörning 2026-09-23: "I ordered the wrong size, immediately
+// cancelled it … Thank you" och en leverantörs "processed within 24 hours"
+// fick båda eskaleringsmallen. Axels kalibrering 2026-09-22: ARG är riktig ilska.
+const ESKALERING_SVAG = ['omedelbart', 'umiddelbart', 'immediately', 'inom 24', 'within 24', 'inom 48', 'senast', 'senest', 'deadline']
+  .map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
+
 /** Normaliserar text för matchning: gemener, é → e, kollapsade blanksteg. Behåller åäöøæ. */
 export function normalisera(text) {
   return String(text ?? '')
@@ -195,6 +203,7 @@ export function klassificera({ amne = '', text = '' } = {}) {
   // Produktfrågor och rabatter är före-köp: en text som också nämner leverans/retur är ett kundärende, inte en fråga.
   const primar = kandidater[0]?.id ?? 'ovrigt';
   const eskalering = ESKALERING.filter((re) => re.test(a) || re.test(t)).length;
+  const svaga = ESKALERING_SVAG.filter((re) => re.test(a) || re.test(t)).length;
   const vikt = KATEGORI[primar].vikt;
   // Poäng 0–5: kategorins vikt + 1 per eskaleringsmarkör (max 2).
   const poang = Math.min(5, vikt + Math.min(2, eskalering));
@@ -203,6 +212,7 @@ export function klassificera({ amne = '', text = '' } = {}) {
     alla: kandidater.map(({ id, traffar: n }) => ({ id, traffar: n })),
     poang,
     eskalering,
+    eskaleringStark: Math.max(0, eskalering - svaga),
     ordernummer: hittaOrdernummer(`${amne}\n${text}`),
     sprak: gissaSprak(`${amne} ${text}`),
     nyckelord: kandidater[0]?.ord?.slice(0, 5) ?? [],

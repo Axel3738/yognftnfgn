@@ -1,0 +1,77 @@
+Jag vill lägga till CaraShell i kundtjänstboten (autosvaret) på min Railway-
+tjänst. Bäverbutiken kör redan SKARPT där och ska fortsätta exakt som nu.
+CaraShell ska börja TORRT: boten skriver bara UTKAST i CaraShells brevlåda och
+skickar ingenting. Gör allt i den här fliken och fråga mig om inloggning när du
+behöver den. Jag klistrar in de hemliga värdena själv när du ber om dem —
+skriv dem aldrig i din rapport.
+
+Tjänsten: Railway → projekt strong-solace → tjänst yognftnfgn (branch main,
+volym på /data). Direktadress: https://yognftnfgn-production-cfb8.up.railway.app
+
+STEG 0 — kontrollera att den nya koden är live. GÖR INGET ANNAT FÖRST.
+Öppna https://yognftnfgn-production-cfb8.up.railway.app/halsa
+Svaret är JSON. Under "autosvar" MÅSTE det finnas ett fält som heter "lagen"
+(t.ex. "lagen": {"baverbutiken": "skarpt"}).
+  - Finns "lagen": gå vidare till steg 1.
+  - Finns det INTE: STOPPA HÄR. Ändra ingenting och rapportera exakt vad /halsa
+    svarade. (Den gamla koden förstår inte CaraShells egna läge och hade kört
+    CaraShell SKARPT, alltså skickat riktiga mejl till kunder.)
+
+STEG 1 — miljövariabler (Variables på tjänsten).
+Titta först vilka av dessa som redan finns. Lägg in de som saknas. Värdena på
+de fyra nycklarna ger jag dig när du frågar (de finns i mitt Claude-konto under
+Environments och heter exakt likadant där):
+
+  AUTOSVAR_LAGE_CARASHELL            torr
+  KUNDTJANST_MAIL_PASS_CARASHELL     (lösenordet till hello@carashell.com)
+  SHOPIFY_SHOP_yitrbk_m3             yitrbk-m3.myshopify.com
+  SHOPIFY_CLIENT_ID_yitrbk_m3        (nyckel från mig)
+  SHOPIFY_CLIENT_SECRET_yitrbk_m3    (nyckel från mig)
+
+Obs: de tre Shopify-namnen har SMÅ bokstäver och understreck på slutet
+(yitrbk_m3) — skriv dem exakt så.
+
+Ändra SEDAN, som sista variabel, den som redan finns:
+
+  AUTOSVAR_BRANDS    baverbutiken,carashell      (var: baverbutiken)
+
+Rör INTE AUTOSVAR_LAGE — den ska stå kvar på skarpt (den gäller Bäverbutiken).
+Rör inte AUTOSVAR_LOOP, AUTOSVAR_DISCORD, TRACK17_API_KEY, någon variabel som
+slutar på BAVERBUTIKEN eller BAVERBUTIKEN_EMAILSCRAPER, STONEBITE_HEMLIGHET,
+STONEBITE_DATA eller STONEBITE_ANVANDARE.
+
+Railway samlar ändringarna och frågar om du vill deploya — deploya EN gång när
+allt ovan är inlagt.
+
+STEG 2 — kontrollera loggen.
+Öppna Deploy Logs för den nya deployen och leta efter raden som börjar
+"autosvar-vakt:". Den ska säga, ordagrant i början:
+
+  autosvar-vakt: minutservern igång — baverbutiken SKARPT, carashell TORR
+
+  - Står det "carashell SKARPT": ta GENAST bort carashell ur AUTOSVAR_BRANDS
+    (tillbaka till bara baverbutiken), deploya, och rapportera.
+  - Står det "startar INTE — mejllösenordet saknas": kolla stavningen på
+    KUNDTJANST_MAIL_PASS_CARASHELL och deploya om. Då kör inte Bäverbutiken
+    heller — det är bråttom.
+
+STEG 3 — kontrollera /halsa.
+Öppna https://yognftnfgn-production-cfb8.up.railway.app/halsa igen. Under
+"autosvar" ska det stå:
+  "kor": true
+  "lagen": {"baverbutiken": "skarpt", "carashell": "torr"}
+Vänta två minuter och läs Deploy Logs igen: det ska komma rader för både
+Bäverbutiken och CaraShell ungefär var 60:e sekund.
+
+Logga INTE in på sajten och rör INTE brevlådorna — /halsa och loggarna räcker.
+
+RAPPORTERA TILL SIST:
+  - vad /halsa svarade i steg 0 (bara om "lagen" fanns eller inte)
+  - vilka variabler du lade in eller ändrade (bara namnen, aldrig värdena)
+  - raden "autosvar-vakt: …" ur loggen, ordagrant
+  - svaret från /halsa i steg 3, ordagrant
+  - om något inte gick: exakt vad loggen sa
+
+Viktigt: den här boten svarar riktiga kunder i Bäverbutiken. Ändra inga andra
+variabler, starta inga andra tjänster och kör aldrig boten för hand någon
+annanstans samtidigt — två kopior mot samma brevlåda kan ge en kund två svar.

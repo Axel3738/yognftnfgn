@@ -6,6 +6,7 @@
 //   node kundtjanst/autosvar.mjs --brand baverbutiken             skarpt: svaren skickas
 //   node kundtjanst/autosvar.mjs --alla --discord                 alla brands med brevlåda, rapport i #customer-service
 //   node kundtjanst/autosvar.mjs --alla --loop 60                 minut-servern: samma kod, om och om igen
+//   node kundtjanst/autosvar.mjs --brand a,b --skarpt --torr-for b   a skarpt, b bara utkast (vakten, AUTOSVAR_LAGE_<ID>)
 //   node kundtjanst/autosvar.mjs --kolla                          vad går att läsa/skriva, vilka nycklar saknas
 //   --max 20        tak på automatiska svar per körning och butik (standard svar.max_per_korning)
 //   --fonster 72    hur gamla mejl (timmar) som får ett svar (standard svar.fonster_timmar)
@@ -44,7 +45,7 @@
 
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
-import { upptackBrands, korkonfig, valjBrands } from './brands.mjs';
+import { upptackBrands, korkonfig, valjBrands, sprakForLand } from './brands.mjs';
 import { Brevlada, tolkaListdatum } from './brevlada.mjs';
 import { tolkaMejl } from './mime.mjs';
 import { byggArenden } from './arenden.mjs';
@@ -134,7 +135,7 @@ export async function korBrand(brand, {
     const mejl = { ...m, bilaga: rad.bilaga };
     const grund = hinka({ mejl, brand: konfig });
     const hash = kundHash(mejl.fran?.adress);
-    const post = { tid: kord, uid: m.uid, messageId: m.messageId, kund: mejl.fran?.adress ?? '', kundHash: hash, amne: mejl.amne, kontaktformular: Boolean(mejl.kontaktformular), hink: grund.hink, typ: grund.typ, kategori: grund.klass.kategori, ordernummer: grund.klass.ordernummer, sprak: valjSprak(grund.klass.sprak, konfig.svar.sprak), orsak: grund.orsak, atgard: 'hoppad', torr };
+    const post = { tid: kord, uid: m.uid, messageId: m.messageId, kund: mejl.fran?.adress ?? '', kundHash: hash, amne: mejl.amne, kontaktformular: Boolean(mejl.kontaktformular), hink: grund.hink, typ: grund.typ, kategori: grund.klass.kategori, ordernummer: grund.klass.ordernummer, sprak: valjSprak(grund.klass.sprak, mejl.relay?.land ? sprakForLand(mejl.relay.land) : konfig.svar.sprak), orsak: grund.orsak, atgard: 'hoppad', torr };
     if (grund.hink === HINK.SKIP) { skrivLogg(brand.id, post, loggmapp); res.rader.push(post); continue; }
 
     // Tråden: kundens mejl i inkorgen + våra svar i Sent och Drafts.
@@ -390,9 +391,22 @@ function flagga(args, n, standard = null) {
   return i !== -1 && args[i + 1] && !args[i + 1].startsWith('--') ? args[i + 1] : standard;
 }
 
+/**
+ * Är butiken torr i den här körningen? `--torr` gör alla torra; `--torr-for a,b`
+ * gör just de butikerna torra även när resten kör `--skarpt` (vakten på
+ * Railway, AUTOSVAR_LAGE_<ID> — Axels order 2026-09-23: Bäverbutiken skarpt,
+ * CaraShell torrt). Flaggan kan bara göra en butik TORRARE, aldrig skarpare. Ren.
+ */
+export function torrPerBrand(argv = []) {
+  const torr = argv.includes('--torr');
+  const lista = new Set(String(flagga(argv, 'torr-for') ?? '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean));
+  return (id) => torr || lista.has(String(id ?? '').toLowerCase());
+}
+
 export async function huvud(argv = process.argv.slice(2), env = process.env) {
   const finns = (n) => argv.includes(`--${n}`);
   const torr = finns('torr');
+  const torrForBrand = torrPerBrand(argv);
   const loop = flagga(argv, 'loop') ? Math.max(30, Number(flagga(argv, 'loop')) || 60) : 0;
   const alla = upptackBrands();
   if (!flagga(argv, 'brand') && !finns('alla') && !finns('kolla')) {
@@ -428,9 +442,9 @@ export async function huvud(argv = process.argv.slice(2), env = process.env) {
       if (!brevlador.has(b.id)) brevlador.set(b.id, new Brevlada(k, { logg }));
       let r;
       try {
-        r = await korBrand(b, { env, torr, brevlada: brevlador.get(b.id), max: flagga(argv, 'max'), fonsterTimmar: flagga(argv, 'fonster'), logg, cache, igen: finns('igen') });
+        r = await korBrand(b, { env, torr: torrForBrand(b.id), brevlada: brevlador.get(b.id), max: flagga(argv, 'max'), fonsterTimmar: flagga(argv, 'fonster'), logg, cache, igen: finns('igen') });
       } catch (e) {
-        r = { brand: k, kord: new Date().toISOString(), torr, hoppad: true, orsak: e.message, rader: [], varningar: [] };
+        r = { brand: k, kord: new Date().toISOString(), torr: torrForBrand(b.id), hoppad: true, orsak: e.message, rader: [], varningar: [] };
         // En död session får inte döda loopen: nästa varv loggar in igen.
         try { await brevlador.get(b.id).loggaUt(); } catch { /* ok */ }
         brevlador.delete(b.id);

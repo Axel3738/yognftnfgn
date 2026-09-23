@@ -132,7 +132,10 @@ export function arArg({ klass, amne = '', text = '', trad = null } = {}) {
   // arga i sig till 2026-09-22 — då fick ett artigt "överdraget är för litet"
   // eskaleringsmallen. Ett hot om banken är däremot alltid ett tecken.
   if (klass.kategori === 'chargeback_hot') orsaker.push('hot om bank/anmälan/recension');
-  if (klass.eskalering >= 1) orsaker.push(`eskaleringsord (${klass.eskalering})`);
+  // Bara de starka ("tredje gången", "ingen svarar", "unacceptable") — brådska
+  // ensam ("immediately", "senast fredag") är inte ilska (2026-09-23).
+  const stark = klass.eskaleringStark ?? klass.eskalering;
+  if (stark >= 1) orsaker.push(`eskaleringsord (${stark})`);
   if (ARGORD.some((re) => re.test(a) || re.test(t))) orsaker.push('argt ordval');
   if ((String(text).match(/!{2,}/g) ?? []).length >= 1 || (String(text).match(/!/g) ?? []).length >= 3) orsaker.push('många utropstecken');
   if (versalandel(text) >= 0.3) orsaker.push('skriver i versaler');
@@ -212,6 +215,28 @@ export function enkelTyp({ klass, amne = '', text = '' }) {
   return null;
 }
 
+// Säljmejl TILL butiken (leverantörer, "Shopify-experter", provisionsjägare).
+// Mätt i CaraShells inkorg 2026-09-23: en dropshipping-leverantör skrev
+// "Orders processed within 24 hours" — eskaleringsordet "within 24" gjorde
+// den till en ARG kund, den fick ett lugnande utkast och flyttades till
+// VA-PRIO. Klassificeringens spam-kategori vann inte, för "competitive
+// pricing" gav rabatt_kod. Två eller fler av de här fraserna och inget
+// ordernummer ⇒ SKIP. En kund skriver inte "dropshipping" och "quotation" i
+// samma mejl; en fras ensam räcker aldrig.
+const SALJFRASER = [
+  /dropshipping/, /sourcing/, /fulfil?lment (partner|solution|system)/, /factory pric/, /quotation/, /whatsapp/,
+  /shopify (website |store )?(expert|developer)/, /\bcommission\b/, /profit margin/, /seasonal promotion/,
+  /(increase|boost) (your )?sales/, /brand awareness/, /drive (significant )?engagement/, /digital agency/, /web design/,
+  /overseas warehouse/, /test order/,
+];
+
+/** Är mejlet en säljpitch till butiken? Två fraser, inget ordernummer. Ren. */
+export function arSaljmejl({ amne = '', text = '', klass = null } = {}) {
+  if (klass?.ordernummer?.length) return false;
+  const s = `${amne}\n${text}`.toLowerCase();
+  return SALJFRASER.filter((re) => re.test(s)).length >= 2;
+}
+
 /**
  * Hinken för ett mejl, UTAN fakta (fakta avgör sen om ENKEL håller — se
  * beslut()). `mejl` är mime.tolkaMejl() (+ ev. `bilaga`), `brand` brandet,
@@ -232,6 +257,7 @@ export function hinka({ mejl, brand, trad = null } = {}) {
   if (arSystem(fran, amne)) return { ...bas, hink: HINK.SKIP, orsak: `systemavsändare (${fran.split('@')[1] ?? fran})` };
   if (arEgen(fran, brand)) return { ...bas, hink: HINK.SKIP, orsak: 'butikens egen adress' };
   if (klass.kategori === 'spam') return { ...bas, hink: HINK.SKIP, orsak: 'spam/marknadsföring' };
+  if (arSaljmejl({ amne, text, klass })) return { ...bas, hink: HINK.SKIP, orsak: 'säljmejl till butiken (leverantör/byrå)' };
 
   if (harTvistord(`${amne}\n${text}`)) return { ...bas, hink: HINK.SVAR, orsak: 'tvistord i mejlet (chargeback/dispute/ARN/tvist) — bara VA:n' };
   if (mejl.bilaga) return { ...bas, hink: HINK.SVAR, orsak: 'mejlet har en bilaga motorn inte läst' };
