@@ -187,7 +187,18 @@ def rita_platta(bild, x0, y0, x1, y1, alpha=225):
 def rita_stryk(rita, text, stryk, font, mitt_x, y):
     """Ritar ett streck över delsträngen `stryk`. Ramverket steg 7:
     överstrykning är ett ritat streck, aldrig ordet."""
-    if not stryk or stryk not in text:
+    if not stryk:
+        return
+    # "stryk" är delsträngen som ska strykas över, aldrig true/false. Skickar
+    # spec:en en bool kraschade motorn förut mitt i en körning med ett
+    # TypeError djupt nere i Pillow — och eftersom text.py avbryter vid första
+    # felet blev alla annonser EFTER den raden ogjorda, utan att något sa varför.
+    # (Mätt 2026-09-23: "stryk": true på Fagelmatare_CS_5_1 stoppade 12 av 70
+    # bilder.) Säg det i klartext i stället.
+    if not isinstance(stryk, str):
+        raise TextFel(f'"stryk" ska vara texten som ska strykas över, inte {stryk!r}. '
+                      'Skriv t.ex. "stryk": "2 159 kr".')
+    if stryk not in text:
         return
     full = rita.textlength(text, font=font)
     fore = rita.textlength(text[:text.index(stryk)], font=font)
