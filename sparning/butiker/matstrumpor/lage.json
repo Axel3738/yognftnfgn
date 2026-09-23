@@ -7,9 +7,9 @@
    "order": "#4795",
    "fulfillment": "gid://shopify/Fulfillment/7223609590099",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626400706732148": {
    "bolag": "YunExpress",
@@ -17,9 +17,9 @@
    "order": "#4794",
    "fulfillment": "gid://shopify/Fulfillment/7223609524563",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626400706732601": {
    "bolag": "YunExpress",
@@ -28,7 +28,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7223608607059",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626300703840169": {
@@ -37,9 +37,9 @@
    "order": "#4792",
    "fulfillment": "gid://shopify/Fulfillment/7222533685587",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626200707243578": {
    "bolag": "YunExpress",
@@ -47,9 +47,9 @@
    "order": "#4791",
    "fulfillment": "gid://shopify/Fulfillment/7217731699027",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626200704146683": {
    "bolag": "YunExpress",
@@ -57,9 +57,9 @@
    "order": "#4790",
    "fulfillment": "gid://shopify/Fulfillment/7206281445715",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626200704146725": {
    "bolag": "YunExpress",
@@ -67,9 +67,9 @@
    "order": "#4789",
    "fulfillment": "gid://shopify/Fulfillment/7206273155411",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626200704146659": {
    "bolag": "YunExpress",
@@ -77,9 +77,9 @@
    "order": "#4788",
    "fulfillment": "gid://shopify/Fulfillment/7206270206291",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626200704343405": {
    "bolag": "YunExpress",
@@ -87,9 +87,9 @@
    "order": "#4787",
    "fulfillment": "gid://shopify/Fulfillment/7206261195091",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626100708878788": {
    "bolag": "YunExpress",
@@ -97,9 +97,9 @@
    "order": "#4786",
    "fulfillment": "gid://shopify/Fulfillment/7178381459795",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626100708683501": {
    "bolag": "YunExpress",
@@ -107,9 +107,9 @@
    "order": "#4785",
    "fulfillment": "gid://shopify/Fulfillment/7178248946003",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626100704518644": {
    "bolag": "YunExpress",
@@ -118,7 +118,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7168790364499",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000708579016": {
@@ -128,7 +128,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7147421860179",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000708765896": {
@@ -137,9 +137,9 @@
    "order": "#4782",
    "fulfillment": "gid://shopify/Fulfillment/7147419599187",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626000708765839": {
    "bolag": "YunExpress",
@@ -147,9 +147,9 @@
    "order": "#4781",
    "fulfillment": "gid://shopify/Fulfillment/7147415175507",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626000704776376": {
    "bolag": "YunExpress",
@@ -158,7 +158,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138448998739",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000704583905": {
@@ -168,7 +168,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138448703827",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000704583681": {
@@ -178,7 +178,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138447982931",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000704583558": {
@@ -188,7 +188,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138447458643",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000704583467": {
@@ -198,7 +198,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138447130963",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2626000704775766": {
@@ -208,7 +208,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7138446573907",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625900709501896": {
@@ -218,7 +218,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7126951592275",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625900709501862": {
@@ -228,7 +228,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7126950379859",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625900705284141": {
@@ -238,7 +238,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7125537030483",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625900705284117": {
@@ -248,7 +248,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7125536997715",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625900705284190": {
@@ -258,7 +258,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7125536866643",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625800709473684": {
@@ -268,7 +268,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7124054737235",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625800705733412": {
@@ -278,7 +278,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7123750093139",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625700705387997": {
@@ -288,7 +288,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7118798029139",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625700705580450": {
@@ -298,7 +298,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7118796980563",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625600702980317": {
@@ -308,7 +308,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7117943505235",
    "registrerad": "2026-09-21",
    "status17": "Exception",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "FAILURE"
   },
   "YT2625500704701804": {
@@ -318,7 +318,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7117084590419",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625500704701754": {
@@ -328,7 +328,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7116916359507",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625400704794034": {
@@ -338,7 +338,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7114820747603",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625400704793838": {
@@ -347,9 +347,10 @@
    "order": "#4761",
    "fulfillment": "gid://shopify/Fulfillment/7114820321619",
    "registrerad": "2026-09-21",
-   "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
-   "status": "IN_TRANSIT"
+   "status17": "Delivered",
+   "senast": "2026-09-23T10:57",
+   "status": "DELIVERED",
+   "levererad": "2026-09-23"
   },
   "YT2625400704600868": {
    "bolag": "YunExpress",
@@ -368,9 +369,10 @@
    "order": "#4759",
    "fulfillment": "gid://shopify/Fulfillment/7113217638739",
    "registrerad": "2026-09-21",
-   "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
-   "status": "FAILURE"
+   "status17": "Delivered",
+   "senast": "2026-09-23T09:57",
+   "status": "DELIVERED",
+   "levererad": "2026-09-23"
   },
   "YT2625300708427583": {
    "bolag": "YunExpress",
@@ -390,7 +392,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7112079114579",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625300704529234": {
@@ -400,7 +402,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7112079016275",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625200709130022": {
@@ -410,7 +412,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7110518145363",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625200708990657": {
@@ -420,7 +422,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7110518014291",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625200709179912": {
@@ -430,7 +432,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7110517817683",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625200704251039": {
@@ -451,7 +453,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7109424283987",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2625100709629132": {
@@ -493,9 +495,10 @@
    "order": "#4747",
    "fulfillment": "gid://shopify/Fulfillment/7107181510995",
    "registrerad": "2026-09-21",
-   "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
-   "status": "IN_TRANSIT"
+   "status17": "Delivered",
+   "senast": "2026-09-23T10:57",
+   "status": "DELIVERED",
+   "levererad": "2026-09-23"
   },
   "YT2625100709629157": {
    "bolag": "YunExpress",
@@ -613,9 +616,9 @@
    "order": "#4799",
    "fulfillment": "gid://shopify/Fulfillment/7227052032339",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626400712427840": {
    "bolag": "YunExpress",
@@ -623,9 +626,9 @@
    "order": "#4798",
    "fulfillment": "gid://shopify/Fulfillment/7227051770195",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626400712241167": {
    "bolag": "YunExpress",
@@ -633,9 +636,9 @@
    "order": "#4797",
    "fulfillment": "gid://shopify/Fulfillment/7227051639123",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626400712241118": {
    "bolag": "YunExpress",
@@ -643,9 +646,9 @@
    "order": "#4796",
    "fulfillment": "gid://shopify/Fulfillment/7227051409747",
    "registrerad": "2026-09-21",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2625000712420380": {
    "bolag": "YunExpress",
@@ -709,7 +712,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7092072251731",
    "registrerad": "2026-09-21",
    "status17": "Exception",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "FAILURE"
   },
   "YT2624700707776107": {
@@ -752,7 +755,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7087191982419",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2624700706189773": {
@@ -861,7 +864,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7071756583251",
    "registrerad": "2026-09-21",
    "status17": "InTransit",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "IN_TRANSIT"
   },
   "YT2624300706218316": {
@@ -1167,9 +1170,9 @@
    "order": "#4801",
    "fulfillment": "gid://shopify/Fulfillment/7228705374547",
    "registrerad": "2026-09-22",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626500705320520": {
    "bolag": "YunExpress",
@@ -1177,9 +1180,9 @@
    "order": "#4800",
    "fulfillment": "gid://shopify/Fulfillment/7228705341779",
    "registrerad": "2026-09-22",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626500708992713": {
    "bolag": "YunExpress",
@@ -1187,9 +1190,9 @@
    "order": "#4802",
    "fulfillment": "gid://shopify/Fulfillment/7230175674707",
    "registrerad": "2026-09-22",
-   "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
-   "status": "CONFIRMED"
+   "status17": "InTransit",
+   "senast": "2026-09-23T11:57",
+   "status": "IN_TRANSIT"
   },
   "YT2626600705531785": {
    "bolag": "YunExpress",
@@ -1198,7 +1201,7 @@
    "fulfillment": "gid://shopify/Fulfillment/7231791071571",
    "registrerad": "2026-09-23",
    "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
    "status": "CONFIRMED"
   },
   "YT2626600705338413": {
@@ -1206,21 +1209,30 @@
    "kod": 190008,
    "order": "#4806",
    "fulfillment": "gid://shopify/Fulfillment/7231791038803",
-   "registrerad": "2026-09-23"
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
   },
   "YT2626600705338389": {
    "bolag": "YunExpress",
    "kod": 190008,
    "order": "#4805",
    "fulfillment": "gid://shopify/Fulfillment/7231790481747",
-   "registrerad": "2026-09-23"
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
   },
   "YT2626600705531835": {
    "bolag": "YunExpress",
    "kod": 190008,
    "order": "#4804",
    "fulfillment": "gid://shopify/Fulfillment/7231790416211",
-   "registrerad": "2026-09-23"
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
   },
   "YT2626600705338298": {
    "bolag": "YunExpress",
@@ -1229,16 +1241,46 @@
    "fulfillment": "gid://shopify/Fulfillment/7231790055763",
    "registrerad": "2026-09-23",
    "status17": "InfoReceived",
-   "senast": "2026-09-23T05:57",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
+  },
+  "YT2626600708802381": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#4810",
+   "fulfillment": "gid://shopify/Fulfillment/7232751272275",
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
+  },
+  "YT2626600708609158": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#4809",
+   "fulfillment": "gid://shopify/Fulfillment/7232751206739",
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
+   "status": "CONFIRMED"
+  },
+  "YT2626600708802225": {
+   "bolag": "YunExpress",
+   "kod": 190008,
+   "order": "#4808",
+   "fulfillment": "gid://shopify/Fulfillment/7232750649683",
+   "registrerad": "2026-09-23",
+   "status17": "InfoReceived",
+   "senast": "2026-09-23T11:57",
    "status": "CONFIRMED"
   }
  },
  "senaste_korning": {
-  "datum": "2026-09-23T05:57:35.293Z",
-  "ordrar": 118,
+  "datum": "2026-09-23T11:57:25.534Z",
+  "ordrar": 121,
   "paket": 58,
-  "registrerade": 5,
-  "skrivna": 2,
+  "registrerade": 0,
+  "skrivna": 1,
   "fel": 0,
   "torr": false
  }

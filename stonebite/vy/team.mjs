@@ -11,7 +11,7 @@
 import { esc, attr, kort, panel, tabell, tomt, block, status, stapel, tal, t, sprak } from './delar.mjs';
 import { sidhuvud } from './layout.mjs';
 import { sedan } from '../berakna.mjs';
-import { ROLLER, ROLLNYCKLAR, roll as hamtaRoll, menyFor, harRatt, personIdFor } from '../roller.mjs';
+import { ROLLER, ROLLNYCKLAR, roll as hamtaRoll, menyFor, harRatt, personIdFor, serEkonomi } from '../roller.mjs';
 import { minBonus } from './bonus.mjs';
 import { SPRAKEN } from '../sprak.mjs';
 
@@ -179,12 +179,14 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
         <span class="bi">${esc(k.epost)}${person ? ` · ${esc(person.namn)}${person.extraRoller?.length ? ` (+${person.extraRoller.map((x) => ROLLER[x]?.namn ?? x).join(', ')})` : ''}` : ' · ingen person kopplad'}</span>
       </td>
       <td>
-        <form method="post" action="/app/konton/roll" style="display:flex;gap:6px;align-items:center">
+        ${serEkonomi(k.roll) ? `<div style="margin-bottom:6px">${status('kritisk', 'ser all ekonomi')}</div>` : ''}
+        <form method="post" action="/app/konton/roll" style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
           <input type="hidden" name="csrf" value="${attr(csrf)}">
           <input type="hidden" name="id" value="${attr(k.id)}">
           <select name="roll" style="height:34px;padding:0 8px;font-size:13px;border-radius:6px;border:1px solid var(--linje-stark);background:var(--papper);color:var(--ink)">
             ${ROLLNYCKLAR.map((rn) => `<option value="${attr(rn)}"${rn === k.roll ? ' selected' : ''}>${esc(ROLLER[rn].namn)}</option>`).join('')}
           </select>
+          <label class="mini" style="display:flex;gap:4px;align-items:center;white-space:nowrap" title="Krävs bara för Ägare och Chef — de ser omsättning, spend och ROAS"><input type="checkbox" name="ekonomi_ok" value="1"> ge all ekonomi</label>
           <button class="knapp liten tyst" type="submit">Spara</button>
         </form>
       </td>
@@ -271,9 +273,12 @@ export function kontonSida({ konton, anvandare, personer = [], butiker = [], med
               ${ROLLNYCKLAR.filter((rn) => !['agare', 'chef'].includes(rn)).map((rn) => `<option value="${attr(rn)}">${esc(ROLLER[rn].namn)}</option>`).join('')}
             </select>
           </label>
+          <div class="falt" style="margin:0"><span>Ska se all ekonomi?</span>
+            <label style="display:flex;gap:6px;align-items:center;min-height:34px"><input type="checkbox" name="ekonomi_ok" value="1"> Ja — bara Ägare och Chef</label>
+          </div>
           <button class="knapp" type="submit">Skapa konto</button>
         </form>`,
-        fot: 'Förnamnet är hur systemet hittar personen i en recension. Butikerna styr veckobonusarna (tom inkorg, svarstid) — en stjärna betyder alla butiker, även de som byggs sen.',
+        fot: 'Förnamnet är hur systemet hittar personen i en recension. Butikerna styr veckobonusarna (tom inkorg, svarstid) — en stjärna betyder alla butiker, även de som byggs sen. Kundtjänst och VA:er får aldrig Chef: den rollen ser omsättning, spend och ROAS för alla butiker, och kräver därför kryssrutan.',
       }),
     })}
 

@@ -381,9 +381,12 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   (`/policies/refund-policy`) säger också 30. **Axels beslut 2026-09-22,
   alternativ B: 14 dagar.** `tvister.returfonster_dagar` är 14 i
   Bäverbutikens brandfil sedan dess, så returmejlet och tvist-SOP:ernas
-  platshållare säger 14. ⚠️ Policysidan i Shopify och SOP 18 i Notion sade
-  fortfarande 30 vid beslutet — de är Axels respektive VA:ns att ändra, och
-  tills sidan är ändrad kan en kund peka på dess 30 dagar.
+  platshållare säger 14. Policysidan i Shopify och SOP 18 i Notion sade
+  fortfarande 30 vid beslutet. ✅ **Båda är 14 sedan 2026-09-23:** SOP 18
+  pekar på Store facts (skriven ur repot), och Axel ändrade policysidan
+  själv — mätt samma dag med `curl` mot `/policies/refund-policy?country=SE`:
+  bara 14-dagarsmeningar, noll träffar på "30 dagar", reaundantaget borta.
+  Ingen sida i butiken säger 30 längre.
 - Utkastet "Niklas Hurtig, Re:" i Drafts är daterat 2026-08-19 och kommer
   inte från autosvaret (som byggdes 2026-09-21). Axels invändning gäller
   ändå som regel: nämn fraktbolaget för sista biten vid namn (det gör
@@ -418,7 +421,30 @@ skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
 
-### I drift TORRT sedan 2026-09-22 kväll — timrutin, SOP till VA:n, Roundcubes cache
+### ⛔ SKARPT sedan 2026-09-23 ~13:10 CEST — Axels beslut A
+
+Axel trodde botten redan skickade ("Nej va??? Varför kör inte botten, den ska
+ju skicka meddelandena på arga kunderna"). Två vägar lades fram: A skarpt för
+allt nu (två klick på Railway), B ett nytt läge med skarpt bara för arga och
+utkast för enkla tills 20 rätt (rekommenderat, men 2–3 h till live). Han valde
+A, bad om hela beskrivningen av flödet, spärrarna och risken först, och satte
+sedan `AUTOSVAR_LAGE=skarpt` + Deploy på Railway själv. 20-regeln skrotades
+vid räkningen 1 (Lars #6898, första utkastet under Railway, rätt: order på
+e-posten, "hos DHL för sista biten", bävernummer och länk). Skarpt ändrar en
+enda rad: `utkast: torr` blir Skicka. Fönstret 72 h, ett svar per tråd, VA:ns
+kund i 14 dagar, löftesspärren och 20 per varv gäller som förut. Lars utkast
+skickar botten inte (tråden räknas som svarad) — Axel skickade det själv
+13:17. ✅ **Live 13:18:45 CEST, mätt 13:19 på `/halsa`** (`lage: skarpt`,
+`kor: true`). ⚠️ Variabelbytet gav en deploy av SAMMA bygge (`snapshot`
+07:05 UTC kvar) — fraserna ur PR #132 är inte live förrän nästa bygge.
+⚠️ Axel skickade samtidigt (13:18:33, före bottens start) det gamla
+Niklas Hurtig-utkastet från 2026-08-19 (VA:ns, order 5032, "fortfarande
+under transport … i Sverige") — ett fem veckor gammalt svar till en kund;
+inte bottens, men Niklas bör få rätt läge av VA:n. Drafts var tom 13:20.
+Store facts och VA-SOP:en säger Live sedan samma dag. Botten drar inga
+Claude-credits (ingen modell), bara Railways CPU.
+
+### I drift TORRT 2026-09-22 kväll → 2026-09-23 lunch — timrutin, SOP till VA:n, Roundcubes cache
 
 Axels order 2026-09-22 kväll: "fixa bara SOP:n och sätt igång AI-kundsupport-
 botten, och visa mig vad den skickar till folk … granska utkasten själv … skriv
@@ -463,9 +489,9 @@ Bäverbutiken först, sedan samma sak överallt).
 - **SOP 18 pekar nu på Store facts** i stället för "30 dagar" (åtta ställen +
   den svenska mallen), och Store facts säger **14 dagar** (Axels beslut B
   2026-09-22, samma som brandfilen och returmejlet). Notion-sidorna skrivs ur
-  repot, så VA:n kunde inte ändra dem själv. ⚠️ Policysidan i Shopify säger
-  fortfarande 30 — Axels klick; Store facts säger åt VA:n att inte
-  argumentera med en kund som citerar den.
+  repot, så VA:n kunde inte ändra dem själv. ✅ Policysidan i Shopify säger
+  också 14 sedan 2026-09-23 (Axels klick, mätt samma dag: noll "30 dagar"
+  på sidan) — Store facts uppdaterad och omskriven till Notion samma dag.
 - **Roundcube listar ur cache:** `listaSida` skickar `_refresh=1` sedan i
   kväll. Mätt 2026-09-22 23:40 CEST: Hans mejl, nyss flyttat av autosvaret till
   `INBOX.VA-PRIO`, gav `messagecount 0, exists 1` utan flaggan och 1 med — VA-kön
@@ -488,9 +514,19 @@ Bäverbutiken först, sedan samma sak överallt).
   "transporten stått stilla sedan den 18 september. Vad händer? Ordernummer:
   #6655", "har inte fått bekräftelsemejlet … kan inte spåra". Botten är alltså
   försiktig åt rätt håll (tiger hellre än gissar) men svarade på 1 av 34.
-  Nästa steg när Axel sagt ja: fraserna in i `klassificering.mjs`
-  (`var_ar_ordern`, `leveranstid`, `orderbekraftelse`) med tester, så
-  torrläget ger fler utkast att döma.
+  ✅ **Inlagda 2026-09-23 (Axels beslut A):** `klassificering.mjs` känner
+  "vart har/är min order", "tagit vägen", "hur länge får man vänta",
+  "vänta på leverans", "när min beställning kommer", "undrar när min …",
+  "vad händer med min order", "stått/står still", "inte rört sig", "inte
+  uppdaterat", "kan inte spåra", "bekräftelsemejl", "inte fått
+  orderbekräftelse" (+ nb/da/en/fi); "inte fått vår order/vårt paket" är
+  `ej_levererad` (lugnt ⇒ WISMO). `hinkar.LEVERANSTID` tar "hur länge får man
+  vänta" (utan order ⇒ svaret före köp, med order ⇒ WISMO), och
+  `namnerStillaSparning` räknar "transporten/paketet stått stilla" som stilla
+  spårning (SOP 02-raden). Bredden är avsiktligt smal: "undrar när ni får in
+  storlek L" är fortfarande en produktfråga, och en retur som nämner spårning
+  går aldrig till ENKEL (`ALDRIG_ENKEL` läser alla träffar, inte bara
+  kategorin). Testade på de sex riktiga formuleringarna.
 - **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
   svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
   "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig

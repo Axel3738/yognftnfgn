@@ -53,9 +53,12 @@ export const ROLLER = Object.freeze({
     sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig', 'konton'],
     ratt: ['pengar', 'spend', 'marginal', 'konton', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
+  // ⚠️ Namnen är medvetet övertydliga sedan 2026-09-23: Mechiles konto stod som
+  // "Chef" (rollen låg direkt under Ägare i listan och heter nästan som hennes
+  // titel) och hon såg dygnets omsättning, spenden och ROAS för alla butiker.
   chef: {
-    namn: 'Chef',
-    beskrivning: 'Allt utom vem som får logga in.',
+    namn: 'Chef — ser ALL ekonomi',
+    beskrivning: 'Allt utom vem som får logga in. Ser omsättning, spend och ROAS för alla butiker.',
     sidor: ['oversikt', 'varumarken', 'kalender', 'butiker', 'annonser', 'produkttest', 'redigerare', 'kundtjanst', 'recensioner', 'leverans', 'bonus', 'system', 'mig'],
     ratt: ['pengar', 'spend', 'marginal', 'alla-butiker', 'bonus-alla', 'godkanna', 'system', 'varumarken'],
   },
@@ -74,7 +77,7 @@ export const ROLLER = Object.freeze({
     ratt: [],
   },
   support_chef: {
-    namn: 'Head of customer support',
+    namn: 'Head of customer support — ingen ekonomi',
     beskrivning: 'Kundtjänst, recensioner, paket och hela VA-teamets bonus. Godkänner insatser. Ingen ekonomi.',
     sidor: ['kundtjanst', 'recensioner', 'leverans', 'bonus', 'kalender', 'mig'],
     ratt: ['bonus-alla', 'godkanna'],
@@ -100,6 +103,21 @@ export function farSe(anvandare, sidnyckel) {
   if (!r) return false;
   if (!SIDOR.some((s) => s.nyckel === sidnyckel)) return false;
   return r.sidor.includes(sidnyckel);
+}
+
+/** Ser rollen all ekonomi (omsättning, spend, ROAS)? Bara ägare och chef. Ren. */
+export function serEkonomi(rollnamn) {
+  return Boolean(roll(rollnamn)?.ratt.includes('pengar'));
+}
+
+/**
+ * Felet Konton-sidan visar när någon får en ekonomiroll utan att kryssrutan
+ * är ibockad. Att ge fel person all ekonomi går inte att ta tillbaka — det
+ * hen redan sett har hen sett — så det kräver ett andra, uttryckligt ja.
+ */
+export function ekonomiVarning(rollnamn) {
+  const r = roll(rollnamn);
+  return `Rollen "${r?.namn ?? rollnamn}" ser ALL ekonomi: omsättning, spend och ROAS för alla butiker. Kryssa i "ge all ekonomi" och spara igen om det verkligen är meningen. Kundtjänst och VA:er ska ha "Head of customer support" eller "Kundtjänst (VA)".`;
 }
 
 /** Får användaren se den här sortens tal? ('pengar', 'spend', 'konton' …) */

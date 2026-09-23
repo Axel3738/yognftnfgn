@@ -934,6 +934,30 @@ test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild 
   }
 });
 
+test('Axels beslut A 2026-09-23: de WISMO-fraser rutinen missade ger utkast — stilla transport, "när kommer min beställning", "tagit vägen", leveranstid utan order', async () => {
+  assert.equal(namnerStillaSparning('Transporten stått stilla sedan den 18 september. Vad händer?'), true);
+  assert.equal(namnerStillaSparning('Pakken står stille, ikke rørt seg.'), true);
+  // Tre riktiga formuleringar från samma slags kund (Anna har order #1042 på väg) — var för sig, så "ett svar per kund och dygn" inte stör mätningen.
+  const wismo = [
+    { uid: 95, ra: ra({ fran: 'Anna Andersson <anna@gmail.com>', amne: 'Vad händer?', text: 'Transporten stått stilla sedan den 18 september. Vad händer? Ordernummer: #1042', id: '<w95@gmail.com>' }) },
+    { uid: 96, ra: ra({ fran: 'Anna Andersson <anna@gmail.com>', amne: 'Beställning', text: 'Undrar när min beställning kommer, beställde 9-9.', id: '<w96@gmail.com>' }) },
+    { uid: 97, ra: ra({ fran: 'Anna Andersson <anna@gmail.com>', amne: 'Vart har min order tagit vägen?', text: 'Är betald.', id: '<w97@gmail.com>' }) },
+  ];
+  for (const m of wismo) {
+    const b = new FalskBrevlada({ INBOX: [m] });
+    const r = await kor(b);
+    assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].atgard], ['ENKEL', 'wismo', 'utkast'], `uid ${m.uid}: ${r.rader[0].orsak}`);
+    const t = b.utkast()[0].text;
+    assert.match(t, /#1042/);
+    assert.equal(/framme i Sverige|skickades|YunExpress/.test(t), false, `uid ${m.uid}: inget avsändningsdatum, fraktbolag eller land`);
+  }
+  // Leveranstid utan order och utan ordertext ⇒ svaret före köp, ingen order behövs.
+  const b98 = new FalskBrevlada({ INBOX: [{ uid: 98, ra: ra({ fran: 'Nyfiken <ny@x.se>', amne: 'Leverans', text: 'Hej, hur länge får man vänta på leverans?', id: '<w98@x.se>' }) }] });
+  const r98 = await kor(b98);
+  assert.deepEqual([r98.rader[0].hink, r98.rader[0].typ, r98.rader[0].atgard], ['ENKEL', 'leveranstid', 'utkast'], r98.rader[0].orsak);
+  assert.match(b98.utkast()[0].text, /Leveranstiden är 7-14 dagar från att paketet skickats/);
+});
+
 test('SOP 38: företagsuppgifter besvaras direkt ur brandfilen — bara de godkända; saknas blocket ⇒ VA:n', async () => {
   const fraga = { uid: 95, ra: ra({ fran: 'Bo <bo@x.se>', amne: 'Organisationsnummer', text: 'Hej, jag behöver ert organisationsnummer och företagsadress för min bokföring.', id: '<w95@x.se>' }) };
   const b = new FalskBrevlada({ INBOX: [fraga] });

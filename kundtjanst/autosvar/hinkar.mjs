@@ -67,6 +67,8 @@ const OPPETTIDER = ['öppettider', 'när svarar ni', 'telefonnummer', 'ringa er'
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 const LEVERANSTID = ['leveranstid', 'hur lång tid tar leverans', 'hur lång leveranstid', 'hur snabbt levererar', 'när levererar ni', 'leveringstid', 'hvor lang tid tar leverans', 'hvor lang leveringstid', 'toimitusaika', 'kuinka kauan toimitus',
   'delivery time', 'how long (does|will) (the )?(delivery|shipping) take', 'shipping time', 'how long until',
+  // "hur länge får man vänta på leverans" (rutinens första körning 2026-09-22, Axels beslut A 2026-09-23) — utan order är det frågan före köp, med order WISMO (HAR_ORDER nedan).
+  'hur länge (får|ska|måste|behöver) (man|jag|vi) vänta', 'vänta på leverans', 'how long (do|will) (i|we) (have to )?wait',
 ].map((o) => new RegExp(`(^|[^a-zåäöøæ])${o}`, 'i'));
 // SOP 38: företagsuppgifter är offentliga och ska gå ut direkt — bara de godkända (brandfilens svar.foretag).
 const FORETAG = ['organisationsnummer', 'org\\.?\\s?nr', 'org-?nummer', 'orgnummer', 'företagsuppgifter', 'bolagsuppgifter', 'momsregistrerings', 'vat.?(number|nummer|nr)', 'juridisk[at]? namn', 'vilket bolag', 'vilket företag (står|är det som)',

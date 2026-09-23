@@ -12,7 +12,7 @@ mode it is in on your store, and the name it signs with, is on **Store facts**.
 ## 1. What it is
 
 A small program, not a person and not a chat AI. It reads the new customer emails
-once an hour and sorts each one into one of three buckets with fixed rules. It writes
+every minute, around the clock, and sorts each one into one of three buckets with fixed rules. It writes
 its replies from templates a human wrote, and the only things it fills in are facts
 it looked up itself: the order number, whether the order has shipped, the latest
 carrier scan, the store's tracking link and parcel number.

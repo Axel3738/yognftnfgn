@@ -148,6 +148,18 @@ test('bonusrollerna är primärrollen plus extra', () => {
 
 test('rollnamn slås upp oberoende av versaler och mellanslag', () => {
   assert.equal(roll('AGARE').namn, 'Ägare');
-  assert.equal(roll(' chef ').namn, 'Chef');
+  assert.equal(roll(' chef ').namn, 'Chef — ser ALL ekonomi');
   assert.equal(roll('finns-inte'), null);
+});
+
+test('bara ägare och chef ser all ekonomi — och namnen säger det själva', async () => {
+  const { serEkonomi, ekonomiVarning, ROLLER } = await import('../roller.mjs');
+  assert.equal(serEkonomi('agare'), true);
+  assert.equal(serEkonomi('chef'), true);
+  for (const r of ['produkttest', 'redigerare', 'support_chef', 'va', 'finns-inte']) assert.equal(serEkonomi(r), false, r);
+  // 2026-09-23: "Chef" och "Head of customer support" låg bredvid varandra i
+  // listan och Mechile fick fel roll. Namnen bär skillnaden nu.
+  assert.match(ROLLER.chef.namn, /ekonomi/i);
+  assert.match(ROLLER.support_chef.namn, /ingen ekonomi/i);
+  assert.match(ekonomiVarning('chef'), /Kryssa i/);
 });
