@@ -290,6 +290,36 @@ export function valjAdsetForKoncept(adsets, namn, koncept = null) {
   return träffar[0] ?? null;
 }
 
+/** Ren: konceptkoden sist i ett adsetnamn — efter " - " eller "_".
+ *  "CARASHELL_NO_Takovertrekket - GT" → 'GT', "DRYTREK_SE_PD" → 'PD'.
+ *  Ingen kod sist → null. */
+export function konceptUrAdsetnamn(namn) {
+  const m = /(?:\s-\s|_)([A-Za-z]{1,4})$/.exec(String(namn ?? '').trim());
+  return m ? m[1].toUpperCase() : null;
+}
+
+/**
+ * Ren: adsets vars konceptkod KROCKAR med `koncept` — den ena koden är den
+ * andras början (G vs GT, PD vs P). Exakt samma kod räknas inte: den är en
+ * träff, inte en krock, och tas av valjAdsetForKoncept.
+ *
+ * Varför den finns (mätt 2026-09-23 på CaraShell NO): presentvinkeln heter
+ * `GT` i Sverige och `G` i Norge (`products/carashell/takskyddet/dna.md`,
+ * Norge-rundan 2026-09-14). Den mekaniska namnöversättningen skapade
+ * 2026-09-18 ett ANDRA presentadset bredvid det som redan spenderade, och
+ * vinkeln körde sedan i två adsets i samma CBO: `- G` 2 246,04 kr / 5 köp,
+ * `- GT` 2 470,82 kr / 4 köp. Regeln stod bara i dna.md — alltså i en fil,
+ * inte i koden, och då höll den inte.
+ */
+export function krockandeAdsets(adsets, koncept) {
+  const k = String(koncept ?? '').toUpperCase().replace(/[^A-Z]/g, '');
+  if (!k) return [];
+  return (adsets ?? []).filter((a) => {
+    const kk = konceptUrAdsetnamn(a?.name);
+    return kk && kk !== k && (kk.startsWith(k) || k.startsWith(kk));
+  });
+}
+
 /**
  * Ren: namnet på ett NYTT adset följer kampanjens egen konvention. Är alla
  * befintliga adsets döpta `<stam>_<KOD>` med samma stam (DRYTREK_SE_PD,
@@ -314,6 +344,22 @@ export async function hittaEllerSkapaAdset({ kampanjId, act, namn, koncept = nul
 
   const träff = valjAdsetForKoncept(adsets, namn, koncept);
   if (träff) return { adset: träff, skapad: false };
+
+  // Innan ett nytt adset föds: bär kampanjen redan samma vinkel under en
+  // konceptkod som bara skiljer på en bokstav (G ↔ GT)? Då är det samma
+  // vinkel under två namn, och ett nytt adset delar dess budget i CBO:n.
+  // Stoppet är avsiktligt dyrare än en varning — det som bara varnade stod
+  // i dna.md och upprepades ändå (CaraShell NO 2026-09-18).
+  const krockar = krockandeAdsets(adsets, koncept);
+  if (krockar.length) {
+    const lista = krockar.map((a) => `"${a.name}" (${a.status ?? 'okänd status'})`).join(', ');
+    throw new Error(
+      `Konceptet "${koncept}" skulle skapa ett nytt adset, men kampanjen har redan ${lista} — `
+      + 'samma vinkel under en konceptkod som skiljer en bokstav. Två adsets för en vinkel delar '
+      + 'budgeten i en CBO. Ladda upp med det befintliga adsetets kod i annonsnamnet, eller be '
+      + 'ägaren om besked. Inget adset skapat.',
+    );
+  }
   namn = nyttAdsetnamn(adsets, namn, koncept);
 
   const ordnade = [...adsets].sort((a, b) =>

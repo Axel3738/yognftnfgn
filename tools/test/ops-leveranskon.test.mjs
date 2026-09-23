@@ -371,3 +371,25 @@ test('tabell: utan granskning skrivs ingen slutkortsrad — "inte granskad" är 
   assert.doesNotMatch(t, /slutkort:/);
   assert.match(t, /1 rad\(er\) i kön · 1 att ladda upp · 0 finns redan$/m);
 });
+
+test('namnMedKoncept + krockandeKoder: annonsen som ligger uppe under marknadens egen konceptkod hittas', async () => {
+  const { namnMedKoncept, krockandeKoder } = await import('../ops-leveranskon.mjs');
+  const t = tolkaNamn('CaraShellRoof_GT_4_1');
+  assert.equal(namnMedKoncept(t, 'G'), 'CaraShellRoof_G_4_1');
+  assert.equal(namnMedKoncept(tolkaNamn('CaraShellRoof_GT_5'), 'G'), 'CaraShellRoof_G_5', 'utan variant');
+  assert.equal(namnMedKoncept(t, ''), null);
+  assert.equal(namnMedKoncept(null, 'G'), null);
+  const adsets = [
+    { id: '1', name: 'CARASHELL_NO_Takovertrekket - G', status: 'ACTIVE' },
+    { id: '2', name: 'CARASHELL_NO_Takovertrekket - GT', status: 'ACTIVE' },
+    { id: '3', name: 'CARASHELL_NO_Takovertrekket - SP', status: 'ACTIVE' },
+  ];
+  assert.deepEqual(krockandeKoder(adsets, 'GT'), ['G']);
+  assert.deepEqual(krockandeKoder(adsets, 'SP'), []);
+  // Hela kedjan: GT-namnet finns inte i kontot, G-namnet gör det ⇒ ingen ny uppladdning.
+  const karta = dubblettKarta([{ id: '120249089471580172', name: 'CaraShellRoof_NO_G_4_1' }]);
+  assert.equal(dubblett(malNamn('CaraShellRoof_GT_4_1', 'NO'), karta).finns_i_meta, false);
+  const alias = malNamn(namnMedKoncept(t, krockandeKoder(adsets, 'GT')[0]), 'NO');
+  assert.equal(alias, 'CaraShellRoof_NO_G_4_1');
+  assert.equal(dubblett(alias, karta).ad_id, '120249089471580172');
+});

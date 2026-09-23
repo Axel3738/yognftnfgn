@@ -785,6 +785,11 @@ US-runda med nya rader. Rörde ingen kampanj.
 inte går att översätta är rättad där: `oversatt-us.py` (in-place-vägen från runda 3)
 tar nu `--batch … --marknad NO`. NO-copyn från 2026-09-17 återanvänds.
 `GT_4_1` (batch #2) saknar fortfarande NO-annons (`klar_i.NO: false` i Approved).
+⛔ **Fel — rättat 2026-09-23.** Annonsen har legat live hela tiden, som
+`CaraShellRoof_NO_G_4_1` (`120249089471580172`, ACTIVE sedan 2026-09-14).
+Kön letade efter den mekaniska namnöversättningen `CaraShellRoof_NO_GT_4_1`
+och hittade den aldrig, eftersom presentvinkeln heter `GT` i Sverige och `G`
+i Norge. Se rundan 2026-09-23 nedan.
 
 ---
 
@@ -1820,3 +1825,48 @@ Samma två rader, samma md5. Slutkortet bär fortfarande `carashell.se`, så
 båda hölls kvar (ingen uppladdning, ingen statusändring, inga nya
 kommentarer). Kontot har vuxit 730 → 748 annonser sedan i går — spegling och
 översättning rullar som de ska, det är bara de här två som står stilla.
+
+## 2026-09-23 — NO-rundan: inget att översätta, men kön ljög om en rad
+
+**Kön:** 13 rader i `SE-ACTIVE to be translated`, **alla 13 redan live** i
+`CARASHELL_NO_Takovertrekket` (speglingens arbete), tillbakalästa ur Meta som
+ACTIVE i ACTIVE adset. Ingen fil hämtad, inget renderat, 0 HeyGen-krediter,
+ingen Notion-status rörd — raderna står kvar tills US-rundan bär dem.
+Kampanjen ACTIVE, 12 adsets, ärvd länk
+`carashell.se/nb/products/takskyddet?country=NO`, pris **1 106 NOK** läst live.
+
+**Fyndet: `GT_4_1` har aldrig saknat norsk annons.** Approved-passet sa
+"1 rad utan NO-annons" — samma rad som batch-loggen påstått sedan 2026-09-17.
+Den ligger live som `CaraShellRoof_NO_G_4_1` (`120249089471580172`) sedan
+2026-09-14. Presentvinkeln heter **`GT` i Sverige och `G` i Norge**, vilket
+`dna.md` skrev ner redan 2026-09-14 — men bara i `dna.md`. Kön jämförde mot
+den mekaniska översättningen `..._NO_GT_4_1` och dömde raden som saknad.
+Hade någon agerat på den domen hade samma creative gått upp en andra gång,
+under två namn, i två adsets.
+
+**Och det hade redan hänt en gång.** Mätt i dag i samma CBO:
+
+| Adset | Skapat | Annonser | Spend | Köp |
+|---|---|---|---|---|
+| `CARASHELL_NO_Takovertrekket - G` | 2026-09-11 | 4 | 2 246,04 kr | 5 |
+| `CARASHELL_NO_Takovertrekket - GT` | 2026-09-18 | 7 | 2 470,82 kr | 4 |
+
+Speglingen 2026-09-18 skapade `- GT` bredvid `- G`, alltså exakt det
+dna.md-regeln skulle hindra. **Ingenting rörts** — båda är live med spend, och
+en annons som redan är live stängs aldrig av i efterhand. Meta kan inte flytta
+en annons mellan adsets, så det går inte att slå ihop utan att bygga om
+annonser. Ägarens beslut; rekommendationen är att låta båda gå och läsa
+G + GT tillsammans i analysen.
+
+**Två spärrar i koden i stället för i en fil** (`npm test` 2 093 gröna):
+1. `krockandeAdsets` + stoppet i `hittaEllerSkapaAdset` (`tools/meta-lib.mjs`):
+   ett nytt adset föds aldrig när kampanjen redan bär samma vinkel under en
+   konceptkod som skiljer en bokstav. Uppladdningen stannar och säger varför.
+2. `namnMedKoncept` + `krockandeKoder` (`tools/ops-leveranskon.mjs`): innan en
+   rad döms som "saknas i Meta" letar kön under marknadens egen konceptkod.
+   Efter rättningen: **45 Approved-rader, 0 utan NO-annons** (före: 1).
+   Kön varnar dessutom varje körning så länge två adsets bär samma vinkel.
+
+**Lärdomen:** en regel som bara står i `dna.md` är en regel som upprepas ändå.
+Den här stod skriven, med motivering, fyra dagar innan den bröts av en annan
+rutin. Skriv spärren där arbetet sker.
