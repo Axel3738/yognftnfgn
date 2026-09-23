@@ -75,10 +75,11 @@ tvister:
   # ⚠️ Axels beslut 2026-09-22 (alternativ B): returfönstret är 14 dagar från
   # mottagandet — samma som den lagstadgade ångerrätten. Autosvaret och
   # tvist-SOP:erna säger 14 sedan dess. Den publicerade policyn
-  # (policy_url nedan) och VA:ns SOP 18 i Notion sade fortfarande 30 vid
-  # beslutet ("Vi har 30 dagars returpolicy … från det att du mottog
-  # artikeln") — Axel ändrar policysidan i Shopify själv; tills dess kan en
-  # kund peka på sidans 30 dagar. FRÅN MOTTAGANDET gäller fortfarande:
+  # (policy_url nedan) sade 30 vid beslutet ("Vi har 30 dagars returpolicy …
+  # från det att du mottog artikeln") — Axel ändrade den 2026-09-23, och
+  # sidan mättes samma dag: bara 14-dagarsmeningar, noll träffar på "30
+  # dagar", och reaundantaget är också borta. Butiken säger alltså 14 överallt
+  # nu. FRÅN MOTTAGANDET gäller fortfarande:
   # leveranstiden är 3–4 veckor (mätt på tvistordrarna: #5418 beställd 16/8,
   # levererad 11/9 = 26 dagar), så fönstret öppnar en månad efter köpet.
   returfonster_dagar: 14

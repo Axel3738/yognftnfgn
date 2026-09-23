@@ -381,9 +381,12 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   (`/policies/refund-policy`) säger också 30. **Axels beslut 2026-09-22,
   alternativ B: 14 dagar.** `tvister.returfonster_dagar` är 14 i
   Bäverbutikens brandfil sedan dess, så returmejlet och tvist-SOP:ernas
-  platshållare säger 14. ⚠️ Policysidan i Shopify och SOP 18 i Notion sade
-  fortfarande 30 vid beslutet — de är Axels respektive VA:ns att ändra, och
-  tills sidan är ändrad kan en kund peka på dess 30 dagar.
+  platshållare säger 14. Policysidan i Shopify och SOP 18 i Notion sade
+  fortfarande 30 vid beslutet. ✅ **Båda är 14 sedan 2026-09-23:** SOP 18
+  pekar på Store facts (skriven ur repot), och Axel ändrade policysidan
+  själv — mätt samma dag med `curl` mot `/policies/refund-policy?country=SE`:
+  bara 14-dagarsmeningar, noll träffar på "30 dagar", reaundantaget borta.
+  Ingen sida i butiken säger 30 längre.
 - Utkastet "Niklas Hurtig, Re:" i Drafts är daterat 2026-08-19 och kommer
   inte från autosvaret (som byggdes 2026-09-21). Axels invändning gäller
   ändå som regel: nämn fraktbolaget för sista biten vid namn (det gör
@@ -456,9 +459,9 @@ Bäverbutiken först, sedan samma sak överallt).
 - **SOP 18 pekar nu på Store facts** i stället för "30 dagar" (åtta ställen +
   den svenska mallen), och Store facts säger **14 dagar** (Axels beslut B
   2026-09-22, samma som brandfilen och returmejlet). Notion-sidorna skrivs ur
-  repot, så VA:n kunde inte ändra dem själv. ⚠️ Policysidan i Shopify säger
-  fortfarande 30 — Axels klick; Store facts säger åt VA:n att inte
-  argumentera med en kund som citerar den.
+  repot, så VA:n kunde inte ändra dem själv. ✅ Policysidan i Shopify säger
+  också 14 sedan 2026-09-23 (Axels klick, mätt samma dag: noll "30 dagar"
+  på sidan) — Store facts uppdaterad och omskriven till Notion samma dag.
 - **Roundcube listar ur cache:** `listaSida` skickar `_refresh=1` sedan i
   kväll. Mätt 2026-09-22 23:40 CEST: Hans mejl, nyss flyttat av autosvaret till
   `INBOX.VA-PRIO`, gav `messagecount 0, exists 1` utan flaggan och 1 med — VA-kön
