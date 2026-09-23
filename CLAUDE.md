@@ -516,7 +516,15 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   repots `kundtjanst/autosvar/logg/`. ⛔ **SKARPT sedan 2026-09-23 ~13:10
   CEST — Axels beslut A** ("Nej va??? … Den ska ju skicka meddelandena på
   arga kunderna"), efter att ha fått hela flödet, spärrarna och risken
-  beskrivna: `AUTOSVAR_LAGE=skarpt` + Deploy på Railway, hans klick.
+  beskrivna: `AUTOSVAR_LAGE=skarpt` + Deploy på Railway, hans klick. ✅ **Live
+  13:18:45 CEST, mätt 13:19 på `/halsa`** (`lage: skarpt`, `kor: true`, 0
+  omstarter). ⚠️ Deployen efter variabelbytet ÅTERANVÄNDE bygget (`snapshot`
+  i `/halsa` stod kvar på 07:05 UTC) — kod som mergats efter ~09:10 CEST,
+  däribland WISMO-fraserna i PR #132, är inte live förrän nästa
+  snapshot-triggade bygge. Axel skickade Lars utkast själv 13:17 och,
+  utan att veta det, även det gamla Niklas Hurtig-utkastet från 19/8
+  (VA:ns, order 5032, "fortfarande under transport") 13:18:33 — tolv
+  sekunder före bottens start, alltså inte bottens. Drafts var tom 13:20.
   20-regeln skrotad vid räkningen 1 (Lars #6898, första utkastet under
   Railway, rätt). Skarpt = samma kod, `utkast: torr` blir Skicka; allt annat
   (72 h-fönster, ett svar per tråd, VA:ns kund i 14 dagar, löftesspärren,

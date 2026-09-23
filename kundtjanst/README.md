@@ -433,7 +433,14 @@ vid räkningen 1 (Lars #6898, första utkastet under Railway, rätt: order på
 e-posten, "hos DHL för sista biten", bävernummer och länk). Skarpt ändrar en
 enda rad: `utkast: torr` blir Skicka. Fönstret 72 h, ett svar per tråd, VA:ns
 kund i 14 dagar, löftesspärren och 20 per varv gäller som förut. Lars utkast
-skickar botten inte (tråden räknas som svarad) — Axel skickar det själv.
+skickar botten inte (tråden räknas som svarad) — Axel skickade det själv
+13:17. ✅ **Live 13:18:45 CEST, mätt 13:19 på `/halsa`** (`lage: skarpt`,
+`kor: true`). ⚠️ Variabelbytet gav en deploy av SAMMA bygge (`snapshot`
+07:05 UTC kvar) — fraserna ur PR #132 är inte live förrän nästa bygge.
+⚠️ Axel skickade samtidigt (13:18:33, före bottens start) det gamla
+Niklas Hurtig-utkastet från 2026-08-19 (VA:ns, order 5032, "fortfarande
+under transport … i Sverige") — ett fem veckor gammalt svar till en kund;
+inte bottens, men Niklas bör få rätt läge av VA:n. Drafts var tom 13:20.
 Store facts och VA-SOP:en säger Live sedan samma dag. Botten drar inga
 Claude-credits (ingen modell), bara Railways CPU.
 
