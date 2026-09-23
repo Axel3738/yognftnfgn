@@ -17,7 +17,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, appendFileSync } fr
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { raknaUt } from './motor.mjs';
-import { judgeMe, trustpilot, kundtjanstMatningar, produkttest, commission, sammanfattaRecensioner, sammanfattaProdukttest } from './kallor.mjs';
+import { judgeMe, trustpilot, kundtjanstMatningar, slaIhopTvister, produkttest, commission, sammanfattaRecensioner, sammanfattaProdukttest } from './kallor.mjs';
 
 export const ROT = dirname(dirname(fileURLToPath(import.meta.url)));
 export const REGLER = join(ROT, 'bonus', 'regler.json');
@@ -117,7 +117,7 @@ export function manadsperiod(manad = null, nu = new Date()) {
   return { namn: m, fran: `${m}-01`, till: `${m}-${String(sista).padStart(2, '0')}` };
 }
 
-export async function kor({ manad = null, utanNat = false, rot = ROT, env = process.env, nu = new Date(), logg = console.log } = {}) {
+export async function kor({ manad = null, utanNat = false, rot = ROT, env = process.env, nu = new Date(), logg = console.log, tvisterLive = null } = {}) {
   const regler = lasRegler(join(rot, 'bonus', 'regler.json'));
   const personer = lasPersoner(join(rot, 'bonus', 'personer.json'), join(datamapp(env, rot), 'personer-extra.json'));
   const insatser = lasInsatser(join(datamapp(env, rot), 'insatser.jsonl'));
@@ -129,6 +129,9 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
 
   const kt = kundtjanstMatningar(rot);
   kallor.push({ id: 'kundtjanst', status: kt.status, orsak: kt.orsak, antal: kt.tvister.length });
+  // Tvisterna direkt ur Shopify (när hämtningen skickar med dem) vinner över
+  // veckorapporten butik för butik — se slaIhopTvister.
+  const tvister = slaIhopTvister(kt.tvister, tvisterLive);
 
   const com = commission(rot);
   kallor.push({ id: 'commission', status: com.status, orsak: com.orsak, antal: com.rader.length });
@@ -169,7 +172,7 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
 
   const matningar = {
     recensioner,
-    tvister: kt.tvister,
+    tvister,
     kundtjanst: kt.veckor,
     produkttest: produkttestrader,
     commission: com.rader,
@@ -179,7 +182,7 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
   utfall.kallor = kallor;
   utfall.matningar = {
     recensioner: recensioner.length,
-    tvister: kt.tvister.length,
+    tvister: tvister.length,
     veckor: kt.veckor.length,
     produkttest: produkttestrader.length,
   };
@@ -188,7 +191,11 @@ export async function kor({ manad = null, utanNat = false, rot = ROT, env = proc
   utfall.detaljer = {
     recensioner: sammanfattaRecensioner(recensioner, personer),
     produkttest: sammanfattaProdukttest(produkttestrader),
-    tvister: kt.tvister.filter((t) => t.oppen).slice(0, 60),
+    // Väntar på svar först, sedan minst tid kvar. Taket är generöst: en
+    // tvist som klipps bort här syns inte på sajten, i larmet eller i kalendern.
+    tvister: tvister.filter((t) => t.oppen)
+      .sort((a, b) => (Number(Boolean(a.besvarad)) - Number(Boolean(b.besvarad))) || String(a.deadline ?? '9').localeCompare(String(b.deadline ?? '9')))
+      .slice(0, 150),
     program: regler.program,
     insatser: insatser.filter((i) => iPeriodenEnkel(i.datum, period)),
   };

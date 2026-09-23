@@ -103,6 +103,16 @@ källa rapporterar sitt eget läge på sidan **Drift**.
 - `kallor/shopify.mjs` — försäljning per butik och dag. Butikerna **upptäcks**
   (sparning/butiker.json + factory/butiker/*.yaml + varje `SHOPIFY_SHOP_*` i
   miljön som har nycklar bredvid sig). Ingen handskriven lista.
+- `kallor/shopify.mjs` `hamtaAllaTvister` — **tvisterna direkt ur Shopify i
+  varje hämtning** (sedan 2026-09-23; tidigare ur kundtjänstens veckorapport,
+  som stod still sedan 2026-09-14). 180 dagar bakåt + allt som fortfarande är
+  öppet, paginerat, ordernamnen i en fråga. Per butik: `ok` (lista kan vara
+  tom — då HAR butiken inga tvister), `saknas` (kör inte Shopify Payments)
+  eller `fel` med orsak. Läget står i `snapshot.tvister`, raderna i
+  `oppnaTvister`. Veckorapportens rader används bara för en butik Shopify inte
+  svarade för, märkta `kalla: 'veckorapport'` (`bonus/kallor.mjs`
+  `slaIhopTvister`). `under review` (bevisen inne) pingas, kalenderförs och
+  räknas som brådskande aldrig.
 - `kallor/meta.mjs` — spend, köp och ROAS per konto och kampanj. Läs-bart.
 - `kallor/repo.mjs` — det rutinerna redan skrivit: topplistan, kundtjänstens
   veckorapport, spårningen, nattvaktens beslut.

@@ -74,6 +74,9 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
   const tvister = (snapshot?.oppnaTvister ?? []).filter((tv) => tillhor(vm.id, brandForKundtjanst(tv.brand)) && tv.oppen !== false)
     .map((tv) => ({ ...tv, kvar: tv.deadline ? Math.ceil((new Date(tv.deadline).getTime() - nu.getTime()) / DAG) : null }))
     .sort((a, b) => (a.kvar ?? 999) - (b.kvar ?? 999));
+  // Tvistläget per butik ur Shopify (hamtaAllaTvister) — det som gör att
+  // "inga öppna tvister" betyder att Shopify svarat, inte att ingen frågat.
+  const tvistlage = (snapshot?.tvister?.butiker ?? []).filter((b) => tillhor(vm.id, brandForKundtjanst(b.id)));
   const leverans = (snapshot?.leverans?.butiker ?? []).filter((b) => (vm.leverans ?? []).includes(b.id));
   const rutiner = (snapshot?.rutiner?.rutiner ?? []).filter((r) => r.brand === vm.id);
   const rutinsummering = { ok: 0, sen: 0, saknas: 0, avstangd: 0, omatbar: 0 };
@@ -92,7 +95,7 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
 
   // Läget: rött om en tvist brådskar eller en rutin saknas, gult om något är
   // sent eller en människa skrivit i eskaleringskanalen, annars grönt.
-  const bradskande = tvister.filter((tv) => tv.kvar !== null && tv.kvar >= 0 && tv.kvar <= 3);
+  const bradskande = tvister.filter((tv) => !tv.besvarad && tv.kvar !== null && tv.kvar >= 0 && tv.kvar <= 3);
   let lage = 'bra';
   let lageord = 'allt rullar';
   if (rutinsummering.sen || manniskor48h.length) { lage = 'varning'; lageord = 'något att titta på'; }
@@ -107,7 +110,7 @@ export function brandData(vm, snapshot, { nu = new Date(), kalender = [], kontak
   const autosvar = snapshot?.autosvar ? { ...snapshot.autosvar, brands: autosvarBrands } : null;
   const butiksnamn = (id) => butiker.find((b) => b.id === id)?.namn ?? (snapshot?.butiker ?? []).find((b) => b.id === id)?.namn ?? kundtjanst.find((b) => b.id === id)?.namn ?? id;
 
-  return { vm, butiker, perValuta, konton, kundtjanst, tvister, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, butiksnamn, lage, lageord };
+  return { vm, butiker, perValuta, konton, kundtjanst, tvister, tvistlage, bradskande, leverans, rutiner, rutinsummering, rutinhandelser, kanaler, manniskor48h, egnaHandelser, harledda, kontakter: kontakterHar, beslut, larm, autosvar, butiksnamn, lage, lageord };
 }
 
 function tillhor(brandId, kundtjanstBrand) {
@@ -277,6 +280,27 @@ function flikOversikt(d, { nu }) {
   })}`;
 }
 
+/**
+ * Varför listan är tom — ur Shopifys svar per butik, aldrig en gissning.
+ * Lästa butiker ⇒ "Shopify visar inga öppna tvister" med tiden; olästa ⇒
+ * orsaken, så att en tom lista aldrig ser ut som noll tvister.
+ */
+function tvisterTomt(d) {
+  const lasta = d.tvistlage.filter((b) => b.status === 'ok' || b.status === 'saknas');
+  const olasta = d.tvistlage.filter((b) => !lasta.includes(b));
+  if (!d.tvistlage.length) return tomt('Inga öppna tvister', 'Tvisterna har inte lästs ur Shopify för det här varumärket.');
+  if (!lasta.length) return tomt('Tvisterna är okända', `Shopify gick inte att läsa: ${olasta.map((b) => `${b.namn} (${String(b.orsak ?? '').slice(0, 140)})`).join('; ')}`);
+  const nar = lasta.map((b) => b.hamtad).filter(Boolean).sort().pop();
+  const text = `Shopify visar inga öppna tvister (${lasta.map((b) => b.namn).join(', ')}${nar ? `, läst ${sedan(nar)}` : ''}).`;
+  return tomt('Inga öppna tvister', olasta.length ? `${text} Okända: ${olasta.map((b) => `${b.namn} (${String(b.orsak ?? '').slice(0, 100)})`).join('; ')}.` : text);
+}
+
+function tvistfot(lage) {
+  const nar = lage.map((b) => b.hamtad).filter(Boolean).sort().pop();
+  const olasta = lage.filter((b) => b.status !== 'ok' && b.status !== 'saknas');
+  return `${nar ? `Läst direkt ur Shopify ${sedan(nar)}.` : 'Ur kundtjänstens veckorapport.'}${olasta.length ? ` Okända: ${olasta.map((b) => b.namn).join(', ')}.` : ''}`;
+}
+
 function kallnamn(kalla) {
   return { tvist: t('ur tvisterna'), rutin: t('rutin enligt schema'), kontakt: t('uppföljning av kontakt') }[kalla] ?? kalla;
 }
@@ -377,7 +401,9 @@ function flikKundtjanst(d, { nu }) {
   ${block({
     titel: 'Öppna tvister',
     under: 'Minst tid kvar först. Chargebacks är de som faktiskt förloras — en obesvarad förfrågan eskalerar till chargeback.',
-    innehall: d.tvister.length ? panel({ innehall: tabell([{ titel: 'Order' }, { titel: 'Belopp', tal: true }, { titel: 'Sista svarsdag', tal: true }, { titel: 'Tid kvar' }, { titel: 'Svar' }], tvistrader) }) : tomt('Inga öppna tvister', d.kundtjanst.length ? 'Shopify visar inga öppna tvister för varumärket.' : 'Tvisterna läses ur Shopify via kundtjänstens brandfil — den saknas för det här varumärket.'),
+    innehall: d.tvister.length
+      ? panel({ innehall: tabell([{ titel: 'Order' }, { titel: 'Belopp', tal: true }, { titel: 'Sista svarsdag', tal: true }, { titel: 'Tid kvar' }, { titel: 'Svar' }], tvistrader), fot: tvistfot(d.tvistlage) })
+      : tvisterTomt(d),
   })}
   ${kategorier.length ? block({
     titel: 'Vanliga ärenden',

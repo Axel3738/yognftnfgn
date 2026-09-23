@@ -138,27 +138,86 @@ export function autosvarBlock(autosvar, { nu = new Date(), namnFor = (id) => id,
 
 // ------------------------------------------------------------ kundtjänst
 
+/**
+ * Tvisterna sidan visar. Finns `snapshot.tvister` (lästa direkt ur Shopify i
+ * varje timhämtning) är det de raderna — bara de som väntar på VÅRT svar;
+ * `under review` är redan inskickade och går inte att röra. Annars
+ * veckorapportens rader som förut. Ren.
+ */
+export function tvisterForSidan(snapshot, nu = new Date()) {
+  const live = snapshot?.tvister ?? null;
+  const k = snapshot?.kundtjanst ?? { brands: [] };
+  const alla = live
+    ? (snapshot?.oppnaTvister ?? [])
+      .filter((tv) => tv.oppen !== false && !tv.besvarad && tv.deadline)
+      .map((tv) => ({ ...tv, brand: butiksnamnFor(snapshot, tv.brand), kvar: dagarKvar(tv.deadline, nu) }))
+    : (k.brands ?? []).flatMap((b) => (b.tvister ?? [])
+      .filter((tv) => tv.deadline)
+      .map((tv) => ({ ...tv, brand: b.namn, kvar: dagarKvar(tv.deadline, nu) })));
+  const lasta = live ? live.butiker.filter((b) => b.status === 'ok' || b.status === 'saknas') : [];
+  const olasta = live ? live.butiker.filter((b) => !lasta.includes(b)) : [];
+  return {
+    fran: live ? 'shopify' : 'veckorapport',
+    hamtad: live?.hamtad ?? null,
+    lasta,
+    olasta,
+    bradskande: alla.filter((tv) => tv.kvar !== null && tv.kvar >= 0 && tv.kvar <= 7).sort((a, b) => a.kvar - b.kvar),
+    passerade: alla.filter((tv) => tv.kvar !== null && tv.kvar < 0),
+  };
+}
+
+function tvistblock(tv, { nu, rapportAlder = null }) {
+  const { bradskande, passerade } = tv;
+  const passeratBelopp = passerade.reduce((s, x) => s + (Number(x.belopp) || 0), 0);
+  const tvistrader = bradskande.slice(0, 12).map((x) => `<tr>
+    <td>
+      <span class="namn">${esc(ordertext(x.order))}</span>
+      <span class="bi">${esc(x.brand)}${x.typ ? ` · ${esc(tvisttyp(x.typ, sprak()))}` : ''}</span>
+    </td>
+    <td class="tal">${pengar(x.belopp, x.valuta)}</td>
+    <td class="tal">${esc(datum(x.deadline, { nu }))}</td>
+    <td>${status(x.kvar <= 2 ? 'kritisk' : x.kvar <= 4 ? 'varning' : 'neutral', tidKvar(x.kvar))}</td>
+  </tr>`);
+  const kalla = tv.fran === 'shopify'
+    ? `${t('Läst direkt ur Shopify')} ${t(sedan(tv.hamtad))}: ${tv.lasta.map((b) => b.namn).join(', ') || '–'}.${tv.olasta.length ? ` ${t('Gick inte att läsa')}: ${tv.olasta.map((b) => b.namn).join(', ')}.` : ''}`
+    : t('Ur kundtjänstens veckorapport.');
+  return `${block({
+    titel: 'Tvister som brådskar',
+    under: 'Sorterade efter hur lite tid som är kvar. Chargebacks är de som faktiskt förloras.',
+    innehall: bradskande.length
+      ? panel({
+        innehall: tabell(
+          [{ titel: 'Order' }, { titel: 'Belopp', tal: true }, { titel: 'Sista svarsdag', tal: true }, { titel: 'Tid kvar' }],
+          tvistrader,
+        ),
+        fot: `En obesvarad förfrågan förloras inte på plats — den eskalerar till chargeback med ny deadline. Alla förluster hittills har varit chargebacks.${bradskande.length > 12 ? ` Visar 12 av ${bradskande.length}.` : ''} ${kalla}`,
+      })
+      : tomt('Inget brådskar just nu', `Ingen tvist som väntar på vårt svar har svarsdag inom sju dagar. ${kalla}`),
+  })}
+
+    ${passerade.length ? block({
+      titel: 'Passerade svarsdagar',
+      innehall: tomt(
+        `${passerade.length} tvister har passerat sin svarsdag (${pengar(Math.round(passeratBelopp), passerade[0].valuta ?? 'SEK')} sammanlagt)`,
+        `De går inte att svara på längre. Förfrågningar som inte besvarats eskalerar till chargeback med en NY svarsdag — de dyker upp igen i listan ovan.${rapportAlder !== null && rapportAlder > 2 ? ` Obs: rapporten är ${rapportAlder} dagar gammal, så läget kan ha ändrats.` : ''}`,
+      ),
+    }) : ''}`;
+}
+
 export function kundtjanstSida({ snapshot, nu = new Date() }) {
   const autosvaret = autosvarBlock(snapshot?.autosvar, { nu, namnFor: (id) => butiksnamnFor(snapshot, id) });
   const k = snapshot?.kundtjanst ?? { status: 'saknas', brands: [] };
+  const tv = tvisterForSidan(snapshot, nu);
   if (k.status !== 'ok' || !k.brands.length) {
     return {
       titel: 'Kundtjänst',
       innehall: `${sidhuvud({ rubrik: 'Kundtjänst', under: 'Mejl, ärenden och tvister.' })}
       ${autosvaret}
+      ${tv.fran === 'shopify' ? tvistblock(tv, { nu }) : ''}
       ${tomt('Ingen veckorapport än', k.orsak ?? 'Kundtjänstrutinen har inte kört klart en vecka.')}`,
     };
   }
 
-  // Tvister som brådskar, över alla brands — det enda som kostar pengar i dag.
-  // Passerade deadlines ligger för sig: de går inte att rädda med ett svar,
-  // och de ska inte tränga undan de som fortfarande går att vinna.
-  const allaTvister = k.brands.flatMap((b) => b.tvister
-    .filter((t) => t.deadline)
-    .map((t) => ({ ...t, brand: b.namn, kvar: dagarKvar(t.deadline, nu) })));
-  const bradskande = allaTvister.filter((t) => t.kvar !== null && t.kvar >= 0 && t.kvar <= 7).sort((a, b) => a.kvar - b.kvar);
-  const passerade = allaTvister.filter((t) => t.kvar !== null && t.kvar < 0);
-  const passeratBelopp = passerade.reduce((s, t) => s + (Number(t.belopp) || 0), 0);
   const rapportAlder = k.brands[0]?.kord ? Math.floor((nu.getTime() - new Date(k.brands[0].kord).getTime()) / DAG) : null;
 
   const brandkort = k.brands.map((b) => {
@@ -174,16 +233,6 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
       fot: b.vecka ? `${t('Vecka')} ${b.vecka}` : '',
     });
   }).join('');
-
-  const tvistrader = bradskande.slice(0, 12).map((t) => `<tr>
-    <td>
-      <span class="namn">${esc(ordertext(t.order))}</span>
-      <span class="bi">${esc(t.brand)}${t.typ ? ` · ${esc(tvisttyp(t.typ, sprak()))}` : ''}</span>
-    </td>
-    <td class="tal">${pengar(t.belopp, t.valuta)}</td>
-    <td class="tal">${esc(datum(t.deadline, { nu }))}</td>
-    <td>${status(t.kvar <= 2 ? 'kritisk' : t.kvar <= 4 ? 'varning' : 'neutral', tidKvar(t.kvar))}</td>
-  </tr>`);
 
   const kategorirader = k.brands.flatMap((b) => (b.kategorier ?? []).slice(0, 5).map((c) => ({ ...c, brand: b.namn, svenska: kategorinamn(c.id, c.en) })))
     .sort((a, b) => (b.antal ?? 0) - (a.antal ?? 0))
@@ -201,27 +250,7 @@ export function kundtjanstSida({ snapshot, nu = new Date() }) {
 
     ${autosvaret}
 
-    ${block({
-      titel: 'Tvister som brådskar',
-      under: 'Sorterade efter hur lite tid som är kvar. Chargebacks är de som faktiskt förloras.',
-      innehall: bradskande.length
-        ? panel({
-          innehall: tabell(
-            [{ titel: 'Order' }, { titel: 'Belopp', tal: true }, { titel: 'Sista svarsdag', tal: true }, { titel: 'Tid kvar' }],
-            tvistrader,
-          ),
-          fot: `En obesvarad förfrågan förloras inte på plats — den eskalerar till chargeback med ny deadline. Alla förluster hittills har varit chargebacks.${bradskande.length > 12 ? ` Visar 12 av ${bradskande.length}.` : ''}`,
-        })
-        : tomt('Inget brådskar just nu', 'Ingen tvist har svarsdag inom sju dagar.'),
-    })}
-
-    ${passerade.length ? block({
-      titel: 'Passerade svarsdagar',
-      innehall: tomt(
-        `${passerade.length} tvister har passerat sin svarsdag (${pengar(Math.round(passeratBelopp), passerade[0].valuta ?? 'SEK')} sammanlagt)`,
-        `De går inte att svara på längre. Förfrågningar som inte besvarats eskalerar till chargeback med en NY svarsdag — de dyker upp igen i listan ovan.${rapportAlder !== null && rapportAlder > 2 ? ` Obs: rapporten är ${rapportAlder} dagar gammal, så läget kan ha ändrats.` : ''}`,
-      ),
-    }) : ''}
+    ${tvistblock(tv, { nu, rapportAlder: tv.fran === 'veckorapport' ? rapportAlder : null })}
 
     ${block({
       titel: 'Vad kunderna frågar om',

@@ -232,7 +232,7 @@ export function oversikt(snapshot, { nu = new Date() } = {}) {
 
 // -------------------------------------------------------------- hälsa
 
-const IKON = { ok: '✅', fel: '❌', saknas: '⚠️', hoppad: '⏭️' };
+const IKON = { ok: '✅', fel: '❌', saknas: '⚠️', hoppad: '⏭️', delvis: '⚠️' };
 
 /** Källornas läge — det som gör att sidan kan säga "vet inte" i stället för noll. */
 export function kallolage(snapshot) {

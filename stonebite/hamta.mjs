@@ -17,7 +17,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { upptackButiker, hamtaAlla as hamtaButiker } from './kallor/shopify.mjs';
+import { upptackButiker, hamtaAlla as hamtaButiker, hamtaAllaTvister } from './kallor/shopify.mjs';
 import { hamtaAllt as hamtaMeta } from './kallor/meta.mjs';
 import { samlaRepo, lasProfil, lasSystem } from './kallor/repo.mjs';
 import { rutinlage } from './kallor/rutiner.mjs';
@@ -61,6 +61,7 @@ export async function byggSnapshot({
 
   let butiker = [];
   let annonskonton = [];
+  let tvisterLive = null;
 
   if (utanNat) {
     anteckna('shopify', 'hoppad', 'kördes med --utan-nat');
@@ -77,6 +78,18 @@ export async function byggSnapshot({
     anteckna('shopify', trasiga.length === aktiva.length && aktiva.length ? 'fel' : 'ok',
       trasiga.length ? `${trasiga.length} av ${aktiva.length} butiker gick inte att läsa` : null,
       { butiker: aktiva.length, avstangda: avstangda.length });
+
+    // Tvisterna direkt ur Shopify, varje hämtning. Veckorapporten är bara
+    // reserv för en butik Shopify inte svarar för (bonus/kallor.mjs
+    // slaIhopTvister) — en tvist har en deadline, en vecka gammal lista ljuger.
+    logg('Shopify-tvister …');
+    try {
+      tvisterLive = await hamtaAllaTvister(upptackta, { env, nu, logg });
+      anteckna('shopify:tvister', tvisterLive.status, tvisterLive.orsak,
+        { butiker: tvisterLive.butiker.length, oppna: tvisterLive.lista.filter((x) => x.oppen).length });
+    } catch (e) {
+      anteckna('shopify:tvister', 'fel', e.message);
+    }
 
     logg('Meta …');
     if (!env.META_ACCESS_TOKEN) {
@@ -117,7 +130,7 @@ export async function byggSnapshot({
   let bonus = null;
   let detaljer = { recensioner: null, produkttest: null, tvister: [], insatser: [] };
   try {
-    const utfall = await korBonus({ utanNat, rot, env, nu, logg: (t) => logg(t) });
+    const utfall = await korBonus({ utanNat, rot, env, nu, logg: (t) => logg(t), tvisterLive });
     detaljer = utfall.detaljer ?? detaljer;
     const { detaljer: _, ...kvitto } = utfall;
     bonus = kvitto;
@@ -160,6 +173,9 @@ export async function byggSnapshot({
     recensioner: detaljer.recensioner,
     produkttest: detaljer.produkttest,
     oppnaTvister: detaljer.tvister,
+    // Läget per butik för tvisterna (utan listan — den står i oppnaTvister).
+    // null ⇒ Shopify lästes inte i den här körningen (--utan-nat).
+    tvister: tvisterLive ? (({ lista: _, ...rest }) => rest)(tvisterLive) : null,
     insatser: detaljer.insatser,
     // Pingarna till VA:n (stonebite/larm.mjs skriver minnet EFTER hämtningen,
     // så det som syns här är förra körningens) — sidan visar dem per varumärke.

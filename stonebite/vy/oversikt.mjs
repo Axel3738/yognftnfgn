@@ -97,7 +97,7 @@ function kraverDig({ snapshot, kalender = [], nu, brandnamn }) {
   const dag0 = idag(nu);
   const rader = [];
   for (const tv of snapshot?.oppnaTvister ?? []) {
-    if (tv.oppen === false || !tv.deadline) continue;
+    if (tv.oppen === false || tv.besvarad === true || !tv.deadline) continue;
     const kvar = Math.ceil((new Date(tv.deadline).getTime() - nu.getTime()) / DAG);
     if (kvar < 0 || kvar > 3) continue;
     rader.push({ ton: 'kritisk', text: `${tvisttyp(tv.typ, 'sv')} ${tv.order} (${tv.brand}) — svar senast ${tv.deadline}, ${kvar === 0 ? 'i dag' : `${kvar} ${kvar === 1 ? 'dag' : 'dagar'} kvar`}`, lank: '/app/kundtjanst' });

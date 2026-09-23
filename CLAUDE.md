@@ -605,6 +605,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   igen. OPS-butikerna är nedlagda utom CaraShell — de står med orsak på
   sidan Butiker, det är Axels beslut om de ska installeras om, tas bort ur
   miljön eller läggas i av-registret.
+- ⛔ **Tvisterna på sajten var nio dagar gamla — läses direkt ur Shopify
+  sedan 2026-09-23.** `oppnaTvister` kom ur kundtjänstens veckorapport, och
+  den enda som fanns var Bäverbutikens från 2026-09-14 (rutinen "Kundtjänst
+  veckorapport" `enabled: false` sedan 2026-09-15). CaraShell visade "Inga
+  öppna tvister" utan att Shopify tillfrågats — det råkade vara sant (mätt
+  samma dag: 290 ordrar, 0 tvister, REST och GraphQL överens). Nu läser
+  `/stonebite` varje timme `shopify_payments/disputes.json` per butik
+  (`kallor/shopify.mjs` `hamtaAllaTvister`, samma appordning som
+  försäljningen), och veckorapporten är bara reserv för en butik Shopify inte
+  svarar för. Mätt vid bygget: Bäverbutiken 58 tvister / 19 öppna / 17 väntar
+  på svar, CaraShell 0, Matstrumpor 3 (alla avgjorda), HeimGuard och
+  AdventLane 0; **NO, DK och FI svarar 403 — apparna saknar
+  `read_shopify_payments_disputes`**, och sidan säger det i stället för noll.
+  Samma dag: Shopify ger 50 tvister per sida — `kundtjanst/shopify.mjs`
+  läste bara 50 av Bäverbutikens 68, nu paginerat. `under review` (bevisen
+  redan inne) pingas, kalenderförs och räknas som brådskande aldrig.
 - ⚠️ **Bank, spärrade kort och överföringar har ingen datakälla.** De läggs in
   för hand som Larm i kalendern. Sidan påstår aldrig något om banken.
 

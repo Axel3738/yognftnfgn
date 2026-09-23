@@ -155,11 +155,28 @@ export function kundtjanstMatningar(rot, { veckor = 12 } = {}) {
           besvarad: String(t.status ?? '').toLowerCase() !== 'needs response',
           utfall: ['won', 'lost'].includes(String(t.status ?? '').toLowerCase()) ? String(t.status).toLowerCase() : null,
           oppen: t.oppen !== false,
+          rapport: (r.kord ?? '').slice(0, 10) || null,
         });
       }
     }
   }
   return { status: 'ok', orsak: null, tvister: [...tvister.values()], veckor: veckorader };
+}
+
+/**
+ * Veckorapportens tvister + tvisterna lästa direkt ur Shopify (stonebite/
+ * kallor/shopify.mjs hamtaAllaTvister). Butik för butik: har Shopify svarat
+ * för butiken (`ok`, eller `saknas` = kör inte Shopify Payments) är Shopify
+ * sanningen och veckorapportens rader för den butiken släpps helt — de kan
+ * vara en vecka gamla. För en butik Shopify INTE svarade för står
+ * veckorapportens rader kvar, märkta `kalla: 'veckorapport'` med rapportens
+ * datum, så att sidan kan säga hur gammal uppgiften är. Ren.
+ */
+export function slaIhopTvister(veckorader = [], live = null) {
+  if (!live) return veckorader;
+  const lasta = new Set((live.butiker ?? []).filter((b) => b.status === 'ok' || b.status === 'saknas').map((b) => b.id));
+  const kvar = veckorader.filter((t) => !lasta.has(t.brand)).map((t) => ({ ...t, kalla: t.kalla ?? 'veckorapport' }));
+  return [...(live.lista ?? []), ...kvar];
 }
 
 // -------------------------------------------------------------- produkttest
