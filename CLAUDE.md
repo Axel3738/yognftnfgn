@@ -612,6 +612,10 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   EN: steg 0 kräver `lagen` på `/halsa`, CaraShell startar med
   `AUTOSVAR_LAGE_CARASHELL=torr`, nycklarna heter `_CARASHELL`. Skarpt för
   CaraShell = ta bort `AUTOSVAR_LAGE_CARASHELL` på Railway (Axels klick).
+  ✅ **Live TORRT 2026-09-23 18:41 CEST** (Cowork körde prompten, mätt av
+  sessionen på `/halsa`: `lagen` {baverbutiken: skarpt, carashell: torr},
+  `kor: true`, 0 omstarter, `saknar: []`). Första varvet: 13 mejl, 5 SVÅR
+  (bara flaggade — SVÅR ger aldrig utkast), 8 hoppade, 0 utkast.
   Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
   `#customer-support` (mätt 2026-09-23).
 - **AI-botens svar som kort med bock (2026-09-23 eftermiddag).** Mechile
