@@ -567,6 +567,16 @@ const en = {
       removed: "Claude is disconnected.",
       noEncryption: "The server can't store keys safely yet. Contact support.",
       where: "Get a key at console.anthropic.com → API keys.",
+      guide: {
+        title: "How to connect Claude — three steps",
+        step1: "Open your Anthropic account",
+        step1Body: "Go to console.anthropic.com and sign in. In the menu on the left, click API keys.",
+        step2: "Create a key and copy it",
+        step2Body: "Click Create Key, give it any name, and copy the key. It starts with sk-ant- and is only shown once.",
+        step3: "Paste it here",
+        step3Body: "Paste the key in the field below and click Connect. We check it with Anthropic before saving, so you know right away that it works.",
+        footer: "The key is stored encrypted and is only used by this store. You pay Anthropic for your own usage, and you can disconnect at any time.",
+      },
     },
     marketFees: {
       title: "Fees and duty per market",
@@ -1414,6 +1424,16 @@ const sv: Texts = {
       removed: "Claude är bortkopplad.",
       noEncryption: "Servern kan inte lagra nycklar säkert än. Hör av dig till supporten.",
       where: "Hämta en nyckel på console.anthropic.com → API keys.",
+      guide: {
+        title: "Så kopplar du Claude — tre steg",
+        step1: "Öppna ditt Anthropic-konto",
+        step1Body: "Gå till console.anthropic.com och logga in. Klicka på API keys i menyn till vänster.",
+        step2: "Skapa en nyckel och kopiera den",
+        step2Body: "Klicka på Create Key, ge den vilket namn som helst och kopiera nyckeln. Den börjar med sk-ant- och visas bara en gång.",
+        step3: "Klistra in den här",
+        step3Body: "Klistra in nyckeln i fältet nedan och tryck Koppla. Vi kontrollerar den mot Anthropic innan den sparas, så du vet direkt att den fungerar.",
+        footer: "Nyckeln lagras krypterad och används bara av den här butiken. Du betalar Anthropic för din egen användning, och kan koppla bort när du vill.",
+      },
     },
     marketFees: {
       title: "Avgifter och tull per marknad",

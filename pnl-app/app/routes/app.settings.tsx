@@ -34,6 +34,7 @@ import {
   Text,
   TextField,
 } from "@shopify/polaris";
+import { ClaudeGuide } from "../components/ClaudeGuide";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { decrypt, encrypt, encryptionAvailable } from "../lib/crypto.server";
@@ -973,10 +974,13 @@ export default function Settings() {
                   </Button>
                 </InlineStack>
               ) : (
-                <BlockStack gap="300">
+                <BlockStack gap="400">
                   {d.claude.kalla === "server" ? (
                     <Text as="p" variant="bodySm" tone="subdued">{T.settings.claude.onServer}</Text>
                   ) : null}
+                  {/* Guiden ligger ovanför fältet så länge ingen nyckel är
+                      kopplad — är den kopplad är den bara i vägen. */}
+                  <ClaudeGuide T={T} />
                   <TextField
                     label={T.settings.claude.label}
                     value={claudeNyckel}

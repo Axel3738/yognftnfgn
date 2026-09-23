@@ -651,6 +651,14 @@ säger bara om serverns nyckel finns. Rutterna frågar
 `hamtaKoppling(shop)` — bygger du en ny AI-funktion, gör likadant, annars
 är den osynlig för varje handlare som kopplat sin egen.
 
+**Guiden i kortet (v107):** `app/components/ClaudeGuide.tsx` visar tre
+steg med bilder så länge ingen nyckel är kopplad. Bilderna är **inline-SVG,
+inte skärmbilder** — appen har inga CDN:er och inga bildtillgångar, och en
+skärmbild av Anthropics konsol hade varit fel inom en månad. Ritningarna
+visar formen på det man letar efter (ett adressfält, en knapp, ett fält),
+och allt är `currentColor` så de följer Polaris i både ljust och mörkt
+läge. Byter konsolen utseende: ändra texten, inte ritningen.
+
 **Chatten kan nu skriva samma saker som rutan:** `set_cost` bär `market`
 (landskod) och `currency` utöver `tiers`, och `app.chat.tsx` räknar om
 med dagens ECB-kurs och skickar marknaden till `importCostCsv`. Förut
