@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 290,
+ "nasta": 298,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -18252,6 +18252,698 @@
     }
    ],
    "namn_sv": "Elcykelbatteriets vinterjacka, 2-pack"
+  },
+  "K0290": {
+   "id": "K0290",
+   "skapad": "2026-09-23",
+   "namn": "Fasadlisten — solcell utan sladd",
+   "objekt": "NYTT: Husfasaden vid entrén/garaget — ytterväggen utan eluttag",
+   "form": "annat",
+   "sak": "nytt: husfasaden vid entrén/garaget+annat",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012730363106",
+     "url": "https://www.aliexpress.com/item/1005012730363106.html",
+     "bild": null,
+     "pris_usd": 29.59,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T07:00:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 1,
+     "rank_poang": 15.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 428,
+     "be_cpa": 571,
+     "hook": "Ingen el vid entrén? Ingen elektriker heller.",
+     "varfor": "Strukturell kusin till kontots färskaste vinnare (Solcellslampan 09-17): solcell på ytterväggen, 55+ småhus, 500–999 kr, golv i annan form — men i en list-form ingen svensk aktör säljer på solcell, med upplevt värde som ser ut som 999 kr (svart aluminium, arkitektljus). Vintertid 25 okt är datumet som gör köpet nu (H02).",
+     "huvudrisk": "Lumen och brinntid är ej mätta — en solcellslist som slocknar 19:00 i november dödar recensionerna; heron har inbränd text och listning saknar sensorinfo.",
+     "hypotes_id": "H02",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 1, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Fasadlisten — solcell utan sladd"
+  },
+  "K0291": {
+   "id": "K0291",
+   "skapad": "2026-09-23",
+   "namn": "Rullskydden 6-pack (multirullarna)",
+   "objekt": "NYTT: Fiskerullarna — 4–8 st på spöna och i lådan",
+   "form": "överdrag",
+   "sak": "nytt: fiskerullarna+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013153718888",
+     "url": "https://www.aliexpress.com/item/1005013153718888.html",
+     "bild": null,
+     "pris_usd": 1.83,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T07:08:13Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 2,
+     "rank_poang": 15.3,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 449,
+     "landad": 159,
+     "be_cpa": 290,
+     "hook": "Ligger rullarna lösa i lådan i vinter?",
+     "varfor": "Skyddar det dyraste på spöet (rullen 1–4 tkr) med en form fackhandeln säljer styckvis 109–179 kr — sex för 449 kr ligger långt under 6 × 109 = 654 med ankare 2,39×. Samma ägare och samma upptagningsdatum som spöstrumporna; kan säljas som par med dem.",
+     "huvudrisk": "Ekonomin står på ett 1,83-dollarpris som kan vara ett variantpris — haspelvarianten (3,89 USD) faller under BE-CPA 190 i 6-pack, så multirulle-baserna måste räcka.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 2, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Rullskydden 6-pack (multirullarna)"
+  },
+  "K0292": {
+   "id": "K0292",
+   "skapad": "2026-09-23",
+   "namn": "Skorstenshuven med kajnät 23 × 23",
+   "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+   "form": "huv",
+   "sak": "nytt: skorstenskanalen+huv",
+   "arketyp": "C_LAGA_ISTALLET",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013202910600",
+     "url": "https://www.aliexpress.com/item/1005013202910600.html",
+     "bild": null,
+     "pris_usd": 31.97,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T06:54:25Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 3,
+     "rank_poang": 13.5,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 1
+     },
+     "konfidens": "MEDEL",
+     "pris": 899,
+     "landad": 462,
+     "be_cpa": 437,
+     "hook": "Regnar det rakt ner i din skorsten?",
+     "varfor": "Plåtslagarens huv kostar 4 100–5 000 kr; kedjan säljer bara kajgaller för 126–179 kr utan regnskydd. En rostfri huv med nät för 899 kr täcker samma kanal som sotarsetets ägare precis sotade — samma ägare, samma säsong, ny form.",
+     "huvudrisk": "Passform: en storlek (23 cm) och montering på taket — ägare 55+ som inte vill upp på taket anlitar ändå plåtslagaren.",
+     "hypotes_id": "H03",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 8,
+      "K7": 5,
+      "K8": 7,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 3, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Skorstenshuven med kajnät 23 × 23"
+  },
+  "K0293": {
+   "id": "K0293",
+   "skapad": "2026-09-23",
+   "namn": "Ventilationsrensaren för borrmaskin",
+   "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
+   "form": "verktyg",
+   "sak": "nytt: frånluftskanalerna och imkanalen i villan+verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005005707928093",
+     "url": "https://www.aliexpress.com/item/1005005707928093.html",
+     "bild": null,
+     "pris_usd": 17.33,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T06:54:25Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 4,
+     "rank_poang": 13.3,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 1
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 251,
+     "be_cpa": 348,
+     "hook": "När rensades ventilationen i ditt hus senast?",
+     "varfor": "Exakt sotarsetets struktur på nästa kanal i samma hus: tjänsten (ventilationsrensning ~3 500 kr) ersätts av stänger + borste på borrmaskin för 599 kr, payoffen syns i borsten. Ingen kedja har formen; Swema-proffskabeln 2 833 kr är ankaret.",
+     "huvudrisk": "Samma stänger som K0030 (sotarsetet) — kunden som redan köpt det kan uppleva dubblett; hero saknar kontext.",
+     "hypotes_id": "H03",
+     "per_kriterium": {
+      "K0": "ok (objektet nytt, formen nära K0030)",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 8,
+      "K6": 8,
+      "K7": 5,
+      "K8": 5,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 4, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Ventilationsrensaren för borrmaskin"
+  },
+  "K0294": {
+   "id": "K0294",
+   "skapad": "2026-09-23",
+   "namn": "Vapenstrumporna 4-pack (hela vapengarderoben)",
+   "objekt": "NYTT: Jaktvapnen — 2–4 st i vapenskåpet och i bilen till passet",
+   "form": "överdrag",
+   "sak": "nytt: jaktvapnen+överdrag",
+   "arketyp": "B_SKYDDA_DYRT",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007347749661",
+     "url": "https://www.aliexpress.com/item/1005007347749661.html",
+     "bild": null,
+     "pris_usd": 19.25,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T07:08:13Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 5,
+     "rank_poang": 13.0,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 1,
+      "ekonomi": 2,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 278,
+     "be_cpa": 321,
+     "hook": "Har alla vapnen i skåpet en strumpa?",
+     "varfor": "Dyrt ägt objekt (15–40 tkr) i formsydd billig form med flerköp inbyggt (vapengarderoben = fyra vapen) och ett hårt datum om 2,1 v; fackhandeln säljer strumpan styckvis 159–199 kr så fyrpacket för 599 ligger under 4 × 199 = 796 med ankare 1,33×. Solpanelen till åtelkameran (1 749 kr) i katalogen visar att jägaren redan finns i kontot.",
+     "huvudrisk": "Dollarstore säljer samma form för 70 kr och vapnet står inne i skåpet större delen av året — två förlorarsignaler (kedjegolv, objekt inne) som ankaret 1,33× och älgjakten måste väga upp.",
+     "hypotes_id": "H08",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 5, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Vapenstrumporna 4-pack (hela vapengarderoben)"
+  },
+  "K0295": {
+   "id": "K0295",
+   "skapad": "2026-09-23",
+   "namn": "Vägnabbarna — uppfartens landningsbana",
+   "objekt": "NYTT: Uppfartens kant (asfalt/marksten) — infarten i mörker",
+   "form": "annat",
+   "sak": "nytt: uppfartens kant+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "E_VADER_SASONG",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005008351027236",
+     "url": "https://www.aliexpress.com/item/1005008351027236.html",
+     "bild": null,
+     "pris_usd": 7.87,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T06:55:00Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 6,
+     "rank_poang": 13,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 3,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 455,
+     "be_cpa": 544,
+     "hook": "Ser du var uppfarten slutar i mörkret?",
+     "varfor": "Renaste H10-raden i mörkerlinsen: vägbanans kattögon på den egna uppfarten finns inte hos någon svensk kedja (bara B2B-trafik), heron förstås utan ord och vintertid 25 okt ger ett hårt datum 4,6 v bort. Samma struktur som Solcellslampan (ute, solcell, 55+, kväll efter kväll) men i en form kontot inte har, med flerköp inbyggt.",
+     "huvudrisk": "Snöröjning: en upphöjd nabb (~20 mm) kan ryckas loss av plogblad/snöslungans skrapskena — ska säljas för kanten utanför plogstråket och för skottade uppfarter; 999 kr för 4 nabbar utan märkesankare kan slå i upplevt värde (ekonomin är räknad på 4-pack, landad 4 × 102–125 kr).",
+     "hypotes_id": "H10",
+     "per_kriterium": null,
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 6, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Vägnabbarna — uppfartens landningsbana"
+  },
+  "K0296": {
+   "id": "K0296",
+   "skapad": "2026-09-23",
+   "namn": "Skorstenssnurran mot bakdrag, rostfri",
+   "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+   "form": "annat",
+   "sak": "nytt: skorstenstoppen på stålskorsten/rökrör+annat",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013101998904",
+     "url": "https://www.aliexpress.com/item/1005013101998904.html",
+     "bild": null,
+     "pris_usd": 44.39,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T06:57:14Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploitation",
+     "rank": 7,
+     "rank_poang": 11.0,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 3,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 1299,
+     "landad": 642,
+     "be_cpa": 657,
+     "hook": "Slår röken ner i rummet när det blåser?",
+     "varfor": "Testar H12 rent: vinddriven maskin ≥ 900 kr med Bauhaus-ankare 3,1× och rörlig payoff i bild; svenskt golv i samma form ligger på 1 836 kr, 40 % över oss. Samma kaminägare som köpte sotarsetet, samma eldningsstart.",
+     "huvudrisk": "Passform (diametrar ej lästa ur titeln, rund stos passar inte murad kanal utan platta) och montering på taket.",
+     "hypotes_id": "H12",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 6,
+      "K4": 6,
+      "K5": 10,
+      "K6": 8,
+      "K7": 6,
+      "K8": 8,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 7, exploitation, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Skorstenssnurran mot bakdrag, rostfri"
+  },
+  "K0297": {
+   "id": "K0297",
+   "skapad": "2026-09-23",
+   "namn": "Spöstrumporna 6-pack (spöna i garaget)",
+   "objekt": "NYTT: Fiskespöna — 4–10 st i garaget och bilen",
+   "form": "överdrag",
+   "sak": "nytt: fiskespöna+överdrag",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "I_FLERKOP",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012672884280",
+     "url": "https://www.aliexpress.com/item/1005012672884280.html",
+     "bild": null,
+     "pris_usd": 17.79,
+     "forst_sedd": "2026-09-23",
+     "verifieringar": [
+      {
+       "datum": "2026-09-23",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-23T07:08:13Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-23",
+     "levererad": true,
+     "slot": "exploration",
+     "rank": 8,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 3,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 2,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 257,
+     "be_cpa": 242,
+     "hook": "Hur många spön ligger lösa i garaget?",
+     "varfor": "Samma ägare som spöklämman (427 köp) och samma struktur: kaos på flera ägda saker → ordning i ett grepp, flerköp, under 500 kr — och fackhandeln säljer strumpan styckvis 99–139 kr (6 st = 654–834 kr mot våra 499). Upptagningen om 2,4 v är ögonblicket spöna åker ur båten och in i garaget.",
+     "huvudrisk": "En spöstrumpa är en 99-kronorsvara på hyllan — upplevt värde måste bäras av sexpacket och spöklämman i bild; Biltema/Dollarstore-golv är inte mätt.",
+     "hypotes_id": "H11",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": null,
+      "K2": null,
+      "K3": null,
+      "K4": null,
+      "K5": null,
+      "K6": null,
+      "K7": null,
+      "K8": null,
+      "K9": null,
+      "K10": null,
+      "K11": null,
+      "K12": null
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-23",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-23",
+     "handelse": "levererad på V3-arket (rank 8, exploration, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Spöstrumporna 6-pack (spöna i garaget)"
   }
  }
 }

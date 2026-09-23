@@ -108,5 +108,13 @@
   "deadline": "sjösättning (EARLY 32 v)",
   "korningsvecka": 10,
   "orsak": "2026-09-16 lins W: verklig lucka — Watski säljer fenderstrumpa 240–336 kr styck, 4-pack 24,06 USD → landad 348, pris 909 möjligt; men fönstret är sjösättning i maj. Sök om v 10–12 (mars)."
+ },
+ {
+  "objekt": "NYTT: Ytterdörrens lås i mörkret",
+  "form": "nyckelhålslampa med rörelsesensor",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "vintertid 4,6 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-23 lins AA: bästa heron i linsen (LIVE, kontext, textfri) men Fyndiq säljer exakt samma för 184 kr och inget ankare finns — H06 gäller inte. Bara om märkesankare ≥ 1,2× hittas."
  }
 ]

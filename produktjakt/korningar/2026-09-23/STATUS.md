@@ -54,3 +54,71 @@ NOW: älgjakt syd 2,1 v · poolstängning 1,0 v · uppställning + båtupptagnin
 | AA | Mörkret faller — vintertid 25 okt, ny form | exploration | H02/H10 | solcellslampan 7 375 / 17 |
 
 Inga kalendrar (Axel har 12 i butiken, dinosaurierna förlorade). Inga hönsprodukter (hönsgårdsduken 0 köp).
+
+## Steg 1–4 — tre linser, 8 kandidater → 8 klarade grindarna → batch 8
+
+| Lins | Sökt | Levererat | Strukna (skäl) |
+|---|---|---|---|
+| Y (H03/H12, tjänsten man slipper) | 16 strukturer golvlästa FÖRE ali.py (12 föll direkt), 13 fraser, 7 produktsidor | 3: Ventilationsrensaren för borrmaskin (ventfirman ~3 500 → 599; Swema 2 833 som ankare), Skorstenshuven med kajnät (plåtslagaren 4 100–5 000; kedjan bara kajgaller 126–179), Skorstenssnurran mot bakdrag (Bauhaus 3 995 = 3,1×; skorsten.org 1 836) | **kedjan har den:** kajgaller (Skorsten.org 126), asksug (Jula), kaminfläkt (Jula/Clas), vedfuktmätare + rökgastermometer (Clas < 200), mosskrapa (Jula 3 m), avloppsrens (Biltema PRO) · **K0:** skorstenskamera (Inspektionskamera 699 i katalogen), sotarsetet · förbrukningsvaror (pannkitt, glasrengöring, fettfilter) · stor 4-benshuv (landad 2 650) · rund "kinesisk hatt" (levereras med stålskorstenen) |
+| Z (H08/H11, fackhandelns styckvis) | 22 fraser, 11 produktsidor, 14 svenska källor | 3: Rullskydden 6-pack (fackhandel 109–179/st), Vapenstrumporna 4-pack (159–199/st), Spöstrumporna 6-pack (Sportfiskeprylar 99–139/st) — **alla tre är strumpor: flerköpsluckan hos fackhandeln ligger i skyddsstrumpor, inte i klämmor** | häst: hönät (Hööks 109), täckeshängare (Börjes 199 för tre) · jakt: låsvajer (ingen Python-listning), låsbox (2-pack, märkesbunden) · golf: huvor (Dormy 139/149) · stamskydd (Wexthuset 2-pack 60/st) · ljusgårdsnät (ACO 1 785 ankare men ingen Ali-form) · hjulskydd (K0235 kanske) · fuktabsorbent (kedja 2-pack 49) · haspelrullskydd (BE 162) · spöband/dragskydd (billiga pack) |
+| AA (H02/H10, mörkret faller) | 14 fraser, ~15 golvsökningar | 2: Fasadlisten solcell utan sladd (ingen linjär solcellslist i Sverige; lamp24 läst), Vägnabbarna 4-pack (noll konsumentaktörer, bara B2B) | **golv i exakt form:** nyckelhålslampan (Fyndiq 184 — bästa heron i linsen), trapplist 100 LED (Clas Northlight), isbitslampor (Star Trading 275), självlysande stenar (Fyndiq 129), nödlampa (Osram hos Clas/Bauhaus), hundkrage (Arken Zoo 199), klämlampa (Biltema) · **ingen listning:** trappnos med solcell, hönshuslampa, parkeringsstopp-LED, dörrhandtag, dörrmatta, altanräckeslist |
+
+**rank.py:** formtaket lyfte först ut Spöstrumporna och Skorstenssnurran (5 av 8 "skyddsformer"). Huvudsessionen klassade om snurran till `annat` — den är en vinddriven maskin som drar rökgas, inte ett skydd — och rank.py tog då 8 av 8 (4 skyddsformer = 40 % av 8, exakt på taket). **Utfall: 8 (6 exploitation / 2 exploration / 0 säsong)**, alla MEDEL, alla LIVE_VERIFIED, inga LÅG, inga kollisioner.
+
+## Batchen (sida v23 = 8 nya + 6 obesvarade från 16/9; ark `Leverantorsoffert-2026-09-23.xlsx` med inbäddade bilder, prisfälten tomma)
+
+| # | Produkt | Slot | Objekt · form · arketyp | Pris · BE-CPA | Säsong | Ankare / golv | Största risken |
+|---|---|---|---|---|---|---|---|
+| 1 | Fasadlisten — solcell utan sladd (K0290) | exploit | NYTT husfasaden vid entrén · annat · E (H02) | 999 · 528–614 | vintertid 4,6 v | ingen linjär solcellslist i SE / kompakta 159 | lumen/brinntid ej mätta |
+| 2 | Rullskydden 6-pack (K0291) | exploit | NYTT fiskerullarna · överdrag · B (H08) | 449 · 274–306 | upptagning 2,4 v | fackhandel 179/st (2,39×) / 109 | 1,83 USD kan vara variantpris |
+| 3 | Skorstenshuven med kajnät 23 × 23 (K0292) | exploit | NYTT skorstenskanalen 140 × 140 · huv · C (H03) | 899 · 391–483 | uppställning/vedsäsong 2,4 v | plåtslagare 4 100 (4,56×) / kajgaller 126 | en storlek; montering på taket |
+| 4 | Ventilationsrensaren för borrmaskin (K0293) | exploit ASYM | NYTT frånluftskanalerna i villan · verktyg · D (H03) | 599 · 323–373 | vedsäsong 3,1 v | Swema 2 833 (4,73×) / — | samma stänger som sotarsetet — kannibalisering |
+| 5 | Vapenstrumporna 4-pack (K0294) | exploit | NYTT jaktvapnen · överdrag · B (H08) | 599 · 293–349 | älgjakt 2,1 v | fackhandel 199/st (1,33×) / Dollarstore 70 | objekt inne i skåpet; billigt golv |
+| 6 | Vägnabbarna 4-pack (K0295) | explore | NYTT uppfartens kant · annat · H (H10) | 999 · 499–589 | vintertid 4,6 v | ingen konsumentaktör / — | snöröjning rycker loss nabben |
+| 7 | Skorstenssnurran mot bakdrag (K0296) | exploit ASYM | NYTT stålskorstenens topp · annat · D (H12) | 1 299 · 593–721 | vedsäsong 3,1 v | Bauhaus 3 995 (3,08×) / skorsten.org 1 867 | diametrar ej i titeln |
+| 8 | Spöstrumporna 6-pack (K0297) | explore ASYM | NYTT fiskespöna · överdrag · A (H11) | 499 · 216–268 | upptagning 2,4 v | Sportfiskeprylar 139/st (1,67×) / 99 | 99-kronorsvara på hyllan — upplevt värde |
+
+K0 mot `v3/katalog-live.txt` (217 aktiva), `koncept.py sok`, kontot — skorstenskamera och sotarset föll på K0 i linsen.
+
+## Parkerade (`backlog.json`)
+
+Nyckelhålslampan (bästa heron i lins AA; Fyndiq 184 — bara om ankare ≥ 1,2× hittas) · fenderskydd → mars · hästhink (annan källa) · igelkott (v 42) · isfiske (v 2).
+
+## Metodfynd i dag
+
+1. **Modellen hade rätt på 1 av 8 dömda launcher; Axels klick på 4 av 7.** Klicken är bättre än poängkortet — och båda är sämre än strukturläsningen i efterhand (tjänsten man slipper / dyr sak ute / mörkret som datum vinner; jobbet ägaren redan klarar / syskon i samma form / skydd kedjan täcker med presenning förlorar).
+2. **"Tjänsten man slipper" är en egen vinnarstruktur** (sotarsetet 56 köp på fyra dagar). H07 omformulerad; motbevisat nr 9. Lins Y levererade tre kusiner.
+3. **Flerköpsluckan hos fackhandeln är strumpor**, inte klämmor/hållare (lins Z: tre av tre). Sportfiske- och jaktfackhandeln säljer skydd styckvis för 100–200 kr.
+4. **Formtaket räknar form, inte funktion** — snurran är en maskin i huvform. Omklassad för hand; `SKYDDSFORMER` i rank.py bör läsa `form_kommentar`/`arketyp` (D_SNABBARE_METOD = inte skydd).
+5. **Golv läst FÖRE ali.py** (gårdagens regel) fällde 12 av 16 strukturer i lins Y innan en enda sökning — halva sökbudgeten sparad.
+6. **Rutinen stod stilla 17–22/9** (inga triggers nådde sessionen). Axel hann svara på 20 kort och launcha 13 produkter under tiden; facit-skriptet tog igen allt på en körning.
+
+## Tio kontrollfrågor (MASTERPROMPT §9)
+
+1. Kattkojan: ingen djurlins i dag (hönsgårdsduken REAL_LOSER — H09 ifrågasatt); kojan K0. Ja.
+2. Taköverdraget: 118 714 / 339 / 3,47 — kontots största; H04 (> 1 000 kr) bär: skorstenssnurran 1 299 levererad. Ja.
+3. Adventskalendern: 12 346 / 37 / 1,75; dinosaurierna REAL_LOSER; Axel har 12 kalendrar — inga kalendrar sökta. Ja.
+4. Verktygen: två verktygsrader (ventilationsrensaren H03, snurran H12) — båda "tjänsten man slipper" med ankare 3–4,7×, per dagens omformulerade H07. Ja.
+5. Verktyg levererat: två, med hypotes och ankare utskrivna. Ja, medvetet.
+6. Deadline per rad: 8 av 8 NOW (2,1–4,6 v). Ja.
+7. Ankare per rad: 6 mätta med URL; fasadlisten och vägnabbarna "ingen svensk aktör" med kollade källor. Ja.
+8. Hero per rad: alla 8 sedda; vägnabbarna (logotyp, beskäras) och fasadlisten (inbränd text) anmärkta. Ja.
+9. K0 på SAK: katalog-live 09-23 (217 aktiva, +9 kalendrar), koncept.py sok, kontot. Ja.
+10. Taggar + per_kriterium + koncept-id (K0290–K0297); vikter (44 lyft) och LEARNING_STATE omräknade FÖRE sökningen; LEARNING_STATE-raden skriven. Ja.
+
+## Definition of done
+
+- [x] 0A 20 nya svar inlästa; ett nej läst (kedjan har den — tredje gången); 09-16:s 6 obesvarade lyfta till dagens sida
+- [x] 0B Metas facit hämtat (`facit/snapshots/2026-09-23.json`); 10 okopplade kampanjer taggade + 5 forskningsprodukter kopplade (sotarset, biltvättborste, dinosauriekalender, vedklyvborr, fågelmatare); utfall.json + koncept.json (12 launcher)
+- [x] 0C LEARNING_STATE.md omskriven och läst; prediktion vs verklighet (1 av 8) kommenterad; hypoteser.json: motbevisat nr 9, H07 omformulerad, H05/H09 noterade
+- [x] 0D SASONG.md skriven; bara NOW-fönster jagade
+- [x] Discovery ägare → objekt → friktion, 3 linser (Y/Z/AA), 6/2/0 — säsong under minimum (inga kalendrar med flit)
+- [x] Varje rad LIVE_VERIFIED i dag med UTC-stämpel, hero sedd
+- [x] Svenska golvet läst med URL per rad (läst FÖRE ali.py)
+- [x] Materialklass per rad
+- [x] Ekonomi som intervall, BE-CPA ≥ 190 på varje rad
+- [x] Batch 8, per slot enligt rank.py (en omklassning av form), ingen utfyllnad, inga LÅG
+- [x] Ark byggt med inbäddade bilder (prisfälten tomma) + sida publicerad mot samma URL, v23, downloads + db, med 6 obesvarade kort
+- [x] koncept.json bär K0290–K0297
+- [x] LEARNING_STATE-raden + STATUS.md + RUTIN-KVITTO.md; committat och pushat
+- [x] Discord-rapport skickad

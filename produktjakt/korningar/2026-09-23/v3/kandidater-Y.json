@@ -1,171 +1,526 @@
 {
-  "agent": "Y — tjänsten man slipper: kaminägaren (H03/H12)",
-  "datum": "2026-09-23",
-  "kandidater": [
-    {
-      "koncept_id": null,
-      "namn_sv": "Ventilationsrensaren för borrmaskin",
-      "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
-      "form": "verktyg",
-      "arketyp": "D_SNABBARE_METOD",
-      "arketyp_sekundar": "C_LAGA_ISTALLET",
-      "slot": "exploitation",
-      "hypotes_id": "H03",
-      "vinnarlikhet": {
-        "likast": "Sotarset Med Böjliga Stänger",
-        "delade_variabler": ["old way = tjänst (ventilationsfirman ~3 500 kr)", "form verktyg på böjliga stänger med borrmaskinsfäste", "ägare 55+ småhus", "synlig payoff (dammtussarna i borsten)", "prisband 300–599", "deadline eldningssäsong/inomhussäsong"],
-        "avvikelser": ["objekt_ute = nej (kanalen sitter i huset)", "inget hårt datum — bara att fönstren stängs", "samma stänger som K0030, bara borsten skiljer"]
-      },
-      "sasong": {"fonster_id": "vedsasong", "deadline_typ": "vedsäsong", "veckor_kvar": 3.1, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005005707928093",
-        "url": "https://www.aliexpress.com/item/1005005707928093.html",
-        "pris_usd": 17.33,
-        "sald": "",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-23T06:54:25Z",
-        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005005707928093.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "borsthuvud 100 eller 150 mm; stänglängd 16,5–30 ft (5–9 m) enligt titeln", "video": "ej tillgänglig i containern"}
-      },
-      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri packshot: 12 vita stänger + svart nylonborste + borrmaskinsadapter; kontextbild (borsten i frånluftsdonet, dammet) måste skjutas själv"},
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "Swema (proffs)", "pris_sek": 2833, "url": "https://swema.se/produkt/renskabel/", "exakt_samma_form": false},
-        "premium_ankare": {"namn": "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)", "pris_sek": 2833, "url": "https://swema.se/produkt/renskabel/", "i_sortiment": true},
-        "ankare_kvot": 4.73,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["clasohlson.com (Rensborste 50-3582 — utgången)", "biltema.se (Rensverktyg 3-i-1 = avloppsspiral, inte kanalborste)", "jula.se (ventilationskanal, ingen rensborste med stänger hittad)", "swema.se", "ventilation.se (Tornado 6 m-paket, sidan gav 503 — pris ej mätt)", "aerius.se / storstadensventilation.se (tjänstepris ~3 500 kr)"]
-      },
-      "ekonomi": {"landad_sek": [226, 276], "pris_sek": 599, "brutto_sek": [323, 373], "be_cpa_sek": [323, 373], "be_roas": 1.72, "flerkop": false, "returrisk": "låg — borsten Ø100/150 täcker villakanalernas Ø100–160"},
-      "meta_tanke": {"hook": "När rensades ventilationen i ditt hus senast?", "objekt_i_bild": "frånluftsdonet i badrummet, borsten kommer ut svart", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "borsten dras ut ur kanalen full av grått damm — samma payoff som sotet i påsen"},
-      "varfor": "Exakt sotarsetets struktur på nästa kanal i samma hus: tjänsten (ventilationsrensning ~3 500 kr) ersätts av stänger + borste på borrmaskin för 599 kr, payoffen syns i borsten. Ingen kedja har formen; Swema-proffskabeln 2 833 kr är ankaret.",
-      "huvudrisk": "Samma stänger som K0030 (sotarsetet) — kunden som redan köpt det kan uppleva dubblett; hero saknar kontext.",
-      "konfidens": "MEDEL",
-      "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 1, "hypotesvarde": 1},
-      "per_kriterium": {"K0": "ok (objektet nytt, formen nära K0030)", "K1": 12, "K2": 12, "K3": 8, "K4": 8, "K5": 8, "K6": 8, "K7": 5, "K8": 5, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ventil/kanal/borste: bara Sotarset K0030 och Biltvättborste)", "koncept.py sok ventilation/fläkt/imkanal", "fynd.json 09-11…09-16"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005005707928093.html",
-        "https://swema.se/produkt/renskabel/",
-        "https://www.clasohlson.com/se/RENSBORSTE/p/50-3582",
-        "https://www.biltema.se/bygg/vvs/avloppsrensare/rensverktyg-3-i-1-2000034472",
-        "https://storstadensventilation.se/rengora-ventilationskanaler/",
-        "https://aerius.se/rengora-ventilationskanaler-hur-ofta/"
-      ]
-    },
-    {
-      "koncept_id": null,
-      "namn_sv": "Skorstenshuven med kajnät 23 × 23",
-      "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
-      "form": "huv",
-      "arketyp": "C_LAGA_ISTALLET",
-      "arketyp_sekundar": "B_SKYDDA_DYRT",
-      "slot": "exploitation",
-      "hypotes_id": "H03",
-      "vinnarlikhet": {
-        "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
-        "delade_variabler": ["objekt ute", "objekt dyr > 10 tkr (skorstenen/huset)", "skyddsform över öppningen", "deadline höstregn/eldningssäsong", "old way = tjänst (plåtslagare 3 600–5 000 kr) eller kajgaller utan regnskydd", "ägare 55+ småhus"],
-        "avvikelser": ["en fast storlek — passar bara kanal ≤ 200 mm (140 × 140), inte 140 × 270", "montering uppe på taket"]
-      },
-      "sasong": {"fonster_id": "hostregn", "deadline_typ": "höstregn", "veckor_kvar": 2.4, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005013202910600",
-        "url": "https://www.aliexpress.com/item/1005013202910600.html",
-        "pris_usd": 31.97,
-        "sald": "",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-23T06:54:25Z",
-        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013202910600.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "en storlek 9 × 9 tum (22,86 cm), ställbara fästflänsar", "video": "ej tillgänglig i containern"}
-      },
-      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri rostfri packshot med tak, galler och perforerade fästflänsar; ser ut som 700–900 kr; kontextbild (huven på skorstenskronan) måste skjutas själv"},
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "Skorsten.org / NSP / Hornbach (kajgaller 140×140 — galler utan regnskydd)", "pris_sek": 126, "url": "https://skorsten.org/produkt/kajgaller-140x140/", "exakt_samma_form": false},
-        "premium_ankare": {"namn": "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)", "pris_sek": 4100, "url": "https://kamin-skorsten.se/skorstenshuv/", "i_sortiment": true},
-        "ankare_kvot": 4.56,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["kamin-skorsten.se", "bauhaus.se (Dinak skorstenshuv Ø150 4 995 kr — hel huv för stålskorsten)", "k-rauta.se (komplett skorstenshuv 6 014 kr)", "butik.nspab.se (skorstenshuv 6 525 kr; kajgaller 153 kr)", "hornbach.se (kajgaller 140×140, sidan laddade inte)", "skorsten.org (kajgaller 126 kr)", "akersbergavedspisar.se (regnhuv måttbeställd, pris ej angivet)"]
-      },
-      "ekonomi": {"landad_sek": [416, 508], "pris_sek": 899, "brutto_sek": [391, 483], "be_cpa_sek": [391, 483], "be_roas": 2.06, "flerkop": true, "returrisk": "hög — kunden måste mäta kanalens yttermått; passar inte 140 × 270"},
-      "meta_tanke": {"hook": "Regnar det rakt ner i din skorsten?", "objekt_i_bild": "murad skorsten med öppen kanal, huven sätts på", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "regnet rinner av huven, kajan stoppas av gallret — kanalen under är torr"},
-      "varfor": "Plåtslagarens huv kostar 4 100–5 000 kr; kedjan säljer bara kajgaller för 126–179 kr utan regnskydd. En rostfri huv med nät för 899 kr täcker samma kanal som sotarsetets ägare precis sotade — samma ägare, samma säsong, ny form.",
-      "huvudrisk": "Passform: en storlek (23 cm) och montering på taket — ägare 55+ som inte vill upp på taket anlitar ändå plåtslagaren.",
-      "konfidens": "MEDEL",
-      "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 1},
-      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 6, "K5": 8, "K6": 8, "K7": 5, "K8": 7, "K9": 3, "K10": 2, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (skorsten/huv/kamin: bara Sotarset)", "koncept.py sok skorsten/huv/regnhatt/fågelnät", "fynd.json 09-11…09-16"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005013202910600.html",
-        "https://kamin-skorsten.se/skorstenshuv/",
-        "https://www.bauhaus.se/skorstenshuv-dinak-svart-o150mm",
-        "https://www.k-rauta.se/produkt/komplett-skorstenshuv/7350031818918",
-        "https://butik.nspab.se/produkt/skorstenshuv/",
-        "https://skorsten.org/produkt/kajgaller-140x140/",
-        "https://www.hornbach.se/p/kajgaller-safepipe-i-norden-silver-stal-fagelskydd-for-skorsten-passar-skorstenskanal-140x140-mm/12348049/"
-      ]
-    },
-    {
-      "koncept_id": null,
-      "namn_sv": "Skorstenssnurran mot bakdrag, rostfri",
-      "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
-      "form": "huv",
-      "arketyp": "D_SNABBARE_METOD",
-      "arketyp_sekundar": "C_LAGA_ISTALLET",
-      "slot": "exploitation",
-      "hypotes_id": "H12",
-      "vinnarlikhet": {
-        "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
-        "delade_variabler": ["maskinen gör jobbet (vinddriven, ingen el)", "märkesankare ≥ 2,4× (Bauhaus 3 995 / 1 299 = 3,1×)", "prisband ≥ 1 000", "synlig payoff på 3 s (snurran roterar, röken går rakt upp)", "old way = köpt produkt som inte fungerar (fast huv) eller tjänst (skorstensfirma)"],
-        "avvikelser": ["objekt ute (bandslipen var inne)", "diameterpassning — ägaren måste mäta", "montering på taket"]
-      },
-      "sasong": {"fonster_id": "vedsasong", "deadline_typ": "vedsäsong", "veckor_kvar": 3.1, "timing": "NOW"},
-      "listning": {
-        "product_id": "1005013101998904",
-        "url": "https://www.aliexpress.com/item/1005013101998904.html",
-        "pris_usd": 44.39,
-        "sald": "",
-        "verdict": "LIVE_VERIFIED",
-        "verifierad_at": "2026-09-23T06:57:14Z",
-        "kontroll": {"produktsida_oppnad": true, "titel_stammer": true, "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013101998904.jpg", "hero_sedd": true, "pris_sett": true, "varianter": "diametrar står inte i titeln — ej mätt; heron visar rund stos", "video": "ej tillgänglig i containern"}
-      },
-      "material": {"klass": 1, "hero_textfri": true, "hero_i_kontext": false, "samma_produkt": true, "forsta_3s": "ej mätt (ingen video)", "kommentar": "textfri, högpolerad rostfri snurra med rund stos — ser ut som 1 500–2 000 kr; kontext (snurrar på skorstenen) kräver egen video"},
-      "marknad": {
-        "lagsta_jamforbara": {"aktor": "Skorsten.org (Skorstenssnurra 160 aluminium)", "pris_sek": 1867, "url": "https://skorsten.org/produktkategori/skorstenssnurra/", "exakt_samma_form": true},
-        "premium_ankare": {"namn": "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager", "pris_sek": 3995, "url": "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm", "i_sortiment": true},
-        "ankare_kvot": 3.08,
-        "annonsorer_se": "ej mätt",
-        "kollade_kallor": ["bauhaus.se", "skorsten.org (1 836–2 064 kr; Aspirotor 3 467–3 592 kr)", "ventilation.se (Skorstenssnurra rostfri 160 — 1 600 kr, utgången)", "kamintillbehor.se (Aspiromatic, pris ej mätt)"]
-      },
-      "ekonomi": {"landad_sek": [578, 706], "pris_sek": 1299, "brutto_sek": [593, 721], "be_cpa_sek": [593, 721], "be_roas": 1.98, "flerkop": false, "returrisk": "hög — diametern måste mätas; murad kanal kräver platta som inte ingår"},
-      "meta_tanke": {"hook": "Slår röken ner i rummet när det blåser?", "objekt_i_bild": "skorstenstoppen med snurran som roterar i vinden", "sjalvselekterande": true, "forstas_3s": true, "bevisas_visuellt": "snurran roterar, röken stiger rakt upp — ingen rök vid kaminluckan"},
-      "varfor": "Testar H12 rent: vinddriven maskin ≥ 900 kr med Bauhaus-ankare 3,1× och rörlig payoff i bild; svenskt golv i samma form ligger på 1 836 kr, 40 % över oss. Samma kaminägare som köpte sotarsetet, samma eldningsstart.",
-      "huvudrisk": "Passform (diametrar ej lästa ur titeln, rund stos passar inte murad kanal utan platta) och montering på taket.",
-      "konfidens": "MEDEL",
-      "poang": {"vinnarlikhet": 2, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 3, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
-      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 6, "K4": 6, "K5": 10, "K6": 8, "K7": 6, "K8": 8, "K9": 3, "K10": 2, "K11": 1, "K12": 1},
-      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (skorsten/snurra/huv)", "koncept.py sok skorsten/huv", "fynd.json 09-11…09-16"]},
-      "kallor": [
-        "https://www.aliexpress.com/item/1005013101998904.html",
-        "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm",
-        "https://skorsten.org/produktkategori/skorstenssnurra/",
-        "https://ventilation.se/sv/products/skorstenssnurra-rostfri-160"
-      ]
+ "agent": "Y — tjänsten man slipper: kaminägaren (H03/H12)",
+ "datum": "2026-09-23",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Ventilationsrensaren för borrmaskin",
+   "objekt": "NYTT: Frånluftskanalerna och imkanalen i villan",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "old way = tjänst (ventilationsfirman ~3 500 kr)",
+     "form verktyg på böjliga stänger med borrmaskinsfäste",
+     "ägare 55+ småhus",
+     "synlig payoff (dammtussarna i borsten)",
+     "prisband 300–599",
+     "deadline eldningssäsong/inomhussäsong"
+    ],
+    "avvikelser": [
+     "objekt_ute = nej (kanalen sitter i huset)",
+     "inget hårt datum — bara att fönstren stängs",
+     "samma stänger som K0030, bara borsten skiljer"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 3.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005005707928093",
+    "url": "https://www.aliexpress.com/item/1005005707928093.html",
+    "pris_usd": 17.33,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:54:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005005707928093.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "borsthuvud 100 eller 150 mm; stänglängd 16,5–30 ft (5–9 m) enligt titeln",
+     "video": "ej tillgänglig i containern"
     }
-  ],
-  "strukna": [
-    {"namn": "Kajgaller / fågelskydd för skorsten", "skal": "Kedjan har exakt formen: Skorsten.org 126 kr, NSP 153 kr, Hornbach/K-Rauta 140×140 (och 140×270 för 179 kr). Gallret utan regnskydd ingår i stället i huvraden."},
-    {"namn": "Askdammsugare / askavskiljare", "skal": "Kedjan har den (Jula asksugar-kategori, Biltema våtdammsugare/asksug). Ny form på Makita-batteri hittades inte — sökningen gav bara vanliga handdammsugare och batterier."},
-    {"namn": "Kaminfläkt", "skal": "Kedjan har den: Jula 015305 och Clas Ohlson 41-2835 i exakt samma form."},
-    {"namn": "Vedfuktmätare", "skal": "Kedjan har den: Clas Ohlson fuktkvotsmätare-serien (Pr366901000, 36-4197). BE-CPA ≥ 190 omöjlig mot 199-klassen."},
-    {"namn": "Rökgastermometer med magnet", "skal": "Kedjan har den: Clas Ohlson 34-641. Under 200 kr — BE-CPA ≥ 190 omöjlig."},
-    {"namn": "Kaminglasrengöring utan kemikalier", "skal": "Ingen produktform utöver kedjans sprayer; svaret är fuktigt papper + aska (gratis). Lågt upplevt värde."},
-    {"namn": "Rökrörstätning / pannkitt", "skal": "Förbrukningsvara under 100 kr hos kedjan (ej URL-mätt) — BE-CPA ≥ 190 kan inte nås."},
-    {"namn": "Skorstenskamera / inspektionskamera för rökkanal", "skal": "K0: '1080p Inspektionskamera / Endoskop' 699 kr står ACTIVE i katalog-live.txt."},
-    {"namn": "Mosskrapa för taket från marken", "skal": "Golvet föll först: Jula Hard Head Takskrapa 3 m (012842) är exakt formen (skrapa på teleskopskaft). Taksopen 1 795 kr som ankare, men ingen billig roterande form hittad — Ali ej sökt."},
-    {"namn": "Avloppsrens roterande för borrmaskin", "skal": "Kedjan har den: Biltema Avloppsrensare PRO 7,6 m (2000066230) drivs med borrmaskin; Clas Ohlson 7,5 m med vev."},
-    {"namn": "Takrännerensning från marken", "skal": "Uteslutet i ordern (K0008 rännskopa kanske 09-09, Gutter Cleaner inte igen)."},
-    {"namn": "Hängrännesil / lövsil", "skal": "Levererad 09-16 (Lövsilarna för stuprören, 6-pack, K0285)."},
-    {"namn": "Lövkorg / sandfångskorg för dagvattenbrunn", "skal": "Sandfånget är en del av brunnen i fackhandeln (Byggmax/Stenbolaget); Ø315/400 måste mätas och en plastkorg har lågt upplevt värde — Ali ej sökt."},
-    {"namn": "Imkanal / köksfläktens fettfilter", "skal": "Förbrukningsvara hos kedjan; imkanalen täcks i stället av ventilationsrensarens borste (Ø125)."},
-    {"namn": "Stor 4-bens skorstenshuv 582 × 582 (Ali 1005012452272224, 183 USD)", "skal": "Landad ~2 650 kr → pris > 3 500 kr, i nivå med plåtslagarens måttbeställda huv (4 100 kr) — ingen lucka, tung frakt."},
-    {"namn": "Rund regnhuv 'kinesisk hatt' Ø (Ali 1005012931030564, 33,70 USD)", "skal": "Stålskorstenar levereras med huv och Bauhaus (Dinak) har formen; passar inte murad kanal. Heron i kontext var bra men objektet saknas."},
-    {"namn": "Sotarset / roterande rökrörsborste", "skal": "K0030 i butiken (REAL_WINNER) — uteslutet i ordern."}
-  ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri packshot: 12 vita stänger + svart nylonborste + borrmaskinsadapter; kontextbild (borsten i frånluftsdonet, dammet) måste skjutas själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Swema (proffs)",
+     "pris_sek": 2833,
+     "url": "https://swema.se/produkt/renskabel/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Swema Renskabel 5 m med Ø180 perlonborste, borrmaskinsdriven (2 266 kr ex moms)",
+     "pris_sek": 2833,
+     "url": "https://swema.se/produkt/renskabel/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 4.73,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "clasohlson.com (Rensborste 50-3582 — utgången)",
+     "biltema.se (Rensverktyg 3-i-1 = avloppsspiral, inte kanalborste)",
+     "jula.se (ventilationskanal, ingen rensborste med stänger hittad)",
+     "swema.se",
+     "ventilation.se (Tornado 6 m-paket, sidan gav 503 — pris ej mätt)",
+     "aerius.se / storstadensventilation.se (tjänstepris ~3 500 kr)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     226,
+     276
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     323,
+     373
+    ],
+    "be_cpa_sek": [
+     323,
+     373
+    ],
+    "be_roas": 1.72,
+    "flerkop": false,
+    "returrisk": "låg — borsten Ø100/150 täcker villakanalernas Ø100–160"
+   },
+   "meta_tanke": {
+    "hook": "När rensades ventilationen i ditt hus senast?",
+    "objekt_i_bild": "frånluftsdonet i badrummet, borsten kommer ut svart",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "borsten dras ut ur kanalen full av grått damm — samma payoff som sotet i påsen"
+   },
+   "varfor": "Exakt sotarsetets struktur på nästa kanal i samma hus: tjänsten (ventilationsrensning ~3 500 kr) ersätts av stänger + borste på borrmaskin för 599 kr, payoffen syns i borsten. Ingen kedja har formen; Swema-proffskabeln 2 833 kr är ankaret.",
+   "huvudrisk": "Samma stänger som K0030 (sotarsetet) — kunden som redan köpt det kan uppleva dubblett; hero saknar kontext.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 1
+   },
+   "per_kriterium": {
+    "K0": "ok (objektet nytt, formen nära K0030)",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 5,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (ventil/kanal/borste: bara Sotarset K0030 och Biltvättborste)",
+     "koncept.py sok ventilation/fläkt/imkanal",
+     "fynd.json 09-11…09-16"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005005707928093.html",
+    "https://swema.se/produkt/renskabel/",
+    "https://www.clasohlson.com/se/RENSBORSTE/p/50-3582",
+    "https://www.biltema.se/bygg/vvs/avloppsrensare/rensverktyg-3-i-1-2000034472",
+    "https://storstadensventilation.se/rengora-ventilationskanaler/",
+    "https://aerius.se/rengora-ventilationskanaler-hur-ofta/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Skorstenshuven med kajnät 23 × 23",
+   "objekt": "NYTT: Skorstenskanalen (murad, 140 × 140 mm)",
+   "form": "huv",
+   "arketyp": "C_LAGA_ISTALLET",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploitation",
+   "hypotes_id": "H03",
+   "vinnarlikhet": {
+    "likast": "Taköverdraget för Husvagn 6,5 × 3 m",
+    "delade_variabler": [
+     "objekt ute",
+     "objekt dyr > 10 tkr (skorstenen/huset)",
+     "skyddsform över öppningen",
+     "deadline höstregn/eldningssäsong",
+     "old way = tjänst (plåtslagare 3 600–5 000 kr) eller kajgaller utan regnskydd",
+     "ägare 55+ småhus"
+    ],
+    "avvikelser": [
+     "en fast storlek — passar bara kanal ≤ 200 mm (140 × 140), inte 140 × 270",
+     "montering uppe på taket"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "hostregn",
+    "deadline_typ": "höstregn",
+    "veckor_kvar": 2.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013202910600",
+    "url": "https://www.aliexpress.com/item/1005013202910600.html",
+    "pris_usd": 31.97,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:54:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013202910600.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek 9 × 9 tum (22,86 cm), ställbara fästflänsar",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri rostfri packshot med tak, galler och perforerade fästflänsar; ser ut som 700–900 kr; kontextbild (huven på skorstenskronan) måste skjutas själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skorsten.org / NSP / Hornbach (kajgaller 140×140 — galler utan regnskydd)",
+     "pris_sek": 126,
+     "url": "https://skorsten.org/produkt/kajgaller-140x140/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Kamin & Skorstensskyddaren — måttbeställd skorstenshuv med fågelskydd (4 100–5 000 kr, montering Skåne/västkusten)",
+     "pris_sek": 4100,
+     "url": "https://kamin-skorsten.se/skorstenshuv/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 4.56,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "kamin-skorsten.se",
+     "bauhaus.se (Dinak skorstenshuv Ø150 4 995 kr — hel huv för stålskorsten)",
+     "k-rauta.se (komplett skorstenshuv 6 014 kr)",
+     "butik.nspab.se (skorstenshuv 6 525 kr; kajgaller 153 kr)",
+     "hornbach.se (kajgaller 140×140, sidan laddade inte)",
+     "skorsten.org (kajgaller 126 kr)",
+     "akersbergavedspisar.se (regnhuv måttbeställd, pris ej angivet)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     416,
+     508
+    ],
+    "pris_sek": 899,
+    "brutto_sek": [
+     391,
+     483
+    ],
+    "be_cpa_sek": [
+     391,
+     483
+    ],
+    "be_roas": 2.06,
+    "flerkop": true,
+    "returrisk": "hög — kunden måste mäta kanalens yttermått; passar inte 140 × 270"
+   },
+   "meta_tanke": {
+    "hook": "Regnar det rakt ner i din skorsten?",
+    "objekt_i_bild": "murad skorsten med öppen kanal, huven sätts på",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "regnet rinner av huven, kajan stoppas av gallret — kanalen under är torr"
+   },
+   "varfor": "Plåtslagarens huv kostar 4 100–5 000 kr; kedjan säljer bara kajgaller för 126–179 kr utan regnskydd. En rostfri huv med nät för 899 kr täcker samma kanal som sotarsetets ägare precis sotade — samma ägare, samma säsong, ny form.",
+   "huvudrisk": "Passform: en storlek (23 cm) och montering på taket — ägare 55+ som inte vill upp på taket anlitar ändå plåtslagaren.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 1
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 5,
+    "K8": 7,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (skorsten/huv/kamin: bara Sotarset)",
+     "koncept.py sok skorsten/huv/regnhatt/fågelnät",
+     "fynd.json 09-11…09-16"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013202910600.html",
+    "https://kamin-skorsten.se/skorstenshuv/",
+    "https://www.bauhaus.se/skorstenshuv-dinak-svart-o150mm",
+    "https://www.k-rauta.se/produkt/komplett-skorstenshuv/7350031818918",
+    "https://butik.nspab.se/produkt/skorstenshuv/",
+    "https://skorsten.org/produkt/kajgaller-140x140/",
+    "https://www.hornbach.se/p/kajgaller-safepipe-i-norden-silver-stal-fagelskydd-for-skorsten-passar-skorstenskanal-140x140-mm/12348049/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Skorstenssnurran mot bakdrag, rostfri",
+   "objekt": "NYTT: Skorstenstoppen på stålskorsten/rökrör (rund, Ø150–200) — bakdrag",
+   "form": "annat",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
+    "delade_variabler": [
+     "maskinen gör jobbet (vinddriven, ingen el)",
+     "märkesankare ≥ 2,4× (Bauhaus 3 995 / 1 299 = 3,1×)",
+     "prisband ≥ 1 000",
+     "synlig payoff på 3 s (snurran roterar, röken går rakt upp)",
+     "old way = köpt produkt som inte fungerar (fast huv) eller tjänst (skorstensfirma)"
+    ],
+    "avvikelser": [
+     "objekt ute (bandslipen var inne)",
+     "diameterpassning — ägaren måste mäta",
+     "montering på taket"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "vedsasong",
+    "deadline_typ": "vedsäsong",
+    "veckor_kvar": 3.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013101998904",
+    "url": "https://www.aliexpress.com/item/1005013101998904.html",
+    "pris_usd": 44.39,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-23T06:57:14Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-23/v3/bilder/1005013101998904.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "diametrar står inte i titeln — ej mätt; heron visar rund stos",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "textfri, högpolerad rostfri snurra med rund stos — ser ut som 1 500–2 000 kr; kontext (snurrar på skorstenen) kräver egen video"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Skorsten.org (Skorstenssnurra 160 aluminium)",
+     "pris_sek": 1867,
+     "url": "https://skorsten.org/produktkategori/skorstenssnurra/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "BAUHAUS Vindsnurra för skorstensdrag 160 mm, rostfri med kullager",
+     "pris_sek": 3995,
+     "url": "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 3.08,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se",
+     "skorsten.org (1 836–2 064 kr; Aspirotor 3 467–3 592 kr)",
+     "ventilation.se (Skorstenssnurra rostfri 160 — 1 600 kr, utgången)",
+     "kamintillbehor.se (Aspiromatic, pris ej mätt)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     578,
+     706
+    ],
+    "pris_sek": 1299,
+    "brutto_sek": [
+     593,
+     721
+    ],
+    "be_cpa_sek": [
+     593,
+     721
+    ],
+    "be_roas": 1.98,
+    "flerkop": false,
+    "returrisk": "hög — diametern måste mätas; murad kanal kräver platta som inte ingår"
+   },
+   "meta_tanke": {
+    "hook": "Slår röken ner i rummet när det blåser?",
+    "objekt_i_bild": "skorstenstoppen med snurran som roterar i vinden",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "snurran roterar, röken stiger rakt upp — ingen rök vid kaminluckan"
+   },
+   "varfor": "Testar H12 rent: vinddriven maskin ≥ 900 kr med Bauhaus-ankare 3,1× och rörlig payoff i bild; svenskt golv i samma form ligger på 1 836 kr, 40 % över oss. Samma kaminägare som köpte sotarsetet, samma eldningsstart.",
+   "huvudrisk": "Passform (diametrar ej lästa ur titeln, rund stos passar inte murad kanal utan platta) och montering på taket.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 6,
+    "K4": 6,
+    "K5": 10,
+    "K6": 8,
+    "K7": 6,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (skorsten/snurra/huv)",
+     "koncept.py sok skorsten/huv",
+     "fynd.json 09-11…09-16"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013101998904.html",
+    "https://www.bauhaus.se/vindsnurra-for-skorstensdrag-160mm",
+    "https://skorsten.org/produktkategori/skorstenssnurra/",
+    "https://ventilation.se/sv/products/skorstenssnurra-rostfri-160"
+   ],
+   "form_kommentar": "vinddriven roterande huv = maskin som gör jobbet (drar rökgas), inte ett skydd — omklassad av huvudsessionen 09-23 så formtaket inte räknar den som överdrag"
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Kajgaller / fågelskydd för skorsten",
+   "skal": "Kedjan har exakt formen: Skorsten.org 126 kr, NSP 153 kr, Hornbach/K-Rauta 140×140 (och 140×270 för 179 kr). Gallret utan regnskydd ingår i stället i huvraden."
+  },
+  {
+   "namn": "Askdammsugare / askavskiljare",
+   "skal": "Kedjan har den (Jula asksugar-kategori, Biltema våtdammsugare/asksug). Ny form på Makita-batteri hittades inte — sökningen gav bara vanliga handdammsugare och batterier."
+  },
+  {
+   "namn": "Kaminfläkt",
+   "skal": "Kedjan har den: Jula 015305 och Clas Ohlson 41-2835 i exakt samma form."
+  },
+  {
+   "namn": "Vedfuktmätare",
+   "skal": "Kedjan har den: Clas Ohlson fuktkvotsmätare-serien (Pr366901000, 36-4197). BE-CPA ≥ 190 omöjlig mot 199-klassen."
+  },
+  {
+   "namn": "Rökgastermometer med magnet",
+   "skal": "Kedjan har den: Clas Ohlson 34-641. Under 200 kr — BE-CPA ≥ 190 omöjlig."
+  },
+  {
+   "namn": "Kaminglasrengöring utan kemikalier",
+   "skal": "Ingen produktform utöver kedjans sprayer; svaret är fuktigt papper + aska (gratis). Lågt upplevt värde."
+  },
+  {
+   "namn": "Rökrörstätning / pannkitt",
+   "skal": "Förbrukningsvara under 100 kr hos kedjan (ej URL-mätt) — BE-CPA ≥ 190 kan inte nås."
+  },
+  {
+   "namn": "Skorstenskamera / inspektionskamera för rökkanal",
+   "skal": "K0: '1080p Inspektionskamera / Endoskop' 699 kr står ACTIVE i katalog-live.txt."
+  },
+  {
+   "namn": "Mosskrapa för taket från marken",
+   "skal": "Golvet föll först: Jula Hard Head Takskrapa 3 m (012842) är exakt formen (skrapa på teleskopskaft). Taksopen 1 795 kr som ankare, men ingen billig roterande form hittad — Ali ej sökt."
+  },
+  {
+   "namn": "Avloppsrens roterande för borrmaskin",
+   "skal": "Kedjan har den: Biltema Avloppsrensare PRO 7,6 m (2000066230) drivs med borrmaskin; Clas Ohlson 7,5 m med vev."
+  },
+  {
+   "namn": "Takrännerensning från marken",
+   "skal": "Uteslutet i ordern (K0008 rännskopa kanske 09-09, Gutter Cleaner inte igen)."
+  },
+  {
+   "namn": "Hängrännesil / lövsil",
+   "skal": "Levererad 09-16 (Lövsilarna för stuprören, 6-pack, K0285)."
+  },
+  {
+   "namn": "Lövkorg / sandfångskorg för dagvattenbrunn",
+   "skal": "Sandfånget är en del av brunnen i fackhandeln (Byggmax/Stenbolaget); Ø315/400 måste mätas och en plastkorg har lågt upplevt värde — Ali ej sökt."
+  },
+  {
+   "namn": "Imkanal / köksfläktens fettfilter",
+   "skal": "Förbrukningsvara hos kedjan; imkanalen täcks i stället av ventilationsrensarens borste (Ø125)."
+  },
+  {
+   "namn": "Stor 4-bens skorstenshuv 582 × 582 (Ali 1005012452272224, 183 USD)",
+   "skal": "Landad ~2 650 kr → pris > 3 500 kr, i nivå med plåtslagarens måttbeställda huv (4 100 kr) — ingen lucka, tung frakt."
+  },
+  {
+   "namn": "Rund regnhuv 'kinesisk hatt' Ø (Ali 1005012931030564, 33,70 USD)",
+   "skal": "Stålskorstenar levereras med huv och Bauhaus (Dinak) har formen; passar inte murad kanal. Heron i kontext var bra men objektet saknas."
+  },
+  {
+   "namn": "Sotarset / roterande rökrörsborste",
+   "skal": "K0030 i butiken (REAL_WINNER) — uteslutet i ordern."
+  }
+ ]
 }
