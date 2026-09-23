@@ -679,6 +679,29 @@ per timme, tullens restpost under marknaden "" får inte tappas, och
 avgifternas okända andel är en periodkvot. Bygg den **aldrig** som 24 anrop
 till `compute()`.
 
+### Timgrafen på panelen (2026-09-23, build timgraf-v109)
+
+`app/components/Timgraf.tsx`: 24 staplar, med väljare för omsättning,
+ordrar och ROAS. Handritad SVG som resten — inget bibliotek, ingen CDN.
+
+Fyra saker som är medvetna och inte ska "förenklas" bort:
+
+1. **Staplarna är SUMMOR, inte snitt**, och det står på kortet. En stapel
+   på 12 000 kr över 30 dagar är inte en timme som drar in 12 000 kr.
+2. **ROAS kräver minst 3 ordrar i timmen.** Under det visas "—", aldrig ett
+   tal. Samma regel som gäller annonsbedömningar i resten av huset: ingen
+   dom på för tunt underlag. Noll spend ger också "—", aldrig 0 eller ∞ —
+   båda hade lästs som ett svar.
+3. **Ingen ROAS utan gemensam klocka.** Går tidszonsskillnaden inte att
+   räkna i hela timmar döljs ROAS-knappen helt och kortet säger varför.
+4. **Attributionen är inte kausal** och det står på kortet: ett klick 19:40
+   blir ett köp 20:15, så toppen ligger senare än timmen man ska köpa.
+
+Kortet göms i gruppsumman (`groupSize > 1`): timmar från butiker i olika
+tidszoner adderade till en stapel är ett tal ingen kan fatta beslut på.
+Måttväljaren är lokalt `useState` — **aldrig `setParams`**, det kör om
+loadern och sänker sidan till spinnern.
+
 ### Koppla Claude per butik (2026-09-23, build koppla-claude-v106)
 
 Axel: *"man kan koppla in Claude i appen, bara så att våra användare kan

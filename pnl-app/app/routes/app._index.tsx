@@ -37,17 +37,19 @@ import {
   kandaMarknader,
   markeraPagaende,
   readDaily,
+  readHourly,
   refreshDaily,
   refreshShopDaily,
   shiftIso,
 } from "../lib/daily.server";
 import { hemlandAv, marknadskod, marknadsnamn, stadaAvgifter } from "../lib/marknad";
-import { getSpend } from "../lib/meta.server";
+import { getSpend, TIMFONSTER_DAGAR, timvisSpend } from "../lib/meta.server";
 import { hamtaKonton, konfigurationer } from "../lib/meta-konton.server";
 import { dagarKvar, VARNA_DAGAR } from "../lib/meta-login";
 import { summeraGrupp } from "../lib/group.server";
 import { decrypt } from "../lib/crypto.server";
 import { evaluateTips, type Tip } from "../lib/tips.server";
+import { Timgraf } from "../components/Timgraf";
 import { asLang, localeOf, t, type Lang, type Texts } from "../lib/texts";
 
 type SettingsRow = Awaited<ReturnType<typeof prisma.shopSettings.upsert>>;
@@ -371,6 +373,9 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
     dataAgeMin,
     refreshing,
     result,
+    /* Timmarna på dygnet. Egen läsning, egen felhantering — faller den bort
+       ska panelens siffror stå kvar. */
+    timvis: await timvisData(shop, from, to, market, timezone, metaKonton).catch(() => null),
     rangeKey,
     /* Butikens egen dag — kalendern spärrar framtiden med den, aldrig med
        webbläsarens klocka (de skiljer sig mellan midnatt och 02:00). */
@@ -423,6 +428,7 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
       dataAgeMin: 0,
       refreshing: false,
       result: null as ReturnType<typeof compute> | null,
+      timvis: null as Awaited<ReturnType<typeof timvisData>> | null,
       rangeKey,
       idag: "",
       market: "",
@@ -440,6 +446,39 @@ async function loadPage(admin: any, shop: string, rangeKey: string, url: URL, se
 }
 
 type PageData = Awaited<ReturnType<typeof loadPage>>;
+
+/**
+ * Timmarna på dygnet: försäljning ur HourlyPnl, annonskostnad ur HourlySpend.
+ *
+ * ⚠ Annonskostnaden summeras över EXAKT de dagar som faktiskt är
+ * timuppdelade. Delas 30 dagars spend med 12 dagars omsättning ser ROAS ut
+ * att vara en tredjedel, och det syns inte som ett fel.
+ */
+async function timvisData(
+  shop: string,
+  from: string,
+  to: string,
+  market: string,
+  timezone: string,
+  metaKonton: Parameters<typeof timvisSpend>[1],
+) {
+  /* Timfönstret är kapat: Metas timbreakdown är dagar × kampanjer × 24 rader. */
+  const timFran = shiftIso(to, -(TIMFONSTER_DAGAR - 1));
+  const fran = from > timFran ? from : timFran;
+  const h = await readHourly(shop, fran, to, { market });
+  if (!h.dagarMedTimmar.length) {
+    return { timmar: h.timmar, spend: null, offset: null, dagar: 0, dagarUtan: h.dagarUtanTimmar, kapad: from < fran };
+  }
+  const sp = await timvisSpend(shop, metaKonton, h.dagarMedTimmar, timezone, market).catch(() => null);
+  return {
+    timmar: h.timmar,
+    spend: sp?.offset == null ? null : sp.timmar,
+    offset: sp?.offset ?? null,
+    dagar: h.dagarMedTimmar.length,
+    dagarUtan: h.dagarUtanTimmar,
+    kapad: from < fran,
+  };
+}
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { admin, session } = await authenticate.admin(request);
@@ -1103,7 +1142,7 @@ function SetupChecklist({
 }
 
 function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
-  const { fatal, result, rangeKey, idag, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
+  const { fatal, result, timvis, rangeKey, idag, market, marknader, daysWithoutMarkets, currency, spendError, spendCurrencyMismatch, spendConverted, targetMargin, tariffPerOrder, comparison, setup, dataAgeMin, refreshing, groupSize, group, metaTokenDagar, tips, monthlyGoal, estimate } = d;
   const [params, setParams] = useSearchParams();
   const revalidator = useRevalidator();
   const T = t(lang);
@@ -1601,6 +1640,14 @@ function DashboardView({ d, lang }: { d: PageData; lang: Lang }) {
                   <ProfitBars result={result} money={money} T={T} />
                 </BlockStack>
               </Card>
+            ) : null}
+
+            {/* Timmarna på dygnet. Visas även för ett enda dygn — det är där
+                frågan "när ska jag skala" är som mest levande. Göms i
+                gruppsumman: timmar från butiker i olika tidszoner adderade
+                till en stapel är ett tal ingen kan fatta beslut på. */}
+            {timvis && groupSize <= 1 ? (
+              <Timgraf d={timvis} T={T} money={money} nf={nf} />
             ) : null}
           </BlockStack>
         </Layout.Section>

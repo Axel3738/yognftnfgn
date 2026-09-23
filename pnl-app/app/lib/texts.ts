@@ -96,6 +96,26 @@ const en = {
     thSales: "Sales",
     thAds: "Ads",
     thNetProfit: "Net profit",
+    hourly: {
+      title: "By hour of day",
+      sales: "Revenue",
+      orders: "Orders",
+      roas: "ROAS",
+      hourLabel: (h: string) => `${h}:00–${h}:59`,
+      ordersCount: (n: string) => `${n} orders`,
+      sumNote: (days: number) =>
+        days === 1
+          ? "Each bar is that hour on 1 day — a total, not an average."
+          : `Each bar is that hour added up across ${days} days — a total, not an average.`,
+      coverage: (med: number, av: number) =>
+        `Hourly data covers ${med} of ${av} days so far. It fills in as the app refreshes.`,
+      capped: "Hours go back 31 days at most.",
+      lag: "A click at 19:40 can become an order at 20:15, so the peak sits a little later than the hour to buy.",
+      noRoas:
+        "ROAS per hour needs your ad account and your store on the same clock. They are not, so only revenue and orders are shown.",
+      noSessions:
+        "Sessions and conversion rate per hour are not available — Shopify keeps those in its own analytics and does not hand them to apps.",
+    },
     missingStores: (n: number) => `${n} store(s) are not included in the total`,
 
     setup: {
@@ -953,6 +973,26 @@ const sv: Texts = {
     thSales: "Försäljning",
     thAds: "Annonser",
     thNetProfit: "Nettovinst",
+    hourly: {
+      title: "Per timme på dygnet",
+      sales: "Omsättning",
+      orders: "Ordrar",
+      roas: "ROAS",
+      hourLabel: (h: string) => `${h}:00–${h}:59`,
+      ordersCount: (n: string) => `${n} ordrar`,
+      sumNote: (days: number) =>
+        days === 1
+          ? "Varje stapel är den timmen under 1 dag — en summa, inte ett snitt."
+          : `Varje stapel är den timmen hopräknad över ${days} dagar — en summa, inte ett snitt.`,
+      coverage: (med: number, av: number) =>
+        `Timdata finns för ${med} av ${av} dagar än så länge. Den fylls på när appen uppdaterar.`,
+      capped: "Timmarna går som mest 31 dagar bakåt.",
+      lag: "Ett klick 19:40 kan bli en order 20:15, så toppen ligger lite senare än timmen du ska köpa.",
+      noRoas:
+        "ROAS per timme kräver att annonskontot och butiken går på samma klocka. Det gör de inte, så bara omsättning och ordrar visas.",
+      noSessions:
+        "Sessioner och konverteringsgrad per timme går inte — Shopify har dem i sin egen analys och lämnar inte ut dem till appar.",
+    },
     missingStores: (n: number) => `${n} butik(er) är inte med i summan`,
 
     setup: {
