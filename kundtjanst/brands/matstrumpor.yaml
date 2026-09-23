@@ -34,11 +34,11 @@ discord:
 shopify:
   env_suffix: "1r46tp_qx"
 
-# Autosvaret (kundtjanst/autosvar.mjs) är AV här: Axels ordning 2026-09-22 är
-# Bäverbutiken torrt → skarpt → sedan alla butiker. Morgonlistan och
-# tvistkollen läser brevlådan och tvisterna ändå — de skriver inget.
+# Autosvaret (kundtjanst/autosvar.mjs) PÅ sedan 2026-09-23 — samma steg som
+# CaraShell samma dag (Axels order). Railway kör det TORRT tills
+# AUTOSVAR_LAGE_MATSTRUMPOR tas bort (stonebite/cowork/7-autosvar-matstrumpor.txt).
 svar:
-  autosvar: false
+  autosvar: true
   sprak: sv
   signatur: "Kundtjänst Matstrumpor"
   leverans_dagar: [7, 14]
@@ -57,17 +57,33 @@ notion:
   sop_database_id: ""
   rapport_database_id: ""
 
-# Tvist-SOP:erna (kundtjanst/sop/). Det som saknas blir en synlig ⚠️ OWNER-rad
-# i handboken, aldrig ett tomrum — fyll i när Axel läst av det i admin.
+# Tvistblocket (kundtjanst/brand-mall.yaml), ifyllt 2026-09-23. Källorna:
+# matstrumpor.se/policies/refund-policy + terms-of-service (avlästa 200 samma
+# dag), Shopify Admin API (shop.billingAddress) och Axels avläsning i admin
+# (descriptor). shipping-policy, contact-information och legal-notice svarar 404.
 tvister:
-  returfonster_dagar: 14
-  angerratt_dagar: 14
-  policy_url: "https://matstrumpor.se/policies/refund-policy"
-  returadress: ""
+  # Shopifys faktureringsadress (sjöhed 160, 44274 harestad) — samma adress och
+  # bolag som Bäverbutiken och CaraShell. Står INTE publikt i villkoren.
+  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
+  # Policyn: "Om returen accepteras skickar vi dig en returfraktsedel samt
+  # instruktioner … Artiklar som skickas tillbaka utan att retur först har
+  # begärts accepteras inte." ⇒ mejla först.
   returadress_pa_forfragan: true
+  # Villkoren § 5: "Kunden står för returfrakten om inget annat anges."
   returfrakt_betalas_av: "kund"
-  billing_descriptor: ""
-  support_telefon: ""
+  # Policyn: "30 dagars returpolicy … från det att du mottog artikeln", och
+  # villkoren § 5: "Vi erbjuder 30 dagars öppet köp". Stod 14 (mallvärdet)
+  # före 2026-09-23. Bäverbutiken har 14 — Matstrumpors publicerade sida säger 30.
+  returfonster_dagar: 30
+  angerratt_dagar: 14
+  policy_url: "https://matstrumpor.se/policies/refund-policy"   # 200, avläst 2026-09-23
+  # Avläst av Axel 2026-09-23 i Shopify admin → Settings → Payments →
+  # "Uppgifter för kundens kontoutdrag" (appen saknar read_shopify_payments,
+  # API:t nekar fältet).
+  billing_descriptor: "SP Matstrumpor.se"
+  # Shopify billingAddress.phone (mätt 2026-09-23) — samma nummer som
+  # Bäverbutiken och CaraShell.
+  support_telefon: "+46 79 340 44 07"
   strid_lonar_sig_over: 0
   sparningssida: "https://matstrumpor.se/pages/spara"
   paketprefix: "MS-"
