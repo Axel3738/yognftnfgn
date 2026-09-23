@@ -5,8 +5,30 @@
   "aktiva": [
     {
       "namn": "Car wash brush creative hub",
+      "namn_prefix": "Car wash brush",
       "datakalla": null,
-      "notering": "Axels order 2026-09-23 (\"glöm inte att göra bilderna för denna\"). ⚠️ Integrationen 'Bäverbutiken RUTINER' är INTE inbjuden till hubben än — den syns i Axels sidomeny men inte i en enda API-läsning: varken data source-listningen (25 källor, mätt samma dag) eller en titelsökning på 'Car wash brush' hittar den. Det betyder 'inte inbjuden', aldrig 'databasen saknas'. Raden ligger kvar här med flit: så fort hubben delats tar 20:00-rutinen den av sig själv, utan att någon behöver komma ihåg det. Fyll i datakalla vid första lyckade läsningen.",
+      "notering": "Axels order 2026-09-23 (\"glöm inte att göra bilderna för denna\", sedan \"ja kör alla fyra\"). ⚠️ Integrationen 'Bäverbutiken RUTINER' är INTE inbjuden till hubben än — den syns i Axels sidomeny men inte i en enda API-läsning: varken data source-listningen (25 källor, mätt samma dag) eller en titelsökning hittar den. Det betyder 'inte inbjuden', aldrig 'databasen saknas'. Raden ligger kvar här med flit: så fort hubben delats tar 20:00-rutinen den av sig själv, utan att någon behöver komma ihåg det. Fyll i datakalla vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Chimney sweep set creative hub",
+      "namn_prefix": "Chimney sweep set",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. ⚠️ Titeln var avklippt i Axels skärmbild ('Chimney sweep set creativ…') — matcha på namn_prefix och skriv in det exakta namnet vid första lyckade läsningen.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Indoor slippers creative hub",
+      "namn_prefix": "Indoor slippers",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. Titeln syntes i sin helhet i skärmbilden.",
+      "avvaktar_atkomst": true
+    },
+    {
+      "namn": "Bird feeder with camera creative hub",
+      "namn_prefix": "Bird feeder with camera",
+      "datakalla": null,
+      "notering": "Axels order 2026-09-23 (\"ja kör alla fyra\"). Samma spärr som Car wash brush: integrationen är inte inbjuden än. ⚠️ Titeln var avklippt i Axels skärmbild ('Bird feeder with camera cre…') — matcha på namn_prefix och skriv in det exakta namnet vid första lyckade läsningen.",
       "avvaktar_atkomst": true
     },
     {

@@ -96,8 +96,16 @@ databasen inte fanns. Sådana rader bär `"avvaktar_atkomst": true` och
 där för att rutinen ska plocka upp hubben av sig själv samma kväll som Axel delar
 den. Rapportera dem varje körning på en egen rad ("väntar på Notion-åtkomst"), och
 fyll i `datakalla` vid första lyckade läsningen. *(Mätt 2026-09-23: Axel bad om
-bildannonser för `Car wash brush creative hub`; den fanns i hans sidomeny men i
-noll av 25 datakällor integrationen nådde.)*
+bildannonser för fyra nya hubbar — `Car wash brush`, `Chimney sweep set`,
+`Indoor slippers`, `Bird feeder with camera`; alla fyra fanns i hans sidomeny men
+i noll av 25 datakällor integrationen nådde.)*
+
+⚠️ **Ett namn ur en skärmbild är ofta avklippt.** Notions sidomeny kortar långa
+titlar med `…`, så "Chimney sweep set creativ…" kan heta nästan vad som helst på
+slutet. En rad som väntar på åtkomst bär därför `namn_prefix`: **matcha på
+prefixet, inte på hela namnet**, tills hubben lästs en gång — då skrivs det
+exakta namnet och `datakalla` in. Matchar du bara på hela namnet missar rutinen
+hubben tyst dagen den delas, och ingen får veta det.
 
 Hubbarna hittas i övrigt dynamiskt, så nya produkter kommer med av sig själva:
 
