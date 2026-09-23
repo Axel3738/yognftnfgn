@@ -14,7 +14,7 @@ const FORB = { sv: ['revolutionerande', 'ultimat', 'game-changer', 'måste-ha', 
 const RAKNE = {
   varmesulor: ['2000 mAh', '41'], krukvaxthuv: ['3', '120 × 180'], bikupsjacka: ['194 × 46'], ljusslingevindor: ['10'], makitahallare: ['5'], elcykeljacka: ['2'],
   rcdrift: ['1:24', '20 km/h', '4', '5 koner'], rcoffroad: ['1:16', '20 km/h', '2,4 GHz'], vedklyvshuv: ['210D'], poolpumphuv: ['101 × 86 × 78', '210D'], takachuv: ['80 × 80 × 38'], buskjacka: ['2', '120 × 180'],
-  regnkedja: ['3,8 m', '12'], rullknivslip: ['20°', '2 diamant'], highlandcow: ['24', '2026'], lovsilar: ['6'], bordsfotboll: ['6 bollar', '2 spelare', '3+'], magnetblock: ['200', '3+'],
+  regnkedja: ['3,8 m', '12'], rullknivslip: ['20°', '2 diamant'], highlandcow: ['24', '2026'], lovsilar: ['6'], bordsfotboll: ['6 bollar', 'Två spelare', '3+'], magnetblock: ['200', '3+'],
 };
 let fel = 0;
 for (const [id, f] of Object.entries(FAKTA)) {

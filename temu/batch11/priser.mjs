@@ -14,8 +14,9 @@ export const PRIS = Object.entries(FAKTA).map(([id, f]) => {
     NO: { usd: no, pris: prisNO, jamfor: nio(prisNO * 1.3), cogs: +(no * FX.NO).toFixed(2) },
   } };
 });
-if (process.argv.includes('--json')) console.log(JSON.stringify(PRIS));
-else {
+const direkt = process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop());
+if (direkt && process.argv.includes('--json')) console.log(JSON.stringify(PRIS));
+else if (direkt) {
   console.log('id                  status  SE usd   SE pris/jämför  cogs     NO usd   NO pris/jämför  cogs');
   for (const p of PRIS) { const f = FAKTA[p.id], s = p.land.SE, n = p.land.NO;
     console.log(`${p.id.padEnd(19)} ${f.status.padEnd(6)} ${String(s.usd).padStart(6)}  ${String(s.pris).padStart(5)} / ${String(s.jamfor).padStart(5)}   ${String(s.cogs).padStart(7)}  ${String(n.usd).padStart(6)}  ${String(n.pris).padStart(5)} / ${String(n.jamfor).padStart(5)}   ${String(n.cogs).padStart(7)}`); }
