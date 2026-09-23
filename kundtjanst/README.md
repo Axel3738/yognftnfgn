@@ -430,11 +430,21 @@ Bäverbutiken först, sedan samma sak överallt).
   (repot som källa, `main` som utgren, miljön `env_011kzcu4tXHXM9LdECNkDe9E`
   som bär `KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`), cron `10 * * * *`, prompt
   `/autosvar --brand baverbutiken --torr --discord`, sedd i `list_triggers`
-  samma körning, första körning 00:10 CEST 2026-09-23. Torrt = utkast i
-  `INBOX.Drafts`, inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt.
-  **Skarpt är Axels ok** efter 20 rätta utkast i rad ⇒ `update_trigger` med
-  prompten `… --skarpt --discord`, aldrig en andra rutin. En brevlåda, en
-  session: kör inte `/autosvar` för hand mot Bäverbutiken medan rutinen är på.
+  samma körning. ⛔ **PAUSAD 2026-09-23 00:00 CEST av en annan session, före
+  första körningen** (`enabled: false`, sessionen är orörd: 0 körningar, 0
+  loggrader): **Railway-vakten** (`stonebite/autosvar-vakt.mjs`, PR #124/#126)
+  kör samma bot mot samma brevlåda **var 60:e sekund** sedan 23:30 CEST —
+  `/halsa` → `autosvar.kor: true`, torrt, loggen på volymen
+  `/data/autosvar/logg` (inte repots). Två sessioner byggde var sin körare
+  samma kväll utan att se varandra; Railway är den som klarar Axels "60
+  sekunder", så rutinen står kvar avstängd. **Slå aldrig på den medan
+  `AUTOSVAR_BRANDS` är satt på Railway.** Torrt = utkast i `INBOX.Drafts`,
+  inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt. **Skarpt är
+  Axels ok** efter 20 rätta utkast i rad ⇒ `AUTOSVAR_LAGE=skarpt` på Railway.
+  En brevlåda, en körare: kör inte `/autosvar` för hand mot Bäverbutiken.
+  ⚠️ Handkörningen 23:31 CEST (raden nedan) gick parallellt med Railways första
+  varv — den skrev Hans-utkastet och loggade honom i REPOTS logg, som Railway
+  inte läser; det som hindrar Railway från ett andra utkast är Drafts/Sent-vakten.
 - **SOP:en till VA:n:** `va-sop/auto-reply-bot.md` → Notion-sidan **"Auto-reply
   bot — what it does, and what you do"** (kategori Other stuff) i "Customer
   support bäverbutiken", plus rader i Store facts (läge, signatur, VA-PRIO,
@@ -477,11 +487,25 @@ Bäverbutiken först, sedan samma sak överallt).
 - **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
   svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
   "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
-  leverans, inte en pump som läcker efter köpet — `beklagar` borde säga "att
-  varan inte fungerar som den ska" när kategorin är `skadad_defekt` utan
-  leveransord; och fraktetiketten i bildförfrågan (SOP 05/08) är irrelevant för
-  ett funktionsfel. Inget av det är fel mot kunden, men det är två saker Axel
-  ser direkt.
+  leverans, inte en pump som läcker efter köpet, och fraktetiketten i
+  bildförfrågan (SOP 05/08) är irrelevant för ett funktionsfel.
+  **Axels dom 2026-09-23 morgon: "fel".** Räkningen står på 0 av 20. Rättat
+  redan samma natt av den andra sessionen (PR #131, `svar.fotonTypFor`):
+  **`vara`** (skadad/defekt med funktionsfel-ord och inget om paketet ⇒
+  "Tråkigt att höra att varan inte fungerar som den ska" + "skicka gärna en
+  bild eller en kort video på varan där felet syns") eller **`leverans`**
+  (fel vara, kom fram trasig, förpackningen nämnd, oklart ⇒ SOP 05:s tre
+  bilder som förut); loggraden bär `fotonTyp`. Den här sessionen byggde samma
+  natt en egen variant av samma rättning (`fotonVariant`, tre varianter) utan
+  att se PR #131 — den kastades vid sammanslagningen, `main`:s version gäller.
+  Kommandofilen drar `main` FÖRE körningen sedan dess. ⚠️ Axel skrev bara
+  "fel" — leveransraden och fraktetiketten är det som rättats; såg han något
+  annat är det inte rättat än (frågan ställd). ⚠️ **Utkastet gick ändå ut:**
+  VA:n skickade två svar till Hans 07:32 och 07:37 CEST (Sent uid 629/630:
+  först sitt eget, "en kort video som visar läckaget", sedan bottens text
+  omskriven med förpackning + fraktetikett), raderade utkastet, och Hans
+  svarade 07:59 ("läckan verkar komma från batteri/motordelen … hur går vi
+  vidare?") — läs Sent innan du dömer ett utkast som "kvar".
 
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 
