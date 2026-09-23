@@ -421,7 +421,30 @@ skickade formuläret tre gånger (07:59 ×2, 08:33); det nyaste hotar med Klarna
 och "avbeställa" ⇒ SVÅR till VA:n, medan det äldsta fick WISMO-utkastet —
 kunden får fakta om paketet, VA:n har hotet.
 
-### I drift TORRT sedan 2026-09-22 kväll — timrutin, SOP till VA:n, Roundcubes cache
+### ⛔ SKARPT sedan 2026-09-23 ~13:10 CEST — Axels beslut A
+
+Axel trodde botten redan skickade ("Nej va??? Varför kör inte botten, den ska
+ju skicka meddelandena på arga kunderna"). Två vägar lades fram: A skarpt för
+allt nu (två klick på Railway), B ett nytt läge med skarpt bara för arga och
+utkast för enkla tills 20 rätt (rekommenderat, men 2–3 h till live). Han valde
+A, bad om hela beskrivningen av flödet, spärrarna och risken först, och satte
+sedan `AUTOSVAR_LAGE=skarpt` + Deploy på Railway själv. 20-regeln skrotades
+vid räkningen 1 (Lars #6898, första utkastet under Railway, rätt: order på
+e-posten, "hos DHL för sista biten", bävernummer och länk). Skarpt ändrar en
+enda rad: `utkast: torr` blir Skicka. Fönstret 72 h, ett svar per tråd, VA:ns
+kund i 14 dagar, löftesspärren och 20 per varv gäller som förut. Lars utkast
+skickar botten inte (tråden räknas som svarad) — Axel skickade det själv
+13:17. ✅ **Live 13:18:45 CEST, mätt 13:19 på `/halsa`** (`lage: skarpt`,
+`kor: true`). ⚠️ Variabelbytet gav en deploy av SAMMA bygge (`snapshot`
+07:05 UTC kvar) — fraserna ur PR #132 är inte live förrän nästa bygge.
+⚠️ Axel skickade samtidigt (13:18:33, före bottens start) det gamla
+Niklas Hurtig-utkastet från 2026-08-19 (VA:ns, order 5032, "fortfarande
+under transport … i Sverige") — ett fem veckor gammalt svar till en kund;
+inte bottens, men Niklas bör få rätt läge av VA:n. Drafts var tom 13:20.
+Store facts och VA-SOP:en säger Live sedan samma dag. Botten drar inga
+Claude-credits (ingen modell), bara Railways CPU.
+
+### I drift TORRT 2026-09-22 kväll → 2026-09-23 lunch — timrutin, SOP till VA:n, Roundcubes cache
 
 Axels order 2026-09-22 kväll: "fixa bara SOP:n och sätt igång AI-kundsupport-
 botten, och visa mig vad den skickar till folk … granska utkasten själv … skriv
