@@ -35,11 +35,12 @@ Hej! Jag driver en svensk generalbutik (Shopify, dropshipping från Kina) som vi
 - Största flaskhalsarna: redigerarkapaciteten, UGC-råmaterial och att jag är den enda som styr allt.
 
 **MINA FRÅGOR**
-1. Hur ska jag skala taköverdraget från ~12 500 kr/dag utan att CPA fortsätter rusa? Nya vinklar (fukt och kondens), nya format eller egen butik direkt?
-2. Vår breakthrough-andel är 0,6 %. Vad är normalt enligt Evolve, och vad är den snabbaste vägen att höja den?
-3. En tredjedel av testspenden dör på produkter som aldrig ger en bedömbar annons. Hur ska produkttestet se ut i en generalbutik: budget, antal creatives och när man dödar?
-4. Vilken tröskel ska en testprodukt klara innan den får en egen en-produktsbutik?
-5. AOV 725 kr och 96 % enproduktsordrar. Vad rekommenderar Evolve för att höja AOV och återköp när lyckohjulet inte fungerar?
-6. Ser du något i upplägget som går emot Evolve-kursen?
+1. Hur skalar man en vinnande produkt när CPA stiger kraftigt i takt med att dagsbudgeten ökar? Vad är Evolves ordning: nya vinklar, nya format eller nya kampanjer?
+2. Vilken andel breakthrough-annonser är normal enligt Evolve, och vad är det snabbaste sättet att få fler?
+3. Hur ska ett produkttest se ut i en generalbutik: budget, antal creatives per produkt och när man dödar en produkt?
+4. Vilken tröskel ska en testprodukt klara innan den flyttas till en egen en-produktsbutik?
+5. Vad rekommenderar Evolve för att höja AOV och återköp i en generalbutik där nästan alla ordrar har en enda produkt?
+6. Hur hanterar man en invändning som många kunder tar upp i kommentarerna men som ingen annons svarar på?
+7. Finns det något i upplägget ovan som går emot det Evolve-kursen lär ut?
 
 Svara gärna konkret, i prioritetsordning, med det viktigaste först.
