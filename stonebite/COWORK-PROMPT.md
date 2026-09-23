@@ -8,12 +8,14 @@ den första ger dig, så kör dem inte samtidigt.
 | 1 | Railway | `cowork/1-railway.txt` | Skapar tjänsten, miljövariablerna, volymen. Lämnar tillbaka DNS-värdena — ✅ körd 2026-09-21 |
 | 2 | Google Workspace / domänen | `cowork/2-dns.txt` | Letar upp var DNS ligger, lägger in posterna, rör aldrig mejlen — ✅ körd 2026-09-21 (www fungerar, roten blev en 302) |
 | 3 | Google Workspace / domänen | `cowork/3-rot.txt` | **Roten utan www:** ALIAS-post på `@` hos Squarespace mot Railways rotvärde, vidarebefordran + Squarespaces A-poster bort. Rör aldrig mejlen |
+| 7 | Shopify Dev Dashboard + butikernas admin | `cowork/7-tvister-no-dk-fi.txt` | Lägger till `read_shopify_payments_disputes` på apparna för NO/DK/FI ("Bever No produkter claude", "DK claudeprodukter", "FI claudeprodukter"), släpper en ny version, godkänner i varje admin. Tar aldrig bort en rättighet — stoppar om Scopes-fältet är tomt. Fristående från 1–3 |
 
 Råfilerna att kopiera (öppna, Ctrl+A, Ctrl+C):
 
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/1-railway.txt
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/2-dns.txt
 - https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/3-rot.txt
+- https://raw.githubusercontent.com/Axel3738/yognftnfgn/main/stonebite/cowork/7-tvister-no-dk-fi.txt
 
 **Mellan de två:** prompt 1 slutar med att Cowork skriver ut exakt vilka
 DNS-poster Railway vill ha. Kopiera de raderna och klistra in dem i prompt 2

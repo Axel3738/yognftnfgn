@@ -685,6 +685,10 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   på svar, CaraShell 0, Matstrumpor 3 (alla avgjorda), HeimGuard och
   AdventLane 0; **NO, DK och FI svarar 403 — apparna saknar
   `read_shopify_payments_disputes`**, och sidan säger det i stället för noll.
+  Apparna (mätt 2026-09-23): NO "Bever No produkter claude", DK "DK
+  claudeprodukter", FI "FI claudeprodukter" — alla tre med samma 13
+  rättigheter (ordrar, fulfillments, produkter, innehåll, lager, rabatter,
+  publiceringar). Rättigheten läggs till med `stonebite/cowork/7-tvister-no-dk-fi.txt`.
   Samma dag: Shopify ger 50 tvister per sida — `kundtjanst/shopify.mjs`
   läste bara 50 av Bäverbutikens 68, nu paginerat. `under review` (bevisen
   redan inne) pingas, kalenderförs och räknas som brådskande aldrig.
