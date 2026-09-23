@@ -190,6 +190,7 @@ export async function action({ request }: ActionFunctionArgs) {
     await prisma.shopSettings.update({ where: { shop: session.shop }, data: META_TOMT });
     await taBortAllaKonton(session.shop);
     await prisma.dailySpend.deleteMany({ where: { shop: session.shop } });
+    await prisma.hourlySpend.deleteMany({ where: { shop: session.shop } });
     glomMetaFel(session.shop);
     if (token && aterkalla) await aterkallaToken(token);
     return json({ ok: true, message: T.settings.disconnected });

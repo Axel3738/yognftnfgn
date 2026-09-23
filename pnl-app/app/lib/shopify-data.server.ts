@@ -14,6 +14,9 @@
 import type { AdminApiContext } from "@shopify/shopify-app-remix/server";
 import type { MarknadsDel, ProductRow, SalesDay } from "./pnl.server";
 import { marknadskod } from "./marknad";
+import { hourInTz } from "./timmar";
+
+export { hourInTz };
 
 const num = (v: unknown): number => {
   if (v == null || v === "") return 0;
@@ -95,6 +98,14 @@ export interface OrderData {
    * skrivs ingen uppdelning, hellre än en där allt ligger under "okänt".
    */
   marketsByDay: Record<string, Record<string, MarknadsDel>> | null;
+  /**
+   * Samma dagar uppdelade per TIMME på dygnet (0–23) i butikens tidszon, och
+   * per marknad inom timmen: { "2026-09-17": { "14": { "": {...}, "SE": {...} } } }.
+   * Marknaden "" är alltid hela timmen — den finns även när landet är okänt.
+   * Aldrig null: timmen kommer ur createdAt och kan alltid räknas ut.
+   * Bara skalärer, ingen produktmix — se HourlyPnl i schemat.
+   */
+  hoursByDay: Record<string, Record<string, Record<string, Omit<MarknadsDel, "products">>>>;
   /** Per order med kund — tom när frågan ställdes utan kundfältet. */
   kundOrdrar: KundOrderRa[];
 }
@@ -208,6 +219,9 @@ async function doFetchOrderData(
           ]),
         )
       : null,
+    /* Timmarna bär inga produktrader, så det finns inga kostnader att lägga
+       på — de går rakt igenom. */
+    hoursByDay: data.hoursByDay,
     kundOrdrar,
   };
 }
@@ -243,6 +257,23 @@ function parseOrderLines(
   /* Ordrar som räknas, med sin dag — radrader vars förälder skippats
      (avbruten/test/utanför fönstret) ska inte in i mixen. */
   const counted = new Map<string, string>();
+  /* Timmen på dygnet per order. Ligger UTANFÖR landsspärren med flit:
+     timmen kommer ur createdAt och har inget med leveransadressen att göra,
+     så en butik utan adressbehörighet ska ändå få sin timgraf. */
+  const timmePerOrder = new Map<string, number>();
+  const salesByTimme = new Map<string, Map<number, Map<string, SalesDay>>>();
+  const timHink = (day: string, timme: number, land: string): SalesDay => {
+    const perTimme = salesByTimme.get(day) ?? new Map<number, Map<string, SalesDay>>();
+    salesByTimme.set(day, perTimme);
+    const perLand = perTimme.get(timme) ?? new Map<string, SalesDay>();
+    perTimme.set(timme, perLand);
+    const hink = perLand.get(land) ?? {
+      day, orders: 0, grossSales: 0, discounts: 0, returns: 0,
+      netSales: 0, totalSales: 0, shippingCharges: 0, fees: medAvgifter ? 0 : null,
+    };
+    perLand.set(land, hink);
+    return hink;
+  };
   const productByDay = new Map<string, Map<string, Agg>>();
   /* Per marknad: samma aggregat en gång till, nyckel dag → land. Landet är
      leveransadressens; saknas den (digital vara, upphämtning) tas fakturans.
@@ -320,11 +351,20 @@ function parseOrderLines(
         if (b.fees != null) b.fees += avgift;
       };
       fyll(bucket);
+      const land = medLand
+        ? marknadskod(line.shippingAddress?.countryCodeV2 ?? line.billingAddress?.countryCodeV2)
+        : "";
       if (medLand) {
-        const land = marknadskod(line.shippingAddress?.countryCodeV2 ?? line.billingAddress?.countryCodeV2);
         landPerOrder.set(line.id, land);
         fyll(marknadsHink(day, land));
       }
+      /* Samma `fyll` som dagen och marknaden — då kan timmarna inte summera
+         till något annat än dagen, för det är samma aritmetik. Marknaden ""
+         är alltid med, så totalen finns även när landet är okänt. */
+      const timme = hourInTz(new Date(line.createdAt), timezone);
+      timmePerOrder.set(line.id, timme);
+      fyll(timHink(day, timme, ""));
+      if (medLand && land) fyll(timHink(day, timme, land));
     } else {
       // Orderrad-artikel
       const day = counted.get(line.__parentId);
@@ -370,11 +410,28 @@ function parseOrderLines(
     }
   }
 
+  /* Timmarna. Varje dag i fönstret får ett objekt även när inget såldes —
+     det skiljer "hämtad, tom timme" från "dagen är inte timuppdelad än". */
+  const hoursByDay: OrderData["hoursByDay"] = {};
+  for (const d of salesBy.keys()) {
+    const perTimme: Record<string, Record<string, Omit<MarknadsDel, "products">>> = {};
+    for (const [timme, perLand] of salesByTimme.get(d) ?? []) {
+      const rader: Record<string, Omit<MarknadsDel, "products">> = {};
+      for (const [land, sd] of perLand) {
+        const { day: _dag, ...rest } = sd;
+        rader[land] = rest;
+      }
+      perTimme[String(timme)] = rader;
+    }
+    hoursByDay[d] = perTimme;
+  }
+
   return {
     sales: [...salesBy.values()],
     products: mergeProductRows(Object.values(productsByDay).flat()),
     productsByDay,
     marketsByDay,
+    hoursByDay,
     kundOrdrar: [...kundOrdrar.values()],
   };
 }

@@ -160,6 +160,7 @@ export async function taBortMarknad(shop: string, market: string): Promise<void>
       });
       /* Kontots cachade annonskostnad är delad på den gamla märkningen. */
       await tx.dailySpend.deleteMany({ where: { shop, account: k.accountId } });
+      await tx.hourlySpend.deleteMany({ where: { shop, account: k.accountId } });
     }
   });
 }

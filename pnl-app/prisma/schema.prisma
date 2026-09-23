@@ -293,6 +293,11 @@ model MetaAdAccount {
   name         String?
   /// Kontots valuta, läst från Meta. Null = inte läst ännu.
   currency     String?
+  /// Kontots tidszon hos Meta (IANA, t.ex. "Europe/Copenhagen"). Metas
+  /// timbreakdown levereras i DEN zonen, inte i butikens. Null = inte läst.
+  /// ⚠ Jämför ALDRIG namnet mot butikens — jämför offset. Copenhagen och
+  /// Stockholm har olika namn och exakt samma tid (mätt 2026-09-23).
+  timezoneName String?
   /// "all" | "include" | "exclude" — se MetaConfig i lib/meta.server.ts.
   campaignMode String   @default("all")
   /// Kampanj-ID:n filtret gäller, kommaseparerade. Null/tomt = inget filter.
@@ -339,9 +344,65 @@ model DailyPnl {
   /// och saknar uppdelning — under ett marknadsfilter räknas dagen då som
   /// ohämtad och exporteras om.
   markets         Json?
+  /// När dagen senast timuppdelades. Null = raden skrevs före timgrafen och
+  /// har inga HourlyPnl-rader — dagen räknas då varken som 24 nollor eller
+  /// som hämtad, utan rapporteras som "inte timuppdelad" i panelen.
+  hoursAt         DateTime?
   fetchedAt       DateTime @default(now())
 
   @@id([shop, day])
+}
+
+/// Samma försäljning som DailyPnl, men per TIMME på dygnet (0–23) i butikens
+/// tidszon, och per marknad inom timmen. Marknaden "" är hela timmen och
+/// finns alltid; landskoder finns bara när leveransadressen gick att läsa.
+///
+/// Egen tabell, inte en JSON-kolumn på DailyPnl: `readDaily` gör ett
+/// oselekterat findMany som varenda sida i appen går igenom, och en
+/// timkolumn hade varit marknader × 24 på ett svar fem skärmar redan betalar
+/// för utan att någon av dem ritar grafen.
+///
+/// INGEN produktmix här. Timmarna bär bara skalärer — omsättning, ordrar och
+/// avgifter. Vinstmarginal per timme kräver `lines`-histogrammet per timme
+/// och är medvetet uppskjutet; se timgrafens avsnitt i CLAUDE.md.
+model HourlyPnl {
+  shop            String
+  day             String // YYYY-MM-DD i butikens tidszon, som DailyPnl
+  hour            Int // 0–23
+  market          String @default("")
+  orders          Int    @default(0)
+  grossSales      Float  @default(0)
+  discounts       Float  @default(0)
+  returns         Float  @default(0)
+  netSales        Float  @default(0)
+  totalSales      Float  @default(0)
+  shippingCharges Float  @default(0)
+  fees            Float?
+
+  @@id([shop, day, hour, market])
+  @@index([shop, day])
+}
+
+/// Annonskostnad per timme på dygnet. Skrivs i samma vända som DailySpend,
+/// ur samma dagar och samma kurs, så SUM(timmar) = dagen per konstruktion.
+///
+/// ⚠ `hour` är timmen i ANNONSKONTOTS tidszon — det är så Metas breakdown
+/// `hourly_stats_aggregated_by_advertiser_time_zone` levererar den.
+/// Butikens timmar kommer ur order-createdAt i BUTIKENS tidszon. Skiljer de
+/// sig måste timmarna förskjutas vid läsning; se `tidszonsOffset`.
+model HourlySpend {
+  shop        String
+  day         DateTime @db.Date
+  account     String
+  market      String   @default("")
+  hour        Int // 0–23, annonskontots tidszon
+  spend       Float    @default(0)
+  impressions Int      @default(0)
+  clicks      Int      @default(0)
+  fetchedAt   DateTime @default(now())
+
+  @@id([shop, day, account, market, hour])
+  @@index([shop, day])
 }
 
 model PnlCache {

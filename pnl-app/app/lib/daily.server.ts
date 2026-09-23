@@ -71,6 +71,9 @@ export async function refreshDaily(
            att läsa lämnas fältet orört — en gammal uppdelning är bättre än
            att radera den, och null betyder "exportera om under filter". */
         ...(data.marketsByDay ? { markets: (data.marketsByDay[s.day] ?? {}) as any } : {}),
+        /* Timmarna skrivs alltid — de kommer ur createdAt och beror inte på
+           om leveransadressen gick att läsa. */
+        hoursAt: now,
         fetchedAt: now,
       };
       return prisma.dailyPnl.upsert({
@@ -80,6 +83,44 @@ export async function refreshDaily(
       });
     }),
   );
+
+  /* Timraderna. Radera + skriv, inte upsert: en timme som hade en order och
+     efter en återbetalning inte har någon måste FÖRSVINNA, och 24 timmar ×
+     marknader × 90 dagar hade blivit tiotusentals upsertar.
+
+     ⚠ Chunkat med flit. En kall 90-dagarshämtning med tre marknader är
+     90 × 24 × 3 = 6 480 rader à 12 kolumner — långt över Postgres tak på
+     65 535 bind-parametrar, och Prisma delar inte createMany åt en. */
+  const timrader = data.sales.flatMap((s) =>
+    Object.entries(data.hoursByDay[s.day] ?? {}).flatMap(([timme, perLand]) =>
+      Object.entries(perLand)
+        .filter(([, v]) => v.orders > 0)
+        .map(([market, v]) => ({
+          shop,
+          day: s.day,
+          hour: Number(timme),
+          market,
+          orders: v.orders,
+          grossSales: v.grossSales,
+          discounts: v.discounts,
+          returns: v.returns,
+          netSales: v.netSales,
+          totalSales: v.totalSales,
+          shippingCharges: v.shippingCharges,
+          fees: v.fees ?? null,
+        })),
+    ),
+  );
+  const dagar = data.sales.map((s) => s.day);
+  if (dagar.length) {
+    const BIT = 2000;
+    await prisma.$transaction([
+      prisma.hourlyPnl.deleteMany({ where: { shop, day: { in: dagar } } }),
+      ...Array.from({ length: Math.ceil(timrader.length / BIT) }, (_, i) =>
+        prisma.hourlyPnl.createMany({ data: timrader.slice(i * BIT, (i + 1) * BIT) }),
+      ),
+    ]);
+  }
 
   /* KundOrder-raderna EFTER dagsraderna, ur samma hämtning: misslyckas
      hämtningen har vi redan kastat, och ingenting skrivs någonstans. */
@@ -127,6 +168,72 @@ export interface DailyReadResult {
    * så den kan inte räknas ur omsättningen — den behöver ordrarna.
    */
   ordersByMarket: Record<string, number>;
+}
+
+/** En timme på dygnet, summerad över alla dagar i intervallet. */
+export interface Timrad {
+  hour: number;
+  orders: number;
+  totalSales: number;
+  netSales: number;
+}
+
+export interface HourlyReadResult {
+  /** Alltid 24 rader, 0–23, även timmar utan försäljning. */
+  timmar: Timrad[];
+  /** Dagar i intervallet som FAKTISKT är timuppdelade — ROAS-nämnaren. */
+  dagarMedTimmar: string[];
+  /** Dagar som finns men hämtades före timgrafen. Sägs rakt ut i panelen. */
+  dagarUtanTimmar: number;
+}
+
+/**
+ * Försäljning per timme på dygnet över ett intervall.
+ *
+ * Egen läsning, inte en utbyggnad av `readDaily`: den gör ett oselekterat
+ * `findMany` som varenda sida i appen går igenom, och timmarna angår bara
+ * panelens timgraf. Här är det en grupperad SQL-fråga i stället.
+ *
+ * ⚠ `dagarMedTimmar` är inte kosmetik. Annonskostnaden per timme måste
+ * summeras över EXAKT samma dagar som försäljningen, annars delas 30 dagars
+ * spend med 12 dagars omsättning och ROAS ser ut att vara en tredjedel.
+ */
+export async function readHourly(
+  shop: string,
+  from: string,
+  to: string,
+  opts: { market?: string } = {},
+): Promise<HourlyReadResult> {
+  const market = marknadskod(opts.market);
+  const [grupper, dagar] = await Promise.all([
+    prisma.hourlyPnl.groupBy({
+      by: ["hour"],
+      where: { shop, day: { gte: from, lte: to }, market },
+      _sum: { orders: true, totalSales: true, netSales: true },
+    }),
+    prisma.dailyPnl.findMany({
+      where: { shop, day: { gte: from, lte: to } },
+      select: { day: true, hoursAt: true },
+    }),
+  ]);
+
+  const per = new Map(grupper.map((g) => [g.hour, g._sum]));
+  const timmar: Timrad[] = Array.from({ length: 24 }, (_, hour) => {
+    const g = per.get(hour);
+    return {
+      hour,
+      orders: g?.orders ?? 0,
+      totalSales: g?.totalSales ?? 0,
+      netSales: g?.netSales ?? 0,
+    };
+  });
+
+  const medTimmar = dagar.filter((d) => d.hoursAt != null).map((d) => d.day);
+  return {
+    timmar,
+    dagarMedTimmar: medTimmar,
+    dagarUtanTimmar: dagar.length - medTimmar.length,
+  };
 }
 
 export interface ReadDailyOpts {

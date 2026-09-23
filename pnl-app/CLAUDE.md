@@ -620,6 +620,65 @@ slår ihop **två** källor: `BILLING_EXEMPT_SHOPS` i miljön (som förut) och
 att fylla på med en push — Axel ska inte behöva klicka i Railways
 miljövariabler. Lägg till hela `.myshopify.com`-adressen i små bokstäver.
 
+### Timmar på dygnet — datalagret (2026-09-23, build timdata-v108)
+
+Axel vill se omsättning, ordrar och **ROAS per timme**, per marknad, för att
+veta när han ska skala. Det här är datalagret; grafen kommer separat.
+
+**Sessioner och CVR per timme går inte.** ShopifyQL finns inte i det publika
+Admin-API:t (står redan högst upp i `shopify-data.server.ts`), så de två av
+hans sex mått kan appen aldrig leverera. Vinstmarginal per timme är
+**medvetet uppskjuten** — se sista stycket.
+
+**Två nya tabeller, inga nya JSON-kolumner.** `HourlyPnl` (shop, day, hour,
+market) och `HourlySpend` (shop, day, account, market, hour). En `hours`-JSON
+på DailyPnl hade varit frestande men fel: `readDaily` gör ett **oselekterat**
+`findMany` som varenda sida i appen går igenom, och timmarna hade blivit
+marknader × 24 på ett svar fem skärmar betalar för utan att rita grafen.
+
+Försäljningen buckas i `parseOrderLines` med **samma `fyll`-closure** som
+dagen och marknaden — då kan timmarna inte summera till något annat än dagen,
+för det är samma aritmetik. Timmen ligger **utanför `medLand`-spärren**: den
+kommer ur `createdAt` och har inget med leveransadressen att göra, så en
+butik utan adressbehörighet får ändå sin timgraf.
+
+⚠️ **`hourCycle: "h23"`, inte `hour12: false`.** h24 skriver midnatt som
+"24" — det hade gett en 25:e hink och tappat hela timme 0. Och `dayInTz`
+rörs inte: `dateStyle` och `hour` går inte att kombinera i Intl, så en
+ihopslagning hade krävt att DailyPnl:s primärnyckel skrevs om.
+
+⚠️ **Skrivningen är chunkad.** En kall 90-dagarshämtning med tre marknader
+är 6 480 rader à 12 kolumner — över Postgres tak på 65 535 bind-parametrar,
+och Prisma delar inte `createMany` åt en.
+
+⚠️ **Metas timmar ligger i ANNONSKONTOTS tidszon**, butikens i butikens.
+`tidszonsOffset` jämför **offset, aldrig namn**: mätt 2026-09-23 ligger
+MagiBorsten DK på `Europe/Copenhagen` och MagiBorsten på `Europe/Stockholm`
+— olika namn, exakt samma tid. En namnjämförelse hade nekat ROAS per timme
+på varenda SE- och NO-butik för noll timmars skillnad. Går skillnaden inte
+att räkna i hela timmar visas ingen ROAS alls.
+
+⚠️ **`time_increment=1` måste stå kvar med timbreakdown.** Utan den svarar
+Meta med EN uppsättning om 24 timmar för hela spannet, och varje stapel blir
+N dagar för stor — utan felmeddelande. Timfönstret är kapat till 31 dagar;
+svaret är dagar × kampanjer × 24 rader.
+
+⚠️ **`dagarMedTimmar` är inte kosmetik.** Annonskostnaden måste summeras
+över exakt de dagar försäljningen räknades på. Delas 30 dagars spend med 12
+dagars omsättning ser ROAS ut att vara en tredjedel.
+
+Nya tabeller måste raderas överallt de gamla raderas: `webhooks.tsx` (två
+ställen), `meta.deletion.tsx`, `app.settings.tsx`, `meta-konton.server.ts`
+(två), `marknadskostnad.server.ts`. Missas ett överlever en avinstallerad
+butiks data.
+
+**Vinstmarginal per timme är uppskjuten, inte glömd.** Den kräver
+`lines`-histogrammet per timme och är där varenda aritmetikfälla bor: fasta
+kostnader får inte räknas 24 gånger, kostnadsblandningen får inte räknas om
+per timme, tullens restpost under marknaden "" får inte tappas, och
+avgifternas okända andel är en periodkvot. Bygg den **aldrig** som 24 anrop
+till `compute()`.
+
 ### Koppla Claude per butik (2026-09-23, build koppla-claude-v106)
 
 Axel: *"man kan koppla in Claude i appen, bara så att våra användare kan

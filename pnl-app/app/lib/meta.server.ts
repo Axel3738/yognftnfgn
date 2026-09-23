@@ -18,6 +18,7 @@ import { sparaKontovaluta } from "./meta-konton.server";
 import { summeraDagar } from "./spend-summa";
 import { GRAPH_VERSION, kontoId } from "./meta-login";
 import { marknadskod } from "./marknad";
+import { tidszonsOffset, timmeUrBreakdown } from "./timmar";
 
 const GRAPH = `https://graph.facebook.com/${GRAPH_VERSION}`;
 
@@ -103,6 +104,8 @@ interface Insight {
   account_currency?: string;
   /** Bara vid kampanjfilter (level=campaign) — annars kontonivå utan id. */
   campaign_id?: string;
+  /** Timbreakdown: "00:00:00 - 00:59:59", i ANNONSKONTOTS tidszon. */
+  hourly_stats_aggregated_by_advertiser_time_zone?: string;
 }
 
 export class MetaError extends Error {
@@ -160,6 +163,7 @@ async function hamtaInsightSpann(
   until: string,
   filtering: string | null,
   kampanjniva: boolean,
+  timvis = false,
 ): Promise<Insight[]> {
   const url = new URL(`${GRAPH}/${kontoNamn(cfg.adAccountId)}/insights`);
   /* Kontonivå: en rad per dag — oförändrat sedan v1 och det billigaste Meta
@@ -171,18 +175,39 @@ async function hamtaInsightSpann(
     kampanjniva ? "campaign_id,spend,impressions,clicks,account_currency" : "spend,impressions,clicks,account_currency",
   );
   url.searchParams.set("time_range", JSON.stringify({ since, until }));
+  /* time_increment=1 MÅSTE stå kvar även med timbreakdown. Utan den svarar
+     Meta med EN uppsättning om 24 timmar för HELA spannet, och varje stapel
+     blir N dagar för stor — utan felmeddelande. */
   url.searchParams.set("time_increment", "1");
+  if (timvis) url.searchParams.set("breakdowns", "hourly_stats_aggregated_by_advertiser_time_zone");
   url.searchParams.set("level", kampanjniva ? "campaign" : "account");
   if (filtering) url.searchParams.set("filtering", filtering);
   url.searchParams.set("limit", "500");
 
   /* Timeout: det här anropet awaitas numera även i gruppsummeringen — utan
      gräns blir ett hängt Meta-svar en panel som aldrig laddar. */
-  return graphSidor(url, cfg.accessToken, kampanjniva ? 40 : 3, 15_000) as Promise<Insight[]>;
+  /* Timbreakdown ger 24 rader per dag och kampanj i stället för en; taket
+     höjs därefter. Spannet självt kapas till 31 dagar av anroparen. */
+  const sidtak = timvis ? (kampanjniva ? 120 : 24) : kampanjniva ? 40 : 3;
+  return graphSidor(url, cfg.accessToken, sidtak, 15_000) as Promise<Insight[]>;
 }
 
 /** Månadsbitar när svaret är per kampanj — annars spränger radantalet sidtaket. */
 const SPANN_DAGAR = 31;
+
+/** Timgrafen sträcker sig aldrig längre bakåt än så här. */
+export const TIMFONSTER_DAGAR = 31;
+
+/**
+ * Annonskostnad per timme. Samma filter och samma marknadsmärkning som
+ * dagsvägen — men aldrig mer än 31 dagar: med timbreakdown är svaret
+ * dagar × kampanjer × 24 rader.
+ */
+async function fetchInsightsTimvis(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
+  const filtering = filterParam(cfg);
+  const kampanjniva = Boolean(filtering) || harMarknader(cfg);
+  return hamtaInsightSpann(cfg, since, until, filtering, kampanjniva, true);
+}
 
 async function fetchInsights(cfg: MetaConfig, since: string, until: string): Promise<Insight[]> {
   const filtering = filterParam(cfg);
@@ -316,17 +341,22 @@ function rateFor(rates: Map<string, number>, day: string): number | undefined {
  * upptäckten beroende av att det fanns leverans i fönstret och att panelen
  * råkade hämta färska dagar. Ett konto utan visningar såg då korrekt ut.
  */
-async function fetchAccountCurrency(cfg: MetaConfig): Promise<string | undefined> {
+/**
+ * Kontots valuta OCH tidszon i ETT anrop. Tidszonen behövs för att lägga
+ * Metas timmar på butikens klocka — timbreakdownen levereras i kontots zon.
+ */
+async function fetchAccountInfo(cfg: MetaConfig): Promise<{ currency?: string; timezone?: string }> {
   const account = cfg.adAccountId.startsWith("act_") ? cfg.adAccountId : `act_${cfg.adAccountId}`;
   const url = new URL(`${GRAPH}/${account}`);
-  url.searchParams.set("fields", "currency");
+  url.searchParams.set("fields", "currency,timezone_name");
   url.searchParams.set("access_token", cfg.accessToken);
   try {
     const res = await fetch(url, { signal: AbortSignal.timeout(10_000) });
     const body = await res.json();
-    return res.ok ? (body?.currency ?? undefined) : undefined;
+    if (!res.ok) return {};
+    return { currency: body?.currency ?? undefined, timezone: body?.timezone_name ?? undefined };
   } catch {
-    return undefined;
+    return {};
   }
 }
 
@@ -504,8 +534,9 @@ async function hamtaEttKonto(
      hämta färska dagar — och försvann så fort allt låg i cachen. */
   let spendCurrency = cfg.spendCurrency ?? null;
   if (!spendCurrency) {
-    spendCurrency = (await fetchAccountCurrency(cfg)) ?? null;
-    if (spendCurrency) await sparaKontovaluta(shop, konto, spendCurrency);
+    const info = await fetchAccountInfo(cfg);
+    spendCurrency = info.currency ?? null;
+    if (spendCurrency) await sparaKontovaluta(shop, konto, spendCurrency, info.timezone ?? null);
   }
   const needsFx = Boolean(spendCurrency && shopCurrency && spendCurrency !== shopCurrency);
   const bas = { konto, needsFx, fran: spendCurrency };
@@ -648,6 +679,61 @@ function farUppdateraMeta(shop: string, konto: string): boolean {
  * "aldrig hämtad" för evigt och tvingar ett Meta-anrop på varje sidladdning.
  * Returnerar om valutaomräkningen (när den behövs) hade kurser.
  */
+/**
+ * Annonskostnad per timme på dygnet, lagd på BUTIKENS klocka.
+ *
+ * Tre saker som annars ger ett tyst fel:
+ *  - `dagar` måste vara exakt de dagar försäljningen räknades på. Delas 30
+ *    dagars spend med 12 dagars omsättning ser ROAS ut att vara en tredjedel.
+ *  - Metas timmar ligger i ANNONSKONTOTS tidszon. Skiljer den sig från
+ *    butikens förskjuts hinkarna; går skillnaden inte att räkna i hela
+ *    timmar returneras `offset: null` och panelen visar ingen ROAS alls.
+ *  - Bara kopplade konton, och marknadsfiltret på läsning — samma regler som
+ *    dagsvägen i `getSpend`.
+ */
+export async function timvisSpend(
+  shop: string,
+  konton: MetaConfig[] | null,
+  dagar: string[],
+  butikensTidszon: string,
+  market = "",
+): Promise<{ timmar: number[]; offset: number | null } | null> {
+  const kopplade = (konton ?? []).map((c) => kontoId(c.adAccountId)).filter(Boolean);
+  if (!kopplade.length || !dagar.length) return null;
+
+  const [rader, konton2] = await Promise.all([
+    prisma.hourlySpend.findMany({
+      where: {
+        shop,
+        account: { in: kopplade },
+        day: { in: dagar.map((d) => new Date(d)) },
+        ...(market ? { market } : {}),
+      },
+    }),
+    prisma.metaAdAccount.findMany({
+      where: { shop, accountId: { in: kopplade } },
+      select: { timezoneName: true },
+    }),
+  ]);
+  if (!rader.length) return null;
+
+  /* Offseten räknas mot mitten av intervallet: den är konstant för alla
+     zonpar butiken kan ha, och en förskjutning per dag vore mycket arbete
+     för de tre dagar om året då EU och USA byter sommartid olika. */
+  const mitt = dagar[Math.floor(dagar.length / 2)];
+  const zoner = [...new Set(konton2.map((k) => k.timezoneName).filter(Boolean))] as string[];
+  const offsets = zoner.map((z) => tidszonsOffset(z, butikensTidszon, mitt));
+  /* Flera konton i olika zoner, eller en okänd zon: går inte att lägga på en
+     gemensam klocka. Hellre ingen ROAS än en förskjuten. */
+  const offset =
+    offsets.length === 1 ? offsets[0] : offsets.length && offsets.every((o) => o === 0) ? 0 : null;
+  if (offset == null) return { timmar: Array(24).fill(0), offset: null };
+
+  const timmar: number[] = Array(24).fill(0);
+  for (const r of rader) timmar[(((r.hour - offset) % 24) + 24) % 24] += r.spend;
+  return { timmar, offset };
+}
+
 async function refreshSpend(
   shop: string,
   cfg: MetaConfig,
@@ -725,6 +811,63 @@ async function refreshSpend(
       prisma.dailySpend.deleteMany({ where: { shop, account: konto, day: new Date(day) } }),
       prisma.dailySpend.createMany({ data: nya }),
     ]);
+  }
+
+  /* Timmarna, ur SAMMA dagar, SAMMA filter och SAMMA kurs som dagsraderna
+     ovan — då kan summan av timmarna inte bli något annat än dagen. Ett eget
+     anrop (Meta ger inte båda i ett svar), men bara för dagar som ändå
+     hämtades om, och aldrig mer än 31 dagar bakåt. */
+  const timGrans = shiftIso(stale[stale.length - 1], -(TIMFONSTER_DAGAR - 1));
+  const timDagar = stale.filter((d) => d >= timGrans);
+  if (timDagar.length) {
+    try {
+      const timRader = await fetchInsightsTimvis(cfg, timDagar[0], timDagar[timDagar.length - 1]);
+      type Hink = { raw: number; impressions: number; clicks: number };
+      const perTimme = new Map<string, Map<string, Map<number, Hink>>>();
+      for (const r of timRader) {
+        const timme = timmeUrBreakdown(r.hourly_stats_aggregated_by_advertiser_time_zone);
+        if (timme == null) continue;
+        if (tillat && r.campaign_id && !tillat(String(r.campaign_id))) continue;
+        const marknad = marknader && r.campaign_id ? kampanjMarknad(cfg, String(r.campaign_id)) : "";
+        const dagens = perTimme.get(r.date_start) ?? new Map<string, Map<number, Hink>>();
+        const perLand = dagens.get(marknad) ?? new Map<number, Hink>();
+        const hink = perLand.get(timme) ?? { raw: 0, impressions: 0, clicks: 0 };
+        hink.raw += Number(r.spend ?? 0) || 0;
+        hink.impressions += parseInt(r.impressions ?? "0", 10) || 0;
+        hink.clicks += parseInt(r.clicks ?? "0", 10) || 0;
+        perLand.set(timme, hink);
+        dagens.set(marknad, perLand);
+        perTimme.set(r.date_start, dagens);
+      }
+      for (const day of timDagar) {
+        const rate = needsFx ? rateFor(rates, day) : undefined;
+        const nya: any[] = [];
+        for (const [market, perLand] of perTimme.get(day) ?? []) {
+          for (const [hour, v] of perLand) {
+            nya.push({
+              shop,
+              day: new Date(day),
+              account: konto,
+              market,
+              hour,
+              spend: rate ? v.raw * rate : v.raw,
+              impressions: v.impressions,
+              clicks: v.clicks,
+              fetchedAt: nu,
+            });
+          }
+        }
+        await prisma.$transaction([
+          prisma.hourlySpend.deleteMany({ where: { shop, account: konto, day: new Date(day) } }),
+          ...(nya.length ? [prisma.hourlySpend.createMany({ data: nya })] : []),
+        ]);
+      }
+    } catch (e) {
+      /* Timmarna är en extra vy, inte panelens siffror. Faller de bort ska
+         dagsraderna som just skrevs stå kvar — annars tar en timgraf ner
+         hela vinsträkningen. */
+      console.error(`Timvis annonskostnad misslyckades för ${shop}/${konto}:`, e);
+    }
   }
   return fxOk;
 }

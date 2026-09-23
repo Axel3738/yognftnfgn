@@ -125,6 +125,7 @@ export async function taBortKonto(shop: string, raaId: string): Promise<void> {
   if (!accountId) return;
   await prisma.metaAdAccount.deleteMany({ where: { shop, accountId } });
   await prisma.dailySpend.deleteMany({ where: { shop, account: accountId } });
+  await prisma.hourlySpend.deleteMany({ where: { shop, account: accountId } });
   await speglaForstaKontot(shop);
 }
 
@@ -158,16 +159,25 @@ export async function sparaKampanjfilter(
   /* Cachade rader är räknade på det gamla filtret och är fel nu — men bara
      det här kontots rader. */
   await prisma.dailySpend.deleteMany({ where: { shop, account: accountId } });
+  await prisma.hourlySpend.deleteMany({ where: { shop, account: accountId } });
   await speglaForstaKontot(shop);
   return true;
 }
 
 /** Lagrar kontots valuta när den lästs från Meta. */
-export async function sparaKontovaluta(shop: string, raaId: string, valuta: string): Promise<void> {
+export async function sparaKontovaluta(
+  shop: string,
+  raaId: string,
+  valuta: string,
+  tidszon: string | null = null,
+): Promise<void> {
   const accountId = kontoId(raaId);
   if (!accountId) return;
   await prisma.metaAdAccount
-    .update({ where: { shop_accountId: { shop, accountId } }, data: { currency: valuta } })
+    .update({
+      where: { shop_accountId: { shop, accountId } },
+      data: { currency: valuta, ...(tidszon ? { timezoneName: tidszon } : {}) },
+    })
     .catch(() => {});
   await speglaForstaKontot(shop).catch(() => {});
 }

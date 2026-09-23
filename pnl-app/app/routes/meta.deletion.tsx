@@ -53,6 +53,7 @@ export async function action({ request }: ActionFunctionArgs) {
     for (const b of butiker) {
       await prisma.shopSettings.update({ where: { shop: b.shop }, data: META_TOMT });
       await prisma.dailySpend.deleteMany({ where: { shop: b.shop } });
+      await prisma.hourlySpend.deleteMany({ where: { shop: b.shop } });
       /* Kopplingen är kontona också — en kvarlämnad kontorad hade fått nästa
          inloggning att börja hämta annonskostnad igen, efter en radering. */
       await prisma.metaAdAccount.deleteMany({ where: { shop: b.shop } });
