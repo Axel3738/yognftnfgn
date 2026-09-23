@@ -215,6 +215,26 @@ Då säger brief och bild samma sak, och båda rutinerna är nöjda.
 the brief" — rättelsen låg bara som kommentar. Nio andra rader i samma batch
 hade samma problem och hade studsat i tur och ordning.)*
 
+⚠️ **Men rättelsen ska vara så liten som möjligt — glid aldrig iväg från
+briefen** (Axels feedback 2026-09-23). Rutinen rättar ett påstående som
+produktsidan inte bär; den skriver inte om annonsen. Byt den enskilda raden,
+behåll vinkeln, hooken, layouten och den isolerade variabeln. Går felet inte
+att laga med en radändring: lämna raden i `Draft` och skriv varför, i stället
+för att bygga en ny annons ovanpå någon annans brief. **Ett undantag att ändra
+briefen är ett undantag för just den raden**, aldrig ett mandat att rita om
+konceptet — briefen är testet, och skriver rutinen om den går datan inte att
+läsa per variabel efteråt.
+
+⚠️ **Ett påstående som ägaren själv bekräftar är en giltig källa — men den
+källan ska skrivas ner.** Står ett tal eller ett löfte inte på produktsidan och
+Axel säger att det stämmer, så gäller det. Lägg då in en `Source note` i
+briefen med datum och hans egna ord, och nämn den i kommentaren på raden.
+Annars ser nästa session (eller `/briefgranskning`) ett påhittat påstående och
+stoppar en annons ägaren redan godkänt. *(2026-09-23: "Vässad på 10 sekunder"
+och "rakbladsvass" på bältesslipen — sidan säger ingen tid alls och lovar
+"Jämn egg varje gång". Axels motivering är värd att minnas: ett rakblad är ett
+mått läsaren redan har, så påståendet blir ett kunden kan pröva.)*
+
 Fem kontroller innan prompten byggs:
 
 0. **Butikens namn och domän får aldrig stå i annonsen** (Axels beslut
