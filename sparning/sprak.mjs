@@ -148,9 +148,15 @@ const UNDERSTATUS_PREFIX = {
 // växa — mätt 2026-09-22 på Beverbutikken: fem ombud på en natt, och kunden
 // ser ändå bara "Paketet har kommit till ombudet". Terminaler, flygplatser
 // och tull undantas: de raderna säger något annat och hör hemma i ordboken.
+//
+// Postens nattleveransavisering bär DATUMET i texten ("natt til 23.
+// september!"), så varje natt hade blivit en ny ordboksrad — fem stod redan
+// i fraser.json (17, 18, 19, 21, 22 september) och den sjätte kom 2026-09-23.
+// Meningen till kunden är densamma oavsett datum: paketet kommer i natt.
 const OMBUDSRAD = /\bthe (?:parcel|package|shipment) has arrived at\b(?!.*\b(?:airport|terminal|facility|centre|center|customs|hub|depot|warehouse|destination)\b)/i;
 const MONSTER = [
   [OMBUDSRAD, 'Paketet har kommit till ombudet'],
+  [/planlagt levering natt til/i, 'Paketet levereras i natt. Märk brevlådan och dörren med ditt fullständiga namn — budet ringer inte på, och du får ett sms i morgon bitti när paketet är levererat'],
   [/离开.*(转运中心|分拨中心)/, 'Paketet har lämnat omlastningsterminalen'],
   [/(到达|已到).*(转运中心|分拨中心)/, 'Paketet har kommit till omlastningsterminalen'],
   [/已揽收/, 'Paketet är upphämtat'],
