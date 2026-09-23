@@ -6,7 +6,7 @@
 //   2. Drive-mapp lankad sist i sidans kropp ("Link for approval: …") — sa levererar
 //      redigerarna sina videor. Hamtas publikt via Drives export-URL.
 //
-//   node tools/notion-fil.mjs <page-id> [--ut <mapp>]
+//   node tools/notion-fil.mjs <page-id> [--ut <mapp>] [--utan-sidmedia] [--utan-marknadsfiler]
 //
 // Skriver ut sokvagen till varje hamtad fil, en per rad — mata den vidare till
 // qa-frames.py och notion-till-meta.mjs --fil.
@@ -21,6 +21,7 @@ import { mkdirSync, existsSync } from 'node:fs';
 import { join, extname } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { hämtaFil, driveLankarIKropp, mediaBlockIKropp, valjLeveransfiler } from './notion-kalla.mjs';
+import { arMarknadsfil, marknadskodIFil } from '../factory/opsmarknader.mjs';
 
 const ROT = new URL('..', import.meta.url).pathname;
 
@@ -42,6 +43,12 @@ if (!existsSync(ut)) mkdirSync(ut, { recursive: true });
 // Speglingen (tools/ops-spegla.mjs) hamtar den svenska filen ur Meta i stallet
 // och anvander den har vagen bara som reserv, utan sidmedia.
 const utanSidmedia = args.includes('--utan-sidmedia');
+// --utan-marknadsfiler: hoppa over bilagor vars namn bar en marknadskod
+// (CaraShellRoof_NO_PD_106_H1.mp4). Speglingen bifogar SE- och NO-filen pa samma
+// rad, och en oversattningsko som tar "forsta filen" hade fatt den norska som
+// kalla for engelskan om ordningen nagon gang kastats om. Kallan ar ALLTID den
+// svenska (Axels beslut 2026-09-22). Finns bara marknadsfiler: fel, inte "forsta basta".
+const utanMarknadsfiler = args.includes('--utan-marknadsfiler');
 
 const token = process.env.NOTION_TOKEN;
 if (!token) dö('NOTION_TOKEN saknas i miljön. Utan den går bilagan inte att hämta.');
@@ -55,12 +62,20 @@ if (!res.ok) dö(`Notion ${res.status}: ${sida.message || res.statusText}`);
 const titel = Object.values(sida.properties ?? {})
   .find(p => p.type === 'title')?.title?.map(t => t.plain_text).join('') ?? pageId;
 
-const filer = Object.values(sida.properties ?? {})
+const alla_filer = Object.values(sida.properties ?? {})
   .filter(p => p.type === 'files')
   .flatMap(p => (p.files ?? []).map(f => ({
     namn: f.name ?? '', url: f.file?.url ?? f.external?.url ?? null,
   })))
   .filter(f => f.url);
+
+let filer = alla_filer;
+if (utanMarknadsfiler && alla_filer.length) {
+  const bort = alla_filer.filter(f => arMarknadsfil(f.namn));
+  filer = alla_filer.filter(f => !arMarknadsfil(f.namn));
+  if (bort.length) console.error(`  hoppar marknadsversion(er): ${bort.map(f => `${f.namn} (${marknadskodIFil(f.namn)})`).join(', ')}`);
+  if (!filer.length) dö(`Raden "${titel}" har BARA marknadsversioner i "Filer och media" (${bort.map(f => f.namn).join(', ')}) — ingen svensk källfil att översätta. Bifoga den svenska.`);
+}
 
 // Ingen bilaga: redigerarnas videor ligger i en Drive-mapp lankad sist i sidan
 // ("Link for approval: …"). Sidan bar aven brief-mappen, sa lankarna provas sista

@@ -25,6 +25,10 @@ brand:
 discord:
   server: "Bäverbutiken"
   kanal: customer-service
+  # Mechile Delos Santos (VA + Head of customer support). Slaget upp via botten
+  # 2026-09-22: medlem i servern sedan 2026-08-30, användarnamn mechilecs_18681.
+  # Morgonlistan (kundtjanst/morgonlista.mjs) taggar det här id:t.
+  va_id: "1543617780396593206"
 
 shopify:
   # Axels namn på nycklarna (2026-09-13): appen på dev.shopify.com för

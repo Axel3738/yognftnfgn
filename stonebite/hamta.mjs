@@ -70,10 +70,13 @@ export async function byggSnapshot({
     const upptackta = upptackButiker(rot);
     logg(`  ${upptackta.length} butiker upptäckta`);
     butiker = await hamtaButiker(upptackta, { dagar, env, nu, logg });
-    const trasiga = butiker.filter((b) => b.status !== 'ok');
-    anteckna('shopify', trasiga.length === butiker.length && butiker.length ? 'fel' : 'ok',
-      trasiga.length ? `${trasiga.length} av ${butiker.length} butiker gick inte att läsa` : null,
-      { butiker: butiker.length });
+    // Avstängda med flit (stonebite/butiker-av.json) är varken lästa eller trasiga.
+    const avstangda = butiker.filter((b) => b.status === 'av');
+    const aktiva = butiker.filter((b) => b.status !== 'av');
+    const trasiga = aktiva.filter((b) => b.status !== 'ok');
+    anteckna('shopify', trasiga.length === aktiva.length && aktiva.length ? 'fel' : 'ok',
+      trasiga.length ? `${trasiga.length} av ${aktiva.length} butiker gick inte att läsa` : null,
+      { butiker: aktiva.length, avstangda: avstangda.length });
 
     logg('Meta …');
     if (!env.META_ACCESS_TOKEN) {

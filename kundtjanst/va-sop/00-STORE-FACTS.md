@@ -44,7 +44,7 @@ email.
 |---|---|---|
 | Delivery promise | 5–10 business days after the shipping email | The promise printed in the shipping emails and on the tracking page |
 | Who pays return postage | The customer pays and arranges the return shipping. We send no return label | The store's existing return SOP |
-| Return window | 14 days **from the day the customer received the item** (owner's decision 2026-09-22). ⚠️ The published policy page still says 30 days until the owner changes it, so a customer who quotes 30 days is quoting our own page: tell the owner, do not argue | Owner |
+| Return window | 14 days **from the day the customer received the item** (owner's decision 2026-09-22). Product pages, the listicles, the order confirmation and the page /pages/retur-och-aterbetalningspolicy say 14 since 2026-09-20. ⚠️ Shopify's own /policies/refund-policy still says 30 days and "no returns on sale items" until the owner edits it in Shopify admin — a customer who quotes those is quoting our own page: tell the owner, do not argue. There is no sale-item exception: everything sells at a compare-at price | Owner |
 | Statutory right of withdrawal | 14 days from receipt (EU) | Distance selling law, runs in parallel with the return window |
 | Auto-reply bot | **Dry run**: it writes drafts in Drafts and sends nothing. Signs as "Kundtjänst Bäverbutiken". Priority folder: VA-PRIO. Run report in the escalation channel after every hour in which something happened | Owner switches it live (see the page **Auto-reply bot**) |
 | Return address | Given out by support on request — it is published nowhere | Owner's decision: fewer returns, but only if we answer within 24 hours |

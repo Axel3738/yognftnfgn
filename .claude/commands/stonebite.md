@@ -72,8 +72,9 @@ Kort, på svenska:
    eller "inga". Blev ett larm `fel`: orsaken i klartext.
 7. Autosvaret (`snapshot.autosvar`, ur `kundtjanst/autosvar/logg/`): per butik
    läget som sidan säger det — *skickar svar* / *bara utkast — inget skickas* /
-   *inget svar skrivet* — senaste körning och antal arga kunder det senaste
-   dygnet. Ingen logg: "boten har inte kört för någon butik". Säg aldrig att
+   *inget svar skrivet* / *kunde inte skriva i brevlådan* (antal skrivfel) —
+   senaste körning och antal arga kunder det senaste dygnet. Skrivfel är ett
+   larm: boten läser men får inte skriva (lösenord, Loopia nekar adressen). Ingen logg: "boten har inte kört för någon butik". Säg aldrig att
    boten är igång för att loggen finns — utkast är inte skickat.
 
 ---

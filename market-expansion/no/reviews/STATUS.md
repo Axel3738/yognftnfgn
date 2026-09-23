@@ -3,6 +3,19 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-23 — 0 nya, allt redan klart, 37 i `sources.json`
+
+Inga nya mappar i MAKE TO NORWAY (37 produktmappar + WINNERS med 5, samma som i
+går). Bygget gav identiska filer — `git status` tomt efteråt — och `--dry` mot
+gårdagens Feiesett svarade "redan 10 synliga, hoppar över".
+
+**Gårdagens spam-publicering höll.** De tio raderna på Feiesett var fortfarande
+synliga ett dygn senare, alltså tar Judge.me inte tillbaka en rad som en `PUT`
+publicerat. Det var inte självklart: filtret hade tagit hela importen först.
+
+De fyra ark som väntar är oförändrade — femte dygnet i rad, ingen har rörts
+sedan 2026-09-18.
+
 ## Läget 2026-09-22 — 10 nya på Feiesett, 37 i `sources.json`
 
 En ny mapp i MAKE TO NORWAY: `NO Sotarset`. Arket

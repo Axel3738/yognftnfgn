@@ -55,7 +55,7 @@ drafts (section 5) are what keeps that count honest.
  gave return instructions or told a customer their parcel shows as delivered. These
  customers were told someone will come back to them. **Open this folder first, every
  time you sit down.**
-- **A reply from us in a thread that nobody wrote.** In live mode that is the bot. Read
+- **The replied arrow on an email, and a reply from us in a thread that nobody wrote.** In live mode that is the bot. Read
  it before you write anything, so your answer builds on it instead of contradicting it.
 - **The run report** in the escalation channel after every hour in which something
  happened: how many simple questions were answered, which upset customers got the
@@ -66,6 +66,11 @@ drafts (section 5) are what keeps that count honest.
 
 ## 4. Your routine
 
+0. **Start with the Morning list.** Every morning before your shift a post lands in the
+ escalation channel (Store facts) with you tagged: the VA-PRIO folder, the flagged emails
+ that still have no reply, and any dispute with a deadline within 3 days. It is posted
+ even when it is empty — a morning without it means the routine is broken, tell the owner.
+ Work it in the order it lists.
 1. **VA-PRIO first.** Reply to every upset customer within the first-reply target
  (Store facts), and never later than the 48 hours they were promised. Use the SOP for
  the actual problem (Start here has the table). When you have replied, move the email

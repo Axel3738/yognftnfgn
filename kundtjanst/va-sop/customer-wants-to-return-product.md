@@ -29,7 +29,7 @@ Return address and company name per store: the return address (Store facts) (⚠
 - Return window: the number of days in **Store facts**, counted from the day the customer RECEIVED the item. Shipping takes 5–10 business days, so the delivery date is a materially different date from the order date — always count from delivery.
 - Condition: unused, all tags attached, in original packaging.
 - Proof: the order in Shopify is the proof. Do not ask the customer for a receipt.
-- Exceptions: sale items, gift cards, perishables and custom/personalised products cannot be returned. ⚠️ The statutory right of withdrawal runs **in addition** to the store's own return window (Store facts) and cannot be signed away. A customer who invokes it is entitled to a full refund and must not be pushed through a partial-refund offer.
+- Exceptions: gift cards, perishables and custom/personalised products. **There is no "sale item" exception** (owner's decision 2026-09-22): every product sells at a compare-at price, so that exception would void the return right for the whole range. ⚠️ The statutory right of withdrawal runs **in addition** to the store's own return window (Store facts) and cannot be signed away. A customer who invokes it is entitled to a full refund and must not be pushed through a partial-refund offer.
 - Return shipping: the CUSTOMER pays and arranges the return shipping. We do not send a return label.
 - Refund: to the original payment method, once the returned item has arrived and the owner has approved it. Do not promise the customer a number of days — how quickly it appears depends on their bank.
 - Partial returns (one item of several) and refund of the original shipping cost: — ask the owner once and write the answer into Store facts — ask the owner in the summary in Step 2.
@@ -61,7 +61,7 @@ Return address and company name per store: the return address (Store facts) (⚠
 
 ### Step 4 – If the return is declined
 
-1. Draft the decline email with the AI prompt template below, in the customer's language, quoting the reason the owner gave (outside the return window / item used / sale item).
+1. Draft the decline email with the AI prompt template below, in the customer's language, quoting the reason the owner gave (outside the return window / item used).
 2. Offer to help with any other question. Note "Return declined [date], reason" on the order in Shopify.
 
 ### Step 5 – After the item is received back
@@ -107,4 +107,4 @@ Return approved:
 
 Return declined:
 
-"Draft a polite email in the customer's language ([LANGUAGE]) declining the return request for order [ORDER ID]. Reason: [REASON — e.g. outside the return window counted from delivery / item appears used / sale item]. Reference our return policy ([RETURN WINDOW FROM STORE FACTS] days from delivery, unused, original packaging). Offer to help with any other questions. Under 110 words. Sign with the support address (Store facts)."
+"Draft a polite email in the customer's language ([LANGUAGE]) declining the return request for order [ORDER ID]. Reason: [REASON — e.g. outside the return window counted from delivery / item appears used]. Reference our return policy ([RETURN WINDOW FROM STORE FACTS] days from delivery, unused, original packaging). Offer to help with any other questions. Under 110 words. Sign with the support address (Store facts)."

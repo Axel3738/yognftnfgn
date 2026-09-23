@@ -128,3 +128,25 @@ test('kontot i tabellen är OPS-kontot — och kommentaren bär UNSETTLED-fyndet
   assert.equal(OPS_MARKNADER.SE.act, '915422744950975');
   assert.equal(OPS_MARKNADER.DK.act, '915422744950975');
 });
+
+import { MARKNADSKODER_I_NAMN, marknadskodIFil, arMarknadsfil, utanMarknadsfiler } from '../opsmarknader.mjs';
+
+test('marknadskodIFil: marknadsversionen känns igen på plats två, källfilen inte (2026-09-22: bara den svenska får översättas)', () => {
+  assert.equal(marknadskodIFil('CaraShellRoof_NO_PD_106_H1.mp4'), 'NO');
+  assert.equal(marknadskodIFil('/x/y/CaraShellRoof_US_PD_106_H1.mp4'), 'US');
+  assert.equal(marknadskodIFil('Takovertrekk_DK_GT_5_H1.jpg'), 'DK');
+  assert.equal(marknadskodIFil('CaraShellRoof_PD_106_H1.mp4'), null);
+  assert.equal(marknadskodIFil('Takoverdrag_BOF_3_1_4x5.jpg'), null);
+  assert.equal(marknadskodIFil('Kranskydd_DE_3_1.jpg'), null, 'DE är en svensk vinkel (Demo), inte en marknad');
+  assert.equal(marknadskodIFil('HeimGuard_SP_2_1'), null);
+  assert.equal(marknadskodIFil(''), null);
+  assert.equal(arMarknadsfil('CaraShellRoof_NO_PD_106_H1.mp4'), true);
+  assert.ok(!MARKNADSKODER_I_NAMN.includes('SE') && !MARKNADSKODER_I_NAMN.includes('DE'));
+});
+
+test('utanMarknadsfiler: bara källfiler kvar, ordningen bevarad, objekt med namn/name fungerar', () => {
+  assert.deepEqual(utanMarknadsfiler(['CaraShellRoof_NO_PD_106_H1.mp4', 'CaraShellRoof_PD_106_H1.mp4']), ['CaraShellRoof_PD_106_H1.mp4']);
+  assert.deepEqual(utanMarknadsfiler([{ namn: 'A_NO_PD_1_H1.mp4' }, { name: 'A_PD_1_H1.mp4' }]), [{ name: 'A_PD_1_H1.mp4' }]);
+  assert.deepEqual(utanMarknadsfiler(['A_NO_PD_1_H1.mp4', 'A_US_PD_1_H1.mp4']), [], 'bara marknadsfiler ⇒ ingen källa');
+  assert.deepEqual(utanMarknadsfiler([]), []);
+});

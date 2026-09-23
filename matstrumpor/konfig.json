@@ -10,7 +10,7 @@
     "business": "Matstrumpor.se (3354502211392342)",
     "valuta": "SEK",
     "konto_comment": "⚠️ Kontot HETER 'nya kungen' — inte Matstrumpor. Kolla alltid ad_account_id, aldrig namnet. Portföljen Matstrumpor.se bär dessutom 'Norge' 1418612340124566 och 'Finland DK' 1356652809967926, båda utan betalmetod 2026-09-21.",
-    "token_comment": "⚠️ META_ACCESS_TOKEN (det rutinerna använder) NEKAS på det här kontot: '(#200) Ad account owner has NOT granted ads_management' (mätt 2026-09-21). Allt som skriver i Meta går därför via Adsmanager-MCP:n i en session med Axel. En schemalagd rutin har inga mcp__*-verktyg — den kan alltså INTE ladda upp förrän appen fått åtkomst till kontot.",
+    "token_comment": "META_ACCESS_TOKEN (Meta-användaren 'API LONG TERM', id 122107293489476552) har åtkomst till kontot sedan 2026-09-22 — mätt: GET act_730973156224390?fields=name → {\"name\":\"nya kungen\"}. Till och med 2026-09-21 svarade kontot '(#200) Ad account owner has NOT granted ads_management', och ronden läste då via Adsmanager-MCP:n. Nu LÄSER /matstrumporkungen via token (matstrumpor/meta.mjs, `kor.mjs --hamta`) och går som rutin 07:00. Uppladdningen (/matstrumpor) är INTE ombyggd: den skriver fortfarande via Adsmanager-MCP:n i en session Axel startar.",
     "kampanj": {
       "id": "120251217860260023",
       "namn": "MATSTRUMP_SALES_20260826",

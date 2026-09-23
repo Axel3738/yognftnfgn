@@ -72,6 +72,12 @@ Räkna om till den ram där siffran blir slående — men den ska förbli sann.
   (`/ops-spegla`), och en rad som säger vilken butik den är kan inte
   återanvändas. Produkten, priset och länken pekar ut butiken; namnet
   tillför inget för kunden. Skriv det som hard rule i varje brief.
+- **Returrätten heter "14 dagars ångerrätt enligt lag"** (Axels beslut
+  2026-09-20). Aldrig "30 dagars öppet köp", aldrig "nöjd-kund-garanti",
+  aldrig ordet garanti ensamt. Löftesgranskningen 2026-09-19 hittade 30 dagar
+  på 220 produktsidor, 12 listiclar och i 7 annonspåståenden medan lagen
+  och mejlen sa 14 — butiken lovar nu samma sak överallt. Annonser som
+  redan är live stängs inte av; nästa version skrivs om.
 - **En Mississippi-testet:** budskapet ska landa direkt, inte efter en
   genomläsning. Kunden scrollar förbi — det är tempot som gäller.
 - **Vem pratar vi med?** Nulägesattityd → önskad attityd. A och B först,

@@ -39,6 +39,22 @@ export const TVISTFONSTER_DAGAR = 180;
 export const LARMGRANS_DAGAR = 3;
 
 const OPPEN = ['needs_response', 'under_review'];
+/**
+ * De statusar som fortfarande KRÄVER bevis av oss. `under_review` betyder att
+ * något redan är inskickat och att Shopify har låst svaret — den räknas som
+ * öppen, men den är inte VA:ns att göra något åt.
+ *
+ * ⛔ Blanda aldrig ihop de två listorna igen. Larmet 2026-09-23 07:41 CEST
+ * postade tre tvister till VA:n som "3 open disputes need evidence within 3
+ * days — 1 already past the due date": #5122 (2 dagar över), #4446 (i dag) och
+ * #4407. **Alla tre stod `under_review`**, alltså redan besvarade, och ingen av
+ * dem gick ens att röra. Samtidigt är rutinens hela existensberättigande de
+ * tvister som verkligen väntar på svar — och de två som gjorde det (#4914 och
+ * #4845, båda chargebacks) låg utanför gränsen och nämndes inte. Ett larm som
+ * ropar om det som är gjort och tiger om det som inte är, slutar läsas.
+ * Samma regel står i `kundtjanst/DASHBOARD-TVISTER.md` → Kända luckor punkt 3.
+ */
+const BEHOVER_SVAR = ['needs_response'];
 
 /** Kalenderdagar kvar till deadline. Ingen deadline: null. Ren. */
 export function dagarKvar(deadline, nu = new Date()) {
@@ -50,14 +66,15 @@ export function dagarKvar(deadline, nu = new Date()) {
 }
 
 /**
- * De tvister som kräver handling nu: öppna, och antingen med deadline inom
- * `grans` dagar (förfallna räknas in — de är värst) eller helt utan avläst
+ * De tvister som kräver handling nu: de som fortfarande väntar på VÅRT svar
+ * (`BEHOVER_SVAR`, alltså aldrig en `under_review`), och antingen med deadline
+ * inom `grans` dagar (förfallna räknas in — de är värst) eller helt utan avläst
  * deadline. En okänd deadline larmas hellre än den tigs ihjäl: repots regel är
  * att det som inte går att läsa rapporteras som okänt, aldrig som noll. Ren.
  */
 export function bradskande(lista = [], { nu = new Date(), grans = LARMGRANS_DAGAR } = {}) {
   return lista
-    .filter((x) => OPPEN.includes(x.status))
+    .filter((x) => BEHOVER_SVAR.includes(x.status))
     .map((x) => ({ ...x, kvar: dagarKvar(x.evidensSenast, nu) }))
     .filter((x) => x.kvar === null || x.kvar <= grans)
     // Chargebacks först, sedan deadline, sedan belopp. Ordningen är mätt, inte

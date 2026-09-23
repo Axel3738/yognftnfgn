@@ -1,6 +1,6 @@
 {
-  "kurs": 0.10191,
-  "datum": "2026-09-21",
-  "hamtad": "2026-09-22T04:09:43.389Z",
+  "kurs": 0.10193,
+  "datum": "2026-09-22",
+  "hamtad": "2026-09-23T04:15:38.727Z",
   "kalla": "https://api.frankfurter.dev/v1/latest?base=SEK&symbols=USD"
 }

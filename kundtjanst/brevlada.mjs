@@ -87,6 +87,10 @@ export function tolkaListrad(rad) {
     storlek: htmlTillText(String(k.size ?? '')).trim(),
     last: Boolean(Number(f.seen ?? 0)),
     flaggad: Boolean(Number(f.flagged ?? 0)),
+    // \Answered: tråden har ett svar från oss (autosvaret eller VA:n). Roundcube
+    // sätter den när svaret går via svarsformuläret — morgonlistan skiljer
+    // "stjärna, obesvarad" (VA:ns) från "stjärna, besvarad" (redan hanterad).
+    svarat: Boolean(Number(f.answered ?? 0)),
     bilaga: Boolean(f.ctype && /multipart\/mixed|application\//i.test(String(f.ctype))),
   };
 }

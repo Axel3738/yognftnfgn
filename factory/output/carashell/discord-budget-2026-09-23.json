@@ -1,0 +1,25 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-23",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: both Swedish campaigns keep their budgets. The main campaign holds at 9 600 kr/day — 3-day profit 22.0 % at ROAS 2.54 sits in the 16–25 % hold band, which is exactly where we want a campaign the day after a raise",
+    "The LISTICLE campaign holds at 2 850 kr/day even though 3-day profit is 27.5 % (ROAS 2.95) and the rules would scale it. The cadence lock stopped it: 2 days since the last change, 3 are required. It is due tomorrow night",
+    "Paused one ad: CaraShellRoof_PD_5_H1 — 1 249 kr spent for a single purchase at CPA 1 249 kr against break-even 693 kr, over three times the target CPA with nothing to show. Read back and logged",
+    "98 purchases over 7 days on 45 957 kr at ROAS 2.94. Profit contribution 36 855 kr — up from 30 273 kr last night"
+  ],
+  "siffror": { "spend_7d": 45957, "kop_7d": 98, "roas_7d": 2.94, "vinstbidrag_7d": 36855 },
+  "briefer": [],
+  "action_axel": [
+    "The Danish campaign for this product (CARASHELL_DK_Taköverdrag Husvagn & Husbil 5,5, live since 20 September) is losing money and nothing is watching it: 6 860 kr over two days, 8 purchases, ROAS 1.52 against break-even 1.63, running on a 4 000 kr daily budget. The night watch only manages the Swedish market, and Denmark is not in the store's market list, so no routine will ever lower that budget. If the round had covered Denmark it would have cut it 4 000 → 2 800 kr tonight. Decide whether Denmark joins the night watch or stays manual"
+  ],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-24",
+  "varningar": [
+    "First day on the new 9 600 kr budget was the weakest in a week: 11 686 kr spent yesterday at ROAS 1.71, barely over break-even 1.63, for 13 purchases. One day is not a verdict, but if it repeats tonight the 3-day profit drops out of the hold band and the round will cut instead of scale",
+    "The LISTICLE campaign swings hard day to day at this budget: ROAS 0.89 on Sunday, 4.53 on Monday. The 3-day window smooths it, which is why the cadence lock matters more than usual here",
+    "Briefs stay paused by owner decision from 18 September: CaraShell is briefed in the Bäverbutiken teamspace and mirrored across"
+  ]
+}

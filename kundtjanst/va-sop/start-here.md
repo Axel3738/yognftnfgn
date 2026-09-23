@@ -58,8 +58,9 @@ carrier-portal procedure applies — look the parcel up on the carrier's site in
 | I got a strange email from you | **Suspicious or phishing email in our name** |
 | *(not a customer)* A draft in Drafts you did not write, a flagged email, or the folder VA-PRIO | **Auto-reply bot — what it does, and what you do** |
 
-Two pages you use every day without a customer asking: **Tracking page — how to look
-up any parcel** and **Store facts**.
+Three pages you use every day without a customer asking: **Auto-reply bot — what it does,
+and what you do** (what the bot already answered, and your order of work), **Tracking page —
+how to look up any parcel** and **Store facts**.
 
 ---
 

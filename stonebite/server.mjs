@@ -45,6 +45,8 @@ import { appSkal } from './vy/layout.mjs';
 import { sattSprak } from './vy/delar.mjs';
 import { sprakFor, SPRAKEN } from './sprak.mjs';
 import { lasProfil } from './kallor/repo.mjs';
+import { startaVakt, loggmappFor, harLogg } from './autosvar-vakt.mjs';
+import { samlaAutosvar } from '../kundtjanst/dashboard.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 const ROT = dirname(HAR);
@@ -196,9 +198,27 @@ function statiskFil(res, sokvag, nonce, https) {
   return true;
 }
 
-function snapshot() {
-  return lasSnapshot(SNAPSHOT);
+// Autosvarets logg LIVE ur volymen (minutservern på Railway skriver dit,
+// stonebite/autosvar-vakt.mjs). Snapshoten bär repots committade logg — den
+// är timmar gammal; en arg kund ska synas inom minuten, inte vid nästa
+// hämtning. Volymens butiker vinner, snapshotens övriga står kvar.
+// Ingen cache: några små jsonl-filer per sidvisning är billigare än att
+// någonsin visa gårdagens läge som dagens.
+function autosvarLive() {
+  const mapp = loggmappFor(process.env, ROT);
+  if (!harLogg(mapp)) return null;
+  try { return { ...samlaAutosvar({ loggmapp: mapp }), kalla: 'volymen' }; } catch { return null; }
 }
+
+function snapshot() {
+  const snap = lasSnapshot(SNAPSHOT);
+  const live = autosvarLive();
+  if (!snap || !live) return snap;
+  return { ...snap, autosvar: { ...(snap.autosvar ?? {}), ...live, brands: { ...(snap.autosvar?.brands ?? {}), ...live.brands } } };
+}
+
+/** Vakten som håller autosvarets minutserver igång — null när AUTOSVAR_BRANDS är tomt. Sätts i uppstarten. */
+let autosvarVakt = null;
 
 function felsida(res, { kod, rubrik, text, nonce, https }) {
   svaraHtml(res, `<!doctype html><html lang="sv"><head><meta charset="utf-8">
@@ -310,7 +330,9 @@ export async function hantera(req, res) {
   if (stig === '/halsa') {
     const snap = snapshot();
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-    return res.end(JSON.stringify({ ok: true, snapshot: snap?.byggd ?? null, konton: anv.antal(ANVANDARFIL) }));
+    // autosvar: minutserverns läge (null = vakten är av, AUTOSVAR_BRANDS tomt) — så en
+    // curl mot /halsa säger om boten faktiskt snurrar, utan inloggning och utan gissning.
+    return res.end(JSON.stringify({ ok: true, snapshot: snap?.byggd ?? null, konton: anv.antal(ANVANDARFIL), autosvar: autosvarVakt ? autosvarVakt.status() : null }));
   }
 
   // ------------------------------------------------------ förstagången
@@ -687,5 +709,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     console.log(`  Användare: ${ANVANDARFIL} (${anv.antal(ANVANDARFIL)} konton)`);
     console.log(`  Data:      ${existsSync(SNAPSHOT) ? `hämtad ${snap?.byggd ?? 'okänt'}` : 'ingen snapshot än — kör node stonebite/hamta.mjs'}`);
     if (anv.antal(ANVANDARFIL) === 0) console.log('  Första gången: öppna /kom-igang och skapa ägarkontot.');
+    // Autosvarets minutserver (stonebite/autosvar-vakt.mjs): bara när AUTOSVAR_BRANDS är satt.
+    autosvarVakt = startaVakt({ logg: (m) => console.log(`  ${m}`) });
+    if (!autosvarVakt) console.log('  Autosvar:  av (AUTOSVAR_BRANDS är tomt) — sajten visar loggen ur snapshoten.');
+    for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, () => { try { autosvarVakt?.stopp(); } catch { /* ok */ } process.exit(0); });
   });
 }

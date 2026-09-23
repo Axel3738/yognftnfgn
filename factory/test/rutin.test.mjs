@@ -211,6 +211,21 @@ test('en butik som inte är byggd stoppar', () => {
   assert.ok(r.hinder.some((h) => /butiker\/finns-inte/.test(h)));
 });
 
+test('matstrumpor är byggd utan fabriks-yaml — facit är matstrumpor/konfig.json (rutinen byggd 2026-09-22)', () => {
+  const r = granska({ kommando: '/matstrumporkungen', butik: 'matstrumpor', gren: 'main' });
+  assert.ok(!r.hinder.some((h) => /finns inte/.test(h)), `ska inte stoppa på butiken: ${r.hinder.join(' | ')}`);
+  // Kommandofilen säger CONNECTORS: inga — allt går via META_ACCESS_TOKEN och NOTION_TOKEN.
+  assert.ok(r.varningar.some((v) => /INGA connectors/.test(v)), 'rutinen ska byggas utan connectors');
+  // Namnet i Routines-vyn säger vad den är, och en befintlig rutin med samma namn är en dubblett.
+  const f = byggForslag({ kommando: '/matstrumporkungen', tid: '07:00', butik: 'matstrumpor', gren: 'main', datum: SOMMAR });
+  assert.equal(f.rutinnamn, 'Matstrumporkungen: matstrumpor');
+  assert.equal(f.cron, '0 5 * * *');
+  assert.equal(f.cronVinter, '0 6 * * *');
+  assert.deepEqual(f.taggar, ['routine:matstrumporkungen', 'butik:matstrumpor']);
+  const dubbel = granska({ kommando: '/matstrumporkungen', butik: 'matstrumpor', gren: 'main', rutiner: [{ id: 'trig_x', name: f.rutinnamn, prompt: '/matstrumporkungen' }] });
+  assert.ok(dubbel.hinder.some((h) => /redan/.test(h)), 'en andra rutin med samma jobb ska stoppas');
+});
+
 test('connectors varnar men stoppar aldrig — de kopplas på rutinen', () => {
   const r = granska({ kommando: '/notionkorning', gren: 'main' });
   assert.ok(r.varningar.some((v) => /Notion/.test(v) && /ärvs INTE/.test(v)));

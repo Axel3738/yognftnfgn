@@ -200,6 +200,14 @@ export function opsButiker(rot = ROT) {
 
 export const REGISTERFIL = join(ROT, 'factory', 'produkter', 'register.json');
 
+/** Butiker med egna rutiner som INTE är fabriksbyggda (ingen
+ *  factory/butiker/<id>.yaml). Facit är butikens egen konfigfil — finns den
+ *  räknas butiken som byggd. Matstrumpor (Axels tredje verksamhet, kontot
+ *  "nya kungen"): `/matstrumporkungen` byggd som rutin 2026-09-22. */
+export const ANDRA_BUTIKER = Object.freeze({
+  matstrumpor: 'matstrumpor/konfig.json',
+});
+
 /** Butikernas platser i tidsschemat, ur register.json `rutinplatser`
  *  ({ drytrek: 0, hemvakten: 1, … }). Platsen delas ut EN gång och ligger
  *  kvar — bokstavsordning hade flyttat alla gamla butiker så fort en ny
@@ -325,9 +333,10 @@ export function granska({ kommando, butik = null, gren = null, rutiner = [], kat
   //    produktnyckel (`carashell/termoskyddet`), och butiksfilen heter då
   //    fortfarande `carashell.yaml` — leta på butiksdelen, inte hela nyckeln.
   if (butik) {
-    const butiksdel = String(butik).split('/')[0];
-    const b = join(ROT, 'factory', 'butiker', `${butiksdel}.yaml`);
-    if (!existsSync(b)) hinder.push(`factory/butiker/${butiksdel}.yaml finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
+    const butiksdel = String(butik).split('/')[0].toLowerCase();
+    const egenFacit = ANDRA_BUTIKER[butiksdel];
+    const b = egenFacit ? join(ROT, egenFacit) : join(ROT, 'factory', 'butiker', `${butiksdel}.yaml`);
+    if (!existsSync(b)) hinder.push(`${egenFacit ?? `factory/butiker/${butiksdel}.yaml`} finns inte — rutinen skulle köra mot en butik som inte är byggd.`);
   }
 
   // 3. Dubbletter. Två rutiner med samma jobb kör båda, och den ena upptäcks
@@ -439,7 +448,7 @@ export function byggForslag({ kommando, tid, butik = null, gren = null, rutiner 
   // Samma sak för butikens leveransrunda och NO-översättning (Axels beslut
   // 2026-09-11: tre rutiner per OPS-butik, alla byggda av /notionscalercs setup).
   const marknadIKommando = (/--marknad\s+([A-Za-z]{2})/.exec(String(kommando ?? ''))?.[1] ?? '').toUpperCase();
-  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen' };
+  const RUTINNAMN = { notionscalercs: 'Nattvakten', 'ops-leverans': 'Leveransrundan', 'ops-oversatt': marknadIKommando && marknadIKommando !== 'NO' ? `Översättning ${marknadIKommando}` : 'Översättning NO', 'ops-spegla': 'Speglingen', matstrumporkungen: 'Matstrumporkungen' };
   const butiksrutin = butik ? RUTINNAMN[namn] ?? null : null;
   const etikett = butiksrutin ? `${butiksrutin}: ${butik}` : butik ? `${namn} — ${butik}` : namn;
   const sessionstitel = butiksrutin ? `Rutin: ${butiksrutin} ${butik}` : `Rutin: ${etikett}`;
@@ -515,6 +524,10 @@ function lista() {
   kanda.push(['07:00', '/briefgranskning', 'Briefgranskningen (MÅNDAG + TORSDAG): creative director-dom över senaste briefronden i varje Bäver-hub → Feedback-rad i hubben', '1,4']);
   // Kundtjänsten: bara måndagar (dagar '1').
   kanda.push(['07:00', '/kundtjanst --alla --discord', 'Kundtjänst veckorapport (MÅNDAGAR): toppärenden + chargeback-ranking, alla brands', '1']);
+  // Matstrumpor (kontot "nya kungen", inte fabriksbyggd): daglig cron, skriptet
+  // avgör kördag (var tredje dag från förra ronden, `kor.mjs --kordag`). Läser,
+  // dömer och föreslår — skalar aldrig (Axels beslut 2026-09-21).
+  kanda.push(['07:00', '/matstrumporkungen', 'Matstrumporkungen (var tredje dag, skriptet avgör): etikett → lärdom → 6 briefer → tips. Skalar ALDRIG']);
 
   for (const [tid, kmd, vad, dagar = '*'] of kanda) {
     const t = tillCron(tid, { dagar });

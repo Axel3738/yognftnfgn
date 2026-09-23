@@ -171,6 +171,23 @@ butik via `autosvar/oversikt.mjs` — aldrig omräknat på sidan — plus mappen
 (`rapportsida.mjs` → `hamtaVaKo`, läs-bara). Utkast (`torr: true`) visas som
 utkast, aldrig som skickat.
 
+**Var boten kör — Railway, inte en rutin (Axels krav 2026-09-22: "svara arga
+kunder på 60 sekunder … måste ligga och skanna hela tiden").** En rutin på
+claude.ai kör som tätast en gång i timmen. Minutservern (`--loop 60`) körs
+därför som barnprocess av sajtens server på Railway
+(`stonebite/autosvar-vakt.mjs`): på när `AUTOSVAR_BRANDS` är satt på
+tjänsten, torrt tills `AUTOSVAR_LAGE=skarpt`, omstart med växande paus när
+den dör, startar inte alls om `KUNDTJANST_MAIL_PASS_<ID>` saknas (och säger
+vilket). Loggen — minnet "ett svar per tråd någonsin" — skrivs på volymen via
+**`AUTOSVAR_LOGGMAPP`** (`autosvar/logg.mjs` läser variabeln; standard
+`<STONEBITE_DATA>/autosvar/logg`), så den överlever varje deploy, och
+stonebite.org läser samma mapp live: de arga kunderna står på Kundtjänst
+inom minuten. `/halsa` på sajten visar `autosvar.kor`. Slås på med Cowork:
+`stonebite/cowork/5-autosvar.txt`. ⛔ När vakten är på kör ingen session
+`autosvar.mjs` mot samma brevlåda för hand — två kopior är ett dubbelsvar.
+Repots logg (`kundtjanst/autosvar/logg/`) är sessionskörningarnas historik;
+Railways logg committas inte.
+
 Axels uppdrag 2026-09-21: ett kundtjänstverktyg som svarar på enkla mejl
 själv och håller arga kunder lugna tills VA:n hinner — alla butiker.
 
@@ -321,6 +338,16 @@ Axel läste de fem utkasten och gav feedback per mejl. Allt är inlagt:
   (dashboard-sessionen såg det 2026-09-22 kväll); testet följer brandfilen
   sedan dess. Aldrig ordet återbetalning. Flaggad + VA-PRIO: VA:n tar emot
   returen.
+- **Bilderna följer felet, inte kategorin** (rutinens första utkast
+  2026-09-22 kväll: Hans bränslepump "läcker och pumpar dåligt" fick
+  "Tråkigt att höra att leveransen inte blev som den skulle" och en
+  bildförfrågan på fraktetiketten). `svar.fotonTypFor`: skadad/defekt med
+  funktionsfel-ord (läcker, fungerar inte, laddar inte, stopped working …)
+  och inget om paketet, förpackningen eller transporten ⇒ `vara`: "varan
+  inte fungerar som den ska" + bild eller kort video på felet. Allt annat
+  (fel vara, för få, "kom fram trasig", förpackningen nämnd, oklart) ⇒
+  `leverans`: som förut, varan + förpackningen + fraktetiketten (SOP 05/08).
+  Loggraden bär `fotonTyp`.
 - **WISMO utan avsändningsdatum, utan första sträckans fraktbolag, utan
   "framme i Sverige"** (Hans-utkastet: "Paketet skickades 15 september med
   YunExpress" ska inte skrivas): bara *"Paketet ligger hos DHL för sista
@@ -403,11 +430,21 @@ Bäverbutiken först, sedan samma sak överallt).
   (repot som källa, `main` som utgren, miljön `env_011kzcu4tXHXM9LdECNkDe9E`
   som bär `KUNDTJANST_MAIL_PASS_BAVERBUTIKEN`), cron `10 * * * *`, prompt
   `/autosvar --brand baverbutiken --torr --discord`, sedd i `list_triggers`
-  samma körning, första körning 00:10 CEST 2026-09-23. Torrt = utkast i
-  `INBOX.Drafts`, inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt.
-  **Skarpt är Axels ok** efter 20 rätta utkast i rad ⇒ `update_trigger` med
-  prompten `… --skarpt --discord`, aldrig en andra rutin. En brevlåda, en
-  session: kör inte `/autosvar` för hand mot Bäverbutiken medan rutinen är på.
+  samma körning. ⛔ **PAUSAD 2026-09-23 00:00 CEST av en annan session, före
+  första körningen** (`enabled: false`, sessionen är orörd: 0 körningar, 0
+  loggrader): **Railway-vakten** (`stonebite/autosvar-vakt.mjs`, PR #124/#126)
+  kör samma bot mot samma brevlåda **var 60:e sekund** sedan 23:30 CEST —
+  `/halsa` → `autosvar.kor: true`, torrt, loggen på volymen
+  `/data/autosvar/logg` (inte repots). Två sessioner byggde var sin körare
+  samma kväll utan att se varandra; Railway är den som klarar Axels "60
+  sekunder", så rutinen står kvar avstängd. **Slå aldrig på den medan
+  `AUTOSVAR_BRANDS` är satt på Railway.** Torrt = utkast i `INBOX.Drafts`,
+  inget skickas; flagga och `INBOX.VA-PRIO` precis som skarpt. **Skarpt är
+  Axels ok** efter 20 rätta utkast i rad ⇒ `AUTOSVAR_LAGE=skarpt` på Railway.
+  En brevlåda, en körare: kör inte `/autosvar` för hand mot Bäverbutiken.
+  ⚠️ Handkörningen 23:31 CEST (raden nedan) gick parallellt med Railways första
+  varv — den skrev Hans-utkastet och loggade honom i REPOTS logg, som Railway
+  inte läser; det som hindrar Railway från ett andra utkast är Drafts/Sent-vakten.
 - **SOP:en till VA:n:** `va-sop/auto-reply-bot.md` → Notion-sidan **"Auto-reply
   bot — what it does, and what you do"** (kategori Other stuff) i "Customer
   support bäverbutiken", plus rader i Store facts (läge, signatur, VA-PRIO,
@@ -452,18 +489,23 @@ Bäverbutiken först, sedan samma sak överallt).
   "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
   leverans, inte en pump som läcker efter köpet, och fraktetiketten i
   bildförfrågan (SOP 05/08) är irrelevant för ett funktionsfel.
-  **Axels dom 2026-09-23 00:1x: "fel".** Räkningen står på 0 av 20. Rättat
-  samma natt: bildförfrågan har tre varianter (`svar.fotonVariant`, ren
-  funktion) — **defekt** (skadad/defekt utan transportord ⇒ "Tråkigt att höra
-  att varan inte fungerar som den ska" + "Så här går vi vidare: skicka gärna en
-  bild eller en kort video som visar felet"), **transport** (kom fram skadad,
-  förpackning, paket, leverans ⇒ SOP 05:s tre bilder som förut) och
-  **fel_vara** (fel, för få, inte som på bilden ⇒ "det du fick och
-  fraktetiketten"). Samma variant styr bildraden i det arga svaret. Fem språk,
-  testat på Hans mejl ordagrant. `post.variant` står i loggen. Kommandofilen
-  drar dessutom `main` FÖRE körningen, så rättningen gäller nästa timme.
-  ⚠️ Axel skrev bara "fel" — de två anmärkningarna ovan är det jag rättade;
-  var det något annat han såg är det inte rättat än (frågan ställd).
+  **Axels dom 2026-09-23 morgon: "fel".** Räkningen står på 0 av 20. Rättat
+  redan samma natt av den andra sessionen (PR #131, `svar.fotonTypFor`):
+  **`vara`** (skadad/defekt med funktionsfel-ord och inget om paketet ⇒
+  "Tråkigt att höra att varan inte fungerar som den ska" + "skicka gärna en
+  bild eller en kort video på varan där felet syns") eller **`leverans`**
+  (fel vara, kom fram trasig, förpackningen nämnd, oklart ⇒ SOP 05:s tre
+  bilder som förut); loggraden bär `fotonTyp`. Den här sessionen byggde samma
+  natt en egen variant av samma rättning (`fotonVariant`, tre varianter) utan
+  att se PR #131 — den kastades vid sammanslagningen, `main`:s version gäller.
+  Kommandofilen drar `main` FÖRE körningen sedan dess. ⚠️ Axel skrev bara
+  "fel" — leveransraden och fraktetiketten är det som rättats; såg han något
+  annat är det inte rättat än (frågan ställd). ⚠️ **Utkastet gick ändå ut:**
+  VA:n skickade två svar till Hans 07:32 och 07:37 CEST (Sent uid 629/630:
+  först sitt eget, "en kort video som visar läckaget", sedan bottens text
+  omskriven med förpackning + fraktetikett), raderade utkastet, och Hans
+  svarade 07:59 ("läckan verkar komma från batteri/motordelen … hur går vi
+  vidare?") — läs Sent innan du dömer ett utkast som "kvar".
 
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 

@@ -43,11 +43,17 @@ Inga npm-beroenden. Node ≥ 20.
 
 ## Två saker att veta innan du ändrar något
 
-**1. Meta skrivs bara via MCP.** `META_ACCESS_TOKEN` nekas på kontot (mätt
-2026-09-21: `(#200) Ad account owner has NOT granted ads_management`). Därför
-går varje skrivning genom `mcp__Adsmanager__*` i en session Axel startar —
-och därför kan det här INTE bli en nattrutin förrän appen fått åtkomst till
-kontot (rutiner har inga `mcp__*`-verktyg).
+**1. Meta läses via token, skrivs via MCP.** `META_ACCESS_TOKEN` har åtkomst
+till kontot sedan 2026-09-22 (Axel gav användaren "API LONG TERM" rättigheten;
+mätt med `GET act_730973156224390?fields=name` → `nya kungen`). Till och med
+2026-09-21 nekades den (`(#200) Ad account owner has NOT granted
+ads_management`). Sedan dess LÄSER ronden kontot via REST (`meta.mjs`,
+`kor.mjs --hamta`) och **`/matstrumporkungen` går som rutin 07:00 varje dag**
+(`kor.mjs --kordag` avgör om det är rond — var tredje dag från förra ronden).
+Uppladdningen i `/matstrumpor` är inte ombyggd: den skriver fortfarande genom
+`mcp__Adsmanager__*` i en session Axel startar. `meta.mjs` har inga
+skrivfunktioner alls — ronden skalar aldrig, så det som inte finns kan inte
+köras av misstag.
 
 **2. Momsen är en öppen fråga.** Break-even är **1,50 utan moms** och **2,14
 med moms**. Kampanjen låg på ROAS 1,392 senaste 14 dagarna (17 031 kr) —

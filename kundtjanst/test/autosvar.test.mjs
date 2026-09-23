@@ -9,7 +9,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
 import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
-import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonVariant, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from '../autosvar/rapport.mjs';
@@ -898,35 +898,39 @@ test('SOP 05/08: lugn skadad/fel vara ⇒ ENKEL `foton` (beklagan + tre bilder +
   for (const s of SPRAK) assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true }).text), false, s);
 });
 
-test('Axels "fel" 2026-09-23: en pump som läcker är ett funktionsfel, inte en leverans — bild/video på felet, ingen fraktetikett; transportskada och fel vara får sina egna rader', async () => {
-  // Hans, ordagrant ur kontaktformuläret 2026-09-22 16:53: lugn, defekt vara, inga transportord, inget ordernummer.
-  const hans = 'Jag köpte en batteridriven bränslepump av er den läcker och pumpar dåligt.\nHur fortsätter jag ?';
-  const b = new FalskBrevlada({ INBOX: [{ uid: 96, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Nytt kundmeddelande den 22 september 2026 16.53', text: hans, id: '<w96@x.se>' }) }] });
+test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild eller video på felet, aldrig "leveransen" eller fraktetiketten; kom fram trasig ⇒ transportskada som förut', async () => {
+  // fotonTypFor: funktionsfel utan ett ord om paketet ⇒ 'vara'; allt annat ⇒ 'leverans' (det VA:n alltid bett om).
+  assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Bränslepump', text: 'Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?' }), text: 'den läcker och pumpar dåligt' }), 'vara');
+  assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Trasig vara', text: 'borsten kom fram trasig och fungerar inte' }), text: 'borsten kom fram trasig och fungerar inte' }), 'leverans', '"kom fram" är transporten');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'förpackningen var krossad och lampan fungerar inte' }), 'leverans', 'förpackningen nämnd ⇒ transportskada');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }, { id: 'skadad_defekt' }] }, text: 'läcker' }), 'leverans', 'fel vara ⇒ alltid leveransbilderna');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'the pump leaks and stopped working' }), 'vara');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'trasig' }), 'leverans', 'oklart ⇒ leverans');
+  assert.equal(fotonTypFor({}), 'leverans');
+  // Flödet: lugn Hans utan order på adressen ⇒ ENKEL foton, varianten 'vara', ordernumret efterfrågas.
+  const b = new FalskBrevlada({ INBOX: [
+    { uid: 93, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Bränslepump', text: 'Hej! Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?', id: '<w93@x.se>' }) },
+  ] });
   const r = await kor(b);
-  assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].variant], ['ENKEL', 'foton', 'defekt']);
+  assert.deepEqual([r.rader[0].hink, r.rader[0].typ, r.rader[0].fotonTyp, r.rader[0].atgard, r.rader[0].flyttad], ['ENKEL', 'foton', 'vara', 'utkast', 'VA-PRIO']);
   const t = b.utkast()[0].text;
-  assert.match(t, /^Hej Hans!\n\nTack för ditt mejl\.\nTråkigt att höra att varan inte fungerar som den ska\. Det tittar vi på direkt\.\nSå här går vi vidare: skicka gärna en bild eller en kort video som visar felet, så har vi allt när vi tar det vidare\.\nSkriv gärna även ditt ordernummer/);
-  assert.equal(/leveransen|fraktetikett|förpackning/.test(t), false, 'leveransraden och fraktetiketten hör inte hemma i ett funktionsfel');
+  assert.match(t, /^Hej Hans!\n\nTack för ditt mejl\.\nTråkigt att höra att varan inte fungerar som den ska\. Det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild eller en kort video på varan där felet syns, så har vi allt när vi tar det vidare\.\nSkriv gärna även ditt ordernummer i svaret/);
+  assert.equal(/leveransen|fraktetiketten|förpackningen/.test(t), false, 'inget om leveransen eller fraktetiketten för en pump som läcker');
   assert.equal(harForbjudet(t), false);
-  // Transportskada ("kom fram trasig") ⇒ SOP 05:s tre bilder som förut; fel vara ⇒ det du fick + fraktetiketten.
-  const transport = { amne: 'Trasig vara', text: 'Hej, borsten kom fram trasig och fungerar inte.' };
-  assert.equal(fotonVariant({ klass: klassificera(transport), ...transport }), 'transport');
-  const fel = { amne: 'Fel färg', text: 'Jag fick fel färg på överdraget, beställde svart och fick grått.' };
-  assert.equal(fotonVariant({ klass: klassificera(fel), ...fel }), 'fel_vara');
-  assert.match(skrivEnkelt({ typ: 'foton', sprak: 'sv', brand: KONFIG, variant: 'fel_vara' }).text, /inte stämde med det du beställde\. Det tittar vi på direkt\.\nFör att vi ska kunna lösa det snabbt: skicka gärna en bild på det du fick och en på fraktetiketten/);
-  // Det arga svaret följer samma variant: bara bildraden byts, Axels rad står kvar.
-  const arg = skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'skadad_defekt', foton: true, fotonVariant: 'defekt', namn: 'Hans', behoverOrdernummer: true }).text;
-  assert.match(arg, /inte fungerar är helt oacceptabelt[\s\S]*\nSå här går vi vidare: skicka gärna en bild eller en kort video som visar felet/);
-  assert.equal(/fraktetiketten/.test(arg), false);
-  // Alla varianter på alla språk: inga löften, inga tankstreck, alla rader finns.
-  for (const s of SPRAK) for (const v of ['transport', 'defekt', 'fel_vara']) {
-    const e = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, variant: v, behoverOrdernummer: true }).text;
-    const a = skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true, fotonVariant: v }).text;
-    for (const x of [e, a]) {
-      assert.equal(harForbjudet(x), false, `${s}/${v}: löfte`);
-      assert.equal(/[—–]/.test(x), false, `${s}/${v}: tankstreck`);
-      assert.equal(/undefined/.test(x), false, `${s}/${v}: saknad mall`);
-    }
+  // Arg Hans ⇒ ARG med samma bildvariant.
+  const b2 = new FalskBrevlada({ INBOX: [{ uid: 94, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Bränslepump', text: 'Pumpen läcker och pumpar dåligt!!! Rent skräp, jag är förbannad. Hur fortsätter jag?', id: '<w94@x.se>' }) }] });
+  const r2 = await kor(b2);
+  assert.deepEqual([r2.rader[0].hink, r2.rader[0].fotonTyp], ['ARG', 'vara']);
+  const t2 = b2.utkast()[0].text;
+  assert.match(t2, /skicka gärna en bild eller en kort video på varan där felet syns/);
+  assert.equal(/fraktetiketten/.test(t2), false);
+  // Alla språk bär båda varianterna och inga löften.
+  for (const s of SPRAK) {
+    const v = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'vara', behoverOrdernummer: true }).text;
+    const l = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'leverans', behoverOrdernummer: true }).text;
+    assert.notEqual(v, l, `${s}: varianterna skiljer sig`);
+    assert.equal(harForbjudet(v), false, `${s}: inga löften i fotonVara`);
+    assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true, fotonTyp: 'vara' }).text), false, s);
   }
 });
 
@@ -986,8 +990,7 @@ test('SOP 02/07/15/34/21 (de elva sista, lästa 2026-09-21 natt): stilla spårni
   assert.equal(r2.rader[0].hink, HINK.ARG);
   const t2 = b2.utkast()[0].text;
   assert.match(t2, /^Hej Tobias!\n\nJag förstår helt din frustration\. En produkt som inte alls ser ut som på bilden är helt oacceptabelt, och det är inget vi står för\./);
-  // "Inte som på bilden" är fel vara (variant fel_vara sedan 2026-09-23): en bild på det kunden fick + fraktetiketten, inte transportskadans tre.
-  assert.match(t2, /skicka gärna en bild på det du fick och en på fraktetiketten/);
+  assert.match(t2, /skicka gärna en bild på varan, en på förpackningen och en på fraktetiketten/);
   // SOP 21: byte ⇒ SVÅR (inga direkta byten, ägarens beslut).
   assert.equal(h('Byte', 'Hej, kan jag byta till en annan storlek? Order 1042').hink, HINK.SVAR);
   assert.equal(h('Size', 'Hi, the cover is too small for my engine, I need a size bigger.').hink, HINK.SVAR);
@@ -1047,7 +1050,7 @@ test('Axels feedback 2026-09-22: arg + "hur gör vi en retur" ⇒ empati + retur
   assert.match(t1, /^Hej Peter!\n\nJag förstår helt din frustration\. En produkt som inte alls ser ut som på bilden är helt oacceptabelt/);
   assert.match(t1, /\n\nSå här gör du returen:\n1\. Packa varan/);
   assert.match(t1, /\nSTONEBITE ECOM AB\nSjöhed 160\n442 74 Harestad\nSverige\n/);
-  assert.match(t1, /skicka gärna en bild på det du fick och en på fraktetiketten/);
+  assert.match(t1, /skicka gärna en bild på varan/);
   assert.equal(harForbjudet(t1), false);
   // Opostad order 13 dagar + arg ⇒ "legat opostad i 13 dagar"; faktan är spärrad (staltFakta) så inget läge-stycke.
   const DAG = 86_400_000;

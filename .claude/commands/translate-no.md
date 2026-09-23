@@ -117,8 +117,11 @@ klart utan att invänta godkännande; stanna bara vid ägarbeslut eller ❌ neda
 
 ## Fas 1 — Proofread + lokalisering (0 credits i rendering, kräver api-kvot)
 
-1. `cd pipeline && node translate-batch.mjs proofread --manifest=<batch.json>`
-   — laddar upp, skapar sessioner (`Norwegian Bokmål (Norway)`), hämtar SRT:er.
+1. `cd pipeline && node translate-batch.mjs proofread --manifest=<batch.json> --marknad=NO`
+   — laddar upp, skapar sessioner (`Norwegian Bokmål (Norway)` ur
+   `pipeline/sprak.mjs`), hämtar SRT:er. ⚠️ `--marknad=NO` på varje anrop
+   (apply, render, download, status) — sedan 2026-09-22 finns inget tyst
+   standardspråk: US-videor renderades på norska när flaggan saknades.
    State skrivs till `<batch.json>.state.json` löpande; failade sessioner
    återskapas automatiskt vid omkörning.
 2. Lokalisera SRT:erna enligt checklistan i `docs/video-localization.md`.

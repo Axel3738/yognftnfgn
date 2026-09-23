@@ -122,6 +122,23 @@ Per varumärke:
 3. **`besvarad` säger inte om VA:n skickat in bevis.** Shopify har ingen sådan
    flagga vi läser — `status: under_review` är det närmaste, och det betyder
    att något redan är inskickat. Skriv aldrig "obesvarad" om en `under_review`.
+   ⛔ **Tvistkollen gjorde precis det 2026-09-23** och postade tre `under_review`
+   till VA:n som "3 open disputes need evidence — 1 already past the due date"
+   (#5122, #4446, #4407), medan de två som verkligen väntade på svar (#4914 och
+   #4845, båda chargebacks) låg utanför gränsen och inte nämndes. Orsaken var en
+   enda lista: `bradskande()` filtrerade på `OPPEN` (som med rätta rymmer
+   `under_review`) i stället för på "väntar på vårt svar". Rättat samma dag med
+   `BEHOVER_SVAR = ['needs_response']` + två tester. **ÖPPEN och VÄNTAR PÅ SVAR
+   är två olika frågor** — räkna öppna med den ena, larma med den andra.
+   ⚠️ En `under_review` vars deadline passerat är det farligaste fallet: den
+   läser som ett missat ärende och är i själva verket avklarad och låst.
+
+4. **`under_review` betyder inte att VÅRA bevis gick in.** Shopify skickar
+   själv ett svar på deadline-dagen om ingen gjort något
+   (`12-CREDIT-NOT-PROCESSED.md` §1), och det autosvaret bär varken policytext,
+   mejltråd eller kvitto. Statusen säger bara att något är inskickat och att
+   fönstret är stängt — aldrig vad som står i det. Skriv därför "evidence
+   submitted", aldrig "we submitted our evidence".
 
 ---
 
