@@ -43,6 +43,7 @@ import { ImapKlient, hamtaMapp } from './imap.mjs';
 import { WebmailKlient, hamtaMappViaWebmail } from './webmail.mjs';
 import { tolkaMejl, tolkaAdress, normaliseraAmne, taBortCitat, htmlTillText, tolkaRubriker, tolkaDatum, delaRubrikOchKropp } from './mime.mjs';
 import { byggArenden, sammanfattaArenden } from './arenden.mjs';
+import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
 import { ShopifyLasare, kopplaOrdrar, normaliseraOrder, normaliseraTvist } from './shopify.mjs';
 import { bedomRisk, rankaBrands, aterkommande } from './chargeback.mjs';
 import { hamtaSopTitlar, sopTackning, skapaRapportsida } from './notion.mjs';
@@ -232,6 +233,13 @@ export async function korBrand(brand, {
   const iPeriod = (m) => !m.datum || m.datum.getTime() >= period.fran.getTime() - DAG;
   inkorg = inkorg.filter(iPeriod);
   skickat = skickat.filter(iPeriod);
+  // Shopifys kontaktformulär ("Nytt kundmeddelande …", från mailer@shopify.com)
+  // är kundens egna ord med kunden i Reply-To — samma tolkning som autosvaret.
+  // Utan den räknades de som systemmejl: mätt 2026-09-23 på Matstrumpor var 8
+  // av 10 kundärenden i perioden formulär, och rapporten visade 2.
+  inkorg = inkorg.map(kundUrKontaktformular);
+  const formular = inkorg.filter((m) => m.kontaktformular).length;
+  if (formular) logg(`  ${formular} kontaktformulär läst som kundmejl`);
 
   // 2. Ärenden
   const byggt = byggArenden({ inkorg, skickat, brand: konfig, nu, trosklar: konfig.trosklar });
