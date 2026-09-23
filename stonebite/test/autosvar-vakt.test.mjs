@@ -60,7 +60,7 @@ test('utan AUTOSVAR_BRANDS händer ingenting — sajten är som förut', () => {
 
 test('konfigurationen: torrt som standard, skarpt bara uttryckligen, loggen på volymen, minst 30 s', () => {
   const k = vaktKonfig({ ...BAS, AUTOSVAR_BRANDS: 'baverbutiken' }, ROT);
-  assert.deepEqual(k, { brands: ['baverbutiken'], lage: 'torr', loop: 60, loggmapp: '/data/autosvar/logg', discord: false, saknar: [] });
+  assert.deepEqual(k, { brands: ['baverbutiken'], lage: 'torr', lagen: { baverbutiken: 'torr' }, loop: 60, loggmapp: '/data/autosvar/logg', discord: false, saknar: [] });
   assert.equal(vaktKonfig({ ...BAS, AUTOSVAR_BRANDS: 'baverbutiken', AUTOSVAR_LAGE: 'ja' }, ROT).lage, 'torr', '"ja" är inte skarpt');
   assert.equal(vaktKonfig({ ...BAS, AUTOSVAR_BRANDS: 'baverbutiken', AUTOSVAR_LAGE: 'Skarpt' }, ROT).lage, 'skarpt');
   assert.equal(vaktKonfig({ ...BAS, AUTOSVAR_BRANDS: 'baverbutiken', AUTOSVAR_LOOP: '5' }, ROT).loop, 30, 'aldrig tätare än 30 s — brevlådan ska inte hamras');
@@ -72,7 +72,37 @@ test('konfigurationen: torrt som standard, skarpt bara uttryckligen, loggen på 
 test('flaggorna är exakt de en människa hade skrivit', () => {
   const k = vaktKonfig({ ...BAS, AUTOSVAR_BRANDS: 'baverbutiken' }, ROT);
   assert.deepEqual(vaktArgv(k), ['kundtjanst/autosvar.mjs', '--brand', 'baverbutiken', '--torr', '--loop', '60']);
-  assert.deepEqual(vaktArgv({ ...k, lage: 'skarpt', discord: true, loop: 90 }), ['kundtjanst/autosvar.mjs', '--brand', 'baverbutiken', '--skarpt', '--loop', '90', '--discord']);
+  assert.deepEqual(vaktArgv({ ...k, lage: 'skarpt', lagen: { baverbutiken: 'skarpt' }, discord: true, loop: 90 }), ['kundtjanst/autosvar.mjs', '--brand', 'baverbutiken', '--skarpt', '--loop', '90', '--discord']);
+});
+
+test('läget per butik: AUTOSVAR_LAGE_<ID> vinner, och en torr butik bredvid en skarp går som --torr-for', () => {
+  // Axels order 2026-09-23: Bäverbutiken fortsätter skarpt, CaraShell börjar torrt.
+  const env = { ...BAS, KUNDTJANST_MAIL_PASS_CARASHELL: 'y', AUTOSVAR_BRANDS: 'baverbutiken,carashell', AUTOSVAR_LAGE: 'skarpt', AUTOSVAR_LAGE_CARASHELL: 'torr' };
+  const k = vaktKonfig(env, ROT);
+  assert.deepEqual(k.lagen, { baverbutiken: 'skarpt', carashell: 'torr' });
+  assert.equal(k.lage, 'blandat');
+  assert.deepEqual(vaktArgv(k), ['kundtjanst/autosvar.mjs', '--brand', 'baverbutiken,carashell', '--skarpt', '--torr-for', 'carashell', '--loop', '60']);
+
+  // Utan butiksrad gäller den gemensamma — Bäverbutikens läge ändras inte av att CaraShell läggs till.
+  const utan = vaktKonfig({ ...env, AUTOSVAR_LAGE_CARASHELL: undefined }, ROT);
+  assert.deepEqual(utan.lagen, { baverbutiken: 'skarpt', carashell: 'skarpt' });
+  assert.deepEqual(vaktArgv(utan).slice(3, 5), ['--skarpt', '--loop'], 'ingen --torr-for när alla är skarpa');
+  // Tom butiksrad = den gemensamma, inte torr och inte skarp av misstag.
+  assert.equal(vaktKonfig({ ...env, AUTOSVAR_LAGE_CARASHELL: ' ' }, ROT).lagen.carashell, 'skarpt');
+
+  // Bara exakt "skarpt" är skarpt, även per butik.
+  const torrt = vaktKonfig({ ...env, AUTOSVAR_LAGE: 'torr', AUTOSVAR_LAGE_CARASHELL: 'ja' }, ROT);
+  assert.deepEqual(torrt.lagen, { baverbutiken: 'torr', carashell: 'torr' });
+  assert.deepEqual(vaktArgv(torrt).slice(3, 4), ['--torr']);
+  // Butiksraden kan också göra EN butik skarp när resten är torr.
+  const enSkarp = vaktKonfig({ ...env, AUTOSVAR_LAGE: '', AUTOSVAR_LAGE_CARASHELL: 'skarpt' }, ROT);
+  assert.deepEqual(vaktArgv(enSkarp).slice(3, 6), ['--skarpt', '--torr-for', 'baverbutiken']);
+
+  // Statusen på /halsa säger läget per butik.
+  const f = fejk();
+  const v = startaVakt({ env, rot: ROT, spawnFn: f.spawnFn, timer: f.timer, nu: f.nu, logg: (m) => f.logg.push(m) });
+  assert.deepEqual(v.status().lagen, { baverbutiken: 'skarpt', carashell: 'torr' });
+  assert.match(f.logg[0], /baverbutiken SKARPT, carashell TORR/);
 });
 
 test('saknat mejllösenord ⇒ vakten startar inte och säger vilken variabel', () => {
@@ -96,7 +126,7 @@ test('startar minutservern med loggen på volymen, och startar om med växande p
   assert.equal(forsta.opts.env.AUTOSVAR_LOGGMAPP, '/data/autosvar/logg', 'barnet skriver på volymen');
   assert.equal(forsta.opts.env.NODE_USE_ENV_PROXY, '1', 'autosvar.mjs får inte starta om sig självt bakom proxyn — två processer vore ett dubbelsvar');
   assert.equal(v.status().kor, true);
-  assert.match(f.logg[0], /minutservern igång — TORR, var 60:e sekund, baverbutiken, logg \/data\/autosvar\/logg/);
+  assert.match(f.logg[0], /minutservern igång — baverbutiken TORR, var 60:e sekund, logg \/data\/autosvar\/logg/);
 
   // Dör direkt: paus 60 s (30 × 2), sedan 120, 240 … aldrig över 600.
   f.tick(5_000); forsta.barn.emit('exit', 1, null);

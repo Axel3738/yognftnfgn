@@ -557,7 +557,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) och sajten
   läser den live — en arg kund syns på Kundtjänst inom minuten. `/halsa`
   visar `autosvar.kor`. Slås på med `stonebite/cowork/5-autosvar.txt`
-  (Axel klistrar in nycklarna själv). ⛔ När vakten är på kör ingen session
+  (Axel klistrar in nycklarna själv). **Läget per butik sedan 2026-09-23**
+  (Axels order: Bäverbutiken skarpt, CaraShell börjar torrt):
+  `AUTOSVAR_LAGE_<ID>` vinner över `AUTOSVAR_LAGE`, vakten kör då
+  `--skarpt --torr-for <de torra>` (flaggan kan bara göra en butik torrare),
+  och `/halsa` visar `autosvar.lagen`. CaraShell läggs till med
+  `stonebite/cowork/6-autosvar-carashell.txt` — steg 0 stoppar om `lagen`
+  saknas på `/halsa`, för den gamla koden hade kört CaraShell SKARPT.
+  Torrkörd från en session samma dag mot hello@carashell.com: 45 mejl, 0
+  ENKEL (allt var produktfrågor/avbeställningar ⇒ VA:n), men den gav fyra
+  rättningar innan: CaraShells kontaktformulär heter `Kommentar:`/`Comment:`
+  (14 formulär hoppades som systemmejl), säljmejl till butiken ⇒ SKIP
+  (`arSaljmejl`, en dropshipping-leverantör blev ARG på "within 24 hours"),
+  brådskeord ensamma ("immediately", "senast") gör inte ett mejl ARGT
+  (`eskaleringStark`), och signatur + spårningssida följer kundens språk
+  (`svar.sparningssidor`). Två felaktiga utkast från körningen ligger kvar i
+  CaraShells Drafts (Oncedrop, Jonathan Mount #1089) — sessionen raderar aldrig. ⛔ När vakten är på kör ingen session
   `autosvar.mjs` mot samma brevlåda för hand — dubbelsvar. 6 tester i
   `stonebite/test/autosvar-vakt.test.mjs`. ⚠️ **Vakten startar BARA på
   Railway** (`RAILWAY_*` i miljön) eller med `AUTOSVAR_VAKT=1` — mätt
@@ -588,8 +603,16 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   (`KUNDTJANST_MAIL_PASS_CARASHELL`, `SHOPIFY_CLIENT_ID/SECRET_CARASHELL` =
   värdena från `_yitrbk_m3`) **före** `AUTOSVAR_BRANDS=baverbutiken,carashell`
   — saknas ett lösenord startar vakten inte alls, och då stannar även
-  Bäverbutiken. `AUTOSVAR_LAGE` är en enda för alla butiker; per-butik torrt
-  finns inte. Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
+  Bäverbutiken. ⚠️ **Sammanslaget samma kväll:** två sessioner skrev var sin
+  `6-autosvar-carashell.txt` parallellt — den skarpa låg på `main` UTAN den
+  andra sessionens rättningar (säljmejl, brådskeord, kontaktformulärets
+  `Kommentar:`, spårningssida per språk) som fanns bara på grenen
+  `claude/kind-planck-hskg8m`. Utan dem hade Jonathan (#1089, lugn
+  avbeställning) fått ett ARGT svar skarpt. Grenen är mergad; prompten är nu
+  EN: steg 0 kräver `lagen` på `/halsa`, CaraShell startar med
+  `AUTOSVAR_LAGE_CARASHELL=torr`, nycklarna heter `_CARASHELL`. Skarpt för
+  CaraShell = ta bort `AUTOSVAR_LAGE_CARASHELL` på Railway (Axels klick).
+  Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
   `#customer-support` (mätt 2026-09-23).
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —

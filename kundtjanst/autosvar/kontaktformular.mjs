@@ -29,7 +29,10 @@ const RELAY_DOMAN = /(^|\.)(shopify\.com|shopifyemail\.com)$/i;
 const FALT = {
   namn: '(?:name|namn|navn|nimi)',
   epost: '(?:e-?post|e-?mail|email|sähköposti|sähköpostiosoite)',
-  text: '(?:text|body|meddelande|message|melding|besked|viesti)',
+  // CaraShells tema (mätt 2026-09-23) kallar fältet "Kommentar"/"Comment" och
+  // lägger "Telefonnummer"/"Phone Number" före — utan de orden hoppades alla
+  // 14 formulär i inkorgen som "systemavsändare (shopify.com)".
+  text: '(?:text|body|meddelande|message|melding|besked|viesti|kommentar|comment|kommentti)',
 };
 
 /** Värdet på en enradsetikett ("Name:\nIris") — eller null. */

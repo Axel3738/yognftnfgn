@@ -25,9 +25,16 @@ import { sistaBiten } from '../../sparning/sistabiten.mjs';
 const DAG = 86_400_000;
 export const ORDERFONSTER_DAGAR = 120;
 
-/** Spårningssidans länk med bävernumret — kunden slipper skriva. */
-export function sparningslank(svar, nummer) {
-  const sida = String(svar?.sparningssida ?? '').trim().replace(/\/+$/, '');
+/**
+ * Spårningssidans länk med bävernumret — kunden slipper skriva.
+ * `svar.sparningssidor` ({ nb: …, en: … }) ger sidan på kundens språk —
+ * samma adresser som fraktmejlen (sparning/butiker.json mejl_marknader).
+ * CaraShell 2026-09-23: en norsk eller amerikansk kund fick annars den
+ * svenska sidan. Saknas språket gäller `sparningssida`.
+ */
+export function sparningslank(svar, nummer, sprak = null) {
+  const perSprak = sprak && svar?.sparningssidor && typeof svar.sparningssidor === 'object' ? svar.sparningssidor[sprak] : null;
+  const sida = String(perSprak || svar?.sparningssida || '').trim().replace(/\/+$/, '');
   if (!sida || !nummer) return null;
   const bn = bavernummer(nummer, svar?.sparning_prefix || 'BB-');
   return `${sida}?nummer=${encodeURIComponent(bn)}`;
@@ -132,7 +139,7 @@ export async function hamtaFakta({ mejl, klass, konfig, shopify = null, hamta17 
   ut.sandning = s.find((x) => x.nummer) ?? s[0] ?? null;
   if (ut.sandning?.skickad) ut.fonster = leveransfonster(ut.sandning.skickad, konfig?.svar?.leverans_dagar);
   if (ut.sandning?.nummer) {
-    ut.lank = sparningslank(konfig?.svar, ut.sandning.nummer) ?? ut.sandning.lank ?? null;
+    ut.lank = sparningslank(konfig?.svar, ut.sandning.nummer, sprak) ?? ut.sandning.lank ?? null;
     // Bävernumret i klartext bredvid länken (Axels feedback 2026-09-22) — bara när butiken har en spårningssida som förstår det.
     if (String(konfig?.svar?.sparningssida ?? '').trim()) ut.bavernummer = bavernummer(ut.sandning.nummer, konfig?.svar?.sparning_prefix || 'BB-');
   }

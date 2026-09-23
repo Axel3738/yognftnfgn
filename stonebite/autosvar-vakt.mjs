@@ -12,7 +12,10 @@
 //      sajten är precis som förut.
 //   2. Torrt om inte AUTOSVAR_LAGE=skarpt står uttryckligen. Torrt = utkast i
 //      Drafts, inget skickas. (Axels ordning 2026-09-21: 20 utkast i rad rätt
-//      → skarpt.)
+//      → skarpt.) Läget kan sättas PER BUTIK med AUTOSVAR_LAGE_<ID>
+//      (AUTOSVAR_LAGE_CARASHELL=torr) — butikens rad vinner över den
+//      gemensamma. Axels order 2026-09-23: Bäverbutiken skarpt, CaraShell
+//      börjar torrt. Samma regel där: bara exakt "skarpt" är skarpt.
 //   3. Loggen — minnet "ett svar per tråd någonsin" — ligger på volymen
 //      (AUTOSVAR_LOGGMAPP, standard <STONEBITE_DATA>/autosvar/logg), aldrig i
 //      containern: annars dör minnet med varje deploy och kunden kan få två
@@ -28,6 +31,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { datamapp } from '../bonus/kor.mjs';
 import { envNamn } from '../kundtjanst/brands.mjs';
+import { envSuffix } from '../factory/token.mjs';
 
 const HAR = dirname(fileURLToPath(import.meta.url));
 export const ROT = dirname(HAR);
@@ -65,19 +69,35 @@ export function farKoraHar(env = process.env) {
 export function vaktKonfig(env = process.env, rot = ROT) {
   const brands = [...new Set(String(env.AUTOSVAR_BRANDS ?? '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean))];
   if (!brands.length) return null;
-  const lage = String(env.AUTOSVAR_LAGE ?? 'torr').trim().toLowerCase() === 'skarpt' ? 'skarpt' : 'torr';
+  const tolka = (v) => (String(v ?? '').trim().toLowerCase() === 'skarpt' ? 'skarpt' : 'torr');
+  const gemensamt = tolka(env.AUTOSVAR_LAGE);
+  // Butikens egen rad vinner. Finns den men är tom gäller den gemensamma.
+  const lagen = Object.fromEntries(brands.map((id) => {
+    const egen = env[`AUTOSVAR_LAGE_${envSuffix(id)}`];
+    return [id, String(egen ?? '').trim() ? tolka(egen) : gemensamt];
+  }));
+  const varden = [...new Set(Object.values(lagen))];
+  const lage = varden.length === 1 ? varden[0] : 'blandat';
   const loop = Math.max(30, Number(env.AUTOSVAR_LOOP) || 60);
   const discord = ['1', 'true', 'ja', 'yes'].includes(String(env.AUTOSVAR_DISCORD ?? '').trim().toLowerCase());
   const saknar = brands.map((id) => envNamn(id).mailPass).filter((namn) => !env[namn]);
-  return { brands, lage, loop, loggmapp: loggmappFor(env, rot), discord, saknar };
+  return { brands, lage, lagen, loop, loggmapp: loggmappFor(env, rot), discord, saknar };
 }
 
-/** Argumenten till autosvar.mjs — exakt de flaggor en människa hade skrivit. Ren. */
+/**
+ * Argumenten till autosvar.mjs — exakt de flaggor en människa hade skrivit. Ren.
+ * Blandat läge = `--skarpt --torr-for <de torra>`: flaggan kan bara göra en
+ * butik TORRARE, aldrig skarpare, så ett stavfel i den ger utkast, inte mejl.
+ */
 export function vaktArgv(k) {
+  const lagen = k.lagen ?? Object.fromEntries(k.brands.map((id) => [id, k.lage]));
+  const torra = k.brands.filter((id) => lagen[id] !== 'skarpt');
+  const nagonSkarp = torra.length < k.brands.length;
   return [
     join('kundtjanst', 'autosvar.mjs'),
     '--brand', k.brands.join(','),
-    k.lage === 'skarpt' ? '--skarpt' : '--torr',
+    nagonSkarp ? '--skarpt' : '--torr',
+    ...(nagonSkarp && torra.length ? ['--torr-for', torra.join(',')] : []),
     '--loop', String(k.loop),
     ...(k.discord ? ['--discord'] : []),
   ];
@@ -97,7 +117,7 @@ export function startaVakt({ env = process.env, rot = ROT, spawnFn = spawn, logg
   const k = vaktKonfig(env, rot);
   if (!k) return null;
   const har = farKoraHar(env);
-  const status = { brands: k.brands, lage: k.lage, loop: k.loop, loggmapp: k.loggmapp, saknar: k.saknar, host: har.varfor, kor: false, startad: null, omstarter: 0, senasteUtgang: null };
+  const status = { brands: k.brands, lage: k.lage, lagen: k.lagen, loop: k.loop, loggmapp: k.loggmapp, saknar: k.saknar, host: har.varfor, kor: false, startad: null, omstarter: 0, senasteUtgang: null };
   if (!har.ja) {
     logg(`autosvar-vakt: startar INTE — ${har.varfor}.`);
     return { status: () => ({ ...status }), stopp() {} };
@@ -124,7 +144,7 @@ export function startaVakt({ env = process.env, rot = ROT, spawnFn = spawn, logg
     });
     status.kor = true;
     status.startad = new Date(senastStart).toISOString();
-    logg(`autosvar-vakt: minutservern igång — ${k.lage.toUpperCase()}, var ${k.loop}:e sekund, ${k.brands.join(', ')}, logg ${k.loggmapp}`);
+    logg(`autosvar-vakt: minutservern igång — ${k.brands.map((id) => `${id} ${k.lagen[id].toUpperCase()}`).join(', ')}, var ${k.loop}:e sekund, logg ${k.loggmapp}`);
     barn.on('error', (e) => { status.kor = false; logg(`autosvar-vakt: kunde inte starta minutservern: ${e.message}`); });
     barn.on('exit', (kod, signal) => {
       status.kor = false;

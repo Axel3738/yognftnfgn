@@ -7,8 +7,8 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, readFileSync, existsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { korBrand, harForbjudet, byggTrad } from '../autosvar.mjs';
-import { HINK, hinka, beslut, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
+import { korBrand, harForbjudet, byggTrad, torrPerBrand } from '../autosvar.mjs';
+import { HINK, hinka, beslut, arSaljmejl, harTvistord, arArg, enkelTyp, redanBesvaradAvOss } from '../autosvar/hinkar.mjs';
 import { skrivEnkelt, skrivArgt, returText, valjSprak, fornamn, signatur, mallar, SPRAK, datumText, xNyckelFor, landnamn, villHaFoton, fotonTypFor, namnerBekraftelse, namnerStillaSparning } from '../autosvar/svar.mjs';
 import { hamtaFakta, valjOrder, sparningslank, leveransfonster, senasteSkanning, staltFakta } from '../autosvar/fakta.mjs';
 import { lasLogg, minne, redanAutosvar, loggfil } from '../autosvar/logg.mjs';
@@ -1158,4 +1158,66 @@ test('kunden är VA:ns: ett VA-svar till adressen de senaste 14 dagarna (annan t
   // Ett utkast i Drafts räknas inte som VA:ns mejl (det är vårt eget torrläge) — trådregeln tar det i stället.
   const t = await byggTrad(b1, KONFIG, tolkaMejl(nytt.ra, { uid: 701 }), { nu: NU });
   assert.equal(Math.round(t.vaDagar), 3);
+});
+
+test('--torr-for: en butik torr bredvid en skarp, och flaggan gör aldrig något skarpare', () => {
+  // Axels order 2026-09-23: Bäverbutiken skarpt på Railway, CaraShell börjar torrt i samma process.
+  const blandat = torrPerBrand(['--brand', 'baverbutiken,carashell', '--skarpt', '--torr-for', 'CaraShell', '--loop', '60']);
+  assert.equal(blandat('baverbutiken'), false);
+  assert.equal(blandat('carashell'), true);
+  const allaTorra = torrPerBrand(['--brand', 'baverbutiken,carashell', '--torr', '--torr-for', 'carashell']);
+  assert.equal(allaTorra('baverbutiken'), true, '--torr vinner alltid');
+  const skarpt = torrPerBrand(['--brand', 'baverbutiken', '--skarpt']);
+  assert.equal(skarpt('baverbutiken'), false);
+  assert.equal(torrPerBrand(['--skarpt', '--torr-for'])('carashell'), false, 'tom lista = ingen ändring');
+});
+
+test('CaraShell: svaren signeras på kundens språk, aldrig "Kundtjänst" till en engelsk kund', () => {
+  const b = upptackBrands().find((x) => x.id === 'carashell');
+  const k = korkonfig(b, {});
+  assert.equal(signatur(k, 'en'), 'Customer service CaraShell');
+  assert.equal(signatur(k, 'nb'), 'Kundeservice CaraShell');
+  assert.equal(signatur(k, 'sv'), 'Kundtjänst CaraShell');
+  assert.deepEqual(k.svar.leverans_dagar, [7, 14], 'löftet som riktig lista, inte texten "[7, 14]"');
+});
+
+test('säljmejl till butiken blir SKIP, inte ARG — men en kund med ordernummer rörs aldrig', () => {
+  // CaraShells inkorg 2026-09-23: "Orders processed within 24 hours" gav ARG + utkast + VA-PRIO.
+  const pitch = 'Hello, I am Sandy from Oncedrop, a dropshipping fulfillment partner. We can reduce your sourcing cost. Orders processed within 24 hours. Contact me on WhatsApp for a quotation.';
+  const h = hinka({ mejl: { fran: { adress: 'info@oncedrop.com' }, amne: 'Your Roof cover sourcing cost can be reduced', text: pitch }, brand: { id: 'carashell', supportmail: 'hello@carashell.com' } });
+  assert.equal(h.hink, HINK.SKIP);
+  assert.match(h.orsak, /säljmejl/);
+  assert.equal(arSaljmejl({ text: 'If I help you make $35K in a 10 day trial, would you give me 4% commission? What is the best WhatsApp to reach u?' }), true);
+  assert.equal(arSaljmejl({ text: 'Where is my order? I paid by WhatsApp link' }), false, 'en fras räcker aldrig');
+  assert.equal(arSaljmejl({ text: 'order 1234: seller said dropshipping and whatsapp', klass: { ordernummer: ['1234'] } }), false, 'ordernummer ⇒ kund');
+});
+
+test('CaraShells kontaktformulär ("Kommentar"/"Comment") läses som kundens mejl, språket ur landskoden', () => {
+  const sv = kundUrKontaktformular({ fran: { adress: 'mailer@shopify.com' }, amne: 'Nytt kundmeddelande den 23 september 2026 13.05', text: 'Du har fått ett nytt meddelande från din webbshops\nkontaktformulär.\n\nLandskod:\nSE\n\nNamn:\nChristina\n\nE-post:\nchristina@example.com\n\nTelefonnummer:\n0700000000\n\nKommentar:\nJag undrar vad det är för tyg i överdraget' });
+  assert.equal(sv.kontaktformular, true);
+  assert.equal(sv.fran.adress, 'christina@example.com');
+  assert.equal(sv.text, 'Jag undrar vad det är för tyg i överdraget');
+  assert.equal(sv.relay.land, 'SE');
+  const en = kundUrKontaktformular({ fran: { adress: 'mailer@shopify.com' }, amne: 'New customer message on September 22, 2026 at 3:34 am', text: "You received a new message from your online store's contact form.\n\nCountry Code:\nUS\n\nName:\nGary\n\nEmail:\ngary@example.com\n\nPhone Number:\n\nComment:\nWhat size fits mine? Thank you!" });
+  assert.equal(en.fran.adress, 'gary@example.com');
+  assert.equal(en.text, 'What size fits mine? Thank you!');
+  assert.equal(en.relay.land, 'US');
+});
+
+test('brådska utan ilska är inte ARG ("immediately cancelled it … Thank you")', () => {
+  const brand = { id: 'carashell', supportmail: 'hello@carashell.com' };
+  const lugn = hinka({ mejl: { fran: { adress: 'kund@example.com' }, amne: 'Re: Cancellation requested for order #1089', text: 'Thank you very much. That would be kind of you. I ordered the wrong size, immediately cancelled it, then immediately ordered the correct size! Thank you' }, brand });
+  assert.notEqual(lugn.hink, HINK.ARG);
+  const arg = hinka({ mejl: { fran: { adress: 'kund@example.com' }, amne: 'Order #1089', text: 'This is the third time I write and nobody answers. Refund me immediately.' }, brand });
+  assert.equal(arg.hink, HINK.ARG, 'de starka orden räknas fortfarande');
+});
+
+test('CaraShell: spårningslänken går till sidan på kundens språk', () => {
+  const k = korkonfig(upptackBrands().find((x) => x.id === 'carashell'), {});
+  const nr = 'YT2626600708602674';
+  assert.match(sparningslank(k.svar, nr, 'en'), /^https:\/\/carashell\.com\/pages\/spara\?nummer=CS-/);
+  assert.match(sparningslank(k.svar, nr, 'nb'), /^https:\/\/carashell\.se\/nb\/pages\/spara\?nummer=CS-/);
+  assert.match(sparningslank(k.svar, nr, 'sv'), /^https:\/\/carashell\.se\/pages\/spara\?nummer=CS-/);
+  assert.match(sparningslank(k.svar, nr, 'da'), /^https:\/\/carashell\.se\/pages\/spara\?/, 'inget danskt ⇒ standardsidan');
+  assert.match(sparningslank(k.svar, nr), /^https:\/\/carashell\.se\/pages\/spara\?/);
 });
