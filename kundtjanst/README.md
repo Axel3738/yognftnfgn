@@ -449,10 +449,17 @@ Bäverbutiken först, sedan samma sak överallt).
   bot — what it does, and what you do"** (kategori Other stuff) i "Customer
   support bäverbutiken", plus rader i Store facts (läge, signatur, VA-PRIO,
   returfönster) och i Start here (routningstabellen + "VA-PRIO efter
-  tvisterna"). VA:ns roll i torrläget (sessionens beslut, Axel kan ändra): läs
-  kundens mejl och ordern mot utkastet; rätt ⇒ skicka det själv; fel ⇒ radera
-  det, svara själv och rapportera EN rad i `#customer-service`
-  (`Auto-reply wrong: order #… — …`). Rapporterna är det som gör 20-räkningen sann.
+  tvisterna"). **VA:ns roll i torrläget: INGEN med utkasten** (ändrat
+  2026-09-23 förmiddag). Första versionen sa "rätt utkast ⇒ skicka det själv,
+  fel ⇒ radera och rapportera" — och samma morgon skickade Mechile bottens
+  Hans-utkast (omskrivet) innan Axel dömt det, plus sitt eget svar: två svar
+  till en kund, och Axels 20-räkning gick i munnen på VA:n. Mechiles fråga
+  via Axel 09:xx CEST: "I don't understand the draft part. I should not do
+  anything with it, right?" — svaret är ja: utkasten är Axels att läsa, hon
+  skickar dem inte, raderar dem inte, kopierar inte ur dem, och svarar kunden
+  som vanligt med ett svar. Ser hon ändå ett fel: EN rad i `#customer-service`
+  (`Auto-reply wrong: order #… — …`). SOP-sidan omskriven och ompublicerad,
+  Mechile svarad i kanalen.
 - **SOP 18 pekar nu på Store facts** i stället för "30 dagar" (åtta ställen +
   den svenska mallen), och Store facts säger **14 dagar** (Axels beslut B
   2026-09-22, samma som brandfilen och returmejlet). Notion-sidorna skrivs ur

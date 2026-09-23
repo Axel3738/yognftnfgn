@@ -35,7 +35,7 @@ requests, newsletters, our own addresses.
 
 | Mode | What happens | Where you see it |
 |---|---|---|
-| **Dry run** (the store starts here) | The bot writes its reply as a **draft** in the Drafts folder. Nothing is sent to the customer. Flags and VA-PRIO work as in live mode. | Drafts, the flags, VA-PRIO, the run report in the escalation channel |
+| **Dry run** (the store starts here) | The bot writes its reply as a **draft** in the Drafts folder. Nothing is sent to the customer. **You do nothing with the drafts**: the owner reads them to judge the bot. You answer the customer as you always do. Flags and VA-PRIO work as in live mode. | Drafts (owner's, not yours), the flags, VA-PRIO, the run report in the escalation channel |
 | **Live** | The same reply is **sent** from the support address, signed with the store's support name (Store facts). | Sent, the flags, VA-PRIO, the run report |
 
 Only the owner switches a store from dry run to live. The rule he uses: **20 correct
@@ -47,7 +47,10 @@ drafts (section 5) are what keeps that count honest.
 ## 3. What you will find in the mailbox
 
 - **A draft in Drafts you did not write.** That is the bot in dry run. It is a reply
- to one customer thread, with the customer's email quoted underneath.
+ to one customer thread, with the customer's email quoted underneath. **Leave it
+ exactly where it is: do not send it, do not delete it.** The owner reads the drafts
+ to decide when the bot is good enough to go live. The customer still gets a reply
+ from you, the normal way.
 - **A flag (star) on an email.** The bot looked at it and did **not** answer it, or
  answered it and wants you to follow up. A flagged email is yours. Do not remove the
  flag until you have replied.
@@ -76,13 +79,11 @@ drafts (section 5) are what keeps that count honest.
  the actual problem (Start here has the table). When you have replied, move the email
  back to the inbox or your usual done folder.
 2. **Then the flagged emails in the inbox**, oldest first. Same as any other email.
-3. **Then the drafts in Drafts (dry run only).** For each draft: open the customer's
- email and the order, and read the draft against them.
- - Correct and complete: send it. It is now your reply, in your name.
- - Anything wrong: **delete the draft**, reply yourself, and report it (section 5).
- - Never send a draft without reading the customer's email and checking the order.
-4. **Never write a second reply to something the bot just answered** unless the customer
- has written again. One question, one answer.
+3. **The drafts in Drafts (dry run): nothing.** Do not send them, do not delete them,
+ do not copy from them. Answer the customer yourself, the normal way, one reply. The
+ owner reads the drafts and clears them.
+4. **Never write a second reply to something the bot has already answered (live mode)**
+ unless the customer has written again. One question, one answer.
 
 ---
 
@@ -91,7 +92,9 @@ drafts (section 5) are what keeps that count honest.
 It will be, sometimes. That is why it starts in dry run, and why every mistake you
 report fixes the rule for every store.
 
-Post one line in the escalation channel (Store facts):
+In dry run you do not have to read the drafts at all. But if you happen to see one
+that is wrong, or a flag or VA-PRIO move that makes no sense, post one line in the
+escalation channel (Store facts):
 
 ```
 Auto-reply wrong: order [ORDER NUMBER] — [what was wrong in one sentence]
@@ -124,12 +127,13 @@ right away and put it right, then report it. Do not wait for the owner first.
 
 ## 7. Three rules for you
 
-1. **A flag means "a human has to look".** Do not clear a flag, move an email out of
- VA-PRIO or delete a draft to tidy up. Do it when the customer has been answered.
-2. **Read before you write.** The bot's reply, the customer's email and the order.
- Every time.
-3. **Report every wrong draft, even a small one.** A wrong draft you quietly fix once
- will be wrong again next week, on another store.
+1. **A flag means "a human has to look".** Do not clear a flag or move an email out of
+ VA-PRIO to tidy up. Do it when the customer has been answered.
+2. **Read before you write.** The customer's email, the order, and in live mode the
+ bot's reply. Every time.
+3. **The drafts are the owner's.** Never send one, never delete one. Report a wrong one
+ if you see it. A wrong draft that is quietly fixed once will be wrong again next
+ week, on another store.
 
 ---
 
@@ -138,7 +142,6 @@ right away and put it right, then report it. Do not wait for the owner first.
 - [ ] VA-PRIO was opened first and every upset customer got a personal reply within the
  promised time.
 - [ ] Every flagged email in the inbox was answered, oldest first.
-- [ ] Every bot draft was read against the customer's email and the order before it was
- sent, or deleted and replaced by your own reply.
-- [ ] Every wrong draft or wrong reply was reported in the escalation channel with the
- order number.
+- [ ] No bot draft was sent or deleted. Every customer got exactly one reply, from you.
+- [ ] Every wrong draft, flag or reply you noticed was reported in the escalation
+ channel with the order number.
