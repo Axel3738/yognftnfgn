@@ -456,7 +456,11 @@ markerat besvarat. Två minuter från mejl till svar. ⚠️ Två saker att döm
 (1) *besviken* utan versaler/utropstecken/hot räknas som ilska — Axels
 Jan-Olof-kalibrering sa att lugn besvikelse inte är ARG; (2) bildförfrågan
 "förpackningen + fraktetiketten" passar transportskada, inte "passar inte
-min motor" — en bild på överdraget på motorn hade varit rätt. Mickes
+min motor" — **rättat samma eftermiddag:** tredje bildvarianten `passform`
+i `svar.fotonTypFor` (passar inte / för tajt / too tight … utan transport-
+ord och utan "beställde X men fick Y") ⇒ "en bild på varan på plats där
+den inte passar, och gärna mått eller modell på det den ska sitta på", på
+fem språk; fel vara skickad ger fortfarande leveransbilderna. Mickes
 sakfråga (annonsen påstår 100–150 hk, passar inte Mercury 150) är en
 produkt-/annonsfråga för Axel, inte bottens.
 
