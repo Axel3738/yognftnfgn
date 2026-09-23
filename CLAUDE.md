@@ -633,7 +633,13 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   för hand: 11 mejl, 1 utkast (retur, Anders), 9 SVÅR, 0 ARG. Railway:
   `stonebite/cowork/7-autosvar-matstrumpor.txt` (TORRT, Shopify-nycklarna
   heter på Railway exakt `SHOPIFY_CLIENT_ID/SECRET_1r46tp_qx`, ingen
-  `SHOPIFY_SHOP_` — brandfilen bär domänen). Inte kört än.
+  `SHOPIFY_SHOP_` — brandfilen bär domänen). ✅ **Live TORRT 2026-09-23
+  21:25 CEST** (Cowork + Axels klick; Cowork får inte skriva in lösenord och
+  nycklar, så Axel lade in de tre själv). Sessionen mätte /halsa 21:52:
+  `lagen` {baverbutiken: skarpt, carashell: torr, matstrumpor: torr},
+  `kor: true`, 0 omstarter, `saknar: []`. Loggen visade Shopify-token för
+  1r46tp-qx med små bokstäver i nyckelnamnen. Skarpt för Matstrumpor = ta
+  bort `AUTOSVAR_LAGE_MATSTRUMPOR` på Railway (Axels klick).
 - **AI-botens svar som kort med bock (2026-09-23 eftermiddag).** Mechile
   svarade Micke Stigberg 15:28 utan att se att boten redan svarat honom 13:42,
   och Axels dom på blocket ovan var "väldigt otydligt, väldigt blek text …
