@@ -53,7 +53,7 @@ import { anthropicNyckel } from '../tools/lib/anthropic-nyckel.mjs';
 import { maskeraAdress } from './maskera.mjs';
 import { HINK, hinka, beslut, redanBesvaradAvOss, arReturfraga } from './autosvar/hinkar.mjs';
 import { hamtaFakta } from './autosvar/fakta.mjs';
-import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
+import { skrivEnkelt, skrivArgt, lageRader, returText, valjSprak, fornamn, xNyckelFor, villHaFoton, fotonVariant, namnerBekraftelse, namnerStillaSparning } from './autosvar/svar.mjs';
 import { lasLogg, skrivLogg, minne, redanAutosvar, kundHash, kundNyssSvarad, minnsSvar, LOGGMAPP } from './autosvar/logg.mjs';
 import { renderaDiscord, renderaSvensk, orsakEn } from './autosvar/rapport.mjs';
 import { kundUrKontaktformular } from './autosvar/kontaktformular.mjs';
@@ -200,11 +200,16 @@ export async function korBrand(brand, {
             post.retur = Boolean(retur);
             // SOP 05/08: skadad, fel eller undermålig vara ("skräp", "ser inte ut som på bilden") ⇒ be om de tre bilderna i samma svar (Axels feedback 2026-09-22: "jättebra att vi frågar efter bilder direkt").
             const foton = villHaFoton(hink.klass) || ['kvalitet', 'som_pa_bilden', 'skadad_defekt', 'fel_vara'].includes(x);
+            // Vilka bilder: funktionsfel ⇒ bild/video på felet, fel vara ⇒ det du fick + etiketten, transportskada ⇒ de tre (Axels "fel" 2026-09-23).
+            const variant = foton ? fotonVariant({ klass: hink.klass, amne: mejl.amne, text: mejl.text, x }) : null;
+            post.variant = variant;
             // Saknas ordernumret (inte i mejlet, ingen order på adressen) ber svaret om det i stället för "har du mer information".
             post.behoverOrdernummer = !ordernummer;
-            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, lage, namn, opostadDagar, retur, behoverOrdernummer: !ordernummer }).text;
+            text = skrivArgt({ sprak: post.sprak, kategori: hink.klass.kategori, brand: konfig, xNyckel: x, foton, fotonVariant: variant ?? 'transport', lage, namn, opostadDagar, retur, behoverOrdernummer: !ordernummer }).text;
           } else {
-            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, nu }).text;
+            const variant = d.typ === 'foton' ? fotonVariant({ klass: hink.klass, amne: mejl.amne, text: mejl.text }) : null;
+            post.variant = variant;
+            text = skrivEnkelt({ typ: d.typ, sprak: post.sprak, fakta: fakta ?? {}, brand: konfig, namn, bekraftelse: namnerBekraftelse(`${mejl.amne}\n${mejl.text}`), stilla, behoverOrdernummer: !(hink.klass.ordernummer?.length), ordernummer, variant: variant ?? 'transport', nu }).text;
           }
         } catch (e) {
           text = null;

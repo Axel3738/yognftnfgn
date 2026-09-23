@@ -105,6 +105,15 @@ const T = {
     // Den lugna kundens första svar på en skadad/fel vara (ENKEL `foton`): beklagan utan löfte, bilderna, ordernumret om det saknas.
     beklagar: 'Tråkigt att höra att leveransen inte blev som den skulle. Det tittar vi på direkt.',
     fotonOrdernummer: 'Skriv gärna även ditt ordernummer i svaret, så hittar vi ordern direkt.',
+    // Varianterna (Axels "fel" 2026-09-23 på Hans-utkastet: en bränslepump som läcker är inte
+    // "leveransen som inte blev som den skulle", och fraktetiketten är ointressant för ett
+    // funktionsfel). defekt = varan fungerar inte (inga transportord i mejlet) ⇒ bild/video på
+    // felet; fel_vara = fel/för få/inte som på bilden ⇒ det du fick + fraktetiketten;
+    // transport (beklagar/foton ovan) = kom fram skadad ⇒ vara + förpackning + fraktetikett.
+    beklagarDefekt: 'Tråkigt att höra att varan inte fungerar som den ska. Det tittar vi på direkt.',
+    fotonDefekt: 'Så här går vi vidare: skicka gärna en bild eller en kort video som visar felet, så har vi allt när vi tar det vidare.',
+    beklagarFel: 'Tråkigt att höra att leveransen inte stämde med det du beställde. Det tittar vi på direkt.',
+    fotonFel: 'För att vi ska kunna lösa det snabbt: skicka gärna en bild på det du fick och en på fraktetiketten, så har vi allt när vi tar det vidare.',
     // Returen — VA:ns egna returmejl i Skickat (2026-09-16, 2026-09-14) som förlaga + Axels rad om ombud (2026-09-22).
     retur: (r) => [
       'Så här gör du returen:',
@@ -174,6 +183,10 @@ const T = {
     foton: 'For at vi skal kunne løse dette raskt: send gjerne et bilde av varen, ett av emballasjen og ett av fraktetiketten, så har vi alt når vi tar det videre.',
     beklagar: 'Leit å høre at leveransen ikke ble som den skulle. Det ser vi på med en gang.',
     fotonOrdernummer: 'Skriv gjerne også ordrenummeret ditt i svaret, så finner vi bestillingen med en gang.',
+    beklagarDefekt: 'Leit å høre at varen ikke fungerer som den skal. Det ser vi på med en gang.',
+    fotonDefekt: 'Slik går vi videre: send gjerne et bilde eller en kort video som viser feilen, så har vi alt når vi tar det videre.',
+    beklagarFel: 'Leit å høre at leveransen ikke stemte med det du bestilte. Det ser vi på med en gang.',
+    fotonFel: 'For at vi skal kunne løse dette raskt: send gjerne et bilde av det du fikk og ett av fraktetiketten, så har vi alt når vi tar det videre.',
     retur: (r) => [
       'Slik gjør du returen:',
       '1. Pakk varen i originalemballasjen og i samme stand som du fikk den.',
@@ -239,6 +252,10 @@ const T = {
     foton: 'For at vi kan løse det hurtigt: send gerne et billede af varen, et af emballagen og et af fragtlabelen, så har vi det hele, når vi går videre med sagen.',
     beklagar: 'Ærgerligt at høre, at leveringen ikke blev, som den skulle. Det kigger vi på med det samme.',
     fotonOrdernummer: 'Skriv gerne også dit ordrenummer i svaret, så finder vi ordren med det samme.',
+    beklagarDefekt: 'Ærgerligt at høre, at varen ikke fungerer, som den skal. Det kigger vi på med det samme.',
+    fotonDefekt: 'Sådan går vi videre: send gerne et billede eller en kort video, der viser fejlen, så har vi det hele, når vi går videre med sagen.',
+    beklagarFel: 'Ærgerligt at høre, at leveringen ikke stemte med det, du bestilte. Det kigger vi på med det samme.',
+    fotonFel: 'For at vi kan løse det hurtigt: send gerne et billede af det, du fik, og et af fragtlabelen, så har vi det hele, når vi går videre med sagen.',
     retur: (r) => [
       'Sådan gør du med returen:',
       '1. Pak varen i originalemballagen og i samme stand, som du modtog den.',
@@ -304,6 +321,10 @@ const T = {
     foton: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva tuotteesta, kuva pakkauksesta ja kuva rahtietiketistä, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     beklagar: 'Ikävä kuulla, ettei toimitus ollut sellainen kuin piti. Katsomme asian heti.',
     fotonOrdernummer: 'Kirjoita vastaukseen myös tilausnumerosi, niin löydämme tilauksen heti.',
+    beklagarDefekt: 'Ikävä kuulla, ettei tuote toimi niin kuin pitäisi. Katsomme asian heti.',
+    fotonDefekt: 'Näin etenemme: lähetä kuva tai lyhyt video, josta vika näkyy, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
+    beklagarFel: 'Ikävä kuulla, ettei toimitus vastannut tilaustasi. Katsomme asian heti.',
+    fotonFel: 'Jotta voimme ratkaista asian nopeasti: lähetä kuva saamastasi tuotteesta ja kuva rahtietiketistä, niin meillä on kaikki valmiina, kun viemme asiaa eteenpäin.',
     retur: (r) => [
       'Näin teet palautuksen:',
       '1. Pakkaa tuote alkuperäispakkaukseen ja samaan kuntoon kuin sen sait.',
@@ -369,6 +390,10 @@ const T = {
     foton: 'So we can resolve this quickly: please send a photo of the item, one of the packaging and one of the shipping label, so we have everything when we take it further.',
     beklagar: 'Sorry to hear the delivery was not as it should be. We will look into it straight away.',
     fotonOrdernummer: 'Please also include your order number in your reply, so we can find the order straight away.',
+    beklagarDefekt: 'Sorry to hear the item is not working as it should. We will look into it straight away.',
+    fotonDefekt: 'Here is how we take it from here: please send a photo or a short video showing the fault, so we have everything when we take it further.',
+    beklagarFel: 'Sorry to hear the delivery did not match what you ordered. We will look into it straight away.',
+    fotonFel: 'So we can resolve this quickly: please send a photo of what you received and one of the shipping label, so we have everything when we take it further.',
     retur: (r) => [
       'Here is how to return it:',
       '1. Pack the item in its original packaging and in the same condition you received it.',
@@ -559,7 +584,14 @@ export function lageRader({ sprak = 'sv', fakta = {}, brand = {}, bekraftelse = 
  * Returnerar { text } eller kastar om faktan inte räcker — anroparen ska då
  * lägga mejlet i SVÅR, aldrig skicka en halv mening.
  */
-export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, behoverOrdernummer = false, ordernummer = '', nu = new Date() } = {}) {
+/** Raderna i bildförfrågan per variant — se fotonVariant(). Okänd variant ⇒ transportskadans tre bilder (som förut). */
+export function fotonRader(t, variant = 'transport') {
+  if (variant === 'defekt') return [t.beklagarDefekt, t.fotonDefekt];
+  if (variant === 'fel_vara') return [t.beklagarFel, t.fotonFel];
+  return [t.beklagar, t.foton];
+}
+
+export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = '', bekraftelse = false, stilla = false, behoverOrdernummer = false, ordernummer = '', variant = 'transport', nu = new Date() } = {}) {
   const t = T[sprak] ?? T.sv;
   const sv = brand.svar ?? {};
   const [levMin, levMax] = Array.isArray(sv.leverans_dagar) && sv.leverans_dagar.length === 2 ? sv.leverans_dagar : [7, 14];
@@ -580,8 +612,9 @@ export function skrivEnkelt({ typ, sprak = 'sv', fakta = {}, brand = {}, namn = 
       break;
     }
     case 'foton':
-      // SOP 05/08/07/15: den lugna kundens skadade, defekta eller fel vara — beklagan utan löfte + de tre bilderna (+ ordernumret om det saknas). VA:n tar ärendet.
-      rader.push(t.beklagar, t.foton);
+      // SOP 05/08/07/15: den lugna kundens skadade, defekta eller fel vara — beklagan utan löfte + bilderna (+ ordernumret om det saknas). VA:n tar ärendet.
+      // `variant` (fotonVariant): transport = vara + förpackning + fraktetikett, defekt = bild/video på felet, fel_vara = det du fick + fraktetiketten.
+      rader.push(...fotonRader(t, variant));
       if (behoverOrdernummer) rader.push(t.fotonOrdernummer);
       break;
     case 'retur': {
@@ -656,14 +689,16 @@ export function xNyckelFor(klass, argOrsaker = [], text = '') {
  * (`foton`, SOP 05/08) och returblocket (`retur` = returText()) när kunden
  * bett om en retur. Inga tankstreck någonstans.
  */
-export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNyckel = null, foton = false, lage = null, namn = '', opostadDagar = null, retur = null, behoverOrdernummer = false } = {}) {
+export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNyckel = null, foton = false, fotonVariant = 'transport', lage = null, namn = '', opostadDagar = null, retur = null, behoverOrdernummer = false } = {}) {
   const t = T[sprak] ?? T.sv;
   const x = opostadDagar != null ? t.opostad(opostadDagar) : (t.x[xNyckel ?? kategori] ?? t.x.standard);
   const timmar = Number(brand?.svar?.eskalering_timmar) || ESKALERING_TIMMAR;
   const stycken = [`${t.arg(x)}\n${t.eskalerat(timmar)}`];
   if (lage?.namn && Array.isArray(lage.rader) && lage.rader.length) stycken.push([t.lageIntro(lage.namn), ...lage.rader].join('\n'));
   const info = behoverOrdernummer ? t.ordernummerArg : t.merInfo;
-  stycken.push(foton ? `${info}\n${t.foton}` : info);
+  // Bildförfrågan följer varianten (fotonVariant): funktionsfel ⇒ bild/video på felet, fel vara ⇒ det du fick + fraktetiketten, annars transportskadans tre bilder.
+  const bild = fotonVariant === 'defekt' ? t.fotonDefekt : fotonVariant === 'fel_vara' ? t.fotonFel : t.foton;
+  stycken.push(foton ? `${info}\n${bild}` : info);
   if (retur) stycken.push(retur);
   return { text: `${t.halsning(namn)}\n\n${stycken.join('\n\n')}\n\n${t.halsningSlut}\n${signatur(brand, sprak)}`, x };
 }
@@ -671,6 +706,29 @@ export function skrivArgt({ sprak = 'sv', kategori = 'standard', brand = {}, xNy
 /** Ber svaret om bilder? Skadad/defekt eller fel vara enligt klassificeringen. Ren. */
 export function villHaFoton(klass) {
   return (klass?.alla ?? []).some((a) => ['skadad_defekt', 'fel_vara'].includes(a.id));
+}
+
+// Ord som säger att skadan hände på vägen (paketet, förpackningen, leveransen) — då gäller
+// SOP 05:s tre bilder. Utan dem är en trasig vara ett funktionsfel (Hans 2026-09-23:
+// "bränslepumpen läcker och pumpar dåligt").
+const TRANSPORTORD = /(kom(mit)? fram|anlän[dt]|leverans|levererad|paket|kartong|förpackning|emballage|transport|krossa|bucklig|när (det|den|paketet) kom|när jag öppnade|kom frem|ankom|pakke|emballasje|levering|levert|knust|saapui|paketti|pakkaus|toimitus|toimitettu|kuljetus|arrived|deliver|package|parcel|packaging|the box|shipping|in transit|crushed)/i;
+
+/**
+ * Vilken bildförfrågan? 'fel_vara' (fel, för få eller inte som på bilden ⇒ det du fick +
+ * fraktetiketten), 'transport' (kom fram skadad ⇒ vara + förpackning + fraktetikett) eller
+ * 'defekt' (fungerar inte, inga transportord ⇒ bild eller kort video på felet). Ren.
+ * Axels "fel" 2026-09-23 på Hans-utkastet: leveransraden och fraktetiketten passade inte
+ * en pump som läcker.
+ */
+export function fotonVariant({ klass, amne = '', text = '', x = null } = {}) {
+  // Det arga svarets X vet mer än kategorin: "inte som på bilden", "fel vara" och "kvalitet"
+  // är alla en vara som inte är den kunden köpte ⇒ bilden på det hen fick.
+  if (['som_pa_bilden', 'fel_vara', 'kvalitet'].includes(x)) return 'fel_vara';
+  const alla = new Set((klass?.alla ?? []).map((a) => a.id));
+  // Fel vara vinner över "reklamera"/"trasig" i samma mejl (Peter: "stämmer ej in på beskrivningen … vill reklamera").
+  if (klass?.kategori === 'fel_vara' || alla.has('fel_vara')) return 'fel_vara';
+  if (TRANSPORTORD.test(`${amne}\n${text}`)) return 'transport';
+  return alla.has('skadad_defekt') || klass?.kategori === 'skadad_defekt' ? 'defekt' : 'transport';
 }
 
 /** Säger kunden att spårningen står still eller inte uppdateras (SOP 02)? Ren. */

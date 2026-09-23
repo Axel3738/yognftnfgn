@@ -450,11 +450,20 @@ Bäverbutiken först, sedan samma sak överallt).
 - **Utkastet till Hans, granskat:** rätt kund (Reply-To ur kontaktformuläret),
   svenska, inga tankstreck, inget löfte, rätt signatur. Anmärkning: raden
   "Tråkigt att höra att leveransen inte blev som den skulle" passar en trasig
-  leverans, inte en pump som läcker efter köpet — `beklagar` borde säga "att
-  varan inte fungerar som den ska" när kategorin är `skadad_defekt` utan
-  leveransord; och fraktetiketten i bildförfrågan (SOP 05/08) är irrelevant för
-  ett funktionsfel. Inget av det är fel mot kunden, men det är två saker Axel
-  ser direkt.
+  leverans, inte en pump som läcker efter köpet, och fraktetiketten i
+  bildförfrågan (SOP 05/08) är irrelevant för ett funktionsfel.
+  **Axels dom 2026-09-23 00:1x: "fel".** Räkningen står på 0 av 20. Rättat
+  samma natt: bildförfrågan har tre varianter (`svar.fotonVariant`, ren
+  funktion) — **defekt** (skadad/defekt utan transportord ⇒ "Tråkigt att höra
+  att varan inte fungerar som den ska" + "Så här går vi vidare: skicka gärna en
+  bild eller en kort video som visar felet"), **transport** (kom fram skadad,
+  förpackning, paket, leverans ⇒ SOP 05:s tre bilder som förut) och
+  **fel_vara** (fel, för få, inte som på bilden ⇒ "det du fick och
+  fraktetiketten"). Samma variant styr bildraden i det arga svaret. Fem språk,
+  testat på Hans mejl ordagrant. `post.variant` står i loggen. Kommandofilen
+  drar dessutom `main` FÖRE körningen, så rättningen gäller nästa timme.
+  ⚠️ Axel skrev bara "fel" — de två anmärkningarna ovan är det jag rättade;
+  var det något annat han såg är det inte rättat än (frågan ställd).
 
 ### Autosvaret som siffror, för en dashboard (`autosvar/oversikt.mjs`)
 

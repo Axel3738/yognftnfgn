@@ -128,8 +128,12 @@ mappen finns.
 
 ## Gör i ordning
 
-1. **Kör skriptet:**
+1. **Dra `main` och kör skriptet.** Rutinens fasta session behåller sin
+   container mellan körningarna, så utan pull kör den gårdagens mallar
+   (Axels feedback på ett utkast landar på `main` samma kväll och ska gälla
+   nästa körning, inte den därefter):
    ```bash
+   git pull --rebase origin main
    node kundtjanst/autosvar.mjs $ARGUMENTS
    ```
    stderr visar per butik: `ENKEL n · ARG n · SVÅR n · hoppade n` och en rad per
