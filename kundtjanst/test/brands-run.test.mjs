@@ -240,3 +240,20 @@ test('delaDiscord: en rapport över 2000 tecken delas på radgränser, aldrig mi
   assert.equal(lang.length, 1);
   assert.equal(lang[0].length, DISCORD_MAX);
 });
+
+test('Shopifys kontaktformulär räknas som kundärende, inte som systemmejl (Matstrumpor 2026-09-23)', async () => {
+  const kropp = 'Du har fått ett nytt meddelande från din webbshops kontaktformulär.\n\nLandskod:\nSE\n\nName:\nIris Andersson\n\nE-post:\niris@example.se\n\nText:\nVar är mitt paket? Order 1042.\n';
+  const jobb = {
+    demobutiken: {
+      inkorg: [
+        { id: 'k1', from: 'Demobutiken (Shopify) <mailer@shopify.com>', to: 'hello@demobutiken.se', subject: 'Nytt kundmeddelande den 11 september 2026 10.45', date: '2026-09-11T08:45:00Z', text: kropp },
+        { id: 'n1', from: 'Shopify <mailer@shopify.com>', to: 'hello@demobutiken.se', subject: 'En förfrågan har öppnats gällande order #1001', date: '2026-09-12T08:00:00Z', text: 'Tvist.' },
+      ],
+      skickat: [],
+    },
+  };
+  const brand = brandUrEgenfil(lasYaml('brand:\n  namn: "Demobutiken"\n  supportmail: "hello@demobutiken.se"\n'), 'demobutiken');
+  const r = await korBrand(brand, { nu: new Date('2026-09-14T12:00:00Z'), torr: true, utanModell: true, jobb, env: {}, historik: [] });
+  assert.equal(r.sammanfattning.antalArenden, 1, 'formuläret är ett ärende, Shopifys egen notis är det inte');
+  assert.equal(r.arenden[0].kund.adress, 'iris@example.se');
+});
