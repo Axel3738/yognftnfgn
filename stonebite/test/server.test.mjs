@@ -454,8 +454,77 @@ test('Kundtjänst-sidan bär autosvarsblocket för VA:n — igång eller inte, d
   const html = await (await hamta('/app/kundtjanst', kaka)).text();
   // VA:n läser engelska: rubriken är den engelska. Finns ingen logg i
   // snapshoten står "has not run" — aldrig en nolla som ser ut som ett svar.
-  assert.match(html, /Auto-reply bot/);
+  assert.match(html, /The AI bot has replied/);
   assert.match(html, /has not run|drafts only|sending replies|no reply written/);
+});
+
+/**
+ * Axel 2026-09-23: Mechile svarade Micke Stigberg utan att se att boten redan
+ * svarat honom. Nu är varje skickat botsvar ett kort med knappen "Mark as
+ * followed up"; bocken sparas på volymen (tmp här), kortet flyttar till
+ * arkivet, Undo tar tillbaka det. En redigerare når inte knappen alls.
+ */
+test('VA:n bockar av ett botsvar som uppföljt — kortet går till arkivet, Ångra tar tillbaka det, redigeraren får 403', async () => {
+  const { mkdirSync, writeFileSync: skriv, rmSync: ta, readFileSync: las, existsSync } = await import('node:fs');
+  const mapp = join(tmp, 'autosvar', 'logg');
+  mkdirSync(mapp, { recursive: true });
+  const tid = new Date(Date.now() - 3 * 3_600_000).toISOString();   // boten svarade för tre timmar sedan ⇒ 45 h kvar av löftet
+  const rad = { tid, brand: 'baverbutiken', messageId: '<micke@test>', uid: 9001, hink: 'ARG', kategori: 'fel_vara', ordernummer: ['6912'], kund: 'mi***@gmail.com', sprak: 'sv', amne: 'Passar inte', atgard: 'svar', torr: false, flaggad: true, flyttad: 'INBOX.VA-PRIO', orsak: 'argt ordval', x: 'fel_vara', fotonTyp: 'leverans', behoverOrdernummer: false };
+  skriv(join(mapp, 'baverbutiken.jsonl'), `${JSON.stringify(rad)}\n`);
+  const bockfil = join(tmp, 'autosvar-uppfoljning.jsonl');
+  try {
+    const { kaka } = await loggaIn('vera@test.se', 'kundtjanst123');
+    let html = await (await hamta('/app/kundtjanst', kaka)).text();
+    assert.match(html, /ANGRY CUSTOMER · AI bot replied/);
+    assert.match(html, /class="botfall-order">#6912/);
+    assert.match(html, /45 h left/);
+    assert.match(html, /Mark as followed up/);
+    const nyckel = /name="nyckel" value="([0-9a-f]{16})"/.exec(html)?.[1];
+    assert.ok(nyckel, 'kortet bär loggradens nyckel (sha256 av Message-ID)');
+    assert.doesNotMatch(html, /micke@test/, 'Message-ID:t står aldrig i sidan');
+
+    const csrf = await farskCsrf('/app/kundtjanst', kaka);
+    const posta = (stig, extra = {}) => fetch(`${bas}${stig}`, {
+      method: 'POST', redirect: 'manual',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: kaka },
+      body: new URLSearchParams({ csrf, nyckel, brand: 'baverbutiken', order: '6912', nasta: '/app/kundtjanst#ai-boten', ...extra }).toString(),
+    });
+    const bock = await posta('/app/autosvar/uppfoljd');
+    assert.equal(bock.status, 303);
+    assert.equal(bock.headers.get('location'), '/app/kundtjanst#ai-boten');
+    assert.ok(existsSync(bockfil), 'bocken skrivs på volymen, inte i botens logg');
+    assert.match(las(bockfil, 'utf8'), /"av":"Vera VA"/);
+    assert.equal(las(join(mapp, 'baverbutiken.jsonl'), 'utf8'), `${JSON.stringify(rad)}\n`, 'loggen är orörd');
+
+    html = await (await hamta('/app/kundtjanst', kaka)).text();
+    assert.match(html, /Nothing to follow up/);
+    assert.match(html, /Followed up \(archive\) · 1/);
+    assert.match(html, /Followed up by:<\/b> Vera VA/);
+    assert.doesNotMatch(html, /45 h left/);
+
+    const angra = await posta('/app/autosvar/oppna');
+    assert.equal(angra.status, 303);
+    html = await (await hamta('/app/kundtjanst', kaka)).text();
+    assert.match(html, /Mark as followed up/);
+    assert.doesNotMatch(html, /Followed up \(archive\)/);
+
+    // Skräpnyckel ⇒ 400, inget skrivet. Okänd åtgärd ⇒ 404. Fel roll ⇒ 403.
+    const rader = las(bockfil, 'utf8').trim().split('\n').length;
+    assert.equal((await posta('/app/autosvar/uppfoljd', { nyckel: 'a b<c' })).status, 400);
+    assert.equal(las(bockfil, 'utf8').trim().split('\n').length, rader);
+    assert.equal((await posta('/app/autosvar/radera')).status, 404);
+    const red = await loggaIn('josh@test.se', 'redigerare123');
+    const csrfRed = await farskCsrf('/app/mig', red.kaka);
+    const nekad = await fetch(`${bas}/app/autosvar/uppfoljd`, {
+      method: 'POST', redirect: 'manual',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded', Cookie: red.kaka },
+      body: new URLSearchParams({ csrf: csrfRed, nyckel, brand: 'baverbutiken', nasta: '/app/kundtjanst' }).toString(),
+    });
+    assert.equal(nekad.status, 403);
+  } finally {
+    ta(join(tmp, 'autosvar'), { recursive: true, force: true });
+    ta(bockfil, { force: true });
+  }
 });
 
 test('produkttestaren ser sin pipeline och inget annat', async () => {

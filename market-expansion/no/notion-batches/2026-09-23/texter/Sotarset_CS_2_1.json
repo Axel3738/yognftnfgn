@@ -1,0 +1,56 @@
+[
+ {
+  "box": [
+   330,
+   50,
+   750,
+   168
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "text": "389 kr."
+ },
+ {
+  "box": [
+   32,
+   186,
+   1047,
+   266
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 38,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Førpris 509 kr. Spar 120 kr."
+ },
+ {
+  "box": [
+   421,
+   1200,
+   658,
+   1308
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 42,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Bestill."
+ }
+]

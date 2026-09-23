@@ -89,12 +89,14 @@ export function renderaMorgon({ brand, koer, tvister, nu = new Date(), va = null
   if (koer.tillganglig && koer.besvarade) ut.push(`(${koer.besvarade} more starred emails already have a reply in the thread — the replied arrow — and are not listed)`);
 
   const br = tvister?.bradskande ?? [];
-  ut.push('', `**3. Disputes with a deadline within 3 days (${br.length})**`);
+  ut.push('', `**3. Disputes — every open chargeback, plus inquiries due within 3 days (${br.length})**`);
   if (tvister && !tvister.tillganglig) ut.push(`• could not read disputes: ${tvister.orsak}`);
   else if (!br.length) ut.push('• none');
   // `kvar` sätts av tvistkollens bradskande(): dagar till evidence-deadline,
   // null när deadline inte gick att läsa (larmas hellre än tigs ihjäl).
-  else for (const t of br) ut.push(`• ${arChargeback(t) ? 'CHARGEBACK' : 'inquiry'} ${t.ordernamn ? `#${String(t.ordernamn).replace(/^#/, '')}` : ''} · ${t.belopp ?? '?'} ${t.valuta ?? ''} · ${t.kvar === null ? 'deadline unknown — check in Shopify' : `evidence ${narText(t.kvar)}`} — see 60-ESCALATION`);
+  // Bara tvister som väntar på VÅRT svar (tvistkollens BEHOVER_SVAR) — en
+  // redan besvarad (under_review) står aldrig här. Öppna chargebacks alltid.
+  else for (const t of br) ut.push(`• ${arChargeback(t) ? 'CHARGEBACK' : 'inquiry'} ${t.ordernamn ? `#${String(t.ordernamn).replace(/^#/, '')}` : ''} · ${t.belopp ?? '?'} ${t.valuta ?? ''} · ${t.kvar === null ? 'deadline unknown — check in Shopify' : `evidence ${narText(t.kvar)}${t.kvar > 3 ? ' — submit the day before' : ''}`} — see 60-ESCALATION`);
 
   if (koer.orsak && koer.tillganglig) ut.push('', `⚠️ ${koer.orsak}`);
   ut.push('', 'Order of work: 1 → 2 → 3 → Drafts → the rest. Remove the star when answered; move VA-PRIO emails back to INBOX when done.');

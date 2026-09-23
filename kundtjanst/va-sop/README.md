@@ -33,6 +33,9 @@ Tre skäl, alla mätta i den här basen:
 | `start-here.md` | **Startsidan.** Routningstabell: vad kunden frågar → vilken sida. Fyra järnregler. Var den nyanställda börjar |
 | `00-STORE-FACTS.md` | **Den enda sidan som ändras per brand.** Butikstabell, avsändarland, ägarens värden (returfönster, svarstidsmål, vem som godkänner vad) |
 | `01-TRACKING-PAGE.md` | Uppslagsrutinen: Shopify-tidslinjen → butikens spårningssida → fraktbolagets portal som reserv. Alla leverans-SOP:ar pekar hit |
+| `auto-reply-bot.md` | Vad AI-boten är, dess tre hinkar, och VA:ns ordning (VA-PRIO först, aldrig röra utkasten) |
+| `following-up-the-auto-reply.md` | **Den andra repliken** (Axels beställning 2026-09-23): hur VA:n skriver vidare på ett mejl boten redan svarat — som Head of Customer Support som fått ärendet eskalerat till sig personligen. Öppningen, en mall per botutfall (arg kund, bildförfrågan, retur, levererat men saknas, helt besvarat, boten hade fel), dashboardkortet, läsbarhetstestet |
+| `PROMPT-following-up-the-auto-reply.md` | Prompten som gav sidan ovan. Kör den igen när botens utfall ändras (`kundtjanst/autosvar/svar.mjs`) eller när en ny butik får sin bas |
 | Övriga 33 | En SOP per kundfråga. Ingen av dem nämner ett butiksnamn, en domän, ett fraktbolag eller en adress — de säger "ta värdet ur Store facts" |
 | `notion.json` | Vilken fil som är vilken Notion-sida |
 | `skriv.mjs` | Skriver filerna till Notion |

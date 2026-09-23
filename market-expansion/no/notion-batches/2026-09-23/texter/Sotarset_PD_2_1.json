@@ -1,0 +1,77 @@
+[
+ {
+  "box": [
+   32,
+   48,
+   1047,
+   186
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 74,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "Når bak ovnen."
+ },
+ {
+  "box": [
+   32,
+   190,
+   1047,
+   268
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 38,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "3,69 m fleksibel rekkevidde."
+ },
+ {
+  "box": [
+   32,
+   1068,
+   1047,
+   1149
+  ],
+  "rader": 1,
+  "fet": false,
+  "storlek": 38,
+  "farg": [
+   17,
+   17,
+   17
+  ],
+  "fyll": "ljus",
+  "alfa": 255,
+  "text": "389 kr. Førpris 509 kr."
+ },
+ {
+  "box": [
+   421,
+   1200,
+   658,
+   1308
+  ],
+  "rader": 1,
+  "fet": true,
+  "storlek": 42,
+  "farg": [
+   255,
+   255,
+   255
+  ],
+  "textljus": true,
+  "text": "Bestill."
+ }
+]

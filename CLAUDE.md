@@ -557,7 +557,22 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   (`AUTOSVAR_LOGGMAPP`, standard `<STONEBITE_DATA>/autosvar/logg`) och sajten
   läser den live — en arg kund syns på Kundtjänst inom minuten. `/halsa`
   visar `autosvar.kor`. Slås på med `stonebite/cowork/5-autosvar.txt`
-  (Axel klistrar in nycklarna själv). ⛔ När vakten är på kör ingen session
+  (Axel klistrar in nycklarna själv). **Läget per butik sedan 2026-09-23**
+  (Axels order: Bäverbutiken skarpt, CaraShell börjar torrt):
+  `AUTOSVAR_LAGE_<ID>` vinner över `AUTOSVAR_LAGE`, vakten kör då
+  `--skarpt --torr-for <de torra>` (flaggan kan bara göra en butik torrare),
+  och `/halsa` visar `autosvar.lagen`. CaraShell läggs till med
+  `stonebite/cowork/6-autosvar-carashell.txt` — steg 0 stoppar om `lagen`
+  saknas på `/halsa`, för den gamla koden hade kört CaraShell SKARPT.
+  Torrkörd från en session samma dag mot hello@carashell.com: 45 mejl, 0
+  ENKEL (allt var produktfrågor/avbeställningar ⇒ VA:n), men den gav fyra
+  rättningar innan: CaraShells kontaktformulär heter `Kommentar:`/`Comment:`
+  (14 formulär hoppades som systemmejl), säljmejl till butiken ⇒ SKIP
+  (`arSaljmejl`, en dropshipping-leverantör blev ARG på "within 24 hours"),
+  brådskeord ensamma ("immediately", "senast") gör inte ett mejl ARGT
+  (`eskaleringStark`), och signatur + spårningssida följer kundens språk
+  (`svar.sparningssidor`). Två felaktiga utkast från körningen ligger kvar i
+  CaraShells Drafts (Oncedrop, Jonathan Mount #1089) — sessionen raderar aldrig. ⛔ När vakten är på kör ingen session
   `autosvar.mjs` mot samma brevlåda för hand — dubbelsvar. 6 tester i
   `stonebite/test/autosvar-vakt.test.mjs`. ⚠️ **Vakten startar BARA på
   Railway** (`RAILWAY_*` i miljön) eller med `AUTOSVAR_VAKT=1` — mätt
@@ -575,6 +590,58 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   men Axel kan ta bort dem. De tre `SHOPIFY_*_BAVERBUTIKEN_EMAILSCRAPER`
   ska däremot ligga kvar där: sajten läste Bäverbutikens ordrar med dem
   samma minut (110 ordrar senaste dygnet, via `kandidatNycklar`).
+- **CaraShell på sajtens Kundtjänst-flik + i autosvaret (2026-09-23, Axels
+  beslut A: skarpt direkt).** Brandfilen `kundtjanst/brands/carashell.yaml`
+  och `KUNDTJANST_MAIL_PASS_CARASHELL` fanns sedan 2026-09-21, men
+  `stonebite/varumarken.json` stod kvar på `kundtjanst: []` + "Ingen
+  brandfil" — alla fyra rutorna var tomma. Rättat: registret pekar på
+  `carashell`, första veckorapporten W39 körd (läs-bar, utan Discord): 28
+  ärenden, risk 37/100, 290 ordrar, **0 tvister** i Shopify. Brandfilens fasta
+  signatur "Kundtjänst CaraShell" borttagen — kunderna skriver sv/nb/en, så
+  `svar.mjs` väljer nu signatur efter kundens språk. Boten på Railway kräver
+  `stonebite/cowork/6-autosvar-carashell.txt`: tre nycklar
+  (`KUNDTJANST_MAIL_PASS_CARASHELL`, `SHOPIFY_CLIENT_ID/SECRET_CARASHELL` =
+  värdena från `_yitrbk_m3`) **före** `AUTOSVAR_BRANDS=baverbutiken,carashell`
+  — saknas ett lösenord startar vakten inte alls, och då stannar även
+  Bäverbutiken. ⚠️ **Sammanslaget samma kväll:** två sessioner skrev var sin
+  `6-autosvar-carashell.txt` parallellt — den skarpa låg på `main` UTAN den
+  andra sessionens rättningar (säljmejl, brådskeord, kontaktformulärets
+  `Kommentar:`, spårningssida per språk) som fanns bara på grenen
+  `claude/kind-planck-hskg8m`. Utan dem hade Jonathan (#1089, lugn
+  avbeställning) fått ett ARGT svar skarpt. Grenen är mergad; prompten är nu
+  EN: steg 0 kräver `lagen` på `/halsa`, CaraShell startar med
+  `AUTOSVAR_LAGE_CARASHELL=torr`, nycklarna heter `_CARASHELL`. Skarpt för
+  CaraShell = ta bort `AUTOSVAR_LAGE_CARASHELL` på Railway (Axels klick).
+  Mechile är med i "CaraShell — OPS" sedan 2026-09-13 och ser
+  `#customer-support` (mätt 2026-09-23).
+- **AI-botens svar som kort med bock (2026-09-23 eftermiddag).** Mechile
+  svarade Micke Stigberg 15:28 utan att se att boten redan svarat honom 13:42,
+  och Axels dom på blocket ovan var "väldigt otydligt, väldigt blek text …
+  inget att interagera med eller markera som hanterade". Nu (`vy/drift.mjs`
+  → `autosvarBlock`, `botfallFor`, `lovatSvar`, `botSvarText`,
+  `nastaStegText`): **ett kort per mejl boten svarat på, ENKEL och ARG**, badge
+  med ord ("ARG KUND · AI-boten svarade"), ordernumret stort, "Vad boten
+  skrev" och "Nästa steg för dig" i klartext, och på arga kunder klockan
+  **"Svar lovat senast" som räknar ner från botens svarstid** (48 h,
+  `ESKALERING_TIMMAR` importerad från `svar.mjs`). Knappen **"Markera som
+  uppföljd"** (`POST /app/autosvar/uppfoljd`, alla som ser Kundtjänst) skriver
+  `data/autosvar-uppfoljning.jsonl` på volymen (`stonebite/uppfoljning.mjs`,
+  senaste raden per nyckel vinner, "Ångra" är en rad med `uppfoljd: false`) —
+  **botens logg rörs aldrig.** Nyckeln är `nyckel` i loggöversikten
+  (`kundtjanst/autosvar/oversikt.mjs fallNyckel`: sha256 av Message-ID, 16
+  hex, överlever att mejlet flyttas). Fyra högar: *Att följa upp* (ARG +
+  allt boten flaggade/flyttade, arga överst, äldst först), *Boten svarade
+  klart*, *Uppföljda (arkiv)* och *Torrkörningens utkast* (hopfällda). Ett
+  uppföljt kort lämnar också "Kräver dig i dag". VA:ns SOP för den andra
+  repliken: **"Following up the auto-reply — as Head of Customer Support"**
+  (`kundtjanst/va-sop/following-up-the-auto-reply.md`, skriven ur prompten
+  `PROMPT-following-up-the-auto-reply.md` — Axels beställning: "hon ska
+  behandla ett AI-bots-case som nån skänk från ovan … som Head of Customer
+  Support, fast på svenska", därav öppningen *"Det här ärendet skickades precis
+  vidare till mig personligen. Jag är kundtjänstansvarig här"*, en mall per
+  botutfall, aldrig ordet bot/AI, aldrig upprepa eller motsäga botens fakta,
+  aldrig be om det kunden redan skickat, 48 h-löftet hålls från botens mejl,
+  ägarens godkännanden orörda). Kör prompten igen när botens utfall ändras.
 - ⚠️ **Sex butiker saknas på sajten, av tre olika skäl (mätt 2026-09-22
   18:06 UTC i timrutinens snapshot):** Bäverbutiken och UK `1wucum-x0` —
   403 "merchant approval for read_orders" (appen bakom `SHOPIFY_*_SE`
