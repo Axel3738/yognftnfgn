@@ -114,9 +114,12 @@ function kraverDig({ snapshot, kalender = [], nu, brandnamn }) {
     }
   }
   // Arga kunder autosvaret mött det senaste dygnet — boten har lugnat, VA:n tar över.
+  // Ett kort VA:n redan bockat som uppföljt (stonebite/uppfoljning.mjs) är gjort och står inte här.
+  const uppfoljda = snapshot?.uppfoljning ?? {};
   for (const [id, b] of Object.entries(snapshot?.autosvar?.brands ?? {})) {
     for (const r of b.arga ?? []) {
       if (new Date(r.tid).getTime() < gransManniska) continue;
+      if (r.nyckel && uppfoljda[r.nyckel]?.uppfoljd) continue;
       const order = r.ordernummer?.[0] ? `#${r.ordernummer[0]}` : 'utan ordernummer';
       rader.push({ ton: 'varning', text: `Arg kund ${order} (${brandnamn(brandForKundtjanst(id))}) — autosvaret ${r.atgard === 'svar' ? 'skickade ett lugnande svar' : 'la ett lugnande utkast'}, VA:n tar över`, lank: '/app/kundtjanst' });
     }

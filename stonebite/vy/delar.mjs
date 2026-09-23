@@ -154,8 +154,8 @@ export function tomt(rubrik, orsak = '') {
   return `<div class="tomt"><b>${esc(t(rubrik))}</b>${orsak ? esc(t(orsak)) : ''}</div>`;
 }
 
-export function block({ titel, under = '', innehall }) {
-  return `<section class="block">
+export function block({ titel, under = '', innehall, id = '' }) {
+  return `<section class="block"${id ? ` id="${attr(id)}"` : ''}>
     ${titel ? `<h2>${esc(t(titel))}</h2>` : ''}
     ${under ? `<p class="under">${esc(t(under))}</p>` : ''}
     ${innehall}
