@@ -1,0 +1,86 @@
+[
+ {
+  "namn": "Takoverdrag_OB_4_H1",
+  "pid": "3e3270ab908c81178ae1cf5a3ed39e2e",
+  "annons": "120252357447690233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Takoverdrag_GT_11_H1",
+  "pid": "3e3270ab908c8109a4cbce98698f5a63",
+  "annons": "120252357454840233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Takoverdrag_OB_3_H1",
+  "pid": "3e3270ab908c8186a524f0b04da24eee",
+  "annons": "120252357459970233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Takoverdrag_CO_5_H1",
+  "pid": "3e0270ab908c8143b656dac37e95807e",
+  "annons": "120252357464130233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Takoverdrag_PD_10_H1",
+  "pid": "3e0270ab908c8186909bc8bf55d3c6d0",
+  "annons": "120252357469370233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Takoverdrag_CS_9_H1",
+  "pid": "3dd270ab908c811b8bf2f9a3f20e1299",
+  "annons": "120252357475630233",
+  "status": "CaraShell SE ready to be active",
+  "typ": "video"
+ },
+ {
+  "namn": "Sotarset_PD_2_1",
+  "pid": "3e2270ab908c8119a5bcd480a9d0832f",
+  "annons": "120252357013860233",
+  "status": "Approved",
+  "typ": "bild"
+ },
+ {
+  "namn": "Sotarset_PD_3_1",
+  "pid": "3e2270ab908c8177a77df378b9e36446",
+  "annons": "120252357015820233",
+  "status": "Approved",
+  "typ": "bild"
+ },
+ {
+  "namn": "Sotarset_CS_2_1",
+  "pid": "3e2270ab908c818ca9c8efa1ebb7e4f6",
+  "annons": "120252357017930233",
+  "status": "Approved",
+  "typ": "bild"
+ },
+ {
+  "namn": "Sotarset_PD_6_1",
+  "pid": "3e2270ab908c81938d46d4acd0b5e03c",
+  "annons": "120252357019700233",
+  "status": "Approved",
+  "typ": "bild"
+ },
+ {
+  "namn": "Sotarset_G_2_1",
+  "pid": "3e2270ab908c81a19df8d8c4ea5dad97",
+  "annons": "120252357021930233",
+  "status": "Approved",
+  "typ": "bild"
+ },
+ {
+  "namn": "Sotarset_PD_4_1",
+  "pid": "3e2270ab908c81f3953aed3cd019212d",
+  "annons": "120252357111290233",
+  "status": "Approved",
+  "typ": "bild"
+ }
+]

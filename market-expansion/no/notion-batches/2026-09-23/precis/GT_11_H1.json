@@ -1,0 +1,102 @@
+{
+ "in": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/out/takovertrekk_GT_11_H1.mp4",
+ "ut": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/no-video/Takovertrekk_NO_GT_11_H1.mp4",
+ "srt": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/srt-no/takovertrekk_GT_11_H1.srt",
+ "captions": {
+  "zon": [
+   955,
+   1045
+  ],
+  "standard_cy": 998,
+  "font_px": 42,
+  "max_chars": 26,
+  "x0": 0,
+  "x1": 720,
+  "bredd_max": 660,
+  "pad_x": 34,
+  "pad_y": 8,
+  "h_min": 42,
+  "h_max": 80
+ },
+ "blur": [
+  {
+   "rect": [
+    248,
+    604,
+    583,
+    717
+   ],
+   "t": [
+    12.0,
+    14.08
+   ]
+  },
+  {
+   "rect": [
+    248,
+    728,
+    583,
+    841
+   ],
+   "t": [
+    13.0,
+    14.08
+   ]
+  },
+  {
+   "rect": [
+    130,
+    398,
+    592,
+    497
+   ],
+   "t": [
+    14.05,
+    18.08
+   ]
+  },
+  {
+   "rect": [
+    118,
+    268,
+    600,
+    600
+   ],
+   "t": [
+    18.08,
+    23.3
+   ]
+  }
+ ],
+ "lager": [
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/lager/GT_11_H1_badge1.png",
+   "t": [
+    12.0,
+    14.08
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/lager/GT_11_H1_badge2.png",
+   "t": [
+    13.0,
+    14.08
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/lager/GT_11_H1_str1.png",
+   "t": [
+    14.05,
+    18.08
+   ]
+  },
+  {
+   "png": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/lager/GT_11_H1_pris.png",
+   "t": [
+    18.08,
+    23.3
+   ]
+  }
+ ],
+ "qa": "/home/user/yognftnfgn/market-expansion/no/notion-batches/2026-09-23/qa"
+}

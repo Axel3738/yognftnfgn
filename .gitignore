@@ -83,6 +83,16 @@ market-expansion/*/notion-batches/*/qa/
 market-expansion/*/notion-batches/*/qa2/
 market-expansion/*/notion-batches/*/matt/
 market-expansion/*/notion-batches/*/skann/
+# Lösa mätbilder i batchroten. QA-mapparna ovan räcker inte: när en enskild
+# video felsöks hamnar strippen där sessionen råkar skriva den (co5_ny.png,
+# g11.png, rod.png … 2026-09-23). Samma sak, samma skäl — arbetsmaterial.
+market-expansion/*/notion-batches/*/*.png
+market-expansion/*/notion-batches/*/*.jpg
+# Röstkollens indata: KOPIOR av källvideorna och SRT:erna, omdöpta så namnen
+# matchar utdatan. Källan finns redan i */up/ och srt-no/ — det här är dubbletter
+# som väger MB, och rostkoll.py bygger om dem på en sekund.
+market-expansion/*/notion-batches/*/rk-kalla/
+market-expansion/*/notion-batches/*/rk-srt/
 # HeyGens eget körläge per manifest — pekar på jobb-id som dör med batchen.
 market-expansion/*/notion-batches/*/*.state.json
 

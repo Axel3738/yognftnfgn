@@ -62,7 +62,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_4_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357447690233",
+        "creativeId": "2061260134513810",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -126,7 +131,12 @@
         "annonsNamn": "Takovertrekk_NO_GT_11_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357454840233",
+        "creativeId": "1627001221679654",
+        "adsetId": "120252263010860233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -190,7 +200,12 @@
         "annonsNamn": "Takovertrekk_NO_OB_3_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357459970233",
+        "creativeId": "1120605380539726",
+        "adsetId": "120252291585680233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -254,7 +269,12 @@
         "annonsNamn": "Takovertrekk_NO_CO_5_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357464130233",
+        "creativeId": "1381844227004623",
+        "adsetId": "120252262909150233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -318,7 +338,12 @@
         "annonsNamn": "Takovertrekk_NO_PD_10_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357469370233",
+        "creativeId": "1781501319628609",
+        "adsetId": "120252183575470233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -382,7 +407,12 @@
         "annonsNamn": "Takovertrekk_NO_CS_9_H1",
         "link": "https://beverbutikken.no/products/takovertrekk-til-campingvogn-6-5-3-m-beskytter-den-dyreste-flaten",
         "prefix": "Takovertrekk",
-        "status": "SAKNAR_COPY"
+        "status": "ACTIVE",
+        "annonsId": "120252357475630233",
+        "creativeId": "1032262316493727",
+        "adsetId": "120252183543740233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "1189.00",
@@ -987,7 +1017,12 @@
         "annonsNamn": "Sotarset_NO_PD_2_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357013860233",
+        "creativeId": "1581432599708278",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -1052,7 +1087,12 @@
         "annonsNamn": "Sotarset_NO_PD_3_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357015820233",
+        "creativeId": "1559587135463599",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -1117,7 +1157,12 @@
         "annonsNamn": "Sotarset_NO_CS_2_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357017930233",
+        "creativeId": "3687476668057922",
+        "adsetId": "120252321102250233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -1182,7 +1227,12 @@
         "annonsNamn": "Sotarset_NO_PD_6_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357019700233",
+        "creativeId": "3577952465686590",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -1247,7 +1297,12 @@
         "annonsNamn": "Sotarset_NO_G_2_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357021930233",
+        "creativeId": "2046783555957795",
+        "adsetId": "120252321177340233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
@@ -1312,7 +1367,12 @@
         "annonsNamn": "Sotarset_NO_PD_4_1",
         "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
         "prefix": "Sotarset",
-        "status": "DRY"
+        "status": "SAKNAR_COPY",
+        "annonsId": "120252357111290233",
+        "creativeId": "1562370408406008",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
       },
       "pris": {
         "pris": "389.00",
