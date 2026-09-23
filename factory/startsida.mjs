@@ -32,7 +32,7 @@
 // En NISCHBUTIK (butik.kollektion.alltid, AdventLane 2026-09-10) räknas som
 // flerprodukt redan med sin första produkt — avgörs av butik.arNischbutik.
 
-import { arNischbutik } from './butik.mjs';
+import { arNischbutik, kontaktmail } from './butik.mjs';
 import { landsnamnSv, ochLista } from './lander.mjs';
 
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
@@ -86,7 +86,7 @@ function defaults(butik) {
   const fraktKort = fri ? (med ? `Fri frakt – ${med}` : 'Fri frakt') : (med ? `Frakt till ${med}` : 'Snabb leverans');
   const fraktLang = fri ? (och ? `Fri frakt till ${och}` : 'Fri frakt') : (och ? `Vi skickar till ${och}` : 'Snabb leverans');
   const angerratt = `${dagar} dagars ångerrätt`;
-  const supportmail = text(butik?.butik?.supportmail);
+  const supportmail = kontaktmail(butik);
   return {
     usp: [`truck:${fraktKort}`, `shield:${angerratt}`],
     marquee: [fraktLang, angerratt, 'Trygg betalning'],
@@ -482,7 +482,7 @@ export function byggFooterGroup(befintlig, butik) {
       heading: 'Företaget',
       subtext: [
         `<p>${text(b.brand) ?? ''} drivs av<br/>${text(b.bolagsnamn) ?? ''}<br/>Org.nr ${text(b.orgnr) ?? ''}</p>`,
-        `<p>${text(b.supportmail) ?? ''}</p>`,
+        `<p>${kontaktmail(b) ?? ''}</p>`,
       ].join(''),
     };
   }

@@ -4,7 +4,10 @@
 #
 # ⚠️ Avsändaren i Shopify byttes 2026-09-20 till hello@carashell.com för alla
 # marknader (Axels beslut, "'.se' skriker utländsk butik för amerikanerna";
-# verifierad 2026-09-21). Fabriksfilen säger fortfarande hello@carashell.se.
+# verifierad 2026-09-21). Sedan 2026-09-23 säger även butikens policyer, sidor,
+# sidfot, startsida och FAQ hello@carashell.com (Axels beslut "Alla ska mejla
+# hello@carashell.com"; bytt via API på sv/nb/fi/da + fabriksfilens
+# kontaktmail). Fabriksfilens supportmail står kvar på .se — den bär domänen.
 # Kunderna svarar till .com — så det är brevlådan att läsa och svara ur. Både
 # carashell.se och carashell.com har MX på Loopia (mätt 2026-09-21). Svaren
 # till .se måste vidarebefordras till .com hos Loopia (Axels klick, CLAUDE.md).
@@ -42,3 +45,40 @@ svar:
   svarstid_timmar: 24
   max_per_korning: 20
   fonster_timmar: 72
+
+# Tvistblocket (kundtjanst/brand-mall.yaml), ifyllt 2026-09-23. Källorna:
+# carashell.se/policies/refund-policy + terms-of-service (SE),
+# carashell.com/policies/refund-policy?country=US (engelska), Shopify Admin
+# API (shop.billingAddress) och Axels avläsning i admin (descriptor, telefon).
+# ⚠️ Återinlagt samma dag: 163db7b ("Autosvar: läge per butik …") skrev över
+# filen utan blocket.
+tvister:
+  # Adressen står PUBLIKT i villkoren (terms-of-service: "Sjöhed 160, 442 74
+  # Harestad") och i Shopifys faktureringsadress — samma som Bäverbutikens.
+  returadress: "STONEBITE ECOM AB, Sjöhed 160, 442 74 Harestad, Sverige"
+  # Processen är ändå "mejla först": SE-policyn ("Du får en returinstruktion
+  # inom två arbetsdagar") och US-policyn ("we'll tell you where to send it").
+  returadress_pa_forfragan: true
+  # SE-policyn: "Du ansvarar för returfrakten om inget annat avtalats."
+  # ⚠️ US-policyn säger inget om returfrakten (CLAUDE.md: obestämt för USA).
+  returfrakt_betalas_av: "kund"
+  # SE-policyn har inget eget returfönster utöver ångerrätten: 14 dagar från
+  # mottagandet. ⚠️ carashell.com (USA + GB/CA/AU/NZ) har en 90-DAGARS
+  # garanti från mottagandet — en tvist från en engelsk order mäts mot 90.
+  returfonster_dagar: 14
+  angerratt_dagar: 14
+  policy_url: "https://carashell.se/policies/refund-policy"   # 200, avläst 2026-09-23
+  # Avläst av Axel 2026-09-23 i Shopify admin → Settings → Payments →
+  # "Uppgifter för kundens kontoutdrag". API:t gav bara "Carashell" utan
+  # prefixet — admin är facit, det är EXAKT den texten kunden ser.
+  billing_descriptor: "SP Carashell"
+  # Samma ruta i admin (API:ts billingAddress.phone är tom). Axels besked:
+  # samma nummer som Bäverbutiken.
+  support_telefon: "+46 79 340 44 07"
+  strid_lonar_sig_over: 0
+  sparningssida: "https://carashell.se/pages/spara"
+  paketprefix: "CS-"
+  agare_kontakt: "Axel (Discord CaraShell — OPS #customer-support)"
+  godkannande_over: 0
+  ersattning_over: 0
+  forsta_svar_timmar: 24

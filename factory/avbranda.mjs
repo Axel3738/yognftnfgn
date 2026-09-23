@@ -37,6 +37,7 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { lasYaml } from './yaml.mjs';
+import { kontaktmail } from './butik.mjs';
 import { laddaEnv } from './env.mjs';
 import { lasState } from './state.mjs';
 import { hamtaArbetstema, hamtaTemafil, skrivTemafiler, verifieraTemafiler } from './shopify.mjs';
@@ -61,6 +62,8 @@ export function byggRegler(butik) {
   const brand = text(b.brand) ?? 'Butiken';
   const supportmail = text(b.supportmail) ?? '';
   const doman = supportmail.split('@')[1] ?? `${b.id ?? 'butiken'}.se`;
+  // Adressen i texten (kontaktmail) kan skilja sig från domänens (supportmail).
+  const epost = kontaktmail(b) ?? '';
   // Flerproduktsbutik: butikens kollektion. Enproduktsbutik: Shopifys "all".
   const kollektion = text(b.kollektion?.handle) ?? 'all';
   const r = (re, ers) => [re, () => ers];
@@ -70,11 +73,11 @@ export function byggRegler(butik) {
     //    Källan bär inte längre någon riktig adress — den bär SUPPORTMEJL,
     //    och här får den butikens egen. Utan den här raden renderas ett tomt
     //    mailto, vilket är en trasig länk i kundens vy.
-    r(/SUPPORTMEJL/g, supportmail),
+    r(/SUPPORTMEJL/g, epost),
     // 1. Supportmejlen — måste före domänregeln.
     //    Behålls för butiker som byggdes ur det OSTÄDADE temat (HeimGuard,
     //    TankGuard, TackleBay, DryTrek). Den blir en no-op på nya butiker.
-    r(/kundsupport@matstrumpor\.se/gi, supportmail),
+    r(/kundsupport@matstrumpor\.se/gi, epost),
     // 2. Domänen i löptext och länkar.
     r(/matstrumpor\.se/gi, doman),
     // 3. Hela citaten ur startsidan/inställningarna — före brandnamnet, som
@@ -162,7 +165,7 @@ export function byggFooterblock(butik) {
   const b = butik?.butik ?? {};
   return (
     `<p>${eskapa(text(b.brand) ?? '')} drivs av<br/>${eskapa(text(b.bolagsnamn) ?? '')}<br/>Org.nr ${eskapa(text(b.orgnr) ?? '')}</p>` +
-    `<p>${eskapa(text(b.supportmail) ?? '')}</p>`
+    `<p>${eskapa(kontaktmail(b) ?? '')}</p>`
   );
 }
 

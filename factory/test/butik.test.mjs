@@ -4,7 +4,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { valideraButik, sammanfoga, kontrolleraMarknader, kontrolleraStartsida, arNischbutik } from '../butik.mjs';
+import { valideraButik, sammanfoga, kontrolleraMarknader, kontrolleraStartsida, arNischbutik, kontaktmail } from '../butik.mjs';
 import { rabutik, raprodukt, dummy, medButiksfrakt } from './hjalp.mjs';
 
 test('testbutiken validerar utan kritiska fel', () => {
@@ -212,4 +212,18 @@ test('produktens leveranstid vinner över butikens standard', () => {
 test('utan express i butiken får produkten inga extra fraktsätt', () => {
   const p = medButiksfrakt({ fri_globalt: true, leveranstid: '5 dagar' });
   assert.deepEqual(p.shipping.alternativ, []);
+});
+
+test('kontaktmail: skriver över adressen i texten, men supportmail bär fortfarande domänen', async () => {
+  const b = rabutik();
+  const doman = b.butik.supportmail;
+  assert.equal(kontaktmail(b), doman, 'utan kontaktmail gäller supportmail');
+  b.butik.kontaktmail = 'hello@annan.com';
+  assert.equal(kontaktmail(b), 'hello@annan.com');
+  assert.deepEqual(valideraButik(b).fel, []);
+  const { byggFooterblock } = await import('../avbranda.mjs');
+  assert.match(byggFooterblock(b), /hello@annan\.com/);
+  assert.equal(b.butik.supportmail, doman);
+  b.butik.kontaktmail = 'inte en adress';
+  assert.ok(valideraButik(b).fel.some((f) => /kontaktmail/.test(f)));
 });

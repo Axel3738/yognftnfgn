@@ -17,6 +17,19 @@ const HANDLE = /^[a-z0-9-]+$/;
 
 const lista = (v) => (Array.isArray(v) ? v.filter((x) => x !== null && x !== '') : []);
 const text = (v) => (typeof v === 'string' && v.trim() !== '' ? v.trim() : null);
+
+/**
+ * Adressen KUNDEN ser (policyer, sidfot, startsidans garanti, FAQ).
+ * `supportmail` är alltid hello@<butikens domän> och bär domänen (checklista,
+ * opsmarknader, avbranda) — den får inte ändras bara för att kunderna ska
+ * mejla någon annanstans. `kontaktmail` skriver över just adressen i texten.
+ * (CaraShell 2026-09-23, Axels beslut: "Alla ska mejla hello@carashell.com",
+ * medan butikens domän är carashell.se.)
+ */
+export function kontaktmail(butikEllerB) {
+  const b = butikEllerB?.butik ?? butikEllerB ?? {};
+  return text(b.kontaktmail) ?? text(b.supportmail);
+}
 const tal = (v) => (typeof v === 'number' && Number.isFinite(v) ? v : null);
 const objekt = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
 const satt = (v) => v !== undefined && v !== null && v !== '';
@@ -131,6 +144,9 @@ export function valideraButik(b) {
     fel.push('butik.supportmail ser inte ut som en mejladress');
   } else if (text(b?.butik?.supportmail) && !/^hello@/i.test(b.butik.supportmail)) {
     fel.push('butik.supportmail ska alltid vara hello@<domän> (Axels beslut 2026-09-08)');
+  }
+  if (text(b?.butik?.kontaktmail) && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(b.butik.kontaktmail)) {
+    fel.push('butik.kontaktmail ser inte ut som en mejladress');
   }
   if (text(b?.butik?.id) && !/^[a-z0-9-]+$/.test(b.butik.id)) {
     fel.push(`butik.id "${b.butik.id}" får bara ha små bokstäver, siffror och bindestreck`);
@@ -258,7 +274,7 @@ export function sammanfoga(butik, produkt) {
       org_namn: text(b.bolagsnamn),
       orgnr: text(b.orgnr),
       adress: text(b.adress),
-      kontakt_epost: text(b.supportmail),
+      kontakt_epost: kontaktmail(b),
     },
     ekonomi: {
       ...p.ekonomi,

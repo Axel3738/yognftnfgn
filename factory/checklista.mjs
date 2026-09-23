@@ -74,7 +74,7 @@ export function checklistaVarden(butik, produkter = [], { pixelId = null, temaNa
     (text(b.supportmail)?.match(/@(.+)$/)?.[1] ?? null) ??
     text(prods[0]?.brand?.domanideer?.[0]) ??
     'DOMAIN';
-  const mail = text(b.supportmail) ?? `hello@${doman}`;
+  const mail = text(b.kontaktmail) ?? text(b.supportmail) ?? `hello@${doman}`;
   const land = text(b.land)?.toUpperCase() ?? null;
   const valuta = text(b.valuta) ?? 'CURRENCY';
   const marknader = lista(b.marknader)
