@@ -907,6 +907,15 @@ test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild 
   assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'the pump leaks and stopped working' }), 'vara');
   assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'trasig' }), 'leverans', 'oklart ⇒ leverans');
   assert.equal(fotonTypFor({}), 'leverans');
+  // Micke 2026-09-23 (bottens första skarpa svar): överdraget "passar inte … för tajt över motorkåpan" ⇒ 'passform' — bild på plats + mått/modell, aldrig fraktetiketten.
+  const micke = 'Jag vill bara tala om att motortäckningen som ska passa 100-150 hk motorer stämmer inte. Blev väldigt besviken, jag har en mercury 150 4 takt. Där passar inte överdraget för tajt över motorkåpan så ni bör ändra annonsen';
+  assert.equal(fotonTypFor({ klass: klassificera({ amne: 'Motortäckning', text: micke }), text: micke }), 'passform');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'fel_vara' }] }, text: 'Fick fel storlek, beställde L men fick M, den passar inte' }), 'leverans', 'fel vara skickad ⇒ leveransbilderna även om den inte passar');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'the cover is too tight and does not fit my engine' }), 'passform');
+  assert.equal(fotonTypFor({ klass: { alla: [{ id: 'skadad_defekt' }] }, text: 'paketet kom fram krossat och överdraget passar inte' }), 'leverans', 'transporten nämnd ⇒ leverans');
+  const p = skrivArgt({ sprak: 'sv', brand: KONFIG, xNyckel: 'fel_vara', foton: true, fotonTyp: 'passform', namn: 'Mikael' }).text;
+  assert.match(p, /skicka gärna en bild på varan på plats där den inte passar, och gärna mått eller modell på det den ska sitta på/);
+  assert.equal(/fraktetiketten|förpackningen/.test(p), false, 'inget om fraktetiketten för ett överdrag som inte passar');
   // Flödet: lugn Hans utan order på adressen ⇒ ENKEL foton, varianten 'vara', ordernumret efterfrågas.
   const b = new FalskBrevlada({ INBOX: [
     { uid: 93, ra: ra({ fran: 'Hans <hans@x.se>', amne: 'Bränslepump', text: 'Hej! Jag köpte en batteridriven bränslepump av er, den läcker och pumpar dåligt. Hur fortsätter jag?', id: '<w93@x.se>' }) },
@@ -928,9 +937,13 @@ test('Hans bränslepump 2026-09-22: varan har slutat fungera ⇒ "varan" + bild 
   for (const s of SPRAK) {
     const v = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'vara', behoverOrdernummer: true }).text;
     const l = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'leverans', behoverOrdernummer: true }).text;
+    const pf = skrivEnkelt({ typ: 'foton', sprak: s, brand: KONFIG, namn: 'Hans', fotonTyp: 'passform', behoverOrdernummer: true }).text;
     assert.notEqual(v, l, `${s}: varianterna skiljer sig`);
+    assert.ok(pf !== v && pf !== l, `${s}: passform är en egen variant`);
     assert.equal(harForbjudet(v), false, `${s}: inga löften i fotonVara`);
+    assert.equal(harForbjudet(pf), false, `${s}: inga löften i fotonPassform`);
     assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'skadad_defekt', foton: true, fotonTyp: 'vara' }).text), false, s);
+    assert.equal(harForbjudet(skrivArgt({ sprak: s, brand: KONFIG, xNyckel: 'fel_vara', foton: true, fotonTyp: 'passform' }).text), false, s);
   }
 });
 
