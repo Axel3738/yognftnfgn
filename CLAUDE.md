@@ -683,8 +683,11 @@ tasks". Full beskrivning: `stonebite/README.md` → "Baksidan".
   försäljningen), och veckorapporten är bara reserv för en butik Shopify inte
   svarar för. Mätt vid bygget: Bäverbutiken 58 tvister / 19 öppna / 17 väntar
   på svar, CaraShell 0, Matstrumpor 3 (alla avgjorda), HeimGuard och
-  AdventLane 0; **NO, DK och FI svarar 403 — apparna saknar
-  `read_shopify_payments_disputes`**, och sidan säger det i stället för noll.
+  AdventLane 0; NO, DK och FI svarade 403 (apparna saknade
+  `read_shopify_payments_disputes`) — ✅ **rättat samma dag 17:29–17:37 CEST**
+  av Cowork (ny appversion "tvister-2026-09-23" per app, bara den rättigheten
+  tillagd, godkänd i varje butiks admin). Mätt efteråt: NO 4 tvister / 1 öppen
+  (#1190, under review), DK 0, FI 0.
   Apparna (mätt 2026-09-23): NO "Bever No produkter claude", DK "DK
   claudeprodukter", FI "FI claudeprodukter" — alla tre med samma 13
   rättigheter (ordrar, fulfillments, produkter, innehåll, lager, rabatter,
