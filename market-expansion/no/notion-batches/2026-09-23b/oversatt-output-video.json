@@ -1,0 +1,87 @@
+{
+  "PD_2_H1": {
+    "malnamn": "Sotarset_NO_PD_2_H1",
+    "srt_no": "1\n00:00:00,060 --> 00:00:06,120\nBak ovnen kommer ingen stiv stang til. Skru sammen stengene, én etter én. Den bøyer seg dit du ikke når. Børsten kommer ut svart.\n\n2\n00:00:06,120 --> 00:00:10,600\nNi stenger, tre komma seks ni meter rekkevidde. Bestill tre hundre og åttini kroner.",
+    "copy": {
+      "message": "Bak ovnen kommer ingen rett stang til.\nDenne bøyer seg dit du ikke når selv.\n9 stenger, 3,69 m rekkevidde.\n389 kr, ned fra 509 kr.",
+      "headline": "Bak ovnen. Der stive stenger stopper.",
+      "description": ""
+    },
+    "andringar": [
+      "459 → 389 kr (bestill-raden i SRT och i annonstext)",
+      "Beloppet skrivs med bokstäver i SRT (fyrahundrafemtionio → tre hundre og åttini) och med siffror i annonstext (389 kr)",
+      "Svensk text lokaliserad till naturlig norsk bokmål"
+    ]
+  },
+  "PD_3_H1": {
+    "malnamn": "Sotarset_NO_PD_3_H1",
+    "srt_no": "1\n00:00:00,000 --> 00:00:04,040\nEn stiv stang setter seg fast i svingen. Denne gjør ikke det. Den bøyelige stangen følger svingen.\n\n2\n00:00:04,040 --> 00:00:05,540\nSkru på neste stang, fortsett.\n\n3\n00:00:05,540 --> 00:00:06,620\nSoten børstes løs.\n\n4\n00:00:06,666 --> 00:00:07,192\nNi stenger.\n\n5\n00:00:07,220 --> 00:00:08,480\nTre komma seks ni meter.\n\n6\n00:00:08,560 --> 00:00:10,320\nBestill tre hundre og åttini kroner.",
+    "copy": {
+      "message": "En stiv stang setter seg fast i svingen.\nDe fleksible stengene følger den — helt forbi.\n9 stenger som skrus sammen, én etter én.\n389 kr — spar 120 kr.",
+      "headline": "Følger svingen i pipa. Ikke stiv.",
+      "description": ""
+    },
+    "andringar": [
+      "459 → 389 kr (bestill-raden i SRT och i annonstext)",
+      "Sparbeloppet 120 kr (509−389) tillagt i annonstexten som CTA-rad — priskällan är prislistan, inte videon",
+      "Svensk text lokaliserad till naturlig norsk bokmål"
+    ]
+  },
+  "CS_2_H1": {
+    "malnamn": "Sotarset_NO_CS_2_H1",
+    "srt_no": "1\n00:00:00,050 --> 00:00:02,283\nFem hundre og ni kroner, men ikke lenger.\n\n2\n00:00:02,283 --> 00:00:06,703\nSpar hundre og tjue kroner. Ni stenger, én børste, én adapter. Alt i esken.\n\n3\n00:00:10,560 --> 00:00:12,340\nBestill tre hundre og åttini kroner.",
+    "copy": {
+      "message": "509 kroner, men ikke lenger.\nSpar 120 kr på feiesettet.\n9 stenger, børste og adapter — alt i esken.\n389 kr i dag.",
+      "headline": "509 kr er historie. Nå 389 kr.",
+      "description": ""
+    },
+    "andringar": [
+      "599 → 509 kr (block 1)",
+      "140 → 120 kr (block 2, 'spar'-raden)",
+      "459 → 389 kr (block 3, bestill-raden)",
+      "Alla belopp skrivs med bokstäver i SRT och med siffror i annonstext",
+      "Svensk text lokaliserad till naturlig norsk bokmål"
+    ]
+  },
+  "PD_5_H1": {
+    "malnamn": "Sotarset_NO_PD_5_H1",
+    "srt_no": "1\n00:00:00,000 --> 00:00:03,372\nÉn, to, tre, ni stenger. Tre komma seks ni meter.\n\n2\n00:00:04,134 --> 00:00:07,400\nBygg bare lengden du trenger. Bestill tre hundre og åttini kroner",
+    "copy": {
+      "message": "1, 2, 3 — ni stenger, 3,69 m rekkevidde.\nSkru på akkurat så mange du trenger.\nIngen rester, ingen overkjøp.\n389 kr, uansett lengde.",
+      "headline": "Bygg akkurat lengden du trenger",
+      "description": ""
+    },
+    "andringar": [
+      "459 → 389 kr (bestill-raden i SRT och i annonstext)",
+      "Svensk text lokaliserad till naturlig norsk bokmål"
+    ]
+  },
+  "PD_4_H1": {
+    "malnamn": "Sotarset_NO_PD_4_H1",
+    "srt_no": "1\n00:00:00,040 --> 00:00:01,100\nDette satt i røret.\n\n2\n00:00:03,878 --> 00:00:06,360\nIkke skrapt, børstet løs, ferdig på minutter.\n\n3\n00:00:06,360 --> 00:00:08,226\nBestill tre hundre og åttini kroner",
+    "copy": {
+      "message": "Dette satt fast i pipeløpet.\nIkke skrapt — børstet løs, klart på minutter.\nIngen sotete skraping, ingen snarveier tatt.\n389 kr for hele settet.",
+      "headline": "Ikke skrapt. Børstet løs på minutter.",
+      "description": ""
+    },
+    "andringar": [
+      "459 → 389 kr (bestill-raden i SRT och i annonstext)",
+      "Svensk text lokaliserad till naturlig norsk bokmål"
+    ]
+  },
+  "UG_1_H1": {
+    "malnamn": "Sotarset_NO_UG_1_H1",
+    "srt_no": "1\n00:00:00,060 --> 00:00:05,700\nJeg feide peisrøret selv. Uten feier. Man skrur sammen stengene, én etter én. Den bøyer seg rundt svingene.\n\n2\n00:00:05,840 --> 00:00:12,080\nSoten løsner. Sånn ser det ut. Tre hundre og åttini kroner sammenlignet med fem hundre og ni. Bestill tre hundre og åttini kroner.",
+    "copy": {
+      "message": "Jeg feide peisrøret selv — uten feier.\nStengene følger hver sving, sotet løsner.\nSlik ser resultatet ut.\nJeg betalte 389 kr, ikke 509.",
+      "headline": "Jeg feide selv. Uten feier.",
+      "description": ""
+    },
+    "andringar": [
+      "459 → 389 kr (två gånger i block 2: prisjämförelsen och bestill-raden)",
+      "599 → 509 kr (prisjämförelsen i block 2)",
+      "Beloppen skrivs med bokstäver i SRT och med siffror i annonstext",
+      "Svensk text lokaliserad till naturlig norsk bokmål, förstapersonsberättelsen bevarad"
+    ]
+  }
+}

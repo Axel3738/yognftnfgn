@@ -1,0 +1,7 @@
+1
+00:00:00,000 --> 00:00:03,372
+Ett, två, tre, nio stänger. Tre komma sex nio meter.
+
+2
+00:00:04,134 --> 00:00:07,400
+Bygg bara den längd du behöver. Beställ fyrahundrafemtionio kronor

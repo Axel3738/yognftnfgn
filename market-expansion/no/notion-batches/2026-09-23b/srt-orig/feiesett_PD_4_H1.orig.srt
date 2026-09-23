@@ -1,0 +1,11 @@
+1
+00:00:00,040 --> 00:00:01,100
+Det här satt i röret.
+
+2
+00:00:03,878 --> 00:00:06,360
+Inte skrapat, borstat loss, klart på minuter.
+
+3
+00:00:06,360 --> 00:00:08,226
+Beställ fyrahundrafemtionio kronor

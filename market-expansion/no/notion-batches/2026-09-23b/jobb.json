@@ -1,0 +1,759 @@
+{
+  "marknad": "NO",
+  "datum": "2026-09-23b",
+  "skapad": "2026-09-23T15:34:45.341Z",
+  "kvot": {
+    "heygen": 954,
+    "kie": 12373.2
+  },
+  "jobb": [
+    {
+      "notion": {
+        "id": "3e1270ab908c814e8f20e36bb48e5eb7",
+        "namn": "Inomhustofflor_CS_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_CS_3_H1-3e1270ab908c814e8f20e36bb48e5eb7",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_CS_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250342363910291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "Inomhustofflorna | CS | 2026-09-18"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "CS",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - CS",
+        "annonsNamn": "Inomhustofflor_NO_CS_3_H1",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c8169b08ecb513bd2021d",
+        "namn": "Inomhustofflor_SP_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_SP_3_H1-3e1270ab908c8169b08ecb513bd2021d",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_SP_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250342398460291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "Inomhustofflorna | SP | 2026-09-18"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "SP",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - SP",
+        "annonsNamn": "Inomhustofflor_NO_SP_3_H1",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c817b98b5ec3ddfffd1cb",
+        "namn": "Inomhustofflor_PD_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_PD_3_H1-3e1270ab908c817b98b5ec3ddfffd1cb",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_PD_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250342430430291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "Inomhustofflorna | PD | 2026-09-18"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - PD",
+        "annonsNamn": "Inomhustofflor_NO_PD_3_H1",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81a39bbdf77f3288ba61",
+        "namn": "Inomhustofflor_CO_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_CO_1_H1-3e1270ab908c81a39bbdf77f3288ba61",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_CO_1_H1",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250343361900291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "CO | Notionrunda 2026-09-23"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "CO",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - CO",
+        "annonsNamn": "Inomhustofflor_NO_CO_1_H1",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81a8b9a2e4d425c4f0aa",
+        "namn": "Inomhustofflor_SP_3_H2",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_SP_3_H2-3e1270ab908c81a8b9a2e4d425c4f0aa",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_SP_3_H2",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250342625020291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "Inomhustofflorna | SP | 2026-09-18"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "SP",
+      "nr": "3",
+      "hook": "H2",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - SP",
+        "annonsNamn": "Inomhustofflor_NO_SP_3_H2",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81be86d9e77b376aa039",
+        "namn": "Inomhustofflor_GT_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Indoor slippers creative hub",
+        "url": "https://app.notion.com/p/Inomhustofflor_GT_3_H1-3e1270ab908c81be86d9e77b376aa039",
+        "kalla": "notion-rest"
+      },
+      "namn": "Inomhustofflor_GT_3_H1",
+      "status": "HOPPA",
+      "skal": "\"Innetøfler NO | BE-ROAS 1,62 | 2026-09-19\" är PAUSED med 1798.17 kr spend — avvecklad, översätts inte",
+      "se": {
+        "annonsId": "120250342672770291",
+        "status": "ACTIVE",
+        "kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "kampanjId": "120250268503590291",
+        "adset": "Inomhustofflorna | GT | 2026-09-18"
+      },
+      "prefix": "Inomhustofflor",
+      "K": "GT",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Inomhustofflor",
+        "se_kampanj": "Inomhustofflorna i Kamouflage | BE ROAS 1.61 | Launch 2026-09-18",
+        "no_prefix": "Inomhustofflor",
+        "adset_prefix": "Inomhustofflor NO",
+        "campaign_id": "120252299606860233",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252299606860233",
+        "kampanjNamn": "Innetøfler NO | BE-ROAS 1,62 | 2026-09-19",
+        "utfall": "AVVECKLAD",
+        "spend": 1798.17,
+        "adsetNamn": "Inomhustofflor NO - GT",
+        "annonsNamn": "Inomhustofflor_NO_GT_3_H1",
+        "link": "https://beverbutikken.no/products/forede-innetofler-kamuflasje-herrestorrelse-40-47",
+        "prefix": "Inomhustofflor"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c817aa5add154a0916a14",
+        "namn": "Sotarset_PD_2_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_PD_2_H1-3e2270ab908c817aa5add154a0916a14",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_PD_2_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250342711370291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "Sotarsetet | PD | 2026-09-19",
+        "copy": {
+          "message": "Skruva ihop stängerna en efter en tills borsten når bakom kaminen.\nDen kommer ut svart.\nRäckvidden: 3,69 meter, byggd av 9 stänger.",
+          "headline": "Stång för stång bakom kaminen",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1131823909518225",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMIh4kgh5rGMIMl8h9yDQwN3FJ3NTO4IUNjgg-29yl9igR6kS9bMLakvKCUELPObRlWMYmQHTmaBDvVX8tyANbAMfcAH-ieQ0JTpbOg3ITkiQ.mp4?_nc_cat=106&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=JEVFwxYye78Q7kNvwEsuAUn&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExMTMzNzkzMDQ5Nzk0MzIsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=92f70412b85cde97&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85QjRCQTM0QTgzNEQ0MURGM0I5QUM2MkQ2MUVGRTE4Q19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzE5NDg4REQzOEE1MkY4QzcxQTFCOTkyREQ4Q0RBNEJBX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbQ78mfmqf6AxUCKAJDMywXQCUzMzMzMzMYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=GvYNbl2jd3RYuo0jFkdZSQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKI6BVH9n6JJh-ioR5Kin7m4rLj4j2nPw0RsMhVUveCiiqohclYTL_Nlp_Fcy__gb5HWE_IWHeOyg&oh=00_AQK7xxNH9U-RRgrFAbexBRpwRwokITO7W4xHTLkGUXcWZA&oe=6AB9C78A&bitrate=2032942&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 10.622
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "PD",
+      "nr": "2",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - PD",
+        "annonsNamn": "Sotarset_NO_PD_2_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358308450233",
+        "creativeId": "1073603142043866",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c8189b341db972772b4ec",
+        "namn": "Sotarset_PD_3_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_PD_3_H1-3e2270ab908c8189b341db972772b4ec",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_PD_3_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250342761840291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "Sotarsetet | PD | 2026-09-19",
+        "copy": {
+          "message": "Vid kröken tar den stela stången slut.\nDen böjliga fortsätter förbi den, stång för stång.\nSotet borstas loss.",
+          "headline": "Går runt kröken en stel inte gör",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1098128826010087",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQOmN8qI_THKZZNKDezqQ34V0tNomdT5U0isTluiuQ1Ao3pD-ORH72wA_9rIJXcjegh-bNlZjDYaMPSeN-Ho7kJYAXPuW9fMTAY4_7XC7TQVsA.mp4?_nc_cat=111&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=a6-4h9bC9jYQ7kNvwGgg1Lx&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwNzcxMDMxNTUzMDQ0MTEsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTAsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=8927ad6bcb22cca2&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8wNzQ0QUUzMUYzNjlDMjhCMkY0MUI0NTIyMDFGODI4OV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzhENEIwMzY5NUU0MTgyMDI0QTkwODMwMkRCNjFBQUE2X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa236rv0-fpAxUCKAJDMywXQCS7ZFocrAgYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=gp7YHQFasU3LCk1PI4qxgg&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJDHKW86RuoITkE0iQ2oFi1LGEQkgnuTmVaw09akyiGZx-S7_JCB1cKU5b947u2LQFjKh9PX50jZg&oh=00_AQJs5-3jILOBfzN5W-GtUS-el7hRJBQ7qPtiknKJVtcCXA&oe=6AB9DEE5&bitrate=2132729&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 10.388
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "PD",
+      "nr": "3",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - PD",
+        "annonsNamn": "Sotarset_NO_PD_3_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358314020233",
+        "creativeId": "1755700155682721",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c818ab635d1709d0ac52a",
+        "namn": "Sotarset_CS_2_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_CS_2_H1-3e2270ab908c818ab635d1709d0ac52a",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_CS_2_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250343411150291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "Sotarsetet | CS | 2026-09-19",
+        "copy": {
+          "message": "Prislappen ändras från 599 kr till 459 kr.\nI lådan: 9 stänger, en borste, en sexkantsadapter.\nInget mer, inget mindre.",
+          "headline": "599 kr. Nu 459 kr.",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "2148097502752262",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPhaqVmkONuac7o5FYHkb_vTOUa6NQYZT5QxujIfKEr49k5Fjd3-mUC4YsqoiAUMWdQu_t607GgJLSjl-hvromQbn2MfKOqAcfw-GCXuPkIUw.mp4?_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=iL9Dq-qbTusQ7kNvwGSwYa2&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjExNDM4Nzg0NTQ5ODk5MzEsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=ecf3ded18e7be23f&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xQjQzMzYyQzgxREExRTZCNEYzQTUwN0Y3RDQ1RjQ4Ml9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0YzNEJDQ0U2MzA4RjUyREQ1RDg3MjYyRjNFQUI4OTlFX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbW0c7PvpaIBBUCKAJDMywXQCi7ZFocrAgYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=9BD6bowNsFEBe44qGNVMbA&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJJiUtEONIeZV74j260F27USvL514bRHuDCWdkWpd5KDEIglA0Nf1l7wLueq3nAJrpFD2qehhqd4A&oh=00_AQKNXn3B0yVK-dYYW4kCZLF9ZQruv1mng9ObkHSu4xfICA&oe=6AB9B0DB&bitrate=2029788&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 12.393
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "CS",
+      "nr": "2",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - CS",
+        "annonsNamn": "Sotarset_NO_CS_2_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358317220233",
+        "creativeId": "1567844528372707",
+        "adsetId": "120252321102250233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c81959b4cc9cf239623b8",
+        "namn": "Sotarset_PD_5_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_PD_5_H1-3e2270ab908c81959b4cc9cf239623b8",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_PD_5_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250343462230291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "Sotarsetet | PD | 2026-09-19",
+        "copy": {
+          "message": "Räkna stängerna medan de skruvas ihop: 1, 2, 3… hela vägen till 9.\n3,69 meter fullt utbyggt.\nBygg bara den längd du faktiskt behöver.",
+          "headline": "1 till 9 stänger, du väljer",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1465820962024145",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPS7_BUsPmMi07sNXys4OtuwUBOsReceWNndvIvYg76sc9zb-yIlqrdS2tFxaWrGdP7q765IT284v0oHhpwvlaoyyOQT72RxGrjhZqzR48A7A.mp4?_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=8weNvKjy2ToQ7kNvwHc2TPx&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwNzcyMjEzMzUwMTcxNjYsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6NywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=3f8be2a274004253&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC85RTQwNTI2NDE1RkE1OTU2Qzc1NTMwQjI2OEI2M0ZBNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzgwNThGQUZGNjhBMTQzMkRCOEZDOUNGRUM2MEZFOTQwX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACacm6WwxO7pAxUCKAJDMywXQB2ZmZmZmZoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=bH1iIJoyaW6fbgdi8-kbTQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKKPqq3E6YThHXYMB0djshtMEBCy00HFHtM50cf96B70wpytsaCEfFhJ97Wk7JlLYcWKVVt3g1hPg&oh=00_AQKZRK51-Lz5ev1qdJnXk64rkEQRmJMxROlI8XbNbpxmeA&oe=6AB9CC3F&bitrate=1646130&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 7.401
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "PD",
+      "nr": "5",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - PD",
+        "annonsNamn": "Sotarset_NO_PD_5_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358320910233",
+        "creativeId": "986917997751116",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c81ea9b30e6abe45d5a0e",
+        "namn": "Sotarset_PD_4_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_PD_4_H1-3e2270ab908c81ea9b30e6abe45d5a0e",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_PD_4_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250343537630291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "Sotarsetet | PD | 2026-09-19",
+        "copy": {
+          "message": "En tidning läggs under rörets utlopp innan borsten dras igenom.\nDet som föll ner var inte skrapat ur röret, det var borstat loss.\nKlart på några minuter.",
+          "headline": "Filmat: vad som kom ur röret",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1389925376628407",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQOh2rKpB_TP_sb8jgMz4AkNGhVAEZHh52u8zoWAUpt5_8UONvJrsDAYfZPmgud8UvJ7MDsaFALEgBjIorj6MQygw1tF93wjBpgQPmEDKGHiAg.mp4?_nc_cat=104&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=XrpluPF0decQ7kNvwGh6lbV&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjM2MDk4NjY3MzU4NDIyNjcsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6OCwidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=c53a48820a6904cf&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81NzQ0MzE1RDI5QTFGRTU2MjFCRTEwOTBBMDBDQTY4QV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzU1NDUwMjNEMkE5M0I3MjFGMTdBNTE2OERBMjA2MThCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa2z8-H88npDBUCKAJDMywXQCB3S8an754YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=QPKZX1flU1L3lsS8RkRJRQ&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQJsigHJ1N7dMIS2qtgbc3PlpcvNFtjfpL0cX9kfWG1k8bDGjOdMdeE6WjQgeFeWoy8YH_b7Gbo2OA&oh=00_AQJMvLUp2TIRlLEBWnpXkqTdxJeNy511dQ1fm8aBiG5YTw&oe=6AB9B224&bitrate=2808424&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 8.254
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "PD",
+      "nr": "4",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - PD",
+        "annonsNamn": "Sotarset_NO_PD_4_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358324240233",
+        "creativeId": "2043040473050780",
+        "adsetId": "120252321093480233",
+        "adsetSkapat": false,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e2270ab908c81f4ab03e4363a696889",
+        "namn": "Sotarset_UG_1_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "Chimney sweep set creative hub",
+        "url": "https://app.notion.com/p/Sotarset_UG_1_H1-3e2270ab908c81f4ab03e4363a696889",
+        "kalla": "notion-rest"
+      },
+      "namn": "Sotarset_UG_1_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250343609070291",
+        "status": "ACTIVE",
+        "kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "kampanjId": "120250284693380291",
+        "adset": "UG | Notionrunda 2026-09-23",
+        "copy": {
+          "message": "En vanlig person skruvar ihop stängerna framför kameran.\nBöjer sig runt kröken, drar ut borsten svart av sot.\n459 kr, jämfört med 599 kr.",
+          "headline": "Sotade kaminröret själv",
+          "description": "",
+          "link": "https://baverbutiken.se/products/sotarset-med-bojliga-stanger-rensar-rokkanal-och-kaminror"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1538104168345117",
+          "url": "https://video-ord5-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQORrzT4cOO8jiyYi-cRze1y-_dFUOfr_utvtS5KskOO53sv1avECzMHPJawd17hadm0BQ5VcXRC2ip2hYleozVoOQR56WrwYvt5MzCsmlcIBA.mp4?_nc_cat=101&_nc_sid=5e9851&_nc_ht=video-ord5-1.xx.fbcdn.net&_nc_ohc=w_9fA7_EIHMQ7kNvwGO3W0H&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwOTc1NjQ3MDI2ODUyNDAsImFzc2V0X2FnZV9kYXlzIjowLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTIsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=11a53e7b0349a46a&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC81ODQyNDY1OEE0RDY3N0ExNjNDNEQ0QzUxNjVERkNBMF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzYzN0E2QTlFNDkyRjQ0MDJBNEM5RDcwRkIwRTVCRTY3X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbw4MWj1o7zAxUCKAJDMywXQChEGJN0vGoYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=V4ASUDLfs7UXtKUih4ZDmw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQKEaCDXREBM5EmKhM7AHOaL0th-Q6kvCTEdrgIyrCSna9_MLKSUpsAYDjZXGsTxnXLfQzG2Mxl7pg&oh=00_AQIyI8wmS0gKUNWGB4vwj9_0hxb2PC5a4UBXEfypLgRAAA&oe=6AB9D433&bitrate=1640217&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 12.137
+        }
+      },
+      "prefix": "Sotarset",
+      "K": "UG",
+      "nr": "1",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "Sotarset",
+        "se_kampanj": "Sotarsetet med Böjliga Stänger | BE ROAS 1.61 | Launch 2026-09-19",
+        "no_prefix": "Sotarset",
+        "adset_prefix": "Feiesett NO",
+        "campaign_id": "120252321093160233",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120252321093160233",
+        "kampanjNamn": "Feiesett NO | BE-ROAS 1,62 | 2026-09-21",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "Feiesett NO - UG",
+        "annonsNamn": "Sotarset_NO_UG_1_H1",
+        "link": "https://beverbutikken.no/products/feiesett-med-fleksible-stenger-renser-pipe-og-roykror",
+        "prefix": "Sotarset",
+        "status": "ACTIVE",
+        "annonsId": "120252358327170233",
+        "creativeId": "1076974461978504",
+        "adsetId": "120252358325170233",
+        "adsetSkapat": true,
+        "effective_status": "IN_PROCESS"
+      },
+      "pris": {
+        "pris": "389.00",
+        "jamforpris": "509.00",
+        "titel": "Feiesett Med Fleksible Stenger – Renser Pipe Og Røykrør",
+        "handle": "feiesett-med-fleksible-stenger-renser-pipe-og-roykror"
+      }
+    },
+    {
+      "notion": {
+        "id": "3e1270ab908c81baa747e6932b6a8e2b",
+        "namn": "IBC_CS_9_H1",
+        "typ": "Video - Pending Approval",
+        "status": "SE-ACTIVE to be translated",
+        "hub": "BÄVER IBC-Tanköverdraget",
+        "url": "https://app.notion.com/p/IBC_CS_9_H1-3e1270ab908c81baa747e6932b6a8e2b",
+        "kalla": "notion-rest"
+      },
+      "namn": "IBC_CS_9_H1",
+      "status": "KÖR",
+      "skal": null,
+      "se": {
+        "annonsId": "120250312659050291",
+        "status": "ACTIVE",
+        "kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "kampanjId": "120250001079150291",
+        "adset": "CS",
+        "copy": {
+          "message": "489 kr för skyddet – jämförpris 636 kr, alltså 147 kr billigare.\nTyget är 210D Oxford – du ser det i närbilden.\nDras igen på under två minuter, direkt över tanken.",
+          "headline": "489 kr – 147 kr billigare än jämförpris",
+          "description": "",
+          "link": "https://baverbutiken.se/products/ibc-tankoverdrag-1000-l-stoppar-alger-uv"
+        },
+        "media": {
+          "typ": "video",
+          "video_id": "1785606832453033",
+          "url": "https://video-ord5-2.xx.fbcdn.net/o1/v/t2/f2/m366/AQM5qV00ax2kKwaeHRaO2Dpk8qXr_uCpAjSutoOXC8jAhOtKz7ot13HejmExzF-u8Nk4oVE9OIAR4cm7cK14PdWGDDhYrLWALX_3cZNF0QXAYA.mp4?_nc_cat=107&_nc_sid=5e9851&_nc_ht=video-ord5-2.xx.fbcdn.net&_nc_ohc=Ml9RZGFc-lgQ7kNvwF5yw2_&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5GQUNFQk9PSy4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjEwOTU1ODUxOTAwNzYzNTgsImFzc2V0X2FnZV9kYXlzIjoyLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MTQsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=9ecebcfac6d360d0&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC82MTQ4NEUzOEVFQzY5NDE3QTdDRDhENkJCOURCRUI5RF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0Q1NDM1QUI5MzQ0NTU3NkNEM0NBNzc3MTI5MjNGQ0JCX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACaM_5rhuZvyAxUCKAJDMywXQCwAAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUCZbaeAQA&_nc_gid=YPPvFfTff7uWJAR3M1axVw&edm=APRAPSkEAAAA&_nc_zt=28&_nc_tpa=Q5bMBQIY01xrHvzOyirUPjcDh44BAywl0ZkYeVPdyWo0I-91MWAUhyobE8rDvzWTacvH6aWmUKtEypItnA&oh=00_AQLB8EirN73V-n-DudGNQPxm_4c01ey0yY7aNOuZS1q5ew&oe=6AB9A9C1&bitrate=1441258&tag=dash_h264-basic-gen2_720p",
+          "langd_s": 14.032
+        }
+      },
+      "prefix": "IBC",
+      "K": "CS",
+      "nr": "9",
+      "hook": "H1",
+      "typ": "video",
+      "produkt": {
+        "se_prefix": "IBC",
+        "se_kampanj": "IBC-Tanköverdraget | BE ROAS 1.51 | Launch 2026-08-28",
+        "no_prefix": "IBC-tanktrekk",
+        "adset_prefix": "IBC-tanktrekk NO",
+        "campaign_id": "120251996323340233",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv"
+      },
+      "mal": {
+        "kod": "NO",
+        "kampanjId": "120251996323340233",
+        "kampanjNamn": "IBC-tanktrekk NO | BE-ROAS 1,63 | 2026-08-29",
+        "utfall": "ACTIVE",
+        "spend": null,
+        "adsetNamn": "IBC-tanktrekk NO - CS",
+        "annonsNamn": "IBC-tanktrekk_NO_CS_9_H1",
+        "link": "https://beverbutikken.no/products/ibc-tanktrekk-1000-l-stopper-alger-uv",
+        "prefix": "IBC-tanktrekk",
+        "status": "SAKNAR_COPY"
+      },
+      "pris": {
+        "pris": "439.00",
+        "jamforpris": "586.00",
+        "titel": "IBC-tanktrekk 1000 L – Stopper Alger & UV",
+        "handle": "ibc-tanktrekk-1000-l-stopper-alger-uv"
+      }
+    }
+  ]
+}
