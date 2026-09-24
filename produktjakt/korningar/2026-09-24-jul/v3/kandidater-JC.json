@@ -1,0 +1,99 @@
+{
+ "agent": "JC — speltillbehör för spelkvällen",
+ "datum": "2026-09-24-jul",
+ "sammanfattning": "Temus 'Spel & tillbehör' sökt på AliExpress via 14 fraser och 8 öppnade produktsidor, med svenska golvet läst FÖRE varje sökning. Kategorin är tunn för kontots avatar: nästan varje form (kortblandare, korthållare, bingotrumma, bordscurling, dart, airhockey, magnetschack) finns i exakt samma form hos Spelexperten/Boardgamer/Varsam/Lekia/Pokerbutiken under vårt pris, eller ser ut som 99 kr (K8). En kandidat klarar alla grindar: pusselbrädan med sex sorteringslådor — ägd friktion (pusslet ockuperar matbordet fram till julbordet), upplevt värde, golv bara ÖVER oss (Relaxdays 991, CDON 998/1 679), fraktbar, LIVE_VERIFIED. Kortgivaren (360°, maskinen som delar) var den näst starkaste men faller på BE-CPA < 190 vid landad 670–909 mot CDON-ankare 832. Hellre 1 som klarar allt än 5 som inte gör det.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Pusselbrädan med sex lådor",
+   "objekt": "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul",
+   "form": "annat",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": ["agare_55plus_smahus", "hårt datum (jul)", "inomhus/gåva — motbevisat kill", "svikande default (pusslet på en kartongbit/matbordet)"],
+    "avvikelser": ["objekt_ute nej", "ingen kalenderform", "prisband 500–999 i stället för 300–499"]
+   },
+   "sasong": {"fonster_id": "julafton", "deadline_typ": "jul", "veckor_kvar": 13.0, "timing": "NOW"},
+   "listning": {
+    "product_id": "1005013215036443",
+    "url": "https://www.aliexpress.com/item/1005013215036443.html",
+    "pris_usd": 33.42,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:14:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005013215036443.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek 77 × 53,6 cm (1000 bitar); titeln nämner stativ + skyddslock — om det är en variant ovanför minpriset är ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Heron har inbränd rubrik uppe till vänster (måste beskäras) men visar brädan i vardagsrum med sex utdragna lådor fulla av bitar — friktionen syns. Textfri hero i kontext finns på syskonlistningen 1005012330279430 (36,44 USD, kvinna som pusslar, 2026-09-24T07:14:27Z) — men pusselmotivet där är Nalle Puh (Disney-IP), använd inte den bilden rakt av."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {"aktor": "Relaxdays.se — lutande pusselbräda 1000 bitar, 2 lådor", "pris_sek": 991, "url": "https://relaxdays.se/sport-fritid/spel/familjespel/lutande-pusselbrada-for-1000-bitar-10050252.html", "exakt_samma_form": true},
+    "premium_ankare": {"namn": "CDON — Puzzle Ready träpusselbräda 1000 bitar 998 kr / pusselbräda med 4 lådor 1 679 kr (ur sökträff 2026-09-24, produktsidan 403)", "pris_sek": 998, "url": "https://cdon.se/produkt/pusselbrada-med-lador-och-tackmatta-b118618ec31f4667/", "i_sortiment": true},
+    "ankare_kvot": 1.25,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": ["relaxdays.se (991 kr, läst)", "cdon.se (998 / 1 679 kr ur sökträff, sidan 403)", "adlibris.com — Portapuzzle pusselMATTA 531–707 kr (annan form, ingen låda)", "24.se (pusselbord i trä med lådor, sidan visade inget pris)", "amazon.se (503 — OLÄST: troligen flera brädor 500–900 kr, huvudrisken)", "jula/rusta/lekia/clasohlson (bara pussel, ingen bräda med lådor i sökträffarna)"]
+   },
+   "ekonomi": {
+    "landad_sek": [435, 532],
+    "pris_sek": 799,
+    "brutto_sek": [267, 364],
+    "be_cpa_sek": [267, 364],
+    "be_roas": 2.53,
+    "flerkop": false,
+    "returrisk": "låg — en storlek, inget att mäta; skör kant på filt/trä är fraktrisken"
+   },
+   "meta_tanke": {
+    "hook": "Ligger pusslet på matbordet till jul?",
+    "objekt_i_bild": "halvfärdigt 1000-bitarspussel som lyfts från matbordet i ett grepp, lådorna dras ut",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brädan lyfts med pusslet intakt och ställs mot väggen — bordet är fritt att duka; sex lådor med sorterade bitar"
+   },
+   "varfor": "Ägd friktion som 55+ känner igen på 3 s (pusslet blockerar matbordet i veckor) och ett hårt datum (julbordet ska dukas) — samma struktur som kalendern: svikande default (kartongbit/duk) ersätts av en sak med synligt högt upplevt värde. Golvet ligger bara ÖVER oss (991–1 679 kr) medan billigare svenska alternativ är mattor utan lådor.",
+   "huvudrisk": "Amazon.se gick inte att läsa (503) och har sannolikt flera brädor 500–900 kr; BE-ROAS 2,5 är högt för kontot om CPA hamnar över 300.",
+   "konfidens": "MEDEL",
+   "poang": {"vinnarlikhet": 1, "meta_creative": 2, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 2, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+   "per_kriterium": {"K0": "ok", "K1": 10, "K2": 12, "K3": 8, "K4": 8, "K5": 7, "K6": 8, "K7": 4, "K8": 9, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+   "k0": {"dubblett": false, "kollat": ["katalog-live.txt (bara Pussel Adventskalender — annan sak)", "koncept.py sok pussel/puzzle (0 träffar)", "kontot ej läst (rutinen rör inte Meta)"]},
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013215036443.html",
+    "https://www.aliexpress.com/item/1005012330279430.html",
+    "https://relaxdays.se/sport-fritid/spel/familjespel/lutande-pusselbrada-for-1000-bitar-10050252.html",
+    "https://cdon.se/produkt/pusselbrada-med-lador-och-tackmatta-b118618ec31f4667/",
+    "https://www.adlibris.com/sv/produkt/pusselmatta-portapuzzle-standard-upp-till-1000-bitar-jumbo-54637465"
+   ]
+  }
+ ],
+ "strukna": [
+  {"namn": "Elektrisk kortblandare (2 lekar, plast, AA) — Axels artros-idé", "skal": "Exakt samma form under oss: Boardgamer 179 kr, PartyVikings 199 kr (i lager), Pokerbutiken plast 329 / X1 499 kr. Träversionen (AliExpress 41–54 USD → landad 595–776, pris 999) hamnar 2× ÖVER ankaret X1 499 kr — lucka 0. Heron (1005012768869699) är kasinomiljö med roulette, inte 55+-vardagsrum."},
+  {"namn": "Automatisk kortgivare 360° (delar ut till 8 spelare)", "skal": "Starkaste visuella nyheten i kategorin men ekonomin faller: 51,45–62,87 USD → landad 670–909 kr, pris max 999 → BE-CPA 90–329, undre kant < 190. CDON säljer samma form för 832 kr (ur sökträff, sidan 403) — ankare under oss. 2-i-1 med blandare 106–151 USD är helt utom räckhåll."},
+  {"namn": "Korthållare i trä 4-pack (händer som inte orkar hålla 13 kort)", "skal": "Varsam (hjälpmedel) säljer samma böjda trähållare för 80 kr styck, Boardgamer 119 kr, Lekolar 2-pack. Sökträffens minpris 10,59–13,65 USD gäller troligen 2-packet, 4-packet ej mätt → BE-CPA går inte att sätta ärligt. K8: fyra träribbor ser ut som 99 kr styck oavsett pris."},
+  {"namn": "Bingotrumma med kulor (metallbur)", "skal": "Exakt samma form under oss: Boardgamer 229 kr (i lager), Relaxdays 451 kr; Spelexpertens deluxe 749/629 kr utgått. Elektronisk bingomaskin gav noll relevanta träffar på AliExpress och Amazon.se/CDON gick inte att läsa (503/403)."},
+  {"namn": "Elektronisk dartavla med LED-segment", "skal": "Golv utan LED: Spelexperten Catdart 299 / Longfield 399 kr; LED-modeller 1 691+ kr slut i lager (Dartshop). AliExpress LED 68–111 USD → landad 992–1 600 kr — över pristaket. 50-dollarsmodeller är utan LED = golvets form."},
+  {"namn": "Bordscurling / bordsshuffleboard i trä", "skal": "Spelexperten Curling & Shuffleboard 180 × 40 cm 459 kr i lager, Compact Curling 149 kr, CDON shuffleboard från 302 kr — exakt samma form under oss."},
+  {"namn": "Golvcurling (stenar på kullager, inomhus)", "skal": "Fackhandel för skola/äldreboende (Lekolar, Lekakademin, Unisport) har formen; 8 stenar väger 3–4 kg; AliExpress säljer lösa stenar 18 USD/st — ingen set-listning att verifiera."},
+  {"namn": "Bordsairhockey batteridriven", "skal": "Lekia 499 kr (69 × 37 cm) — samma form som AliExpress 18,59 USD; dessutom syskon till Bordsfotbollen 439 kr vars utfall inte är sett."},
+  {"namn": "Svarsknappar / quiz-buzzers 4-pack", "skal": "6–18 USD plastknappar → pris max 399 och ser ut som 99 kr (K8); Amazon.se har flera set (503, oläst). Ingen ägd friktion — bara nyhet."},
+  {"namn": "Bordtennisrobot (bollmaskin)", "skal": "Utanför strukturen (spelkvällen/julbordet); minimodellerna 33 USD ser ut som leksak, riktiga 298–359 USD; Amazon.se-sortimentet oläst (503)."},
+  {"namn": "Magnetiskt schack/backgammon i trä, pokerset i aluminiumväska, storstilskortlekar, tärningstorn, spelbordsduk", "skal": "Golv i samma form hos Spelexperten/Adlibris/Rusta; Luffarschacket i trä är REAL_LOSER (0,36) som närmaste syskon; pokerset > 3 kg; kortlekar/duk/torn ser ut som 99 kr."},
+  {"namn": "Bordtennisnät för matbordet", "skal": "K0: Bordtennisnät Infällbart 309 kr finns redan i katalogen."},
+  {"namn": "Ordbrädspel 'hänga gubbe' med snurrande hjul (Temu 606456829034765) och kloner", "skal": "Förbjuden av Axel — vännen har den. Inte sökt."}
+ ]
+}
