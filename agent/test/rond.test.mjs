@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { annonsbehov, annonskvot, spegelbudget, SPEGEL_BRIEFER_PER_MARKNAD, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, dygnsvarningar, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
+import { annonsbehov, annonskvot, spegelbudget, arAvstangd, attributionsvarning, bedomKampanj, bedomSurf, breakEvenForPost, cpaTrendRader, dygnsvarningar, efterMidnatt, kontrolleraKonto, planera, rapport, rundkvot, visningsvarning, visningsvarningar, TILLATET_KONTO } from '../rond.mjs';
 
 const bas = () => ({
   hamtad: '2026-08-28T07:00:00Z',
@@ -905,12 +905,6 @@ test('spegelbudget: bara ACTIVE kampanjer som matchar mönstret, ihopslagna per 
   assert.equal(spegelbudget(post, null), null);
 });
 
-test('rundkvot: spegelmarknaderna ger SPEGEL_BRIEFER_PER_MARKNAD extra per marknad — 0 tills Axel valt talet', () => {
-  assert.equal(rundkvot(16000, { marknader: 4 }), 8 + 4 * SPEGEL_BRIEFER_PER_MARKNAD);
-  assert.equal(rundkvot(16000), 8);
-  assert.equal(rundkvot(0, { marknader: 4 }), 0);     // ingen egen budget — ingen runda
-});
-
 test('annonsbehov: spegeln följer med i behovsraden och i orsaken', () => {
   const rader = [{ id: 'a', namn: 'Tak | BE ROAS 1.50', spendTotal: 90000, budget: 16000, dom: { vinstProcent: 30 } }];
   const lardom = (n) => ({ kampanj_id: 'a', kod: 'LARDOM', annons_id: `${n}`, lardom_id: `L-${n}`, genomford: true, datum: '2026-09-21' });
@@ -919,8 +913,21 @@ test('annonsbehov: spegeln följer med i behovsraden och i orsaken', () => {
   const behov = annonsbehov(rader, { logg, idag: '2026-09-24', spegel: sp });
   assert.equal(behov.length, 1);
   assert.equal(behov[0].spegel.antal_marknader, 2);
-  assert.equal(behov[0].budgetAntal, rundkvot(16000, { marknader: 2 }));
-  assert.match(behov[0].orsak, /2 spegelmarknad\(er\).*US 16.000 kr\/dag/);
+  assert.equal(behov[0].budgetAntal, rundkvot(16000, { spegelBudgetSek: 20000 }));
+  assert.match(behov[0].orsak, /räknat på 36.000 kr\/dag totalt — SE 16.000 kr \+ spegel 20.000 kr på 2 marknad\(er\): US 16.000 kr\/dag/);
   // Utan spegel: som förut.
   assert.equal(annonsbehov(rader, { logg, idag: '2026-09-24' })[0].spegel, null);
+});
+
+test('spegelmarknaderna i kvoten (Axel 2026-09-24): totala spenden genom samma kurva — inga extra per marknad, ingen linjär skalning', () => {
+  // Taköverdraget: 16 000 i SE + 43 600 på CaraShell ⇒ fortfarande 8 (kurvan planar ut vid 3 000).
+  assert.equal(rundkvot(16000, { spegelBudgetSek: 43600 }), 8);
+  assert.equal(rundkvot(16000), 8);
+  // Termoskyddet: 2 300 i SE ger 6; med 4 000 på CaraShell NO räknas 6 300 ⇒ 8.
+  assert.equal(rundkvot(2300), 6);
+  assert.equal(rundkvot(2300, { spegelBudgetSek: 4000 }), 8);
+  // Ingen spegel, ogiltig spegel: som förut.
+  assert.equal(rundkvot(1000, { spegelBudgetSek: 0 }), 4);
+  assert.equal(rundkvot(1000, { spegelBudgetSek: null }), 4);
+  assert.equal(rundkvot(0, { spegelBudgetSek: 50000 }), 8, 'en produkt utan SE-budget men med spegling får ändå sin kvot');
 });

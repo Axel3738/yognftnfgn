@@ -161,10 +161,15 @@ filen: `hamtad`, `konton.<id>.kampanjer[]` med `namn`, `effective_status`,
 `null` när det saknas). Committa filen i samma push som loggen. `rond.mjs`
 läser den själv: produkter med `speglar.monster` i `produktkarta.json` får
 sina aktiva spegelmarknader räknade (`spegelbudget()`), rapporten får
-avsnittet `## 🪞 Spegelmarknader`, och `rundkvot` lägger på
-`SPEGEL_BRIEFER_PER_MARKNAD` extra briefer per marknad. **Talet är 0 tills
-Axel valt det** — ändra konstanten i `agent/rond.mjs` när han svarat, aldrig
-på egen hand. Är filen äldre än 20 timmar varnar ronden och räknar utan den.
+avsnittet `## 🪞 Spegelmarknader`, och **`rundkvot` räknar på produktens
+totala dagsbudget — SE plus spegelmarknaderna — genom samma kurva som
+förut** (planar ut vid 3 000 kr/dag ⇒ 8 briefer per runda). Inga extra
+briefer per marknad, ingen linjär skalning med spenden — Axels besked
+2026-09-24 på båda förslagen: "Bro bara ta hänsyn till spenden" respektive
+"Asså du är galen". Taköverdraget får alltså 8 med eller utan sina
+43 600 kr på CaraShell; Termoskyddet (2 300 kr i SE) går från 6 till 8 när
+marknaderna räknas. Är filen äldre än 20 timmar varnar ronden och räknar
+utan den.
 
 ## 2. Räkna — en gång per marknad
 

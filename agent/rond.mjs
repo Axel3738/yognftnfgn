@@ -605,9 +605,10 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE', spe
     if (harBatch) {
       if (dagarSedanBatch !== null && dagarSedanBatch < BRIEF_INTERVALL_DAGAR) continue; // låt batchen landa
       // Spegelmarknaderna (Axel 2026-09-24): CaraShells budget i OPS- och
-      // USA-kontot räknas in i kvoten — så många marknader, så många extra.
+      // USA-kontot läggs på SE-budgeten innan kvoten räknas — samma kurva,
+      // inga extra per marknad ("bara ta hänsyn till spenden").
       const sp = spegel?.[r.id] ?? null;
-      const budgetAntal = rundkvot(r.budget, { marknader: sp?.antal_marknader ?? 0 });
+      const budgetAntal = rundkvot(r.budget, { spegelBudgetSek: sp?.budget ?? 0 });
       if (budgetAntal === 0) continue; // ingen budget — ingen runda
       // Punkt 8: antalet briefer överstiger aldrig antalet lärdomar vi hunnit
       // skriva sedan förra batchen. Budgeten sätter bara ett övre golv.
@@ -636,7 +637,7 @@ export function annonsbehov(rader, { logg = [], idag = null, marknad = 'SE', spe
         dagarSedanBatch, rundaAntal, budgetAntal, brieftak: tak, mix: m, funnellage: Boolean(r.funnellage), invandningar: r.invandningar ?? null, spegel: sp,
         orsak: rundaAntal === 0
           ? `${dagarSedanBatch} dagar sedan senaste batchen, men 0 lärdomar skrivna sedan dess (${tak.etiketterade_utan_lardom} etiketterade annonser utan lärdom) — inga briefer förrän lärdomarna finns (punkt 8): node agent/lardom.mjs --skelett --kampanj ${r.id}.${fokus}${funnel}`
-          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}${sp?.antal_marknader ? ` inkl. ${sp.antal_marknader} spegelmarknad(er) à ${SPEGEL_BRIEFER_PER_MARKNAD}: ${sp.marknader.map((x) => `${x.kod} ${kr(x.budget)}/dag`).join(', ')}` : ''}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}${funnelBygg.length ? ` + ${funnelBygg.length} rutor i matrisen` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}${funnel}`,
+          : `${dagarSedanBatch} dagar sedan senaste batchen — dags för 3-dagarsrundan (${rundaAntal} annonser via /cs; budgeten hade gett ${budgetAntal}${sp?.antal_marknader ? ` räknat på ${kr(r.budget + sp.budget)}/dag totalt — SE ${kr(r.budget)} + spegel ${kr(sp.budget)} på ${sp.antal_marknader} marknad(er): ${sp.marknader.map((x) => `${x.kod} ${kr(x.budget)}/dag`).join(', ')}` : ''}, lärdomarna sedan förra batchen ${tak.tak}${tak.namngivna?.length ? ` + ${tak.namngivna.length} namngivna i lärdomarna: ${tak.namngivna.join(', ')}` : ''}${funnelBygg.length ? ` + ${funnelBygg.length} rutor i matrisen` : ''}). Mix ${Math.round(m.vidarebyggen * 100)} % vidarebyggen / ${Math.round(m.nya * 100)} % nya vinklar (${m.skal}).${fokus}${funnel}`,
       });
       continue;
     }
@@ -691,17 +692,24 @@ export const RUNDA_MINST = 4;
 /**
  * Spegelmarknaderna (Axels beslut 2026-09-24): "jag sköter budgetarna, men
  * jag vill att du tar hänsyn till hur mycket spend de marknaderna får och
- * sen utifrån det hur många briefs vi gör." Varje aktiv spegelmarknad
- * (CaraShell SE/NO/DK/US/AU …) ger så här många briefer EXTRA per runda,
- * ovanpå Bäverbutikens egen rundkvot. **0 tills Axel valt talet** — då står
- * marknaderna bara i rapporten. Talet är hans, aldrig motorns.
+ * sen utifrån det hur många briefs vi gör" — och samma morgon, på förslaget
+ * "N extra briefer per marknad": "Bro bara ta hänsyn till spenden", och på
+ * en kvot som växte linjärt med spenden: "Asså du är galen".
+ *
+ * Så: kvoten räknas på produktens TOTALA dagsbudget — Bäverbutikens plus
+ * spegelmarknadernas (`spegelBudgetSek`) — genom SAMMA kurva som förut
+ * (`annonskvot`, planar ut vid 3 000 kr/dag ⇒ 4 i veckan, 8 per runda).
+ * Inga extra briefer per marknad, ingen linjär skalning: 59 600 kr/dag ger
+ * inte fler briefer än 4 000 — det är med flit (Jasper klarar 50–70 i
+ * veckan för hela butiken). Skillnaden syns för produkter vars SE-budget
+ * är liten men speglingen stor: Termoskyddet på 2 300 kr i SE hade fått
+ * 6, med CaraShells marknader räknade får den 8.
  */
-export const SPEGEL_BRIEFER_PER_MARKNAD = 0;
-export function rundkvot(budgetSek, { marknader = 0 } = {}) {
-  const vecka = annonskvot(budgetSek).antal;
+export function rundkvot(budgetSek, { spegelBudgetSek = 0 } = {}) {
+  const total = (Number.isFinite(budgetSek) ? budgetSek : 0) + (Number.isFinite(spegelBudgetSek) && spegelBudgetSek > 0 ? spegelBudgetSek : 0);
+  const vecka = annonskvot(total).antal;
   if (vecka === 0) return 0;
-  const extra = Number.isFinite(marknader) && marknader > 0 ? marknader * SPEGEL_BRIEFER_PER_MARKNAD : 0;
-  return Math.max(RUNDA_MINST, vecka * 2) + extra;
+  return Math.max(RUNDA_MINST, vecka * 2);
 }
 
 /**
@@ -856,11 +864,11 @@ export function rapport(rader, meta, behov = []) {
   if (speglade.length) {
     ut.push(`## 🪞 Spegelmarknader — CaraShell (${speglade.length} produkt${speglade.length === 1 ? '' : 'er'})`);
     ut.push('');
-    ut.push(`Budgetarna där är Axels (rörs aldrig av motorn). De räknas in i briefkvoten: ${SPEGEL_BRIEFER_PER_MARKNAD} extra brief(er) per aktiv marknad (SPEGEL_BRIEFER_PER_MARKNAD${SPEGEL_BRIEFER_PER_MARKNAD === 0 ? ' — 0 tills Axel valt talet' : ''}).`);
+    ut.push('Budgetarna där är Axels (rörs aldrig av motorn). Briefkvoten räknas på produktens totala dagsbudget — SE plus spegelmarknaderna — genom samma kurva som förut (planar ut vid 3 000 kr/dag ⇒ 8 per runda). Inga extra briefer per marknad.');
     ut.push('');
     for (const r of speglade) {
       const s = meta.spegel[r.id];
-      ut.push(`- **${r.namn.split('|')[0].trim()}** — Bäverbutiken ${kr(r.budget)}/dag + spegel ${kr(s.budget)}/dag på ${s.antal_marknader} marknad(er): ${s.marknader.map((m) => `${m.kod} ${kr(m.budget)}/dag (3 d ${kr(m.spend_3d)})`).join(', ')}`);
+      ut.push(`- **${r.namn.split('|')[0].trim()}** — Bäverbutiken ${kr(r.budget)}/dag + spegel ${kr(s.budget)}/dag på ${s.antal_marknader} marknad(er): ${s.marknader.map((m) => `${m.kod} ${kr(m.budget)}/dag (3 d ${kr(m.spend_3d)})`).join(', ')} ⇒ kvoten räknas på ${kr(r.budget + s.budget)}/dag: ${rundkvot(r.budget, { spegelBudgetSek: s.budget })} per runda (SE ensamt ${rundkvot(r.budget)})`);
     }
     ut.push('');
   }
