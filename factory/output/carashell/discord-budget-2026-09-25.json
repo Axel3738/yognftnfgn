@@ -1,0 +1,24 @@
+{
+  "brand": "CaraShell",
+  "butik": "carashell",
+  "datum": "2026-09-25",
+  "lage": "budget",
+  "server": "CaraShell — OPS",
+  "gjort": [
+    "Budget round: the main campaign is cut 9 600 → 6 750 kr/day. Its 3-day ROAS is 1.54 against break-even 1.63 — the campaign is now losing money at this budget, profit -3.7 %. The cadence lock that held it yesterday expired, so the cut went through. Read back and logged",
+    "The LISTICLE campaign holds at 2 000 kr and is back in the hold band: 3-day profit 23.8 % at ROAS 2.66, up from 11.1 % last night. Cutting it 2 850 → 2 000 yesterday fixed it in one day",
+    "Paused two ads: CaraShellRoof_CS_110_1 (1 461 kr, 2 purchases, CPA 731 kr) and CaraShellRoof_LI_102_1 (1 294 kr, 1 purchase, CPA 1 294 kr) — both over break-even CPA 693 kr with more than three times the target CPA spent",
+    "108 purchases over 7 days on 61 852 kr at ROAS 2.45. Profit contribution 31 253 kr, down from 36 911 kr last night on 7 100 kr more spend"
+  ],
+  "siffror": { "spend_7d": 61852, "kop_7d": 108, "roas_7d": 2.45, "vinstbidrag_7d": 31253 },
+  "briefer": [],
+  "action_axel": [],
+  "action_redigerare": [],
+  "nasta_korning": "2026-09-26",
+  "varningar": [
+    "Yesterday was the worst day of the week and it settles the delivery-ceiling question. The main campaign spent 9 011 kr and returned ROAS 0.93 on 6 purchases. Compare it with 21 September: 5 120 kr, ROAS 3.15, 11 purchases. Nearly double the money for barely half the customers. Three days in a row now at 9 000-11 800 kr per day: 13, 14 and 6 purchases while the days at 3 000-5 000 kr gave 10 to 13",
+    "That is why the cut is the right move, and why the LISTICLE recovery matters: it went back into the profitable band within one day of being cut. Expect the same from the main campaign at 6 750 kr, and watch tomorrow for whether Meta actually spends less",
+    "Norway and Denmark still run unwatched on 4 000 kr/day each. Nothing has changed there since it was reported on 23 September. Only Sweden is managed by this round",
+    "Briefs stay paused by owner decision from 18 September: CaraShell is briefed in the Bäverbutiken teamspace and mirrored across"
+  ]
+}

@@ -2067,3 +2067,31 @@ i går är därmed tömd.
 **Kvarstående varning, oförändrad:** `CARASHELL_SE_Taköverdraget LISTICLE` är
 ett eget spår (namnet bär LISTICLE) och tar aldrig emot speglade annonser —
 korrekt beteende, rapporteras varje körning.
+
+---
+
+## Nattvakten 2026-09-25 — huvudkampanjen sänkt, mönster 14 bekräftat
+
+**Budget:** huvudkampanjen **sänkt 9 600 → 6 750 kr** — vinst 3d **−3,7 %** vid
+ROAS 1,54, alltså UNDER break-even 1,63. Kadensspärren som höll den i går löpte
+ut. LISTICLE ligger kvar på 2 000 kr och är **tillbaka i hållbandet**: vinst 3d
+23,8 % vid ROAS 2,66, upp från 11,1 % i går.
+
+**Pausade:** `CaraShellRoof_CS_110_1` (1 461 kr, 2 köp, CPA 731 kr) och
+`CaraShellRoof_LI_102_1` (1 294 kr, 1 köp, CPA 1 294 kr) — båda över break-even-CPA
+693 kr efter mer än 3 × target-CPA i spend.
+
+**7 dygn SE:** 61 852 kr, 108 köp, ROAS 2,45, vinstbidrag 31 253 kr — ner från
+36 911 kr i går på 7 100 kr MER spend.
+
+**Mönster 14 bekräftat två gånger på ett dygn:**
+
+1. **Uppåt:** i går spenderade huvudkampanjen 9 011 kr och gav ROAS 0,93 på
+   6 köp. Den 21/9 gav 5 120 kr ROAS 3,15 på 11 köp. Nästan dubbla pengarna för
+   drygt hälften av kunderna. Tre dygn i rad på 9 000–11 800 kr: 13, 14 och 6 köp,
+   mot 10–13 köp på dygnen som kostade 3 000–5 000 kr.
+2. **Nedåt:** LISTICLE sänktes 2 850 → 2 000 i går och var tillbaka i hållbandet
+   inom ett dygn. Taket går alltså åt båda hållen — sänkningen återställer vinsten.
+
+**Nästa avläsning:** spenderar Meta verkligen mindre på 6 750 kr, och följer ROAS
+med tillbaka? Det är den sista biten i beviset.
