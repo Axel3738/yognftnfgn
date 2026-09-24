@@ -18,6 +18,7 @@ for (const [id, f] of Object.entries(FAKTA)) {
   const fakta = Object.entries(f.latt || {}).map(([k, v]) => `- **${k}:** ${Array.isArray(v) ? v.join(', ') : typeof v === 'object' ? JSON.stringify(v) : v}`).join('\n');
   if (f.status === 'bygg') {
     const q = await b.fraga(`query($q:String!){products(first:1,query:$q){nodes{handle}}}`, { q: `sku:${f.sku}` });
+    if (!q.products.nodes.length) { console.error(`! ${id}: status bygg men finns inte i SE ännu — hoppas`); continue; }
     const url = `https://baverbutiken.se/products/${q.products.nodes[0].handle}`;
     const t = COPY[id].sv;
     pages.push({ properties: { Namn: `${f.batch} ${KORTNAMN[id]}`, Status: 'Products', Typ: 'Video - Pending Approval', 'Landing page': url },

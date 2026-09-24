@@ -479,7 +479,10 @@ GIF:arna görs av skördens video med ffmpeg (palettegen/paletteuse, ~400 px,
 8 fps, mål < 4 MB styck). Skördebilder med utländsk text görs om till svenska
 med **KIE AI** (`KIE_API_KEY`) innan de används — och varje översatt bild
 granskas visuellt: räkneord och mått på bilden ska stämma mot offerten, annars
-används den inte. En–två produktbilder i galleriet räcker inte — galleriet ska
+används den inte. **KIE klarar bara 1–2 ord** ("3-PACK", "L · Storlek 41–46"); meningar och
+etikettlistor blir rappakalja på svenska ("Dippekedaja", "Så här sättet du påur") — nio av elva
+försök underkändes 2026-09-24. Text som är längre än två ord **beskärs bort** (sharp, deterministiskt)
+eller så stryks bilden. Räkneord som inte finns i offerten får aldrig följa med in i butiken. En–två produktbilder i galleriet räcker inte — galleriet ska
 ha variation: rena foton, miljöbilder, detaljbilder, storleksguide och video.
 
 ---

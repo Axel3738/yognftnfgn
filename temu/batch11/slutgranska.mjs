@@ -27,6 +27,7 @@ for (const land of ['se', 'no']) {
     for (const u of p.descriptionHtml.matchAll(/src="([^"]+)"/g)) { const r = await fetch(u[1], { method: 'HEAD' }); if (r.status !== 200) anm.push(`bild i text ${r.status}`); }
     if (REST[land].test(p.descriptionHtml)) anm.push('REST i texten');
     if (!/<h3>[^<]+<\/h3><p>30 (dagars|dagers)/.test(p.descriptionHtml)) anm.push('garantiblock saknas');
+    await new Promise((r) => setTimeout(r, 2500));   // storefronten svarar 429 vid snabba anrop
     const sf = await fetch(`${DOM[land]}/products/${p.handle}`, { method: 'HEAD', redirect: 'follow' }); if (sf.status !== 200) anm.push(`storefront ${sf.status}`);
     n++; if (anm.length) { fel += anm.length; console.log(`✗ ${id}: ${anm.join(' · ')}`); } else console.log(`✔ ${id}  ${v.price}/${v.compareAtPrice}  ${p.media.nodes.length} media  ${p.resourcePublicationsCount.count} kanaler  /${p.handle}`);
   }

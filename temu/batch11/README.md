@@ -36,11 +36,14 @@ Hero-bilderna är CWD:s QC-foton (500–1200 px, tillfälliga) — byts när sk�
 | cykelhallarskydd (2 cyklar) | 13 | 669 | 639 | QC (bild 25) | ✅ 2026-09-24 — jag dömde bilden fel som ATV-kapell; arkets ref-kolumn är tom, inga mått/material påstås |
 | husbilskalender (24 luckor) | 13 | 379 | 339 | QC fack + ask, detalj fack | ✅ 2026-09-24 — Axel: "Ja gör husbilskalendern". Biltillverkarens namn står på asken men skrivs ALDRIG i copy/alt/taggar/video |
 
-**VÄNTA (14):** bathuv, kamadohuv (QC-bilden är grå, vi säljer svart), kajakhuv, maskinhylla,
-fonstertermomatta, varmemuff (**slut hos CWD, tillbaka tidigast om en månad — pre-order när datum
-finns**; arkets rad 62 är dess qty-2-rad), laktarponcho, scooterkapell (bara hoppackad påse på bilden),
-tradansikte, snosmaltmatta (spänning/EU-kontakt obekräftad),
-krukbarrem, sorkkorgar, slangboxhuv,
+**VÄNTA (4, efter skörden 2026-09-24):** varmemuff (**slut hos CWD, tillbaka tidigast om en månad —
+pre-order när datum finns**; arkets rad 62 är dess qty-2-rad), kajakhuv (skörd finns, men måtten är
+obekräftade — fråga CWD), tradansikte (listningen har flera ansikten — vilket är offererat?),
+snosmaltmatta (spänning/EU-kontakt obekräftad + vattenstämpel på alla skördebilder).
+**Byggda på skörden 2026-09-24 (10):** bathuv, kamadohuv, maskinhylla, fonstertermomatta, laktarponcho,
+scooterkapell, krukbarrem, sorkkorgar, slangboxhuv, regntunnehuv — se avsnittet nedan.
+*(Gammal VÄNTA-lista:* bathuv, kamadohuv, kajakhuv, maskinhylla, fonstertermomatta, varmemuff, laktarponcho,
+scooterkapell, tradansikte, snosmaltmatta, krukbarrem, sorkkorgar, slangboxhuv,
 regntunnehuv. Byggs med `skapa.mjs` när skörden ligger i `temu/bildskord/<id>/` — sätt
 `status: 'bygg'` + `qc:`/bildväg i `fakta.mjs`, skriv copy (subagent) och kör.
 
@@ -56,7 +59,11 @@ hönsluckan (ingen quote), fågelholken (MOQ 500).
 - `skapa.mjs <se|no> [--skarp] [id …]` — skapar/uppdaterar, rcoffroad = uppdatera SE + klona till NO
 - `rc-farger.mjs <se|no> [--skarp]` — RC 1:16: option Färg/Farge, varianter Svart/Orange, variantbilder, femte bulleten (`copy-rc-farg.json`). Idempotent
 - `slutgranska.mjs` — läser allt live i SE + NO: mall, kategori, moms av, cogs, jämför > pris, media 200, alt, rester, garanti, storefront 200
-- `notion-kort.mjs` — 35 Notion-kort (21 live + 14 VÄNTA) som JSON till notion-create-pages
+- `notion-kort.mjs` — Notion-kort som JSON till notion-create-pages (hoppar över bygg-produkter som inte finns i SE ännu)
+- `galleri.mjs` — GALLERIBESLUT per produkt efter skörden: bild, beskärning, KIE, alt, QC först/sist, GIF
+- `galleri-fix.mjs <crop|kie|ark> [id …]` — förbereder bilderna (sharp-beskärning, KIE-översättning, ffmpeg-GIF) + kontaktark
+- `beskrivning.mjs` — 7-blocksbeskrivningen (problem → GIF/bild → lösning → bild → funktioner → bild → garanti), delad
+- `galleri-bygg.mjs <se|no> [--skarp] [id …]` — laddar upp galleriet med alt-text, ordnar (QC först/sist), bygger om beskrivningen; skapar produkten om den saknas. Idempotent på alt-text som JSON till notion-create-pages
 
 ## Rättningar i copyn (huvudsessionens korrläsning)
 "aldrig/alltid" i regnkedjan och bordsfotbollen · "bygglen" → "byggen" · bikupsjackans "tål att sitta
@@ -89,3 +96,32 @@ med Axel vid datorn). Anteckningar från rensningen:
 - `magnetblock`: bilderna 01, 02, 03, 06, 08, 09 är produkten.
 - Lokala sessionens lärdom: `git add temu/bildskord` hade tagit med testmapparna `prov*` — nu i `.gitignore`
   tillsammans med `temu/kaching-cli/profile-ali/`.
+
+## Gallerierna efter skörden (2026-09-24)
+Axels skörd (`temu/bildskord/`, 32 mappar) granskades bild för bild i kontaktark (`galleri-fix.mjs ark`)
+och besluten står i `galleri.mjs`. Resultat: **31 produkter live i SE + NO** (21 + 10 nya), 130 bilder
+i galleri-registret, 40 beskärningar, 1 GIF (highlandcow — lagervideo, 2,7 MB), 4 VÄNTA.
+
+**Vad som styrde valen**
+- Bilder med mått eller räkneord som inte finns i offerten användes inte (båthuvens 290 cm-tabell,
+  värmesulornas gradtal, magnetblockens delelistor, maskinhyllans tum-mått, lövsilarnas "8 mm").
+- Engelsk text beskars bort med sharp. **KIE-översättning prövades på 14 bilder: bara de två med
+  1–2 ord blev rätt** ("3-PACK", "L · Storlek 41–46", "Med huv/Utan huv" = 3). Resten blev rappakalja
+  ("Dippekedaja", "Så här sättet du påur", "Hroventäclker poolpump") och byttes till beskärning eller ströks.
+  Regeln står nu i CLAUDE.md.
+- "Waterproof"-löften i bilderna beskars bort eller bilden ströks.
+- **elcykeljacka:** skörden visar en svart neoprenjacka, QC-fotot en stickad olivgrön — skörden används
+  inte, fråga till CWD. **husbilskalender:** leverantörens renderade ask säger "CAMPERVAN", den riktiga
+  (QC) bär biltillverkarens namn — QC-fotot förblir hero, bara bussarna/ornamenten togs från skörden.
+- **adelstenskalender:** bild 10/13/16–21 är andra askdesigner (varianter) — bara 20 + beskuren 11 används.
+- **rullknivslip:** bild 10 (annat varumärke) ströks; 05/06/08 (1000#-skiva, 15°) motsäger arket ("2 diamantskivor").
+- **regnkedja:** helkedjebilderna ströks — kopparna går att räkna och stämmer inte säkert med 12.
+- Videor: 6 hittades, 3 gick att hämta om från CDN, bara highlandcows blev GIF (elcykeljackans visar fel
+  produkt, läktarponchons har kinesiska undertexter). krukbarrem/makitahallare/regntunnehuv: CDN 403.
+- Alt-texter är svenska även i NO (CLAUDE.md: bilderna återanvänds från SE).
+
+**Tunna gallerier** (mer material välkommet): slangboxhuv (2 beskurna ur 1 bild), regntunnehuv (2),
+bathuv (2), poolpumphuv (2 + QC), adelstenskalender (2 + QC).
+
+**Kvar:** rcdrift + bordsfotboll (Temu-skörden kräver Axel inloggad), de fem CWD-frågorna i
+`temu/qc/2026-09-18-cwd-qc.md`, magnetblockens 300-pack-variant.
