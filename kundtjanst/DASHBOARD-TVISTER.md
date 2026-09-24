@@ -148,6 +148,14 @@ Per varumärke:
    fönstret är stängt — aldrig vad som står i det. Skriv därför "evidence
    submitted", aldrig "we submitted our evidence".
 
+5. **En `under_review` är inget avslut — den kan eskalera.** Mätt på **#5122**
+   två dygn i rad: 2026-09-23 stod den `inquiry` / `under_review` med deadline
+   2026-09-21, alltså besvarad och låst; 2026-09-24 står den som
+   **`chargeback` / `needs_response` med ny deadline 2026-10-05**. Något gick in
+   i tid och räckte ändå inte, och nu är pengarna tagna. Skriv därför "answered,
+   waiting for the bank", aldrig "klar" — och räkna en `under_review` som ett
+   ärende som kan komma tillbaka dyrare.
+
 ---
 
 ## ✅ Byggd 2026-09-22 (dashboard-sessionen)

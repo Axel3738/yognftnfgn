@@ -243,3 +243,19 @@ test('fönstret bakåt är mycket bredare än larmgränsen', () => {
   assert.ok(TVISTFONSTER_DAGAR >= 90, `fönstret ${TVISTFONSTER_DAGAR} dagar är för kort`);
   assert.equal(LARMGRANS_DAGAR, 3);
 });
+
+// Larmet 2026-09-24 listade tre chargebacks med 6, 9 och 11 dagar kvar och sa
+// samtidigt "Everything on this list is inside the submit window — do not wait
+// any longer" och "anything it lists is ≤ 3 days out and must be decided now".
+// Båda blev falska i samma stund som öppna chargebacks började larmas oavsett
+// deadline. Ett larm som säger emot sina egna rader slutar läsas.
+test('tidsstrategin ljuger inte om en chargeback med veckor kvar', () => {
+  const text = renderaLarm(bradskande([tvist({ evidensSenast: '2026-10-05' })], { nu: NU }), { brand: 'B', nu: NU });
+  assert.match(text, /21 days left/, 'raden ska bära sitt riktiga antal dagar');
+  assert.doesNotMatch(text, /do not wait any longer/i);
+  assert.doesNotMatch(text, /Everything on this list is inside the submit window/i);
+  // Den kvarvarande ≤-meningen får bara gälla inquiries, aldrig "anything it lists".
+  assert.doesNotMatch(text, /anything\s+it lists is/i);
+  assert.match(text, /An inquiry on this list is ≤ 3 days out/);
+  assert.match(text, /A chargeback is\s+listed from the day it opens/);
+});

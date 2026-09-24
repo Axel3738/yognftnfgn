@@ -159,11 +159,13 @@ export function renderaLarm(rader, { brand, nu = new Date(), grans = LARMGRANS_D
     '',
     // Tidsstrategin (Axels beslut 2026-09-22). Larmet är säkerhetsnätet som
     // gör väntandet ofarligt — därför står regeln här och inte bara i SOP:en.
-    '**⏳ Everything on this list is inside the submit window — do not wait any longer.**',
+    '**⏳ When to submit: prepare now, send on the last day.**',
     'A parcel that has not arrived yet is not a lost case: for "not received" we submit LAST, the day before the',
-    'deadline, because by then the delivery scan usually exists. This alarm is what makes that safe — anything',
-    'it lists is ≤ 3 days out and must be decided now. **Always email the customer the same day anyway; only the**',
-    '**evidence submission waits, and a customer who gets an answer often withdraws the dispute themselves.**',
+    'deadline, because by then the delivery scan usually exists. Build the evidence today and press **Save**;',
+    `press *Submit* on the due date. An inquiry on this list is ≤ ${grans} days out, so decide it now. A chargeback is`,
+    'listed from the day it opens however far off its deadline is, because it is the one that loses real money —',
+    'gather its proof today even when the date is weeks away. **Always email the customer the same day anyway;**',
+    '**only the evidence submission waits, and a customer who gets an answer often withdraws the dispute themselves.**',
   );
   return ut.join('\n');
 }
