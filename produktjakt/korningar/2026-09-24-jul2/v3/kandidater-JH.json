@@ -1,0 +1,287 @@
+{
+  "agent": "JH — virala Q4-spel",
+  "datum": "2026-09-24-jul2",
+  "sammanfattning": "Struktur: spel som gick viralt på TikTok/Meta vintern 2025 och som AliExpress/Temu säljer i mängd. Golvet lästes FÖRE varje Ali-sökning (PriceRunner via curl, Coolstuff, Teknikmagasinet; Lekia/Spelexperten/Jula/Fyndiq/Amazon/Adlibris/Jollyroom svarade 403/404/429/500/503 — ej lästa). 26 Ali-fraser, 17 produktsidor öppnade, 12 heron nedladdade och sedda. Sökträffarnas `sald`-fält var TOMT på samtliga träffar i dag — försäljningstal kunde inte användas för prioritering (ej mätt). Resultat: (1) MAGNETSCHACKET på Axels uttryckliga order — golvet ligger under oss (originalet Kluster 199 kr hos 32 butiker på PriceRunner, 299 hos Coolstuff; kloner 129–299), märkt H06; vald listning har guldstenar + snöre och textfri hero i kontext. (2) TETRA TOWER — enda formen i rundan UTAN svensk aktör (PriceRunner, Coolstuff, Teknikmagasinet 0 träffar), 48 delar, 7,59 USD, pris 349. (3) RINGKROK-SPELET 4 spelare i trä (viralt barspel) — ingen svensk 4-spelarform hittad, men hero har inbrända badges och det är ett vuxenspel, LÅG–MEDEL. Kusinerna Shashibo, Sink'n Sand, Bounce-Off och Tumbling Monkeys är varumärken/IP; sling puck finns inte i premiumträ över 20 USD; kattballongspelet finns inte som listning; rummy/pizzatorn/kinaschack/domino/backgammon faller på golv eller pristak. 3 kandidater klarar alla grindar, en fjärde levereras med tydlig risk.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Magnetschacket, guldstenar på snöre",
+      "objekt": "NYTT: Julbordets spelkväll — magnetstenarna som klickar ihop",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H06",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["hårt datum (black week/julafton)", "300–499 kr", "gåva till relation (familjen runt bordet)", "flerköp möjligt (ett set per hushåll som ska besökas)"],
+        "avvikelser": ["golv UNDER oss i exakt form (Kluster 199–299)", "ingen svikande default", "form kontot aldrig testat"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012728937929",
+        "url": "https://www.aliexpress.com/item/1005012728937929.html",
+        "pris_usd": 13.59,
+        "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:31:48Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005012728937929.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "titeln anger 'longest side 3.4cm' — antal stenar står inte i titeln (heron visar ~16 stenar på golvet + ett rör med ~20); en variant enligt sökträffen. Alt-listning samma hero: 1005010664100422 (15,85 USD, verifierad 10:33:26Z). Större set 'Kollide' 1005012030499825 (27,19 USD, verifierad 10:36:45Z, två rör à ~20 stenar) — hero med varumärkeslik kartong och text, struken som primär.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "render med blixt-effekter (inte foto) men textfri, hand som lägger sten, snöre på golvet, barn i bakgrunden — går som stillbild; själva 'klicket' måste bäras av video"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "24.se via PriceRunner — 'Selskabsspil Med Magnetiske Sten' (1 butik, i lager)", "pris_sek": 129, "url": "https://www.pricerunner.se/pl/613-3393497242/Saellskapsspel/Selskabsspil-Med-Magnetiske-Sten-priser", "exakt_samma_form": true},
+        "premium_ankare": {"namn": "Borderline Editions Kluster (originalet, 24 stenar + snöre) — Coolstuff 299 kr; PriceRunner lägst 199 kr hos 32 butiker, 'WATCHED 50+'", "pris_sek": 299, "url": "https://www.coolstuff.se/lek-spel/spel/sallskapsspel/kluster-spel-pid-19256", "i_sortiment": true},
+        "ankare_kvot": 0.67,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se/search?q=magnetschack (2026-09-24): Kluster 199 (32 butiker), Magnetiskt Schackspel 2024 Familjespel 299 (1 butik), Selskabsspil Med Magnetiske Sten 129, Magnetiska Stenar Sällskapsspel 149, Northix Magnetisk Brädspel 799 (oklart om samma form)",
+          "pricerunner.se/pl/613-5220979 Kluster 199 kr",
+          "pricerunner.se/pl/613-3568889070 Magnetiskt Schackspel 2024 Familjespel 299 kr, IN_STOCK",
+          "coolstuff.se/search?q=magnetspel: Kluster 299, Kluster DUO 299",
+          "coolstuff.se/search?q=magnetic+chess: 0 träffar",
+          "teknikmagasinet.se/sok?q=magnetschack: 0 träffar",
+          "lekia.se, spelexperten.com (404 på alla sök-URL:er), jula.se 403, fyndiq.se 403, amazon.se 503, adlibris.com 429, jollyroom.se 500 — EJ lästa"
+        ],
+        "anm": "Golvet ligger UNDER oss i exakt form: originalet Kluster 199–299 kr och kloner 129–299. Levereras på Axels uttryckliga order (2026-09-24: 'magnet chess sålde 2,3 Mkr på en dag förra Q4') och märks H06 — ankarkvoten 0,67 klarar INTE H06:s 1,2×-krav, det är ordern som bär raden."
+      },
+      "ekonomi": {
+        "landad_sek": [177, 216],
+        "pris_sek": 449,
+        "brutto_sek": [233, 272],
+        "be_cpa_sek": [233, 272],
+        "be_roas": 1.8,
+        "flerkop": true,
+        "returrisk": "låg — en variant, inget att mäta; småbitar (varning 8+)"
+      },
+      "meta_tanke": {
+        "hook": "Den som får stenarna att klicka förlorar",
+        "objekt_i_bild": "hand som lägger en guldsten mellan de andra på snöret, stenarna rycker ihop",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "stenen släpps, magneterna smäller ihop med ett klick — reglerna förstås utan ett ord"
+      },
+      "varfor": "Axels order + starkaste virala Q4-spelet 2025 (Kluster-formen): förstås på 3 s, spelas av 6-åring och 60-åring, hårt datum 9–12 v. Guldstenar + snöre ser dyrare ut än fruktkloner; 449 kr ger BE-CPA 233–272 trots golv 129–299.",
+      "huvudrisk": "Golvet i exakt form ligger under oss hos 32 butiker (Kluster 199) — kunden kan prisjämföra på en sekund; bär bara om creativen säljer 'klicket', inte produkten.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 3, "efterfragan": 2, "lucka": 0, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 1, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok — Luffarschacket i trä (REAL_LOSER) är en annan SAK", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": "medel — guldstenar 3,4 cm och snöre; inte den billigaste listningen (6,48 USD)", "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep magnet/schack/spel: Magnetiska Byggblocken, Magnetplattor, Luffarschack — annan sak)", "koncept.py sok magnet/schack/chess: 0 relevanta (K0087 är laddportslock)", "REDAN-PROVAT: JC strök 'magnetiskt schack i trä' = vanligt schack med magnetpjäser, annan sak"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005012728937929.html",
+        "https://www.aliexpress.com/item/1005010664100422.html",
+        "https://www.aliexpress.com/item/1005012030499825.html",
+        "https://www.coolstuff.se/lek-spel/spel/sallskapsspel/kluster-spel-pid-19256",
+        "https://www.pricerunner.se/pl/613-5220979/Saellskapsspel/Kluster-priser",
+        "https://www.pricerunner.se/pl/613-3568889070/Saellskapsspel/Magnetiskt-Schackspel-2024-Familjespel-priser",
+        "https://www.pricerunner.se/pl/613-3393497242/Saellskapsspel/Selskabsspil-Med-Magnetiske-Sten-priser"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Tetra Tower, balansstapling 48 delar",
+      "objekt": "NYTT: Julbordets spelkväll — tornet som tippar på en gungbräda",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["kategorinyhet i svenskt flöde", "< 500 kr", "noll friktion / ren nyhet", "förstås på 3 s utan text"],
+        "avvikelser": ["ingen ägd sak", "plast (K8 svagare)", "gåva med datum i stället för ägt objekt"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005007193841427",
+        "url": "https://www.aliexpress.com/item/1005007193841427.html",
+        "pris_usd": 7.59,
+        "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:33:49Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005007193841427.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "48 delar enligt titel; sökträffen listar 16/32/48/64-delarsvarianter hos andra säljare (1005010751256862, 1005008672064327). Alt-listning 1005007527740629 (10,05 USD, verifierad 10:33:54Z, hero med barn). 17,19-dollarslistningen 1005011975289485 svarade tomt två gånger (BLOCKED).",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "verkligt foto med tre vuxna runt tornet (bra), men inbränd '48 PCS'-etikett uppe till höger och kartong uppe till vänster — måste beskäras; alt-heron (1005007527740629) har samma text + barn"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör hittad i exakt form (gungbräda + tetris-block)", "pris_sek": null, "url": null, "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Hasbro Jenga (närmaste klassiker i 'stapla tills det rasar') — PriceRunner 179–199, Coolstuff 229; Goki Wooden Balance Game Tower 360", "pris_sek": 229, "url": "https://www.pricerunner.se/search?q=jenga", "i_sortiment": true},
+        "ankare_kvot": 0.66,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se/search?q=tetra%20tower (2026-09-24): 0 spelträffar (bara power towers/Zarges)",
+          "pricerunner.se/search?q=tetra%20tower%20spel%20balans: 1 träff, annat spel (Cat And The Tower 259)",
+          "pricerunner.se/search?q=balansspel%20stapla: barnspel 92–329 (Small Foot, Magni, Selecta) — annan form",
+          "pricerunner.se/search?q=balanstorn%20spel: Goki 360/223, Northix balansstenar 289 — annan form",
+          "coolstuff.se/search?q=tetra+tower: 1 träff, Escape Welt Quest Tower 699 (annan sak)",
+          "coolstuff.se/search?q=balansspel: Catastrophe 169, Dogsaster 169, Stapla Stolar 79, Jenga 229 — annan form",
+          "teknikmagasinet.se/sok?q=tetra+tower: 0",
+          "lekia.se/spelexperten.com: sök-URL:er 404 — EJ lästa"
+        ],
+        "anm": "JA strök formen 2026-09-24 som 'ingen klassiker' — tas upp igen under viral-strukturen enligt order. Ankarkvoten räknas mot Jenga som är en annan form; i exakt form finns inget svenskt golv (mätt i dag hos tre källor)."
+      },
+      "ekonomi": {
+        "landad_sek": [99, 121],
+        "pris_sek": 349,
+        "brutto_sek": [228, 250],
+        "be_cpa_sek": [228, 250],
+        "be_roas": 1.5,
+        "flerkop": false,
+        "returrisk": "låg — en variant, inget att mäta"
+      },
+      "meta_tanke": {
+        "hook": "Tornet står på en gungbräda — vem fäller det?",
+        "objekt_i_bild": "tetris-tornet som lutar på gungbrädan, händer runt bordet",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "brädan tippar, tornet svajar, klossarna rasar — samma 3-sekunderspayoff som Jenga fast synligare"
+      },
+      "varfor": "Enda formen i rundan utan svensk aktör (0 träffar PriceRunner/Coolstuff/Teknikmagasinet), viral 2025, förstås utan text. 349 kr mot landad 99–121 ger BE-CPA 228–250 och Jenga-igenkänning som bro för 60-åringen.",
+      "huvudrisk": "Plastblock som i stillbild kan se ut som 99-kronorsleksak (K8) — bär bara om videon visar tippet; heron har inbränd '48 PCS'-text.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 2, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": "låg–medel — plast, men 48 delar och gungbräda läser som 'spel', inte 'pryl'", "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep torn/balans/spel: bara Bollpannband, Bordsfotbollen, Kasta & Fånga — annan sak)", "koncept.py sok tetra/balans/torn: 0 spelträffar", "REDAN-PROVAT: JA strök Tetra tower på struktur, inte på golv — återupptagen enligt order"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005007193841427.html",
+        "https://www.aliexpress.com/item/1005007527740629.html",
+        "https://www.pricerunner.se/search?q=tetra%20tower",
+        "https://www.pricerunner.se/search?q=jenga",
+        "https://www.coolstuff.se/search?q=tetra+tower"
+      ]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Ringkrok-spelet i trä, 4 spelare",
+      "objekt": "NYTT: Julbordets spelkväll — ringen som ska på kroken",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Svävande bordscurling (levererad JA, otestad)",
+        "delade_variabler": ["spelkväll med hårt datum", "500–999 kr", "ny form i svenskt flöde", "förstås på 3 s"],
+        "avvikelser": ["vuxen-/barspel snarare än familjespel", "hero med inbrända badges", "ingen ägd sak"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005010554638681",
+        "url": "https://www.aliexpress.com/item/1005010554638681.html",
+        "pris_usd": 26.89,
+        "sald": "ej mätt — sökträffens sald-fält tomt 2026-09-24",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:36:42Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005010554638681.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "4-spelarställning i trä, snören med ringar, shotglas i bild (ingår troligen inte — ej verifierat); en variant enligt sökträffen. Billigare 4-spelarlistning 1005013210543580 (11,59 USD, ej öppnad); 2-spelarformen 10,89–14,25 USD.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "render i barmiljö med 'VS'-grafik och två badges ('Fast-Paced Fun', 'For Adults & Bar') inbrända — måste beskäras eller ersättas; shotglasen i bild gör det till ett dryckesspel"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "'Winning Ring Toss Dryckesspel' (PriceRunner, kategori ringkast — 2-spelarform, ej 4-spelarställning)", "pris_sek": 219, "url": "https://www.pricerunner.se/pl/72-3228171146/Leksaker/Winning-Ring-Toss-Dryckesspel-priser", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "inget svenskt ankare i 4-spelarform hittat", "pris_sek": null, "url": null, "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se/search?q=hook%20and%20ring%20game (2026-09-24): Wooden Ring Game 170, Winning Ring Toss Dryckesspel 219, Goki 302 — pinnkast/2-spelar, inte 4-spelarställning",
+          "pricerunner.se/search?q=ringspel%20krok%20trä: Summertime/Northix/Tactic/Bex 119–246 — kasta-ring, annan form",
+          "pricerunner.se/search?q=ring%20on%20hook%20spel, bimini ring: 0 relevanta",
+          "coolstuff.se/search?q=hook+ring: 40 träffar, bara badringar — 0 relevanta",
+          "teknikmagasinet.se/sok?q=hook+ring+game: 0"
+        ],
+        "anm": "Formen 'ring på snöre som ska fastna på kroken' finns i Sverige bara som 2-spelarvariant 219 kr (dryckesspel). 4-spelarställningen i trä är obefintlig — men saknar också ankare, så luckan är obevisad efterfrågan."
+      },
+      "ekonomi": {
+        "landad_sek": [350, 428],
+        "pris_sek": 699,
+        "brutto_sek": [271, 349],
+        "be_cpa_sek": [271, 349],
+        "be_roas": 2.3,
+        "flerkop": false,
+        "returrisk": "medel — trästativ kan komma repat/skevt; monteras"
+      },
+      "meta_tanke": {
+        "hook": "Ringen på kroken — först till fem vinner",
+        "objekt_i_bild": "fyra händer som svingar ringarna mot krokarna på trästativet mitt på bordet",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "ringen svingar, missar, svingar, fastnar på kroken — payoffen är fysisk och hörbar"
+      },
+      "varfor": "Viralt barspel i trä som ingen svensk aktör säljer i 4-spelarform; trä + stativ bär 699 kr (K8) och BE-CPA 271–349 är rundans bästa ekonomi. Julafton 12 v, mellandagarna 13 v.",
+      "huvudrisk": "Det är ett dryckes-/vuxenspel med shotglas i heron — fel för 'hela familjen', hero måste göras om, och 26,89 USD är obekräftat mot en 11,59-dollarslistning i samma form (kvalitetsskillnad ej mätt).",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 1, "efterfragan": 1, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": null, "K2": null, "K3": null, "K4": null, "K5": null, "K6": null, "K7": null, "K8": "medel–hög — massivt trästativ 4 armar", "K9": null, "K10": null, "K11": null, "K12": null},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (grep ring/spel: Kasta & Fånga-set — annan sak)", "koncept.py sok ring/spel: 0 relevanta", "REDAN-PROVAT: JD strök 'ringkastning i trä' = pinnkast (Bamse/BEX), annan form"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005010554638681.html",
+        "https://www.aliexpress.com/item/1005013210543580.html",
+        "https://www.pricerunner.se/pl/72-3228171146/Leksaker/Winning-Ring-Toss-Dryckesspel-priser",
+        "https://www.pricerunner.se/search?q=hook%20and%20ring%20game"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Magnetschack — fruktvarianten 'Fruit Magnet Game' (Ali 1005012665200428, 22,85 USD, verifierad 10:31:42Z, hero sedd)", "skal": "Samma SAK som kandidat 1 men hero med kartong full av text och frukt-tema som läser som barnleksak; landad 330 → 599 mot Kluster 199–299 är omöjligt. Kandidat 1 valdes."},
+    {"namn": "Magnetschack — 'Kollide'-setet 40 stenar (Ali 1005012030499825, 27,19 USD, verifierad 10:36:45Z, hero sedd)", "skal": "Samma SAK; hero är AI-render med varumärkeslik kartong (KOLLIDE) och text; landad 393 → 799 mot golv 199–299. Noterad som alternativ leverantör om fler stenar behövs."},
+    {"namn": "Tetra tower 17,19 USD (Ali 1005011975289485) och 11,62-dollars magnetspel (1005012638829569), 'Premium Large' (1005013206956686)", "skal": "Produktsidorna svarade tomt två gånger (även ?gatewayAdapt=glo2usa) — BLOCKED, inte döda. Andra listningar av samma koncept valdes."},
+    {"namn": "Jenga-typ trästapel 48 delar (Ali 1005010483324694, 6,69 USD, verifierad 10:33:44Z, hero sedd)", "skal": "Exakt samma form som Hasbro Jenga 179–199 (PriceRunner) / 229 (Coolstuff) / Janod 311 — golv i klassikerns egen form, K8 låg (packshot)."},
+    {"namn": "Rummy-brickspel 106 brickor 'wooden case' (Ali 1005012435096258, 24,69 USD, verifierad 10:33:59Z, hero sedd)", "skal": "Heron visar plastbrickor och plastställ — inte trä som titeln lovar; Rummikub original 180 kr, träbrickor+väska 419, Artman Stor 669 (PriceRunner) = golv under oss i samma form."},
+    {"namn": "Pizzatornet / plocka-pinnar-spel med tärning (Ali 1005012064968994, 17,25 USD, verifierad 10:34:02Z, hero sedd)", "skal": "Heron är en detaljbild med inbränd text ('Selected wood…'), ingen helbild; formen är Kerplunk (Mattel, 586 kr EN på PriceRunner) som 60-åringen i Sverige inte känner igen. Struken på hero + igenkänning."},
+    {"namn": "Kinaschack i trä med glaskulor (Ali 39,55–70,99 USD)", "skal": "Landad 572–1 027 → 899+ mot Kollektion Stora A 349 / Tactic 111 / 'Kinaschack i trä' 58 kr (PriceRunner) — golv och pristak."},
+    {"namn": "Sling puck / fast sling puck i premiumträ", "skal": "Enligt order bara om premiumträ finns: sökningen 'wooden sling puck game large' gav 4–13 USD (Gowinbaby 8,19–11,22) och 28,99 plast — ingen premiumversion; PriceRunner-golv 125–249 (Sling Puck Pro 248, BS Toys 179). Struken (JA:s strykning kvarstår)."},
+    {"namn": "Shashibo / magnetisk formskiftare", "skal": "Patenterat varumärke, PriceRunner 208–399 hos många butiker; generiska kopior är IP-intrång. Inte sökt på Ali."},
+    {"namn": "Sink N' Sand", "skal": "Spin Master-varumärke (PriceRunner 299); Ali-sökningen 'sand digging game board' gav bara strandleksaker — ingen generisk listning."},
+    {"namn": "Bounce-Off-typ (studsboll mot mönster)", "skal": "Mattel Bounce Off Pop Out 340 kr (IP); Ali 'bounce ball pattern card game' gav bara Pokémon-kort och en 8-dollars barnleksak (1005007764954458) — K8 noll."},
+    {"namn": "Tumbling monkeys / fallande apor", "skal": "Mattel-IP; generiska kloner 5–17 USD är barnleksaker i plast (K8) — struken utan produktsida."},
+    {"namn": "Kattskrämma-ballongspel", "skal": "Två Ali-fraser ('balloon poking game', 'cat balloon pop stick game') gav bara ballonggirlanger och kattleksaker — ingen listning hittad."},
+    {"namn": "Drop-and-catch / kula-fångarspel", "skal": "Ali gav bara utomhus kasta-fånga-set (3–11 USD, sommarleksak); PriceRunner 'kula fånga spel' 39–379 i samma kategori. Fel fönster och K8."},
+    {"namn": "Marble race-bräda / kulbana", "skal": "JB:s struktur — levererad/struken där (kulbanetornet 449, elektriska kulbanan); Ali 'wooden marble race board game' gav 3D-pussel (JB) och en 14,95-dollars roterande bana. Inte dubbelsökt."},
+    {"namn": "Suction cup-spel (Squigz-typ)", "skal": "Fat Brain Squigz 24 st 349 kr (varumärke); generiska sugkoppsleksaker är småbarn (K8) — inte sökt vidare."},
+    {"namn": "Rocket-launcher-spel", "skal": "Utomhus/sommarleksak (stomp rocket) — fel fönster för julbordet, inte sökt."},
+    {"namn": "Magnetiska stapelstenar", "skal": "Ali-frasen returnerade samma magnetstensspel som kandidat 1 (samma SAK) + magnetplattor (K0: Magnetiska Byggblocken 799 finns i katalogen). Stapelstein 919–2 499 (PriceRunner) är skumstenar för barn, annan sak."},
+    {"namn": "Premiumklassiker: domino i trälåda (Ali 19–35 USD), backgammon/3-i-1 40 cm (61–69 USD), tärningstorn (12–20 USD), Kluster-typ i trä", "skal": "Domino: Suck UK 489 / Manopoulos 699 / Northix 119 — golv i formen. 3-i-1 40 cm: landad 883–1 000 → över pristaket. Tärningstorn: DnD-nisch, inte 60-åringens spel. 'Magnetic stones game wooden board' gav bara schackbräden."},
+    {"namn": "Reaktionsljus-spel (Fitlight-typ)", "skal": "Ali 26–2 563 USD; träningsutrustning, inte spelkväll; PriceRunner 'Lightning Reaction Reloaded' 355 — annan sak. Struken."}
+  ]
+}
