@@ -1,0 +1,812 @@
+{
+ "agent": "JN — träpussel i djurform + pussel med tvist",
+ "datum": "2026-09-24-jul3",
+ "sammanfattning": "Strukturen 'pussel som ser ut som konst' prövad rent. Golvet lästes FÖRE Ali: PriceRunner visar att A4-klassen (110–150 bitar, 15–26 cm) är tät i Sverige (Eureka 214–299, Engelhart 169, Northix 159, Kruzzel 109–199, Ravensburger 169–279 — ~15 listningar) och att Unidragon-ankaret finns (700 bitar 1 391 / Mandala 1 409 på PriceRunner; Coolstuff har den inte, Adlibris/Designtorget olästa). Mellan Ravensburger 500 Holzpuzzle 349 (rektangulärt) och Unidragon 1 391 finns ingen svensk aktör i A3-djurform → H06-rader på 599 med ankare 2,3×. Alla 'tvist'-formerna (kristall, runt 1000, gradient, glow, dubbelsidigt, jättebitar, mystery) har golv som sortiment och ströks utan Ali-sökning. Fem kandidater LIVE_VERIFIED med hero sedd: räv (dagens bästa hero — verkligt foto i kontext, A3-låda), varg (tätast golv), lejon (glesast golv i A4-klass), drake (inget svenskt golv i formen → H10) och katt-i-ram (ny form → H10). Bitantal och A3-pris är EJ mätta på någon listning — AliExpress-produktsidan är ett skal utan SKU-data i dag; sökträffens USD är lägsta variant. Åtta listningar BLOCKED (captcha 3×), bl.a. älg och 'Gift Box'-draken.",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Träpusslet som blir en räv, A3",
+   "objekt": "NYTT: Träpusslet som blir en räv — mor och unge, A3, bitarna är små djur",
+   "form": "annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul/black week)",
+     "prisband 300–999",
+     "gåva till relation (partnern/barnbarnet/mamma)",
+     "många synliga små saker (figurbitarna)"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "objekt_ute nej",
+     "kontot har aldrig testat pussel som gåva (bara kalenderformen)"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012691481961",
+    "url": "https://www.aliexpress.com/item/1005012691481961.html",
+    "pris_usd": 10.12,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T12:16:06Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005012691481961.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlekar A3/A4/A5 enligt lådan i heron (A3 ikryssad); pris USD ur sökträffen 12:14:15Z = lägsta variant — A3-variantens pris ej mätt; bitantal ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto: pusslet halvlagt på köksbordet, händer, kaffekopp, lådan bakom — lösa figurbitar (fjärilar, fåglar, hjortar) syns bredvid. Enda texten sitter på lådan (Difficulty/Size) — lådan kan beskäras bort. Går rakt in som stillbild."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Ravensburger Wooden Colorful Fox 150 bitar 20 × 26 cm (PriceRunner)",
+     "pris_sek": 279,
+     "url": "https://www.pricerunner.se/search?q=wooden%20puzzle%20animal",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409",
+     "pris_sek": 1391,
+     "url": "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.32,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (12:01–12:16Z)",
+     "coolstuff.se (sök 'unidragon' 12:01Z: 'Vi kunde inte hitta')",
+     "adlibris.com (429/Vercel-checkpoint — oläst)",
+     "designtorget.se (404 på sök — oläst)",
+     "teknikmagasinet.se (0 träffar)",
+     "panduro.com (JS-skal — oläst)",
+     "fyndiq/cdon/amazon.se — oläst (403/503 enligt protokoll)"
+    ],
+    "golv_kommentar": "Golvet är A4-klassen (59–150 bitar, 15–26 cm): Eureka Rainbowooden 214–299 (varg/tiger/elefant/katt/uggla/lejon, 10 varianter), Engelhart A4 169, Northix 112 bitar 159, Kruzzel 130 bitar 109–199, Ravensburger 150 bitar 169–279, iDventure 200 delar 229 — ~15 listningar på PriceRunner 12:01–12:16Z, inte 20+ i kedja. Mellan Ravensburger 500 Holzpuzzle 349 (rektangulärt tryck) och Unidragon 700 bitar 1 391 finns ingen svensk aktör i A3-djurform → vi ligger i tomrummet med ankare 2,3×."
+   },
+   "ekonomi": {
+    "landad_sek": [
+     132,
+     161
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     438,
+     467
+    ],
+    "be_cpa_sek": [
+     438,
+     467
+    ],
+    "be_roas": 1.37,
+    "flerkop": false,
+    "returrisk": "låg — en variant per motiv (A3), inget att mäta; risk: bitar saknas → reklamation"
+   },
+   "meta_tanke": {
+    "hook": "Ser du att varje bit är ett djur?",
+    "objekt_i_bild": "räven halvlagd på köksbordet, en handfull lösa figurbitar i förgrunden",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "zoom från en fjärilsbit → hela räven"
+   },
+   "varfor": "Unidragon-formen (djur av hundratals figurbitar) har ankare 1 391 kr på PriceRunner men ingen svensk aktör i A3-storlek — golvet är små A4-pussel 159–299. Dagens bästa hero i hela linsen: verkligt foto i kontext, textfri.",
+   "huvudrisk": "pris 10,12 USD är lägsta variant (A5?) — A3-varianten kan kosta 15–20 USD och pressa BE-CPA under 400; bitantal/vikt ej mätta på listningen",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 12,
+    "K4": 8,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 10,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (bara Pussel Adventskalender 449 — kalenderform, annan SAK)",
+     "koncept.py sok räv/träpussel/pussel (K0311 pusselbrädan = förvaring, nej)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.pricerunner.se/search?q=wooden%20puzzle%20animal",
+    "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+    "https://www.pricerunner.se/search?q=träpussel%20räv",
+    "https://www.aliexpress.com/item/1005012691481961.html"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Träpusslet som blir en varg",
+   "objekt": "NYTT: Träpusslet som blir en varg — svart varg mot månen, galaxtryck, figurbitar",
+   "form": "annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul)",
+     "prisband 300–999",
+     "gåva till relation (tonåringen/partnern)"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "objekt_ute nej",
+     "kontot har aldrig testat pussel"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005007875860435",
+    "url": "https://www.aliexpress.com/item/1005007875860435.html",
+    "pris_usd": 12.28,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T12:08:41Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005007875860435.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek/bitantal ej mätt (produktsidan är ett skal utan SKU-data); pris ur sökträffen 12:02:16Z; syskonlistning 1005008814184247 (11,45 USD, '100–300 pcs', 10 djur i samma serie) öppnad 12:06:27Z som reserv",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render/packshot på vit botten: svart varg som sitter mot en månskära, galax-/stjärntryck, bitgränserna syns tydligt. Textfri. Behöver läggas i kontext (bord, händer) för Meta — eller kombineras med rävens foto."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Northix Träpussel 112 bitar Varg (PriceRunner)",
+     "pris_sek": 159,
+     "url": "https://www.pricerunner.se/search?q=träpussel%20varg",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409",
+     "pris_sek": 1391,
+     "url": "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.32,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (12:01–12:16Z)",
+     "coolstuff.se (sök 'unidragon' 12:01Z: 'Vi kunde inte hitta')",
+     "adlibris.com (429/Vercel-checkpoint — oläst)",
+     "designtorget.se (404 på sök — oläst)",
+     "teknikmagasinet.se (0 träffar)",
+     "panduro.com (JS-skal — oläst)",
+     "fyndiq/cdon/amazon.se — oläst (403/503 enligt protokoll)"
+    ],
+    "golv_kommentar": "Vargen är den mest kopierade Unidragon-formen i Sverige: Northix 112 bitar 159, Eureka Regnbågsfärgat varg 299, 'Träpussel Djurformade Varg' 245–315, Ravensburger Nordic Wolves (kartong) 149. Alla i A4-klass. Tätaste golvet i linsen — därför rad 2, inte rad 1."
+   },
+   "ekonomi": {
+    "landad_sek": [
+     160,
+     195
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     404,
+     439
+    ],
+    "be_cpa_sek": [
+     404,
+     439
+    ],
+    "be_roas": 1.48,
+    "flerkop": false,
+    "returrisk": "låg — en variant per motiv (A3), inget att mäta; risk: bitar saknas → reklamation"
+   },
+   "meta_tanke": {
+    "hook": "Vargen är gjord av 300 små djur",
+    "objekt_i_bild": "vargen på bordet, en bit lyfts ut och visar sig vara en fjäril",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "närbild på en figurbit → ut till hela vargen"
+   },
+   "varfor": "Samma struktur som räven (ankare 2,3×, golv i A4-klass under oss) men med det motiv som säljer mest i kategorin — vargen — och en hero som ser ut som en tavla. Hook-siffran '300' måste bekräftas före brief.",
+   "huvudrisk": "tätaste golvet i linsen (fyra svenska varg-träpussel 159–315) och heron är packshot utan kontext; bitantal ej mätt",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 10,
+    "K4": 8,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 9,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok varg (0 träffar)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.pricerunner.se/search?q=träpussel%20varg",
+    "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+    "https://www.aliexpress.com/item/1005007875860435.html",
+    "https://www.aliexpress.com/item/1005008814184247.html"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Träpusslet som blir ett lejon, A3",
+   "objekt": "NYTT: Träpusslet som blir ett lejon — regnbågsman, A3, figurbitar",
+   "form": "annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul)",
+     "prisband 300–999",
+     "gåva till relation"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "objekt_ute nej",
+     "kontot har aldrig testat pussel"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005012429125253",
+    "url": "https://www.aliexpress.com/item/1005012429125253.html",
+    "pris_usd": 9.19,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T12:11:41Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005012429125253.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "lådan i heron visar A3/A4/A5 med A3 ikryssad; pris ur sökträffen 12:09:26Z = lägsta variant; bitantal ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "lejonhuvudet färdiglagt på ljust träbord med lådan och lösa figurbitar (varg, häst, fåglar) — bra kontext, men rubriktext inbränd upptill ('ARTISTIC WOODEN PUZZLE …') måste beskäras; undre två tredjedelar är användbara."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Creative Craft Group Wooden Jigsaw Puzzle Lion 140 pcs (PriceRunner)",
+     "pris_sek": 181,
+     "url": "https://www.pricerunner.se/search?q=träpussel%20lejon",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409",
+     "pris_sek": 1391,
+     "url": "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.32,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (12:01–12:16Z)",
+     "coolstuff.se (sök 'unidragon' 12:01Z: 'Vi kunde inte hitta')",
+     "adlibris.com (429/Vercel-checkpoint — oläst)",
+     "designtorget.se (404 på sök — oläst)",
+     "teknikmagasinet.se (0 träffar)",
+     "panduro.com (JS-skal — oläst)",
+     "fyndiq/cdon/amazon.se — oläst (403/503 enligt protokoll)"
+    ],
+    "golv_kommentar": "Eureka Lion 121 bitar 15 × 23 cm 214, Creative Craft Group Lion 140 pcs 181 — två svenska listningar i A4-klass (PriceRunner 12:13:03Z). Glesare golv än vargen."
+   },
+   "ekonomi": {
+    "landad_sek": [
+     120,
+     146
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     453,
+     479
+    ],
+    "be_cpa_sek": [
+     453,
+     479
+    ],
+    "be_roas": 1.32,
+    "flerkop": false,
+    "returrisk": "låg — en variant per motiv (A3), inget att mäta; risk: bitar saknas → reklamation"
+   },
+   "meta_tanke": {
+    "hook": "Ett lejon av hundra små djur",
+    "objekt_i_bild": "lejonhuvudet på bordet, lösa figurbitar runtom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "bit för bit-lägg i tidsförkortning → manen växer fram"
+   },
+   "varfor": "Tredje motivet i samma bevisade form: glesare golv (2 listningar) än vargen, hero i kontext, landad ~130 kr → BE-CPA över 450. Ett motiv som fungerar för både man och kvinna.",
+   "huvudrisk": "inbränd text i heron (beskärning krävs) och bitantal/A3-pris ej mätta",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 11,
+    "K4": 8,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 9,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok lejon (0 träffar)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.pricerunner.se/search?q=träpussel%20lejon",
+    "https://www.pricerunner.se/search?q=eureka%20träpussel",
+    "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+    "https://www.aliexpress.com/item/1005012429125253.html"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Träpusslet som blir en drake",
+   "objekt": "NYTT: Träpusslet som blir en drake — regnbågsdrake på en bok, figurbitar",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "kategorinyhet i svenskt flöde (ingen svensk drake i djurform-trä)",
+     "textfri hero",
+     "synlig nyhet utan problem"
+    ],
+    "avvikelser": [
+     "pris 599 mot < 300",
+     "objekt alla har: nej",
+     "gåva med datum i stället för ägt objekt"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005008848418255",
+    "url": "https://www.aliexpress.com/item/1005008848418255.html",
+    "pris_usd": 6.61,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T12:14:25Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005008848418255.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek/bitantal ej mätt; 6,61 USD ur sökträffen 12:03:14Z är lägsta variant (troligen A5 — måste bekräftas); alternativa draklistningar 1005008248029860 ('Gift Box', 11,46), 1005009271140882 (11,79), 1005005991334795 (14,35) — de två första BLOCKED 3×",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "render/packshot på vit botten: regnbågsfärgad drake som ligger på en uppslagen bok med guldmynt och kristaller, bitgränserna syns. Textfri. Läser som fantasy-tavla — barnbarnet 10–15 år / tonåringen. Behöver kontext för Meta."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i exakt form (PriceRunner 'träpussel drake' 12:13:05Z: bara barnpussel/kartong — Schmidt Lille Draken 150 bitar 149, Ravensburger Dragon Race 1000 159)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=träpussel%20drake",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Unidragon Eternal Elephant 700 bitar 62 × 47 cm (PriceRunner, lägsta listning) / Unidragon Mandala 1 409",
+     "pris_sek": 1391,
+     "url": "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.32,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (12:01–12:16Z)",
+     "coolstuff.se (sök 'unidragon' 12:01Z: 'Vi kunde inte hitta')",
+     "adlibris.com (429/Vercel-checkpoint — oläst)",
+     "designtorget.se (404 på sök — oläst)",
+     "teknikmagasinet.se (0 träffar)",
+     "panduro.com (JS-skal — oläst)",
+     "fyndiq/cdon/amazon.se — oläst (403/503 enligt protokoll)"
+    ],
+    "golv_kommentar": "Enda motivet i linsen utan svenskt golv i formen — Eureka/Northix/Engelhart gör varg, tiger, lejon, katt, uggla, elefant, giraff men ingen drake. Ankaret gäller kategorin (Unidragon), inte motivet."
+   },
+   "ekonomi": {
+    "landad_sek": [
+     86,
+     105
+    ],
+    "pris_sek": 599,
+    "brutto_sek": [
+     494,
+     513
+    ],
+    "be_cpa_sek": [
+     494,
+     513
+    ],
+    "be_roas": 1.21,
+    "flerkop": false,
+    "returrisk": "låg — en variant per motiv (A3), inget att mäta; risk: bitar saknas → reklamation"
+   },
+   "meta_tanke": {
+    "hook": "Draken är gjord av små djur",
+    "objekt_i_bild": "draken på boken, en bit lyfts — det är en fågel",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "närbild bit → hela draken"
+   },
+   "varfor": "Rent H10-test: samma form som räven/vargen men motivet saknar helt svenskt golv, och landad under 110 kr ger BE-CPA runt 500. Hero ser ut som en tavla, inte som en leksak.",
+   "huvudrisk": "6,61 USD är nästan säkert A5-varianten — A3-pris ej mätt; fantasy-motiv smalare mottagare (tonåring) än räv/varg",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 10,
+    "K3": 13,
+    "K4": 8,
+    "K5": 8,
+    "K6": 9,
+    "K7": 7,
+    "K8": 8,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok drake (0 träffar)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.pricerunner.se/search?q=träpussel%20drake",
+    "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+    "https://www.aliexpress.com/item/1005008848418255.html"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Katten full av katter, träpussel med ram",
+   "objekt": "NYTT: Träpusslet i kattram — hundra små katter fyller en kattsiluett i trä",
+   "form": "annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "vinnarlikhet": {
+    "likast": "Soptunneklistermärkena",
+    "delade_variabler": [
+     "visste-inte-att-det-fanns-form",
+     "textfri hero",
+     "synlig nyhet utan problem"
+    ],
+    "avvikelser": [
+     "pris 549 mot < 300",
+     "mottagare: kattägaren (smalare)",
+     "kontot har aldrig testat pussel"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005010507426396",
+    "url": "https://www.aliexpress.com/item/1005010507426396.html",
+    "pris_usd": 15.54,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T12:08:49Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005010507426396.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "storlek/bitantal ej mätt på listningen; syskonlistningar '135-piece Morandi Cat-shaped Puzzle with Cat Silhouette Frame' 1005010356275930 (9,99) / 1005012417925867 (10,55) anger 135 bitar — ej öppnade; pris ur sökträffen 12:03:17Z",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot på vit botten: kattformad träram med tassar, fylld av ~100 tecknade kattbitar i pastell (varje bit är en katt). Textfri. Läses på en sekund. Behöver kontext (bord/hylla) — ramen gör den till en tavla efter pusslandet."
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i ram-med-figurbitar-formen (PriceRunner 'träpussel katt' 12:13:01Z: platta kattpussel Kruzzel 130 bitar 109–199, Philos 160 bitar 199, Eureka Cat 299, Ravensburger Lovely Cat 150 169)",
+     "pris_sek": null,
+     "url": "https://www.pricerunner.se/search?q=träpussel%20katt",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Unidragon (kategori, inte formen) — PriceRunner",
+     "pris_sek": 1391,
+     "url": "https://www.pricerunner.se/search?q=unidragon%20träpussel",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.53,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se (12:01–12:16Z)",
+     "coolstuff.se (sök 'unidragon' 12:01Z: 'Vi kunde inte hitta')",
+     "adlibris.com (429/Vercel-checkpoint — oläst)",
+     "designtorget.se (404 på sök — oläst)",
+     "teknikmagasinet.se (0 träffar)",
+     "panduro.com (JS-skal — oläst)",
+     "fyndiq/cdon/amazon.se — oläst (403/503 enligt protokoll)"
+    ],
+    "golv_kommentar": "Platta kattpussel i trä finns för 109–299 (fyra svenska listningar), men ram-formen där pusslet blir en tavla finns inte. Priset sätts på landad × 2,4 (ankaret är kategorins, inte formens)."
+   },
+   "ekonomi": {
+    "landad_sek": [
+     202,
+     247
+    ],
+    "pris_sek": 549,
+    "brutto_sek": [
+     302,
+     347
+    ],
+    "be_cpa_sek": [
+     302,
+     347
+    ],
+    "be_roas": 1.82,
+    "flerkop": false,
+    "returrisk": "låg — en variant per motiv (A3), inget att mäta; risk: bitar saknas → reklamation"
+   },
+   "meta_tanke": {
+    "hook": "Hur många katter ser du?",
+    "objekt_i_bild": "kattramen på bordet, en hand lägger sista katten",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "närbild: varje bit är en egen katt"
+   },
+   "varfor": "Den mest självselekterande raden i linsen — kattägaren stannar på en sekund — och en form (ram → tavla) som inte finns i svenskt flöde. Landad ~225 kr ger BE-CPA över 300 vid 549.",
+   "huvudrisk": "15,54 USD är den dyraste listningen i linsen och bitantal ej mätt — ser ramen liten ut (< 30 cm) faller K8 till 349-klassen",
+   "konfidens": "LÅG",
+   "poang": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 3
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 8,
+    "K2": 11,
+    "K3": 12,
+    "K4": 8,
+    "K5": 8,
+    "K6": 8,
+    "K7": 7,
+    "K8": 8,
+    "K9": 5,
+    "K10": 2,
+    "K11": 2,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt",
+     "koncept.py sok katt (14 träffar — alla utekattkojan/vattenskål, annan SAK)",
+     "REDAN-PROVAT.md"
+    ]
+   },
+   "kallor": [
+    "https://www.pricerunner.se/search?q=träpussel%20katt",
+    "https://www.aliexpress.com/item/1005010507426396.html",
+    "https://www.aliexpress.com/item/1005010356275930.html"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "3D-kristallpussel med LED-bas (djur/slott)",
+   "skal": "Golvet är hela marknaden: PriceRunner '3D kristallpussel' 475 träffar, Robetoy/HCM-Kinzel/Bepuzzled 119–229 kr (varg, uggla, svan, pingvin, elefant …) 12:01Z. Inte sökt på Ali."
+  },
+  {
+   "namn": "1 000-bitars pussel i rund/oval form (norrsken, älg, stugor)",
+   "skal": "Golv sortiment: Legind runt 68 cm 1 000 bitar 121–123 (3 motiv), 1Conzept runt 129, 'Runt Pussel 1000 Månen' 129 (PriceRunner 12:01Z); svenska motiv finns redan (Upplevas Smögen 299, Kärnan Vandrande Älgar 169, Galison Northern Lights 229). Inte sökt på Ali."
+  },
+  {
+   "namn": "Gradient-pussel",
+   "skal": "Golv: Masterpieces Gradient 176, Gradient Jigsaw Puzzle 232, Enjoy Colorful Gradient Swirl 1000 334 (PriceRunner 12:01Z). Inte sökt."
+  },
+  {
+   "namn": "Pussel som lyser i mörkret",
+   "skal": "Golv: Mudpuppy Glow in the Dark 100 bitar 170, Ravensburger nattlampspussel 217–509, CubicFun LED 215 (PriceRunner 12:01Z). Inte sökt."
+  },
+  {
+   "namn": "Dubbelsidigt pussel",
+   "skal": "Golv: Dark Horse 2-Sided Deluxe 299 (PriceRunner 12:01Z) + kategorin är kartong 99–199. Inte sökt."
+  },
+  {
+   "namn": "Träpussel i jättebitar för 60+ (grepp)",
+   "skal": "Golv sortiment: Ravensburger XXL 100–300 bitar 104–119, Trefl Maxi 24 stora bitar 179, Kollektion Stora A 179 (PriceRunner 12:02Z). Inte sökt."
+  },
+  {
+   "namn": "Mystery-pussel",
+   "skal": "Golv sortiment + IP: Jumbo Wasgij Mystery 1–29 149–199 kr, 20+ varianter (PriceRunner 12:02Z). Inte sökt."
+  },
+  {
+   "namn": "Pusselrulle/-matta",
+   "skal": "Hoppad enligt order (Axel nej på pusselbrädan = förvaring)."
+  },
+  {
+   "namn": "Unidragon original / Wooden City / Kubiya",
+   "skal": "Varumärken — bara som ankare. Coolstuff har INTE Unidragon (sök 12:01Z: 'Vi kunde inte hitta'), Adlibris oläst (429/Vercel-checkpoint tre försök), Designtorget oläst (404 på sök), Teknikmagasinet 0 träffar. PriceRunner: Unidragon Eternal Elephant 700 bitar 1 391, Mandala 1 409; Wooden City julpussel 1 000 bitar 542."
+  },
+  {
+   "namn": "'Premium Wolves in The Forest' 300/500/1000 (Ali 1005008791563986, 23,06 USD, verifierad 12:06:02Z, hero sedd)",
+   "skal": "Vanligt rektangulärt bildpussel — inte djurform med figurbitar — och motivet är Ravensburgers licensmålning (IP). K8 = kartongpussel 149 kr."
+  },
+  {
+   "namn": "Ugglefamiljen A3/A4/A5 (Ali 1005005965722555, 13,73 USD, verifierad 12:06:11Z, hero sedd)",
+   "skal": "Rektangulärt bildpussel i kartong ('Wooden Puzzle', Difficulty 5A) — fel form, ser ut som Ravensburger 150 bitar."
+  },
+  {
+   "namn": "Vargserien 10 djur, 100–300 bitar (Ali 1005008814184247, 11,45 USD, verifierad 12:06:27Z, hero sedd)",
+   "skal": "Samma SAK som vargraden (rad 2); heron är ett collage med tio djur utan helbild. Behållen som reservlistning i rad 2 (enda med bitantal i titeln)."
+  },
+  {
+   "namn": "A2 500 bitar 42 × 42 cm 'Grandma & Grandpa' (Ali 1005011635908993, 13,21 USD, verifierad 12:12:16Z, hero sedd)",
+   "skal": "Porträttmotiv, inte djur; hero full av inbränd text. Noterad som prisreferens: 500 bitar A2 kostar ~13 USD i kategorin."
+  },
+  {
+   "namn": "Runda träpussel 150 bitar A3/A5 (uggla/räv/varg/drake, Ali 1005003842683839, 7,56 USD, verifierad 12:12:55Z, hero sedd)",
+   "skal": "Heron är ett collage av tolv motiv, 150 bitar = A4/A5-klass — K8 under 300 kr. Formen (rund) finns dessutom i Sverige (Boppi 150 runda 240)."
+  },
+  {
+   "namn": "Drake 11,79 (1005009271140882), pussel med ställ 8,79 (1005012743016527), älg 13,05 (1005008539830191), hjort 11,84 (1005008802543032), tiger 7,36 (1005005923901541), räv 12,79 (1005006206448649), drake i presentlåda 11,46 (1005008248029860), 1005005928205503",
+   "skal": "BLOCKED — produktsidan svarade med AliExpress captcha-skal (2 379 b) i tre försök vardera 12:07–12:18Z, även med ?gatewayAdapt=glo2usa&_randl_shipto=SE. Blockerad ≠ död: älg/hjort (svensk motivvärld) och 'Gift Box'-draken är värda ett nytt försök i morgon."
+  },
+  {
+   "namn": "Träpussel som ser ut som Unidragon i A4-klass (110–150 bitar)",
+   "skal": "Golv i exakt form under oss: Eureka Rainbowooden 214–299 (10 motiv), Engelhart A4 169, Northix 159, Kruzzel 109–199, Creative Craft Group 181–198, Ravensburger Wooden 169–279, iDventure 229 (PriceRunner 12:01–12:16Z). Därför bara A3-klass (300+ bitar) i leveransen."
+  }
+ ]
+}
