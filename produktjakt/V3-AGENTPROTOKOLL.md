@@ -33,7 +33,7 @@ inför ett datum"* på NYA objekt — inte tjugo överdrag.
 ## LIVE_VERIFIED — bara när ALLT detta gjorts i DENNA körning
 produktsidan öppnad (`ali.py <id>` svarar med titel) · titeln är samma produkt som konceptet · heron nedladdad och sedd ·
 pris i USD sett i sökträffen · varianter noterade ur titeln/sökträffen (en variant? universal? storlekar?) · tidsstämpel UTC.
-Svarar produktsidan tomt: pröva en annan listning av samma koncept. Sätt aldrig LIVE_VERIFIED på en länk du inte öppnat —
+Svarar produktsidan tomt: pröva `?gatewayAdapt=glo2usa&_randl_currency=USD&_randl_shipto=SE` med kakan `xman_us_f=x_locale=en_US&x_l=0&x_c_chg=1&regionGm=SE` (mätt 2026-09-24, ~60 % träff, tre försök med paus) — sedan en annan listning av samma koncept. **Syskon i samma form: högst tre per batch** (räv/varg/katt av fem träpussel 2026-09-24; dinosauriekalendern förlorade som syskon). Sätt aldrig LIVE_VERIFIED på en länk du inte öppnat —
 märk `SOKTRAFF` eller `BLOCKED`. Blockerad ≠ död.
 
 ## Ekonomin

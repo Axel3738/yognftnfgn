@@ -1,6 +1,6 @@
 {
  "_om": "Konceptregistret (V3). Skrivs av koncept.py; feedback.py och meta_facit.py uppdaterar via koncept.py. Ett koncept = objekt + form, med alla listningar, svar, förutsägelser och Metas facit.",
- "nasta": 324,
+ "nasta": 334,
  "koncept": {
   "K0001": {
    "id": "K0001",
@@ -22320,6 +22320,906 @@
     }
    ],
    "namn_sv": "Balansbrädan med kullabyrint, trä"
+  },
+  "K0324": {
+   "id": "K0324",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Träpusslet som blir en räv, A3",
+   "objekt": "NYTT: Träpusslet som blir en räv — mor och unge, A3, bitarna är små djur",
+   "form": "annat",
+   "sak": "nytt: träpusslet som blir en räv+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012691481961",
+     "url": "https://www.aliexpress.com/item/1005012691481961.html",
+     "bild": null,
+     "pris_usd": 10.12,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:16:06Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 1,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 2,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 146,
+     "be_cpa": 452,
+     "hook": "Ser du att varje bit är ett djur?",
+     "varfor": "Unidragon-formen (djur av hundratals figurbitar) har ankare 1 391 kr på PriceRunner men ingen svensk aktör i A3-storlek — golvet är små A4-pussel 159–299. Dagens bästa hero i hela linsen: verkligt foto i kontext, textfri.",
+     "huvudrisk": "pris 10,12 USD är lägsta variant (A5?) — A3-varianten kan kosta 15–20 USD och pressa BE-CPA under 400; bitantal/vikt ej mätta på listningen",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 12,
+      "K3": 12,
+      "K4": 8,
+      "K5": 8,
+      "K6": 9,
+      "K7": 6,
+      "K8": 10,
+      "K9": 5,
+      "K10": 2,
+      "K11": 2,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 1, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Träpusslet som blir en räv, A3"
+  },
+  "K0325": {
+   "id": "K0325",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Träpusslet som blir en varg",
+   "objekt": "NYTT: Träpusslet som blir en varg — svart varg mot månen, galaxtryck, figurbitar",
+   "form": "annat",
+   "sak": "nytt: träpusslet som blir en varg+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007875860435",
+     "url": "https://www.aliexpress.com/item/1005007875860435.html",
+     "bild": null,
+     "pris_usd": 12.28,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:08:41Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 2,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 599,
+     "landad": 178,
+     "be_cpa": 422,
+     "hook": "Vargen är gjord av 300 små djur",
+     "varfor": "Samma struktur som räven (ankare 2,3×, golv i A4-klass under oss) men med det motiv som säljer mest i kategorin — vargen — och en hero som ser ut som en tavla. Hook-siffran '300' måste bekräftas före brief.",
+     "huvudrisk": "tätaste golvet i linsen (fyra svenska varg-träpussel 159–315) och heron är packshot utan kontext; bitantal ej mätt",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 12,
+      "K3": 10,
+      "K4": 8,
+      "K5": 8,
+      "K6": 9,
+      "K7": 6,
+      "K8": 9,
+      "K9": 5,
+      "K10": 2,
+      "K11": 2,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 2, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Träpusslet som blir en varg"
+  },
+  "K0326": {
+   "id": "K0326",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Katten full av katter, träpussel med ram",
+   "objekt": "NYTT: Träpusslet i kattram — hundra små katter fyller en kattsiluett i trä",
+   "form": "annat",
+   "sak": "nytt: träpusslet i kattram+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005010507426396",
+     "url": "https://www.aliexpress.com/item/1005010507426396.html",
+     "bild": null,
+     "pris_usd": 15.54,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:08:49Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 3,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "LÅG",
+     "pris": 549,
+     "landad": 224,
+     "be_cpa": 324,
+     "hook": "Hur många katter ser du?",
+     "varfor": "Den mest självselekterande raden i linsen — kattägaren stannar på en sekund — och en form (ram → tavla) som inte finns i svenskt flöde. Landad ~225 kr ger BE-CPA över 300 vid 549.",
+     "huvudrisk": "15,54 USD är den dyraste listningen i linsen och bitantal ej mätt — ser ramen liten ut (< 30 cm) faller K8 till 349-klassen",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 11,
+      "K3": 12,
+      "K4": 8,
+      "K5": 8,
+      "K6": 8,
+      "K7": 7,
+      "K8": 8,
+      "K9": 5,
+      "K10": 2,
+      "K11": 2,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 3, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Katten full av katter, träpussel med ram"
+  },
+  "K0327": {
+   "id": "K0327",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Bollkastaren hunden laddar själv",
+   "objekt": "NYTT: Bollkastaren som hunden laddar själv — kastar 3–9 m, tre bollar",
+   "form": "annat",
+   "sak": "nytt: bollkastaren som hunden laddar själv+annat",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012241775924",
+     "url": "https://www.aliexpress.com/item/1005012241775924.html",
+     "bild": null,
+     "pris_usd": 41.38,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:24:45Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 4,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 2,
+      "meta_creative": 1,
+      "efterfragan": 2,
+      "lucka": 2,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 1,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 999,
+     "landad": 598,
+     "be_cpa": 401,
+     "hook": "Tröttnat på att kasta bollen?",
+     "varfor": "Ankare PetSafe 1 999 = 2,0× mot 999 medan zoo.se och Granngården saknar formen helt — samma H06-struktur som ATV-kapellet (Jula 399 under oss, Polaris 3 045 över) som vann 4,07. Rör sig, tävlas med, hunden själv i bild: precis det Axel sa ja till i dag (curling, pingisrobot, hästkapplöpning).",
+     "huvudrisk": "Golvet på PriceRunner är 19 listningar (marknadsplats, inte kedja) — om H06-undantaget bara gäller EN kopia faller raden; och landad 538–658 lämnar bara 341–461 kr under taket 999.",
+     "hypotes_id": "H06",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 12,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 8,
+      "K6": 8,
+      "K7": 3,
+      "K8": 9,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 4, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Bollkastaren hunden laddar själv"
+  },
+  "K0328": {
+   "id": "K0328",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Dragfjädern i trädet, 5 m rep",
+   "objekt": "NYTT: Dragfjädern som hänger i trädet — hunden drar mot fjädern, 5 m rep och karbinhakar",
+   "form": "annat",
+   "sak": "nytt: dragfjädern som hänger i trädet+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005006863806207",
+     "url": "https://www.aliexpress.com/item/1005006863806207.html",
+     "bild": null,
+     "pris_usd": 24.09,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:29:12Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 5,
+     "rank_poang": 10,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 348,
+     "be_cpa": 351,
+     "hook": "Hunden som aldrig får nog av dragkamp?",
+     "varfor": "Ingen svensk aktör säljer formen (bara handhållna bungee-rep 79–218 och en tether 428) — ren H10-nyhet med noll montering, och ett stort älskat djur i bild är kojans köpare. Landad 313–383 ger BE-CPA 316–386 vid 699.",
+     "huvudrisk": "Utan ankare vilar 699 på upplevt värde hos rep + fjäder — och hunden måste vara en dragkampshund, vilket halverar målgruppen.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 12,
+      "K3": 8,
+      "K4": 8,
+      "K5": 10,
+      "K6": 7,
+      "K7": 4,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 5, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Dragfjädern i trädet, 5 m rep"
+  },
+  "K0329": {
+   "id": "K0329",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Ballongfäktningen, två trädockor",
+   "objekt": "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas",
+   "form": "annat",
+   "sak": "nytt: fäktningsdockorna på pinnar+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013092804794",
+     "url": "https://www.aliexpress.com/item/1005013092804794.html",
+     "bild": null,
+     "pris_usd": 17.29,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:06:24Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 6,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 3,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 250,
+     "be_cpa": 249,
+     "hook": "Vem spräcker ballongen först?",
+     "varfor": "Enda formen i linsen utan svenskt golv och utan IP: PriceRunner/Teknikmagasinet tomma på formen, medan Silverlits RC-version (449) visar att 'spräck motståndarens ballong' säljs i Sverige. Matchar Axels läsning i dag — duell mellan två människor, spänning och skratt på bordet, syns på 3 s — och testar H10 rent (kategorinyhet, textfri hero i kontext).",
+     "huvudrisk": "Kloner för 3,74–4,05 USD finns på AliExpress — priset 499 måste bäras av handgjort trä, bottenplatta och heron i kontext, annars ser den ut som 149 kr; BE-CPA 224–274 är den lägsta bandet (ekonomi 1) — de billigare 10–13-dollarslistningarna var blockerade i dag och kan höja marginalen.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 14,
+      "K3": 12,
+      "K4": 6,
+      "K5": 8,
+      "K6": 8,
+      "K7": 5,
+      "K8": 6,
+      "K9": 4,
+      "K10": 1,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 6, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Ballongfäktningen, två trädockor"
+  },
+  "K0330": {
+   "id": "K0330",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Väggkastaren som slänger snöret åt katten",
+   "objekt": "NYTT: Väggkastaren för katten — motor på sugkopp som slänger ut och drar in snöret själv",
+   "form": "annat",
+   "sak": "nytt: väggkastaren för katten+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005013092548409",
+     "url": "https://www.aliexpress.com/item/1005013092548409.html",
+     "bild": null,
+     "pris_usd": 12.49,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:34:58Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 7,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 2,
+      "lucka": 3,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 449,
+     "landad": 181,
+     "be_cpa": 268,
+     "hook": "Katten som ingen orkar leka med?",
+     "varfor": "Formen (motoriserad snörkastare på vägg) finns inte hos någon svensk aktör medan golvmodellerna med snurrplatta är 20+ i sortiment — H10-nyhet till kojans köpare. LÅG med flit: asymmetrisk på nyhet och lucka (3), men K8 för 449 är obevisad.",
+     "huvudrisk": "12-dollarsplast som ska bära 449 — och kattleksaker i svenskt flöde ligger 109–295, så kunden har ett prisankare i huvudet trots att formen är ny.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 10,
+      "K6": 7,
+      "K7": 3,
+      "K8": 5,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 7, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Väggkastaren som slänger snöret åt katten"
+  },
+  "K0331": {
+   "id": "K0331",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Kaospendeln, dubbelpendel i metall",
+   "objekt": "NYTT: Kaospendeln på skrivbordet — elektromagnetisk dubbelpendel som aldrig stannar (Swinging Sticks-form)",
+   "form": "annat",
+   "sak": "nytt: kaospendeln på skrivbordet+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005012215933873",
+     "url": "https://www.aliexpress.com/item/1005012215933873.html",
+     "bild": null,
+     "pris_usd": 25.39,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:27:16Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 8,
+     "rank_poang": 9,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 2,
+      "efterfragan": 1,
+      "lucka": 3,
+      "ekonomi": 2,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "MEDEL",
+     "pris": 699,
+     "landad": 367,
+     "be_cpa": 332,
+     "hook": "Den stannar aldrig. Titta.",
+     "varfor": "Enda svenska listningen är MikaMax 899 (ankare, ingen kopia under oss — PriceRunner 0 på tre fraser), Ali 25–33 USD ger 699 kr med BE-CPA ~330; rörelsen bevisar sig själv på 3 s och formen är känd från Iron Man 2 = 'visste inte att den gick att köpa'.",
+     "huvudrisk": "'The Swinging Sticks' är ett registrerat varumärke (Fusion) — namnet får aldrig användas i annons eller titel; drivning/batterityp ej verifierad (captcha stoppade sidläsningen).",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 10,
+      "K2": 14,
+      "K3": 10,
+      "K4": 8,
+      "K5": 6,
+      "K6": 8,
+      "K7": 4,
+      "K8": 8,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 8, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Kaospendeln, dubbelpendel i metall"
+  },
+  "K0332": {
+   "id": "K0332",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Ferrofluidflaskan med magnet",
+   "objekt": "NYTT: Ferrofluidflaskan — magnetvätska som reser sig i taggar när magneten närmar sig",
+   "form": "annat",
+   "sak": "nytt: ferrofluidflaskan+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007108492269",
+     "url": "https://www.aliexpress.com/item/1005007108492269.html",
+     "bild": null,
+     "pris_usd": 15.59,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:26:59Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 9,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 3
+     },
+     "konfidens": "MEDEL",
+     "pris": 499,
+     "landad": 226,
+     "be_cpa": 274,
+     "hook": "Vad händer när magneten närmar sig?",
+     "varfor": "Enda svenska listningarna ligger på 845 (ankare 1,69× mot 499) — ingen kopia under oss; 15,59 USD ger BE-CPA ~270 och effekten syns på en sekund utan förklaring (H10-test i ren form).",
+     "huvudrisk": "K8: en 60-ml-flaska ser billig ut på packshot — priset 499 bär bara med kontextbild där taggarna syns; glasflaska med olja i paket = läckage-/brytrisk i frakt.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 14,
+      "K3": 10,
+      "K4": 8,
+      "K5": 5,
+      "K6": 8,
+      "K7": 4,
+      "K8": 6,
+      "K9": 4,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 9, sasong, konfidens MEDEL)"
+    }
+   ],
+   "namn_sv": "Ferrofluidflaskan med magnet"
+  },
+  "K0333": {
+   "id": "K0333",
+   "skapad": "2026-09-24-jul3",
+   "namn": "Regnmolnet — droppar i lampan",
+   "objekt": "NYTT: Regnmolnslampan — vattendroppar som faller i en cirkel under molnet (luftfuktare)",
+   "form": "annat",
+   "sak": "nytt: regnmolnslampan+annat",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "arketyp_gammal": null,
+   "taggar": {},
+   "kalla": "produktjakt v3",
+   "listningar": [
+    {
+     "product_id": "1005007580801608",
+     "url": "https://www.aliexpress.com/item/1005007580801608.html",
+     "bild": null,
+     "pris_usd": 31.19,
+     "forst_sedd": "2026-09-24-jul3",
+     "verifieringar": [
+      {
+       "datum": "2026-09-24-jul3",
+       "verdict": "LIVE_VERIFIED",
+       "verifierad_at": "2026-09-24T12:27:43Z",
+       "kalla": "v3 discovery"
+      }
+     ]
+    }
+   ],
+   "leveranser": [
+    {
+     "datum": "2026-09-24-jul3",
+     "levererad": true,
+     "slot": "sasong",
+     "rank": 10,
+     "rank_poang": 8,
+     "poang_axlar": {
+      "vinnarlikhet": 1,
+      "meta_creative": 1,
+      "efterfragan": 1,
+      "lucka": 2,
+      "ekonomi": 1,
+      "sasong": 3,
+      "leverantor": 2,
+      "nyhet": 3,
+      "hypotesvarde": 2
+     },
+     "konfidens": "LÅG",
+     "pris": 699,
+     "landad": 451,
+     "be_cpa": 248,
+     "hook": "Det regnar på nattduksbordet.",
+     "varfor": "Viral droppform (rain cloud humidifier) som inte hittas i svenskt flöde på fem PriceRunner-fraser; 31 USD ger 699 kr med BE-CPA ~250 och effekten läses utan ord.",
+     "huvudrisk": "Golvet är oläst där det troligast finns (Coolstuff/Teknikmagasinet är JS-renderade) och ankare saknas — priset 699 vilar på landad × 1,55, inte på ett ankare; dessutom elektronik + vatten = fler reklamationer än en pendel.",
+     "hypotes_id": "H10",
+     "per_kriterium": {
+      "K0": "ok",
+      "K1": 8,
+      "K2": 12,
+      "K3": 8,
+      "K4": 6,
+      "K5": 5,
+      "K6": 8,
+      "K7": 4,
+      "K8": 6,
+      "K9": 3,
+      "K10": 2,
+      "K11": 1,
+      "K12": 1
+     },
+     "kalla": "v3 batch"
+    }
+   ],
+   "feedback": [],
+   "launch": null,
+   "meta": null,
+   "status": "levererad",
+   "aterupptas_om": [],
+   "historik": [
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "skapat (produktjakt v3)"
+    },
+    {
+     "datum": "2026-09-24-jul3",
+     "handelse": "levererad på V3-arket (rank 10, sasong, konfidens LÅG)"
+    }
+   ],
+   "namn_sv": "Regnmolnet — droppar i lampan"
   }
  }
 }

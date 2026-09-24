@@ -180,5 +180,53 @@
   "deadline": "jul 12,4 v",
   "korningsvecka": 41,
   "orsak": "2026-09-24 julrunda 2 lins JG: Amewi-ankare 2 192 finns men kedjorna har 20 varianter (sortiment) — fälld på 20+-regeln. Lyfts bara om H06 bekräftas i Meta på magnetschacket/pingisroboten."
+ },
+ {
+  "objekt": "NYTT: Bilbanan med två handkontroller — 1:43, loop",
+  "form": "annat",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "jul 12,4 v",
+  "korningsvecka": 40,
+  "orsak": "2026-09-24 julrunda 3 lins JP: H06-lucka verklig (7 generika 349–699, Carrera GO 738–1 320 ankare) men Ali har bara kompletta set från 57 USD → BE-CPA 172. Fem set-listningar 18–36 USD BLOCKED — öppna dem: 'komplett set, bana ≥ 4 m, två kontroller, två bilar, loop, 30–42 USD' → rad på 699–899."
+ },
+ {
+  "objekt": "NYTT: RC-snöslungan som kastar riktig snö",
+  "form": "annat",
+  "arketyp": "F_HOBBY_IDENTITET",
+  "deadline": "första snö",
+  "korningsvecka": 44,
+  "orsak": "2026-09-24 lins JM: äkta lucka (PriceRunner 0) men bara som påbyggnad till 1/12-crawlers 133–180 USD. Rad om komplett listning < 60 USD dyker upp."
+ },
+ {
+  "objekt": "NYTT: Betesbåten för fiskaren",
+  "form": "annat",
+  "arketyp": "F_HOBBY_IDENTITET",
+  "deadline": "jul / isfiske",
+  "korningsvecka": 45,
+  "orsak": "2026-09-24 lins JM: svenskt golv 1 789+, Joysway/Amewi 2 295–2 396 ankare; billigaste Ali 95 USD → landad 1 379. Rad om ≤ 56 USD."
+ },
+ {
+  "objekt": "NYTT: Plinko-brädan för julbordet",
+  "form": "annat",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "jul",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins JL: PriceRunner 0 produkter (lucka) men ingen Ali-listning under 243 USD (väggmodell). Rad om 30–60 USD bordsplinko dyker upp."
+ },
+ {
+  "objekt": "NYTT: Träparkeringshuset med hiss",
+  "form": "annat",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "jul",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins JO: 9 i formen i SE, Hape Gearhead/Flexa 1,8× ankare = H06-lucka; Ali bara Mamabrum 108–142 USD. Rad om generisk < 60 USD."
+ },
+ {
+  "objekt": "NYTT: Kattens jaktmaskin på snöre, fjärrstyrd",
+  "form": "annat",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "jul",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 lins JQ: starkaste nyheten i husdjurslinsen, 58,79 USD → över taket. Rad om < 35 USD."
  }
 ]
