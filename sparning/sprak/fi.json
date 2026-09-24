@@ -187,6 +187,7 @@
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "Vastaanottajalla on uusi osoite. Paketti on uudelleenohjattu ja lähetetään sinne",
     "Paketet är på väg till ombudet": "Paketti on matkalla noutopisteeseen",
     "Paketet gick åt fel håll men är nu på väg till rätt ort": "Paketti lähti väärään suuntaan, mutta on nyt matkalla oikeaan paikkaan",
-    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "Kuljettaja ei löytänyt perille. Saat tekstiviestin tai sähköpostin, jossa voit täydentää osoitetiedot, ja yritämme uudelleen. Jos et vastaa, paketti lähetetään lähimpään noutopisteeseen"
+    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "Kuljettaja ei löytänyt perille. Saat tekstiviestin tai sähköpostin, jossa voit täydentää osoitetiedot, ja yritämme uudelleen. Jos et vastaa, paketti lähetetään lähimpään noutopisteeseen",
+    "Paketet fick inte plats i brevlådan och vi kom inte in i huset för att lämna det. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Paketti ei mahtunut postilaatikkoon, emmekä päässeet rakennukseen jättämään sitä. Se on matkalla lähellä sijaitsevaan noutopisteeseen, ja saat ilmoituksen kun sen voi noutaa, yleensä yhden arkipäivän kuluessa"
   }
 }

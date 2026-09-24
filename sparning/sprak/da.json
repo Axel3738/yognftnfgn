@@ -187,6 +187,7 @@
     "Mottagaren har en ny adress. Paketet är omadresserat och skickas vidare dit": "Modtageren har en ny adresse. Pakken er omadresseret og sendes videre dertil",
     "Paketet är på väg till ombudet": "Pakken er på vej til afhentningsstedet",
     "Paketet gick åt fel håll men är nu på väg till rätt ort": "Pakken kørte forkert, men er nu på vej til det rigtige sted",
-    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "Buddet fandt ikke frem. Du får en SMS eller mail, hvor du kan udfylde adresseoplysningerne, så prøver vi igen. Svarer du ikke, sendes pakken til nærmeste afhentningssted"
+    "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "Buddet fandt ikke frem. Du får en SMS eller mail, hvor du kan udfylde adresseoplysningerne, så prøver vi igen. Svarer du ikke, sendes pakken til nærmeste afhentningssted",
+    "Paketet fick inte plats i brevlådan och vi kom inte in i huset för att lämna det. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken kunne ikke være i postkassen, og vi kunne ikke komme ind i bygningen for at levere den. Den er på vej til et afhentningssted i nærheden af dig, og du får besked, når den kan hentes, som regel inden for én hverdag"
   }
 }
