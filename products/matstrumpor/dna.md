@@ -139,8 +139,12 @@ arbetshypoteser tills kommentarerna går att läsa.
    **nej** ("håller lowkey inte med", inget skäl); minimispend på `jul_video` —
    **nej** ("inte bra"); "sålde slut i november" — **bekräftat**; råfilen —
    redigerarna har den. Kommentarerna: token:en har `pages_read_engagement`,
-   men Matstrumpors sida `820358954504320` är inte tilldelad systemanvändaren
-   "API LONG TERM" (13 andra sidor är det) — Axel tilldelar sidan.
+   men den tillhör systemanvändaren "API LONG TERM" (`122107293489476552`) i
+   Business Manager **SnarkLös** `2368966296803728` — Matstrumpors sida ligger i
+   Business Manager **Matstrumpor.se** `3354502211392342`, vars EGEN "API long
+   term" (`61594688758548`) har sidan. Två användare med samma namn i två
+   företag. Lösning: dela sidan Matstrumpor som partner till SnarkLös och
+   tilldela den där (Axels klick, 2026-09-24).
 3. **Batch #1 (Gilz 044–047)** etiketteras 28/9 om Meta ger dem något — i
    dag har de 0,6–9,5 kr var.
 4. **"Köp 1 – få 1" mot "Köp 2 – få 2"** som isolerad variabel i två bilder,

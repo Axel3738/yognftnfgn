@@ -59,9 +59,12 @@ brief i Google Docs.
 **Kommentarerna kunde INTE läsas:** `tools/annonskommentarer.mjs` svarar
 `(#10) requires pages_read_engagement` på sidan `820358954504320` (Matstrumpors
 Facebooksida). Mätt samma dag: token:en HAR `pages_read_engagement` — men
-sidan är inte tilldelad systemanvändaren "API LONG TERM" (`me/accounts` listar
-13 sidor, ingen Matstrumpor). Axel tilldelar sidan i Business Settings; tills
-dess kan inga INVAND-briefer skrivas ur kommentarer för Matstrumpor.
+token:ens systemanvändare (`122107293489476552`) sitter i Business Manager
+SnarkLös `2368966296803728` och ser 13 sidor, ingen Matstrumpor — Matstrumpors
+sida ligger i Business Manager Matstrumpor.se `3354502211392342` hos en ANNAN
+systemanvändare med samma namn (`61594688758548`). Sidan måste delas som
+partner till SnarkLös och tilldelas där; tills dess kan inga INVAND-briefer
+skrivas ur kommentarer för Matstrumpor.
 
 **Axels beslut på rondens förslag (2026-09-24):** pausa haikuh3/012v2/haikuh2 —
 nej; minimispend jul_video — nej; "sålde slut i november" — bekräftat;
