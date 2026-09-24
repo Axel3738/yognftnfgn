@@ -1,0 +1,68 @@
+{
+  "id": "k05-fars-dag",
+  "namn": "MAIL_20261013_Takoverdrag_GT_2_engagerade60d_product_farsdag-19okt_v1",
+  "memo": "Hypotes: presentvinkeln \"han älskar husvagnen\" (Takoverdrag_GT_2_H1) är den annons som gett mest vinstbidrag, 8 202 kr på 14 köp, CPA 107 kr. Fars dag (8 nov) är den första riktiga presentdagen. Sista beställningsdag 19 okt är räknad med p90 20 dygn, och det är brådskan, med riktig orsak.",
+  "taggar": {
+    "typ": "I",
+    "kalla": "egen-data",
+    "kalla_ref": "products/carashell/takskyddet/dna.md:56-66",
+    "lardom": null,
+    "avatar": "den som letar present till en pappa med husvagn, båt eller verkstad",
+    "begar": "en present han faktiskt använder",
+    "awareness": "solution",
+    "urgency": "konsekvens",
+    "confidence": "medium",
+    "prefix": "Takoverdrag",
+    "kod": "GT"
+  },
+  "amnesrader": [
+    { "text": "En present för taket han aldrig kollar", "begar": "ge en present för den del av vagnen han aldrig tänker på" },
+    { "text": "Beställ senast 19 oktober till fars dag", "begar": "få paketet fram i tid till fars dag" },
+    { "text": "Tre andra presenter om han saknar husvagn", "begar": "hitta en present även om han saknar husvagn" }
+  ],
+  "forhandstext": "Taket är den dyraste ytan på hela vagnen.",
+  "block": [
+    {
+      "typ": "hero",
+      "rubrik": "En present för taket han aldrig kollar",
+      "text": "Hej {{fornamn}},\n\nTaket är den dyraste ytan på hela vagnen, och den han aldrig tänker på själv.",
+      "bild": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "knapp": { "text": "Se presenten", "lank": "produkt:takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan" }
+    },
+    {
+      "typ": "produkt",
+      "handle": "takoverdrag-husvagn-6-5-3-m-skyddar-den-dyraste-ytan",
+      "text": "Skyddar taket med remmar på alla fyra sidor, i stället för ett helöverdrag han måste be om hjälp med.",
+      "knapp": "Se taköverdraget"
+    },
+    {
+      "typ": "produktrad",
+      "rubrik": "Om han inte har husvagn",
+      "handles": [
+        "balteslipmaskin-mini-3-i-1-knivslip-polerare",
+        "fiskespohallare-4-pack-kraftig-forvaring",
+        "overvakningskamera-tradlos-dubbellins-ptz-med-ai-sparning"
+      ]
+    },
+    {
+      "typ": "text",
+      "rubrik": null,
+      "text": "Beställ senast 19 oktober om paketet ska vara framme till fars dag den 8 november."
+    },
+    { "typ": "fakta" }
+  ],
+  "tretest": [
+    { "rad": "En present för taket han aldrig kollar", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Beställ senast 19 oktober till fars dag", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Tre andra presenter om han saknar husvagn", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Taket är den dyraste ytan på hela vagnen.", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se presenten", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Se taköverdraget", "visualisera": true, "falsifiera": true, "ingen_annan": true },
+    { "rad": "Om han inte har husvagn", "visualisera": true, "falsifiera": true, "ingen_annan": true }
+  ],
+  "planerad": "2026-10-13T18:00:00+02:00",
+  "segment": ["SEG_engagerade_60d"],
+  "exkludera": ["SEG_oengagerade_180d"],
+  "status_plan": "utkast-skrivs-om-efter-lardom",
+  "kraver_axel": null
+}
