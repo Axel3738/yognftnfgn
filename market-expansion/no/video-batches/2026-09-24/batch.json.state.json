@@ -350,5 +350,197 @@
    }
   },
   "srtDone": true
+ },
+ "kapell-till-snoslunga_CS_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/2614453ae29c4fcd9940e1c53a6a80a7/original.mp4",
+  "proofreadId": "db71ec77a7b04ff4bf056db000f55445-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 62,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_CS_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/0b758e62e649478b9e1ed807c803e333/original.mp4",
+  "proofreadId": "d367419a37be4e47bb375756f7e79e09-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 46,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_CS_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/67e4d8c6b7f846d8a27dfa8ec2d50199/original.mp4",
+  "proofreadId": "6b8f13f6a2fb4302b18d97b6c1fd57e0-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 65,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_G_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/2a35d29f47f1443587f2ac40e29fb0d4/original.mp4",
+  "proofreadId": "3cccbd55c2c44d83aed117acdab45dda-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 88,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_G_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/cd1d84439ae84196a3ab904b28b1e26a/original.mp4",
+  "proofreadId": "1a8653ea1e7b4be683223bb50554e175-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_G_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/33de1d74a61b4d87bc55630085f6c60a/original.mp4",
+  "proofreadId": "55741b69b12042eca54b83e20f6bfa46-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 85,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_PD_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/433bc86ccfba44bea105b69b32e19161/original.mp4",
+  "proofreadId": "485e2f377da348ec8c513f376e20fc9e-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 73,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_PD_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/9fb27760950844a2b48658fbc195fc48/original.mp4",
+  "proofreadId": "853da501a00f4518aa2aaf2b2c4d8764-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 67,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_PD_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/e745577d32fc45d282ce18ab5aefac79/original.mp4",
+  "proofreadId": "a82ac3e0f89b4031b33e7950e2f9f60a-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 68,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_SP_1_H1": {
+  "assetUrl": "https://resource2.heygen.ai/video/5cc5fd0361fc490286e9d45166053b60/original.mp4",
+  "proofreadId": "7b6197a81172423787693468d20645c4-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 63,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_SP_1_H2": {
+  "assetUrl": "https://resource2.heygen.ai/video/28076185effc46418fd2a83b494fbbc7/original.mp4",
+  "proofreadId": "a3c67fd11bd4436cb1a81c2010682f0a-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 61,
+    "skal": null
+   }
+  },
+  "srtDone": true
+ },
+ "kapell-till-snoslunga_SP_1_H3": {
+  "assetUrl": "https://resource2.heygen.ai/video/9138c4db51d6465abbc41e3f9e2bd9a5/original.mp4",
+  "proofreadId": "ba559051a0cc4482890adf2a92a2045f-nb-nb-NO",
+  "sprak": "Norwegian Bokmål (Norway)",
+  "marknad": "NO",
+  "output_language": "Norwegian Bokmål (Norway)",
+  "sprakkoll": {
+   "HeyGens översättning": {
+    "ok": true,
+    "gissat": "nb",
+    "ord": 60,
+    "skal": null
+   }
+  },
+  "srtDone": true
  }
 }
