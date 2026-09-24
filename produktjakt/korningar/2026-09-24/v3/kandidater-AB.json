@@ -1,0 +1,366 @@
+{
+ "agent": "AB — tjänsten man slipper, utanför kaminen (H03/H12)",
+ "datum": "2026-09-24",
+ "kandidater": [
+  {
+   "koncept_id": null,
+   "namn_sv": "Värmepumpstvätten — påse, spruta, borstar",
+   "objekt": "NYTT: Luftvärmepumpens innerdel (1,8 miljoner i villor)",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H07",
+   "vinnarlikhet": {
+    "likast": "Sotarset Med Böjliga Stänger",
+    "delade_variabler": [
+     "old way = tjänst (värmepumpsservice 1 900–3 000 kr/besök, bytautvarmepumpen.se + effektivvvs.se 2026-09-24)",
+     "ägare 55+ småhus (1,8 miljoner luft-luft-pumpar i villor)",
+     "synlig payoff på 3 s (brunt vatten rinner ur påsen i hinken)",
+     "prisband 500–999",
+     "deadline säsongsstart (pumpen slås om till värme vid första frost)",
+     "kedjan har bara förbrukningsvaran (sprayen 159–200 kr), inte formen"
+    ],
+    "avvikelser": [
+     "objekt_ute = nej (innerdelen sitter i vardagsrummet) — förlorarsignal HÖG i LEARNING_STATE",
+     "hero har inbränd text (materialklass 1)",
+     "kräver att kunden själv sprayar och spolar — 20 minuters jobb"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_frost_mellan",
+    "deadline_typ": "första frost",
+    "veckor_kvar": 3.0,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005008812148086",
+    "url": "https://www.aliexpress.com/item/1005008812148086.html",
+    "pris_usd": 21.85,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:52:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005008812148086.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "8-delarsset: påse 120 cm (18 000–36 000 BTU) + 2 L tryckspruta + 3 borstar + väggskydd + trasa + handskar; 100 cm-påse finns i syskonlistningar (1005013167164340, 4,29 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar påsen hängande under en öppnad innerdel med spruta och borstar utlagda — i kontext, men med inbränd text (BTU-mått, '8pcs', delnamn) som måste beskäras eller ersättas; syskonlistningarna 1005006027709452 och 1005012698135612 är ännu textigare"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "CDON (marknadsplats) — 'Luftkonditionering Rengöring Skyddspåse … 2 m vattenrör', bara påsen",
+     "pris_sek": null,
+     "url": "https://cdon.se/produkt/luftkonditionering-rengoring-skyddspase-dammtvatt-ac-clean-skydd-med-2-m-vattenror-for-1-till-2-hp-luftkonditionering-ee2b5c16c494514b/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Tjänsten: värmepumpsservice med invändig rengöring, 1 900–3 000 kr/besök (bytautvarmepumpen.se; effektivvvs.se; leadhive.se 2026)",
+     "pris_sek": 1900,
+     "url": "https://effektivvvs.se/service-luftvarmepump-pris/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.38,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jula.se (Värmepumpsrengöring 500 ml 629360 — bara spray, ingen påse/kit)",
+     "bauhaus.se (Jape Sanera 0,5 L — bara spray)",
+     "elon.se (Elvita luftvärmepumpsrengöring — spray)",
+     "polarpumpen.se (kunskapsbank: rengöring själv med dammsugare + spray; inget kit i sortimentet hittat)",
+     "cdon.se (påse utan spruta/borstar, pris 403 vid hämtning)",
+     "amazon.se (B087N1QQTX påse — pris ej visat, 503)",
+     "quickparts.se (403)",
+     "effektivvvs.se / bytautvarmepumpen.se / leadhive.se (tjänstepris)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     284,
+     348
+    ],
+    "pris_sek": 799,
+    "brutto_sek": [
+     451,
+     515
+    ],
+    "be_cpa_sek": [
+     451,
+     515
+    ],
+    "be_roas": 1.65,
+    "flerkop": false,
+    "returrisk": "låg — påsen 120 cm täcker alla villapumpar (innerdel 80–110 cm); ingen mätning behövs"
+   },
+   "meta_tanke": {
+    "hook": "När tvättades din värmepump inuti senast?",
+    "objekt_i_bild": "innerdelen i vardagsrummet med påsen under, slangen ner i hinken",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brunt vatten rinner ur slangen i hinken — samma payoff som sotet i sotarsetets påse"
+   },
+   "varfor": "Exakt sotarsetets struktur på nästa maskin i samma hus: tjänsten (1 900–3 000 kr per service) ersätts av påse + tryckspruta + borstar för 799 kr och payoffen (smutsvattnet) syns på 3 s. Ingen kedja har formen — Jula/Bauhaus/Elon säljer bara sprayen — och 1,8 miljoner villor har objektet.",
+   "huvudrisk": "Objektet står inne (objekt_ute = nej är kontots starkaste förlorarsignal) och heron är textig — kontextbild måste beskäras eller skjutas själv.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 3,
+    "meta_creative": 2,
+    "efterfragan": 3,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 14,
+    "K2": 12,
+    "K3": 8,
+    "K4": 9,
+    "K5": 8,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (värmepump: bara Poolvärmepumpens vinterhuv)",
+     "koncept.py sok värmepump/luftvärmepump/rengöring/påse (bara K0206–K0212 utedelstak)",
+     "fynd.json 09-09…09-23"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008812148086.html",
+    "https://effektivvvs.se/service-luftvarmepump-pris/",
+    "https://bytautvarmepumpen.se/luftvarmepump/pris/",
+    "https://www.leadhive.se/kalkylator/service-varmepump",
+    "https://bytautvarmepumpen.se/luftvarmepump/",
+    "https://www.jula.se/catalog/bygg-och-farg/varme-och-ventilation/uppvarmning/varmepumpar-tillbehor/varmepumpsrengoring-629360/",
+    "https://www.bauhaus.se/varmepumpsrengoring-jape-sanera-0-5l",
+    "https://www.polarpumpen.se/kunskapsbanken/varmepump-kunskapsbank/luftvarmepump-kunskapsbank/anvanda-luftvarmepump/skotsel-luftvarmepump/rengoring-luftvarmepump-och-filter/",
+    "https://cdon.se/produkt/luftkonditionering-rengoring-skyddspase-dammtvatt-ac-clean-skydd-med-2-m-vattenror-for-1-till-2-hp-luftkonditionering-ee2b5c16c494514b/"
+   ]
+  },
+  {
+   "koncept_id": null,
+   "namn_sv": "Hjulvagnen — vinterhjulen upp på navet",
+   "objekt": "NYTT: Bilens vinterhjul — hjulbytet hemma",
+   "form": "verktyg",
+   "arketyp": "D_SNABBARE_METOD",
+   "arketyp_sekundar": "C_LAGA_ISTALLET",
+   "slot": "exploitation",
+   "hypotes_id": "H12",
+   "vinnarlikhet": {
+    "likast": "Bälteslipmaskinen (mini bandslipare 3-i-1)",
+    "delade_variabler": [
+     "maskinen gör jobbet (rullarna lyfter hjulet, ägaren lyfter inte)",
+     "prisband ≥ 1 000 (1 299 kr)",
+     "märkesankare i fackhandel (Eks Verktyg Hjulvagn 2 195 kr = 1,69×)",
+     "synlig payoff på 3 s (hjulet rullas upp och in på navet)",
+     "old way = tjänst (hjulskifte 300–650 kr hos verkstaden, två gånger om året) eller lyfta 20–25 kg själv"
+    ],
+    "avvikelser": [
+     "objekt_ute = ja men jobbet görs två gånger om året — inte dagligt bruk",
+     "hero utan kontext (vit bakgrund, inbränd text '330LBS')",
+     "tung vara (~10 kg) — fraktfaktorn 1,5× kan vara för låg, ej mätt"
+    ]
+   },
+   "sasong": {
+    "fonster_id": "forsta_sno_mellan",
+    "deadline_typ": "första snö",
+    "veckor_kvar": 8.1,
+    "timing": "NOW"
+   },
+   "listning": {
+    "product_id": "1005013214543488",
+    "url": "https://www.aliexpress.com/item/1005013214543488.html",
+    "pris_usd": 37.92,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T05:57:40Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005013214543488.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, ställbar rullbredd, 159 kg (350 lbs) enligt titeln — heron säger 330 lbs; dyrare syskon 76–78 USD (1005013240886829, 1005013157151826)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: orange stålvagn med två rostfria rullar och ett SUV-hjul på, vit bakgrund, inbränd text 'Weight Load Capacity 330LBS' till höger — ser ut som 1 500–2 000 kr; kontextbild (hjulet rullas in på navet i garaget) måste skjutas själv"
+   },
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Eks Verktyg (fackhandel) — Hjulvagn",
+     "pris_sek": 2195,
+     "url": "https://eksverktyg.se/kategori/hjullyftar/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Eks Verktyg Hjulvagn (verkstadsform); Hjullyft 500 kg personbil 20 700 kr som takankare",
+     "pris_sek": 2195,
+     "url": "https://eksverktyg.se/kategori/hjullyftar/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.69,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "bauhaus.se/fritid/bil/garagetillbehor/byta-dack (domkrafter, momentnycklar, mutterdragare — ingen hjulvagn/hjullyft)",
+     "biltema.se (Hjuldolly hydraulisk = flyttar bilen, annan form; 'allt för hjulbytet' gav 403)",
+     "jula.se/dackverktyg (403 — ej läst)",
+     "verktygsboden.se/dackverktyg (ingen hjullyft i läst innehåll)",
+     "eksverktyg.se (Hjulvagn 2 195 kr; Hjullyft 500 kg 20 700 kr)",
+     "bilbolaget.nu (hjulskifte 595 kr) / minbilkoll.se (300–600 kr, 550–650 kr på lyft)"
+    ]
+   },
+   "ekonomi": {
+    "landad_sek": [
+     493,
+     603
+    ],
+    "pris_sek": 1299,
+    "brutto_sek": [
+     696,
+     806
+    ],
+    "be_cpa_sek": [
+     696,
+     806
+    ],
+    "be_roas": 1.73,
+    "flerkop": false,
+    "returrisk": "låg — ställbar bredd, universal för personbil/SUV; risken är frakt/skada på tung vara"
+   },
+   "meta_tanke": {
+    "hook": "Lyfter du vinterhjulen själv i år?",
+    "objekt_i_bild": "SUV-hjulet på vagnen, rullas fram till navet i garaget",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hjulet rullas upp på rullarna och glider rakt in på bultarna — ingen lyfter"
+   },
+   "varfor": "Testar H12 i tjänst-läget: ≥ 900 kr, fackhandelsankare 1,69× (Eks 2 195 kr, ingen kedja har formen), payoffen syns i ett klipp — och hjulskiftet ägaren betalar 300–650 kr för två gånger om året görs hemma utan att lyfta 25 kg. Samma ägare som köpte hjulmutterdragaren 09-14, nästa moment i samma jobb.",
+   "huvudrisk": "Ankaret ligger under H12:s 2,4×-krav och varan är tung — frakten kan äta marginalen; hero utan kontext.",
+   "konfidens": "MEDEL",
+   "poang": {
+    "vinnarlikhet": 2,
+    "meta_creative": 1,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "per_kriterium": {
+    "K0": "ok (hjulmutterdragaren 09-14 = samma jobb, annat moment)",
+    "K1": 12,
+    "K2": 10,
+    "K3": 8,
+    "K4": 8,
+    "K5": 10,
+    "K6": 8,
+    "K7": 6,
+    "K8": 8,
+    "K9": 3,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "k0": {
+    "dubblett": false,
+    "kollat": [
+     "katalog-live.txt (hjul/däck: Däckpump, Däckdjupsmätare, Jumpstart — ingen vagn/lyft)",
+     "koncept.py sok hjul/däck (bara hjulskydd för husvagn; Hjulmutterdragaren 09-14 i fynd.json)",
+     "fynd.json 09-09…09-23"
+    ]
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013214543488.html",
+    "https://eksverktyg.se/kategori/hjullyftar/",
+    "https://www.bauhaus.se/fritid/bil/garagetillbehor/byta-dack",
+    "https://www.biltema.se/bil---mc/verkstadsutrustning/lyftutrustning/hjuldollys/hjuldolly-hydraulisk-2000039919",
+    "https://bilbolaget.nu/verkstad-service/dackverkstad/hjulskifte/",
+    "https://minbilkoll.se/guide/dackbyte-pris"
+   ]
+  }
+ ],
+ "strukna": [
+  {
+   "namn": "Impelleravdragare (båtvarv, impellerbyte vid upptagning)",
+   "skal": "Fackhandeln har exakt formen under oss: Båtaccenten 134/148 kr, Moory från 59 kr, Boatlab 549 kr, Watski rostfri 839/919 kr. Lågt upplevt värde; Ali 11,81–21,55 USD."
+  },
+  {
+   "namn": "Råttspärr i avloppet (skadedjursfirma, 3 000–6 000 kr installerat)",
+   "skal": "Ingen AliExpress-listning i formen (tre fraser gav bara golvbrunnar och backventiler med 'anti-rat cover', 2,37–13,79 USD). Fackhandeln har den (Gustavsberg MA DN100 1 582 kr ex moms, Cantt Ratstop, RAT-EXX) och montering kräver rensbrunn/rörkapning — inte 55+-klick."
+  },
+  {
+   "namn": "Stubbfräs för vinkelslip (trädgårdsfirma, 1 200–3 500 kr/stubbe)",
+   "skal": "Ali-träffarna är carving-skivor (12,75–24,52 USD), inte stubbfräsar; formen finns hos Amazon.se (OBA raspskiva 125 mm), Wolfcraft träbearbetningssats och Briklas/Binab/Eggestrand frässkiva 125 mm — pris ej mätt men under oss i samma form. Kickbackrisk för ägare 55+."
+  },
+  {
+   "namn": "Magnetisk fönsterputs för 3-glas (fönsterputsare 800–1 500 kr/gång)",
+   "skal": "Golv i exakt form: CDON 299 kr (enkelglas 3–10 mm) och 381 kr (dubbelsidig). 3-glas 30–45 mm kräver mätning och starkare magnet (Ali 14,69–38,09 USD, mm-spann står inte i titlarna). TV-shop-form = 'sett innan'."
+  },
+  {
+   "namn": "Teleskopisk fönsterputs med vattenmatning",
+   "skal": "Samma form som Biltvättborsten (REAL_LOSER 4 820 kr / 7 köp / 1,16) plus Gardena Cleansystem hos kedjan. Ej sökt på Ali."
+  },
+  {
+   "namn": "Takpannekrok / takpannelyft (takläggare)",
+   "skal": "Ingen AliExpress-listning i formen — sökningen gav sugkoppar och kakellyftar. Montering på taket är ändå plåtslagarens argument för 55+."
+  },
+  {
+   "namn": "Radiatoravluftning (VVS)",
+   "skal": "Kedjan har nyckel och automatisk avluftare under 150 kr — BE-CPA ≥ 190 omöjlig."
+  },
+  {
+   "namn": "Vattenlåsrens / avloppsrens tryckluft (VVS)",
+   "skal": "Kedjan har formen (Biltema avloppsrensare PRO, tryckluftsrensare); avloppsrens för borrmaskin struken redan 09-23."
+  },
+  {
+   "namn": "Takfogtejp för husvagn (husvagnsverkstad, omfogning 5 000–15 000 kr)",
+   "skal": "Butyl-/aluminiumtejp är en förbrukningsvara hos Biltema/Jula (~100 kr) i samma form — golv under oss."
+  },
+  {
+   "namn": "Hjulbultsmomentnyckel, OBD-läsare, batteriladdare, mössfälla, fuktmätare husvagn, dörrspärr, låscylinder",
+   "skal": "Kedjeformer enligt ordern — inte verifierade på nytt."
+  },
+  {
+   "namn": "Hjulmonteringspinne M14×1,5 ('wheel changing helper', 7,95 USD)",
+   "skal": "Biltema säljer styrpinnen för ~60 kr; lågt upplevt värde; BE-CPA ≥ 190 omöjlig."
+  },
+  {
+   "namn": "Snörake för tak (takskottning)",
+   "skal": "Kedjan har den (Jula takskrapa snö) och fönstret 'snölast' är EARLY (16,9 v)."
+  },
+  {
+   "namn": "Kopparband mot mossa på taket (taktvätt 5 000–15 000 kr)",
+   "skal": "Payoffen syns inte på 3 s — effekten kommer efter månader. Bryter regeln 'payoffen ska synas i bild'."
+  }
+ ]
+}
