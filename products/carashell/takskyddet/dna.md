@@ -775,6 +775,42 @@ orderattributet, inte ur en gissning.
 ⚠️ Kassabilden är inte vald än — det sista klicket kräver en människa,
 eftersom API:t är stängt av planen.
 
+## 2026-09-24 — A/B-testerna, avläsning 1 (Axels fråga)
+
+Temat `CaraShell – CRO v1` kör **två** tester: `ms_ab_tests` = `paket` +
+`korgtrygg` (läst i `settings_data.json` 2026-09-24). Ordrarna lästa ur
+Shopify, statistiken med `theme-matstrumpor/ab/analys.mjs` (grenen
+`claude/build-shrinepro-like-theme-pfalsx`), beskedet oförändrat. Belopp =
+Shopifys `shopMoney` i SEK — butiken säljer i nio valutor. 0 tvingade besök,
+0 annullerade, 0 testordrar.
+
+| `korgtrygg` · #1181 2026-09-21 07:09 → #1314 2026-09-24 03:48 UTC | a (blocket syns) | b (som förut) |
+|---|---|---|
+| Ordrar | 62 | 64 |
+| Intäkt | 107 508 kr | 113 550 kr |
+| Snittorder | 1 734 kr | 1 774 kr |
+
+p = 0,93 på antal köp, p = 0,74 på snittorder. **Ingen skillnad syns — "vet
+inte" tills 100 köp per variant.** ⚠️ Här är **a** den NYA varianten (blocket)
+och **b** kontrollen — verktygets text "behåll A" förutsätter motsatsen.
+
+| `paket` · #1001 2026-09-12 06:39 → #1314 2026-09-24 03:48 UTC | A: 2 st −15 %, 3 st −20 % | B: 2 st −20 %, 3 st −25 % |
+|---|---|---|
+| Ordrar | 152 | 144 |
+| Intäkt | 239 522 kr | 223 585 kr |
+| Snittorder | 1 576 kr | 1 553 kr |
+| Ordrar med 2+ enheter | 12 | 10 |
+
+p = 0,68 på antal köp, p = 0,74 på snittorder. **Verktygets dom: ingen
+säkerställd skillnad, underlaget räcker — behåll A.** B:s djupare rabatt gav
+varken fler köp eller fler flerpack. Rabattkoderna i perioden: bara
+`CARASHELLROO2A` ×9 och `CARASHELLROO2B` ×8, inget 3-pack. Att stänga testet
+är en rabattfråga — Axels beslut.
+
+**Omärkta ordrar:** 8 av 134 (`korgtrygg`) och 18 av 314 (`paket`, 1 härledd
+ur rabattkoden). CaraShells `ms-ab.js` är versionen från 2026-09-10 och saknar
+Matstrumpors efterstämpling (2026-09-19), som täppte samma hål där.
+
 ## Verktygsfynd 2026-09-21 — den tysta nollan i `tools/meta-lib.mjs`
 
 `/ops-oversatt carashell` dog **fyra körningar i rad** med exit 0, tom stdout och
