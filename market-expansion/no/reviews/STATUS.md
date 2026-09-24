@@ -3,6 +3,37 @@
 Kör `/no-recensioner` (`.claude/commands/no-recensioner.md`). Den här filen är
 bara lägesrapporten.
 
+## Läget 2026-09-24 — 10 nya på Kajakkholder, 38 i `sources.json`
+
+En ny mapp i MAKE TO NORWAY: `NO Kajakhållare`. Arket `Kajakhållare_REVIEWS`
+hade tio rader, alla 5★, riktiga texter. Alla tio recensentnamn fanns redan i
+`names.no.json` — bara brödtexterna var nya.
+
+| Produkt | Synliga | Handle |
+|---|---:|---|
+| Kajakkholder 2-pk | 10 | `kajakkholder-2-pk-veggkroker-som-taler-45-kg` |
+
+**Spamfiltret tog hela importen igen** (10 av 10) och `judgeme-publicera.mjs`
+rättade i samma körning: 10 synliga / 0 spam. Tredje gången i rad — räkna med
+steget vid varje ny produkt.
+
+### ⚠️ Källarket har SAMMA titel på alla tio rader
+
+Varje rad säger `Bra och stabila`; bara brödtexterna skiljer. Det är arkets
+data, inte ett byggfel, så importen gick igenom — men i kundvyn står tio
+recensioner med identisk rubrik, vilket läser som påhittat. **Flaggat till
+Axel i Discord.** Rättas genom att variera titlarna i arket och importera om
+med `--anda` (bara på hans begäran).
+
+Regeln som gällde här: bygget stoppar på saknat betyg, saknad översättning
+eller okänt namn — aldrig på en titel som ser tråkig ut. Att skriva egna
+rubriker hade varit påhittad data.
+
+MAKE TO NORWAY har 38 produktmappar + WINNERS (5). Bygget gav 332 rader klara,
+10 bortvalda — alla gamasjers, känt sedan 2026-08-30.
+
+### De fyra som väntar — oförändrade sjätte dygnet
+
 ## Läget 2026-09-23 — 0 nya, allt redan klart, 37 i `sources.json`
 
 Inga nya mappar i MAKE TO NORWAY (37 produktmappar + WINNERS med 5, samma som i
