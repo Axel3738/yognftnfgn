@@ -31,6 +31,12 @@ dessa villkor. Ändras de: uppdatera här först, aldrig i ett enskilt meddeland
   beslutar Axel nästa steg; VA:n lovar aldrig retainer eller bonusbelopp.
 - **Beloppen är exklusive moms** (Axel 2026-09-24): 1 500 kr exkl. moms;
   momsregistrerade kreatörer lägger på moms på fakturan.
+- **VA:n frågar aldrig Axel** (Axels order 2026-09-24: "jag vill aldrig behöva se
+  nått annat än möjligtvis fakturan"). Varje utfall har en egen regel i SOP:en;
+  det som saknas avgörs av fem regler ("When nothing fits"). VA:n väljer själv
+  produkter bland butikens 20 bästsäljare (minst 300 kr, lätta att filma), max 2
+  åt gången, **max 6 nya affärer per månad** (Claudes beslut — budgettak ca
+  9 000-18 000 kr/mån exkl. moms + produkter). Axel får bara fakturorna.
 - **Inget månadsarbete, ingen retainer, ingen bonus** (Axels val B
   2026-09-24): en video i taget, även efter en vinnare.
 - **Paketet levereras som PDF** (Axels dom samma dag: .md går inte att läsa

@@ -4,6 +4,15 @@ You run the whole job: find creators, talk to them, get the videos, get them
 paid. Claude writes every Swedish message for you and tells you what it means.
 **You decide and you send.** This file tells you what to do and when.
 
+## The one rule about Axel
+
+**You never ask Axel anything.** Every situation has an answer in this
+handbook. If something is not covered, `/ugc reply` decides for you using the
+rules in "When nothing fits" at the bottom — you follow it and write what
+happened in the Notes column.
+
+The only thing Axel ever gets from you is **the creator's invoice** (step 12).
+
 Read with: `TERMS.md` (prices), `VETTING.md` (who is good), `SHEET.md` (where
 to save), `TEMPLATES.md` (the messages).
 
@@ -28,7 +37,7 @@ to save), `TEMPLATES.md` (the messages).
 
 **How much you handle:** start with **10–15 active creators** (anyone between
 `contacted` and `paid`). Following up is the hard part, not sending messages.
-If nothing gets dropped for two weeks, tell Axel and take more.
+If nothing gets dropped for two weeks, go up to **20 active** on your own.
 
 ## The Instagram account
 
@@ -41,8 +50,8 @@ password and the two-step login, so don't change either.
 - **Week 3:** max **20 DMs per day**.
 - **After that:** go up slowly, max **50 per day**. (Accounts get blocked
   around 80–100 a day.)
-- **Instagram shows a warning or blocks you:** stop DMs for 48 hours, tell Axel,
-  and start again at half the number.
+- **Instagram shows a warning or blocks you:** stop DMs for 48 hours, then start
+  again at half the number. Use email and TikTok in the meantime.
 - Email and TikTok messages don't count toward the Instagram limit.
 
 ---
@@ -73,7 +82,13 @@ skip, or continue the old conversation.
 suggests profiles that don't exist or belong to someone else. Link doesn't open,
 no face, no Swedish → delete it. Never message someone you haven't seen yourself.
 
-**Only products Axel gave you.** Never pick a product yourself.
+**You pick the products yourself, with this rule:**
+1. Open https://baverbutiken.se/collections/all?sort_by=best-selling — the store's best sellers, most sold first.
+2. Take a product from the **top 20** that is **at least 300 kr** and **easy to hold and show in a video** (not tiny parts, not something that needs installing by a professional).
+3. Max **2 products at a time**, 3 creators each. When a product has 3 approved videos, pick the next one from the list.
+4. Skip a product that already has 3 approved videos in the sheet (Deals tab).
+
+**Budget:** max **6 new deals per month**. Count them in the Deals tab (Agreed date this month). At 6: stop making new deals until the 1st.
 
 ### 2. Vet
 Open each profile. **The creator must be 18 or older** — if they look
@@ -109,7 +124,7 @@ Sheet: status `deal`, new row in **Deals**.
 4. Tell them delivery takes **5–10 business days** and that they must **message
    you the same day it arrives** (it's in the agreement — the deadline starts then).
 5. **3 business days later:** open the order in Shopify. It must say
-   *Fulfilled* with a tracking number. If not → tell Axel the order number.
+   *Fulfilled* with a tracking number. If not → see "Order not Fulfilled" in the table below.
 
 ### 8. Brief
 Run `/ugc brief <product link> <creator ID>`. Claude writes a short brief in
@@ -155,7 +170,7 @@ a video that meets every point just because we don't like it.
 ### 11. Approve
 All YES → **you approve.** Put the videos AND the raw footage in the shared
 Drive folder "UGC deliveries" (one subfolder per deal: `D001 – creator – product`).
-Deals: Approved = date + your name. Unsure about a video → ask Axel before you approve.
+Deals: Approved = date + your name. **The checklist decides, not taste:** all YES = approved, even if you think the video is boring (the agreement says so).
 
 ### 12. Invoice
 Send Template: Approved + invoice request. The invoice goes to Stonebite Ecom
@@ -163,19 +178,20 @@ AB (details in `TERMS.md`). When it arrives: forward it to Axel the same day,
 with the Drive link to the delivery in the same email.
 Deals: Invoice received + Sent to Axel.
 
-**Day 25 after you sent the invoice to Axel:** remind him ("Invoice D00X is due
-in 5 days"). Never tell a creator a payment date other than "30 days".
+Never tell a creator a payment date other than "30 days".
 
 ### 13. Paid
-Axel tells you when it's paid. Deals: Paid = date. Creators: status `paid`,
-Result = fill in when Axel tells you how the ad did.
+Mark Paid when the creator confirms the money arrived, or on day 31 if you
+heard nothing. If the creator says it's **not paid after 30 days**: forward
+the same invoice to Axel again with the subject "REMINDER: unpaid invoice
+D00X". That's the only follow-up.
 
-**After a video: don't decide the next step yourself.** Tell Axel "D00X
-delivered, raw footage in Drive". The ads are tested first. If a video wins,
-**Axel decides** what to order next (new hooks, new angles or the next
-product) and you send it. **We never offer monthly work or a
-retainer** (Axel 2026-09-24): one video at a time. A creator with 2–3 videos and no winning
-ad → Result `bad — do not use` for now (keep them in the bank).
+Result (Creators tab) — you set it yourself, from the delivery:
+- **good** = delivered on time and passed the checklist the first time → Tier A. Offer them the next product you pick (Template: Next product).
+- **ok** = needed the redo or was late but delivered → keep in the bank, use again if nobody better.
+- **bad** = cancelled, or rude → `do not use`.
+
+**We never offer monthly work or a retainer** — one video at a time.
 
 ---
 
@@ -202,7 +218,7 @@ Then:
    yes to long-term work can go to 3 000.
 5. **Raw footage and rights are never extra.** Both are included in the price.
    If they want a separate rights fee or a time limit, explain it's how we work
-   with every creator; if they insist → walk away (or ask Axel if score 15–16).
+   with every creator; if they insist → walk away.
 6. **Walk away politely.** There are always more creators. Save them in the
    sheet as `too expensive` — their price may drop later, or we get more budget.
 
@@ -217,33 +233,33 @@ Then:
 | "No thanks" | Thank them (Template: Polite no). Keep them in the bank. | `declined` |
 | "What is the product?" / questions | `/ugc reply` — answer, then give the offer. | `negotiating` |
 | Asks for more than 1 500 | Negotiation steps 2–4. | `negotiating` |
-| Asks for more than 3 000, or top price but score under 14 | Walk-away message. Score 15–16 → ask Axel first. | `too expensive` |
+| Asks for more than 3 000, or top price but score under 14 | Walk-away message. Always. | `too expensive` |
 | Wants a separate "usage rights" or "whitelisting" fee | Explain rights are included, that's our standard. Insists → walk away. | `too expensive` |
 | Wants a time limit on the rights (e.g. 3 months) | Same as above. | `too expensive` |
 | Doesn't want to give raw footage | Explain it's included for every creator. Insists → walk away. | `declined` |
 | Wants payment before delivery (full or part) | No. We pay by invoice after approval. Insists → walk away. | `declined` |
 | Has no company / can't invoice | Suggest an invoicing service (`TERMS.md`). | unchanged |
-| Wants to sign their own contract | Ask Axel. Don't sign anything. | `negotiating` |
-| Wants a commission / % of sales | Ask Axel. | `negotiating` |
+| Wants to sign their own contract / change our agreement | "We use the same agreement with every creator." Never sign theirs. Insists → walk away. | `declined` |
+| Wants a commission / % of sales | "We only pay a fixed price per video." Insists → walk away. | `declined` |
 | Asks "what happens after this?" / wants monthly work | "If your video works in our ads, we come back with the next product." We never offer monthly work or a retainer. | unchanged |
 | Accepts with only "ja" | Ask them to write "Jag godkänner avtalet" + full name. | `negotiating` |
 | Wants to post the video on their own account too | Fine, no exclusivity — but the post must be marked as advertising ("Reklam" or "i samarbete med …"), Swedish law requires it. | unchanged |
 | Says yes | Agreement message → wait for written "ja". | `deal` |
-| Product lost / not arrived after 10 business days | Check the Shopify order tracking, tell the creator, ask Axel before sending a new one. | `working` |
+| Product lost / not arrived after 10 business days | Check the tracking. Still nothing after 15 business days → send a new 0 kr order yourself (once per creator). Tell the creator the new date. | `working` |
 | Product arrived broken | Ask for a photo, create a new 0 kr order, new due date. | `working` |
-| Videos not delivered on the due date | Reminder same day. +3 days: second reminder. +7 days: ask Axel — the agreement lets us cancel: no payment, and the creator returns the product or pays its price. Axel decides. | `working` |
+| Videos not delivered on the due date | Reminder same day. +3 days: second reminder. +7 days: **cancel** (Template: Cancel). No payment. Ask once for the product back or its price; if they ignore it, let it go. | `do not use` |
 | Creator doesn't say when the product arrived | Check the tracking: the "delivered / ready for pickup" date counts as arrival. Write it in Deals. | `working` |
-| Redo still misses a point | Ask Axel — we may cancel (same as late delivery). | `delivered` |
+| Redo still misses a point | **Cancel** (Template: Cancel), same as late delivery. | `do not use` |
 | Delivery misses the checklist | Redo template, specific about what to fix. | `delivered` |
-| Second delivery still bad | Ask Axel. Don't promise payment. | `delivered` |
+| Second delivery still bad | Same as above: cancel. | `do not use` |
 | Delivery OK | You approve → files to Drive → invoice request. | `approved` |
-| Creator rude, pushy or strange | Stop answering. Tell Axel. | `do not use` |
+| Creator rude, pushy or strange | Stop answering. Nothing more. | `do not use` |
 | Creator says they are under 18 | Thank them, stop. We only work with adults. | `do not use` |
 | Creator asks to be deleted from our list | Delete their row the same day. | row deleted |
 | Creator sent no transcript | Ask for it (Template: Transcript). No transcript = not complete. | `delivered` |
-| Order not *Fulfilled* 3 business days after you created it | Tell Axel the order number. Tell the creator it's a bit delayed. | `working` |
-| Creator says the product is bad / not as described | Don't argue. Thank them, ask Axel. Don't let them film something negative for us. | `working` |
-| Anything not in this table | Ask Axel before you answer the creator. | unchanged |
+| Order not *Fulfilled* 3 business days after you created it | Cancel that order in Shopify and create a new one. Still not fulfilled 3 days later → the product is out of stock: offer the creator another product from your list instead. | `working` |
+| Creator says the product is bad / not as described | Don't argue. Thank them, cancel the deal kindly (no video, no payment, they keep the product). Pause that product for UGC. | `declined` |
+| Anything not in this table | Paste it into `/ugc reply`. Claude decides with "When nothing fits" below. Follow it. | whatever Claude says |
 
 ## Never
 
@@ -255,3 +271,13 @@ Then:
 - Never put addresses, phone numbers or ID numbers in the sheet or in Claude files.
 - Never send the English meaning to a creator — only the 📋 SEND THIS box.
 - Never work with anyone under 18.
+
+## When nothing fits
+
+Claude (and you) decide with these five rules, in this order:
+
+1. **Never pay more** than the terms, and never pay before an approved delivery.
+2. **Never promise** anything that isn't in the terms (more work, bonus, dates).
+3. **When in doubt, walk away politely.** There are always more creators.
+4. **Be kind and short.** A creator who leaves happy may come back.
+5. **Write what you did** in the Notes column, so the next person knows.

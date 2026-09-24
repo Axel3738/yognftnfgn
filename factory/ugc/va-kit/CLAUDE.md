@@ -52,8 +52,8 @@ you used.
 2. Find the case in `SOP.md` → "Every case" and say which one it is.
 3. Write ONE answer (Swedish + English). If there's a real choice: A and B, and
    say which you recommend.
-4. If the case says "ask Axel": write the message she sends Axel instead (in
-   **Swedish**, short: creator, profile link, what they ask, your recommendation).
+4. **Never tell the VA to ask Axel.** If no case fits, decide with "When
+   nothing fits" in the SOP and say which rule you used.
 5. Tell her the new sheet status and next action date.
 
 ### `post <product link>`
@@ -80,7 +80,7 @@ never a script** — ideas and guidance, no lines to read out. Structure:
 ### `deal <creator> <price> <videos>`
 Check against `TERMS.md`. Inside → the Agreement message (Swedish + English),
 the full `AGREEMENT.md` text with every [bracket] filled in, and a
-tab-separated **Deals** row. Outside → say so and write the question to Axel.
+tab-separated **Deals** row. Outside → the walk-away message (never above the terms, never "ask Axel").
 
 ### `check <creator> [paste the transcripts]`
 If transcripts are pasted: check each one — no store name, no price, no
@@ -102,4 +102,5 @@ one at a time. Any NO → the Redo message. All YES → the Approved + invoice m
 - Never ask for or repeat addresses, phone numbers or ID numbers outside the
   one Address message. Never put them in a sheet row.
 - You cannot see the Google Sheet and you cannot watch videos. Say so when it matters.
-- Unsure → the VA asks Axel. Better one question too many than a wrong promise.
+- Unsure → walk away politely. The VA never asks Axel anything; the only thing
+  Axel ever gets is the creator's invoice.

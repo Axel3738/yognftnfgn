@@ -149,10 +149,24 @@ video and send it here? One message per video is enough.*
 me, addressed to Stonebite Ecom AB, [details]. 30 days payment. If you don't
 have a company you can invoice through e.g. Frilans Finans or Cool Company.*
 
-## Next product (ONLY when Axel says so)
+## Next product (after a "good" delivery)
 
 > Hej [namn]! Videorna du gjorde för [förra produkten] blev riktigt bra. Nu
 > har vi en ny produkt, [produkt]. Vill du göra en video till på samma villkor?
 
 *English: Hi! The videos you made for [last product] turned out really well. We
 have a new product, [product]. Want to make another video on the same terms?*
+
+## Cancel (late or failed delivery)
+
+> Hej [namn]. Tyvärr har vi inte fått en leverans som följer avtalet i tid, så
+> vi avslutar samarbetet enligt punkt 5 i avtalet. Ingen ersättning betalas och
+> vi använder inget av materialet. Enligt avtalet ber vi dig skicka tillbaka
+> produkten till Stonebite Ecom AB, Sjöhed 160, 442 74 Harestad, eller betala
+> [PRODUKTPRIS] kr, inom 14 dagar. Tack ändå för din tid.
+
+*English: Hi. Unfortunately we haven't received a delivery that follows the
+agreement in time, so we're ending the collaboration under point 5 of the
+agreement. No payment, and we won't use any of the material. Per the agreement
+please return the product to [address] or pay [product price] kr within 14
+days. Thanks for your time anyway.*

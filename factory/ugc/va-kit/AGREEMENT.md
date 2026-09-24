@@ -12,7 +12,8 @@ and reuse forever"). Until then, use it as it is.
 Swedish text to the creator with the Agreement message from `TEMPLATES.md`.
 The creator replies in writing: **"Jag godkänner avtalet, [full name]"**.
 Screenshot the reply into the deal's Drive folder. Never change a clause
-yourself — if the creator wants a change, ask Axel.
+yourself — if the creator wants a change: "We use the same agreement with every
+creator." Insists → walk away.
 
 Brackets: `[FULLSTÄNDIGT NAMN]`, `[PROFIL-LÄNK]`, `[PRODUKT]`,
 `[ANTAL DAGAR]` (14; up to 21 only if agreed in the negotiation),

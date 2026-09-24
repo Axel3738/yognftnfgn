@@ -17,7 +17,7 @@ You need: a Claude account, a Google account, and this folder.
 2. Click **Set project instructions** → open **3 - Paste into Claude project instructions.txt** → select all (Ctrl+A) → copy (Ctrl+C) → paste → Save.
 3. Click **Project knowledge** → upload **2 - VA Handbook.pdf**.
 4. In the chat box, check that **web search** is on (the tools button).
-5. Start a new chat in the project and paste a product link Axel gave you.
+5. Start a new chat in the project and paste a product link (how you pick products: handbook → step 1).
 
 Other things you can write in the chat: `reply <creator> <their message>`,
 `post <product link>`, `brief <product link> <creator>`,
@@ -35,6 +35,6 @@ One subfolder per deal.
 
 ## Your first day
 1. Read the handbook once, top to bottom.
-2. Wait for Axel to send you the first product link.
+2. Pick your first 2 products (handbook → "You pick the products yourself").
 3. Paste the link into Claude → check the creators → save them in the sheet →
    send the first 5 messages.

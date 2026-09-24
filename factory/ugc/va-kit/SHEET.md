@@ -76,8 +76,8 @@ Below 8 points or any red flag → no row.
 | Approved | Date + who approved |
 | Invoice received | Date |
 | Sent to Axel | Date |
-| Paid | Date (Axel tells you) |
-| Result | Fill in later: "good — use again" / "ok" / "bad — do not use" |
+| Paid | Date the creator confirmed payment (or day 31 if you heard nothing) |
+| Result | good / ok / bad — rules in the SOP, step 13 |
 
 **Never** put home addresses, phone numbers or personal ID numbers in the sheet.
 They live in the Shopify order and in the chat only.
