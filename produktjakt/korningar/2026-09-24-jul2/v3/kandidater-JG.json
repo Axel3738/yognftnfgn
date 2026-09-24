@@ -1,0 +1,240 @@
+{
+  "agent": "JG — wow-leksaker till barnbarnet",
+  "datum": "2026-09-24-jul2",
+  "sammanfattning": "Struktur: leksaken som rör sig, lyser eller flyger i första sekunden. Golvet lästes FÖRE Ali på PriceRunner (curl) + Coolstuff/Teknikmagasinet/Kjell för ~30 former; 21 Ali-fraser, 13 produktsidor öppnade, 8 heron sedda. Kärnfynd: nästan allt som 'gör något' finns redan i exakt form hos kedjorna under 500 kr (RC-dinosaurie 12 varianter, robothund 17, RC-grävmaskin 20, solcellsrobot 6, hydraulisk robotarm 4, väggklättrande bil hos Clas Ohlson 150 kr, flygande orb 128–299, magic tracks 384–478, metalldetektor, laser tag, ritplattor). Det som överlever är formen som INTE finns i svenskt flöde: RC-fågeln som flaxar (bara gummibandsfågel 145 kr i Sverige) och det motoriserade julaftonsbygget där LEGO:s egen version ligger ÖVER oss (Julexpressen 1 599). Loop-berg-och-dalbanan i klossar med motor (44,62 USD) är rätt struktur men produktsidan svarade tomt tre gånger → BLOCKED, inte död. Levererar 2 LIVE + 1 BLOCKED hellre än 5 svaga.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "RC-fågeln som flaxar, 2,4 GHz",
+      "objekt": "NYTT: Barnbarnets första flygande leksak — fågeln lyfter ur handen på gräsmattan",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Soptunneklistermärkena",
+        "delade_variabler": ["kategorinyhet i svenskt flöde", "textfri hero i kontext", "förstås utan förklaring", "objekt alla har (barnbarn/trädgård)"],
+        "avvikelser": ["gåva med datum i stället för ägd friktion", "500–999 i stället för < 300", "kräver utomhusyta"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005008428240230",
+        "url": "https://www.aliexpress.com/item/1005008428240230.html",
+        "pris_usd": 25.88,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:37:19Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005008428240230.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "titel '2.4GHz RC Bird Remote Control Toy for Kids' — heron visar 5 färgmönster (blå, grön, lila, röd, orange), samma modell; sökträffens minpris 25,88 USD",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 2,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "verkligt foto på gräs: fågel + fjärrkontroll uppe, fem färgvarianter nere — textfri, går att beskära till en fågel i handen; flygbild måste tas själv"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner — 'Gummiband Ornithopter Fågelflyleksak' (gummibandsdriven, ej RC)", "pris_sek": 145, "url": "https://www.pricerunner.se/search?q=ornithopter", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "X-Fly Bionic Bird (AliExpress, utländskt — inget svenskt ankare hittat)", "pris_sek": 2875, "url": "https://www.aliexpress.com/item/1005012778113578.html", "i_sortiment": false},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se/search?q=ornithopter (LEGO Dune 1 948, gummibandsfågel 145, fågelburar) 2026-09-24",
+          "pricerunner.se/search?q=radiostyrd fågel (0 träffar) 2026-09-24",
+          "pricerunner.se/search?q=flygande fågel leksak (bara kattleksaker 154–189) 2026-09-24",
+          "pricerunner.se/search?q=radiostyrd fjäril (0 relevanta) 2026-09-24",
+          "pricerunner.se/search?q=ebird radiostyrd (0 träffar) 2026-09-24",
+          "coolstuff.se/search?q=ornithopter (3 irrelevanta träffar: chipskalendrar) 2026-09-24",
+          "teknikmagasinet.se/search?q=flygande fågel (inget) 2026-09-24"
+        ],
+        "anm": "Ingen svensk aktör säljer en radiostyrd flaxande fågel 2026-09-24. Inget svenskt premiumankare → pris satt på K8 (699), inte på ×2,4-regeln (899)."
+      },
+      "ekonomi": {"landad_sek": [337, 412], "pris_sek": 699, "brutto_sek": [287, 362], "be_cpa_sek": [287, 362], "be_roas": 2.15, "flerkop": false, "returrisk": "medel — kräver vindstilla uteyta; 'flyger inte'-returer vid vinterväder"},
+      "meta_tanke": {
+        "hook": "Fågeln lyfter ur barnbarnets hand",
+        "objekt_i_bild": "fågeln flaxar iväg över gräsmattan, farfar med fjärrkontrollen",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "vingarna flaxar och fågeln stiger — ser ut som en riktig fågel på 3 sekunder"
+      },
+      "varfor": "Formen finns inte i svenskt flöde (bara gummibandsfågel 145 kr) och heron är ett textfritt foto i kontext — H10 rent. Rör sig och flyger i första sekunden, vilket är exakt det Axel sa ja till i julrundan.",
+      "huvudrisk": "Flyger utomhus i vindstilla — december i Sverige gör att leksaken ofta provas först på våren, och 899 enligt ×2,4-regeln ser inte ut som sitt pris (därför 699).",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 3, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 3},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 10, "K3": 8, "K4": 8, "K5": 6, "K6": 12, "K7": 5, "K8": 6, "K9": 3, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (ingen fågel/flygande leksak)", "koncept.py sok flygande/drone/drönare = 0", "REDAN-PROVAT.md (ej prövad)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005008428240230.html", "https://www.pricerunner.se/search?q=ornithopter", "https://www.pricerunner.se/search?q=radiostyrd%20f%C3%A5gel"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Julexpressen i klossar med motor, 1 062 bitar",
+      "objekt": "NYTT: Tåget som kör runt julgranen — byggs på julafton, går av sig självt",
+      "form": "annat",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["hårt datum (julafton)", "mottagare i relation (barnbarn/mannen)", "många synliga delar", "ankare 1,2–1,6× (LEGO 1 599)"],
+        "avvikelser": ["999 i stället för 300–499", "inte 24 luckor", "kräver bygge före wow"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013030189703",
+        "url": "https://www.aliexpress.com/item/1005013030189703.html",
+        "pris_usd": 42.39,
+        "sald": "",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T10:40:31Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul2/v3/bilder/1005013030189703.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en variant (1 062 bitar, motoriserad, PDF-instruktion via mejl enligt heron); sökträff 42,39 USD; svarade tomt på första anropet, LIVE på ?gatewayAdapt=glo2usa",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": false,
+        "hero_i_kontext": false,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video)",
+        "kommentar": "render av loket + tre vagnar (isbjörn, paket) på vit bakgrund med inbränd '51% OFF' + 'PDF instruction manual sent via email' nertill — måste beskäras; ingen bild av tåget i gång runt granen, den måste skapas"
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "PriceRunner — Ekvip Spelande Jultåg På Räls LED Ø136 cm (färdigt plasttåg, ej byggsats)", "pris_sek": 299, "url": "https://www.pricerunner.se/search?q=julgranst%C3%A5g", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "LEGO Julexpressen 10361", "pris_sek": 1599, "url": "https://www.pricerunner.se/search?q=lego%20julexpressen%2010361", "i_sortiment": true},
+        "ankare_kvot": 1.6,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se/search?q=lego julexpressen 10361 (1 599; Winter Holiday Train 10254 3 798) 2026-09-24",
+          "pricerunner.se/search?q=julgranståg (Hisab 229, Dynas 199, Ekvip 299, MikaMax 200 — färdiga plasttåg; Märklin 2 950, Piko 1 659, LGB 4 433) 2026-09-24",
+          "pricerunner.se/search?q=tåg byggklossar motor (LEGO tågmotor 160–249, BRIO 143–237 — ingen kompatibel motoriserad byggsats) 2026-09-24",
+          "pricerunner.se/search?q=berg och dalbana byggklossar (inget relevant) 2026-09-24",
+          "Fyndiq/CDON/Amazon.se: 403 — oläst (kompatibla tåg kan finnas där)"
+        ],
+        "anm": "Till skillnad från julgranen i klossar (JB struken: LEGO:s egen 449 UNDER oss) ligger varumärkesägaren HÄR ÖVER oss: LEGO Julexpressen 1 599 mot vårt 999 = 1,6×. Kompatibla kopior på Fyndiq/CDON gick inte att läsa (403)."
+      },
+      "ekonomi": {"landad_sek": [552, 674], "pris_sek": 999, "brutto_sek": [325, 447], "be_cpa_sek": [325, 447], "be_roas": 2.59, "flerkop": false, "returrisk": "låg — en variant; PDF-instruktion via mejl kan ge supportärenden"},
+      "meta_tanke": {
+        "hook": "Tåget kör runt granen på julafton",
+        "objekt_i_bild": "loket med rök och lysande vagnar i cirkel runt granfoten, barnbarnet på golvet",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "tåget rullar in i bild under granen — motorn syns i första sekunden"
+      },
+      "varfor": "Samma struktur som fyren (1 092 bitar, JA) och pariserhjulet med LED (JA) — mannens julaftonsbygge — men det här bygget RÖR SIG och står under granen; LEGO:s egen version är ankaret 1,6× över oss. H05 med julafton som datum.",
+      "huvudrisk": "MOC-kopia av LEGO 10254-designen — inget märke på bitarna men Meta kan flagga 'LEGO-lik'; heron har inbränd rea-text och måste göras om till tåget i gång.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 3, "meta_creative": 1, "efterfragan": 2, "lucka": 2, "ekonomi": 2, "sasong": 3, "leverantor": 2, "nyhet": 2, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 12, "K2": 12, "K3": 8, "K4": 6, "K5": 8, "K6": 10, "K7": 4, "K8": 9, "K9": 4, "K10": 2, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt (inget tåg, inga klossar utom magnetplattor)", "koncept.py sok tåg/tågbana = 0", "REDAN-PROVAT.md (JB strök julgran + julby i klossar — annan sak: tåg med motor)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005013030189703.html", "https://www.pricerunner.se/search?q=lego%20julexpressen%2010361", "https://www.pricerunner.se/search?q=julgranst%C3%A5g"]
+    },
+    {
+      "koncept_id": null,
+      "namn_sv": "Berg-och-dalbanan med loop och motor, klossar",
+      "objekt": "NYTT: Vardagsrumsbordet på julafton — vagnen dras upp av motorn och tar loopen",
+      "form": "annat",
+      "arketyp": "G_Q4_GAVA",
+      "arketyp_sekundar": "H_VISUELL_NYHET",
+      "slot": "sasong",
+      "hypotes_id": "H05",
+      "vinnarlikhet": {
+        "likast": "Adventskalendern Racingbilar",
+        "delade_variabler": ["hårt datum (julafton)", "mottagare i relation", "många synliga delar"],
+        "avvikelser": ["999", "kräver bygge", "listningen inte öppnad"]
+      },
+      "sasong": {"fonster_id": "jul", "deadline_typ": "jul", "veckor_kvar": 12.4, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005012326709382",
+        "url": "https://www.aliexpress.com/item/1005012326709382.html",
+        "pris_usd": 44.62,
+        "sald": "",
+        "verdict": "BLOCKED",
+        "verifierad_at": "2026-09-24T10:41:33Z",
+        "kontroll": {
+          "produktsida_oppnad": false,
+          "titel_stammer": null,
+          "hero_nedladdad": null,
+          "hero_sedd": false,
+          "pris_sett": true,
+          "varianter": "sökträff 'Technical Electric Loop Roller Coaster building block Bricks MOC Cable…' 44,62 USD — produktsidan svarade tomt fyra gånger (rak, ?gatewayAdapt=glo2usa, aliexpress.us, _randl_currency). Syskonlistningen 1005011809446658 (38,42 USD) öppnades och visade sig vara en LITEN linbana (hero sedd, korningar/2026-09-24-jul2/v3/bilder/1005011809446658.jpg) — inte samma sak. Alla andra loop-coasters är Mould King 112–254 USD.",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {"klass": null, "hero_textfri": null, "hero_i_kontext": null, "samma_produkt": null, "forsta_3s": "ej mätt", "kommentar": "hero ej sedd — BLOCKED, inte död; pröva igen i morgon"},
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ej hittad — PriceRunner 'berg och dalbana byggklossar' / 'berg och dalbana leksak motor' gav inga kompatibla byggsatser", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=berg%20och%20dalbana%20byggklossar", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "LEGO Creator Roller Coaster 10261 (4 124 bitar — större sak)", "pris_sek": 6339, "url": "https://www.pricerunner.se/search?q=lego%20loop%20coaster%2010303", "i_sortiment": true},
+        "ankare_kvot": null,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": ["pricerunner.se/search?q=lego loop coaster 10303 (10261 6 339; City Stuntz loop 999) 2026-09-24", "pricerunner.se/search?q=berg och dalbana byggklossar (inget) 2026-09-24", "pricerunner.se/search?q=berg och dalbana leksak motor (BRIO Builder motor 429, inget coaster) 2026-09-24"],
+        "anm": "Ankaret är en annan skala (4 124 bitar) — kvoten skrivs inte. Kompatibla kopior på Fyndiq/CDON olästa (403)."
+      },
+      "ekonomi": {"landad_sek": [581, 710], "pris_sek": 999, "brutto_sek": [289, 418], "be_cpa_sek": [289, 418], "be_roas": 2.82, "flerkop": false, "returrisk": "ej mätt — listningen inte öppnad"},
+      "meta_tanke": {
+        "hook": "Vagnen tar loopen av sig själv",
+        "objekt_i_bild": "motorn drar vagnen uppför, loopen i mitten av bilden, barnbarnet tittar",
+        "sjalvselekterande": true,
+        "forstas_3s": true,
+        "bevisas_visuellt": "vagnen går runt loopen utan hand — rörelse i första sekunden"
+      },
+      "varfor": "Samma struktur som fyren/pariserhjulet (JA) men med motor och loop — den byggleksak som rör sig mest på 3 sekunder; ingen svensk kompatibel byggsats hittad. Levereras som BLOCKED för att listningen inte gick att öppna i dag.",
+      "huvudrisk": "Produktsidan svarade tomt — pris, storlek och hero är obekräftade; kan visa sig vara lika liten som linbanan (38,42 USD).",
+      "konfidens": "LÅG",
+      "poang": {"vinnarlikhet": 2, "meta_creative": 0, "efterfragan": 2, "lucka": 3, "ekonomi": 2, "sasong": 3, "leverantor": 0, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 10, "K3": 6, "K4": 4, "K5": 8, "K6": 10, "K7": 2, "K8": 7, "K9": 3, "K10": 1, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt", "koncept.py sok", "REDAN-PROVAT.md (JB:s kulbanor är kulor, inte vagn med loop)"]},
+      "kallor": ["https://www.aliexpress.com/item/1005012326709382.html", "https://www.aliexpress.com/item/1005011809446658.html", "https://www.pricerunner.se/search?q=lego%20loop%20coaster%2010303"]
+    }
+  ],
+  "strukna": [
+    {"namn": "RC-grävmaskin i metall 1:14–1:18", "skal": "Golvet är hela marknaden: PriceRunner 'rc grävmaskin' 20 varianter 290–5 734 kr (Amewi 1:18 metall 638, VEVOR 938, Revell 910, Amewi 1:14 2 192). Fälld på 20+-regeln trots ankare."},
+    {"namn": "RC-dinosaurie som går / sprutar dimma", "skal": "Golv i exakt form: PriceRunner 12 varianter 189–699 (Suntoy 269, Xtrembots 332, Toymax T-rex 649, Rastar 699). Ali 29–40 USD → 799+ över golvet."},
+    {"namn": "Robothund RC/interaktiv", "skal": "Golvet är hela marknaden: PriceRunner 17 varianter 124–772 (Silverlit, Lexibook, Gear2Play, MTP)."},
+    {"namn": "Väggklättrande RC-bil (anti-gravity, 2.4G LED)", "skal": "Clas Ohlson 'Radiostyrd Bil Vägg Och Tak' 150 kr = exakt form i kedja utan ankare (PriceRunner 2026-09-24). Ali 20,83–28,55 USD kan inte prissättas över 150-kronorsgolvet. Listningar 1005012561515651 + 1005006954934796 öppnade och heron nedladdade innan golvet slog till."},
+    {"namn": "RC-hovercraft / svävare", "skal": "Golv i exakt form: Silverlit 249, MikaMax 269, 777-220 395, Amewi 441 — inget ankare ≥ 1,6×."},
+    {"namn": "RC-amfibiebil", "skal": "K0 (RC-bilar i katalogen) + golv Gear4play 179/499, Maxlife 249, Rastar 349."},
+    {"namn": "Flygande orb / hover ball / svävande boll", "skal": "Golv: XYLFLY Pro 299, Hover Orb 128, Hisab hover ball 99 — och K8 låg."},
+    {"namn": "Flygande haj/clownfisk (air swimmer, helium)", "skal": "Ingen svensk aktör (PriceRunner + Coolstuff tomma) men kräver heliumtub som kunden måste köpa separat — 55+ gör inte det; Ali 17,74/26,39 USD ser ut som 199 kr (K8)."},
+    {"namn": "Mörkerkikare för barn, digital med skärm", "skal": "Ali saknar barnversionen: digitala modeller 53–181 USD (landad 770+ → över taket), barnmodellerna 13 USD är LED-ficklampor = SpyX-golvet 149–198 kr."},
+    {"namn": "Stjärnhimmelsprojektor / galaxy-projektor", "skal": "Golvet är hela marknaden (Jula/Clas/Elgiganten) — inte sökt på Ali."},
+    {"namn": "Julgranståg, färdigt plasttåg", "skal": "Golv i exakt form: Hisab 229, Dynas 199, Ekvip 299, MikaMax 200 + Märklin/Piko/LGB som ankare — en kopia kan inte ligga mellan."},
+    {"namn": "Hydraulisk robotarm / robothand byggsats", "skal": "Golv: 4M 279, Velleman 438, Buki 582, Cyborg hand 429, Mearm 1 265 — hela hyllan finns."},
+    {"namn": "Solcellsrobot 12/14-i-1", "skal": "Golv: OMWay 341, 4M 339, Velleman 298, Adlibris 329 — 6 varianter i exakt form."},
+    {"namn": "Metalldetektor för barn", "skal": "Golv: ET Toys 499, Klondike 690, VEVOR 341–651 + fel årstid (tjälad mark)."},
+    {"namn": "Magic Tracks / lysande flexibel bilbana", "skal": "Golv: Magic Tracks Glowing 478, Amewi Magic Traxx 384, Tumama 430."},
+    {"namn": "Maglev / anti-gravity kubtågbana", "skal": "Ingen svensk aktör (PriceRunner 4 fraser tomma) men K8 faller: heron 1005010667609877 (41,29 USD → landad 537–657 → 999) visar en småbarnsleksak med '121pcs'-text; 1005012126923209 (27,39) visar en tvååring på golvet. Ser ut som 349 kr."},
+    {"namn": "IR-stridsvagnar 2-pack som skjuter på varandra", "skal": "Bara miniformat (1:64–1:100, 24–37 USD) på Ali — ser ut som 199 kr; golv Zegan 1:28 tank vs fort 489, Pricenet 379."},
+    {"namn": "RC-tornkran 128 cm", "skal": "Golv: Pricenet 495, Megaleg 559, Power X 436, Jamara 908, HuiNa 1 350 — 6 varianter; Ali saknar billig kran (bara Mould King 112–562 USD)."},
+    {"namn": "RC-brandbil som sprutar vatten", "skal": "Golv: Tec-Toy Water Shooting 458, Jamara Water Tank 558, Carrera Super Soaker 849 — inget ankare ≥ 1,6×."},
+    {"namn": "RC-snöskoter", "skal": "Ankare finns (Toyrock Yamaha 1 199, Revolt 930) men Ali har ingen leksaksmodell — bara klossar 88 USD och riktiga skotrar."},
+    {"namn": "Självbalanserande RC-motorcykel", "skal": "Ali 81,89 USD → över taket; golv Toymax 249, Carson 446, Bburago 517."},
+    {"namn": "RC-orm / RC-spindel", "skal": "K8: 10–20 USD-plast som ser ut som 149 kr; PriceRunner 'Spindel Fjärrkontroll' 460 finns."},
+    {"namn": "Walkie-talkies, minidrönare inomhus, RC-helikopter", "skal": "Golvet är hela marknaden (Kjell, Elgiganten, Clas, Lekia) — inte sökta på Ali."},
+    {"namn": "Digitalt mikroskop för barn", "skal": "Golv: Portable Kids Digital Microscope 455, Reflecta 499, Northio 159."},
+    {"namn": "LED-/LCD-ritplatta", "skal": "Golv: 13+ varianter 119–685 kr på PriceRunner."},
+    {"namn": "Laser tag-set", "skal": "Golv: Howleys 249, Fizz 119, Sharper Image 279."},
+    {"namn": "Katapult/trebuchet byggsats", "skal": "Golv: Leonardo da Vinci-katapult 308 (PriceRunner); K8 låg."},
+    {"namn": "Boxande RC-robotar 2-pack", "skal": "Hi-Tech Defender 689 + Silverlit Robo Kombat i leksakskedjorna — golv; inte sökt på Ali."},
+    {"namn": "Vattenraket, jättebubblor, stomp rocket, LED-frisbee", "skal": "Sommarformer (fel fönster) och/eller golv hos Lekia/Jollyroom — inte sökta."},
+    {"namn": "Motoriserad linbana i klossar (1005011809446658, 38,42 USD)", "skal": "Öppnad + hero sedd: liten teknikmodell med två gondoler — ser ut som 249 kr (K8), inte det stora bygget."},
+    {"namn": "Motoriserat spårvagns-/tågset 363 bitar (31,89 USD)", "skal": "För litet för att bära 799+ (K8); julexpressen 1 062 bitar valdes i stället."},
+    {"namn": "RC-bilar, magnetplattor, jättefotboll, bordsfotboll, kulbanor, fyr/pariserhjul/julgran i klossar, pingisrobot, bordscurling", "skal": "K0 (katalogen) eller levererade i dag av JA/JB/JE — inte sökta om."}
+  ]
+}
