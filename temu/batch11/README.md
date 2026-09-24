@@ -157,4 +157,7 @@ mellan funktioner och garanti, och elcykeljackan visade fel produkt. Åtgärdat 
 - **Nej till två saker:** (1) "någon typ av recension i produktbilderna" — påhittade omdömen görs
   aldrig (CLAUDE.md). (2) Driftbilens varianter — arket har bara qty-rader (7,08/14,15/21,23 USD),
   inga färger; Temu-titeln säger "Färgglad" men CWD har inte offererat färger. Fråga till CWD.
-- **Kvar utan GIF efter fyra försök:** se `ai-video-8.log`-raden nedan (uppdateras).
+- **Kvar utan GIF efter fyra försök (KIE "Internal Error" varje gång, oavsett referensbild):**
+  krukväxthuv, kamadohuv, värmesulor, elcykeljacka — och cykelhållarskyddet, vars GIF ströks (bara
+  svart tyg i bild). 26 av 31 sidor har GIF. Kör `node temu/batch11/ai-kor.mjs video <id>` igen en annan
+  dag, följt av `galleri-bygg.mjs se/no --skarp <id>`.
