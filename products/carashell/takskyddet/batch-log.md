@@ -1972,3 +1972,15 @@ Axels beslut väntar).
 Samma två rader, samma md5, samma slutkort med `carashell.se`. Inget
 uppladdat, ingen status ändrad, inga nya kommentarer. Kontot står still på
 748 annonser sedan i går.
+
+## 2026-09-24 — NO-rundan: tom kö, gårdagens 13 har gått vidare
+
+0 rader i `SE-ACTIVE to be translated`. Gårdagens 13 står nu i `Approved` och
+bär alla sin norska annons — US-rundan hann ikapp. Approved-passet: **58 rader,
+0 utan NO-annons** (i går 1 före rättningen av konceptkoden, 0 efter). Inget
+renderat, inget uppladdat, ingen status rörd, 0 HeyGen-krediter. Kampanjen
+ACTIVE med 12 adsets, pris 1 106 NOK läst live.
+
+Kvar öppet: presentvinkeln kör fortfarande i två adsets (`- G` och `- GT`) i
+samma CBO. Frågan ligger hos Axel sedan i går; ingen ping i dag eftersom
+ingenting ändrats. Inget rört.
