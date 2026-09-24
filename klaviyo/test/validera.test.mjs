@@ -100,3 +100,15 @@ test('erbjudandet varnar utanför köparsegment och Placed Order-flöden', () =>
   assert.ok(kor(m, { kalla: 'flode', trigger: FLODE.trigger }).varningar.some((v) => /Placed Order/.test(v)));
   assert.ok(!kor(m, { kalla: 'flode', trigger: { typ: 'metrik', metrik: ['Placed Order'] } }).varningar.some((v) => /Placed Order/.test(v)));
 });
+
+test('format "rentext": bara text, knapp (högst en), grundare, fakta, erbjudande', () => {
+  const ok = mejl({ format: 'rentext', block: [{ typ: 'text', text: 'Hej {{fornamn}}.' }, { typ: 'knapp', text: 'Till butiken', lank: 'sida:/' }, { typ: 'grundare', text: 'Axel här.' }, { typ: 'fakta' }] });
+  assert.deepEqual(kor(ok).fel.filter((f) => /rentext|knappar/i.test(f)), []);
+  const hero = mejl({ format: 'rentext', block: [{ typ: 'hero', rubrik: 'X', text: 'Y' }, { typ: 'produktrad', handles: [] }] });
+  const r = kor(hero);
+  assert.ok(harFel(r, /Block 1 \(hero\) får inte stå i ett rentext-mejl/));
+  assert.ok(harFel(r, /Block 2 \(produktrad\) får inte stå i ett rentext-mejl/));
+  const tva = mejl({ format: 'rentext', block: [{ typ: 'knapp', text: 'A', lank: 'sida:/' }, { typ: 'knapp', text: 'B', lank: 'sida:/' }] });
+  assert.ok(harFel(kor(tva), /2 knappar, högst en/));
+  assert.ok(harFel(kor(mejl({ format: 'fetstil' })), /Okänt format/));
+});

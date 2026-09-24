@@ -114,3 +114,29 @@ test('förhandstexten ligger gömd först i body', () => {
   const { html } = bygg(KAMPANJ);
   assert.match(html, /<body[^>]*>\s*<div style="display: none;[^"]*">Vatten i elen/);
 });
+
+test('format "rentext": personligt mejl från Axel, ingen hero eller produktkort, samma juridiska sidfot', () => {
+  const m = mejl({
+    format: 'rentext',
+    block: [
+      { typ: 'text', text: 'Hej {{fornamn}},\n\nJag heter Axel och driver butiken.' },
+      { typ: 'knapp', text: 'Se storsäljarna', lank: 'kollektion:storsaljare' },
+      { typ: 'fakta' },
+      { typ: 'hero', rubrik: 'SKA INTE SYNAS', bild: 'https://x/y.jpg' },
+    ],
+  });
+  const { html, text, varningar } = bygg(m);
+  assert.match(html, /font-family: Arial,Helvetica,sans-serif; font-size: 16px/);
+  assert.match(html, /Axel, Bäverbutiken/);
+  assert.match(text, /Axel, Bäverbutiken\n\n--/);
+  assert.match(html, /\{% unsubscribe 'Avregistrera dig' %\}/);
+  assert.match(html, /\{\{ organization\.full_address \}\}/);
+  assert.match(text, /\{% unsubscribe_link %\}/);
+  assert.doesNotMatch(html, /SKA INTE SYNAS/);
+  assert.doesNotMatch(html, /class="kl-knapp"/); // länk, inte röd knapp
+  assert.doesNotMatch(html, /<img /); // ingen logga, inga bilder
+  assert.match(html, /\/collections\/storsaljare/);
+  assert.ok(varningar.some((v) => /hero.*rentext/.test(v)));
+  // Vanligt mejl oförändrat: loggraden och den svarta sidfoten finns kvar.
+  assert.match(bygg(mejl()).html, /Frågor\? Svara på mejlet/);
+});
