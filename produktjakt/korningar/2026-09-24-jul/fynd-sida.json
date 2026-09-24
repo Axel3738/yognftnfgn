@@ -1,0 +1,1800 @@
+{
+ "datum": "2026-09-24-jul",
+ "version": "v3",
+ "kalla": "korningar/2026-09-24-jul/v3/batch.json",
+ "antal_kandidater": 10,
+ "per_slot": {
+  "exploitation": 0,
+  "exploration": 0,
+  "sasong": 10
+ },
+ "produkter": [
+  {
+   "product_id": "1005010279839115",
+   "titel": "Svävande bordscurling, elektrisk",
+   "url": "https://www.aliexpress.com/item/1005010279839115.html",
+   "pris": 28.98,
+   "valuta": "USD",
+   "pris_text": "US $28.98",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005010279839115.jpg",
+   "sald": "",
+   "grupp": "NYTT: Julbordets spelkväll — curling som svävar på köksbordet",
+   "objekt": "NYTT: Julbordets spelkväll — curling som svävar på köksbordet",
+   "taggar": {
+    "objekt": "NYTT: Julbordets spelkväll — curling som svävar på köksbordet",
+    "form": "annat",
+    "arketyp": "H_VISUELL_NYHET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Skills Curling golv (400 × 60 cm matta, 8 puckar, icke-elektrisk) — Lekia"
+   },
+   "ekonomi": {
+    "landad": 419,
+    "forslag_pris": 799,
+    "multipel": 1.91,
+    "be_cpa": 380,
+    "be_roas": 2.1,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     377,
+     461
+    ]
+   },
+   "namn_sv": "Svävande bordscurling, elektrisk",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 1,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel — plaststenar, men fläkt/svävning läser som elektronik",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Curling på köksbordet — stenarna svävar",
+   "efter_bild": "stenen glider friktionsfritt över bordet med fläktljud, ringen i mål — alla känner igen curling på en sekund och ser att stenen svävar",
+   "huvudrisk": "Ingen ägarbas att targeta (självselektion bygger helt på creativen) och upplevt värde måste bäras av videon — som stillbild kan 2 plaststenar se ut som 300 kr.",
+   "varfor": "Enda klassikern i rundan utan svensk aktör i samma form: alla känner curling (OS-sport, Skills-matta 599 hos Lekia), och den svävande stenen är ny mekanik som syns på 3 s utan text. Hårt datum (black week 9 v / julafton 13 v), 799 kr under ankarets nivå för 'riktig' golvcurling, BE-CPA 338–422.",
+   "konfidens": "HÖG",
+   "koncept_id": "K0304",
+   "arketyp": "H_VISUELL_NYHET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H10",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (black week/julafton)",
+     "300–999 kr",
+     "gåva till relation (barnbarn/familj)"
+    ],
+    "avvikelser": [
+     "ingen svikande default",
+     "inte 24 synliga saker",
+     "ny form kontot aldrig testat"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Kalenderspecialisten/jem & fix — Engelhart 3-i-1 curling/shuffleboard 120 cm (icke-elektrisk)",
+     "pris_sek": 330,
+     "url": "https://kalenderspecialisten.se/p/familjespel-shuffleboard-och-curling/",
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Skills Curling golv (400 × 60 cm matta, 8 puckar, icke-elektrisk) — Lekia",
+     "pris_sek": 599,
+     "url": "https://www.lekia.se/leksaker/spel/bradspel/skills-curling-golv",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.75,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "lekia.se (Skills Curling golv 599, GAF Bajscurling 179)",
+     "coolstuff.se (Poo Curling)",
+     "flyingtiger.com (Poo curling 140)",
+     "jemfix.se (Shuffleboard & Curling 2-i-1 Nordic Games)",
+     "kalenderspecialisten.se (Engelhart 3-i-1 330)",
+     "pricerunner.se/sp/curling-sällskapsspel (tom sida)",
+     "unisport.com",
+     "sharperimage.com (Hovering Curling Set 95,99 USD — utländskt ankare, ej svenskt)"
+    ],
+    "anm": "Ingen svensk aktör säljer den ELEKTRISKT svävande formen (sökt 2026-09-24). Ankarkvoten räknas mot Lekias icke-elektriska golvcurling — vår form är premiumversionen av den."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto: två stenar + två stavar på curlingmatta, textfritt — går rakt in som stillbild; alt-listningens hero (1005007360314211) är en render med inbränd text"
+   },
+   "meta_tanke": {
+    "hook": "Curling på köksbordet — stenarna svävar",
+    "objekt_i_bild": "svävande curlingsten på matta på matbordet, familj runt",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "stenen glider friktionsfritt över bordet med fläktljud, ringen i mål — alla känner igen curling på en sekund och ser att stenen svävar"
+   },
+   "listning": {
+    "product_id": "1005010279839115",
+    "url": "https://www.aliexpress.com/item/1005010279839115.html",
+    "pris_usd": 28.98,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:17:14Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005010279839115.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "1 set (2 svävande stenar med fläkt, 2 skjutstavar, matta med målring) — en variant enligt titel/sökträff; alternativa listningar 1005007360314211 (27,49 USD, hero med text) och 1005006750435122 (32,14 USD)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005010279839115.html",
+    "https://www.aliexpress.com/item/1005007360314211.html",
+    "https://www.aliexpress.com/item/1005006750435122.html",
+    "https://www.lekia.se/leksaker/spel/bradspel/skills-curling-golv",
+    "https://kalenderspecialisten.se/p/familjespel-shuffleboard-och-curling/",
+    "https://sharperimage.com/products/hovering-curling-set"
+   ]
+  },
+  {
+   "product_id": "1005012716948237",
+   "titel": "Elektriska kulbanan med hiss, 19 kulor",
+   "url": "https://www.aliexpress.com/item/1005012716948237.html",
+   "pris": 29.2,
+   "valuta": "USD",
+   "pris_text": "US $29.2",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005012716948237.jpg",
+   "sald": "",
+   "grupp": "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv",
+   "objekt": "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv",
+   "taggar": {
+    "objekt": "NYTT: Farfar och barnbarnet bygger ihop den — kulbana i trä med elhiss som går av sig själv",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Hubelino Stor Byggsats 213 delar (Jollyroom)"
+   },
+   "ekonomi": {
+    "landad": 422,
+    "forslag_pris": 749,
+    "multipel": 1.77,
+    "be_cpa": 327,
+    "be_roas": 2.29,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     380,
+     464
+    ]
+   },
+   "namn_sv": "Elektriska kulbanan med hiss, 19 kulor",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 2,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 8,
+    "K4": 5,
+    "K5": 8,
+    "K6": 9,
+    "K7": 6,
+    "K8": 8,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Byggde ni den själva?",
+   "efter_bild": "hissen kör upp 19 kulor och de rullar ner — loopar i 5 s utan förklaring",
+   "huvudrisk": "Amazon.se säljer ROKR LGC01 i samma form till okänt pris (captcha) — ligger den under 749 faller luckan; heron har inbränd leverantörstext.",
+   "varfor": "Samma köpare som kalendern (mor-/farföräldern) men högre kvitto och mannen själv som andra mottagare (H05 'mannen med båten'); golvet i exakt form (Hobbyland 759) ligger PÅ vårt pris, inte under, och Panduros 599 är handvev utan hiss.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0305",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul)",
+     "mottagare i relation (barnbarn / mannen själv)",
+     "många synliga delar (19 kulor, kugghjul, hiss)"
+    ],
+    "avvikelser": [
+     "prisband 500–999 i stället för 300–499",
+     "objekt_ute nej",
+     "golv i närliggande form finns (Panduro 599 handvev)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Hobbyland (ROKR elektrisk kulbana MR03S/MR04S)",
+     "pris_sek": 759,
+     "url": "https://www.hobbyland.se/category/robotime",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hubelino Stor Byggsats 213 delar (Jollyroom)",
+     "pris_sek": 1499,
+     "url": "https://www.jollyroom.se/leksaker/byggsatser-lego/kulbanor",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.01,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hobbyland.se (ROKR elektrisk 759, 8 i lager, 2026-09-24)",
+     "panduro.com (ROKR handvev 599 — inte elektrisk, 2026-09-24)",
+     "jollyroom.se (GraviTrax XXL 799, Hubelino 999–1 499, 2026-09-24)",
+     "lekia.se (2026-09-24)",
+     "amazon.se ROKR LGC01 (503/captcha — pris ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "leverantörslogga 'Ury' + 'Marble Run' + '+19 Balls' inbränt — måste beskäras/bytas; själva modellen i kontext på en arbetsbänk, färgade kulor på hissen syns tydligt; billigare syskon i samma form: 1005006644378471 (Ury elektrisk katapult, 5 kulor, 22,02 USD) om priset ska ner till 599–649"
+   },
+   "meta_tanke": {
+    "hook": "Byggde ni den själva?",
+    "objekt_i_bild": "färdig kulbana på soffbordet, hissen lyfter kulorna, ingen hand i bild",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hissen kör upp 19 kulor och de rullar ner — loopar i 5 s utan förklaring"
+   },
+   "listning": {
+    "product_id": "1005012716948237",
+    "url": "https://www.aliexpress.com/item/1005012716948237.html",
+    "pris_usd": 29.2,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:18:19Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005012716948237.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (Ury Electric Ladder Climbing Marble Run, +19 bollar); batteri (2×AA-hållare syns) ingår sannolikt inte — verifiera",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012716948237.html",
+    "https://www.aliexpress.com/item/1005006644378471.html",
+    "https://www.hobbyland.se/category/robotime",
+    "https://panduro.com/sv-se/produkter/skapa-dekorera/miniatures/grundsatser/3d-trapussel-kulbana-520131",
+    "https://www.jollyroom.se/leksaker/byggsatser-lego/kulbanor"
+   ]
+  },
+  {
+   "product_id": "1005007789272163",
+   "titel": "Fyren i klossar som lyser, 1 092 bitar",
+   "url": "https://www.aliexpress.com/item/1005007789272163.html",
+   "pris": 37.89,
+   "valuta": "USD",
+   "pris_text": "US $37.89",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005007789272163.jpg",
+   "sald": "",
+   "grupp": "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar",
+   "objekt": "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar",
+   "taggar": {
+    "objekt": "NYTT: Julklappen till mannen med båten — fyren i klossar som lyser när den är klar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Reobrix Lighthouse Medieval Town 3 228 bitar (Hemshopen.se)"
+   },
+   "ekonomi": {
+    "landad": 548,
+    "forslag_pris": 999,
+    "multipel": 1.82,
+    "be_cpa": 451,
+    "be_roas": 2.21,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     493,
+     603
+    ]
+   },
+   "namn_sv": "Fyren i klossar som lyser, 1 092 bitar",
+   "status": "säsong",
+   "poang": 10,
+   "rank_slutlig": 10,
+   "rank": 3,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 12,
+    "K2": 12,
+    "K3": 8,
+    "K4": 7,
+    "K5": 8,
+    "K6": 9,
+    "K7": 7,
+    "K8": 9,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Vad ger man den som har båt?",
+   "efter_bild": "sista biten sätts på plats → lyktan tänds och roterar",
+   "huvudrisk": "Designen är en MOC-kopia av LEGO Ideas-fyren — Metas varumärkesgranskning eller LEGO-klagomål kan stoppa annonsen; leveranstid för 1 kg-låda måste klara beställning senast mitten av oktober.",
+   "varfor": "Ingen svensk aktör i exakt form, ankare 2,6× (Hemshopen) till 3,5× (LEGO Ideas), 1 092 synliga bitar bär 999 kr; mottagaren är H05:s 'mannen med båten' — samma köpare som Båtmotorskyddet/Motorhöljet (486 köp) fast som gåva från partnern.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0306",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul)",
+     "mottagare i relation (mannen med båten / pappa)",
+     "många synliga delar (1 092 bitar)",
+     "ankare 1,2–1,6× eller mer (Hemshopen 2 599, LEGO Ideas-fyr ~3 500)"
+    ],
+    "avvikelser": [
+     "prisband 500–999",
+     "objekt_ute nej",
+     "klossar i låda = K8-risk tills heron visar den färdiga fyren"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 2 = 10",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (fyr i klossar med ljus, ~1 000 bitar) — Fyndiq/CDON/Amazon.se sökta 2026-09-24 utan träff; LEGO Creator 5770 fyr är utgången",
+     "pris_sek": null,
+     "url": null,
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Reobrix Lighthouse Medieval Town 3 228 bitar (Hemshopen.se)",
+     "pris_sek": 2599,
+     "url": "https://www.hemshopen.se/barn/byggklossar-kompatibla/medieval-history/lighthouse-medieval-town-3228-bitar-hojd-74-5cm-kompatibla-byggklossar/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "hemshopen.se (Reobrix-fyr 2 599, läst via curl 2026-09-24)",
+     "fyndiq.se byggklossar/byggnader (sök 'fyr' — ingen fyr med ljus, 2026-09-24)",
+     "cdon.se byggleksaker (sök 'fyr' — ingen träff, 2026-09-24)",
+     "amazon.se (LEGO 5770 utgången; övriga sidor 503/captcha)",
+     "elefun.se (LEGO julgran 449 — annan form, noterad för julgransraden)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "engelsk text uppe till vänster ('May this lighthouse bring you home at ease') måste beskäras; färdig fyr i kontext på en byrå med tänd lykta — ser ut som sitt pris; designen liknar LEGO Ideas 21335 Motorized Lighthouse (inget varumärke på varan, men Metas IP-granskning kan reagera — kalla den aldrig 'LEGO-kompatibel' i annonsen)"
+   },
+   "meta_tanke": {
+    "hook": "Vad ger man den som har båt?",
+    "objekt_i_bild": "färdig fyr på fönsterbrädan i mörkret, ljuset i toppen tänt, båtbild/kikare bredvid",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "sista biten sätts på plats → lyktan tänds och roterar"
+   },
+   "listning": {
+    "product_id": "1005007789272163",
+    "url": "https://www.aliexpress.com/item/1005007789272163.html",
+    "pris_usd": 37.89,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:17:26Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005007789272163.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (1092PCS Electric Lighthouse, Fisherman's Hut, Glowing); strömkälla (USB/batteri) ej sedd — verifiera",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007789272163.html",
+    "https://www.hemshopen.se/barn/byggklossar-kompatibla/medieval-history/lighthouse-medieval-town-3228-bitar-hojd-74-5cm-kompatibla-byggklossar/",
+    "https://fyndiq.se/barn/leksaker/byggklossar-byggset/byggnader/",
+    "https://www.elefun.se/vara-65554/bitar-byggklossar-lego-juletre"
+   ]
+  },
+  {
+   "product_id": "1005009666428483",
+   "titel": "Kulbanetornet i trä, 449",
+   "url": "https://www.aliexpress.com/item/1005009666428483.html",
+   "pris": 12.95,
+   "valuta": "USD",
+   "pris_text": "US $12.95",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005009666428483.jpg",
+   "sald": "",
+   "grupp": "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton",
+   "objekt": "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton",
+   "taggar": {
+    "objekt": "NYTT: Barnbarnets julklapp — kulbana i trä som byggs ihop på julafton",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Hubelino Mellan Byggsats 123 delar (Jollyroom)"
+   },
+   "ekonomi": {
+    "landad": 188,
+    "forslag_pris": 449,
+    "multipel": 2.39,
+    "be_cpa": 262,
+    "be_roas": 1.71,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     169,
+     206
+    ]
+   },
+   "namn_sv": "Kulbanetornet i trä, 449",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 8,
+    "K4": 6,
+    "K5": 8,
+    "K6": 8,
+    "K7": 6,
+    "K8": 6,
+    "K9": 5,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Vad bygger ni på julafton?",
+   "efter_bild": "kulan åker hela vägen ner genom det färdiga tornet — en tagning",
+   "huvudrisk": "Storleken på färdig modell är inte mätt — ser den ut som 99 kr faller K8; Panduros 254-delars ROKR för 599 är ett bättre 'upplevt värde' om vår är liten.",
+   "varfor": "Samma struktur som racingkalendern (hårt datum, mottagare i relation, många synliga delar, 449) men i en form kontot inte har; svenska golvet i exakt form ligger ÖVER oss (Panduro 599, Hobbyland 759) och GraviTrax/Hubelino är ankare på 499–999.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0307",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (jul)",
+     "prisband 300–499",
+     "många synliga delar (laserskurna ark → torn)",
+     "mottagare i relation (barnbarn)"
+    ],
+    "avvikelser": [
+     "ingen svikande default (chokladkalendern) — här är defaulten 'ett presentkort'",
+     "objekt_ute nej"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 2 + ekonomi 1 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Panduro (ROKR 3D-träpussel kulbana, handvev, 254 delar)",
+     "pris_sek": 599,
+     "url": "https://panduro.com/sv-se/produkter/skapa-dekorera/miniatures/grundsatser/3d-trapussel-kulbana-520131",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Hubelino Mellan Byggsats 123 delar (Jollyroom)",
+     "pris_sek": 999,
+     "url": "https://www.jollyroom.se/leksaker/byggsatser-lego/kulbanor/hubelino-mellan-byggsats-123-delar",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.33,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "jollyroom.se (kulbanor, 77 produkter, 2026-09-24)",
+     "lekia.se (GraviTrax 499, kulbana m. hiss 236 st 499, 2026-09-24)",
+     "panduro.com (ROKR 599, 50+ i lager, 2026-09-24)",
+     "hobbyland.se (ROKR elektrisk 759, 2026-09-24)",
+     "lekakademin.se (Haba 840–4 120, 2026-09-24)",
+     "pricerunner.se 'kulbana i trä' (tomt svar/403)",
+     "amazon.se (503/captcha — ej läst)"
+    ]
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "heron visar det färdiga tornet med kulor + de laserskurna arken runtom mot stjärnhimmel — 'så här ser det ut före och efter' i EN bild; kinesiska tecken på en skylt i modellen, går att beskära; storlek på färdig modell ej mätt — måste mätas före brief (K8)"
+   },
+   "meta_tanke": {
+    "hook": "Vad bygger ni på julafton?",
+    "objekt_i_bild": "farfar och barnbarnet vid köksbordet, tornet halvbyggt, kulan släpps",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "kulan åker hela vägen ner genom det färdiga tornet — en tagning"
+   },
+   "listning": {
+    "product_id": "1005009666428483",
+    "url": "https://www.aliexpress.com/item/1005009666428483.html",
+    "pris_usd": 12.95,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:17:23Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005009666428483.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt sökträff/titel (Science Experiment Toy, 3D Wooden Marble Run Kit with Electric Catapult)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 3,
+    "efterfragan": 2,
+    "lucka": 1,
+    "ekonomi": 1,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005009666428483.html",
+    "https://panduro.com/sv-se/produkter/skapa-dekorera/miniatures/grundsatser/3d-trapussel-kulbana-520131",
+    "https://www.jollyroom.se/leksaker/byggsatser-lego/kulbanor",
+    "https://www.lekia.se/leksaker/spel/kulbana-med-hiss-236-st",
+    "https://www.hobbyland.se/category/robotime"
+   ]
+  },
+  {
+   "product_id": "1005008144875545",
+   "titel": "Pariserhjulet med LED och musik",
+   "url": "https://www.aliexpress.com/item/1005008144875545.html",
+   "pris": 33.09,
+   "valuta": "USD",
+   "pris_text": "US $33.09",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005008144875545.jpg",
+   "sald": "",
+   "grupp": "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar",
+   "objekt": "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar",
+   "taggar": {
+    "objekt": "NYTT: Julbordets mittpunkt — pariserhjul i trä som snurrar, lyser och spelar",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Rolife Night of the Eiffel Tower 164 delar med LED (Hobbyland) 449 / ROKR marble runs med LED 759 — kusiner i samma serie, inte samma form"
+   },
+   "ekonomi": {
+    "landad": 478,
+    "forslag_pris": 899,
+    "multipel": 1.88,
+    "be_cpa": 421,
+    "be_roas": 2.14,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     430,
+     526
+    ]
+   },
+   "namn_sv": "Pariserhjulet med LED och musik",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 5,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "högt — rörelse + LED + musik + ~30 cm hus/hjul; delar ej mätt",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Byggde ni det här själva?",
+   "efter_bild": "sista gondolen sätts på — hjulet börjar snurra, ljuset tänds, musiken går: en tagning, ingen text",
+   "huvudrisk": "Amazon.se är oläst (503) och Rolife säljer ett pariserhjul i samma form i EU — ligger det där under 899 faller luckan; delar/storlek ej mätt.",
+   "varfor": "Enda formen i rundan utan svensk aktör i exakt form, med textfri hero i kontext som visar rörelse + ljus på 3 s. Samma köpare som racingkalendern (mor-/farföräldern före advent), 899 kr med BE-CPA 373–469 = bästa ekonomin i linsen.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0308",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (black week / advent)",
+     "många synliga delar (gondoler, hus, lyktor)",
+     "prisband 500–999",
+     "gåva till relation (barnbarn + farfar bygger ihop)"
+    ],
+    "avvikelser": [
+     "objekt_ute nej",
+     "ingen svikande default",
+     "F_HOBBY/G_Q4 har svag facit-historik (1 vinnare / 2 förlorare)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör hittad i exakt form (pariserhjul i trä som byggsats med LED/musik) — PriceRunner 'pariserhjul 3d pussel' / 'pariserhjul byggsats trä' (bara magnetklossar 519), Hobbyland Robotime-kategori, Kreatima, Panduro (sök 404) sökta 2026-09-24; närmast: BilligaBoden roterande pariserhjul i BYGGKLOSSAR 813 delar (annan form, pris oläst 429) och PartyHandel färdig julkarusell 129 (dekor, ingen byggsats)",
+     "pris_sek": null,
+     "url": null,
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Rolife Night of the Eiffel Tower 164 delar med LED (Hobbyland) 449 / ROKR marble runs med LED 759 — kusiner i samma serie, inte samma form",
+     "pris_sek": 759,
+     "url": "https://www.hobbyland.se/category/robotime",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.84,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/sp/3d-pussel-pariserhjul (inga pariserhjul, curl 2026-09-24)",
+     "pricerunner.se/sp/pariserhjul-byggsats-tra (magnetklossar 519)",
+     "pricerunner.se/sp/pariserhjul (1000+ = leksaker/pynt, ej byggsatser)",
+     "hobbyland.se/category/robotime + trabyggsatser (inget pariserhjul)",
+     "kreatima.com sök robotime (bara konstnärsmaterial)",
+     "panduro.com sök (404)",
+     "billigaboden.se (429)",
+     "partyhandel.se (färdig julkarusell 129 ur sökträff)",
+     "amazon.se (503 — OLÄST; Rolife TGN01 'Ferris Wheel' säljs i EU och kan finnas där)"
+    ],
+    "anm": "Ankarkvoten räknas mot Hobbylands ROKR/Rolife-LED-kusiner (449–759) eftersom ingen svensk aktör har formen. Pris 899 satt under Hobbylands 999-nivå (skrivmaskinen) — landad × 2,4 hade gett 1 147, över taket."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto på träbord i mörker: hjulet med åtta gondoler, upplyst hus, staket med tomte-siluetter — varm LED, ingen inbränd text; hjulet snurrar och speldosa spelar enligt titel (bekräfta drivning: vev eller batteri)"
+   },
+   "meta_tanke": {
+    "hook": "Byggde ni det här själva?",
+    "objekt_i_bild": "pariserhjulet i mörkret på soffbordet, gondolerna snurrar, huset lyser, barnbarn + farfar bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "sista gondolen sätts på — hjulet börjar snurra, ljuset tänds, musiken går: en tagning, ingen text"
+   },
+   "listning": {
+    "product_id": "1005008144875545",
+    "url": "https://www.aliexpress.com/item/1005008144875545.html",
+    "pris_usd": 33.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:41:14Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005008144875545.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel; titeln bär importörnamnet 'Hands Craft' (amerikansk återförsäljare, inget IP på varan) — skriv aldrig det i annonsen; samma sak i tre andra listningar: 1005012050035522 (38,99, hero med inbränd 'AYA'-logga), 32969513221 (20,15, hero med inbränd rubrik), 1005007518591761 (48,24, Ury); antal delar/storlek ej angivet i titeln — måste mätas före brief (K8)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 3,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 3,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008144875545.html",
+    "https://www.aliexpress.com/item/1005012050035522.html",
+    "https://www.aliexpress.com/item/32969513221.html",
+    "https://www.aliexpress.com/item/1005007518591761.html",
+    "https://www.pricerunner.se/sp/3d-pussel-pariserhjul.html",
+    "https://www.pricerunner.se/sp/pariserhjul-byggsats-tra.html",
+    "https://www.hobbyland.se/category/robotime"
+   ]
+  },
+  {
+   "product_id": "1005012887820546",
+   "titel": "Julgranen som snurrar, speldosa i trä",
+   "url": "https://www.aliexpress.com/item/1005012887820546.html",
+   "pris": 39.09,
+   "valuta": "USD",
+   "pris_text": "US $39.09",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005012887820546.jpg",
+   "sald": "",
+   "grupp": "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik",
+   "objekt": "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik",
+   "taggar": {
+    "objekt": "NYTT: Fönsterbrädan i advent — julgran i trä med tomtesläde som snurrar till musik",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "golv utan ankare",
+    "ankare_kalla": "Panduro/Kreatima ROKR speldosa (orrery, 101 delar) och karusell-speldosa (336 delar) — grannform: speldosa i trä som byggsats"
+   },
+   "ekonomi": {
+    "landad": 564,
+    "forslag_pris": 999,
+    "multipel": 1.77,
+    "be_cpa": 434,
+    "be_roas": 2.3,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     508,
+     621
+    ]
+   },
+   "namn_sv": "Julgranen som snurrar, speldosa i trä",
+   "status": "säsong",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 6,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel — mycket detalj, men bara toppen rör sig; delar ej mätt",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står plastgranen på fönsterbrädan igen?",
+   "efter_bild": "vevas upp — släden med tomten går ett varv runt granen medan melodin spelar",
+   "huvudrisk": "999 kr mot Panduros 599-speldosor i grannform och en AI-renderad hero — utan verkligt video av rotationen ser den ut som dekor för 400 kr.",
+   "varfor": "Roterande julgran som byggsats finns inte hos någon svensk aktör (bara färdig dekor 333 och LEGO:s klossgran 449), hårt datum 9 v, och heron visar produkten i kontext utan text. Samma 'svikande default'-struktur som kalendern (plastgranen/köpt speldosa).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0309",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "H_VISUELL_NYHET",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "black_week",
+    "deadline_typ": "jul",
+    "veckor_kvar": 9.1,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (advent/black week)",
+     "många synliga delar (paket, tomte, ren, pingvin)",
+     "prisband 500–999",
+     "svikande default (plastgran/färdig speldosa 333)"
+    ],
+    "avvikelser": [
+     "objekt_ute nej",
+     "dekor snarare än 'maskin' — bara toppen roterar",
+     "pris 999 mot Panduros 599-speldosor i grannform"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 3×2 + efterfrågan 1 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ingen svensk aktör i exakt form (roterande julgran-speldosa som TRÄBYGGSATS) — PriceRunner 'julgran speldosa trä 3d' / '3d pussel julgran trä' / 'rokr julgran' sökta 2026-09-24; närmast färdig 'Speldosa med jultomten' 333 (dekor, ingen byggsats) och LEGO julgran 449 (klossar, JB:s golv)",
+     "pris_sek": null,
+     "url": null,
+     "exakt_samma_form": false
+    },
+    "premium_ankare": {
+     "namn": "Panduro/Kreatima ROKR speldosa (orrery, 101 delar) och karusell-speldosa (336 delar) — grannform: speldosa i trä som byggsats",
+     "pris_sek": 599,
+     "url": "https://panduro.com/sv-se/produkter/skapa-dekorera/miniatures/grundsatser/3d-trapussel-musikdosa-17%C3%9717%C3%97235-cm-520138",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 0.6,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/sp/julgran-speldosa-tra-3d (färdig speldosa 333, pynt)",
+     "pricerunner.se/sp/3d-pussel-julgran-tra (inga julgranar som byggsats)",
+     "pricerunner.se/sp/rokr-julgran (bara granar/kulor)",
+     "panduro.com (speldosa 599, musikdosa 599 — grannform)",
+     "elefun.se LEGO julgran 449 (JB, klossar)",
+     "amazon.se (503 — oläst)"
+    ],
+    "anm": "Luckan är formen, inte kategorin: speldosor i trä finns hos Panduro för 599 — vår rad måste bära 999 på julmotivet + rotationen. Ankarkvoten 0,6 (599/999) är därför svag; den billigare 17,25-dollarssyskonen ger 599 med BE-CPA ~350 om Axel hellre vill ligga PÅ Panduros nivå."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "AI-renderad miljö (snöfönster, kaffekopp) men produkten är textfri utom 'MERRY CHRISTMAS'-plaketten som sitter på varan; bekräfta med verkligt foto/video från säljaren före brief"
+   },
+   "meta_tanke": {
+    "hook": "Står plastgranen på fönsterbrädan igen?",
+    "objekt_i_bild": "trägranen på fönsterbrädan, släden snurrar runt toppen, snö utanför",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "vevas upp — släden med tomten går ett varv runt granen medan melodin spelar"
+   },
+   "listning": {
+    "product_id": "1005012887820546",
+    "url": "https://www.aliexpress.com/item/1005012887820546.html",
+    "pris_usd": 39.09,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:45:11Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005012887820546.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (Rotating Christmas Tree, Santa Sleigh Scene); billigare syskon i samma form ej öppnade: 1005013243739286 (17,25 USD, 'Christmas Tree Music Box') och 1005013229989257 (10,45) — om priset ska ner till 599; delar/storlek ej i titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 3,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005012887820546.html",
+    "https://www.aliexpress.com/item/1005013243739286.html",
+    "https://www.pricerunner.se/sp/julgran-speldosa-tra-3d.html",
+    "https://www.pricerunner.se/sp/3d-pussel-julgran-tra.html",
+    "https://panduro.com/sv-se/produkter/skapa-dekorera/miniatures/grundsatser/3d-trapussel-speldosa-520132"
+   ]
+  },
+  {
+   "product_id": "1005007476916287",
+   "titel": "Pingisroboten, spiralmagasin",
+   "url": "https://www.aliexpress.com/item/1005007476916287.html",
+   "pris": 32.99,
+   "valuta": "USD",
+   "pris_text": "US $32.99",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005007476916287.jpg",
+   "sald": "",
+   "grupp": "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar",
+   "objekt": "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar",
+   "taggar": {
+    "objekt": "NYTT: Pingisbordet i källaren — motståndaren som aldrig tröttnar",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Joola iPong bordtennisrobot — Fitshop"
+   },
+   "ekonomi": {
+    "landad": 477,
+    "forslag_pris": 999,
+    "multipel": 2.09,
+    "be_cpa": 522,
+    "be_roas": 1.91,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     429,
+     525
+    ]
+   },
+   "namn_sv": "Pingisroboten, spiralmagasin",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 7,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "lågt–medel som packshot; högt vid bordet (motor + magasin)",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Står pingisbordet i källaren och väntar?",
+   "efter_bild": "roboten matar boll efter boll ur spiralen, spelaren returnerar ensam — alla ser pingis + robot på en sekund",
+   "huvudrisk": "Fyndiq säljer exakt samma form för 415 kr (H06-test) och heron är en packshot — utan egen video vid ett bord ser den ut som en 400-kronorspryl.",
+   "varfor": "Pingis känner alla igen, en robot som serverar ensam är ny mekanik som syns direkt, och ankaret Joola 1 895 gör 999 trovärdigt (BE-CPA 474–570 = bästa ekonomin i rundan). Ägarbasen är pingisbord i källare/garage — ej mätt, men självselekterande via bordet i bild.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0310",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "julafton",
+    "deadline_typ": "jul",
+    "veckor_kvar": 13.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Övervakningskameran (PTZ dubbellins)",
+    "delade_variabler": [
+     "golv under oss + märkesankare ≥ 1,6× (H06)",
+     "elektronik",
+     "500–999 kr",
+     "en variant"
+    ],
+    "avvikelser": [
+     "objekt inne, inte ute",
+     "inget skydd — nöje/träning",
+     "hobbyägare, inte hushåll"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 1 + ekonomi 3 = 8",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Fyndiq — 'USB Bordtennis Robot Pingisbollkastare' (samma form, ~15 bollar, USB/4 × AA)",
+     "pris_sek": 415,
+     "url": "https://fyndiq.se/produkt/usb-bordtennis-robot-pingisbollkastare-traning-for-pingis-0b758cf8b6f44da5/",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Joola iPong bordtennisrobot — Fitshop",
+     "pris_sek": 1895,
+     "url": "https://www.fitshop.se/joola-pingisrobot-ipong-jo-21127-v200",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.9,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "fyndiq.se (415 kr, samma form)",
+     "fitshop.se (Joola iPong 1 895, iPong V300 2 395, Shorty 6 395)",
+     "pricerunner.se/sp/bordtennisrobot (6 modeller, sida tom vid hämtning)",
+     "cdon.se/sport/pingis/pingisrobotar",
+     "pingisrack.se",
+     "pingiszonen.se"
+    ],
+    "anm": "H06-UNDANTAG: golvet är EN kopia (Fyndiq 415) under vårt pris, ankaret Joola 1 895 ligger 1,9× över — enligt LEARNING_STATE 2026-09-24 släpps sådana igenom MÄRKTA, fackhandelssortiment med 100+ varianter finns inte (6 modeller på PriceRunner). Märk raden H06 i utfallet."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot mot vit bakgrund: spiralmagasin + grön/vit bas — textfri men utan bord/spelare; creativen måste filmas vid ett pingisbord för att fungera"
+   },
+   "meta_tanke": {
+    "hook": "Står pingisbordet i källaren och väntar?",
+    "objekt_i_bild": "pingisbordet med roboten i ena änden, spelaren ensam i andra",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "roboten matar boll efter boll ur spiralen, spelaren returnerar ensam — alla ser pingis + robot på en sekund"
+   },
+   "listning": {
+    "product_id": "1005007476916287",
+    "url": "https://www.aliexpress.com/item/1005007476916287.html",
+    "pris_usd": 32.99,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:21:00Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005007476916287.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "'Dual Power Supply Version' (USB eller 4 × AA) — en variant enligt titel; syskonlistning 1005003631767472 (36,39 USD, 'up-graded')",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 1,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 3,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005007476916287.html",
+    "https://www.aliexpress.com/item/1005003631767472.html",
+    "https://fyndiq.se/produkt/usb-bordtennis-robot-pingisbollkastare-traning-for-pingis-0b758cf8b6f44da5/",
+    "https://www.fitshop.se/joola-pingisrobot-ipong-jo-21127-v200",
+    "https://www.pricerunner.se/sp/bordtennisrobot.html"
+   ]
+  },
+  {
+   "product_id": "1005013215036443",
+   "titel": "Pusselbrädan med sex lådor",
+   "url": "https://www.aliexpress.com/item/1005013215036443.html",
+   "pris": 33.42,
+   "valuta": "USD",
+   "pris_text": "US $33.42",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005013215036443.jpg",
+   "sald": "",
+   "grupp": "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul",
+   "objekt": "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul",
+   "taggar": {
+    "objekt": "NYTT: Pusslet på matbordet — måste flyttas när det ska dukas till jul",
+    "form": "annat",
+    "arketyp": "A_AGARE_FRIKTION",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "1,2–1,3×",
+    "ankare_kalla": "CDON — Puzzle Ready träpusselbräda 1000 bitar 998 kr / pusselbräda med 4 lådor 1 679 kr (ur sökträff 2026-09-24, produktsidan 403)"
+   },
+   "ekonomi": {
+    "landad": 484,
+    "forslag_pris": 799,
+    "multipel": 1.65,
+    "be_cpa": 316,
+    "be_roas": 2.53,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     435,
+     532
+    ]
+   },
+   "namn_sv": "Pusselbrädan med sex lådor",
+   "status": "säsong",
+   "poang": 8,
+   "rank_slutlig": 8,
+   "rank": 8,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": 10,
+    "K2": 12,
+    "K3": 8,
+    "K4": 8,
+    "K5": 7,
+    "K6": 8,
+    "K7": 4,
+    "K8": 9,
+    "K9": 4,
+    "K10": 2,
+    "K11": 1,
+    "K12": 1
+   },
+   "hook": "Ligger pusslet på matbordet till jul?",
+   "efter_bild": "brädan lyfts med pusslet intakt och ställs mot väggen — bordet är fritt att duka; sex lådor med sorterade bitar",
+   "huvudrisk": "Amazon.se gick inte att läsa (503) och har sannolikt flera brädor 500–900 kr; BE-ROAS 2,5 är högt för kontot om CPA hamnar över 300.",
+   "varfor": "Ägd friktion som 55+ känner igen på 3 s (pusslet blockerar matbordet i veckor) och ett hårt datum (julbordet ska dukas) — samma struktur som kalendern: svikande default (kartongbit/duk) ersätts av en sak med synligt högt upplevt värde. Golvet ligger bara ÖVER oss (991–1 679 kr) medan billigare svenska alternativ är mattor utan lådor.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0311",
+   "arketyp": "A_AGARE_FRIKTION",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "julafton",
+    "deadline_typ": "jul",
+    "veckor_kvar": 13.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "agare_55plus_smahus",
+     "hårt datum (jul)",
+     "inomhus/gåva — motbevisat kill",
+     "svikande default (pusslet på en kartongbit/matbordet)"
+    ],
+    "avvikelser": [
+     "objekt_ute nej",
+     "ingen kalenderform",
+     "prisband 500–999 i stället för 300–499"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 2 + ekonomi 2 = 8",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "Relaxdays.se — lutande pusselbräda 1000 bitar, 2 lådor",
+     "pris_sek": 991,
+     "url": "https://relaxdays.se/sport-fritid/spel/familjespel/lutande-pusselbrada-for-1000-bitar-10050252.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "CDON — Puzzle Ready träpusselbräda 1000 bitar 998 kr / pusselbräda med 4 lådor 1 679 kr (ur sökträff 2026-09-24, produktsidan 403)",
+     "pris_sek": 998,
+     "url": "https://cdon.se/produkt/pusselbrada-med-lador-och-tackmatta-b118618ec31f4667/",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.25,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "relaxdays.se (991 kr, läst)",
+     "cdon.se (998 / 1 679 kr ur sökträff, sidan 403)",
+     "adlibris.com — Portapuzzle pusselMATTA 531–707 kr (annan form, ingen låda)",
+     "24.se (pusselbord i trä med lådor, sidan visade inget pris)",
+     "amazon.se (503 — OLÄST: troligen flera brädor 500–900 kr, huvudrisken)",
+     "jula/rusta/lekia/clasohlson (bara pussel, ingen bräda med lådor i sökträffarna)"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": false,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "Heron har inbränd rubrik uppe till vänster (måste beskäras) men visar brädan i vardagsrum med sex utdragna lådor fulla av bitar — friktionen syns. Textfri hero i kontext finns på syskonlistningen 1005012330279430 (36,44 USD, kvinna som pusslar, 2026-09-24T07:14:27Z) — men pusselmotivet där är Nalle Puh (Disney-IP), använd inte den bilden rakt av."
+   },
+   "meta_tanke": {
+    "hook": "Ligger pusslet på matbordet till jul?",
+    "objekt_i_bild": "halvfärdigt 1000-bitarspussel som lyfts från matbordet i ett grepp, lådorna dras ut",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "brädan lyfts med pusslet intakt och ställs mot väggen — bordet är fritt att duka; sex lådor med sorterade bitar"
+   },
+   "listning": {
+    "product_id": "1005013215036443",
+    "url": "https://www.aliexpress.com/item/1005013215036443.html",
+    "pris_usd": 33.42,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:14:10Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005013215036443.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en storlek 77 × 53,6 cm (1000 bitar); titeln nämner stativ + skyddslock — om det är en variant ovanför minpriset är ej mätt",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005013215036443.html",
+    "https://www.aliexpress.com/item/1005012330279430.html",
+    "https://relaxdays.se/sport-fritid/spel/familjespel/lutande-pusselbrada-for-1000-bitar-10050252.html",
+    "https://cdon.se/produkt/pusselbrada-med-lador-och-tackmatta-b118618ec31f4667/",
+    "https://www.adlibris.com/sv/produkt/pusselmatta-portapuzzle-standard-upp-till-1000-bitar-jumbo-54637465"
+   ]
+  },
+  {
+   "product_id": "1005011794735441",
+   "titel": "Pendelväggklockan med kugghjul, trä",
+   "url": "https://www.aliexpress.com/item/1005011794735441.html",
+   "pris": 26.69,
+   "valuta": "USD",
+   "pris_text": "US $26.69",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005011794735441.jpg",
+   "sald": "",
+   "grupp": "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen",
+   "objekt": "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen",
+   "taggar": {
+    "objekt": "NYTT: Mannens julaftonsbygge — mekanisk pendelklocka i trä på väggen",
+    "form": "annat",
+    "arketyp": "F_HOBBY_IDENTITET",
+    "deadline_typ": "jul",
+    "prisband": "500–999",
+    "ankare_klass": "1,3–1,6×",
+    "ankare_kalla": "Ugears Aero Klocka väggklocka (320 delar, pendel) — PriceRunner; Wood Trick pendelväggklocka 4 195 som övre ankare"
+   },
+   "ekonomi": {
+    "landad": 386,
+    "forslag_pris": 699,
+    "multipel": 1.81,
+    "be_cpa": 314,
+    "be_roas": 2.2,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     347,
+     424
+    ]
+   },
+   "namn_sv": "Pendelväggklockan med kugghjul, trä",
+   "status": "säsong",
+   "poang": 6,
+   "rank_slutlig": 6,
+   "rank": 9,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "högt som färdig klocka på väggen (kugghjul + pendel + lod); delar ej mätt",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Vad bygger han på julafton?",
+   "efter_bild": "pendeln svänger och kugghjulen snurrar på väggen — loop 5 s utan text",
+   "huvudrisk": "Listningen blandar modeller (titel 'uggla', hero 'kameleont') och antal delar/storlek är inte mätt — hamnar den valda varianten under 150 delar faller K8 mot ROKR:s 843-kronorsklocka.",
+   "varfor": "Enda klockformen där svenska golvet i exakt form ligger över oss (ROKR 843, Ugears 959, Wood Trick 4 195) och heron är ett textfritt foto av en maskin som syns röra sig. Hårt datum (julafton 12 v), mottagare i relation (H05), 699 kr med BE-CPA 275–352.",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0312",
+   "arketyp": "F_HOBBY_IDENTITET",
+   "arketyp_sekundar": "G_Q4_GAVA",
+   "slot": "sasong",
+   "hypotes_id": "H05",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "Adventskalendern Racingbilar",
+    "delade_variabler": [
+     "hårt datum (julafton)",
+     "mottagare i relation (mannen/pappa/svärfar)",
+     "många synliga delar",
+     "prisband 500–999"
+    ],
+    "avvikelser": [
+     "objekt_ute nej",
+     "ingen svikande default — defaulten är 'ett presentkort'",
+     "F_HOBBY_IDENTITET har 0 vinnare / 1 förlorare (magnetfiskesatsen < 300 kr utan ankare)"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 1 + ekonomi 1 = 6",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner — Robotime ROKR Cuckoo Clock LC901C väggklocka (exakt form: mekanisk pendelväggklocka i trä)",
+     "pris_sek": 843,
+     "url": "https://www.pricerunner.se/sp/robotime-rokr.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Ugears Aero Klocka väggklocka (320 delar, pendel) — PriceRunner; Wood Trick pendelväggklocka 4 195 som övre ankare",
+     "pris_sek": 959,
+     "url": "https://www.pricerunner.se/sp/ugears-aero-clock.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.37,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/sp/ugears-aero-clock (959, curl 2026-09-24)",
+     "pricerunner.se/sp/robotime-rokr (ROKR Cuckoo Clock 843)",
+     "pricerunner.se/sp/wood-trick (pendelväggklocka 4 195)",
+     "pricerunner.se/sp/3d-pussel-klocka-tra (Ugears Steampunk bordsklocka 43 delar 139–182 — annan form)",
+     "hobbyland.se robotime + sök 'klocka' (inga klockbyggsatser)",
+     "fyndiq.se ROKR ugglklocka 161 delar (bordsklocka, pris bakom 403)",
+     "cdon.se Ugears Aero Clock (403)",
+     "amazon.se Robotime pendelklocka 169 delar (503 — oläst)",
+     "timeformachine.se / lekochklura.se (404)"
+    ],
+    "anm": "Golvet i exakt form (pendelVÄGGklocka i trä som byggsats) ligger ÖVER oss: 843 / 959 / 4 195. Under oss finns bara bordsklockor (Ugears Steampunk 139–182, ROKR-ugglan på Fyndiq, pris oläst) — annan form."
+   },
+   "material": {
+    "klass": 2,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto mot grön vägg: öppet kugghjulsverk, snäckformad pendelarm och hängande lodvikt — 'maskin som rör sig' syns i stillbild; ingen inbränd text"
+   },
+   "meta_tanke": {
+    "hook": "Vad bygger han på julafton?",
+    "objekt_i_bild": "halvbyggd klocka på köksbordet, kugghjulen i handen, färdig klocka på väggen med pendeln i gång",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "pendeln svänger och kugghjulen snurrar på väggen — loop 5 s utan text"
+   },
+   "listning": {
+    "product_id": "1005011794735441",
+    "url": "https://www.aliexpress.com/item/1005011794735441.html",
+    "pris_usd": 26.69,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:37:57Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005011794735441.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "titeln säger 'Owl Wall Clock … Pendulum', heron visar en kameleontformad pendelväggklocka med öppet kugghjulsverk och lodvikt — listningen rymmer sannolikt flera modeller (uggla/kameleont), 26,69 USD är lägsta varianten; antal delar ej angivet i titeln — MÅSTE mätas före brief (K8 kräver delar + storlek i titeln); syskonlistningar: 1005005292539869 (26,69, fem bordsklockor med kvartsverk, packshot) och 1005007696869861 (41,99, ROKR-ugglklonen, landad 607 → över ankaret)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 1,
+    "meta_creative": 3,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005011794735441.html",
+    "https://www.aliexpress.com/item/1005005292539869.html",
+    "https://www.aliexpress.com/item/1005007696869861.html",
+    "https://www.pricerunner.se/sp/ugears-aero-clock.html",
+    "https://www.pricerunner.se/sp/robotime-rokr.html",
+    "https://www.pricerunner.se/sp/wood-trick.html",
+    "https://www.hobbyland.se/category/robotime"
+   ]
+  },
+  {
+   "product_id": "1005008634188743",
+   "titel": "Skattkistan med tre kodhjul, trä",
+   "url": "https://www.aliexpress.com/item/1005008634188743.html",
+   "pris": 13.58,
+   "valuta": "USD",
+   "pris_text": "US $13.58",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24-jul/v3/bilder/1005008634188743.jpg",
+   "sald": "",
+   "grupp": "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren",
+   "objekt": "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren",
+   "taggar": {
+    "objekt": "NYTT: Julklappen som ska låsas upp — skattkista i trä med kombinationslås, byggd av mottagaren",
+    "form": "annat",
+    "arketyp": "G_Q4_GAVA",
+    "deadline_typ": "jul",
+    "prisband": "300–499",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Ugears 3D Safe Mechanical 179 delar (kassaskåp med kodlås, synliga kugghjul) — PriceRunner"
+   },
+   "ekonomi": {
+    "landad": 196,
+    "forslag_pris": 449,
+    "multipel": 2.29,
+    "be_cpa": 253,
+    "be_roas": 1.78,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     176,
+     216
+    ]
+   },
+   "namn_sv": "Skattkistan med tre kodhjul, trä",
+   "status": "säsong",
+   "poang": 6,
+   "rank_slutlig": 6,
+   "rank": 10,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": "medel–lågt: synlig mekanism men liten och gravyren stör",
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Vet du koden till din julklapp?",
+   "efter_bild": "hjulen ställs 7-3-9, haspen släpper, locket går upp",
+   "huvudrisk": "K8: en 13-dollarskista med skämtgravyr kan se ut som 199 kr bredvid Ugears kassaskåp — och prisbandet 300–499 är kontots svagaste (8 vinnare / 15 förlorare).",
+   "varfor": "Rent H06-test i julkategorin: golv = en kopia (350), ankare Ugears 749 (1,67×), BE-CPA 233–273 klarar grinden. Kombinationslåset ger en visuell mekanism på 3 s och ett skäl att ge den (koden i julkortet) som den vanliga träkistan saknar.",
+   "konfidens": "LÅG",
+   "koncept_id": "K0313",
+   "arketyp": "G_Q4_GAVA",
+   "arketyp_sekundar": "F_HOBBY_IDENTITET",
+   "slot": "sasong",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "jul",
+    "deadline_typ": "jul",
+    "veckor_kvar": 12.4,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "ATV-Kapell Storlek 3XL",
+    "delade_variabler": [
+     "golv under oss (Robotime skattlåda 350) + märkesankare ≥ 1,6× (Ugears Safe 749 = 1,67×)",
+     "hårt datum (jul)",
+     "en variant"
+    ],
+    "avvikelser": [
+     "objekt_ute nej",
+     "prisband 300–499 (förlorarband 8/15)",
+     "ingen ägd dyr sak — ren gåva"
+    ]
+   },
+   "rank_forklaring": "säsong: säsong 2×2 + efterfrågan 1 + ekonomi 1 = 6",
+   "asymmetrisk": true,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "PriceRunner — Robotime 3D Träpussel Skattlåda Modellkit (samma form: skattkista i trä med lås som byggsats)",
+     "pris_sek": 350,
+     "url": "https://www.pricerunner.se/sp/3d-pussel-skattkista.html",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Ugears 3D Safe Mechanical 179 delar (kassaskåp med kodlås, synliga kugghjul) — PriceRunner",
+     "pris_sek": 749,
+     "url": "https://www.pricerunner.se/sp/ugears-safe.html",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 1.67,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "pricerunner.se/sp/3d-pussel-skattkista (Robotime skattlåda 350, iDventure Cryptex 207, curl 2026-09-24)",
+     "pricerunner.se/sp/ugears-safe (749)",
+     "pricerunner.se/sp/ugears-carousel (Ugears Combination Lock 299 — låset ensamt, annan form)",
+     "pricerunner.se/sp/3d-trapussel-speldosa (iDventure Cluebox 483)",
+     "hobbyland.se robotime (ingen kista)",
+     "fyndiq.se (403)"
+    ],
+    "anm": "H06-UNDANTAG, märkt: golvet är EN kopia (Robotime 350) under vårt 449, ankaret Ugears Safe 749 ligger 1,67× över — exakt den struktur ATV-kapellet vann med (Jula 399 < 579, Polaris 3 045). Fackhandelssortiment i formen finns inte (3 träffar på PriceRunner, olika former)."
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": true,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "verkligt foto på bord: tre kodhjul 0–9 på fronten, handtag, hasp — mekanismen syns; gravyren 'REINDEER / PACKAGING DEPARTMENT' sitter på varan (inte inbränd i bilden) och drar ner K8 — be säljaren om omärkt variant"
+   },
+   "meta_tanke": {
+    "hook": "Vet du koden till din julklapp?",
+    "objekt_i_bild": "kistan under granen, tre kodhjul vrids, locket öppnas — kontanter/present inuti",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "hjulen ställs 7-3-9, haspen släpper, locket går upp"
+   },
+   "listning": {
+    "product_id": "1005008634188743",
+    "url": "https://www.aliexpress.com/item/1005008634188743.html",
+    "pris_usd": 13.58,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T07:46:43Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24-jul/v3/bilder/1005008634188743.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant enligt titel (Treasure Box Model Kit, Brain Teaser); syskon 1005009398704859 (14,49, ornamentkista med spänne, hero sedd — inga synliga kodhjul) och 1005004428058492 (19,58, smyckeskrin med kodlås); delar/storlek ej i titeln",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 1,
+    "lucka": 2,
+    "ekonomi": 1,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 2,
+    "hypotesvarde": 3
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005008634188743.html",
+    "https://www.aliexpress.com/item/1005009398704859.html",
+    "https://www.aliexpress.com/item/1005004428058492.html",
+    "https://www.pricerunner.se/sp/3d-pussel-skattkista.html",
+    "https://www.pricerunner.se/sp/ugears-safe.html"
+   ]
+  },
+  {
+   "product_id": "1005002679622965",
+   "titel": "ATV-vindrutan för passet",
+   "url": "https://www.aliexpress.com/item/1005002679622965.html",
+   "pris": 58.61,
+   "valuta": "USD",
+   "pris_text": "US $58.61",
+   "bild": null,
+   "bild_fil": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+   "sald": "",
+   "grupp": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+   "taggar": {
+    "objekt": "NYTT: ATV-föraren på passet i regn och snö — vindruta",
+    "form": "annat",
+    "arketyp": "E_VADER_SASONG",
+    "deadline_typ": "älgjakt",
+    "prisband": "≥ 1 000",
+    "ankare_klass": "≥ 1,6×",
+    "ankare_kalla": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr"
+   },
+   "ekonomi": {
+    "landad": 848,
+    "forslag_pris": 1199,
+    "multipel": 1.41,
+    "be_cpa": 352,
+    "be_roas": 3.4,
+    "dom": "PASS",
+    "orsak": "",
+    "landad_intervall": [
+     763,
+     932
+    ]
+   },
+   "namn_sv": "(från 24/9) ATV-vindrutan för passet",
+   "status": "utforskning",
+   "poang": 9,
+   "rank_slutlig": 9,
+   "rank": 4,
+   "per_kriterium": {
+    "K0": "ok",
+    "K1": null,
+    "K2": null,
+    "K3": null,
+    "K4": null,
+    "K5": null,
+    "K6": null,
+    "K7": null,
+    "K8": null,
+    "K9": null,
+    "K10": null,
+    "K11": null,
+    "K12": null
+   },
+   "hook": "Kör du till passet utan ruta?",
+   "efter_bild": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan",
+   "huvudrisk": "Golv 995 kr i exakt samma form (ATVhuset) under vårt pris; akrylruta 91 cm = fraktskaderisk",
+   "varfor": "Samma ägare, samma objekt och samma säsong som ATV-kapellet som just blev REAL WINNER, med ankare 2,3× och två hårda datum (älgjakt 2 v, första snö 4 v). Faller bara på orderns golvregel. | LYFT AV HUVUDSESSIONEN 2026-09-24 som H06-test: golv ATVhuset 995 under vårt 1 199, ankare Moose 2 755 (2,3×) — samma struktur som ATV-kapellet (Jula 399 < 579, REAL_WINNER i dag).",
+   "konfidens": "MEDEL",
+   "koncept_id": "K0301",
+   "arketyp": "E_VADER_SASONG",
+   "arketyp_sekundar": "B_SKYDDA_DYRT",
+   "slot": "exploration",
+   "hypotes_id": "H06",
+   "sasong": {
+    "fonster_id": "algjakt_syd",
+    "deadline_typ": "älgjakt",
+    "veckor_kvar": 2.0,
+    "timing": "NOW"
+   },
+   "vinnarlikhet": {
+    "likast": "ATV-Kapell Storlek 3XL / Termoskyddet för Husbil",
+    "delade_variabler": [
+     "samma ägare och samma objekt som ATV-kapellet (REAL WINNER 2026-09-24)",
+     "objekt ute, dyr > 10 tkr (ATV 80–150 tkr)",
+     "hårt datum: älgjakt 2,0 v + första snö Norrland 4,4 v",
+     "ankare ≥ 1,6× (Moose 2 755 = 2,3×)",
+     "prisband ≥ 1 000 med objekt ≥ 100× priset (H04)",
+     "textfri hero i ATV-form"
+    ],
+    "avvikelser": [
+     "form 'annat' (0 av 14 dömda vann)",
+     "golv ATVhuset 995 under vårt pris",
+     "kräver montering på styret (medföljande klämmor)",
+     "akrylruta 91 cm — fraktskaderisk"
+    ]
+   },
+   "rank_forklaring": "exploration: hypotesvärde 2×2 + nyhet 1 + creative 2 + ekonomi 2 = 9",
+   "asymmetrisk": false,
+   "marknad": {
+    "lagsta_jamforbara": {
+     "aktor": "ATVhuset (ATV-PRO ATV Vindruta Universal)",
+     "pris_sek": 995,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+     "exakt_samma_form": true
+    },
+    "premium_ankare": {
+     "namn": "Moose ATV Vindruta Universal (ATVhuset) 2 755 kr; Powermadd Cobra Quick Release 2 950 kr",
+     "pris_sek": 2755,
+     "url": "https://www.atvhuset.se/chassie-kaross/vindruta",
+     "i_sortiment": true
+    },
+    "ankare_kvot": 2.3,
+    "annonsorer_se": "ej mätt",
+    "kollade_kallor": [
+     "atvhuset.se vindruta-kategorin läst 2026-09-24 (25 produkter, 269–6 499 kr)",
+     "atvhuset.se produktsida ATV Vindruta Universal läst (995 kr, 91,5 × 52 cm, 22 mm, 20+ i lager)",
+     "sökutdrag: motorbiten.com, atvdack.se, atvbutiken.com har universalrutor 90 × 51 cm (pris ej läst)",
+     "jula/biltema: ej i sökutdrag — ej mätt"
+    ]
+   },
+   "material": {
+    "klass": 1,
+    "hero_textfri": true,
+    "hero_i_kontext": false,
+    "samma_produkt": true,
+    "forsta_3s": "ej mätt (ingen video)",
+    "kommentar": "packshot: klar ruta med svart tonad nederkant + hela monteringssatsen (klämmor, bågar, skruv) — eget foto på fyrhjulingen i regn behövs"
+   },
+   "meta_tanke": {
+    "hook": "Kör du till passet utan ruta?",
+    "objekt_i_bild": "fyrhjulingen med rutan på, regn/snö på rutan, föraren torr bakom",
+    "sjalvselekterande": true,
+    "forstas_3s": true,
+    "bevisas_visuellt": "samma sträcka utan och med ruta: blött ansikte mot torrt, händerna bakom rutan"
+   },
+   "listning": {
+    "product_id": "1005002679622965",
+    "url": "https://www.aliexpress.com/item/1005002679622965.html",
+    "pris_usd": 58.61,
+    "sald": "",
+    "verdict": "LIVE_VERIFIED",
+    "verifierad_at": "2026-09-24T06:09:30Z",
+    "kontroll": {
+     "produktsida_oppnad": true,
+     "titel_stammer": true,
+     "hero_nedladdad": "korningar/2026-09-24/v3/bilder/1005002679622965.jpg",
+     "hero_sedd": true,
+     "pris_sett": true,
+     "varianter": "en variant, universal ('Fit For Polaris Arctic CAT CAN AM Honda Fourtrax … Yamaha Grizzly'); syskon 1005006168581252 samma pris 58,61 USD (bara sökträff)",
+     "video": "ej tillgänglig i containern"
+    }
+   },
+   "poang_axlar": {
+    "vinnarlikhet": 2,
+    "meta_creative": 2,
+    "efterfragan": 2,
+    "lucka": 2,
+    "ekonomi": 2,
+    "sasong": 2,
+    "leverantor": 2,
+    "nyhet": 1,
+    "hypotesvarde": 2
+   },
+   "kallor": [
+    "https://www.aliexpress.com/item/1005002679622965.html",
+    "https://www.aliexpress.com/item/1005006168581252.html",
+    "https://www.atvhuset.se/chassie-kaross/vindruta/atv-vindruta-universal",
+    "https://www.atvhuset.se/chassie-kaross/vindruta"
+   ],
+   "fran_datum": "2026-09-24"
+  }
+ ],
+ "strukna": [],
+ "utanfor_batch": []
+}

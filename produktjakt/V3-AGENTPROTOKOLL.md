@@ -27,6 +27,7 @@ inför ett datum"* på NYA objekt — inte tjugo överdrag.
 - Säsong för objektet: `python3 sasong.py --objekt "<objektrad>"`.
 - Svenska golvet + ankaret: WebSearch/WebFetch mot pricerunner.se, prisjakt.nu, jula.se, biltema.se, clasohlson.se, rusta.com, bauhaus.se, fyndiq.se, cdon.se, amazon.se, vidaxl.se + fackhandel (getcamping.se, watski.se, hjertmans.se, granngarden.se, zoo.se, husqvarna.com, skogma.se, jaktia.se, lekia.se …). Skriv URL + pris + datum. Kolla **exakt samma form**, inte bara kategorin.
 - Butikens katalog: `grep -i "<ord>" korningar/<datum>/v3/katalog-live.txt`.
+- **Golvet när Fyndiq/CDON/Amazon.se svarar 403/503:** PriceRunner går att läsa med `curl -sL -A "Mozilla/5.0" "https://www.pricerunner.se/search?q=<ord>"` (mätt 2026-09-24, lins JE — gav klock-, safe- och stirlingpriser som en annan lins saknade). Skriv URL + pris + datum som vanligt.
 - **Ingen Temu** (stryper till ~1 hämtning/timme). **Ingen bäverbutiken.se** (proxyn blockerar — katalogen står i filen).
 
 ## LIVE_VERIFIED — bara när ALLT detta gjorts i DENNA körning

@@ -148,5 +148,29 @@
   "deadline": "vintertäckning 6,7 v",
   "korningsvecka": 41,
   "orsak": "2026-09-24 lins AD: golv Bauhaus 133/269 i exakt form, ankare Ooni 499–549 (1,9–2,0× mot 269). H06-kandidat — lyfts om vindrutan (K0301) vinner."
+ },
+ {
+  "objekt": "NYTT: Julbordets spelkväll — fyra i rad i trä 48–60 cm",
+  "form": "annat",
+  "arketyp": "G_Q4_GAVA",
+  "deadline": "jul 12,4 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 julrundan lins JD: äkta hyllucka (Spelexperten 429, Coolstuff, Boardgamer alla utgångna; Jula XL 999 som ankare) men billigaste trälistningen 38,99 USD → landad 507–620 → pris 899+. Bara om listning ≤ 25 USD hittas."
+ },
+ {
+  "objekt": "NYTT: Julbordets kortspel — utdelningen tar tid",
+  "form": "maskin",
+  "arketyp": "D_SNABBARE_METOD",
+  "deadline": "jul 12,4 v",
+  "korningsvecka": 41,
+  "orsak": "2026-09-24 julrundan lins JC: automatisk kortgivare 360° är kategorins starkaste visuella nyhet, men 51–63 USD → landad 670–909, CDON 832 under oss. Bara om listning < 40 USD."
+ },
+ {
+  "objekt": "NYTT: Snöskulptur på gräsmattan — tubsäck 1,5 m",
+  "form": "annat",
+  "arketyp": "H_VISUELL_NYHET",
+  "deadline": "första snö",
+  "korningsvecka": 45,
+  "orsak": "2026-09-24 julrundan lins JD: Coolstuff har lagt ner snöskulpturssäcken = lucka, men ingen AliExpress-form hittad (två fraser). Sök igen i november."
  }
 ]
