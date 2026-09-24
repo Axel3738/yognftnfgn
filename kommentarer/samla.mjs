@@ -137,6 +137,9 @@ export function sammanstall({ nya, trend, annonser = [], konfig }) {
   return ut;
 }
 
+/** Får en kommentar ett svarsförslag? Köpfråga eller kundärende — inget annat. Ren. */
+export const SVARBARA = (r) => r.niva === NIVA.FRAGA || (r.niva === NIVA.ALLVARLIGT && ['ej levererat', 'missnöjd köpare'].includes(r.kategori));
+
 /**
  * Kontrollerar sessionens dom innan den skrivs någonstans. Ren.
  * Varje lead måste bära belägg (kommentars-id i loggen) — och alla belägg måste
@@ -145,7 +148,7 @@ export function sammanstall({ nya, trend, annonser = [], konfig }) {
  * (`hamtad`), så en gammal dom aldrig postas två gånger.
  * @returns {{ fel: string[], dom: object }}
  */
-export function kontrolleraDom(dom, { kandaIds, nyaIds, verkPerId = new Map(), hamtad = null, verksamheter = null }) {
+export function kontrolleraDom(dom, { kandaIds, nyaIds, verkPerId = new Map(), hamtad = null, verksamheter = null, raderPerId = new Map(), maxSvar = 6 }) {
   const fel = [];
   if (!dom || typeof dom !== 'object') return { fel: ['domen saknas eller är inte ett objekt'], dom: null };
   if (hamtad && dom.hamtad !== hamtad) fel.push(`domen gäller hämtningen ${dom.hamtad ?? '(saknas)'}, men dagens hämtning är ${hamtad} — skriv "hamtad": "${hamtad}" i domen efter att du läst dagens kommentarer`);
@@ -168,6 +171,12 @@ export function kontrolleraDom(dom, { kandaIds, nyaIds, verkPerId = new Map(), h
     if (!nyaIds.has(String(s.id))) { fel.push(`svar ${i + 1}: ${s.id} är inte en av körningens nya kommentarer`); continue; }
     if (!s.fakta) { fel.push(`svar ${i + 1}: saknar "fakta" — ett svar utan källa på produktsidan får inte föreslås`); continue; }
     if (!s.en) { fel.push(`svar ${i + 1}: saknar "en" — VA:n läser engelska och måste veta vad hon klistrar in`); continue; }
+    // Axels regel 2026-09-24: "jag vill inte att du ska svara allt möjligt på alla".
+    // Svar föreslås BARA på en köpfråga, eller på en köpare som inte fått eller är
+    // missnöjd med sin vara — aldrig på en invändning, skepsis, troll, beröm eller spam.
+    const rad = raderPerId.get(String(s.id));
+    if (rad && !SVARBARA(rad)) { fel.push(`svar ${i + 1}: ${s.id} är ${rad.niva}/${rad.kategori} — svar föreslås bara på köpfrågor och kundärenden (ej levererat, missnöjd köpare)`); continue; }
+    if (svar.length >= maxSvar) { fel.push(`svar ${i + 1}: fler än ${maxSvar} svarsförslag — välj de viktigaste`); continue; }
     svar.push({ ...s, id: String(s.id) });
   }
   const atgarder = {};
