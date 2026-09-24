@@ -141,7 +141,7 @@ behörighetsreglerna matchar på första ordet.
    - och den slutar ALLTID med **konkreta nästa annonser**, med namn. Slutar
      den inte där är det en dagbok, inte ett system.
    Är annonsen en spend winner: **läs kommentarerna först**
-   (`node tools/annonskommentarer.mjs --kampanj <id>`), sedan
+   (`node tools/annonskommentarer.mjs --konto 730973156224390 --kampanj <id> --sidtoken-env META_ACCESS_TOKEN_MATSTRUMPOR` — sidan ligger i Business Manager Matstrumpor.se, inte i SnarkLös där `META_ACCESS_TOKEN` hör hemma, så kommentarerna kräver den egna token:en; saknas den i miljön: säg det i rapporten och gå vidare), sedan
    konverteringsgraden, sedan manuset. Kluster ≥ 3 invändningar ⇒ en brief
    som bemöter dem (`kalla=voc`).
    Logga varje skriven lärdom som `{kod:"LARDOM", annons, id:"L-<annons>"}`.

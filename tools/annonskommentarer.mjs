@@ -6,6 +6,7 @@
 //
 //   node tools/annonskommentarer.mjs --konto SE|NO --kampanj <id> [--dagar 30] [--ut products/<id>/kommentarer.md] [--json]
 //   node tools/annonskommentarer.mjs --konto SE --annons <ad_id> [--ut …]
+//   node tools/annonskommentarer.mjs --konto 730973156224390 --kampanj <id> --sidtoken-env META_ACCESS_TOKEN_MATSTRUMPOR   (Matstrumpor: sidan i annan Business Manager)
 //
 // Läs-bara. Rör aldrig kontot, svarar aldrig på en kommentar.
 //
@@ -132,7 +133,7 @@ export async function topSpender(kontoId, kampanjId, dagar, token) {
  * tools/invandningsmatris.mjs.
  * @returns {{ annons: {id, name, spend?}, post: string, sida: string, kommentarer: Array<{message, created_time, like_count}> }}
  */
-export async function hamtaKommentarer({ konto = 'SE', kampanj = null, annons: annonsId = null, dagar = 30, token }) {
+export async function hamtaKommentarer({ konto = 'SE', kampanj = null, annons: annonsId = null, dagar = 30, token, sidtoken = null }) {
   if (!token) throw new Error('META_ACCESS_TOKEN saknas i miljön.');
   const kontoId = KONTON[String(konto).toUpperCase()] ?? String(konto).replace(/^act_/, '');
   let annons = null;
@@ -149,7 +150,11 @@ export async function hamtaKommentarer({ konto = 'SE', kampanj = null, annons: a
   const post = c.creative?.effective_object_story_id;
   if (!post) throw new Error(`${annons.name}: creativen har inget inlägg (effective_object_story_id saknas) — kommentarer finns bara på inlägg.`);
   const sidaId = post.split('_')[0];
-  const sida = await graph(`${sidaId}?fields=access_token,name`, token);
+  // Sidtoken hämtas med `sidtoken` när den finns — Matstrumpor 2026-09-24: annonskontot
+  // läses av META_ACCESS_TOKEN (systemanvändaren i SnarkLös) men sidan ligger i
+  // Business Manager Matstrumpor.se hos en annan användare, så sidan nås bara med
+  // en token därifrån (META_ACCESS_TOKEN_MATSTRUMPOR). Annonserna läses med `token`.
+  const sida = await graph(`${sidaId}?fields=access_token,name`, sidtoken ?? token);
   if (!sida.access_token) throw new Error(`Sidan ${sidaId} gav ingen sidtoken — kontot saknar sidrollen.`);
   const sedanMs = Date.now() - dagar * 86400000;
   const alla = await allaSidor(`${post}/comments?fields=message,created_time,like_count&filter=stream&limit=100`, sida.access_token);
@@ -173,13 +178,17 @@ async function huvud() {
   const flagga = (n, s = null) => { const i = args.indexOf(`--${n}`); return i !== -1 && args[i + 1] !== undefined && !args[i + 1].startsWith('--') ? args[i + 1] : s; };
   const token = process.env.META_ACCESS_TOKEN;
   if (!token) { console.error('✗ META_ACCESS_TOKEN saknas i miljön.'); process.exit(1); }
+  // --sidtoken-env <NAMN>: en annan token för SIDAN (kommentarerna) än för annonskontot.
+  const sidtokenEnv = flagga('sidtoken-env');
+  const sidtoken = sidtokenEnv ? process.env[sidtokenEnv] : null;
+  if (sidtokenEnv && !sidtoken) { console.error(`✗ ${sidtokenEnv} saknas i miljön — lägg in den i Environments (sidtoken för kommentarerna).`); process.exit(1); }
   const konto = String(flagga('konto', 'SE')).toUpperCase();
   const kontoId = KONTON[konto] ?? konto.replace(/^act_/, '');
   const dagar = Number(flagga('dagar', 30));
   const idag = flagga('idag') ?? new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Stockholm' }).format(new Date());
   if (!flagga('annons') && !flagga('kampanj')) { console.error('✗ Ge --kampanj <id> (top spendern hämtas) eller --annons <ad_id>.'); process.exit(1); }
   void kontoId;
-  const { annons, post, sida, kommentarer } = await hamtaKommentarer({ konto, kampanj: flagga('kampanj'), annons: flagga('annons'), dagar, token });
+  const { annons, post, sida, kommentarer } = await hamtaKommentarer({ konto, kampanj: flagga('kampanj'), annons: flagga('annons'), dagar, token, sidtoken });
   const { text, invandningar } = markdown({ idag, konto, annons, kommentarer, dagar });
 
   if (args.includes('--json')) console.log(JSON.stringify({ annons, post, sida, antal: kommentarer.length, kluster: sammanfatta(kommentarer), invandningar }, null, 2));
