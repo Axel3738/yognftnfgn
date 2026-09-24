@@ -1,0 +1,115 @@
+{
+  "agent": "JK — träduellspel för två",
+  "datum": "2026-09-24-jul3",
+  "sammanfattning": "Linsen 'snabba fysiska dueller på bordet i trä' gav EN kandidat som klarar alla grindar: ballongfäktningen (två handgjorda trädockor på pinnar, vinnaren spräcker motståndarens ballong) — LIVE_VERIFIED 12:06Z, hero i kontext och textfri, inget svenskt golv i formen (PriceRunner 4 fraser, Teknikmagasinet, Coolstuff 404). Resten av linsens former föll: passe-trappe/fastrack/'Winner' är samma mekanik som sling puck (struken av JA/JH — heron på 1005006124918011 bekräftar 'FOOSBALL WINNER'-brädan); crokinole finns bara som 64–190 USD (landad ≥ 933) mot Philos 890; Klask-generisk, rollet, sjoelbak-bräda, samarbetslabyrint, bordskägelspel och katapultduell har ingen listning på AliExpress i dag (25 fraser); mini-biljard, bounce battle och tornstapling är sortiment i Sverige. Fyra listningar svarade tomt tre gånger (BLOCKED, inte döda): battle block med klocka 1005012652400162, dual-control football battle 1005007936244762, ballongfäktning 12,95 USD 1005007107741587, 'Winner' stor 1005007477056010. Levererar 1 i stället för 3 svaga — protokollet: 4 bra slår 12 svaga.",
+  "kandidater": [
+    {
+      "koncept_id": null,
+      "namn_sv": "Ballongfäktningen, två trädockor",
+      "objekt": "NYTT: Fäktningsdockorna på pinnar — motståndarens ballonghuvud ska spräckas",
+      "form": "annat",
+      "arketyp": "H_VISUELL_NYHET",
+      "arketyp_sekundar": "G_Q4_GAVA",
+      "slot": "sasong",
+      "hypotes_id": "H10",
+      "vinnarlikhet": {
+        "likast": "Pingisroboten / bordscurlingen (Axels ja i dag: duell mellan människor på bordet)",
+        "delade_variabler": ["två personer mot varandra", "syns på 3 s", "skratt i bild", "julbordet/spelkvällen"],
+        "avvikelser": ["ingen bevisad Meta-vinnare i kategorin ännu", "billiga kloner 3,74–4,05 USD finns på Ali (K8-risk)", "ballonger är förbrukning"]
+      },
+      "sasong": {"fonster_id": "black_week", "deadline_typ": "jul", "veckor_kvar": 9.1, "timing": "NOW"},
+      "listning": {
+        "product_id": "1005013092804794",
+        "url": "https://www.aliexpress.com/item/1005013092804794.html",
+        "pris_usd": 17.29,
+        "sald": "ej visat i sökträffen",
+        "verdict": "LIVE_VERIFIED",
+        "verifierad_at": "2026-09-24T12:06:24Z",
+        "kontroll": {
+          "produktsida_oppnad": true,
+          "titel_stammer": true,
+          "hero_nedladdad": "korningar/2026-09-24-jul3/v3/bilder/1005013092804794.jpg",
+          "hero_sedd": true,
+          "pris_sett": true,
+          "varianter": "en listning à 17,29 USD (sökträff 12:07Z och 12:13Z); syskonlistningar 3,74 / 4,05 / 12,95 / 16,69 / 18,39 / 18,79 / 19,15 USD ('thickened version' finns) — de tre öppnade syskonen svarade tomt (BLOCKED)",
+          "video": "ej tillgänglig i containern"
+        }
+      },
+      "material": {
+        "klass": 1,
+        "hero_textfri": true,
+        "hero_i_kontext": true,
+        "samma_produkt": true,
+        "forsta_3s": "ej mätt (ingen video) — men heron visar duellen i ett enda ögonkast: två dockor, två ballonger, två svärd",
+        "kommentar": "Övre halvan är en kontextbild (rum, växt), nedre en packshot på träbas — båda textfria. Ljust obehandlat trä med synliga leder; ser handgjord ut."
+      },
+      "marknad": {
+        "lagsta_jamforbara": {"aktor": "ingen svensk aktör i exakt form", "pris_sek": null, "url": "https://www.pricerunner.se/search?q=balloon%20battle%20game", "exakt_samma_form": false},
+        "premium_ankare": {"namn": "Silverlit Robo Kombat Balloon Puncher Twin Pack (samma lek — spräck ballongen — i RC-robotform, annan SAK)", "pris_sek": 449, "url": "https://www.pricerunner.se/pl/72-3200675124/Leksaker/Silverlit-Robo-Kombat-Balloon-Puncher-Twin-Pac", "i_sortiment": true},
+        "ankare_kvot": 0.9,
+        "annonsorer_se": "ej mätt",
+        "kollade_kallor": [
+          "pricerunner.se 'bamboo man battle' 12:08:13Z (0 rader)",
+          "pricerunner.se 'balloon battle game' 12:08:15Z (bara Silverlit RC 449 + festballonger)",
+          "pricerunner.se 'ballongfäktning' 12:08:18Z (ballongpumpar)",
+          "pricerunner.se 'fäktande dockor spel' 12:08:20Z (0 rader)",
+          "teknikmagasinet.se sök 'balloon battle' 12:08Z (200, inga produktträffar)",
+          "coolstuff.se sök (404 — oläst)",
+          "spelexperten.com sök (404 — oläst)",
+          "fyndiq/cdon/amazon.se — oläst (403/503)"
+        ]
+      },
+      "ekonomi": {
+        "landad_sek": [225, 275],
+        "pris_sek": 499,
+        "brutto_sek": [224, 274],
+        "be_cpa_sek": [224, 274],
+        "be_roas": 2.0,
+        "flerkop": false,
+        "returrisk": "låg — inget att mäta; ballonger medföljer (förbrukning, går att köpa överallt)"
+      },
+      "meta_tanke": {
+        "hook": "Vem spräcker ballongen först?",
+        "objekt_i_bild": "två trädockor med svärd, en ballong på varje huvud, händer på pinnarna",
+        "sjalvselekterande": false,
+        "forstas_3s": true,
+        "bevisas_visuellt": "ballongen smäller i bild — duellen är över på sekunden"
+      },
+      "varfor": "Enda formen i linsen utan svenskt golv och utan IP: PriceRunner/Teknikmagasinet tomma på formen, medan Silverlits RC-version (449) visar att 'spräck motståndarens ballong' säljs i Sverige. Matchar Axels läsning i dag — duell mellan två människor, spänning och skratt på bordet, syns på 3 s — och testar H10 rent (kategorinyhet, textfri hero i kontext).",
+      "huvudrisk": "Kloner för 3,74–4,05 USD finns på AliExpress — priset 499 måste bäras av handgjort trä, bottenplatta och heron i kontext, annars ser den ut som 149 kr; BE-CPA 224–274 är den lägsta bandet (ekonomi 1) — de billigare 10–13-dollarslistningarna var blockerade i dag och kan höja marginalen.",
+      "konfidens": "MEDEL",
+      "poang": {"vinnarlikhet": 1, "meta_creative": 3, "efterfragan": 2, "lucka": 3, "ekonomi": 1, "sasong": 3, "leverantor": 2, "nyhet": 3, "hypotesvarde": 2},
+      "per_kriterium": {"K0": "ok", "K1": 10, "K2": 14, "K3": 12, "K4": 6, "K5": 8, "K6": 8, "K7": 5, "K8": 6, "K9": 4, "K10": 1, "K11": 1, "K12": 1},
+      "k0": {"dubblett": false, "kollat": ["katalog-live.txt 2026-09-24 (ingen duell/ballong/fäktning)", "koncept.py sok 'katapult' / 'flick' / 'tumble' / 'magnet' — 0 träffar på SAK", "REDAN-PROVAT.md runda 1–2 (Silverlit Balloon Puncher nämnd av JF som RC-robot — annan SAK)"]},
+      "kallor": [
+        "https://www.aliexpress.com/item/1005013092804794.html",
+        "https://www.aliexpress.com/w/wholesale-balloon-head-wooden-puppet-battle-game-two-player.html",
+        "https://www.pricerunner.se/search?q=balloon%20battle%20game",
+        "https://www.pricerunner.se/pl/72-3200675124/Leksaker/Silverlit-Robo-Kombat-Balloon-Puncher-Twin-Pac"
+      ]
+    }
+  ],
+  "strukna": [
+    {"namn": "Passe-trappe / pucket (gummiband skjuter pjäser genom luckan)", "orsak": "Samma mekanik som sling puck (struken av JA/JH enligt order). AliExpress ger bara 'Fast Sling Puck'/'Foosball Winner' (4–29 USD); PriceRunner 'pucket' = 'Game Pucket Game hockeyspel' 195 kr, 48,5 × 31 cm MDF (11:59Z). Heron på 1005006124918011 (öppnad 12:07:04Z) bekräftar 'FOOSBALL WINNER'-brädan."},
+    {"namn": "Fastrack / fast track (gummiband, brickor genom slitsen)", "orsak": "Samma sling puck-mekanik; PriceRunner 'fastrack' 0 relevanta (11:59Z); Ali 'fastrack wooden game sling' ger sling puck och vapenremmar."},
+    {"namn": "Crokinole i mindre format", "orsak": "Golv/ankare finns bara som Philos Compact 69 cm 890 kr (PriceRunner 11:59Z). Ali: 64,51 USD (1005011709637648) → landad ≈ 933 kr, 157–190 USD för 4-i-1 — går inte att prissätta under 999 med marginal. Dessutom JA: 60-åringen känner inte spelet."},
+    {"namn": "Generisk magnetduell (Klask-typ)", "orsak": "Ingen generisk listning på AliExpress (3 fraser: 'magnetic board game 2 players magnet under table', 'magnetic hockey table game wooden handle magnet', 'magnetic striker ball game two player table pole' — bara magnetstenar (JH:s SAK) och fidgetbollar). Competo KLASK 375 / Klask 4 799 är varumärke (PriceRunner 11:59Z)."},
+    {"namn": "Rollet / kulrullspel i trä", "orsak": "Ingen listning på AliExpress ('rollet wooden ball game' gav massagerullar); PriceRunner 'rollet spel' bara rollspel."},
+    {"namn": "Sjoelbak (nederländsk träshuffle)", "orsak": "Golv: My Hood 849, Gamesson Dutch Shuffleboard 1 859, Square Tooboss 2 700 (PriceRunner 12:00Z) och > 3 kg. Ali 'dutch shuffleboard sjoelbak wooden 30 pucks' ger bara lösa puckar — ingen bräda."},
+    {"namn": "Träkatapultduell (kastar kulor i motståndarens mål)", "orsak": "Ali ger ingen duell — bara enkelkatapulter: 1005009804554743 (11,95 USD, öppnad 12:11:33Z, hero sedd) är en laserskuren 3D-byggsats med en pingisboll = ensamsyssla, ser ut som 199 kr (K8). Svenskt golv Games4u Kolort Katapult 370, Catapult Feud 271–449 (IP), da Vinci-katapult 308 (JG)."},
+    {"namn": "Flick football / fingerfotboll i trä", "orsak": "Ali 'wooden finger soccer table game flick' ger sling puck och plastleksaker; 1005009525191421 (25,09 USD, öppnad 12:07:20Z, hero sedd) är orange plast med inbränd 'FOOSBALL 3+ AGES' — K8 = 0. PriceRunner: Legler Table Football Magnet 299, Pintoy Fodbold Flipperspil 559."},
+    {"namn": "Fingerbasket / bordsbasket för två i trä", "orsak": "1005012340234256 (24,09 USD, öppnad 12:06:12Z, hero sedd): gul plastleksak med kupol — ser ut som 99 kr (K8 = 0), inte trä. Elektronisk arkadbasket är dessutom sortiment 179–719 (JF)."},
+    {"namn": "Mini-biljard i trä för två", "orsak": "Golvet är sortiment: PriceRunner 'mini biljardbord' 14 rader 149–4 629 (Mini Biljardbord 149, Noris 152, Power Play 239, Ambassador 279, SportMe 329, Megaleg 419, Kayoba 699, Schildkröt 683, OOTB trä 795 …) 12:11:57Z. Ali: 66–101 USD → över taket."},
+    {"namn": "Bounce battle-typ (studsa boll i koppar)", "orsak": "Golv i exakt form: Peliko Bounce Battle 199, Bounce Ball Sällskapsspel 249 (PriceRunner 11:59Z). Inte sökt på Ali."},
+    {"namn": "Tornstapling med tärning / tumble tree", "orsak": "Struken av JE (balansspel/stapelspel); golv Wobble Torn 159, Kollektion Stora A Tornspel 279, Wobbel XL 329 (PriceRunner 12:00Z). Inte sökt på Ali."},
+    {"namn": "Bordsbowling-duell i trä, sling puck-duell", "orsak": "Strukna av JA/JH — hoppade enligt order."},
+    {"namn": "Cup and ball-duell", "orsak": "Ensamsyssla (Axels läsning: ensamsysslor förlorar); PriceRunner 'cup and ball spel' ger muggar. Inte sökt på Ali."},
+    {"namn": "Bordskägelspel / Tischkegelspiel (snurra fäller käglor)", "orsak": "Ingen listning på Ali ('table skittles spinning top wooden game' gav lyckohjul och 4-i-rad); PriceRunner 'bordskägelspel' bara Kikkerland Bordsbowling 150 (JA:s strukna form)."},
+    {"namn": "Snurrduell i trä (arena + snurror)", "orsak": "Ali: bara Infinity Nado/Beyblade-arenor (IP) och utomhus-trompos; PriceRunner 'snurra arena' 0 relevanta."},
+    {"namn": "Samarbets-/repstyrd labyrint för två", "orsak": "Ingen listning på Ali ('cooperative labyrinth game rope wooden two players' gav reppussel och pärlbanor); svenskt golv i enkel labyrint BRIO 161–446 (JI)."},
+    {"namn": "2-Player Wooden Battle Block Game with Competition Bell (1005012652400162, 15,15 USD)", "orsak": "BLOCKED — produktsidan svarade tomt tre gånger (12:03:45Z, 12:06:14Z, 12:10:05Z inkl. ?gatewayAdapt=glo2usa). Inte död; värd ett nytt försök i morgon (duell med klocka i trä)."},
+    {"namn": "Dual-control Football Battle Game, two-player (1005007936244762, 48,79 USD)", "orsak": "BLOCKED tre gånger (12:14:04Z, gateway, 12:14:16Z). Landad ≈ 705 → 999 max, BE-CPA ≈ 294 — bara intressant om heron visar något annat än plastleksak. Inte död."},
+    {"namn": "Ballongfäktning — syskonlistningar 12,95 USD (1005007107741587), 16,69 (1005010595058030), 10,19 (1005007561745311), 19,15 (1005012659509063)", "orsak": "Samma SAK som kandidat 1; produktsidorna svarade tomt (BLOCKED). Noterade som alternativ leverantör med bättre marginal om de öppnar i morgon."},
+    {"namn": "Kubb/mölkky/cornhole/air hockey/bordscurling/bordshockey/magnetschack/ringkrok/Tetra tower", "orsak": "Levererade eller strukna av JA/JC/JD/JE/JH (REDAN-PROVAT) — inte sökta om."}
+  ]
+}
