@@ -61,6 +61,13 @@
           "status": "drift"
         },
         {
+          "namn": "Kommentarsgranskningen",
+          "vad": "Läser alla nya annonskommentarer varje morgon: det som kräver en människa, obesvarade köpfrågor, invändningar per produkt och kundens egna ord som leads till nästa brief. Svarar aldrig själv.",
+          "var": "kommentarer/",
+          "kommando": "/kommentarer",
+          "status": "nytt"
+        },
+        {
           "namn": "Bildannonser",
           "vad": "Genererar bildannonser ur briefen varje kväll och lägger dem i granskningskön.",
           "var": "bildannonser/",
@@ -328,6 +335,12 @@
       "namn": "Norska recensioner",
       "vad": "Importerar produktrecensioner till den norska butiken.",
       "kommando": "/no-recensioner"
+    },
+    {
+      "tid": "05:40",
+      "namn": "Kommentarsgranskningen",
+      "vad": "Nya annonskommentarer: allvarligt, köpfrågor, invändningar, leads — Discord #ad-comments.",
+      "kommando": "/kommentarer"
     },
     {
       "tid": "06:00",
