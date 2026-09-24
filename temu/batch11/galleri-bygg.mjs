@@ -23,6 +23,10 @@ const land = process.argv[2], skarp = process.argv.includes('--skarp');
 const bara = process.argv.slice(3).filter((a) => !a.startsWith('--'));
 if (!['se', 'no'].includes(land)) { console.error('Användning: node temu/batch11/galleri-bygg.mjs <se|no> [--skarp] [id …]'); process.exit(1); }
 const COPY = JSON.parse(readFileSync(path.join(HÄR, 'copy.json'), 'utf8'));
+// NO får norska alt-texter: alt-no.json = { svensk alt: norsk alt } (galleri.mjs + ai.mjs bär bara svenska). Saknas en översättning används den svenska och det loggas.
+const ALT_NO = existsSync(path.join(HÄR, 'alt-no.json')) ? JSON.parse(readFileSync(path.join(HÄR, 'alt-no.json'), 'utf8')) : {};
+const saknadAlt = new Set();
+const altFor = (alt) => { if (land !== 'no' || !alt) return alt; if (ALT_NO[alt]) return ALT_NO[alt]; saknadAlt.add(alt); return alt; };
 const b = new Butik(land); const shop = await b.verifiera();
 if ((land === 'se' && shop.currencyCode !== 'SEK') || (land === 'no' && shop.currencyCode !== 'NOK')) throw new Error(`Fel butik: ${shop.name}`);
 console.log(`${shop.name} — ${skarp ? 'SKARP KÖRNING' : 'torrkörning'}\n`);
@@ -59,20 +63,23 @@ for (const [id, g] of Object.entries(GALLERI)) {
   const f = FAKTA[id], t = COPY[id]?.[SPRÅK[land]], p = PRIS.find((x) => x.id === id)?.land[land.toUpperCase()];
   if (!t) { console.log(`- ${id}: ingen ${SPRÅK[land]}-copy — hoppar`); continue; }
   // ordning: AI-hero → skördebilder → övriga AI-bilder. AI-filer ligger i <scratch>/ai/<id>/<namn>.jpg (ai-kor.mjs)
-  const aiB = (AI[id]?.bilder || []).map((x) => ({ fil: path.join(AIUT, id, `${x.namn}.jpg`), alt: x.alt, hero: x.plats === 'hero' })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: AI-bild ${path.basename(x.fil)} saknas — hoppas`));
-  const nya = [...aiB.filter((x) => x.hero), ...g.bilder.map((x) => ({ fil: utfil(id, x), alt: x.alt })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: saknar ${path.basename(x.fil)} (KIE ej klar?) — hoppas`)), ...aiB.filter((x) => !x.hero)];
-  const gifAlt = g.gif?.alt || (AI[id]?.video ? (land === 'no' ? 'Produktet i bevegelse (AI-illustrasjon)' : 'Produkten i rörelse (AI-illustration)') : null);
-  const gif = gifAlt && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: gifAlt, gif: true } : null;
+  const aiB = (AI[id]?.bilder || []).map((x) => ({ fil: path.join(AIUT, id, `${x.namn}.jpg`), alt: altFor(x.alt), altSv: x.alt, hero: x.plats === 'hero' })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: AI-bild ${path.basename(x.fil)} saknas — hoppas`));
+  const nya = [...aiB.filter((x) => x.hero), ...g.bilder.map((x) => ({ fil: utfil(id, x), alt: altFor(x.alt), altSv: x.alt })).filter((x) => existsSync(x.fil) || console.log(`  ! ${id}: saknar ${path.basename(x.fil)} (KIE ej klar?) — hoppas`)), ...aiB.filter((x) => !x.hero)];
+  const gifAlt = altFor(g.gif?.alt) || (AI[id]?.video ? (land === 'no' ? 'Produktet i bevegelse (AI-illustrasjon)' : 'Produkten i rörelse (AI-illustration)') : null);
+  const gif = gifAlt && existsSync(path.join(UT, id, 'video.gif')) ? { fil: path.join(UT, id, 'video.gif'), alt: gifAlt, altSv: g.gif?.alt || gifAlt, gif: true } : null;
   if (!nya.length && !gif) { console.log(`- ${id}: inga nya bilder`); continue; }
 
   const finns = (await b.fraga(`query($q:String!){products(first:2,query:$q){nodes{id title handle status media(first:50){nodes{id alt ... on MediaImage{image{url}}}}}}}`, { q: `sku:${f.sku}` })).products.nodes[0];
   if (!finns && f.status !== 'bygg') { console.log(`- ${id}: finns inte och status ${f.status} — hoppar`); continue; }
   let gamla = finns ? finns.media.nodes.map((m) => ({ id: m.id, url: m.image?.url, alt: m.alt })) : [];
+  // NO: medier som laddades upp med svensk alt-text får den norska via fileUpdate i stället för att laddas om (idempotensen bygger på alt).
+  const byt = land === 'no' ? [...nya, ...(gif ? [gif] : [])].filter((x) => x.altSv !== x.alt && !gamla.some((m) => m.alt === x.alt)).map((x) => ({ m: gamla.find((m) => m.alt === x.altSv), alt: x.alt })).filter((r) => r.m) : [];
+  if (byt.length) { if (skarp) await b.mutera(`mutation($files:[FileUpdateInput!]!){fileUpdate(files:$files){files{id} userErrors{field message}}}`, { files: byt.map((r) => ({ id: r.m.id, alt: r.alt })) }, 'fileUpdate'); for (const r of byt) r.m.alt = r.alt; }
   // qc:'bort' → gamla medier som inte hör till det nya galleriet tas bort (fel QC-foto). ersatt → bilder med samma alt laddas om.
   const bort = gamla.filter((m) => (g.qc === 'bort' && !nya.some((x) => x.alt === m.alt) && m.alt !== gif?.alt) || (g.ersatt === true && (nya.some((x) => x.alt === m.alt) || m.alt === gif?.alt)) || (Array.isArray(g.ersatt) && g.ersatt.some((e) => (m.alt || '').includes(e))));
   if (bort.length && skarp) { await b.mutera(`mutation($productId:ID!,$mediaIds:[ID!]!){productDeleteMedia(productId:$productId,mediaIds:$mediaIds){deletedMediaIds mediaUserErrors{field message}}}`, { productId: finns.id, mediaIds: bort.map((m) => m.id) }, 'productDeleteMedia'); gamla = gamla.filter((m) => !bort.includes(m)); console.log(`  - ${id}: ${bort.length} gamla medier borttagna`); }
   const attLadda = [...(gif ? [gif] : []), ...nya].filter((x) => !gamla.some((m) => m.alt === x.alt));
-  if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga (${bort.length} tas bort), ${attLadda.length} nya (${nya.length} bilder varav ${aiB.length} AI${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
+  if (!skarp) { console.log(`${finns ? '~' : '+'} ${id}: ${finns ? finns.title : t.titel}\n    ${gamla.length} befintliga (${bort.length} tas bort, ${byt.length} alt→no), ${attLadda.length} nya (${nya.length} bilder varav ${aiB.length} AI${gif ? ' + gif' : ''}), QC ${g.qc || 'sist'}${finns ? '' : ` · SKAPAS ${p.pris}/${p.jamfor} cogs ${p.cogs}`}`); continue; }
 
   let pid = finns?.id;
   if (!pid) {
@@ -109,3 +116,4 @@ for (const [id, g] of Object.entries(GALLERI)) {
   const q = (await b.fraga(`query($id:ID!){product(id:$id){title handle status resourcePublicationsCount{count} variants(first:1){nodes{sku price compareAtPrice}} media(first:50){nodes{status}}}}`, { id: pid })).product;
   console.log(`${finns ? '~' : '+'} ${id}: ${q.title}\n    ${q.status} | ${q.variants.nodes[0].price}/${q.variants.nodes[0].compareAtPrice} | ${q.media.nodes.filter((m) => m.status === 'READY').length}/${q.media.nodes.length} media | ${q.resourcePublicationsCount.count} kanaler | ${uppl.length} uppladdade\n    ${land === 'se' ? 'https://baverbutiken.se' : 'https://beverbutikken.no'}/products/${q.handle}`);
 }
+if (saknadAlt.size) console.log(`\n! ${saknadAlt.size} alt-texter saknar norsk översättning i alt-no.json (svensk användes):\n  ${[...saknadAlt].join('\n  ')}`);
