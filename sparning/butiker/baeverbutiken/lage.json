@@ -7,15 +7,16 @@
    "order": "#1042",
    "fulfillment": "gid://shopify/Fulfillment/8285231645017",
    "registrerad": "2026-09-20",
-   "status17": "InTransit",
-   "senast": "2026-09-24T02:49",
-   "status": "IN_TRANSIT"
+   "status17": "Delivered",
+   "senast": "2026-09-24T03:48",
+   "status": "DELIVERED",
+   "levererad": "2026-09-24"
   }
  },
  "senaste_korning": {
-  "datum": "2026-09-24T02:49:16.627Z",
+  "datum": "2026-09-24T03:49:38.049Z",
   "ordrar": 1,
-  "paket": 1,
+  "paket": 0,
   "registrerade": 0,
   "skrivna": 0,
   "fel": 0,

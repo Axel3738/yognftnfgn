@@ -150,6 +150,8 @@
   "in transit, it is currently in transit to the next facility": "Paketet är på väg till nästa terminal",
   "in transit,it'sprogressing through delivery network": "Paketet är på väg",
   "parcel delivered": "Paketet är levererat",
+  "pakke leveret": "Paketet är levererat",
+  "pakke ankommet til dao depot": "Paketet har kommit till distributionsterminalen",
   "parcel activated": "Uppgifterna om paketet är registrerade",
   "parcel is being loaded for transport": "Paketet är lastat",
   "parcel has been received": "Paketet är överlämnat till fraktbolaget",
