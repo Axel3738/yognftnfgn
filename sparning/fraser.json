@@ -182,5 +182,7 @@
   "the shipment is in transit": "Paketet är på väg",
   "the shipment has been sorted": "Paketet är sorterat",
   "en: the shipment is too large for the mailbox and will therefore be delivered to a pickup point. this may add 1–2 business days to the delivery time. the recipient will be notified when the shipment is ready for collection": "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta",
-  "the parcel has been registered with us": "Paketet är registrerat hos fraktbolaget"
+  "the parcel has been registered with us": "Paketet är registrerat hos fraktbolaget",
+  "communication failed": "Aviseringen till dig gick inte fram",
+  "fallback shipment solution was triggered": "Fraktbolaget har bytt till en annan leveranslösning"
 }

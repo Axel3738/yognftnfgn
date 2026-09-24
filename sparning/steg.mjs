@@ -128,6 +128,13 @@ const AVVIKELSE = new Set([
   'Vi kom inte in genom porten - leveransen kunde inte genomföras',
   'Din leverans är försenad - leveransdatum uppdateras',
   '退回客户',
+  // Tillagd 2026-09-24: 4PX/PostNords "Communication failed" kommer med
+  // platsen "Consignee - Parcel unable for home delivery" — hemleveransen
+  // gick inte och avin till kunden kom inte fram. Den låg som en vanlig
+  // skanning, ärvde I_LANDET och DATERADE "Hos fraktbolaget" med en rad utan
+  // land, vilket krav 4 dömde: hela timrundan stoppades för alla kunder
+  // (4PX3003157425563CN). Samma familj som porten-raden ovan.
+  'Communication failed',
 ].map(normalisera));
 
 // Fraser som bär mottagarlandets namn men skickas innan paketet är där.

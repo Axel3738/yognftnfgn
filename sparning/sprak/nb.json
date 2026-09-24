@@ -188,6 +188,10 @@
     "Paketet är på väg till ombudet": "Pakken er på vei til hentestedet",
     "Paketet gick åt fel håll men är nu på väg till rätt ort": "Pakken gikk feil vei, men er nå på vei til riktig sted",
     "Budet hittade inte fram. Du får ett sms eller mejl där du kan fylla i adressuppgifterna, så gör vi ett nytt försök. Svarar du inte skickas paketet till närmaste ombud": "Budet fant ikke frem. Du får en SMS eller e-post der du kan fylle inn adresseopplysningene, så prøver vi på nytt. Svarer du ikke, sendes pakken til nærmeste hentested",
-    "Paketet fick inte plats i brevlådan och vi kom inte in i huset för att lämna det. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken fikk ikke plass i postkassen, og vi kom ikke inn i bygningen for å levere den. Den er på vei til et hentested i nærheten av deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag"
+    "Paketet fick inte plats i brevlådan och vi kom inte in i huset för att lämna det. Det är på väg till ett ombud nära dig och du får besked när det kan hämtas, oftast inom en arbetsdag": "Pakken fikk ikke plass i postkassen, og vi kom ikke inn i bygningen for å levere den. Den er på vei til et hentested i nærheten av deg, og du får beskjed når den kan hentes, vanligvis innen én virkedag",
+    "Aviseringen till dig gick inte fram": "Varselet til deg kom ikke fram",
+    "Fraktbolaget har bytt till en annan leveranslösning": "Transportøren har byttet til en annen leveringsløsning",
+    "Paketet är för stort för brevlådan och skickas därför till ett ombud. Det kan ta 1-2 arbetsdagar extra, och du får besked när det går att hämta": "Pakken er for stor for postkassen og sendes derfor til et hentested. Det kan ta 1-2 virkedager ekstra, og du får beskjed når den kan hentes",
+    "Paketet är registrerat hos fraktbolaget": "Pakken er registrert hos transportøren"
   }
 }
