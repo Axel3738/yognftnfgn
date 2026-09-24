@@ -11,7 +11,7 @@ export const AI = {
       { namn: 'ai-2', ref: 'Båthuven på en båt på trailer i snö', alt: 'Båthuven med snö på, båten i vinterförvaring (AI-illustration)', prompt: 'The same covered boat on its trailer in an outdoor boat storage yard in winter, a thin layer of snow on the cover, other trailered boats blurred in the background.' },
     ] },
   kamadohuv: {
-    video: { ref: 'Kamadohuven på grillens ben', prompt: 'Light rain falls on the covered kamado grill standing on a wooden deck; drops run off the black fabric.' },
+    video: { ref: 'Kamadohuven över en äggformad kamadogrill', prompt: 'Light rain begins to fall on the covered kamado grill on the deck; drops run off the black fabric; the autumn leaves behind it move slightly in the wind.' },
     bilder: [
       { namn: 'ai-hero', plats: 'hero', ref: 'Kamadohuven på grillens ben', alt: 'Kamadohuven över en äggformad kamadogrill på en trädäck-terrass (AI-illustration)', prompt: 'The same black cover placed over a large egg-shaped ceramic kamado grill standing in its metal cart on a wooden deck terrace, autumn garden behind, soft daylight.' },
       { namn: 'ai-2', ref: 'Kamadohuven på grillens ben', alt: 'Kamadogrillen utan huv bredvid en täckt kamado (AI-illustration)', prompt: 'Two egg-shaped ceramic kamado grills side by side on a stone patio: the left one uncovered, dark green glossy ceramic with its dome lid; the right one fitted with the same black cover from the reference so the shape underneath is obvious.' },
@@ -38,7 +38,7 @@ export const AI = {
       { namn: 'ai-2', ref: 'Tre regntunnor med huv', alt: 'Dragskon åtdragen runt tunnans kant (AI-illustration)', prompt: 'Close-up of the drawstring at the bottom edge of the same black cover pulled tight around the rim of a blue plastic rain barrel.' },
     ] },
   bikupsjacka: { video: { ref: 'Två bikupor med vinterjackor i snö', prompt: 'Light snow falls slowly on the two covered beehives; nothing else moves.' } },
-  krukvaxthuv: { video: { ref: 'Krukväxthuven över en växt i snö', prompt: 'Light snow falls on the covered plant; the fabric sways very slightly in a breeze.' } },
+  krukvaxthuv: { video: { ref: 'Tre krukväxthuvar i beige fiberduk', prompt: 'A light breeze moves the three covered plants very slightly; a few leaves drift past on the ground. No snowflakes, no graphics.' } },   // första försöket lade in en tecknad snöflinga
   ljusslingevindor: {
     video: { ref: 'Ljusslingevinda, tom och med ljussling', prompt: 'Two hands wind a green Christmas light string onto the black winder, turn by turn.' },
     bilder: [ { namn: 'ai-fore-efter', ref: 'Ljusslingevinda, tom och med ljussling', alt: 'Trassliga ljusslingor i en låda bredvid slingor upplindade på vindorna (AI-illustration)', prompt: 'On a wooden table: on the left a cardboard box overflowing with tangled green Christmas light strings; on the right three of the same black winders with light strings neatly wound on them.' } ] },
@@ -70,7 +70,7 @@ export const AI = {
   takachuv: { video: { ref: 'Huven över AC:n på husbilstaket i regn', prompt: 'Rain drops fall on the black AC cover on the motorhome roof and run off; the sky is grey.' } },
   vedklyvshuv: { video: { ref: 'Huven på vedklyven under tak i regn', prompt: 'Rain falls beyond the roof edge while the covered log splitter stays dry under the shelter; a few drops drip from the roof.' } },
   adelstenskalender: {
-    video: { ref: 'Den röda asken öppen med grävblocken o', prompt: 'A child\'s hands chip at one of the pastel dig blocks with the small tool; dust falls onto the table.' },
+    video: { ref: 'Ädelstenskalendern öppen på bordet med grävblocken', prompt: 'The child\'s hands brush and chip gently at one pastel dig block with the small tool; a little dust falls onto the table; the red box and its printed lid stay exactly as in the image.' },
     bilder: [ { namn: 'ai-hero', plats: 'hero', ref: 'Den röda asken öppen med grävblocken o', alt: 'Ädelstenskalendern öppen på bordet med grävblocken och verktygen, barnhänder gräver (AI-illustration)', prompt: 'The same red advent calendar box, open, on a wooden table in warm Christmas light, the pastel dig blocks and small tools laid out in front, a child\'s hands brushing one block, no faces. The printed lid must stay exactly as in the reference: the gold "Merry Christmas" lettering and the Santa illustration, nothing else written on the box.' } ] },
   husbilskalender: {
     video: { ref: 'Retrobussarna i närbild', prompt: 'The camper van ornaments sway gently on their strings with warm fairy lights twinkling behind them.' },
